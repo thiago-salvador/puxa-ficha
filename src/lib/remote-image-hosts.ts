@@ -24,6 +24,7 @@ export const REMOTE_IMAGE_HOSTS = [
   "sapl.riobranco.ac.leg.br",
   "static.ndmais.com.br",
   "storage.al.mt.gov.br",
+  "thumb.wikimedia.org",
   "upload.wikimedia.org",
   "uploads.folhabv.com.br",
   "www.ananindeua.pa.gov.br",

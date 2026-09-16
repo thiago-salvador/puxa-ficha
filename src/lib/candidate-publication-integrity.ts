@@ -9,7 +9,7 @@ export type OfficialCandidacyState = "active" | "terminal" | "review_required";
 export interface OfficialCandidacy {
   sq_candidato: string;
   profile_slug: string | null;
-  office: "Presidente" | "Governador";
+  office: "Presidente" | "Governador" | "Senador";
   uf: string | null;
   name: string;
   status: string | null;
@@ -21,7 +21,7 @@ export interface OfficialCandidacy {
 
 export interface PublicCandidateSummary {
   slug: string;
-  office: "Presidente" | "Governador";
+  office: "Presidente" | "Governador" | "Senador";
   uf: string | null;
 }
 
@@ -66,6 +66,7 @@ const ACTIVE_OFFICIAL_STATUSES = new Set([
   "deferido em prazo recursal ou com recurso",
   "indeferido com recurso",
   "indeferido em prazo recursal ou com recurso",
+  "indeferido com recurso",
 ]);
 
 const TERMINAL_OFFICIAL_STATUSES = new Set([

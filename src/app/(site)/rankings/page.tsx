@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
+import { ChevronDown } from "lucide-react"
 import { DataSourceNotice } from "@/components/DataSourceNotice"
 import { Footer } from "@/components/Footer"
 import { JsonLd } from "@/components/JsonLd"
@@ -61,6 +62,26 @@ export default async function RankingsPage() {
     description,
   }
 
+  const intro = (
+    <div className="max-w-3xl">
+      <p className="max-w-prose text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
+        As listas temáticas organizam portas de entrada por métrica pública, sem substituir a
+        leitura da ficha individual nem transformar a navegação em recomendação política.
+      </p>
+      <p className="mt-3 max-w-prose text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
+        Se preferir outra porta de entrada, você pode voltar para a{" "}
+        <Link href="/" className="font-semibold text-foreground underline">
+          home
+        </Link>{" "}
+        ou abrir o{" "}
+        <Link href="/comparar" className="font-semibold text-foreground underline">
+          comparador
+        </Link>
+        .
+      </p>
+    </div>
+  )
+
   return (
     <div className="min-h-screen bg-background">
       <JsonLd data={schema} />
@@ -96,31 +117,22 @@ export default async function RankingsPage() {
         <DataSourceNotice status={sourceStatus} message={sourceMessage} />
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 pt-8 md:px-12">
-        <div className="max-w-3xl">
-          <p className="max-w-prose text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
-            As listas temáticas organizam portas de entrada por métrica pública, sem substituir a
-            leitura da ficha individual nem transformar a navegação em recomendação política.
-          </p>
-          <p className="mt-3 max-w-prose text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
-            Se preferir outra porta de entrada, você pode voltar para a{" "}
-            <Link href="/" className="font-semibold text-foreground underline">
-              home
-            </Link>{" "}
-            ou abrir o{" "}
-            <Link href="/comparar" className="font-semibold text-foreground underline">
-              comparador
-            </Link>
-            .
-          </p>
-        </div>
+      <section className="mx-auto max-w-7xl px-5 pt-4 sm:pt-8 md:px-12">
+        <details className="group sm:hidden">
+          <summary className="flex min-h-11 cursor-pointer items-center justify-between gap-3 font-semibold text-foreground">
+            <span>Sobre estas listas</span>
+            <ChevronDown aria-hidden="true" className="size-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180 motion-reduce:transition-none" />
+          </summary>
+          <div className="pb-2">{intro}</div>
+        </details>
+        <div className="hidden sm:block">{intro}</div>
       </section>
 
-      <div className="mx-auto max-w-7xl px-5 pt-8 md:px-12 sm:pt-12">
+      <div className="mx-auto max-w-7xl px-5 pt-4 sm:pt-12 md:px-12">
         <SlashDivider />
       </div>
 
-      <section className="mx-auto max-w-7xl px-5 py-10 md:px-12 lg:py-14">
+      <section className="mx-auto max-w-7xl px-5 py-6 sm:py-10 md:px-12 lg:py-14">
         <div className="grid gap-5 lg:grid-cols-3">
           {datasets.map((dataset) => (
             <RankingCard key={dataset.definition.slug} dataset={dataset} />

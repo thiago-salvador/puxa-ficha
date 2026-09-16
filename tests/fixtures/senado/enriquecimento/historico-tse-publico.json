@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "candidato_2026": {
+    "sq_candidato": "9001",
+    "uf": "SP",
+    "cargo_codigo": "5",
+    "cargo": "SENADOR",
+    "nome": "PESSOA SINTETICA DE TESTE",
+    "nome_urna": "PESSOA TESTE",
+    "sg_ue": "SP"
+  },
+  "identity_method": "cpf_equal_in_memory_between_2026_anchor_and_historical_rows",
+  "cpf_persisted": false,
+  "historical_matches": [
+    {
+      "ano": 2018,
+      "uf": "SP",
+      "cargo_codigo": "5",
+      "cargo": "SENADOR",
+      "sq_candidato": "7018",
+      "numero": "100",
+      "nome": "PESSOA SINTETICA DE TESTE",
+      "nome_urna": "PESSOA TESTE"
+    },
+    {
+      "ano": 2008,
+      "uf": "SP",
+      "sg_ue": "00001",
+      "cargo_codigo": "13",
+      "cargo": "VEREADOR",
+      "sq_candidato": "7008",
+      "numero": "10000",
+      "nome": "PESSOA SINTETICA DE TESTE",
+      "nome_urna": "PESSOA TESTE"
+    },
+    {
+      "ano": 2002,
+      "uf": "SP",
+      "sg_ue": "SP",
+      "cargo_codigo": "7",
+      "cargo": "DEPUTADO ESTADUAL",
+      "sq_candidato": "7002",
+      "numero": "1000",
+      "nome": "PESSOA SINTETICA DE TESTE",
+      "nome_urna": "PESSOA TESTE"
+    }
+  ],
+  "sources": [
+    {
+      "ano": 2026,
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+      "sha256": "abababababababababababababababababababababababababababababababab"
+    },
+    {
+      "ano": 2018,
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip",
+      "sha256": "abababababababababababababababababababababababababababababababab"
+    },
+    {
+      "ano": 2008,
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2008.zip",
+      "sha256": "abababababababababababababababababababababababababababababababab"
+    },
+    {
+      "ano": 2002,
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2002.zip",
+      "sha256": "abababababababababababababababababababababababababababababababab"
+    }
+  ]
+}

@@ -35,9 +35,8 @@ type FinanciamentoEleicaoEstado =
   /** A verificação foi executada, mas terminou em falha explícita. */
   | "erro"
   /**
-   * Ausência VERIFICADA na fonte: a série digital de prestação de contas do TSE
-   * começa em 2002, e para pleito anterior não existe registro oficial nenhum.
-   * Único estado que afirma ausência, e por isso carrega fonte e data.
+   * Pleito anterior à série digital consultada, que começa em 2002.
+   * Não afirma inexistência de documentos em outros acervos oficiais.
    */
   | "fora_da_serie_oficial"
   /** O pleito ainda não ocorreu; a prestação de contas não é devida. */
@@ -48,6 +47,9 @@ type FinanciamentoEleicaoEstado =
 export interface FinanciamentoEleicaoPublico {
   ano: number
   estado: FinanciamentoEleicaoEstado
+  sq_candidato?: string | null
+  uf_candidatura?: string | null
+  cargo_candidatura?: string | null
   fonte_url: string | null
   verificado_em: string | null
   detalhe?: string | null
@@ -55,7 +57,10 @@ export interface FinanciamentoEleicaoPublico {
 
 export interface FinanciamentoVerificacaoPublica {
   ano_eleicao: number
-  resultado: "ausencia_oficial" | "nao_coletado" | "erro"
+  sq_candidato?: string | null
+  uf_candidatura?: string | null
+  cargo_candidatura?: string | null
+  resultado: "ausencia_oficial" | "nao_coletado" | "erro" | "nao_aplicavel"
   fonte_url: string | null
   verificado_em: string | null
   detalhe?: string | null
@@ -86,6 +91,21 @@ export const FINANCIAMENTO_SERIE_TSE_FONTE_URL =
 export const FINANCIAMENTO_SERIE_TSE_VERIFICADO_EM = "2026-08-10"
 
 /**
+ * Converte o marcador técnico usado por alguns layouts TSE em uma explicação
+ * pública. O detalhe só é reescrito quando prova ausência de SQ_RECEITA e de
+ * receita materializável; outros detalhes, inclusive os já humanizados, ficam
+ * intactos.
+ */
+export function humanizarDetalheFinanciamentoAusente(detalhe: string | null | undefined): string | null {
+  if (!detalhe) return detalhe ?? null
+  const marcadorTse = /#(?:NULO|NE)#?/i.test(detalhe)
+  const sqReceitaAusente = /(?:sem|ausente|inexistente)[^.;,]*SQ[_\s]?RECEITA|SQ[_\s]?RECEITA[^.;,]*(?:sem|ausente|inv[aá]lido)/i.test(detalhe)
+  const receitaAusente = /sem receita (?:materializ[aá]vel|publicada)|nenhuma receita (?:materializ[aá]vel|publicada)/i.test(detalhe)
+  if (!marcadorTse || (!sqReceitaAusente && !receitaAusente)) return detalhe
+  return "Nenhum registro de receitas foi localizado para esta candidatura no arquivo oficial consultado. Isso não comprova ausência global de recursos."
+}
+
+/**
  * Estado de financiamento por pleito disputado, mais recente primeiro.
  *
  * A âncora de "pleito disputado" é a compartilhada em `pleitos-disputados.ts`,
@@ -106,33 +126,83 @@ export function buildFinanciamentoEleicoes(
   historico: ReadonlyArray<LinhaDeTrajetoriaParaPleito>,
   verificacoes: ReadonlyArray<FinanciamentoVerificacaoPublica> = [],
 ): FinanciamentoEleicaoPublico[] {
-  const linhasPorAno = new Map(financiamento.map((row) => [row.ano_eleicao, row]))
-  const verificacoesPorAno = new Map(verificacoes.map((row) => [row.ano_eleicao, row]))
+  type ContextRow = {
+    ano_eleicao: number
+    sq_candidato?: string | null
+    uf_candidatura?: string | null
+    cargo_candidatura?: string | null
+    total_arrecadado?: number | null
+    fonte?: string | null
+  }
+  const linhas = financiamento as ReadonlyArray<ContextRow>
+  const verificacoesValidas = verificacoes.filter((row) => {
+    if (row.resultado === "nao_aplicavel") return false
+    // Recibos antigos sem identidade eleitoral descrevem uma tentativa geral,
+    // não uma candidatura adicional. Uma consulta nominal posterior pode
+    // superar essa falha; erros nominais ou mais recentes continuam visíveis.
+    if (row.sq_candidato || row.uf_candidatura ||
+      (row.resultado !== "erro" && row.resultado !== "nao_coletado")) return true
+    const tentativaEm = Date.parse(row.verificado_em ?? "")
+    if (!Number.isFinite(tentativaEm)) return true
+    return !verificacoes.some((nominal) =>
+      nominal.ano_eleicao === row.ano_eleicao &&
+      nominal.resultado === "ausencia_oficial" &&
+      Boolean(nominal.sq_candidato && nominal.uf_candidatura) &&
+      Boolean(nominal.fonte_url?.startsWith("https://")) &&
+      Date.parse(nominal.verificado_em ?? "") > tentativaEm,
+    )
+  })
+  const contextKey = (row: Pick<ContextRow, "ano_eleicao" | "sq_candidato" | "uf_candidatura">) =>
+    `${row.ano_eleicao}|${row.sq_candidato ?? ""}|${row.uf_candidatura ?? ""}`
+  const publicContext = (row: Pick<ContextRow, "sq_candidato" | "uf_candidatura" | "cargo_candidatura">) => ({
+    ...(row.sq_candidato ? { sq_candidato: row.sq_candidato } : {}),
+    ...(row.uf_candidatura ? { uf_candidatura: row.uf_candidatura } : {}),
+    ...(row.cargo_candidatura ? { cargo_candidatura: row.cargo_candidatura } : {}),
+  })
+  const linhasPorContexto = new Map(linhas.map((row) => [contextKey(row), row]))
+  const verificacoesPorContexto = new Map(verificacoesValidas.map((row) => [contextKey(row), row]))
+  const contextosPorAno = new Map<number, string[]>()
+  for (const row of [...linhas, ...verificacoesValidas]) {
+    const keys = contextosPorAno.get(row.ano_eleicao) ?? []
+    const key = contextKey(row)
+    if (!keys.includes(key)) keys.push(key)
+    contextosPorAno.set(row.ano_eleicao, keys)
+  }
+  // A prova de que a pessoa não teve candidatura naquele ano é preservada no
+  // banco, mas não cria um pleito na ficha. A série pública é ancorada na
+  // trajetória eleitoral e nas linhas publicadas.
   const anos = new Set<number>([
-    ...linhasPorAno.keys(),
+    ...contextosPorAno.keys(),
     ...anosDePleitoDisputado(historico),
-    ...verificacoesPorAno.keys(),
   ])
 
-  return [...anos]
-    .sort((a, b) => b - a)
-    .map((ano) => {
-      const linha = linhasPorAno.get(ano)
+  return [...anos].sort((a, b) => b - a).flatMap((ano) => {
+      const keys = contextosPorAno.get(ano) ?? [`${ano}||`]
+      return keys.map((key) => {
+      const linha = linhasPorContexto.get(key)
       if (linha) {
         if (linha.total_arrecadado === 0) {
           return {
             ano,
+            ...publicContext(linha),
             estado: "zero_declarado" as const,
             fonte_url: linha.fonte ?? null,
             verificado_em: null,
           }
         }
-        return { ano, estado: "publicado" as const, fonte_url: null, verificado_em: null }
+        return {
+          ano,
+          ...publicContext(linha),
+          estado: "publicado" as const,
+          fonte_url: null,
+          verificado_em: null,
+        }
       }
-      const verificacao = verificacoesPorAno.get(ano)
+      const verificacao = verificacoesPorContexto.get(key)
       if (verificacao?.resultado === "ausencia_oficial" || verificacao?.resultado === "erro") {
         return {
           ano,
+          ...publicContext(verificacao),
           estado: verificacao.resultado,
           fonte_url: verificacao.fonte_url,
           verificado_em: verificacao.verificado_em,
@@ -151,6 +221,7 @@ export function buildFinanciamentoEleicoes(
         }
       }
       return { ano, estado: "nao_coletado" as const, fonte_url: null, verificado_em: null }
+      })
     })
 }
 
@@ -162,13 +233,13 @@ export function descreverFinanciamentoEleicao(eleicao: FinanciamentoEleicaoPubli
     case "zero_declarado":
       return `A prestação de contas oficial da eleição de ${eleicao.ano} registra zero declarado em receitas.`
     case "ausencia_oficial":
-      return eleicao.detalhe ?? `A identidade foi conferida no pacote oficial de ${eleicao.ano}, sem receita publicada para esta candidatura.`
+      return humanizarDetalheFinanciamentoAusente(eleicao.detalhe) ?? `A identidade foi conferida no pacote oficial de ${eleicao.ano}, sem receita publicada para esta candidatura.`
     case "erro":
       return eleicao.detalhe
         ? `Não foi possível concluir a verificação de ${eleicao.ano}: ${eleicao.detalhe}`
         : `Não foi possível concluir a verificação de financiamento da eleição de ${eleicao.ano}.`
     case "fora_da_serie_oficial":
-      return `O TSE só publica prestação de contas eleitorais a partir de ${FINANCIAMENTO_ANO_INICIAL_DA_SERIE_TSE}, então não existe registro oficial de financiamento para a eleição de ${eleicao.ano}.`
+      return `A eleição de ${eleicao.ano} é anterior à série digital de prestação de contas do TSE consultada, que começa em ${FINANCIAMENTO_ANO_INICIAL_DA_SERIE_TSE}. Isso não comprova inexistência de documentos em outros acervos oficiais.`
     case "pleito_futuro":
       return `A eleição de ${eleicao.ano} ainda não foi realizada e a prestação de contas ainda não é devida.`
     case "nao_coletado":

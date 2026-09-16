@@ -65,6 +65,21 @@ test("normalizePatrimonioForDisplay mantém anos ou valores distintos", () => {
   assert.equal(out.length, 3)
 })
 
+test("normalizePatrimonioForDisplay preserva candidaturas SQ distintas no mesmo ano e valor", () => {
+  const base = {
+    candidato_id: "cand",
+    ano_eleicao: 2010,
+    valor_total: 380_000,
+    bens: [],
+    uf_candidatura: "MT",
+  }
+  const out = normalizePatrimonioForDisplay([
+    { ...base, id: "suplente", sq_candidato: "110000000595" },
+    { ...base, id: "deputado", sq_candidato: "110000000494" },
+  ])
+  assert.deepEqual(out.map((row) => row.sq_candidato).sort(), ["110000000494", "110000000595"])
+})
+
 test("normalizePatrimonioForDisplay remove marcadores TSE dos bens sem perder o valor", () => {
   const row: Patrimonio = {
     id: "pat-marker",

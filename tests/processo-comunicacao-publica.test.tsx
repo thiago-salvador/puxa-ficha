@@ -127,4 +127,50 @@ describe("comunicação processual no DOM público", () => {
     assert.doesNotMatch(html, /1 criminal/)
     assert.doesNotMatch(html, /comunicaapi\.pje\.jus\.br/)
   })
+
+  it("mostra recibo TCU encontrado como revisão editorial", () => {
+    const ficha = fichaComComunicacao()
+    ficha.processos = []
+    ficha.total_processos = 0
+    ficha.tcu_verificacao = {
+      fonte: "tcu",
+      resultado: "encontrado",
+      estado: "encontrado_em_revisao",
+      executado_em: "2026-09-15T15:00:00.000Z",
+      volume: 2,
+      detalhe: "Consulta TCU encontrou 2 registros; revisão editorial pendente.",
+      url: "https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-inabilitados",
+      fontes: [
+        { cadastro: "responsaveis_inabilitados", url: "https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-inabilitados", resultado: "vazio_confirmado", volume: 0 },
+        { cadastro: "responsaveis_contas_irregulares", url: "https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-contas-irregulares", resultado: "encontrado", volume: 2 },
+      ],
+    }
+    const html = renderToStaticMarkup(<CandidatoProfile ficha={ficha} initialTab="alertas" />)
+    assert.match(html, /data-pf-tcu-verificacao/)
+    assert.match(html, /Encontrado, em revisão editorial/)
+    assert.match(html, /Consulta TCU encontrou 2 registros/)
+    assert.match(html, /certidoes\.apps\.tcu\.gov\.br/)
+    assert.match(html, /data-pf-tcu-estado="encontrado_em_revisao"/)
+    assert.match(html, /Contas irregulares \(2\)/)
+    assert.match(html, /responsaveis-contas-irregulares/)
+  })
+
+  it("mostra vazio TCU como verificado no escopo consultado", () => {
+    const ficha = fichaComComunicacao()
+    ficha.processos = []
+    ficha.total_processos = 0
+    ficha.tcu_verificacao = {
+      fonte: "tcu",
+      resultado: "vazio_confirmado",
+      estado: "vazio_verificado",
+      executado_em: "2026-09-15T15:00:00.000Z",
+      volume: 0,
+      detalhe: "Consultas oficiais TCU retornaram zero registros no escopo verificado.",
+      url: null,
+    }
+    const html = renderToStaticMarkup(<CandidatoProfile ficha={ficha} initialTab="alertas" />)
+    assert.match(html, /Nenhum registro no escopo verificado/)
+    assert.match(html, /Consultas oficiais TCU retornaram zero registros/)
+    assert.doesNotMatch(html, /ficha limpa|nenhum alerta registrado/i)
+  })
 })

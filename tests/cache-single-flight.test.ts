@@ -69,7 +69,7 @@ describe("cobertura dos caches invalidados pelo cron", () => {
       /import\s*\{[^}]*\bunstable_cache\b[^}]*\}\s*from\s*["']next\/cache["']/
     )
     assert.doesNotMatch(donor, /\bunstable_cache\s*\(/)
-    assert.equal((api.match(/unstableCacheWithSingleFlight\s*\(/g) ?? []).length, 12)
+    assert.equal((api.match(/unstableCacheWithSingleFlight\s*\(/g) ?? []).length, 13)
     assert.equal((donor.match(/unstableCacheWithSingleFlight\s*\(/g) ?? []).length, 1)
 
     for (const tag of REVALIDATE_ALLOWED_TAGS) {

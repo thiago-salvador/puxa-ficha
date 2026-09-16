@@ -13,6 +13,7 @@ import { buildAbsoluteUrl, buildTwitterMetadata } from "@/lib/metadata"
 import { comparadorEixoLabels, normalizeComparadorEixo } from "@/lib/comparador-axis"
 import { resolveComparadorCohort, resolveComparadorCohortFromSlugs } from "@/lib/comparador-cohort"
 import Link from "next/link"
+import { ChevronDown } from "lucide-react"
 
 const defaultTitle = "Comparador de candidatos | Puxa Ficha"
 const defaultDescription =
@@ -170,6 +171,28 @@ export default async function CompararPage({
       "Compare dados públicos disponíveis de candidatos brasileiros mapeados para 2026.",
   }
 
+  const intro = (
+    <div className="max-w-3xl">
+      <p className="max-w-prose text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
+        O comparador foi pensado para busca orgânica e decisão prática:
+        selecionar de 2 a 4 nomes, comparar patrimônio, formação, processos e
+        alertas graves, e, quando alguém do conjunto tiver o histórico, a
+        cota parlamentar (CEAP/CEAPS).
+      </p>
+      <p className="mt-3 max-w-prose text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
+        Se quiser navegar antes de comparar, volte para a{" "}
+        <Link href="/" className="font-semibold text-foreground underline">
+          home
+        </Link>{" "}
+        ou veja os{" "}
+        <Link href="/governadores" className="font-semibold text-foreground underline">
+          governadores
+        </Link>
+        .
+      </p>
+    </div>
+  )
+
   return (
     // Bloco 7 do review 2026-04-24: overflow-x-clip evita scroll horizontal no
     // mobile (375px) sem prejudicar popovers verticais.
@@ -211,29 +234,18 @@ export default async function CompararPage({
         />
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 pt-8 md:px-12">
-        <div className="max-w-3xl">
-          <p className="max-w-prose text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
-            O comparador foi pensado para busca orgânica e decisão prática:
-            selecionar de 2 a 4 nomes, comparar patrimônio, formação, processos e
-            alertas graves, e, quando alguém do conjunto tiver o histórico, a
-            cota parlamentar (CEAP/CEAPS).
-          </p>
-          <p className="mt-3 max-w-prose text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
-            Se quiser navegar antes de comparar, volte para a{" "}
-            <Link href="/" className="font-semibold text-foreground underline">
-              home
-            </Link>{" "}
-            ou veja os{" "}
-            <Link href="/governadores" className="font-semibold text-foreground underline">
-              governadores
-            </Link>
-            .
-          </p>
-        </div>
+      <section className="mx-auto max-w-7xl px-5 pt-4 sm:pt-8 md:px-12">
+        <details className="group sm:hidden">
+          <summary className="flex min-h-11 cursor-pointer items-center justify-between gap-3 font-semibold text-foreground">
+            <span>Como comparar</span>
+            <ChevronDown aria-hidden="true" className="size-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180 motion-reduce:transition-none" />
+          </summary>
+          <div className="pb-2">{intro}</div>
+        </details>
+        <div className="hidden sm:block">{intro}</div>
       </section>
 
-      <div className="mx-auto max-w-7xl px-5 pt-8 md:px-12 sm:pt-12">
+      <div className="mx-auto max-w-7xl px-5 pt-4 sm:pt-12 md:px-12">
         <SlashDivider />
       </div>
 

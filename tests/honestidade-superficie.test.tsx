@@ -199,6 +199,27 @@ describe("defeito 1: financiamento não pode afirmar ausência sem verificar", (
     assert.ok(html.includes("Fonte oficial"))
     assert.ok(!html.includes(FRASE_PROIBIDA))
   })
+
+  test("duas candidaturas no mesmo ano ficam em linhas distintas sem mudar o atributo de ano", () => {
+    const html = renderMoneyTab({
+      financiamentoEleicoes: [
+        {
+          ano: 2022, estado: "ausencia_oficial", sq_candidato: "SQ-TESTE-SENADO", uf_candidatura: "RJ",
+          cargo_candidatura: "Senador", fonte_url: "https://dadosabertos.tse.jus.br/2022", verificado_em: "2026-09-10",
+        },
+        {
+          ano: 2022, estado: "nao_coletado", sq_candidato: "SQ-TESTE-DEPUTADO", uf_candidatura: "RJ",
+          cargo_candidatura: "Deputado Federal", fonte_url: null, verificado_em: null,
+        },
+      ],
+    })
+
+    assert.equal(html.split('data-pf-financiamento-eleicao="2022"').length - 1, 2, "o atributo continua sendo o ano")
+    assert.ok(html.includes('data-pf-financiamento-contexto="SQ-TESTE-SENADO|RJ"'))
+    assert.ok(html.includes('data-pf-financiamento-contexto="SQ-TESTE-DEPUTADO|RJ"'))
+    assert.ok(html.includes("2022<!-- --> - Senador") || html.includes("2022 - Senador"))
+    assert.ok(!html.includes(FRASE_PROIBIDA))
+  })
 })
 
 describe("defeito 2: judicial não pode dizer que a busca não foi feita", () => {

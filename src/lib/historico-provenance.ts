@@ -8,13 +8,14 @@
  */
 
 /** Valores inferíveis só a partir de `observacoes` (heurística por substring). Nunca retorna `misto`. */
-export type HistoricoInferredSource = "tse" | "wikidata" | "manual" | "unknown"
+export type HistoricoInferredSource = "tse" | "senado" | "wikidata" | "manual" | "unknown"
 
 /** Valores persistíveis na coluna `historico_politico.proveniencia` + resultado de `resolveHistoricoRowProvenance`. */
 export type HistoricoRowProvenance = HistoricoInferredSource | "misto"
 
 const HISTORICO_ROW_PROVENIENCIA_VALUES: readonly HistoricoRowProvenance[] = [
   "tse",
+  "senado",
   "wikidata",
   "manual",
   "misto",

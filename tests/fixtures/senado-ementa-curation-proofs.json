@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "purpose": "PDF proof inputs for hash-guarded Senate curation tests",
+  "cases": [
+    {
+      "code": "101289",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/101289.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=3296936",
+      "pdf_date": "2011-06-14",
+      "pdf_sha256": "f7a56f44961b55c6aeca4b07c589408c9caf50cb5bc3c50eb7712a18503bfdd8",
+      "api_sha256": "585eaab0cac0f930f0963e00128615d37b4baacf18de46a29f1b03e8a5fead74",
+      "api_ementa": "Em aditamento ao Requerimento nº 2, de 2011-CMA, que solicitou a realização do ¿Ciclo de Debates destinado a coletar subsídios técnico-jurídicos para aperfeiçoamento da reforma do Código Florestal¿, requeiro seja convidado para participar dos debates o Dr. Drauzio Varella."
+    },
+    {
+      "code": "101674",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/101674.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=3296322",
+      "pdf_date": "2011-08-16",
+      "pdf_sha256": "0ce3e1760a830aa5e9c9a81f73c9dda5b4f0e8792f2fefac7fa1c6c58ef46aae",
+      "api_sha256": "288c24cac73543d2f6390895a305e639c162204f070260b412ba3d69976e1da0",
+      "api_ementa": "Requer, com fundamento nos artigos 90, inciso II e 113 do Regimento Interno do Senado Federal, seja realizada audiência pública conjunta pelas Comissões de Ciência, Tecnologia, Inovação, Comunicação e Informática (CCT); Agricultura e Reforma Agrária (CRA); e Meio Ambiente, Defesa do Consumidor e Fiscalização e Controle (CMA), para debater o aperfeiçoamento da reforma do Código Florestal (Lei nº 4771, de 1965), atualmente em curso no Senado Federal ¿ por meio do Projeto de Lei da Câmara nº 30, de 2011 ¿ com a presença do Deputado Aldo Rebelo, relator do projeto na Câmara dos Deputados."
+    },
+    {
+      "code": "101959",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/101959.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=1994577",
+      "pdf_date": "2011-05-12",
+      "pdf_sha256": "beeb8b261dc7fa7bb9558052f1906aefec7812111aa963e0478a4f805380e6c2",
+      "api_sha256": "f5ffbf32c1c43d390fca6eeeb05acc705a03b076c69302a0bf781595458dbbad",
+      "api_ementa": "Requer a realização de audiência pública, no âmbito deste colegiado, com objetivo de apresentar a pesquisa ¿A implementação do Plano Nacional de Educação em Direitos Humanos nas diretrizes do Ensino Fundamental nos municípios do Brasil¿, realizada pelo Gabinete de Assessoria Jurídica às Organizações Populares (GAJOP), organização não-governamental com status Consultivo Especial perante o Conselho Econômico e Social da ONU."
+    },
+    {
+      "code": "102159",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102159.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=1979275",
+      "pdf_date": "2011-04-06",
+      "pdf_sha256": "400ee2b0bf4b0a406b2ab8b4b962739395f663a398f45f285aab36cf1d175294",
+      "api_sha256": "e24e030ad04786000a17a87fc0d33f3e470be25d4415db5454fea9d3615eb0eb",
+      "api_ementa": "Nos termos do art. 93 do Regimento Interno do Senado Federal, requeiro a realização de audiência pública na Comissão de Ciência, Tecnologia, Inovação, Comunicação e Informática - CCT, para tratar de assunto de interesse público relevante, concernente à opção tecnológica para implantação do Trem de Alta Velocidade - TAV, entre as cidades de Campinas ¿ SP e Rio de Janeiro ¿ RJ. Para tanto, solicito que sejam convidadas as seguintes personalidades: Ministro de Estado dos Transportes; Presidente da Agência Nacional de Transportes Terrestres; um representante do Ministério Público Federal; e um representante do Tribunal de Contas da União."
+    },
+    {
+      "code": "102163",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102163.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=4372335",
+      "pdf_date": "2011-09-12",
+      "pdf_sha256": "48438ce4e5494c961ab0af33452ddb385d7f4ffb6501773de387d67b6e5593ed",
+      "api_sha256": "ec16b8903087b803d3c267278edceb09af6ea4f2b49727fe10b30a61a77e00f4",
+      "api_ementa": "Requeiro, nos termos do art 113 do Regimento Interno do Senado Federal, seja realizada reunião deliberativa da Comissão de Ciência, Tecnologia, Inovação, Comunicação e Informática ¿ CCT, em conjunto com a Comissão de Direitos Humanos e Legislação Participativa ¿ CDH, com o objetivo de discutir e votar o PLC n.º 41, de 2010, que versa  sobre a Lei Geral de Acesso à Informação."
+    },
+    {
+      "code": "102188",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102188.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=1979072",
+      "pdf_date": "2011-06-29",
+      "pdf_sha256": "396b98a2582cc92da95bfb14ab0bb90c269ee0cae9c3fc26996f7aaea9f18f91",
+      "api_sha256": "29f40df1fef711f8fec02a82fa69110e6759e84354f7a4a5e3b0f282b93b1cef",
+      "api_ementa": "Requeiro, nos termos do art. 90, V, c/c art. 93, II, do Regimento Interno do Senado Federal, a realização de audiência pública na Comissão de Ciência, Tecnologia, Inovação, Comunicação e Informática ¿ CCT, no sentido de que sejam ouvidos os representantes do Ministério das Comunicações (MC) e da Agência Nacional de Telecomunicações (Anatel), com o propósito de discutir sobre a possível licitação da Faixa de 450 MHz pela Anatel, com vistas a oferecer telefonia rural e Internet às regiões agrícolas do País."
+    },
+    {
+      "code": "102200",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102200.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=4786366",
+      "pdf_date": "2011-09-12",
+      "pdf_sha256": "1fca31afcb9876ea1acc7c714ab5ba5dafef58c0e163e03b79749b1f016bc720",
+      "api_sha256": "1da11b4038e1942a96e00ecfc2a2b974368ec337309be0c8642105be4f72bd67",
+      "api_ementa": "Em aditamento ao Requerimento nº 17¿CCT, de 2011, requeiro seja possível, caso conveniente e oportuno para o melhor andamento da Jornada pela Inovação e a critério do Presidente desta Comissão, redefinir a lista de convidados para as audiências públicas previstas."
+    },
+    {
+      "code": "102203",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102203.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=1979029",
+      "pdf_date": "2011-07-13",
+      "pdf_sha256": "000f1a0b45e301aa7c612e5aa963745762e0ef632a0299ae2d222e1e5cfdc551",
+      "api_sha256": "94b73b71bc6b274e9b7f3e5c0be2c5eab3ad679bd9ca52da4c9c4660c605eb54",
+      "api_ementa": "Requeremos, nos termos do disposto no art. 40, do Regimento Interno do Senado Federal, autorização para a participação do Presidente da Comissão de Ciência, Tecnologia, Inovação, Comunicação e Informática, Senador Eduardo Braga, e do Senador Walter Pinheiro, membro titular da CCT, na abertura da 19ª edição da ABTA 2011 ¿ Feira e Congresso que se realizará no dia 09 de agosto do corrente ano, em São Paulo ¿ SP. Requeremos, ainda, que a Comissão, seja assessorada por um Consultor Legislativo do Senado Federal, que possa auxiliar na preparação de relatórios, estudos e outras tarefas correlat5as, assim como, de servidores da Secretaria da Comissão de Ciência, Tecnologia, Inovação, Comunicação e Informática para prestar assistência a esta Presidência."
+    },
+    {
+      "code": "102216",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102216.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=1974758",
+      "pdf_date": "2011-05-24",
+      "pdf_sha256": "28d733a531f0da6afb09b62e4fd1c263651db7ba1875daab05d810fe88fe4f2e",
+      "api_sha256": "45efe4ca9bd4d7ee2d6adc402c1898f903a8b83c5091aa9870efdaffa984aa5f",
+      "api_ementa": "Requeiro, nos termos do art. 90, inciso II, combinado com o art.93, inciso II, do Regimento Interno do Senado Federal, a realização de Audiência Pública destinada a debater, no âmbito da Comissão de Educação, Cultura e Esporte, a criação, desenvolvimento e atuação do ECAD, assim como as recentes denúncias envolvendo o órgão e as perspectivas de fiscalização do mesmo com base no Plano Nacional de Cultura, com a presença dos seguintes convidados: Deputado Estadual (licenciado) Bruno Covas ¿ PSDB/SP, Presidente da CPI do ECAD na ALESP; Deputado Estadual Ed Thomas ¿ PSB/SP, Relator da CPI do ECAD na ALESP; Representante do Ministério da Cultura;Professor Alexandre Negreiros ¿ UFRJ; Representante do ECAD.\n\n"
+    },
+    {
+      "code": "102219",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102219.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=3704581",
+      "pdf_date": "2011-09-12",
+      "pdf_sha256": "4d3708c79f33c0cb238473bbaadbb865305f91e5fc95b22593940b81f3c2f252",
+      "api_sha256": "5b85979dfc3d1be9634e88f39d4f57e54fb74d0df8154dd42dda675e4b63f10a",
+      "api_ementa": "Requer, com fundamento nos artigos 90, inciso II e 113 do Regimento Interno do Senado Federal, seja realizada audiência pública conjunta pelas Comissões de Ciência, Tecnologia, Inovação, Comunicação e Informática (CCT); Agricultura e Reforma Agrária (CRA); e Meio Ambiente, Defesa do Consumidor e Fiscalização e Controle (CMA), para debater o aperfeiçoamento da reforma do Código Florestal (Lei nº 4771, de 1965), atualmente em curso no Senado Federal ¿ por meio do Projeto de Lei da Câmara nº 30, de 2011 ¿ com a presença do Deputado Aldo Rebelo, relator do projeto na Câmara dos Deputados"
+    },
+    {
+      "code": "102225",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102225.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=4208390",
+      "pdf_date": "2011-09-12",
+      "pdf_sha256": "bfab3e9c95dfc6fcbcd03ad123e3781ce60e8130bb59b10e1768c74de115246b",
+      "api_sha256": "93a05974f01067e697c8a77fff07a675dbb6b51f0771b01bfcd9f174d8e3c8a0",
+      "api_ementa": "Requer, com fundamento nos artigos 90, inciso II e 113 do Regimento Interno do Senado Federal, seja realizada audiência pública conjunta pelas Comissões de Ciência, Tecnologia, Inovação, Comunicação e Informática (CCT); Agricultura e Reforma Agrária (CRA); e Meio Ambiente, Defesa do Consumidor e Fiscalização e Controle (CMA), para debater o aperfeiçoamento da reforma do Código Florestal (Lei nº 4771, de 1965), atualmente em curso no Senado Federal ¿ por meio do Projeto de Lei da Câmara nº 30, de 2011 ¿ com a presença de ex-ministros da Agricultura e de ex-ministros do Meio Ambiente"
+    },
+    {
+      "code": "102235",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102235.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=4157151",
+      "pdf_date": "2011-09-12",
+      "pdf_sha256": "eca341c1462284c1bd5cad61c047eb97372cbf164c84a47dbc6e0cae287394e4",
+      "api_sha256": "342182100d4f10eb65fec79fdcb7fc4981b6f3af888283564d3f3acd3ef8ae9f",
+      "api_ementa": "Nos termos do inciso II do § 2º do art. 58 da Constituição Federal, combinado com o inciso II do art. 90 do Regimento Interno do Senado Federal, requeiro a realização de audiência pública, no âmbito desta Comissão de Ciência e Tecnologia, Inovação, Comunicação e Informática (CCT), para debater o ¿Plano Nacional de Banda Larga¿, tendo como convidado o Exmo Sr Ministro de Estado das Comunicações, Paulo Bernardo.\nAutoria: Senador Eduardo Braga\n"
+    },
+    {
+      "code": "102248",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102248.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=1978765",
+      "pdf_date": "2011-09-13",
+      "pdf_sha256": "379a94ab8777d6ee53838a7b83a2235bef3babe9370adf6e4ac46555f8778e47",
+      "api_sha256": "ef129bc189cee8d4e59d1341b16793a7e91fb907630d3b0e09efb69c92731c69",
+      "api_ementa": "Requeiro, nos termos dos arts. 90, inciso V e 93, inciso II, ambos do Regulamento Interno do Senado Federal, a realização de Audiência Pública para debater a Resolução nº. 02/2011 do Conselho Curador da Empresa Brasil de Comunicação ¿ EBC, que determinou a suspensão de programas religiosos nos veículos públicos que a integram.\nOito emissoras compõem a Rede Pública de Rádio da EBC, a saber: Rádio Nacional AM Brasília; Rádio Nacional FM Brasília; Rádio Nacional AM Rio de Janeiro; Rádio MEC AM Rio de Janeiro; Radio MEC AM Brasília; Rádio MEC FM Rio de Janeiro; Rádio Nacional do Alto Solimões; Rádio Nacional da Amazônia; e a Radioagência Nacional\nAs emissoras de TV ligadas à EBC são: a TV Brasil; a NBR, do Poder Executivo; e a TV Brasil - Canal Integración, canal de integração entre os países sul-americanos (em espanhol), que mantém parceria com as principais emissoras de TV do continente.\nEsse expressivo elenco de veículos de radiodifusão sonora e de sons e imagens permite avaliar a extensão da vedação imposta pela Resolução EBC 02/2011, bem como denota a conveniência desta Casa exercitar a sua competência constitucional fixada no art. 58, § 2º, incisos II e V, para realizar a requerida audiência pública e ouvir pessoas e instituições por ela alcançadas, como disciplina o art. 94, § 1º, do Regulamento Interno do Senado Federal.\nPor essas razões, impõe-se ouvir os vários segmentos alcançados pela citada decisão, propósito para o qual solicito a expedição de convite às seguintes personalidades:\nTereza Cruvinel, diretora-presidente da EBC; Setor Comercial SUL, SCS, Quadra 08, Bloco B-60, 1º Piso Inferior, Edifício Venâncio 2000, Asa Sul, Brasília/DF;\nIma Célia Guimarães Vieira, presidente do Conselho curador da EBC, (91) 3229-9266/9989-6061, ima@museu-goeldi.br, imavieira@oi.com.br.\n"
+    },
+    {
+      "code": "102382",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102382.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=2018702",
+      "pdf_date": "2011-06-22",
+      "pdf_sha256": "c02ba136c3b586bd437c528fce070ab635ed347892f004f457d9c8def5573ecc",
+      "api_sha256": "c482c7dfdda8e12f66075dab0f019c8a2146b73609bca2d3b9a8935f5846b224",
+      "api_ementa": "Requeiro a esta Comissão a realização de Audiência Pública com o objetivo de dar conhecimento, maior divulgação e apoio ao Projeto ¿Brasil Nunca Mais Digital¿ que teve início com a entrega pelo Conselho Mundial de Igrejas e o Center for Research Libraries da Suiça, às autoridades brasileiras, dos documentos e microfilmes ainda mantidos no exterior que originaram o Brasil: Nunca Mais, um marco na defesa dos direitos humanos durante a ditadura militar. Requeiro por fim sejam convidados para participar da referida audiência os senhores: - Marlon Alberto Weichert ¿ Procurador Regional da República ¿ São Paulo; - Marcelo Zelic ¿ Armazém Memória; - Walter Altmann - Representante do Conselho Mundial de Igrejas; - Anivaldo Padilha - Do Conselho Mundial de Igrejas e torturado político."
+    },
+    {
+      "code": "102401",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102401.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=3294520",
+      "pdf_date": "2011-08-31",
+      "pdf_sha256": "a97e71186d1893dc73d3c76286d511171513b8da425c0f10a08d9f11c7905909",
+      "api_sha256": "791167d40556db610ac00252c79d1fcfe953aee22fb5f558c32f328b04a77b9d",
+      "api_ementa": "Requeiro nos termos do art. 93, I, do Regimento Interno do Senado Federal, a realização de Audiência Pública conjunta com a Comissão de Meio Ambiente, Defesa do Consumidor e Fiscalização e Controle ¿ CMA; Comissão de Ciência, Tecnologia, Inovação, Comunicação e Informática ¿ CCT; e Comissão de Agricultura e Reforma Agrária ¿ CRA, no dia 13 de setembro de 2011, com a finalidade de ouvir juristas acerca das inovações trazidas no projeto de reforma do Código Florestal (PLC 30 DE 2011) e sua repercussão e adequação ao sistema de proteção ambiental erigido na Constituição Federal."
+    },
+    {
+      "code": "102553",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102553.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=3958206",
+      "pdf_date": "2011-09-28",
+      "pdf_sha256": "a5b0b307191d85e013547820de6d29099b7e62b928fd40e7272699ab6daabfd7",
+      "api_sha256": "6739563404fe88175fdada3fdf9a0aaadde15951118e78ea7f322b086979b8cd",
+      "api_ementa": "Requeiro nos termos regimentais, pelo presente, e de acordo com o art. 93, inciso II do RISF, a realização de Audiência Pública pela Comissão de Ciência, Tecnologia, Inovação, Comunicação e Informática ¿ CCT para instrução do PLC 30/2011 (Código Florestal) e debates em torno do tema ¿INSTRUMENTOS ECONÔMICOS E SERVIÇOS AMBIENTAIS ¿ MODELOS, TECNOLOGIAS E SOLUÇÕES¿, e em havendo deliberação favorável, que sejam convidados os seguintes especialistas, sem prejuízo de outros que possam enriquecer o debate:\n\n- WERNER GRAU NETO ¿ Advogado e Sócio do Escritório Pinheiro Neto Advogados\nÁrea de Atuação: Direito Ambiental, consultivo e contencioso; Mudança do Clima e Sustentabilidade\nFinalidade: Opinião sobre os modelos jurídicos de mecanismos de serviços ambientais em voga no Brasil e no exterior, e as propostas em debate no Congresso Nacional\n\n- GERD SPAROVEK ¿ Professor da USP, atuando na Escola Superior de Agricultura Luiz de Queiroz (ESALQ)\nÁrea de Atuação: Conservação do Solo e Planejamento do uso da Terra\nFinalidade: apresentação de sugestões de modelos de ferramentas e instrumentos econômicos para aplicabilidade em serviços ambientais ¿ fontes de receita e custeio\n\n- IVAN ANDRÉ ALVAREZ ¿ Pesquisador EMBRAPA\nÁrea de Atuação: Recuperação de áreas degradadas, restauração ecológica, geoprocessamento, manejo florestal, arborização urbana, floricultura com espécies nativas, conservação da natureza e paisagismo.\nFinalidade: apresentar modelos e tecnologias de prestação de serviços ambientais, com sustentabilidade econômica, para preservação de áreas protegidas ou recuperação de áreas degradadas\n"
+    },
+    {
+      "code": "102934",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102934.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=4524417",
+      "pdf_date": "2011-10-20",
+      "pdf_sha256": "dbde23a194b270a96da622b07f6669bb121d5310232cfc684f18adf38671c9dd",
+      "api_sha256": "73381dc88e2de44c3a4fb9a4d6a398be440660085e0e8525a6e5bf5cb38f8c9e",
+      "api_ementa": "Requerem, nos termos regimentais, a realização de Audiência Pública Conjunta das Comissões de Agricultura e Reforma Agrária - CRA; Meio Ambiente, Defesa do Consumidor e Fiscalização e Controle ¿ CMA e Ciência, Tecnologia, Inovação, Comunicação e Informática - CCT, com a finalidade de debater o projeto de Lei da Câmara nº 30, 2011, que trata da reforma do Código Florestal, com a presença dos Presidentes ou representantes das Assembléias Legislativas Estaduais, às quais compões a UNALE ¿ União Nacional dos Legisladores e Legislativos Estaduais."
+    },
+    {
+      "code": "122212",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/122212.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=3272680",
+      "pdf_date": "2015-07-08",
+      "pdf_sha256": "abb8f56a75bd13d9d986313ee6e0cb2dde2be0b947514ee80178d63f1b0ee8e7",
+      "api_sha256": "704d35700e8baec2af75c83eee7d6326e29b426d6af3a0dfcf6a78278efc93a0",
+      "api_ementa": "Requeiro o aditamento, de acordo com o disposto no art. 93, II, do Regimento Interno do Senado Federal, ao Requerimento nº 42, de 2015-CCT, que trata de audiência pública destinada a debater o tema “extinção da obrigatoriedade da aposição do selo identificador da origem transgênica de bens de consumo em seus rótulos frontais, de modo destacado”, para que seja estendido o convite de participação ao seguinte convidado:\n¿\tMaurício Guetta, Advogado do Instituto Socioambiental-ISA.\n"
+    },
+    {
+      "code": "101911",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/101911.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=1994854",
+      "pdf_date": "2011-05-19",
+      "pdf_sha256": "cbcc82288e911702eab52b49dbbda0edd6f792cd1001f501600818e0268114b0",
+      "api_sha256": "b504f02ccb9f623f3541d67c49ff414791b898b152a29fa138b6690f0aeb9dc4",
+      "api_ementa": "Requer que seja convidado o Excelentíssimo Senhor Ministro de Estado da Defesa, Nelson Jobim, a fim de prestar informações e esclarecimentos pertinentes às diretrizes e objetivos estratégicos quanto ao direito à memória e à verdade. Que trata do projeto de lei que ¿Cria a Comissão Nacional da Verdade, no âmbito da Presidência da República¿."
+    },
+    {
+      "code": "102154",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102154.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=4149864",
+      "pdf_date": "2011-09-12",
+      "pdf_sha256": "ecec599d650b9507f21b9beddf11bb77190284c02a4cb50f8bc52f9c21bdb317",
+      "api_sha256": "5dc3722e53ad3e870a7e69396f10a7b52b363df5348907ae054aa71841e7c3a9",
+      "api_ementa": "Nos termos regimentais, requeiro aditamento ao Requerimento nº 08/2011-CCT a fim de convidar um representante da Associação Nacional de Jornais ¿ ANJ e um representante da Associação Brasileira de Emissoras de Rádio e Televisão - ABERT para participar da audiência pública com o objetivo de debater o conteúdo e a forma de encaminhamento da proposta de um Marco Civil da Internet em elaboração pelo Governo Federal."
+    },
+    {
+      "code": "102162",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102162.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=3943181",
+      "pdf_date": "2011-09-12",
+      "pdf_sha256": "e4856b8151356eee6d398d39b7549b27a19246672df0a67f4e822fcc60d99dc0",
+      "api_sha256": "f6dbdd10c1d230b124d31359969d3cdc144c2fdfdd9e089405ae8ecf1472bb89",
+      "api_ementa": "Requeremos, nos termos do Regimento Interno do Senado Federal, realização de audiência pública conjunta a ser realizada pelas Comissões de: Ciência, Tecnologia, Inovação, Comunicação e Informática; Constituição, Justiça e Cidadania; Assuntos Econômicos; Educação, Cultura e Esporte e Meio Ambiente, Defesa do Consumidor e Fiscalização e Controle para debater o Projeto de Lei da Câmara n. 116, de 2010 que ¿Dispõe sobre a comunicação audiovisual de acesso condicionado; altera a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, e as Leis nºs 11.437, de 28 de dezembro de 2006, 5.070, de 7 de julho de 1966, 8.977, de 6 de janeiro de 1995, e 9.472, de 16 de julho de 1997; e dá outras providências¿, tendo como convidados o Presidente da Agência Nacional do Cinema ¿ ANCINE, o Presidente da Agência Nacional de Telecomunicações ¿ ANATEL, o Presidente da Associação Brasileira de Emissoras de Rádio e Televisão ¿ ABERT, o Presidente da Associação Brasileira de Radiodifusores ¿ ABRA, o Presidente da Associação Brasileira de TV Por Assinatura ¿ ABTA, o Presidente da Associação Brasileira de Telecomunicações ¿ TELEBRASIL, o Presidente da Associação Brasileira das Produtoras Independentes de Televisão ¿ ABPI-TV e o Presidente da Associação Brasileira de Programadores de Televisão por Assinatura ¿ ABPTA.\nAutoria: Senador Eduardo Braga\n"
+    },
+    {
+      "code": "102164",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102164.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=4700115",
+      "pdf_date": "2011-09-12",
+      "pdf_sha256": "70819b14f6459f46af920c04014c3efff5063053df17e0492a9b0887f6e2b2f5",
+      "api_sha256": "4ae232b94e3ef25cc65d2268bab0cc9aaa67be8921976c1403cdb255d0d03c73",
+      "api_ementa": "Requeiro, com amparo no art. 58, § 2º, II, da Constituição Federal, e nos arts. 90, II, e 93, II, do Regimento Interno do Senado Federal, a realização de um conjunto de audiências públicas, no âmbito desta Comissão de Ciência, Tecnologia, Inovação, Comunicação e Informática, reunidas sob a denominação Jornada pela Inovação, para debater diversos temas, com os seguintes convidados: 1ª Audiência Pública: DESAFIOS DA INOVAÇÃO NO BRASIL. Miriam Belchior - Ministra de Estado do Planejamento, Orçamento e Gestão.Glauco Arbix ¿ Presidente da Financiadora de Estudos e Projetos (FINEP). Robson Andrade ¿ Presidente da Confederação Nacional da Indústria (CNI). 2ª Audiência Pública: INOVAÇÃO E TECNOLOGIAS DA INFORMAÇÃO E COMUNICAÇÃO (TIC). Paulo Bernardo ¿ Ministro de Estado das Comunicações. Fernanda Negri ¿ Pesquisadora do Ministério da Ciência e Tecnologia (MCT). Adilson Primo ¿ Presidente da Siemens do Brasil e integrante da CNI/MEI.Helena Lastres ¿ Professora da Universidade Federal do Rio de Janeiro (UFRJ). 3ª Audiência Pública: INOVAÇÃO, BIOTECNOLOGIA, FÁRMACOS E COMPLEXO INDUSTRIAL DA SAÚDE. Alexandre Padilha ¿ Ministro de Estado da Saúde.Representante da Finep.Representante da CNI/MEI.Sérgio Mascarenhas ¿ Professor da USP ¿ São Carlos.4ª Audiência Pública: INOVAÇÃO E CADEIA PRODUTIVA DO PETRÓLEO E GÁS José Sérgio Gabrieli ¿ Presidente da Petrobrás. João Alberto De Negri ¿ Diretor de Inovação da Finep.Representante da CNI/MEI. José Ruas ¿ Professor da Universidade Estadual de Campinas (UNICAMP).5ª Audiência Pública: INOVAÇÃO E ENERGIA (FOCO NAS ENERGIAS RENOVÁVEIS).Edison Lobão ¿ Ministro de Estado das Minas e Energia (MME). Representante da Finep.Representante da CNI/ MEI. Representante da Academia. 6ª Audiência Pública: INOVAÇÃO E CADEIA PRODUTIVA AEROESPACIAL Marco Antonio Raupp ¿ Presidente da Agência Espacial Brasileira (AEB). Frederico Curado ¿ Presidente da Embraer e integrante da CNI/MEI. Representante da Academia. 7ª Audiência Pública: INOVAÇÃO, MICRO E PEQUENAS EMPRESAS E INCLUSÃO SOCIAL Representante da Finep.Representante das Micro e Pequenas Empresas. Representante do Serviço de Apoio às Micro e Pequenas Empresas (SEBRAE). Guilherme Ary Plonski ¿ Presidente Associação Nacional de Entidades Promotoras de Empreendimentos Inovadores (ANPROTEC). 8ª Audiência Pública: INOVAÇÃO APLICADA À COPA E ÀS OLIMPÍADAS. Henrique Meirelles ¿ Presidente da Autoridade Pública Olímpica (APO).Representante da Finep. Ricardo Pelegrini ¿ Presidente da IBM Brasil e integrante da CNI/MEI.Representante da Academia."
+    },
+    {
+      "code": "102178",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102178.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=4013884",
+      "pdf_date": "2011-09-12",
+      "pdf_sha256": "df7f7beb7f47c89a161eb7e7eda4ae02e3f1256fd9e0aed222be9ede22715f6c",
+      "api_sha256": "d9b55aea5c950d7d09ab11ed0ca6d6ef692ae80773d3ef4dbee770b0d7e0bcae",
+      "api_ementa": "Requeiro, nos termos do artigo 93, inciso II, do Regimento Interno do Senado Federal, seja realizada Audiência Pública perante esta Comissão com a finalidade de analisar e discutir as possíveis alterações no Código Florestal Brasileiro (Lei 4.771, de 15 de setembro de 1965) à luz da Ciência. À oportunidade, apresento sugestão no sentido de que sejam convidados para participarem da presente audiência pública:\t Aloizio Mercadante ¿ Ministro de Estado da Ciência e Tecnologia; Izabella Teixeira ¿ Ministra de Estado do Meio Ambiente; \tWagner Rossi ¿ Ministro de Estado da Agricultura, Pecuária e Abastecimento;Marco Antonio Raupp ¿ Presidente da Sociedade Brasileira para o Progresso da Ciência ¿ SBPC; Jacob Palis Junior ¿ Presidente da Academia Brasileira de Ciências ¿ ABC;"
+    },
+    {
+      "code": "102223",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102223.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=4484384",
+      "pdf_date": "2011-09-12",
+      "pdf_sha256": "a8a27ca0180edf0b5f12e770c9ccd624a3005a554a2f444bfb5c51deb586d572",
+      "api_sha256": "51ab54a6c1c1b501f072b1649c546709831cadc1a5f955c0c8a492f0c4a9966d",
+      "api_ementa": "Requer, nos termos do artigo 93, inciso II, do Regimento Interno do Senado Federal, a realização de Audiência Pública Conjunta da Comissão de Ciência, Tecnologia, Inovação, Comunicação e Informática ¿ CCT com as Comissões de Agricultura e Reforma Agrária ¿ CRA e de Meio Ambiente, Defesa do Consumidor e Fiscalização e Controle ¿ CMA, para debater os aspectos do Projeto de Lei da Câmara nº 30, de 2011 (Novo Código Florestal), com os seguintes convidados: Sra. Helena Nader ¿ Presidente da Sociedade Brasileira para o Progresso da Ciência (SBPC); Sr. Jacob Palis Júnior ¿ Presidente da Academia Brasileira de Ciências (ABC); Sr. Renato Sebastião Valverde ¿ Engenheiro Florestal e Professor da Universidade Federal de Viçosa (UFV-MG); e Sr. Luís Carlos Silva de Moraes ¿ Procurador da Fazenda Nacional e autor do livro ¿Código Florestal Comentado"
+    },
+    {
+      "code": "102233",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102233.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=1974674",
+      "pdf_date": "2011-06-21",
+      "pdf_sha256": "10fbedb22ce457e0034e09d9acf06efbaa140a11788244da6d7f6c1b60990a85",
+      "api_sha256": "ffa5408da157e81cbc5d0dc7be5eb6e039767865d094c9ac2a759a7ab9b6ae9a",
+      "api_ementa": "Com fundamento no disposto no disposto no art. 58, § 2º, incisos II e V, da Constituição Federal, combinado com o art. 90, inciso II e V, do Regimento Interno desta Casa, requeiro a realização de Audiência Pública por esta Comissão de Educação, Cultura e Esporte ¿ CE, com o objetivo de discutir acerca do programa governamental de alfabetização e educação de jovens e adultos do Nordeste, em especial do Estado de Sergipe. Para a ocasião, sugiro a presença de: Secretaria de Educação Continuada, Alfabetização, Diversidade e Inclusão do Ministério da Educação ¿ Secretária Claudia Pereira Dutra; Secretaria de Educação do Estado de Sergipe ¿ Representante; Confederação Nacional de Municípios (CNM) ¿ Representante; Conselho Estadual do Fundeb ¿ Presidente Prof. Anderson Fontes Faria; Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP) ¿ Presidente Malvina Tania Tuttman."
+    },
+    {
+      "code": "102239",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102239.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=4324333",
+      "pdf_date": "2011-09-12",
+      "pdf_sha256": "2aea25d92bf3b93352871cc26ba025f71c09835e8e3819e0b329bb91d9ea807f",
+      "api_sha256": "15ab63de3968b109031eebbeafeeea48f6182a96b1d38f5c36d6f544a7d43147",
+      "api_ementa": "Requeremos, nos termos do art. 90, inciso XIII, do Regimento Interno do Senado Federal, que seja realizada audiência pública, em conjunto, pelas Comissões de Ciência e Tecnologia, Inovação, Comunicação e Informática (CCT), Comissão de Meio Ambiente, Defesa do Consumidor e Fiscalização e Controle (CMA), e de Agricultura e Reforma Agrária (CRA), para debater o tema: ¿Instrumentos Econômicos para o Código Florestal¿, atualmente em curso no Senado Federal por meio do Projeto de Lei da Câmara (PLC) nº 30, de 2011, com a participação dos seguintes convidados: José Carlos Carvalho, ex-ministro do Meio-Ambiente; Virgílio Viana, Superintendente-Geral da Fundação Amazonas Sustentável; José Luciano Penedo, Presidente da Bracelpa - Associação Brasileira de Celulose e Papel, e Carlos Young, Professor de Economia da Universidade Federal do Rio de Janeiro."
+    },
+    {
+      "code": "102252",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102252.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=4554642",
+      "pdf_date": "2011-09-13",
+      "pdf_sha256": "df9c692fb904e40f34b8406607b8a6b9bfca0e09e61b6464f20b3ab2698a703a",
+      "api_sha256": "0f71e5606eb2557ba0312393f2e0bfa07cfe7e5d2d7d6b8217fdb952d0e4cddd",
+      "api_ementa": "Requeremos, nos termos regimentais, a realização de Audiência Pública Conjunta entre as Comissões de Meio Ambiente, Defesa do Consumidor e Fiscalização e Controle (CMA); Constituição, Justiça e Cidadania (CCJ); Ciência, Tecnologia, Inovação, Comunicação e Informática (CCT) e Agricultura e Reforma Agrária (CRA), para debater a reforma do Código Florestal (Lei nº 4.771, de 1965), atualmente em curso no Senado Federal por meio do Projeto de Lei da Câmara (PLC) nº 30, de 2011. \nEstão convidados ao debate, entre outros juristas:\n- José Antonio Dias Toffoli ¿ Ministro do STF;\n- Paulo Affonso Leme Machado ¿ Pós-Doutor pela Universidade de Limoges (França);\n- Herman Benjamin ¿ Ministro do STJ;\n- Cristina Godoy de Araújo Freitas ¿ Promotora de Justiça do Ministério Público de São Paulo; \n- Nelson Jobim ¿ ex-Ministro do Supremo Tribunal Federal;\n- Célio Borja ¿ Ex-Ministro da Justiça;\n- Paulo Roberto Pereira de Souza ¿ Professor da Universidade Estadual de Maringá;\n- Mário José Gisi ¿ Subprocurador Geral da República;\n- Gilberto Piselo do Nascimento ¿ Presidente Nacional da Comissão de Direito Ambiental na OAB; e\n- Ana Maria de Oliveira Nusdeo ¿ Professora de Direito Ambiental da Universidade de São Paulo.\n"
+    },
+    {
+      "code": "102910",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102910.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=3456107",
+      "pdf_date": "2011-10-19",
+      "pdf_sha256": "e52fd6f37bbe960a1f37573e2359c25cbbb1a5b04dbd400f1086359345fefd5b",
+      "api_sha256": "969102e8b57f2b087f938d018ec6ae93f5db1740d16df325dea043665967d22e",
+      "api_ementa": "Em aditamento aos Requerimentos 17 e 29/2011, desta Comissão, requeiro nos termos regimentais estabelecidos a partir dos arts. 90, inciso II, e 93, inciso II, todos do RISF, a realização de Audiência Pública pela Comissão de Ciência, Tecnologia, Inovação, Comunicação e Informática ¿ CCT para debates em torno do tema ¿CIÊNCIA NA EDUCAÇÃO DE BASE: RECURSO HUMANO PARA O FUTURO DO PAÍS¿, como parte das Comemorações do ¿DIA MUNDIAL DA CIÊNCIA¿ e uma iniciativa conjunta entre o Senado Federal e a UNESCO, conforme Memorando de Entendimentos no 001/2009, assinado em 29 de setembro de 2009. A Audiência Pública será realizada em complemento à 1ª JORNADA PELA INOVAÇÃO, já em curso perante esta Comissão, e em havendo deliberação favorável, indico que sejam convidadas as seguintes pessoas, sem prejuízo de outras que possam enriquecer o debate: VICENTE DEFOURNY ¿ Embaixador da UNESCO no Brasil; MARIA NILENE BADECA DA COSTA ¿ Presidente do Conselho Nacional de Secretários de Educação ¿ CONSED; MIGUEL NICOLELIS ¿ Cientista e Diretor Científico do Instituto Internacional de NeuroCiências de Natal Edmond e Lily Safra ¿ IINN-ELS."
+    },
+    {
+      "code": "102913",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/102913.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=4288521",
+      "pdf_date": "2011-10-19",
+      "pdf_sha256": "39d14097e3ac61c29891a186d65beefb0f641bf8b60c18360e30e5b835906a66",
+      "api_sha256": "ca02d1ecc6de8beb73eca7d3fbdf3e4e7cc90256ba6bf4b0357f99ee68b1a4a5",
+      "api_ementa": "Requeiro nos termos regimentais, a realização de Audiência Pública pela Comissão de Ciência, Tecnologia, Inovação, Comunicação e Informática ¿ CCT para a realização de debates em torno do tema ¿POLÍTICA NACIONAL DE DESENVOLVIMENTO DAS ATIVIDADES ESPACIAIS (PNDAE) ¿ NOVAS LICITAÇÕES DE POSIÇÕES ORBITAIS ¿ PROGRAMA DO SATÉLITE GEOESTACIONÁRIO BRASILEIRO ¿ ATENDIMENTO ÀS REGIÕES NORTE E NORDESTE¿, e em havendo deliberação favorável, que sejam convidados os seguintes especialistas e representantes, sem prejuízo de outros que possam enriquecer o debate:\n\n- MARCO ANTONIO RAUPP ¿ Presidente da Agência Espacial Brasileira (AEB)\n\n- RONALDO MOTA ¿ Secretário de Desenvolvimento Tecnológico e Inovação do Ministério da Ciência, Tecnologia e Inovação (MCTI) - EMBAIXADOR RONALDO SARDENBERG ¿ Presidente da Agência Nacional de Telecomunicações (ANATEL)"
+    },
+    {
+      "code": "117671",
+      "source_text_url": "https://legis.senado.leg.br/dadosabertos/materia/textos/117671.json",
+      "pdf_url": "http://legis.senado.leg.br/sdleg-getter/documento?dm=4674028",
+      "pdf_date": "2004-11-25",
+      "pdf_sha256": "cae01751d88eac6db1d95f0783319c4c2b9ee6a9748a8cfe5198d3a3c5bfbfa9",
+      "api_sha256": "90274c736e9164b3973c2d26e19e459f64967efcb7f4465dfb20a478200450b1",
+      "api_ementa": "REQUER, NOS TERMOS DO ART. 93 DO REGIMENTO INTERNO, SEJA REALIZADA AUDIÊNCIA PÚBLICA, PERANTE A COMISSÃO DE RELAÇÕES EXTERIORES E DEFESA NACIONAL, TENDO COMO CONVIDADOS:\n¿ LUIZ FERNANDO FURLAN – MINISTRO DO DESENVOLVIMENTO, INDÚSTRIA E COMÉRCIO EXTERIOR;\n¿ RUBENS NAVES - PRESIDENTE DA ASSOCIAÇÃO BRASILEIRA DA INDÚSTRIA DE BRINQUEDOS – ABRINq;\n¿ RUY DE SALLES CUNHA - PRESIDENTE DA ASSOCIAÇÃO BRASILEIRA DA INDÚSTRIA ELÉTRICA E ELETRÔNICA – ABNEE;\n¿ MÁRIO VILALVA, EMBAIXADOR - CHEFE DO DEPTO. DE PROMOÇÃO COMERCIAL DO MINISTÉRIO DAS RELAÇÕES EXTERIORES;\n¿ SENHOR PAULO SKAF, PRESIDENTE DA FIESP\nPARA INFORMAREM E PRESTAREM ESCLARECIMENTOS SOBRE A ASSINATURA DO RECENTE ACORDO COMERCIAL ENTRE O BRASIL E A REPÚBLICA POPULAR DA CHINA ENVOLVENDO A IMPORTAÇÃO E EXPORTAÇÃO DE FRANGOS, BRINQUEDOS E UTILIDADES ELETRO-ELETRÔNICAS."
+    }
+  ]
+}

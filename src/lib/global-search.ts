@@ -120,7 +120,44 @@ export function mergeVotacaoTagsByCandidatoId(
   return out
 }
 
-function buildSearchTextBioOnly(c: Candidato): string {
+/**
+ * Colunas que o índice de busca lê de cada candidato. O loader do índice
+ * projeta exatamente isto: a lista completa de `candidatos_publico`, com a
+ * coorte do Senado, passava de 2 MB e não cabia no Data Cache do Next.
+ */
+export const GLOBAL_SEARCH_CANDIDATE_COLUMNS = [
+  "id",
+  "slug",
+  "nome_urna",
+  "nome_completo",
+  "partido_sigla",
+  "partido_atual",
+  "cargo_atual",
+  "cargo_disputado",
+  "estado",
+  "foto_url",
+] as const
+
+export type GlobalSearchCandidateRow = Pick<Candidato, (typeof GLOBAL_SEARCH_CANDIDATE_COLUMNS)[number]>
+
+/**
+ * Rótulo da candidatura no subtítulo da busca, por cargo disputado. Para o
+ * Senado o cargo atual (ex.: "Deputado(a) Federal") fazia a pessoa parecer
+ * candidata ao cargo que já ocupa; o subtítulo passa a nomear a disputa e o
+ * cargo atual continua no `searchText`.
+ */
+const SEARCH_SUBTITLE_CANDIDACY_LABEL: Partial<Record<string, string>> = {
+  Senador: "Candidato(a) ao Senado",
+}
+
+function buildSearchSubtitleCargo(c: GlobalSearchCandidateRow): string | null {
+  const candidacy = c.cargo_disputado ? SEARCH_SUBTITLE_CANDIDACY_LABEL[c.cargo_disputado] : undefined
+  if (candidacy) return candidacy
+  if (c.cargo_atual) return sanitizePtBrText(c.cargo_atual)
+  return c.cargo_disputado ? formatCargoDisputadoPublicLabel(c.cargo_disputado) : null
+}
+
+function buildSearchTextBioOnly(c: GlobalSearchCandidateRow): string {
   const chunks: string[] = [
     c.nome_urna,
     c.nome_completo,
@@ -138,7 +175,7 @@ function buildSearchTextBioOnly(c: Candidato): string {
 }
 
 export function buildSearchTextForCandidato(
-  c: Candidato,
+  c: GlobalSearchCandidateRow,
   tags: { temas: string[]; titulos: string[] }
 ): string {
   const bio = buildSearchTextBioOnly(c)
@@ -148,18 +185,14 @@ export function buildSearchTextForCandidato(
 }
 
 export function buildGlobalSearchIndexItems(
-  candidatos: Candidato[],
+  candidatos: readonly GlobalSearchCandidateRow[],
   tagsById: Map<string, { temas: string[]; titulos: string[] }>
 ): GlobalSearchIndexItem[] {
   return candidatos.map((c) => {
     const tags = tagsById.get(c.id) ?? { temas: [], titulos: [] }
     const subtitle = [
       formatPartyPublicLabel(c.partido_sigla) || null,
-      c.cargo_atual
-        ? sanitizePtBrText(c.cargo_atual)
-        : c.cargo_disputado
-          ? formatCargoDisputadoPublicLabel(c.cargo_disputado)
-          : null,
+      buildSearchSubtitleCargo(c),
       c.estado,
     ]
       .filter(Boolean)

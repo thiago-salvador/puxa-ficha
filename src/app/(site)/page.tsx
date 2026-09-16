@@ -28,6 +28,7 @@ import { DataSourceNotice } from "@/components/DataSourceNotice"
 import { PublicDataSourcesNote } from "@/components/PublicDataSourcesNote"
 import { JsonLd } from "@/components/JsonLd"
 import { getHomeHeroMetrics } from "@/lib/home-hero-metrics"
+import { buildCandidatoGridMaps } from "@/lib/candidato-grid-maps"
 import { formatCompact } from "@/lib/utils"
 
 export default async function Home() {
@@ -74,14 +75,8 @@ export default async function Home() {
   )
 
   const candidatos = resumosPresidencia.map((r) => r.candidato)
-  const processos: Record<string, number> = {}
-  const patrimonios: Record<string, number | null> = {}
-  const processSortCounts: Record<string, number | null> = {}
-  for (const r of resumosPresidencia) {
-    processos[r.candidato.slug] = r.processos
-    processSortCounts[r.candidato.slug] = r.processos_ordenacao ?? null
-    patrimonios[r.candidato.slug] = r.patrimonio
-  }
+  const { processos, patrimonios, processSortCounts, patrimoniosAtipicos } =
+    buildCandidatoGridMaps(resumosPresidencia)
 
   const { totalCandidatos, totalPatrimonio, totalProcessos } =
     getHomeHeroMetrics(
@@ -110,6 +105,31 @@ export default async function Home() {
     },
   ]
 
+  const fullIntro = (
+    <div className="max-w-3xl">
+      <p className="max-w-prose text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
+        O Puxa Ficha organiza fontes públicas consultadas, como TSE,
+        Câmara e Senado, para ajudar quem busca entender os candidatos à
+        Presidência e aos governos de todos os estados e do Distrito Federal
+        em 2026.
+      </p>
+      <p className="mt-3 max-w-prose text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
+        Aqui você encontra ficha pública, comparação lado a lado e uma
+        navegação mais rápida por nome, partido e estado. Se quiser atalhos
+        imediatos, você pode ir para{" "}
+        <Link href="/comparar" className="font-semibold text-foreground underline">
+          comparar
+        </Link>
+
+        {" "}ou abrir o mapa de{" "}
+        <Link href="/governadores" className="font-semibold text-foreground underline">
+          governadores
+        </Link>
+        .
+      </p>
+    </div>
+  )
+
   return (
     <div className="min-h-screen bg-background">
       <JsonLd data={schema} />
@@ -125,17 +145,17 @@ export default async function Home() {
         {/* Gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/50" />
 
-        <div className="relative mx-auto max-w-7xl px-5 pb-14 pt-28 sm:pb-20 sm:pt-32 md:px-12 lg:pb-24 lg:pt-40">
+        <div className="relative mx-auto max-w-7xl px-5 pb-8 pt-20 sm:pb-20 sm:pt-32 md:px-12 lg:pb-24 lg:pt-40">
           {/* Massive title */}
           <h1
-            className="hero-fade font-heading uppercase leading-[0.85] tracking-[-0.02em] text-white"
-            style={{ fontSize: "calc(min(31vw, 200px))", animationDelay: "0.1s" }}
+            className="hero-fade font-heading text-[clamp(60px,17vw,100px)] uppercase leading-[0.85] tracking-[-0.02em] text-white sm:text-[clamp(100px,31vw,200px)]"
+            style={{ animationDelay: "0.1s" }}
           >
             Puxa Ficha
           </h1>
 
           {/* Slash divider */}
-          <SlashDivider className="hero-fade my-6 lg:my-8" color="text-white" />
+          <SlashDivider className="hero-fade my-3 sm:my-6 lg:my-8" color="text-white" />
 
           {/* Label */}
           <p className="hero-fade text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.15em] text-white" style={{ animationDelay: "0.3s" }}>
@@ -143,7 +163,7 @@ export default async function Home() {
           </p>
 
           {/* Data bar */}
-          <div className="mt-6 flex flex-wrap gap-6 pb-4 sm:gap-12 lg:gap-20">
+          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 pb-2 sm:mt-6 sm:gap-12 sm:pb-4 lg:gap-20">
             {totalCandidatos !== null && (
               <div className="hero-fade" style={{ animationDelay: "0.4s" }}>
                 <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
@@ -178,54 +198,48 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 pt-6 md:px-12">
+      <section className="mx-auto max-w-7xl px-5 pt-3 sm:pt-6 md:px-12">
         <DataSourceNotice status={sourceStatus} message={sourceMessage} />
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 pt-8 md:px-12 lg:pt-10">
-        <div className="max-w-3xl">
-          <p className="max-w-prose text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
-            O Puxa Ficha organiza fontes públicas consultadas, como TSE,
-            Câmara e Senado, para ajudar quem busca entender os candidatos à
-            Presidência e aos governos de todos os estados e do Distrito Federal
-            em 2026.
-          </p>
-          <p className="mt-3 max-w-prose text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
-            Aqui você encontra ficha pública, comparação lado a lado e uma
-            navegação mais rápida por nome, partido e estado. Se quiser atalhos
-            imediatos, você pode ir para{" "}
-            <Link href="/comparar" className="font-semibold text-foreground underline">
-              comparar
-            </Link>
-
-            {" "}ou abrir o mapa de{" "}
-            <Link href="/governadores" className="font-semibold text-foreground underline">
-              governadores
-            </Link>
-            .
-          </p>
-        </div>
+      <section className="mx-auto max-w-7xl px-5 pt-4 sm:pt-8 md:px-12 lg:pt-10">
+        <p className="max-w-prose text-[15px] font-medium leading-relaxed text-foreground sm:hidden">
+          Consulte candidatos e compare suas fichas públicas. Veja{" "}
+          <Link href="/metodologia" className="font-semibold underline underline-offset-4">
+            Como funciona
+          </Link>
+          .
+        </p>
+        <div className="hidden sm:block">{fullIntro}</div>
       </section>
 
       {/* Section header */}
-      <section className="mx-auto max-w-7xl px-5 pt-12 sm:pt-16 md:px-12 lg:pt-20">
-        <div className="section-reveal flex flex-wrap items-end justify-between gap-x-4 gap-y-1">
-          <div>
-            <h2
-              className="font-heading uppercase leading-[0.95] text-foreground"
-              style={{ fontSize: "clamp(22px, 5vw, 48px)" }}
-            >
-              Presidenciáveis
+      <section id="candidatos" className="scroll-mt-20 mx-auto max-w-7xl px-5 pt-7 sm:pt-16 md:px-12 lg:pt-20">
+        <nav aria-label="Categorias de candidatos">
+          <div className="section-reveal flex min-w-0 items-end gap-3 overflow-x-auto pb-px sm:flex-wrap sm:justify-between sm:gap-x-4 sm:gap-y-1 sm:overflow-visible">
+            <h2 className="shrink-0 font-heading uppercase leading-[0.95] text-foreground sm:text-[clamp(22px,5vw,48px)]">
+              <Link
+                href="#candidatos"
+                aria-current="page"
+                className="flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap border-b-2 border-foreground px-1 text-center text-[clamp(16px,4.8vw,20px)] sm:min-h-0 sm:justify-start sm:border-b-0 sm:px-0 sm:text-left sm:text-[clamp(22px,5vw,48px)]"
+              >
+                Presidenciáveis
+              </Link>
             </h2>
+            <Link
+              href="/governadores"
+              className="flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap border-b-2 border-transparent px-1 text-center font-heading text-[clamp(16px,4.8vw,20px)] uppercase leading-[0.95] text-muted-foreground transition-colors hover:text-foreground sm:min-h-0 sm:justify-start sm:border-b-0 sm:px-0 sm:text-left sm:text-[clamp(22px,5vw,48px)]"
+            >
+              Governadores
+            </Link>
+            <Link
+              href="/parlamentares"
+              className="flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap border-b-2 border-transparent px-1 text-center font-heading text-[clamp(16px,4.8vw,20px)] uppercase leading-[0.95] text-muted-foreground transition-colors hover:text-foreground sm:min-h-0 sm:justify-start sm:border-b-0 sm:px-0 sm:text-left sm:text-[clamp(22px,5vw,48px)]"
+            >
+              Parlamentares
+            </Link>
           </div>
-          <Link
-            href="/governadores"
-            className="font-heading uppercase leading-[0.95] text-muted-foreground transition-colors hover:text-foreground"
-            style={{ fontSize: "clamp(22px, 5vw, 48px)" }}
-          >
-            Governadores
-          </Link>
-        </div>
+        </nav>
         <SlashDivider className="mt-6 mb-8 sm:mt-8 sm:mb-10" />
       </section>
 
@@ -236,6 +250,7 @@ export default async function Home() {
           processos={processos}
           patrimonios={patrimonios}
           processSortCounts={processSortCounts}
+          patrimoniosAtipicos={patrimoniosAtipicos}
         />
       </section>
 

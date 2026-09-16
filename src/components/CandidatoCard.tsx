@@ -14,6 +14,7 @@ import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { formacaoPublicaDe } from "@/lib/formacao-display"
 import { CandidatePhoto } from "@/components/CandidatePhoto"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
+import { PATRIMONIO_ATIPICO_ROTULO } from "@/lib/patrimonio-atipico"
 import type { Candidato } from "@/lib/types"
 import { Scale, Landmark, ArrowRight, Briefcase, GraduationCap } from "lucide-react"
 
@@ -21,6 +22,8 @@ interface CandidatoCardProps {
   candidato: Candidato
   processos: number
   patrimonio: number | null
+  /** Total de 2026 >= 100x o último total anterior positivo (ver `patrimonio-atipico`). */
+  patrimonioAtipico?: boolean
   index: number
   onClick?: () => void
   deferPhotoUntilVisible?: boolean
@@ -30,6 +33,7 @@ export const CandidatoCard = memo(function CandidatoCard({
   candidato,
   processos,
   patrimonio,
+  patrimonioAtipico = false,
   index,
   onClick,
   deferPhotoUntilVisible = false,
@@ -37,6 +41,7 @@ export const CandidatoCard = memo(function CandidatoCard({
   const gradient = FALLBACK_GRADIENT
   const partyLogo = getPartyLogoUrl(candidato.partido_sigla)
   const hasMainStats = (patrimonio != null) || processos > 0
+  const mostrarAvisoAtipico = patrimonioAtipico && patrimonio != null
   const processosDisplay = processosOverviewDisplay(processos)
   const formacaoLabel = formacaoPublicaDe({
     formacao: candidato.formacao ? sanitizePtBrText(candidato.formacao) : null,
@@ -134,6 +139,16 @@ export const CandidatoCard = memo(function CandidatoCard({
                     <span className="flex min-w-0 items-center gap-0.5">
                       <Landmark className="size-3.5 shrink-0" />
                       {patrimonio != null ? <FormattedNumber value={patrimonio} /> : PUBLIC_DATA_VOCABULARY.unverified.label}
+                      {mostrarAvisoAtipico && (
+                        <span
+                          data-pf-patrimonio-atipico=""
+                          title={PATRIMONIO_ATIPICO_ROTULO}
+                          className="ml-0.5 shrink-0 rounded-sm bg-amber-300 px-1 text-[length:var(--text-eyebrow)] font-bold uppercase leading-[14px] text-black"
+                        >
+                          <span aria-hidden="true">atípico</span>
+                          <span className="sr-only">{PATRIMONIO_ATIPICO_ROTULO}</span>
+                        </span>
+                      )}
                     </span>
                     <span className="text-white/30">|</span>
                     <span className="flex shrink-0 items-center gap-0.5">
@@ -175,6 +190,14 @@ export const CandidatoCard = memo(function CandidatoCard({
                         <Landmark className="size-3 shrink-0" />
                         Patrimônio
                       </p>
+                      {mostrarAvisoAtipico && (
+                        <p
+                          data-pf-patrimonio-atipico=""
+                          className="mt-1 text-[length:var(--text-eyebrow)] font-semibold leading-tight text-amber-300"
+                        >
+                          {PATRIMONIO_ATIPICO_ROTULO.charAt(0).toUpperCase() + PATRIMONIO_ATIPICO_ROTULO.slice(1)}
+                        </p>
+                      )}
                     </div>
                     <div>
                       <p className="font-heading text-[26px] leading-none text-white">

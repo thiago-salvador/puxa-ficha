@@ -7,6 +7,7 @@ import {
   applyAlertsNoStoreHeaders,
   createAlertsServiceRoleClient,
   decryptAlertManageToken,
+  filterAlertCandidatesByExposedCargo,
 } from "@/lib/alerts"
 import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
 import {
@@ -329,7 +330,11 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
         continue
       }
 
-      const candidateMap = new Map((candidateRows ?? []).map((row) => [row.id, row]))
+      // Candidatura de cargo fora do ar (Senado com SENADO_ENABLED desligada)
+      // não entra no email, mesmo que a assinatura exista.
+      const candidateMap = new Map(
+        filterAlertCandidatesByExposedCargo(candidateRows ?? []).map((row) => [row.id, row]),
+      )
       const windowStart = subscriber.last_digest_sent_at || subscriber.verified_at || subscriber.created_at
 
       // created_at é a coleta, não a publicação. O trigger preserva a data

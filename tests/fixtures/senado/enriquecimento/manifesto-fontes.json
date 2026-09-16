@@ -1,0 +1,67 @@
+{
+  "schema_version": "senado-paridade-source-manifest-v1",
+  "generated_at": "2026-09-14T12:00:00.000Z",
+  "scope": "Fixture sintética de teste de contrato; nenhuma pessoa, SQ ou fonte aqui é real.",
+  "identity_key": {
+    "sq_candidato": "9001",
+    "ano_eleicao": 2026,
+    "uf": "SP",
+    "cargo": "SENADOR",
+    "nome_completo": "PESSOA SINTETICA DE TESTE",
+    "nome_urna": "PESSOA TESTE",
+    "partido": "PTESTE"
+  },
+  "sources": [
+    {
+      "source_id": "tse-consulta-cand-2026",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+      "status": "available",
+      "checked_at": "2026-09-14T12:00:00.000Z",
+      "evidence": {
+        "sha256": "abababababababababababababababababababababababababababababababab",
+        "bytes": 1024,
+        "artifact": "fixture-sintetica"
+      },
+      "collector_applicability": [
+        "tse-registration",
+        "candidate-profile"
+      ]
+    },
+    {
+      "source_id": "fonte-oficial-biografia-a",
+      "url": "https://example.org/fonte-oficial-a",
+      "status": "available",
+      "checked_at": "2026-09-14T12:00:00.000Z",
+      "collector_applicability": [
+        "official-media",
+        "biography-evidence"
+      ]
+    },
+    {
+      "source_id": "fonte-oficial-biografia-b",
+      "url": "https://example.org/fonte-oficial-b",
+      "status": "available",
+      "checked_at": "2026-09-14T12:00:00.000Z",
+      "collector_applicability": [
+        "official-media",
+        "biography-evidence"
+      ]
+    },
+    {
+      "source_id": "pista-historica-2008",
+      "url": "https://example.org/pista-historica-2008",
+      "status": "lead_requires_tse_validation",
+      "checked_at": "2026-09-14T12:00:00.000Z",
+      "collector_applicability": [
+        "tse-historical"
+      ]
+    },
+    {
+      "source_id": "wikidata-busca-exata",
+      "url": "https://example.org/wikidata-busca",
+      "status": "absence_observed",
+      "checked_at": "2026-09-14T12:00:00.000Z",
+      "collector_applicability": []
+    }
+  ]
+}

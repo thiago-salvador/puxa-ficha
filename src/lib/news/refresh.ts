@@ -14,6 +14,7 @@
 import { splitNewsByDenylist } from "@/lib/news/denylist"
 import {
   buildGoogleNewsSearchUrl,
+  isValidGoogleNewsRss,
   parseGoogleNewsRss,
 } from "@/lib/news/google-news"
 import { splitNewsByCandidateMention } from "@/lib/news/name-match"
@@ -163,6 +164,12 @@ export async function refreshCandidatosNews(
       }
 
       const xml = await res.text()
+      if (!isValidGoogleNewsRss(xml)) {
+        const error = "RSS inválido"
+        summary.errors.push({ slug: cand.slug, error })
+        registrarColeta("erro", 0, error)
+        continue
+      }
       const { items } = parseGoogleNewsRss(xml)
 
       // Guard de relevancia (auditoria 2026-07-24, etapa 1C): so grava item

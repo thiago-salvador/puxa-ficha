@@ -1,4 +1,5 @@
 import assert from "node:assert/strict"
+import { createHash } from "node:crypto"
 import { readFileSync } from "node:fs"
 import { join } from "node:path"
 import { describe, it } from "node:test"
@@ -69,7 +70,7 @@ describe("encoding de texto publico", () => {
     assert.throws(() => assertPublicTextEncodingSafe("Produ��es", "teste"), /U\+FFFD=2/)
   })
 
-  it("cura as sete materias do Senado pelo identificador oficial", () => {
+  it("cura somente materias do Senado com correção vinculada ao identificador oficial", () => {
     const cases: Array<[string, string, string]> = [
       ["100904", "objetivo de ¿debater o porto e o turismo¿, requeiro", "objetivo de “debater o porto e o turismo”, requeiro"],
       ["101351", "convidadas:\n¿ Sra. A;\n¿ Sr. B.", "convidadas:\n• Sra. A;\n• Sr. B."],
@@ -78,12 +79,67 @@ describe("encoding de texto publico", () => {
       ["114111", "debate:\n¿\tO Senhor A;\n¿\tO Senhor B.", "debate:\n•\tO Senhor A;\n•\tO Senhor B."],
       ["102583", "Moacir Servilha Duarte ¿ Diretor-Presidente", "Moacir Servilha Duarte - Diretor-Presidente"],
       ["103031", "PLS nº 448/2011 ¿ Substitutivo.", "PLS nº 448/2011 - Substitutivo."],
+      ["102083", "Legislação Participativa ¿ CDH acerca das políticas públicas", "Legislação Participativa - CDH acerca das políticas públicas"],
+      ["120041", "convidados:\n¿¿representante da FUNAI;\n¿¿representante da SBPC;", "convidados:\n• representante da FUNAI;\n• representante da SBPC;"],
     ]
 
     for (const [id, source, expected] of cases) {
       assert.equal(curateSenadoEmenta(id, source), expected, id)
     }
     assert.throws(() => curateSenadoEmenta("desconhecida", "texto ¿ quebrado"), /U\+00BF/)
+    assert.throws(() => curateSenadoEmenta("120041", "outro ¿¿ contexto"), /U\+00BF/)
+  })
+
+  it("aplica as 30 provas PDF somente com hash exato e rejeita contexto alterado", () => {
+    const proofPath = join(
+      ROOT,
+      "tests/fixtures/senado-ementa-curation-proofs.json",
+    )
+    const proof = JSON.parse(readFileSync(proofPath, "utf8")) as {
+      cases: Array<{ code: string; api_ementa: string }>
+    }
+    const accepted = proof.cases
+    assert.equal(accepted.length, 30)
+    for (const item of accepted) {
+      assert.ok(item.api_ementa)
+      assert.doesNotThrow(() => curateSenadoEmenta(item.code, item.api_ementa as string), item.code)
+      assert.throws(
+        () => curateSenadoEmenta(item.code, `X${(item.api_ementa as string).slice(1)}`),
+        /fora do contexto\/hash de prova primária/,
+        item.code,
+      )
+      const curated = curateSenadoEmenta(item.code, item.api_ementa as string)
+      assert.equal(curateSenadoEmenta(item.code, curated), curated, `${item.code}: idempotencia`)
+      assert.equal(curateSenadoEmenta(item.code, repairPublicTextEncoding(curated)), curated, `${item.code}: fonte corrigida`)
+    }
+    const listMarker = proof.cases.find((item) => item.code === "122212")
+    assert.ok(listMarker?.api_ementa)
+    assert.match(curateSenadoEmenta("122212", listMarker?.api_ementa as string), /\n•\tMaurício Guetta/)
+  })
+
+  it("preserva a ementa dos oito casos ilegíveis com marcador explícito e guard por hash", () => {
+    const proofPath = join(ROOT, "tests/fixtures/senado-ementa-illegible-proofs.json")
+    const proof = JSON.parse(readFileSync(proofPath, "utf8")) as {
+      cases: Array<{ code: string; source_url: string; raw: string; sha256: string; marker_count: number }>
+    }
+    assert.equal(proof.cases.length, 8)
+    for (const item of proof.cases) {
+      assert.match(item.source_url, new RegExp(`/materia/textos/${item.code}\\.json$`))
+      assert.equal(createHash("sha256").update(item.raw, "utf8").digest("hex"), item.sha256, item.code)
+      const curated = curateSenadoEmenta(item.code, item.raw)
+      const markerCount = (curated.match(/\[caractere ilegível na fonte\]/g) ?? []).length
+      if (item.code === "102413") {
+        assert.equal(markerCount, 0, item.code)
+        assert.match(curated, /fariam “vista-grossa” para a exploração ilegal/)
+      } else assert.equal(markerCount, item.marker_count, item.code)
+      assert.equal(curated.includes("¿"), false, item.code)
+      assert.equal(curateSenadoEmenta(item.code, curated), curated, `${item.code}: idempotencia`)
+      assert.throws(
+        () => curateSenadoEmenta(item.code, `X${item.raw.slice(1)}`),
+        /fora do contexto\/hash de prova primária/,
+        item.code,
+      )
+    }
   })
 
   it("acha artefatos em campos aninhados sem duplicar textos limpos", () => {

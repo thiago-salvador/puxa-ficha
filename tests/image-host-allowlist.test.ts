@@ -18,6 +18,7 @@ const { isAllowedImageSource } = require("../src/lib/remote-image-hosts")
 describe("isAllowedImageSource", () => {
   it("aceita hosts conhecidos via HTTPS", () => {
     assert.strictEqual(isAllowedImageSource("https://upload.wikimedia.org/photo.jpg"), true)
+    assert.strictEqual(isAllowedImageSource("https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/photo.jpg"), true)
     assert.strictEqual(isAllowedImageSource("https://www.camara.leg.br/foto.jpg"), true)
   })
 

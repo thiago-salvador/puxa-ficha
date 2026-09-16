@@ -81,6 +81,16 @@ describe("resolveComparadorCohort", () => {
     )
   })
 
+  it("senadores da mesma UF ganham coorte estadual", () => {
+    assert.deepEqual(
+      resolveComparadorCohort([
+        { cargo_disputado: "Senador", estado: "SP" },
+        { cargo_disputado: "Senador", estado: "sp" },
+      ]),
+      { cargo: "Senador", estado: "SP" },
+    )
+  })
+
   it("o cargo vem do primeiro slug valido, que e a intencao expressa na URL", () => {
     assert.deepEqual(
       resolveComparadorCohort([
@@ -88,7 +98,7 @@ describe("resolveComparadorCohort", () => {
         { cargo_disputado: "Senador", estado: "PE" },
         { cargo_disputado: "Presidente", estado: null },
       ]),
-      { cargo: "Senador", estado: undefined },
+      { cargo: "Senador", estado: "PE" },
     )
   })
 })

@@ -14,6 +14,7 @@ test("normalizeFinanciamentoReceitaRow: mapeia cabeçalhos PT 2012 para chaves d
     "Numero Recibo Eleitoral": "999",
     "Valor receita": "1.234,56",
     "Tipo receita": "PF",
+    "Fonte recurso": "FUNDO PARTIDARIO",
     "Nome do doador": "Maria",
     "CPF/CNPJ do doador": "12345678000199",
   }
@@ -22,6 +23,7 @@ test("normalizeFinanciamentoReceitaRow: mapeia cabeçalhos PT 2012 para chaves d
   assert.equal(row.SQ_RECEITA, "999")
   assert.equal(row.VR_RECEITA, "1.234,56")
   assert.ok(String(row.DS_ORIGEM_RECEITA).includes("PF"))
+  assert.equal(row.DS_FONTE_RECEITA, "FUNDO PARTIDARIO")
   assert.equal(row.NM_DOADOR, "Maria")
   assert.equal(row["CPF/CNPJ do doador"], "12345678000199")
 })
@@ -51,6 +53,17 @@ test("normalizeFinanciamentoReceitaRow: UF do layout 2012 e da candidatura, nao 
   })
   assert.equal(row.SQ_CANDIDATO, "260000001384")
   assert.equal(row.SG_UF_CANDIDATURA, "SE")
+})
+
+test("normalizeFinanciamentoReceitaRow: SG_UE_SUP numérico não vira UF", () => {
+  const row = normalizeFinanciamentoReceitaRow({
+    NO_CAND: "ELIANA LUCIA FERREIRA COSTA",
+    SG_UE_SUP: "70750",
+    SG_UE: "70750",
+    VR_RECEITA: "10",
+  })
+  assert.equal(row.SG_UF_CANDIDATURA, undefined)
+  assert.equal(row.SG_UE_SUP, "70750")
 })
 
 test("normalizeFinanciamentoReceitaRow: mapeia os layouts oficiais de 2002, 2006 e 2008", () => {
@@ -167,17 +180,31 @@ test("receita 2004 sem SQ cruza nome exato e UF com identidade oficial unica", (
         nome_completo: "Benevenuto Daciolo Fonseca dos Santos",
         nome_urna: "Cabo Daciolo",
       },
+      historicalIdentity: {
+        sg_ue: "3304557",
+        cargo_codigo: "11",
+        numero: "16",
+        nome: "Benevenuto Daciolo Fonseca dos Santos",
+        nome_urna: "Cabo Daciolo",
+      },
     },
     {
       sqCandidato: "26000999",
       uf: "SE",
       candidato: { nome_completo: "Outra Pessoa", nome_urna: "Outra" },
+      historicalIdentity: { sg_ue: "2800308", cargo_codigo: "11", numero: "16" },
     },
   ]
 
   assert.deepEqual(
     resolveLegacyReceiptSqIdentity(
-      { NO_CAND: "BENEVENUTO DACIOLO FONSECA DOS SANTOS", SG_UF_CANDIDATURA: "RJ" },
+      {
+        NO_CAND: "BENEVENUTO DACIOLO FONSECA DOS SANTOS",
+        SG_UF_CANDIDATURA: "RJ",
+        SG_UE: "3304557",
+        CD_CARGO: "11",
+        NR_CAND: "16",
+      },
       2004,
       identities,
     ),
@@ -185,26 +212,119 @@ test("receita 2004 sem SQ cruza nome exato e UF com identidade oficial unica", (
   )
   assert.equal(
     resolveLegacyReceiptSqIdentity(
-      { NO_CAND: "CANDIDATO FORA DO UNIVERSO", SG_UF_CANDIDATURA: "RJ" },
+      {
+        NO_CAND: "CANDIDATO FORA DO UNIVERSO",
+        SG_UF_CANDIDATURA: "RJ",
+        SG_UE: "3304557",
+        CD_CARGO: "11",
+        NR_CAND: "16",
+      },
       2004,
       identities,
     ),
     undefined,
   )
+  assert.equal(
+    resolveLegacyReceiptSqIdentity(
+      {
+        NO_CAND: "BENEVENUTO DACIOLO FONSECA DOS SANTOS",
+        SG_UF_CANDIDATURA: "RJ",
+        SG_UE: "3304557",
+        CD_CARGO: "1",
+        NR_CAND: "16",
+      },
+      2004,
+      identities,
+    ),
+    undefined,
+    "o código 1 não pode passar como o cargo histórico 11",
+  )
 })
 
 test("receita legada falha fechado quando nome e UF apontam para mais de um SQ", () => {
   const candidato = { nome_completo: "Nome Repetido", nome_urna: "Nome Repetido" }
+  const historicalIdentity = { sg_ue: "5103403", cargo_codigo: "11", numero: "16" }
   assert.throws(
     () =>
       resolveLegacyReceiptSqIdentity(
-        { NO_CAND: "NOME REPETIDO", SG_UF_CANDIDATURA: "MT" },
+        { NO_CAND: "NOME REPETIDO", SG_UF_CANDIDATURA: "MT", SG_UE: "5103403", CD_CARGO: "11", NR_CAND: "16" },
         2004,
         [
-          { sqCandidato: "1", uf: "MT", candidato },
-          { sqCandidato: "2", uf: "MT", candidato },
+          { sqCandidato: "1", uf: "MT", candidato, historicalIdentity },
+          { sqCandidato: "2", uf: "MT", candidato, historicalIdentity },
         ],
       ),
     /identidade legada ambigua/,
+  )
+})
+
+test("receita legada rejeita SQ homônimo em outra unidade eleitoral", () => {
+  const identity = {
+    sqCandidato: "529",
+    uf: "SP",
+    candidato: { nome_completo: "Eliana Lucia Ferreira", nome_urna: "Dra Eliana Ferreira" },
+    historicalIdentity: {
+      sg_ue: "70750",
+      cargo_codigo: "11",
+      numero: "16",
+      nome: "ELIANA LUCIA FERREIRA COSTA",
+      nome_urna: "DRA ELIANA",
+    },
+  }
+  assert.deepEqual(
+    resolveLegacyReceiptSqIdentity(
+      { NO_CAND: "ELIANA LUCIA FERREIRA COSTA", SG_UF_CANDIDATURA: "SP", SG_UE_SUP: "70750", CD_CARGO: "11", NR_CAND: "16" },
+      2004,
+      [identity],
+    ),
+    { sqCandidato: "529", uf: "SP" },
+  )
+  assert.equal(
+    resolveLegacyReceiptSqIdentity(
+      { NO_CAND: "ELIANA LUCIA FERREIRA COSTA", SG_UF_CANDIDATURA: "SP", SG_UE_SUP: "3550308", CD_CARGO: "11", NR_CAND: "16" },
+      2004,
+      [identity],
+    ),
+    undefined,
+  )
+})
+
+test("receita legada exige marcador histórico quando o SQ antigo é ambíguo", () => {
+  assert.equal(
+    resolveLegacyReceiptSqIdentity(
+      { NO_CAND: "ELIANA LUCIA FERREIRA COSTA", SG_UF_CANDIDATURA: "SP", CD_CARGO: "11", NR_CAND: "16" },
+      2004,
+      [{
+        sqCandidato: "171",
+        uf: "SP",
+        candidato: { nome_completo: "Eliana Lucia Ferreira", nome_urna: "Dra Eliana Ferreira" },
+      }],
+    ),
+    undefined,
+  )
+})
+
+test("UF ausente exige âncoras fortes também em coorte pós-2010", () => {
+  const identity = {
+    sqCandidato: "250000811321",
+    uf: "SP",
+    candidato: { nome_completo: "Eliana Lucia Ferreira", nome_urna: "Dra Eliana Ferreira" },
+    historicalIdentity: { sg_ue: "70750", cargo_codigo: "5", numero: "161", nome: "ELIANA LUCIA FERREIRA" },
+  }
+  assert.deepEqual(
+    resolveLegacyReceiptSqIdentity(
+      { NO_CAND: "ELIANA LUCIA FERREIRA", SG_UE: "70750", CD_CARGO: "5", NR_CAND: "161" },
+      2020,
+      [identity],
+    ),
+    { sqCandidato: "250000811321", uf: "SP" },
+  )
+  assert.equal(
+    resolveLegacyReceiptSqIdentity(
+      { NO_CAND: "ELIANA LUCIA FERREIRA", SG_UE: "70750", CD_CARGO: "5", NR_CAND: "161" },
+      2020,
+      [{ ...identity, historicalIdentity: undefined }],
+    ),
+    undefined,
   )
 })

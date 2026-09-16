@@ -1,5 +1,8 @@
 import test, { describe } from "node:test"
 import assert from "node:assert/strict"
+import { mkdtempSync, mkdirSync, rmSync, writeFileSync } from "node:fs"
+import { tmpdir } from "node:os"
+import { join } from "node:path"
 import {
   SIGLAS_OUTRA_PROPOSICAO,
   SIGLAS_PROJETO_LEI,
@@ -9,7 +12,46 @@ import {
   normalizeSiglaTipo,
   rotuloDoAcervo,
 } from "../src/lib/proposicao-natureza"
-import { parseDeclaredCountFromLinks } from "../scripts/lib/ingest-camara"
+import {
+  applyCamaraExpenseSourceFilter,
+  parseDeclaredCountFromLinks,
+  requireCamaraArray,
+  readCamaraExpenseSnapshot,
+} from "../scripts/lib/ingest-camara"
+
+describe("cache de despesas Câmara interrompido", () => {
+  function withPages(pages: Record<string, unknown>, run: (dir: string) => void) {
+    const dir = mkdtempSync(join(tmpdir(), "camara-cache-test-"))
+    const yearDir = join(dir, "123", "2026")
+    mkdirSync(yearDir, { recursive: true })
+    try {
+      for (const [name, body] of Object.entries(pages)) {
+        writeFileSync(join(yearDir, name), JSON.stringify(body))
+      }
+      run(dir)
+    } finally {
+      rmSync(dir, { recursive: true, force: true })
+    }
+  }
+
+  test("não aceita a última página quando a fonte aponta continuação", () => {
+    withPages({ "pagina-1.json": { dados: [{ valorLiquido: 12 }], links: [{ rel: "next", href: "https://dadosabertos.camara.leg.br/api/v2/deputados/123/despesas?pagina=2" }] } }, (dir) => {
+      assert.equal(readCamaraExpenseSnapshot(dir, 123, 2026, 57), null)
+    })
+  })
+
+  test("não aceita páginas com lacuna na sequência", () => {
+    withPages({ "pagina-2.json": { dados: [], links: [] } }, (dir) => {
+      assert.throws(() => readCamaraExpenseSnapshot(dir, 123, 2026, 57), /sequência/)
+    })
+  })
+
+  test("reaproveita uma resposta vazia completa sem manifesto", () => {
+    withPages({ "pagina-1.json": { dados: [], links: [] } }, (dir) => {
+      assert.deepEqual(readCamaraExpenseSnapshot(dir, 123, 2026, 57)?.despesas, [])
+    })
+  })
+})
 
 describe("natureza da proposicao (#138)", () => {
   test("as duas listas nao se sobrepoem", () => {
@@ -96,6 +138,44 @@ describe("cardinalidade declarada pela Camara (#138)", () => {
     const links = [{ rel: "last", href: "https://dadosabertos.camara.leg.br/api/v2/proposicoes?itens=1" }]
     assert.equal(parseDeclaredCountFromLinks(links, 1), null)
   })
+})
+
+describe("contrato de paginação da Câmara", () => {
+  test("HTTP 200 com dados em formato inválido não vira vazio", () => {
+    assert.throws(
+      () => requireCamaraArray({ dados: null as unknown as never[], links: [] }, "https://camara.test/despesas"),
+      /dados não é uma lista/,
+    )
+  })
+})
+
+test("lookup de despesas preserva fonte diversa na mesma chave candidato/ano", async () => {
+  const rows = [
+    { id: "viagem", candidato_id: "candidato-1", ano: 2024, fonte: "Portal da Transparência" },
+    { id: "camara", candidato_id: "candidato-1", ano: 2024, fonte: "Camara" },
+  ]
+  const filters: Array<[string, unknown]> = [
+    ["candidato_id", "candidato-1"],
+    ["ano", 2024],
+  ]
+  const query = {
+    eq(column: string, value: unknown) {
+      filters.push([column, value])
+      return this
+    },
+    async single() {
+      const data = rows.find((row) => filters.every(([column, value]) => row[column as keyof typeof row] === value)) ?? null
+      return { data }
+    },
+  }
+
+  const { data } = await applyCamaraExpenseSourceFilter(query).single()
+  assert.equal(data?.id, "camara")
+  assert.deepEqual(filters, [
+    ["candidato_id", "candidato-1"],
+    ["ano", 2024],
+    ["fonte", "Camara"],
+  ])
 })
 
 describe("rótulo do acervo (vistoria PRs #141/#142)", () => {

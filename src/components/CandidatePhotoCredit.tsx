@@ -32,32 +32,45 @@ export function CandidatePhotoCredit({
     )
   }
 
-  if (credit.origem !== "wikimedia_commons" || !credit.autor || !credit.licenca) {
-    return null
+  const sourceUrl = safeHttpUrl(credit.fonte_url)
+
+  if (credit.origem === "wikimedia_commons" && credit.autor && credit.licenca) {
+    const licenseUrl = safeHttpUrl(credit.licenca_url)
+
+    return (
+      <p className={className} data-pf-photo-credit="wikimedia_commons">
+        Foto: {credit.autor},{" "}
+        {sourceUrl ? (
+          <a className="underline underline-offset-2" href={sourceUrl} rel="noopener noreferrer" target="_blank">
+            Wikimedia Commons
+          </a>
+        ) : (
+          "Wikimedia Commons"
+        )}
+        ,{" "}
+        {licenseUrl ? (
+          <a className="underline underline-offset-2" href={licenseUrl} rel="noopener noreferrer" target="_blank">
+            {credit.licenca}
+          </a>
+        ) : (
+          credit.licenca
+        )}
+        .
+      </p>
+    )
   }
 
-  const sourceUrl = safeHttpUrl(credit.fonte_url)
-  const licenseUrl = safeHttpUrl(credit.licenca_url)
+  const description = credit.descricao?.trim() || credit.origem.trim()
+  if (!description && !sourceUrl) return null
 
   return (
-    <p className={className} data-pf-photo-credit="wikimedia_commons">
-      Foto: {credit.autor},{" "}
-      {sourceUrl ? (
+    <p className={className} data-pf-photo-credit="source">
+      Foto: {description || "Fonte da imagem"}.{" "}
+      {sourceUrl && (
         <a className="underline underline-offset-2" href={sourceUrl} rel="noopener noreferrer" target="_blank">
-          Wikimedia Commons
+          Fonte da foto
         </a>
-      ) : (
-        "Wikimedia Commons"
       )}
-      ,{" "}
-      {licenseUrl ? (
-        <a className="underline underline-offset-2" href={licenseUrl} rel="noopener noreferrer" target="_blank">
-          {credit.licenca}
-        </a>
-      ) : (
-        credit.licenca
-      )}
-      .
     </p>
   )
 }

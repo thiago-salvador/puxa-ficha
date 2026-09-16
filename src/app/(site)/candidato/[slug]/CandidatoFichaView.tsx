@@ -47,6 +47,8 @@ import {
 } from "@/lib/pesquisas-eleitorais"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { getProgramaGovernoManifesto } from "@/lib/programa-governo-server"
+import { loadSenadoRunningMates } from "@/lib/senado-running-mates"
+import { SenadoRunningMates } from "@/components/SenadoRunningMates"
 
 const getFicha = (slug: string) => getCandidatoBySlugResource(slug)
 
@@ -112,6 +114,10 @@ export async function CandidatoFichaView({
       : Promise.resolve(null),
     getCandidatoNavResource(ficha.cargo_disputado, navEstado),
   ])
+  const runningMates =
+    ficha.cargo_disputado === "Senador" && ficha.estado
+      ? await loadSenadoRunningMates([ficha.slug], ficha.estado)
+      : null
   const allCandidatos = allCandidatosResource.data
   const sourceStatus = mergeSourceStatuses(
     fichaResource.sourceStatus,
@@ -159,6 +165,9 @@ export async function CandidatoFichaView({
   const cargoProveniencia = resolveCargoDisputadoProveniencia(ficha)
   const cargoProvenienciaLabel = buildCargoDisputadoProvenienceLabel(cargoProveniencia)
   const cargoProvenienciaNota = buildCargoDisputadoProvenienceNote(cargoProveniencia)
+  const situacaoCandidaturaLabel = ficha.situacao_candidatura
+    ? sanitizePtBrText(ficha.situacao_candidatura)
+    : ""
   const heroMetaParts = [
     cargoAtualLabel || null,
     ficha.naturalidade,
@@ -362,6 +371,14 @@ export async function CandidatoFichaView({
               {cargoProvenienciaLabel}
             </span>
             <span className="sr-only">{cargoProvenienciaNota}</span>
+            {situacaoCandidaturaLabel && (
+              <span
+                data-pf-candidacy-situation={ficha.situacao_candidatura}
+                className="mt-1.5 inline-flex w-fit items-center rounded-full border border-border bg-background px-2.5 py-1 text-[length:var(--text-eyebrow)] font-semibold text-foreground"
+              >
+                Situação: {situacaoCandidaturaLabel}
+              </span>
+            )}
 
             <div className="mt-1.5 flex min-w-0 flex-col gap-3 sm:mt-2 lg:flex-row lg:flex-wrap lg:items-end lg:gap-5">
               <h1
@@ -457,6 +474,18 @@ export async function CandidatoFichaView({
         pesquisas={pesquisas}
         programaGoverno={programaGoverno}
       />
+
+      {runningMates && (
+        <section className="mx-auto max-w-7xl px-5 pb-8 md:px-12">
+          <SenadoRunningMates
+            singleCandidate
+            candidates={[{ slug: ficha.slug, nome_urna: ficha.nome_urna }]}
+            data={runningMates.data}
+            absence={runningMates.absence}
+            unavailable={runningMates.unavailable}
+          />
+        </section>
+      )}
 
       {ficha.biografia && (
         <section className="mx-auto max-w-7xl px-5 py-6 sm:hidden">

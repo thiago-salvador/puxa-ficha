@@ -17,7 +17,7 @@ export const PUBLIC_DATA_VOCABULARY = {
 export function patrimonioWithoutValueLabel(eleicoes: readonly PatrimonioEleicaoPublico[]): string {
   const latest = [...eleicoes].sort((a, b) => b.ano - a.ano)[0]
   return latest?.estado === "vazio_confirmado"
-    ? `Sem bens declarados ao TSE em ${latest.ano}`
+    ? `Nenhum registro de bens localizado no arquivo do TSE em ${latest.ano}`
     : PUBLIC_DATA_VOCABULARY.unverified.label
 }
 

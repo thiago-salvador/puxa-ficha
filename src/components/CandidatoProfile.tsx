@@ -15,6 +15,7 @@ import {
 } from "@/lib/destaques-ficha"
 import { classifyAttentionPoints } from "@/lib/attention-points"
 import { resolvePatrimonioEleicoes } from "@/lib/public-profile-dto"
+import { patrimonioMaisRecenteSemEscolhaArbitraria, patrimonioPorAnoSemAmbiguidade } from "@/lib/patrimonio-contexto"
 import {
   groupProcessosForDisplay,
   isProcessStatusNeutral,
@@ -407,6 +408,7 @@ export function CandidatoProfile({
   const gastos = ficha.gastos_parlamentares ?? []
   const gastosExecutivo = ficha.gastos_executivo ?? []
   const sectionFreshness = ficha.section_freshness ?? {}
+  const gastosParlamentaresNaoAplicavel = sectionFreshness.gastos_parlamentares?.status === "not_applicable"
   const programaEnabled = programaGoverno !== null
   const [programaResponse, setProgramaResponse] = useState<ProgramaGovernoApiResponse | null>(null)
   const [programaLoadState, setProgramaLoadState] = useState<ProgramaGovernoLoadState>("idle")
@@ -454,6 +456,7 @@ export function CandidatoProfile({
         patrimonio.length +
         Math.max(financiamento.length, financiamentoEleicoes?.length ?? 0) +
         gastos.length +
+        (ficha.transparencia?.length ?? 0) +
         gastosExecutivo.length,
     },
     justica: { label: "Justiça", dataCount: processos.length + sancoes.length },
@@ -642,15 +645,14 @@ export function CandidatoProfile({
     count: t.dataCount || undefined,
   }))
 
-  const latestPatrimonio =
-    patrimonio.length > 0
-      ? [...patrimonio].sort((a, b) => b.ano_eleicao - a.ano_eleicao)[0]
-      : null
+  const latestPatrimonioContexto = patrimonioMaisRecenteSemEscolhaArbitraria(patrimonio)
+  const latestPatrimonio = latestPatrimonioContexto.patrimonio
+  const patrimonioSerieAnual = patrimonioPorAnoSemAmbiguidade(patrimonio)
 
   const patrimonioVariacao =
-    patrimonio.length >= 2
+    latestPatrimonio && patrimonioSerieAnual.length >= 2
       ? (() => {
-          const sorted = [...patrimonio].sort((a, b) => b.ano_eleicao - a.ano_eleicao)
+          const sorted = [...patrimonioSerieAnual].sort((a, b) => b.ano_eleicao - a.ano_eleicao)
           const latest = sorted[0]
           const prev = sorted[1]
           const pct = prev.valor_total > 0
@@ -713,7 +715,11 @@ export function CandidatoProfile({
               sub={processosOverview.sub}
             />
             <StatCard
-              value={latestPatrimonio ? <FormattedNumber value={latestPatrimonio.valor_total} kind="currency" /> : patrimonioWithoutValueLabel(patrimonioEleicoes)}
+              value={latestPatrimonio
+                ? <FormattedNumber value={latestPatrimonio.valor_total} kind="currency" />
+                : latestPatrimonioContexto.quantidade > 1
+                  ? `${latestPatrimonioContexto.quantidade} declarações`
+                  : patrimonioWithoutValueLabel(patrimonioEleicoes)}
               label="Patrimônio"
               icon={Landmark}
               dataValueAttr="data-pf-overview-patrimonio"
@@ -778,10 +784,16 @@ export function CandidatoProfile({
             ) : (
             <div
               className="h-full min-w-0"
-              title="Soma de total_gasto em todos os anos com registro CEAP nesta ficha. Na visão geral, o cartão de cota parlamentar destaca o ano mais recente com dados."
+              title={gastosParlamentaresNaoAplicavel
+                ? sectionFreshness.gastos_parlamentares?.message ?? "Não se aplica ao recorte federal verificado."
+                : "Soma de total_gasto em todos os anos com registro CEAP nesta ficha. Na visão geral, o cartão de cota parlamentar destaca o ano mais recente com dados."}
             >
             <StatCard
-              value={totalGastos != null ? <FormattedNumber value={totalGastos} kind="currency" /> : PUBLIC_DATA_VOCABULARY.unverified.label}
+              value={totalGastos != null
+                ? <FormattedNumber value={totalGastos} kind="currency" />
+                : gastosParlamentaresNaoAplicavel
+                  ? PUBLIC_DATA_VOCABULARY.notApplicable.label
+                  : PUBLIC_DATA_VOCABULARY.unverified.label}
               label="Gastos CEAP"
               icon={Banknote}
               sub={gastos.length > 0 ? `Soma total · ${gastos.length} ano${gastos.length > 1 ? "s" : ""}` : undefined}
@@ -900,6 +912,7 @@ export function CandidatoProfile({
                 financiamentoEleicoes={financiamentoEleicoes}
                 historico={historico}
                 gastos={gastos}
+                transparencia={ficha.transparencia}
                 gastosExecutivo={gastosExecutivo}
                 historicoLength={historico.length}
                 suggestion={suggestFor("dinheiro")}
@@ -1030,7 +1043,7 @@ export function CandidatoProfile({
                     era computada no servidor, entrava no payload publico e
                     nunca chegava a tela. Agora a aba Votos mostra o selo como
                     as outras. */}
-                {votos.length > 0 && sectionFreshness.votos_candidato && (
+                {(votos.length > 0 || sectionFreshness.votos_candidato?.status === "not_applicable") && sectionFreshness.votos_candidato && (
                   <div className="mt-4">
                     <DataFreshnessNotice info={sectionFreshness.votos_candidato} />
                   </div>
@@ -1041,7 +1054,7 @@ export function CandidatoProfile({
                     <VotingDots votos={votos} />
                   </div>
                 )}
-                {votos.length === 0 && (
+                {votos.length === 0 && sectionFreshness.votos_candidato?.status !== "not_applicable" && (
                   <VotosEmptyState
                     hasLegislativeHistory={hasLegislativeHistory}
                     verificacaoCampos={ficha.verificacao_campos}
@@ -1159,6 +1172,55 @@ export function CandidatoProfile({
               <div data-pf-destaques-conteudo>
                 <SectionLabel>{fixedCopy.highlights} ({destaques.totalExibido})</SectionLabel>
                 <SectionTitle>O que você precisa saber</SectionTitle>
+                {ficha.tcu_verificacao && (
+                  <section
+                    className="mt-6 rounded-[16px] border border-border/50 bg-card px-5 py-4"
+                    data-pf-tcu-verificacao
+                    data-pf-tcu-estado={ficha.tcu_verificacao.estado}
+                  >
+                    <div className="flex flex-wrap items-center gap-2">
+                      <SectionLabel>Tribunal de Contas da União</SectionLabel>
+                      <MetaBadge tone={ficha.tcu_verificacao.estado === "encontrado_em_revisao" ? "caution" : "muted"}>
+                        {ficha.tcu_verificacao.estado === "encontrado_em_revisao"
+                          ? "Encontrado, em revisão editorial"
+                          : ficha.tcu_verificacao.estado === "vazio_verificado"
+                            ? "Nenhum registro no escopo verificado"
+                            : "Verificação inconclusiva"}
+                      </MetaBadge>
+                    </div>
+                    <p className="mt-2 text-[length:var(--text-body-sm)] font-medium leading-relaxed text-muted-foreground">
+                      {ficha.tcu_verificacao.detalhe}
+                    </p>
+                    <p className="mt-2 text-[length:var(--text-caption)] font-medium text-muted-foreground">
+                      Consulta realizada em {formatDate(ficha.tcu_verificacao.executado_em)}. Este recibo registra a consulta TCU e não substitui a revisão editorial dos pontos.
+                    </p>
+                    {ficha.tcu_verificacao.fontes && ficha.tcu_verificacao.fontes.length > 0 ? (
+                      <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[length:var(--text-caption)] font-bold text-foreground">
+                        {ficha.tcu_verificacao.fontes.map((fonte) => (
+                          <a
+                            key={fonte.cadastro}
+                            href={fonte.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline underline-offset-2"
+                          >
+                            {fonte.cadastro === "responsaveis_contas_irregulares" ? "Contas irregulares" : "Responsáveis inabilitados"}
+                            {fonte.volume !== null ? ` (${fonte.volume})` : ""}
+                          </a>
+                        ))}
+                      </div>
+                    ) : safeHref(ficha.tcu_verificacao.url) ? (
+                      <a
+                        href={ficha.tcu_verificacao.url!}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-2 inline-block text-[length:var(--text-caption)] font-bold text-foreground underline underline-offset-2"
+                      >
+                        Fonte consultada
+                      </a>
+                    ) : null}
+                  </section>
+                )}
                 {destaques.totalExibido === 0 ? (
                   <div className="mt-6 space-y-3" data-pf-destaques-vazio={destaques.vazioHonesto ? "confirmado" : "nao-verificado"}>
                     <NoticePanel

@@ -79,9 +79,13 @@ function regionPaint(sigla: string): { top: string; side: string; hover: string 
 export function BrazilMap({
   indicadoresPorEstado,
   candidatosPorEstado,
+  stateRouteSuffix = "",
+  candidateOfficeLabel = "governador",
 }: {
   indicadoresPorEstado?: Record<string, BrazilMapIndicadoresPreview>
   candidatosPorEstado?: Record<string, number>
+  stateRouteSuffix?: string
+  candidateOfficeLabel?: string
 } = {}) {
   const router = useRouter()
   const prefersReducedMotion = usePrefersReducedMotion()
@@ -92,6 +96,7 @@ export function BrazilMap({
   const mapRef = useRef<HTMLDivElement>(null)
   // Touch: track which state was tapped for first-tap tooltip / second-tap navigate
   const touchedRef = useRef<string | null>(null)
+  const stateHref = (uf: string) => `/uf/${uf.toLowerCase()}${stateRouteSuffix}`
 
   const stateTransition = prefersReducedMotion
     ? "none"
@@ -119,8 +124,11 @@ export function BrazilMap({
 
   return (
     <div>
-      <StatePreference />
-      <p id="map-instructions" className="mb-4 text-sm text-muted-foreground">Escolha no mapa ou no diretório. No mapa, use as setas para percorrer os estados e Enter para abrir. No celular, toque para ver o estado e use o link para abrir.</p>
+      <StatePreference stateRouteSuffix={stateRouteSuffix} />
+      <p id="map-instructions" className="mb-4 text-sm text-muted-foreground">
+        <span className="sm:hidden" aria-hidden="true">Escolha um estado no mapa ou na lista.</span>
+        <span className="sr-only sm:not-sr-only">Escolha no mapa ou no diretório. No mapa, use as setas para percorrer os estados e Enter para abrir. No celular, toque para ver o estado e use o link para abrir.</span>
+      </p>
     <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-12">
       {/* Left: Isometric Map */}
       <div
@@ -178,7 +186,7 @@ export function BrazilMap({
                     if (event.key === "Enter" || event.key === " ") {
                       event.preventDefault()
                       rememberState(state.sigla)
-                      router.push(`/uf/${state.sigla.toLowerCase()}`)
+                      router.push(stateHref(state.sigla))
                     } else if (["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp", "Home", "End"].includes(event.key)) {
                       event.preventDefault()
                       const index = BRAZIL_STATES.findIndex((item) => item.sigla === state.sigla)
@@ -211,7 +219,7 @@ export function BrazilMap({
                   onClick={() => {
                     touchedRef.current = null
                     rememberState(state.sigla)
-                    router.push(`/uf/${state.sigla.toLowerCase()}`)
+                    router.push(stateHref(state.sigla))
                   }}
                 >
                   {/* Lateral/extrude face (shadow) */}
@@ -273,7 +281,7 @@ export function BrazilMap({
 
         {touchState && (
           <p className="mt-3" aria-live="polite">
-            <Link className="inline-flex min-h-11 items-center rounded-lg border border-border px-4 font-bold underline" href={`/uf/${touchState.toLowerCase()}`} onClick={() => rememberState(touchState)}>Abrir {STATE_NAMES[touchState]} ({touchState})</Link>
+            <Link className="inline-flex min-h-11 items-center rounded-lg border border-border px-4 font-bold underline" href={stateHref(touchState)} onClick={() => rememberState(touchState)}>Abrir {STATE_NAMES[touchState]} ({touchState})</Link>
           </p>
         )}
 
@@ -329,7 +337,7 @@ export function BrazilMap({
             )}
             {previewTemCandidatos && (
               <p className="mt-3 inline-flex rounded-full border border-transparent px-3 py-1 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-wide">
-                00 candidatos a governador
+                00 candidatos a {candidateOfficeLabel}
               </p>
             )}
           </div>
@@ -366,7 +374,7 @@ export function BrazilMap({
                       {candidatosPorEstado[hoveredState.sigla] === 1
                         ? "candidato"
                         : "candidatos"}{" "}
-                      a governador
+                      a {candidateOfficeLabel}
                     </p>
                   )}
               </div>
@@ -405,7 +413,7 @@ export function BrazilMap({
                     return (
                       <li key={uf}>
                         <Link
-                          href={`/uf/${uf.toLowerCase()}`}
+                          href={stateHref(uf)}
                           className={`group flex min-h-11 items-center gap-1.5 rounded px-1 py-0.5 text-[length:var(--text-body-sm)] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 ${
                             isActive
                               ? "bg-foreground/5 text-foreground"

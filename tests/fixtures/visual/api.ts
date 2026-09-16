@@ -4,6 +4,8 @@ export * from "../../../src/lib/api"
 import type { Candidato, CandidatoComparavel, FichaCandidato } from "../../../src/lib/types"
 import type { QuizAlignmentDataset } from "../../../src/lib/quiz-types"
 import { liveResource } from "../../../src/lib/data-resource"
+import { isSenadoEnabled } from "../../../src/lib/senado-feature"
+import { buildGlobalSearchIndexItems } from "../../../src/lib/global-search"
 
 function candidate(slug: string, nome: string, cargo: Candidato["cargo_disputado"], estado: string | null): Candidato {
   return {
@@ -20,16 +22,26 @@ const candidates = [
   candidate("fixture-beta", "Pessoa Beta", "Presidente", null),
   candidate("fixture-gama", "Pessoa Gama", "Governador", "SP"),
   candidate("fixture-delta", "Pessoa Delta", "Governador", "SP"),
+  candidate("fixture-senado-alfa", "Fixture Senadora Alfa", "Senador", "SP"),
+  candidate("fixture-senado-beta", "Fixture Senador Beta", "Senador", "SP"),
+  candidate("fixture-senado-erro", "Fixture Senador Erro", "Senador", "RJ"),
 ]
 function select(cargo?: string, estado?: string) {
-  return candidates.filter((row) => (!cargo || row.cargo_disputado === cargo) && (!estado || row.estado === estado))
+  return candidates.filter((row) =>
+    (!cargo || row.cargo_disputado === cargo) &&
+    (!estado || row.estado === estado) &&
+    (isSenadoEnabled() || row.cargo_disputado !== "Senador"),
+  )
 }
 export async function getCandidatosResource(cargo?: string, estado?: string) { return liveResource(select(cargo, estado)) }
 export async function getCandidatoNavResource(cargo?: string, estado?: string) { return liveResource(select(cargo, estado).map(({ slug, nome_urna }) => ({ slug, nome_urna }))) }
-export async function getCandidatoSlugStaticParams() { return candidates.map(({ slug }) => ({ slug })) }
+export async function getCandidatoSlugStaticParams() { return select().map(({ slug }) => ({ slug })) }
+export async function getGlobalSearchIndexResource() {
+  return liveResource(buildGlobalSearchIndexItems(select(), new Map()))
+}
 export async function getCandidatoMetadataResource(slug: string) { return liveResource(candidates.find((row) => row.slug === slug) ?? null) }
 export async function getCandidatosComResumoResource(cargo?: string, estado?: string) {
-  return liveResource(select(cargo, estado).map((candidato) => ({ candidato, processos: 0, patrimonio: null, pontos_atencao: 0 })))
+  return liveResource(select(cargo, estado).map((candidato) => ({ candidato, processos_ordenacao: 0, patrimonio: null, patrimonio_atipico: false, processos: 0, pontos_atencao: 0 })))
 }
 export async function getCandidatosComparaveisResource(cargo?: string, estado?: string) {
   const rows: CandidatoComparavel[] = select(cargo, estado).map((c) => ({

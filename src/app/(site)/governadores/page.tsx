@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
+import { ChevronDown } from "lucide-react"
 import { SlashDivider } from "@/components/SlashDivider"
 import { Footer } from "@/components/Footer"
 import { BrazilMap } from "@/components/BrazilMap"
@@ -8,13 +9,10 @@ import { JsonLd } from "@/components/JsonLd"
 import { PublicDataSourcesNote } from "@/components/PublicDataSourcesNote"
 import { buildTwitterMetadata } from "@/lib/metadata"
 import {
-  getCandidatosResource,
+  getCandidatoCountByEstadoResource,
   getIndicadoresAllEstadosResource,
 } from "@/lib/api"
-import {
-  buildGovernadorCountByUf,
-  buildIndicadoresPorEstadoForMap,
-} from "@/lib/brazil-map-preview"
+import { buildIndicadoresPorEstadoForMap } from "@/lib/brazil-map-preview"
 
 const title = "Eleições 2026: governadores por estado | Puxa Ficha"
 const description =
@@ -47,12 +45,14 @@ export const metadata: Metadata = {
 }
 
 export default async function GovernadoresPage() {
-  const [indRes, candRes] = await Promise.all([
+  // O mapa só precisa da contagem por UF: mesmo loader enxuto de /parlamentares,
+  // sem trazer todas as colunas dos candidatos para o Data Cache.
+  const [indRes, countRes] = await Promise.all([
     getIndicadoresAllEstadosResource(),
-    getCandidatosResource("Governador"),
+    getCandidatoCountByEstadoResource("Governador"),
   ])
   const indicadoresPorEstado = buildIndicadoresPorEstadoForMap(indRes.data)
-  const candidatosPorEstado = buildGovernadorCountByUf(candRes.data)
+  const candidatosPorEstado = countRes.data
 
   const schema = {
     "@context": "https://schema.org",
@@ -62,6 +62,24 @@ export default async function GovernadoresPage() {
     description:
       "Mapa e diretório para consultar candidatos a governador mapeados por estado brasileiro.",
   }
+
+  const intro = (
+    <div className="max-w-3xl">
+      <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
+        O hub de governadores organiza a busca por estado: candidatos a
+        governador em todos os estados e no Distrito Federal em 2026. O mapa
+        serve como índice de entrada e cada UF reúne fichas e comparador dos
+        nomes publicados.
+      </p>
+      <p className="mt-3 text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
+        Se preferir a cobertura nacional, volte para a{" "}
+        <Link href="/" className="font-semibold text-foreground underline">
+          home
+        </Link>
+        .
+      </p>
+    </div>
+  )
 
   return (
     <div className="min-h-screen bg-background">
@@ -94,30 +112,23 @@ export default async function GovernadoresPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 pt-8 md:px-12">
-        <div className="max-w-3xl">
-          <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
-            O hub de governadores organiza a busca por estado: candidatos a
-            governador em todos os estados e no Distrito Federal em 2026. O mapa
-            serve como índice de entrada e cada UF reúne fichas e comparador dos
-            nomes publicados.
-          </p>
-          <p className="mt-3 text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
-            Se preferir a cobertura nacional, volte para a{" "}
-            <Link href="/" className="font-semibold text-foreground underline">
-              home
-            </Link>
-            .
-          </p>
-        </div>
+      <section className="mx-auto max-w-7xl px-5 pt-4 sm:pt-8 md:px-12">
+        <details className="group sm:hidden">
+          <summary className="flex min-h-11 cursor-pointer items-center justify-between gap-3 font-semibold text-foreground">
+            <span>Sobre a consulta por estado</span>
+            <ChevronDown aria-hidden="true" className="size-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180 motion-reduce:transition-none" />
+          </summary>
+          <div className="pb-2">{intro}</div>
+        </details>
+        <div className="hidden sm:block">{intro}</div>
       </section>
 
-      <div className="mx-auto max-w-7xl px-5 pt-8 md:px-12 sm:pt-12">
+      <div className="mx-auto max-w-7xl px-5 pt-4 sm:pt-12 md:px-12">
         <SlashDivider />
       </div>
 
       {/* Map + Directory */}
-      <section className="mx-auto max-w-7xl px-5 py-8 sm:py-12 md:px-12">
+      <section className="mx-auto max-w-7xl px-5 py-6 sm:py-12 md:px-12">
         <BrazilMap
           indicadoresPorEstado={indicadoresPorEstado}
           candidatosPorEstado={candidatosPorEstado}

@@ -123,6 +123,31 @@ test("dedupeHistoricoPoliticoForDisplay mantém linhas com período distinto", (
   assert.equal(out.length, 2)
 })
 
+test("normalização preserva candidatura e mandato do mesmo cargo e ano", () => {
+  const mandato = row({
+    id: "mandato-2026",
+    cargo: "Senador",
+    cargo_canonico: "Senador",
+    periodo_inicio: 2026,
+    periodo_fim: 2026,
+    tipo_evento: "mandato",
+  })
+  const candidatura = row({
+    id: "candidatura-2026",
+    cargo: "Senador",
+    cargo_canonico: "Senador",
+    periodo_inicio: 2026,
+    periodo_fim: 2026,
+    tipo_evento: "candidatura",
+    proveniencia: "tse",
+    observacoes: "Candidatura registrada no TSE (TSE 2026).",
+  })
+
+  const out = normalizeHistoricoPoliticoForDisplay([mandato, candidatura])
+  assert.equal(out.filter((item) => item.tipo_evento === "mandato").length, 1)
+  assert.equal(out.filter((item) => item.tipo_evento === "candidatura").length, 1)
+})
+
 test("splitBrasilPresidenteTwoOpenLongGap parte 2002 aberto + 2022 aberto em 2002–2006 e 2006–2010", () => {
   const a = row({
     id: "h2002",

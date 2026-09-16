@@ -12,9 +12,11 @@ test("search-index filtra pela coorte canônica e não fica uma hora no CDN", ()
 
   assert.match(source, /getCandidatoSlugStaticParams/)
   assert.match(source, /filterGlobalSearchIndexToPublicSlugs/)
-  assert.match(
-    source,
-    /public, max-age=60, s-maxage=60, stale-while-revalidate=300/,
-  )
+  // Caminho saudável: cache público curto no CDN (nunca a hora antiga).
+  assert.match(source, /public, max-age=60, s-maxage=60, stale-while-revalidate=300/)
   assert.doesNotMatch(source, /s-maxage=3600/)
+  // Degradado, vazio ou falha da coorte: no-store. O comportamento é coberto por
+  // tests/senado-perf-cache-headers.test.ts.
+  assert.match(source, /"cache-control": "no-store"/)
+  assert.match(source, /degraded \|\| data\.length === 0 \? "no-store"/)
 })

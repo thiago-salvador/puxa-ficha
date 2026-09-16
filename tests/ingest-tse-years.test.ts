@@ -16,7 +16,7 @@ test("PF_TSE_ANOS aceita um shard declarado", () => {
 test("PF_TSE_ANOS falha fechado para item vazio, repetido ou fora do universo", () => {
   assert.throws(() => parseTseYearsEnv("2016,"), /deve listar anos/)
   assert.throws(() => parseTseYearsEnv("2016,2016"), /ano repetido/)
-  assert.throws(() => parseTseYearsEnv("2016,2026"), /ano invalido/)
+  assert.deepEqual(parseTseYearsEnv("2016,2026"), [2016, 2026])
 })
 
 test("workflow divide todos os anos em shards disjuntos", () => {

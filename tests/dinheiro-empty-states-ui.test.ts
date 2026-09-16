@@ -139,11 +139,11 @@ test("MoneyTabSection afirma a ausência no TSE quando todos os pleitos aplicáv
   })
 
   assert.ok(
-    html.includes("Nenhum patrimônio declarado no TSE"),
+    html.includes("Nenhum registro de patrimônio localizado no arquivo do TSE"),
     "com a fonte oficial conferida em todos os pleitos, a ausência é afirmável"
   )
   assert.ok(
-    html.includes("A fonte oficial foi conferida em todos os pleitos aplicáveis"),
+    html.includes("A fonte oficial foi conferida nos pleitos aplicáveis"),
     "a descrição deve dizer o que sustenta a afirmação"
   )
   assert.ok(html.includes("Dado relevante"), "ausência provada em quem tem histórico é notable")
@@ -162,7 +162,7 @@ test("MoneyTabSection separa ausência conferida de histórico político ausente
   })
 
   assert.ok(
-    html.includes("Sem bens declarados ao TSE"),
+    html.includes("Nenhum registro de patrimônio localizado no arquivo do TSE"),
     "deve exibir o título neutral quando não há histórico"
   )
   assert.ok(

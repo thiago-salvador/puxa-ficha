@@ -374,7 +374,11 @@ function historicoDedupeKey(row: HistoricoPolitico): string {
   const canon = (row.cargo_canonico?.trim() || canonicalCargo(row.cargo ?? "")).trim()
   const ini = row.periodo_inicio != null ? String(row.periodo_inicio) : ""
   const fim = row.periodo_fim != null ? String(row.periodo_fim) : ""
-  return `${canon}|${ini}|${fim}`
+  // Candidatura e mandato podem compartilhar cargo e ano: a eleição datada
+  // não é o exercício do mandato. Mantê-los na mesma chave fazia o mandato
+  // apagar a candidatura corrente durante a normalização pública.
+  const tipo = isHistoricoCandidaturaRow(row) ? "candidatura" : "mandato"
+  return `${tipo}|${canon}|${ini}|${fim}`
 }
 
 function historicoRowRichness(row: HistoricoPolitico): number {

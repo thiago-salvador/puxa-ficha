@@ -7,6 +7,7 @@ import {
   deriveAccessCookieValue,
 } from "@/lib/access-cookie-digest"
 import { resolveEstadoUf } from "@/lib/br-uf"
+import { isSenadoEnabled } from "@/lib/senado-feature"
 import { buildContentSecurityPolicy } from "@/lib/content-security-policy"
 import { getRankingDefinitionBySlug } from "@/data/ranking-definitions"
 import {
@@ -119,11 +120,15 @@ async function isValidCandidatoSlug(request: NextRequest, slug: string): Promise
     // governar, e `revalidateTag("public-candidatos")` nunca alcancou esta
     // chamada. Ter as opcoes escritas dava a impressao contraria.
     //
-    // A frescura real vem de duas coisas, as duas continuam valendo:
-    //   1. o `cache-control` da propria resposta
-    //      (`s-maxage=300, stale-while-revalidate=600`), respeitado pelo CDN,
-    //      que e quem atende esta chamada;
-    //   2. o `export const revalidate = 300` da rota, que governa o ISR dela.
+    // A frescura real vem de duas coisas:
+    //   1. o `cache-control` da propria resposta, respeitado pelo CDN, que e
+    //      quem atende esta chamada: lista saudavel sai com
+    //      `public, max-age=60, s-maxage=300, stale-while-revalidate=600`;
+    //      falha e lista vazia saem `no-store` e nao ficam no CDN;
+    //   2. o `unstable_cache` de `getCandidatoSlugStaticParams` (1h, tag
+    //      `public-candidatos`), com SENADO_CACHE_VARIANT na chave. A rota e
+    //      `force-dynamic`, sem ISR; o cache de CDN e por deployment, e trocar
+    //      a flag do Senado na Vercel exige redeploy.
     // Teto de 1500ms porque este fetch está no caminho de TODA requisição a
     // /candidato/*: sem ele, uma conexão pendurada segura a rota mais quente do
     // site até o limite do runtime. O TimeoutError cai no catch abaixo, que já é
@@ -213,12 +218,35 @@ function guardUfRoute(request: NextRequest): NextResponse | null {
   // ["", "uf", "<uf>", ...]
   const ufSegment = segments[2]
   if (!ufSegment) return null
-  const uf = decodeURIComponent(ufSegment)
+  const uf = safeDecodePathSegment(ufSegment)
   if (resolveEstadoUf(uf)) return null
   return buildSoftNotFoundResponse(
     "UF nao encontrada",
     "UF nao encontrada. Use a sigla de duas letras do estado brasileiro (ex.: sp, rj, mg).",
   )
+}
+
+/** Decodifica um segmento sem lançar: percent-encoding inválido fica literal. */
+function safeDecodePathSegment(segment: string): string {
+  try {
+    return decodeURIComponent(segment)
+  } catch {
+    return segment
+  }
+}
+
+/** O roteador do Next decodifica o pathname antes de casar a página; o guard
+ * precisa ver o mesmo caminho, senão /uf/%73p/senado escapa da flag. */
+function decodePathnameForGuard(pathname: string): string {
+  return pathname.split("/").map(safeDecodePathSegment).join("/")
+}
+
+function guardSenadoRoute(request: NextRequest): Response | null {
+  const pathname = decodePathnameForGuard(request.nextUrl.pathname).toLowerCase()
+  if (/^\/senado\/?$/.test(pathname) || /^\/uf\/[a-z]{2}\/senado\/?$/.test(pathname)) {
+    if (!isSenadoEnabled()) return notFoundResponse()
+  }
+  return null
 }
 
 function buildCleanRedirect(request: NextRequest) {
@@ -328,6 +356,8 @@ async function protectPreviewRoute(request: NextRequest): Promise<NextResponse |
 
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
+  const senadoResponse = guardSenadoRoute(request)
+  if (senadoResponse) return withContentSecurityPolicy(request, senadoResponse)
   const match = findRouteGuard(pathname)
 
   switch (match?.guard.id) {

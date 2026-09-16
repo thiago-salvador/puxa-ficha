@@ -351,8 +351,28 @@ describe("aplicador da evidência de processos", () => {
     })))
   })
 
+  it("rejeita vazio_confirmado quando há ocorrência ambígua pendente", () => {
+    assert.throws(
+      () => criarPlanos(evidenciaCom({
+        classificacao: "vazio_confirmado",
+        ocorrencias_ambiguas: [{
+          numero_cnj: "comunicacao-99",
+          tribunal: "TJBA",
+          motivo: "nome exato sem segundo identificador",
+        }],
+      })),
+      /vazio_confirmado exige ausência de ocorrências ambíguas/,
+    )
+  })
+
   it("inclui ocorrências ambíguas no detalhe auditável", () => {
+    // vazio_confirmado exige ausência de ocorrências ambíguas (alegação
+    // negativa pública); bloqueado é a classificação compatível com uma
+    // coincidência ainda não resolvida e continua exercitando a serialização
+    // de ocorrencias_ambiguas no detalhe auditável.
     const [planoAtual] = criarPlanos(evidenciaCom({
+      classificacao: "bloqueado",
+      motivo: "identidade nao confirmada por ocorrencia ambigua pendente",
       ocorrencias_ambiguas: [{
         numero_cnj: "comunicacao-99",
         tribunal: "TJBA",

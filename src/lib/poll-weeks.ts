@@ -1,5 +1,5 @@
 import type { StatePollScenario } from "./state-polls"
-import { fieldworkDate, formatPollDate, pollKey, publishedValue, resultKey, seriesCandidates, type PollResult } from "./poll-series"
+import { assinaturaSenadoScenario, fieldworkDate, formatPollDate, pollKey, publishedValue, resultKey, seriesCandidates, type PollResult } from "./poll-series"
 
 const DAY = 86_400_000
 export type PollWeek = {
@@ -17,13 +17,29 @@ function normalizeDimension(value: string): string {
   return value.normalize("NFD").replace(/\p{Diacritic}/gu, "").trim().replace(/\s+/g, " ").toLocaleLowerCase("pt-BR")
 }
 
-function comparabilityMode(poll: StatePollScenario): "estimulada" | "espontanea" | null {
+/** Key parts when year, office, geography and turn match the poll itself; otherwise null. */
+function scopedComparabilityParts(poll: StatePollScenario): string[] | null {
   const parts = poll.scenario.comparabilityKey.split("|").map(part => part.trim())
   if (parts.length < 5) return null
-  const [year, office, geography, turn, rawMode] = parts
+  const [year, office, geography, turn] = parts
   if (year !== String(poll.electionYear) || normalizeDimension(office) !== normalizeDimension(poll.office)
     || geography.toLocaleUpperCase("pt-BR") !== poll.geography.code.toLocaleUpperCase("pt-BR") || turn !== String(poll.scenario.turn)) return null
-  const mode = normalizeDimension(rawMode)
+  return parts
+}
+
+/** Mirrors SENADO_POLL_MEASURES in senado-polls.ts, which is server-only and cannot be imported here. */
+const SENADO_WEEKLY_MEASURES = new Set(["primeiro-voto", "segundo-voto", "agregado"])
+
+function senadoMeasure(poll: StatePollScenario): string | null {
+  const parts = scopedComparabilityParts(poll)
+  const measure = parts ? normalizeDimension(parts[4]) : null
+  return measure && SENADO_WEEKLY_MEASURES.has(measure) ? measure : null
+}
+
+function comparabilityMode(poll: StatePollScenario): "estimulada" | "espontanea" | null {
+  const parts = scopedComparabilityParts(poll)
+  if (!parts) return null
+  const mode = normalizeDimension(parts[4])
   if (mode !== "estimulada" && mode !== "estimulado" && mode !== "espontanea" && mode !== "espontaneo") return null
   return mode.startsWith("estimul") ? "estimulada" : "espontanea"
 }
@@ -54,6 +70,20 @@ function weeklySeriesKey(poll: StatePollScenario) {
     && poll.method.status === "publicado" && Boolean(poll.method.value?.trim())
     && poll.instituto.status === "publicado" && Boolean(poll.instituto.value?.trim())
     && candidates.length > 0 && !poll.scenario.resultados.some(result => result.matchStatus === "indeterminado")
+  if (poll.office === "Senador") {
+    // Senate scenarios (two votes per state) group by the published question,
+    // denominator and methodology signature, never by provenance or institute.
+    if (!senadoMeasure(poll) || !metadataVerified) return JSON.stringify(["isolated", pollKey(poll)])
+    return JSON.stringify([
+      poll.electionYear,
+      normalizeDimension(poll.office),
+      poll.geography.code.toLocaleUpperCase("pt-BR"),
+      poll.scenario.turn,
+      assinaturaSenadoScenario(poll),
+      candidates,
+      normalizeDimension(population.value!),
+    ])
+  }
   if (!dimensions || !metadataVerified) return JSON.stringify(["isolated", pollKey(poll)])
   return JSON.stringify([
     poll.electionYear,

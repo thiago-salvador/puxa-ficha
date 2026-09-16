@@ -228,6 +228,30 @@ describe("financiamento-pleito-public-label", () => {
     assert.equal(overview, "2018 - Presidente")
   })
 
+  it("usa o cargo verificado da linha para separar dois pleitos no mesmo ano", () => {
+    const historico: HistoricoPolitico[] = []
+    const deputadoFederal: Financiamento = {
+      id: "f-federal",
+      candidato_id: "c1",
+      ano_eleicao: 2018,
+      cargo_candidatura: "DEPUTADO FEDERAL",
+      total_arrecadado: 1,
+      total_fundo_partidario: 0,
+      total_fundo_eleitoral: 0,
+      total_pessoa_fisica: 0,
+      total_recursos_proprios: 0,
+      maiores_doadores: [],
+    }
+    const deputadoEstadual: Financiamento = {
+      ...deputadoFederal,
+      id: "f-estadual",
+      cargo_candidatura: "DEPUTADO ESTADUAL",
+    }
+
+    assert.equal(formatFinanciamentoPleitoPublicLabelForRow(deputadoFederal, historico), "2018 - DEPUTADO FEDERAL")
+    assert.equal(formatFinanciamentoPleitoPublicLabelForRow(deputadoEstadual, historico), "2018 - DEPUTADO ESTADUAL")
+  })
+
   it("não usa inferência de candidatura quando o ano não coincide (periodo_inicio)", () => {
     const historico: HistoricoPolitico[] = [
       h({

@@ -11,8 +11,8 @@ import { unstableCacheWithSingleFlight } from "./cache-single-flight"
 import { normalizeVotoFromApi } from "@/lib/quiz-scoring"
 import { SIGLAS_PROJETO_LEI } from "@/lib/proposicao-natureza"
 import type { QuizAlignmentDataset, QuizCandidatoData, QuizContradicaoVoto, QuizPosicaoDeclarada } from "@/lib/quiz-types"
-import type { Candidato, Chapa2026, FichaCandidato, CandidatoComparavel, IndicadorEstadual, IndicadorEstadualRanking, DataResource, LegislacaoMandatoExecutivo, MudancaPartido, PatrimonioAusenciaOficial, ProjetoLei, SancoesVerificacao } from "./types"
-import { buildGlobalSearchIndexItems, mergeVotacaoTagsByCandidatoId, type GlobalSearchIndexItem, type VotacaoSearchRow } from "@/lib/global-search"
+import type { Candidato, Chapa2026, FichaCandidato, CandidatoComparavel, IndicadorEstadual, IndicadorEstadualRanking, DataResource, LegislacaoMandatoExecutivo, MudancaPartido, PatrimonioAusenciaOficial, ProjetoLei, SancoesVerificacao, TCUVerificacao, TransparenciaFamiliaPublica, TransparenciaFamiliaVerificacao } from "./types"
+import { buildGlobalSearchIndexItems, GLOBAL_SEARCH_CANDIDATE_COLUMNS, mergeVotacaoTagsByCandidatoId, type GlobalSearchCandidateRow, type GlobalSearchIndexItem, type VotacaoSearchRow } from "@/lib/global-search"
 import { countPartySwitches, normalizePartyTimelineForDisplay } from "@/lib/party-switches"
 import { newsTitleMentionsCandidate } from "@/lib/news/name-match"
 import { splitNewsByDenylist } from "@/lib/news/denylist"
@@ -21,7 +21,7 @@ import { fetchGastoTotalsByCandidatoIds, fetchCargoAtualByCandidatoIds, fetchLeg
 import { applyLegislacaoMandatoExecutivoCachePolicy } from "@/lib/legislacao-mandato-executivo-cache"
 import { sortVotosForPublicDisplay } from "@/lib/votos-candidato-aggregate"
 import { hasIncompletePartyTimeline } from "@/lib/candidate-integrity"
-import { buildPatrimonioEleicoes } from "@/lib/public-profile-dto"
+import { buildPatrimonioEleicoes, publicTransparencia } from "@/lib/public-profile-dto"
 import { buildFinanciamentoEleicoes, type FinanciamentoVerificacaoPublica } from "@/lib/financiamento-eleicoes"
 import { ensureCurrentCandidacyInHistory, normalizeHistoricoPoliticoForDisplay } from "@/lib/historico-dedupe"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
@@ -33,12 +33,25 @@ import { classifyAttentionPoints, isNegativeHighestSeverityAttentionPoint } from
 import { SUPABASE_FIRST_FOLD_ATTEMPT_TIMEOUT_MS, withSupabaseRetry, type SupabaseRunResult } from "@/lib/supabase-retry"
 import { getCanonicalPerson } from "@/lib/canonical-person-map"
 import { evolucaoPatrimonialVs2026, type PatrimonioAnoValor } from "@/lib/evolucao-patrimonial"
+import { patrimonioDeclaradoAtipico } from "@/lib/patrimonio-atipico"
 import { buildVotacaoPublicUrl } from "@/lib/quiz-votacao-url"
 import { getRankingDefinitionBySlug } from "@/data/ranking-definitions"
 import { buildAggregateRankingEntries, buildFieldRankingEntries, normalizeRankingFilters, sortRankingEntries, type RankingCandidateSummary, type RankingDataset, type RankingDefinition, type RankingEntry, type RankingFieldCandidate } from "@/lib/rankings"
 import { degradedResource, liveResource, mergeSourceMessages, mergeSourceStatuses } from "@/lib/data-resource"
-import { buildSectionFreshness } from "@/lib/candidate-section-freshness"
+import {
+  buildSectionFreshness,
+  FEDERAL_ACERVO_SOURCES,
+  resolveFederalVotacoesNotApplicable,
+  sanitizeFiliacaoDetail,
+  type FederalAcervoReceipts,
+  type FederalAcervoSource,
+  type ExecutiveScopeReceipt,
+} from "@/lib/candidate-section-freshness"
+import { isSenadoEnabled, shouldExposeCargo } from "@/lib/senado-feature"
+import { projectProcessosVerificacaoRow } from "@/lib/processos-verificacao-public"
+import { parseFederalAcervoReceiptDetail, projectFederalAcervoReceipts } from "@/lib/federal-acervo-receipts"
 export { mergeSourceMessages, mergeSourceStatuses } from "@/lib/data-resource"
+export { parseFederalAcervoReceiptDetail, projectFederalAcervoReceipts } from "@/lib/federal-acervo-receipts"
 
 /** Único ponto de bump para invalidar todas as superfícies públicas em cache. */
 export const CURRENT_DATA_WAVE = "ceaps-utf8-20260821"
@@ -51,6 +64,9 @@ const SUPABASE_REQUIRED_MESSAGE =
   "Configure SUPABASE_URL (sem placeholder) e SUPABASE_ANON_KEY em .env.local. O site não exibe dados mock."
 const CANDIDATO_PUBLIC_RELATION = "candidatos_publico"
 const APP_DATA_REVALIDATE_SECONDS = 3600
+// The cohort flag is part of every public cache identity. This prevents a
+// Senate-enabled local cache from surviving a closed-flag render.
+const SENADO_CACHE_VARIANT = isSenadoEnabled() ? "senado-on" : "senado-off"
 // 2026-08-03: `select("*")` em projetos_lei trazia `metadata` (jsonb), que sozinho
 // responde por 60% do peso da tabela (8,9 MB de 14 MB, media de 651 bytes por linha)
 // e nao e lido em lugar nenhum do app: a única leitura de `.metadata` no codigo e de
@@ -271,6 +287,9 @@ async function getCandidatosResourceUncached(
   cargo?: string,
   estado?: string
 ): Promise<DataResource<Candidato[]>> {
+  if (!shouldExposeCargo(cargo)) {
+    return degradedResource([], "A cobertura do Senado está desativada nesta consulta.")
+  }
   if (USE_MOCK) {
     return degradedResource([], SUPABASE_REQUIRED_MESSAGE)
   }
@@ -283,6 +302,7 @@ async function getCandidatosResourceUncached(
       .neq("status", "removido")
 
     if (cargo) query = query.eq("cargo_disputado", cargo)
+    else if (!isSenadoEnabled()) query = query.neq("cargo_disputado", "Senador")
     if (estado) query = query.ilike("estado", estado)
 
     return query.order("nome_urna").abortSignal(signal) as unknown as SupabaseRunResult<Candidato[]>
@@ -325,7 +345,7 @@ const getCachedCandidatosResource = unstableCacheWithSingleFlight(
   // Bumped 2026-05-15: swap da coorte presidencial remove tarcisio/eduardo-leite
   // da superficie publica e adiciona augusto-cury/cabo-daciolo/edmilson-costa.
   // Bumped 2026-05-22: publicacao da lista editorial de pre-candidatos dos lotes 1 e 2.
-  ["public-candidatos-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", CURRENT_DATA_WAVE],
+  ["public-candidatos-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "candidate-roster-cas-20260915", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos"],
@@ -336,8 +356,15 @@ export async function getCandidatosResource(
   cargo?: string,
   estado?: string
 ): Promise<DataResource<Candidato[]>> {
+  if (!shouldExposeCargo(cargo)) {
+    return degradedResource([], "A cobertura do Senado está desativada nesta consulta.")
+  }
   try {
-    return await getCachedCandidatosResource(cargo, estado)
+    const resource = await getCachedCandidatosResource(cargo, estado)
+    if (!isSenadoEnabled() && !cargo) {
+      return { ...resource, data: resource.data.filter((candidate) => candidate.cargo_disputado !== "Senador") }
+    }
+    return resource
   } catch (error) {
     return degradedFromError(error, [] as Candidato[])
   }
@@ -359,6 +386,9 @@ async function getCandidatoNavResourceUncached(
   cargo?: string,
   estado?: string
 ): Promise<DataResource<CandidatoNavItem[]>> {
+  if (!shouldExposeCargo(cargo)) {
+    return degradedResource([], "A cobertura do Senado está desativada nesta consulta.")
+  }
   if (USE_MOCK) {
     return degradedResource([], SUPABASE_REQUIRED_MESSAGE)
   }
@@ -372,6 +402,8 @@ async function getCandidatoNavResourceUncached(
 
     if (cargo) {
       query = query.eq("cargo_disputado", cargo)
+    } else if (!isSenadoEnabled()) {
+      query = query.neq("cargo_disputado", "Senador")
     }
 
     // Disputa estadual navega dentro da própria UF; sem o filtro, o anel era
@@ -400,7 +432,7 @@ async function getCandidatoNavResourceUncached(
 
 const getCachedCandidatoNavResource = unstableCacheWithSingleFlight(
   async (cargo?: string, estado?: string) => getCandidatoNavResourceUncached(cargo, estado),
-  ["public-candidato-nav-resource", "slug-nome-urna-20260603", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "nav-por-disputa-20260815", CURRENT_DATA_WAVE],
+  ["public-candidato-nav-resource", "slug-nome-urna-20260603", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "nav-por-disputa-20260815", "candidate-roster-cas-20260915", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos"],
@@ -411,11 +443,130 @@ export async function getCandidatoNavResource(
   cargo?: string,
   estado?: string
 ): Promise<DataResource<CandidatoNavItem[]>> {
+  if (!shouldExposeCargo(cargo)) {
+    return degradedResource([], "A cobertura do Senado está desativada nesta consulta.")
+  }
   try {
     return await getCachedCandidatoNavResource(cargo, estado)
   } catch (error) {
     return degradedFromError(error, [] as CandidatoNavItem[])
   }
+}
+
+/**
+ * Contagem de candidatos por UF para os mapas de /parlamentares e /governadores.
+ *
+ * Os dois hubs chamavam `getCandidatosResource(cargo)` com as 28 colunas públicas
+ * só para contar linhas por estado. Com a coorte do Senado, o payload medido de
+ * `getCandidatosResource("Senador")` foi 2.610.993 bytes, acima do limite de 2 MB
+ * por item do Data Cache do Next ("items over 2MB can not be cached"): a entrada
+ * nunca era gravada e cada render voltava ao banco. Aqui a query projeta só
+ * `estado` e o cache guarda o mapa UF -> contagem, que tem poucos bytes.
+ */
+async function getCandidatoCountByEstadoResourceUncached(
+  cargo: string
+): Promise<DataResource<Record<string, number>>> {
+  if (!shouldExposeCargo(cargo)) {
+    return degradedResource({}, "A cobertura do Senado está desativada nesta consulta.")
+  }
+  if (USE_MOCK) {
+    return degradedResource({}, SUPABASE_REQUIRED_MESSAGE)
+  }
+
+  const supabase = createServerSupabaseClient()
+  const { data, error } = await withSupabaseRetry<{ estado: string | null }[]>(
+    "getCandidatoCountByEstado",
+    async (signal) =>
+      supabase
+        .from(CANDIDATO_PUBLIC_RELATION)
+        .select("estado")
+        .neq("status", "removido")
+        .eq("cargo_disputado", cargo)
+        .abortSignal(signal) as unknown as SupabaseRunResult<{ estado: string | null }[]>,
+    { attemptTimeoutMs: SUPABASE_FIRST_FOLD_ATTEMPT_TIMEOUT_MS }
+  )
+
+  if (error || !data) {
+    if (IS_DEV) {
+      warnDevSupabaseFailure("getCandidatoCountByEstado", error)
+    } else {
+      console.error("getCandidatoCountByEstado failed:", error?.message)
+    }
+    // Lançar (não retornar degraded): rejeição não entra no unstable_cache.
+    throw new DegradedDataError(
+      "Não foi possível carregar a lista de candidatos nesta tentativa."
+    )
+  }
+
+  const counts: Record<string, number> = {}
+  for (const row of data) {
+    const uf = row.estado?.trim().toUpperCase()
+    if (!uf) continue
+    counts[uf] = (counts[uf] ?? 0) + 1
+  }
+  return liveResource(counts)
+}
+
+const getCachedCandidatoCountByEstadoResource = unstableCacheWithSingleFlight(
+  async (cargo: string) => getCandidatoCountByEstadoResourceUncached(cargo),
+  ["public-candidato-count-by-estado", "estado-only-20260916", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
+  {
+    revalidate: APP_DATA_REVALIDATE_SECONDS,
+    tags: ["public-candidatos"],
+  }
+)
+
+export async function getCandidatoCountByEstadoResource(
+  cargo: string
+): Promise<DataResource<Record<string, number>>> {
+  if (!shouldExposeCargo(cargo)) {
+    return degradedResource({}, "A cobertura do Senado está desativada nesta consulta.")
+  }
+  try {
+    return await getCachedCandidatoCountByEstadoResource(cargo)
+  } catch (error) {
+    return degradedFromError(error, {} as Record<string, number>)
+  }
+}
+
+/**
+ * Candidatos do índice de busca global, só com as colunas que o índice lê.
+ *
+ * Antes o índice passava por `getCandidatosResource()`, que carrega todas as
+ * colunas públicas de todos os cargos. Com os 309 candidatos ao Senado essa
+ * lista passa de 2 MB (só `verificacao_campos` responde por ~2 MB dos
+ * senadores) e a entrada `public-candidatos-resource` sem filtro deixava de
+ * caber no Data Cache. Chamado só dentro do `unstable_cache` do índice, que já
+ * é a camada persistente; não precisa de cache próprio.
+ */
+async function getGlobalSearchCandidatesUncached(): Promise<DataResource<GlobalSearchCandidateRow[]>> {
+  const supabase = createServerSupabaseClient()
+  const { data, error } = await withSupabaseRetry<GlobalSearchCandidateRow[]>(
+    "getGlobalSearchCandidates",
+    async (signal) => {
+      let query = supabase
+        .from(CANDIDATO_PUBLIC_RELATION)
+        .select(GLOBAL_SEARCH_CANDIDATE_COLUMNS.join(","))
+        .neq("status", "removido")
+      if (!isSenadoEnabled()) query = query.neq("cargo_disputado", "Senador")
+      return query.order("nome_urna").abortSignal(signal) as unknown as SupabaseRunResult<GlobalSearchCandidateRow[]>
+    },
+    { attemptTimeoutMs: SUPABASE_FIRST_FOLD_ATTEMPT_TIMEOUT_MS }
+  )
+
+  if (error || !data) {
+    if (IS_DEV) {
+      warnDevSupabaseFailure("getGlobalSearchCandidates", error)
+    } else {
+      console.error("getGlobalSearchCandidates failed:", error?.message)
+    }
+    // Mesma mensagem da lista completa: o contrato visível da busca não muda.
+    throw new DegradedDataError(
+      "Não foi possível carregar a lista de candidatos nesta tentativa."
+    )
+  }
+
+  return liveResource(sanitizePublicPartyFieldsList(data))
 }
 
 const VOTACAO_SEARCH_PAGE_SIZE = 1000
@@ -468,14 +619,10 @@ async function getGlobalSearchIndexResourceUncached(): Promise<
     return degradedResource([], SUPABASE_REQUIRED_MESSAGE)
   }
 
-  const candidatosRes = await getCandidatosResource()
+  // Cascata: falha transiente na lista (USE_MOCK já retornou acima) lança
+  // DegradedDataError e não pode virar índice vazio cacheado por mais 1h.
+  const candidatosRes = await getGlobalSearchCandidatesUncached()
   const candidatos = candidatosRes.data
-
-  // Cascata: lista degradada por falha transiente (USE_MOCK já retornou acima)
-  // não pode virar índice vazio cacheado por mais 1h.
-  if (candidatosRes.sourceStatus !== "live") {
-    throw new DegradedDataError(candidatosRes.sourceMessage)
-  }
 
   if (candidatos.length === 0) {
     return {
@@ -529,7 +676,7 @@ const getCachedGlobalSearchIndexResource = unstableCacheWithSingleFlight(
   // sobrevive a deploy, e a rota de revalidacao por tag depende de
   // PF_REVALIDATE_SECRET, entao o bump da chave e o caminho que funciona sem
   // segredo. Mesma chave aplicada a todos os resources que listam candidatos.
-  ["global-search-index", "bloco1-incerto-suppress", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", CURRENT_DATA_WAVE],
+  ["global-search-index", "bloco1-incerto-suppress", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "busca-candidatura-colunas-enxutas-20260916", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos"],
@@ -540,7 +687,16 @@ export async function getGlobalSearchIndexResource(): Promise<
   DataResource<GlobalSearchIndexItem[]>
 > {
   try {
-    return await getCachedGlobalSearchIndexResource()
+    const resource = await getCachedGlobalSearchIndexResource()
+    if (isSenadoEnabled()) return resource
+    const publicSlugs = new Set((await getCandidatoSlugStaticParams()).map((row) => row.slug))
+    return {
+      ...resource,
+      data: resource.data.filter((item) => {
+        const match = item.href.match(/^\/candidato\/([^/?#]+)/)
+        return !match || publicSlugs.has(match[1])
+      }),
+    }
   } catch (error) {
     return degradedFromError(error, [] as GlobalSearchIndexItem[])
   }
@@ -601,6 +757,10 @@ const getCandidatoPublicRowForRequest = cache(async function loadCandidatoPublic
     )
   }
 
+  if (!isSenadoEnabled() && data?.cargo_disputado === "Senador") {
+    return liveResource(null)
+  }
+
   return liveResource(data ?? null)
 })
 
@@ -610,14 +770,14 @@ async function getCandidatoSlugParamsUncached(): Promise<{ slug: string }[]> {
   }
 
   const supabase = createServerSupabaseClient()
-  const { data, error } = await withSupabaseRetry("getCandidatoSlugParams", async (signal) =>
-    supabase
+  const { data, error } = await withSupabaseRetry("getCandidatoSlugParams", async (signal) => {
+    let query = supabase
       .from(CANDIDATO_PUBLIC_RELATION)
       .select("slug")
       .neq("status", "removido")
-      .order("slug")
-      .abortSignal(signal)
-  )
+    if (!isSenadoEnabled()) query = query.neq("cargo_disputado", "Senador")
+    return query.order("slug").abortSignal(signal)
+  })
 
   if (error || !data) {
     if (IS_DEV) {
@@ -640,7 +800,7 @@ async function getCandidatoSlugParamsUncached(): Promise<{ slug: string }[]> {
 
 const getCachedCandidatoSlugParams = unstableCacheWithSingleFlight(
   async () => getCandidatoSlugParamsUncached(),
-  ["public-candidato-slugs-static", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "escopo-executivo-20260726", "chapas-tse-20260815", "onda-p-20260814", CURRENT_DATA_WAVE],
+  ["public-candidato-slugs-static", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "escopo-executivo-20260726", "chapas-tse-20260815", "onda-p-20260814", "candidate-roster-cas-20260915", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos"],
@@ -667,7 +827,7 @@ const getCachedCandidatoMetadataResource = unstableCacheWithSingleFlight(
     requireLiveResourceForCache(await getCandidatoMetadataResourceUncached(slug)),
   // Bumped 2026-04-26: payload publico agora carrega partido_sigla/partido_atual
   // ja sanitizados via sanitizePublicPartyFields. Suffix invalida cache antigo.
-  ["public-candidato-metadata-resource", "central-party-sanitize", "no-cache-degraded-v1", "presidential-cohort-20260515", "public-profile-density-20260517", "editorial-full-closure-20260518", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "reescrita-claims-homonimo-20260726", "consolidacao-mapa-fome-20260726", "chapas-tse-20260815", "chapas-bio-card-20260813", "onda-p-20260814", "party-siglas-lote2-20260815", CURRENT_DATA_WAVE],
+  ["public-candidato-metadata-resource", "central-party-sanitize", "no-cache-degraded-v1", "presidential-cohort-20260515", "public-profile-density-20260517", "editorial-full-closure-20260518", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "reescrita-claims-homonimo-20260726", "consolidacao-mapa-fome-20260726", "chapas-tse-20260815", "chapas-bio-card-20260813", "onda-p-20260814", "party-siglas-lote2-20260815", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidato-metadata"],
@@ -678,7 +838,10 @@ export async function getCandidatoMetadataResource(
   slug: string
 ): Promise<DataResource<Candidato | null>> {
   try {
-    return await getCachedCandidatoMetadataResource(slug)
+    const resource = await getCachedCandidatoMetadataResource(slug)
+    return !isSenadoEnabled() && resource.data?.cargo_disputado === "Senador"
+      ? liveResource(null)
+      : resource
   } catch {
     return getCandidatoMetadataResourceUncached(slug)
   }
@@ -772,7 +935,7 @@ async function fetchColetaVerificacao(
       async (signal) =>
         admin
           .from("coleta_log_ultima")
-          .select("fonte, resultado, executado_em, detalhe, url")
+        .select("fonte, resultado, executado_em, detalhe, url, escopo")
           .eq("fonte", fonte)
           .eq("escopo", "candidato")
           .eq("alvo", slug)
@@ -788,26 +951,126 @@ async function fetchColetaVerificacao(
       executado_em?: unknown
       detalhe?: unknown
       url?: unknown
+      escopo?: unknown
     }
     const resultado = row.resultado as SancoesVerificacao["resultado"]
     if (!COLETA_RESULTADOS_VALIDOS.has(resultado)) return null
     if (typeof row.executado_em !== "string" || row.executado_em.length === 0) return null
+    if (fonte === "processos-curadoria") return projectProcessosVerificacaoRow(row)
     // `detalhe` de coleta pode conter diagnóstico operacional (CPF ausente,
-    // endpoint, erro). Só as auditorias de Destaques escrevem copy pública
-    // deliberada; as demais propagam estado e data, nunca o texto interno.
-    const detalhePublicavel = fonte.startsWith("destaques-")
+    // endpoint, erro). Só as auditorias de Destaques e a fonte de sanções
+    // escrevem copy pública deliberada; processos tem projeção própria acima.
+    const detalhePublicavel = fonte.startsWith("destaques-") || fonte === "transparencia-sanctions" || fonte === "filiacao" || fonte === "gastos-executivo"
+    const isGoogleNewsSearchUrl = (value: unknown): value is string => {
+      if (typeof value !== "string" || !value) return false
+      try {
+        const parsed = new URL(value)
+        return parsed.protocol === "https:" &&
+          parsed.hostname === "news.google.com" &&
+          parsed.pathname === "/rss/search" &&
+          Boolean(parsed.searchParams.get("q")?.trim()) &&
+          !parsed.hash
+      } catch {
+        return false
+      }
+    }
+    // Google News only becomes a public provenance URL after checking its
+    // nominal query against the verified identity for this slug. TSE URLs
+    // keep their existing allowlist and do not depend on this extra lookup.
+    let googleNewsIdentity: { nome_completo?: string | null; nome_urna?: string | null } | null = null
+    if (fonte === "filiacao" && isGoogleNewsSearchUrl(row.url)) {
+      const identity = await admin
+        .from(CANDIDATO_PUBLIC_RELATION)
+        .select("slug, nome_completo, nome_urna")
+        .eq("slug", slug)
+        .maybeSingle()
+      if (!identity.error && identity.data?.slug === slug) {
+        googleNewsIdentity = identity.data
+      }
+    }
+    const safeSourceUrl = (value: unknown): string | null => {
+      if (typeof value !== "string" || !value) return null
+      try {
+        const parsed = new URL(value)
+        if (parsed.protocol !== "https:" || parsed.hash) return null
+        const filiationHost = fonte === "filiacao" &&
+          ["cdn.tse.jus.br", "dadosabertos.tse.jus.br", "www.tse.jus.br", "filia2-consulta.tse.jus.br"].includes(parsed.hostname)
+        const googleNewsFiliation = fonte === "filiacao" &&
+          parsed.hostname === "news.google.com" &&
+          parsed.pathname === "/rss/search" &&
+          Boolean(parsed.searchParams.get("q")?.trim()) &&
+          googleNewsIdentity !== null &&
+          newsTitleMentionsCandidate(parsed.searchParams.get("q"), googleNewsIdentity)
+        return parsed.hostname === "api.portaldatransparencia.gov.br" && !parsed.search
+          ? parsed.toString()
+          : fonte.startsWith("destaques-") || filiationHost || googleNewsFiliation
+            ? parsed.toString()
+            : null
+      } catch {
+        return null
+      }
+    }
+    const sourceUrls = fonte === "transparencia-sanctions" && typeof row.detalhe === "string"
+      ? [...new Set([...row.detalhe.matchAll(/(?:CEIS|CNEP|CEAF)=(https:\/\/api\.portaldatransparencia\.gov\.br\/[^,;\s]+)/g)].map((match) => safeSourceUrl(match[1])).filter((url): url is string => Boolean(url)))]
+      : []
+    const evidenceSources = fonte === "transparencia-sanctions" && typeof row.detalhe === "string"
+      ? [...new Set([...row.detalhe.matchAll(/\b(CEIS|CNEP|CEAF)=https:\/\/api\.portaldatransparencia\.gov\.br\//g)].map((match) => match[1]))]
+      : []
     return {
       fonte: typeof row.fonte === "string" ? row.fonte : fonte,
       resultado,
       executado_em: row.executado_em,
       detalhe: detalhePublicavel && typeof row.detalhe === "string" ? row.detalhe : null,
-      url: detalhePublicavel && typeof row.url === "string" ? row.url : null,
+      url: detalhePublicavel
+        ? safeSourceUrl(typeof row.url === "string" ? row.url.split(" | ")[0] : null) ?? sourceUrls[0] ?? null
+        : null,
+      escopo: typeof row.escopo === "string" ? row.escopo : null,
+      evidence_sources: evidenceSources,
+      source_urls: sourceUrls,
     }
   } catch {
     // Sem SUPABASE_SERVICE_ROLE_KEY (dev local, fork) ou view ausente: estado
     // neutro. Não entra em relatedErrors porque é metadado de proveniência, não
     // seção da ficha.
     return null
+  }
+}
+
+/** Recibo público por família do Portal, sem transportar o filtro pessoal. */
+async function fetchTransparenciaVerificacao(slug: string): Promise<TransparenciaFamiliaVerificacao[]> {
+  try {
+    const admin = createServiceRoleSupabaseClient({ cacheMode: "no-store" })
+    const { data, error } = await withSupabaseRetry(
+      `coleta_log_ultima(transparencia:${slug})`,
+      async (signal) => admin
+        .from("coleta_log_ultima")
+        .select("resultado,executado_em,detalhe")
+        .eq("fonte", "transparencia")
+        .eq("escopo", "candidato")
+        .eq("alvo", slug)
+        .abortSignal(signal)
+        .maybeSingle(),
+    )
+    const row = data as { resultado?: unknown; executado_em?: unknown; detalhe?: unknown } | null
+    if (error || !row || typeof row.detalhe !== "string") return []
+    const executed = typeof row.executado_em === "string" ? row.executado_em : null
+    const output: TransparenciaFamiliaVerificacao[] = []
+    for (const part of row.detalhe.split(/;\s*/)) {
+      const match = part.match(/^(cartoes|viagens|contratos)=(encontrado|vazio_confirmado|erro|indeterminado|sem_achado_no_escopo|nao_aplicavel):(\d+) registro\(s\), páginas=(\d+), fonte=(https?:\/\/\S+)$/)
+      if (!match) continue
+      output.push({
+        familia: match[1] as TransparenciaFamiliaPublica,
+        resultado: match[2] as SancoesVerificacao["resultado"],
+        volume: Number(match[3]),
+        paginas: Number(match[4]),
+        endpoint: match[5],
+        fonte: "Portal da Transparência",
+        executado_em: executed,
+      })
+    }
+    return output
+  } catch {
+    return []
   }
 }
 
@@ -857,8 +1120,134 @@ async function fetchSancoesVerificacao(slug: string): Promise<SancoesVerificacao
   return fetchColetaVerificacao(slug, "transparencia-sanctions")
 }
 
+/** Recibo do recorte executivo canônico, sem inferir atividade executiva geral. */
+async function fetchGastosExecutivoVerificacao(slug: string): Promise<ExecutiveScopeReceipt | null> {
+  const receipt = await fetchColetaVerificacao(slug, "gastos-executivo")
+  if (!receipt) return null
+  const detail = receipt.detalhe
+  const sourceIds = [
+    "executive-collector-binding-lula-20101",
+    "executive-cohort-identity-check",
+  ]
+  // Os IDs só podem atravessar a fronteira pública quando foram realmente
+  // persistidos no detalhe do recibo. O escopo técnico `candidato` da tabela
+  // não descreve a série executiva consultada, então reconstruí-lo sem esses
+  // marcadores promoveria qualquer linha antiga a N/A.
+  if (
+    typeof detail !== "string" ||
+    !detail.includes("Presidência da República") ||
+    !detail.includes("período oficial da série: 01/2023 até 09/2026") ||
+    !detail.includes(`fontes=${sourceIds.join(",")}`)
+  ) return null
+  return {
+    ...receipt,
+    fonte: "gastos-executivo",
+    escopo: "coorte nominal; Presidência da República / órgão 20101; período 01/2023 até 09/2026",
+    evidence_sources: sourceIds,
+    source_urls: receipt.url ? [receipt.url] : [],
+  }
+}
+
+/**
+ * Recibo público da consulta TCU. A curadoria judicial tem fonte própria e
+ * nunca é usada para preencher este campo. O detalhe operacional do coletor
+ * também não atravessa a fronteira pública: o estado é derivado apenas do
+ * resultado terminal, volume e data registrados no recibo.
+ */
+async function fetchTCUVerificacao(slug: string): Promise<TCUVerificacao | null> {
+  try {
+    const admin = createServiceRoleSupabaseClient({ cacheMode: "no-store" })
+    const { data, error } = await withSupabaseRetry(
+      `coleta_log_ultima(tcu:${slug})`,
+      async (signal) => admin
+        .from("coleta_log_ultima")
+        .select("fonte,resultado,executado_em,volume,url,detalhe,escopo")
+        .eq("fonte", "tcu")
+        .eq("escopo", "candidato")
+        .eq("alvo", slug)
+        .abortSignal(signal)
+        .maybeSingle(),
+    )
+    if (error || !data) return null
+    const row = data as {
+      fonte?: unknown
+      resultado?: unknown
+      executado_em?: unknown
+      volume?: unknown
+      url?: unknown
+      detalhe?: unknown
+      escopo?: unknown
+    }
+    const resultado = row.resultado as TCUVerificacao["resultado"]
+    if (!COLETA_RESULTADOS_VALIDOS.has(resultado)) return null
+    if (typeof row.executado_em !== "string" || !row.executado_em) return null
+    const volume = typeof row.volume === "number" && Number.isFinite(row.volume) && row.volume >= 0
+      ? Math.trunc(row.volume)
+      : null
+    const estado: TCUVerificacao["estado"] =
+      resultado === "encontrado" && volume !== null && volume > 0
+        ? "encontrado_em_revisao"
+        : resultado === "vazio_confirmado"
+          ? "vazio_verificado"
+          : "pendente"
+    const safeTcuUrl = (value: unknown) => {
+      if (typeof value !== "string" || !value) return null
+      try {
+        const parsed = new URL(value as string)
+        return parsed.protocol === "https:" && parsed.hostname === "certidoes.apps.tcu.gov.br" && !parsed.search && !parsed.hash
+          ? parsed.toString()
+          : null
+      } catch {
+        return null
+      }
+    }
+    const consultaUrls = [
+      ["responsaveis_inabilitados", "https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-inabilitados", "inabilitados_itens"] as const,
+      ["responsaveis_contas_irregulares", "https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-contas-irregulares", "cadirreg_itens"] as const,
+    ]
+    const detalheFonte = typeof row.detalhe === "string" ? row.detalhe : ""
+    const fontes = consultaUrls.flatMap(([cadastro, consultaUrl, volumeKey]) => {
+      if (!detalheFonte.includes(consultaUrl)) return []
+      const volumeMatch = detalheFonte.match(new RegExp(`${volumeKey}=(\\d+)`))
+      const fonteVolume = volumeMatch ? Number(volumeMatch[1]) : null
+      return [{
+        cadastro,
+        url: consultaUrl,
+        resultado: fonteVolume === null ? "pendente" as const : fonteVolume > 0 ? "encontrado" as const : "vazio_confirmado" as const,
+        volume: fonteVolume,
+      }]
+    })
+    const url = estado === "encontrado_em_revisao"
+      ? fontes.find((fonte) => fonte.resultado === "encontrado")?.url ?? null
+      : fontes[0]?.url ?? safeTcuUrl(row.url)
+    const detalhe = estado === "encontrado_em_revisao"
+      ? `Consulta TCU encontrou ${volume} registro${volume === 1 ? "" : "s"}; revisão editorial pendente.`
+      : estado === "vazio_verificado"
+        ? "Consultas oficiais TCU retornaram zero registros no escopo verificado."
+        : "Consulta TCU inconclusiva; o resultado não deve ser interpretado como ausência."
+    return {
+      fonte: "tcu",
+      resultado,
+      estado,
+      executado_em: row.executado_em,
+      volume,
+      detalhe,
+      url,
+      escopo: typeof row.escopo === "string" ? row.escopo : null,
+      fontes,
+    }
+  } catch {
+    return null
+  }
+}
+
 async function fetchProcessosVerificacao(slug: string): Promise<SancoesVerificacao | null> {
   return fetchColetaVerificacao(slug, "processos-curadoria")
+}
+
+async function fetchFiliacaoVerificacao(slug: string): Promise<SancoesVerificacao | null> {
+  const receipt = await fetchColetaVerificacao(slug, "filiacao")
+  return receipt ? { ...receipt, detalhe: sanitizeFiliacaoDetail(receipt.detalhe) } : null
 }
 
 async function fetchTrajetoriaDestaquesVerificacao(
@@ -870,13 +1259,90 @@ async function fetchTrajetoriaDestaquesVerificacao(
 async function fetchPatrimonioDestaquesVerificacao(
   slug: string,
 ): Promise<SancoesVerificacao | null> {
-  return fetchColetaVerificacao(slug, "destaques-patrimonio")
+  const receipt = await fetchColetaVerificacao(slug, "destaques-patrimonio")
+  if (!receipt) return null
+  const detail = receipt.detalhe ?? ""
+  const years = detail.match(/anos_consultados=([^;]+)/)?.[1] ?? null
+  const missing = detail.match(/anos_sem_cache=([^;]+)/)?.[1] ?? null
+  const date = receipt.executado_em.slice(0, 10).split("-").reverse().join("/")
+  return {
+    ...receipt,
+    detalhe: receipt.resultado === "encontrado"
+      ? `Declarações de bens do TSE encontradas no recorte consultado${years ? ` (${years})` : ""}. Cobertura por pleito permanece limitada${missing && missing !== "nenhum" ? `; pacote sem cache: ${missing}` : ""}. Consulta em ${date}.`
+      : `Recorte de declarações de bens do TSE consultado${years ? ` (${years})` : ""}, sem linha vinculada nos anos disponíveis. Isso não confirma ausência de patrimônio${missing && missing !== "nenhum" ? `; pacote sem cache: ${missing}` : ""}. Consulta em ${date}.`,
+  }
 }
 
 async function fetchVotacoesDestaquesVerificacao(
   slug: string,
 ): Promise<SancoesVerificacao | null> {
   return fetchColetaVerificacao(slug, "destaques-votacoes")
+}
+
+async function fetchProjetosDestaquesVerificacao(
+  slug: string,
+): Promise<SancoesVerificacao | null> {
+  return fetchColetaVerificacao(slug, "destaques-projetos")
+}
+
+async function fetchGastosParlamentaresDestaquesVerificacao(
+  slug: string,
+): Promise<SancoesVerificacao | null> {
+  return fetchColetaVerificacao(slug, "destaques-gastos-parlamentares")
+}
+
+/**
+ * Lê os recibos federais que comprovam a não aplicabilidade do acervo
+ * parlamentar a um perfil sem mandato federal. A view é privada por desenho,
+ * portanto esta leitura usa apenas a service role no servidor e falha fechada:
+ * qualquer erro, fonte ausente ou recibo incompleto deixa as seções como
+ * "missing". O resultado não carrega o detalhe operacional para o DTO.
+ */
+async function fetchFederalAcervoReceipts(
+  slug: string,
+  persistedValue: unknown,
+): Promise<FederalAcervoReceipts | null> {
+  const persisted = projectFederalAcervoReceipts(persistedValue)
+  if (FEDERAL_ACERVO_SOURCES.every((source) => persisted?.[source])) return persisted
+  try {
+    const admin = createServiceRoleSupabaseClient({ cacheMode: "no-store" })
+    const { data, error } = await withSupabaseRetry(
+      `coleta_log_ultima(federal:${slug})`,
+      async (signal) => admin
+        .from("coleta_log_ultima")
+        .select("fonte,resultado,executado_em,detalhe,escopo,url,alvo")
+        .eq("escopo", "candidato")
+        .eq("alvo", slug)
+        .in("fonte", [...FEDERAL_ACERVO_SOURCES])
+        .abortSignal(signal),
+    )
+    if (error) return null
+
+    const receipts: FederalAcervoReceipts = { ...(persisted ?? {}) }
+    for (const row of data ?? []) {
+      const source = typeof row.fonte === "string" &&
+        (FEDERAL_ACERVO_SOURCES as readonly string[]).includes(row.fonte)
+        ? row.fonte as FederalAcervoSource
+        : null
+      if (!source || receipts[source]) continue
+      const detail = typeof row.detalhe === "string" ? row.detalhe : null
+      const parsed = parseFederalAcervoReceiptDetail(detail, row.executado_em)
+      if (!parsed) continue
+      receipts[source] = {
+        fonte: source,
+        resultado: row.resultado as SancoesVerificacao["resultado"],
+        executado_em: typeof row.executado_em === "string" ? row.executado_em : "",
+        verificado_em: parsed.verificado_em,
+        detalhe: parsed.detalhe,
+        escopo: parsed.escopo,
+        source_ids: parsed.source_ids,
+        source_urls: parsed.source_urls,
+      }
+    }
+    return receipts
+  } catch {
+    return null
+  }
 }
 
 async function getCandidatoBySlugFromRelationResource(
@@ -958,6 +1424,10 @@ async function getCandidatoBySlugFromRelationResource(
     if (!candidato) return liveResource(null)
   }
 
+  if (!shouldExposeCargo(candidato.cargo_disputado)) {
+    return liveResource(null)
+  }
+
   const id = candidato.id
   const canonical = getCanonicalPerson(slug)
   let personLevelIds = [id]
@@ -985,7 +1455,7 @@ async function getCandidatoBySlugFromRelationResource(
     }
   }
 
-  const [historico, mudancas, patrimonio, financiamento, votos, processos, pontos, projetos, projetosLeiNaturezaCount, projetosLeiDestaquesCount, projetosLeiCamaraCount, legislacaoExecutivo, gastos, gastosExecutivo, sancoes, noticias, indicadores, sancoesVerificacao, processosVerificacao, trajetoriaVerificacao, patrimonioVerificacao, votacoesVerificacao] =
+  const [historico, mudancas, patrimonio, financiamento, votos, processos, pontos, projetos, projetosLeiNaturezaCount, projetosLeiDestaquesCount, projetosLeiCamaraCount, legislacaoExecutivo, gastos, gastosExecutivo, sancoes, noticias, indicadores, sancoesVerificacao, processosVerificacao, filiacaoVerificacao, tcuVerificacao, trajetoriaVerificacao, patrimonioVerificacao, votacoesVerificacao, projetosVerificacao, gastosParlamentaresVerificacao, federalAcervoReceipts, transparenciaVerificacao, gastosExecutivoVerificacao] =
     await Promise.all([
       // `despublicado_em` filtra candidatura atribuida por homonimo (migration
       // 20260726160000). O CPF divergente no cadastro desliga o casamento por
@@ -1167,12 +1637,21 @@ async function getCandidatoBySlugFromRelationResource(
       // Mesma proveniência para o vazio judicial. Encontrado sem linha pública
       // significa item em revisão, não ficha limpa.
       fetchProcessosVerificacao(slug),
+      fetchFiliacaoVerificacao(slug),
+      // Recibo TCU é uma fonte independente da curadoria judicial. Achados
+      // permanecem em revisão editorial até haver ponto de atenção verificado.
+      fetchTCUVerificacao(slug),
       // Auditorias dedicadas ao recorte publicável da aba Destaques. Sem a
       // migration correspondente, ambas degradam para null e a UI mantém
       // "ainda não verificado".
       fetchTrajetoriaDestaquesVerificacao(slug),
       fetchPatrimonioDestaquesVerificacao(slug),
       fetchVotacoesDestaquesVerificacao(slug),
+      fetchProjetosDestaquesVerificacao(slug),
+      fetchGastosParlamentaresDestaquesVerificacao(slug),
+      fetchFederalAcervoReceipts(slug, candidato.verificacao_campos?.federal_acervo),
+      fetchTransparenciaVerificacao(slug),
+      fetchGastosExecutivoVerificacao(slug),
     ])
 
   const relatedErrors = [
@@ -1196,7 +1675,7 @@ async function getCandidatoBySlugFromRelationResource(
   // virar lista vazia: isso publicaria uma série incompleta como se fosse fato.
   const { data: patrimonioAusenciasData, error: patrimonioAusenciasError } = await supabase
     .from("patrimonio_ausencia_oficial")
-    .select("ano_eleicao, fonte_url, verificado_em")
+    .select("ano_eleicao, ano_arquivo, sq_candidato, uf_candidatura, cargo_candidatura, data_eleicao, tipo_eleicao, fonte_url, verificado_em, detalhe")
     .in("candidato_id", personLevelIds)
     .order("ano_eleicao", { ascending: false })
   if (patrimonioAusenciasError) throw patrimonioAusenciasError
@@ -1216,7 +1695,7 @@ async function getCandidatoBySlugFromRelationResource(
     const { data: financiamentoVerificacoesData, error: financiamentoVerificacoesError } =
       await financiamentoVerificacoesClient
         .from("financiamento_verificacoes_publico")
-        .select("ano_eleicao, resultado, fonte_url, verificado_em, detalhe")
+        .select("ano_eleicao, sq_candidato, uf_candidatura, cargo_candidatura, resultado, fonte_url, verificado_em, detalhe")
         .in("candidato_id", personLevelIds)
         .order("ano_eleicao", { ascending: false })
     if (financiamentoVerificacoesError) throw financiamentoVerificacoesError
@@ -1267,6 +1746,24 @@ async function getCandidatoBySlugFromRelationResource(
       legislacaoExecutivoPreviewRows.map(toPublicLegislacaoMandatoExecutivoRow)
     )
 
+  // A ausência de um mandato federal confirmado é uma conclusão de recibos,
+  // não um efeito colateral de arrays vazios. Só deriva a verificação da aba
+  // de destaques quando ela ainda não tem uma auditoria própria; dados ou
+  // estados já persistidos nessa fonte mantêm precedência.
+  const votacoesVerificacaoPublica =
+    votacoesVerificacao ?? resolveFederalVotacoesNotApplicable(federalAcervoReceipts)
+
+  const patrimonioEleicoes = buildPatrimonioEleicoes(
+    patrimonioConfiavel,
+    patrimonioAusenciasOficiais,
+    historicoConfiavel,
+  )
+  const financiamentoEleicoes = buildFinanciamentoEleicoes(
+    financiamentoConfiavel,
+    historicoConfiavel,
+    financiamentoVerificacoes,
+  )
+
   // Sanitizacao publica de partido_sigla/partido_atual no ponto onde o payload
   // da ficha e construido. Substitui o mapping pontual `fichaForPublicDisplay` que
   // ate o Bloco 1 vivia em src/app/(site)/candidato/[slug]/CandidatoFichaView.tsx.
@@ -1284,19 +1781,11 @@ async function getCandidatoBySlugFromRelationResource(
     // esta série e não os insumos, então recompor rio abaixo (na ficha, na
     // visão geral, no embed) perdia as ausências confirmadas e as rebaixava
     // para "ainda não coletado".
-    patrimonio_eleicoes: buildPatrimonioEleicoes(
-      patrimonioConfiavel,
-      patrimonioAusenciasOficiais,
-      historicoConfiavel
-    ),
+    patrimonio_eleicoes: patrimonioEleicoes,
     financiamento: shouldUseServiceRole
       ? financiamentoConfiavel
       : sanitizeFinanciamentoForPublic(financiamentoConfiavel),
-    financiamento_eleicoes: buildFinanciamentoEleicoes(
-      financiamentoConfiavel,
-      historicoConfiavel,
-      financiamentoVerificacoes
-    ),
+    financiamento_eleicoes: financiamentoEleicoes,
     votos: sortVotosForPublicDisplay(votos.data ?? []),
     processos: processos.data ?? [],
     pontos_atencao: pontosPublicos,
@@ -1321,13 +1810,16 @@ async function getCandidatoBySlugFromRelationResource(
     legislacao_mandato_executivo_truncados:
       (legislacaoExecutivo.count ?? 0) > legislacaoExecutivoOrdenado.length,
     gastos_parlamentares: gastos.data ?? [],
+    transparencia: publicTransparencia(gastos.data ?? [], transparenciaVerificacao),
     gastos_executivo: gastosExecutivo.data ?? [],
     sancoes_administrativas: sancoes.data ?? [],
     sancoes_verificacao: sancoesVerificacao,
     processos_verificacao: processosVerificacao,
+    filiacao_verificacao: filiacaoVerificacao,
+    tcu_verificacao: tcuVerificacao,
     trajetoria_verificacao: trajetoriaVerificacao,
     patrimonio_verificacao: patrimonioVerificacao,
-    votacoes_verificacao: votacoesVerificacao,
+    votacoes_verificacao: votacoesVerificacaoPublica,
     // Rotulo de relevancia em tempo de leitura (auditoria 2026-07-24, etapa
     // 1C). A ingestao passou a descartar item cujo titulo nao cita o candidato,
     // mas as linhas ja gravadas continuam no banco: 3.984 de 17.498 (22,77%)
@@ -1354,6 +1846,8 @@ async function getCandidatoBySlugFromRelationResource(
       mudancas: mudancasRaw,
       patrimonio: patrimonioConfiavel,
       financiamento: financiamentoConfiavel,
+      patrimonioEleicoes,
+      financiamentoEleicoes,
       votos: votos.data ?? [],
       projetos: projetos.data ?? [],
       projetosTotal: projetos.count ?? (projetos.data ?? []).length,
@@ -1366,6 +1860,14 @@ async function getCandidatoBySlugFromRelationResource(
       timelinePartidariaIncompleta: timelinePartidariaIncompleta,
       sancoesVerificacao,
       processosVerificacao,
+      filiacaoVerificacao,
+      projetosVerificacao,
+      votacoesVerificacao,
+      gastosParlamentaresVerificacao,
+      federalAcervoReceipts,
+      gastosParlamentaresAplicabilidade:
+        (candidato.verificacao_campos?.federal_acervo as Record<string, unknown> | undefined)?.gastos_parlamentares_aplicabilidade,
+      gastosExecutivoVerificacao,
     }),
   }
 
@@ -1412,7 +1914,10 @@ export async function getCandidatoBySlugResource(
     }
   }
   try {
-    return await getCachedCandidatoBySlugResource(slug)
+    const resource = await getCachedCandidatoBySlugResource(slug)
+    return !isSenadoEnabled() && resource.data?.cargo_disputado === "Senador"
+      ? liveResource(null)
+      : resource
   } catch {
     return getCandidatoBySlugResourceUncached(slug)
   }
@@ -1571,7 +2076,7 @@ const getCachedCandidatoBySlugResource = unstableCacheWithSingleFlight(
   // vigente passou a ser projetada na trajetória quando a linha denormalizada
   // de `historico_politico` estiver ausente. Sem o bump, perfis já aquecidos
   // continuariam omitindo 2026 durante o TTL.
-  ["public-candidato-ficha-resource", "central-party-sanitize", "no-cache-degraded-v1", "legislacao-paged-v4", "lme-trim-2mb-20260501", "pl-lazy-preview-20260711", "presidential-cohort-20260515", "editorial-full-closure-20260518", "pre-candidates-lote12-20260522", "photos-names-20260610", "raw-empty-core-lote2-20260630", "raw-empty-core-lote3-20260630", "raw-empty-core-lote4-20260630", "raw-empty-core-news-lote5-20260630", "raw-empty-core-lote6-20260630", "raw-empty-core-lote7-20260630", "raw-empty-core-lote8-20260630", "raw-empty-core-lote9-20260630", "raw-empty-core-lote10-20260630", "raw-empty-core-lote11-20260630", "pe-state-html-gaps-20260708", "rr-state-completion-20260710-v2", "reescrita-claims-homonimo-20260726", "consolidacao-mapa-fome-20260726", "lme-preview-lazy-20260803", "density-bypass-clear-20260804", "sancoes-proveniencia-20260805", "verificacao-campos-tse-min-20260809", "frescor-data-calendario-20260809", "ultima-verificacao-qualquer-dado-20260809", "chapas-tse-20260815", "chapas-bio-card-20260813", "onda-p-20260814", "party-siglas-lote2-20260815", "gastos-executivo-cpgf-20260816", "gastos-executivo-ug-20260820", "trajetoria-candidatura-atual-20260906", CURRENT_DATA_WAVE],
+  ["public-candidato-ficha-resource", "central-party-sanitize", "no-cache-degraded-v1", "legislacao-paged-v4", "lme-trim-2mb-20260501", "pl-lazy-preview-20260711", "presidential-cohort-20260515", "editorial-full-closure-20260518", "pre-candidates-lote12-20260522", "photos-names-20260610", "raw-empty-core-lote2-20260630", "raw-empty-core-lote3-20260630", "raw-empty-core-lote4-20260630", "raw-empty-core-news-lote5-20260630", "raw-empty-core-lote6-20260630", "raw-empty-core-lote7-20260630", "raw-empty-core-lote8-20260630", "raw-empty-core-lote9-20260630", "raw-empty-core-lote10-20260630", "raw-empty-core-lote11-20260630", "pe-state-html-gaps-20260708", "rr-state-completion-20260710-v2", "reescrita-claims-homonimo-20260726", "consolidacao-mapa-fome-20260726", "lme-preview-lazy-20260803", "density-bypass-clear-20260804", "sancoes-proveniencia-20260805", "verificacao-campos-tse-min-20260809", "frescor-data-calendario-20260809", "ultima-verificacao-qualquer-dado-20260809", "chapas-tse-20260815", "chapas-bio-card-20260813", "onda-p-20260814", "party-siglas-lote2-20260815", "gastos-executivo-cpgf-20260816", "gastos-executivo-ug-20260820", "trajetoria-candidatura-atual-20260906", "historico-cas-20260915", "candidate-roster-cas-20260915", "candidate-history-cas-20260915", "historico-dedupe-type-cas-20260915", "candidate-beny-sources-cas-20260915", "candidate-beny-sanctions-receipt-cas-20260915", "filiacao-google-public-copy-v2-20260916", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidato-ficha"],
@@ -1583,6 +2088,12 @@ export interface CandidatoResumo {
   processos_ordenacao?: number | null
   candidato: Candidato
   patrimonio: number | null
+  /**
+   * Total declarado em 2026 >= 100x o último total anterior positivo
+   * (`patrimonioDeclaradoAtipico`). Só o booleano vai para a grade; a série
+   * fica no servidor para o payload público continuar pequeno.
+   */
+  patrimonio_atipico: boolean
   processos: number
   pontos_atencao: number
 }
@@ -1591,6 +2102,9 @@ async function getCandidatosComResumoResourceUncached(
   cargo?: string,
   estado?: string
 ): Promise<DataResource<CandidatoResumo[]>> {
+  if (!shouldExposeCargo(cargo)) {
+    return degradedResource([], "A cobertura do Senado está desativada nesta consulta.")
+  }
   const candidatosResource = await getCandidatosResource(cargo, estado)
   const candidatos = candidatosResource.data
 
@@ -1605,6 +2119,7 @@ async function getCandidatosComResumoResourceUncached(
       data: candidatos.map((c) => ({
         candidato: c,
         patrimonio: null,
+        patrimonio_atipico: false,
         processos: 0,
         pontos_atencao: 0,
       })),
@@ -1650,7 +2165,7 @@ async function getCandidatosComResumoResourceUncached(
     lembrarEnriquecimento(compareMap)
   }
 
-  const data = candidatos.map((c) => {
+  const data: CandidatoResumo[] = candidatos.map((c) => {
     // Sem enriquecimento vivo, o último valor conhecido vale mais do que zero:
     // "0 processos" é uma afirmação falsa sobre um candidato, "sem dado" não.
     const enriquecimento = compareMap.get(c.id) ?? ultimoEnriquecimento(c.id)
@@ -1658,15 +2173,43 @@ async function getCandidatosComResumoResourceUncached(
       candidato: c,
       processos_ordenacao: sortCounts.get(c.id) ?? null,
       patrimonio: enriquecimento?.patrimonio ?? null,
+      patrimonio_atipico: false,
       processos: enriquecimento?.processos ?? 0,
       pontos_atencao: enriquecimento?.pontosAtencao ?? 0,
     }
   })
 
+  // F3 na grade: o aviso só aparece ao lado de um patrimônio exibido, então a
+  // série (3 colunas) só é lida para quem tem total positivo no resumo.
+  const idsComPatrimonio = data
+    .filter((row) => row.patrimonio != null && row.patrimonio > 0)
+    .map((row) => row.candidato.id)
+  let patrimonioAtipicoError = false
+  if (idsComPatrimonio.length > 0) {
+    try {
+      const series = await fetchPatrimonioSeriesByCandidatoIds(supabase, idsComPatrimonio)
+      for (const row of data) {
+        const serie = series.get(row.candidato.id)
+        row.patrimonio_atipico = serie ? patrimonioDeclaradoAtipico(serie) != null : false
+      }
+    } catch {
+      patrimonioAtipicoError = true
+    }
+  }
+
   if (compareError) {
     return degradedResource(
       data,
       "Nem todos os resumos puderam ser enriquecidos. Alguns totais podem estar zerados temporariamente."
+    )
+  }
+
+  if (patrimonioAtipicoError) {
+    // Sem a série, "não atípico" seria afirmação sem base; degradado não entra
+    // no cache e a próxima requisição tenta de novo.
+    return degradedResource(
+      data,
+      "Não foi possível verificar variações atípicas de patrimônio nesta tentativa."
     )
   }
 
@@ -1678,7 +2221,7 @@ const getCachedCandidatosComResumoResource = unstableCacheWithSingleFlight(
     rejectPartialForCache(getCandidatosComResumoResourceUncached(cargo, estado)),
   // Bumped 2026-04-26: dados de candidato vem ja sanitizados via getCandidatosResource;
   // o suffix forca bust de cache antigo do Bloco 1.
-  ["public-candidatos-resumo-resource", "central-party-sanitize", "sort-count-nullability-20260908", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", CURRENT_DATA_WAVE],
+  ["public-candidatos-resumo-resource", "central-party-sanitize", "sort-count-nullability-20260908", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "patrimonio-atipico-grade-20260916", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos-resumo"],
@@ -1689,8 +2232,14 @@ export async function getCandidatosComResumoResource(
   cargo?: string,
   estado?: string
 ): Promise<DataResource<CandidatoResumo[]>> {
+  if (!shouldExposeCargo(cargo)) {
+    return degradedResource([], "A cobertura do Senado está desativada nesta consulta.")
+  }
   try {
-    return await getCachedCandidatosComResumoResource(cargo, estado)
+    const resource = await getCachedCandidatosComResumoResource(cargo, estado)
+    return !isSenadoEnabled() && !cargo
+      ? { ...resource, data: resource.data.filter((row) => row.candidato.cargo_disputado !== "Senador") }
+      : resource
   } catch (error) {
     return degradedFromError(error, [] as CandidatoResumo[])
   }
@@ -1701,6 +2250,9 @@ async function getCandidatosComparaveisResourceUncached(
   estado?: string
 ): Promise<DataResource<CandidatoComparavel[]>> {
   const cargoFilter = cargo ?? "Presidente"
+  if (!shouldExposeCargo(cargoFilter)) {
+    return degradedResource([], "A cobertura do Senado está desativada nesta consulta.")
+  }
   if (USE_MOCK) {
     return degradedResource([], SUPABASE_REQUIRED_MESSAGE)
   }
@@ -1812,7 +2364,7 @@ const getCachedCandidatosComparaveisResource = unstableCacheWithSingleFlight(
   // alimentava alertas_graves no servidor, nunca lido no cliente).
   // Bumped 2026-08-20: comparador B v1 (cargo_atual, bloco CEAP, sem votos).
   // Bumped 2026-08-20: sem flag de gastos_executivo no payload do comparador.
-  ["public-candidatos-comparaveis-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "comparaveis-strip-pontos-20260603", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "evolucao-patrimonial-lista-20260819", "comparador-b-v1-20260820", "comparador-ceap-federal-20260820", "comparador-sem-executivo-20260820", CURRENT_DATA_WAVE],
+  ["public-candidatos-comparaveis-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "comparaveis-strip-pontos-20260603", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "evolucao-patrimonial-lista-20260819", "comparador-b-v1-20260820", "comparador-ceap-federal-20260820", "comparador-sem-executivo-20260820", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos-comparaveis"],
@@ -1823,6 +2375,9 @@ export async function getCandidatosComparaveisResource(
   cargo?: string,
   estado?: string
 ): Promise<DataResource<CandidatoComparavel[]>> {
+  if (!shouldExposeCargo(cargo ?? "Presidente")) {
+    return degradedResource([], "A cobertura do Senado está desativada nesta consulta.")
+  }
   try {
     return await getCachedCandidatosComparaveisResource(cargo, estado)
   } catch (error) {
@@ -1980,7 +2535,7 @@ const getCachedRankingDataResource = unstableCacheWithSingleFlight(
     getRankingDataResourceUncached(slug, cargo || undefined, estado || undefined),
   // Bumped 2026-05-21: copy pública de rankings virou "listas temáticas";
   // invalida definition.title/contextExplanation serializados no Data Cache.
-  ["ranking-data-resource-public-copy-20260521", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", CURRENT_DATA_WAVE],
+  ["ranking-data-resource-public-copy-20260521", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["ranking-data"],
@@ -2339,7 +2894,7 @@ async function getQuizAlignmentDatasetResourceUncached(
 const getCachedQuizAlignmentDatasetResource = unstableCacheWithSingleFlight(
   async (cargo: string, estado: string) =>
     rejectPartialForCache(getQuizAlignmentDatasetResourceUncached(cargo, estado || undefined)),
-  ["quiz-alignment-dataset-resource", "fase2", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "quiz-mudancas-despublicado-v1", CURRENT_DATA_WAVE],
+  ["quiz-alignment-dataset-resource", "fase2", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "quiz-mudancas-despublicado-v1", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["quiz-dataset"],

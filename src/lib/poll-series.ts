@@ -4,6 +4,29 @@ export type PollResult = StatePollScenario["scenario"]["resultados"][number]
 export type PollCandidate = { slug: string; nome_urna: string; foto_url?: string | null }
 export type PollSeries = { id: string; institute: string; label: string; polls: StatePollScenario[] }
 
+function normalizeSenadoSemantic(value: string | null): string | null {
+  if (!value?.trim()) return null
+  return value
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLocaleLowerCase("pt-BR")
+    .trim()
+    .replace(/\s+/g, " ")
+}
+
+/** Senate series retain only the published question, denominator and methodology semantics. */
+export function assinaturaSenadoScenario(
+  poll: Pick<StatePollScenario, "office" | "scenario" | "sample" | "method">,
+): string {
+  if (poll.office !== "Senador") return poll.scenario.comparabilityKey
+  return JSON.stringify({
+    comparabilityKey: poll.scenario.comparabilityKey,
+    question: normalizeSenadoSemantic(poll.scenario.question.value),
+    denominator: normalizeSenadoSemantic(poll.sample.population.value),
+    methodology: normalizeSenadoSemantic(poll.method.value),
+  })
+}
+
 /** Clear unconfirmed metadata at the public-view boundary, preserving its status and the original record. */
 export function publicPollMetadata(poll: StatePollScenario): StatePollScenario {
   const visible = <T,>(field: { value: T | null; status: StatePollScenario["state"] }) => ({ ...field, value: field.status === "publicado" ? field.value : null })
@@ -45,7 +68,7 @@ export function groupPollSeries(polls: StatePollScenario[]): PollSeries[] {
     const verified = metadata.every(field => field.status === "publicado" && field.value?.trim())
     const id = JSON.stringify([
       poll.electionYear, poll.office, poll.geography.code, poll.scenario.turn,
-      poll.scenario.comparabilityKey,
+      assinaturaSenadoScenario(poll),
       ...metadata.map(field => field.value?.trim().toLocaleLowerCase("pt-BR") ?? null),
       // Incomplete metadata must not create a spurious shared series.
       verified && poll.scenario.comparabilityKey ? null : pollKey(poll),

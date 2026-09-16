@@ -3,6 +3,8 @@ import { describe, it } from "node:test"
 import {
   findForbiddenPublicProfileKeys,
   maskDocumentLikeSequences,
+  publicTransparencia,
+  numberFromPublicValue,
   toPublicCandidatoProfileDto,
 } from "../src/lib/public-profile-dto"
 import type { FichaCandidato } from "../src/lib/types"
@@ -326,6 +328,70 @@ describe("public profile DTO", () => {
     assert.deepEqual(dto.votacoes_verificacao, ficha.votacoes_verificacao)
   })
 
+  it("propaga recibo TCU encontrado em revisão e vazio verificado", () => {
+    const ficha = fixtureProfile()
+    ficha.tcu_verificacao = {
+      fonte: "tcu",
+      resultado: "encontrado",
+      estado: "encontrado_em_revisao",
+      executado_em: "2026-09-15T15:00:00.000Z",
+      volume: 2,
+      detalhe: "Consulta TCU encontrou 2 registros; revisão editorial pendente.",
+      url: "https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-inabilitados",
+      fontes: [
+        { cadastro: "responsaveis_inabilitados", url: "https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-inabilitados", resultado: "vazio_confirmado", volume: 0 },
+        { cadastro: "responsaveis_contas_irregulares", url: "https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-contas-irregulares", resultado: "encontrado", volume: 2 },
+      ],
+    }
+    const foundDto = toPublicCandidatoProfileDto(ficha)
+    assert.deepEqual(foundDto.tcu_verificacao, ficha.tcu_verificacao)
+
+    ficha.tcu_verificacao = {
+      ...ficha.tcu_verificacao,
+      resultado: "vazio_confirmado",
+      estado: "vazio_verificado",
+      volume: 0,
+      detalhe: "Consultas oficiais TCU retornaram zero registros no escopo verificado.",
+      url: null,
+    }
+    const emptyDto = toPublicCandidatoProfileDto(ficha)
+    assert.deepEqual(emptyDto.tcu_verificacao, ficha.tcu_verificacao)
+    assert.equal(emptyDto.processos_verificacao, null)
+  })
+
+  it("preserva escopo e fontes do recibo de sanções no DTO", () => {
+    const ficha = fixtureProfile()
+    ficha.sancoes_verificacao = {
+      fonte: "transparencia-sanctions",
+      resultado: "vazio_confirmado",
+      executado_em: "2026-09-15T15:36:31.341Z",
+      detalhe: "escopo=cadastros individuais; fontes=CEIS=https://api.portaldatransparencia.gov.br/api-de-dados/ceis, CNEP=https://api.portaldatransparencia.gov.br/api-de-dados/cnep, CEAF=https://api.portaldatransparencia.gov.br/api-de-dados/ceaf",
+      url: "https://api.portaldatransparencia.gov.br/api-de-dados",
+      escopo: "candidato",
+      evidence_sources: ["CEIS", "CNEP", "CEAF"],
+      source_urls: [
+        "https://api.portaldatransparencia.gov.br/api-de-dados/ceis",
+        "https://api.portaldatransparencia.gov.br/api-de-dados/cnep",
+        "https://api.portaldatransparencia.gov.br/api-de-dados/ceaf",
+      ],
+    }
+    const dto = toPublicCandidatoProfileDto(ficha)
+    assert.deepEqual(dto.sancoes_verificacao, ficha.sancoes_verificacao)
+  })
+
+  it("expõe crédito público da foto no mesmo contrato da ficha", () => {
+    const ficha = fixtureProfile()
+    ficha.foto_credito = {
+      origem: "fonte primária de campanha",
+      descricao: "Crédito de teste com origem pública",
+      fonte_url: "https://example.test/foto.webp",
+    }
+
+    const dto = toPublicCandidatoProfileDto(ficha)
+
+    assert.deepEqual(dto.foto_credito, ficha.foto_credito)
+  })
+
   it("tolera campos textuais nulos vindos da base pública", () => {
     const ficha = fixtureProfile()
     ficha.patrimonio[0].bens[0].descricao = null as unknown as string
@@ -473,5 +539,53 @@ describe("public profile DTO", () => {
     assert.match(descricao, /condenação/i)
     assert.match(descricao, /instância/)
     assert.equal(descricao.split(/\s+/).length, 3)
+  })
+
+  it("separa Transparência de CEAP e preserva recibo de vazio", () => {
+    assert.equal(numberFromPublicValue("123.45"), 123.45)
+    assert.equal(numberFromPublicValue(""), null)
+    const familias = publicTransparencia([
+      {
+        id: "trans-1",
+        candidato_id: "cand-1",
+        ano: 2024,
+        total_gasto: null as unknown as number,
+        fonte: "Portal da Transparência — cartões por portador",
+        detalhamento: ({
+          transparencia_familia: "cartoes",
+          registros: [{ id: 7, dataTransacao: "21/06/2024", valorTransacao: "12,50", unidadeGestora: { nome: "Órgão" }, estabelecimento: { nome: "Loja" } }],
+        } as unknown as never),
+        gastos_destaque: [],
+      },
+    ], [
+      { familia: "cartoes", resultado: "encontrado", volume: 1, paginas: 2, endpoint: "https://portaldatransparencia.gov.br/api-de-dados/cartoes", fonte: "Portal da Transparência", executado_em: "2026-09-15T00:00:00Z" },
+      { familia: "viagens", resultado: "vazio_confirmado", volume: 0, paginas: 1, endpoint: "https://portaldatransparencia.gov.br/api-de-dados/viagens-por-cpf", fonte: "Portal da Transparência", executado_em: "2026-09-15T00:00:00Z" },
+      { familia: "contratos", resultado: "encontrado", volume: 1, paginas: 2, endpoint: "https://portaldatransparencia.gov.br/api-de-dados/contratos/cpf-cnpj", fonte: "Portal da Transparência", executado_em: "2026-09-15T00:00:00Z" },
+    ])
+    const contrato = publicTransparencia([
+      {
+        id: "trans-2", candidato_id: "cand-1", ano: 2024, total_gasto: null as unknown as number,
+        fonte: "Portal da Transparência — contratos por CPF",
+        detalhamento: ({ transparencia_familia: "contratos", registros: [{ id: "c-1", dataAssinatura: "2024-04-01", valorContrato: "123.45", contratante: { nome: "Órgão" }, objeto: "Serviço" }] } as unknown as never),
+        gastos_destaque: [],
+      },
+    ], [{ familia: "contratos", resultado: "encontrado", volume: 1, paginas: 2, endpoint: "https://portaldatransparencia.gov.br/api-de-dados/contratos/cpf-cnpj", fonte: "Portal da Transparência", executado_em: "2026-09-15T00:00:00Z" }])
+    assert.equal(familias.length, 3)
+    assert.equal(familias[0].cobertura, "dados_presentes_escopo_verificado")
+    assert.equal(familias[0].registros[0].valor, 12.5)
+    assert.equal(familias[1].resultado, "vazio_confirmado")
+    assert.equal(contrato[0].registros[0].data, "2024-04-01")
+    assert.equal(contrato[0].registros[0].valor, 123.45)
+    assert.doesNotMatch(JSON.stringify(familias), /\b\d{11}\b/)
+    const incomplete = publicTransparencia([], [{
+      familia: "viagens",
+      resultado: "encontrado",
+      volume: 1,
+      paginas: 0,
+      endpoint: null,
+      fonte: "Portal da Transparência",
+      executado_em: null,
+    }])
+    assert.equal(incomplete[0].cobertura, "dados_presentes_cobertura_nao_verificada")
   })
 })

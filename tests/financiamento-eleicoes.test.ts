@@ -3,6 +3,7 @@ import test, { describe } from "node:test"
 import {
   buildFinanciamentoEleicoes,
   descreverFinanciamentoEleicao,
+  humanizarDetalheFinanciamentoAusente,
   FINANCIAMENTO_ANO_INICIAL_DA_SERIE_TSE,
   FINANCIAMENTO_SERIE_TSE_FONTE_URL,
   FINANCIAMENTO_SERIE_TSE_VERIFICADO_EM,
@@ -85,7 +86,7 @@ describe("buildFinanciamentoEleicoes", () => {
     }
   })
 
-  test("pleito anterior a 2002 é ausência VERIFICADA, com fonte e data", () => {
+  test("pleito anterior a 2002 está fora da série consultada, com fonte e data", () => {
     const eleicoes = buildFinanciamentoEleicoes(
       [],
       [
@@ -101,8 +102,9 @@ describe("buildFinanciamentoEleicoes", () => {
       assert.equal(eleicao.verificado_em, FINANCIAMENTO_SERIE_TSE_VERIFICADO_EM)
       assert.match(
         descreverFinanciamentoEleicao(eleicao),
-        new RegExp(`a partir de ${FINANCIAMENTO_ANO_INICIAL_DA_SERIE_TSE}`),
+        new RegExp(`começa em ${FINANCIAMENTO_ANO_INICIAL_DA_SERIE_TSE}`),
       )
+      assert.match(descreverFinanciamentoEleicao(eleicao), /não comprova inexistência de documentos em outros acervos/)
     }
   })
 
@@ -220,5 +222,134 @@ describe("buildFinanciamentoEleicoes", () => {
     assert.equal(eleicoes.find((e) => e.ano === 2008)?.estado, "ausencia_oficial")
     assert.equal(eleicoes.find((e) => e.ano === 2004)?.estado, "erro")
     assert.match(descreverFinanciamentoEleicao(eleicoes.find((e) => e.ano === 2004)!), /não foi possível concluir/i)
+  })
+
+  test("traduz marcador técnico de receita ausente sem afirmar ausência global", () => {
+    const texto = descreverFinanciamentoEleicao({
+      ano: 2026,
+      estado: "ausencia_oficial",
+      fonte_url: "https://example.test/receitas.zip",
+      verificado_em: "2026-09-15T00:00:00Z",
+      detalhe: "Arquivo oficial contém #NULO, sem SQ_RECEITA válido e sem receita materializável.",
+    })
+    assert.equal(
+      texto,
+      "Nenhum registro de receitas foi localizado para esta candidatura no arquivo oficial consultado. Isso não comprova ausência global de recursos.",
+    )
+    assert.doesNotMatch(texto, /#NULO|SQ_RECEITA|materializável/i)
+  })
+
+  test("preserva detalhe humano de financiamento já explicado", () => {
+    const detalhe = "Nenhum registro de receitas foi localizado no arquivo oficial consultado. Isso não comprova ausência global de recursos."
+    assert.equal(
+      descreverFinanciamentoEleicao({ ano: 2026, estado: "ausencia_oficial", fonte_url: null, verificado_em: null, detalhe }),
+      detalhe,
+    )
+  })
+
+  test("não reescreve marcador TSE quando não prova ausência de receita", () => {
+    const detalhe = "Arquivo oficial contém #NULO no campo de origem; SQ_RECEITA válido foi localizado."
+    assert.equal(humanizarDetalheFinanciamentoAusente(detalhe), detalhe)
+  })
+
+  test("não aplicável preserva a prova sem inventar candidatura na UI", () => {
+    const eleicoes = buildFinanciamentoEleicoes(
+      [{ ano_eleicao: 2002, total_arrecadado: 54050 }],
+      [
+        candidatura({ id: "h-2002", periodo_inicio: 2002, cargo: "Senador", cargo_canonico: "Senador" }),
+        candidatura({ id: "h-2004", periodo_inicio: 2004, cargo: "Prefeito", cargo_canonico: "Prefeito" }),
+        candidatura({ id: "h-2008", periodo_inicio: 2008, cargo: "Prefeito", cargo_canonico: "Prefeito" }),
+        candidatura({ id: "h-2020", periodo_inicio: 2020, cargo: "Prefeito", cargo_canonico: "Prefeito" }),
+      ],
+      [
+        { ano_eleicao: 2004, resultado: "nao_aplicavel", fonte_url: "https://cdn.tse.jus.br/2004", verificado_em: "2026-09-15", detalhe: "prova" },
+        { ano_eleicao: 2008, resultado: "nao_aplicavel", fonte_url: "https://cdn.tse.jus.br/2008", verificado_em: "2026-09-15", detalhe: "prova" },
+        { ano_eleicao: 2020, resultado: "nao_aplicavel", fonte_url: "https://cdn.tse.jus.br/2020", verificado_em: "2026-09-15", detalhe: "prova" },
+      ],
+    )
+
+    // Uma verificação contraditória não pode esconder candidaturas reais.
+    assert.deepEqual(eleicoes.map((eleicao) => eleicao.ano), [2020, 2008, 2004, 2002])
+    assert.equal(eleicoes.find((eleicao) => eleicao.ano === 2002)?.estado, "publicado")
+    assert.equal(eleicoes.find((eleicao) => eleicao.ano === 2004)?.estado, "nao_coletado")
+    assert.deepEqual(buildFinanciamentoEleicoes([], [], [
+      { ano_eleicao: 2004, resultado: "nao_aplicavel", fonte_url: "https://cdn.tse.jus.br/2004", verificado_em: "2026-09-15" },
+    ]), [])
+  })
+
+  test("mantém duas verificações do mesmo ano separadas por SQ e cargo", () => {
+    const eleicoes = buildFinanciamentoEleicoes([], [], [
+      {
+        ano_eleicao: 2018,
+        sq_candidato: "sq-federal",
+        uf_candidatura: "GO",
+        cargo_candidatura: "Deputado Federal",
+        resultado: "ausencia_oficial",
+        fonte_url: "https://dadosabertos.tse.jus.br/2018",
+        verificado_em: "2026-09-15",
+        detalhe: "contexto federal",
+      },
+      {
+        ano_eleicao: 2018,
+        sq_candidato: "sq-estadual",
+        uf_candidatura: "GO",
+        cargo_candidatura: "Deputado Estadual",
+        resultado: "erro",
+        fonte_url: "https://dadosabertos.tse.jus.br/2018",
+        verificado_em: "2026-09-15",
+        detalhe: "contexto estadual",
+      },
+    ])
+
+    assert.equal(eleicoes.length, 2)
+    assert.deepEqual(eleicoes.map((row) => row.sq_candidato), ["sq-federal", "sq-estadual"])
+    assert.deepEqual(eleicoes.map((row) => row.cargo_candidatura), ["Deputado Federal", "Deputado Estadual"])
+  })
+})
+
+describe("recibos nominais que superam tentativas gerais", () => {
+  const nominal = {
+    ano_eleicao: 2010,
+    sq_candidato: "sq-federal",
+    uf_candidatura: "MT",
+    resultado: "ausencia_oficial" as const,
+    fonte_url: "https://cdn.tse.jus.br/receitas-2010.zip",
+    verificado_em: "2026-09-15T12:00:00Z",
+  }
+  const tentativa = {
+    ano_eleicao: 2010,
+    resultado: "erro" as const,
+    fonte_url: "https://cdn.tse.jus.br/consulta-2010.zip",
+    verificado_em: "2026-08-10T12:00:00Z",
+  }
+
+  test("não cria terceira candidatura a partir da falha geral superada", () => {
+    const result = buildFinanciamentoEleicoes([], [], [
+      tentativa,
+      nominal,
+      { ...nominal, sq_candidato: "sq-suplente" },
+    ])
+    assert.equal(result.length, 2)
+    assert.deepEqual(result.map((row) => row.estado), ["ausencia_oficial", "ausencia_oficial"])
+  })
+
+  test("preserva falha nominal e falha geral posterior", () => {
+    const result = buildFinanciamentoEleicoes([], [], [
+      { ...tentativa, verificado_em: "2026-09-16T12:00:00Z" },
+      { ...tentativa, sq_candidato: "sq-estadual", uf_candidatura: "MT" },
+      nominal,
+    ])
+    assert.equal(result.filter((row) => row.estado === "erro").length, 2)
+  })
+
+  test("não supera falha sem prova nominal datada e atribuída", () => {
+    for (const incomplete of [
+      { ...nominal, fonte_url: null },
+      { ...nominal, verificado_em: null },
+      { ...nominal, uf_candidatura: null },
+    ]) {
+      const result = buildFinanciamentoEleicoes([], [], [tentativa, incomplete])
+      assert.ok(result.some((row) => row.estado === "erro"))
+    }
   })
 })

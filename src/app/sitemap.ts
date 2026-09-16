@@ -2,6 +2,11 @@ import type { MetadataRoute } from "next"
 import { rankingDefinitions } from "@/data/ranking-definitions"
 import { getCandidatosResource, getEstadoUFs } from "@/lib/api"
 import { parseMetadataDate, SITE_ORIGIN } from "@/lib/metadata"
+import { isSenadoEnabled } from "@/lib/senado-feature"
+
+// A flag de publicação pode mudar sem regenerar o artefato. O sitemap precisa
+// avaliar a coorte no request para não servir URLs do Senado depois do OFF.
+export const dynamic = "force-dynamic"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let candidatoUrls: MetadataRoute.Sitemap = []
@@ -42,6 +47,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: "weekly" as const,
     priority: 0.6,
   }))
+  const senadoUrls = isSenadoEnabled()
+    ? [
+        {
+          url: SITE_ORIGIN + "/senado",
+          changeFrequency: "weekly" as const,
+          priority: 0.7,
+        },
+        ...ufs.map((uf) => ({
+          url: SITE_ORIGIN + "/uf/" + uf + "/senado",
+          changeFrequency: "weekly" as const,
+          priority: 0.65,
+        })),
+      ]
+    : []
 
   return [
     {
@@ -114,5 +133,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...candidatoUrls,
     ...rankingUrls,
     ...ufUrls,
+    ...senadoUrls,
   ]
 }

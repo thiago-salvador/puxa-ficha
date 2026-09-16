@@ -20,7 +20,7 @@ const NAV_ITEMS = [
 
 const subscribeHydration = () => () => undefined
 
-export function Navbar() {
+export function Navbar({}: { senadoEnabled?: boolean } = {}) {
   // SSR must not advertise a working menu before its click handler is attached.
   const isHydrated = useSyncExternalStore(subscribeHydration, () => true, () => false)
   const pathname = usePathname()

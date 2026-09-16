@@ -23,7 +23,7 @@ test("todo cache público com single-flight inclui o ponto único de bump", () =
   }
   visit(file)
 
-  assert.equal(cacheCalls.length, 12, "o inventário de caches públicos mudou; revise este contrato")
+  assert.equal(cacheCalls.length, 13, "o inventário de caches públicos mudou; revise este contrato")
   for (const call of cacheCalls) {
     const key = call.arguments[1]
     assert.ok(
@@ -37,5 +37,9 @@ test("todo cache público com single-flight inclui o ponto único de bump", () =
   }
 
   assert.match(source, /export const CURRENT_DATA_WAVE = "ceaps-utf8-20260821"/)
-  assert.match(source, /\["global-search-index"[^\n]+"party-siglas-lote2-20260815"[^\n]+CURRENT_DATA_WAVE\]/)
+  assert.match(
+    source,
+    /\["public-candidato-count-by-estado"[^\n]+SENADO_CACHE_VARIANT[^\n]+CURRENT_DATA_WAVE\]/,
+  )
+  assert.match(source, /\["global-search-index"[^\n]+"party-siglas-lote2-20260815"[^\n]+SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE\]/)
 })

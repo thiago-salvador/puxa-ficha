@@ -1,0 +1,37 @@
+{
+  "schema_version": "senado-curated-networks-v1",
+  "generated_at": "2026-09-14T12:00:00Z",
+  "identity": {
+    "sq_candidato": "9001",
+    "uf": "SP",
+    "nome_completo": "PESSOA SINTETICA DE TESTE"
+  },
+  "source_receipt": {
+    "source_id": "tse-candidate-ui-2026",
+    "url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/fixture/9001",
+    "checked_at": "2026-09-14T12:00:00Z"
+  },
+  "declared_sites": [
+    {
+      "source_id": "instagram-declarado-sintetico",
+      "network": "instagram",
+      "url": "https://www.instagram.com/pf_fixture_sintetica_senado/",
+      "checked_at": "2026-09-14T12:00:00Z",
+      "identity_evidence": "Fixture: link declarado na UI oficial sintética.",
+      "public_metrics": {
+        "followers": 1234,
+        "source_id": "instagram-declarado-sintetico",
+        "source_url": "https://www.instagram.com/pf_fixture_sintetica_senado/",
+        "checked_at": "2026-09-14T12:30:00Z",
+        "precision": "as_displayed_by_public_ui"
+      }
+    },
+    {
+      "source_id": "facebook-declarado-sintetico",
+      "network": "facebook",
+      "url": "https://www.facebook.com/pf_fixture_sintetica_senado",
+      "checked_at": "2026-09-14T12:00:00Z",
+      "identity_evidence": "Fixture: link declarado na UI oficial sintética."
+    }
+  ]
+}

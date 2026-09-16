@@ -75,7 +75,9 @@ export function useGlobalSearch(): GlobalSearchContextValue {
   return ctx
 }
 
-function buildShortcutItems(): GlobalSearchIndexItem[] {
+/** Atalhos fixos da busca. O texto de Parlamentares depende da flag do Senado,
+ * que chega do layout (server) porque o bundle do cliente não lê SENADO_ENABLED. */
+export function buildShortcutItems(senadoEnabled = false): GlobalSearchIndexItem[] {
   const raw: Array<
     Pick<GlobalSearchIndexItem, "href" | "title" | "subtitle" | "badge">
   > = [
@@ -94,7 +96,9 @@ function buildShortcutItems(): GlobalSearchIndexItem[] {
     {
       href: "/parlamentares",
       title: "Parlamentares",
-      subtitle: "Fichas de deputados e senadores ainda não estão prontas",
+      subtitle: senadoEnabled
+        ? "Fichas de deputados ainda não estão prontas"
+        : "Fichas de deputados e senadores ainda não estão prontas",
       badge: "Atalho",
     },
     {
@@ -254,9 +258,11 @@ function buildPaletteModel(args: {
 export function GlobalSearchProvider({
   children,
   initialCandidates = [],
+  senadoEnabled = false,
 }: {
   children: React.ReactNode
   initialCandidates?: GlobalSearchIndexItem[]
+  senadoEnabled?: boolean
 }) {
   const router = useRouter()
   const lastZeroResultQueryRef = useRef("")
@@ -269,7 +275,7 @@ export function GlobalSearchProvider({
   )
   const deferredQuery = useDeferredValue(query)
 
-  const shortcutItems = useMemo(() => buildShortcutItems(), [])
+  const shortcutItems = useMemo(() => buildShortcutItems(senadoEnabled), [senadoEnabled])
 
   const loadSearchCandidates = useCallback(async () => {
     if (loadState === "ready" || loadState === "loading") return
