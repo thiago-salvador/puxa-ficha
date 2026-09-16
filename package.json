@@ -238,11 +238,11 @@
     "agent-react-devtools": "^0.5.0",
     "c8": "^12.0.0",
     "cheerio": "1.2.0",
-    "cspell": "^10.3.0",
+    "cspell": "^10.3.1",
     "csv-parse": "^7.0.2",
     "esbuild": "^0.28.2",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.3.4",
+    "eslint-config-next": "^16.3.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "fallow": "^3.25.0",
     "jszip": "^3.10.2",
@@ -255,7 +255,7 @@
     "tailwindcss": "^4",
     "tsx": "^4.23.13",
     "typescript": "^6.0.3",
-    "yaml": "2.9.0"
+    "yaml": "2.9.1"
   },
   "overrides": {
     "exceljs": {
