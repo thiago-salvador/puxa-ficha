@@ -820,11 +820,14 @@ export function ProfileOverview({
   onNavigateTab,
   leadingCard,
   trailingCard,
+  closingCard,
 }: {
   ficha: FichaCandidato
   onNavigateTab: (tabId: string) => void
   leadingCard?: React.ReactNode
   trailingCard?: React.ReactNode
+  /** Último card da grade (suplentes do Senado), antes do bloco de alertas. */
+  closingCard?: React.ReactNode
 }) {
   const socialNetworksVerification = ficha.verificacao_campos?.social_networks
   const socialNetworksEmptyVerifiedAt =
@@ -848,7 +851,7 @@ export function ProfileOverview({
     ficha.sites_candidato?.resultado === "indeterminado" ? sitesTseCollectedAt : null
   const hasDebateQuotes = hasCandidateDebatePressQuotes(ficha.slug, ficha.id)
 
-  if (!hasOverviewData(ficha) && !leadingCard && !trailingCard && !hasDebateQuotes) {
+  if (!hasOverviewData(ficha) && !leadingCard && !trailingCard && !closingCard && !hasDebateQuotes) {
     return <EmptyOverviewState />
   }
 
@@ -943,6 +946,7 @@ export function ProfileOverview({
           <CandidateDebatesBentoCard candidateSlug={ficha.slug} candidateId={ficha.id} />
         )}
       </OverviewMasonryItem>
+      <OverviewMasonryItem>{closingCard}</OverviewMasonryItem>
     </OverviewMasonry>
   )
 }
