@@ -14,11 +14,12 @@ describe("home global indicators contract", () => {
     )
   })
 
-  it("counts only presidents and governors in the hero", () => {
+  it("counts presidents, governors and flag-gated senators in the hero", () => {
     assert.match(
       heroMetricsSource,
-      /HERO_CARGOS = new Set\(\["Presidente", "Governador"\]\)/
+      /HERO_CARGOS = new Set\(\["Presidente", "Governador", "Senador"\]\)/
     )
+    assert.match(heroMetricsSource, /shouldExposeCargo\(resumo\.candidato\.cargo_disputado, env\)/)
   })
 
   it("keeps grid, comparator, and JSON-LD on the presidential cohort", () => {
