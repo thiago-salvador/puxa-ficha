@@ -14,6 +14,7 @@ import {
   validatePullRequest,
   promoteProduction,
   runPublicationStages,
+  runStreamed,
   updateBranchRequest,
 } from "../scripts/pesquisas-atualizacao-agendada/publicar.mjs"
 
@@ -131,6 +132,24 @@ test("promoção mantém bypass só no staged e limpa segredo nos checks públic
   assert.equal(smokeEnvs[1].PF_BASE_URL, "https://puxaficha.com.br")
   assert.equal(proofs.length, 1)
   assert.equal(proofs[0].bypassSecret, "")
+})
+
+test("runStreamed não trava em comandos verbosos que excederiam o maxBuffer do exec bufferizado", async () => {
+  // Regressão: prepare/verify chamavam commandRunner (execFile bufferizado com
+  // maxBuffer de 4 MiB) para o apply e para "npm run verify:pesquisas" — uma
+  // suíte de teste/lint/typecheck que nenhum dos dois lê o stdout. Um deploy
+  // real estourou o buffer com "stdout maxBuffer length exceeded" e derrubou a
+  // publicação inteira. runStreamed usa stdio:'inherit', sem buffer nenhum.
+  // stdio "ignore" instead of the real "inherit" default keeps this assertion
+  // from flooding the test log with megabytes of filler; the property under
+  // test (spawn never buffers stdout into a capped JS buffer, so it can't
+  // reject on size) holds regardless of which stdio target discards it.
+  const bytesAboveOldCap = 5 * 1024 * 1024
+  await assert.doesNotReject(runStreamed(process.execPath, ["-e", `process.stdout.write("x".repeat(${bytesAboveOldCap}))`], process.env, { stdio: ["ignore", "ignore", "inherit"] }))
+})
+
+test("runStreamed rejeita com o código de saída quando o comando falha", async () => {
+  await assert.rejects(runStreamed(process.execPath, ["-e", "process.exit(3)"], process.env, { stdio: ["ignore", "ignore", "inherit"] }), /falhou com código 3/)
 })
 
 test("publicação falha fechado sem token, SHA, autor ou repositório válidos", () => {
