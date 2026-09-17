@@ -4,13 +4,14 @@ import { createHash } from "node:crypto"
 
 import type { CenarioRealTime } from "./pesquisas-monitoramento-realtime-cenarios"
 import { parseTextoRealTimeParaPdf } from "./pesquisas-monitoramento-realtime-pa-pdf"
+import { parseTextoRealTimeMsPdf, RELATORIO_MS_SHA256, RELATORIO_MS_URL } from "./pesquisas-monitoramento-realtime-ms-pdf"
 import { parseTextoRealTimeRsPdf, RELATORIO_RS_SHA256, RELATORIO_RS_URL } from "./pesquisas-monitoramento-realtime-rs-pdf"
 
 export { parseTextoRealTimeParaPdf } from "./pesquisas-monitoramento-realtime-pa-pdf"
 
 export interface RelatorioRealTimePdf {
   registration_id: string
-  geography_code: "PR" | "PA" | "RS"
+  geography_code: "PR" | "PA" | "RS" | "MS"
   office: "Governador"
   publication_date: string
   fieldwork: { start: string; end: string }
@@ -23,7 +24,7 @@ export interface RelatorioRealTimePdf {
 export const RELATORIO_PARANA_URL = "https://prmais.com/wp-content/uploads/2026/08/Parana%CC%81-PR-09262_2026_Ago26.pdf"
 export const RELATORIO_PARA_URL = "https://static.poder360.com.br/uploads/2026/09/realtimebigdataparaestadual-15set2026.pdf"
 export const RELATORIO_PARA_SHA256 = "31e216653159846d351be14d0c519bb0d0ac21ae83e82e2b16adfbd039a7394e"
-export { RELATORIO_RS_SHA256, RELATORIO_RS_URL, parseTextoRealTimeRsPdf }
+export { RELATORIO_MS_SHA256, RELATORIO_MS_URL, parseTextoRealTimeMsPdf, RELATORIO_RS_SHA256, RELATORIO_RS_URL, parseTextoRealTimeRsPdf }
 export interface DocumentoRealTime extends RelatorioRealTimePdf {
   kind: "realtime_pdf"
   url: string
@@ -39,11 +40,14 @@ export function extrairDocumentoRealTime(input: { bytes: Uint8Array; url: string
       ? parseTextoRealTimeParaPdf
       : input.url === RELATORIO_RS_URL && input.registrationId === "RS-09640/2026"
         ? parseTextoRealTimeRsPdf
+      : input.url === RELATORIO_MS_URL && input.registrationId === "MS-07706/2026"
+        ? parseTextoRealTimeMsPdf
       : null
   if (!reviewed) throw new Error("Real Time PDF: documento fora do escopo revisado")
   if (input.bytes.byteLength > 8_000_000 || Buffer.from(input.bytes).subarray(0, 5).toString() !== "%PDF-") throw new Error("Real Time PDF: formato ou tamanho inválido")
   if (input.url === RELATORIO_PARA_URL && createHash("sha256").update(input.bytes).digest("hex") !== RELATORIO_PARA_SHA256) throw new Error("Real Time PA PDF: bytes fora do recibo revisado")
   if (input.url === RELATORIO_RS_URL && createHash("sha256").update(input.bytes).digest("hex") !== RELATORIO_RS_SHA256) throw new Error("Real Time RS PDF: bytes fora do recibo revisado")
+  if (input.url === RELATORIO_MS_URL && createHash("sha256").update(input.bytes).digest("hex") !== RELATORIO_MS_SHA256) throw new Error("Real Time MS PDF: bytes fora do recibo revisado")
   const text = execFileSync("pdftotext", ["-layout", "-", "-"], { input: input.bytes, encoding: "utf8", timeout: 20_000, maxBuffer: 2_000_000 })
   return { ...reviewed(text, input.registrationId), kind: "realtime_pdf", url: input.url,
     observed_at: input.observedAt, evidence_sha256: createHash("sha256").update(input.bytes).digest("hex") }

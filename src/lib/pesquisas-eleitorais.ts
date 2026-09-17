@@ -11,7 +11,20 @@ export type EstadoPesquisa =
   | "sem_pesquisa_qualificada"
 
 type StatusFonte = "aprovado" | "condicional" | "excluído"
-type StatusVinculo = "exact_alias" | "not_candidate" | "indeterminado"
+type StatusVinculo = "exact_alias" | "not_candidate" | "indeterminado" | "reviewed_source_mention"
+
+interface SourceMentionReview {
+  registrationId: string
+  geographyCode: string
+  office: string
+  scenarioId: string
+  mode: "espontanea"
+  sourceSha256: string
+  rawLabel: string
+  valuePercent: number
+  scenarioLabel: string
+  scenarioQuestion: string | null
+}
 
 export interface EscopoAlias {
   year: number
@@ -41,6 +54,7 @@ interface ResultadoPesquisaEleitoral {
   matchStatus: StatusVinculo
   valuePercent: number | null
   status: EstadoPesquisa
+  sourceMentionReview?: SourceMentionReview
 }
 
 interface ProvenienciaPesquisaEleitoral {
@@ -145,6 +159,7 @@ const STATUS_VINCULO = new Set<StatusVinculo>([
   "exact_alias",
   "not_candidate",
   "indeterminado",
+  "reviewed_source_mention",
 ])
 
 function object(value: unknown, path: string): Record<string, unknown> {
@@ -484,6 +499,36 @@ function parseResult(
   if (valuePercent === null && parsedState === "publicado") {
     throw new ErroValidacaoPesquisasEleitorais([`${path} não pode publicar percentual ausente`])
   }
+  if (matchStatus === "reviewed_source_mention") {
+    if (candidateSlug !== null || valuePercent === null) {
+      throw new ErroValidacaoPesquisasEleitorais([`${path} menção espontânea revisada exige candidate_slug nulo e percentual`])
+    }
+    const receipt = object(raw.source_mention_review, `${path}.source_mention_review`)
+    const mode = text(receipt.mode, `${path}.source_mention_review.mode`)
+    const sourceSha256 = text(receipt.source_sha256, `${path}.source_mention_review.source_sha256`)
+    if (mode !== "espontanea" || !/^[a-f0-9]{64}$/i.test(sourceSha256)) {
+      throw new ErroValidacaoPesquisasEleitorais([`${path}.source_mention_review possui modo ou hash inválido`])
+    }
+    const receiptValue = percentage(receipt.value_percent, `${path}.source_mention_review.value_percent`)
+    if (receiptValue !== valuePercent || text(receipt.raw_label, `${path}.source_mention_review.raw_label`) !== rawLabel) {
+      throw new ErroValidacaoPesquisasEleitorais([`${path}.source_mention_review diverge da resposta preservada`])
+    }
+    return {
+      rawLabel, candidateSlug, matchStatus, valuePercent, status: parsedState,
+      sourceMentionReview: {
+        registrationId: text(receipt.registration_id, `${path}.source_mention_review.registration_id`),
+        geographyCode: text(receipt.geography_code, `${path}.source_mention_review.geography_code`),
+        office: text(receipt.office, `${path}.source_mention_review.office`),
+        scenarioId: text(receipt.scenario_id, `${path}.source_mention_review.scenario_id`),
+        mode: "espontanea",
+        sourceSha256,
+        rawLabel,
+        valuePercent,
+        scenarioLabel: text(receipt.scenario_label, `${path}.source_mention_review.scenario_label`),
+        scenarioQuestion: receipt.scenario_question === null ? null : text(receipt.scenario_question, `${path}.source_mention_review.scenario_question`),
+      },
+    }
+  }
   return { rawLabel, candidateSlug, matchStatus, valuePercent, status: parsedState }
 }
 
@@ -594,6 +639,20 @@ function parsePoll(
       scenarioId: id,
     }
     const parsedResults = array(scenario.resultados, `${scenarioPath}.resultados`).map((result, resultIndex) => parseResult(result, `${scenarioPath}.resultados[${resultIndex}]`, aliases, aliasScope))
+    for (const result of parsedResults.filter((entry) => entry.matchStatus === "reviewed_source_mention")) {
+      const review = result.sourceMentionReview
+      const mode = comparabilityKey.split("|")[4]
+      if (!review || mode !== "espontaneo"
+        || review.registrationId !== registration.code.value
+        || review.geographyCode !== geographyParsed.code
+        || review.office !== office
+        || review.scenarioId !== id
+        || review.scenarioLabel !== text(scenario.label_raw, `${scenarioPath}.label_raw`)
+        || review.scenarioQuestion !== question.value
+        || review.sourceSha256 !== provenance.capture.supportingPdfSha256) {
+        throw new ErroValidacaoPesquisasEleitorais([`${scenarioPath}.source_mention_review não confere com o cenário e o PDF`])
+      }
+    }
     const byRawLabel = new Map<string, ResultadoPesquisaEleitoral>()
     for (const result of parsedResults) {
       const previous = byRawLabel.get(result.rawLabel)

@@ -27,6 +27,65 @@ const REVISOES: readonly Revisao[] = [
   { registration: "SE-07327/2026", uf: "SE", label: "Dr. Helton Monteiro (PSOL)", slug: "dr-helton-monteiro", ballot: "DR. HELTON", civil: "JOSE HELTON SILVA MONTEIRO", party: "PSOL", sq: "260002547415", hash: "7d421f29b19c1654ae6c53764e29d10c29580b5d163500d6d978b140e50c0cc2" },
 ] as const
 
+export type RevisaoMencaoEspontanea = {
+  source_id: string
+  registration_id: string
+  geography_code: string
+  office: "Governador"
+  scenario_id: string
+  scenario_mode: "espontaneo"
+  raw_label: string
+  value_percent: number
+  scenario_label: string
+  scenario_question: string
+  source_sha256: string
+}
+
+type ReciboMencaoEspontanea = Omit<RevisaoMencaoEspontanea, "scenario_mode" | "source_id"> & { mode: "espontanea" }
+
+// Literal source mentions are editorial receipts, never candidate bridges.
+// Each row is scoped to one registration, scenario and result PDF.
+const MENSOES_ESPONTANEAS: readonly RevisaoMencaoEspontanea[] = [
+  { source_id: "real-time-big-data-estaduais-2026", registration_id: "RS-09640/2026", geography_code: "RS", office: "Governador", scenario_id: "real-time-big-data-rs-rs-09640-2026-1t-780d665f58cae3fa", scenario_mode: "espontaneo", raw_label: "Eduardo Leite", value_percent: 1, scenario_label: "Primeiro turno espontâneo", scenario_question: "EM OUTUBRO TEREMOS ELEIÇÕES, SE A ELEIÇÃO PARA GOVERNADOR DO RIO GRANDE DO SUL FOSSE HOJE, EM QUEM O (A) SENHOR (A) VOTARIA? (PERGUNTA ABERTA)", source_sha256: "a0af8ce066bb357cce179cf1349f46e1a19a7813e0332e136114d177c9410ea8" },
+  { source_id: "real-time-big-data-estaduais-2026", registration_id: "PR-09262/2026", geography_code: "PR", office: "Governador", scenario_id: "real-time-big-data-pr-pr-09262-2026-1t-a9fc8d84fdbb7bc9", scenario_mode: "espontaneo", raw_label: "Ratinho Júnior", value_percent: 5, scenario_label: "Espontânea governador", scenario_question: "EM OUTUBRO TEREMOS ELEIÇÕES, SE A ELEIÇÃO PARA GOVERNADOR FOSSE HOJE, EM QUEM O (A) SENHOR (A) VOTARIA? (PERGUNTA ABERTA)", source_sha256: "68fa7eee044abc0feaeafa92a74dc6c354d26a7fe330ce5d7ac2a07775bbd5cd" },
+  { source_id: "real-time-big-data-estaduais-2026", registration_id: "PA-00415/2026", geography_code: "PA", office: "Governador", scenario_id: "real-time-big-data-estaduais-pa-00415-2026-1t-0aaeb4a54ff1dfa5", scenario_mode: "espontaneo", raw_label: "Helder Barbalho", value_percent: 2, scenario_label: "Espontânea governador", scenario_question: "EM OUTUBRO TEREMOS ELEIÇÕES, SE A ELEIÇÃO PARA GOVERNADOR DO PARÁ FOSSE HOJE, EM QUEM O (A) SENHOR (A) VOTARIA? (PERGUNTA ABERTA)", source_sha256: "31e216653159846d351be14d0c519bb0d0ac21ae83e82e2b16adfbd039a7394e" },
+  { source_id: "real-time-big-data-estaduais-2026", registration_id: "MS-07706/2026", geography_code: "MS", office: "Governador", scenario_id: "real-time-big-data-ms-ms-07706-2026-1t-8d870e1a5f078713", scenario_mode: "espontaneo", raw_label: "Reinaldo Azambuja", value_percent: 1, scenario_label: "Primeiro turno espontâneo", scenario_question: "EM OUTUBRO TEREMOS ELEIÇÕES, SE A ELEIÇÃO PARA GOVERNADOR DO MATO GROSSO DO SUL FOSSE HOJE, EM QUEM O (A) SENHOR (A) VOTARIA? (PERGUNTA ABERTA)", source_sha256: "f4d9b32f5a722e33875781bd5045cf98f6e094b20a18ab4f055cab7a97dfccf0" },
+  { source_id: "real-time-big-data-estaduais-2026", registration_id: "MS-07706/2026", geography_code: "MS", office: "Governador", scenario_id: "real-time-big-data-ms-ms-07706-2026-1t-8d870e1a5f078713", scenario_mode: "espontaneo", raw_label: "João Henrique Cattan", value_percent: 4, scenario_label: "Primeiro turno espontâneo", scenario_question: "EM OUTUBRO TEREMOS ELEIÇÕES, SE A ELEIÇÃO PARA GOVERNADOR DO MATO GROSSO DO SUL FOSSE HOJE, EM QUEM O (A) SENHOR (A) VOTARIA? (PERGUNTA ABERTA)", source_sha256: "f4d9b32f5a722e33875781bd5045cf98f6e094b20a18ab4f055cab7a97dfccf0" },
+] as const
+
+export function resolverMencaoEspontaneaRevisada(
+  target: Pick<AlvoMonitoramento, "source_id" | "registration_id" | "geography_code" | "office">,
+  scenario: { id: string; office: string; geography_code: string; mode?: string; label: string; question: string | null },
+  row: { raw_label: string; value_percent: number },
+  sourceSha256: string | undefined,
+): ReciboMencaoEspontanea | null {
+  if (typeof sourceSha256 !== "string" || !/^[a-f0-9]{64}$/i.test(sourceSha256)) return null
+  const proof = MENSOES_ESPONTANEAS.find((entry) => entry.source_id === target.source_id
+    && entry.registration_id === target.registration_id
+    && entry.geography_code === target.geography_code
+    && entry.office === target.office
+    && entry.scenario_id === scenario.id
+    && entry.scenario_mode === scenario.mode
+    && entry.raw_label === row.raw_label
+    && entry.value_percent === row.value_percent
+    && entry.scenario_label === scenario.label
+    && entry.scenario_question === scenario.question
+    && entry.source_sha256 === sourceSha256)
+  if (!proof) return null
+  return {
+    registration_id: proof.registration_id,
+    geography_code: proof.geography_code,
+    office: proof.office,
+    scenario_id: proof.scenario_id,
+    raw_label: proof.raw_label,
+    value_percent: proof.value_percent,
+    scenario_label: proof.scenario_label,
+    scenario_question: proof.scenario_question,
+    source_sha256: proof.source_sha256,
+    mode: "espontanea",
+  }
+}
+
 type ChapaTse = {
   uf?: string
   cargo_titular?: string

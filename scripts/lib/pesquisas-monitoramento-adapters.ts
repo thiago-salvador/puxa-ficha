@@ -55,6 +55,18 @@ export interface AdaptadorMonitoramento {
 
 const REGISTRY_URL = "https://pesqele-divulgacao.tse.jus.br/"
 
+function findKnownScenarioId(
+  knownScenarios: AlvoMonitoramento["known_scenarios"],
+  runoff: { turn: 1 | 2; label: string; question: string | null },
+): string | undefined {
+  const candidates = knownScenarios?.filter((scenario) => scenario.turn === runoff.turn && (
+    runoff.question === null ? scenario.label === runoff.label : scenario.question === runoff.question
+  )) ?? []
+  if (candidates.length === 1) return candidates[0].id
+  if (runoff.question !== null && candidates.length > 1) return candidates.find((scenario) => scenario.label === runoff.label)?.id
+  return undefined
+}
+
 /** Select only an unambiguous published registration; never select by order. */
 export function selecionarRegistroPublicado(ids: string[], office: string | null, uf: string | null): string | null {
   const unique = [...new Set(ids)]
@@ -542,6 +554,7 @@ function buildEvidence(input: {
       turn: input.target.turn,
       label: primaryRealTime?.label ?? (realtimeDocument ? primaryDocumentScenario?.label : null) ?? input.target.scenario_label,
       question: primaryDocumentScenario?.question ?? input.target.scenario_question,
+      mode: primaryRealTime?.mode ?? (primaryDocumentScenario && "mode" in primaryDocumentScenario ? primaryDocumentScenario.mode : undefined),
     },
     sample: { size: sampleSize, population: input.target.population },
     margin_error_pp: normalizeMeasure(margin),
@@ -553,7 +566,7 @@ function buildEvidence(input: {
       ...(realtimeDocument ? { result_notes: realtimeDocument.scenarios.flatMap((scenario) => scenario.notes) } : realTime?.notes.length ? { result_notes: realTime.notes } : {}),
       additional_scenarios: additional.map((runoff) => ({
         scenario: {
-          id: input.target.known_scenarios?.find((scenario) => scenario.turn === runoff.turn && (runoff.question ? scenario.question === runoff.question : scenario.label === runoff.label))?.id
+          id: findKnownScenarioId(input.target.known_scenarios, runoff)
             ?? `${input.target.poll_id}-${runoff.turn}t-${createHash("sha256").update("mode" in runoff ? `${runoff.mode}|${runoff.results.map((row) => row.raw_label).sort().join("|")}` : runoff.question ?? runoff.label).digest("hex").slice(0, 16)}`,
           office: input.target.office,
           geography: input.target.geography,
@@ -561,6 +574,7 @@ function buildEvidence(input: {
           turn: runoff.turn,
           label: runoff.label,
           question: runoff.question,
+          mode: "mode" in runoff ? runoff.mode : undefined,
         },
         results: unresolvedResults(runoff.results),
         scenario_complete: true as const,

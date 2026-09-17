@@ -15,6 +15,12 @@ require.cache[serverOnlyPath] = {
   loaded: true,
   exports: {},
 } as never
+require.extensions[".css"] = (module) => {
+  const target: Record<string, unknown> = {}
+  const styles = new Proxy(target, { get: (object, property) => property === "default" ? object.default : property })
+  target.default = styles
+  module.exports = styles
+}
 
 const {
   PesquisasPresidenciaisHero,
@@ -27,6 +33,11 @@ const {
 } = require(
   "../src/lib/pesquisas-eleitorais",
 ) as typeof import("@/lib/pesquisas-eleitorais")
+const { PollWeekDetails } = require(
+  "../src/components/PollResearchDetails",
+) as typeof import("@/components/PollResearchDetails")
+const { aggregatePollWeeks } = require("../src/lib/poll-weeks") as typeof import("@/lib/poll-weeks")
+const { fixturePoll } = require("./fixtures/poll-series") as typeof import("./fixtures/poll-series")
 
 const pesquisasLula = listarPesquisasPresidenciaisPorSlug("lula")
 
@@ -161,6 +172,67 @@ describe("experiência v2 de pesquisas presidenciais", () => {
     assert.match(errorHtml, /Resultado indisponível/)
     assert.doesNotMatch(errorHtml, />38,4%<|>38,4%<!-- -->/)
     assert.match(zeroHtml, />0%<|>0%<!-- -->/)
+  })
+
+  it("exibe menção espontânea sem convertê-la em candidatura e preserva Outros", () => {
+    const poll = fixturePoll("2026-09-15", [31, 42, 10])
+    poll.office = "Governador"
+    poll.geography = { type: "estadual", label: "Rio Grande do Sul", code: "RS" }
+    poll.scenario.geography = "Rio Grande do Sul"
+    poll.registration.code.value = "RS-09640/2026"
+    poll.provenance.capture.supportingPdfSha256 = "a".repeat(64)
+    poll.scenario.id = "real-time-big-data-rs-rs-09640-2026-espontanea-governador"
+    poll.scenario.labelRaw = "Espontânea governador"
+    poll.scenario.comparabilityKey = "2026|Governador|RS|1|espontanea|real-time-big-data-rs-09640-2026|total_amostra"
+    poll.scenario.question = {
+      value: "EM OUTUBRO TEREMOS ELEIÇÕES, SE A ELEIÇÃO PARA GOVERNADOR DO RIO GRANDE DO SUL FOSSE HOJE, EM QUEM O (A) SENHOR (A) VOTARIA? (PERGUNTA ABERTA)",
+      status: "publicado",
+    }
+    poll.scenario.resultados.push({
+      rawLabel: "Eduardo Leite",
+      candidateSlug: null,
+      matchStatus: "reviewed_source_mention",
+      valuePercent: 1,
+      status: "publicado",
+      sourceMentionReview: {
+        registrationId: "RS-09640/2026",
+        geographyCode: "RS",
+        office: "Governador",
+        scenarioId: poll.scenario.id,
+        mode: "espontanea",
+        sourceSha256: "a".repeat(64),
+        rawLabel: "Eduardo Leite",
+        valuePercent: 1,
+        scenarioLabel: "Espontânea governador",
+        scenarioQuestion: "EM OUTUBRO TEREMOS ELEIÇÕES, SE A ELEIÇÃO PARA GOVERNADOR DO RIO GRANDE DO SUL FOSSE HOJE, EM QUEM O (A) SENHOR (A) VOTARIA? (PERGUNTA ABERTA)",
+      },
+    })
+    poll.scenario.resultados.push({
+      rawLabel: "Outros",
+      candidateSlug: null,
+      matchStatus: "not_candidate",
+      valuePercent: 2,
+      status: "publicado",
+    })
+    const [week] = aggregatePollWeeks([poll])
+    assert.ok(week)
+    const html = renderToStaticMarkup(
+      <PollWeekDetails
+        week={week}
+        candidateKeys={["candidate:candidate-0", "candidate:candidate-1", "candidate:candidate-2"]}
+      />,
+    )
+
+    assert.ok(html.includes("Eduardo Leite"))
+    assert.ok(html.includes("1%"))
+    assert.match(html, /Menção espontânea; não confirma candidatura/)
+    assert.ok(html.includes("Outros"))
+    assert.ok(html.includes("2%"))
+    const resultsHtml = html.slice(html.indexOf("<ul"), html.indexOf("</ul>") + "</ul>".length)
+    assert.doesNotMatch(resultsHtml, /<a\b/)
+    assert.doesNotMatch(resultsHtml, /Eduardo Leite[\s\S]*Vínculo com candidatura/)
+    assert.match(html, /aria-label="Demais respostas da pesquisa"/)
+    assert.doesNotMatch(html, /aria-label="[^"\n]*candidatos/i)
   })
 
   it("reutiliza as três superfícies para candidaturas estaduais qualificadas", () => {
