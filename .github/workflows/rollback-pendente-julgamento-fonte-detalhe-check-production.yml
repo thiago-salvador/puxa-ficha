@@ -1,4 +1,4 @@
-name: Reverter preenchimento de sq_coligacao (chapas de fonte direta, issue #340)
+name: Reverter alargamento de chapas_2026_fonte_detalhe_check (issue #340)
 
 on:
   workflow_dispatch:
@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   rollback:
-    name: Rollback de sq_coligacao das chapas de fonte direta 20260916170000
+    name: Rollback do alargamento de chapas_2026_fonte_detalhe_check 20260917000000
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 25
@@ -47,9 +47,9 @@ jobs:
       - run: npm ci --ignore-scripts
       - uses: ./.github/actions/install-postgresql-client-17
         timeout-minutes: 12
-      - name: Provar no-op, forward, abort, segunda execução e rollback em PostgreSQL 17 descartável
-        run: bash scripts/audit/provar-sq-coligacao-chapas-direta-pg17.sh
+      - name: Provar no-op, forward, idempotência e rollback em PostgreSQL 17 descartável com as constraints reais de chapas_2026
+        run: bash scripts/audit/provar-pendente-julgamento-fonte-detalhe-check-pg17.sh
       - name: Reverter migration fechada em produção
         env:
           PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
-        run: bash scripts/audit/rollback-sq-coligacao-chapas-direta-production.sh
+        run: bash scripts/audit/rollback-pendente-julgamento-fonte-detalhe-check-production.sh

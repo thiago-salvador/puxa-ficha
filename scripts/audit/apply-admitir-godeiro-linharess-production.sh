@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Aplica 20260916160000 (admite a ficha de Godeiro Linharess, RN Governador)
+# Aplica 20260917000100 (admite a ficha de Godeiro Linharess, RN Governador)
 # com predecessor, hash, lock, ledger e readback fechados para o projeto de
 # producao do Puxa Ficha.
 set -euo pipefail
@@ -45,8 +45,8 @@ pf_configure_libpq_from_url
 export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
-version=20260916160000
-previous_version=20260916150000
+version=20260917000100
+previous_version=20260917000001
 migration="$ROOT/supabase/migrations/${version}_admitir_godeiro_linharess.sql"
 previous_migration="$ROOT/supabase/migrations/${previous_version}_refrescar_fonte_detalhe_prtb.sql"
 rollback="$ROOT/supabase/rollback/${version}_admitir_godeiro_linharess.rollback.sql"

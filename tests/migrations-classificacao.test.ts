@@ -414,15 +414,18 @@ describe("classificador puro (#136)", () => {
     // Issue #340: alargamento do vocabulário (DDL pura) mais a reconciliação de
     // seis fichas, três chapas e carlos-jararaca (curadoria), nenhuma falha
     // nova, medidas pelo --gate local PG17: 378 + 105 = 483.
-    // Issue #340 follow-up: refresco de fonte_detalhe da chapa PRTB
-    // (20260916150000, curadoria), nenhuma falha nova, medida pelo --gate
-    // local PG17: 379 + 105 = 484.
-    // Issue #340 follow-up: admissão da ficha de Godeiro Linharess
-    // (20260916160000, curadoria), nenhuma falha nova, medida pelo --gate
-    // local PG17: 380 + 105 = 485.
-    // Issue #340 follow-up: preenchimento de chapas_2026.sq_coligacao das
-    // duas chapas de fonte direta (20260916170000, curadoria), nenhuma
-    // falha nova, medida pelo --gate local PG17: 381 + 105 = 486.
+    // Issue #340 follow-up (redesenho pós-incidente de apply 35179453431,
+    // PR #357): 20260916150000, 20260916160000 e 20260916170000 (mergeadas
+    // mas nunca aplicadas em produção) saíram de supabase/migrations/,
+    // substituídas por três: 20260917000000 (alarga
+    // chapas_2026_fonte_detalhe_check, schema puro), 20260917000001
+    // (refresca a chapa do PRTB, curadoria) e 20260917000100 (Godeiro
+    // Linharess, re-sequenciada). O alargamento e a curadoria saíram
+    // separados, não numa só migration, porque o gate do repositório
+    // recusa migration nova que mistura DDL persistente com dado de ficha.
+    // O problema de sq_coligacao virou correção de código em
+    // compareCandidacies, sem migration. Líquido 486 - 3 + 3 = 486
+    // migrations; medido pelo --gate local PG17: 381 + 105 = 486.
     assert.equal(manifesto.aplicadas_esperadas, 381)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 

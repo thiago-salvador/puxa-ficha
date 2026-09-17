@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   apply:
-    name: Admitir Godeiro Linharess 20260916160000, ledger e readback
+    name: Admitir Godeiro Linharess 20260917000100, ledger e readback
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 25

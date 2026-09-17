@@ -165,6 +165,93 @@ test("titular substituído sem o SQ revisado continua bloqueando (não afrouxa a
   assert.equal(result.status, "review_required")
 })
 
+// Issue #340 follow-up: chapas de fonte direta (fonte_tipo=divulgacand_detalhe)
+// não têm sq_coligacao (chapas_2026_fonte_detalhe_check exige NULL). O
+// casamento de slot (uf:cargo:sq_coligacao) cai no fallback SQ:<próprio
+// sq_candidato> do lado publicado, mas o lado oficial (consulta_cand CSV)
+// continua trazendo a coligação real -- as duas chaves nunca coincidem,
+// mesmo com o vigente corretamente publicado. Reproduz a forma exata da
+// chapa presidencial do PRTB (produção, 17/09/2026): publicado com
+// sq_coligacao vazio, oficial com "280001801455".
+const LEONARDO_VICE_ANTIGO_SQ = "280002553883"
+const SILVIA_SQ = "280002554490"
+const leonardoAvalancheFonteDireta = titular(LEONARDO_AVALANCHE_SQ, "LEONARDO AVALANCHE", {
+  perfil_slug: "leonardo-avalanche", sq_coligacao: "",
+})
+const silviaVice = titular(SILVIA_SQ, "SILVIA", {
+  cargo: "VICE PRESIDENTE", uf: null, sq_coligacao: "",
+})
+const silviaViceOficial = titular(SILVIA_SQ, "SILVIA", { cargo: "VICE PRESIDENTE", uf: null })
+const leonardoComoViceAntigo = titular(LEONARDO_VICE_ANTIGO_SQ, "LEONARDO AVALANCHE", { cargo: "VICE PRESIDENTE" })
+
+test("titular substituído (PRTB, fonte direta) resolve por SQ do vigente quando sq_coligacao publicado está vazio", () => {
+  const pabloMarcalOficial = titular(PABLO_MARCAL_SQ, "PABLO MARÇAL")
+  const result = compareCandidacies(
+    [pabloMarcalOficial, titular(LEONARDO_AVALANCHE_SQ, "LEONARDO AVALANCHE")],
+    [leonardoAvalancheFonteDireta],
+    undefined,
+    { substitutedTitularSqs: [PABLO_MARCAL_SQ] },
+  )
+  assert.equal(result.counts.substituted, 1)
+  assert.equal(result.counts.inclusion, 0)
+  assert.equal(result.status, "ok")
+  const change = result.changes.find((item) => item.kind === "substituted")
+  assert.equal(change?.official?.sq_candidato, PABLO_MARCAL_SQ)
+  assert.equal(change?.published?.sq_candidato, LEONARDO_AVALANCHE_SQ)
+})
+
+test("vice substituído (PRTB, fonte direta) resolve por SQ do vigente quando sq_coligacao publicado está vazio", () => {
+  // Leonardo Avalanche era vice (SQ 280002553883) antes da troca de chapa
+  // inteira do PRTB; Silvia é a vice vigente. Mesma classe de defeito do
+  // titular, do lado do vice.
+  const result = compareCandidacies(
+    [leonardoComoViceAntigo, silviaViceOficial],
+    [silviaVice],
+    undefined,
+    { substitutedViceSqs: [LEONARDO_VICE_ANTIGO_SQ] },
+  )
+  assert.equal(result.counts.substituted, 1)
+  assert.equal(result.counts.inclusion, 0)
+  assert.equal(result.status, "ok")
+  const change = result.changes.find((item) => item.kind === "substituted")
+  assert.equal(change?.official?.sq_candidato, LEONARDO_VICE_ANTIGO_SQ)
+  assert.equal(change?.published?.sq_candidato, SILVIA_SQ)
+  assert.match(change?.detail ?? "", /vice substituído/)
+})
+
+test("titular e vice sem substituição (TO, Siqueira Campos Jr, fonte direta) continuam casando por SQ mesmo com sq_coligacao vazio", () => {
+  // Regressão: TO/Siqueira Campos Jr também é fonte_tipo=divulgacand_detalhe
+  // (sq_coligacao NULL) mas não tem substituição nenhuma -- o casamento
+  // direto por SQ (publishedBySq) já resolvia isso antes da correção, e
+  // continua resolvendo depois dela.
+  const siqueiraSq = "270002554375"
+  const capitaoOsmarSq = "270002554376"
+  const siqueiraOficial = record(siqueiraSq, "GOVERNADOR", {
+    uf: "TO", sq_coligacao: "270001800814", nome_urna: "SIQUEIRA CAMPOS JR", partido_sigla: "DEMOCRATA",
+    situacao_descricao: "Aguardando julgamento",
+  })
+  const capitaoOsmarOficial = record(capitaoOsmarSq, "VICE GOVERNADOR", {
+    uf: "TO", sq_coligacao: "270001800814", nome_urna: "CAPITÃO OSMAR", partido_sigla: "DEMOCRATA",
+    situacao_descricao: "Aguardando julgamento",
+  })
+  const siqueiraPublicado = record(siqueiraSq, "GOVERNADOR", {
+    uf: "TO", sq_coligacao: "", nome_urna: "SIQUEIRA CAMPOS JR", partido_sigla: "DEMOCRATA",
+    situacao_descricao: "Aguardando julgamento", perfil_slug: "siqueira-campos-jr",
+  })
+  const capitaoOsmarPublicado = record(capitaoOsmarSq, "VICE GOVERNADOR", {
+    uf: "TO", sq_coligacao: "", nome_urna: "CAPITÃO OSMAR", partido_sigla: "DEMOCRATA",
+    situacao_descricao: "Aguardando julgamento",
+  })
+  const result = compareCandidacies(
+    [siqueiraOficial, capitaoOsmarOficial],
+    [siqueiraPublicado, capitaoOsmarPublicado],
+  )
+  assert.equal(result.counts.inclusion, 0)
+  assert.equal(result.counts.status_change, 0)
+  assert.equal(result.counts.substituted, 0)
+  assert.equal(result.status, "ok")
+})
+
 const carlosJararaca = record(CARLOS_JARARACA_SQ, "GOVERNADOR", {
   uf: "RN", sq_coligacao: "200001801097", nome_urna: "CARLOS JARARACA", partido_sigla: "DC",
 })

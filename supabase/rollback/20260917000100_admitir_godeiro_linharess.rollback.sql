@@ -10,14 +10,14 @@ LOCK TABLE public.candidatos, public.chapas_2026, public.patrimonio IN SHARE ROW
 DO $rollback$
 DECLARE r jsonb; actual_after jsonb; actual_before jsonb; affected integer;
 BEGIN
-  IF (SELECT max(version) FROM supabase_migrations.schema_migrations) IS DISTINCT FROM '20260916160000' THEN
+  IF (SELECT max(version) FROM supabase_migrations.schema_migrations) IS DISTINCT FROM '20260917000100' THEN
     RAISE EXCEPTION 'godeiro rollback: ledger divergiu';
   END IF;
-  IF (SELECT count(*) FROM public.coleta_log WHERE execucao='migration:20260916160000' AND volume=3)<>1
-     OR EXISTS (SELECT 1 FROM public.coleta_log WHERE execucao='rollback:20260916160000') THEN
+  IF (SELECT count(*) FROM public.coleta_log WHERE execucao='migration:20260917000100' AND volume=3)<>1
+     OR EXISTS (SELECT 1 FROM public.coleta_log WHERE execucao='rollback:20260917000100') THEN
     RAISE EXCEPTION 'godeiro rollback: recibo inválido ou rollback repetido';
   END IF;
-  SELECT detalhe::jsonb INTO r FROM public.coleta_log WHERE execucao='migration:20260916160000';
+  SELECT detalhe::jsonb INTO r FROM public.coleta_log WHERE execucao='migration:20260917000100';
   actual_after := jsonb_build_object(
     'candidato',(SELECT to_jsonb(x) FROM public.candidatos x WHERE id='d45f1947-73a7-4292-9955-7e57927032f0'),
     'patrimonio',(SELECT to_jsonb(x) FROM public.patrimonio x WHERE id='7d88a5ae-23ae-42cf-8285-c5499b489dd7'),
@@ -45,7 +45,7 @@ BEGIN
      IS DISTINCT FROM ((r->'after'->'candidato')-ARRAY['publicavel','status']) THEN
     RAISE EXCEPTION 'godeiro rollback: coluna não autorizada de candidatos mudou';
   END IF;
-  UPDATE public.patrimonio SET despublicacao_motivo='Rollback da migration 20260916160000',despublicado_em=now()
+  UPDATE public.patrimonio SET despublicacao_motivo='Rollback da migration 20260917000100',despublicado_em=now()
   WHERE id='7d88a5ae-23ae-42cf-8285-c5499b489dd7' AND candidato_id='d45f1947-73a7-4292-9955-7e57927032f0';
   GET DIAGNOSTICS affected=ROW_COUNT;
   IF affected<>1 THEN RAISE EXCEPTION 'godeiro rollback: patrimônio count'; END IF;
@@ -67,8 +67,8 @@ BEGIN
       'patrimonio',(SELECT to_jsonb(x) FROM public.patrimonio x WHERE id='7d88a5ae-23ae-42cf-8285-c5499b489dd7'),
       'chapa',(SELECT to_jsonb(x) FROM public.chapas_2026 x WHERE id='250e9ca4-b101-4ec4-9835-bff18c596061'),
       'acao','Despublicação preservadora; nenhuma linha apagada; vínculo em chapas_2026 desfeito.')::text,
-    r->'source'->>'url','rollback:20260916160000','escrita');
-  DELETE FROM supabase_migrations.schema_migrations WHERE version='20260916160000';
+    r->'source'->>'url','rollback:20260917000100','escrita');
+  DELETE FROM supabase_migrations.schema_migrations WHERE version='20260917000100';
 END
 $rollback$;
 COMMIT;

@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-# Aplica 20260916170000 (preenche chapas_2026.sq_coligacao das duas chapas
-# admitidas por fonte direta: PRTB presidencial e TO/Siqueira Campos Jr) com
-# predecessor, hash, lock, ledger e readback fechados para o projeto de
-# producao do Puxa Ficha.
+# Aplica 20260917000000 (alarga chapas_2026_fonte_detalhe_check para
+# 'Pendente de julgamento') com predecessor, hash, lock, ledger e readback
+# fechados para o projeto de producao do Puxa Ficha. CAS
+# previous_version=20260916140000: e o primeiro dos dois passos do
+# redesenho pos-incidente de apply 35179453431 (o segundo,
+# 20260917000001, refresca a chapa do PRTB sobre o dominio ja alargado).
 set -euo pipefail
 case $- in *x*) set +x ;; esac
 
@@ -46,14 +48,14 @@ pf_configure_libpq_from_url
 export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
-version=20260916170000
-previous_version=20260916160000
-migration="$ROOT/supabase/migrations/${version}_preencher_sq_coligacao_chapas_direta.sql"
-previous_migration="$ROOT/supabase/migrations/${previous_version}_admitir_godeiro_linharess.sql"
-rollback="$ROOT/supabase/rollback/${version}_preencher_sq_coligacao_chapas_direta.rollback.sql"
-readback="$ROOT/supabase/readback/${version}_preencher_sq_coligacao_chapas_direta.readback.sql"
+version=20260917000000
+previous_version=20260916140000
+migration="$ROOT/supabase/migrations/${version}_ampliar_pendente_julgamento_fonte_detalhe_check.sql"
+previous_migration="$ROOT/supabase/migrations/${previous_version}_reconciliar_situacoes_e_chapas_16092026.sql"
+rollback="$ROOT/supabase/rollback/${version}_ampliar_pendente_julgamento_fonte_detalhe_check.rollback.sql"
+readback="$ROOT/supabase/readback/${version}_ampliar_pendente_julgamento_fonte_detalhe_check.readback.sql"
 [[ -f "$migration" && -f "$rollback" && -f "$readback" ]] || {
-  echo "FAIL: artefato do preenchimento de sq_coligacao ausente" >&2
+  echo "FAIL: artefato do alargamento de chapas_2026_fonte_detalhe_check ausente" >&2
   exit 2
 }
 [[ -f "$previous_migration" ]] || {
@@ -71,11 +73,11 @@ IFS='|' read -r ledger_top previous_count previous_key version_count version_key
 if [[ "$ledger_top" == "$version" && "$version_count" == "1" && "$version_key" == "$digest" && "$previous_count" == "1" && "$previous_key" == "$previous_digest" ]]; then
   PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300000 -c lock_timeout=5000' \
     psql -X -v ON_ERROR_STOP=1 -f "$readback"
-  echo "PASS: sq_coligacao ja preenchido, ledger e readback conferem"
+  echo "PASS: chapas_2026_fonte_detalhe_check ja alargado, ledger e readback conferem"
   exit 0
 fi
 if [[ "$ledger_top" != "$previous_version" || "$previous_count" != "1" || "$previous_key" != "$previous_digest" || "$version_count" != "0" ]]; then
-  echo "FAIL: ledger inicial do preenchimento de sq_coligacao inesperado: $state" >&2
+  echo "FAIL: ledger inicial do alargamento de chapas_2026_fonte_detalhe_check inesperado: $state" >&2
   exit 1
 fi
 
@@ -104,16 +106,16 @@ name = pathlib.Path(migration_path).stem.removeprefix(version + "_")
 created_by = "Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions:" + sha
 
 print("BEGIN;")
-print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:sq-coligacao-chapas-direta-production', 0));")
-print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(previous)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(previous)} AND idempotency_key={lit(previous_digest)}) <> 1 OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'sq-coligacao-chapas-direta: ledger divergiu sob lock'; END IF; END $ledger$;")
+print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:pendente-julgamento-fonte-detalhe-check-production', 0));")
+print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(previous)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(previous)} AND idempotency_key={lit(previous_digest)}) <> 1 OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'pendente-julgamento-fonte-detalhe-check: ledger divergiu sob lock'; END IF; END $ledger$;")
 print(body, end="" if body.endswith("\n") else "\n")
 print("INSERT INTO supabase_migrations.schema_migrations (version, statements, name, created_by, idempotency_key, rollback) VALUES (")
 print(f"  {lit(version)}, ARRAY[convert_from(decode({lit(b64(raw))}, 'base64'), 'UTF8')], {lit(name)}, {lit(created_by)}, {lit(digest)}, ARRAY[convert_from(decode({lit(b64(rollback))}, 'base64'), 'UTF8')]);")
 print(readback.decode("utf-8"), end="" if readback.endswith(b"\n") else "\n")
-print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(version)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(version)} AND idempotency_key={lit(digest)}) <> 1 THEN RAISE EXCEPTION 'sq-coligacao-chapas-direta: ledger final divergiu'; END IF; END $ledger$;")
+print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(version)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(version)} AND idempotency_key={lit(digest)}) <> 1 THEN RAISE EXCEPTION 'pendente-julgamento-fonte-detalhe-check: ledger final divergiu'; END IF; END $ledger$;")
 print("COMMIT;")
 PY
 
 PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300000 -c lock_timeout=5000' \
   psql -X -v ON_ERROR_STOP=1 -f "$readback"
-echo "PASS: sq_coligacao preenchido, ledger e readback concluidos"
+echo "PASS: chapas_2026_fonte_detalhe_check alargado, ledger e readback concluidos"

@@ -1,0 +1,20 @@
+{
+  "versao": "2026-09-17",
+  "fonte": "TSE DivulgaCandContas, detalhe ao vivo dos SQ 280002554479 e 280002554490, reconferido em 17/09/2026. Issue #340, redesenho pós-incidente de apply 35179453431 (20260916150000, mergeada em #357 mas nunca aplicada).",
+  "motivo": "Refresca o blob chapas_2026.fonte_detalhe e sincroniza tse_situacao_codigo da chapa presidencial do PRTB para 'Pendente de julgamento', preso em 'Aguardando julgamento' desde 15/09/2026. Sucede 20260917000000 (alarga chapas_2026_fonte_detalhe_check, schema puro sem @write).",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "referencias": [
+    {
+      "tabela": "chapas_2026",
+      "ref": "fonte-detalhe-prtb-17092026",
+      "campos": ["fonte_detalhe", "fonte_sha256", "snapshot_em", "tse_situacao_codigo"]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260917000001",
+      "campos": ["fonte", "escopo", "alvo", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    }
+  ],
+  "entries": []
+}

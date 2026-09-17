@@ -203,7 +203,16 @@ export function compareCandidacies(
         const vigente = (officialRecordsBySlot.get(slot) ?? []).find(
           (candidate) => candidate.sq_candidato !== officialRecord.sq_candidato,
         )
-        const publishedSlotRecord = publishedBySlot.get(slot)
+        // Casamento por slot (uf:cargo:sq_coligacao) falha por construção
+        // quando a chapa publicada é de fonte direta (chapas_2026.sq_coligacao
+        // NULL, issue #340): a chave da chapa oficial usa a coligação real do
+        // pacote CSV, a da chapa publicada cai no fallback SQ:<próprio
+        // sq_candidato>, e as duas nunca coincidem mesmo quando o vigente
+        // está corretamente publicado. `publishedBySq` é indiferente a
+        // coligação, então o titular vigente resolve por SQ_CANDIDATO puro.
+        const publishedSlotRecord =
+          publishedBySlot.get(slot) ??
+          (vigente ? publishedBySq.get(vigente.sq_candidato) : undefined)
         if (inactiveViceSqs.has(officialRecord.sq_candidato)) {
           addChange(changes, {
             kind: "inactive_vice",

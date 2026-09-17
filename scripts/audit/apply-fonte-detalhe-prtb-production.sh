@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-# Aplica 20260916150000 (refresca chapas_2026.fonte_detalhe da chapa
-# presidencial do PRTB) com predecessor, hash, lock, ledger e readback
-# fechados para o projeto de producao do Puxa Ficha.
+# Aplica 20260917000001 (refresca a chapa presidencial do PRTB para
+# 'Pendente de julgamento' e sincroniza tse_situacao_codigo) com
+# predecessor, hash, lock, ledger e readback fechados para o projeto de
+# producao do Puxa Ficha. CAS previous_version=20260917000000: e o
+# segundo dos dois passos do redesenho pos-incidente de apply 35179453431.
 set -euo pipefail
 case $- in *x*) set +x ;; esac
 
@@ -45,10 +47,10 @@ pf_configure_libpq_from_url
 export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
-version=20260916150000
-previous_version=20260916140000
+version=20260917000001
+previous_version=20260917000000
 migration="$ROOT/supabase/migrations/${version}_refrescar_fonte_detalhe_prtb.sql"
-previous_migration="$ROOT/supabase/migrations/${previous_version}_reconciliar_situacoes_e_chapas_16092026.sql"
+previous_migration="$ROOT/supabase/migrations/${previous_version}_ampliar_pendente_julgamento_fonte_detalhe_check.sql"
 rollback="$ROOT/supabase/rollback/${version}_refrescar_fonte_detalhe_prtb.rollback.sql"
 readback="$ROOT/supabase/readback/${version}_refrescar_fonte_detalhe_prtb.readback.sql"
 [[ -f "$migration" && -f "$rollback" && -f "$readback" ]] || {

@@ -10,7 +10,7 @@
   ],
   "referencias": [
     {"tabela": "chapas_2026", "ref": "godeiro-linharess-admissao", "campos": ["titular_candidato_id"]},
-    {"tabela": "coleta_log", "ref": "migration:20260916160000", "campos": ["fonte","escopo","alvo","candidato_id","resultado","volume","detalhe","url","execucao","natureza"]},
-    {"tabela": "coleta_log", "ref": "migration:20260916160000:patrimonio", "campos": ["fonte","escopo","alvo","candidato_id","resultado","volume","detalhe","url","execucao","natureza"]}
+    {"tabela": "coleta_log", "ref": "migration:20260917000100", "campos": ["fonte","escopo","alvo","candidato_id","resultado","volume","detalhe","url","execucao","natureza"]},
+    {"tabela": "coleta_log", "ref": "migration:20260917000100:patrimonio", "campos": ["fonte","escopo","alvo","candidato_id","resultado","volume","detalhe","url","execucao","natureza"]}
   ]
 }

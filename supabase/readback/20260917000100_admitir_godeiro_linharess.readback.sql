@@ -3,11 +3,11 @@ SET LOCAL TIME ZONE 'UTC';
 DO $readback$
 DECLARE r jsonb; actual_after jsonb;
 BEGIN
-  IF (SELECT count(*) FROM public.coleta_log WHERE execucao='migration:20260916160000' AND volume=3 AND resultado='encontrado')<>1
-     OR (SELECT count(*) FROM public.coleta_log WHERE execucao='migration:20260916160000:patrimonio' AND volume=4 AND resultado='encontrado')<>1 THEN
+  IF (SELECT count(*) FROM public.coleta_log WHERE execucao='migration:20260917000100' AND volume=3 AND resultado='encontrado')<>1
+     OR (SELECT count(*) FROM public.coleta_log WHERE execucao='migration:20260917000100:patrimonio' AND volume=4 AND resultado='encontrado')<>1 THEN
     RAISE EXCEPTION 'godeiro readback: recibos ausentes ou inválidos';
   END IF;
-  SELECT detalhe::jsonb INTO r FROM public.coleta_log WHERE execucao='migration:20260916160000';
+  SELECT detalhe::jsonb INTO r FROM public.coleta_log WHERE execucao='migration:20260917000100';
   actual_after := jsonb_build_object(
     'candidato',(SELECT to_jsonb(x) FROM public.candidatos x WHERE id='d45f1947-73a7-4292-9955-7e57927032f0'),
     'patrimonio',(SELECT to_jsonb(x) FROM public.patrimonio x WHERE id='7d88a5ae-23ae-42cf-8285-c5499b489dd7'),
