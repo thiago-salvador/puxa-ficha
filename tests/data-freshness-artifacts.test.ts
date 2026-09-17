@@ -7,6 +7,7 @@ import test from "node:test";
 
 import { loadFreshnessRegistry } from "../scripts/lib/data-freshness/registry";
 import { officialRecordsFromVersionedSnapshot } from "../scripts/lib/data-freshness/tse-source";
+import { DESTAQUES_EXPECTED_PAIRS } from "../scripts/lib/destaques-votacoes-provenance";
 
 test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
   const work = mkdtempSync(join(tmpdir(), "data-freshness-artifacts-"));
@@ -32,7 +33,7 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
             provenance_complete: true,
             evidence_sha256: "a".repeat(64),
             raw_payload_count: 93,
-            pair_count: 152,
+            pair_count: DESTAQUES_EXPECTED_PAIRS,
             double_read_execution_ids: ["destaques-votacoes:run-a", "destaques-votacoes:run-b"],
           }
         : {
