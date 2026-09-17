@@ -28,6 +28,111 @@ export interface EntradaDescoberta {
   published_registration_ids?: string[]
 }
 
+const PESQELE_SEARCH_URL = `${PESQELE_ORIGIN}/app/pesquisa/listar.xhtml`
+const REGISTRY_RECEIPT_MAX_AGE_MS = 2 * 60 * 60 * 1000
+const REGISTRATION_ID = /^[A-Z]{2}-\d{5}\/2026$/
+const ISO_DATE = /^2026-\d{2}-\d{2}$/
+
+function validDate(value: unknown): boolean {
+  if (typeof value !== "string" || !ISO_DATE.test(value)) return false
+  const parsed = new Date(`${value}T00:00:00Z`)
+  return Number.isFinite(parsed.getTime()) && parsed.toISOString().slice(0, 10) === value
+}
+
+function validTimestamp(value: unknown, now: number): boolean {
+  if (typeof value !== "string") return false
+  const timestamp = Date.parse(value)
+  return Number.isFinite(timestamp) && timestamp <= now && now - timestamp <= REGISTRY_RECEIPT_MAX_AGE_MS
+}
+
+function delimitedValue(text: string, start: string, end: string): string | null {
+  const startIndex = text.indexOf(start)
+  if (startIndex < 0) return null
+  const valueStart = startIndex + start.length
+  const endIndex = text.indexOf(end, valueStart)
+  return (endIndex < 0 ? text.slice(valueStart) : text.slice(valueStart, endIndex)).trim()
+}
+
+function brazilianDate(value: string): string {
+  const [year, month, day] = value.split("-")
+  return `${day}/${month}/${year}`
+}
+
+function receiptMatchesPublicText(observation: ObservacaoPesqele): boolean {
+  const registry = observation.registry
+  const text = observation.public_text
+  const confidence = text.match(/nível de confiança[^0-9]{0,80}(\d+(?:[,.]\d+)?)\s*%/i)?.[1]?.replace(",", ".")
+  const margin = text.match(/margem de erro[^.]{0,160}?([0-9]+(?:[,.][0-9]+)?)\s*(?:\([^)]*\)\s*)?pontos/i)?.[1]?.replace(",", ".")
+  return text.includes(`Visualizar Pesquisa Eleitoral - ${registry.registration_id}`)
+    && delimitedValue(text, `Número de identificação: `, " Data de registro:") === registry.registration_id
+    && delimitedValue(text, `${registry.registration_id} `, " Número de identificação:") === registry.geography
+    && delimitedValue(text, "Cargo(s): ", " Data de divulgação:") === registry.office
+    && delimitedValue(text, "Empresa contratada/ Nome Fantasia: ", " Eleição:") === registry.institute
+    && delimitedValue(text, "Data de início da pesquisa: ", " Data de término da pesquisa:") === brazilianDate(registry.field_start)
+    && delimitedValue(text, "Data de término da pesquisa: ", " Estatístico responsável:") === brazilianDate(registry.field_end)
+    && delimitedValue(text, "Data de divulgação: ", " Empresa contratada/ Nome Fantasia:") === brazilianDate(observation.publication_date)
+    && delimitedValue(text, "Entrevistados: ", " Data de início da pesquisa:") === String(registry.sample_size)
+    && delimitedValue(text, "Metodologia de pesquisa: ", " Plano amostral") === observation.method
+    && confidence === String(observation.confidence_percent)
+    && margin === String(registry.margin_error_pp)
+}
+
+function validRegistryReceipt(observation: unknown, now: number): observation is ObservacaoPesqele {
+  if (!observation || typeof observation !== "object" || Array.isArray(observation)) return false
+  const value = observation as Partial<ObservacaoPesqele>
+  const registry = value.registry
+  if (!registry || typeof registry !== "object" || Array.isArray(registry)) return false
+  const requiredStrings = [
+    value.source_url, value.observed_at, value.publication_date, value.method, value.public_text,
+    value.evidence_sha256, registry.registration_id, registry.office, registry.geography,
+    registry.field_start, registry.field_end, registry.institute,
+  ]
+  if (requiredStrings.some((entry) => typeof entry !== "string" || !entry.trim())) return false
+  const marginError = registry.margin_error_pp
+  if (typeof marginError !== "number" || !Number.isFinite(marginError) || marginError <= 0 || marginError >= 100) return false
+  const complete = value as ObservacaoPesqele
+  if (complete.source_url !== PESQELE_SEARCH_URL || !REGISTRATION_ID.test(registry.registration_id)
+    || !validDate(registry.field_start) || !validDate(registry.field_end) || !validDate(complete.publication_date)
+    || registry.field_start > registry.field_end || registry.field_end > complete.publication_date
+    || !validTimestamp(complete.observed_at, now) || !/^[a-f0-9]{64}$/.test(complete.evidence_sha256)
+    || createHash("sha256").update(complete.public_text).digest("hex") !== complete.evidence_sha256
+    || !Number.isInteger(registry.sample_size) || registry.sample_size <= 0
+    || !Number.isFinite(complete.confidence_percent) || complete.confidence_percent <= 0 || complete.confidence_percent >= 100
+    || !receiptMatchesPublicText(complete)) return false
+  return true
+}
+
+function loadRegistryReceipt(input: {
+  registryCache?: ObservacaoPesqele[]
+  registryCacheGeneratedAt?: string
+  now?: Date
+}): Map<string, ObservacaoPesqele> {
+  const now = input.now?.getTime() ?? Date.now()
+  if (!validTimestamp(input.registryCacheGeneratedAt, now) || !Array.isArray(input.registryCache)) return new Map()
+  const cache = new Map<string, ObservacaoPesqele>()
+  const invalidIds = new Set<string>()
+  for (const observation of input.registryCache) {
+    const possibleId = observation && typeof observation === "object" && !Array.isArray(observation)
+      && "registry" in observation && observation.registry && typeof observation.registry === "object"
+      ? (observation.registry as Partial<ObservacaoPesqele["registry"]>).registration_id : undefined
+    if (!validRegistryReceipt(observation, now)) {
+      if (typeof possibleId === "string" && REGISTRATION_ID.test(possibleId)) {
+        invalidIds.add(possibleId)
+        cache.delete(possibleId)
+      }
+      continue
+    }
+    const id = observation.registry.registration_id
+    if (invalidIds.has(id) || cache.has(id)) {
+      cache.delete(id)
+      invalidIds.add(id)
+      continue
+    }
+    cache.set(id, observation)
+  }
+  return cache
+}
+
 /** Discovery hints route a public registry check; they never supply vote numbers. */
 export async function validarEntradasDescobertas(input: {
   observations: ObservacaoListagemPesquisas[]
@@ -38,12 +143,15 @@ export async function validarEntradasDescobertas(input: {
   queryRegistry?: typeof consultarRegistroPesqele
   inventory?: InventarioRegistrosPesqele
   budget?: OrcamentoDescoberta
+  registryCache?: ObservacaoPesqele[]
+  registryCacheGeneratedAt?: string
+  now?: Date
 }): Promise<{ targets: AlvoMonitoramento[]; registry: ObservacaoPesqele[]; entries: EntradaDescoberta[] }> {
   const budget = input.budget ?? criarOrcamentoDescoberta()
   const client = input.client ?? budget.client(LISTAGENS_PESQUISAS.map((listing) => new URL(listing.url).origin))
   const query = input.queryRegistry ?? ((id: string) => consultarRegistroPesqele(id, budget.client([PESQELE_ORIGIN], true)))
   const targets = new Map<string, AlvoMonitoramento>()
-  const registry = new Map<string, ObservacaoPesqele>()
+  const registry = loadRegistryReceipt(input)
   const entries: EntradaDescoberta[] = []
   // Re-read known URLs as well: an unchanged URL can contain a rectification.
   const links = [...new Map(input.observations.flatMap((observation) => observation.links).map((link) => [link.url, link])).values()].sort((a, b) => a.url.localeCompare(b.url))
