@@ -345,6 +345,36 @@ export function scanIncremental(manifest: IncrementalManifest | IncrementalManif
     }
   }
 
+  // A pending document cannot disappear merely because the next manifest no
+  // longer lists it. Keep it visible as an operational failure until a
+  // manifest/receipt explicitly resolves it. Completed historical records can
+  // remain outside the current scope without creating a false queue item.
+  const currentIdentities = new Set(normalized.documents.map((document) => documentIdentity(document)))
+  for (const previous of Object.values(state.documents)) {
+    if (currentIdentities.has(previous.identity) || previous.pending_stages.length === 0) continue
+    const error = "manifest_document_missing"
+    queue.push({
+      identity: previous.identity,
+      id: previous.id,
+      registry: previous.registry,
+      office: previous.office,
+      geography: previous.geography,
+      source_url: previous.source_url,
+      evidence_path: previous.evidence_path,
+      evidence_kind: previous.evidence_kind,
+      fingerprint: previous.fingerprint,
+      content_sha256: previous.content_sha256,
+      parser_version: previous.parser_version,
+      policy_version: previous.policy_version,
+      extraction_sha256: previous.extraction_sha256,
+      context_sha256: previous.context_sha256,
+      pending_stages: [...previous.pending_stages],
+      reason: "failed",
+      error,
+    })
+    failures.push({ identity: previous.identity, error })
+  }
+
   queue.sort((left, right) => left.identity.localeCompare(right.identity))
   return {
     state,
@@ -352,7 +382,7 @@ export function scanIncremental(manifest: IncrementalManifest | IncrementalManif
       schema_version: INCREMENTAL_SCHEMA_VERSION,
       action: "scan",
       summary: {
-        documents: normalized.documents.length,
+        documents: normalized.documents.length + failures.filter(({ error }) => error === "manifest_document_missing").length,
         queued: queue.length,
         unchanged,
         failed: failures.length,

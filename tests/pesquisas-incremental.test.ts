@@ -179,6 +179,35 @@ test("arquivo ausente produz falha observável e nunca no-op", () => {
   assert.deepEqual(result.digest.queue[0]?.pending_stages, ["capture", "extract", "review"])
 })
 
+test("documento pendente removido do manifesto permanece como falha explícita", () => {
+  const dir = mkdtempSync(join(tmpdir(), "pesquisas-incremental-"))
+  const evidence = join(dir, "poll.txt")
+  writeFileSync(evidence, "literal")
+  const currentManifest = manifest(evidence)
+  const first = scanIncremental(currentManifest, state(), dir)
+  const missingFromManifest = scanIncremental({ documents: [] }, first.state, dir)
+  assert.equal(missingFromManifest.digest.summary.queued, 1)
+  assert.equal(missingFromManifest.digest.summary.failed, 1)
+  assert.equal(missingFromManifest.digest.queue[0]?.reason, "failed")
+  assert.equal(missingFromManifest.digest.queue[0]?.error, "manifest_document_missing")
+  assert.deepEqual(missingFromManifest.digest.queue[0]?.pending_stages, ["capture", "extract", "review"])
+  assert.ok(missingFromManifest.state.documents[first.digest.queue[0]!.identity])
+})
+
+test("manifesto vazio não recria pendência para documento já concluído", () => {
+  const dir = mkdtempSync(join(tmpdir(), "pesquisas-incremental-"))
+  const evidence = join(dir, "poll.txt")
+  writeFileSync(evidence, "literal")
+  const currentManifest = manifest(evidence)
+  const first = scanIncremental(currentManifest, state(), dir)
+  const complete = completeAll(currentManifest, first.state, dir)
+  const emptyManifest = scanIncremental({ documents: [] }, complete, dir)
+  assert.equal(emptyManifest.digest.summary.documents, 0)
+  assert.equal(emptyManifest.digest.summary.queued, 0)
+  assert.equal(emptyManifest.digest.summary.failed, 0)
+  assert.deepEqual(emptyManifest.digest.queue, [])
+})
+
 test("fingerprint muda quando payload extraído muda", () => {
   const dir = mkdtempSync(join(tmpdir(), "pesquisas-incremental-"))
   const evidence = join(dir, "poll.txt")

@@ -4,7 +4,10 @@
 
 A automação Codex `pesquisas-de-voto-presidente-e-27-ufs` pesquisa presidente e
 as 27 UFs às segundas e quintas, às 9h de São Paulo, com o ambiente local
-disponível. O estado por abrangência fica em
+disponível. Antes dela, o GitHub Actions executa a descoberta econômica às
+8h de São Paulo (11h UTC), por script, para entregar o resumo e a fila à
+revisão das 9h no Codex. O procedimento está em
+[pesquisas econômicas](../docs/operations/pesquisas-economia.md). O estado por abrangência fica em
 `scripts/data/pesquisas-busca-semanal.json`; o procedimento e as provas exigidas
 estão em [busca semanal](../docs/operations/pesquisas-busca-semanal.md).
 O monitor diário existente no GitHub verifica suas fontes cadastradas e tem
@@ -244,6 +247,7 @@ Os one-offs históricos continuam versionados no diretório. Conferir o inventá
 | `data-quality.yml` | Quinta, 09:00 UTC; dia 3, 07:00 UTC; manual | Coorte, superfície pública, integridade da cadeia partidária e auditoria de identidade SQ. |
 | `data-freshness-audit.yml` | 11:37 UTC diária e manual | `audit:data-freshness --strict` sobre fonte oficial, candidaturas e SLA; publica o relatório como artefato. |
 | `refresh-destaques-votacoes.yml` | Segunda, 12:17 UTC e manual | Duas leituras oficiais de proveniência, comparação de hashes e artefato, sem escrita no banco (`PF_DRY_RUN=1`). |
+| `pesquisas-descoberta-economica.yml` | Segunda e quinta, 11:00 UTC (08:00 São Paulo); manual | Descoberta por RSS para presidente e 27 UFs, com cache e artefatos; somente scripts, sem modelo, publicação ou escrita no banco. |
 | `pesquisas-monitoramento.yml` | 10:17 UTC diária e manual | Coleta e verificação das pesquisas eleitorais da matriz aprovada (`verify:pesquisas`). |
 | `falas-monitoramento.yml` | Segunda e quinta, 11:17 UTC; manual | Coleta falas na imprensa nos últimos 14 dias, guarda evidências e pendências. Proposta de PR depende de `FALAS_DRAFT_PR_ENABLED=true`; sem merge ou escrita no banco. |
 | `link-check-fontes.yml` | Segunda, 09:00 UTC e manual | Verificar links das fontes publicadas. |
