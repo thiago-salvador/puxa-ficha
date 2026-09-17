@@ -29,8 +29,40 @@ test("pontes documentais limitam pessoa, partido, cargo, UF, registro e hash", (
     assert.equal(resolverIdentidadeRevisada(target, label, candidates.map((c) => ({ ...c, hash: "a".repeat(64) }))), null)
     assert.equal(resolverIdentidadeRevisada(target, label, [...candidates, ...candidates]), null)
   }
-  for (const [uf, label] of [["MS", "Reinaldo Azambuja (PL)"], ["PR", "Ratinho Júnior"], ["SE", "Dr. Helton Monteiro (PSOL)"]]) {
+  for (const [uf, registration_id, label, slug] of [
+    ["PR", "PR-09262/2026", "Sérgio Moro (PL)", "sergio-moro-gov-pr"],
+    ["SE", "SE-07327/2026", "Dr. Helton Monteiro (PSOL)", "dr-helton-monteiro"],
+  ]) {
+    const target = { ...base, geography_code: uf, registration_id }
+    const candidates = carregarIdentidadesCuradas("Governador", uf)
+    const resolved = resolverIdentidadeRevisada(target, label, candidates)
+    assert.equal(resolved?.slug, slug)
+    assert.equal(resolved?.hash.length, 64)
+    for (const change of [{ office: "Senador" }, { geography_code: "MS" }, { registration_id: "XX-00000/2026" }, { source_id: "unapproved" }]) {
+      assert.equal(resolverIdentidadeRevisada({ ...target, ...change }, label, candidates), null)
+    }
+    assert.equal(resolverIdentidadeRevisada(target, label.replace(/\(.+\)/, "(PT)"), candidates), null)
+    assert.equal(resolverIdentidadeRevisada(target, label, candidates.map((candidate) => ({ ...candidate, hash: "a".repeat(64) }))), null)
+    assert.equal(resolverIdentidadeRevisada(target, label, [...candidates, ...candidates]), null)
+  }
+  for (const [uf, label] of [["MS", "Reinaldo Azambuja (PL)"], ["PR", "Ratinho Júnior"]]) {
     assert.equal(resolverIdentidadeRevisada({ ...base, geography_code: uf }, label), null)
+  }
+})
+
+test("bridges PR e SE exigem o registro TSE nominal completo", () => {
+  const chapas = JSON.parse(readFileSync("data/chapas-2026-tse-20260827.json", "utf8")) as { chapas: Array<{ uf: string; cargo_titular: string; titular: { sq_candidato: string; nome_completo: string; nome_urna: string; partido_sigla: string; perfil_slug: string } }> }
+  const expected = [
+    ["PR", "160002540833", "SERGIO FERNANDO MORO", "SERGIO MORO", "PL", "sergio-moro-gov-pr"],
+    ["SE", "260002547415", "JOSE HELTON SILVA MONTEIRO", "DR. HELTON", "PSOL", "dr-helton-monteiro"],
+  ]
+  for (const [uf, sq, civil, ballot, party, slug] of expected) {
+    const match = chapas.chapas.find((row) => row.uf === uf && row.cargo_titular === "Governador" && row.titular.sq_candidato === sq)
+    assert.ok(match)
+    assert.equal(match.titular.nome_completo, civil)
+    assert.equal(match.titular.nome_urna, ballot)
+    assert.equal(match.titular.partido_sigla, party)
+    assert.equal(match.titular.perfil_slug, slug)
   }
 })
 
