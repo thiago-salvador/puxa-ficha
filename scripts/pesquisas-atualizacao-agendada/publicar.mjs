@@ -150,8 +150,14 @@ function jsonOutput(stdout, label) {
   try { return JSON.parse(stdout) } catch { throw new Error(`${label} não retornou JSON válido`) }
 }
 
+// Secrets travel through `env` only; no call site below puts a token or
+// secret in argv, so it is safe to echo command + args verbatim here.
 function commandRunner(command, args, env) {
   return execFileAsync(command, args, { env, maxBuffer: 4 * 1024 * 1024 }).then(({ stdout }) => stdout.trim())
+    .catch((error) => {
+      const reason = error instanceof Error ? error.message : String(error)
+      throw new Error(`${command} ${args.join(" ")} falhou: ${reason}`)
+    })
 }
 
 // For long, verbose commands whose stdout the caller never reads (test/lint/
@@ -178,9 +184,17 @@ function ghApi(endpoint, env, args = []) {
     .then((stdout) => jsonOutput(stdout, `gh api ${endpoint}`))
 }
 
-async function ghApiPages(endpoint, env) {
-  const pages = await ghApi(endpoint, env, ["--paginate", "--slurp"])
-  return pages.flatMap((page) => Array.isArray(page) ? page : [page])
+// `--paginate --slurp` buffers every field of every page (e.g. full PR
+// bodies) into one JSON document — on this repo's PR history that is ~6 MiB,
+// well past commandRunner's 4 MiB cap ("stdout maxBuffer length exceeded").
+// `--jq` is incompatible with `--slurp`, but applied per-page without
+// `--slurp` it emits newline-delimited JSON (one filtered object per line,
+// across all pages) that we parse line by line. `jqFilter` must select only
+// the fields the caller actually reads, keeping this bounded regardless of
+// how many pages come back.
+export async function ghApiPages(endpoint, env, jqFilter) {
+  const stdout = await commandRunner("gh", ["api", "--paginate", "--jq", jqFilter, endpoint], { ...process.env, ...env, GH_TOKEN: env.MERGE_QUEUE_GH_TOKEN })
+  return stdout.split("\n").filter(Boolean).map((line, index) => jsonOutput(line, `gh api ${endpoint} (linha ${index + 1})`))
 }
 
 async function git(args, env) {
@@ -223,13 +237,21 @@ async function requiredContexts(repository, env) {
   return contexts.filter((check, index, all) => all.findIndex((candidate) => candidate.name === check.name && candidate.app_id === check.app_id) === index)
 }
 
+// Keep in sync with every `pr.<field>` / `candidate.<field>` access below
+// and in validatePullRequest — this is the complete field set the publish
+// flow ever reads off a pull request object.
+const POLL_PR_JQ = ".[] | {number, state, draft, merged_at, merge_commit_sha, "
+  + "head: {ref: .head.ref, sha: .head.sha}, "
+  + "base: {ref: .base.ref, sha: .base.sha, repo: {full_name: .base.repo.full_name}}, "
+  + "user: {login: .user.login}}"
+
 async function findPollingPrs(repository, env) {
-  return (await ghApiPages(`repos/${repository}/pulls?state=all&per_page=100`, env))
+  return (await ghApiPages(`repos/${repository}/pulls?state=all&per_page=100`, env, POLL_PR_JQ))
     .filter((pr) => String(pr.head?.ref ?? "").startsWith(POLL_BRANCH_PREFIX))
 }
 
 async function validatePrCatalogContent(repository, pr, env, referenceRef) {
-  const files = await ghApiPages(`repos/${repository}/pulls/${pr.number}/files?per_page=100`, env)
+  const files = await ghApiPages(`repos/${repository}/pulls/${pr.number}/files?per_page=100`, env, ".[] | {filename}")
   validateChangedFiles(files)
   for (const file of CATALOG_FILES) {
     const local = referenceRef
