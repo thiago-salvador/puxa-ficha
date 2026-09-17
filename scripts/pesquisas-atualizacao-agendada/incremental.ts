@@ -182,6 +182,10 @@ function normalizeManifest(value: unknown): IncrementalManifest {
   if (!raw || typeof raw !== "object" || !Array.isArray((raw as { documents?: unknown }).documents)) {
     return fail("manifesto deve conter documents[]")
   }
+  if (!Array.isArray(value) && (raw as { schema_version?: unknown }).schema_version !== undefined
+    && (raw as { schema_version?: unknown }).schema_version !== INCREMENTAL_SCHEMA_VERSION) {
+    return fail("schema do manifesto incremental incompatível")
+  }
   const documents = (raw as { documents: unknown[] }).documents.map((entry, index) => {
     if (!entry || typeof entry !== "object") return fail(`documento ${index} inválido`)
     const input = entry as Record<string, unknown>
@@ -270,7 +274,7 @@ export function identityForDocument(document: IncrementalManifestDocument): stri
   return documentIdentity(document)
 }
 
-export function scanIncremental(manifest: IncrementalManifest | IncrementalManifestDocument[], prior: IncrementalState, manifestPath = process.cwd()): { state: IncrementalState; digest: IncrementalDigest } {
+export function scanIncremental(manifest: IncrementalManifest | IncrementalManifestDocument[], prior: IncrementalState, manifestPath = resolve(process.cwd(), "manifest.json")): { state: IncrementalState; digest: IncrementalDigest } {
   const normalized = normalizeManifest(manifest)
   const state: IncrementalState = {
     schema_version: INCREMENTAL_SCHEMA_VERSION,
@@ -403,7 +407,7 @@ function currentDocument(manifest: IncrementalManifest, identity: string, manife
   return { document, contentSha256, fingerprint: documentFingerprint(document, contentSha256) }
 }
 
-export function acknowledgeIncremental(manifest: IncrementalManifest | IncrementalManifestDocument[], prior: IncrementalState, receipt: IncrementalReceipt, expectedFingerprint: string, manifestPath = process.cwd()): { state: IncrementalState; result: IncrementalReceiptResult } {
+export function acknowledgeIncremental(manifest: IncrementalManifest | IncrementalManifestDocument[], prior: IncrementalState, receipt: IncrementalReceipt, expectedFingerprint: string, manifestPath = resolve(process.cwd(), "manifest.json")): { state: IncrementalState; result: IncrementalReceiptResult } {
   const normalized = normalizeManifest(manifest)
   const normalizedReceipt: IncrementalReceipt = {
     identity: text(receipt.identity, "receipt.identity"),

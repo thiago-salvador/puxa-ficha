@@ -2,6 +2,7 @@ import { execFileSync } from "node:child_process"
 import { readFileSync } from "node:fs"
 
 const allowedExact = new Set([
+  ".github/workflows/ci.yml",
   ".github/workflows/pesquisas-descoberta-economica.yml",
   "docs/operations/pesquisas-economia.md",
   "tests/pesquisas-incremental.test.ts",
@@ -13,6 +14,7 @@ const allowedExact = new Set([
   "Settings/AUTOMATIONS_AND_ENVIRONMENTS.md",
   "package.json",
   "scripts/audit/verify-pesquisas-atualizacao-agendada-scope.mjs",
+  ".gitattributes",
   "scripts/smoke-lancamento.ts",
   "tests/pesquisas-atualizacao-agendada.test.ts",
   "tests/programa-governo-models.test.ts",
@@ -30,6 +32,9 @@ const allowedExact = new Set([
   "scripts/lib/pesquisas-monitoramento-poderdata-pdf.ts",
   "scripts/lib/pesquisas-monitoramento-realtime-cenarios.ts",
   "scripts/lib/pesquisas-monitoramento.ts",
+  "scripts/lib/pesquisas-monitoramento-realtime-pdf.ts",
+  "scripts/lib/pesquisas-monitoramento-realtime-pa-pdf.ts",
+  "scripts/pesquisas-monitoramento.ts",
   "src/lib/pesquisas-eleitorais.ts",
   "src/lib/poll-weeks.ts",
   "src/lib/presidential-election-sections.ts",

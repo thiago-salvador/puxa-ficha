@@ -1,7 +1,8 @@
 import type { DocumentoRealTime } from "./lib/pesquisas-monitoramento-realtime-pdf"
-import { extrairDocumentoRealTime, RELATORIO_PARANA_URL } from "./lib/pesquisas-monitoramento-realtime-pdf"
+import { extrairDocumentoRealTime, RELATORIO_PARA_URL, RELATORIO_PARANA_URL } from "./lib/pesquisas-monitoramento-realtime-pdf"
 import { coletarComplementos, type ComplementoMonitoramento } from "./lib/pesquisas-monitoramento-complementos"
 import { resolve } from "node:path"
+import { pathToFileURL } from "node:url"
 import { createHash } from "node:crypto"
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { validarEntradasDescobertas } from "./lib/pesquisas-monitoramento-entrada"
@@ -152,6 +153,11 @@ async function collectSource(
       const pdf = await documentClient.getBytes(RELATORIO_PARANA_URL)
       resultDocument = extrairDocumentoRealTime({ bytes: pdf.body, url: RELATORIO_PARANA_URL, observedAt: pdf.observedAt, registrationId: target.registration_id })
     }
+    if (target.source_id === "real-time-big-data-estaduais-2026" && target.registration_id === "PA-00415/2026" && target.office === "Governador" && target.geography_code === "PA") {
+      const documentClient = criarClienteHttpMonitoramento({ allowedOrigins: ["https://static.poder360.com.br"], maxBytes: 8_000_000, maxRedirects: 0, maxAttempts: 1 })
+      const pdf = await documentClient.getBytes(RELATORIO_PARA_URL)
+      resultDocument = extrairDocumentoRealTime({ bytes: pdf.body, url: RELATORIO_PARA_URL, observedAt: pdf.observedAt, registrationId: target.registration_id })
+    }
     const evidence = parsePublicacaoMonitorada({
       source,
       target,
@@ -217,15 +223,17 @@ function reconcileCapture(capture: CapturaAoVivo, registry: RegistroTseMonitoram
   }
 }
 
-function buildSourceClient(targets: AlvoMonitoramento[]): ClienteHttpMonitoramento {
+export function buildSourceClient(targets: AlvoMonitoramento[]): ClienteHttpMonitoramento {
   const allowedOrigins = new Set<string>()
   for (const target of targets) {
     const adapter = obterAdaptadorMonitoramento(target.source_id)
-    const origin = new URL(target.url).origin
-    if (!adapter.allowed_origins.includes(origin)) {
-      throw new Error(`origem fora da allowlist do adaptador: ${origin}`)
+    for (const candidateUrl of [target.url, ...(target.alternative_urls ?? [])]) {
+      const origin = new URL(candidateUrl).origin
+      if (!adapter.allowed_origins.includes(origin)) {
+        throw new Error(`origem fora da allowlist do adaptador: ${origin}`)
+      }
+      allowedOrigins.add(origin)
     }
-    allowedOrigins.add(origin)
     if (target.source_id === "poderdata-aya-nacional-2026") allowedOrigins.add("https://static.poder360.com.br")
   }
   return criarClienteHttpMonitoramento({
@@ -348,7 +356,9 @@ async function main(): Promise<void> {
   if (args.liveCheck && discoveryBlocked) throw new Error("descoberta contém URLs sem conciliação")
 }
 
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : String(error))
-  process.exitCode = 1
-})
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+  main().catch((error) => {
+    console.error(error instanceof Error ? error.message : String(error))
+    process.exitCode = 1
+  })
+}

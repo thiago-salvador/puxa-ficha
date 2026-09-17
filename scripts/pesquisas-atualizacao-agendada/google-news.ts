@@ -397,15 +397,21 @@ export async function runGoogleNewsDiscovery(options: GoogleNewsRunOptions): Pro
   const pending = Object.values(state.known).filter((item) => item.status === "pending").sort((left, right) => left.identity_hash.localeCompare(right.identity_hash))
   const changedOrNewIds = new Set([...newItems, ...changedItems].map((item) => item.identity_hash))
   const pendingUnchanged = pending.filter((item) => !changedOrNewIds.has(item.identity_hash))
+  const queueWithFinalScopes = (items: GoogleNewsDiscoveryItem[]) => items.map((item) => ({
+    ...item,
+    scopes: [...(state.known[item.identity_hash]?.scopes ?? item.scopes)],
+  }))
+  const finalNewItems = queueWithFinalScopes(newItems)
+  const finalChangedItems = queueWithFinalScopes(changedItems)
   const errorCount = results.filter((result) => result.error).length
   const queue: GoogleNewsDiscoveryQueue = {
     schema_version: GOOGLE_NEWS_DISCOVERY_SCHEMA_VERSION,
     generated_at: now,
     source: "google-news-rss",
-    queue: { new: newItems, changed: changedItems, pending, pending_unchanged: pendingUnchanged },
+    queue: { new: finalNewItems, changed: finalChangedItems, pending, pending_unchanged: pendingUnchanged },
     summary: {
-      new_count: newItems.length,
-      changed_count: changedItems.length,
+      new_count: finalNewItems.length,
+      changed_count: finalChangedItems.length,
       pending_count: pending.length,
       pending_unchanged_count: pendingUnchanged.length,
       error_count: errorCount,
@@ -420,11 +426,10 @@ export async function runGoogleNewsDiscovery(options: GoogleNewsRunOptions): Pro
       checked_at: result.error ? null : result.checkedAt,
       raw_path: result.rawPath,
       rss_items: result.items.length,
-      queue_items: [...newItems, ...changedItems].filter((item) => item.scope === result.scope.code).length,
+      queue_items: [...finalNewItems, ...finalChangedItems].filter((item) => item.scopes.includes(result.scope.code)).length,
       error: result.error,
     })),
   }
-  if (statePath) writeAtomicJson(statePath, state)
   const queuePath = resolve(outDir, "discovery-queue.json")
   writeAtomicJson(queuePath, queue)
   const summary: GoogleNewsDiscoverySummary = {
@@ -436,16 +441,19 @@ export async function runGoogleNewsDiscovery(options: GoogleNewsRunOptions): Pro
     scope_errors: queue.scopes.filter((scope) => scope.error).map((scope) => ({ scope: scope.scope, error: scope.error! })),
   }
   writeAtomicJson(resolve(outDir, "summary.json"), summary)
+  if (statePath) writeAtomicJson(statePath, state)
   return { state, queue }
 }
 
 function parseOptions(argv: string[]): Map<string, string> {
   const values = new Map<string, string>()
+  const allowed = new Set(["--state", "--out", "--now", "--offline-fixture"])
   for (let index = 0; index < argv.length; index += 1) {
     const argument = argv[index]
     if (!argument.startsWith("--")) throw new Error(`argumento inesperado: ${argument}`)
     const separator = argument.indexOf("=")
     const key = separator >= 0 ? argument.slice(0, separator) : argument
+    if (!allowed.has(key)) throw new Error(`opção desconhecida: ${key}`)
     const value = separator >= 0 ? argument.slice(separator + 1) : argv[++index]
     if (!value || value.startsWith("--")) throw new Error(`valor ausente para ${key}`)
     values.set(key, value)

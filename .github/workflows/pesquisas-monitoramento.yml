@@ -55,6 +55,13 @@ jobs:
           node-version: "24"
           cache: npm
 
+      - name: Preparar leitura dos relatórios públicos em PDF
+        timeout-minutes: 3
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install --no-install-recommends -y poppler-utils
+          pdftotext -v
+
       - name: Instalar dependências sem scripts de pacote
         run: npm ci --ignore-scripts
 
@@ -128,7 +135,8 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Preparar leitura dos relatórios públicos em PDF
-        if: matrix.target.source_id == 'poderdata-aya-nacional-2026' || (matrix.target.source_id == 'real-time-big-data-estaduais-2026' && matrix.target.uf == 'PR')
+        if: matrix.target.source_id == 'poderdata-aya-nacional-2026' || (matrix.target.source_id == 'real-time-big-data-estaduais-2026' && (matrix.target.uf == 'PR' || matrix.target.uf == 'PA'))
+        timeout-minutes: 3
         run: |
           sudo apt-get update -qq
           sudo apt-get install --no-install-recommends -y poppler-utils

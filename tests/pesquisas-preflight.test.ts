@@ -42,3 +42,34 @@ test("preflight reaproveita captura íntegra sem promover resumo ou esconder arq
     assert.ok(mismatch.warnings.some(row => row.id === "literal" && row.reason === "capture_hash_mismatch_or_missing"))
   } finally { rmSync(root, { recursive: true, force: true }) }
 })
+
+test("preflight rejeita folha malformada em vez de fabricar identidade", () => {
+  const root = mkdtempSync(resolve(tmpdir(), "poll-preflight-invalid-"))
+  const write = (path: string, value: string) => { mkdirSync(dirname(resolve(root, path)), { recursive: true }); writeFileSync(resolve(root, path), value) }
+  const base = {
+    id: "poll-invalid",
+    source_status: "condicional",
+    office: "Governador",
+    geography: { code: "AC" },
+    registration: { code: { value: "AC-00001/2026" } },
+    cenarios: [],
+    provenance: { result_url: "https://example.org/poll-invalid", capture: { format: "text" } },
+  }
+  const writeCatalog = (poll: unknown) => {
+    write("scripts/data/pesquisas-presidencia-2026.json", JSON.stringify({ pesquisas: [] }))
+    write("scripts/data/pesquisas-governadores-2026.json", JSON.stringify({ datasets: [{ pesquisas: [poll] }] }))
+  }
+  try {
+    write("src/lib/pesquisas-eleitorais.ts", "parser")
+    write("scripts/data/pesquisas-buscas-alternativas.json", "{}")
+    write("data/candidate-roster-active-20260905.json", "{}")
+    write("scripts/data/pesquisas-eleitorais-fontes.json", "{}")
+    write("scripts/data/pesquisas-governadores-fontes.json", "{}")
+    writeCatalog({ ...base, id: undefined })
+    assert.throws(() => buildPreflightManifest(root, resolve(root, "evidence")), /poll\.id ausente ou inválido/)
+    writeCatalog({ ...base, provenance: { ...base.provenance, result_url: "example.org/relative" } })
+    assert.throws(() => buildPreflightManifest(root, resolve(root, "evidence")), /result_url deve ser URL absoluta HTTP\(S\)/)
+    writeCatalog({ ...base, office: "Presidente", geography: { code: "AC" } })
+    assert.throws(() => buildPreflightManifest(root, resolve(root, "evidence")), /deve ser BR para Presidente/)
+  } finally { rmSync(root, { recursive: true, force: true }) }
+})

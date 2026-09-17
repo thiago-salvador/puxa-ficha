@@ -106,6 +106,20 @@ test("recibo com fingerprint antigo é rejeitado", () => {
   }, staleFingerprint, dir), /stale receipt/)
 })
 
+test("schema explícito incompatível é rejeitado e caminho relativo usa o manifesto no cwd", () => {
+  assert.throws(() => scanIncremental({ schema_version: "pesquisas-incremental-v0", documents: [] }, state()), /schema do manifesto/)
+  const currentManifest = manifest("package.json")
+  const first = scanIncremental(currentManifest, state())
+  assert.equal(first.digest.queue[0]?.content_sha256?.length, 64)
+  const acknowledged = acknowledgeIncremental(currentManifest, first.state, {
+    identity: first.digest.queue[0]!.identity,
+    fingerprint: first.digest.queue[0]!.fingerprint,
+    stage: "capture",
+    status: "unresolved",
+  }, first.digest.queue[0]!.fingerprint)
+  assert.equal(acknowledged.result.accepted, true)
+})
+
 test("reabrir etapa upstream invalida recibos downstream antigos", () => {
   const dir = mkdtempSync(join(tmpdir(), "pesquisas-incremental-"))
   const evidence = join(dir, "poll.txt")

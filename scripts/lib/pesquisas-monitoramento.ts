@@ -135,7 +135,7 @@ interface CatalogPoll {
     url: { value: string }
   }
   sample: { population: { value: string } }
-  provenance: { result_url: string }
+  provenance: { result_url: string; alternative_urls?: string[] }
   cenarios: Array<{
     id: string
     turn: 1 | 2
@@ -161,6 +161,7 @@ function targetFromPoll(poll: CatalogPoll): AlvoMonitoramento {
     poll_id: poll.id,
     source_id: poll.source_id,
     url: poll.provenance.result_url,
+    ...(poll.provenance.alternative_urls?.length ? { alternative_urls: poll.provenance.alternative_urls } : {}),
     registration_id: poll.registration.code.value,
     registry_url: poll.registration.url.value,
     office: poll.office,
