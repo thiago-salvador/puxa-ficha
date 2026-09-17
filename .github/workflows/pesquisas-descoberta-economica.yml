@@ -1,0 +1,55 @@
+name: Descoberta econômica de pesquisas
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 11 * * 1,4"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pesquisas-descoberta-economica-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  descobrir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run test:pesquisas:economia
+      - name: Restaurar cursores e links conhecidos
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .artifacts/pesquisas-economia/google-state.json
+          key: pesquisas-discovery-v1-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: pesquisas-discovery-v1-${{ github.ref_name }}-
+      - name: Consultar presidente e as 27 UFs sem modelo
+        id: discovery
+        continue-on-error: true
+        run: npm run pesquisas:economia:descoberta -- --state .artifacts/pesquisas-economia/google-state.json --out .artifacts/pesquisas-economia/discovery
+      - name: Preservar estados inclusive quando uma UF falhar
+        if: always() && steps.discovery.outcome != 'skipped'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .artifacts/pesquisas-economia/google-state.json
+          key: pesquisas-discovery-v1-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Guardar fila e recibos da consulta
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: pesquisas-descoberta-economica-${{ github.run_id }}
+          path: .artifacts/pesquisas-economia/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Sinalizar falha sem apagar as pendências
+        if: steps.discovery.outcome == 'failure'
+        run: exit 1

@@ -209,7 +209,12 @@
     "audit:processos:curadoria-69:provar": "bash scripts/audit/provar-migration-processos-curadoria-69.sh",
     "audit:processos:curadoria-66:provar": "bash scripts/audit/provar-migration-processos-curadoria-66.sh",
     "audit:destaques:tse-8:provar": "bash scripts/audit/provar-migration-destaques-trajetoria-tse-8.sh",
-    "audit:votacoes:senado:provar": "bash scripts/audit/provar-votacoes-senado-exatas.sh"
+    "audit:votacoes:senado:provar": "bash scripts/audit/provar-votacoes-senado-exatas.sh",
+    "pesquisas:economia:preflight": "node --import tsx scripts/pesquisas-atualizacao-agendada/preflight.ts",
+    "pesquisas:economia:scan": "node --import tsx scripts/pesquisas-atualizacao-agendada/incremental.ts scan",
+    "pesquisas:economia:receipt": "node --import tsx scripts/pesquisas-atualizacao-agendada/incremental.ts acknowledge",
+    "pesquisas:economia:descoberta": "node --import tsx scripts/pesquisas-atualizacao-agendada/google-news.ts",
+    "test:pesquisas:economia": "node --import tsx --test tests/pesquisas-incremental.test.ts tests/pesquisas-google-news.test.ts tests/pesquisas-preflight.test.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
