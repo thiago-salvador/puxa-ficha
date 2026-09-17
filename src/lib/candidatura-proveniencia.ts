@@ -54,10 +54,18 @@ const TOKENS_JULGAMENTO: ReadonlySet<string> = new Set(SITUACAO_JULGAMENTO_PUBLI
 const TOKENS_JULGAMENTO_INDEFERIDO: ReadonlySet<string> = new Set(SITUACAO_JULGAMENTO_INDEFERIDO)
 
 /**
- * Codigos de `chapas_2026.tse_situacao_codigo` que NAO carregam julgamento.
- * Hoje o snapshot inteiro e `#NE` ("nao informado"), medido em 03/09/2026.
+ * Codigos de `chapas_2026.tse_situacao_codigo`, normalizados, que NAO
+ * carregam julgamento nenhum ("nao informado"). Comparado sempre via
+ * `normalizeToken`, nunca contra a grafia bruta: `tse_situacao_codigo` mistura
+ * o sentinela legado (`#NE`) com a MESMA prosa humana de `situacao_candidatura`
+ * ("Aguardando julgamento", "Deferido", "Pendente de julgamento", classificada
+ * no ramo `if (input.chapa_2026)` abaixo), e comparar contra a grafia exata é
+ * o que deixou passar o bug de 17/09/2026 (main dbcdb6fc): ruth-reis tem
+ * `tse_situacao_codigo = "Aguardando julgamento"` numa chapa `fonte_tipo=
+ * legado`, e o ramo abaixo tratava qualquer coisa != "#NE" como registro
+ * concluido.
  */
-const CHAPA_SEM_JULGAMENTO: ReadonlySet<string> = new Set(["#NE", "#NE#", "#NULO#", ""])
+const CHAPA_SEM_JULGAMENTO: ReadonlySet<string> = new Set(["#ne", "#ne#", "#nulo#", ""])
 
 function normalizeToken(value: string | null | undefined): string {
   if (!value) return ""
@@ -90,9 +98,8 @@ export function resolveCargoDisputadoProveniencia(
   // a afirmacao vencida que a migration 20260903210000 existe para corrigir.
   // Se um dia o snapshot passar a trazer codigo de julgamento proprio, ele
   // volta a mandar: a excecao e so para codigo que nao afirma nada.
-  const chapaSemJulgamento =
-    !input.chapa_2026 ||
-    CHAPA_SEM_JULGAMENTO.has(input.chapa_2026.tse_situacao_codigo ?? "")
+  const codigoChapa = normalizeToken(input.chapa_2026?.tse_situacao_codigo)
+  const chapaSemJulgamento = !input.chapa_2026 || CHAPA_SEM_JULGAMENTO.has(codigoChapa)
   if (chapaSemJulgamento && TOKENS_JULGAMENTO.has(situacao)) {
     return TOKENS_JULGAMENTO_INDEFERIDO.has(situacao) ? "registro_tse_indeferido" : "registro_tse"
   }
@@ -102,24 +109,59 @@ export function resolveCargoDisputadoProveniencia(
   // semântica a um SHA específico fez o texto voltar a "não informada" assim
   // que o TSE publicou um snapshot novo, apesar de a ficha já dizer
   // explicitamente "aguardando julgamento".
-  if (chapaSemJulgamento && (situacao.includes("aguardando julgamento") || situacao === "pedido de registro")) {
+  //
+  // "pendente de julgamento" entra na MESMA verificação (issue #340/#346,
+  // domínio alargado em 20260916130000): é um código de julgamento distinto
+  // de "aguardando julgamento" (a distinção jurídica é real e continua
+  // preservada em SITUACAO_JULGAMENTO_PUBLICADO, que nenhum dos dois
+  // integra), mas os dois significam a mesma coisa para o selo público —
+  // pedido registrado, julgamento não concluído, não deferido. Sem esta
+  // linha, 'pendente de julgamento' caía no ramo genérico de chapa presente
+  // abaixo e produzia "situação ainda não foi informada", contradizendo o
+  // campo "Situação: pendente de julgamento" exibido ao lado (bug de
+  // produção observado em godeiro-linharess/ruth-reis/leonardo-avalanche
+  // após main dbcdb6fc).
+  if (
+    chapaSemJulgamento &&
+    (situacao.includes("aguardando julgamento") ||
+      situacao.includes("pendente de julgamento") ||
+      situacao === "pedido de registro")
+  ) {
     return "registro_tse_pendente"
   }
 
   // A view de chapas só devolve a linha para quem foi vinculado por UUID como
   // titular ou vice. Portanto sua presença é prova mais forte e mais recente
-  // do que os rótulos editoriais legados em `candidatos`.
+  // do que os rótulos editoriais legados em `candidatos`, e por isso
+  // `tse_situacao_codigo` manda aqui. Mas ele PRECISA ser classificado pela
+  // mesma prosa de julgamento que `situacao_candidatura` usa, não reduzido a
+  // "é #NE ou não é": o campo carrega tanto o sentinela (`#NE`) quanto os
+  // mesmos códigos humanos ("Aguardando julgamento", "Deferido", "Pendente de
+  // julgamento", ver `chapas_2026_fonte_detalhe_check`), inclusive em chapas
+  // `fonte_tipo=legado` reconciliadas manualmente (ruth-reis, 20260916140000).
+  // Tratar qualquer coisa != "#NE" como registro concluído foi exatamente o
+  // bug de produção observado em 17/09/2026 (main dbcdb6fc): a chapa de
+  // ruth-reis diz "Aguardando julgamento" e a ficha exibia "Candidatura
+  // registrada no TSE", como se o julgamento tivesse terminado.
   if (input.chapa_2026) {
-    return input.chapa_2026.tse_situacao_codigo === "#NE"
-      ? "registro_tse_situacao_nao_informada"
-      : "registro_tse"
+    if (TOKENS_JULGAMENTO.has(codigoChapa)) {
+      return TOKENS_JULGAMENTO_INDEFERIDO.has(codigoChapa) ? "registro_tse_indeferido" : "registro_tse"
+    }
+    if (codigoChapa.includes("aguardando julgamento") || codigoChapa.includes("pendente de julgamento")) {
+      return "registro_tse_pendente"
+    }
+    return chapaSemJulgamento ? "registro_tse_situacao_nao_informada" : "registro_tse"
   }
 
   if (situacao.includes("situacao nao informada")) {
     return "registro_tse_situacao_nao_informada"
   }
 
-  if (situacao.includes("aguardando julgamento") || situacao === "pedido de registro") {
+  if (
+    situacao.includes("aguardando julgamento") ||
+    situacao.includes("pendente de julgamento") ||
+    situacao === "pedido de registro"
+  ) {
     return "registro_tse_pendente"
   }
 

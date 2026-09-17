@@ -120,6 +120,59 @@ describe("resolveCargoDisputadoProveniencia", () => {
       "registro_tse_pendente",
     )
   })
+
+  it("a chapa que ela mesma diz 'Aguardando julgamento' não vira registro concluído", () => {
+    // Bug de produção real (main dbcdb6fc, 17/09/2026): ruth-reis tem chapa
+    // fonte_tipo=legado com tse_situacao_codigo='Aguardando julgamento'
+    // (reconciliada em 20260916140000, não é '#NE'). O ramo de chapa tratava
+    // qualquer coisa != '#NE' como concluída e produzia "Candidatura
+    // registrada no TSE", apagando o "aguarda julgamento" que a própria chapa
+    // afirma.
+    assert.equal(
+      resolveCargoDisputadoProveniencia({
+        status: "candidato",
+        situacao_candidatura: "pendente de julgamento",
+        chapa_2026: { tse_situacao_codigo: "Aguardando julgamento" },
+      }),
+      "registro_tse_pendente",
+    )
+  })
+
+  it("a chapa que ela mesma diz 'Pendente de julgamento' também não vira registro concluído", () => {
+    // Mesmo bug, lado divulgacand_detalhe: leonardo-avalanche (PRTB) tem
+    // chapas_2026.tse_situacao_codigo='Pendente de julgamento' desde a
+    // migration 20260917000001 (issue #340/#346).
+    assert.equal(
+      resolveCargoDisputadoProveniencia({
+        status: "candidato",
+        situacao_candidatura: "pendente de julgamento",
+        chapa_2026: { tse_situacao_codigo: "Pendente de julgamento" },
+      }),
+      "registro_tse_pendente",
+    )
+  })
+
+  it("a chapa que diz 'Indeferido' ainda vence, mesmo sem #NE", () => {
+    assert.equal(
+      resolveCargoDisputadoProveniencia({
+        status: "candidato",
+        situacao_candidatura: "pendente de julgamento",
+        chapa_2026: { tse_situacao_codigo: "Indeferido" },
+      }),
+      "registro_tse_indeferido",
+    )
+  })
+
+  it("a chapa que diz 'Deferido' ainda produz registro concluído", () => {
+    assert.equal(
+      resolveCargoDisputadoProveniencia({
+        status: "candidato",
+        situacao_candidatura: "aguardando julgamento",
+        chapa_2026: { tse_situacao_codigo: "Deferido" },
+      }),
+      "registro_tse",
+    )
+  })
 })
 
 describe("copy da proveniencia", () => {

@@ -8,8 +8,45 @@ import {
   SITUACAO_JULGAMENTO_PUBLICADO,
 } from "../src/lib/situacao-candidatura"
 import { analyzePublishedConsistency, type PublishedRow } from "../src/lib/published-consistency"
-import { resolveCargoDisputadoProveniencia } from "../src/lib/candidatura-proveniencia"
+import {
+  buildCargoDisputadoProvenienceLabel,
+  buildCargoDisputadoProvenienceNote,
+  resolveCargoDisputadoProveniencia,
+  type CargoDisputadoProveniencia,
+} from "../src/lib/candidatura-proveniencia"
 import { classificarMigration } from "../scripts/audit/lib/migrations-classificacao"
+
+/**
+ * Selo esperado para CADA valor do dominio, sem chapa vinculada (o caso mais
+ * comum: a maioria das fichas nao tem `chapas_2026` associado por UUID).
+ *
+ * `Record<(typeof SITUACAO_CANDIDATURA_DOMINIO)[number], ...>` e o guard em
+ * si: e um tipo exaustivo sobre o dominio, entao um valor novo em
+ * SITUACAO_CANDIDATURA_DOMINIO sem entrada aqui quebra o typecheck (portanto
+ * o CI) antes de quebrar em producao. E exatamente a lacuna que deixou
+ * 'pendente de julgamento' (entrou em 20260916130000, issue #340) sem ramo
+ * proprio em `resolveCargoDisputadoProveniencia` por um dia inteiro: o
+ * dominio cresceu, o mapa de selos nao, e ninguem percebeu ate o selo errado
+ * ir ao ar em producao (main dbcdb6fc, godeiro-linharess/ruth-reis/
+ * leonardo-avalanche).
+ */
+const SELO_ESPERADO_POR_SITUACAO: Record<
+  (typeof SITUACAO_CANDIDATURA_DOMINIO)[number],
+  CargoDisputadoProveniencia
+> = {
+  "aguardando julgamento": "registro_tse_pendente",
+  "candidatura declarada": "declaracao_editorial",
+  incerto: "declaracao_editorial",
+  deferido: "registro_tse",
+  "deferido com recurso": "registro_tse",
+  indeferido: "registro_tse_indeferido",
+  "indeferido com recurso": "registro_tse_indeferido",
+  // Codigo de julgamento distinto de 'aguardando julgamento' (os dois
+  // coexistem no mesmo censo do TSE, ver situacao-candidatura.ts), mas
+  // recebe o MESMO selo publico: registrado, julgamento nao concluido, nao
+  // deferido.
+  "pendente de julgamento": "registro_tse_pendente",
+}
 
 /**
  * Contrato do vocabulario de `situacao_candidatura`.
@@ -175,6 +212,64 @@ describe("dominio de situacao_candidatura", () => {
       resolveCargoDisputadoProveniencia({ status: "pre-candidato", situacao_candidatura: "incerto" }),
       "declaracao_editorial",
     )
+  })
+
+  it("todo valor do dominio tem selo mapeado, sem chapa vinculada", () => {
+    // Varre SITUACAO_CANDIDATURA_DOMINIO inteiro contra SELO_ESPERADO_POR_SITUACAO
+    // (Record exaustivo: um valor novo no dominio sem entrada la falha o
+    // typecheck). Aqui o teste confere que o RUNTIME bate com o mapa, nao so
+    // que o mapa existe.
+    // status='pre-candidato' de proposito, como o resto do arquivo: 'candidato'
+    // esta em TOKENS_REGISTRO_TSE e faria 'candidatura declarada'/'incerto'
+    // casarem pelo status em vez de cairem em declaracao_editorial, mascarando
+    // o proprio ramo que este teste quer varrer.
+    for (const valor of SITUACAO_CANDIDATURA_DOMINIO) {
+      const esperado = SELO_ESPERADO_POR_SITUACAO[valor]
+      const selo = resolveCargoDisputadoProveniencia({ status: "pre-candidato", situacao_candidatura: valor })
+      assert.equal(selo, esperado, `selo errado para '${valor}': esperava ${esperado}, veio ${selo}`)
+      assert.ok(buildCargoDisputadoProvenienceLabel(selo).length > 0, `label vazio para '${valor}'`)
+      assert.ok(buildCargoDisputadoProvenienceNote(selo).length > 0, `nota vazia para '${valor}'`)
+    }
+  })
+
+  it("aguardando julgamento e pendente de julgamento recebem o mesmo selo publico", () => {
+    // Sao codigos de julgamento distintos na fonte (SITUACAO_JULGAMENTO_PUBLICADO
+    // nao inclui nenhum dos dois, de proposito), mas o SELO exibido na ficha e o
+    // mesmo: pedido registrado, julgamento nao concluido, nao deferido. Isso vale
+    // com e sem chapa_2026 vinculada por UUID, porque a regressao de producao
+    // (main dbcdb6fc) veio de fichas COM chapa (godeiro-linharess: chapa legado,
+    // tse_situacao_codigo='#NE').
+    for (const chapa2026 of [undefined, { tse_situacao_codigo: "#NE" }] as const) {
+      const aguardando = resolveCargoDisputadoProveniencia({
+        status: "candidato",
+        situacao_candidatura: "aguardando julgamento",
+        chapa_2026: chapa2026,
+      })
+      const pendente = resolveCargoDisputadoProveniencia({
+        status: "candidato",
+        situacao_candidatura: "pendente de julgamento",
+        chapa_2026: chapa2026,
+      })
+      assert.equal(pendente, aguardando)
+      assert.equal(pendente, "registro_tse_pendente")
+    }
+  })
+
+  it("pendente de julgamento com chapa em #NE nao vira 'situacao ainda nao foi informada'", () => {
+    // Bug de producao literal (main dbcdb6fc): candidatos.situacao_candidatura
+    // = 'pendente de julgamento' com chapas_2026.tse_situacao_codigo = '#NE'
+    // (godeiro-linharess, ruth-reis, leonardo-avalanche) caia no ramo generico
+    // de chapa presente e produzia o selo "Pedido de registro no TSE" com a
+    // nota "a situacao ainda nao foi informada", contradizendo o campo
+    // "Situacao: pendente de julgamento" exibido ao lado na mesma pagina.
+    const selo = resolveCargoDisputadoProveniencia({
+      status: "candidato",
+      situacao_candidatura: "pendente de julgamento",
+      chapa_2026: { tse_situacao_codigo: "#NE" },
+    })
+    assert.equal(selo, "registro_tse_pendente")
+    assert.doesNotMatch(buildCargoDisputadoProvenienceNote(selo), /situação ainda não foi informada/i)
+    assert.match(buildCargoDisputadoProvenienceNote(selo), /não equivale a candidatura deferida/i)
   })
 
   it("cada estado de julgamento produz um selo, e indeferido nao vira declaracao editorial", () => {
