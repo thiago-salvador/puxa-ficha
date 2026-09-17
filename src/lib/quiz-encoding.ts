@@ -44,6 +44,7 @@ const LIKERT_TO_CODE: Record<RespostaLikert, number> = {
   neutro: 2,
   discordo_parcial: 3,
   discordo_total: 4,
+  sem_opiniao: 5,
 }
 
 const CODE_TO_LIKERT: RespostaLikert[] = [
@@ -52,6 +53,7 @@ const CODE_TO_LIKERT: RespostaLikert[] = [
   "neutro",
   "discordo_parcial",
   "discordo_total",
+  "sem_opiniao",
 ]
 
 function writeBits(bits: boolean[], value: number, bitCount: number) {
@@ -109,6 +111,7 @@ function bitsPerQuestion(quizVersion: number): number {
  * v1: 10 perguntas, 3 bits Likert.
  * v2: todas as perguntas, 3 bits Likert.
  * v3: todas as perguntas, 3 bits Likert + 1 bit importância.
+ * v4: mesmo formato, código 5 para sem opinião e perguntas revisadas.
  */
 export function encodeQuizRespostasPayload(
   respostas: Map<string, QuizRespostaCodificada>,
@@ -119,11 +122,11 @@ export function encodeQuizRespostasPayload(
   const bpq = bitsPerQuestion(quizVersion)
   const bits: boolean[] = []
   for (const p of ordenadas) {
-    const cell = respostas.get(p.id) ?? { valor: "neutro" as const, importante: false }
+    const cell = respostas.get(p.id) ?? { valor: quizVersion >= 4 ? "sem_opiniao" as const : "neutro" as const, importante: false }
     const code = LIKERT_TO_CODE[cell.valor]
     writeBits(bits, code, 3)
     if (bpq === 4) {
-      writeBits(bits, cell.importante ? 1 : 0, 1)
+      writeBits(bits, cell.importante && cell.valor !== "sem_opiniao" ? 1 : 0, 1)
     }
   }
   return uint8ToBase64Url(bitsToBytes(bits))
@@ -151,7 +154,7 @@ export function encodeQuizAnswersPayloadFirstN(
 export function encodeQuizAnswersPayload(respostas: Map<string, RespostaLikert>): string {
   const full = new Map<string, QuizRespostaCodificada>()
   for (const p of quizPerguntasOrdenadas()) {
-    full.set(p.id, { valor: respostas.get(p.id) ?? "neutro", importante: false })
+    full.set(p.id, { valor: respostas.get(p.id) ?? "sem_opiniao", importante: false })
   }
   return encodeQuizRespostasPayload(full, QUIZ_VERSION)
 }
@@ -164,28 +167,28 @@ export function decodeQuizAnswersPayload(
   respostas: Map<string, QuizRespostaCodificada>
 } | null {
   const trimmed = encoded.trim()
-  if (!trimmed) return null
+  if (!trimmed || !/^[A-Za-z0-9_-]+$/.test(trimmed) || ![1, 2, 3, 4].includes(quizVersion)) return null
   try {
     const bytes = base64UrlToUint8(trimmed)
-    if (!bytes) return null
+    if (!bytes || uint8ToBase64Url(bytes) !== trimmed) return null
     const bits = bytesToBits(bytes)
     const count = questionCountForQuizVersion(quizVersion)
     const ordenadas = quizPerguntasPrimeiras(count)
     const bpq = bitsPerQuestion(quizVersion)
     const need = ordenadas.length * bpq
-    if (bits.length < need) return null
+    if (bytes.length !== Math.ceil(need / 8) || bits.slice(need).some(Boolean)) return null
     const offset = { i: 0 }
     const respostas = new Map<string, QuizRespostaCodificada>()
     for (const p of ordenadas) {
       const code = readBits(bits, offset, 3)
-      if (code < 0 || code > 4) return null
+      if (code < 0 || code > (quizVersion >= 4 ? 5 : 4)) return null
       let importante = false
       if (bpq === 4) {
         const ib = readBits(bits, offset, 1)
         if (ib !== 0 && ib !== 1) return null
         importante = ib === 1
       }
-      respostas.set(p.id, { valor: CODE_TO_LIKERT[code]!, importante })
+      respostas.set(p.id, { valor: CODE_TO_LIKERT[code]!, importante: code === 5 ? false : importante })
     }
     return { versionUsed: quizVersion, respostas }
   } catch {
@@ -202,24 +205,9 @@ export function decodeQuizPayloadForShare(
 ): Map<string, QuizRespostaCodificada> | null {
   const trimmed = r?.trim()
   if (!trimmed) return null
-  const v = vParam === undefined || vParam === null ? null : vParam
-  let decoded: { respostas: Map<string, QuizRespostaCodificada> } | null = null
-  if (v === "1") {
-    decoded =
-      decodeQuizAnswersPayload(trimmed, 1) ??
-      decodeQuizAnswersPayload(trimmed, 2) ??
-      decodeQuizAnswersPayload(trimmed, 3)
-  } else if (v === "2") {
-    decoded = decodeQuizAnswersPayload(trimmed, 2)
-  } else if (v === "3") {
-    decoded = decodeQuizAnswersPayload(trimmed, 3)
-  } else {
-    decoded =
-      decodeQuizAnswersPayload(trimmed, QUIZ_VERSION) ??
-      decodeQuizAnswersPayload(trimmed, 3) ??
-      decodeQuizAnswersPayload(trimmed, 2) ??
-      decodeQuizAnswersPayload(trimmed, 1)
-  }
+  // As perguntas mudaram de sentido na v4. Nunca reinterpretar uma resposta antiga.
+  if (vParam !== String(QUIZ_VERSION)) return null
+  const decoded = decodeQuizAnswersPayload(trimmed, QUIZ_VERSION)
   return decoded?.respostas ?? null
 }
 

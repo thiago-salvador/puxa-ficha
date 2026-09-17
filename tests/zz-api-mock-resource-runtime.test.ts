@@ -86,6 +86,7 @@ describe("api resource runtime sem Supabase configurado", () => {
       votacoes_mapeadas: [],
       votacao_titulo_to_id: {},
       votacao_fonte_por_titulo: {},
+      votacao_fonte_por_id: {},
     })
   })
 })

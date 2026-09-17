@@ -9,7 +9,7 @@ import { buildAbsoluteUrl, buildTwitterMetadata } from "@/lib/metadata"
 
 const title = "Quem me representa? | Puxa Ficha"
 const description =
-  "Quiz de comparação programática com candidatos: votações no Congresso, posições declaradas, projetos, financiamento e espectro partidário. Sem ranking ou recomendação de voto."
+  "Compare suas respostas com votos e posições documentadas dos candidatos, com cobertura explícita. Sem ranking ou recomendação de voto."
 const image = buildAbsoluteUrl("/quiz/resultado/og")
 
 export const metadata: Metadata = {

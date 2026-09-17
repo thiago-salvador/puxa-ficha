@@ -1,0 +1,16 @@
+{
+  "$schema": "Allowlist da escrita de referência nominal da quarentena das posições do quiz. A migration declara uma única escrita; o SQL e o manifesto existente da quarentena controlam a cardinalidade e os valores das 28 tuplas.",
+  "versao": "2026-09-17",
+  "fonte": "auditoria de posições do quiz, migration 20260917190000_quiz_position_quarantine_guard.sql",
+  "motivo": "Autoriza somente a criação/atualização idempotente da quarentena nominal que impede a reativação das tuplas auditadas.",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "quiz_position_quarantine",
+      "ref": "migration:20260917190000",
+      "campos": ["candidato_id", "tema", "posicao", "url_fonte", "motivo", "ativo"]
+    }
+  ]
+}

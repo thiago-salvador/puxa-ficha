@@ -5,7 +5,7 @@ const QUIZ_NEUTRAL_R = "REREREREREA"
 function buildQuizQueryString() {
   return new URLSearchParams({
     r: QUIZ_NEUTRAL_R,
-    v: "3",
+    v: "4",
     cargo: "Governador",
     uf: "SP",
   }).toString()

@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
-import { quizPerguntasOrdenadas } from "@/data/quiz/perguntas"
+import { quizPerguntasOrdenadas, QUIZ_VERSION } from "@/data/quiz/perguntas"
 import { ANALYTICS_EVENTS } from "@/lib/analytics-events"
 import { trackLaunchEvent } from "@/lib/analytics-client"
 import { buildQuizResultQuery, type QuizRespostaCodificada } from "@/lib/quiz-encoding"
@@ -14,7 +14,7 @@ import { QuizQuestion } from "./QuizQuestion"
 // então ele entra oculto para que leitores de tela tenham a âncora do documento.
 const QUIZ_PAGE_TITLE = "Quiz eleitoral: quem me representa?"
 
-const QUIZ_SESSION_STORAGE_VERSION = 1
+const QUIZ_SESSION_STORAGE_VERSION = QUIZ_VERSION
 const QUIZ_PROGRESS_STORAGE_EVENT = "puxaficha:quiz-progress-storage"
 
 interface StoredQuizProgress {

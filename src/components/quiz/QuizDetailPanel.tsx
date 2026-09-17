@@ -22,7 +22,7 @@ export function QuizDetailPanel({
   plUrlExemploPorTema,
   financiamentoContexto,
 }: QuizDetailPanelProps) {
-  const eixos = Object.entries(detalhe.por_eixo).filter(([, v]) => v > 0)
+  const eixos = Object.entries(detalhe.por_eixo).filter(([, v]) => Number.isFinite(v))
   const plEntries = plUrlExemploPorTema ? Object.entries(plUrlExemploPorTema).filter(([, url]) => url.trim()) : []
 
   return (
@@ -35,7 +35,7 @@ export function QuizDetailPanel({
       ) : null}
       {eixos.length > 0 ? (
         <div className="space-y-1">
-          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Comparação por eixo (votos)</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Coincidência nas evidências por tema</p>
           <ul className="space-y-1 text-xs text-muted-foreground">
             {eixos.map(([k, v]) => (
               <li key={k} className="flex justify-between gap-2">

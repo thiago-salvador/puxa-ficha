@@ -1,0 +1,1331 @@
+{
+  "task": "quiz-accuracy-release-20260917",
+  "script": "apply-quiz-position-quarantine",
+  "mode": "apply",
+  "policy": "only verificado changes; source/description/position preserved",
+  "counts": {
+    "manifest": 28,
+    "matched": 28,
+    "updates": 28,
+    "already_quarantined": 0
+  },
+  "plan": [
+    {
+      "entry": {
+        "global_index": 10,
+        "candidate_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+        "slug": "mailza-assis",
+        "tema": "reforma_trabalhista",
+        "url_fonte": "https://www.congressonacional.leg.br/materias/medidas-provisorias/-/mpv/148214/votacoes",
+        "posicao": "a_favor",
+        "reason": "MPV 1045/2021/minirreforma é proxy da Lei 13.467/2017; voto individual não foi extraído.",
+        "expected_descricao_sha256": "d68b5322dbb8a5e025b200f973e6c290d401422ce001838602fe93088d12a20b"
+      },
+      "status": "update",
+      "before": {
+        "id": "7449d471-a617-430d-92b7-a27af8ebcd50",
+        "candidato_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+        "tema": "reforma_trabalhista",
+        "posicao": "a_favor",
+        "descricao": "Voto nominal Sim no Senado à Emenda nº 510-PLEN (substitutivo) ao PLV 17/2021 da MPV 1045/2021, chamada de minirreforma trabalhista (CLT). Mapa oficial: '45 | Mailza Gomes | Sim'. A matéria foi rejeitada (27 a 47). Não havia mandato federal na reforma de 2017; este é o voto próprio localizado sobre alteração da CLT. | Contexto: Sessão deliberativa do Congresso/Senado em 01/09/2021, MPV 1045/2021.",
+        "fonte": "Votações da matéria MPV 1045/2021 - Congresso Nacional",
+        "url_fonte": "https://www.congressonacional.leg.br/materias/medidas-provisorias/-/mpv/148214/votacoes",
+        "verificado": true,
+        "gerado_por": "onda-g-ac-20260815",
+        "created_at": "2026-08-15T23:09:05.048898+00:00",
+        "candidatos": {
+          "slug": "mailza-assis"
+        },
+        "candidate_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+        "slug": "mailza-assis"
+      },
+      "after": {
+        "id": "7449d471-a617-430d-92b7-a27af8ebcd50",
+        "candidato_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+        "tema": "reforma_trabalhista",
+        "posicao": "a_favor",
+        "descricao": "Voto nominal Sim no Senado à Emenda nº 510-PLEN (substitutivo) ao PLV 17/2021 da MPV 1045/2021, chamada de minirreforma trabalhista (CLT). Mapa oficial: '45 | Mailza Gomes | Sim'. A matéria foi rejeitada (27 a 47). Não havia mandato federal na reforma de 2017; este é o voto próprio localizado sobre alteração da CLT. | Contexto: Sessão deliberativa do Congresso/Senado em 01/09/2021, MPV 1045/2021.",
+        "fonte": "Votações da matéria MPV 1045/2021 - Congresso Nacional",
+        "url_fonte": "https://www.congressonacional.leg.br/materias/medidas-provisorias/-/mpv/148214/votacoes",
+        "verificado": false,
+        "gerado_por": "onda-g-ac-20260815",
+        "created_at": "2026-08-15T23:09:05.048898+00:00",
+        "candidatos": {
+          "slug": "mailza-assis"
+        },
+        "candidate_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+        "slug": "mailza-assis"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 11,
+        "candidate_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+        "slug": "mailza-assis",
+        "tema": "teto_gastos",
+        "url_fonte": "https://www25.senado.leg.br/web/atividade/materias/-/materia/155594/votacoes",
+        "posicao": "contra",
+        "reason": "PEC da Transição de 2022 não é a votação da EC 95/2016; conferência nominal insuficiente.",
+        "expected_descricao_sha256": "df3aa57f2d2a4c7238004287aa7676fb905d63d41e5a19e18066fdd008d5af81"
+      },
+      "status": "update",
+      "before": {
+        "id": "a6233d8e-f39f-4edb-91a0-0a65f5794c61",
+        "candidato_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+        "tema": "teto_gastos",
+        "posicao": "contra",
+        "descricao": "Voto nominal Sim na PEC 32/2022 (PEC da Transição / EC 126), que excluiu despesas do teto de gastos (art. 107 do ADCT) para viabilizar o Bolsa Família de R$ 600 e outras rubricas. Mapa oficial do 2º turno (fase 2): '46 | Mailza Gomes | Sim'. Não votou a EC 95 (2016), pois ainda não era senadora. | Contexto: Plenário do Senado, PEC da Transição, 21/12/2022 (materia 155594). O voto Sim fura/afrouxa o teto; não é voto na PEC 241/2016.",
+        "fonte": "Votações da matéria PEC 32/2022 (fase 2) - Senado Federal",
+        "url_fonte": "https://www25.senado.leg.br/web/atividade/materias/-/materia/155594/votacoes",
+        "verificado": true,
+        "gerado_por": "onda-g-ac-20260815",
+        "created_at": "2026-08-15T23:09:05.048898+00:00",
+        "candidatos": {
+          "slug": "mailza-assis"
+        },
+        "candidate_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+        "slug": "mailza-assis"
+      },
+      "after": {
+        "id": "a6233d8e-f39f-4edb-91a0-0a65f5794c61",
+        "candidato_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+        "tema": "teto_gastos",
+        "posicao": "contra",
+        "descricao": "Voto nominal Sim na PEC 32/2022 (PEC da Transição / EC 126), que excluiu despesas do teto de gastos (art. 107 do ADCT) para viabilizar o Bolsa Família de R$ 600 e outras rubricas. Mapa oficial do 2º turno (fase 2): '46 | Mailza Gomes | Sim'. Não votou a EC 95 (2016), pois ainda não era senadora. | Contexto: Plenário do Senado, PEC da Transição, 21/12/2022 (materia 155594). O voto Sim fura/afrouxa o teto; não é voto na PEC 241/2016.",
+        "fonte": "Votações da matéria PEC 32/2022 (fase 2) - Senado Federal",
+        "url_fonte": "https://www25.senado.leg.br/web/atividade/materias/-/materia/155594/votacoes",
+        "verificado": false,
+        "gerado_por": "onda-g-ac-20260815",
+        "created_at": "2026-08-15T23:09:05.048898+00:00",
+        "candidatos": {
+          "slug": "mailza-assis"
+        },
+        "candidate_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+        "slug": "mailza-assis"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 17,
+        "candidate_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "slug": "renan-filho",
+        "tema": "previdencia",
+        "url_fonte": "https://sindpolalagoas.com.br/noticia/texto-da-reforma-da-previdencia-de-renan-filho-deve-parar-na-justica/",
+        "posicao": "a_favor",
+        "reason": "Reforma previdenciária estadual de Alagoas não prova apoio à reforma federal de 2019.",
+        "expected_descricao_sha256": "34091f8c86e59a324fa7071ed14410d2dfd892a3382fc784362e0c4d130223b8"
+      },
+      "status": "update",
+      "before": {
+        "id": "42cde1cf-bbc0-4384-a4c2-b0bdc559578e",
+        "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "tema": "previdencia",
+        "posicao": "a_favor",
+        "descricao": "Enviou e sancionou a reforma da Previdência estadual em Alagoas com elevação de alíquota para 14% e defendeu inclusão de estados na PEC nacional. Citação (2019-12-11): \"ALE aprova Previdência de Renan Filho e aumenta para 14% alíquota sobre salário.\"",
+        "fonte": "Sindpol AL / Gazetaweb (2019-12-11)",
+        "url_fonte": "https://sindpolalagoas.com.br/noticia/texto-da-reforma-da-previdencia-de-renan-filho-deve-parar-na-justica/",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "renan-filho"
+        },
+        "candidate_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "slug": "renan-filho"
+      },
+      "after": {
+        "id": "42cde1cf-bbc0-4384-a4c2-b0bdc559578e",
+        "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "tema": "previdencia",
+        "posicao": "a_favor",
+        "descricao": "Enviou e sancionou a reforma da Previdência estadual em Alagoas com elevação de alíquota para 14% e defendeu inclusão de estados na PEC nacional. Citação (2019-12-11): \"ALE aprova Previdência de Renan Filho e aumenta para 14% alíquota sobre salário.\"",
+        "fonte": "Sindpol AL / Gazetaweb (2019-12-11)",
+        "url_fonte": "https://sindpolalagoas.com.br/noticia/texto-da-reforma-da-previdencia-de-renan-filho-deve-parar-na-justica/",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "renan-filho"
+        },
+        "candidate_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "slug": "renan-filho"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 19,
+        "candidate_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "slug": "renan-filho",
+        "tema": "reforma_trabalhista",
+        "url_fonte": "https://www.cadaminuto.com.br/noticia/2026/05/29/trabalhador-tem-direito-de-viver-com-a-familia-diz-renan-filho-sobre-fim-da-escala-6x1",
+        "posicao": "contra",
+        "reason": "Apoio ao fim da escala 6x1 em 2026 não comprova rejeição da reforma de 2017 inteira.",
+        "expected_descricao_sha256": "4ce2f645cde710eec8b46d11ef3d6c7a66532edd5ba15045e63abc1304399f30"
+      },
+      "status": "update",
+      "before": {
+        "id": "ac6bc30e-4562-4830-9d80-ee7b0ff26a10",
+        "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "tema": "reforma_trabalhista",
+        "posicao": "contra",
+        "descricao": "Em entrevista à Rádio Correio Delmiro, Renan Filho declarou apoio integral ao fim da escala 6x1 e chamou a medida de avanço social e trabalhista.",
+        "fonte": "Cada Minuto — declaração de Renan Filho sobre fim da escala 6x1",
+        "url_fonte": "https://www.cadaminuto.com.br/noticia/2026/05/29/trabalhador-tem-direito-de-viver-com-a-familia-diz-renan-filho-sobre-fim-da-escala-6x1",
+        "verificado": true,
+        "gerado_por": "curadoria",
+        "created_at": "2026-08-03T16:13:59.43536+00:00",
+        "candidatos": {
+          "slug": "renan-filho"
+        },
+        "candidate_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "slug": "renan-filho"
+      },
+      "after": {
+        "id": "ac6bc30e-4562-4830-9d80-ee7b0ff26a10",
+        "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "tema": "reforma_trabalhista",
+        "posicao": "contra",
+        "descricao": "Em entrevista à Rádio Correio Delmiro, Renan Filho declarou apoio integral ao fim da escala 6x1 e chamou a medida de avanço social e trabalhista.",
+        "fonte": "Cada Minuto — declaração de Renan Filho sobre fim da escala 6x1",
+        "url_fonte": "https://www.cadaminuto.com.br/noticia/2026/05/29/trabalhador-tem-direito-de-viver-com-a-familia-diz-renan-filho-sobre-fim-da-escala-6x1",
+        "verificado": false,
+        "gerado_por": "curadoria",
+        "created_at": "2026-08-03T16:13:59.43536+00:00",
+        "candidatos": {
+          "slug": "renan-filho"
+        },
+        "candidate_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "slug": "renan-filho"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 26,
+        "candidate_id": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+        "slug": "david-almeida",
+        "tema": "previdencia",
+        "url_fonte": "https://www.cmm.am.gov.br/foram-extremamente-crueis-com-os-servidores-publicos-municipais-diz-rodrigo-guedes-sobre-os-vereadores-que-aprovaram-a-reforma-da-previdencia-municipal-de-manaus/",
+        "posicao": "a_favor",
+        "reason": "Reforma municipal de Manaus de 2025 não é a reforma federal de 2019.",
+        "expected_descricao_sha256": "fee4bb4e5fcd01fbd5a239a90b06c2838c4a521e09052f1ce9a78a578b6d77ff"
+      },
+      "status": "update",
+      "before": {
+        "id": "0ff305ba-fc41-452f-a5a6-4fdd2cb8c3f2",
+        "candidato_id": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+        "tema": "previdencia",
+        "posicao": "a_favor",
+        "descricao": "Apoiou, propôs e sancionou a adequação da Previdência Municipal e o regime complementar em conformidade com as diretrizes da Reforma da Previdência. Citação (19/11/2025): \"O Projeto de Lei proposto pelo prefeito David Almeida aumenta o tempo de contribuição dos servidores e a idade mínima, adequando o regime próprio municipal.\"",
+        "fonte": "Câmara Municipal de Manaus (19/11/2025)",
+        "url_fonte": "https://www.cmm.am.gov.br/foram-extremamente-crueis-com-os-servidores-publicos-municipais-diz-rodrigo-guedes-sobre-os-vereadores-que-aprovaram-a-reforma-da-previdencia-municipal-de-manaus/",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "david-almeida"
+        },
+        "candidate_id": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+        "slug": "david-almeida"
+      },
+      "after": {
+        "id": "0ff305ba-fc41-452f-a5a6-4fdd2cb8c3f2",
+        "candidato_id": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+        "tema": "previdencia",
+        "posicao": "a_favor",
+        "descricao": "Apoiou, propôs e sancionou a adequação da Previdência Municipal e o regime complementar em conformidade com as diretrizes da Reforma da Previdência. Citação (19/11/2025): \"O Projeto de Lei proposto pelo prefeito David Almeida aumenta o tempo de contribuição dos servidores e a idade mínima, adequando o regime próprio municipal.\"",
+        "fonte": "Câmara Municipal de Manaus (19/11/2025)",
+        "url_fonte": "https://www.cmm.am.gov.br/foram-extremamente-crueis-com-os-servidores-publicos-municipais-diz-rodrigo-guedes-sobre-os-vereadores-que-aprovaram-a-reforma-da-previdencia-municipal-de-manaus/",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "david-almeida"
+        },
+        "candidate_id": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+        "slug": "david-almeida"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 33,
+        "candidate_id": "9fe469dc-058f-487d-b888-ba113f5535ae",
+        "slug": "omar-aziz",
+        "tema": "teto_gastos",
+        "url_fonte": "https://www.infomoney.com.br/politica/arcabouco-fiscal-omar-aziz-apresenta-relatorio-com-3-excecoes-ao-limite-de-despesas/",
+        "posicao": "a_favor",
+        "reason": "Relatoria do arcabouço de 2023 não sustenta a posição no teto de 2016.",
+        "expected_descricao_sha256": "bf40c0555b81810d751ed4bbde467ffa38b1a1f0b1293861e4b398156028c9f9"
+      },
+      "status": "update",
+      "before": {
+        "id": "b0f375b6-eca8-4780-a424-067a141d0a7e",
+        "candidato_id": "9fe469dc-058f-487d-b888-ba113f5535ae",
+        "tema": "teto_gastos",
+        "posicao": "a_favor",
+        "descricao": "Foi o relator no Senado e articulou a aprovação do Novo Arcabouço Fiscal (PLP 93/2023) em substituição ao teto de gastos. Citação (20/06/2023): \"O senador Omar Aziz (PSD-AM), relator do novo arcabouço fiscal (PLP 93/2023), apresentou seu parecer na CAE mantendo regras fiscais e retirando Fundeb e FCDF.\"",
+        "fonte": "InfoMoney (20/06/2023)",
+        "url_fonte": "https://www.infomoney.com.br/politica/arcabouco-fiscal-omar-aziz-apresenta-relatorio-com-3-excecoes-ao-limite-de-despesas/",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "omar-aziz"
+        },
+        "candidate_id": "9fe469dc-058f-487d-b888-ba113f5535ae",
+        "slug": "omar-aziz"
+      },
+      "after": {
+        "id": "b0f375b6-eca8-4780-a424-067a141d0a7e",
+        "candidato_id": "9fe469dc-058f-487d-b888-ba113f5535ae",
+        "tema": "teto_gastos",
+        "posicao": "a_favor",
+        "descricao": "Foi o relator no Senado e articulou a aprovação do Novo Arcabouço Fiscal (PLP 93/2023) em substituição ao teto de gastos. Citação (20/06/2023): \"O senador Omar Aziz (PSD-AM), relator do novo arcabouço fiscal (PLP 93/2023), apresentou seu parecer na CAE mantendo regras fiscais e retirando Fundeb e FCDF.\"",
+        "fonte": "InfoMoney (20/06/2023)",
+        "url_fonte": "https://www.infomoney.com.br/politica/arcabouco-fiscal-omar-aziz-apresenta-relatorio-com-3-excecoes-ao-limite-de-despesas/",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "omar-aziz"
+        },
+        "candidate_id": "9fe469dc-058f-487d-b888-ba113f5535ae",
+        "slug": "omar-aziz"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 41,
+        "candidate_id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
+        "slug": "acm-neto",
+        "tema": "previdencia",
+        "url_fonte": "https://www.cms.ba.gov.br/noticias/prefeito-apresentou-a-vereadores-a-reforma-da-previdencia",
+        "posicao": "a_favor",
+        "reason": "Reforma municipal de Salvador de 2020 não é a reforma federal de 2019.",
+        "expected_descricao_sha256": "62a7b90dbe1cc9ab3a0fea288f4e9b89b61bfde34c9686c9af8304253b7edd89"
+      },
+      "status": "update",
+      "before": {
+        "id": "15ce6b67-a100-4674-bfb9-c8b228ceaf9c",
+        "candidato_id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
+        "tema": "previdencia",
+        "posicao": "a_favor",
+        "descricao": "Defendeu a urgência do ajuste atuarial e enviou o projeto da reforma previdenciária de Salvador elevando as alíquotas municipais para 14%. Citação (2020-02-18): \"Diante do déficit em torno de R$7 bilhões, a reforma da previdência dos servidores municipais, segundo o prefeito ACM Neto, se tornou inevitável.\"",
+        "fonte": "Câmara Municipal de Salvador (2020-02-18)",
+        "url_fonte": "https://www.cms.ba.gov.br/noticias/prefeito-apresentou-a-vereadores-a-reforma-da-previdencia",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "acm-neto"
+        },
+        "candidate_id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
+        "slug": "acm-neto"
+      },
+      "after": {
+        "id": "15ce6b67-a100-4674-bfb9-c8b228ceaf9c",
+        "candidato_id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
+        "tema": "previdencia",
+        "posicao": "a_favor",
+        "descricao": "Defendeu a urgência do ajuste atuarial e enviou o projeto da reforma previdenciária de Salvador elevando as alíquotas municipais para 14%. Citação (2020-02-18): \"Diante do déficit em torno de R$7 bilhões, a reforma da previdência dos servidores municipais, segundo o prefeito ACM Neto, se tornou inevitável.\"",
+        "fonte": "Câmara Municipal de Salvador (2020-02-18)",
+        "url_fonte": "https://www.cms.ba.gov.br/noticias/prefeito-apresentou-a-vereadores-a-reforma-da-previdencia",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "acm-neto"
+        },
+        "candidate_id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
+        "slug": "acm-neto"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 70,
+        "candidate_id": "3b724874-8769-44f3-aab3-06c0155dc155",
+        "slug": "leandro-grass",
+        "tema": "privatizacao_eletrobras",
+        "url_fonte": "https://www.cl.df.gov.br/-/lancada-frente-parlamentar-em-defesa-das-estatais-do-df",
+        "posicao": "contra",
+        "reason": "Defesa de estatais do DF não demonstra posição específica sobre a Eletrobras.",
+        "expected_descricao_sha256": "7539a2b2fa575e7ad14ed23d8ffecc47a073b7119a9d7c762b2dc890840eb5d0"
+      },
+      "status": "update",
+      "before": {
+        "id": "574c292f-d2d3-41a0-ab75-f8edc530499b",
+        "candidato_id": "3b724874-8769-44f3-aab3-06c0155dc155",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "contra",
+        "descricao": "Grass integrou frente parlamentar de defesa das estatais e se manifestou diretamente contra a privatização de serviços públicos. Citação (2019-10-10): \"Não podemos deixar transformarem direitos em mercadoria.\"",
+        "fonte": "Câmara Legislativa do Distrito Federal (2019-10-10)",
+        "url_fonte": "https://www.cl.df.gov.br/-/lancada-frente-parlamentar-em-defesa-das-estatais-do-df",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "leandro-grass"
+        },
+        "candidate_id": "3b724874-8769-44f3-aab3-06c0155dc155",
+        "slug": "leandro-grass"
+      },
+      "after": {
+        "id": "574c292f-d2d3-41a0-ab75-f8edc530499b",
+        "candidato_id": "3b724874-8769-44f3-aab3-06c0155dc155",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "contra",
+        "descricao": "Grass integrou frente parlamentar de defesa das estatais e se manifestou diretamente contra a privatização de serviços públicos. Citação (2019-10-10): \"Não podemos deixar transformarem direitos em mercadoria.\"",
+        "fonte": "Câmara Legislativa do Distrito Federal (2019-10-10)",
+        "url_fonte": "https://www.cl.df.gov.br/-/lancada-frente-parlamentar-em-defesa-das-estatais-do-df",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "leandro-grass"
+        },
+        "candidate_id": "3b724874-8769-44f3-aab3-06c0155dc155",
+        "slug": "leandro-grass"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 74,
+        "candidate_id": "17472d91-6cfc-453d-8481-4fac47d07f36",
+        "slug": "paula-belmonte",
+        "tema": "teto_gastos",
+        "url_fonte": "https://www.camara.leg.br/deputados/204377/votacoes-nominais-plenario/2021",
+        "posicao": "a_favor",
+        "reason": "PEC Emergencial de 2021 foi usada como proxy do teto de 2016; voto não foi extraído.",
+        "expected_descricao_sha256": "4c082098a75362bdf6ca54ce0355128b278b1349f7e13f6b3ad5af904370451b"
+      },
+      "status": "update",
+      "before": {
+        "id": "0b90b58d-2dab-410c-87f6-6b1b874d4679",
+        "candidato_id": "17472d91-6cfc-453d-8481-4fac47d07f36",
+        "tema": "teto_gastos",
+        "posicao": "a_favor",
+        "descricao": "Votou a favor da PEC Emergencial, que criou gatilhos de contenção fiscal; é evidência sobre regras fiscais, embora não seja o voto original do teto de 2016. Citação (2021-03-11): \"Proposta de Emenda à Constituição nº 186/2019 - 2º Turno | Sim\"",
+        "fonte": "Câmara dos Deputados (2021-03-11)",
+        "url_fonte": "https://www.camara.leg.br/deputados/204377/votacoes-nominais-plenario/2021",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "paula-belmonte"
+        },
+        "candidate_id": "17472d91-6cfc-453d-8481-4fac47d07f36",
+        "slug": "paula-belmonte"
+      },
+      "after": {
+        "id": "0b90b58d-2dab-410c-87f6-6b1b874d4679",
+        "candidato_id": "17472d91-6cfc-453d-8481-4fac47d07f36",
+        "tema": "teto_gastos",
+        "posicao": "a_favor",
+        "descricao": "Votou a favor da PEC Emergencial, que criou gatilhos de contenção fiscal; é evidência sobre regras fiscais, embora não seja o voto original do teto de 2016. Citação (2021-03-11): \"Proposta de Emenda à Constituição nº 186/2019 - 2º Turno | Sim\"",
+        "fonte": "Câmara dos Deputados (2021-03-11)",
+        "url_fonte": "https://www.camara.leg.br/deputados/204377/votacoes-nominais-plenario/2021",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "paula-belmonte"
+        },
+        "candidate_id": "17472d91-6cfc-453d-8481-4fac47d07f36",
+        "slug": "paula-belmonte"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 91,
+        "candidate_id": "a342036a-c436-400a-bd14-edefacad8d75",
+        "slug": "luis-cesar-bueno",
+        "tema": "previdencia",
+        "url_fonte": "https://portal.al.go.leg.br/noticias/82943/pacto-de-ajuste",
+        "posicao": "contra",
+        "reason": "Ajuste estadual goiano de 2016 não é a reforma federal de 2019.",
+        "expected_descricao_sha256": "4b591437e3b142223a504e6dc56172b48db34ea7ea821feae4e29fb5e3f4473d"
+      },
+      "status": "update",
+      "before": {
+        "id": "e2b3727c-fcff-4553-9abe-c314c493a14c",
+        "candidato_id": "a342036a-c436-400a-bd14-edefacad8d75",
+        "tema": "previdencia",
+        "posicao": "contra",
+        "descricao": "Votou contra a reforma previdenciária estadual que elevava a contribuição dos servidores. Citação (2016): \"Luis Cesar Bueno votou contra.\"",
+        "fonte": "Assembleia Legislativa de Goiás (2016)",
+        "url_fonte": "https://portal.al.go.leg.br/noticias/82943/pacto-de-ajuste",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "luis-cesar-bueno"
+        },
+        "candidate_id": "a342036a-c436-400a-bd14-edefacad8d75",
+        "slug": "luis-cesar-bueno"
+      },
+      "after": {
+        "id": "e2b3727c-fcff-4553-9abe-c314c493a14c",
+        "candidato_id": "a342036a-c436-400a-bd14-edefacad8d75",
+        "tema": "previdencia",
+        "posicao": "contra",
+        "descricao": "Votou contra a reforma previdenciária estadual que elevava a contribuição dos servidores. Citação (2016): \"Luis Cesar Bueno votou contra.\"",
+        "fonte": "Assembleia Legislativa de Goiás (2016)",
+        "url_fonte": "https://portal.al.go.leg.br/noticias/82943/pacto-de-ajuste",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "luis-cesar-bueno"
+        },
+        "candidate_id": "a342036a-c436-400a-bd14-edefacad8d75",
+        "slug": "luis-cesar-bueno"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 92,
+        "candidate_id": "a342036a-c436-400a-bd14-edefacad8d75",
+        "slug": "luis-cesar-bueno",
+        "tema": "privatizacao_eletrobras",
+        "url_fonte": "https://portal.al.go.leg.br/noticias-dos-gabinetes/3016/luis-cesar-bueno-fala-em-nome-da-oposicao-veja-o-discurso-completo",
+        "posicao": "contra",
+        "reason": "Discurso sobre patrimônio estadual goiano não é posição específica sobre a Eletrobras.",
+        "expected_descricao_sha256": "916b6717739369f7a4c2df2290be873a3d39efcf2eb0d15e296cc344bc88611a"
+      },
+      "status": "update",
+      "before": {
+        "id": "aa403308-c3fa-434f-ba1e-f2c5449d06a1",
+        "candidato_id": "a342036a-c436-400a-bd14-edefacad8d75",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "contra",
+        "descricao": "Declarou oposição explícita a privatizações e defendeu empresas estaduais sob controle público. Citação (anterior a 2024): \"Privatização [...] é coisa do passado. Não deu certo.\"",
+        "fonte": "Assembleia Legislativa de Goiás (anterior a 2024)",
+        "url_fonte": "https://portal.al.go.leg.br/noticias-dos-gabinetes/3016/luis-cesar-bueno-fala-em-nome-da-oposicao-veja-o-discurso-completo",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "luis-cesar-bueno"
+        },
+        "candidate_id": "a342036a-c436-400a-bd14-edefacad8d75",
+        "slug": "luis-cesar-bueno"
+      },
+      "after": {
+        "id": "aa403308-c3fa-434f-ba1e-f2c5449d06a1",
+        "candidato_id": "a342036a-c436-400a-bd14-edefacad8d75",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "contra",
+        "descricao": "Declarou oposição explícita a privatizações e defendeu empresas estaduais sob controle público. Citação (anterior a 2024): \"Privatização [...] é coisa do passado. Não deu certo.\"",
+        "fonte": "Assembleia Legislativa de Goiás (anterior a 2024)",
+        "url_fonte": "https://portal.al.go.leg.br/noticias-dos-gabinetes/3016/luis-cesar-bueno-fala-em-nome-da-oposicao-veja-o-discurso-completo",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "luis-cesar-bueno"
+        },
+        "candidate_id": "a342036a-c436-400a-bd14-edefacad8d75",
+        "slug": "luis-cesar-bueno"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 108,
+        "candidate_id": "ff7f433f-70b4-420c-885d-c0401a901790",
+        "slug": "cleitinho",
+        "tema": "reforma_trabalhista",
+        "url_fonte": "https://www12.senado.leg.br/noticias/materias/2026/05/27/cleitinho-defende-fim-da-escala-6x1-e-critica-privilegios-da-classe-politica",
+        "posicao": "contra",
+        "reason": "Título sobre escala 6x1 não certifica posição sobre a reforma de 2017 inteira.",
+        "expected_descricao_sha256": "aea8c76dd0c9d241455a0b91ebb93459be12f6ce987c1adfcc439262661c7aa2"
+      },
+      "status": "update",
+      "before": {
+        "id": "1f3e76fc-20d8-418a-8ac1-caedefc8c5c6",
+        "candidato_id": "ff7f433f-70b4-420c-885d-c0401a901790",
+        "tema": "reforma_trabalhista",
+        "posicao": "contra",
+        "descricao": "No recorte contemporâneo da jornada, defende o fim da escala 6x1, posição contrária ao avanço flexibilizante nesse ponto. Citação (2026-05-27): \"“Cleitinho defende fim da escala 6x1”\"",
+        "fonte": "Agência Senado (2026-05-27)",
+        "url_fonte": "https://www12.senado.leg.br/noticias/materias/2026/05/27/cleitinho-defende-fim-da-escala-6x1-e-critica-privilegios-da-classe-politica",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "cleitinho"
+        },
+        "candidate_id": "ff7f433f-70b4-420c-885d-c0401a901790",
+        "slug": "cleitinho"
+      },
+      "after": {
+        "id": "1f3e76fc-20d8-418a-8ac1-caedefc8c5c6",
+        "candidato_id": "ff7f433f-70b4-420c-885d-c0401a901790",
+        "tema": "reforma_trabalhista",
+        "posicao": "contra",
+        "descricao": "No recorte contemporâneo da jornada, defende o fim da escala 6x1, posição contrária ao avanço flexibilizante nesse ponto. Citação (2026-05-27): \"“Cleitinho defende fim da escala 6x1”\"",
+        "fonte": "Agência Senado (2026-05-27)",
+        "url_fonte": "https://www12.senado.leg.br/noticias/materias/2026/05/27/cleitinho-defende-fim-da-escala-6x1-e-critica-privilegios-da-classe-politica",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "cleitinho"
+        },
+        "candidate_id": "ff7f433f-70b4-420c-885d-c0401a901790",
+        "slug": "cleitinho"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 116,
+        "candidate_id": "f383d692-5872-444d-b107-794c00182bad",
+        "slug": "henrique-areas",
+        "tema": "transferencia_renda",
+        "url_fonte": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MG/20322002026/candidato/130002552308",
+        "posicao": "a_favor",
+        "reason": "TSE retornou HTTP 403; o bloqueio não refuta o programa citado.",
+        "expected_descricao_sha256": "b88187e6daa5a0675c8785f74515b51b21b717ecd89273a2dac1e625ac8cf80a"
+      },
+      "status": "update",
+      "before": {
+        "id": "7f715742-486e-4cbc-8196-c3b5d912d80a",
+        "candidato_id": "f383d692-5872-444d-b107-794c00182bad",
+        "tema": "transferencia_renda",
+        "posicao": "a_favor",
+        "descricao": "Defende auxílio emergencial e Bolsa Família de pelo menos um salário mínimo. Consta na proposta de governo que o candidato registrou no TSE (arquivo PCOprogramadegoverno2026.pdf, nº 130017111443), que é o programa do PCO: “Auxílio emergencial de verdade, Bolsa Família de pelo menos um salário mínimo, enquanto durar a situação de caos atual”.",
+        "fonte": "Proposta de governo registrada no TSE por henrique-areas (arquivo 130017111443), programa do PCO para 2026",
+        "url_fonte": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MG/20322002026/candidato/130002552308",
+        "verificado": true,
+        "gerado_por": "programa-pco-tse-20260817",
+        "created_at": "2026-08-17T20:16:14.106586+00:00",
+        "candidatos": {
+          "slug": "henrique-areas"
+        },
+        "candidate_id": "f383d692-5872-444d-b107-794c00182bad",
+        "slug": "henrique-areas"
+      },
+      "after": {
+        "id": "7f715742-486e-4cbc-8196-c3b5d912d80a",
+        "candidato_id": "f383d692-5872-444d-b107-794c00182bad",
+        "tema": "transferencia_renda",
+        "posicao": "a_favor",
+        "descricao": "Defende auxílio emergencial e Bolsa Família de pelo menos um salário mínimo. Consta na proposta de governo que o candidato registrou no TSE (arquivo PCOprogramadegoverno2026.pdf, nº 130017111443), que é o programa do PCO: “Auxílio emergencial de verdade, Bolsa Família de pelo menos um salário mínimo, enquanto durar a situação de caos atual”.",
+        "fonte": "Proposta de governo registrada no TSE por henrique-areas (arquivo 130017111443), programa do PCO para 2026",
+        "url_fonte": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MG/20322002026/candidato/130002552308",
+        "verificado": false,
+        "gerado_por": "programa-pco-tse-20260817",
+        "created_at": "2026-08-17T20:16:14.106586+00:00",
+        "candidatos": {
+          "slug": "henrique-areas"
+        },
+        "candidate_id": "f383d692-5872-444d-b107-794c00182bad",
+        "slug": "henrique-areas"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 119,
+        "candidate_id": "6e37f628-6335-4009-8e49-80aa421650a0",
+        "slug": "mateus-simoes",
+        "tema": "privatizacao_eletrobras",
+        "url_fonte": "https://www.diariodoaco.com.br/noticia/0129175-em-ipatinga-simoes-diz-que-resistencia-a-privatizacao-da-copasa-e-147minima8221-e-defende-venda-da-estatal",
+        "posicao": "a_favor",
+        "reason": "Defesa da privatização da Copasa não comprova posição sobre a Eletrobras.",
+        "expected_descricao_sha256": "a8373a3fc6f9ed432ab2abfef9637d6c185dd8b1f0d1cdfcf1762ce0529fca4d"
+      },
+      "status": "update",
+      "before": {
+        "id": "d015e921-48a8-4b69-8bea-8c9f8d3b2b01",
+        "candidato_id": "6e37f628-6335-4009-8e49-80aa421650a0",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "a_favor",
+        "descricao": "Defende a privatização da Copasa, evidência recente de posição favorável à venda de estatais. Citação (2025-11-14): \"“seria necessário privatizar a empresa para que um melhor serviço seja entregue”\"",
+        "fonte": "Diário do Aço (2025-11-14)",
+        "url_fonte": "https://www.diariodoaco.com.br/noticia/0129175-em-ipatinga-simoes-diz-que-resistencia-a-privatizacao-da-copasa-e-147minima8221-e-defende-venda-da-estatal",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "mateus-simoes"
+        },
+        "candidate_id": "6e37f628-6335-4009-8e49-80aa421650a0",
+        "slug": "mateus-simoes"
+      },
+      "after": {
+        "id": "d015e921-48a8-4b69-8bea-8c9f8d3b2b01",
+        "candidato_id": "6e37f628-6335-4009-8e49-80aa421650a0",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "a_favor",
+        "descricao": "Defende a privatização da Copasa, evidência recente de posição favorável à venda de estatais. Citação (2025-11-14): \"“seria necessário privatizar a empresa para que um melhor serviço seja entregue”\"",
+        "fonte": "Diário do Aço (2025-11-14)",
+        "url_fonte": "https://www.diariodoaco.com.br/noticia/0129175-em-ipatinga-simoes-diz-que-resistencia-a-privatizacao-da-copasa-e-147minima8221-e-defende-venda-da-estatal",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "mateus-simoes"
+        },
+        "candidate_id": "6e37f628-6335-4009-8e49-80aa421650a0",
+        "slug": "mateus-simoes"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 130,
+        "candidate_id": "a8a86164-4000-4bbe-ac11-c02b90955ea5",
+        "slug": "otaviano-pivetta",
+        "tema": "previdencia",
+        "url_fonte": "https://www.hnt.com.br/politica/mt-adotou-as-medidas-necessarias-para-recuperacao-da-previdencia-diz-vice-governador/513443",
+        "posicao": "a_favor",
+        "reason": "Defesa da previdência estadual de Mato Grosso não é a reforma federal de 2019.",
+        "expected_descricao_sha256": "61e3676a79adc5dbd5e6a016dcbc2da00c584635755f71caef68270a17670d1f"
+      },
+      "status": "update",
+      "before": {
+        "id": "42969006-c711-463f-af12-64e7822cf9d2",
+        "candidato_id": "a8a86164-4000-4bbe-ac11-c02b90955ea5",
+        "tema": "previdencia",
+        "posicao": "a_favor",
+        "descricao": "Em 2025, Pivetta defendeu diretamente a reforma previdenciária estadual de 2020 e atribuiu a ela a recuperação do regime. Citação (2025-10-09): \"adotou [...] as medidas que eram necessárias para a recuperação da previdência dos servidores estaduais\"",
+        "fonte": "HiperNotícias (2025-10-09)",
+        "url_fonte": "https://www.hnt.com.br/politica/mt-adotou-as-medidas-necessarias-para-recuperacao-da-previdencia-diz-vice-governador/513443",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "otaviano-pivetta"
+        },
+        "candidate_id": "a8a86164-4000-4bbe-ac11-c02b90955ea5",
+        "slug": "otaviano-pivetta"
+      },
+      "after": {
+        "id": "42969006-c711-463f-af12-64e7822cf9d2",
+        "candidato_id": "a8a86164-4000-4bbe-ac11-c02b90955ea5",
+        "tema": "previdencia",
+        "posicao": "a_favor",
+        "descricao": "Em 2025, Pivetta defendeu diretamente a reforma previdenciária estadual de 2020 e atribuiu a ela a recuperação do regime. Citação (2025-10-09): \"adotou [...] as medidas que eram necessárias para a recuperação da previdência dos servidores estaduais\"",
+        "fonte": "HiperNotícias (2025-10-09)",
+        "url_fonte": "https://www.hnt.com.br/politica/mt-adotou-as-medidas-necessarias-para-recuperacao-da-previdencia-diz-vice-governador/513443",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "otaviano-pivetta"
+        },
+        "candidate_id": "a8a86164-4000-4bbe-ac11-c02b90955ea5",
+        "slug": "otaviano-pivetta"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 150,
+        "candidate_id": "8a59da03-a2ad-4385-9516-eb738f970df0",
+        "slug": "ivan-moraes",
+        "tema": "privatizacao_eletrobras",
+        "url_fonte": "https://psolpe50.org/ivan-moraes-e-o-unico-pre-candidato-ao-governo-de-pernambuco-contrario-a-privatizacao-do-metro-do-recife",
+        "posicao": "contra",
+        "reason": "Defesa do Metrô do Recife público não comprova posição específica sobre a Eletrobras.",
+        "expected_descricao_sha256": "d7e717a0b4b552d6b0435417adb8a9cb8a90964d342e9b2951d9fb8c69b4e29f"
+      },
+      "status": "update",
+      "before": {
+        "id": "25140285-6478-4805-95cb-c95cbffe4b82",
+        "candidato_id": "8a59da03-a2ad-4385-9516-eb738f970df0",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "contra",
+        "descricao": "Posicionou-se frontalmente contrário à privatização e concessão de empresas públicas, como o Metrô do Recife e a Compesa. Citação (2026-07-10): \"Da governadora, não esperava atitude diferente. Afinal, até a água ela quer transformar em mercadoria... Privatizar não é a solução.\"",
+        "fonte": "Portal PSOL PE (2026-07-10)",
+        "url_fonte": "https://psolpe50.org/ivan-moraes-e-o-unico-pre-candidato-ao-governo-de-pernambuco-contrario-a-privatizacao-do-metro-do-recife",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "ivan-moraes"
+        },
+        "candidate_id": "8a59da03-a2ad-4385-9516-eb738f970df0",
+        "slug": "ivan-moraes"
+      },
+      "after": {
+        "id": "25140285-6478-4805-95cb-c95cbffe4b82",
+        "candidato_id": "8a59da03-a2ad-4385-9516-eb738f970df0",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "contra",
+        "descricao": "Posicionou-se frontalmente contrário à privatização e concessão de empresas públicas, como o Metrô do Recife e a Compesa. Citação (2026-07-10): \"Da governadora, não esperava atitude diferente. Afinal, até a água ela quer transformar em mercadoria... Privatizar não é a solução.\"",
+        "fonte": "Portal PSOL PE (2026-07-10)",
+        "url_fonte": "https://psolpe50.org/ivan-moraes-e-o-unico-pre-candidato-ao-governo-de-pernambuco-contrario-a-privatizacao-do-metro-do-recife",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "ivan-moraes"
+        },
+        "candidate_id": "8a59da03-a2ad-4385-9516-eb738f970df0",
+        "slug": "ivan-moraes"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 152,
+        "candidate_id": "022d27e8-2832-4156-9bc7-7eac817ac901",
+        "slug": "raquel-lyra",
+        "tema": "privatizacao_eletrobras",
+        "url_fonte": "https://blogcenario.com.br/2026/04/29/raquel-lyra-assina-concessao-parcial-da-compesa",
+        "posicao": "a_favor",
+        "reason": "Concessão parcial da Compesa não comprova posição sobre a Eletrobras.",
+        "expected_descricao_sha256": "029c5e46d8361c18688ed7c86165ac9fac5f4f8ab2a4d4ba3da8fb98839087cf"
+      },
+      "status": "update",
+      "before": {
+        "id": "8d5a0c09-8525-4e3f-93fa-a78f1d1d5499",
+        "candidato_id": "022d27e8-2832-4156-9bc7-7eac817ac901",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "a_favor",
+        "descricao": "Defendeu concessões e parcerias com o setor privado como solução para a infraestrutura estadual, assinando a concessão parcial dos serviços da Compesa. Citação (2026-04-29): \"Essa assinatura é uma das obras mais importantes da nossa história. Agradeço a iniciativa privada que entendeu que o nosso Estado é um bom lugar para se investir\"",
+        "fonte": "Blog Cenário (2026-04-29)",
+        "url_fonte": "https://blogcenario.com.br/2026/04/29/raquel-lyra-assina-concessao-parcial-da-compesa",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "raquel-lyra"
+        },
+        "candidate_id": "022d27e8-2832-4156-9bc7-7eac817ac901",
+        "slug": "raquel-lyra"
+      },
+      "after": {
+        "id": "8d5a0c09-8525-4e3f-93fa-a78f1d1d5499",
+        "candidato_id": "022d27e8-2832-4156-9bc7-7eac817ac901",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "a_favor",
+        "descricao": "Defendeu concessões e parcerias com o setor privado como solução para a infraestrutura estadual, assinando a concessão parcial dos serviços da Compesa. Citação (2026-04-29): \"Essa assinatura é uma das obras mais importantes da nossa história. Agradeço a iniciativa privada que entendeu que o nosso Estado é um bom lugar para se investir\"",
+        "fonte": "Blog Cenário (2026-04-29)",
+        "url_fonte": "https://blogcenario.com.br/2026/04/29/raquel-lyra-assina-concessao-parcial-da-compesa",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "raquel-lyra"
+        },
+        "candidate_id": "022d27e8-2832-4156-9bc7-7eac817ac901",
+        "slug": "raquel-lyra"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 159,
+        "candidate_id": "e2648b98-f9a9-4487-9fdd-49609ac520d6",
+        "slug": "geraldo-carvalho",
+        "tema": "privatizacao_eletrobras",
+        "url_fonte": "https://opiniaosocialista.com.br/pre-candidato-do-pstu-denuncia-rafael-fonteles-do-pt-esta-entregando-o-piuai/",
+        "posicao": "contra",
+        "reason": "Crítica a empresas estaduais do Piauí não prova posição sobre a Eletrobras.",
+        "expected_descricao_sha256": "79e2c13076468f6e1f90cdc66763f597c560e2e0822cced95893ff5f03dfbfc0"
+      },
+      "status": "update",
+      "before": {
+        "id": "2df9d693-7178-4a08-9706-7e1ac859a679",
+        "candidato_id": "e2648b98-f9a9-4487-9fdd-49609ac520d6",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "contra",
+        "descricao": "Manifestou-se frontalmente contrário à privatização de empresas públicas estaduais e concessões de saneamento e infraestrutura. Citação (2024-05-15): \"está privatizando todo o estado do Piauí, está vendendo a preço de banana os recursos que tem o nosso estado, e o patrimônio que são as empresas.\"",
+        "fonte": "Opinião Socialista (2024-05-15)",
+        "url_fonte": "https://opiniaosocialista.com.br/pre-candidato-do-pstu-denuncia-rafael-fonteles-do-pt-esta-entregando-o-piuai/",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "geraldo-carvalho"
+        },
+        "candidate_id": "e2648b98-f9a9-4487-9fdd-49609ac520d6",
+        "slug": "geraldo-carvalho"
+      },
+      "after": {
+        "id": "2df9d693-7178-4a08-9706-7e1ac859a679",
+        "candidato_id": "e2648b98-f9a9-4487-9fdd-49609ac520d6",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "contra",
+        "descricao": "Manifestou-se frontalmente contrário à privatização de empresas públicas estaduais e concessões de saneamento e infraestrutura. Citação (2024-05-15): \"está privatizando todo o estado do Piauí, está vendendo a preço de banana os recursos que tem o nosso estado, e o patrimônio que são as empresas.\"",
+        "fonte": "Opinião Socialista (2024-05-15)",
+        "url_fonte": "https://opiniaosocialista.com.br/pre-candidato-do-pstu-denuncia-rafael-fonteles-do-pt-esta-entregando-o-piuai/",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "geraldo-carvalho"
+        },
+        "candidate_id": "e2648b98-f9a9-4487-9fdd-49609ac520d6",
+        "slug": "geraldo-carvalho"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 186,
+        "candidate_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+        "slug": "alvaro-dias-rn",
+        "tema": "previdencia",
+        "url_fonte": "https://www.cut.org.br/noticias/reforma-da-previdencia-de-natal-retira-direitos-e-destroi-sonhos-dos-servidores-e45f",
+        "posicao": "a_favor",
+        "reason": "Reforma municipal de Natal de 2022 não é a reforma federal de 2019.",
+        "expected_descricao_sha256": "f4912d856281ccda192c55022ad9a68009f5ddb83b2ad102dc995f0f2f49aae5"
+      },
+      "status": "update",
+      "before": {
+        "id": "f89c3d1d-7b19-4924-9c25-10cc4365fa46",
+        "candidato_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+        "tema": "previdencia",
+        "posicao": "a_favor",
+        "descricao": "Enviou e sancionou a Reforma da Previdência municipal de Natal aumentando a idade e o tempo de contribuição dos servidores públicos. Citação (2022-06-30): \"Os vereadores aprovaram a reforma da Previdência, que altera as regras para a aposentadoria dos servidores públicos da capital, aumentando o tempo de contribuição\"",
+        "fonte": "CUT Brasil (2022-06-30)",
+        "url_fonte": "https://www.cut.org.br/noticias/reforma-da-previdencia-de-natal-retira-direitos-e-destroi-sonhos-dos-servidores-e45f",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "alvaro-dias-rn"
+        },
+        "candidate_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+        "slug": "alvaro-dias-rn"
+      },
+      "after": {
+        "id": "f89c3d1d-7b19-4924-9c25-10cc4365fa46",
+        "candidato_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+        "tema": "previdencia",
+        "posicao": "a_favor",
+        "descricao": "Enviou e sancionou a Reforma da Previdência municipal de Natal aumentando a idade e o tempo de contribuição dos servidores públicos. Citação (2022-06-30): \"Os vereadores aprovaram a reforma da Previdência, que altera as regras para a aposentadoria dos servidores públicos da capital, aumentando o tempo de contribuição\"",
+        "fonte": "CUT Brasil (2022-06-30)",
+        "url_fonte": "https://www.cut.org.br/noticias/reforma-da-previdencia-de-natal-retira-direitos-e-destroi-sonhos-dos-servidores-e45f",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "alvaro-dias-rn"
+        },
+        "candidate_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+        "slug": "alvaro-dias-rn"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 187,
+        "candidate_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+        "slug": "alvaro-dias-rn",
+        "tema": "privatizacao_eletrobras",
+        "url_fonte": "https://braziljournal.com/alvaro-dias-o-centro-vai-acabar-dividido/",
+        "posicao": "a_favor",
+        "reason": "A fonte trata de Alvaro Fernandes Dias, PR, e foi atribuída ao Alvaro Costa Dias, RN.",
+        "expected_descricao_sha256": "c9a47fa5827fc53a97667176f182aa42ed860070e846d58c5f99ad2d76bd9d49"
+      },
+      "status": "update",
+      "before": {
+        "id": "584db420-224e-4a89-b2fb-246fbeb8831a",
+        "candidato_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "a_favor",
+        "descricao": "Defendeu a inevitabilidade de amplos programas de desestatização de ativos federais e estaduais para reduzir o gigantismo do Estado. Citação (2018-06-20): \"A privatização de modo geral é inevitável... inaugurar um grande programa de privatização já que temos 146 empresas estatais federais.\"",
+        "fonte": "Brazil Journal (2018-06-20)",
+        "url_fonte": "https://braziljournal.com/alvaro-dias-o-centro-vai-acabar-dividido/",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "alvaro-dias-rn"
+        },
+        "candidate_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+        "slug": "alvaro-dias-rn"
+      },
+      "after": {
+        "id": "584db420-224e-4a89-b2fb-246fbeb8831a",
+        "candidato_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "a_favor",
+        "descricao": "Defendeu a inevitabilidade de amplos programas de desestatização de ativos federais e estaduais para reduzir o gigantismo do Estado. Citação (2018-06-20): \"A privatização de modo geral é inevitável... inaugurar um grande programa de privatização já que temos 146 empresas estatais federais.\"",
+        "fonte": "Brazil Journal (2018-06-20)",
+        "url_fonte": "https://braziljournal.com/alvaro-dias-o-centro-vai-acabar-dividido/",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "alvaro-dias-rn"
+        },
+        "candidate_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+        "slug": "alvaro-dias-rn"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 218,
+        "candidate_id": "b01d3b26-32d0-48c3-9242-6c6b324b249d",
+        "slug": "gabriel-souza",
+        "tema": "privatizacao_eletrobras",
+        "url_fonte": "https://www.radiocolonial.com.br/noticia%2C22497%2CA-chance-do-Banrisul-ser-privatizado-e-zero-afirma-Gabriel-Souza",
+        "posicao": "ambiguo",
+        "reason": "Trecho sobre Banrisul não comprova ambiguidade sobre a Eletrobras.",
+        "expected_descricao_sha256": "d9638502a01757b0ddb08e7fa257274fcaf152d186aba447fc18a84b8ebbf515"
+      },
+      "status": "update",
+      "before": {
+        "id": "635dfc76-5b80-4a9b-bfd5-1df185e3ac88",
+        "candidato_id": "b01d3b26-32d0-48c3-9242-6c6b324b249d",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "ambiguo",
+        "descricao": "Descartou privatizar o Banrisul, mas posteriormente passou a destacar benefícios de privatizações e investimento privado em outros setores; a posição depende da estatal. Citação (2017 (data exata não especificada no resultado recuperado)): \"A chance do Banrisul ser privatizado é zero. Repito: zero por cento. Essa hipótese não existe.\"",
+        "fonte": "Rádio Colonial (2017 (data exata não especificada no resultado recuperado))",
+        "url_fonte": "https://www.radiocolonial.com.br/noticia%2C22497%2CA-chance-do-Banrisul-ser-privatizado-e-zero-afirma-Gabriel-Souza",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "gabriel-souza"
+        },
+        "candidate_id": "b01d3b26-32d0-48c3-9242-6c6b324b249d",
+        "slug": "gabriel-souza"
+      },
+      "after": {
+        "id": "635dfc76-5b80-4a9b-bfd5-1df185e3ac88",
+        "candidato_id": "b01d3b26-32d0-48c3-9242-6c6b324b249d",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "ambiguo",
+        "descricao": "Descartou privatizar o Banrisul, mas posteriormente passou a destacar benefícios de privatizações e investimento privado em outros setores; a posição depende da estatal. Citação (2017 (data exata não especificada no resultado recuperado)): \"A chance do Banrisul ser privatizado é zero. Repito: zero por cento. Essa hipótese não existe.\"",
+        "fonte": "Rádio Colonial (2017 (data exata não especificada no resultado recuperado))",
+        "url_fonte": "https://www.radiocolonial.com.br/noticia%2C22497%2CA-chance-do-Banrisul-ser-privatizado-e-zero-afirma-Gabriel-Souza",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "gabriel-souza"
+        },
+        "candidate_id": "b01d3b26-32d0-48c3-9242-6c6b324b249d",
+        "slug": "gabriel-souza"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 240,
+        "candidate_id": "8e6f8d4c-7981-499e-b03b-5778e1db704d",
+        "slug": "valmir-de-francisquinho",
+        "tema": "previdencia",
+        "url_fonte": "https://www.clicksergipe.com.br/politica/4/75522/valmir-de-francisquinho-diz-que-fim-do-desconto-para-a-previdencia-e-vitoria-dos-servidores-e-da-oposicao.html",
+        "posicao": "contra",
+        "reason": "Crítica a desconto previdenciário em Sergipe não é posição sobre a reforma federal de 2019.",
+        "expected_descricao_sha256": "f439f8ccc25ae94ab3e48cce75991e5e5cf8332a2e91055af741d6df98d55c7c"
+      },
+      "status": "update",
+      "before": {
+        "id": "d3e93694-475d-4b69-b7bc-294465912c1d",
+        "candidato_id": "8e6f8d4c-7981-499e-b03b-5778e1db704d",
+        "tema": "previdencia",
+        "posicao": "contra",
+        "descricao": "Manifestou-se frontalmente contrário ao aumento de alíquotas e descontos previdenciários incidentes sobre aposentados e servidores. Citação (2024-03-15): \"Valmir de Francisquinho diz que fim do desconto para a Previdência é vitória dos servidores e da oposição\"",
+        "fonte": "Click Sergipe (2024-03-15)",
+        "url_fonte": "https://www.clicksergipe.com.br/politica/4/75522/valmir-de-francisquinho-diz-que-fim-do-desconto-para-a-previdencia-e-vitoria-dos-servidores-e-da-oposicao.html",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "valmir-de-francisquinho"
+        },
+        "candidate_id": "8e6f8d4c-7981-499e-b03b-5778e1db704d",
+        "slug": "valmir-de-francisquinho"
+      },
+      "after": {
+        "id": "d3e93694-475d-4b69-b7bc-294465912c1d",
+        "candidato_id": "8e6f8d4c-7981-499e-b03b-5778e1db704d",
+        "tema": "previdencia",
+        "posicao": "contra",
+        "descricao": "Manifestou-se frontalmente contrário ao aumento de alíquotas e descontos previdenciários incidentes sobre aposentados e servidores. Citação (2024-03-15): \"Valmir de Francisquinho diz que fim do desconto para a Previdência é vitória dos servidores e da oposição\"",
+        "fonte": "Click Sergipe (2024-03-15)",
+        "url_fonte": "https://www.clicksergipe.com.br/politica/4/75522/valmir-de-francisquinho-diz-que-fim-do-desconto-para-a-previdencia-e-vitoria-dos-servidores-e-da-oposicao.html",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "valmir-de-francisquinho"
+        },
+        "candidate_id": "8e6f8d4c-7981-499e-b03b-5778e1db704d",
+        "slug": "valmir-de-francisquinho"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 276,
+        "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+        "slug": "augusto-cury",
+        "tema": "reforma_trabalhista",
+        "url_fonte": "https://veronoticias.com/politica/augusto-cury-critica-polarizacao-na-marcha-dos-prefeitos/",
+        "posicao": "contra",
+        "reason": "Fim da escala 6x1 e jornada 5x2 não provam posição sobre a reforma de 2017 inteira.",
+        "expected_descricao_sha256": "65fd54bbd08facd697bc241e0344732a692cc7333f17437dfe12c71321cb61f5"
+      },
+      "status": "update",
+      "before": {
+        "id": "d05c9a89-4b6e-4185-83c8-14864e43df11",
+        "candidato_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+        "tema": "reforma_trabalhista",
+        "posicao": "contra",
+        "descricao": "Posiciona-se abertamente contra o modelo de escala 6x1 e apoia a institucionalização da jornada de trabalho 5x2. Citação (2026-08-14): \"declarou apoio ao fim da escala 6×1 e defendeu uma jornada de trabalho 5×2\"",
+        "fonte": "Vero Notícias (2026-08-14)",
+        "url_fonte": "https://veronoticias.com/politica/augusto-cury-critica-polarizacao-na-marcha-dos-prefeitos/",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "augusto-cury"
+        },
+        "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+        "slug": "augusto-cury"
+      },
+      "after": {
+        "id": "d05c9a89-4b6e-4185-83c8-14864e43df11",
+        "candidato_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+        "tema": "reforma_trabalhista",
+        "posicao": "contra",
+        "descricao": "Posiciona-se abertamente contra o modelo de escala 6x1 e apoia a institucionalização da jornada de trabalho 5x2. Citação (2026-08-14): \"declarou apoio ao fim da escala 6×1 e defendeu uma jornada de trabalho 5×2\"",
+        "fonte": "Vero Notícias (2026-08-14)",
+        "url_fonte": "https://veronoticias.com/politica/augusto-cury-critica-polarizacao-na-marcha-dos-prefeitos/",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "augusto-cury"
+        },
+        "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+        "slug": "augusto-cury"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 287,
+        "candidate_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+        "slug": "flavio-bolsonaro",
+        "tema": "reforma_trabalhista",
+        "url_fonte": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-05/flavio-bolsonaro-sugere-pagamento-por-hora-em-alternativa-escala-6x1",
+        "posicao": "a_favor",
+        "reason": "Página desativada; texto indexado não certifica o corpo completo nem a reforma de 2017.",
+        "expected_descricao_sha256": "6a993c4fa8f4c36ab91314c95933cdc8da13732a12083cb2f7539e3d975274f2"
+      },
+      "status": "update",
+      "before": {
+        "id": "db8e94dc-f5a5-404d-bfc7-af259c34c4b0",
+        "candidato_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+        "tema": "reforma_trabalhista",
+        "posicao": "a_favor",
+        "descricao": "Defende uma legislação trabalhista mais flexível, com pagamento por hora e maior liberdade de negociação, mantendo apenas direitos proporcionais; não participou da votação da reforma de 2017 por não ocupar mandato na Câmara à época.",
+        "fonte": "Agência Brasil — proposta de pagamento por hora e flexibilização da legislação trabalhista",
+        "url_fonte": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-05/flavio-bolsonaro-sugere-pagamento-por-hora-em-alternativa-escala-6x1",
+        "verificado": true,
+        "gerado_por": "curadoria",
+        "created_at": "2026-04-05T01:11:25.620859+00:00",
+        "candidatos": {
+          "slug": "flavio-bolsonaro"
+        },
+        "candidate_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+        "slug": "flavio-bolsonaro"
+      },
+      "after": {
+        "id": "db8e94dc-f5a5-404d-bfc7-af259c34c4b0",
+        "candidato_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+        "tema": "reforma_trabalhista",
+        "posicao": "a_favor",
+        "descricao": "Defende uma legislação trabalhista mais flexível, com pagamento por hora e maior liberdade de negociação, mantendo apenas direitos proporcionais; não participou da votação da reforma de 2017 por não ocupar mandato na Câmara à época.",
+        "fonte": "Agência Brasil — proposta de pagamento por hora e flexibilização da legislação trabalhista",
+        "url_fonte": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-05/flavio-bolsonaro-sugere-pagamento-por-hora-em-alternativa-escala-6x1",
+        "verificado": false,
+        "gerado_por": "curadoria",
+        "created_at": "2026-04-05T01:11:25.620859+00:00",
+        "candidatos": {
+          "slug": "flavio-bolsonaro"
+        },
+        "candidate_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+        "slug": "flavio-bolsonaro"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 288,
+        "candidate_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+        "slug": "flavio-bolsonaro",
+        "tema": "teto_gastos",
+        "url_fonte": "https://www.congressoemfoco.com.br/noticia/9640/arcabouco-fiscal-veja-como-votou-cada-senador",
+        "posicao": "a_favor",
+        "reason": "Voto no arcabouço de 2023 não demonstra apoio ao teto de 2016.",
+        "expected_descricao_sha256": "dc93a11df749b13dfa6fd393681baf3e8d7f1f20701b48e9720c0bb3a8bb5b30"
+      },
+      "status": "update",
+      "before": {
+        "id": "b482e817-0418-46d8-bcff-96ab04309fa5",
+        "candidato_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+        "tema": "teto_gastos",
+        "posicao": "a_favor",
+        "descricao": "Votou contra o Novo Arcabouço Fiscal em defesa da manutenção de restrições nominais de gastos públicos e austeridade. Citação (2023-06-21): \"Carlos Portinho, PL, NÃO. Flávio Bolsonaro, PL, NÃO. Romário, PL, NÃO.\"",
+        "fonte": "Congresso em Foco (2023-06-21)",
+        "url_fonte": "https://www.congressoemfoco.com.br/noticia/9640/arcabouco-fiscal-veja-como-votou-cada-senador",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-14T16:40:35.466433+00:00",
+        "candidatos": {
+          "slug": "flavio-bolsonaro"
+        },
+        "candidate_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+        "slug": "flavio-bolsonaro"
+      },
+      "after": {
+        "id": "b482e817-0418-46d8-bcff-96ab04309fa5",
+        "candidato_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+        "tema": "teto_gastos",
+        "posicao": "a_favor",
+        "descricao": "Votou contra o Novo Arcabouço Fiscal em defesa da manutenção de restrições nominais de gastos públicos e austeridade. Citação (2023-06-21): \"Carlos Portinho, PL, NÃO. Flávio Bolsonaro, PL, NÃO. Romário, PL, NÃO.\"",
+        "fonte": "Congresso em Foco (2023-06-21)",
+        "url_fonte": "https://www.congressoemfoco.com.br/noticia/9640/arcabouco-fiscal-veja-como-votou-cada-senador",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-14T16:40:35.466433+00:00",
+        "candidatos": {
+          "slug": "flavio-bolsonaro"
+        },
+        "candidate_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+        "slug": "flavio-bolsonaro"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 300,
+        "candidate_id": "4cbc3b25-075a-4d87-89bd-58d1e0b2a5f2",
+        "slug": "renan-santos",
+        "tema": "reforma_trabalhista",
+        "url_fonte": "https://www.youtube.com/watch?v=4UdCx0QYRSk",
+        "posicao": "a_favor",
+        "reason": "Há apenas metadados do vídeo, sem transcrição ou reprodução verificável.",
+        "expected_descricao_sha256": "6fbdad50e90d74eb4ade5fa56311f1b19e2b980f38977ffdc0b95431e75ee346"
+      },
+      "status": "update",
+      "before": {
+        "id": "b06466ac-1cd7-4a16-bd83-572eef34a324",
+        "candidato_id": "4cbc3b25-075a-4d87-89bd-58d1e0b2a5f2",
+        "tema": "reforma_trabalhista",
+        "posicao": "a_favor",
+        "descricao": "Opõe-se expressamente à extinção da jornada de trabalho 6x1, classificando a iniciativa legislativa como eleitoreira. Citação (2026-08-01): \"afirmou em entrevista à CNN Brasil nesta sexta-feira (1º) que acabar com a jornada de trabalho 6x1 é enganar o trabalhador\"",
+        "fonte": "CNN Brasil (2026-08-01)",
+        "url_fonte": "https://www.youtube.com/watch?v=4UdCx0QYRSk",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "renan-santos"
+        },
+        "candidate_id": "4cbc3b25-075a-4d87-89bd-58d1e0b2a5f2",
+        "slug": "renan-santos"
+      },
+      "after": {
+        "id": "b06466ac-1cd7-4a16-bd83-572eef34a324",
+        "candidato_id": "4cbc3b25-075a-4d87-89bd-58d1e0b2a5f2",
+        "tema": "reforma_trabalhista",
+        "posicao": "a_favor",
+        "descricao": "Opõe-se expressamente à extinção da jornada de trabalho 6x1, classificando a iniciativa legislativa como eleitoreira. Citação (2026-08-01): \"afirmou em entrevista à CNN Brasil nesta sexta-feira (1º) que acabar com a jornada de trabalho 6x1 é enganar o trabalhador\"",
+        "fonte": "CNN Brasil (2026-08-01)",
+        "url_fonte": "https://www.youtube.com/watch?v=4UdCx0QYRSk",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "renan-santos"
+        },
+        "candidate_id": "4cbc3b25-075a-4d87-89bd-58d1e0b2a5f2",
+        "slug": "renan-santos"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 304,
+        "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+        "slug": "romeu-zema",
+        "tema": "privatizacao_eletrobras",
+        "url_fonte": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/08/11/plano-de-governo-romeu-zema-eleicoes-2026-propostas.ghtml",
+        "posicao": "a_favor",
+        "reason": "Proposta genérica de privatizar estatais não demonstra avaliação específica da Eletrobras.",
+        "expected_descricao_sha256": "fbfd88f4c4c66f04c0a2e3d1a499e12a646ec6fb8cab77a4f8e4a41737d5f4b7"
+      },
+      "status": "update",
+      "before": {
+        "id": "3891e3a0-d1c1-4f72-bd77-b0a3583142cb",
+        "candidato_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "a_favor",
+        "descricao": "O mesmo plano propõe privatizar todas as empresas estatais (P7 inclui privatizações além da Eletrobras). O g1 registra exceção descrita como fatiamento da Petrobras; a regra geral é desestatizar o conjunto das estatais.",
+        "fonte": "g1: plano de governo Romeu Zema (11/08/2026)",
+        "url_fonte": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/08/11/plano-de-governo-romeu-zema-eleicoes-2026-propostas.ghtml",
+        "verificado": true,
+        "gerado_por": "onda-p-20260814-p7",
+        "created_at": "2026-08-14T16:40:37.367283+00:00",
+        "candidatos": {
+          "slug": "romeu-zema"
+        },
+        "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+        "slug": "romeu-zema"
+      },
+      "after": {
+        "id": "3891e3a0-d1c1-4f72-bd77-b0a3583142cb",
+        "candidato_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+        "tema": "privatizacao_eletrobras",
+        "posicao": "a_favor",
+        "descricao": "O mesmo plano propõe privatizar todas as empresas estatais (P7 inclui privatizações além da Eletrobras). O g1 registra exceção descrita como fatiamento da Petrobras; a regra geral é desestatizar o conjunto das estatais.",
+        "fonte": "g1: plano de governo Romeu Zema (11/08/2026)",
+        "url_fonte": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/08/11/plano-de-governo-romeu-zema-eleicoes-2026-propostas.ghtml",
+        "verificado": false,
+        "gerado_por": "onda-p-20260814-p7",
+        "created_at": "2026-08-14T16:40:37.367283+00:00",
+        "candidatos": {
+          "slug": "romeu-zema"
+        },
+        "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+        "slug": "romeu-zema"
+      }
+    },
+    {
+      "entry": {
+        "global_index": 188,
+        "candidate_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+        "slug": "alvaro-dias-rn",
+        "tema": "transferencia_renda",
+        "url_fonte": "https://www12.senado.leg.br/noticias/materias/2010/04/19/alvaro-dias-diz-que-reducao-das-desigualdades-comecou-na-constituicao-de-88",
+        "posicao": "a_favor",
+        "reason": "Fonte do Senado refere-se a Alvaro Fernandes Dias, PR, homônimo do candidato do RN.",
+        "expected_descricao_sha256": "ae7537e56926db276947150e744a49a3a3e166642da71a720cdd68f96811ae41"
+      },
+      "status": "update",
+      "before": {
+        "id": "1d64487c-4f8d-455b-b7f2-5d5c79962d04",
+        "candidato_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+        "tema": "transferencia_renda",
+        "posicao": "a_favor",
+        "descricao": "Defendeu a consolidação de transferências de renda como mitigadoras da pobreza, propondo a criação de mecanismos de porta de saída. Citação (2010-04-19): \"a queda da desigualdade e a redução da pobreza de enormes parcelas da população tiveram início em programas de transferência de renda\"",
+        "fonte": "Agência Senado (2010-04-19)",
+        "url_fonte": "https://www12.senado.leg.br/noticias/materias/2010/04/19/alvaro-dias-diz-que-reducao-das-desigualdades-comecou-na-constituicao-de-88",
+        "verificado": true,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "alvaro-dias-rn"
+        },
+        "candidate_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+        "slug": "alvaro-dias-rn"
+      },
+      "after": {
+        "id": "1d64487c-4f8d-455b-b7f2-5d5c79962d04",
+        "candidato_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+        "tema": "transferencia_renda",
+        "posicao": "a_favor",
+        "descricao": "Defendeu a consolidação de transferências de renda como mitigadoras da pobreza, propondo a criação de mecanismos de porta de saída. Citação (2010-04-19): \"a queda da desigualdade e a redução da pobreza de enormes parcelas da população tiveram início em programas de transferência de renda\"",
+        "fonte": "Agência Senado (2010-04-19)",
+        "url_fonte": "https://www12.senado.leg.br/noticias/materias/2010/04/19/alvaro-dias-diz-que-reducao-das-desigualdades-comecou-na-constituicao-de-88",
+        "verificado": false,
+        "gerado_por": "deepresearch-gemini-20260816",
+        "created_at": "2026-08-16T19:35:53.184463+00:00",
+        "candidatos": {
+          "slug": "alvaro-dias-rn"
+        },
+        "candidate_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+        "slug": "alvaro-dias-rn"
+      }
+    }
+  ],
+  "generated_at": "2026-09-17T18:20:36.978Z"
+}

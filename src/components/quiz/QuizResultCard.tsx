@@ -13,18 +13,11 @@ interface QuizResultCardProps {
   score: QuizScoreResult
 }
 
-function confiabilidadeLabel(c: QuizScoreResult["confiabilidade"], n: number): string {
-  if (n === 0) return "Estimativa sem votos públicos comparados neste quiz"
-  if (c === "alta") return `Baseado em ${n} votações mapeadas`
-  if (c === "media") return `Dados parciais (${n} votações mapeadas)`
-  return `Baixa confiança (${n} votação(ões) mapeada(s))`
-}
-
 export function QuizResultCard({ candidato, score }: QuizResultCardProps) {
   const [open, setOpen] = useState(false)
   const hasDetalhe = Boolean(score.detalhe)
   const fichaHref = `/candidato/${candidato.slug}`
-  const isEstimated = score.votos_comparados === 0 || score.confiabilidade === "baixa"
+  const isEstimated = score.perguntas_comparadas === 0 || score.confiabilidade === "baixa"
   const voteSummary =
     score.votos_comparados === 0
       ? "Sem voto público comparável neste quiz"
@@ -61,30 +54,22 @@ export function QuizResultCard({ candidato, score }: QuizResultCardProps) {
           </div>
           <span
             className="rounded-full border border-border px-2 py-1 text-xs font-medium text-muted-foreground"
-            aria-label={`Cobertura da base: ${score.confiabilidade}`}
+            aria-label={`Cobertura: ${score.perguntas_comparadas} perguntas comparáveis`}
           >
-            {score.confiabilidade === "alta" ? "Mais dados disponíveis" : score.confiabilidade === "media" ? "Base parcial" : "Base limitada"}
+            {score.perguntas_comparadas === 0 ? "Sem evidência comparável" : `${score.perguntas_comparadas} ${score.perguntas_comparadas === 1 ? "pergunta comparável" : "perguntas comparáveis"}`}
           </span>
         </div>
         <QuizWeightStrip explanation={score.explanation} />
         <p className="text-xs text-muted-foreground">
-          {voteSummary}. Total mapeado no quiz: {score.votacoes_mapeadas_total}.
+          {voteSummary}. Referências nominais disponíveis: {score.votacoes_mapeadas_total}.
         </p>
         <p className="text-xs leading-relaxed text-muted-foreground">{score.explanation.resumo}</p>
         <p className="text-xs text-muted-foreground">
-          {confiabilidadeLabel(score.confiabilidade, score.votos_comparados)}
+          Há evidência para {score.perguntas_comparadas} de {score.perguntas_respondidas} perguntas em que você indicou uma posição.
         </p>
-        {(score.score_posicoes != null || score.score_projetos != null || score.score_financiamento != null) && (
+        {score.posicoes_comparadas > 0 && (
           <p className="text-xs text-muted-foreground">
-            {score.score_posicoes != null ? (
-              <span className="mr-2">Inclui posições declaradas curadas.</span>
-            ) : null}
-            {score.score_projetos != null ? (
-              <span className="mr-2">Inclui projetos por tema.</span>
-            ) : null}
-            {score.score_financiamento != null ? (
-              <span>Inclui financiamento por setor de doadores.</span>
-            ) : null}
+            Inclui posições documentadas em {score.posicoes_comparadas} pergunta(s).
           </p>
         )}
         <div className="flex flex-wrap gap-3">
