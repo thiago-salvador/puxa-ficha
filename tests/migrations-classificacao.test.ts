@@ -409,7 +409,9 @@ describe("classificador puro (#136)", () => {
     // Situação da vice + ACL aditiva: PG17 medido, 369 aplicadas + mesmas 105 falhas = 474.
     // Release do Senado: seis migrations de DDL pura sem falha nova, medidas
     // pelo --gate local PG17: 375 + 105 = 480.
-    assert.equal(manifesto.aplicadas_esperadas, 375)
+    // View invoker do histórico verificado: uma migration de DDL pura sem falha
+    // nova, medida pelo --gate local PG17: 376 + 105 = 481.
+    assert.equal(manifesto.aplicadas_esperadas, 376)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
