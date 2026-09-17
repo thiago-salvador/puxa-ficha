@@ -9,8 +9,9 @@ import test from "node:test"
 import { executarDescobertaIntegrada, construirCoberturaDescoberta } from "../scripts/lib/pesquisas-monitoramento-descoberta"
 import { criarOrcamentoDescoberta, GEOGRAFIAS_DESCOBERTA, type InventarioRegistrosPesqele } from "../scripts/lib/pesquisas-monitoramento-pesqele"
 import { coletarComplementos, linksGraficosFolha } from "../scripts/lib/pesquisas-monitoramento-complementos"
-import { extrairDocumentoRealTime, parseTextoRealTimePdf, RELATORIO_PARANA_URL } from "../scripts/lib/pesquisas-monitoramento-realtime-pdf"
+import { extrairDocumentoRealTime, parseTextoRealTimeParaPdf, parseTextoRealTimePdf, RELATORIO_PARA_SHA256, RELATORIO_PARA_URL, RELATORIO_PARANA_URL } from "../scripts/lib/pesquisas-monitoramento-realtime-pdf"
 import { listarAlvosMonitoramento, obterContratoFonte } from "../scripts/lib/pesquisas-monitoramento"
+import { buildSourceClient } from "../scripts/pesquisas-monitoramento"
 import { parsePublicacaoMonitorada } from "../scripts/lib/pesquisas-monitoramento-adapters"
 import { carregarCatalogosAgendados } from "../scripts/pesquisas-atualizacao-agendada/model"
 import { carregarIdentidadesCuradas, resolverIdentidadeCurada } from "../scripts/lib/pesquisas-monitoramento-identidades"
@@ -88,6 +89,43 @@ test("PDF PR exige URL, formato e tamanho e concilia metadados no adaptador comp
   assert.equal(evidence.results.find((row) => row.raw_label === "NS / NR")!.match_status, "not_candidate")
   assert.ok(evidence.result_notes?.some((note) => note.includes("SOMADOS")))
   assert.throws(() => parsePublicacaoMonitorada({ target, source: obterContratoFonte(target.source_id), html, observedAt: document.observed_at, resultDocument: { ...document, sample_size: 1601 } }), /metadados conflitantes/)
+})
+
+test("PDF PA-00415 preserva ficha técnica, perguntas, cenários e agrupamento Outros", () => {
+  const text = readFileSync("tests/fixtures/pesquisas-distribuicao/documentos/realtime-para.layout.txt", "utf8")
+  const report = parseTextoRealTimeParaPdf(text, "PA-00415/2026")
+  assert.deepEqual({ publication_date: report.publication_date, fieldwork: report.fieldwork, sample_size: report.sample_size, margin_error_pp: report.margin_error_pp, confidence_percent: report.confidence_percent }, {
+    publication_date: "2026-09-15", fieldwork: { start: "2026-09-10", end: "2026-09-14" }, sample_size: 1600, margin_error_pp: 2, confidence_percent: 95,
+  })
+  assert.deepEqual(report.scenarios.map((scenario) => [scenario.turn, scenario.mode]), [[1, "espontaneo"], [1, "estimulado"], [2, "estimulado"]])
+  assert.equal(report.scenarios.length, 3)
+  assert.equal(report.scenarios[1].results.find((row) => row.raw_label === "Hana Ghassan (MDB)")?.value_percent, 40)
+  assert.equal(report.scenarios[2].results.find((row) => row.raw_label === "Hana Ghassan (MDB)")?.value_percent, 42)
+  assert.equal(report.scenarios[2].results.find((row) => row.raw_label === "Dr. Daniel Santos (Podemos)")?.value_percent, 36)
+  assert.deepEqual(report.scenarios[1].notes, ["OS CANDIDATOS JOSÉ MOITA (DEMOCRATA) / WELL MACEDO (PSTU) / GAL LEITE (UP) SOMADOS ATINGIRAM 1%."])
+  assert.equal(report.scenarios[1].results.find((row) => row.raw_label === "Outros")?.value_percent, 1)
+  assert.equal(report.scenarios[1].question, "EM OUTUBRO TEREMOS ELEIÇÕES, SE A ELEIÇÃO PARA GOVERNADOR DO PARÁ FOSSE HOJE, EM QUEM O (A) SENHOR (A) VOTARIA SE OS NOMES FOSSEM ESTES?")
+  assert.equal(report.scenarios[2].question, "EM OUTUBRO TEREMOS ELEIÇÕES, SE A ELEIÇÃO PARA GOVERNADOR DO PARÁ FOSSE HOJE, EM QUEM O (A) SENHOR (A) VOTARIA SE OS NOMES FOSSEM ESTES?")
+})
+
+test("PDF PA-00415 exige recibo de bytes e rejeita layout incompleto ou conflitante", () => {
+  const bytes = readFileSync("tests/fixtures/pesquisas-distribuicao/documentos/realtime-para.pdf")
+  const report = extrairDocumentoRealTime({ bytes, url: RELATORIO_PARA_URL, observedAt: "2026-09-17T15:00:00Z", registrationId: "PA-00415/2026" })
+  assert.equal(report.evidence_sha256, RELATORIO_PARA_SHA256)
+  assert.deepEqual(report.scenarios.map((scenario) => scenario.page), [5, 7, 12])
+  const changed = Buffer.from(bytes); changed[changed.length - 1] ^= 1
+  assert.throws(() => extrairDocumentoRealTime({ bytes: changed, url: RELATORIO_PARA_URL, observedAt: "now", registrationId: "PA-00415/2026" }), /recibo revisado/)
+  assert.throws(() => parseTextoRealTimeParaPdf(readFileSync("tests/fixtures/pesquisas-distribuicao/documentos/realtime-para.layout.txt", "utf8").replace("Outros         1%", "Outros         2%"), "PA-00415/2026"), /agrupamento conflitante|percentuais inválidos/)
+  assert.throws(() => parseTextoRealTimeParaPdf(readFileSync("tests/fixtures/pesquisas-distribuicao/documentos/realtime-para.layout.txt", "utf8").replace("Araceli (PSol)        3%", "Araceli (PSol)"), "PA-00415/2026"), /linha de resposta não reconhecida/)
+  assert.throws(() => parseTextoRealTimeParaPdf(`${readFileSync("tests/fixtures/pesquisas-distribuicao/documentos/realtime-para.layout.txt", "utf8")}\fESTIMULADA GOVERNADOR`, "PA-00415/2026"), /duplicada ou ausente/)
+})
+
+test("fallback PA preserva a URL R7 e rejeita origem alternativa fora da allowlist", () => {
+  const target = listarAlvosMonitoramento({ sourceId: "real-time-big-data-estaduais-2026", uf: "PA" }).find((candidate) => candidate.registration_id === "PA-00415/2026")!
+  assert.equal(target.url, "https://noticias.r7.com/eleicoes/2026/real-time-hana-ghassan-tem-40-e-dr-daniel-35-no-1-turno-para-o-governo-do-para-15092026/")
+  assert.deepEqual(target.alternative_urls, ["https://exame.com/brasil/real-time-hana-ghassan-tem-40-e-dr-daniel-35-no-1o-turno-no-para/"])
+  assert.doesNotThrow(() => buildSourceClient([target]))
+  assert.throws(() => buildSourceClient([{ ...target, alternative_urls: ["https://evil.example/poll"] }]), /origem fora da allowlist do adaptador: https:\/\/evil\.example/)
 })
 
 test("CLI bloqueia operação sem recibo mesmo com descoberta ausente", () => {
