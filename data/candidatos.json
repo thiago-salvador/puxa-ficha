@@ -4985,5 +4985,4093 @@
         "2026": "200002554482"
       }
     }
+  },
+  {
+    "slug": "tse-2026-100002536212",
+    "nome_completo": "FRANCISCO WILSON LEITE DA SILVA",
+    "nome_urna": "WILSON LEITE",
+    "cargo_disputado": "Senador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "100002536212"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-100002537338",
+    "nome_completo": "WEVERTON ROCHA MARQUES DE SOUSA",
+    "nome_urna": "WEVERTON ROCHA",
+    "cargo_disputado": "Senador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "100002537338"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-100002537364",
+    "nome_completo": "CIDONIO GONCALVES DOS SANTOS",
+    "nome_urna": "CIDÔNIO GONÇALVES",
+    "cargo_disputado": "Senador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "100002537364"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-100002541459",
+    "nome_completo": "ELIZIANE PEREIRA GAMA MELO",
+    "nome_urna": "ELIZIANE GAMA",
+    "cargo_disputado": "Senador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "100002541459"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-100002542867",
+    "nome_completo": "ANDRE LUIZ CARVALHO RIBEIRO",
+    "nome_urna": "FUFUCA",
+    "cargo_disputado": "Senador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "100002542867"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-100002549014",
+    "nome_completo": "RAIMUNDO MOREIRA CORREA",
+    "nome_urna": "RAIMUNDO MOREIRA",
+    "cargo_disputado": "Senador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "100002549014"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-100002549583",
+    "nome_completo": "ROSEANA SARNEY MURAD",
+    "nome_urna": "ROSEANA SARNEY",
+    "cargo_disputado": "Senador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "100002549583"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-100002550418",
+    "nome_completo": "HILTON GONCALO DE SOUSA",
+    "nome_urna": "DR.HILTON GONÇALO",
+    "cargo_disputado": "Senador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "100002550418"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-100002553336",
+    "nome_completo": "JOSÉ SIMPLÍCIO ALVES DE ARAÚJO",
+    "nome_urna": "SIMPLÍCIO ARAÚJO",
+    "cargo_disputado": "Senador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "100002553336"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-10002533895",
+    "nome_completo": "CYLMARA FERNANDES DA ROCHA GRIPP",
+    "nome_urna": "MARA ROCHA",
+    "cargo_disputado": "Senador",
+    "estado": "AC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "10002533895"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-10002535804",
+    "nome_completo": "SERGIO DE OLIVEIRA CUNHA",
+    "nome_urna": "PETECÃO",
+    "cargo_disputado": "Senador",
+    "estado": "AC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "10002535804"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-10002536441",
+    "nome_completo": "JORGE NEY VIANA MACEDO NEVES",
+    "nome_urna": "JORGE VIANA",
+    "cargo_disputado": "Senador",
+    "estado": "AC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "10002536441"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-10002536710",
+    "nome_completo": "RIBAMAR DE SOUSA FEITOZA JÚNIOR",
+    "nome_urna": "DR. JUNIOR FEITOSA",
+    "cargo_disputado": "Senador",
+    "estado": "AC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "10002536710"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-10002544110",
+    "nome_completo": "INACIO ALVES MOREIRA NETTO",
+    "nome_urna": "PROFESSOR INACIO MOREIRA",
+    "cargo_disputado": "Senador",
+    "estado": "AC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "10002544110"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-10002544274",
+    "nome_completo": "EDUARDO OVIDIO BORGES DE VELLOSO VIANNA",
+    "nome_urna": "EDUARDO VELLOSO",
+    "cargo_disputado": "Senador",
+    "estado": "AC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "10002544274"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-10002548046",
+    "nome_completo": "GLADSON DE LIMA CAMELÍ",
+    "nome_urna": "GLADSON CAMELÍ",
+    "cargo_disputado": "Senador",
+    "estado": "AC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "10002548046"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-10002548050",
+    "nome_completo": "MARCIO MIGUEL BITTAR",
+    "nome_urna": "MARCIO BITTAR",
+    "cargo_disputado": "Senador",
+    "estado": "AC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "10002548050"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-110002540403",
+    "nome_completo": "ANTONIO GALVAN",
+    "nome_urna": "GALVAN",
+    "cargo_disputado": "Senador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "110002540403"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-110002544986",
+    "nome_completo": "CARLOS HENRIQUE BAQUETA FAVARO",
+    "nome_urna": "FÁVARO",
+    "cargo_disputado": "Senador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "110002544986"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-110002544988",
+    "nome_completo": "JOSE PEDRO GONCALVES TAQUES",
+    "nome_urna": "PEDRO TAQUES",
+    "cargo_disputado": "Senador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "110002544988"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-110002548042",
+    "nome_completo": "DARWIN SALGADO GERMANO",
+    "nome_urna": "CORONEL DARWIN",
+    "cargo_disputado": "Senador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "110002548042"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-110002551966",
+    "nome_completo": "MAURO MENDES FERREIRA",
+    "nome_urna": "MAURO MENDES",
+    "cargo_disputado": "Senador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "110002551966"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-110002551967",
+    "nome_completo": "MARGARETH GETTERT BUSETTI",
+    "nome_urna": "MARGARETH BUZETTI",
+    "cargo_disputado": "Senador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "110002551967"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-110002552693",
+    "nome_completo": "JOSE ANTONIO DOS SANTOS MEDEIROS",
+    "nome_urna": "ZÉ MEDEIROS",
+    "cargo_disputado": "Senador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "110002552693"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-110002553701",
+    "nome_completo": "NELSON CARLOS FERREIRA JUNIOR",
+    "nome_urna": "PROFESSOR NELSON FERREIRA",
+    "cargo_disputado": "Senador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "110002553701"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-120002532721",
+    "nome_completo": "JONAS CARLOS DA CONCEICAO",
+    "nome_urna": "BETO DO MOVIMENTO",
+    "cargo_disputado": "Senador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "120002532721"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-120002534952",
+    "nome_completo": "DANIEL RODRIGUES JUNIOR",
+    "nome_urna": "DANIEL JUNIOR",
+    "cargo_disputado": "Senador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "120002534952"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-120002535764",
+    "nome_completo": "REINALDO AZAMBUJA SILVA",
+    "nome_urna": "REINALDO AZAMBUJA",
+    "cargo_disputado": "Senador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "120002535764"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-120002535769",
+    "nome_completo": "RENAN BARBOSA CONTAR",
+    "nome_urna": "CAPITÃO CONTAR",
+    "cargo_disputado": "Senador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "120002535769"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-120002547434",
+    "nome_completo": "SORAYA VIEIRA THRONICKE",
+    "nome_urna": "SORAYA",
+    "cargo_disputado": "Senador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "120002547434"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-120002547435",
+    "nome_completo": "VANDER LUIZ DOS SANTOS LOUBET",
+    "nome_urna": "VANDER LOUBET",
+    "cargo_disputado": "Senador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "120002547435"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-120002551909",
+    "nome_completo": "LUIZ ANTONIO LEMES DE OLIVEIRA",
+    "nome_urna": "LUIZ LEMES",
+    "cargo_disputado": "Senador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "120002551909"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-120002552115",
+    "nome_completo": "ROBERTO TARASHIGUE OSHIRO JUNIOR",
+    "nome_urna": "ROBERTO OSHIRO",
+    "cargo_disputado": "Senador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "120002552115"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-120002552183",
+    "nome_completo": "VALTER JUVENAL DE OLIVEIRA",
+    "nome_urna": "VALTER DA COMAGRAN",
+    "cargo_disputado": "Senador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "120002552183"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-120002552196",
+    "nome_completo": "VALDERI GARCIA",
+    "nome_urna": "VALDERI GARCIA",
+    "cargo_disputado": "Senador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "120002552196"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-130002545590",
+    "nome_completo": "CARLOS ALBERTO DIAS VIANA",
+    "nome_urna": "CARLOS VIANA",
+    "cargo_disputado": "Senador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "130002545590"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-130002547882",
+    "nome_completo": "FIDELIS OLIVEIRA ALCANTARA",
+    "nome_urna": "FIDÉLIS ALCÂNTARA",
+    "cargo_disputado": "Senador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "130002547882"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-130002547884",
+    "nome_completo": "ANA LUIZA CARDOSO DE MACEDO",
+    "nome_urna": "ANA LUIZA DO MLB",
+    "cargo_disputado": "Senador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "130002547884"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-130002548381",
+    "nome_completo": "MARCELO GUILHERME DE ARO FERREIRA",
+    "nome_urna": "MARCELO ARO",
+    "cargo_disputado": "Senador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "130002548381"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-130002550557",
+    "nome_completo": "AUREA CAROLINA DE FREITAS E SILVA",
+    "nome_urna": "ÁUREA CAROLINA",
+    "cargo_disputado": "Senador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "130002550557"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-130002550560",
+    "nome_completo": "MARILIA APARECIDA CAMPOS",
+    "nome_urna": "MARÍLIA CAMPOS",
+    "cargo_disputado": "Senador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "130002550560"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-130002551265",
+    "nome_completo": "RAMON MOREIRA",
+    "nome_urna": "JUÍZ RAMON MOREIRA",
+    "cargo_disputado": "Senador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "130002551265"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-130002551284",
+    "nome_completo": "MARCO ANTÔNIO MOREIRA DA COSTA",
+    "nome_urna": "MARCO ANTÔNIO SUPERMAN",
+    "cargo_disputado": "Senador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "130002551284"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-130002551786",
+    "nome_completo": "DOMINGOS SAVIO CAMPOS RESENDE",
+    "nome_urna": "DOMINGOS SÁVIO",
+    "cargo_disputado": "Senador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "130002551786"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-130002551929",
+    "nome_completo": "JORDANO CARVALHO DOS SANTOS",
+    "nome_urna": "JORDANO METALÚRGICO",
+    "cargo_disputado": "Senador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "130002551929"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-130002551930",
+    "nome_completo": "VICTORIA DE FATIMA DE MELLO",
+    "nome_urna": "VICTÓRIA MELLO VIC",
+    "cargo_disputado": "Senador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "130002551930"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-130002552186",
+    "nome_completo": "CARLOS MAGNO DE MOURA SOARES",
+    "nome_urna": "CARLIN MOURA",
+    "cargo_disputado": "Senador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "130002552186"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-130002552299",
+    "nome_completo": "MANOEL TEODORO PEREIRA DE CARVALHO FILHO",
+    "nome_urna": "MANOEL CARVALHO",
+    "cargo_disputado": "Senador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "130002552299"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-130002552302",
+    "nome_completo": "ARCANJO CARLOS PIMENTA",
+    "nome_urna": "ARCANJO PIMENTA",
+    "cargo_disputado": "Senador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "130002552302"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-130002552311",
+    "nome_completo": "SEBASTIAO DE OLIVEIRA PESSOA",
+    "nome_urna": "TIÃO PESSOA",
+    "cargo_disputado": "Senador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "130002552311"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-140002538404",
+    "nome_completo": "CELSO SABINO DE OLIVEIRA",
+    "nome_urna": "CELSO SABINO",
+    "cargo_disputado": "Senador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "140002538404"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-140002542691",
+    "nome_completo": "JOSÉ DA CRUZ MARINHO",
+    "nome_urna": "ZEQUINHA MARINHO",
+    "cargo_disputado": "Senador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "140002542691"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-140002545671",
+    "nome_completo": "GIZELLE SOARES DE FREITAS",
+    "nome_urna": "GIZELLE FREITAS",
+    "cargo_disputado": "Senador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "140002545671"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-140002545674",
+    "nome_completo": "MARCELINO CONTI DE SOUZA",
+    "nome_urna": "CONTI",
+    "cargo_disputado": "Senador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "140002545674"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-140002548150",
+    "nome_completo": "EDLAINE GUIMARÃES SANTOS RODRIGUES",
+    "nome_urna": "EDLAINE RODRIGUES",
+    "cargo_disputado": "Senador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "140002548150"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-140002548387",
+    "nome_completo": "FERNANDA MARISTANE LOPES ARAUJO",
+    "nome_urna": "FERNANDA LOPES",
+    "cargo_disputado": "Senador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "140002548387"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-140002550779",
+    "nome_completo": "HELDER ZAHLUTH BARBALHO",
+    "nome_urna": "HELDER",
+    "cargo_disputado": "Senador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "140002550779"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-140002550780",
+    "nome_completo": "FRANCISCO DAS CHAGAS SILVA MELO FILHO",
+    "nome_urna": "CHICÃO",
+    "cargo_disputado": "Senador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "140002550780"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-140002553852",
+    "nome_completo": "BRENO RAMOS GUIMARAES MARTINS",
+    "nome_urna": "BRENO GUIMARÃES",
+    "cargo_disputado": "Senador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "140002553852"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-140002553952",
+    "nome_completo": "LÍVIA MARIA ARAÚJO NORONHA DE OLIVEIRA",
+    "nome_urna": "LIVIA NORONHA",
+    "cargo_disputado": "Senador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "140002553952"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-140002554209",
+    "nome_completo": "JONILDO DE CASTRO TEIXEIRA",
+    "nome_urna": "CORONEL JONILDO",
+    "cargo_disputado": "Senador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "140002554209"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-150002538459",
+    "nome_completo": "MARCELO ANTÔNIO CARTAXO QUEIROGA LOPES",
+    "nome_urna": "DR. MARCELO QUEIROGA",
+    "cargo_disputado": "Senador",
+    "estado": "PB",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "150002538459"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-150002544135",
+    "nome_completo": "ROSILENE DA SILVA SANTANA",
+    "nome_urna": "ROSILENE SANTANA",
+    "cargo_disputado": "Senador",
+    "estado": "PB",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "150002544135"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-150002544140",
+    "nome_completo": "JOÃO BATISTA DOMINGOS",
+    "nome_urna": "JOÃO BATISTA",
+    "cargo_disputado": "Senador",
+    "estado": "PB",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "150002544140"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-150002544905",
+    "nome_completo": "VENEZIANO VITAL DO RÊGO SEGUNDO NETO",
+    "nome_urna": "VENEZIANO",
+    "cargo_disputado": "Senador",
+    "estado": "PB",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "150002544905"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-150002544909",
+    "nome_completo": "ANDRE AVELINO DE PAIVA GADELHA NETO",
+    "nome_urna": "ANDRÉ GADELHA",
+    "cargo_disputado": "Senador",
+    "estado": "PB",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "150002544909"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-150002548968",
+    "nome_completo": "FÁBIO RODRIGUES DE OLIVEIRA",
+    "nome_urna": "MAJOR FÁBIO",
+    "cargo_disputado": "Senador",
+    "estado": "PB",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "150002548968"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-150002548971",
+    "nome_completo": "RINALDO ELIAS PEREIRA JUNIOR",
+    "nome_urna": "RINALDO JÚNIOR",
+    "cargo_disputado": "Senador",
+    "estado": "PB",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "150002548971"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-150002549791",
+    "nome_completo": "NABOR WANDERLEY DA NOBREGA FILHO",
+    "nome_urna": "NABOR",
+    "cargo_disputado": "Senador",
+    "estado": "PB",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "150002549791"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-150002549793",
+    "nome_completo": "JOÃO AZEVÊDO LINS FILHO",
+    "nome_urna": "JOAO AZEVÊDO",
+    "cargo_disputado": "Senador",
+    "estado": "PB",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "150002549793"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-150002552607",
+    "nome_completo": "ADRIANO TRAJANO DA CONCEIÇÃO",
+    "nome_urna": "ADRIANO TRAJANO",
+    "cargo_disputado": "Senador",
+    "estado": "PB",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "150002552607"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-160002547656",
+    "nome_completo": "GLEISI HELENA HOFFMANN",
+    "nome_urna": "GLEISI",
+    "cargo_disputado": "Senador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "160002547656"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-160002547658",
+    "nome_completo": "FLORISVALDO FIER",
+    "nome_urna": "DR ROSINHA",
+    "cargo_disputado": "Senador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "160002547658"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-160002547660",
+    "nome_completo": "FILIPE BARROS BAPTISTA DE TOLEDO RIBEIRO",
+    "nome_urna": "FILIPE BARROS",
+    "cargo_disputado": "Senador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "160002547660"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-160002547661",
+    "nome_completo": "DELTAN MARTINAZZO DALLAGNOL",
+    "nome_urna": "DELTAN DALLAGNOL",
+    "cargo_disputado": "Senador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "160002547661"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-160002549555",
+    "nome_completo": "CRISTINA REIS GRAEML",
+    "nome_urna": "CRISTINA GRAEML",
+    "cargo_disputado": "Senador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "160002549555"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-160002551043",
+    "nome_completo": "JOAQUIM SILVA MACIEL",
+    "nome_urna": "JOAQUIM DO MLB",
+    "cargo_disputado": "Senador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "160002551043"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-160002551121",
+    "nome_completo": "KAREN CORREIA GUERREIRO",
+    "nome_urna": "KAREN GUERREIRO",
+    "cargo_disputado": "Senador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "160002551121"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-160002552563",
+    "nome_completo": "MARCELO GONCALVES MARCELINO",
+    "nome_urna": "MARCELO MARCELINO",
+    "cargo_disputado": "Senador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "160002552563"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-170002530097",
+    "nome_completo": "CARLOS SOARES SANT ANNA",
+    "nome_urna": "CARLOS SANT ANNA",
+    "cargo_disputado": "Senador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "170002530097"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-170002537334",
+    "nome_completo": "SAMUEL TIMOTEO DA SILVA",
+    "nome_urna": "SAMUEL TIMOTEO",
+    "cargo_disputado": "Senador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "170002537334"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-170002537335",
+    "nome_completo": "MARIA GORETT BITU",
+    "nome_urna": "GORETT BITU",
+    "cargo_disputado": "Senador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "170002537335"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-170002537418",
+    "nome_completo": "JOSÉ MARIANO DE MACEDO",
+    "nome_urna": "MARIANO MACEDO",
+    "cargo_disputado": "Senador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "170002537418"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-170002539456",
+    "nome_completo": "JOSÉ MENDONÇA BEZERRA FILHO",
+    "nome_urna": "MENDONÇA FILHO",
+    "cargo_disputado": "Senador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "170002539456"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-170002540420",
+    "nome_completo": "GILVAN OLIVEIRA COSTA",
+    "nome_urna": "PASTOR GILVAN COSTA",
+    "cargo_disputado": "Senador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "170002540420"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-170002547771",
+    "nome_completo": "MARÍLIA VALENÇA ROCHA ARRAES DE ALENCAR",
+    "nome_urna": "MARÍLIA ARRAES",
+    "cargo_disputado": "Senador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "170002547771"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-170002547773",
+    "nome_completo": "HUMBERTO SERGIO COSTA LIMA",
+    "nome_urna": "HUMBERTO COSTA",
+    "cargo_disputado": "Senador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "170002547773"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-170002549655",
+    "nome_completo": "PAULO RUBEM SANTIAGO FERREIRA",
+    "nome_urna": "PAULO RUBEM SANTIAGO",
+    "cargo_disputado": "Senador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "170002549655"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-170002552097",
+    "nome_completo": "TULIO GADELHA SALES DE MELO",
+    "nome_urna": "TÚLIO GADÊLHA",
+    "cargo_disputado": "Senador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "170002552097"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-170002552102",
+    "nome_completo": "EDUARDO HENRIQUE DA FONTE DE ALBUQUERQUE SILVA",
+    "nome_urna": "EDUARDO DA FONTE",
+    "cargo_disputado": "Senador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "170002552102"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-170002552943",
+    "nome_completo": "MAILSON DA SILVA NETO",
+    "nome_urna": "MAILSON DA SILVA NETO",
+    "cargo_disputado": "Senador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "170002552943"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002533964",
+    "nome_completo": "JULIO CESAR DE CARVALHO LIMA",
+    "nome_urna": "JÚLIO CÉSAR O JULIM DO LULA",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002533964"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002533967",
+    "nome_completo": "MARCELO COSTA E CASTRO",
+    "nome_urna": "MARCELO CASTRO",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002533967"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002537340",
+    "nome_completo": "DANNIEL ROCHA DO NASCIMENTO",
+    "nome_urna": "DANNIEL ROCHA",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002537340"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002540446",
+    "nome_completo": "CIRO NOGUEIRA LIMA FILHO",
+    "nome_urna": "CIRO NOGUEIRA",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002540446"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002540449",
+    "nome_completo": "TIAGO MAXIMIANO JUNQUEIRA",
+    "nome_urna": "TIAGO JUNQUEIRA",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002540449"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002541938",
+    "nome_completo": "PEDRO LAURENTINO REIS PEREIRA",
+    "nome_urna": "PEDRO LAURENTINO",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002541938"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002544457",
+    "nome_completo": "PAULO ROBERTO BEZERRA DE OLIVEIRA",
+    "nome_urna": "MAJOR PAULO ROBERTO",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002544457"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002544459",
+    "nome_completo": "ANTONIO ALMEIDA DE SOUSA",
+    "nome_urna": "TOINHO DUFRANGO",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002544459"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002547860",
+    "nome_completo": "EVANDRO MARQUES CUNHA",
+    "nome_urna": "IRMÃO EVANDRO MARQUES",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002547860"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002547863",
+    "nome_completo": "DIONISIO CARVALHO NETO",
+    "nome_urna": "DIONISIO CARVALHO",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002547863"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002548155",
+    "nome_completo": "JARDENYA EYLANE BEZERRA TELES",
+    "nome_urna": "JARDENYA BEZERRA",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002548155"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002548157",
+    "nome_completo": "EVANDRO CRAVEIRO DA ROCHA",
+    "nome_urna": "MISSIONÁRIO EVANDRO CRAVEIRO",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002548157"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002548568",
+    "nome_completo": "FRANCISCO JORGE LOPES SOUSA",
+    "nome_urna": "JORGE LOPES",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002548568"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002549933",
+    "nome_completo": "ANTONIO DE BARROS ARAUJO FILHO",
+    "nome_urna": "ANTÔNIO BARROS",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002549933"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002549936",
+    "nome_completo": "ANTÔNIO JOSÉ DE FREITAS LIRA",
+    "nome_urna": "ANTÔNIO JOSÉ LIRA",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002549936"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002550977",
+    "nome_completo": "MARIA MADALENA NUNES",
+    "nome_urna": "MARIA MADALENA NUNES",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002550977"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002550979",
+    "nome_completo": "FRANCINALDO SILVA LEÃO",
+    "nome_urna": "FRANCINALDO LEÃO",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002550979"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-180002553753",
+    "nome_completo": "CLOVES JOSÉ DOS SANTOS",
+    "nome_urna": "CLOVES JOSÉ",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002553753"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-190002535142",
+    "nome_completo": "CARLOS FRANCISCO PORTINHO",
+    "nome_urna": "CARLOS PORTINHO",
+    "cargo_disputado": "Senador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "190002535142"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-190002536164",
+    "nome_completo": "MONICA TEREZA AZEREDO BENICIO",
+    "nome_urna": "MONICA BENICIO",
+    "cargo_disputado": "Senador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "190002536164"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-190002539827",
+    "nome_completo": "PAULA ANDREIA ALMEIDA FALCAO",
+    "nome_urna": "PAULA FALCÃO",
+    "cargo_disputado": "Senador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "190002539827"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-190002542888",
+    "nome_completo": "CARLOS ROBERTO COELHO DE MATTOS JÚNIOR",
+    "nome_urna": "CARLOS JORDY",
+    "cargo_disputado": "Senador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "190002542888"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-190002543961",
+    "nome_completo": "HELIO KINAST CRUZ SECCO",
+    "nome_urna": "HELIO SECCO",
+    "cargo_disputado": "Senador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "190002543961"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-190002545553",
+    "nome_completo": "MARCOS DIAS PEREIRA",
+    "nome_urna": "MARCOS DIAS",
+    "cargo_disputado": "Senador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "190002545553"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-190002548141",
+    "nome_completo": "BENEDITA SOUZA DA SILVA SAMPAIO",
+    "nome_urna": "BENEDITA DA SILVA",
+    "cargo_disputado": "Senador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "190002548141"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-190002548145",
+    "nome_completo": "PEDRO PAULO CARVALHO TEIXEIRA",
+    "nome_urna": "PEDRO PAULO",
+    "cargo_disputado": "Senador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "190002548145"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-190002548589",
+    "nome_completo": "MICHELLY XAVIER DE SOUZA",
+    "nome_urna": "MICHELLY XAVIER",
+    "cargo_disputado": "Senador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "190002548589"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-190002548590",
+    "nome_completo": "VINICIUS BENEVIDES DOS SANTOS CONCEICAO",
+    "nome_urna": "VINICIUS BENEVIDES",
+    "cargo_disputado": "Senador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "190002548590"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-190002550182",
+    "nome_completo": "WAGNER DOS SANTOS CARNEIRO",
+    "nome_urna": "WAGUINHO",
+    "cargo_disputado": "Senador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "190002550182"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-190002550184",
+    "nome_completo": "MARCELO BEZERRA CRIVELLA",
+    "nome_urna": "MARCELO CRIVELLA",
+    "cargo_disputado": "Senador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "190002550184"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-190002550190",
+    "nome_completo": "CLEMENTE SEBASTIÃO DE ALMEIDA CAMPOS",
+    "nome_urna": "Ó CLEMENTE",
+    "cargo_disputado": "Senador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "190002550190"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-190002552083",
+    "nome_completo": "LUCIANO OLIVEIRA MATTOS DE SOUZA",
+    "nome_urna": "LUCIANO MATTOS",
+    "cargo_disputado": "Senador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "190002552083"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-190002552521",
+    "nome_completo": "LUIZ EUGENIO HONORATO",
+    "nome_urna": "LUIZ EUGENIO",
+    "cargo_disputado": "Senador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "190002552521"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-190002554290",
+    "nome_completo": "CLEBER RIBEIRO AFONSO",
+    "nome_urna": "COMANDANTE RIBEIRO AFONSO",
+    "cargo_disputado": "Senador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "190002554290"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-200002533841",
+    "nome_completo": "SAMANDA ALVES DE FREITAS",
+    "nome_urna": "SAMANDA DE LULA",
+    "cargo_disputado": "Senador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002533841"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-200002533843",
+    "nome_completo": "RAFAEL HUETE DA MOTTA",
+    "nome_urna": "RAFAEL MOTTA",
+    "cargo_disputado": "Senador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002533843"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-200002534447",
+    "nome_completo": "HELIO IMBROSIO OLIVEIRA",
+    "nome_urna": "CORONEL HÉLIO",
+    "cargo_disputado": "Senador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002534447"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-200002534448",
+    "nome_completo": "EANN STYVENSON VALENTIM MENDES",
+    "nome_urna": "STYVENSON VALENTIM",
+    "cargo_disputado": "Senador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002534448"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-200002535507",
+    "nome_completo": "ZENAIDE MAIA CALADO PEREIRA DOS SANTOS",
+    "nome_urna": "ZENAIDE MAIA",
+    "cargo_disputado": "Senador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002535507"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-200002535511",
+    "nome_completo": "TERCIO BARRETO RAMOS TINOCO",
+    "nome_urna": "TÉRCIO TINÔCO",
+    "cargo_disputado": "Senador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002535511"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-200002542483",
+    "nome_completo": "ROSALIA MARIA FERNANDES",
+    "nome_urna": "ROSÁLIA FERNANDES",
+    "cargo_disputado": "Senador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002542483"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-200002542484",
+    "nome_completo": "LUCIANA LIMA DA SILVA",
+    "nome_urna": "LUCIANA MANDU",
+    "cargo_disputado": "Senador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002542484"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-200002546792",
+    "nome_completo": "SANDRO DE OLIVEIRA PIMENTEL",
+    "nome_urna": "SANDRO PIMENTEL",
+    "cargo_disputado": "Senador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002546792"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-200002546795",
+    "nome_completo": "SONIA MARIA GODEIRO",
+    "nome_urna": "SONIA GODEIRO",
+    "cargo_disputado": "Senador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002546795"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-200002548115",
+    "nome_completo": "CLOVIS FERREIRA DA COSTA",
+    "nome_urna": "CLÓVIS COSTA DO COLETIVO NÓS",
+    "cargo_disputado": "Senador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002548115"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-200002549133",
+    "nome_completo": "WENDELL BATISTA DOS SANTOS",
+    "nome_urna": "GARI WENDELL BATISTA",
+    "cargo_disputado": "Senador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002549133"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-200002550541",
+    "nome_completo": "GUILHERME OLIVEIRA MOSCA",
+    "nome_urna": "PROFESSOR GUILHERME",
+    "cargo_disputado": "Senador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002550541"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-20002540197",
+    "nome_completo": "ALEXANDRE FLEMING VASQUES BASTOS",
+    "nome_urna": "ALEXANDRE FLEMING",
+    "cargo_disputado": "Senador",
+    "estado": "AL",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "20002540197"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-20002548147",
+    "nome_completo": "DAVID CABRAL DAVINO FILHO",
+    "nome_urna": "DAVI DAVINO FILHO",
+    "cargo_disputado": "Senador",
+    "estado": "AL",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "20002548147"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-20002552524",
+    "nome_completo": "JOSE MARIEDSON DA SILVA",
+    "nome_urna": "MARIEDSON",
+    "cargo_disputado": "Senador",
+    "estado": "AL",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "20002552524"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-20002553272",
+    "nome_completo": "ARTHUR CESAR PEREIRA DE LIRA",
+    "nome_urna": "ARTHUR LIRA",
+    "cargo_disputado": "Senador",
+    "estado": "AL",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "20002553272"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-20002553711",
+    "nome_completo": "MARINA ANTUNES CANDIA E FIGUEIREDO",
+    "nome_urna": "MARINA JHC",
+    "cargo_disputado": "Senador",
+    "estado": "AL",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "20002553711"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-20002553726",
+    "nome_completo": "JOSE WANDERLEY NETO",
+    "nome_urna": "DR. WANDERLEY",
+    "cargo_disputado": "Senador",
+    "estado": "AL",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "20002553726"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-20002553727",
+    "nome_completo": "JOSE RENAN VASCONCELOS CALHEIROS",
+    "nome_urna": "RENAN",
+    "cargo_disputado": "Senador",
+    "estado": "AL",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "20002553727"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-210002533434",
+    "nome_completo": "TANIA MARA SANTORO PERES",
+    "nome_urna": "TANIA PERES",
+    "cargo_disputado": "Senador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "210002533434"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-210002533435",
+    "nome_completo": "LUCIANO SCHAFER",
+    "nome_urna": "LUCIANO DO MLB",
+    "cargo_disputado": "Senador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "210002533435"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-210002533581",
+    "nome_completo": "MANUELA PINTO VIEIRA D ÁVILA",
+    "nome_urna": "MANUELA D ÁVILA",
+    "cargo_disputado": "Senador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "210002533581"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-210002533584",
+    "nome_completo": "PAULO ROBERTO SEVERO PIMENTA",
+    "nome_urna": "PIMENTA",
+    "cargo_disputado": "Senador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "210002533584"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-210002538465",
+    "nome_completo": "PAULO RENATO JAGUARÃO SILVA DA ROSA",
+    "nome_urna": "RENATO JAGUARÃO",
+    "cargo_disputado": "Senador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "210002538465"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-210002538467",
+    "nome_completo": "MILTON BATISTA CARDOSO",
+    "nome_urna": "MILTON CARDOSO",
+    "cargo_disputado": "Senador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "210002538467"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-210002543863",
+    "nome_completo": "GERMANO ANTONIO RIGOTTO",
+    "nome_urna": "RIGOTTO",
+    "cargo_disputado": "Senador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "210002543863"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-210002543865",
+    "nome_completo": "FREDERICO CANTORI ANTUNES",
+    "nome_urna": "FREDERICO ANTUNES",
+    "cargo_disputado": "Senador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "210002543865"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-210002544698",
+    "nome_completo": "DANIELA MAIDANA DA SILVA",
+    "nome_urna": "DANIELA MULHERES SOCIALISTAS",
+    "cargo_disputado": "Senador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "210002544698"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-210002544699",
+    "nome_completo": "REGIS BATISTA ETHUR",
+    "nome_urna": "REGIS ETHUR",
+    "cargo_disputado": "Senador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "210002544699"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-210002547816",
+    "nome_completo": "UBIRATAN ANTUNES SANDERSON",
+    "nome_urna": "SANDERSON",
+    "cargo_disputado": "Senador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "210002547816"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-210002547819",
+    "nome_completo": "MARCEL VAN HATTEM",
+    "nome_urna": "MARCEL VAN HATTEM",
+    "cargo_disputado": "Senador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "210002547819"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-210002552599",
+    "nome_completo": "RICARDO HERBERT JONES",
+    "nome_urna": "RIC JONES",
+    "cargo_disputado": "Senador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "210002552599"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-220002539771",
+    "nome_completo": "LUIS FERNANDO PEREIRA DA SILVA",
+    "nome_urna": "LUIS FERNANDO",
+    "cargo_disputado": "Senador",
+    "estado": "RO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "220002539771"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-220002539995",
+    "nome_completo": "BRUNO SCHEID",
+    "nome_urna": "BRUNO SCHEID",
+    "cargo_disputado": "Senador",
+    "estado": "RO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "220002539995"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-220002541490",
+    "nome_completo": "ACIR MARCOS GURGACZ",
+    "nome_urna": "ACIR GURGACZ",
+    "cargo_disputado": "Senador",
+    "estado": "RO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "220002541490"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-220002541944",
+    "nome_completo": "THULIO SANTIAGO CASTRO",
+    "nome_urna": "ENGENHEIRO THULIO",
+    "cargo_disputado": "Senador",
+    "estado": "RO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "220002541944"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-220002547309",
+    "nome_completo": "SILVIA CRISTINA AMANCIO CHAGAS",
+    "nome_urna": "SÍLVIA CRISTINA",
+    "cargo_disputado": "Senador",
+    "estado": "RO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "220002547309"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-220002547310",
+    "nome_completo": "MARIANA FONSECA RIBEIRO CARVALHO DE MORAES",
+    "nome_urna": "MARIANA CARVALHO",
+    "cargo_disputado": "Senador",
+    "estado": "RO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "220002547310"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-220002550928",
+    "nome_completo": "IVANEIDE BANDEIRA CARDOZO",
+    "nome_urna": "NEIDINHA",
+    "cargo_disputado": "Senador",
+    "estado": "RO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "220002550928"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-220002551946",
+    "nome_completo": "AIRES MOTA DE ALMEIDA",
+    "nome_urna": "AIRES MOTA",
+    "cargo_disputado": "Senador",
+    "estado": "RO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "220002551946"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-220002551948",
+    "nome_completo": "LUCIANA DE OLIVEIRA E SILVA",
+    "nome_urna": "LUCIANA OLIVEIRA",
+    "cargo_disputado": "Senador",
+    "estado": "RO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "220002551948"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-230002533586",
+    "nome_completo": "ROGÉRIO MIRANDA",
+    "nome_urna": "ROGÉRIO MIRANDA",
+    "cargo_disputado": "Senador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "230002533586"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-230002534804",
+    "nome_completo": "ANTONIO CARLOS NICOLETTI",
+    "nome_urna": "NICOLETTI",
+    "cargo_disputado": "Senador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "230002534804"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-230002534806",
+    "nome_completo": "HELIO FERNANDO BARBOSA LOPES",
+    "nome_urna": "HELIO FERNANDO BARBOSA LOPES",
+    "cargo_disputado": "Senador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "230002534806"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-230002549330",
+    "nome_completo": "REGINA APARECIDA SILVA",
+    "nome_urna": "REGINA TIO IVO",
+    "cargo_disputado": "Senador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "230002549330"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-230002549360",
+    "nome_completo": "MARIO SOUZA DA ROCHA",
+    "nome_urna": "MARIO ROCHA",
+    "cargo_disputado": "Senador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "230002549360"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-230002549361",
+    "nome_completo": "BARTOLOMEU DA SILVA TOMAZ",
+    "nome_urna": "BARTÔ MACUXI",
+    "cargo_disputado": "Senador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "230002549361"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-230002549845",
+    "nome_completo": "MARIA HELENA TEIXEIRA LIMA",
+    "nome_urna": "HELENA DA ASATUR",
+    "cargo_disputado": "Senador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "230002549845"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-230002550787",
+    "nome_completo": "HILTON XAVIER DE ARAUJO",
+    "nome_urna": "HILTON XAVIER",
+    "cargo_disputado": "Senador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "230002550787"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-230002550794",
+    "nome_completo": "FRANCISCO DE ASSIS RODRIGUES",
+    "nome_urna": "CHICO RODRIGUES",
+    "cargo_disputado": "Senador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "230002550794"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-230002552727",
+    "nome_completo": "HIPERION DE OLIVEIRA SILVA",
+    "nome_urna": "HIPERION DE OLIVEIRA",
+    "cargo_disputado": "Senador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "230002552727"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-230002553010",
+    "nome_completo": "ISAMAR PESSOA RAMALHO",
+    "nome_urna": "PASTOR ISAMAR",
+    "cargo_disputado": "Senador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "230002553010"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-230002553636",
+    "nome_completo": "MÁRCIO HENRIQUE JUNQUEIRA PEREIRA",
+    "nome_urna": "MÁRCIO JUNQUEIRA",
+    "cargo_disputado": "Senador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "230002553636"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-240002535770",
+    "nome_completo": "AFRANIO TADEU BOPPRE",
+    "nome_urna": "AFRÂNIO BOPPRÉ",
+    "cargo_disputado": "Senador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "240002535770"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-240002537630",
+    "nome_completo": "MARCOS DORVAL SCHMITZ",
+    "nome_urna": "MARCOS DORVAL",
+    "cargo_disputado": "Senador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "240002537630"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-240002537632",
+    "nome_completo": "JOANINHA DE OLIVEIRA",
+    "nome_urna": "JOANINHA DE OLIVEIRA",
+    "cargo_disputado": "Senador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "240002537632"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-240002539636",
+    "nome_completo": "ANA LUCIA DA SILVEIRA MACHADO",
+    "nome_urna": "ANA LUCIA DA SILVEIRA MACHADO",
+    "cargo_disputado": "Senador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "240002539636"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-240002541931",
+    "nome_completo": "CAROLINE RODRIGUES DE TONI",
+    "nome_urna": "CAROL DE TONI",
+    "cargo_disputado": "Senador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "240002541931"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-240002541935",
+    "nome_completo": "CARLOS NANTES BOLSONARO",
+    "nome_urna": "CARLOS BOLSONARO",
+    "cargo_disputado": "Senador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "240002541935"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-240002544094",
+    "nome_completo": "TÚLIO DE AMORIM PFUETZENREITER",
+    "nome_urna": "TÚLIO DE AMORIM PFUETZENREITER",
+    "cargo_disputado": "Senador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "240002544094"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-240002548630",
+    "nome_completo": "ANTIDIO ALEIXO LUNELLI",
+    "nome_urna": "LUNELLI",
+    "cargo_disputado": "Senador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "240002548630"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-240002548632",
+    "nome_completo": "ESPERIDIAO AMIN HELOU FILHO",
+    "nome_urna": "ESPERIDIÃO AMIN",
+    "cargo_disputado": "Senador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "240002548632"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-240002550218",
+    "nome_completo": "MARLENE DE SOUZA SOCCAS",
+    "nome_urna": "MARLENE SOCCAS",
+    "cargo_disputado": "Senador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "240002550218"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-240002551377",
+    "nome_completo": "JEFERSON DA ROCHA",
+    "nome_urna": "JEFERSON ROCHA",
+    "cargo_disputado": "Senador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "240002551377"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-240002553005",
+    "nome_completo": "CAROLINE SANT ANNA",
+    "nome_urna": "CAROL",
+    "cargo_disputado": "Senador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "240002553005"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-250002532794",
+    "nome_completo": "RICARDO DE AQUINO SALLES",
+    "nome_urna": "SALLES",
+    "cargo_disputado": "Senador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "250002532794"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-250002541362",
+    "nome_completo": "ELIANA LUCIA FERREIRA",
+    "nome_urna": "DRA ELIANA FERREIRA",
+    "cargo_disputado": "Senador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "250002541362"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-250002541365",
+    "nome_completo": "WELLER PEREIRA GONÇALVES",
+    "nome_urna": "WELLER GONÇALVES",
+    "cargo_disputado": "Senador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "250002541365"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-250002544514",
+    "nome_completo": "MARCIO ALVES DOS SANTOS",
+    "nome_urna": "MARCIO ALVES",
+    "cargo_disputado": "Senador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "250002544514"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-250002544516",
+    "nome_completo": "MAÍRA DIAS DE SOUZA",
+    "nome_urna": "MAÍRA DE SOUZA",
+    "cargo_disputado": "Senador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "250002544516"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-250002544673",
+    "nome_completo": "GERALDO ARISTIDES RUFINO",
+    "nome_urna": "GERALDO RUFINO",
+    "cargo_disputado": "Senador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "250002544673"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-250002551501",
+    "nome_completo": "MARIA OSMARINA MARINA DA SILVA VAZ DE LIMA",
+    "nome_urna": "MARINA SILVA",
+    "cargo_disputado": "Senador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "250002551501"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-250002551502",
+    "nome_completo": "SIMONE NASSAR TEBET ROCHA",
+    "nome_urna": "SIMONE TEBET",
+    "cargo_disputado": "Senador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "250002551502"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-250002552153",
+    "nome_completo": "PETTER MAAHS DA SILVA",
+    "nome_urna": "PETTER MAAHS",
+    "cargo_disputado": "Senador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "250002552153"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-250002552369",
+    "nome_completo": "SONIA FRANCINE GASPAR MARMO",
+    "nome_urna": "SONINHA FRANCINE",
+    "cargo_disputado": "Senador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "250002552369"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-250002552955",
+    "nome_completo": "EDNELSON CESARETTI",
+    "nome_urna": "EDNELSON CESARETTI",
+    "cargo_disputado": "Senador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "250002552955"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-250002553252",
+    "nome_completo": "WILLIAM TEIXEIRA DE OLIVEIRA",
+    "nome_urna": "WILLIAM TEIXEIRA",
+    "cargo_disputado": "Senador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "250002553252"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-250002554075",
+    "nome_completo": "RICARDO AUGUSTO MANGUE SCHIAVETTO",
+    "nome_urna": "GUTO SCHIAVETTO",
+    "cargo_disputado": "Senador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "250002554075"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-260002533084",
+    "nome_completo": "ALESSANDRO VIEIRA",
+    "nome_urna": "DELEGADO ALESSANDRO",
+    "cargo_disputado": "Senador",
+    "estado": "SE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "260002533084"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-260002543591",
+    "nome_completo": "RENATA OLIVEIRA SILVA",
+    "nome_urna": "RENATINHA",
+    "cargo_disputado": "Senador",
+    "estado": "SE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "260002543591"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-260002545677",
+    "nome_completo": "JOSE IRAN BARBOSA FILHO",
+    "nome_urna": "IRAN BARBOSA",
+    "cargo_disputado": "Senador",
+    "estado": "SE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "260002545677"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-260002547285",
+    "nome_completo": "ROGERIO CARVALHO SANTOS",
+    "nome_urna": "ROGERIO CARVALHO",
+    "cargo_disputado": "Senador",
+    "estado": "SE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "260002547285"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-260002547290",
+    "nome_completo": "ANDRE LUIS DANTAS FERREIRA",
+    "nome_urna": "ANDRÉ MOURA",
+    "cargo_disputado": "Senador",
+    "estado": "SE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "260002547290"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-260002549127",
+    "nome_completo": "EDUARDO ALVES DO AMORIM",
+    "nome_urna": "EDUARDO AMORIM",
+    "cargo_disputado": "Senador",
+    "estado": "SE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "260002549127"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-260002549130",
+    "nome_completo": "ANDRÉ DAVID CALDAS ROSA RODRIGUES",
+    "nome_urna": "DELEGADO ANDRÉ DAVID",
+    "cargo_disputado": "Senador",
+    "estado": "SE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "260002549130"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-260002551362",
+    "nome_completo": "RODRIGO SANTANA VALADARES",
+    "nome_urna": "RODRIGO VALADARES",
+    "cargo_disputado": "Senador",
+    "estado": "SE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "260002551362"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-260002551366",
+    "nome_completo": "HENRIQUE ALVES DA ROCHA",
+    "nome_urna": "CORONEL ROCHA",
+    "cargo_disputado": "Senador",
+    "estado": "SE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "260002551366"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-260002551550",
+    "nome_completo": "EDVALDO NOGUEIRA FILHO",
+    "nome_urna": "EDVALDO",
+    "cargo_disputado": "Senador",
+    "estado": "SE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "260002551550"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-270002539141",
+    "nome_completo": "FABIO PAULINO RIBEIRO",
+    "nome_urna": "FÁBIO RIBEIRO",
+    "cargo_disputado": "Senador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "270002539141"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-270002539142",
+    "nome_completo": "OSVALDO SOARES NETO",
+    "nome_urna": "PROFESSOR OSVALDO",
+    "cargo_disputado": "Senador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "270002539142"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-270002544629",
+    "nome_completo": "PAULO SARDINHA MOURAO",
+    "nome_urna": "PAULO MOURÃO",
+    "cargo_disputado": "Senador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "270002544629"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-270002546038",
+    "nome_completo": "RONALDO DIMAS NOGUEIRA PEREIRA",
+    "nome_urna": "RONALDO DIMAS",
+    "cargo_disputado": "Senador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "270002546038"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-270002546039",
+    "nome_completo": "VANDERLEI LUXEMBURGO DA SILVA",
+    "nome_urna": "VANDERLEI LUXEMBURGO",
+    "cargo_disputado": "Senador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "270002546039"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-270002546333",
+    "nome_completo": "CARLOS EDUARDO TORRES GOMES",
+    "nome_urna": "EDUARDO GOMES",
+    "cargo_disputado": "Senador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "270002546333"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-270002548231",
+    "nome_completo": "CARLOS HENRIQUE AMORIM",
+    "nome_urna": "GAGUIM",
+    "cargo_disputado": "Senador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "270002548231"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-270002548344",
+    "nome_completo": "JOSÉ ALEXANDRE DOMINGUES GUIMARÃES",
+    "nome_urna": "ALEXANDRE GUIMARÃES",
+    "cargo_disputado": "Senador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "270002548344"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-270002548409",
+    "nome_completo": "ELI DIAS BORGES",
+    "nome_urna": "ELI BORGES",
+    "cargo_disputado": "Senador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "270002548409"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-270002550610",
+    "nome_completo": "NILTON RODRIGUES DOS SANTOS",
+    "nome_urna": "CORONEL NILTON SANTOS",
+    "cargo_disputado": "Senador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "270002550610"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-270002551270",
+    "nome_completo": "HELIO RODRIGUES CARVALHO",
+    "nome_urna": "HELIO RODRIGUES BOLSONARO",
+    "cargo_disputado": "Senador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "270002551270"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-270002551273",
+    "nome_completo": "OSVANI PEREIRA DA LUZ",
+    "nome_urna": "OSVANY LUZ",
+    "cargo_disputado": "Senador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "270002551273"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-270002552968",
+    "nome_completo": "FLAVIO ALVES BRAGA",
+    "nome_urna": "APÓSTOLO FLAVIO BRAGA",
+    "cargo_disputado": "Senador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "270002552968"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-30002530069",
+    "nome_completo": "LUIZ CANTUARIA BARRETO",
+    "nome_urna": "LUCAS BARRETO",
+    "cargo_disputado": "Senador",
+    "estado": "AP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "30002530069"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-30002530071",
+    "nome_completo": "RAYSSA CADENA FURLAN",
+    "nome_urna": "RAYSSA FURLAN",
+    "cargo_disputado": "Senador",
+    "estado": "AP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "30002530071"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-30002549909",
+    "nome_completo": "RANDOLPH FREDERICH RODRIGUES ALVES",
+    "nome_urna": "RANDOLFE",
+    "cargo_disputado": "Senador",
+    "estado": "AP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "30002549909"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-30002549911",
+    "nome_completo": "ACACIO DA SILVA FAVACHO NETO",
+    "nome_urna": "ACÁCIO FAVACHO",
+    "cargo_disputado": "Senador",
+    "estado": "AP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "30002549911"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-30002551381",
+    "nome_completo": "UZIAN PINTO MACHADO",
+    "nome_urna": "PROFESSOR UZIAN PINTO",
+    "cargo_disputado": "Senador",
+    "estado": "AP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "30002551381"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-30002551382",
+    "nome_completo": "JOENILDA LOBATO SILVA LENZI",
+    "nome_urna": "JUÍZA JÔ",
+    "cargo_disputado": "Senador",
+    "estado": "AP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "30002551382"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-30002551576",
+    "nome_completo": "ALLINY SOUSA DA ROCHA SERRAO",
+    "nome_urna": "ALLINY SERRÃO",
+    "cargo_disputado": "Senador",
+    "estado": "AP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "30002551576"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-30002553708",
+    "nome_completo": "HELIO PALHETA SILVA",
+    "nome_urna": "HELIO SILVA",
+    "cargo_disputado": "Senador",
+    "estado": "AP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "30002553708"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-40002535270",
+    "nome_completo": "JOSÉ EVANDRO DE OLIVEIRA",
+    "nome_urna": "EVANDRO DE OLIVEIRA",
+    "cargo_disputado": "Senador",
+    "estado": "AM",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "40002535270"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-40002535391",
+    "nome_completo": "DAILSON DE QUEIROZ CORRÊA",
+    "nome_urna": "DAILSON CORRÊA",
+    "cargo_disputado": "Senador",
+    "estado": "AM",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "40002535391"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-40002537344",
+    "nome_completo": "FRANCISCO PLINIO VALERIO TOMAZ",
+    "nome_urna": "PLINIO VALÉRIO",
+    "cargo_disputado": "Senador",
+    "estado": "AM",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "40002537344"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-40002541744",
+    "nome_completo": "WILSON MIRANDA LIMA",
+    "nome_urna": "WILSON LIMA",
+    "cargo_disputado": "Senador",
+    "estado": "AM",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "40002541744"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-40002542686",
+    "nome_completo": "ALBERTO BARROS CAVALCANTE NETO",
+    "nome_urna": "CAPITÃO ALBERTO NETO",
+    "cargo_disputado": "Senador",
+    "estado": "AM",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "40002542686"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-40002550806",
+    "nome_completo": "MILTON ROGÉRIO MOREIRA PINTO",
+    "nome_urna": "XUXA DO AMAZONAS",
+    "cargo_disputado": "Senador",
+    "estado": "AM",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "40002550806"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-40002551281",
+    "nome_completo": "MARIA EVANY DO NASCIMENTO",
+    "nome_urna": "PROFESSORA EVANY",
+    "cargo_disputado": "Senador",
+    "estado": "AM",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "40002551281"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-40002551283",
+    "nome_completo": "ISMAEL FRANKLIN GONCALVES",
+    "nome_urna": "ISMAEL MUNDURUKU",
+    "cargo_disputado": "Senador",
+    "estado": "AM",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "40002551283"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-50002533124",
+    "nome_completo": "ANGELO MARIO CORONEL DE AZEVEDO MARTINS",
+    "nome_urna": "ANGELO CORONEL",
+    "cargo_disputado": "Senador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "50002533124"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-50002534769",
+    "nome_completo": "DELLIANA RICELLI RIBEIRO DA SILVA",
+    "nome_urna": "PROFESSORA DELLIANA",
+    "cargo_disputado": "Senador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "50002534769"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-50002534774",
+    "nome_completo": "MARCELO CARVALHO LAVIGNE",
+    "nome_urna": "MARCELO CARVALHO",
+    "cargo_disputado": "Senador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "50002534774"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-50002536317",
+    "nome_completo": "JAQUES WAGNER",
+    "nome_urna": "JAQUES WAGNER",
+    "cargo_disputado": "Senador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "50002536317"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-50002536321",
+    "nome_completo": "RUI COSTA DOS SANTOS",
+    "nome_urna": "RUI COSTA",
+    "cargo_disputado": "Senador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "50002536321"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-50002536577",
+    "nome_completo": "MARCELINO JOSE GUIMARAES SANTANA",
+    "nome_urna": "MARCELO SANTTANA",
+    "cargo_disputado": "Senador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "50002536577"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-50002536625",
+    "nome_completo": "CARLOS EDUARDO SODRÉ",
+    "nome_urna": "CARLOS SODRÉ",
+    "cargo_disputado": "Senador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "50002536625"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-50002550314",
+    "nome_completo": "GREGORIO MOTTA GOULD",
+    "nome_urna": "GREGORIO GOULD",
+    "cargo_disputado": "Senador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "50002550314"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-50002553643",
+    "nome_completo": "MARCELO MILLET OLIVEIRA",
+    "nome_urna": "MARCELO MILLET",
+    "cargo_disputado": "Senador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "50002553643"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-60002533959",
+    "nome_completo": "CATARINA DA GRACA ALMEIDA MATOS",
+    "nome_urna": "CATARINA MATOS",
+    "cargo_disputado": "Senador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "60002533959"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-60002539687",
+    "nome_completo": "GUILHERME CALS THEOPHILO GASPAR DE OLIVEIRA",
+    "nome_urna": "GUILHERME THEOPHILO",
+    "cargo_disputado": "Senador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "60002539687"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-60002540754",
+    "nome_completo": "ALCIDES FERNANDES DA SILVA",
+    "nome_urna": "ALCIDES FERNANDES",
+    "cargo_disputado": "Senador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "60002540754"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-60002542476",
+    "nome_completo": "LUIZIANNE DE OLIVEIRA LINS",
+    "nome_urna": "LUIZIANNE",
+    "cargo_disputado": "Senador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "60002542476"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-60002542479",
+    "nome_completo": "CID FERREIRA GOMES",
+    "nome_urna": "CID GOMES",
+    "cargo_disputado": "Senador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "60002542479"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-60002550748",
+    "nome_completo": "REGINALDO FERREIRA DE ARAUJO",
+    "nome_urna": "REGINALDO",
+    "cargo_disputado": "Senador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "60002550748"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-60002551397",
+    "nome_completo": "LINO ALVES DE ALMEIDA",
+    "nome_urna": "LINO ALVES",
+    "cargo_disputado": "Senador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "60002551397"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-70002536445",
+    "nome_completo": "EDUARDO RENNÓ ZANATA",
+    "nome_urna": "ZANATA",
+    "cargo_disputado": "Senador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "70002536445"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-70002537112",
+    "nome_completo": "GUILHERME DE AMORIM LINO",
+    "nome_urna": "PROFESSOR GUILHERME AMORIM",
+    "cargo_disputado": "Senador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "70002537112"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-70002548624",
+    "nome_completo": "SEBASTIAO COELHO DA SILVA",
+    "nome_urna": "SEBASTIÃO COELHO",
+    "cargo_disputado": "Senador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "70002548624"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-70002551323",
+    "nome_completo": "TIAGO TÁRSIS ADALDO",
+    "nome_urna": "TIAGO",
+    "cargo_disputado": "Senador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "70002551323"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-70002551426",
+    "nome_completo": "DAVID HORN PUREZA",
+    "nome_urna": "DAVID HORN",
+    "cargo_disputado": "Senador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "70002551426"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-70002552490",
+    "nome_completo": "ERIKA JUCÁ KOKAY",
+    "nome_urna": "ERIKA KOKAY",
+    "cargo_disputado": "Senador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "70002552490"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-70002552492",
+    "nome_completo": "LEILA GOMES DE BARROS RÊGO",
+    "nome_urna": "LEILA DO VÔLEI",
+    "cargo_disputado": "Senador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "70002552492"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-70002552582",
+    "nome_completo": "MARLEY MENDONCA ALVES",
+    "nome_urna": "MARLEY",
+    "cargo_disputado": "Senador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "70002552582"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-70002552934",
+    "nome_completo": "BEATRIZ KICIS TORRENTS DE SORDI",
+    "nome_urna": "BIA KICIS",
+    "cargo_disputado": "Senador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "70002552934"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-70002553296",
+    "nome_completo": "PAULO AUGUSTO PIMENTA FELICIO DOS SANTOS",
+    "nome_urna": "GUTO FELÍCIO DOS SANTOS",
+    "cargo_disputado": "Senador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "70002553296"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-70002553751",
+    "nome_completo": "RONALDO FONSECA DE SOUZA",
+    "nome_urna": "RONALDO FONSECA",
+    "cargo_disputado": "Senador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "70002553751"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-80002530022",
+    "nome_completo": "LEONARDO PASSOS MONJARDIM",
+    "nome_urna": "LEONARDO MONJARDIM",
+    "cargo_disputado": "Senador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "80002530022"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-80002538202",
+    "nome_completo": "MARCOS RIBEIRO DO VAL",
+    "nome_urna": "MARCOS DO VAL",
+    "cargo_disputado": "Senador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "80002538202"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-80002542401",
+    "nome_completo": "WELLINGTON CALLEGARI",
+    "nome_urna": "CALLEGARI",
+    "cargo_disputado": "Senador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "80002542401"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-80002549404",
+    "nome_completo": "CARLOS FABIAN DE CARVALHO",
+    "nome_urna": "PROFESSOR FABIAN",
+    "cargo_disputado": "Senador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "80002549404"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-80002550187",
+    "nome_completo": "FABIANO CONTARATO",
+    "nome_urna": "FABIANO CONTARATO",
+    "cargo_disputado": "Senador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "80002550187"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-80002551368",
+    "nome_completo": "ROSILDA DE FREITAS",
+    "nome_urna": "ROSE DE FREITAS",
+    "cargo_disputado": "Senador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "80002551368"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-80002551370",
+    "nome_completo": "JOSÉ RENATO CASAGRANDE",
+    "nome_urna": "RENATO CASAGRANDE",
+    "cargo_disputado": "Senador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "80002551370"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-80002552373",
+    "nome_completo": "RODNEY ROCHA MIRANDA",
+    "nome_urna": "RODNEY MIRANDA",
+    "cargo_disputado": "Senador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "80002552373"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-80002552692",
+    "nome_completo": "SERGIO MENEGUELLI",
+    "nome_urna": "SERGIO MENEGUELLI",
+    "cargo_disputado": "Senador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "80002552692"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-80002553265",
+    "nome_completo": "EVAIR VIEIRA DE MELO",
+    "nome_urna": "EVAIR DE MELO",
+    "cargo_disputado": "Senador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "80002553265"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-80002553269",
+    "nome_completo": "MAGDA SANTOS MALTA",
+    "nome_urna": "MAGUINHA MALTA",
+    "cargo_disputado": "Senador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "80002553269"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-90002540997",
+    "nome_completo": "MARIA DAS GRAÇAS LANDIM DE CARVALHO CAIADO",
+    "nome_urna": "GRACINHA CAIADO",
+    "cargo_disputado": "Senador",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "90002540997"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-90002540998",
+    "nome_completo": "GUSTAVO MENDANHA MELO",
+    "nome_urna": "GUSTAVO MENDANHA",
+    "cargo_disputado": "Senador",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "90002540998"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-90002541455",
+    "nome_completo": "MARIA ISAURA LEMOS",
+    "nome_urna": "ISAURA LEMOS",
+    "cargo_disputado": "Senador",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "90002541455"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-90002543215",
+    "nome_completo": "VANDERLAN VIEIRA CARDOSO",
+    "nome_urna": "VANDERLAN CARDOSO",
+    "cargo_disputado": "Senador",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "90002543215"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-90002543556",
+    "nome_completo": "GUSTAVO GAYER MACHADO DE ARAUJO",
+    "nome_urna": "GUSTAVO GAYER",
+    "cargo_disputado": "Senador",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "90002543556"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-90002543560",
+    "nome_completo": "OSEIAS MENDES PEREIRA VARÃO",
+    "nome_urna": "OSÉIAS VARÃO",
+    "cargo_disputado": "Senador",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "90002543560"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-90002545243",
+    "nome_completo": "ERNESTO GUIMARÃES ROLLER",
+    "nome_urna": "ERNESTO ROLLER",
+    "cargo_disputado": "Senador",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "90002545243"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-90002545244",
+    "nome_completo": "IURE DE CASTRO SILVA",
+    "nome_urna": "IURE CASTRO",
+    "cargo_disputado": "Senador",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "90002545244"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-90002546974",
+    "nome_completo": "ZACARIAS CALIL HAMU",
+    "nome_urna": "DR. ZACHARIAS CALIL",
+    "cargo_disputado": "Senador",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "90002546974"
+      }
+    }
+  },
+  {
+    "slug": "tse-2026-90002551198",
+    "nome_completo": "GUILHERME DARQUES ALVES DE PAULA",
+    "nome_urna": "GUILHERME DARQUES",
+    "cargo_disputado": "Senador",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "90002551198"
+      }
+    }
+  },
+  {
+    "slug": "michelle-bolsonaro",
+    "nome_completo": "MICHELLE DE PAULA FIRMO REINALDO BOLSONARO",
+    "nome_urna": "MICHELLE BOLSONARO",
+    "cargo_disputado": "Senador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "70002552936"
+      }
+    }
   }
 ]
