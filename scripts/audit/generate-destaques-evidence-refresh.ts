@@ -3,8 +3,8 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { dirname, join, resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 import {
-  compareDestaquesRuns, validateDestaquesRunManifest,
-  type DestaquesRunManifest,
+  compareDestaquesRuns, DESTAQUES_UNIVERSE_ATUAL, validateDestaquesRunManifest,
+  type DestaquesRunManifest, type DestaquesUniverse,
 } from "../lib/destaques-votacoes-provenance"
 
 const sql = (value: unknown) => value === null || value === undefined ? "NULL" : `'${String(value).replaceAll("'", "''")}'`
@@ -12,10 +12,25 @@ const sql = (value: unknown) => value === null || value === undefined ? "NULL" :
 export function buildRefresh(input: {
   runA: DestaquesRunManifest; runB: DestaquesRunManifest
   readA: (path: string) => Buffer; readB: (path: string) => Buffer
-  executionId: string; evidencePath: string; projectRef: string; now?: Date
+  executionId: string; evidencePath: string; projectRef: string
+  /**
+   * `votos_candidato` não é exclusivo do universo curado (ver
+   * coletar-destaques-votacoes.ts): o ingest de coorte 2026 grava pares para
+   * candidatos fora de data/candidatos.json, e o coletor os relata (stderr +
+   * `pares_fora_do_seed` no stdout de cada leitura), sem entrar no manifesto.
+   * Esse valor é essa contagem — normalmente `run-b/stdout.json`
+   * `.pares_fora_do_seed.length`. Ela alimenta um guard adicional em SQL que
+   * falha se a contaminação fora de escopo mudou de tamanho entre a dupla
+   * leitura e a aplicação, para uma escrita concorrente fora de escopo não
+   * passar despercebida só porque o guard principal ficou restrito ao escopo.
+   */
+  expectedExcludedPairs: number; now?: Date
+  /** Só para teste: universo golden real é sempre DESTAQUES_UNIVERSE_ATUAL. */
+  universe?: DestaquesUniverse
 }) {
-  const a = validateDestaquesRunManifest(input.runA, input.readA)
-  const b = validateDestaquesRunManifest(input.runB, input.readB)
+  const universe = input.universe ?? DESTAQUES_UNIVERSE_ATUAL
+  const a = validateDestaquesRunManifest(input.runA, input.readA, universe)
+  const b = validateDestaquesRunManifest(input.runB, input.readB, universe)
   const receipt = compareDestaquesRuns(a, b, { runA: input.readA, runB: input.readB })
   if (receipt.summary.pares_sem_achado !== 0) throw new Error("strict-surface: pares sem confirmação")
   if (!/^[a-z0-9]{20}$/.test(input.projectRef) || a.database_project_ref !== input.projectRef || b.database_project_ref !== input.projectRef) {
@@ -25,6 +40,9 @@ export function buildRefresh(input: {
     throw new Error("execução de persistência inválida ou reutilizada")
   }
   if (!input.evidencePath.trim()) throw new Error("caminho da evidência ausente")
+  if (!Number.isInteger(input.expectedExcludedPairs) || input.expectedExcludedPairs < 0) {
+    throw new Error("contagem de pares fora de escopo inválida")
+  }
   const now = (input.now ?? new Date()).getTime()
   if ([a, b].some(run => run.sources.some(source => {
     const age = now - Date.parse(source.checked_at)
@@ -51,6 +69,18 @@ export function buildRefresh(input: {
   const expectedPairs = b.pairs.map(p => ({id:p.database_row_id,candidato_id:p.candidato_id,votacao_id:p.votacao_id,voto:p.voto_anterior,contradicao:p.contradicao_anterior,contradicao_descricao:p.contradicao_descricao_anterior,created_at:p.created_at_anterior}))
   const pairFields = "id,candidato_id,votacao_id,voto,contradicao,contradicao_descricao,created_at"
   const pairQuery = `SELECT * FROM jsonb_to_recordset(${sql(JSON.stringify(expectedPairs))}::jsonb) AS p(id uuid,candidato_id uuid,votacao_id uuid,voto text,contradicao boolean,contradicao_descricao text,created_at timestamptz)`
+  // `votos_candidato` guarda pares fora do universo curado (ver comentário de
+  // `expectedExcludedPairs` acima): comparar a tabela inteira contra
+  // `_expected_pairs` (só os 181 pares do manifesto) sempre reprovava, porque
+  // a diferença simétrica também enxergava as centenas de linhas de coorte
+  // que o coletor já exclui a montante. O guard abaixo restringe a
+  // comparação ao mesmo escopo do coletor (candidato_id presente no
+  // manifesto) e soma um segundo guard que falha se a contagem FORA desse
+  // escopo mudou de tamanho — sem isso, uma escrita concorrente fora de
+  // escopo passaria sem ninguém perceber só porque o escopo do guard
+  // principal ficou mais estreito.
+  const scopeCandidatoIds = [...new Set(b.pairs.map(p => p.candidato_id))].sort()
+  const scopeQuery = `SELECT * FROM jsonb_to_recordset(${sql(JSON.stringify(scopeCandidatoIds.map(candidato_id => ({ candidato_id }))))}::jsonb) AS s(candidato_id uuid)`
   const expectedVotes = b.votacoes.map(v => ({id:v.votacao_id,fonte:v.fonte_anterior,votacao_id_api:v.votacao_id_api_anterior}))
   const voteQuery = `SELECT * FROM jsonb_to_recordset(${sql(JSON.stringify(expectedVotes))}::jsonb) AS v(id uuid,fonte text,votacao_id_api text)`
   const logCheck = `IF EXISTS ((SELECT ${fields} FROM public.coleta_log WHERE execucao=${sql(input.executionId)} EXCEPT ALL ${expectedLog}) UNION ALL (${expectedLog} EXCEPT ALL SELECT ${fields} FROM public.coleta_log WHERE execucao=${sql(input.executionId)})) THEN RAISE EXCEPTION 'recibos persistidos divergiram'; END IF;`
@@ -62,12 +92,14 @@ SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:destaques-evidence-ref
 LOCK TABLE public.votos_candidato, public.votacoes_chave, public.coleta_log IN SHARE ROW EXCLUSIVE MODE;
 -- Destino Supabase declarado: ${input.projectRef}. O executor deve confirmar o host antes de abrir psql.
 CREATE TEMP TABLE _expected_pairs ON COMMIT DROP AS ${pairQuery};
+CREATE TEMP TABLE _scope_candidatos ON COMMIT DROP AS ${scopeQuery};
 CREATE TEMP TABLE _expected_votes ON COMMIT DROP AS ${voteQuery};
 CREATE TEMP TABLE _old_logs ON COMMIT DROP AS SELECT count(*) AS n FROM public.coleta_log;
 DO $guard$ BEGIN
   IF EXISTS(SELECT 1 FROM public.coleta_log WHERE execucao=${sql(input.executionId)}) THEN RAISE EXCEPTION 'execução já existe; usar readback, nunca duplicar'; END IF;
   IF ${sql(b.checked_at)}::timestamptz > now() OR ${sql(Math.min(...b.sources.map(s => Date.parse(s.checked_at))))}::numeric < extract(epoch from now() - interval '24 hours')*1000 THEN RAISE EXCEPTION 'recibo não é recente'; END IF;
-  IF EXISTS ((SELECT ${pairFields} FROM public.votos_candidato EXCEPT ALL SELECT * FROM _expected_pairs) UNION ALL (SELECT * FROM _expected_pairs EXCEPT ALL SELECT ${pairFields} FROM public.votos_candidato)) THEN RAISE EXCEPTION 'pares mudaram desde a dupla leitura'; END IF;
+  IF EXISTS ((SELECT ${pairFields} FROM public.votos_candidato WHERE candidato_id IN (SELECT candidato_id FROM _scope_candidatos) EXCEPT ALL SELECT * FROM _expected_pairs) UNION ALL (SELECT * FROM _expected_pairs EXCEPT ALL SELECT ${pairFields} FROM public.votos_candidato WHERE candidato_id IN (SELECT candidato_id FROM _scope_candidatos))) THEN RAISE EXCEPTION 'pares mudaram desde a dupla leitura (escopo curado)'; END IF;
+  IF (SELECT count(*) FROM public.votos_candidato WHERE candidato_id NOT IN (SELECT candidato_id FROM _scope_candidatos)) <> ${input.expectedExcludedPairs} THEN RAISE EXCEPTION 'contagem de pares fora do escopo curado mudou desde a dupla leitura'; END IF;
   IF EXISTS ((SELECT id,fonte,votacao_id_api FROM public.votacoes_chave EXCEPT ALL SELECT * FROM _expected_votes) UNION ALL (SELECT * FROM _expected_votes EXCEPT ALL SELECT id,fonte,votacao_id_api FROM public.votacoes_chave)) THEN RAISE EXCEPTION 'metadados de votação mudaram'; END IF;
 END $guard$;
 INSERT INTO public.coleta_log (${fields}) ${expectedLog};
@@ -84,15 +116,20 @@ DO $verify$ BEGIN ${logCheck} END $verify$;
 SELECT execucao,count(*) AS receipts,count(*) FILTER(WHERE escopo='candidato') AS pairs,min(executado_em) AS oldest,max(executado_em) AS newest FROM public.coleta_log WHERE execucao=${sql(input.executionId)} GROUP BY execucao;
 COMMIT;
 `
-  return { rows, receipt, applySql, readbackSql }
+  return { rows, receipt, applySql, readbackSql, scopeCandidatoIds, expectedExcludedPairs: input.expectedExcludedPairs }
 }
 
 function main() {
   const arg = (name: string) => process.argv.find(value => value.startsWith(`--${name}=`))?.slice(name.length + 3)
-  const runAPath = arg("run-a"), runBPath = arg("run-b"), out = arg("out"), executionId = arg("execution-id"), evidencePath = arg("evidence-path"), projectRef = arg("project-ref")
-  if (!runAPath || !runBPath || !out || !executionId || !evidencePath || !projectRef) throw new Error("uso: --run-a=manifest.json --run-b=manifest.json --out=DIR --execution-id=ID --evidence-path=PATH --project-ref=REF")
+  const runAPath = arg("run-a"), runBPath = arg("run-b"), out = arg("out"), executionId = arg("execution-id"), evidencePath = arg("evidence-path"), projectRef = arg("project-ref"), excludedPairsRaw = arg("excluded-pairs")
+  if (!runAPath || !runBPath || !out || !executionId || !evidencePath || !projectRef || excludedPairsRaw === undefined) {
+    throw new Error("uso: --run-a=manifest.json --run-b=manifest.json --out=DIR --execution-id=ID --evidence-path=PATH --project-ref=REF --excluded-pairs=N")
+  }
+  const expectedExcludedPairs = Number(excludedPairsRaw)
+  if (!Number.isInteger(expectedExcludedPairs) || expectedExcludedPairs < 0) throw new Error("--excluded-pairs deve ser um inteiro >= 0")
   const result = buildRefresh({
     runA: JSON.parse(readFileSync(runAPath, "utf8")), runB: JSON.parse(readFileSync(runBPath, "utf8")),
+    expectedExcludedPairs,
     readA: path => readFileSync(join(dirname(resolve(runAPath)), path)),
     readB: path => readFileSync(join(dirname(resolve(runBPath)), path)),
     executionId, evidencePath, projectRef,
@@ -102,7 +139,11 @@ function main() {
   writeFileSync(join(out, "double-read-receipt.json"), JSON.stringify(result.receipt, null, 2) + "\n")
   writeFileSync(join(out, "apply.sql"), result.applySql)
   writeFileSync(join(out, "readback.sql"), result.readbackSql)
-  console.log(JSON.stringify({ out, receipts: result.rows.length, comparison_sha256: result.receipt.comparison_sha256, production_written: false }))
+  console.log(JSON.stringify({
+    out, receipts: result.rows.length, comparison_sha256: result.receipt.comparison_sha256,
+    scope_candidates: result.scopeCandidatoIds.length, expected_excluded_pairs: result.expectedExcludedPairs,
+    production_written: false,
+  }))
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
