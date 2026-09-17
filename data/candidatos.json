@@ -4971,5 +4971,19 @@
         "2026": "110002553706"
       }
     }
+  },
+  {
+    "slug": "godeiro-linharess",
+    "nome_completo": "GLADYER LINHARES GODEIRO",
+    "nome_urna": "GODEIRO LINHARESS",
+    "cargo_disputado": "Governador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002554482"
+      }
+    }
   }
 ]

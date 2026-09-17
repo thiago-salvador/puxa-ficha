@@ -73,6 +73,16 @@ export interface CompareCandidaciesOptions {
    * comprovável por esse registro externo versionado.
    */
   substitutedViceSqs?: Iterable<string>
+  /**
+   * SQ_CANDIDATO dos TITULARES com substituição comprovada em recibo
+   * revisado (mesmo padrão de `substitutedViceSqs`, issue #340). O pacote
+   * consulta_cand_2026.zip lista titular substituído e substituto como duas
+   * candidaturas distintas na mesma coligação, ambas com CD_SITUACAO -3/#NE;
+   * a prova de substituição vem do detalhe ao vivo do DivulgaCandContas
+   * (`st_SUBSTITUIDO: true` e `substituto.sqCandidato` apontando para quem
+   * está no ar), não do pacote consolidado sozinho.
+   */
+  substitutedTitularSqs?: Iterable<string>
 }
 
 // Mudanças informativas entram no relatório e nas contagens, mas não levam a
@@ -85,6 +95,19 @@ export function reviewedSubstitutedViceSqs(resolutions: readonly {
   vices?: readonly { sq_candidato?: string; situacao_vice?: number }[]
 }[]): string[] {
   return resolutions.flatMap((resolution) => resolution.replaced_vice_sq ? [resolution.replaced_vice_sq] : [])
+}
+
+/**
+ * Espelha `reviewedSubstitutedViceSqs` para titulares. `replaced_titular_sq`
+ * só entra no recibo revisado quando o detalhe ao vivo confirmou
+ * `st_SUBSTITUIDO: true` E `substituto.sqCandidato` apontando para o SQ que
+ * está publicado no mesmo slot — a mesma dupla prova que o mecanismo de vice
+ * exige, adaptada ao campo que o TSE usa para titular.
+ */
+export function reviewedSubstitutedTitularSqs(resolutions: readonly {
+  replaced_titular_sq?: string
+}[]): string[] {
+  return resolutions.flatMap((resolution) => resolution.replaced_titular_sq ? [resolution.replaced_titular_sq] : [])
 }
 
 function isVerifiedInactiveVice(
@@ -122,6 +145,8 @@ export function compareCandidacies(
   options: CompareCandidaciesOptions = {},
 ): CandidacyComparison {
   const substitutedViceSqs = new Set(options.substitutedViceSqs ?? [])
+  const substitutedTitularSqs = new Set(options.substitutedTitularSqs ?? [])
+  const substitutedSqs = new Set([...substitutedViceSqs, ...substitutedTitularSqs])
   const official = [...officialInput].sort(stableRecordSort)
   const published = [...publishedInput].sort(stableRecordSort)
   const officialBySq = new Map(
@@ -188,17 +213,18 @@ export function compareCandidacies(
             detail: `${officialRecord.nome_urna} consta como vice inapto no detalhe atual do DivulgaCandContas; sua ausência não exige inclusão nem comprova substituição ou aptidão de outra vice`,
           })
         } else if (
-          substitutedViceSqs.has(officialRecord.sq_candidato) &&
+          substitutedSqs.has(officialRecord.sq_candidato) &&
           vigente &&
           publishedSlotRecord &&
           publishedSlotRecord.sq_candidato === vigente.sq_candidato
         ) {
+          const papel = officialRecord.cargo.startsWith("VICE ") ? "vice" : "titular"
           addChange(changes, {
             kind: "substituted",
             slot,
             official: officialRecord,
             published: publishedSlotRecord,
-            detail: `${officialRecord.nome_urna} é vice substituído conforme DivulgaCandContas; o catálogo publica ${vigente.nome_urna}`,
+            detail: `${officialRecord.nome_urna} é ${papel} substituído conforme DivulgaCandContas; o catálogo publica ${vigente.nome_urna}`,
           })
         } else {
           addChange(changes, {

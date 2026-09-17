@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "source": "TSE DivulgaCandContas",
+    "election_id": "20322002026",
+    "checked_at": "2026-09-16",
+    "rule": "st_SUBSTITUIDO true e substituto.sqCandidato apontando para o SQ publicado no mesmo slot comprova substituição de titular. O pacote consolidado consulta_cand_2026.zip lista as duas candidaturas na mesma coligação, ambas com CD_SITUACAO -3/#NE, sem marcar qual foi substituída.",
+    "scope": "issue #340: chapas em que consulta_cand_2026.zip mantém titular substituído e substituto como duas candidaturas distintas na mesma coligação, e só o detalhe ao vivo do DivulgaCandContas prova a cadeia",
+    "fields": "st_SUBSTITUIDO e substituto.sqCandidato, campos já presentes no detalhe público do TSE"
+  },
+  "resolutions": [
+    {
+      "titular_sq": "280002553884",
+      "titular_nome_urna": "PABLO MARÇAL",
+      "uf": null,
+      "cargo": "PRESIDENTE",
+      "sq_coligacao": "280001801455",
+      "current_titular_sq": "280002554479",
+      "replaced_titular_sq": "280002553884",
+      "consultado_em": "2026-09-16T23:05:00.000Z",
+      "endpoint": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/BR/20322002026/candidato/280002553884",
+      "response_sha256": "8668f30bbc0caa5d0ef01322612ed70d4f5c5b5ac47997362332697768368cac",
+      "st_substituido": true,
+      "substituto_sq_candidato": "280002554479",
+      "substituto_nome": "LEONARDO ALVES DE ARAUJO"
+    },
+    {
+      "titular_sq": "200002550223",
+      "titular_nome_urna": "CARLOS JARARACA",
+      "uf": "RN",
+      "cargo": "GOVERNADOR",
+      "sq_coligacao": "200001801097",
+      "current_titular_sq": "200002554482",
+      "replaced_titular_sq": "200002550223",
+      "consultado_em": "2026-09-16T23:05:00.000Z",
+      "endpoint": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RN/20322002026/candidato/200002550223",
+      "response_sha256": "e40dd636102df079098e716419eb07abba25112a132bbc027dd801dfb8d898dc",
+      "st_substituido": true,
+      "substituto_sq_candidato": "200002554482",
+      "substituto_nome": "GLADYER LINHARES GODEIRO"
+    }
+  ]
+}

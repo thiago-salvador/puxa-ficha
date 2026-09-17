@@ -414,7 +414,13 @@ describe("classificador puro (#136)", () => {
     // Issue #340: alargamento do vocabulário (DDL pura) mais a reconciliação de
     // seis fichas, três chapas e carlos-jararaca (curadoria), nenhuma falha
     // nova, medidas pelo --gate local PG17: 378 + 105 = 483.
-    assert.equal(manifesto.aplicadas_esperadas, 378)
+    // Issue #340 follow-up: refresco de fonte_detalhe da chapa PRTB
+    // (20260916150000, curadoria), nenhuma falha nova, medida pelo --gate
+    // local PG17: 379 + 105 = 484.
+    // Issue #340 follow-up: admissão da ficha de Godeiro Linharess
+    // (20260916160000, curadoria), nenhuma falha nova, medida pelo --gate
+    // local PG17: 380 + 105 = 485.
+    assert.equal(manifesto.aplicadas_esperadas, 380)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

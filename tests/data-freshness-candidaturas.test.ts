@@ -119,6 +119,98 @@ test("vice vigente publicada sem o substituído no registro continua bloqueando"
   assert.equal(result.status, "review_required")
 })
 
+// Issue #340. Duas chapas reais de titular substituído, driven por
+// st_SUBSTITUIDO/substituto do detalhe ao vivo do DivulgaCandContas
+// (data/tse-titular-substituicoes-20260916.json), não por curadoria solta:
+// PABLO MARÇAL -> LEONARDO AVALANCHE (Presidente, PRTB) e
+// CARLOS JARARACA -> GODEIRO LINHARESS (Governador/RN, DC).
+const PABLO_MARCAL_SQ = "280002553884"
+const LEONARDO_AVALANCHE_SQ = "280002554479"
+const CARLOS_JARARACA_SQ = "200002550223"
+const GODEIRO_LINHARESS_SQ = "200002554482"
+
+function titular(sq: string, nome: string, overrides: Partial<CandidacyRecord> = {}): CandidacyRecord {
+  return record(sq, overrides.cargo === "VICE PRESIDENTE" ? "VICE PRESIDENTE" : "PRESIDENTE", {
+    uf: null,
+    sq_coligacao: "280001801455",
+    nome_urna: nome,
+    partido_sigla: "PRTB",
+    ...overrides,
+  })
+}
+
+const pabloMarcal = titular(PABLO_MARCAL_SQ, "PABLO MARÇAL")
+const leonardoAvalanche = titular(LEONARDO_AVALANCHE_SQ, "LEONARDO AVALANCHE", { perfil_slug: "leonardo-avalanche" })
+
+test("titular substituído (Pablo Marçal -> Leonardo Avalanche) vira mudança informativa quando o vigente já está publicado", () => {
+  const result = compareCandidacies(
+    [pabloMarcal, leonardoAvalanche],
+    [leonardoAvalanche],
+    undefined,
+    { substitutedTitularSqs: [PABLO_MARCAL_SQ] },
+  )
+  assert.equal(result.counts.substituted, 1)
+  assert.equal(result.counts.inclusion, 0)
+  assert.equal(result.status, "ok")
+  const change = result.changes.find((item) => item.kind === "substituted")
+  assert.equal(change?.official?.sq_candidato, PABLO_MARCAL_SQ)
+  assert.equal(change?.published?.sq_candidato, LEONARDO_AVALANCHE_SQ)
+  assert.match(change?.detail ?? "", /titular substituído.*DivulgaCandContas/)
+})
+
+test("titular substituído sem o SQ revisado continua bloqueando (não afrouxa a checagem)", () => {
+  const result = compareCandidacies([pabloMarcal, leonardoAvalanche], [leonardoAvalanche])
+  assert.equal(result.counts.inclusion, 1)
+  assert.equal(result.counts.substituted, 0)
+  assert.equal(result.status, "review_required")
+})
+
+const carlosJararaca = record(CARLOS_JARARACA_SQ, "GOVERNADOR", {
+  uf: "RN", sq_coligacao: "200001801097", nome_urna: "CARLOS JARARACA", partido_sigla: "DC",
+})
+const godeiroLinharess = record(GODEIRO_LINHARESS_SQ, "GOVERNADOR", {
+  uf: "RN", sq_coligacao: "200001801097", nome_urna: "GODEIRO LINHARESS", partido_sigla: "DC",
+  perfil_slug: "godeiro-linharess",
+})
+
+test("titular substituído (Carlos Jararaca -> Godeiro Linharess) vira mudança informativa quando o vigente já está publicado", () => {
+  const result = compareCandidacies(
+    [carlosJararaca, godeiroLinharess],
+    [godeiroLinharess],
+    undefined,
+    { substitutedTitularSqs: [CARLOS_JARARACA_SQ] },
+  )
+  assert.equal(result.counts.substituted, 1)
+  assert.equal(result.counts.inclusion, 0)
+  assert.equal(result.status, "ok")
+})
+
+test("titular substituído não some ao vazar para a coorte de vice (papel correto no detalhe)", () => {
+  // Regressão: o texto do detalhe distingue "titular" de "vice" pelo cargo,
+  // não pela presença no set. Um titular no set continua rotulado "titular".
+  const result = compareCandidacies(
+    [pabloMarcal, leonardoAvalanche],
+    [leonardoAvalanche],
+    undefined,
+    { substitutedTitularSqs: [PABLO_MARCAL_SQ], substitutedViceSqs: [VICE_SUBSTITUIDO_SQ] },
+  )
+  const change = result.changes.find((item) => item.kind === "substituted")
+  assert.match(change?.detail ?? "", /^PABLO MARÇAL é titular substituído/)
+})
+
+test("substitutedTitularSqs não interfere na checagem de vice inativo/substituído existente", () => {
+  const result = compareCandidacies(
+    [viceSubstituido, viceVigente],
+    [viceVigente],
+    undefined,
+    { substitutedViceSqs: [VICE_SUBSTITUIDO_SQ], substitutedTitularSqs: [PABLO_MARCAL_SQ] },
+  )
+  assert.equal(result.counts.substituted, 1)
+  assert.equal(result.status, "ok")
+  const change = result.changes.find((item) => item.kind === "substituted")
+  assert.match(change?.detail ?? "", /vice substituído/)
+})
+
 test("SQ no registro sem outra alternativa oficial no mesmo slot não vira substituição", () => {
   const result = compareCandidacies([viceSubstituido], [], undefined, {
     substitutedViceSqs: [VICE_SUBSTITUIDO_SQ],

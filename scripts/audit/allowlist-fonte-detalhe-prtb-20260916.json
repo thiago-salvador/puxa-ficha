@@ -1,0 +1,20 @@
+{
+  "versao": "2026-09-17",
+  "fonte": "TSE DivulgaCandContas, detalhe ao vivo dos SQ 280002554479 e 280002554490, reconferido em 17/09/2026. Issue #340.",
+  "motivo": "Refresca o blob chapas_2026.fonte_detalhe da chapa presidencial do PRTB, preso em 'Aguardando julgamento' desde 15/09/2026, para 'Pendente de julgamento', o texto que o TSE publica desde então. Escrita de referência (chave da chapa, não slug de candidato: nem titular nem vice têm ficha vinculada nesta linha).",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "referencias": [
+    {
+      "tabela": "chapas_2026",
+      "ref": "fonte-detalhe-prtb-16092026",
+      "campos": ["fonte_detalhe", "fonte_sha256", "snapshot_em"]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260916150000",
+      "campos": ["fonte", "escopo", "alvo", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    }
+  ],
+  "entries": []
+}

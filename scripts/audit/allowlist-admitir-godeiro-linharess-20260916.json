@@ -1,0 +1,16 @@
+{
+  "versao": "2026-09-17",
+  "fonte": "TSE DivulgaCandContas, detalhe ao vivo do SQ 200002554482, reconferido em 17/09/2026, sha256 3eb9f33a03ed094192c81525349ea2da75639184114cd41661deb18dda7cbf5e. Issue #340.",
+  "motivo": "Admissão da ficha de Godeiro Linharess, substituto oficial de Carlos Jararaca ao Governo do RN, com patrimônio 2026 declarado ao TSE, vinculando o candidato à chapa já reconciliada por 20260916140000.",
+  "coorte": ["godeiro-linharess"],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [
+    {"tabela": "candidatos", "slug": "godeiro-linharess", "campos": ["id","slug","nome_completo","nome_urna","partido_sigla","partido_atual","cargo_disputado","estado","sq_candidato_2026","data_nascimento","naturalidade","formacao","profissao_declarada","genero","estado_civil","cor_raca","foto_url","foto_credito","biografia","situacao_candidatura","status","publicavel","fonte_dados","verificacao_campos","ultima_atualizacao","created_at"], "max_registros": 1},
+    {"tabela": "patrimonio", "slug": "godeiro-linharess", "ano": 2026, "campos": ["id","candidato_id","ano_eleicao","valor_total","bens","fonte","sq_candidato","uf_candidatura","cargo_candidatura","created_at"], "max_registros": 1}
+  ],
+  "referencias": [
+    {"tabela": "chapas_2026", "ref": "godeiro-linharess-admissao", "campos": ["titular_candidato_id"]},
+    {"tabela": "coleta_log", "ref": "migration:20260916160000", "campos": ["fonte","escopo","alvo","candidato_id","resultado","volume","detalhe","url","execucao","natureza"]},
+    {"tabela": "coleta_log", "ref": "migration:20260916160000:patrimonio", "campos": ["fonte","escopo","alvo","candidato_id","resultado","volume","detalhe","url","execucao","natureza"]}
+  ]
+}
