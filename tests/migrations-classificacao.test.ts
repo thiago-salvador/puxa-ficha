@@ -420,7 +420,10 @@ describe("classificador puro (#136)", () => {
     // Issue #340 follow-up: admissão da ficha de Godeiro Linharess
     // (20260916160000, curadoria), nenhuma falha nova, medida pelo --gate
     // local PG17: 380 + 105 = 485.
-    assert.equal(manifesto.aplicadas_esperadas, 380)
+    // Issue #340 follow-up: preenchimento de chapas_2026.sq_coligacao das
+    // duas chapas de fonte direta (20260916170000, curadoria), nenhuma
+    // falha nova, medida pelo --gate local PG17: 381 + 105 = 486.
+    assert.equal(manifesto.aplicadas_esperadas, 381)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

@@ -12,6 +12,13 @@
   ],
   "recortes": [
     {
+      "nome": "sq-coligacao-chapas-direta-20260916",
+      "desde": "20260916170000",
+      "ate": "20260916170000",
+      "allowlist": "scripts/audit/allowlist-sq-coligacao-chapas-direta-20260916.json",
+      "divida": null
+    },
+    {
       "nome": "admitir-godeiro-linharess-20260916",
       "desde": "20260916160000",
       "ate": "20260916160000",
