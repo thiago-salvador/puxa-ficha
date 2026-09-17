@@ -19,6 +19,7 @@ GRANT ALL ON public.quiz_position_quarantine TO service_role;
 COMMENT ON TABLE public.quiz_position_quarantine IS
   'Tuplas nominais cuja verificado=true foi bloqueada por auditoria do quiz; remover uma linha exige revisão de fonte.';
 
+-- @write tabela=quiz_position_quarantine ref=migration:20260917190000 chave=4e3828f3-33c9-4206-9aff-7b869a466baa campos=candidato_id,tema,posicao,url_fonte,motivo,ativo
 INSERT INTO public.quiz_position_quarantine (candidato_id, tema, posicao, url_fonte, motivo)
 SELECT alvo.candidato_id::uuid, alvo.tema, alvo.posicao, alvo.url_fonte, alvo.motivo
 FROM (VALUES
