@@ -136,7 +136,7 @@ describe("dominio de situacao_candidatura", () => {
   it("o CHECK comparado e o da migration mais recente, nao o do par de 100100", () => {
     // Guarda do proprio guard: se `arquivoDoCheckMaisRecente` voltar a apontar
     // para o par original, esta comparacao morre em silencio de novo.
-    assert.equal(CHECK, "20260903210000_vocabulario_situacao_julgamento_publicado.sql")
+    assert.equal(CHECK, "20260916130000_vocabulario_situacao_pendente_julgamento.sql")
   })
 
   it("nenhum valor do dominio dispara a regra de situacao stale", () => {

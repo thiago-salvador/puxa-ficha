@@ -67,6 +67,12 @@ const ACTIVE_OFFICIAL_STATUSES = new Set([
   "indeferido com recurso",
   "indeferido em prazo recursal ou com recurso",
   "indeferido com recurso",
+  // Codigo TSE 17 (issue #340, 16/09/2026): pendente de julgamento, sem
+  // deferimento nem indeferimento. Sem esta entrada, classifyOfficialCandidacy
+  // cai em "review_required" para qualquer candidatura com este status, mesmo
+  // quando is_candidato_inapto=false e totalizacao=Concorrendo, que foi
+  // exatamente o bloqueio medido em ruth-reis e leonardo-avalanche.
+  "pendente de julgamento",
 ]);
 
 const TERMINAL_OFFICIAL_STATUSES = new Set([
