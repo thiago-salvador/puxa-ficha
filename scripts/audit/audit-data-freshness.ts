@@ -16,7 +16,11 @@ import {
   type ProfileAdmissionInput,
   type PublicCandidateSummary,
 } from "../../src/lib/candidate-publication-integrity";
-import { compareCandidacies, reviewedSubstitutedViceSqs } from "../lib/data-freshness/candidaturas";
+import {
+  compareCandidacies,
+  reviewedSubstitutedViceSqs,
+  reviewedSubstitutedTitularSqs,
+} from "../lib/data-freshness/candidaturas";
 import {
   collectCurrentOfficialCandidacies,
   collectCurrentStatusEvidence,
@@ -204,6 +208,40 @@ function readSubstitutedViceSqs(dataDir = resolve(process.cwd(), "data")): strin
       throw new Error(`${name}: resoluções de vice pertencem a outra eleição`);
     }
     for (const sq of reviewedSubstitutedViceSqs(parsed.resolutions ?? [])) sqs.add(sq);
+  }
+  return [...sqs];
+}
+
+interface TitularResolutionsFile {
+  metadata?: { election_id?: string };
+  resolutions?: Array<{ replaced_titular_sq?: string }>;
+}
+
+/**
+ * Espelha `readSubstitutedViceSqs` para titulares (issue #340). Substituições
+ * explicitamente revisadas nos recibos versionados de
+ * `data/tse-titular-substituicoes-*.json`, cada uma com `st_SUBSTITUIDO:
+ * true` e `substituto.sqCandidato` do detalhe ao vivo do DivulgaCandContas.
+ */
+function readSubstitutedTitularSqs(dataDir = resolve(process.cwd(), "data")): string[] {
+  let entries: string[];
+  try {
+    entries = readdirSync(dataDir);
+  } catch {
+    return [];
+  }
+  const files = entries
+    .filter((name) => /^tse-titular-substituicoes-\d{8}\.json$/.test(name))
+    .sort();
+  const sqs = new Set<string>();
+  for (const name of files) {
+    const parsed = JSON.parse(
+      readFileSync(resolve(dataDir, name), "utf8"),
+    ) as TitularResolutionsFile;
+    if (parsed.metadata?.election_id && parsed.metadata.election_id !== ELECTION_ID_2026) {
+      throw new Error(`${name}: resoluções de titular pertencem a outra eleição`);
+    }
+    for (const sq of reviewedSubstitutedTitularSqs(parsed.resolutions ?? [])) sqs.add(sq);
   }
   return [...sqs];
 }
@@ -528,7 +566,12 @@ async function main(): Promise<void> {
     official,
     published.records,
     generatedAt,
-    { substitutedViceSqs: readSubstitutedViceSqs(), currentOfficial, currentStatusEvidence },
+    {
+      substitutedViceSqs: readSubstitutedViceSqs(),
+      substitutedTitularSqs: readSubstitutedTitularSqs(),
+      currentOfficial,
+      currentStatusEvidence,
+    },
   );
   const currentOfficialWithProfiles = attachPublishedProfiles(
     currentOfficial,

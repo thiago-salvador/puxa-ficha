@@ -1,0 +1,55 @@
+name: Aplicar preenchimento de sq_coligacao (chapas de fonte direta, issue #340)
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: "SHA de 40 caracteres já mergeado em main"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-db-migrations
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    name: sq_coligacao das chapas de fonte direta 20260916170000, ledger e readback
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment: production
+    env:
+      PF_EXPECTED_SHA: ${{ inputs.expected_sha }}
+      GITHUB_REF: ${{ github.ref }}
+    steps:
+      - name: Validar dispatch manual e SHA fechado
+        env:
+          DISPATCH_SHA: ${{ github.sha }}
+          PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = "refs/heads/main"
+          [[ "$PF_EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
+          test "$PF_EXPECTED_SHA" = "$DISPATCH_SHA"
+          test -n "${PF_DATABASE_URL:-}"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.expected_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - uses: ./.github/actions/install-postgresql-client-17
+        timeout-minutes: 12
+      - name: Provar no-op, forward, abort, segunda execução e rollback em PostgreSQL 17 descartável
+        run: bash scripts/audit/provar-sq-coligacao-chapas-direta-pg17.sh
+      - name: Aplicar migration fechada em produção
+        env:
+          PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: bash scripts/audit/apply-sq-coligacao-chapas-direta-production.sh

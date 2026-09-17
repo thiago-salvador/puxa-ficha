@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "source": "TSE DivulgaCandContas",
+    "election_id": "20322002026",
+    "checked_at": "2026-09-16",
+    "rule": "situacaoVice 3 é substituída; exatamente uma alternativa não 3 é a vice vigente",
+    "scope": "issue #340, coligação 280001801455 (PRTB, Presidente): diferente do caso MA (20260903), o detalhe do titular vigente (280002554479) só lista a vice atual (Silvia, situacaoVice 12) — a vice substituída (Leonardo Avalanche, situacaoVice 3) só aparece no detalhe do TITULAR TAMBÉM substituído (Pablo Marçal, 280002553884), porque a chapa inteira (titular e vice) foi trocada, não só a vice. As duas provas vêm de endpoints diferentes, citados abaixo.",
+    "fields": "somente sq_candidato, nome de urna e situacaoVice, dados já presentes no pacote público do TSE"
+  },
+  "resolutions": [
+    {
+      "titular_sq": "280002554479",
+      "titular_nome_urna": "LEONARDO AVALANCHE",
+      "uf": null,
+      "cargo": "PRESIDENTE",
+      "sq_coligacao": "280001801455",
+      "current_vice_sq": "280002554490",
+      "replaced_vice_sq": "280002553883",
+      "consultado_em": "2026-09-17T02:08:13.408Z",
+      "endpoint": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/BR/20322002026/candidato/280002554479",
+      "response_sha256": "111536f42f57322e3948aa6db34a7d13236148fa3cde77e042574027835a080c",
+      "replaced_vice_endpoint": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/BR/20322002026/candidato/280002553884",
+      "replaced_vice_response_sha256": "8668f30bbc0caa5d0ef01322612ed70d4f5c5b5ac47997362332697768368cac",
+      "replaced_vice_note": "situacaoVice 3 para o SQ 280002553883 aparece no detalhe do titular substituído (Pablo Marçal, 280002553884), não no do titular vigente: a chapa inteira foi trocada nesta coligação (ver data/tse-titular-substituicoes-20260916.json).",
+      "vices": [
+        {
+          "sq_candidato": "280002554490",
+          "nome_urna": "SILVIA",
+          "situacao_vice": 12
+        },
+        {
+          "sq_candidato": "280002553883",
+          "nome_urna": "LEONARDO AVALANCHE",
+          "situacao_vice": 3
+        }
+      ]
+    }
+  ]
+}
