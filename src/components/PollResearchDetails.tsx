@@ -41,7 +41,12 @@ function PollResearchDetails({ poll, candidateKeys }: { poll: StatePollScenario;
   return <div data-pf-poll-details="">
     {remaining.length > 0 && <ul className={styles.additionalResults} aria-label={candidateKeys.length ? "Demais respostas da pesquisa" : "Resultados originais da pesquisa"}>{remaining.map((result, index) => {
       const value = publishedValue(poll, result)
-      return <li key={`${resultKey(result)}:${index}`}><span>{result.rawLabel}{result.matchStatus === "indeterminado" && <small>Vínculo com candidatura não confirmado</small>}</span><strong>{value === null ? "Sem resultado" : formatPercent(value)}</strong></li>
+      const note = result.matchStatus === "reviewed_source_mention"
+        ? "Menção espontânea; não confirma candidatura"
+        : result.matchStatus === "indeterminado"
+          ? "Vínculo com candidatura não confirmado"
+          : null
+      return <li key={`${resultKey(result)}:${index}`}><span>{result.rawLabel}{note && <small>{note}</small>}</span><strong>{value === null ? "Sem resultado" : formatPercent(value)}</strong></li>
     })}</ul>}
     <div className={styles.technical}>
       <div className={styles.quickFacts}><span><strong>{poll.sample.size.value?.toLocaleString("pt-BR") ?? "Amostra não informada"}</strong>{poll.sample.size.value !== null && " entrevistas"}</span><span>Margem: <strong>{poll.marginErrorPp.value === null ? "não informada" : `±${poll.marginErrorPp.value.toLocaleString("pt-BR")} p.p.`}</strong></span><span>Confiança: <strong>{poll.confidencePercent.value === null ? "não informada" : formatPercent(poll.confidencePercent.value)}</strong></span><span>{poll.method.value ?? "Método não informado"}</span></div>

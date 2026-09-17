@@ -26,6 +26,20 @@ interface ResultadoPesquisaAgendada extends UnknownObject {
   candidate_slug: string | null
   match_status: string
   value_percent: number
+  source_mention_review?: SourceMentionReview
+}
+
+interface SourceMentionReview {
+  registration_id: string
+  geography_code: string
+  office: string
+  scenario_id: string
+  mode: "espontanea"
+  source_sha256: string
+  raw_label: string
+  value_percent: number
+  scenario_label: string
+  scenario_question: string | null
 }
 
 interface CenarioPesquisaAgendada extends UnknownObject {
@@ -59,7 +73,7 @@ export interface ContratoPesquisaAgendada extends UnknownObject {
     result_url: string
     supporting_urls?: string[]
     consulted_at?: string
-    capture: { format?: string; sha256: string; status?: string }
+    capture: { format?: string; sha256: string; supporting_pdf_sha256?: string; status?: string }
     [key: string]: unknown
   }
   cenarios: CenarioPesquisaAgendada[]
@@ -218,6 +232,7 @@ function resultComparable(result: ResultadoPesquisaAgendada): UnknownObject {
     candidate_slug: result.candidate_slug,
     match_status: result.match_status,
     value_percent: result.value_percent,
+    source_mention_review: result.source_mention_review ?? null,
   }
 }
 
@@ -248,6 +263,31 @@ function contractComparable(contract: ContratoPesquisaAgendada): UnknownObject {
       resultados: (scenario.resultados ?? []).map(resultComparable),
     })),
   }
+}
+
+export function sourceMentionReviewConfere(
+  result: ResultadoPesquisaAgendada,
+  scenario: CenarioPesquisaAgendada,
+  contract: ContratoPesquisaAgendada,
+): boolean {
+  const receipt = result.source_mention_review
+  const mode = scenario.comparability_key?.split("|")[4]
+  return result.match_status === "reviewed_source_mention"
+    && result.candidate_slug === null
+    && mode === "espontaneo"
+    && receipt?.registration_id === contract.registration.code.value
+    && receipt.geography_code === contract.geography.code
+    && receipt.office === contract.office
+    && receipt.scenario_id === scenario.id
+    && receipt.mode === "espontanea"
+    && typeof contract.provenance.capture.supporting_pdf_sha256 === "string"
+    && /^[a-f0-9]{64}$/i.test(contract.provenance.capture.supporting_pdf_sha256)
+    && /^[a-f0-9]{64}$/i.test(receipt.source_sha256)
+    && receipt.source_sha256 === contract.provenance.capture.supporting_pdf_sha256
+    && receipt.raw_label === result.raw_label
+    && receipt.value_percent === result.value_percent
+    && receipt.scenario_label === scenario.label_raw
+    && receipt.scenario_question === scenario.question.value
 }
 
 function requiredMetadata(contract: ContratoPesquisaAgendada | null): string[] {
@@ -286,7 +326,8 @@ function requiredMetadata(contract: ContratoPesquisaAgendada | null): string[] {
       if (!isNonEmptyString(result.raw_label)) missing.push("resultado.raw_label")
       const resolvedCandidate = result.match_status === "exact_alias" && isNonEmptyString(result.candidate_slug)
       const resolvedNonCandidate = result.match_status === "not_candidate" && result.candidate_slug === null
-      if (!resolvedCandidate && !resolvedNonCandidate) {
+      const resolvedSourceMention = sourceMentionReviewConfere(result, scenario, contract)
+      if (!resolvedCandidate && !resolvedNonCandidate && !resolvedSourceMention) {
         missing.push(`resultado.identidade:${result.raw_label ?? "desconhecido"}`)
       }
       if (!Number.isFinite(result.value_percent) || result.value_percent < 0 || result.value_percent > 100) missing.push(`resultado.valor:${result.raw_label ?? "desconhecido"}`)
