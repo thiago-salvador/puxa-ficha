@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs"
 import { describe, it } from "node:test"
 
 const route = readFileSync("src/app/api/candidato-profile/[slug]/route.ts", "utf8")
+const handler = readFileSync("src/lib/candidato-profile-route.ts", "utf8")
 
 describe("cache da API publica de candidato", () => {
   it("deixa a tag public-candidato-ficha como unica camada persistente", () => {
@@ -12,9 +13,9 @@ describe("cache da API publica de candidato", () => {
 
   it("nao permite que CDN ou navegador preservem uma ficha anterior ao revalidate", () => {
     assert.match(
-      route,
+      handler,
       /cache-control": "private, no-store, no-cache, must-revalidate, max-age=0"/,
     )
-    assert.doesNotMatch(route, /s-maxage=3600/)
+    assert.doesNotMatch(`${route}\n${handler}`, /s-maxage=3600/)
   })
 })

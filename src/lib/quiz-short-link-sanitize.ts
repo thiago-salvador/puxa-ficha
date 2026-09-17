@@ -22,7 +22,7 @@ export function sanitizeQuizResultQueryString(raw: string): string | null {
   const v = params.get("v")?.trim()
   if (!r || !v) return null
   if (r.length > MAX_R_LEN) return null
-  if (!/^[123]$/.test(v)) return null
+  if (!/^[1234]$/.test(v)) return null
 
   const cargoP = params.get("cargo")?.trim()
   const ufP = params.get("uf")?.trim()

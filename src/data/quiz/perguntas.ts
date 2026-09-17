@@ -14,6 +14,7 @@ export type RespostaLikert =
   | "neutro"
   | "discordo_parcial"
   | "discordo_total"
+  | "sem_opiniao"
 
 type DirecaoVoto = "concordo=sim" | "concordo=nao"
 
@@ -37,7 +38,7 @@ export interface QuizPergunta {
   temas_pl?: string[]
 }
 
-export const LIKERT_VALUES: Record<RespostaLikert, number> = {
+export const LIKERT_VALUES: Record<Exclude<RespostaLikert, "sem_opiniao">, number> = {
   concordo_total: 1,
   concordo_parcial: 0.75,
   neutro: 0.5,
@@ -45,8 +46,8 @@ export const LIKERT_VALUES: Record<RespostaLikert, number> = {
   discordo_total: 0,
 }
 
-/** Versão do payload de respostas na URL (?v=). v1 = 10; v2 = Likert 3 bits; v3 = +1 bit importancia por pergunta. */
-export const QUIZ_VERSION = 3
+/** v4 separa sem opinião e revisa o texto das perguntas. Links anteriores não são reinterpretados. */
+export const QUIZ_VERSION = 4
 
 /**
  * Quantidade de perguntas no encoding v1 (primeiras por `ordem`).
@@ -60,9 +61,9 @@ export const QUIZ_PERGUNTAS: QuizPergunta[] = [
     id: "q01",
     eixo: "trabalho",
     ordem: 1,
-    texto: "A reforma trabalhista de 2017 beneficiou os trabalhadores brasileiros.",
+    texto: "Sou a favor das mudanças trabalhistas da Lei 13.467/2017.",
     contexto:
-      "A reforma de Temer mudou regras da CLT: terceirização, jornada, negociado sobre o legislado em vários pontos. A votação nominal no Congresso é pública.",
+      "Esta pergunta trata da reforma federal de 2017, não de propostas posteriores sobre jornada de trabalho. A comparação nominal considera a aprovação da matéria.",
     votacao_titulos: ["Reforma Trabalhista"],
     direcao_voto: "concordo=sim",
     eixo_economico_dir: "concordo=mercado",
@@ -72,9 +73,9 @@ export const QUIZ_PERGUNTAS: QuizPergunta[] = [
     id: "q02",
     eixo: "politica_fiscal",
     ordem: 2,
-    texto: "O teto de gastos públicos foi necessário para proteger a economia brasileira.",
+    texto: "Sou a favor do limite de despesas estabelecido pelo teto de gastos da EC 95/2016.",
     contexto:
-      "A EC 95 (2016) limitou crescimento de despesas por 20 anos. Foi revogada em parte depois, mas a votação original é referência histórica.",
+      "A comparação é histórica, sobre o teto aprovado em 2016. Votos no arcabouço fiscal de 2023 não representam automaticamente uma posição sobre essa regra anterior.",
     votacao_titulos: ["Teto de Gastos (EC 95)"],
     direcao_voto: "concordo=sim",
     eixo_economico_dir: "concordo=mercado",
@@ -84,9 +85,9 @@ export const QUIZ_PERGUNTAS: QuizPergunta[] = [
     id: "q03",
     eixo: "direitos_sociais",
     ordem: 3,
-    texto: "A reforma da Previdência de 2019 foi necessária e justa.",
+    texto: "Sou a favor da reforma federal da Previdência de 2019.",
     contexto:
-      "A PEC aprovada no governo Bolsonaro elevou idade mínima e tempo de contribuição.",
+      "A pergunta trata da reforma federal de 2019. Reformas municipais e estaduais têm regras próprias e não são usadas como equivalentes.",
     votacao_titulos: ["Reforma da Previdência"],
     direcao_voto: "concordo=sim",
     eixo_economico_dir: "concordo=mercado",
@@ -96,8 +97,8 @@ export const QUIZ_PERGUNTAS: QuizPergunta[] = [
     id: "q04",
     eixo: "economia",
     ordem: 4,
-    texto: "A privatização da Eletrobras foi boa para o país.",
-    contexto: "Lei que abriu capital e mudou controle da empresa em 2022; houve voto nominal no Congresso.",
+    texto: "Sou a favor da privatização da Eletrobras autorizada pela Lei 14.182/2021.",
+    contexto: "A pergunta é específica sobre a Eletrobras. Posições sobre outras empresas públicas não são usadas como equivalentes.",
     votacao_titulos: ["Privatização da Eletrobras"],
     direcao_voto: "concordo=sim",
     eixo_economico_dir: "concordo=mercado",
@@ -107,19 +108,18 @@ export const QUIZ_PERGUNTAS: QuizPergunta[] = [
     id: "q05",
     eixo: "corrupcao",
     ordem: 5,
-    texto: "O chamado orçamento secreto (emendas de relator) foi aceitável.",
-    contexto: "Emendas RP9 sem identificação do parlamentar beneficiado; escândalo de 2021.",
+    texto: "Sou a favor do mecanismo de emendas de relator (RP9) adotado em 2021.",
+    contexto: "São as emendas conhecidas como orçamento secreto. A comparação considera a regulamentação desse mecanismo, sem tratar a resposta como posição econômica de mercado ou de Estado.",
     votacao_titulos: ["Orçamento Secreto (Emendas de Relator)"],
     direcao_voto: "concordo=sim",
-    eixo_economico_dir: "concordo=mercado",
     temas_pl: ["orcamento_secreto"],
   },
   {
     id: "q06",
     eixo: "economia",
     ordem: 6,
-    texto: "O Banco Central deve ter autonomia formal em relação ao governo.",
-    contexto: "MP e lei que fixaram mandato e autonomia do BC; voto no Congresso é público.",
+    texto: "Sou a favor da autonomia formal do Banco Central prevista na Lei Complementar 179/2021.",
+    contexto: "A comparação considera a matéria que definiu a autonomia formal e os mandatos da direção do Banco Central.",
     votacao_titulos: ["Autonomia do Banco Central"],
     direcao_voto: "concordo=sim",
     eixo_economico_dir: "concordo=mercado",
@@ -129,7 +129,7 @@ export const QUIZ_PERGUNTAS: QuizPergunta[] = [
     id: "q07",
     eixo: "economia",
     ordem: 7,
-    texto: "O governo deveria controlar preços de alimentos e combustíveis.",
+    texto: "O governo deveria controlar os preços dos combustíveis.",
     direcao_voto: "concordo=nao",
     eixo_economico_dir: "concordo=estado",
   },
@@ -139,11 +139,8 @@ export const QUIZ_PERGUNTAS: QuizPergunta[] = [
     ordem: 8,
     texto:
       "O Brasil deveria priorizar preservação ambiental mesmo que desacelere parte do agronegócio.",
-    contexto:
-      "Inclui o debate do marco temporal de terras indígenas no Congresso: voto nominal público quando mapeado na base.",
-    votacao_titulos: ["Marco Temporal Indigena"],
+    contexto: "Esta opinião geral não é comparada a votos sobre o marco temporal de terras indígenas, que trata de uma política específica.",
     direcao_voto: "concordo=nao",
-    eixo_economico_dir: "concordo=estado",
   },
   {
     id: "q09",
@@ -151,8 +148,7 @@ export const QUIZ_PERGUNTAS: QuizPergunta[] = [
     ordem: 9,
     texto: "Programas de transferência de renda como o Bolsa Família são um investimento social necessário.",
     contexto:
-      "MP 1.061/2021 instituiu o Auxílio Brasil no lugar do Bolsa Família; voto no Congresso é público.",
-    votacao_titulos: ["Auxílio Brasil (MP 1.061/2021)"],
+      "A comparação usa posições documentadas sobre o princípio da transferência de renda. Um voto em um pacote legislativo específico não equivale automaticamente a essa opinião geral.",
     direcao_voto: "concordo=sim",
     eixo_economico_dir: "concordo=estado",
     temas_pl: ["transferencia_renda"],
@@ -162,7 +158,7 @@ export const QUIZ_PERGUNTAS: QuizPergunta[] = [
     eixo: "costumes",
     ordem: 10,
     texto:
-      "O Estado deveria interferir menos em questões como aborto e casamento homoafetivo.",
+      "O casamento civil entre pessoas do mesmo sexo deve ser garantido por lei.",
     direcao_voto: "concordo=sim",
     eixo_social_dir: "concordo=progressista",
   },
@@ -170,7 +166,7 @@ export const QUIZ_PERGUNTAS: QuizPergunta[] = [
     id: "q11",
     eixo: "costumes",
     ordem: 11,
-    texto: "A posse de armas de fogo deveria ser um direito garantido a todo cidadão.",
+    texto: "A posse de armas de fogo deveria ser ampliada para a população civil.",
     direcao_voto: "concordo=sim",
     eixo_social_dir: "concordo=conservador",
   },
@@ -187,10 +183,9 @@ export const QUIZ_PERGUNTAS: QuizPergunta[] = [
     eixo: "direitos_sociais",
     ordem: 13,
     texto:
-      "O Estado deveria garantir moradia e saúde como direitos universais, mesmo que isso aumente impostos.",
+      "O Estado deveria garantir acesso universal à moradia.",
     direcao_voto: "concordo=sim",
     eixo_economico_dir: "concordo=estado",
-    eixo_social_dir: "concordo=progressista",
   },
   {
     id: "q14",
@@ -204,7 +199,7 @@ export const QUIZ_PERGUNTAS: QuizPergunta[] = [
     id: "q15",
     eixo: "economia",
     ordem: 15,
-    texto: "Empresas estratégicas como Petrobras e Vale deveriam ser 100% estatais.",
+    texto: "A Petrobras deveria ser uma empresa totalmente estatal.",
     direcao_voto: "concordo=sim",
     eixo_economico_dir: "concordo=estado",
   },

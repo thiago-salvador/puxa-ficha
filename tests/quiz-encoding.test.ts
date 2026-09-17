@@ -10,9 +10,35 @@ import {
   encodeQuizAnswersPayload,
   encodeQuizAnswersPayloadFirstN,
   encodeQuizRespostasPayload,
+  decodeQuizPayloadForShare,
 } from "../src/lib/quiz-encoding"
 
 describe("quiz-encoding", () => {
+  it("separa neutralidade de sem opinião e omissões na v4", () => {
+    const answers = new Map<string, { valor: RespostaLikert; importante: boolean }>([
+      ["q01", { valor: "neutro", importante: true }],
+      ["q02", { valor: "sem_opiniao", importante: true }],
+    ])
+    const payload = encodeQuizRespostasPayload(answers)
+    const decoded = decodeQuizPayloadForShare(payload, "4")!
+    assert.deepEqual(decoded.get("q01"), { valor: "neutro", importante: true })
+    assert.deepEqual(decoded.get("q02"), { valor: "sem_opiniao", importante: false })
+    assert.deepEqual(decoded.get("q03"), { valor: "sem_opiniao", importante: false })
+  })
+
+  it("não reinterpreta links anteriores, versão ausente ou desconhecida", () => {
+    const payload = encodeQuizRespostasPayload(new Map())
+    for (const version of ["1", "2", "3", "5", null, undefined]) {
+      assert.equal(decodeQuizPayloadForShare(payload, version), null)
+    }
+  })
+
+  it("rejeita payload truncado, bytes extras e caracteres inválidos", () => {
+    const payload = encodeQuizRespostasPayload(new Map())
+    for (const bad of [payload.slice(0, -2), `${payload}AA`, `${payload}!`, "////"]) {
+      assert.equal(decodeQuizPayloadForShare(bad, "4"), null)
+    }
+  })
   it("roundtrips all-neutral answers (v3)", () => {
     const m = new Map<string, { valor: RespostaLikert; importante: boolean }>()
     for (const p of quizPerguntasOrdenadas()) {

@@ -12,7 +12,7 @@ import type {
   QuizContradicaoVoto,
   QuizPosicaoDeclarada,
 } from "@/lib/quiz-types"
-import { buildFinanciamentoContexto, buildFinanciamentoDoacaoPerfil } from "@/lib/quiz-financiamento"
+import { buildFinanciamentoContexto } from "@/lib/quiz-financiamento"
 import { buildVotacaoPublicUrl } from "@/lib/quiz-votacao-url"
 
 /** Doadores fictícios para o mock do quiz (classificação por setor, cobertura acima do mínimo). */
@@ -1162,7 +1162,7 @@ const MOCK_MUDANCAS: Record<string, MudancaPartido[]> = {
 }
 
 // --- VOTACOES ---
-export const MOCK_VOTOS: Record<string, VotoCandidato[]> = {
+const MOCK_VOTOS: Record<string, VotoCandidato[]> = {
   "flavio-bolsonaro": [
     {
       id: "v1", candidato_id: "2", votacao_id: "vt1", voto: "não",
@@ -1634,7 +1634,6 @@ export function buildMockQuizAlignmentDataset(
       ...(c.slug === "lula"
         ? {
             financiamento_contexto: buildFinanciamentoContexto(2022, 5_000_000, MOCK_QUIZ_FIN_LULA_DOADORES),
-            financiamento_doacao_perfil: buildFinanciamentoDoacaoPerfil(MOCK_QUIZ_FIN_LULA_DOADORES, 5_000_000),
           }
         : {}),
     }

@@ -2,8 +2,7 @@ import "server-only"
 import { cache } from "react"
 import { unstable_noStore as noStore } from "next/cache"
 import { headers } from "next/headers"
-import { collectQuizVotacaoTitulos, QUIZ_PERGUNTAS } from "@/data/quiz/perguntas"
-import { buildFinanciamentoContexto, buildFinanciamentoDoacaoPerfil, type QuizFinanciamentoDoacaoPerfil } from "@/lib/quiz-financiamento"
+import { buildFinanciamentoContexto } from "@/lib/quiz-financiamento"
 import { createServerSupabaseClient, createServiceRoleSupabaseClient, getAppSupabaseUrl } from "./supabase"
 import { isSupabaseNoRowError } from "./supabase-errors"
 import { selectWithPreMigrationColumns } from "./supabase-pre-migration-select"
@@ -36,6 +35,11 @@ import { getCanonicalPerson } from "@/lib/canonical-person-map"
 import { evolucaoPatrimonialVs2026, type PatrimonioAnoValor } from "@/lib/evolucao-patrimonial"
 import { patrimonioDeclaradoAtipico } from "@/lib/patrimonio-atipico"
 import { buildVotacaoPublicUrl } from "@/lib/quiz-votacao-url"
+import {
+  resolveQuizVotacaoCatalog,
+  QUIZ_VOTACAO_REFERENCIAS,
+  type QuizVotacaoCatalogRow,
+} from "@/lib/quiz-votacao-references"
 import { getRankingDefinitionBySlug } from "@/data/ranking-definitions"
 import { buildAggregateRankingEntries, buildFieldRankingEntries, normalizeRankingFilters, sortRankingEntries, type RankingCandidateSummary, type RankingDataset, type RankingDefinition, type RankingEntry, type RankingFieldCandidate } from "@/lib/rankings"
 import { degradedResource, liveResource, mergeSourceMessages, mergeSourceStatuses } from "@/lib/data-resource"
@@ -2599,6 +2603,34 @@ export async function getRankingDataResource(
   }
 }
 
+const QUIZ_PAGE_SIZE = 500
+type QuizPageResponse<T> = SupabaseRunResult<T[]> & { count?: number | null }
+
+/** Paginação estável para os enriquecimentos do quiz, sem o limite default 1000. */
+async function fetchQuizRowsPaged<T>(
+  countQuery: (signal: AbortSignal) => PromiseLike<QuizPageResponse<unknown>>,
+  pageQuery: (from: number, to: number, signal: AbortSignal) => PromiseLike<QuizPageResponse<T>>,
+  signal: AbortSignal,
+): Promise<QuizPageResponse<T>> {
+  const countResult = await countQuery(signal)
+  if (countResult.error) return { data: null, error: countResult.error, count: countResult.count }
+
+  const total = countResult.count ?? 0
+  const starts = Array.from({ length: Math.ceil(total / QUIZ_PAGE_SIZE) }, (_, i) => i * QUIZ_PAGE_SIZE)
+  const pages = await Promise.all(starts.map((from) => pageQuery(from, from + QUIZ_PAGE_SIZE - 1, signal)))
+  const failed = pages.find((page) => page.error)
+  if (failed?.error) return { data: null, error: failed.error, count: total }
+  const rows = pages.flatMap((page) => page.data ?? [])
+  if (rows.length !== total) {
+    return {
+      data: null,
+      error: { code: "QUIZ_PAGINATION_INCOMPLETE", message: `${rows.length} linhas recebidas de ${total} contadas` },
+      count: total,
+    }
+  }
+  return { data: rows, error: null, count: total }
+}
+
 async function getQuizAlignmentDatasetResourceUncached(
   cargo = "Presidente",
   estado?: string
@@ -2612,6 +2644,7 @@ async function getQuizAlignmentDatasetResourceUncached(
         votacoes_mapeadas: [],
         votacao_titulo_to_id: {},
         votacao_fonte_por_titulo: {},
+        votacao_fonte_por_id: {},
       },
       SUPABASE_REQUIRED_MESSAGE
     )
@@ -2627,23 +2660,31 @@ async function getQuizAlignmentDatasetResourceUncached(
         votacoes_mapeadas: [],
         votacao_titulo_to_id: {},
         votacao_fonte_por_titulo: {},
+        votacao_fonte_por_id: {},
       },
       sourceStatus: candidatosRes.sourceStatus,
       sourceMessage: candidatosRes.sourceMessage,
     }
   }
 
-  const titulos = collectQuizVotacaoTitulos(QUIZ_PERGUNTAS)
   const supabase = createServerSupabaseClient()
 
   const { data: rowsVotacoes, error: errVotacoes } = await withSupabaseRetry(
     "quiz-votacoes-chave",
     async (signal) =>
-      supabase
-        .from("votacoes_chave")
-        .select("id,titulo,casa,proposicao_id")
-        .in("titulo", titulos)
-        .abortSignal(signal)
+      fetchQuizRowsPaged(
+        (pageSignal) => supabase
+          .from("votacoes_chave")
+          .select("id", { count: "exact", head: true })
+          .abortSignal(pageSignal),
+        (from, to, pageSignal) => supabase
+          .from("votacoes_chave")
+          .select("id,titulo,casa,fonte,votacao_id_api,proposicao_id")
+          .order("id", { ascending: true })
+          .range(from, to)
+          .abortSignal(pageSignal),
+        signal,
+      )
   )
 
   if (errVotacoes || !rowsVotacoes) {
@@ -2668,24 +2709,38 @@ async function getQuizAlignmentDatasetResourceUncached(
         votacoes_mapeadas: [],
         votacao_titulo_to_id: {},
         votacao_fonte_por_titulo: {},
+        votacao_fonte_por_id: {},
       },
       mergeSourceMessages(
         candidatosRes.sourceMessage,
-        "Mapeamento de votações do quiz indisponível; comparação usa apenas espectro partidário."
+        "Catálogo de votações nominais do quiz indisponível nesta tentativa; posições declaradas podem ter cobertura parcial."
       )
     )
   }
 
-  const tituloToId: Record<string, string> = {}
+  const catalogRows = (rowsVotacoes ?? []) as QuizVotacaoCatalogRow[]
+  const votacaoResolution = resolveQuizVotacaoCatalog(catalogRows)
+  const tituloToId: Record<string, string> = { ...votacaoResolution.votacaoTituloToId }
   const votacaoFontePorTitulo: Record<string, string | null> = {}
-  for (const row of rowsVotacoes) {
-    tituloToId[row.titulo] = row.id
-    votacaoFontePorTitulo[row.titulo] = buildVotacaoPublicUrl(
-      row.casa as string | null,
-      row.proposicao_id as string | null
-    )
+  const votacaoFontePorId: Record<string, string | null> = {}
+  for (const ref of QUIZ_VOTACAO_REFERENCIAS) {
+    const rows = votacaoResolution.matchedRowsByQuestionId.get(ref.questionId) ?? []
+    for (const row of rows) {
+      const url = buildVotacaoPublicUrl(row.casa, row.proposicao_id)
+      votacaoFontePorId[row.id] = url
+      if (!votacaoFontePorTitulo[row.titulo]) votacaoFontePorTitulo[row.titulo] = url
+    }
+    const selected = rows[0]
+    if (selected && !votacaoFontePorTitulo[ref.titulo]) {
+      votacaoFontePorTitulo[ref.titulo] = buildVotacaoPublicUrl(selected.casa, selected.proposicao_id)
+    }
   }
-  const votacaoIds = [...new Set(Object.values(tituloToId))]
+  const votacaoIds = [
+    ...new Set(
+      [...votacaoResolution.matchedRowsByQuestionId.values()]
+        .flatMap((rows) => rows.map((row) => row.id)),
+    ),
+  ]
   const candidatoIds = candidatos.map((c) => c.id)
 
   let votosRows: {
@@ -2698,12 +2753,23 @@ async function getQuizAlignmentDatasetResourceUncached(
   let votosFailed = false
   if (votacaoIds.length > 0 && candidatoIds.length > 0) {
     const { data, error: errVotos } = await withSupabaseRetry("quiz-votos-candidato", async (signal) =>
-      supabase
-        .from("votos_candidato")
-        .select("candidato_id,votacao_id,voto,contradicao,contradicao_descricao")
-        .in("candidato_id", candidatoIds)
-        .in("votacao_id", votacaoIds)
-        .abortSignal(signal)
+      fetchQuizRowsPaged(
+        (pageSignal) => supabase
+          .from("votos_candidato")
+          .select("id", { count: "exact", head: true })
+          .in("candidato_id", candidatoIds)
+          .in("votacao_id", votacaoIds)
+          .abortSignal(pageSignal),
+        (from, to, pageSignal) => supabase
+          .from("votos_candidato")
+          .select("id,candidato_id,votacao_id,voto,contradicao,contradicao_descricao")
+          .in("candidato_id", candidatoIds)
+          .in("votacao_id", votacaoIds)
+          .order("id", { ascending: true })
+          .range(from, to)
+          .abortSignal(pageSignal),
+        signal,
+      )
     )
     if (errVotos) {
       votosFailed = true
@@ -2755,7 +2821,10 @@ async function getQuizAlignmentDatasetResourceUncached(
   const mudancasPorCandidato = new Map<string, number>()
   const posPorCandidato = new Map<string, QuizPosicaoDeclarada[]>()
   const financiamentoPorCandidato = new Map<string, string | null>()
-  const financiamentoPerfilPorCandidato = new Map<string, QuizFinanciamentoDoacaoPerfil>()
+  let projetosFailed = false
+  let mudancasFailed = false
+  let posicoesFailed = false
+  let financiamentoFailed = false
   for (const c of candidatos) {
     plPorCandidato.set(c.id, {})
     plUrlPorCandidato.set(c.id, {})
@@ -2765,14 +2834,26 @@ async function getQuizAlignmentDatasetResourceUncached(
   }
 
   if (candidatoIds.length > 0) {
-    const { data: plData } = await withSupabaseRetry("quiz-projetos-lei", async (signal) =>
-      supabase
-        .from("projetos_lei")
-        .select("candidato_id,tema,url_inteiro_teor")
-        .in("candidato_id", candidatoIds)
-        .not("tema", "is", null)
-        .abortSignal(signal)
+    const { data: plData, error: plErr } = await withSupabaseRetry("quiz-projetos-lei", async (signal) =>
+      fetchQuizRowsPaged(
+        (pageSignal) => supabase
+          .from("projetos_lei")
+          .select("id", { count: "exact", head: true })
+          .in("candidato_id", candidatoIds)
+          .not("tema", "is", null)
+          .abortSignal(pageSignal),
+        (from, to, pageSignal) => supabase
+          .from("projetos_lei")
+          .select("candidato_id,tema,url_inteiro_teor")
+          .in("candidato_id", candidatoIds)
+          .not("tema", "is", null)
+          .order("id", { ascending: true })
+          .range(from, to)
+          .abortSignal(pageSignal),
+        signal,
+      )
     )
+    projetosFailed = Boolean(plErr)
     for (const row of plData ?? []) {
       const tema = typeof row.tema === "string" ? row.tema.trim() : ""
       if (!tema) continue
@@ -2789,14 +2870,27 @@ async function getQuizAlignmentDatasetResourceUncached(
       }
     }
 
-    const { data: mudData } = await withSupabaseRetry("quiz-mudancas-partido", async (signal) =>
-      supabase
-        .from("mudancas_partido")
-        .select("candidato_id,id,ano,partido_anterior,partido_novo,data_mudanca,contexto")
-        .in("candidato_id", candidatoIds)
-        .is("despublicado_em", null)
-        .abortSignal(signal)
+    const { data: mudData, error: mudErr } = await withSupabaseRetry("quiz-mudancas-partido", async (signal) =>
+      fetchQuizRowsPaged(
+        (pageSignal) => supabase
+          .from("mudancas_partido")
+          .select("id", { count: "exact", head: true })
+          .in("candidato_id", candidatoIds)
+          .is("despublicado_em", null)
+          .abortSignal(pageSignal),
+        (from, to, pageSignal) => supabase
+          .from("mudancas_partido")
+          .select("candidato_id,id,ano,partido_anterior,partido_novo,data_mudanca,contexto")
+          .in("candidato_id", candidatoIds)
+          .is("despublicado_em", null)
+          .order("id", { ascending: true })
+          .range(from, to)
+          .abortSignal(pageSignal),
+        signal,
+      )
     )
+    mudancasFailed = Boolean(mudErr)
+    if (mudErr && IS_DEV) console.warn("quiz mudancas_partido:", mudErr.message)
     const mudancasRowsByCandidato = new Map<string, MudancaPartido[]>()
     for (const c of candidatos) {
       mudancasRowsByCandidato.set(c.id, [])
@@ -2815,13 +2909,25 @@ async function getQuizAlignmentDatasetResourceUncached(
     }
 
     const { data: posData, error: posErr } = await withSupabaseRetry("quiz-posicoes-declaradas", async (signal) =>
-      supabase
-        .from("posicoes_declaradas")
-        .select("candidato_id,tema,posicao,descricao,fonte,url_fonte")
-        .in("candidato_id", candidatoIds)
-        .eq("verificado", true)
-        .abortSignal(signal)
+      fetchQuizRowsPaged(
+        (pageSignal) => supabase
+          .from("posicoes_declaradas")
+          .select("id", { count: "exact", head: true })
+          .in("candidato_id", candidatoIds)
+          .eq("verificado", true)
+          .abortSignal(pageSignal),
+        (from, to, pageSignal) => supabase
+          .from("posicoes_declaradas")
+          .select("candidato_id,tema,posicao,descricao,fonte,url_fonte")
+          .in("candidato_id", candidatoIds)
+          .eq("verificado", true)
+          .order("id", { ascending: true })
+          .range(from, to)
+          .abortSignal(pageSignal),
+        signal,
+      )
     )
+    posicoesFailed = Boolean(posErr)
     if (!posErr && posData) {
       for (const row of posData) {
         const po = row.posicao as string
@@ -2839,12 +2945,23 @@ async function getQuizAlignmentDatasetResourceUncached(
     }
 
     const { data: finRows, error: finErr } = await withSupabaseRetry("quiz-financiamento", async (signal) =>
-      supabase
-        .from("financiamento_publico")
-        .select("candidato_id,ano_eleicao,total_arrecadado,maiores_doadores")
-        .in("candidato_id", candidatoIds)
-        .abortSignal(signal)
+      fetchQuizRowsPaged(
+        (pageSignal) => supabase
+          .from("financiamento_publico")
+          .select("id", { count: "exact", head: true })
+          .in("candidato_id", candidatoIds)
+          .abortSignal(pageSignal),
+        (from, to, pageSignal) => supabase
+          .from("financiamento_publico")
+          .select("candidato_id,ano_eleicao,total_arrecadado,maiores_doadores")
+          .in("candidato_id", candidatoIds)
+          .order("id", { ascending: true })
+          .range(from, to)
+          .abortSignal(pageSignal),
+        signal,
+      )
     )
+    financiamentoFailed = Boolean(finErr)
     if (!finErr && finRows?.length) {
       const latestByCandidato = new Map<
         string,
@@ -2866,8 +2983,6 @@ async function getQuizAlignmentDatasetResourceUncached(
       for (const [cid, pack] of latestByCandidato) {
         const ctx = buildFinanciamentoContexto(pack.ano, pack.total, pack.maiores)
         financiamentoPorCandidato.set(cid, ctx)
-        const perfil = buildFinanciamentoDoacaoPerfil(pack.maiores, pack.total)
-        if (perfil) financiamentoPerfilPorCandidato.set(cid, perfil)
       }
     } else if (finErr && IS_DEV) {
       console.warn("quiz financiamento:", finErr.message)
@@ -2880,7 +2995,8 @@ async function getQuizAlignmentDatasetResourceUncached(
     const pos = posPorCandidato.get(c.id) ?? []
     const ctr = contradicoesPorCandidato.get(c.id) ?? []
     const finCtx = financiamentoPorCandidato.get(c.id) ?? null
-    const finPerfil = financiamentoPerfilPorCandidato.get(c.id)
+    // O contexto do quiz é factual, vindo da prestação de contas do TSE.
+    // O centroide editorial de doadores não é carregado nesta superfície.
     return {
       id: c.id,
       slug: c.slug,
@@ -2896,24 +3012,47 @@ async function getQuizAlignmentDatasetResourceUncached(
       contradicoes_voto: ctr.length > 0 ? ctr : undefined,
       mudancas_partido_count: mudancasPorCandidato.get(c.id) ?? 0,
       ...(finCtx ? { financiamento_contexto: finCtx } : {}),
-      ...(finPerfil ? { financiamento_doacao_perfil: finPerfil } : {}),
     }
   })
 
-  const dataset: QuizAlignmentDataset = {
+  const dataset = {
     candidatos: out,
     votacoes_mapeadas: votacaoIds,
     votacao_titulo_to_id: tituloToId,
+    // Campo novo para perguntas que têm votação nominal equivalente nas duas
+    // casas. O mapa singular acima fica preservado para o scoring legado.
+    votacao_titulo_to_ids: votacaoResolution.votacaoTituloToIds,
+    votacao_status_por_pergunta: votacaoResolution.statusByQuestionId,
     votacao_fonte_por_titulo: votacaoFontePorTitulo,
-  }
+    votacao_fonte_por_id: votacaoFontePorId,
+  } as QuizAlignmentDataset
+
+  const knownUnmapped = new Set(votacaoResolution.knownUnmappedQuestionIds)
+  const unexpectedMissing = votacaoResolution.missingQuestionIds.filter((id) => !knownUnmapped.has(id))
+  const unexpectedOrphan = votacaoResolution.orphanQuestionIds.filter((id) => !knownUnmapped.has(id))
+  const titleForQuestion = (questionId: string) =>
+    QUIZ_VOTACAO_REFERENCIAS.find((ref) => ref.questionId === questionId)?.titulo ?? questionId
 
   const sourceStatus = mergeSourceStatuses(
     candidatosRes.sourceStatus,
-    votosFailed ? "degraded" : "live"
+    votosFailed || projetosFailed || mudancasFailed || posicoesFailed || financiamentoFailed ||
+      unexpectedMissing.length > 0 || unexpectedOrphan.length > 0
+      ? "degraded"
+      : "live"
   )
   const sourceMessage = mergeSourceMessages(
     candidatosRes.sourceMessage,
-    votosFailed ? "Votos do Congresso para o quiz não responderam; comparação usa mais o espectro partidário." : null
+    votosFailed ? "Votos nominais do Congresso para o quiz indisponíveis nesta tentativa; posições declaradas podem ter cobertura parcial." : null,
+    projetosFailed ? "Projetos de lei do quiz não responderam; a cobertura legislativa está incompleta." : null,
+    mudancasFailed ? "Mudanças de partido do quiz não responderam; a contagem de trocas está incompleta." : null,
+    posicoesFailed ? "Posições declaradas do quiz não responderam; a cobertura de posições está incompleta." : null,
+    financiamentoFailed ? "Financiamento público do quiz não respondeu; o contexto financeiro está incompleto." : null,
+    unexpectedMissing.length > 0
+      ? `Referências nominais ausentes no catálogo: ${unexpectedMissing.map(titleForQuestion).join(", ")}.`
+      : null,
+    unexpectedOrphan.length > 0
+      ? `Referências nominais órfãs no catálogo: ${unexpectedOrphan.map(titleForQuestion).join(", ")}.`
+      : null,
   )
 
   return {
@@ -2926,7 +3065,7 @@ async function getQuizAlignmentDatasetResourceUncached(
 const getCachedQuizAlignmentDatasetResource = unstableCacheWithSingleFlight(
   async (cargo: string, estado: string) =>
     rejectPartialForCache(getQuizAlignmentDatasetResourceUncached(cargo, estado || undefined)),
-  ["quiz-alignment-dataset-resource", "fase2", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "quiz-mudancas-despublicado-v1", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
+  ["quiz-alignment-dataset-resource", "quiz-votacao-reference-v1", "quiz-paged-enrichment-v1", "fase2", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "quiz-mudancas-despublicado-v1", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["quiz-dataset"],

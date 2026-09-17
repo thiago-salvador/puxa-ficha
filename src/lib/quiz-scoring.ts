@@ -1,14 +1,10 @@
-import { classificarArquetipo, type QuizArquetipoDef } from "@/data/quiz/arquetipos"
-import { getEspectroPartidario } from "@/data/quiz/espectro-partidario"
 import {
   LIKERT_VALUES,
   quizPerguntasOrdenadas,
-  type QuizEixo,
   type QuizPergunta,
   type RespostaLikert,
 } from "@/data/quiz/perguntas"
-import { aggregatePlCountsByQuizEixo } from "@/lib/quiz-tema-map"
-import { computeFinanciamentoAlinhamento01 } from "@/lib/quiz-financiamento"
+import { getEspectroPartidario } from "@/data/quiz/espectro-partidario"
 import type {
   QuizAlignmentDataset,
   QuizCandidatoData,
@@ -21,352 +17,146 @@ import type {
 } from "@/lib/quiz-types"
 import { stripAccents } from "@/lib/strip-accents"
 
-/**
- * Eixo econômico pesa 1.5x no calculo de distancia. Razão: a grade de arquétipos
- * tem 5 níveis econômicos vs 3 sociais, e alinhamento econômico e mais saliente
- * na classificação politica brasileira.
- */
-const ECO_AXIS_WEIGHT = 1.5
-const MAX_EUCLIDEAN = Math.sqrt(ECO_AXIS_WEIGHT * 81 + 81)
-
-const W_VOTO_MVP = 0.6153846153846154
-const W_ESPECTRO_MVP = 0.38461538461538464
-
-/**
- * Blend fase 2 (soma = 1). Financiamento: doadores TSE classificados por setor (ver `financiamento-setores.ts`).
- * Se algum bloco nao existir para o candidato, o peso volta para o bloco interno (votos+espectro).
- */
-const PHASE2_INNER = 0.624
-const PHASE2_POS = 0.211
-const PHASE2_PL = 0.099
-const PHASE2_FIN = 0.066
-
-export function dynamicWeights(votosComparados: number): { wVoto: number; wEspectro: number } {
-  if (votosComparados === 0) return { wVoto: 0, wEspectro: 1 }
-  if (votosComparados === 1) return { wVoto: 0.3, wEspectro: 0.7 }
-  if (votosComparados === 2) return { wVoto: 0.5, wEspectro: 0.5 }
-  return { wVoto: W_VOTO_MVP, wEspectro: W_ESPECTRO_MVP }
-}
-
 export function normalizeVotoFromApi(raw: string): QuizVotoNormalizado | null {
-  const n = stripAccents(raw)
-    .toLowerCase()
-    .trim()
+  const n = stripAccents(raw).toLowerCase().trim()
   if (n === "sim") return "sim"
   if (n === "nao") return "nao"
-  if (n === "abstencao" || n === "abstenção") return "abstencao"
+  if (n === "abstencao") return "abstencao"
   if (n === "ausente") return "ausente"
-  if (n === "obstrucao" || n === "obstrução") return "obstrucao"
+  if (n === "obstrucao") return "obstrucao"
   if (n === "artigo_17" || n === "artigo 17") return "artigo_17"
   return null
 }
 
-function votoToAlignNumber(v: QuizVotoNormalizado, direcao: QuizPergunta["direcao_voto"]): number | null {
-  let base: number
-  switch (v) {
-    case "sim":
-      base = 1
-      break
-    case "nao":
-      base = 0
-      break
-    case "abstencao":
-      base = 0.5
-      break
-    case "obstrucao":
-      base = 0.3
-      break
-    case "ausente":
-    case "artigo_17":
-      return null
-    default:
-      return null
-  }
-  if (direcao === "concordo=sim") return base
-  return 1 - base
+type NumericLikert = Exclude<RespostaLikert, "sem_opiniao">
+
+function answerValue(
+  resposta: { valor: RespostaLikert; importante: boolean } | undefined,
+): number | null {
+  const value = resposta?.valor as string | undefined
+  if (!value || value === "sem_opiniao") return null
+  if (!Object.prototype.hasOwnProperty.call(LIKERT_VALUES, value)) return null
+  return LIKERT_VALUES[value as NumericLikert]
 }
 
-function posicaoToNumber(p: QuizPosicaoDeclarada["posicao"]): number {
-  if (p === "a_favor") return 1
-  if (p === "contra") return 0
-  return 0.5
+function answerWeight(resposta: { valor: RespostaLikert; importante: boolean } | undefined): number {
+  return resposta?.importante ? 2 : 1
 }
 
+/** Eixos legados: ausência e sem_opiniao ficam fora; importância duplica o item. */
 export function deriveUserPoliticalAxes(
   respostas: Map<string, { valor: RespostaLikert; importante: boolean }>,
-  perguntas: QuizPergunta[]
-): { eco: number; soc: number } {
-  const ecoSamples: number[] = []
-  const socSamples: number[] = []
-  const likert = (id: string) => LIKERT_VALUES[respostas.get(id)?.valor ?? "neutro"]
-
+  perguntas: QuizPergunta[],
+): { eco: number | null; soc: number | null } {
+  let ecoSum = 0
+  let ecoWeight = 0
+  let socSum = 0
+  let socWeight = 0
   for (const p of perguntas) {
-    const L = likert(p.id)
+    const value = answerValue(respostas.get(p.id))
+    if (value == null) continue
+    const weight = answerWeight(respostas.get(p.id))
     if (p.eixo_economico_dir === "concordo=mercado") {
-      ecoSamples.push(L)
+      ecoSum += value * weight
+      ecoWeight += weight
     } else if (p.eixo_economico_dir === "concordo=estado") {
-      ecoSamples.push(1 - L)
+      ecoSum += (1 - value) * weight
+      ecoWeight += weight
     }
     if (p.eixo_social_dir === "concordo=conservador") {
-      socSamples.push(L)
+      socSum += value * weight
+      socWeight += weight
     } else if (p.eixo_social_dir === "concordo=progressista") {
-      socSamples.push(1 - L)
+      socSum += (1 - value) * weight
+      socWeight += weight
     }
   }
-
-  const eco =
-    ecoSamples.length > 0
-      ? 1 + 9 * (ecoSamples.reduce((a, b) => a + b, 0) / ecoSamples.length)
-      : 5.5
-  const soc =
-    socSamples.length > 0
-      ? 1 + 9 * (socSamples.reduce((a, b) => a + b, 0) / socSamples.length)
-      : 5.5
-  return { eco, soc }
-}
-
-export function classificarPerfilUsuario(eco: number, soc: number): QuizArquetipoDef {
-  return classificarArquetipo(eco, soc)
-}
-
-function confiabilidadeFromVotos(
-  n: number,
-  totalMappedVotes: number,
-  hasSpectrumBasis: boolean
-): "alta" | "media" | "baixa" {
-  if (!hasSpectrumBasis) return "baixa"
-  const coverage = totalMappedVotes > 0 ? n / totalMappedVotes : 0
-  if (n >= 5 && coverage >= 0.5) return "alta"
-  if (n >= 2) return "media"
-  return "baixa"
+  return {
+    eco: ecoWeight > 0 ? 1 + 9 * (ecoSum / ecoWeight) : null,
+    soc: socWeight > 0 ? 1 + 9 * (socSum / socWeight) : null,
+  }
 }
 
 function invertVotacaoMap(tituloToId: Record<string, string>): Record<string, string> {
   const out: Record<string, string> = {}
-  for (const [titulo, id] of Object.entries(tituloToId)) {
-    out[id] = titulo
-  }
+  for (const [titulo, id] of Object.entries(tituloToId)) out[id] = titulo
   return out
 }
 
-function computeMaxPlByEixo(
-  candidatos: QuizCandidatoData[],
-  perguntas: QuizPergunta[]
-): Partial<Record<QuizEixo, number>> {
-  const eixos = new Set(perguntas.map((p) => p.eixo))
-  const max: Partial<Record<QuizEixo, number>> = {}
-  for (const e of eixos) max[e] = 0
-  for (const c of candidatos) {
-    const byEixo = aggregatePlCountsByQuizEixo(c.pls_por_tema)
-    for (const e of eixos) {
-      max[e] = Math.max(max[e] ?? 0, byEixo[e] ?? 0)
+function resolveVotacaoIdsByTitulo(dataset: QuizAlignmentDataset): Readonly<Record<string, readonly string[]>> {
+  const idsByTitle: Record<string, readonly string[]> = {}
+  const titles = new Set([
+    ...Object.keys(dataset.votacao_titulo_to_id),
+    ...Object.keys(dataset.votacao_titulo_to_ids ?? {}),
+  ])
+  for (const titulo of titles) {
+    const currentIds = dataset.votacao_titulo_to_ids?.[titulo]
+    if (currentIds !== undefined) {
+      idsByTitle[titulo] = [...currentIds]
+      continue
     }
+    const legacyId = dataset.votacao_titulo_to_id[titulo]
+    if (legacyId) idsByTitle[titulo] = [legacyId]
   }
-  return max
+  return idsByTitle
 }
 
-function computeScorePosicoes(
-  respostas: Map<string, { valor: RespostaLikert; importante: boolean }>,
-  ordenadas: QuizPergunta[],
-  posicoes: QuizPosicaoDeclarada[] | undefined
-): number | null {
-  if (!posicoes?.length) return null
-  const parts: number[] = []
-  for (const pd of posicoes) {
-    const related = ordenadas.filter((p) => (p.temas_pl ?? []).includes(pd.tema))
-    if (related.length === 0) continue
-    let sum = 0
-    let w = 0
-    for (const p of related) {
-      const L = LIKERT_VALUES[respostas.get(p.id)?.valor ?? "neutro"]
-      const imp = respostas.get(p.id)?.importante ? 2 : 1
-      sum += L * imp
-      w += imp
-    }
-    const userAvg = w > 0 ? sum / w : 0.5
-    const candN = posicaoToNumber(pd.posicao)
-    parts.push(1 - Math.abs(userAvg - candN))
-  }
-  if (parts.length === 0) return null
-  return parts.reduce((a, b) => a + b, 0) / parts.length
+function posicaoToNumber(posicao: QuizPosicaoDeclarada["posicao"]): number | null {
+  if (posicao === "a_favor") return 1
+  if (posicao === "contra") return 0
+  return null
 }
 
-function computeScoreProjetos(
-  respostas: Map<string, { valor: RespostaLikert; importante: boolean }>,
-  ordenadas: QuizPergunta[],
+function votoToNumber(voto: QuizVotoNormalizado | undefined, direcao: QuizPergunta["direcao_voto"]): number | null {
+  if (voto !== "sim" && voto !== "nao") return null
+  const base = voto === "sim" ? 1 : 0
+  return direcao === "concordo=sim" ? base : 1 - base
+}
+
+function nominalVoteForQuestion(
+  pergunta: QuizPergunta,
   candidato: QuizCandidatoData,
-  maxPlByEixo: Partial<Record<QuizEixo, number>>
-): number | null {
-  const byEixoCand = aggregatePlCountsByQuizEixo(candidato.pls_por_tema)
-  const eixosComPergunta = new Set(ordenadas.map((p) => p.eixo))
-  let anyMax = false
-  for (const e of eixosComPergunta) {
-    if ((maxPlByEixo[e] ?? 0) > 0) {
-      anyMax = true
-      break
+  tituloToIds: Readonly<Record<string, readonly string[]>>,
+): { value: number; titulo: string; id: string } | { conflict: true } | null {
+  const seen = new Set<string>()
+  const values: { value: number; titulo: string; id: string }[] = []
+  for (const titulo of pergunta.votacao_titulos ?? []) {
+    for (const id of tituloToIds[titulo] ?? []) {
+      if (!id || seen.has(id)) continue
+      seen.add(id)
+      const value = votoToNumber(candidato.votos[id], pergunta.direcao_voto)
+      if (value != null) values.push({ value, titulo, id })
     }
   }
-  if (!anyMax) return null
-
-  const scores: number[] = []
-  for (const eixo of eixosComPergunta) {
-    const qs = ordenadas.filter((p) => p.eixo === eixo)
-    if (qs.length === 0) continue
-    let uSum = 0
-    let wUser = 0
-    for (const p of qs) {
-      const L = LIKERT_VALUES[respostas.get(p.id)?.valor ?? "neutro"]
-      const imp = respostas.get(p.id)?.importante ? 2 : 1
-      uSum += 2 * Math.abs(L - 0.5) * imp
-      wUser += imp
-    }
-    const userPri = wUser > 0 ? uSum / wUser : 0
-    const m = maxPlByEixo[eixo] ?? 0
-    const raw = byEixoCand[eixo] ?? 0
-    const candAct = m > 0 ? Math.min(1, raw / m) : 0
-    scores.push(1 - Math.abs(userPri - candAct))
-  }
-  if (scores.length === 0) return null
-  return scores.reduce((a, b) => a + b, 0) / scores.length
-}
-
-function phase2Blend(
-  scoreV: number | null,
-  nVotos: number,
-  scoreE: number | null,
-  scoreP: number | null,
-  scorePl: number | null,
-  scoreFin: number | null
-): {
-  final01: number | null
-  wVotoEff: number
-  wEspEff: number
-  wPosEff: number
-  wPlEff: number
-  wFinEff: number
-} {
-  const { wVoto, wEspectro } = dynamicWeights(scoreV != null && nVotos > 0 ? nVotos : 0)
-  const temVoto = scoreV != null && nVotos > 0
-  // O bloco interno so existe se pelo menos um dos dois sinais existir. Com
-  // espectro nulo o peso dele nao vira nota media: some, e o resto renormaliza.
-  const inner01: number | null =
-    temVoto && scoreE != null
-      ? wVoto * scoreV + wEspectro * scoreE
-      : temVoto
-        ? scoreV
-        : scoreE
-
-  let wInner = PHASE2_INNER
-  let wPos = PHASE2_POS
-  let wPl = PHASE2_PL
-  let wFin = PHASE2_FIN
-  if (scoreP == null) {
-    wInner += wPos
-    wPos = 0
-  }
-  if (scorePl == null) {
-    wInner += wPl
-    wPl = 0
-  }
-  if (scoreFin == null) {
-    wInner += wFin
-    wFin = 0
-  }
-
-  const parts: { w: number; s: number }[] = []
-  if (inner01 != null) parts.push({ w: wInner, s: inner01 })
-  if (scoreP != null && wPos > 0) parts.push({ w: wPos, s: scoreP })
-  if (scorePl != null && wPl > 0) parts.push({ w: wPl, s: scorePl })
-  if (scoreFin != null && wFin > 0) parts.push({ w: wFin, s: scoreFin })
-
-  const sumW = parts.reduce((a, p) => a + p.w, 0)
-  const final01 = sumW > 0 ? parts.reduce((a, p) => a + (p.w / sumW) * p.s, 0) : null
-  const shareInner = sumW > 0 && inner01 != null ? wInner / sumW : 0
-
+  if (values.length === 0) return null
+  if (new Set(values.map((item) => item.value)).size > 1) return { conflict: true }
   return {
-    final01,
-    wVotoEff: temVoto ? (scoreE != null ? shareInner * wVoto : shareInner) : 0,
-    wEspEff: scoreE == null ? 0 : temVoto ? shareInner * wEspectro : shareInner,
-    wPosEff: scoreP != null && wPos > 0 ? wPos / sumW : 0,
-    wPlEff: scorePl != null && wPl > 0 ? wPl / sumW : 0,
-    wFinEff: scoreFin != null && wFin > 0 ? wFin / sumW : 0,
+    value: values.reduce((sum, item) => sum + item.value, 0) / values.length,
+    titulo: values[0]!.titulo,
+    id: values[0]!.id,
   }
 }
 
-function buildExplanation(
-  userEco: number,
-  userSoc: number,
-  candEco: number,
-  candSoc: number,
-  votosComparados: number,
-  concordou: number,
-  divergiu: number,
-  scoreVotacoes: number | null,
-  wVoto: number,
-  wEspectro: number,
-  fase: 1 | 2 | 3,
-  wPos?: number,
-  wPl?: number,
-  wFin?: number,
-  temEspectro = true
-): QuizScoreExplanation {
-  const parts: string[] = []
-  const de = Math.abs(userEco - candEco)
-  const ds = Math.abs(userSoc - candSoc)
-  // Proximidade de eixo so pode ser afirmada quando o partido tem espectro
-  // apurado. Sem isso a comparacao seria contra o ponto médio da escala, e a
-  // frase diria ao leitor algo que ninguém mediu.
-  if (temEspectro) {
-    if (de <= 2) parts.push("Próximo no eixo econômico")
-    else if (de >= 5) parts.push("Distante no eixo econômico")
-    if (ds <= 2) parts.push("Próximo no eixo social")
-    else if (ds >= 5) parts.push("Distante no eixo social")
-  }
+function curatedPositionForQuestion(pergunta: QuizPergunta, candidato: QuizCandidatoData): number | "conflict" | null {
+  const values = (candidato.posicoes_declaradas ?? [])
+    .filter((position) => (pergunta.temas_pl ?? []).includes(position.tema))
+    .map((position) => posicaoToNumber(position.posicao))
+    .filter((value): value is number => value != null)
+  if (values.length === 0) return null
+  if (new Set(values).size > 1) return "conflict"
+  return values.reduce((sum, value) => sum + value, 0) / values.length
+}
 
-  if (scoreVotacoes == null || votosComparados === 0) {
-    parts.push("Estimativa sem votos públicos comparados neste quiz")
-  } else {
-    if (concordou > 0) {
-      parts.push(
-        concordou === 1
-          ? "Concordou em 1 votação mapeada"
-          : `Concordou em ${concordou} votações mapeadas`
-      )
-    }
-    if (divergiu > 0) {
-      parts.push(
-        divergiu === 1 ? "Divergiu em 1 votação" : `Divergiu em ${divergiu} votações`
-      )
-    }
-  }
+function answerDirection(value: number): -1 | 0 | 1 {
+  if (value > 0.5) return 1
+  if (value < 0.5) return -1
+  return 0
+}
 
-  if (fase >= 2) {
-    const pctV = Math.round(wVoto * 100)
-    const pctE = Math.round(wEspectro * 100)
-    const pctP = wPos != null && wPos > 0 ? Math.round(wPos * 100) : 0
-    const pctPl = wPl != null && wPl > 0 ? Math.round(wPl * 100) : 0
-    const pctFin = wFin != null && wFin > 0 ? Math.round(wFin * 100) : 0
-    let peso = `Peso no cálculo: ${pctV}% votos públicos, ${pctE}% espectro do partido`
-    if (pctP > 0) peso += `, ${pctP}% posições declaradas`
-    if (pctPl > 0) peso += `, ${pctPl}% autoria em projetos por tema`
-    if (pctFin > 0) peso += `, ${pctFin}% financiamento (doadores por setor, TSE)`
-    parts.push(peso)
-  } else {
-    const pctV = Math.round(wVoto * 100)
-    const pctE = Math.round(wEspectro * 100)
-    parts.push(`Peso no cálculo: ${pctV}% votos públicos, ${pctE}% espectro do partido`)
-  }
-
-  return {
-    resumo: parts.join(". ") + ".",
-    user_position: { eco: userEco, soc: userSoc },
-    candidato_position: { eco: candEco, soc: candSoc },
-    peso_voto_usado: wVoto,
-    peso_espectro_usado: wEspectro,
-    peso_posicoes_usado: fase >= 2 ? wPos : undefined,
-    peso_projetos_usado: fase >= 2 ? wPl : undefined,
-    peso_financiamento_usado: fase >= 2 ? wFin : undefined,
-  }
+function confidenceFromDirectEvidence(compared: number, evidence: number): "alta" | "media" | "baixa" {
+  if (compared >= 5 && evidence > 0 && compared / evidence >= 0.5) return "alta"
+  if (compared >= 2) return "media"
+  return "baixa"
 }
 
 export function calcularAlinhamento(
@@ -374,208 +164,124 @@ export function calcularAlinhamento(
   candidato: QuizCandidatoData,
   perguntas: QuizPergunta[],
   dataset: QuizAlignmentDataset,
-  fase: 1 | 2 | 3 = 2,
-  maxPlByEixo?: Partial<Record<QuizEixo, number>>
+  _fase: 1 | 2 | 3 = 2,
 ): QuizScoreResult {
+  void _fase
   const ordenadas = perguntas.length > 0 ? [...perguntas].sort((a, b) => a.ordem - b.ordem) : quizPerguntasOrdenadas()
-  const tituloToId = dataset.votacao_titulo_to_id
-  const idToTitulo = invertVotacaoMap(tituloToId)
+  const tituloToIds = resolveVotacaoIdsByTitulo(dataset)
+  const idToTitulo = invertVotacaoMap(dataset.votacao_titulo_to_id)
   const fontePorTitulo = dataset.votacao_fonte_por_titulo ?? {}
+  const perguntasRespondidas = ordenadas.reduce((count, pergunta) => count + (answerValue(respostas.get(pergunta.id)) != null ? 1 : 0), 0)
 
-  let weightedSum = 0
-  let weightTotal = 0
+  let evidenceQuestions = 0
+  let perguntasComparadas = 0
+  let posicoesComparadas = 0
   let votosComparados = 0
+  let voteSum = 0
+  let voteWeight = 0
+  let positionSum = 0
+  let positionWeight = 0
+  let directSum = 0
+  let directWeight = 0
   let concordou = 0
   let divergiu = 0
-
   const concordancias: QuizVoteCompareItem[] = []
   const divergencias: QuizVoteCompareItem[] = []
-  const porEixoAccum: Partial<Record<QuizEixo, { sum: number; n: number }>> = {}
+  const porEixoAccum: Record<string, { sum: number; weight: number }> = {}
 
-  for (const p of ordenadas) {
-    const titulos = p.votacao_titulos ?? []
-    const votacaoId = titulos.map((t) => tituloToId[t]).find(Boolean)
-    if (!votacaoId) continue
+  for (const pergunta of ordenadas) {
+    const vote = nominalVoteForQuestion(pergunta, candidato, tituloToIds)
+    if (vote != null && "conflict" in vote) continue
+    // A posição só é consultada quando a mesma pergunta não tem voto nominal.
+    const position = vote == null ? curatedPositionForQuestion(pergunta, candidato) : null
+    if (position === "conflict") continue
+    const candidateValue = vote?.value ?? position
+    if (candidateValue == null) continue
+    evidenceQuestions += 1
+    const userValue = answerValue(respostas.get(pergunta.id))
+    if (userValue == null) continue
+    const weight = answerWeight(respostas.get(pergunta.id))
+    const score = 1 - Math.abs(userValue - candidateValue)
+    perguntasComparadas += 1
+    directSum += score * weight
+    directWeight += weight
+    const axis = porEixoAccum[pergunta.eixo] ?? { sum: 0, weight: 0 }
+    axis.sum += score * weight
+    axis.weight += weight
+    porEixoAccum[pergunta.eixo] = axis
 
-    const voto = candidato.votos[votacaoId]
-    if (!voto) continue
-
-    const candN = votoToAlignNumber(voto, p.direcao_voto)
-    if (candN === null) continue
-
-    const userL = LIKERT_VALUES[respostas.get(p.id)?.valor ?? "neutro"]
-    const part = 1 - Math.abs(userL - candN)
-    const imp = respostas.get(p.id)?.importante ? 2 : 1
-    weightedSum += part * imp
-    weightTotal += imp
-    votosComparados += 1
-    if (part >= 0.55) concordou += 1
-    else if (part <= 0.35) divergiu += 1
-
-    const titulo = titulos.find((t) => tituloToId[t] === votacaoId) ?? idToTitulo[votacaoId] ?? "Votação"
-    const fonte_url = fontePorTitulo[titulo] ?? null
-    const item: QuizVoteCompareItem = {
-      pergunta_id: p.id,
-      pergunta_texto: p.texto,
-      votacao_titulo: titulo,
-      alinha: part >= 0.55,
-      fonte_url,
-    }
-    if (part >= 0.55) concordancias.push(item)
-    else if (part <= 0.35) divergencias.push(item)
-
-    const bucket = porEixoAccum[p.eixo] ?? { sum: 0, n: 0 }
-    bucket.sum += part
-    bucket.n += 1
-    porEixoAccum[p.eixo] = bucket
-  }
-
-  const score_votacoes = weightTotal > 0 ? weightedSum / weightTotal : null
-
-  const { eco: userEco, soc: userSoc } = deriveUserPoliticalAxes(respostas, ordenadas)
-
-  let esp = { eixo_economico: 5.5, eixo_social: 5.5 }
-  let hasSpectrumBasis = false
-  if (candidato.espectro_override) {
-    esp = {
-      eixo_economico: candidato.espectro_override.eixo_economico,
-      eixo_social: candidato.espectro_override.eixo_social,
-    }
-    hasSpectrumBasis = true
-  } else {
-    const row = getEspectroPartidario(candidato.partido_sigla)
-    if (row) {
-      esp = { eixo_economico: row.eixo_economico, eixo_social: row.eixo_social }
-      hasSpectrumBasis = true
+    if (vote != null) {
+      votosComparados += 1
+      voteSum += score * weight
+      voteWeight += weight
+      const userDirection = answerDirection(userValue)
+      const candidateDirection = answerDirection(candidateValue)
+      const aligned = userDirection !== 0 && candidateDirection !== 0 && userDirection === candidateDirection
+      if (aligned) concordou += 1
+      else if (userDirection !== 0 && candidateDirection !== 0) divergiu += 1
+      const titulo = vote.titulo || idToTitulo[vote.id] || "Votação"
+      const item: QuizVoteCompareItem = {
+        pergunta_id: pergunta.id,
+        pergunta_texto: pergunta.texto,
+        votacao_titulo: titulo,
+        alinha: aligned,
+        fonte_url: dataset.votacao_fonte_por_id?.[vote.id] ?? fontePorTitulo[titulo] ?? null,
+      }
+      if (aligned) concordancias.push(item)
+      else if (userDirection !== 0 && candidateDirection !== 0) divergencias.push(item)
+    } else {
+      posicoesComparadas += 1
+      positionSum += score * weight
+      positionWeight += weight
     }
   }
 
-  // Sem espectro mapeado nao existe base para medir proximidade de eixo. O valor
-  // fica null e sai da conta: um 0.5 aqui seria numero inventado entrando no score.
-  const score_espectro: number | null = hasSpectrumBasis
-    ? (() => {
-        const dEco = userEco - esp.eixo_economico
-        const dSoc = userSoc - esp.eixo_social
-        const dist = Math.sqrt(ECO_AXIS_WEIGHT * dEco * dEco + dSoc * dSoc)
-        return Math.max(0, Math.min(1, 1 - dist / MAX_EUCLIDEAN))
-      })()
-    : null
-
-  const { wVoto, wEspectro } = dynamicWeights(votosComparados)
-
-  let score_final: number | null
-  let score_posicoes: number | null = null
-  let score_projetos: number | null = null
-  let score_financiamento: number | null = null
-  let phase2BlendResult: ReturnType<typeof phase2Blend> | null = null
-
-  if (fase >= 2) {
-    score_posicoes = computeScorePosicoes(respostas, ordenadas, candidato.posicoes_declaradas)
-    const maxPl = maxPlByEixo ?? computeMaxPlByEixo(dataset.candidatos, ordenadas)
-    score_projetos = computeScoreProjetos(respostas, ordenadas, candidato, maxPl)
-    const fin01 = computeFinanciamentoAlinhamento01(
-      userEco,
-      userSoc,
-      candidato.financiamento_doacao_perfil ?? null
-    )
-    score_financiamento = fin01
-    phase2BlendResult = phase2Blend(
-      score_votacoes,
-      votosComparados,
-      score_espectro,
-      score_posicoes,
-      score_projetos,
-      fin01
-    )
-    score_final = phase2BlendResult.final01 != null ? phase2BlendResult.final01 * 100 : null
-  } else if (score_votacoes != null && votosComparados > 0) {
-    score_final =
-      score_espectro != null
-        ? (wVoto * score_votacoes + wEspectro * score_espectro) * 100
-        : score_votacoes * 100
-  } else {
-    // Sem voto comparavel e sem espectro mapeado nao ha base nenhuma de afinidade.
-    score_final = score_espectro != null ? score_espectro * 100 : null
-  }
-
-  let explanationFixed: QuizScoreExplanation
-  if (fase >= 2 && phase2BlendResult) {
-    const b = phase2BlendResult
-    explanationFixed = buildExplanation(
-      userEco,
-      userSoc,
-      esp.eixo_economico,
-      esp.eixo_social,
-      votosComparados,
-      concordou,
-      divergiu,
-      score_votacoes,
-      b.wVotoEff,
-      b.wEspEff,
-      fase,
-      b.wPosEff,
-      b.wPlEff,
-      b.wFinEff,
-      hasSpectrumBasis
-    )
-  } else {
-    explanationFixed = buildExplanation(
-      userEco,
-      userSoc,
-      esp.eixo_economico,
-      esp.eixo_social,
-      votosComparados,
-      concordou,
-      divergiu,
-      score_votacoes,
-      score_votacoes != null && votosComparados > 0 ? wVoto : 0,
-      hasSpectrumBasis ? (score_votacoes != null && votosComparados > 0 ? wEspectro : 1) : 0,
-      fase,
-      undefined,
-      undefined,
-      undefined,
-      hasSpectrumBasis
-    )
-  }
-  if (!hasSpectrumBasis) {
-    explanationFixed = {
-      ...explanationFixed,
-      resumo: `${explanationFixed.resumo} O partido deste candidato não tem espectro apurado, então nenhuma proximidade de eixo é afirmada aqui.`,
-    }
-  }
-
+  const userAxes = deriveUserPoliticalAxes(respostas, ordenadas)
+  const spectrumMapped = Boolean(candidato.espectro_override ?? getEspectroPartidario(candidato.partido_sigla))
   const por_eixo: Record<string, number> = {}
-  for (const [e, v] of Object.entries(porEixoAccum)) {
-    if (v.n > 0) por_eixo[e] = Math.round((v.sum / v.n) * 1000) / 1000
+  for (const [axis, value] of Object.entries(porEixoAccum)) {
+    if (value.weight > 0) por_eixo[axis] = Math.round((value.sum / value.weight) * 1000) / 1000
   }
-
-  const detalhe: QuizScoreDetalhe | undefined =
-    fase >= 2
-      ? {
-          por_eixo,
-          concordancias_voto: concordancias.slice(0, 12),
-          divergencias_voto: divergencias.slice(0, 12),
-          alertas_contradicao: candidato.contradicoes_voto ?? [],
-          mudancas_partido_count: candidato.mudancas_partido_count ?? 0,
-        }
-      : undefined
-
+  const detalhe: QuizScoreDetalhe = {
+    por_eixo,
+    concordancias_voto: concordancias.slice(0, 12),
+    divergencias_voto: divergencias.slice(0, 12),
+    alertas_contradicao: candidato.contradicoes_voto ?? [],
+    mudancas_partido_count: candidato.mudancas_partido_count ?? 0,
+  }
+  const directScore = directWeight > 0 ? directSum / directWeight : null
+  const explanation: QuizScoreExplanation = {
+    resumo:
+      perguntasComparadas > 0
+        ? `Perguntas comparadas: ${perguntasComparadas}. Votos nominais: ${votosComparados}. Posições curadas: ${posicoesComparadas}.`
+        : "Sem evidência direta comparável neste quiz.",
+    user_position: userAxes,
+    candidato_position: { eco: null, soc: null },
+    peso_voto_usado: directWeight > 0 ? voteWeight / directWeight : 0,
+    peso_espectro_usado: 0,
+    peso_posicoes_usado: directWeight > 0 ? positionWeight / directWeight : 0,
+    peso_projetos_usado: 0,
+    peso_financiamento_usado: 0,
+  }
   return {
     candidato_slug: candidato.slug,
-    score_final: score_final != null ? Math.round(score_final * 10) / 10 : null,
-    score_votacoes: score_votacoes != null ? Math.round(score_votacoes * 1000) / 1000 : null,
-    score_espectro: score_espectro != null ? Math.round(score_espectro * 1000) / 1000 : null,
-    score_posicoes: score_posicoes != null ? Math.round(score_posicoes * 1000) / 1000 : null,
-    score_projetos: score_projetos != null ? Math.round(score_projetos * 1000) / 1000 : null,
-    score_financiamento:
-      score_financiamento != null ? Math.round(score_financiamento * 1000) / 1000 : null,
+    score_final: directScore != null ? Math.round(directScore * 1000) / 10 : null,
+    score_votacoes: voteWeight > 0 ? Math.round((voteSum / voteWeight) * 1000) / 1000 : null,
+    score_espectro: null,
+    score_posicoes: positionWeight > 0 ? Math.round((positionSum / positionWeight) * 1000) / 1000 : null,
+    score_projetos: null,
+    score_financiamento: null,
     concordancias_voto_count: concordou,
     divergencias_voto_count: divergiu,
     votos_comparados: votosComparados,
     votacoes_mapeadas_total: dataset.votacoes_mapeadas.length,
-    confiabilidade: confiabilidadeFromVotos(votosComparados, dataset.votacoes_mapeadas.length, hasSpectrumBasis),
-    espectro_partidario_mapeado: hasSpectrumBasis,
-    explanation: explanationFixed,
+    perguntas_comparadas: perguntasComparadas,
+    posicoes_comparadas: posicoesComparadas,
+    perguntas_sem_evidencia: ordenadas.length - evidenceQuestions,
+    perguntas_respondidas: perguntasRespondidas,
+    confiabilidade: confidenceFromDirectEvidence(perguntasComparadas, evidenceQuestions),
+    espectro_partidario_mapeado: spectrumMapped,
+    explanation,
     detalhe,
   }
 }
@@ -584,18 +290,14 @@ export function compareCandidatesAlphabetically(
   respostas: Map<string, { valor: RespostaLikert; importante: boolean }>,
   dataset: QuizAlignmentDataset,
   perguntas: QuizPergunta[] = quizPerguntasOrdenadas(),
-  fase: 1 | 2 | 3 = 2
+  fase: 1 | 2 | 3 = 2,
 ): QuizScoreResult[] {
-  const maxPl = fase >= 2 ? computeMaxPlByEixo(dataset.candidatos, perguntas) : undefined
-  const rows = dataset.candidatos.map((c) => ({
-    candidato: c,
-    score: calcularAlinhamento(respostas, c, perguntas, dataset, fase, maxPl),
-  }))
-  return rows
+  return dataset.candidatos
+    .map((candidato) => calcularAlinhamento(respostas, candidato, perguntas, dataset, fase))
     .sort((a, b) => {
-      const byName = a.candidato.nome_urna.localeCompare(b.candidato.nome_urna, "pt-BR")
-      if (byName !== 0) return byName
-      return a.candidato.slug.localeCompare(b.candidato.slug, "pt-BR")
+      const ca = dataset.candidatos.find((candidate) => candidate.slug === a.candidato_slug)
+      const cb = dataset.candidatos.find((candidate) => candidate.slug === b.candidato_slug)
+      const byName = (ca?.nome_urna ?? "").localeCompare(cb?.nome_urna ?? "", "pt-BR")
+      return byName !== 0 ? byName : a.candidato_slug.localeCompare(b.candidato_slug, "pt-BR")
     })
-    .map((row) => row.score)
 }

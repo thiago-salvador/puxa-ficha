@@ -44,7 +44,10 @@ function withNextServerMocks<T>(load: () => Promise<T>): Promise<T> {
   })
 }
 
-const slugsRoute = withNextServerMocks(() => import("../src/app/api/candidato-slugs/route"))
+const slugsRoute = withNextServerMocks(async () => ({
+  route: await import("../src/app/api/candidato-slugs/route"),
+  handlers: await import("../src/lib/candidato-slugs-route"),
+}))
 const searchRoute = withNextServerMocks(() => import("../src/app/api/search-index/route"))
 
 function assertPublicShortCdnCache(cacheControl: string | null) {
@@ -62,7 +65,7 @@ function item(slug: string): GlobalSearchIndexItem {
 
 describe("/api/candidato-slugs", () => {
   it("lista saudável sai com cache público curto de CDN", async () => {
-    const { createCandidatoSlugsGetHandler } = await slugsRoute
+    const { createCandidatoSlugsGetHandler } = (await slugsRoute).handlers
     const GET = createCandidatoSlugsGetHandler(async () => [{ slug: "a" }, { slug: "b" }])
 
     const response = await GET()
@@ -73,7 +76,7 @@ describe("/api/candidato-slugs", () => {
   })
 
   it("lista vazia sai no-store", async () => {
-    const { createCandidatoSlugsGetHandler } = await slugsRoute
+    const { createCandidatoSlugsGetHandler } = (await slugsRoute).handlers
     const GET = createCandidatoSlugsGetHandler(async () => [])
 
     const response = await GET()
@@ -83,7 +86,7 @@ describe("/api/candidato-slugs", () => {
   })
 
   it("falha de leitura sai 503 no-store", async () => {
-    const { createCandidatoSlugsGetHandler } = await slugsRoute
+    const { createCandidatoSlugsGetHandler } = (await slugsRoute).handlers
     const GET = createCandidatoSlugsGetHandler(async () => {
       throw new Error("falha simulada")
     })
@@ -99,7 +102,7 @@ describe("/api/candidato-slugs", () => {
   })
 
   it("o handler exportado usa o inventário canônico de slugs", async () => {
-    const route = await slugsRoute
+    const route = (await slugsRoute).route
     assert.equal(typeof route.GET, "function")
   })
 })

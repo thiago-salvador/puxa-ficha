@@ -3,6 +3,9 @@ import { describe, it } from "node:test"
 import { sanitizeQuizResultQueryString } from "../src/lib/quiz-short-link-sanitize"
 
 describe("quiz-short-link-sanitize", () => {
+  it("accepts the current v4 query", () => {
+    assert.equal(sanitizeQuizResultQueryString("r=a&v=4"), "r=a&v=4")
+  })
   it("accepts minimal r+v", () => {
     assert.equal(sanitizeQuizResultQueryString("r=abc&v=1"), "r=abc&v=1")
   })
