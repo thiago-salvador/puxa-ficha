@@ -83,9 +83,14 @@ WITH candidacies AS (
       ELSE NULL
     END
     ,'provenance_complete', CASE
+      -- 152 -> 181: universo vigente cresceu (issue #339, coletar-destaques-votacoes.ts
+      -- passou a reverificar 5 candidatos públicos com pares novos, filtrando os que
+      -- não estão em data/candidatos.json). Até alguém publicar evidência confirmada
+      -- para o universo de 181 pares, este snapshot reporta "incompleto" — o mesmo
+      -- comportamento que seguiu a reconciliação 154 -> 152 até a evidência de 09-09.
       WHEN log.fonte = 'destaques-votacoes' THEN
         count(*) FILTER (WHERE log.escopo = 'global' AND log.detalhe LIKE 'provenance_v1:%') = 1
-        AND count(*) FILTER (WHERE log.escopo = 'candidato' AND log.detalhe LIKE 'provenance_v1:%') = 152
+        AND count(*) FILTER (WHERE log.escopo = 'candidato' AND log.detalhe LIKE 'provenance_v1:%') = 181
         AND count(*) FILTER (WHERE log.resultado NOT IN ('encontrado', 'sem_achado_no_escopo')) = 0
       ELSE NULL
     END

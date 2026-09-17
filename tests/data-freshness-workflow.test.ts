@@ -18,6 +18,8 @@ const alertScript = readFileSync(
 );
 const [auditSection, notificationSection = ""] =
   workflow.split("\n  notificar:");
+const [collectSection, publishSection = ""] =
+  provenanceWorkflow.split("\n  publish:");
 
 test("auditoria permanece observacional e a escrita fica isolada no notificador", () => {
   const parsed = parse(workflow) as {
@@ -94,19 +96,88 @@ test("notificador mantém um incidente destacado sem publicar correção automá
   console.log("DATA_FRESHNESS_WORKFLOW_PASS");
 });
 
-test("recoleta de destaques faz duas leituras e só publica artefato", () => {
+test("recoleta de destaques faz duas leituras e o job collect nunca escreve", () => {
   const parsed = parse(provenanceWorkflow) as {
     permissions?: { contents?: string };
-    jobs?: { collect?: { env?: { PF_DRY_RUN?: string } } };
+    jobs?: {
+      collect?: { env?: { PF_DRY_RUN?: string } };
+      publish?: unknown;
+    };
   };
   assert.equal(parsed.permissions?.contents, "read");
   assert.equal(parsed.jobs?.collect?.env?.PF_DRY_RUN, "1");
-  assert.match(provenanceWorkflow, /Primeira leitura/);
-  assert.match(provenanceWorkflow, /Segunda leitura independente/);
-  assert.match(provenanceWorkflow, /verify-destaques-votacoes-provenance\.ts/);
-  assert.match(provenanceWorkflow, /upload-artifact@[a-f0-9]{40}/);
+  assert.ok(parsed.jobs?.publish);
+  assert.match(collectSection, /Primeira leitura/);
+  assert.match(collectSection, /Segunda leitura independente/);
+  assert.match(collectSection, /verify-destaques-votacoes-provenance\.ts/);
+  assert.match(collectSection, /upload-artifact@[a-f0-9]{40}/);
+  // O job collect é o único que roda sem confirmação humana (schedule
+  // semanal + dispatch simples): fica para sempre proibido de escrever,
+  // independente do que o job publish ganhar depois.
   assert.doesNotMatch(
-    provenanceWorkflow,
+    collectSection,
     /contents:\s*write|issues:\s*write|pull-requests:\s*write|git\s+(push|commit|merge)|gh\s+pr|supabase\s+db|psql/i,
   );
+});
+
+test("publish só roda em dispatch manual explícito, nunca em run agendado", () => {
+  const parsed = parse(provenanceWorkflow) as {
+    jobs?: {
+      publish?: {
+        needs?: string;
+        if?: string;
+        environment?: string;
+        "timeout-minutes"?: number;
+        permissions?: { contents?: string };
+      };
+    };
+  };
+  const publish = parsed.jobs?.publish;
+  assert.ok(publish);
+  assert.equal(publish?.needs, "collect");
+  assert.equal(publish?.environment, "production");
+  assert.equal(publish?.permissions?.contents, "read");
+  assert.ok(typeof publish?.["timeout-minutes"] === "number" && publish!["timeout-minutes"]! > 0);
+  // O guard por github.event_name é redundante com o fato de `inputs` não
+  // existir num run de schedule, mas é isso que torna o contrato legível e
+  // testável sem depender de como a Actions resolve o context por evento.
+  assert.match(String(publish?.if), /github\.event_name == 'workflow_dispatch'/);
+  assert.match(String(publish?.if), /inputs\.publish_evidence == true/);
+  assert.match(String(publish?.if), /github\.ref == 'refs\/heads\/main'/);
+});
+
+test("workflow_dispatch expõe publish_evidence como boolean desligado por padrão", () => {
+  const parsed = parse(provenanceWorkflow) as {
+    on?: {
+      workflow_dispatch?: { inputs?: { publish_evidence?: { type?: string; default?: boolean; required?: boolean } } };
+      schedule?: unknown[];
+    };
+  };
+  const input = parsed.on?.workflow_dispatch?.inputs?.publish_evidence;
+  assert.equal(input?.type, "boolean");
+  assert.equal(input?.default, false);
+  assert.equal(input?.required, false);
+  // schedule não carrega inputs: publish_evidence não existe nesse contexto,
+  // então um run agendado nunca pode setar isso como true por fora do código.
+  assert.ok(Array.isArray(parsed.on?.schedule) && parsed.on!.schedule!.length > 0);
+});
+
+test("publish gera o SQL a partir do artifact já verificado e restringe a credencial de produção a um passo", () => {
+  assert.match(publishSection, /download-artifact@[a-f0-9]{40}/);
+  assert.match(publishSection, /generate-destaques-evidence-refresh\.ts/);
+  assert.match(publishSection, /--excluded-pairs=/);
+  assert.match(publishSection, /install-postgresql-client-17/);
+  assert.match(publishSection, /apply-destaques-evidence-refresh-production\.sh/);
+  assert.match(publishSection, /checkout@[a-f0-9]{40}/);
+  assert.match(publishSection, /setup-node@[a-f0-9]{40}/);
+  assert.match(publishSection, /upload-artifact@[a-f0-9]{40}/);
+  // A credencial de produção só pode aparecer dentro do passo "Aplicar
+  // evidência" (env de passo, não de job): uma segunda ocorrência indicaria
+  // que ela vazou para checkout/setup-node/geração do SQL, que não precisam
+  // dela.
+  const dbUrlOccurrences = publishSection.match(/SUPABASE_DB_URL/g) ?? [];
+  assert.equal(dbUrlOccurrences.length, 1);
+  // Se aparecesse antes de `steps:`, seria env de job (todo passo herdaria a
+  // credencial); precisa estar depois, dentro do env do passo que roda psql.
+  assert.ok(publishSection.indexOf("SUPABASE_DB_URL") > publishSection.indexOf("steps:"));
 });

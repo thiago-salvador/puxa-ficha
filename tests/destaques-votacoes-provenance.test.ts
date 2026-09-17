@@ -61,9 +61,9 @@ function load(path: string): DestaquesRunManifest {
   return validateDestaquesRunManifest(manifest, (artifact) => readFileSync(join(root, artifact)), DESTAQUES_UNIVERSE_2026_08_30)
 }
 
-test("universo vigente reflete a reconciliação que removeu 2 pares (154 -> 152)", () => {
-  assert.equal(DESTAQUES_EXPECTED_PAIRS, 152)
-  assert.deepEqual(DESTAQUES_UNIVERSE_ATUAL, { votacoes: 23, pairs: 152, candidates: 30 })
+test("universo vigente reflete a reconciliação (154 -> 152) e o crescimento orgânico pós-coorte 2026 (152 -> 181, issue #339)", () => {
+  assert.equal(DESTAQUES_EXPECTED_PAIRS, 181)
+  assert.deepEqual(DESTAQUES_UNIVERSE_ATUAL, { votacoes: 23, pairs: 181, candidates: 35 })
   assert.deepEqual(DESTAQUES_UNIVERSE_2026_08_30, { votacoes: 23, pairs: 154, candidates: 30 })
 })
 
@@ -71,7 +71,7 @@ test("gate vigente reprova evidência com o universo histórico de 154 pares", (
   const manifest = JSON.parse(readFileSync(RUN_A, "utf8")) as DestaquesRunManifest
   assert.throws(
     () => validateDestaquesRunManifest(manifest, (artifact) => readFileSync(join(dirname(RUN_A), artifact))),
-    /universo divergente, esperado 23\/152\/30, encontrado 23\/154\/30/,
+    /universo divergente, esperado 23\/181\/35, encontrado 23\/154\/30/,
   )
 })
 
