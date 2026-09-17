@@ -97,8 +97,21 @@ SQL
 
 M="$MIGRATION"
 
-# 1) Banco vazio (candidatos e chapa alvo ausentes): no-op, nao falha.
 schema
+
+# 0) candidatos.foto_credito e jsonb (nao text): o INSERT da migration
+# original (antes deste fix) gravava uma string literal solta, sem
+# to_jsonb(). Reproduz o segundo defeito do dry-run de producao
+# (BEGIN...ROLLBACK do coordenador em 17/09/2026, "invalid input syntax for
+# type json, Token 'Foto'") antes de provar que a migration corrigida
+# (to_jsonb(...::text)) aplica.
+if q -q -c "INSERT INTO public.candidatos (slug, nome_completo, nome_urna, partido_atual, partido_sigla, cargo_disputado, foto_credito) VALUES ('foto-credito-bug-test','X','X','X','X','Governador','Foto oficial de candidatura, TSE DivulgaCandContas')" >/dev/null 2>&1; then
+  echo "FAIL: INSERT com foto_credito como texto solto deveria ser recusado (coluna e jsonb)" >&2; exit 1
+fi
+echo "PASS (0): foto_credito jsonb recusa string solta sem to_jsonb() (defeito do dry-run de producao reproduzido)"
+q -q -c "DELETE FROM public.candidatos WHERE slug='foto-credito-bug-test'"
+
+# 1) Banco vazio (candidatos e chapa alvo ausentes): no-op, nao falha.
 q -q < "$M"
 vazio="$(q -Atq -c "SELECT count(*) FROM supabase_migrations.schema_migrations")"
 [[ "$vazio" == "0" ]] || { echo "FAIL: migration escreveu no ledger em coorte vazia" >&2; exit 1; }
@@ -106,7 +119,7 @@ vazio="$(q -Atq -c "SELECT count(*) FROM supabase_migrations.schema_migrations")
 seed
 
 # 2) Preimagem errada (vinculo ja preenchido): aborta sem escrita parcial.
-q -q -c "INSERT INTO public.candidatos (id, slug, sq_candidato_2026) VALUES ('11111111-1111-1111-1111-111111111111','fixture-intruso','999999')"
+q -q -c "INSERT INTO public.candidatos (id, slug, sq_candidato_2026, nome_completo, nome_urna, partido_atual, partido_sigla, cargo_disputado) VALUES ('11111111-1111-1111-1111-111111111111','fixture-intruso','999999999','FIXTURE INTRUSO','FIXTURE INTRUSO','XX','XX','Governador')"
 q -q -c "UPDATE public.chapas_2026 SET titular_candidato_id='11111111-1111-1111-1111-111111111111' WHERE chave='2026:RN:carlos-alberto-de-almeida-cavalcante'"
 if q -q < "$M" >/dev/null 2>&1; then
   echo "FAIL: migration aplicou com preimagem divergente" >&2; exit 1

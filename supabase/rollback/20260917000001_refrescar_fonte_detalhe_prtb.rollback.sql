@@ -60,7 +60,7 @@ BEGIN
   IF quantidade <> 1 THEN RAISE EXCEPTION 'fonte-detalhe-prtb rollback: chapa count'; END IF;
 
   INSERT INTO public.coleta_log (fonte, escopo, alvo, resultado, volume, detalhe, url, execucao, natureza)
-  VALUES ('tse', 'chapa', 'chapas_2026.fonte_detalhe:prtb', 'encontrado', 1,
+  VALUES ('tse', 'global', 'chapas_2026.fonte_detalhe:prtb', 'encontrado', 1,
     'Rollback de 20260917000001: chapa do PRTB voltou ao estado de 15/09/2026.',
     'https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/BR/20322002026/candidato/280002554479',
     'rollback:20260917000001', 'escrita');

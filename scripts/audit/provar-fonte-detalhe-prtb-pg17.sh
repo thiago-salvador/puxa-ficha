@@ -46,8 +46,8 @@ q() { docker exec -i "$CONTAINER_ID" psql -X -U postgres -d postgres -v ON_ERROR
 
 seed() {
 q -q <<'SQL'
-INSERT INTO public.candidatos (id, slug, sq_candidato_2026) VALUES
-  ('9c1c0b1e-6e2b-4f0a-9f1a-000000000001', 'leonardo-avalanche', '280002554479');
+INSERT INTO public.candidatos (id, slug, sq_candidato_2026, nome_completo, nome_urna, partido_atual, partido_sigla, cargo_disputado) VALUES
+  ('9c1c0b1e-6e2b-4f0a-9f1a-000000000001', 'leonardo-avalanche', '280002554479', 'LEONARDO AVALANCHE', 'LEONARDO AVALANCHE', 'PRTB', 'PRTB', 'Presidente');
 INSERT INTO public.chapas_2026 (
   chave, eleicao_codigo, eleicao_data, uf, cargo_titular, sq_coligacao,
   identidade_status, vinculo_titular_status, tse_situacao_codigo,
@@ -71,9 +71,21 @@ SQL
 
 M="$MIGRATION"
 
+q -q < "$REAL_SCHEMA"
+
+# 0a) coleta_log_escopo_check real: o INSERT da migration original (antes
+# deste fix) usava escopo='chapa', valor fora do dominio real
+# (candidato/territorio/global). Reproduz o segundo defeito do dry-run de
+# producao (BEGIN...ROLLBACK do coordenador em 17/09/2026) antes de provar
+# que a migration corrigida (escopo='global', mesmo padrao de
+# 20260916140000) aplica.
+if q -q -c "INSERT INTO public.coleta_log (fonte, escopo, alvo, resultado, volume, detalhe, url, execucao, natureza) VALUES ('tse','chapa','chapas_2026.fonte_detalhe:prtb','encontrado',1,'x','http://x','test:escopo-chapa-invalido','escrita')" >/dev/null 2>&1; then
+  echo "FAIL: INSERT em coleta_log com escopo='chapa' deveria ser recusado por coleta_log_escopo_check" >&2; exit 1
+fi
+echo "PASS (0a): coleta_log_escopo_check real recusa escopo='chapa' (defeito do dry-run de producao reproduzido)"
+
 # 0) Contra o dominio ESTREITO (sem 20260917000000 ter aplicado): reproduz
 # o incidente real.
-q -q < "$REAL_SCHEMA"
 q -q <<'SQL'
 ALTER TABLE public.chapas_2026 DROP CONSTRAINT chapas_2026_fonte_detalhe_check;
 ALTER TABLE public.chapas_2026

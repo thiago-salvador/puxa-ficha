@@ -127,7 +127,7 @@ ledger_apos_repeticao="$(q -Atq -c "SELECT count(*) FROM supabase_migrations.sch
 [[ "$ledger_apos_repeticao" == "1" ]] || { echo "FAIL: migration nao e idempotente sobre o ledger" >&2; exit 1; }
 
 # 4) Rollback recusa se alguma chapa ja usa o estado novo.
-q -q -c "INSERT INTO public.candidatos (id, slug, sq_candidato_2026) VALUES ('9c1c0b1e-6e2b-4f0a-9f1a-000000000001','leonardo-avalanche','280002554479')"
+q -q -c "INSERT INTO public.candidatos (id, slug, sq_candidato_2026, nome_completo, nome_urna, partido_atual, partido_sigla, cargo_disputado) VALUES ('9c1c0b1e-6e2b-4f0a-9f1a-000000000001','leonardo-avalanche','280002554479','LEONARDO AVALANCHE','LEONARDO AVALANCHE','PRTB','PRTB','Presidente')"
 q -q -c "INSERT INTO public.chapas_2026 (
   chave, eleicao_codigo, eleicao_data, uf, cargo_titular, sq_coligacao,
   identidade_status, vinculo_titular_status, tse_situacao_codigo,

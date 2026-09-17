@@ -69,7 +69,7 @@ BEGIN
   -- @write tabela=candidatos slug=godeiro-linharess campos=id,slug,nome_completo,nome_urna,partido_sigla,partido_atual,cargo_disputado,estado,sq_candidato_2026,data_nascimento,naturalidade,formacao,profissao_declarada,genero,estado_civil,cor_raca,foto_url,foto_credito,biografia,situacao_candidatura,status,publicavel,fonte_dados,verificacao_campos,ultima_atualizacao,created_at
   INSERT INTO public.candidatos (id,slug,nome_completo,nome_urna,partido_sigla,partido_atual,cargo_disputado,estado,sq_candidato_2026,data_nascimento,naturalidade,formacao,profissao_declarada,genero,estado_civil,cor_raca,foto_url,foto_credito,biografia,situacao_candidatura,status,publicavel,fonte_dados,verificacao_campos,ultima_atualizacao,created_at)
   VALUES ('d45f1947-73a7-4292-9955-7e57927032f0','godeiro-linharess','GLADYER LINHARES GODEIRO','GODEIRO LINHARESS','DC','DEMOCRACIA CRISTÃ','Governador','RN','200002554482','1977-04-25','Mossoró (RN)','Superior completo','Empresário','Masculino','Solteiro(a)','Parda',
-    'https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/20322002026/200002554482/RN','Foto oficial de candidatura, TSE DivulgaCandContas',
+    'https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/20322002026/200002554482/RN',to_jsonb('Foto oficial de candidatura, TSE DivulgaCandContas'::text),
     'Godeiro Linharess é candidato ao Governo do Rio Grande do Norte pela Democracia Cristã nas eleições de 2026, como substituto oficial de Carlos Jararaca. Declarou ao TSE a ocupação de empresário e escolaridade superior completa.',
     'pendente de julgamento','candidato',true,ARRAY[candidate_source->>'url'],
     jsonb_build_object('candidate_registration',verification,'candidate_complement',verification,'patrimonio',verification),

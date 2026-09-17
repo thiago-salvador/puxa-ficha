@@ -93,7 +93,7 @@ BEGIN
   -- @write tabela=coleta_log ref=migration:20260917000001 campos=fonte,escopo,alvo,resultado,volume,detalhe,url,execucao,natureza
   INSERT INTO public.coleta_log (fonte, escopo, alvo, resultado, volume, detalhe, url, execucao, natureza)
   VALUES (
-    'tse', 'chapa', 'chapas_2026.fonte_detalhe:prtb', 'encontrado', 1,
+    'tse', 'global', 'chapas_2026.fonte_detalhe:prtb', 'encontrado', 1,
     'Issue #340 (redesenho pós-incidente 35179453431): chapa presidencial do PRTB refrescada (titular e vice) e tse_situacao_codigo sincronizado, sobre o domínio já alargado por 20260917000000.',
     'https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/BR/20322002026/candidato/280002554479',
     'migration:20260917000001', 'escrita'

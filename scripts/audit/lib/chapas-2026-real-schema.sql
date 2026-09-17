@@ -7,6 +7,15 @@
 -- 35179453431: a prova de 20260916150000 tinha um chapas_2026 sem nenhuma
 -- CHECK constraint).
 --
+-- Ampliado em 17/09/2026 (mesma issue, dry-run de produção pós-#357): as
+-- primeiras versões deste arquivo só cobriam chapas_2026_fonte_detalhe_check
+-- em profundidade; candidatos/patrimonio/coleta_log tinham fixtures
+-- minimalistas SEM as CHECK constraints reais, e por isso as provas de
+-- 20260917000001 (coleta_log_escopo_check, escopo='chapa' inválido) e
+-- 20260917000100 (candidatos.foto_credito é jsonb, não text) passaram
+-- localmente e falharam no dry-run real de produção. Este arquivo agora
+-- carrega o schema real das quatro tabelas.
+--
 -- chapas_2026_fonte_detalhe_check aqui já é a versão ALARGADA (pós-
 -- 20260917000000, aceitando 'Pendente de julgamento'): é o estado real
 -- corrente depois desta PR. O provador do próprio alargamento
@@ -20,37 +29,162 @@ CREATE TABLE IF NOT EXISTS supabase_migrations.schema_migrations (
 
 CREATE TABLE IF NOT EXISTS public.candidatos (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  nome_completo text NOT NULL,
+  nome_urna text NOT NULL,
   slug text NOT NULL UNIQUE,
-  nome_completo text, nome_urna text, partido_sigla text, partido_atual text,
-  cargo_disputado text, estado text, sq_candidato_2026 text UNIQUE,
-  data_nascimento date, naturalidade text, formacao text, profissao_declarada text,
-  genero text, estado_civil text, cor_raca text, foto_url text, foto_credito text,
-  biografia text, situacao_candidatura text, status text NOT NULL DEFAULT 'candidato',
-  publicavel boolean NOT NULL DEFAULT true, fonte_dados text[], verificacao_campos jsonb,
-  ultima_atualizacao timestamptz NOT NULL DEFAULT '2026-01-01T00:00:00Z',
-  created_at timestamptz NOT NULL DEFAULT '2026-01-01T00:00:00Z',
-  CONSTRAINT candidatos_situacao_candidatura_dominio
-    CHECK (situacao_candidatura IS NULL OR situacao_candidatura IN (
-      'aguardando julgamento', 'candidatura declarada', 'incerto',
-      'deferido', 'deferido com recurso', 'indeferido', 'indeferido com recurso',
-      'pendente de julgamento'
-    ))
+  cpf_hash text,
+  data_nascimento date,
+  idade integer,
+  naturalidade text,
+  formacao text,
+  profissao_declarada text,
+  partido_atual text NOT NULL,
+  partido_sigla text NOT NULL,
+  cargo_atual text,
+  cargo_disputado text NOT NULL,
+  estado text,
+  status text DEFAULT 'pre-candidato',
+  foto_url text,
+  site_campanha text,
+  redes_sociais jsonb DEFAULT '{}'::jsonb,
+  fonte_dados text[],
+  ultima_atualizacao timestamptz DEFAULT now(),
+  created_at timestamptz DEFAULT now(),
+  biografia text,
+  cpf text,
+  tcu_inabilitado boolean DEFAULT false,
+  tcu_contas_irregulares boolean DEFAULT false,
+  situacao_candidatura text,
+  wikidata_id text,
+  genero text,
+  estado_civil text,
+  cor_raca text,
+  email_campanha text,
+  publicavel boolean DEFAULT false,
+  verificacao_campos jsonb NOT NULL DEFAULT '{}'::jsonb,
+  foto_credito jsonb,
+  sq_candidato_2026 text,
+  formacao_instituicao text
 );
+
+CREATE UNIQUE INDEX IF NOT EXISTS candidatos_sq_candidato_2026_unico
+  ON public.candidatos (sq_candidato_2026) WHERE sq_candidato_2026 IS NOT NULL;
+
+ALTER TABLE public.candidatos
+  ADD CONSTRAINT candidatos_publicavel_requires_disputa
+  CHECK (
+    publicavel IS NOT TRUE
+    OR (cargo_disputado IS NOT NULL AND cargo_disputado <> 'Nenhum' AND status NOT IN ('removido', 'desistente'))
+  );
+
+ALTER TABLE public.candidatos
+  ADD CONSTRAINT candidatos_cpf_formato_check
+  CHECK (cpf IS NULL OR cpf ~ '^[0-9]{11}$');
+
+ALTER TABLE public.candidatos
+  ADD CONSTRAINT candidatos_status_dominio
+  CHECK (status IN ('pre-candidato', 'candidato', 'indeferido', 'desistente', 'removido'));
+
+ALTER TABLE public.candidatos
+  ADD CONSTRAINT candidatos_sq_candidato_2026_formato
+  CHECK (sq_candidato_2026 IS NULL OR sq_candidato_2026 ~ '^[0-9]{9,15}$');
+
+ALTER TABLE public.candidatos
+  ADD CONSTRAINT candidatos_situacao_candidatura_dominio
+  CHECK (situacao_candidatura IS NULL OR situacao_candidatura IN (
+    'aguardando julgamento', 'candidatura declarada', 'incerto',
+    'deferido', 'deferido com recurso', 'indeferido', 'indeferido com recurso',
+    'pendente de julgamento'
+  ));
+
+-- Publicação mínima 2026: cargos de alta visibilidade (Presidente,
+-- Governador, Senador) exigem ficha completa para poderem ser publicavel.
+ALTER TABLE public.candidatos
+  ADD CONSTRAINT candidatos_publicacao_minima_2026_check
+  CHECK (
+    publicavel IS DISTINCT FROM true
+    OR cargo_disputado NOT IN ('Presidente', 'Governador', 'Senador')
+    OR (
+      coalesce(btrim(foto_url), '') <> ''
+      AND coalesce(btrim(partido_sigla), '') <> ''
+      AND coalesce(btrim(situacao_candidatura), '') <> ''
+      AND coalesce(btrim(biografia), '') <> ''
+      AND coalesce(btrim(naturalidade), '') <> ''
+      AND coalesce(btrim(formacao), '') <> ''
+      AND coalesce(btrim(profissao_declarada), '') <> ''
+      AND coalesce(btrim(genero), '') <> ''
+      AND coalesce(btrim(estado_civil), '') <> ''
+      AND coalesce(btrim(cor_raca), '') <> ''
+      AND data_nascimento IS NOT NULL
+      AND verificacao_campos ? 'candidate_registration'
+      AND verificacao_campos ? 'candidate_complement'
+    )
+  );
 
 CREATE TABLE IF NOT EXISTS public.patrimonio (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  candidato_id uuid REFERENCES public.candidatos(id),
-  ano_eleicao integer NOT NULL, valor_total numeric, bens jsonb, fonte text,
-  sq_candidato text, uf_candidatura text, cargo_candidatura text,
-  despublicacao_motivo text, despublicado_em timestamptz,
-  created_at timestamptz NOT NULL DEFAULT '2026-01-01T00:00:00Z'
+  candidato_id uuid REFERENCES public.candidatos(id) ON DELETE CASCADE,
+  ano_eleicao integer NOT NULL,
+  valor_total numeric,
+  bens jsonb,
+  fonte text DEFAULT 'TSE',
+  created_at timestamptz DEFAULT now(),
+  despublicacao_motivo text,
+  despublicado_em timestamptz,
+  ano_arquivo integer,
+  sq_candidato text,
+  uf_candidatura text,
+  cargo_candidatura text,
+  data_eleicao date,
+  tipo_eleicao text
 );
+
+CREATE UNIQUE INDEX IF NOT EXISTS uq_patrimonio_contexto_eleitoral
+  ON public.patrimonio (candidato_id, ano_eleicao, sq_candidato) NULLS NOT DISTINCT;
 
 CREATE TABLE IF NOT EXISTS public.coleta_log (
   id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  fonte text NOT NULL, escopo text, alvo text, candidato_id uuid,
-  resultado text, volume integer, detalhe text, url text, execucao text, natureza text
+  fonte text NOT NULL,
+  escopo text NOT NULL,
+  alvo text,
+  candidato_id uuid REFERENCES public.candidatos(id) ON DELETE SET NULL,
+  executado_em timestamptz NOT NULL DEFAULT now(),
+  resultado text NOT NULL,
+  volume integer NOT NULL DEFAULT 0,
+  detalhe text,
+  url text,
+  execucao text,
+  duracao_ms integer,
+  lote_cursor integer,
+  natureza text NOT NULL DEFAULT 'coleta'
 );
+
+ALTER TABLE public.coleta_log
+  ADD CONSTRAINT coleta_log_escopo_check
+  CHECK (escopo IN ('candidato', 'territorio', 'global'));
+
+ALTER TABLE public.coleta_log
+  ADD CONSTRAINT coleta_log_candidato_id_requires_escopo_candidato
+  CHECK (candidato_id IS NULL OR escopo = 'candidato');
+
+ALTER TABLE public.coleta_log
+  ADD CONSTRAINT coleta_log_resultado_dominio
+  CHECK (resultado IN ('encontrado', 'vazio_confirmado', 'sem_achado_no_escopo', 'nao_aplicavel', 'erro', 'indeterminado'));
+
+ALTER TABLE public.coleta_log
+  ADD CONSTRAINT coleta_log_volume_coerente
+  CHECK (
+    volume >= 0
+    AND (resultado <> 'encontrado' OR volume > 0)
+    AND (resultado NOT IN ('vazio_confirmado', 'sem_achado_no_escopo', 'nao_aplicavel', 'indeterminado') OR volume = 0)
+  );
+
+ALTER TABLE public.coleta_log
+  ADD CONSTRAINT coleta_log_natureza_dominio
+  CHECK (natureza IN ('coleta', 'escrita'));
+
+CREATE UNIQUE INDEX IF NOT EXISTS coleta_log_fonte_execucao_lote_candidato_key
+  ON public.coleta_log (fonte, execucao, lote_cursor, candidato_id);
 
 -- Colunas de public.chapas_2026 lidas de information_schema em 17/09/2026
 -- (31 colunas nomeadas, ordinal 1-32 pulando 31 no dump original).
@@ -69,8 +203,8 @@ CREATE TABLE IF NOT EXISTS public.chapas_2026 (
   tse_situacao_vice_codigo text,
   tipo_agremiacao text NOT NULL,
   composicao text NOT NULL,
-  titular_candidato_id uuid REFERENCES public.candidatos(id),
-  vice_candidato_id uuid REFERENCES public.candidatos(id),
+  titular_candidato_id uuid REFERENCES public.candidatos(id) ON DELETE RESTRICT,
+  vice_candidato_id uuid REFERENCES public.candidatos(id) ON DELETE RESTRICT,
   titular_sq_candidato text,
   vice_sq_candidato text,
   titular_nome_completo text NOT NULL,
@@ -139,6 +273,31 @@ ALTER TABLE public.chapas_2026
   ADD CONSTRAINT chapas_2026_vinculo_titular_status_check
   CHECK (vinculo_titular_status = ANY (ARRAY['confirmado', 'revisao_identidade', 'duplicidade_oficial', 'novo_perfil_oficial']));
 
+-- chapas_2026_vice_situacao_divulgacand_check, texto integral de
+-- 20260912160000_chapas_vice_situacao_divulgacand.sql (produção). Nenhuma
+-- das migrations desta issue (#340/#346) grava vice_situacao_divulgacand,
+-- então a coluna fica NULL e a constraint é trivialmente satisfeita, mas
+-- entra aqui para o fixture cobrir o schema real por completo.
+ALTER TABLE public.chapas_2026
+  ADD CONSTRAINT chapas_2026_vice_situacao_divulgacand_check
+  CHECK (
+    vice_situacao_divulgacand IS NULL OR (
+      identidade_status = 'confirmada' AND vinculo_titular_status = 'confirmado'
+      AND eleicao_codigo = '6259' AND eleicao_data = '2026-10-04'::date
+      AND titular_sq_candidato IS NOT NULL AND vice_sq_candidato IS NOT NULL
+      AND vice_situacao_divulgacand - ARRAY['domain', 'situacao_vice', 'status', 'titular_sq_candidato', 'vice_sq_candidato', 'vice_nome_urna', 'vice_partido_sigla', 'uf', 'source_url', 'source_sha256', 'checked_at'] = '{}'::jsonb
+      AND vice_situacao_divulgacand @> jsonb_build_object(
+        'domain', 'divulgacand_vices', 'situacao_vice', 3, 'status', 'inapto',
+        'titular_sq_candidato', titular_sq_candidato, 'vice_sq_candidato', vice_sq_candidato,
+        'vice_nome_urna', vice_nome_urna, 'vice_partido_sigla', vice_partido_sigla, 'uf', coalesce(uf, 'BR'),
+        'source_url', 'https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/' || coalesce(uf, 'BR') || '/20322002026/candidato/' || titular_sq_candidato)
+      AND jsonb_typeof(vice_situacao_divulgacand->'source_sha256') = 'string'
+      AND (vice_situacao_divulgacand->>'source_sha256') ~ '^[a-f0-9]{64}$'
+      AND jsonb_typeof(vice_situacao_divulgacand->'checked_at') = 'string'
+      AND isfinite((vice_situacao_divulgacand->>'checked_at')::timestamptz)
+    ) IS TRUE
+  );
+
 -- Versão ALARGADA (pós-20260917000000): titular/vice descricao_situacao
 -- aceitam 'Pendente de julgamento'.
 ALTER TABLE public.chapas_2026
@@ -192,3 +351,14 @@ ALTER TABLE public.chapas_2026
   );
 
 CREATE UNIQUE INDEX IF NOT EXISTS chapas_2026_chave_key ON public.chapas_2026 (chave);
+
+-- Índices únicos parciais reais (fonte_tipo='divulgacand_detalhe'): impedem
+-- duas chapas de fonte direta apontarem para o mesmo titular/vice.
+CREATE UNIQUE INDEX IF NOT EXISTS chapas_2026_titular_sq_candidato_divulgacand_key
+  ON public.chapas_2026 (titular_sq_candidato) WHERE fonte_tipo = 'divulgacand_detalhe';
+
+CREATE UNIQUE INDEX IF NOT EXISTS chapas_2026_vice_sq_candidato_divulgacand_key
+  ON public.chapas_2026 (vice_sq_candidato) WHERE fonte_tipo = 'divulgacand_detalhe';
+
+CREATE UNIQUE INDEX IF NOT EXISTS chapas_2026_titular_candidato_id_divulgacand_key
+  ON public.chapas_2026 (titular_candidato_id) WHERE fonte_tipo = 'divulgacand_detalhe';
