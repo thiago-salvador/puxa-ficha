@@ -27,6 +27,7 @@ import { pareceNomeDeInstituicao } from "@/lib/formacao-display"
 import { sanitizePublicText } from "@/lib/public-text"
 import { formatProcessSummaryLabel } from "@/lib/ui-labels"
 import { prepareHistoricoPoliticoPublicDisplayList } from "@/lib/trajetoria-public-display"
+import { normalizeFotoCredito } from "@/lib/foto-credito"
 import {
   maskDocumentLikeSequences,
   sanitizeFontePublica,
@@ -729,7 +730,7 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
     // o objeto no DTO permite que consumidores da API exibam a mesma origem
     // que a ficha server-renderizada, inclusive para fontes primárias que não
     // são TSE ou Wikimedia Commons.
-    foto_credito: ficha.foto_credito ?? null,
+    foto_credito: normalizeFotoCredito(ficha.foto_credito),
     site_campanha: ficha.site_campanha,
     redes_sociais: publicSocialLinks(ficha.redes_sociais),
     // Fontes passam pela MESMA limpeza: a varredura achou 65 entradas em 63
