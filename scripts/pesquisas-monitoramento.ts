@@ -273,9 +273,23 @@ async function main(): Promise<void> {
   let discoveryBlocked = false
   let discoveryContext: { observations: ObservacaoListagemPesquisas[]; inventory?: InventarioRegistrosPesqele; entries?: EntradaDescoberta[] } = { observations: [] }
   if (args.discovery) {
-    const discovery = JSON.parse(readFileSync(resolve(args.discovery), "utf8")) as { observations: ObservacaoListagemPesquisas[]; inventory?: InventarioRegistrosPesqele; status?: string }
+    const discovery = JSON.parse(readFileSync(resolve(args.discovery), "utf8")) as {
+      observations: ObservacaoListagemPesquisas[]
+      inventory?: InventarioRegistrosPesqele
+      status?: string
+      generated_at?: string
+      intake?: { registry?: ObservacaoPesqele[] }
+    }
     if (!Array.isArray(discovery.observations)) throw new Error("manifesto de descoberta inválido")
-    const intake = await validarEntradasDescobertas({ observations: discovery.observations, inventory: discovery.inventory, knownTargets: listarAlvosMonitoramento(), sourceId: args.source, uf: args.uf })
+    const intake = await validarEntradasDescobertas({
+      observations: discovery.observations,
+      inventory: discovery.inventory,
+      knownTargets: listarAlvosMonitoramento(),
+      sourceId: args.source,
+      uf: args.uf,
+      registryCache: discovery.intake?.registry,
+      registryCacheGeneratedAt: discovery.generated_at,
+    })
     discoveryContext = { ...discovery, entries: intake.entries }
     intake.registry.forEach((observation) => observations.set(observation.registry.registration_id, observation))
     const merged = new Map((args.discoveryOnly ? [] : targets).map((target) => [target.poll_id, target]))
