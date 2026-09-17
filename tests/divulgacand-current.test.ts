@@ -221,6 +221,60 @@ for (const [label, mutate] of invalidDetails) {
   });
 }
 
+// Regressão issue #340 (16/09/2026, run 35172127295): a auditoria em produção
+// quebrou com "DivulgaCand vices duplicadas ou situação desconhecida para SQ
+// 280002554479" (Leonardo Avalanche, PRTB). O payload real, buscado ao vivo em
+// .../candidato/280002554479 no mesmo dia, tem UMA vice só (SILVIA,
+// sq_CANDIDATO 280002554490) com `situacaoVice: 12` — "Pendente de
+// julgamento" no código que a API AO VIVO usa para a vice, distinto do
+// código 17 que consulta_cand_complementar usa para a mesma descrição.
+test("admite vice com situacaoVice 12 (pendente de julgamento), payload real de Leonardo Avalanche/Silvia", async () => {
+  const fixture = directFixture();
+  fixture.titular.vices = [
+    { sq_CANDIDATO: fixture.vice.id, nm_URNA: fixture.vice.nomeUrna, situacaoVice: 12, sg_PARTIDO: "DEMOCRATA" },
+  ];
+  const rows = await collectFixture(fixture);
+  assert.deepEqual(rows.map((row) => row.sq_candidato), ["270002554375", "270002554376"]);
+});
+
+// A causa que a mensagem de erro também cobria ("vices duplicadas") continua
+// bloqueada, mas só quando a duplicata é de vice ainda vigente. Uma vice
+// substituída (situacaoVice 3) pode ficar no mesmo array que o registro
+// vigente do mesmo SQ — TSE preserva histórico —, e isso não pode voltar a
+// derrubar a auditoria: a linha substituída sai do cálculo de duplicidade e
+// código desconhecido antes da checagem, não relaxa a checagem em si.
+test("vice substituída (situacaoVice 3) duplicando o SQ da vice vigente não bloqueia", async () => {
+  const fixture = directFixture();
+  fixture.titular.vices = [
+    { sq_CANDIDATO: fixture.vice.id, nm_URNA: fixture.vice.nomeUrna, situacaoVice: 3, sg_PARTIDO: "DEMOCRATA" },
+    { sq_CANDIDATO: fixture.vice.id, nm_URNA: fixture.vice.nomeUrna, situacaoVice: 12, sg_PARTIDO: "DEMOCRATA" },
+  ];
+  const rows = await collectFixture(fixture);
+  assert.deepEqual(rows.map((row) => row.sq_candidato), ["270002554375", "270002554376"]);
+});
+
+// Duas vices ATIVAS com o mesmo SQ (nenhuma delas substituída) continua sendo
+// o defeito real que a checagem de duplicidade existe para pegar.
+test("duas vices vigentes com o mesmo SQ (nenhuma substituída) continua recusando", async () => {
+  const fixture = directFixture();
+  fixture.titular.vices = [
+    { sq_CANDIDATO: fixture.vice.id, nm_URNA: fixture.vice.nomeUrna, situacaoVice: 1, sg_PARTIDO: "DEMOCRATA" },
+    { sq_CANDIDATO: fixture.vice.id, nm_URNA: fixture.vice.nomeUrna, situacaoVice: 12, sg_PARTIDO: "DEMOCRATA" },
+  ];
+  await assert.rejects(collectFixture(fixture), /DivulgaCand/);
+});
+
+// Código desconhecido de verdade (nem 1, nem 3, nem 12) continua recusando,
+// mesmo isolado sem duplicata: alargar o vocabulário não pode virar "aceita
+// qualquer coisa".
+test("situacaoVice fora do vocabulário conhecido (nem 1, 3 ou 12) continua recusando", async () => {
+  const fixture = directFixture();
+  fixture.titular.vices = [
+    { sq_CANDIDATO: fixture.vice.id, nm_URNA: fixture.vice.nomeUrna, situacaoVice: 7, sg_PARTIDO: "DEMOCRATA" },
+  ];
+  await assert.rejects(collectFixture(fixture), /DivulgaCand/);
+});
+
 test("falha HTTP preserva recibo e não retorna admissão parcial", async () => {
   const fixture = directFixture();
   const originalFetch = fixture.fakeFetch;

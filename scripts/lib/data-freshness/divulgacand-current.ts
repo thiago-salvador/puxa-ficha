@@ -350,8 +350,28 @@ export async function collectDirectCandidaciesMissingFromCdn(
       throw new Error(`DivulgaCand situação diverge entre lista e detalhe para SQ ${row.sq_candidato}`);
     }
     const vices = sanitizeVices(raw);
-    if (new Set(vices.map((vice) => vice.sq_candidato)).size !== vices.length ||
-        vices.some((vice) => ![1, 3].includes(vice.situacao_vice))) {
+    // situacaoVice 3 = substituída (regra documentada em
+    // data/divulgacand-vices-*.json). Um titular pode acumular no mesmo
+    // `vices[]` o registro histórico da vice substituída ao lado do vigente,
+    // e o código legado dessa vice sai de moda sem aviso (foi o caso de
+    // 280002554479/Leonardo Avalanche em 16/09/2026: a lista trazia só a vice
+    // vigente, mas um titular com histórico de substituição pode trazer as
+    // duas). Excluir as substituídas ANTES de checar duplicidade e código
+    // desconhecido: a exigência vale para quem ainda concorre, não para quem
+    // já saiu. `selectCurrentVice` abaixo recebe `vices` inteiro, sem filtro,
+    // porque é ele quem decide vigência a partir do array completo.
+    //
+    // 12 = "Pendente de julgamento" no código que a API AO VIVO do
+    // DivulgaCandContas usa para a vice (`situacaoVice`), distinto do código
+    // 17 que `consulta_cand_complementar` usa para a MESMA descrição no
+    // pacote de dados abertos (dois catálogos de código do TSE para o mesmo
+    // fato; ver 20260916130000/`scripts/lib/tse-situacao-julgamento.ts` para
+    // o lado do pacote). Medido em 16/09/2026 contra
+    // .../candidato/280002554479: `vices[0]` = SILVIA,
+    // `situacaoVice: 12`, `candidatoApto: true`, sem substituto.
+    const vicesAtivas = vices.filter((vice) => vice.situacao_vice !== 3);
+    if (new Set(vicesAtivas.map((vice) => vice.sq_candidato)).size !== vicesAtivas.length ||
+        vicesAtivas.some((vice) => ![1, 12].includes(vice.situacao_vice))) {
       throw new Error(`DivulgaCand vices duplicadas ou situação desconhecida para SQ ${row.sq_candidato}`);
     }
     const selected = selectCurrentVice(row.sq_candidato, vices);
