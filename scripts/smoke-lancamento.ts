@@ -334,7 +334,7 @@ async function checkQuiz(context: BrowserContext): Promise<{ questions: number; 
 
     let questions = 0
     while (page.url().includes("/quiz/perguntas") && questions < 50) {
-      const radio = page.getByRole("radio", { name: "Neutro ou sem opinião" })
+      const radio = page.getByRole("radio", { name: "Nem concordo nem discordo" })
       await radio.waitFor({ state: "visible" })
       const questionHeading = page.locator('h2[id^="quiz-pergunta-"]')
       const currentQuestionId = await questionHeading.getAttribute("id")
