@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Reverte 20260916150000: fonte_detalhe da chapa presidencial do PRTB volta a
-# citar a captura de 15/09/2026 ("Aguardando julgamento").
+# Reverte 20260917000001: fonte_detalhe da chapa presidencial do PRTB volta
+# a citar a captura de 15/09/2026 ("Aguardando julgamento").
 set -euo pipefail
 case $- in *x*) set +x ;; esac
 
@@ -44,10 +44,10 @@ pf_configure_libpq_from_url
 export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
-version=20260916150000
-previous_version=20260916140000
+version=20260917000001
+previous_version=20260917000000
 migration="$ROOT/supabase/migrations/${version}_refrescar_fonte_detalhe_prtb.sql"
-previous_migration="$ROOT/supabase/migrations/${previous_version}_reconciliar_situacoes_e_chapas_16092026.sql"
+previous_migration="$ROOT/supabase/migrations/${previous_version}_ampliar_pendente_julgamento_fonte_detalhe_check.sql"
 rollback="$ROOT/supabase/rollback/${version}_refrescar_fonte_detalhe_prtb.rollback.sql"
 [[ -f "$migration" && -f "$rollback" ]] || {
   echo "FAIL: artefato de rollback do refresco de fonte_detalhe do PRTB ausente" >&2

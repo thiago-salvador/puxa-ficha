@@ -12,24 +12,17 @@
   ],
   "recortes": [
     {
-      "nome": "sq-coligacao-chapas-direta-20260916",
-      "desde": "20260916170000",
-      "ate": "20260916170000",
-      "allowlist": "scripts/audit/allowlist-sq-coligacao-chapas-direta-20260916.json",
+      "nome": "admitir-godeiro-linharess-20260917",
+      "desde": "20260917000100",
+      "ate": "20260917000100",
+      "allowlist": "scripts/audit/allowlist-admitir-godeiro-linharess-20260917.json",
       "divida": null
     },
     {
-      "nome": "admitir-godeiro-linharess-20260916",
-      "desde": "20260916160000",
-      "ate": "20260916160000",
-      "allowlist": "scripts/audit/allowlist-admitir-godeiro-linharess-20260916.json",
-      "divida": null
-    },
-    {
-      "nome": "fonte-detalhe-prtb-20260916",
-      "desde": "20260916150000",
-      "ate": "20260916150000",
-      "allowlist": "scripts/audit/allowlist-fonte-detalhe-prtb-20260916.json",
+      "nome": "fonte-detalhe-prtb-20260917",
+      "desde": "20260917000001",
+      "ate": "20260917000001",
+      "allowlist": "scripts/audit/allowlist-fonte-detalhe-prtb-20260917.json",
       "divida": null
     },
     {

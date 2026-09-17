@@ -458,7 +458,16 @@ export const MEDICAO_REPLAY = Object.freeze({
   // e fica fora do replay de schema. Medido no --schema-gate local PG17
   // fixado: 112 limpas, zero falhas, hash
   // d6da34e1e45595f833b2e34760349d3acfa7ab61eb64b2e7546e97e01d0ce2b4.
-  schemaReplayTamanho: 112,
+  // 112 -> 113 em 17/09/2026 (issue #340, redesenho pós-incidente de apply
+  // 35179453431): 20260916150000/160000/170000 (mergeadas em #357, nunca
+  // aplicadas) saíram de supabase/migrations/; 20260917000000 alarga
+  // chapas_2026_fonte_detalhe_check para 'Pendente de julgamento' (DDL pura,
+  // combinada na mesma migration com a atualização da chapa do PRTB) e entra
+  // no replay de schema; 20260917000100 (Godeiro Linharess, re-sequenciada)
+  // é curadoria e fica fora. Medido no --schema-gate local PG17 fixado: 113
+  // limpas, zero falhas, hash
+  // 181e4b860feb73b948e3f5dca8d38d6aa7396bef639cc35b2ea4be107066ebd7.
+  schemaReplayTamanho: 113,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

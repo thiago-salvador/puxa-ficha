@@ -1,9 +1,19 @@
 -- Admite a ficha de GODEIRO LINHARESS (SQ 200002554482), substituto oficial
 -- de Carlos Jararaca ao Governo do RN (issue #340, coorte de titulares
--- substituídos de 20260916160000). A chapa RN Governador já existe (criada
+-- substituídos de 20260917000100). A chapa RN Governador já existe (criada
 -- por 20260916140000_reconciliar_situacoes_e_chapas_16092026.sql) e já
 -- referencia titular_sq_candidato=200002554482 sem candidato_id; esta
 -- migration só cria a ficha e o patrimônio, e vincula o candidato_id.
+--
+-- Re-sequenciada de 20260916160000 (mergeada em #357, nunca aplicada) para
+-- depois de 20260917000000 (alarga chapas_2026_fonte_detalhe_check) e
+-- 20260917000001 (refresca a chapa do PRTB), que juntas corrigem o
+-- incidente de apply da chapa do PRTB. Conteúdo funcional idêntico: não
+-- toca a chapa do PRTB nem chapas_2026_fonte_detalhe_check, só a chapa RN
+-- (fonte_tipo=legado). O arquivo antigo foi removido de supabase/migrations/
+-- nesta mesma PR (migration mergeada é imutável, mesmo nunca aplicada; ver
+-- supabase/migrations-pendentes/README.md para a mesma convenção de
+-- retomada com timestamp novo).
 --
 -- Fonte oficial direta e sanitizada: detalhe DivulgaCandContas do próprio
 -- SQ, conferido em 2026-09-17T02:27:47.000Z, HTTP 200, sha256
@@ -32,7 +42,7 @@ BEGIN
   END IF;
   IF EXISTS (SELECT 1 FROM public.candidatos WHERE id='d45f1947-73a7-4292-9955-7e57927032f0' OR slug='godeiro-linharess' OR sq_candidato_2026='200002554482')
      OR EXISTS (SELECT 1 FROM public.patrimonio WHERE id='7d88a5ae-23ae-42cf-8285-c5499b489dd7' OR sq_candidato='200002554482')
-     OR EXISTS (SELECT 1 FROM public.coleta_log WHERE execucao IN ('migration:20260916160000','migration:20260916160000:patrimonio')) THEN
+     OR EXISTS (SELECT 1 FROM public.coleta_log WHERE execucao IN ('migration:20260917000100','migration:20260917000100:patrimonio')) THEN
     RAISE EXCEPTION 'godeiro: colisão de inscrição/patrimônio ou recibo existente';
   END IF;
   -- Preimagem exata da chapa: criada por 20260916140000 apontando para este
@@ -105,15 +115,15 @@ BEGIN
        AND genero IS NOT NULL AND estado_civil IS NOT NULL AND cor_raca IS NOT NULL
   ) THEN RAISE EXCEPTION 'godeiro: pós-condição de completude falhou'; END IF;
   -- Recibos atômicos com preimagem por digest e postimagem integral dos criados.
-  -- @write tabela=coleta_log ref=migration:20260916160000 campos=fonte,escopo,alvo,candidato_id,resultado,volume,detalhe,url,execucao,natureza
+  -- @write tabela=coleta_log ref=migration:20260917000100 campos=fonte,escopo,alvo,candidato_id,resultado,volume,detalhe,url,execucao,natureza
   INSERT INTO public.coleta_log (fonte,escopo,alvo,candidato_id,resultado,volume,detalhe,url,execucao,natureza)
   VALUES ('tse','candidato','godeiro-linharess:admissao','d45f1947-73a7-4292-9955-7e57927032f0','encontrado',3,
-    jsonb_build_object('before',before_state,'after',after_state,'source',candidate_source)::text,candidate_source->>'url','migration:20260916160000','escrita');
-  -- @write tabela=coleta_log ref=migration:20260916160000:patrimonio campos=fonte,escopo,alvo,candidato_id,resultado,volume,detalhe,url,execucao,natureza
+    jsonb_build_object('before',before_state,'after',after_state,'source',candidate_source)::text,candidate_source->>'url','migration:20260917000100','escrita');
+  -- @write tabela=coleta_log ref=migration:20260917000100:patrimonio campos=fonte,escopo,alvo,candidato_id,resultado,volume,detalhe,url,execucao,natureza
   INSERT INTO public.coleta_log (fonte,escopo,alvo,candidato_id,resultado,volume,detalhe,url,execucao,natureza)
   VALUES ('tse','candidato','patrimonio:2026','d45f1947-73a7-4292-9955-7e57927032f0','encontrado',4,
     'Inscrição 200002554482: bens=[4 itens], totalDeBens=130000; fonte direta oficial com SHA256 3eb9f33a03ed094192c81525349ea2da75639184114cd41661deb18dda7cbf5e.',
-    candidate_source->>'url','migration:20260916160000:patrimonio','escrita');
+    candidate_source->>'url','migration:20260917000100:patrimonio','escrita');
 END
 $admission$;
 COMMIT;

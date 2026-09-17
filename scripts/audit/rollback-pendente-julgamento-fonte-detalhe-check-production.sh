@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-# Reverte 20260916170000: as duas chapas (PRTB presidencial e TO/Siqueira
-# Campos Jr) voltam a ter sq_coligacao NULL.
+# Reverte 20260917000000: chapas_2026_fonte_detalhe_check volta a nao
+# aceitar 'Pendente de julgamento'. So pode rodar depois do rollback de
+# 20260917000001 (a chapa do PRTB precisa ja estar de volta ao texto
+# antigo).
 set -euo pipefail
 case $- in *x*) set +x ;; esac
 
@@ -44,13 +46,13 @@ pf_configure_libpq_from_url
 export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
-version=20260916170000
-previous_version=20260916160000
-migration="$ROOT/supabase/migrations/${version}_preencher_sq_coligacao_chapas_direta.sql"
-previous_migration="$ROOT/supabase/migrations/${previous_version}_admitir_godeiro_linharess.sql"
-rollback="$ROOT/supabase/rollback/${version}_preencher_sq_coligacao_chapas_direta.rollback.sql"
+version=20260917000000
+previous_version=20260916140000
+migration="$ROOT/supabase/migrations/${version}_ampliar_pendente_julgamento_fonte_detalhe_check.sql"
+previous_migration="$ROOT/supabase/migrations/${previous_version}_reconciliar_situacoes_e_chapas_16092026.sql"
+rollback="$ROOT/supabase/rollback/${version}_ampliar_pendente_julgamento_fonte_detalhe_check.rollback.sql"
 [[ -f "$migration" && -f "$rollback" ]] || {
-  echo "FAIL: artefato de rollback do preenchimento de sq_coligacao ausente" >&2
+  echo "FAIL: artefato de rollback do alargamento de chapas_2026_fonte_detalhe_check ausente" >&2
   exit 2
 }
 [[ -f "$previous_migration" ]] || {
@@ -83,11 +85,11 @@ body = text[begins[0].end():commits[0].start()]
 def lit(value): return "'" + value.replace("'", "''") + "'"
 
 print("BEGIN;")
-print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:sq-coligacao-chapas-direta-production', 0));")
-print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(version)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(version)} AND idempotency_key={lit(digest)}) <> 1 THEN RAISE EXCEPTION 'rollback sq-coligacao-chapas-direta: ledger divergiu sob lock'; END IF; END $ledger$;")
+print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:pendente-julgamento-fonte-detalhe-check-production', 0));")
+print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(version)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(version)} AND idempotency_key={lit(digest)}) <> 1 THEN RAISE EXCEPTION 'rollback pendente-julgamento-fonte-detalhe-check: ledger divergiu sob lock'; END IF; END $ledger$;")
 print(body, end="" if body.endswith("\n") else "\n")
-print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(previous)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(previous)} AND idempotency_key={lit(previous_digest)}) <> 1 OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'rollback sq-coligacao-chapas-direta: ledger final divergiu'; END IF; END $ledger$;")
+print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(previous)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(previous)} AND idempotency_key={lit(previous_digest)}) <> 1 OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'rollback pendente-julgamento-fonte-detalhe-check: ledger final divergiu'; END IF; END $ledger$;")
 print("COMMIT;")
 PY
 
-echo "PASS: rollback do preenchimento de sq_coligacao concluido"
+echo "PASS: rollback do alargamento de chapas_2026_fonte_detalhe_check concluido"

@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   rollback:
-    name: Rollback de fonte_detalhe PRTB 20260916150000
+    name: Rollback de fonte_detalhe PRTB 20260917000001
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 25
@@ -47,7 +47,7 @@ jobs:
       - run: npm ci --ignore-scripts
       - uses: ./.github/actions/install-postgresql-client-17
         timeout-minutes: 12
-      - name: Provar no-op, forward, abort, segunda execução e rollback em PostgreSQL 17 descartável
+      - name: Provar reprodução do incidente, no-op, forward, abort, segunda execução e rollback em PostgreSQL 17 descartável com as constraints reais de chapas_2026
         run: bash scripts/audit/provar-fonte-detalhe-prtb-pg17.sh
       - name: Reverter migration fechada em produção
         env:
