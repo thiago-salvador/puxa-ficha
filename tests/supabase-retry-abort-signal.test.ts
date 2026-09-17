@@ -125,12 +125,20 @@ describe("contrato de fonte: todo caller de withSupabaseRetry repassa o signal",
     )
 
     const callers = source.match(/withSupabaseRetry(?:<[^>]*>)?\(/g) ?? []
+    const pagedCalls = source.match(/fetchQuizRowsPaged\(\n/g) ?? []
+    const pagedForwarded = source.match(/fetchQuizRowsPaged\([\s\S]*?\n\s*signal,\n\s*\)/g) ?? []
+    assert.equal(
+      pagedForwarded.length,
+      pagedCalls.length,
+      "cada helper paginado do quiz precisa receber o signal até suas consultas",
+    )
     const forwarded =
       (source.match(/\.abortSignal\(signal\)/g) ?? []).length +
       // O nome do argumento do id varia por call site (`id` na ficha, `candidatoId`
       // na rota do inventario do Executivo); o que o contrato exige e que o
       // `signal` chegue ao helper paginado.
-      (source.match(/RowsPaged\(supabase, \w+, signal\)/g) ?? []).length
+      (source.match(/RowsPaged\(supabase, \w+, signal\)/g) ?? []).length +
+      pagedForwarded.length
     assert.equal(
       forwarded,
       callers.length,

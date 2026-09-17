@@ -7,9 +7,10 @@ import { cn } from "@/lib/utils"
 const OPTIONS: { value: RespostaLikert; label: string }[] = [
   { value: "concordo_total", label: "Concordo totalmente" },
   { value: "concordo_parcial", label: "Concordo em parte" },
-  { value: "neutro", label: "Neutro ou sem opinião" },
+  { value: "neutro", label: "Nem concordo nem discordo" },
   { value: "discordo_parcial", label: "Discordo em parte" },
   { value: "discordo_total", label: "Discordo totalmente" },
+  { value: "sem_opiniao", label: "Não tenho opinião formada" },
 ]
 
 interface QuizQuestionProps {
@@ -103,6 +104,11 @@ export function QuizQuestion({ pergunta, initialAnswer, onSubmit, onBack, reduce
           <p className="mt-2 text-muted-foreground">{pergunta.contexto}</p>
         </details>
       ) : null}
+      {!pergunta.votacao_titulos?.length && !pergunta.temas_pl?.length ? (
+        <p className="text-xs text-muted-foreground">
+          Esta pergunta registra sua opinião. Ainda não há evidência equivalente ligada a ela para comparar candidatos.
+        </p>
+      ) : null}
       <div
         ref={groupRef}
         className="flex flex-col gap-2"
@@ -138,19 +144,20 @@ export function QuizQuestion({ pergunta, initialAnswer, onSubmit, onBack, reduce
       <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-border bg-muted/20 px-3 py-3 text-sm">
         <input
           type="checkbox"
-          checked={importante}
+          checked={likert !== "sem_opiniao" && importante}
+          disabled={likert === "sem_opiniao"}
           onChange={(e) => setImportante(e.target.checked)}
           className="mt-0.5 h-4 w-4 shrink-0 rounded border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         />
         <span className="text-muted-foreground">
           <span className="font-medium text-foreground">Dar mais peso a este tema</span> na comparação
-          (votações, posições e projetos ligados a ele pesam o dobro).
+          (a pergunta pesa o dobro quando há voto ou posição documentada comparável).
         </span>
       </label>
       <div className="grid gap-3 sm:grid-cols-[auto_1fr]">
         <button
           type="button"
-          onClick={() => onBack?.(likert, importante)}
+          onClick={() => onBack?.(likert, likert === "sem_opiniao" ? false : importante)}
           disabled={!onBack}
           aria-disabled={!onBack}
           className={cn(
@@ -168,7 +175,7 @@ export function QuizQuestion({ pergunta, initialAnswer, onSubmit, onBack, reduce
           aria-disabled={likert == null}
           onClick={() => {
             if (likert == null) return
-            onSubmit(likert, importante)
+            onSubmit(likert, likert === "sem_opiniao" ? false : importante)
           }}
           className={cn(
             "min-h-11 w-full rounded-lg py-3 text-sm font-semibold outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:min-h-12",

@@ -25,12 +25,12 @@ export function QuizLanding() {
         <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[length:var(--text-body-lg)]">
           Responda afirmações sobre temas políticos. No final, mostramos uma comparação programática com
           candidatos em ordem alfabética, cruzando, quando há dado: votações nominais públicas no Congresso,
-          posições declaradas curadas, autoria de projetos por tema, padrão de financiamento (doadores por setor)
-          e um mapa editorial de espectro partidário. Presidente ou governador no seu estado.
+          e posições documentadas sobre a mesma pergunta. Projetos, partido e financiamento aparecem apenas como
+          contexto. Presidente ou governador no seu estado.
         </p>
         <ul className="list-disc space-y-2 pl-5 text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground">
           <li>Não é recomendação de voto, ranking, sugestão ou priorização de candidato.</li>
-          <li>Suas respostas não são armazenadas no servidor; o resultado é reconstruído a partir do link.</li>
+          <li>O resultado é reconstruído a partir do link. Se você gerar um link curto, as respostas codificadas nele são armazenadas para permitir o compartilhamento.</li>
           <li>
             Candidatos sem mandato no Congresso podem ter poucos votos mapeados; nesse caso, o card explica a base
             disponível em vez de inflar uma conclusão.

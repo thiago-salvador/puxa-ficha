@@ -11,7 +11,7 @@
 
 import { test, expect } from "playwright/test"
 
-/** 15 respostas neutras + importancia falsa, v3 — regenere com encodeQuizRespostasPayload(..., 3). */
+/** 15 respostas neutras + importancia falsa, formato v4. */
 const QUIZ_NEUTRAL_R = "REREREREREA"
 
 test.describe("Quiz e2e", () => {
@@ -55,6 +55,8 @@ test.describe("Quiz e2e", () => {
 
       await expect(page.getByText(/Governador,\s*SP/)).toBeVisible()
       await expect(page.getByText(/pergunta 1 de/i)).toBeVisible()
+      await expect(page.getByRole("radiogroup")).toHaveCount(1)
+      await expect(page.getByRole("radiogroup").getByRole("radio")).toHaveCount(6)
     })
 
     test("voltar preserva resposta, sessionStorage restaura e finalizacao limpa progresso", async ({ page }) => {
@@ -82,7 +84,7 @@ test.describe("Quiz e2e", () => {
 
       for (let step = 3; step <= 15; step += 1) {
         await expect(page.getByText(new RegExp(`pergunta ${step} de`, "i"))).toBeVisible()
-        await page.getByRole("radio", { name: "Neutro ou sem opinião" }).click()
+        await page.getByRole("radio", { name: "Nem concordo nem discordo" }).click()
         await page.getByRole("button", { name: /continuar/i }).click()
       }
 
@@ -95,8 +97,21 @@ test.describe("Quiz e2e", () => {
   })
 
   test.describe("resultado", () => {
+    test("link anterior pede nova resposta sem reinterpretar o resultado", async ({ page }) => {
+      await page.goto(`/quiz/resultado?v=3&r=${QUIZ_NEUTRAL_R}`)
+      await expect(page.getByText(/este link usa uma versão anterior/i)).toBeVisible()
+      await expect(page.getByRole("heading", { name: /candidatos em ordem alfabética/i })).toHaveCount(0)
+    })
+
+    test("sem opinião fica separada de neutralidade", async ({ page }) => {
+      await page.goto("/quiz/perguntas?cargo=Presidente")
+      await expect(page.getByRole("radio", { name: "Nem concordo nem discordo" })).toBeVisible()
+      await page.getByRole("radio", { name: "Não tenho opinião formada" }).click()
+      await expect(page.getByRole("checkbox")).toBeDisabled()
+    })
+
     test("payload neutro mostra comparação em ordem alfabética (presidente)", async ({ page }) => {
-      await page.goto(`/quiz/resultado?v=3&r=${encodeURIComponent(QUIZ_NEUTRAL_R)}`)
+      await page.goto(`/quiz/resultado?v=4&r=${encodeURIComponent(QUIZ_NEUTRAL_R)}`)
       await page.waitForLoadState("networkidle")
 
       await expect(page.getByRole("heading", { name: /sua comparação/i })).toBeVisible()
@@ -106,7 +121,7 @@ test.describe("Quiz e2e", () => {
 
     test("payload neutro com governador SP", async ({ page }) => {
       const q = new URLSearchParams({
-        v: "3",
+        v: "4",
         r: QUIZ_NEUTRAL_R,
         cargo: "Governador",
         uf: "SP",
@@ -119,7 +134,7 @@ test.describe("Quiz e2e", () => {
 
     test("resultado mostra thumb de compartilhamento e candidatos clicaveis", async ({ page }) => {
       const q = new URLSearchParams({
-        v: "3",
+        v: "4",
         r: QUIZ_NEUTRAL_R,
         cargo: "Governador",
         uf: "SP",

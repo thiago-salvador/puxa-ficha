@@ -1,0 +1,117 @@
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "2122076-411": {
+      "type": "choice",
+      "choice": "procedimental",
+      "confidence": 0.99,
+      "probabilities": {
+        "incerto": 0,
+        "procedimental": 1,
+        "merito": 0
+      }
+    },
+    "2088351-348": {
+      "type": "choice",
+      "choice": "procedimental",
+      "confidence": 0.97,
+      "probabilities": {
+        "incerto": 0.01,
+        "procedimental": 0.98,
+        "merito": 0.01
+      }
+    },
+    "2192459-819": {
+      "type": "choice",
+      "choice": "procedimental",
+      "confidence": 0.96,
+      "probabilities": {
+        "incerto": 0.01,
+        "procedimental": 0.97,
+        "merito": 0.02
+      }
+    },
+    "2270789-73": {
+      "type": "choice",
+      "choice": "merito",
+      "confidence": 0.93,
+      "probabilities": {
+        "incerto": 0.03,
+        "procedimental": 0.01,
+        "merito": 0.96
+      }
+    },
+    "2122076-348": {
+      "type": "choice",
+      "choice": "merito",
+      "confidence": 0.93,
+      "probabilities": {
+        "incerto": 0.03,
+        "procedimental": 0.02,
+        "merito": 0.95
+      }
+    },
+    "2088351-324": {
+      "type": "choice",
+      "choice": "merito",
+      "confidence": 0.96,
+      "probabilities": {
+        "incerto": 0.02,
+        "procedimental": 0.01,
+        "merito": 0.97
+      }
+    },
+    "2192459-786": {
+      "type": "choice",
+      "choice": "procedimental",
+      "confidence": 0.65,
+      "probabilities": {
+        "incerto": 0.21,
+        "procedimental": 0.76,
+        "merito": 0.03
+      }
+    },
+    "2265124-70": {
+      "type": "choice",
+      "choice": "procedimental",
+      "confidence": 0.76,
+      "probabilities": {
+        "incerto": 0.02,
+        "procedimental": 0.83,
+        "merito": 0.15
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 3554,
+    "output_tokens": 419
+  },
+  "_ms": 851,
+  "review": {
+    "mode": "shadow; principal required",
+    "lint": "Aviso lexical de ausência de outro/nenhum; opção incerto cobre falta ou conflito de evidência. Sem tuning ou segunda chamada.",
+    "accepted": [
+      "2122076-348",
+      "2088351-324",
+      "2270789-73"
+    ],
+    "rejected": [
+      "2122076-411",
+      "2088351-348",
+      "2192459-819"
+    ],
+    "escalated": {
+      "2192459-786": {
+        "decision": "accept after primary source reconciliation",
+        "source": "https://www.camara.leg.br/noticias/567845-camara-conclui-2o-turno-da-reforma-da-previdencia-texto-vai-ao-senado",
+        "evidence": "Agência Câmara confirma texto-base segundo turno 370 a124 na madrugada7/8; sessão API6/8. descUltimaAberturaVotacao não descreve o resultado do evento."
+      },
+      "2265124-70": {
+        "decision": "accept after primary source reconciliation",
+        "source": "https://www.camara.leg.br/noticias/727297-deputados-aprovam-texto-base-do-projeto-de-autonomia-do-banco-central",
+        "evidence": "Agência Câmara confirma texto-base PLP19/19 339 a114 em10/2/2021. Campo últimaabertura diverge do resultado do evento."
+      }
+    },
+    "limitation": "Não é holdout novo de acurácia nem autorização automática."
+  }
+}

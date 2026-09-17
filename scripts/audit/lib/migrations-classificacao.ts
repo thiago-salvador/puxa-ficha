@@ -97,6 +97,7 @@ export const TABELAS_DE_ESTADO: readonly string[] = [
   "identidade_timeline_quarentena_snapshot",
   "news_refresh_lotes",
   "quiz_result_short_links",
+  "quiz_position_quarantine",
   "request_ip_quotas",
   "schema_migrations",
   // Estado derivado das observações verificadas. A migration só define a RPC;
@@ -467,7 +468,9 @@ export const MEDICAO_REPLAY = Object.freeze({
   // é curadoria e fica fora. Medido no --schema-gate local PG17 fixado: 113
   // limpas, zero falhas, hash
   // 181e4b860feb73b948e3f5dca8d38d6aa7396bef639cc35b2ea4be107066ebd7.
-  schemaReplayTamanho: 113,
+  // 113 -> 114 em 17/09/2026: o guard de quarentena nominal do quiz cria
+  // estado privado e um trigger estreito; o replay do schema inclui a DDL.
+  schemaReplayTamanho: 114,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

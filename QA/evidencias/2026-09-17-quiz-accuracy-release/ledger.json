@@ -1,0 +1,78 @@
+{
+  "task": "quiz-accuracy-release-20260917",
+  "status": "supabase_applied_local_verified_remote_release_pending",
+  "scope": {
+    "continuation_insufficient": 27,
+    "homonym_extra": 1,
+    "total_manifest_entries": 28,
+    "excluded_supported_global_indexes": [
+      24,
+      25,
+      205
+    ]
+  },
+  "policy": "quarantine_only_preserve_source_and_description",
+  "manifest": "scripts/audit/quiz-position-quarantine-20260917.json",
+  "executor": "scripts/apply-quiz-position-quarantine.ts",
+  "guard_test": "tests/quiz-position-quarantine.test.ts",
+  "migration_guard": "supabase/migrations/20260917190000_quiz_position_quarantine_guard.sql",
+  "description_cas": "expected_descricao_sha256 from the audit snapshot is required before any update",
+  "remote_writes": true,
+  "apply_contract": {
+    "cas": [
+      "id",
+      "candidato_id",
+      "tema",
+      "url_fonte",
+      "posicao",
+      "verificado=true"
+    ],
+    "mutation": "verificado=false",
+    "readback": "preserve candidate_id, tema, posicao, descricao, fonte, url_fonte, gerado_por, created_at",
+    "audit_log": "coleta_log via escreverAuditado"
+  },
+  "reingestion": {
+    "active_position_importer_found": false,
+    "future_migration_guard": "findReintroductionTargets",
+    "database_guard": "trg_block_quiz_position_reactivation forces verificado=false for the 28 exact tuples"
+  },
+  "validation": {
+    "unit_tests": 7,
+    "dry_run_report": "/tmp/puxaficha-quiz-accuracy-release-20260917-position-quarantine.json",
+    "dry_run_counts": {
+      "manifest": 28,
+      "matched": 28,
+      "updates": 28,
+      "already_quarantined": 0
+    },
+    "migrations_classification_tests": "36 passed",
+    "full_test_log": "/tmp/puxaficha-quiz-accuracy-release-20260917-full-test.log",
+    "full_test_snapshot_stage": "before route-handler extraction; principal rerun is required after the source refactor",
+    "full_test_failures": [
+      "tests/metodologia-publica-contract.test.ts: 10 assertions against parallel methodology page edits",
+      "tests/supabase-retry-abort-signal.test.ts: src/lib/api.ts caller count 40 vs expected 44",
+      "tests/zz-api-mock-resource-runtime.test.ts: response shape has an extra votacao_fonte_por_id key"
+    ],
+    "lint": "full lint passed with Node 24; owned files also pass isolated eslint",
+    "lint_log": "/tmp/puxaficha-quiz-accuracy-release-20260917-lint.log",
+    "owned_lint_log": "/tmp/puxaficha-quiz-accuracy-release-20260917-owned-lint.log",
+    "next_typegen": "passed before route extraction and generated route types were current; after extraction, the same generated validator passes tsc without deleting or editing .next",
+    "typecheck_log": "/tmp/puxaficha-quiz-accuracy-release-20260917-typecheck.log",
+    "typecheck_exit": 0,
+    "route_helper_status": "factories extracted to src/lib/candidato-profile-route.ts and src/lib/candidato-slugs-route.ts; route files now export only App Router entries; targeted route/cache tests 17 passed",
+    "migration_replay_gate": "blocked: Docker daemon unavailable at Colima socket",
+    "initial_full_test_history": "Node 24 exit 1: 5913 tests, 5884 passed, 12 failed, 17 skipped",
+    "final_full_test": "Local latest:5901 tests,5879pass,5fail,17skip. Three failures were unstaged deletion paths; focused rerun passed after staging. Two dataset/abort contracts being updated before PR gate.",
+    "typecheck": "passed after route factory extraction",
+    "production_build": "passed",
+    "visual": "real local server:20/20 desktop/mobile;10/10 refreshed result subset; principal reviewed viewport screenshots",
+    "supabase_readback": {
+      "quarantined": 28,
+      "still_verified": 0,
+      "new_votes": 64,
+      "guard_transaction_rolled_back": true
+    },
+    "release": "pending CI and exact public SHA proof"
+  },
+  "generated_at": "2026-09-17"
+}

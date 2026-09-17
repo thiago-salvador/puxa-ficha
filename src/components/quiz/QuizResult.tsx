@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react"
 import { useSearchParams } from "next/navigation"
 import Link from "next/link"
+import { QUIZ_VERSION } from "@/data/quiz/perguntas"
 import { decodeQuizPayloadForShare } from "@/lib/quiz-encoding"
 import { compareCandidatesAlphabetically } from "@/lib/quiz-scoring"
 import type { DataResource } from "@/lib/types"
@@ -64,7 +65,11 @@ export function QuizResult({ datasetResource }: QuizResultProps) {
         {/* O estado vazio não tem título visível, então o nível 1 fica oculto
             para que a página continue tendo uma âncora de documento. */}
         <h1 className="sr-only">Resultado do quiz</h1>
-        <p className="text-muted-foreground">Nenhum resultado no link. Faça o quiz para ver a comparação.</p>
+        <p className="text-muted-foreground">
+          {r && v !== String(QUIZ_VERSION)
+            ? "Este link usa uma versão anterior do quiz. As perguntas foram revisadas; refaça o quiz para comparar suas respostas atuais."
+            : "Nenhum resultado válido no link. Faça o quiz para ver a comparação."}
+        </p>
         <Link href={refazerHref} className="font-medium text-foreground underline-offset-4 hover:underline">
           Ir para o quiz
         </Link>
@@ -79,15 +84,15 @@ export function QuizResult({ datasetResource }: QuizResultProps) {
         <h1 className="text-2xl font-bold tracking-tight text-foreground">Sua comparação</h1>
         <p className="text-sm text-muted-foreground">
           Não é recomendação de voto, pesquisa eleitoral nem ranking. A lista aparece em ordem alfabética e mostra sinais
-          documentais comparáveis por candidato: votações públicas, posições declaradas curadas, autoria de projetos,
-          financiamento classificado e espectro partidário com curadoria editorial.
+          documentais comparáveis por candidato: votos públicos e posições documentadas sobre a mesma pergunta.
+          Projetos, partido e financiamento são contexto e não entram no cálculo.
         </p>
         <p className="text-xs text-muted-foreground">
           <Link
             href="/quiz/metodologia#feedback-espectro"
             className="font-medium text-foreground underline-offset-4 hover:underline"
           >
-            Classificação partidária parece errada?
+            Como a comparação é calculada?
           </Link>
         </p>
       </header>

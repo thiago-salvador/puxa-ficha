@@ -1,0 +1,1369 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-17T18:37:16.040Z",
+  "mode": "apply",
+  "apply_blocked": false,
+  "supabase_project": "wskpzsobvqwhnbsdsmok",
+  "scope": "quiz nominal q01 q02 q03 q04 q06; Câmara; Presidente/Governador; slug e id oficial",
+  "events": [
+    {
+      "question_id": "q01",
+      "titulo": "Reforma Trabalhista",
+      "votacao_id_api": "2122076-348",
+      "proposicao_id_esperada": "2122076",
+      "fontes": {
+        "metadata": {
+          "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2122076-348",
+          "status": 200,
+          "sha256": "a4d48c17656e495613d2f133e9cf15edc7890f9b15bc99523afa4f4c2b85e8c1",
+          "proposicoes_afetadas": [
+            "2122076"
+          ]
+        },
+        "votos": {
+          "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2122076-348/votos",
+          "paginas": [
+            {
+              "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2122076-348/votos",
+              "status": 200,
+              "sha256": "0357bdf41b608dff449f38154734269cda37a5f7e6bd62b33e296b84fe292420",
+              "rows": 474
+            }
+          ],
+          "sha256": "f463039e50e4fe47c7cc5fbc6f2c05f4bd9475a8836f645c85d81e57c9229264",
+          "linhas_nominais": 474
+        }
+      },
+      "catalogo": {
+        "before": {
+          "id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45",
+          "titulo": "Reforma Trabalhista",
+          "casa": "Câmara",
+          "fonte": "camara",
+          "votacao_id_api": "2122076-348",
+          "proposicao_id": "2122076",
+          "data_votacao": "2017-04-26",
+          "descricao": "Aprovada a Subemenda Substitutiva Global apresentada pelo Relator da Comissão Especial, ressalvados os destaques. Sim: 296; não:177; total: 473.",
+          "sha256": "0812ba138eb1386219ade8bbc9cd58061382ac1e477a0bcf61070b65c60d7756"
+        },
+        "action": "none",
+        "after": {
+          "id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45",
+          "titulo": "Reforma Trabalhista",
+          "casa": "Câmara",
+          "fonte": "camara",
+          "votacao_id_api": "2122076-348",
+          "proposicao_id": "2122076",
+          "data_votacao": "2017-04-26",
+          "descricao": "Aprovada a Subemenda Substitutiva Global apresentada pelo Relator da Comissão Especial, ressalvados os destaques. Sim: 296; não:177; total: 473.",
+          "sha256": "0812ba138eb1386219ade8bbc9cd58061382ac1e477a0bcf61070b65c60d7756"
+        }
+      },
+      "candidatos_executivo_publicos_com_id_camara": 31,
+      "votos_comparaveis": 16,
+      "expected_rows": [
+        {
+          "candidato_id": "a9ce3c0b-9fa4-4e28-9c2e-809b1fa5e639",
+          "slug": "marcos-rogerio",
+          "nome_deputado_oficial": "Marcos Rogério",
+          "voto": "sim",
+          "id_camara": 167722
+        },
+        {
+          "candidato_id": "a6ef9480-a8a3-459f-b545-a52bfe1224b1",
+          "slug": "fabio-mitidieri",
+          "nome_deputado_oficial": "Fábio Mitidieri",
+          "voto": "não",
+          "id_camara": 178969
+        },
+        {
+          "candidato_id": "270a8b55-145a-400f-b371-38809653eea8",
+          "slug": "helder-salomao",
+          "nome_deputado_oficial": "Helder Salomão",
+          "voto": "não",
+          "id_camara": 178873
+        },
+        {
+          "candidato_id": "ba62f5d0-3e39-40a7-a0af-ee1d86e97e75",
+          "slug": "jhc",
+          "nome_deputado_oficial": "JHC",
+          "voto": "não",
+          "id_camara": 178842
+        },
+        {
+          "candidato_id": "5b63badb-bf2b-4535-bead-b1e85ad6c609",
+          "slug": "expedito-netto",
+          "nome_deputado_oficial": "Expedito Netto",
+          "voto": "não",
+          "id_camara": 178953
+        },
+        {
+          "candidato_id": "d80384f6-147b-40ef-8fa5-ae0b2be5a1f5",
+          "slug": "daniel-vilela",
+          "nome_deputado_oficial": "Daniel Vilela",
+          "voto": "sim",
+          "id_camara": 144523
+        },
+        {
+          "candidato_id": "d62ecbf0-98ab-41f9-8684-f3c7bd46251a",
+          "slug": "jorginho-mello",
+          "nome_deputado_oficial": "Jorginho Mello",
+          "voto": "sim",
+          "id_camara": 160509
+        },
+        {
+          "candidato_id": "00b971a6-5f12-4fa3-961f-5806abfd6fb0",
+          "slug": "sandro-alex",
+          "nome_deputado_oficial": "Sandro Alex",
+          "voto": "sim",
+          "id_camara": 160621
+        },
+        {
+          "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+          "slug": "patrus-ananias",
+          "nome_deputado_oficial": "Patrus Ananias",
+          "voto": "não",
+          "id_camara": 74160
+        },
+        {
+          "candidato_id": "b1104f0b-80fb-4082-8356-dfb374e20028",
+          "slug": "cabo-daciolo",
+          "nome_deputado_oficial": "Cabo Daciolo",
+          "voto": "não",
+          "id_camara": 178938
+        },
+        {
+          "candidato_id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
+          "slug": "professora-dorinha",
+          "nome_deputado_oficial": "Professora Dorinha Seabra Rezende",
+          "voto": "sim",
+          "id_camara": 160639
+        },
+        {
+          "candidato_id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+          "slug": "efraim-filho",
+          "nome_deputado_oficial": "Efraim Filho",
+          "voto": "sim",
+          "id_camara": 141422
+        },
+        {
+          "candidato_id": "49cba311-98bd-45c2-8158-c931b429a77c",
+          "slug": "decio-lima",
+          "nome_deputado_oficial": "Décio Lima",
+          "voto": "não",
+          "id_camara": 141413
+        },
+        {
+          "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+          "slug": "joao-rodrigues",
+          "nome_deputado_oficial": "João Rodrigues",
+          "voto": "sim",
+          "id_camara": 160571
+        },
+        {
+          "candidato_id": "3e0885c9-ae59-424a-8a99-9367801c5740",
+          "slug": "vicentinho-junior",
+          "nome_deputado_oficial": "Vicentinho Júnior",
+          "voto": "sim",
+          "id_camara": 137070
+        },
+        {
+          "candidato_id": "c7e3a004-99ba-426b-af65-206e3066c496",
+          "slug": "alan-rick",
+          "nome_deputado_oficial": "Alan Rick",
+          "voto": "sim",
+          "id_camara": 178836
+        }
+      ],
+      "missing_rows": [],
+      "existing_before": 16,
+      "votes_before_sha256": "b5f68d8ddf550d40fab318d50535bc68a233c5c60fcf7d70f2c86ddf111924f4",
+      "votes_after_sha256": "b5f68d8ddf550d40fab318d50535bc68a233c5c60fcf7d70f2c86ddf111924f4",
+      "votes_after_count": 16,
+      "after_rows": [
+        {
+          "candidato_id": "a9ce3c0b-9fa4-4e28-9c2e-809b1fa5e639",
+          "slug": "marcos-rogerio",
+          "nome_deputado_oficial": "Marcos Rogério",
+          "voto": "sim",
+          "id_camara": 167722,
+          "votacao_id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45"
+        },
+        {
+          "candidato_id": "a6ef9480-a8a3-459f-b545-a52bfe1224b1",
+          "slug": "fabio-mitidieri",
+          "nome_deputado_oficial": "Fábio Mitidieri",
+          "voto": "não",
+          "id_camara": 178969,
+          "votacao_id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45"
+        },
+        {
+          "candidato_id": "270a8b55-145a-400f-b371-38809653eea8",
+          "slug": "helder-salomao",
+          "nome_deputado_oficial": "Helder Salomão",
+          "voto": "não",
+          "id_camara": 178873,
+          "votacao_id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45"
+        },
+        {
+          "candidato_id": "ba62f5d0-3e39-40a7-a0af-ee1d86e97e75",
+          "slug": "jhc",
+          "nome_deputado_oficial": "JHC",
+          "voto": "não",
+          "id_camara": 178842,
+          "votacao_id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45"
+        },
+        {
+          "candidato_id": "5b63badb-bf2b-4535-bead-b1e85ad6c609",
+          "slug": "expedito-netto",
+          "nome_deputado_oficial": "Expedito Netto",
+          "voto": "não",
+          "id_camara": 178953,
+          "votacao_id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45"
+        },
+        {
+          "candidato_id": "d80384f6-147b-40ef-8fa5-ae0b2be5a1f5",
+          "slug": "daniel-vilela",
+          "nome_deputado_oficial": "Daniel Vilela",
+          "voto": "sim",
+          "id_camara": 144523,
+          "votacao_id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45"
+        },
+        {
+          "candidato_id": "d62ecbf0-98ab-41f9-8684-f3c7bd46251a",
+          "slug": "jorginho-mello",
+          "nome_deputado_oficial": "Jorginho Mello",
+          "voto": "sim",
+          "id_camara": 160509,
+          "votacao_id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45"
+        },
+        {
+          "candidato_id": "00b971a6-5f12-4fa3-961f-5806abfd6fb0",
+          "slug": "sandro-alex",
+          "nome_deputado_oficial": "Sandro Alex",
+          "voto": "sim",
+          "id_camara": 160621,
+          "votacao_id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45"
+        },
+        {
+          "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+          "slug": "patrus-ananias",
+          "nome_deputado_oficial": "Patrus Ananias",
+          "voto": "não",
+          "id_camara": 74160,
+          "votacao_id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45"
+        },
+        {
+          "candidato_id": "b1104f0b-80fb-4082-8356-dfb374e20028",
+          "slug": "cabo-daciolo",
+          "nome_deputado_oficial": "Cabo Daciolo",
+          "voto": "não",
+          "id_camara": 178938,
+          "votacao_id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45"
+        },
+        {
+          "candidato_id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
+          "slug": "professora-dorinha",
+          "nome_deputado_oficial": "Professora Dorinha Seabra Rezende",
+          "voto": "sim",
+          "id_camara": 160639,
+          "votacao_id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45"
+        },
+        {
+          "candidato_id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+          "slug": "efraim-filho",
+          "nome_deputado_oficial": "Efraim Filho",
+          "voto": "sim",
+          "id_camara": 141422,
+          "votacao_id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45"
+        },
+        {
+          "candidato_id": "49cba311-98bd-45c2-8158-c931b429a77c",
+          "slug": "decio-lima",
+          "nome_deputado_oficial": "Décio Lima",
+          "voto": "não",
+          "id_camara": 141413,
+          "votacao_id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45"
+        },
+        {
+          "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+          "slug": "joao-rodrigues",
+          "nome_deputado_oficial": "João Rodrigues",
+          "voto": "sim",
+          "id_camara": 160571,
+          "votacao_id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45"
+        },
+        {
+          "candidato_id": "3e0885c9-ae59-424a-8a99-9367801c5740",
+          "slug": "vicentinho-junior",
+          "nome_deputado_oficial": "Vicentinho Júnior",
+          "voto": "sim",
+          "id_camara": 137070,
+          "votacao_id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45"
+        },
+        {
+          "candidato_id": "c7e3a004-99ba-426b-af65-206e3066c496",
+          "slug": "alan-rick",
+          "nome_deputado_oficial": "Alan Rick",
+          "voto": "sim",
+          "id_camara": 178836,
+          "votacao_id": "1bbf6b3b-7005-4384-9f5e-acd50c194a45"
+        }
+      ],
+      "missing_to_insert": 0,
+      "conflicts_preserved": [],
+      "apply_executado": true,
+      "unknown_vote_rows": 458
+    },
+    {
+      "question_id": "q02",
+      "titulo": "Teto de Gastos (EC 95)",
+      "votacao_id_api": "2088351-324",
+      "proposicao_id_esperada": "2088351",
+      "fontes": {
+        "metadata": {
+          "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2088351-324",
+          "status": 200,
+          "sha256": "1e9fa58a4a4a22924afd7dcdbf546d51e617a5b8717d05b234d5529ec2fbd618",
+          "proposicoes_afetadas": [
+            "2088351"
+          ]
+        },
+        "votos": {
+          "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2088351-324/votos",
+          "paginas": [
+            {
+              "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2088351-324/votos",
+              "status": 200,
+              "sha256": "a4c4e56ca9b366e1cb1c7e25a50090b6a6c72929aedbc4deee60f3682c5c3758",
+              "rows": 478
+            }
+          ],
+          "sha256": "72e67aa4df74060be0dec9e3a12f858788cf4136c30d36b958fab48bd1f57b54",
+          "linhas_nominais": 478
+        }
+      },
+      "catalogo": {
+        "before": {
+          "id": "12b1c08e-e74e-4f65-8dc5-1baa248f5f91",
+          "titulo": "Teto de Gastos (EC 95)",
+          "casa": "Câmara",
+          "fonte": "camara",
+          "votacao_id_api": "2088351-324",
+          "proposicao_id": "2088351",
+          "data_votacao": "2016-10-25",
+          "descricao": "Aprovada a Proposta de Emenda à Constituição nº 241de 2016, em segundo turno, ressalvados os destaques. Sim: 359; Não: 116; Abstenções: 2; Total: 477.",
+          "sha256": "80fe4ef94370c068a05f751dfff140ccae76ca55da74cc4610fd5a400e4e2dca"
+        },
+        "action": "none",
+        "after": {
+          "id": "12b1c08e-e74e-4f65-8dc5-1baa248f5f91",
+          "titulo": "Teto de Gastos (EC 95)",
+          "casa": "Câmara",
+          "fonte": "camara",
+          "votacao_id_api": "2088351-324",
+          "proposicao_id": "2088351",
+          "data_votacao": "2016-10-25",
+          "descricao": "Aprovada a Proposta de Emenda à Constituição nº 241de 2016, em segundo turno, ressalvados os destaques. Sim: 359; Não: 116; Abstenções: 2; Total: 477.",
+          "sha256": "80fe4ef94370c068a05f751dfff140ccae76ca55da74cc4610fd5a400e4e2dca"
+        }
+      },
+      "candidatos_executivo_publicos_com_id_camara": 31,
+      "votos_comparaveis": 15,
+      "expected_rows": [
+        {
+          "candidato_id": "00b971a6-5f12-4fa3-961f-5806abfd6fb0",
+          "slug": "sandro-alex",
+          "nome_deputado_oficial": "Sandro Alex",
+          "voto": "sim",
+          "id_camara": 160621
+        },
+        {
+          "candidato_id": "5b63badb-bf2b-4535-bead-b1e85ad6c609",
+          "slug": "expedito-netto",
+          "nome_deputado_oficial": "Expedito Netto",
+          "voto": "não",
+          "id_camara": 178953
+        },
+        {
+          "candidato_id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+          "slug": "efraim-filho",
+          "nome_deputado_oficial": "Efraim Filho",
+          "voto": "sim",
+          "id_camara": 141422
+        },
+        {
+          "candidato_id": "3e0885c9-ae59-424a-8a99-9367801c5740",
+          "slug": "vicentinho-junior",
+          "nome_deputado_oficial": "Vicentinho Júnior",
+          "voto": "sim",
+          "id_camara": 137070
+        },
+        {
+          "candidato_id": "a9ce3c0b-9fa4-4e28-9c2e-809b1fa5e639",
+          "slug": "marcos-rogerio",
+          "nome_deputado_oficial": "Marcos Rogério",
+          "voto": "sim",
+          "id_camara": 167722
+        },
+        {
+          "candidato_id": "ba62f5d0-3e39-40a7-a0af-ee1d86e97e75",
+          "slug": "jhc",
+          "nome_deputado_oficial": "JHC",
+          "voto": "não",
+          "id_camara": 178842
+        },
+        {
+          "candidato_id": "d80384f6-147b-40ef-8fa5-ae0b2be5a1f5",
+          "slug": "daniel-vilela",
+          "nome_deputado_oficial": "Daniel Vilela",
+          "voto": "sim",
+          "id_camara": 144523
+        },
+        {
+          "candidato_id": "49cba311-98bd-45c2-8158-c931b429a77c",
+          "slug": "decio-lima",
+          "nome_deputado_oficial": "Décio Lima",
+          "voto": "não",
+          "id_camara": 141413
+        },
+        {
+          "candidato_id": "d62ecbf0-98ab-41f9-8684-f3c7bd46251a",
+          "slug": "jorginho-mello",
+          "nome_deputado_oficial": "Jorginho Mello",
+          "voto": "sim",
+          "id_camara": 160509
+        },
+        {
+          "candidato_id": "b1104f0b-80fb-4082-8356-dfb374e20028",
+          "slug": "cabo-daciolo",
+          "nome_deputado_oficial": "Cabo Daciolo",
+          "voto": "não",
+          "id_camara": 178938
+        },
+        {
+          "candidato_id": "270a8b55-145a-400f-b371-38809653eea8",
+          "slug": "helder-salomao",
+          "nome_deputado_oficial": "Helder Salomão",
+          "voto": "não",
+          "id_camara": 178873
+        },
+        {
+          "candidato_id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
+          "slug": "professora-dorinha",
+          "nome_deputado_oficial": "Professora Dorinha Seabra Rezende",
+          "voto": "não",
+          "id_camara": 160639
+        },
+        {
+          "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+          "slug": "joao-rodrigues",
+          "nome_deputado_oficial": "João Rodrigues",
+          "voto": "sim",
+          "id_camara": 160571
+        },
+        {
+          "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+          "slug": "patrus-ananias",
+          "nome_deputado_oficial": "Patrus Ananias",
+          "voto": "não",
+          "id_camara": 74160
+        },
+        {
+          "candidato_id": "c7e3a004-99ba-426b-af65-206e3066c496",
+          "slug": "alan-rick",
+          "nome_deputado_oficial": "Alan Rick",
+          "voto": "sim",
+          "id_camara": 178836
+        }
+      ],
+      "missing_rows": [],
+      "existing_before": 15,
+      "votes_before_sha256": "c64a4679dda1aeeeab545d9b6e96ff603d4dcd9fd741aea3c009cbc1f3fddec1",
+      "votes_after_sha256": "c64a4679dda1aeeeab545d9b6e96ff603d4dcd9fd741aea3c009cbc1f3fddec1",
+      "votes_after_count": 15,
+      "after_rows": [
+        {
+          "candidato_id": "00b971a6-5f12-4fa3-961f-5806abfd6fb0",
+          "slug": "sandro-alex",
+          "nome_deputado_oficial": "Sandro Alex",
+          "voto": "sim",
+          "id_camara": 160621,
+          "votacao_id": "12b1c08e-e74e-4f65-8dc5-1baa248f5f91"
+        },
+        {
+          "candidato_id": "5b63badb-bf2b-4535-bead-b1e85ad6c609",
+          "slug": "expedito-netto",
+          "nome_deputado_oficial": "Expedito Netto",
+          "voto": "não",
+          "id_camara": 178953,
+          "votacao_id": "12b1c08e-e74e-4f65-8dc5-1baa248f5f91"
+        },
+        {
+          "candidato_id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+          "slug": "efraim-filho",
+          "nome_deputado_oficial": "Efraim Filho",
+          "voto": "sim",
+          "id_camara": 141422,
+          "votacao_id": "12b1c08e-e74e-4f65-8dc5-1baa248f5f91"
+        },
+        {
+          "candidato_id": "3e0885c9-ae59-424a-8a99-9367801c5740",
+          "slug": "vicentinho-junior",
+          "nome_deputado_oficial": "Vicentinho Júnior",
+          "voto": "sim",
+          "id_camara": 137070,
+          "votacao_id": "12b1c08e-e74e-4f65-8dc5-1baa248f5f91"
+        },
+        {
+          "candidato_id": "a9ce3c0b-9fa4-4e28-9c2e-809b1fa5e639",
+          "slug": "marcos-rogerio",
+          "nome_deputado_oficial": "Marcos Rogério",
+          "voto": "sim",
+          "id_camara": 167722,
+          "votacao_id": "12b1c08e-e74e-4f65-8dc5-1baa248f5f91"
+        },
+        {
+          "candidato_id": "ba62f5d0-3e39-40a7-a0af-ee1d86e97e75",
+          "slug": "jhc",
+          "nome_deputado_oficial": "JHC",
+          "voto": "não",
+          "id_camara": 178842,
+          "votacao_id": "12b1c08e-e74e-4f65-8dc5-1baa248f5f91"
+        },
+        {
+          "candidato_id": "d80384f6-147b-40ef-8fa5-ae0b2be5a1f5",
+          "slug": "daniel-vilela",
+          "nome_deputado_oficial": "Daniel Vilela",
+          "voto": "sim",
+          "id_camara": 144523,
+          "votacao_id": "12b1c08e-e74e-4f65-8dc5-1baa248f5f91"
+        },
+        {
+          "candidato_id": "49cba311-98bd-45c2-8158-c931b429a77c",
+          "slug": "decio-lima",
+          "nome_deputado_oficial": "Décio Lima",
+          "voto": "não",
+          "id_camara": 141413,
+          "votacao_id": "12b1c08e-e74e-4f65-8dc5-1baa248f5f91"
+        },
+        {
+          "candidato_id": "d62ecbf0-98ab-41f9-8684-f3c7bd46251a",
+          "slug": "jorginho-mello",
+          "nome_deputado_oficial": "Jorginho Mello",
+          "voto": "sim",
+          "id_camara": 160509,
+          "votacao_id": "12b1c08e-e74e-4f65-8dc5-1baa248f5f91"
+        },
+        {
+          "candidato_id": "b1104f0b-80fb-4082-8356-dfb374e20028",
+          "slug": "cabo-daciolo",
+          "nome_deputado_oficial": "Cabo Daciolo",
+          "voto": "não",
+          "id_camara": 178938,
+          "votacao_id": "12b1c08e-e74e-4f65-8dc5-1baa248f5f91"
+        },
+        {
+          "candidato_id": "270a8b55-145a-400f-b371-38809653eea8",
+          "slug": "helder-salomao",
+          "nome_deputado_oficial": "Helder Salomão",
+          "voto": "não",
+          "id_camara": 178873,
+          "votacao_id": "12b1c08e-e74e-4f65-8dc5-1baa248f5f91"
+        },
+        {
+          "candidato_id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
+          "slug": "professora-dorinha",
+          "nome_deputado_oficial": "Professora Dorinha Seabra Rezende",
+          "voto": "não",
+          "id_camara": 160639,
+          "votacao_id": "12b1c08e-e74e-4f65-8dc5-1baa248f5f91"
+        },
+        {
+          "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+          "slug": "joao-rodrigues",
+          "nome_deputado_oficial": "João Rodrigues",
+          "voto": "sim",
+          "id_camara": 160571,
+          "votacao_id": "12b1c08e-e74e-4f65-8dc5-1baa248f5f91"
+        },
+        {
+          "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+          "slug": "patrus-ananias",
+          "nome_deputado_oficial": "Patrus Ananias",
+          "voto": "não",
+          "id_camara": 74160,
+          "votacao_id": "12b1c08e-e74e-4f65-8dc5-1baa248f5f91"
+        },
+        {
+          "candidato_id": "c7e3a004-99ba-426b-af65-206e3066c496",
+          "slug": "alan-rick",
+          "nome_deputado_oficial": "Alan Rick",
+          "voto": "sim",
+          "id_camara": 178836,
+          "votacao_id": "12b1c08e-e74e-4f65-8dc5-1baa248f5f91"
+        }
+      ],
+      "missing_to_insert": 0,
+      "conflicts_preserved": [],
+      "apply_executado": true,
+      "unknown_vote_rows": 463
+    },
+    {
+      "question_id": "q03",
+      "titulo": "Reforma da Previdência",
+      "votacao_id_api": "2192459-786",
+      "proposicao_id_esperada": "2192459",
+      "fontes": {
+        "metadata": {
+          "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2192459-786",
+          "status": 200,
+          "sha256": "8c3feec7ae7f4cae7164b7d92af56d6a0d8d3c332145105070555d87189fd279",
+          "proposicoes_afetadas": [
+            "2192459"
+          ]
+        },
+        "votos": {
+          "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2192459-786/votos",
+          "paginas": [
+            {
+              "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2192459-786/votos",
+              "status": 200,
+              "sha256": "c9f6c5910eee9909184ac8d2262601ded97642c1515b494897a9e62f56de7e40",
+              "rows": 495
+            }
+          ],
+          "sha256": "90717ec065aad892f85a4b4942a9b6064b1fe205a6a57103feed7a71ed94ef87",
+          "linhas_nominais": 495
+        }
+      },
+      "catalogo": {
+        "before": {
+          "id": "3223cb1c-719d-4264-9850-190fc28acf83",
+          "titulo": "Reforma da Previdência",
+          "casa": "Câmara",
+          "fonte": "camara",
+          "votacao_id_api": "2192459-786",
+          "proposicao_id": "2192459",
+          "data_votacao": "2019-08-06",
+          "descricao": "Aprovada, em segundo turno, a Proposta de Emenda à Constituição nº 6, de 2019, ressalvados os destaques. Sim: 370; Não: 124; abstenção: 1; Total: 495.",
+          "sha256": "ff1acb2a642d3abe0e830894a9987eb6d864e4cdb5a0977ad65ddf964536e0bb"
+        },
+        "action": "none",
+        "after": {
+          "id": "3223cb1c-719d-4264-9850-190fc28acf83",
+          "titulo": "Reforma da Previdência",
+          "casa": "Câmara",
+          "fonte": "camara",
+          "votacao_id_api": "2192459-786",
+          "proposicao_id": "2192459",
+          "data_votacao": "2019-08-06",
+          "descricao": "Aprovada, em segundo turno, a Proposta de Emenda à Constituição nº 6, de 2019, ressalvados os destaques. Sim: 370; Não: 124; abstenção: 1; Total: 495.",
+          "sha256": "ff1acb2a642d3abe0e830894a9987eb6d864e4cdb5a0977ad65ddf964536e0bb"
+        }
+      },
+      "candidatos_executivo_publicos_com_id_camara": 31,
+      "votos_comparaveis": 13,
+      "expected_rows": [
+        {
+          "candidato_id": "91dc9c87-6811-494c-8c51-1bccfdf08c29",
+          "slug": "celina-leao",
+          "nome_deputado_oficial": "Celina Leão",
+          "voto": "sim",
+          "id_camara": 204380
+        },
+        {
+          "candidato_id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
+          "slug": "professora-dorinha",
+          "nome_deputado_oficial": "Professora Dorinha Seabra Rezende",
+          "voto": "sim",
+          "id_camara": 160639
+        },
+        {
+          "candidato_id": "17472d91-6cfc-453d-8481-4fac47d07f36",
+          "slug": "paula-belmonte",
+          "nome_deputado_oficial": "Paula Belmonte",
+          "voto": "sim",
+          "id_camara": 204377
+        },
+        {
+          "candidato_id": "ba62f5d0-3e39-40a7-a0af-ee1d86e97e75",
+          "slug": "jhc",
+          "nome_deputado_oficial": "Jhc",
+          "voto": "não",
+          "id_camara": 178842
+        },
+        {
+          "candidato_id": "cc2dbc88-aae0-4c75-a112-bcc6bfc3189b",
+          "slug": "joao-campos",
+          "nome_deputado_oficial": "João H. Campos",
+          "voto": "não",
+          "id_camara": 204429
+        },
+        {
+          "candidato_id": "5b63badb-bf2b-4535-bead-b1e85ad6c609",
+          "slug": "expedito-netto",
+          "nome_deputado_oficial": "Expedito Netto",
+          "voto": "não",
+          "id_camara": 178953
+        },
+        {
+          "candidato_id": "8eaf6b86-1cdb-4c1d-8913-795e2390583b",
+          "slug": "aecio-neves",
+          "nome_deputado_oficial": "Aécio Neves",
+          "voto": "sim",
+          "id_camara": 74646
+        },
+        {
+          "candidato_id": "3c885bab-cc3e-4fcf-aa1a-7b9c0ebf38e9",
+          "slug": "eduardo-braide",
+          "nome_deputado_oficial": "Eduardo Braide",
+          "voto": "não",
+          "id_camara": 204552
+        },
+        {
+          "candidato_id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+          "slug": "efraim-filho",
+          "nome_deputado_oficial": "Efraim Filho",
+          "voto": "sim",
+          "id_camara": 141422
+        },
+        {
+          "candidato_id": "c7e3a004-99ba-426b-af65-206e3066c496",
+          "slug": "alan-rick",
+          "nome_deputado_oficial": "Alan Rick",
+          "voto": "sim",
+          "id_camara": 178836
+        },
+        {
+          "candidato_id": "270a8b55-145a-400f-b371-38809653eea8",
+          "slug": "helder-salomao",
+          "nome_deputado_oficial": "Helder Salomão",
+          "voto": "não",
+          "id_camara": 178873
+        },
+        {
+          "candidato_id": "e10f4186-0132-48f3-be4c-5397642eecd4",
+          "slug": "fabio-trad",
+          "nome_deputado_oficial": "Fábio Trad",
+          "voto": "sim",
+          "id_camara": 160587
+        },
+        {
+          "candidato_id": "a6ef9480-a8a3-459f-b545-a52bfe1224b1",
+          "slug": "fabio-mitidieri",
+          "nome_deputado_oficial": "Fábio Mitidieri",
+          "voto": "sim",
+          "id_camara": 178969
+        }
+      ],
+      "missing_rows": [],
+      "existing_before": 13,
+      "votes_before_sha256": "5c216ff1b2e027c10a587b24fbc91adacfbd0b45245e94e3f9ab6f23d957a2aa",
+      "votes_after_sha256": "5c216ff1b2e027c10a587b24fbc91adacfbd0b45245e94e3f9ab6f23d957a2aa",
+      "votes_after_count": 13,
+      "after_rows": [
+        {
+          "candidato_id": "91dc9c87-6811-494c-8c51-1bccfdf08c29",
+          "slug": "celina-leao",
+          "nome_deputado_oficial": "Celina Leão",
+          "voto": "sim",
+          "id_camara": 204380,
+          "votacao_id": "3223cb1c-719d-4264-9850-190fc28acf83"
+        },
+        {
+          "candidato_id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
+          "slug": "professora-dorinha",
+          "nome_deputado_oficial": "Professora Dorinha Seabra Rezende",
+          "voto": "sim",
+          "id_camara": 160639,
+          "votacao_id": "3223cb1c-719d-4264-9850-190fc28acf83"
+        },
+        {
+          "candidato_id": "17472d91-6cfc-453d-8481-4fac47d07f36",
+          "slug": "paula-belmonte",
+          "nome_deputado_oficial": "Paula Belmonte",
+          "voto": "sim",
+          "id_camara": 204377,
+          "votacao_id": "3223cb1c-719d-4264-9850-190fc28acf83"
+        },
+        {
+          "candidato_id": "ba62f5d0-3e39-40a7-a0af-ee1d86e97e75",
+          "slug": "jhc",
+          "nome_deputado_oficial": "Jhc",
+          "voto": "não",
+          "id_camara": 178842,
+          "votacao_id": "3223cb1c-719d-4264-9850-190fc28acf83"
+        },
+        {
+          "candidato_id": "cc2dbc88-aae0-4c75-a112-bcc6bfc3189b",
+          "slug": "joao-campos",
+          "nome_deputado_oficial": "João H. Campos",
+          "voto": "não",
+          "id_camara": 204429,
+          "votacao_id": "3223cb1c-719d-4264-9850-190fc28acf83"
+        },
+        {
+          "candidato_id": "5b63badb-bf2b-4535-bead-b1e85ad6c609",
+          "slug": "expedito-netto",
+          "nome_deputado_oficial": "Expedito Netto",
+          "voto": "não",
+          "id_camara": 178953,
+          "votacao_id": "3223cb1c-719d-4264-9850-190fc28acf83"
+        },
+        {
+          "candidato_id": "8eaf6b86-1cdb-4c1d-8913-795e2390583b",
+          "slug": "aecio-neves",
+          "nome_deputado_oficial": "Aécio Neves",
+          "voto": "sim",
+          "id_camara": 74646,
+          "votacao_id": "3223cb1c-719d-4264-9850-190fc28acf83"
+        },
+        {
+          "candidato_id": "3c885bab-cc3e-4fcf-aa1a-7b9c0ebf38e9",
+          "slug": "eduardo-braide",
+          "nome_deputado_oficial": "Eduardo Braide",
+          "voto": "não",
+          "id_camara": 204552,
+          "votacao_id": "3223cb1c-719d-4264-9850-190fc28acf83"
+        },
+        {
+          "candidato_id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+          "slug": "efraim-filho",
+          "nome_deputado_oficial": "Efraim Filho",
+          "voto": "sim",
+          "id_camara": 141422,
+          "votacao_id": "3223cb1c-719d-4264-9850-190fc28acf83"
+        },
+        {
+          "candidato_id": "c7e3a004-99ba-426b-af65-206e3066c496",
+          "slug": "alan-rick",
+          "nome_deputado_oficial": "Alan Rick",
+          "voto": "sim",
+          "id_camara": 178836,
+          "votacao_id": "3223cb1c-719d-4264-9850-190fc28acf83"
+        },
+        {
+          "candidato_id": "270a8b55-145a-400f-b371-38809653eea8",
+          "slug": "helder-salomao",
+          "nome_deputado_oficial": "Helder Salomão",
+          "voto": "não",
+          "id_camara": 178873,
+          "votacao_id": "3223cb1c-719d-4264-9850-190fc28acf83"
+        },
+        {
+          "candidato_id": "e10f4186-0132-48f3-be4c-5397642eecd4",
+          "slug": "fabio-trad",
+          "nome_deputado_oficial": "Fábio Trad",
+          "voto": "sim",
+          "id_camara": 160587,
+          "votacao_id": "3223cb1c-719d-4264-9850-190fc28acf83"
+        },
+        {
+          "candidato_id": "a6ef9480-a8a3-459f-b545-a52bfe1224b1",
+          "slug": "fabio-mitidieri",
+          "nome_deputado_oficial": "Fábio Mitidieri",
+          "voto": "sim",
+          "id_camara": 178969,
+          "votacao_id": "3223cb1c-719d-4264-9850-190fc28acf83"
+        }
+      ],
+      "missing_to_insert": 0,
+      "conflicts_preserved": [],
+      "apply_executado": true,
+      "unknown_vote_rows": 482
+    },
+    {
+      "question_id": "q04",
+      "titulo": "Privatização da Eletrobras",
+      "votacao_id_api": "2270789-73",
+      "proposicao_id_esperada": "2270789",
+      "fontes": {
+        "metadata": {
+          "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2270789-73",
+          "status": 200,
+          "sha256": "c795b4d23714932494fd76c78f946e598e1656c965a8d63f530529eea9e4106b",
+          "proposicoes_afetadas": [
+            "2270789"
+          ]
+        },
+        "votos": {
+          "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2270789-73/votos",
+          "paginas": [
+            {
+              "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2270789-73/votos",
+              "status": 200,
+              "sha256": "1ba3d779dddf1d2d85ae3d3076bd1dad7b5c619bd67d5767ac47412286f4eb06",
+              "rows": 485
+            }
+          ],
+          "sha256": "58612f6ac0ab136dc82891611425bb993283c7bc999a7c20398f87be95c950d2",
+          "linhas_nominais": 485
+        }
+      },
+      "catalogo": {
+        "before": {
+          "id": "e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4",
+          "titulo": "Privatização da Eletrobras",
+          "casa": "Câmara",
+          "fonte": "camara",
+          "votacao_id_api": "2270789-73",
+          "proposicao_id": "2270789",
+          "data_votacao": "2021-05-20",
+          "descricao": "PL 5877/2019 que autorizou a privatização da Eletrobras",
+          "sha256": "df286d237019fb213b3f46554c0ac74bcd51e10bd6f726a5435f1620e5f66831"
+        },
+        "action": "none",
+        "after": {
+          "id": "e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4",
+          "titulo": "Privatização da Eletrobras",
+          "casa": "Câmara",
+          "fonte": "camara",
+          "votacao_id_api": "2270789-73",
+          "proposicao_id": "2270789",
+          "data_votacao": "2021-05-20",
+          "descricao": "PL 5877/2019 que autorizou a privatização da Eletrobras",
+          "sha256": "df286d237019fb213b3f46554c0ac74bcd51e10bd6f726a5435f1620e5f66831"
+        }
+      },
+      "candidatos_executivo_publicos_com_id_camara": 31,
+      "votos_comparaveis": 12,
+      "expected_rows": [
+        {
+          "candidato_id": "17472d91-6cfc-453d-8481-4fac47d07f36",
+          "slug": "paula-belmonte",
+          "nome_deputado_oficial": "Paula Belmonte",
+          "voto": "não",
+          "id_camara": 204377
+        },
+        {
+          "candidato_id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
+          "slug": "professora-dorinha",
+          "nome_deputado_oficial": "Professora Dorinha Seabra Rezende",
+          "voto": "sim",
+          "id_camara": 160639
+        },
+        {
+          "candidato_id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+          "slug": "efraim-filho",
+          "nome_deputado_oficial": "Efraim Filho",
+          "voto": "sim",
+          "id_camara": 141422
+        },
+        {
+          "candidato_id": "a6ef9480-a8a3-459f-b545-a52bfe1224b1",
+          "slug": "fabio-mitidieri",
+          "nome_deputado_oficial": "Fábio Mitidieri",
+          "voto": "não",
+          "id_camara": 178969
+        },
+        {
+          "candidato_id": "270a8b55-145a-400f-b371-38809653eea8",
+          "slug": "helder-salomao",
+          "nome_deputado_oficial": "Helder Salomão",
+          "voto": "não",
+          "id_camara": 178873
+        },
+        {
+          "candidato_id": "91dc9c87-6811-494c-8c51-1bccfdf08c29",
+          "slug": "celina-leao",
+          "nome_deputado_oficial": "Celina Leão",
+          "voto": "sim",
+          "id_camara": 204380
+        },
+        {
+          "candidato_id": "c7e3a004-99ba-426b-af65-206e3066c496",
+          "slug": "alan-rick",
+          "nome_deputado_oficial": "Alan Rick",
+          "voto": "sim",
+          "id_camara": 178836
+        },
+        {
+          "candidato_id": "5b63badb-bf2b-4535-bead-b1e85ad6c609",
+          "slug": "expedito-netto",
+          "nome_deputado_oficial": "Expedito Netto",
+          "voto": "não",
+          "id_camara": 178953
+        },
+        {
+          "candidato_id": "8eaf6b86-1cdb-4c1d-8913-795e2390583b",
+          "slug": "aecio-neves",
+          "nome_deputado_oficial": "Aécio Neves",
+          "voto": "sim",
+          "id_camara": 74646
+        },
+        {
+          "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+          "slug": "patrus-ananias",
+          "nome_deputado_oficial": "Patrus Ananias",
+          "voto": "não",
+          "id_camara": 74160
+        },
+        {
+          "candidato_id": "e10f4186-0132-48f3-be4c-5397642eecd4",
+          "slug": "fabio-trad",
+          "nome_deputado_oficial": "Fábio Trad",
+          "voto": "não",
+          "id_camara": 160587
+        },
+        {
+          "candidato_id": "3e0885c9-ae59-424a-8a99-9367801c5740",
+          "slug": "vicentinho-junior",
+          "nome_deputado_oficial": "Vicentinho Júnior",
+          "voto": "sim",
+          "id_camara": 137070
+        }
+      ],
+      "missing_rows": [],
+      "existing_before": 12,
+      "votes_before_sha256": "6c981b1daeebaab5023f24646e1a9c7361e4a7bfbc0a9e213a97ef6ae900427b",
+      "votes_after_sha256": "6c981b1daeebaab5023f24646e1a9c7361e4a7bfbc0a9e213a97ef6ae900427b",
+      "votes_after_count": 12,
+      "after_rows": [
+        {
+          "candidato_id": "17472d91-6cfc-453d-8481-4fac47d07f36",
+          "slug": "paula-belmonte",
+          "nome_deputado_oficial": "Paula Belmonte",
+          "voto": "não",
+          "id_camara": 204377,
+          "votacao_id": "e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4"
+        },
+        {
+          "candidato_id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
+          "slug": "professora-dorinha",
+          "nome_deputado_oficial": "Professora Dorinha Seabra Rezende",
+          "voto": "sim",
+          "id_camara": 160639,
+          "votacao_id": "e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4"
+        },
+        {
+          "candidato_id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+          "slug": "efraim-filho",
+          "nome_deputado_oficial": "Efraim Filho",
+          "voto": "sim",
+          "id_camara": 141422,
+          "votacao_id": "e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4"
+        },
+        {
+          "candidato_id": "a6ef9480-a8a3-459f-b545-a52bfe1224b1",
+          "slug": "fabio-mitidieri",
+          "nome_deputado_oficial": "Fábio Mitidieri",
+          "voto": "não",
+          "id_camara": 178969,
+          "votacao_id": "e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4"
+        },
+        {
+          "candidato_id": "270a8b55-145a-400f-b371-38809653eea8",
+          "slug": "helder-salomao",
+          "nome_deputado_oficial": "Helder Salomão",
+          "voto": "não",
+          "id_camara": 178873,
+          "votacao_id": "e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4"
+        },
+        {
+          "candidato_id": "91dc9c87-6811-494c-8c51-1bccfdf08c29",
+          "slug": "celina-leao",
+          "nome_deputado_oficial": "Celina Leão",
+          "voto": "sim",
+          "id_camara": 204380,
+          "votacao_id": "e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4"
+        },
+        {
+          "candidato_id": "c7e3a004-99ba-426b-af65-206e3066c496",
+          "slug": "alan-rick",
+          "nome_deputado_oficial": "Alan Rick",
+          "voto": "sim",
+          "id_camara": 178836,
+          "votacao_id": "e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4"
+        },
+        {
+          "candidato_id": "5b63badb-bf2b-4535-bead-b1e85ad6c609",
+          "slug": "expedito-netto",
+          "nome_deputado_oficial": "Expedito Netto",
+          "voto": "não",
+          "id_camara": 178953,
+          "votacao_id": "e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4"
+        },
+        {
+          "candidato_id": "8eaf6b86-1cdb-4c1d-8913-795e2390583b",
+          "slug": "aecio-neves",
+          "nome_deputado_oficial": "Aécio Neves",
+          "voto": "sim",
+          "id_camara": 74646,
+          "votacao_id": "e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4"
+        },
+        {
+          "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+          "slug": "patrus-ananias",
+          "nome_deputado_oficial": "Patrus Ananias",
+          "voto": "não",
+          "id_camara": 74160,
+          "votacao_id": "e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4"
+        },
+        {
+          "candidato_id": "e10f4186-0132-48f3-be4c-5397642eecd4",
+          "slug": "fabio-trad",
+          "nome_deputado_oficial": "Fábio Trad",
+          "voto": "não",
+          "id_camara": 160587,
+          "votacao_id": "e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4"
+        },
+        {
+          "candidato_id": "3e0885c9-ae59-424a-8a99-9367801c5740",
+          "slug": "vicentinho-junior",
+          "nome_deputado_oficial": "Vicentinho Júnior",
+          "voto": "sim",
+          "id_camara": 137070,
+          "votacao_id": "e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4"
+        }
+      ],
+      "missing_to_insert": 0,
+      "conflicts_preserved": [],
+      "apply_executado": true,
+      "unknown_vote_rows": 473
+    },
+    {
+      "question_id": "q06",
+      "titulo": "Autonomia do Banco Central (Câmara)",
+      "votacao_id_api": "2265124-70",
+      "proposicao_id_esperada": "2265124",
+      "fontes": {
+        "metadata": {
+          "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2265124-70",
+          "status": 200,
+          "sha256": "00cf4897cf31acb2f0b1dc9be5ee7a9670e2ea8e82b71660b2d223bf2aaff589",
+          "proposicoes_afetadas": [
+            "2265124"
+          ]
+        },
+        "votos": {
+          "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2265124-70/votos",
+          "paginas": [
+            {
+              "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2265124-70/votos",
+              "status": 200,
+              "sha256": "03dc8b6004b0a005c61d813b99626ab9eee73e333cec684f40eb5f4588f2b49c",
+              "rows": 455
+            }
+          ],
+          "sha256": "fc1aa73bf28752a60111e8bd4f3da389c0981e0a32b95d155d0482aaaa06074c",
+          "linhas_nominais": 455
+        }
+      },
+      "catalogo": {
+        "before": null,
+        "action": "insert",
+        "after": {
+          "id": "8344b90c-63d7-430b-ae81-59aee7e59507",
+          "titulo": "Autonomia do Banco Central (Câmara)",
+          "casa": "Câmara",
+          "fonte": "camara",
+          "votacao_id_api": "2265124-70",
+          "proposicao_id": "2265124",
+          "data_votacao": "2021-02-10",
+          "descricao": "Aprovado o Projeto de Lei Complementar nº 19, de 2019, ressalvados os destaques. Sim: 339; não: 114; abstenção: 1; total: 454.",
+          "sha256": "29b6d4d388bf0e744bbecb46bdd088fbe9a28c4a5e9d15fd1549c37c28135305"
+        }
+      },
+      "candidatos_executivo_publicos_com_id_camara": 31,
+      "votos_comparaveis": 8,
+      "expected_rows": [
+        {
+          "candidato_id": "8eaf6b86-1cdb-4c1d-8913-795e2390583b",
+          "slug": "aecio-neves",
+          "nome_deputado_oficial": "Aécio Neves",
+          "voto": "não",
+          "id_camara": 74646
+        },
+        {
+          "candidato_id": "3e0885c9-ae59-424a-8a99-9367801c5740",
+          "slug": "vicentinho-junior",
+          "nome_deputado_oficial": "Vicentinho Júnior",
+          "voto": "sim",
+          "id_camara": 137070
+        },
+        {
+          "candidato_id": "e10f4186-0132-48f3-be4c-5397642eecd4",
+          "slug": "fabio-trad",
+          "nome_deputado_oficial": "Fábio Trad",
+          "voto": "sim",
+          "id_camara": 160587
+        },
+        {
+          "candidato_id": "c7e3a004-99ba-426b-af65-206e3066c496",
+          "slug": "alan-rick",
+          "nome_deputado_oficial": "Alan Rick",
+          "voto": "sim",
+          "id_camara": 178836
+        },
+        {
+          "candidato_id": "270a8b55-145a-400f-b371-38809653eea8",
+          "slug": "helder-salomao",
+          "nome_deputado_oficial": "Helder Salomão",
+          "voto": "não",
+          "id_camara": 178873
+        },
+        {
+          "candidato_id": "5b63badb-bf2b-4535-bead-b1e85ad6c609",
+          "slug": "expedito-netto",
+          "nome_deputado_oficial": "Expedito Netto",
+          "voto": "sim",
+          "id_camara": 178953
+        },
+        {
+          "candidato_id": "a6ef9480-a8a3-459f-b545-a52bfe1224b1",
+          "slug": "fabio-mitidieri",
+          "nome_deputado_oficial": "Fábio Mitidieri",
+          "voto": "sim",
+          "id_camara": 178969
+        },
+        {
+          "candidato_id": "17472d91-6cfc-453d-8481-4fac47d07f36",
+          "slug": "paula-belmonte",
+          "nome_deputado_oficial": "Paula Belmonte",
+          "voto": "sim",
+          "id_camara": 204377
+        }
+      ],
+      "missing_rows": [
+        {
+          "candidato_id": "8eaf6b86-1cdb-4c1d-8913-795e2390583b",
+          "slug": "aecio-neves",
+          "nome_deputado_oficial": "Aécio Neves",
+          "voto": "não",
+          "id_camara": 74646
+        },
+        {
+          "candidato_id": "3e0885c9-ae59-424a-8a99-9367801c5740",
+          "slug": "vicentinho-junior",
+          "nome_deputado_oficial": "Vicentinho Júnior",
+          "voto": "sim",
+          "id_camara": 137070
+        },
+        {
+          "candidato_id": "e10f4186-0132-48f3-be4c-5397642eecd4",
+          "slug": "fabio-trad",
+          "nome_deputado_oficial": "Fábio Trad",
+          "voto": "sim",
+          "id_camara": 160587
+        },
+        {
+          "candidato_id": "c7e3a004-99ba-426b-af65-206e3066c496",
+          "slug": "alan-rick",
+          "nome_deputado_oficial": "Alan Rick",
+          "voto": "sim",
+          "id_camara": 178836
+        },
+        {
+          "candidato_id": "270a8b55-145a-400f-b371-38809653eea8",
+          "slug": "helder-salomao",
+          "nome_deputado_oficial": "Helder Salomão",
+          "voto": "não",
+          "id_camara": 178873
+        },
+        {
+          "candidato_id": "5b63badb-bf2b-4535-bead-b1e85ad6c609",
+          "slug": "expedito-netto",
+          "nome_deputado_oficial": "Expedito Netto",
+          "voto": "sim",
+          "id_camara": 178953
+        },
+        {
+          "candidato_id": "a6ef9480-a8a3-459f-b545-a52bfe1224b1",
+          "slug": "fabio-mitidieri",
+          "nome_deputado_oficial": "Fábio Mitidieri",
+          "voto": "sim",
+          "id_camara": 178969
+        },
+        {
+          "candidato_id": "17472d91-6cfc-453d-8481-4fac47d07f36",
+          "slug": "paula-belmonte",
+          "nome_deputado_oficial": "Paula Belmonte",
+          "voto": "sim",
+          "id_camara": 204377
+        }
+      ],
+      "existing_before": 0,
+      "votes_before_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "votes_after_sha256": "3dbba09a66c79ae32258c280c5943b45b40e7e268b06f680727b9aa1ba0e33b4",
+      "votes_after_count": 8,
+      "after_rows": [
+        {
+          "candidato_id": "8eaf6b86-1cdb-4c1d-8913-795e2390583b",
+          "slug": "aecio-neves",
+          "nome_deputado_oficial": "Aécio Neves",
+          "voto": "não",
+          "id_camara": 74646,
+          "votacao_id": "8344b90c-63d7-430b-ae81-59aee7e59507"
+        },
+        {
+          "candidato_id": "3e0885c9-ae59-424a-8a99-9367801c5740",
+          "slug": "vicentinho-junior",
+          "nome_deputado_oficial": "Vicentinho Júnior",
+          "voto": "sim",
+          "id_camara": 137070,
+          "votacao_id": "8344b90c-63d7-430b-ae81-59aee7e59507"
+        },
+        {
+          "candidato_id": "e10f4186-0132-48f3-be4c-5397642eecd4",
+          "slug": "fabio-trad",
+          "nome_deputado_oficial": "Fábio Trad",
+          "voto": "sim",
+          "id_camara": 160587,
+          "votacao_id": "8344b90c-63d7-430b-ae81-59aee7e59507"
+        },
+        {
+          "candidato_id": "c7e3a004-99ba-426b-af65-206e3066c496",
+          "slug": "alan-rick",
+          "nome_deputado_oficial": "Alan Rick",
+          "voto": "sim",
+          "id_camara": 178836,
+          "votacao_id": "8344b90c-63d7-430b-ae81-59aee7e59507"
+        },
+        {
+          "candidato_id": "270a8b55-145a-400f-b371-38809653eea8",
+          "slug": "helder-salomao",
+          "nome_deputado_oficial": "Helder Salomão",
+          "voto": "não",
+          "id_camara": 178873,
+          "votacao_id": "8344b90c-63d7-430b-ae81-59aee7e59507"
+        },
+        {
+          "candidato_id": "5b63badb-bf2b-4535-bead-b1e85ad6c609",
+          "slug": "expedito-netto",
+          "nome_deputado_oficial": "Expedito Netto",
+          "voto": "sim",
+          "id_camara": 178953,
+          "votacao_id": "8344b90c-63d7-430b-ae81-59aee7e59507"
+        },
+        {
+          "candidato_id": "a6ef9480-a8a3-459f-b545-a52bfe1224b1",
+          "slug": "fabio-mitidieri",
+          "nome_deputado_oficial": "Fábio Mitidieri",
+          "voto": "sim",
+          "id_camara": 178969,
+          "votacao_id": "8344b90c-63d7-430b-ae81-59aee7e59507"
+        },
+        {
+          "candidato_id": "17472d91-6cfc-453d-8481-4fac47d07f36",
+          "slug": "paula-belmonte",
+          "nome_deputado_oficial": "Paula Belmonte",
+          "voto": "sim",
+          "id_camara": 204377,
+          "votacao_id": "8344b90c-63d7-430b-ae81-59aee7e59507"
+        }
+      ],
+      "missing_to_insert": 8,
+      "conflicts_preserved": [],
+      "apply_executado": true,
+      "unknown_vote_rows": 447
+    }
+  ],
+  "summary": {
+    "events": 5,
+    "candidates_public_executive_with_camara_id": 31,
+    "missing_to_insert": 8,
+    "conflicts_preserved": 0,
+    "apply_blocked": false
+  }
+}

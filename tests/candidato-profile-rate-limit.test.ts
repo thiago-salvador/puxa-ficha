@@ -12,7 +12,7 @@ require.cache[serverOnlyPath] = {
   exports: {},
 } as never
 
-const { createCandidatoProfileGetHandler } = require("../src/app/api/candidato-profile/[slug]/route") as typeof import("../src/app/api/candidato-profile/[slug]/route")
+const { createCandidatoProfileGetHandler } = require("../src/lib/candidato-profile-route") as typeof import("../src/lib/candidato-profile-route")
 
 /**
  * As rotas publicas de leitura de ficha têm rate limit antes do trabalho caro.
@@ -167,7 +167,10 @@ test("as quatro rotas de leitura de ficha declaram limitador", async () => {
     "src/app/api/candidato-profile/[slug]/programa/route.ts",
   ]
   for (const r of rotas) {
-    const txt = await readFile(new URL(`../${r}`, import.meta.url), "utf8")
+    const routeTxt = await readFile(new URL(`../${r}`, import.meta.url), "utf8")
+    const txt = r === "src/app/api/candidato-profile/[slug]/route.ts"
+      ? `${routeTxt}\n${await readFile(new URL("../src/lib/candidato-profile-route.ts", import.meta.url), "utf8")}`
+      : routeTxt
     assert.match(txt, /createDistributedIpRateLimiter/, `${r} sem limitador`)
     assert.match(txt, /rateLimitExceededResponse\(decisao\)/, `${r} nao recusa`)
     // A checagem tem que vir ANTES do trabalho caro, senao limita depois de pagar.

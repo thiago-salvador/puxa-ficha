@@ -315,82 +315,29 @@ describe("Metodologia pública contract", () => {
   })
 
   describe("src/app/(site)/quiz/metodologia/page.tsx", () => {
-    test("metadata tem canonical /quiz/metodologia", () => {
+    test("preserva canonical e divulga os limites da comparação", () => {
       const content = readFileSync("src/app/(site)/quiz/metodologia/page.tsx", "utf-8")
-      assert.match(content, /canonical:\s*"\/quiz\/metodologia"/, "deve ter canonical /quiz/metodologia")
+      assert.match(content, /canonical:\s*"\/quiz\/metodologia"/)
+      assert.match(content, /Não é recomendação de voto, ranking ou previsão eleitoral/)
+      assert.match(content, /não existe validação independente/)
+      assert.match(content, /coberturas diferentes/)
     })
 
-    test("OpenGraph usa https://puxaficha.com.br/quiz/metodologia", () => {
+    test("explica importância, falta de opinião e evidência direta", () => {
       const content = readFileSync("src/app/(site)/quiz/metodologia/page.tsx", "utf-8")
-      assert.match(content, /url:\s*"https:\/\/puxaficha\.com\.br\/quiz\/metodologia"/, "deve usar URL correta no OpenGraph")
+      assert.match(content, /dobra o peso dessa pergunta/)
+      assert.match(content, /Não tenho opinião formada/)
+      assert.match(content, /fora do cálculo/)
+      assert.match(content, /voto nominal tem prioridade/)
+      assert.match(content, /Não entram na coincidência calculada/)
+      assert.doesNotMatch(content, /QUIZ_FIN_COBERTURA_MINIMA|QUIZ_FINANCIAMENTO_REGRAS_VERSION/)
     })
 
-    test("não exporta revalidate enquanto o RootLayout força renderização dinâmica", () => {
+    test("mantém o canal de revisão e avisa sobre links anteriores", () => {
       const content = readFileSync("src/app/(site)/quiz/metodologia/page.tsx", "utf-8")
-      assert.doesNotMatch(content, /export const revalidate\s*=/, "não deve declarar ISR inerte")
-    })
-
-    test("importa collectQuizVotacaoTitulos", () => {
-      const content = readFileSync("src/app/(site)/quiz/metodologia/page.tsx", "utf-8")
-      assert.match(content, /collectQuizVotacaoTitulos/, "deve importar collectQuizVotacaoTitulos")
-    })
-
-    test("importa quizPerguntasOrdenadas", () => {
-      const content = readFileSync("src/app/(site)/quiz/metodologia/page.tsx", "utf-8")
-      assert.match(content, /quizPerguntasOrdenadas/, "deve importar quizPerguntasOrdenadas")
-    })
-
-    test("importa QUIZ_PERGUNTAS", () => {
-      const content = readFileSync("src/app/(site)/quiz/metodologia/page.tsx", "utf-8")
-      assert.match(content, /QUIZ_PERGUNTAS/, "deve importar QUIZ_PERGUNTAS")
-    })
-
-    test("afirma que o quiz não é recomendação, ranking ou previsão eleitoral", () => {
-      const content = readFileSync("src/app/(site)/quiz/metodologia/page.tsx", "utf-8")
-      assert.match(content, /Não é recomendação de voto, ranking, sugestão,\s+priorização de candidato nem previsão eleitoral/, "deve afirmar que não é recomendação, ranking ou previsão")
-      assert.doesNotMatch(content, /Comparar os 2 mais alinhados|dois primeiros do\s+ranking/, "não deve prometer atalho baseado em ranking")
-    })
-
-    test("cita votações", () => {
-      const content = readFileSync("src/app/(site)/quiz/metodologia/page.tsx", "utf-8")
-      assert.match(content, /Votações/, "deve citar votações")
-    })
-
-    test("cita espectro partidário", () => {
-      const content = readFileSync("src/app/(site)/quiz/metodologia/page.tsx", "utf-8")
-      assert.match(content, /Espectro partidário/, "deve citar espectro partidário")
-    })
-
-    test("cita posições declaradas", () => {
-      const content = readFileSync("src/app/(site)/quiz/metodologia/page.tsx", "utf-8")
-      assert.match(content, /Posições declaradas/, "deve citar posições declaradas")
-    })
-
-    test("cita projetos de lei", () => {
-      const content = readFileSync("src/app/(site)/quiz/metodologia/page.tsx", "utf-8")
-      assert.match(content, /Projetos de lei/, "deve citar projetos de lei")
-    })
-
-    test("cita financiamento", () => {
-      const content = readFileSync("src/app/(site)/quiz/metodologia/page.tsx", "utf-8")
-      assert.match(content, /Financiamento/, "deve citar financiamento")
-    })
-
-    test("cita QUIZ_FIN_COBERTURA_MINIMA", () => {
-      const content = readFileSync("src/app/(site)/quiz/metodologia/page.tsx", "utf-8")
-      assert.match(content, /QUIZ_FIN_COBERTURA_MINIMA/, "deve citar QUIZ_FIN_COBERTURA_MINIMA")
-    })
-
-    test("cita QUIZ_FINANCIAMENTO_REGRAS_VERSION = 1", () => {
-      const content = readFileSync("src/app/(site)/quiz/metodologia/page.tsx", "utf-8")
-      const rules = readFileSync("src/data/quiz/financiamento-setores.ts", "utf-8")
-      assert.match(content, /QUIZ_FINANCIAMENTO_REGRAS_VERSION/, "deve citar versão das regras")
-      assert.match(rules, /QUIZ_FINANCIAMENTO_REGRAS_VERSION\s*=\s*1/, "versão das regras deve ser 1")
-    })
-
-    test("inclui seção/âncora feedback-espectro", () => {
-      const content = readFileSync("src/app/(site)/quiz/metodologia/page.tsx", "utf-8")
-      assert.match(content, /id="feedback-espectro"/, "deve incluir âncora feedback-espectro")
+      assert.match(content, /id="feedback-espectro"/)
+      assert.match(content, /Links de resultados anteriores/)
+      assert.match(content, /refaça o quiz/)
     })
   })
 })

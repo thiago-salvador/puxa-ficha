@@ -12,8 +12,7 @@ describe("quiz-financiamento", () => {
     assert.match(s!, /Empresa X/)
     assert.match(s!, /1\.500\.000/)
     assert.match(s!, /prestação de contas da eleição de 2022/i)
-    assert.match(s!, /comparação do quiz pode exibir/i)
-    assert.match(s!, /sem ranquear candidatos/i)
+    assert.doesNotMatch(s!, /sinal derivado|alinhamento|ranquear/i)
   })
 
   it("returns null when no usable fields", () => {
