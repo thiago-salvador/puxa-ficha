@@ -120,9 +120,9 @@ test("PDF PA-00415 exige recibo de bytes e rejeita layout incompleto ou conflita
   assert.throws(() => parseTextoRealTimeParaPdf(`${readFileSync("tests/fixtures/pesquisas-distribuicao/documentos/realtime-para.layout.txt", "utf8")}\fESTIMULADA GOVERNADOR`, "PA-00415/2026"), /duplicada ou ausente/)
 })
 
-test("fallback PA preserva a URL R7 e rejeita origem alternativa fora da allowlist", () => {
+test("fallback PA preserva a URL publicada e rejeita origem alternativa fora da allowlist", () => {
   const target = listarAlvosMonitoramento({ sourceId: "real-time-big-data-estaduais-2026", uf: "PA" }).find((candidate) => candidate.registration_id === "PA-00415/2026")!
-  assert.equal(target.url, "https://noticias.r7.com/eleicoes/2026/real-time-hana-ghassan-tem-40-e-dr-daniel-35-no-1-turno-para-o-governo-do-para-15092026/")
+  assert.equal(target.url, "https://exame.com/brasil/real-time-hana-ghassan-tem-40-e-dr-daniel-35-no-1o-turno-no-para/")
   assert.deepEqual(target.alternative_urls, ["https://exame.com/brasil/real-time-hana-ghassan-tem-40-e-dr-daniel-35-no-1o-turno-no-para/"])
   assert.doesNotThrow(() => buildSourceClient([target]))
   assert.throws(() => buildSourceClient([{ ...target, alternative_urls: ["https://evil.example/poll"] }]), /origem fora da allowlist do adaptador: https:\/\/evil\.example/)

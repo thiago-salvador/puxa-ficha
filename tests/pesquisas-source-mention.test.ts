@@ -5,11 +5,11 @@ import test from "node:test"
 
 import { parsePesquisasEleitoraisJson } from "../src/lib/pesquisas-eleitorais"
 import type { EvidenciaPesquisaCandidata } from "../scripts/lib/pesquisas-monitoramento"
+import { sourceMentionReviewConfere as sourceMentionReviewConfereModel } from "../scripts/pesquisas-atualizacao-agendada/model"
 
 const require = createRequire(import.meta.url)
 
 const { sourceMentionReviewConfere } = require("../scripts/lib/pesquisas-monitoramento") as typeof import("../scripts/lib/pesquisas-monitoramento")
-const { sourceMentionReviewConfere: sourceMentionReviewConfereModel } = require("../scripts/pesquisas-atualizacao-agendada/model") as typeof import("../scripts/pesquisas-atualizacao-agendada/model")
 const { resolverMencaoEspontaneaRevisada } = require("../scripts/lib/pesquisas-monitoramento-identidades-revisadas") as typeof import("../scripts/lib/pesquisas-monitoramento-identidades-revisadas")
 const { comparabilityKey } = require("../scripts/lib/pesquisas-monitoramento") as typeof import("../scripts/lib/pesquisas-monitoramento")
 
