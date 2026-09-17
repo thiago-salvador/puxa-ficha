@@ -12,6 +12,13 @@
   ],
   "recortes": [
     {
+      "nome": "issue-340-situacoes-chapas-20260916",
+      "desde": "20260916140000",
+      "ate": "20260916140000",
+      "allowlist": "scripts/audit/allowlist-issue-340-situacoes-chapas-20260916.json",
+      "divida": null
+    },
+    {
       "nome": "chapas-rr-vice-inapto-20260912",
       "desde": "20260912160100",
       "ate": "20260912160100",

@@ -57,6 +57,19 @@ export const SITUACAO_CANDIDATURA_DOMINIO = [
   "indeferido",
   /** `DS_SITUACAO_JULGAMENTO` INDEFERIDO EM PRAZO RECURSAL OU COM RECURSO (cod 4). */
   "indeferido com recurso",
+  /**
+   * Pedido de registro pendente de julgamento, sem deferimento nem
+   * indeferimento. `DS_SITUACAO_JULGAMENTO` PENDENTE DE JULGAMENTO (cod 17).
+   * Entrou em 16/09/2026 (issue #340): o TSE passou a emitir este codigo para
+   * 91 candidaturas no censo nacional do dia, 11 delas em cargos cobertos por
+   * este catalogo. E DISTINTO de "aguardando julgamento" (cod 8): os dois
+   * coexistem no mesmo censo do mesmo dia, e a fonte trata como dois fatos
+   * juridicos diferentes. Por isso mesmo NAO entra em
+   * SITUACAO_JULGAMENTO_PUBLICADO abaixo: nao e deferimento nem
+   * indeferimento, e agrupar com qualquer um dos dois seria a mesma distincao
+   * inventada que este dominio existe para evitar.
+   */
+  "pendente de julgamento",
 ] as const
 
 /**

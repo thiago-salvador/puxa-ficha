@@ -3,10 +3,24 @@ import { spawnSync } from "node:child_process"
 import { readFileSync } from "node:fs"
 import { join } from "node:path"
 import test from "node:test"
-import {
-  SITUACAO_CANDIDATURA_DOMINIO,
-  SITUACAO_JULGAMENTO_PUBLICADO,
-} from "../src/lib/situacao-candidatura"
+import { SITUACAO_JULGAMENTO_PUBLICADO } from "../src/lib/situacao-candidatura"
+
+// 20260903210000 já está aplicada em produção: seu CHECK é conteúdo histórico
+// congelado, os SETE valores que existiam antes de 20260916130000 acrescentar
+// 'pendente de julgamento' ao domínio TypeScript vivo. Comparar contra
+// `SITUACAO_CANDIDATURA_DOMINIO` (que segue crescendo) faria este teste
+// reprovar a cada vocabulário novo, mesmo sem esta migration ter mudado uma
+// linha. O contrato "TS === CHECK mais recente" já é coberto, dinamicamente,
+// por `tests/situacao-candidatura-dominio.test.ts`.
+const DOMINIO_20260903210000 = [
+  "aguardando julgamento",
+  "candidatura declarada",
+  "incerto",
+  "deferido",
+  "deferido com recurso",
+  "indeferido",
+  "indeferido com recurso",
+] as const
 
 const root = process.cwd()
 const version = "20260903210000"
@@ -101,7 +115,7 @@ test("o CHECK da migration é o mesmo conjunto, na mesma ordem, que o domínio T
   const abre = migration.indexOf("IN (", inicio)
   const fecha = migration.indexOf(")", abre + "IN (".length)
   const doCheck = [...migration.slice(abre, fecha).matchAll(/'([^']*)'/g)].map((m) => m[1])
-  assert.deepEqual(doCheck, [...SITUACAO_CANDIDATURA_DOMINIO])
+  assert.deepEqual(doCheck, [...DOMINIO_20260903210000])
   // A partir daqui `doCheck` está estreitado para o tipo literal do domínio,
   // porque `assert.deepEqual` do Node é `asserts actual is T`. Por isso os
   // estados conferidos abaixo vêm de `SITUACAO_JULGAMENTO_PUBLICADO` e não de
@@ -129,7 +143,7 @@ test("o rollback recusa estreitar o domínio sobre dado já julgado", () => {
 
 test("readbacks conferem os sete valores um a um, não só uma amostra", () => {
   const readback = readFileSync(readbackPath, "utf8")
-  for (const estado of [...SITUACAO_CANDIDATURA_DOMINIO]) {
+  for (const estado of DOMINIO_20260903210000) {
     assert.ok(readback.includes(`'${estado}'`), `o readback não confere '${estado}'`)
   }
   assert.match(readback, /CHECK ausente ou NOT VALID/)

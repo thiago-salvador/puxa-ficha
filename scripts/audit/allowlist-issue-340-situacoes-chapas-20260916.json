@@ -1,0 +1,50 @@
+{
+  "versao": "2026-09-16",
+  "fonte": "TSE consulta_cand_complementar_2026 (DS_SITUACAO_JULGAMENTO/CD_SITUACAO_JULGAMENTO) e consulta_cand_2026 (identidade RN/SE), censo de 16/09/2026, DT_GERACAO 16/09/2026 19:31:04, reconferidos ao vivo no DivulgaCandContas. Issue #340.",
+  "motivo": "Reconciliação de seis fichas com o julgamento oficial (quatro trocas de texto dentro do domínio já existente, duas gravando o oitavo estado 'pendente de julgamento' liberado por 20260916130000), fechamento formal da despublicação de carlos-jararaca (já publicavel=false) e três substituições de titular/vice em chapas_2026 (RN Governador, RN e SE Vice-Governador) pelo candidato que o TSE hoje trata como vigente.",
+  "coorte": [
+    "ariel-capistrano",
+    "roberto-rocha",
+    "elizeu-aguiar",
+    "marcelo-brigadeiro",
+    "ruth-reis",
+    "leonardo-avalanche",
+    "carlos-jararaca"
+  ],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "carlos-jararaca",
+      "campos": ["status", "ultima_atualizacao"],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "issue-340-situacoes-16092026",
+      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+    },
+    {
+      "tabela": "candidatos",
+      "ref": "issue-340-situacoes-16092026",
+      "campos": ["situacao_candidatura", "ultima_atualizacao"]
+    },
+    {
+      "tabela": "chapas_2026",
+      "ref": "issue-340-chapas-16092026",
+      "campos": [
+        "titular_sq_candidato", "titular_nome_completo", "titular_nome_urna",
+        "titular_partido_sigla", "titular_candidato_id",
+        "vice_sq_candidato", "vice_nome_completo", "vice_nome_urna", "vice_partido_sigla",
+        "fonte_sha256", "snapshot_em"
+      ]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260916140000",
+      "campos": ["fonte", "escopo", "alvo", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    }
+  ]
+}

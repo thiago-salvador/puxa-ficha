@@ -452,7 +452,13 @@ export const MEDICAO_REPLAY = Object.freeze({
   // verificado para security_invoker (DDL pura). Medido no --schema-gate local
   // PG17 fixado: 111 limpas, zero falhas, hash
   // 7ce9425f1bda10d95fdf07e744ea65ee5afa972b3f6e27f2d15053b081632324.
-  schemaReplayTamanho: 111,
+  // 111 -> 112 em 16/09/2026 (issue #340): 20260916130000 alarga o CHECK de
+  // situacao_candidatura para 'pendente de julgamento' (DDL pura); a
+  // 20260916140000 que segue é curadoria (UPDATE de candidatos e chapas_2026)
+  // e fica fora do replay de schema. Medido no --schema-gate local PG17
+  // fixado: 112 limpas, zero falhas, hash
+  // d6da34e1e45595f833b2e34760349d3acfa7ab61eb64b2e7546e97e01d0ce2b4.
+  schemaReplayTamanho: 112,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.
