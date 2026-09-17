@@ -7,6 +7,7 @@
 import { gzipSync } from "node:zlib"
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { dirname, join, relative, resolve } from "node:path"
+import { pathToFileURL } from "node:url"
 import { supabase, supabaseProjectRefParaAuditoria } from "../lib/supabase"
 import { normalizeDestaquesVote as normalizeVote } from "../lib/destaques-vote-normalization"
 import {
@@ -133,7 +134,7 @@ function candidateSlug(row: PairRow): string {
   return joined.slug
 }
 
-async function fetchOfficial(url: string): Promise<{ status: number; raw: string; parsed: unknown }> {
+export async function fetchOfficial(url: string): Promise<{ status: number; raw: string; parsed: unknown }> {
   let lastError: unknown
   for (let attempt = 1; attempt <= 4; attempt += 1) {
     const controller = new AbortController()
@@ -150,7 +151,53 @@ async function fetchOfficial(url: string): Promise<{ status: number; raw: string
     }
     if (attempt < 4) await new Promise((resolvePromise) => setTimeout(resolvePromise, attempt * 1_500))
   }
-  throw lastError instanceof Error ? lastError : new Error(`${url}: falha sem detalhe`)
+  // A URL entra na mensagem porque o job coleta dezenas de fontes por execução:
+  // sem ela, "fetch failed" não diz qual delas falhou. `cause` preserva o erro
+  // original (TypeError do undici com detalhe de DNS/timeout/TLS) para o
+  // console.error de `main()` conseguir imprimir a cadeia inteira.
+  throw lastError instanceof Error
+    ? new Error(`${url}: ${lastError.message}`, { cause: lastError })
+    : new Error(`${url}: falha sem detalhe`)
+}
+
+/**
+ * Lê uma tabela do Supabase com retentativa curta e contexto de erro.
+ *
+ * As duas leituras iniciais (`votacoes_chave`, `votos_candidato`) são a
+ * primeira chamada de rede do job e, ao contrário de `fetchOfficial`, não
+ * tinham nenhuma proteção contra falha transitória: uma instabilidade de rede
+ * do runner derrubava o job inteiro antes de qualquer fonte oficial ser lida.
+ * `run` é reexecutado a cada tentativa porque o builder do Supabase é
+ * "thenable" — chamar `await` de novo no mesmo builder não reemite a query.
+ */
+export async function fetchSupabaseTable<T>(
+  label: string,
+  run: () => PromiseLike<{ data: T | null; error: { message: string } | null }>,
+): Promise<T> {
+  let lastError: unknown
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      const result = await run()
+      if (!result.error) return (result.data ?? ([] as unknown as T))
+      lastError = new Error(`${label}: ${result.error.message}`)
+    } catch (error) {
+      lastError = error instanceof Error ? new Error(`${label}: ${error.message}`, { cause: error }) : error
+    }
+    if (attempt < 3) await new Promise((resolvePromise) => setTimeout(resolvePromise, attempt * 2_000))
+  }
+  throw lastError instanceof Error ? lastError : new Error(`${label}: falha sem detalhe`)
+}
+
+/** Percorre `error.cause` para o log carregar a causa raiz, não só a mensagem externa. */
+export function describeError(error: unknown): string {
+  if (!(error instanceof Error)) return String(error)
+  const parts = [error.message]
+  let current = error.cause
+  while (current) {
+    parts.push(current instanceof Error ? current.message : String(current))
+    current = current instanceof Error ? current.cause : undefined
+  }
+  return parts.join(" <- causado por: ")
 }
 
 function persistRaw(
@@ -212,21 +259,21 @@ async function main(): Promise<void> {
   const outDir = resolve(outArg)
   mkdirSync(outDir, { recursive: true })
 
-  const [votacoesResponse, pairsResponse] = await Promise.all([
-    supabase
-      .from("votacoes_chave")
-      .select("id,titulo,descricao,data_votacao,casa,proposicao_id,fonte,votacao_id_api")
-      .order("data_votacao"),
-    supabase
-      .from("votos_candidato")
-      .select("id,candidato_id,votacao_id,voto,contradicao,contradicao_descricao,created_at,candidatos!inner(slug)")
-      .order("votacao_id")
-      .order("candidato_id"),
+  const [votacoes, pairs] = await Promise.all([
+    fetchSupabaseTable<VotacaoRow[]>("votacoes_chave", () =>
+      supabase
+        .from("votacoes_chave")
+        .select("id,titulo,descricao,data_votacao,casa,proposicao_id,fonte,votacao_id_api")
+        .order("data_votacao"),
+    ),
+    fetchSupabaseTable<PairRow[]>("votos_candidato", () =>
+      supabase
+        .from("votos_candidato")
+        .select("id,candidato_id,votacao_id,voto,contradicao,contradicao_descricao,created_at,candidatos!inner(slug)")
+        .order("votacao_id")
+        .order("candidato_id"),
+    ),
   ])
-  if (votacoesResponse.error) throw votacoesResponse.error
-  if (pairsResponse.error) throw pairsResponse.error
-  const votacoes = (votacoesResponse.data ?? []) as VotacaoRow[]
-  const pairs = (pairsResponse.data ?? []) as unknown as PairRow[]
 
   const candidateRows = JSON.parse(readFileSync(join(RAIZ, "data", "candidatos.json"), "utf8")) as CandidateFileRow[]
   const candidateBySlug = new Map(candidateRows.map((candidate) => [candidate.slug, candidate]))
@@ -425,7 +472,14 @@ async function main(): Promise<void> {
   process.stdout.write(`${JSON.stringify({ output: outDir, execution_id: executionId, summary: manifest.summary, manifest_sha256: manifest.manifest_sha256 })}\n`)
 }
 
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : String(error))
-  process.exitCode = 1
-})
+// Guarda de entrypoint: só roda `main()` quando o arquivo é executado
+// diretamente (`node --import tsx coletar-destaques-votacoes.ts ...`). Sem
+// isso, importar `fetchOfficial`/`fetchSupabaseTable`/`describeError` num
+// teste dispararia a coleta real (e o `process.exitCode = 1` do uso inválido)
+// como efeito colateral do import.
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+  void main().catch((error) => {
+    console.error(describeError(error))
+    process.exitCode = 1
+  })
+}
