@@ -50,6 +50,7 @@ import {
 } from "@/lib/candidate-section-freshness"
 import { isSenadoEnabled, shouldExposeCargo } from "@/lib/senado-feature"
 import { projectProcessosVerificacaoRow } from "@/lib/processos-verificacao-public"
+import { normalizeFotoCredito } from "@/lib/foto-credito"
 import { parseFederalAcervoReceiptDetail, projectFederalAcervoReceipts } from "@/lib/federal-acervo-receipts"
 export { mergeSourceMessages, mergeSourceStatuses } from "@/lib/data-resource"
 export { parseFederalAcervoReceiptDetail, projectFederalAcervoReceipts } from "@/lib/federal-acervo-receipts"
@@ -1799,6 +1800,8 @@ async function getCandidatoBySlugFromRelationResource(
   // hasIncompletePartyTimeline (linha acima) ja foi calculado com a versao crua.
   const ficha: FichaCandidato = {
     ...sanitizePublicPartyFields(candidato),
+    // jsonb bruto: parte das fichas guarda o crédito como string escalar.
+    foto_credito: normalizeFotoCredito(candidato.foto_credito),
     chapa_2026: chapa2026,
     site_campanha: resolveCampaignSite(candidato),
     historico: historicoConfiavel,

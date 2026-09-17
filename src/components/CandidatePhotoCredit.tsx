@@ -1,3 +1,4 @@
+import { FOTO_CREDITO_ORIGEM_TEXTO, normalizeFotoCredito } from "@/lib/foto-credito"
 import type { FotoCredito } from "@/lib/types"
 
 function safeHttpUrl(value: string | null | undefined): string | null {
@@ -11,12 +12,14 @@ function safeHttpUrl(value: string | null | undefined): string | null {
 }
 
 export function CandidatePhotoCredit({
-  credit,
+  credit: creditInput,
   variant = "caption",
 }: {
-  credit: FotoCredito | null | undefined
+  /** Aceita o jsonb bruto: string escalar ou objeto parcial não derrubam a ficha. */
+  credit: FotoCredito | string | null | undefined
   variant?: "caption" | "footer"
 }) {
+  const credit = normalizeFotoCredito(creditInput)
   if (!credit) return null
 
   const className =
@@ -60,12 +63,16 @@ export function CandidatePhotoCredit({
     )
   }
 
-  const description = credit.descricao?.trim() || credit.origem.trim()
+  const description =
+    credit.descricao || (credit.origem === FOTO_CREDITO_ORIGEM_TEXTO ? null : credit.origem)
   if (!description && !sourceUrl) return null
+  const label = description ?? "Fonte da imagem"
+  // Crédito em texto livre costuma já começar com "Foto ..."; evita "Foto: Foto".
+  const text = /^foto\b/i.test(label) ? label.replace(/[.\s]+$/, "") : `Foto: ${label.replace(/[.\s]+$/, "")}`
 
   return (
     <p className={className} data-pf-photo-credit="source">
-      Foto: {description || "Fonte da imagem"}.{" "}
+      {text}.{" "}
       {sourceUrl && (
         <a className="underline underline-offset-2" href={sourceUrl} rel="noopener noreferrer" target="_blank">
           Fonte da foto
