@@ -30,6 +30,8 @@ describe("candidate dynamic route build contract", () => {
 
   it("/api/candidato-slugs remains the public full-slug inventory", () => {
     const apiRoute = readFileSync(join(root, "src/app/api/candidato-slugs/route.ts"), "utf8")
-    assert.match(apiRoute, /getCandidatoSlugStaticParams/)
+    const handler = readFileSync(join(root, "src/lib/candidato-slugs-route.ts"), "utf8")
+    assert.match(apiRoute, /candidato-slugs-route/)
+    assert.match(handler, /getCandidatoSlugStaticParams/)
   })
 })

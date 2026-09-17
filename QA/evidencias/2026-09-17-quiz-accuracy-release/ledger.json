@@ -56,6 +56,7 @@
     "lint": "full lint passed with Node 24; owned files also pass isolated eslint",
     "lint_log": "/tmp/puxaficha-quiz-accuracy-release-20260917-lint.log",
     "owned_lint_log": "/tmp/puxaficha-quiz-accuracy-release-20260917-owned-lint.log",
+    "route_contract_tests": "22 passed: dynamic route, profile cache, rate-limit and Senado cache contracts after handler extraction",
     "next_typegen": "passed before route extraction and generated route types were current; after extraction, the same generated validator passes tsc without deleting or editing .next",
     "typecheck_log": "/tmp/puxaficha-quiz-accuracy-release-20260917-typecheck.log",
     "typecheck_exit": 0,
