@@ -2,6 +2,7 @@ import { execFileSync } from "node:child_process"
 import { readFileSync } from "node:fs"
 
 const allowedExact = new Set([
+  ".github/workflows/ci.yml",
   ".github/workflows/pesquisas-descoberta-economica.yml",
   "docs/operations/pesquisas-economia.md",
   "tests/pesquisas-incremental.test.ts",
