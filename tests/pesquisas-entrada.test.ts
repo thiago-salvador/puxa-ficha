@@ -89,6 +89,42 @@ test("entrada preserva BR-04029 no manifesto real de oito recibos sem nova consu
   assert.equal(result.entries[0].registry_sha256, br04029.evidence_sha256)
 })
 
+test("recibos rejeitam timestamps UTC inexistentes e aceitam UTC recente sem milissegundos", async () => {
+  const now = new Date("2026-10-01T18:00:00Z")
+  const validObservedAt = "2026-10-01T17:30:00Z"
+  const validGeneratedAt = "2026-10-01T17:45:00Z"
+  const invalidObserved = { ...br04029, observed_at: "2026-09-31T16:30:00.000Z" }
+  let observedQueries = 0
+  const observedFallback = await validarEntradasDescobertas({
+    observations: br04029Listing, knownTargets: [], client: br04029Client,
+    registryCache: [invalidObserved], registryCacheGeneratedAt: validGeneratedAt, now,
+    sourceId: "datafolha-folha-globo-nacional-2026", uf: "BR",
+    queryRegistry: async () => { observedQueries++; return { ...br04029, observed_at: validObservedAt } },
+  })
+  assert.equal(observedQueries, 1)
+  assert.equal(observedFallback.targets.length, 1)
+
+  let generatedQueries = 0
+  const generatedFallback = await validarEntradasDescobertas({
+    observations: br04029Listing, knownTargets: [], client: br04029Client,
+    registryCache: [{ ...br04029, observed_at: validObservedAt }], registryCacheGeneratedAt: "2026-09-31T17:45:00.000Z", now,
+    sourceId: "datafolha-folha-globo-nacional-2026", uf: "BR",
+    queryRegistry: async () => { generatedQueries++; return { ...br04029, observed_at: validObservedAt } },
+  })
+  assert.equal(generatedQueries, 1)
+  assert.equal(generatedFallback.targets.length, 1)
+
+  let validQueries = 0
+  const valid = await validarEntradasDescobertas({
+    observations: br04029Listing, knownTargets: [], client: br04029Client,
+    registryCache: [{ ...br04029, observed_at: validObservedAt }], registryCacheGeneratedAt: validGeneratedAt, now,
+    sourceId: "datafolha-folha-globo-nacional-2026", uf: "BR",
+    queryRegistry: async () => { validQueries++; throw new Error("consulta TSE não deveria ocorrer") },
+  })
+  assert.equal(validQueries, 0)
+  assert.equal(valid.targets.length, 1)
+})
+
 test("recibo PesqEle inválido recorre à fonte ao vivo e falha fechado sem ela", async () => {
   const invalid = [
     ["hash", (value: ObservacaoPesqele) => ({ ...value, evidence_sha256: "0".repeat(64) })],

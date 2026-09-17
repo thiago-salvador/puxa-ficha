@@ -41,8 +41,13 @@ function validDate(value: unknown): boolean {
 
 function validTimestamp(value: unknown, now: number): boolean {
   if (typeof value !== "string") return false
+  const match = /^(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})(\.\d{3})?Z$/.exec(value)
+  if (!match) return false
   const timestamp = Date.parse(value)
-  return Number.isFinite(timestamp) && timestamp <= now && now - timestamp <= REGISTRY_RECEIPT_MAX_AGE_MS
+  if (!Number.isFinite(timestamp)) return false
+  const canonical = `${match[1]}${match[2] ?? ".000"}Z`
+  if (new Date(timestamp).toISOString() !== canonical) return false
+  return timestamp <= now && now - timestamp <= REGISTRY_RECEIPT_MAX_AGE_MS
 }
 
 function delimitedValue(text: string, start: string, end: string): string | null {
