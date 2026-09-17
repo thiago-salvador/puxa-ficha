@@ -13,6 +13,7 @@ import { normalizeDestaquesVote as normalizeVote } from "../lib/destaques-vote-n
 import {
   buildDestaquesRunManifest,
   canonicalJson,
+  DESTAQUES_CURATED_SLUGS,
   DESTAQUES_SCHEMA_VERSION,
   sha256Json,
   sha256Raw,
@@ -285,23 +286,32 @@ async function main(): Promise<void> {
   // gravam um par sempre que a pessoa votou numa das 23 votações-chave já
   // existentes — mesmo sem essa pessoa fazer parte do universo reconciliado
   // que `DESTAQUES_EXPECTED_PAIRS` fixa (migration
-  // 20260830151500_destaques_freshness_reconciliation). `data/candidatos.json`
-  // é o seed que as fichas/scripts tratam como "curado"; um candidato_id sem
-  // entrada lá (ex.: issue #339, tse-2026-260002547290) não tem `ids.camara`/
-  // `ids.senado` para a recoleta buscar, e antes derrubava o job inteiro.
-  // Aqui o par fica de fora da reverificação e é reportado, sem mascarar a
-  // divergência: `buildDestaquesRunManifest` continua exigindo a cardinalidade
-  // exata do universo reconciliado para os pares que sobram.
+  // 20260830151500_destaques_freshness_reconciliation).
+  //
+  // Até 2026-09-17 o corte era "candidato_id tem entrada em
+  // data/candidatos.json", porque o seed só continha o recorte curado. Desde
+  // a correção de seed-parity de published-consistency (PR #364, ~292
+  // candidatos `tse-2026-*` da coorte Senado 2026 promovidos ao seed) essa
+  // coincidência não vale mais: o seed passou a cobrir também gente sem
+  // dupla leitura nem evidência publicada de destaques. O corte real agora é
+  // `DESTAQUES_CURATED_SLUGS`, a allowlist explícita dos 35 slugs cuja soma
+  // de pares bate com `DESTAQUES_EXPECTED_PAIRS` — crescer esse universo
+  // exige nova dupla leitura + evidência (como o reingest de 29 pares
+  // documentado ali), não crescimento do seed de identidade. Um
+  // candidato_id fora da allowlist (curado ou não) fica de fora da
+  // reverificação e é reportado, sem mascarar a divergência:
+  // `buildDestaquesRunManifest` continua exigindo a cardinalidade exata do
+  // universo reconciliado para os pares que sobram.
   const paresForaDoSeed: Array<{ candidato_id: string; slug: string; votacao_id: string }> = []
   const pairs = pairsBrutos.filter((pair) => {
     const slug = candidateSlug(pair)
-    if (candidateBySlug.has(slug)) return true
+    if (DESTAQUES_CURATED_SLUGS.has(slug)) return true
     paresForaDoSeed.push({ candidato_id: pair.candidato_id, slug, votacao_id: pair.votacao_id })
     return false
   })
   if (paresForaDoSeed.length > 0) {
     console.error(
-      `destaques-votacoes: ${paresForaDoSeed.length} par(es) fora de data/candidatos.json, excluídos da reverificação: ${paresForaDoSeed.map((par) => `${par.slug}:${par.votacao_id}`).join(", ")}`,
+      `destaques-votacoes: ${paresForaDoSeed.length} par(es) fora do universo curado (DESTAQUES_CURATED_SLUGS), excluídos da reverificação: ${paresForaDoSeed.map((par) => `${par.slug}:${par.votacao_id}`).join(", ")}`,
     )
   }
 

@@ -30,6 +30,66 @@ export const DESTAQUES_EXPECTED_VOTACOES = 23
 export const DESTAQUES_EXPECTED_PAIRS = 181
 export const DESTAQUES_EXPECTED_CANDIDATES = 35
 
+/**
+ * Allowlist explícita dos 35 slugs do universo reconciliado acima (issue
+ * #339). Até 2026-09-17 o coletor (scripts/audit/coletar-destaques-votacoes.ts)
+ * usava presença em `data/candidatos.json` como proxy de "pertence ao
+ * universo": funcionava porque o seed só continha o recorte curado.
+ *
+ * PR #364 (seed-parity de published-consistency) quebrou essa coincidência:
+ * ele adiciona ~292 candidatos `tse-2026-*` da coorte Senado 2026 ao seed
+ * — publicados em `candidatos_publico`, mas fora da reconciliação de
+ * destaques (nunca tiveram dupla leitura nem evidência publicada). Medição
+ * read-only confirmou 488 pares/71 candidatos desses ficariam de volta no
+ * escopo do coletor se ele continuasse filtrando por `data/candidatos.json`
+ * puro, quebrando o gate `pair_count === DESTAQUES_EXPECTED_PAIRS` sem
+ * nenhuma evidência nova coletada para eles.
+ *
+ * Esta lista é o corte real: os 35 slugs cuja soma de pares em
+ * `votos_candidato` para as 23 votações-chave bate exatamente com
+ * DESTAQUES_EXPECTED_PAIRS (181), confirmado por leitura read-only em
+ * produção. Crescer o universo de destaques exige dupla leitura + evidência
+ * nova (como o reingest de 29 pares descrito acima), não crescimento do seed
+ * de identidade.
+ */
+export const DESTAQUES_CURATED_SLUGS: ReadonlySet<string> = new Set([
+  "aecio-neves",
+  "alan-rick",
+  "beto-faro",
+  "cabo-daciolo",
+  "cleitinho",
+  "confucio-moura",
+  "daniel-vilela",
+  "decio-lima",
+  "delegado-eder-mauro",
+  "dr-fernando-maximo",
+  "eduardo-braga",
+  "eduardo-girao",
+  "efraim-filho",
+  "expedito-netto",
+  "fabio-mitidieri",
+  "flavio-bolsonaro",
+  "guilherme-derrite",
+  "helder-salomao",
+  "jayme-campos",
+  "jhc",
+  "joao-rodrigues",
+  "jorginho-mello",
+  "luciano-zucco",
+  "magno-malta",
+  "mailza-assis",
+  "marcos-rogerio",
+  "omar-aziz",
+  "patrus-ananias",
+  "professora-dorinha",
+  "rodrigo-pacheco",
+  "sandro-alex",
+  "sergio-moro-gov-pr",
+  "vicentinho-junior",
+  "wellington-fagundes",
+  "wilder-morais",
+])
+
 export interface DestaquesUniverse {
   votacoes: number
   pairs: number
