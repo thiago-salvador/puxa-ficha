@@ -40,15 +40,20 @@ jobs:
           node-version: "24"
           cache: npm
       - run: npm ci --ignore-scripts
+      # `tee` não cria diretório e, sem pipefail, esconderia a saída do coletor.
       - name: Primeira leitura
-        run: >-
-          node --import tsx scripts/audit/coletar-destaques-votacoes.ts
-          --out=reports/destaques-votacoes/run-a
-          --execution-id=destaques-votacoes:gh-${{ github.run_id }}-a
-          | tee reports/destaques-votacoes/run-a/stdout.json
+        run: |
+          set -euo pipefail
+          mkdir -p reports/destaques-votacoes/run-a
+          node --import tsx scripts/audit/coletar-destaques-votacoes.ts \
+            --out=reports/destaques-votacoes/run-a \
+            --execution-id=destaques-votacoes:gh-${{ github.run_id }}-a \
+            | tee reports/destaques-votacoes/run-a/stdout.json
       - name: Segunda leitura independente
         run: |
+          set -euo pipefail
           sleep 5
+          mkdir -p reports/destaques-votacoes/run-b
           node --import tsx scripts/audit/coletar-destaques-votacoes.ts \
             --out=reports/destaques-votacoes/run-b \
             --execution-id=destaques-votacoes:gh-${{ github.run_id }}-b \
