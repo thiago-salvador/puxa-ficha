@@ -4,14 +4,31 @@ import { gunzipSync } from "node:zlib"
 export const DESTAQUES_SCHEMA_VERSION = 1
 export const DESTAQUES_EXPECTED_VOTACOES = 23
 /**
- * Universo atual de pares candidato x votação em `votos_candidato`.
+ * Universo atual de pares candidato x votação em `votos_candidato`, restrito
+ * a candidatos com entrada em `data/candidatos.json` (ver
+ * scripts/audit/coletar-destaques-votacoes.ts).
+ *
  * A migration 20260830151500_destaques_freshness_reconciliation removeu os 2
  * pares sem confirmação oficial (154 -> 152). A evidência golden de 2026-08-30
  * foi coletada antes dessa remoção e continua validada com o universo
  * histórico (`DESTAQUES_UNIVERSE_2026_08_30`).
+ *
+ * 152 -> 181 pares / 30 -> 35 candidatos (issue #339, 2026-09-17): o ingest de
+ * coorte 2026 (scripts/lib/ingest-cohort.ts) passou a rodar fontes
+ * "camara"/"senado" para um universo bem maior de candidatos, incluindo
+ * pessoas sem ficha pública curada — isso gravou 488 pares extras em
+ * `votos_candidato` para 71 candidatos fora de `data/candidatos.json`, que o
+ * coletor agora exclui e reporta (não é o crescimento contado aqui). Dos que
+ * SOBRAM depois desse filtro, 5 candidatos já públicos e curados
+ * (aecio-neves, decio-lima, delegado-eder-mauro, dr-fernando-maximo,
+ * guilherme-derrite) ganharam 29 pares novos por reingest rotineiro contra as
+ * mesmas 23 votações-chave. Os 29 pares recoletaram 100% "encontrado" (0
+ * sem_achado, 0 divergente) — mesmo padrão de confirmação do universo
+ * golden — por isso entraram no universo vigente sem migration de banco (não
+ * houve escrita nem remoção de dado, só reconhecimento de voto já oficial).
  */
-export const DESTAQUES_EXPECTED_PAIRS = 152
-export const DESTAQUES_EXPECTED_CANDIDATES = 30
+export const DESTAQUES_EXPECTED_PAIRS = 181
+export const DESTAQUES_EXPECTED_CANDIDATES = 35
 
 export interface DestaquesUniverse {
   votacoes: number

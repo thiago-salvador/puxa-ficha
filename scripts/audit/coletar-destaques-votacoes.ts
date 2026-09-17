@@ -259,7 +259,7 @@ async function main(): Promise<void> {
   const outDir = resolve(outArg)
   mkdirSync(outDir, { recursive: true })
 
-  const [votacoes, pairs] = await Promise.all([
+  const [votacoes, pairsBrutos] = await Promise.all([
     fetchSupabaseTable<VotacaoRow[]>("votacoes_chave", () =>
       supabase
         .from("votacoes_chave")
@@ -277,6 +277,34 @@ async function main(): Promise<void> {
 
   const candidateRows = JSON.parse(readFileSync(join(RAIZ, "data", "candidatos.json"), "utf8")) as CandidateFileRow[]
   const candidateBySlug = new Map(candidateRows.map((candidate) => [candidate.slug, candidate]))
+
+  // `votos_candidato` não é exclusivo do universo curado de destaques: o
+  // ingest de coorte (scripts/lib/ingest-cohort.ts, fontes "camara"/"senado")
+  // roda para candidatos do ciclo 2026 que ainda não têm ficha pública
+  // curada, e scripts/lib/ingest-senado.ts:ingestVotos/ingest-camara.ts
+  // gravam um par sempre que a pessoa votou numa das 23 votações-chave já
+  // existentes — mesmo sem essa pessoa fazer parte do universo reconciliado
+  // que `DESTAQUES_EXPECTED_PAIRS` fixa (migration
+  // 20260830151500_destaques_freshness_reconciliation). `data/candidatos.json`
+  // é o seed que as fichas/scripts tratam como "curado"; um candidato_id sem
+  // entrada lá (ex.: issue #339, tse-2026-260002547290) não tem `ids.camara`/
+  // `ids.senado` para a recoleta buscar, e antes derrubava o job inteiro.
+  // Aqui o par fica de fora da reverificação e é reportado, sem mascarar a
+  // divergência: `buildDestaquesRunManifest` continua exigindo a cardinalidade
+  // exata do universo reconciliado para os pares que sobram.
+  const paresForaDoSeed: Array<{ candidato_id: string; slug: string; votacao_id: string }> = []
+  const pairs = pairsBrutos.filter((pair) => {
+    const slug = candidateSlug(pair)
+    if (candidateBySlug.has(slug)) return true
+    paresForaDoSeed.push({ candidato_id: pair.candidato_id, slug, votacao_id: pair.votacao_id })
+    return false
+  })
+  if (paresForaDoSeed.length > 0) {
+    console.error(
+      `destaques-votacoes: ${paresForaDoSeed.length} par(es) fora de data/candidatos.json, excluídos da reverificação: ${paresForaDoSeed.map((par) => `${par.slug}:${par.votacao_id}`).join(", ")}`,
+    )
+  }
+
   const pairsByVote = new Map<string, PairRow[]>()
   for (const pair of pairs) pairsByVote.set(pair.votacao_id, [...(pairsByVote.get(pair.votacao_id) ?? []), pair])
 
@@ -469,7 +497,13 @@ async function main(): Promise<void> {
   })
   writeFileSync(join(outDir, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`)
   writeFileSync(join(outDir, "manifest.canonical.json"), `${canonicalJson(manifest)}\n`)
-  process.stdout.write(`${JSON.stringify({ output: outDir, execution_id: executionId, summary: manifest.summary, manifest_sha256: manifest.manifest_sha256 })}\n`)
+  process.stdout.write(`${JSON.stringify({
+    output: outDir,
+    execution_id: executionId,
+    summary: manifest.summary,
+    manifest_sha256: manifest.manifest_sha256,
+    pares_fora_do_seed: paresForaDoSeed,
+  })}\n`)
 }
 
 // Guarda de entrypoint: só roda `main()` quando o arquivo é executado
