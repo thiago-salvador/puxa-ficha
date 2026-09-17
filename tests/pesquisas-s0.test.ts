@@ -112,6 +112,45 @@ test("fim do campo sem dia exige referência explícita à publicação", () => 
 test("dia da semana conflitante não recua ao mesmo dia de outro mês", () => {
   assert.throws(() => parseFixture("datafolha-nacional-publicacao.html", "datafolha-folha-globo-nacional-2026", "BR", (html) => html.replaceAll("2026-08-21", "2026-09-21").replace(originalFieldwork, "com campo de terça-feira (18) a sexta-feira (21)")), /dia da semana conflitante/)
 })
+
+test("Datafolha ancora anúncio no PesqEle sem atribuir resultado da pesquisa anterior", () => {
+  const target = {
+    poll_id: "datafolha-folha-globo-nacional-br-04029-2026",
+    source_id: "datafolha-folha-globo-nacional-2026",
+    url: "https://www1.folha.uol.com.br/poder/2026/09/datafolha-divulga-nova-pesquisa-presidencial-nesta-quinta-17-live-comenta-resultados.shtml",
+    registration_id: "BR-04029/2026",
+    registry_url: "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+    office: "Presidente",
+    geography: "Brasil",
+    geography_code: "BR",
+    turn: 1 as const,
+    scenario_id: "datafolha-folha-globo-nacional-br-04029-2026-1t",
+    scenario_label: "Intenção de voto no 1º turno",
+    scenario_question: null,
+    population: "eleitores",
+  }
+  const receipt = JSON.parse(readFileSync(resolve("tests/fixtures/pesquisas-monitoramento/pesqele-br-04029-receipt.json"), "utf8"))
+  const registrySupplement = receipt.registry.find((entry: { registry: { registration_id: string } }) => entry.registry.registration_id === target.registration_id)
+  const html = `<meta property="article:published_time" content="2026-09-16T15:48:00Z"><article>
+    Datafolha divulga nesta quinta-feira (17) nova rodada de pesquisa para presidente no Brasil.
+    A pesquisa entrevistou 2.002 eleitores de terça (15) a quinta-feira (17), com margem de erro de 2 pontos percentuais.
+    O registro é BR-04029/2026. Cenário de primeiro turno. Lula (PT) marca 39% e Flávio (PL) tem 35%.
+  </article>`
+  const evidence = parsePublicacaoMonitorada({ html, observedAt: "2026-09-17T19:11:33.435Z", target, source: obterContratoFonte(target.source_id), registrySupplement })
+  assert.deepEqual(evidence.fieldwork, { start: "2026-09-15", end: "2026-09-17" })
+  assert.equal(evidence.publication_date, "2026-09-16")
+  assert.deepEqual(evidence.results, [])
+  assert.equal(evidence.scenario_complete, undefined)
+  assert.equal(evidence.publication_complete, undefined)
+  assert.throws(() => parsePublicacaoMonitorada({ html, observedAt: "2026-09-17T19:11:33.435Z", target, source: obterContratoFonte(target.source_id), registrySupplement: { ...registrySupplement, registry: { ...registrySupplement.registry, registration_id: "BR-09999/2026" } } }), /dia da semana conflitante/)
+  const updatedHtml = html.replace("<article>", "<meta property=\"article:modified_time\" content=\"2026-09-17T17:55:00Z\"><article>")
+    .replace("</article>", "</article><ul><li>Lula (PT): 39%</li><li>Flávio (PL): 35%</li><li>Tarcísio (Republicanos): 16%</li><li>Ciro (PDT): 10%</li></ul>")
+  const updatedEvidence = parsePublicacaoMonitorada({ html: updatedHtml, observedAt: "2026-09-17T19:11:33.435Z", target, source: obterContratoFonte(target.source_id), registrySupplement })
+  assert.equal(updatedEvidence.publication_date, "2026-09-16")
+  assert.equal(updatedEvidence.publication_complete, false)
+  assert.equal(updatedEvidence.results.length, 4)
+})
+
 test("campo aceita dias contextualizados no inicio e fim do levantamento", () => {
   const evidence = parseFixture("datafolha-nacional-publicacao.html", "datafolha-folha-globo-nacional-2026", "BR", (html) => html.replace(originalFieldwork, observedFieldwork))
   assert.deepEqual(evidence.fieldwork, { start: "2026-08-18", end: "2026-08-19" })

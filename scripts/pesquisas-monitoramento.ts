@@ -1,5 +1,5 @@
 import type { DocumentoRealTime } from "./lib/pesquisas-monitoramento-realtime-pdf"
-import { extrairDocumentoRealTime, RELATORIO_PARA_URL, RELATORIO_PARANA_URL } from "./lib/pesquisas-monitoramento-realtime-pdf"
+import { extrairDocumentoRealTime, RELATORIO_PARA_URL, RELATORIO_PARANA_URL, RELATORIO_RS_URL } from "./lib/pesquisas-monitoramento-realtime-pdf"
 import { coletarComplementos, type ComplementoMonitoramento } from "./lib/pesquisas-monitoramento-complementos"
 import { resolve } from "node:path"
 import { pathToFileURL } from "node:url"
@@ -157,6 +157,11 @@ async function collectSource(
       const documentClient = criarClienteHttpMonitoramento({ allowedOrigins: ["https://static.poder360.com.br"], maxBytes: 8_000_000, maxRedirects: 0, maxAttempts: 1 })
       const pdf = await documentClient.getBytes(RELATORIO_PARA_URL)
       resultDocument = extrairDocumentoRealTime({ bytes: pdf.body, url: RELATORIO_PARA_URL, observedAt: pdf.observedAt, registrationId: target.registration_id })
+    }
+    if (target.source_id === "real-time-big-data-estaduais-2026" && target.registration_id === "RS-09640/2026" && target.office === "Governador" && target.geography_code === "RS") {
+      const documentClient = criarClienteHttpMonitoramento({ allowedOrigins: ["https://static.poder360.com.br"], maxBytes: 8_000_000, maxRedirects: 0, maxAttempts: 1 })
+      const pdf = await documentClient.getBytes(RELATORIO_RS_URL)
+      resultDocument = extrairDocumentoRealTime({ bytes: pdf.body, url: RELATORIO_RS_URL, observedAt: pdf.observedAt, registrationId: target.registration_id })
     }
     const evidence = parsePublicacaoMonitorada({
       source,

@@ -134,6 +134,10 @@ export function extractPublicationDate(html: string, text = stripExternalMarkup(
   throw new Error("HTML inesperado: data de publicação ausente")
 }
 
+function extractModifiedDate(html: string): string | null {
+  return html.match(/(?:dateModified|article:modified_time|modified_time)[^0-9]{0,100}(20\d{2}-\d{2}-\d{2})/i)?.[1] ?? null
+}
+
 function normalizeNumber(raw: string): number {
   return Number(raw.replace(/\./g, "").replace(",", "."))
 }
@@ -459,10 +463,18 @@ function buildEvidence(input: {
   const registration = selecionarRegistroPublicado([...new Set(text.match(/\b[A-Z]{2}-\d{5}\/2026\b/g) ?? [])], input.target.office, input.target.geography_code)
   if (!registration) throw new Error("HTML inesperado: registro ausente ou registros conflitantes no mesmo escopo")
   if (registration !== input.target.registration_id) throw new Error("HTML inesperado: registro conflitante")
-  const fieldwork = extractFieldwork(text, publicationDate)
+  const supplement = input.registrySupplement
+  const datafolhaSource = input.source.id === "datafolha-folha-globo-nacional-2026"
+    || input.source.id === "datafolha-folha-globo-estaduais-2026"
+  const sameRegistryIdentity = datafolhaSource && supplement?.registry.registration_id === registration
+    && registration === input.target.registration_id
+  // An announcement can be published before the registered disclosure date.
+  // Use the official date only to anchor relative weekday ranges; keep the
+  // article's machine publication date in the evidence and all other checks.
+  const registryPublicationDate = sameRegistryIdentity ? supplement.publication_date : null
+  const fieldwork = extractFieldwork(text, registryPublicationDate ?? publicationDate)
   const sampleSize = extractSample(text)
   const margin = requireMatch(text, /margem de erro[^.!?]{0,70}?(\d+(?:[,.]\d+)?|um|uma|dois|duas|tr[eê]s|quatro|cinco)\s+pontos?/i, "margem de erro")[1]
-  const supplement = input.registrySupplement
   if (supplement) {
     const registry = supplement.registry
     const geographies = [input.target.geography, input.target.geography_code].map((value) => value.toLocaleLowerCase("pt-BR"))
@@ -494,8 +506,14 @@ function buildEvidence(input: {
   const realTime = !realtimeDocument && input.source.id === "real-time-big-data-estaduais-2026" ? extrairPublicacaoRealTime(input.html, stripExternalMarkup) : null
   const primaryRealTime = realTime?.scenarios.find((scenario) => scenario.turn === 1 && scenario.mode === "estimulado")
   if (realTime && !primaryRealTime) throw new Error("Real Time: cenário estimulado ausente")
-  const completeResults = primaryDocumentScenario?.results ?? primaryRealTime?.results ?? extrairListaCompletaPrimeiroTurno(input.html)
-  const results = completeResults ?? input.parseResults(text)
+  const articleModifiedDate = extractModifiedDate(input.html)
+  const registryPublicationAheadOfArticle = registryPublicationDate !== null && registryPublicationDate > publicationDate
+  const articleUpdatedByRegistryPublication = articleModifiedDate !== null && registryPublicationDate !== null && articleModifiedDate >= registryPublicationDate
+  const completeResults = primaryDocumentScenario?.results ?? primaryRealTime?.results
+    ?? (registryPublicationAheadOfArticle && !articleUpdatedByRegistryPublication ? null : extrairListaCompletaPrimeiroTurno(input.html))
+  // The page is an advance announcement in this state. Do not attribute a
+  // prior poll's prose percentages to the not-yet-published registration.
+  const results = completeResults ?? (registryPublicationAheadOfArticle ? [] : input.parseResults(text))
   if (completeResults && input.target.turn !== 1) throw new Error("HTML inesperado: turno do alvo conflitante")
   const additional = document ? document.scenarios.filter((scenario) => scenario !== primaryDocumentScenario)
     : realTime ? realTime.scenarios.filter((scenario) => scenario !== primaryRealTime).map((scenario) => ({ ...scenario, question: null }))
@@ -531,7 +549,7 @@ function buildEvidence(input: {
     method,
     ...(completeResults ? {
       scenario_complete: true,
-      publication_complete: true,
+      publication_complete: !registryPublicationAheadOfArticle,
       ...(realtimeDocument ? { result_notes: realtimeDocument.scenarios.flatMap((scenario) => scenario.notes) } : realTime?.notes.length ? { result_notes: realTime.notes } : {}),
       additional_scenarios: additional.map((runoff) => ({
         scenario: {
