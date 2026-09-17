@@ -8,6 +8,20 @@ type ObjectValue = Record<string, unknown>
 const hash = (value: string | Buffer) => createHash("sha256").update(value).digest("hex")
 const object = (value: unknown): ObjectValue => value !== null && typeof value === "object" && !Array.isArray(value) ? value as ObjectValue : {}
 const read = (path: string): unknown => JSON.parse(readFileSync(path, "utf8"))
+const UFS = new Set(["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"])
+
+function requiredText(value: unknown, field: string): string {
+  if (typeof value !== "string" || value.trim() === "") throw new Error(`preflight: ${field} ausente ou inválido`)
+  return value.trim()
+}
+
+function requiredHttpUrl(value: unknown, field: string): string {
+  const text = requiredText(value, field)
+  let parsed: URL
+  try { parsed = new URL(text) } catch { throw new Error(`preflight: ${field} deve ser URL absoluta HTTP(S)`) }
+  if (parsed.protocol !== "http:" && parsed.protocol !== "https:") throw new Error(`preflight: ${field} deve ser URL absoluta HTTP(S)`)
+  return text
+}
 
 function stable(value: unknown): string {
   if (Array.isArray(value)) return `[${value.map(stable).join(",")}]`
@@ -18,7 +32,10 @@ function stable(value: unknown): string {
 function polls(value: unknown): ObjectValue[] {
   if (Array.isArray(value)) return value.flatMap(polls)
   const row = object(value)
-  if (row.id && row.provenance && Array.isArray(row.cenarios)) return [row]
+  // Catalog wrappers also carry office/geography metadata. A poll leaf is
+  // marked by its id or evidence/result structure, so malformed leaves with
+  // provenance/cenarios are surfaced instead of being silently skipped.
+  if (["id", "provenance", "cenarios"].some((key) => Object.prototype.hasOwnProperty.call(row, key))) return [row]
   return Object.values(row).flatMap(polls)
 }
 
@@ -36,10 +53,19 @@ export function buildPreflightManifest(root: string, evidenceDirectory: string) 
   const warnings: Array<{ id: string; reason: string }> = []
   for (const path of ["scripts/data/pesquisas-presidencia-2026.json", "scripts/data/pesquisas-governadores-2026.json"]) {
     for (const poll of polls(read(resolve(root, path)))) {
+      const pollLabel = typeof poll.id === "string" && poll.id.trim() ? poll.id.trim() : `${path}:poll`
+      const id = requiredText(poll.id, `${pollLabel}.id`)
+      const office = requiredText(poll.office, `${id}.office`)
+      if (office !== "Presidente" && office !== "Governador") throw new Error(`preflight: ${id}.office deve ser Presidente ou Governador`)
+      const geography = requiredText(object(poll.geography).code, `${id}.geography.code`).toUpperCase()
+      if (office === "Presidente" && geography !== "BR") throw new Error(`preflight: ${id}.geography.code deve ser BR para Presidente`)
+      if (office === "Governador" && !UFS.has(geography)) throw new Error(`preflight: ${id}.geography.code deve ser UF válida para Governador`)
       const provenance = object(poll.provenance)
+      const resultUrl = requiredHttpUrl(provenance.result_url, `${id}.provenance.result_url`)
+      if (!Array.isArray(poll.cenarios)) throw new Error(`preflight: ${id}.cenarios deve ser array`)
+      const registry = requiredText(object(object(poll.registration).code).value, `${id}.registration.code.value`)
       const capture = object(provenance.capture)
       if (!capture.path && poll.source_status !== "condicional") continue
-      const id = String(poll.id)
       const candidatePath = typeof capture.path === "string" ? resolve(root, capture.path) : byHash.get(String(capture.sha256))
       const actualHash = candidatePath && existsSync(candidatePath) ? hash(readFileSync(candidatePath)) : null
       const matches = actualHash !== null && actualHash === capture.sha256
@@ -50,10 +76,10 @@ export function buildPreflightManifest(root: string, evidenceDirectory: string) 
       const evidencePath = matches && candidatePath ? candidatePath : resolve(evidenceDirectory, "missing", id)
       documents.push({
         id,
-        registry: String(object(object(poll.registration).code).value ?? id),
-        office: String(poll.office),
-        geography: String(object(poll.geography).code),
-        source_url: String(provenance.result_url),
+        registry,
+        office,
+        geography,
+        source_url: resultUrl,
         evidence_path: evidencePath,
         evidence_kind: literal ? "literal" : "summary",
         parser_version: parserVersion,

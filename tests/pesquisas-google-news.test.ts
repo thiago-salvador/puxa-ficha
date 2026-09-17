@@ -1,10 +1,11 @@
 import assert from "node:assert/strict"
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs"
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { resolve } from "node:path"
 import { describe, it } from "node:test"
 import {
   GOOGLE_NEWS_SCOPES,
+  main,
   parseGoogleNewsDiscoveryRss,
   runGoogleNewsDiscovery,
 } from "../scripts/pesquisas-atualizacao-agendada/google-news"
@@ -73,6 +74,25 @@ describe("Google News RSS discovery", () => {
     assert.equal(active.max, 3)
     assert.equal(result.queue.scopes.length, 5)
     assert.deepEqual(Object.values(result.state.known)[0].scopes, scopes.map((candidate) => candidate.code).sort())
+    rmSync(paths.root, { recursive: true, force: true })
+  })
+
+  it("retains every scope on a shared article and counts it for each scope", async () => {
+    const paths = tempRun()
+    const ac = GOOGLE_NEWS_SCOPES.find((candidate) => candidate.code === "AC")!
+    const result = await runGoogleNewsDiscovery({
+      statePath: paths.statePath,
+      outDir: paths.outDir,
+      now: "2026-09-17T12:00:00.000Z",
+      scopes: [scope, ac],
+      concurrency: 1,
+      fetchImpl: async () => new Response(rss(item({ title: "Compartilhada" })), { status: 200 }),
+    })
+    assert.equal(result.queue.summary.new_count, 1)
+    assert.equal(result.queue.summary.pending_count, 1)
+    assert.deepEqual(result.queue.queue.new[0]?.scopes, ["AC", "BR"])
+    assert.deepEqual(result.queue.queue.pending[0]?.scopes, ["AC", "BR"])
+    assert.deepEqual(result.queue.scopes.map((entry) => entry.queue_items), [1, 1])
     rmSync(paths.root, { recursive: true, force: true })
   })
 
@@ -167,6 +187,54 @@ describe("Google News RSS discovery", () => {
     })
     assert.equal(result.queue.scopes[0].status, "error")
     assert.equal(result.queue.scopes[0].error, "timeout")
+    rmSync(paths.root, { recursive: true, force: true })
+  })
+
+  it("rejects an unknown CLI flag before starting network collection", async () => {
+    const paths = tempRun()
+    let fetchCalls = 0
+    const originalFetch = globalThis.fetch
+    globalThis.fetch = (async () => {
+      fetchCalls += 1
+      return new Response(rss(item({ title: "não deveria coletar" })), { status: 200 })
+    }) as typeof fetch
+    try {
+      await assert.rejects(
+        () => main(["--state", paths.statePath, "--out", paths.outDir, "--offline-fixtur", resolve(paths.root, "fixture.xml")]),
+        /opção desconhecida: --offline-fixtur/,
+      )
+      assert.equal(fetchCalls, 0)
+    } finally {
+      globalThis.fetch = originalFetch
+      rmSync(paths.root, { recursive: true, force: true })
+    }
+  })
+
+  it("does not commit a checkpoint when summary persistence fails, then retries cleanly", async () => {
+    const paths = tempRun()
+    const fixture = resolve(paths.root, "fixture.xml")
+    writeFileSync(fixture, rss(item({ title: "Retry" })))
+    const oldState = JSON.stringify({ schema_version: "google-news-discovery-v1", checkpoints: { BR: "2026-09-10T00:00:00.000Z" }, known: {}, latest_by_url: {} }) + "\n"
+    writeFileSync(paths.statePath, oldState)
+    mkdirSync(resolve(paths.outDir, "summary.json"), { recursive: true })
+    await assert.rejects(() => runGoogleNewsDiscovery({
+      statePath: paths.statePath,
+      outDir: paths.outDir,
+      offlineFixturePath: fixture,
+      now: "2026-09-17T12:00:00.000Z",
+      scopes: [scope],
+    }))
+    assert.equal(readFileSync(paths.statePath, "utf8"), oldState)
+    rmSync(resolve(paths.outDir, "summary.json"), { recursive: true, force: true })
+    const retried = await runGoogleNewsDiscovery({
+      statePath: paths.statePath,
+      outDir: paths.outDir,
+      offlineFixturePath: fixture,
+      now: "2026-09-17T12:00:00.000Z",
+      scopes: [scope],
+    })
+    assert.equal(retried.queue.summary.new_count, 1)
+    assert.equal(retried.state.checkpoints.BR, "2026-09-17T12:00:00.000Z")
     rmSync(paths.root, { recursive: true, force: true })
   })
 })
