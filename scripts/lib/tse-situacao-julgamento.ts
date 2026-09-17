@@ -40,6 +40,7 @@ export const JULGAMENTO_POR_CODIGO: ReadonlyMap<string, string> = new Map([
   ["8", "aguardando julgamento"],
   ["14", "indeferido"],
   ["16", "deferido com recurso"],
+  ["17", "pendente de julgamento"],
 ])
 
 /** Colunas sem as quais a leitura nao pode continuar. */

@@ -411,7 +411,10 @@ describe("classificador puro (#136)", () => {
     // pelo --gate local PG17: 375 + 105 = 480.
     // View invoker do histórico verificado: uma migration de DDL pura sem falha
     // nova, medida pelo --gate local PG17: 376 + 105 = 481.
-    assert.equal(manifesto.aplicadas_esperadas, 376)
+    // Issue #340: alargamento do vocabulário (DDL pura) mais a reconciliação de
+    // seis fichas, três chapas e carlos-jararaca (curadoria), nenhuma falha
+    // nova, medidas pelo --gate local PG17: 378 + 105 = 483.
+    assert.equal(manifesto.aplicadas_esperadas, 378)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
