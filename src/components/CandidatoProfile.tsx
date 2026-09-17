@@ -59,6 +59,7 @@ import type { TimelineNavigateOptions } from "./timeline/TimelineTooltip"
 import { buildTimelineEvents } from "@/lib/timeline-utils"
 import { groupLegislacaoProfileItems } from "@/lib/legislacao-profile-groups"
 import { FollowCandidateButton } from "./alerts/FollowCandidateButton"
+import { SenadoRunningMates, type SenadoRunningMatesPayload } from "./SenadoRunningMates"
 import { CandidateGeneralData } from "./CandidateGeneralData"
 import { EditorialBadge } from "./attention-points/EditorialBadge"
 import {
@@ -314,6 +315,7 @@ export function CandidatoProfile({
   pesquisasEnabled = false,
   pesquisas = [],
   programaGoverno = null,
+  senadoRunningMates = null,
   initialLegislationSubtab,
   initialLegislationPage,
 }: {
@@ -323,6 +325,8 @@ export function CandidatoProfile({
   pesquisasEnabled?: boolean
   pesquisas?: PesquisaEleitoralDoCandidato[]
   programaGoverno?: ProgramaGovernoManifestoPublico | null
+  /** Suplentes carregados no servidor; só existe em ficha de Senador. */
+  senadoRunningMates?: SenadoRunningMatesPayload | null
   /** Apenas para render determinístico de cada subaba no auditor de release. */
   initialLegislationSubtab?: LegislationSubtabId
   /** Apenas para render determinístico das páginas 2+ no auditor de release. */
@@ -843,6 +847,17 @@ export function CandidatoProfile({
                       <ProgramaGovernoOverview
                         manifesto={programaGoverno}
                         onOpenTab={() => navigateToTab("programa")}
+                      />
+                    ) : undefined
+                  }
+                  closingCard={
+                    senadoRunningMates ? (
+                      <SenadoRunningMates
+                        singleCandidate
+                        candidates={[{ slug: ficha.slug, nome_urna: ficha.nome_urna }]}
+                        data={senadoRunningMates.data}
+                        absence={senadoRunningMates.absence}
+                        unavailable={senadoRunningMates.unavailable}
                       />
                     ) : undefined
                   }

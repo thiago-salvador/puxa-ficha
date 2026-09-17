@@ -48,7 +48,6 @@ import {
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { getProgramaGovernoManifesto } from "@/lib/programa-governo-server"
 import { loadSenadoRunningMates } from "@/lib/senado-running-mates"
-import { SenadoRunningMates } from "@/components/SenadoRunningMates"
 
 const getFicha = (slug: string) => getCandidatoBySlugResource(slug)
 
@@ -473,19 +472,8 @@ export async function CandidatoFichaView({
         pesquisasEnabled={pesquisasEnabled}
         pesquisas={pesquisas}
         programaGoverno={programaGoverno}
+        senadoRunningMates={runningMates}
       />
-
-      {runningMates && (
-        <section className="mx-auto max-w-7xl px-5 pb-8 md:px-12">
-          <SenadoRunningMates
-            singleCandidate
-            candidates={[{ slug: ficha.slug, nome_urna: ficha.nome_urna }]}
-            data={runningMates.data}
-            absence={runningMates.absence}
-            unavailable={runningMates.unavailable}
-          />
-        </section>
-      )}
 
       {ficha.biografia && (
         <section className="mx-auto max-w-7xl px-5 py-6 sm:hidden">
