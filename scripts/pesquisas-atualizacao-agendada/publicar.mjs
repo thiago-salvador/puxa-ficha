@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { execFile } from "node:child_process"
+import { execFile, spawn } from "node:child_process"
 import { promisify } from "node:util"
 import { readFileSync } from "node:fs"
 import { writeFile } from "node:fs/promises"
@@ -152,6 +152,25 @@ function jsonOutput(stdout, label) {
 
 function commandRunner(command, args, env) {
   return execFileAsync(command, args, { env, maxBuffer: 4 * 1024 * 1024 }).then(({ stdout }) => stdout.trim())
+}
+
+// For long, verbose commands whose stdout the caller never reads (test/lint/
+// typecheck suites, the apply CLI), buffering through execFile risks
+// "stdout maxBuffer length exceeded" regardless of how large the cap is set.
+// Stream output straight to this process's own stdio instead, same as
+// run-release-smokes.mjs does for the smoke steps.
+export function runStreamed(command, args, env, { stdio = "inherit" } = {}) {
+  return new Promise((resolve, reject) => {
+    const child = spawn(command, args, { cwd: process.cwd(), env, shell: false, stdio })
+    child.once("error", reject)
+    child.once("close", (code, signal) => {
+      if (code !== 0) {
+        reject(new Error(`${command} ${args.join(" ")} falhou com código ${code ?? "null"}${signal ? ` sinal ${signal}` : ""}`))
+        return
+      }
+      resolve()
+    })
+  })
 }
 
 function ghApi(endpoint, env, args = []) {
@@ -362,13 +381,13 @@ export async function publishValidatedPolls(input = {}) {
     prepare: async () => {
       const diff = asObject(JSON.parse(readFileSync("reports/consolidated/diff.json", "utf8")), "diff")
       if (!Array.isArray(diff.operations) || diff.operations.length === 0) return { status: "no-op", reason: "nenhuma operação nova; recuperação concluída quando necessária" }
-      await commandRunner("npm", ["run", "pesquisas:atualizacao:apply", "--", "--diff=reports/consolidated/diff.json", "--publish", "--status=reports/consolidated/status.json", "--proposal=reports/consolidated/proposal.json"], { ...process.env, ...env })
+      await runStreamed("npm", ["run", "pesquisas:atualizacao:apply", "--", "--diff=reports/consolidated/diff.json", "--publish", "--status=reports/consolidated/status.json", "--proposal=reports/consolidated/proposal.json"], { ...process.env, ...env })
       const changed = (await git(["diff", "--name-only"], env)).split("\n").filter(Boolean)
       if (changed.length === 0) return { status: "no-op", reason: "operações já aplicadas no catálogo" }
       validateChangedFiles(changed)
       return { status: "prepared" }
     },
-    verify: () => commandRunner("npm", ["run", "verify:pesquisas"], { ...process.env, ...env }),
+    verify: () => runStreamed("npm", ["run", "verify:pesquisas"], { ...process.env, ...env }),
     openOrResumePr: () => ensurePr({ repository, env, branch, baseSha, deadline }),
     merge: (pr) => pr.merged_at ? pr.merge_commit_sha : mergePullRequest({ repository, env, pr, baseSha, deadline }),
     promote: (sha) => promoteProduction(sha, env, deadline),
