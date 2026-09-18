@@ -2,6 +2,7 @@ import { rotuloDoAcervo } from "@/lib/proposicao-natureza"
 import type { Candidato, Financiamento, GastoExecutivo, GastoParlamentar, HistoricoPolitico, MudancaPartido, Patrimonio, PatrimonioEleicaoPublico, ProjetoLei, SancoesVerificacao, SectionFreshnessInfo, SectionFreshnessKey, VotoCandidato } from "./types"
 import { FINANCIAMENTO_ANO_INICIAL_DA_SERIE_TSE, type FinanciamentoEleicaoPublico } from "./financiamento-eleicoes"
 import { isHistoricoCandidaturaRow } from "@/lib/historico-tipo-evento"
+import { isCurrentRegistryPartyContext } from "@/lib/party-switches"
 import { CHAVE_AGREGADO_CURADO, ROTULO_FONTE_TSE, candidataDeColeta, resolverFrescorTsePerfil, resolverUltimaVerificacaoDoPerfil } from "@/lib/verificacao-campos"
 import { formatDate } from "@/lib/utils"
 
@@ -711,10 +712,18 @@ export function buildSectionFreshness(
         ? `Última candidatura estruturada em ${latestHistoricoYear}.`
         : `Último cargo estruturado até ${latestHistoricoYear}.`
       : null
+  // A linha derivada do registro de candidatura entra na timeline com o ano da
+  // eleição, mas sem data de troca. Contá-la aqui faria o aviso dizer "última
+  // mudança com data confirmada: 2026" justamente sobre a linha que não tem data.
+  const mudancasComFonteDatada = data.mudancas.filter(
+    (item) => !isCurrentRegistryPartyContext(item.contexto),
+  )
   const latestMudancaYear =
-    data.mudancas.length > 0
-      ? Math.max(...data.mudancas.map((item) => item.ano ?? 0))
-      : null
+    mudancasComFonteDatada.length > 0
+      ? Math.max(...mudancasComFonteDatada.map((item) => item.ano ?? 0))
+      : data.mudancas.length > 0
+        ? Math.max(...data.mudancas.map((item) => item.ano ?? 0))
+        : null
   const latestPatrimonioYear =
     data.patrimonio.length > 0
       ? Math.max(...data.patrimonio.map((item) => item.ano_eleicao ?? 0))
@@ -819,7 +828,12 @@ export function buildSectionFreshness(
             "Histórico partidário",
             data.timelinePartidariaIncompleta ? "stale" : "historical",
             data.timelinePartidariaIncompleta
-              ? `Última mudança de partido registrada em ${latestMudancaYear}. A linha do tempo ainda não chegou à filiação atual publicada.`
+              // O aviso não pode mais dizer que a linha do tempo "não chegou" ao
+              // partido atual: desde 2026-09-18 ela fecha com a linha derivada do
+              // registro de candidatura. O que continua faltando, e é isso que o
+              // leitor precisa saber, é a DATA da troca, que só a filiação
+              // partidária do TSE traria.
+              ? `Última mudança de partido com data confirmada: ${latestMudancaYear}. A filiação atual vem do registro de candidatura de 2026; a data da troca não consta em fonte oficial disponível.`
               : `Última mudança de partido registrada em ${latestMudancaYear}.`,
             null,
             latestMudancaYear,

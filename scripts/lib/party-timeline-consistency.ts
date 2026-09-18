@@ -57,6 +57,16 @@ const HISTORICAL_SAME_PARTY_GROUPS: Array<{ group: string; labels: string[] }> =
   { group: "PP", labels: ["PP", "PPB", "PPR", "PROGRESSISTAS"] },
   { group: "PL", labels: ["PL", "PR", "PARTIDO LIBERAL", "PARTIDO DA REPUBLICA"] },
   { group: "AVANTE", labels: ["AVANTE", "PT DO B", "PTDOB", "PARTIDO TRABALHISTA DO BRASIL"] },
+  // Espelho de `HISTORICAL_PARTY_GROUPS` em src/lib/party-utils.ts. Mesma fonte:
+  // TSE, aba "Fusões, incorporações e mudanças de nomenclatura/sigla/ número de
+  // legenda" (acesso 2026-09-18). Sem estas linhas a derivação de mudanças entre
+  // eleições grava troca de partido onde houve apenas renomeação da legenda.
+  { group: "MOBILIZA", labels: ["MOBILIZA", "PMN", "MOBILIZACAO NACIONAL", "PARTIDO DA MOBILIZACAO NACIONAL"] },
+  { group: "AGIR", labels: ["AGIR", "PTC", "PRN", "PARTIDO TRABALHISTA CRISTAO", "PARTIDO DA RECONSTRUCAO NACIONAL"] },
+  { group: "DC", labels: ["DC", "PSDC", "DEMOCRACIA CRISTA", "PARTIDO SOCIAL DEMOCRATA CRISTAO"] },
+  { group: "DEMOCRATA", labels: ["DEMOCRATA", "PMB", "PARTIDO DA MULHER BRASILEIRA"] },
+  { group: "PATRIOTA", labels: ["PATRIOTA", "PATRI", "PEN", "PARTIDO ECOLOGICO NACIONAL"] },
+  { group: "PHS", labels: ["PHS", "PSN", "PARTIDO HUMANISTA DA SOLIDARIEDADE", "PARTIDO DA SOLIDARIEDADE NACIONAL"] },
 ]
 
 const HISTORICAL_SAME_PARTY_INDEX = new Map<string, string>()
