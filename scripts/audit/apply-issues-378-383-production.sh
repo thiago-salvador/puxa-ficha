@@ -116,10 +116,26 @@ if [[ "$c0" == "1" && "$k0" == "$digest0" && "$c1" == "1" && "$k1" == "$digest1"
   exit 0
 fi
 
+# O digest do predecessor so e conferido quando ele existe. Medido em producao
+# no run 35379657174: o ledger traz 20260917182024 no topo com
+# idempotency_key VAZIO, porque nem toda migration antiga entrou por um apply
+# que grava digest. Exigir igualdade ali reprovava um ledger saudavel e
+# bloqueava o conjunto inteiro. A protecao que importa continua de pe: se o
+# ledger TIVER digest e ele divergir, o arquivo em disco nao e o que foi
+# aplicado, e isso reprova. Para as duas migrations deste conjunto a exigencia
+# segue estrita, porque quem as grava e este script, que sempre escreve o
+# digest: ausencia ali significa que alguem aplicou por outro caminho.
+predecessor_confere() {
+  local count="$1" key="$2" digest="$3"
+  [[ "$count" == "1" ]] || return 1
+  [[ -z "$key" || "$key" == "$digest" ]] || return 1
+  return 0
+}
+
 # Estados de partida aceitos: nada aplicado (topo no predecessor comum) ou so a
 # primeira aplicada (retomada de execucao interrompida).
 pendentes=()
-if [[ "$c0" == "0" && "$c1" == "0" && "$topo" == "$base_version" && "$base_count" == "1" && "$base_key" == "$base_digest" ]]; then
+if [[ "$c0" == "0" && "$c1" == "0" && "$topo" == "$base_version" ]] && predecessor_confere "$base_count" "$base_key" "$base_digest"; then
   pendentes=(0 1)
 elif [[ "$c0" == "1" && "$k0" == "$digest0" && "$c1" == "0" && "$topo" == "${versions[0]}" ]]; then
   pendentes=(1)
@@ -164,7 +180,12 @@ for i in range(0, len(resto), 5):
     readback = pathlib.Path(readback_path).read_bytes()
     created_by = "Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions:" + sha
 
-    print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(previous)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(previous)} AND idempotency_key={lit(previous_digest)}) <> 1 OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'issues-378-383: ledger divergiu sob lock antes de {version}'; END IF; END $ledger$;")
+    # Mesma regra da checagem fora do lock: digest do predecessor so vale como
+    # gate quando existe. Em producao 20260917182024 esta no ledger com
+    # idempotency_key NULL, e exigir igualdade ali reprovava um ledger
+    # saudavel (medido no run 35379657174). Divergencia de digest presente
+    # continua reprovando.
+    print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(previous)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(previous)} AND (idempotency_key IS NULL OR idempotency_key={lit(previous_digest)})) <> 1 OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'issues-378-383: ledger divergiu sob lock antes de {version}'; END IF; END $ledger$;")
     print(body, end="" if body.endswith("\n") else "\n")
     print("INSERT INTO supabase_migrations.schema_migrations (version, statements, name, created_by, idempotency_key, rollback) VALUES (")
     print(f"  {lit(version)}, ARRAY[convert_from(decode({lit(b64(raw))}, 'base64'), 'UTF8')], {lit(name)}, {lit(created_by)}, {lit(digest)}, ARRAY[convert_from(decode({lit(b64(rollback))}, 'base64'), 'UTF8')]);")
