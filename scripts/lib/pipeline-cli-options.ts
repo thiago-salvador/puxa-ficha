@@ -5,6 +5,8 @@ export type IngestCliOptions = {
   forceFrozen: boolean
   camaraCandidateTimeoutMs?: number
   senadoCandidateTimeoutMs?: number
+  /** Coleta e relata sem escrever nada no banco. */
+  dryRun: boolean
 }
 
 function parseSlugs(value: string): string[] {
@@ -32,11 +34,14 @@ export function parseIngestCliOptions(
   let targetSlugs: string[] = []
   let forceFrozen = false
   let skipCamaraValidated = false
+  let dryRun = false
 
   for (let index = 0; index < argv.length; index++) {
     const value = argv[index]
     if (value === "--skip-camara-validated") {
       skipCamaraValidated = true
+    } else if (value === "--dry-run") {
+      dryRun = true
     } else if (value === "--force-frozen") {
       forceFrozen = true
     } else if (value === "--slugs") {
@@ -69,5 +74,6 @@ export function parseIngestCliOptions(
     forceFrozen,
     camaraCandidateTimeoutMs,
     senadoCandidateTimeoutMs,
+    dryRun,
   }
 }

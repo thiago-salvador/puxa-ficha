@@ -105,14 +105,16 @@ jobs:
               # scripts/ingest-all.ts (VALID_SOURCES). `transparencia` é OUTRO
               # coletor, o de gastos do Portal: sem esta linha, o ato "rodar a
               # coleta de sanções" era indispatchável por este workflow.
-              # `filiacao` estava em VALID_SOURCES do script desde sempre, mas
-              # fora desta allowlist: o coletor de filiação partidária do TSE
-              # nunca pôde ser disparado por aqui e nunca rodou. Resultado medido
-              # em 18/09/2026: 504 de 504 recibos `filiacao` em `coleta_log` eram
-              # `indeterminado`, e a linha do tempo partidária de 86 fichas
-              # publicadas parava na última eleição em vez de alcançar o partido
-              # do registro de 2026. É lote pesado (ZIP de 232 MB, CSV de 4,3 GB
-              # descompactado), então entra por disparo manual, nunca no cron.
+              # `filiacao` ficava fora desta allowlist e nunca pôde ser disparada
+              # por aqui: 504 de 504 recibos em `coleta_log` estavam
+              # `indeterminado` (medido em 18/09/2026). O disparo manual existe
+              # para auditoria, mas hoje a coleta não tem como dar `encontrado`:
+              # o recurso publicado em perfil_filiacao_partidaria.zip é o PERFIL
+              # AGREGADO (contagem por partido, município, zona, gênero e faixa
+              # etária), sem nome de eleitor, e o ingest o recusa. O pré-voo em
+              # scripts/lib/ingest-filiacao.ts lê só o cabeçalho por range e
+              # devolve `nao_aplicavel` em segundos, sem baixar os 232 MB.
+              # Nunca no cron: só disparo manual.
               camara|senado|tse|transparencia|sancoes|google-news|filiacao) SAFE="$SAFE $s" ;;
               *) echo "::error::fonte inválida: $s" ; exit 1 ;;
             esac
