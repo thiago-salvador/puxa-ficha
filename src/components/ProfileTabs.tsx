@@ -213,7 +213,7 @@ function useDismissMoreMenu(open: boolean, close: () => void, container: React.R
 function MoreTabsMenu({ open, tabs, activeTab, onSelect }: { open: boolean; tabs: Tab[]; activeTab: string; onSelect: TabChange }) {
   if (!open) return null
   return (
-    <div id="profile-tabs-more-menu" role="menu" className="absolute right-0 top-[calc(100%+8px)] z-50 max-h-[min(65vh,440px)] w-64 overflow-y-auto rounded-[12px] border border-border bg-popover p-1.5 shadow-xl">
+    <div id="profile-tabs-more-menu" role="menu" className="absolute right-0 top-[calc(100%+8px)] z-50 max-h-[min(65vh,440px)] w-64 overflow-y-auto rounded-[12px] border border-border bg-card text-card-foreground p-1.5 shadow-xl">
       {tabs.map((tab) => {
         const isActive = activeTab === tab.id
         return (
