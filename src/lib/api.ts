@@ -1756,11 +1756,12 @@ async function getCandidatoBySlugFromRelationResource(
   const financiamentoConfiavel = normalizeFinanciamentoForDisplay(financiamento.data ?? [])
   // Último partido conhecido na trajetória: é o que permite fechar a linha do
   // tempo (e acusar a lacuna) de quem não tem nenhuma row em `mudancas_partido`.
-  const ultimoPartidoHistorico =
+  const ultimoRegistroPartidario =
     [...historicoConfiavel]
       .filter((item) => item.partido?.trim() && item.periodo_inicio != null)
       .sort((a, b) => (a.periodo_inicio ?? 0) - (b.periodo_inicio ?? 0))
-      .at(-1)?.partido ?? null
+      .at(-1) ?? null
+  const ultimoPartidoHistorico = ultimoRegistroPartidario?.partido ?? null
   // A lacuna é medida ANTES da linha derivada do registro: o que a derivação faz
   // é publicar o partido de registro, não descobrir a data da troca.
   const timelinePartidariaIncompleta = hasIncompletePartyTimeline(
@@ -1768,6 +1769,7 @@ async function getCandidatoBySlugFromRelationResource(
     candidato.partido_sigla,
     candidato.partido_atual,
     ultimoPartidoHistorico,
+    ultimoRegistroPartidario?.periodo_inicio ?? null,
   )
   const mudancasRaw = normalizePartyTimelineForDisplay(
     withCurrentRegistryPartyRow(mudancas.data ?? [], {

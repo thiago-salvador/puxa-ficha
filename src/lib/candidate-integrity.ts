@@ -58,6 +58,8 @@ export function hasIncompletePartyTimeline(
    * função saía no `length === 0` (auditoria 2026-09-18).
    */
   ultimoPartidoHistorico?: string | null | undefined,
+  /** Ano em que `ultimoPartidoHistorico` foi observado; guarda a janela da sucessão. */
+  anoUltimoPartidoHistorico?: number | null | undefined,
 ): boolean {
   if (mudancas.length === 0) {
     const historicoToken = normalizePartyValue(ultimoPartidoHistorico)
@@ -70,7 +72,12 @@ export function hasIncompletePartyTimeline(
     if (atuaisSemTimeline.length === 0) return false
     if (atuaisSemTimeline.includes(historicoToken)) return false
 
-    return !explicaMudancaDeLegenda(ultimoPartidoHistorico, partidoSigla, partidoAtual)
+    return !explicaMudancaDeLegenda(
+      ultimoPartidoHistorico,
+      partidoSigla,
+      partidoAtual,
+      anoUltimoPartidoHistorico ?? null,
+    )
   }
 
   const latest = transicaoTerminal(mudancas)

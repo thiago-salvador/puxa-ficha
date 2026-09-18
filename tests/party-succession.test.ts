@@ -4,7 +4,9 @@ import { hasIncompletePartyTimeline } from "../src/lib/candidate-integrity"
 import { resolvePartySuccession } from "../src/lib/party-succession"
 import {
   countPartySwitches,
+  CURRENT_REGISTRY_PARTY_CONTEXT,
   formatPartyTransitionLabel,
+  isCurrentRegistryPartyContext,
   normalizePartyTimelineForDisplay,
   withCurrentRegistryPartyRow,
 } from "../src/lib/party-switches"
@@ -46,10 +48,26 @@ describe("sucessão de legenda (fusão, incorporação e renomeação)", () => {
     assert.equal(partiesHistoricallyEquivalent("PSL", "DEM"), false)
   })
 
-  it("a data separa o PSD histórico do PSD de hoje", () => {
-    // Incorporação do PSD histórico pelo PTB decidida em 20/02/2003.
-    assert.equal(resolvePartySuccession("PSD", "PTB", { fromYear: 1998, toYear: 2006 })?.kind, "incorporacao")
+  it("não trata PSD → PTB como sucessão, porque a sigla PSD foi reusada", () => {
+    // O PSD incorporado pelo PTB em 2003 não é o PSD registrado em 2011. Com a
+    // aresta na tabela, uma troca real de hoje viraria "incorporação" e sumiria
+    // da contagem sempre que a janela observada começasse antes de 2003.
+    assert.equal(resolvePartySuccession("PSD", "PTB", { fromYear: 1998, toYear: 2006 }), null)
     assert.equal(resolvePartySuccession("PSD", "PTB", { fromYear: 2014, toYear: 2022 }), null)
+    assert.equal(
+      formatPartyTransitionLabel(row({ id: "psd", ano: 2022, partido_anterior: "PSD", partido_novo: "PTB" })),
+      "PSD → PTB",
+    )
+  })
+
+  it("o marcador da linha de registro não casa com contexto curado parecido", () => {
+    // Existem rows no banco com "Mudança observada entre eleições TSE (2026),
+    // registro de candidatura": substring as trataria como linha derivada.
+    assert.equal(
+      isCurrentRegistryPartyContext("Mudança observada entre eleições TSE (2026), registro de candidatura"),
+      false,
+    )
+    assert.equal(isCurrentRegistryPartyContext(CURRENT_REGISTRY_PARTY_CONTEXT), true)
   })
 
   it("MISSÃO herdou o número do PTB mas é registro novo, não sucessão", () => {

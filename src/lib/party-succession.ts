@@ -43,10 +43,13 @@ const PARTY_SUCCESSION_EDGES: PartySuccessionEdge[] = [
   // Incorporações: o partido incorporado deixou de existir e o filiado passou ao incorporador.
   { from: "PGT", to: "PL", kind: "incorporacao", decidedOn: "2003-04-01", processo: "PET nº 1307 (883-36.2003.6.00.0000)" },
   { from: "PST", to: "PL", kind: "incorporacao", decidedOn: "2003-04-01", processo: "PET nº 1307 (883-36.2003.6.00.0000)" },
-  // O PSD incorporado pelo PTB em 2003 é o PSD histórico, não o PSD registrado em
-  // 27.9.2011 que existe hoje. Quem protege a ficha de confundir os dois é a data:
-  // observação posterior a 2003 nunca casa com esta aresta.
-  { from: "PSD", to: "PTB", kind: "incorporacao", decidedOn: "2003-02-20", processo: "PET nº 1304 (413-05.2003.6.00.0000)" },
+  // A incorporação do PSD histórico pelo PTB (PET nº 1304, 20/02/2003) NÃO entra
+  // aqui, e é de propósito. "PSD" é a única sigla desta tabela que foi reusada: o
+  // PSD de hoje tem registro próprio, deferido em 27.9.2011, e não tem relação com
+  // o que o PTB incorporou em 2003. Como a aresta é resolvida por sigla, mantê-la
+  // faria uma troca real "PSD → PTB" de 2014 ser rotulada incorporação e sumir da
+  // contagem sempre que a janela observada começasse antes de 2003. O fato de 2003
+  // não afeta nenhuma ficha da coorte de 2026 e não vale o risco.
   { from: "PAN", to: "PTB", kind: "incorporacao", decidedOn: "2007-03-15", processo: "PET nº 2456 (31136-02.2006.6.00.0000)" },
   { from: "PRP", to: "PATRIOTA", kind: "incorporacao", decidedOn: "2019-03-28", processo: "PET nº 0601953-14.2018.6.00.0000" },
   { from: "PPL", to: "PCdoB", kind: "incorporacao", decidedOn: "2019-05-28", processo: "PET nº 0601972-20.2018.6.00.0000" },

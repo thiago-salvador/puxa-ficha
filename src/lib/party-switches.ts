@@ -427,12 +427,13 @@ export const CURRENT_REGISTRY_PARTY_CONTEXT =
   "Partido declarado no registro de candidatura 2026 (TSE)"
 
 export function isCurrentRegistryPartyContext(contexto: string | null | undefined) {
-  return (
-    contexto != null &&
-    stripAccents(contexto)
-      .toLowerCase()
-      .includes("registro de candidatura")
-  )
+  // Comparação exata, não substring: existem rows curadas no banco cujo contexto
+  // é "Mudança observada entre eleições TSE (2026), registro de candidatura", e
+  // um `includes("registro de candidatura")` as trataria como linha derivada,
+  // bloqueando a derivação e tirando-as do cálculo da última data confirmada.
+  if (contexto == null) return false
+  const normalizar = (valor: string) => stripAccents(valor).trim().toLowerCase()
+  return normalizar(contexto) === normalizar(CURRENT_REGISTRY_PARTY_CONTEXT)
 }
 
 /**
