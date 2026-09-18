@@ -89,7 +89,7 @@ describe("historico-display", () => {
       }),
     ]
 
-    assert.equal(formatHistoricoPeriodoDisplay(all[0]!, all), "Candidato")
+    assert.equal(formatHistoricoPeriodoDisplay(all[0]!, all), "2026 - Candidato")
   })
 
   it("formatHistoricoPeriodoDisplay: candidatura futura registrada mostra Candidato", () => {
@@ -104,7 +104,7 @@ describe("historico-display", () => {
       }),
     ]
 
-    assert.equal(formatHistoricoPeriodoDisplay(all[0]!, all), "Candidato")
+    assert.equal(formatHistoricoPeriodoDisplay(all[0]!, all), "2026 - Candidato")
   })
 
   it("formatHistoricoPeriodoDisplay: candidatura TSE passada mantém Não Eleito", () => {
