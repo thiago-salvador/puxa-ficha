@@ -1,0 +1,29 @@
+{
+  "versao": "2026-09-18",
+  "fonte": "DivulgaCandContas, detalhe da candidatura SQ 180002550421 (PI, Governador, AVANTE), coletado pelo workflow \"Atualização e completude dos dados\" em 17/09/2026 14:59 (America/Sao_Paulo) e preservado no artefato data-freshness-35360441081/diff.json do run 35360441081: status \"Indeferido\", is_candidato_inapto true, substituido false. Issue #383.",
+  "motivo": "O recurso fechou contra a candidatura: o detalhe oficial deixou de trazer \"com recurso\" e o classificador do repositório passou a ler a candidatura como terminal. A ficha é reconciliada para situacao_candidatura 'indeferido' e sai do ar (publicavel=false, status='removido'), mesma convenção aplicada a carlos-jararaca em 20260916140000. Sem a despublicação, publication_integrity.stale_public permanece aberto e a auditoria reabre a issue no próximo cron.",
+  "coorte": [
+    "gustavo-henrique"
+  ],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "gustavo-henrique",
+      "campos": ["situacao_candidatura", "status", "publicavel", "ultima_atualizacao"],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "issue-383-gustavo-henrique-terminal",
+      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260918120100",
+      "campos": ["fonte", "escopo", "alvo", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    }
+  ]
+}

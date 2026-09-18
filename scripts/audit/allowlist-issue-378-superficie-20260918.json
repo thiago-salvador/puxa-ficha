@@ -1,0 +1,31 @@
+{
+  "versao": "2026-09-18",
+  "fonte": "Auditoria de superfície do próprio repositório: run 35232081515 do workflow \"Qualidade de dados\", passo \"Julgar superfície (script puro)\" (scripts/audit/audit-superficie.ts), 17/09/2026. Para a trajetória, a regra de derivação vigente em scripts/lib/party-timeline-consistency.ts (deriveTseObservedPartyChanges e HISTORICAL_SAME_PARTY_GROUPS). Issue #378.",
+  "motivo": "Duas violações globais em fichas que entraram no recorte publicado entre 12/09 e 17/09/2026. R6_marcador_tse: o financiamento de 2020 de dr-fernando-maximo trazia o marcador técnico \"#NULO\" como nome de doador, com total_arrecadado zero; a leitura fiel da fonte é lista vazia. R8_reversao_mesmo_ano: as sete linhas derivadas de trajetória de andre-do-prado não são reproduzíveis pela derivação de hoje (duas mudanças opostas no mesmo ano de 2004 e uma troca PR->PL que a tabela de legendas do TSE trata como a mesma sigla), e saem do ar preservadas, sem afirmar filiação alternativa.",
+  "coorte": [
+    "dr-fernando-maximo",
+    "andre-do-prado"
+  ],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [
+    {
+      "tabela": "financiamento",
+      "slug": "dr-fernando-maximo",
+      "campos": ["maiores_doadores"],
+      "max_registros": 1
+    },
+    {
+      "tabela": "mudancas_partido",
+      "slug": "andre-do-prado",
+      "campos": ["despublicado_em", "despublicacao_motivo"],
+      "max_registros": 7
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260918120000",
+      "campos": ["fonte", "escopo", "alvo", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    }
+  ]
+}

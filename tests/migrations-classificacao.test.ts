@@ -426,7 +426,11 @@ describe("classificador puro (#136)", () => {
     // O problema de sq_coligacao virou correção de código em
     // compareCandidacies, sem migration. Líquido 486 - 3 + 3 = 486
     // migrations; medido pelo --gate local PG17: 381 + 105 = 486.
-    assert.equal(manifesto.aplicadas_esperadas, 382)
+    // Issues #378 e #383 (18/09/2026): duas migrations de dado, sem DDL, cada
+    // uma com guard de coorte vazia e de pf.replay, entao aplicam limpo no
+    // banco sintetico. Liquido 486 + 3 (17/09) + 2 = 489 migrations; medido
+    // pelo --gate local PG17: 384 + 105 = 489.
+    assert.equal(manifesto.aplicadas_esperadas, 384)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
