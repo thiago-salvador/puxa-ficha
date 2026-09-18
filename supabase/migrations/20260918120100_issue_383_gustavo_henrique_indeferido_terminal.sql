@@ -2,16 +2,30 @@
 -- publicada como "indeferido com recurso" depois de o recurso fechar contra
 -- ela no TSE.
 --
--- Fonte: DivulgaCandContas, detalhe da candidatura SQ 180002550421, coletado
--- pelo proprio workflow "Atualizacao e completude dos dados" (run
--- 35360441081, artefato data-freshness-35360441081/diff.json), consulta de
--- 2026-09-17 14:59 (America/Sao_Paulo):
---   status                "Indeferido"      (list_status "Indeferido")
---   is_candidato_inapto   true
---   substituido           false
---   totalizacao           "Concorrendo"
--- O classificador do repositorio (classifyOfficialCandidacy) le esse detalhe
--- como "terminal", e a auditoria registrou as duas consequencias:
+-- Fonte: DivulgaCandContas, detalhe da candidatura SQ 180002550421, lido ao vivo
+-- em 18/09/2026 em
+-- https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002550421
+-- e coletado antes pelo workflow "Atualizacao e completude dos dados" (run
+-- 35360441081, artefato data-freshness-35360441081/diff.json, 17/09 14:59). Os
+-- dois lados concordam. O detalhe diz:
+--
+--   descricaoSituacao           "Indeferido"
+--   isCandidatoInapto           true
+--   descricaoSituacaoCandidato  "Nao consta da urna"   (codigoSituacaoCandidato 14)
+--   motivoSituacao              "Indeferimento do DRAP do partido politico/
+--                                federacao/coligacao"
+--   descricaoSituacaoPartido    "Indeferido"
+--   descricaoTotalizacao        "Concorrendo"
+--
+-- `descricaoTotalizacao` = "Concorrendo" e a armadilha deste caso: parece dizer
+-- que o candidato segue na disputa, mas e o balde de totalizacao do TSE, nao
+-- presenca na urna. Quem responde sobre a urna e
+-- `descricaoSituacaoCandidato`, e ele diz "Nao consta da urna". O indeferimento
+-- nao e pessoal: caiu o DRAP da coligacao, o que derruba a chapa inteira.
+--
+-- O classificador do repositorio (classifyOfficialCandidacy) ja lia isso como
+-- "terminal" pelo `isCandidatoInapto`, e a auditoria registrou as duas
+-- consequencias:
 --   public_profile_status_changes: indeferido com recurso -> Indeferido; terminal
 --   publication_integrity.stale_public: gustavo-henrique (Governador, PI)
 --
@@ -26,8 +40,10 @@
 -- em review_required e a issue #383 reabre no proximo cron.
 --
 -- A despublicacao segue a convencao ja aplicada a carlos-jararaca em
--- 20260916140000 (candidatura terminal => publicavel=false, status='removido').
--- A ficha nao e apagada: sai do ar e continua reversivel.
+-- 20260916140000 (candidatura terminal => publicavel=false, status='removido'),
+-- e aqui ela coincide com o que a fonte diz literalmente: candidatura que nao
+-- consta da urna nao e candidatura publicavel. A ficha nao e apagada: sai do ar
+-- e continua reversivel pelo rollback versionado.
 --
 -- NAO aplicar por `supabase db push` nem por automacao: producao so recebe
 -- esta migration pelo workflow de aplicacao autorizado.
