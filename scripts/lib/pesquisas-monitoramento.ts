@@ -278,8 +278,8 @@ function enrichAliases(target: AlvoMonitoramento, evidence: EvidenciaPesquisaCan
     if (aliases.has(row.raw_label) || row.match_status === "not_candidate" || row.match_status === "reviewed_source_mention") continue
     // Governors retain the stricter name+party requirement. Presidential ballot
     // names can be short, but must be explicit in the approved official record.
-    if (target.office === "Governador" && !/\([^()]+\)$/.test(row.raw_label)) continue
-    const reviewed = resolverIdentidadeRevisada(target, row.raw_label, candidates)
+    const reviewed = resolverIdentidadeRevisada(target, row.raw_label, candidates, evidence.evidence_sha256)
+    if (!reviewed && target.office === "Governador" && !/\([^()]+\)$/.test(row.raw_label)) continue
     const candidate = reviewed ?? resolverIdentidadeCurada(row.raw_label, candidates, aliases)
     if (!candidate) continue
     aliases.set(row.raw_label, candidate.slug)
@@ -454,6 +454,57 @@ function classify(input: {
     return { decision: decision("inalterado", false, "evidence_unchanged"), evidence: resolvedEvidence, baseline: resolvedBaseline }
   }
   return { decision: decision("alterado", true, "retroactive_change"), evidence: resolvedEvidence, baseline: resolvedBaseline }
+}
+
+function avaliarEvidenciaClassificada(input: {
+  source: SourceContract
+  target: AlvoMonitoramento
+  evidence: EvidenciaPesquisaCandidata
+  registry?: RegistroTseMonitoramento[]
+  observedAt: string
+}): ResultadoAvaliacao {
+  const result = classify({
+    source: input.source,
+    evidence: input.evidence,
+    registry: input.registry ?? [],
+    aliases: enrichAliases(input.target, input.evidence, loadAliases(input.target)),
+    baseline: null,
+    observedAt: input.observedAt,
+  })
+  if (result.decision.eligible_for_human_review && (!input.evidence.scenario_complete || !input.evidence.publication_complete)) {
+    return { ...result, decision: decision("conflitante", false, "scenario_incomplete") }
+  }
+  return result
+}
+
+function revisadaInvalida(evidence: EvidenciaPesquisaCandidata, reason: string): ResultadoAvaliacao {
+  return { decision: decision("conflitante", false, reason), evidence, baseline: null }
+}
+
+export function avaliarEvidenciaExtraidaRevisada(input: {
+  source: SourceContract
+  target: AlvoMonitoramento
+  html: string
+  evidence: EvidenciaPesquisaCandidata
+  registry?: RegistroTseMonitoramento[]
+  observedAt: string
+}): ResultadoAvaliacao {
+  const { source, target, html, evidence } = input
+  if (createHash("sha256").update(html).digest("hex") !== evidence.evidence_sha256) return revisadaInvalida(evidence, "revised_hash_mismatch")
+  if (source.id !== target.source_id || evidence.source_id !== source.id) return revisadaInvalida(evidence, "revised_source_mismatch")
+  if (evidence.url !== target.url || evidence.registration.id !== target.registration_id || evidence.registration.url !== (target.registry_url || source.representative_poll?.registry_url || "https://pesqele-divulgacao.tse.jus.br/")) return revisadaInvalida(evidence, "revised_target_mismatch")
+  const scenario = evidence.scenario
+  if (scenario.office !== target.office || scenario.geography_code !== target.geography_code || scenario.geography !== target.geography || scenario.turn !== target.turn) {
+    return revisadaInvalida(evidence, "revised_primary_scenario_mismatch")
+  }
+  const additional = evidence.additional_scenarios ?? []
+  if (additional.some((item) => item.scenario.turn !== 1 && item.scenario.turn !== 2)) return revisadaInvalida(evidence, "revised_additional_turn_out_of_scope")
+  if (additional.some((item) => item.scenario.office !== target.office || item.scenario.geography_code !== target.geography_code || item.scenario.geography !== target.geography)) {
+    return revisadaInvalida(evidence, "revised_additional_scenario_out_of_scope")
+  }
+  const scenarioIds = [scenario.id, ...additional.map((item) => item.scenario.id)]
+  if (new Set(scenarioIds).size !== scenarioIds.length) return revisadaInvalida(evidence, "revised_duplicate_scenario_id")
+  return avaliarEvidenciaClassificada(input)
 }
 
 export function avaliarCasoMonitoramento(
@@ -676,19 +727,7 @@ export function avaliarEvidenciaAoVivo(input: {
     registrySupplement: input.registrySupplement,
     resultDocument: input.resultDocument,
   })
-  const registry: RegistroTseMonitoramento[] = input.registry ?? []
-  const result = classify({
-    source: input.source,
-    evidence,
-    registry,
-    aliases: enrichAliases(input.target, evidence, loadAliases(input.target)),
-    baseline: null,
-    observedAt: input.observedAt,
-  })
-  if (result.decision.eligible_for_human_review && (!evidence.scenario_complete || !evidence.publication_complete)) {
-    return { ...result, decision: decision("conflitante", false, "scenario_incomplete") }
-  }
-  return result
+  return avaliarEvidenciaClassificada({ source: input.source, target: input.target, evidence, registry: input.registry, observedAt: input.observedAt })
 }
 
 export function resultadoFonteIndisponivel(reason: string): ResultadoAvaliacao {

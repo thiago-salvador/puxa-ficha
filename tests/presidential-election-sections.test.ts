@@ -46,6 +46,7 @@ test("presidential polls preserve scenario outcomes and require exact approved n
   }
   const publishedNonPreferred = rows.filter(row => row.sourceId === "poderdata-aya-nacional-2026").map(row => row.id)
   assert.deepEqual([...new Set(publishedNonPreferred)].sort(), [
+    "poderdata-aya-nacional-br-00360-2026",
     "poderdata-aya-nacional-br-04914-2026",
     "poderdata-aya-nacional-br-04974-2026",
     "poderdata-aya-nacional-br-07561-2026",

@@ -1391,7 +1391,7 @@
             "status": "publicado"
           },
           "method": {
-            "value": "Abordagens telefônicas e digitais",
+            "value": "Pesquisa quantitativa, que consiste na realização de entrevistas com eleitores do universo a ser explorado, feitas em combinação mista por entrevistadores humanos e recursos de inteligência artificial, com a aplicação de questionário estruturado com abordagens telefônicas e digitais junto a uma amostra representativa do eleitorado em estudo. Pesquisa realizada no Estado de Bahia (BA).",
             "status": "publicado"
           },
           "registration": {
@@ -1418,12 +1418,20 @@
             ],
             "source_kind": "divulgacao_jornalistica_publica",
             "route_class": "direta_automatizavel",
-            "route_reason": "O cenário 1, o zero publicado e a ficha técnica estão explícitos; o registro foi conferido separadamente.",
-            "consulted_at": "2026-08-26T07:50:00-03:00",
+            "route_reason": "Publicação capturada, conciliada com o registro público PesqEle e aprovada pelos gates atomizados.",
+            "consulted_at": "2026-09-17T19:17:20.530Z",
             "capture": {
               "format": "html",
-              "sha256": "1ae2c99ed83abbaca080ad79de02720062d410bce1951be1a050fe36d0b823a6",
+              "sha256": "337fdfadb7b8d974efe5c3882c26dfb3b6ca81720fe03fc610b3b95b3450ac5e",
               "status": "publicado"
+            },
+            "result_notes": [
+              "Extração revisada dos parágrafos9–13: duas listas completas de intenção de voto, sem incluir rejeição ou avaliação. Literal não pontuou preservado como zero. Fonte/TSE coincidem em registro, cargo, geografia, amostra e campo. Perguntas literais não disponíveis."
+            ],
+            "registry_observation": {
+              "url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "observed_at": "2026-09-17T19:17:20.530Z",
+              "evidence_sha256": "e7969b72ae312e53be99e28ba6473f72dba0f91a8172b7c9fbc8347cad255437"
             }
           },
           "cenarios": [
@@ -1431,7 +1439,7 @@
               "id": "real-time-big-data-ba-2026-08-11-primeiro-turno-cenario-1",
               "turn": 1,
               "geography": "Bahia",
-              "label_raw": "Primeiro turno estimulado, cenário 1",
+              "label_raw": "Primeiro turno estimulado",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -1439,52 +1447,93 @@
               "comparability_key": "2026|Governador|BA|1|estimulado|cenario-1-rtbd-2026-08-11|real-time-big-data",
               "resultados": [
                 {
-                  "raw_label": "ACM Neto (União)",
+                  "raw_label": "ACM Neto",
+                  "value_percent": 44,
                   "candidate_slug": "acm-neto",
                   "match_status": "exact_alias",
-                  "value_percent": 44,
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "Jerônimo Rodrigues (PT)",
+                  "raw_label": "Jerônimo Rodrigues",
+                  "value_percent": 42,
                   "candidate_slug": "jeronimo",
                   "match_status": "exact_alias",
-                  "value_percent": 42,
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "Ronaldo Mansur (PSOL)",
+                  "raw_label": "Ronaldo Mansur",
+                  "value_percent": 2,
                   "candidate_slug": "ronaldo-mansur",
                   "match_status": "exact_alias",
-                  "value_percent": 2,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "José Estevão (DC)",
+                  "value_percent": 1,
                   "candidate_slug": "jose-estevao",
                   "match_status": "exact_alias",
-                  "value_percent": 1,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Aroldo Félix (UP)",
+                  "value_percent": 0,
                   "candidate_slug": "aroldo-felix",
                   "match_status": "exact_alias",
-                  "value_percent": 0,
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "Nulo/Branco",
-                  "candidate_slug": null,
-                  "match_status": "not_candidate",
+                  "raw_label": "Votos nulos e em branco",
                   "value_percent": 7,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "Não sabe/Não respondeu",
+                  "raw_label": "Não souberam ou não responderam",
+                  "value_percent": 4,
                   "candidate_slug": null,
                   "match_status": "not_candidate",
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "real-time-big-data-ba-ba-00277-2026-2t-acm-neto-jeronimo",
+              "turn": 2,
+              "geography": "Bahia",
+              "label_raw": "ACM Neto x Jerônimo Rodrigues",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|BA|2|estimulada|381869e5b03884832b5b3e896e627cbccf0be67487af7a83770fd71d7f6fd99d|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "ACM Neto",
+                  "value_percent": 45,
+                  "candidate_slug": "acm-neto",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Jerônimo Rodrigues",
+                  "value_percent": 44,
+                  "candidate_slug": "jeronimo",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Votos nulos e em branco",
+                  "value_percent": 7,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não souberam ou não responderam",
                   "value_percent": 4,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
                   "status": "publicado"
                 }
               ]
@@ -2792,7 +2841,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|DF|1|estimulada|lista-real-time-big-data-2026-09-09-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "2026-09-10.DF",
+      "exact_aliases_version": "monitor-2026-4d9242725fb1299e",
       "exact_aliases": [
         {
           "raw_label": "Cappelli",
@@ -2881,6 +2930,60 @@
         {
           "raw_label": "Samara Mineiro",
           "candidate_slug": "samara-mineiro"
+        },
+        {
+          "raw_label": "Arruda (PSD)",
+          "candidate_slug": "jose-roberto-arruda",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "datafolha-df-2026-08-21-primeiro-turno-estimulado"
+        },
+        {
+          "raw_label": "Kiko Caputo (NOVO)",
+          "candidate_slug": "kiko-caputo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "datafolha-df-2026-08-21-primeiro-turno-estimulado"
+        },
+        {
+          "raw_label": "Elisson (AGIR)",
+          "candidate_slug": "elisson-ferreira",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "datafolha-df-2026-08-21-primeiro-turno-estimulado"
+        },
+        {
+          "raw_label": "Expedito Mendonça (PCO)",
+          "candidate_slug": "expedito-mendonca",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "datafolha-df-2026-08-21-primeiro-turno-estimulado"
+        },
+        {
+          "raw_label": "Arruda (PSD)",
+          "candidate_slug": "jose-roberto-arruda",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "datafolha-df-df-07561-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Kiko Caputo (NOVO)",
+          "candidate_slug": "kiko-caputo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "datafolha-df-df-07561-2026-1t-espontaneo"
         }
       ],
       "pesquisas": [
@@ -2931,7 +3034,7 @@
             "status": "publicado"
           },
           "method": {
-            "value": "Entrevistas presenciais em pontos de fluxo populacional",
+            "value": "Pesquisa do tipo quantitativo, por amostragem, com aplicação de questionário estruturado e abordagem pessoal em pontos de fluxo populacional. O eleitorado do Distrito Federal foi tomado como universo da pesquisa.",
             "status": "publicado"
           },
           "registration": {
@@ -2957,12 +3060,20 @@
             ],
             "source_kind": "divulgacao_jornalistica_publica",
             "route_class": "direta_automatizavel",
-            "route_reason": "A página da contratante publica o resultado e a ficha técnica em HTML. O registro oficial é conferido separadamente no PesqEle.",
-            "consulted_at": "2026-08-25T20:50:00Z",
+            "route_reason": "Publicação capturada, conciliada com o registro público PesqEle e aprovada pelos gates atomizados.",
+            "consulted_at": "2026-09-17T23:57:41.611Z",
             "capture": {
               "format": "html",
-              "sha256": "882e3de362908fb73d84bbaeaa92944f68a8b16d9e009475289f04157c994657",
+              "sha256": "24bf8cad0414ae1a1b0221306c552304e616a1dd777f691dc84606fd11ff688d",
               "status": "publicado"
+            },
+            "result_notes": [
+              "2axDg: 12 linhas estimuladas; LZR8o: 10 linhas espontâneas selecionadas em 20.ago.2026. GJawM excluído por rejeição. Perguntas permanecem null."
+            ],
+            "registry_observation": {
+              "url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "observed_at": "2026-09-17T19:15:50.700Z",
+              "evidence_sha256": "b249e43b6f8e0dfef831081c09876cb66a20eb8be2b5a9bb1ca9e69515e652da"
             }
           },
           "cenarios": [
@@ -2970,7 +3081,7 @@
               "id": "datafolha-df-2026-08-21-primeiro-turno-estimulado",
               "turn": 1,
               "geography": "Distrito Federal",
-              "label_raw": "Pesquisa estimulada para o Governo de Distrito Federal",
+              "label_raw": "Intenção estimulada de voto para governador de Distrito Federal  \n",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -2979,86 +3090,169 @@
               "resultados": [
                 {
                   "raw_label": "Celina Leão (PP)",
+                  "value_percent": 30,
                   "candidate_slug": "celina-leao",
                   "match_status": "exact_alias",
-                  "value_percent": 30,
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "José Roberto Arruda (PSD)",
+                  "raw_label": "Arruda (PSD)",
+                  "value_percent": 28,
                   "candidate_slug": "jose-roberto-arruda",
                   "match_status": "exact_alias",
-                  "value_percent": 28,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Leandro Grass (PT)",
+                  "value_percent": 11,
                   "candidate_slug": "leandro-grass",
                   "match_status": "exact_alias",
-                  "value_percent": 11,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Paula Belmonte (PSDB)",
+                  "value_percent": 4,
                   "candidate_slug": "paula-belmonte",
                   "match_status": "exact_alias",
-                  "value_percent": 4,
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "Ricardo Cappelli (PSB)",
+                  "raw_label": "Cappelli (PSB)",
+                  "value_percent": 3,
                   "candidate_slug": "ricardo-cappelli",
                   "match_status": "exact_alias",
-                  "value_percent": 3,
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "Kiko Caputo (Novo)",
+                  "raw_label": "Kiko Caputo (NOVO)",
+                  "value_percent": 2,
                   "candidate_slug": "kiko-caputo",
                   "match_status": "exact_alias",
-                  "value_percent": 2,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Professora Samara Mineiro (UP)",
+                  "value_percent": 2,
                   "candidate_slug": "samara-mineiro",
                   "match_status": "exact_alias",
-                  "value_percent": 2,
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "Elisson (Agir)",
+                  "raw_label": "Elisson (AGIR)",
+                  "value_percent": 1,
                   "candidate_slug": "elisson-ferreira",
                   "match_status": "exact_alias",
-                  "value_percent": 1,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Professor Robson (PSTU)",
+                  "value_percent": 1,
                   "candidate_slug": "robson-raymundo",
                   "match_status": "exact_alias",
-                  "value_percent": 1,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Expedito Mendonça (PCO)",
-                  "candidate_slug": null,
-                  "match_status": "indeterminado",
                   "value_percent": 0,
+                  "candidate_slug": "expedito-mendonca",
+                  "match_status": "exact_alias",
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "Branco/nulo/nenhum",
+                  "raw_label": "Em branco/nulo/nenhum",
+                  "value_percent": 11,
                   "candidate_slug": null,
                   "match_status": "not_candidate",
-                  "value_percent": 11,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Indecisos",
+                  "value_percent": 8,
                   "candidate_slug": null,
                   "match_status": "not_candidate",
-                  "value_percent": 8,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "datafolha-df-df-07561-2026-1t-espontaneo",
+              "turn": 1,
+              "geography": "Distrito Federal",
+              "label_raw": "Intenção espontânea de voto para governador de Distrito Federal  ",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|DF|1|espontaneo|3a2ad7156a441ae029f6eb95931580bbac3b3cd572ca3963d2502f0a049bb1ae|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Celina Leão (PP)",
+                  "value_percent": 21,
+                  "candidate_slug": "celina-leao",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Arruda (PSD)",
+                  "value_percent": 12,
+                  "candidate_slug": "jose-roberto-arruda",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Leandro Grass (PT)",
+                  "value_percent": 6,
+                  "candidate_slug": "leandro-grass",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Paula Belmonte (PSDB)",
+                  "value_percent": 1,
+                  "candidate_slug": "paula-belmonte",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Cappelli (PSB)",
+                  "value_percent": 1,
+                  "candidate_slug": "ricardo-cappelli",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Kiko Caputo (NOVO)",
+                  "value_percent": 1,
+                  "candidate_slug": "kiko-caputo",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Vota no PT/ candidado do PT",
+                  "value_percent": 1,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Outras respostas",
+                  "value_percent": 2,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Em branco/ nulo/ nenhum",
+                  "value_percent": 6,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "value_percent": 49,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
                   "status": "publicado"
                 }
               ]
@@ -9331,7 +9525,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|PI|1|estimulada|lista-instituto-amostragem-2026-09-04-cenario-1|votos_validos"
       },
-      "exact_aliases_version": "2026-09-10.PI",
+      "exact_aliases_version": "monitor-2026-9ad9911166995065",
       "exact_aliases": [
         {
           "raw_label": "Dra. Lúcia Santos",
@@ -9416,6 +9610,33 @@
         {
           "raw_label": "Santiago Belizário (UP)",
           "candidate_slug": "santiago-belizario"
+        },
+        {
+          "raw_label": "dra. Lúcia Santos (PSDB)",
+          "candidate_slug": "lucia-santos",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Piauí",
+          "turn": 1,
+          "scenario_id": "datafolha-pi-2026-08-22-primeiro-turno-estimulado"
+        },
+        {
+          "raw_label": "Fonteles",
+          "candidate_slug": "rafael-fonteles",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Piauí",
+          "turn": 1,
+          "scenario_id": "datafolha-pi-pi-06656-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Rodrigues",
+          "candidate_slug": "joel-rodrigues",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Piauí",
+          "turn": 1,
+          "scenario_id": "datafolha-pi-pi-06656-2026-1t-espontaneo"
         }
       ],
       "pesquisas": [
@@ -9466,7 +9687,7 @@
             "status": "publicado"
           },
           "method": {
-            "value": "Entrevistas presenciais em pontos de fluxo populacional",
+            "value": "Pesquisa do tipo quantitativo, por amostragem, com aplicação de questionário estruturado e abordagem pessoal em pontos de fluxo populacional. O eleitorado do estado do Piauí foi tomado como universo da pesquisa.",
             "status": "publicado"
           },
           "registration": {
@@ -9492,12 +9713,20 @@
             ],
             "source_kind": "divulgacao_jornalistica_publica",
             "route_class": "direta_automatizavel",
-            "route_reason": "A página da contratante publica o resultado e a ficha técnica em HTML. O registro oficial é conferido separadamente no PesqEle.",
-            "consulted_at": "2026-08-25T20:50:00Z",
+            "route_reason": "Publicação capturada, conciliada com o registro público PesqEle e aprovada pelos gates atomizados.",
+            "consulted_at": "2026-09-17T19:16:34.408Z",
             "capture": {
               "format": "html",
-              "sha256": "008d07c6e3137a69de84c378ab4c5f93117d0e6756f47370288391aa106ab29b",
+              "sha256": "8d9cef015abda8e9de3dd78bcd6417880ad4b110464a54a2ce52f0c93551ae26",
               "status": "publicado"
+            },
+            "result_notes": [
+              "Transcrição literal dos parágrafos revisados; estimulada 12 rows e espontânea 7 rows. Senado/rejeição excluídos; perguntas null."
+            ],
+            "registry_observation": {
+              "url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "observed_at": "2026-09-17T19:16:34.408Z",
+              "evidence_sha256": "c14c5c99cb9add5dc7d11e47436dcb17010044cad532f93c497c7a69275d3497"
             }
           },
           "cenarios": [
@@ -9505,7 +9734,7 @@
               "id": "datafolha-pi-2026-08-22-primeiro-turno-estimulado",
               "turn": 1,
               "geography": "Piauí",
-              "label_raw": "Pesquisa estimulada para o Governo de Piauí",
+              "label_raw": "Intenção de voto estimulada no 1º turno",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -9514,86 +9743,148 @@
               "resultados": [
                 {
                   "raw_label": "Rafael Fonteles (PT)",
+                  "value_percent": 56,
                   "candidate_slug": "rafael-fonteles",
                   "match_status": "exact_alias",
-                  "value_percent": 56,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Joel Rodrigues (PP)",
+                  "value_percent": 21,
                   "candidate_slug": "joel-rodrigues",
                   "match_status": "exact_alias",
-                  "value_percent": 21,
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "Dra. Lúcia Santos (PSDB)",
+                  "raw_label": "dra. Lúcia Santos (PSDB)",
+                  "value_percent": 2,
                   "candidate_slug": "lucia-santos",
                   "match_status": "exact_alias",
-                  "value_percent": 2,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Geraldo Carvalho (PSTU)",
+                  "value_percent": 2,
                   "candidate_slug": "geraldo-carvalho",
                   "match_status": "exact_alias",
-                  "value_percent": 2,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Lourdes Melo (PCO)",
+                  "value_percent": 1,
                   "candidate_slug": "lourdes-melo",
                   "match_status": "exact_alias",
-                  "value_percent": 1,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Professor Gisvaldo (PSOL)",
+                  "value_percent": 1,
                   "candidate_slug": "gisvaldo-oliveira",
                   "match_status": "exact_alias",
-                  "value_percent": 1,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Professor Jurity (DC)",
+                  "value_percent": 1,
                   "candidate_slug": "francisco-jurity",
                   "match_status": "exact_alias",
-                  "value_percent": 1,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Elizeu Aguiar (Novo)",
+                  "value_percent": 1,
                   "candidate_slug": "elizeu-aguiar",
                   "match_status": "exact_alias",
-                  "value_percent": 1,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Santiago Belizário (UP)",
+                  "value_percent": 1,
                   "candidate_slug": "santiago-belizario",
                   "match_status": "exact_alias",
-                  "value_percent": 1,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Ravenna da Inclusão (Democrata)",
+                  "value_percent": 0,
                   "candidate_slug": "ravenna-castro",
                   "match_status": "exact_alias",
-                  "value_percent": 0,
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "Branco/nulo",
+                  "raw_label": "Brancos ou nulos",
+                  "value_percent": 10,
                   "candidate_slug": null,
                   "match_status": "not_candidate",
-                  "value_percent": 10,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Indecisos",
+                  "value_percent": 5,
                   "candidate_slug": null,
                   "match_status": "not_candidate",
-                  "value_percent": 5,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "datafolha-pi-pi-06656-2026-1t-espontaneo",
+              "turn": 1,
+              "geography": "Piauí",
+              "label_raw": "Intenção de voto espontânea no 1º turno",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|PI|1|espontaneo|54fd32ecc3aece41aabdccff93888ff8223e26537e29cd8199b9884a5f009fc8|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Fonteles",
+                  "value_percent": 33,
+                  "candidate_slug": "rafael-fonteles",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Rodrigues",
+                  "value_percent": 10,
+                  "candidate_slug": "joel-rodrigues",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "no atual governador",
+                  "value_percent": 3,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "no candidato do PT",
+                  "value_percent": 1,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Outras respostas",
+                  "value_percent": 4,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Brancos ou nulos",
+                  "value_percent": 3,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "value_percent": 46,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
                   "status": "publicado"
                 }
               ]
@@ -9773,6 +10064,258 @@
               ]
             }
           ]
+        },
+        {
+          "source_id": "datafolha-folha-globo-estaduais-2026",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Datafolha",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-14",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-17",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-17",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 826,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Pesquisa do tipo quantitativo, por amostragem, com aplicação de questionário estruturado e abordagem pessoal em pontos de fluxo populacional. O eleitorado do estado do Piauí foi tomado como universo da pesquisa.",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "PI-03643/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Piauí",
+            "code": "PI"
+          },
+          "office": "Governador",
+          "identity_aliases": [],
+          "provenance": {
+            "result_url": "https://www1.folha.uol.com.br/poder/2026/09/datafolha-rafael-fonteles-pt-lidera-disputa-pelo-governo-do-piaui.shtml",
+            "result_notes": [
+              "Extração revisada dos parágrafos da publicação de 17/09/2026. Dois cenários completos: 12 resultados estimulados e 7 espontâneos. Pergunta literal não disponível. As respostas no atual governador e no candidato do PT são categorias não individuais, sem atribuição a candidato."
+            ],
+            "registry_observation": {
+              "url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "observed_at": "2026-09-17T19:15:01.840Z",
+              "evidence_sha256": "d28847d80a4e4aad274cbbf4d4e645261d4691b7ee20878c7a83fb346947fb19"
+            },
+            "supporting_urls": [
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "consulted_at": "2026-09-17T19:16:27.383Z",
+            "capture": {
+              "format": "html",
+              "sha256": "9726c96bd62225afd860f8d52743ff774b4c1d1d172021daac430e208c24c90e",
+              "status": "publicado"
+            },
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "direta_automatizavel",
+            "route_reason": "Publicação capturada, conciliada com o registro público PesqEle e aprovada pelos gates atomizados."
+          },
+          "cenarios": [
+            {
+              "id": "datafolha-folha-globo-estaduais-pi-03643-2026-1t",
+              "turn": 1,
+              "geography": "Piauí",
+              "label_raw": "Intenção de voto estimulada no 1º turno",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|PI|1|estimulada|c0b204a340784f5cc8625a8087197b7b7313f8762fbf8f4ad5a0f56f2fa01122|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Rafael Fonteles",
+                  "candidate_slug": "rafael-fonteles",
+                  "match_status": "exact_alias",
+                  "value_percent": 55,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Joel Rodrigues",
+                  "candidate_slug": "joel-rodrigues",
+                  "match_status": "exact_alias",
+                  "value_percent": 25,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Dra. Lúcia Santos",
+                  "candidate_slug": "lucia-santos",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Lourdes Melo",
+                  "candidate_slug": "lourdes-melo",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professor Gisvaldo",
+                  "candidate_slug": "gisvaldo-oliveira",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professor Jurity",
+                  "candidate_slug": "francisco-jurity",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Elizeu Aguiar",
+                  "candidate_slug": "elizeu-aguiar",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Santiago Belizário",
+                  "candidate_slug": "santiago-belizario",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ravenna da Inclusão",
+                  "candidate_slug": "ravenna-castro",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Geraldo Carvalho",
+                  "candidate_slug": "geraldo-carvalho",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Brancos ou nulos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 8,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "datafolha-folha-globo-estaduais-pi-03643-2026-1t-espontaneo",
+              "turn": 1,
+              "geography": "Piauí",
+              "label_raw": "Intenção de voto espontânea no 1º turno",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|PI|1|espontaneo|54fd32ecc3aece41aabdccff93888ff8223e26537e29cd8199b9884a5f009fc8|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Rafael Fonteles",
+                  "candidate_slug": "rafael-fonteles",
+                  "match_status": "exact_alias",
+                  "value_percent": 40,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Joel Rodrigues",
+                  "candidate_slug": "joel-rodrigues",
+                  "match_status": "exact_alias",
+                  "value_percent": 16,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "no atual governador",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "no candidato do PT",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Outras respostas",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "brancos ou nulos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 33,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ],
+          "id": "datafolha-folha-globo-estaduais-pi-03643-2026",
+          "contratante": {
+            "value": null,
+            "status": "indeterminado"
+          }
         }
       ]
     },
@@ -13601,7 +14144,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|TO|1|estimulada|lista-parana-pesquisas-2026-08-28-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "2026-09-10.TO",
+      "exact_aliases_version": "monitor-2026-fa1c0240a0557c01",
       "exact_aliases": [
         {
           "raw_label": "Ataídes de Oliveira",
@@ -13626,6 +14169,96 @@
         {
           "raw_label": "Vicentinho Júnior",
           "candidate_slug": "vicentinho-junior"
+        },
+        {
+          "raw_label": "Professora Dorinha (União)",
+          "candidate_slug": "professora-dorinha",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Tocantins",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-estaduais-to-05805-2026-1t"
+        },
+        {
+          "raw_label": "Vicentinho Júnior (PSDB)",
+          "candidate_slug": "vicentinho-junior",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Tocantins",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-estaduais-to-05805-2026-1t"
+        },
+        {
+          "raw_label": "Laurez Moreira (PSD)",
+          "candidate_slug": "laurez-moreira",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Tocantins",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-estaduais-to-05805-2026-1t"
+        },
+        {
+          "raw_label": "Ataides de Oliveira (Novo)",
+          "candidate_slug": "ataides-oliveira",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Tocantins",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-estaduais-to-05805-2026-1t"
+        },
+        {
+          "raw_label": "Prof. Witer Naves (PSOL)",
+          "candidate_slug": "witer-naves",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Tocantins",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-estaduais-to-05805-2026-1t"
+        },
+        {
+          "raw_label": "Vicentinho Júnior (PSDB)",
+          "candidate_slug": "vicentinho-junior",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Tocantins",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-estaduais-to-05805-2026-2t-b460835afbbb5ec0"
+        },
+        {
+          "raw_label": "Professora Dorinha (União)",
+          "candidate_slug": "professora-dorinha",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Tocantins",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-estaduais-to-05805-2026-2t-b460835afbbb5ec0"
+        },
+        {
+          "raw_label": "Professora Dorinha (União)",
+          "candidate_slug": "professora-dorinha",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Tocantins",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-estaduais-to-05805-2026-2t-f5482d35a5f6ada7"
+        },
+        {
+          "raw_label": "Laurez Moreira (PSD)",
+          "candidate_slug": "laurez-moreira",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Tocantins",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-estaduais-to-05805-2026-2t-f5482d35a5f6ada7"
+        },
+        {
+          "raw_label": "Vicentinho Júnior (PSDB)",
+          "candidate_slug": "vicentinho-junior",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Tocantins",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-estaduais-to-05805-2026-2t-80ffbe825f3a5fa0"
         }
       ],
       "pesquisas": [
@@ -13788,6 +14421,449 @@
               ]
             }
           ]
+        },
+        {
+          "source_id": "real-time-big-data-estaduais-2026",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Real Time Big Data",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-10",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-14",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-17",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1600,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "abordagens telefônicas e digitais",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "TO-05805/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Tocantins",
+            "code": "TO"
+          },
+          "office": "Governador",
+          "identity_aliases": [
+            {
+              "raw_label": "Professora Dorinha (União)",
+              "candidate_slug": "professora-dorinha",
+              "year": 2026,
+              "office": "Governador",
+              "geography": "Tocantins",
+              "turn": 1,
+              "scenario_id": "real-time-big-data-estaduais-to-05805-2026-1t",
+              "proof": {
+                "raw_label": "Professora Dorinha (União)",
+                "candidate_slug": "professora-dorinha",
+                "basis": "curated_name_party_office_uf",
+                "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+                "source_sha256": "c12a48a21f1f5ca7124cb9c7ce96c7d0debc8f771c81708b72cd06305716df7c"
+              }
+            },
+            {
+              "raw_label": "Vicentinho Júnior (PSDB)",
+              "candidate_slug": "vicentinho-junior",
+              "year": 2026,
+              "office": "Governador",
+              "geography": "Tocantins",
+              "turn": 1,
+              "scenario_id": "real-time-big-data-estaduais-to-05805-2026-1t",
+              "proof": {
+                "raw_label": "Vicentinho Júnior (PSDB)",
+                "candidate_slug": "vicentinho-junior",
+                "basis": "curated_name_party_office_uf",
+                "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+                "source_sha256": "60cfd10f7f71f2bffb914b85924f0d7471322ea91fa2ba7e033cc2a73d08f255"
+              }
+            },
+            {
+              "raw_label": "Laurez Moreira (PSD)",
+              "candidate_slug": "laurez-moreira",
+              "year": 2026,
+              "office": "Governador",
+              "geography": "Tocantins",
+              "turn": 1,
+              "scenario_id": "real-time-big-data-estaduais-to-05805-2026-1t",
+              "proof": {
+                "raw_label": "Laurez Moreira (PSD)",
+                "candidate_slug": "laurez-moreira",
+                "basis": "curated_name_party_office_uf",
+                "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+                "source_sha256": "1ac0de50de41dbbbdb395973698b8a1e1d6f7913190cec2483b55aa59ad8216c"
+              }
+            },
+            {
+              "raw_label": "Ataides de Oliveira (Novo)",
+              "candidate_slug": "ataides-oliveira",
+              "year": 2026,
+              "office": "Governador",
+              "geography": "Tocantins",
+              "turn": 1,
+              "scenario_id": "real-time-big-data-estaduais-to-05805-2026-1t",
+              "proof": {
+                "raw_label": "Ataides de Oliveira (Novo)",
+                "candidate_slug": "ataides-oliveira",
+                "basis": "curated_name_party_office_uf",
+                "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+                "source_sha256": "8e41a0158c92bbeb9a694df21f5009a1dee4349b4be5ee4b09eb91dcd3f3c7c3"
+              }
+            },
+            {
+              "raw_label": "Prof. Witer Naves (PSOL)",
+              "candidate_slug": "witer-naves",
+              "year": 2026,
+              "office": "Governador",
+              "geography": "Tocantins",
+              "turn": 1,
+              "scenario_id": "real-time-big-data-estaduais-to-05805-2026-1t",
+              "proof": {
+                "raw_label": "Prof. Witer Naves (PSOL)",
+                "candidate_slug": "witer-naves",
+                "basis": "reviewed_documentary_bridge",
+                "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+                "source_sha256": "ddbab69e74b2271c4c006c6e9b98f7034bf8a83eedecdf2885bd978d40c937de"
+              }
+            },
+            {
+              "raw_label": "Vicentinho Júnior (PSDB)",
+              "candidate_slug": "vicentinho-junior",
+              "year": 2026,
+              "office": "Governador",
+              "geography": "Tocantins",
+              "turn": 2,
+              "scenario_id": "real-time-big-data-estaduais-to-05805-2026-2t-b460835afbbb5ec0",
+              "proof": {
+                "raw_label": "Vicentinho Júnior (PSDB)",
+                "candidate_slug": "vicentinho-junior",
+                "basis": "curated_name_party_office_uf",
+                "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+                "source_sha256": "60cfd10f7f71f2bffb914b85924f0d7471322ea91fa2ba7e033cc2a73d08f255"
+              }
+            },
+            {
+              "raw_label": "Professora Dorinha (União)",
+              "candidate_slug": "professora-dorinha",
+              "year": 2026,
+              "office": "Governador",
+              "geography": "Tocantins",
+              "turn": 2,
+              "scenario_id": "real-time-big-data-estaduais-to-05805-2026-2t-b460835afbbb5ec0",
+              "proof": {
+                "raw_label": "Professora Dorinha (União)",
+                "candidate_slug": "professora-dorinha",
+                "basis": "curated_name_party_office_uf",
+                "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+                "source_sha256": "c12a48a21f1f5ca7124cb9c7ce96c7d0debc8f771c81708b72cd06305716df7c"
+              }
+            },
+            {
+              "raw_label": "Professora Dorinha (União)",
+              "candidate_slug": "professora-dorinha",
+              "year": 2026,
+              "office": "Governador",
+              "geography": "Tocantins",
+              "turn": 2,
+              "scenario_id": "real-time-big-data-estaduais-to-05805-2026-2t-f5482d35a5f6ada7",
+              "proof": {
+                "raw_label": "Professora Dorinha (União)",
+                "candidate_slug": "professora-dorinha",
+                "basis": "curated_name_party_office_uf",
+                "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+                "source_sha256": "c12a48a21f1f5ca7124cb9c7ce96c7d0debc8f771c81708b72cd06305716df7c"
+              }
+            },
+            {
+              "raw_label": "Laurez Moreira (PSD)",
+              "candidate_slug": "laurez-moreira",
+              "year": 2026,
+              "office": "Governador",
+              "geography": "Tocantins",
+              "turn": 2,
+              "scenario_id": "real-time-big-data-estaduais-to-05805-2026-2t-f5482d35a5f6ada7",
+              "proof": {
+                "raw_label": "Laurez Moreira (PSD)",
+                "candidate_slug": "laurez-moreira",
+                "basis": "curated_name_party_office_uf",
+                "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+                "source_sha256": "1ac0de50de41dbbbdb395973698b8a1e1d6f7913190cec2483b55aa59ad8216c"
+              }
+            },
+            {
+              "raw_label": "Vicentinho Júnior (PSDB)",
+              "candidate_slug": "vicentinho-junior",
+              "year": 2026,
+              "office": "Governador",
+              "geography": "Tocantins",
+              "turn": 2,
+              "scenario_id": "real-time-big-data-estaduais-to-05805-2026-2t-80ffbe825f3a5fa0",
+              "proof": {
+                "raw_label": "Vicentinho Júnior (PSDB)",
+                "candidate_slug": "vicentinho-junior",
+                "basis": "curated_name_party_office_uf",
+                "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_TO.zip",
+                "source_sha256": "60cfd10f7f71f2bffb914b85924f0d7471322ea91fa2ba7e033cc2a73d08f255"
+              }
+            }
+          ],
+          "provenance": {
+            "result_url": "https://noticias.r7.com/eleicoes/2026/real-time-professora-dorinha-tem-35-e-vicentinho-junior-33-para-o-governo-de-to-17092026/",
+            "registry_observation": {
+              "url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "observed_at": "2026-09-17T19:14:22.704Z",
+              "evidence_sha256": "f59b8d1705120312f257a512928bc53ce5c477f0d1d8c6d049eb25d7ad3cd8c1"
+            },
+            "supporting_urls": [
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "consulted_at": "2026-09-17T19:17:45.684Z",
+            "capture": {
+              "format": "html",
+              "sha256": "76ea21c5df368e1e8175b521c9d9183b9f103c4a8789913dbde2ac18d0059e8b",
+              "status": "publicado"
+            },
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "direta_automatizavel",
+            "route_reason": "Publicação capturada, conciliada com o registro público PesqEle e aprovada pelos gates atomizados."
+          },
+          "cenarios": [
+            {
+              "id": "real-time-big-data-estaduais-to-05805-2026-1t",
+              "turn": 1,
+              "geography": "Tocantins",
+              "label_raw": "Primeiro turno estimulado: Os números são referentes ao cenário estimulado, quando uma lista de nomes é apresentada aos entrevistados. Veja o resultado:",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|TO|1|estimulada|8123353ccb5c12675e4b0a44f90808177719bf53fe7aa4a5242a367a63a79b3e|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Professora Dorinha (União)",
+                  "value_percent": 35,
+                  "candidate_slug": "professora-dorinha",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Vicentinho Júnior (PSDB)",
+                  "value_percent": 33,
+                  "candidate_slug": "vicentinho-junior",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Laurez Moreira (PSD)",
+                  "value_percent": 9,
+                  "candidate_slug": "laurez-moreira",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ataides de Oliveira (Novo)",
+                  "value_percent": 6,
+                  "candidate_slug": "ataides-oliveira",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Prof. Witer Naves (PSOL)",
+                  "value_percent": 4,
+                  "candidate_slug": "witer-naves",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Outros",
+                  "value_percent": 1,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo / Branco",
+                  "value_percent": 7,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe / Não respondeu (NS/NR)",
+                  "value_percent": 5,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "real-time-big-data-estaduais-to-05805-2026-2t-b460835afbbb5ec0",
+              "turn": 2,
+              "geography": "Tocantins",
+              "label_raw": "Vicentinho Júnior (PSDB) x Professora Dorinha (União)",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|TO|2|estimulada|894e9cdf325ad650c4a9bd079287c362858b800ff420617f6070e3a6cc9b3bbd|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Vicentinho Júnior (PSDB)",
+                  "value_percent": 43,
+                  "candidate_slug": "vicentinho-junior",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professora Dorinha (União)",
+                  "value_percent": 41,
+                  "candidate_slug": "professora-dorinha",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo / Branco",
+                  "value_percent": 8,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe / Não respondeu (NS/NR)",
+                  "value_percent": 8,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "real-time-big-data-estaduais-to-05805-2026-2t-f5482d35a5f6ada7",
+              "turn": 2,
+              "geography": "Tocantins",
+              "label_raw": "Professora Dorinha (União) x Laurez Moreira (PSD)",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|TO|2|estimulada|6b0eb9006dd6042f395b9e8efa69861242e0f02d9076feb69f4965917db70558|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Professora Dorinha (União)",
+                  "value_percent": 50,
+                  "candidate_slug": "professora-dorinha",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Laurez Moreira (PSD)",
+                  "value_percent": 32,
+                  "candidate_slug": "laurez-moreira",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo / Branco",
+                  "value_percent": 9,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe / Não respondeu (NS/NR)",
+                  "value_percent": 9,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "real-time-big-data-estaduais-to-05805-2026-2t-80ffbe825f3a5fa0",
+              "turn": 2,
+              "geography": "Tocantins",
+              "label_raw": "Vicentinho Júnior (PSDB) x Laurez Moreira (PSD)",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|TO|2|estimulada|28ad1ab301719db2848c92e307c8cedeef3ef0be25da6d471be80747f4b3279d|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Vicentinho Júnior (PSDB)",
+                  "value_percent": 48,
+                  "candidate_slug": "vicentinho-junior",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Laurez Moreira",
+                  "value_percent": 34,
+                  "candidate_slug": "laurez-moreira",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo / Branco",
+                  "value_percent": 9,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe / Não respondeu (NS/NR)",
+                  "value_percent": 9,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                }
+              ]
+            }
+          ],
+          "id": "real-time-big-data-estaduais-to-05805-2026",
+          "contratante": {
+            "value": null,
+            "status": "indeterminado"
+          }
         }
       ]
     }

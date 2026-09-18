@@ -343,7 +343,7 @@ function requiredMetadata(contract: ContratoPesquisaAgendada | null): string[] {
     if (alias.proof?.basis === "same_publication_full_name" && alias.proof.source_url !== contract.provenance.result_url) missing.push("identity_aliases.publication_mismatch")
     if (["curated_name_party_office_uf", "curated_ballot_name_office_uf", "reviewed_documentary_bridge"].includes(alias.proof?.basis) && alias.proof.source_url !== `https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_${contract.geography.code}.zip`) missing.push("identity_aliases.geography_mismatch")
     if (alias.proof?.basis === "reviewed_documentary_bridge") {
-      const candidate = resolverIdentidadeRevisada({ office: contract.office, source_id: contract.source_id, geography_code: contract.geography.code, registration_id: contract.registration.code.value }, alias.raw_label)
+      const candidate = resolverIdentidadeRevisada({ office: contract.office, source_id: contract.source_id, geography_code: contract.geography.code, registration_id: contract.registration.code.value }, alias.raw_label, undefined, contract.provenance.capture.sha256)
       if (!candidate || candidate.slug !== alias.candidate_slug || candidate.hash !== alias.proof.source_sha256) missing.push("identity_aliases.unreviewed_bridge")
     }
   }

@@ -73,6 +73,12 @@ test("PE aceita título de segundo turno em h3 e mantém espontânea parcial blo
   assert.throws(() => extrairPublicacaoRealTime(html, plain), /espontânea/)
 })
 
+test("categorias Real Time toleram espaços ao redor da barra e preservam o rótulo literal", () => {
+  const html = `<h1>Primeiro turno para governador</h1>${list([["A (X)", 50], ["B (Y)", 40], ["Nulo / Branco", 5], ["Não sabe / Não respondeu (NS / NR)", 5]])}`
+  const result = extrairPublicacaoRealTime(html, plain)!
+  assert.deepEqual(result.scenarios[0].results.slice(-2).map((row) => row.raw_label), ["Nulo / Branco", "Não sabe / Não respondeu (NS / NR)"])
+})
+
 test("UF nova recebe pesquisa e aliases completos em cópia, com readback pelo parser público", () => {
   const directory = mkdtempSync(join(tmpdir(), "pf-uf-nova-"))
   try {
