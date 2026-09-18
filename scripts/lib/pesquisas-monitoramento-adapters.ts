@@ -387,7 +387,7 @@ export function extrairListaCompletaPrimeiroTurno(html: string): Array<{ raw_lab
   return candidates[0] ?? null
 }
 
-const NON_CANDIDATE = /^(Outros|Nulos?\/Brancos?|Brancos?\/Nulos?|Não Sei|NS\s*\/\s*NR|Não sabe|Não sabe\/Não respondeu(?: \(NS\/NR\))?)$/i
+const NON_CANDIDATE = /^(Outros|Brancos? ou nulos?|Nulos?\/Brancos?|Brancos?\/Nulos?|Não Sei|NS\s*\/\s*NR|Não sabe|Não sabe\/Não respondeu(?: \(NS\/NR\))?)$/i
 
 /** Only explicit headings and complete lists establish a runoff scenario. */
 export function extrairCenariosSegundoTurno(html: string): Array<{
@@ -533,7 +533,7 @@ function buildEvidence(input: {
   const unresolvedResults = (rows: typeof results): EvidenciaPesquisaCandidata["results"] => rows.map((result) => ({
     ...result,
     candidate_slug: null,
-    match_status: NON_CANDIDATE.test(result.raw_label) ? "not_candidate" : "indeterminado",
+    match_status: NON_CANDIDATE.test(result.raw_label.replace(/\s*\/\s*/g, "/")) ? "not_candidate" : "indeterminado",
   }))
   return {
     source_id: input.source.id,

@@ -132,7 +132,7 @@ export function parseTextoPoderData(text: string, registrationId: string, public
     if (!rawPage) throw new Error("PoderData PDF: gráfico sem tabela conciliada")
     if (plot.turn === 1) {
       const chart = parseBarrasPoderData(rawPage, plot.question, plot.page)
-      if (![fieldwork.end, publicationDate].includes(chart.history.at(-1)!.date)) throw new Error("PoderData PDF: coluna de resultados não corresponde ao campo atual")
+      if (!(chart.history.length === 1 ? [fieldwork.end] : [fieldwork.end, publicationDate]).includes(chart.history.at(-1)!.date)) throw new Error("PoderData PDF: coluna de resultados não corresponde ao campo atual")
       scenarios.push({ ...plot, results_date: chart.history.at(-1)!.date, results: chart.history.at(-1)!.results, history: chart.history })
     } else {
       const chart = parseBarraSegundoTurnoPoderData(rawPage, plot.question, plot.page, resolverNomePresidencial)
@@ -154,19 +154,19 @@ export function parseTextoPoderData(text: string, registrationId: string, public
     return row && row[1] !== "Total" ? [{ raw_label: row[1], value_percent: Number(row[4].replace(/%$/, "").replace(",", ".")) }] : []
   })
   const primary = scenarios.find((scenario) => scenario.turn === 1)!
-  const identity = (name: string) => resolverNomePresidencial(name) ?? `literal:${name}`
+  const identity = (name: string) => name === "Branco ou nulo" ? "literal:Branco/Nulo" : resolverNomePresidencial(name) ?? `literal:${name}`
   if (crossRows.length !== primary.results.length || new Set(crossRows.map((row) => identity(row.raw_label))).size !== crossRows.length
     || new Set(primary.results.map((row) => identity(row.raw_label))).size !== primary.results.length
     || !primary.results.every((row) => crossRows.some((other) => identity(other.raw_label) === identity(row.raw_label) && other.value_percent === row.value_percent))) {
     throw new Error("PoderData PDF: lista ou percentual diverge da coluna Total")
   }
-  if (scenarios.some((scenario) => !["Branco/Nulo", "Não sabe"].every((label) => scenario.results.some((row) => row.raw_label === label)))) {
+  if (scenarios.some((scenario) => !["Branco/Nulo", "Não sabe"].every((label) => scenario.results.some((row) => identity(row.raw_label) === identity(label))))) {
     throw new Error("PoderData PDF: categorias de resposta ausentes")
   }
   return { registration_id: registrationId, fieldwork, sample_size: Number(sample[1].replaceAll(".", "")), margin_error_pp: Number(margin[1].replace(",", ".")), confidence_percent: Number(confidence[1]), scenarios }
 }
 
-/** Narrow text-object order observed in the two-series August bar chart.
+/** Narrow text-object order observed in one- and two-series August bar charts.
  * Never derive labels, counts or values from the independent Total table.
  * `rawPage` must be pdftotext -raw output from the same PDF bytes as -layout.
  */
@@ -181,7 +181,7 @@ function parseBarrasPoderData(rawPage: string, question: string, page: number) {
   const dates = body.slice(datesStart).map(columnDate)
   const labels = body.slice(labelsStart, datesStart)
   const values = body.slice(0, labelsStart).map((value) => Number(value.replace(",", ".")))
-  if (datesStart < 0 || labelsStart < 0 || dates.length !== 2 || dates.some((date) => !date) || dates[0]! >= dates[1]!
+  if (datesStart < 0 || labelsStart < 0 || ![1, 2].includes(dates.length) || dates.some((date) => !date) || (dates.length === 2 && dates[0]! >= dates[1]!)
     || labels.length < 4 || new Set(labels).size !== labels.length || labels.some((label) => !/\p{L}/u.test(label))
     || values.length !== labels.length * dates.length || values.some((value) => !Number.isFinite(value) || value < 0 || value > 100)) throw new Error("PoderData PDF: séries ou rótulos do gráfico incompletos")
   const history = dates.map((date, index) => ({ date: date!, results: labels.map((raw_label, row) => ({ raw_label, value_percent: values[index * labels.length + row] })) }))

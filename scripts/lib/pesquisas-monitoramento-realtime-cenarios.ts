@@ -20,6 +20,7 @@ export interface OpcoesLeituraRealTime {
 }
 
 const CATEGORY = /^(Outros|Nulos?\/Brancos?|Brancos?\/Nulos?|Não sabe|Não sabe\/Não respondeu(?: \(NS\s*\/\s*NR\))?|NS\s*\/\s*NR)$/i
+const normalizeCategoryLabel = (value: string) => value.replace(/\s*\/\s*/g, "/").trim()
 
 /** Read complete published lists; a headline or valid-vote calculation is never a table. */
 export function extrairPublicacaoRealTime(html: string, plain: (html: string) => string, options: OpcoesLeituraRealTime = {}): { scenarios: CenarioRealTime[]; notes: string[] } | null {
@@ -91,7 +92,7 @@ export function inspecionarPublicacaoRealTime(html: string, plain: (html: string
     if (!inGovernorScope) continue
     const lines = [...block[2].matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)].map((match) => plain(match[1]))
     const numerical = lines.filter((line) => /^.+?\s*:\s*\d+(?:[,.]\d+)?\s*%\*?$/.test(line))
-    const named = numerical.filter((line) => !CATEGORY.test(line.split(":")[0].trim()))
+    const named = numerical.filter((line) => !CATEGORY.test(normalizeCategoryLabel(line.split(":")[0])))
     if (named.length < 2) continue
     if (turn === 1 && mode !== "espontaneo" && named.filter((line) => /\([^()]+\)\s*:/.test(line)).length < 2) continue
     if (numerical.length !== lines.length) throw new Error("Real Time: lista contém linha sem percentual completo")
@@ -103,8 +104,8 @@ export function inspecionarPublicacaoRealTime(html: string, plain: (html: string
       return { raw_label: match[1].trim(), value_percent: value }
     })
     if (new Set(results.map((row) => row.raw_label)).size !== results.length || Math.abs(results.reduce((sum, row) => sum + row.value_percent, 0) - 100) > results.length * 0.5) throw new Error("Real Time: lista incompleta ou duplicada")
-    if (!results.some((row) => /^(Nulos?\/brancos?|Brancos?\/nulos?)$/i.test(row.raw_label)) || !results.some((row) => /^(?:Não sabe|NS\s*\/\s*NR)/i.test(row.raw_label))) throw new Error("Real Time: categorias de resposta ausentes")
-    const names = results.filter((row) => !CATEGORY.test(row.raw_label)).map((row) => row.raw_label)
+    if (!results.some((row) => /^(Nulos?\/brancos?|Brancos?\/nulos?)$/i.test(normalizeCategoryLabel(row.raw_label))) || !results.some((row) => /^(?:Não sabe|NS\s*\/\s*NR)/i.test(normalizeCategoryLabel(row.raw_label)))) throw new Error("Real Time: categorias de resposta ausentes")
+    const names = results.filter((row) => !CATEGORY.test(normalizeCategoryLabel(row.raw_label))).map((row) => row.raw_label)
     if (turn === 2) {
       if (names.length !== 2) throw new Error("Real Time: segundo turno exige dois candidatos")
       if (/\s+x\s+/i.test(heading)) {
@@ -125,7 +126,7 @@ export function inspecionarPublicacaoRealTime(html: string, plain: (html: string
     return { name: normalized(match?.[1] ?? value), party: match?.[2]?.toLocaleUpperCase("pt-BR") }
   }
   const sourceNames = new Map<string, Set<string>>()
-  for (const name of scenarios.flatMap((scenario) => scenario.results.map((row) => row.raw_label)).filter((name) => !CATEGORY.test(name))) {
+  for (const name of scenarios.flatMap((scenario) => scenario.results.map((row) => row.raw_label)).filter((name) => !CATEGORY.test(normalizeCategoryLabel(name)))) {
     const part = components(name)
     const parties = sourceNames.get(part.name) ?? new Set<string>()
     if (part.party) parties.add(part.party)

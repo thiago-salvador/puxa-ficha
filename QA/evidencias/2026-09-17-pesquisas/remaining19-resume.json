@@ -1,0 +1,447 @@
+{
+  "schema_version": "remaining19-resume-v1",
+  "generated_at": "2026-09-17",
+  "source_scope": "retained local artifacts only; no new searches/tests",
+  "records_count": 19,
+  "files": [
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-estaduais-2026-ce/source-html/datafolha-ce-ce-04292-2026.html.txt",
+      "sha256": "40424257484a83203e1e199eac207cbaaaca80796807a0d4c45643ec0737dde6"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-estaduais-2026-df/source-html/datafolha-df-df-07561-2026.html.txt",
+      "sha256": "24bf8cad0414ae1a1b0221306c552304e616a1dd777f691dc84606fd11ff688d"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-estaduais-2026-mg/source-html/datafolha-mg-mg-00446-2026.html.txt",
+      "sha256": "948071b5f78b7e5cb4257842e2fa89aa98537b2f2042a8d04ab50be05db5a924"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-estaduais-2026-pe/source-html/datafolha-pe-pe-01528-2026.html.txt",
+      "sha256": "16b4990f5fd2cc2c016bee7d0f8648023983ce8b7bfeed42c341eff974283295"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-estaduais-2026-pi/source-html/datafolha-pi-pi-06656-2026.html.txt",
+      "sha256": "8d9cef015abda8e9de3dd78bcd6417880ad4b110464a54a2ce52f0c93551ae26"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-estaduais-2026-pi/source-html/datafolha-folha-globo-estaduais-pi-03643-2026.html.txt",
+      "sha256": "9726c96bd62225afd860f8d52743ff774b4c1d1d172021daac430e208c24c90e"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-estaduais-2026-rj/source-html/datafolha-rj-rj-02945-2026.html.txt",
+      "sha256": "6513d774e3935a0a874c0a484ad427add9e305ac486598cd1438fd5bdbb5395f"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-estaduais-2026-sp/source-html/datafolha-sp-sp-01806-2026.html.txt",
+      "sha256": "f3e012739004d4c5e406c66970b2ad1746df885de9acf58ecf574cbf87d72724"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-nacional-2026-br/source-html/datafolha-br-04496-2026.html.txt",
+      "sha256": "125bf6282a3b910dacdf2bedfe68f94a4a410c281d9b44b0a6e62e6e0f48836e"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-nacional-2026-br/source-html/datafolha-folha-globo-nacional-br-04029-2026.html.txt",
+      "sha256": "43816dfb59c26b236671069ff1ec2c744a13f6ce2a49e3637b0007ed410e4546"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-poderdata-aya-nacional-2026-br/source-html/poderdata-br-07845-2026.html.txt",
+      "sha256": "84fe1fa5a8e5e570fefc3a56b60122abfc4c6df87863f3cf580bdd8654cff645"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-poderdata-aya-nacional-2026-br/source-html/poderdata-aya-nacional-br-00360-2026.html.txt",
+      "sha256": "0e8811514ac9f5b78bba3b99e3556c5811e0ef38288e7d10cf631ecffb6386c4"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-poderdata-aya-nacional-2026-br/source-html/poderdata-aya-nacional-br-06868-2026.html.txt",
+      "sha256": "a2fb7ec6496915b2d116dd3b8f4d965dbf07470fcd156d6257dd8d682977f11e"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-real-time-big-data-estaduais-2026-ba/source-html/real-time-big-data-ba-ba-00277-2026.html.txt",
+      "sha256": "337fdfadb7b8d974efe5c3882c26dfb3b6ca81720fe03fc610b3b95b3450ac5e"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-real-time-big-data-estaduais-2026-mt/source-html/real-time-big-data-mt-mt-04560-2026.html.txt",
+      "sha256": "f0fcb1f17c2e31c3f15511187b18f5129f02bfec3d592f3eb0a0ef8eaa4138de"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-real-time-big-data-estaduais-2026-pb/source-html/real-time-big-data-pb-pb-07790-2026.html.txt",
+      "sha256": "5fef021185b2d8eff4cbb920426aa69687f8c56926d84a5d6b89128359af4ecf"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-real-time-big-data-estaduais-2026-ro/source-html/real-time-big-data-ro-ro-04369-2026.html.txt",
+      "sha256": "3653f10127708ca107e39c44485a57b87bda834207cfb2f03e5d537685232d8a"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-real-time-big-data-estaduais-2026-se/source-html/real-time-big-data-se-se-07327-2026.html.txt",
+      "sha256": "63e645f39ac927d2d7f267313dc8973d901ced9a0c00535cb105f417761a83d1"
+    },
+    {
+      "path": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-real-time-big-data-estaduais-2026-to/source-html/real-time-big-data-estaduais-to-05805-2026.html.txt",
+      "sha256": "76ea21c5df368e1e8175b521c9d9183b9f103c4a8789913dbde2ac18d0059e8b"
+    },
+    {
+      "path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/br-extraidos.json",
+      "sha256": "353079a7f9ad8dd763b60cf336c54c269ee837c5d51cec01790685b3ac318bc4"
+    },
+    {
+      "path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/br-catalog-vs-raw.json",
+      "sha256": "94763dee7cba7b6ed97d327671bb456ce167a737c3b41f6472a6f5b59a8f979b"
+    },
+    {
+      "path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/br-poderdata-gazeta.txt",
+      "sha256": "1f3a8ac0350b355a7fc199e9e9c34bf9c4b75d3e65b4431c7415ab54025e3f04"
+    },
+    {
+      "path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/norte-datasets-20260917.json",
+      "sha256": "1b497dd97f27bcb467a797dbcb1243e3e6be46c13dc4514a42fe9f4ac990028b"
+    },
+    {
+      "path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/norte-TO-realtime-TO-05805-2026.txt",
+      "sha256": "462318322648c9b3cf43b3f64b1766bd4d0b960ab7cc4e570ee787ad837e8af4"
+    },
+    {
+      "path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/literal-urls-20260917/TO.literal.txt",
+      "sha256": "1fa564885140fed3bf720fabb8feee4fdf1aeb88e9bd008b790ad8da7526d758"
+    },
+    {
+      "path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/catalog-integration-20260917.json",
+      "sha256": "02e479f429c961d620c452e5aaeb62a9eade1ba68984126453bc8f7c03084dc2"
+    }
+  ],
+  "records": [
+    {
+      "id": "datafolha-ce-ce-04292-2026-live",
+      "poll_id": "datafolha-ce-ce-04292-2026",
+      "uf": "CE",
+      "office": "Governador",
+      "catalog_present": true,
+      "status": "extraction_incomplete",
+      "inventory_gap": "HTML inesperado: amostra ausente",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-estaduais-2026-ce/source-html/datafolha-ce-ce-04292-2026.html.txt",
+      "source_sha256": "40424257484a83203e1e199eac207cbaaaca80796807a0d4c45643ec0737dde6",
+      "qa_files": [],
+      "extracted_fields": [],
+      "extracted_scenarios": "none in retained structured artifacts",
+      "literal_gap": "HTML inesperado: amostra ausente",
+      "next_operation": "Reopen only the named extraction/metadata gap using retained source artifacts; no new search before repair."
+    },
+    {
+      "id": "datafolha-df-df-07561-2026-live",
+      "poll_id": "datafolha-df-df-07561-2026",
+      "uf": "DF",
+      "office": "Governador",
+      "catalog_present": true,
+      "status": "extraction_incomplete",
+      "inventory_gap": "HTML inesperado: resultados ausente",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-estaduais-2026-df/source-html/datafolha-df-df-07561-2026.html.txt",
+      "source_sha256": "24bf8cad0414ae1a1b0221306c552304e616a1dd777f691dc84606fd11ff688d",
+      "qa_files": [],
+      "extracted_fields": [],
+      "extracted_scenarios": "none in retained structured artifacts",
+      "literal_gap": "HTML inesperado: resultados ausente",
+      "next_operation": "Reopen only the named extraction/metadata gap using retained source artifacts; no new search before repair."
+    },
+    {
+      "id": "datafolha-mg-mg-00446-2026-live",
+      "poll_id": "datafolha-mg-mg-00446-2026",
+      "uf": "MG",
+      "office": "Governador",
+      "catalog_present": true,
+      "status": "source_metadata_conflict",
+      "inventory_gap": "PesqEle: metadados conflitantes com a publicação (fim do campo: publicação=2026-08-20, registro=2026-08-21)",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-estaduais-2026-mg/source-html/datafolha-mg-mg-00446-2026.html.txt",
+      "source_sha256": "948071b5f78b7e5cb4257842e2fa89aa98537b2f2042a8d04ab50be05db5a924",
+      "qa_files": [],
+      "extracted_fields": [],
+      "extracted_scenarios": "none in retained structured artifacts",
+      "literal_gap": "PesqEle: metadados conflitantes com a publicação (fim do campo: publicação=2026-08-20, registro=2026-08-21)",
+      "next_operation": "Reopen only the named extraction/metadata gap using retained source artifacts; no new search before repair."
+    },
+    {
+      "id": "datafolha-pe-pe-01528-2026-live",
+      "poll_id": "datafolha-pe-pe-01528-2026",
+      "uf": "PE",
+      "office": "Governador",
+      "catalog_present": true,
+      "status": "extraction_incomplete",
+      "inventory_gap": "HTML inesperado: confiança ausente",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-estaduais-2026-pe/source-html/datafolha-pe-pe-01528-2026.html.txt",
+      "source_sha256": "16b4990f5fd2cc2c016bee7d0f8648023983ce8b7bfeed42c341eff974283295",
+      "qa_files": [],
+      "extracted_fields": [],
+      "extracted_scenarios": "none in retained structured artifacts",
+      "literal_gap": "HTML inesperado: confiança ausente",
+      "next_operation": "Reopen only the named extraction/metadata gap using retained source artifacts; no new search before repair."
+    },
+    {
+      "id": "datafolha-pi-pi-06656-2026-live",
+      "poll_id": "datafolha-pi-pi-06656-2026",
+      "uf": "PI",
+      "office": "Governador",
+      "catalog_present": true,
+      "status": "extraction_incomplete",
+      "inventory_gap": "HTML inesperado: resultados ausente",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-estaduais-2026-pi/source-html/datafolha-pi-pi-06656-2026.html.txt",
+      "source_sha256": "8d9cef015abda8e9de3dd78bcd6417880ad4b110464a54a2ce52f0c93551ae26",
+      "qa_files": [],
+      "extracted_fields": [],
+      "extracted_scenarios": "none in retained structured artifacts",
+      "literal_gap": "HTML inesperado: resultados ausente",
+      "next_operation": "Reopen only the named extraction/metadata gap using retained source artifacts; no new search before repair."
+    },
+    {
+      "id": "datafolha-folha-globo-estaduais-pi-03643-2026-live",
+      "poll_id": "datafolha-folha-globo-estaduais-pi-03643-2026",
+      "uf": "PI",
+      "office": "Governador",
+      "catalog_present": true,
+      "status": "extraction_incomplete",
+      "inventory_gap": "HTML inesperado: resultados ausente",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-estaduais-2026-pi/source-html/datafolha-folha-globo-estaduais-pi-03643-2026.html.txt",
+      "source_sha256": "9726c96bd62225afd860f8d52743ff774b4c1d1d172021daac430e208c24c90e",
+      "qa_files": [],
+      "extracted_fields": [],
+      "extracted_scenarios": "none in retained structured artifacts",
+      "literal_gap": "HTML inesperado: resultados ausente",
+      "next_operation": "Reopen only the named extraction/metadata gap using retained source artifacts; no new search before repair."
+    },
+    {
+      "id": "datafolha-rj-rj-02945-2026-live",
+      "poll_id": "datafolha-rj-rj-02945-2026",
+      "uf": "RJ",
+      "office": "Governador",
+      "catalog_present": true,
+      "status": "extraction_incomplete",
+      "inventory_gap": "HTML inesperado: resultados ausente",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-estaduais-2026-rj/source-html/datafolha-rj-rj-02945-2026.html.txt",
+      "source_sha256": "6513d774e3935a0a874c0a484ad427add9e305ac486598cd1438fd5bdbb5395f",
+      "qa_files": [],
+      "extracted_fields": [],
+      "extracted_scenarios": "none in retained structured artifacts",
+      "literal_gap": "HTML inesperado: resultados ausente",
+      "next_operation": "Reopen only the named extraction/metadata gap using retained source artifacts; no new search before repair."
+    },
+    {
+      "id": "datafolha-sp-sp-01806-2026-live",
+      "poll_id": "datafolha-sp-sp-01806-2026",
+      "uf": "SP",
+      "office": "Governador",
+      "catalog_present": true,
+      "status": "source_metadata_conflict",
+      "inventory_gap": "PesqEle: metadados conflitantes com a publicação (fim do campo: publicação=2026-08-19, registro=2026-08-21)",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-estaduais-2026-sp/source-html/datafolha-sp-sp-01806-2026.html.txt",
+      "source_sha256": "f3e012739004d4c5e406c66970b2ad1746df885de9acf58ecf574cbf87d72724",
+      "qa_files": [],
+      "extracted_fields": [],
+      "extracted_scenarios": "none in retained structured artifacts",
+      "literal_gap": "PesqEle: metadados conflitantes com a publicação (fim do campo: publicação=2026-08-19, registro=2026-08-21)",
+      "next_operation": "Reopen only the named extraction/metadata gap using retained source artifacts; no new search before repair."
+    },
+    {
+      "id": "datafolha-br-04496-2026-live",
+      "poll_id": "datafolha-br-04496-2026",
+      "uf": "BR",
+      "office": "Presidente",
+      "catalog_present": true,
+      "status": "source_metadata_conflict",
+      "inventory_gap": "PesqEle: metadados conflitantes com a publicação (fim do campo: publicação=2026-08-19, registro=2026-08-20)",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-nacional-2026-br/source-html/datafolha-br-04496-2026.html.txt",
+      "source_sha256": "125bf6282a3b910dacdf2bedfe68f94a4a410c281d9b44b0a6e62e6e0f48836e",
+      "qa_files": [],
+      "extracted_fields": [],
+      "extracted_scenarios": "none in retained structured artifacts",
+      "literal_gap": "PesqEle: metadados conflitantes com a publicação (fim do campo: publicação=2026-08-19, registro=2026-08-20)",
+      "next_operation": "Reopen only the named extraction/metadata gap using retained source artifacts; no new search before repair."
+    },
+    {
+      "id": "datafolha-folha-globo-nacional-br-04029-2026-live",
+      "poll_id": "datafolha-folha-globo-nacional-br-04029-2026",
+      "uf": "BR",
+      "office": "Presidente",
+      "catalog_present": true,
+      "status": "extraction_incomplete",
+      "inventory_gap": "Error: HTML inesperado: amostra ausente",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-datafolha-folha-globo-nacional-2026-br/source-html/datafolha-folha-globo-nacional-br-04029-2026.html.txt",
+      "source_sha256": "43816dfb59c26b236671069ff1ec2c744a13f6ce2a49e3637b0007ed410e4546",
+      "qa_files": [],
+      "extracted_fields": [],
+      "extracted_scenarios": "none in retained structured artifacts",
+      "literal_gap": "Error: HTML inesperado: amostra ausente",
+      "next_operation": "Reopen only the named extraction/metadata gap using retained source artifacts; no new search before repair."
+    },
+    {
+      "id": "poderdata-br-07845-2026-live",
+      "poll_id": "poderdata-br-07845-2026",
+      "uf": "BR",
+      "office": "Presidente",
+      "catalog_present": true,
+      "status": "evidence_stale",
+      "inventory_gap": "evidence_stale; publicação 2026-07-30 observada em 2026-09-17T19:17:36.859Z; a proposta não contém nova observação",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-poderdata-aya-nacional-2026-br/source-html/poderdata-br-07845-2026.html.txt",
+      "source_sha256": "84fe1fa5a8e5e570fefc3a56b60122abfc4c6df87863f3cf580bdd8654cff645",
+      "qa_files": [],
+      "extracted_fields": [],
+      "extracted_scenarios": "none in retained structured artifacts",
+      "literal_gap": "evidence_stale; publicação 2026-07-30 observada em 2026-09-17T19:17:36.859Z; a proposta não contém nova observação",
+      "next_operation": "Reopen only the named extraction/metadata gap using retained source artifacts; no new search before repair."
+    },
+    {
+      "id": "poderdata-aya-nacional-br-00360-2026-live",
+      "poll_id": "poderdata-aya-nacional-br-00360-2026",
+      "uf": "BR",
+      "office": "Presidente",
+      "catalog_present": false,
+      "status": "extraction_incomplete",
+      "inventory_gap": "PoderData: relatório integral ausente ou ambíguo",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-poderdata-aya-nacional-2026-br/source-html/poderdata-aya-nacional-br-00360-2026.html.txt",
+      "source_sha256": "0e8811514ac9f5b78bba3b99e3556c5811e0ef38288e7d10cf631ecffb6386c4",
+      "qa_files": [
+        "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/br-extraidos.json",
+        "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/br-catalog-vs-raw.json",
+        "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/br-poderdata-gazeta.txt"
+      ],
+      "extracted_fields": [
+        "institute",
+        "registration",
+        "publication_date",
+        "field_start",
+        "field_end",
+        "sample",
+        "population",
+        "margin_error_pp",
+        "confidence_percent",
+        "commissioner"
+      ],
+      "extracted_scenarios": "4; catalog-vs-raw exact; 27 results exact",
+      "literal_gap": "Existing QA resolves integral extraction; identity/current-roster warning remains",
+      "next_operation": "Astra/human review of existing extraction and identity, then use exact QA evidence if accepted."
+    },
+    {
+      "id": "poderdata-aya-nacional-br-06868-2026-live",
+      "poll_id": "poderdata-aya-nacional-br-06868-2026",
+      "uf": "BR",
+      "office": "Presidente",
+      "catalog_present": true,
+      "status": "extraction_incomplete",
+      "inventory_gap": "PoderData: relatório integral ausente ou ambíguo",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-poderdata-aya-nacional-2026-br/source-html/poderdata-aya-nacional-br-06868-2026.html.txt",
+      "source_sha256": "a2fb7ec6496915b2d116dd3b8f4d965dbf07470fcd156d6257dd8d682977f11e",
+      "qa_files": [],
+      "extracted_fields": [],
+      "extracted_scenarios": "none in retained structured artifacts",
+      "literal_gap": "PoderData: relatório integral ausente ou ambíguo",
+      "next_operation": "Reopen only the named extraction/metadata gap using retained source artifacts; no new search before repair."
+    },
+    {
+      "id": "real-time-big-data-ba-ba-00277-2026-live",
+      "poll_id": "real-time-big-data-ba-ba-00277-2026",
+      "uf": "BA",
+      "office": "Governador",
+      "catalog_present": true,
+      "status": "extraction_incomplete",
+      "inventory_gap": "HTML inesperado: resultados ausente",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-real-time-big-data-estaduais-2026-ba/source-html/real-time-big-data-ba-ba-00277-2026.html.txt",
+      "source_sha256": "337fdfadb7b8d974efe5c3882c26dfb3b6ca81720fe03fc610b3b95b3450ac5e",
+      "qa_files": [],
+      "extracted_fields": [],
+      "extracted_scenarios": "none in retained structured artifacts",
+      "literal_gap": "HTML inesperado: resultados ausente",
+      "next_operation": "Reopen only the named extraction/metadata gap using retained source artifacts; no new search before repair."
+    },
+    {
+      "id": "real-time-big-data-mt-mt-04560-2026-live",
+      "poll_id": "real-time-big-data-mt-mt-04560-2026",
+      "uf": "MT",
+      "office": "Governador",
+      "catalog_present": true,
+      "status": "extraction_incomplete",
+      "inventory_gap": "HTML inesperado: turno ausente",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-real-time-big-data-estaduais-2026-mt/source-html/real-time-big-data-mt-mt-04560-2026.html.txt",
+      "source_sha256": "f0fcb1f17c2e31c3f15511187b18f5129f02bfec3d592f3eb0a0ef8eaa4138de",
+      "qa_files": [],
+      "extracted_fields": [],
+      "extracted_scenarios": "none in retained structured artifacts",
+      "literal_gap": "HTML inesperado: turno ausente",
+      "next_operation": "Reopen only the named extraction/metadata gap using retained source artifacts; no new search before repair."
+    },
+    {
+      "id": "real-time-big-data-pb-pb-07790-2026-live",
+      "poll_id": "real-time-big-data-pb-pb-07790-2026",
+      "uf": "PB",
+      "office": "Governador",
+      "catalog_present": true,
+      "status": "extraction_incomplete",
+      "inventory_gap": "HTML inesperado: método ausente",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-real-time-big-data-estaduais-2026-pb/source-html/real-time-big-data-pb-pb-07790-2026.html.txt",
+      "source_sha256": "5fef021185b2d8eff4cbb920426aa69687f8c56926d84a5d6b89128359af4ecf",
+      "qa_files": [],
+      "extracted_fields": [],
+      "extracted_scenarios": "none in retained structured artifacts",
+      "literal_gap": "HTML inesperado: método ausente",
+      "next_operation": "Reopen only the named extraction/metadata gap using retained source artifacts; no new search before repair."
+    },
+    {
+      "id": "real-time-big-data-ro-ro-04369-2026-live",
+      "poll_id": "real-time-big-data-ro-ro-04369-2026",
+      "uf": "RO",
+      "office": "Governador",
+      "catalog_present": true,
+      "status": "extraction_incomplete",
+      "inventory_gap": "HTML inesperado: resultados ausente",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-real-time-big-data-estaduais-2026-ro/source-html/real-time-big-data-ro-ro-04369-2026.html.txt",
+      "source_sha256": "3653f10127708ca107e39c44485a57b87bda834207cfb2f03e5d537685232d8a",
+      "qa_files": [],
+      "extracted_fields": [],
+      "extracted_scenarios": "none in retained structured artifacts",
+      "literal_gap": "HTML inesperado: resultados ausente",
+      "next_operation": "Reopen only the named extraction/metadata gap using retained source artifacts; no new search before repair."
+    },
+    {
+      "id": "real-time-big-data-se-se-07327-2026-live",
+      "poll_id": "real-time-big-data-se-se-07327-2026",
+      "uf": "SE",
+      "office": "Governador",
+      "catalog_present": true,
+      "status": "evidence_stale",
+      "inventory_gap": "evidence_stale; publicação 2026-08-03 observada em 2026-09-17T19:19:10.695Z; a proposta não contém nova observação",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-real-time-big-data-estaduais-2026-se/source-html/real-time-big-data-se-se-07327-2026.html.txt",
+      "source_sha256": "63e645f39ac927d2d7f267313dc8973d901ced9a0c00535cb105f417761a83d1",
+      "qa_files": [],
+      "extracted_fields": [],
+      "extracted_scenarios": "none in retained structured artifacts",
+      "literal_gap": "evidence_stale; publicação 2026-08-03 observada em 2026-09-17T19:19:10.695Z; a proposta não contém nova observação",
+      "next_operation": "Reopen only the named extraction/metadata gap using retained source artifacts; no new search before repair."
+    },
+    {
+      "id": "real-time-big-data-estaduais-to-05805-2026-live",
+      "poll_id": "real-time-big-data-estaduais-to-05805-2026",
+      "uf": "TO",
+      "office": "Governador",
+      "catalog_present": false,
+      "status": "extraction_incomplete",
+      "inventory_gap": "Real Time: categorias de resposta ausentes",
+      "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-real-time-big-data-estaduais-2026-to/source-html/real-time-big-data-estaduais-to-05805-2026.html.txt",
+      "source_sha256": "76ea21c5df368e1e8175b521c9d9183b9f103c4a8789913dbde2ac18d0059e8b",
+      "qa_files": [
+        "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/norte-datasets-20260917.json",
+        "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/norte-TO-realtime-TO-05805-2026.txt",
+        "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/literal-urls-20260917/TO.literal.txt",
+        "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/catalog-integration-20260917.json"
+      ],
+      "extracted_fields": [
+        "publication_date",
+        "fieldwork",
+        "sample_size",
+        "margin_error_pp",
+        "confidence_percent",
+        "method",
+        "contractor",
+        "registration"
+      ],
+      "extracted_scenarios": "4; 1 first-turn + 3 second-turn; grouped Other preserved",
+      "literal_gap": "Existing QA resolves categories extraction; Du Pereira + Siqueira Campos Jr remains grouped",
+      "next_operation": "Astra/human review of existing literal/dataset and grouped-category constraint."
+    }
+  ]
+}
