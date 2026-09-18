@@ -6,6 +6,7 @@ import { createHash } from "node:crypto"
 import type { EvidenciaPesquisaCandidata } from "./pesquisas-monitoramento"
 import type { ObservacaoPesqele } from "./pesquisas-monitoramento-pesqele"
 import type { DocumentoPoderData } from "./pesquisas-monitoramento-poderdata-pdf"
+import { reconciliacaoMetadadoRevisada } from "./pesquisas-monitoramento-reconciliacoes"
 import { margemCompativelComRegistro } from "./pesquisas-monitoramento-tse"
 import { extrairPublicacaoRealTime } from "./pesquisas-monitoramento-realtime-cenarios"
 
@@ -273,7 +274,9 @@ function extractSample(text: string): number {
     /(?:ouviu|ouvidos|entrevistou|entrevistados|foram ouvidos|amostra)[^0-9]{0,40}(\d{1,3}(?:\.\d{3})+|\d{3,6})\s+(?:eleitores|pessoas|entrevistas|entrevistados)/i,
     /(?:foram|total de)[^0-9]{0,20}(\d{1,3}(?:\.\d{3})+|\d{3,6})\s+entrevistas/i,
     /(?:com a realização de|pesquisa foi realizada com)\s+(\d{1,3}(?:\.\d{3})+|\d{3,6})\s+entrevistas/i,
-    /(?:pesquisa|levantamento)\s+foi\s+(?:realizad[oa]|feit[oa])[^.]{0,100}?\bcom\s+(?:as\s+entrevistas\s+de\s+)?(\d{1,3}(?:\.\d{3})+|\d{3,6})\s+eleitores/i,
+    // The subject may carry an intervening clause, as in "O levantamento,
+    // contratado pelo jornal X, foi realizado ... com 1.022 eleitores".
+    /(?:pesquisa|levantamento)(?:,[^.]{0,80},)?\s+foi\s+(?:realizad[oa]|feit[oa])[^.]{0,100}?\bcom\s+(?:as\s+entrevistas\s+de\s+)?(\d{1,3}(?:\.\d{3})+|\d{3,6})\s+eleitores/i,
   ], "amostra")
   return normalizeNumber(match[1])
 }
@@ -492,7 +495,11 @@ function buildEvidence(input: {
     const geographies = [input.target.geography, input.target.geography_code].map((value) => value.toLocaleLowerCase("pt-BR"))
     const conflicts: string[] = []
     for (const [key, published, registered] of [["registro", registration, registry.registration_id], ["início do campo", fieldwork.start, registry.field_start], ["fim do campo", fieldwork.end, registry.field_end], ["amostra", sampleSize, registry.sample_size]] as const) {
-      if (published !== registered) conflicts.push(`${key}: publicação=${published}, registro=${registered}`)
+      if (published === registered) continue
+      // A reviewed receipt only clears this exact pair of values for this exact
+      // registration and field; anything else still conflicts.
+      if (reconciliacaoMetadadoRevisada({ registration, field: key, published, registered })) continue
+      conflicts.push(`${key}: publicação=${published}, registro=${registered}`)
     }
     if (!geographies.includes(registry.geography.toLocaleLowerCase("pt-BR"))) conflicts.push("geografia")
     if (!registry.office.toLocaleLowerCase("pt-BR").includes(input.target.office.toLocaleLowerCase("pt-BR"))) conflicts.push("cargo")
