@@ -38,8 +38,17 @@ BEGIN
     RAISE EXCEPTION 'issue-383 rollback: escrita esperada=1 atual=%', afetadas;
   END IF;
 
+  -- Cardinalidade conferida: a chave e (migration_version,tabela,row_id), entao
+  -- 'issue-383-gustavo-henrique-terminal' pode ter zero ou varias linhas. Zero
+  -- significa que a migration nao gravou o snapshot; mais de uma, que alguem
+  -- escreveu por outro caminho. Nos dois casos o rollback pararia aqui em vez
+  -- de gravar recibo e derrubar o ledger em cima de um estado que nao conhece.
   DELETE FROM public.identidade_timeline_quarentena_snapshot
   WHERE migration_version = 'issue-383-gustavo-henrique-terminal';
+  GET DIAGNOSTICS afetadas = ROW_COUNT;
+  IF afetadas <> 1 THEN
+    RAISE EXCEPTION 'issue-383 rollback: snapshot esperado=1 atual=%', afetadas;
+  END IF;
 
   INSERT INTO public.coleta_log (fonte,escopo,alvo,resultado,volume,detalhe,url,execucao,natureza)
   SELECT 'tse-divulgacand-detalhe-2026','global',

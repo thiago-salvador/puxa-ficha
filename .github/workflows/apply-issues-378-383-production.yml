@@ -6,6 +6,14 @@ on:
       expected_sha:
         description: "SHA de 40 caracteres já mergeado em main"
         required: true
+      mode:
+        description: "dry-run ensaia e desfaz; apply grava. O ensaio roda sempre antes."
+        required: true
+        default: dry-run
+        type: choice
+        options:
+          - dry-run
+          - apply
 
 permissions:
   contents: read
@@ -29,6 +37,7 @@ jobs:
         env:
           DISPATCH_SHA: ${{ github.sha }}
           DISPATCH_REF: ${{ github.ref }}
+          PF_MODE: ${{ github.event.inputs.mode }}
           PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
         run: |
           set -euo pipefail
@@ -36,6 +45,7 @@ jobs:
           test "${#PF_EXPECTED_SHA}" -eq 40
           test "$PF_EXPECTED_SHA" = "$DISPATCH_SHA"
           test -n "${PF_DATABASE_URL:-}"
+          case "$PF_MODE" in dry-run|apply) ;; *) echo "modo inválido: $PF_MODE" >&2; exit 1 ;; esac
 
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -52,7 +62,17 @@ jobs:
 
       - run: npm ci --ignore-scripts
 
-      - name: Aplicar conjunto fechado
+      # Ordem de .coderabbit.yaml: dry-run antes de apply, sempre. O ensaio
+      # roda a migration, o INSERT no ledger e o readback na mesma transacao e
+      # termina em ROLLBACK, entao ele reprova aqui antes de qualquer escrita
+      # ficar de pe. Nao ha caminho que escreva sem passar por este passo.
+      - name: Ensaio (dry-run, não grava)
         env:
           PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
-        run: bash scripts/audit/apply-issues-378-383-production.sh
+        run: bash scripts/audit/apply-issues-378-383-production.sh dry-run
+
+      - name: Aplicar conjunto fechado
+        if: ${{ github.event.inputs.mode == 'apply' }}
+        env:
+          PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: bash scripts/audit/apply-issues-378-383-production.sh apply

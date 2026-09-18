@@ -31,9 +31,12 @@ BEGIN
     RAISE EXCEPTION 'issue-383 readback: ficha ainda aparece em candidatos_publico';
   END IF;
 
+  -- Exatamente um: zero significa que a migration nao gravou a preimagem, e
+  -- mais de um significa que alguem escreveu por outro caminho. Os dois
+  -- quebram o rollback, que casa uma linha so.
   IF (SELECT count(*) FROM public.identidade_timeline_quarentena_snapshot
        WHERE migration_version = 'issue-383-gustavo-henrique-terminal') <> 1 THEN
-    RAISE EXCEPTION 'issue-383 readback: snapshot de quarentena ausente';
+    RAISE EXCEPTION 'issue-383 readback: snapshot de quarentena ausente ou duplicado';
   END IF;
 END
 $readback$;
