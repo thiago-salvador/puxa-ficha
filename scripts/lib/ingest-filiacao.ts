@@ -1,4 +1,5 @@
 import { createReadStream, mkdirSync, readdirSync, rmSync } from "fs"
+import { constants, inflateRawSync } from "node:zlib"
 import { parse } from "csv-parse"
 import { resolve } from "path"
 import { execFileSync } from "child_process"
@@ -92,18 +93,46 @@ export async function parseCSV(
   return count
 }
 
-function buildCandidateNameMap(candidatos: CandidatoConfig[]): Map<string, CandidatoConfig[]> {
-  const map = new Map<string, CandidatoConfig[]>()
+/**
+ * Índice de nome para candidato, com guarda de homônimo.
+ *
+ * O arquivo oficial de filiação não traz CPF nem título: o esquema validado tem
+ * NM_ELEITOR, SG_PARTIDO, DS_SITUACAO_FILIADO, DT_FILIACAO e DT_DESFILIACAO. O
+ * casamento é, portanto, por nome, sobre uma base nacional de dezenas de milhões
+ * de linhas, e nome repete. Duas consequências, as duas tratadas aqui:
+ *
+ * 1. Chave que resolve para mais de um candidato da coorte é ambígua por
+ *    construção e sai do índice. Atribuir a filiação aos dois é o erro de
+ *    homônimo de 26/07/2026, que já custou uma linha do tempo inteira.
+ * 2. `nome_urna` não é nome civil ("POLICIAL EDJANE", "GALVAN"). Casar por ele
+ *    contra NM_ELEITOR só acerta por acidente e abre superfície de colisão, então
+ *    o índice usa apenas `nome_completo`.
+ */
+function buildCandidateNameMap(candidatos: CandidatoConfig[]): {
+  map: Map<string, CandidatoConfig>
+  ambiguos: Array<{ nome: string; slugs: string[] }>
+} {
+  const porNome = new Map<string, CandidatoConfig[]>()
   for (const c of candidatos) {
-    for (const key of [normalizeForMatch(c.nome_completo), normalizeForMatch(c.nome_urna)]) {
-      const existing = map.get(key) ?? []
-      if (!existing.some((item) => item.slug === c.slug)) {
-        existing.push(c)
-      }
-      map.set(key, existing)
+    const key = normalizeForMatch(c.nome_completo)
+    if (!key) continue
+    const existing = porNome.get(key) ?? []
+    if (!existing.some((item) => item.slug === c.slug)) {
+      existing.push(c)
     }
+    porNome.set(key, existing)
   }
-  return map
+
+  const map = new Map<string, CandidatoConfig>()
+  const ambiguos: Array<{ nome: string; slugs: string[] }> = []
+  for (const [key, lista] of porNome) {
+    if (lista.length > 1) {
+      ambiguos.push({ nome: key, slugs: lista.map((item) => item.slug) })
+      continue
+    }
+    if (lista[0]) map.set(key, lista[0])
+  }
+  return { map, ambiguos }
 }
 
 interface FiliacaoEntry {
@@ -307,9 +336,77 @@ function pickCurrentParty(filiacoes: FiliacaoEntry[]): string | null {
   return latestRows[0]?.partido ?? null
 }
 
-export async function ingestFiliacao(): Promise<IngestResult[]> {
+/**
+ * Lê só o cabeçalho do CSV dentro do ZIP, por range request, e diz qual esquema
+ * o TSE está publicando.
+ *
+ * Existe para não gastar 232 MB de download e um job inteiro para descobrir, na
+ * primeira linha, que o recurso é o perfil agregado. O ZIP guarda o primeiro
+ * arquivo logo no início, então os primeiros bytes já contêm o cabeçalho depois
+ * de inflados.
+ */
+export async function inspecionarEsquemaPublicado(
+  url = FILIADOS_URL,
+  fetcher: typeof fetch = fetch,
+): Promise<{ schema: FiliacaoSchema; headers: string[] } | null> {
+  try {
+    const resposta = await fetcher(url, { headers: { range: "bytes=0-300000" } })
+    if (!resposta.ok) return null
+    const buffer = Buffer.from(await resposta.arrayBuffer())
+    if (buffer.length < 30 || buffer.readUInt32LE(0) !== 0x04034b50) return null
+
+    const nameLen = buffer.readUInt16LE(26)
+    const extraLen = buffer.readUInt16LE(28)
+    const dataStart = 30 + nameLen + extraLen
+    const inflado = inflateRawSync(buffer.subarray(dataStart), {
+      finishFlush: constants.Z_SYNC_FLUSH,
+    })
+    const primeiraLinha = inflado.toString("latin1").split("\n")[0] ?? ""
+    if (!primeiraLinha.trim()) return null
+
+    const headers = primeiraLinha.split(";").map((coluna) => coluna.trim().replace(/^"|"$/g, ""))
+    return { schema: classificarEsquemaFiliacao(headers), headers }
+  } catch {
+    return null
+  }
+}
+
+export async function ingestFiliacao(
+  options: { dryRun?: boolean } = {},
+): Promise<IngestResult[]> {
   const candidatos = await loadCandidatosPublicos()
   const results: IngestResult[] = []
+  const dryRun = options.dryRun === true
+
+  // Pré-voo antes do download. Medido em 18/09/2026: o recurso publicado em
+  // `perfil_filiacao_partidaria.zip` é o PERFIL AGREGADO (contagem de filiados
+  // por partido, município, zona, gênero e faixa etária), sem nome de eleitor.
+  // Ele não sustenta nenhuma linha da timeline partidária, e o parser já o
+  // recusa. Sem este pré-voo, descobrir isso custava 232 MB de download, 4,3 GB
+  // em disco e um job de dezenas de minutos para terminar em erro.
+  const preVoo = await inspecionarEsquemaPublicado()
+  if (preVoo && preVoo.schema !== "individual") {
+    const detalhe =
+      `Fonte oficial publicada em ${FILIADOS_URL} é o perfil agregado de filiação ` +
+      `(esquema ${preVoo.schema}; primeiras colunas: ${preVoo.headers.slice(0, 6).join(", ")}). ` +
+      "Não traz nome de eleitor nem data de filiação individual, então nenhuma linha da " +
+      "timeline partidária pode ser atribuída a partir dela. A base nominal (FILIA) exige " +
+      "Partido, UF, Município e Zona por consulta e não permite varredura por candidato."
+    warn("filiacao", detalhe)
+    return [
+      {
+        source: "filiacao",
+        candidato: "*",
+        tables_updated: [],
+        rows_upserted: 0,
+        errors: [],
+        duration_ms: 0,
+        coleta_resultado: "nao_aplicavel",
+        coleta_detalhe: detalhe,
+        coleta_url: FILIADOS_URL,
+      },
+    ]
+  }
 
   mkdirSync(DATA_DIR, { recursive: true })
 
@@ -343,7 +440,14 @@ export async function ingestFiliacao(): Promise<IngestResult[]> {
     throw new Error("Nenhum CSV encontrado no zip de filiados")
   }
 
-  const nameMap = buildCandidateNameMap(candidatos)
+  const { map: nameMap, ambiguos: nomesAmbiguos } = buildCandidateNameMap(candidatos)
+  const slugsAmbiguos = new Set(nomesAmbiguos.flatMap((item) => item.slugs))
+  for (const item of nomesAmbiguos) {
+    warn(
+      "filiacao",
+      `  Nome ambíguo na coorte, ninguém recebe filiação por ele: ${item.nome} (${item.slugs.join(", ")})`,
+    )
+  }
 
   // Agrega todas as filiacoes por candidato
   const filiacoesPorCandidato = new Map<string, FiliacaoEntry[]>()
@@ -363,8 +467,8 @@ export async function ingestFiliacao(): Promise<IngestResult[]> {
         }
         const nomeRaw = row.NM_ELEITOR || ""
         const nomeNorm = normalizeForMatch(nomeRaw)
-        const candidates = nameMap.get(nomeNorm)
-        if (!candidates || candidates.length === 0) return
+        const candidato = nameMap.get(nomeNorm)
+        if (!candidato) return
 
         const entry: FiliacaoEntry = {
           partido: (row.SG_PARTIDO || "").trim(),
@@ -375,11 +479,9 @@ export async function ingestFiliacao(): Promise<IngestResult[]> {
           uf: (row.SG_UF || "").trim(),
         }
 
-        for (const cand of candidates) {
-          const existing = filiacoesPorCandidato.get(cand.slug) ?? []
-          existing.push(entry)
-          filiacoesPorCandidato.set(cand.slug, existing)
-        }
+        const existing = filiacoesPorCandidato.get(candidato.slug) ?? []
+        existing.push(entry)
+        filiacoesPorCandidato.set(candidato.slug, existing)
       })
     } catch (err) {
       warn("filiacao", `  Erro ao parsear ${csvFile}: ${err}`)
@@ -417,10 +519,16 @@ export async function ingestFiliacao(): Promise<IngestResult[]> {
       // ingest que nem rodou. Aqui o arquivo oficial FOI lido inteiro e a pessoa
       // não está nele: isso é ausência confirmada no escopo, não lacuna de
       // coleta, e a ficha precisa poder distinguir as duas (auditoria 2026-09-18).
-      result.coleta_resultado = "sem_achado_no_escopo"
-      result.coleta_detalhe =
-        `Arquivo oficial de filiação partidária do TSE lido por completo (${totalLinhasLidas} linha(s), ` +
-        `${filiacoesPorCandidato.size} candidato(s) da coorte casados por nome); nenhum registro para ${cand.nome_completo}.`
+      // Homônimo na própria coorte não é ausência: é recusa deliberada de
+      // atribuir, e o recibo precisa dizer isso, senão a ficha exibe "não consta
+      // no arquivo" para quem o coletor nem chegou a procurar.
+      const ambiguo = slugsAmbiguos.has(cand.slug)
+      result.coleta_resultado = ambiguo ? "indeterminado" : "sem_achado_no_escopo"
+      result.coleta_detalhe = ambiguo
+        ? `Nome completo de ${cand.nome_completo} colide com outro candidato da coorte e a fonte não traz ` +
+          "CPF nem título para desempatar; nenhuma filiação foi atribuída."
+        : `Arquivo oficial de filiação partidária do TSE lido por completo (${totalLinhasLidas} linha(s), ` +
+          `${filiacoesPorCandidato.size} candidato(s) da coorte casados por nome); nenhum registro para ${cand.nome_completo}.`
       result.coleta_url = FILIADOS_URL
       result.duration_ms = Date.now() - start
       results.push(result)
@@ -441,7 +549,9 @@ export async function ingestFiliacao(): Promise<IngestResult[]> {
       const timeline = buildTimelineEntries(filiacoes)
       const currentParty = pickCurrentParty(filiacoes)
 
-      if (currentParty) {
+      if (currentParty && dryRun) {
+        log("filiacao", `  [dry-run] ${cand.slug}: partido atual seria sincronizado para ${currentParty}`)
+      } else if (currentParty) {
         const { error: updateErr } = await supabase
           .from("candidatos")
           .update({
@@ -470,6 +580,15 @@ export async function ingestFiliacao(): Promise<IngestResult[]> {
           ano: mudanca.ano,
         }
         if (mudanca.contexto) row.contexto = mudanca.contexto
+
+        if (dryRun) {
+          log(
+            "filiacao",
+            `  [dry-run] ${cand.slug}: ${mudanca.ano} ${mudanca.partido_anterior} -> ${mudanca.partido_novo}`,
+          )
+          result.rows_upserted++
+          continue
+        }
 
         const { error: insertErr } = await supabase
           .from("mudancas_partido")
