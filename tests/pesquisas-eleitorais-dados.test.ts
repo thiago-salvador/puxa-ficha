@@ -200,6 +200,7 @@ describe("contrato dos dados de pesquisas eleitorais", () => {
       .map((poll) => poll.id)
       .sort()
     assert.deepEqual(ids, [
+      "poderdata-aya-nacional-br-00360-2026",
       "poderdata-aya-nacional-br-04914-2026",
       "poderdata-aya-nacional-br-04974-2026",
       "poderdata-aya-nacional-br-07561-2026",

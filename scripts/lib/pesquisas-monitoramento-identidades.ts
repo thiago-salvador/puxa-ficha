@@ -4,6 +4,7 @@ import { readFileSync, readdirSync } from "node:fs"
 import { resolve } from "node:path"
 
 interface IdentidadeCurada {
+  sqCandidato?: string
   nomeUrna: string
   partido: string
   slug: string
