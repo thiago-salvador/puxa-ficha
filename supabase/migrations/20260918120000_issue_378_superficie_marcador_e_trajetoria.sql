@@ -21,38 +21,54 @@
 -- sao tocados.
 --
 -- =====================================================================
--- BLOCO B. andre-do-prado: trajetoria partidaria derivada, legado
+-- BLOCO B. andre-do-prado: trajetoria partidaria de OUTRA pessoa
 -- =====================================================================
 --
 -- As sete linhas de `mudancas_partido` do candidato tem contexto "Mudanca
 -- observada entre eleicoes TSE (<ano>)" e foram gravadas em 06/04/2026 por uma
--- versao anterior do ingest. Nenhuma delas e reproduzivel pela derivacao de
--- hoje (`deriveTseObservedPartyChanges`, scripts/lib/party-timeline-
--- consistency.ts), por dois motivos independentes e verificaveis no proprio
--- repositorio:
+-- versao anterior do ingest, que casava candidatura por NOME. Duas pessoas
+-- distintas com o mesmo nome completo foram fundidas numa ficha so.
 --
---   1. A derivacao atual colapsa cada ano a UM partido e aborta o ano inteiro
---      quando ha mais de um (`conflitos`), emitindo no maximo uma mudanca por
---      ano. As linhas gravadas trazem DUAS mudancas em 2004, em direcoes
---      opostas (PSTU->PL e PL->PSTU). A logica de hoje nao produz esse par.
---   2. HISTORICAL_SAME_PARTY_GROUPS trata PL e PR como a mesma legenda (fonte:
---      TSE, aba de fusoes e mudancas de nomenclatura). A linha de 2022
---      (PR->PL) e, sob essa tabela, uma troca de partido onde houve apenas
---      renomeacao de legenda -- a derivacao atual a descarta explicitamente
---      (`!partyTimelineValuesEquivalent(anterior, novo)`).
+-- Fonte, conferida em 18/09/2026 nos pacotes `consulta_cand` do TSE
+-- (https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/), varredura de
+-- 1996 a 2024 por CPF; o pacote de 2004, que fecha o caso, tem SHA-256
+-- 917c224c0c5de85b3f75e56ed6c5723840d04486ed28c6679894723be06194d5:
 --
--- O restante da sequencia alterna PSTU com PL/PR a cada passo (2000 PL->PSTU,
--- 2010 PSTU->PR, 2012 PR->PSTU, 2014 PSTU->PR), assinatura de observacoes de
--- pessoas distintas fundidas por match fraco de nome: o ingest atual so aceita
--- observacao casada por CPF ou SQ.
+--   CPF 08518353840  ANDRE LUIS DO PRADO, o titular desta ficha
+--     2000  Vice-Prefeito   Guararema/SP     PL
+--     2004  Prefeito        Guararema/SP     PL
+--     2010  Dep. Estadual   SP               PR
+--     2014  Dep. Estadual   SP               PR
+--     2018  Dep. Estadual   SP               PR
+--     2022  Dep. Estadual   SP               PL
 --
--- Esta migration NAO afirma qual era a filiacao real em cada ano: afirmar isso
--- exigiria o pacote historico do TSE, que nao foi consultado aqui. Ela apenas
--- retira do ar uma cadeia derivada que a regra de derivacao vigente nao
--- sustenta, preservando as linhas e o motivo (`despublicado_em` /
--- `despublicacao_motivo`, reversivel). E o mesmo remedio ja aplicado a
--- cadu-xavier, jeronimo, joao-rodrigues e outros, que a auditoria reporta como
--- aviso R10_partido_so_despublicado.
+--   CPF 25093218898  ANDRE LUIS DO PRADO, urna "ANDRE PRADO"/"ANDRE LUIS"
+--     2000  Vereador        Ribeirao Preto   PSTU
+--     2004  Vereador        Ribeirao Preto   PSTU
+--     2012  Vice-Prefeito   Ribeirao Preto   PSTU
+--
+-- Em 2004 os dois concorreram ao mesmo tempo, em municipios diferentes e por
+-- partidos diferentes, o que produziu o par impossivel que a auditoria acusou
+-- (PSTU->PL e PL->PSTU no mesmo ano). Todo PSTU da trajetoria publicada vem do
+-- CPF 25093218898.
+--
+-- O titular nunca trocou de partido: PL e PR sao a mesma legenda em
+-- HISTORICAL_SAME_PARTY_GROUPS (scripts/lib/party-timeline-consistency.ts,
+-- fonte TSE, aba de fusoes e mudancas de nomenclatura), entao a cadeia
+-- PL/PL/PR/PR/PR/PL colapsa em um unico partido e a derivacao vigente
+-- (`deriveTseObservedPartyChanges`) emite ZERO mudancas para ele. As sete
+-- linhas saem do ar por inteiro, e nenhuma linha nova entra: a trajetoria
+-- correta e a ausencia de troca.
+--
+-- A derivacao de hoje nao reproduziria nada disso por dois motivos alem do
+-- CPF: ela so aceita observacao casada por CPF ou SQ (match fraco de nome nao
+-- entra), colapsa cada ano a UM partido e aborta o ano em conflito, emitindo no
+-- maximo uma mudanca por ano.
+--
+-- As linhas sao preservadas com motivo (`despublicado_em` /
+-- `despublicacao_motivo`, reversivel), mesmo remedio ja aplicado a cadu-xavier,
+-- jeronimo, joao-rodrigues e outros, que a auditoria reporta como aviso
+-- R10_partido_so_despublicado.
 --
 -- NAO aplicar por `supabase db push` nem por automacao: producao so recebe
 -- esta migration pelo workflow de aplicacao autorizado.
@@ -78,7 +94,7 @@ DO $apply$
 DECLARE
   quantidade integer;
   verificado_em timestamptz := timestamptz '2026-09-18T00:00:00Z';
-  motivo_trajetoria text := 'Cadeia derivada de "Mudanca observada entre eleicoes TSE" gravada em 06/04/2026 por ingest anterior, nao reproduzivel pela derivacao vigente: duas mudancas opostas no mesmo ano de 2004 (a derivacao atual emite no maximo uma por ano e aborta o ano em conflito) e uma troca PR->PL em 2022 que HISTORICAL_SAME_PARTY_GROUPS trata como a mesma legenda. Issue #378, violacao R8_reversao_mesmo_ano. Reversivel: linhas preservadas.';
+  motivo_trajetoria text := 'Trajetoria derivada de homonimo: as linhas vieram de ANDRE LUIS DO PRADO CPF 25093218898 (PSTU, Ribeirao Preto, 2000/2004/2012), pessoa distinta do titular desta ficha, CPF 08518353840 (Guararema e ALESP). Conferido em 18/09/2026 nos pacotes consulta_cand do TSE de 1996 a 2024. O titular nunca trocou de partido: PL e PR sao a mesma legenda, entao a derivacao vigente emite zero mudancas. Issue #378, violacao R8_reversao_mesmo_ano. Reversivel: linhas preservadas.';
 BEGIN
   IF NOT EXISTS (SELECT 1 FROM public.candidatos) THEN
     RAISE NOTICE 'issue-378: coorte ausente; correcao ignorada (replay)';
