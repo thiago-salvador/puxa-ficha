@@ -13,7 +13,11 @@ import { SIGLAS_PROJETO_LEI } from "@/lib/proposicao-natureza"
 import type { QuizAlignmentDataset, QuizCandidatoData, QuizContradicaoVoto, QuizPosicaoDeclarada } from "@/lib/quiz-types"
 import type { Candidato, Chapa2026, FichaCandidato, CandidatoComparavel, IndicadorEstadual, IndicadorEstadualRanking, DataResource, LegislacaoMandatoExecutivo, MudancaPartido, PatrimonioAusenciaOficial, ProjetoLei, SancoesVerificacao, TCUVerificacao, TransparenciaFamiliaPublica, TransparenciaFamiliaVerificacao } from "./types"
 import { buildGlobalSearchIndexItems, GLOBAL_SEARCH_CANDIDATE_COLUMNS, mergeVotacaoTagsByCandidatoId, type GlobalSearchCandidateRow, type GlobalSearchIndexItem, type VotacaoSearchRow } from "@/lib/global-search"
-import { countPartySwitches, normalizePartyTimelineForDisplay } from "@/lib/party-switches"
+import {
+  countPartySwitches,
+  normalizePartyTimelineForDisplay,
+  withCurrentRegistryPartyRow,
+} from "@/lib/party-switches"
 import { newsTitleMentionsCandidate } from "@/lib/news/name-match"
 import { splitNewsByDenylist } from "@/lib/news/denylist"
 import { newsRetentionCutoffIso } from "@/lib/operational-retention"
@@ -1750,14 +1754,30 @@ async function getCandidatoBySlugFromRelationResource(
   )
   const patrimonioConfiavel = normalizePatrimonioForDisplay(patrimonio.data ?? [])
   const financiamentoConfiavel = normalizeFinanciamentoForDisplay(financiamento.data ?? [])
-  const mudancasRaw = normalizePartyTimelineForDisplay(mudancas.data ?? []).sort(
-    (a, b) => rankMudancaPartido(b) - rankMudancaPartido(a)
-  )
+  // Último partido conhecido na trajetória: é o que permite fechar a linha do
+  // tempo (e acusar a lacuna) de quem não tem nenhuma row em `mudancas_partido`.
+  const ultimoRegistroPartidario =
+    [...historicoConfiavel]
+      .filter((item) => item.partido?.trim() && item.periodo_inicio != null)
+      .sort((a, b) => (a.periodo_inicio ?? 0) - (b.periodo_inicio ?? 0))
+      .at(-1) ?? null
+  const ultimoPartidoHistorico = ultimoRegistroPartidario?.partido ?? null
+  // A lacuna é medida ANTES da linha derivada do registro: o que a derivação faz
+  // é publicar o partido de registro, não descobrir a data da troca.
   const timelinePartidariaIncompleta = hasIncompletePartyTimeline(
-    mudancasRaw,
+    normalizePartyTimelineForDisplay(mudancas.data ?? []),
     candidato.partido_sigla,
-    candidato.partido_atual
+    candidato.partido_atual,
+    ultimoPartidoHistorico,
+    ultimoRegistroPartidario?.periodo_inicio ?? null,
   )
+  const mudancasRaw = normalizePartyTimelineForDisplay(
+    withCurrentRegistryPartyRow(mudancas.data ?? [], {
+      candidatoId: candidato.id,
+      partidoAtual: candidato.partido_sigla ?? candidato.partido_atual,
+      ultimoPartidoHistorico,
+    }),
+  ).sort((a, b) => rankMudancaPartido(b) - rankMudancaPartido(a))
   const chapa2026 = await fetchChapa2026(id, cacheMode)
 
   const pontosPublicos = shouldUseServiceRole
@@ -2348,11 +2368,23 @@ async function getCandidatosComparaveisResourceUncached(
       list.push(row as MudancaPartido)
       byCandidato.set(cid, list)
     }
-    for (const [cid, list] of byCandidato) {
-      switchCountById.set(cid, countPartySwitches(list))
-    }
+    // Mesma linha derivada do registro usada na ficha: sem ela o comparador
+    // mostra como mais fiel partidariamente quem trocou de partido depois da
+    // última eleição, porque a troca só existe no registro de 2026.
+    const partidoAtualById = new Map(
+      baseRows.map((row) => [row.id as string, (row.partido_sigla as string | null) ?? null]),
+    )
     for (const cid of comparadorIds) {
-      if (!switchCountById.has(cid)) switchCountById.set(cid, 0)
+      const list = byCandidato.get(cid) ?? []
+      switchCountById.set(
+        cid,
+        countPartySwitches(
+          withCurrentRegistryPartyRow(list, {
+            candidatoId: cid,
+            partidoAtual: partidoAtualById.get(cid) ?? null,
+          }),
+        ),
+      )
     }
 
     gastoMap.forEach((v, k) => gastoTotalsById.set(k, v))
@@ -2904,7 +2936,12 @@ async function getQuizAlignmentDatasetResourceUncached(
     for (const c of candidatos) {
       mudancasPorCandidato.set(
         c.id,
-        countPartySwitches(mudancasRowsByCandidato.get(c.id) ?? [])
+        countPartySwitches(
+          withCurrentRegistryPartyRow(mudancasRowsByCandidato.get(c.id) ?? [], {
+            candidatoId: c.id,
+            partidoAtual: c.partido_sigla ?? c.partido_atual,
+          }),
+        )
       )
     }
 

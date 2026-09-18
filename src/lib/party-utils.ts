@@ -154,6 +154,19 @@ const CANONICAL_PARTIES: CanonicalPartyDefinition[] = [
   { sigla: "SOLIDARIEDADE", aliases: ["Solidariedade", "SD"] },
   { sigla: "PTC", aliases: ["Partido Trabalhista Cristão", "Partido Trabalhista Cristao"] },
   { sigla: "PMB", aliases: ["Partido da Mulher Brasileira"] },
+  // Siglas extintas que aparecem como origem em `party-succession.ts`. Sem
+  // entrada canonica, `resolveCanonicalPartySigla` devolvia null e a aresta de
+  // sucessão nunca era encontrada. Todas conferidas na aba "Fusões,
+  // incorporações e mudanças de nomenclatura/sigla/ número de legenda" do TSE,
+  // https://www.tse.jus.br/partidos/partidos-politicos/partidos-registrados-no-tse
+  // (HTTP 200, acesso 2026-09-18).
+  { sigla: "PSDC", aliases: ["Partido Social Democrata Cristão", "Partido Social Democrata Cristao"] },
+  { sigla: "PEN", aliases: ["Partido Ecológico Nacional", "Partido Ecologico Nacional"] },
+  { sigla: "PMR", aliases: ["Partido Municipalista Renovador"] },
+  { sigla: "PGT", aliases: ["Partido Geral dos Trabalhadores"] },
+  { sigla: "PST", aliases: ["Partido Social Trabalhista"] },
+  { sigla: "PPL", aliases: ["Partido Pátria Livre", "Partido Patria Livre"] },
+  { sigla: "PSN", aliases: ["Partido da Solidariedade Nacional", "Partido Solidarista Nacional"] },
 ]
 
 const CANONICAL_PARTY_BY_TOKEN = new Map<string, string>()
@@ -168,7 +181,7 @@ for (const party of CANONICAL_PARTIES) {
 const HISTORICAL_PARTY_GROUPS: HistoricalPartyGroupDefinition[] = [
   { group: "MDB", labels: ["MDB", "PMDB"] },
   { group: "CIDADANIA", labels: ["CIDADANIA", "PPS", "Partido Popular Socialista"] },
-  { group: "REPUBLICANOS", labels: ["REPUBLICANOS", "PRB", "Partido Republicano Brasileiro"] },
+  { group: "REPUBLICANOS", labels: ["REPUBLICANOS", "PRB", "PMR", "Partido Republicano Brasileiro", "Partido Municipalista Renovador"] },
   { group: "DEM", labels: ["DEM", "DEMOCRATAS", "PFL", "Partido da Frente Liberal"] },
   { group: "PODE", labels: ["PODE", "PODEMOS", "PTN", "Partido Trabalhista Nacional"] },
   { group: "PP", labels: ["PP", "PPB", "PPR", "Progressistas"] },
@@ -179,6 +192,23 @@ const HISTORICAL_PARTY_GROUPS: HistoricalPartyGroupDefinition[] = [
   // "PMN -> MOBILIZA" e classificada como renomeação: nao entra em
   // countPartySwitches e a timeline rotula "(renomeação)" em vez de troca.
   { group: "MOBILIZA", labels: ["MOBILIZA", "PMN", "Mobilização Nacional", "Partido da Mobilização Nacional"] },
+  // Renomeações da MESMA legenda que faltavam aqui, todas da tabela "MUDANÇAS DE
+  // NOME E/OU SIGLA" do TSE (acesso 2026-09-18, mesma pagina citada acima):
+  // "Partido Trabalhista Cristão (PTC) | AGIR | RPP nº 51-91.1989.6.00.0000 |
+  // 31/03/2022"; "Partido da Reconstrução Nacional (PRN) | Partido Trabalhista
+  // Cristão (PTC) | 24/04/2001"; "Partido Social Democrata Cristão (PSDC) |
+  // Democracia Cristã (DC) | 17/05/2018"; "Partido da Mulher Brasileira (PMB) |
+  // Democrata | 02/12/2025"; "Partido Ecológico Nacional (PEN) | Patriota
+  // (PATRI). | 26/04/2018"; "Partido Municipalista Renovador (PMR) | Partido
+  // Republicano Brasileiro (PRB) | 21/09/2009"; "Partido da Solidariedade
+  // Nacional (PSN) | Partido Humanista da Solidariedade (PHS) | 30/05/2000".
+  // Sem elas, a ficha de quem seguiu na mesma legenda publicava troca de partido
+  // que nunca houve (auditoria 2026-09-18).
+  { group: "AGIR", labels: ["AGIR", "PTC", "PRN", "Partido Trabalhista Cristão", "Partido da Reconstrução Nacional"] },
+  { group: "DC", labels: ["DC", "PSDC", "Democracia Cristã", "Partido Social Democrata Cristão"] },
+  { group: "DEMOCRATA", labels: ["DEMOCRATA", "PMB", "Democrata", "Partido da Mulher Brasileira"] },
+  { group: "PATRIOTA", labels: ["PATRIOTA", "PATRI", "PEN", "Partido Ecológico Nacional"] },
+  { group: "PHS", labels: ["PHS", "PSN", "Partido Humanista da Solidariedade", "Partido da Solidariedade Nacional"] },
 ]
 
 const HISTORICAL_PARTY_GROUP_BY_TOKEN = new Map<string, string>()
@@ -208,6 +238,13 @@ const HISTORICAL_PARTY_DISPLAY: Record<string, HistoricalPartyDisplayDefinition>
   // quase todo o ano de 2023 a legenda ainda era PMN. Rotular 2023 como
   // MOBILIZA seria antecipar o fato.
   MOBILIZA: { historicalLabel: "PMN", modernLabel: "MOBILIZA", switchYear: 2024 },
+  // Mesma regra do MOBILIZA: o ano de corte é o primeiro ano inteiro sob o nome
+  // novo, para não antecipar o fato em decisões tomadas no fim do ano anterior.
+  AGIR: { historicalLabel: "PTC", modernLabel: "AGIR", switchYear: 2022 },
+  DC: { historicalLabel: "PSDC", modernLabel: "DC", switchYear: 2018 },
+  PATRIOTA: { historicalLabel: "PEN", modernLabel: "PATRIOTA", switchYear: 2018 },
+  DEMOCRATA: { historicalLabel: "PMB", modernLabel: "DEMOCRATA", switchYear: 2026 },
+  PHS: { historicalLabel: "PSN", modernLabel: "PHS", switchYear: 2000 },
 }
 
 export function resolveCanonicalPartySigla(value: string | null | undefined): string | null {

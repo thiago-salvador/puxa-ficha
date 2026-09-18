@@ -5,6 +5,12 @@ import {
   partiesHistoricallyEquivalent,
   resolveCanonicalPartySigla,
 } from "@/lib/party-utils"
+import {
+  formatPartySuccessionDate,
+  formatPartySuccessionLabel,
+  resolvePartySuccession,
+  walkPartySuccession,
+} from "@/lib/party-succession"
 import { stripAccents } from "@/lib/strip-accents"
 
 function normalizePartyToken(value: string | null | undefined) {
@@ -127,6 +133,14 @@ export function formatPartyTransitionLabel(
     return `${previous} → ${next} (renomeação)`
   }
 
+  // Fusão e incorporação extinguem a legenda de origem: o filiado passou para a
+  // de destino por ato de registro do TSE, sem se desfiliar. A linha continua na
+  // timeline, com o rótulo do que de fato aconteceu.
+  const succession = resolvePartySuccession(item.partido_anterior, item.partido_novo, { toYear: year })
+  if (succession) {
+    return `${previous} → ${next} (${formatPartySuccessionLabel(succession.kind)})`
+  }
+
   return `${previous} → ${next}`
 }
 
@@ -225,11 +239,18 @@ function isHistoricalRenameTransition(
 }
 
 function isEffectiveNonSwitchTimelineRow(
-  item: Pick<MudancaPartido, "partido_anterior" | "partido_novo">,
+  item: Pick<MudancaPartido, "partido_anterior" | "partido_novo" | "ano" | "data_mudanca">,
 ) {
   return (
     isSamePartyTransition(item) ||
-    partiesHistoricallyEquivalent(item.partido_anterior, item.partido_novo)
+    partiesHistoricallyEquivalent(item.partido_anterior, item.partido_novo) ||
+    // Sucessão de legenda (fusão ou incorporação) não é troca: o candidato não
+    // escolheu sair. Contar como troca inflava o número de trocas de quem estava
+    // no DEM quando virou UNIÃO, no PROS quando virou SOLIDARIEDADE, e assim por
+    // diante (auditoria 2026-09-18).
+    resolvePartySuccession(item.partido_anterior, item.partido_novo, {
+      toYear: getTimelineDisplayYear(item),
+    }) != null
   )
 }
 
@@ -396,6 +417,111 @@ export function normalizePartyTimelineForDisplay(mudancas: readonly MudancaParti
     .filter((item) => !isSamePartyTransition(item))
     .sort((a, b) => rankPartyTimelineRow(a) - rankPartyTimelineRow(b))
 }
+
+/**
+ * Contexto da linha derivada do registro de candidatura. É o marcador que separa
+ * "troca com data confirmada em fonte oficial" de "partido de registro", e o
+ * frescor da seção lê justamente ele para escrever o aviso certo.
+ */
+export const CURRENT_REGISTRY_PARTY_CONTEXT =
+  "Partido declarado no registro de candidatura 2026 (TSE)"
+
+export function isCurrentRegistryPartyContext(contexto: string | null | undefined) {
+  // Comparação exata, não substring: existem rows curadas no banco cujo contexto
+  // é "Mudança observada entre eleições TSE (2026), registro de candidatura", e
+  // um `includes("registro de candidatura")` as trataria como linha derivada,
+  // bloqueando a derivação e tirando-as do cálculo da última data confirmada.
+  if (contexto == null) return false
+  const normalizar = (valor: string) => stripAccents(valor).trim().toLowerCase()
+  return normalizar(contexto) === normalizar(CURRENT_REGISTRY_PARTY_CONTEXT)
+}
+
+/**
+ * Fecha a linha do tempo no partido do registro corrente.
+ *
+ * A derivação TSE só compara eleições encerradas (a varredura de
+ * `scripts/lib/ingest-tse-historico.ts` vai até 2024) e a coleta de filiação
+ * partidária está indisponível, então quem trocou de partido entre a última
+ * eleição e o registro de 2026 ficava com a timeline parada no partido antigo:
+ * 86 de 319 fichas publicadas com timeline, medido em 2026-09-18.
+ *
+ * A linha derivada declara o que a fonte sustenta e nada além: o partido pelo
+ * qual o registro de 2026 foi feito. `data_mudanca` fica nula de propósito,
+ * porque a data da desfiliação não consta em nenhuma fonte disponível. Mesmo
+ * padrão já usado em `ensureCurrentCandidacyInHistory`, que injeta a candidatura
+ * corrente na trajetória a partir de `candidatos`.
+ */
+export function withCurrentRegistryPartyRow(
+  mudancas: readonly MudancaPartido[],
+  options: {
+    candidatoId: string
+    partidoAtual: string | null | undefined
+    ultimoPartidoHistorico?: string | null
+    anoRegistro?: number
+  },
+): MudancaPartido[] {
+  const rows = [...mudancas]
+  const partidoAtual = options.partidoAtual?.trim()
+  if (!partidoAtual) return rows
+
+  const ano = options.anoRegistro ?? CURRENT_REGISTRY_ELECTION_YEAR
+  if (rows.some((row) => isCurrentRegistryPartyContext(row.contexto))) return rows
+
+  const ordered = normalizePartyTimelineForDisplay(rows)
+  const ultimaLinha = ordered.at(-1) ?? null
+  const ultimoDaTimeline = ultimaLinha?.partido_novo ?? null
+  let anterior = ultimoDaTimeline ?? options.ultimoPartidoHistorico ?? null
+  if (!anterior) return rows
+
+  // Quando a legenda observada foi extinta antes do registro corrente, a
+  // sucessão é fato datado e documentado: entra como linha própria, e a linha do
+  // registro passa a encadear a partir da legenda sucessora. Sem isso a ficha
+  // dizia "PROS → AGIR em 2026", com o PROS já incorporado pelo SOLIDARIEDADE
+  // desde fevereiro de 2023.
+  const anoObservado = ultimaLinha ? getTimelineDisplayYear(ultimaLinha) : null
+  for (const passo of walkPartySuccession(anterior, { fromYear: anoObservado, toYear: ano })) {
+    const anoPasso = Number(passo.decidedOn.slice(0, 4))
+    const idPasso = `sucessao-${anoPasso}-${passo.from}-${passo.to}-${options.candidatoId}`
+    // Renomeação da mesma legenda não vira linha: `formatPartyDisplayLabel` já
+    // mostra o nome vigente no ano, e uma linha "PMDB → MDB" só repetiria isso.
+    // O passo continua sendo percorrido para encadear o que vem depois.
+    // Id determinístico: chamada repetida não empilha a mesma sucessão de novo.
+    if (passo.kind === "renomeacao" || rows.some((row) => row.id === idPasso)) {
+      anterior = passo.to
+      continue
+    }
+    rows.push({
+      id: idPasso,
+      candidato_id: options.candidatoId,
+      partido_anterior: passo.from,
+      partido_novo: passo.to,
+      data_mudanca: passo.decidedOn,
+      ano: anoPasso,
+      contexto:
+        `Sucessão de legenda decidida pelo TSE em ${formatPartySuccessionDate(passo.decidedOn)} ` +
+        `(${passo.processo})`,
+    })
+    anterior = passo.to
+  }
+
+  if (partiesMatchForTimeline(anterior, partidoAtual)) return rows
+  if (partiesEquivalent(anterior, partidoAtual)) return rows
+
+  rows.push({
+    id: `registro-${ano}-${options.candidatoId}`,
+    candidato_id: options.candidatoId,
+    partido_anterior: anterior,
+    partido_novo: partidoAtual,
+    data_mudanca: null,
+    ano,
+    contexto: CURRENT_REGISTRY_PARTY_CONTEXT,
+  })
+
+  return rows
+}
+
+/** Ano da eleição corrente, espelhando `CURRENT_CANDIDACY_ELECTION_YEAR`. */
+const CURRENT_REGISTRY_ELECTION_YEAR = 2026
 
 /**
  * Número de trocas efetivas de partido.

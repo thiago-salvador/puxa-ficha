@@ -29,7 +29,7 @@ on:
   workflow_dispatch:
     inputs:
       sources:
-        description: "Fontes (separadas por espaço): camara senado tse transparencia sancoes google-news"
+        description: "Fontes (separadas por espaço): camara senado tse transparencia sancoes google-news filiacao"
         required: false
         default: "camara senado"
       # Em 30/07/2026 o job `camara` estourou os 30 min e foi cancelado sem
@@ -74,7 +74,8 @@ jobs:
       contains(github.event.inputs.sources, 'camara') ||
       contains(github.event.inputs.sources, 'senado') ||
       contains(github.event.inputs.sources, 'transparencia') ||
-      contains(github.event.inputs.sources, 'sancoes')
+      contains(github.event.inputs.sources, 'sancoes') ||
+      contains(github.event.inputs.sources, 'filiacao')
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -104,7 +105,15 @@ jobs:
               # scripts/ingest-all.ts (VALID_SOURCES). `transparencia` é OUTRO
               # coletor, o de gastos do Portal: sem esta linha, o ato "rodar a
               # coleta de sanções" era indispatchável por este workflow.
-              camara|senado|tse|transparencia|sancoes|google-news) SAFE="$SAFE $s" ;;
+              # `filiacao` estava em VALID_SOURCES do script desde sempre, mas
+              # fora desta allowlist: o coletor de filiação partidária do TSE
+              # nunca pôde ser disparado por aqui e nunca rodou. Resultado medido
+              # em 18/09/2026: 504 de 504 recibos `filiacao` em `coleta_log` eram
+              # `indeterminado`, e a linha do tempo partidária de 86 fichas
+              # publicadas parava na última eleição em vez de alcançar o partido
+              # do registro de 2026. É lote pesado (ZIP de 232 MB, CSV de 4,3 GB
+              # descompactado), então entra por disparo manual, nunca no cron.
+              camara|senado|tse|transparencia|sancoes|google-news|filiacao) SAFE="$SAFE $s" ;;
               *) echo "::error::fonte inválida: $s" ; exit 1 ;;
             esac
           done

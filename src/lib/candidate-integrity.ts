@@ -1,4 +1,5 @@
 import type { MudancaPartido } from "@/lib/types"
+import { resolvePartySuccession } from "@/lib/party-succession"
 import { partiesHistoricallyEquivalent } from "@/lib/party-utils"
 import { stripAccents } from "@/lib/strip-accents"
 
@@ -49,9 +50,35 @@ function transicaoTerminal(mudancas: MudancaPartido[]): MudancaPartido | null {
 export function hasIncompletePartyTimeline(
   mudancas: MudancaPartido[],
   partidoSigla: string | null | undefined,
-  partidoAtual: string | null | undefined
+  partidoAtual: string | null | undefined,
+  /**
+   * Último partido conhecido na trajetória (`historico_politico`), usado só quando
+   * não existe NENHUMA linha em `mudancas_partido`. Sem ele, 196 fichas publicadas
+   * com partido histórico divergente do atual não recebiam aviso nenhum, porque a
+   * função saía no `length === 0` (auditoria 2026-09-18).
+   */
+  ultimoPartidoHistorico?: string | null | undefined,
+  /** Ano em que `ultimoPartidoHistorico` foi observado; guarda a janela da sucessão. */
+  anoUltimoPartidoHistorico?: number | null | undefined,
 ): boolean {
-  if (mudancas.length === 0) return false
+  if (mudancas.length === 0) {
+    const historicoToken = normalizePartyValue(ultimoPartidoHistorico)
+    if (!historicoToken) return false
+
+    const atuaisSemTimeline = [
+      normalizePartyValue(partidoSigla),
+      normalizePartyValue(partidoAtual),
+    ].filter((value): value is string => Boolean(value))
+    if (atuaisSemTimeline.length === 0) return false
+    if (atuaisSemTimeline.includes(historicoToken)) return false
+
+    return !explicaMudancaDeLegenda(
+      ultimoPartidoHistorico,
+      partidoSigla,
+      partidoAtual,
+      anoUltimoPartidoHistorico ?? null,
+    )
+  }
 
   const latest = transicaoTerminal(mudancas)
   const latestPartidoNovo = latest?.partido_novo ?? null
@@ -79,11 +106,29 @@ export function hasIncompletePartyTimeline(
 
   if (currentTokens.includes(latestToken)) return false
 
-  // Equivalência histórica (ex.: PMDB ↔ MDB, DEM ↔ UNIÃO) evita falso positivo quando o
+  // Equivalência histórica (ex.: PMDB ↔ MDB) evita falso positivo quando o
   // normalizador da timeline colapsa a row de rename como redundante e a última entrada
   // ativa fica no partido pré-rename, apesar de o candidato estar no partido canônico atual.
   if (partidoSigla && partiesHistoricallyEquivalent(latestPartidoNovo, partidoSigla)) return false
   if (partidoAtual && partiesHistoricallyEquivalent(latestPartidoNovo, partidoAtual)) return false
 
-  return true
+  return !explicaMudancaDeLegenda(latestPartidoNovo, partidoSigla, partidoAtual, latest?.ano ?? null)
+}
+
+/**
+ * A legenda de origem foi extinta por fusão ou incorporação e o filiado passou à
+ * atual por ato do TSE? Nesse caso não há lacuna de dado: a mudança está datada e
+ * documentada, e o aviso de "linha do tempo desatualizada" seria falso.
+ */
+function explicaMudancaDeLegenda(
+  partidoAnterior: string | null | undefined,
+  partidoSigla: string | null | undefined,
+  partidoAtual: string | null | undefined,
+  anoAnterior?: number | null,
+): boolean {
+  return [partidoSigla, partidoAtual].some(
+    (destino) =>
+      !!destino &&
+      resolvePartySuccession(partidoAnterior, destino, { fromYear: anoAnterior ?? null }) != null,
+  )
 }

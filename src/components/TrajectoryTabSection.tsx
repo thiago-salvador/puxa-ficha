@@ -83,9 +83,14 @@ export function TrajectoryTabSection({
                 </p>
               )}
               {timelinePartidariaIncompleta && currentPartyLabel && (
+                // Desde 2026-09-18 a linha do tempo fecha no partido do registro
+                // corrente, então dizer que ela "não incorpora essa atualização"
+                // passou a contradizer o que está logo abaixo. O que continua
+                // faltando é a DATA da troca, e é isso que o aviso declara.
                 <p>
-                  Filiação atual publicada: {currentPartyLabel}. A linha do tempo partidária abaixo
-                  ainda não incorpora essa atualização.
+                  A filiação atual, {currentPartyLabel}, vem do registro de candidatura de 2026. A
+                  data em que a troca aconteceu não consta em fonte oficial disponível, então a
+                  linha do tempo abaixo mostra a mudança sem datá-la.
                 </p>
               )}
             </div>

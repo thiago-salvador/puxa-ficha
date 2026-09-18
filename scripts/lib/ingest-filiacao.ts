@@ -348,12 +348,15 @@ export async function ingestFiliacao(): Promise<IngestResult[]> {
   // Agrega todas as filiacoes por candidato
   const filiacoesPorCandidato = new Map<string, FiliacaoEntry[]>()
   const errosDeParse: string[] = []
+  // Volume lido de fato. É o que permite dizer, no recibo de quem não aparece no
+  // arquivo, que a ausência foi verificada contra a base inteira.
+  let totalLinhasLidas = 0
 
   for (const csvFile of csvFiles) {
     log("filiacao", `  Parseando: ${csvFile}`)
     try {
       let esquemaValidado = false
-      await parseCSV(csvFile, (row) => {
+      totalLinhasLidas += await parseCSV(csvFile, (row) => {
         if (!esquemaValidado) {
           validarEsquemaIndividual(row)
           esquemaValidado = true
@@ -409,6 +412,16 @@ export async function ingestFiliacao(): Promise<IngestResult[]> {
     const filiacoes = filiacoesPorCandidato.get(cand.slug)
     if (!filiacoes || filiacoes.length === 0) {
       log("filiacao", `  ${cand.slug}: sem dados de filiacao encontrados`)
+      // Sem desfecho declarado, `entradaDeResultado` caía no genérico "ingest
+      // terminou sem escrita e sem declarar desfecho", que é o mesmo texto de um
+      // ingest que nem rodou. Aqui o arquivo oficial FOI lido inteiro e a pessoa
+      // não está nele: isso é ausência confirmada no escopo, não lacuna de
+      // coleta, e a ficha precisa poder distinguir as duas (auditoria 2026-09-18).
+      result.coleta_resultado = "sem_achado_no_escopo"
+      result.coleta_detalhe =
+        `Arquivo oficial de filiação partidária do TSE lido por completo (${totalLinhasLidas} linha(s), ` +
+        `${filiacoesPorCandidato.size} candidato(s) da coorte casados por nome); nenhum registro para ${cand.nome_completo}.`
+      result.coleta_url = FILIADOS_URL
       result.duration_ms = Date.now() - start
       results.push(result)
       continue
