@@ -13,8 +13,8 @@
   "recortes": [
     {
       "nome": "quiz-position-quarantine-20260917",
-      "desde": "20260917190000",
-      "ate": "20260917190000",
+      "desde": "20260917182024",
+      "ate": "20260917182024",
       "allowlist": "scripts/audit/allowlist-quiz-position-quarantine-20260917.json",
       "divida": null
     },
