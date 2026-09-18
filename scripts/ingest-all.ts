@@ -154,7 +154,10 @@ export const INGEST_TASKS: IngestTask[] = [
     source: "filiacao",
     heading: "--- TSE Filiacao Partidaria ---",
     failureLabel: "Filiacao",
-    run: ingestFiliacao,
+    // `--dry-run` existe aqui porque esta fonte escreve partido atual e linha do
+    // tempo a partir de casamento por nome: inspecionar antes de gravar é a
+    // única forma barata de conferir o que ela faria.
+    run: () => ingestFiliacao({ dryRun: cli.dryRun }),
   },
   {
     source: "ceaps-senado",
