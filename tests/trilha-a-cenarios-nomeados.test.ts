@@ -288,7 +288,7 @@ describe("regressão: situação do registro vence o atalho do ano corrente", ()
     const rows = [
       linha({ id: "h-2026", cargo: "Presidente", tipo_evento: "candidatura", periodo_inicio: 2026, periodo_fim: null, observacoes: "pré-candidatura à Presidência em 2026", proveniencia: "manual" }),
     ]
-    assert.equal(render(rows).get("Candidatura: Presidente@2026"), "Candidato")
+    assert.equal(render(rows).get("Candidatura: Presidente@2026"), "2026 - Candidato")
   })
 })
 

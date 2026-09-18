@@ -34,6 +34,12 @@ function isCurrentUndecidedCandidatura(
 // (decisão editorial de 16/08): disputa de 2026 em aberto é sempre
 // "Candidato" na tela; o grau de registro segue visível no selo de
 // procedência do pleito e na observação da linha.
+//
+// O rótulo é o DESFECHO, não o período: ele entra depois do ano, na mesma
+// forma "<ano> - <desfecho>" das demais linhas de pleito ("2026 - Eleito",
+// "2026 - Registro indeferido"). Sem o ano, a candidatura em aberto era a
+// única linha da trilha sem data, e a ficha do senador de 2026 não dizia de
+// que eleição se tratava.
 const CURRENT_UNDECIDED_CANDIDATURA_LABEL = "Candidato"
 
 /** Chave alinhada a dedupe / ingest (`cargo_canonico` ou `canonicalCargo`). */
@@ -159,7 +165,10 @@ function formatHistoricoPeriodoBase(
   }
 
   if (isCurrentUndecidedCandidatura(item)) {
-    return CURRENT_UNDECIDED_CANDIDATURA_LABEL
+    const anoDaDisputa = item.periodo_inicio ?? item.periodo_fim
+    return anoDaDisputa != null
+      ? `${anoDaDisputa} - ${CURRENT_UNDECIDED_CANDIDATURA_LABEL}`
+      : CURRENT_UNDECIDED_CANDIDATURA_LABEL
   }
 
   if (item.periodo_inicio != null && item.periodo_fim != null) {
