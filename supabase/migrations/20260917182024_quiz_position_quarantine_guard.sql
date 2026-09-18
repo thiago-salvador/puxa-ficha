@@ -1,8 +1,30 @@
+-- Versao do ledger: 20260917182024. Esta migration foi aplicada em producao
+-- direto pelo MCP (apply_migration) em 2026-09-17T18:20:24Z, fora do fluxo de
+-- workflow, e entrou no ledger com timestamp proprio e sem arquivo no
+-- repositorio: violacao R1 do ledger-guard, que derrubou main de 19:07 em
+-- diante. O arquivo que ocupava o lugar dela aqui, 20260917190000, nunca foi
+-- aplicado e divergia do banco na definicao da tabela.
+--
+-- Este arquivo descreve a escrita que o banco tem. Conferido contra
+-- supabase_migrations.schema_migrations (texto aplicado: 1 statement,
+-- md5 c0cd8c5ae7550f8dcff38ff7471a8ff0) e contra o schema vivo em 17/09/2026:
+-- FK quiz_position_quarantine_candidato_id_fkey, PK, CHECK de posicao, RLS,
+-- grants, COMMENT, funcao e trigger, 28 linhas na tabela.
+--
+-- Duas diferencas deliberadas em relacao ao texto literal aplicado, ambas sem
+-- efeito sobre o estado final em producao:
+--   1. a anotacao -- @write, exigida por scripts/audit/check-migrations-allowlist.ts;
+--   2. o INSERT entra por SELECT ... JOIN public.candidatos em vez de VALUES
+--      direto. Em producao os 28 candidatos existem e o resultado e o mesmo;
+--      em banco vazio o VALUES direto viola a FK e derruba o replay linear
+--      (medido: replay-migrations.sh --gate, falha nova, 382 para 381
+--      aplicadas). Com o JOIN a migration replica e o dump de schema volta a
+--      conter a tabela, agora com a FK que producao tem.
 -- Quarentena nominal de posições do quiz sem suporte suficiente.
 -- A tabela é a autoridade de bloqueio: qualquer INSERT/UPDATE que tente
 -- reativar uma tupla enquanto ela estiver ativa permanece verificado=false.
 CREATE TABLE IF NOT EXISTS public.quiz_position_quarantine (
-  candidato_id uuid NOT NULL,
+  candidato_id uuid NOT NULL REFERENCES public.candidatos(id) ON DELETE CASCADE,
   tema text NOT NULL,
   posicao text NOT NULL CHECK (posicao IN ('a_favor', 'contra', 'ambiguo')),
   url_fonte text NOT NULL,
@@ -19,7 +41,7 @@ GRANT ALL ON public.quiz_position_quarantine TO service_role;
 COMMENT ON TABLE public.quiz_position_quarantine IS
   'Tuplas nominais cuja verificado=true foi bloqueada por auditoria do quiz; remover uma linha exige revisão de fonte.';
 
--- @write tabela=quiz_position_quarantine ref=migration:20260917190000 chave=4e3828f3-33c9-4206-9aff-7b869a466baa campos=candidato_id,tema,posicao,url_fonte,motivo,ativo
+-- @write tabela=quiz_position_quarantine ref=migration:20260917182024 chave=4e3828f3-33c9-4206-9aff-7b869a466baa campos=candidato_id,tema,posicao,url_fonte,motivo,ativo
 INSERT INTO public.quiz_position_quarantine (candidato_id, tema, posicao, url_fonte, motivo)
 SELECT alvo.candidato_id::uuid, alvo.tema, alvo.posicao, alvo.url_fonte, alvo.motivo
 FROM (VALUES

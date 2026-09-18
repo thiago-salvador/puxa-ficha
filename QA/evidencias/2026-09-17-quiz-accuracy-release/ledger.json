@@ -15,7 +15,7 @@
   "manifest": "scripts/audit/quiz-position-quarantine-20260917.json",
   "executor": "scripts/apply-quiz-position-quarantine.ts",
   "guard_test": "tests/quiz-position-quarantine.test.ts",
-  "migration_guard": "supabase/migrations/20260917190000_quiz_position_quarantine_guard.sql",
+  "migration_guard": "supabase/migrations/20260917182024_quiz_position_quarantine_guard.sql",
   "description_cas": "expected_descricao_sha256 from the audit snapshot is required before any update",
   "remote_writes": true,
   "apply_contract": {

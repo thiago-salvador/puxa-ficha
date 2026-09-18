@@ -98,7 +98,7 @@ test("a atualização aplicada é restrita à flag de verificação", async () =
 
 test("migration publica as 28 chaves e bloqueia reativação no banco", async () => {
   const [source, entries] = await Promise.all([
-    import("node:fs/promises").then((fs) => fs.readFile(new URL("../supabase/migrations/20260917190000_quiz_position_quarantine_guard.sql", import.meta.url), "utf8")),
+    import("node:fs/promises").then((fs) => fs.readFile(new URL("../supabase/migrations/20260917182024_quiz_position_quarantine_guard.sql", import.meta.url), "utf8")),
     Promise.resolve(readManifest()),
   ])
   for (const entry of entries) {
