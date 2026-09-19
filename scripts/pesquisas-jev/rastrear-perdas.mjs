@@ -14,7 +14,7 @@ const AQUI = dirname(fileURLToPath(import.meta.url))
 const RAIZ = resolve(AQUI, "../..")
 const EVID = join(RAIZ, "QA/evidencias/2026-09-19-jev-extracao-pesquisas")
 const JEV = join(process.env.HOME ?? "", ".claude/scripts/jev.py")
-const PERGUNTAS = join(AQUI, "perguntas-extracao-v3.json")
+const PERGUNTAS = join(AQUI, process.env.PF_PERGUNTAS ?? "perguntas-extracao-v4.json")
 const ACEITA = 0.8, DESCARTA = 0.2, MED_MIN = 0.6
 const POLITICAS = [
   "Enumeracao com verbo eliptico atribui o valor ao nome imediatamente anterior a ele.",
@@ -35,11 +35,11 @@ for (const [chave, cfg] of Object.entries(cenarios)) {
   const julg = []
   for (const [i, par] of pares.entries()) {
     const sp = join(dir, `s${i}.json`)
-    writeFileSync(sp, JSON.stringify({ par: { nome: par.nome, partido: par.partido, percentual: par.percentual, frase: par.frase, paragrafo: par.paragrafo }, contexto: { materia: { titulo, instituto: cfg.instituto }, alvo: { cargo: cfg.cargo, uf: cfg.uf }, politicas: POLITICAS } }))
+    writeFileSync(sp, JSON.stringify({ par: { nome: par.nome, partido: par.partido, percentual: par.percentual, frase: par.frase, paragrafo: par.paragrafo, secao: par.secao?.trecho ?? "nenhuma mencao de disputa antes deste trecho" }, contexto: { materia: { titulo, instituto: cfg.instituto }, alvo: { cargo: cfg.cargo, uf: cfg.uf }, politicas: POLITICAS } }))
     const a = JSON.parse(execFileSync("python3", [JEV, "ask", "--state", sp, "--questions", PERGUNTAS], { encoding: "utf8" })).answers ?? {}
-    julg.push({ ...par, atr: a.atribuicao?.noul ?? 0, atu: a.atualidade?.noul ?? 0, alv: a.disputa_alvo?.noul ?? 0, med: a.medida?.choice, medConf: a.medida?.confidence ?? 0 })
+    julg.push({ ...par, atr: a.atribuicao?.noul ?? 0, atu: a.atualidade?.noul ?? 0, alv: a.disputa_alvo?.noul ?? 0, med: a.medida?.choice, medConf: a.medida?.confidence ?? 0, rec: a.recorte?.choice, recConf: a.recorte?.confidence ?? 0 })
   }
-  const aceito = (j) => j.atr >= ACEITA && j.atu >= ACEITA && j.alv > DESCARTA && j.med === "intencao_voto_primeiro_turno" && j.medConf >= MED_MIN
+  const aceito = (j) => j.atr >= ACEITA && j.atu >= ACEITA && j.alv > DESCARTA && j.med === "intencao_voto_primeiro_turno" && j.medConf >= MED_MIN && j.rec === "geral" && j.recConf >= MED_MIN
   const aceitos = julg.filter(aceito)
 
   // Cada resultado esperado, rastreado ate onde some.
@@ -56,7 +56,9 @@ for (const [chave, cfg] of Object.entries(cenarios)) {
     if (j.atu < ACEITA) return { ...e, ponto_de_perda: `julgamento: atualidade ${j.atu}` }
     if (j.alv <= DESCARTA) return { ...e, ponto_de_perda: `julgamento: disputa_alvo ${j.alv}` }
     if (j.med !== "intencao_voto_primeiro_turno") return { ...e, ponto_de_perda: `julgamento: medida=${j.med} (${j.medConf})` }
-    return { ...e, ponto_de_perda: `julgamento: medida com confianca ${j.medConf}` }
+    if (j.medConf < MED_MIN) return { ...e, ponto_de_perda: `julgamento: medida com confianca ${j.medConf}` }
+    if (j.rec !== "geral") return { ...e, ponto_de_perda: `julgamento: recorte=${j.rec} (${j.recConf})` }
+    return { ...e, ponto_de_perda: `julgamento: recorte com confianca ${j.recConf}` }
   })
 
   // Falso positivo: entrou no cenario e nao estava no esperado.
@@ -70,4 +72,4 @@ for (const [chave, cfg] of Object.entries(cenarios)) {
   for (const t of trilha) console.log(`  ${t.ponto_de_perda === "recuperado" ? "OK  " : "PERDA"} ${String(t.percentual).padStart(3)}% ${t.nome.padEnd(22)} ${t.ponto_de_perda}`)
   for (const e of espurios) console.log(`  ESPURIO ${String(e.percentual).padStart(3)}% ${e.nome.padEnd(22)} :: ${e.frase.slice(0, 80)}`)
 }
-writeFileSync(join(EVID, "rastreio-perdas.json"), JSON.stringify(relatorio, null, 1))
+writeFileSync(join(EVID, process.env.PF_SAIDA ?? "rastreio-perdas.json"), JSON.stringify(relatorio, null, 1))

@@ -43,17 +43,32 @@ function rosterDaMateria(paragrafos) {
   return roster
 }
 
+// Ultima mencao explicita de disputa antes do trecho. O paragrafo e o recorte
+// decisivo para saber DE QUEM e o numero, mas nao para saber QUAL disputa: na
+// materia de SP a secao do Senado e anunciada num paragrafo e continua por mais
+// dois que nao a repetem, e foi por ai que sete candidatos ao Senado entraram no
+// cenario de governador.
+const MENCAO_DISPUTA = /(disputa pel[ao]s? (?:duas )?(?:vagas? ao |cadeiras? d[oe] )?senado|ao senado|corrida ao senado|disputa (?:pel[ao]|para o|ao) governo|governo d[eoa]|executivo estadual|disputa presidencial|para presidente|à? presid[êe]ncia)/i
+function secaoDe(paragrafos, indice) {
+  for (let i = indice; i >= 0; i--) {
+    const m = paragrafos[i].match(MENCAO_DISPUTA)
+    if (m) return { trecho: m[0], distancia_paragrafos: indice - i }
+  }
+  return { trecho: null, distancia_paragrafos: null }
+}
+
 export function paresCandidatos(html) {
   const safe = html.replace(/<(script|style|template|noscript)\b[^>]*>[\s\S]*?<\/\1>/gi, " ")
   const paragrafos = [...safe.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map((m) => strip(m[1])).filter(Boolean)
   const roster = rosterDaMateria(paragrafos)
   const pares = []
-  for (const p of paragrafos) {
+  for (const [indice, p] of paragrafos.entries()) {
     if (!/\d+(?:[,.]\d+)?\s*%/.test(p)) continue
+    const secao = secaoDe(paragrafos, indice)
     for (const frase of p.split(/(?<=[.;])\s+/)) {
       const pcts = [...frase.matchAll(/(\d+(?:[,.]\d+)?)\s*%/g)]
       if (!pcts.length) continue
-      const base = { frase: frase.slice(0, 320), paragrafo: p.slice(0, 700) }
+      const base = { frase: frase.slice(0, 320), paragrafo: p.slice(0, 700), secao }
       const nomes = [...frase.matchAll(NOME_COM_PARTIDO)]
       if (nomes.length) {
         for (const n of nomes) for (const pc of pcts) {
