@@ -58,8 +58,16 @@ receipt_filter() {
   WATCHDOG_RECEIPT_MAX_LINES="$RECEIPT_MAX_LINES" node -e '
 const max = Number(process.env.WATCHDOG_RECEIPT_MAX_LINES || 8)
 const text = require("node:fs").readFileSync(0, "utf8")
-const keep = /(##\[error\]|::error::|[A-Z][A-Z0-9_]*_STATUS=|operation_status=|coverage_status=|\bError:|\bfalha\b|exit code)/
-const drop = /(DeprecationWarning|if-no-files-found|^echo |>&2|^set -euo|^shell:|^##\[group\]|^if \[)/
+// Duas faixas. A forte e o que localiza a causa (asserção, erro nomeado); a
+// fraca e contexto util (status tipado, exit code). Quando ha mais linha
+// marcada que o teto, a fraca sai primeiro: medido no run 35448599774, em que
+// nomes de teste contendo "falha" ocupavam as 8 linhas e empurravam a
+// AssertionError para fora do recibo.
+const strong = /(##\[error\]|::error::|AssertionError|^not ok |^FAIL:|^✖|^Error:|^\s*at .*\.(ts|mjs|js):\d+)/
+const weak = /([A-Z][A-Z0-9_]*_STATUS=|operation_status=|coverage_status=|\bError:|\bfalha\b|exit code)/
+// Linha de teste que passou nunca e causa, e ✔/ℹ sao o ruido mais volumoso de
+// uma suite grande.
+const drop = /(DeprecationWarning|if-no-files-found|^[✔✓ℹ]|^\* \[|^echo |>&2|^set -euo|^shell:|^##\[group\]|^if \[)/
 const out = []
 const seen = new Set()
 let total = 0
@@ -68,15 +76,23 @@ for (const raw of text.split(/\r?\n/)) {
     .replace(/\x1B\[[0-9;]*[A-Za-z]/g, "")
     .replace(/^\d{4}-\d{2}-\d{2}T[\d:.]+Z\s*/, "")
     .trim()
-  if (!line || !keep.test(line) || drop.test(line)) continue
+  if (!line || drop.test(line)) continue
+  const rank = strong.test(line) ? 2 : weak.test(line) ? 1 : 0
+  if (rank === 0) continue
   total += 1
   const short = line.length > 240 ? line.slice(0, 240) + "..." : line
   if (seen.has(short)) continue
   seen.add(short)
-  out.push(short)
+  out.push({ short, rank, order: out.length })
 }
 if (out.length === 0) process.exit(0)
-const shown = out.slice(-max)
+// Corta por prioridade, devolve na ordem original do log.
+const shown = out
+  .slice()
+  .sort((a, b) => b.rank - a.rank || b.order - a.order)
+  .slice(0, max)
+  .sort((a, b) => a.order - b.order)
+  .map((item) => item.short)
 if (total > shown.length) console.log("(" + total + " linhas marcadas, mostrando as ultimas " + shown.length + ")")
 console.log(shown.join("\n"))
 '

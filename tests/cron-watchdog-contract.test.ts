@@ -450,6 +450,35 @@ describe("watchdog dry-run com curl mockado", () => {
     assert.doesNotMatch(output, /2026-09-18T14:46:38\.9877327Z/)
   })
 
+  // Regressao do run 35448599774: o step era uma suite de testes e os nomes dos
+  // testes que passaram continham "falha", ocupando as 8 linhas e empurrando a
+  // AssertionError para fora do recibo. Faixa forte tem que sobreviver ao corte.
+  it("prioriza a asserção sobre ruído de suíte que passou", () => {
+    const ruido = Array.from({ length: 12 }, (_, i) => `2026-09-19T14:00:0${i}Z ✔ falha fechado em caso ${i} (1ms)`)
+    const run = runWatchdog({
+      httpCode: "200",
+      body: JSON.stringify({ ok: true, total: 6 }),
+      runConclusion: "failure",
+      jobsJson: JSON.stringify({
+        jobs: [{ id: 3, name: "verify", conclusion: "failure", steps: [{ name: "Environment contract", conclusion: "failure" }] }],
+      }),
+      jobLog: [
+        ...ruido,
+        "2026-09-19T14:00:20Z ✖ env contract workflow scanner (60546ms)",
+        "2026-09-19T14:00:21Z AssertionError [ERR_ASSERTION]:",
+        "2026-09-19T14:00:22Z FAIL: referências sem documentação: FOO_BAR",
+        "2026-09-19T14:00:23Z ##[error]Process completed with exit code 1.",
+      ].join("\n"),
+    })
+    fixtures.push(run.fixture)
+    const output = `${run.stdout}\n${run.stderr}`
+    assert.equal(run.status, 0, output)
+
+    assert.match(output, /AssertionError \[ERR_ASSERTION\]:/)
+    assert.match(output, /FAIL: referências sem documentação: FOO_BAR/)
+    assert.doesNotMatch(output, /✔ falha fechado em caso/)
+  })
+
   // Fail-soft: payload torto da API nao pode derrubar o watchdog no meio do
   // loop, senao o proximo cron quebrado do dia fica sem alerta.
   it("publica a anomalia mesmo com payload de jobs malformado", () => {
