@@ -26,6 +26,9 @@ function runWatchdog(opts: {
   freshnessBody?: string
   freshnessCode?: string
   prodSha?: string
+  jobsJson?: string
+  jobLog?: string
+  env?: Record<string, string>
 }) {
   const fixture = mkdtempSync(join(tmpdir(), "pf-watchdog-"))
   const bin = join(fixture, "bin")
@@ -41,6 +44,15 @@ printf 'gh:%s\\n' "$*" >> "$PF_FIXTURE_CALLS"
 if [[ "$1" == "api" ]]; then
   if [[ "$*" == *"/issues"* ]]; then
     printf '%s\\n' '[]'
+    exit 0
+  fi
+  if [[ "$*" == *"/logs"* ]]; then
+    if [[ "\${PF_FAKE_LOG_FAILS:-0}" == "1" ]]; then exit 1; fi
+    printf '%s\\n' "$PF_FAKE_JOB_LOG"
+    exit 0
+  fi
+  if [[ "$*" == *"/jobs"* ]]; then
+    printf '%s\\n' "$PF_FAKE_JOBS_JSON"
     exit 0
   fi
   if [[ "$*" == *"/runs"* ]]; then
@@ -102,6 +114,8 @@ printf '%s' "$PF_FAKE_CURL_CODE"
       PF_FAKE_CURL_BODY: opts.body,
       PF_FAKE_CURL_CODE: opts.httpCode,
       PF_FAKE_RUN_CONCLUSION: opts.runConclusion ?? "success",
+      PF_FAKE_JOBS_JSON: opts.jobsJson ?? JSON.stringify({ jobs: [] }),
+      PF_FAKE_JOB_LOG: opts.jobLog ?? "",
       PF_FAKE_FRESHNESS_BODY:
         opts.freshnessBody ??
         JSON.stringify({
@@ -120,6 +134,7 @@ printf '%s' "$PF_FAKE_CURL_CODE"
       CRON_SECRET: opts.cronSecret ?? "test-cron-secret",
       PF_RUNTIME_SMOKE_ORIGIN: opts.origin ?? "https://puxaficha.com.br",
       GH_REPO: "thiago-salvador/puxa-ficha",
+      ...(opts.env ?? {}),
     },
   })
 
@@ -388,5 +403,203 @@ describe("watchdog dry-run com curl mockado", () => {
     assert.equal(toleradas.length, comMarcador.length)
     assert.ok(comMarcador.length > 0, "nenhum workflow declara o marcador")
     assert.match(output, /ação: criar issue/)
+  })
+
+  // O motivo da falha ja sai tipado dos scripts do repo; antes desta mudanca a
+  // issue carregava so a URL do run e cada investigacao rebaixava o log inteiro.
+  it("anexa job, step e linhas marcadas do log na issue de falha", () => {
+    const run = runWatchdog({
+      httpCode: "200",
+      body: JSON.stringify({ ok: true, total: 6 }),
+      runConclusion: "failure",
+      jobsJson: JSON.stringify({
+        jobs: [
+          { id: 1, name: "Coletar datafolha BR", conclusion: "success", steps: [] },
+          {
+            id: 2,
+            name: "Consolidar somente após todos os adaptadores",
+            conclusion: "failure",
+            steps: [
+              { name: "Instalar dependências sem scripts de pacote", conclusion: "success" },
+              { name: "Consolidar e falhar fechado", conclusion: "failure" },
+            ],
+          },
+        ],
+      }),
+      jobLog: [
+        "2026-09-18T14:46:38.9877327Z PESQUISAS_CONSOLIDATION_STATUS=blocked",
+        "2026-09-18T14:46:39.0265406Z ##[error]Process completed with exit code 1.",
+        "2026-09-18T14:46:39.0607331Z   if-no-files-found: error",
+        "2026-09-18T14:46:39.4452544Z (node:2520) [DEP0169] DeprecationWarning: url.parse() Error: nao deve vazar",
+        "2026-09-18T14:46:39.9517398Z Set output 'status'",
+      ].join("\n"),
+    })
+    fixtures.push(run.fixture)
+    const output = `${run.stdout}\n${run.stderr}`
+    assert.equal(run.status, 0, output)
+
+    assert.match(output, /### Recibo da falha/)
+    assert.match(output, /job: \*\*Consolidar somente após todos os adaptadores\*\*/)
+    assert.match(output, /step: `Consolidar e falhar fechado`/)
+    assert.match(output, /PESQUISAS_CONSOLIDATION_STATUS=blocked/)
+    assert.match(output, /Process completed with exit code 1\./)
+
+    // Job verde nao entra no recibo.
+    assert.doesNotMatch(output, /job: \*\*Coletar datafolha BR\*\*/)
+    // Ruido conhecido fica de fora mesmo carregando a palavra Error.
+    assert.doesNotMatch(output, /DeprecationWarning/)
+    assert.doesNotMatch(output, /if-no-files-found: error/)
+    // Timestamp do runner nao polui o bloco.
+    assert.doesNotMatch(output, /2026-09-18T14:46:38\.9877327Z/)
+  })
+
+  // Os tetos sao operados por env: valor torto tem que cair no fallback em vez
+  // de virar recibo vazio. jq --argjson recusa "abc" e Number("abc") e NaN.
+  it("cai para o fallback quando o teto vem torto no ambiente", () => {
+    const jobsJson = JSON.stringify({
+      jobs: [{ id: 5, name: "J", conclusion: "failure", steps: [{ name: "S", conclusion: "failure" }] }],
+    })
+    const jobLog = "2026-09-19T14:00:00Z ##[error]Process completed with exit code 1."
+
+    for (const torto of ["abc", "0", "-1", "NaN", "Infinity", ""]) {
+      const run = runWatchdog({
+        httpCode: "200",
+        body: JSON.stringify({ ok: true, total: 6 }),
+        runConclusion: "failure",
+        jobsJson,
+        jobLog,
+        env: { WATCHDOG_RECEIPT_MAX_JOBS: torto, WATCHDOG_RECEIPT_MAX_LINES: torto },
+      })
+      fixtures.push(run.fixture)
+      const output = `${run.stdout}\n${run.stderr}`
+      assert.equal(run.status, 0, `teto=${torto}: ${output}`)
+      assert.match(output, /### Recibo da falha/, `teto=${torto} perdeu o recibo`)
+      assert.match(output, /Process completed with exit code 1\./, `teto=${torto} perdeu a linha`)
+    }
+  })
+
+  // Fail-soft sem diagnostico esconde token sem actions:read ou log expirado.
+  it("registra em stderr quando o log do job nao vem", () => {
+    const run = runWatchdog({
+      httpCode: "200",
+      body: JSON.stringify({ ok: true, total: 6 }),
+      runConclusion: "failure",
+      jobsJson: JSON.stringify({
+        jobs: [{ id: 9, name: "J", conclusion: "failure", steps: [{ name: "S", conclusion: "failure" }] }],
+      }),
+      env: { PF_FAKE_LOG_FAILS: "1" },
+    })
+    fixtures.push(run.fixture)
+    const output = `${run.stdout}\n${run.stderr}`
+    assert.equal(run.status, 0, output)
+
+    assert.match(run.stderr, /log do job 9 indisponivel/)
+    assert.match(output, /sem linha marcada no log do job/)
+  })
+
+  // Regressao do run 35448599774: o step era uma suite de testes e os nomes dos
+  // testes que passaram continham "falha", ocupando as 8 linhas e empurrando a
+  // AssertionError para fora do recibo. Faixa forte tem que sobreviver ao corte.
+  it("prioriza a asserção sobre ruído de suíte que passou", () => {
+    const ruido = Array.from({ length: 12 }, (_, i) => `2026-09-19T14:00:0${i}Z ✔ falha fechado em caso ${i} (1ms)`)
+    const run = runWatchdog({
+      httpCode: "200",
+      body: JSON.stringify({ ok: true, total: 6 }),
+      runConclusion: "failure",
+      jobsJson: JSON.stringify({
+        jobs: [{ id: 3, name: "verify", conclusion: "failure", steps: [{ name: "Environment contract", conclusion: "failure" }] }],
+      }),
+      jobLog: [
+        ...ruido,
+        "2026-09-19T14:00:20Z ✖ env contract workflow scanner (60546ms)",
+        "2026-09-19T14:00:21Z AssertionError [ERR_ASSERTION]:",
+        "2026-09-19T14:00:22Z FAIL: referências sem documentação: FOO_BAR",
+        "2026-09-19T14:00:23Z ##[error]Process completed with exit code 1.",
+      ].join("\n"),
+    })
+    fixtures.push(run.fixture)
+    const output = `${run.stdout}\n${run.stderr}`
+    assert.equal(run.status, 0, output)
+
+    assert.match(output, /AssertionError \[ERR_ASSERTION\]:/)
+    assert.match(output, /FAIL: referências sem documentação: FOO_BAR/)
+    assert.doesNotMatch(output, /✔ falha fechado em caso/)
+  })
+
+  // Medido no run 35457743862: o step reprovou por 503 do endpoint de audit do
+  // npm e a única linha que dizia isso era "npm error audit endpoint returned
+  // an error", que não casava com marcador nenhum. O recibo saía só com
+  // "exit code 1", que não diz nada.
+  it("captura falha de ferramenta que não usa marcador do Actions", () => {
+    const run = runWatchdog({
+      httpCode: "200",
+      body: JSON.stringify({ ok: true, total: 6 }),
+      runConclusion: "failure",
+      jobsJson: JSON.stringify({
+        jobs: [{ id: 4, name: "verify", conclusion: "failure", steps: [{ name: "Audit (production deps)", conclusion: "failure" }] }],
+      }),
+      jobLog: [
+        "2026-09-19T17:20:24Z npm warn audit 503 Service Unavailable - POST https://registry.npmjs.org/-/npm/v1/security/advisories/bulk",
+        "2026-09-19T17:20:24Z npm error audit endpoint returned an error",
+        "2026-09-19T17:20:24Z ##[error]Process completed with exit code 1.",
+      ].join("\n"),
+    })
+    fixtures.push(run.fixture)
+    const output = `${run.stdout}\n${run.stderr}`
+    assert.equal(run.status, 0, output)
+
+    assert.match(output, /npm error audit endpoint returned an error/)
+  })
+
+  // Fail-soft: payload torto da API nao pode derrubar o watchdog no meio do
+  // loop, senao o proximo cron quebrado do dia fica sem alerta.
+  it("publica a anomalia mesmo com payload de jobs malformado", () => {
+    const run = runWatchdog({
+      httpCode: "200",
+      body: JSON.stringify({ ok: true, total: 6 }),
+      runConclusion: "failure",
+      jobsJson: JSON.stringify({ jobs: [{ id: "nao-e-numero", name: "J", conclusion: "failure" }] }),
+    })
+    fixtures.push(run.fixture)
+    const output = `${run.stdout}\n${run.stderr}`
+    assert.equal(run.status, 0, output)
+
+    assert.match(output, /Anomalia de cron detectada/)
+    assert.doesNotMatch(output, /### Recibo da falha/)
+    assert.doesNotMatch(run.stderr, /invalid JSON text passed to --argjson/)
+  })
+
+  it("segue publicando a anomalia quando o run nao tem job com falha", () => {
+    const run = runWatchdog({
+      httpCode: "200",
+      body: JSON.stringify({ ok: true, total: 6 }),
+      runConclusion: "failure",
+      jobsJson: JSON.stringify({ jobs: [{ id: 7, name: "algum job", conclusion: "success", steps: [] }] }),
+    })
+    fixtures.push(run.fixture)
+    const output = `${run.stdout}\n${run.stderr}`
+    assert.equal(run.status, 0, output)
+
+    assert.match(output, /Anomalia de cron detectada/)
+    assert.match(output, /ação: criar issue/)
+    assert.doesNotMatch(output, /### Recibo da falha/)
+  })
+
+  it("o recibo tem teto de jobs e de linhas", () => {
+    assert.match(script, /WATCHDOG_RECEIPT_MAX_JOBS:-3/)
+    assert.match(script, /WATCHDOG_RECEIPT_MAX_LINES:-8/)
+    assert.match(script, /failure_receipt/)
+  })
+
+  // gh recusa imprimir log de Actions sem esta flag, e sem log o recibo vira so
+  // o nome do job. Medido em 19/09 contra o run 35356896890.
+  it("busca o log do job com escape ANSI liberado e cai para a chamada simples", () => {
+    assert.match(script, /--allow-escape-sequences/)
+    assert.match(script, /job_log\(\) \{/)
+    // Duas tentativas ao mesmo endpoint: com a flag e sem ela, nessa ordem.
+    const tentativas = script.match(/gh api --method GET.*actions\/jobs\/\$\{job_id\}\/logs/g) ?? []
+    assert.equal(tentativas.length, 2)
+    assert.match(tentativas[0], /--allow-escape-sequences/)
+    assert.doesNotMatch(tentativas[1], /--allow-escape-sequences/)
   })
 })
