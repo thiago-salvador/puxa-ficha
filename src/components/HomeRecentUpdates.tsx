@@ -26,7 +26,7 @@ export function HomeRecentUpdates({ resource = { status: "unavailable", updates:
                 </dl>
                 <p className="mt-4 text-xs text-muted-foreground">Detectado em <time dateTime={update.detected_at}>{new Intl.DateTimeFormat("pt-BR", { dateStyle: "short", timeStyle: "short", timeZone: "America/Sao_Paulo" }).format(new Date(update.detected_at))}</time> (Brasília)</p>
                 <div className="mt-3 flex flex-wrap gap-x-5">
-                  <Link href={`/candidato/${update.candidate_slug}`} className="inline-flex min-h-11 items-center text-xs font-semibold underline underline-offset-4">Ver ficha<span className="sr-only"> de {update.candidate_name}</span></Link>
+                  <Link href={`/candidato/${update.candidate_slug}`} prefetch={false} className="inline-flex min-h-11 items-center text-xs font-semibold underline underline-offset-4">Ver ficha<span className="sr-only"> de {update.candidate_name}</span></Link>
                   <a href={update.source_url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center text-xs font-semibold underline underline-offset-4">Fonte: TSE<span className="sr-only"> (abre em nova aba)</span></a>
                 </div>
               </li>
