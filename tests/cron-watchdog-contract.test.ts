@@ -450,6 +450,24 @@ describe("watchdog dry-run com curl mockado", () => {
     assert.doesNotMatch(output, /2026-09-18T14:46:38\.9877327Z/)
   })
 
+  // Fail-soft: payload torto da API nao pode derrubar o watchdog no meio do
+  // loop, senao o proximo cron quebrado do dia fica sem alerta.
+  it("publica a anomalia mesmo com payload de jobs malformado", () => {
+    const run = runWatchdog({
+      httpCode: "200",
+      body: JSON.stringify({ ok: true, total: 6 }),
+      runConclusion: "failure",
+      jobsJson: JSON.stringify({ jobs: [{ id: "nao-e-numero", name: "J", conclusion: "failure" }] }),
+    })
+    fixtures.push(run.fixture)
+    const output = `${run.stdout}\n${run.stderr}`
+    assert.equal(run.status, 0, output)
+
+    assert.match(output, /Anomalia de cron detectada/)
+    assert.doesNotMatch(output, /### Recibo da falha/)
+    assert.doesNotMatch(run.stderr, /invalid JSON text passed to --argjson/)
+  })
+
   it("segue publicando a anomalia quando o run nao tem job com falha", () => {
     const run = runWatchdog({
       httpCode: "200",

@@ -103,17 +103,23 @@ failure_receipt() {
   if ! jq -e '.jobs' >/dev/null 2>&1 <<<"$jobs_json"; then return 0; fi
 
   local failed
-  failed="$(jq -r --argjson limit "$RECEIPT_MAX_JOBS" \
-    '[.jobs[] | select(.conclusion == "failure")][:$limit][] | "\(.id)\t\(.name)"' <<<"$jobs_json")"
+  # Ids sao numericos na API; filtrar aqui evita passar lixo para --argjson
+  # adiante e deixar o watchdog cuspindo erro de jq no meio do loop.
+  if ! failed="$(jq -r --argjson limit "$RECEIPT_MAX_JOBS" \
+    '[.jobs[] | select(.conclusion == "failure" and (.id | type) == "number")][:$limit][] | "\(.id)\t\(.name)"' <<<"$jobs_json")"; then
+    return 0
+  fi
   if [[ -z "$failed" ]]; then return 0; fi
 
   printf '### Recibo da falha\n\n'
   local job_id job_name steps lines
   while IFS=$'\t' read -r job_id job_name; do
     if [[ -z "$job_id" ]]; then continue; fi
-    steps="$(jq -r --argjson id "$job_id" \
+    if ! steps="$(jq -r --argjson id "$job_id" \
       '.jobs[] | select(.id == $id) | [.steps[]? | select(.conclusion == "failure") | .name] | join(" / ")' \
-      <<<"$jobs_json")"
+      <<<"$jobs_json" 2>/dev/null)"; then
+      steps=""
+    fi
     printf -- '- job: **%s**\n' "$job_name"
     if [[ -n "$steps" ]]; then printf -- '- step: `%s`\n' "$steps"; fi
     if ! lines="$(job_log "$job_id" | receipt_filter)"; then
