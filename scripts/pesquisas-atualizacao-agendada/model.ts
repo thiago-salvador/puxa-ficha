@@ -148,6 +148,12 @@ export type ExecutionAlert = {
 
 const CURATION_REASON = /^(?:approved_new_evidence|extraction_incomplete|identity_unresolved|evidence_stale|source_metadata_conflict|metadata_incomplete|metadado ausente \(.+\)|pesquisa sem prova de cenário e publicação completos)$/
 
+// Razões que significam "não consegui olhar", e não "olhei e não mudou".
+// Vive aqui para o piso de cobertura e o filtro de recibos em cli.ts nunca
+// divergirem: foi a divergência silenciosa entre esses dois usos que deixou o
+// agendado verde e cego por uma semana (#395).
+export const FONTE_INDISPONIVEL = /^(?:source_timeout|source_unavailable|tse_registry_unavailable|source_failure)$/
+
 export interface ResultadoConsolidacaoAgendada {
   execution_status: "complete" | "failed"
   execution_alerts: ExecutionAlert[]
@@ -155,7 +161,7 @@ export interface ResultadoConsolidacaoAgendada {
   operation_status: "blocked" | "no_changes" | "candidates"
   global_alerts: string[]
   poll_alerts: Array<{ poll_id: string; reason: string }>
-  coverage: { status: "partial" | "not_assessed"; alerts: string[] }
+  coverage: { status: "partial" | "not_assessed" | "no_coverage"; alerts: string[]; evaluated: number; unavailable: number; total: number }
   promotion: { authorized: boolean; human_review_required: boolean }
   alerts: string[]
   proposal: DocumentoPropostaAgendada
@@ -705,6 +711,7 @@ function consolidarLoteAgendado(input: EntradaConsolidacaoAgendada): ResultadoCo
   for (const id of receivedPollIds) if (!expectedPollIds.has(id)) alerts.push(`item inesperado: ${id}`)
   if (receivedPollIds.size !== items.length) alerts.push("item duplicado na consolidação")
 
+
   const operations: OperacaoCatalogoAgendada[] = []
   for (const item of items) {
     if (!item.decision.eligible_for_human_review) {
@@ -790,6 +797,24 @@ function resultadoConsolidacao(
   discoveryAlerts: string[],
   executionAlerts: ExecutionAlert[] = [],
 ): ResultadoConsolidacaoAgendada {
+  // Piso de cobertura (#395). Descartar item por fonte indisponível é correto
+  // item a item: uma fonte fora do ar não deve bloquear as outras. Mas sem
+  // piso, um run que não leu NENHUMA fonte caía em no_changes e o agendado
+  // fechava verde. Medido nos agendados de 06, 07, 09 e 10/09: 18 de 18 itens
+  // descartados, contagem idêntica bit a bit nos quatro dias. Uma semana de
+  // verde cego é pior que uma semana de vermelho, porque vermelho chama
+  // atenção.
+  //
+  // O piso é estrito de propósito, e dispara só quando zero item foi avaliado.
+  // Fração arbitrária reabriria a #387 pelo extremo oposto, onde UMA recheca
+  // com timeout derrubava o lote inteiro, inclusive cinco pesquisas aprovadas.
+  // As contagens ficam no resultado para calibrar um limiar com evidência, se
+  // algum dia houver.
+  const semFonte = items.filter((item) => FONTE_INDISPONIVEL.test(item.decision.reason)).length
+  const avaliados = items.length - semFonte
+  const semCobertura = items.length > 0 && avaliados === 0
+  if (semCobertura) globalAlerts.push(`cobertura nula: nenhuma das ${items.length} pesquisas pôde ser avaliada, fonte indisponível em todas`)
+
   const alerts = [...globalAlerts, ...pollAlerts.map((entry) => `${entry.poll_id}-live: ${entry.reason}`), ...discoveryAlerts]
   const derivedExecutionAlerts = [...executionAlerts]
   const addExecution = (code: ExecutionAlert["code"], message: string) => {
@@ -824,8 +849,13 @@ function resultadoConsolidacao(
     : []
   const executionAlertMessages = derivedExecutionAlerts.map((alert) => `${alert.code}: ${alert.message}`)
   const coverage: ResultadoConsolidacaoAgendada["coverage"] = {
-    status: alerts.length || derivedExecutionAlerts.length || input.discovery?.status === "partial" ? "partial" : "not_assessed",
-    alerts: [...discoveryAlerts],
+    status: semCobertura
+      ? "no_coverage"
+      : alerts.length || derivedExecutionAlerts.length || input.discovery?.status === "partial" ? "partial" : "not_assessed",
+    alerts: [...discoveryAlerts, ...(semCobertura ? [`nenhuma das ${items.length} pesquisas avaliada: fonte indisponível em todas`] : [])],
+    evaluated: avaliados,
+    unavailable: semFonte,
+    total: items.length,
   }
   // Coverage and individual curation alerts describe what was not found. They
   // do not block an independent operation that passed every safety gate.

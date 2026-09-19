@@ -18,6 +18,7 @@ import { obterAdaptadorMonitoramento } from "../lib/pesquisas-monitoramento-adap
 import {
   aplicarOperacoesAgendadas,
   carregarCatalogosAgendados,
+  FONTE_INDISPONIVEL,
   consolidarPropostasAgendadas,
   construirMatrizAgendada,
   type DocumentoColetadoAgendado,
@@ -121,7 +122,7 @@ function sourceReceipts(dir: string): Pick<DocumentoComRecibos, "source_html_pat
 export function validarRecibosPublicacao(documents: DocumentoComRecibos[], matrix: ItemMatrizAgendada[]): import("./model").ExecutionAlert[] {
   const alerts: import("./model").ExecutionAlert[] = []
   for (const document of documents) for (const item of document.proposal.items) {
-    if (/^(?:source_timeout|source_unavailable|tse_registry_unavailable|source_failure)$/.test(item.decision.reason)) continue
+    if (FONTE_INDISPONIVEL.test(item.decision.reason)) continue
     const pollId = item.id.endsWith("-live") ? item.id.slice(0, -5) : item.id
     const path = document.source_html_paths?.[pollId]
     const evidence = (item.evidence ?? {}) as Record<string, unknown>
