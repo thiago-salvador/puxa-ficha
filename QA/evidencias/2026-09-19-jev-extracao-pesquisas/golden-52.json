@@ -1,0 +1,782 @@
+[
+ {
+  "id": "datafolha-br-04496-2026#0",
+  "poll": "datafolha-br-04496-2026",
+  "uf": "BR",
+  "cargo": "Presidente",
+  "nome": "Lula",
+  "partido": "PT",
+  "percentual": 39,
+  "frase": "No primeiro levantamento do Datafolha após o início oficial da campanha presidencial e o registro das candidaturas, Lula (PT) marca 39% e Flávio Bolsonaro ( PL ), 33% no primeiro turno.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-br-04496-2026#1",
+  "poll": "datafolha-br-04496-2026",
+  "uf": "BR",
+  "cargo": "Presidente",
+  "nome": "Lula",
+  "partido": "PT",
+  "percentual": 33,
+  "frase": "No primeiro levantamento do Datafolha após o início oficial da campanha presidencial e o registro das candidaturas, Lula (PT) marca 39% e Flávio Bolsonaro ( PL ), 33% no primeiro turno.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-br-04496-2026#2",
+  "poll": "datafolha-br-04496-2026",
+  "uf": "BR",
+  "cargo": "Presidente",
+  "nome": "Samara Martins",
+  "partido": "UP",
+  "percentual": 2,
+  "frase": "Augusto Cury (Avante) tem 2%, enquanto Samara Martins (UP), Wilton Grassi (Democrata), Rui Costa Pimenta (PCO) e Edmilson Costa (PCB) marcam 1%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-br-04496-2026#3",
+  "poll": "datafolha-br-04496-2026",
+  "uf": "BR",
+  "cargo": "Presidente",
+  "nome": "Samara Martins",
+  "partido": "UP",
+  "percentual": 1,
+  "frase": "Augusto Cury (Avante) tem 2%, enquanto Samara Martins (UP), Wilton Grassi (Democrata), Rui Costa Pimenta (PCO) e Edmilson Costa (PCB) marcam 1%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-br-04496-2026#4",
+  "poll": "datafolha-br-04496-2026",
+  "uf": "BR",
+  "cargo": "Presidente",
+  "nome": "Rui Costa Pimenta",
+  "partido": "PCO",
+  "percentual": 2,
+  "frase": "Augusto Cury (Avante) tem 2%, enquanto Samara Martins (UP), Wilton Grassi (Democrata), Rui Costa Pimenta (PCO) e Edmilson Costa (PCB) marcam 1%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-br-04496-2026#5",
+  "poll": "datafolha-br-04496-2026",
+  "uf": "BR",
+  "cargo": "Presidente",
+  "nome": "Rui Costa Pimenta",
+  "partido": "PCO",
+  "percentual": 1,
+  "frase": "Augusto Cury (Avante) tem 2%, enquanto Samara Martins (UP), Wilton Grassi (Democrata), Rui Costa Pimenta (PCO) e Edmilson Costa (PCB) marcam 1%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-br-04496-2026#6",
+  "poll": "datafolha-br-04496-2026",
+  "uf": "BR",
+  "cargo": "Presidente",
+  "nome": "Edmilson Costa",
+  "partido": "PCB",
+  "percentual": 2,
+  "frase": "Augusto Cury (Avante) tem 2%, enquanto Samara Martins (UP), Wilton Grassi (Democrata), Rui Costa Pimenta (PCO) e Edmilson Costa (PCB) marcam 1%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-ce-ce-04292-2026#0",
+  "poll": "datafolha-ce-ce-04292-2026",
+  "uf": "CE",
+  "cargo": "Governador",
+  "nome": "Camilo Santana",
+  "partido": "PT",
+  "percentual": 2,
+  "frase": "O ex-governador Camilo Santana (PT), que não é candidato este ano, marcou 2%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#0",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "nome": "Leandro Grass",
+  "partido": "PT",
+  "percentual": 11,
+  "frase": "A pesquisa ainda mostra Leandro Grass (PT) com 11% das intenções de voto.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#1",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "nome": "Paula Belmonte",
+  "partido": "PSDB",
+  "percentual": 4,
+  "frase": "Paula Belmonte (PSDB) soma 4% e Ricardo Cappelli (PSB) tem 3%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#2",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "nome": "Paula Belmonte",
+  "partido": "PSDB",
+  "percentual": 3,
+  "frase": "Paula Belmonte (PSDB) soma 4% e Ricardo Cappelli (PSB) tem 3%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#3",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "nome": "Ricardo Cappelli",
+  "partido": "PSB",
+  "percentual": 4,
+  "frase": "Paula Belmonte (PSDB) soma 4% e Ricardo Cappelli (PSB) tem 3%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#4",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "nome": "Ricardo Cappelli",
+  "partido": "PSB",
+  "percentual": 3,
+  "frase": "Paula Belmonte (PSDB) soma 4% e Ricardo Cappelli (PSB) tem 3%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#5",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "nome": "Professora Samara Mineiro",
+  "partido": "UP",
+  "percentual": 2,
+  "frase": "Os candidatos Kiko Caputo (Novo) e Professora Samara Mineiro (UP) apresentaram 2% das intenções, e Elisson (Agir) e Professor Robson (PSTU) tiveram 1% cada.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#6",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "nome": "Professora Samara Mineiro",
+  "partido": "UP",
+  "percentual": 1,
+  "frase": "Os candidatos Kiko Caputo (Novo) e Professora Samara Mineiro (UP) apresentaram 2% das intenções, e Elisson (Agir) e Professor Robson (PSTU) tiveram 1% cada.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#0",
+  "poll": "datafolha-folha-globo-estaduais-pi-03643-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "nome": "Lourdes Melo",
+  "partido": "PCO",
+  "percentual": 1,
+  "frase": "Lúcia Santos ( PSDB ), Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP) marcam 1% cada um.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#1",
+  "poll": "datafolha-folha-globo-estaduais-pi-03643-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "nome": "Professor Jurity",
+  "partido": "DC",
+  "percentual": 1,
+  "frase": "Lúcia Santos ( PSDB ), Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP) marcam 1% cada um.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#2",
+  "poll": "datafolha-folha-globo-estaduais-pi-03643-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "nome": "Santiago Belizário",
+  "partido": "UP",
+  "percentual": 1,
+  "frase": "Lúcia Santos ( PSDB ), Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP) marcam 1% cada um.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#3",
+  "poll": "datafolha-folha-globo-estaduais-pi-03643-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "nome": "Ciro Nogueira",
+  "partido": "PP",
+  "percentual": 17,
+  "frase": "Na disputa pelas duas vagas ao Senado , há um empate técnico triplo: os senadores e candidatos à reeleição Ciro Nogueira (PP) e Marcelo Castro ( MDB ) têm 17% das intenções de voto cada um, enquanto o deputado federal Julio César ( PSD ) aparece com 15%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 0
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#4",
+  "poll": "datafolha-folha-globo-estaduais-pi-03643-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "nome": "Ciro Nogueira",
+  "partido": "PP",
+  "percentual": 15,
+  "frase": "Na disputa pelas duas vagas ao Senado , há um empate técnico triplo: os senadores e candidatos à reeleição Ciro Nogueira (PP) e Marcelo Castro ( MDB ) têm 17% das intenções de voto cada um, enquanto o deputado federal Julio César ( PSD ) aparece com 15%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 0
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#5",
+  "poll": "datafolha-folha-globo-estaduais-pi-03643-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "nome": "Tiago Junqueira",
+  "partido": "PL",
+  "percentual": 4,
+  "frase": "Em seguida, aparecem os candidatos Tiago Junqueira (PL), com 4%, e Major Paulo Roberto (Mobiliza), com 2%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#6",
+  "poll": "datafolha-folha-globo-estaduais-pi-03643-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "nome": "Tiago Junqueira",
+  "partido": "PL",
+  "percentual": 2,
+  "frase": "Em seguida, aparecem os candidatos Tiago Junqueira (PL), com 4%, e Major Paulo Roberto (Mobiliza), com 2%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#0",
+  "poll": "datafolha-mg-mg-00446-2026",
+  "uf": "MG",
+  "cargo": "Governador",
+  "nome": "Patrus Ananias",
+  "partido": "PT",
+  "percentual": 12,
+  "frase": "Em segundo lugar, estão Patrus Ananias (PT) e Alexandre Kalil ( PDT ), ambos ex-prefeitos de Belo Horizonte, com 12% cada um.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#1",
+  "poll": "datafolha-mg-mg-00446-2026",
+  "uf": "MG",
+  "cargo": "Governador",
+  "nome": "Flávio Roscoe",
+  "partido": "PL",
+  "percentual": 4,
+  "frase": "O atual governador Mateus Simões ( PSD ), Flávio Roscoe (PL) e o ex-presidente da Câmara Municipal de Belo Horizonte Gabriel Azevedo ( MDB ) marcaram 4% cada.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#2",
+  "poll": "datafolha-mg-mg-00446-2026",
+  "uf": "MG",
+  "cargo": "Governador",
+  "nome": "Túlio Lopes",
+  "partido": "PCB",
+  "percentual": 2,
+  "frase": "Túlio Lopes (PCB) aparece com 2%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#3",
+  "poll": "datafolha-mg-mg-00446-2026",
+  "uf": "MG",
+  "cargo": "Governador",
+  "nome": "Rafael Duda",
+  "partido": "PSTU",
+  "percentual": 1,
+  "frase": "Tiveram 1% Rafael Duda (PSTU), Ben Mendes (Missão) e Indira Xavier (UP).",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#4",
+  "poll": "datafolha-mg-mg-00446-2026",
+  "uf": "MG",
+  "cargo": "Governador",
+  "nome": "Indira Xavier",
+  "partido": "UP",
+  "percentual": 1,
+  "frase": "Tiveram 1% Rafael Duda (PSTU), Ben Mendes (Missão) e Indira Xavier (UP).",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#0",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "nome": "Professora Camila",
+  "partido": "UP",
+  "percentual": 1,
+  "frase": "Ivan Moraes ( PSOL ), Renan Hallais (Missão), Professora Camila (UP) e Guilherme Fonseca (PSTU), marcaram 1% cada.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#1",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "nome": "Guilherme Fonseca",
+  "partido": "PSTU",
+  "percentual": 1,
+  "frase": "Ivan Moraes ( PSOL ), Renan Hallais (Missão), Professora Camila (UP) e Guilherme Fonseca (PSTU), marcaram 1% cada.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#2",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "nome": "Professora Camila",
+  "partido": "UP",
+  "percentual": 2,
+  "frase": "Já Ivan Moraes tem 2%, seguido por Renan Hallais (Missão), Professora Camila (UP) e Guilherme Fonseca (PSTU) com 1% cada.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#3",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "nome": "Professora Camila",
+  "partido": "UP",
+  "percentual": 1,
+  "frase": "Já Ivan Moraes tem 2%, seguido por Renan Hallais (Missão), Professora Camila (UP) e Guilherme Fonseca (PSTU) com 1% cada.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#4",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "nome": "Guilherme Fonseca",
+  "partido": "PSTU",
+  "percentual": 2,
+  "frase": "Já Ivan Moraes tem 2%, seguido por Renan Hallais (Missão), Professora Camila (UP) e Guilherme Fonseca (PSTU) com 1% cada.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#5",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "nome": "Guilherme Fonseca",
+  "partido": "PSTU",
+  "percentual": 1,
+  "frase": "Já Ivan Moraes tem 2%, seguido por Renan Hallais (Missão), Professora Camila (UP) e Guilherme Fonseca (PSTU) com 1% cada.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#0",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "nome": "Geraldo Carvalho",
+  "partido": "PSTU",
+  "percentual": 2,
+  "frase": "Lúcia Santos ( PSDB ) e Geraldo Carvalho (PSTU), ambos com 2% cada um.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#1",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "nome": "Lourdes Melo",
+  "partido": "PCO",
+  "percentual": 1,
+  "frase": "Outros cinco candidatos marcam 1% cada: Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP).",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#2",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "nome": "Professor Jurity",
+  "partido": "DC",
+  "percentual": 1,
+  "frase": "Outros cinco candidatos marcam 1% cada: Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP).",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#3",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "nome": "Santiago Belizário",
+  "partido": "UP",
+  "percentual": 1,
+  "frase": "Outros cinco candidatos marcam 1% cada: Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP).",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#4",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "nome": "Ciro Nogueira",
+  "partido": "PP",
+  "percentual": 16,
+  "frase": "Na disputa pelas duas vagas ao Senado , há um empate técnico triplo: os senadores e candidatos à reeleição Ciro Nogueira (PP) e Marcelo Castro ( MDB ) têm 16% das intenções de voto cada um, enquanto o deputado federal Julio César ( PSD ) aparece com 14%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 0
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#5",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "nome": "Ciro Nogueira",
+  "partido": "PP",
+  "percentual": 14,
+  "frase": "Na disputa pelas duas vagas ao Senado , há um empate técnico triplo: os senadores e candidatos à reeleição Ciro Nogueira (PP) e Marcelo Castro ( MDB ) têm 16% das intenções de voto cada um, enquanto o deputado federal Julio César ( PSD ) aparece com 14%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 0
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#6",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "nome": "Tiago Junqueira",
+  "partido": "PL",
+  "percentual": 4,
+  "frase": "Num bloco mais abaixo, Tiago Junqueira (PL) tem 4%, e Jorge Lopes (PSDB) e Danniel Rocha (PSTU) marcam 2% cada um.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#0",
+  "poll": "datafolha-rj-rj-02945-2026",
+  "uf": "RJ",
+  "cargo": "Governador",
+  "nome": "Cyro Garcia",
+  "partido": "PSTU",
+  "percentual": 2,
+  "frase": "O coronel aposentado da PM João Jacques Busnello (Missão), o sindicalista Cyro Garcia (PSTU), o vereador Willian Siri ( PSOL ), o empresário André Marinho (Novo) e Juliete Pantoja (UP) aparecem, todos, com 2% cada um.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#1",
+  "poll": "datafolha-rj-rj-02945-2026",
+  "uf": "RJ",
+  "cargo": "Governador",
+  "nome": "Juliete Pantoja",
+  "partido": "UP",
+  "percentual": 2,
+  "frase": "O coronel aposentado da PM João Jacques Busnello (Missão), o sindicalista Cyro Garcia (PSTU), o vereador Willian Siri ( PSOL ), o empresário André Marinho (Novo) e Juliete Pantoja (UP) aparecem, todos, com 2% cada um.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#2",
+  "poll": "datafolha-rj-rj-02945-2026",
+  "uf": "RJ",
+  "cargo": "Governador",
+  "nome": "Luan Monteiro",
+  "partido": "PCO",
+  "percentual": 1,
+  "frase": "Luan Monteiro (PCO) registra 1%",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#3",
+  "poll": "datafolha-rj-rj-02945-2026",
+  "uf": "RJ",
+  "cargo": "Governador",
+  "nome": "Carlos Jordy",
+  "partido": "PL",
+  "percentual": 8,
+  "frase": "O deputado Carlos Jordy (PL) e senador Carlos Portinho ( PL ) aparecem com 8% das intenções de voto.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#4",
+  "poll": "datafolha-rj-rj-02945-2026",
+  "uf": "RJ",
+  "cargo": "Governador",
+  "nome": "Pedro Paulo",
+  "partido": "PSD",
+  "percentual": 6,
+  "frase": "Eles estão em empate técnico com os deputados Marcelo Crivella (Republicanos), Pedro Paulo (PSD), e a vereadora Mônica Benício ( PSOL ), que têm 6%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-sp-sp-01806-2026#0",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "nome": "Vera Lúcia",
+  "partido": "PSTU",
+  "percentual": 4,
+  "frase": "Na pesquisa desta sexta, 4% dos entrevistados disseram que pretendem votar no primeiro turno em Vera Lúcia (PSTU).",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-sp-sp-01806-2026#1",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "nome": "Carlos Machado",
+  "partido": "PCB",
+  "percentual": 3,
+  "frase": "Carlos Machado (PCB) obteve 3%, mesmo percentual de Policial Edjane (Agir).",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-sp-sp-01806-2026#2",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "nome": "Vivian Mendes",
+  "partido": "UP",
+  "percentual": 2,
+  "frase": "Vivian Mendes (UP) ficou com 2%, e Izadora Dias (PCO), com 1%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-sp-sp-01806-2026#3",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "nome": "Vivian Mendes",
+  "partido": "UP",
+  "percentual": 1,
+  "frase": "Vivian Mendes (UP) ficou com 2%, e Izadora Dias (PCO), com 1%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-sp-sp-01806-2026#4",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "nome": "Izadora Dias",
+  "partido": "PCO",
+  "percentual": 2,
+  "frase": "Vivian Mendes (UP) ficou com 2%, e Izadora Dias (PCO), com 1%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-sp-sp-01806-2026#5",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "nome": "Izadora Dias",
+  "partido": "PCO",
+  "percentual": 1,
+  "frase": "Vivian Mendes (UP) ficou com 2%, e Izadora Dias (PCO), com 1%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-sp-sp-01806-2026#6",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "nome": "Simone Tebet",
+  "partido": "PSB",
+  "percentual": 12,
+  "frase": "Marina Silva (Rede) e Simone Tebet (PSB) têm 12% cada uma das intenções de voto.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 0
+  },
+  "split": "ajuste"
+ }
+]

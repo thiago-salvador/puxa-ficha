@@ -1,0 +1,250 @@
+[
+ {
+  "id": "datafolha-ce-ce-04292-2026#0",
+  "atr_p": 0.97,
+  "atr_y": 1,
+  "alv_p": 0.91,
+  "alv_y": 1,
+  "rev": 0.34
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#0",
+  "atr_p": 0.93,
+  "atr_y": 1,
+  "alv_p": 0.9,
+  "alv_y": 1,
+  "rev": 0.3
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#1",
+  "atr_p": 0.9,
+  "atr_y": 1,
+  "alv_p": 0.89,
+  "alv_y": 1,
+  "rev": 0.33
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#2",
+  "atr_p": 0.94,
+  "atr_y": 1,
+  "alv_p": 0.89,
+  "alv_y": 1,
+  "rev": 0.34
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#3",
+  "atr_p": 0.95,
+  "atr_y": 1,
+  "alv_p": 0.04,
+  "alv_y": 0,
+  "rev": 0.63
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#4",
+  "atr_p": 0.04,
+  "atr_y": 0,
+  "alv_p": 0.05,
+  "alv_y": 0,
+  "rev": 0.72
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#5",
+  "atr_p": 0.97,
+  "atr_y": 1,
+  "alv_p": 0.83,
+  "alv_y": 1,
+  "rev": 0.24
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#6",
+  "atr_p": 0.04,
+  "atr_y": 0,
+  "alv_p": 0.77,
+  "alv_y": 1,
+  "rev": 0.51
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#0",
+  "atr_p": 0.91,
+  "atr_y": 1,
+  "alv_p": 0.87,
+  "alv_y": 1,
+  "rev": 0.33
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#1",
+  "atr_p": 0.92,
+  "atr_y": 1,
+  "alv_p": 0.91,
+  "alv_y": 1,
+  "rev": 0.36
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#2",
+  "atr_p": 0.97,
+  "atr_y": 1,
+  "alv_p": 0.82,
+  "alv_y": 1,
+  "rev": 0.26
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#3",
+  "atr_p": 0.9,
+  "atr_y": 1,
+  "alv_p": 0.83,
+  "alv_y": 1,
+  "rev": 0.52
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#4",
+  "atr_p": 0.86,
+  "atr_y": 1,
+  "alv_p": 0.82,
+  "alv_y": 1,
+  "rev": 0.46
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#0",
+  "atr_p": 0.93,
+  "atr_y": 1,
+  "alv_p": 0.86,
+  "alv_y": 1,
+  "rev": 0.34
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#1",
+  "atr_p": 0.94,
+  "atr_y": 1,
+  "alv_p": 0.88,
+  "alv_y": 1,
+  "rev": 0.35
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#2",
+  "atr_p": 0.1,
+  "atr_y": 0,
+  "alv_p": 0.82,
+  "alv_y": 1,
+  "rev": 0.59
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#3",
+  "atr_p": 0.94,
+  "atr_y": 1,
+  "alv_p": 0.85,
+  "alv_y": 1,
+  "rev": 0.3
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#4",
+  "atr_p": 0.15,
+  "atr_y": 0,
+  "alv_p": 0.77,
+  "alv_y": 1,
+  "rev": 0.72
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#5",
+  "atr_p": 0.93,
+  "atr_y": 1,
+  "alv_p": 0.86,
+  "alv_y": 1,
+  "rev": 0.31
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#0",
+  "atr_p": 0.96,
+  "atr_y": 1,
+  "alv_p": 0.91,
+  "alv_y": 1,
+  "rev": 0.25
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#1",
+  "atr_p": 0.92,
+  "atr_y": 1,
+  "alv_p": 0.93,
+  "alv_y": 1,
+  "rev": 0.29
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#2",
+  "atr_p": 0.88,
+  "atr_y": 1,
+  "alv_p": 0.93,
+  "alv_y": 1,
+  "rev": 0.31
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#3",
+  "atr_p": 0.92,
+  "atr_y": 1,
+  "alv_p": 0.92,
+  "alv_y": 1,
+  "rev": 0.27
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#4",
+  "atr_p": 0.95,
+  "atr_y": 1,
+  "alv_p": 0.04,
+  "alv_y": 0,
+  "rev": 0.61
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#5",
+  "atr_p": 0.04,
+  "atr_y": 0,
+  "alv_p": 0.05,
+  "alv_y": 0,
+  "rev": 0.66
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#6",
+  "atr_p": 0.97,
+  "atr_y": 1,
+  "alv_p": 0.82,
+  "alv_y": 1,
+  "rev": 0.26
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#0",
+  "atr_p": 0.92,
+  "atr_y": 1,
+  "alv_p": 0.87,
+  "alv_y": 1,
+  "rev": 0.38
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#1",
+  "atr_p": 0.93,
+  "atr_y": 1,
+  "alv_p": 0.89,
+  "alv_y": 1,
+  "rev": 0.32
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#2",
+  "atr_p": 0.97,
+  "atr_y": 1,
+  "alv_p": 0.86,
+  "alv_y": 1,
+  "rev": 0.3
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#3",
+  "atr_p": 0.37,
+  "atr_y": 1,
+  "alv_p": 0.4,
+  "alv_y": 1,
+  "rev": 0.83
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#4",
+  "atr_p": 0.88,
+  "atr_y": 1,
+  "alv_p": 0.44,
+  "alv_y": 1,
+  "rev": 0.68
+ }
+]
