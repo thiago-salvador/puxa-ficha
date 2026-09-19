@@ -28,6 +28,9 @@ gh() {
   printf 'WRITE:%s\\n' "$*" >> "$TEST_DIR/calls"
   if [[ "$TEST_FAIL_COMMENT" == 1 && "$*" == *'/comments'* ]]; then return 1; fi
 }
+# Dedupe tests isolate issue writes; the production function may enrich the
+# body with an optional receipt, whose network-backed helper is out of scope.
+failure_receipt() { :; }
 ${definition}
 publish_anomaly example.yml Example failure "https://example.test/run/$TEST_RUN" "$TEST_RUN"
 `], {

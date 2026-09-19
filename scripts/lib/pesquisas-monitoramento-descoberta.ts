@@ -206,7 +206,9 @@ export async function executarDescobertaIntegrada(input: {
 }, dependencies = { discover: descobrirPublicacoesPesquisas, inventory: descobrirRegistrosPesqele, intake: validarEntradasDescobertas }) {
   // The 2026-09-12 full-scope replay used 107 requests/30 MB for only 11 UFs.
   // Allow the 28 registry scopes plus intake within the workflow's 10 minutes.
-  const budget = input.budget ?? criarOrcamentoDescoberta({ maxRequests: 400, maxBytes: 120_000_000, maxDurationMs: 360_000 })
+  // Run 35465176468 reached the 6-minute cap after all inventory scopes and 10
+  // intake entries had completed, leaving only the final timeout to fail.
+  const budget = input.budget ?? criarOrcamentoDescoberta({ maxRequests: 400, maxBytes: 120_000_000, maxDurationMs: 420_000 })
   const observations = await dependencies.discover({ knownUrls: new Set(input.targets.map((target) => target.url)), sourceId: input.sourceId, budget })
   const inventory = await dependencies.inventory({ dateFrom: input.dateFrom, dateTo: input.dateTo, budget })
   const intake = input.validateTargets ? await dependencies.intake({ observations, knownTargets: input.targets, sourceId: input.sourceId, inventory, budget }) : null
