@@ -1,0 +1,1541 @@
+[
+ {
+  "id": "datafolha-br-04496-2026#0",
+  "poll": "datafolha-br-04496-2026",
+  "uf": "BR",
+  "cargo": "Presidente",
+  "titulo": "Datafolha: Lula tem 39% no 1º turno; Flávio Bolsonaro, 33% - 21/08/2026 - Política - Folha",
+  "nome": "Lula",
+  "partido": "PT",
+  "percentual": 39,
+  "frase": "No primeiro levantamento do Datafolha após o início oficial da campanha presidencial e o registro das candidaturas, Lula (PT) marca 39% e Flávio Bolsonaro ( PL ), 33% no primeiro turno.",
+  "paragrafo": "No primeiro levantamento do Datafolha após o início oficial da campanha presidencial e o registro das candidaturas, Lula (PT) marca 39% e Flávio Bolsonaro ( PL ), 33% no primeiro turno. Numa segunda rodada, o petista lidera por 47% a 43%.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-br-04496-2026#1",
+  "poll": "datafolha-br-04496-2026",
+  "uf": "BR",
+  "cargo": "Presidente",
+  "titulo": "Datafolha: Lula tem 39% no 1º turno; Flávio Bolsonaro, 33% - 21/08/2026 - Política - Folha",
+  "nome": "Lula",
+  "partido": "PT",
+  "percentual": 33,
+  "frase": "No primeiro levantamento do Datafolha após o início oficial da campanha presidencial e o registro das candidaturas, Lula (PT) marca 39% e Flávio Bolsonaro ( PL ), 33% no primeiro turno.",
+  "paragrafo": "No primeiro levantamento do Datafolha após o início oficial da campanha presidencial e o registro das candidaturas, Lula (PT) marca 39% e Flávio Bolsonaro ( PL ), 33% no primeiro turno. Numa segunda rodada, o petista lidera por 47% a 43%.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-br-04496-2026#2",
+  "poll": "datafolha-br-04496-2026",
+  "uf": "BR",
+  "cargo": "Presidente",
+  "titulo": "Datafolha: Lula tem 39% no 1º turno; Flávio Bolsonaro, 33% - 21/08/2026 - Política - Folha",
+  "nome": "Flávio Bolsonaro",
+  "partido": "PL",
+  "percentual": 39,
+  "frase": "No primeiro levantamento do Datafolha após o início oficial da campanha presidencial e o registro das candidaturas, Lula (PT) marca 39% e Flávio Bolsonaro ( PL ), 33% no primeiro turno.",
+  "paragrafo": "No primeiro levantamento do Datafolha após o início oficial da campanha presidencial e o registro das candidaturas, Lula (PT) marca 39% e Flávio Bolsonaro ( PL ), 33% no primeiro turno. Numa segunda rodada, o petista lidera por 47% a 43%.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-br-04496-2026#3",
+  "poll": "datafolha-br-04496-2026",
+  "uf": "BR",
+  "cargo": "Presidente",
+  "titulo": "Datafolha: Lula tem 39% no 1º turno; Flávio Bolsonaro, 33% - 21/08/2026 - Política - Folha",
+  "nome": "Ronaldo Caiado",
+  "partido": "PSD",
+  "percentual": 5,
+  "frase": "Embolados em terceiro lugar vêm Ronaldo Caiado ( PSD ), com 5%, Renan Santos (Missão), com 4%, e Romeu Zema (Novo), com 3%.",
+  "paragrafo": "Na simulação de primeiro turno, o presidente e o filho de seu antecessor Jair Bolsonaro estão isolados à frente. Embolados em terceiro lugar vêm Ronaldo Caiado ( PSD ), com 5%, Renan Santos (Missão), com 4%, e Romeu Zema (Novo), com 3%.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-br-04496-2026#4",
+  "poll": "datafolha-br-04496-2026",
+  "uf": "BR",
+  "cargo": "Presidente",
+  "titulo": "Datafolha: Lula tem 39% no 1º turno; Flávio Bolsonaro, 33% - 21/08/2026 - Política - Folha",
+  "nome": "Ronaldo Caiado",
+  "partido": "PSD",
+  "percentual": 4,
+  "frase": "Embolados em terceiro lugar vêm Ronaldo Caiado ( PSD ), com 5%, Renan Santos (Missão), com 4%, e Romeu Zema (Novo), com 3%.",
+  "paragrafo": "Na simulação de primeiro turno, o presidente e o filho de seu antecessor Jair Bolsonaro estão isolados à frente. Embolados em terceiro lugar vêm Ronaldo Caiado ( PSD ), com 5%, Renan Santos (Missão), com 4%, e Romeu Zema (Novo), com 3%.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-ce-ce-04292-2026#5",
+  "poll": "datafolha-ce-ce-04292-2026",
+  "uf": "CE",
+  "cargo": "Governador",
+  "titulo": "Datafolha CE: Ciro Gomes tem 52% e Elmano de Freitas, 33% - 13/08/2026 - Política - Folha",
+  "nome": "Ciro Gomes",
+  "partido": "PSDB",
+  "percentual": 21,
+  "frase": "Ciro Gomes é rejeitado por 21%.",
+  "paragrafo": "O levantamento também mediu a rejeição dos possíveis candidatos. Elmano de Freitas tem a maior taxa (35%). Ciro Gomes é rejeitado por 21%.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-ce-ce-04292-2026#6",
+  "poll": "datafolha-ce-ce-04292-2026",
+  "uf": "CE",
+  "cargo": "Governador",
+  "titulo": "Datafolha CE: Ciro Gomes tem 52% e Elmano de Freitas, 33% - 13/08/2026 - Política - Folha",
+  "nome": "Elmano de Freitas",
+  "partido": "PT",
+  "percentual": 52,
+  "frase": "O tucano tem 52% das intenções de voto no cenário estimulado, contra 33% do governador Elmano de Freitas ( PT ), que vai concorrer à reeleição.",
+  "paragrafo": "Nas vésperas do início da campanha eleitoral, o ex-governador Ciro Gomes ( PSDB ) lidera a disputa pelo Governo do Ceará, aponta o Datafolha . O tucano tem 52% das intenções de voto no cenário estimulado, contra 33% do governador Elmano de Freitas ( PT ), que vai concorrer à reeleição.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-ce-ce-04292-2026#7",
+  "poll": "datafolha-ce-ce-04292-2026",
+  "uf": "CE",
+  "cargo": "Governador",
+  "titulo": "Datafolha CE: Ciro Gomes tem 52% e Elmano de Freitas, 33% - 13/08/2026 - Política - Folha",
+  "nome": "Elmano de Freitas",
+  "partido": "PT",
+  "percentual": 33,
+  "frase": "O tucano tem 52% das intenções de voto no cenário estimulado, contra 33% do governador Elmano de Freitas ( PT ), que vai concorrer à reeleição.",
+  "paragrafo": "Nas vésperas do início da campanha eleitoral, o ex-governador Ciro Gomes ( PSDB ) lidera a disputa pelo Governo do Ceará, aponta o Datafolha . O tucano tem 52% das intenções de voto no cenário estimulado, contra 33% do governador Elmano de Freitas ( PT ), que vai concorrer à reeleição.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-ce-ce-04292-2026#8",
+  "poll": "datafolha-ce-ce-04292-2026",
+  "uf": "CE",
+  "cargo": "Governador",
+  "titulo": "Datafolha CE: Ciro Gomes tem 52% e Elmano de Freitas, 33% - 13/08/2026 - Política - Folha",
+  "nome": "Ciro Gomes",
+  "partido": "PSDB",
+  "percentual": 47,
+  "frase": "Na pesquisa anterior realizada pelo Datafolha, realizada em março, Ciro Gomes aparecia com 47% das intenções de voto contra 32% de Elmano de Freitas.",
+  "paragrafo": "Na pesquisa anterior realizada pelo Datafolha, realizada em março, Ciro Gomes aparecia com 47% das intenções de voto contra 32% de Elmano de Freitas. Contudo, não é possível fazer uma comparação entre as duas pesquisas, já que mudou o quadro dos candidatos.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-ce-ce-04292-2026#9",
+  "poll": "datafolha-ce-ce-04292-2026",
+  "uf": "CE",
+  "cargo": "Governador",
+  "titulo": "Datafolha CE: Ciro Gomes tem 52% e Elmano de Freitas, 33% - 13/08/2026 - Política - Folha",
+  "nome": "Ciro Gomes",
+  "partido": "PSDB",
+  "percentual": 32,
+  "frase": "Na pesquisa anterior realizada pelo Datafolha, realizada em março, Ciro Gomes aparecia com 47% das intenções de voto contra 32% de Elmano de Freitas.",
+  "paragrafo": "Na pesquisa anterior realizada pelo Datafolha, realizada em março, Ciro Gomes aparecia com 47% das intenções de voto contra 32% de Elmano de Freitas. Contudo, não é possível fazer uma comparação entre as duas pesquisas, já que mudou o quadro dos candidatos.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-ce-ce-04292-2026#10",
+  "poll": "datafolha-ce-ce-04292-2026",
+  "uf": "CE",
+  "cargo": "Governador",
+  "titulo": "Datafolha CE: Ciro Gomes tem 52% e Elmano de Freitas, 33% - 13/08/2026 - Política - Folha",
+  "nome": "Elmano de Freitas",
+  "partido": "PT",
+  "percentual": 47,
+  "frase": "Na pesquisa anterior realizada pelo Datafolha, realizada em março, Ciro Gomes aparecia com 47% das intenções de voto contra 32% de Elmano de Freitas.",
+  "paragrafo": "Na pesquisa anterior realizada pelo Datafolha, realizada em março, Ciro Gomes aparecia com 47% das intenções de voto contra 32% de Elmano de Freitas. Contudo, não é possível fazer uma comparação entre as duas pesquisas, já que mudou o quadro dos candidatos.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#11",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Celina e Arruda empatam ao governo do DF - 21/08/2026 - Política - Folha",
+  "nome": "Arruda",
+  "partido": "PSD",
+  "percentual": 32,
+  "frase": "Celina e Arruda também empatam em rejeição: 32% dos eleitores dizem que não votariam de jeito nenhum na atual governadora no 1º turno, e 30% afirmam o mesmo sobre o candidato do PSD.",
+  "paragrafo": "Celina e Arruda também empatam em rejeição: 32% dos eleitores dizem que não votariam de jeito nenhum na atual governadora no 1º turno, e 30% afirmam o mesmo sobre o candidato do PSD.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#12",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Celina e Arruda empatam ao governo do DF - 21/08/2026 - Política - Folha",
+  "nome": "Arruda",
+  "partido": "PSD",
+  "percentual": 30,
+  "frase": "Celina e Arruda também empatam em rejeição: 32% dos eleitores dizem que não votariam de jeito nenhum na atual governadora no 1º turno, e 30% afirmam o mesmo sobre o candidato do PSD.",
+  "paragrafo": "Celina e Arruda também empatam em rejeição: 32% dos eleitores dizem que não votariam de jeito nenhum na atual governadora no 1º turno, e 30% afirmam o mesmo sobre o candidato do PSD.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#13",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Celina e Arruda empatam ao governo do DF - 21/08/2026 - Política - Folha",
+  "nome": "Leandro Grass",
+  "partido": "PT",
+  "percentual": 19,
+  "frase": "Já Leandro Grass é rejeitado por 19%.",
+  "paragrafo": "Já Leandro Grass é rejeitado por 19%. Na sequência, Belmonte, Cappelli e Caputo têm 11% de rejeição cada.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#14",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Celina e Arruda empatam ao governo do DF - 21/08/2026 - Política - Folha",
+  "nome": "Belmonte",
+  "partido": "PSDB",
+  "percentual": 11,
+  "frase": "Na sequência, Belmonte, Cappelli e Caputo têm 11% de rejeição cada.",
+  "paragrafo": "Já Leandro Grass é rejeitado por 19%. Na sequência, Belmonte, Cappelli e Caputo têm 11% de rejeição cada.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#15",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Celina e Arruda empatam ao governo do DF - 21/08/2026 - Política - Folha",
+  "nome": "Cappelli",
+  "partido": "PSB",
+  "percentual": 11,
+  "frase": "Na sequência, Belmonte, Cappelli e Caputo têm 11% de rejeição cada.",
+  "paragrafo": "Já Leandro Grass é rejeitado por 19%. Na sequência, Belmonte, Cappelli e Caputo têm 11% de rejeição cada.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#16",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Celina e Arruda empatam ao governo do DF - 21/08/2026 - Política - Folha",
+  "nome": "Celina Leão",
+  "partido": "PP",
+  "percentual": 32,
+  "frase": "Sobre avaliação de governo, a gestão de Celina Leão à frente do DF é considerada ruim ou péssima por 32%, enquanto 24% dizem ser boa ou ótima.",
+  "paragrafo": "Sobre avaliação de governo, a gestão de Celina Leão à frente do DF é considerada ruim ou péssima por 32%, enquanto 24% dizem ser boa ou ótima. Outros 38% afirmam que Celina faz um governo regular, enquanto 6% não têm opinião sobre o tema.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "avaliacao_gestao"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#17",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Celina e Arruda empatam ao governo do DF - 21/08/2026 - Política - Folha",
+  "nome": "Celina Leão",
+  "partido": "PP",
+  "percentual": 24,
+  "frase": "Sobre avaliação de governo, a gestão de Celina Leão à frente do DF é considerada ruim ou péssima por 32%, enquanto 24% dizem ser boa ou ótima.",
+  "paragrafo": "Sobre avaliação de governo, a gestão de Celina Leão à frente do DF é considerada ruim ou péssima por 32%, enquanto 24% dizem ser boa ou ótima. Outros 38% afirmam que Celina faz um governo regular, enquanto 6% não têm opinião sobre o tema.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "avaliacao_gestao"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#18",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Celina e Arruda empatam ao governo do DF - 21/08/2026 - Política - Folha",
+  "nome": "Leandro Grass",
+  "partido": "PT",
+  "percentual": 11,
+  "frase": "A pesquisa ainda mostra Leandro Grass (PT) com 11% das intenções de voto.",
+  "paragrafo": "A pesquisa ainda mostra Leandro Grass (PT) com 11% das intenções de voto. Paula Belmonte (PSDB) soma 4% e Ricardo Cappelli (PSB) tem 3%.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#19",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Celina e Arruda empatam ao governo do DF - 21/08/2026 - Política - Folha",
+  "nome": "Paula Belmonte",
+  "partido": "PSDB",
+  "percentual": 4,
+  "frase": "Paula Belmonte (PSDB) soma 4% e Ricardo Cappelli (PSB) tem 3%.",
+  "paragrafo": "A pesquisa ainda mostra Leandro Grass (PT) com 11% das intenções de voto. Paula Belmonte (PSDB) soma 4% e Ricardo Cappelli (PSB) tem 3%.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#20",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Celina e Arruda empatam ao governo do DF - 21/08/2026 - Política - Folha",
+  "nome": "Paula Belmonte",
+  "partido": "PSDB",
+  "percentual": 3,
+  "frase": "Paula Belmonte (PSDB) soma 4% e Ricardo Cappelli (PSB) tem 3%.",
+  "paragrafo": "A pesquisa ainda mostra Leandro Grass (PT) com 11% das intenções de voto. Paula Belmonte (PSDB) soma 4% e Ricardo Cappelli (PSB) tem 3%.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#21",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Celina e Arruda empatam ao governo do DF - 21/08/2026 - Política - Folha",
+  "nome": "Ricardo Cappelli",
+  "partido": "PSB",
+  "percentual": 4,
+  "frase": "Paula Belmonte (PSDB) soma 4% e Ricardo Cappelli (PSB) tem 3%.",
+  "paragrafo": "A pesquisa ainda mostra Leandro Grass (PT) com 11% das intenções de voto. Paula Belmonte (PSDB) soma 4% e Ricardo Cappelli (PSB) tem 3%.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-df-df-07561-2026#22",
+  "poll": "datafolha-df-df-07561-2026",
+  "uf": "DF",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Celina e Arruda empatam ao governo do DF - 21/08/2026 - Política - Folha",
+  "nome": "Professora Samara Mineiro",
+  "partido": "UP",
+  "percentual": 2,
+  "frase": "Os candidatos Kiko Caputo (Novo) e Professora Samara Mineiro (UP) apresentaram 2% das intenções, e Elisson (Agir) e Professor Robson (PSTU) tiveram 1% cada.",
+  "paragrafo": "Os candidatos Kiko Caputo (Novo) e Professora Samara Mineiro (UP) apresentaram 2% das intenções, e Elisson (Agir) e Professor Robson (PSTU) tiveram 1% cada. Expedito Mendonça (PCO) não pontuou.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#23",
+  "poll": "datafolha-folha-globo-estaduais-pi-03643-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Rafael Fonteles (PT) lidera disputa no Piauí - 17/09/2026 - Política - Folha",
+  "nome": "Joel Rodrigues",
+  "partido": "PP",
+  "percentual": 28,
+  "frase": "Questionados sobre em qual candidato não votariam de jeito nenhum, 28% citaram Joel Rodrigues.",
+  "paragrafo": "Questionados sobre em qual candidato não votariam de jeito nenhum, 28% citaram Joel Rodrigues. Na sequência, aparecem Lourdes Melo (23%), Rafael Fonteles (21%), Elizeu Aguiar (15%), Geraldo Carvalho (14%), Santiago Belizário (12%), Professor Jurity (12%), Professor Gisvaldo (11%), Ravenna da Inclusão (11%) e Lúcia Santos (11%).",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#24",
+  "poll": "datafolha-folha-globo-estaduais-pi-03643-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Rafael Fonteles (PT) lidera disputa no Piauí - 17/09/2026 - Política - Folha",
+  "nome": "Rafael Fonteles",
+  "partido": "PT",
+  "percentual": 55,
+  "frase": "O governador Rafael Fonteles ( PT ) tem 55% das intenções de votos e venceria a eleição para o Governo do Piauí no primeiro turno, mostra pesquisa Datafolha divulgada nesta quinta-feira (17).",
+  "paragrafo": "O governador Rafael Fonteles ( PT ) tem 55% das intenções de votos e venceria a eleição para o Governo do Piauí no primeiro turno, mostra pesquisa Datafolha divulgada nesta quinta-feira (17). Joel Rodrigues ( PP ) aparece em segundo lugar, com 25%.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#25",
+  "poll": "datafolha-folha-globo-estaduais-pi-03643-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Rafael Fonteles (PT) lidera disputa no Piauí - 17/09/2026 - Política - Folha",
+  "nome": "Joel Rodrigues",
+  "partido": "PP",
+  "percentual": 25,
+  "frase": "Joel Rodrigues ( PP ) aparece em segundo lugar, com 25%.",
+  "paragrafo": "O governador Rafael Fonteles ( PT ) tem 55% das intenções de votos e venceria a eleição para o Governo do Piauí no primeiro turno, mostra pesquisa Datafolha divulgada nesta quinta-feira (17). Joel Rodrigues ( PP ) aparece em segundo lugar, com 25%.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#26",
+  "poll": "datafolha-folha-globo-estaduais-pi-03643-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Rafael Fonteles (PT) lidera disputa no Piauí - 17/09/2026 - Política - Folha",
+  "nome": "Lúcia Santos",
+  "partido": "PSDB",
+  "percentual": 1,
+  "frase": "Lúcia Santos ( PSDB ), Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP) marcam 1% cada um.",
+  "paragrafo": "Dra. Lúcia Santos ( PSDB ), Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP) marcam 1% cada um. Ravenna da Inclusão (Democrata) e Geraldo Carvalho (PSTU) não pontuaram. Brancos ou nulos somam 7%, e indecisos são 8%.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#27",
+  "poll": "datafolha-folha-globo-estaduais-pi-03643-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Rafael Fonteles (PT) lidera disputa no Piauí - 17/09/2026 - Política - Folha",
+  "nome": "Lourdes Melo",
+  "partido": "PCO",
+  "percentual": 1,
+  "frase": "Lúcia Santos ( PSDB ), Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP) marcam 1% cada um.",
+  "paragrafo": "Dra. Lúcia Santos ( PSDB ), Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP) marcam 1% cada um. Ravenna da Inclusão (Democrata) e Geraldo Carvalho (PSTU) não pontuaram. Brancos ou nulos somam 7%, e indecisos são 8%.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#28",
+  "poll": "datafolha-folha-globo-estaduais-pi-03643-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Rafael Fonteles (PT) lidera disputa no Piauí - 17/09/2026 - Política - Folha",
+  "nome": "Professor Gisvaldo",
+  "partido": "PSOL",
+  "percentual": 1,
+  "frase": "Lúcia Santos ( PSDB ), Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP) marcam 1% cada um.",
+  "paragrafo": "Dra. Lúcia Santos ( PSDB ), Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP) marcam 1% cada um. Ravenna da Inclusão (Democrata) e Geraldo Carvalho (PSTU) não pontuaram. Brancos ou nulos somam 7%, e indecisos são 8%.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#29",
+  "poll": "datafolha-mg-mg-00446-2026",
+  "uf": "MG",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Cleitinho lidera disputa em MG com 32% - 21/08/2026 - Política - Folha",
+  "nome": "Patrus Ananias",
+  "partido": "PT",
+  "percentual": 29,
+  "frase": "No quesito rejeição, 29% dos eleitores que dizem que não votariam em Patrus Ananias de jeito nenhum.",
+  "paragrafo": "No quesito rejeição, 29% dos eleitores que dizem que não votariam em Patrus Ananias de jeito nenhum. O mesmo disseram 23% dos entrevistados sobre Alexandre Kalil, segundo o Datafolha. Flávio Roscoe marcou 17% de rejeição, e Cleitinho e Simões, 14% cada.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#30",
+  "poll": "datafolha-mg-mg-00446-2026",
+  "uf": "MG",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Cleitinho lidera disputa em MG com 32% - 21/08/2026 - Política - Folha",
+  "nome": "Simões",
+  "partido": "PSD",
+  "percentual": 17,
+  "frase": "Flávio Roscoe marcou 17% de rejeição, e Cleitinho e Simões, 14% cada.",
+  "paragrafo": "No quesito rejeição, 29% dos eleitores que dizem que não votariam em Patrus Ananias de jeito nenhum. O mesmo disseram 23% dos entrevistados sobre Alexandre Kalil, segundo o Datafolha. Flávio Roscoe marcou 17% de rejeição, e Cleitinho e Simões, 14% cada.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#31",
+  "poll": "datafolha-mg-mg-00446-2026",
+  "uf": "MG",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Cleitinho lidera disputa em MG com 32% - 21/08/2026 - Política - Folha",
+  "nome": "Simões",
+  "partido": "PSD",
+  "percentual": 14,
+  "frase": "Flávio Roscoe marcou 17% de rejeição, e Cleitinho e Simões, 14% cada.",
+  "paragrafo": "No quesito rejeição, 29% dos eleitores que dizem que não votariam em Patrus Ananias de jeito nenhum. O mesmo disseram 23% dos entrevistados sobre Alexandre Kalil, segundo o Datafolha. Flávio Roscoe marcou 17% de rejeição, e Cleitinho e Simões, 14% cada.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#32",
+  "poll": "datafolha-mg-mg-00446-2026",
+  "uf": "MG",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Cleitinho lidera disputa em MG com 32% - 21/08/2026 - Política - Folha",
+  "nome": "Flávio Roscoe",
+  "partido": "PL",
+  "percentual": 17,
+  "frase": "Flávio Roscoe marcou 17% de rejeição, e Cleitinho e Simões, 14% cada.",
+  "paragrafo": "No quesito rejeição, 29% dos eleitores que dizem que não votariam em Patrus Ananias de jeito nenhum. O mesmo disseram 23% dos entrevistados sobre Alexandre Kalil, segundo o Datafolha. Flávio Roscoe marcou 17% de rejeição, e Cleitinho e Simões, 14% cada.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#33",
+  "poll": "datafolha-mg-mg-00446-2026",
+  "uf": "MG",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Cleitinho lidera disputa em MG com 32% - 21/08/2026 - Política - Folha",
+  "nome": "Simões",
+  "partido": "PSD",
+  "percentual": 23,
+  "frase": "O governo de Simões , que assumiu com a renúncia de Zema para disputar a Planalto, é avaliado como bom ou ótimo por 23% dos eleitores do estado, ao passo que 15% consideram a gestão ruim ou péssima.",
+  "paragrafo": "O governo de Simões , que assumiu com a renúncia de Zema para disputar a Planalto, é avaliado como bom ou ótimo por 23% dos eleitores do estado, ao passo que 15% consideram a gestão ruim ou péssima. Para 37%, o trabalho é regular.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "avaliacao_gestao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#34",
+  "poll": "datafolha-mg-mg-00446-2026",
+  "uf": "MG",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Cleitinho lidera disputa em MG com 32% - 21/08/2026 - Política - Folha",
+  "nome": "Simões",
+  "partido": "PSD",
+  "percentual": 15,
+  "frase": "O governo de Simões , que assumiu com a renúncia de Zema para disputar a Planalto, é avaliado como bom ou ótimo por 23% dos eleitores do estado, ao passo que 15% consideram a gestão ruim ou péssima.",
+  "paragrafo": "O governo de Simões , que assumiu com a renúncia de Zema para disputar a Planalto, é avaliado como bom ou ótimo por 23% dos eleitores do estado, ao passo que 15% consideram a gestão ruim ou péssima. Para 37%, o trabalho é regular.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "avaliacao_gestao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#35",
+  "poll": "datafolha-mg-mg-00446-2026",
+  "uf": "MG",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Cleitinho lidera disputa em MG com 32% - 21/08/2026 - Política - Folha",
+  "nome": "Patrus Ananias",
+  "partido": "PT",
+  "percentual": 12,
+  "frase": "Em segundo lugar, estão Patrus Ananias (PT) e Alexandre Kalil ( PDT ), ambos ex-prefeitos de Belo Horizonte, com 12% cada um.",
+  "paragrafo": "Em segundo lugar, estão Patrus Ananias (PT) e Alexandre Kalil ( PDT ), ambos ex-prefeitos de Belo Horizonte, com 12% cada um.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#36",
+  "poll": "datafolha-mg-mg-00446-2026",
+  "uf": "MG",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Cleitinho lidera disputa em MG com 32% - 21/08/2026 - Política - Folha",
+  "nome": "Alexandre Kalil",
+  "partido": "PDT",
+  "percentual": 12,
+  "frase": "Em segundo lugar, estão Patrus Ananias (PT) e Alexandre Kalil ( PDT ), ambos ex-prefeitos de Belo Horizonte, com 12% cada um.",
+  "paragrafo": "Em segundo lugar, estão Patrus Ananias (PT) e Alexandre Kalil ( PDT ), ambos ex-prefeitos de Belo Horizonte, com 12% cada um.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#37",
+  "poll": "datafolha-mg-mg-00446-2026",
+  "uf": "MG",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Cleitinho lidera disputa em MG com 32% - 21/08/2026 - Política - Folha",
+  "nome": "Mateus Simões",
+  "partido": "PSD",
+  "percentual": 4,
+  "frase": "O atual governador Mateus Simões ( PSD ), Flávio Roscoe (PL) e o ex-presidente da Câmara Municipal de Belo Horizonte Gabriel Azevedo ( MDB ) marcaram 4% cada.",
+  "paragrafo": "O atual governador Mateus Simões ( PSD ), Flávio Roscoe (PL) e o ex-presidente da Câmara Municipal de Belo Horizonte Gabriel Azevedo ( MDB ) marcaram 4% cada.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#38",
+  "poll": "datafolha-mg-mg-00446-2026",
+  "uf": "MG",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Cleitinho lidera disputa em MG com 32% - 21/08/2026 - Política - Folha",
+  "nome": "Flávio Roscoe",
+  "partido": "PL",
+  "percentual": 4,
+  "frase": "O atual governador Mateus Simões ( PSD ), Flávio Roscoe (PL) e o ex-presidente da Câmara Municipal de Belo Horizonte Gabriel Azevedo ( MDB ) marcaram 4% cada.",
+  "paragrafo": "O atual governador Mateus Simões ( PSD ), Flávio Roscoe (PL) e o ex-presidente da Câmara Municipal de Belo Horizonte Gabriel Azevedo ( MDB ) marcaram 4% cada.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#39",
+  "poll": "datafolha-mg-mg-00446-2026",
+  "uf": "MG",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Cleitinho lidera disputa em MG com 32% - 21/08/2026 - Política - Folha",
+  "nome": "Belo Horizonte Gabriel Azevedo",
+  "partido": "MDB",
+  "percentual": 4,
+  "frase": "O atual governador Mateus Simões ( PSD ), Flávio Roscoe (PL) e o ex-presidente da Câmara Municipal de Belo Horizonte Gabriel Azevedo ( MDB ) marcaram 4% cada.",
+  "paragrafo": "O atual governador Mateus Simões ( PSD ), Flávio Roscoe (PL) e o ex-presidente da Câmara Municipal de Belo Horizonte Gabriel Azevedo ( MDB ) marcaram 4% cada.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-mg-mg-00446-2026#40",
+  "poll": "datafolha-mg-mg-00446-2026",
+  "uf": "MG",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Cleitinho lidera disputa em MG com 32% - 21/08/2026 - Política - Folha",
+  "nome": "Túlio Lopes",
+  "partido": "PCB",
+  "percentual": 2,
+  "frase": "Túlio Lopes (PCB) aparece com 2%.",
+  "paragrafo": "Túlio Lopes (PCB) aparece com 2%. Tiveram 1% Rafael Duda (PSTU), Ben Mendes (Missão) e Indira Xavier (UP). Henrique Áreas (PCO) não pontuou.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#41",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Raquel Lyra tem 47%, e João Campos, 40%, em PE - 21/08/2026 - Política - Folha",
+  "nome": "Campos",
+  "partido": "PSB",
+  "percentual": 47,
+  "frase": "Raquel aparece com 47% das intenções de voto, ante 40% de Campos, diferença acima da margem de erro.",
+  "paragrafo": "Raquel aparece com 47% das intenções de voto, ante 40% de Campos, diferença acima da margem de erro.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#42",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Raquel Lyra tem 47%, e João Campos, 40%, em PE - 21/08/2026 - Política - Folha",
+  "nome": "Campos",
+  "partido": "PSB",
+  "percentual": 40,
+  "frase": "Raquel aparece com 47% das intenções de voto, ante 40% de Campos, diferença acima da margem de erro.",
+  "paragrafo": "Raquel aparece com 47% das intenções de voto, ante 40% de Campos, diferença acima da margem de erro.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#43",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Raquel Lyra tem 47%, e João Campos, 40%, em PE - 21/08/2026 - Política - Folha",
+  "nome": "Ivan Moraes",
+  "partido": "PSOL",
+  "percentual": 20,
+  "frase": "Renan Hallais aparece na sequência com 20% de rejeição, seguido de Guilherme Fonseca (18%), Ivan Moraes (17%), Victor Assis (16%), Professor Jeremias do Banco (12%) e Professora Camila (12%).",
+  "paragrafo": "Renan Hallais aparece na sequência com 20% de rejeição, seguido de Guilherme Fonseca (18%), Ivan Moraes (17%), Victor Assis (16%), Professor Jeremias do Banco (12%) e Professora Camila (12%). Outros 3% disseram não rejeitar nenhum dos candidatos e 2% disseram rejeitar todos.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#44",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Raquel Lyra tem 47%, e João Campos, 40%, em PE - 21/08/2026 - Política - Folha",
+  "nome": "Ivan Moraes",
+  "partido": "PSOL",
+  "percentual": 18,
+  "frase": "Renan Hallais aparece na sequência com 20% de rejeição, seguido de Guilherme Fonseca (18%), Ivan Moraes (17%), Victor Assis (16%), Professor Jeremias do Banco (12%) e Professora Camila (12%).",
+  "paragrafo": "Renan Hallais aparece na sequência com 20% de rejeição, seguido de Guilherme Fonseca (18%), Ivan Moraes (17%), Victor Assis (16%), Professor Jeremias do Banco (12%) e Professora Camila (12%). Outros 3% disseram não rejeitar nenhum dos candidatos e 2% disseram rejeitar todos.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#45",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Raquel Lyra tem 47%, e João Campos, 40%, em PE - 21/08/2026 - Política - Folha",
+  "nome": "Ivan Moraes",
+  "partido": "PSOL",
+  "percentual": 17,
+  "frase": "Renan Hallais aparece na sequência com 20% de rejeição, seguido de Guilherme Fonseca (18%), Ivan Moraes (17%), Victor Assis (16%), Professor Jeremias do Banco (12%) e Professora Camila (12%).",
+  "paragrafo": "Renan Hallais aparece na sequência com 20% de rejeição, seguido de Guilherme Fonseca (18%), Ivan Moraes (17%), Victor Assis (16%), Professor Jeremias do Banco (12%) e Professora Camila (12%). Outros 3% disseram não rejeitar nenhum dos candidatos e 2% disseram rejeitar todos.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#46",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Raquel Lyra tem 47%, e João Campos, 40%, em PE - 21/08/2026 - Política - Folha",
+  "nome": "Raquel Lyra",
+  "partido": "PSD",
+  "percentual": 50,
+  "frase": "Ao todo, 50% dos eleitores avaliam o governo de Raquel Lyra como ótimo ou bom.",
+  "paragrafo": "O Datafolha também mediu a avaliação do governo. Ao todo, 50% dos eleitores avaliam o governo de Raquel Lyra como ótimo ou bom. Outros 30% classificaram a gestão como regular, 18% como ruim ou péssima e 2% não souberam responder.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "avaliacao_gestao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#47",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Raquel Lyra tem 47%, e João Campos, 40%, em PE - 21/08/2026 - Política - Folha",
+  "nome": "Ivan Moraes",
+  "partido": "PSOL",
+  "percentual": 1,
+  "frase": "Ivan Moraes ( PSOL ), Renan Hallais (Missão), Professora Camila (UP) e Guilherme Fonseca (PSTU), marcaram 1% cada.",
+  "paragrafo": "Ivan Moraes ( PSOL ), Renan Hallais (Missão), Professora Camila (UP) e Guilherme Fonseca (PSTU), marcaram 1% cada. Já Professor Jeremias do Banco (Democrata) e Victor Assis (PCO) não pontuaram.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#48",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Raquel Lyra tem 47%, e João Campos, 40%, em PE - 21/08/2026 - Política - Folha",
+  "nome": "Professora Camila",
+  "partido": "UP",
+  "percentual": 1,
+  "frase": "Ivan Moraes ( PSOL ), Renan Hallais (Missão), Professora Camila (UP) e Guilherme Fonseca (PSTU), marcaram 1% cada.",
+  "paragrafo": "Ivan Moraes ( PSOL ), Renan Hallais (Missão), Professora Camila (UP) e Guilherme Fonseca (PSTU), marcaram 1% cada. Já Professor Jeremias do Banco (Democrata) e Victor Assis (PCO) não pontuaram.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#49",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Raquel Lyra tem 47%, e João Campos, 40%, em PE - 21/08/2026 - Política - Folha",
+  "nome": "Guilherme Fonseca",
+  "partido": "PSTU",
+  "percentual": 1,
+  "frase": "Ivan Moraes ( PSOL ), Renan Hallais (Missão), Professora Camila (UP) e Guilherme Fonseca (PSTU), marcaram 1% cada.",
+  "paragrafo": "Ivan Moraes ( PSOL ), Renan Hallais (Missão), Professora Camila (UP) e Guilherme Fonseca (PSTU), marcaram 1% cada. Já Professor Jeremias do Banco (Democrata) e Victor Assis (PCO) não pontuaram.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#50",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Raquel Lyra tem 47%, e João Campos, 40%, em PE - 21/08/2026 - Política - Folha",
+  "nome": "Raquel Lyra",
+  "partido": "PSD",
+  "percentual": 52,
+  "frase": "Considerando apenas os votos válidos, em que não são contabilizados nulos e brancos, Raquel Lyra marca 52%, contra 44% de João Campos, cenário em que a disputa se encerraria no primeiro turno.",
+  "paragrafo": "Considerando apenas os votos válidos, em que não são contabilizados nulos e brancos, Raquel Lyra marca 52%, contra 44% de João Campos, cenário em que a disputa se encerraria no primeiro turno.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#51",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Raquel Lyra tem 47%, e João Campos, 40%, em PE - 21/08/2026 - Política - Folha",
+  "nome": "Raquel Lyra",
+  "partido": "PSD",
+  "percentual": 44,
+  "frase": "Considerando apenas os votos válidos, em que não são contabilizados nulos e brancos, Raquel Lyra marca 52%, contra 44% de João Campos, cenário em que a disputa se encerraria no primeiro turno.",
+  "paragrafo": "Considerando apenas os votos válidos, em que não são contabilizados nulos e brancos, Raquel Lyra marca 52%, contra 44% de João Campos, cenário em que a disputa se encerraria no primeiro turno.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pe-pe-01528-2026#52",
+  "poll": "datafolha-pe-pe-01528-2026",
+  "uf": "PE",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Raquel Lyra tem 47%, e João Campos, 40%, em PE - 21/08/2026 - Política - Folha",
+  "nome": "Campos",
+  "partido": "PSB",
+  "percentual": 52,
+  "frase": "Considerando apenas os votos válidos, em que não são contabilizados nulos e brancos, Raquel Lyra marca 52%, contra 44% de João Campos, cenário em que a disputa se encerraria no primeiro turno.",
+  "paragrafo": "Considerando apenas os votos válidos, em que não são contabilizados nulos e brancos, Raquel Lyra marca 52%, contra 44% de João Campos, cenário em que a disputa se encerraria no primeiro turno.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#53",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Rafael Fonteles venceria no 1º turno no Piauí - 22/08/2026 - Política - Folha",
+  "nome": "Rodrigues",
+  "partido": "PP",
+  "percentual": 27,
+  "frase": "Questionados sobre em qual candidato não votariam de jeito nenhum, 27% citaram Rodrigues, mesmo percentual de Lourdes Melo.",
+  "paragrafo": "Questionados sobre em qual candidato não votariam de jeito nenhum, 27% citaram Rodrigues, mesmo percentual de Lourdes Melo. Na sequência, aparecem Elizeu Aguiar, com 23%, Geraldo Carvalho, com 22%, e Rafael Fonteles, rejeitado por 21%.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#54",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Rafael Fonteles venceria no 1º turno no Piauí - 22/08/2026 - Política - Folha",
+  "nome": "Lourdes Melo",
+  "partido": "PCO",
+  "percentual": 27,
+  "frase": "Questionados sobre em qual candidato não votariam de jeito nenhum, 27% citaram Rodrigues, mesmo percentual de Lourdes Melo.",
+  "paragrafo": "Questionados sobre em qual candidato não votariam de jeito nenhum, 27% citaram Rodrigues, mesmo percentual de Lourdes Melo. Na sequência, aparecem Elizeu Aguiar, com 23%, Geraldo Carvalho, com 22%, e Rafael Fonteles, rejeitado por 21%.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#55",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Rafael Fonteles venceria no 1º turno no Piauí - 22/08/2026 - Política - Folha",
+  "nome": "Rafael Fonteles",
+  "partido": "PT",
+  "percentual": 23,
+  "frase": "Na sequência, aparecem Elizeu Aguiar, com 23%, Geraldo Carvalho, com 22%, e Rafael Fonteles, rejeitado por 21%.",
+  "paragrafo": "Questionados sobre em qual candidato não votariam de jeito nenhum, 27% citaram Rodrigues, mesmo percentual de Lourdes Melo. Na sequência, aparecem Elizeu Aguiar, com 23%, Geraldo Carvalho, com 22%, e Rafael Fonteles, rejeitado por 21%.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#56",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Rafael Fonteles venceria no 1º turno no Piauí - 22/08/2026 - Política - Folha",
+  "nome": "Rafael Fonteles",
+  "partido": "PT",
+  "percentual": 22,
+  "frase": "Na sequência, aparecem Elizeu Aguiar, com 23%, Geraldo Carvalho, com 22%, e Rafael Fonteles, rejeitado por 21%.",
+  "paragrafo": "Questionados sobre em qual candidato não votariam de jeito nenhum, 27% citaram Rodrigues, mesmo percentual de Lourdes Melo. Na sequência, aparecem Elizeu Aguiar, com 23%, Geraldo Carvalho, com 22%, e Rafael Fonteles, rejeitado por 21%.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#57",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Rafael Fonteles venceria no 1º turno no Piauí - 22/08/2026 - Política - Folha",
+  "nome": "Rafael Fonteles",
+  "partido": "PT",
+  "percentual": 21,
+  "frase": "Na sequência, aparecem Elizeu Aguiar, com 23%, Geraldo Carvalho, com 22%, e Rafael Fonteles, rejeitado por 21%.",
+  "paragrafo": "Questionados sobre em qual candidato não votariam de jeito nenhum, 27% citaram Rodrigues, mesmo percentual de Lourdes Melo. Na sequência, aparecem Elizeu Aguiar, com 23%, Geraldo Carvalho, com 22%, e Rafael Fonteles, rejeitado por 21%.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#58",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Rafael Fonteles venceria no 1º turno no Piauí - 22/08/2026 - Política - Folha",
+  "nome": "Rafael Fonteles",
+  "partido": "PT",
+  "percentual": 56,
+  "frase": "O governador Rafael Fonteles ( PT ) tem 56% das intenções de voto e venceria a eleição para o Governo do Piauí no primeiro turno, mostra pesquisa Datafolha divulgada neste sábado (22).",
+  "paragrafo": "O governador Rafael Fonteles ( PT ) tem 56% das intenções de voto e venceria a eleição para o Governo do Piauí no primeiro turno, mostra pesquisa Datafolha divulgada neste sábado (22).",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#59",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Rafael Fonteles venceria no 1º turno no Piauí - 22/08/2026 - Política - Folha",
+  "nome": "Joel Rodrigues",
+  "partido": "PP",
+  "percentual": 21,
+  "frase": "Joel Rodrigues ( PP ) aparece em segundo lugar, 21%.",
+  "paragrafo": "Joel Rodrigues ( PP ) aparece em segundo lugar, 21%. Na sequência, vêm dra. Lúcia Santos ( PSDB ) e Geraldo Carvalho (PSTU), ambos com 2% cada um. Outros cinco candidatos marcam 1% cada: Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP). Ravenna da Inclusão (Democrata) não pontuou.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#60",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Rafael Fonteles venceria no 1º turno no Piauí - 22/08/2026 - Política - Folha",
+  "nome": "Lúcia Santos",
+  "partido": "PSDB",
+  "percentual": 2,
+  "frase": "Lúcia Santos ( PSDB ) e Geraldo Carvalho (PSTU), ambos com 2% cada um.",
+  "paragrafo": "Joel Rodrigues ( PP ) aparece em segundo lugar, 21%. Na sequência, vêm dra. Lúcia Santos ( PSDB ) e Geraldo Carvalho (PSTU), ambos com 2% cada um. Outros cinco candidatos marcam 1% cada: Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP). Ravenna da Inclusão (Democrata) não pontuou.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#61",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Rafael Fonteles venceria no 1º turno no Piauí - 22/08/2026 - Política - Folha",
+  "nome": "Geraldo Carvalho",
+  "partido": "PSTU",
+  "percentual": 2,
+  "frase": "Lúcia Santos ( PSDB ) e Geraldo Carvalho (PSTU), ambos com 2% cada um.",
+  "paragrafo": "Joel Rodrigues ( PP ) aparece em segundo lugar, 21%. Na sequência, vêm dra. Lúcia Santos ( PSDB ) e Geraldo Carvalho (PSTU), ambos com 2% cada um. Outros cinco candidatos marcam 1% cada: Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP). Ravenna da Inclusão (Democrata) não pontuou.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#62",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Rafael Fonteles venceria no 1º turno no Piauí - 22/08/2026 - Política - Folha",
+  "nome": "Lourdes Melo",
+  "partido": "PCO",
+  "percentual": 1,
+  "frase": "Outros cinco candidatos marcam 1% cada: Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP).",
+  "paragrafo": "Joel Rodrigues ( PP ) aparece em segundo lugar, 21%. Na sequência, vêm dra. Lúcia Santos ( PSDB ) e Geraldo Carvalho (PSTU), ambos com 2% cada um. Outros cinco candidatos marcam 1% cada: Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP). Ravenna da Inclusão (Democrata) não pontuou.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-pi-pi-06656-2026#63",
+  "poll": "datafolha-pi-pi-06656-2026",
+  "uf": "PI",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Rafael Fonteles venceria no 1º turno no Piauí - 22/08/2026 - Política - Folha",
+  "nome": "Professor Gisvaldo",
+  "partido": "PSOL",
+  "percentual": 1,
+  "frase": "Outros cinco candidatos marcam 1% cada: Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP).",
+  "paragrafo": "Joel Rodrigues ( PP ) aparece em segundo lugar, 21%. Na sequência, vêm dra. Lúcia Santos ( PSDB ) e Geraldo Carvalho (PSTU), ambos com 2% cada um. Outros cinco candidatos marcam 1% cada: Lourdes Melo (PCO), Professor Gisvaldo ( PSOL ), Professor Jurity (DC), Elizeu Aguiar ( Novo ) e Santiago Belizário (UP). Ravenna da Inclusão (Democrata) não pontuou.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#64",
+  "poll": "datafolha-rj-rj-02945-2026",
+  "uf": "RJ",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Paes tem 41% no Rio, contra 19% de Douglas Ruas - 21/08/2026 - Política - Folha",
+  "nome": "Ruas",
+  "partido": "PL",
+  "percentual": 19,
+  "frase": "Ruas é rejeitado por 19% dos eleitores, mesmo patamar de Cyro Garcia, com 18%, coronel Busnello, com 16% e Siri, com 15%.",
+  "paragrafo": "Garotinho, por sua vez, lidera o índice de rejeição ao ser apontado por 45% dos entrevistados como o candidato em quem não votaria de jeito nenhum. O candidato do PSD aparece com 26%. Ruas é rejeitado por 19% dos eleitores, mesmo patamar de Cyro Garcia, com 18%, coronel Busnello, com 16% e Siri, com 15%.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#65",
+  "poll": "datafolha-rj-rj-02945-2026",
+  "uf": "RJ",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Paes tem 41% no Rio, contra 19% de Douglas Ruas - 21/08/2026 - Política - Folha",
+  "nome": "Ruas",
+  "partido": "PL",
+  "percentual": 18,
+  "frase": "Ruas é rejeitado por 19% dos eleitores, mesmo patamar de Cyro Garcia, com 18%, coronel Busnello, com 16% e Siri, com 15%.",
+  "paragrafo": "Garotinho, por sua vez, lidera o índice de rejeição ao ser apontado por 45% dos entrevistados como o candidato em quem não votaria de jeito nenhum. O candidato do PSD aparece com 26%. Ruas é rejeitado por 19% dos eleitores, mesmo patamar de Cyro Garcia, com 18%, coronel Busnello, com 16% e Siri, com 15%.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#66",
+  "poll": "datafolha-rj-rj-02945-2026",
+  "uf": "RJ",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Paes tem 41% no Rio, contra 19% de Douglas Ruas - 21/08/2026 - Política - Folha",
+  "nome": "Ruas",
+  "partido": "PL",
+  "percentual": 16,
+  "frase": "Ruas é rejeitado por 19% dos eleitores, mesmo patamar de Cyro Garcia, com 18%, coronel Busnello, com 16% e Siri, com 15%.",
+  "paragrafo": "Garotinho, por sua vez, lidera o índice de rejeição ao ser apontado por 45% dos entrevistados como o candidato em quem não votaria de jeito nenhum. O candidato do PSD aparece com 26%. Ruas é rejeitado por 19% dos eleitores, mesmo patamar de Cyro Garcia, com 18%, coronel Busnello, com 16% e Siri, com 15%.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#67",
+  "poll": "datafolha-rj-rj-02945-2026",
+  "uf": "RJ",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Paes tem 41% no Rio, contra 19% de Douglas Ruas - 21/08/2026 - Política - Folha",
+  "nome": "Paes",
+  "partido": "PSD",
+  "percentual": 41,
+  "frase": "Paes registra 41 % das intenções de votos.",
+  "paragrafo": "Paes registra 41 % das intenções de votos. Em segundo lugar está o presidente da Alerj (Assembleia Legislativa do Rio de Janeiro) Douglas Ruas ( PL ), com 19%. O ex-governador Anthony Garotinho ( Republicanos ) aparece em terceiro, com 9%.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#68",
+  "poll": "datafolha-rj-rj-02945-2026",
+  "uf": "RJ",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Paes tem 41% no Rio, contra 19% de Douglas Ruas - 21/08/2026 - Política - Folha",
+  "nome": "Douglas Ruas",
+  "partido": "PL",
+  "percentual": 19,
+  "frase": "Em segundo lugar está o presidente da Alerj (Assembleia Legislativa do Rio de Janeiro) Douglas Ruas ( PL ), com 19%.",
+  "paragrafo": "Paes registra 41 % das intenções de votos. Em segundo lugar está o presidente da Alerj (Assembleia Legislativa do Rio de Janeiro) Douglas Ruas ( PL ), com 19%. O ex-governador Anthony Garotinho ( Republicanos ) aparece em terceiro, com 9%.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#69",
+  "poll": "datafolha-rj-rj-02945-2026",
+  "uf": "RJ",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Paes tem 41% no Rio, contra 19% de Douglas Ruas - 21/08/2026 - Política - Folha",
+  "nome": "Paes",
+  "partido": "PSD",
+  "percentual": 51,
+  "frase": "Desconsiderando os eleitores que não optaram por um candidato, Paes tem 51% dos votos válidos.",
+  "paragrafo": "Desconsiderando os eleitores que não optaram por um candidato, Paes tem 51% dos votos válidos. Pelas regras eleitorais, vence no primeiro turno o postulante que obtiver mais da metade dos votos válidos, que desconsidera nulos e brancos.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#70",
+  "poll": "datafolha-rj-rj-02945-2026",
+  "uf": "RJ",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Paes tem 41% no Rio, contra 19% de Douglas Ruas - 21/08/2026 - Política - Folha",
+  "nome": "Cyro Garcia",
+  "partido": "PSTU",
+  "percentual": 2,
+  "frase": "O coronel aposentado da PM João Jacques Busnello (Missão), o sindicalista Cyro Garcia (PSTU), o vereador Willian Siri ( PSOL ), o empresário André Marinho (Novo) e Juliete Pantoja (UP) aparecem, todos, com 2% cada um.",
+  "paragrafo": "Em um terceiro patamar estão todos os demais candidatos, empatados tecnicamente. O coronel aposentado da PM João Jacques Busnello (Missão), o sindicalista Cyro Garcia (PSTU), o vereador Willian Siri ( PSOL ), o empresário André Marinho (Novo) e Juliete Pantoja (UP) aparecem, todos, com 2% cada um. Luan Monteiro (PCO) registra 1%",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#71",
+  "poll": "datafolha-rj-rj-02945-2026",
+  "uf": "RJ",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Paes tem 41% no Rio, contra 19% de Douglas Ruas - 21/08/2026 - Política - Folha",
+  "nome": "Willian Siri",
+  "partido": "PSOL",
+  "percentual": 2,
+  "frase": "O coronel aposentado da PM João Jacques Busnello (Missão), o sindicalista Cyro Garcia (PSTU), o vereador Willian Siri ( PSOL ), o empresário André Marinho (Novo) e Juliete Pantoja (UP) aparecem, todos, com 2% cada um.",
+  "paragrafo": "Em um terceiro patamar estão todos os demais candidatos, empatados tecnicamente. O coronel aposentado da PM João Jacques Busnello (Missão), o sindicalista Cyro Garcia (PSTU), o vereador Willian Siri ( PSOL ), o empresário André Marinho (Novo) e Juliete Pantoja (UP) aparecem, todos, com 2% cada um. Luan Monteiro (PCO) registra 1%",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-rj-rj-02945-2026#72",
+  "poll": "datafolha-rj-rj-02945-2026",
+  "uf": "RJ",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Paes tem 41% no Rio, contra 19% de Douglas Ruas - 21/08/2026 - Política - Folha",
+  "nome": "Juliete Pantoja",
+  "partido": "UP",
+  "percentual": 2,
+  "frase": "O coronel aposentado da PM João Jacques Busnello (Missão), o sindicalista Cyro Garcia (PSTU), o vereador Willian Siri ( PSOL ), o empresário André Marinho (Novo) e Juliete Pantoja (UP) aparecem, todos, com 2% cada um.",
+  "paragrafo": "Em um terceiro patamar estão todos os demais candidatos, empatados tecnicamente. O coronel aposentado da PM João Jacques Busnello (Missão), o sindicalista Cyro Garcia (PSTU), o vereador Willian Siri ( PSOL ), o empresário André Marinho (Novo) e Juliete Pantoja (UP) aparecem, todos, com 2% cada um. Luan Monteiro (PCO) registra 1%",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "holdout"
+ },
+ {
+  "id": "datafolha-sp-sp-01806-2026#73",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Tarcísio tem 45% em SP, contra 27% de Haddad - 21/08/2026 - Política - Folha",
+  "nome": "Vivian Mendes",
+  "partido": "UP",
+  "percentual": 11,
+  "frase": "Vivian Mendes é rejeitada por 11%, e 5% dos eleitores ouvidos pelo Datafolha disseram que rejeitam todos ou que não votariam em nenhum.",
+  "paragrafo": "Vivian Mendes é rejeitada por 11%, e 5% dos eleitores ouvidos pelo Datafolha disseram que rejeitam todos ou que não votariam em nenhum. Já 2% afirmaram que votariam em qualquer um ou que não rejeitariam nenhum, enquanto 6% não souberam responder.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-sp-sp-01806-2026#74",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Tarcísio tem 45% em SP, contra 27% de Haddad - 21/08/2026 - Política - Folha",
+  "nome": "Vivian Mendes",
+  "partido": "UP",
+  "percentual": 5,
+  "frase": "Vivian Mendes é rejeitada por 11%, e 5% dos eleitores ouvidos pelo Datafolha disseram que rejeitam todos ou que não votariam em nenhum.",
+  "paragrafo": "Vivian Mendes é rejeitada por 11%, e 5% dos eleitores ouvidos pelo Datafolha disseram que rejeitam todos ou que não votariam em nenhum. Já 2% afirmaram que votariam em qualquer um ou que não rejeitariam nenhum, enquanto 6% não souberam responder.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "rejeicao"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-sp-sp-01806-2026#75",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Tarcísio tem 45% em SP, contra 27% de Haddad - 21/08/2026 - Política - Folha",
+  "nome": "Fernando Haddad",
+  "partido": "PT",
+  "percentual": 45,
+  "frase": "Pesquisa Datafolha divulgada nesta sexta-feira (21) mostra que o governador de São Paulo , Tarcísio de Freitas (Republicanos), que tenta a reeleição, tem 45% das intenções de voto em cenário de primeiro turno e mantém a liderança na disputa contra Fernando Haddad ( PT ), que tem 27%.",
+  "paragrafo": "Pesquisa Datafolha divulgada nesta sexta-feira (21) mostra que o governador de São Paulo , Tarcísio de Freitas (Republicanos), que tenta a reeleição, tem 45% das intenções de voto em cenário de primeiro turno e mantém a liderança na disputa contra Fernando Haddad ( PT ), que tem 27%.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-sp-sp-01806-2026#76",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Tarcísio tem 45% em SP, contra 27% de Haddad - 21/08/2026 - Política - Folha",
+  "nome": "Fernando Haddad",
+  "partido": "PT",
+  "percentual": 27,
+  "frase": "Pesquisa Datafolha divulgada nesta sexta-feira (21) mostra que o governador de São Paulo , Tarcísio de Freitas (Republicanos), que tenta a reeleição, tem 45% das intenções de voto em cenário de primeiro turno e mantém a liderança na disputa contra Fernando Haddad ( PT ), que tem 27%.",
+  "paragrafo": "Pesquisa Datafolha divulgada nesta sexta-feira (21) mostra que o governador de São Paulo , Tarcísio de Freitas (Republicanos), que tenta a reeleição, tem 45% das intenções de voto em cenário de primeiro turno e mantém a liderança na disputa contra Fernando Haddad ( PT ), que tem 27%.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-sp-sp-01806-2026#77",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Tarcísio tem 45% em SP, contra 27% de Haddad - 21/08/2026 - Política - Folha",
+  "nome": "Haddad",
+  "partido": "PT",
+  "percentual": 54,
+  "frase": "Em um eventual segundo turno entre os dois, de acordo com o levantamento, Tarcísio venceria Haddad por 54% a 35%.",
+  "paragrafo": "Em um eventual segundo turno entre os dois, de acordo com o levantamento, Tarcísio venceria Haddad por 54% a 35%.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_segundo_turno"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-sp-sp-01806-2026#78",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Tarcísio tem 45% em SP, contra 27% de Haddad - 21/08/2026 - Política - Folha",
+  "nome": "Haddad",
+  "partido": "PT",
+  "percentual": 35,
+  "frase": "Em um eventual segundo turno entre os dois, de acordo com o levantamento, Tarcísio venceria Haddad por 54% a 35%.",
+  "paragrafo": "Em um eventual segundo turno entre os dois, de acordo com o levantamento, Tarcísio venceria Haddad por 54% a 35%.",
+  "viaRoster": true,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_segundo_turno"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-sp-sp-01806-2026#79",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Tarcísio tem 45% em SP, contra 27% de Haddad - 21/08/2026 - Política - Folha",
+  "nome": "Vera Lúcia",
+  "partido": "PSTU",
+  "percentual": 4,
+  "frase": "Na pesquisa desta sexta, 4% dos entrevistados disseram que pretendem votar no primeiro turno em Vera Lúcia (PSTU).",
+  "paragrafo": "Na pesquisa desta sexta, 4% dos entrevistados disseram que pretendem votar no primeiro turno em Vera Lúcia (PSTU). Carlos Machado (PCB) obteve 3%, mesmo percentual de Policial Edjane (Agir). Vivian Mendes (UP) ficou com 2%, e Izadora Dias (PCO), com 1%. Brancos, nulos e os que afirmam que não votarão em ninguém somaram 11%, e 4% dos entrevistados se declararam indecisos.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "ajuste"
+ },
+ {
+  "id": "datafolha-sp-sp-01806-2026#80",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Tarcísio tem 45% em SP, contra 27% de Haddad - 21/08/2026 - Política - Folha",
+  "nome": "Carlos Machado",
+  "partido": "PCB",
+  "percentual": 3,
+  "frase": "Carlos Machado (PCB) obteve 3%, mesmo percentual de Policial Edjane (Agir).",
+  "paragrafo": "Na pesquisa desta sexta, 4% dos entrevistados disseram que pretendem votar no primeiro turno em Vera Lúcia (PSTU). Carlos Machado (PCB) obteve 3%, mesmo percentual de Policial Edjane (Agir). Vivian Mendes (UP) ficou com 2%, e Izadora Dias (PCO), com 1%. Brancos, nulos e os que afirmam que não votarão em ninguém somaram 11%, e 4% dos entrevistados se declararam indecisos.",
+  "viaRoster": false,
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno"
+  },
+  "split": "ajuste"
+ }
+]

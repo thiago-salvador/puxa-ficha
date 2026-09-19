@@ -163,6 +163,7 @@ nem em runtime de produção. Não autoriza aplicação de migrations.
 | `PF_EDITORIAL_FICHA_SLUG`, `PF_EDITORIAL_RELAX_SOBER`, `PF_EDITORIAL_REQUIRE_SELLOS` | Recorte e rigor das specs editoriais | Opcionais e restritas aos testes. | Teste local |
 | `PF_FIXTURE_SCENARIO`, `PF_FIXTURE_SHA` | Fixture do readback da Fase 4 | Opcionais; defaults `ok` e vazio. | Teste unitário |
 | `PF_ITEM11_MUTATE_VISIBLE_CONTENT` | Perturbação deliberada do fixture | Opcional e restrita ao grader de regressão. | Teste local |
+| `PF_GOLDEN`, `PF_PERGUNTAS`, `PF_SAIDA` | Avaliação e rastreio locais da extração de pesquisas | Opcionais; sobrescrevem os nomes dos arquivos de golden, perguntas e saída. Na ausência, os scripts usam seus nomes padrão versionados. Não configurar em produção. | Teste local |
 
 ### Plataforma e GitHub Actions
 

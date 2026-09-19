@@ -1,0 +1,72 @@
+{
+  "atribuicao": {
+    "type": "noul",
+    "instructions": "Aplicando `contexto.politicas`, o percentual em `par.percentual` é o número que a frase em `par.frase` atribui especificamente à pessoa em `par.nome`?",
+    "criteria": {
+      "true": "A frase atribui esse percentual exatamente a essa pessoa, inclusive quando o verbo está elíptico ou quando o valor aparece depois do nome numa enumeração.",
+      "false": "A frase menciona a pessoa, mas esse percentual pertence a outra pessoa, ao total, ao somatorio, ou a nenhuma pessoa em particular."
+    }
+  },
+  "medida": {
+    "type": "choice",
+    "instructions": "O que o percentual em `par.percentual` mede na frase em `par.frase`, lida dentro de `par.paragrafo` e considerando `par.nome`?",
+    "criteria": {
+      "intencao_voto_primeiro_turno": {
+        "cobre": "Intenção de voto em cenário de primeiro turno, estimulada ou espontânea.",
+        "nao_cobre": "Segundo turno, rejeição, avaliação de gestão, margem de erro, total de entrevistados.",
+        "exemplos": [
+          "tem 45% das intenções de voto em cenário de primeiro turno",
+          "aparece com 12% no primeiro turno"
+        ]
+      },
+      "intencao_voto_segundo_turno": {
+        "cobre": "Intenção de voto num cenário hipotético de segundo turno entre dois nomes.",
+        "nao_cobre": "Primeiro turno, rejeição, avaliação de gestão.",
+        "exemplos": [
+          "venceria Haddad por 54% a 35%",
+          "em um eventual segundo turno, tem 47%"
+        ]
+      },
+      "rejeicao": {
+        "cobre": "Percentual de eleitores que declaram que não votariam na pessoa de jeito nenhum.",
+        "nao_cobre": "Intenção de voto de qualquer turno, avaliação de gestão.",
+        "exemplos": [
+          "47% responderam que não votariam nele de jeito nenhum",
+          "é o mais rejeitado por 29%"
+        ]
+      },
+      "avaliacao_gestao": {
+        "cobre": "Avaliação do governo ou da gestão: ótimo, bom, regular, ruim, péssimo, positiva ou negativa.",
+        "nao_cobre": "Intenção de voto, rejeição.",
+        "exemplos": [
+          "tem 42% de avaliação positiva e 23% de negativa"
+        ]
+      },
+      "outro": "Mede outra coisa, ou a frase não deixa claro o que o percentual mede."
+    }
+  },
+  "revisao_humana": {
+    "type": "noul",
+    "instructions": "Um revisor humano precisa olhar este par antes de qualquer publicação, considerando `par.frase` e `contexto.materia`?",
+    "criteria": {
+      "true": "A frase é ambígua, compara com pesquisa anterior, mistura mais de uma disputa, ou o número pode ser confundido com outra medida.",
+      "false": "A frase atribui um número a uma pessoa numa única disputa, sem ambiguidade."
+    }
+  },
+  "disputa_alvo": {
+    "type": "noul",
+    "instructions": "O percentual em `par.percentual`, como aparece em `par.frase` lida dentro de `par.paragrafo`, refere-se à disputa descrita em `contexto.alvo`?",
+    "criteria": {
+      "true": "O número mede essa disputa, nesse cargo e nessa unidade da federação.",
+      "false": "O número mede outra disputa da mesma matéria (outro cargo ou outro estado), ou não é intenção de voto em disputa nenhuma."
+    }
+  },
+  "atualidade": {
+    "type": "noul",
+    "instructions": "O percentual em `par.percentual`, como aparece em `par.frase` dentro de `par.paragrafo`, vem do levantamento que esta matéria está divulgando?",
+    "criteria": {
+      "true": "É resultado do levantamento atual, aquele que a matéria noticia, inclusive quando aparece em recorte de votos válidos ou em cenário de segundo turno do mesmo levantamento.",
+      "false": "É resultado de pesquisa anterior, de outra data ou de outro instituto, citado para comparação, contexto ou histórico."
+    }
+  }
+}

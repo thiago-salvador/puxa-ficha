@@ -60,7 +60,7 @@ test("parser reconhece tabela, valida filtros e não confunde formulário com co
   assert.throws(() => parsePaginaRegistrosPesqele("<html>nada</html>", parserInput))
 })
 
-test("descoberta integrada propaga orçamento finito dimensionado às três etapas", async () => {
+test("descoberta integrada propaga orçamento finito de sete minutos às três etapas", async () => {
   const seen: unknown[] = []
   const result = await executarDescobertaIntegrada({ targets: [], sourceId: "all", validateTargets: true, dateFrom: "2026-01-01", dateTo: "2026-09-12" }, {
     discover: async (input) => { seen.push(input.budget); return [] },
@@ -72,7 +72,7 @@ test("descoberta integrada propaga orçamento finito dimensionado às três etap
   })
   assert.equal(seen.length, 3)
   assert.ok(seen.every((budget) => budget === seen[0]))
-  assert.deepEqual(result.budget.limits, { maxRequests: 400, maxBytes: 120_000_000, maxDurationMs: 360_000, concurrency: 1 })
+  assert.deepEqual(result.budget.limits, { maxRequests: 400, maxBytes: 120_000_000, maxDurationMs: 420_000, concurrency: 1 })
   assert.equal(result.status, "partial")
   assert.equal(result.publication_authorized, false)
 })

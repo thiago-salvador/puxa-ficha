@@ -78,6 +78,7 @@ test("installed-site navigation gives an offline notice without storing electora
   } finally {
     await stop(server)
   }
-  await page.goto("/sobre")
+  await page.goto("/sobre", { waitUntil: "domcontentloaded" })
+  await expect(page.locator("main#main-content")).toBeVisible()
   await expect(page.getByRole("heading", { name: "Sem conexão" })).toHaveCount(0)
 })
