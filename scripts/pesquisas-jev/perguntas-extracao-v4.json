@@ -1,0 +1,103 @@
+{
+  "atribuicao": {
+    "type": "noul",
+    "instructions": "Aplicando `contexto.politicas`, o percentual em `par.percentual` é o número que a frase em `par.frase` atribui especificamente à pessoa em `par.nome`?",
+    "criteria": {
+      "true": "A frase atribui esse percentual exatamente a essa pessoa, inclusive quando o verbo está elíptico ou quando o valor aparece depois do nome numa enumeração.",
+      "false": "A frase menciona a pessoa, mas esse percentual pertence a outra pessoa, ao total, ao somatorio, ou a nenhuma pessoa em particular."
+    }
+  },
+  "medida": {
+    "type": "choice",
+    "instructions": "O que o percentual em `par.percentual` mede na frase em `par.frase`, lida dentro de `par.paragrafo` e considerando `par.nome`?",
+    "criteria": {
+      "intencao_voto_primeiro_turno": {
+        "cobre": "Intenção de voto em cenário de primeiro turno, estimulada ou espontânea.",
+        "nao_cobre": "Segundo turno, rejeição, avaliação de gestão, margem de erro, total de entrevistados.",
+        "exemplos": [
+          "tem 45% das intenções de voto em cenário de primeiro turno",
+          "aparece com 12% no primeiro turno"
+        ]
+      },
+      "intencao_voto_segundo_turno": {
+        "cobre": "Intenção de voto num cenário hipotético de segundo turno entre dois nomes.",
+        "nao_cobre": "Primeiro turno, rejeição, avaliação de gestão.",
+        "exemplos": [
+          "venceria Haddad por 54% a 35%",
+          "em um eventual segundo turno, tem 47%"
+        ]
+      },
+      "rejeicao": {
+        "cobre": "Percentual de eleitores que declaram que não votariam na pessoa de jeito nenhum.",
+        "nao_cobre": "Intenção de voto de qualquer turno, avaliação de gestão.",
+        "exemplos": [
+          "47% responderam que não votariam nele de jeito nenhum",
+          "é o mais rejeitado por 29%"
+        ]
+      },
+      "avaliacao_gestao": {
+        "cobre": "Avaliação do governo ou da gestão: ótimo, bom, regular, ruim, péssimo, positiva ou negativa.",
+        "nao_cobre": "Intenção de voto, rejeição.",
+        "exemplos": [
+          "tem 42% de avaliação positiva e 23% de negativa"
+        ]
+      },
+      "outro": "Mede outra coisa, ou a frase não deixa claro o que o percentual mede."
+    }
+  },
+  "revisao_humana": {
+    "type": "noul",
+    "instructions": "Um revisor humano precisa olhar este par antes de qualquer publicação, considerando `par.frase` e `contexto.materia`?",
+    "criteria": {
+      "true": "A frase é ambígua, compara com pesquisa anterior, mistura mais de uma disputa, ou o número pode ser confundido com outra medida.",
+      "false": "A frase atribui um número a uma pessoa numa única disputa, sem ambiguidade."
+    }
+  },
+  "disputa_alvo": {
+    "type": "noul",
+    "instructions": "O percentual em `par.percentual`, como aparece em `par.frase` lida dentro de `par.paragrafo` e sob a seção descrita em `par.secao`, refere-se à disputa em `contexto.alvo`?",
+    "criteria": {
+      "true": "O número mede essa disputa, nesse cargo e nessa unidade da federação.",
+      "false": "O número mede outra disputa da mesma matéria, inclusive quando o parágrafo não repete qual é: `par.secao` traz a última menção explícita de disputa antes deste trecho e vale enquanto outra não aparecer. Também é falso quando não é intenção de voto em disputa nenhuma."
+    }
+  },
+  "atualidade": {
+    "type": "noul",
+    "instructions": "O percentual em `par.percentual`, como aparece em `par.frase` dentro de `par.paragrafo`, vem do levantamento que esta matéria está divulgando?",
+    "criteria": {
+      "true": "É resultado do levantamento atual, aquele que a matéria noticia, inclusive quando aparece em recorte de votos válidos ou em cenário de segundo turno do mesmo levantamento.",
+      "false": "É resultado de pesquisa anterior, de outra data ou de outro instituto, citado para comparação, contexto ou histórico."
+    }
+  },
+  "recorte": {
+    "type": "choice",
+    "instructions": "O percentual em `par.percentual`, em `par.frase` dentro de `par.paragrafo`, é o resultado geral do levantamento ou de um recorte?",
+    "criteria": {
+      "geral": {
+        "cobre": "Resultado do conjunto dos entrevistados, o número principal da disputa.",
+        "nao_cobre": "Qualquer subgrupo de eleitores, e qualquer cenario alternativo.",
+        "exemplos": [
+          "tem 45% das intenções de voto em cenário de primeiro turno",
+          "aparece em segundo lugar, com 25%"
+        ]
+      },
+      "subgrupo": {
+        "cobre": "Recorte de parte do eleitorado: sexo, idade, renda, escolaridade, raça, religião, região, capital ou interior.",
+        "nao_cobre": "O número do conjunto dos entrevistados.",
+        "exemplos": [
+          "Tarcísio marca 49% entre os votos do interior",
+          "atinge 47% entre as mulheres",
+          "lidera entre os mais ricos com 43%"
+        ]
+      },
+      "votos_validos": {
+        "cobre": "Recorte de votos válidos, que exclui brancos e nulos.",
+        "nao_cobre": "O total com brancos e nulos incluídos.",
+        "exemplos": [
+          "alcança mais de metade (52%) dos votos válidos"
+        ]
+      },
+      "nao_se_aplica": "Não é intenção de voto, ou a frase não permite dizer."
+    }
+  }
+}

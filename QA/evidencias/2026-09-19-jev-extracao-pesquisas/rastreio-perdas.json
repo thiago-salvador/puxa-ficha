@@ -1,0 +1,131 @@
+[
+ {
+  "pagina": "datafolha-sp-sp-01806-2026",
+  "esperados": 7,
+  "recuperados": 4,
+  "pares_propostos": 48,
+  "aceitos": 17,
+  "espurios": 10,
+  "trilha": [
+   {
+    "nome": "Tarcísio de Freitas",
+    "percentual": 45,
+    "ponto_de_perda": "recuperado"
+   },
+   {
+    "nome": "Fernando Haddad",
+    "percentual": 27,
+    "ponto_de_perda": "composicao: conflito com 22%"
+   },
+   {
+    "nome": "Vera Lúcia",
+    "percentual": 4,
+    "ponto_de_perda": "composicao: conflito com 16%"
+   },
+   {
+    "nome": "Carlos Machado",
+    "percentual": 3,
+    "ponto_de_perda": "recuperado"
+   },
+   {
+    "nome": "Policial Edjane",
+    "percentual": 3,
+    "ponto_de_perda": "composicao: conflito com 16%"
+   },
+   {
+    "nome": "Vivian Mendes",
+    "percentual": 2,
+    "ponto_de_perda": "recuperado"
+   },
+   {
+    "nome": "Izadora Dias",
+    "percentual": 1,
+    "ponto_de_perda": "recuperado"
+   }
+  ],
+  "espurios_detalhe": [
+   {
+    "nome": "Vera Lúcia",
+    "percentual": 16,
+    "frase": "Carlos Machado aparece em terceiro colocado, com 17%, porém em empate técnico com Policial Edjane e Vera Lúcia, com 16% "
+   },
+   {
+    "nome": "Policial Edjane",
+    "percentual": 16,
+    "frase": "Carlos Machado aparece em terceiro colocado, com 17%, porém em empate técnico com Policial Edjane e Vera Lúcia, com 16% "
+   },
+   {
+    "nome": "Haddad",
+    "percentual": 22,
+    "frase": "Neste eleitorado, Tarcísio marca 49% das intenções de voto e Haddad, 22%."
+   },
+   {
+    "nome": "Ricardo Salles",
+    "percentual": 6,
+    "frase": "Ele também está empatado tecnicamente com o deputado federal Ricardo Salles (Novo), que obteve 6% das intenções, e com o"
+   },
+   {
+    "nome": "Geraldo Rufino",
+    "percentual": 4,
+    "frase": "Ele também está empatado tecnicamente com o deputado federal Ricardo Salles (Novo), que obteve 6% das intenções, e com o"
+   },
+   {
+    "nome": "Soninha Francine",
+    "percentual": 3,
+    "frase": "Soninha Francine (Cidadania) tem 3%, assim como Dra."
+   },
+   {
+    "nome": "Maíra de Souza",
+    "percentual": 2,
+    "frase": "Ainda de acordo com a pesquisa, Maíra de Souza (UP) tem 2% das intenções de voto."
+   },
+   {
+    "nome": "William Teixeira",
+    "percentual": 1,
+    "frase": "William Teixeira (AGIR), Petter Maahs (PCB) e Ednelson Cesaretti (PCO) têm 1% cada."
+   },
+   {
+    "nome": "Petter Maahs",
+    "percentual": 1,
+    "frase": "William Teixeira (AGIR), Petter Maahs (PCB) e Ednelson Cesaretti (PCO) têm 1% cada."
+   },
+   {
+    "nome": "Ednelson Cesaretti",
+    "percentual": 1,
+    "frase": "William Teixeira (AGIR), Petter Maahs (PCB) e Ednelson Cesaretti (PCO) têm 1% cada."
+   }
+  ]
+ },
+ {
+  "pagina": "real-time-big-data-estaduais-pa-00415-2026",
+  "esperados": 3,
+  "recuperados": 2,
+  "pares_propostos": 15,
+  "aceitos": 4,
+  "espurios": 1,
+  "trilha": [
+   {
+    "nome": "Hana Ghassan",
+    "percentual": 40,
+    "ponto_de_perda": "recuperado"
+   },
+   {
+    "nome": "Dr. Daniel",
+    "percentual": 35,
+    "ponto_de_perda": "composicao: conflito com 43%"
+   },
+   {
+    "nome": "Araceli",
+    "percentual": 3,
+    "ponto_de_perda": "recuperado"
+   }
+  ],
+  "espurios_detalhe": [
+   {
+    "nome": "Daniel",
+    "percentual": 43,
+    "frase": "Daniel lidera entre os mais ricos , estrato que abrange eleitores com renda superior a cinco salários mínimos, onde marc"
+   }
+  ]
+ }
+]
