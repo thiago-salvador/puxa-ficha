@@ -154,7 +154,29 @@ export async function validarEntradasDescobertas(input: {
 }): Promise<{ targets: AlvoMonitoramento[]; registry: ObservacaoPesqele[]; entries: EntradaDescoberta[] }> {
   const budget = input.budget ?? criarOrcamentoDescoberta()
   const client = input.client ?? budget.client(LISTAGENS_PESQUISAS.map((listing) => new URL(listing.url).origin))
-  const query = input.queryRegistry ?? ((id: string) => consultarRegistroPesqele(id, budget.client([PESQELE_ORIGIN], true)))
+  const queryOnce = input.queryRegistry ?? ((id: string) => consultarRegistroPesqele(id, budget.client([PESQELE_ORIGIN], true)))
+  // O PesqEle e um app JSF com sessao, e uma consulta lenta derruba a entrada
+  // inteira. Em 19/09/2026 UMA recheca (BR-04974/2026, poder360) expirou por
+  // timeout, marcou a entrada como `failed` e, por cli.ts, virou alerta global
+  // `discovery_source_failure`: o lote inteiro bloqueou, incluindo cinco
+  // pesquisas ja aprovadas que nada tinham a ver com ela (run 35447213619).
+  // O laco do inventario em pesquisas-monitoramento-pesqele.ts ja reexecuta uma
+  // vez nesse mesmo erro; aqui nao havia retry nenhum, e era so essa assimetria.
+  // Fail-closed continua de pe: esgotadas as tentativas, o erro sobe igual.
+  const query = async (id: string) => {
+    for (let attempt = 0; ; attempt++) {
+      try {
+        return await queryOnce(id)
+      } catch (error) {
+        const reason = error instanceof Error ? error.message : String(error)
+        if (attempt >= 2 || !reason.startsWith("timeout ao consultar ")) throw error
+        // O orcamento decide se ainda ha folga de requisicao, byte e tempo;
+        // ele lanca quando nao ha, entao o retry nunca estoura o teto do run.
+        budget.check()
+        await new Promise((resolve) => setTimeout(resolve, 500 * 2 ** attempt))
+      }
+    }
+  }
   const targets = new Map<string, AlvoMonitoramento>()
   const registry = loadRegistryReceipt(input)
   const entries: EntradaDescoberta[] = []
