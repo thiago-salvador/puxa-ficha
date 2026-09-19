@@ -51,12 +51,27 @@ ensure_label() {
 # O filtro e lexico, nao semantico: mantem linha que casa com marcador de erro
 # conhecido e descarta eco de fonte do shell. Nada aqui decide se a falha e
 # grave; isso continua sendo leitura humana.
-RECEIPT_MAX_JOBS="${WATCHDOG_RECEIPT_MAX_JOBS:-3}"
-RECEIPT_MAX_LINES="${WATCHDOG_RECEIPT_MAX_LINES:-8}"
+#
+# Os tetos sao operados por env, entao valor torto tem que cair no fallback em
+# vez de virar recibo vazio com mensagem sem sentido: jq --argjson recusa "abc",
+# [:0] devolve nada e Number("abc") vira NaN, que zera o slice no lado do node.
+# Teto maximo tambem existe para o recibo nao inchar o corpo da issue.
+receipt_limit() {
+  local value="$1" fallback="$2" ceiling="$3"
+  if [[ "$value" =~ ^[0-9]+$ ]] && ((10#$value >= 1)) && ((10#$value <= ceiling)); then
+    printf '%s' "$((10#$value))"
+  else
+    printf '%s' "$fallback"
+  fi
+}
+
+RECEIPT_MAX_JOBS="$(receipt_limit "${WATCHDOG_RECEIPT_MAX_JOBS:-3}" 3 20)"
+RECEIPT_MAX_LINES="$(receipt_limit "${WATCHDOG_RECEIPT_MAX_LINES:-8}" 8 100)"
 
 receipt_filter() {
   WATCHDOG_RECEIPT_MAX_LINES="$RECEIPT_MAX_LINES" node -e '
-const max = Number(process.env.WATCHDOG_RECEIPT_MAX_LINES || 8)
+const requested = Number(process.env.WATCHDOG_RECEIPT_MAX_LINES)
+const max = Number.isSafeInteger(requested) && requested > 0 ? requested : 8
 const text = require("node:fs").readFileSync(0, "utf8")
 // Duas faixas. A forte e o que localiza a causa (asserção, erro nomeado); a
 // fraca e contexto util (status tipado, exit code). Quando ha mais linha
@@ -103,9 +118,11 @@ console.log(shown.join("\n"))
 # chamada simples em vez de perder o recibo inteiro.
 job_log() {
   local job_id="$1"
-  gh api --method GET --allow-escape-sequences "repos/${REPO}/actions/jobs/${job_id}/logs" 2>/dev/null \
-    || gh api --method GET "repos/${REPO}/actions/jobs/${job_id}/logs" 2>/dev/null \
-    || true
+  if gh api --method GET --allow-escape-sequences "repos/${REPO}/actions/jobs/${job_id}/logs" 2>/dev/null; then return 0; fi
+  if gh api --method GET "repos/${REPO}/actions/jobs/${job_id}/logs" 2>/dev/null; then return 0; fi
+  # Silencio aqui esconderia token sem actions:read ou log expirado para sempre.
+  echo "watchdog: log do job ${job_id} indisponivel, recibo sai sem linhas" >&2
+  return 0
 }
 
 failure_receipt() {
@@ -114,15 +131,20 @@ failure_receipt() {
 
   local jobs_json
   if ! jobs_json="$(json_get "repos/${REPO}/actions/runs/${run_id}/jobs" -f per_page=100 2>/dev/null)"; then
+    echo "watchdog: jobs do run ${run_id} indisponiveis, issue sai sem recibo" >&2
     return 0
   fi
-  if ! jq -e '.jobs' >/dev/null 2>&1 <<<"$jobs_json"; then return 0; fi
+  if ! jq -e '.jobs' >/dev/null 2>&1 <<<"$jobs_json"; then
+    echo "watchdog: resposta de jobs do run ${run_id} sem campo .jobs, issue sai sem recibo" >&2
+    return 0
+  fi
 
   local failed
   # Ids sao numericos na API; filtrar aqui evita passar lixo para --argjson
   # adiante e deixar o watchdog cuspindo erro de jq no meio do loop.
   if ! failed="$(jq -r --argjson limit "$RECEIPT_MAX_JOBS" \
     '[.jobs[] | select(.conclusion == "failure" and (.id | type) == "number")][:$limit][] | "\(.id)\t\(.name)"' <<<"$jobs_json")"; then
+    echo "watchdog: nao consegui listar jobs com falha do run ${run_id}, issue sai sem recibo" >&2
     return 0
   fi
   if [[ -z "$failed" ]]; then return 0; fi

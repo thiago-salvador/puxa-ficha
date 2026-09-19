@@ -28,6 +28,7 @@ function runWatchdog(opts: {
   prodSha?: string
   jobsJson?: string
   jobLog?: string
+  env?: Record<string, string>
 }) {
   const fixture = mkdtempSync(join(tmpdir(), "pf-watchdog-"))
   const bin = join(fixture, "bin")
@@ -46,6 +47,7 @@ if [[ "$1" == "api" ]]; then
     exit 0
   fi
   if [[ "$*" == *"/logs"* ]]; then
+    if [[ "\${PF_FAKE_LOG_FAILS:-0}" == "1" ]]; then exit 1; fi
     printf '%s\\n' "$PF_FAKE_JOB_LOG"
     exit 0
   fi
@@ -132,6 +134,7 @@ printf '%s' "$PF_FAKE_CURL_CODE"
       CRON_SECRET: opts.cronSecret ?? "test-cron-secret",
       PF_RUNTIME_SMOKE_ORIGIN: opts.origin ?? "https://puxaficha.com.br",
       GH_REPO: "thiago-salvador/puxa-ficha",
+      ...(opts.env ?? {}),
     },
   })
 
@@ -450,6 +453,50 @@ describe("watchdog dry-run com curl mockado", () => {
     assert.doesNotMatch(output, /2026-09-18T14:46:38\.9877327Z/)
   })
 
+  // Os tetos sao operados por env: valor torto tem que cair no fallback em vez
+  // de virar recibo vazio. jq --argjson recusa "abc" e Number("abc") e NaN.
+  it("cai para o fallback quando o teto vem torto no ambiente", () => {
+    const jobsJson = JSON.stringify({
+      jobs: [{ id: 5, name: "J", conclusion: "failure", steps: [{ name: "S", conclusion: "failure" }] }],
+    })
+    const jobLog = "2026-09-19T14:00:00Z ##[error]Process completed with exit code 1."
+
+    for (const torto of ["abc", "0", "-1", "NaN", "Infinity", ""]) {
+      const run = runWatchdog({
+        httpCode: "200",
+        body: JSON.stringify({ ok: true, total: 6 }),
+        runConclusion: "failure",
+        jobsJson,
+        jobLog,
+        env: { WATCHDOG_RECEIPT_MAX_JOBS: torto, WATCHDOG_RECEIPT_MAX_LINES: torto },
+      })
+      fixtures.push(run.fixture)
+      const output = `${run.stdout}\n${run.stderr}`
+      assert.equal(run.status, 0, `teto=${torto}: ${output}`)
+      assert.match(output, /### Recibo da falha/, `teto=${torto} perdeu o recibo`)
+      assert.match(output, /Process completed with exit code 1\./, `teto=${torto} perdeu a linha`)
+    }
+  })
+
+  // Fail-soft sem diagnostico esconde token sem actions:read ou log expirado.
+  it("registra em stderr quando o log do job nao vem", () => {
+    const run = runWatchdog({
+      httpCode: "200",
+      body: JSON.stringify({ ok: true, total: 6 }),
+      runConclusion: "failure",
+      jobsJson: JSON.stringify({
+        jobs: [{ id: 9, name: "J", conclusion: "failure", steps: [{ name: "S", conclusion: "failure" }] }],
+      }),
+      env: { PF_FAKE_LOG_FAILS: "1" },
+    })
+    fixtures.push(run.fixture)
+    const output = `${run.stdout}\n${run.stderr}`
+    assert.equal(run.status, 0, output)
+
+    assert.match(run.stderr, /log do job 9 indisponivel/)
+    assert.match(output, /sem linha marcada no log do job/)
+  })
+
   // Regressao do run 35448599774: o step era uma suite de testes e os nomes dos
   // testes que passaram continham "falha", ocupando as 8 linhas e empurrando a
   // AssertionError para fora do recibo. Faixa forte tem que sobreviver ao corte.
@@ -524,6 +571,10 @@ describe("watchdog dry-run com curl mockado", () => {
   it("busca o log do job com escape ANSI liberado e cai para a chamada simples", () => {
     assert.match(script, /--allow-escape-sequences/)
     assert.match(script, /job_log\(\) \{/)
-    assert.match(script, /\|\| gh api --method GET "repos\/\$\{REPO\}\/actions\/jobs\/\$\{job_id\}\/logs"/)
+    // Duas tentativas ao mesmo endpoint: com a flag e sem ela, nessa ordem.
+    const tentativas = script.match(/gh api --method GET.*actions\/jobs\/\$\{job_id\}\/logs/g) ?? []
+    assert.equal(tentativas.length, 2)
+    assert.match(tentativas[0], /--allow-escape-sequences/)
+    assert.doesNotMatch(tentativas[1], /--allow-escape-sequences/)
   })
 })
