@@ -60,6 +60,7 @@ export function RankingTable({
               <div className="min-w-0 flex-1">
                 <Link
                   href={`/candidato/${entry.candidato.slug}`}
+                  prefetch={false}
                   className="font-heading text-[length:var(--text-body-lg)] uppercase leading-tight text-foreground hover:underline"
                 >
                   {entry.candidato.nome_urna}
@@ -150,6 +151,7 @@ export function RankingTable({
                     <div>
                       <Link
                         href={`/candidato/${entry.candidato.slug}`}
+                        prefetch={false}
                         className="font-heading text-[length:var(--text-body-lg)] uppercase leading-tight text-foreground hover:underline"
                       >
                         {entry.candidato.nome_urna}

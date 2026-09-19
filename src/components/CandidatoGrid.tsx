@@ -130,6 +130,7 @@ function CandidatoListItem({
   return (
     <Link
       href={`/candidato/${candidato.slug}`}
+      prefetch={false}
       onClick={() => trackCandidateClick("candidate_list")}
       className="stagger-item list-item-hover flex items-center gap-4 rounded-[12px] border border-foreground px-4 py-3 sm:px-5 sm:py-4"
       style={{ animationDelay: `${index * 40}ms` }}

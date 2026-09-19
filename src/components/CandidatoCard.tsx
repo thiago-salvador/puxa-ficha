@@ -74,6 +74,7 @@ export const CandidatoCard = memo(function CandidatoCard({
   return (
     <Link
       href={`/candidato/${candidato.slug}`}
+      prefetch={false}
       onClick={onClick}
       className="stagger-item group block"
       style={{ animationDelay: `${index * 60}ms` }}

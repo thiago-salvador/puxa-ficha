@@ -44,7 +44,7 @@ function ProgramSummary({ manifesto, slug, name }: { manifesto: ProgramaGovernoM
         <ChevronDown size={17} aria-hidden="true" className={expanded ? styles.rotated : undefined} />
         {expanded ? "Recolher resumo" : "Ler resumo completo"}
       </button>
-      <Link href={`/candidato/${slug}?tab=programa`} aria-label={`Abrir programa de ${name}`}>Abrir programa <ArrowUpRight size={17} aria-hidden="true" /></Link>
+      <Link prefetch={false} href={`/candidato/${slug}?tab=programa`} aria-label={`Abrir programa de ${name}`}>Abrir programa <ArrowUpRight size={17} aria-hidden="true" /></Link>
     </div>
     {expanded && <ProgramEvidence evidencias={resumo.frases.flatMap(frase => frase.evidencias)} manifesto={manifesto} />}
   </>
@@ -124,7 +124,7 @@ export function StatePrograms({ programs, context = [], unavailable = false, sho
         const runningMate = runningMates[p.slug]
         return <article key={`${p.slug}-${view}`} className={styles.program} aria-labelledby={`program-${p.slug}-title`}>
           <header className={styles.identity}>
-            <h4 id={`program-${p.slug}-title`}><Link href={`/candidato/${p.slug}`}>{p.nome_urna}</Link></h4>
+            <h4 id={`program-${p.slug}-title`}><Link prefetch={false} href={`/candidato/${p.slug}`}>{p.nome_urna}</Link></h4>
             <p className={styles.runningMate}>Vice: {typeof runningMate === "object"
               ? <>{runningMate.name} (<a href={runningMate.source_url} target="_blank" rel="noopener noreferrer" title={`Fonte consultada em ${runningMate.checked_at.slice(0, 10)}`}>{runningMate.status}</a>)</>
               : runningMate ?? "informação indisponível"}</p>
@@ -135,14 +135,14 @@ export function StatePrograms({ programs, context = [], unavailable = false, sho
           <div className={styles.content}>
             {!manifesto ? <>
               <p className={styles.notice}><FileText size={20} aria-hidden="true" />Programa revisado indisponível nesta cobertura.</p>
-              <Link className={styles.textLink} href={`/candidato/${p.slug}`}>Consultar ficha <ArrowUpRight size={17} aria-hidden="true" /></Link>
+              <Link prefetch={false} className={styles.textLink} href={`/candidato/${p.slug}`}>Consultar ficha <ArrowUpRight size={17} aria-hidden="true" /></Link>
             </> : view === "summary" ? <ProgramSummary manifesto={manifesto} slug={p.slug} name={p.nome_urna} /> : <>
               {items.length > 0 ? items.map(item => <div key={item.id} className={styles.themeItem}>
                 <h5>No programa · {item.titulo}</h5>
                 <p className={styles.summaryText}>{item.descricao}</p>
                 <ProgramEvidence evidencias={item.evidencias} manifesto={manifesto} />
               </div>) : <p className={styles.notice}>Tema não identificado no resumo revisado. Isso não significa ausência no documento completo.</p>}
-              <Link className={styles.textLink} href={`/candidato/${p.slug}?tab=programa`} aria-label={`Abrir programa de ${p.nome_urna}`}>Abrir programa <ArrowUpRight size={17} aria-hidden="true" /></Link>
+              <Link prefetch={false} className={styles.textLink} href={`/candidato/${p.slug}?tab=programa`} aria-label={`Abrir programa de ${p.nome_urna}`}>Abrir programa <ArrowUpRight size={17} aria-hidden="true" /></Link>
             </>}
           </div>
         </article>

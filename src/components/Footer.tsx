@@ -86,7 +86,7 @@ function FooterLinkItem({ link }: { link: FooterLink }) {
   }
 
   return (
-    <Link href={link.href} aria-label={link.ariaLabel} className={className}>
+    <Link href={link.href} prefetch={false} aria-label={link.ariaLabel} className={className}>
       {icon}
       {link.label}
     </Link>
