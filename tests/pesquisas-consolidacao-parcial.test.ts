@@ -126,6 +126,48 @@ for (const mode of ["identidade", "cenário omitido", "percentual conflitante", 
   assert.equal(result.poll_alerts.length, 2)
 })
 
+function semFonte(item: ItemPropostaAgendada): ItemPropostaAgendada {
+  const copy = structuredClone(item)
+  copy.decision = { classification: "inalterado", eligible_for_human_review: false, reason: "source_unavailable" }
+  copy.normalized_contract = null
+  return copy
+}
+
+// #395. Medido nos agendados de 06, 07, 09 e 10/09: 18 de 18 itens descartados
+// por fonte indisponível, contagem idêntica nos quatro dias, run concluindo
+// success. Verde cego é pior que vermelho, porque vermelho chama atenção.
+test("piso de cobertura: nenhuma fonte lida não pode concluir sucesso", () => {
+  const input = fixture()
+  input.documents[0].proposal.items = input.documents[0].proposal.items.map(semFonte)
+  const result = consolidarPropostasAgendadas(input)
+
+  assert.equal(result.coverage.status, "no_coverage")
+  assert.equal(result.coverage.evaluated, 0)
+  assert.equal(result.coverage.unavailable, 2)
+  assert.equal(result.coverage.total, 2)
+  assert.notEqual(result.status, "no_changes")
+  assert.equal(result.status, "blocked")
+  assert.equal(result.operation_status, "blocked")
+  assert.equal(result.promotion.authorized, false)
+  assert.ok(result.global_alerts.some((alert) => /cobertura nula/.test(alert)))
+})
+
+// Espelho da #387, e a razão de o piso ser estrito: lá UMA recheca com timeout
+// derrubava o lote inteiro, inclusive cinco pesquisas aprovadas. Fonte ausente
+// em parte do lote não pode virar bloqueio global.
+test("piso de cobertura: fonte ausente em parte do lote não bloqueia o resto", () => {
+  const input = fixture()
+  input.documents[0].proposal.items[1] = semFonte(input.documents[0].proposal.items[1])
+  const result = consolidarPropostasAgendadas(input)
+
+  assert.notEqual(result.coverage.status, "no_coverage")
+  assert.equal(result.coverage.evaluated, 1)
+  assert.equal(result.coverage.unavailable, 1)
+  assert.equal(result.status, "ready")
+  assert.equal(result.diff.operations.length, 1)
+  assert.ok(!result.global_alerts.some((alert) => /cobertura nula/.test(alert)))
+})
+
 test("descoberta incompleta não apaga operação nem declara sucesso global", () => {
   const input = fixture()
   input.documents[0].proposal.items.pop()
