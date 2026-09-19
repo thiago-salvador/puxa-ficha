@@ -13,6 +13,7 @@ const ACEITO = {
   atualidade: { noul: 1 },
   disputa_alvo: { noul: 1 },
   medida: { choice: "intencao_voto_primeiro_turno", confidence: 1 },
+  recorte: { choice: "geral", confidence: 1 },
   revisao_humana: { noul: 0 },
 }
 
@@ -51,6 +52,10 @@ test("comporCenario falha fechado em alvo cinza, revisão humana e resposta ause
   assert.ok(run({ ...ACEITO, disputa_alvo: { noul: 0.8 }, revisao_humana: { noul: 0.2 } }).aceitos > 0)
   assert.equal(run({ ...ACEITO, disputa_alvo: { noul: 0.799 } }).aceitos, 0)
   assert.equal(run({ ...ACEITO, revisao_humana: { noul: 0.201 } }).aceitos, 0)
+  assert.equal(run({ ...ACEITO, recorte: { choice: "subgrupo", confidence: 1 } }).aceitos, 0)
+  assert.equal(run({ ...ACEITO, recorte: { choice: "geral", confidence: 0.599 } }).aceitos, 0)
+  assert.equal(run({ ...ACEITO, recorte: undefined }).aceitos, 0)
+  assert.ok(run({ ...ACEITO, recorte: { choice: "geral", confidence: 0.6 } }).aceitos > 0)
   assert.equal(run({ ...ACEITO, atribuicao: { noul: 1.1 } }).aceitos, 0)
   assert.equal(run({ ...ACEITO, revisao_humana: { noul: -0.1 } }).aceitos, 0)
 })

@@ -10,7 +10,7 @@ import { paresCandidatos } from "./extrair-candidatos.mjs"
 
 const AQUI = dirname(fileURLToPath(import.meta.url))
 const JEV = join(process.env.HOME ?? "", ".claude/scripts/jev.py")
-const PERGUNTAS = join(AQUI, "perguntas-extracao-v3.json")
+const PERGUNTAS = join(AQUI, "perguntas-extracao-v4.json")
 const ACEITA = 0.8, DESCARTA = 0.2, MED_MIN = 0.6
 const validScore = (value) => typeof value === "number" && Number.isFinite(value) && value >= 0 && value <= 1
 const scoreAtLeast = (value, threshold) => validScore(value) && value >= threshold
@@ -29,6 +29,7 @@ function criarEstado(par, alvo, titulo, instituto) {
       percentual: par.percentual,
       frase: par.frase,
       paragrafo: par.paragrafo,
+      secao: par.secao?.trecho ?? "nenhuma mencao de disputa antes deste trecho",
     },
     contexto: { materia: { titulo, instituto }, alvo, politicas: POLITICAS },
   }
@@ -54,10 +55,10 @@ export function comporCenario(html, alvo, instituto, options = {}) {
     const key = JSON.stringify(state)
     if (!cache.has(key)) cache.set(key, ask(state, i))
     const a = cache.get(key)
-    julgados.push({ ...par, atr: a.atribuicao?.noul ?? null, atu: a.atualidade?.noul ?? null, alv: a.disputa_alvo?.noul ?? null, med: a.medida?.choice, medConf: a.medida?.confidence ?? null, rev: a.revisao_humana?.noul ?? null })
+    julgados.push({ ...par, atr: a.atribuicao?.noul ?? null, atu: a.atualidade?.noul ?? null, alv: a.disputa_alvo?.noul ?? null, med: a.medida?.choice, medConf: a.medida?.confidence ?? null, rec: a.recorte?.choice, recConf: a.recorte?.confidence ?? null, rev: a.revisao_humana?.noul ?? null })
   }
   // Gate de confiança: dimensões cinza ou revisão humana bloqueiam o cenário.
-  const aceitos = julgados.filter((j) => scoreAtLeast(j.atr, ACEITA) && scoreAtLeast(j.atu, ACEITA) && scoreAtLeast(j.alv, ACEITA) && j.med === "intencao_voto_primeiro_turno" && scoreAtLeast(j.medConf, MED_MIN) && scoreAtMost(j.rev, DESCARTA))
+  const aceitos = julgados.filter((j) => scoreAtLeast(j.atr, ACEITA) && scoreAtLeast(j.atu, ACEITA) && scoreAtLeast(j.alv, ACEITA) && j.med === "intencao_voto_primeiro_turno" && scoreAtLeast(j.medConf, MED_MIN) && j.rec === "geral" && scoreAtLeast(j.recConf, MED_MIN) && scoreAtMost(j.rev, DESCARTA))
   const porNome = new Map()
   for (const j of aceitos) {
     const chave = j.nome

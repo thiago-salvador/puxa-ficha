@@ -20,6 +20,8 @@ Estes gates foram acrescentados após as medições acima. Os resultados histór
 não validam sua cobertura; a composição continua somente em sombra.
 
 - `disputa_alvo` >= 0,80 -> pode entrar; toda a faixa intermediária fica fora do cenário.
+- `recorte` deve ser exatamente `geral`, com confidence >= 0,60; subgrupo,
+  votos válidos, não aplicável, ausência ou confidence abaixo disso bloqueiam.
 - `revisao_humana` > 0,20 -> bloqueia o par; só <= 0,20 pode seguir.
 - Scores ausentes, não numéricos ou fora de [0, 1] bloqueiam o par.
 
