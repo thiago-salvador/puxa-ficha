@@ -12,6 +12,9 @@ const AQUI = dirname(fileURLToPath(import.meta.url))
 const JEV = join(process.env.HOME ?? "", ".claude/scripts/jev.py")
 const PERGUNTAS = join(AQUI, "perguntas-extracao-v3.json")
 const ACEITA = 0.8, DESCARTA = 0.2, MED_MIN = 0.6
+const validScore = (value) => typeof value === "number" && Number.isFinite(value) && value >= 0 && value <= 1
+const scoreAtLeast = (value, threshold) => validScore(value) && value >= threshold
+const scoreAtMost = (value, threshold) => validScore(value) && value <= threshold
 const POLITICAS = [
   "Enumeracao com verbo eliptico atribui o valor ao nome imediatamente anterior a ele.",
   "Percentual de pesquisa anterior citado para comparacao nao e o resultado atual.",
@@ -51,10 +54,10 @@ export function comporCenario(html, alvo, instituto, options = {}) {
     const key = JSON.stringify(state)
     if (!cache.has(key)) cache.set(key, ask(state, i))
     const a = cache.get(key)
-    julgados.push({ ...par, atr: a.atribuicao?.noul ?? 0, atu: a.atualidade?.noul ?? 0, alv: a.disputa_alvo?.noul ?? 0, med: a.medida?.choice, medConf: a.medida?.confidence ?? 0, rev: a.revisao_humana?.noul ?? 0 })
+    julgados.push({ ...par, atr: a.atribuicao?.noul ?? null, atu: a.atualidade?.noul ?? null, alv: a.disputa_alvo?.noul ?? null, med: a.medida?.choice, medConf: a.medida?.confidence ?? null, rev: a.revisao_humana?.noul ?? null })
   }
-  // Gate de confianca, escrito antes: so entra o que for decidido nas quatro dimensoes.
-  const aceitos = julgados.filter((j) => j.atr >= ACEITA && j.atu >= ACEITA && j.alv > DESCARTA && j.med === "intencao_voto_primeiro_turno" && j.medConf >= MED_MIN)
+  // Gate de confiança: dimensões cinza ou revisão humana bloqueiam o cenário.
+  const aceitos = julgados.filter((j) => scoreAtLeast(j.atr, ACEITA) && scoreAtLeast(j.atu, ACEITA) && scoreAtLeast(j.alv, ACEITA) && j.med === "intencao_voto_primeiro_turno" && scoreAtLeast(j.medConf, MED_MIN) && scoreAtMost(j.rev, DESCARTA))
   const porNome = new Map()
   for (const j of aceitos) {
     const chave = j.nome
@@ -74,8 +77,13 @@ export function comporCenario(html, alvo, instituto, options = {}) {
 const EXECUTADO_DIRETO = process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)
 if (EXECUTADO_DIRETO && process.argv[2]) {
   const [fixture, cargo, uf, instituto] = process.argv.slice(2)
-  const r = comporCenario(readFileSync(fixture, "utf8"), { cargo, uf }, instituto ?? "Datafolha")
-  console.log(JSON.stringify({ pares: r.pares, aceitos: r.aceitos, soma: r.soma, conflitos: r.conflitos.length, revisao: r.revisao }))
-  for (const c of r.cenario) console.log(`   ${String(c.percentual).padStart(3)}%  ${c.nome}`)
-  for (const c of r.conflitos) console.log(`   CONFLITO ${c.nome}: ${c.valores.join(", ")}`)
+  if (!instituto?.trim()) {
+    console.error("instituto obrigatório na CLI; não há default seguro")
+    process.exitCode = 1
+  } else {
+    const r = comporCenario(readFileSync(fixture, "utf8"), { cargo, uf }, instituto)
+    console.log(JSON.stringify({ pares: r.pares, aceitos: r.aceitos, soma: r.soma, conflitos: r.conflitos.length, revisao: r.revisao }))
+    for (const c of r.cenario) console.log(`   ${String(c.percentual).padStart(3)}%  ${c.nome}`)
+    for (const c of r.conflitos) console.log(`   CONFLITO ${c.nome}: ${c.valores.join(", ")}`)
+  }
 }

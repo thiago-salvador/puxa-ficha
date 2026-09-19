@@ -13,6 +13,7 @@ const ACEITO = {
   atualidade: { noul: 1 },
   disputa_alvo: { noul: 1 },
   medida: { choice: "intencao_voto_primeiro_turno", confidence: 1 },
+  revisao_humana: { noul: 0 },
 }
 
 test("comporCenario é seguro ao importar e reutiliza julgamentos idênticos", () => {
@@ -38,6 +39,27 @@ test("comporCenario é seguro ao importar e reutiliza julgamentos idênticos", (
   assert.deepEqual(result.conflitos, [{ nome: "Alice Silva", valores: [42, 47] }])
   assert.equal(result.soma, 31)
   assert.equal(calls.length, 3)
+})
+
+test("comporCenario falha fechado em alvo cinza, revisão humana e resposta ausente", () => {
+  const html = "<title>Pesquisa</title><p>Pessoa Teste (ABC) tem 42%.</p>"
+  const run = (answer) => comporCenario(html, { cargo: "governador", uf: "SP" }, "Teste", { ask: () => answer })
+
+  assert.equal(run({ ...ACEITO, disputa_alvo: { noul: 0.5 } }).aceitos, 0)
+  assert.equal(run({ ...ACEITO, revisao_humana: { noul: 0.5 } }).aceitos, 0)
+  assert.equal(run({ ...ACEITO, revisao_humana: undefined }).aceitos, 0)
+  assert.ok(run({ ...ACEITO, disputa_alvo: { noul: 0.8 }, revisao_humana: { noul: 0.2 } }).aceitos > 0)
+  assert.equal(run({ ...ACEITO, disputa_alvo: { noul: 0.799 } }).aceitos, 0)
+  assert.equal(run({ ...ACEITO, revisao_humana: { noul: 0.201 } }).aceitos, 0)
+  assert.equal(run({ ...ACEITO, atribuicao: { noul: 1.1 } }).aceitos, 0)
+  assert.equal(run({ ...ACEITO, revisao_humana: { noul: -0.1 } }).aceitos, 0)
+})
+
+test("a CLI exige instituto explícito antes de ler fixture ou chamar modelo", async () => {
+  const { spawnSync } = await import("node:child_process")
+  const result = spawnSync(process.execPath, ["scripts/pesquisas-jev/compor-cenario.mjs", "/tmp/fixture-inexistente.html", "Governador", "SP"], { encoding: "utf8" })
+  assert.notEqual(result.status, 0)
+  assert.match(result.stderr, /instituto obrigatório/)
 })
 
 test("avaliarResultados não transforma previsão ausente em decisão negativa", () => {
