@@ -434,8 +434,8 @@ test.describe("No horizontal overflow", () => {
         viewport: { width: 375, height: 812 },
       })
       const page = await ctx.newPage()
-      await page.goto(path)
-      await page.waitForLoadState("networkidle")
+      await page.goto(path, { waitUntil: "domcontentloaded" })
+      await expect(page.locator("main#main-content")).toBeVisible()
 
       const overflow = await page.evaluate(() => {
         return document.documentElement.scrollWidth > document.documentElement.clientWidth
