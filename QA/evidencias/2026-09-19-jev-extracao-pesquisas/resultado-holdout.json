@@ -1,250 +1,639 @@
-[
- {
-  "id": "datafolha-ce-ce-04292-2026#0",
-  "atr_p": 0.97,
-  "atr_y": 1,
-  "alv_p": 0.91,
-  "alv_y": 1,
-  "rev": 0.34
+{
+ "resumo": {
+  "split": "holdout",
+  "n": 56,
+  "atribuicao": {
+   "decididos": 53,
+   "cinza": 3,
+   "acuracia_na_faixa": 0.981
+  },
+  "medida": {
+   "acuracia_total": 0.929,
+   "decididos_conf_min": 49,
+   "acuracia_decididos": 1,
+   "contaminacao_como_intencao": 0
+  },
+  "disputa_alvo": {
+   "falsos_positivos": 0,
+   "falsos_negativos": 0
+  }
  },
- {
-  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#0",
-  "atr_p": 0.93,
-  "atr_y": 1,
-  "alv_p": 0.9,
-  "alv_y": 1,
-  "rev": 0.3
- },
- {
-  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#1",
-  "atr_p": 0.9,
-  "atr_y": 1,
-  "alv_p": 0.89,
-  "alv_y": 1,
-  "rev": 0.33
- },
- {
-  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#2",
-  "atr_p": 0.94,
-  "atr_y": 1,
-  "alv_p": 0.89,
-  "alv_y": 1,
-  "rev": 0.34
- },
- {
-  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#3",
-  "atr_p": 0.95,
-  "atr_y": 1,
-  "alv_p": 0.04,
-  "alv_y": 0,
-  "rev": 0.63
- },
- {
-  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#4",
-  "atr_p": 0.04,
-  "atr_y": 0,
-  "alv_p": 0.05,
-  "alv_y": 0,
-  "rev": 0.72
- },
- {
-  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#5",
-  "atr_p": 0.97,
-  "atr_y": 1,
-  "alv_p": 0.83,
-  "alv_y": 1,
-  "rev": 0.24
- },
- {
-  "id": "datafolha-folha-globo-estaduais-pi-03643-2026#6",
-  "atr_p": 0.04,
-  "atr_y": 0,
-  "alv_p": 0.77,
-  "alv_y": 1,
-  "rev": 0.51
- },
- {
-  "id": "datafolha-mg-mg-00446-2026#0",
-  "atr_p": 0.91,
-  "atr_y": 1,
-  "alv_p": 0.87,
-  "alv_y": 1,
-  "rev": 0.33
- },
- {
-  "id": "datafolha-mg-mg-00446-2026#1",
-  "atr_p": 0.92,
-  "atr_y": 1,
-  "alv_p": 0.91,
-  "alv_y": 1,
-  "rev": 0.36
- },
- {
-  "id": "datafolha-mg-mg-00446-2026#2",
-  "atr_p": 0.97,
-  "atr_y": 1,
-  "alv_p": 0.82,
-  "alv_y": 1,
-  "rev": 0.26
- },
- {
-  "id": "datafolha-mg-mg-00446-2026#3",
-  "atr_p": 0.9,
-  "atr_y": 1,
-  "alv_p": 0.83,
-  "alv_y": 1,
-  "rev": 0.52
- },
- {
-  "id": "datafolha-mg-mg-00446-2026#4",
-  "atr_p": 0.86,
-  "atr_y": 1,
-  "alv_p": 0.82,
-  "alv_y": 1,
-  "rev": 0.46
- },
- {
-  "id": "datafolha-pe-pe-01528-2026#0",
-  "atr_p": 0.93,
-  "atr_y": 1,
-  "alv_p": 0.86,
-  "alv_y": 1,
-  "rev": 0.34
- },
- {
-  "id": "datafolha-pe-pe-01528-2026#1",
-  "atr_p": 0.94,
-  "atr_y": 1,
-  "alv_p": 0.88,
-  "alv_y": 1,
-  "rev": 0.35
- },
- {
-  "id": "datafolha-pe-pe-01528-2026#2",
-  "atr_p": 0.1,
-  "atr_y": 0,
-  "alv_p": 0.82,
-  "alv_y": 1,
-  "rev": 0.59
- },
- {
-  "id": "datafolha-pe-pe-01528-2026#3",
-  "atr_p": 0.94,
-  "atr_y": 1,
-  "alv_p": 0.85,
-  "alv_y": 1,
-  "rev": 0.3
- },
- {
-  "id": "datafolha-pe-pe-01528-2026#4",
-  "atr_p": 0.15,
-  "atr_y": 0,
-  "alv_p": 0.77,
-  "alv_y": 1,
-  "rev": 0.72
- },
- {
-  "id": "datafolha-pe-pe-01528-2026#5",
-  "atr_p": 0.93,
-  "atr_y": 1,
-  "alv_p": 0.86,
-  "alv_y": 1,
-  "rev": 0.31
- },
- {
-  "id": "datafolha-pi-pi-06656-2026#0",
-  "atr_p": 0.96,
-  "atr_y": 1,
-  "alv_p": 0.91,
-  "alv_y": 1,
-  "rev": 0.25
- },
- {
-  "id": "datafolha-pi-pi-06656-2026#1",
-  "atr_p": 0.92,
-  "atr_y": 1,
-  "alv_p": 0.93,
-  "alv_y": 1,
-  "rev": 0.29
- },
- {
-  "id": "datafolha-pi-pi-06656-2026#2",
-  "atr_p": 0.88,
-  "atr_y": 1,
-  "alv_p": 0.93,
-  "alv_y": 1,
-  "rev": 0.31
- },
- {
-  "id": "datafolha-pi-pi-06656-2026#3",
-  "atr_p": 0.92,
-  "atr_y": 1,
-  "alv_p": 0.92,
-  "alv_y": 1,
-  "rev": 0.27
- },
- {
-  "id": "datafolha-pi-pi-06656-2026#4",
-  "atr_p": 0.95,
-  "atr_y": 1,
-  "alv_p": 0.04,
-  "alv_y": 0,
-  "rev": 0.61
- },
- {
-  "id": "datafolha-pi-pi-06656-2026#5",
-  "atr_p": 0.04,
-  "atr_y": 0,
-  "alv_p": 0.05,
-  "alv_y": 0,
-  "rev": 0.66
- },
- {
-  "id": "datafolha-pi-pi-06656-2026#6",
-  "atr_p": 0.97,
-  "atr_y": 1,
-  "alv_p": 0.82,
-  "alv_y": 1,
-  "rev": 0.26
- },
- {
-  "id": "datafolha-rj-rj-02945-2026#0",
-  "atr_p": 0.92,
-  "atr_y": 1,
-  "alv_p": 0.87,
-  "alv_y": 1,
-  "rev": 0.38
- },
- {
-  "id": "datafolha-rj-rj-02945-2026#1",
-  "atr_p": 0.93,
-  "atr_y": 1,
-  "alv_p": 0.89,
-  "alv_y": 1,
-  "rev": 0.32
- },
- {
-  "id": "datafolha-rj-rj-02945-2026#2",
-  "atr_p": 0.97,
-  "atr_y": 1,
-  "alv_p": 0.86,
-  "alv_y": 1,
-  "rev": 0.3
- },
- {
-  "id": "datafolha-rj-rj-02945-2026#3",
-  "atr_p": 0.37,
-  "atr_y": 1,
-  "alv_p": 0.4,
-  "alv_y": 1,
-  "rev": 0.83
- },
- {
-  "id": "datafolha-rj-rj-02945-2026#4",
-  "atr_p": 0.88,
-  "atr_y": 1,
-  "alv_p": 0.44,
-  "alv_y": 1,
-  "rev": 0.68
- }
-]
+ "casos": [
+  {
+   "id": "datafolha-ce-ce-04292-2026#5",
+   "atr_p": 0.97,
+   "atr_y": 1,
+   "alv_p": 0.9,
+   "alv_y": 1,
+   "med_p": "rejeicao",
+   "med_conf": 1,
+   "med_y": "rejeicao",
+   "rev": 0.35
+  },
+  {
+   "id": "datafolha-ce-ce-04292-2026#6",
+   "atr_p": 0.04,
+   "atr_y": 0,
+   "alv_p": 0.97,
+   "alv_y": 1,
+   "med_p": "outro",
+   "med_conf": 0.49,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.42
+  },
+  {
+   "id": "datafolha-ce-ce-04292-2026#7",
+   "atr_p": 0.97,
+   "atr_y": 1,
+   "alv_p": 0.97,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.99,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.28
+  },
+  {
+   "id": "datafolha-ce-ce-04292-2026#8",
+   "atr_p": 0.95,
+   "atr_y": 0,
+   "alv_p": 0.92,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.58,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.57
+  },
+  {
+   "id": "datafolha-ce-ce-04292-2026#9",
+   "atr_p": 0.04,
+   "atr_y": 0,
+   "alv_p": 0.93,
+   "alv_y": 1,
+   "med_p": "outro",
+   "med_conf": 0.28,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.73
+  },
+  {
+   "id": "datafolha-ce-ce-04292-2026#10",
+   "atr_p": 0.04,
+   "atr_y": 0,
+   "alv_p": 0.89,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.53,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.61
+  },
+  {
+   "id": "datafolha-folha-globo-estaduais-pi-03643-2026#23",
+   "atr_p": 0.97,
+   "atr_y": 1,
+   "alv_p": 0.85,
+   "alv_y": 1,
+   "med_p": "rejeicao",
+   "med_conf": 1,
+   "med_y": "rejeicao",
+   "rev": 0.28
+  },
+  {
+   "id": "datafolha-folha-globo-estaduais-pi-03643-2026#24",
+   "atr_p": 0.97,
+   "atr_y": 1,
+   "alv_p": 0.97,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 1,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.23
+  },
+  {
+   "id": "datafolha-folha-globo-estaduais-pi-03643-2026#25",
+   "atr_p": 0.98,
+   "atr_y": 1,
+   "alv_p": 0.97,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 1,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.19
+  },
+  {
+   "id": "datafolha-folha-globo-estaduais-pi-03643-2026#26",
+   "atr_p": 0.94,
+   "atr_y": 1,
+   "alv_p": 0.88,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.89,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.3
+  },
+  {
+   "id": "datafolha-folha-globo-estaduais-pi-03643-2026#27",
+   "atr_p": 0.93,
+   "atr_y": 1,
+   "alv_p": 0.9,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.9,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.33
+  },
+  {
+   "id": "datafolha-folha-globo-estaduais-pi-03643-2026#28",
+   "atr_p": 0.92,
+   "atr_y": 1,
+   "alv_p": 0.88,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.89,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.32
+  },
+  {
+   "id": "datafolha-mg-mg-00446-2026#29",
+   "atr_p": 0.96,
+   "atr_y": 1,
+   "alv_p": 0.83,
+   "alv_y": 1,
+   "med_p": "rejeicao",
+   "med_conf": 1,
+   "med_y": "rejeicao",
+   "rev": 0.58
+  },
+  {
+   "id": "datafolha-mg-mg-00446-2026#30",
+   "atr_p": 0.06,
+   "atr_y": 0,
+   "alv_p": 0.75,
+   "alv_y": 1,
+   "med_p": "rejeicao",
+   "med_conf": 0.81,
+   "med_y": "rejeicao",
+   "rev": 0.39
+  },
+  {
+   "id": "datafolha-mg-mg-00446-2026#31",
+   "atr_p": 0.92,
+   "atr_y": 1,
+   "alv_p": 0.74,
+   "alv_y": 1,
+   "med_p": "rejeicao",
+   "med_conf": 1,
+   "med_y": "rejeicao",
+   "rev": 0.39
+  },
+  {
+   "id": "datafolha-mg-mg-00446-2026#32",
+   "atr_p": 0.97,
+   "atr_y": 1,
+   "alv_p": 0.8,
+   "alv_y": 1,
+   "med_p": "rejeicao",
+   "med_conf": 1,
+   "med_y": "rejeicao",
+   "rev": 0.38
+  },
+  {
+   "id": "datafolha-mg-mg-00446-2026#33",
+   "atr_p": 0.91,
+   "atr_y": 1,
+   "alv_p": 0.49,
+   "alv_y": 1,
+   "med_p": "avaliacao_gestao",
+   "med_conf": 1,
+   "med_y": "avaliacao_gestao",
+   "rev": 0.52
+  },
+  {
+   "id": "datafolha-mg-mg-00446-2026#34",
+   "atr_p": 0.79,
+   "atr_y": 1,
+   "alv_p": 0.53,
+   "alv_y": 1,
+   "med_p": "avaliacao_gestao",
+   "med_conf": 1,
+   "med_y": "avaliacao_gestao",
+   "rev": 0.65
+  },
+  {
+   "id": "datafolha-mg-mg-00446-2026#35",
+   "atr_p": 0.92,
+   "atr_y": 1,
+   "alv_p": 0.85,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.74,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.32
+  },
+  {
+   "id": "datafolha-mg-mg-00446-2026#36",
+   "atr_p": 0.87,
+   "atr_y": 1,
+   "alv_p": 0.85,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.76,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.29
+  },
+  {
+   "id": "datafolha-mg-mg-00446-2026#37",
+   "atr_p": 0.92,
+   "atr_y": 1,
+   "alv_p": 0.91,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.67,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.39
+  },
+  {
+   "id": "datafolha-mg-mg-00446-2026#38",
+   "atr_p": 0.92,
+   "atr_y": 1,
+   "alv_p": 0.9,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.71,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.38
+  },
+  {
+   "id": "datafolha-mg-mg-00446-2026#39",
+   "atr_p": 0.91,
+   "atr_y": 1,
+   "alv_p": 0.88,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.64,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.46
+  },
+  {
+   "id": "datafolha-mg-mg-00446-2026#40",
+   "atr_p": 0.97,
+   "atr_y": 1,
+   "alv_p": 0.84,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.79,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.26
+  },
+  {
+   "id": "datafolha-pe-pe-01528-2026#41",
+   "atr_p": 0.05,
+   "atr_y": 0,
+   "alv_p": 0.91,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.47,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.64
+  },
+  {
+   "id": "datafolha-pe-pe-01528-2026#42",
+   "atr_p": 0.96,
+   "atr_y": 1,
+   "alv_p": 0.95,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.94,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.32
+  },
+  {
+   "id": "datafolha-pe-pe-01528-2026#43",
+   "atr_p": 0.04,
+   "atr_y": 0,
+   "alv_p": 0.6,
+   "alv_y": 1,
+   "med_p": "rejeicao",
+   "med_conf": 0.85,
+   "med_y": "rejeicao",
+   "rev": 0.71
+  },
+  {
+   "id": "datafolha-pe-pe-01528-2026#44",
+   "atr_p": 0.09,
+   "atr_y": 0,
+   "alv_p": 0.64,
+   "alv_y": 1,
+   "med_p": "rejeicao",
+   "med_conf": 0.95,
+   "med_y": "rejeicao",
+   "rev": 0.69
+  },
+  {
+   "id": "datafolha-pe-pe-01528-2026#45",
+   "atr_p": 0.97,
+   "atr_y": 1,
+   "alv_p": 0.61,
+   "alv_y": 1,
+   "med_p": "rejeicao",
+   "med_conf": 1,
+   "med_y": "rejeicao",
+   "rev": 0.47
+  },
+  {
+   "id": "datafolha-pe-pe-01528-2026#46",
+   "atr_p": 0.8,
+   "atr_y": 1,
+   "alv_p": 0.52,
+   "alv_y": 1,
+   "med_p": "avaliacao_gestao",
+   "med_conf": 1,
+   "med_y": "avaliacao_gestao",
+   "rev": 0.58
+  },
+  {
+   "id": "datafolha-pe-pe-01528-2026#47",
+   "atr_p": 0.92,
+   "atr_y": 1,
+   "alv_p": 0.87,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.81,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.35
+  },
+  {
+   "id": "datafolha-pe-pe-01528-2026#48",
+   "atr_p": 0.94,
+   "atr_y": 1,
+   "alv_p": 0.85,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.82,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.33
+  },
+  {
+   "id": "datafolha-pe-pe-01528-2026#49",
+   "atr_p": 0.92,
+   "atr_y": 1,
+   "alv_p": 0.87,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.81,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.37
+  },
+  {
+   "id": "datafolha-pe-pe-01528-2026#50",
+   "atr_p": 0.96,
+   "atr_y": 1,
+   "alv_p": 0.76,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.76,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.81
+  },
+  {
+   "id": "datafolha-pe-pe-01528-2026#51",
+   "atr_p": 0.05,
+   "atr_y": 0,
+   "alv_p": 0.86,
+   "alv_y": 1,
+   "med_p": "intencao_voto_segundo_turno",
+   "med_conf": 0.28,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.79
+  },
+  {
+   "id": "datafolha-pe-pe-01528-2026#52",
+   "atr_p": 0.05,
+   "atr_y": 0,
+   "alv_p": 0.79,
+   "alv_y": 1,
+   "med_p": "intencao_voto_segundo_turno",
+   "med_conf": 0.29,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.78
+  },
+  {
+   "id": "datafolha-pi-pi-06656-2026#53",
+   "atr_p": 0.95,
+   "atr_y": 1,
+   "alv_p": 0.86,
+   "alv_y": 1,
+   "med_p": "rejeicao",
+   "med_conf": 1,
+   "med_y": "rejeicao",
+   "rev": 0.33
+  },
+  {
+   "id": "datafolha-pi-pi-06656-2026#54",
+   "atr_p": 0.79,
+   "atr_y": 1,
+   "alv_p": 0.82,
+   "alv_y": 1,
+   "med_p": "rejeicao",
+   "med_conf": 0.97,
+   "med_y": "rejeicao",
+   "rev": 0.7
+  },
+  {
+   "id": "datafolha-pi-pi-06656-2026#55",
+   "atr_p": 0.09,
+   "atr_y": 0,
+   "alv_p": 0.76,
+   "alv_y": 1,
+   "med_p": "rejeicao",
+   "med_conf": 0.77,
+   "med_y": "rejeicao",
+   "rev": 0.75
+  },
+  {
+   "id": "datafolha-pi-pi-06656-2026#56",
+   "atr_p": 0.07,
+   "atr_y": 0,
+   "alv_p": 0.75,
+   "alv_y": 1,
+   "med_p": "rejeicao",
+   "med_conf": 0.8,
+   "med_y": "rejeicao",
+   "rev": 0.74
+  },
+  {
+   "id": "datafolha-pi-pi-06656-2026#57",
+   "atr_p": 0.97,
+   "atr_y": 1,
+   "alv_p": 0.78,
+   "alv_y": 1,
+   "med_p": "rejeicao",
+   "med_conf": 1,
+   "med_y": "rejeicao",
+   "rev": 0.37
+  },
+  {
+   "id": "datafolha-pi-pi-06656-2026#58",
+   "atr_p": 0.97,
+   "atr_y": 1,
+   "alv_p": 0.97,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 1,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.23
+  },
+  {
+   "id": "datafolha-pi-pi-06656-2026#59",
+   "atr_p": 0.98,
+   "atr_y": 1,
+   "alv_p": 0.89,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.96,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.28
+  },
+  {
+   "id": "datafolha-pi-pi-06656-2026#60",
+   "atr_p": 0.95,
+   "atr_y": 1,
+   "alv_p": 0.9,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.97,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.28
+  },
+  {
+   "id": "datafolha-pi-pi-06656-2026#61",
+   "atr_p": 0.96,
+   "atr_y": 1,
+   "alv_p": 0.92,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.98,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.26
+  },
+  {
+   "id": "datafolha-pi-pi-06656-2026#62",
+   "atr_p": 0.89,
+   "atr_y": 1,
+   "alv_p": 0.94,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.94,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.27
+  },
+  {
+   "id": "datafolha-pi-pi-06656-2026#63",
+   "atr_p": 0.91,
+   "atr_y": 1,
+   "alv_p": 0.93,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.96,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.29
+  },
+  {
+   "id": "datafolha-rj-rj-02945-2026#64",
+   "atr_p": 0.96,
+   "atr_y": 1,
+   "alv_p": 0.82,
+   "alv_y": 1,
+   "med_p": "rejeicao",
+   "med_conf": 1,
+   "med_y": "rejeicao",
+   "rev": 0.71
+  },
+  {
+   "id": "datafolha-rj-rj-02945-2026#65",
+   "atr_p": 0.22,
+   "atr_y": 0,
+   "alv_p": 0.82,
+   "alv_y": 1,
+   "med_p": "rejeicao",
+   "med_conf": 0.91,
+   "med_y": "rejeicao",
+   "rev": 0.83
+  },
+  {
+   "id": "datafolha-rj-rj-02945-2026#66",
+   "atr_p": 0.13,
+   "atr_y": 0,
+   "alv_p": 0.83,
+   "alv_y": 1,
+   "med_p": "rejeicao",
+   "med_conf": 0.95,
+   "med_y": "rejeicao",
+   "rev": 0.77
+  },
+  {
+   "id": "datafolha-rj-rj-02945-2026#67",
+   "atr_p": 0.98,
+   "atr_y": 1,
+   "alv_p": 0.95,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.97,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.27
+  },
+  {
+   "id": "datafolha-rj-rj-02945-2026#68",
+   "atr_p": 0.98,
+   "atr_y": 1,
+   "alv_p": 0.94,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.98,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.26
+  },
+  {
+   "id": "datafolha-rj-rj-02945-2026#69",
+   "atr_p": 0.95,
+   "atr_y": 1,
+   "alv_p": 0.75,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.83,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.81
+  },
+  {
+   "id": "datafolha-rj-rj-02945-2026#70",
+   "atr_p": 0.92,
+   "atr_y": 1,
+   "alv_p": 0.87,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.85,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.38
+  },
+  {
+   "id": "datafolha-rj-rj-02945-2026#71",
+   "atr_p": 0.91,
+   "atr_y": 1,
+   "alv_p": 0.89,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.87,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.38
+  },
+  {
+   "id": "datafolha-rj-rj-02945-2026#72",
+   "atr_p": 0.93,
+   "atr_y": 1,
+   "alv_p": 0.89,
+   "alv_y": 1,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.88,
+   "med_y": "intencao_voto_primeiro_turno",
+   "rev": 0.33
+  }
+ ]
+}
