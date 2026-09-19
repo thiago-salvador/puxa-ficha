@@ -13,7 +13,7 @@ function decodificar(texto) {
   return texto
     .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
     .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
-    .replace(/&([A-Za-z]+)(?:acute|grave|circ|tilde|cedil|uml)?;/g, (todo, nome) => {
+    .replace(/&(?:[A-Za-z]+)(?:acute|grave|circ|tilde|cedil|uml)?;/g, (todo) => {
       const chave = todo.slice(1, -1)
       const minuscula = chave.toLowerCase()
       if (ENTIDADES[minuscula]) return ENTIDADES[minuscula]

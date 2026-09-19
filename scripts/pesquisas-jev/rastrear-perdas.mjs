@@ -8,7 +8,12 @@ import { tmpdir } from "node:os"
 import { dirname, join, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { execFileSync } from "node:child_process"
+import { createRequire } from "node:module"
 import { paresCandidatos } from "./extrair-candidatos.mjs"
+
+const require = createRequire(import.meta.url)
+require("tsx/cjs")
+const { stripAccents } = require("../../src/lib/strip-accents.ts")
 
 const AQUI = dirname(fileURLToPath(import.meta.url))
 const RAIZ = resolve(AQUI, "../..")
@@ -21,7 +26,7 @@ const POLITICAS = [
   "Percentual de pesquisa anterior citado para comparacao nao e o resultado atual.",
   "Uma materia pode tratar de mais de uma disputa (governo, Senado, Presidencia) no mesmo texto.",
 ]
-const normal = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z ]/g, "").trim()
+const normal = (s) => stripAccents(s).toLowerCase().replace(/[^a-z ]/g, "").trim()
 const mesmaPessoa = (a, b) => { const x = normal(a), y = normal(b); return x === y || x.endsWith(" " + y) || y.endsWith(" " + x) || x.split(" ").at(-1) === y.split(" ").at(-1) }
 
 const cenarios = JSON.parse(readFileSync(join(EVID, "cenarios-esperados.json"), "utf8"))
