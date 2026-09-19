@@ -4,8 +4,25 @@
 // precisao para a etapa seguinte.
 import { readFileSync } from "node:fs"
 
-const strip = (s) => s.replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/&#\d+;/g, " ").replace(/\s+/g, " ").trim()
-const NOME_COM_PARTIDO = /([A-ZÁÂÃÉÊÍÓÔÕÚÇ][\wÀ-ÿ'.]*(?:\s+(?:d[aeo]s?|[A-ZÁÂÃÉÊÍÓÔÕÚÇ][\wÀ-ÿ'.]*)){0,3})\s*\(\s*([A-Z0-9\-/]{2,12})\s*\)/g
+// Entidades nomeadas precisam virar texto antes de qualquer casamento: a pagina
+// da RIC serve "Requi&atilde;o Filho", e sem decodificar o nome nunca casa com
+// o roteiro e o state chega sujo para o julgamento.
+const ENTIDADES = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " " }
+const ACENTOS = { atilde: "ã", otilde: "õ", ccedil: "ç", aacute: "á", eacute: "é", iacute: "í", oacute: "ó", uacute: "ú", acirc: "â", ecirc: "ê", ocirc: "ô", agrave: "à", uuml: "ü" }
+function decodificar(texto) {
+  return texto
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
+    .replace(/&([A-Za-z]+)(?:acute|grave|circ|tilde|cedil|uml)?;/g, (todo, nome) => {
+      const chave = todo.slice(1, -1)
+      const minuscula = chave.toLowerCase()
+      if (ENTIDADES[minuscula]) return ENTIDADES[minuscula]
+      if (ACENTOS[minuscula]) return chave[0] === chave[0].toUpperCase() ? ACENTOS[minuscula].toUpperCase() : ACENTOS[minuscula]
+      return " "
+    })
+}
+const strip = (s) => decodificar(s.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim()
+const NOME_COM_PARTIDO = /([A-ZÁÂÃÉÊÍÓÔÕÚÇ][\wÀ-ÿ'.]*(?:\s+(?:d[aeo]s?|[A-ZÁÂÃÉÊÍÓÔÕÚÇ][\wÀ-ÿ'.]*)){0,3})\s*\(\s*([A-ZÀ-Ý][A-Za-zÀ-ÿ0-9\-\/.]{1,15})\s*\)/g
 const escapar = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
 
 // Nomes vistos com partido em qualquer ponto da materia, mais o ultimo
@@ -60,7 +77,8 @@ export function paresCandidatos(html) {
   return pares
 }
 
-if (process.argv[2]) {
+const EXECUTADO_DIRETO = process.argv[1] && import.meta.url.endsWith(process.argv[1].split("/").pop())
+if (EXECUTADO_DIRETO && process.argv[2]) {
   const pares = paresCandidatos(readFileSync(process.argv[2], "utf8")).filter((p) => p.nome)
   const outras = pares.filter((p) => /rejei|n[aã]o votariam|avalia[çc]/i.test(p.frase))
   console.log(JSON.stringify({ comNome: pares.length, viaRoster: pares.filter((p) => p.viaRoster).length, rejeicaoOuAvaliacao: outras.length }))
