@@ -414,6 +414,7 @@ export function Navbar({}: { senadoEnabled?: boolean } = {}) {
                 <li key={item.href} className="overflow-hidden">
                   <Link
                     href={item.href}
+                    prefetch={false}
                     onClick={closeMenu}
                     className="nav-link menu-nav-link"
                     ref={(element) => {
