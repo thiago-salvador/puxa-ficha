@@ -1,0 +1,27 @@
+{
+  "_nota": "Cenario de primeiro turno da disputa ALVO, lido e conferido a mao na materia. Senado, segundo turno, votos validos, recortes demograficos e rejeicao NAO entram.",
+  "datafolha-sp-sp-01806-2026": {
+    "fixture": "/tmp/pf-394/fixtures/datafolha-sp-sp-01806-2026.html",
+    "cargo": "Governador", "uf": "SP", "instituto": "Datafolha",
+    "esperado": [
+      {"nome": "Tarcísio de Freitas", "percentual": 45},
+      {"nome": "Fernando Haddad", "percentual": 27},
+      {"nome": "Vera Lúcia", "percentual": 4},
+      {"nome": "Carlos Machado", "percentual": 3},
+      {"nome": "Policial Edjane", "percentual": 3},
+      {"nome": "Vivian Mendes", "percentual": 2},
+      {"nome": "Izadora Dias", "percentual": 1}
+    ],
+    "armadilhas": "A materia traz a disputa do SENADO no mesmo texto (Marina Silva 12, Simone Tebet 12, Andre do Prado, Guilherme Derrite 7, Ricardo Salles 6, Geraldo Rufino), mais segundo turno (54 a 35), votos validos (52) e recortes por interior, religiao e renda."
+  },
+  "real-time-big-data-estaduais-pa-00415-2026": {
+    "fixture": "/tmp/pf-394b/fixtures/real-time-big-data-estaduais-pa-00415-2026.html",
+    "cargo": "Governador", "uf": "PA", "instituto": "Real Time Big Data",
+    "esperado": [
+      {"nome": "Hana Ghassan", "percentual": 40},
+      {"nome": "Dr. Daniel", "percentual": 35},
+      {"nome": "Araceli", "percentual": 3}
+    ],
+    "armadilhas": "Segundo turno (42 e 36) e varios recortes por genero e renda (47/31, 43/32, 43/30, 38/37) com os mesmos dois nomes."
+  }
+}
