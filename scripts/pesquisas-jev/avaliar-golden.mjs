@@ -11,8 +11,8 @@ import { execFileSync } from "node:child_process"
 
 const AQUI = dirname(fileURLToPath(import.meta.url))
 const RAIZ = resolve(AQUI, "../..")
-const GOLDEN = join(RAIZ, "QA/evidencias/2026-09-19-jev-extracao-pesquisas/golden-81.json")
-const PERGUNTAS = join(AQUI, "perguntas-extracao-v2.json")
+const GOLDEN = join(RAIZ, "QA/evidencias/2026-09-19-jev-extracao-pesquisas", process.env.PF_GOLDEN ?? "golden-81.json")
+const PERGUNTAS = join(AQUI, process.env.PF_PERGUNTAS ?? "perguntas-extracao-v2.json")
 const JEV = join(process.env.HOME ?? "", ".claude/scripts/jev.py")
 
 const POLITICAS = [
@@ -39,27 +39,38 @@ for (const [i, d] of dados.entries()) {
     atr_p: a.atribuicao?.noul ?? null, atr_y: d.rotulo.atribuicao,
     alv_p: a.disputa_alvo?.noul ?? null, alv_y: d.rotulo.disputa_alvo,
     med_p: a.medida?.choice ?? null, med_conf: a.medida?.confidence ?? null, med_y: d.rotulo.medida,
+    atu_p: a.atualidade?.noul ?? null, atu_y: d.rotulo.atualidade ?? null,
     rev: a.revisao_humana?.noul ?? null,
   })
 }
 
 // Limiares de LIMIARES.md, fixados antes de rodar.
 const ACEITA = 0.8, DESCARTA = 0.2, MED_MIN = 0.6
-const decid = res.filter((r) => r.atr_p >= ACEITA || r.atr_p <= DESCARTA)
+const decid = res.filter((r) => r.atr_y !== undefined && r.atr_y !== null && (r.atr_p >= ACEITA || r.atr_p <= DESCARTA))
 const atrOk = decid.filter((r) => (r.atr_p >= ACEITA ? 1 : 0) === r.atr_y).length
-const medDecid = res.filter((r) => (r.med_conf ?? 0) >= MED_MIN)
+const comMed = res.filter((r) => r.med_y)
+ const medDecid = comMed.filter((r) => (r.med_conf ?? 0) >= MED_MIN)
 const medOk = medDecid.filter((r) => r.med_p === r.med_y).length
-const medOkTodos = res.filter((r) => r.med_p === r.med_y).length
+const medOkTodos = comMed.filter((r) => r.med_p === r.med_y).length
 // O erro que importa: ler outra medida como intencao de voto e publicar.
-const contaminacao = res.filter((r) => r.med_y !== "intencao_voto_primeiro_turno" && r.med_p === "intencao_voto_primeiro_turno")
+const contaminacao = comMed.filter((r) => r.med_y !== "intencao_voto_primeiro_turno" && r.med_p === "intencao_voto_primeiro_turno")
 const fpAlvo = res.filter((r) => r.alv_y === 0 && r.alv_p > DESCARTA)
 const fnAlvo = res.filter((r) => r.alv_y === 1 && r.alv_p <= DESCARTA)
 
 const resumo = {
   split, n: res.length,
   atribuicao: { decididos: decid.length, cinza: res.length - decid.length, acuracia_na_faixa: decid.length ? Number((atrOk / decid.length).toFixed(3)) : null },
-  medida: { acuracia_total: Number((medOkTodos / res.length).toFixed(3)), decididos_conf_min: medDecid.length, acuracia_decididos: medDecid.length ? Number((medOk / medDecid.length).toFixed(3)) : null, contaminacao_como_intencao: contaminacao.length },
+  medida: { acuracia_total: comMed.length ? Number((medOkTodos / comMed.length).toFixed(3)) : null, decididos_conf_min: medDecid.length, acuracia_decididos: medDecid.length ? Number((medOk / medDecid.length).toFixed(3)) : null, contaminacao_como_intencao: contaminacao.length },
   disputa_alvo: { falsos_positivos: fpAlvo.length, falsos_negativos: fnAlvo.length },
+  atualidade: (() => {
+    const com = res.filter((r) => r.atu_y !== null && r.atu_p !== null)
+    if (!com.length) return { casos: 0, nota: "sem caso rotulado neste conjunto" }
+    const dec = com.filter((r) => r.atu_p >= ACEITA || r.atu_p <= DESCARTA)
+    const ok = dec.filter((r) => (r.atu_p >= ACEITA ? 1 : 0) === r.atu_y).length
+    const neg = com.filter((r) => r.atu_y === 0)
+    const negPegos = neg.filter((r) => r.atu_p <= DESCARTA).length
+    return { casos: com.length, negativos: neg.length, decididos: dec.length, acuracia_na_faixa: dec.length ? Number((ok / dec.length).toFixed(3)) : null, negativos_detectados: negPegos }
+  })(),
 }
 writeFileSync(join(RAIZ, `QA/evidencias/2026-09-19-jev-extracao-pesquisas/resultado-${split}.json`), JSON.stringify({ resumo, casos: res }, null, 1))
 console.log(JSON.stringify(resumo))

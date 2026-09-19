@@ -14,7 +14,7 @@
    de primeiro turno. Este e o risco que motiva a proposta inteira.
 3. `disputa_alvo`: zero falso positivo.
 
-## Defeito conhecido da versao atual, medido no holdout
+## Defeito corrigido na v3 (era v2), com holdout proprio
 
 `atribuicao` acumula duas perguntas diferentes: "de quem e este numero" e "este
 numero e do levantamento atual". O unico erro do holdout
@@ -22,6 +22,16 @@ numero e do levantamento atual". O unico erro do holdout
 mesmo 47% a Ciro Gomes, so que numa pesquisa anterior de marco. Pela letra da
 pergunta o modelo esta certo e o rotulo carrega criterio que a pergunta nao faz.
 
-Conserto correto: separar em uma pergunta propria de atualidade. Isso muda o
-conjunto de perguntas e portanto **exige holdout novo**, entao nao foi feito
-aqui: ajustar contra o mesmo holdout invalidaria a medicao.
+Corrigido na v3: `atribuicao` perdeu a clausula de pesquisa anterior e nasceu a
+pergunta `atualidade`. Como isso muda o conjunto de perguntas, a v3 foi medida
+em holdout NOVO, nunca usado para ajustar nada:
+
+- `golden-holdout2.json`, recorte `holdout2-veiculos`: 39 pares de CINCO
+  veiculos que nao apareciam ate entao (Exame, Gazeta do Povo, RIC, R7),
+  instituto Real Time Big Data.
+- recorte `holdout2-atualidade`: 12 pares, 6 deles de frases que citam
+  levantamento anterior, que e o caso negativo que faltava.
+
+`atualidade` nao tem caso negativo no recorte de veiculos, e por isso ela e
+medida no recorte proprio. Dizer "validada" sem isso seria repetir o furo que
+esta medicao existe para fechar.

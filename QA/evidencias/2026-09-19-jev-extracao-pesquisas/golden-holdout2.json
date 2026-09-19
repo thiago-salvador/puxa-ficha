@@ -1,0 +1,935 @@
+[
+ {
+  "id": "real-time-big-data-ba-ba-00277-2026#0",
+  "poll": "real-time-big-data-ba-ba-00277-2026",
+  "uf": "BA",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data: ACM Neto tem 44% e Jerônimo, 42%, no 1º turno | Exame",
+  "nome": "Jerônimo Rodrigues",
+  "partido": "PT",
+  "percentual": 51,
+  "frase": "Bahia: trabalho do governador Jerônimo Rodrigues é aprovado por 51% dos baianos (PT/Divulgação/Instagram ACM Neto/Reprodução)",
+  "paragrafo": "Bahia: trabalho do governador Jerônimo Rodrigues é aprovado por 51% dos baianos (PT/Divulgação/Instagram ACM Neto/Reprodução)",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "avaliacao_gestao",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-ba-ba-00277-2026#1",
+  "poll": "real-time-big-data-ba-ba-00277-2026",
+  "uf": "BA",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data: ACM Neto tem 44% e Jerônimo, 42%, no 1º turno | Exame",
+  "nome": "Jerônimo Rodrigues",
+  "partido": "PT",
+  "percentual": 44,
+  "frase": "Quando questionados em quem não votariam de forma alguma para governador, 44% citam ACM Neto e 43% apontam Jerônimo Rodrigues.",
+  "paragrafo": "Os dois líderes também apresentam números próximos na rejeição absoluta. Quando questionados em quem não votariam de forma alguma para governador, 44% citam ACM Neto e 43% apontam Jerônimo Rodrigues.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "rejeicao",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-ba-ba-00277-2026#2",
+  "poll": "real-time-big-data-ba-ba-00277-2026",
+  "uf": "BA",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data: ACM Neto tem 44% e Jerônimo, 42%, no 1º turno | Exame",
+  "nome": "Jerônimo Rodrigues",
+  "partido": "PT",
+  "percentual": 43,
+  "frase": "Quando questionados em quem não votariam de forma alguma para governador, 44% citam ACM Neto e 43% apontam Jerônimo Rodrigues.",
+  "paragrafo": "Os dois líderes também apresentam números próximos na rejeição absoluta. Quando questionados em quem não votariam de forma alguma para governador, 44% citam ACM Neto e 43% apontam Jerônimo Rodrigues.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-ba-ba-00277-2026#3",
+  "poll": "real-time-big-data-ba-ba-00277-2026",
+  "uf": "BA",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data: ACM Neto tem 44% e Jerônimo, 42%, no 1º turno | Exame",
+  "nome": "Jerônimo Rodrigues",
+  "partido": "PT",
+  "percentual": 51,
+  "frase": "O trabalho do governador Jerônimo Rodrigues é aprovado por 51% dos baianos e desaprovado por 47%.",
+  "paragrafo": "O levantamento mensurou ainda a avaliação do atual executivo estadual. O trabalho do governador Jerônimo Rodrigues é aprovado por 51% dos baianos e desaprovado por 47%. Apenas 2% dos eleitores não souberam opinar sobre a gestão.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "avaliacao_gestao",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-ba-ba-00277-2026#4",
+  "poll": "real-time-big-data-ba-ba-00277-2026",
+  "uf": "BA",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data: ACM Neto tem 44% e Jerônimo, 42%, no 1º turno | Exame",
+  "nome": "Jerônimo Rodrigues",
+  "partido": "PT",
+  "percentual": 47,
+  "frase": "O trabalho do governador Jerônimo Rodrigues é aprovado por 51% dos baianos e desaprovado por 47%.",
+  "paragrafo": "O levantamento mensurou ainda a avaliação do atual executivo estadual. O trabalho do governador Jerônimo Rodrigues é aprovado por 51% dos baianos e desaprovado por 47%. Apenas 2% dos eleitores não souberam opinar sobre a gestão.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "avaliacao_gestao",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-ba-ba-00277-2026#5",
+  "poll": "real-time-big-data-ba-ba-00277-2026",
+  "uf": "BA",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data: ACM Neto tem 44% e Jerônimo, 42%, no 1º turno | Exame",
+  "nome": "José Estevão",
+  "partido": "DC",
+  "percentual": 2,
+  "frase": "Entre os demais nomes testados, Ronaldo Mansur (PSol) aparece com 2% e José Estevão (DC), com 1%.",
+  "paragrafo": "Entre os demais nomes testados, Ronaldo Mansur (PSol) aparece com 2% e José Estevão (DC), com 1%. Aroldo Félix (UP) não pontuou. Votos nulos e em branco somam 7%, e 4% dos entrevistados não souberam ou não responderam.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-ba-ba-00277-2026#6",
+  "poll": "real-time-big-data-ba-ba-00277-2026",
+  "uf": "BA",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data: ACM Neto tem 44% e Jerônimo, 42%, no 1º turno | Exame",
+  "nome": "José Estevão",
+  "partido": "DC",
+  "percentual": 1,
+  "frase": "Entre os demais nomes testados, Ronaldo Mansur (PSol) aparece com 2% e José Estevão (DC), com 1%.",
+  "paragrafo": "Entre os demais nomes testados, Ronaldo Mansur (PSol) aparece com 2% e José Estevão (DC), com 1%. Aroldo Félix (UP) não pontuou. Votos nulos e em branco somam 7%, e 4% dos entrevistados não souberam ou não responderam.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-ba-ba-00277-2026#7",
+  "poll": "real-time-big-data-ba-ba-00277-2026",
+  "uf": "BA",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data: ACM Neto tem 44% e Jerônimo, 42%, no 1º turno | Exame",
+  "nome": "Jerônimo Rodrigues",
+  "partido": "PT",
+  "percentual": 45,
+  "frase": "Em um eventual segundo turno, ACM Neto registra 45% das intenções de voto, enquanto Jerônimo Rodrigues alcança 44%, mantendo o cenário de empate técnico.",
+  "paragrafo": "A polarização estadual se repete na simulação de confronto direto. Em um eventual segundo turno, ACM Neto registra 45% das intenções de voto, enquanto Jerônimo Rodrigues alcança 44%, mantendo o cenário de empate técnico.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_segundo_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-ba-ba-00277-2026#8",
+  "poll": "real-time-big-data-ba-ba-00277-2026",
+  "uf": "BA",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data: ACM Neto tem 44% e Jerônimo, 42%, no 1º turno | Exame",
+  "nome": "Jerônimo Rodrigues",
+  "partido": "PT",
+  "percentual": 44,
+  "frase": "Em um eventual segundo turno, ACM Neto registra 45% das intenções de voto, enquanto Jerônimo Rodrigues alcança 44%, mantendo o cenário de empate técnico.",
+  "paragrafo": "A polarização estadual se repete na simulação de confronto direto. Em um eventual segundo turno, ACM Neto registra 45% das intenções de voto, enquanto Jerônimo Rodrigues alcança 44%, mantendo o cenário de empate técnico.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_segundo_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-estaduais-pa-00415-2026#0",
+  "poll": "real-time-big-data-estaduais-pa-00415-2026",
+  "uf": "PA",
+  "cargo": "Governador",
+  "titulo": "Pesquisa Real Time para governador do Pará: Hana Ghassan tem 40% e Dr. Daniel, 35%, no 1º turno | Exame",
+  "nome": "Hana Ghassan",
+  "partido": "MDB",
+  "percentual": 36,
+  "frase": "Em seguida aparecem Araceli, com 36%, e Hana Ghassan, que é rejeitada por 34% dos entrevistados.",
+  "paragrafo": "Em seguida aparecem Araceli, com 36%, e Hana Ghassan, que é rejeitada por 34% dos entrevistados. Entre os nomes com menor pontuação, José Moita tem 20% de rejeição, Well Macedo marca 19% e Gal Leite registra 18%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "rejeicao",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-estaduais-pa-00415-2026#1",
+  "poll": "real-time-big-data-estaduais-pa-00415-2026",
+  "uf": "PA",
+  "cargo": "Governador",
+  "titulo": "Pesquisa Real Time para governador do Pará: Hana Ghassan tem 40% e Dr. Daniel, 35%, no 1º turno | Exame",
+  "nome": "Hana Ghassan",
+  "partido": "MDB",
+  "percentual": 34,
+  "frase": "Em seguida aparecem Araceli, com 36%, e Hana Ghassan, que é rejeitada por 34% dos entrevistados.",
+  "paragrafo": "Em seguida aparecem Araceli, com 36%, e Hana Ghassan, que é rejeitada por 34% dos entrevistados. Entre os nomes com menor pontuação, José Moita tem 20% de rejeição, Well Macedo marca 19% e Gal Leite registra 18%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-estaduais-pa-00415-2026#2",
+  "poll": "real-time-big-data-estaduais-pa-00415-2026",
+  "uf": "PA",
+  "cargo": "Governador",
+  "titulo": "Pesquisa Real Time para governador do Pará: Hana Ghassan tem 40% e Dr. Daniel, 35%, no 1º turno | Exame",
+  "nome": "Hana Ghassan",
+  "partido": "MDB",
+  "percentual": 69,
+  "frase": "O trabalho da governadora Hana Ghassan é aprovado por 69% dos paraenses, enquanto 26% desaprovam a atual gestão.",
+  "paragrafo": "O levantamento estatístico também mediu a avaliação do atual mandato estadual. O trabalho da governadora Hana Ghassan é aprovado por 69% dos paraenses, enquanto 26% desaprovam a atual gestão.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "avaliacao_gestao",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-estaduais-pa-00415-2026#3",
+  "poll": "real-time-big-data-estaduais-pa-00415-2026",
+  "uf": "PA",
+  "cargo": "Governador",
+  "titulo": "Pesquisa Real Time para governador do Pará: Hana Ghassan tem 40% e Dr. Daniel, 35%, no 1º turno | Exame",
+  "nome": "Hana Ghassan",
+  "partido": "MDB",
+  "percentual": 26,
+  "frase": "O trabalho da governadora Hana Ghassan é aprovado por 69% dos paraenses, enquanto 26% desaprovam a atual gestão.",
+  "paragrafo": "O levantamento estatístico também mediu a avaliação do atual mandato estadual. O trabalho da governadora Hana Ghassan é aprovado por 69% dos paraenses, enquanto 26% desaprovam a atual gestão.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "avaliacao_gestao",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-estaduais-pa-00415-2026#4",
+  "poll": "real-time-big-data-estaduais-pa-00415-2026",
+  "uf": "PA",
+  "cargo": "Governador",
+  "titulo": "Pesquisa Real Time para governador do Pará: Hana Ghassan tem 40% e Dr. Daniel, 35%, no 1º turno | Exame",
+  "nome": "Hana Ghassan",
+  "partido": "MDB",
+  "percentual": 40,
+  "frase": "A disputa pelo governo do Pará é liderada por Hana Ghassan (MDB) com 40% das intenções de voto no cenário estimulado de primeiro turno, segundo pesquisa da Real Time Big Data divulgada nesta terça-feira, 15.",
+  "paragrafo": "A disputa pelo governo do Pará é liderada por Hana Ghassan (MDB) com 40% das intenções de voto no cenário estimulado de primeiro turno, segundo pesquisa da Real Time Big Data divulgada nesta terça-feira, 15.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-estaduais-pa-00415-2026#5",
+  "poll": "real-time-big-data-estaduais-pa-00415-2026",
+  "uf": "PA",
+  "cargo": "Governador",
+  "titulo": "Pesquisa Real Time para governador do Pará: Hana Ghassan tem 40% e Dr. Daniel, 35%, no 1º turno | Exame",
+  "nome": "Hana Ghassan",
+  "partido": "MDB",
+  "percentual": 47,
+  "frase": "Hana Ghassan atinge 47% entre as mulheres , contra 31% do candidato do Podemos.",
+  "paragrafo": "A análise dos estratos demográficos revela fortalezas distintas para os líderes no estado. Hana Ghassan atinge 47% entre as mulheres , contra 31% do candidato do Podemos.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-estaduais-pa-00415-2026#6",
+  "poll": "real-time-big-data-estaduais-pa-00415-2026",
+  "uf": "PA",
+  "cargo": "Governador",
+  "titulo": "Pesquisa Real Time para governador do Pará: Hana Ghassan tem 40% e Dr. Daniel, 35%, no 1º turno | Exame",
+  "nome": "Hana Ghassan",
+  "partido": "MDB",
+  "percentual": 31,
+  "frase": "Hana Ghassan atinge 47% entre as mulheres , contra 31% do candidato do Podemos.",
+  "paragrafo": "A análise dos estratos demográficos revela fortalezas distintas para os líderes no estado. Hana Ghassan atinge 47% entre as mulheres , contra 31% do candidato do Podemos.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-estaduais-to-05805-2026#0",
+  "poll": "real-time-big-data-estaduais-to-05805-2026",
+  "uf": "TO",
+  "cargo": "Governador",
+  "titulo": "Real Time: Professora Dorinha tem 35% e Vicentinho Júnior, 33%, para o governo do TO – Noticias R7",
+  "nome": "Vicentinho Júnior",
+  "partido": "PSDB",
+  "percentual": 35,
+  "frase": "Pesquisa eleitoral divulgada nesta quinta-feira (17) pelo instituto Real Time Big Data, sobre as intenções de voto para o Governo do Tocantins , mostra que a Professora Dorinha (União) tem 35% no 1º turno, enquanto Vicentinho Júnior (PSDB) aparece com 33%.",
+  "paragrafo": "Pesquisa eleitoral divulgada nesta quinta-feira (17) pelo instituto Real Time Big Data, sobre as intenções de voto para o Governo do Tocantins , mostra que a Professora Dorinha (União) tem 35% no 1º turno, enquanto Vicentinho Júnior (PSDB) aparece com 33%. O resultado configura empate técnico entre os dois candidatos.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-estaduais-to-05805-2026#1",
+  "poll": "real-time-big-data-estaduais-to-05805-2026",
+  "uf": "TO",
+  "cargo": "Governador",
+  "titulo": "Real Time: Professora Dorinha tem 35% e Vicentinho Júnior, 33%, para o governo do TO – Noticias R7",
+  "nome": "Vicentinho Júnior",
+  "partido": "PSDB",
+  "percentual": 33,
+  "frase": "Pesquisa eleitoral divulgada nesta quinta-feira (17) pelo instituto Real Time Big Data, sobre as intenções de voto para o Governo do Tocantins , mostra que a Professora Dorinha (União) tem 35% no 1º turno, enquanto Vicentinho Júnior (PSDB) aparece com 33%.",
+  "paragrafo": "Pesquisa eleitoral divulgada nesta quinta-feira (17) pelo instituto Real Time Big Data, sobre as intenções de voto para o Governo do Tocantins , mostra que a Professora Dorinha (União) tem 35% no 1º turno, enquanto Vicentinho Júnior (PSDB) aparece com 33%. O resultado configura empate técnico entre os dois candidatos.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-mt-mt-04560-2026#0",
+  "poll": "real-time-big-data-mt-mt-04560-2026",
+  "uf": "MT",
+  "cargo": "Governador",
+  "titulo": "Pesquisa mostra intenção de voto para governador do Mato Grosso",
+  "nome": "Wellington Fagundes",
+  "partido": "PL",
+  "percentual": 34,
+  "frase": "Na corrida pelo Executivo estadual, Wellington Fagundes (PL) soma 34% e Otaviano Pivetta (Republicanos) tem 26% no cenário estimulado.",
+  "paragrafo": "Na corrida pelo Executivo estadual, Wellington Fagundes (PL) soma 34% e Otaviano Pivetta (Republicanos) tem 26% no cenário estimulado. Porém, quando a pergunta é aberta (cenário espontâneo), metade dos entrevistados responde que ainda não definiu o voto para governador.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-mt-mt-04560-2026#1",
+  "poll": "real-time-big-data-mt-mt-04560-2026",
+  "uf": "MT",
+  "cargo": "Governador",
+  "titulo": "Pesquisa mostra intenção de voto para governador do Mato Grosso",
+  "nome": "Wellington Fagundes",
+  "partido": "PL",
+  "percentual": 26,
+  "frase": "Na corrida pelo Executivo estadual, Wellington Fagundes (PL) soma 34% e Otaviano Pivetta (Republicanos) tem 26% no cenário estimulado.",
+  "paragrafo": "Na corrida pelo Executivo estadual, Wellington Fagundes (PL) soma 34% e Otaviano Pivetta (Republicanos) tem 26% no cenário estimulado. Porém, quando a pergunta é aberta (cenário espontâneo), metade dos entrevistados responde que ainda não definiu o voto para governador.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-mt-mt-04560-2026#2",
+  "poll": "real-time-big-data-mt-mt-04560-2026",
+  "uf": "MT",
+  "cargo": "Governador",
+  "titulo": "Pesquisa mostra intenção de voto para governador do Mato Grosso",
+  "nome": "Fagundes",
+  "partido": "PL",
+  "percentual": 45,
+  "frase": "Em eventual segundo turno, Fagundes amplia a vantagem para Pivetta: 45% contra 32% das intenções de voto.",
+  "paragrafo": "Em eventual segundo turno, Fagundes amplia a vantagem para Pivetta: 45% contra 32% das intenções de voto. A pesquisa eleitoral também simulou outros dois confrontos de segundo turno: entre Fagundes e Natasha Slhessarenko (52% a 26%) e entre Pivetta e Slhessarenko: 42% a 30%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_segundo_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-mt-mt-04560-2026#3",
+  "poll": "real-time-big-data-mt-mt-04560-2026",
+  "uf": "MT",
+  "cargo": "Governador",
+  "titulo": "Pesquisa mostra intenção de voto para governador do Mato Grosso",
+  "nome": "Fagundes",
+  "partido": "PL",
+  "percentual": 32,
+  "frase": "Em eventual segundo turno, Fagundes amplia a vantagem para Pivetta: 45% contra 32% das intenções de voto.",
+  "paragrafo": "Em eventual segundo turno, Fagundes amplia a vantagem para Pivetta: 45% contra 32% das intenções de voto. A pesquisa eleitoral também simulou outros dois confrontos de segundo turno: entre Fagundes e Natasha Slhessarenko (52% a 26%) e entre Pivetta e Slhessarenko: 42% a 30%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_segundo_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-mt-mt-04560-2026#4",
+  "poll": "real-time-big-data-mt-mt-04560-2026",
+  "uf": "MT",
+  "cargo": "Governador",
+  "titulo": "Pesquisa mostra intenção de voto para governador do Mato Grosso",
+  "nome": "Fagundes",
+  "partido": "PL",
+  "percentual": 52,
+  "frase": "A pesquisa eleitoral também simulou outros dois confrontos de segundo turno: entre Fagundes e Natasha Slhessarenko (52% a 26%) e entre Pivetta e Slhessarenko: 42% a 30%.",
+  "paragrafo": "Em eventual segundo turno, Fagundes amplia a vantagem para Pivetta: 45% contra 32% das intenções de voto. A pesquisa eleitoral também simulou outros dois confrontos de segundo turno: entre Fagundes e Natasha Slhessarenko (52% a 26%) e entre Pivetta e Slhessarenko: 42% a 30%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_segundo_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-mt-mt-04560-2026#5",
+  "poll": "real-time-big-data-mt-mt-04560-2026",
+  "uf": "MT",
+  "cargo": "Governador",
+  "titulo": "Pesquisa mostra intenção de voto para governador do Mato Grosso",
+  "nome": "Fagundes",
+  "partido": "PL",
+  "percentual": 26,
+  "frase": "A pesquisa eleitoral também simulou outros dois confrontos de segundo turno: entre Fagundes e Natasha Slhessarenko (52% a 26%) e entre Pivetta e Slhessarenko: 42% a 30%.",
+  "paragrafo": "Em eventual segundo turno, Fagundes amplia a vantagem para Pivetta: 45% contra 32% das intenções de voto. A pesquisa eleitoral também simulou outros dois confrontos de segundo turno: entre Fagundes e Natasha Slhessarenko (52% a 26%) e entre Pivetta e Slhessarenko: 42% a 30%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_segundo_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-mt-mt-04560-2026#6",
+  "poll": "real-time-big-data-mt-mt-04560-2026",
+  "uf": "MT",
+  "cargo": "Governador",
+  "titulo": "Pesquisa mostra intenção de voto para governador do Mato Grosso",
+  "nome": "Fagundes",
+  "partido": "PL",
+  "percentual": 42,
+  "frase": "A pesquisa eleitoral também simulou outros dois confrontos de segundo turno: entre Fagundes e Natasha Slhessarenko (52% a 26%) e entre Pivetta e Slhessarenko: 42% a 30%.",
+  "paragrafo": "Em eventual segundo turno, Fagundes amplia a vantagem para Pivetta: 45% contra 32% das intenções de voto. A pesquisa eleitoral também simulou outros dois confrontos de segundo turno: entre Fagundes e Natasha Slhessarenko (52% a 26%) e entre Pivetta e Slhessarenko: 42% a 30%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_segundo_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-pr-pr-09262-2026#0",
+  "poll": "real-time-big-data-pr-pr-09262-2026",
+  "uf": "PR",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data divulga pesquisa ao Governo do Paraná; veja",
+  "nome": "Filho",
+  "partido": "PSD",
+  "percentual": 41,
+  "frase": "Requi&atilde;o Filho (PSD) lidera com 41%, depois Sergio Moro (PL) tem 38% de rejei&ccedil;&atilde;o e Sandro Alex (PSD) 29%.",
+  "paragrafo": "A Real Time Big Data tamb&eacute;m testou um cen&aacute;rio de rejei&ccedil;&atilde;o aos concorrentes. Ou seja, em quem o eleitor n&atilde;o votaria de jeito nenhum. Requi&atilde;o Filho (PSD) lidera com 41%, depois Sergio Moro (PL) tem 38% de rejei&ccedil;&atilde;o e Sandro Alex (PSD) 29%. Luiz Fran&ccedil;a (Miss&atilde;o) aparece com 23% , depois Tayna Miessa (UP) com 21% e Alexandre Salom&atilde;o (Mobiliza) com 20%. Adriano Teixeira (PCO) e Samuel de Mattos (PSTU) ficam com 17% de rejei&ccedil;&atilde;o cada e a op&ccedil;&atilde;o N&atilde;o Sabe/N&atilde;o respondeu representa 2%. Por fim a escolha Poderia Votar em Todos teve 3%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-pr-pr-09262-2026#1",
+  "poll": "real-time-big-data-pr-pr-09262-2026",
+  "uf": "PR",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data divulga pesquisa ao Governo do Paraná; veja",
+  "nome": "Filho",
+  "partido": "PSD",
+  "percentual": 38,
+  "frase": "Requi&atilde;o Filho (PSD) lidera com 41%, depois Sergio Moro (PL) tem 38% de rejei&ccedil;&atilde;o e Sandro Alex (PSD) 29%.",
+  "paragrafo": "A Real Time Big Data tamb&eacute;m testou um cen&aacute;rio de rejei&ccedil;&atilde;o aos concorrentes. Ou seja, em quem o eleitor n&atilde;o votaria de jeito nenhum. Requi&atilde;o Filho (PSD) lidera com 41%, depois Sergio Moro (PL) tem 38% de rejei&ccedil;&atilde;o e Sandro Alex (PSD) 29%. Luiz Fran&ccedil;a (Miss&atilde;o) aparece com 23% , depois Tayna Miessa (UP) com 21% e Alexandre Salom&atilde;o (Mobiliza) com 20%. Adriano Teixeira (PCO) e Samuel de Mattos (PSTU) ficam com 17% de rejei&ccedil;&atilde;o cada e a op&ccedil;&atilde;o N&atilde;o Sabe/N&atilde;o respondeu representa 2%. Por fim a escolha Poderia Votar em Todos teve 3%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "rejeicao",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-pr-pr-09262-2026#2",
+  "poll": "real-time-big-data-pr-pr-09262-2026",
+  "uf": "PR",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data divulga pesquisa ao Governo do Paraná; veja",
+  "nome": "Filho",
+  "partido": "PSD",
+  "percentual": 29,
+  "frase": "Requi&atilde;o Filho (PSD) lidera com 41%, depois Sergio Moro (PL) tem 38% de rejei&ccedil;&atilde;o e Sandro Alex (PSD) 29%.",
+  "paragrafo": "A Real Time Big Data tamb&eacute;m testou um cen&aacute;rio de rejei&ccedil;&atilde;o aos concorrentes. Ou seja, em quem o eleitor n&atilde;o votaria de jeito nenhum. Requi&atilde;o Filho (PSD) lidera com 41%, depois Sergio Moro (PL) tem 38% de rejei&ccedil;&atilde;o e Sandro Alex (PSD) 29%. Luiz Fran&ccedil;a (Miss&atilde;o) aparece com 23% , depois Tayna Miessa (UP) com 21% e Alexandre Salom&atilde;o (Mobiliza) com 20%. Adriano Teixeira (PCO) e Samuel de Mattos (PSTU) ficam com 17% de rejei&ccedil;&atilde;o cada e a op&ccedil;&atilde;o N&atilde;o Sabe/N&atilde;o respondeu representa 2%. Por fim a escolha Poderia Votar em Todos teve 3%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "rejeicao",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-pr-pr-09262-2026#3",
+  "poll": "real-time-big-data-pr-pr-09262-2026",
+  "uf": "PR",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data divulga pesquisa ao Governo do Paraná; veja",
+  "nome": "Adriano Teixeira",
+  "partido": "PCO",
+  "percentual": 17,
+  "frase": "Adriano Teixeira (PCO) e Samuel de Mattos (PSTU) ficam com 17% de rejei&ccedil;&atilde;o cada e a op&ccedil;&atilde;o N&atilde;o Sabe/N&atilde;o respondeu representa 2%.",
+  "paragrafo": "A Real Time Big Data tamb&eacute;m testou um cen&aacute;rio de rejei&ccedil;&atilde;o aos concorrentes. Ou seja, em quem o eleitor n&atilde;o votaria de jeito nenhum. Requi&atilde;o Filho (PSD) lidera com 41%, depois Sergio Moro (PL) tem 38% de rejei&ccedil;&atilde;o e Sandro Alex (PSD) 29%. Luiz Fran&ccedil;a (Miss&atilde;o) aparece com 23% , depois Tayna Miessa (UP) com 21% e Alexandre Salom&atilde;o (Mobiliza) com 20%. Adriano Teixeira (PCO) e Samuel de Mattos (PSTU) ficam com 17% de rejei&ccedil;&atilde;o cada e a op&ccedil;&atilde;o N&atilde;o Sabe/N&atilde;o respondeu representa 2%. Por fim a escolha Poderia Votar em Todos teve 3%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-pr-pr-09262-2026#4",
+  "poll": "real-time-big-data-pr-pr-09262-2026",
+  "uf": "PR",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data divulga pesquisa ao Governo do Paraná; veja",
+  "nome": "Adriano Teixeira",
+  "partido": "PCO",
+  "percentual": 2,
+  "frase": "Adriano Teixeira (PCO) e Samuel de Mattos (PSTU) ficam com 17% de rejei&ccedil;&atilde;o cada e a op&ccedil;&atilde;o N&atilde;o Sabe/N&atilde;o respondeu representa 2%.",
+  "paragrafo": "A Real Time Big Data tamb&eacute;m testou um cen&aacute;rio de rejei&ccedil;&atilde;o aos concorrentes. Ou seja, em quem o eleitor n&atilde;o votaria de jeito nenhum. Requi&atilde;o Filho (PSD) lidera com 41%, depois Sergio Moro (PL) tem 38% de rejei&ccedil;&atilde;o e Sandro Alex (PSD) 29%. Luiz Fran&ccedil;a (Miss&atilde;o) aparece com 23% , depois Tayna Miessa (UP) com 21% e Alexandre Salom&atilde;o (Mobiliza) com 20%. Adriano Teixeira (PCO) e Samuel de Mattos (PSTU) ficam com 17% de rejei&ccedil;&atilde;o cada e a op&ccedil;&atilde;o N&atilde;o Sabe/N&atilde;o respondeu representa 2%. Por fim a escolha Poderia Votar em Todos teve 3%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "outro",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-pr-pr-09262-2026#5",
+  "poll": "real-time-big-data-pr-pr-09262-2026",
+  "uf": "PR",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data divulga pesquisa ao Governo do Paraná; veja",
+  "nome": "Samuel de Mattos",
+  "partido": "PSTU",
+  "percentual": 17,
+  "frase": "Adriano Teixeira (PCO) e Samuel de Mattos (PSTU) ficam com 17% de rejei&ccedil;&atilde;o cada e a op&ccedil;&atilde;o N&atilde;o Sabe/N&atilde;o respondeu representa 2%.",
+  "paragrafo": "A Real Time Big Data tamb&eacute;m testou um cen&aacute;rio de rejei&ccedil;&atilde;o aos concorrentes. Ou seja, em quem o eleitor n&atilde;o votaria de jeito nenhum. Requi&atilde;o Filho (PSD) lidera com 41%, depois Sergio Moro (PL) tem 38% de rejei&ccedil;&atilde;o e Sandro Alex (PSD) 29%. Luiz Fran&ccedil;a (Miss&atilde;o) aparece com 23% , depois Tayna Miessa (UP) com 21% e Alexandre Salom&atilde;o (Mobiliza) com 20%. Adriano Teixeira (PCO) e Samuel de Mattos (PSTU) ficam com 17% de rejei&ccedil;&atilde;o cada e a op&ccedil;&atilde;o N&atilde;o Sabe/N&atilde;o respondeu representa 2%. Por fim a escolha Poderia Votar em Todos teve 3%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "rejeicao",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-pr-pr-09262-2026#6",
+  "poll": "real-time-big-data-pr-pr-09262-2026",
+  "uf": "PR",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data divulga pesquisa ao Governo do Paraná; veja",
+  "nome": "Sergio Moro",
+  "partido": "PL",
+  "percentual": 37,
+  "frase": "s&atilde;o apresentados para os eleitores, Sergio Moro (PL) tem 37%, Sandro Alex (PSD) 22% e Requi&atilde;o Filho (PDT) aparece com 20%.",
+  "paragrafo": "Quando os nomes dos concorrentes ao Governo do Paran&aacute; s&atilde;o apresentados para os eleitores, Sergio Moro (PL) tem 37%, Sandro Alex (PSD) 22% e Requi&atilde;o Filho (PDT) aparece com 20%. Em seguida, Luiz Fran&ccedil;a (Miss&atilde;o) fica com 2% e outros nomes representam 1%. N&atilde;o sabe ou n&atilde;o respondeu t&ecirc;m 12% e a op&ccedil;&atilde;o Nulos e Brancos, 6%;.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-pr-pr-09262-2026#7",
+  "poll": "real-time-big-data-pr-pr-09262-2026",
+  "uf": "PR",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data divulga pesquisa ao Governo do Paraná; veja",
+  "nome": "Sergio Moro",
+  "partido": "PL",
+  "percentual": 22,
+  "frase": "s&atilde;o apresentados para os eleitores, Sergio Moro (PL) tem 37%, Sandro Alex (PSD) 22% e Requi&atilde;o Filho (PDT) aparece com 20%.",
+  "paragrafo": "Quando os nomes dos concorrentes ao Governo do Paran&aacute; s&atilde;o apresentados para os eleitores, Sergio Moro (PL) tem 37%, Sandro Alex (PSD) 22% e Requi&atilde;o Filho (PDT) aparece com 20%. Em seguida, Luiz Fran&ccedil;a (Miss&atilde;o) fica com 2% e outros nomes representam 1%. N&atilde;o sabe ou n&atilde;o respondeu t&ecirc;m 12% e a op&ccedil;&atilde;o Nulos e Brancos, 6%;.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-pr-pr-09262-2026#8",
+  "poll": "real-time-big-data-pr-pr-09262-2026",
+  "uf": "PR",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data divulga pesquisa ao Governo do Paraná; veja",
+  "nome": "Sergio Moro",
+  "partido": "PL",
+  "percentual": 20,
+  "frase": "s&atilde;o apresentados para os eleitores, Sergio Moro (PL) tem 37%, Sandro Alex (PSD) 22% e Requi&atilde;o Filho (PDT) aparece com 20%.",
+  "paragrafo": "Quando os nomes dos concorrentes ao Governo do Paran&aacute; s&atilde;o apresentados para os eleitores, Sergio Moro (PL) tem 37%, Sandro Alex (PSD) 22% e Requi&atilde;o Filho (PDT) aparece com 20%. Em seguida, Luiz Fran&ccedil;a (Miss&atilde;o) fica com 2% e outros nomes representam 1%. N&atilde;o sabe ou n&atilde;o respondeu t&ecirc;m 12% e a op&ccedil;&atilde;o Nulos e Brancos, 6%;.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-pr-pr-09262-2026#9",
+  "poll": "real-time-big-data-pr-pr-09262-2026",
+  "uf": "PR",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data divulga pesquisa ao Governo do Paraná; veja",
+  "nome": "Miessa",
+  "partido": "UP",
+  "percentual": 1,
+  "frase": "Miessa (UP), somados, atingiram 1%.",
+  "paragrafo": "No cen&aacute;rio estimulado, os candidatos Adriano Teixeira (PCO), Alexandre Salom&atilde;o (Mobiliza), Samuel de Mattos (PSTU) e Tayn&aacute; Miessa (UP), somados, atingiram 1%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-pr-pr-09262-2026#10",
+  "poll": "real-time-big-data-pr-pr-09262-2026",
+  "uf": "PR",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data divulga pesquisa ao Governo do Paraná; veja",
+  "nome": "Sergio Moro",
+  "partido": "PL",
+  "percentual": 15,
+  "frase": "J&aacute;, entre os lembrados, Sergio Moro (PL) aparece com 15%, Sandro Alex (PSD) fica com 8% e Requi&atilde;o Filho (PDT) fica com 6%.",
+  "paragrafo": "J&aacute; no cen&aacute;rio espont&acirc;neo, sem os nomes dos candidatos para a escolha do eleitor, 53% disseram que n&atilde;o sabem em quem votar para governador. J&aacute;, entre os lembrados, Sergio Moro (PL) aparece com 15%, Sandro Alex (PSD) fica com 8% e Requi&atilde;o Filho (PDT) fica com 6%. Al&eacute;m disso, o governador do Paran&aacute;, Ratinho Junior (PSD), &eacute; citado por 5%. Outros candidatos representam 3% e Nulos e Brancos 10%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-pr-pr-09262-2026#11",
+  "poll": "real-time-big-data-pr-pr-09262-2026",
+  "uf": "PR",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data divulga pesquisa ao Governo do Paraná; veja",
+  "nome": "Sergio Moro",
+  "partido": "PL",
+  "percentual": 8,
+  "frase": "J&aacute;, entre os lembrados, Sergio Moro (PL) aparece com 15%, Sandro Alex (PSD) fica com 8% e Requi&atilde;o Filho (PDT) fica com 6%.",
+  "paragrafo": "J&aacute; no cen&aacute;rio espont&acirc;neo, sem os nomes dos candidatos para a escolha do eleitor, 53% disseram que n&atilde;o sabem em quem votar para governador. J&aacute;, entre os lembrados, Sergio Moro (PL) aparece com 15%, Sandro Alex (PSD) fica com 8% e Requi&atilde;o Filho (PDT) fica com 6%. Al&eacute;m disso, o governador do Paran&aacute;, Ratinho Junior (PSD), &eacute; citado por 5%. Outros candidatos representam 3% e Nulos e Brancos 10%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-pr-pr-09262-2026#12",
+  "poll": "real-time-big-data-pr-pr-09262-2026",
+  "uf": "PR",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data divulga pesquisa ao Governo do Paraná; veja",
+  "nome": "Sergio Moro",
+  "partido": "PL",
+  "percentual": 6,
+  "frase": "J&aacute;, entre os lembrados, Sergio Moro (PL) aparece com 15%, Sandro Alex (PSD) fica com 8% e Requi&atilde;o Filho (PDT) fica com 6%.",
+  "paragrafo": "J&aacute; no cen&aacute;rio espont&acirc;neo, sem os nomes dos candidatos para a escolha do eleitor, 53% disseram que n&atilde;o sabem em quem votar para governador. J&aacute;, entre os lembrados, Sergio Moro (PL) aparece com 15%, Sandro Alex (PSD) fica com 8% e Requi&atilde;o Filho (PDT) fica com 6%. Al&eacute;m disso, o governador do Paran&aacute;, Ratinho Junior (PSD), &eacute; citado por 5%. Outros candidatos representam 3% e Nulos e Brancos 10%.",
+  "rotulo": {
+   "atribuicao": 0,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_primeiro_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "real-time-big-data-pr-pr-09262-2026#13",
+  "poll": "real-time-big-data-pr-pr-09262-2026",
+  "uf": "PR",
+  "cargo": "Governador",
+  "titulo": "Real Time Big Data divulga pesquisa ao Governo do Paraná; veja",
+  "nome": "Sergio Moro",
+  "partido": "PL",
+  "percentual": 55,
+  "frase": "turno entre Sergio Moro (PL) e Requi&atilde;o Filho (PDT), Moro teria 55% e Requi&atilde;o 27%.",
+  "paragrafo": "Em um eventual 2&deg; turno entre Sergio Moro (PL) e Requi&atilde;o Filho (PDT), Moro teria 55% e Requi&atilde;o 27%. Nulos e Brancos representam 9% e N&atilde;o sabe/N&atilde;o respondeu 9%.",
+  "rotulo": {
+   "atribuicao": 1,
+   "disputa_alvo": 1,
+   "medida": "intencao_voto_segundo_turno",
+   "atualidade": 1
+  },
+  "split": "holdout2-veiculos"
+ },
+ {
+  "id": "atualidade-datafolha-ce-ce-04292-2026#0",
+  "poll": "datafolha-ce-ce-04292-2026",
+  "uf": "CE",
+  "cargo": "Governador",
+  "titulo": "Datafolha CE: Ciro Gomes tem 52% e Elmano de Freitas, 33% - 13/08/2026 - Política - Folha",
+  "nome": "Ciro Gomes",
+  "partido": "PSDB",
+  "percentual": 47,
+  "frase": "Na pesquisa anterior realizada pelo Datafolha, realizada em março, Ciro Gomes aparecia com 47% das intenções de voto contra 32% de Elmano de Freitas.",
+  "paragrafo": "Na pesquisa anterior realizada pelo Datafolha, realizada em março, Ciro Gomes aparecia com 47% das intenções de voto contra 32% de Elmano de Freitas. Contudo, não é possível fazer uma comparação entre as duas pesquisas, já que mudou o quadro dos candidatos.",
+  "rotulo": {
+   "atualidade": 0
+  },
+  "split": "holdout2-atualidade"
+ },
+ {
+  "id": "atualidade-datafolha-ce-ce-04292-2026#1",
+  "poll": "datafolha-ce-ce-04292-2026",
+  "uf": "CE",
+  "cargo": "Governador",
+  "titulo": "Datafolha CE: Ciro Gomes tem 52% e Elmano de Freitas, 33% - 13/08/2026 - Política - Folha",
+  "nome": "Ciro Gomes",
+  "partido": "PSDB",
+  "percentual": 32,
+  "frase": "Na pesquisa anterior realizada pelo Datafolha, realizada em março, Ciro Gomes aparecia com 47% das intenções de voto contra 32% de Elmano de Freitas.",
+  "paragrafo": "Na pesquisa anterior realizada pelo Datafolha, realizada em março, Ciro Gomes aparecia com 47% das intenções de voto contra 32% de Elmano de Freitas. Contudo, não é possível fazer uma comparação entre as duas pesquisas, já que mudou o quadro dos candidatos.",
+  "rotulo": {
+   "atualidade": 0
+  },
+  "split": "holdout2-atualidade"
+ },
+ {
+  "id": "atualidade-datafolha-ce-ce-04292-2026#2",
+  "poll": "datafolha-ce-ce-04292-2026",
+  "uf": "CE",
+  "cargo": "Governador",
+  "titulo": "Datafolha CE: Ciro Gomes tem 52% e Elmano de Freitas, 33% - 13/08/2026 - Política - Folha",
+  "nome": "Elmano de Freitas",
+  "partido": "PT",
+  "percentual": 47,
+  "frase": "Na pesquisa anterior realizada pelo Datafolha, realizada em março, Ciro Gomes aparecia com 47% das intenções de voto contra 32% de Elmano de Freitas.",
+  "paragrafo": "Na pesquisa anterior realizada pelo Datafolha, realizada em março, Ciro Gomes aparecia com 47% das intenções de voto contra 32% de Elmano de Freitas. Contudo, não é possível fazer uma comparação entre as duas pesquisas, já que mudou o quadro dos candidatos.",
+  "rotulo": {
+   "atualidade": 0
+  },
+  "split": "holdout2-atualidade"
+ },
+ {
+  "id": "atualidade-datafolha-ce-ce-04292-2026#3",
+  "poll": "datafolha-ce-ce-04292-2026",
+  "uf": "CE",
+  "cargo": "Governador",
+  "titulo": "Datafolha CE: Ciro Gomes tem 52% e Elmano de Freitas, 33% - 13/08/2026 - Política - Folha",
+  "nome": "Elmano de Freitas",
+  "partido": "PT",
+  "percentual": 32,
+  "frase": "Na pesquisa anterior realizada pelo Datafolha, realizada em março, Ciro Gomes aparecia com 47% das intenções de voto contra 32% de Elmano de Freitas.",
+  "paragrafo": "Na pesquisa anterior realizada pelo Datafolha, realizada em março, Ciro Gomes aparecia com 47% das intenções de voto contra 32% de Elmano de Freitas. Contudo, não é possível fazer uma comparação entre as duas pesquisas, já que mudou o quadro dos candidatos.",
+  "rotulo": {
+   "atualidade": 0
+  },
+  "split": "holdout2-atualidade"
+ },
+ {
+  "id": "atualidade-datafolha-ce-ce-04292-2026#4",
+  "poll": "datafolha-ce-ce-04292-2026",
+  "uf": "CE",
+  "cargo": "Governador",
+  "titulo": "Datafolha CE: Ciro Gomes tem 52% e Elmano de Freitas, 33% - 13/08/2026 - Política - Folha",
+  "nome": "Elmano de Freitas",
+  "partido": "PT",
+  "percentual": 52,
+  "frase": "O tucano tem 52% das intenções de voto no cenário estimulado, contra 33% do governador Elmano de Freitas ( PT ), que vai concorrer à reeleição.",
+  "paragrafo": "Nas vésperas do início da campanha eleitoral, o ex-governador Ciro Gomes ( PSDB ) lidera a disputa pelo Governo do Ceará, aponta o Datafolha . O tucano tem 52% das intenções de voto no cenário estimulado, contra 33% do governador Elmano de Freitas ( PT ), que vai concorrer à reeleição.",
+  "rotulo": {
+   "atualidade": 1
+  },
+  "split": "holdout2-atualidade"
+ },
+ {
+  "id": "atualidade-datafolha-ce-ce-04292-2026#5",
+  "poll": "datafolha-ce-ce-04292-2026",
+  "uf": "CE",
+  "cargo": "Governador",
+  "titulo": "Datafolha CE: Ciro Gomes tem 52% e Elmano de Freitas, 33% - 13/08/2026 - Política - Folha",
+  "nome": "Elmano de Freitas",
+  "partido": "PT",
+  "percentual": 33,
+  "frase": "O tucano tem 52% das intenções de voto no cenário estimulado, contra 33% do governador Elmano de Freitas ( PT ), que vai concorrer à reeleição.",
+  "paragrafo": "Nas vésperas do início da campanha eleitoral, o ex-governador Ciro Gomes ( PSDB ) lidera a disputa pelo Governo do Ceará, aponta o Datafolha . O tucano tem 52% das intenções de voto no cenário estimulado, contra 33% do governador Elmano de Freitas ( PT ), que vai concorrer à reeleição.",
+  "rotulo": {
+   "atualidade": 1
+  },
+  "split": "holdout2-atualidade"
+ },
+ {
+  "id": "atualidade-datafolha-ce-ce-04292-2026#6",
+  "poll": "datafolha-ce-ce-04292-2026",
+  "uf": "CE",
+  "cargo": "Governador",
+  "titulo": "Datafolha CE: Ciro Gomes tem 52% e Elmano de Freitas, 33% - 13/08/2026 - Política - Folha",
+  "nome": "Ciro Gomes",
+  "partido": "PSDB",
+  "percentual": 28,
+  "frase": "Na pesquisa espontânea (quando os nomes não são apresentados ao entrevistado), Ciro Gomes tem 28% das citações, seguido por Elmano, com 20%.",
+  "paragrafo": "Na pesquisa espontânea (quando os nomes não são apresentados ao entrevistado), Ciro Gomes tem 28% das citações, seguido por Elmano, com 20%.",
+  "rotulo": {
+   "atualidade": 1
+  },
+  "split": "holdout2-atualidade"
+ },
+ {
+  "id": "atualidade-datafolha-ce-ce-04292-2026#7",
+  "poll": "datafolha-ce-ce-04292-2026",
+  "uf": "CE",
+  "cargo": "Governador",
+  "titulo": "Datafolha CE: Ciro Gomes tem 52% e Elmano de Freitas, 33% - 13/08/2026 - Política - Folha",
+  "nome": "Ciro Gomes",
+  "partido": "PSDB",
+  "percentual": 20,
+  "frase": "Na pesquisa espontânea (quando os nomes não são apresentados ao entrevistado), Ciro Gomes tem 28% das citações, seguido por Elmano, com 20%.",
+  "paragrafo": "Na pesquisa espontânea (quando os nomes não são apresentados ao entrevistado), Ciro Gomes tem 28% das citações, seguido por Elmano, com 20%.",
+  "rotulo": {
+   "atualidade": 1
+  },
+  "split": "holdout2-atualidade"
+ },
+ {
+  "id": "atualidade-datafolha-sp-sp-01806-2026#0",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Tarcísio tem 45% em SP, contra 27% de Haddad - 21/08/2026 - Política - Folha",
+  "nome": "Haddad",
+  "partido": "PT",
+  "percentual": 46,
+  "frase": "No levantamento anterior do instituto , realizado de 1º a 3 de julho e divulgado no dia 5 daquele mês, Tarcísio tinha 46% das intenções de voto em cenário de primeiro turno e Haddad, 30%.",
+  "paragrafo": "Esta é a primeira pesquisa Datafolha após o registro de candidaturas e o início do período de campanhas. No levantamento anterior do instituto , realizado de 1º a 3 de julho e divulgado no dia 5 daquele mês, Tarcísio tinha 46% das intenções de voto em cenário de primeiro turno e Haddad, 30%.",
+  "rotulo": {
+   "atualidade": 0
+  },
+  "split": "holdout2-atualidade"
+ },
+ {
+  "id": "atualidade-datafolha-sp-sp-01806-2026#1",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Tarcísio tem 45% em SP, contra 27% de Haddad - 21/08/2026 - Política - Folha",
+  "nome": "Haddad",
+  "partido": "PT",
+  "percentual": 30,
+  "frase": "No levantamento anterior do instituto , realizado de 1º a 3 de julho e divulgado no dia 5 daquele mês, Tarcísio tinha 46% das intenções de voto em cenário de primeiro turno e Haddad, 30%.",
+  "paragrafo": "Esta é a primeira pesquisa Datafolha após o registro de candidaturas e o início do período de campanhas. No levantamento anterior do instituto , realizado de 1º a 3 de julho e divulgado no dia 5 daquele mês, Tarcísio tinha 46% das intenções de voto em cenário de primeiro turno e Haddad, 30%.",
+  "rotulo": {
+   "atualidade": 0
+  },
+  "split": "holdout2-atualidade"
+ },
+ {
+  "id": "atualidade-datafolha-sp-sp-01806-2026#2",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Tarcísio tem 45% em SP, contra 27% de Haddad - 21/08/2026 - Política - Folha",
+  "nome": "Fernando Haddad",
+  "partido": "PT",
+  "percentual": 45,
+  "frase": "Pesquisa Datafolha divulgada nesta sexta-feira (21) mostra que o governador de São Paulo , Tarcísio de Freitas (Republicanos), que tenta a reeleição, tem 45% das intenções de voto em cenário de primeiro turno e mantém a liderança na disputa contra Fernando Haddad ( PT ), que tem 27%.",
+  "paragrafo": "Pesquisa Datafolha divulgada nesta sexta-feira (21) mostra que o governador de São Paulo , Tarcísio de Freitas (Republicanos), que tenta a reeleição, tem 45% das intenções de voto em cenário de primeiro turno e mantém a liderança na disputa contra Fernando Haddad ( PT ), que tem 27%.",
+  "rotulo": {
+   "atualidade": 1
+  },
+  "split": "holdout2-atualidade"
+ },
+ {
+  "id": "atualidade-datafolha-sp-sp-01806-2026#3",
+  "poll": "datafolha-sp-sp-01806-2026",
+  "uf": "SP",
+  "cargo": "Governador",
+  "titulo": "Datafolha: Tarcísio tem 45% em SP, contra 27% de Haddad - 21/08/2026 - Política - Folha",
+  "nome": "Fernando Haddad",
+  "partido": "PT",
+  "percentual": 27,
+  "frase": "Pesquisa Datafolha divulgada nesta sexta-feira (21) mostra que o governador de São Paulo , Tarcísio de Freitas (Republicanos), que tenta a reeleição, tem 45% das intenções de voto em cenário de primeiro turno e mantém a liderança na disputa contra Fernando Haddad ( PT ), que tem 27%.",
+  "paragrafo": "Pesquisa Datafolha divulgada nesta sexta-feira (21) mostra que o governador de São Paulo , Tarcísio de Freitas (Republicanos), que tenta a reeleição, tem 45% das intenções de voto em cenário de primeiro turno e mantém a liderança na disputa contra Fernando Haddad ( PT ), que tem 27%.",
+  "rotulo": {
+   "atualidade": 1
+  },
+  "split": "holdout2-atualidade"
+ }
+]

@@ -1,0 +1,150 @@
+{
+ "resumo": {
+  "split": "holdout2-atualidade",
+  "n": 12,
+  "atribuicao": {
+   "decididos": 0,
+   "cinza": 12,
+   "acuracia_na_faixa": null
+  },
+  "medida": {
+   "acuracia_total": null,
+   "decididos_conf_min": 0,
+   "acuracia_decididos": null,
+   "contaminacao_como_intencao": 0
+  },
+  "disputa_alvo": {
+   "falsos_positivos": 0,
+   "falsos_negativos": 0
+  },
+  "atualidade": {
+   "casos": 12,
+   "negativos": 6,
+   "decididos": 10,
+   "acuracia_na_faixa": 1,
+   "negativos_detectados": 6
+  }
+ },
+ "casos": [
+  {
+   "id": "atualidade-datafolha-ce-ce-04292-2026#0",
+   "atr_p": 0.97,
+   "alv_p": 0.91,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.54,
+   "atu_p": 0.04,
+   "atu_y": 0,
+   "rev": 0.58
+  },
+  {
+   "id": "atualidade-datafolha-ce-ce-04292-2026#1",
+   "atr_p": 0.05,
+   "alv_p": 0.93,
+   "med_p": "intencao_voto_segundo_turno",
+   "med_conf": 0.23,
+   "atu_p": 0.04,
+   "atu_y": 0,
+   "rev": 0.73
+  },
+  {
+   "id": "atualidade-datafolha-ce-ce-04292-2026#2",
+   "atr_p": 0.05,
+   "alv_p": 0.91,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.56,
+   "atu_p": 0.04,
+   "atu_y": 0,
+   "rev": 0.57
+  },
+  {
+   "id": "atualidade-datafolha-ce-ce-04292-2026#3",
+   "atr_p": 0.97,
+   "alv_p": 0.92,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.92,
+   "atu_p": 0.04,
+   "atu_y": 0,
+   "rev": 0.54
+  },
+  {
+   "id": "atualidade-datafolha-ce-ce-04292-2026#4",
+   "atr_p": 0.04,
+   "alv_p": 0.97,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.43,
+   "atu_p": 0.95,
+   "atu_y": 1,
+   "rev": 0.51
+  },
+  {
+   "id": "atualidade-datafolha-ce-ce-04292-2026#5",
+   "atr_p": 0.97,
+   "alv_p": 0.97,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 0.99,
+   "atu_p": 0.96,
+   "atu_y": 1,
+   "rev": 0.26
+  },
+  {
+   "id": "atualidade-datafolha-ce-ce-04292-2026#6",
+   "atr_p": 0.96,
+   "alv_p": 0.54,
+   "med_p": "outro",
+   "med_conf": 0.5,
+   "atu_p": 0.42,
+   "atu_y": 1,
+   "rev": 0.66
+  },
+  {
+   "id": "atualidade-datafolha-ce-ce-04292-2026#7",
+   "atr_p": 0.04,
+   "alv_p": 0.53,
+   "med_p": "outro",
+   "med_conf": 0.92,
+   "atu_p": 0.58,
+   "atu_y": 1,
+   "rev": 0.68
+  },
+  {
+   "id": "atualidade-datafolha-sp-sp-01806-2026#0",
+   "atr_p": 0.04,
+   "alv_p": 0.79,
+   "med_p": "outro",
+   "med_conf": 0.56,
+   "atu_p": 0.04,
+   "atu_y": 0,
+   "rev": 0.72
+  },
+  {
+   "id": "atualidade-datafolha-sp-sp-01806-2026#1",
+   "atr_p": 0.97,
+   "alv_p": 0.84,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 1,
+   "atu_p": 0.04,
+   "atu_y": 0,
+   "rev": 0.52
+  },
+  {
+   "id": "atualidade-datafolha-sp-sp-01806-2026#2",
+   "atr_p": 0.04,
+   "alv_p": 0.95,
+   "med_p": "outro",
+   "med_conf": 0.49,
+   "atu_p": 0.83,
+   "atu_y": 1,
+   "rev": 0.54
+  },
+  {
+   "id": "atualidade-datafolha-sp-sp-01806-2026#3",
+   "atr_p": 0.97,
+   "alv_p": 0.97,
+   "med_p": "intencao_voto_primeiro_turno",
+   "med_conf": 1,
+   "atu_p": 0.96,
+   "atu_y": 1,
+   "rev": 0.22
+  }
+ ]
+}
