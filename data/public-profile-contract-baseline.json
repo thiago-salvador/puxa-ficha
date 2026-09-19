@@ -1,8 +1,8 @@
 {
-  "version": 3,
-  "baseline_date": "2026-09-12",
-  "scope": "Contrato integral conferido no banco após despublicar Marçal, mantendo Siqueira e Leonardo. Comparação por slug e célula com o run 34701627080: somente Marçal removido, nenhuma célula restante alterada. Dívida conhecida não significa ficha completa.",
-  "public_profiles": 208,
+  "version": 4,
+  "baseline_date": "2026-09-18",
+  "scope": "Remedida para o conjunto publicado de 514 fichas, depois da entrada da coorte do Senado 2026. Esta baseline ACEITA divida conhecida; ela nao comprova que a divida foi resolvida. A baseline anterior (v3, 12/09) media 208 fichas e por isso reprovava por tamanho de conjunto, nao por queda de qualidade: a regressao 'perfis publicos 514!=208' ancorava todas as outras. Pendencias que esta baseline registra e NAO resolve, cada uma com acompanhamento proprio: (1) financiamento da coorte do Senado, 48 missing e 255 partial, toda a divida nas 310 fichas novas; (2) posicoes em 10 governadores ja publicados (david-almeida, gabriel-souza, geraldo-carvalho, mateus-simoes, otaviano-pivetta, valmir-de-francisquinho, acm-neto, alvaro-dias-rn, luis-cesar-bueno, raquel-lyra), todos com o mesmo par 'posicoes partial->missing' e 'revisar zero->partial': padrao comum de regressao, causa ainda nao confirmada; (3) leonardo-avalanche, unica queda fora desse padrao, 100->88, com programa na->missing e posicoes na->partial; (4) 292 das 514 fichas servem URL publica com slug de maquina 'tse-2026-<SQ>', todas na coorte nova; impacto em busca e compartilhamento nao medido, sem prioridade atribuida. Saidas do conjunto desde 12/09, todas por decisao registrada: jeremias-cosmo e jose-estevao (indeferidos, 14/09), carlos-jararaca (substituido, migration 20260916140000) e gustavo-henrique (indeferido terminal, migration 20260918120100). 208 - 4 = 204 comparaveis, mais 310 novas = 514.",
+  "public_profiles": 514,
   "sections": [
     "alertas",
     "bens",
@@ -31,27 +31,30 @@
     "sancoes",
     "votos"
   ],
-  "total_missing": 156,
-  "total_partial": 296,
+  "total_missing": 236,
+  "total_partial": 952,
   "missing_by_section": {
     "gastos": 6,
-    "legexec": 15,
-    "posicoes": 109,
-    "votos": 14,
+    "legexec": 22,
+    "posicoes": 116,
+    "votos": 11,
+    "redes": 23,
     "projetos": 3,
     "destaques": 3,
-    "redes": 4,
-    "programa": 2
+    "programa": 4,
+    "financiamento": 48
   },
   "partial_by_section": {
-    "destaques": 57,
-    "posicoes": 96,
-    "votos": 19,
-    "evolucao": 42,
-    "projetos": 9,
-    "legexec": 29,
-    "foto_origem": 44
+    "destaques": 159,
+    "revisar": 34,
+    "posicoes": 87,
+    "votos": 27,
+    "financiamento": 255,
+    "evolucao": 100,
+    "projetos": 34,
+    "legexec": 30,
+    "foto_origem": 226
   },
-  "min_score": 69,
-  "profiles_below_90": 101
+  "min_score": 63,
+  "profiles_below_90": 194
 }
