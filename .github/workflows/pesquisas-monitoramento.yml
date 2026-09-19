@@ -135,7 +135,12 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Preparar leitura dos relatórios públicos em PDF
-        if: matrix.target.source_id == 'poderdata-aya-nacional-2026' || (matrix.target.source_id == 'real-time-big-data-estaduais-2026' && (matrix.target.uf == 'PR' || matrix.target.uf == 'PA'))
+        # As UFs aqui espelham extrairDocumentoRealTime em
+        # scripts/lib/pesquisas-monitoramento-realtime-pdf.ts. RS e MS ganharam
+        # caminho de PDF em 17/09/2026 e esta condicao ficou para tras, entao o
+        # RS falhou com "spawnSync pdftotext ENOENT" no run 35447213619. O teste
+        # pesquisas-monitoramento-poppler-scope mantem as duas listas casadas.
+        if: matrix.target.source_id == 'poderdata-aya-nacional-2026' || (matrix.target.source_id == 'real-time-big-data-estaduais-2026' && (matrix.target.uf == 'PR' || matrix.target.uf == 'PA' || matrix.target.uf == 'RS' || matrix.target.uf == 'MS'))
         timeout-minutes: 3
         run: |
           sudo apt-get update -qq

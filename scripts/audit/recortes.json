@@ -564,6 +564,20 @@
       "ate": "20260906201634",
       "allowlist": "scripts/audit/allowlist-master-review-contract-20260906.json",
       "divida": null
+    },
+    {
+      "nome": "issue-378-superficie-20260918",
+      "desde": "20260918120000",
+      "ate": "20260918120000",
+      "allowlist": "scripts/audit/allowlist-issue-378-superficie-20260918.json",
+      "divida": null
+    },
+    {
+      "nome": "issue-383-gustavo-henrique-20260918",
+      "desde": "20260918120100",
+      "ate": "20260918120100",
+      "allowlist": "scripts/audit/allowlist-issue-383-gustavo-henrique-20260918.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

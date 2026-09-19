@@ -1,0 +1,48 @@
+{
+  "versao": "2026-09-18",
+  "fonte": "Auditoria de superfície do próprio repositório: run 35232081515 do workflow \"Qualidade de dados\", passo \"Julgar superfície (script puro)\" (scripts/audit/audit-superficie.ts), 17/09/2026. Para a trajetória, os pacotes consulta_cand do TSE (https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/), varredura de 1996 a 2024 por CPF em 18/09/2026; o pacote de 2004 que fecha o caso tem SHA-256 917c224c0c5de85b3f75e56ed6c5723840d04486ed28c6679894723be06194d5. Issue #378.",
+  "motivo": "Duas violações globais em fichas que entraram no recorte publicado entre 12/09 e 17/09/2026. R6_marcador_tse: o financiamento de 2020 de dr-fernando-maximo trazia o marcador técnico \"#NULO\" como nome de doador, com total_arrecadado zero; a leitura fiel da fonte é lista vazia. R8_reversao_mesmo_ano: a trajetória partidária publicada de andre-do-prado é de outra pessoa. O TSE mostra dois ANDRE LUIS DO PRADO concorrendo ao mesmo tempo em 2004 em municípios diferentes: CPF 08518353840, titular desta ficha (Guararema e depois ALESP, PL em 2000/2004, PR em 2010/2014/2018, PL em 2022) e CPF 25093218898 (Ribeirão Preto, PSTU em 2000/2004/2012). Todo PSTU da trajetória vem do segundo. Como PL e PR são a mesma legenda em HISTORICAL_SAME_PARTY_GROUPS, o titular nunca trocou de partido e a derivação vigente emite zero mudanças: as sete linhas saem do ar preservadas e nenhuma linha nova entra.",
+  "coorte": [
+    "dr-fernando-maximo",
+    "andre-do-prado"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "financiamento",
+      "slug": "dr-fernando-maximo",
+      "campos": [
+        "maiores_doadores"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "mudancas_partido",
+      "slug": "andre-do-prado",
+      "campos": [
+        "despublicado_em",
+        "despublicacao_motivo"
+      ],
+      "max_registros": 7
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260918120000",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
+    }
+  ]
+}
