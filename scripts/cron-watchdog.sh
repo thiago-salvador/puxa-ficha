@@ -39,6 +39,94 @@ ensure_label() {
     --force >/dev/null
 }
 
+# Recibo estruturado da falha.
+#
+# O motivo real ja sai tipado dos proprios scripts do repo: status de
+# consolidacao (PESQUISAS_CONSOLIDATION_STATUS), ::error:: nomeado nos gates de
+# secret, exit code. O watchdog estava descartando tudo isso e publicando so a
+# URL do run, entao cada investigacao comecava baixando o log inteiro
+# (medido em 19/09: 75 KB no pesquisas-monitoramento, 113 KB no data-quality).
+# Ler e filtrar aqui, no runner, custa nada e a issue passa a carregar o motivo.
+#
+# O filtro e lexico, nao semantico: mantem linha que casa com marcador de erro
+# conhecido e descarta eco de fonte do shell. Nada aqui decide se a falha e
+# grave; isso continua sendo leitura humana.
+RECEIPT_MAX_JOBS="${WATCHDOG_RECEIPT_MAX_JOBS:-3}"
+RECEIPT_MAX_LINES="${WATCHDOG_RECEIPT_MAX_LINES:-8}"
+
+receipt_filter() {
+  WATCHDOG_RECEIPT_MAX_LINES="$RECEIPT_MAX_LINES" node -e '
+const max = Number(process.env.WATCHDOG_RECEIPT_MAX_LINES || 8)
+const text = require("node:fs").readFileSync(0, "utf8")
+const keep = /(##\[error\]|::error::|[A-Z][A-Z0-9_]*_STATUS=|operation_status=|coverage_status=|\bError:|\bfalha\b|exit code)/
+const drop = /(DeprecationWarning|if-no-files-found|^echo |>&2|^set -euo|^shell:|^##\[group\]|^if \[)/
+const out = []
+const seen = new Set()
+let total = 0
+for (const raw of text.split(/\r?\n/)) {
+  const line = raw
+    .replace(/\x1B\[[0-9;]*[A-Za-z]/g, "")
+    .replace(/^\d{4}-\d{2}-\d{2}T[\d:.]+Z\s*/, "")
+    .trim()
+  if (!line || !keep.test(line) || drop.test(line)) continue
+  total += 1
+  const short = line.length > 240 ? line.slice(0, 240) + "..." : line
+  if (seen.has(short)) continue
+  seen.add(short)
+  out.push(short)
+}
+if (out.length === 0) process.exit(0)
+const shown = out.slice(-max)
+if (total > shown.length) console.log("(" + total + " linhas marcadas, mostrando as ultimas " + shown.length + ")")
+console.log(shown.join("\n"))
+'
+}
+
+# gh se recusa a imprimir log de job com escape ANSI sem esta flag, e o log de
+# Actions sempre tem. Versao antiga de gh nao conhece a flag, entao cai para a
+# chamada simples em vez de perder o recibo inteiro.
+job_log() {
+  local job_id="$1"
+  gh api --method GET --allow-escape-sequences "repos/${REPO}/actions/jobs/${job_id}/logs" 2>/dev/null \
+    || gh api --method GET "repos/${REPO}/actions/jobs/${job_id}/logs" 2>/dev/null \
+    || true
+}
+
+failure_receipt() {
+  local run_id="$1"
+  if [[ -z "$run_id" ]]; then return 0; fi
+
+  local jobs_json
+  if ! jobs_json="$(json_get "repos/${REPO}/actions/runs/${run_id}/jobs" -f per_page=100 2>/dev/null)"; then
+    return 0
+  fi
+  if ! jq -e '.jobs' >/dev/null 2>&1 <<<"$jobs_json"; then return 0; fi
+
+  local failed
+  failed="$(jq -r --argjson limit "$RECEIPT_MAX_JOBS" \
+    '[.jobs[] | select(.conclusion == "failure")][:$limit][] | "\(.id)\t\(.name)"' <<<"$jobs_json")"
+  if [[ -z "$failed" ]]; then return 0; fi
+
+  printf '### Recibo da falha\n\n'
+  local job_id job_name steps lines
+  while IFS=$'\t' read -r job_id job_name; do
+    if [[ -z "$job_id" ]]; then continue; fi
+    steps="$(jq -r --argjson id "$job_id" \
+      '.jobs[] | select(.id == $id) | [.steps[]? | select(.conclusion == "failure") | .name] | join(" / ")' \
+      <<<"$jobs_json")"
+    printf -- '- job: **%s**\n' "$job_name"
+    if [[ -n "$steps" ]]; then printf -- '- step: `%s`\n' "$steps"; fi
+    if ! lines="$(job_log "$job_id" | receipt_filter)"; then
+      lines=""
+    fi
+    if [[ -n "$lines" ]]; then
+      printf -- '\n```\n%s\n```\n\n' "$lines"
+    else
+      printf -- '- sem linha marcada no log do job\n\n'
+    fi
+  done <<<"$failed"
+}
+
 publish_anomaly() {
   local workflow_file="$1"
   local workflow_name="$2"
@@ -60,6 +148,10 @@ publish_anomaly() {
   else
     run_line="- Execução: [abrir workflow](${run_url})"
   fi
+  local receipt
+  receipt="$(failure_receipt "$run_id")"
+  if [[ -n "$receipt" ]]; then receipt=$'\n'"$receipt"; fi
+
   local body
   body=$(cat <<EOF
 ## Anomalia de cron detectada
@@ -69,7 +161,7 @@ publish_anomaly() {
 - Estado: **${status_label}**
 ${run_line}
 - Detectado em: $(date -u +%Y-%m-%dT%H:%M:%SZ)
-
+${receipt}
 ${recovery_note}
 
 ${marker}
