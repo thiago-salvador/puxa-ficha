@@ -41,6 +41,62 @@ test("entrada cria alvo de registro novo e conserva publicações complementares
 
 const publication = (id = "BR-07561/2026") => `<html><head><meta property="article:published_time" content="2026-09-03T10:00:00Z"></head><body><article><h1>PoderData divulga pesquisa de intenção de voto para presidente</h1><p>A pesquisa PoderData ouviu eleitores de todo o Brasil sobre a eleição presidencial. O levantamento apresenta as intenções de voto e está registrado sob o número ${id}. Os resultados e os dados metodológicos acompanham a publicação do instituto.</p></article></body></html>`
 
+test("recheca PesqEle do issue 387 após timeout e preserva a entrada", async () => {
+  const registrationId = "BR-04974/2026"
+  const issue387Input = {
+    observations: listing(["https://www.poder360.com.br/poderdata/lula-tem-45-contra-44-de-flavio-no-2o-turno-diz-poderdata-aya/"]),
+    knownTargets: [],
+    client: client(publication(registrationId)),
+  }
+  let queries = 0
+  const result = await validarEntradasDescobertas({
+    ...issue387Input,
+    queryRegistry: async () => {
+      queries += 1
+      if (queries === 1) throw new Error("timeout ao consultar https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml")
+      return { ...observation, registry: { ...observation.registry, registration_id: registrationId } }
+    },
+  })
+  assert.equal(queries, 2)
+  assert.equal(result.entries[0].execution_status, "complete")
+  assert.equal(result.entries[0].registration_id, registrationId)
+  assert.equal(result.targets[0].registration_id, registrationId)
+})
+
+test("recheca PesqEle no máximo três vezes e permanece fail-closed após timeout", async () => {
+  let queries = 0
+  const result = await validarEntradasDescobertas({
+    observations: listing(["https://www.poder360.com.br/poderdata/lula-tem-45-contra-44-de-flavio-no-2o-turno-diz-poderdata-aya/"]),
+    knownTargets: [],
+    client: client(publication("BR-04974/2026")),
+    queryRegistry: async () => {
+      queries += 1
+      throw new Error("timeout ao consultar https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml")
+    },
+  })
+  assert.equal(queries, 3)
+  assert.equal(result.targets.length, 0)
+  assert.equal(result.entries[0].execution_status, "failed")
+  assert.match(result.entries[0].reason, /^timeout ao consultar /)
+})
+
+test("erro de consulta permanente não aciona retry do intake", async () => {
+  let queries = 0
+  const result = await validarEntradasDescobertas({
+    observations: listing(["https://www.poder360.com.br/poderdata/lula-tem-45-contra-44-de-flavio-no-2o-turno-diz-poderdata-aya/"]),
+    knownTargets: [],
+    client: client(publication("BR-04974/2026")),
+    queryRegistry: async () => {
+      queries += 1
+      throw new Error("PesqEle: registro ausente ou ambíguo")
+    },
+  })
+  assert.equal(queries, 1)
+  assert.equal(result.targets.length, 0)
+  assert.equal(result.entries[0].execution_status, "failed")
+  assert.match(result.entries[0].reason, /registro ausente ou ambíguo/)
+})
+
 test("curadoria observada preserva bloqueio editorial sem falha operacional", async () => {
   const input = { observations: listing(["https://www.poder360.com.br/poderdata/teste/"]), knownTargets: [], client: client(publication()) }
   const conflict = await validarEntradasDescobertas({ ...input, queryRegistry: async () => ({ ...observation, registry: { ...observation.registry, office: "Senador" } }) })

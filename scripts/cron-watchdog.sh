@@ -47,6 +47,12 @@ publish_anomaly() {
   local run_id="$5"
   local source_path="${6:-.github/workflows/${workflow_file}}"
   local marker="<!-- cron-watchdog-workflow:${workflow_file} -->"
+  # Exact observation identity, excluding the clock. A new failed run remains
+  # actionable even if its conclusion matches yesterday's failure.
+  local fingerprint
+  fingerprint=$(node -e 'const {createHash}=require("node:crypto"); console.log(createHash("sha256").update(JSON.stringify(process.argv.slice(1))).digest("hex"))' \
+    "$workflow_file" "$source_path" "$status_label" "$run_url" "$run_id")
+  local fingerprint_marker="<!-- cron-watchdog-fingerprint:${fingerprint} -->"
   local title="[cron-failure] ${workflow_name}"
   local recovery_note
   if [[ "$source_path" == "vercel.json" ]]; then
@@ -73,13 +79,20 @@ ${run_line}
 ${recovery_note}
 
 ${marker}
+${fingerprint_marker}
 EOF
 )
 
-  local existing
-  existing=$(json_get "repos/${REPO}/issues" -f state=open -f labels="$LABEL" -f per_page=100 |
-    jq -r --arg marker "$marker" '.[] | select(.pull_request == null and (.body // "" | contains($marker))) | .number' |
-    head -n 1)
+  local existing existing_json
+  existing_json=$(json_get --paginate "repos/${REPO}/issues" -f state=open -f labels="$LABEL" -f per_page=100 |
+    jq -sc --arg marker "$marker" 'add | map(select(.pull_request == null and (.body // "" | contains($marker)))) | first // {}')
+  existing=$(jq -r '.number // empty' <<<"$existing_json")
+
+  if [[ -n "$existing" ]] && jq -e --arg marker "$fingerprint_marker" \
+    '(.body // "") | contains($marker)' <<<"$existing_json" >/dev/null; then
+    echo "ação: manter issue #${existing}; ocorrência idêntica já registrada"
+    return 0
+  fi
 
   if [[ "$DRY_RUN" == "1" ]]; then
     echo "--- WATCHDOG DRY-RUN ---"
@@ -96,6 +109,9 @@ EOF
   if [[ -n "$existing" ]]; then
     jq -n --arg body "$body" '{body:$body}' |
       gh api --method POST "repos/${REPO}/issues/${existing}/comments" --input - >/dev/null
+    # Persist only after the comment succeeds, so a failed publication retries.
+    jq -n --arg body "$body" '{body:$body}' |
+      gh api --method PATCH "repos/${REPO}/issues/${existing}" --input - >/dev/null
   else
     jq -n --arg title "$title" --arg body "$body" --arg label "$LABEL" \
       '{title:$title,body:$body,labels:[$label]}' |
