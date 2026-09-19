@@ -526,6 +526,31 @@ describe("watchdog dry-run com curl mockado", () => {
     assert.doesNotMatch(output, /✔ falha fechado em caso/)
   })
 
+  // Medido no run 35457743862: o step reprovou por 503 do endpoint de audit do
+  // npm e a única linha que dizia isso era "npm error audit endpoint returned
+  // an error", que não casava com marcador nenhum. O recibo saía só com
+  // "exit code 1", que não diz nada.
+  it("captura falha de ferramenta que não usa marcador do Actions", () => {
+    const run = runWatchdog({
+      httpCode: "200",
+      body: JSON.stringify({ ok: true, total: 6 }),
+      runConclusion: "failure",
+      jobsJson: JSON.stringify({
+        jobs: [{ id: 4, name: "verify", conclusion: "failure", steps: [{ name: "Audit (production deps)", conclusion: "failure" }] }],
+      }),
+      jobLog: [
+        "2026-09-19T17:20:24Z npm warn audit 503 Service Unavailable - POST https://registry.npmjs.org/-/npm/v1/security/advisories/bulk",
+        "2026-09-19T17:20:24Z npm error audit endpoint returned an error",
+        "2026-09-19T17:20:24Z ##[error]Process completed with exit code 1.",
+      ].join("\n"),
+    })
+    fixtures.push(run.fixture)
+    const output = `${run.stdout}\n${run.stderr}`
+    assert.equal(run.status, 0, output)
+
+    assert.match(output, /npm error audit endpoint returned an error/)
+  })
+
   // Fail-soft: payload torto da API nao pode derrubar o watchdog no meio do
   // loop, senao o proximo cron quebrado do dia fica sem alerta.
   it("publica a anomalia mesmo com payload de jobs malformado", () => {

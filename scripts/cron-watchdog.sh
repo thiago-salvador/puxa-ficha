@@ -78,7 +78,7 @@ const text = require("node:fs").readFileSync(0, "utf8")
 // marcada que o teto, a fraca sai primeiro: medido no run 35448599774, em que
 // nomes de teste contendo "falha" ocupavam as 8 linhas e empurravam a
 // AssertionError para fora do recibo.
-const strong = /(##\[error\]|::error::|AssertionError|^not ok |^FAIL:|^✖|^Error:|^\s*at .*\.(ts|mjs|js):\d+)/
+const strong = /(##\[error\]|::error::|AssertionError|^not ok |^FAIL:|^✖|^Error:|^npm (?:error|ERR!)|^\s*at .*\.(ts|mjs|js):\d+)/
 const weak = /([A-Z][A-Z0-9_]*_STATUS=|operation_status=|coverage_status=|\bError:|\bfalha\b|exit code)/
 // Linha de teste que passou nunca e causa, e ✔/ℹ sao o ruido mais volumoso de
 // uma suite grande.
