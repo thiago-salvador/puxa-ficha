@@ -197,6 +197,10 @@ function consolidateCommand(options: Map<string, string>): void {
       for (const error of row.errors ?? []) discoveryAlerts.push(`${row.geography_code}: ${error}`)
       for (const exception of row.discovery_exceptions ?? []) discoveryAlerts.push(`${row.geography_code}: ${exception.reason}`)
     }
+    // #401. Entries that no geography can claim are reported once, from their own
+    // bucket, instead of being replicated across BR and the 27 UFs.
+    if (discovery.intake && !Array.isArray(discovery.unassigned_exceptions)) throw new Error("exceções sem geografia ausentes ou inválidas")
+    for (const exception of discovery.unassigned_exceptions ?? []) discoveryAlerts.push(`sem geografia atribuível: ${exception.url}: ${exception.reason}`)
     discoveryAlerts.push(`Descoberta ${discovery.status}: inventário de resultados e atualidade não comprovados`)
   } catch (error) {
     discoveryStatus = "source_failure"
