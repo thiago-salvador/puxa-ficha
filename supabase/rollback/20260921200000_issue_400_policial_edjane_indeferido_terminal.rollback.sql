@@ -14,8 +14,11 @@ BEGIN
     RAISE EXCEPTION 'issue-400 rollback: ledger divergiu (rollback so vale com esta migration no topo)';
   END IF;
 
-  IF (SELECT count(*) FROM public.coleta_log
-       WHERE execucao = 'migration:20260921200000' AND volume = 1 AND resultado = 'encontrado') <> 1
+  -- Unicidade total do recibo antes de ler `detalhe`: conta todas as linhas
+  -- da execucao e so depois confere os atributos da unica linha.
+  IF (SELECT count(*) FROM public.coleta_log WHERE execucao = 'migration:20260921200000') <> 1
+     OR NOT EXISTS (SELECT 1 FROM public.coleta_log
+       WHERE execucao = 'migration:20260921200000' AND volume = 1 AND resultado = 'encontrado')
      OR EXISTS (SELECT 1 FROM public.coleta_log WHERE execucao = 'rollback:20260921200000') THEN
     RAISE EXCEPTION 'issue-400 rollback: recibo invalido ou rollback repetido';
   END IF;
@@ -43,8 +46,14 @@ BEGIN
   -- significa que a migration nao gravou o snapshot; mais de uma, que alguem
   -- escreveu por outro caminho. Nos dois casos o rollback pararia aqui em vez
   -- de gravar recibo e derrubar o ledger em cima de um estado que nao conhece.
-  DELETE FROM public.identidade_timeline_quarentena_snapshot
-  WHERE migration_version = 'issue-400-policial-edjane-terminal';
+  -- Identidade completa do snapshot conferida antes do DELETE: versao,
+  -- tabela e row_id da ficha. Um snapshot da mesma versao para outra linha
+  -- nao casa e o ROW_COUNT reprova.
+  DELETE FROM public.identidade_timeline_quarentena_snapshot s
+  WHERE s.migration_version = 'issue-400-policial-edjane-terminal'
+    AND s.tabela = 'candidatos'
+    AND s.row_id = (SELECT c.id FROM public.candidatos c
+                    WHERE c.slug = 'policial-edjane' AND c.sq_candidato_2026 = '250002548080');
   GET DIAGNOSTICS afetadas = ROW_COUNT;
   IF afetadas <> 1 THEN
     RAISE EXCEPTION 'issue-400 rollback: snapshot esperado=1 atual=%', afetadas;

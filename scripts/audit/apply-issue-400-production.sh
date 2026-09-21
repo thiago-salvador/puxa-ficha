@@ -133,7 +133,11 @@ def lit(value): return "'" + value.replace("'", "''") + "'"
 def b64(value): return base64.b64encode(value).decode("ascii")
 
 print("BEGIN;")
-print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:issue-400-production', 0));")
+# Mesma chave global do rollback versionado: apply e rollback de qualquer
+# migration de producao se serializam entre si, e o ledger fica travado ate o
+# fim da transacao.
+print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:production-db-migrations', 0));")
+print("LOCK TABLE supabase_migrations.schema_migrations IN SHARE ROW EXCLUSIVE MODE;")
 
 for i in range(0, len(resto), 5):
     version, name, previous, previous_digest, digest = resto[i:i + 5]
@@ -176,6 +180,12 @@ if [[ "$modo" == "dry-run" ]]; then
   echo "PASS: dry-run da issue #400 rodou migration, ledger e readback e desfez tudo"
   exit 0
 fi
+
+# O apply nao confia num dry-run de outra execucao: ensaia aqui, contra o
+# estado atual do banco e os mesmos artefatos, e so grava se o ensaio passar.
+gerar_sql ROLLBACK "${args[@]}" | \
+  PGOPTIONS='-c statement_timeout=300000 -c lock_timeout=5000' psql -X -v ON_ERROR_STOP=1 -f -
+echo "PASS: ensaio pre-apply da issue #400 conferido; gravando"
 
 gerar_sql COMMIT "${args[@]}" | \
   PGOPTIONS='-c statement_timeout=300000 -c lock_timeout=5000' psql -X -v ON_ERROR_STOP=1 -f -
