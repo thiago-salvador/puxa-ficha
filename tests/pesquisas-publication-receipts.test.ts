@@ -12,7 +12,7 @@ import { construirCoberturaDescoberta, LISTAGENS_PESQUISAS } from "../scripts/li
 const validHtml = "<html><h1>Pesquisa Datafolha PoderData de intenção de voto para presidente</h1><p>Publicado em 12/09/2026. Eleitores foram entrevistados em todas as regiões, com metodologia registrada e divulgação pública da pesquisa eleitoral.</p></html>"
 const sha = (s: string) => createHash("sha256").update(s).digest("hex")
 
-for (const mode of ["curadoria", "sem geografia", "ausente", "hash", "challenge", "origem", "timeout", "desconhecido", "inventário", "listagem", "artefato inválido"]) {
+for (const mode of ["curadoria", "sem geografia", "exceção malformada", "ausente", "hash", "challenge", "origem", "timeout", "desconhecido", "inventário", "listagem", "artefato inválido"]) {
   test(`CLI de consolidação: ${mode}`, () => {
     const root = mkdtempSync(resolve(tmpdir(), "pf-receipt-cli-"))
     try {
@@ -25,7 +25,7 @@ for (const mode of ["curadoria", "sem geografia", "ausente", "hash", "challenge"
       // #401. O manifesto carrega o bucket de exceções sem geografia atribuível.
       // Manifesto com intake e sem o campo é recusado: quem não sabe carregar a
       // exceção não pode consolidar em silêncio.
-      const unassigned = mode === "sem geografia" ? [{ url: "https://www1.folha.uol.com.br/poder/nacional.shtml", reason: "publicação sem registro identificável", execution_status: "complete" }] : []
+      const unassigned = mode === "sem geografia" ? [{ url: "https://www1.folha.uol.com.br/poder/nacional.shtml", reason: "publicação sem registro identificável", execution_status: "complete" }] : mode === "exceção malformada" ? [{ url: "https://www1.folha.uol.com.br/poder/nacional.shtml", execution_status: "complete" }] : []
       const discovery = { status: "partial", source_filter: "all", coverage, intake: { entries: [] }, unassigned_exceptions: unassigned, observations: LISTAGENS_PESQUISAS.map(row => ({ id: row.id, status: mode === "listagem" ? "unavailable" : "observed", evidence_sha256: sha("listing fixture"), observed_at: "2026-09-12T12:00:00Z", error: null })), inventory: { geographies: coverage.map(row => ({ geography_code: row.geography_code, status: "observed", query_exhausted: mode !== "inventário", errors: [], records: [], pages: [{}] })) } }
       const input = resolve(root, "input")
       mkdirSync(resolve(input, "source-html"), { recursive: true })
@@ -41,6 +41,7 @@ for (const mode of ["curadoria", "sem geografia", "ausente", "hash", "challenge"
       assert.equal(result.promotion.authorized, false)
       assert.equal(result.execution_status, ["curadoria", "sem geografia"].includes(mode) ? "complete" : "failed")
       if (mode === "curadoria") assert.equal(result.poll_alerts[0].reason, "extraction_incomplete")
+      if (mode === "exceção malformada") assert.ok(result.coverage.alerts.some((alert: string) => /fora do contrato/.test(alert)))
       if (mode === "sem geografia") {
         const linhas = result.coverage.alerts.filter((alert: string) => /sem geografia atribuível/.test(alert))
         assert.equal(linhas.length, 1, "uma linha para a exceção, não uma por geografia")
