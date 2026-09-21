@@ -1,0 +1,160 @@
+name: Checagem do deploy de producao
+
+# Deployment Check da Vercel "smoke-producao" (blocks=deployment-alias,
+# targets=production). Com "Auto-assign Custom Production Domains" ligado, a
+# Vercel so aponta puxaficha.com.br para o deploy novo depois que este workflow
+# reportar `succeeded` no check run. Falha, erro ou timeout do check mantem o
+# dominio no deploy anterior: fail-closed.
+#
+# Decisao do Thiago em 21/09/2026: promocao automatica com checagem, no lugar
+# do `vercel promote` manual e da fila serial (desligada desde 01/09).
+#
+# O gatilho e o push em main, nao o repository_dispatch da Vercel: o deploy e
+# procurado pelo SHA na API, o que nao depende da ordem dos eventos. O
+# workflow_dispatch roda a mesma suite contra o deploy de um SHA ja existente.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      sha:
+        description: "SHA de 40 caracteres com deploy de producao na Vercel"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-deployment-check-${{ github.event.inputs.sha || github.sha }}
+  cancel-in-progress: false
+
+env:
+  CHECK_NAME: smoke-producao
+  EXPECTED_SHA: ${{ github.event.inputs.sha || github.sha }}
+
+jobs:
+  check:
+    name: "Vercel - puxa-ficha: smoke-producao"
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Validar SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
+
+      - name: Achar o deploy de producao e o check run
+        id: deployment
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$VERCEL_TOKEN" && test -n "$VERCEL_TEAM_ID" && test -n "$VERCEL_PROJECT_ID"
+          api() {
+            curl -fsS --connect-timeout 10 --max-time 30 \
+              -H "Authorization: Bearer ${VERCEL_TOKEN}" "$@"
+          }
+          dep_id=""; dep_url=""
+          # Build do Next leva minutos; 120 x 10 s cobre ate 20 min.
+          for _ in $(seq 1 120); do
+            if deployments="$(api "https://api.vercel.com/v6/deployments?projectId=${VERCEL_PROJECT_ID}&teamId=${VERCEL_TEAM_ID}&target=production&meta-githubCommitSha=${EXPECTED_SHA}&limit=20")"; then
+              dep="$(jq -c --arg sha "$EXPECTED_SHA" '
+                [.deployments[]
+                  | select(.meta.githubCommitSha == $sha and .target == "production")]
+                | sort_by(.createdAt // 0) | reverse | .[0] // empty' <<<"$deployments")"
+              state="$(jq -r '.readyState // .state // empty' <<<"$dep")"
+              if [[ "$state" == "ERROR" || "$state" == "CANCELED" ]]; then
+                echo "FAIL: deploy de producao do SHA terminou em $state" >&2
+                exit 1
+              fi
+              if [[ "$state" == "READY" ]]; then
+                dep_id="$(jq -r '.uid // .id' <<<"$dep")"
+                dep_url="https://$(jq -r '.url' <<<"$dep")"
+                break
+              fi
+            fi
+            sleep 10
+          done
+          [[ "$dep_id" =~ ^[A-Za-z0-9_-]+$ ]] || { echo "FAIL: deploy READY nao encontrado" >&2; exit 1; }
+          [[ "$dep_url" =~ ^https://[A-Za-z0-9.-]+\.vercel\.app$ ]]
+
+          run_id=""
+          for _ in $(seq 1 18); do
+            runs="$(api "https://api.vercel.com/v2/deployments/${dep_id}/check-runs?teamId=${VERCEL_TEAM_ID}" || echo '{}')"
+            run_id="$(jq -r --arg n "$CHECK_NAME" '[.runs[]? | select(.name == $n)] | .[0].id // empty' <<<"$runs")"
+            [[ -n "$run_id" ]] && break
+            sleep 10
+          done
+          if [[ -z "$run_id" ]]; then
+            # Sem check run nao ha o que reportar; a suite roda mesmo assim e
+            # decide o status do job. Com o check configurado, a Vercel fecha
+            # por timeout e o dominio nao troca.
+            echo "::warning::check run '${CHECK_NAME}' ausente no deploy ${dep_id}"
+          fi
+          printf 'id=%s\nurl=%s\nrun_id=%s\n' "$dep_id" "$dep_url" "$run_id" >>"$GITHUB_OUTPUT"
+
+      - name: Marcar check run como running
+        if: steps.deployment.outputs.run_id != ''
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
+          DEP_ID: ${{ steps.deployment.outputs.id }}
+          RUN_ID: ${{ steps.deployment.outputs.run_id }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          jq -n --arg u "$RUN_URL" '{status:"running", externalUrl:$u}' |
+            curl -fsS --connect-timeout 10 --max-time 30 -X PATCH \
+              -H "Authorization: Bearer ${VERCEL_TOKEN}" -H "Content-Type: application/json" \
+              --data @- "https://api.vercel.com/v2/deployments/${DEP_ID}/check-runs/${RUN_ID}?teamId=${VERCEL_TEAM_ID}" >/dev/null
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.EXPECTED_SHA }}
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - run: npm ci
+
+      - run: npx playwright install --with-deps chromium webkit
+
+      - name: Suite de smoke contra o deploy candidato
+        id: smoke
+        env:
+          PF_BASE_URL: ${{ steps.deployment.outputs.url }}
+          PF_EXPECTED_DEPLOY_SHA: ${{ env.EXPECTED_SHA }}
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
+        run: npm run release:smoke
+
+      - name: Reportar resultado ao check run
+        if: always() && steps.deployment.outputs.run_id != ''
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
+          DEP_ID: ${{ steps.deployment.outputs.id }}
+          RUN_ID: ${{ steps.deployment.outputs.run_id }}
+          SMOKE: ${{ steps.smoke.outcome }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          # So `success` da suite vira succeeded; qualquer outro desfecho,
+          # inclusive etapa anterior falhada (outcome vazio), vira failed.
+          if [[ "$SMOKE" == "success" ]]; then c=succeeded; t="Smoke do deploy candidato passou"; else c=failed; t="Smoke do deploy candidato falhou (${SMOKE:-nao executado})"; fi
+          jq -n --arg c "$c" --arg t "$t" --arg u "$RUN_URL" --argjson at "$(date +%s000)" \
+            '{status:"completed", conclusion:$c, conclusionText:$t, externalUrl:$u, completedAt:$at}' |
+            curl -fsS --connect-timeout 10 --max-time 30 -X PATCH \
+              -H "Authorization: Bearer ${VERCEL_TOKEN}" -H "Content-Type: application/json" \
+              --data @- "https://api.vercel.com/v2/deployments/${DEP_ID}/check-runs/${RUN_ID}?teamId=${VERCEL_TEAM_ID}" >/dev/null
+          echo "check run ${RUN_ID}: ${c}"

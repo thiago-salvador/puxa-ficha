@@ -185,6 +185,7 @@ mascarar o ambiente real.
 | `DEFAULT_TAGS_JSON`, `INPUT_TAGS`, `REVALIDATE_URL`, `REVALIDATE_SECRET`, `TAGS_JSON` | Revalidação de cache | Variáveis internas montadas a partir de input e secret no mesmo job. | GitHub workflow |
 | `RAW_SOURCES`, `INCREMENTAL`, `REVALIDAR`, `MANIFESTO` | Ingestão e patrimônio | Variáveis internas derivadas dos inputs ou paths do job. | GitHub workflow |
 | `DISPATCH_REF`, `DISPATCH_SHA`, `DISPATCH_ENVIRONMENT`, `DISPATCH_GIT_SHA`, `DISPATCH_PROJECT`, `EXPECTED_SHA`, `OWNER_PR`, `PRODUCTION_URL`, `TRUSTED_SHA`, `CANDIDATE_DEPLOYMENT_ID`, `CANDIDATE_DEPLOYMENT_URL`, `PREVIOUS_DEPLOYMENT_ID`, `PREVIOUS_DEPLOYMENT_SHA`, `PREVIOUS_DEPLOYMENT_URL`, `INCIDENT_LABEL`, `JOB_STATUS`, `ROLLBACK_OUTCOME`, `VERIFY_OUTCOME` | Estado da fila serial, promoção e rollback | Variáveis efêmeras do job; valores vêm de inputs, outputs e recursos remotos previamente validados. | GitHub workflow |
+| `CHECK_NAME`, `DEP_ID`, `RUN_ID`, `RUN_URL`, `SMOKE` | Deployment Check `smoke-producao` da Vercel | Efêmeras de `production-deployment-check.yml`: nome do check, id do deploy candidato, id do check run, link do run e desfecho da suíte de smoke. | GitHub workflow |
 | `WATCHED_HEAD_SHA`, `WATCHED_RUN_ID`, `WATCHED_RUN_URL`, `WATCHED_RUN_CONCLUSION` | Payload do watchdog da fila | Variáveis efêmeras recebidas do workflow observado. | GitHub workflow |
 | `POLL_REPOSITORY`, `POLL_BASE_SHA`, `POLL_RUN_ID`, `POLL_AUTHOR_LOGIN` | Identidade e controle de concorrência da publicação validada de pesquisas | Fornecidas pelo workflow: repositório atual, SHA atual de `main`, ID do run e login fixo `thiago-salvador`. Não há fallback para outro repositório, commit, run ou autor; ausência ou formato inesperado aborta antes de qualquer mutação. | GitHub workflow |
 
@@ -258,6 +259,7 @@ Os one-offs históricos continuam versionados no diretório. Conferir o inventá
 | `a11y-producao-diaria.yml` | 06:15 UTC diária e manual | Axe contra o alias público `puxaficha.com.br`, seja qual for o SHA no ar (registrado no log). Existe porque `a11y-producao.yml` depende de o `deployment_status` coincidir com a promoção, que é manual. |
 | `a11y-producao.yml` | `deployment_status` de Production | Axe contra `puxaficha.com.br` depois do deploy alcançar o alias público, não no push. |
 | `revalidate-cache.yml` | Manual | Revalidar tags públicas autorizadas. |
+| `production-deployment-check.yml` | Push em `main` e manual (`sha`) | Roda `release:smoke` contra o deploy de produção candidato e reporta o check run `smoke-producao` da Vercel, que bloqueia a atribuição de `puxaficha.com.br` até passar (fail-closed). |
 | `serial-merge-queue.yml` | A cada 5 min, `pull_request_target`, `workflow_run`, `deployment_status` e manual | Coordenador da fila de merge serial: enfileira, promove o deploy e faz o readback público. |
 | `serial-merge-queue-watchdog.yml` | `workflow_run` do coordenador e evento de issue | Abre issue quando um run da fila termina sem sucesso. |
 | `apply-issue-96-production.yml` | Manual | One-off fechado: aplicar a correção de fontes da issue 96. |
