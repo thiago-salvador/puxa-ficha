@@ -121,3 +121,37 @@ A ligação do secret no workflow de ingest e o versionamento no código estão
 nesta branch. Até o merge, um disparo manual do ingest TSE a partir da `main`
 roda sem a chave e regrava os doadores sem `cpf_hash`. O ingest TSE não tem
 agendamento, só disparo manual.
+
+## Fechamento: a lacuna da coorte do Senado 2026 era de medição
+
+A issue mediu 255 fichas `partial` e 48 `missing` entre as 514 publicadas. Em
+2026-09-21 o relatório de cobertura, lido do banco de produção, deu os mesmos
+números: 1.462 pares ano-candidato "sem dado nem confirmação", todos em 2002,
+2004, 2008, 2010, 2018, 2020 e 2022.
+
+Esses são exatamente os anos em que `financiamento_verificacoes` recebeu, em
+2026-09-15, linhas `nao_aplicavel`: varredura do pacote nacional do TSE pelo CPF
+da candidatura de 2026, sem nenhum registro da pessoa no ano (235 em 2002, 254
+em 2004, 249 em 2008, 205 em 2010, 150 em 2018, 229 em 2020, 152 em 2022).
+
+A ficha pública já descarta `nao_aplicavel` em `buildFinanciamentoEleicoes`,
+então nunca exibiu esses anos. O modelo de cobertura da auditoria fazia o
+contrário: somava o ano da verificação aos anos aplicáveis e só aceitava
+`ausencia_oficial` como cobertura, então cada pleito provadamente não disputado
+virava lacuna.
+
+Correção em `scripts/audit/lib/coverage-model.ts`: a auditoria filtra
+`nao_aplicavel` com a mesma regra da ficha. Mesmo snapshot de produção, antes e
+depois:
+
+| Financiamento | Antes | Depois |
+|---|---:|---:|
+| `ok` | 162 | 451 |
+| `partial` | 255 | 0 |
+| `missing` | 48 | 0 |
+| `na` | 49 | 63 |
+| Pares ano-candidato sem dado nem confirmação | 1.462 | 0 |
+
+As 14 fichas que passam de `missing` para `na` são de pessoas sem nenhum pleito
+disputado até 2024. `nao_aplicavel` não cobre ano que a trajetória mostra como
+disputado; os dois casos têm teste em `tests/coverage-proveniencia.test.ts`.
