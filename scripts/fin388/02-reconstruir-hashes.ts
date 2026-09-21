@@ -59,7 +59,7 @@ async function fetchTargets(): Promise<Map<string, Target>> {
   let offset = 0
   for (;;) {
     const url = `${base}/rest/v1/financiamento?select=id,candidato_id,ano_eleicao,maiores_doadores&limit=1000&offset=${offset}`
-    const res = await fetch(url, { headers: { apikey: key, Authorization: `Bearer ${key}` } })
+    const res = await fetch(url, { headers: { apikey: key, Authorization: `Bearer ${key}` }, signal: AbortSignal.timeout(60_000) })
     if (!res.ok) throw new Error(`Supabase ${res.status}`)
     const batch = (await res.json()) as Array<Record<string, unknown>>
     if (batch.length === 0) break
@@ -97,6 +97,13 @@ function extractYear(ano: number, dir: string): string[] {
   execFileSync("unzip", ["-o", "-q", zips[0]!, ...members, "-d", target])
   const paths = members.map((m) => join(target, m))
   return selectCanonicalFinanciamentoSourceFiles(paths, ano)
+}
+
+/** Mesma leitura de `parseBRL` em `scripts/lib/ingest-tse.ts` (privada la). */
+function parseBRL(value: string): number {
+  if (!value || value === "#NULO#" || value === "#NE#" || value === "-1") return 0
+  const parsed = parseFloat(value.replace(/\./g, "").replace(",", "."))
+  return Number.isNaN(parsed) ? 0 : parsed
 }
 
 function fileUf(path: string): string {
@@ -167,8 +174,7 @@ async function main(): Promise<number> {
             seen.add(dedupKey)
           }
           const nome = (row.NM_DOADOR || row.NM_DOADOR_RFB || "").trim()
-          const valorRaw = (row.VR_RECEITA || "0").replace(/\./g, "").replace(",", ".")
-          const valor = Number(valorRaw)
+          const valor = parseBRL(row.VR_RECEITA || "0")
           if (!nome || !Number.isFinite(valor)) return
           // O CPF cru entra no lugar do hash: a agregacao decide igual, e a
           // troca pelo hash novo acontece depois, ja com a chave versionada.

@@ -18,7 +18,7 @@ async function main(): Promise<void> {
   const rows: Array<Record<string, unknown>> = []
   for (let offset = 0; ; offset += 1000) {
     const res = await fetch(`${base}/rest/v1/financiamento?select=id,candidato_id,ano_eleicao,maiores_doadores&limit=1000&offset=${offset}`,
-      { headers: { apikey: key, Authorization: `Bearer ${key}` } })
+      { headers: { apikey: key, Authorization: `Bearer ${key}` }, signal: AbortSignal.timeout(60_000) })
     const batch = (await res.json()) as Array<Record<string, unknown>>
     rows.push(...batch)
     if (batch.length < 1000) break
