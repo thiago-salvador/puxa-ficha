@@ -175,6 +175,46 @@ test("financiamento: ausência oficial por pleito cobre a candidatura sem invent
   assert.equal(celulas.doadores.state, "zero")
 })
 
+test("financiamento: não aplicável prova pleito não disputado e não vira lacuna", () => {
+  // Mesma regra de `buildFinanciamentoEleicoes`: a ficha pública descarta
+  // `nao_aplicavel`, então a auditoria não pode contar esse ano como aplicável.
+  const perfil = candidato({
+    historico: [{
+      cargo_canonico: "Governador",
+      tipo_evento: "candidatura",
+      periodo_inicio: 2022,
+      periodo_fim: 2022,
+      proveniencia: "tse",
+      observacoes: "NÃO ELEITO (TSE 2022)",
+    }],
+    financiamentoAnos: [2022],
+    financiamentoVerificacoes: [
+      { ano_eleicao: 2002, resultado: "nao_aplicavel" },
+      { ano_eleicao: 2018, resultado: "nao_aplicavel" },
+    ],
+  })
+
+  const celulas = calcularCelulas(perfil)
+  assert.equal(celulas.financiamento.state, "ok")
+  assert.equal(celulas.financiamento.text, "1/1")
+})
+
+test("financiamento: não aplicável não cobre pleito que a trajetória mostra disputado", () => {
+  const perfil = candidato({
+    historico: [{
+      cargo_canonico: "Governador",
+      tipo_evento: "candidatura",
+      periodo_inicio: 2022,
+      periodo_fim: 2022,
+      proveniencia: "tse",
+      observacoes: "NÃO ELEITO (TSE 2022)",
+    }],
+    financiamentoVerificacoes: [{ ano_eleicao: 2022, resultado: "nao_aplicavel" }],
+  })
+
+  assert.equal(calcularCelulas(perfil).financiamento.state, "missing")
+})
+
 test("financiamento: pleito com receita zero não exige maiores doadores", () => {
   const perfil = candidato({
     financiamentoAnos: [2022],

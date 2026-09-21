@@ -703,7 +703,11 @@ export function calcularCelulas(c: CandidatoCoverage): Record<string, Cell> {
   }
 
   const fin = c.financiamentoAnos.length
-  const verificacoesFin = c.financiamentoVerificacoes ?? []
+  // `nao_aplicavel` prova que a pessoa nao disputou aquele pleito (varredura do
+  // pacote nacional pelo CPF). A ficha publica descarta essa linha em
+  // `buildFinanciamentoEleicoes`; contar o ano como aplicavel aqui criava uma
+  // lacuna que o site nunca exibe.
+  const verificacoesFin = (c.financiamentoVerificacoes ?? []).filter((v) => v.resultado !== "nao_aplicavel")
   const ausenciasFin = new Set(
     verificacoesFin.filter((v) => v.resultado === "ausencia_oficial").map((v) => v.ano_eleicao),
   )
