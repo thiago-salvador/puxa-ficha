@@ -15,7 +15,7 @@
  *
  * Nenhum CPF e impresso. O mapa de CPFs vai para arquivo 0600.
  */
-import { chmodSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs"
+import { chmodSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join, resolve } from "node:path"
 import { execFileSync } from "node:child_process"

@@ -261,7 +261,7 @@ async function apply(plan: Plan) {
     if (quarentenaRemovida) {
       await escreverAuditado(
         { script: SCRIPT, tabela: "financiamento", motivo: "compensação: devolve à tabela viva as linhas da quarentena", recorte: `id in (${ids.join(", ")})` },
-        () => supabase.from("financiamento").insert(plan.quarentena.map((q) => { const { maiores_doadores_publicos: _p, ...rest } = q.row; return rest })).select("id"),
+        () => supabase.from("financiamento").insert(plan.quarentena.map((q) => Object.fromEntries(Object.entries(q.row).filter(([k]) => k !== "maiores_doadores_publicos")))).select("id"),
       )
     }
     if (quarentenaInserida) {
