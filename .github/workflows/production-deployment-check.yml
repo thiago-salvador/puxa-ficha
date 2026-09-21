@@ -110,10 +110,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          jq -n --arg u "$RUN_URL" '{status:"running", externalUrl:$u}' |
-            curl -fsS --connect-timeout 10 --max-time 30 -X PATCH \
+          # Informativo: falhar aqui nao pode impedir o smoke. O reporte final
+          # e o que libera ou trava o dominio.
+          if ! jq -n --arg u "$RUN_URL" '{status:"running", externalUrl:$u}' |
+            curl -fsS --connect-timeout 10 --max-time 30 --retry 4 --retry-delay 5 -X PATCH \
               -H "Authorization: Bearer ${VERCEL_TOKEN}" -H "Content-Type: application/json" \
-              --data @- "https://api.vercel.com/v2/deployments/${DEP_ID}/check-runs/${RUN_ID}?teamId=${VERCEL_TEAM_ID}" >/dev/null
+              --data @- "https://api.vercel.com/v2/deployments/${DEP_ID}/check-runs/${RUN_ID}?teamId=${VERCEL_TEAM_ID}" >/dev/null; then
+            echo "::warning::nao foi possivel marcar o check run como running"
+          fi
 
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -149,12 +153,15 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          # `--retry` do curl repete so erro transitorio (timeout, 408, 429,
+          # 5xx), nunca 4xx de autenticacao ou validacao. PATCH com o mesmo
+          # corpo e idempotente.
           # So `success` da suite vira succeeded; qualquer outro desfecho,
           # inclusive etapa anterior falhada (outcome vazio), vira failed.
           if [[ "$SMOKE" == "success" ]]; then c=succeeded; t="Smoke do deploy candidato passou"; else c=failed; t="Smoke do deploy candidato falhou (${SMOKE:-nao executado})"; fi
           jq -n --arg c "$c" --arg t "$t" --arg u "$RUN_URL" --argjson at "$(date +%s000)" \
             '{status:"completed", conclusion:$c, conclusionText:$t, externalUrl:$u, completedAt:$at}' |
-            curl -fsS --connect-timeout 10 --max-time 30 -X PATCH \
+            curl -fsS --connect-timeout 10 --max-time 30 --retry 6 --retry-delay 10 -X PATCH \
               -H "Authorization: Bearer ${VERCEL_TOKEN}" -H "Content-Type: application/json" \
               --data @- "https://api.vercel.com/v2/deployments/${DEP_ID}/check-runs/${RUN_ID}?teamId=${VERCEL_TEAM_ID}" >/dev/null
           echo "check run ${RUN_ID}: ${c}"
