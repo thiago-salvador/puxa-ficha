@@ -432,7 +432,9 @@ describe("classificador puro (#136)", () => {
     // pelo --gate local PG17: 384 + 105 = 489.
     // Issue #400 (21/09/2026): uma migration de dado, clone da 20260918120100,
     // com os mesmos guards. Liquido 489 + 1 = 490 migrations.
-    assert.equal(manifesto.aplicadas_esperadas, 385)
+    // Issue #400, vice de TO (21/09/2026): mais uma migration de dado com os
+    // mesmos guards. Liquido 490 + 1 = 491 migrations.
+    assert.equal(manifesto.aplicadas_esperadas, 386)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

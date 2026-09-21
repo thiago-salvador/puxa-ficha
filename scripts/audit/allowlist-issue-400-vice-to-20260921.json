@@ -1,0 +1,34 @@
+{
+  "versao": "2026-09-21",
+  "fonte": "DivulgaCandContas, detalhe da candidatura SQ 270002554376 (TO, Vice-governador, DEMOCRATA), https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/TO/20322002026/candidato/270002554376, lido ao vivo em 2026-09-21T21:42:20.909Z: descricaoSituacao \"Deferido\", isCandidatoInapto false, descricaoSituacaoCandidato \"Consta da urna\", SHA-256 7511e9c8be401f12314de6d6951b305ec2c32e58a069624aee22e1086065579a. A auditoria do run 35658352702 registra o mesmo Deferido em current_status_evidence. Issue #400.",
+  "motivo": "A vice estava publicada como \"Pendente de julgamento\" pelo detalhe lido em 17/09. Só o subobjeto fonte_detalhe.vice é refrescado; titular, fonte_sha256, snapshot_em e tse_situacao_codigo pertencem ao titular e já dizem Deferido. Mesmo padrão de 20260917000001.",
+  "coorte": [],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "chapas_2026",
+      "ref": "issue-400-vice-to",
+      "campos": [
+        "fonte_detalhe"
+      ]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260921220000",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
+    }
+  ]
+}
