@@ -219,6 +219,11 @@ export interface Doador {
   cnpj?: string;
   /** Referência unidirecional a PF; não é o CPF em claro. Só preenchido com ingest + salt dedicado. */
   cpf_hash?: string;
+  /**
+   * Versão da chave que gerou `cpf_hash`. Ausente = versão 1 (chave anterior,
+   * não recuperável). Hashes de versões diferentes não são comparáveis.
+   */
+  cpf_hash_versao?: number;
 }
 
 // --- Votações ---

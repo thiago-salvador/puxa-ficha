@@ -38,6 +38,13 @@ export function normalizeCnpjStorageDigits(digits: string): string | null {
 }
 
 /**
+ * Versão da chave de `PF_DOADOR_CPF_HASH_SALT` em uso. A versão 1 teve a chave
+ * perdida; hashes v1 e v2 do mesmo CPF são diferentes e não se comparam.
+ * Trocar a chave exige subir esta versão e migrar os hashes gravados.
+ */
+export const DONOR_CPF_HASH_VERSION = 2
+
+/**
  * Hash estável para armazenar referência a PF sem CPF em claro: SHA-256 hex de `salt + ":" + cpf` (11 dígitos).
  * Salt deve vir de PF_DOADOR_CPF_HASH_SALT (servidor/ingest apenas).
  */
@@ -50,7 +57,7 @@ export interface ExtractDonorIdsOptions {
   requireSaltWhenCpfPresent: boolean
 }
 
-export type ExtractDonorIdsResult = { cnpj?: string; cpf_hash?: string }
+export type ExtractDonorIdsResult = { cnpj?: string; cpf_hash?: string; cpf_hash_versao?: number }
 
 /**
  * Lê possível documento do doador no layout TSE; devolve cnpj e/ou cpf_hash quando aplicável.
@@ -81,7 +88,7 @@ export function extractOptionalDonorIdsFromTseRow(
       }
       return {}
     }
-    return { cpf_hash: hashCpfForDonorStorage(d, s) }
+    return { cpf_hash: hashCpfForDonorStorage(d, s), cpf_hash_versao: DONOR_CPF_HASH_VERSION }
   }
 
   return {}
