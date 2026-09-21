@@ -5,7 +5,7 @@ import { stripAccents } from "@/lib/strip-accents"
 type DoadorTipo = Doador["tipo"]
 
 export type DoadorPublico = Pick<Doador, "nome" | "valor" | "tipo">
-export type DoadorStorage = DoadorPublico & Pick<Partial<Doador>, "cnpj" | "cpf_hash">
+export type DoadorStorage = DoadorPublico & Pick<Partial<Doador>, "cnpj" | "cpf_hash" | "cpf_hash_versao">
 
 const KNOWN_TIPOS = new Set<DoadorTipo>([
   "PF",
@@ -77,6 +77,8 @@ interface AggregatedDoador {
   tipo: DoadorTipo
   cnpjs: Set<string>
   cpfHashes: Set<string>
+  /** Versão de cada hash, para não perder a marcação ao agregar por nome. */
+  cpfHashVersoes: Map<string, number | undefined>
 }
 
 function aggregateMaioresDoadores(raw: unknown): AggregatedDoador[] {
@@ -94,6 +96,10 @@ function aggregateMaioresDoadores(raw: unknown): AggregatedDoador[] {
     const cnpj = typeof item.cnpj === "string" && item.cnpj.trim() ? item.cnpj.trim() : undefined
     const cpf_hash =
       typeof item.cpf_hash === "string" && item.cpf_hash.trim() ? item.cpf_hash.trim() : undefined
+    const cpf_hash_versao =
+      typeof item.cpf_hash_versao === "number" && Number.isInteger(item.cpf_hash_versao)
+        ? item.cpf_hash_versao
+        : undefined
     const tipo = normalizeDoadorTipoWithIdentifiers(item.tipo, { cnpj, cpf_hash })
     const key = normalizePublicName(nome)
     if (!key) continue
@@ -106,6 +112,7 @@ function aggregateMaioresDoadores(raw: unknown): AggregatedDoador[] {
         tipo,
         cnpjs: new Set(cnpj ? [cnpj] : []),
         cpfHashes: new Set(cpf_hash ? [cpf_hash] : []),
+        cpfHashVersoes: new Map(cpf_hash ? [[cpf_hash, cpf_hash_versao]] : []),
       })
       continue
     }
@@ -116,7 +123,10 @@ function aggregateMaioresDoadores(raw: unknown): AggregatedDoador[] {
     current.valor = roundCurrency(current.valor + valor)
     current.tipo = mergeTipos(current.tipo, tipo)
     if (cnpj) current.cnpjs.add(cnpj)
-    if (cpf_hash) current.cpfHashes.add(cpf_hash)
+    if (cpf_hash) {
+      current.cpfHashes.add(cpf_hash)
+      current.cpfHashVersoes.set(cpf_hash, cpf_hash_versao)
+    }
   }
 
   return [...byName.values()].sort((a, b) => b.valor - a.valor)
@@ -147,7 +157,10 @@ export function normalizeMaioresDoadoresForStorage(raw: unknown, limit = 10): Do
       }
 
       if (doador.cpfHashes.size === 1 && doador.cnpjs.size === 0) {
-        out.cpf_hash = [...doador.cpfHashes][0]
+        const cpfHash = [...doador.cpfHashes][0]!
+        out.cpf_hash = cpfHash
+        const versao = doador.cpfHashVersoes.get(cpfHash)
+        if (versao !== undefined) out.cpf_hash_versao = versao
       }
 
       return out

@@ -222,15 +222,19 @@ export async function validarEntradasDescobertas(input: {
       registry.set(ids[0], observation)
       entry.registry_sha256 = observation.evidence_sha256
       const official = observation.registry
+      // #401. The official registry already names the geography here, so attribute
+      // the entry before any curation branch can throw. An entry that failed with
+      // no geography_code is spread over every geography by the coverage builder,
+      // and one conflicting publication became 28 identical alerts on 2026-09-20.
+      const normalize = (value: string) => value.normalize("NFC").toLocaleUpperCase("pt-BR")
+      const uf = ["BR", ...getEstadoUFs().map((value) => value.toUpperCase())].find((value) => [value, value === "BR" ? "BRASIL" : normalize(getEstadoNome(value)!)].includes(normalize(official.geography)))
+      entry.geography_code = uf
+      entry.registry_inventory_match = Boolean(input.inventory?.geographies.find((geo) => geo.geography_code === uf)?.records.some((record) => record.registration_id === ids[0]))
       const institute = listing.id === "poderdata" ? /PoderData/i : listing.id === "folha-poder" ? /Datafolha/i : /Real Time Big Data/i
       if (!institute.test(official.institute)) throw new DiscoveryCurationError("instituto do registro conflitante com a fonte aprovada")
       const offices = (["Governador", "Presidente"] as const).filter((office) => official.office.includes(office))
       const office = link.office_hint && offices.includes(link.office_hint) ? link.office_hint : offices.length === 1 ? offices[0] : null
       if (!office || (link.office_hint && link.office_hint !== office)) throw new DiscoveryCurationError("cargo da publicação conflitante com registro")
-      const normalize = (value: string) => value.normalize("NFC").toLocaleUpperCase("pt-BR")
-      const uf = ["BR", ...getEstadoUFs().map((value) => value.toUpperCase())].find((value) => [value, value === "BR" ? "BRASIL" : normalize(getEstadoNome(value)!)].includes(normalize(official.geography)))
-      entry.geography_code = uf
-      entry.registry_inventory_match = Boolean(input.inventory?.geographies.find((geo) => geo.geography_code === uf)?.records.some((record) => record.registration_id === ids[0]))
       if (!uf || (link.geography_hint && link.geography_hint !== uf) || (office === "Presidente" && uf !== "BR") || (office === "Governador" && uf === "BR")) throw new DiscoveryCurationError("geografia conflitante ou não contemplada pelo contrato")
       if (input.uf && input.uf !== "ALL" && input.uf !== uf) { entries.pop(); continue }
       const sourceId = listing.source_ids.find((id) => id.includes(office === "Presidente" ? "nacional" : "estaduais"))

@@ -4,6 +4,7 @@ import { dirname, join } from "node:path"
 import { describe, it } from "node:test"
 import { fileURLToPath } from "node:url"
 import {
+  DONOR_CPF_HASH_VERSION,
   TSE_CSV_DONOR_DOCUMENT_COLUMN_KEYS,
   digitsOnly,
   extractOptionalDonorIdsFromTseRow,
@@ -107,6 +108,18 @@ describe("extractOptionalDonorIdsFromTseRow", () => {
     const out = extractOptionalDonorIdsFromTseRow(row, "s", { requireSaltWhenCpfPresent: false })
     assert.ok(out.cpf_hash)
     assert.equal(out.cpf_hash, hashCpfForDonorStorage("12345678909", "s"))
+  })
+
+  it("CPF com salt marca a versao da chave", () => {
+    const row = { NR_CPF_CNPJ_DOADOR: "123.456.789-09" }
+    const out = extractOptionalDonorIdsFromTseRow(row, "s", { requireSaltWhenCpfPresent: false })
+    assert.equal(DONOR_CPF_HASH_VERSION, 2)
+    assert.equal(out.cpf_hash_versao, DONOR_CPF_HASH_VERSION)
+  })
+
+  it("CNPJ nao recebe versao de hash de CPF", () => {
+    const out = extractOptionalDonorIdsFromTseRow({ NR_CPF_CNPJ_DOADOR: "12345678000190" }, "s", { requireSaltWhenCpfPresent: false })
+    assert.equal(out.cpf_hash_versao, undefined)
   })
 
   it("CPF sem salt e requireSaltWhenCpfPresent lança", () => {

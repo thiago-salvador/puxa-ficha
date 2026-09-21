@@ -154,7 +154,12 @@ export function construirCoberturaDescoberta(input: {
   const links = input.observations.flatMap((observation) => observation.links)
   return ["BR", ...getEstadoUFs().map((uf) => uf.toUpperCase())].map((geography) => {
     const registry = input.inventory?.geographies.find((item) => item.geography_code === geography)
-    const entries = (input.entries ?? []).filter((entry) => entry.geography_code === geography || (!entry.geography_code && (!entry.geography_hint || entry.geography_hint === geography)))
+    // #401. An entry without geography_code and without hint used to match every
+    // geography, so a single publication produced BR plus 27 identical alerts.
+    // Attribution now requires evidence: the registry geography or the listing
+    // hint. What neither names goes to construirExcecoesSemGeografia, never to
+    // silence and never to all 28 rows.
+    const entries = (input.entries ?? []).filter((entry) => entry.geography_code === geography || (!entry.geography_code && entry.geography_hint === geography))
     const publications = entries.filter((entry) => entry.registration_id && entry.source_sha256 && ["target_validated", "duplicate_registration"].includes(entry.status))
     const results = (input.validatedResults ?? []).filter((item) => item.geography_code === geography && /^[a-f0-9]{64}$/.test(item.source_sha256) && /^[a-f0-9]{64}$/.test(item.registry_sha256) && item.evidence_path.trim())
     const errors = [ ...(registry?.errors ?? []), ...input.observations.filter((item) => item.status !== "observed" || item.error).map((item) => `${item.id}: ${item.error ?? item.status}`), ...entries.filter((entry) => entry.status === "blocked").map((entry) => `${entry.url}: ${entry.reason}`) ]
@@ -182,6 +187,18 @@ export function construirCoberturaDescoberta(input: {
     freshness_status: "not_assessed" as const,
     absence_of_poll_confirmed: false,
   }})
+}
+
+/**
+ * #401. Entries that no geography can claim: the curation branch fired before the
+ * official registry named a geography, and the listing gave no hint. They are
+ * reported once, with the same reason text the coverage rows use, so the operator
+ * sees one problem per publication instead of one per geography.
+ */
+export function construirExcecoesSemGeografia(entries: EntradaDescoberta[] = []) {
+  return entries.filter((entry) => !entry.geography_code && !entry.geography_hint
+    && (entry.status === "blocked" || entry.classification === "discovery_exception"))
+    .map((entry) => ({ url: entry.url, reason: entry.reason, execution_status: entry.execution_status }))
 }
 
 /** Daily monitoring revisits 30 inclusive days; explicit dates support backfills. */
@@ -218,7 +235,7 @@ export async function executarDescobertaIntegrada(input: {
   return { schema_version: "1.0.0", generated_at: new Date().toISOString(), source_filter: input.sourceId,
     publication_authorized: false, status: failed ? "source_failure" : "partial",
     queue_status: intake?.targets.length ? "targets_ready_for_collection" : pending.length ? "new_urls_pending_validation" : "no_new_urls_in_consulted_listings",
-    observations, inventory, intake, coverage, budget: budget.snapshot(),
+    observations, inventory, intake, coverage, unassigned_exceptions: construirExcecoesSemGeografia(intake?.entries), budget: budget.snapshot(),
     limitations: ["Listagens e período de registro não comprovam inventário exaustivo de resultados.", "Ausência de link não comprova ausência de pesquisa.", "Alvo validado ainda exige conciliação integral de resultados."],
   }
 }

@@ -1363,7 +1363,7 @@ async function processFinanciamento(
     fundo_eleitoral: number
     pessoa_fisica: number
     recursos_proprios: number
-    doadores: { nome: string; valor: number; tipo: string; cnpj?: string; cpf_hash?: string }[]
+    doadores: { nome: string; valor: number; tipo: string; cnpj?: string; cpf_hash?: string; cpf_hash_versao?: number }[]
   }
 
   const aggregated = new Map<string, FinData>()
@@ -1453,7 +1453,7 @@ async function processFinanciamento(
               ? "recursos_proprios"
               : "PJ"
 
-      let donorIds: { cnpj?: string; cpf_hash?: string }
+      let donorIds: { cnpj?: string; cpf_hash?: string; cpf_hash_versao?: number }
       try {
         donorIds = extractOptionalDonorIdsFromTseRow(row, doadorCpfSalt, { requireSaltWhenCpfPresent })
       } catch (e) {
@@ -1468,7 +1468,10 @@ async function processFinanciamento(
         tipo: normalizeDoadorTipoWithIdentifiers(tipoDoadorInicial, donorIds),
       }
       if (donorIds.cnpj) doador.cnpj = donorIds.cnpj
-      if (donorIds.cpf_hash) doador.cpf_hash = donorIds.cpf_hash
+      if (donorIds.cpf_hash) {
+        doador.cpf_hash = donorIds.cpf_hash
+        if (donorIds.cpf_hash_versao !== undefined) doador.cpf_hash_versao = donorIds.cpf_hash_versao
+      }
 
       existing.doadores.push(doador)
 

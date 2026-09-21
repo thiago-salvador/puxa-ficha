@@ -70,3 +70,35 @@ describe("financiamento-public", () => {
     assert.deepEqual(row.maiores_doadores, [{ nome: "Fulano", valor: 100, tipo: "PF" }])
   })
 })
+
+describe("cpf_hash_versao no armazenamento de doadores", () => {
+  it("preserva a versao quando o hash unico e mantido", () => {
+    const out = normalizeMaioresDoadoresForStorage([
+      { nome: "Fulana de Tal", valor: 100, tipo: "PF", cpf_hash: "a".repeat(64), cpf_hash_versao: 2 },
+      { nome: "FULANA DE TAL", valor: 50, tipo: "PF", cpf_hash: "a".repeat(64), cpf_hash_versao: 2 },
+    ])
+    assert.equal(out.length, 1)
+    assert.equal(out[0]!.cpf_hash, "a".repeat(64))
+    assert.equal(out[0]!.cpf_hash_versao, 2)
+    assert.equal(out[0]!.valor, 150)
+  })
+
+  it("hash sem versao continua sem versao (legado v1)", () => {
+    const out = normalizeMaioresDoadoresForStorage([{ nome: "Beltrano", valor: 10, tipo: "PF", cpf_hash: "b".repeat(64) }])
+    assert.equal(out[0]!.cpf_hash_versao, undefined)
+  })
+
+  it("nomes com hashes distintos descartam hash e versao", () => {
+    const out = normalizeMaioresDoadoresForStorage([
+      { nome: "Ciclano", valor: 10, tipo: "PF", cpf_hash: "c".repeat(64), cpf_hash_versao: 2 },
+      { nome: "Ciclano", valor: 10, tipo: "PF", cpf_hash: "d".repeat(64), cpf_hash_versao: 2 },
+    ])
+    assert.equal(out[0]!.cpf_hash, undefined)
+    assert.equal(out[0]!.cpf_hash_versao, undefined)
+  })
+
+  it("payload publico nunca carrega hash nem versao", () => {
+    const out = sanitizeMaioresDoadoresForPublic([{ nome: "Fulana", valor: 1, tipo: "PF", cpf_hash: "a".repeat(64), cpf_hash_versao: 2 }])
+    assert.deepEqual(Object.keys(out[0]!).sort(), ["nome", "tipo", "valor"])
+  })
+})
