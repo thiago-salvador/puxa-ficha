@@ -1,7 +1,7 @@
 import "./helpers/server-only"
 import assert from "node:assert/strict"
 import test from "node:test"
-import { construirCoberturaDescoberta, descobrirPublicacoesPesquisas, executarDescobertaIntegrada, resolverPeriodoRegistros, LISTAGENS_PESQUISAS, type ObservacaoListagemPesquisas } from "../scripts/lib/pesquisas-monitoramento-descoberta"
+import { construirCoberturaDescoberta, construirExcecoesSemGeografia, descobrirPublicacoesPesquisas, executarDescobertaIntegrada, resolverPeriodoRegistros, LISTAGENS_PESQUISAS, type ObservacaoListagemPesquisas } from "../scripts/lib/pesquisas-monitoramento-descoberta"
 import { validarEntradasDescobertas } from "../scripts/lib/pesquisas-monitoramento-entrada"
 import { criarOrcamentoDescoberta, descobrirRegistrosPesqele, GEOGRAFIAS_DESCOBERTA, parsePaginaRegistrosPesqele, PESQELE_ORIGIN, type ObservacaoPesqele } from "../scripts/lib/pesquisas-monitoramento-pesqele"
 import type { ClienteHttpMonitoramento } from "../scripts/lib/pesquisas-monitoramento-rede"
@@ -326,4 +326,44 @@ test("complementar sem registro é exceção explícita; regional não vira naci
   const wrongInstitute = await validarEntradasDescobertas({ observations: observations([urlA]), knownTargets: [], client: clientWith(() => "BR-00001/2026"), queryRegistry: async () => ({ ...official, registry: { ...official.registry, institute: "Instituto não aprovado" } }) })
   assert.equal(wrongInstitute.targets.length, 0)
   assert.match(wrongInstitute.entries[0].reason, /instituto/)
+})
+
+// #401. Reproduz o agendado de 2026-09-20 (run 35515953917): uma publicação
+// nacional alcançada pela raia estadual falhava na curadoria antes de resolver a
+// geografia, e a entrada sem geography_code era replicada em BR e nas 27 UFs.
+// Eram 28 alertas idênticos para um problema só.
+const semGeografia = (office: "Presidente" | "Governador" | null): ObservacaoListagemPesquisas[] => [{
+  id: listing.id, url: listing.url, observed_at: stamp, status: "observed", evidence_sha256: "a".repeat(64), error: null,
+  links: [{ url: urlA, title: "PoderData: Lula lidera entre beneficiários", listing_id: listing.id, geography_hint: null, office_hint: office, state: "pending_validation" }],
+}]
+
+test("#401 cargo conflitante alerta uma vez, na geografia do registro", async () => {
+  const result = await validarEntradasDescobertas({ observations: semGeografia("Governador"), knownTargets: [], client: clientWith(() => "<article>BR-00001/2026</article>"), queryRegistry: async () => official })
+
+  assert.equal(result.targets.length, 0, "curadoria continua fail-closed")
+  assert.equal(result.entries[0].status, "blocked")
+  assert.match(result.entries[0].reason, /cargo da publicação conflitante com registro/)
+  assert.equal(result.entries[0].geography_code, "BR", "o registro oficial já nomeia a geografia antes do throw")
+
+  const coverage = construirCoberturaDescoberta({ observations: semGeografia("Governador"), targets: [], entries: result.entries })
+  const comAlerta = coverage.filter((row) => row.errors.some((error) => /cargo da publicação conflitante/.test(error)))
+  assert.equal(comAlerta.length, 1, "um alerta, não 28")
+  assert.equal(comAlerta[0].geography_code, "BR")
+  assert.equal(construirExcecoesSemGeografia(result.entries).length, 0)
+})
+
+test("#401 exceção que nenhuma geografia reivindica sai em bucket próprio, não em silêncio", async () => {
+  const result = await validarEntradasDescobertas({ observations: semGeografia(null), knownTargets: [], client: clientWith(() => "<article>Dados por idade</article>"), queryRegistry: async () => official })
+
+  assert.equal(result.entries[0].classification, "discovery_exception")
+  assert.equal(result.entries[0].geography_code, undefined)
+  assert.equal(result.entries[0].geography_hint, null)
+
+  const coverage = construirCoberturaDescoberta({ observations: semGeografia(null), targets: [], entries: result.entries })
+  assert.equal(coverage.filter((row) => row.discovery_exceptions.length || row.errors.some((error) => /Dados por idade|registro identificável/.test(error))).length, 0, "sem atribuição inventada")
+
+  const unassigned = construirExcecoesSemGeografia(result.entries)
+  assert.equal(unassigned.length, 1)
+  assert.equal(unassigned[0].url, urlA)
+  assert.match(unassigned[0].reason, /registro identificável/)
 })

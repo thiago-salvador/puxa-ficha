@@ -172,6 +172,9 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           PF_KEEP_TSE_DOWNLOADS: "1"
           PF_TSE_ANOS: ${{ matrix.years }}
+          # Chave v2 do hash de CPF de doador (issue #388). Sem ela o ingest
+          # regrava os doadores sem cpf_hash.
+          PF_DOADOR_CPF_HASH_SALT: ${{ secrets.PF_DOADOR_CPF_HASH_SALT }}
         run: npx tsx scripts/ingest-all.ts tse
 
   ingest-news:
