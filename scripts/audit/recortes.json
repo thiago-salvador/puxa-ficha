@@ -585,6 +585,13 @@
       "ate": "20260921200000",
       "allowlist": "scripts/audit/allowlist-issue-400-policial-edjane-20260921.json",
       "divida": null
+    },
+    {
+      "nome": "issue-400-vice-to-20260921",
+      "desde": "20260921220000",
+      "ate": "20260921220000",
+      "allowlist": "scripts/audit/allowlist-issue-400-vice-to-20260921.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
