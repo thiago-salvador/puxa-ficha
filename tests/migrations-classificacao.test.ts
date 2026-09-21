@@ -430,7 +430,9 @@ describe("classificador puro (#136)", () => {
     // uma com guard de coorte vazia e de pf.replay, entao aplicam limpo no
     // banco sintetico. Liquido 486 + 3 (17/09) + 2 = 489 migrations; medido
     // pelo --gate local PG17: 384 + 105 = 489.
-    assert.equal(manifesto.aplicadas_esperadas, 384)
+    // Issue #400 (21/09/2026): uma migration de dado, clone da 20260918120100,
+    // com os mesmos guards. Liquido 489 + 1 = 490 migrations.
+    assert.equal(manifesto.aplicadas_esperadas, 385)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

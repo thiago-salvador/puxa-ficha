@@ -578,6 +578,13 @@
       "ate": "20260918120100",
       "allowlist": "scripts/audit/allowlist-issue-383-gustavo-henrique-20260918.json",
       "divida": null
+    },
+    {
+      "nome": "issue-400-policial-edjane-20260921",
+      "desde": "20260921200000",
+      "ate": "20260921200000",
+      "allowlist": "scripts/audit/allowlist-issue-400-policial-edjane-20260921.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
