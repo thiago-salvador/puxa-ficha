@@ -4,7 +4,11 @@ import { join } from "node:path"
 import { normalizeMaioresDoadoresForStorage } from "../../src/lib/financiamento-public"
 import { stripAccents } from "../../src/lib/strip-accents"
 
-const WORK = process.env.PF388_WORK!
+function argValue(name: string): string | undefined {
+  const prefix = `--${name}=`
+  return process.argv.find((a) => a.startsWith(prefix))?.slice(prefix.length)
+}
+const WORK = argValue("work") ?? ""
 const norm = (v: string) => stripAccents(v).replace(/\s+/g, " ").toUpperCase().trim()
 
 type Raw = { nome: string; valor: number; tipo: string; cnpj?: string; cpf_hash?: string }

@@ -24,8 +24,13 @@ import { normalizeMaioresDoadoresForStorage } from "../../src/lib/financiamento-
 import { DONOR_CPF_HASH_VERSION, hashCpfForDonorStorage } from "../../src/lib/financiamento-doador-identifiers"
 import { stripAccents } from "../../src/lib/strip-accents"
 
-const WORK = resolve(process.env.PF388_WORK ?? "")
-const REPO = resolve(process.env.PF388_REPO ?? process.cwd())
+function argValue(name: string): string | undefined {
+  const prefix = `--${name}=`
+  return process.argv.find((a) => a.startsWith(prefix))?.slice(prefix.length)
+}
+// --work=<dir privado> e, opcional, --repo=<checkout com data/tse>.
+const WORK = resolve(argValue("work") ?? "")
+const REPO = resolve(argValue("repo") ?? process.cwd())
 const MODE = process.argv.includes("--apply") ? "apply" : "dry-run"
 const PLAN = join(WORK, "plano-388.private.json")
 const SCRIPT = "fin388-aplicar-reparo"

@@ -42,19 +42,19 @@ type Target = {
   maiores_doadores: StoredDonor[]
 }
 
-const REPO = resolve(process.env.PF388_REPO ?? process.cwd())
-const WORK = resolve(process.env.PF388_WORK ?? "")
+function argValue(name: string): string | undefined {
+  const prefix = `--${name}=`
+  return process.argv.find((a) => a.startsWith(prefix))?.slice(prefix.length)
+}
+// --work=<dir privado> e, opcional, --repo=<checkout com data/tse>.
+const REPO = resolve(argValue("repo") ?? process.cwd())
+const WORK = resolve(argValue("work") ?? "")
 const YEARS = [2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024]
 
-function env(name: string): string {
-  const v = process.env[name]
-  if (!v) throw new Error(`${name} ausente`)
-  return v
-}
-
 async function fetchTargets(): Promise<Map<string, Target>> {
-  const base = env("SUPABASE_URL").replace(/\/+$/, "")
-  const key = env("SUPABASE_SERVICE_ROLE_KEY")
+  const base = (process.env.SUPABASE_URL ?? "").replace(/\/+$/, "")
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY ?? ""
+  if (!base || !key) throw new Error("SUPABASE_URL/SUPABASE_SERVICE_ROLE_KEY ausentes")
   const out = new Map<string, Target>()
   let offset = 0
   for (;;) {

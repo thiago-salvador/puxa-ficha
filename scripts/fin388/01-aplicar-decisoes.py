@@ -15,8 +15,9 @@ isolado. Nenhum CPF ou hash e impresso.
 import json, os, sys
 from pathlib import Path
 
-REFINED = Path(os.environ["PF388_REFINED"])
-OUT = Path(os.environ["PF388_WORK"]) / "bridge-final.private.json"
+# Uso: 01-aplicar-decisoes.py <identity-bridge-refined.json> <dir privado>
+REFINED = Path(sys.argv[1])
+OUT = Path(sys.argv[2]) / "bridge-final.private.json"
 
 # Aceitos por SQ oficial validado (nome, UF, cargo, contexto eleitoral).
 MANUAL_RESOLVED = {

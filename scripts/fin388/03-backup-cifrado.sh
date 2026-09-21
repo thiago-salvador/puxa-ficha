@@ -5,10 +5,11 @@ set -euo pipefail
 
 : "${SUPABASE_URL:?SUPABASE_URL ausente}"
 : "${SUPABASE_SERVICE_ROLE_KEY:?SUPABASE_SERVICE_ROLE_KEY ausente}"
-: "${PF388_WORK:?PF388_WORK ausente}"
+# Uso: 03-backup-cifrado.sh <dir privado>
+WORK="${1:?informe o diretorio privado de trabalho}"
 
 STAMP="$(date -u +%Y%m%dT%H%M%SZ)"
-DIR="${PF388_WORK}/backup-${STAMP}"
+DIR="${WORK}/backup-${STAMP}"
 mkdir -p "$DIR"; chmod 700 "$DIR"
 
 dump() {
@@ -71,4 +72,4 @@ chmod 600 "${DIR}/manifest.json"
 echo "OK backup: financiamento=${FIN_ROWS} linhas, verificacoes=${VER_ROWS} linhas"
 echo "arquivo cifrado: ${ARCHIVE}.enc"
 echo "roundtrip conferido por sha256 do tar original"
-echo "$DIR" > "${PF388_WORK}/ultimo-backup.path"
+echo "$DIR" > "${WORK}/ultimo-backup.path"
