@@ -26,6 +26,7 @@ describe("candidato profile tab navigation", () => {
       "pesquisas",
       "programa",
       "media",
+      "checagens",
       "dinheiro",
       "justica",
       "votos",
