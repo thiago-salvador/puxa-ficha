@@ -61,6 +61,7 @@ import { groupLegislacaoProfileItems } from "@/lib/legislacao-profile-groups"
 import { FollowCandidateButton } from "./alerts/FollowCandidateButton"
 import { SenadoRunningMates, type SenadoRunningMatesPayload } from "./SenadoRunningMates"
 import { CandidateGeneralData } from "./CandidateGeneralData"
+import { AttributedFactChecks } from "./AttributedFactChecks"
 import { EditorialBadge } from "./attention-points/EditorialBadge"
 import {
   FONTES_LINK_CLASS_ALERTAS,
@@ -815,6 +816,15 @@ export function CandidatoProfile({
         patrimonio: ficha.patrimonio_verificacao,
         votacoes: ficha.votacoes_verificacao,
       }} />
+
+      {(ficha.cargo_disputado === "Presidente" || ficha.cargo_disputado === "Governador") && (
+        <AttributedFactChecks
+          candidateId={ficha.id}
+          candidateSlug={ficha.slug}
+          office={ficha.cargo_disputado}
+          uf={ficha.estado}
+        />
+      )}
 
       {/* Tab navigation */}
       {tabs.length > 0 && (

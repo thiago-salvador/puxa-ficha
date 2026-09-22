@@ -1,0 +1,1634 @@
+[
+  {
+    "id": "00b971a6-5f12-4fa3-961f-5806abfd6fb0",
+    "slug": "sandro-alex",
+    "nome_urna": "Sandro Alex",
+    "nome_completo": "Sandro Alex Cruz de Oliveira",
+    "cargo_disputado": "Governador",
+    "estado": "PR"
+  },
+  {
+    "id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
+    "slug": "professora-dorinha",
+    "nome_urna": "Professora Dorinha",
+    "nome_completo": "Maria Auxiliadora Seabra Rezende",
+    "cargo_disputado": "Governador",
+    "estado": "TO"
+  },
+  {
+    "id": "022d27e8-2832-4156-9bc7-7eac817ac901",
+    "slug": "raquel-lyra",
+    "nome_urna": "Raquel Lyra",
+    "nome_completo": "Raquel Teixeira Lyra Lucena",
+    "cargo_disputado": "Governador",
+    "estado": "PE"
+  },
+  {
+    "id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+    "slug": "romeu-zema",
+    "nome_urna": "Romeu Zema",
+    "nome_completo": "Romeu Zema Neto",
+    "cargo_disputado": "Presidente",
+    "estado": null
+  },
+  {
+    "id": "049a5051-e7c9-4729-8853-14753d2993e1",
+    "slug": "arthur-henrique",
+    "nome_urna": "Arthur Henrique",
+    "nome_completo": "Arthur Henrique Brandão Machado",
+    "cargo_disputado": "Governador",
+    "estado": "RR"
+  },
+  {
+    "id": "05bc8f5b-1419-4fb6-a34b-6e06263bb8f1",
+    "slug": "lais-chaud",
+    "nome_urna": "Laís Chaud",
+    "nome_completo": "Laís Paganelli Chaud",
+    "cargo_disputado": "Governador",
+    "estado": "SC"
+  },
+  {
+    "id": "0620a093-7d56-4def-ba68-dc8cb1309984",
+    "slug": "alexandre-salomao",
+    "nome_urna": "ALEXANDRE SALOMÃO",
+    "nome_completo": "ALEXANDRE SALOMAO",
+    "cargo_disputado": "Governador",
+    "estado": "PR"
+  },
+  {
+    "id": "07472c9c-5a4f-47b0-9000-d28fb031303f",
+    "slug": "elisson-ferreira",
+    "nome_urna": "Elisson Ferreira",
+    "nome_completo": "Elisson Ferreira Freire",
+    "cargo_disputado": "Governador",
+    "estado": "DF"
+  },
+  {
+    "id": "097dc8d0-d05d-42cb-91a0-0582dd561f76",
+    "slug": "douglas-ruas",
+    "nome_urna": "Douglas Ruas",
+    "nome_completo": "Douglas Ruas dos Santos",
+    "cargo_disputado": "Governador",
+    "estado": "RJ"
+  },
+  {
+    "id": "0c0e1b6a-cfa6-4da7-82ab-a8ea90b55200",
+    "slug": "felipe-camarao",
+    "nome_urna": "Felipe Camarão",
+    "nome_completo": "Felipe Costa Camarão",
+    "cargo_disputado": "Governador",
+    "estado": "MA"
+  },
+  {
+    "id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "slug": "haddad-gov-sp",
+    "nome_urna": "Fernando Haddad",
+    "nome_completo": "Fernando Haddad",
+    "cargo_disputado": "Governador",
+    "estado": "SP"
+  },
+  {
+    "id": "0ef8b4e2-ef3d-4f6a-b284-3f4648c1386b",
+    "slug": "juliete-pantoja",
+    "nome_urna": "Juliete Pantoja",
+    "nome_completo": "Juliete Pantoja Alves",
+    "cargo_disputado": "Governador",
+    "estado": "RJ"
+  },
+  {
+    "id": "0f65eafa-82d8-4ac8-8ef4-674e42d2d5d0",
+    "slug": "renato-gomes",
+    "nome_urna": "Renato Gomes",
+    "nome_completo": "Renato Wanderley Gomes",
+    "cargo_disputado": "Governador",
+    "estado": "MS"
+  },
+  {
+    "id": "10874c20-5864-42f9-a83e-0610502381c6",
+    "slug": "jeferson-bezerra",
+    "nome_urna": "Jeferson Bezerra",
+    "nome_completo": "Jeferson Jose Bezerra",
+    "cargo_disputado": "Governador",
+    "estado": "MS"
+  },
+  {
+    "id": "11aeff6f-ce8d-45bb-a4d1-a798b160e2fe",
+    "slug": "leonardo-avalanche",
+    "nome_urna": "LEONARDO AVALANCHE",
+    "nome_completo": "LEONARDO ALVES DE ARAUJO",
+    "cargo_disputado": "Presidente",
+    "estado": null
+  },
+  {
+    "id": "12357734-561a-48c9-8c91-78fdbeb5b6f7",
+    "slug": "clebio-genuino",
+    "nome_urna": "Clébio Genuíno",
+    "nome_completo": "Jose Clebio Genuino do Nascimento",
+    "cargo_disputado": "Governador",
+    "estado": "RR"
+  },
+  {
+    "id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+    "slug": "patrus-ananias",
+    "nome_urna": "Patrus Ananias",
+    "nome_completo": "Patrus Ananias de Sousa",
+    "cargo_disputado": "Governador",
+    "estado": "MG"
+  },
+  {
+    "id": "128ab70f-daf2-472b-926f-ec65b7287dd1",
+    "slug": "thor-dantas",
+    "nome_urna": "Thor Dantas",
+    "nome_completo": "Thor Oliveira Dantas",
+    "cargo_disputado": "Governador",
+    "estado": "AC"
+  },
+  {
+    "id": "131fa6ef-ec83-40fc-8cb8-d01c79dd30cd",
+    "slug": "ataides-oliveira",
+    "nome_urna": "Ataides Oliveira",
+    "nome_completo": "Ataídes de Oliveira",
+    "cargo_disputado": "Governador",
+    "estado": "TO"
+  },
+  {
+    "id": "13c6d8ac-fee3-49f7-b1cf-c1a80c69fcea",
+    "slug": "hana-ghassan",
+    "nome_urna": "Hana Ghassan",
+    "nome_completo": "Hana Ghassan Tuma",
+    "cargo_disputado": "Governador",
+    "estado": "PA"
+  },
+  {
+    "id": "1411b8f9-0a20-4454-ae7f-1ae98cf195e4",
+    "slug": "ruth-reis",
+    "nome_urna": "RUTH REIS",
+    "nome_completo": "RUTH HELENA FERREIRA REIS",
+    "cargo_disputado": "Governador",
+    "estado": "PA"
+  },
+  {
+    "id": "17472d91-6cfc-453d-8481-4fac47d07f36",
+    "slug": "paula-belmonte",
+    "nome_urna": "Paula Belmonte",
+    "nome_completo": "Paula Moreno Paro Belmonte",
+    "cargo_disputado": "Governador",
+    "estado": "DF"
+  },
+  {
+    "id": "1787f63a-1d2b-473f-a0bf-69f5d103a560",
+    "slug": "ben-mendes",
+    "nome_urna": "Ben Mendes",
+    "nome_completo": "Benoni Benjamin Cardoso Mendes",
+    "cargo_disputado": "Governador",
+    "estado": "MG"
+  },
+  {
+    "id": "18647b7b-471f-4e10-998e-6a4e5fbe3efb",
+    "slug": "rafael-demuner",
+    "nome_urna": "Rafael Demuner",
+    "nome_completo": "Rafael Ketley Demuner",
+    "cargo_disputado": "Governador",
+    "estado": "ES"
+  },
+  {
+    "id": "18d872c1-3e51-4856-9a93-2ca53b35d78f",
+    "slug": "alexandre-kalil",
+    "nome_urna": "Alexandre Kalil",
+    "nome_completo": "Alexandre Kalil",
+    "cargo_disputado": "Governador",
+    "estado": "MG"
+  },
+  {
+    "id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "slug": "tarcisio-gov-sp",
+    "nome_urna": "Tarcísio de Freitas",
+    "nome_completo": "Tarcísio Gomes de Freitas",
+    "cargo_disputado": "Governador",
+    "estado": "SP"
+  },
+  {
+    "id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
+    "slug": "acm-neto",
+    "nome_urna": "ACM Neto",
+    "nome_completo": "Antônio Carlos Peixoto de Magalhães Neto",
+    "cargo_disputado": "Governador",
+    "estado": "BA"
+  },
+  {
+    "id": "1d5c69c3-4a4e-4f8f-9796-aa2248775e80",
+    "slug": "siqueira-campos-jr",
+    "nome_urna": "SIQUEIRA CAMPOS JR",
+    "nome_completo": "JOSÉ WILSON SIQUEIRA CAMPOS JÚNIOR",
+    "cargo_disputado": "Governador",
+    "estado": "TO"
+  },
+  {
+    "id": "1e3d6e9b-a35b-4aee-9018-c5c5c500f231",
+    "slug": "henrique-lyra",
+    "nome_urna": "Henrique Lyra",
+    "nome_completo": "Henrique Othon Costa de Lyra",
+    "cargo_disputado": "Governador",
+    "estado": "RN"
+  },
+  {
+    "id": "1eb75804-f098-4956-a1df-fd18d16c5f1d",
+    "slug": "rafael-duda",
+    "nome_urna": "Rafael Duda",
+    "nome_completo": "Rafael Ribeiro de Avila",
+    "cargo_disputado": "Governador",
+    "estado": "MG"
+  },
+  {
+    "id": "1eec3569-c202-4f16-a60a-d67125c51f95",
+    "slug": "rui-costa-pimenta",
+    "nome_urna": "Rui Costa Pimenta",
+    "nome_completo": "Rui Costa Pimenta",
+    "cargo_disputado": "Presidente",
+    "estado": null
+  },
+  {
+    "id": "1f0abb3a-c57b-462b-a538-15ed782276cb",
+    "slug": "renan-hallais",
+    "nome_urna": "Renan Hallais",
+    "nome_completo": "Renan Lucio Sant Anna Hallais",
+    "cargo_disputado": "Governador",
+    "estado": "PE"
+  },
+  {
+    "id": "2081565f-e38d-4246-81d6-4f28979e8136",
+    "slug": "gabriel-azevedo",
+    "nome_urna": "Gabriel Azevedo",
+    "nome_completo": "Gabriel Sousa Marques de Azevedo",
+    "cargo_disputado": "Governador",
+    "estado": "MG"
+  },
+  {
+    "id": "20e8b8cd-54a6-4e85-89c2-386ef12d2cc8",
+    "slug": "izadora-dias",
+    "nome_urna": "Izadora Dias",
+    "nome_completo": "Izadora Cristina Dias da Silva",
+    "cargo_disputado": "Governador",
+    "estado": "SP"
+  },
+  {
+    "id": "21641505-703a-4227-b32f-d9995337dc49",
+    "slug": "ze-batista",
+    "nome_urna": "Zé Batista",
+    "nome_completo": "José Batista Neto",
+    "cargo_disputado": "Governador",
+    "estado": "CE"
+  },
+  {
+    "id": "23dc2553-0fd3-489f-9ac1-4ed50b8ec5e3",
+    "slug": "coronel-busnello",
+    "nome_urna": "Coronel Busnello",
+    "nome_completo": "João Jacques Soares Busnello",
+    "cargo_disputado": "Governador",
+    "estado": "RJ"
+  },
+  {
+    "id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "slug": "eduardo-paes",
+    "nome_urna": "Eduardo Paes",
+    "nome_completo": "Eduardo da Costa Paes",
+    "cargo_disputado": "Governador",
+    "estado": "RJ"
+  },
+  {
+    "id": "242f6bbf-cc71-4fe5-84d5-3142eb88448a",
+    "slug": "isael-munduruku",
+    "nome_urna": "Isael Munduruku",
+    "nome_completo": "Isael Franklin Gonçalves",
+    "cargo_disputado": "Governador",
+    "estado": "AM"
+  },
+  {
+    "id": "25b8bb92-4c1e-43c0-a4eb-d3c65ac5867b",
+    "slug": "priscila-voigt",
+    "nome_urna": "Priscila Voigt",
+    "nome_completo": "Priscila Voigt Severiano",
+    "cargo_disputado": "Governador",
+    "estado": "RS"
+  },
+  {
+    "id": "270a8b55-145a-400f-b371-38809653eea8",
+    "slug": "helder-salomao",
+    "nome_urna": "Helder Salomão",
+    "nome_completo": "Helder Ignácio Salomão",
+    "cargo_disputado": "Governador",
+    "estado": "ES"
+  },
+  {
+    "id": "27f37162-6a32-4e9b-8f41-f30a9e569384",
+    "slug": "eduardo-riedel",
+    "nome_urna": "Eduardo Riedel",
+    "nome_completo": "Eduardo Correa Riedel",
+    "cargo_disputado": "Governador",
+    "estado": "MS"
+  },
+  {
+    "id": "29dbd8e2-6ebb-4261-bf53-be3b4df63718",
+    "slug": "joao-henrique-catan",
+    "nome_urna": "Joao Henrique Catan",
+    "nome_completo": "João Henrique Miranda Soares Catan",
+    "cargo_disputado": "Governador",
+    "estado": "MS"
+  },
+  {
+    "id": "2a636465-411c-4599-9d43-51aa80b78f3c",
+    "slug": "breno-barcelar",
+    "nome_urna": "Breno Barcelos",
+    "nome_completo": "Breno Augusto Fagundes Barcelos",
+    "cargo_disputado": "Governador",
+    "estado": "ES"
+  },
+  {
+    "id": "2a8e286d-1d49-4c1a-8a91-16f49da26056",
+    "slug": "maria-bona",
+    "nome_urna": "Maria Bona",
+    "nome_completo": "Maria Bona Carrara de Sumbuy",
+    "cargo_disputado": "Governador",
+    "estado": "BA"
+  },
+  {
+    "id": "2ae1d014-8791-4eb4-817a-5ac85bf4fbd6",
+    "slug": "ricardo-marques",
+    "nome_urna": "Ricardo Marques",
+    "nome_completo": "José Ricardo Marques dos Santos",
+    "cargo_disputado": "Governador",
+    "estado": "SE"
+  },
+  {
+    "id": "2b7f22b1-87f6-4e55-a6c2-3f2ab37d08e5",
+    "slug": "pedro-coutinho",
+    "nome_urna": "Pedro Coutinho",
+    "nome_completo": "Pedro Jorge Coutinho Guerra",
+    "cargo_disputado": "Governador",
+    "estado": "PB"
+  },
+  {
+    "id": "2ba79079-e5a4-4275-8cb8-9419bf8db9aa",
+    "slug": "vera-lucia-ce",
+    "nome_urna": "Vera Lúcia",
+    "nome_completo": "Vera Lucia da Silva",
+    "cargo_disputado": "Governador",
+    "estado": "CE"
+  },
+  {
+    "id": "2c7f19b6-4f91-420a-83ec-866c83a9e027",
+    "slug": "dario-barbosa",
+    "nome_urna": "Dário Barbosa",
+    "nome_completo": "Dario Barbosa de Melo",
+    "cargo_disputado": "Governador",
+    "estado": "RN"
+  },
+  {
+    "id": "2cb5e948-08ea-4a25-8124-6aaac3155c70",
+    "slug": "victor-assis",
+    "nome_urna": "Victor Assis",
+    "nome_completo": "Victor Assis da Silva",
+    "cargo_disputado": "Governador",
+    "estado": "PE"
+  },
+  {
+    "id": "2df15aa1-0bd3-4bab-89bf-13d780645e54",
+    "slug": "ciro-gomes-gov-ce",
+    "nome_urna": "Ciro Gomes",
+    "nome_completo": "Ciro Ferreira Gomes",
+    "cargo_disputado": "Governador",
+    "estado": "CE"
+  },
+  {
+    "id": "30bca027-016e-4db1-a065-2081a62d71de",
+    "slug": "adriano-funileiro",
+    "nome_urna": "Adriano Funileiro",
+    "nome_completo": "Adriano Teixeira",
+    "cargo_disputado": "Governador",
+    "estado": "PR"
+  },
+  {
+    "id": "327ae8c2-292b-4677-a333-c46fe19ae2ec",
+    "slug": "emanuel-cacho",
+    "nome_urna": "Emanuel Cacho",
+    "nome_completo": "Emanuel Messias Oliveira Cacho",
+    "cargo_disputado": "Governador",
+    "estado": "SE"
+  },
+  {
+    "id": "36ec7b14-9da3-4324-820d-6318ce535d01",
+    "slug": "requiao-filho",
+    "nome_urna": "Requiao Filho",
+    "nome_completo": "Mauricio Thadeu de Mello e Silva",
+    "cargo_disputado": "Governador",
+    "estado": "PR"
+  },
+  {
+    "id": "38149b1c-1a82-482f-bb46-a9c7fea3afa6",
+    "slug": "serley-leal",
+    "nome_urna": "Serley Leal",
+    "nome_completo": "Serley de Souza Leal",
+    "cargo_disputado": "Governador",
+    "estado": "CE"
+  },
+  {
+    "id": "3824c464-5087-471c-b7ba-1f8d59f3c070",
+    "slug": "guilherme-fonseca",
+    "nome_urna": "Guilherme Fonseca",
+    "nome_completo": "Guilherme Fonseca",
+    "cargo_disputado": "Governador",
+    "estado": "PE"
+  },
+  {
+    "id": "3b724874-8769-44f3-aab3-06c0155dc155",
+    "slug": "leandro-grass",
+    "nome_urna": "Leandro Grass",
+    "nome_completo": "Leandro Antônio Grass Peixoto",
+    "cargo_disputado": "Governador",
+    "estado": "DF"
+  },
+  {
+    "id": "3b825b8d-32fd-42d2-af6e-6caf1135a3e3",
+    "slug": "soldado-sampaio",
+    "nome_urna": "Soldado Sampaio",
+    "nome_completo": "Francisco dos Santos Sampaio",
+    "cargo_disputado": "Governador",
+    "estado": "RR"
+  },
+  {
+    "id": "3c885bab-cc3e-4fcf-aa1a-7b9c0ebf38e9",
+    "slug": "eduardo-braide",
+    "nome_urna": "Eduardo Braide",
+    "nome_completo": "Eduardo Salim Braide",
+    "cargo_disputado": "Governador",
+    "estado": "MA"
+  },
+  {
+    "id": "3c94a516-0481-45a5-a13e-ab082885cf65",
+    "slug": "delcidio-amaral",
+    "nome_urna": "Delcidio Amaral",
+    "nome_completo": "Delcidio do Amaral Gomez",
+    "cargo_disputado": "Governador",
+    "estado": "MS"
+  },
+  {
+    "id": "3d479acc-24f9-48b0-909d-604819191a1d",
+    "slug": "witer-naves",
+    "nome_urna": "Witer Naves",
+    "nome_completo": "Witer Fonseca Naves",
+    "cargo_disputado": "Governador",
+    "estado": "TO"
+  },
+  {
+    "id": "3e0885c9-ae59-424a-8a99-9367801c5740",
+    "slug": "vicentinho-junior",
+    "nome_urna": "Vicentinho Junior",
+    "nome_completo": "Vicente Alves de Oliveira Júnior",
+    "cargo_disputado": "Governador",
+    "estado": "TO"
+  },
+  {
+    "id": "4164ed87-4b75-4f33-9edb-8f12c38086e5",
+    "slug": "robson-raymundo",
+    "nome_urna": "Professor Robson Raymundo",
+    "nome_completo": "Robson Raymundo da Silva",
+    "cargo_disputado": "Governador",
+    "estado": "DF"
+  },
+  {
+    "id": "4415870d-5d02-426a-9d7c-f42091788cee",
+    "slug": "carlos-machado",
+    "nome_urna": "Carlos Machado",
+    "nome_completo": "Carlos Alberto Machado",
+    "cargo_disputado": "Governador",
+    "estado": "SP"
+  },
+  {
+    "id": "45fd563d-c846-440b-b382-3d8b51a432e5",
+    "slug": "ieri-braga",
+    "nome_urna": "Ieri Braga",
+    "nome_completo": "Ieri de Sousa Braga Junior",
+    "cargo_disputado": "Governador",
+    "estado": "CE"
+  },
+  {
+    "id": "4a883517-cf35-49d1-9a80-26857f27687c",
+    "slug": "flavio-roscoe",
+    "nome_urna": "Flávio Roscoe",
+    "nome_completo": "Flavio Roscoe Nogueira",
+    "cargo_disputado": "Governador",
+    "estado": "MG"
+  },
+  {
+    "id": "4b079fd2-53ac-4b37-b735-3216d0817607",
+    "slug": "gisvaldo-oliveira",
+    "nome_urna": "Gisvaldo Oliveira",
+    "nome_completo": "Gisvaldo Oliveira da Silva",
+    "cargo_disputado": "Governador",
+    "estado": "PI"
+  },
+  {
+    "id": "4b14917d-cee3-43ad-a175-bac1b37fb7d2",
+    "slug": "du-pereira",
+    "nome_urna": "DU PEREIRA",
+    "nome_completo": "IVAILDO PEREIRA DA CRUZ",
+    "cargo_disputado": "Governador",
+    "estado": "TO"
+  },
+  {
+    "id": "4b8485ab-cbe3-4c58-99be-3dfc05d39c5d",
+    "slug": "rico-pinheiro",
+    "nome_urna": "RICO PINHEIRO",
+    "nome_completo": "ALDERICO DA SILVA PINHEIRO FILHO",
+    "cargo_disputado": "Governador",
+    "estado": "DF"
+  },
+  {
+    "id": "4bbfe1e0-c79b-45b6-bf3f-96be1bc6432f",
+    "slug": "camilo-duarte",
+    "nome_urna": "Camilo Duarte",
+    "nome_completo": "Camilo Sobreira Duarte Filho",
+    "cargo_disputado": "Governador",
+    "estado": "PB"
+  },
+  {
+    "id": "4cbc3b25-075a-4d87-89bd-58d1e0b2a5f2",
+    "slug": "renan-santos",
+    "nome_urna": "Renan Santos",
+    "nome_completo": "Renan Antonio Ferreira dos Santos",
+    "cargo_disputado": "Presidente",
+    "estado": null
+  },
+  {
+    "id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+    "slug": "mailza-assis",
+    "nome_urna": "Mailza Assis",
+    "nome_completo": "Mailza Assis Cameli",
+    "cargo_disputado": "Governador",
+    "estado": "AC"
+  },
+  {
+    "id": "4e667335-32ef-4015-8ca8-c219eff2a9d6",
+    "slug": "vera-lucia",
+    "nome_urna": "Vera Lúcia",
+    "nome_completo": "Vera Lúcia Pereira da Silva Salgado",
+    "cargo_disputado": "Governador",
+    "estado": "SP"
+  },
+  {
+    "id": "4f302760-52e7-461e-9a65-43d1aaa657df",
+    "slug": "expedito-mendonca",
+    "nome_urna": "Expedito Mendonça",
+    "nome_completo": "Expedito Carneiro de Mendonça",
+    "cargo_disputado": "Governador",
+    "estado": "DF"
+  },
+  {
+    "id": "50b7b4a3-1cf0-43ac-83af-eec9d2a04ebc",
+    "slug": "daniel-lemes",
+    "nome_urna": "Daniel Lemes",
+    "nome_completo": "Daniel Lemes Vasques",
+    "cargo_disputado": "Governador",
+    "estado": "MS"
+  },
+  {
+    "id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+    "slug": "flavio-bolsonaro",
+    "nome_urna": "Flavio Bolsonaro",
+    "nome_completo": "Flavio Nantes Bolsonaro",
+    "cargo_disputado": "Presidente",
+    "estado": null
+  },
+  {
+    "id": "53af44cf-7f66-44d3-b733-1114c5143e6a",
+    "slug": "luciano-zucco",
+    "nome_urna": "Luciano Zucco",
+    "nome_completo": "Luciano Lorenzini Zucco",
+    "cargo_disputado": "Governador",
+    "estado": "RS"
+  },
+  {
+    "id": "551e8eff-c129-4692-926e-4fd6d7bafff4",
+    "slug": "samara-mineiro",
+    "nome_urna": "Samara Mineiro",
+    "nome_completo": "Samara Mineiro Oliveira",
+    "cargo_disputado": "Governador",
+    "estado": "DF"
+  },
+  {
+    "id": "5688777a-2b9c-436a-b83b-96cf06760060",
+    "slug": "samuel-de-mattos",
+    "nome_urna": "SAMUEL DE MATTOS",
+    "nome_completo": "SAMUEL DE MATTOS FIGUEIREDO",
+    "cargo_disputado": "Governador",
+    "estado": "PR"
+  },
+  {
+    "id": "57b743d5-db7b-4048-862d-9378a9fff366",
+    "slug": "rafael-fonteles",
+    "nome_urna": "Rafael Fonteles",
+    "nome_completo": "Rafael Tajra Fonteles",
+    "cargo_disputado": "Governador",
+    "estado": "PI"
+  },
+  {
+    "id": "59582609-1f9b-4363-9e36-08fd6d07b6c4",
+    "slug": "marcelo-maranata",
+    "nome_urna": "Marcelo Maranata",
+    "nome_completo": "Marcelo Maranata Soares Reinaldo",
+    "cargo_disputado": "Governador",
+    "estado": "RS"
+  },
+  {
+    "id": "5a325c79-3414-4d70-8926-673e91cbd578",
+    "slug": "hildon-chaves",
+    "nome_urna": "Hildon Chaves",
+    "nome_completo": "Hildon de Lima Chaves",
+    "cargo_disputado": "Governador",
+    "estado": "RO"
+  },
+  {
+    "id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+    "slug": "augusto-cury",
+    "nome_urna": "Augusto Cury",
+    "nome_completo": "Augusto Jorge Cury",
+    "cargo_disputado": "Presidente",
+    "estado": null
+  },
+  {
+    "id": "5b63badb-bf2b-4535-bead-b1e85ad6c609",
+    "slug": "expedito-netto",
+    "nome_urna": "Expedito Netto",
+    "nome_completo": "Expedito Gonçalves Ferreira Netto",
+    "cargo_disputado": "Governador",
+    "estado": "RO"
+  },
+  {
+    "id": "5dc271fa-9171-484c-a8b3-f366fed10d10",
+    "slug": "gilberto-vasconcelos",
+    "nome_urna": "Gilberto Vasconcelos",
+    "nome_completo": "Gilberto Vasconcelos da Silva",
+    "cargo_disputado": "Governador",
+    "estado": "AM"
+  },
+  {
+    "id": "5e05e0d3-a64a-41b9-9f9a-bd160f43cec2",
+    "slug": "marcus-sodre",
+    "nome_urna": "Marcus Sodré",
+    "nome_completo": "Marcus Alexandre Sodré",
+    "cargo_disputado": "Governador",
+    "estado": "SC"
+  },
+  {
+    "id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "slug": "garotinho",
+    "nome_urna": "Garotinho",
+    "nome_completo": "Anthony William Garotinho Matheus de Oliveira",
+    "cargo_disputado": "Governador",
+    "estado": "RJ"
+  },
+  {
+    "id": "6025cfb5-d1a7-4ad0-baa7-c131b381e8fa",
+    "slug": "sergio-moro-gov-pr",
+    "nome_urna": "Sergio Moro",
+    "nome_completo": "Sergio Fernando Moro",
+    "cargo_disputado": "Governador",
+    "estado": "PR"
+  },
+  {
+    "id": "62addad9-47ab-4362-bbe1-917f7e70c646",
+    "slug": "tayna-miessa",
+    "nome_urna": "Tayná Miessa",
+    "nome_completo": "Tayna Miessa Tsushida",
+    "cargo_disputado": "Governador",
+    "estado": "PR"
+  },
+  {
+    "id": "63ab5e8d-4255-431a-8eac-536ae13e876f",
+    "slug": "natasha-slhessarenko",
+    "nome_urna": "Natasha Slhessarenko",
+    "nome_completo": "Natasha Slhessarenko Fraife Barreto",
+    "cargo_disputado": "Governador",
+    "estado": "MT"
+  },
+  {
+    "id": "63de6cc4-aebc-49f6-88ab-25c93dde0a58",
+    "slug": "joel-rodrigues",
+    "nome_urna": "Joel Rodrigues",
+    "nome_completo": "Joel Rodrigues da Silva",
+    "cargo_disputado": "Governador",
+    "estado": "PI"
+  },
+  {
+    "id": "672dc346-45fe-4cee-8386-9645e6a5d2b7",
+    "slug": "marcos-reategui",
+    "nome_urna": "Marcos Reategui",
+    "nome_completo": "Marcos Jose Reategui de Souza",
+    "cargo_disputado": "Governador",
+    "estado": "AP"
+  },
+  {
+    "id": "68a1eec9-75c1-4dca-a68c-7a4e64033c9b",
+    "slug": "araceli-lemos",
+    "nome_urna": "Araceli Lemos",
+    "nome_completo": "Araceli Maria Pereira Lemos",
+    "cargo_disputado": "Governador",
+    "estado": "PA"
+  },
+  {
+    "id": "6991016f-b50a-4984-b60a-40521bcdf6ee",
+    "slug": "cyro-garcia",
+    "nome_urna": "Cyro Garcia",
+    "nome_completo": "Cyro Garcia",
+    "cargo_disputado": "Governador",
+    "estado": "RJ"
+  },
+  {
+    "id": "6e37f628-6335-4009-8e49-80aa421650a0",
+    "slug": "mateus-simoes",
+    "nome_urna": "Mateus Simões",
+    "nome_completo": "Mateus Simões de Almeida",
+    "cargo_disputado": "Governador",
+    "estado": "MG"
+  },
+  {
+    "id": "6f0ad3bd-c9a2-4b7f-b672-8fbe87bc61cc",
+    "slug": "luciana-amorim",
+    "nome_urna": "Luciana Amorim",
+    "nome_completo": "Luciana de Deus Amorim",
+    "cargo_disputado": "Governador",
+    "estado": "GO"
+  },
+  {
+    "id": "71129af6-3c6d-4b0a-9030-b97984fc1e0b",
+    "slug": "alysson-bezerra",
+    "nome_urna": "Alysson Bezerra",
+    "nome_completo": "Allyson Leandro Bezerra Silva",
+    "cargo_disputado": "Governador",
+    "estado": "RN"
+  },
+  {
+    "id": "76a6620b-1fd4-46df-806f-5101bd660f7f",
+    "slug": "cicero-lucena",
+    "nome_urna": "Cicero Lucena",
+    "nome_completo": "Cicero de Lucena Filho",
+    "cargo_disputado": "Governador",
+    "estado": "PB"
+  },
+  {
+    "id": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+    "slug": "ronaldo-caiado",
+    "nome_urna": "Ronaldo Caiado",
+    "nome_completo": "Ronaldo Ramos Caiado",
+    "cargo_disputado": "Presidente",
+    "estado": null
+  },
+  {
+    "id": "79b84a18-1a4e-4123-a831-8aefda253dc6",
+    "slug": "hertz-dias",
+    "nome_urna": "Hertz Dias",
+    "nome_completo": "HERTZ DA CONCEICAO DIAS",
+    "cargo_disputado": "Presidente",
+    "estado": null
+  },
+  {
+    "id": "7a6a6475-0691-4823-9104-5055ca589405",
+    "slug": "juliana-brizola",
+    "nome_urna": "Juliana Brizola",
+    "nome_completo": "Juliana Brizola",
+    "cargo_disputado": "Governador",
+    "estado": "RS"
+  },
+  {
+    "id": "7bb3e87b-c808-48df-8ddd-fd10c9a460f1",
+    "slug": "rafaell-milas",
+    "nome_urna": "Rafaell Milas",
+    "nome_completo": "Rafaell Milas de Oliveira",
+    "cargo_disputado": "Governador",
+    "estado": "MT"
+  },
+  {
+    "id": "7ee50d01-a46b-4a98-8fcb-fe3936659022",
+    "slug": "roberio-paulino",
+    "nome_urna": "Robério Paulino",
+    "nome_completo": "Roberio Paulino Rodrigues",
+    "cargo_disputado": "Governador",
+    "estado": "RN"
+  },
+  {
+    "id": "80a16418-3fee-414f-8fed-f06b4a952748",
+    "slug": "taty-cristina-de-jesus",
+    "nome_urna": "Taty Cristina de Jesus",
+    "nome_completo": "Tatiana Cristina Santos de Jesus",
+    "cargo_disputado": "Governador",
+    "estado": "SE"
+  },
+  {
+    "id": "80ed7da6-fe5d-4b68-85a3-440f5154b7d6",
+    "slug": "kiko-caputo",
+    "nome_urna": "Kiko Caputo",
+    "nome_completo": "Francisco Queiroz Caputo Neto",
+    "cargo_disputado": "Governador",
+    "estado": "DF"
+  },
+  {
+    "id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+    "slug": "renan-filho",
+    "nome_urna": "Renan Filho",
+    "nome_completo": "José Renan Vasconcelos Calheiros Filho",
+    "cargo_disputado": "Governador",
+    "estado": "AL"
+  },
+  {
+    "id": "85bcd355-89c2-464d-bfce-620fe8631285",
+    "slug": "gelson-merisio",
+    "nome_urna": "Gelson Merisio",
+    "nome_completo": "Gelson Luiz Merisio",
+    "cargo_disputado": "Governador",
+    "estado": "SC"
+  },
+  {
+    "id": "86ffacf8-e5d4-4f9b-a808-0f0cb551d832",
+    "slug": "dr-helton-monteiro",
+    "nome_urna": "Dr. Helton Monteiro",
+    "nome_completo": "José Helton Silva Monteiro",
+    "cargo_disputado": "Governador",
+    "estado": "SE"
+  },
+  {
+    "id": "8871eb1a-3c89-4c09-8147-45c5903e6ceb",
+    "slug": "santiago-belizario",
+    "nome_urna": "Santiago Belizário",
+    "nome_completo": "José Santiago Belizário",
+    "cargo_disputado": "Governador",
+    "estado": "PI"
+  },
+  {
+    "id": "88f9e312-8c96-436d-a5c0-2463152e1e21",
+    "slug": "reginaldo-lima",
+    "nome_urna": "REGINALDO LIMA",
+    "nome_completo": "REGINALDO LIMA BRAUNO",
+    "cargo_disputado": "Governador",
+    "estado": "MA"
+  },
+  {
+    "id": "89dc7944-ed0a-4a1f-8ad5-fdd3edd9347a",
+    "slug": "tiao-bocalom",
+    "nome_urna": "Tiao Bocalom",
+    "nome_completo": "Sebastiao Bocalom Rodrigues",
+    "cargo_disputado": "Governador",
+    "estado": "AC"
+  },
+  {
+    "id": "8a59da03-a2ad-4385-9516-eb738f970df0",
+    "slug": "ivan-moraes",
+    "nome_urna": "Ivan Moraes",
+    "nome_completo": "Ivan Vasconcellos de Moraes Filho",
+    "cargo_disputado": "Governador",
+    "estado": "PE"
+  },
+  {
+    "id": "8acf0237-f485-4193-9a72-874f2c2790d1",
+    "slug": "luan-monteiro",
+    "nome_urna": "Luan Monteiro",
+    "nome_completo": "Luan Monteiro Paschoal Pires",
+    "cargo_disputado": "Governador",
+    "estado": "RJ"
+  },
+  {
+    "id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+    "slug": "efraim-filho",
+    "nome_urna": "Efraim Filho",
+    "nome_completo": "Efraim de Araujo Morais Filho",
+    "cargo_disputado": "Governador",
+    "estado": "PB"
+  },
+  {
+    "id": "8d4eb423-5fa3-401f-883d-d70f4c0c64d8",
+    "slug": "pazolini",
+    "nome_urna": "Pazolini",
+    "nome_completo": "Lorenzo Silva de Pazolini",
+    "cargo_disputado": "Governador",
+    "estado": "ES"
+  },
+  {
+    "id": "8e51c741-2a90-4e7e-9945-08045bdc8a59",
+    "slug": "ariel-capistrano",
+    "nome_urna": "ARIEL CAPISTRANO",
+    "nome_completo": "ARIEL DA SILVA CAPISTRANO",
+    "cargo_disputado": "Governador",
+    "estado": "BA"
+  },
+  {
+    "id": "8e6f8d4c-7981-499e-b03b-5778e1db704d",
+    "slug": "valmir-de-francisquinho",
+    "nome_urna": "Valmir de Francisquinho",
+    "nome_completo": "Valmir dos Santos Costa",
+    "cargo_disputado": "Governador",
+    "estado": "SE"
+  },
+  {
+    "id": "914d9904-1c6a-47f9-a25f-017138dc1cef",
+    "slug": "elizeu-aguiar",
+    "nome_urna": "Elizeu Aguiar",
+    "nome_completo": "Elizeu Morais de Aguiar",
+    "cargo_disputado": "Governador",
+    "estado": "PI"
+  },
+  {
+    "id": "91b1c8db-cec7-48aa-9619-c23c9a0e4583",
+    "slug": "huggo-leonardo",
+    "nome_urna": "Huggo Leonardo",
+    "nome_completo": "Huggo Leonardo de Lima Anastacio",
+    "cargo_disputado": "Governador",
+    "estado": "CE"
+  },
+  {
+    "id": "91dc9c87-6811-494c-8c51-1bccfdf08c29",
+    "slug": "celina-leao",
+    "nome_urna": "Celina Leao",
+    "nome_completo": "Celina Leão Hizim Ferreira",
+    "cargo_disputado": "Governador",
+    "estado": "DF"
+  },
+  {
+    "id": "95fc116b-4c1e-4332-9c52-948bc1775a57",
+    "slug": "marconi-perillo",
+    "nome_urna": "Marconi Perillo",
+    "nome_completo": "Marconi Ferreira Perillo Junior",
+    "cargo_disputado": "Governador",
+    "estado": "GO"
+  },
+  {
+    "id": "9677309d-5b33-4973-9bbb-d92b766557a3",
+    "slug": "lenilda-luna",
+    "nome_urna": "Lenilda Luna",
+    "nome_completo": "Lenilda Luna de Almeida",
+    "cargo_disputado": "Governador",
+    "estado": "AL"
+  },
+  {
+    "id": "968f8c87-8d8b-4248-9cee-4aee7929f4d9",
+    "slug": "saulo-arcangeli",
+    "nome_urna": "Saulo Arcangeli",
+    "nome_completo": "Saulo Costa Arcangeli",
+    "cargo_disputado": "Governador",
+    "estado": "MA"
+  },
+  {
+    "id": "9cd65a2b-334c-421c-b527-55984a28857c",
+    "slug": "vivian-mendes",
+    "nome_urna": "Vivian Mendes",
+    "nome_completo": "Vivian Mendes da Silva",
+    "cargo_disputado": "Governador",
+    "estado": "SP"
+  },
+  {
+    "id": "9cd97304-c1bf-4b54-8834-46770be3c5f1",
+    "slug": "roberto-rocha",
+    "nome_urna": "Roberto Rocha",
+    "nome_completo": "Roberto Coelho Rocha",
+    "cargo_disputado": "Governador",
+    "estado": "MA"
+  },
+  {
+    "id": "9ea4f811-3d51-48b2-a297-e4fccb0ddc14",
+    "slug": "maria-do-carmo",
+    "nome_urna": "Maria do Carmo",
+    "nome_completo": "Maria do Carmo Seffair Lins de Albuquerque",
+    "cargo_disputado": "Governador",
+    "estado": "AM"
+  },
+  {
+    "id": "9f2c557f-7c5a-459b-b0f5-faa6d561a4ce",
+    "slug": "dr-furlan",
+    "nome_urna": "Dr. Furlan",
+    "nome_completo": "Antonio Paulo de Oliveira Furlan",
+    "cargo_disputado": "Governador",
+    "estado": "AP"
+  },
+  {
+    "id": "9f4c6003-20a5-486e-9c7a-90d48d4cdcd0",
+    "slug": "laudicerio-aguiar",
+    "nome_urna": "Laudicerio Aguiar",
+    "nome_completo": "Laudicerio Aguiar Machado",
+    "cargo_disputado": "Governador",
+    "estado": "MT"
+  },
+  {
+    "id": "9f8bdf27-8e4e-4f67-ae08-1519fc941412",
+    "slug": "lucien-rezende",
+    "nome_urna": "Lucien Rezende",
+    "nome_completo": "Lucien Roberto Garcia de Rezende",
+    "cargo_disputado": "Governador",
+    "estado": "MS"
+  },
+  {
+    "id": "9fe469dc-058f-487d-b888-ba113f5535ae",
+    "slug": "omar-aziz",
+    "nome_urna": "Omar Aziz",
+    "nome_completo": "Omar Jose Abdelaziz",
+    "cargo_disputado": "Governador",
+    "estado": "AM"
+  },
+  {
+    "id": "a0917c03-3569-46d5-9ce9-14969f64b866",
+    "slug": "wilson-grassi-junior",
+    "nome_urna": "Wilson Grassi Júnior",
+    "nome_completo": "Wilson Grassi Júnior",
+    "cargo_disputado": "Presidente",
+    "estado": null
+  },
+  {
+    "id": "a0d7bc78-cde7-49b1-a006-8d8dcf5449ce",
+    "slug": "arinalda-do-mlb",
+    "nome_urna": "ARINALDA DO MLB",
+    "nome_completo": "ARINALDA VASCONCELOS DE MEDEIROS",
+    "cargo_disputado": "Governador",
+    "estado": "RN"
+  },
+  {
+    "id": "a342036a-c436-400a-bd14-edefacad8d75",
+    "slug": "luis-cesar-bueno",
+    "nome_urna": "Luis Cesar Bueno",
+    "nome_completo": "Luis Cesar Bueno e Freitas",
+    "cargo_disputado": "Governador",
+    "estado": "GO"
+  },
+  {
+    "id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+    "slug": "joao-rodrigues",
+    "nome_urna": "João Rodrigues",
+    "nome_completo": "João Rodrigues",
+    "cargo_disputado": "Governador",
+    "estado": "SC"
+  },
+  {
+    "id": "a61bb9e4-2c0d-4848-8696-3fe26071fdbd",
+    "slug": "tulio-lopes",
+    "nome_urna": "Tulio Lopes",
+    "nome_completo": "Tulio Cesar Dias Lopes",
+    "cargo_disputado": "Governador",
+    "estado": "MG"
+  },
+  {
+    "id": "a6ef9480-a8a3-459f-b545-a52bfe1224b1",
+    "slug": "fabio-mitidieri",
+    "nome_urna": "Fabio Mitidieri",
+    "nome_completo": "Fábio Cruz Mitidieri",
+    "cargo_disputado": "Governador",
+    "estado": "SE"
+  },
+  {
+    "id": "a797aa96-5acd-492b-af83-89b5d1f21cba",
+    "slug": "farah-mesquita",
+    "nome_urna": "FARAH MESQUITA",
+    "nome_completo": "FARAH MESQUITA",
+    "cargo_disputado": "Governador",
+    "estado": "RR"
+  },
+  {
+    "id": "a8a86164-4000-4bbe-ac11-c02b90955ea5",
+    "slug": "otaviano-pivetta",
+    "nome_urna": "Otaviano Pivetta",
+    "nome_completo": "Otaviano Olavo Pivetta",
+    "cargo_disputado": "Governador",
+    "estado": "MT"
+  },
+  {
+    "id": "a9ce3c0b-9fa4-4e28-9c2e-809b1fa5e639",
+    "slug": "marcos-rogerio",
+    "nome_urna": "Marcos Rogerio",
+    "nome_completo": "Marcos Rogério da Silva Brito",
+    "cargo_disputado": "Governador",
+    "estado": "RO"
+  },
+  {
+    "id": "ae28abd5-e231-405a-938e-85e8c6d64d75",
+    "slug": "ravenna-castro",
+    "nome_urna": "Ravenna Castro",
+    "nome_completo": "Ravenna de Castro Lima Azevedo",
+    "cargo_disputado": "Governador",
+    "estado": "PI"
+  },
+  {
+    "id": "af18411e-e979-4a30-9a1c-c64927b50442",
+    "slug": "wilder-morais",
+    "nome_urna": "Wilder Morais",
+    "nome_completo": "Wilder Pedro de Morais",
+    "cargo_disputado": "Governador",
+    "estado": "GO"
+  },
+  {
+    "id": "af1bd42d-8ee5-4b53-9267-0a0114b74956",
+    "slug": "lucia-santos",
+    "nome_urna": "Lucia Santos",
+    "nome_completo": "Lucia Maria de Sousa Aguiar dos Santos",
+    "cargo_disputado": "Governador",
+    "estado": "PI"
+  },
+  {
+    "id": "afb87309-0aee-4ecc-9ac6-e8402902321a",
+    "slug": "cadu-xavier",
+    "nome_urna": "Cadu de Lula",
+    "nome_completo": "Carlos Eduardo Xavier",
+    "cargo_disputado": "Governador",
+    "estado": "RN"
+  },
+  {
+    "id": "aff6b39f-3513-4597-985f-54c431ac8bfc",
+    "slug": "gal-leite",
+    "nome_urna": "Gal Leite",
+    "nome_completo": "Gualdina Maria Menezes Leite",
+    "cargo_disputado": "Governador",
+    "estado": "PA"
+  },
+  {
+    "id": "b01d3b26-32d0-48c3-9242-6c6b324b249d",
+    "slug": "gabriel-souza",
+    "nome_urna": "Gabriel Souza",
+    "nome_completo": "Gabriel Vieira de Souza",
+    "cargo_disputado": "Governador",
+    "estado": "RS"
+  },
+  {
+    "id": "b1104f0b-80fb-4082-8356-dfb374e20028",
+    "slug": "cabo-daciolo",
+    "nome_urna": "Cabo Daciolo",
+    "nome_completo": "Benevenuto Daciolo Fonseca dos Santos",
+    "cargo_disputado": "Governador",
+    "estado": "AM"
+  },
+  {
+    "id": "b3988a51-2776-4172-a73b-e326365b0c04",
+    "slug": "samara-martins",
+    "nome_urna": "Samara Martins",
+    "nome_completo": "Samara Martins da Silva Feitosa",
+    "cargo_disputado": "Presidente",
+    "estado": null
+  },
+  {
+    "id": "b423fdbb-b7b8-48c8-9236-efac480e7017",
+    "slug": "indira-xavier",
+    "nome_urna": "Indira Xavier",
+    "nome_completo": "Indira Ivanise Xavier",
+    "cargo_disputado": "Governador",
+    "estado": "MG"
+  },
+  {
+    "id": "b6e8c205-a2b7-4a26-9b65-e7a3b3b2f601",
+    "slug": "orleans-brandao",
+    "nome_urna": "Orleans Brandao",
+    "nome_completo": "Carlos Orleans Braide Brandão",
+    "cargo_disputado": "Governador",
+    "estado": "MA"
+  },
+  {
+    "id": "b7a29b07-90d2-44c6-979d-d4d526321865",
+    "slug": "andre-luis",
+    "nome_urna": "André Luís",
+    "nome_completo": "André Luís Caetano dos Santos",
+    "cargo_disputado": "Governador",
+    "estado": "MA"
+  },
+  {
+    "id": "b8ad0e9c-eb0f-4b37-bdf9-840c5d167016",
+    "slug": "lucas-ribeiro",
+    "nome_urna": "Lucas Ribeiro",
+    "nome_completo": "Lucas Ribeiro Novais de Araújo",
+    "cargo_disputado": "Governador",
+    "estado": "PB"
+  },
+  {
+    "id": "ba62f5d0-3e39-40a7-a0af-ee1d86e97e75",
+    "slug": "jhc",
+    "nome_urna": "JHC",
+    "nome_completo": "João Henrique Holanda Caldas",
+    "cargo_disputado": "Governador",
+    "estado": "AL"
+  },
+  {
+    "id": "bf363655-dae8-4ef1-a654-ba8ce45fcdfc",
+    "slug": "andre-marinho",
+    "nome_urna": "Andre Marinho",
+    "nome_completo": "Andre Bourguignon Marinho",
+    "cargo_disputado": "Governador",
+    "estado": "RJ"
+  },
+  {
+    "id": "bf6deed4-4d99-4e45-8e2a-fca877960e35",
+    "slug": "aroldo-felix",
+    "nome_urna": "Aroldo Félix",
+    "nome_completo": "Aroldo Felix de Azevedo Junior",
+    "cargo_disputado": "Governador",
+    "estado": "BA"
+  },
+  {
+    "id": "c0d3eab9-ea20-4ec0-a910-580c944040dc",
+    "slug": "cesar-pontes",
+    "nome_urna": "Cesar Pontes",
+    "nome_completo": "Cesar Augusto Pontes Ferreira",
+    "cargo_disputado": "Governador",
+    "estado": "RS"
+  },
+  {
+    "id": "c172df90-328c-41cf-b9d4-e958b416130d",
+    "slug": "carlos-cley",
+    "nome_urna": "CARLOS CLEY",
+    "nome_completo": "CARLOS CLEY RAMOS PAIVA",
+    "cargo_disputado": "Governador",
+    "estado": "AP"
+  },
+  {
+    "id": "c7785d1d-b34a-4a0b-b9f2-127584b52d0c",
+    "slug": "edmilson-costa",
+    "nome_urna": "Edmilson Costa",
+    "nome_completo": "Edmilson Silva Costa",
+    "cargo_disputado": "Presidente",
+    "estado": null
+  },
+  {
+    "id": "c7a28e0e-06d0-412b-98ee-b79a7a4354f9",
+    "slug": "mauricio-coelho",
+    "nome_urna": "Mauricio Coelho",
+    "nome_completo": "Mauricio Coelho de Souza Junior",
+    "cargo_disputado": "Governador",
+    "estado": "MT"
+  },
+  {
+    "id": "c7e3a004-99ba-426b-af65-206e3066c496",
+    "slug": "alan-rick",
+    "nome_urna": "Alan Rick",
+    "nome_completo": "Alan Rick Miranda",
+    "cargo_disputado": "Governador",
+    "estado": "AC"
+  },
+  {
+    "id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+    "slug": "alvaro-dias-rn",
+    "nome_urna": "Alvaro Dias",
+    "nome_completo": "Alvaro Costa Dias",
+    "cargo_disputado": "Governador",
+    "estado": "RN"
+  },
+  {
+    "id": "c9c117e4-ea81-433d-b8c0-a01c8d831bae",
+    "slug": "dr-luisinho",
+    "nome_urna": "Dr. Luisinho",
+    "nome_completo": "Francisco das Chagas Conceição da Silva",
+    "cargo_disputado": "Governador",
+    "estado": "AC"
+  },
+  {
+    "id": "cc2dbc88-aae0-4c75-a112-bcc6bfc3189b",
+    "slug": "joao-campos",
+    "nome_urna": "Joao Campos",
+    "nome_completo": "Joao Henrique de Andrade Lima Campos",
+    "cargo_disputado": "Governador",
+    "estado": "PE"
+  },
+  {
+    "id": "cdc3d787-524a-4207-87a6-a31b878620d0",
+    "slug": "danilo-soares",
+    "nome_urna": "Danilo Soares",
+    "nome_completo": "Danilo Soares Sousa",
+    "cargo_disputado": "Governador",
+    "estado": "CE"
+  },
+  {
+    "id": "ce3b18ad-dcc9-4275-b831-66ee24422714",
+    "slug": "danilo-pinheiro",
+    "nome_urna": "Danilo da Silva",
+    "nome_completo": "Danilo Pinheiro Evangelista da Silva",
+    "cargo_disputado": "Governador",
+    "estado": "GO"
+  },
+  {
+    "id": "ce9beb5d-be08-4204-99c9-e94f7276d3e7",
+    "slug": "luiz-franca",
+    "nome_urna": "Luiz Franca",
+    "nome_completo": "Luiz Felipe Martins Franca",
+    "cargo_disputado": "Governador",
+    "estado": "PR"
+  },
+  {
+    "id": "d0f03594-dad5-41e4-a0d4-6c2de53337f6",
+    "slug": "eudo-raffael",
+    "nome_urna": "Eudo Raffael",
+    "nome_completo": "Eudo Raffael Lima da Silva",
+    "cargo_disputado": "Governador",
+    "estado": "AC"
+  },
+  {
+    "id": "d1486424-4a7f-4ff1-af06-1665ebe99a31",
+    "slug": "clariana-barao",
+    "nome_urna": "Clariana Barão",
+    "nome_completo": "Clariana Zacarkim Barão",
+    "cargo_disputado": "Presidente",
+    "estado": null
+  },
+  {
+    "id": "d334a750-1693-46c9-bdee-de3b3c455a05",
+    "slug": "rosi-aires",
+    "nome_urna": "Rosi Aires",
+    "nome_completo": "Rosimayre Patricia Aires da Silva",
+    "cargo_disputado": "Governador",
+    "estado": "RR"
+  },
+  {
+    "id": "d45f1947-73a7-4292-9955-7e57927032f0",
+    "slug": "godeiro-linharess",
+    "nome_urna": "GODEIRO LINHARESS",
+    "nome_completo": "GLADYER LINHARES GODEIRO",
+    "cargo_disputado": "Governador",
+    "estado": "RN"
+  },
+  {
+    "id": "d4aa4311-0b4a-4adc-a338-b01e8118d6a9",
+    "slug": "pedro-abib",
+    "nome_urna": "Pedro Abib",
+    "nome_completo": "Pedro Abib Hecktheuer",
+    "cargo_disputado": "Governador",
+    "estado": "RO"
+  },
+  {
+    "id": "d4f97034-9452-4517-88ba-afb29831adaa",
+    "slug": "camila-falcao",
+    "nome_urna": "Camila Falcão",
+    "nome_completo": "Maria Camila da Silva Falcão",
+    "cargo_disputado": "Governador",
+    "estado": "PE"
+  },
+  {
+    "id": "d5ece407-2e2a-4e76-91a9-c2b7db826430",
+    "slug": "ronaldo-mansur",
+    "nome_urna": "Ronaldo Mansur",
+    "nome_completo": "Ronaldo Mansur Santos Silva",
+    "cargo_disputado": "Governador",
+    "estado": "BA"
+  },
+  {
+    "id": "d62ecbf0-98ab-41f9-8684-f3c7bd46251a",
+    "slug": "jorginho-mello",
+    "nome_urna": "Jorginho Mello",
+    "nome_completo": "Jorginho dos Santos Mello",
+    "cargo_disputado": "Governador",
+    "estado": "SC"
+  },
+  {
+    "id": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+    "slug": "lula",
+    "nome_urna": "Lula",
+    "nome_completo": "Luiz Inacio Lula da Silva",
+    "cargo_disputado": "Presidente",
+    "estado": null
+  },
+  {
+    "id": "d7ccc97a-ec7e-4a57-8e22-4e17974345d2",
+    "slug": "jairo-palheta",
+    "nome_urna": "Jairo Palheta",
+    "nome_completo": "Jairo Palheta da Silva Marques",
+    "cargo_disputado": "Governador",
+    "estado": "AP"
+  },
+  {
+    "id": "d80384f6-147b-40ef-8fa5-ae0b2be5a1f5",
+    "slug": "daniel-vilela",
+    "nome_urna": "Daniel Vilela",
+    "nome_completo": "Daniel Elias Carvalho Vilela",
+    "cargo_disputado": "Governador",
+    "estado": "GO"
+  },
+  {
+    "id": "d97908e9-5b30-4d0e-a01b-c0348682949d",
+    "slug": "clecio-luis",
+    "nome_urna": "Clecio Luis",
+    "nome_completo": "Clecio Luis Vilhena Vieira",
+    "cargo_disputado": "Governador",
+    "estado": "AP"
+  },
+  {
+    "id": "d9cf9c6b-c6f9-4561-ab0f-138d2086c5ce",
+    "slug": "jose-roberto-arruda",
+    "nome_urna": "Jose Roberto Arruda",
+    "nome_completo": "Jose Roberto Arruda",
+    "cargo_disputado": "Governador",
+    "estado": "DF"
+  },
+  {
+    "id": "db4e22f8-ce30-4fcd-8799-a73be255d23a",
+    "slug": "rejane-oliveira",
+    "nome_urna": "Rejane de Oliveira",
+    "nome_completo": "Rejane Silva de Oliveira",
+    "cargo_disputado": "Governador",
+    "estado": "RS"
+  },
+  {
+    "id": "db711ee0-fcfa-47f7-85d2-a3686956cf06",
+    "slug": "jeronimo",
+    "nome_urna": "Jeronimo",
+    "nome_completo": "Jerônimo Rodrigues Souza",
+    "cargo_disputado": "Governador",
+    "estado": "BA"
+  },
+  {
+    "id": "dcc4a93e-4114-43e9-b067-4581ed12cfd5",
+    "slug": "dr-daniel",
+    "nome_urna": "Dr. Daniel",
+    "nome_completo": "Daniel Barbosa Santos",
+    "cargo_disputado": "Governador",
+    "estado": "PA"
+  },
+  {
+    "id": "dce76719-f325-4467-b677-c54412bc6e24",
+    "slug": "marcio-jambo",
+    "nome_urna": "Márcio Jambo",
+    "nome_completo": "Marcio Ferreira Jambo Sobrinho",
+    "cargo_disputado": "Governador",
+    "estado": "AL"
+  },
+  {
+    "id": "dd57b875-65c4-44bb-954b-bfac352d7ead",
+    "slug": "ricardo-cappelli",
+    "nome_urna": "Ricardo Cappelli",
+    "nome_completo": "Ricardo Garcia Cappelli",
+    "cargo_disputado": "Governador",
+    "estado": "DF"
+  },
+  {
+    "id": "de4fbc20-461f-4043-944f-df5fa6210ae3",
+    "slug": "yuri-ezequiel",
+    "nome_urna": "Yuri Ezequiel",
+    "nome_completo": "Yuri Ezequiel de Lima Silva",
+    "cargo_disputado": "Governador",
+    "estado": "PB"
+  },
+  {
+    "id": "de8dc3ea-6427-4b02-babe-a1925547e135",
+    "slug": "william-siri",
+    "nome_urna": "William Siri",
+    "nome_completo": "William Carlos Brum Bispo",
+    "cargo_disputado": "Governador",
+    "estado": "RJ"
+  },
+  {
+    "id": "e10f4186-0132-48f3-be4c-5397642eecd4",
+    "slug": "fabio-trad",
+    "nome_urna": "Fabio Trad",
+    "nome_completo": "Fábio Ricardo Trad",
+    "cargo_disputado": "Governador",
+    "estado": "MS"
+  },
+  {
+    "id": "e1e7801e-ba65-4175-b9e3-e614e09905d0",
+    "slug": "marcelo-brigadeiro",
+    "nome_urna": "Marcelo Brigadeiro",
+    "nome_completo": "Marcelo Marcel Franco José da Silva",
+    "cargo_disputado": "Governador",
+    "estado": "SC"
+  },
+  {
+    "id": "e2648b98-f9a9-4487-9fdd-49609ac520d6",
+    "slug": "geraldo-carvalho",
+    "nome_urna": "Geraldo Carvalho",
+    "nome_completo": "Geraldo do Nascimento Carvalho",
+    "cargo_disputado": "Governador",
+    "estado": "PI"
+  },
+  {
+    "id": "e4a0bfc6-586c-491f-8580-e43c6d30f7a1",
+    "slug": "laurez-moreira",
+    "nome_urna": "Laurez Moreira",
+    "nome_completo": "Laurez da Rocha Moreira",
+    "cargo_disputado": "Governador",
+    "estado": "TO"
+  },
+  {
+    "id": "e79ddaf5-f86c-40c6-a54c-10535cb5514d",
+    "slug": "ricardo-ferraco",
+    "nome_urna": "Ricardo Ferraço",
+    "nome_completo": "Ricardo de Rezende Ferraço",
+    "cargo_disputado": "Governador",
+    "estado": "ES"
+  },
+  {
+    "id": "e836a676-5cb5-40d2-90a5-0251cf20977a",
+    "slug": "bruno-pedreiro-do-pco",
+    "nome_urna": "Bruno Pedreiro do PCO",
+    "nome_completo": "Brunno Andrade Dias",
+    "cargo_disputado": "Governador",
+    "estado": "SC"
+  },
+  {
+    "id": "e9cf3bd3-4ab9-4928-b652-558c5e8d8ce4",
+    "slug": "adailton-furia",
+    "nome_urna": "Adailton Furia",
+    "nome_completo": "Adailton Antunes Ferreira",
+    "cargo_disputado": "Governador",
+    "estado": "RO"
+  },
+  {
+    "id": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+    "slug": "david-almeida",
+    "nome_urna": "David Almeida",
+    "nome_completo": "David Antônio Abisai Pereira de Almeida",
+    "cargo_disputado": "Governador",
+    "estado": "AM"
+  },
+  {
+    "id": "ee2d43ed-ac10-4d22-8acd-f4d210e42c77",
+    "slug": "rodrigo-bolsonaro",
+    "nome_urna": "RODRIGO BOLSONARO",
+    "nome_completo": "KARLO RODRIGO LUCIO VIEIRA",
+    "cargo_disputado": "Governador",
+    "estado": "RN"
+  },
+  {
+    "id": "f126204e-1f28-4200-9468-9144eddbb6e4",
+    "slug": "elmano-de-freitas",
+    "nome_urna": "Elmano de Freitas",
+    "nome_completo": "Elmano de Freitas da Costa",
+    "cargo_disputado": "Governador",
+    "estado": "CE"
+  },
+  {
+    "id": "f383d692-5872-444d-b107-794c00182bad",
+    "slug": "henrique-areas",
+    "nome_urna": "Henrique Áreas",
+    "nome_completo": "Henrique Áreas de Araujo",
+    "cargo_disputado": "Governador",
+    "estado": "MG"
+  },
+  {
+    "id": "f4e5e4bd-7934-4d04-8534-9a60fac53edd",
+    "slug": "samuel-costa",
+    "nome_urna": "Samuel Costa",
+    "nome_completo": "Samuel Costa Menezes",
+    "cargo_disputado": "Governador",
+    "estado": "RO"
+  },
+  {
+    "id": "f5de5375-7258-4164-9f89-45ee8ee442d6",
+    "slug": "lourdes-melo",
+    "nome_urna": "Lourdes Melo",
+    "nome_completo": "Maria de Lourdes Soares Melo",
+    "cargo_disputado": "Governador",
+    "estado": "PI"
+  },
+  {
+    "id": "f758690b-3960-485d-83c0-5119ca839612",
+    "slug": "ralf-zimmer",
+    "nome_urna": "Ralf Zimmer",
+    "nome_completo": "Ralf Guimaraes Zimmer Junior",
+    "cargo_disputado": "Governador",
+    "estado": "SC"
+  },
+  {
+    "id": "f7f53508-4b1c-4138-aca9-242d9653fb8e",
+    "slug": "francisco-jurity",
+    "nome_urna": "Francisco Jurity",
+    "nome_completo": "Francisco José Martins Jurity",
+    "cargo_disputado": "Governador",
+    "estado": "PI"
+  },
+  {
+    "id": "f91a1504-0b29-45a7-b7b6-580a5114cfb8",
+    "slug": "dimas-cassimiro",
+    "nome_urna": "Dimas Cassimiro",
+    "nome_completo": "Dimas Cassimiro do Nascimento",
+    "cargo_disputado": "Governador",
+    "estado": "MA"
+  },
+  {
+    "id": "fa96e1ad-f460-411b-b30b-3aecb135e8d7",
+    "slug": "roberto-cidade",
+    "nome_urna": "Roberto Cidade",
+    "nome_completo": "Roberto Maia Cidade Filho",
+    "cargo_disputado": "Governador",
+    "estado": "AM"
+  },
+  {
+    "id": "fc3bec40-5a82-4794-aacf-86fc618751b4",
+    "slug": "well-macedo",
+    "nome_urna": "WELL MACEDO",
+    "nome_completo": "WELLINGTA JOSYANE SIQUEIRA MACEDO",
+    "cargo_disputado": "Governador",
+    "estado": "PA"
+  },
+  {
+    "id": "febc4a12-c352-448a-99dc-671c77e8d57d",
+    "slug": "wellington-fagundes",
+    "nome_urna": "Wellington Fagundes",
+    "nome_completo": "Wellington Antônio Fagundes",
+    "cargo_disputado": "Governador",
+    "estado": "MT"
+  },
+  {
+    "id": "ff7f433f-70b4-420c-885d-c0401a901790",
+    "slug": "cleitinho",
+    "nome_urna": "Cleitinho",
+    "nome_completo": "Cleiton Gontijo de Azevedo",
+    "cargo_disputado": "Governador",
+    "estado": "MG"
+  }
+]
