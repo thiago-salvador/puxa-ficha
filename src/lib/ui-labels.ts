@@ -519,3 +519,27 @@ export function buildTimelineOgFallbackSubtitle(): string {
 export function buildTimelineOgSubtitle(countLabel: string): string {
   return `${countLabel}. Patrimônio, votações, processos, cargos, partidos e gastos na mesma linha.`
 }
+
+/**
+ * Texto fixo da seção de doador recorrente na aba Dinheiro. O limite de
+ * leitura é parte do dado: aparecer aqui não indica irregularidade nem
+ * contrapartida, e a regra de quem entra está em /metodologia.
+ */
+export const DOADOR_RECORRENTE_COPY = {
+  eyebrow: "Doadores em comum",
+  titulo: "Doadores que também financiam outras candidaturas",
+  descricao:
+    "Doadores desta ficha que aparecem entre os maiores doadores de outra candidatura publicada no Puxa Ficha, identificados pelo CNPJ registrado no TSE.",
+  limite:
+    "Doar para mais de uma candidatura é permitido e comum. Esta lista não indica irregularidade, contrapartida nem relação entre as candidaturas.",
+  regra:
+    "Empresas só aparecem até 2014: doação de pessoa jurídica a candidato é proibida desde as eleições de 2016 (STF, ADI 4650). Partidos, comitês, contas de outras campanhas e plataformas de financiamento coletivo ficam de fora.",
+  fonte: "Fonte: prestações de contas eleitorais do TSE, como publicadas em cada ficha.",
+  metodologiaLabel: "Como esta lista é montada",
+  metodologiaHref: "/metodologia#doadores-recorrentes",
+  vazio:
+    "Nenhum dos maiores doadores desta ficha aparece em outra candidatura publicada, pela regra desta seção.",
+  tambemFinancia: "Também aparece em",
+  maisCandidaturas: (quantidade: number) =>
+    quantidade === 1 ? "e mais 1 candidatura" : `e mais ${quantidade} candidaturas`,
+} as const

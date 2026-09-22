@@ -1,0 +1,83 @@
+name: Materializar doadores recorrentes
+
+# Recalcula public.financiamento_doador_recorrente a partir de financiamento.
+# Sempre roda o dry-run e sobe o relatório (só nome público, tipo, anos e
+# contagem de pessoas; nunca CNPJ nem cpf_hash). A escrita só acontece com
+# `aplicar` marcado, e depois dela o gate de exposição lê a superfície com a
+# chave anon e reprova se aparecer documento.
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: "SHA de 40 caracteres já mergeado em main"
+        required: true
+        type: string
+      aplicar:
+        description: "Escrever em produção (sem marcar, só dry-run e relatório)"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: materializar-doador-recorrente
+  cancel-in-progress: false
+
+jobs:
+  materializar:
+    name: Dry-run, escrita opcional e gate de exposição
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: production
+    env:
+      PF_EXPECTED_SHA: ${{ inputs.expected_sha }}
+    steps:
+      - name: Validar dispatch manual e SHA fechado
+        env:
+          DISPATCH_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = "refs/heads/main"
+          [[ "$PF_EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
+          test "$PF_EXPECTED_SHA" = "$DISPATCH_SHA"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.expected_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Dry-run com relatório
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          PF_DRY_RUN: "1"
+        run: |
+          set -euo pipefail
+          mkdir -p reports/doador-recorrente
+          node --import tsx scripts/materializar-doador-recorrente.ts \
+            --relatorio reports/doador-recorrente/dry-run.json
+      - if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v6.0.0
+        with:
+          name: doador-recorrente-${{ github.run_id }}
+          path: reports/doador-recorrente
+          if-no-files-found: warn
+      - name: Aplicar materialização em produção
+        if: inputs.aplicar
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node --import tsx scripts/materializar-doador-recorrente.ts --apply
+      - name: Gate de exposição com a chave anon
+        if: inputs.aplicar
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: node --import tsx scripts/audit-doador-recorrente-exposure.ts

@@ -288,6 +288,55 @@ describe("public profile DTO", () => {
     )
   })
 
+  it("doadores recorrentes saem campo a campo, sem CNPJ, cpf_hash nem grupo interno", () => {
+    const ficha = fixtureProfile()
+    // Simula uma view que, por engano futuro, passasse a devolver documento.
+    ficha.doadores_recorrentes = [
+      {
+        doador_nome: "EMPRESA EXEMPLO S.A.",
+        doador_tipo: "PJ",
+        doacoes: [{ ano_eleicao: 2014, valor: 1000, cnpj: "11222333000199" }],
+        cnpj: "11222333000199",
+        doador_grupo: "00000000-0000-4000-8000-000000000001",
+        outras_candidaturas: [
+          {
+            slug: "outra-pessoa",
+            nome_urna: "Outra Pessoa",
+            partido_sigla: "PTD",
+            doacoes: [{ ano_eleicao: 2010, valor: 500 }],
+            cpf_hash: "a".repeat(64),
+          },
+        ],
+      } as never,
+    ]
+
+    const dto = toPublicCandidatoProfileDto(ficha)
+    const encoded = JSON.stringify(dto)
+
+    assert.deepEqual(findForbiddenPublicProfileKeys(dto), [])
+    assert.doesNotMatch(encoded, /11222333000199|a{64}|doador_grupo/)
+    assert.deepEqual(dto.doadores_recorrentes, [
+      {
+        doador_nome: "EMPRESA EXEMPLO S.A.",
+        doador_tipo: "PJ",
+        doacoes: [{ ano_eleicao: 2014, valor: 1000 }],
+        outras_candidaturas: [
+          { slug: "outra-pessoa", nome_urna: "Outra Pessoa", partido_sigla: "PTD", doacoes: [{ ano_eleicao: 2010, valor: 500 }] },
+        ],
+      },
+    ])
+  })
+
+  it("doadores recorrentes preservam a diferença entre leitura falha (null) e lista vazia", () => {
+    const semLeitura = fixtureProfile()
+    semLeitura.doadores_recorrentes = null
+    assert.equal(toPublicCandidatoProfileDto(semLeitura).doadores_recorrentes, null)
+
+    const vazio = fixtureProfile()
+    vazio.doadores_recorrentes = []
+    assert.deepEqual(toPublicCandidatoProfileDto(vazio).doadores_recorrentes, [])
+  })
+
   it("devolve whitelist pública sem chaves sensíveis conhecidas", () => {
     const dto = toPublicCandidatoProfileDto(fixtureProfile())
     const encoded = JSON.stringify(dto)

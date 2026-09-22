@@ -707,6 +707,11 @@ export interface FichaCandidato extends Candidato {
   financiamento: Financiamento[];
   /** Série canônica por pleito, incluindo zero, ausência oficial e erro. */
   financiamento_eleicoes?: import("@/lib/financiamento-eleicoes").FinanciamentoEleicaoPublico[];
+  /**
+   * Doadores desta ficha que também aparecem em outra candidatura publicada.
+   * `null` = leitura indisponível (a seção some); `[]` = lido e nenhum encontrado.
+   */
+  doadores_recorrentes?: import("@/lib/doador-recorrente-publico").DoadorRecorrentePublico[] | null;
   votos: VotoCandidato[];
   processos: Processo[];
   pontos_atencao: PontoAtencao[];
