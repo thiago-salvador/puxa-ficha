@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-09-22T12:14:30.238Z",
+  "updated_at": "2026-09-22T12:32:27.402Z",
   "quotes": [
     {
       "id": "df3b314a4c73c4f168b08c74c348c04d43481ac749c59cd01af84d05990c24f5",
@@ -6622,6 +6622,58 @@
         "fetched_url": "https://agazetadoacre.com/2026/09/destaques/4o-destaque/eudo-raffael-afirma-que-reflorestamento-gera-mais-empregos-que-pecuaria-e-defende-mudanca-economica-no-acre/",
         "method": "codex_source_review",
         "quote_location": "article_paragraph"
+      }
+    },
+    {
+      "id": "6c663540f1172a81d36609a4857ccbf49354f9494d00fc5b53663adf079c4d8d",
+      "candidate_id": "d5ece407-2e2a-4e76-91a9-c2b7db826430",
+      "candidate_slug": "ronaldo-mansur",
+      "candidate_name": "Ronaldo Mansur",
+      "office": "Governador",
+      "uf": "BA",
+      "quote_text": "Colocar dinheiro na educação não é gasto, é investimento.",
+      "context": "\"O que gera prejuízo é termos professores desestimulados em sala de aula, com baixos salário e não concursados. Nós vamos sim fazer concursos públicos para educação, valorizar os servidores. Colocar dinheiro na educação não é gasto, é investimento. Temos que ter educação parceira para que a gente combata a violência no nosso estado\", afirmou.",
+      "event_context": "Entrevista no Bahia Meio Dia em 16/09/2026.. O candidato ao governo da Bahia Ronaldo Mansur (Psol) foi entrevistado na tarde desta quarta-feira (16), no telejornal Bahia Meio Dia.",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-16",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ba/bahia/eleicoes/2026/noticia/2026/09/16/entrevista-com-ronaldo-mansur-do-psol.ghtml",
+      "article_title": "Ronaldo Mansur promete acabar com Reda e investir em concursos na BA",
+      "article_published_at": "2026-09-16T12:49:59.942-03:00",
+      "observed_at": "2026-09-22T12:26:33.043Z",
+      "source_sha256": "7a3b1ca0b0159884ff9b5b991ef6db26eab01658368cd7e2a6687321b166b4ae",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao governo da Bahia Ronaldo Mansur (Psol) foi entrevistado na tarde desta quarta-feira (16), no telejornal Bahia Meio Dia.",
+        "date_excerpt": "O candidato ao governo da Bahia Ronaldo Mansur (Psol) foi entrevistado na tarde desta quarta-feira (16), no telejornal Bahia Meio Dia.",
+        "fetched_url": "https://g1.globo.com/ba/bahia/eleicoes/2026/noticia/2026/09/16/entrevista-com-ronaldo-mansur-do-psol.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "9ae260c6067919b054479a04525edce076252152a4114529cf82d9ca2a99bc90",
+      "candidate_id": "3c885bab-cc3e-4fcf-aa1a-7b9c0ebf38e9",
+      "candidate_slug": "eduardo-braide",
+      "candidate_name": "Eduardo Braide",
+      "office": "Governador",
+      "uf": "MA",
+      "quote_text": "Primeira coisa que nós vamos fazer: cortar gastos que não sejam essenciais.",
+      "context": "“Não tem nenhuma justificativa para o Maranhão cobrar o maior ICMS do país, 23%. Se fosse assim, o Maranhão era para ser o melhor estado do país, o que não é verdade. Os indicadores estão aí colocando o Maranhão em último lugar em várias situações. Primeira coisa que nós vamos fazer: cortar gastos que não sejam essenciais. O Porto do Itaqui hoje tem um contrato com um helicóptero de R$ 41 milhões. Qual a necessidade de ter um contrato desse helicóptero? Aliás, esse helicóptero deveria ter funcionado, já que é do Porto do Itaqui, para ter socorrido o jovem Gemerson, lá de Bequimão, quando precisou de atendimento em São Luís e o ferryboat atrasou e ele veio a falecer. Onde estava o helicóptero do Porto do Itaqui que não fez o socorro a esse nosso jovem lá de Bequimão? Ao lado disso, em três anos e meio, o atual governo gastou mais de R$ 170 milhões em propaganda. Aí é que está a nossa diferença. Eu fiz gestão e sei escolher”, afirmou.",
+      "event_context": "Entrevista ao JMTV 1ª Edição em 18/09/2026.. O candidato ao governo do Maranhão, Eduardo Braide (PSD), apresentou suas propostas em entrevista nesta sexta-feira (18).",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-18",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/09/18/eduardo-braide-destaca-atuacao-no-hospital-da-crianca-propoe-reduzir-icms-e-extinguir-secretarias-no-ma.ghtml",
+      "article_title": "Eduardo Braide destaca atuação no Hospital da Criança, propõe reduzir ICMS e extinguir secretarias no MA",
+      "article_published_at": "2026-09-18T14:42:37.920-03:00",
+      "observed_at": "2026-09-22T12:26:33.043Z",
+      "source_sha256": "c10d4cd3cb2b9a7c27cc32beefcdb7c48ceb6b3f8a0ef7a92a87a39567ce3ac4",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao governo do Maranhão, Eduardo Braide (PSD), apresentou suas propostas em entrevista nesta sexta-feira (18).",
+        "date_excerpt": "O candidato ao governo do Maranhão, Eduardo Braide (PSD), apresentou suas propostas em entrevista nesta sexta-feira (18).",
+        "fetched_url": "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/09/18/eduardo-braide-destaca-atuacao-no-hospital-da-crianca-propoe-reduzir-icms-e-extinguir-secretarias-no-ma.ghtml",
+        "method": "codex_source_review"
       }
     }
   ]
