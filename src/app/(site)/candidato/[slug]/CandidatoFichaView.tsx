@@ -47,6 +47,7 @@ import {
 } from "@/lib/pesquisas-eleitorais"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { getProgramaGovernoManifesto } from "@/lib/programa-governo-server"
+import { getCompromissoEvidenciasPublicas } from "@/lib/compromisso-evidencia-server"
 import { loadSenadoRunningMates } from "@/lib/senado-running-mates"
 
 const getFicha = (slug: string) => getCandidatoBySlugResource(slug)
@@ -113,6 +114,13 @@ export async function CandidatoFichaView({
       : Promise.resolve(null),
     getCandidatoNavResource(ficha.cargo_disputado, navEstado),
   ])
+  // Evidências só existem para programa aprovado; falha de leitura vira lista vazia.
+  const compromissoEvidencias = programaGoverno?.estado === "aprovado"
+    ? await getCompromissoEvidenciasPublicas(
+        ficha.id,
+        `2026:${programaGoverno.fonte.cargo}:${programaGoverno.fonte.uf}:${programaGoverno.fonte.sqCandidato}`,
+      )
+    : undefined
   const runningMates =
     ficha.cargo_disputado === "Senador" && ficha.estado
       ? await loadSenadoRunningMates([ficha.slug], ficha.estado)
@@ -472,6 +480,7 @@ export async function CandidatoFichaView({
         pesquisasEnabled={pesquisasEnabled}
         pesquisas={pesquisas}
         programaGoverno={programaGoverno}
+        compromissoEvidencias={compromissoEvidencias}
         senadoRunningMates={runningMates}
       />
 

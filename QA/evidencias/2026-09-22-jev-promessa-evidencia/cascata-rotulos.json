@@ -1,0 +1,286 @@
+{
+  "schema_version": "promessa-cascata-rotulos-v1",
+  "rotulador": "modelo principal da sessao, sem ver respostas de modelo",
+  "rotulos": {
+    "846f73500263c553": {
+      "rotulo": "relacionada",
+      "nota": "nacionalizacao de bancos x posicao contra privatizacoes e por reestatizacao"
+    },
+    "614628200de033d9": {
+      "rotulo": "relacionada",
+      "nota": "tema de titulo amplo saude x vacinacao"
+    },
+    "a049eb7e6a458d5d": {
+      "rotulo": "relacionada",
+      "nota": "jornada x protecao trabalhista"
+    },
+    "6cf1514cab248dd8": {
+      "rotulo": "relacionada",
+      "nota": "atencao primaria x cuidado comunitario de idosos"
+    },
+    "0fc12cd23bdc5e51": {
+      "rotulo": "nao_relacionada",
+      "nota": "acesso a saude x beneficio previdenciario por morte na covid"
+    },
+    "5cc0e84e21d9271d": {
+      "rotulo": "relacionada",
+      "nota": "renda minima estadual x transferencia de renda; mesma direcao, medida diferente"
+    },
+    "63a87b6e47066ab0": {
+      "rotulo": "relacionada",
+      "nota": "iniciativas para mulheres x unidade de atendimento a saude da mulher"
+    },
+    "c722c926049d2ea6": {
+      "rotulo": "relacionada",
+      "nota": "fiscalizacao ambiental x destinacao de multas ambientais"
+    },
+    "d02c37a3fa069b58": {
+      "rotulo": "nao_relacionada",
+      "nota": "fila de saude x frase generica sobre saude"
+    },
+    "bd1b2c7ea23a34cf": {
+      "rotulo": "sustenta",
+      "nota": "reforma da previdencia com idade minima x posicao favoravel a essa reforma"
+    },
+    "e7f89a5d8da350be": {
+      "rotulo": "relacionada",
+      "nota": "tema amplo seguranca publica x proposicao penal"
+    },
+    "4b8f32b616248cd4": {
+      "rotulo": "relacionada",
+      "nota": "jornada x protecao trabalhista"
+    },
+    "1160afa10babbf4c": {
+      "rotulo": "relacionada",
+      "nota": "desigualdade e renda x politica do salario minimo"
+    },
+    "a140144d1a3ac7a2": {
+      "rotulo": "relacionada",
+      "nota": "tema amplo saude x vigilancia sanitaria"
+    },
+    "7fb20811ddacde00": {
+      "rotulo": "relacionada",
+      "nota": "fim da 6x1 x revogacao das reformas"
+    },
+    "03e91da8efe91279": {
+      "rotulo": "relacionada",
+      "nota": "politica trabalhista x oposicao a reformas da previdencia"
+    },
+    "54ca0aa720a4e0ef": {
+      "rotulo": "relacionada",
+      "nota": "tema amplo cultura x patrimonio historico"
+    },
+    "0e5ae4dd33c887db": {
+      "rotulo": "sustenta",
+      "nota": "fila unica digital x transparencia das filas do SUS"
+    },
+    "232c46f5e77d7f3f": {
+      "rotulo": "relacionada",
+      "nota": "crime organizado x regime diferenciado para faccoes"
+    },
+    "92a2a076b4bf1117": {
+      "rotulo": "relacionada",
+      "nota": "gestao fiscal x controle e transparencia orcamentaria"
+    },
+    "e3b45851f9da7767": {
+      "rotulo": "sustenta",
+      "nota": "desmilitarizacao das policias x fala defendendo desmilitarizacao"
+    },
+    "9688e9d302c65e29": {
+      "rotulo": "sustenta",
+      "nota": "revogar reformas trabalhistas x cobranca pela revogacao"
+    },
+    "08eee405f15dcb4e": {
+      "rotulo": "relacionada",
+      "nota": "acompanhamento da aprendizagem x promocao por serie"
+    },
+    "921b3676a5d86254": {
+      "rotulo": "relacionada",
+      "nota": "jornada x protecao trabalhista"
+    },
+    "33e5c85440736a29": {
+      "rotulo": "sustenta",
+      "nota": "emprego e jornada x programa que pede as mesmas medidas"
+    },
+    "045e254387866936": {
+      "rotulo": "relacionada",
+      "nota": "tema amplo saude x piso federal de gasto em saude"
+    },
+    "584f382ffda17892": {
+      "rotulo": "relacionada",
+      "nota": "jornada x revogacao da reforma trabalhista"
+    },
+    "9e58eb129d93a808": {
+      "rotulo": "nao_relacionada",
+      "nota": "crime organizado x falso testemunho; ligacao exige explicacao externa"
+    },
+    "9bdc96a926f36eaa": {
+      "rotulo": "relacionada",
+      "nota": "vestibular seriado x incentivo ao ingresso no ensino superior"
+    },
+    "57f91bd243a9763e": {
+      "rotulo": "relacionada",
+      "nota": "violencia com morte x politica contra violencia a mulher"
+    },
+    "5b1afeb7125b35cf": {
+      "rotulo": "relacionada",
+      "nota": "porta de saida do Bolsa Familia x regras do programa"
+    },
+    "8f3d9b129ccfb26a": {
+      "rotulo": "relacionada",
+      "nota": "crime organizado x bens de acusado de trafico"
+    },
+    "b159b9484ab70ba3": {
+      "rotulo": "nao_relacionada",
+      "nota": "financas estaduais x arcabouco fiscal federal; so a area fiscal"
+    },
+    "e0fc387a1f060167": {
+      "rotulo": "sustenta",
+      "nota": "Bolsa Familia no programa x sancao da lei que o recriou"
+    },
+    "66b9a9e16a93860c": {
+      "rotulo": "relacionada",
+      "nota": "seguranca publica x regime prisional"
+    },
+    "52f27d1ce0cc7fe7": {
+      "rotulo": "nao_relacionada",
+      "nota": "autonomia da policia penal x operacoes integradas; tema estreito"
+    },
+    "75a3c17a7e1263ed": {
+      "rotulo": "nao_relacionada",
+      "nota": "estrategia fiscal x isencao previdenciaria"
+    },
+    "538f32d2559d7a66": {
+      "rotulo": "nao_relacionada",
+      "nota": "dados para prevencao de desastres x pena de crime de poluicao"
+    },
+    "0bb21fae3cef9d7d": {
+      "rotulo": "nao_relacionada",
+      "nota": "regionalizacao da alta complexidade x incentivo a filantropicos; ligacao exige explicacao externa"
+    },
+    "22a1f55bdae4c830": {
+      "rotulo": "sustenta",
+      "nota": "revogar reformas x declaracao pela revogacao"
+    },
+    "34c7a6bc5fa74754": {
+      "rotulo": "nao_relacionada",
+      "nota": "atencao primaria x imposto de renda de honorarios"
+    },
+    "95a156812250e5a0": {
+      "rotulo": "sustenta",
+      "nota": "cancelar privatizacoes x defesa do cancelamento"
+    },
+    "fc2a73a63cc716d0": {
+      "rotulo": "relacionada",
+      "nota": "tema amplo seguranca x legitima defesa de agente"
+    },
+    "942fce3150227873": {
+      "rotulo": "nao_relacionada",
+      "nota": "carteira de investimentos x transporte emergencial na covid"
+    },
+    "910b42a168df13fc": {
+      "rotulo": "nao_relacionada",
+      "nota": "salario de professores x critica ao arcabouco"
+    },
+    "909c15539304f105": {
+      "rotulo": "relacionada",
+      "nota": "reduzir juros e impostos x teto como forma de baixar juros"
+    },
+    "d11b286b708e67be": {
+      "rotulo": "nao_relacionada",
+      "nota": "plano de turismo x titulo honorifico de municipio (ato simbolico)"
+    },
+    "06ab49d0f5b72176": {
+      "rotulo": "sustenta",
+      "nota": "fim do teto x defesa do fim do teto"
+    },
+    "1b422fb8ac93a813": {
+      "rotulo": "relacionada",
+      "nota": "politica fiscal x sancao do arcabouco"
+    },
+    "6c396caddf02dc6e": {
+      "rotulo": "nao_relacionada",
+      "nota": "reforma administrativa x prestacao de contas de confederacoes"
+    },
+    "266c19294b11ef3e": {
+      "rotulo": "nao_relacionada",
+      "nota": "BRT x fala generica sobre servicos"
+    },
+    "a86e253dc6d89a81": {
+      "rotulo": "nao_relacionada",
+      "nota": "filas do SUS x emenda constitucional sem ligacao visivel"
+    },
+    "256efc32044ed4d2": {
+      "rotulo": "nao_relacionada",
+      "nota": "portfolio de infraestrutura x pedagio na covid"
+    },
+    "4cd7353bc38db675": {
+      "rotulo": "nao_relacionada",
+      "nota": "sociobiodiversidade x declaracao de utilidade publica (ato simbolico)"
+    },
+    "1d2fc2bb3ef4ba6b": {
+      "rotulo": "sustenta",
+      "nota": "estatizacao x reestatizacao de privatizadas"
+    },
+    "68aa4a99fbc3855d": {
+      "rotulo": "nao_relacionada",
+      "nota": "educacao tecnologica x anexo do PNE sem ligacao visivel"
+    },
+    "e6f2b0b49a7a8faa": {
+      "rotulo": "relacionada",
+      "nota": "fim de PPP na educacao x escola como bem publico"
+    },
+    "8e0e7ba5416815ea": {
+      "rotulo": "relacionada",
+      "nota": "tema amplo seguranca x excludente de ilicitude"
+    },
+    "0c2212c69cb738f0": {
+      "rotulo": "nao_relacionada",
+      "nota": "corredor multimodal x nome de viaduto (ato simbolico)"
+    },
+    "608b7426a6e29d6a": {
+      "rotulo": "relacionada",
+      "nota": "tema amplo seguranca x fala sobre seguranca que protege a vida"
+    },
+    "ecea278b0b2c8830": {
+      "rotulo": "relacionada",
+      "nota": "ajuste fiscal x apoio ao teto de gastos"
+    },
+    "10db21bf3d79ce3e": {
+      "rotulo": "relacionada",
+      "nota": "protecao da mulher x voto por comissao da mulher"
+    },
+    "085ef69a2ffc8395": {
+      "rotulo": "relacionada",
+      "nota": "transparencia de dados e contratos x transparencia orcamentaria"
+    },
+    "e65202862add0915": {
+      "rotulo": "nao_relacionada",
+      "nota": "estrategia fiscal x reforma tributaria"
+    },
+    "59e8e7424dcf4061": {
+      "rotulo": "nao_relacionada",
+      "nota": "construcao de escolas x licitacao de obras de emendas"
+    },
+    "58495111b5894893": {
+      "rotulo": "nao_relacionada",
+      "nota": "hospitais regionais x saude do idoso; tema estreito"
+    },
+    "04cf3036c1362d5e": {
+      "rotulo": "relacionada",
+      "nota": "estatizacao do sistema financeiro x fim da autonomia do BC"
+    },
+    "71ff3d79ee09f303": {
+      "rotulo": "nao_relacionada",
+      "nota": "classificacao fiscal x IPI para residuos"
+    },
+    "3d07f6d63f0a3384": {
+      "rotulo": "nao_relacionada",
+      "nota": "regulacao da saude x extincao de cargos"
+    },
+    "a93e7af488d1663b": {
+      "rotulo": "relacionada",
+      "nota": "tema amplo seguranca x regras de armas"
+    }
+  }
+}

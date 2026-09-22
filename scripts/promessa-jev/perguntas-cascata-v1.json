@@ -1,0 +1,34 @@
+{
+  "objeto_concreto": {
+    "type": "noul",
+    "instructions": "A evidência em `evidencia.conteudo` trata do mesmo assunto que `compromisso.titulo` nomeia, e não apenas da mesma área ampla? Aplique `politicas`.",
+    "criteria": {
+      "true": "Fala, vota ou propõe algo sobre o assunto nomeado no título. Para título amplo (por exemplo \"Segurança pública\"), qualquer medida claramente dentro desse assunto conta.",
+      "false": "Trata de outro assunto, ou só divide a área maior com um título estreito (por exemplo título \"Saúde digital\" e evidência sobre remédios de alto custo)."
+    }
+  },
+  "ato_simbolico": {
+    "type": "noul",
+    "instructions": "A evidência em `evidencia.conteudo` é um ato só simbólico ou nominal, sem medida sobre o assunto?",
+    "criteria": {
+      "true": "Dar nome a via, viaduto, prédio ou obra; criar dia, semana ou mês comemorativo; conceder título honorífico a pessoa ou município; declarar entidade de utilidade pública; homenagem.",
+      "false": "Cria, muda, financia ou regula algo; ou é voto, fala ou posição sobre uma política."
+    }
+  },
+  "precisa_explicacao": {
+    "type": "noul",
+    "instructions": "Um leitor comum, vendo só `compromisso.titulo` e `evidencia.conteudo`, precisaria de explicação externa para entender por que os dois estão ligados?",
+    "criteria": {
+      "true": "A ligação depende de conhecimento que não está no texto, ou de uma cadeia de raciocínio (por exemplo, imposto de importação ligado a orçamento participativo).",
+      "false": "A ligação é visível na leitura direta dos dois textos."
+    }
+  },
+  "frase_generica": {
+    "type": "noul",
+    "instructions": "A evidência em `evidencia.conteudo` é só uma frase genérica sobre a área, sem conteúdo específico sobre uma política ou medida?",
+    "criteria": {
+      "true": "Frases como \"saúde é prioridade\", \"precisamos cuidar melhor das pessoas\", \"serei eleito\".",
+      "false": "Menciona uma política, medida, programa, regra ou voto concreto."
+    }
+  }
+}
