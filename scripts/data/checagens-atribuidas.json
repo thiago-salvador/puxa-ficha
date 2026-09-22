@@ -55,5 +55,265 @@
       "reviewerKind": "model_principal",
       "reviewedAt": "2026-09-22T11:48:45Z"
     }
+  },
+  {
+    "id": "lupa-haddad-crimes-20260901",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "A afirmação de Haddad de que só 5% dos crimes em São Paulo são esclarecidos.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-31",
+      "context": "entrevista Roda Viva, TV Cultura",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "INSUSTENTÁVEL",
+    "summary": "A Lupa classificou como INSUSTENTÁVEL: o percentual é associado a crimes patrimoniais em um recorte de 2012 a 2022 e não sustenta uma taxa para todos os crimes atuais.",
+    "publishedAt": "2026-09-01",
+    "originalUrl": "https://www.agencialupa.org/checagem/2026/09/01/no-roda-viva-haddad-erra-sobre-bets-e-generaliza-dado-sobre-crimes-em-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "d96736c78178971d4c495b040067700b9b774140a657b0824a1ca7b27f0e7cde",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "INSUSTENTÁVEL",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "entrevista Roda Viva, TV Cultura em 2026-08-31; autoria, afirmação, recorte e avaliação conferidos no trecho original preservado."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/checagem/2026/09/01/no-roda-viva-haddad-erra-sobre-bets-e-generaliza-dado-sobre-crimes-em-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://vejasp.abril.com.br/cidades/policia-so-esclarece-4-dos-furtos-por-ano-em-sao-paulo/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://soudapaz.org/documentos/diagnostico-sobre-a-investigacao-de-homicidios-no-brasil/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://uploads.agencialupa.org/2026/09/resposta-haddad-seguranca.png",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://uploads.agencialupa.org/2026/09/5_1660082556447.pdf",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:29:18.588Z"
+    }
+  },
+  {
+    "id": "lupa-haddad-bets-20260901",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "A afirmação de Haddad de que o governo não conhecia a dimensão do mercado de bets quando assumiu.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-31",
+      "context": "entrevista Roda Viva, TV Cultura",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa manteve o rótulo FALSO, citando estimativas públicas anteriores e do início do mandato, em 2023. A assessoria contestou: disse que a fala tratava do conhecimento do governo sobre o tamanho real do mercado e que o primeiro relatório do Banco Central saiu em 2024.",
+    "publishedAt": "2026-09-01",
+    "originalUrl": "https://www.agencialupa.org/checagem/2026/09/01/no-roda-viva-haddad-erra-sobre-bets-e-generaliza-dado-sobre-crimes-em-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "d96736c78178971d4c495b040067700b9b774140a657b0824a1ca7b27f0e7cde",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "entrevista Roda Viva, TV Cultura em 2026-08-31; autoria, afirmação, recorte e avaliação conferidos no trecho original preservado."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/checagem/2026/09/01/no-roda-viva-haddad-erra-sobre-bets-e-generaliza-dado-sobre-crimes-em-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://www.lance.com.br/lance-negocios/mercado-de-apostas-esportivas-mira-faturamento-bilionario-no-brasil-em-2023.html",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://neofeed.com.br/negocios/o-que-esta-em-jogo-no-mercado-de-r-100-bilhoes-das-bets-no-brasil/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://revistacasper.casperlibero.edu.br/sem-categoria/apostas-de-risco/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://sportradar.com/wp-content/uploads/2023/03/Betting-Corruption-And-Match-Fixing-In-2022.pdf",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14790.htm",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.estadao.com.br/einvestidor/financas-pessoais/vicio-em-apostas-online-dividas-depressao/?srsltid=AfmBOorBpyyCOPY0TPReC0gpeJSBSiMB5TBr5IGXUk5EOME2QNlpF2ep",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://uploads.agencialupa.org/2026/09/Foto.pdf",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:29:18.591Z"
+    }
+  },
+  {
+    "id": "lupa-tarcisio-seguranca-20260603",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que São Paulo tinha os menores indicadores criminais e era o estado mais seguro do Brasil.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-06-01",
+      "context": "entrevista Pânico/Jovem Pan",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALTA CONTEXTO",
+    "summary": "Segundo a Lupa, São Paulo tinha a menor taxa de homicídios registrados em 2024, mas perdia essa posição quando consideradas as estimativas de homicídios ocultos. Outros indicadores, como roubos de veículos e celulares, também não sustentavam a generalização.",
+    "publishedAt": "2026-06-03",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/06/03/haddad-e-tarcisio-checamos-declaracoes-dos-pre-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1a49f7e45d2905b76b24248d9203958938ba3988d00e1500d931244f3b475f6c",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALTA CONTEXTO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "entrevista Pânico/Jovem Pan em 2026-06-01; autoria, afirmação, recorte e avaliação conferidos no trecho original preservado."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/06/03/haddad-e-tarcisio-checamos-declaracoes-dos-pre-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://forumseguranca.org.br/wp-content/uploads/2026/05/atlas-violencia-2026-relatorio-completo.pdf",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://forumseguranca.org.br/wp-content/uploads/2025/09/anuario-2025.pdf",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://uploads.lupa.news/2026/06/Captura-de-Tela-2026-06-03-as-13.58.20.png",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:29:18.591Z"
+    }
+  },
+  {
+    "id": "lupa-tarcisio-saneamento-20260603",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que Francisco Morato, Franco da Rocha, Caieiras e Cajamar não tratavam esgoto em 2022 e que, na data da entrevista, tratavam 65%.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-06-01",
+      "context": "entrevista Pânico/Jovem Pan",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALTA CONTEXTO",
+    "summary": "A Lupa apontou que Caieiras tratava 29,6% do esgoto em 2022; nos outros três municípios, os índices eram baixos, mas não zero. A agência também destacou a mudança metodológica das bases de saneamento. O rótulo foi mantido após a correção dos dados inicialmente publicados.",
+    "publishedAt": "2026-06-03",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/06/03/haddad-e-tarcisio-checamos-declaracoes-dos-pre-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1a49f7e45d2905b76b24248d9203958938ba3988d00e1500d931244f3b475f6c",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALTA CONTEXTO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "entrevista Pânico/Jovem Pan em 2026-06-01; autoria, afirmação, recorte e avaliação conferidos no trecho original preservado."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/06/03/haddad-e-tarcisio-checamos-declaracoes-dos-pre-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://uploads.lupa.news/2026/06/Planilha_AE_Indicadores_SABESP-35503000-1.xls",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.aguaesaneamento.org.br/",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [
+      {
+        "version": "ERRAMOS",
+        "publishedAt": "2026-06-03",
+        "summary": "A Lupa substituiu percentuais inicialmente atribuídos a outra base por dados do SNIS com data-base de 2022 e manteve a etiqueta.",
+        "finalLabel": "FALTA CONTEXTO",
+        "url": "https://www.agencialupa.org/noticias/2026/06/03/haddad-e-tarcisio-checamos-declaracoes-dos-pre-candidatos-ao-governo-de-sp/"
+      }
+    ],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:29:18.591Z"
+    }
   }
 ]

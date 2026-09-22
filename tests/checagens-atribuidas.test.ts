@@ -114,6 +114,19 @@ test("publica somente o pacote aprovado com identidade exata", () => {
   assert.equal(checks[0].corrections[0].version, "v2")
 })
 
+test("preserva fonte nominal do veículo sem inventar URL", () => {
+  const check = baseCheck()
+  check.sources = [{ title: "Resposta da assessoria citada na matéria", origin: "cited_by_publisher" }]
+  assert.deepEqual(parseAttributedFactCheck(check)?.sources, check.sources)
+  check.sources = [{ title: "Fonte sem URL", origin: "consulted_by_us" }]
+  assert.equal(parseAttributedFactCheck(check), null)
+  check.sources = [{ origin: "cited_by_publisher" }]
+  assert.equal(parseAttributedFactCheck(check), null)
+  check.sources = [{ title: "URL inválida", origin: "cited_by_publisher", url: "javascript:alert(1)" }]
+  assert.equal(parseAttributedFactCheck(check), null)
+  assert.equal(parseAttributedFactCheck({ ...baseCheck(), sourcePolicyVersion: "unknown" }), null)
+})
+
 test("falha fechado para identidade trocada, cargo ou UF divergente", () => {
   const check = baseCheck()
   for (const identity of [

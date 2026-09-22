@@ -24,8 +24,8 @@ function SourceList({ label, sources }: { label: string; sources: AttributedChec
       </h4>
       <ul className="mt-1 space-y-1">
         {sources.map((source) => (
-          <li key={source.url}>
-            <a
+          <li key={source.url ?? source.title}>
+            {source.url ? <a
               href={source.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -33,7 +33,11 @@ function SourceList({ label, sources }: { label: string; sources: AttributedChec
             >
               {source.title ?? source.url}
               <ExternalLink className="size-3" aria-hidden="true" />
-            </a>
+            </a> : (
+              <span className="text-[length:var(--text-caption)] text-foreground">
+                {source.title} <span className="text-muted-foreground">(sem link individual na checagem)</span>
+              </span>
+            )}
           </li>
         ))}
       </ul>

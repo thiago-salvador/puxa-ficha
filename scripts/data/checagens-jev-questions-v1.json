@@ -1,0 +1,42 @@
+{
+  "atribuicao": {
+    "type": "noul",
+    "instructions": "A checagem original em `source` atribui explicitamente a afirmação literal `item.claim` à pessoa identificada em `candidate`, no evento e recorte de `item.context`? Examine pergunta, turnos adjacentes, datas e correções disponíveis. Julgue a atribuição documental, não a verdade da afirmação.",
+    "criteria": {
+      "true": "A fonte original identifica a mesma pessoa como autora da afirmação neste contexto. Nome citado como objeto, paráfrase atribuída a outro locutor ou checagem de terceiro não basta.",
+      "false": "A fonte identifica outro autor, desmente que a pessoa tenha dito a frase, não identifica o autor ou falta contexto necessário. Incerteza não permite associação."
+    }
+  },
+  "fidelidade": {
+    "type": "noul",
+    "instructions": "O resumo próprio `item.summary` preserva o sentido e as ressalvas da avaliação da agência em `source`, incluindo o rótulo `item.originalLabel`, datas, unidades, território, denominador, negação e correções? Compare somente esta afirmação com a seção correspondente; outras frases da matéria não herdam o mesmo rótulo.",
+    "criteria": {
+      "true": "Resumo fiel à conclusão atribuída ao veículo, com todas as ressalvas materialmente necessárias, sem ampliar certeza, escopo, causalidade ou autoria.",
+      "false": "Resumo ou rótulo contradiz, omite ressalva decisiva, extrapola ou não pode ser conferido no texto disponível."
+    }
+  },
+  "contexto_suficiente": {
+    "type": "noul",
+    "instructions": "O pacote `candidate`, `item`, `source` e `limitations` contém contexto suficiente e íntegro para revisar a importação desta checagem atribuída, sem completar informação ausente por conhecimento externo? Não avalie verdade independente.",
+    "criteria": {
+      "true": "Afirmação, autoria, seção integral relevante, conclusão, data, URL, recorte e status de correções estão disponíveis; nenhuma limitação impede a revisão.",
+      "false": "Trecho truncado, autoria ambígua, data/recorte ausente, correção não resolvida ou outra lacuna impede a revisão."
+    }
+  },
+  "aprofundamento": {
+    "type": "noul",
+    "instructions": "Há em `source` e `limitations` uma lacuna concreta, contradição ou correção que exige aprofundar a conferência antes de importar `item`? A apuração editorial do veículo pode ser reaproveitada; não exigir nova investigação apenas por ser de terceiro.",
+    "criteria": {
+      "true": "Existe lacuna ou conflito específico que pode mudar atribuição, rótulo, período ou fidelidade do resumo.",
+      "false": "O pacote basta para importar a avaliação atribuída; não há lacuna concreta indicada."
+    }
+  },
+  "equivalencia": {
+    "type": "noul",
+    "instructions": "A ocorrência em `comparison` e a afirmação checada em `item`, considerando `source` e `candidate`, expressam a mesma proposição factual e o mesmo recorte? Se comparison for null, responda não. Mudança de número, período, território, denominador, negação, causalidade ou sentido impede equivalência. Autores diferentes nunca permitem dizer que a agência checou o novo autor.",
+    "criteria": {
+      "true": "Há equivalência material demonstrável em todos os recortes relevantes; nenhuma diferença exige nova avaliação.",
+      "false": "Há diferença material, ausência de comparação, contexto insuficiente ou dúvida sobre equivalência. Preservar casos incertos para revisão."
+    }
+  }
+}
