@@ -18347,5 +18347,1680 @@
       "reviewerKind": "model_principal",
       "reviewedAt": "2026-09-22T15:09:25.744Z"
     }
+  },
+  {
+    "id": "lupa-juliana-brizola-2024-10-02-01",
+    "candidate_id": "7a6a6475-0691-4823-9104-5055ca589405",
+    "candidate_slug": "juliana-brizola",
+    "candidate_name": "Juliana Brizola",
+    "office": "Governador",
+    "uf": "RS",
+    "claim": "Juliana Brizola afirmou que o Anuário de Segurança Pública mostrava dois celulares roubados por hora em via pública no Rio Grande do Sul em 2023.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-12",
+      "context": "Juliana Brizola (PDT), candidata à prefeita de Porto Alegre, em post no TikTok, em 12 de agosto",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Juliana Brizola"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa classificou a afirmação como FALSO: a postagem misturou roubo e furto e ignorou que 21,1% dos roubos ocorreram fora das vias públicas. O cálculo conferido foi de 10.926 roubos em vias públicas, cerca de 1,2 por hora.",
+    "publishedAt": "2024-10-02T19:41:30+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "51e9bc36181843fb451b39c7787854face785d49a912141708f75452516aaed2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Juliana Brizola",
+      "contextExcerpt": "Juliana Brizola (PDT), candidata à prefeita de Porto Alegre, em post no TikTok, em 12 de agosto"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+        "origin": "consulted_by_us",
+        "title": "Pesquisas e efeitos da enchente: veja erros e acertos de Juliana Brizola no 1° turno em Porto Alegre • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://apidspace.forumseguranca.org.br/server/api/core/bitstreams/1d896734-f7da-46a7-9b23-906b6df3e11b/content#page=45",
+        "origin": "cited_by_publisher",
+        "title": "página 45"
+      },
+      {
+        "url": "https://apidspace.forumseguranca.org.br/server/api/core/bitstreams/1d896734-f7da-46a7-9b23-906b6df3e11b/content#page=87",
+        "origin": "cited_by_publisher",
+        "title": "página 87"
+      },
+      {
+        "url": "https://apidspace.forumseguranca.org.br/server/api/core/bitstreams/1d896734-f7da-46a7-9b23-906b6df3e11b/content#page=88",
+        "origin": "cited_by_publisher",
+        "title": "página 88"
+      },
+      {
+        "url": "https://assets.lupa.news/172/17277459.webp",
+        "origin": "cited_by_publisher",
+        "title": "nota"
+      },
+      {
+        "url": "https://gauchazh.clicrbs.com.br/seguranca/noticia/2024/07/dois-celulares-foram-levados-por-criminosos-a-cada-hora-em-2023-no-rs-diz-estudo-clz8tn0ce00a30127gbiq9apo.html#:~:text=Os%20dados%20do%20Anu",
+        "origin": "cited_by_publisher",
+        "title": "30 de julho"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:47:43.796Z"
+    }
+  },
+  {
+    "id": "lupa-juliana-brizola-2024-10-02-02",
+    "candidate_id": "7a6a6475-0691-4823-9104-5055ca589405",
+    "candidate_slug": "juliana-brizola",
+    "candidate_name": "Juliana Brizola",
+    "office": "Governador",
+    "uf": "RS",
+    "claim": "Juliana Brizola afirmou que não parava de crescer nas pesquisas e caminhava para o segundo turno.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-19",
+      "context": "Juliana Brizola (PDT), candidata à prefeita de Porto Alegre, em post no Instagram, em 19 de agosto",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Juliana Brizola"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa classificou a afirmação como FALSO: o gráfico reunia quatro pesquisas com amostras, métodos, candidatos e margens de erro diferentes, tornando a comparação imprecisa e enganosa.",
+    "publishedAt": "2024-10-02T19:41:30+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "51e9bc36181843fb451b39c7787854face785d49a912141708f75452516aaed2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Juliana Brizola",
+      "contextExcerpt": "Juliana Brizola (PDT), candidata à prefeita de Porto Alegre, em post no Instagram, em 19 de agosto"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+        "origin": "consulted_by_us",
+        "title": "Pesquisas e efeitos da enchente: veja erros e acertos de Juliana Brizola no 1° turno em Porto Alegre • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.cnnbrasil.com.br/eleicoes/pesquisa-atlasintel-porto-alegre-junho/#:~:text=A%20pesquisa%20Atlas/CNN%20foi%20registrada%20na%20Justi%C3%A7a%20Eleitoral%20sob%20o%20n%C3%BAmero%20RS%2D09253/2024%20e%20entrevistou%201.798%20eleitores%2C%20por%20meio%20do%20Atlas%20RDR%2C%20entre%209%20e%2014%20de%20junho.%20A%20margem%20de%20erro%20%C3%A9%20de%20dois%20pontos%20percentuais%20para%20mais%20ou%20para%20menos%2C%20e%20o%20n%C3%ADvel%20de%20confian%C3%A7a%2C%20de%2095%25.",
+        "origin": "cited_by_publisher",
+        "title": "entrevistou 1.798 eleitores"
+      },
+      {
+        "url": "https://www.cnnbrasil.com.br/eleicoes/pesquisa-atlas-cnn-entenda-como-funciona-metodologia-do-levantamento/#:~:text=%E2%80%9CRecrutamento%20Digital%20Aleat%C3%B3rio%20(Atlas%20RDR)%E2%80%9D%2C%20na%20qual%20os%20entrevistados%20s%C3%A3o%20selecionados%20durante%20a%20navega%C3%A7%C3%A3o%20de%20rotina%20pela%20internet.",
+        "origin": "cited_by_publisher",
+        "title": "entrevistados são selecionados durante a navegação de rotina pela internet"
+      },
+      {
+        "url": "https://www.cnnbrasil.com.br/eleicoes/pesquisa-atlasintel-porto-alegre-junho/#:~:text=Maria%20do%20Ros%C3%A1rio%20(PT)%3A,Voto%20branco/nulo%3A%207%2C9%25.",
+        "origin": "cited_by_publisher",
+        "title": "Juliana Brizola (PDT), 8,2%"
+      },
+      {
+        "url": "https://exame.com/brasil/maria-do-rosario-tem-292-e-mello-28-em-porto-alegre-aponta-pesquisa-futura-inteligencia/#:~:text=A%20pesquisa%20Futura/100%25%20Cidades%20foi%20registrada%20no%20TSE%20como%20RS%2D04997/2024%20e%20ouviu%20800%20pessoas%20entre%20os%20dias%2017%20e%2021%20de%20junho%2C%20usando%20a%20abordagem%20CATI%20(entrevista%20telef%C3%B4nica%20assistida%20por%20computador).%20A%20margem%20de%20erro%20%C3%A9%20de%203%2C5%20pontos%20percentuais%20para%20um%20n%C3%ADvel%20de%20confian%C3%A7a%20de%2095%25.",
+        "origin": "cited_by_publisher",
+        "title": "800 pessoas"
+      },
+      {
+        "url": "https://exame.com/brasil/maria-do-rosario-tem-292-e-mello-28-em-porto-alegre-aponta-pesquisa-futura-inteligencia/#:~:text=Juliana%20Brizola%20(PDT)%3A%2010%25",
+        "origin": "cited_by_publisher",
+        "title": "Brizola, 10%"
+      },
+      {
+        "url": "https://static.poder360.com.br/2024/08/pesquisa-atlas-eleicoes-2024-prefeitura-porto-alegre-8-ago-2024.pdf#page=4",
+        "origin": "cited_by_publisher",
+        "title": "1.221 pessoas"
+      },
+      {
+        "url": "https://static.poder360.com.br/2024/08/pesquisa-atlas-eleicoes-2024-prefeitura-porto-alegre-8-ago-2024.pdf#page=3",
+        "origin": "cited_by_publisher",
+        "title": "recrutamento durante a navegação de rotina na web"
+      },
+      {
+        "url": "https://static.poder360.com.br/2024/08/pesquisa-atlas-eleicoes-2024-prefeitura-porto-alegre-8-ago-2024.pdf#page=7",
+        "origin": "cited_by_publisher",
+        "title": "Brizola, 12,7%"
+      },
+      {
+        "url": "https://www.correiodopovo.com.br/not%C3%ADcias/pol%C3%ADtica/elei%C3%A7%C3%B5es/elei%C3%A7%C3%B5es-2024-pesquisa-revela-cen%C3%A1rio-eleitoral-em-porto-alegre-na-largada-da-campanha-1.1524407#:~:text=A%20pesquisa%20foi%20realizada%20entre,19%20de%20agosto%20de%202024.",
+        "origin": "cited_by_publisher",
+        "title": "800 pessoas"
+      },
+      {
+        "url": "https://www.correiodopovo.com.br/not%C3%ADcias/pol%C3%ADtica/elei%C3%A7%C3%B5es/elei%C3%A7%C3%B5es-2024-pesquisa-revela-cen%C3%A1rio-eleitoral-em-porto-alegre-na-largada-da-campanha-1.1524407#:~:text=Juliana%20Brizola%20(PDT)%3A%2014%2C1%25",
+        "origin": "cited_by_publisher",
+        "title": "Brizola, 14,1%"
+      },
+      {
+        "url": "https://assets.lupa.news/172/17277458.webp",
+        "origin": "cited_by_publisher",
+        "title": "nota"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:47:43.801Z"
+    }
+  },
+  {
+    "id": "lupa-juliana-brizola-2024-10-02-03",
+    "candidate_id": "7a6a6475-0691-4823-9104-5055ca589405",
+    "candidate_slug": "juliana-brizola",
+    "candidate_name": "Juliana Brizola",
+    "office": "Governador",
+    "uf": "RS",
+    "claim": "Juliana Brizola afirmou que era a segunda colocada em potencial de voto na pesquisa Quaest divulgada em agosto de 2024.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-27",
+      "context": "Juliana Brizola (PDT), candidata à prefeita de Porto Alegre, em post no Instagram, em 27 de agosto",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Juliana Brizola"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALTA CONTEXTO",
+    "summary": "A Lupa marcou FALTA CONTEXTO: na pesquisa Quaest, Brizola tinha 43% e Maria do Rosário 42%, mas a margem de erro de três pontos produzia empate técnico; o post não informava essa ressalva.",
+    "publishedAt": "2024-10-02T19:41:30+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "51e9bc36181843fb451b39c7787854face785d49a912141708f75452516aaed2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALTA CONTEXTO",
+      "speakerIdentity": "Juliana Brizola",
+      "contextExcerpt": "Juliana Brizola (PDT), candidata à prefeita de Porto Alegre, em post no Instagram, em 27 de agosto"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+        "origin": "consulted_by_us",
+        "title": "Pesquisas e efeitos da enchente: veja erros e acertos de Juliana Brizola no 1° turno em Porto Alegre • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2024/08/pesquisa-quaest-para-a-prefeitura-de-porto-alegre-mostra-melo-com-36-e-maria-do-rosario-com-31-cm0d02zfs001p01f1btc7kam0.html",
+        "origin": "cited_by_publisher",
+        "title": "Brizola e Rosário estão tecnicamente empatadas"
+      },
+      {
+        "url": "https://assets.lupa.news/172/17277457.webp",
+        "origin": "cited_by_publisher",
+        "title": "nota"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:47:43.806Z"
+    }
+  },
+  {
+    "id": "lupa-juliana-brizola-2024-10-02-04",
+    "candidate_id": "7a6a6475-0691-4823-9104-5055ca589405",
+    "candidate_slug": "juliana-brizola",
+    "candidate_name": "Juliana Brizola",
+    "office": "Governador",
+    "uf": "RS",
+    "claim": "Juliana Brizola afirmou que Humaitá foi o bairro que mais demorou para a água da enchente baixar.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-09-10",
+      "context": "Juliana Brizola (PDT), candidata à prefeita de Porto Alegre, em entrevista à Rádio Gaúcha, em 10 de setembro de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Juliana Brizola"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "EXAGERADO",
+    "summary": "A Lupa classificou como EXAGERADO: moradores do Humaitá começaram a voltar em 28 de maio de 2024, enquanto Sarandi ainda permanecia alagado. A matéria também registra um alagamento pontual que persistiu por mais tempo na Rua Jacipuia, no bairro Guarujá.",
+    "publishedAt": "2024-10-02T19:41:30+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "51e9bc36181843fb451b39c7787854face785d49a912141708f75452516aaed2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "EXAGERADO",
+      "speakerIdentity": "Juliana Brizola",
+      "contextExcerpt": "Juliana Brizola (PDT), candidata à prefeita de Porto Alegre, em entrevista à Rádio Gaúcha, em 10 de setembro de 2024"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+        "origin": "consulted_by_us",
+        "title": "Pesquisas e efeitos da enchente: veja erros e acertos de Juliana Brizola no 1° turno em Porto Alegre • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.correiodopovo.com.br/not%C3%ADcias/cidades/redu%C3%A7%C3%A3o-da-%C3%A1gua-permite-retorno-de-moradores-ao-bairro-humait%C3%A1-e-vila-farrapos-em-porto-alegre-1.1498583",
+        "origin": "cited_by_publisher",
+        "title": "água havia começado a baixar"
+      },
+      {
+        "url": "https://www.cnnbrasil.com.br/nacional/chuvas-no-rs-em-porto-alegre-dique-extravasa-e-prefeito-pede-que-moradores-deixem-casas-no-sarandi/",
+        "origin": "cited_by_publisher",
+        "title": "dique que extravasou"
+      },
+      {
+        "url": "https://www.correiodopovo.com.br/not%C3%ADcias/cidades/ap%C3%B3s-reparo-em-dique-moradores-do-sarandi-esperam-voltar-para-casa-1.1498737",
+        "origin": "cited_by_publisher",
+        "title": "água acumulada no bairro"
+      },
+      {
+        "url": "https://www.metropoles.com/brasil/moradores-de-bairro-em-porto-alegre-estao-ha-26-dias-fora-de-casa",
+        "origin": "cited_by_publisher",
+        "title": "seguiam fora de casa"
+      },
+      {
+        "url": "https://cbn.globo.com/brasil/noticia/2024/05/31/apos-drenagem-moradores-do-bairro-humaita-retornam-para-suas-casas-em-porto-alegre.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "retorno dos moradores"
+      },
+      {
+        "url": "https://sul21.com.br/noticias/geral/2024/06/alagado-ha-um-mes-sarandi-revive-trauma-foram-tres-prefeitos-que-nem-olharam-para-o-bairro/",
+        "origin": "cited_by_publisher",
+        "title": "1º de junho"
+      },
+      {
+        "url": "https://sul21.com.br/noticias/geral/2024/06/bairro-guaruja-ainda-vive-em-maio-de-2024-e-um-pesadelo/",
+        "origin": "cited_by_publisher",
+        "title": "29 de junho"
+      },
+      {
+        "url": "https://diariogaucho.clicrbs.com.br/dia-a-dia/noticia/2024/07/dois-meses-apos-inicio-da-enchente-alagamento-persiste-em-rua-da-zona-sul-de-porto-alegre-clyd14ikx001q0161x9jivwml.html",
+        "origin": "cited_by_publisher",
+        "title": "8 de julho"
+      },
+      {
+        "url": "https://diariogaucho.clicrbs.com.br/dia-a-dia/noticia/2024/07/dois-meses-apos-inicio-da-enchente-alagamento-persiste-em-rua-da-zona-sul-de-porto-alegre-clyd14ikx001q0161x9jivwml.html#:~:text=Contatado%20pela%20reportagem,realiza%C3%A7%C3%A3o%20do%20servi%C3%A7o.",
+        "origin": "cited_by_publisher",
+        "title": "região não possui sistema de proteção contra inundações, como muros, diques e casas de bombas"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:47:43.810Z"
+    }
+  },
+  {
+    "id": "lupa-juliana-brizola-2024-10-02-06",
+    "candidate_id": "7a6a6475-0691-4823-9104-5055ca589405",
+    "candidate_slug": "juliana-brizola",
+    "candidate_name": "Juliana Brizola",
+    "office": "Governador",
+    "uf": "RS",
+    "claim": "Juliana Brizola afirmou que Porto Alegre tinha orçamento de R$ 11 bilhões.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-09-10",
+      "context": "Juliana Brizola (PDT), candidata à prefeita de Porto Alegre, em entrevista à Rádio Gaúcha, em 10 de setembro de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Juliana Brizola"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa classificou como VERDADEIRO: a Lei Orçamentária Anual de 2024 previa R$ 11,68 bilhões para o município.",
+    "publishedAt": "2024-10-02T19:41:30+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "51e9bc36181843fb451b39c7787854face785d49a912141708f75452516aaed2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Juliana Brizola",
+      "contextExcerpt": "Juliana Brizola (PDT), candidata à prefeita de Porto Alegre, em entrevista à Rádio Gaúcha, em 10 de setembro de 2024"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+        "origin": "consulted_by_us",
+        "title": "Pesquisas e efeitos da enchente: veja erros e acertos de Juliana Brizola no 1° turno em Porto Alegre • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://prefeitura.poa.br/smpae/noticias/orcamento-de-porto-alegre-para-2024-e-aprovado-na-camara-municipal",
+        "origin": "cited_by_publisher",
+        "title": "dezembro do ano passado"
+      },
+      {
+        "url": "https://prefeitura.poa.br/sites/default/files/usu_doc/sites/smpae/PLOA%20SITE.pdf#page=2",
+        "origin": "cited_by_publisher",
+        "title": "página 2"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:47:43.814Z"
+    }
+  },
+  {
+    "id": "lupa-juliana-brizola-2024-10-02-07",
+    "candidate_id": "7a6a6475-0691-4823-9104-5055ca589405",
+    "candidate_slug": "juliana-brizola",
+    "candidate_name": "Juliana Brizola",
+    "office": "Governador",
+    "uf": "RS",
+    "claim": "Juliana Brizola afirmou que cerca de 3 mil crianças não tinham vaga em creches de Porto Alegre em 2024.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-09-10",
+      "context": "Juliana Brizola (PDT), candidata à prefeita de Porto Alegre, em entrevista à Rádio Gaúcha, em 10 de setembro de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Juliana Brizola"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa classificou como VERDADEIRO: a Secretaria Municipal de Educação informou fila de espera de 3.077 vagas em creches.",
+    "publishedAt": "2024-10-02T19:41:30+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "51e9bc36181843fb451b39c7787854face785d49a912141708f75452516aaed2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Juliana Brizola",
+      "contextExcerpt": "Juliana Brizola (PDT), candidata à prefeita de Porto Alegre, em entrevista à Rádio Gaúcha, em 10 de setembro de 2024"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+        "origin": "consulted_by_us",
+        "title": "Pesquisas e efeitos da enchente: veja erros e acertos de Juliana Brizola no 1° turno em Porto Alegre • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://assets.lupa.news/172/17240070.webp",
+        "origin": "cited_by_publisher",
+        "title": "3.077 vagas"
+      },
+      {
+        "url": "https://gauchazh.clicrbs.com.br/educacao/educacao-basica/noticia/2024/09/em-porto-alegre-deficit-na-educacao-infantil-chega-a-3-mil-vagas-na-etapa-creche-cm0po4q5z00cq015bpi14kvwm.html",
+        "origin": "cited_by_publisher",
+        "title": "O número representa cerca de 8% do déficit de vagas em creches em todo o Rio Grande do Sul."
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:47:43.818Z"
+    }
+  },
+  {
+    "id": "lupa-juliana-brizola-2024-10-02-08",
+    "candidate_id": "7a6a6475-0691-4823-9104-5055ca589405",
+    "candidate_slug": "juliana-brizola",
+    "candidate_name": "Juliana Brizola",
+    "office": "Governador",
+    "uf": "RS",
+    "claim": "Juliana Brizola afirmou que cerca de 45 mil CNPJs de Porto Alegre haviam sido atingidos pelas enchentes de maio de 2024.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-09-10",
+      "context": "Juliana Brizola (PDT), candidata à prefeita de Porto Alegre, em entrevista à Rádio Gaúcha, em 10 de setembro de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Juliana Brizola"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa classificou como VERDADEIRO: balanço da Secretaria Municipal de Desenvolvimento Econômico e Turismo indicou 45.970 CNPJs diretamente impactados.",
+    "publishedAt": "2024-10-02T19:41:30+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "51e9bc36181843fb451b39c7787854face785d49a912141708f75452516aaed2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Juliana Brizola",
+      "contextExcerpt": "Juliana Brizola (PDT), candidata à prefeita de Porto Alegre, em entrevista à Rádio Gaúcha, em 10 de setembro de 2024"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+        "origin": "consulted_by_us",
+        "title": "Pesquisas e efeitos da enchente: veja erros e acertos de Juliana Brizola no 1° turno em Porto Alegre • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://prefeitura.poa.br/smdet/noticias/mais-de-45-mil-atividades-economicas-foram-impactadas-pela-enchente-na-capital#:~:text=Mais%20de%2045%20mil%20atividades%20econ%C3%B4micas%20foram%20impactadas%20pela%20enchente%20na%20Capital,-15%2F05%2F2024&text=A%20prefeitura%2C%20por%20meio%20da,que%20atingiu%2030%25%20da%20capital.",
+        "origin": "cited_by_publisher",
+        "title": "balanço divulgado em 15 de maio pela Secretaria Municipal de Desenvolvimento Econômico e Turismo (SMDET) de Porto Alegre indicou que 45.970 CNPJs"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:47:43.821Z"
+    }
+  },
+  {
+    "id": "lupa-juliana-brizola-2024-10-02-09",
+    "candidate_id": "7a6a6475-0691-4823-9104-5055ca589405",
+    "candidate_slug": "juliana-brizola",
+    "candidate_name": "Juliana Brizola",
+    "office": "Governador",
+    "uf": "RS",
+    "claim": "Juliana Brizola afirmou que a obra da creche Jardim Leopoldina II, em Porto Alegre, permanecia sem conclusão havia bastante tempo.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-09-10",
+      "context": "Juliana Brizola (PDT), candidata à prefeita de Porto Alegre, em entrevista à Rádio Gaúcha, em 10 de setembro de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Juliana Brizola"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa classificou como VERDADEIRO: a Escola Municipal de Educação Infantil Jardim Leopoldina II começou em 2013, deveria terminar em 2014 e continuava sem conclusão; houve promessas de retomada em 2022 e 2023.",
+    "publishedAt": "2024-10-02T19:41:30+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "51e9bc36181843fb451b39c7787854face785d49a912141708f75452516aaed2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Juliana Brizola",
+      "contextExcerpt": "Juliana Brizola (PDT), candidata à prefeita de Porto Alegre, em entrevista à Rádio Gaúcha, em 10 de setembro de 2024"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+        "origin": "consulted_by_us",
+        "title": "Pesquisas e efeitos da enchente: veja erros e acertos de Juliana Brizola no 1° turno em Porto Alegre • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://diariogaucho.clicrbs.com.br/dia-a-dia/noticia/2021/01/construcao-de-creche-esta-parada-ha-oito-anos-na-zona-norte-de-porto-alegre-14352084.html",
+        "origin": "cited_by_publisher",
+        "title": "obra da Escola Municipal de Educação Infantil Jardim Leopoldina II, iniciada em 2013"
+      },
+      {
+        "url": "https://gauchazh.clicrbs.com.br/grupo-de-investigacao/noticia/2022/06/pouco-mais-da-metade-das-18-mil-creches-do-programa-federal-proinfancia-no-rio-grande-do-sul-foi-concluida-cl4rhokwz0037019ic6khpegy.html",
+        "origin": "cited_by_publisher",
+        "title": "Programa Nacional de Reestruturação e Aquisição de Equipamentos para a Rede Escolar Pública de Educação Infantil (Proinfância)"
+      },
+      {
+        "url": "https://gauchazh.clicrbs.com.br/porto-alegre/noticia/2023/03/prefeitura-de-porto-alegre-promete-retomar-cinco-das-sete-obras-de-creches-inacabadas-clfmum5zp003z016bwmgddn0g.html",
+        "origin": "cited_by_publisher",
+        "title": "março de 2023, a prefeitura emitiu um novo cronograma"
+      },
+      {
+        "url": "https://prefeitura.poa.br/smed/escolas-municipais-de-educacao-infantil",
+        "origin": "cited_by_publisher",
+        "title": "a escola não foi inaugurada"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:47:43.825Z"
+    }
+  },
+  {
+    "id": "lupa-juliana-brizola-2024-10-02-10",
+    "candidate_id": "7a6a6475-0691-4823-9104-5055ca589405",
+    "candidate_slug": "juliana-brizola",
+    "candidate_name": "Juliana Brizola",
+    "office": "Governador",
+    "uf": "RS",
+    "claim": "Juliana Brizola afirmou que Maria do Rosário não tinha articulação porque o presidente vetou seu projeto de isenção de impostos para linha branca.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-09-25",
+      "context": "Juliana Brizola (PDT), candidata à prefeitura de Porto Alegre, em debate realizado pelo Correio do Povo/Rádio Guaíba no dia 25 de setembro de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Juliana Brizola"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALTA CONTEXTO",
+    "summary": "A Lupa marcou FALTA CONTEXTO: o projeto de Rosário e Gleisi foi aprovado pelo Congresso, mas o veto de Lula foi justificado tecnicamente pelos ministérios e pela Presidência, sem a conclusão ampla de falta de articulação.",
+    "publishedAt": "2024-10-02T19:41:30+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "51e9bc36181843fb451b39c7787854face785d49a912141708f75452516aaed2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALTA CONTEXTO",
+      "speakerIdentity": "Juliana Brizola",
+      "contextExcerpt": "Juliana Brizola (PDT), candidata à prefeitura de Porto Alegre, em debate realizado pelo Correio do Povo/Rádio Guaíba no dia 25 de setembro de 2024"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+        "origin": "consulted_by_us",
+        "title": "Pesquisas e efeitos da enchente: veja erros e acertos de Juliana Brizola no 1° turno em Porto Alegre • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2391619",
+        "origin": "cited_by_publisher",
+        "title": "O Projeto de Lei nº 4.731/2023"
+      },
+      {
+        "url": "https://www12.senado.leg.br/institucional/presidencia/noticia/rodrigo-pacheco/senado-aprova-projeto-de-isencao-de-ipi-a-eletrodomesticos-para-atingidos-por-enchentes-no-rio-grande-do-sul#:~:text=Bras%C3%ADlia%20%2D%20Na%20%C3%BAltima%20sess%C3%A3o%20antes,Rio%20Grande%20do%20Sul%20(PL",
+        "origin": "cited_by_publisher",
+        "title": "O texto foi aprovado pelo Congresso"
+      },
+      {
+        "url": "https://www.camara.leg.br/noticias/1094535-lula-veta-isencao-de-ipi-de-moveis-e-eletrodomesticos-para-vitimas-de-desastres",
+        "origin": "cited_by_publisher",
+        "title": "o presidente Luiz Inácio Lula da Silva (PT) vetou a iniciativa"
+      },
+      {
+        "url": "https://www.matinaljornalismo.com.br/matinal/newsletter/lula-veta-projeto-de-maria-do-rosario-de-isentar-moveis-e-linha-branca-de-ipi-em-areas-atingidas-por-catastrofes/",
+        "origin": "cited_by_publisher",
+        "title": "recomendação dos Ministérios da Fazenda e do Planejamento"
+      },
+      {
+        "url": "https://assets.lupa.news/174/17439247.pdf",
+        "origin": "cited_by_publisher",
+        "title": "De acordo com o texto do veto"
+      },
+      {
+        "url": "https://www.cartacapital.com.br/politica/por-que-lula-vetou-a-isencao-de-ipi-de-produtos-da-linha-branca-por-familias-atingidas-por-desastres-naturais/",
+        "origin": "cited_by_publisher",
+        "title": "Em nota enviada à imprensa,"
+      },
+      {
+        "url": "https://assets.lupa.news/174/17450999.webp",
+        "origin": "cited_by_publisher",
+        "title": "“O plano de governo da candidata Maria do Rosário conta, em sua grande maioria, com recursos do governo federal, o que requer articulação com o presidente Lula (PT). Ou seja, sem articulação não há viabilidade”"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:47:43.829Z"
+    }
+  },
+  {
+    "id": "lupa-juliana-brizola-2024-10-02-11",
+    "candidate_id": "7a6a6475-0691-4823-9104-5055ca589405",
+    "candidate_slug": "juliana-brizola",
+    "candidate_name": "Juliana Brizola",
+    "office": "Governador",
+    "uf": "RS",
+    "claim": "Juliana Brizola afirmou que Sebastião Melo, quando vereador, homenageou Che Guevara contra o imperialismo.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-09-25",
+      "context": "Juliana Brizola (PDT), candidata à prefeitura de Porto Alegre, em debate realizado pelo Correio do Povo/Rádio Guaíba no dia 25 de setembro de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Juliana Brizola"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa classificou como VERDADEIRO: em 2007, a Câmara Municipal lembrou os 40 anos da morte de Che, e Melo fez uma fala que rememorou a luta do líder socialista.",
+    "publishedAt": "2024-10-02T19:41:30+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "51e9bc36181843fb451b39c7787854face785d49a912141708f75452516aaed2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Juliana Brizola",
+      "contextExcerpt": "Juliana Brizola (PDT), candidata à prefeitura de Porto Alegre, em debate realizado pelo Correio do Povo/Rádio Guaíba no dia 25 de setembro de 2024"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+        "origin": "consulted_by_us",
+        "title": "Pesquisas e efeitos da enchente: veja erros e acertos de Juliana Brizola no 1° turno em Porto Alegre • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.camarapoa.rs.gov.br/noticias/camara-lembra-os-40-anos-da-morte-de-che-guevara",
+        "origin": "cited_by_publisher",
+        "title": "a Câmara Municipal de Porto Alegre lembrou os 40 anos de morte do guerrilheiro Che Guevara"
+      },
+      {
+        "url": "https://www.camarapoa.rs.gov.br/site/anais_sessoes_plenarias_antigas/2007/10/08/086a%20SO%20-%2008out2007.htm#:~:text=Primeiro%2C%20muito%20obrigado,o%20humanismo!%20(Palmas.)",
+        "origin": "cited_by_publisher",
+        "title": "como mostram as notas taquigráficas da sessão"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:47:43.832Z"
+    }
+  },
+  {
+    "id": "lupa-juliana-brizola-2024-10-02-12",
+    "candidate_id": "7a6a6475-0691-4823-9104-5055ca589405",
+    "candidate_slug": "juliana-brizola",
+    "candidate_name": "Juliana Brizola",
+    "office": "Governador",
+    "uf": "RS",
+    "claim": "Juliana Brizola afirmou que a gestão de educação teve quatro secretários em quatro anos.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-09-25",
+      "context": "Juliana Brizola (PDT), candidata à prefeitura de Porto Alegre, em debate realizado pelo Correio do Povo/Rádio Guaíba no dia 25 de setembro de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Juliana Brizola"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa classificou como VERDADEIRO: a gestão de Sebastião Melo teve quatro titulares na Secretaria de Educação, com as trocas e períodos descritos na matéria.",
+    "publishedAt": "2024-10-02T19:41:30+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "51e9bc36181843fb451b39c7787854face785d49a912141708f75452516aaed2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Juliana Brizola",
+      "contextExcerpt": "Juliana Brizola (PDT), candidata à prefeitura de Porto Alegre, em debate realizado pelo Correio do Povo/Rádio Guaíba no dia 25 de setembro de 2024"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+        "origin": "consulted_by_us",
+        "title": "Pesquisas e efeitos da enchente: veja erros e acertos de Juliana Brizola no 1° turno em Porto Alegre • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://sul21.com.br/noticias/educacao/2022/02/janaina-audino-nao-e-mais-a-secretaria-de-educacao-de-porto-alegre/",
+        "origin": "cited_by_publisher",
+        "title": "A primeira a ocupar o cargo foi Janaina Audino"
+      },
+      {
+        "url": "https://prefeitura.poa.br/smed/noticias/nova-secretaria-de-educacao-toma-posse-nesta-quinta-feira",
+        "origin": "cited_by_publisher",
+        "title": "professora Sônia Maria Oliveira da Rosa"
+      },
+      {
+        "url": "https://g1.globo.com/rs/rio-grande-do-sul/noticia/2024/01/23/ex-secretaria-de-educacao-e-outras-3-pessoas-sao-presas-por-suspeita-de-corrupcao-na-compra-de-material-escolar-em-porto-alegre.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Em janeiro deste ano,"
+      },
+      {
+        "url": "https://prefeitura.poa.br/gp/noticias/jose-paulo-da-rosa-assume-como-secretario-municipal-de-educacao#:~:text=Jos%C3%A9%20Paulo%20da%20Rosa%20assume%20como%20secret%C3%A1rio%20municipal%20de%20Educa%C3%A7%C3%A3o,-03%2F07%2F2023&text=Em%20cerim%C3%B4nia%20no%20Sal%C3%A3o%20Nobre,Educa%C3%A7%C3%A3o%2C%20Jos%C3%A9%20Paulo%20da%20Rosa",
+        "origin": "cited_by_publisher",
+        "title": "José Paulo da Rosa exerceu a função entre julho de 2023 e maio de 2024"
+      },
+      {
+        "url": "https://prefeitura.poa.br/smed/noticias/secretaria-municipal-de-educacao-tem-nova-gestao",
+        "origin": "cited_by_publisher",
+        "title": "o secretário municipal de Educação é Mauricio Cunha."
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:47:43.836Z"
+    }
+  },
+  {
+    "id": "lupa-juliana-brizola-2024-10-02-13",
+    "candidate_id": "7a6a6475-0691-4823-9104-5055ca589405",
+    "candidate_slug": "juliana-brizola",
+    "candidate_name": "Juliana Brizola",
+    "office": "Governador",
+    "uf": "RS",
+    "claim": "Juliana Brizola afirmou que Sarandi, Humaitá e Vila Farrapos foram os últimos bairros a ter a água baixado em Porto Alegre.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-09-25",
+      "context": "Juliana Brizola (PDT), candidata à prefeitura de Porto Alegre, em debate realizado pelo Correio do Povo/Rádio Guaíba no dia 25 de setembro de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Juliana Brizola"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa classificou como VERDADEIRO: os três bairros estiveram entre os mais atingidos; Humaitá e Vila Farrapos permitiram retorno em 28 de maio, enquanto Sarandi foi o último a ter a água recuado.",
+    "publishedAt": "2024-10-02T19:41:30+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "51e9bc36181843fb451b39c7787854face785d49a912141708f75452516aaed2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Juliana Brizola",
+      "contextExcerpt": "Juliana Brizola (PDT), candidata à prefeitura de Porto Alegre, em debate realizado pelo Correio do Povo/Rádio Guaíba no dia 25 de setembro de 2024"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+        "origin": "consulted_by_us",
+        "title": "Pesquisas e efeitos da enchente: veja erros e acertos de Juliana Brizola no 1° turno em Porto Alegre • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.metropoles.com/brasil/moradores-de-bairro-em-porto-alegre-estao-ha-26-dias-fora-de-casa",
+        "origin": "cited_by_publisher",
+        "title": "Sarandi"
+      },
+      {
+        "url": "https://g1.globo.com/rs/rio-grande-do-sul/noticia/2024/05/28/porto-alegre-agua-baixa-no-centro-mas-zona-norte-permanece-alagada-ha-25-dias.ghtml#:~:text=Humait%C3%A1%20e%20o-,Farrapos%2C,-somam%2030%20mil",
+        "origin": "cited_by_publisher",
+        "title": "Vila Farrapos"
+      },
+      {
+        "url": "https://www.cnnbrasil.com.br/nacional/enchente-afetou-quase-12-da-populacao-de-porto-alegre-veja-numeros-sobre-o-impacto-da-chuva-na-cidade/#:~:text=atingidos%2C%20quatro%20s%C3%A3o%20da%20zona%20norte%20(Sarandi%2C%20Farrapos%2C%20Humait%C3%A1%20e%20S%C3%A3o%20Geraldo)",
+        "origin": "cited_by_publisher",
+        "title": "Humaitá"
+      },
+      {
+        "url": "https://storymaps.arcgis.com/stories/02d01e5f3a2b423893a2b2560fa8ecce",
+        "origin": "cited_by_publisher",
+        "title": "o mapeamento da prefeitura"
+      },
+      {
+        "url": "https://assets.lupa.news/174/17440156.webp",
+        "origin": "cited_by_publisher",
+        "title": "registrou 17 mil pessoas afetadas,"
+      },
+      {
+        "url": "https://guaiba.com.br/2024/05/28/reducao-da-agua-permite-retorno-de-moradores-ao-bairro-humaita-e-vila-farrapos-em-porto-alegre/",
+        "origin": "cited_by_publisher",
+        "title": "Somente no dia 28 de maio"
+      },
+      {
+        "url": "https://valor.globo.com/brasil/noticia/2024/05/19/zona-norte-de-porto-alegre-continua-inundada-enquanto-agua-baixa-lentamente-no-centro-historico.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "bairros das zonas Central e Sul já vislumbravam a água baixando"
+      },
+      {
+        "url": "https://www.cnnbrasil.com.br/nacional/chuvas-no-rs-em-porto-alegre-dique-extravasa-e-prefeito-pede-que-moradores-deixem-casas-no-sarandi/",
+        "origin": "cited_by_publisher",
+        "title": "dique que extravasou"
+      },
+      {
+        "url": "https://www.correiodopovo.com.br/not%C3%ADcias/cidades/ap%C3%B3s-reparo-em-dique-moradores-do-sarandi-esperam-voltar-para-casa-1.1498737",
+        "origin": "cited_by_publisher",
+        "title": "água acumulada no bairro"
+      },
+      {
+        "url": "https://sul21.com.br/noticias/geral/2024/06/alagado-ha-um-mes-sarandi-revive-trauma-foram-tres-prefeitos-que-nem-olharam-para-o-bairro/",
+        "origin": "cited_by_publisher",
+        "title": "1º de junho"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:47:43.839Z"
+    }
+  },
+  {
+    "id": "lupa-juliana-brizola-2024-10-02-14",
+    "candidate_id": "7a6a6475-0691-4823-9104-5055ca589405",
+    "candidate_slug": "juliana-brizola",
+    "candidate_name": "Juliana Brizola",
+    "office": "Governador",
+    "uf": "RS",
+    "claim": "Juliana Brizola afirmou que sua candidatura era a única capaz de mudar Porto Alegre porque venceria o prefeito no segundo turno.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-10-03",
+      "context": "Juliana Brizola (PDT), candidata à prefeitura de Porto Alegre (RS), em debate realizado pela RBS TV no dia 3 de outubro de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Juliana Brizola"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALTA CONTEXTO",
+    "summary": "A Lupa marcou FALTA CONTEXTO: AtlasIntel dava vantagem a Brizola, mas Futura apontava vitória de Melo. No AtlasIntel, Maria do Rosário também estava tecnicamente empatada com Melo, contrariando a ideia de exclusividade.",
+    "publishedAt": "2024-10-02T19:41:30+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "51e9bc36181843fb451b39c7787854face785d49a912141708f75452516aaed2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALTA CONTEXTO",
+      "speakerIdentity": "Juliana Brizola",
+      "contextExcerpt": "Juliana Brizola (PDT), candidata à prefeitura de Porto Alegre (RS), em debate realizado pela RBS TV no dia 3 de outubro de 2024"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/10/02/pesquisas-e-efeitos-da-enchente-veja-erros-e-acertos-de-juliana-brizola-no-1-turno-em-porto-alegre/",
+        "origin": "consulted_by_us",
+        "title": "Pesquisas e efeitos da enchente: veja erros e acertos de Juliana Brizola no 1° turno em Porto Alegre • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2024/09/pesquisa-atlasintel-para-prefeitura-de-porto-alegre-mostra-sebastiao-melo-com-365-e-maria-do-rosario-com-301-cm1j7t7pn00gs013ux6lf7lym.html#:~:text=Juliana%20teria%2050%25%20dos%20votos%20contra%2042%25%20de%20Melo.%20Brancos%20e%20nulos%20seriam%207%25%20e%20n%C3%A3o%20sabem%202%25.",
+        "origin": "cited_by_publisher",
+        "title": "26 de setembro"
+      },
+      {
+        "url": "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2024/09/pesquisa-futura-para-prefeitura-de-porto-alegre-mostra-sebastiao-melo-com-529-e-maria-do-rosario-com-212-cm1jjaegy00n8011oytbxggp8.html",
+        "origin": "cited_by_publisher",
+        "title": "25 de setembro"
+      },
+      {
+        "url": "https://www.correiodopovo.com.br/not%C3%ADcias/pol%C3%ADtica/elei%C3%A7%C3%B5es/elei%C3%A7%C3%B5es-2024-pesquisa-real-time-big-data-mostra-disputa-em-porto-alegre-1.1538225",
+        "origin": "cited_by_publisher",
+        "title": "30 de setembro"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:47:43.843Z"
+    }
+  },
+  {
+    "id": "aosfatos-sergio-moro-ccj-ratinho-2019-06-19-01",
+    "candidate_id": "6025cfb5-d1a7-4ad0-baa7-c131b381e8fa",
+    "candidate_slug": "sergio-moro-gov-pr",
+    "candidate_name": "Sergio Moro",
+    "office": "Governador",
+    "uf": "PR",
+    "claim": "Sergio Moro afirmou no programa do Ratinho que sua gestão aumentava o efetivo da Polícia Federal.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2019-06-18",
+      "context": "Sergio Moro, então ministro da Justiça e Segurança Pública, em entrevista ao programa do Ratinho em 18 de junho de 2019.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Sergio Moro"
+    },
+    "publisher": "Aos Fatos",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "O Aos Fatos classificou como FALSO: os servidores ativos da Polícia Federal passaram de 13.651 em dezembro de 2018 para 13.400 em maio de 2019. O concurso citado ainda previa novas posses para outubro de 2019.",
+    "publishedAt": "2019-06-19",
+    "originalUrl": "https://www.aosfatos.org/noticias/verificamos-o-que-disse-sergio-moro-na-ccj-do-senado-e-no-ratinho/",
+    "methodologyUrl": "https://aosfatos.org/nosso-metodo/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "56c1a8ed768a8f80c6563004e3bee3caed91daa3b87324c47a8f69146f8e5b05",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Sergio Moro",
+      "contextExcerpt": "Sergio Moro, então ministro da Justiça e Segurança Pública, em entrevista ao programa do Ratinho em 18 de junho de 2019."
+    },
+    "sources": [
+      {
+        "url": "https://www.aosfatos.org/noticias/verificamos-o-que-disse-sergio-moro-na-ccj-do-senado-e-no-ratinho/",
+        "origin": "consulted_by_us",
+        "title": "Verificamos o que disse Sergio Moro na CCJ do Senado e no Ratinho | Aos Fatos"
+      },
+      {
+        "url": "https://aosfatos.org/nosso-metodo/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "http://painel.pep.planejamento.gov.br",
+        "origin": "cited_by_publisher",
+        "title": "Painel Estatístico de Pessoal"
+      },
+      {
+        "url": "https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cspcco/noticias/na-comissao-de-seguranca-publica-e-combate-ao-crime-organizado-moro-defende-projeto-anticrime",
+        "origin": "cited_by_publisher",
+        "title": "audiência pública"
+      },
+      {
+        "url": "https://folhadirigida.com.br/noticias/concurso/policia-federal/concurso-pf-moro-confirma-chamada-de-1200-aprovados-600-em-2019",
+        "origin": "cited_by_publisher",
+        "title": "convocar 1.200 concursados"
+      },
+      {
+        "url": "https://www.correiobraziliense.com.br/app/noticia/brasil/2019/04/01/interna-brasil,746673/diretora-regional-da-adpf-cobra-de-moro-aumento-de-efetivo-de-policiai.shtml",
+        "origin": "cited_by_publisher",
+        "title": "Correio Braziliense"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:47:43.847Z"
+    }
+  },
+  {
+    "id": "aosfatos-sergio-moro-ccj-ratinho-2019-06-19-02",
+    "candidate_id": "6025cfb5-d1a7-4ad0-baa7-c131b381e8fa",
+    "candidate_slug": "sergio-moro-gov-pr",
+    "candidate_name": "Sergio Moro",
+    "office": "Governador",
+    "uf": "PR",
+    "claim": "Sergio Moro afirmou na CCJ que o Telegram era um aplicativo de origem russa.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2019-06-19",
+      "context": "Sergio Moro, então ministro da Justiça e Segurança Pública, em audiência na CCJ do Senado em 19 de junho de 2019.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Sergio Moro"
+    },
+    "publisher": "Aos Fatos",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "IMPRECISO",
+    "summary": "O Aos Fatos classificou como IMPRECISO: os fundadores eram russos, mas a empresa foi banida da Rússia por recusar acesso a mensagens e operava em Dubai; a frase ignorava esse contexto.",
+    "publishedAt": "2019-06-19",
+    "originalUrl": "https://www.aosfatos.org/noticias/verificamos-o-que-disse-sergio-moro-na-ccj-do-senado-e-no-ratinho/",
+    "methodologyUrl": "https://aosfatos.org/nosso-metodo/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "56c1a8ed768a8f80c6563004e3bee3caed91daa3b87324c47a8f69146f8e5b05",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "IMPRECISO",
+      "speakerIdentity": "Sergio Moro",
+      "contextExcerpt": "Sergio Moro, então ministro da Justiça e Segurança Pública, em audiência na CCJ do Senado em 19 de junho de 2019."
+    },
+    "sources": [
+      {
+        "url": "https://www.aosfatos.org/noticias/verificamos-o-que-disse-sergio-moro-na-ccj-do-senado-e-no-ratinho/",
+        "origin": "consulted_by_us",
+        "title": "Verificamos o que disse Sergio Moro na CCJ do Senado e no Ratinho | Aos Fatos"
+      },
+      {
+        "url": "https://aosfatos.org/nosso-metodo/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://techcrunch.com/2014/02/24/telegram-saw-8m-downloads-after-whatsapp-got-acquired/",
+        "origin": "cited_by_publisher",
+        "title": "TechCrunch"
+      },
+      {
+        "url": "https://www.reuters.com/article/us-russia-telegram-block/russia-to-ban-telegram-messenger-over-encryption-dispute-idUSKBN1HK10B",
+        "origin": "cited_by_publisher",
+        "title": "foi banido na Rússia"
+      },
+      {
+        "url": "https://twitter.com/telegram_br/status/1139256964792422401",
+        "origin": "cited_by_publisher",
+        "title": "conta oficial do Telegram"
+      },
+      {
+        "url": "https://twitter.com/durov/status/951243462912995328",
+        "origin": "cited_by_publisher",
+        "title": "tweet em que Pavel Durov"
+      },
+      {
+        "url": "https://telegram.org/faq/br#p-onde-fica-a-sede-do-telegram",
+        "origin": "cited_by_publisher",
+        "title": "Telegram"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:47:43.851Z"
+    }
+  },
+  {
+    "id": "aosfatos-sergio-moro-ccj-ratinho-2019-06-19-03",
+    "candidate_id": "6025cfb5-d1a7-4ad0-baa7-c131b381e8fa",
+    "candidate_slug": "sergio-moro-gov-pr",
+    "candidate_name": "Sergio Moro",
+    "office": "Governador",
+    "uf": "PR",
+    "claim": "Sergio Moro afirmou na CCJ que até 7 de junho de 2019 cerca de R$ 2,767 bilhões haviam sido devolvidos à Petrobras.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2019-06-19",
+      "context": "Sergio Moro, então ministro da Justiça e Segurança Pública, em audiência na CCJ do Senado em 19 de junho de 2019.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Sergio Moro"
+    },
+    "publisher": "Aos Fatos",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "O Aos Fatos classificou como VERDADEIRO: os valores coincidiam com a nota do Ministério Público Federal, que registrava cerca de R$ 3,1 bilhões devolvidos ao todo e R$ 2,7 bilhões diretamente à Petrobras.",
+    "publishedAt": "2019-06-19",
+    "originalUrl": "https://www.aosfatos.org/noticias/verificamos-o-que-disse-sergio-moro-na-ccj-do-senado-e-no-ratinho/",
+    "methodologyUrl": "https://aosfatos.org/nosso-metodo/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "56c1a8ed768a8f80c6563004e3bee3caed91daa3b87324c47a8f69146f8e5b05",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Sergio Moro",
+      "contextExcerpt": "Sergio Moro, então ministro da Justiça e Segurança Pública, em audiência na CCJ do Senado em 19 de junho de 2019."
+    },
+    "sources": [
+      {
+        "url": "https://www.aosfatos.org/noticias/verificamos-o-que-disse-sergio-moro-na-ccj-do-senado-e-no-ratinho/",
+        "origin": "consulted_by_us",
+        "title": "Verificamos o que disse Sergio Moro na CCJ do Senado e no Ratinho | Aos Fatos"
+      },
+      {
+        "url": "https://aosfatos.org/nosso-metodo/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "http://www.mpf.mp.br/pr/sala-de-imprensa/noticias-pr/justica-federal-autoriza-devolucao-para-petrobras-e-uniao-de-r-681-milhoes-recuperados-pela-lava-jato",
+        "origin": "cited_by_publisher",
+        "title": "Segundo nota do órgão"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:47:43.854Z"
+    }
+  },
+  {
+    "id": "aosfatos-sergio-moro-ccj-ratinho-2019-06-19-04",
+    "candidate_id": "6025cfb5-d1a7-4ad0-baa7-c131b381e8fa",
+    "candidate_slug": "sergio-moro-gov-pr",
+    "candidate_name": "Sergio Moro",
+    "office": "Governador",
+    "uf": "PR",
+    "claim": "Sergio Moro afirmou que os homicídios haviam caído 23% em janeiro e fevereiro de 2019 ante o mesmo período do ano anterior.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2019-06-19",
+      "context": "Sergio Moro, então ministro da Justiça e Segurança Pública, em audiência na CCJ do Senado em 19 de junho de 2019.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Sergio Moro"
+    },
+    "publisher": "Aos Fatos",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "O Aos Fatos classificou como VERDADEIRO: dados do Sinesp mostravam queda de 8.498 para 6.592 homicídios dolosos, redução de 23,1%, no primeiro bimestre.",
+    "publishedAt": "2019-06-19",
+    "originalUrl": "https://www.aosfatos.org/noticias/verificamos-o-que-disse-sergio-moro-na-ccj-do-senado-e-no-ratinho/",
+    "methodologyUrl": "https://aosfatos.org/nosso-metodo/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "56c1a8ed768a8f80c6563004e3bee3caed91daa3b87324c47a8f69146f8e5b05",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Sergio Moro",
+      "contextExcerpt": "Sergio Moro, então ministro da Justiça e Segurança Pública, em audiência na CCJ do Senado em 19 de junho de 2019."
+    },
+    "sources": [
+      {
+        "url": "https://www.aosfatos.org/noticias/verificamos-o-que-disse-sergio-moro-na-ccj-do-senado-e-no-ratinho/",
+        "origin": "consulted_by_us",
+        "title": "Verificamos o que disse Sergio Moro na CCJ do Senado e no Ratinho | Aos Fatos"
+      },
+      {
+        "url": "https://aosfatos.org/nosso-metodo/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "http://dados.gov.br/dataset/sistema-nacional-de-estatisticas-de-seguranca-publica",
+        "origin": "cited_by_publisher",
+        "title": "Sinesp"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:47:43.859Z"
+    }
+  },
+  {
+    "id": "zema-aosfatos-2025-08-25-01",
+    "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+    "candidate_slug": "romeu-zema",
+    "candidate_name": "Romeu Zema",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Romeu Zema afirmou que duas pessoas foram condenadas a longas penas apenas por pichar um monumento e sentar em uma cadeira.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2025-08-25",
+      "context": "Entrevista ao Roda Viva, da TV Cultura, realizada em 25 de agosto de 2025; na data, Romeu Zema era governador de Minas Gerais.",
+      "speaker": "Romeu Zema",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
+    },
+    "publisher": "Aos Fatos",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "falso",
+    "summary": "A checagem informou que as duas pessoas receberam condenações por cinco crimes ligados aos atos de 8 de Janeiro, e não apenas pelas ações resumidas na fala.",
+    "publishedAt": "2025-08-26",
+    "originalUrl": "https://www.aosfatos.org/noticias/no-roda-viva-zema-usa-desinformacao-para-criticar-stf-e-governos-petistas/",
+    "methodologyUrl": "https://www.aosfatos.org/sobre-o-aos-fatos/",
+    "methodologyVersion": "Método público do veículo consultado; versão da página não informada.",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "2019b8ca72977eca8bbd8188c5b84a0d5835b886fcb1db5b51b53875692a0ab2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "falso",
+      "speakerIdentity": "Romeu Zema, governador de Minas Gerais no evento histórico; roster atual: candidato à Presidência.",
+      "contextExcerpt": "Bloco da checagem original sobre a entrevista do Roda Viva em 25 de agosto de 2025, com Romeu Zema identificado como governador de Minas Gerais; rótulo preservado do atributo DOM falso.",
+      "labelVerification": "Texto visível do rótulo conferido no DOM renderizado da checagem original em 22/09/2026."
+    },
+    "sources": [
+      {
+        "url": "https://www.aosfatos.org/noticias/julgamento-debora-santos-stf-nao-se-limita-vandalismo-com-batom/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.aosfatos.org/noticias/falso-raull-santiago-golpista-preso-cadeira-stf/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.cnnbrasil.com.br/politica/por-unanimidade-stf-mantem-condenacao-de-mulher-que-escreveu-em-estatua/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://g1.globo.com/fantastico/noticia/2023/01/15/galeria-da-desonra-nacional-conheca-alguns-dos-extremistas-dos-ataques-golpistas-em-brasilia.ghtml#:~:text=F%C3%A1bio%20Alexandre%20de%20Oliveira",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2025-08/stf-condena-homem-que-sentou-na-cadeira-de-moraes-durante-8-de-janeiro",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.migalhas.com.br/arquivos/2025/3/0524AF34FF1D32_voto2moraes.pdf",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://static.poder360.com.br/2025/06/voto-AlexandreMoraes-stf-8-de-janeiro-condenacao-FabioAlexandredeOliveira-27-jun-2025.pdf",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://g1.globo.com/politica/noticia/2023/09/13/julgamento-dos-atos-golpistas-entenda-o-que-sao-os-crimes-multitudinarios-apontados-pela-pgr.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.aosfatos.org/noticias/no-roda-viva-zema-usa-desinformacao-para-criticar-stf-e-governos-petistas/",
+        "origin": "consulted_by_us",
+        "title": "Checagem original e contexto da entrevista, consultados em 2026-09-22"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:55:08.882Z"
+    }
+  },
+  {
+    "id": "zema-aosfatos-2025-08-25-02",
+    "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+    "candidate_slug": "romeu-zema",
+    "candidate_name": "Romeu Zema",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Romeu Zema afirmou que presos do Mensalão e do Petrolão estavam soltos porque eram de esquerda.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2025-08-25",
+      "context": "Entrevista ao Roda Viva, da TV Cultura, realizada em 25 de agosto de 2025; na data, Romeu Zema era governador de Minas Gerais.",
+      "speaker": "Romeu Zema",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
+    },
+    "publisher": "Aos Fatos",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "falso",
+    "summary": "Segundo o Aos Fatos, os casos do Mensalão e do Petrolão envolveram condenações e prisões de políticos de esquerda e de direita. A agência contestou a explicação de Zema para a liberdade dos citados e registrou decisões posteriores ou indultos.",
+    "publishedAt": "2025-08-26",
+    "originalUrl": "https://www.aosfatos.org/noticias/no-roda-viva-zema-usa-desinformacao-para-criticar-stf-e-governos-petistas/",
+    "methodologyUrl": "https://www.aosfatos.org/sobre-o-aos-fatos/",
+    "methodologyVersion": "Método público do veículo consultado; versão da página não informada.",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "2019b8ca72977eca8bbd8188c5b84a0d5835b886fcb1db5b51b53875692a0ab2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "falso",
+      "speakerIdentity": "Romeu Zema, governador de Minas Gerais no evento histórico; roster atual: candidato à Presidência.",
+      "contextExcerpt": "Bloco da checagem original sobre a entrevista do Roda Viva em 25 de agosto de 2025, com Romeu Zema identificado como governador de Minas Gerais; rótulo preservado do atributo DOM falso.",
+      "labelVerification": "Texto visível do rótulo conferido no DOM renderizado da checagem original em 22/09/2026."
+    },
+    "sources": [
+      {
+        "url": "https://www.cnnbrasil.com.br/politica/mensalao-20-anos-depois-todos-os-condenados-estao-soltos/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://oglobo.globo.com/politica/noticia/2024/02/08/quem-e-valdemar-costa-neto-preso-por-posse-de-arma-de-fogo-com-registro-irregular.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2022/10/23/quem-e-roberto-jefferson-ex-deputado-bolsonarista-que-atirou-em-policiais.htm",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://eleicoes.apublica.org/2018/2018/09/lava-jato-atingiu-membros-de-33-partidos-duas-siglas-nao-foram-implicadas/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://valor.globo.com/politica/artigo/por-que-lula-foi-preso-e-por-que-ele-foi-solto.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.cnnbrasil.com.br/politica/entenda-as-condenacoes-de-jose-dirceu-e-a-anulacao-das-penas-na-lava-jato/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://noticias.stf.jus.br/postsnoticias/stf-anula-processos-contra-antonio-palocci-na-lava-jato/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.aosfatos.org/noticias/no-roda-viva-zema-usa-desinformacao-para-criticar-stf-e-governos-petistas/",
+        "origin": "consulted_by_us",
+        "title": "Checagem original e contexto da entrevista, consultados em 2026-09-22"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:55:08.882Z"
+    }
+  },
+  {
+    "id": "zema-aosfatos-2025-08-25-03",
+    "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+    "candidate_slug": "romeu-zema",
+    "candidate_name": "Romeu Zema",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Romeu Zema afirmou que não apoiou Jair Bolsonaro nas eleições de 2018 e 2022, salvo no segundo turno de 2022.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2025-08-25",
+      "context": "Entrevista ao Roda Viva, da TV Cultura, realizada em 25 de agosto de 2025; na data, Romeu Zema era governador de Minas Gerais.",
+      "speaker": "Romeu Zema",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
+    },
+    "publisher": "Aos Fatos",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "falso",
+    "summary": "Segundo o Aos Fatos, Zema apoiou Bolsonaro publicamente em 2018. Em 2022, embora não tenha declarado apoio no primeiro turno, elogiou o então presidente e atuou nos bastidores; no segundo turno, coordenou a campanha em Minas.",
+    "publishedAt": "2025-08-26",
+    "originalUrl": "https://www.aosfatos.org/noticias/no-roda-viva-zema-usa-desinformacao-para-criticar-stf-e-governos-petistas/",
+    "methodologyUrl": "https://www.aosfatos.org/sobre-o-aos-fatos/",
+    "methodologyVersion": "Método público do veículo consultado; versão da página não informada.",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "2019b8ca72977eca8bbd8188c5b84a0d5835b886fcb1db5b51b53875692a0ab2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "falso",
+      "speakerIdentity": "Romeu Zema, governador de Minas Gerais no evento histórico; roster atual: candidato à Presidência.",
+      "contextExcerpt": "Bloco da checagem original sobre a entrevista do Roda Viva em 25 de agosto de 2025, com Romeu Zema identificado como governador de Minas Gerais; rótulo preservado do atributo DOM falso.",
+      "labelVerification": "Texto visível do rótulo conferido no DOM renderizado da checagem original em 22/09/2026."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/mg/minas-gerais/eleicoes/2018/noticia/2018/10/10/candidato-ao-governo-de-minas-romeu-zema-declara-apoio-a-bolsonaro-em-rede-social.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.infomoney.com.br/politica/efeito-bolsonaro-candidato-do-novo-em-minas-dispara-apos-declarar-apoio-ao-presidenciavel/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://noticias.uol.com.br/politica/eleicoes/2018/noticias/2018/10/28/romeu-zema-novo-bolsonaro-vence-governador-minas-gerais.htm",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://twitter.com/RomeuZema/status/1049866931065503745?ref_src=twsrc%5Etfw",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www1.folha.uol.com.br/poder/2022/09/pt-e-o-que-ha-de-pior-na-politica-mas-voto-colado-com-lula-e-natural-diz-zema.shtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://veja.abril.com.br/politica/a-campanha-invisivel-de-zema-para-bolsonaro/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://valor.globo.com/politica/eleicoes-2022/noticia/2022/10/13/zema-vai-coordenar-a-campanha-de-bolsonaro-em-mg-anuncia-braga-netto.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.aosfatos.org/noticias/no-roda-viva-zema-usa-desinformacao-para-criticar-stf-e-governos-petistas/",
+        "origin": "consulted_by_us",
+        "title": "Checagem original e contexto da entrevista, consultados em 2026-09-22"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:55:08.882Z"
+    }
+  },
+  {
+    "id": "zema-aosfatos-2025-08-25-04",
+    "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+    "candidate_slug": "romeu-zema",
+    "candidate_name": "Romeu Zema",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Romeu Zema afirmou que a redução do efetivo militar não reduziu o total de pessoas nas forças de segurança de Minas.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2025-08-25",
+      "context": "Entrevista ao Roda Viva, da TV Cultura, realizada em 25 de agosto de 2025; na data, Romeu Zema era governador de Minas Gerais.",
+      "speaker": "Romeu Zema",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
+    },
+    "publisher": "Aos Fatos",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "falso",
+    "summary": "Dados de 2020 a 2023 indicaram redução de ao menos 400 agentes nas forças de segurança de Minas, com queda na PM e no Corpo de Bombeiros; a matéria não encontrou série confiável para 2019.",
+    "publishedAt": "2025-08-26",
+    "originalUrl": "https://www.aosfatos.org/noticias/no-roda-viva-zema-usa-desinformacao-para-criticar-stf-e-governos-petistas/",
+    "methodologyUrl": "https://www.aosfatos.org/sobre-o-aos-fatos/",
+    "methodologyVersion": "Método público do veículo consultado; versão da página não informada.",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "2019b8ca72977eca8bbd8188c5b84a0d5835b886fcb1db5b51b53875692a0ab2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "falso",
+      "speakerIdentity": "Romeu Zema, governador de Minas Gerais no evento histórico; roster atual: candidato à Presidência.",
+      "contextExcerpt": "Bloco da checagem original sobre a entrevista do Roda Viva em 25 de agosto de 2025, com Romeu Zema identificado como governador de Minas Gerais; rótulo preservado do atributo DOM falso.",
+      "labelVerification": "Texto visível do rótulo conferido no DOM renderizado da checagem original em 22/09/2026."
+    },
+    "sources": [
+      {
+        "url": "https://app.powerbi.com/view?r=eyJrIjoiMDc0ZWFjYTgtYjA1OS00YzBmLWJkNTctZmVjODM2YzlmYzBjIiwidCI6ImViMDkwNDIwLTQ0NGMtNDNmNy05MWYyLTRiOGRhNmJmZThlMSJ9",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://mediaserver.almg.gov.br/acervo/128/757/2128757.pdf",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://publicacoes.forumseguranca.org.br/server/api/core/bitstreams/5832a9eb-7eb6-4648-b4c0-1b91f0ab2ab4/content",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.almg.gov.br/legislacao-mineira/texto/LEI/22415/2016/?cons=1",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.almg.gov.br/comunicacao/tv-assembleia/videos/video?id=2337828&tagLocalizacao=5884",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.aosfatos.org/noticias/no-roda-viva-zema-usa-desinformacao-para-criticar-stf-e-governos-petistas/",
+        "origin": "consulted_by_us",
+        "title": "Checagem original e contexto da entrevista, consultados em 2026-09-22"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:55:08.882Z"
+    }
+  },
+  {
+    "id": "zema-aosfatos-2025-08-25-05",
+    "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+    "candidate_slug": "romeu-zema",
+    "candidate_name": "Romeu Zema",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Romeu Zema afirmou que o Brasil foi o único país a recuar economicamente em 2015 e 2016.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2025-08-25",
+      "context": "Entrevista ao Roda Viva, da TV Cultura, realizada em 25 de agosto de 2025; na data, Romeu Zema era governador de Minas Gerais.",
+      "speaker": "Romeu Zema",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
+    },
+    "publisher": "Aos Fatos",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "não é bem assim",
+    "summary": "O Brasil teve sua maior recessão no biênio 2015-2016, mas não foi o único país a registrar queda no PIB. A Rússia recuou 3,2% em 2015 e 0,6% em 2016, e a Argentina caiu 2,6% em 2016, apesar de ter crescido em 2015.",
+    "publishedAt": "2025-08-26",
+    "originalUrl": "https://www.aosfatos.org/noticias/no-roda-viva-zema-usa-desinformacao-para-criticar-stf-e-governos-petistas/",
+    "methodologyUrl": "https://www.aosfatos.org/sobre-o-aos-fatos/",
+    "methodologyVersion": "Método público do veículo consultado; versão da página não informada.",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "2019b8ca72977eca8bbd8188c5b84a0d5835b886fcb1db5b51b53875692a0ab2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "não é bem assim",
+      "speakerIdentity": "Romeu Zema, governador de Minas Gerais no evento histórico; roster atual: candidato à Presidência.",
+      "contextExcerpt": "Bloco da checagem original sobre a entrevista do Roda Viva em 25 de agosto de 2025, com Romeu Zema identificado como governador de Minas Gerais; rótulo preservado do atributo DOM nao_e_bem_assim.",
+      "rawDataStamp": "nao_e_bem_assim",
+      "labelVerification": "Texto visível do rótulo conferido no DOM renderizado da checagem original em 22/09/2026."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/economia/noticia/pib-brasileiro-recua-36-em-2016-e-tem-pior-recessao-da-historia.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://exame.com/economia/economia-da-russia-se-contraiu-06-em-2016/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://g1.globo.com/economia/noticia/pib-da-argentina-registra-queda-de-23-em-2016.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.aosfatos.org/noticias/no-roda-viva-zema-usa-desinformacao-para-criticar-stf-e-governos-petistas/",
+        "origin": "consulted_by_us",
+        "title": "Checagem original e contexto da entrevista, consultados em 2026-09-22"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:55:08.882Z"
+    }
+  },
+  {
+    "id": "zema-aosfatos-2025-08-25-06",
+    "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+    "candidate_slug": "romeu-zema",
+    "candidate_name": "Romeu Zema",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Romeu Zema afirmou que a dívida de Minas caiu de 190% para 170% da receita corrente líquida entre 2019 e 2024.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2025-08-25",
+      "context": "Entrevista ao Roda Viva, da TV Cultura, realizada em 25 de agosto de 2025; na data, Romeu Zema era governador de Minas Gerais.",
+      "speaker": "Romeu Zema",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
+    },
+    "publisher": "Aos Fatos",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "verdadeiro",
+    "summary": "A relação entre a dívida pública e a receita corrente líquida caiu de 190% em 2019 para 162% em 2024, próximo dos 170% citados. Em valores nominais, a arrecadação subiu cerca de 60% e o estoque da dívida, 38%, por isso a checagem considerou correta a comparação geral.",
+    "publishedAt": "2025-08-26",
+    "originalUrl": "https://www.aosfatos.org/noticias/no-roda-viva-zema-usa-desinformacao-para-criticar-stf-e-governos-petistas/",
+    "methodologyUrl": "https://www.aosfatos.org/sobre-o-aos-fatos/",
+    "methodologyVersion": "Método público do veículo consultado; versão da página não informada.",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "2019b8ca72977eca8bbd8188c5b84a0d5835b886fcb1db5b51b53875692a0ab2",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "verdadeiro",
+      "speakerIdentity": "Romeu Zema, governador de Minas Gerais no evento histórico; roster atual: candidato à Presidência.",
+      "contextExcerpt": "Bloco da checagem original sobre a entrevista do Roda Viva em 25 de agosto de 2025, com Romeu Zema identificado como governador de Minas Gerais; rótulo preservado do atributo DOM verdadeiro.",
+      "labelVerification": "Texto visível do rótulo conferido no DOM renderizado da checagem original em 22/09/2026."
+    },
+    "sources": [
+      {
+        "url": "https://www.fazenda.mg.gov.br/noticias/2025/2025.06.06_Propag01/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://estadodascoisas.com.br/democracia/divida-de-zema-se-beneficia-de-liminar-do-governo-pimentel/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://oglobo.globo.com/politica/noticia/2024/10/01/governo-de-minas-volta-a-pagar-divida-de-r-160-bilhoes-com-a-uniao.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.aosfatos.org/noticias/no-roda-viva-zema-usa-desinformacao-para-criticar-stf-e-governos-petistas/",
+        "origin": "consulted_by_us",
+        "title": "Checagem original e contexto da entrevista, consultados em 2026-09-22"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:55:08.882Z"
+    }
   }
 ]
