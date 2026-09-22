@@ -226,6 +226,19 @@ describe("doador recorrente: formato público", () => {
     )
     assert.deepEqual(encontrarDocumentoDeDoador({ doador_grupo: "7f1c2e9a-1b2c-4d3e-8f90-123456789012", valor: 1000 }), [])
   })
+
+  it("slug público do TSE em campo de slug ou de chave de pessoa não é documento; em outro campo, ou com texto extra, continua sendo", () => {
+    assert.deepEqual(
+      encontrarDocumentoDeDoador([
+        { pessoa_chave: "tse-2026-80000123456", outra_slug: "tse-2026-190001234567", outra_pessoa_chave: "tse-2026-80000123456" },
+      ]),
+      [],
+    )
+    assert.deepEqual(
+      encontrarDocumentoDeDoador({ doador_nome: "tse-2026-80000123456", outra_slug: "cpf 12345678901" }).map((a) => a.caminho),
+      ["$.doador_nome", "$.outra_slug"],
+    )
+  })
 })
 
 describe("doador recorrente: outra ponta por pessoa", () => {

@@ -87,6 +87,11 @@ function ProfileTabButton({
   onTabChange: TabChange
 }) {
   const isActive = activeTab === tab.id
+  // Roving tabindex: a aba ativa recebe o foco. Quando a ativa não está nesta
+  // barra (timeline, ou aba que mora no menu "Mais"), a primeira entra no Tab;
+  // sem isso nenhuma aba entra na ordem do Tab e a barra que rola vira região
+  // sem acesso por teclado (axe scrollable-region-focusable).
+  const isFocusable = isActive || (index === 0 && !tabs.some((t) => t.id === activeTab))
   return (
     <button
       id={`${idPrefix}${tab.id}`}
@@ -96,7 +101,7 @@ function ProfileTabButton({
       onKeyDown={(event) => onTabKeyDown(event, index, tabs, idPrefix, onTabChange)}
       aria-selected={isActive}
       aria-controls={`profile-panel-${tab.id}`}
-      tabIndex={isActive ? 0 : -1}
+      tabIndex={isFocusable ? 0 : -1}
       className={className(isActive)}
     >
       {label}
