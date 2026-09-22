@@ -1,5 +1,7 @@
 "use client"
 
+// cspell:words timecode atribuidas
+
 import { ExternalLink } from "lucide-react"
 
 import {
