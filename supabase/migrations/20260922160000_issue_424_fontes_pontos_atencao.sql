@@ -40,6 +40,16 @@
 --      a pessoa errada. A divergencia de identidade fica registrada aqui para
 --      investigacao separada; esta migration nao tenta corrigi-la.
 --
+--
+-- Correcao pos-apply (22/09/2026): a primeira execucao do apply foi recusada
+-- pelo trigger `bloquear_contagem_ia_cargos_como_mandatos`, que proibe titulo
+-- de IA no formato "Carreira politica: N mandato(s)" (decisao editorial de
+-- 2026-08-05). Nada foi gravado. As seis claims de carreira seguem o padrao
+-- daquela decisao: titulo "Carreira politica" e descricao que nomeia os
+-- cargos sem conta-los como mandatos, limitada ao que a fonte citada
+-- sustenta. Alexandre Curi e Andre do Prado ganham fonte com a trajetoria
+-- (o perfil na Assembleia so comprova o mandato atual).
+--
 -- Esta migration e fail-closed: aceita somente a preimagem medida em 22/09/2026
 -- ou o estado final exato, quando executada novamente.
 
@@ -73,17 +83,17 @@ INSERT INTO _pf_issue_424_updates (
   'Carreira política: 2 mandato(s) registrado(s)',
   'Alexandre Curi (PSD) possui 2 mandato(s) registrado(s): Vereador (Curitiba), Deputado Estadual (PR).',
   $j$[{"url":"https://www.camara.leg.br","titulo":"Camara dos Deputados"},{"url":"https://www.senado.leg.br","titulo":"Senado Federal"}]$j$::jsonb,
-  'Carreira política: 2 mandato(s) registrado(s)',
-  'Alexandre Curi (PSD) possui 2 mandato(s) registrado(s): Vereador (Curitiba), Deputado Estadual (PR).',
-  $j$[{"url":"https://www.assembleia.pr.leg.br/deputados/perfil/alexandre-curi","data":"2026-09-22","titulo":"Assembleia Legislativa do Paraná, perfil de Alexandre Curi"}]$j$::jsonb
+  'Carreira política',
+  'Foi eleito vereador de Curitiba em 2000 e, desde 2002, é deputado estadual no Paraná, hoje presidente da Assembleia Legislativa.',
+  $j$[{"url":"https://www.cnnbrasil.com.br/eleicoes/quem-e-alexandre-curi-candidato-ao-senado-pelo-parana/","data":"2026-09-18","titulo":"CNN Brasil: Quem é Alexandre Curi, candidato ao Senado pelo Paraná"},{"url":"https://www.assembleia.pr.leg.br/deputados/perfil/alexandre-curi","data":"2026-09-22","titulo":"Assembleia Legislativa do Paraná, perfil de Alexandre Curi"}]$j$::jsonb
 ),
 (
   '3dcf38a7-96c0-4a1d-a43f-c841a662eb21',
   'Carreira política: 3 mandato(s) registrado(s)',
   'Decio Nery de Lima (PDT) possui 3 mandato(s) registrado(s): Deputado Federal (SC), Prefeito (Blumenau), Vereador (Blumenau).',
   $j$[{"url":"https://www.camara.leg.br","titulo":"Camara dos Deputados"},{"url":"https://www.senado.leg.br","titulo":"Senado Federal"}]$j$::jsonb,
-  'Carreira política: 3 mandato(s) registrado(s)',
-  'Decio Nery de Lima (PDT) possui 3 mandato(s) registrado(s): Deputado Federal (SC), Prefeito (Blumenau), Vereador (Blumenau).',
+  'Carreira política',
+  'Foi vereador e prefeito de Blumenau e deputado federal por Santa Catarina.',
   $j$[{"url":"https://www.camara.leg.br/deputados/141413/biografia","data":"2026-09-22","titulo":"Câmara dos Deputados, biografia de Décio Lima"}]$j$::jsonb
 ),
 (
@@ -91,17 +101,17 @@ INSERT INTO _pf_issue_424_updates (
   'Carreira política: 7 mandato(s) registrado(s)',
   'Andre Luis do Prado (PL) possui 7 mandato(s) registrado(s): Presidente da Alesp (SP) desde 2023, Deputado Estadual de SP (SP) desde 2011, Prefeito de Guararema (SP) 2005-2008, Deputado Estadual (SP), Vice-Prefeito (estado de São Paulo).',
   $j$[{"url":"https://www.camara.leg.br","titulo":"Camara dos Deputados"},{"url":"https://www.senado.leg.br","titulo":"Senado Federal"}]$j$::jsonb,
-  'Carreira política: 7 mandato(s) registrado(s)',
-  'Andre Luis do Prado (PL) possui 7 mandato(s) registrado(s): Presidente da Alesp (SP) desde 2023, Deputado Estadual de SP (SP) desde 2011, Prefeito de Guararema (SP) 2005-2008, Deputado Estadual (SP), Vice-Prefeito (estado de São Paulo).',
-  $j$[{"url":"https://www.al.sp.gov.br/deputado/?matricula=300497","data":"2026-09-22","titulo":"Assembleia Legislativa de São Paulo, perfil de André do Prado"}]$j$::jsonb
+  'Carreira política',
+  'Foi vereador e vice-prefeito de Guararema (SP), prefeito da cidade de 2005 a 2008 e, desde 2011, deputado estadual de São Paulo; preside a Assembleia Legislativa.',
+  $j$[{"url":"https://www.bastidorpolitico.com.br/de-241-votos-em-guararema-a-presidencia-da-alesp-a-trajetoria-de-andre-do-prado-rumo-ao-senado-por-sao-paulo/","data":"2026-09-22","titulo":"Bastidor Político: a trajetória de André do Prado, de Guararema à Presidência da Alesp"},{"url":"https://www.al.sp.gov.br/deputado/?matricula=300497","data":"2026-09-22","titulo":"Assembleia Legislativa de São Paulo, perfil de André do Prado"}]$j$::jsonb
 ),
 (
   '4e3563d8-f29f-4324-adc4-c4f3d9eace9b',
   'Carreira política: 1 mandato(s) registrado(s)',
   'Lahesio Rodrigues Bonfim (NOVO) possui 1 mandato(s) registrado(s): Prefeito (municípios do Maranhão).',
   $j$[{"url":"https://www.camara.leg.br","titulo":"Camara dos Deputados"},{"url":"https://www.senado.leg.br","titulo":"Senado Federal"}]$j$::jsonb,
-  'Carreira política: 1 mandato(s) registrado(s)',
-  'Lahesio Rodrigues Bonfim (NOVO) possui 1 mandato(s) registrado(s): Prefeito (municípios do Maranhão).',
+  'Carreira política',
+  'Foi eleito prefeito de São Pedro dos Crentes (MA).',
   $j$[{"url":"https://www.em.com.br/app/noticia/politica/eleicoes/2020/2020/11/15/interna_politica,1213622/eleicoes-2020-dr-lahesio-bonfim-vence-eleicao-em-sao-pedro-dos-crente.shtml","data":"2020-11-15","titulo":"Estado de Minas, Lahesio Bonfim vence eleição em São Pedro dos Crentes (MA)"}]$j$::jsonb
 ),
 (
@@ -109,8 +119,8 @@ INSERT INTO _pf_issue_424_updates (
   'Carreira política: 2 mandato(s) registrado(s)',
   'Wagner Sousa Gomes (UNIAO) possui 2 mandato(s) registrado(s): Vereador (Fortaleza), Deputado Estadual (CE).',
   $j$[{"url":"https://www.camara.leg.br","titulo":"Camara dos Deputados"},{"url":"https://www.senado.leg.br","titulo":"Senado Federal"}]$j$::jsonb,
-  'Carreira política: 2 mandato(s) registrado(s)',
-  'Wagner Sousa Gomes (UNIAO) possui 2 mandato(s) registrado(s): Vereador (Fortaleza), Deputado Estadual (CE).',
+  'Carreira política',
+  'Foi vereador em Fortaleza e deputado estadual no Ceará.',
   $j$[{"url":"https://www.camara.leg.br/deputados/204487/biografia","data":"2026-09-22","titulo":"Câmara dos Deputados, biografia de Capitão Wagner"}]$j$::jsonb
 ),
 (
@@ -118,10 +128,9 @@ INSERT INTO _pf_issue_424_updates (
   'Carreira política: 2 mandato(s) registrado(s)',
   'João Alberto Rodrigues Capiberibe (PSB) possui 2 mandato(s) registrado(s): Governador (AP), Prefeito (Macapá).',
   $j$[{"url":"https://www.camara.leg.br","titulo":"Camara dos Deputados"},{"url":"https://www.senado.leg.br","titulo":"Senado Federal"}]$j$::jsonb,
-  'Carreira política: 2 mandato(s) registrado(s)',
-  'João Alberto Rodrigues Capiberibe (PSB) possui 2 mandato(s) registrado(s): Governador (AP), Prefeito (Macapá).',
+  'Carreira política',
+  'Foi prefeito de Macapá e governador do Amapá.',
   $j$[{"url":"https://www25.senado.leg.br/web/senadores/senador/-/perfil/3394","data":"2026-09-22","titulo":"Senado Federal, perfil de João Capiberibe"}]$j$::jsonb
-
 ),
 (
   '72d7742f-0281-4f98-aee1-f8bae33f5fca',
