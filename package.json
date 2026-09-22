@@ -137,6 +137,8 @@
     "data:fotos-oficiais": "tsx scripts/ingest-fotos-oficiais.ts",
     "data:programas-governo": "tsx scripts/programas-governo-presidencia.ts",
     "data:programas-governo:governadores": "node --conditions react-server --import tsx scripts/programas-governo-governadores-2026.ts",
+    "data:promessa-evidencia:coletar": "node --import tsx scripts/promessa-evidencia-coletar.ts",
+    "data:promessa-evidencia:pares": "node --import tsx scripts/promessa-evidencia-pares.ts",
     "data:programas-governo:governadores:manifesto": "node --conditions react-server --import tsx scripts/programas-governo-governadores-2026-manifesto.ts",
     "data:programas-governo:stage": "tsx scripts/programas-governo-stage.ts",
     "data:programas-governo:approve": "tsx scripts/programas-governo-approve.ts",
