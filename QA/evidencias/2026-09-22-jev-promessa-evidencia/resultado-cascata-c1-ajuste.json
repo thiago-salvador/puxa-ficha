@@ -1,0 +1,69 @@
+{
+  "versao": "c1",
+  "conjunto": "ajuste",
+  "verificador": "gpt-5.6-luna",
+  "falhasVerificador": 0,
+  "pares": 30,
+  "relacionadosNoConjunto": 17,
+  "publicados": 4,
+  "publicadosNaoRelacionados": [],
+  "relacionadosBarrados": [
+    {
+      "parId": "a049eb7e6a458d5d",
+      "barrado": "jev_objeto_concreto"
+    },
+    {
+      "parId": "c722c926049d2ea6",
+      "barrado": "jev_objeto_concreto"
+    },
+    {
+      "parId": "bd1b2c7ea23a34cf",
+      "barrado": "jev_objeto_concreto"
+    },
+    {
+      "parId": "7fb20811ddacde00",
+      "barrado": "jev_objeto_concreto"
+    },
+    {
+      "parId": "54ca0aa720a4e0ef",
+      "barrado": "jev_objeto_concreto"
+    },
+    {
+      "parId": "9688e9d302c65e29",
+      "barrado": "jev_objeto_concreto"
+    },
+    {
+      "parId": "08eee405f15dcb4e",
+      "barrado": "jev_objeto_concreto"
+    },
+    {
+      "parId": "921b3676a5d86254",
+      "barrado": "jev_objeto_concreto"
+    },
+    {
+      "parId": "9bdc96a926f36eaa",
+      "barrado": "jev_objeto_concreto"
+    },
+    {
+      "parId": "57f91bd243a9763e",
+      "barrado": "jev_objeto_concreto"
+    },
+    {
+      "parId": "fc2a73a63cc716d0",
+      "barrado": "jev_precisa_explicacao"
+    },
+    {
+      "parId": "e6f2b0b49a7a8faa",
+      "barrado": "verificador_mesmo_assunto"
+    },
+    {
+      "parId": "8e0e7ba5416815ea",
+      "barrado": "jev_objeto_concreto"
+    }
+  ],
+  "cobertura": 0.235,
+  "criterio": {
+    "c1": true,
+    "c2": false
+  }
+}

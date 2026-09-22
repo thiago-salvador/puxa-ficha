@@ -35,6 +35,16 @@ export const REGRAS_CASCATA = {
     explicacaoMax: 0.3,
     genericaMax: 0.5,
   },
+  // Iteração 2 no ajuste: c1 publicou 4/4 certos mas cobriu 23,5% (< 25%). No
+  // ajuste, relacionados ficaram com objeto_concreto >= 0,64 e não relacionados
+  // <= 0,57; o corte desce para 0,60 e precisa_explicacao sobe para 0,45.
+  c2: {
+    perguntas: "perguntas-cascata-v1.json",
+    objetoMin: 0.6,
+    simbolicoMax: 0.3,
+    explicacaoMax: 0.45,
+    genericaMax: 0.5,
+  },
 }
 
 const ATO_SIMBOLICO = /^\s*(denomina|d[aá] (o )?nome|institui (o|a) (dia|semana|data|m[eê]s)|declara (de )?utilidade|reconhece o munic[ií]pio|inscreve (o )?nome|confere|concede (o )?t[ií]tulo|homenage)/iu
