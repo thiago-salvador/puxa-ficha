@@ -19,9 +19,9 @@ function SourceList({ label, sources }: { label: string; sources: AttributedChec
   if (sources.length === 0) return null
   return (
     <div>
-      <h4 className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+      <h3 className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
         {label}
-      </h4>
+      </h3>
       <ul className="mt-1 space-y-1">
         {sources.map((source) => (
           <li key={source.url}>
