@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1458,6 +1458,7 @@
     "texto": "O programa registra o dado de que Minas Gerais tem 853 municípios em seu conteúdo oficial. A proposta de organização regional prevê Governos Regionais formados pela reorganização de estruturas já existentes. Em ciência, tecnologia e inovação, o programa propõe financiar pesquisa aplicada por meio da Fapemig, incluindo pequenas e médias empresas de base tecnológica. Na cultura, o programa propõe criar um Mapa Estadual da Cultura com inventário participativo de bens, mestres e saberes. Na gestão, o programa propõe criar, por projeto de lei, a Comissão Independente de Avaliação e Resultados de Minas Gerais. Na transparência, o programa propõe criar um Portal Único de Transparência Radical do Estado. Na segurança pública, o programa prevê produzir, nos primeiros cem dias, como medida inicial, um mapa completo do efetivo da Polícia Civil por carreira, função, unidade, departamento, município e região.",
     "frases": [
       {
+        "id": "e0409c93e73dc7ad",
         "texto": "O programa registra o dado de que Minas Gerais tem 853 municípios em seu conteúdo oficial.",
         "evidencias": [
           {
@@ -1468,6 +1469,7 @@
         ]
       },
       {
+        "id": "5269bbb76a2c65b7",
         "texto": "A proposta de organização regional prevê Governos Regionais formados pela reorganização de estruturas já existentes.",
         "evidencias": [
           {
@@ -1478,6 +1480,7 @@
         ]
       },
       {
+        "id": "65c2f0bc88b95c37",
         "texto": "Em ciência, tecnologia e inovação, o programa propõe financiar pesquisa aplicada por meio da Fapemig, incluindo pequenas e médias empresas de base tecnológica.",
         "evidencias": [
           {
@@ -1488,6 +1491,7 @@
         ]
       },
       {
+        "id": "3838791fd9835f68",
         "texto": "Na cultura, o programa propõe criar um Mapa Estadual da Cultura com inventário participativo de bens, mestres e saberes.",
         "evidencias": [
           {
@@ -1498,6 +1502,7 @@
         ]
       },
       {
+        "id": "97975369bc8c5639",
         "texto": "Na gestão, o programa propõe criar, por projeto de lei, a Comissão Independente de Avaliação e Resultados de Minas Gerais.",
         "evidencias": [
           {
@@ -1508,6 +1513,7 @@
         ]
       },
       {
+        "id": "408c89441cc54965",
         "texto": "Na transparência, o programa propõe criar um Portal Único de Transparência Radical do Estado.",
         "evidencias": [
           {
@@ -1518,6 +1524,7 @@
         ]
       },
       {
+        "id": "6b62685f6c6468df",
         "texto": "Na segurança pública, o programa prevê produzir, nos primeiros cem dias, como medida inicial, um mapa completo do efetivo da Polícia Civil por carreira, função, unidade, departamento, município e região.",
         "evidencias": [
           {

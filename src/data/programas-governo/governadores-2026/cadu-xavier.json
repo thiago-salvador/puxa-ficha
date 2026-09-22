@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1080,6 +1080,7 @@
     "texto": "O programa propõe fortalecer investimentos, indústria, pequenos negócios, agricultura familiar, fruticultura, turismo, inovação e cadeias produtivas regionais. O documento prevê um Estado que planeja, simplifica processos, utiliza tecnologia, coordena políticas, protege recursos públicos e transforma projetos em entregas. A proposta prevê fortalecer a proteção social, garantir dignidade, autonomia e acesso a direitos para pessoas em situação de vulnerabilidade. Na educação, o programa prevê aprendizagem, permanência escolar, educação integral, formação técnica, ciência e inovação como política orientada por oportunidades de futuro. Na saúde, a proposta prevê fortalecer o SUS, regionalizar o atendimento, aproximar os serviços das pessoas, ampliar a prevenção e organizar o cuidado especializado. No campo ambiental, o programa propõe transição energética justa, economia verde, segurança hídrica, saneamento, proteção da Caatinga, proteção do Litoral e adaptação climática.",
     "frases": [
       {
+        "id": "7319b9966e04ecf9",
         "texto": "O programa propõe fortalecer investimentos, indústria, pequenos negócios, agricultura familiar, fruticultura, turismo, inovação e cadeias produtivas regionais.",
         "evidencias": [
           {
@@ -1090,6 +1091,7 @@
         ]
       },
       {
+        "id": "e3467c82a53e0f7b",
         "texto": "O documento prevê um Estado que planeja, simplifica processos, utiliza tecnologia, coordena políticas, protege recursos públicos e transforma projetos em entregas.",
         "evidencias": [
           {
@@ -1100,6 +1102,7 @@
         ]
       },
       {
+        "id": "0d81faae9404cc1f",
         "texto": "A proposta prevê fortalecer a proteção social, garantir dignidade, autonomia e acesso a direitos para pessoas em situação de vulnerabilidade.",
         "evidencias": [
           {
@@ -1110,6 +1113,7 @@
         ]
       },
       {
+        "id": "535e5fe3384b7b2f",
         "texto": "Na educação, o programa prevê aprendizagem, permanência escolar, educação integral, formação técnica, ciência e inovação como política orientada por oportunidades de futuro.",
         "evidencias": [
           {
@@ -1120,6 +1124,7 @@
         ]
       },
       {
+        "id": "a4995af2568f4827",
         "texto": "Na saúde, a proposta prevê fortalecer o SUS, regionalizar o atendimento, aproximar os serviços das pessoas, ampliar a prevenção e organizar o cuidado especializado.",
         "evidencias": [
           {
@@ -1130,6 +1135,7 @@
         ]
       },
       {
+        "id": "d207758756df82d2",
         "texto": "No campo ambiental, o programa propõe transição energética justa, economia verde, segurança hídrica, saneamento, proteção da Caatinga, proteção do Litoral e adaptação climática.",
         "evidencias": [
           {

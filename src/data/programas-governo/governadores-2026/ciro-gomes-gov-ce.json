@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -604,6 +604,7 @@
     "texto": "O documento apresenta diretrizes gerais para um programa de governo, cuja versão definitiva continua sendo elaborada por meio de consulta a segmentos da sociedade. Na saúde, o programa prevê fortalecer a regionalização do Sistema Único de Saúde, consolidando a integração entre atenção primária, policlínicas, hospitais regionais e hospitais de alta complexidade. Na educação, propõe uma nova geração de políticas públicas, fortalecendo a alfabetização, ampliando a qualidade da aprendizagem e consolidando o ensino em tempo integral. Na inclusão social, prevê fortalecer o Sistema Único de Assistência Social como eixo estruturador da proteção social, regionalizando os serviços especializados. No desenvolvimento econômico, propõe fortalecer o desenvolvimento do interior do Estado, estimulando a diversificação das cadeias produtivas. Na segurança pública, prevê construir uma rede estadual integrada de segurança, conectando câmeras públicas e privadas, sistemas de reconhecimento e identificação, bases de dados, centrais de monitoramento e informações produzidas pelas diferentes forças policiais.",
     "frases": [
       {
+        "id": "b3c8b640b628a7ea",
         "texto": "O documento apresenta diretrizes gerais para um programa de governo, cuja versão definitiva continua sendo elaborada por meio de consulta a segmentos da sociedade.",
         "evidencias": [
           {
@@ -614,6 +615,7 @@
         ]
       },
       {
+        "id": "519c906d4bd3b514",
         "texto": "Na saúde, o programa prevê fortalecer a regionalização do Sistema Único de Saúde, consolidando a integração entre atenção primária, policlínicas, hospitais regionais e hospitais de alta complexidade.",
         "evidencias": [
           {
@@ -624,6 +626,7 @@
         ]
       },
       {
+        "id": "51093643272f01bf",
         "texto": "Na educação, propõe uma nova geração de políticas públicas, fortalecendo a alfabetização, ampliando a qualidade da aprendizagem e consolidando o ensino em tempo integral.",
         "evidencias": [
           {
@@ -634,6 +637,7 @@
         ]
       },
       {
+        "id": "d7b717acce91faad",
         "texto": "Na inclusão social, prevê fortalecer o Sistema Único de Assistência Social como eixo estruturador da proteção social, regionalizando os serviços especializados.",
         "evidencias": [
           {
@@ -644,6 +648,7 @@
         ]
       },
       {
+        "id": "f6e5da2896e93e67",
         "texto": "No desenvolvimento econômico, propõe fortalecer o desenvolvimento do interior do Estado, estimulando a diversificação das cadeias produtivas.",
         "evidencias": [
           {
@@ -654,6 +659,7 @@
         ]
       },
       {
+        "id": "72592e38aa17ab4a",
         "texto": "Na segurança pública, prevê construir uma rede estadual integrada de segurança, conectando câmeras públicas e privadas, sistemas de reconhecimento e identificação, bases de dados, centrais de monitoramento e informações produzidas pelas diferentes forças policiais.",
         "evidencias": [
           {

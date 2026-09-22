@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -282,6 +282,7 @@
     "texto": "O programa propõe reorganizar o Poder Executivo do Tocantins por meio de um Sistema Estadual de Políticas Públicas. O Sistema Estadual de Garantia dos Direitos busca assegurar o acesso universal às condições essenciais da cidadania. O Sistema Estadual de Desenvolvimento Territorial orienta o desenvolvimento econômico para a qualidade de vida da população. O Sistema Estadual de Governança Democrática busca reconstruir a relação entre Estado, municípios e sociedade. A proposta reorganiza o Poder Executivo em 44 unidades gestoras, distribuídas entre administração direta e indireta. O programa propõe criar a Agência Estadual de Desenvolvimento Regional para reduzir desigualdades regionais. O programa planeja criar o Instituto Tocantinense das Águas, Saneamento e Mudanças Climáticas. O plano propõe criar o Conselho Estadual de Participação Social para institucionalizar a participação popular.",
     "frases": [
       {
+        "id": "6aeb5d792f408af0",
         "texto": "O programa propõe reorganizar o Poder Executivo do Tocantins por meio de um Sistema Estadual de Políticas Públicas.",
         "evidencias": [
           {
@@ -292,6 +293,7 @@
         ]
       },
       {
+        "id": "b92767bb37fc8829",
         "texto": "O Sistema Estadual de Garantia dos Direitos busca assegurar o acesso universal às condições essenciais da cidadania.",
         "evidencias": [
           {
@@ -302,6 +304,7 @@
         ]
       },
       {
+        "id": "f2f6634817f950a7",
         "texto": "O Sistema Estadual de Desenvolvimento Territorial orienta o desenvolvimento econômico para a qualidade de vida da população.",
         "evidencias": [
           {
@@ -317,6 +320,7 @@
         ]
       },
       {
+        "id": "b521bb0149dedbf6",
         "texto": "O Sistema Estadual de Governança Democrática busca reconstruir a relação entre Estado, municípios e sociedade.",
         "evidencias": [
           {
@@ -327,6 +331,7 @@
         ]
       },
       {
+        "id": "ff26efa0811c0a5c",
         "texto": "A proposta reorganiza o Poder Executivo em 44 unidades gestoras, distribuídas entre administração direta e indireta.",
         "evidencias": [
           {
@@ -337,6 +342,7 @@
         ]
       },
       {
+        "id": "930662d9b73cf7c7",
         "texto": "O programa propõe criar a Agência Estadual de Desenvolvimento Regional para reduzir desigualdades regionais.",
         "evidencias": [
           {
@@ -347,6 +353,7 @@
         ]
       },
       {
+        "id": "03ea3bfd4b3f0540",
         "texto": "O programa planeja criar o Instituto Tocantinense das Águas, Saneamento e Mudanças Climáticas.",
         "evidencias": [
           {
@@ -357,6 +364,7 @@
         ]
       },
       {
+        "id": "1dca86056792551b",
         "texto": "O plano propõe criar o Conselho Estadual de Participação Social para institucionalizar a participação popular.",
         "evidencias": [
           {

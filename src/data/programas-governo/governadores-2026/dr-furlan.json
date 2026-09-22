@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1136,6 +1136,7 @@
     "texto": "O programa de governo está estruturado em três pilares estratégicos para integrar as políticas públicas do Estado. Na segurança pública, o plano prevê a instituição de um programa permanente de valorização dos profissionais da área. Na saúde, propõe a implantação da Fila Única Digital para acompanhamento de consultas, exames e cirurgias reguladas pelo SUS. Na educação, planeja uma política permanente de valorização dos profissionais do magistério, com cumprimento do piso salarial nacional. Na infraestrutura, prevê o Programa de Retomada de Obras do Amapá para acelerar a execução de empreendimentos estruturantes. No setor de petróleo, propõe a criação de um fundo soberano para as receitas de royalties. No meio ambiente, planeja fomentar as cadeias produtivas de produtos florestais não madeireiros. Na gestão estadual, prevê uma reforma administrativa para racionalizar a estrutura organizacional.",
     "frases": [
       {
+        "id": "dd6774030c4c91af",
         "texto": "O programa de governo está estruturado em três pilares estratégicos para integrar as políticas públicas do Estado.",
         "evidencias": [
           {
@@ -1146,6 +1147,7 @@
         ]
       },
       {
+        "id": "cad1b78da94847c2",
         "texto": "Na segurança pública, o plano prevê a instituição de um programa permanente de valorização dos profissionais da área.",
         "evidencias": [
           {
@@ -1156,6 +1158,7 @@
         ]
       },
       {
+        "id": "9cef985603f7a7f3",
         "texto": "Na saúde, propõe a implantação da Fila Única Digital para acompanhamento de consultas, exames e cirurgias reguladas pelo SUS.",
         "evidencias": [
           {
@@ -1166,6 +1169,7 @@
         ]
       },
       {
+        "id": "5d255f2ebb9ef978",
         "texto": "Na educação, planeja uma política permanente de valorização dos profissionais do magistério, com cumprimento do piso salarial nacional.",
         "evidencias": [
           {
@@ -1176,6 +1180,7 @@
         ]
       },
       {
+        "id": "4ede0ca5bcc43c5c",
         "texto": "Na infraestrutura, prevê o Programa de Retomada de Obras do Amapá para acelerar a execução de empreendimentos estruturantes.",
         "evidencias": [
           {
@@ -1186,6 +1191,7 @@
         ]
       },
       {
+        "id": "ad1c0209343f61a3",
         "texto": "No setor de petróleo, propõe a criação de um fundo soberano para as receitas de royalties.",
         "evidencias": [
           {
@@ -1196,6 +1202,7 @@
         ]
       },
       {
+        "id": "93bf76be8f882e56",
         "texto": "No meio ambiente, planeja fomentar as cadeias produtivas de produtos florestais não madeireiros.",
         "evidencias": [
           {
@@ -1206,6 +1213,7 @@
         ]
       },
       {
+        "id": "323556fd7b5cdedd",
         "texto": "Na gestão estadual, prevê uma reforma administrativa para racionalizar a estrutura organizacional.",
         "evidencias": [
           {

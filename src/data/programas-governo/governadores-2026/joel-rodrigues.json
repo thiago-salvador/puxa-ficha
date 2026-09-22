@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1724,6 +1724,7 @@
     "texto": "O Plano de Governo orientará a gestão estadual no ciclo 2027–2030. As propostas do Plano serão implementadas gradualmente, observando a legislação, a disponibilidade orçamentária e financeira e os limites da Lei de Responsabilidade Fiscal. O Eixo 1 estabelece a presença efetiva do Estado nos 12 Territórios de Desenvolvimento. Na saúde, o programa prevê a implantação de quatro Centros Hospitalares de Referência Macrorregional em Parnaíba, Piripiri, Picos e Floriano. Na educação, a política de alfabetização estabelece a meta de alcançar 90% dos alunos da rede pública com alfabetização adequada até o 2º ano. Na economia, o Programa Piauí Mais Competitivo prevê a redução gradual da alíquota geral do ICMS até alcançar a média competitiva do Nordeste. O Programa Água na Torneira prioriza o abastecimento regular e seguro de água nos municípios do semiárido piauiense.",
     "frases": [
       {
+        "id": "b5c0bea84b844715",
         "texto": "O Plano de Governo orientará a gestão estadual no ciclo 2027–2030.",
         "evidencias": [
           {
@@ -1734,6 +1735,7 @@
         ]
       },
       {
+        "id": "00b70f3594c0d952",
         "texto": "As propostas do Plano serão implementadas gradualmente, observando a legislação, a disponibilidade orçamentária e financeira e os limites da Lei de Responsabilidade Fiscal.",
         "evidencias": [
           {
@@ -1744,6 +1746,7 @@
         ]
       },
       {
+        "id": "7d51462e970b230f",
         "texto": "O Eixo 1 estabelece a presença efetiva do Estado nos 12 Territórios de Desenvolvimento.",
         "evidencias": [
           {
@@ -1754,6 +1757,7 @@
         ]
       },
       {
+        "id": "52dfef4fbab39da5",
         "texto": "Na saúde, o programa prevê a implantação de quatro Centros Hospitalares de Referência Macrorregional em Parnaíba, Piripiri, Picos e Floriano.",
         "evidencias": [
           {
@@ -1764,6 +1768,7 @@
         ]
       },
       {
+        "id": "c2898eccd90abb5b",
         "texto": "Na educação, a política de alfabetização estabelece a meta de alcançar 90% dos alunos da rede pública com alfabetização adequada até o 2º ano.",
         "evidencias": [
           {
@@ -1774,6 +1779,7 @@
         ]
       },
       {
+        "id": "4273062920f99a3a",
         "texto": "Na economia, o Programa Piauí Mais Competitivo prevê a redução gradual da alíquota geral do ICMS até alcançar a média competitiva do Nordeste.",
         "evidencias": [
           {
@@ -1784,6 +1790,7 @@
         ]
       },
       {
+        "id": "6f5a5a0c68802737",
         "texto": "O Programa Água na Torneira prioriza o abastecimento regular e seguro de água nos municípios do semiárido piauiense.",
         "evidencias": [
           {

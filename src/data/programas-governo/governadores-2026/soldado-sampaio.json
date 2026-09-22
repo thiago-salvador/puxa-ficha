@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -884,6 +884,7 @@
     "texto": "O Plano de Governo apresentado pela coligação de Soldado Sampaio para o Estado de Roraima organiza as prioridades em dez eixos temáticos. Na saúde, o documento propõe implantar a regionalização da saúde em quatro regiões sanitárias do Estado. Na educação, prevê implantar o Cartão Uniforme Escolar para compra do fardamento no comércio local. Na assistência social, planeja reforçar o atendimento do Programa Cesta da Família nos 15 municípios. No desenvolvimento rural, propõe promover a regularização fundiária de agrovilas, chácaras, vilas e núcleos urbanos. No saneamento, prevê ampliar e modernizar os sistemas de abastecimento de água e esgotamento sanitário no interior do Estado. Na tributação, propõe encaminhar projeto de lei para isenção do IPVA de motocicletas de até 160 cilindradas. Na gestão pública, planeja criar e consolidar o Portal Único de Serviços do Estado de Roraima.",
     "frases": [
       {
+        "id": "efe6a7e6658b2a0f",
         "texto": "O Plano de Governo apresentado pela coligação de Soldado Sampaio para o Estado de Roraima organiza as prioridades em dez eixos temáticos.",
         "evidencias": [
           {
@@ -894,6 +895,7 @@
         ]
       },
       {
+        "id": "df85d124f54ce96b",
         "texto": "Na saúde, o documento propõe implantar a regionalização da saúde em quatro regiões sanitárias do Estado.",
         "evidencias": [
           {
@@ -904,6 +906,7 @@
         ]
       },
       {
+        "id": "3b280ee1cd34eb71",
         "texto": "Na educação, prevê implantar o Cartão Uniforme Escolar para compra do fardamento no comércio local.",
         "evidencias": [
           {
@@ -914,6 +917,7 @@
         ]
       },
       {
+        "id": "c182bc0bff30cbe8",
         "texto": "Na assistência social, planeja reforçar o atendimento do Programa Cesta da Família nos 15 municípios.",
         "evidencias": [
           {
@@ -924,6 +928,7 @@
         ]
       },
       {
+        "id": "a3d5fc89ff860e71",
         "texto": "No desenvolvimento rural, propõe promover a regularização fundiária de agrovilas, chácaras, vilas e núcleos urbanos.",
         "evidencias": [
           {
@@ -934,6 +939,7 @@
         ]
       },
       {
+        "id": "1e24b27758359855",
         "texto": "No saneamento, prevê ampliar e modernizar os sistemas de abastecimento de água e esgotamento sanitário no interior do Estado.",
         "evidencias": [
           {
@@ -944,6 +950,7 @@
         ]
       },
       {
+        "id": "5b42408c35a62f17",
         "texto": "Na tributação, propõe encaminhar projeto de lei para isenção do IPVA de motocicletas de até 160 cilindradas.",
         "evidencias": [
           {
@@ -954,6 +961,7 @@
         ]
       },
       {
+        "id": "81d33b0d4f6bba71",
         "texto": "Na gestão pública, planeja criar e consolidar o Portal Único de Serviços do Estado de Roraima.",
         "evidencias": [
           {

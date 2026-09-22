@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -632,6 +632,7 @@
     "texto": "O programa prevê ampliar e simplificar os serviços públicos digitais, revisando processos, integrando plataformas e adotando linguagem simples, acessibilidade e múltiplos canais de atendimento. O plano prevê fortalecer a Atenção Primária à Saúde, ampliando as Unidades Básicas de Saúde - UBS, qualificando o atendimento com equipes multidisciplinares. O governo propõe ampliar a Escola em Tempo Integral, priorizando as regiões com maior demanda, com a perspectiva de alcançar toda a rede pública. O programa prevê modernizar e expandir para todas as RAs a rede de Restaurantes Comunitários, garantindo refeições adequadas, acessíveis e de qualidade. O plano propõe implantar o programa Tarifa Zero de gratuidade do transporte público do Distrito Federal para a população de baixa renda. O governo propõe fortalecer as cooperativas e associações de catadores de materiais recicláveis, modernizando os centros de triagem, ampliando a coleta seletiva e aprimorando os mecanismos transparentes de contratação e remuneração pelos serviços de coleta, triagem e recuperação de materiais.",
     "frases": [
       {
+        "id": "8c5fca69e57e007e",
         "texto": "O programa prevê ampliar e simplificar os serviços públicos digitais, revisando processos, integrando plataformas e adotando linguagem simples, acessibilidade e múltiplos canais de atendimento.",
         "evidencias": [
           {
@@ -642,6 +643,7 @@
         ]
       },
       {
+        "id": "6ad076c687654e42",
         "texto": "O plano prevê fortalecer a Atenção Primária à Saúde, ampliando as Unidades Básicas de Saúde - UBS, qualificando o atendimento com equipes multidisciplinares.",
         "evidencias": [
           {
@@ -652,6 +654,7 @@
         ]
       },
       {
+        "id": "14ad00722b3edd09",
         "texto": "O governo propõe ampliar a Escola em Tempo Integral, priorizando as regiões com maior demanda, com a perspectiva de alcançar toda a rede pública.",
         "evidencias": [
           {
@@ -662,6 +665,7 @@
         ]
       },
       {
+        "id": "a5a8101bf7f7c2bb",
         "texto": "O programa prevê modernizar e expandir para todas as RAs a rede de Restaurantes Comunitários, garantindo refeições adequadas, acessíveis e de qualidade.",
         "evidencias": [
           {
@@ -672,6 +676,7 @@
         ]
       },
       {
+        "id": "8842c21e08f60d86",
         "texto": "O plano propõe implantar o programa Tarifa Zero de gratuidade do transporte público do Distrito Federal para a população de baixa renda.",
         "evidencias": [
           {
@@ -682,6 +687,7 @@
         ]
       },
       {
+        "id": "da60983dc3884b7a",
         "texto": "O governo propõe fortalecer as cooperativas e associações de catadores de materiais recicláveis, modernizando os centros de triagem, ampliando a coleta seletiva e aprimorando os mecanismos transparentes de contratação e remuneração pelos serviços de coleta, triagem e recuperação de materiais.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -696,6 +696,7 @@
     "texto": "O documento apresenta propostas estruturantes para a gestão do Distrito Federal no período de 2027–2030, conforme seu plano oficial de governo. O plano prevê a dinamização das áreas de desenvolvimento econômico nas Regiões Administrativas mediante infraestrutura básica. O plano propõe consolidar o Distrito Federal como um cluster de Agtechs com pesquisa aplicada a startups de biotecnologia, manejo de precisão e irrigação inteligente. Na saúde pública, prevê elevar a cobertura da atenção primária de forma regionalizada. Para a primeira infância, propõe universalizar as creches por meio do Cartão Creche e de parcerias múltiplas. Na mobilidade, prevê a implantação do VLT no eixo Aeroporto Internacional – W3 Sul – W3 Norte. Na gestão pública, propõe consolidar os serviços prestados pelo GDF em um aplicativo único. Na transparência pública, prevê monitoramento automatizado de licitações e contratos em tempo real.",
     "frases": [
       {
+        "id": "0e8756e886119af3",
         "texto": "O documento apresenta propostas estruturantes para a gestão do Distrito Federal no período de 2027–2030, conforme seu plano oficial de governo.",
         "evidencias": [
           {
@@ -706,6 +707,7 @@
         ]
       },
       {
+        "id": "48267733dcad42f3",
         "texto": "O plano prevê a dinamização das áreas de desenvolvimento econômico nas Regiões Administrativas mediante infraestrutura básica.",
         "evidencias": [
           {
@@ -716,6 +718,7 @@
         ]
       },
       {
+        "id": "8f79633b0c46a8df",
         "texto": "O plano propõe consolidar o Distrito Federal como um cluster de Agtechs com pesquisa aplicada a startups de biotecnologia, manejo de precisão e irrigação inteligente.",
         "evidencias": [
           {
@@ -726,6 +729,7 @@
         ]
       },
       {
+        "id": "3f0b7b815c694bb0",
         "texto": "Na saúde pública, prevê elevar a cobertura da atenção primária de forma regionalizada.",
         "evidencias": [
           {
@@ -736,6 +740,7 @@
         ]
       },
       {
+        "id": "a960a5f9da99cc31",
         "texto": "Para a primeira infância, propõe universalizar as creches por meio do Cartão Creche e de parcerias múltiplas.",
         "evidencias": [
           {
@@ -746,6 +751,7 @@
         ]
       },
       {
+        "id": "830e17ab2b1623e9",
         "texto": "Na mobilidade, prevê a implantação do VLT no eixo Aeroporto Internacional – W3 Sul – W3 Norte.",
         "evidencias": [
           {
@@ -756,6 +762,7 @@
         ]
       },
       {
+        "id": "ebf6a52f81153809",
         "texto": "Na gestão pública, propõe consolidar os serviços prestados pelo GDF em um aplicativo único.",
         "evidencias": [
           {
@@ -766,6 +773,7 @@
         ]
       },
       {
+        "id": "22b988c26d8f2e09",
         "texto": "Na transparência pública, prevê monitoramento automatizado de licitações e contratos em tempo real.",
         "evidencias": [
           {

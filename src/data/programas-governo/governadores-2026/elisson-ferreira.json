@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -3040,6 +3040,7 @@
     "texto": "O plano está estruturado em 36 Eixos Estratégicos. O programa propõe transformar o Distrito Federal na unidade da Federação mais eficiente, transparente, inovadora e com a melhor qualidade de vida do Brasil até 2030. Na educação infantil, o programa prevê entregar 8 mil novas vagas em creches em quatro anos. Na saúde, estabelece como meta oficial alcançar 85% de cobertura da população pela Saúde da Família. Na gestão, propõe publicar o Plano de Metas nos primeiros 90 dias. Na política energética, propõe implantar energia solar ou contratação equivalente em pelo menos 300 prédios públicos em quatro anos. No transporte público, propõe implantar informação em tempo real sobre localização, lotação e previsão de chegada dos veículos. Na economia verde, propõe qualificar pelo menos 15 mil trabalhadores para atividades da economia verde em quatro anos.",
     "frases": [
       {
+        "id": "ed11253d3b9b4f6a",
         "texto": "O plano está estruturado em 36 Eixos Estratégicos.",
         "evidencias": [
           {
@@ -3050,6 +3051,7 @@
         ]
       },
       {
+        "id": "ae9955667616f4ac",
         "texto": "O programa propõe transformar o Distrito Federal na unidade da Federação mais eficiente, transparente, inovadora e com a melhor qualidade de vida do Brasil até 2030.",
         "evidencias": [
           {
@@ -3060,6 +3062,7 @@
         ]
       },
       {
+        "id": "a029ed8ad0ec3012",
         "texto": "Na educação infantil, o programa prevê entregar 8 mil novas vagas em creches em quatro anos.",
         "evidencias": [
           {
@@ -3070,6 +3073,7 @@
         ]
       },
       {
+        "id": "e11e653a09923b9a",
         "texto": "Na saúde, estabelece como meta oficial alcançar 85% de cobertura da população pela Saúde da Família.",
         "evidencias": [
           {
@@ -3080,6 +3084,7 @@
         ]
       },
       {
+        "id": "296c62f05e5fe39d",
         "texto": "Na gestão, propõe publicar o Plano de Metas nos primeiros 90 dias.",
         "evidencias": [
           {
@@ -3090,6 +3095,7 @@
         ]
       },
       {
+        "id": "485a2b682bc3ef7c",
         "texto": "Na política energética, propõe implantar energia solar ou contratação equivalente em pelo menos 300 prédios públicos em quatro anos.",
         "evidencias": [
           {
@@ -3100,6 +3106,7 @@
         ]
       },
       {
+        "id": "bec1382bf1d241cc",
         "texto": "No transporte público, propõe implantar informação em tempo real sobre localização, lotação e previsão de chegada dos veículos.",
         "evidencias": [
           {
@@ -3110,6 +3117,7 @@
         ]
       },
       {
+        "id": "6754e87daa780643",
         "texto": "Na economia verde, propõe qualificar pelo menos 15 mil trabalhadores para atividades da economia verde em quatro anos.",
         "evidencias": [
           {

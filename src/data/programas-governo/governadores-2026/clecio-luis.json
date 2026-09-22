@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -562,6 +562,7 @@
     "texto": "O programa prevê preparar a população amapaense para as oportunidades da economia do óleo e gás na Margem Equatorial. O plano propõe criar um Fundo Soberano Estadual com receitas provenientes do óleo e gás. O documento propõe consolidar a sociobioeconomia como estratégia de desenvolvimento, articulando o Plano Estadual, o Selo Amapá e o Parque Tecnológico. O plano planeja implantar 500 quilômetros de pavimentação urbana em parceria com os 16 municípios. O programa prevê garantir e consolidar a alfabetização de todas as crianças na idade certa. O plano propõe ampliar a saúde digital e a telessaúde no Amapá, integrando informações, regulação, cadastro e prontuário eletrônico em uma única plataforma. O documento prevê fortalecer o Programa Amapá Mais Seguro, ampliando e integrando o cercamento eletrônico. O plano planeja ampliar o Governo Digital, com a criação do Super Fácil Amapá Digital.",
     "frases": [
       {
+        "id": "faf0f4acd7ae3006",
         "texto": "O programa prevê preparar a população amapaense para as oportunidades da economia do óleo e gás na Margem Equatorial.",
         "evidencias": [
           {
@@ -572,6 +573,7 @@
         ]
       },
       {
+        "id": "c83682b30a5bb048",
         "texto": "O plano propõe criar um Fundo Soberano Estadual com receitas provenientes do óleo e gás.",
         "evidencias": [
           {
@@ -582,6 +584,7 @@
         ]
       },
       {
+        "id": "f72f9a488e56adea",
         "texto": "O documento propõe consolidar a sociobioeconomia como estratégia de desenvolvimento, articulando o Plano Estadual, o Selo Amapá e o Parque Tecnológico.",
         "evidencias": [
           {
@@ -592,6 +595,7 @@
         ]
       },
       {
+        "id": "d32212fe6622ec8d",
         "texto": "O plano planeja implantar 500 quilômetros de pavimentação urbana em parceria com os 16 municípios.",
         "evidencias": [
           {
@@ -602,6 +606,7 @@
         ]
       },
       {
+        "id": "18c4c415ef3609b5",
         "texto": "O programa prevê garantir e consolidar a alfabetização de todas as crianças na idade certa.",
         "evidencias": [
           {
@@ -612,6 +617,7 @@
         ]
       },
       {
+        "id": "c1514344d823335f",
         "texto": "O plano propõe ampliar a saúde digital e a telessaúde no Amapá, integrando informações, regulação, cadastro e prontuário eletrônico em uma única plataforma.",
         "evidencias": [
           {
@@ -622,6 +628,7 @@
         ]
       },
       {
+        "id": "917b9e532d0dbf50",
         "texto": "O documento prevê fortalecer o Programa Amapá Mais Seguro, ampliando e integrando o cercamento eletrônico.",
         "evidencias": [
           {
@@ -632,6 +639,7 @@
         ]
       },
       {
+        "id": "4ff9a53501ef2415",
         "texto": "O plano planeja ampliar o Governo Digital, com a criação do Super Fácil Amapá Digital.",
         "evidencias": [
           {

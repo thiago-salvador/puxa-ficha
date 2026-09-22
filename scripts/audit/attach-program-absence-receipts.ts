@@ -138,7 +138,7 @@ export function buildProgramAbsencePublicRecords(
     return {
       slug: receipt.profile_slug,
       record: {
-        version: 1,
+        version: 2,
         estado: "sem_documento_oficial",
         fonte: {
           ano: 2026,

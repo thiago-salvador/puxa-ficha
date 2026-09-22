@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -240,6 +240,7 @@
     "texto": "O documento apresenta propostas de governo inspiradas na linha política definida pelo Congresso da Unidade Popular. No saneamento, o programa propõe reestruturar a CASAL como uma empresa pública sob controle dos trabalhadores e usuários. No financiamento estadual, prevê auditar a dívida pública do Estado de Alagoas. O programa prevê a criação do Banco de Desenvolvimento Popular de Alagoas para financiar cooperativas de trabalhadores. No transporte, propõe criar uma empresa pública de transporte de passageiros em Alagoas. Na educação, prevê concursos públicos para professoras/es e funcionárias/os de educação. Na saúde, propõe a estatização da gestão e o cancelamento gradual e planejado de contratos de gestão com OSs. Na proteção ambiental, propõe a criação e efetivação do Parque Estadual da Caatinga Alagoana.",
     "frases": [
       {
+        "id": "17b2b1b81742f31c",
         "texto": "O documento apresenta propostas de governo inspiradas na linha política definida pelo Congresso da Unidade Popular.",
         "evidencias": [
           {
@@ -250,6 +251,7 @@
         ]
       },
       {
+        "id": "f83d288c0b39f6ce",
         "texto": "No saneamento, o programa propõe reestruturar a CASAL como uma empresa pública sob controle dos trabalhadores e usuários.",
         "evidencias": [
           {
@@ -260,6 +262,7 @@
         ]
       },
       {
+        "id": "4eabbafef4736db5",
         "texto": "No financiamento estadual, prevê auditar a dívida pública do Estado de Alagoas.",
         "evidencias": [
           {
@@ -270,6 +273,7 @@
         ]
       },
       {
+        "id": "bb0f15cca1ff2d4e",
         "texto": "O programa prevê a criação do Banco de Desenvolvimento Popular de Alagoas para financiar cooperativas de trabalhadores.",
         "evidencias": [
           {
@@ -280,6 +284,7 @@
         ]
       },
       {
+        "id": "eb3e54c10b81d713",
         "texto": "No transporte, propõe criar uma empresa pública de transporte de passageiros em Alagoas.",
         "evidencias": [
           {
@@ -290,6 +295,7 @@
         ]
       },
       {
+        "id": "5cb79ab2e7eeec5e",
         "texto": "Na educação, prevê concursos públicos para professoras/es e funcionárias/os de educação.",
         "evidencias": [
           {
@@ -300,6 +306,7 @@
         ]
       },
       {
+        "id": "eab32c3fa3b0f158",
         "texto": "Na saúde, propõe a estatização da gestão e o cancelamento gradual e planejado de contratos de gestão com OSs.",
         "evidencias": [
           {
@@ -310,6 +317,7 @@
         ]
       },
       {
+        "id": "493ee2ae2b0738a3",
         "texto": "Na proteção ambiental, propõe a criação e efetivação do Parque Estadual da Caatinga Alagoana.",
         "evidencias": [
           {

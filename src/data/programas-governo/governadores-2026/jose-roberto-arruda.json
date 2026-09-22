@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -2606,6 +2606,7 @@
     "texto": "O programa prevê uma plataforma digital única para acesso, pelo celular, a praticamente todos os serviços públicos do Distrito Federal. Na Saúde Digital, propõe prontuário eletrônico único, agendamento online, telemedicina, prescrição eletrônica e acesso aos resultados de exames pelo celular. Para a educação, prevê a implantação da Rede de Educação Inteligente do DF, com plataformas digitais de aprendizagem e conteúdos educacionais online. Na administração pública, propõe o programa Governo Sem Papel para digitalizar integralmente os processos administrativos. Também prevê soluções de inteligência artificial para apoiar decisões, automatizar processos e ampliar a qualidade dos serviços públicos. Em segurança, prevê uma Política Distrital de Segurança Cibernética para proteger informações públicas, serviços digitais e infraestrutura tecnológica da administração pública. Para os servidores, propõe capacitação contínua em competências digitais, análise de dados e inteligência artificial por meio do programa Servidor Público Digital.",
     "frases": [
       {
+        "id": "9dae7e9e442f7693",
         "texto": "O programa prevê uma plataforma digital única para acesso, pelo celular, a praticamente todos os serviços públicos do Distrito Federal.",
         "evidencias": [
           {
@@ -2616,6 +2617,7 @@
         ]
       },
       {
+        "id": "118336009454af06",
         "texto": "Na Saúde Digital, propõe prontuário eletrônico único, agendamento online, telemedicina, prescrição eletrônica e acesso aos resultados de exames pelo celular.",
         "evidencias": [
           {
@@ -2626,6 +2628,7 @@
         ]
       },
       {
+        "id": "5abe2d3404e6e59e",
         "texto": "Para a educação, prevê a implantação da Rede de Educação Inteligente do DF, com plataformas digitais de aprendizagem e conteúdos educacionais online.",
         "evidencias": [
           {
@@ -2636,6 +2639,7 @@
         ]
       },
       {
+        "id": "3f604d6ab5b6d603",
         "texto": "Na administração pública, propõe o programa Governo Sem Papel para digitalizar integralmente os processos administrativos.",
         "evidencias": [
           {
@@ -2646,6 +2650,7 @@
         ]
       },
       {
+        "id": "2cddc05cf9e0ee9d",
         "texto": "Também prevê soluções de inteligência artificial para apoiar decisões, automatizar processos e ampliar a qualidade dos serviços públicos.",
         "evidencias": [
           {
@@ -2656,6 +2661,7 @@
         ]
       },
       {
+        "id": "a9bc9ca37abaa0a0",
         "texto": "Em segurança, prevê uma Política Distrital de Segurança Cibernética para proteger informações públicas, serviços digitais e infraestrutura tecnológica da administração pública.",
         "evidencias": [
           {
@@ -2666,6 +2672,7 @@
         ]
       },
       {
+        "id": "2ac341f6885d4776",
         "texto": "Para os servidores, propõe capacitação contínua em competências digitais, análise de dados e inteligência artificial por meio do programa Servidor Público Digital.",
         "evidencias": [
           {

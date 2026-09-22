@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -212,6 +212,7 @@
     "texto": "O programa prevê planejamento estratégico territorial para orientar a administração estadual, com participação direta da sociedade nas tomadas de decisão. Na saúde pública, propõe um novo hospital de urgência, emergência e trauma em Porto Velho, integrado à rede estadual para regular leitos. Na educação superior, propõe a criação da Universidade Estadual de Rondônia, estruturada com foco nas vocações regionais, priorizando estudantes da rede pública local. Na educação básica, planeja escolas estaduais em tempo integral, climatizadas e bilíngues, com matriz curricular fortalecida por ciências, tecnologia, artes e esportes. Na segurança pública, prevê concursos para novos profissionais das forças de segurança, com distribuição regional definida por estudo técnico. Na economia, propõe redução da burocracia para MEIs, MEs e EPPs, conforme a diretriz de apoio a pequenos negócios. Na agricultura familiar, prevê manutenção contínua de estradas vicinais, com pontes em parceria com municípios. Na cultura, propõe repasse transparente e descentralizado dos fundos estaduais e federais para os 52 municípios.",
     "frases": [
       {
+        "id": "b1b166ab37e5e6ef",
         "texto": "O programa prevê planejamento estratégico territorial para orientar a administração estadual, com participação direta da sociedade nas tomadas de decisão.",
         "evidencias": [
           {
@@ -222,6 +223,7 @@
         ]
       },
       {
+        "id": "ab371fc8e501b797",
         "texto": "Na saúde pública, propõe um novo hospital de urgência, emergência e trauma em Porto Velho, integrado à rede estadual para regular leitos.",
         "evidencias": [
           {
@@ -232,6 +234,7 @@
         ]
       },
       {
+        "id": "28194efa86d61fc8",
         "texto": "Na educação superior, propõe a criação da Universidade Estadual de Rondônia, estruturada com foco nas vocações regionais, priorizando estudantes da rede pública local.",
         "evidencias": [
           {
@@ -242,6 +245,7 @@
         ]
       },
       {
+        "id": "f1a151fd17e2a618",
         "texto": "Na educação básica, planeja escolas estaduais em tempo integral, climatizadas e bilíngues, com matriz curricular fortalecida por ciências, tecnologia, artes e esportes.",
         "evidencias": [
           {
@@ -252,6 +256,7 @@
         ]
       },
       {
+        "id": "26315b0613f53c86",
         "texto": "Na segurança pública, prevê concursos para novos profissionais das forças de segurança, com distribuição regional definida por estudo técnico.",
         "evidencias": [
           {
@@ -262,6 +267,7 @@
         ]
       },
       {
+        "id": "93de2812cf41046d",
         "texto": "Na economia, propõe redução da burocracia para MEIs, MEs e EPPs, conforme a diretriz de apoio a pequenos negócios.",
         "evidencias": [
           {
@@ -272,6 +278,7 @@
         ]
       },
       {
+        "id": "eee50357d237cf81",
         "texto": "Na agricultura familiar, prevê manutenção contínua de estradas vicinais, com pontes em parceria com municípios.",
         "evidencias": [
           {
@@ -282,6 +289,7 @@
         ]
       },
       {
+        "id": "e9875d20d6cf76f9",
         "texto": "Na cultura, propõe repasse transparente e descentralizado dos fundos estaduais e federais para os 52 municípios.",
         "evidencias": [
           {

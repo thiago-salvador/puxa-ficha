@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1827,6 +1827,7 @@
     "texto": "O documento apresenta a candidatura de Augusto Cury à Presidência da República, estruturada em torno da proposta de superar a polarização política por meio de uma \"cultura da paz\". O programa propõe perseguir um déficit público próximo de zero durante o mandato. O texto defende a adoção do sistema semipresidencialista, com um Primeiro-Ministro escolhido a partir da maioria parlamentar. O programa propõe mandato de oito anos para os ministros do Supremo Tribunal Federal. O documento prevê a criação do Programa Mulheres Vivas, voltado à prevenção do feminicídio e à proteção das mulheres. O plano propõe transformar o Brasil em um dos maiores centros mundiais de telemedicina, com o objetivo de reduzir filas no Sistema Único de Saúde. O programa defende a ampliação do cooperativismo, com meta de dobrar o número de cooperados no país. O texto propõe a criação do Ministério da Segurança Pública e a integração das forças policiais por meio do programa FATO.",
     "frases": [
       {
+        "id": "d27fc262f02fa37b",
         "texto": "O documento apresenta a candidatura de Augusto Cury à Presidência da República, estruturada em torno da proposta de superar a polarização política por meio de uma \"cultura da paz\".",
         "evidencias": [
           {
@@ -1840,6 +1841,7 @@
         ]
       },
       {
+        "id": "2835b5ef267914b5",
         "texto": "O programa propõe perseguir um déficit público próximo de zero durante o mandato.",
         "evidencias": [
           {
@@ -1853,6 +1855,7 @@
         ]
       },
       {
+        "id": "21291b90c5edbd9d",
         "texto": "O texto defende a adoção do sistema semipresidencialista, com um Primeiro-Ministro escolhido a partir da maioria parlamentar.",
         "evidencias": [
           {
@@ -1862,6 +1865,7 @@
         ]
       },
       {
+        "id": "0b5da8439dbb1d41",
         "texto": "O programa propõe mandato de oito anos para os ministros do Supremo Tribunal Federal.",
         "evidencias": [
           {
@@ -1871,6 +1875,7 @@
         ]
       },
       {
+        "id": "ca076bbf18768eb2",
         "texto": "O documento prevê a criação do Programa Mulheres Vivas, voltado à prevenção do feminicídio e à proteção das mulheres.",
         "evidencias": [
           {
@@ -1880,6 +1885,7 @@
         ]
       },
       {
+        "id": "3ea9d7dcddc99501",
         "texto": "O plano propõe transformar o Brasil em um dos maiores centros mundiais de telemedicina, com o objetivo de reduzir filas no Sistema Único de Saúde.",
         "evidencias": [
           {
@@ -1893,6 +1899,7 @@
         ]
       },
       {
+        "id": "27f810f74b866f51",
         "texto": "O programa defende a ampliação do cooperativismo, com meta de dobrar o número de cooperados no país.",
         "evidencias": [
           {
@@ -1906,6 +1913,7 @@
         ]
       },
       {
+        "id": "9f408df910b61f95",
         "texto": "O texto propõe a criação do Ministério da Segurança Pública e a integração das forças policiais por meio do programa FATO.",
         "evidencias": [
           {

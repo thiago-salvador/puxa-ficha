@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -630,6 +630,7 @@
     "texto": "O documento apresenta o programa de governo da Unidade Popular pelo Socialismo (UP), tendo Samara Martins como candidata à Presidência do Brasil. O texto defende uma posição anti-imperialista, incluindo o rompimento de relações com Israel e apoio às lutas de Cuba, Venezuela e Irã. Na área econômica, propõe a nacionalização dos bancos e a suspensão imediata do pagamento da dívida pública, acompanhada de auditoria cidadã. Para o trabalho, defende aumento de 100% no salário mínimo e redução da jornada para 30 horas semanais sem redução salarial. Na saúde, propõe que o SUS seja 100% estatal, com fim da gestão hospitalar por Organizações Sociais. Na educação, defende o fim do lucro no ensino e a destinação de pelo menos 10% do PIB à educação pública. O programa também propõe a desmilitarização das polícias e a reestatização de empresas privatizadas, como Petrobras, Eletrobras e Vale. Defende ainda uma reforma agrária popular baseada na nacionalização da terra e no fim do seu monopólio privado.",
     "frases": [
       {
+        "id": "cd23bee0b98ca491",
         "texto": "O documento apresenta o programa de governo da Unidade Popular pelo Socialismo (UP), tendo Samara Martins como candidata à Presidência do Brasil.",
         "evidencias": [
           {
@@ -643,6 +644,7 @@
         ]
       },
       {
+        "id": "c6d55749d1648ca0",
         "texto": "O texto defende uma posição anti-imperialista, incluindo o rompimento de relações com Israel e apoio às lutas de Cuba, Venezuela e Irã.",
         "evidencias": [
           {
@@ -656,6 +658,7 @@
         ]
       },
       {
+        "id": "5a245b20c0931016",
         "texto": "Na área econômica, propõe a nacionalização dos bancos e a suspensão imediata do pagamento da dívida pública, acompanhada de auditoria cidadã.",
         "evidencias": [
           {
@@ -669,6 +672,7 @@
         ]
       },
       {
+        "id": "221e00a90ff1ba6e",
         "texto": "Para o trabalho, defende aumento de 100% no salário mínimo e redução da jornada para 30 horas semanais sem redução salarial.",
         "evidencias": [
           {
@@ -682,6 +686,7 @@
         ]
       },
       {
+        "id": "28cdae19d57c41b9",
         "texto": "Na saúde, propõe que o SUS seja 100% estatal, com fim da gestão hospitalar por Organizações Sociais.",
         "evidencias": [
           {
@@ -691,6 +696,7 @@
         ]
       },
       {
+        "id": "1c82b9b4bb128b1c",
         "texto": "Na educação, defende o fim do lucro no ensino e a destinação de pelo menos 10% do PIB à educação pública.",
         "evidencias": [
           {
@@ -704,6 +710,7 @@
         ]
       },
       {
+        "id": "d1921654129c10d0",
         "texto": "O programa também propõe a desmilitarização das polícias e a reestatização de empresas privatizadas, como Petrobras, Eletrobras e Vale.",
         "evidencias": [
           {
@@ -717,6 +724,7 @@
         ]
       },
       {
+        "id": "5d2e573f0de9c0df",
         "texto": "Defende ainda uma reforma agrária popular baseada na nacionalização da terra e no fim do seu monopólio privado.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -744,6 +744,7 @@
     "texto": "O plano adota uma visão territorial para os 79 municípios e as 9 regiões do estado. A estratégia prevê prioridades adequadas em cada região. O documento propõe a expansão da coleta e do tratamento de esgoto. O plano estabelece a meta de viabilizar 30 mil novas moradias até o final do segundo ano de governo. A proposta de saúde prevê hospitais regionais 24 horas, com estrutura compatível para urgência, internação, diagnóstico, cirurgias e especialidades conforme a demanda de cada região. O programa de governo prevê um aplicativo único do Estado para documentos, protocolos, saúde, matrícula, benefícios, obras e segurança. A política ambiental prevê o monitoramento de alterações de turbidez, vazão e qualidade da água. A política educacional prevê internet de qualidade em todas as escolas estaduais, com infraestrutura digital adequada ao ensino.",
     "frases": [
       {
+        "id": "aef49312b20f183f",
         "texto": "O plano adota uma visão territorial para os 79 municípios e as 9 regiões do estado.",
         "evidencias": [
           {
@@ -754,6 +755,7 @@
         ]
       },
       {
+        "id": "6fdfce0ff7ad5eed",
         "texto": "A estratégia prevê prioridades adequadas em cada região.",
         "evidencias": [
           {
@@ -764,6 +766,7 @@
         ]
       },
       {
+        "id": "dcfd5f39a1b2c1c4",
         "texto": "O documento propõe a expansão da coleta e do tratamento de esgoto.",
         "evidencias": [
           {
@@ -774,6 +777,7 @@
         ]
       },
       {
+        "id": "8a7415cef2490b7c",
         "texto": "O plano estabelece a meta de viabilizar 30 mil novas moradias até o final do segundo ano de governo.",
         "evidencias": [
           {
@@ -784,6 +788,7 @@
         ]
       },
       {
+        "id": "8e30abd24c11bd3f",
         "texto": "A proposta de saúde prevê hospitais regionais 24 horas, com estrutura compatível para urgência, internação, diagnóstico, cirurgias e especialidades conforme a demanda de cada região.",
         "evidencias": [
           {
@@ -794,6 +799,7 @@
         ]
       },
       {
+        "id": "a6d144f20d9c2489",
         "texto": "O programa de governo prevê um aplicativo único do Estado para documentos, protocolos, saúde, matrícula, benefícios, obras e segurança.",
         "evidencias": [
           {
@@ -804,6 +810,7 @@
         ]
       },
       {
+        "id": "6dc4e9a30a4f5857",
         "texto": "A política ambiental prevê o monitoramento de alterações de turbidez, vazão e qualidade da água.",
         "evidencias": [
           {
@@ -814,6 +821,7 @@
         ]
       },
       {
+        "id": "80b40ae2a921886d",
         "texto": "A política educacional prevê internet de qualidade em todas as escolas estaduais, com infraestrutura digital adequada ao ensino.",
         "evidencias": [
           {

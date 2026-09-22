@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1376,6 +1376,7 @@
     "texto": "São Paulo possui PIB de aproximadamente R$ 3,4 trilhões e responde por cerca de 31% da riqueza produzida no país. Em 2026, o orçamento estadual ultrapassou R$ 382 bilhões, conforme o valor orçamentário indicado para esse ano. Para 2026, estão previstos R$85 bilhões em isenções fiscais destinadas a empresas, conforme a previsão registrada no programa. O programa registra a defesa do fim da escala 6×1 entre suas propostas apresentadas. O programa defende o aumento de 100% do salário-mínimo, segundo a formulação específica registrada no documento. A reestatização da Sabesp será uma prioridade do governo proposto, de acordo com a formulação apresentada no programa. O governo proposto ampliará investimentos públicos para garantir acesso universal ao abastecimento de água, conforme a proposta registrada. O governo proposto elaborará um Plano Estadual de Reindustrialização voltado à recuperação da capacidade produtiva do estado, conforme a proposta descrita no documento.",
     "frases": [
       {
+        "id": "3e59d47b8ec06f7a",
         "texto": "São Paulo possui PIB de aproximadamente R$ 3,4 trilhões e responde por cerca de 31% da riqueza produzida no país.",
         "evidencias": [
           {
@@ -1386,6 +1387,7 @@
         ]
       },
       {
+        "id": "d68e4ab08f866314",
         "texto": "Em 2026, o orçamento estadual ultrapassou R$ 382 bilhões, conforme o valor orçamentário indicado para esse ano.",
         "evidencias": [
           {
@@ -1396,6 +1398,7 @@
         ]
       },
       {
+        "id": "462bbec2dd3f66c3",
         "texto": "Para 2026, estão previstos R$85 bilhões em isenções fiscais destinadas a empresas, conforme a previsão registrada no programa.",
         "evidencias": [
           {
@@ -1406,6 +1409,7 @@
         ]
       },
       {
+        "id": "d3fa128d34e5ae5f",
         "texto": "O programa registra a defesa do fim da escala 6×1 entre suas propostas apresentadas.",
         "evidencias": [
           {
@@ -1416,6 +1420,7 @@
         ]
       },
       {
+        "id": "1357e38e1e4e3444",
         "texto": "O programa defende o aumento de 100% do salário-mínimo, segundo a formulação específica registrada no documento.",
         "evidencias": [
           {
@@ -1426,6 +1431,7 @@
         ]
       },
       {
+        "id": "a6e3c675fc7b8053",
         "texto": "A reestatização da Sabesp será uma prioridade do governo proposto, de acordo com a formulação apresentada no programa.",
         "evidencias": [
           {
@@ -1436,6 +1442,7 @@
         ]
       },
       {
+        "id": "c26e25903967591f",
         "texto": "O governo proposto ampliará investimentos públicos para garantir acesso universal ao abastecimento de água, conforme a proposta registrada.",
         "evidencias": [
           {
@@ -1446,6 +1453,7 @@
         ]
       },
       {
+        "id": "04125cfaff0e9618",
         "texto": "O governo proposto elaborará um Plano Estadual de Reindustrialização voltado à recuperação da capacidade produtiva do estado, conforme a proposta descrita no documento.",
         "evidencias": [
           {

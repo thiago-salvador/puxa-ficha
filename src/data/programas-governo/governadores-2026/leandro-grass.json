@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1780,6 +1780,7 @@
     "texto": "O programa resultou de um processo participativo que reuniu 5.554 votos e 443 comentários na plataforma Decide DF. Prevê transformar o Decide DF em uma plataforma permanente de participação do GDF. Na mobilidade, propõe implantar a tarifa zero no transporte público de forma progressiva e gradual. Na educação, propõe ampliar progressivamente a educação em tempo integral para toda a rede, começando pelas regiões de maior vulnerabilidade. Na saúde, estabelece a meta de oferecer consulta com especialista e exame em até 30 dias ao final do mandato. Na habitação, prevê lançar 10 mil unidades habitacionais por ano e entregar de 20 a 30 mil no mandato. Na cultura, estabelece a meta de oferecer espaço cultural público em 100% das Regiões Administrativas. Na conectividade, propõe internet gratuita de qualidade em todas as Regiões Administrativas, escolas, terminais, feiras e frota.",
     "frases": [
       {
+        "id": "a690a73693ef3e51",
         "texto": "O programa resultou de um processo participativo que reuniu 5.554 votos e 443 comentários na plataforma Decide DF.",
         "evidencias": [
           {
@@ -1790,6 +1791,7 @@
         ]
       },
       {
+        "id": "f740086503236beb",
         "texto": "Prevê transformar o Decide DF em uma plataforma permanente de participação do GDF.",
         "evidencias": [
           {
@@ -1800,6 +1802,7 @@
         ]
       },
       {
+        "id": "9bdab165d3dfb1c5",
         "texto": "Na mobilidade, propõe implantar a tarifa zero no transporte público de forma progressiva e gradual.",
         "evidencias": [
           {
@@ -1810,6 +1813,7 @@
         ]
       },
       {
+        "id": "fca11cf0724c1602",
         "texto": "Na educação, propõe ampliar progressivamente a educação em tempo integral para toda a rede, começando pelas regiões de maior vulnerabilidade.",
         "evidencias": [
           {
@@ -1820,6 +1824,7 @@
         ]
       },
       {
+        "id": "283b56748f17defd",
         "texto": "Na saúde, estabelece a meta de oferecer consulta com especialista e exame em até 30 dias ao final do mandato.",
         "evidencias": [
           {
@@ -1830,6 +1835,7 @@
         ]
       },
       {
+        "id": "d3010d3b499ee946",
         "texto": "Na habitação, prevê lançar 10 mil unidades habitacionais por ano e entregar de 20 a 30 mil no mandato.",
         "evidencias": [
           {
@@ -1840,6 +1846,7 @@
         ]
       },
       {
+        "id": "e5252c022d38809b",
         "texto": "Na cultura, estabelece a meta de oferecer espaço cultural público em 100% das Regiões Administrativas.",
         "evidencias": [
           {
@@ -1850,6 +1857,7 @@
         ]
       },
       {
+        "id": "7fa1fc67e307b916",
         "texto": "Na conectividade, propõe internet gratuita de qualidade em todas as Regiões Administrativas, escolas, terminais, feiras e frota.",
         "evidencias": [
           {

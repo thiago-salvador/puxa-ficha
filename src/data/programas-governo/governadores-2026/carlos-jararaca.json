@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -954,6 +954,7 @@
     "texto": "O programa prevê que as políticas públicas sejam planejadas, executadas e avaliadas com base em metas e indicadores objetivos. Também prevê a implantação do RN Mais Competitivo, destinado à melhoria permanente do ambiente de negócios. Os programas estaduais de qualificação profissional deverão ser orientados pelas necessidades reais de cada região e de cada cadeia produtiva. Na saúde, o programa prevê a implantação de um programa permanente de modernização da rede hospitalar. Prevê ainda a implantação de um plano estadual de enfrentamento das filas na saúde. Também prevê o desenvolvimento de um programa estadual de saúde digital, buscando integrar informações e reduzir a fragmentação dos dados existentes na rede. O programa prevê a implantação do Programa Governo Digital RN. A inteligência artificial poderá ser utilizada como ferramenta de apoio à Administração Pública.",
     "frases": [
       {
+        "id": "ea3972b8b0b66898",
         "texto": "O programa prevê que as políticas públicas sejam planejadas, executadas e avaliadas com base em metas e indicadores objetivos.",
         "evidencias": [
           {
@@ -964,6 +965,7 @@
         ]
       },
       {
+        "id": "da9c102f577d0725",
         "texto": "Também prevê a implantação do RN Mais Competitivo, destinado à melhoria permanente do ambiente de negócios.",
         "evidencias": [
           {
@@ -974,6 +976,7 @@
         ]
       },
       {
+        "id": "5dc4cf72b55eb28d",
         "texto": "Os programas estaduais de qualificação profissional deverão ser orientados pelas necessidades reais de cada região e de cada cadeia produtiva.",
         "evidencias": [
           {
@@ -984,6 +987,7 @@
         ]
       },
       {
+        "id": "a601569688713a3c",
         "texto": "Na saúde, o programa prevê a implantação de um programa permanente de modernização da rede hospitalar.",
         "evidencias": [
           {
@@ -994,6 +998,7 @@
         ]
       },
       {
+        "id": "e2bcc828c02fd732",
         "texto": "Prevê ainda a implantação de um plano estadual de enfrentamento das filas na saúde.",
         "evidencias": [
           {
@@ -1004,6 +1009,7 @@
         ]
       },
       {
+        "id": "1d3c4512800e3e4c",
         "texto": "Também prevê o desenvolvimento de um programa estadual de saúde digital, buscando integrar informações e reduzir a fragmentação dos dados existentes na rede.",
         "evidencias": [
           {
@@ -1014,6 +1020,7 @@
         ]
       },
       {
+        "id": "9ad638ddff14e97b",
         "texto": "O programa prevê a implantação do Programa Governo Digital RN.",
         "evidencias": [
           {
@@ -1024,6 +1031,7 @@
         ]
       },
       {
+        "id": "18a916804342cf51",
         "texto": "A inteligência artificial poderá ser utilizada como ferramenta de apoio à Administração Pública.",
         "evidencias": [
           {

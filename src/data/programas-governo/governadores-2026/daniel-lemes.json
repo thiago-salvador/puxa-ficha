@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "O documento oficial para as eleições de 2026 propõe a reposição integral de 100% das perdas salariais dos trabalhadores brasileiros assalariados. O programa prevê aumento emergencial de 50% de todos os salários dos trabalhadores. Para o trabalho, propõe redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana. Na economia nacional brasileira, defende o cancelamento de todas as privatizações realizadas. Nos serviços públicos essenciais, propõe mais verbas orçamentárias para a saúde. Na educação pública nacional, prevê livre ingresso nas universidades. Na saúde pública, propõe um plano de emergência para construção de hospitais e postos de saúde em todo o País. Na reforma agrária, prevê o assentamento imediato dos milhões de sem-terra acampados em todo o território rural brasileiro.",
     "frases": [
       {
+        "id": "ffc618f840243851",
         "texto": "O documento oficial para as eleições de 2026 propõe a reposição integral de 100% das perdas salariais dos trabalhadores brasileiros assalariados.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "4a870344259f1f84",
         "texto": "O programa prevê aumento emergencial de 50% de todos os salários dos trabalhadores.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "cdfbfd7c091732f7",
         "texto": "Para o trabalho, propõe redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "f53b12edd77995b6",
         "texto": "Na economia nacional brasileira, defende o cancelamento de todas as privatizações realizadas.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "e44222d2e5f89aac",
         "texto": "Nos serviços públicos essenciais, propõe mais verbas orçamentárias para a saúde.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "6ed7f62cd9169865",
         "texto": "Na educação pública nacional, prevê livre ingresso nas universidades.",
         "evidencias": [
           {
@@ -202,6 +208,7 @@
         ]
       },
       {
+        "id": "e36856852fec9017",
         "texto": "Na saúde pública, propõe um plano de emergência para construção de hospitais e postos de saúde em todo o País.",
         "evidencias": [
           {
@@ -212,6 +219,7 @@
         ]
       },
       {
+        "id": "7d2b4dda04f53096",
         "texto": "Na reforma agrária, prevê o assentamento imediato dos milhões de sem-terra acampados em todo o território rural brasileiro.",
         "evidencias": [
           {

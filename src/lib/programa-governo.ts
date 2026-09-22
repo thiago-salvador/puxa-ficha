@@ -29,6 +29,10 @@ const PROGRAMA_GOVERNO_UFS = [
   "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO",
 ] as const
 
+/** v1: frases sem id. v2: toda frase do resumo carrega `id` derivado de slug e texto. */
+const PROGRAMA_GOVERNO_REGISTRO_VERSOES = [1, 2] as const
+export type ProgramaGovernoRegistroVersion = (typeof PROGRAMA_GOVERNO_REGISTRO_VERSOES)[number]
+
 export type ProgramaGovernoEstadoCanonico = (typeof PROGRAMA_GOVERNO_ESTADOS_CANONICOS)[number]
 export type ProgramaGovernoEstado = (typeof PROGRAMA_GOVERNO_ESTADOS)[number]
 type ProgramaGovernoCargo = (typeof PROGRAMA_GOVERNO_CARGOS)[number]
@@ -59,7 +63,9 @@ type ProgramaGovernoTema = {
   evidencias: ProgramaGovernoEvidencia[]
 }
 
-type ProgramaGovernoFrase = {
+export type ProgramaGovernoFrase = {
+  /** Obrigatório a partir do registro v2: `programaGovernoFraseId(slug, texto)`. */
+  id?: string
   texto: string
   evidencias: ProgramaGovernoEvidencia[]
 }
@@ -213,7 +219,7 @@ export type ProgramaGovernoAnuncio = {
 }
 
 export type ProgramaGovernoRegistro = {
-  version: 1
+  version: ProgramaGovernoRegistroVersion
   estado: ProgramaGovernoEstado
   fonte: ProgramaGovernoFonte | ProgramaGovernoFonteSemDocumento
   anuncio?: ProgramaGovernoAnuncio
@@ -614,6 +620,54 @@ function sha256(value: string): string {
   return createHash("sha256").update(value).digest("hex")
 }
 
+/** Texto usado no id: NFC, espaços colapsados, sem espaço nas pontas. Caixa e pontuação preservadas. */
+function normalizarTextoFraseProgramaGoverno(texto: string): string {
+  return texto.normalize("NFC").replace(/\s+/gu, " ").trim()
+}
+
+/** Id estável de frase do resumo (registro v2): sha256(slug + "\n" + texto normalizado), 16 hex. */
+export function programaGovernoFraseId(slug: string, texto: string): string {
+  return sha256(`${slug}\n${normalizarTextoFraseProgramaGoverno(texto)}`).slice(0, 16)
+}
+
+/**
+ * Resolve uma referência posicional do julgamento para o índice da frase.
+ * Formatos aceitos: `<slug>:frase:<n>` e `<chave>:frase:<n>:documentos:...`, com n a partir de 1.
+ */
+export function programaGovernoIndiceFraseDaReferencia(
+  referencia: string,
+  identidade: { slug: string | null; chave: string },
+): number | null {
+  const prefixos = [identidade.chave, identidade.slug].filter((valor): valor is string => Boolean(valor))
+  for (const prefixo of prefixos) {
+    if (!referencia.startsWith(`${prefixo}:frase:`)) continue
+    const match = /^(\d+)(?::|$)/u.exec(referencia.slice(prefixo.length + ":frase:".length))
+    if (!match) return null
+    const posicao = Number(match[1])
+    return posicao >= 1 ? posicao - 1 : null
+  }
+  return null
+}
+
+/**
+ * Conteúdo coberto pelo recibo de revisão. Ids de frase são derivados de slug e texto, verificados
+ * pelo validador e não mudam o conteúdo editorial; por isso a projeção os remove e fixa a versão 1,
+ * e a revisão feita antes do v2 continua valendo sem novo recibo.
+ */
+export function programaGovernoConteudoRevisado<T extends Pick<ProgramaGovernoRegistro, "version" | "resumo">>(
+  record: T,
+): Omit<T, "version"> & { version: 1 } {
+  if (!record.resumo) return { ...record, version: 1 }
+  return {
+    ...record,
+    version: 1,
+    resumo: {
+      ...record.resumo,
+      frases: record.resumo.frases.map((frase) => ({ texto: frase.texto, evidencias: frase.evidencias })),
+    },
+  }
+}
+
 function textoCanonicoExtracao(extracao: ProgramaGovernoExtracao): string {
   return extracao.secoes.map(({ conteudo }) => conteudo).join("\n\f\n")
 }
@@ -667,11 +721,12 @@ export function programaGovernoRevisaoHashes(
     fonte: documento.fonte,
     extracao: documento.extracao,
   }))
+  const conteudo = programaGovernoConteudoRevisado(record)
   const stableContent = {
-    version: record.version,
+    version: conteudo.version,
     fonte: record.fonte,
     documentos: documentSet,
-    resumo: record.resumo,
+    resumo: conteudo.resumo,
     geracao: record.geracao,
     julgamento: record.julgamento,
   }
@@ -699,9 +754,30 @@ export function assertProgramaGovernoDocumento(
   assertProgramaGovernoExtracao(documento.extracao, `${path}.extracao`)
 }
 
+function assertProgramaGovernoFraseIds(
+  version: ProgramaGovernoRegistroVersion,
+  slug: string | null,
+  frases: ReadonlyArray<{ texto: string; id: unknown }>,
+): void {
+  const vistos = new Set<unknown>()
+  for (const [index, frase] of frases.entries()) {
+    const path = `registro.resumo.frases[${index}].id`
+    if (version === 1) {
+      if (frase.id !== undefined) fail(path, "id de frase exige registro v2")
+      continue
+    }
+    if (!slug) fail("registro.fonte.slug", "registro v2 exige slug para o id das frases")
+    if (frase.id !== programaGovernoFraseId(slug, frase.texto)) fail(path, "deve ser o id derivado de slug e texto")
+    if (vistos.has(frase.id)) fail(path, "duplicado no registro")
+    vistos.add(frase.id)
+  }
+}
+
 export function assertProgramaGovernoRegistro(value: unknown): asserts value is ProgramaGovernoRegistro {
   const record = objectAt(value, "registro")
-  if (record.version !== 1) fail("registro.version", "versao nao suportada")
+  if (!PROGRAMA_GOVERNO_REGISTRO_VERSOES.includes(record.version as ProgramaGovernoRegistroVersion)) {
+    fail("registro.version", "versao nao suportada")
+  }
   if (!PROGRAMA_GOVERNO_ESTADOS.includes(record.estado as ProgramaGovernoEstado)) {
     fail("registro.estado", "estado editorial desconhecido")
   }
@@ -818,12 +894,12 @@ export function assertProgramaGovernoRegistro(value: unknown): asserts value is 
   if (!Array.isArray(resumo.frases) || resumo.frases.length < 6 || resumo.frases.length > 8) {
     fail("registro.resumo.frases", "deve conter entre 6 e 8 frases materiais")
   }
-  const frasesVerificadas: Array<{ texto: string }> = []
+  const frasesVerificadas: Array<{ texto: string; id: unknown }> = []
   for (const [index, raw] of resumo.frases.entries()) {
     const sentence = objectAt(raw, `registro.resumo.frases[${index}]`)
     const sentenceText = stringAt(sentence.texto, `registro.resumo.frases[${index}].texto`)
     if (!texto.includes(sentenceText)) fail(`registro.resumo.frases[${index}].texto`, "deve existir no resumo")
-    frasesVerificadas.push({ texto: sentenceText })
+    frasesVerificadas.push({ texto: sentenceText, id: sentence.id })
     evidenceListAt(
       sentence.evidencias,
       `registro.resumo.frases[${index}].evidencias`,
@@ -840,6 +916,7 @@ export function assertProgramaGovernoRegistro(value: unknown): asserts value is 
       fail("registro.resumo.texto", `contem prosa fora das frases verificadas ("${residuo.slice(0, 60)}")`)
     }
   }
+  assertProgramaGovernoFraseIds(record.version as ProgramaGovernoRegistroVersion, fonteRegistro.slug, frasesVerificadas)
   if (record.geracao !== undefined) {
     const geracao = objectAt(record.geracao, "registro.geracao")
     if (geracao.instructionsSha256 !== undefined && !/^[0-9a-f]{64}$/u.test(String(geracao.instructionsSha256))) {

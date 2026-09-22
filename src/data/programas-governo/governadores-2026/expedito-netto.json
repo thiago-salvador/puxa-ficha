@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -478,6 +478,7 @@
     "texto": "O plano prevê a implantação do Programa Fábrica Perto da Porteira para priorizar transformação local de derivados lácteos, hortifruti processado, insumos. O plano propõe a regionalização da UTI neonatal mediante um polo de terapia intensiva neonatal fora da capital, reduzindo deslocamentos de recém-nascidos. O plano prevê aplicar o PROALFA aos anos finais do ensino médio, com diagnóstico pelo SAERO, metas por escola, região, material estruturado. O plano propõe expandir videomonitoramento com IA, cercamento eletrônico, integração de bancos de dados para crimes patrimoniais, faixa de fronteira. O plano prevê instalar a Sala de Situação das Obras Paralisadas nos primeiros 100 dias, usando o levantamento do TCE como linha de base. O plano propõe regulamentar integralmente o sistema estadual de carbono jurisdicional no primeiro ano de mandato, com registro público auditável.",
     "frases": [
       {
+        "id": "134f791ad14c4831",
         "texto": "O plano prevê a implantação do Programa Fábrica Perto da Porteira para priorizar transformação local de derivados lácteos, hortifruti processado, insumos.",
         "evidencias": [
           {
@@ -488,6 +489,7 @@
         ]
       },
       {
+        "id": "bc9fb82918bc81c9",
         "texto": "O plano propõe a regionalização da UTI neonatal mediante um polo de terapia intensiva neonatal fora da capital, reduzindo deslocamentos de recém-nascidos.",
         "evidencias": [
           {
@@ -498,6 +500,7 @@
         ]
       },
       {
+        "id": "84f5504e5d2d3e33",
         "texto": "O plano prevê aplicar o PROALFA aos anos finais do ensino médio, com diagnóstico pelo SAERO, metas por escola, região, material estruturado.",
         "evidencias": [
           {
@@ -508,6 +511,7 @@
         ]
       },
       {
+        "id": "a5a32d6b134172ce",
         "texto": "O plano propõe expandir videomonitoramento com IA, cercamento eletrônico, integração de bancos de dados para crimes patrimoniais, faixa de fronteira.",
         "evidencias": [
           {
@@ -518,6 +522,7 @@
         ]
       },
       {
+        "id": "abde6a0cd2def60c",
         "texto": "O plano prevê instalar a Sala de Situação das Obras Paralisadas nos primeiros 100 dias, usando o levantamento do TCE como linha de base.",
         "evidencias": [
           {
@@ -528,6 +533,7 @@
         ]
       },
       {
+        "id": "3105c6f2ca4712c5",
         "texto": "O plano propõe regulamentar integralmente o sistema estadual de carbono jurisdicional no primeiro ano de mandato, com registro público auditável.",
         "evidencias": [
           {

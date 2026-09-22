@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -352,6 +352,7 @@
     "texto": "O programa de governo da candidatura de Araceli Lemos, da Federação PSOL-REDE, ao governo do Pará, prevê a revisão da privatização da Cosanpa, com a construção de uma nova empresa pública de saneamento. Na saúde, o plano propõe prazo máximo de sessenta dias para exames e procedimentos especializados. A plataforma propõe salário-mínimo regional de dois mil e duzentos reais, conforme o cálculo do Dieese. O programa inclui a implantação de tarifa zero no transporte coletivo urbano, em parceria com o governo federal. Na agenda climática, o plano prevê a criação da Secretaria de Estado de Mudanças Climáticas, com a missão de coordenar a política estadual de justiça climática. O programa estabelece o desmatamento zero. A plataforma prevê a instalação de delegacias especializadas para as mulheres em todos os municípios, com funcionamento de 24 horas. Para a população idosa, o plano propõe a criação de centros de referência integral em todas as regiões do estado.",
     "frases": [
       {
+        "id": "1bcf83fba7093396",
         "texto": "O programa de governo da candidatura de Araceli Lemos, da Federação PSOL-REDE, ao governo do Pará, prevê a revisão da privatização da Cosanpa, com a construção de uma nova empresa pública de saneamento.",
         "evidencias": [
           {
@@ -367,6 +368,7 @@
         ]
       },
       {
+        "id": "97939a5cdd0263c2",
         "texto": "Na saúde, o plano propõe prazo máximo de sessenta dias para exames e procedimentos especializados.",
         "evidencias": [
           {
@@ -377,6 +379,7 @@
         ]
       },
       {
+        "id": "8b7e7ad9bf2ebfeb",
         "texto": "A plataforma propõe salário-mínimo regional de dois mil e duzentos reais, conforme o cálculo do Dieese.",
         "evidencias": [
           {
@@ -387,6 +390,7 @@
         ]
       },
       {
+        "id": "cf9042e79a4ff5b9",
         "texto": "O programa inclui a implantação de tarifa zero no transporte coletivo urbano, em parceria com o governo federal.",
         "evidencias": [
           {
@@ -397,6 +401,7 @@
         ]
       },
       {
+        "id": "8e77363d464b855f",
         "texto": "Na agenda climática, o plano prevê a criação da Secretaria de Estado de Mudanças Climáticas, com a missão de coordenar a política estadual de justiça climática.",
         "evidencias": [
           {
@@ -412,6 +417,7 @@
         ]
       },
       {
+        "id": "71fbc780dd8adc57",
         "texto": "O programa estabelece o desmatamento zero.",
         "evidencias": [
           {
@@ -422,6 +428,7 @@
         ]
       },
       {
+        "id": "5bd4b5259fea0113",
         "texto": "A plataforma prevê a instalação de delegacias especializadas para as mulheres em todos os municípios, com funcionamento de 24 horas.",
         "evidencias": [
           {
@@ -437,6 +444,7 @@
         ]
       },
       {
+        "id": "a1468417d75abfee",
         "texto": "Para a população idosa, o plano propõe a criação de centros de referência integral em todas as regiões do estado.",
         "evidencias": [
           {

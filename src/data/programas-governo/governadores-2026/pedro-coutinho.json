@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -170,6 +170,7 @@
     "texto": "O programa propõe revisar a estrutura tributária estadual para reduzir distorções e simplificar obrigações. Também prevê transformar a Paraíba em um estado favorável à iniciativa privada, com redução de burocracias. O plano propõe fortalecer a agricultura familiar e o agronegócio por meio de assistência técnica, inovação, mecanização, acesso a mercados e agregação de valor. Prevê uma política estadual de segurança hídrica de longo prazo, priorizando o abastecimento humano. Na educação, propõe implantar progressivamente um Programa Estadual de Voucher Educação, com critérios transparentes e legislação específica. Na saúde, prevê reduzir filas e melhorar o acesso a consultas, exames e procedimentos especializados. Na administração pública, propõe digitalizar progressivamente os serviços estaduais para ampliar o atendimento sem deslocamentos. O documento prevê metas, indicadores e mecanismos de avaliação para os grandes programas estaduais.",
     "frases": [
       {
+        "id": "4c563f65c5df198e",
         "texto": "O programa propõe revisar a estrutura tributária estadual para reduzir distorções e simplificar obrigações.",
         "evidencias": [
           {
@@ -180,6 +181,7 @@
         ]
       },
       {
+        "id": "2dd7c6e0379f357d",
         "texto": "Também prevê transformar a Paraíba em um estado favorável à iniciativa privada, com redução de burocracias.",
         "evidencias": [
           {
@@ -190,6 +192,7 @@
         ]
       },
       {
+        "id": "248178f9c9627999",
         "texto": "O plano propõe fortalecer a agricultura familiar e o agronegócio por meio de assistência técnica, inovação, mecanização, acesso a mercados e agregação de valor.",
         "evidencias": [
           {
@@ -200,6 +203,7 @@
         ]
       },
       {
+        "id": "a19c44d0eb76a17a",
         "texto": "Prevê uma política estadual de segurança hídrica de longo prazo, priorizando o abastecimento humano.",
         "evidencias": [
           {
@@ -210,6 +214,7 @@
         ]
       },
       {
+        "id": "febf023591beb5cf",
         "texto": "Na educação, propõe implantar progressivamente um Programa Estadual de Voucher Educação, com critérios transparentes e legislação específica.",
         "evidencias": [
           {
@@ -220,6 +225,7 @@
         ]
       },
       {
+        "id": "1734bf370c1a68c9",
         "texto": "Na saúde, prevê reduzir filas e melhorar o acesso a consultas, exames e procedimentos especializados.",
         "evidencias": [
           {
@@ -230,6 +236,7 @@
         ]
       },
       {
+        "id": "5e0b52fabc44f0ed",
         "texto": "Na administração pública, propõe digitalizar progressivamente os serviços estaduais para ampliar o atendimento sem deslocamentos.",
         "evidencias": [
           {
@@ -240,6 +247,7 @@
         ]
       },
       {
+        "id": "cc2f85679a42d7bd",
         "texto": "O documento prevê metas, indicadores e mecanismos de avaliação para os grandes programas estaduais.",
         "evidencias": [
           {

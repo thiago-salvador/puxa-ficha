@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -898,6 +898,7 @@
     "texto": "O programa propõe a reocupação, por parte do Estado do Espírito Santo, de todo o território capixaba hoje sob o controle de facções criminosas. O plano propõe a criação de um Sistema Estadual de Monitoramento Territorial Permanente, integrado aos municípios e apoiado em ferramentas modernas de georreferenciamento, inteligência artificial, sensoriamento remoto por satélite e monitoramento por drones. Será criada uma rede integrada de transporte coletivo de alta capacidade baseada na implantação conjunta de VLT e BRT nos principais corredores urbanos da Grande Vitória. Expandiremos o modelo de escolas cívico-militares para todos os locais de alta vulnerabilidade social. Para resolver esse problema, implementaremos o Prontuário Único de Saúde do Espírito Santo (PUS-ES): uma base de dados central que integra as informações clínicas de toda a rede estadual e, progressivamente, municipal. Em localidades menores do interior, onde uma sala fixa não teria demanda suficiente para justificar a disponibilização permanente de estrutura, o mediador técnico de enfermagem ou agente de saúde, irá com o transporte sanitário até o domicílio do paciente, onde mediará a consulta online via tablet.",
     "frases": [
       {
+        "id": "8e78fcbc70dc9f1e",
         "texto": "O programa propõe a reocupação, por parte do Estado do Espírito Santo, de todo o território capixaba hoje sob o controle de facções criminosas.",
         "evidencias": [
           {
@@ -908,6 +909,7 @@
         ]
       },
       {
+        "id": "2f6daee8afcda75e",
         "texto": "O plano propõe a criação de um Sistema Estadual de Monitoramento Territorial Permanente, integrado aos municípios e apoiado em ferramentas modernas de georreferenciamento, inteligência artificial, sensoriamento remoto por satélite e monitoramento por drones.",
         "evidencias": [
           {
@@ -918,6 +920,7 @@
         ]
       },
       {
+        "id": "ad25f1391b8fa953",
         "texto": "Será criada uma rede integrada de transporte coletivo de alta capacidade baseada na implantação conjunta de VLT e BRT nos principais corredores urbanos da Grande Vitória.",
         "evidencias": [
           {
@@ -928,6 +931,7 @@
         ]
       },
       {
+        "id": "276e11ad65d25043",
         "texto": "Expandiremos o modelo de escolas cívico-militares para todos os locais de alta vulnerabilidade social.",
         "evidencias": [
           {
@@ -938,6 +942,7 @@
         ]
       },
       {
+        "id": "c07adcbab3715841",
         "texto": "Para resolver esse problema, implementaremos o Prontuário Único de Saúde do Espírito Santo (PUS-ES): uma base de dados central que integra as informações clínicas de toda a rede estadual e, progressivamente, municipal.",
         "evidencias": [
           {
@@ -948,6 +953,7 @@
         ]
       },
       {
+        "id": "185695615b42d135",
         "texto": "Em localidades menores do interior, onde uma sala fixa não teria demanda suficiente para justificar a disponibilização permanente de estrutura, o mediador técnico de enfermagem ou agente de saúde, irá com o transporte sanitário até o domicílio do paciente, onde mediará a consulta online via tablet.",
         "evidencias": [
           {

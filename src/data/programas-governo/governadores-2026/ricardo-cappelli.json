@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -716,6 +716,7 @@
     "texto": "O programa prevê fila única integrada para consultas, exames, cirurgias e reabilitação, com protocolos de prioridade clínica, comunicação digital e busca ativa para reduzir faltas. O programa propõe ampliar gradualmente a cobertura efetiva da Estratégia Saúde da Família conforme a vulnerabilidade territorial, com equipes de saúde bucal e multiprofissionais. Na educação, o programa planeja expandir a educação profissional em articulação com o ensino médio e a Educação de Jovens e Adultos. No desenvolvimento econômico, o programa propõe estruturar crédito produtivo orientado para pequenos, médios e microempreendedores individuais, com garantias facilitadas e educação financeira. Na mobilidade, o programa propõe implantar corredor de transporte coletivo de alta capacidade no eixo norte, articulado à ampliação da BR-020. Na transformação digital, o programa prevê integrar serviços públicos em plataforma acessível, com padrões de interoperabilidade e portabilidade, governança pública dos dados e segurança cibernética.",
     "frases": [
       {
+        "id": "0718531c3dbb0184",
         "texto": "O programa prevê fila única integrada para consultas, exames, cirurgias e reabilitação, com protocolos de prioridade clínica, comunicação digital e busca ativa para reduzir faltas.",
         "evidencias": [
           {
@@ -726,6 +727,7 @@
         ]
       },
       {
+        "id": "b8e90ef91fd1c19e",
         "texto": "O programa propõe ampliar gradualmente a cobertura efetiva da Estratégia Saúde da Família conforme a vulnerabilidade territorial, com equipes de saúde bucal e multiprofissionais.",
         "evidencias": [
           {
@@ -736,6 +738,7 @@
         ]
       },
       {
+        "id": "90096c7ec2418367",
         "texto": "Na educação, o programa planeja expandir a educação profissional em articulação com o ensino médio e a Educação de Jovens e Adultos.",
         "evidencias": [
           {
@@ -746,6 +749,7 @@
         ]
       },
       {
+        "id": "9735b0adf3201902",
         "texto": "No desenvolvimento econômico, o programa propõe estruturar crédito produtivo orientado para pequenos, médios e microempreendedores individuais, com garantias facilitadas e educação financeira.",
         "evidencias": [
           {
@@ -756,6 +760,7 @@
         ]
       },
       {
+        "id": "4f80bacdb8d65fe8",
         "texto": "Na mobilidade, o programa propõe implantar corredor de transporte coletivo de alta capacidade no eixo norte, articulado à ampliação da BR-020.",
         "evidencias": [
           {
@@ -766,6 +771,7 @@
         ]
       },
       {
+        "id": "fa54379decc9cbbe",
         "texto": "Na transformação digital, o programa prevê integrar serviços públicos em plataforma acessível, com padrões de interoperabilidade e portabilidade, governança pública dos dados e segurança cibernética.",
         "evidencias": [
           {

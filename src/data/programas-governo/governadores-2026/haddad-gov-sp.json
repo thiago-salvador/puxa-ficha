@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -254,6 +254,7 @@
     "texto": "Na segurança pública, o programa propõe integrar polícias e guardas municipais com maior uso da inteligência para ampliar a presença policial nas ruas. O programa planeja câmeras corporais com gravação contínua durante todo o serviço na rua, sem depender do acionamento de cada agente, para registrar as ocorrências. Na educação, o programa propõe expandir com qualidade o ensino em tempo integral, conectando o ensino médio à formação profissional que emprega. Na saúde, o programa prevê disponibilizar posição e tempo de espera consultáveis pelo CPF, com prioridade definida por critério clínico. Na mobilidade, o programa planeja expandir o transporte sobre trilhos para qualificar os deslocamentos metropolitanos. Na gestão pública, o programa prevê abrir dados, filas e contratos sob escrutínio público, com informações acessíveis à sociedade.",
     "frases": [
       {
+        "id": "fc8c9cc45f0caeb3",
         "texto": "Na segurança pública, o programa propõe integrar polícias e guardas municipais com maior uso da inteligência para ampliar a presença policial nas ruas.",
         "evidencias": [
           {
@@ -264,6 +265,7 @@
         ]
       },
       {
+        "id": "7083e4a720b20d81",
         "texto": "O programa planeja câmeras corporais com gravação contínua durante todo o serviço na rua, sem depender do acionamento de cada agente, para registrar as ocorrências.",
         "evidencias": [
           {
@@ -274,6 +276,7 @@
         ]
       },
       {
+        "id": "ea897aad26124906",
         "texto": "Na educação, o programa propõe expandir com qualidade o ensino em tempo integral, conectando o ensino médio à formação profissional que emprega.",
         "evidencias": [
           {
@@ -284,6 +287,7 @@
         ]
       },
       {
+        "id": "e97c37cca10b55c0",
         "texto": "Na saúde, o programa prevê disponibilizar posição e tempo de espera consultáveis pelo CPF, com prioridade definida por critério clínico.",
         "evidencias": [
           {
@@ -294,6 +298,7 @@
         ]
       },
       {
+        "id": "cc26a2b91b8231ce",
         "texto": "Na mobilidade, o programa planeja expandir o transporte sobre trilhos para qualificar os deslocamentos metropolitanos.",
         "evidencias": [
           {
@@ -304,6 +309,7 @@
         ]
       },
       {
+        "id": "d3c708a797a10fb4",
         "texto": "Na gestão pública, o programa prevê abrir dados, filas e contratos sob escrutínio público, com informações acessíveis à sociedade.",
         "evidencias": [
           {

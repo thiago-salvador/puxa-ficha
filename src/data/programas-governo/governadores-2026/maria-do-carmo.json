@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -170,6 +170,7 @@
     "texto": "O plano prevê apoiar os municípios na ampliação da oferta de vagas em creches e pré-escolas. O documento propõe assegurar professor em sala, merenda e transporte escolar seguro nas escolas do interior. O texto planeja oferecer cursos técnicos e profissionalizantes gratuitos no ensino médio, conectados às oportunidades de emprego no Amazonas. O plano propõe integrar CETAM, Sistema S e universidades na oferta de formação técnica. O documento propõe construir hospitais regionais no interior com leitos de UTI e consultas com especialistas. Na segurança pública, o documento prevê ampliar o volume de delegacias com funcionamento de 24 horas. O texto planeja levar internet a mais municípios e comunidades do interior combinando satélite e fibra óptica. O plano prevê usar satélites, drones e análise de dados contra o desmatamento e as queimadas.",
     "frases": [
       {
+        "id": "809ea31986b160fd",
         "texto": "O plano prevê apoiar os municípios na ampliação da oferta de vagas em creches e pré-escolas.",
         "evidencias": [
           {
@@ -180,6 +181,7 @@
         ]
       },
       {
+        "id": "7c88d3632c85c80d",
         "texto": "O documento propõe assegurar professor em sala, merenda e transporte escolar seguro nas escolas do interior.",
         "evidencias": [
           {
@@ -190,6 +192,7 @@
         ]
       },
       {
+        "id": "dcb9214886b7941a",
         "texto": "O texto planeja oferecer cursos técnicos e profissionalizantes gratuitos no ensino médio, conectados às oportunidades de emprego no Amazonas.",
         "evidencias": [
           {
@@ -200,6 +203,7 @@
         ]
       },
       {
+        "id": "60369b6e48a73aee",
         "texto": "O plano propõe integrar CETAM, Sistema S e universidades na oferta de formação técnica.",
         "evidencias": [
           {
@@ -210,6 +214,7 @@
         ]
       },
       {
+        "id": "c894b3a1c8a75289",
         "texto": "O documento propõe construir hospitais regionais no interior com leitos de UTI e consultas com especialistas.",
         "evidencias": [
           {
@@ -220,6 +225,7 @@
         ]
       },
       {
+        "id": "794f7c5f234244b3",
         "texto": "Na segurança pública, o documento prevê ampliar o volume de delegacias com funcionamento de 24 horas.",
         "evidencias": [
           {
@@ -230,6 +236,7 @@
         ]
       },
       {
+        "id": "05d35443d2b767f5",
         "texto": "O texto planeja levar internet a mais municípios e comunidades do interior combinando satélite e fibra óptica.",
         "evidencias": [
           {
@@ -240,6 +247,7 @@
         ]
       },
       {
+        "id": "266929b315acd1ae",
         "texto": "O plano prevê usar satélites, drones e análise de dados contra o desmatamento e as queimadas.",
         "evidencias": [
           {

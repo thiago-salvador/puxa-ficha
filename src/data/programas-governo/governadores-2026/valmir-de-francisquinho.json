@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -814,6 +814,7 @@
     "texto": "O Governo promoverá uma política de desenvolvimento econômico regionalizado, estimulando investimentos, inovação, competitividade e valorização das potencialidades de cada território sergipano, sempre com responsabilidade social e ambiental. A saúde será tratada como política de Estado, baseada na prevenção, promoção da qualidade de vida, cuidado integral e gestão responsável dos recursos públicos. A educação pública estadual deverá promover a formação integral dos estudantes, desenvolvendo competências científicas, tecnológicas, culturais, artísticas, esportivas e socioemocionais, preparando crianças, adolescentes, jovens e adultos para o exercício da cidadania. O Governo promoverá políticas públicas voltadas à proteção da população LGBTQIAPN+, assegurando acesso aos direitos fundamentais, inclusão produtiva, saúde, cidadania e respeito à dignidade humana. O Governo manterá rígido controle das contas públicas, garantindo equilíbrio fiscal, planejamento financeiro de longo prazo e sustentabilidade da dívida pública, assegurando capacidade permanente de investimento. O Governo buscará ampliar a infraestrutura hídrica e urbana.",
     "frases": [
       {
+        "id": "2a0621b543781eff",
         "texto": "O Governo promoverá uma política de desenvolvimento econômico regionalizado, estimulando investimentos, inovação, competitividade e valorização das potencialidades de cada território sergipano, sempre com responsabilidade social e ambiental.",
         "evidencias": [
           {
@@ -824,6 +825,7 @@
         ]
       },
       {
+        "id": "8ef536689855b3f1",
         "texto": "A saúde será tratada como política de Estado, baseada na prevenção, promoção da qualidade de vida, cuidado integral e gestão responsável dos recursos públicos.",
         "evidencias": [
           {
@@ -834,6 +836,7 @@
         ]
       },
       {
+        "id": "3c31972ea3d852bf",
         "texto": "A educação pública estadual deverá promover a formação integral dos estudantes, desenvolvendo competências científicas, tecnológicas, culturais, artísticas, esportivas e socioemocionais, preparando crianças, adolescentes, jovens e adultos para o exercício da cidadania.",
         "evidencias": [
           {
@@ -844,6 +847,7 @@
         ]
       },
       {
+        "id": "903f0d132eae230f",
         "texto": "O Governo promoverá políticas públicas voltadas à proteção da população LGBTQIAPN+, assegurando acesso aos direitos fundamentais, inclusão produtiva, saúde, cidadania e respeito à dignidade humana.",
         "evidencias": [
           {
@@ -854,6 +858,7 @@
         ]
       },
       {
+        "id": "876857fb5982a380",
         "texto": "O Governo manterá rígido controle das contas públicas, garantindo equilíbrio fiscal, planejamento financeiro de longo prazo e sustentabilidade da dívida pública, assegurando capacidade permanente de investimento.",
         "evidencias": [
           {
@@ -864,6 +869,7 @@
         ]
       },
       {
+        "id": "639902d933af2bdc",
         "texto": "O Governo buscará ampliar a infraestrutura hídrica e urbana.",
         "evidencias": [
           {

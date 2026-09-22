@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -366,6 +366,7 @@
     "texto": "O programa propõe condicionar os incentivos públicos às empresas da ZFM à geração de empregos dignos. O programa propõe ampliar investimentos públicos em pesquisa e inovação, fortalecendo a articulação entre universidades, institutos de pesquisa e setores produtivos estratégicos. O programa propõe combater a exploração predatória dos recursos naturais, assegurando que a riqueza amazônica esteja subordinada aos interesses sociais e à preservação ambiental. O programa propõe garantir a eletrificação universal do interior com energias renováveis e tecnologias adequadas à realidade amazônica. O programa apoia a luta pela redução da jornada de trabalho para 36 horas, sem redução dos salários e sem flexibilização de direitos. O programa propõe o fortalecimento do SUS no estado. O programa propõe garantir acessibilidade universal nos serviços e equipamentos do Estado e induzir sua implementação nos municípios.",
     "frases": [
       {
+        "id": "eae92b24cdc33eb7",
         "texto": "O programa propõe condicionar os incentivos públicos às empresas da ZFM à geração de empregos dignos.",
         "evidencias": [
           {
@@ -376,6 +377,7 @@
         ]
       },
       {
+        "id": "ea0801d0104dcff4",
         "texto": "O programa propõe ampliar investimentos públicos em pesquisa e inovação, fortalecendo a articulação entre universidades, institutos de pesquisa e setores produtivos estratégicos.",
         "evidencias": [
           {
@@ -386,6 +388,7 @@
         ]
       },
       {
+        "id": "b2592c311ad5a387",
         "texto": "O programa propõe combater a exploração predatória dos recursos naturais, assegurando que a riqueza amazônica esteja subordinada aos interesses sociais e à preservação ambiental.",
         "evidencias": [
           {
@@ -396,6 +399,7 @@
         ]
       },
       {
+        "id": "ee037e409c633ec2",
         "texto": "O programa propõe garantir a eletrificação universal do interior com energias renováveis e tecnologias adequadas à realidade amazônica.",
         "evidencias": [
           {
@@ -406,6 +410,7 @@
         ]
       },
       {
+        "id": "d55fe8092b45d2a0",
         "texto": "O programa apoia a luta pela redução da jornada de trabalho para 36 horas, sem redução dos salários e sem flexibilização de direitos.",
         "evidencias": [
           {
@@ -416,6 +421,7 @@
         ]
       },
       {
+        "id": "f74fbaf6d250b231",
         "texto": "O programa propõe o fortalecimento do SUS no estado.",
         "evidencias": [
           {
@@ -426,6 +432,7 @@
         ]
       },
       {
+        "id": "0cad1a2ccf22333d",
         "texto": "O programa propõe garantir acessibilidade universal nos serviços e equipamentos do Estado e induzir sua implementação nos municípios.",
         "evidencias": [
           {

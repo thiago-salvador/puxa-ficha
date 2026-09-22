@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1136,6 +1136,7 @@
     "texto": "A taxa de mortes violentas em Goiás caiu 58,1% durante o intervalo entre 2018 e 2025. Em Goiás, a proporção de jovens de 15 a 17 anos no Ensino Médio passou de 72,6% para 84,2% entre 2018 e 2025. As matrículas em ensino em tempo integral aumentaram de 14,3% em 2018 para 21,5% em 2025. O número de hospitais estaduais em Goiás aumentou de 17 em 2019 para 25 em 2026. O número de leitos de UTI passou de 267 para 793 entre 2019 e 2026. A classificação fiscal de Goiás no Tesouro Nacional passou de C para B+. O Programa Escudo Digital Goiás ampliará a prevenção, a investigação e a repressão aos crimes cibernéticos. O plano prevê um monitoramento ágil com painéis de dados atualizados em tempo real.",
     "frases": [
       {
+        "id": "b37cbcd236aaa577",
         "texto": "A taxa de mortes violentas em Goiás caiu 58,1% durante o intervalo entre 2018 e 2025.",
         "evidencias": [
           {
@@ -1146,6 +1147,7 @@
         ]
       },
       {
+        "id": "0dc53f7fbcf98862",
         "texto": "Em Goiás, a proporção de jovens de 15 a 17 anos no Ensino Médio passou de 72,6% para 84,2% entre 2018 e 2025.",
         "evidencias": [
           {
@@ -1156,6 +1158,7 @@
         ]
       },
       {
+        "id": "09761ee78b20047d",
         "texto": "As matrículas em ensino em tempo integral aumentaram de 14,3% em 2018 para 21,5% em 2025.",
         "evidencias": [
           {
@@ -1166,6 +1169,7 @@
         ]
       },
       {
+        "id": "bd2b42baceca4806",
         "texto": "O número de hospitais estaduais em Goiás aumentou de 17 em 2019 para 25 em 2026.",
         "evidencias": [
           {
@@ -1176,6 +1180,7 @@
         ]
       },
       {
+        "id": "e0da53d8b31d38dc",
         "texto": "O número de leitos de UTI passou de 267 para 793 entre 2019 e 2026.",
         "evidencias": [
           {
@@ -1186,6 +1191,7 @@
         ]
       },
       {
+        "id": "ba013fc349ebc180",
         "texto": "A classificação fiscal de Goiás no Tesouro Nacional passou de C para B+.",
         "evidencias": [
           {
@@ -1196,6 +1202,7 @@
         ]
       },
       {
+        "id": "4b26257e332c0b75",
         "texto": "O Programa Escudo Digital Goiás ampliará a prevenção, a investigação e a repressão aos crimes cibernéticos.",
         "evidencias": [
           {
@@ -1206,6 +1213,7 @@
         ]
       },
       {
+        "id": "038a3cdbc649645d",
         "texto": "O plano prevê um monitoramento ágil com painéis de dados atualizados em tempo real.",
         "evidencias": [
           {

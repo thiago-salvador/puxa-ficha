@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "Na política salarial, o programa prevê aumento emergencial de 50% de todos os salários, conforme a proposta. Também nessa área, o programa prevê aumento automático dos salários quando o custo de vida do trabalhador subir 3%. Para o piso de remuneração, o programa prevê salário mínimo vital de pelo menos R$7.500 para atender às necessidades do trabalhador e de sua família. Quanto à duração do trabalho, o programa prevê jornada máxima de 35 horas semanais, correspondente a sete horas por dia durante cinco dias. Sobre a aposentadoria, o programa prevê aposentadoria no máximo aos 25 anos de trabalho para mulheres e aos 30 anos para homens. No setor petrolífero, o programa prevê a nacionalização do petróleo e uma Petrobrás 100% estatal sob controle dos trabalhadores.",
     "frases": [
       {
+        "id": "106dcd8285bbd6cd",
         "texto": "Na política salarial, o programa prevê aumento emergencial de 50% de todos os salários, conforme a proposta.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "3f6e43686a8ca26b",
         "texto": "Também nessa área, o programa prevê aumento automático dos salários quando o custo de vida do trabalhador subir 3%.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "cda8f712aee6d2e4",
         "texto": "Para o piso de remuneração, o programa prevê salário mínimo vital de pelo menos R$7.500 para atender às necessidades do trabalhador e de sua família.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "453835209dd22cf4",
         "texto": "Quanto à duração do trabalho, o programa prevê jornada máxima de 35 horas semanais, correspondente a sete horas por dia durante cinco dias.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "65838cf3aa03c8ca",
         "texto": "Sobre a aposentadoria, o programa prevê aposentadoria no máximo aos 25 anos de trabalho para mulheres e aos 30 anos para homens.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "b583e50dd51c9865",
         "texto": "No setor petrolífero, o programa prevê a nacionalização do petróleo e uma Petrobrás 100% estatal sob controle dos trabalhadores.",
         "evidencias": [
           {

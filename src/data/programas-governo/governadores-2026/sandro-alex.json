@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -3880,6 +3880,7 @@
     "texto": "O plano registra que o Produto Interno Bruto do Paraná foi estimado pelo IPARDES em R$ 765 bilhões em 2025, cerca de 6% de toda a riqueza produzida no país. O documento estabelece como objetivo consolidar o Paraná, ao longo desta década, como a terceira força econômica do país. Na segurança pública, o número de vítimas de homicídio doloso caiu de 1.955 em 2018 para 1.183 em 2025, uma redução de 39,5%. Na educação, o Ideb do ensino médio da rede estadual passou de 3,7 em 2017 para 4,7 em 2023. Na saúde, o número de médicos cadastrados no Paraná passou de 22.649 em 2018 para 35.190 em 2025. O programa prevê investir mais de R$ 13 bilhões para antecipar a universalização de água e esgoto para antes do prazo nacional. O programa também prevê elaborar e revisar a cada cinco anos o Plano Paraná 2055, com a visão estratégica de longo prazo do Estado.",
     "frases": [
       {
+        "id": "a86090f5984a8473",
         "texto": "O plano registra que o Produto Interno Bruto do Paraná foi estimado pelo IPARDES em R$ 765 bilhões em 2025, cerca de 6% de toda a riqueza produzida no país.",
         "evidencias": [
           {
@@ -3890,6 +3891,7 @@
         ]
       },
       {
+        "id": "9fa5ae3f51dd636b",
         "texto": "O documento estabelece como objetivo consolidar o Paraná, ao longo desta década, como a terceira força econômica do país.",
         "evidencias": [
           {
@@ -3900,6 +3902,7 @@
         ]
       },
       {
+        "id": "a132ebc378f51ab9",
         "texto": "Na segurança pública, o número de vítimas de homicídio doloso caiu de 1.955 em 2018 para 1.183 em 2025, uma redução de 39,5%.",
         "evidencias": [
           {
@@ -3910,6 +3913,7 @@
         ]
       },
       {
+        "id": "47463f29c853f162",
         "texto": "Na educação, o Ideb do ensino médio da rede estadual passou de 3,7 em 2017 para 4,7 em 2023.",
         "evidencias": [
           {
@@ -3920,6 +3924,7 @@
         ]
       },
       {
+        "id": "d64f8b600f0bc832",
         "texto": "Na saúde, o número de médicos cadastrados no Paraná passou de 22.649 em 2018 para 35.190 em 2025.",
         "evidencias": [
           {
@@ -3930,6 +3935,7 @@
         ]
       },
       {
+        "id": "b95d93528c2dee29",
         "texto": "O programa prevê investir mais de R$ 13 bilhões para antecipar a universalização de água e esgoto para antes do prazo nacional.",
         "evidencias": [
           {
@@ -3940,6 +3946,7 @@
         ]
       },
       {
+        "id": "b16286dd101a55ed",
         "texto": "O programa também prevê elaborar e revisar a cada cinco anos o Plano Paraná 2055, com a visão estratégica de longo prazo do Estado.",
         "evidencias": [
           {

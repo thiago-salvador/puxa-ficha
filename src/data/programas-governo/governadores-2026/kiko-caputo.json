@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -2354,6 +2354,7 @@
     "texto": "O programa define um Estado responsivo como um governo que escuta as pessoas, percebe os problemas e age antes que a situação piore. O programa define um Estado integrado como um governo que faz suas áreas trabalharem juntas, porque a vida das pessoas não acontece dividida em secretarias. O programa define um Estado inteligente como aquele que aprende, usa o conhecimento e a tecnologia e encontra formas melhores de resolver os problemas. O programa prevê construir o Novo Hospital da Ceilândia, o Hospital do Câncer, o Novo Hospital do Guará e o Hospital de São Sebastião. O programa prevê criar o DF Fala o Mundo para ampliar progressivamente o acesso dos estudantes da rede pública à formação em idiomas. O programa prevê que todo incentivo público deverá produzir desenvolvimento mensurável. O programa prevê ampliar o BRT para o Eixo Norte.",
     "frases": [
       {
+        "id": "e0cc4e4a62281a70",
         "texto": "O programa define um Estado responsivo como um governo que escuta as pessoas, percebe os problemas e age antes que a situação piore.",
         "evidencias": [
           {
@@ -2364,6 +2365,7 @@
         ]
       },
       {
+        "id": "d6e540039b0150ac",
         "texto": "O programa define um Estado integrado como um governo que faz suas áreas trabalharem juntas, porque a vida das pessoas não acontece dividida em secretarias.",
         "evidencias": [
           {
@@ -2374,6 +2376,7 @@
         ]
       },
       {
+        "id": "0022d9d71f83aa7d",
         "texto": "O programa define um Estado inteligente como aquele que aprende, usa o conhecimento e a tecnologia e encontra formas melhores de resolver os problemas.",
         "evidencias": [
           {
@@ -2384,6 +2387,7 @@
         ]
       },
       {
+        "id": "0f46f50eeacabbf5",
         "texto": "O programa prevê construir o Novo Hospital da Ceilândia, o Hospital do Câncer, o Novo Hospital do Guará e o Hospital de São Sebastião.",
         "evidencias": [
           {
@@ -2394,6 +2398,7 @@
         ]
       },
       {
+        "id": "3494bcb94702331e",
         "texto": "O programa prevê criar o DF Fala o Mundo para ampliar progressivamente o acesso dos estudantes da rede pública à formação em idiomas.",
         "evidencias": [
           {
@@ -2404,6 +2409,7 @@
         ]
       },
       {
+        "id": "450389b6ce9fa3d0",
         "texto": "O programa prevê que todo incentivo público deverá produzir desenvolvimento mensurável.",
         "evidencias": [
           {
@@ -2414,6 +2420,7 @@
         ]
       },
       {
+        "id": "cdaf35e680540de7",
         "texto": "O programa prevê ampliar o BRT para o Eixo Norte.",
         "evidencias": [
           {

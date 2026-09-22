@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -814,6 +814,7 @@
     "texto": "O plano prevê oito zonas econômicas, cada uma com vocações, infraestrutura, qualificação e carteira de projetos próprias. A Tarifa Zero tem como objetivo final chegar a R$ 0 para o usuário, com implantação progressiva e gatilhos fiscais e operacionais. O programa propõe chegar, de forma indicativa, a 350-370 escolas estaduais de tempo integral ao final do mandato. A IQUEGO tem capacidade produtiva superior a 1 bilhão de unidades de medicamentos por ano. O plano propõe universalizar a cobertura da Estratégia Saúde da Família nos 246 municípios. O plano propõe instituir o Programa Goiás Lixo Zero para acabar com os lixões no Estado de Goiás. O plano propõe a criação de um fundo emergencial de socorro e justiça climática. O programa propõe instalar um sistema estadual de monitoramento de enchentes e alagamentos.",
     "frases": [
       {
+        "id": "a7266fb2717c374b",
         "texto": "O plano prevê oito zonas econômicas, cada uma com vocações, infraestrutura, qualificação e carteira de projetos próprias.",
         "evidencias": [
           {
@@ -824,6 +825,7 @@
         ]
       },
       {
+        "id": "cdeaf774e4a543c9",
         "texto": "A Tarifa Zero tem como objetivo final chegar a R$ 0 para o usuário, com implantação progressiva e gatilhos fiscais e operacionais.",
         "evidencias": [
           {
@@ -834,6 +836,7 @@
         ]
       },
       {
+        "id": "26c716e265bd4068",
         "texto": "O programa propõe chegar, de forma indicativa, a 350-370 escolas estaduais de tempo integral ao final do mandato.",
         "evidencias": [
           {
@@ -844,6 +847,7 @@
         ]
       },
       {
+        "id": "8b0dddbdb58934c9",
         "texto": "A IQUEGO tem capacidade produtiva superior a 1 bilhão de unidades de medicamentos por ano.",
         "evidencias": [
           {
@@ -854,6 +858,7 @@
         ]
       },
       {
+        "id": "b9cc5f6aa5ea261d",
         "texto": "O plano propõe universalizar a cobertura da Estratégia Saúde da Família nos 246 municípios.",
         "evidencias": [
           {
@@ -864,6 +869,7 @@
         ]
       },
       {
+        "id": "9e4fccdeec2c8da8",
         "texto": "O plano propõe instituir o Programa Goiás Lixo Zero para acabar com os lixões no Estado de Goiás.",
         "evidencias": [
           {
@@ -874,6 +880,7 @@
         ]
       },
       {
+        "id": "b3a6e5249819f6b1",
         "texto": "O plano propõe a criação de um fundo emergencial de socorro e justiça climática.",
         "evidencias": [
           {
@@ -884,6 +891,7 @@
         ]
       },
       {
+        "id": "0126586ff416b89a",
         "texto": "O programa propõe instalar um sistema estadual de monitoramento de enchentes e alagamentos.",
         "evidencias": [
           {

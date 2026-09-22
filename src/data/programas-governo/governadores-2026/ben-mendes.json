@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1402,6 +1402,7 @@
     "texto": "Na saúde, propõe teleconsultas com especialistas e acesso secundário e terciário vinculado ao acompanhamento na atenção primária, excetuando urgências e emergências. Na educação, o Casa que Educa condiciona incentivos habitacionais e pontuação para vagas no Trilhas de Futuro e no ensino integral à frequência, progressão e corresponsabilidade. Na segurança, prioriza inteligência integrada contra organizações criminosas, recuperação de ativos e valorização das carreiras, observadas as possibilidades fiscais. No esporte, propõe uma temporada escolar contínua, com equipes fixas, treino regular e modalidades intelectuais integradas à competição. Na infraestrutura, prioriza ferrovias de carga e passageiros, modernização de hidrovias e portos e investimentos em duplicação rodoviária nas concessões. Na cultura, prevê modernizar instrumentos existentes e elaborar novo plano estadual com metas, indicadores e revisões periódicas. Na mineração, prioriza terras raras e a cadeia da mina ao ímã, condicionando apoio à transferência tecnológica e outras contrapartidas. Também propõe Fundo Soberano Mineiro com contas individuais e acesso parcial aos rendimentos, ampliado durante transições ocupacionais.",
     "frases": [
       {
+        "id": "9d5313fa61b1c2a5",
         "texto": "Na saúde, propõe teleconsultas com especialistas e acesso secundário e terciário vinculado ao acompanhamento na atenção primária, excetuando urgências e emergências.",
         "evidencias": [
           {
@@ -1422,6 +1423,7 @@
         ]
       },
       {
+        "id": "c812e6a25e44b6cb",
         "texto": "Na educação, o Casa que Educa condiciona incentivos habitacionais e pontuação para vagas no Trilhas de Futuro e no ensino integral à frequência, progressão e corresponsabilidade.",
         "evidencias": [
           {
@@ -1452,6 +1454,7 @@
         ]
       },
       {
+        "id": "9492212b285c712a",
         "texto": "Na segurança, prioriza inteligência integrada contra organizações criminosas, recuperação de ativos e valorização das carreiras, observadas as possibilidades fiscais.",
         "evidencias": [
           {
@@ -1477,6 +1480,7 @@
         ]
       },
       {
+        "id": "e26beec9acc5a81b",
         "texto": "No esporte, propõe uma temporada escolar contínua, com equipes fixas, treino regular e modalidades intelectuais integradas à competição.",
         "evidencias": [
           {
@@ -1497,6 +1501,7 @@
         ]
       },
       {
+        "id": "25ee43774aec622c",
         "texto": "Na infraestrutura, prioriza ferrovias de carga e passageiros, modernização de hidrovias e portos e investimentos em duplicação rodoviária nas concessões.",
         "evidencias": [
           {
@@ -1517,6 +1522,7 @@
         ]
       },
       {
+        "id": "d8009c806127a3a3",
         "texto": "Na cultura, prevê modernizar instrumentos existentes e elaborar novo plano estadual com metas, indicadores e revisões periódicas.",
         "evidencias": [
           {
@@ -1542,6 +1548,7 @@
         ]
       },
       {
+        "id": "8b009e7da47498dd",
         "texto": "Na mineração, prioriza terras raras e a cadeia da mina ao ímã, condicionando apoio à transferência tecnológica e outras contrapartidas.",
         "evidencias": [
           {
@@ -1562,6 +1569,7 @@
         ]
       },
       {
+        "id": "aa0eada0982ec4d9",
         "texto": "Também propõe Fundo Soberano Mineiro com contas individuais e acesso parcial aos rendimentos, ampliado durante transições ocupacionais.",
         "evidencias": [
           {

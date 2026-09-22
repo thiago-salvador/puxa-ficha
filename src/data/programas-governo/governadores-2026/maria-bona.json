@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "O documento apresenta um programa de luta do Partido da Causa Operária para as eleições de 2026, conforme o título do documento. O programa propõe reajuste imediato dos salários com política de proteção dos vencimentos dos trabalhadores diante da inflação. O programa prevê redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana, 35 horas semanais. O programa propõe o cancelamento de todas as privatizações realizadas, conforme o eixo dedicado à economia nacional. O programa prevê mais verbas para a saúde pública, dentro da proposta de saúde pública gratuita sob controle dos trabalhadores. O programa propõe assentamento imediato dos milhões de sem-terra acampados em todo o País, no eixo dedicado à reforma agrária. O programa prevê liberdade irrestrita de expressão na imprensa, na Internet, nas ruas, no eixo sobre repressão. O programa prevê eleição direta de todos os postos de gestão nas escolas, como parte da proposta educacional.",
     "frases": [
       {
+        "id": "21a1872efc926c8d",
         "texto": "O documento apresenta um programa de luta do Partido da Causa Operária para as eleições de 2026, conforme o título do documento.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "c8bfed3101603a00",
         "texto": "O programa propõe reajuste imediato dos salários com política de proteção dos vencimentos dos trabalhadores diante da inflação.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "d1bdb8b8606bfd2b",
         "texto": "O programa prevê redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana, 35 horas semanais.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "a23b5776fe9e929b",
         "texto": "O programa propõe o cancelamento de todas as privatizações realizadas, conforme o eixo dedicado à economia nacional.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "89c2ba08f8668078",
         "texto": "O programa prevê mais verbas para a saúde pública, dentro da proposta de saúde pública gratuita sob controle dos trabalhadores.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "b4bd9d840d01b7cb",
         "texto": "O programa propõe assentamento imediato dos milhões de sem-terra acampados em todo o País, no eixo dedicado à reforma agrária.",
         "evidencias": [
           {
@@ -202,6 +208,7 @@
         ]
       },
       {
+        "id": "d0ad3af968dd8edd",
         "texto": "O programa prevê liberdade irrestrita de expressão na imprensa, na Internet, nas ruas, no eixo sobre repressão.",
         "evidencias": [
           {
@@ -212,6 +219,7 @@
         ]
       },
       {
+        "id": "83f5789957338a16",
         "texto": "O programa prevê eleição direta de todos os postos de gestão nas escolas, como parte da proposta educacional.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -254,6 +254,7 @@
     "texto": "A administração será organizada para transformar orçamento, patrimônio e trabalho público em serviços contínuos, com metas verificáveis, atendimento humano e decisões orientadas pelo interesse coletivo. Publicar contratos, obras, benefícios fiscais, metas, prazos e resultados em linguagem compreensível, com Controladoria e Ouvidoria fortalecidas. Permitir que cada pessoa acompanhe exames, consultas e cirurgias, com prioridade clínica, prazo, encaminhamento e oferta regional visíveis. Universalizar até 2030 a alfabetização em leitura, escrita e conhecimentos matemáticos essenciais ao final do 2º ano. Adotar como horizonte presença policial permanente e atendimento operacional 24 horas, por equipes locais ou regionais. Fortalecer Fomento Paraná, BRDE, microcrédito e Fundo Estadual de Aval para pequenos negócios, cooperativas e inovação. Ampliar o reúso seguro de água e apoiar jardins de chuva, parques inundáveis, áreas permeáveis e recuperação de várzeas.",
     "frases": [
       {
+        "id": "3917b307c2ce2d7c",
         "texto": "A administração será organizada para transformar orçamento, patrimônio e trabalho público em serviços contínuos, com metas verificáveis, atendimento humano e decisões orientadas pelo interesse coletivo.",
         "evidencias": [
           {
@@ -264,6 +265,7 @@
         ]
       },
       {
+        "id": "09931e3ffbd8b95c",
         "texto": "Publicar contratos, obras, benefícios fiscais, metas, prazos e resultados em linguagem compreensível, com Controladoria e Ouvidoria fortalecidas.",
         "evidencias": [
           {
@@ -274,6 +276,7 @@
         ]
       },
       {
+        "id": "0fc4563f6e4d4d4c",
         "texto": "Permitir que cada pessoa acompanhe exames, consultas e cirurgias, com prioridade clínica, prazo, encaminhamento e oferta regional visíveis.",
         "evidencias": [
           {
@@ -284,6 +287,7 @@
         ]
       },
       {
+        "id": "25854ccd437c92a4",
         "texto": "Universalizar até 2030 a alfabetização em leitura, escrita e conhecimentos matemáticos essenciais ao final do 2º ano.",
         "evidencias": [
           {
@@ -294,6 +298,7 @@
         ]
       },
       {
+        "id": "2f4892a8f07c2efc",
         "texto": "Adotar como horizonte presença policial permanente e atendimento operacional 24 horas, por equipes locais ou regionais.",
         "evidencias": [
           {
@@ -304,6 +309,7 @@
         ]
       },
       {
+        "id": "2bffa36498b24ac1",
         "texto": "Fortalecer Fomento Paraná, BRDE, microcrédito e Fundo Estadual de Aval para pequenos negócios, cooperativas e inovação.",
         "evidencias": [
           {
@@ -314,6 +320,7 @@
         ]
       },
       {
+        "id": "fa36f0f6a9241957",
         "texto": "Ampliar o reúso seguro de água e apoiar jardins de chuva, parques inundáveis, áreas permeáveis e recuperação de várzeas.",
         "evidencias": [
           {

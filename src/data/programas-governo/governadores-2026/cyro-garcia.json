@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "O programa identifica Cyro Garcia como candidato a Governador e Perciliana Rodrigues como candidata a Vice-Governadora. O documento registra que a produção da indústria de transformação do Rio de Janeiro é 15% menor em valor do que era em 1985. Segundo o programa, entre 1985 e 2020, o emprego formal cresceu 40,88% no Rio de Janeiro. O documento afirma que 65,51% da força de trabalho fluminense está desempregada ou subempregada. O programa informa que os royalties do petróleo respondem historicamente por cerca de 20% da arrecadação estadual. O documento registra que a dívida do Rio de Janeiro está atualmente na casa de 163 bilhões de reais. Na habitação, o programa informa que o déficit chegou a 481 mil moradias em 2019. Na segurança pública, o documento registra que, em 2021, 1.356 das 4.750 mortes violentas foram causadas por intervenção policial.",
     "frases": [
       {
+        "id": "b1ca85a61a09d9c3",
         "texto": "O programa identifica Cyro Garcia como candidato a Governador e Perciliana Rodrigues como candidata a Vice-Governadora.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "46d1dc493cc162e4",
         "texto": "O documento registra que a produção da indústria de transformação do Rio de Janeiro é 15% menor em valor do que era em 1985.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "559de5e1d3326962",
         "texto": "Segundo o programa, entre 1985 e 2020, o emprego formal cresceu 40,88% no Rio de Janeiro.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "d1e3507096f07838",
         "texto": "O documento afirma que 65,51% da força de trabalho fluminense está desempregada ou subempregada.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "2fcf66ddfff65372",
         "texto": "O programa informa que os royalties do petróleo respondem historicamente por cerca de 20% da arrecadação estadual.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "579621aa0c9a5e66",
         "texto": "O documento registra que a dívida do Rio de Janeiro está atualmente na casa de 163 bilhões de reais.",
         "evidencias": [
           {
@@ -202,6 +208,7 @@
         ]
       },
       {
+        "id": "d26511aba8d771c7",
         "texto": "Na habitação, o programa informa que o déficit chegou a 481 mil moradias em 2019.",
         "evidencias": [
           {
@@ -212,6 +219,7 @@
         ]
       },
       {
+        "id": "61085d7ca5d9dc88",
         "texto": "Na segurança pública, o documento registra que, em 2021, 1.356 das 4.750 mortes violentas foram causadas por intervenção policial.",
         "evidencias": [
           {

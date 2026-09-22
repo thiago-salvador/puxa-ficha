@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -86,6 +86,7 @@
     "texto": "O programa prevê políticas permanentes de capacitação, qualificação e valorização profissional para os profissionais da segurança pública estadual. O programa propõe concursos públicos para reforçar o efetivo da Polícia Militar, Polícia Civil, Polícia Penal e Perícia Oficial. O programa planeja ampliar investimentos em inteligência policial e tecnologia no combate ao crime organizado. Na economia, o programa prevê incentivos fiscais para atrair novas indústrias ao Estado. Na infraestrutura, o programa propõe construção, recuperação e manutenção das rodovias estaduais. Na educação, o programa prevê a expansão da rede de escolas técnicas com cursos em Agronegócio, Energias Renováveis, Tecnologia, Turismo, Logística e Saúde. Na saúde, o programa planeja modernizar a logística de medicamentos para garantir abastecimento contínuo. O programa também prevê ampliar, reformar e equipar hospitais regionais, com modernização de equipamentos e ampliação de leitos.",
     "frases": [
       {
+        "id": "c058f76a9b115f6d",
         "texto": "O programa prevê políticas permanentes de capacitação, qualificação e valorização profissional para os profissionais da segurança pública estadual.",
         "evidencias": [
           {
@@ -96,6 +97,7 @@
         ]
       },
       {
+        "id": "cb4715549ece09db",
         "texto": "O programa propõe concursos públicos para reforçar o efetivo da Polícia Militar, Polícia Civil, Polícia Penal e Perícia Oficial.",
         "evidencias": [
           {
@@ -106,6 +108,7 @@
         ]
       },
       {
+        "id": "14860c3253e8e91a",
         "texto": "O programa planeja ampliar investimentos em inteligência policial e tecnologia no combate ao crime organizado.",
         "evidencias": [
           {
@@ -116,6 +119,7 @@
         ]
       },
       {
+        "id": "97c3bdd7a4b72d03",
         "texto": "Na economia, o programa prevê incentivos fiscais para atrair novas indústrias ao Estado.",
         "evidencias": [
           {
@@ -126,6 +130,7 @@
         ]
       },
       {
+        "id": "d656ffec229f68cc",
         "texto": "Na infraestrutura, o programa propõe construção, recuperação e manutenção das rodovias estaduais.",
         "evidencias": [
           {
@@ -136,6 +141,7 @@
         ]
       },
       {
+        "id": "09315e62217cd511",
         "texto": "Na educação, o programa prevê a expansão da rede de escolas técnicas com cursos em Agronegócio, Energias Renováveis, Tecnologia, Turismo, Logística e Saúde.",
         "evidencias": [
           {
@@ -146,6 +152,7 @@
         ]
       },
       {
+        "id": "d52f67a5f6d4d46c",
         "texto": "Na saúde, o programa planeja modernizar a logística de medicamentos para garantir abastecimento contínuo.",
         "evidencias": [
           {
@@ -156,6 +163,7 @@
         ]
       },
       {
+        "id": "15560e53f66ca536",
         "texto": "O programa também prevê ampliar, reformar e equipar hospitais regionais, com modernização de equipamentos e ampliação de leitos.",
         "evidencias": [
           {

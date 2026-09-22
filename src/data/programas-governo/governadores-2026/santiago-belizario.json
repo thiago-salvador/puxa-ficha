@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -156,6 +156,7 @@
     "texto": "O programa prevê realizar uma auditoria da dívida pública do estado do Piauí com entes estatais e privados para eliminar irregularidades e renegociar dívidas. O documento propõe a criação de um Banco Estadual para fortalecer a capacidade de investimento público em infraestrutura, a exemplo do extinto Banco do Estado do Piauí. Na saúde pública, o programa prevê a retomada da administração direta pelo Estado, encerrando e auditando os contratos com as Organizações Sociais de Saúde. O texto prevê a garantia de atendimento primário e Saúde da Família em todas as cidades. Na educação, o programa defende a educação pública, gratuita, laica e de qualidade. Na política habitacional, propõe investir na construção de casas populares por meio de cooperativas de trabalhadores e mutirões. O programa prevê a criação do Fundo Estadual de Juventude do Estado do Piauí.",
     "frases": [
       {
+        "id": "cefd76c7f95b2c3f",
         "texto": "O programa prevê realizar uma auditoria da dívida pública do estado do Piauí com entes estatais e privados para eliminar irregularidades e renegociar dívidas.",
         "evidencias": [
           {
@@ -166,6 +167,7 @@
         ]
       },
       {
+        "id": "6980be2bf46df4f5",
         "texto": "O documento propõe a criação de um Banco Estadual para fortalecer a capacidade de investimento público em infraestrutura, a exemplo do extinto Banco do Estado do Piauí.",
         "evidencias": [
           {
@@ -176,6 +178,7 @@
         ]
       },
       {
+        "id": "31e7eb05a9db5918",
         "texto": "Na saúde pública, o programa prevê a retomada da administração direta pelo Estado, encerrando e auditando os contratos com as Organizações Sociais de Saúde.",
         "evidencias": [
           {
@@ -186,6 +189,7 @@
         ]
       },
       {
+        "id": "36218bba6109b3ce",
         "texto": "O texto prevê a garantia de atendimento primário e Saúde da Família em todas as cidades.",
         "evidencias": [
           {
@@ -196,6 +200,7 @@
         ]
       },
       {
+        "id": "0e2ea3bad8c8c09c",
         "texto": "Na educação, o programa defende a educação pública, gratuita, laica e de qualidade.",
         "evidencias": [
           {
@@ -206,6 +211,7 @@
         ]
       },
       {
+        "id": "9cdcede2012eb6f0",
         "texto": "Na política habitacional, propõe investir na construção de casas populares por meio de cooperativas de trabalhadores e mutirões.",
         "evidencias": [
           {
@@ -216,6 +222,7 @@
         ]
       },
       {
+        "id": "f4ccc399984f3555",
         "texto": "O programa prevê a criação do Fundo Estadual de Juventude do Estado do Piauí.",
         "evidencias": [
           {

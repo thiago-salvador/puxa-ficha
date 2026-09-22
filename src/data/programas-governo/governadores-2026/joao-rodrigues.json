@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -394,6 +394,7 @@
     "texto": "O plano prevê a digitalização progressiva dos serviços públicos, com redução de filas e burocracia, mediante diretriz de modernização administrativa. O documento propõe o uso de Inteligência Artificial e análise de dados para melhorar a qualidade e a agilidade das respostas ao cidadão. Na segurança pública, o plano prevê a implantação de barreiras de segurança nas fronteiras estaduais, utilizando tecnologias para identificar e interceptar criminosos, veículos e mercadorias ilegais. Na saúde, o plano prevê ampliar o alcance da telemedicina e das vídeo-consultas. Na educação básica, o plano prioriza a educação em tempo integral, com atividades de reforço em Matemática, Português e Inglês no contraturno. Em recursos hídricos, o plano prevê programas de proteção dos mananciais que alimentam o sistema hídrico do Estado, para assegurar água potável destinada ao abastecimento humano. Na assistência social, o plano prevê ampliar e fortalecer a rede de assistência e promoção social, com atenção especial aos idosos e às pessoas em maior vulnerabilidade.",
     "frases": [
       {
+        "id": "0ed815a727dfc498",
         "texto": "O plano prevê a digitalização progressiva dos serviços públicos, com redução de filas e burocracia, mediante diretriz de modernização administrativa.",
         "evidencias": [
           {
@@ -404,6 +405,7 @@
         ]
       },
       {
+        "id": "c62fe8df629533ac",
         "texto": "O documento propõe o uso de Inteligência Artificial e análise de dados para melhorar a qualidade e a agilidade das respostas ao cidadão.",
         "evidencias": [
           {
@@ -414,6 +416,7 @@
         ]
       },
       {
+        "id": "377f4ad392a7a55a",
         "texto": "Na segurança pública, o plano prevê a implantação de barreiras de segurança nas fronteiras estaduais, utilizando tecnologias para identificar e interceptar criminosos, veículos e mercadorias ilegais.",
         "evidencias": [
           {
@@ -424,6 +427,7 @@
         ]
       },
       {
+        "id": "9a52fafd11862c36",
         "texto": "Na saúde, o plano prevê ampliar o alcance da telemedicina e das vídeo-consultas.",
         "evidencias": [
           {
@@ -434,6 +438,7 @@
         ]
       },
       {
+        "id": "2471ef68f068b33d",
         "texto": "Na educação básica, o plano prioriza a educação em tempo integral, com atividades de reforço em Matemática, Português e Inglês no contraturno.",
         "evidencias": [
           {
@@ -444,6 +449,7 @@
         ]
       },
       {
+        "id": "529084281861a05d",
         "texto": "Em recursos hídricos, o plano prevê programas de proteção dos mananciais que alimentam o sistema hídrico do Estado, para assegurar água potável destinada ao abastecimento humano.",
         "evidencias": [
           {
@@ -454,6 +460,7 @@
         ]
       },
       {
+        "id": "80bc57f132f6c45f",
         "texto": "Na assistência social, o plano prevê ampliar e fortalecer a rede de assistência e promoção social, com atenção especial aos idosos e às pessoas em maior vulnerabilidade.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -702,6 +702,7 @@
     "texto": "Na educação, o plano prevê a climatização das escolas da rede estadual, com cronograma público de execução ano a ano. Na saúde, a proposta prevê a publicação do tempo de espera de cada unidade da rede estadual. Na segurança pública, o documento propõe expandir o monitoramento por câmeras da capital para o restante do Estado. Na infraestrutura, o documento prevê um plano plurianual para as estradas vicinais, com cronograma anual de obras. Na gestão, o texto prevê a ampliação do Portal Roraima Aberto, com painel público de resultados. Na transformação digital, o plano prevê a expansão da internet de alta velocidade para todos os municípios. No agro, a proposta prevê a regularização fundiária das glebas estaduais sob competência do Estado. No meio ambiente, o plano propõe consolidar o programa Roraima Verde, com regras de repartição de benefícios.",
     "frases": [
       {
+        "id": "0b3ea2b39e265e15",
         "texto": "Na educação, o plano prevê a climatização das escolas da rede estadual, com cronograma público de execução ano a ano.",
         "evidencias": [
           {
@@ -712,6 +713,7 @@
         ]
       },
       {
+        "id": "7cbf2691752ba999",
         "texto": "Na saúde, a proposta prevê a publicação do tempo de espera de cada unidade da rede estadual.",
         "evidencias": [
           {
@@ -722,6 +724,7 @@
         ]
       },
       {
+        "id": "ba13dac45e714c83",
         "texto": "Na segurança pública, o documento propõe expandir o monitoramento por câmeras da capital para o restante do Estado.",
         "evidencias": [
           {
@@ -732,6 +735,7 @@
         ]
       },
       {
+        "id": "9674567fca6228eb",
         "texto": "Na infraestrutura, o documento prevê um plano plurianual para as estradas vicinais, com cronograma anual de obras.",
         "evidencias": [
           {
@@ -742,6 +746,7 @@
         ]
       },
       {
+        "id": "542c4c669aff0bdb",
         "texto": "Na gestão, o texto prevê a ampliação do Portal Roraima Aberto, com painel público de resultados.",
         "evidencias": [
           {
@@ -752,6 +757,7 @@
         ]
       },
       {
+        "id": "102aeb99ff28b58d",
         "texto": "Na transformação digital, o plano prevê a expansão da internet de alta velocidade para todos os municípios.",
         "evidencias": [
           {
@@ -762,6 +768,7 @@
         ]
       },
       {
+        "id": "1d3337dfcabcfd02",
         "texto": "No agro, a proposta prevê a regularização fundiária das glebas estaduais sob competência do Estado.",
         "evidencias": [
           {
@@ -772,6 +779,7 @@
         ]
       },
       {
+        "id": "c902db76096fa22f",
         "texto": "No meio ambiente, o plano propõe consolidar o programa Roraima Verde, com regras de repartição de benefícios.",
         "evidencias": [
           {

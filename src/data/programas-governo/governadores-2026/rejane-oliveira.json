@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1052,6 +1052,7 @@
     "texto": "O programa propõe a redução da jornada de trabalho para 36 horas semanais, sem redução salarial, e o fim imediato da escala 6x1. Também propõe a reestatização da CEEE sem indenização, com administração pelos trabalhadores e usuários. Na área ambiental, propõe a proibição da implantação de novos empreendimentos de exploração de carvão. Para a saúde, o programa prevê garantir e fortalecer um SUS público, 100% estatal, universal e gratuito. O projeto de PPPs na educação prevê repassar R$ 4,5 bilhões de recursos públicos à iniciativa privada durante 25 anos, abrangendo 98 escolas estaduais em 15 municípios. Na educação, o programa propõe o fim das Parcerias Público-Privadas. O programa propõe a realização de concursos públicos e a garantia de funcionários e professores em todas as disciplinas. Também propõe o cancelamento da dívida pública do estado com a União.",
     "frases": [
       {
+        "id": "78bce1303f129b67",
         "texto": "O programa propõe a redução da jornada de trabalho para 36 horas semanais, sem redução salarial, e o fim imediato da escala 6x1.",
         "evidencias": [
           {
@@ -1062,6 +1063,7 @@
         ]
       },
       {
+        "id": "9e9bb0bf78138e2f",
         "texto": "Também propõe a reestatização da CEEE sem indenização, com administração pelos trabalhadores e usuários.",
         "evidencias": [
           {
@@ -1072,6 +1074,7 @@
         ]
       },
       {
+        "id": "5ec1a8003e1da622",
         "texto": "Na área ambiental, propõe a proibição da implantação de novos empreendimentos de exploração de carvão.",
         "evidencias": [
           {
@@ -1082,6 +1085,7 @@
         ]
       },
       {
+        "id": "40a927bb0c7ed3ad",
         "texto": "Para a saúde, o programa prevê garantir e fortalecer um SUS público, 100% estatal, universal e gratuito.",
         "evidencias": [
           {
@@ -1092,6 +1096,7 @@
         ]
       },
       {
+        "id": "d0fc9234b1bde3f7",
         "texto": "O projeto de PPPs na educação prevê repassar R$ 4,5 bilhões de recursos públicos à iniciativa privada durante 25 anos, abrangendo 98 escolas estaduais em 15 municípios.",
         "evidencias": [
           {
@@ -1102,6 +1107,7 @@
         ]
       },
       {
+        "id": "d94d9491c1614faa",
         "texto": "Na educação, o programa propõe o fim das Parcerias Público-Privadas.",
         "evidencias": [
           {
@@ -1112,6 +1118,7 @@
         ]
       },
       {
+        "id": "8364d6ecef1697fe",
         "texto": "O programa propõe a realização de concursos públicos e a garantia de funcionários e professores em todas as disciplinas.",
         "evidencias": [
           {
@@ -1122,6 +1129,7 @@
         ]
       },
       {
+        "id": "d6f0d30588060294",
         "texto": "Também propõe o cancelamento da dívida pública do estado com a União.",
         "evidencias": [
           {

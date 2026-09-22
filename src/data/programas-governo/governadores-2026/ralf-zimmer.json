@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -394,6 +394,7 @@
     "texto": "O Governo deverá publicar um painel de metas, com indicadores compreensíveis para a população. A segurança será tratada de forma integrada: Polícia Militar, Polícia Civil, Polícia Científica, Polícia Penal, Corpo de Bombeiros, inteligência e Defesa Civil deverão trabalhar com protocolos e tecnologia compartilhados. Barragens e estruturas de contenção deverão contar com acompanhamento técnico, monitoramento e planos de emergência atualizados. A formação profissional deverá dialogar com empresas, cooperativas, universidades e instituições técnicas. A estratégia logística deverá reduzir dependência de um único modal e aumentar eficiência no transporte de cargas. A universalização do saneamento exige planejamento regional, escala, investimentos e capacidade de execução. A política social deve combinar proteção imediata com oportunidades de reconstrução de trajetórias. As decisões de investimento deverão considerar indicadores, população, necessidades de infraestrutura, vocações econômicas e capacidade de execução.",
     "frases": [
       {
+        "id": "2b7329cd29dae7e6",
         "texto": "O Governo deverá publicar um painel de metas, com indicadores compreensíveis para a população.",
         "evidencias": [
           {
@@ -404,6 +405,7 @@
         ]
       },
       {
+        "id": "62aa59075e49ae99",
         "texto": "A segurança será tratada de forma integrada: Polícia Militar, Polícia Civil, Polícia Científica, Polícia Penal, Corpo de Bombeiros, inteligência e Defesa Civil deverão trabalhar com protocolos e tecnologia compartilhados.",
         "evidencias": [
           {
@@ -414,6 +416,7 @@
         ]
       },
       {
+        "id": "1461e50a3103b590",
         "texto": "Barragens e estruturas de contenção deverão contar com acompanhamento técnico, monitoramento e planos de emergência atualizados.",
         "evidencias": [
           {
@@ -424,6 +427,7 @@
         ]
       },
       {
+        "id": "5208aa76e913f273",
         "texto": "A formação profissional deverá dialogar com empresas, cooperativas, universidades e instituições técnicas.",
         "evidencias": [
           {
@@ -434,6 +438,7 @@
         ]
       },
       {
+        "id": "0f449cde121ec8dd",
         "texto": "A estratégia logística deverá reduzir dependência de um único modal e aumentar eficiência no transporte de cargas.",
         "evidencias": [
           {
@@ -444,6 +449,7 @@
         ]
       },
       {
+        "id": "6a7e558fd3fb4410",
         "texto": "A universalização do saneamento exige planejamento regional, escala, investimentos e capacidade de execução.",
         "evidencias": [
           {
@@ -454,6 +460,7 @@
         ]
       },
       {
+        "id": "8ec08341effcdf37",
         "texto": "A política social deve combinar proteção imediata com oportunidades de reconstrução de trajetórias.",
         "evidencias": [
           {
@@ -464,6 +471,7 @@
         ]
       },
       {
+        "id": "beb39e9e4b1c885c",
         "texto": "As decisões de investimento deverão considerar indicadores, população, necessidades de infraestrutura, vocações econômicas e capacidade de execução.",
         "evidencias": [
           {

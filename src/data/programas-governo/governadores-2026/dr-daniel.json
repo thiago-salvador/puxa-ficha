@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1150,6 +1150,7 @@
     "texto": "O plano propõe ampliar programas de alfabetização na idade certa, com avaliação permanente da aprendizagem, em cooperação com os municípios. O documento prevê fortalecer a educação profissional, articulando a formação técnica às vocações econômicas de cada Região de Integração. Na saúde, o plano planeja consolidar uma Rede Estadual Integrada de Saúde, fortalecendo a regionalização da assistência. O plano propõe expandir a telemedicina para conectar especialistas aos municípios mais distantes. Na segurança pública, o plano planeja basear a política estadual em prevenção, inteligência e presença permanente do Estado. Na infraestrutura, o plano propõe ampliar programas de pavimentação, recuperação e conservação das rodovias estaduais, priorizando eixos estruturantes. O documento prevê priorizar a industrialização da produção estadual, reduzindo a dependência da exportação de commodities. O plano propõe elevar a bioeconomia à condição de política estratégica de Estado.",
     "frases": [
       {
+        "id": "f5f5269822c791df",
         "texto": "O plano propõe ampliar programas de alfabetização na idade certa, com avaliação permanente da aprendizagem, em cooperação com os municípios.",
         "evidencias": [
           {
@@ -1160,6 +1161,7 @@
         ]
       },
       {
+        "id": "38fec139f28117b8",
         "texto": "O documento prevê fortalecer a educação profissional, articulando a formação técnica às vocações econômicas de cada Região de Integração.",
         "evidencias": [
           {
@@ -1170,6 +1172,7 @@
         ]
       },
       {
+        "id": "694ba787fc33d52a",
         "texto": "Na saúde, o plano planeja consolidar uma Rede Estadual Integrada de Saúde, fortalecendo a regionalização da assistência.",
         "evidencias": [
           {
@@ -1180,6 +1183,7 @@
         ]
       },
       {
+        "id": "cfde13025f36ca47",
         "texto": "O plano propõe expandir a telemedicina para conectar especialistas aos municípios mais distantes.",
         "evidencias": [
           {
@@ -1190,6 +1194,7 @@
         ]
       },
       {
+        "id": "0956543f3e8ea50f",
         "texto": "Na segurança pública, o plano planeja basear a política estadual em prevenção, inteligência e presença permanente do Estado.",
         "evidencias": [
           {
@@ -1200,6 +1205,7 @@
         ]
       },
       {
+        "id": "0e761b81b5eb8328",
         "texto": "Na infraestrutura, o plano propõe ampliar programas de pavimentação, recuperação e conservação das rodovias estaduais, priorizando eixos estruturantes.",
         "evidencias": [
           {
@@ -1210,6 +1216,7 @@
         ]
       },
       {
+        "id": "76a3b18c272d1c8a",
         "texto": "O documento prevê priorizar a industrialização da produção estadual, reduzindo a dependência da exportação de commodities.",
         "evidencias": [
           {
@@ -1220,6 +1227,7 @@
         ]
       },
       {
+        "id": "b921ac04f5bc21d1",
         "texto": "O plano propõe elevar a bioeconomia à condição de política estratégica de Estado.",
         "evidencias": [
           {

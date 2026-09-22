@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -492,6 +492,7 @@
     "texto": "Nosso governo realizará concursos públicos para fortalecer o quadro efetivo da educação estadual, reduzindo a dependência de vínculos temporários e garantindo maior segurança para profissionais e estudantes. Nosso governo ampliará a oferta de ensino técnico e profissionalizante, aproximando a educação das necessidades do mercado de trabalho e das vocações econômicas de cada região do Estado. Nosso governo apoiará os municípios na ampliação do acesso à educação infantil e fortalecerá políticas voltadas ao desenvolvimento integral da criança. Nosso governo promoverá uma ampla transformação digital da administração estadual, integrando serviços, reduzindo documentos físicos e simplificando procedimentos administrativos. Nosso governo implantará um sistema estadual de indicadores de desempenho para acompanhar a qualidade dos serviços públicos e orientar a tomada de decisões. Nosso governo implantará um programa permanente de recuperação, modernização e duplicação das principais rodovias estaduais. Nosso governo fortalecerá as políticas estaduais de segurança alimentar por meio da integração entre produção agrícola, assistência social e programas de alimentação.",
     "frases": [
       {
+        "id": "52afce268935e324",
         "texto": "Nosso governo realizará concursos públicos para fortalecer o quadro efetivo da educação estadual, reduzindo a dependência de vínculos temporários e garantindo maior segurança para profissionais e estudantes.",
         "evidencias": [
           {
@@ -502,6 +503,7 @@
         ]
       },
       {
+        "id": "892e1d4bba6bfc04",
         "texto": "Nosso governo ampliará a oferta de ensino técnico e profissionalizante, aproximando a educação das necessidades do mercado de trabalho e das vocações econômicas de cada região do Estado.",
         "evidencias": [
           {
@@ -512,6 +514,7 @@
         ]
       },
       {
+        "id": "0529ebc58b68bb4d",
         "texto": "Nosso governo apoiará os municípios na ampliação do acesso à educação infantil e fortalecerá políticas voltadas ao desenvolvimento integral da criança.",
         "evidencias": [
           {
@@ -522,6 +525,7 @@
         ]
       },
       {
+        "id": "3cdb39d843a7bbd7",
         "texto": "Nosso governo promoverá uma ampla transformação digital da administração estadual, integrando serviços, reduzindo documentos físicos e simplificando procedimentos administrativos.",
         "evidencias": [
           {
@@ -532,6 +536,7 @@
         ]
       },
       {
+        "id": "81c115e8a8dc4d1b",
         "texto": "Nosso governo implantará um sistema estadual de indicadores de desempenho para acompanhar a qualidade dos serviços públicos e orientar a tomada de decisões.",
         "evidencias": [
           {
@@ -542,6 +547,7 @@
         ]
       },
       {
+        "id": "c73e6770ddb721e2",
         "texto": "Nosso governo implantará um programa permanente de recuperação, modernização e duplicação das principais rodovias estaduais.",
         "evidencias": [
           {
@@ -552,6 +558,7 @@
         ]
       },
       {
+        "id": "230a044a84740edc",
         "texto": "Nosso governo fortalecerá as políticas estaduais de segurança alimentar por meio da integração entre produção agrícola, assistência social e programas de alimentação.",
         "evidencias": [
           {

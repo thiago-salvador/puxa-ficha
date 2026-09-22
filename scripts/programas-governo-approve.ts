@@ -5,6 +5,7 @@ import { fileURLToPath, pathToFileURL } from "node:url"
 
 import {
   assertProgramaGovernoRegistro,
+  programaGovernoConteudoRevisado,
   programaGovernoRevisaoHashes,
   type ProgramaGovernoRegistro,
 } from "../src/lib/programa-governo"
@@ -92,11 +93,12 @@ export function programaGovernoApprovalFingerprint(
     extracao: document.extracao,
   }))
   const firstDocument = documents[0]
+  const conteudo = programaGovernoConteudoRevisado(record)
   const stableContent = {
-    version: record.version,
+    version: conteudo.version,
     fonte: record.fonte,
     documentos: documentSet,
-    resumo: record.resumo,
+    resumo: conteudo.resumo,
     geracao: record.geracao,
     julgamento: record.julgamento,
   }

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -324,6 +324,7 @@
     "texto": "O programa prevê ampliar o investimento em creches e educação infantil, priorizando municípios com maior vulnerabilidade social. Também propõe revisar o modelo de parcerias privadas na gestão escolar, com prestação de contas pública sobre resultados pedagógicos e financeiros. Na cultura, prevê programas permanentes dentro da carga horária escolar, integrados ao eixo Paraná dos Talentos. Para a formação estudantil, prevê continuidade e ampliação das aulas de programação e robótica na rede estadual. Também propõe uma trilha formal de descoberta de talento no contraturno de cada escola estadual. Na saúde, propõe criar uma Tabela SUS Paranaense para complementar valores pagos pela tabela federal, priorizando Santas Casas e hospitais filantrópicos em risco financeiro. Na segurança, prevê monitoramento público e territorializado dos indicadores, com metas por região e prestação de contas regular. Na área fiscal, propõe uma equipe dedicada a quantificar e mitigar o impacto da Reforma Tributária sobre a arrecadação paranaense.",
     "frases": [
       {
+        "id": "ef9c3c72e3a6e83e",
         "texto": "O programa prevê ampliar o investimento em creches e educação infantil, priorizando municípios com maior vulnerabilidade social.",
         "evidencias": [
           {
@@ -334,6 +335,7 @@
         ]
       },
       {
+        "id": "af755870981a6e47",
         "texto": "Também propõe revisar o modelo de parcerias privadas na gestão escolar, com prestação de contas pública sobre resultados pedagógicos e financeiros.",
         "evidencias": [
           {
@@ -344,6 +346,7 @@
         ]
       },
       {
+        "id": "15774c2f788ea1a4",
         "texto": "Na cultura, prevê programas permanentes dentro da carga horária escolar, integrados ao eixo Paraná dos Talentos.",
         "evidencias": [
           {
@@ -354,6 +357,7 @@
         ]
       },
       {
+        "id": "1365e19bb2639c3b",
         "texto": "Para a formação estudantil, prevê continuidade e ampliação das aulas de programação e robótica na rede estadual.",
         "evidencias": [
           {
@@ -364,6 +368,7 @@
         ]
       },
       {
+        "id": "c917d59f90bf72d8",
         "texto": "Também propõe uma trilha formal de descoberta de talento no contraturno de cada escola estadual.",
         "evidencias": [
           {
@@ -374,6 +379,7 @@
         ]
       },
       {
+        "id": "79999e8acc56007e",
         "texto": "Na saúde, propõe criar uma Tabela SUS Paranaense para complementar valores pagos pela tabela federal, priorizando Santas Casas e hospitais filantrópicos em risco financeiro.",
         "evidencias": [
           {
@@ -384,6 +390,7 @@
         ]
       },
       {
+        "id": "7fb59a334b93d305",
         "texto": "Na segurança, prevê monitoramento público e territorializado dos indicadores, com metas por região e prestação de contas regular.",
         "evidencias": [
           {
@@ -394,6 +401,7 @@
         ]
       },
       {
+        "id": "bfc45ddb6a9ff7ad",
         "texto": "Na área fiscal, propõe uma equipe dedicada a quantificar e mitigar o impacto da Reforma Tributária sobre a arrecadação paranaense.",
         "evidencias": [
           {

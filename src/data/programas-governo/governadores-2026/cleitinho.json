@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -268,6 +268,7 @@
     "texto": "O plano prevê a criação da Sala de Monitoramento da Gestão para acompanhar mensalmente as principais entregas de cada secretaria. Também propõe a digitalização dos serviços públicos para simplificar processos administrativos e facilitar a relação com o Estado. Na saúde, prevê a expansão da telessaúde para qualificar o atendimento oferecido à população. Na segurança pública, propõe a unificação das bases de dados em uma plataforma tecnológica integrada. Na educação, prevê a incorporação de aulas de tecnologia, programação, robótica e inteligência artificial na rede pública estadual. Na infraestrutura, propõe um painel público digital de obras com informações sobre contratos, prazos, valores e execução. No meio ambiente, prevê o uso de dados em tempo real para prevenir desastres e responder a emergências ambientais.",
     "frases": [
       {
+        "id": "16a5e6c880302f63",
         "texto": "O plano prevê a criação da Sala de Monitoramento da Gestão para acompanhar mensalmente as principais entregas de cada secretaria.",
         "evidencias": [
           {
@@ -278,6 +279,7 @@
         ]
       },
       {
+        "id": "93173f3e0f136104",
         "texto": "Também propõe a digitalização dos serviços públicos para simplificar processos administrativos e facilitar a relação com o Estado.",
         "evidencias": [
           {
@@ -288,6 +290,7 @@
         ]
       },
       {
+        "id": "8e199fc7d29871a8",
         "texto": "Na saúde, prevê a expansão da telessaúde para qualificar o atendimento oferecido à população.",
         "evidencias": [
           {
@@ -298,6 +301,7 @@
         ]
       },
       {
+        "id": "cfda11fb3d63f9d4",
         "texto": "Na segurança pública, propõe a unificação das bases de dados em uma plataforma tecnológica integrada.",
         "evidencias": [
           {
@@ -308,6 +312,7 @@
         ]
       },
       {
+        "id": "75702a7617209e6b",
         "texto": "Na educação, prevê a incorporação de aulas de tecnologia, programação, robótica e inteligência artificial na rede pública estadual.",
         "evidencias": [
           {
@@ -318,6 +323,7 @@
         ]
       },
       {
+        "id": "934cf51f28e8fd4e",
         "texto": "Na infraestrutura, propõe um painel público digital de obras com informações sobre contratos, prazos, valores e execução.",
         "evidencias": [
           {
@@ -328,6 +334,7 @@
         ]
       },
       {
+        "id": "b5e6651afc073a1c",
         "texto": "No meio ambiente, prevê o uso de dados em tempo real para prevenir desastres e responder a emergências ambientais.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -996,6 +996,7 @@
     "texto": "O plano propõe criar o SP CIN, Centro de Inteligência e Inovação. Na área de segurança pública, o plano prevê ampliar o Programa Muralha Paulista em 30% nos primeiros dois anos de governo. Na saúde, o SP Inova Saúde prevê aumento de 40% no número de teleatendimentos nos próximos quatro anos. Na saúde, o plano descreve a Tabela SUS Paulista como iniciativa que complementa os valores pagos pelo Ministério da Saúde em até cinco vezes mais. Na alfabetização, o programa Alfabetiza Juntos SP estabelece a meta de alcançar 90% no próximo quadriênio. Na educação superior, o Provão Paulista permitiu que mais de 46 mil jovens conquistassem vagas em universidades públicas desde sua criação. Em adaptação climática, o plano prevê investimentos superiores a R$ 25 bilhões até o final de 2029. Para o empreendedorismo feminino, o plano propõe criar um programa estadual de empreendedorismo feminino.",
     "frases": [
       {
+        "id": "e73010e90ac51639",
         "texto": "O plano propõe criar o SP CIN, Centro de Inteligência e Inovação.",
         "evidencias": [
           {
@@ -1006,6 +1007,7 @@
         ]
       },
       {
+        "id": "f978d58007b71270",
         "texto": "Na área de segurança pública, o plano prevê ampliar o Programa Muralha Paulista em 30% nos primeiros dois anos de governo.",
         "evidencias": [
           {
@@ -1016,6 +1018,7 @@
         ]
       },
       {
+        "id": "b37b0bd8bd00b436",
         "texto": "Na saúde, o SP Inova Saúde prevê aumento de 40% no número de teleatendimentos nos próximos quatro anos.",
         "evidencias": [
           {
@@ -1026,6 +1029,7 @@
         ]
       },
       {
+        "id": "4b0184efc053cbe4",
         "texto": "Na saúde, o plano descreve a Tabela SUS Paulista como iniciativa que complementa os valores pagos pelo Ministério da Saúde em até cinco vezes mais.",
         "evidencias": [
           {
@@ -1036,6 +1040,7 @@
         ]
       },
       {
+        "id": "e59045072e588637",
         "texto": "Na alfabetização, o programa Alfabetiza Juntos SP estabelece a meta de alcançar 90% no próximo quadriênio.",
         "evidencias": [
           {
@@ -1046,6 +1051,7 @@
         ]
       },
       {
+        "id": "40329aba15185122",
         "texto": "Na educação superior, o Provão Paulista permitiu que mais de 46 mil jovens conquistassem vagas em universidades públicas desde sua criação.",
         "evidencias": [
           {
@@ -1056,6 +1062,7 @@
         ]
       },
       {
+        "id": "1d66cb02435f3be8",
         "texto": "Em adaptação climática, o plano prevê investimentos superiores a R$ 25 bilhões até o final de 2029.",
         "evidencias": [
           {
@@ -1066,6 +1073,7 @@
         ]
       },
       {
+        "id": "b852fecbb4d7cd00",
         "texto": "Para o empreendedorismo feminino, o plano propõe criar um programa estadual de empreendedorismo feminino.",
         "evidencias": [
           {

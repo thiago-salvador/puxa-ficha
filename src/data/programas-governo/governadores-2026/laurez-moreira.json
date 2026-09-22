@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -926,6 +926,7 @@
     "texto": "O plano de governo para o período de 2027 a 2030 está organizado em sete eixos estratégicos. Na gestão estadual, o documento prevê instituir a Política Estadual de Transformação Digital como estratégia permanente de modernização da administração pública. O plano propõe criar programa de agroindustrialização, processamento de grãos e serviços tecnológicos para cadeias competitivas. Na infraestrutura, o texto prevê recuperar, pavimentar e conservar a malha rodoviária estadual. Na saúde, o documento propõe expandir a telemedicina e a telessaúde como instrumentos de ampliação do acesso à assistência especializada. Na segurança pública, o plano prevê implantar o Centro Integrado de Comando e Controle do Estado do Tocantins. Na educação, o plano prevê implantar o Programa Estadual de Permanência e Incentivo aos Estudos, por meio de bolsas de estudo. Na cultura, o plano prevê construir, em diálogo com a comunidade, o Centro de Eventos dos Povos Originários da Ilha do Bananal.",
     "frases": [
       {
+        "id": "ed53fa23b1efffad",
         "texto": "O plano de governo para o período de 2027 a 2030 está organizado em sete eixos estratégicos.",
         "evidencias": [
           {
@@ -936,6 +937,7 @@
         ]
       },
       {
+        "id": "1d6c3510fb25e478",
         "texto": "Na gestão estadual, o documento prevê instituir a Política Estadual de Transformação Digital como estratégia permanente de modernização da administração pública.",
         "evidencias": [
           {
@@ -946,6 +948,7 @@
         ]
       },
       {
+        "id": "c4eca4f35d8b3328",
         "texto": "O plano propõe criar programa de agroindustrialização, processamento de grãos e serviços tecnológicos para cadeias competitivas.",
         "evidencias": [
           {
@@ -956,6 +959,7 @@
         ]
       },
       {
+        "id": "4229f24dff32bc59",
         "texto": "Na infraestrutura, o texto prevê recuperar, pavimentar e conservar a malha rodoviária estadual.",
         "evidencias": [
           {
@@ -966,6 +970,7 @@
         ]
       },
       {
+        "id": "bd6b398a510f65b0",
         "texto": "Na saúde, o documento propõe expandir a telemedicina e a telessaúde como instrumentos de ampliação do acesso à assistência especializada.",
         "evidencias": [
           {
@@ -976,6 +981,7 @@
         ]
       },
       {
+        "id": "05309fb6e1aa466c",
         "texto": "Na segurança pública, o plano prevê implantar o Centro Integrado de Comando e Controle do Estado do Tocantins.",
         "evidencias": [
           {
@@ -986,6 +992,7 @@
         ]
       },
       {
+        "id": "c61749bac5d5abe7",
         "texto": "Na educação, o plano prevê implantar o Programa Estadual de Permanência e Incentivo aos Estudos, por meio de bolsas de estudo.",
         "evidencias": [
           {
@@ -996,6 +1003,7 @@
         ]
       },
       {
+        "id": "6caa92621a99c628",
         "texto": "Na cultura, o plano prevê construir, em diálogo com a comunidade, o Centro de Eventos dos Povos Originários da Ilha do Bananal.",
         "evidencias": [
           {

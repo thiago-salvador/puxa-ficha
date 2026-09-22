@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1108,6 +1108,7 @@
     "texto": "O plano apresenta o programa “Amazonas Conectado” como a principal iniciativa de modernização da administração estadual, associada à integração entre governo, sociedade, tecnologia e gestão orientada a resultados. Na infraestrutura, prevê ampliar o acesso à internet de qualidade no interior do Amazonas, relacionando conectividade ao desenvolvimento sustentável. Na saúde, propõe expandir o Telessaúde em Manaus e no interior, dentro de uma agenda de atendimento regionalizado. Na habitação, prevê instituir programa de regularização fundiária em imóveis urbanos, como ação do programa Casa Amazonense. Na economia, propõe elaborar o Plano Estadual de Diversificação Econômica, com orientação de investimentos para novas atividades regionais. No desenvolvimento regional, prevê fortalecer as cadeias produtivas da sociobiodiversidade, com apoio a comunidades produtoras, assistência técnica, beneficiamento e acesso ao mercado. Na agenda ambiental, planeja implementar um modelo transversal de gestão ambiental nos órgãos e entidades que integram a administração estadual, com práticas de eficiência energética, consumo responsável, reuso e reciclagem.",
     "frases": [
       {
+        "id": "e63ef6aa6b8b31df",
         "texto": "O plano apresenta o programa “Amazonas Conectado” como a principal iniciativa de modernização da administração estadual, associada à integração entre governo, sociedade, tecnologia e gestão orientada a resultados.",
         "evidencias": [
           {
@@ -1118,6 +1119,7 @@
         ]
       },
       {
+        "id": "cb906b922023271f",
         "texto": "Na infraestrutura, prevê ampliar o acesso à internet de qualidade no interior do Amazonas, relacionando conectividade ao desenvolvimento sustentável.",
         "evidencias": [
           {
@@ -1128,6 +1130,7 @@
         ]
       },
       {
+        "id": "b7f5f86f6c9ca4c7",
         "texto": "Na saúde, propõe expandir o Telessaúde em Manaus e no interior, dentro de uma agenda de atendimento regionalizado.",
         "evidencias": [
           {
@@ -1138,6 +1141,7 @@
         ]
       },
       {
+        "id": "ad45a044e5b95b09",
         "texto": "Na habitação, prevê instituir programa de regularização fundiária em imóveis urbanos, como ação do programa Casa Amazonense.",
         "evidencias": [
           {
@@ -1148,6 +1152,7 @@
         ]
       },
       {
+        "id": "b310fa0b0976efbe",
         "texto": "Na economia, propõe elaborar o Plano Estadual de Diversificação Econômica, com orientação de investimentos para novas atividades regionais.",
         "evidencias": [
           {
@@ -1158,6 +1163,7 @@
         ]
       },
       {
+        "id": "720d3fb06fef985c",
         "texto": "No desenvolvimento regional, prevê fortalecer as cadeias produtivas da sociobiodiversidade, com apoio a comunidades produtoras, assistência técnica, beneficiamento e acesso ao mercado.",
         "evidencias": [
           {
@@ -1168,6 +1174,7 @@
         ]
       },
       {
+        "id": "398aeda6e3088528",
         "texto": "Na agenda ambiental, planeja implementar um modelo transversal de gestão ambiental nos órgãos e entidades que integram a administração estadual, com práticas de eficiência energética, consumo responsável, reuso e reciclagem.",
         "evidencias": [
           {

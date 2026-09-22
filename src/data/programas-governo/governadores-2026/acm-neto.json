@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -3040,6 +3040,7 @@
     "texto": "Os 27 Territórios de Identidade da Bahia são a unidade de referência deste plano de governo. Cada Território de Identidade terá seu próprio Planejamento Estratégico Regional. O programa prevê a publicação semestral dos resultados do governo. Será criada a Governadoria da Segurança com comando direto e pessoal do Governador sobre a segurança pública estadual. Os sistemas de inteligência da Polícia Civil da Polícia Militar e da Polícia Penal serão integrados em uma plataforma única. O PIX Saúde permitirá ao Estado comprar esse serviço em uma unidade credenciada. O Novo Governo criará o Provão Bahia um vestibular seriado da rede pública estadual. Todo benefício concedido pelo Desenvolve será publicado em portal de transparência com nome da empresa investimento realizado valor do incentivo concedido empregos gerados prazo do contrato e histórico de cumprimento.",
     "frases": [
       {
+        "id": "d2b37774e932488d",
         "texto": "Os 27 Territórios de Identidade da Bahia são a unidade de referência deste plano de governo.",
         "evidencias": [
           {
@@ -3050,6 +3051,7 @@
         ]
       },
       {
+        "id": "524edc43c8cfc715",
         "texto": "Cada Território de Identidade terá seu próprio Planejamento Estratégico Regional.",
         "evidencias": [
           {
@@ -3060,6 +3062,7 @@
         ]
       },
       {
+        "id": "05b932443bdbb826",
         "texto": "O programa prevê a publicação semestral dos resultados do governo.",
         "evidencias": [
           {
@@ -3070,6 +3073,7 @@
         ]
       },
       {
+        "id": "cd963d0865d7407d",
         "texto": "Será criada a Governadoria da Segurança com comando direto e pessoal do Governador sobre a segurança pública estadual.",
         "evidencias": [
           {
@@ -3080,6 +3084,7 @@
         ]
       },
       {
+        "id": "2c8531787491040c",
         "texto": "Os sistemas de inteligência da Polícia Civil da Polícia Militar e da Polícia Penal serão integrados em uma plataforma única.",
         "evidencias": [
           {
@@ -3090,6 +3095,7 @@
         ]
       },
       {
+        "id": "669a05eca1b5e464",
         "texto": "O PIX Saúde permitirá ao Estado comprar esse serviço em uma unidade credenciada.",
         "evidencias": [
           {
@@ -3100,6 +3106,7 @@
         ]
       },
       {
+        "id": "90c43454d80a72ac",
         "texto": "O Novo Governo criará o Provão Bahia um vestibular seriado da rede pública estadual.",
         "evidencias": [
           {
@@ -3110,6 +3117,7 @@
         ]
       },
       {
+        "id": "32492489e4679c5e",
         "texto": "Todo benefício concedido pelo Desenvolve será publicado em portal de transparência com nome da empresa investimento realizado valor do incentivo concedido empregos gerados prazo do contrato e histórico de cumprimento.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "O programa prevê a reposição integral de 100% das perdas salariais, apresentada no eixo sobre salários. Propõe a redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana, no eixo trabalhista. Defende o cancelamento de todas as privatizações realizadas, conforme o eixo sobre a economia nacional. Prevê a realização de concursos públicos periódicos para repor o quadro de servidores, no eixo sobre funcionalismo. Propõe o assentamento imediato dos milhões de sem-terra acampados em todo o País, no eixo de reforma agrária. Propõe a elaboração de um plano nacional de construção de milhões de moradias populares, com garantia de habitação digna para a população. Defende mais verbas para a educação, segundo o eixo dedicado ao ensino público.",
     "frases": [
       {
+        "id": "bfec395f9bc2098f",
         "texto": "O programa prevê a reposição integral de 100% das perdas salariais, apresentada no eixo sobre salários.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "404f6e101aa37735",
         "texto": "Propõe a redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana, no eixo trabalhista.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "5067e67ca6a32675",
         "texto": "Defende o cancelamento de todas as privatizações realizadas, conforme o eixo sobre a economia nacional.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "36a27193dbedf11c",
         "texto": "Prevê a realização de concursos públicos periódicos para repor o quadro de servidores, no eixo sobre funcionalismo.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "aba572b1e7c6db3b",
         "texto": "Propõe o assentamento imediato dos milhões de sem-terra acampados em todo o País, no eixo de reforma agrária.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "455c83cf35cb4834",
         "texto": "Propõe a elaboração de um plano nacional de construção de milhões de moradias populares, com garantia de habitação digna para a população.",
         "evidencias": [
           {
@@ -202,6 +208,7 @@
         ]
       },
       {
+        "id": "d744220f7a9a846d",
         "texto": "Defende mais verbas para a educação, segundo o eixo dedicado ao ensino público.",
         "evidencias": [
           {

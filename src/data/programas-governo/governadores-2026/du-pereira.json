@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -604,6 +604,7 @@
     "texto": "No eixo de governança, o programa prevê converter os compromissos prioritários do Plano em carteira oficial de metas, com responsável, prazo, indicador e acompanhamento trimestral. Na saúde regional, o programa propõe organizar carteira de serviços especializados por região de saúde e pactuar expansão progressiva da oferta. Na educação profissional, o plano prevê estruturar pelo menos cinco polos de educação técnica, com localização definida por estudo das vocações econômicas regionais. Na conectividade, o programa planeja articular expansão de fibra, 4G/5G e soluções via satélite em áreas rurais e localidades com baixa cobertura. No saneamento, o plano propõe atualizar diagnóstico e metas de água, esgoto, drenagem e resíduos, em consonância com o marco legal e regionalização. No desenvolvimento regional, o programa prevê publicar indicadores econômicos, sociais e de execução do investimento por região e município.",
     "frases": [
       {
+        "id": "8cf3ed13cb6b3571",
         "texto": "No eixo de governança, o programa prevê converter os compromissos prioritários do Plano em carteira oficial de metas, com responsável, prazo, indicador e acompanhamento trimestral.",
         "evidencias": [
           {
@@ -614,6 +615,7 @@
         ]
       },
       {
+        "id": "8e4aad7dc4e1cb9e",
         "texto": "Na saúde regional, o programa propõe organizar carteira de serviços especializados por região de saúde e pactuar expansão progressiva da oferta.",
         "evidencias": [
           {
@@ -624,6 +626,7 @@
         ]
       },
       {
+        "id": "827bdbd472f3a3a4",
         "texto": "Na educação profissional, o plano prevê estruturar pelo menos cinco polos de educação técnica, com localização definida por estudo das vocações econômicas regionais.",
         "evidencias": [
           {
@@ -634,6 +637,7 @@
         ]
       },
       {
+        "id": "b1e62d65db0d77aa",
         "texto": "Na conectividade, o programa planeja articular expansão de fibra, 4G/5G e soluções via satélite em áreas rurais e localidades com baixa cobertura.",
         "evidencias": [
           {
@@ -644,6 +648,7 @@
         ]
       },
       {
+        "id": "90f60bdc40d37c42",
         "texto": "No saneamento, o plano propõe atualizar diagnóstico e metas de água, esgoto, drenagem e resíduos, em consonância com o marco legal e regionalização.",
         "evidencias": [
           {
@@ -654,6 +659,7 @@
         ]
       },
       {
+        "id": "811f25aba188db42",
         "texto": "No desenvolvimento regional, o programa prevê publicar indicadores econômicos, sociais e de execução do investimento por região e município.",
         "evidencias": [
           {

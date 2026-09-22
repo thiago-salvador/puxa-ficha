@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -520,6 +520,7 @@
     "texto": "O documento apresenta diretrizes gerais para consolidar o Programa de Governo 2027 a 2030 como base para a gestão estadual. Na agricultura familiar, o programa prevê fortalecer o Programa de Aquisição de Alimentos (PAA) no território sergipano. Na educação profissional, o programa prevê ampliar cursos alinhados às demandas e às vocações do mercado de trabalho sergipano. Na infraestrutura escolar, o programa propõe construir novas escolas por meio do Programa Escola Mais Sergipe. Na saúde digital, o programa prevê implantar o Prontuário Eletrônico Estadual Integrado para integrar informações da rede estadual de atendimento. No saneamento, o programa propõe acelerar a universalização dos serviços de abastecimento de água em comunidades rurais e povoados. Na administração pública, o programa prevê consolidar uma cultura de transparência ativa com prestação de contas clara, tempestiva e governança orientada a resultados mensuráveis.",
     "frases": [
       {
+        "id": "281d86094c17fca8",
         "texto": "O documento apresenta diretrizes gerais para consolidar o Programa de Governo 2027 a 2030 como base para a gestão estadual.",
         "evidencias": [
           {
@@ -530,6 +531,7 @@
         ]
       },
       {
+        "id": "eeda5e5dd5e1c015",
         "texto": "Na agricultura familiar, o programa prevê fortalecer o Programa de Aquisição de Alimentos (PAA) no território sergipano.",
         "evidencias": [
           {
@@ -540,6 +542,7 @@
         ]
       },
       {
+        "id": "46e044b55416b47e",
         "texto": "Na educação profissional, o programa prevê ampliar cursos alinhados às demandas e às vocações do mercado de trabalho sergipano.",
         "evidencias": [
           {
@@ -550,6 +553,7 @@
         ]
       },
       {
+        "id": "214dd54808682897",
         "texto": "Na infraestrutura escolar, o programa propõe construir novas escolas por meio do Programa Escola Mais Sergipe.",
         "evidencias": [
           {
@@ -560,6 +564,7 @@
         ]
       },
       {
+        "id": "a2529b798437c07e",
         "texto": "Na saúde digital, o programa prevê implantar o Prontuário Eletrônico Estadual Integrado para integrar informações da rede estadual de atendimento.",
         "evidencias": [
           {
@@ -570,6 +575,7 @@
         ]
       },
       {
+        "id": "5ba2fc3f3eb3c753",
         "texto": "No saneamento, o programa propõe acelerar a universalização dos serviços de abastecimento de água em comunidades rurais e povoados.",
         "evidencias": [
           {
@@ -580,6 +586,7 @@
         ]
       },
       {
+        "id": "93b8d2503c76bbdb",
         "texto": "Na administração pública, o programa prevê consolidar uma cultura de transparência ativa com prestação de contas clara, tempestiva e governança orientada a resultados mensuráveis.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1920,6 +1920,7 @@
     "texto": "O documento propõe zerar o ICMS da energia elétrica, medida descrita como capaz de reduzir a conta de luz em 17%. O documento propõe o Cartão Trabalho, definido como crédito mensal de R$ 200 para cada trabalhador com carteira assinada que receba até dois salários mínimos. Na educação, o documento propõe que o aluno avance após aprender os fundamentos, sem depender do calendário escolar. Na saúde, o documento propõe uma rede integrada de coleta, processamento, análise e entrega de resultados sob coordenação estadual. Na área ambiental, o documento propõe o Programa Estadual de Recuperação Produtiva de Áreas Degradadas, com assistência técnica, crédito e análise do solo. Na infraestrutura, o documento propõe o Plano Mato Grosso Multimodal, estruturado por uma carteira integrada de rodovias, ferrovias, hidrovias, aeroportos, portos secos e terminais de transbordo.",
     "frases": [
       {
+        "id": "d68bd1925b9d22c0",
         "texto": "O documento propõe zerar o ICMS da energia elétrica, medida descrita como capaz de reduzir a conta de luz em 17%.",
         "evidencias": [
           {
@@ -1930,6 +1931,7 @@
         ]
       },
       {
+        "id": "6d1e2aea0c272723",
         "texto": "O documento propõe o Cartão Trabalho, definido como crédito mensal de R$ 200 para cada trabalhador com carteira assinada que receba até dois salários mínimos.",
         "evidencias": [
           {
@@ -1940,6 +1942,7 @@
         ]
       },
       {
+        "id": "2ee1815b45a9766c",
         "texto": "Na educação, o documento propõe que o aluno avance após aprender os fundamentos, sem depender do calendário escolar.",
         "evidencias": [
           {
@@ -1950,6 +1953,7 @@
         ]
       },
       {
+        "id": "77bfe0975edb636f",
         "texto": "Na saúde, o documento propõe uma rede integrada de coleta, processamento, análise e entrega de resultados sob coordenação estadual.",
         "evidencias": [
           {
@@ -1960,6 +1964,7 @@
         ]
       },
       {
+        "id": "15b2db5698c3df90",
         "texto": "Na área ambiental, o documento propõe o Programa Estadual de Recuperação Produtiva de Áreas Degradadas, com assistência técnica, crédito e análise do solo.",
         "evidencias": [
           {
@@ -1970,6 +1975,7 @@
         ]
       },
       {
+        "id": "6337d2cbefee4544",
         "texto": "Na infraestrutura, o documento propõe o Plano Mato Grosso Multimodal, estruturado por uma carteira integrada de rodovias, ferrovias, hidrovias, aeroportos, portos secos e terminais de transbordo.",
         "evidencias": [
           {
