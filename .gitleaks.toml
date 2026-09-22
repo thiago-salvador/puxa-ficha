@@ -148,8 +148,8 @@ id = "sumologic-access-token"
 id = "grafana-api-key"
 
   [[rules.allowlists]]
-  description = "Identificador exato de relatório público Power BI citado pela Lupa ou pelo Aos Fatos, acessível sem autenticação"
+  description = "Identificador exato de relatório público Power BI citado pela Lupa, pelo Aos Fatos ou pelo Fato ou Fake, acessível sem autenticação"
   condition = "AND"
   regexTarget = "secret"
-  regexes = ['''^eyJrIjoiMDI0OTAyYzEtMzAyNS00ZGUxLWE5NGUtOWIxYTBlZTA1ZjBiIiwidCI6ImViMDkwNDIwLTQ0NGMtNDNmNy05MWYyLTRiOGRhNmJmZThlMSJ9$''', '''^eyJrIjoiMGVjMzIwZWQtM2IzZS00NmE0LTkwNjUtZjI1YjMyNTVhZGY0IiwidCI6IjI2ZjczODk3LWM4YWMtNGIxZS05NzhmLWVhNGMwNzc0MzRiZiJ9$''', '''^eyJrIjoiMDc0ZWFjYTgtYjA1OS00YzBmLWJkNTctZmVjODM2YzlmYzBjIiwidCI6ImViMDkwNDIwLTQ0NGMtNDNmNy05MWYyLTRiOGRhNmJmZThlMSJ9$''']
+  regexes = ['''^eyJrIjoiMDI0OTAyYzEtMzAyNS00ZGUxLWE5NGUtOWIxYTBlZTA1ZjBiIiwidCI6ImViMDkwNDIwLTQ0NGMtNDNmNy05MWYyLTRiOGRhNmJmZThlMSJ9$''', '''^eyJrIjoiMGVjMzIwZWQtM2IzZS00NmE0LTkwNjUtZjI1YjMyNTVhZGY0IiwidCI6IjI2ZjczODk3LWM4YWMtNGIxZS05NzhmLWVhNGMwNzc0MzRiZiJ9$''', '''^eyJrIjoiMDc0ZWFjYTgtYjA1OS00YzBmLWJkNTctZmVjODM2YzlmYzBjIiwidCI6ImViMDkwNDIwLTQ0NGMtNDNmNy05MWYyLTRiOGRhNmJmZThlMSJ9$''', '''^eyJrIjoiNWI5NWI0ODEtYmZiYy00Mjg3LTkzNWUtY2UyYjIwMDE1YWI2IiwidCI6IjNlYzkyOTY5LTVhNTEtNGYxOC04YWM5LWVmOThmYmFmYTk3OCJ9$''']
   paths = ['''^scripts/data/checagens-atribuidas\.json$''']
