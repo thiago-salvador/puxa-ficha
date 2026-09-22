@@ -1,0 +1,1749 @@
+{
+ "versao": "v1",
+ "conjunto": "ajuste",
+ "perguntas": "perguntas-v1.json",
+ "rodado_em": "2026-09-22T13:27:52.602Z",
+ "falhas": 0,
+ "respostas": {
+  "ab73d6bd3971e171": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.97,
+     "probabilities": {
+      "sustenta": 0,
+      "nao_relacionada": 0.98,
+      "relacionada": 0.02,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.04
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.12
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.08
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 723
+  },
+  "f2ea2feabb0eac51": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.94,
+     "probabilities": {
+      "relacionada": 0.03,
+      "sustenta": 0,
+      "contradiz": 0.01,
+      "nao_relacionada": 0.96
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.05
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.15
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.07
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 817
+  },
+  "b687c98cf9f65d8e": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.85,
+     "probabilities": {
+      "sustenta": 0.02,
+      "relacionada": 0.9,
+      "contradiz": 0.06,
+      "nao_relacionada": 0.02
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.73
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.64
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.2
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 940
+  },
+  "76fc542e35512ae6": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.46,
+     "probabilities": {
+      "nao_relacionada": 0.6,
+      "sustenta": 0,
+      "contradiz": 0.06,
+      "relacionada": 0.34
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.2
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.33
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.25
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 982
+  },
+  "0c757ad161f82269": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.42,
+     "probabilities": {
+      "relacionada": 0.4,
+      "nao_relacionada": 0.56,
+      "sustenta": 0,
+      "contradiz": 0.03
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.13
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.27
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.28
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 904
+  },
+  "297ff2860923ab00": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.97,
+     "probabilities": {
+      "contradiz": 0,
+      "relacionada": 0.02,
+      "sustenta": 0,
+      "nao_relacionada": 0.98
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.05
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.09
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.15
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 933
+  },
+  "d67b8da4c125421f": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.98,
+     "probabilities": {
+      "sustenta": 0,
+      "contradiz": 0,
+      "nao_relacionada": 0.99,
+      "relacionada": 0.01
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.03
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.06
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.09
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 1480
+  },
+  "22728d4236544dfc": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "sustenta",
+     "confidence": 0.53,
+     "probabilities": {
+      "relacionada": 0.35,
+      "nao_relacionada": 0,
+      "contradiz": 0,
+      "sustenta": 0.65
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.89
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.82
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.07
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 961
+  },
+  "826583d15724eb4b": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "sustenta",
+     "confidence": 0.96,
+     "probabilities": {
+      "nao_relacionada": 0,
+      "contradiz": 0,
+      "relacionada": 0.03,
+      "sustenta": 0.97
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.91
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.73
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.03
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 893
+  },
+  "faa2726f15c46c7b": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.92,
+     "probabilities": {
+      "sustenta": 0.01,
+      "nao_relacionada": 0.94,
+      "relacionada": 0.05,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.09
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.16
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.13
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 975
+  },
+  "16f8877cb615fd22": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.73,
+     "probabilities": {
+      "relacionada": 0.8,
+      "sustenta": 0.02,
+      "contradiz": 0,
+      "nao_relacionada": 0.18
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.34
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.43
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.09
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 934
+  },
+  "a70be2f146c676c0": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.99,
+     "probabilities": {
+      "relacionada": 0,
+      "nao_relacionada": 1,
+      "sustenta": 0,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.03
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.04
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.09
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 1455
+  },
+  "7934e1458b913725": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.65,
+     "probabilities": {
+      "nao_relacionada": 0.09,
+      "relacionada": 0.74,
+      "sustenta": 0.17,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.4
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.61
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.16
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 991
+  },
+  "9a2b655e038adad6": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 1,
+     "probabilities": {
+      "contradiz": 0,
+      "relacionada": 0,
+      "sustenta": 0,
+      "nao_relacionada": 1
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.03
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.06
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.09
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 952
+  },
+  "d82ec70bae30f646": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.84,
+     "probabilities": {
+      "contradiz": 0.02,
+      "nao_relacionada": 0.89,
+      "relacionada": 0.09,
+      "sustenta": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.08
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.18
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.35
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 885
+  },
+  "8fd25d60989e84d0": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 1,
+     "probabilities": {
+      "relacionada": 0,
+      "nao_relacionada": 1,
+      "contradiz": 0,
+      "sustenta": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.02
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.03
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.07
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 915
+  },
+  "0395e4b6be8e190c": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 1,
+     "probabilities": {
+      "contradiz": 0,
+      "sustenta": 0,
+      "nao_relacionada": 1,
+      "relacionada": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.03
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.05
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.11
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 822
+  },
+  "081a0c9b18760c5a": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.54,
+     "probabilities": {
+      "relacionada": 0.27,
+      "sustenta": 0.07,
+      "contradiz": 0,
+      "nao_relacionada": 0.66
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.24
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.3
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.11
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 757
+  },
+  "921da8e963f57992": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.96,
+     "probabilities": {
+      "sustenta": 0,
+      "nao_relacionada": 0.98,
+      "contradiz": 0,
+      "relacionada": 0.02
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.05
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.11
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.08
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 694
+  },
+  "b40728483f7b6b07": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.75,
+     "probabilities": {
+      "sustenta": 0.02,
+      "relacionada": 0.17,
+      "contradiz": 0,
+      "nao_relacionada": 0.81
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.14
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.26
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.15
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 964
+  },
+  "40c4038b0a3f661d": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.96,
+     "probabilities": {
+      "relacionada": 0.03,
+      "sustenta": 0,
+      "nao_relacionada": 0.97,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.04
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.12
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.09
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 907
+  },
+  "4095940cf658e5bc": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.84,
+     "probabilities": {
+      "relacionada": 0.89,
+      "sustenta": 0.06,
+      "nao_relacionada": 0.05,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.45
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.47
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.16
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 1424
+  },
+  "517a1d63ab861f4f": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.88,
+     "probabilities": {
+      "relacionada": 0.91,
+      "contradiz": 0,
+      "nao_relacionada": 0.02,
+      "sustenta": 0.07
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.56
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.56
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.18
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 911
+  },
+  "53e60b4779db4125": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.76,
+     "probabilities": {
+      "contradiz": 0.03,
+      "sustenta": 0.01,
+      "nao_relacionada": 0.82,
+      "relacionada": 0.14
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.08
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.1
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.53
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 952
+  },
+  "c6d2fdb7112369a1": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.51,
+     "probabilities": {
+      "sustenta": 0.01,
+      "nao_relacionada": 0.63,
+      "contradiz": 0,
+      "relacionada": 0.36
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.11
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.12
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.08
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 918
+  },
+  "f8c9ceae2c668ff0": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.56,
+     "probabilities": {
+      "contradiz": 0.01,
+      "nao_relacionada": 0.67,
+      "relacionada": 0.31,
+      "sustenta": 0.01
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.16
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.14
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.28
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 1487
+  },
+  "09389aa3d560eb53": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.97,
+     "probabilities": {
+      "sustenta": 0,
+      "relacionada": 0.02,
+      "nao_relacionada": 0.98,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.03
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.11
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.08
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 899
+  },
+  "f93b362b17b3565f": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.49,
+     "probabilities": {
+      "contradiz": 0,
+      "nao_relacionada": 0.36,
+      "relacionada": 0.61,
+      "sustenta": 0.03
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.21
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.22
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.08
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 985
+  },
+  "2d899b20ec344068": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.47,
+     "probabilities": {
+      "sustenta": 0.03,
+      "nao_relacionada": 0.37,
+      "relacionada": 0.6,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.19
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.26
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.14
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 905
+  },
+  "4ebe933a927c2d1a": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.88,
+     "probabilities": {
+      "contradiz": 0,
+      "nao_relacionada": 0.92,
+      "relacionada": 0.08,
+      "sustenta": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.08
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.13
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.13
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 881
+  },
+  "25c58dc55dbf895d": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.37,
+     "probabilities": {
+      "relacionada": 0.46,
+      "nao_relacionada": 0.53,
+      "sustenta": 0.01,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.18
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.25
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.07
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 780
+  },
+  "f7d5447cb85ba5a2": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.91,
+     "probabilities": {
+      "contradiz": 0,
+      "relacionada": 0.06,
+      "sustenta": 0,
+      "nao_relacionada": 0.9400000000000001
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.11
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.11
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.21
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 731
+  },
+  "f31e1c36a4a174fa": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.95,
+     "probabilities": {
+      "sustenta": 0,
+      "relacionada": 0.04,
+      "nao_relacionada": 0.96,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.06
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.13
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.06
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 916
+  },
+  "0af400e32ece235d": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.69,
+     "probabilities": {
+      "contradiz": 0.11,
+      "nao_relacionada": 0.07,
+      "sustenta": 0.05,
+      "relacionada": 0.77
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.5
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.59
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.4
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 959
+  },
+  "23aa887fb9694bb5": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 1,
+     "probabilities": {
+      "relacionada": 0,
+      "contradiz": 0,
+      "sustenta": 0,
+      "nao_relacionada": 1
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.03
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.05
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.08
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 877
+  },
+  "abdbbc91acbf6725": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.95,
+     "probabilities": {
+      "sustenta": 0,
+      "nao_relacionada": 0.96,
+      "relacionada": 0.04,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.04
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.06
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.12
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 1003
+  },
+  "9f5104078b54143a": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.31,
+     "probabilities": {
+      "nao_relacionada": 0.07,
+      "relacionada": 0.49,
+      "contradiz": 0.32,
+      "sustenta": 0.12
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.52
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.49
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.58
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 700
+  },
+  "f3dada307171a384": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.99,
+     "probabilities": {
+      "sustenta": 0,
+      "contradiz": 0,
+      "nao_relacionada": 1,
+      "relacionada": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.03
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.06
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.07
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 926
+  },
+  "9c96b876c82d8297": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.98,
+     "probabilities": {
+      "nao_relacionada": 0.98,
+      "contradiz": 0,
+      "relacionada": 0.02,
+      "sustenta": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.05
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.08
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.13
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 943
+  },
+  "6449b16b1eb21318": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.76,
+     "probabilities": {
+      "sustenta": 0,
+      "nao_relacionada": 0.82,
+      "relacionada": 0.17,
+      "contradiz": 0.01
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.13
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.17
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.24
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 976
+  },
+  "3dd55da3dcc32f92": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.46,
+     "probabilities": {
+      "sustenta": 0,
+      "contradiz": 0.3,
+      "nao_relacionada": 0.6,
+      "relacionada": 0.1
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.09
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.19
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.81
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 976
+  },
+  "3c1b88cd2af6279c": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.5,
+     "probabilities": {
+      "sustenta": 0.03,
+      "contradiz": 0,
+      "nao_relacionada": 0.62,
+      "relacionada": 0.35
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.15
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.27
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.13
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 879
+  },
+  "3ca32505e557fb57": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 1,
+     "probabilities": {
+      "contradiz": 0,
+      "relacionada": 0,
+      "nao_relacionada": 1,
+      "sustenta": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.02
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.03
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.09
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 943
+  },
+  "a0426d88adea76e5": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.94,
+     "probabilities": {
+      "nao_relacionada": 0.96,
+      "contradiz": 0,
+      "sustenta": 0,
+      "relacionada": 0.04
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.05
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.08
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.06
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 870
+  },
+  "305770c9b212aef0": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.93,
+     "probabilities": {
+      "contradiz": 0,
+      "nao_relacionada": 0.95,
+      "relacionada": 0.05,
+      "sustenta": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.2
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.23
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.05
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 986
+  },
+  "57869a04a5b8f3e3": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "sustenta",
+     "confidence": 0.53,
+     "probabilities": {
+      "sustenta": 0.65,
+      "relacionada": 0.35,
+      "contradiz": 0,
+      "nao_relacionada": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.87
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.88
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.04
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 931
+  },
+  "a9cc4b449a5062e7": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.45,
+     "probabilities": {
+      "nao_relacionada": 0.59,
+      "relacionada": 0.38,
+      "sustenta": 0,
+      "contradiz": 0.03
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.09
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.17
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.33
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 940
+  },
+  "b73bf851f9b0c7ee": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.35,
+     "probabilities": {
+      "nao_relacionada": 0.47,
+      "relacionada": 0.52,
+      "sustenta": 0.01,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.24
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.52
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.05
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 923
+  },
+  "41d15dd5054a635a": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 1,
+     "probabilities": {
+      "sustenta": 0,
+      "nao_relacionada": 1,
+      "relacionada": 0,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.02
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.03
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.05
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 816
+  },
+  "4882ee7246ce877f": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.96,
+     "probabilities": {
+      "relacionada": 0.98,
+      "nao_relacionada": 0.02,
+      "sustenta": 0,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.67
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.73
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.12
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 828
+  },
+  "7f6f36af7c54140f": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.88,
+     "probabilities": {
+      "nao_relacionada": 0.92,
+      "relacionada": 0.04,
+      "sustenta": 0,
+      "contradiz": 0.04
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.06
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.08
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.37
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 727
+  },
+  "ef4016a1d88c5890": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.85,
+     "probabilities": {
+      "sustenta": 0,
+      "relacionada": 0.11,
+      "nao_relacionada": 0.89,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.06
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.11
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.06
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 942
+  },
+  "c228614cdd2ec5de": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.99,
+     "probabilities": {
+      "nao_relacionada": 1,
+      "sustenta": 0,
+      "relacionada": 0,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.02
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.03
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.07
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 899
+  },
+  "7879b37a82eb2be1": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.98,
+     "probabilities": {
+      "contradiz": 0,
+      "relacionada": 0.01,
+      "nao_relacionada": 0.99,
+      "sustenta": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.04
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.06
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.1
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 857
+  },
+  "51b55a0e208e765a": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.7,
+     "probabilities": {
+      "nao_relacionada": 0.77,
+      "relacionada": 0.18,
+      "sustenta": 0.05,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.2
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.18
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.12
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 990
+  },
+  "5d6d72b5e1f84692": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.92,
+     "probabilities": {
+      "relacionada": 0.06,
+      "nao_relacionada": 0.94,
+      "contradiz": 0,
+      "sustenta": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.04
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.08
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.07
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 880
+  },
+  "cdd55828ce9c4eff": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.94,
+     "probabilities": {
+      "contradiz": 0,
+      "relacionada": 0.95,
+      "sustenta": 0.03,
+      "nao_relacionada": 0.02
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.46
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.52
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.09
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 980
+  },
+  "c80a416a5585ea9c": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.99,
+     "probabilities": {
+      "contradiz": 0,
+      "relacionada": 0.01,
+      "nao_relacionada": 0.99,
+      "sustenta": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.05
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.09
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.14
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 847
+  },
+  "dc7e315f9ce49cab": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 1,
+     "probabilities": {
+      "sustenta": 0,
+      "contradiz": 0,
+      "nao_relacionada": 1,
+      "relacionada": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.03
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.03
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.07
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 1004
+  },
+  "1af2a0943aa9dba2": {
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "nao_relacionada",
+     "confidence": 0.41,
+     "probabilities": {
+      "contradiz": 0,
+      "sustenta": 0.01,
+      "relacionada": 0.43,
+      "nao_relacionada": 0.56
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.12
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.21
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.12
+    }
+   },
+   "model": "jev-1.13.0",
+   "ms": 895
+  }
+ }
+}

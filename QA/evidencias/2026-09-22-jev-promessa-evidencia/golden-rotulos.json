@@ -1,0 +1,366 @@
+{
+  "schema_version": "promessa-golden-rotulos-v1",
+  "rotulador": "modelo principal da sessao, sem ver resposta do Jev",
+  "rotulos": {
+    "ab73d6bd3971e171": {
+      "rotulo": "nao_relacionada",
+      "nota": "consolidacao municipal x Bolsa Familia"
+    },
+    "f2ea2feabb0eac51": {
+      "rotulo": "nao_relacionada",
+      "nota": "SUS estatal x trajetoria sem mandato"
+    },
+    "82efba88c16951c9": {
+      "rotulo": "nao_relacionada",
+      "nota": "estado digital x investigacao de corrupcao"
+    },
+    "b687c98cf9f65d8e": {
+      "rotulo": "relacionada",
+      "nota": "politica fiscal do programa x regra fiscal que substituiu o teto; mesmo objeto, sem direcao sobre o compromisso"
+    },
+    "76fc542e35512ae6": {
+      "rotulo": "nao_relacionada",
+      "nota": "PEC de equilibrio fiscal x substituicao do Bolsa Familia"
+    },
+    "81d9230edb8feb2b": {
+      "rotulo": "contradiz",
+      "nota": "o ponto registra fala mantendo o Bolsa Familia contra o plano que o substitui"
+    },
+    "0c757ad161f82269": {
+      "rotulo": "nao_relacionada",
+      "nota": "revisao da reforma tributaria x voto no arcabouco fiscal; so a area fiscal"
+    },
+    "297ff2860923ab00": {
+      "rotulo": "nao_relacionada",
+      "nota": "reforma tributaria x reforma da previdencia"
+    },
+    "69c5aa45b81bbc48": {
+      "rotulo": "sustenta",
+      "nota": "quer revisar a reforma tributaria e votou contra ela"
+    },
+    "d67b8da4c125421f": {
+      "rotulo": "nao_relacionada",
+      "nota": "reforma tributaria x autonomia do BC"
+    },
+    "22728d4236544dfc": {
+      "rotulo": "sustenta",
+      "nota": "fala defende reducao da jornada, mesmo compromisso"
+    },
+    "01993c33ffe933b6": {
+      "rotulo": "nao_relacionada",
+      "nota": "ajuste fiscal x cotas"
+    },
+    "826583d15724eb4b": {
+      "rotulo": "sustenta",
+      "nota": "fala repete o aumento de 100% do salario minimo"
+    },
+    "faa2726f15c46c7b": {
+      "rotulo": "nao_relacionada",
+      "nota": "mulheres e criancas x cuidado de idosos"
+    },
+    "e2d0666311f33fd7": {
+      "rotulo": "relacionada",
+      "nota": "fala sobre policiamento dentro do tema de seguranca publica, sem tratar da medida proposta"
+    },
+    "16f8877cb615fd22": {
+      "rotulo": "relacionada",
+      "nota": "tema de titulo amplo sobre economia x fala sobre politica do salario minimo"
+    },
+    "a70be2f146c676c0": {
+      "rotulo": "nao_relacionada",
+      "nota": "estatizacao de empresas x jornada"
+    },
+    "6909883c5269bd51": {
+      "rotulo": "nao_relacionada",
+      "nota": "nacionalizacao de bancos x salario minimo"
+    },
+    "7934e1458b913725": {
+      "rotulo": "relacionada",
+      "nota": "revogar reforma trabalhista e reduzir jornada: mesmo objeto de direitos trabalhistas, medida diferente"
+    },
+    "9a2b655e038adad6": {
+      "rotulo": "nao_relacionada",
+      "nota": "direito penal do inimigo x Bolsa Familia"
+    },
+    "4edb0ccb74989839": {
+      "rotulo": "relacionada",
+      "nota": "tema emprego, renda e jornada x revogar reforma trabalhista"
+    },
+    "d82ec70bae30f646": {
+      "rotulo": "nao_relacionada",
+      "nota": "programa para mulheres x PEC da Transicao"
+    },
+    "8fd25d60989e84d0": {
+      "rotulo": "nao_relacionada",
+      "nota": "faccoes criminosas x reforma trabalhista"
+    },
+    "57c6611fe399fd0d": {
+      "rotulo": "nao_relacionada",
+      "nota": "carreira de pesquisador x emendas orcamentarias"
+    },
+    "0395e4b6be8e190c": {
+      "rotulo": "nao_relacionada",
+      "nota": "reforma agraria x previdencia"
+    },
+    "081a0c9b18760c5a": {
+      "rotulo": "relacionada",
+      "nota": "estrategia fiscal x equilibrio atuarial da previdencia; mesmo objeto de contas publicas"
+    },
+    "affa4cdde14a9ee9": {
+      "rotulo": "nao_relacionada",
+      "nota": "sistema financeiro x previdencia"
+    },
+    "921da8e963f57992": {
+      "rotulo": "nao_relacionada",
+      "nota": "feminicidio x regra do Bolsa Familia"
+    },
+    "b40728483f7b6b07": {
+      "rotulo": "nao_relacionada",
+      "nota": "desigualdade e Bolsa Familia x privatizacao da Eletrobras"
+    },
+    "e893506516da69e5": {
+      "rotulo": "nao_relacionada",
+      "nota": "estatizacao de empresas x reforma trabalhista"
+    },
+    "40c4038b0a3f661d": {
+      "rotulo": "nao_relacionada",
+      "nota": "competencias do STF x pena de atentado a transporte"
+    },
+    "4095940cf658e5bc": {
+      "rotulo": "relacionada",
+      "nota": "proposicao penal sobre sequestro dentro do tema de combate ao crime, sem tratar da medida proposta"
+    },
+    "16da96138df442c2": {
+      "rotulo": "nao_relacionada",
+      "nota": "desigualdade e Bolsa Familia x perdas salariais de 1989"
+    },
+    "517a1d63ab861f4f": {
+      "rotulo": "relacionada",
+      "nota": "agravante penal e Lei de Drogas dentro do tema de faccoes e crime organizado"
+    },
+    "53e60b4779db4125": {
+      "rotulo": "nao_relacionada",
+      "nota": "estrategia fiscal x desoneracao de bicicletas"
+    },
+    "3a02837a5bb46205": {
+      "rotulo": "nao_relacionada",
+      "nota": "crescimento e reforma tributaria x beneficios previdenciarios"
+    },
+    "c6d2fdb7112369a1": {
+      "rotulo": "nao_relacionada",
+      "nota": "investimento em infraestrutura x pena de atentado a transporte"
+    },
+    "f8c9ceae2c668ff0": {
+      "rotulo": "nao_relacionada",
+      "nota": "estrategia fiscal x dividas de credito rural"
+    },
+    "9f7671619fcd7cec": {
+      "rotulo": "nao_relacionada",
+      "nota": "crescimento x planos da previdencia"
+    },
+    "09389aa3d560eb53": {
+      "rotulo": "nao_relacionada",
+      "nota": "competencias do STF x decreto de armas"
+    },
+    "f93b362b17b3565f": {
+      "rotulo": "nao_relacionada",
+      "nota": "filas e mortalidade cardiovascular x medicamentos na CLT"
+    },
+    "1a738447917936f2": {
+      "rotulo": "relacionada",
+      "nota": "tema de seguranca publica e crime x proposicao penal de aumento de pena"
+    },
+    "2d899b20ec344068": {
+      "rotulo": "nao_relacionada",
+      "nota": "estrategia fiscal x medida provisoria tributaria"
+    },
+    "4ebe933a927c2d1a": {
+      "rotulo": "nao_relacionada",
+      "nota": "logistica de transporte x decreto de saneamento; ligacao exige explicacao externa"
+    },
+    "56ca3debddb696e6": {
+      "rotulo": "nao_relacionada",
+      "nota": "filas do SUS x cadastro de especialistas; ligacao exige explicacao externa"
+    },
+    "25c58dc55dbf895d": {
+      "rotulo": "nao_relacionada",
+      "nota": "anos iniciais x permanencia no ensino medio"
+    },
+    "f7d5447cb85ba5a2": {
+      "rotulo": "nao_relacionada",
+      "nota": "educacao profissional x reforma trabalhista"
+    },
+    "12713b6d75b7c586": {
+      "rotulo": "nao_relacionada",
+      "nota": "orcamento participativo x arcabouco fiscal"
+    },
+    "f31e1c36a4a174fa": {
+      "rotulo": "nao_relacionada",
+      "nota": "antenas em escolas rurais x permanencia no ensino medio"
+    },
+    "0af400e32ece235d": {
+      "rotulo": "relacionada",
+      "nota": "reducao de despesas x voto contra regra de limite de gastos; mesmo objeto, direcao depende de interpretacao"
+    },
+    "ee03c7a83193fd99": {
+      "rotulo": "nao_relacionada",
+      "nota": "cultura x reforma trabalhista"
+    },
+    "23aa887fb9694bb5": {
+      "rotulo": "nao_relacionada",
+      "nota": "beneficio eventual x marco temporal"
+    },
+    "abdbbc91acbf6725": {
+      "rotulo": "nao_relacionada",
+      "nota": "crimes ciberneticos x maioridade penal"
+    },
+    "1421a5d246004644": {
+      "rotulo": "nao_relacionada",
+      "nota": "carbono jurisdicional x vaquejada"
+    },
+    "9f5104078b54143a": {
+      "rotulo": "relacionada",
+      "nota": "corredores com terras indigenas x voto contra o marco temporal; mesma direcao, medida diferente"
+    },
+    "f3dada307171a384": {
+      "rotulo": "nao_relacionada",
+      "nota": "trabalho de apenados x prerrogativas parlamentares"
+    },
+    "637042c1fe341987": {
+      "rotulo": "nao_relacionada",
+      "nota": "sociobiodiversidade x vaquejada"
+    },
+    "9c96b876c82d8297": {
+      "rotulo": "nao_relacionada",
+      "nota": "educacao profissional x reforma trabalhista"
+    },
+    "6449b16b1eb21318": {
+      "rotulo": "nao_relacionada",
+      "nota": "orcamento participativo x voto no arcabouco"
+    },
+    "a4141b2d7825b06d": {
+      "rotulo": "nao_relacionada",
+      "nota": "credito para economia criativa x previdencia"
+    },
+    "3dd55da3dcc32f92": {
+      "rotulo": "relacionada",
+      "nota": "portal de transparencia de obras x defesa das emendas de relator; mesmo objeto (transparencia no uso de recurso publico), direcao nao direta"
+    },
+    "3c1b88cd2af6279c": {
+      "rotulo": "nao_relacionada",
+      "nota": "codigo de etica x emendas de relator; ligacao exige explicacao externa"
+    },
+    "b251aa820773a9e2": {
+      "rotulo": "relacionada",
+      "nota": "orcamento base zero estadual x voto no teto federal; mesma direcao, medida diferente"
+    },
+    "3ca32505e557fb57": {
+      "rotulo": "nao_relacionada",
+      "nota": "saude regionalizada x privatizacao"
+    },
+    "a0426d88adea76e5": {
+      "rotulo": "nao_relacionada",
+      "nota": "creches x previdencia"
+    },
+    "e4424285878644be": {
+      "rotulo": "nao_relacionada",
+      "nota": "terras indigenas x Bolsa Familia"
+    },
+    "305770c9b212aef0": {
+      "rotulo": "nao_relacionada",
+      "nota": "prontuario eletronico x fala generica sobre saude; tema mais estreito que a fala"
+    },
+    "57869a04a5b8f3e3": {
+      "rotulo": "relacionada",
+      "nota": "tema de titulo amplo seguranca publica x fala sobre tornar o estado mais seguro"
+    },
+    "f8dbdf9194fe2aae": {
+      "rotulo": "relacionada",
+      "nota": "tema seguranca publica x fala sobre nomeacao tecnica na seguranca"
+    },
+    "a9cc4b449a5062e7": {
+      "rotulo": "nao_relacionada",
+      "nota": "tempo integral x estudantes trabalhadores"
+    },
+    "b73bf851f9b0c7ee": {
+      "rotulo": "nao_relacionada",
+      "nota": "creches x candidatura"
+    },
+    "80d8aaacd0f51331": {
+      "rotulo": "nao_relacionada",
+      "nota": "hospitais x concessao de estadio"
+    },
+    "41d15dd5054a635a": {
+      "rotulo": "nao_relacionada",
+      "nota": "UTI neonatal x concurso publico"
+    },
+    "4882ee7246ce877f": {
+      "rotulo": "relacionada",
+      "nota": "tema seguranca publica x fala sobre conduta da policia"
+    },
+    "42eea8fce438dedb": {
+      "rotulo": "nao_relacionada",
+      "nota": "saude digital x investimento"
+    },
+    "7f6f36af7c54140f": {
+      "rotulo": "nao_relacionada",
+      "nota": "politica climatica x regularizacao fundiaria; ligacao exige explicacao externa"
+    },
+    "ef4016a1d88c5890": {
+      "rotulo": "nao_relacionada",
+      "nota": "construcao de escolas x dia do desporto escolar"
+    },
+    "e72e3755f10449cf": {
+      "rotulo": "nao_relacionada",
+      "nota": "mae estudante x semana olimpica"
+    },
+    "c228614cdd2ec5de": {
+      "rotulo": "nao_relacionada",
+      "nota": "orcamento participativo x imposto de renda de imovel"
+    },
+    "7879b37a82eb2be1": {
+      "rotulo": "nao_relacionada",
+      "nota": "hospitais regionais x carteira de projetos na LRF"
+    },
+    "c23fc77097f54443": {
+      "rotulo": "nao_relacionada",
+      "nota": "tarifa zero x seguranca em aplicativos"
+    },
+    "51b55a0e208e765a": {
+      "rotulo": "nao_relacionada",
+      "nota": "credito criativo x CLT"
+    },
+    "5d6d72b5e1f84692": {
+      "rotulo": "nao_relacionada",
+      "nota": "tempo integral x seguranca em campi"
+    },
+    "2ecf2271746c6469": {
+      "rotulo": "nao_relacionada",
+      "nota": "violencia domestica x violencia escolar"
+    },
+    "cdd55828ce9c4eff": {
+      "rotulo": "relacionada",
+      "nota": "crime organizado: protecao de agentes e obstrucao, mesmo objeto do tema"
+    },
+    "c80a416a5585ea9c": {
+      "rotulo": "nao_relacionada",
+      "nota": "orcamento base zero x imposto de importacao"
+    },
+    "79c1d87ecbbad8cb": {
+      "rotulo": "nao_relacionada",
+      "nota": "logistica x nome de elevado"
+    },
+    "dc7e315f9ce49cab": {
+      "rotulo": "nao_relacionada",
+      "nota": "planejamento regional x PIS/Cofins"
+    },
+    "1af2a0943aa9dba2": {
+      "rotulo": "nao_relacionada",
+      "nota": "hospitais regionais x royalties para saude e educacao; tema mais estreito"
+    },
+    "4a9f89110653a99f": {
+      "rotulo": "nao_relacionada",
+      "nota": "combate a pobreza x bagagem aerea"
+    }
+  }
+}

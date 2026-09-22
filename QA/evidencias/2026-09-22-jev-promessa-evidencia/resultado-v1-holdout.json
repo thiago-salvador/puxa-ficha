@@ -1,0 +1,153 @@
+{
+  "versao": "v1",
+  "conjunto": "holdout",
+  "modelo": "jev-1.13.0",
+  "falhasDeServico": 0,
+  "pares": 30,
+  "descartados": 16,
+  "descartadosPorRotulo": {
+    "sustenta": 0,
+    "contradiz": 0,
+    "relacionada": 0,
+    "nao_relacionada": 16
+  },
+  "porClasse": {
+    "sustenta": {
+      "total": 1,
+      "certos": 0,
+      "concordancia": 0
+    },
+    "contradiz": {
+      "total": 1,
+      "certos": 1,
+      "concordancia": 1
+    },
+    "relacionada": {
+      "total": 5,
+      "certos": 5,
+      "concordancia": 1
+    },
+    "nao_relacionada": {
+      "total": 23,
+      "certos": 20,
+      "concordancia": 0.87
+    }
+  },
+  "matriz": {
+    "sustenta": {
+      "sustenta": 0,
+      "contradiz": 1,
+      "relacionada": 0,
+      "nao_relacionada": 0
+    },
+    "contradiz": {
+      "sustenta": 0,
+      "contradiz": 1,
+      "relacionada": 0,
+      "nao_relacionada": 0
+    },
+    "relacionada": {
+      "sustenta": 0,
+      "contradiz": 0,
+      "relacionada": 5,
+      "nao_relacionada": 0
+    },
+    "nao_relacionada": {
+      "sustenta": 1,
+      "contradiz": 0,
+      "relacionada": 2,
+      "nao_relacionada": 20
+    }
+  },
+  "criterio": {
+    "descarteSemSustentaOuContradiz": true,
+    "descarteRelacionadaNoMaximo1": true,
+    "coberturaDescarteNaoRelacionada": 0.696,
+    "concordanciaBinaria": 0.9,
+    "c1": true,
+    "c2": true,
+    "c3": true
+  },
+  "divergencias": [
+    {
+      "parId": "69c5aa45b81bbc48",
+      "grupo": "presidencial",
+      "tipo": "votacao_chave",
+      "rotulo": "sustenta",
+      "preRotulo": "contradiz",
+      "descartado": false,
+      "probabilidades": {
+        "contradiz": 0.81,
+        "sustenta": 0.01,
+        "nao_relacionada": 0,
+        "relacionada": 0.17
+      },
+      "nouls": {
+        "mesmo_compromisso": 0.86,
+        "assunto_do_titulo": 0.76,
+        "direcao_oposta": 0.71
+      },
+      "classificacao": "erro do Jev: direcao invertida (voto contra a reforma lido como contra o compromisso de revisa-la); foi para a fila, contradiz nunca publica na v1"
+    },
+    {
+      "parId": "16da96138df442c2",
+      "grupo": "presidencial",
+      "tipo": "projeto_lei",
+      "rotulo": "nao_relacionada",
+      "preRotulo": "relacionada",
+      "descartado": false,
+      "probabilidades": {
+        "nao_relacionada": 0.19,
+        "sustenta": 0.04,
+        "relacionada": 0.77,
+        "contradiz": 0
+      },
+      "nouls": {
+        "mesmo_compromisso": 0.4,
+        "assunto_do_titulo": 0.38,
+        "direcao_oposta": 0.12
+      },
+      "classificacao": "erro do Jev: perdas salariais de 1989 lidas como combate a desigualdade; fronteira da rubrica, confianca 0,77, iria para revisao"
+    },
+    {
+      "parId": "80d8aaacd0f51331",
+      "grupo": "governador_congresso",
+      "tipo": "fala",
+      "rotulo": "nao_relacionada",
+      "preRotulo": "relacionada",
+      "descartado": false,
+      "probabilidades": {
+        "sustenta": 0.29,
+        "contradiz": 0.01,
+        "relacionada": 0.53,
+        "nao_relacionada": 0.17
+      },
+      "nouls": {
+        "mesmo_compromisso": 0.42,
+        "assunto_do_titulo": 0.44,
+        "direcao_oposta": 0.18
+      },
+      "classificacao": "erro do Jev: fala sobre concessao de estadio lida como gestao hospitalar; confianca 0,53, iria para revisao"
+    },
+    {
+      "parId": "79c1d87ecbbad8cb",
+      "grupo": "governador_congresso",
+      "tipo": "projeto_lei",
+      "rotulo": "nao_relacionada",
+      "preRotulo": "sustenta",
+      "descartado": false,
+      "probabilidades": {
+        "relacionada": 0.47,
+        "sustenta": 0.51,
+        "contradiz": 0,
+        "nao_relacionada": 0.02
+      },
+      "nouls": {
+        "mesmo_compromisso": 0.77,
+        "assunto_do_titulo": 0.63,
+        "direcao_oposta": 0.06
+      },
+      "classificacao": "erro do Jev: denominacao de elevado lida como logistica de transporte; 0,51 em sustenta, iria para revisao"
+    }
+  ]
+}

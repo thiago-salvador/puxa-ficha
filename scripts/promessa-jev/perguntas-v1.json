@@ -1,0 +1,48 @@
+{
+  "relacao": {
+    "type": "choice",
+    "instructions": "O tema em `compromisso` vem do programa de governo do candidato. A evidência em `evidencia` é um registro público do mesmo candidato (voto, proposição de lei, posição declarada, fala ou contradição registrada). Aplicando `politicas`, qual é a relação da evidência com o compromisso do tema? O assunto do tema é o que `compromisso.titulo` nomeia; `compromisso.descricao` e `compromisso.trechos_do_programa` mostram a medida concreta.",
+    "criteria": {
+      "sustenta": {
+        "cobre": "A evidência mostra o candidato agindo ou se posicionando na mesma direção da medida concreta do compromisso: votou a favor de medida que a realiza, é autor de proposição que a implementa, declarou a mesma posição, fala defendendo a mesma medida.",
+        "nao_cobre": "Mesma direção geral com medida diferente; fala genérica sobre a área.",
+        "exemplos": ["Compromisso: ampliar creches. Evidência: é autor de projeto que cria fundo para construção de creches."]
+      },
+      "contradiz": {
+        "cobre": "A evidência vai na direção oposta à medida concreta do compromisso: votou contra medida que a realiza, defendeu o contrário, propôs o inverso, ou registro de contradição sobre o próprio compromisso.",
+        "nao_cobre": "Evidência sobre outro assunto; divergência que depende de interpretação externa.",
+        "exemplos": ["Compromisso: manter o programa de transferência de renda. Evidência: votou pela extinção desse programa."]
+      },
+      "relacionada": {
+        "cobre": "Trata do assunto nomeado no título do tema, sem direção clara sobre a medida concreta: fala sobre o assunto, proposição sobre aspecto vizinho do mesmo objeto, voto na mesma direção geral com medida diferente.",
+        "nao_cobre": "Evidência que só divide uma área ampla (saúde, economia, educação) com um tema de título estreito.",
+        "exemplos": ["Tema: Segurança pública (videomonitoramento). Evidência: fala sobre conduta da polícia."]
+      },
+      "nao_relacionada": {
+        "cobre": "Assunto diferente do tema, ou só a mesma área ampla quando o título do tema é estreito; o leitor precisaria de explicação externa para ver a ligação.",
+        "nao_cobre": "Evidência que trata do assunto nomeado no título do tema.",
+        "exemplos": ["Tema: Saúde digital (prontuário eletrônico). Evidência: fala dizendo que saúde é prioridade.", "Tema: Orçamento participativo. Evidência: projeto sobre imposto de importação."]
+      }
+    }
+  },
+  "mesmo_compromisso": {
+    "type": "noul",
+    "instructions": "A evidência em `evidencia` trata do assunto nomeado em `compromisso.titulo`, ou da medida descrita em `compromisso.descricao`?",
+    "criteria": {
+      "true": "A evidência fala, vota ou propõe algo sobre esse mesmo assunto ou medida.",
+      "false": "A evidência é sobre outro assunto, ou só divide uma área ampla com um tema de título estreito."
+    }
+  },
+  "assunto_do_titulo": {
+    "type": "noul",
+    "instructions": "Especulativa, só para log: um leitor comum, vendo o título em `compromisso.titulo` e o conteúdo de `evidencia.conteudo`, perceberia sem explicação externa que os dois são sobre o mesmo assunto?"
+  },
+  "direcao_oposta": {
+    "type": "noul",
+    "instructions": "Especulativa, só para log: supondo que a evidência em `evidencia` trate do mesmo assunto de `compromisso`, ela vai na direção oposta à medida descrita em `compromisso.descricao`?",
+    "criteria": {
+      "true": "Votou contra, defendeu o contrário ou propôs o inverso da medida.",
+      "false": "Vai na mesma direção, não indica direção, ou é sobre outro assunto."
+    }
+  }
+}

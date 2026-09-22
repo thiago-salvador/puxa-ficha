@@ -207,6 +207,27 @@ export const fixedCopy = {
   currentLowercase: FIXED_COPY_LOOKUP.atual,
 } as const
 
+/** Rótulos fixos do vínculo compromisso x evidência na seção do programa. Nenhum texto gerado. */
+export const compromissoEvidenciaCopy = {
+  titulo: "Evidências relacionadas",
+  contagem: (n: number) => `Evidências relacionadas (${n})`,
+  aviso: "Registros públicos do candidato sobre este tema. Não indicam se o compromisso foi cumprido.",
+  vazio: "Ainda não há evidência revisada ligada a este tema.",
+  semCongresso: "Sem mandato no Congresso: não há voto nominal para comparar.",
+  fonte: "Ver fonte",
+  relacao: {
+    relacionada: "Trata do tema",
+    sustenta: "Na mesma direção",
+  },
+  tipo: {
+    votacao_chave: "Voto nominal",
+    projeto_lei: "Projeto de lei",
+    posicao_declarada: "Posição declarada",
+    fala: "Fala",
+    contradicao: "Contradição registrada",
+  },
+} as const
+
 const tokenLabels = {
   attentionCategory: {
     contradicao: "Contradição",
