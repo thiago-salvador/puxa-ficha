@@ -74,13 +74,15 @@ describe("experiência v2 de pesquisas presidenciais", () => {
     assert.doesNotMatch(html, /aria-live/)
   })
 
-  it("configura rotação de cinco segundos e respeita movimento reduzido", () => {
+  it("fixa a pesquisa mais recente no hero e omite o cenário complementar", () => {
     const source = readFileSync("src/components/PesquisasPresidenciaisSection.tsx", "utf8")
+    const pesquisa = firstLula()
+    const html = renderToStaticMarkup(<PesquisasPresidenciaisHero pesquisas={pesquisasLula} />)
 
-    assert.match(source, /matchMedia\("\(prefers-reduced-motion: reduce\)"\)/)
-    assert.match(source, /window\.setInterval/)
-    assert.match(source, /}, 5000\)/)
+    assert.match(source, /const pesquisa = primeiroTurno\[0\]/)
     assert.match(source, /pesquisa\.cenario\.turn === 1/)
+    assert.doesNotMatch(source, /useEffect|setInterval|matchMedia/)
+    assert.ok(html.includes(pesquisa.cenario.labelRaw) === false)
     assert.doesNotMatch(source, /aria-live=/)
   })
 
