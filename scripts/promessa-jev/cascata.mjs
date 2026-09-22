@@ -72,6 +72,24 @@ export function decidirCascata(par, camadas, regra) {
   return null
 }
 
+const esperar = (ms) => new Promise((resolver) => setTimeout(resolver, ms))
+
+/** Falha transitória sob concorrência não pode virar "sem resposta": até 3 tentativas com espera. */
+async function perguntarJev(statePath, perguntasPath, chave) {
+  let ultimoErro = ""
+  for (const espera of [0, 2_000, 8_000]) {
+    if (espera) await esperar(espera)
+    try {
+      const { stdout } = await executar("python3", [JEV, "ask", "--state", statePath, "--questions", perguntasPath], { maxBuffer: 1 << 20 })
+      const saida = JSON.parse(stdout)
+      return { chave, model: saida.model, answers: saida.answers }
+    } catch (erro) {
+      ultimoErro = String(erro.stderr || erro.message || erro).slice(-200)
+    }
+  }
+  return { chave, erro: ultimoErro }
+}
+
 async function rodarCamadas(pares, registrosV1, regra, cache) {
   const perguntasPath = join(AQUI, regra.perguntas)
   const perguntasSha = sha(readFileSync(perguntasPath, "utf8"))
@@ -83,19 +101,13 @@ async function rodarCamadas(pares, registrosV1, regra, cache) {
       const par = pendentesJev[proximo++]
       const estado = JSON.stringify(estadoDoPar(par))
       const chave = `${par.parId}|${sha(estado)}|${perguntasSha}`
-      if (cache.jevCascata[par.parId]?.chave === chave) continue
+      if (cache.jevCascata[par.parId]?.chave === chave && cache.jevCascata[par.parId].answers) continue
       const statePath = join(temp, `${par.parId}.json`)
       writeFileSync(statePath, estado)
-      try {
-        const { stdout } = await executar("python3", [JEV, "ask", "--state", statePath, "--questions", perguntasPath], { maxBuffer: 1 << 20 })
-        const saida = JSON.parse(stdout)
-        cache.jevCascata[par.parId] = { chave, model: saida.model, answers: saida.answers }
-      } catch (erro) {
-        cache.jevCascata[par.parId] = { chave, erro: String(erro.message ?? erro).slice(0, 200) }
-      }
+      cache.jevCascata[par.parId] = await perguntarJev(statePath, perguntasPath, chave)
     }
   }
-  await Promise.all(Array.from({ length: 6 }, trabalhador))
+  await Promise.all(Array.from({ length: 4 }, trabalhador))
 
   // Verificador só onde o Jev já deixou passar: economiza chamada e mantém a regra "os dois concordam".
   const paraVerificar = pendentesJev.filter((par) => decidirCascata(par, { jevV1: registrosV1[par.parId], jevCascata: cache.jevCascata[par.parId], verificador: { mesmo_assunto: "sim", ato_simbolico: false } }, regra) === null
@@ -128,7 +140,7 @@ function argumento(nome) {
   return indice >= 0 ? process.argv[indice + 1] : undefined
 }
 
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
+async function main() {
   const versao = argumento("versao")
   const regra = REGRAS_CASCATA[versao]
   if (!regra) throw new Error("uso: --versao c1 (--conjunto ajuste|holdout | --universo)")
@@ -179,4 +191,11 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     writeFileSync(join(PASTA_QA, `resultado-cascata-${versao}-${conjunto}.json`), `${JSON.stringify(resultado, null, 2)}\n`)
     console.log(JSON.stringify(resultado, null, 1))
   }
+}
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main().catch((erro) => {
+    console.error(erro instanceof Error ? erro.message : erro)
+    process.exitCode = 1
+  })
 }
