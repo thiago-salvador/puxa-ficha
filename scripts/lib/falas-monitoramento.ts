@@ -89,12 +89,30 @@ export function naJanelaInicial(day: string, now: Date): boolean {
 export function dataEvento(context: string, published: string, allowRecentMonth = false): string | null {
   // Publication time is NOT evidence of when someone spoke. Only explicit dates
   // tied to the event in the attribution paragraph are accepted automatically.
+  const publishedDay = published.slice(0, 10)
+  const isExplicitDate = (date: string) => {
+    const parsed = new Date(`${date}T00:00:00Z`)
+    return Number.isFinite(parsed.getTime()) && parsed.toISOString().slice(0, 10) === date && date <= publishedDay
+  }
+  let invalidExplicitDate = false
   const matches = [...context.matchAll(/\b(\d{2})[/.](\d{2})[/.](20\d{2})\b|\b(20\d{2}-\d{2}-\d{2})\b/g)]
-    .map((m) => m[4] ?? `${m[3]}-${m[2]}-${m[1]}`)
+    .map((m) => {
+      const date = m[4] ?? `${m[3]}-${m[2]}-${m[1]}`
+      if (!isExplicitDate(date)) invalidExplicitDate = true
+      return date
+    })
   const weekdays = ["domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"]
   const months = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
+  const abbreviatedMonths = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"]
+  for (const match of context.matchAll(/\b(\d{1,2})\.(jan|fev|mar|abr|mai|jun|jul|ago|set|out|nov|dez)\.(20\d{2})\b/gi)) {
+    const date = `${match[3]}-${String(abbreviatedMonths.indexOf(match[2].toLowerCase()) + 1).padStart(2, "0")}-${match[1].padStart(2, "0")}`
+    if (isExplicitDate(date)) matches.push(date)
+    else invalidExplicitDate = true
+  }
   for (const match of context.matchAll(/\b(\d{1,2})(?:º)? de (janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro) de (20\d{2})\b/gi)) {
-    matches.push(`${match[3]}-${String(months.indexOf(match[2].toLowerCase()) + 1).padStart(2, "0")}-${match[1].padStart(2, "0")}`)
+    const date = `${match[3]}-${String(months.indexOf(match[2].toLowerCase()) + 1).padStart(2, "0")}-${match[1].padStart(2, "0")}`
+    if (isExplicitDate(date)) matches.push(date)
+    else invalidExplicitDate = true
   }
   // A day and month without a year must resolve to a recent past date.
   // Explicit years are handled above and never replaced by the publication year.
@@ -120,9 +138,10 @@ export function dataEvento(context: string, published: string, allowRecentMonth 
   }
   for (const match of context.matchAll(/\((\d{1,2})(?:º)?[/.](\d{1,2})\)/g)) {
     const date = `${published.slice(0, 4)}-${match[2].padStart(2, "0")}-${match[1].padStart(2, "0")}`
-    if (date <= published.slice(0, 10)) matches.push(date)
+    if (isExplicitDate(date)) matches.push(date)
+    else invalidExplicitDate = true
   }
-  return new Set(matches).size === 1 ? matches[0] : null
+  return !invalidExplicitDate && new Set(matches).size === 1 ? matches[0] : null
 }
 
 function noticiasEstruturadas(value: unknown): Record<string, unknown>[] {
