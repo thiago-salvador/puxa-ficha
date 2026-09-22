@@ -26,6 +26,15 @@ export interface AttributedCheckReview {
   reviewedAt: string
 }
 
+export type AttributedCheckRelationship = "same_occurrence" | "equivalent_occurrence"
+
+export interface AttributedCheckRelation {
+  checkId: string
+  relationship: AttributedCheckRelationship
+  rationale: string
+  review: AttributedCheckReview
+}
+
 export interface AttributedCheckEvent {
   date: string
   context: string
@@ -73,6 +82,7 @@ export interface AttributedFactCheck {
   sources: AttributedCheckSource[]
   corrections: AttributedCheckCorrection[]
   review: AttributedCheckReview
+  relatedChecks?: AttributedCheckRelation[]
 }
 
 export interface CandidateCheckIdentity {
@@ -122,6 +132,32 @@ function validHttpsUrl(value: unknown, allowHttp = false): value is string {
 
 function hasIndependentVerdict(value: Record<string, unknown>): boolean {
   return [...INDEPENDENT_VERDICT_KEYS].some((key) => key in value)
+}
+
+function parseReview(value: unknown): AttributedCheckReview | null {
+  if (!isRecord(value) || value.approved !== true || !nonEmptyString(value.reviewer) ||
+    (value.reviewerKind !== "human" && value.reviewerKind !== "model_principal") || !validDate(value.reviewedAt)) return null
+  return {
+    approved: true,
+    reviewer: value.reviewer,
+    reviewerKind: value.reviewerKind,
+    reviewedAt: value.reviewedAt,
+  }
+}
+
+function parseRelatedChecks(value: unknown): AttributedCheckRelation[] | null {
+  if (value === undefined) return []
+  if (!Array.isArray(value)) return null
+  const relations: AttributedCheckRelation[] = []
+  for (const raw of value) {
+    if (!isRecord(raw) || !nonEmptyString(raw.checkId) ||
+      (raw.relationship !== "same_occurrence" && raw.relationship !== "equivalent_occurrence") ||
+      !nonEmptyString(raw.rationale)) return null
+    const review = parseReview(raw.review)
+    if (!review) return null
+    relations.push({ checkId: raw.checkId, relationship: raw.relationship, rationale: raw.rationale, review })
+  }
+  return relations
 }
 
 function parseSource(value: unknown): AttributedCheckSource | null {
@@ -202,17 +238,15 @@ export function parseAttributedFactCheck(value: unknown): AttributedFactCheck | 
     !nonEmptyString(value.sourceEvidence.contextExcerpt) ||
     !Array.isArray(value.sources) ||
     !Array.isArray(value.corrections) ||
-    !isRecord(value.review) ||
-    value.review.approved !== true ||
-    !nonEmptyString(value.review.reviewer) ||
-    (value.review.reviewerKind !== "human" && value.review.reviewerKind !== "model_principal") ||
-    !validDate(value.review.reviewedAt)
+    !isRecord(value.review)
   ) return null
 
+  const review = parseReview(value.review)
   const event = parseEvent(value.event)
   const sources = value.sources.map(parseSource)
   const corrections = value.corrections.map(parseCorrection)
-  if (!event || sources.some((source) => source === null) || corrections.some((correction) => correction === null)) return null
+  const relatedChecks = parseRelatedChecks(value.relatedChecks)
+  if (!review || !event || !relatedChecks || sources.some((source) => source === null) || corrections.some((correction) => correction === null)) return null
   if (!sources.some((source) => source?.origin === "cited_by_publisher")) return null
   const parsedCorrections = corrections as AttributedCheckCorrection[]
   if (parsedCorrections.length > 0 && parsedCorrections[parsedCorrections.length - 1].finalLabel !== value.originalLabel) return null
@@ -246,19 +280,15 @@ export function parseAttributedFactCheck(value: unknown): AttributedFactCheck | 
     },
     sources: sources as AttributedCheckSource[],
     corrections: corrections as AttributedCheckCorrection[],
-    review: {
-      approved: true,
-      reviewer: value.review.reviewer,
-      reviewerKind: value.review.reviewerKind,
-      reviewedAt: value.review.reviewedAt,
-    },
+    review,
+    ...(value.relatedChecks === undefined ? {} : { relatedChecks }),
   }
 }
 
 export interface AttributedCheckDatasetIssue {
   index: number
   id: string | null
-  reason: "invalid_record" | "duplicate_id" | "identity_mismatch"
+  reason: "invalid_record" | "duplicate_id" | "identity_mismatch" | "relation_mismatch"
 }
 
 export interface CandidateRosterIdentity {
@@ -279,6 +309,7 @@ export function validateAttributedFactCheckDataset(
   if (!Array.isArray(records)) return [{ index: -1, id: null, reason: "invalid_record" }]
   const issues: AttributedCheckDatasetIssue[] = []
   const seenIds = new Set<string>()
+  const parsedRecords: Array<{ index: number; record: AttributedFactCheck }> = []
   for (const [index, raw] of records.entries()) {
     const id = isRecord(raw) && nonEmptyString(raw.id) ? raw.id : null
     const parsed = parseAttributedFactCheck(raw)
@@ -288,6 +319,7 @@ export function validateAttributedFactCheckDataset(
     }
     if (seenIds.has(parsed.id)) issues.push({ index, id: parsed.id, reason: "duplicate_id" })
     seenIds.add(parsed.id)
+    parsedRecords.push({ index, record: parsed })
     if (roster.length > 0 && !roster.some((candidate) =>
       candidate.candidate_id === parsed.candidate_id &&
       candidate.candidate_slug === parsed.candidate_slug &&
@@ -295,6 +327,19 @@ export function validateAttributedFactCheckDataset(
       candidate.uf === parsed.uf,
     )) {
       issues.push({ index, id: parsed.id, reason: "identity_mismatch" })
+    }
+  }
+  const parsedById = new Map(parsedRecords.map(({ record }) => [record.id, record]))
+  for (const { index, record } of parsedRecords) {
+    const relatedIds = new Set<string>()
+    for (const relation of record.relatedChecks ?? []) {
+      const target = parsedById.get(relation.checkId)
+      if (relatedIds.has(relation.checkId) || relation.checkId === record.id || !target ||
+        target.candidate_id !== record.candidate_id || target.candidate_slug !== record.candidate_slug ||
+        target.office !== record.office || target.uf !== record.uf) {
+        issues.push({ index, id: record.id, reason: "relation_mismatch" })
+      }
+      relatedIds.add(relation.checkId)
     }
   }
   return issues

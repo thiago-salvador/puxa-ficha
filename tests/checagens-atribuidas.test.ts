@@ -80,6 +80,10 @@ test("dataset público real contém somente registros aprovados e sem IDs duplic
   assert.deepEqual(validateAttributedFactCheckDataset(publicDataset), [])
   assert.equal(publicDataset[0].review.approved, true)
   assert.equal(publicDataset[0].review.reviewerKind, "model_principal")
+  for (const check of publicDataset) {
+    assert.doesNotMatch(check.sourceEvidence.contextExcerpt, /<\/?(?:p|div|article|blockquote|script|style)\b/i, `${check.id}: HTML do original pertence ao recibo privado`)
+    assert.ok(check.sourceEvidence.contextExcerpt.length <= 1200, `${check.id}: o contexto público deve ser uma descrição breve, não a matéria integral`)
+  }
   assert.deepEqual(
     validateAttributedFactCheckDataset(publicDataset, liveRoster.map((candidate): CandidateRosterIdentity => {
       assert.ok(candidate.cargo_disputado === "Presidente" || candidate.cargo_disputado === "Governador")
@@ -192,4 +196,68 @@ test("não aceita campo de veredito independente nem correção sem registro vá
 
   const ownAssessment = { ...baseCheck(), assessmentOrigin: "own" }
   assert.equal(parseAttributedFactCheck(ownAssessment), null)
+})
+
+test("aceita vínculo aprovado entre duas avaliações do mesmo candidato", () => {
+  const first = baseCheck()
+  const second = { ...baseCheck(), id: "lupa-lula-002" }
+  first.relatedChecks = [{
+    checkId: second.id,
+    relationship: "same_occurrence",
+    rationale: "As duas avaliações tratam da mesma fala e foram revisadas juntas.",
+    review: first.review,
+  }]
+  assert.deepEqual(validateAttributedFactCheckDataset([first, second]), [])
+  assert.equal(parseAttributedFactCheck(first)?.relatedChecks?.[0].checkId, second.id)
+})
+
+test("falha fechado para vínculo próprio, duplicado ou inexistente", () => {
+  const first = baseCheck()
+  const second = { ...baseCheck(), id: "lupa-lula-002" }
+  const relation = (checkId: string) => ({
+    checkId,
+    relationship: "equivalent_occurrence" as const,
+    rationale: "A revisão editorial registrou a equivalência.",
+    review: first.review,
+  })
+  for (const relatedChecks of [
+    [relation(first.id)],
+    [relation(second.id), relation(second.id)],
+    [relation("lupa-lula-999")],
+  ]) {
+    assert.equal(validateAttributedFactCheckDataset([{ ...first, relatedChecks }, second])[0].reason, "relation_mismatch")
+  }
+})
+
+test("falha fechado quando o vínculo troca candidato, identidade ou aprovação", () => {
+  const first = baseCheck()
+  const other = {
+    ...baseCheck(),
+    id: "lupa-bolsonaro-001",
+    candidate_id: "cand-other",
+    candidate_slug: "outro-candidato",
+    candidate_name: "Outro candidato",
+  }
+  first.relatedChecks = [{
+    checkId: other.id,
+    relationship: "equivalent_occurrence",
+    rationale: "A frase parece semelhante, mas a identidade não coincide.",
+    review: first.review,
+  }]
+  assert.equal(validateAttributedFactCheckDataset([first, other])[0].reason, "relation_mismatch")
+
+  const laterReview = { ...first, review: { ...first.review, reviewer: "Outro revisor", reviewedAt: "2026-09-05T12:00:00Z" } }
+  first.relatedChecks = [{
+    checkId: laterReview.id,
+    relationship: "same_occurrence",
+    rationale: "Revisão posterior ainda é aprovada.",
+    review: laterReview.review,
+  }]
+  assert.ok(parseAttributedFactCheck(first)?.relatedChecks)
+
+  const invalidApproval = structuredClone(first) as unknown as {
+    relatedChecks: Array<{ review: { approved: boolean } }>
+  }
+  invalidApproval.relatedChecks[0].review.approved = false
+  assert.equal(parseAttributedFactCheck(invalidApproval), null)
 })
