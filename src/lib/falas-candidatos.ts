@@ -29,6 +29,7 @@ export interface FalaCandidato {
   article_url: string
   article_title: string
   article_published_at: string
+  article_modified_at?: string
   observed_at: string
   source_sha256: string
   attribution: "explicit_name_same_paragraph" | "source_context_review"
@@ -59,6 +60,7 @@ export interface FalaCandidato {
       | { date_basis: "explicit_recording_date"; recorded_on: string }
     )
     date_range_proof?: { anchor_url: string; anchor_excerpt: string; relationship_excerpt: string; anchor_published_at: string; publication_timestamp: string }
+    article_metadata?: { url: string; datePublished: string; dateModified: string }
     supporting_sources?: Array<{ url: string; sha256: string; excerpts: string[]; source_format?: "web_text" }>
   }
 }

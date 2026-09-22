@@ -2,7 +2,7 @@ import assert from "node:assert/strict"
 import { test } from "node:test"
 import { verificarRevisao, type AchadoRevisado } from "../scripts/lib/falas-revisao"
 import { medirCobertura, paginaCobertura } from "../scripts/lib/falas-cobertura"
-import { dataEvento, validarCatalogo, type CandidatoFalas } from "../scripts/lib/falas-monitoramento"
+import { dataEvento, SOURCES, validarCatalogo, type CandidatoFalas } from "../scripts/lib/falas-monitoramento"
 import { importarRevisao } from "../scripts/falas-importar-revisao"
 import type { CatalogoFalas } from "../src/lib/falas-candidatos"
 import type { EvidenciaWeb } from "../scripts/lib/falas-evidencia-web"
@@ -28,6 +28,19 @@ const candidate: CandidatoFalas = { id: "id-a", slug: "ana-silva", nome_urna: "A
 const finding: AchadoRevisado = { quote_text: "Vamos ampliar o atendimento de saúde.", context: "Programa de saúde", event_context: "Entrevista CNN Brasil", occurred_on: "2026-09-08", article_published_at: "2026-09-08T18:00:00-03:00", publisher: "CNN Brasil", article_url: "https://www.cnnbrasil.com.br/politica/entrevista-ana/", article_title: "Ana apresenta proposta", evidence: { identity_excerpt: "A candidata Ana Silva", date_excerpt: "em entrevista nesta terça-feira (8)" } }
 const html = `<html><head><link rel="canonical" href="${finding.article_url}"></head><body><article><p>A candidata Ana Silva falou em entrevista nesta terça-feira (8).</p><p>“${finding.quote_text}”, disse a candidata.</p></article></body></html>`
 const empty: CatalogoFalas = { schema_version: "falas-v1", updated_at: null, quotes: [] }
+
+function articleWithModifiedMetadata(overrides: { metadataUrl?: string; published?: string; modified?: string } = {}) {
+  const source = SOURCES.find((entry) => entry.id === "folha")!
+  const articleUrl = source.origin + "/poder/2026/09/fixture-ana-sabatina"
+  const title = "Ana Silva em sabatina Folha"
+  const quoteText = "Vamos ampliar o atendimento nas escolas"
+  const published = overrides.published ?? "2026-09-02T23:00:00Z"
+  const modified = overrides.modified ?? "2026-09-03T13:58:00Z"
+  const metadata = { "@context": "https://schema.org", "@type": ["CreativeWork", "ReportageNewsArticle"], url: overrides.metadataUrl ?? articleUrl, datePublished: published, dateModified: modified }
+  const html = `<html><head><link rel="canonical" href="${articleUrl}"><meta property="og:title" content="${title}"><meta name="author" content="Redação"><script type="application/ld+json">${JSON.stringify(metadata)}</script></head><body><article><p>A candidata Ana Silva afirmou nesta quinta-feira (3) durante sabatina: “${quoteText}”, disse Ana Silva.</p></article></body></html>`
+  const finding: AchadoRevisado = { quote_text: quoteText, context: `A candidata Ana Silva afirmou nesta quinta-feira (3) durante sabatina: “${quoteText}”, disse Ana Silva.`, event_context: "Sabatina Folha", occurred_on: "2026-09-03", article_published_at: published, article_modified_at: modified, publisher: source.publisher, article_url: articleUrl, article_title: title, evidence: { identity_excerpt: "A candidata Ana Silva", date_excerpt: "afirmou nesta quinta-feira (3)" } }
+  return { html, finding, articleUrl }
+}
 
 test("recibos RSS contam execução por candidato sem promover links opacos ou consultas planejadas", async () => {
   const receipt = { attempt_status: "executed", plan_query: { candidate_id: candidate.id, candidate_slug: candidate.slug, query: "Ana entrevista" }, rss_request_url: "https://news.google.com/rss/search?q=Ana", rss_results: [{ rss_link: "https://news.google.com/rss/articles/opaque" }], error: null }
@@ -266,6 +279,27 @@ test("fonte complementar precisa conter os trechos que comprovam nome e data", (
   const dateHtml = html.replace(finding.evidence.date_excerpt!, broadcast)
   assert.equal(verificarRevisao({ candidate, finding: dateFinding, html: dateHtml, now }).quote, null)
   assert.ok(verificarRevisao({ candidate, finding: dateFinding, html: dateHtml, now, supporting: new Map([[url, "<p>Ana Silva concedeu a entrevista nesta terça-feira (8).</p>"]]) }).quote)
+})
+
+test("aceita data da fala posterior à publicação quando o mesmo JSON-LD prova modificação", () => {
+  const fixture = articleWithModifiedMetadata()
+  const result = verificarRevisao({ candidate, finding: fixture.finding, html: fixture.html, now })
+  assert.ok(result.quote, result.reason)
+  assert.equal(result.quote.article_published_at, "2026-09-02T23:00:00Z")
+  assert.equal(result.quote.article_modified_at, "2026-09-03T13:58:00Z")
+  assert.deepEqual(result.quote.review_evidence?.article_metadata, { url: fixture.articleUrl, datePublished: "2026-09-02T23:00:00Z", dateModified: "2026-09-03T13:58:00Z" })
+  assert.doesNotThrow(() => validarCatalogo({ ...empty, quotes: [result.quote!] }))
+})
+
+test("data modificada exige mesmo artigo, datas coerentes e data do evento explícita", () => {
+  const fixture = articleWithModifiedMetadata()
+  assert.equal(verificarRevisao({ candidate, finding: { ...fixture.finding, article_modified_at: "2026-09-04T13:58:00Z" }, html: fixture.html, now }).reason, "invalid_article_modified_date")
+  assert.equal(verificarRevisao({ candidate, finding: { ...fixture.finding, occurred_between: { from: "2026-09-02", to: "2026-09-03" }, occurred_on: null }, html: fixture.html, now, mode: "initial_backfill" }).reason, "invalid_publication_date")
+  assert.equal(verificarRevisao({ candidate, finding: { ...fixture.finding, evidence: { ...fixture.finding.evidence, date_excerpt: "durante sabatina" } }, html: fixture.html, now }).reason, "event_date_not_resolved")
+  const unrelated = articleWithModifiedMetadata({ metadataUrl: fixture.articleUrl + "-outro" })
+  assert.equal(verificarRevisao({ candidate, finding: fixture.finding, html: unrelated.html, now }).reason, "invalid_article_modified_date")
+  const accepted = verificarRevisao({ candidate, finding: fixture.finding, html: fixture.html, now }).quote!
+  assert.throws(() => validarCatalogo({ ...empty, quotes: [{ ...accepted, review_evidence: { ...accepted.review_evidence!, article_metadata: undefined } }] }), /Data modificada sem prova JSON-LD/)
 })
 
 test("alias comprovado não identifica outro nome que apenas contém suas letras", () => {

@@ -1,7 +1,43 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-09-22T01:25:30.749Z",
+  "updated_at": "2026-09-22T01:38:58.171Z",
   "quotes": [
+    {
+      "id": "df3b314a4c73c4f168b08c74c348c04d43481ac749c59cd01af84d05990c24f5",
+      "candidate_id": "022d27e8-2832-4156-9bc7-7eac817ac901",
+      "candidate_slug": "raquel-lyra",
+      "candidate_name": "Raquel Lyra",
+      "office": "Governador",
+      "uf": "PE",
+      "quote_text": "Esse assunto não compete a mim. Preciso ter muito foco naquilo que é minha competência, minha responsabilidade",
+      "context": "\"Esse assunto não compete a mim. Preciso ter muito foco naquilo que é minha competência, minha responsabilidade\", disse.",
+      "event_context": "Sabatina Folha/UOL de 3 de setembro de 2026. Questionada sobre a crise no STF (Supremo Tribunal Federal) relacionada ao caso do Banco Master, ela afirmou ver com preocupação o que tem acontecido no país, mas não disse se defende o impeachment do ministro Alexandre de Moraes.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-03",
+      "publisher": "Folha de S.Paulo",
+      "article_url": "https://www1.folha.uol.com.br/poder/2026/09/raquel-lyra-psd-participa-de-sabatina-folhauol-nesta-quinta-feira.shtml",
+      "article_title": "Raquel Lyra diz em sabatina Folha/UOL receber apoio de petistas, mas não declara voto a presidente",
+      "article_published_at": "2026-09-02T23:00:00Z",
+      "article_modified_at": "2026-09-03T13:58:00Z",
+      "observed_at": "2026-09-22T01:38:58.171Z",
+      "source_sha256": "94a395747c1d9616321a7a7447488b9587059f1e06418cc4f263db1ee96f84f8",
+      "collection_scope": {
+        "mode": "initial_backfill",
+        "from": "2026-08-16"
+      },
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "A governadora de Pernambuco, Raquel Lyra (PSD), candidata à reeleição",
+        "date_excerpt": "afirmou nesta quinta-feira (3)",
+        "fetched_url": "https://www1.folha.uol.com.br/poder/2026/09/raquel-lyra-psd-participa-de-sabatina-folhauol-nesta-quinta-feira.shtml",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://www1.folha.uol.com.br/poder/2026/09/raquel-lyra-psd-participa-de-sabatina-folhauol-nesta-quinta-feira.shtml",
+          "datePublished": "2026-09-02T23:00:00Z",
+          "dateModified": "2026-09-03T13:58:00Z"
+        }
+      }
+    },
     {
       "id": "6929ccc9d85c6d33fb480d51ce7cee98af8f566c5eacc090a6ed3597d1769b05",
       "candidate_id": "4f302760-52e7-461e-9a65-43d1aaa657df",
