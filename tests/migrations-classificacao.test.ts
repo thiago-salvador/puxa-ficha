@@ -438,7 +438,9 @@ describe("classificador puro (#136)", () => {
     // Liquido 491 + 1 = 492 migrations.
     // Doador recorrente (22/09/2026): migration de schema puro, sem DML.
     // Liquido 492 + 1 = 493 migrations.
-    assert.equal(manifesto.aplicadas_esperadas, 388)
+    // Issue #433, dimas-cassimiro (22/09/2026): mais uma migration de dado com
+    // os mesmos guards (clone da 20260921200000). Liquido 493 + 1 = 494 migrations.
+    assert.equal(manifesto.aplicadas_esperadas, 389)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
