@@ -8,6 +8,8 @@ A unidade é a afirmação individual. Publicar somente após conferir a página
 
 Resumo não herda o rótulo de outra frase na mesma matéria. Desmentido de uma fala fabricada não se torna fala do candidato. Checagem sobre outra pessoa não pode ser exibida como checagem deste candidato. Histórico fora de 2026 exige data e recorte visíveis. Afirmações ausentes do catálogo podem ser importadas com identidade e evidência próprias.
 
+Quando o veículo nomeia uma fonte sem oferecer seu link, preservar o nome e indicar a ausência de link individual. Não inventar URL nem marcar essa fonte como consultada por nós. Fontes declaradas como consultadas pelo Puxa Ficha exigem URL verificável.
+
 Jev começa em sombra. A versão de perguntas está em `scripts/data/checagens-jev-questions-v1.json`. Seus cinco sinais separados tratam atribuição, fidelidade, suficiência de contexto, necessidade de aprofundamento e equivalência. Todos os sinais pertinentes ao mesmo estado são perguntados juntos. Estado completo, resposta, modelo, uso e latência devem ser preservados. Nenhuma resposta autoriza publicação. Revisão do modelo principal sobre a evidência original é obrigatória.
 
 Pré-declaração para ensaio adversarial da importação: zero aceitação de autor trocado, negação invertida, rótulo de outra frase ou correção omitida. Dados de ajuste e holdout devem ser disjuntos por evento e família. Casos artificiais são identificados como testes e nunca entram no catálogo real. Falha mantém o juiz em sombra; nenhum ajuste de limiar é justificado pelo mesmo holdout.

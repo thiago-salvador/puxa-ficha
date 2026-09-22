@@ -19,21 +19,25 @@ function SourceList({ label, sources }: { label: string; sources: AttributedChec
   if (sources.length === 0) return null
   return (
     <div>
-      <h4 className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+      <h3 className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
         {label}
-      </h4>
+      </h3>
       <ul className="mt-1 space-y-1">
         {sources.map((source) => (
-          <li key={source.url}>
-            <a
+          <li key={source.url ?? source.title}>
+            {source.url ? <a
               href={source.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-[length:var(--text-caption)] font-semibold text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="inline-flex max-w-full items-center gap-1 text-[length:var(--text-caption)] font-semibold text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
-              {source.title ?? source.url}
-              <ExternalLink className="size-3" aria-hidden="true" />
-            </a>
+              <span className="min-w-0 break-all">{source.title ?? source.url}</span>
+              <ExternalLink className="size-3 shrink-0" aria-hidden="true" />
+            </a> : (
+              <span className="text-[length:var(--text-caption)] text-foreground">
+                {source.title} <span className="text-muted-foreground">(sem link individual na checagem)</span>
+              </span>
+            )}
           </li>
         ))}
       </ul>
@@ -47,6 +51,7 @@ function AttributedFactCheckCard({ check }: { check: AttributedFactCheck }) {
 
   return (
     <article
+      id={`checagem-${check.id}`}
       data-pf-attributed-check-id={check.id}
       className="rounded-[16px] border border-border/60 bg-card px-5 py-5 sm:px-6"
     >
@@ -58,7 +63,7 @@ function AttributedFactCheckCard({ check }: { check: AttributedFactCheck }) {
       </div>
 
       <p className="mt-3 text-[length:var(--text-body-sm)] font-semibold leading-relaxed text-foreground">
-        Segundo {check.publisher}, esta afirmação é <span data-pf-attributed-original-label>{check.originalLabel}</span>.
+        {check.publisher} classificou: <span data-pf-attributed-original-label>{check.originalLabel}</span>.
       </p>
       {check.claimFormat === "literal" ? (
         <blockquote className="mt-3 border-l-2 border-border pl-4 font-heading text-[20px] leading-[1.2] tracking-[-0.01em] text-foreground">
@@ -134,6 +139,27 @@ function AttributedFactCheckCard({ check }: { check: AttributedFactCheck }) {
               </a>
             </span>
           ))}
+        </div>
+      )}
+
+      {check.relatedChecks && check.relatedChecks.length > 0 && (
+        <div className="mt-4 border-t border-border/60 pt-4">
+          <h3 className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+            Avaliações relacionadas
+          </h3>
+          <ul className="mt-2 space-y-2 text-[length:var(--text-caption)]">
+            {check.relatedChecks.map((relation) => (
+              <li key={`${relation.relationship}-${relation.checkId}`}>
+                <a
+                  href={`#checagem-${relation.checkId}`}
+                  className="font-bold text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  {relation.relationship === "same_occurrence" ? "Outra avaliação desta fala" : "A mesma afirmação em outra ocasião"}
+                </a>
+                <span className="ml-2 text-muted-foreground">{relation.rationale}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </article>
