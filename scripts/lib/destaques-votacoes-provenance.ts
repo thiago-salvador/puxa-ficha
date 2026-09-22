@@ -2,7 +2,7 @@ import { createHash } from "node:crypto"
 import { gunzipSync } from "node:zlib"
 
 export const DESTAQUES_SCHEMA_VERSION = 1
-export const DESTAQUES_EXPECTED_VOTACOES = 23
+export const DESTAQUES_EXPECTED_VOTACOES = 27
 /**
  * Universo atual de pares candidato x votação em `votos_candidato`, restrito
  * a candidatos com entrada em `data/candidatos.json` (ver
@@ -26,8 +26,18 @@ export const DESTAQUES_EXPECTED_VOTACOES = 23
  * sem_achado, 0 divergente) — mesmo padrão de confirmação do universo
  * golden — por isso entraram no universo vigente sem migration de banco (não
  * houve escrita nem remoção de dado, só reconhecimento de voto já oficial).
+ *
+ * 23 -> 27 votações / 181 -> 235 pares (issue #425, 2026-09-22): a
+ * reconciliação das perguntas nominais do quiz (scripts/reconcile-quiz-votes.ts)
+ * recadastrou Reforma Trabalhista, Teto de Gastos (EC 95), Reforma da
+ * Previdência e Autonomia do Banco Central (Câmara), agora com
+ * `votacao_id_api` exato e data da votação de mérito. São as matérias que a
+ * migration 20260810090100 despublicou prevendo a volta "pela porta certa".
+ * Os 35 candidatos curados ganharam 54 pares. A dupla leitura dos 235 pares
+ * recoletou 100% "encontrado" (0 sem_achado, 0 divergente), com hashes de
+ * fonte, votação e par iguais nas duas leituras.
  */
-export const DESTAQUES_EXPECTED_PAIRS = 181
+export const DESTAQUES_EXPECTED_PAIRS = 235
 export const DESTAQUES_EXPECTED_CANDIDATES = 35
 
 /**
@@ -47,7 +57,7 @@ export const DESTAQUES_EXPECTED_CANDIDATES = 35
  *
  * Esta lista é o corte real: os 35 slugs cuja soma de pares em
  * `votos_candidato` para as 23 votações-chave bate exatamente com
- * DESTAQUES_EXPECTED_PAIRS (181), confirmado por leitura read-only em
+ * DESTAQUES_EXPECTED_PAIRS (181 na época, 235 desde a issue #425), confirmado por leitura read-only em
  * produção. Crescer o universo de destaques exige dupla leitura + evidência
  * nova (como o reingest de 29 pares descrito acima), não crescimento do seed
  * de identidade.
