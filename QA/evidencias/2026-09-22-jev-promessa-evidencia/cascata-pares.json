@@ -1,0 +1,3735 @@
+{
+  "schema_version": "promessa-cascata-pares-v1",
+  "semente": "promessa-cascata-2026-09-22",
+  "snapshot_sha256": "c9d3f9b6eff46081b20cb4bd9d3f37c018e85db2838dbf5db181975765dc02ef",
+  "universo": 665,
+  "itens": [
+    {
+      "conjunto": "ajuste",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "846f73500263c553",
+        "slug": "samara-martins",
+        "candidatoId": "b3988a51-2776-4172-a73b-e326365b0c04",
+        "programaChave": "2026:PRESIDENTE:BR:280002538811",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "nacionalizacao-bancos-divida",
+          "titulo": "Nacionalização do sistema financeiro e dívida pública",
+          "descricao": "O programa propõe a nacionalização dos bancos sob controle estatal e a suspensão imediata do pagamento da dívida pública, acompanhada de auditoria cidadã.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 18,
+              "trecho": "Nacionalização dos Bancos e Estatização do Sistema Financeiro: Fusão do sistema bancário sob controle do Estado e gestão dos trabalhadores."
+            },
+            {
+              "documentoId": null,
+              "pagina": 15,
+              "trecho": "capital financeiro privado. São propostas da UP: • Suspensão Imediata do Pagamento e Auditoria Cidadã da Dívida Pública: Interrupção da sangria dos cofres públicos para a remuneração"
+            }
+          ],
+          "frases": [
+            {
+              "id": "5a245b20c0931016",
+              "texto": "Na área econômica, propõe a nacionalização dos bancos e a suspensão imediata do pagamento da dívida pública, acompanhada de auditoria cidadã."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "9af1d8bb-fd39-45e0-a230-cedb6b65dde8",
+          "candidatoId": "b3988a51-2776-4172-a73b-e326365b0c04",
+          "data": null,
+          "conteudo": {
+            "tema": "privatizacao_eletrobras",
+            "posicao": "contra",
+            "descricao": "O mesmo programa TSE pede reestatização de privatizadas, nacionalização dos bancos e suspensão do pagamento da dívida com auditoria. O programa se posiciona contra privatizações em geral, não só a da Eletrobras.",
+            "fonte": "Programa TSE Samara Martins (PDF Fonte 83)"
+          },
+          "url": "https://fonte83.com.br/wp-content/uploads/2026/08/pje-PROGRAMA-SAMARA-MARTINS-AGOSTO-2026.pdf",
+          "eixos": [
+            "estatais_privatizacao",
+            "economia_fiscal"
+          ]
+        },
+        "eixosComuns": [
+          "economia_fiscal",
+          "estatais_privatizacao"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "614628200de033d9",
+        "slug": "sandro-alex",
+        "candidatoId": "00b971a6-5f12-4fa3-961f-5806abfd6fb0",
+        "programaChave": "2026:GOVERNADOR:PR:160002549553",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "saude",
+          "titulo": "Saúde",
+          "descricao": "O plano aponta o crescimento do número de médicos cadastrados no Paraná entre 2018 e 2025.",
+          "evidencias": [
+            {
+              "documentoId": "PR:160002549553:01",
+              "pagina": 25,
+              "trecho": "O número de médicos cadastrados no Paraná passou de 22.649 em 2018 para 35.190 em 2025, um acréscimo de mais de 12,5 mil profissionais."
+            }
+          ],
+          "frases": [
+            {
+              "id": "d64f8b600f0bc832",
+              "texto": "Na saúde, o número de médicos cadastrados no Paraná passou de 22.649 em 2018 para 35.190 em 2025."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "cb1bcb87-75ea-4b0f-93b2-82c9f2f662ec",
+          "candidatoId": "00b971a6-5f12-4fa3-961f-5806abfd6fb0",
+          "data": "2014",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "7697",
+            "ano": 2014,
+            "ementa": "Torna obrigatória a vacinação contra a Gripe, nas populações que especifica.",
+            "situacao": null
+          },
+          "url": null,
+          "eixos": [
+            "saude"
+          ]
+        },
+        "eixosComuns": [
+          "saude"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "a049eb7e6a458d5d",
+        "slug": "dimas-cassimiro",
+        "candidatoId": "f91a1504-0b29-45a7-b7b6-580a5114cfb8",
+        "programaChave": "2026:GOVERNADOR:MA:100002552700",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "jornada-de-trabalho",
+          "titulo": "Jornada de trabalho",
+          "descricao": "Redução prevista para a jornada diária.",
+          "evidencias": [
+            {
+              "documentoId": "MA:100002552700:01",
+              "pagina": 2,
+              "trecho": "• Redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais): trabalhar menos para que todos trabalhem"
+            }
+          ],
+          "frases": [
+            {
+              "id": "674249e9a73935bc",
+              "texto": "No emprego, o programa propõe a redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais)."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "aece8548-0561-4317-aa58-e36ee7e49940",
+          "candidatoId": "f91a1504-0b29-45a7-b7b6-580a5114cfb8",
+          "data": null,
+          "conteudo": {
+            "tema": "reforma_trabalhista",
+            "posicao": "contra",
+            "descricao": "Defende o retorno e a ampliação da legislação de proteção ao trabalho. Consta na proposta de governo que o candidato registrou no TSE (arquivo PCOprogramadegoverno2026.pdf, nº 100017115622), que é o programa do PCO: “retorno e ampliação de toda a legislação de proteção dos trabalhadores”.",
+            "fonte": "Proposta de governo registrada no TSE por dimas-cassimiro (arquivo 100017115622), programa do PCO para 2026"
+          },
+          "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MA/20322002026/candidato/100002552700",
+          "eixos": [
+            "trabalho_renda"
+          ]
+        },
+        "eixosComuns": [
+          "trabalho_renda"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "6cf1514cab248dd8",
+        "slug": "clariana-barao",
+        "candidatoId": "d1486424-4a7f-4ff1-af06-1665ebe99a31",
+        "programaChave": "2026:PRESIDENTE:BR:280002552484",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "saude",
+          "titulo": "Saúde",
+          "descricao": "O capítulo de saúde propõe fortalecer a atenção primária e ampliar prevenção e diagnóstico precoce, condicionando a incorporação de terapias inovadoras ao SUS à avaliação regulatória e técnico-científica prévia.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 11,
+              "trecho": "5.1 Atenção primária resolutiva"
+            },
+            {
+              "documentoId": null,
+              "pagina": 11,
+              "trecho": "5.2 Prevenção e diagnóstico precoce"
+            },
+            {
+              "documentoId": null,
+              "pagina": 15,
+              "trecho": "o documento não presume a incorporação de uma substância específica ao SUS. Peptídeos e demais terapias inovadoras devem seguir avaliação regulatória e técnico-científica antes de qualquer oferta pública."
+            }
+          ],
+          "frases": [
+            {
+              "id": "15a4a148b56c9bef",
+              "texto": "Na saúde, o plano propõe fortalecer a atenção primária por meio de equipes completas e acesso territorial ampliado."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "fala",
+          "ref": "7aea09b1ff18cd2cfee4a469c6011532c1438009d9b8c0d5816b1cbac5ac45a8",
+          "candidatoId": "d1486424-4a7f-4ff1-af06-1665ebe99a31",
+          "data": "2026-08-25",
+          "conteudo": {
+            "citacao": "Nós temos de capacitar toda uma comunidade para fazer o atendimento adequado a esses idosos",
+            "contexto": "“A maior parte dos idosos não é atendida em hospitais; o primeiro cuidado vem de quem cuida, que geralmente é a filha ou a neta. Hoje em dia, temos um número muito alto de crianças que são investidas da obrigação de cuidar, por exemplo, dos avós. Nós temos de capacitar toda uma comunidade para fazer o atendimento adequado a esses idosos, para que possam envelhecer de maneira digna”, destacou.",
+            "evento": "Sabatina do Correio em parceria com entidades nacionais.. durante a sabatina do Correio, nesta terça-feira (25/8)",
+            "tipo_evento": "sabatina",
+            "veiculo": "Correio Braziliense"
+          },
+          "url": "https://www.correiobraziliense.com.br/politica/2026/08/7487088-clariana-barao-promete-politicas-para-idosos-e-defende-combate-a-corrupcao.html",
+          "eixos": [
+            "saude",
+            "assistencia_direitos"
+          ]
+        },
+        "eixosComuns": [
+          "saude"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "0fc12cd23bdc5e51",
+        "slug": "patrus-ananias",
+        "candidatoId": "123bd693-5482-4f0c-8ff3-40617acadba9",
+        "programaChave": "2026:GOVERNADOR:MG:130002550464",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "saude-publica",
+          "titulo": "Saúde pública",
+          "descricao": "Ampliação do acesso aos serviços de saúde.",
+          "evidencias": [
+            {
+              "documentoId": "MG:130002550464:01",
+              "pagina": 14,
+              "trecho": "O Governo de Patrus Ananias atuará para ampliar o acesso aos serviços de saúde, reduzir filas e tempos de espera em todos os níveis de atenção, fortalecer a atenção primária, qualificar a assistência especializada e de alta complexidade e articular os serviços em redes de atenção, assegurando atendimento integral à população."
+            }
+          ],
+          "frases": [
+            {
+              "id": "6028d296e4b8c7df",
+              "texto": "O Governo de Patrus Ananias atuará para ampliar o acesso aos serviços de saúde, reduzir filas e tempos de espera em todos os níveis de atenção, fortalecer a atenção primária, qualificar a assistência especializada e de alta complexidade e articular os serviços em redes de atenção, assegurando atendimento integral à população."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "8f43035d-3bb1-4445-8a92-fd51c0843f97",
+          "candidatoId": "123bd693-5482-4f0c-8ff3-40617acadba9",
+          "data": "2020",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "1943",
+            "ano": 2020,
+            "ementa": "Reconhece o falecimento, em virtude da COVID-19 contraída por servidor público civil, militar, bem como pelos demais profissionais da área da saúde vinculados ao Regime Geral de Previdência, no exercício de suas atribuições, como acidente em serviço para fins de pagamento de pensão especial vitalícia.",
+            "situacao": null
+          },
+          "url": null,
+          "eixos": [
+            "saude",
+            "economia_fiscal",
+            "gestao_transparencia"
+          ]
+        },
+        "eixosComuns": [
+          "saude"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "5cc0e84e21d9271d",
+        "slug": "dr-helton-monteiro",
+        "candidatoId": "86ffacf8-e5d4-4f9b-a808-0f0cb551d832",
+        "programaChave": "2026:GOVERNADOR:SE:260002547415",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "renda-minima",
+          "titulo": "Renda mínima",
+          "descricao": "O programa prevê renda mínima estadual para famílias com crianças pequenas.",
+          "evidencias": [
+            {
+              "documentoId": "SE:260002547415:01",
+              "pagina": 22,
+              "trecho": "Instituir programa estadual de renda mínima que complemente o Bolsa Família para famílias com crianças pequenas"
+            }
+          ],
+          "frases": [
+            {
+              "id": "0add999a9a8a6554",
+              "texto": "O programa prevê instituir programa estadual de renda mínima que complemente o Bolsa Família para famílias com crianças pequenas."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "c8f35079-c303-497f-a216-6a6cb128de53",
+          "candidatoId": "86ffacf8-e5d4-4f9b-a808-0f0cb551d832",
+          "data": null,
+          "conteudo": {
+            "tema": "transferencia_renda",
+            "posicao": "a_favor",
+            "descricao": "Proposta de governo registrada no TSE em 2026, texto literal: \"O nosso compromisso é com o combate à fome e a redução das desigualdades, por meio dos programas de transferência de renda, assistência, previdência social e tributação progressiva.\"",
+            "fonte": "Proposta de governo registrada no TSE (arquivo codTipo 5)"
+          },
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SE.zip",
+          "eixos": [
+            "trabalho_renda",
+            "assistencia_direitos",
+            "economia_fiscal"
+          ]
+        },
+        "eixosComuns": [
+          "trabalho_renda",
+          "assistencia_direitos"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "63a87b6e47066ab0",
+        "slug": "flavio-bolsonaro",
+        "candidatoId": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+        "programaChave": "2026:PRESIDENTE:BR:280002551544",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "brasil-por-elas",
+          "titulo": "Brasil por Elas",
+          "descricao": "O programa reúne iniciativas voltadas a mulheres, incluindo a Central da Mulher, um aplicativo com assistente virtual chamado ClarIA, um sistema de pontuação denominado Ganha, Ganha e a ampliação do acesso a creches.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 17,
+              "trecho": "A Central da Mulher será um espaço físico onde a mulher resolve a vida sem perder tempo nem percorrer a cidade inteira."
+            },
+            {
+              "documentoId": null,
+              "pagina": 18,
+              "trecho": "A ClarIA estará ao lado da mulher em cada passo."
+            },
+            {
+              "documentoId": null,
+              "pagina": 19,
+              "trecho": "Com o Ganha, Ganha, atitudes como concluir cursos de capacitação, trabalhar de forma regular, poupar e pagar as contas em dia passarão a gerar pontuação positiva."
+            },
+            {
+              "documentoId": null,
+              "pagina": 21,
+              "trecho": "a família receberá um voucher-creche para acesso à rede privada credenciada até a vaga pública surgir"
+            }
+          ],
+          "frases": [
+            {
+              "id": "2b44456d9f59121c",
+              "texto": "O programa Brasil por Elas prevê Centrais da Mulher, um aplicativo com assistente virtual chamado ClarIA e um sistema de pontuação denominado Ganha, Ganha."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "8e01bb0a-825b-43e4-980b-78537751be09",
+          "candidatoId": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+          "data": "2026",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "1019",
+            "ano": 2026,
+            "ementa": "Institui a Política Nacional de Unidades de Pronto Atendimento à Mulher - UPAM, destinadas ao atendimento humanizado e especializado à saúde da mulher no âmbito do Sistema Único de Saúde - SUS, e dá outras providências.",
+            "situacao": "MATÉRIA COM A RELATORIA"
+          },
+          "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/172949",
+          "eixos": [
+            "saude",
+            "assistencia_direitos"
+          ]
+        },
+        "eixosComuns": [
+          "assistencia_direitos"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "c722c926049d2ea6",
+        "slug": "helder-salomao",
+        "candidatoId": "270a8b55-145a-400f-b371-38809653eea8",
+        "programaChave": "2026:GOVERNADOR:ES:80002551833",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "fiscalizacao-ambiental",
+          "titulo": "Fiscalização ambiental",
+          "descricao": "Integração entre órgãos ambientais e fiscalização por satélite e drones contra o desmatamento ilegal.",
+          "evidencias": [
+            {
+              "documentoId": "ES:80002551833:01",
+              "pagina": 12,
+              "trecho": "Aperfeiçoar a integração entre os órgãos ambientais para as ações de combate ao desmatamento ilegal, intensificando a fiscalização por satélite e drones."
+            }
+          ],
+          "frases": [
+            {
+              "id": "ad0d67646b7981ce",
+              "texto": "O programa prevê aperfeiçoar a integração entre órgãos ambientais para combater o desmatamento ilegal, intensificando a fiscalização por satélite e drones."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "3087ba30-a775-4b11-99fa-7b157ce29e1c",
+          "candidatoId": "270a8b55-145a-400f-b371-38809653eea8",
+          "data": "2022",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "2566",
+            "ano": 2022,
+            "ementa": "Altera a Lei nº 9.605, de 12 de fevereiro de 1998 (Lei de Crimes Ambientais), para especificar a destinação da multa simples e de outros valores pagos a título de reparação de danos em caso de desastre ambiental.",
+            "situacao": null
+          },
+          "url": null,
+          "eixos": [
+            "seguranca",
+            "meio_ambiente"
+          ]
+        },
+        "eixosComuns": [
+          "meio_ambiente"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "d02c37a3fa069b58",
+        "slug": "gal-leite",
+        "candidatoId": "aff6b39f-3513-4597-985f-54c431ac8bfc",
+        "programaChave": "2026:GOVERNADOR:PA:140002551943",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "fila-de-saude",
+          "titulo": "Fila de saúde",
+          "descricao": "Fila estadual para consultas, exames e cirurgias.",
+          "evidencias": [
+            {
+              "documentoId": "PA:140002551943:01",
+              "pagina": 26,
+              "trecho": "Implantar fila estadual única, pública e\ntransparente para consultas, exames e cirurgias"
+            }
+          ],
+          "frases": []
+        },
+        "evidencia": {
+          "tipo": "fala",
+          "ref": "771df0a72a9975324284775edf1285754b012621fd84c7ae1c4fb530919a99cc",
+          "candidatoId": "aff6b39f-3513-4597-985f-54c431ac8bfc",
+          "data": "2026-09-02",
+          "conteudo": {
+            "citacao": "A saúde não deve ser tratada como mercadoria.",
+            "contexto": "“A saúde não deve ser tratada como mercadoria.”",
+            "evento": "Sabatina da TVC Pará, com Thiago Barros.. participou nesta quarta-feira (2) da série de entrevistas realizadas pela TVC Pará",
+            "tipo_evento": "sabatina",
+            "veiculo": "Estado do Pará Online"
+          },
+          "url": "https://estadodoparaonline.com/saiba-como-foi-a-entrevista-de-gal-leite-candidata-da-up-ao-governo-do-para-para-a-tvc/",
+          "eixos": [
+            "saude"
+          ]
+        },
+        "eixosComuns": [
+          "saude"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "bd1b2c7ea23a34cf",
+        "slug": "romeu-zema",
+        "candidatoId": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+        "programaChave": "2026:PRESIDENTE:BR:280002539826",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "financas-publicas-e-estado",
+          "titulo": "Ajuste fiscal e redução do tamanho do Estado",
+          "descricao": "O programa propõe uma reforma da Previdência com reajuste automático da idade mínima de aposentadoria conforme a expectativa de vida, a privatização de todas as empresas estatais, a ampliação das parcerias público-privadas em diferentes setores e metas progressivas de redução da carga tributária vinculadas a cortes de gastos.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 14,
+              "trecho": "criando também um mecanismo de reajuste automático da idade mínima para aposentadoria com base na expectativa de vida da população"
+            },
+            {
+              "documentoId": null,
+              "pagina": 15,
+              "trecho": "Privatizar todas as empresas estatais para que o governo possa se concentrar naquilo que de fato lhe cabe"
+            },
+            {
+              "documentoId": null,
+              "pagina": 15,
+              "trecho": "Aumentar o investimento privado no país por meio da ampliação das parcerias público-privadas em todos os setores da administração pública"
+            },
+            {
+              "documentoId": null,
+              "pagina": 16,
+              "trecho": "Fixar metas progressivas de redução da carga tributária que imponham os cortes de gastos necessários para atingi-las"
+            }
+          ],
+          "frases": [
+            {
+              "id": "3b06bb157e13b97c",
+              "texto": "Nas finanças públicas, o documento propõe privatizar todas as empresas estatais."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "1316a619-b366-4a0b-8ff4-fa1d020f4d6e",
+          "candidatoId": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+          "data": null,
+          "conteudo": {
+            "tema": "previdencia",
+            "posicao": "a_favor",
+            "descricao": "O plano Implacável registrado no TSE (cobertura g1, 11/08/2026) prevê nova reforma da Previdência com idade mínima reajustada pela expectativa de vida. É declaração de programa oficial a favor de reforma previdenciária no sentido da de 2019 (idade mínima).",
+            "fonte": "g1: plano de governo Romeu Zema (11/08/2026)"
+          },
+          "url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/08/11/plano-de-governo-romeu-zema-eleicoes-2026-propostas.ghtml",
+          "eixos": [
+            "economia_fiscal"
+          ]
+        },
+        "eixosComuns": [
+          "economia_fiscal"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "e7f89a5d8da350be",
+        "slug": "luciano-zucco",
+        "candidatoId": "53af44cf-7f66-44d3-b733-1114c5143e6a",
+        "programaChave": "2026:GOVERNADOR:RS:210002547857",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "seguranca-publica",
+          "titulo": "Segurança pública",
+          "descricao": "O programa trata do enfrentamento às organizações criminosas e da integração de sistemas de videomonitoramento e leitura de placas.",
+          "evidencias": [
+            {
+              "documentoId": "RS:210002547857:01",
+              "pagina": 7,
+              "trecho": "Tratar o enfrentamento às organizações criminosas como prioridade permanente do Governo do Estado"
+            },
+            {
+              "documentoId": "RS:210002547857:01",
+              "pagina": 8,
+              "trecho": "Expandir e integrar sistemas estaduais, municipais e privados de videomonitoramento e leitura automática de placas"
+            }
+          ],
+          "frases": [
+            {
+              "id": "cf4bcc0ebfe3da5c",
+              "texto": "O enfrentamento às organizações criminosas é tratado como prioridade permanente do Governo do Estado."
+            },
+            {
+              "id": "6b4392e2397587b6",
+              "texto": "O programa prevê ampliar e integrar sistemas estaduais, municipais e privados de videomonitoramento e leitura automática de placas."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "da121f73-727e-4afe-bb04-7eaa15cc49ec",
+          "candidatoId": "53af44cf-7f66-44d3-b733-1114c5143e6a",
+          "data": "2025",
+          "conteudo": {
+            "tipo": "PEC",
+            "numero": "21",
+            "ano": 2025,
+            "ementa": "Acrescenta o inciso LXXX ao artigo 5º da Constituição Federal para tornar imprescritível os crimes sexuais quando cometidos contra menores de doze anos de idade.",
+            "situacao": null
+          },
+          "url": null,
+          "eixos": [
+            "seguranca"
+          ]
+        },
+        "eixosComuns": [
+          "seguranca"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "4b8f32b616248cd4",
+        "slug": "jairo-palheta",
+        "candidatoId": "d7ccc97a-ec7e-4a57-8e22-4e17974345d2",
+        "programaChave": "2026:GOVERNADOR:AP:30002551388",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "jornada-de-trabalho",
+          "titulo": "Jornada de trabalho",
+          "descricao": "Redução da jornada semanal de trabalho.",
+          "evidencias": [
+            {
+              "documentoId": "AP:30002551388:01",
+              "pagina": 2,
+              "trecho": "Redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais)"
+            }
+          ],
+          "frases": []
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "712d3d97-2a88-4e81-affc-87c981c866cd",
+          "candidatoId": "d7ccc97a-ec7e-4a57-8e22-4e17974345d2",
+          "data": null,
+          "conteudo": {
+            "tema": "reforma_trabalhista",
+            "posicao": "contra",
+            "descricao": "Defende o retorno e a ampliação da legislação de proteção ao trabalho. Consta na proposta de governo que o candidato registrou no TSE (arquivo PCOprogramadegoverno2026.pdf, nº 30017103910), que é o programa do PCO: “retorno e ampliação de toda a legislação de proteção dos trabalhadores”.",
+            "fonte": "Proposta de governo registrada no TSE por jairo-palheta (arquivo 30017103910), programa do PCO para 2026"
+          },
+          "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/AP/20322002026/candidato/30002551388",
+          "eixos": [
+            "trabalho_renda"
+          ]
+        },
+        "eixosComuns": [
+          "trabalho_renda"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "1160afa10babbf4c",
+        "slug": "lula",
+        "candidatoId": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+        "programaChave": "2026:PRESIDENTE:BR:280002542548",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "protecao-social",
+          "titulo": "Combate às desigualdades e proteção social",
+          "descricao": "O texto apresenta a recriação e expansão do Bolsa Família e a evolução do índice de Gini para o menor patamar histórico durante o mandato.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 19,
+              "trecho": "O índice de Gini, que mede o grau de desigualdade de renda, chegou ao menor patamar histórico."
+            },
+            {
+              "documentoId": null,
+              "pagina": 19,
+              "trecho": "Recriamos e expandimos o Bolsa Família."
+            }
+          ],
+          "frases": []
+        },
+        "evidencia": {
+          "tipo": "fala",
+          "ref": "56056d9be1087ba2e7396e523313d64eb483518ac84c2fb87b753645f940f508",
+          "candidatoId": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+          "data": "2026-09-10",
+          "conteudo": {
+            "citacao": "Enquanto eu for presidente, salário mínimo vai ter inflação e mais crescimento do PIB.",
+            "contexto": "\"Enquanto eu for presidente, salário mínimo vai ter inflação e mais crescimento do PIB. Todos os trabalhadores, e aposentados, que já trabalharam muito, têm o direito de receber\", declarou.",
+            "evento": "Entrevista SBT News / SBT Brasil. nesta quinta-feira, 10, em entrevista ao SBT News",
+            "tipo_evento": "entrevista",
+            "veiculo": "UOL"
+          },
+          "url": "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/09/10/no-meu-governo-nao-tem-essa-de-ficar-discutindo-ajuste-fiscal-faco-ajuste-na-pratica-diz-lula.htm",
+          "eixos": [
+            "economia_fiscal",
+            "trabalho_renda"
+          ]
+        },
+        "eixosComuns": [
+          "trabalho_renda"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "a140144d1a3ac7a2",
+        "slug": "omar-aziz",
+        "candidatoId": "9fe469dc-058f-487d-b888-ba113f5535ae",
+        "programaChave": "2026:GOVERNADOR:AM:40002532272",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "saude",
+          "titulo": "Saúde",
+          "descricao": "Metas de gestão hospitalar e atendimento em saúde mental.",
+          "evidencias": [
+            {
+              "documentoId": "AM:40002532272:07",
+              "pagina": 83,
+              "trecho": "Reduzir a taxa de glosa de 11,3% para menos de 5%"
+            },
+            {
+              "documentoId": "AM:40002532272:01",
+              "pagina": 3,
+              "trecho": "Criação de 15 novos Centros de Atenção Psicossocial (CAPS), distribuídos pelos polos regionais e municípios de maior porte do interior."
+            }
+          ],
+          "frases": [
+            {
+              "id": "32e435ca04621355",
+              "texto": "Na saúde, o plano prevê reduzir, até 2030, a taxa de glosa hospitalar de 11,3% para menos de 5%."
+            },
+            {
+              "id": "235e5b1f8c3d730a",
+              "texto": "Na saúde mental, o plano prevê criar 15 novos Centros de Atenção Psicossocial, distribuídos pelos polos regionais e municípios de maior porte do interior."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "81b92cad-d46c-48e2-981c-5b2f9a2a164a",
+          "candidatoId": "9fe469dc-058f-487d-b888-ba113f5535ae",
+          "data": "2021",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "4321",
+            "ano": 2021,
+            "ementa": "Altera as Leis nº 9.782, de 26 de janeiro de 1999, que define o Sistema Nacional de Vigilância Sanitária, cria a Agência Nacional de Vigilância Sanitária, e dá outras providências, e nº 13.979, de 6 de fevereiro de 2020, que dispõe sobre as medidas para enfrentamento da emergência de saúde pública de importância internacional decorrente do coronavírus responsável pelo surto de 2019, para dispor sobre a competência da Anvisa para adotar as medidas de controle sanitário em situações de emergência em saúde pública.",
+            "situacao": null
+          },
+          "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/151171",
+          "eixos": [
+            "saude"
+          ]
+        },
+        "eixosComuns": [
+          "saude"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "7fb20811ddacde00",
+        "slug": "vivian-mendes",
+        "candidatoId": "9cd65a2b-334c-421c-b527-55984a28857c",
+        "programaChave": "2026:GOVERNADOR:SP:250002544912",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "jornada-de-trabalho",
+          "titulo": "Jornada de trabalho",
+          "descricao": "O programa defende o fim da escala 6×1.",
+          "evidencias": [
+            {
+              "documentoId": "SP:250002544912:02",
+              "pagina": 23,
+              "trecho": "Defendemos o fim da escala\n6×1"
+            }
+          ],
+          "frases": [
+            {
+              "id": "d3fa128d34e5ae5f",
+              "texto": "O programa registra a defesa do fim da escala 6×1 entre suas propostas apresentadas."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "35b0b165-c9de-43f2-b1c5-2ba58bc5119e",
+          "candidatoId": "9cd65a2b-334c-421c-b527-55984a28857c",
+          "data": null,
+          "conteudo": {
+            "tema": "reforma_trabalhista",
+            "posicao": "contra",
+            "descricao": "No ciclo de debates do Sindicato dos Engenheiros de São Paulo (22/09/2022), a então candidata a senadora pela UP 'propugnou a revogação das reformas trabalhista e previdenciária, bem como do teto de gastos'. A cobertura é da fala no debate, não de nota partidária. | Contexto: Debate 'A engenharia, o Estado e o País' no SEESP, 22/09/2022, campanha ao Senado por SP. Mesma pessoa hoje candidata a governadora pela UP. | Data: 2022-09-22",
+            "fonte": "Defender os direitos das mulheres e colocar torturadores no banco dos réus, enfatiza Vivian Mendes"
+          },
+          "url": "https://seesp.org.br/site/comunicacao/noticias/item/21433-defender-os-direitos-das-mulheres-e-colocar-torturadores-no-banco-dos-reus-enfatiza-vivian-mendes",
+          "eixos": [
+            "trabalho_renda",
+            "economia_fiscal"
+          ]
+        },
+        "eixosComuns": [
+          "trabalho_renda"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "03e91da8efe91279",
+        "slug": "rui-costa-pimenta",
+        "candidatoId": "1eec3569-c202-4f16-a60a-d67125c51f95",
+        "programaChave": "2026:PRESIDENTE:BR:280002552487",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "politica-salarial-e-trabalhista",
+          "titulo": "Política salarial e trabalhista",
+          "descricao": "O programa propõe medidas de recomposição salarial, redução da jornada de trabalho e revogação das reformas trabalhista e previdenciária realizadas após 2016.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 2,
+              "trecho": "Reposição integral de 100% das perdas salariais; aumento emergencial de 50% de todos os salários"
+            },
+            {
+              "documentoId": null,
+              "pagina": 2,
+              "trecho": "Redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais)"
+            },
+            {
+              "documentoId": null,
+              "pagina": 3,
+              "trecho": "Cancelamento da \"reforma\" trabalhista, retorno e ampliação de toda a legislação de proteção dos trabalhadores"
+            }
+          ],
+          "frases": [
+            {
+              "id": "631ba5a13595b890",
+              "texto": "Entre as propostas econômicas, o texto propõe reposição integral das perdas salariais e criação de uma escala móvel de salários vinculada à inflação."
+            },
+            {
+              "id": "80ae1e8daefc85ec",
+              "texto": "O texto defende a revogação das reformas trabalhista e da previdência aprovadas após 2016, com retorno integral da CLT."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "4600d51c-dd82-491c-aca2-28b66f35cf26",
+          "candidatoId": "1eec3569-c202-4f16-a60a-d67125c51f95",
+          "data": null,
+          "conteudo": {
+            "tema": "previdencia",
+            "posicao": "contra",
+            "descricao": "Opõe-se sistematicamente a todas as reformas da previdência, tratando-as como desmonte dos direitos trabalhistas. Citação (2014-07-15): \"Previdência de FHC, apoio disfarçado às privatizações\"",
+            "fonte": "Congresso em Foco / TSE (2014-07-15)"
+          },
+          "url": "https://www.congressoemfoco.com.br/noticia/57657/programa-de-governo-de-rui-costa-pimenta",
+          "eixos": [
+            "economia_fiscal",
+            "trabalho_renda",
+            "estatais_privatizacao"
+          ]
+        },
+        "eixosComuns": [
+          "economia_fiscal",
+          "trabalho_renda"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "54ca0aa720a4e0ef",
+        "slug": "cabo-daciolo",
+        "candidatoId": "b1104f0b-80fb-4082-8356-dfb374e20028",
+        "programaChave": "2026:GOVERNADOR:AM:40002551740",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "cultura",
+          "titulo": "Cultura",
+          "descricao": "A cultura será tratada como direito, identidade e trabalho.",
+          "evidencias": [
+            {
+              "documentoId": "AM:40002551740:01",
+              "pagina": 22,
+              "trecho": "A cultura será tratada como direito, identidade e trabalho."
+            }
+          ],
+          "frases": [
+            {
+              "id": "505835ca56dcc6f9",
+              "texto": "A cultura será tratada como direito, identidade e trabalho."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "0b827af9-c85b-482c-b638-2f1d7b408ae5",
+          "candidatoId": "b1104f0b-80fb-4082-8356-dfb374e20028",
+          "data": "2016",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "4888",
+            "ano": 2016,
+            "ementa": "Altera o Decreto-Lei nº 25, de 30 de novembro de 1937, que \"organiza a proteção do patrimônio histórico e artístico nacional\", para proibir a construção de monumentos estrangeiros no Brasil.",
+            "situacao": null
+          },
+          "url": null,
+          "eixos": [
+            "cultura_esporte_turismo"
+          ]
+        },
+        "eixosComuns": [
+          "cultura_esporte_turismo"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "0e5ae4dd33c887db",
+        "slug": "dr-furlan",
+        "candidatoId": "9f2c557f-7c5a-459b-b0f5-faa6d561a4ce",
+        "programaChave": "2026:GOVERNADOR:AP:30002530014",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "saude-fila-unica-digital",
+          "titulo": "Fila Única Digital na saúde",
+          "descricao": "Propõe implantar a Fila Única Digital para o cidadão acompanhar sua posição nas filas de procedimentos regulados pelo SUS.",
+          "evidencias": [
+            {
+              "documentoId": "AP:30002530014:01",
+              "pagina": 20,
+              "trecho": "Implantar a Fila Única Digital, permitindo ao cidadão acompanhar, por meio de aplicativo e plataforma digital, sua posição na ﬁla de consultas, exames, cirurgias e demais procedimentos regulados pelo SUS."
+            }
+          ],
+          "frases": [
+            {
+              "id": "9cef985603f7a7f3",
+              "texto": "Na saúde, propõe a implantação da Fila Única Digital para acompanhamento de consultas, exames e cirurgias reguladas pelo SUS."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "54f052bd-033c-4392-998b-3838a2243b93",
+          "candidatoId": "9f2c557f-7c5a-459b-b0f5-faa6d561a4ce",
+          "data": "2019",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "0076",
+            "ano": 2019,
+            "ementa": "Dispõe sobre Transparência das filas de espera de pacientes do Sistema Único de Saúde (SUS) nos estabelecimentos da Rede Pública de Saúde do Estado do Amapá, por meio de publicação, na internet, da lista de espera dos que aguardam por consultas (discriminadas por especialidade), exames e intervenções cirúrgicas e outros procedimentos.",
+            "situacao": null
+          },
+          "url": "https://elegis.al.ap.leg.br/portal/proposicao/55895",
+          "eixos": [
+            "saude",
+            "infraestrutura",
+            "gestao_transparencia"
+          ]
+        },
+        "eixosComuns": [
+          "saude"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "232c46f5e77d7f3f",
+        "slug": "ronaldo-caiado",
+        "candidatoId": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+        "programaChave": "2026:PRESIDENTE:BR:280002551932",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "seguranca-publica",
+          "titulo": "Segurança pública e combate ao crime organizado",
+          "descricao": "O documento propõe a criação de um Ministério da Segurança Pública, de um Sistema Integrado de Proteção à Soberania Nacional e de nova legislação que enquadra organizações criminosas e milícias como terrorismo doméstico, com penas mínimas elevadas e regime disciplinar específico para lideranças presas.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 16,
+              "trecho": "Criar o Ministério da Segurança Pública e instituir o Conselho Estratégico Nacional de Segurança Pública e Combate ao Terrorismo Doméstico"
+            },
+            {
+              "documentoId": null,
+              "pagina": 17,
+              "trecho": "pena mínima de 45 anos de reclusão para associação ou recrutamento para organização terrorista doméstica; pena mínima de 35 anos de reclusão para colaboração (apoio logístico), financiamento e lavagem de dinheiro"
+            }
+          ],
+          "frases": [
+            {
+              "id": "9b4d7034292b87aa",
+              "texto": "O plano prevê a criação do Ministério da Segurança Pública e de um Sistema Integrado de Proteção à Soberania Nacional."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "a98a7316-6f21-400d-85a5-4c1859fccf79",
+          "candidatoId": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+          "data": "2007",
+          "conteudo": {
+            "tipo": "PEC",
+            "numero": "9",
+            "ano": 2007,
+            "ementa": "Acrescenta alínea ao inciso XLVI do art. 5º da Constituição Federal, determinando o cumprimento da pena em regime disciplinar diferenciado, por parte de integrantes de organizações criminosas.",
+            "situacao": null
+          },
+          "url": null,
+          "eixos": [
+            "seguranca"
+          ]
+        },
+        "eixosComuns": [
+          "seguranca"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "92a2a076b4bf1117",
+        "slug": "eduardo-paes",
+        "candidatoId": "242af65c-dae1-447c-b4b0-c26095f7384d",
+        "programaChave": "2026:GOVERNADOR:RJ:190002543380",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "gestao-fiscal",
+          "titulo": "Gestão fiscal",
+          "descricao": "Reorganização das contas públicas e das finanças estaduais.",
+          "evidencias": [
+            {
+              "documentoId": "RJ:190002543380:01",
+              "pagina": 7,
+              "trecho": "Colocar as contas públicas em ordem, reequilibrar as finanças"
+            }
+          ],
+          "frases": []
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "59a493f2-6ea1-4ddd-9d81-201cfbc0db54",
+          "candidatoId": "242af65c-dae1-447c-b4b0-c26095f7384d",
+          "data": "2004",
+          "conteudo": {
+            "tipo": "PEC",
+            "numero": "229",
+            "ano": 2004,
+            "ementa": "Modifica e dispõe sobre o controle interno e externo, o processo orçamentário e a transparência fiscal, e dá outras providências.",
+            "situacao": null
+          },
+          "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=193331",
+          "eixos": [
+            "economia_fiscal",
+            "gestao_transparencia"
+          ]
+        },
+        "eixosComuns": [
+          "economia_fiscal"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "e3b45851f9da7767",
+        "slug": "juliete-pantoja",
+        "candidatoId": "0ef8b4e2-ef3d-4f6a-b284-3f4648c1386b",
+        "programaChave": "2026:GOVERNADOR:RJ:190002547272",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "seguranca-publica",
+          "titulo": "Segurança pública",
+          "descricao": "Desmilitarização das polícias e das guardas municipais.",
+          "evidencias": [
+            {
+              "documentoId": "RJ:190002547272:01",
+              "pagina": 6,
+              "trecho": "Desmilitarização das polícias e da guardas municipais"
+            }
+          ],
+          "frases": [
+            {
+              "id": "fc9f7341a4b0dc10",
+              "texto": "Na segurança pública, prevê a desmilitarização das polícias e das guardas municipais como alteração institucional do modelo de segurança estadual."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "fala",
+          "ref": "55ee31fc29c1f3d4ed0da3db3926c47c7745c1fa61c5d330043769ea656eadc3",
+          "candidatoId": "0ef8b4e2-ef3d-4f6a-b284-3f4648c1386b",
+          "data": "2026-09-10",
+          "conteudo": {
+            "citacao": "Nós defendemos a desmilitarização das polícias e uma polícia comunitária.",
+            "contexto": "\"Eu não me sinto segura no Rio de Janeiro, nem desde o ano passado, nem há cinco ou dez anos, e os únicos que propõem uma reformulação somos nós. Nós defendemos a desmilitarização das polícias e uma polícia comunitária. Defendemos a criação de conselhos comunitários e a humanização do processo de segurança dos guardas e da polícia, e não como é feito hoje. Ao longo dos últimos anos, o problema só aumentou, porque aumentou o número de policiais submetidos a condições ruins de trabalho e a operações que já demonstraram não ser a solução\", disse.",
+            "evento": "Sabatina O DIA e Fecomércio RJ, com Firjan e ACRJ.. defendeu, nesta quinta-feira (10)",
+            "tipo_evento": "sabatina",
+            "veiculo": "O Dia"
+          },
+          "url": "https://odia.ig.com.br/rio-de-janeiro/2026/09/7300655-juliete-pantoja-defende-desmilitarizacao-da-policia-e-reestatizacao-da-cedae.html",
+          "eixos": [
+            "seguranca",
+            "trabalho_renda"
+          ]
+        },
+        "eixosComuns": [
+          "seguranca"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "9688e9d302c65e29",
+        "slug": "edmilson-costa",
+        "candidatoId": "c7785d1d-b34a-4a0b-b9f2-127584b52d0c",
+        "programaChave": "2026:PRESIDENTE:BR:280002551975",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "direitos-trabalhistas-agrarios",
+          "titulo": "Direitos trabalhistas e reforma agrária",
+          "descricao": "O programa propõe reduzir a jornada de trabalho para 30 horas semanais sem redução salarial, revogar as reformas trabalhista e previdenciária e realizar reforma agrária popular com desapropriação sem indenização de latifúndios improdutivos.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 5,
+              "trecho": "redução da jornada de trabalho para 30 horas sem redução de salário e o fim da escala 6x1"
+            },
+            {
+              "documentoId": null,
+              "pagina": 5,
+              "trecho": "Revogaremos as contrarreformas trabalhista, previdenciária"
+            },
+            {
+              "documentoId": null,
+              "pagina": 6,
+              "trecho": "No campo, realizaremos a reforma agrária popular, e todos os latifúndios improdutivos,"
+            }
+          ],
+          "frases": [
+            {
+              "id": "243e4a71141a6c59",
+              "texto": "O programa propõe a redução da jornada de trabalho para 30 horas semanais sem redução salarial e o fim da escala 6x1."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "a73f6ac7-1f4c-4e8e-ab95-689b2462f821",
+          "candidatoId": "c7785d1d-b34a-4a0b-b9f2-127584b52d0c",
+          "data": null,
+          "conteudo": {
+            "tema": "reforma_trabalhista",
+            "posicao": "contra",
+            "descricao": "Em entrevista, cobrou do governo revogar a reforma trabalhista e rever a reforma da Previdencia, promessas que segundo ele nao foram cumpridas.",
+            "fonte": "PCB, entrevista a Opera Mundi republicada no portal do partido (17/03/2026)"
+          },
+          "url": "https://pcb.org.br/portal2/33754",
+          "eixos": [
+            "trabalho_renda",
+            "economia_fiscal"
+          ]
+        },
+        "eixosComuns": [
+          "economia_fiscal",
+          "trabalho_renda"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "08eee405f15dcb4e",
+        "slug": "wilder-morais",
+        "candidatoId": "af18411e-e979-4a30-9a1c-c64927b50442",
+        "programaChave": "2026:GOVERNADOR:GO:90002551791",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "aprendizagem-estudantil",
+          "titulo": "Aprendizagem estudantil",
+          "descricao": "O programa educacional prevê acompanhamento da aprendizagem.",
+          "evidencias": [
+            {
+              "documentoId": "GO:90002551791:01",
+              "pagina": 26,
+              "trecho": "Cada estudante terá acompanhamento da aprendizagem, apoio quando surgir dificuldade e uma ponte clara para o ensino técnico, a universidade, o trabalho ou o próprio negócio."
+            }
+          ],
+          "frases": [
+            {
+              "id": "861521cce6de40c6",
+              "texto": "Cada estudante terá acompanhamento da aprendizagem, apoio quando surgir dificuldade e uma ponte clara para o ensino técnico, a universidade, o trabalho ou o próprio negócio."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "7b3dc0c2-931e-44f5-a7e4-7ddf9f9e0b8b",
+          "candidatoId": "af18411e-e979-4a30-9a1c-c64927b50442",
+          "data": "2017",
+          "conteudo": {
+            "tipo": "PLS",
+            "numero": "336",
+            "ano": 2017,
+            "ementa": "Altera a Lei nº 9.394, de 20 de dezembro de 1996, que estabelece as diretrizes e bases da educação nacional, para dispor sobre a promoção por série e extinguir a progressão continuada na educação básica.",
+            "situacao": null
+          },
+          "url": null,
+          "eixos": [
+            "educacao"
+          ]
+        },
+        "eixosComuns": [
+          "educacao"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "921b3676a5d86254",
+        "slug": "clebio-genuino",
+        "candidatoId": "12357734-561a-48c9-8c91-78fdbeb5b6f7",
+        "programaChave": "2026:GOVERNADOR:RR:230002553857",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "jornada-de-trabalho",
+          "titulo": "Jornada de trabalho",
+          "descricao": "O programa propõe jornada de no máximo 7 horas por dia e 35 horas semanais.",
+          "evidencias": [
+            {
+              "documentoId": "RR:230002553857:01",
+              "pagina": 2,
+              "trecho": "Redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais)"
+            }
+          ],
+          "frases": [
+            {
+              "id": "baa951906277c0fd",
+              "texto": "Quanto à jornada de trabalho, o programa propõe redução para no máximo 7 horas por dia, durante 5 dias por semana, totalizando 35 horas semanais."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "f0c33c04-320d-4bda-be99-92ee8400b16d",
+          "candidatoId": "12357734-561a-48c9-8c91-78fdbeb5b6f7",
+          "data": null,
+          "conteudo": {
+            "tema": "reforma_trabalhista",
+            "posicao": "contra",
+            "descricao": "Defende o retorno e a ampliação da legislação de proteção ao trabalho. Consta na proposta de governo que o candidato registrou no TSE (arquivo PCOprogramadegoverno2026.pdf, nº 230017124400), que é o programa do PCO: “retorno e ampliação de toda a legislação de proteção dos trabalhadores”.",
+            "fonte": "Proposta de governo registrada no TSE por clebio-genuino (arquivo 230017124400), programa do PCO para 2026"
+          },
+          "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RR/20322002026/candidato/230002553857",
+          "eixos": [
+            "trabalho_renda"
+          ]
+        },
+        "eixosComuns": [
+          "trabalho_renda"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "33e5c85440736a29",
+        "slug": "samara-martins",
+        "candidatoId": "b3988a51-2776-4172-a73b-e326365b0c04",
+        "programaChave": "2026:PRESIDENTE:BR:280002538811",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "trabalho-salario-minimo",
+          "titulo": "Emprego, renda e jornada de trabalho",
+          "descricao": "O programa defende o aumento de 100% do salário mínimo, o fim da escala 6x1 e a redução da jornada de trabalho para 30 horas semanais sem redução salarial.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 9,
+              "trecho": "Elevação Imediata dos salários e Aumento de 100% do Salário Mínimo."
+            },
+            {
+              "documentoId": null,
+              "pagina": 10,
+              "trecho": "Fim da Escala 6x1 e Redução da Jornada para 30 Horas Semanais: Implementação do regime de 30 horas sem redução salarial (escala 4x3 ou turnos de 6 horas diárias)"
+            }
+          ],
+          "frases": [
+            {
+              "id": "221e00a90ff1ba6e",
+              "texto": "Para o trabalho, defende aumento de 100% no salário mínimo e redução da jornada para 30 horas semanais sem redução salarial."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "07bfa8e0-aefa-41a1-a32c-dd0d090dc391",
+          "candidatoId": "b3988a51-2776-4172-a73b-e326365b0c04",
+          "data": null,
+          "conteudo": {
+            "tema": "previdencia",
+            "posicao": "contra",
+            "descricao": "O programa registrado no TSE (PDF, agosto/2026) pede revogação das reformas trabalhista e da previdência, redução da jornada e fim da escala 6x1. A declaração de programa oficial é de revogar a reforma previdenciária.",
+            "fonte": "Programa TSE Samara Martins (PDF Fonte 83)"
+          },
+          "url": "https://fonte83.com.br/wp-content/uploads/2026/08/pje-PROGRAMA-SAMARA-MARTINS-AGOSTO-2026.pdf",
+          "eixos": [
+            "economia_fiscal",
+            "trabalho_renda"
+          ]
+        },
+        "eixosComuns": [
+          "trabalho_renda"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "045e254387866936",
+        "slug": "cicero-lucena",
+        "candidatoId": "76a6620b-1fd4-46df-806f-5101bd660f7f",
+        "programaChave": "2026:GOVERNADOR:PB:150002544133",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "saude",
+          "titulo": "Saúde",
+          "descricao": "O tema aborda a regionalização do atendimento especializado.",
+          "evidencias": [
+            {
+              "documentoId": "PB:150002544133:01",
+              "pagina": 26,
+              "trecho": "Implantar uma rede estadual de policlínicas inspirada em experiências exitosas de outros estados brasileiros, fortalecendo a assistência ambulatorial especializada."
+            }
+          ],
+          "frases": [
+            {
+              "id": "bbc53e15708d183e",
+              "texto": "Implantar uma rede estadual de policlínicas inspirada em experiências exitosas de outros estados brasileiros, fortalecendo a assistência ambulatorial especializada."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "7b241522-c1a3-4690-bed3-035064fe295b",
+          "candidatoId": "76a6620b-1fd4-46df-806f-5101bd660f7f",
+          "data": "2012",
+          "conteudo": {
+            "tipo": "PLS",
+            "numero": "162",
+            "ano": 2012,
+            "ementa": "Altera a Lei Complementar nº 141, de 13 de janeiro de 2012, que regulamenta o § 3º do art. 198 da Constituição Federal, para determinar o percentual mínimo da receita corrente líquida que a União deverá aplicar anualmente em ações e serviços públicos de saúde.",
+            "situacao": null
+          },
+          "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/105611",
+          "eixos": [
+            "saude"
+          ]
+        },
+        "eixosComuns": [
+          "saude"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "584f382ffda17892",
+        "slug": "indira-xavier",
+        "candidatoId": "b423fdbb-b7b8-48c8-9236-efac480e7017",
+        "programaChave": "2026:GOVERNADOR:MG:130002547874",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "jornada-de-trabalho",
+          "titulo": "Jornada de trabalho",
+          "descricao": "Redução da jornada diária de trabalho.",
+          "evidencias": [
+            {
+              "documentoId": "MG:130002547874:01",
+              "pagina": 6,
+              "trecho": "reduçã o da Jornada de Trabalho de 6\nhoras diá rias para todos os trabalhadores e trabalhadoras;"
+            }
+          ],
+          "frases": [
+            {
+              "id": "8e52c4e295c1eedf",
+              "texto": "O programa prevê reduçã o da Jornada de Trabalho de 6 horas diá rias para todos os trabalhadores e trabalhadoras."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "b834e3da-7772-4245-bc08-f28158b1e879",
+          "candidatoId": "b423fdbb-b7b8-48c8-9236-efac480e7017",
+          "data": null,
+          "conteudo": {
+            "tema": "reforma_trabalhista",
+            "posicao": "contra",
+            "descricao": "Proposta de governo registrada no TSE em 2026, texto literal: \"Para isso devemos trabalhar pela revogação das Leis da Reforma Trabalhista e da Terceirização;\"",
+            "fonte": "Proposta de governo registrada no TSE (arquivo codTipo 5)"
+          },
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
+          "eixos": [
+            "trabalho_renda"
+          ]
+        },
+        "eixosComuns": [
+          "trabalho_renda"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "9e58eb129d93a808",
+        "slug": "flavio-bolsonaro",
+        "candidatoId": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+        "programaChave": "2026:PRESIDENTE:BR:280002551544",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "seguranca-publica",
+          "titulo": "Segurança pública e combate ao crime organizado",
+          "descricao": "O plano propõe classificar facções criminosas como organizações narcoterroristas, reduzir a maioridade penal de 18 para 16 anos e ampliar o número de vagas no sistema prisional.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 13,
+              "trecho": "PCC, CV, milícias e todas as outras facções serão declaradas como organizações narcoterroristas."
+            },
+            {
+              "documentoId": null,
+              "pagina": 13,
+              "trecho": "O novo governo do Brasil vai apoiar e sancionar a redução da maioridade penal de 18 para 16 anos."
+            },
+            {
+              "documentoId": null,
+              "pagina": 14,
+              "trecho": "vamos criar meio milhão de novas vagas no sistema prisional em 4 anos e zerar o déficit carcerário."
+            }
+          ],
+          "frases": [
+            {
+              "id": "85f1b24bbf4a7af5",
+              "texto": "Na área de segurança pública, o plano propõe classificar facções como PCC e CV como organizações narcoterroristas e reduzir a maioridade penal de 18 para 16 anos."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "29cf7c8c-a0a4-445c-a64b-0a88a750cc95",
+          "candidatoId": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+          "data": "2019",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "1715",
+            "ano": 2019,
+            "ementa": "Revoga o § 2º do art. 342 do Código Penal para suprimir a possibilidade de extinção de punibilidade pela retratação no crime de falso testemunho ou falsa perícia.",
+            "situacao": "AGUARDANDO DESIGNAÇÃO DO RELATOR"
+          },
+          "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/135938",
+          "eixos": [
+            "seguranca"
+          ]
+        },
+        "eixosComuns": [
+          "seguranca"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "9bdc96a926f36eaa",
+        "slug": "acm-neto",
+        "candidatoId": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
+        "programaChave": "2026:GOVERNADOR:BA:50002533190",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "educacao-estadual",
+          "titulo": "Educação estadual",
+          "descricao": "O Provão Bahia será um vestibular seriado da rede pública estadual.",
+          "evidencias": [
+            {
+              "documentoId": "BA:50002533190:01",
+              "pagina": 52,
+              "trecho": "O Novo Governo criará o Provão Bahia, vestibular seriado da rede pública estadual."
+            }
+          ],
+          "frases": [
+            {
+              "id": "90c43454d80a72ac",
+              "texto": "O Novo Governo criará o Provão Bahia um vestibular seriado da rede pública estadual."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "43cdb2c8-16a8-47a5-b15a-ff43f922ee26",
+          "candidatoId": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
+          "data": "2003",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "2736",
+            "ano": 2003,
+            "ementa": "Institui benefício fiscal para incentivo ao ingresso no ensino superior.",
+            "situacao": null
+          },
+          "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=189077",
+          "eixos": [
+            "educacao",
+            "economia_fiscal"
+          ]
+        },
+        "eixosComuns": [
+          "educacao"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "57f91bd243a9763e",
+        "slug": "well-macedo",
+        "candidatoId": "fc3bec40-5a82-4794-aacf-86fc618751b4",
+        "programaChave": "2026:GOVERNADOR:PA:140002554108",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "violencia-com-morte",
+          "titulo": "Violência com morte",
+          "descricao": "O Pará ocupou o 7º lugar nacional em violência com morte em 2023.",
+          "evidencias": [
+            {
+              "documentoId": "PA:140002554108:01",
+              "pagina": 4,
+              "trecho": "violência com morte no estado continua alta com o estado ocupando o 7º lugar nacional em 2023"
+            }
+          ],
+          "frases": [
+            {
+              "id": "1f7e20dfed25971e",
+              "texto": "Em 2023, o Pará ocupou o 7º lugar nacional em violência com morte, conforme a posição indicada no documento."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "fala",
+          "ref": "58a1c039efb99e7dfb469e50666ac43c6a4fbfe06198d84a5ad9c471f20c2f82",
+          "candidatoId": "fc3bec40-5a82-4794-aacf-86fc618751b4",
+          "data": "2026-09-07",
+          "conteudo": {
+            "citacao": "Abrigo para as mulheres vítimas de violência, mais delegacias de mulheres, mas também uma política de conscientização contra o machismo",
+            "contexto": "“Abrigo para as mulheres vítimas de violência, mais delegacias de mulheres, mas também uma política de conscientização contra o machismo”",
+            "evento": "Sabatina da TVC Pará.. participou nesta segunda-feira (7) da sabatina promovida pela TVC Pará.",
+            "tipo_evento": "sabatina",
+            "veiculo": "Estado do Pará Online"
+          },
+          "url": "https://estadodoparaonline.com/veja-como-foi-a-entrevista-de-well-macedo-candidata-do-pstu-ao-governo-do-para-na-tvc/",
+          "eixos": [
+            "seguranca",
+            "assistencia_direitos"
+          ]
+        },
+        "eixosComuns": [
+          "seguranca"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "5b1afeb7125b35cf",
+        "slug": "romeu-zema",
+        "candidatoId": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+        "programaChave": "2026:PRESIDENTE:BR:280002539826",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "desenvolvimento-social",
+          "titulo": "Programas sociais com porta de saída pelo trabalho",
+          "descricao": "O programa propõe condicionar a permanência de adultos saudáveis no Bolsa Família à busca de emprego, estudo ou qualificação profissional, com possibilidade de suspensão do benefício em caso de recusa de trabalho, e prevê um prêmio de R$5 mil às famílias que superarem o limite de renda e deixarem o programa.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 63,
+              "trecho": "Permitir que adultos saudáveis e aptos ao trabalho permaneçam no Bolsa Família apenas enquanto estiverem buscando emprego, estudando ou se qualificando profissionalmente, com possibilidade de suspensão do benefício para quem, sem justificativa, recusar ofertas formais de trabalho intermediadas pelo poder público"
+            },
+            {
+              "documentoId": null,
+              "pagina": 63,
+              "trecho": "Conceder um prêmio de R$5 mil às famílias que deixarem o Bolsa Família após superar o limite de renda"
+            }
+          ],
+          "frases": [
+            {
+              "id": "64e46add59ce1189",
+              "texto": "Na área de desenvolvimento social, o documento propõe condicionar a permanência no programa Bolsa Família à busca de emprego ou qualificação profissional, prevendo a suspensão do benefício em caso de recusa de trabalho."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "35722dde-3391-4bf1-bc0d-acb96a5667a1",
+          "candidatoId": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+          "data": null,
+          "conteudo": {
+            "tema": "transferencia_renda",
+            "posicao": "ambiguo",
+            "descricao": "Em entrevista publicada em 3 de maio de 2026, disse que manterá programas sociais como o Bolsa Família para quem precisa, e ao mesmo tempo defendeu endurecer regras contra fraude e cortar o benefício de quem recusa emprego formal.",
+            "fonte": "Correio Braziliense, entrevista ao Canal Livre (03/05/2026)"
+          },
+          "url": "https://www.correiobraziliense.com.br/politica/2026/05/7411360-criando-uma-geracao-de-imprestaveis-diz-zema-sobre-auxilios.html",
+          "eixos": [
+            "trabalho_renda",
+            "assistencia_direitos"
+          ]
+        },
+        "eixosComuns": [
+          "trabalho_renda"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "8f3d9b129ccfb26a",
+        "slug": "sergio-moro-gov-pr",
+        "candidatoId": "6025cfb5-d1a7-4ad0-baa7-c131b381e8fa",
+        "programaChave": "2026:GOVERNADOR:PR:160002540833",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "seguranca-publica",
+          "titulo": "Segurança pública",
+          "descricao": "Medidas de videomonitoramento e isolamento de integrantes de alta periculosidade do crime organizado.",
+          "evidencias": [
+            {
+              "documentoId": "PR:160002540833:02",
+              "pagina": 85,
+              "trecho": "Implantar um sistema estadual de videomonitoramento que integra câmeras públicas e privadas com inteligência artificial"
+            },
+            {
+              "documentoId": "PR:160002540833:02",
+              "pagina": 86,
+              "trecho": "Implantar uma unidade de segurança máxima, inspirada nas melhores práticas do sistema federal, para isolar as lideranças e integrantes do crime organizado de alta periculosidade"
+            }
+          ],
+          "frases": [
+            {
+              "id": "f4ded075264d1bff",
+              "texto": "Na segurança, o documento prevê implantar videomonitoramento estadual integrando câmeras públicas e privadas com inteligência artificial."
+            },
+            {
+              "id": "913bb015e66ba42b",
+              "texto": "Também prevê uma unidade de segurança máxima para isolar lideranças e integrantes de alta periculosidade do crime organizado."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "687695ff-6592-4d0a-8393-4b6d6b5da2d8",
+          "candidatoId": "6025cfb5-d1a7-4ad0-baa7-c131b381e8fa",
+          "data": "2023",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "2522",
+            "ano": 2023,
+            "ementa": "Altera a Lei nº 11.343, de 23 de agosto de 2006, para criar hipóteses de não restituição de bens ao acusado de tráfico de drogas, nos casos de absolvição, extinção da punibilidade ou de nulidade do processo.",
+            "situacao": null
+          },
+          "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/157373",
+          "eixos": [
+            "seguranca",
+            "costumes"
+          ]
+        },
+        "eixosComuns": [
+          "seguranca"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "b159b9484ab70ba3",
+        "slug": "cyro-garcia",
+        "candidatoId": "6991016f-b50a-4984-b60a-40521bcdf6ee",
+        "programaChave": "2026:GOVERNADOR:RJ:190002540198",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "financas-estaduais",
+          "titulo": "Finanças estaduais",
+          "descricao": "O documento registra a participação histórica dos royalties e o valor da dívida estadual.",
+          "evidencias": [
+            {
+              "documentoId": "RJ:190002540198:01",
+              "pagina": 2,
+              "trecho": "os royalties do petróleo, que respondem, historicamente, por cerca de 20% da arrecadação estadual"
+            },
+            {
+              "documentoId": "RJ:190002540198:01",
+              "pagina": 2,
+              "trecho": "a dívida, atualmente na casa de 163 bilhões de reais"
+            }
+          ],
+          "frases": [
+            {
+              "id": "2fcf66ddfff65372",
+              "texto": "O programa informa que os royalties do petróleo respondem historicamente por cerca de 20% da arrecadação estadual."
+            },
+            {
+              "id": "579621aa0c9a5e66",
+              "texto": "O documento registra que a dívida do Rio de Janeiro está atualmente na casa de 163 bilhões de reais."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "b9a76bb0-9166-402c-b09b-85c9813cb53f",
+          "candidatoId": "6991016f-b50a-4984-b60a-40521bcdf6ee",
+          "data": null,
+          "conteudo": {
+            "tema": "teto_gastos",
+            "posicao": "contra",
+            "descricao": "Rejeita o arcabouço fiscal, que chama de novo teto de gastos, por restringir receitas sociais. Citação (2024-09-06): \"“estabelece um arcabouço fiscal que nada mais é, do que um novo teto de gastos”\"",
+            "fonte": "BandNews FM (2024-09-06)"
+          },
+          "url": "https://www.band.com.br/bandnews-fm/rio-de-janeiro/noticias/sabatina-da-bandnews-fm-cyro-garcia-pstu-promete-transformar-sistemas-de-transporte-publico-202409061936",
+          "eixos": [
+            "economia_fiscal"
+          ]
+        },
+        "eixosComuns": [
+          "economia_fiscal"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "e0fc387a1f060167",
+        "slug": "lula",
+        "candidatoId": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+        "programaChave": "2026:PRESIDENTE:BR:280002542548",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "protecao-social",
+          "titulo": "Combate às desigualdades e proteção social",
+          "descricao": "O texto apresenta a recriação e expansão do Bolsa Família e a evolução do índice de Gini para o menor patamar histórico durante o mandato.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 19,
+              "trecho": "O índice de Gini, que mede o grau de desigualdade de renda, chegou ao menor patamar histórico."
+            },
+            {
+              "documentoId": null,
+              "pagina": 19,
+              "trecho": "Recriamos e expandimos o Bolsa Família."
+            }
+          ],
+          "frases": []
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "eacb1145-b217-459f-b63f-d3f816d4afcc",
+          "candidatoId": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+          "data": null,
+          "conteudo": {
+            "tema": "transferencia_renda",
+            "posicao": "a_favor",
+            "descricao": "Em 19 de junho de 2023, sancionou a Lei 14.601/2023, que recriou o Programa Bolsa Família em substituição ao Auxílio Brasil.",
+            "fonte": "Planalto, Lei 14.601/2023"
+          },
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14601.htm",
+          "eixos": [
+            "trabalho_renda",
+            "assistencia_direitos"
+          ]
+        },
+        "eixosComuns": [
+          "trabalho_renda"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "66b9a9e16a93860c",
+        "slug": "ricardo-ferraco",
+        "candidatoId": "e79ddaf5-f86c-40c6-a54c-10535cb5514d",
+        "programaChave": "2026:GOVERNADOR:ES:80002552172",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "seguranca-publica",
+          "titulo": "Segurança pública",
+          "descricao": "Instituição de uma política estadual permanente de enfrentamento ao crime organizado.",
+          "evidencias": [
+            {
+              "documentoId": "ES:80002552172:01",
+              "pagina": 34,
+              "trecho": "O Governo instituirá uma Política Estadual Permanente de Enfrentamento ao Crime Organizado"
+            }
+          ],
+          "frases": [
+            {
+              "id": "12c079535b3d1648",
+              "texto": "Na segurança pública, o programa prevê instituir uma Política Estadual Permanente de Enfrentamento ao Crime Organizado."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "2ca7b741-4c5a-4fe1-80d9-c6c37d2bb3db",
+          "candidatoId": "e79ddaf5-f86c-40c6-a54c-10535cb5514d",
+          "data": "2014",
+          "conteudo": {
+            "tipo": "PLS",
+            "numero": "22",
+            "ano": 2014,
+            "ementa": "Altera a Lei 7.210, de 11 de julho de 1984, Lei de Execução Penal, para impor ao juiz a obrigatória motivação idônea nos casos em que fixe regime prisional mais severo do que aquele estabelecido em lei.",
+            "situacao": null
+          },
+          "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/116069",
+          "eixos": [
+            "seguranca"
+          ]
+        },
+        "eixosComuns": [
+          "seguranca"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "52f27d1ce0cc7fe7",
+        "slug": "huggo-leonardo",
+        "candidatoId": "91b1c8db-cec7-48aa-9619-c23c9a0e4583",
+        "programaChave": "2026:GOVERNADOR:CE:60002540417",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "policia-penal",
+          "titulo": "Polícia Penal",
+          "descricao": "Autonomia institucional da Polícia Penal do Ceará.",
+          "evidencias": [
+            {
+              "documentoId": "CE:60002540417:01",
+              "pagina": 14,
+              "trecho": "Elevar a Polícia Penal (PPCE) a órgão vinculado autônomo, com comando e orçamento próprios"
+            }
+          ],
+          "frases": [
+            {
+              "id": "1c8488f8ef391518",
+              "texto": "O documento propõe elevar a Polícia Penal do Ceará a órgão vinculado autônomo, com comando e orçamento próprios."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "fala",
+          "ref": "31831fd902eb2be2a0c70f43e4898471e3636dffc2ec4a535ed1ce4316ded759",
+          "candidatoId": "91b1c8db-cec7-48aa-9619-c23c9a0e4583",
+          "data": "2026-09-09",
+          "conteudo": {
+            "citacao": "Basicamente a gente ia atuar as três polícias juntas nos três estados, fazendo operações integradas e de inteligência",
+            "contexto": "O candidato acrescentou: “Basicamente a gente ia atuar as três polícias juntas nos três estados, fazendo operações integradas e de inteligência”.",
+            "evento": "Sabatina do O POVO. nesta quarta-feira, 9",
+            "tipo_evento": "sabatina",
+            "veiculo": "O POVO"
+          },
+          "url": "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/09/delegado-huggo-elogia-aceno-de-ciro-a-renan-santos-e-diz-querer-tirar-elmano-do-poder.html",
+          "eixos": [
+            "seguranca"
+          ]
+        },
+        "eixosComuns": [
+          "seguranca"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "75a3c17a7e1263ed",
+        "slug": "ronaldo-caiado",
+        "candidatoId": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+        "programaChave": "2026:PRESIDENTE:BR:280002551932",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "estabilizacao-fiscal",
+          "titulo": "Estabilização fiscal",
+          "descricao": "O plano propõe publicar um diagnóstico completo das contas públicas, adotar estratégia fiscal plurianual para estabilizar a dívida em relação ao PIB e fazer as despesas obrigatórias crescerem abaixo do PIB nominal, sem recorrer a aumentos permanentes de carga tributária.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 12,
+              "trecho": "Apresentar, nos primeiros meses, diagnóstico completo de despesas obrigatórias, passivos, subsídios, benefícios tributários, restos a pagar, fundos, garantias e riscos fiscais"
+            },
+            {
+              "documentoId": null,
+              "pagina": 13,
+              "trecho": "estabilizar a dívida, reconstruir superávits, proteger o investimento e reduzir o peso dos juros sem transferir a conta aos mais pobres e sem recorrer a aumentos permanentes de carga tributária"
+            }
+          ],
+          "frases": []
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "8eef21e1-d6cc-480f-95c8-66c1ba54fb1e",
+          "candidatoId": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+          "data": "2004",
+          "conteudo": {
+            "tipo": "PEC",
+            "numero": "340",
+            "ano": 2004,
+            "ementa": "Dá nova redação ao § 18 do art. 40 do Texto Constitucional, isentando os aposentados e pensionistas, portadores de moléstias incapacitantes, da contribuição previdenciária.",
+            "situacao": null
+          },
+          "url": null,
+          "eixos": [
+            "economia_fiscal"
+          ]
+        },
+        "eixosComuns": [
+          "economia_fiscal"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "538f32d2559d7a66",
+        "slug": "cleitinho",
+        "candidatoId": "ff7f433f-70b4-420c-885d-c0401a901790",
+        "programaChave": "2026:GOVERNADOR:MG:130002552296",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "riscos-ambientais",
+          "titulo": "Riscos ambientais",
+          "descricao": "O plano prevê dados em tempo real para prevenção de desastres e resposta a emergências ambientais.",
+          "evidencias": [
+            {
+              "documentoId": "MG:130002552296:01",
+              "pagina": 14,
+              "trecho": "Uso de dados em tempo real para prevenção de desastres e respostas ágeis a situações de emergência ambiental."
+            }
+          ],
+          "frases": [
+            {
+              "id": "b5e6651afc073a1c",
+              "texto": "No meio ambiente, prevê o uso de dados em tempo real para prevenir desastres e responder a emergências ambientais."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "a0a6bcf9-8b40-46c0-8068-bbf542bb96e6",
+          "candidatoId": "ff7f433f-70b4-420c-885d-c0401a901790",
+          "data": "2024",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "3664",
+            "ano": 2024,
+            "ementa": "Altera os arts. 54 e 58 da Lei nº 9.605, de 12 de fevereiro de 1998 (Lei de Crimes Ambientais), para qualificar os crimes de poluição que resultem em alteração ou destruição de ecossistemas, aumentar as penas dos crimes de poluição e estabelecer como majorante desses crimes a conduta com motivação política ou mediante paga ou promessa de recompensa.",
+            "situacao": null
+          },
+          "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/165535",
+          "eixos": [
+            "seguranca",
+            "meio_ambiente"
+          ]
+        },
+        "eixosComuns": [
+          "meio_ambiente"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "0bb21fae3cef9d7d",
+        "slug": "juliana-brizola",
+        "candidatoId": "7a6a6475-0691-4823-9104-5055ca589405",
+        "programaChave": "2026:GOVERNADOR:RS:210002551508",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "regionalizacao-do-sus",
+          "titulo": "Regionalização do SUS",
+          "descricao": "Regionalização da média e alta complexidade no interior.",
+          "evidencias": [
+            {
+              "documentoId": "RS:210002551508:01",
+              "pagina": 7,
+              "trecho": "A média e alta complexidade serão regionalizadas, fortalecendo hospitais-polo, UTIs e serviços especializados no interior."
+            }
+          ],
+          "frases": [
+            {
+              "id": "4febc60acff377ae",
+              "texto": "Na saúde pública, propõe regionalizar a média e alta complexidade, fortalecendo hospitais-polo, UTIs e serviços especializados no interior do Rio Grande do Sul."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "24a2d72a-937e-4111-a1fb-31322b4d86fc",
+          "candidatoId": "7a6a6475-0691-4823-9104-5055ca589405",
+          "data": "2019",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "442",
+            "ano": 2019,
+            "ementa": "Cria o Programa de Incentivo aos Hospitais Filantrópicos e Santas Casas do Estado do Rio Grande do Sul – PIHFSC/RS. (SEI 6462-01.00/21-0)",
+            "situacao": "Arquivado(a)"
+          },
+          "url": "https://ww4.al.rs.gov.br/proposicao/PL/442/2019/7d5b297d-5715-11ee-9cfe-0242c0a8a005",
+          "eixos": [
+            "saude"
+          ]
+        },
+        "eixosComuns": [
+          "saude"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "22a1f55bdae4c830",
+        "slug": "edmilson-costa",
+        "candidatoId": "c7785d1d-b34a-4a0b-b9f2-127584b52d0c",
+        "programaChave": "2026:PRESIDENTE:BR:280002551975",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "direitos-trabalhistas-agrarios",
+          "titulo": "Direitos trabalhistas e reforma agrária",
+          "descricao": "O programa propõe reduzir a jornada de trabalho para 30 horas semanais sem redução salarial, revogar as reformas trabalhista e previdenciária e realizar reforma agrária popular com desapropriação sem indenização de latifúndios improdutivos.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 5,
+              "trecho": "redução da jornada de trabalho para 30 horas sem redução de salário e o fim da escala 6x1"
+            },
+            {
+              "documentoId": null,
+              "pagina": 5,
+              "trecho": "Revogaremos as contrarreformas trabalhista, previdenciária"
+            },
+            {
+              "documentoId": null,
+              "pagina": 6,
+              "trecho": "No campo, realizaremos a reforma agrária popular, e todos os latifúndios improdutivos,"
+            }
+          ],
+          "frases": [
+            {
+              "id": "243e4a71141a6c59",
+              "texto": "O programa propõe a redução da jornada de trabalho para 30 horas semanais sem redução salarial e o fim da escala 6x1."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "d3b899e3-7558-47e2-b528-742158cf8024",
+          "candidatoId": "c7785d1d-b34a-4a0b-b9f2-127584b52d0c",
+          "data": null,
+          "conteudo": {
+            "tema": "previdencia",
+            "posicao": "contra",
+            "descricao": "Na entrevista à UJC (04/05/2020) declarou-se favorável à 'revogação da emenda constitucional do teto de gastos, da emenda constitucional da reforma da Previdência, da reforma trabalhista'. Em 2026, na entrevista Opera Mundi republicada pelo PCB, cobrou do governo Lula 'revogar a reforma trabalhista e rever a reforma previdenciária'.",
+            "fonte": "UJC: entrevista Edmilson Costa (04/05/2020)"
+          },
+          "url": "https://ujc.org.br/entrevista-com-o-camarada-edmilson-costa-a-vida-acima-do-lucro-quem-paga-pela-crise/",
+          "eixos": [
+            "economia_fiscal",
+            "trabalho_renda"
+          ]
+        },
+        "eixosComuns": [
+          "economia_fiscal",
+          "trabalho_renda"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "34c7a6bc5fa74754",
+        "slug": "celina-leao",
+        "candidatoId": "91dc9c87-6811-494c-8c51-1bccfdf08c29",
+        "programaChave": "2026:GOVERNADOR:DF:70002553055",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "atencao-primaria",
+          "titulo": "Atenção Primária à Saúde",
+          "descricao": "Fortalecimento da Atenção Primária à Saúde.",
+          "evidencias": [
+            {
+              "documentoId": "DF:70002553055:01",
+              "pagina": 13,
+              "trecho": "Fortalecer a Atenção Primária à Saúde, ampliando as Unidades Básicas de Saúde - UBS, qualificando o atendimento com equipes multidisciplinares."
+            }
+          ],
+          "frases": [
+            {
+              "id": "6ad076c687654e42",
+              "texto": "O plano prevê fortalecer a Atenção Primária à Saúde, ampliando as Unidades Básicas de Saúde - UBS, qualificando o atendimento com equipes multidisciplinares."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "365efbc7-8681-4af2-87d6-554444f9cbb5",
+          "candidatoId": "91dc9c87-6811-494c-8c51-1bccfdf08c29",
+          "data": "2019",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "4595",
+            "ano": 2019,
+            "ementa": "Altera a Lei nº 7.713, de 22 dezembro de 1988, que altera a legislação do imposto de renda e dá outras providências, para isentar do imposto de renda das pessoas físicas os honorários dos profissionais de saúde correspondentes aos serviços prestados ao Sistema Único de Saúde (SUS).",
+            "situacao": null
+          },
+          "url": null,
+          "eixos": [
+            "saude",
+            "economia_fiscal",
+            "trabalho_renda"
+          ]
+        },
+        "eixosComuns": [
+          "saude"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "95a156812250e5a0",
+        "slug": "henrique-areas",
+        "candidatoId": "f383d692-5872-444d-b107-794c00182bad",
+        "programaChave": "2026:GOVERNADOR:MG:130002552308",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "privatizacoes",
+          "titulo": "Privatizações",
+          "descricao": "Proposta de cancelamento das privatizações realizadas.",
+          "evidencias": [
+            {
+              "documentoId": "MG:130002552308:01",
+              "pagina": 3,
+              "trecho": "Cancelamento de todas as privatizações realizadas"
+            }
+          ],
+          "frases": [
+            {
+              "id": "5067e67ca6a32675",
+              "texto": "Defende o cancelamento de todas as privatizações realizadas, conforme o eixo sobre a economia nacional."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "bb02458b-371e-4b87-b549-8b534d25a1f9",
+          "candidatoId": "f383d692-5872-444d-b107-794c00182bad",
+          "data": null,
+          "conteudo": {
+            "tema": "privatizacao_eletrobras",
+            "posicao": "contra",
+            "descricao": "Defende o cancelamento das privatizações já realizadas, incluindo a Eletrobrás. Consta na proposta de governo que o candidato registrou no TSE (arquivo PCOprogramadegoverno2026.pdf, nº 130017111443), que é o programa do PCO: “Cancelamento de todas as privatizações realizadas (Eletrobrás, Vale, bancos, telefonia etc.)”.",
+            "fonte": "Proposta de governo registrada no TSE por henrique-areas (arquivo 130017111443), programa do PCO para 2026"
+          },
+          "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MG/20322002026/candidato/130002552308",
+          "eixos": [
+            "estatais_privatizacao"
+          ]
+        },
+        "eixosComuns": [
+          "estatais_privatizacao"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "fc2a73a63cc716d0",
+        "slug": "flavio-bolsonaro",
+        "candidatoId": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+        "programaChave": "2026:PRESIDENTE:BR:280002551544",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "seguranca-publica",
+          "titulo": "Segurança pública e combate ao crime organizado",
+          "descricao": "O plano propõe classificar facções criminosas como organizações narcoterroristas, reduzir a maioridade penal de 18 para 16 anos e ampliar o número de vagas no sistema prisional.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 13,
+              "trecho": "PCC, CV, milícias e todas as outras facções serão declaradas como organizações narcoterroristas."
+            },
+            {
+              "documentoId": null,
+              "pagina": 13,
+              "trecho": "O novo governo do Brasil vai apoiar e sancionar a redução da maioridade penal de 18 para 16 anos."
+            },
+            {
+              "documentoId": null,
+              "pagina": 14,
+              "trecho": "vamos criar meio milhão de novas vagas no sistema prisional em 4 anos e zerar o déficit carcerário."
+            }
+          ],
+          "frases": [
+            {
+              "id": "85f1b24bbf4a7af5",
+              "texto": "Na área de segurança pública, o plano propõe classificar facções como PCC e CV como organizações narcoterroristas e reduzir a maioridade penal de 18 para 16 anos."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "e8e219d8-093c-43e1-ae4a-508f7848e1ff",
+          "candidatoId": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+          "data": "2019",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "2393",
+            "ano": 2019,
+            "ementa": "Altera o Código Penal para dispor sobre a legítima defesa da sociedade pelo agente de segurança pública.",
+            "situacao": "AGUARDANDO DESIGNAÇÃO DO RELATOR"
+          },
+          "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/136390",
+          "eixos": [
+            "seguranca"
+          ]
+        },
+        "eixosComuns": [
+          "seguranca"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "942fce3150227873",
+        "slug": "marcos-rogerio",
+        "candidatoId": "a9ce3c0b-9fa4-4e28-9c2e-809b1fa5e639",
+        "programaChave": "2026:GOVERNADOR:RO:220002541939",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "investimentos-em-infraestrutura",
+          "titulo": "Investimentos em infraestrutura",
+          "descricao": "O programa prevê uma carteira integrada de investimentos de longo prazo.",
+          "evidencias": [
+            {
+              "documentoId": "RO:220002541939:01",
+              "pagina": 6,
+              "trecho": "Nosso compromisso é organizar a engenharia pública, fortalecer o planejamento e construir uma carteira de investimentos de longo prazo, integrada por rodovias, pontes definitivas, portos secos, aeroportos, hidrovias, ferrovias autorizativas e corredores logísticos regionais."
+            }
+          ],
+          "frases": [
+            {
+              "id": "ec167e5e4ee5811a",
+              "texto": "Na infraestrutura, o programa prevê uma carteira de investimentos de longo prazo integrada por rodovias, pontes definitivas, portos secos, aeroportos, hidrovias, ferrovias autorizativas e corredores logísticos regionais."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "2baafe79-b4aa-445c-b11f-f46d95b524b9",
+          "candidatoId": "a9ce3c0b-9fa4-4e28-9c2e-809b1fa5e639",
+          "data": "2020",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "2025",
+            "ano": 2020,
+            "ementa": "Institui o Programa Emergencial Transporte Social visando resguardar o exercício do transporte público rodoviário urbano e semiurbano, durante o período de enfrentamento do estado de calamidade pública reconhecido pelo Decreto Legislativo nº 6, de 20 de março de 2020.",
+            "situacao": null
+          },
+          "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/141634",
+          "eixos": [
+            "infraestrutura"
+          ]
+        },
+        "eixosComuns": [
+          "infraestrutura"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "910b42a168df13fc",
+        "slug": "robson-raymundo",
+        "candidatoId": "4164ed87-4b75-4f33-9edb-8f12c38086e5",
+        "programaChave": "2026:GOVERNADOR:DF:70002535930",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "educacao-publica",
+          "titulo": "Educação pública",
+          "descricao": "Salário digno para professores e profissionais da educação.",
+          "evidencias": [
+            {
+              "documentoId": "DF:70002535930:01",
+              "pagina": 3,
+              "trecho": "Educação Libertadora: Salário digno para os professores e profissionais da educação."
+            }
+          ],
+          "frases": [
+            {
+              "id": "5749f1b0ac5081aa",
+              "texto": "Na educação, propõe salário digno para os professores e profissionais da educação, conforme o eixo de educação libertadora."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "a82ca093-3854-47c7-b553-ff7eca4c573d",
+          "candidatoId": "4164ed87-4b75-4f33-9edb-8f12c38086e5",
+          "data": null,
+          "conteudo": {
+            "tema": "teto_gastos",
+            "posicao": "contra",
+            "descricao": "Proposta de governo registrada no TSE em 2026, texto literal: \"Não adianta trocar os nomes se o modelo econômico continua sendo o de pagar juros da dívida aos bancos e manter o arcabouço fiscal que corta dinheiro da saúde e educação.\"",
+            "fonte": "Proposta de governo registrada no TSE (arquivo codTipo 5)"
+          },
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_DF.zip",
+          "eixos": [
+            "economia_fiscal",
+            "saude",
+            "educacao"
+          ]
+        },
+        "eixosComuns": [
+          "educacao"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "909c15539304f105",
+        "slug": "romeu-zema",
+        "candidatoId": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+        "programaChave": "2026:PRESIDENTE:BR:280002539826",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "economia-e-trabalho",
+          "titulo": "Desenvolvimento econômico e mercado de trabalho",
+          "descricao": "O programa propõe reduzir os juros e os impostos, simplificar a tributação das empresas, ampliar concessões e PPPs em infraestrutura e criar um regime de contratação alternativo à CLT com prevalência do negociado entre trabalhador e empregador sobre o legislado.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 18,
+              "trecho": "Reduzir os custos diretos das operações financeiras começando pela redução do IOF"
+            },
+            {
+              "documentoId": null,
+              "pagina": 19,
+              "trecho": "Reduzir gradualmente o imposto de renda das empresas para aproximar o Brasil das economias desenvolvidas"
+            },
+            {
+              "documentoId": null,
+              "pagina": 19,
+              "trecho": "Conceder à iniciativa privada a construção, operação e manutenção dos ativos com viabilidade econômica"
+            },
+            {
+              "documentoId": null,
+              "pagina": 23,
+              "trecho": "com prevalência do negociado sobre o legislado"
+            }
+          ],
+          "frases": [
+            {
+              "id": "725bb952338f2fc3",
+              "texto": "No mercado de trabalho, o documento propõe criar um regime de contratação alternativo à CLT, com prevalência do negociado entre as partes sobre o legislado."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "9793328a-4b8e-4e94-b595-79f042c952bb",
+          "candidatoId": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+          "data": null,
+          "conteudo": {
+            "tema": "teto_gastos",
+            "posicao": "a_favor",
+            "descricao": "Em 28 de abril de 2026, na Agrishow, citou o Teto de Gastos de 2016 e 2017 como precedente positivo, ao dizer que atacar a \"gastança\" faria a taxa de juros cair pela metade em seis a doze meses. Nunca foi parlamentar, portanto não votou na Emenda Constitucional 95/2016.",
+            "fonte": "InfoMoney, com conteúdo Estadão (28/04/2026)"
+          },
+          "url": "https://www.infomoney.com.br/politica/romeu-zema-vou-atacar-gastanca-e-taxa-de-juro-cai-pela-metade-em-6-12-meses/",
+          "eixos": [
+            "economia_fiscal"
+          ]
+        },
+        "eixosComuns": [
+          "economia_fiscal"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "d11b286b708e67be",
+        "slug": "fabio-trad",
+        "candidatoId": "e10f4186-0132-48f3-be4c-5397642eecd4",
+        "programaChave": "2026:GOVERNADOR:MS:120002539834",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "turismo-sustentavel",
+          "titulo": "Turismo sustentável",
+          "descricao": "O programa propõe criar um plano estadual para integrar turismo, meio ambiente, cultura, infraestrutura.",
+          "evidencias": [
+            {
+              "documentoId": "MS:120002539834:01",
+              "pagina": 65,
+              "trecho": "Criar o Plano Estadual de Turismo Sustentável e Desenvolvimento Regional, integrando turismo, meio ambiente, cultura, infraestrutura"
+            }
+          ],
+          "frases": []
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "514bbda6-2e11-4ee5-9240-3838313b62a2",
+          "candidatoId": "e10f4186-0132-48f3-be4c-5397642eecd4",
+          "data": "2018",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "11143",
+            "ano": 2018,
+            "ementa": "Reconhece o município de Campo Grande, no Estado do Mato Grosso do Sul, como a Capital do Turismo de Observação de Aves.",
+            "situacao": null
+          },
+          "url": null,
+          "eixos": [
+            "cultura_esporte_turismo"
+          ]
+        },
+        "eixosComuns": [
+          "cultura_esporte_turismo"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "06ab49d0f5b72176",
+        "slug": "cesar-pontes",
+        "candidatoId": "c0d3eab9-ea20-4ec0-a910-580c944040dc",
+        "programaChave": "2026:GOVERNADOR:RS:210002552592",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "teto-de-gastos",
+          "titulo": "Teto de gastos",
+          "descricao": "O programa propõe o fim do teto de gastos.",
+          "evidencias": [
+            {
+              "documentoId": "RS:210002552592:01",
+              "pagina": 4,
+              "trecho": "Fim do teto de gastos"
+            }
+          ],
+          "frases": [
+            {
+              "id": "4c736a9315d7cd36",
+              "texto": "Sobre o teto de gastos, o programa propõe o seu fim, conforme a formulação apresentada no documento."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "fa8a76c7-7e58-490c-b231-44d6f0e72fe8",
+          "candidatoId": "c0d3eab9-ea20-4ec0-a910-580c944040dc",
+          "data": null,
+          "conteudo": {
+            "tema": "teto_gastos",
+            "posicao": "contra",
+            "descricao": "Defende o fim do teto de gastos e da Lei de Responsabilidade Fiscal. Consta na proposta de governo que o candidato registrou no TSE (arquivo PCOprogramadegoverno2026.pdf, nº 210017114435), que é o programa do PCO: “Fim do teto de gastos e da Lei de Responsabilidade Fiscal”.",
+            "fonte": "Proposta de governo registrada no TSE por cesar-pontes (arquivo 210017114435), programa do PCO para 2026"
+          },
+          "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RS/20322002026/candidato/210002552592",
+          "eixos": [
+            "economia_fiscal"
+          ]
+        },
+        "eixosComuns": [
+          "economia_fiscal"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "1b422fb8ac93a813",
+        "slug": "lula",
+        "candidatoId": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+        "programaChave": "2026:PRESIDENTE:BR:280002542548",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "economia-fiscal",
+          "titulo": "Economia, política fiscal e industrial",
+          "descricao": "O programa descreve resultados de crescimento econômico, a reforma tributária do consumo e o financiamento da política industrial (Nova Indústria Brasil) no período 2023-2026.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 10,
+              "trecho": "A economia brasileira passou a crescer em torno de 3% ao ano, retomando seu posto entre as 10 maiores economias do mundo."
+            },
+            {
+              "documentoId": null,
+              "pagina": 11,
+              "trecho": "Aprovamos a histórica reforma tributária do consumo. O número de impostos cairá de cinco (PIS, Cofins, IPI, ICMS e ISS) para dois (CBS federal e IBS subnacional)."
+            },
+            {
+              "documentoId": null,
+              "pagina": 50,
+              "trecho": "Somente em financiamentos por meio do Plano Mais Produção (P+P), a NIB terá disponibilizado R$ 860 bilhões entre 2023 e 2026."
+            }
+          ],
+          "frases": [
+            {
+              "id": "a981e3bf74d94a62",
+              "texto": "O texto afirma que a economia brasileira passou a crescer em torno de 3% ao ano no período."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "0af6a50d-14df-4291-92b4-96a647cf636f",
+          "candidatoId": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+          "data": null,
+          "conteudo": {
+            "tema": "teto_gastos",
+            "posicao": "contra",
+            "descricao": "Em 30 de agosto de 2023, sancionou com dois vetos a Lei Complementar 200/2023, o Novo Arcabouço Fiscal, que substituiu o teto de gastos da Emenda Constitucional 95/2016.",
+            "fonte": "Agência Câmara de Notícias, sanção da LC 200/2023"
+          },
+          "url": "https://www.camara.leg.br/noticias/993734-lei-do-arcabouco-fiscal-e-sancionada-novo-regime-substitui-o-teto-de-gastos-publicos/",
+          "eixos": [
+            "economia_fiscal"
+          ]
+        },
+        "eixosComuns": [
+          "economia_fiscal"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "6c396caddf02dc6e",
+        "slug": "ataides-oliveira",
+        "candidatoId": "131fa6ef-ec83-40fc-8cb8-d01c79dd30cd",
+        "programaChave": "2026:GOVERNADOR:TO:270002548412",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "responsabilidade-fiscal-e-reforma-administrativa",
+          "titulo": "Responsabilidade fiscal e reforma administrativa",
+          "descricao": "Reforma administrativa com redução e reorganização das secretarias e revisão de cargos comissionados.",
+          "evidencias": [
+            {
+              "documentoId": "TO:270002548412:01",
+              "pagina": 7,
+              "trecho": "Redução e reorganização das secretarias, preservando áreas essenciais."
+            },
+            {
+              "documentoId": "TO:270002548412:01",
+              "pagina": 7,
+              "trecho": "Revisão de cargos comissionados e funções de confiança."
+            }
+          ],
+          "frases": [
+            {
+              "id": "ac3e9bea2a4f9af3",
+              "texto": "Na administração estadual, o plano propõe uma reforma administrativa com redução e reorganização das secretarias."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "754d324e-9e2a-4a08-ba02-8f17ebd9b91b",
+          "candidatoId": "131fa6ef-ec83-40fc-8cb8-d01c79dd30cd",
+          "data": "2013",
+          "conteudo": {
+            "tipo": "PLS",
+            "numero": "153",
+            "ano": 2013,
+            "ementa": "Dispõe sobre a fiscalização e a prestação de contas do uso de recursos públicos repassados às Confederações Representativas de Categorias Econômicas e sobre as condições para os candidatos a seus cargos de direção e a contratação de pessoal.",
+            "situacao": null
+          },
+          "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/112487",
+          "eixos": [
+            "economia_fiscal"
+          ]
+        },
+        "eixosComuns": [
+          "economia_fiscal"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "266c19294b11ef3e",
+        "slug": "kiko-caputo",
+        "candidatoId": "80ed7da6-fe5d-4b68-85a3-440f5154b7d6",
+        "programaChave": "2026:GOVERNADOR:DF:70002547775",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "mobilidade",
+          "titulo": "Mobilidade",
+          "descricao": "Ampliação do BRT para o Eixo Norte.",
+          "evidencias": [
+            {
+              "documentoId": "DF:70002547775:01",
+              "pagina": 140,
+              "trecho": "Ampliar o BRT para o Eixo Norte."
+            }
+          ],
+          "frases": [
+            {
+              "id": "cdaf35e680540de7",
+              "texto": "O programa prevê ampliar o BRT para o Eixo Norte."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "fala",
+          "ref": "d43e89aa677904b26a7223e67b37bd500a0363155bd4962c5c0eb22018b7f099",
+          "candidatoId": "80ed7da6-fe5d-4b68-85a3-440f5154b7d6",
+          "data": "2026-09-09",
+          "conteudo": {
+            "citacao": "Hoje o que a gente vê é a deterioração de todos esses serviços.",
+            "contexto": "O me trouxe a esse pleito foi a indignação com o que estão fazendo com o Distrito Federal. Eu cheguei aqui há 53 anos e vivi o esplendor dessa cidade com a excelência dos serviços públicos que eu pude usufruir. Estudei em escola pública, me tratava em escola pública, usava o transporte urbano e tudo funcionava. Hoje o que a gente vê é a deterioração de todos esses serviços. O que me traz aqui é resgatar aquele DF que eu vivi e eles deixaram chegar nessa situação.",
+            "evento": "Sabatina JBr Eleições. foi o sabatinado do JBr Eleições de ontem",
+            "tipo_evento": "sabatina",
+            "veiculo": "Jornal de Brasília"
+          },
+          "url": "https://jornaldebrasilia.com.br/jbr-tv/kiko-caputo-e-o-ultimo-sabatinado-do-jbr-eleicoes/",
+          "eixos": [
+            "educacao",
+            "infraestrutura"
+          ]
+        },
+        "eixosComuns": [
+          "infraestrutura"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "a86e253dc6d89a81",
+        "slug": "ronaldo-caiado",
+        "candidatoId": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+        "programaChave": "2026:PRESIDENTE:BR:280002551932",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "saude",
+          "titulo": "Reorganização do SUS",
+          "descricao": "O documento estabelece metas para reduzir filas prioritárias e a mortalidade cardiovascular prematura até 2030.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 77,
+              "trecho": "Até 2030, reduzir em pelo menos 50% o tempo mediano das filas prioritárias nas regiões com maior espera"
+            },
+            {
+              "documentoId": null,
+              "pagina": 79,
+              "trecho": "Meta nacional indicativa: reduzir em 30% a mortalidade cardiovascular prematura até 2030"
+            }
+          ],
+          "frases": []
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "275b67ce-829d-490d-8d70-82928bc86f73",
+          "candidatoId": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+          "data": "2015",
+          "conteudo": {
+            "tipo": "PEC",
+            "numero": "34",
+            "ano": 2015,
+            "ementa": "Altera o Título VIII, Capítulo II, Seção II, - \"Da Saúde\" -, da Constituição da República Federativa do Brasil de 1988, a fim de acrescentar o art. 198-A à Constituição Federal para instituir, no âmbito da administração pública federal, a carreira de Médico de Estado.",
+            "situacao": "RETIRADA PELO AUTOR"
+          },
+          "url": null,
+          "eixos": [
+            "saude",
+            "gestao_transparencia"
+          ]
+        },
+        "eixosComuns": [
+          "saude"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "256efc32044ed4d2",
+        "slug": "jhc",
+        "candidatoId": "ba62f5d0-3e39-40a7-a0af-ee1d86e97e75",
+        "programaChave": "2026:GOVERNADOR:AL:20002553350",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "infraestrutura-publica",
+          "titulo": "Infraestrutura pública",
+          "descricao": "Publicação de portfólio de projetos de infraestrutura até 2030.",
+          "evidencias": [
+            {
+              "documentoId": "AL:20002553350:01",
+              "pagina": 37,
+              "trecho": "Criação de um portfólio único, público e atualizado dos projetos de infraestrutura que Alagoas pretende viabilizar até 2030"
+            }
+          ],
+          "frases": [
+            {
+              "id": "421f52fe2e922b02",
+              "texto": "O plano propõe publicar um portfólio único, público e atualizado dos projetos de infraestrutura que Alagoas pretende viabilizar até 2030."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "b062f2d5-e3d6-427b-b7a9-5c1ebe9868e1",
+          "candidatoId": "ba62f5d0-3e39-40a7-a0af-ee1d86e97e75",
+          "data": "2020",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "1214",
+            "ano": 2020,
+            "ementa": "Suspende temporariamente a cobrança de pedágio do transporte de cargas nas rodovias federais durante a vigência da calamidade de saúde pública decorrente do coronavírus (COVID-19).",
+            "situacao": null
+          },
+          "url": null,
+          "eixos": [
+            "saude",
+            "infraestrutura"
+          ]
+        },
+        "eixosComuns": [
+          "infraestrutura"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "4cd7353bc38db675",
+        "slug": "david-almeida",
+        "candidatoId": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+        "programaChave": "2026:GOVERNADOR:AM:40002536086",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "bioeconomia",
+          "titulo": "Sociobiodiversidade",
+          "descricao": "A proposta prevê fortalecer cadeias produtivas da sociobiodiversidade.",
+          "evidencias": [
+            {
+              "documentoId": "AM:40002536086:01",
+              "pagina": 69,
+              "trecho": "Fortalecer as cadeias produtivas da sociobiodiversidade: ações estruturadas de apoio às comunidades produtoras, fortalecendo o cooperativismo e o associativismo, ampliando assistência técnica, beneficiamento e acesso ao mercado."
+            }
+          ],
+          "frases": [
+            {
+              "id": "720d3fb06fef985c",
+              "texto": "No desenvolvimento regional, prevê fortalecer as cadeias produtivas da sociobiodiversidade, com apoio a comunidades produtoras, assistência técnica, beneficiamento e acesso ao mercado."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "9fa60c2e-4263-4667-87bf-ce7b9618c565",
+          "candidatoId": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+          "data": "2014",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "230",
+            "ano": 2014,
+            "ementa": "DECLARA de utilidade pública o INSTITUTO SOCIOAMBIENTAL AMAZÔNIA EM AÇÃO.",
+            "situacao": null
+          },
+          "url": "http://sapl.al.am.leg.br/media/./sapl/public/materialegislativa/2014/108838/108838_texto_integral.pdf",
+          "eixos": [
+            "meio_ambiente"
+          ]
+        },
+        "eixosComuns": [
+          "meio_ambiente"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "1d2fc2bb3ef4ba6b",
+        "slug": "edmilson-costa",
+        "candidatoId": "c7785d1d-b34a-4a0b-b9f2-127584b52d0c",
+        "programaChave": "2026:PRESIDENTE:BR:280002551975",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "economia-estatizacoes",
+          "titulo": "Estatização da economia e do sistema financeiro",
+          "descricao": "O programa propõe nacionalizar o sistema monetário e financeiro, criar o Banco dos Trabalhadores, reestruturar a dívida pública e manter a Petrobras como empresa 100% estatal.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 4,
+              "trecho": "a nacionalização, o controle público e a estatização do sistema monetário e financeiro"
+            },
+            {
+              "documentoId": null,
+              "pagina": 4,
+              "trecho": "A dívida pública será reestruturada e seu passivo será substituído por títulos de longo prazo"
+            },
+            {
+              "documentoId": null,
+              "pagina": 5,
+              "trecho": "Defendemos a Petrobras 100% estatal, com a redução do ritmo da exploração do"
+            }
+          ],
+          "frases": [
+            {
+              "id": "62a6afe0888449d8",
+              "texto": "O texto defende que a Petrobras seja 100% estatal."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "22742c32-fb38-450e-ad9a-08bdb6361f64",
+          "candidatoId": "c7785d1d-b34a-4a0b-b9f2-127584b52d0c",
+          "data": null,
+          "conteudo": {
+            "tema": "privatizacao_eletrobras",
+            "posicao": "contra",
+            "descricao": "No lançamento em Fortaleza (06/08/2026) a chapa propôs reestatização de empresas privatizadas. Citação: 'Vamos retomar para o patrimônio público as empresas estatais que foram roubadas no processo de privatização e colocá-las a serviço do interesse nacional.'",
+            "fonte": "Opinião CE: lançamento Edmilson Costa em Fortaleza"
+          },
+          "url": "https://www.opiniaoce.com.br/politica/2026/08/07/edmilson-costa-do-pcb-lancou-candidatura-a-presidencia-do-brasil-em-fortaleza/",
+          "eixos": [
+            "estatais_privatizacao"
+          ]
+        },
+        "eixosComuns": [
+          "estatais_privatizacao"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "68aa4a99fbc3855d",
+        "slug": "wellington-fagundes",
+        "candidatoId": "febc4a12-c352-448a-99dc-671c77e8d57d",
+        "programaChave": "2026:GOVERNADOR:MT:110002551737",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "educacao-tecnologica",
+          "titulo": "Educação tecnológica",
+          "descricao": "O programa propõe conteúdos de tecnologia, robótica, inteligência artificial e pensamento computacional na educação básica.",
+          "evidencias": [
+            {
+              "documentoId": "MT:110002551737:01",
+              "pagina": 35,
+              "trecho": "Incluir conteúdos de tecnologia, robótica, inteligência artificial e pensamento computacional na educação básica."
+            }
+          ],
+          "frases": [
+            {
+              "id": "f0b2deee3ba089ed",
+              "texto": "Propõe incluir conteúdos de tecnologia, robótica, inteligência artificial e pensamento computacional na educação básica."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "38274cf2-36e7-4f78-a1e9-7e9d5bcce759",
+          "candidatoId": "febc4a12-c352-448a-99dc-671c77e8d57d",
+          "data": "2014",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "8055",
+            "ano": 2014,
+            "ementa": "Altera o Anexo da Lei nº 13.005, de 25 de junho de 2014, que \"aprova o Plano Nacional de Educação - PNE e dá outras providências\".",
+            "situacao": null
+          },
+          "url": null,
+          "eixos": [
+            "educacao"
+          ]
+        },
+        "eixosComuns": [
+          "educacao"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "e6f2b0b49a7a8faa",
+        "slug": "rejane-oliveira",
+        "candidatoId": "db4e22f8-ce30-4fcd-8799-a73be255d23a",
+        "programaChave": "2026:GOVERNADOR:RS:210002541367",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "educacao-publica",
+          "titulo": "Educação pública",
+          "descricao": "O programa propõe o fim das Parcerias Público-Privadas na educação.",
+          "evidencias": [
+            {
+              "documentoId": "RS:210002541367:01",
+              "pagina": 53,
+              "trecho": "Fim das Parcerias Público Privadas (PPPs)"
+            }
+          ],
+          "frases": [
+            {
+              "id": "d94d9491c1614faa",
+              "texto": "Na educação, o programa propõe o fim das Parcerias Público-Privadas."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "fala",
+          "ref": "15b5373c00772fbd14985cf869e72526a44e4932c15e2d0a307dd4a7f379e108",
+          "candidatoId": "db4e22f8-ce30-4fcd-8799-a73be255d23a",
+          "data": "2026-09-01",
+          "conteudo": {
+            "citacao": "A escola é um bem público que nós defendemos das comunidades",
+            "contexto": "Já Rejane de Oliveira apresentou propostas para a educação estadual, como o piso nacional para professores e funcionários de escola, a efetivação dos contratados e a devolução do desconto previdenciário dos aposentados. “A escola é um bem público que nós defendemos das comunidades”, afirmou a candidata, que também se posicionou contra a privatização de escolas públicas.",
+            "evento": "Entrevista ao Grupo Arauto durante agenda de campanha em Santa Cruz do Sul.. cumprem agenda em Santa Cruz do Sul nesta terça-feira (1º). Os dois participaram de um encontro no Sindicato dos Comerciários e concederam entrevista ao Grupo Arauto.",
+            "tipo_evento": "entrevista",
+            "veiculo": "Portal Arauto"
+          },
+          "url": "https://portalarauto.com.br/02-09-2026/candidatos-do-pstu-a-presidencia-e-ao-governo-do-estado-cumprem-agenda-em-santa-cruz/",
+          "eixos": [
+            "educacao",
+            "economia_fiscal",
+            "estatais_privatizacao"
+          ]
+        },
+        "eixosComuns": [
+          "educacao"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "8e0e7ba5416815ea",
+        "slug": "flavio-bolsonaro",
+        "candidatoId": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+        "programaChave": "2026:PRESIDENTE:BR:280002551544",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "seguranca-publica",
+          "titulo": "Segurança pública e combate ao crime organizado",
+          "descricao": "O plano propõe classificar facções criminosas como organizações narcoterroristas, reduzir a maioridade penal de 18 para 16 anos e ampliar o número de vagas no sistema prisional.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 13,
+              "trecho": "PCC, CV, milícias e todas as outras facções serão declaradas como organizações narcoterroristas."
+            },
+            {
+              "documentoId": null,
+              "pagina": 13,
+              "trecho": "O novo governo do Brasil vai apoiar e sancionar a redução da maioridade penal de 18 para 16 anos."
+            },
+            {
+              "documentoId": null,
+              "pagina": 14,
+              "trecho": "vamos criar meio milhão de novas vagas no sistema prisional em 4 anos e zerar o déficit carcerário."
+            }
+          ],
+          "frases": [
+            {
+              "id": "85f1b24bbf4a7af5",
+              "texto": "Na área de segurança pública, o plano propõe classificar facções como PCC e CV como organizações narcoterroristas e reduzir a maioridade penal de 18 para 16 anos."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "0f2d39ae-fc45-4b6b-bceb-769aa4ee6229",
+          "candidatoId": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+          "data": "2019",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "4640",
+            "ano": 2019,
+            "ementa": "Acrescenta o art. 25-A ao Decreto-Lei nº 2.848, de 7 de dezembro de 1940 – Código Penal, para prever a excludente de ilicitude designada por “suicídio por policial”.",
+            "situacao": null
+          },
+          "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/138227",
+          "eixos": [
+            "seguranca"
+          ]
+        },
+        "eixosComuns": [
+          "seguranca"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "0c2212c69cb738f0",
+        "slug": "efraim-filho",
+        "candidatoId": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+        "programaChave": "2026:GOVERNADOR:PB:150002538692",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "infraestrutura",
+          "titulo": "Infraestrutura",
+          "descricao": "Construção de um corredor multimodal integrando diferentes meios de transporte.",
+          "evidencias": [
+            {
+              "documentoId": "PB:150002538692:01",
+              "pagina": 10,
+              "trecho": "Caminho proposto: Construir um corredor multimodal que integre porto, rodovias, aeroporto e, no futuro, ferrovia;"
+            }
+          ],
+          "frases": [
+            {
+              "id": "9f611b0f27f02b90",
+              "texto": "Em infraestrutura, propõe construir um corredor multimodal que integre porto, rodovias, aeroporto e, no futuro, ferrovia."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "3716d62f-b42a-4eae-8eb3-aa9c71ae5ba8",
+          "candidatoId": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+          "data": "2021",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "3653",
+            "ano": 2021,
+            "ementa": "Denomina “Viaduto Rino Ronconi”, o viaduto na rodovia BR-230, KM 8, travessia urbana de Cabedelo - PB, localizado no bairro Intermares (Carajás).",
+            "situacao": null
+          },
+          "url": null,
+          "eixos": [
+            "infraestrutura"
+          ]
+        },
+        "eixosComuns": [
+          "infraestrutura"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "608b7426a6e29d6a",
+        "slug": "carlos-machado",
+        "candidatoId": "4415870d-5d02-426a-9d7c-f42091788cee",
+        "programaChave": "2026:GOVERNADOR:SP:250002550913",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "seguranca-publica",
+          "titulo": "Segurança pública",
+          "descricao": "Será criado o Centro Estadual de Inteligência e Tecnologia para a Segurança Pública.",
+          "evidencias": [
+            {
+              "documentoId": "SP:250002550913:01",
+              "pagina": 133,
+              "trecho": "Será criado o Centro Estadual de Inteligência e Tecnologia para a Segurança Pública, responsável por integrar as informações produzidas pelos órgãos estaduais, coordenar análises estratégicas, desenvolver estudos sobre a dinâmica da criminalidade e apoiar tecnicamente as investigações de maior complexidade."
+            }
+          ],
+          "frases": [
+            {
+              "id": "394b9e708d0c27d3",
+              "texto": "Na segurança pública, será criado o Centro Estadual de Inteligência e Tecnologia para a Segurança Pública."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "fala",
+          "ref": "4c8b76999d07bb8814fb3c48ca6eae0452066ee2cec30a1d7521dcce1dedb717",
+          "candidatoId": "4415870d-5d02-426a-9d7c-f42091788cee",
+          "data": "2026-09-07",
+          "conteudo": {
+            "citacao": "respeite e proteja a vida",
+            "contexto": "Na resposta, o candidato afirmou que quer uma segurança pública que \"respeite e proteja a vida\". Em relação à Sabesp, ele afirmou que pretende tornar as questões da empresa públicas novamente e deixá-las sob o controle da população.",
+            "evento": "Entrevista no jornal Link Vanguarda, da Rede Vanguarda.. foi entrevistado nesta segunda-feira (7) no jornal Link Vanguarda, da Rede Vanguarda, como parte da série de entrevistas com os candidatos ao governo de São Paulo nas Eleições 2026.",
+            "tipo_evento": "entrevista",
+            "veiculo": "g1"
+          },
+          "url": "https://g1.globo.com/sp/vale-do-paraiba-regiao/eleicoes/2026/noticia/2026/09/07/candidato-do-pcb-ao-governo-de-sp-carlos-machado-quer-desmilitarizar-a-policia-e-reestatizar-a-sabesp.ghtml",
+          "eixos": [
+            "seguranca",
+            "estatais_privatizacao"
+          ]
+        },
+        "eixosComuns": [
+          "seguranca"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "ecea278b0b2c8830",
+        "slug": "romeu-zema",
+        "candidatoId": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+        "programaChave": "2026:PRESIDENTE:BR:280002539826",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "financas-publicas-e-estado",
+          "titulo": "Ajuste fiscal e redução do tamanho do Estado",
+          "descricao": "O programa propõe uma reforma da Previdência com reajuste automático da idade mínima de aposentadoria conforme a expectativa de vida, a privatização de todas as empresas estatais, a ampliação das parcerias público-privadas em diferentes setores e metas progressivas de redução da carga tributária vinculadas a cortes de gastos.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 14,
+              "trecho": "criando também um mecanismo de reajuste automático da idade mínima para aposentadoria com base na expectativa de vida da população"
+            },
+            {
+              "documentoId": null,
+              "pagina": 15,
+              "trecho": "Privatizar todas as empresas estatais para que o governo possa se concentrar naquilo que de fato lhe cabe"
+            },
+            {
+              "documentoId": null,
+              "pagina": 15,
+              "trecho": "Aumentar o investimento privado no país por meio da ampliação das parcerias público-privadas em todos os setores da administração pública"
+            },
+            {
+              "documentoId": null,
+              "pagina": 16,
+              "trecho": "Fixar metas progressivas de redução da carga tributária que imponham os cortes de gastos necessários para atingi-las"
+            }
+          ],
+          "frases": [
+            {
+              "id": "3b06bb157e13b97c",
+              "texto": "Nas finanças públicas, o documento propõe privatizar todas as empresas estatais."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "9793328a-4b8e-4e94-b595-79f042c952bb",
+          "candidatoId": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+          "data": null,
+          "conteudo": {
+            "tema": "teto_gastos",
+            "posicao": "a_favor",
+            "descricao": "Em 28 de abril de 2026, na Agrishow, citou o Teto de Gastos de 2016 e 2017 como precedente positivo, ao dizer que atacar a \"gastança\" faria a taxa de juros cair pela metade em seis a doze meses. Nunca foi parlamentar, portanto não votou na Emenda Constitucional 95/2016.",
+            "fonte": "InfoMoney, com conteúdo Estadão (28/04/2026)"
+          },
+          "url": "https://www.infomoney.com.br/politica/romeu-zema-vou-atacar-gastanca-e-taxa-de-juro-cai-pela-metade-em-6-12-meses/",
+          "eixos": [
+            "economia_fiscal"
+          ]
+        },
+        "eixosComuns": [
+          "economia_fiscal"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "10db21bf3d79ce3e",
+        "slug": "vicentinho-junior",
+        "candidatoId": "3e0885c9-ae59-424a-8a99-9367801c5740",
+        "programaChave": "2026:GOVERNADOR:TO:270002544544",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "protecao-da-mulher",
+          "titulo": "Proteção da mulher",
+          "descricao": "Auxílio temporário para vítimas de violência doméstica.",
+          "evidencias": [
+            {
+              "documentoId": "TO:270002544544:01",
+              "pagina": 22,
+              "trecho": "Auxílio financeiro temporário para vítimas de violência doméstica saírem de casa."
+            }
+          ],
+          "frases": []
+        },
+        "evidencia": {
+          "tipo": "votacao_chave",
+          "ref": "f4a1180d-2bad-4267-a480-1f6a51899acf",
+          "candidatoId": "3e0885c9-ae59-424a-8a99-9367801c5740",
+          "data": "2016-04-27",
+          "conteudo": {
+            "votacao_titulo": "Criação da Comissão da Mulher, do Idoso, da Criança, do Adolescente, da Juventude e Minorias",
+            "votacao_descricao": "SIM é a favor de criar a comissão permanente na Câmara. Aprovado o substitutivo adotado pela Mesa Diretora ao Projeto de Resolução nº 8 de 2007. Placar 221 a 167.",
+            "casa": "Câmara",
+            "voto": "sim",
+            "proposicao": "340812",
+            "contradicao_registrada": false,
+            "contradicao_descricao": null
+          },
+          "url": null,
+          "eixos": [
+            "assistencia_direitos"
+          ]
+        },
+        "eixosComuns": [
+          "assistencia_direitos"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "085ef69a2ffc8395",
+        "slug": "haddad-gov-sp",
+        "candidatoId": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+        "programaChave": "2026:GOVERNADOR:SP:250002549705",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "transparencia-publica",
+          "titulo": "Transparência pública",
+          "descricao": "Abertura de dados, filas e contratos ao escrutínio público.",
+          "evidencias": [
+            {
+              "documentoId": "SP:250002549705:01",
+              "pagina": 14,
+              "trecho": "Vamos abrir os dados, as filas e os contratos"
+            }
+          ],
+          "frases": []
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "ea7aeba5-1422-4315-b72b-c0adf4b623b5",
+          "candidatoId": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+          "data": null,
+          "conteudo": {
+            "tema": "orcamento_secreto",
+            "posicao": "contra",
+            "descricao": "Tratou o fim do orçamento secreto como fato consumado e defendeu transparência orçamentária. Citação (2023-05-17): \"“O orçamento secreto acabou.”\"",
+            "fonte": "UOL / Estadão Conteúdo (2023-05-17)"
+          },
+          "url": "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2023/05/17/haddad-diz-que-orcamento-secreto-acabou-e-emendas-estao-liberadas-e-nao-contingenciadas.htm",
+          "eixos": [
+            "gestao_transparencia",
+            "economia_fiscal"
+          ]
+        },
+        "eixosComuns": [
+          "gestao_transparencia"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "e65202862add0915",
+        "slug": "ronaldo-caiado",
+        "candidatoId": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+        "programaChave": "2026:PRESIDENTE:BR:280002551932",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "estabilizacao-fiscal",
+          "titulo": "Estabilização fiscal",
+          "descricao": "O plano propõe publicar um diagnóstico completo das contas públicas, adotar estratégia fiscal plurianual para estabilizar a dívida em relação ao PIB e fazer as despesas obrigatórias crescerem abaixo do PIB nominal, sem recorrer a aumentos permanentes de carga tributária.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 12,
+              "trecho": "Apresentar, nos primeiros meses, diagnóstico completo de despesas obrigatórias, passivos, subsídios, benefícios tributários, restos a pagar, fundos, garantias e riscos fiscais"
+            },
+            {
+              "documentoId": null,
+              "pagina": 13,
+              "trecho": "estabilizar a dívida, reconstruir superávits, proteger o investimento e reduzir o peso dos juros sem transferir a conta aos mais pobres e sem recorrer a aumentos permanentes de carga tributária"
+            }
+          ],
+          "frases": []
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "13d7d763-9e54-46da-b136-01e045331da8",
+          "candidatoId": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+          "data": "2007",
+          "conteudo": {
+            "tipo": "PEC",
+            "numero": "45",
+            "ano": 2007,
+            "ementa": "Altera o Sistema Tributário Nacional e dá outras providências.",
+            "situacao": null
+          },
+          "url": null,
+          "eixos": [
+            "economia_fiscal"
+          ]
+        },
+        "eixosComuns": [
+          "economia_fiscal"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "59e8e7424dcf4061",
+        "slug": "fabio-mitidieri",
+        "candidatoId": "a6ef9480-a8a3-459f-b545-a52bfe1224b1",
+        "programaChave": "2026:GOVERNADOR:SE:260002542491",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "infraestrutura-escolar",
+          "titulo": "Infraestrutura escolar",
+          "descricao": "Construção de novas escolas pelo Programa Escola Mais Sergipe.",
+          "evidencias": [
+            {
+              "documentoId": "SE:260002542491:01",
+              "pagina": 18,
+              "trecho": "com a construção de novas escolas"
+            }
+          ],
+          "frases": [
+            {
+              "id": "214dd54808682897",
+              "texto": "Na infraestrutura escolar, o programa propõe construir novas escolas por meio do Programa Escola Mais Sergipe."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "4db1b00b-9f4c-4f7d-8790-531a563252b0",
+          "candidatoId": "a6ef9480-a8a3-459f-b545-a52bfe1224b1",
+          "data": "2016",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "5909",
+            "ano": 2016,
+            "ementa": "Estabelece medidas adicionais para a licitação de obras públicas decorrentes da execução de emendas parlamentares.",
+            "situacao": null
+          },
+          "url": null,
+          "eixos": [
+            "infraestrutura",
+            "gestao_transparencia"
+          ]
+        },
+        "eixosComuns": [
+          "infraestrutura"
+        ]
+      }
+    },
+    {
+      "conjunto": "ajuste",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "58495111b5894893",
+        "slug": "joao-henrique-catan",
+        "candidatoId": "29dbd8e2-6ebb-4261-bf53-be3b4df63718",
+        "programaChave": "2026:GOVERNADOR:MS:120002552191",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "saude-regional",
+          "titulo": "Saúde regional",
+          "descricao": "A proposta prevê hospitais regionais com atendimento contínuo.",
+          "evidencias": [
+            {
+              "documentoId": "MS:120002552191:01",
+              "pagina": 28,
+              "trecho": "Hospitais regionais 24 horas, com estrutura compatível para urgência, internação, diagnóstico, cirurgias e especialidades conforme a demanda de cada região."
+            }
+          ],
+          "frases": [
+            {
+              "id": "8e30abd24c11bd3f",
+              "texto": "A proposta de saúde prevê hospitais regionais 24 horas, com estrutura compatível para urgência, internação, diagnóstico, cirurgias e especialidades conforme a demanda de cada região."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "052a2d87-99fd-4fb1-97da-4d664c094f19",
+          "candidatoId": "29dbd8e2-6ebb-4261-bf53-be3b4df63718",
+          "data": "2025",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "057",
+            "ano": 2025,
+            "ementa": "Estabelece diretrizes e ações destinadas à promoção da saúde, bem-estar, e inclusão social dos idosos residentes no Estado de Mato Grosso do Sul, com o objetivo de melhorar a qualidade de vida, fomentar o envelhecimento saudável e ativo.",
+            "situacao": null
+          },
+          "url": "https://diariooficial.al.ms.gov.br/DiarioOficial/DownloadPdf?q=A0WFpxmtCVe2Wm1BF6IBYw%3D%3D",
+          "eixos": [
+            "saude",
+            "assistencia_direitos"
+          ]
+        },
+        "eixosComuns": [
+          "saude"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "04cf3036c1362d5e",
+        "slug": "edmilson-costa",
+        "candidatoId": "c7785d1d-b34a-4a0b-b9f2-127584b52d0c",
+        "programaChave": "2026:PRESIDENTE:BR:280002551975",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "economia-estatizacoes",
+          "titulo": "Estatização da economia e do sistema financeiro",
+          "descricao": "O programa propõe nacionalizar o sistema monetário e financeiro, criar o Banco dos Trabalhadores, reestruturar a dívida pública e manter a Petrobras como empresa 100% estatal.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 4,
+              "trecho": "a nacionalização, o controle público e a estatização do sistema monetário e financeiro"
+            },
+            {
+              "documentoId": null,
+              "pagina": 4,
+              "trecho": "A dívida pública será reestruturada e seu passivo será substituído por títulos de longo prazo"
+            },
+            {
+              "documentoId": null,
+              "pagina": 5,
+              "trecho": "Defendemos a Petrobras 100% estatal, com a redução do ritmo da exploração do"
+            }
+          ],
+          "frases": [
+            {
+              "id": "62a6afe0888449d8",
+              "texto": "O texto defende que a Petrobras seja 100% estatal."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "posicao_declarada",
+          "ref": "3fceb5b5-d8a0-4035-b49c-f5dfdfebd135",
+          "candidatoId": "c7785d1d-b34a-4a0b-b9f2-127584b52d0c",
+          "data": null,
+          "conteudo": {
+            "tema": "autonomia_bc",
+            "posicao": "contra",
+            "descricao": "Em entrevista ao Poder360 (14/05/2026) afirmou que o BC 'não pode ter autonomia ou independência' do governo federal e que uma das propostas centrais é 'acabar com a autonomia do Banco Central'. Citação: 'Não tem sentido uma pessoa ser presidente do Banco Central e outra ser presidente do Brasil eleito pela maioria da população e esse presidente do Brasil não ter condições políticas de mudar a política do Banco Central.'",
+            "fonte": "Poder360: Banco Central não pode ter independência, diz Edmilson Costa"
+          },
+          "url": "https://www.poder360.com.br/poder-eleicoes/banco-central-nao-pode-ter-independencia-diz-edmilson-costa/",
+          "eixos": [
+            "economia_fiscal"
+          ]
+        },
+        "eixosComuns": [
+          "economia_fiscal"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_congresso",
+      "par": {
+        "parId": "71ff3d79ee09f303",
+        "slug": "daniel-vilela",
+        "candidatoId": "d80384f6-147b-40ef-8fa5-ae0b2be5a1f5",
+        "programaChave": "2026:GOVERNADOR:GO:90002540993",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "gestao-fiscal",
+          "titulo": "Gestão fiscal",
+          "descricao": "Mudança da classificação fiscal de Goiás no Tesouro Nacional.",
+          "evidencias": [
+            {
+              "documentoId": "GO:90002540993:01",
+              "pagina": 16,
+              "trecho": "a Secretaria do Tesouro Nacional subiu a nota fiscal goiana de C para B+"
+            }
+          ],
+          "frases": [
+            {
+              "id": "ba013fc349ebc180",
+              "texto": "A classificação fiscal de Goiás no Tesouro Nacional passou de C para B+."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "19068a72-f94d-4959-b6ea-4ab292e4a955",
+          "candidatoId": "d80384f6-147b-40ef-8fa5-ae0b2be5a1f5",
+          "data": "2015",
+          "conteudo": {
+            "tipo": "PL",
+            "numero": "635",
+            "ano": 2015,
+            "ementa": "Cria benefícios fiscais relativos ao Imposto sobre Produtos Industrializados (IPI), com o objetivo de desonerar a aquisição de máquinas e equipamentos destinados ao processamento de resíduos sólidos e incentivar a aquisição de resíduos sólidos utilizados como matérias-primas ou produtos intermediários na fabricação de outros produtos.",
+            "situacao": null
+          },
+          "url": null,
+          "eixos": [
+            "economia_fiscal",
+            "meio_ambiente"
+          ]
+        },
+        "eixosComuns": [
+          "economia_fiscal"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "governador_sem_congresso",
+      "par": {
+        "parId": "3d07f6d63f0a3384",
+        "slug": "pazolini",
+        "candidatoId": "8d4eb423-5fa3-401f-883d-d70f4c0c64d8",
+        "programaChave": "2026:GOVERNADOR:ES:80002552682",
+        "cargo": "GOVERNADOR",
+        "mandatoFederal": false,
+        "compromisso": {
+          "temaId": "saude",
+          "titulo": "Saúde",
+          "descricao": "Regulação estadual de atendimentos.",
+          "evidencias": [
+            {
+              "documentoId": "ES:80002552682:01",
+              "pagina": 22,
+              "trecho": "Implantar Central Estadual Integrada de Regulação com painel público de transparência"
+            }
+          ],
+          "frases": [
+            {
+              "id": "236243dcf01b88cf",
+              "texto": "Na saúde, planeja implantar uma Central Estadual Integrada de Regulação com painel público de transparência."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "fala",
+          "ref": "c8a62c0e959cb6ea6d54f760fe1bda6a3d1e2f0953395c8a164fc396bfb35178",
+          "candidatoId": "8d4eb423-5fa3-401f-883d-d70f4c0c64d8",
+          "data": "2026-09-15",
+          "conteudo": {
+            "citacao": "Só com a extinção de cargos, nós economizamos mais de R$ 150 milhões.",
+            "contexto": "“Só com a extinção de cargos, nós economizamos mais de R$ 150 milhões. Esse foi o dinheiro que nós usamos na saúde”, afirmou.",
+            "evento": "Entrevista ao vivo no Gazeta Meio Dia.. O candidato ao governo do Espírito Santo Lorenzo Pazolini (Republicanos) prometeu, durante entrevista ao vivo no Gazeta Meio Dia nesta terça-feira (15), extinguir cargos comissionados caso seja eleito e afirmou que pretende levar para todos o estado medidas adotadas durante sua gestão como prefeito de Vitória.. O candidato ao governo do Espírito Santo Lorenzo Pazolini (Republicanos) prometeu, durante entrevista ao vivo no Gazeta Meio Dia nesta terça-feira (15), extinguir cargos comissionados caso seja eleito e afirmou que pretende levar para todos o estado medidas adotadas durante sua gestão como prefeito de Vitória.",
+            "tipo_evento": "entrevista",
+            "veiculo": "g1"
+          },
+          "url": "https://g1.globo.com/es/espirito-santo/eleicoes/2026/noticia/2026/09/15/pazolini-promete-extinguir-cargos-comissionados-e-ampliar-tempo-integral-nas-escolas-mas-nao-detalha-custo-de-propostas-para-o-es.ghtml",
+          "eixos": [
+            "saude"
+          ]
+        },
+        "eixosComuns": [
+          "saude"
+        ]
+      }
+    },
+    {
+      "conjunto": "holdout",
+      "grupo": "presidencial",
+      "par": {
+        "parId": "a93e7af488d1663b",
+        "slug": "flavio-bolsonaro",
+        "candidatoId": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+        "programaChave": "2026:PRESIDENTE:BR:280002551544",
+        "cargo": "PRESIDENTE",
+        "mandatoFederal": true,
+        "compromisso": {
+          "temaId": "seguranca-publica",
+          "titulo": "Segurança pública e combate ao crime organizado",
+          "descricao": "O plano propõe classificar facções criminosas como organizações narcoterroristas, reduzir a maioridade penal de 18 para 16 anos e ampliar o número de vagas no sistema prisional.",
+          "evidencias": [
+            {
+              "documentoId": null,
+              "pagina": 13,
+              "trecho": "PCC, CV, milícias e todas as outras facções serão declaradas como organizações narcoterroristas."
+            },
+            {
+              "documentoId": null,
+              "pagina": 13,
+              "trecho": "O novo governo do Brasil vai apoiar e sancionar a redução da maioridade penal de 18 para 16 anos."
+            },
+            {
+              "documentoId": null,
+              "pagina": 14,
+              "trecho": "vamos criar meio milhão de novas vagas no sistema prisional em 4 anos e zerar o déficit carcerário."
+            }
+          ],
+          "frases": [
+            {
+              "id": "85f1b24bbf4a7af5",
+              "texto": "Na área de segurança pública, o plano propõe classificar facções como PCC e CV como organizações narcoterroristas e reduzir a maioridade penal de 18 para 16 anos."
+            }
+          ]
+        },
+        "evidencia": {
+          "tipo": "projeto_lei",
+          "ref": "ff2194f7-06b2-4814-831e-06a375644c71",
+          "candidatoId": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+          "data": "2023",
+          "conteudo": {
+            "tipo": "PDL",
+            "numero": "193",
+            "ano": 2023,
+            "ementa": "Susta os efeitos do Decreto nº 11.615, de 21 de julho de 2023, que regulamenta a Lei nº 10.826, de 22 de dezembro de 2003, para estabelecer regras e procedimentos relativos à aquisição, ao registro, à posse, ao porte, ao cadastro e à comercialização nacional de armas de fogo, munições e acessórios, disciplinar as atividades de caça excepcional, de caça de subsistência, de tiro desportivo e de colecionamento de armas de fogo, munições e acessórios, disciplinar o funcionamento das entidades de tiro desportivo e dispor sobre a estruturação do Sistema Nacional de Armas - Sinarm.",
+            "situacao": "AGUARDANDO DESIGNAÇÃO DO RELATOR"
+          },
+          "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/158826",
+          "eixos": [
+            "seguranca"
+          ]
+        },
+        "eixosComuns": [
+          "seguranca"
+        ]
+      }
+    }
+  ]
+}

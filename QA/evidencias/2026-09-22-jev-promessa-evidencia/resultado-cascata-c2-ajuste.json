@@ -1,0 +1,57 @@
+{
+  "versao": "c2",
+  "conjunto": "ajuste",
+  "verificador": "gpt-5.6-luna",
+  "falhasVerificador": 0,
+  "pares": 30,
+  "relacionadosNoConjunto": 17,
+  "publicados": 7,
+  "publicadosNaoRelacionados": [],
+  "relacionadosBarrados": [
+    {
+      "parId": "a049eb7e6a458d5d",
+      "barrado": "jev_objeto_concreto"
+    },
+    {
+      "parId": "c722c926049d2ea6",
+      "barrado": "jev_objeto_concreto"
+    },
+    {
+      "parId": "bd1b2c7ea23a34cf",
+      "barrado": "jev_precisa_explicacao"
+    },
+    {
+      "parId": "7fb20811ddacde00",
+      "barrado": "jev_objeto_concreto"
+    },
+    {
+      "parId": "08eee405f15dcb4e",
+      "barrado": "jev_objeto_concreto"
+    },
+    {
+      "parId": "921b3676a5d86254",
+      "barrado": "jev_objeto_concreto"
+    },
+    {
+      "parId": "9bdc96a926f36eaa",
+      "barrado": "jev_objeto_concreto"
+    },
+    {
+      "parId": "57f91bd243a9763e",
+      "barrado": "jev_objeto_concreto"
+    },
+    {
+      "parId": "fc2a73a63cc716d0",
+      "barrado": "verificador_mesmo_assunto"
+    },
+    {
+      "parId": "8e0e7ba5416815ea",
+      "barrado": "jev_precisa_explicacao"
+    }
+  ],
+  "cobertura": 0.412,
+  "criterio": {
+    "c1": true,
+    "c2": true
+  }
+}

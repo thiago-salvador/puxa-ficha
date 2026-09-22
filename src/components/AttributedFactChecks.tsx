@@ -188,7 +188,7 @@ export function AttributedFactChecks({
   return (
     <section
       aria-labelledby="attributed-fact-checks-title"
-      className="mx-auto max-w-7xl space-y-4 px-5 py-6 md:px-12"
+      className="space-y-4"
       data-pf-attributed-checks=""
     >
       <div>

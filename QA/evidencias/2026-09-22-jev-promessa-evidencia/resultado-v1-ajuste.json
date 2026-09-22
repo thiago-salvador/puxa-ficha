@@ -1,0 +1,193 @@
+{
+  "versao": "v1",
+  "conjunto": "ajuste",
+  "modelo": "jev-1.13.0",
+  "falhasDeServico": 0,
+  "pares": 60,
+  "descartados": 34,
+  "descartadosPorRotulo": {
+    "sustenta": 0,
+    "contradiz": 0,
+    "relacionada": 0,
+    "nao_relacionada": 34
+  },
+  "porClasse": {
+    "sustenta": {
+      "total": 2,
+      "certos": 2,
+      "concordancia": 1
+    },
+    "contradiz": {
+      "total": 0,
+      "certos": 0,
+      "concordancia": null
+    },
+    "relacionada": {
+      "total": 12,
+      "certos": 9,
+      "concordancia": 0.75
+    },
+    "nao_relacionada": {
+      "total": 46,
+      "certos": 43,
+      "concordancia": 0.935
+    }
+  },
+  "matriz": {
+    "sustenta": {
+      "sustenta": 2,
+      "contradiz": 0,
+      "relacionada": 0,
+      "nao_relacionada": 0
+    },
+    "contradiz": {
+      "sustenta": 0,
+      "contradiz": 0,
+      "relacionada": 0,
+      "nao_relacionada": 0
+    },
+    "relacionada": {
+      "sustenta": 1,
+      "contradiz": 0,
+      "relacionada": 9,
+      "nao_relacionada": 2
+    },
+    "nao_relacionada": {
+      "sustenta": 0,
+      "contradiz": 0,
+      "relacionada": 3,
+      "nao_relacionada": 43
+    }
+  },
+  "criterio": {
+    "descarteSemSustentaOuContradiz": true,
+    "descarteRelacionadaNoMaximo1": true,
+    "coberturaDescarteNaoRelacionada": 0.739,
+    "concordanciaBinaria": 0.917,
+    "c1": true,
+    "c2": true,
+    "c3": true
+  },
+  "divergencias": [
+    {
+      "parId": "081a0c9b18760c5a",
+      "grupo": "presidencial",
+      "tipo": "posicao_declarada",
+      "rotulo": "relacionada",
+      "preRotulo": "nao_relacionada",
+      "descartado": false,
+      "probabilidades": {
+        "relacionada": 0.27,
+        "sustenta": 0.07,
+        "contradiz": 0,
+        "nao_relacionada": 0.66
+      },
+      "nouls": {
+        "mesmo_compromisso": 0.24,
+        "assunto_do_titulo": 0.3,
+        "direcao_oposta": 0.11
+      },
+      "classificacao": "ruido de rotulo: fronteira entre relacionada e nao_relacionada; rotulo generoso"
+    },
+    {
+      "parId": "f93b362b17b3565f",
+      "grupo": "presidencial",
+      "tipo": "projeto_lei",
+      "rotulo": "nao_relacionada",
+      "preRotulo": "relacionada",
+      "descartado": false,
+      "probabilidades": {
+        "contradiz": 0,
+        "nao_relacionada": 0.36,
+        "relacionada": 0.61,
+        "sustenta": 0.03
+      },
+      "nouls": {
+        "mesmo_compromisso": 0.21,
+        "assunto_do_titulo": 0.22,
+        "direcao_oposta": 0.08
+      },
+      "classificacao": "erro do Jev: proposicao sobre medicamentos lida como reorganizacao do SUS; confianca 0,61, iria para revisao"
+    },
+    {
+      "parId": "2d899b20ec344068",
+      "grupo": "presidencial",
+      "tipo": "projeto_lei",
+      "rotulo": "nao_relacionada",
+      "preRotulo": "relacionada",
+      "descartado": false,
+      "probabilidades": {
+        "sustenta": 0.03,
+        "nao_relacionada": 0.37,
+        "relacionada": 0.6,
+        "contradiz": 0
+      },
+      "nouls": {
+        "mesmo_compromisso": 0.19,
+        "assunto_do_titulo": 0.26,
+        "direcao_oposta": 0.14
+      },
+      "classificacao": "erro do Jev: medida provisoria tributaria lida como estabilizacao fiscal; confianca 0,60, iria para revisao"
+    },
+    {
+      "parId": "3dd55da3dcc32f92",
+      "grupo": "governador_congresso",
+      "tipo": "posicao_declarada",
+      "rotulo": "relacionada",
+      "preRotulo": "nao_relacionada",
+      "descartado": false,
+      "probabilidades": {
+        "sustenta": 0,
+        "contradiz": 0.3,
+        "nao_relacionada": 0.6,
+        "relacionada": 0.1
+      },
+      "nouls": {
+        "mesmo_compromisso": 0.09,
+        "assunto_do_titulo": 0.19,
+        "direcao_oposta": 0.81
+      },
+      "classificacao": "ruido de rotulo: direcao_oposta 0,81 aponta contradicao que o rotulo relacionada subestimou; nao descartado"
+    },
+    {
+      "parId": "57869a04a5b8f3e3",
+      "grupo": "governador_congresso",
+      "tipo": "fala",
+      "rotulo": "relacionada",
+      "preRotulo": "sustenta",
+      "descartado": false,
+      "probabilidades": {
+        "sustenta": 0.65,
+        "relacionada": 0.35,
+        "contradiz": 0,
+        "nao_relacionada": 0
+      },
+      "nouls": {
+        "mesmo_compromisso": 0.87,
+        "assunto_do_titulo": 0.88,
+        "direcao_oposta": 0.04
+      },
+      "classificacao": "erro do Jev: objetivo generico de seguranca lido como sustentacao; mesmo lado da decisao binaria"
+    },
+    {
+      "parId": "b73bf851f9b0c7ee",
+      "grupo": "governador_congresso",
+      "tipo": "fala",
+      "rotulo": "nao_relacionada",
+      "preRotulo": "relacionada",
+      "descartado": false,
+      "probabilidades": {
+        "nao_relacionada": 0.47,
+        "relacionada": 0.52,
+        "sustenta": 0.01,
+        "contradiz": 0
+      },
+      "nouls": {
+        "mesmo_compromisso": 0.24,
+        "assunto_do_titulo": 0.52,
+        "direcao_oposta": 0.05
+      },
+      "classificacao": "erro do Jev: fala sobre a propria candidatura com 0,52 em relacionada; iria para revisao"
+    }
+  ]
+}
