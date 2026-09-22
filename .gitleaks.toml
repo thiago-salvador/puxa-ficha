@@ -126,6 +126,14 @@ id = "generic-api-key"
   ]
   paths = ['''^tests/fixtures/senado-ementa-curation-proofs\.json$''']
 
+
+  [[rules.allowlists]]
+  description = "Identificadores públicos exatos do PDF Serasa vinculado pela Lupa, removidos do catálogo mas presentes no histórico deste lote"
+  condition = "AND"
+  regexTarget = "secret"
+  regexes = ['''^7b5eb707-8c49-4c21-b8fc-f0edeb96bfa9$''', '''^b212bb18f00a40869a6cd42f77cbeefc$''']
+  paths = ['''^scripts/data/checagens-atribuidas\.json$''']
+
 [[rules]]
 id = "sumologic-access-token"
 
