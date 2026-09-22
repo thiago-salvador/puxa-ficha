@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-09-22T12:10:00.000Z",
+  "updated_at": "2026-09-22T12:14:30.238Z",
   "quotes": [
     {
       "id": "df3b314a4c73c4f168b08c74c348c04d43481ac749c59cd01af84d05990c24f5",
@@ -6566,6 +6566,60 @@
         "identity_excerpt": "O candidato Dr. Furlan (PSD) propôs nesta sexta-feira (18) buscar empréstimos e parcerias para pavimentar a BR-156.",
         "date_excerpt": "O candidato Dr. Furlan (PSD) propôs nesta sexta-feira (18) buscar empréstimos e parcerias para pavimentar a BR-156.",
         "fetched_url": "https://g1.globo.com/ap/amapa/eleicoes/2026/noticia/2026/09/18/dr-furlan-diz-que-meta-e-buscar-parcerias-para-pavimentar-a-br-156.ghtml",
+        "method": "codex_source_review",
+        "quote_location": "article_paragraph"
+      }
+    },
+    {
+      "id": "74a11738e2fefcd2efc5d56cb29e41d33495229ce36c458eafb0113f77d0680f",
+      "candidate_id": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+      "candidate_slug": "david-almeida",
+      "candidate_name": "David Almeida",
+      "office": "Governador",
+      "uf": "AM",
+      "quote_text": "Eu vou tirar você, do interior, da lama e da poeira.",
+      "context": "\"Nós vamos tirar o Amazonas desse atraso. Eu vou tirar você, do interior, da lama e da poeira. Eu vou colocar asfalto de qualidade para dar dignidade [à população do interior]\", propôs.",
+      "event_context": "Entrevista a um portal de notícias em Manaus nesta quarta-feira (9), durante agenda de campanha de David Almeida (Avante), candidato ao governo do Amazonas.. O candidato ao Governo do Amazonas David Almeida (Avante) participou de uma entrevista a um portal de notícias nesta quarta-feira (9), em Manaus.",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-09",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/09/09/eleicoes-2026-david-almeida-participa-de-entrevista-e-propoe-programa-de-asfaltamento-de-vias-no-interior.ghtml",
+      "article_title": "David Almeida Eleições 2026: Proposta de asfalto no interior do AM | G1",
+      "article_published_at": "2026-09-09T21:19:14.015-03:00",
+      "observed_at": "2026-09-22T12:11:53.000Z",
+      "source_sha256": "2af70f3a5cfd95a03bb95659cf4199378164a35e5c84c5dd5159bb1ecf150126",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao Governo do Amazonas David Almeida (Avante) participou de uma entrevista a um portal de notícias nesta quarta-feira (9), em Manaus.",
+        "date_excerpt": "O candidato ao Governo do Amazonas David Almeida (Avante) participou de uma entrevista a um portal de notícias nesta quarta-feira (9), em Manaus.",
+        "fetched_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/09/09/eleicoes-2026-david-almeida-participa-de-entrevista-e-propoe-programa-de-asfaltamento-de-vias-no-interior.ghtml",
+        "method": "codex_source_review",
+        "quote_location": "article_paragraph"
+      }
+    },
+    {
+      "id": "ac83ff3e3d54c9c77463179fe00b3394ad2d774c1a97c5c9ac2fea23cff0e88c",
+      "candidate_id": "d0f03594-dad5-41e4-a0d4-6c2de53337f6",
+      "candidate_slug": "eudo-raffael",
+      "candidate_name": "Eudo Raffael",
+      "office": "Governador",
+      "uf": "AC",
+      "quote_text": "Hoje é comprovado que o reflorestamento gera mais emprego. Do que a pecuária",
+      "context": "“Hoje é comprovado que o reflorestamento gera mais emprego. Do que a pecuária”, afirmou.",
+      "event_context": "Debate da TV Gazeta, na noite desta segunda-feira (21), sobre desenvolvimento econômico, geração de renda e distribuição de riquezas no Acre.. O candidato ao Governo do Acre pelo PCB, Eudo Raffael, afirmou durante o debate da TV Gazeta, na noite desta segunda-feira, 21, que o reflorestamento pode gerar mais empregos do que a pecuária.",
+      "event_type": "debate",
+      "occurred_on": "2026-09-21",
+      "publisher": "A Gazeta do Acre",
+      "article_url": "https://agazetadoacre.com/2026/09/destaques/4o-destaque/eudo-raffael-afirma-que-reflorestamento-gera-mais-empregos-que-pecuaria-e-defende-mudanca-economica-no-acre/",
+      "article_title": "Eudo Raffael afirma que reflorestamento gera mais empregos que pecuária e defende mudança econômica no Acre - A Gazeta do Acre",
+      "article_published_at": "2026-09-21T19:42:37-05:00",
+      "observed_at": "2026-09-22T12:10:00.000Z",
+      "source_sha256": "93d3004991dda65ab616519d4e08f15d81f435b678580cd168ea9692815919b3",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao Governo do Acre pelo PCB, Eudo Raffael, afirmou durante o debate da TV Gazeta, na noite desta segunda-feira, 21, que o reflorestamento pode gerar mais empregos do que a pecuária.",
+        "date_excerpt": "O candidato ao Governo do Acre pelo PCB, Eudo Raffael, afirmou durante o debate da TV Gazeta, na noite desta segunda-feira, 21, que o reflorestamento pode gerar mais empregos do que a pecuária.",
+        "fetched_url": "https://agazetadoacre.com/2026/09/destaques/4o-destaque/eudo-raffael-afirma-que-reflorestamento-gera-mais-empregos-que-pecuaria-e-defende-mudanca-economica-no-acre/",
         "method": "codex_source_review",
         "quote_location": "article_paragraph"
       }
