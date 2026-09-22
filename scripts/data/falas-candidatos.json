@@ -3,6 +3,254 @@
   "updated_at": "2026-09-22T11:36:01.050Z",
   "quotes": [
     {
+      "id": "df3b314a4c73c4f168b08c74c348c04d43481ac749c59cd01af84d05990c24f5",
+      "candidate_id": "022d27e8-2832-4156-9bc7-7eac817ac901",
+      "candidate_slug": "raquel-lyra",
+      "candidate_name": "Raquel Lyra",
+      "office": "Governador",
+      "uf": "PE",
+      "quote_text": "Esse assunto não compete a mim. Preciso ter muito foco naquilo que é minha competência, minha responsabilidade",
+      "context": "\"Esse assunto não compete a mim. Preciso ter muito foco naquilo que é minha competência, minha responsabilidade\", disse.",
+      "event_context": "Sabatina Folha/UOL de 3 de setembro de 2026. Questionada sobre a crise no STF (Supremo Tribunal Federal) relacionada ao caso do Banco Master, ela afirmou ver com preocupação o que tem acontecido no país, mas não disse se defende o impeachment do ministro Alexandre de Moraes.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-03",
+      "publisher": "Folha de S.Paulo",
+      "article_url": "https://www1.folha.uol.com.br/poder/2026/09/raquel-lyra-psd-participa-de-sabatina-folhauol-nesta-quinta-feira.shtml",
+      "article_title": "Raquel Lyra diz em sabatina Folha/UOL receber apoio de petistas, mas não declara voto a presidente",
+      "article_published_at": "2026-09-02T23:00:00Z",
+      "article_modified_at": "2026-09-03T13:58:00Z",
+      "observed_at": "2026-09-22T01:38:58.171Z",
+      "source_sha256": "94a395747c1d9616321a7a7447488b9587059f1e06418cc4f263db1ee96f84f8",
+      "collection_scope": {
+        "mode": "initial_backfill",
+        "from": "2026-08-16"
+      },
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "A governadora de Pernambuco, Raquel Lyra (PSD), candidata à reeleição",
+        "date_excerpt": "afirmou nesta quinta-feira (3)",
+        "fetched_url": "https://www1.folha.uol.com.br/poder/2026/09/raquel-lyra-psd-participa-de-sabatina-folhauol-nesta-quinta-feira.shtml",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://www1.folha.uol.com.br/poder/2026/09/raquel-lyra-psd-participa-de-sabatina-folhauol-nesta-quinta-feira.shtml",
+          "datePublished": "2026-09-02T23:00:00Z",
+          "dateModified": "2026-09-03T13:58:00Z"
+        }
+      }
+    },
+    {
+      "id": "6929ccc9d85c6d33fb480d51ce7cee98af8f566c5eacc090a6ed3597d1769b05",
+      "candidate_id": "4f302760-52e7-461e-9a65-43d1aaa657df",
+      "candidate_slug": "expedito-mendonca",
+      "candidate_name": "Expedito Mendonça",
+      "office": "Governador",
+      "uf": "DF",
+      "quote_text": "Que a administração da saúde pública seja feita pelos próprios usuários, no âmbito do estado.",
+      "context": "“Que a administração da saúde pública seja feita pelos próprios usuários, no âmbito do estado. Defendemos recomposição salarial para os trabalhadores da educação, mais escolas, mais contratação e que os professores que hoje são temporários sejam incorporados ao quadro da fundação educacional\", destacou.",
+      "event_context": "Entrevista à TV da Câmara Legislativa após mobilização na Rodoviária.. Os discursos desta segunda-feira (14) destacaram propostas para a mobilidade urbana. Entre as medidas, estiveram em destaque a ampliação do Metrô e do VLT, e o transporte para o Entorno do DF.. Os discursos desta segunda-feira (14) destacaram propostas para a mobilidade urbana. Entre as medidas, estiveram em destaque a ampliação do Metrô e do VLT, e o transporte para o Entorno do DF.",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-14",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/df/distrito-federal/eleicoes/2026/noticia/2026/09/14/candidatos-do-df-cumprem-agenda-na-rodoviaria-do-plano-e-defendem-propostas-para-mobilidade.ghtml",
+      "article_title": "Candidatos ao governo do DF prometem metrô no Entorno e VLT | G1",
+      "article_published_at": "2026-09-14T20:14:04.394-03:00",
+      "observed_at": "2026-09-22T01:27:39.160Z",
+      "source_sha256": "6a534b6531aa2731d3ad890311e5fa9f407000c133eea6b0f99c2142b454101c",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Após a mobilização, Expedito Mendonça seguiu para a sede do partido, localizada no Conic, onde concedeu uma entrevista à TV da Câmara Legislativa. Durante a sabatina, o candidato reforçou a proposta voltada para a área de habitação e defendeu a força-tarefa para a construção das casas populares.",
+        "date_excerpt": "Os discursos desta segunda-feira (14) destacaram propostas para a mobilidade urbana. Entre as medidas, estiveram em destaque a ampliação do Metrô e do VLT, e o transporte para o Entorno do DF.",
+        "fetched_url": "https://g1.globo.com/df/distrito-federal/eleicoes/2026/noticia/2026/09/14/candidatos-do-df-cumprem-agenda-na-rodoviaria-do-plano-e-defendem-propostas-para-mobilidade.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "d56357034ee69c7c4829c45c1e5d92559be5aba2fc05c79f1a65e4d2da85ee63",
+      "candidate_id": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+      "candidate_slug": "ronaldo-caiado",
+      "candidate_name": "Ronaldo Caiado",
+      "office": "Presidente",
+      "uf": null,
+      "quote_text": "eu não sou um personagem criado para disputar uma eleição",
+      "context": "\"No meu currículo, tenho muito a mostrar e nada a esconder. A minha apresentação à população não é só a carteira de identidade. Eu tenho um orgulho muito grande do meu nome, do meu sobrenome, mas eu construí a minha vida política. Eu não preciso ter que estar vinculado a A ou B. Eu tenho autonomia, eu não sou um personagem criado para disputar uma eleição\", disse Caiado.",
+      "event_context": "Sabatina à Folha de S.Paulo e ao UOL.. O candidato à Presidência Ronaldo Caiado (PSD) afirmou nesta sexta-feira (4) que, diferentemente de Flávio Bolsonaro, não é um “personagem criado para disputar uma eleição”.. O candidato à Presidência Ronaldo Caiado (PSD) afirmou nesta sexta-feira (4) que, diferentemente de Flávio Bolsonaro, não é um “personagem criado para disputar uma eleição”.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-04",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/09/04/caiado-flavio-stf.ghtml",
+      "article_title": "Ronaldo Caiado critica Flávio Bolsonaro e defende reformas no STF | G1",
+      "article_published_at": "2026-09-04T16:33:46.805-03:00",
+      "observed_at": "2026-09-22T01:27:39.160Z",
+      "source_sha256": "fe6814010b6fa5d5992fb2d13a32454a360ec4edbe2b3e268895085a84c27e04",
+      "collection_scope": {
+        "mode": "initial_backfill",
+        "from": "2026-08-16"
+      },
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato à Presidência Ronaldo Caiado (PSD) afirmou nesta sexta-feira (4) que, diferentemente de Flávio Bolsonaro, não é um “personagem criado para disputar uma eleição”. Em sabatina à Folha de S.Paulo e ao UOL, o candidato também comentou o avanço de Augusto Cury (Avante), que o ultrapassou nas pesquisas eleitorais divulgadas nesta semana e se consolidou em terceiro lugar.",
+        "date_excerpt": "O candidato à Presidência Ronaldo Caiado (PSD) afirmou nesta sexta-feira (4) que, diferentemente de Flávio Bolsonaro, não é um “personagem criado para disputar uma eleição”.",
+        "fetched_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/09/04/caiado-flavio-stf.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "e5d3642c65a47947ba0bb3b77b9386c5f8a7ca0f1bc3a0216ab99086e21f1222",
+      "candidate_id": "91dc9c87-6811-494c-8c51-1bccfdf08c29",
+      "candidate_slug": "celina-leao",
+      "candidate_name": "Celina Leao",
+      "office": "Governador",
+      "uf": "DF",
+      "quote_text": "Eu era vice do Ibaneis, eu não era governadora do Ibaneis.",
+      "context": "\"Eu era vice do Ibaneis, eu não era governadora do Ibaneis. Por mais que você tenha uma autonomia de representá-lo, você não tem uma autonomia de tomar decisão sobre aquilo que é a sua prioridade\", falou.",
+      "event_context": "Sabatina no DF1 com Celina Leão.. Celina Leão (PP), candidata ao governo do Distrito Federal, passou por sabatina no DF1, na manhã desta terça-feira (15).. Celina Leão (PP), candidata ao governo do Distrito Federal, passou por sabatina no DF1, na manhã desta terça-feira (15).",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-15",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/df/distrito-federal/eleicoes/2026/noticia/2026/09/15/veja-como-foi-sabatina-da-globo-com-celina-leao-candidata-ao-governo-do-df.ghtml",
+      "article_title": "Celina Leão minimiza responsabilidade como vice e descarta quebra do BRB em sabatina na Globo | G1",
+      "article_published_at": "2026-09-15T12:49:29.283-03:00",
+      "observed_at": "2026-09-22T01:27:39.160Z",
+      "source_sha256": "f45f286c49283c7ca51713d3e30e07b4a4011a71caf8cbcd15fb8a18beaf6d01",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Celina Leão (PP), candidata ao governo do Distrito Federal, passou por sabatina no DF1, na manhã desta terça-feira (15).",
+        "date_excerpt": "Celina Leão (PP), candidata ao governo do Distrito Federal, passou por sabatina no DF1, na manhã desta terça-feira (15).",
+        "fetched_url": "https://g1.globo.com/df/distrito-federal/eleicoes/2026/noticia/2026/09/15/veja-como-foi-sabatina-da-globo-com-celina-leao-candidata-ao-governo-do-df.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "101d4f117e2ebd7829fde82fbcd82fccd879623a60686bd3f41ba7beecd16eb5",
+      "candidate_id": "4cbc3b25-075a-4d87-89bd-58d1e0b2a5f2",
+      "candidate_slug": "renan-santos",
+      "candidate_name": "Renan Santos",
+      "office": "Presidente",
+      "uf": null,
+      "quote_text": "Eu até soltei uns desabafos, sincericídios nos últimos dias, porque essa eleição mais estranha desde 2010",
+      "context": "O candidato à Presidência Renan Santos (Missão) afirmou nesta sexta-feira (11) que a eleição de 2026 é a campanha mais estranha que vê em muito tempo. \"Eu até soltei uns desabafos, sincericídios nos últimos dias, porque essa eleição mais estranha desde 2010\", afirmou durante sabatina promovida pelo UOL e Folha de S. Paulo.",
+      "event_context": "Sabatina promovida pelo UOL e Folha de S. Paulo.. O candidato à Presidência Renan Santos (Missão) afirmou nesta sexta-feira (11) que a eleição de 2026 é a campanha mais estranha que vê em muito tempo.. O candidato à Presidência Renan Santos (Missão) afirmou nesta sexta-feira (11) que a eleição de 2026 é a campanha mais estranha que vê em muito tempo.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-11",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/09/11/renan-santos-sabatina-uol-folha.ghtml",
+      "article_title": "Renan Santos: Eleições 2026 são as mais estranhas desde 2010 | G1",
+      "article_published_at": "2026-09-11T13:56:44.046-03:00",
+      "observed_at": "2026-09-22T01:21:17.315Z",
+      "source_sha256": "25c7cbc9860f591f83c729672f4c8f1f16ef3d7118e1c798badec084b6f7c98a",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato à Presidência Renan Santos (Missão) afirmou nesta sexta-feira (11) que a eleição de 2026 é a campanha mais estranha que vê em muito tempo. \"Eu até soltei uns desabafos, sincericídios nos últimos dias, porque essa eleição mais estranha desde 2010\", afirmou durante sabatina promovida pelo UOL e Folha de S. Paulo.",
+        "date_excerpt": "O candidato à Presidência Renan Santos (Missão) afirmou nesta sexta-feira (11) que a eleição de 2026 é a campanha mais estranha que vê em muito tempo.",
+        "fetched_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/09/11/renan-santos-sabatina-uol-folha.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "115a8f820bca9e6b843b5d5d77b2a7ede8836841ad73b83e4102cf7e839dfbd4",
+      "candidate_id": "e79ddaf5-f86c-40c6-a54c-10535cb5514d",
+      "candidate_slug": "ricardo-ferraco",
+      "candidate_name": "Ricardo Ferraço",
+      "office": "Governador",
+      "uf": "ES",
+      "quote_text": "vou trabalhar todos os dias da minha vida até fazer do Espírito Santo um dos estados mais seguros do Brasil",
+      "context": "“Eu estou seguro e vou trabalhar todos os dias da minha vida até fazer do Espírito Santo um dos estados mais seguros do Brasil”, afirmou Ferraço, que é o atual governador do estado.",
+      "event_context": "Entrevista ao vivo no Gazeta Meio Dia.. Nesta segunda-feira (14), Ricardo Ferraço iniciou as sabatinas da TV Gazeta. O candidato ao governo do ES prometeu priorizar a segurança pública estadual.. Nesta segunda-feira (14), Ricardo Ferraço iniciou as sabatinas da TV Gazeta. O candidato ao governo do ES prometeu priorizar a segurança pública estadual.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-14",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/es/espirito-santo/eleicoes/2026/noticia/2026/09/14/ferraco-promete-colocar-o-es-entre-os-estados-mais-seguros-do-pais-e-defende-abertura-de-impeachment-de-alexandre-de-moraes.ghtml",
+      "article_title": "Ferraço promete colocar o ES entre os estados mais seguros do país | G1",
+      "article_published_at": "2026-09-14T15:48:43.413-03:00",
+      "observed_at": "2026-09-22T01:21:17.315Z",
+      "source_sha256": "fb746b669743d197693eef9e82b98d4b3d185ae4065850cd99962adef4063ff4",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao governo do Espírito Santo, Ricardo Ferraço (MDB), afirmou nesta segunda-feira (14), durante entrevista ao vivo no Gazeta Meio Dia, que pretende fazer do Espírito Santo \"um dos estados mais seguros do Brasil\". Ele também falou sobre entrega de hospitais e defendeu o impeachment de Alexandre de Moraes, do STF.",
+        "date_excerpt": "Nesta segunda-feira (14), Ricardo Ferraço iniciou as sabatinas da TV Gazeta. O candidato ao governo do ES prometeu priorizar a segurança pública estadual.",
+        "fetched_url": "https://g1.globo.com/es/espirito-santo/eleicoes/2026/noticia/2026/09/14/ferraco-promete-colocar-o-es-entre-os-estados-mais-seguros-do-pais-e-defende-abertura-de-impeachment-de-alexandre-de-moraes.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "c8a62c0e959cb6ea6d54f760fe1bda6a3d1e2f0953395c8a164fc396bfb35178",
+      "candidate_id": "8d4eb423-5fa3-401f-883d-d70f4c0c64d8",
+      "candidate_slug": "pazolini",
+      "candidate_name": "Pazolini",
+      "office": "Governador",
+      "uf": "ES",
+      "quote_text": "Só com a extinção de cargos, nós economizamos mais de R$ 150 milhões.",
+      "context": "“Só com a extinção de cargos, nós economizamos mais de R$ 150 milhões. Esse foi o dinheiro que nós usamos na saúde”, afirmou.",
+      "event_context": "Entrevista ao vivo no Gazeta Meio Dia.. O candidato ao governo do Espírito Santo Lorenzo Pazolini (Republicanos) prometeu, durante entrevista ao vivo no Gazeta Meio Dia nesta terça-feira (15), extinguir cargos comissionados caso seja eleito e afirmou que pretende levar para todos o estado medidas adotadas durante sua gestão como prefeito de Vitória.. O candidato ao governo do Espírito Santo Lorenzo Pazolini (Republicanos) prometeu, durante entrevista ao vivo no Gazeta Meio Dia nesta terça-feira (15), extinguir cargos comissionados caso seja eleito e afirmou que pretende levar para todos o estado medidas adotadas durante sua gestão como prefeito de Vitória.",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-15",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/es/espirito-santo/eleicoes/2026/noticia/2026/09/15/pazolini-promete-extinguir-cargos-comissionados-e-ampliar-tempo-integral-nas-escolas-mas-nao-detalha-custo-de-propostas-para-o-es.ghtml",
+      "article_title": "Pazolini promete extinguir cargos comissionados, mas não cita custos | G1",
+      "article_published_at": "2026-09-15T14:32:15.575-03:00",
+      "observed_at": "2026-09-22T01:22:50.938Z",
+      "source_sha256": "6fe4c88ff48c48de46ea42d143768faa89436a63beae07e438db8dbe210f6e1d",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao governo do Espírito Santo Lorenzo Pazolini (Republicanos) prometeu, durante entrevista ao vivo no Gazeta Meio Dia nesta terça-feira (15), extinguir cargos comissionados caso seja eleito e afirmou que pretende levar para todos o estado medidas adotadas durante sua gestão como prefeito de Vitória.",
+        "date_excerpt": "O candidato ao governo do Espírito Santo Lorenzo Pazolini (Republicanos) prometeu, durante entrevista ao vivo no Gazeta Meio Dia nesta terça-feira (15), extinguir cargos comissionados caso seja eleito e afirmou que pretende levar para todos o estado medidas adotadas durante sua gestão como prefeito de Vitória.",
+        "fetched_url": "https://g1.globo.com/es/espirito-santo/eleicoes/2026/noticia/2026/09/15/pazolini-promete-extinguir-cargos-comissionados-e-ampliar-tempo-integral-nas-escolas-mas-nao-detalha-custo-de-propostas-para-o-es.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "cbf97600853d9b57d14e8bfb498b4caf6d749d88779c951f1852d39dc46f2898",
+      "candidate_id": "3b825b8d-32fd-42d2-af6e-6caf1135a3e3",
+      "candidate_slug": "soldado-sampaio",
+      "candidate_name": "Soldado Sampaio",
+      "office": "Governador",
+      "uf": "RR",
+      "quote_text": "Nós vamos fazer um novo concurso na área da educação",
+      "context": "“Nós vamos fazer um novo concurso na área da educação, inclusive com prova de título para que a gente possa reconhecer esses professores seletivados com sua experiência”, afirmou.",
+      "event_context": "A última entrevista da série de sabatinas com candidatos ao Governo de Roraima, no Agenda da Semana.. A última entrevista da série de sabatinas com candidatos ao Governo de Roraima, no Agenda da Semana, recebeu nesse domingo (20), o governador Soldado Sampaio (Republicanos), que busca reeleição. Entre as medidas defendidas estão a ampliação do atendimento médico, investimentos na agricultura familiar, incentivo à industrialização, construção de moradias e ações de combate à violência contra a mulher.. A última entrevista da série de sabatinas com candidatos ao Governo de Roraima, no Agenda da Semana, recebeu nesse domingo (20), o governador Soldado Sampaio (Republicanos), que busca reeleição. Entre as medidas defendidas estão a ampliação do atendimento médico, investimentos na agricultura familiar, incentivo à industrialização, construção de moradias e ações de combate à violência contra a mulher.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-20",
+      "publisher": "Folha BV",
+      "article_url": "https://www.folhabv.com.br/politica/soldado-sampaio-defende-ampliacao-da-saude-incentivo-ao-agronegocio-e-combate-ao-crime/",
+      "article_title": "Soldado Sampaio defende ampliação da saúde, incentivo ao agronegócio e combate ao crime",
+      "article_published_at": "2026-09-21T10:00:00+00:00",
+      "observed_at": "2026-09-22T01:22:50.938Z",
+      "source_sha256": "1e250b1e0dad19a97758595e6a8e57e1febf7b4e9ebb50d232f185a6e1f993f6",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "A última entrevista da série de sabatinas com candidatos ao Governo de Roraima, no Agenda da Semana, recebeu nesse domingo (20), o governador Soldado Sampaio (Republicanos), que busca reeleição. Entre as medidas defendidas estão a ampliação do atendimento médico, investimentos na agricultura familiar, incentivo à industrialização, construção de moradias e ações de combate à violência contra a mulher.",
+        "date_excerpt": "A última entrevista da série de sabatinas com candidatos ao Governo de Roraima, no Agenda da Semana, recebeu nesse domingo (20), o governador Soldado Sampaio (Republicanos), que busca reeleição. Entre as medidas defendidas estão a ampliação do atendimento médico, investimentos na agricultura familiar, incentivo à industrialização, construção de moradias e ações de combate à violência contra a mulher.",
+        "fetched_url": "https://www.folhabv.com.br/politica/soldado-sampaio-defende-ampliacao-da-saude-incentivo-ao-agronegocio-e-combate-ao-crime/",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "f2ec087332d6cadf48a99a12451921177c77b67da811daa7dd76cd0e8f85c40b",
+      "candidate_id": "270a8b55-145a-400f-b371-38809653eea8",
+      "candidate_slug": "helder-salomao",
+      "candidate_name": "Helder Salomão",
+      "office": "Governador",
+      "uf": "ES",
+      "quote_text": "Nós não vamos abandonar os indicadores de jeito nenhum. Nós vamos humanizar a educação",
+      "context": "\"Nós não vamos abandonar os indicadores de jeito nenhum. Nós vamos humanizar a educação\", disse",
+      "event_context": "Entrevista ao vivo no Gazeta Meio Dia.. Helder Salomão (PT) prometeu implantar faixas de ônibus exclusivas e criar um programa de saúde mental para professores, em entrevista nesta quarta-feira (16).. Helder Salomão (PT) prometeu implantar faixas de ônibus exclusivas e criar um programa de saúde mental para professores, em entrevista nesta quarta-feira (16).",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-16",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/es/espirito-santo/eleicoes/2026/noticia/2026/09/16/helder-salomao-promete-programa-de-saude-mental-para-professores-e-criacao-de-faixa-exclusiva-para-onibus-em-todo-o-es.ghtml",
+      "article_title": "Helder Salomão promete programa de saúde mental para professores no ES | G1",
+      "article_published_at": "2026-09-16T15:44:00.008-03:00",
+      "observed_at": "2026-09-22T01:21:17.315Z",
+      "source_sha256": "a1f5df464b500b621a592c61a3abd6a201f0e8aa83e862a6e033149703d3da06",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao governo do Espírito Santo, Helder Salomão (PT), prometeu, durante entrevista ao vivo no Gazeta Meio Dia nesta quarta-feira (16), criar uma política estadual de cuidado e saúde mental para servidores, com atenção especial aos professores, e implantar faixas exclusivas para ônibus em todo o estado.",
+        "date_excerpt": "Helder Salomão (PT) prometeu implantar faixas de ônibus exclusivas e criar um programa de saúde mental para professores, em entrevista nesta quarta-feira (16).",
+        "fetched_url": "https://g1.globo.com/es/espirito-santo/eleicoes/2026/noticia/2026/09/16/helder-salomao-promete-programa-de-saude-mental-para-professores-e-criacao-de-faixa-exclusiva-para-onibus-em-todo-o-es.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "00c8f1873899039478dd4a8f3e86452d4e3e3c020b05a042d133191ce8a6b32b",
       "candidate_id": "d62ecbf0-98ab-41f9-8684-f3c7bd46251a",
       "candidate_slug": "jorginho-mello",
@@ -172,54 +420,6 @@
       }
     },
     {
-      "id": "0901066220a31d891de9a990c8d605a1f175e615a200cbc7f3d72da0f6bd31dc",
-      "candidate_id": "62addad9-47ab-4362-bbe1-917f7e70c646",
-      "candidate_slug": "tayna-miessa",
-      "candidate_name": "Tayná Miessa",
-      "office": "Governador",
-      "uf": "PR",
-      "quote_text": "Só no primeiro semestre de 2026, a gente teve 55 feminicídios consumados e 84 tentativas, do qual a gente tem registro.",
-      "context": "Só no primeiro semestre de 2026, a gente teve 55 feminicídios consumados e 84 tentativas, do qual a gente tem registro.",
-      "event_context": "Entrevista de Tayná Miessa à BandNews Curitiba sobre violência contra mulheres e segurança pública.",
-      "event_type": "entrevista",
-      "occurred_on": "2026-09-02",
-      "publisher": "BandNews FM Curitiba",
-      "article_url": "https://bandnewsfmcuritiba.com/bandnews-curitiba-entrevista-tayna-miessa-candidata-ao-governo-confira/",
-      "article_title": "BandNews Curitiba entrevista Tayna Miessa, candidata ao governo; confira",
-      "article_published_at": "2026-09-03T13:52:02.000Z",
-      "observed_at": "2026-09-12T02:05:39.208Z",
-      "source_sha256": "1e8c3fb1f87ef64f6635da40e271d0fcf3bac561143143463d6378c4603a705e",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "BandNews Curitiba entrevista Tayna Miessa, candidata ao governo; confira",
-        "date_excerpt": "Na quarta-feira (02), concedeu entrevista à BandNews.",
-        "fetched_url": "https://bandnewsfmcuritiba.com/bandnews-curitiba-entrevista-tayna-miessa-candidata-ao-governo-confira/",
-        "method": "codex_source_review",
-        "supporting_sources": [
-          {
-            "url": "https://jornalcomunicacao.ufpr.br/confira-como-foi-a-semana-dos-candidatos-ao-governo-do-parana/",
-            "sha256": "6243fc57629f1b8ff5d042683abcd2a8f0c2037d33cea38a12ef0989f5b8acb4",
-            "excerpts": [
-              "Na quarta-feira (02), concedeu entrevista à BandNews."
-            ]
-          }
-        ]
-      },
-      "transcription": {
-        "kind": "automatic",
-        "media_url": "https://cdn.bandnewsfmcuritiba.com/band/wp-content/uploads/2026/09/09.03-ENTREVISTA-TAYNA-MIESSA-01.mp3",
-        "start_seconds": 0,
-        "end_seconds": 9.5,
-        "media_published_at": "2026-09-03T13:52:02.000Z",
-        "engine": "Whisper large-v3-turbo local; comparação entre passe integral e recorte. Ambos automáticos, sem revisão por escuta humana.",
-        "transcript_sha256": "ef8d4946544225cf740f95cd51d6731ffb3fd24b73a98485421f267d5a083808",
-        "verification_sha256": "ef8d4946544225cf740f95cd51d6731ffb3fd24b73a98485421f267d5a083808",
-        "audio_sha256": "41255bf7beed86b3fc9407e1c7ed7c18c7ac57654094c569faa1135af8e73b48",
-        "speaker_context": "O veículo identifica Tayná Miessa no título e atribui à candidata a resposta sobre violência contra mulheres imediatamente antes do primeiro áudio.",
-        "reviewed_context": true
-      }
-    },
-    {
       "id": "09d505c611cb2e3f7843002e9e240c4e02090a966760d700dc82d07fe683d47d",
       "candidate_id": "2ae1d014-8791-4eb4-817a-5ac85bf4fbd6",
       "candidate_slug": "ricardo-marques",
@@ -327,58 +527,6 @@
         "fetched_url": "https://www.metropoles.com/minas-gerais/mg-gabriel-diz-que-ben-mendes-tem-fixacao-nele-e-provoca-se-assuma",
         "method": "codex_source_review",
         "source_format": "web_text"
-      }
-    },
-    {
-      "id": "101d4f117e2ebd7829fde82fbcd82fccd879623a60686bd3f41ba7beecd16eb5",
-      "candidate_id": "4cbc3b25-075a-4d87-89bd-58d1e0b2a5f2",
-      "candidate_slug": "renan-santos",
-      "candidate_name": "Renan Santos",
-      "office": "Presidente",
-      "uf": null,
-      "quote_text": "Eu até soltei uns desabafos, sincericídios nos últimos dias, porque essa eleição mais estranha desde 2010",
-      "context": "O candidato à Presidência Renan Santos (Missão) afirmou nesta sexta-feira (11) que a eleição de 2026 é a campanha mais estranha que vê em muito tempo. \"Eu até soltei uns desabafos, sincericídios nos últimos dias, porque essa eleição mais estranha desde 2010\", afirmou durante sabatina promovida pelo UOL e Folha de S. Paulo.",
-      "event_context": "Sabatina promovida pelo UOL e Folha de S. Paulo.. O candidato à Presidência Renan Santos (Missão) afirmou nesta sexta-feira (11) que a eleição de 2026 é a campanha mais estranha que vê em muito tempo.. O candidato à Presidência Renan Santos (Missão) afirmou nesta sexta-feira (11) que a eleição de 2026 é a campanha mais estranha que vê em muito tempo.",
-      "event_type": "sabatina",
-      "occurred_on": "2026-09-11",
-      "publisher": "g1",
-      "article_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/09/11/renan-santos-sabatina-uol-folha.ghtml",
-      "article_title": "Renan Santos: Eleições 2026 são as mais estranhas desde 2010 | G1",
-      "article_published_at": "2026-09-11T13:56:44.046-03:00",
-      "observed_at": "2026-09-22T01:21:17.315Z",
-      "source_sha256": "25c7cbc9860f591f83c729672f4c8f1f16ef3d7118e1c798badec084b6f7c98a",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "O candidato à Presidência Renan Santos (Missão) afirmou nesta sexta-feira (11) que a eleição de 2026 é a campanha mais estranha que vê em muito tempo. \"Eu até soltei uns desabafos, sincericídios nos últimos dias, porque essa eleição mais estranha desde 2010\", afirmou durante sabatina promovida pelo UOL e Folha de S. Paulo.",
-        "date_excerpt": "O candidato à Presidência Renan Santos (Missão) afirmou nesta sexta-feira (11) que a eleição de 2026 é a campanha mais estranha que vê em muito tempo.",
-        "fetched_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/09/11/renan-santos-sabatina-uol-folha.ghtml",
-        "method": "codex_source_review"
-      }
-    },
-    {
-      "id": "115a8f820bca9e6b843b5d5d77b2a7ede8836841ad73b83e4102cf7e839dfbd4",
-      "candidate_id": "e79ddaf5-f86c-40c6-a54c-10535cb5514d",
-      "candidate_slug": "ricardo-ferraco",
-      "candidate_name": "Ricardo Ferraço",
-      "office": "Governador",
-      "uf": "ES",
-      "quote_text": "vou trabalhar todos os dias da minha vida até fazer do Espírito Santo um dos estados mais seguros do Brasil",
-      "context": "“Eu estou seguro e vou trabalhar todos os dias da minha vida até fazer do Espírito Santo um dos estados mais seguros do Brasil”, afirmou Ferraço, que é o atual governador do estado.",
-      "event_context": "Entrevista ao vivo no Gazeta Meio Dia.. Nesta segunda-feira (14), Ricardo Ferraço iniciou as sabatinas da TV Gazeta. O candidato ao governo do ES prometeu priorizar a segurança pública estadual.. Nesta segunda-feira (14), Ricardo Ferraço iniciou as sabatinas da TV Gazeta. O candidato ao governo do ES prometeu priorizar a segurança pública estadual.",
-      "event_type": "sabatina",
-      "occurred_on": "2026-09-14",
-      "publisher": "g1",
-      "article_url": "https://g1.globo.com/es/espirito-santo/eleicoes/2026/noticia/2026/09/14/ferraco-promete-colocar-o-es-entre-os-estados-mais-seguros-do-pais-e-defende-abertura-de-impeachment-de-alexandre-de-moraes.ghtml",
-      "article_title": "Ferraço promete colocar o ES entre os estados mais seguros do país | G1",
-      "article_published_at": "2026-09-14T15:48:43.413-03:00",
-      "observed_at": "2026-09-22T01:21:17.315Z",
-      "source_sha256": "fb746b669743d197693eef9e82b98d4b3d185ae4065850cd99962adef4063ff4",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "O candidato ao governo do Espírito Santo, Ricardo Ferraço (MDB), afirmou nesta segunda-feira (14), durante entrevista ao vivo no Gazeta Meio Dia, que pretende fazer do Espírito Santo \"um dos estados mais seguros do Brasil\". Ele também falou sobre entrega de hospitais e defendeu o impeachment de Alexandre de Moraes, do STF.",
-        "date_excerpt": "Nesta segunda-feira (14), Ricardo Ferraço iniciou as sabatinas da TV Gazeta. O candidato ao governo do ES prometeu priorizar a segurança pública estadual.",
-        "fetched_url": "https://g1.globo.com/es/espirito-santo/eleicoes/2026/noticia/2026/09/14/ferraco-promete-colocar-o-es-entre-os-estados-mais-seguros-do-pais-e-defende-abertura-de-impeachment-de-alexandre-de-moraes.ghtml",
-        "method": "codex_source_review"
       }
     },
     {
@@ -1028,58 +1176,6 @@
         "fetched_url": "https://www.metropoles.com/distrito-federal/professor-robson-quer-incluir-salario-de-governador-ao-orcamento-do-df",
         "method": "codex_source_review",
         "source_format": "web_text"
-      }
-    },
-    {
-      "id": "2a76ce5ddf132eed5931a00a574398010ad8afa38ef6f5f35553c84e214550d1",
-      "candidate_id": "c9c117e4-ea81-433d-b8c0-a01c8d831bae",
-      "candidate_slug": "dr-luisinho",
-      "candidate_name": "Dr. Luisinho",
-      "office": "Governador",
-      "uf": "AC",
-      "quote_text": "É a produção que gera emprego, é a produção que gera renda",
-      "context": "É a produção que gera emprego, é a produção que gera renda",
-      "event_context": "Sobre industrialização, emprego e renda no Acre, em resposta à pergunta sobre o eixo central de seu projeto de governo.",
-      "event_type": "entrevista",
-      "occurred_on": "2026-09-06",
-      "publisher": "O Rio Branco",
-      "article_url": "https://oriobranco.net/professor-dr-luisinho-e-daniela-paiva-detalham-propostas-para-o-governo-do-acre-no-programa-o-x-da-questao/",
-      "article_title": "Professor Dr. Luisinho e Daniela Paiva detalham propostas para o Governo do Acre no programa &#8216;O X da Questão&#8217;",
-      "article_published_at": "2026-09-07",
-      "observed_at": "2026-09-12T02:05:19.632Z",
-      "source_sha256": "533ddfd1a2d7dc46293c7e200adbfbebd3e196602bd53f6f510c9840fada9867",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "Na sequência, o programa recebeu a chapa majoritária do partido AGIR (36), representada pelo candidato ao Governo do Acre, Professor Dr. Luisinho, e por sua candidata a vice, Daniela Paiva.",
-        "date_excerpt": "No programa deste domingo (6), do O X da Questão, veiculado pela TV Rio Branco, canal 8.1, o apresentador José Alex abriu a transmissão com um editorial voltado à responsabilidade do voto e à viabilidade orçamentária das promessas de campanha.",
-        "fetched_url": "https://oriobranco.net/professor-dr-luisinho-e-daniela-paiva-detalham-propostas-para-o-governo-do-acre-no-programa-o-x-da-questao/",
-        "method": "codex_source_review",
-        "live_video": {
-          "url": "https://www.youtube.com/watch?v=8gF0bQhUfi4",
-          "channel_id": "UCsVYJNopaXURKDSF4x_ZNtQ",
-          "broadcast_on": "2026-09-06",
-          "release_timestamp": 1788748212,
-          "metadata_sha256": "7de1cade3a824824588f97ace567bb54e261ff82baef7c39b12d2e1605070466",
-          "captions_sha256": "04f43779ad54c903b5e0d07fbd434c3eb2883da37cf7ca9ad75556ace1e112c3",
-          "frame_sha256": "7d7f16e6c4f8f73a39a35b0a5afbac15f277afbca3608de254197e6a5857e039",
-          "frame_at_seconds": 1156,
-          "article_event_excerpt": "No programa deste domingo (6), do O X da Questão, veiculado pela TV Rio Branco, canal 8.1, o apresentador José Alex abriu a transmissão com um editorial voltado à responsabilidade do voto e à viabilidade orçamentária das promessas de campanha.",
-          "quote_excerpt": "É a produção que gera emprego, é a produção que gera renda",
-          "reviewed_live_on_air": true
-        }
-      },
-      "transcription": {
-        "kind": "automatic",
-        "media_url": "https://www.youtube.com/watch?v=8gF0bQhUfi4",
-        "start_seconds": 1147,
-        "end_seconds": 1171,
-        "media_published_at": "2026-09-07T02:30:12.000Z",
-        "engine": "Whisper large-v3-turbo local comparado à legenda automática do YouTube; sem revisão por escuta humana.",
-        "transcript_sha256": "04f43779ad54c903b5e0d07fbd434c3eb2883da37cf7ca9ad75556ace1e112c3",
-        "verification_sha256": "e9a5968a498938c234ec96659029d290ecc54e7c1358403e8537de317410c68f",
-        "audio_sha256": "abc40f2214105c11c7deda7c393dd167abb4d43714c4c1908cc51c0202229c5f",
-        "speaker_context": "O veículo identifica Dr. Luisinho e a vice no episódio. A apresentação e a pergunta dirigem a resposta ao candidato; o quadro em 1156 mostra o homem de terno respondendo sobre industrialização.",
-        "reviewed_context": true
       }
     },
     {
@@ -2258,71 +2354,6 @@
       }
     },
     {
-      "id": "644fb2051ae7ae5a6ec4514f70ce2dccb3559b36412b9a3d18974cf9b5f43b65",
-      "candidate_id": "30bca027-016e-4db1-a065-2081a62d71de",
-      "candidate_slug": "adriano-funileiro",
-      "candidate_name": "Adriano Funileiro",
-      "office": "Governador",
-      "uf": "PR",
-      "quote_text": "PCO, por exemplo, é pelo fim do vestibular.",
-      "context": "PCO, por exemplo, é pelo fim do vestibular.",
-      "event_context": "Na sabatina do Sindicato dos Metalúrgicos da Grande Curitiba, responde à pergunta sobre valorização dos profissionais da educação e defende o fim do vestibular.",
-      "event_type": "sabatina",
-      "occurred_on": "2026-08-31",
-      "publisher": "MetalTV (SMC)",
-      "article_url": "https://www.youtube.com/watch?v=vqKvJUvXAIU",
-      "article_title": "Ciclo de Entrevistas do SMC (Governo do Estado): Adriano Funileiro(PCO) - Tema: Educação",
-      "article_published_at": "2026-09-02T15:20:05.000Z",
-      "observed_at": "2026-09-12T15:22:57.209Z",
-      "source_sha256": "ec9d0fbf2dee99db08518a1ab50726576176636413b610af99b4b81be627871b",
-      "attribution": "source_context_review",
-      "collection_scope": {
-        "mode": "initial_backfill",
-        "from": "2026-08-16"
-      },
-      "review_evidence": {
-        "identity_excerpt": "Confira a fala do candidato ao Governo do Estado, Adriano Funileiro (PCO), sobre o tema Educação, no Ciclo de Entrevistas do SMC, realizado nesta segunda(31/08).",
-        "date_excerpt": "Confira a fala do candidato ao Governo do Estado, Adriano Funileiro (PCO), sobre o tema Educação, no Ciclo de Entrevistas do SMC, realizado nesta segunda(31/08).",
-        "fetched_url": "https://www.youtube.com/watch?v=vqKvJUvXAIU",
-        "method": "codex_source_review",
-        "supporting_sources": [
-          {
-            "url": "https://jornalcomunicacao.ufpr.br/confira-como-foi-a-semana-dos-candidatos-ao-governo-do-parana/",
-            "sha256": "cde551f78c32548c44c4da20c64c3203efa35b858c44a757a3626ebfc4f7348f",
-            "excerpts": [
-              "Teixeira esteve presente nesta segunda-feira (31), de modo remoto, na sabatina mediada pelo sindicato dos metalúrgicos de Curitiba."
-            ]
-          }
-        ],
-        "recorded_video": {
-          "url": "https://www.youtube.com/watch?v=vqKvJUvXAIU",
-          "channel_id": "UC2FHzKYg93IRVFAqF7pO3Xg",
-          "published_at": "2026-09-02T15:20:05.000Z",
-          "metadata_sha256": "a194ef9e778687d02425e8ae5bf1210baa01976ddea5064d117a3239ecd35eff",
-          "frame_sha256": "7705348e10cf5e03e1e85913a20a6b4fff0c5fb6acdb3922d9459857c0f85ae6",
-          "frame_at_seconds": 203,
-          "description_excerpt": "Confira a fala do candidato ao Governo do Estado, Adriano Funileiro (PCO), sobre o tema Educação, no Ciclo de Entrevistas do SMC, realizado nesta segunda(31/08).",
-          "publisher_identity_url": "https://jornalcomunicacao.ufpr.br/confira-como-foi-a-semana-dos-candidatos-ao-governo-do-parana/",
-          "date_basis": "explicit_recording_date",
-          "reviewed_context": true,
-          "recorded_on": "2026-08-31"
-        }
-      },
-      "transcription": {
-        "kind": "automatic",
-        "media_url": "https://www.youtube.com/watch?v=vqKvJUvXAIU",
-        "start_seconds": 195,
-        "end_seconds": 215,
-        "media_published_at": "2026-09-02T15:20:05.000Z",
-        "engine": "Whisper large-v3-turbo local comparado à legenda automática do YouTube; sem escuta humana.",
-        "transcript_sha256": "d53563dc2d46a200746e91f6889df800fbd35d1f84fcf5d30f1ee6123ec88ac3",
-        "verification_sha256": "7030ce1831c7f5b2e1626e6b6045266cb73371331b209831530ccc75f81ad44c",
-        "audio_sha256": "6e6068c4fb0377d08d46155ed476f14dedf4b55d1d87c8bc5fec159f6a5e058b",
-        "speaker_context": "Introdução do vídeo em 00:05–00:35 anuncia Adriano Funileiro do PCO e pergunta sobre educação. Aos 00:38 o apresentador anuncia candidato na tela e lhe passa a palavra. Frame203 mostra uma pessoa respondendo com identidade visual do Ciclo/Eleições2026 e intérprete. Não há nome escrito no frame203, por isso o vínculo depende também da introdução e dos metadados.",
-        "reviewed_context": true
-      }
-    },
-    {
       "id": "64b7e2e9db636c293d7e54c011644820beff47708558df7760b786f711f216fb",
       "candidate_id": "b423fdbb-b7b8-48c8-9236-efac480e7017",
       "candidate_slug": "indira-xavier",
@@ -2596,32 +2627,6 @@
         "fetched_url": "https://www.cnnbrasil.com.br/eleicoes/nao-acredito-em-ruptura-completa-com-gestao-de-zema-diz-simoes-a-cnn/",
         "method": "codex_source_review",
         "source_format": "web_text"
-      }
-    },
-    {
-      "id": "6929ccc9d85c6d33fb480d51ce7cee98af8f566c5eacc090a6ed3597d1769b05",
-      "candidate_id": "4f302760-52e7-461e-9a65-43d1aaa657df",
-      "candidate_slug": "expedito-mendonca",
-      "candidate_name": "Expedito Mendonça",
-      "office": "Governador",
-      "uf": "DF",
-      "quote_text": "Que a administração da saúde pública seja feita pelos próprios usuários, no âmbito do estado.",
-      "context": "“Que a administração da saúde pública seja feita pelos próprios usuários, no âmbito do estado. Defendemos recomposição salarial para os trabalhadores da educação, mais escolas, mais contratação e que os professores que hoje são temporários sejam incorporados ao quadro da fundação educacional\", destacou.",
-      "event_context": "Entrevista à TV da Câmara Legislativa após mobilização na Rodoviária.. Os discursos desta segunda-feira (14) destacaram propostas para a mobilidade urbana. Entre as medidas, estiveram em destaque a ampliação do Metrô e do VLT, e o transporte para o Entorno do DF.. Os discursos desta segunda-feira (14) destacaram propostas para a mobilidade urbana. Entre as medidas, estiveram em destaque a ampliação do Metrô e do VLT, e o transporte para o Entorno do DF.",
-      "event_type": "entrevista",
-      "occurred_on": "2026-09-14",
-      "publisher": "g1",
-      "article_url": "https://g1.globo.com/df/distrito-federal/eleicoes/2026/noticia/2026/09/14/candidatos-do-df-cumprem-agenda-na-rodoviaria-do-plano-e-defendem-propostas-para-mobilidade.ghtml",
-      "article_title": "Candidatos ao governo do DF prometem metrô no Entorno e VLT | G1",
-      "article_published_at": "2026-09-14T20:14:04.394-03:00",
-      "observed_at": "2026-09-22T01:27:39.160Z",
-      "source_sha256": "6a534b6531aa2731d3ad890311e5fa9f407000c133eea6b0f99c2142b454101c",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "Após a mobilização, Expedito Mendonça seguiu para a sede do partido, localizada no Conic, onde concedeu uma entrevista à TV da Câmara Legislativa. Durante a sabatina, o candidato reforçou a proposta voltada para a área de habitação e defendeu a força-tarefa para a construção das casas populares.",
-        "date_excerpt": "Os discursos desta segunda-feira (14) destacaram propostas para a mobilidade urbana. Entre as medidas, estiveram em destaque a ampliação do Metrô e do VLT, e o transporte para o Entorno do DF.",
-        "fetched_url": "https://g1.globo.com/df/distrito-federal/eleicoes/2026/noticia/2026/09/14/candidatos-do-df-cumprem-agenda-na-rodoviaria-do-plano-e-defendem-propostas-para-mobilidade.ghtml",
-        "method": "codex_source_review"
       }
     },
     {
@@ -3557,82 +3562,6 @@
         "date_excerpt": "nesta terça-feira (1º) o entrevistado no Band Cidade",
         "fetched_url": "https://www.tvbv.com.br/bruno-dias-do-pco-apresenta-propostas-para-santa-catarina-em-entrevista-a-tvbv/",
         "method": "codex_source_review"
-      }
-    },
-    {
-      "id": "88fd24c8cd6a48864598af3269c251aab7de885cc5d8e90014af8c9144987720",
-      "candidate_id": "2cb5e948-08ea-4a25-8124-6aaac3155c70",
-      "candidate_slug": "victor-assis",
-      "candidate_name": "Victor Assis",
-      "office": "Governador",
-      "uf": "PE",
-      "quote_text": "Temos uma crise política cada vez maior",
-      "context": "Temos uma crise política cada vez maior",
-      "event_context": "Pergunta do apresentador ao comandante Robinson Farinazzo na edição Análise Internacional nº 274, sobre a crise política na Ucrânia, em programa transmitido pelo Diário Causa Operária em 20/08/2026.",
-      "event_type": "debate",
-      "occurred_on": "2026-08-20",
-      "publisher": "Diário Causa Operária (jornal do PCO)",
-      "article_url": "https://causaoperaria.org.br/2026/rui-costa-pimenta-analisa-a-crescente-tensao-entre-turquia-e-israel/",
-      "article_title": "Rui Costa Pimenta analisa a crescente tensão entre Turquia e ‘Israel’",
-      "article_published_at": "2026-08-21T00:00:37-03:00",
-      "observed_at": "2026-09-12T18:37:24Z",
-      "source_sha256": "6e0dcdf2feb11d278df76d14466cc2234fb8cffebd71642a9559c7749a81eba6",
-      "attribution": "source_context_review",
-      "transcription": {
-        "kind": "automatic",
-        "media_url": "https://www.youtube.com/watch?v=w3CAsXoCxwM",
-        "start_seconds": 369,
-        "end_seconds": 399,
-        "media_published_at": "2026-08-20T15:59:41.000Z",
-        "engine": "Whisper tiny/base/small locais, comparados à legenda automática VTT do YouTube; faixa 251-2 Portuguese (BR) original; sem identificação por rosto/voz biométrica e sem escuta humana declarada.",
-        "transcript_sha256": "a4a5954ec4f88802420080305c203f09068639e6a7a9fd2ec80fc80dc19bc514",
-        "verification_sha256": "5de537e3bdc70c02f9d9aa1705b1c72f1da62499ac98e67eed46b8d16991f0af",
-        "audio_sha256": "e15e656fa222d48d5bc49e8324388bb7d826e629b3e9c25102c0fc56516807d5",
-        "speaker_context": "A VTT registra o apresentador anunciando Pedro Bulamac, Pedro saudando “Vittor” e a retomada imediata da pergunta pelo apresentador. A identificação civil como Victor Assis é apoiada pelo crédito recorrente do DCO em edição de 07/08; não se usou rosto ou voz biométrica.",
-        "reviewed_context": true,
-        "timestamp_range": "00:06:09-00:06:39"
-      },
-      "review_evidence": {
-        "identity_excerpt": "Victor Assis (PCO) O candidato participou, à tarde, de um programa do canal do YouTube “Diário Causa Operária”, junto ao presidente nacional do PCO, Rui Costa Pimenta.",
-        "date_excerpt": "O presidente nacional do Partido da Causa Operária (PCO), Rui Costa Pimenta, analisou nessa quinta-feira (20) a crise internacional, com destaque para a instabilidade no Oriente Médio, a guerra na Ucrânia e a deterioração dos regimes políticos na América Latina. No Análise Internacional , transmitido pelo Diário Causa Operária em conjunto com o canal Arte da Guerra, ele também tratou do bloqueio contra Cuba, do acordo entre o Tribunal Superior Eleitoral (TSE) e a OpenAI e da operação da Polícia Filial contra o PCO.",
-        "fetched_url": "https://causaoperaria.org.br/2026/rui-costa-pimenta-analisa-a-crescente-tensao-entre-turquia-e-israel/",
-        "method": "codex_source_review",
-        "live_video": {
-          "url": "https://www.youtube.com/watch?v=w3CAsXoCxwM",
-          "channel_id": "UCvhnOzbSDblzftMPLe8D4-A",
-          "broadcast_on": "2026-08-20",
-          "release_timestamp": 1787241581,
-          "metadata_sha256": "a73656adfe4d9f9bb8fb39dc7f10b31706d0e16b6757a6fefad6c254f21584fd",
-          "captions_sha256": "a4a5954ec4f88802420080305c203f09068639e6a7a9fd2ec80fc80dc19bc514",
-          "frame_sha256": "87868ca817b425cb15c3825574be072f2e91c6ef68d233a2914b67809618baed",
-          "frame_at_seconds": 375.5,
-          "article_event_excerpt": "O presidente nacional do Partido da Causa Operária (PCO), Rui Costa Pimenta, analisou nessa quinta-feira (20) a crise internacional, com destaque para a instabilidade no Oriente Médio, a guerra na Ucrânia e a deterioração dos regimes políticos na América Latina. No Análise Internacional , transmitido pelo Diário Causa Operária em conjunto com o canal Arte da Guerra, ele também tratou do bloqueio contra Cuba, do acordo entre o Tribunal Superior Eleitoral (TSE) e a OpenAI e da operação da Polícia Filial contra o PCO.",
-          "quote_excerpt": "Temos uma crise política cada vez maior",
-          "reviewed_live_on_air": true
-        },
-        "supporting_sources": [
-          {
-            "url": "https://g1.globo.com/pe/pernambuco/eleicoes/2026/noticia/2026/08/20/porta-a-porta-entrevistas-e-sabatina-como-foi-o-5o-dia-de-campanha-dos-candidatos-ao-governo-de-pernambuco.ghtml",
-            "sha256": "0fe3deae279b0cb2236636924b361b19dde0694c42276a0674821b506f580a46",
-            "excerpts": [
-              "Victor Assis (PCO) O candidato participou, à tarde, de um programa do canal do YouTube “Diário Causa Operária”, junto ao presidente nacional do PCO, Rui Costa Pimenta.",
-              "Nesta quinta-feira (20), cinco dos oito candidatos ao governo de Pernambuco realizaram atos públicos de campanha. Entre as atividades, estavam entrevistas, porta a porta, sabatina e presença em eventos."
-            ],
-            "source_format": "web_text"
-          },
-          {
-            "url": "https://causaoperaria.org.br/2026/rui-pimenta-e-uma-guerra-da-otan-contra-a-russia/",
-            "sha256": "3af16691440f234a7fa11cdf138eb0bae083cbee8cea0ed86963e4a4570ad54d",
-            "excerpts": [
-              "Transmitido todas as quintas-feiras, às 12h30, pelo canal do Diário Causa Operária no YouTube, em parceria com o canal Arte da Guerra, o programa também contou com a participação do comandante Robinson Farinazzo e foi apresentado por João Jorge Pimenta e Victor Assis."
-            ],
-            "source_format": "web_text"
-          }
-        ]
-      },
-      "collection_scope": {
-        "mode": "initial_backfill",
-        "from": "2026-08-16"
       }
     },
     {
@@ -5005,86 +4934,6 @@
       }
     },
     {
-      "id": "c8a62c0e959cb6ea6d54f760fe1bda6a3d1e2f0953395c8a164fc396bfb35178",
-      "candidate_id": "8d4eb423-5fa3-401f-883d-d70f4c0c64d8",
-      "candidate_slug": "pazolini",
-      "candidate_name": "Pazolini",
-      "office": "Governador",
-      "uf": "ES",
-      "quote_text": "Só com a extinção de cargos, nós economizamos mais de R$ 150 milhões.",
-      "context": "“Só com a extinção de cargos, nós economizamos mais de R$ 150 milhões. Esse foi o dinheiro que nós usamos na saúde”, afirmou.",
-      "event_context": "Entrevista ao vivo no Gazeta Meio Dia.. O candidato ao governo do Espírito Santo Lorenzo Pazolini (Republicanos) prometeu, durante entrevista ao vivo no Gazeta Meio Dia nesta terça-feira (15), extinguir cargos comissionados caso seja eleito e afirmou que pretende levar para todos o estado medidas adotadas durante sua gestão como prefeito de Vitória.. O candidato ao governo do Espírito Santo Lorenzo Pazolini (Republicanos) prometeu, durante entrevista ao vivo no Gazeta Meio Dia nesta terça-feira (15), extinguir cargos comissionados caso seja eleito e afirmou que pretende levar para todos o estado medidas adotadas durante sua gestão como prefeito de Vitória.",
-      "event_type": "entrevista",
-      "occurred_on": "2026-09-15",
-      "publisher": "g1",
-      "article_url": "https://g1.globo.com/es/espirito-santo/eleicoes/2026/noticia/2026/09/15/pazolini-promete-extinguir-cargos-comissionados-e-ampliar-tempo-integral-nas-escolas-mas-nao-detalha-custo-de-propostas-para-o-es.ghtml",
-      "article_title": "Pazolini promete extinguir cargos comissionados, mas não cita custos | G1",
-      "article_published_at": "2026-09-15T14:32:15.575-03:00",
-      "observed_at": "2026-09-22T01:22:50.938Z",
-      "source_sha256": "6fe4c88ff48c48de46ea42d143768faa89436a63beae07e438db8dbe210f6e1d",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "O candidato ao governo do Espírito Santo Lorenzo Pazolini (Republicanos) prometeu, durante entrevista ao vivo no Gazeta Meio Dia nesta terça-feira (15), extinguir cargos comissionados caso seja eleito e afirmou que pretende levar para todos o estado medidas adotadas durante sua gestão como prefeito de Vitória.",
-        "date_excerpt": "O candidato ao governo do Espírito Santo Lorenzo Pazolini (Republicanos) prometeu, durante entrevista ao vivo no Gazeta Meio Dia nesta terça-feira (15), extinguir cargos comissionados caso seja eleito e afirmou que pretende levar para todos o estado medidas adotadas durante sua gestão como prefeito de Vitória.",
-        "fetched_url": "https://g1.globo.com/es/espirito-santo/eleicoes/2026/noticia/2026/09/15/pazolini-promete-extinguir-cargos-comissionados-e-ampliar-tempo-integral-nas-escolas-mas-nao-detalha-custo-de-propostas-para-o-es.ghtml",
-        "method": "codex_source_review"
-      }
-    },
-    {
-      "id": "ca0654ce892bc27b35a571bbb7cd0f6d60da1471355e4024805157cadcfb5442",
-      "candidate_id": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
-      "candidate_slug": "lula",
-      "candidate_name": "Lula",
-      "office": "Presidente",
-      "uf": null,
-      "quote_text": "Eu estou discutindo o papel dessa jogatina eletrônica através das redes digitais, das bets. Está levando muita gente a se endividar",
-      "context": "“Eu estou discutindo o papel dessa jogatina eletrônica através das redes digitais, das bets. Está levando muita gente a se endividar”, afirmou.",
-      "event_context": "O presidente Luiz Inácio Lula da Silva (PT) afirmou neste sábado (19.set.2026), em Florianópolis (SC), que pretende acabar com as bets no Brasil. Durante ato de campanha, disse que as apostas eletrônicas estão levando pessoas ao endividamento.. neste sábado (19.set.2026)",
-      "event_type": "declaracao",
-      "occurred_on": "2026-09-19",
-      "publisher": "Poder360",
-      "article_url": "https://www.poder360.com.br/poder-eleicoes-2026/em-sc-lula-reforca-que-vai-acabar-com-as-bets/",
-      "article_title": "Em SC, Lula reforça que vai acabar com as bets",
-      "article_published_at": "2026-09-19T15:48:11+00:00",
-      "observed_at": "2026-09-22T11:36:01.050Z",
-      "source_sha256": "a56eb34653bc706a30a1ce2c6095bc19d569edd1069fee5108ca6531e0c02cc8",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "declaration_context_excerpt": "Durante ato de campanha, disse que as apostas eletrônicas estão levando pessoas ao endividamento.",
-        "identity_excerpt": "O presidente Luiz Inácio Lula da Silva (PT) afirmou neste sábado (19.set.2026), em Florianópolis (SC), que pretende acabar com as bets no Brasil. Durante ato de campanha, disse que as apostas eletrônicas estão levando pessoas ao endividamento.",
-        "date_excerpt": "neste sábado (19.set.2026)",
-        "fetched_url": "https://www.poder360.com.br/poder-eleicoes-2026/em-sc-lula-reforca-que-vai-acabar-com-as-bets/",
-        "method": "codex_source_review",
-        "source_format": "web_text"
-      }
-    },
-    {
-      "id": "cbf97600853d9b57d14e8bfb498b4caf6d749d88779c951f1852d39dc46f2898",
-      "candidate_id": "3b825b8d-32fd-42d2-af6e-6caf1135a3e3",
-      "candidate_slug": "soldado-sampaio",
-      "candidate_name": "Soldado Sampaio",
-      "office": "Governador",
-      "uf": "RR",
-      "quote_text": "Nós vamos fazer um novo concurso na área da educação",
-      "context": "“Nós vamos fazer um novo concurso na área da educação, inclusive com prova de título para que a gente possa reconhecer esses professores seletivados com sua experiência”, afirmou.",
-      "event_context": "A última entrevista da série de sabatinas com candidatos ao Governo de Roraima, no Agenda da Semana.. A última entrevista da série de sabatinas com candidatos ao Governo de Roraima, no Agenda da Semana, recebeu nesse domingo (20), o governador Soldado Sampaio (Republicanos), que busca reeleição. Entre as medidas defendidas estão a ampliação do atendimento médico, investimentos na agricultura familiar, incentivo à industrialização, construção de moradias e ações de combate à violência contra a mulher.. A última entrevista da série de sabatinas com candidatos ao Governo de Roraima, no Agenda da Semana, recebeu nesse domingo (20), o governador Soldado Sampaio (Republicanos), que busca reeleição. Entre as medidas defendidas estão a ampliação do atendimento médico, investimentos na agricultura familiar, incentivo à industrialização, construção de moradias e ações de combate à violência contra a mulher.",
-      "event_type": "sabatina",
-      "occurred_on": "2026-09-20",
-      "publisher": "Folha BV",
-      "article_url": "https://www.folhabv.com.br/politica/soldado-sampaio-defende-ampliacao-da-saude-incentivo-ao-agronegocio-e-combate-ao-crime/",
-      "article_title": "Soldado Sampaio defende ampliação da saúde, incentivo ao agronegócio e combate ao crime",
-      "article_published_at": "2026-09-21T10:00:00+00:00",
-      "observed_at": "2026-09-22T01:22:50.938Z",
-      "source_sha256": "1e250b1e0dad19a97758595e6a8e57e1febf7b4e9ebb50d232f185a6e1f993f6",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "A última entrevista da série de sabatinas com candidatos ao Governo de Roraima, no Agenda da Semana, recebeu nesse domingo (20), o governador Soldado Sampaio (Republicanos), que busca reeleição. Entre as medidas defendidas estão a ampliação do atendimento médico, investimentos na agricultura familiar, incentivo à industrialização, construção de moradias e ações de combate à violência contra a mulher.",
-        "date_excerpt": "A última entrevista da série de sabatinas com candidatos ao Governo de Roraima, no Agenda da Semana, recebeu nesse domingo (20), o governador Soldado Sampaio (Republicanos), que busca reeleição. Entre as medidas defendidas estão a ampliação do atendimento médico, investimentos na agricultura familiar, incentivo à industrialização, construção de moradias e ações de combate à violência contra a mulher.",
-        "fetched_url": "https://www.folhabv.com.br/politica/soldado-sampaio-defende-ampliacao-da-saude-incentivo-ao-agronegocio-e-combate-ao-crime/",
-        "method": "codex_source_review"
-      }
-    },
-    {
       "id": "cca47497285edece6e69a25e5d4d0154e74b16a592e170f2bb059a4fdad479f7",
       "candidate_id": "e9cf3bd3-4ab9-4928-b652-558c5e8d8ce4",
       "candidate_slug": "adailton-furia",
@@ -5455,36 +5304,6 @@
       }
     },
     {
-      "id": "d56357034ee69c7c4829c45c1e5d92559be5aba2fc05c79f1a65e4d2da85ee63",
-      "candidate_id": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
-      "candidate_slug": "ronaldo-caiado",
-      "candidate_name": "Ronaldo Caiado",
-      "office": "Presidente",
-      "uf": null,
-      "quote_text": "eu não sou um personagem criado para disputar uma eleição",
-      "context": "\"No meu currículo, tenho muito a mostrar e nada a esconder. A minha apresentação à população não é só a carteira de identidade. Eu tenho um orgulho muito grande do meu nome, do meu sobrenome, mas eu construí a minha vida política. Eu não preciso ter que estar vinculado a A ou B. Eu tenho autonomia, eu não sou um personagem criado para disputar uma eleição\", disse Caiado.",
-      "event_context": "Sabatina à Folha de S.Paulo e ao UOL.. O candidato à Presidência Ronaldo Caiado (PSD) afirmou nesta sexta-feira (4) que, diferentemente de Flávio Bolsonaro, não é um “personagem criado para disputar uma eleição”.. O candidato à Presidência Ronaldo Caiado (PSD) afirmou nesta sexta-feira (4) que, diferentemente de Flávio Bolsonaro, não é um “personagem criado para disputar uma eleição”.",
-      "event_type": "sabatina",
-      "occurred_on": "2026-09-04",
-      "publisher": "g1",
-      "article_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/09/04/caiado-flavio-stf.ghtml",
-      "article_title": "Ronaldo Caiado critica Flávio Bolsonaro e defende reformas no STF | G1",
-      "article_published_at": "2026-09-04T16:33:46.805-03:00",
-      "observed_at": "2026-09-22T01:27:39.160Z",
-      "source_sha256": "fe6814010b6fa5d5992fb2d13a32454a360ec4edbe2b3e268895085a84c27e04",
-      "collection_scope": {
-        "mode": "initial_backfill",
-        "from": "2026-08-16"
-      },
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "O candidato à Presidência Ronaldo Caiado (PSD) afirmou nesta sexta-feira (4) que, diferentemente de Flávio Bolsonaro, não é um “personagem criado para disputar uma eleição”. Em sabatina à Folha de S.Paulo e ao UOL, o candidato também comentou o avanço de Augusto Cury (Avante), que o ultrapassou nas pesquisas eleitorais divulgadas nesta semana e se consolidou em terceiro lugar.",
-        "date_excerpt": "O candidato à Presidência Ronaldo Caiado (PSD) afirmou nesta sexta-feira (4) que, diferentemente de Flávio Bolsonaro, não é um “personagem criado para disputar uma eleição”.",
-        "fetched_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/09/04/caiado-flavio-stf.ghtml",
-        "method": "codex_source_review"
-      }
-    },
-    {
       "id": "d611a4437a2dfde52b2d203ed9ed80cab89bb3cfeca5a2a44e4d9bbda535f5bf",
       "candidate_id": "d80384f6-147b-40ef-8fa5-ae0b2be5a1f5",
       "candidate_slug": "daniel-vilela",
@@ -5540,50 +5359,6 @@
         "fetched_url": "https://www.metropoles.com/distrito-federal/candidato-ao-gdf-elisson-ferreira-quer-reduzir-numero-de-secretarias",
         "method": "codex_source_review",
         "source_format": "web_text"
-      }
-    },
-    {
-      "id": "da00f9b294349172ac348988355317b2dfe0d4b3b7c29579effdf21f720bddd3",
-      "candidate_id": "ce3b18ad-dcc9-4275-b831-66ee24422714",
-      "candidate_slug": "danilo-pinheiro",
-      "candidate_name": "Danilo da Silva",
-      "office": "Governador",
-      "uf": "GO",
-      "quote_text": "É uma luta diária de panfletagem, militância, informação política",
-      "context": "A campanha, ressaltou, faz parte da atividade desenvolvida pelo partido durante todo o ano. “É uma luta diária de panfletagem, militância, informação política”, declarou.",
-      "event_context": "Declaração durante ato de campanha em Brasília, publicada pelo jornal do próprio PCO.. O candidato do Partido da Causa Operária (PCO) ao governo de Goiás, Danilo Pinheiro, denunciou a perseguição política contra o partido durante o ato de lançamento das candidaturas realizado neste sábado (22), em Brasília.",
-      "event_type": "declaracao",
-      "occurred_on": "2026-08-22",
-      "publisher": "Diário Causa Operária (jornal do PCO)",
-      "article_url": "https://causaoperaria.org.br/2026/danilo-pinheiro-pco-nao-teme-o-mossad-o-stf-nem-a-policia-federal/",
-      "article_title": "Danilo Pinheiro: ‘PCO não teme o Mossad, o STF nem a Polícia Federal’",
-      "article_published_at": "2026-08-24",
-      "observed_at": "2026-09-12T15:18:15.811Z",
-      "source_sha256": "d8109f509065a949c6c6c8dd664e0dca86cee85a83d8b8d45d460ddafe2b97f4",
-      "collection_scope": {
-        "mode": "initial_backfill",
-        "from": "2026-08-16"
-      },
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "declaration_context_excerpt": "O candidato do Partido da Causa Operária (PCO) ao governo de Goiás, Danilo Pinheiro, denunciou a perseguição política contra o partido durante o ato de lançamento das candidaturas realizado neste sábado (22), em Brasília.",
-        "identity_excerpt": "O candidato do Partido da Causa Operária (PCO) ao governo de Goiás, Danilo Pinheiro, denunciou a perseguição política contra o partido durante o ato de lançamento das candidaturas realizado neste sábado (22), em Brasília.",
-        "date_excerpt": "O candidato do Partido da Causa Operária (PCO) ao governo de Goiás, Danilo Pinheiro, denunciou a perseguição política contra o partido durante o ato de lançamento das candidaturas realizado neste sábado (22), em Brasília.",
-        "fetched_url": "https://causaoperaria.org.br/2026/danilo-pinheiro-pco-nao-teme-o-mossad-o-stf-nem-a-policia-federal/",
-        "method": "codex_source_review",
-        "source_format": "web_text",
-        "supporting_sources": [
-          {
-            "url": "https://www.gazetadopovo.com.br/eleicoes/2026/candidatos/go/governador/danilo-pinheiro-pco-29/",
-            "sha256": "89355be88441a81b851fdd0483892bb9d2bdb170b5563c459ff6c994dcc15c3b",
-            "excerpts": [
-              "Danilo Pinheiro Evangelista da Silva tem 43 anos de idade, declarou ao TSE ser casado(a), tem o grau de instrução ensino médio completo e sua ocupação anterior é \"técnico de eletricidade, eletrônica e telecomunicações\".",
-              "Danilo Pinheiro Evangelista da Silva",
-              "Danilo da Silva (número de urna 29) é candidato a Governador em GOIÁS nas Eleições 2026 pelo PARTIDO DA CAUSA OPERÁRIA. Nasceu em São Luís (MA)."
-            ],
-            "source_format": "web_text"
-          }
-        ]
       }
     },
     {
@@ -5645,42 +5420,6 @@
       }
     },
     {
-      "id": "df3b314a4c73c4f168b08c74c348c04d43481ac749c59cd01af84d05990c24f5",
-      "candidate_id": "022d27e8-2832-4156-9bc7-7eac817ac901",
-      "candidate_slug": "raquel-lyra",
-      "candidate_name": "Raquel Lyra",
-      "office": "Governador",
-      "uf": "PE",
-      "quote_text": "Esse assunto não compete a mim. Preciso ter muito foco naquilo que é minha competência, minha responsabilidade",
-      "context": "\"Esse assunto não compete a mim. Preciso ter muito foco naquilo que é minha competência, minha responsabilidade\", disse.",
-      "event_context": "Sabatina Folha/UOL de 3 de setembro de 2026. Questionada sobre a crise no STF (Supremo Tribunal Federal) relacionada ao caso do Banco Master, ela afirmou ver com preocupação o que tem acontecido no país, mas não disse se defende o impeachment do ministro Alexandre de Moraes.",
-      "event_type": "sabatina",
-      "occurred_on": "2026-09-03",
-      "publisher": "Folha de S.Paulo",
-      "article_url": "https://www1.folha.uol.com.br/poder/2026/09/raquel-lyra-psd-participa-de-sabatina-folhauol-nesta-quinta-feira.shtml",
-      "article_title": "Raquel Lyra diz em sabatina Folha/UOL receber apoio de petistas, mas não declara voto a presidente",
-      "article_published_at": "2026-09-02T23:00:00Z",
-      "article_modified_at": "2026-09-03T13:58:00Z",
-      "observed_at": "2026-09-22T01:38:58.171Z",
-      "source_sha256": "94a395747c1d9616321a7a7447488b9587059f1e06418cc4f263db1ee96f84f8",
-      "collection_scope": {
-        "mode": "initial_backfill",
-        "from": "2026-08-16"
-      },
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "A governadora de Pernambuco, Raquel Lyra (PSD), candidata à reeleição",
-        "date_excerpt": "afirmou nesta quinta-feira (3)",
-        "fetched_url": "https://www1.folha.uol.com.br/poder/2026/09/raquel-lyra-psd-participa-de-sabatina-folhauol-nesta-quinta-feira.shtml",
-        "method": "codex_source_review",
-        "article_metadata": {
-          "url": "https://www1.folha.uol.com.br/poder/2026/09/raquel-lyra-psd-participa-de-sabatina-folhauol-nesta-quinta-feira.shtml",
-          "datePublished": "2026-09-02T23:00:00Z",
-          "dateModified": "2026-09-03T13:58:00Z"
-        }
-      }
-    },
-    {
       "id": "e02acf4b784b7c1d94d17efa31bc6e0b750a48ee74a71500939b16ffd1a89bb0",
       "candidate_id": "febc4a12-c352-448a-99dc-671c77e8d57d",
       "candidate_slug": "wellington-fagundes",
@@ -5733,32 +5472,6 @@
         "identity_excerpt": "o candidato Dr. Helton Monteiro, do PSOL",
         "date_excerpt": "nesta terça-feira (18)",
         "fetched_url": "https://inovenoticias.com.br/helton-monteiro-abre-rodada-de-entrevistas-do-inove-noticias-e-defende-gestao-publica-para-saude-e-servicos-essenciais/",
-        "method": "codex_source_review"
-      }
-    },
-    {
-      "id": "e5d3642c65a47947ba0bb3b77b9386c5f8a7ca0f1bc3a0216ab99086e21f1222",
-      "candidate_id": "91dc9c87-6811-494c-8c51-1bccfdf08c29",
-      "candidate_slug": "celina-leao",
-      "candidate_name": "Celina Leao",
-      "office": "Governador",
-      "uf": "DF",
-      "quote_text": "Eu era vice do Ibaneis, eu não era governadora do Ibaneis.",
-      "context": "\"Eu era vice do Ibaneis, eu não era governadora do Ibaneis. Por mais que você tenha uma autonomia de representá-lo, você não tem uma autonomia de tomar decisão sobre aquilo que é a sua prioridade\", falou.",
-      "event_context": "Sabatina no DF1 com Celina Leão.. Celina Leão (PP), candidata ao governo do Distrito Federal, passou por sabatina no DF1, na manhã desta terça-feira (15).. Celina Leão (PP), candidata ao governo do Distrito Federal, passou por sabatina no DF1, na manhã desta terça-feira (15).",
-      "event_type": "sabatina",
-      "occurred_on": "2026-09-15",
-      "publisher": "g1",
-      "article_url": "https://g1.globo.com/df/distrito-federal/eleicoes/2026/noticia/2026/09/15/veja-como-foi-sabatina-da-globo-com-celina-leao-candidata-ao-governo-do-df.ghtml",
-      "article_title": "Celina Leão minimiza responsabilidade como vice e descarta quebra do BRB em sabatina na Globo | G1",
-      "article_published_at": "2026-09-15T12:49:29.283-03:00",
-      "observed_at": "2026-09-22T01:27:39.160Z",
-      "source_sha256": "f45f286c49283c7ca51713d3e30e07b4a4011a71caf8cbcd15fb8a18beaf6d01",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "Celina Leão (PP), candidata ao governo do Distrito Federal, passou por sabatina no DF1, na manhã desta terça-feira (15).",
-        "date_excerpt": "Celina Leão (PP), candidata ao governo do Distrito Federal, passou por sabatina no DF1, na manhã desta terça-feira (15).",
-        "fetched_url": "https://g1.globo.com/df/distrito-federal/eleicoes/2026/noticia/2026/09/15/veja-como-foi-sabatina-da-globo-com-celina-leao-candidata-ao-governo-do-df.ghtml",
         "method": "codex_source_review"
       }
     },
@@ -5841,58 +5554,6 @@
       }
     },
     {
-      "id": "eaf5ebcece955eff996231ca66bffafdd48f82ca1b50252d4a0fd86adbb8c024",
-      "candidate_id": "d334a750-1693-46c9-bdee-de3b3c455a05",
-      "candidate_slug": "rosi-aires",
-      "candidate_name": "Rosi Aires",
-      "office": "Governador",
-      "uf": "RR",
-      "quote_text": "a parte que é fundamental, que não está sendo cumprida, que é as políticas públicas chegarem realmente nesses espaços",
-      "context": "a parte que é fundamental, que não está sendo cumprida, que é as políticas públicas chegarem realmente nesses espaços",
-      "event_context": "Em resposta sobre atendimento de saúde, Rosi fala de sua atuação no CAPS e do acesso a políticas públicas nesses serviços.",
-      "event_type": "entrevista",
-      "occurred_on": "2026-09-03",
-      "publisher": "Rádio Monte Roraima FM",
-      "article_url": "https://www.monteroraimafm.com.br/noticia/rosi-aires-participa-nesta-quinta-feira-de-entrevista-ao-vivo-na-radio-monte-roraima-fm",
-      "article_title": "Rosi Aires participa nesta quinta-feira de entrevista ao vivo na Rádio Monte Roraima FM",
-      "article_published_at": "2026-09-03",
-      "observed_at": "2026-09-12T02:05:19.621Z",
-      "source_sha256": "8eb2386227e6c686f6c5f7d6ef432d9de00b1cfd706ea6c858685533ab94beca",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "A candidata ao Governo de Roraima pela Federação PSOL-Rede, Rosi Aires, participa nesta quinta-feira (3) de uma entrevista ao vivo na Rádio Monte Roraima FM.",
-        "date_excerpt": "A candidata ao Governo de Roraima pela Federação PSOL-Rede, Rosi Aires, participa nesta quinta-feira (3) de uma entrevista ao vivo na Rádio Monte Roraima FM.",
-        "fetched_url": "https://www.monteroraimafm.com.br/noticia/rosi-aires-participa-nesta-quinta-feira-de-entrevista-ao-vivo-na-radio-monte-roraima-fm",
-        "method": "codex_source_review",
-        "live_video": {
-          "url": "https://www.youtube.com/watch?v=UQ0DzWNauhg",
-          "channel_id": "UCic6Oio9KDhXYeyjl0XPetA",
-          "broadcast_on": "2026-09-03",
-          "release_timestamp": 1788451039,
-          "metadata_sha256": "3a85645bc44cd822fe47492ba5054db3bcc008fb471b8dff385ea387f7eb9e75",
-          "captions_sha256": "2e06b25811d531fbc77a75b679202b2a4753393173c0a96079cfeac4749fc24a",
-          "frame_sha256": "4a80621f71ec8fadaa110c462ef490c8fd1fa3f2ffc246b65653d1dbd64d75d7",
-          "frame_at_seconds": 1520,
-          "article_event_excerpt": "A candidata ao Governo de Roraima pela Federação PSOL-Rede, Rosi Aires, participa nesta quinta-feira (3) de uma entrevista ao vivo na Rádio Monte Roraima FM.",
-          "quote_excerpt": "a parte que é fundamental, que não está sendo cumprida, que é as políticas públicas chegarem realmente nesses espaços",
-          "reviewed_live_on_air": true
-        }
-      },
-      "transcription": {
-        "kind": "automatic",
-        "media_url": "https://www.youtube.com/watch?v=UQ0DzWNauhg",
-        "start_seconds": 1495,
-        "end_seconds": 1530,
-        "media_published_at": "2026-09-03T15:57:19.000Z",
-        "engine": "Whisper large-v3-turbo local comparado à legenda automática do YouTube; sem revisão por escuta humana.",
-        "transcript_sha256": "2e06b25811d531fbc77a75b679202b2a4753393173c0a96079cfeac4749fc24a",
-        "verification_sha256": "9a0498bdca163f1a00db1bcac26cb310db3aacdef7e3098c0bbcfe91a6af5daf",
-        "audio_sha256": "2c40c6ec109c0aa73f565d4f479e68e697e80c1fb62a4cb0330a85bf811f5ce9",
-        "speaker_context": "O título do episódio oficial identifica Rosi Aires. Após a pergunta sobre saúde, a entrevistada à esquerda responde sobre seu trabalho no CAPS; o quadro mostra a resposta no instante 1520.",
-        "reviewed_context": true
-      }
-    },
-    {
       "id": "eb36061f935def086231954fdb72d30db9bf86551e7aee16656d2e1c5cc1ae67",
       "candidate_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
       "candidate_slug": "renan-filho",
@@ -5916,70 +5577,6 @@
         "date_excerpt": "participou nesta sexta-feira (04) da sabatina",
         "fetched_url": "https://www.br104.com.br/alagoas/eleicoes-2026/renan-filho-propostas-sabatina-tv-gazeta-governo-alagoas/",
         "method": "codex_source_review"
-      }
-    },
-    {
-      "id": "ed5e8cda450445b6ce4be7a951ac199d48d48904d112e677811a3b012c86d3c5",
-      "candidate_id": "672dc346-45fe-4cee-8386-9645e6a5d2b7",
-      "candidate_slug": "marcos-reategui",
-      "candidate_name": "Marcos Reategui",
-      "office": "Governador",
-      "uf": "AP",
-      "quote_text": "Nós precisamos valorizar o nosso jovem.",
-      "context": "Nós precisamos valorizar o nosso jovem.",
-      "event_context": "Em entrevista ao The Papo, responde sobre oportunidades de trabalho e qualificação para jovens. A descrição situa a conversa na semana da publicação; o dia exato não foi informado.",
-      "event_type": "entrevista",
-      "occurred_on": null,
-      "occurred_between": {
-        "from": "2026-08-30",
-        "to": "2026-09-01"
-      },
-      "publisher": "The Papo com André Silva",
-      "article_url": "https://www.youtube.com/watch?v=ZpJhiwE0qr0",
-      "article_title": "ELEIÇÕES 2026:\" Amapá precisa gerar emprego para os JOVENS\" - Marcos Reateg The Papo na Eleição 2026",
-      "article_published_at": "2026-09-01T23:23:15.000Z",
-      "observed_at": "2026-09-12T02:12:26.208Z",
-      "source_sha256": "af1691cbcaff15e54ac9bd7d0d112f87f4f5dcf712b88b99281f52735a18a57b",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "✅Nesta semana, o Papo com André Silva recebeu Marcos Reategui, o terceiro candidato ao Governo do Estado do Amapá.",
-        "date_excerpt": "✅Nesta semana, o Papo com André Silva recebeu Marcos Reategui, o terceiro candidato ao Governo do Estado do Amapá.",
-        "fetched_url": "https://www.youtube.com/watch?v=ZpJhiwE0qr0",
-        "method": "codex_source_review",
-        "supporting_sources": [
-          {
-            "url": "https://selesnafes.com/2024/05/no-the-papo-especialista-afirma-que-ia-nao-tem-mais-volta/",
-            "sha256": "8c997a68ea2bf5c6be54d8489074ec21c6000f2f267fc773269c63562e04c2a1",
-            "excerpts": [
-              "O analista de sistemas Gilberto Almeida é convidado desta semana no programa The Papo, do jornalista André Silva, de Macapá."
-            ]
-          }
-        ],
-        "recorded_video": {
-          "url": "https://www.youtube.com/watch?v=ZpJhiwE0qr0",
-          "channel_id": "UCtmjIizIEQ7ifU9TYVkcgUg",
-          "published_at": "2026-09-01T23:23:15.000Z",
-          "metadata_sha256": "01ec01fb8070c23cab74c8d6b7d7a65947901b01c0a57879c6b8ff105689350e",
-          "frame_sha256": "2d7241c5780c987ce8d3c42a024cb68ab6a56fd2fd633b204fc731ee70b7fd31",
-          "frame_at_seconds": 2478,
-          "description_excerpt": "✅Nesta semana, o Papo com André Silva recebeu Marcos Reategui, o terceiro candidato ao Governo do Estado do Amapá.",
-          "publisher_identity_url": "https://selesnafes.com/2024/05/no-the-papo-especialista-afirma-que-ia-nao-tem-mais-volta/",
-          "date_basis": "publication_week_description",
-          "reviewed_context": true
-        }
-      },
-      "transcription": {
-        "kind": "automatic",
-        "media_url": "https://www.youtube.com/watch?v=ZpJhiwE0qr0",
-        "start_seconds": 2460,
-        "end_seconds": 2510,
-        "media_published_at": "2026-09-01T23:23:15.000Z",
-        "engine": "Whisper large-v3-turbo local comparado à legenda automática do YouTube; sem revisão por escuta humana.",
-        "transcript_sha256": "50c0c75fc053105a0ec4fa4f1d12c77d6205763440ca2fbbaa9d2c57f135e1c4",
-        "verification_sha256": "a6a1cf95a6a2e6b34d8cabfd3895df4fbe63458f4dc75a685a7e314dad250f1a",
-        "audio_sha256": "1868b2bdd0ba09eaa3238679c745f3c3abad7dea1742d225ffb9842d440b571a",
-        "speaker_context": "O episódio e sua descrição identificam Marcos Reátegui como candidato ao governo. No quadro em 41:18, ele responde à pergunta de André Silva sobre juventude, trabalho e qualificação.",
-        "reviewed_context": true
       }
     },
     {
@@ -6072,32 +5669,6 @@
             ]
           }
         ]
-      }
-    },
-    {
-      "id": "f2ec087332d6cadf48a99a12451921177c77b67da811daa7dd76cd0e8f85c40b",
-      "candidate_id": "270a8b55-145a-400f-b371-38809653eea8",
-      "candidate_slug": "helder-salomao",
-      "candidate_name": "Helder Salomão",
-      "office": "Governador",
-      "uf": "ES",
-      "quote_text": "Nós não vamos abandonar os indicadores de jeito nenhum. Nós vamos humanizar a educação",
-      "context": "\"Nós não vamos abandonar os indicadores de jeito nenhum. Nós vamos humanizar a educação\", disse",
-      "event_context": "Entrevista ao vivo no Gazeta Meio Dia.. Helder Salomão (PT) prometeu implantar faixas de ônibus exclusivas e criar um programa de saúde mental para professores, em entrevista nesta quarta-feira (16).. Helder Salomão (PT) prometeu implantar faixas de ônibus exclusivas e criar um programa de saúde mental para professores, em entrevista nesta quarta-feira (16).",
-      "event_type": "entrevista",
-      "occurred_on": "2026-09-16",
-      "publisher": "g1",
-      "article_url": "https://g1.globo.com/es/espirito-santo/eleicoes/2026/noticia/2026/09/16/helder-salomao-promete-programa-de-saude-mental-para-professores-e-criacao-de-faixa-exclusiva-para-onibus-em-todo-o-es.ghtml",
-      "article_title": "Helder Salomão promete programa de saúde mental para professores no ES | G1",
-      "article_published_at": "2026-09-16T15:44:00.008-03:00",
-      "observed_at": "2026-09-22T01:21:17.315Z",
-      "source_sha256": "a1f5df464b500b621a592c61a3abd6a201f0e8aa83e862a6e033149703d3da06",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "O candidato ao governo do Espírito Santo, Helder Salomão (PT), prometeu, durante entrevista ao vivo no Gazeta Meio Dia nesta quarta-feira (16), criar uma política estadual de cuidado e saúde mental para servidores, com atenção especial aos professores, e implantar faixas exclusivas para ônibus em todo o estado.",
-        "date_excerpt": "Helder Salomão (PT) prometeu implantar faixas de ônibus exclusivas e criar um programa de saúde mental para professores, em entrevista nesta quarta-feira (16).",
-        "fetched_url": "https://g1.globo.com/es/espirito-santo/eleicoes/2026/noticia/2026/09/16/helder-salomao-promete-programa-de-saude-mental-para-professores-e-criacao-de-faixa-exclusiva-para-onibus-em-todo-o-es.ghtml",
-        "method": "codex_source_review"
       }
     },
     {
@@ -6276,6 +5847,407 @@
       }
     },
     {
+      "id": "0901066220a31d891de9a990c8d605a1f175e615a200cbc7f3d72da0f6bd31dc",
+      "candidate_id": "62addad9-47ab-4362-bbe1-917f7e70c646",
+      "candidate_slug": "tayna-miessa",
+      "candidate_name": "Tayná Miessa",
+      "office": "Governador",
+      "uf": "PR",
+      "quote_text": "Só no primeiro semestre de 2026, a gente teve 55 feminicídios consumados e 84 tentativas, do qual a gente tem registro.",
+      "context": "Só no primeiro semestre de 2026, a gente teve 55 feminicídios consumados e 84 tentativas, do qual a gente tem registro.",
+      "event_context": "Entrevista de Tayná Miessa à BandNews Curitiba sobre violência contra mulheres e segurança pública.",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-02",
+      "publisher": "BandNews FM Curitiba",
+      "article_url": "https://bandnewsfmcuritiba.com/bandnews-curitiba-entrevista-tayna-miessa-candidata-ao-governo-confira/",
+      "article_title": "BandNews Curitiba entrevista Tayna Miessa, candidata ao governo; confira",
+      "article_published_at": "2026-09-03T13:52:02.000Z",
+      "observed_at": "2026-09-12T02:05:39.208Z",
+      "source_sha256": "1e8c3fb1f87ef64f6635da40e271d0fcf3bac561143143463d6378c4603a705e",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "BandNews Curitiba entrevista Tayna Miessa, candidata ao governo; confira",
+        "date_excerpt": "Na quarta-feira (02), concedeu entrevista à BandNews.",
+        "fetched_url": "https://bandnewsfmcuritiba.com/bandnews-curitiba-entrevista-tayna-miessa-candidata-ao-governo-confira/",
+        "method": "codex_source_review",
+        "supporting_sources": [
+          {
+            "url": "https://jornalcomunicacao.ufpr.br/confira-como-foi-a-semana-dos-candidatos-ao-governo-do-parana/",
+            "sha256": "6243fc57629f1b8ff5d042683abcd2a8f0c2037d33cea38a12ef0989f5b8acb4",
+            "excerpts": [
+              "Na quarta-feira (02), concedeu entrevista à BandNews."
+            ]
+          }
+        ]
+      },
+      "transcription": {
+        "kind": "automatic",
+        "media_url": "https://cdn.bandnewsfmcuritiba.com/band/wp-content/uploads/2026/09/09.03-ENTREVISTA-TAYNA-MIESSA-01.mp3",
+        "start_seconds": 0,
+        "end_seconds": 9.5,
+        "media_published_at": "2026-09-03T13:52:02.000Z",
+        "engine": "Whisper large-v3-turbo local; comparação entre passe integral e recorte. Ambos automáticos, sem revisão por escuta humana.",
+        "transcript_sha256": "ef8d4946544225cf740f95cd51d6731ffb3fd24b73a98485421f267d5a083808",
+        "verification_sha256": "ef8d4946544225cf740f95cd51d6731ffb3fd24b73a98485421f267d5a083808",
+        "audio_sha256": "41255bf7beed86b3fc9407e1c7ed7c18c7ac57654094c569faa1135af8e73b48",
+        "speaker_context": "O veículo identifica Tayná Miessa no título e atribui à candidata a resposta sobre violência contra mulheres imediatamente antes do primeiro áudio.",
+        "reviewed_context": true
+      }
+    },
+    {
+      "id": "eaf5ebcece955eff996231ca66bffafdd48f82ca1b50252d4a0fd86adbb8c024",
+      "candidate_id": "d334a750-1693-46c9-bdee-de3b3c455a05",
+      "candidate_slug": "rosi-aires",
+      "candidate_name": "Rosi Aires",
+      "office": "Governador",
+      "uf": "RR",
+      "quote_text": "a parte que é fundamental, que não está sendo cumprida, que é as políticas públicas chegarem realmente nesses espaços",
+      "context": "a parte que é fundamental, que não está sendo cumprida, que é as políticas públicas chegarem realmente nesses espaços",
+      "event_context": "Em resposta sobre atendimento de saúde, Rosi fala de sua atuação no CAPS e do acesso a políticas públicas nesses serviços.",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-03",
+      "publisher": "Rádio Monte Roraima FM",
+      "article_url": "https://www.monteroraimafm.com.br/noticia/rosi-aires-participa-nesta-quinta-feira-de-entrevista-ao-vivo-na-radio-monte-roraima-fm",
+      "article_title": "Rosi Aires participa nesta quinta-feira de entrevista ao vivo na Rádio Monte Roraima FM",
+      "article_published_at": "2026-09-03",
+      "observed_at": "2026-09-12T02:05:19.621Z",
+      "source_sha256": "8eb2386227e6c686f6c5f7d6ef432d9de00b1cfd706ea6c858685533ab94beca",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "A candidata ao Governo de Roraima pela Federação PSOL-Rede, Rosi Aires, participa nesta quinta-feira (3) de uma entrevista ao vivo na Rádio Monte Roraima FM.",
+        "date_excerpt": "A candidata ao Governo de Roraima pela Federação PSOL-Rede, Rosi Aires, participa nesta quinta-feira (3) de uma entrevista ao vivo na Rádio Monte Roraima FM.",
+        "fetched_url": "https://www.monteroraimafm.com.br/noticia/rosi-aires-participa-nesta-quinta-feira-de-entrevista-ao-vivo-na-radio-monte-roraima-fm",
+        "method": "codex_source_review",
+        "live_video": {
+          "url": "https://www.youtube.com/watch?v=UQ0DzWNauhg",
+          "channel_id": "UCic6Oio9KDhXYeyjl0XPetA",
+          "broadcast_on": "2026-09-03",
+          "release_timestamp": 1788451039,
+          "metadata_sha256": "3a85645bc44cd822fe47492ba5054db3bcc008fb471b8dff385ea387f7eb9e75",
+          "captions_sha256": "2e06b25811d531fbc77a75b679202b2a4753393173c0a96079cfeac4749fc24a",
+          "frame_sha256": "4a80621f71ec8fadaa110c462ef490c8fd1fa3f2ffc246b65653d1dbd64d75d7",
+          "frame_at_seconds": 1520,
+          "article_event_excerpt": "A candidata ao Governo de Roraima pela Federação PSOL-Rede, Rosi Aires, participa nesta quinta-feira (3) de uma entrevista ao vivo na Rádio Monte Roraima FM.",
+          "quote_excerpt": "a parte que é fundamental, que não está sendo cumprida, que é as políticas públicas chegarem realmente nesses espaços",
+          "reviewed_live_on_air": true
+        }
+      },
+      "transcription": {
+        "kind": "automatic",
+        "media_url": "https://www.youtube.com/watch?v=UQ0DzWNauhg",
+        "start_seconds": 1495,
+        "end_seconds": 1530,
+        "media_published_at": "2026-09-03T15:57:19.000Z",
+        "engine": "Whisper large-v3-turbo local comparado à legenda automática do YouTube; sem revisão por escuta humana.",
+        "transcript_sha256": "2e06b25811d531fbc77a75b679202b2a4753393173c0a96079cfeac4749fc24a",
+        "verification_sha256": "9a0498bdca163f1a00db1bcac26cb310db3aacdef7e3098c0bbcfe91a6af5daf",
+        "audio_sha256": "2c40c6ec109c0aa73f565d4f479e68e697e80c1fb62a4cb0330a85bf811f5ce9",
+        "speaker_context": "O título do episódio oficial identifica Rosi Aires. Após a pergunta sobre saúde, a entrevistada à esquerda responde sobre seu trabalho no CAPS; o quadro mostra a resposta no instante 1520.",
+        "reviewed_context": true
+      }
+    },
+    {
+      "id": "2a76ce5ddf132eed5931a00a574398010ad8afa38ef6f5f35553c84e214550d1",
+      "candidate_id": "c9c117e4-ea81-433d-b8c0-a01c8d831bae",
+      "candidate_slug": "dr-luisinho",
+      "candidate_name": "Dr. Luisinho",
+      "office": "Governador",
+      "uf": "AC",
+      "quote_text": "É a produção que gera emprego, é a produção que gera renda",
+      "context": "É a produção que gera emprego, é a produção que gera renda",
+      "event_context": "Sobre industrialização, emprego e renda no Acre, em resposta à pergunta sobre o eixo central de seu projeto de governo.",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-06",
+      "publisher": "O Rio Branco",
+      "article_url": "https://oriobranco.net/professor-dr-luisinho-e-daniela-paiva-detalham-propostas-para-o-governo-do-acre-no-programa-o-x-da-questao/",
+      "article_title": "Professor Dr. Luisinho e Daniela Paiva detalham propostas para o Governo do Acre no programa &#8216;O X da Questão&#8217;",
+      "article_published_at": "2026-09-07",
+      "observed_at": "2026-09-12T02:05:19.632Z",
+      "source_sha256": "533ddfd1a2d7dc46293c7e200adbfbebd3e196602bd53f6f510c9840fada9867",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Na sequência, o programa recebeu a chapa majoritária do partido AGIR (36), representada pelo candidato ao Governo do Acre, Professor Dr. Luisinho, e por sua candidata a vice, Daniela Paiva.",
+        "date_excerpt": "No programa deste domingo (6), do O X da Questão, veiculado pela TV Rio Branco, canal 8.1, o apresentador José Alex abriu a transmissão com um editorial voltado à responsabilidade do voto e à viabilidade orçamentária das promessas de campanha.",
+        "fetched_url": "https://oriobranco.net/professor-dr-luisinho-e-daniela-paiva-detalham-propostas-para-o-governo-do-acre-no-programa-o-x-da-questao/",
+        "method": "codex_source_review",
+        "live_video": {
+          "url": "https://www.youtube.com/watch?v=8gF0bQhUfi4",
+          "channel_id": "UCsVYJNopaXURKDSF4x_ZNtQ",
+          "broadcast_on": "2026-09-06",
+          "release_timestamp": 1788748212,
+          "metadata_sha256": "7de1cade3a824824588f97ace567bb54e261ff82baef7c39b12d2e1605070466",
+          "captions_sha256": "04f43779ad54c903b5e0d07fbd434c3eb2883da37cf7ca9ad75556ace1e112c3",
+          "frame_sha256": "7d7f16e6c4f8f73a39a35b0a5afbac15f277afbca3608de254197e6a5857e039",
+          "frame_at_seconds": 1156,
+          "article_event_excerpt": "No programa deste domingo (6), do O X da Questão, veiculado pela TV Rio Branco, canal 8.1, o apresentador José Alex abriu a transmissão com um editorial voltado à responsabilidade do voto e à viabilidade orçamentária das promessas de campanha.",
+          "quote_excerpt": "É a produção que gera emprego, é a produção que gera renda",
+          "reviewed_live_on_air": true
+        }
+      },
+      "transcription": {
+        "kind": "automatic",
+        "media_url": "https://www.youtube.com/watch?v=8gF0bQhUfi4",
+        "start_seconds": 1147,
+        "end_seconds": 1171,
+        "media_published_at": "2026-09-07T02:30:12.000Z",
+        "engine": "Whisper large-v3-turbo local comparado à legenda automática do YouTube; sem revisão por escuta humana.",
+        "transcript_sha256": "04f43779ad54c903b5e0d07fbd434c3eb2883da37cf7ca9ad75556ace1e112c3",
+        "verification_sha256": "e9a5968a498938c234ec96659029d290ecc54e7c1358403e8537de317410c68f",
+        "audio_sha256": "abc40f2214105c11c7deda7c393dd167abb4d43714c4c1908cc51c0202229c5f",
+        "speaker_context": "O veículo identifica Dr. Luisinho e a vice no episódio. A apresentação e a pergunta dirigem a resposta ao candidato; o quadro em 1156 mostra o homem de terno respondendo sobre industrialização.",
+        "reviewed_context": true
+      }
+    },
+    {
+      "id": "ed5e8cda450445b6ce4be7a951ac199d48d48904d112e677811a3b012c86d3c5",
+      "candidate_id": "672dc346-45fe-4cee-8386-9645e6a5d2b7",
+      "candidate_slug": "marcos-reategui",
+      "candidate_name": "Marcos Reategui",
+      "office": "Governador",
+      "uf": "AP",
+      "quote_text": "Nós precisamos valorizar o nosso jovem.",
+      "context": "Nós precisamos valorizar o nosso jovem.",
+      "event_context": "Em entrevista ao The Papo, responde sobre oportunidades de trabalho e qualificação para jovens. A descrição situa a conversa na semana da publicação; o dia exato não foi informado.",
+      "event_type": "entrevista",
+      "occurred_on": null,
+      "occurred_between": {
+        "from": "2026-08-30",
+        "to": "2026-09-01"
+      },
+      "publisher": "The Papo com André Silva",
+      "article_url": "https://www.youtube.com/watch?v=ZpJhiwE0qr0",
+      "article_title": "ELEIÇÕES 2026:\" Amapá precisa gerar emprego para os JOVENS\" - Marcos Reateg The Papo na Eleição 2026",
+      "article_published_at": "2026-09-01T23:23:15.000Z",
+      "observed_at": "2026-09-12T02:12:26.208Z",
+      "source_sha256": "af1691cbcaff15e54ac9bd7d0d112f87f4f5dcf712b88b99281f52735a18a57b",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "✅Nesta semana, o Papo com André Silva recebeu Marcos Reategui, o terceiro candidato ao Governo do Estado do Amapá.",
+        "date_excerpt": "✅Nesta semana, o Papo com André Silva recebeu Marcos Reategui, o terceiro candidato ao Governo do Estado do Amapá.",
+        "fetched_url": "https://www.youtube.com/watch?v=ZpJhiwE0qr0",
+        "method": "codex_source_review",
+        "supporting_sources": [
+          {
+            "url": "https://selesnafes.com/2024/05/no-the-papo-especialista-afirma-que-ia-nao-tem-mais-volta/",
+            "sha256": "8c997a68ea2bf5c6be54d8489074ec21c6000f2f267fc773269c63562e04c2a1",
+            "excerpts": [
+              "O analista de sistemas Gilberto Almeida é convidado desta semana no programa The Papo, do jornalista André Silva, de Macapá."
+            ]
+          }
+        ],
+        "recorded_video": {
+          "url": "https://www.youtube.com/watch?v=ZpJhiwE0qr0",
+          "channel_id": "UCtmjIizIEQ7ifU9TYVkcgUg",
+          "published_at": "2026-09-01T23:23:15.000Z",
+          "metadata_sha256": "01ec01fb8070c23cab74c8d6b7d7a65947901b01c0a57879c6b8ff105689350e",
+          "frame_sha256": "2d7241c5780c987ce8d3c42a024cb68ab6a56fd2fd633b204fc731ee70b7fd31",
+          "frame_at_seconds": 2478,
+          "description_excerpt": "✅Nesta semana, o Papo com André Silva recebeu Marcos Reategui, o terceiro candidato ao Governo do Estado do Amapá.",
+          "publisher_identity_url": "https://selesnafes.com/2024/05/no-the-papo-especialista-afirma-que-ia-nao-tem-mais-volta/",
+          "date_basis": "publication_week_description",
+          "reviewed_context": true
+        }
+      },
+      "transcription": {
+        "kind": "automatic",
+        "media_url": "https://www.youtube.com/watch?v=ZpJhiwE0qr0",
+        "start_seconds": 2460,
+        "end_seconds": 2510,
+        "media_published_at": "2026-09-01T23:23:15.000Z",
+        "engine": "Whisper large-v3-turbo local comparado à legenda automática do YouTube; sem revisão por escuta humana.",
+        "transcript_sha256": "50c0c75fc053105a0ec4fa4f1d12c77d6205763440ca2fbbaa9d2c57f135e1c4",
+        "verification_sha256": "a6a1cf95a6a2e6b34d8cabfd3895df4fbe63458f4dc75a685a7e314dad250f1a",
+        "audio_sha256": "1868b2bdd0ba09eaa3238679c745f3c3abad7dea1742d225ffb9842d440b571a",
+        "speaker_context": "O episódio e sua descrição identificam Marcos Reátegui como candidato ao governo. No quadro em 41:18, ele responde à pergunta de André Silva sobre juventude, trabalho e qualificação.",
+        "reviewed_context": true
+      }
+    },
+    {
+      "id": "da00f9b294349172ac348988355317b2dfe0d4b3b7c29579effdf21f720bddd3",
+      "candidate_id": "ce3b18ad-dcc9-4275-b831-66ee24422714",
+      "candidate_slug": "danilo-pinheiro",
+      "candidate_name": "Danilo da Silva",
+      "office": "Governador",
+      "uf": "GO",
+      "quote_text": "É uma luta diária de panfletagem, militância, informação política",
+      "context": "A campanha, ressaltou, faz parte da atividade desenvolvida pelo partido durante todo o ano. “É uma luta diária de panfletagem, militância, informação política”, declarou.",
+      "event_context": "Declaração durante ato de campanha em Brasília, publicada pelo jornal do próprio PCO.. O candidato do Partido da Causa Operária (PCO) ao governo de Goiás, Danilo Pinheiro, denunciou a perseguição política contra o partido durante o ato de lançamento das candidaturas realizado neste sábado (22), em Brasília.",
+      "event_type": "declaracao",
+      "occurred_on": "2026-08-22",
+      "publisher": "Diário Causa Operária (jornal do PCO)",
+      "article_url": "https://causaoperaria.org.br/2026/danilo-pinheiro-pco-nao-teme-o-mossad-o-stf-nem-a-policia-federal/",
+      "article_title": "Danilo Pinheiro: ‘PCO não teme o Mossad, o STF nem a Polícia Federal’",
+      "article_published_at": "2026-08-24",
+      "observed_at": "2026-09-12T15:18:15.811Z",
+      "source_sha256": "d8109f509065a949c6c6c8dd664e0dca86cee85a83d8b8d45d460ddafe2b97f4",
+      "collection_scope": {
+        "mode": "initial_backfill",
+        "from": "2026-08-16"
+      },
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "O candidato do Partido da Causa Operária (PCO) ao governo de Goiás, Danilo Pinheiro, denunciou a perseguição política contra o partido durante o ato de lançamento das candidaturas realizado neste sábado (22), em Brasília.",
+        "identity_excerpt": "O candidato do Partido da Causa Operária (PCO) ao governo de Goiás, Danilo Pinheiro, denunciou a perseguição política contra o partido durante o ato de lançamento das candidaturas realizado neste sábado (22), em Brasília.",
+        "date_excerpt": "O candidato do Partido da Causa Operária (PCO) ao governo de Goiás, Danilo Pinheiro, denunciou a perseguição política contra o partido durante o ato de lançamento das candidaturas realizado neste sábado (22), em Brasília.",
+        "fetched_url": "https://causaoperaria.org.br/2026/danilo-pinheiro-pco-nao-teme-o-mossad-o-stf-nem-a-policia-federal/",
+        "method": "codex_source_review",
+        "source_format": "web_text",
+        "supporting_sources": [
+          {
+            "url": "https://www.gazetadopovo.com.br/eleicoes/2026/candidatos/go/governador/danilo-pinheiro-pco-29/",
+            "sha256": "89355be88441a81b851fdd0483892bb9d2bdb170b5563c459ff6c994dcc15c3b",
+            "excerpts": [
+              "Danilo Pinheiro Evangelista da Silva tem 43 anos de idade, declarou ao TSE ser casado(a), tem o grau de instrução ensino médio completo e sua ocupação anterior é \"técnico de eletricidade, eletrônica e telecomunicações\".",
+              "Danilo Pinheiro Evangelista da Silva",
+              "Danilo da Silva (número de urna 29) é candidato a Governador em GOIÁS nas Eleições 2026 pelo PARTIDO DA CAUSA OPERÁRIA. Nasceu em São Luís (MA)."
+            ],
+            "source_format": "web_text"
+          }
+        ]
+      }
+    },
+    {
+      "id": "644fb2051ae7ae5a6ec4514f70ce2dccb3559b36412b9a3d18974cf9b5f43b65",
+      "candidate_id": "30bca027-016e-4db1-a065-2081a62d71de",
+      "candidate_slug": "adriano-funileiro",
+      "candidate_name": "Adriano Funileiro",
+      "office": "Governador",
+      "uf": "PR",
+      "quote_text": "PCO, por exemplo, é pelo fim do vestibular.",
+      "context": "PCO, por exemplo, é pelo fim do vestibular.",
+      "event_context": "Na sabatina do Sindicato dos Metalúrgicos da Grande Curitiba, responde à pergunta sobre valorização dos profissionais da educação e defende o fim do vestibular.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-08-31",
+      "publisher": "MetalTV (SMC)",
+      "article_url": "https://www.youtube.com/watch?v=vqKvJUvXAIU",
+      "article_title": "Ciclo de Entrevistas do SMC (Governo do Estado): Adriano Funileiro(PCO) - Tema: Educação",
+      "article_published_at": "2026-09-02T15:20:05.000Z",
+      "observed_at": "2026-09-12T15:22:57.209Z",
+      "source_sha256": "ec9d0fbf2dee99db08518a1ab50726576176636413b610af99b4b81be627871b",
+      "attribution": "source_context_review",
+      "collection_scope": {
+        "mode": "initial_backfill",
+        "from": "2026-08-16"
+      },
+      "review_evidence": {
+        "identity_excerpt": "Confira a fala do candidato ao Governo do Estado, Adriano Funileiro (PCO), sobre o tema Educação, no Ciclo de Entrevistas do SMC, realizado nesta segunda(31/08).",
+        "date_excerpt": "Confira a fala do candidato ao Governo do Estado, Adriano Funileiro (PCO), sobre o tema Educação, no Ciclo de Entrevistas do SMC, realizado nesta segunda(31/08).",
+        "fetched_url": "https://www.youtube.com/watch?v=vqKvJUvXAIU",
+        "method": "codex_source_review",
+        "supporting_sources": [
+          {
+            "url": "https://jornalcomunicacao.ufpr.br/confira-como-foi-a-semana-dos-candidatos-ao-governo-do-parana/",
+            "sha256": "cde551f78c32548c44c4da20c64c3203efa35b858c44a757a3626ebfc4f7348f",
+            "excerpts": [
+              "Teixeira esteve presente nesta segunda-feira (31), de modo remoto, na sabatina mediada pelo sindicato dos metalúrgicos de Curitiba."
+            ]
+          }
+        ],
+        "recorded_video": {
+          "url": "https://www.youtube.com/watch?v=vqKvJUvXAIU",
+          "channel_id": "UC2FHzKYg93IRVFAqF7pO3Xg",
+          "published_at": "2026-09-02T15:20:05.000Z",
+          "metadata_sha256": "a194ef9e778687d02425e8ae5bf1210baa01976ddea5064d117a3239ecd35eff",
+          "frame_sha256": "7705348e10cf5e03e1e85913a20a6b4fff0c5fb6acdb3922d9459857c0f85ae6",
+          "frame_at_seconds": 203,
+          "description_excerpt": "Confira a fala do candidato ao Governo do Estado, Adriano Funileiro (PCO), sobre o tema Educação, no Ciclo de Entrevistas do SMC, realizado nesta segunda(31/08).",
+          "publisher_identity_url": "https://jornalcomunicacao.ufpr.br/confira-como-foi-a-semana-dos-candidatos-ao-governo-do-parana/",
+          "date_basis": "explicit_recording_date",
+          "reviewed_context": true,
+          "recorded_on": "2026-08-31"
+        }
+      },
+      "transcription": {
+        "kind": "automatic",
+        "media_url": "https://www.youtube.com/watch?v=vqKvJUvXAIU",
+        "start_seconds": 195,
+        "end_seconds": 215,
+        "media_published_at": "2026-09-02T15:20:05.000Z",
+        "engine": "Whisper large-v3-turbo local comparado à legenda automática do YouTube; sem escuta humana.",
+        "transcript_sha256": "d53563dc2d46a200746e91f6889df800fbd35d1f84fcf5d30f1ee6123ec88ac3",
+        "verification_sha256": "7030ce1831c7f5b2e1626e6b6045266cb73371331b209831530ccc75f81ad44c",
+        "audio_sha256": "6e6068c4fb0377d08d46155ed476f14dedf4b55d1d87c8bc5fec159f6a5e058b",
+        "speaker_context": "Introdução do vídeo em 00:05–00:35 anuncia Adriano Funileiro do PCO e pergunta sobre educação. Aos 00:38 o apresentador anuncia candidato na tela e lhe passa a palavra. Frame203 mostra uma pessoa respondendo com identidade visual do Ciclo/Eleições2026 e intérprete. Não há nome escrito no frame203, por isso o vínculo depende também da introdução e dos metadados.",
+        "reviewed_context": true
+      }
+    },
+    {
+      "id": "88fd24c8cd6a48864598af3269c251aab7de885cc5d8e90014af8c9144987720",
+      "candidate_id": "2cb5e948-08ea-4a25-8124-6aaac3155c70",
+      "candidate_slug": "victor-assis",
+      "candidate_name": "Victor Assis",
+      "office": "Governador",
+      "uf": "PE",
+      "quote_text": "Temos uma crise política cada vez maior",
+      "context": "Temos uma crise política cada vez maior",
+      "event_context": "Pergunta do apresentador ao comandante Robinson Farinazzo na edição Análise Internacional nº 274, sobre a crise política na Ucrânia, em programa transmitido pelo Diário Causa Operária em 20/08/2026.",
+      "event_type": "debate",
+      "occurred_on": "2026-08-20",
+      "publisher": "Diário Causa Operária (jornal do PCO)",
+      "article_url": "https://causaoperaria.org.br/2026/rui-costa-pimenta-analisa-a-crescente-tensao-entre-turquia-e-israel/",
+      "article_title": "Rui Costa Pimenta analisa a crescente tensão entre Turquia e ‘Israel’",
+      "article_published_at": "2026-08-21T00:00:37-03:00",
+      "observed_at": "2026-09-12T18:37:24Z",
+      "source_sha256": "6e0dcdf2feb11d278df76d14466cc2234fb8cffebd71642a9559c7749a81eba6",
+      "attribution": "source_context_review",
+      "transcription": {
+        "kind": "automatic",
+        "media_url": "https://www.youtube.com/watch?v=w3CAsXoCxwM",
+        "start_seconds": 369,
+        "end_seconds": 399,
+        "media_published_at": "2026-08-20T15:59:41.000Z",
+        "engine": "Whisper tiny/base/small locais, comparados à legenda automática VTT do YouTube; faixa 251-2 Portuguese (BR) original; sem identificação por rosto/voz biométrica e sem escuta humana declarada.",
+        "transcript_sha256": "a4a5954ec4f88802420080305c203f09068639e6a7a9fd2ec80fc80dc19bc514",
+        "verification_sha256": "5de537e3bdc70c02f9d9aa1705b1c72f1da62499ac98e67eed46b8d16991f0af",
+        "audio_sha256": "e15e656fa222d48d5bc49e8324388bb7d826e629b3e9c25102c0fc56516807d5",
+        "speaker_context": "A VTT registra o apresentador anunciando Pedro Bulamac, Pedro saudando “Vittor” e a retomada imediata da pergunta pelo apresentador. A identificação civil como Victor Assis é apoiada pelo crédito recorrente do DCO em edição de 07/08; não se usou rosto ou voz biométrica.",
+        "reviewed_context": true,
+        "timestamp_range": "00:06:09-00:06:39"
+      },
+      "review_evidence": {
+        "identity_excerpt": "Victor Assis (PCO) O candidato participou, à tarde, de um programa do canal do YouTube “Diário Causa Operária”, junto ao presidente nacional do PCO, Rui Costa Pimenta.",
+        "date_excerpt": "O presidente nacional do Partido da Causa Operária (PCO), Rui Costa Pimenta, analisou nessa quinta-feira (20) a crise internacional, com destaque para a instabilidade no Oriente Médio, a guerra na Ucrânia e a deterioração dos regimes políticos na América Latina. No Análise Internacional , transmitido pelo Diário Causa Operária em conjunto com o canal Arte da Guerra, ele também tratou do bloqueio contra Cuba, do acordo entre o Tribunal Superior Eleitoral (TSE) e a OpenAI e da operação da Polícia Filial contra o PCO.",
+        "fetched_url": "https://causaoperaria.org.br/2026/rui-costa-pimenta-analisa-a-crescente-tensao-entre-turquia-e-israel/",
+        "method": "codex_source_review",
+        "live_video": {
+          "url": "https://www.youtube.com/watch?v=w3CAsXoCxwM",
+          "channel_id": "UCvhnOzbSDblzftMPLe8D4-A",
+          "broadcast_on": "2026-08-20",
+          "release_timestamp": 1787241581,
+          "metadata_sha256": "a73656adfe4d9f9bb8fb39dc7f10b31706d0e16b6757a6fefad6c254f21584fd",
+          "captions_sha256": "a4a5954ec4f88802420080305c203f09068639e6a7a9fd2ec80fc80dc19bc514",
+          "frame_sha256": "87868ca817b425cb15c3825574be072f2e91c6ef68d233a2914b67809618baed",
+          "frame_at_seconds": 375.5,
+          "article_event_excerpt": "O presidente nacional do Partido da Causa Operária (PCO), Rui Costa Pimenta, analisou nessa quinta-feira (20) a crise internacional, com destaque para a instabilidade no Oriente Médio, a guerra na Ucrânia e a deterioração dos regimes políticos na América Latina. No Análise Internacional , transmitido pelo Diário Causa Operária em conjunto com o canal Arte da Guerra, ele também tratou do bloqueio contra Cuba, do acordo entre o Tribunal Superior Eleitoral (TSE) e a OpenAI e da operação da Polícia Filial contra o PCO.",
+          "quote_excerpt": "Temos uma crise política cada vez maior",
+          "reviewed_live_on_air": true
+        },
+        "supporting_sources": [
+          {
+            "url": "https://g1.globo.com/pe/pernambuco/eleicoes/2026/noticia/2026/08/20/porta-a-porta-entrevistas-e-sabatina-como-foi-o-5o-dia-de-campanha-dos-candidatos-ao-governo-de-pernambuco.ghtml",
+            "sha256": "0fe3deae279b0cb2236636924b361b19dde0694c42276a0674821b506f580a46",
+            "excerpts": [
+              "Victor Assis (PCO) O candidato participou, à tarde, de um programa do canal do YouTube “Diário Causa Operária”, junto ao presidente nacional do PCO, Rui Costa Pimenta.",
+              "Nesta quinta-feira (20), cinco dos oito candidatos ao governo de Pernambuco realizaram atos públicos de campanha. Entre as atividades, estavam entrevistas, porta a porta, sabatina e presença em eventos."
+            ],
+            "source_format": "web_text"
+          },
+          {
+            "url": "https://causaoperaria.org.br/2026/rui-pimenta-e-uma-guerra-da-otan-contra-a-russia/",
+            "sha256": "3af16691440f234a7fa11cdf138eb0bae083cbee8cea0ed86963e4a4570ad54d",
+            "excerpts": [
+              "Transmitido todas as quintas-feiras, às 12h30, pelo canal do Diário Causa Operária no YouTube, em parceria com o canal Arte da Guerra, o programa também contou com a participação do comandante Robinson Farinazzo e foi apresentado por João Jorge Pimenta e Victor Assis."
+            ],
+            "source_format": "web_text"
+          }
+        ]
+      },
+      "collection_scope": {
+        "mode": "initial_backfill",
+        "from": "2026-08-16"
+      }
+    },
+    {
       "id": "ff509d99a4e0e3e21ba9d0750e3986d3e93f814b9219a9c4167c9bb3ebe13fbc",
       "candidate_id": "51e9be3d-bd06-45e5-828d-48160265925f",
       "candidate_slug": "carlos-jararaca",
@@ -6331,6 +6303,34 @@
       "collection_scope": {
         "mode": "initial_backfill",
         "from": "2026-08-16"
+      }
+    },
+    {
+      "id": "ca0654ce892bc27b35a571bbb7cd0f6d60da1471355e4024805157cadcfb5442",
+      "candidate_id": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+      "candidate_slug": "lula",
+      "candidate_name": "Lula",
+      "office": "Presidente",
+      "uf": null,
+      "quote_text": "Eu estou discutindo o papel dessa jogatina eletrônica através das redes digitais, das bets. Está levando muita gente a se endividar",
+      "context": "“Eu estou discutindo o papel dessa jogatina eletrônica através das redes digitais, das bets. Está levando muita gente a se endividar”, afirmou.",
+      "event_context": "O presidente Luiz Inácio Lula da Silva (PT) afirmou neste sábado (19.set.2026), em Florianópolis (SC), que pretende acabar com as bets no Brasil. Durante ato de campanha, disse que as apostas eletrônicas estão levando pessoas ao endividamento.. neste sábado (19.set.2026)",
+      "event_type": "declaracao",
+      "occurred_on": "2026-09-19",
+      "publisher": "Poder360",
+      "article_url": "https://www.poder360.com.br/poder-eleicoes-2026/em-sc-lula-reforca-que-vai-acabar-com-as-bets/",
+      "article_title": "Em SC, Lula reforça que vai acabar com as bets",
+      "article_published_at": "2026-09-19T15:48:11+00:00",
+      "observed_at": "2026-09-22T11:36:01.050Z",
+      "source_sha256": "a56eb34653bc706a30a1ce2c6095bc19d569edd1069fee5108ca6531e0c02cc8",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "Durante ato de campanha, disse que as apostas eletrônicas estão levando pessoas ao endividamento.",
+        "identity_excerpt": "O presidente Luiz Inácio Lula da Silva (PT) afirmou neste sábado (19.set.2026), em Florianópolis (SC), que pretende acabar com as bets no Brasil. Durante ato de campanha, disse que as apostas eletrônicas estão levando pessoas ao endividamento.",
+        "date_excerpt": "neste sábado (19.set.2026)",
+        "fetched_url": "https://www.poder360.com.br/poder-eleicoes-2026/em-sc-lula-reforca-que-vai-acabar-com-as-bets/",
+        "method": "codex_source_review",
+        "source_format": "web_text"
       }
     }
   ]
