@@ -15,7 +15,7 @@
  *
  * Nenhum CPF e impresso. O mapa de CPFs vai para arquivo 0600.
  */
-import { chmodSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs"
+import { chmodSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join, resolve } from "node:path"
 import { execFileSync } from "node:child_process"
@@ -82,8 +82,10 @@ async function fetchTargets(): Promise<Map<string, Target>> {
 }
 
 function extractYear(ano: number, dir: string): string[] {
-  const zips = execFileSync("sh", ["-c", `ls ${JSON.stringify(join(REPO, "data", "tse"))}/receitas_${ano}_*.zip`])
-    .toString().trim().split("\n").filter(Boolean)
+  const tseDir = join(REPO, "data", "tse")
+  const zips = readdirSync(tseDir)
+    .filter((n) => n.startsWith(`receitas_${ano}_`) && n.endsWith(".zip"))
+    .map((n) => join(tseDir, n))
   if (zips.length !== 1) throw new Error(`pacote de receitas ${ano}: ${zips.length} candidatos no cache`)
   const target = join(dir, String(ano))
   mkdirSync(target, { recursive: true })
@@ -91,7 +93,7 @@ function extractYear(ano: number, dir: string): string[] {
   // como no ingest.
   const listing = execFileSync("unzip", ["-Z1", zips[0]!]).toString().split("\n")
   const members = listing.filter((n) =>
-    /receitas?_?candidatos.*\.(txt|csv)$/i.test(n.replace(/_/g, "_")) &&
+    /receitas?_?candidatos.*\.(txt|csv)$/i.test(n) &&
     !/doador_originario/i.test(n))
   if (members.length === 0) throw new Error(`pacote de receitas ${ano}: nenhum membro de receitas de candidatos`)
   execFileSync("unzip", ["-o", "-q", zips[0]!, ...members, "-d", target])
