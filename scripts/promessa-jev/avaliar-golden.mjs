@@ -49,15 +49,19 @@ export function metricas(casos) {
   const binariaCertos = casos.filter((c) => relacionado(c.rotulo) === relacionado(c.preRotulo)).length
   const descartados = casos.filter((c) => c.descartado)
   const naoRelacionadas = casos.filter((c) => c.rotulo === "nao_relacionada").length
+  const descarteSemSustentaOuContradiz = descartados.filter((c) => c.rotulo === "sustenta" || c.rotulo === "contradiz").length === 0
+  const descarteRelacionadaNoMaximo1 = descartados.filter((c) => c.rotulo === "relacionada").length <= 1
+  const coberturaDescarteNaoRelacionada = naoRelacionadas ? Number((descartados.filter((c) => c.rotulo === "nao_relacionada").length / naoRelacionadas).toFixed(3)) : null
+  const concordanciaBinaria = Number((binariaCertos / casos.length).toFixed(3))
   const criterio = {
-    descarteSemSustentaOuContradiz: descartados.filter((c) => c.rotulo === "sustenta" || c.rotulo === "contradiz").length === 0,
-    descarteRelacionadaNoMaximo1: descartados.filter((c) => c.rotulo === "relacionada").length <= 1,
-    coberturaDescarteNaoRelacionada: naoRelacionadas ? Number((descartados.filter((c) => c.rotulo === "nao_relacionada").length / naoRelacionadas).toFixed(3)) : null,
-    concordanciaBinaria: Number((binariaCertos / casos.length).toFixed(3)),
+    descarteSemSustentaOuContradiz,
+    descarteRelacionadaNoMaximo1,
+    coberturaDescarteNaoRelacionada,
+    concordanciaBinaria,
+    c1: descarteSemSustentaOuContradiz && descarteRelacionadaNoMaximo1,
+    c2: (coberturaDescarteNaoRelacionada ?? 0) >= 0.4,
+    c3: concordanciaBinaria >= 0.8,
   }
-  criterio.c1 = criterio.descarteSemSustentaOuContradiz && criterio.descarteRelacionadaNoMaximo1
-  criterio.c2 = (criterio.coberturaDescarteNaoRelacionada ?? 0) >= 0.4
-  criterio.c3 = criterio.concordanciaBinaria >= 0.8
   return {
     pares: casos.length,
     descartados: descartados.length,
