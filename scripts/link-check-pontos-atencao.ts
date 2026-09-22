@@ -234,6 +234,43 @@ export function estadoDesligado(): EstadoDeFontes {
   }
 }
 
+/**
+ * Teto, em bytes já codificados, da lista de valores de um filtro `.in()` numa
+ * só requisição. O filtro viaja na query string (GET da leitura, DELETE da
+ * limpeza), e lote por contagem de linhas não protege: 196 URLs longas
+ * derrubaram a limpeza em 2026-09-22 onde 200 curtas passavam.
+ *
+ * Medido contra o projeto em 2026-09-22: o DELETE recebe da Cloudflare um 400
+ * `text/plain` "Bad Request" quando a URL passa de algo entre 24 KB e 28 KB; o
+ * GET quebra antes, perto de 15 KB, com `fetch failed` (HeadersOverflowError
+ * do undici ao ler a resposta). 4 KB deixa folga larga para os dois.
+ */
+export const LIMITE_BYTES_FILTRO_IN = 4000
+
+/**
+ * Divide `valores` em lotes cuja soma de tamanhos codificados fica abaixo de
+ * `limiteBytes`. A conta é conservadora: aspas e vírgula sempre contam, mesmo
+ * quando o cliente não as usaria. Valor que sozinho excede o teto vai num lote
+ * próprio, porque cortá-lo mudaria o filtro.
+ */
+export function lotesPorTamanhoDeFiltro(valores: readonly string[], limiteBytes = LIMITE_BYTES_FILTRO_IN): string[][] {
+  const lotes: string[][] = []
+  let atual: string[] = []
+  let bytes = 0
+  for (const valor of valores) {
+    const custo = encodeURIComponent(`"${valor}",`).length
+    if (atual.length > 0 && bytes + custo > limiteBytes) {
+      lotes.push(atual)
+      atual = []
+      bytes = 0
+    }
+    atual.push(valor)
+    bytes += custo
+  }
+  if (atual.length > 0) lotes.push(atual)
+  return lotes
+}
+
 export interface LinkCheckDeps {
   apply: boolean
   onlyVisible: boolean
@@ -962,12 +999,11 @@ async function estadoNoBanco(): Promise<EstadoDeFontes> {
 
   const ler: EstadoDeFontes["ler"] = async (urls) => {
     const achados = new Map<string, ObservacaoDeDefeito>()
-    const lote = 200
-    for (let i = 0; i < urls.length; i += lote) {
+    for (const lote of lotesPorTamanhoDeFiltro(urls)) {
       const { data, error: err } = await supabase
         .from(TABELA_ESTADO)
         .select("url, veredito, execucoes, primeira_vez_em, ultima_vez_em, primeira_execucao, ultima_execucao")
-        .in("url", urls.slice(i, i + lote))
+        .in("url", lote)
 
       if (err) throw new Error(`${TABELA_ESTADO} (leitura): ${err.message}`)
       for (const linha of (data ?? []) as Array<Record<string, string | number>>) {
@@ -1028,12 +1064,11 @@ async function estadoNoBanco(): Promise<EstadoDeFontes> {
     },
 
     async esquecer(urls) {
-      const lote = 200
-      for (let i = 0; i < urls.length; i += lote) {
+      for (const lote of lotesPorTamanhoDeFiltro(urls)) {
         const { error: err } = await supabase
           .from("link_check_url_observacao")
           .delete()
-          .in("url", urls.slice(i, i + lote))
+          .in("url", lote)
         if (err) throw new Error(`${TABELA_ESTADO} (limpeza): ${err.message}`)
       }
     },
