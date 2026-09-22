@@ -111,6 +111,12 @@ describe("falas recentes com fonte", () => {
     assert.equal(dataEvento("nesta segunda-feira (31)", "2026-09-01T12:00:00-03:00"), "2026-08-31")
     assert.equal(dataEvento("nessa quarta-feira (2)", "2026-09-10T12:00:00-03:00"), null)
   })
+  it("resolve data explícita abreviada em português e rejeita inválida ou futura", () => {
+    const published = "2026-09-19T15:48:11+00:00"
+    assert.equal(dataEvento("neste sábado (19.set.2026)", published), "2026-09-19")
+    assert.equal(dataEvento("neste sábado (31.set.2026)", published), null)
+    assert.equal(dataEvento("neste sábado (20.set.2026)", published), null)
+  })
   it("usa o evento explícito da abertura no formato de debate verificado", () => {
     const regional = SOURCES.find((s) => s.id === "diario-nordeste")!
     const regionalUrl = regional.origin + "/pontopoder/debate-fixture"
