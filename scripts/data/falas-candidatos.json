@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-09-22T12:32:27.402Z",
+  "updated_at": "2026-09-22T13:06:03.977Z",
   "quotes": [
     {
       "id": "df3b314a4c73c4f168b08c74c348c04d43481ac749c59cd01af84d05990c24f5",
@@ -6673,6 +6673,58 @@
         "identity_excerpt": "O candidato ao governo do Maranhão, Eduardo Braide (PSD), apresentou suas propostas em entrevista nesta sexta-feira (18).",
         "date_excerpt": "O candidato ao governo do Maranhão, Eduardo Braide (PSD), apresentou suas propostas em entrevista nesta sexta-feira (18).",
         "fetched_url": "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/09/18/eduardo-braide-destaca-atuacao-no-hospital-da-crianca-propoe-reduzir-icms-e-extinguir-secretarias-no-ma.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "14d02e0e57ad784e40841b97f0db9929f39ea80a1cf6d34b30ff141b06ccc5c9",
+      "candidate_id": "2a8e286d-1d49-4c1a-8a91-16f49da26056",
+      "candidate_slug": "maria-bona",
+      "candidate_name": "Maria Bona",
+      "office": "Governador",
+      "uf": "BA",
+      "quote_text": "Acreditamos que a educação tem que ser administrada num programa tripartite.",
+      "context": "\"Acreditamos que a educação tem que ser administrada num programa tripartite. Os estudantes têm que ter voz, têm que escolher e verificar quais são as decisões tomadas pelas administrações das universidades e escolas em geral. A voz dos estudantes é muito importante\", afirma.",
+      "event_context": "Entrevista no Bahia Meio Dia em 19/09/2026.. A candidata ao governo da Bahia Maria Bona (PCO) foi entrevistada na tarde deste sábado (19)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-19",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ba/bahia/eleicoes/2026/noticia/2026/09/19/entrevista-com-maria-bona-pco.ghtml",
+      "article_title": "Maria Bona defende gestão tripartite das instituições de ensino na Bahia",
+      "article_published_at": "2026-09-19T12:50:26.053-03:00",
+      "observed_at": "2026-09-22T12:45:54.706Z",
+      "source_sha256": "3815eed18d453a1a5f8f4872b98618f63d7f07361e5963e380ac5f2783d6f8b9",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "A candidata ao governo da Bahia Maria Bona (PCO) foi entrevistada na tarde deste sábado (19), no telejornal Bahia Meio Dia.",
+        "date_excerpt": "A candidata ao governo da Bahia Maria Bona (PCO) foi entrevistada na tarde deste sábado (19)",
+        "fetched_url": "https://g1.globo.com/ba/bahia/eleicoes/2026/noticia/2026/09/19/entrevista-com-maria-bona-pco.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "d9f38975346924d1c81ef25ff8ccb1b5557cea5b0e38ae95ea0b48274b89e1a0",
+      "candidate_id": "9ea4f811-3d51-48b2-a297-e4fccb0ddc14",
+      "candidate_slug": "maria-do-carmo",
+      "candidate_name": "Maria do Carmo",
+      "office": "Governador",
+      "uf": "AM",
+      "quote_text": "O que a gente precisa é estar preparado a cada ano para poder dar suporte para a população ribeirinha",
+      "context": "\"Na verdade, a gente tem as secas e as cheias. Pelo menos eu, na minha vida inteira, convivi com isso. O que a gente precisa é estar preparado a cada ano para poder dar suporte para a população ribeirinha\", afirmou.",
+      "event_context": "Sabatina/entrevista da Rede Amazônica em 14/09/2026.. A candidata Maria do Carmo (PL) afirmou nesta segunda-feira (14)",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-14",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/09/14/em-sabatina-maria-do-carmo-diz-que-governo-do-am-deve-se-preparar-para-seca-e-cheia-e-questiona-relacao-com-crise-climatica.ghtml",
+      "article_title": "Maria do Carmo nega crise climática no AM: 'Secas sempre ocorreram' | G1",
+      "article_published_at": "2026-09-14T14:29:26.881-03:00",
+      "observed_at": "2026-09-22T12:48:30.328Z",
+      "source_sha256": "f1db2bf3ccbecad42166a528f0af29be26120f1f9e565092fd1584ba490c8176",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "A candidata Maria do Carmo (PL) afirmou nesta segunda-feira (14) que o Amazonas precisa se preparar para secas e cheias.",
+        "date_excerpt": "A candidata Maria do Carmo (PL) afirmou nesta segunda-feira (14)",
+        "fetched_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/09/14/em-sabatina-maria-do-carmo-diz-que-governo-do-am-deve-se-preparar-para-seca-e-cheia-e-questiona-relacao-com-crise-climatica.ghtml",
         "method": "codex_source_review"
       }
     }
