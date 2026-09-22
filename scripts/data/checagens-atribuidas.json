@@ -20022,5 +20022,3594 @@
       "reviewerKind": "model_principal",
       "reviewedAt": "2026-09-22T15:55:08.882Z"
     }
+  },
+  {
+    "id": "lupa-lupa-paes-2024-08-29-01",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que o Rio havia voltado à segunda posição entre as capitais com menor desemprego.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-28",
+      "context": "– Eduardo Paes (PSD), candidato à prefeitura do Rio de Janeiro, em entrevista à Globonews, da TV Globo, no dia 28 de agosto de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa marcou FALSO: a taxa do Rio era 8,5%, empatada com Maceió na 18ª posição; Campo Grande tinha 4%, Palmas 4,5% e Porto Velho 4,7%. Os dados de empregos enviados pela assessoria mediam outro indicador.",
+    "publishedAt": "2024-08-29T23:59:00+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "59914b0788fabdacbf9791fcc199c6ee78187ecbc054f8f36ad186cd7f935189",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Lupa, em 2024-08-28."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+        "origin": "consulted_by_us",
+        "title": "Na Globonews, Paes erra ao falar sobre desemprego e rede pública de ensino • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.ibge.gov.br/explica/desemprego.php",
+        "origin": "cited_by_publisher",
+        "title": "O último levantamento da Pesquisa Nacional por Amostra de Domicílios (PNAD) Contínua,"
+      },
+      {
+        "url": "https://docs.google.com/spreadsheets/d/1ipP4d8cmIi21Lz5NLpgh0cH2LEOnqbSiD86b-5LZDmM/edit?usp=sharing",
+        "origin": "cited_by_publisher",
+        "title": "mostra que a taxa de desemprego no Rio de Janeiro é de 8,5%."
+      },
+      {
+        "url": "https://assets.lupa.news/171/17172571.pdf",
+        "origin": "cited_by_publisher",
+        "title": "assessoria do candidato enviou dados de geração de emprego"
+      },
+      {
+        "url": "https://assets.lupa.news/171/17172565.png",
+        "origin": "cited_by_publisher",
+        "title": "Na nota, a assessoria destaca que,"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-paes-2024-08-29-02",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que 80% das pessoas em situação de rua identificadas no censo eram usuárias de drogas.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-28",
+      "context": "– Eduardo Paes (PSD), candidato à prefeitura do Rio de Janeiro, em entrevista à Globonews, da TV Globo, no dia 28 de agosto de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa marcou VERDADEIRO: no censo de 2022, 83% das 7.865 pessoas entrevistadas disseram ter consumido ao menos uma droga na semana do levantamento. Isso não equivale a classificar todas como “drogadas”.",
+    "publishedAt": "2024-08-29T23:59:00+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "59914b0788fabdacbf9791fcc199c6ee78187ecbc054f8f36ad186cd7f935189",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Lupa, em 2024-08-28."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+        "origin": "consulted_by_us",
+        "title": "Na Globonews, Paes erra ao falar sobre desemprego e rede pública de ensino • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.data.rio/documents/64fc9f1756b64f05827a54de8c89a5ed/about",
+        "origin": "cited_by_publisher",
+        "title": "capital fluminense tem um total de 7.865 pessoas em situação de rua."
+      },
+      {
+        "url": "https://www1.folha.uol.com.br/cotidiano/2023/04/populacao-em-situacao-de-rua-no-rio-cresce-85-em-dois-anos-aponta-censo-da-prefeitura.shtml",
+        "origin": "cited_by_publisher",
+        "title": "83% disseram que consumiram ao menos um tipo de droga na semana do levantamento."
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-paes-2024-08-29-03",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que o FGTS teve lucro de R$ 6,5 bilhões em 2023.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-28",
+      "context": "– Eduardo Paes (PSD), candidato à prefeitura do Rio de Janeiro, em entrevista à Globonews, da TV Globo, no dia 28 de agosto de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "SUBESTIMADO",
+    "summary": "A Lupa marcou SUBESTIMADO: o lucro total do FGTS em 2023 foi de R$ 23,4 bilhões; R$ 6,5 bilhões vieram do acordo do Porto Maravilha.",
+    "publishedAt": "2024-08-29T23:59:00+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "59914b0788fabdacbf9791fcc199c6ee78187ecbc054f8f36ad186cd7f935189",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "SUBESTIMADO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Lupa, em 2024-08-28."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+        "origin": "consulted_by_us",
+        "title": "Na Globonews, Paes erra ao falar sobre desemprego e rede pública de ensino • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2024/Julho/lucro-do-fgts-e-de-r-23-4-bilhoes-em-2023-o-maior-valor-da-historia",
+        "origin": "cited_by_publisher",
+        "title": "De acordo com nota publicada pelo Ministério do Trabalho e Emprego"
+      },
+      {
+        "url": "https://www1.folha.uol.com.br/mercado/2023/08/lula-e-paes-fecham-acordo-para-destravar-porto-maravilha.shtml",
+        "origin": "cited_by_publisher",
+        "title": "Esse acordo foi selado com o presidente Luiz Inácio Lula da Silva"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-paes-2024-08-29-04",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que a rede municipal do Rio era a maior da América Latina, com cerca de 650 mil alunos e 1.600 escolas.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-28",
+      "context": "– Eduardo Paes (PSD), candidato à prefeitura do Rio de Janeiro, em entrevista à Globonews, da TV Globo, no dia 28 de agosto de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa marcou FALSO: São Paulo supera o Rio em alunos e unidades quando a rede inclui conveniadas. A assessoria defendeu a comparação entre redes próprias, citando 1.557 unidades do Rio contra 1.533 de São Paulo.",
+    "publishedAt": "2024-08-29T23:59:00+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "59914b0788fabdacbf9791fcc199c6ee78187ecbc054f8f36ad186cd7f935189",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Lupa, em 2024-08-28."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+        "origin": "consulted_by_us",
+        "title": "Na Globonews, Paes erra ao falar sobre desemprego e rede pública de ensino • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.capital.sp.gov.br/w/noticia/mais-de-1-milhao-de-estudantes-da-rede-municipal-voltam-as-aulas-nesta-segunda-feira",
+        "origin": "cited_by_publisher",
+        "title": "mais de 1 milhão de alunos da rede municipal"
+      },
+      {
+        "url": "https://assets.lupa.news/171/17172116.jpg",
+        "origin": "cited_by_publisher",
+        "title": "1.002.732 alunos matriculados na rede municipal"
+      },
+      {
+        "url": "https://eolgerenciamento.prefeitura.sp.gov.br/frmgerencial/NumerosCoordenadoria.aspx?Cod=000000",
+        "origin": "cited_by_publisher",
+        "title": "4.125 unidades educacionais municipais"
+      },
+      {
+        "url": "https://www.data.rio/datasets/0a220ea7972449e39a28210dd317f636_1/explore",
+        "origin": "cited_by_publisher",
+        "title": "1.590 unidades municipais de ensino"
+      },
+      {
+        "url": "https://assets.lupa.news/171/17172023.jpg",
+        "origin": "cited_by_publisher",
+        "title": "656.924 alunos matriculados na rede municipal"
+      },
+      {
+        "url": "https://assets.lupa.news/171/17172503.png",
+        "origin": "cited_by_publisher",
+        "title": "“cidade de São Paulo ultrapassa o Rio"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-paes-2024-08-29-05",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que o Impa Tech havia sido inaugurado cerca de seis meses antes.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-28",
+      "context": "– Eduardo Paes (PSD), candidato à prefeitura do Rio de Janeiro, em entrevista à Globonews, da TV Globo, no dia 28 de agosto de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa classificou a fala como VERDADEIRO e registrou a inauguração do Impa Tech em 2 de abril de 2024, quase cinco meses antes da entrevista.",
+    "publishedAt": "2024-08-29T23:59:00+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "59914b0788fabdacbf9791fcc199c6ee78187ecbc054f8f36ad186cd7f935189",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Lupa, em 2024-08-28."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+        "origin": "consulted_by_us",
+        "title": "Na Globonews, Paes erra ao falar sobre desemprego e rede pública de ensino • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/noticias/2024/04/impa-tera-primeira-graduacao-em-matematica-da-tecnologia-e-inovacao",
+        "origin": "cited_by_publisher",
+        "title": "graduação em Matemática da Tecnologia e Inovação"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-paes-2024-08-29-06",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que o programa Civitas usava mais de 900 câmeras para monitorar a cidade.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-28",
+      "context": "– Eduardo Paes (PSD), candidato à prefeitura do Rio de Janeiro, em entrevista à Globonews, da TV Globo, no dia 28 de agosto de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALTA CONTEXTO",
+    "summary": "A Lupa marcou FALTA CONTEXTO: o Civitas usava cerca de 900 radares e 50 câmeras com reconhecimento de placas; os cerca de 20 mil alertas em quase três meses eram outro resultado da operação.",
+    "publishedAt": "2024-08-29T23:59:00+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "59914b0788fabdacbf9791fcc199c6ee78187ecbc054f8f36ad186cd7f935189",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALTA CONTEXTO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Lupa, em 2024-08-28."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+        "origin": "consulted_by_us",
+        "title": "Na Globonews, Paes erra ao falar sobre desemprego e rede pública de ensino • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2024-06/prefeitura-do-rio-cria-central-para-apoio-de-acoes-de-seguranca",
+        "origin": "cited_by_publisher",
+        "title": "A Central de Inteligência, Vigilância e Tecnologia de Apoio a Segurança Pública (Civitas) foi criada em junho deste ano"
+      },
+      {
+        "url": "https://civitas.rio/",
+        "origin": "cited_by_publisher",
+        "title": "De acordo com o site do projeto,"
+      },
+      {
+        "url": "https://cor.rio/historia/",
+        "origin": "cited_by_publisher",
+        "title": "que funciona com 3,5 mil câmeras de monitoramento."
+      },
+      {
+        "url": "https://assets.lupa.news/171/17172547.png",
+        "origin": "cited_by_publisher",
+        "title": "diz a nota"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-paes-2024-08-29-07",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que a educação correspondia a 25% das despesas municipais.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-28",
+      "context": "– Eduardo Paes (PSD), candidato à prefeitura do Rio de Janeiro, em entrevista à Globonews, da TV Globo, no dia 28 de agosto de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALTA CONTEXTO",
+    "summary": "A Lupa marcou FALTA CONTEXTO: a educação representava 20,65% do orçamento total de R$ 45,76 bilhões e 25,38% quando se consideravam apenas recursos do Tesouro.",
+    "publishedAt": "2024-08-29T23:59:00+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "59914b0788fabdacbf9791fcc199c6ee78187ecbc054f8f36ad186cd7f935189",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALTA CONTEXTO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Lupa, em 2024-08-28."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+        "origin": "consulted_by_us",
+        "title": "Na Globonews, Paes erra ao falar sobre desemprego e rede pública de ensino • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://aplicnt.camara.rj.gov.br/APL/Legislativos/contlei.nsf/7cb7d306c2b748cb0325796000610ad8/bbc505fdc6554f5403258a990076f7b1?OpenDocument#:~:text=Estima%20a%20receita%20e%20fixa,Autor%3A%20Poder%20Executivo.&text=III%20%2D%20Or%C3%A7amento%20de%20Investimento%20das,social%20com%20direito%20a%20voto.",
+        "origin": "cited_by_publisher",
+        "title": "orçamento aprovado para o ano de 2024 para o município do Rio de Janeiro é de R$ 45.756.619.280"
+      },
+      {
+        "url": "https://assets.lupa.news/171/17171752.pdf",
+        "origin": "cited_by_publisher",
+        "title": "cerca de 20,65% (página 3)."
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-paes-2024-08-29-08",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que havia 32 Cozinhas Comunitárias funcionando.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-28",
+      "context": "– Eduardo Paes (PSD), candidato à prefeitura do Rio de Janeiro, em entrevista à Globonews, da TV Globo, no dia 28 de agosto de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa marcou VERDADEIRO: a 32ª Cozinha Comunitária foi inaugurada no início de julho de 2024; o programa distribuía refeições gratuitas a pessoas vulneráveis inscritas.",
+    "publishedAt": "2024-08-29T23:59:00+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "59914b0788fabdacbf9791fcc199c6ee78187ecbc054f8f36ad186cd7f935189",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Lupa, em 2024-08-28."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+        "origin": "consulted_by_us",
+        "title": "Na Globonews, Paes erra ao falar sobre desemprego e rede pública de ensino • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://odia.ig.com.br/rio-de-janeiro/2024/07/6876572-nova-filial-do-programa-prato-feito-carioca-e-inaugurada-na-mangueira.html",
+        "origin": "cited_by_publisher",
+        "title": "foi entregue a 32ª cozinha comunitária no Rio de Janeiro"
+      },
+      {
+        "url": "https://oglobo.globo.com/rio/noticia/2024/06/19/prefeitura-do-rio-inaugura-segunda-cozinha-comunitaria-na-mangueira-na-zona-norte.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "agenda já estipulada"
+      },
+      {
+        "url": "https://odia.ig.com.br/rio-de-janeiro/2023/12/6751285-cozinha-comunitaria-carioca-distribui-almoco-gratuito-em-17-bairros-da-cidade.html",
+        "origin": "cited_by_publisher",
+        "title": "preciso estar inscrito no projeto"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-paes-2024-08-29-09",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que deputados estaduais alteraram a Lei Orgânica da Polícia Civil.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-28",
+      "context": "– Eduardo Paes (PSD), candidato à prefeitura do Rio de Janeiro, em entrevista à Globonews, da TV Globo, no dia 28 de agosto de 2024",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa confirmou que a Alerj alterou a lei em outubro de 2023, retirando a exigência de 15 anos de carreira para chefiar a Polícia Civil.",
+    "publishedAt": "2024-08-29T23:59:00+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "59914b0788fabdacbf9791fcc199c6ee78187ecbc054f8f36ad186cd7f935189",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Lupa, em 2024-08-28."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/08/29/na-globonews-paes-erra-ao-falar-sobre-desemprego-e-rede-publica-de-ensino/",
+        "origin": "consulted_by_us",
+        "title": "Na Globonews, Paes erra ao falar sobre desemprego e rede pública de ensino • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://g1.globo.com/rj/rio-de-janeiro/noticia/2023/10/18/alerj-aprova-alteracoes-na-lei-organica-da-policia-civil-que-permitem-nomeacao-de-novo-secretario.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Em outubro de 2023, a Assembleia Legislativa do Rio de Janeiro aprovou mudança"
+      },
+      {
+        "url": "http://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=52&url=L2NvbnRsZWkubnNmL2E5OWUzMTdhOWNmZWMzODMwMzI1Njg2MjAwNzFmNWQyL2MyZTczOTNlOWI4MjAzMjUwMzI1ODg3NTAwNjRkNGNhP09wZW5Eb2N1bWVudA==&amp#:~:text=INSTITUI%20A%20LEI%20ORG%C3%82NICA%20DA,ESTADO%20DO%20RIO%20DE%20JANEIRO.&text=Fa%C3%A7o%20saber%20que%20a%20Assembleia,Art.",
+        "origin": "cited_by_publisher",
+        "title": "Lei Orgânica da Polícia Civil."
+      },
+      {
+        "url": "https://g1.globo.com/rj/rio-de-janeiro/noticia/2023/10/18/entidades-de-classe-da-policia-civil-repudiam-projeto-de-castro-para-mudar-normas-para-nomeacao-de-secretario.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "De acordo com entidades que representam os policiais civis do Rio de Janeiro,"
+      },
+      {
+        "url": "https://sindelpolrj.com.br/nota-de-repudio-a-modificacao-da-lei-organica-da-policia-civil/",
+        "origin": "cited_by_publisher",
+        "title": "diz trecho da nota divulgada pela categoria."
+      },
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/08/28/na-globonews-ramagem-erra-ao-falar-sobre-covid-e-monitoramento-da-abin",
+        "origin": "cited_by_publisher",
+        "title": "Na GloboNews, Ramagem erra ao falar sobre Covid e monitoramento da Abin"
+      },
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/08/27/na-globonews-tarcisio-motta-erra-dado-historico-e-exagera-sobre-adesao-de-bolsonaristas-a-paes-no-rio-de-janeiro",
+        "origin": "cited_by_publisher",
+        "title": "Na Globonews, Tarcísio Motta erra dado histórico e exagera sobre adesão de bolsonaristas a Paes no Rio de Janeiro"
+      },
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2024/08/09/candidatos-do-rio-erram-dados-sobre-saude-e-polarizam-debate-na-band",
+        "origin": "cited_by_publisher",
+        "title": "Candidatos do Rio erram dados sobre saúde e polarizam debate na Band"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-garotinho-2018-05-04-01",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho atribuiu ao seu governo a viabilização da indústria automobilística do Rio.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-04-26",
+      "context": "“Quem viabilizou a indústria automobilística do Estado? Governo Garotinho” Anthony Garotinho, ex-governador e pré-candidato ao governo do RJ pelo PRP, em vídeo publicado no Facebook no dia 26 de abril de 2018",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa marcou FALSO: a fábrica MAN/Volkswagen de Resende foi inaugurada em 1996, e a PSA chegou ao Brasil em 1997, antes do governo Garotinho iniciado em 1999.",
+    "publishedAt": "2018-05-04T14:00:41+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2018/05/04/garotinho-erros-mandato/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "2f85b66ab59caa809d27fada8692efe8a3aa55a02ab18b10c923ace472a494ea",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Lupa, em 2018-04-26."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2018/05/04/garotinho-erros-mandato/",
+        "origin": "consulted_by_us",
+        "title": "Garotinho prega ‘compromisso com a verdade’, mas erra ao falar de seu governo • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.facebook.com/garotinhooficial/posts/1685430084838844",
+        "origin": "cited_by_publisher",
+        "title": "vídeo publicado no Facebook"
+      },
+      {
+        "url": "http://vwtbpress.com.br/empresa.asp",
+        "origin": "cited_by_publisher",
+        "title": "site da empresa"
+      },
+      {
+        "url": "http://www.anfavea.com.br/linha-do-tempo-7.html",
+        "origin": "cited_by_publisher",
+        "title": "linha do tempo"
+      },
+      {
+        "url": "https://site.groupe-psa.com/brasil/pt-br/grupo/",
+        "origin": "cited_by_publisher",
+        "title": "página"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-garotinho-2018-05-04-02",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho atribuiu ao seu governo a chegada da ThyssenKrupp à Zona Oeste do Rio.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-04-26",
+      "context": "“Quem trouxe a Thyssen [Krupp] para a Zona Oeste do Rio de Janeiro? [O governo de Anthony Garotinho]” Anthony Garotinho, ex-governador e pré-candidato ao governo do RJ pelo PRP, em vídeo publicado no Facebook no dia 26 de abril de 2018",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa situou a implantação da CSA em Santa Cruz fora do governo Garotinho: a pedra fundamental foi lançada em 2006, na gestão Rosinha, e a inauguração ocorreu em 2010.",
+    "publishedAt": "2018-05-04T14:00:41+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2018/05/04/garotinho-erros-mandato/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "2f85b66ab59caa809d27fada8692efe8a3aa55a02ab18b10c923ace472a494ea",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Lupa, em 2018-04-26."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2018/05/04/garotinho-erros-mandato/",
+        "origin": "consulted_by_us",
+        "title": "Garotinho prega ‘compromisso com a verdade’, mas erra ao falar de seu governo • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.facebook.com/garotinhooficial/posts/1685430084838844",
+        "origin": "cited_by_publisher",
+        "title": "vídeo publicado no Facebook"
+      },
+      {
+        "url": "https://www.thyssenkrupp-brazil.com/pt-br/empresa/",
+        "origin": "cited_by_publisher",
+        "title": "empresa"
+      },
+      {
+        "url": "https://assets.lupa.news/423/4238081.png",
+        "origin": "cited_by_publisher",
+        "title": "empresa considera"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-garotinho-2018-05-04-03",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho disse que seu governo saneou as finanças do estado.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-04-26",
+      "context": "“O legado econômico [do governo Anthony Garotinho]: saneei as finanças do Estado” Anthony Garotinho, ex-governador e pré-candidato ao governo do RJ pelo PRP, em vídeo publicado no Facebook no dia 26 de abril de 2018",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "EXAGERADO",
+    "summary": "A Lupa marcou EXAGERADO: o déficit caiu em termos reais de R$ 1,072 bilhão em 1999 para R$ 1,192 bilhão em 2002, enquanto o valor de 1999 corrigido seria R$ 1,385 bilhão; as contas continuaram deficitárias.",
+    "publishedAt": "2018-05-04T14:00:41+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2018/05/04/garotinho-erros-mandato/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "2f85b66ab59caa809d27fada8692efe8a3aa55a02ab18b10c923ace472a494ea",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "EXAGERADO",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Lupa, em 2018-04-26."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2018/05/04/garotinho-erros-mandato/",
+        "origin": "consulted_by_us",
+        "title": "Garotinho prega ‘compromisso com a verdade’, mas erra ao falar de seu governo • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.facebook.com/garotinhooficial/posts/1685430084838844",
+        "origin": "cited_by_publisher",
+        "title": "vídeo publicado no Facebook"
+      },
+      {
+        "url": "http://www.fazenda.rj.gov.br/cge/content/conn/UCMServer/path/Contribution%20Folders/contadoria/relatoriosContabeis/relat_conta_gestao/1999/Contas%20de%20Gest%C3%A3o%201999%20-%20Volume%20%C3%9Anico.pdf?lve",
+        "origin": "cited_by_publisher",
+        "title": "Balanço Orçamentário"
+      },
+      {
+        "url": "http://www.fazenda.rj.gov.br/cge/faces/oracle/webcenter/portalapp/pages/navigation-renderer.jspx?_afrLoop=4167705837813017&datasource=UCMServer%23dDocName%3A1169985&_adf.ctrl-state=1ahrydsd9s_9",
+        "origin": "cited_by_publisher",
+        "title": "déficit era de R$ 1.192.054.656,34"
+      },
+      {
+        "url": "https://assets.lupa.news/423/4238082.png",
+        "origin": "cited_by_publisher",
+        "title": "R$ 1.385.156.844,98"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-garotinho-2018-05-04-04",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho disse que a indústria naval tinha 500 empregos quando assumiu e 70 mil depois.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-04-26",
+      "context": "“[A indústria naval] Tinha 500 empregos [quando Garotinho assumiu o governo do RJ], hoje tem 70 mil” Anthony Garotinho, ex-governador e pré-candidato ao governo do RJ pelo PRP, em vídeo publicado no Facebook no dia 26 de abril de 2018",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "EXAGERADO",
+    "summary": "A Lupa marcou EXAGERADO: havia cerca de 500 empregos em 1999 e menos de 10 mil em 2002; o pico de 70 mil ocorreu em 2012 e o setor tinha cerca de 45 mil postos em 2018.",
+    "publishedAt": "2018-05-04T14:00:41+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2018/05/04/garotinho-erros-mandato/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "2f85b66ab59caa809d27fada8692efe8a3aa55a02ab18b10c923ace472a494ea",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "EXAGERADO",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Lupa, em 2018-04-26."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2018/05/04/garotinho-erros-mandato/",
+        "origin": "consulted_by_us",
+        "title": "Garotinho prega ‘compromisso com a verdade’, mas erra ao falar de seu governo • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.facebook.com/garotinhooficial/posts/1685430084838844",
+        "origin": "cited_by_publisher",
+        "title": "vídeo publicado no Facebook"
+      },
+      {
+        "url": "https://assets.lupa.news/423/4238087.pdf",
+        "origin": "cited_by_publisher",
+        "title": "Sinaval"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-garotinho-2018-05-04-05",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho atribuiu ao seu governo a criação do Polo Gás Químico em Duque de Caxias.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-04-26",
+      "context": "“Quem trouxe para o Rio de Janeiro o Polo Gás Químico? Quem tirou do papel e botou em Duque de Caxias? [O governo Anthony Garotinho]” Anthony Garotinho, ex-governador e pré-candidato ao governo do RJ pelo PRP, em vídeo publicado no Facebook no dia 26 de abril de 2018",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa marcou VERDADEIRO: a pedra fundamental do Polo Gás Químico foi lançada em 2000, no governo Garotinho, mas a inauguração ocorreu em 2005, no governo Rosinha.",
+    "publishedAt": "2018-05-04T14:00:41+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2018/05/04/garotinho-erros-mandato/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "2f85b66ab59caa809d27fada8692efe8a3aa55a02ab18b10c923ace472a494ea",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Lupa, em 2018-04-26."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2018/05/04/garotinho-erros-mandato/",
+        "origin": "consulted_by_us",
+        "title": "Garotinho prega ‘compromisso com a verdade’, mas erra ao falar de seu governo • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.facebook.com/garotinhooficial/posts/1685430084838844",
+        "origin": "cited_by_publisher",
+        "title": "vídeo publicado no Facebook"
+      },
+      {
+        "url": "http://memoria.ebc.com.br/agenciabrasil/noticia/2005-06-23/polo-gas-quimico-e-inaugurado-em-duque-de-caxias%20http://www.nuca.ie.ufrj.br/livro/capitulo3/termeletricas.htm",
+        "origin": "cited_by_publisher",
+        "title": "pedra fundamental"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-garotinho-2018-05-04-06",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho atribuiu ao seu governo a reabertura dos estaleiros do Rio.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-04-26",
+      "context": "“Quem reabriu os estaleiros do Rio? Governo Garotinho” Anthony Garotinho, ex-governador e pré-candidato ao governo do RJ pelo PRP, em vídeo publicado no Facebook no dia 26 de abril de 2018",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa marcou VERDADEIRO: o governo Garotinho ofereceu incentivos fiscais e seis grandes estaleiros foram reabertos no período.",
+    "publishedAt": "2018-05-04T14:00:41+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2018/05/04/garotinho-erros-mandato/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "2f85b66ab59caa809d27fada8692efe8a3aa55a02ab18b10c923ace472a494ea",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Lupa, em 2018-04-26."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2018/05/04/garotinho-erros-mandato/",
+        "origin": "consulted_by_us",
+        "title": "Garotinho prega ‘compromisso com a verdade’, mas erra ao falar de seu governo • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.facebook.com/garotinhooficial/posts/1685430084838844",
+        "origin": "cited_by_publisher",
+        "title": "vídeo publicado no Facebook"
+      },
+      {
+        "url": "https://istoe.com.br/27954_DOS+ESTALEIROS+AOS+HANGARES/",
+        "origin": "cited_by_publisher",
+        "title": "isenções fiscais"
+      },
+      {
+        "url": "https://assets.lupa.news/423/4238085.pdf",
+        "origin": "cited_by_publisher",
+        "title": "estaleiros de grande porte"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-garotinho-2018-05-04-07",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho atribuiu a si a chegada do Comperj.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-04-26",
+      "context": "“Quem trouxe o Comperj? Garotinho” Anthony Garotinho, ex-governador e pré-candidato ao governo do RJ pelo PRP, em vídeo publicado no Facebook no dia 26 de abril de 2018",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "EXAGERADO",
+    "summary": "A Lupa marcou EXAGERADO: o Comperj era um projeto federal; o governo estadual pressionou por sua implantação, mas não foi seu criador.",
+    "publishedAt": "2018-05-04T14:00:41+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2018/05/04/garotinho-erros-mandato/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "2f85b66ab59caa809d27fada8692efe8a3aa55a02ab18b10c923ace472a494ea",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "EXAGERADO",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Lupa, em 2018-04-26."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2018/05/04/garotinho-erros-mandato/",
+        "origin": "consulted_by_us",
+        "title": "Garotinho prega ‘compromisso com a verdade’, mas erra ao falar de seu governo • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.facebook.com/garotinhooficial/posts/1685430084838844",
+        "origin": "cited_by_publisher",
+        "title": "vídeo publicado no Facebook"
+      },
+      {
+        "url": "http://petroquimica.com.br/edicoes/ed_244/ed_244_a.html",
+        "origin": "cited_by_publisher",
+        "title": "A Refinaria é nossa"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-garotinho-2018-09-10-01",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho disse que rompeu com Sérgio Cabral antes da posse de Cabral como governador.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-09-10",
+      "context": "“Eu rompi com ele [Sérgio Cabral] antes da posse [dele como governador do RJ]” Anthony Garotinho, candidato ao governo do Rio de Janeiro pelo PRP, em entrevista concedida ao RJTV 1, no dia 10 de setembro de 2018",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa marcou FALSO: o rompimento com Cabral ocorreu depois da posse, em meio à disputa política.",
+    "publishedAt": "2018-09-10T20:30:24+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/10/garotinho-rjtv/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "b3ba521e3e3706279f9ced573446df9e73c5804cbfe3cdfc1b63a79fb7e67046",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Lupa, em 2018-09-10."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2018/09/10/garotinho-rjtv/",
+        "origin": "consulted_by_us",
+        "title": "Laços com Cabral e prisão de Fernandinho Beira-Mar: os erros de Garotinho no RJTV • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://g1.globo.com/rj/rio-de-janeiro/eleicoes/2018/noticia/2018/09/10/garotinho-diz-ao-rj1-que-decisoes-da-justica-sao-recorriveis-e-promete-prevencao-e-modernizacao-na-seguranca.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "entrevista concedida ao RJTV 1"
+      },
+      {
+        "url": "http://g1.globo.com/Noticias/Rio/0,,AA1405126-5606,00.html",
+        "origin": "cited_by_publisher",
+        "title": "posse"
+      },
+      {
+        "url": "http://g1.globo.com/Noticias/Politica/0,,AA1470713-5601,00-SERGIO+CABRAL+E+GAROTINHO+TROCAM+FARPAS.html",
+        "origin": "cited_by_publisher",
+        "title": "trocaram farpas"
+      },
+      {
+        "url": "https://politica.estadao.com.br/noticias/geral,garotinho-articula-e-diretorio-do-pmdb-no-rio-renuncia,77140",
+        "origin": "cited_by_publisher",
+        "title": "prefeitura"
+      },
+      {
+        "url": "https://congressoemfoco.uol.com.br/especial/noticias/garotinho-deixa-o-pmdb-ataca-cabral-e-declara-apoio-a-dilma/",
+        "origin": "cited_by_publisher",
+        "title": "rompimento"
+      },
+      {
+        "url": "https://assets.lupa.news/424/4244797.png",
+        "origin": "cited_by_publisher",
+        "title": "nota"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-garotinho-2018-09-10-02",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho disse que foi ele quem prendeu Fernandinho Beira-Mar.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-09-10",
+      "context": "“Quem prendeu Fernandinho Beira-Mar fui eu” Anthony Garotinho, candidato ao governo do Rio de Janeiro pelo PRP, em entrevista concedida ao RJTV 1, no dia 10 de setembro de 2018",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa marcou FALSO: Fernandinho Beira-Mar foi capturado pelas Forças Armadas da Colômbia em solo colombiano, em 2001; a Polícia Federal brasileira participou da investigação, enquanto Garotinho alegou que a Polícia Civil investigou o caso.",
+    "publishedAt": "2018-09-10T20:30:24+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/10/garotinho-rjtv/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "b3ba521e3e3706279f9ced573446df9e73c5804cbfe3cdfc1b63a79fb7e67046",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Lupa, em 2018-09-10."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2018/09/10/garotinho-rjtv/",
+        "origin": "consulted_by_us",
+        "title": "Laços com Cabral e prisão de Fernandinho Beira-Mar: os erros de Garotinho no RJTV • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://g1.globo.com/rj/rio-de-janeiro/eleicoes/2018/noticia/2018/09/10/garotinho-diz-ao-rj1-que-decisoes-da-justica-sao-recorriveis-e-promete-prevencao-e-modernizacao-na-seguranca.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "entrevista concedida ao RJTV 1"
+      },
+      {
+        "url": "https://www1.folha.uol.com.br/folha/mundo/ult94u23513.shtml",
+        "origin": "cited_by_publisher",
+        "title": "Forças Armadas da Colômbia"
+      },
+      {
+        "url": "https://www1.folha.uol.com.br/folha/cotidiano/ult95u27576.shtml",
+        "origin": "cited_by_publisher",
+        "title": "transferido"
+      },
+      {
+        "url": "https://assets.lupa.news/424/4244797.png",
+        "origin": "cited_by_publisher",
+        "title": "aqui"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-garotinho-2018-09-10-03",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho disse que o Facebook do relator de seu processo mostrava apoio a outro candidato ao governo.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-09-10",
+      "context": "“Foi mostrado o Facebook do relator [de processo contra Garotinho] fazendo campanha para outro candidato a governador” Anthony Garotinho, candidato ao governo do Rio de Janeiro pelo PRP, em entrevista concedida ao RJTV 1, no dia 10 de setembro de 2018",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa marcou VERDADEIRO: o desembargador compartilhou um post feito por um procurador que elogiava Witzel; a legenda elogiosa não foi escrita pelo desembargador.",
+    "publishedAt": "2018-09-10T20:30:24+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/10/garotinho-rjtv/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "b3ba521e3e3706279f9ced573446df9e73c5804cbfe3cdfc1b63a79fb7e67046",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Lupa, em 2018-09-10."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2018/09/10/garotinho-rjtv/",
+        "origin": "consulted_by_us",
+        "title": "Laços com Cabral e prisão de Fernandinho Beira-Mar: os erros de Garotinho no RJTV • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://g1.globo.com/rj/rio-de-janeiro/eleicoes/2018/noticia/2018/09/10/garotinho-diz-ao-rj1-que-decisoes-da-justica-sao-recorriveis-e-promete-prevencao-e-modernizacao-na-seguranca.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "entrevista concedida ao RJTV 1"
+      },
+      {
+        "url": "http://www10.trf2.jus.br/portal/trf2-condena-ex-governador-anthony-garotinho-por-quadrilha-armada-e-fixa-pena-em-quatro-anos-e-seis-meses-de-reclusao/",
+        "origin": "cited_by_publisher",
+        "title": "que levou à condenação"
+      },
+      {
+        "url": "https://piaui.folha.uol.com.br/lupa/wp-content/uploads/2018/09/marcello-granado-desembargador.png",
+        "origin": "cited_by_publisher",
+        "title": "compartilhou"
+      },
+      {
+        "url": "https://piaui.folha.uol.com.br/lupa/wp-content/uploads/2018/09/procurador.png",
+        "origin": "cited_by_publisher",
+        "title": "procurador"
+      },
+      {
+        "url": "https://oglobo.globo.com/brasil/wilson-witzel-se-estiver-de-fuzil-na-mao-risco-iminente-sera-abatido-diz-candidato-do-psc-ao-governo-do-rio-23032605",
+        "origin": "cited_by_publisher",
+        "title": "jornal O Globo"
+      },
+      {
+        "url": "https://piaui.folha.uol.com.br/lupa/wp-content/uploads/2018/09/print-resposta-granado.png",
+        "origin": "cited_by_publisher",
+        "title": "Granado"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-garotinho-2018-09-10-04",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho disse que Eduardo Paes concorria amparado por uma liminar.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-09-10",
+      "context": "“O Eduardo Paes está concorrendo com uma liminar” Anthony Garotinho, candidato ao governo do Rio de Janeiro pelo PRP, em entrevista concedida ao RJTV 1, no dia 10 de setembro de 2018",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa marcou VERDADEIRO: a candidatura de Paes estava amparada por uma decisão liminar no recorte verificado.",
+    "publishedAt": "2018-09-10T20:30:24+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/10/garotinho-rjtv/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "b3ba521e3e3706279f9ced573446df9e73c5804cbfe3cdfc1b63a79fb7e67046",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Lupa, em 2018-09-10."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2018/09/10/garotinho-rjtv/",
+        "origin": "consulted_by_us",
+        "title": "Laços com Cabral e prisão de Fernandinho Beira-Mar: os erros de Garotinho no RJTV • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://g1.globo.com/rj/rio-de-janeiro/eleicoes/2018/noticia/2018/09/10/garotinho-diz-ao-rj1-que-decisoes-da-justica-sao-recorriveis-e-promete-prevencao-e-modernizacao-na-seguranca.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "entrevista concedida ao RJTV 1"
+      },
+      {
+        "url": "https://oglobo.globo.com/brasil/tre-rj-torna-eduardo-paes-pedro-paulo-inelegiveis-por-oito-anos-22178336",
+        "origin": "cited_by_publisher",
+        "title": "condenou"
+      },
+      {
+        "url": "http://www.tse.jus.br/imprensa/noticias-tse/2018/Maio/ministro-jorge-mussi-suspende-inelegibilidade-do-ex-prefeito-do-rio-eduardo-paes",
+        "origin": "cited_by_publisher",
+        "title": "concedeu uma liminar aos dois políticos"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "lupa-lupa-garotinho-2018-09-10-05",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho disse que a vice de sua chapa havia exonerado uma assessora ligada a Beira-Mar.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-09-10",
+      "context": "“Assim que tomou conhecimento, ela [a vereadora Maria Landerleide de Assis Duarte (PRP), candidata a vice-governadora na chapa de Garotinho] demitiu [a assessora ligada a Fernandinho Beira-Mar]” Anthony Garotinho, candidato ao governo do Rio de Janeiro pelo PRP, em entrevista concedida ao RJTV 1, no dia 10 de setembro de 2018",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa confirmou a exoneração: o pedido foi feito em 24 de maio de 2017 e passou a valer em 30 de maio. Esse registro comprova a saída, sem estabelecer quando a vice tomou conhecimento do caso.",
+    "publishedAt": "2018-09-10T20:30:24+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/10/garotinho-rjtv/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "b3ba521e3e3706279f9ced573446df9e73c5804cbfe3cdfc1b63a79fb7e67046",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Lupa, em 2018-09-10."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2018/09/10/garotinho-rjtv/",
+        "origin": "consulted_by_us",
+        "title": "Laços com Cabral e prisão de Fernandinho Beira-Mar: os erros de Garotinho no RJTV • Lupa"
+      },
+      {
+        "url": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://g1.globo.com/rj/rio-de-janeiro/eleicoes/2018/noticia/2018/09/10/garotinho-diz-ao-rj1-que-decisoes-da-justica-sao-recorriveis-e-promete-prevencao-e-modernizacao-na-seguranca.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "entrevista concedida ao RJTV 1"
+      },
+      {
+        "url": "https://oglobo.globo.com/brasil/pf-investiga-vice-de-garotinho-por-nomeacoes-ligadas-beira-mar-23053765",
+        "origin": "cited_by_publisher",
+        "title": "O Globo"
+      },
+      {
+        "url": "https://assets.lupa.news/424/4244800.pdf",
+        "origin": "cited_by_publisher",
+        "title": "25 de maio de 2017"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-paes-2024-08-05-01",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que a cobertura de Clínicas da Família era 70% em 2016, caiu para 40% e voltou a subir.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-05",
+      "context": "Eduardo Paes, candidato à prefeitura do Rio de Janeiro em 2024, em entrevista ao g1, em 5 de agosto de 2024.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: a cobertura chegou a 70% em 2016, caiu para cerca de 40% em 2021 e voltou a 70% em janeiro de 2024.",
+    "publishedAt": "2024-08-05T17:01:16.475-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "a9bbc06bb2204de6e3cbb92ecbe14def1a78e2a04f2ad17153fb368d532e9eb7",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Fato ou Fake, em 2024-08-05."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Eduardo Paes ao g1 | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Prefeitura do Rio de Janeiro: dados de cobertura das Clínicas da Família"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Programa Mais Médicos do governo federal"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-paes-2024-08-05-02",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que cedeu áreas para centros de treinamento do Vasco e do Fluminense em seu mandato anterior.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-05",
+      "context": "Eduardo Paes, candidato à prefeitura do Rio de Janeiro em 2024, em entrevista ao g1, em 5 de agosto de 2024.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: os acordos de cessão para centros de treinamento foram feitos em 2013, com áreas na Barra e em Vargem Grande.",
+    "publishedAt": "2024-08-05T17:01:16.475-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "a9bbc06bb2204de6e3cbb92ecbe14def1a78e2a04f2ad17153fb368d532e9eb7",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Fato ou Fake, em 2024-08-05."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Eduardo Paes ao g1 | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Prefeitura do Rio de Janeiro e Diário Oficial do Município: cessão dos terrenos dos centros de treinamento"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-paes-2024-08-05-03",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que todos os BRTs tinham integração com metrô e trem.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-05",
+      "context": "Eduardo Paes, candidato à prefeitura do Rio de Janeiro em 2024, em entrevista ao g1, em 5 de agosto de 2024.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: os quatro corredores tinham alguma integração, embora nem todas as estações tivessem conexão direta com metrô ou trem.",
+    "publishedAt": "2024-08-05T17:01:16.475-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "a9bbc06bb2204de6e3cbb92ecbe14def1a78e2a04f2ad17153fb368d532e9eb7",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Fato ou Fake, em 2024-08-05."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Eduardo Paes ao g1 | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Levantamento descrito pelo próprio Fato ou Fake sobre integrações do BRT; a seção não nomeia uma fonte externa."
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-paes-2024-08-05-04",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que a Guarda Municipal do Rio era a maior do Brasil.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-05",
+      "context": "Eduardo Paes, candidato à prefeitura do Rio de Janeiro em 2024, em entrevista ao g1, em 5 de agosto de 2024.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: o Rio tinha 7.312 guardas, contra 7.039 em São Paulo, e a maior guarda municipal desarmada.",
+    "publishedAt": "2024-08-05T17:01:16.475-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "a9bbc06bb2204de6e3cbb92ecbe14def1a78e2a04f2ad17153fb368d532e9eb7",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Fato ou Fake, em 2024-08-05."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Eduardo Paes ao g1 | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Prefeitura do Rio de Janeiro: efetivo e unidades da Guarda Municipal"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-paes-2024-08-05-06",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que o orçamento da educação era 40% maior que em 2020.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-05",
+      "context": "Eduardo Paes, candidato à prefeitura do Rio de Janeiro em 2024, em entrevista ao g1, em 5 de agosto de 2024.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake marcou #NÃOÉBEMASSIM: o aumento nominal do orçamento da educação era de cerca de 26,8%, não 40%, e a pasta representava parcela menor do orçamento total.",
+    "publishedAt": "2024-08-05T17:01:16.475-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "a9bbc06bb2204de6e3cbb92ecbe14def1a78e2a04f2ad17153fb368d532e9eb7",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Fato ou Fake, em 2024-08-05."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Eduardo Paes ao g1 | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Lei Orçamentária Anual (LOA) de 2024 do Município do Rio de Janeiro"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-paes-2024-08-05-07",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que reduziu pela metade o tempo médio do Sisreg, de 160 para 72 dias.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-05",
+      "context": "Eduardo Paes, candidato à prefeitura do Rio de Janeiro em 2024, em entrevista ao g1, em 5 de agosto de 2024.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: o tempo chegou a 77 dias em maio de 2023 e permaneceu em 75 dias em 2024, aproximando-se da redução alegada de 160 para 72 dias.",
+    "publishedAt": "2024-08-05T17:01:16.475-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "a9bbc06bb2204de6e3cbb92ecbe14def1a78e2a04f2ad17153fb368d532e9eb7",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Fato ou Fake, em 2024-08-05."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Eduardo Paes ao g1 | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Secretaria Municipal de Saúde: fila e tempo médio do Sisreg"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-paes-2024-08-05-08",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que nomeou Chiquinho Brazão sem suspeitas conhecidas e o exonerou quando elas surgiram.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-05",
+      "context": "Eduardo Paes, candidato à prefeitura do Rio de Janeiro em 2024, em entrevista ao g1, em 5 de agosto de 2024.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake marcou #NÃOÉBEMASSIM e registrou correção: Brazão já era investigado antes da nomeação; a apuração era sigilosa e só se tornou pública com a prisão, enquanto a exoneração ocorreu em 31 de janeiro de 2024, antes da prisão de março.",
+    "publishedAt": "2024-08-05T17:01:16.475-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "a9bbc06bb2204de6e3cbb92ecbe14def1a78e2a04f2ad17153fb368d532e9eb7",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Fato ou Fake, em 2024-08-05."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Eduardo Paes ao g1 | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Diário Oficial do Município do Rio de Janeiro, 3 de outubro de 2023"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Delegacia de Homicídios do Rio de Janeiro"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Polícia Federal"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Superior Tribunal de Justiça"
+      }
+    ],
+    "corrections": [
+      {
+        "version": "publisher-correction-2024-08-05",
+        "publishedAt": "2024-08-05",
+        "summary": "A página registrou correção às 18h24: Chiquinho Brazão já era investigado antes da nomeação e a exoneração ocorreu em 31 de janeiro de 2024.",
+        "finalLabel": "#NÃOÉBEMASSIM",
+        "url": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml"
+      }
+    ],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-paes-2024-08-05-09",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que recebeu a prefeitura com R$ 10 bilhões de déficit.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-05",
+      "context": "Eduardo Paes, candidato à prefeitura do Rio de Janeiro em 2024, em entrevista ao g1, em 5 de agosto de 2024.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FAKE",
+    "summary": "O Fato ou Fake distinguiu a previsão de R$ 10 bilhões do déficit posteriormente informado, de R$ 6 bilhões, e classificou a fala como #FAKE.",
+    "publishedAt": "2024-08-05T17:01:16.475-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "a9bbc06bb2204de6e3cbb92ecbe14def1a78e2a04f2ad17153fb368d532e9eb7",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FAKE",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Fato ou Fake, em 2024-08-05."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Eduardo Paes ao g1 | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://oglobo.globo.com/rio/secretario-de-fazenda-de-paes-pedro-paulo-fala-em-cenario-tragico-nas-contas-com-deficit-de-10-bi-em-2021-24777197",
+        "origin": "cited_by_publisher",
+        "title": "um déficit de R$10 bilhões"
+      },
+      {
+        "url": "https://oglobo.globo.com/rio/paes-anuncia-plano-de-metas-ate-2024-revela-deficit-de-6-bilhoes-deixado-pela-gestao-anterior-mas-garante-contas-no-azul-25111378",
+        "origin": "cited_by_publisher",
+        "title": "um déficit de R$6 bilhões"
+      },
+      {
+        "url": "https://g1.globo.com/rj/rio-de-janeiro/noticia/2021/01/02/secretario-de-fazenda-do-rio-cogita-parcelar-13o-e-diz-que-pagamento-de-janeiro-pode-atrasar.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "duas folhas de pagamento a mais para pagar"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-paes-2024-08-05-10",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que 90% de suas promessas haviam sido cumpridas total ou parcialmente segundo o g1.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-05",
+      "context": "Eduardo Paes, candidato à prefeitura do Rio de Janeiro em 2024, em entrevista ao g1, em 5 de agosto de 2024.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: 23 de 47 promessas foram cumpridas totalmente e 18 parcialmente, somando 87,24%, uma aproximação do percentual de 90% citado.",
+    "publishedAt": "2024-08-05T17:01:16.475-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "a9bbc06bb2204de6e3cbb92ecbe14def1a78e2a04f2ad17153fb368d532e9eb7",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Fato ou Fake, em 2024-08-05."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Eduardo Paes ao g1 | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://g1.globo.com/rj/rio-de-janeiro/noticia/2024/07/20/promessas-paes-prefeito-rio-de-janeiro.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "monitor de promessas do g1"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-paes-2024-08-05-11",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que fez 100 mil unidades habitacionais em seus dois primeiros mandatos.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-08-05",
+      "context": "Eduardo Paes, candidato à prefeitura do Rio de Janeiro em 2024, em entrevista ao g1, em 5 de agosto de 2024.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: a apuração registrou 98.155 unidades entre 2009 e 2016, próximo das 100 mil mencionadas.",
+    "publishedAt": "2024-08-05T17:01:16.475-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "a9bbc06bb2204de6e3cbb92ecbe14def1a78e2a04f2ad17153fb368d532e9eb7",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Fato ou Fake, em 2024-08-05."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/08/05/veja-o-que-e-fato-ou-fake-na-entrevista-de-eduardo-paes-ao-g1.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Eduardo Paes ao g1 | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/playlist/videos-g1-fato-ou-fake.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "50 vídeos"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/video/como-identificar-se-uma-mensagem-e-falsa-7239543.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "outras checagens feitas pela equipe do FATO ou FAKE"
+      },
+      {
+        "url": "https://api.whatsapp.com/send?phone=5521973059827&text=&source=&data=",
+        "origin": "cited_by_publisher",
+        "title": "+55 (21) 97305-9827"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-paes-2024-09-12-01",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que a Polícia Militar e a Polícia Civil estão subordinadas aos governos estaduais.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-09-12",
+      "context": "Eduardo Paes, candidato à prefeitura do Rio de Janeiro em 2024, em sabatina do Globo, Extra, Valor e CBN, em 12 de setembro de 2024.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO no recorte constitucional: PM e Polícia Civil estão sob governos estaduais, mas o artigo 144 distribui competências entre União, estados e municípios e não sustenta que toda a segurança pública seja estadual.",
+    "publishedAt": "2024-09-12T18:30:49.307-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/09/12/veja-o-que-e-fato-ou-fake-na-sabatina-de-eduardo-paes-para-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "58f75c6f5fe4c5ad5313b762adc4b439c0f6afc2445c3280aceea7904d590c2a",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Fato ou Fake, em 2024-09-12."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/09/12/veja-o-que-e-fato-ou-fake-na-sabatina-de-eduardo-paes-para-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na sabatina de Eduardo Paes para O GLOBO, Extra, Valor e CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Constituição Federal, artigo 144"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-paes-2024-09-12-04",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que quase dobrou o número de vagas em abrigos.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-09-12",
+      "context": "Eduardo Paes, candidato à prefeitura do Rio de Janeiro em 2024, em sabatina do Globo, Extra, Valor e CBN, em 12 de setembro de 2024.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake marcou #NÃOÉBEMASSIM: as vagas aumentaram 75,54%, de 1.803 para 3.165, com mais 850 anunciadas, abaixo de uma duplicação.",
+    "publishedAt": "2024-09-12T18:30:49.307-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/09/12/veja-o-que-e-fato-ou-fake-na-sabatina-de-eduardo-paes-para-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "58f75c6f5fe4c5ad5313b762adc4b439c0f6afc2445c3280aceea7904d590c2a",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Fato ou Fake, em 2024-09-12."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/09/12/veja-o-que-e-fato-ou-fake-na-sabatina-de-eduardo-paes-para-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na sabatina de Eduardo Paes para O GLOBO, Extra, Valor e CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Secretaria Municipal de Assistência Social do Rio de Janeiro"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-paes-2024-09-12-05",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que retomou ou criou cerca de 200 linhas de ônibus.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-09-12",
+      "context": "Eduardo Paes, candidato à prefeitura do Rio de Janeiro em 2024, em sabatina do Globo, Extra, Valor e CBN, em 12 de setembro de 2024.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: a apuração registrou 194 linhas retomadas ou criadas desde 2022.",
+    "publishedAt": "2024-09-12T18:30:49.307-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/09/12/veja-o-que-e-fato-ou-fake-na-sabatina-de-eduardo-paes-para-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "58f75c6f5fe4c5ad5313b762adc4b439c0f6afc2445c3280aceea7904d590c2a",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Fato ou Fake, em 2024-09-12."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/09/12/veja-o-que-e-fato-ou-fake-na-sabatina-de-eduardo-paes-para-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na sabatina de Eduardo Paes para O GLOBO, Extra, Valor e CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Decreto municipal nº 51.889, de 26 de dezembro de 2022"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Prefeitura do Rio de Janeiro: linhas de ônibus e subsídio tarifário"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Departamento de Transportes Rodoviários do Estado do Rio de Janeiro (Detro-RJ)"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-paes-2024-09-12-05-tarifa",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que a prefeitura subsidiava os ônibus e que a passagem custava R$ 4,30.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-09-12",
+      "context": "Eduardo Paes, candidato à prefeitura do Rio de Janeiro em 2024, em sabatina do Globo, Extra, Valor e CBN, em 12 de setembro de 2024.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake confirmou o subsídio municipal e a tarifa de R$ 4,30 na data da entrevista.",
+    "publishedAt": "2024-09-12T18:30:49.307-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/09/12/veja-o-que-e-fato-ou-fake-na-sabatina-de-eduardo-paes-para-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "58f75c6f5fe4c5ad5313b762adc4b439c0f6afc2445c3280aceea7904d590c2a",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Fato ou Fake, em 2024-09-12."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/09/12/veja-o-que-e-fato-ou-fake-na-sabatina-de-eduardo-paes-para-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na sabatina de Eduardo Paes para O GLOBO, Extra, Valor e CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Decreto municipal nº 51.889, de 26 de dezembro de 2022"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Prefeitura do Rio de Janeiro: linhas de ônibus e subsídio tarifário"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Departamento de Transportes Rodoviários do Estado do Rio de Janeiro (Detro-RJ)"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-paes-2024-09-12-07",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Paes disse que a prefeitura tinha uma coordenadoria de promoção da igualdade racial com programas próprios.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2024-09-12",
+      "context": "Eduardo Paes, candidato à prefeitura do Rio de Janeiro em 2024, em sabatina do Globo, Extra, Valor e CBN, em 12 de setembro de 2024.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: a Coordenadoria Executiva de Promoção da Igualdade Racial existia na Casa Civil e mantinha programas alinhados ao Estatuto da Igualdade Racial.",
+    "publishedAt": "2024-09-12T18:30:49.307-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/09/12/veja-o-que-e-fato-ou-fake-na-sabatina-de-eduardo-paes-para-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "58f75c6f5fe4c5ad5313b762adc4b439c0f6afc2445c3280aceea7904d590c2a",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "Eduardo Paes no contexto da checagem original de Fato ou Fake, em 2024-09-12."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/rio-de-janeiro/noticia/2024/09/12/veja-o-que-e-fato-ou-fake-na-sabatina-de-eduardo-paes-para-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na sabatina de Eduardo Paes para O GLOBO, Extra, Valor e CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/playlist/videos-g1-fato-ou-fake.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "50 vídeos"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/video/como-identificar-se-uma-mensagem-e-falsa-7239543.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "outras checagens feitas pela equipe do FATO ou FAKE"
+      },
+      {
+        "url": "https://api.whatsapp.com/send?phone=5521973059827&text=&source=&data=",
+        "origin": "cited_by_publisher",
+        "title": "+55 (21) 97305-9827"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-garotinho-2018-09-25-01",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho disse que criou o Programa Delegacia Legal e informatizou todas as delegacias.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-09-25",
+      "context": "Anthony Garotinho, candidato ao governo do Rio de Janeiro em 2018, em entrevista ao g1 e à CBN, em 25 de setembro de 2018.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: o Programa Delegacia Legal começou em 1999 e 44 unidades foram integradas durante a gestão, chegando a 106 no governo seguinte.",
+    "publishedAt": "2018-09-25T22:08:11.921-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/09/25/veja-o-que-e-fato-ou-fake-na-entrevista-de-garotinho-ao-g1-e-a-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "f35cf3a8d78f69482cbd79bd579bfba901f0f6ab9bac08491c54f58006b8caac",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Fato ou Fake, em 2018-09-25."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/09/25/veja-o-que-e-fato-ou-fake-na-entrevista-de-garotinho-ao-g1-e-a-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Garotinho ao G1 e à CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "http://www.delegacialegal.rj.gov.br/delegaciaImplantadas.asp",
+        "origin": "cited_by_publisher",
+        "title": "parte dele o programa Delegacia Legal."
+      },
+      {
+        "url": "http://www.policiacivilrj.net.br/delegacias_e_orgaos.php",
+        "origin": "cited_by_publisher",
+        "title": "outras 62 delegacias foram integradas, totalizando 106 delegacias legais."
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-garotinho-2018-09-25-02",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho disse que o RAS era compulsório e comparou seu pagamento ao da Polícia Rodoviária Federal.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-09-25",
+      "context": "Anthony Garotinho, candidato ao governo do Rio de Janeiro em 2018, em entrevista ao g1 e à CBN, em 25 de setembro de 2018.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake marcou #NÃOÉBEMASSIM: o RAS era voluntário nos fins de semana e pagava R$ 163; os valores de R$ 420 e R$ 900 da PRF eram valores previstos/indenizações, não pagamentos efetivos regulamentados.",
+    "publishedAt": "2018-09-25T22:08:11.921-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/09/25/veja-o-que-e-fato-ou-fake-na-entrevista-de-garotinho-ao-g1-e-a-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "f35cf3a8d78f69482cbd79bd579bfba901f0f6ab9bac08491c54f58006b8caac",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Fato ou Fake, em 2018-09-25."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/09/25/veja-o-que-e-fato-ou-fake-na-entrevista-de-garotinho-ao-g1-e-a-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Garotinho ao G1 e à CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://g1.globo.com/politica/noticia/temer-edita-mp-que-permite-plantao-voluntario-de-policiais-rodoviarios-federais.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "chamado Indenização por Plantão Voluntário (IPV)."
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-garotinho-2018-09-25-03",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho disse que o número de policiais que se suicidaram era igual ao número de mortos em serviço até setembro de 2018.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-09-25",
+      "context": "Anthony Garotinho, candidato ao governo do Rio de Janeiro em 2018, em entrevista ao g1 e à CBN, em 25 de setembro de 2018.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FAKE",
+    "summary": "O Fato ou Fake marcou #FAKE: no período de 2014 a setembro de 2018 havia 19 suicídios e 131 mortes em serviço; a própria fonte ressalva possível subnotificação.",
+    "publishedAt": "2018-09-25T22:08:11.921-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/09/25/veja-o-que-e-fato-ou-fake-na-entrevista-de-garotinho-ao-g1-e-a-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "f35cf3a8d78f69482cbd79bd579bfba901f0f6ab9bac08491c54f58006b8caac",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FAKE",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Fato ou Fake, em 2018-09-25."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/09/25/veja-o-que-e-fato-ou-fake-na-entrevista-de-garotinho-ao-g1-e-a-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Garotinho ao G1 e à CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "http://www.ispdados.rj.gov.br/CrimesVida.html",
+        "origin": "cited_by_publisher",
+        "title": "No mesmo período, o Instituto de Segurança Pública do estado contabilizou a morte de 131 PMs"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-garotinho-2018-09-25-05",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho disse que cada preso no sistema prisional do Rio custava R$ 3 mil.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-09-25",
+      "context": "Anthony Garotinho, candidato ao governo do Rio de Janeiro em 2018, em entrevista ao g1 e à CBN, em 25 de setembro de 2018.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake informou custo mensal de R$ 1.374,94 por preso, abaixo dos R$ 3 mil mencionados por Garotinho.",
+    "publishedAt": "2018-09-25T22:08:11.921-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/09/25/veja-o-que-e-fato-ou-fake-na-entrevista-de-garotinho-ao-g1-e-a-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "f35cf3a8d78f69482cbd79bd579bfba901f0f6ab9bac08491c54f58006b8caac",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Fato ou Fake, em 2018-09-25."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/09/25/veja-o-que-e-fato-ou-fake-na-entrevista-de-garotinho-ao-g1-e-a-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Garotinho ao G1 e à CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Secretaria de Estado de Administração Penitenciária (Seap)"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-garotinho-2018-09-25-06",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho disse que a investigação de que era alvo tratava de máquinas caça-níqueis e policiais e não tinha prova ou citação contra ele.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-09-25",
+      "context": "Anthony Garotinho, candidato ao governo do Rio de Janeiro em 2018, em entrevista ao g1 e à CBN, em 25 de setembro de 2018.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FAKE",
+    "summary": "O Fato ou Fake marcou #FAKE: o MPF denunciou Garotinho e citou interceptações e ordens atribuídas a ele, contrariando a alegação de inexistência de prova ou citação.",
+    "publishedAt": "2018-09-25T22:08:11.921-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/09/25/veja-o-que-e-fato-ou-fake-na-entrevista-de-garotinho-ao-g1-e-a-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "f35cf3a8d78f69482cbd79bd579bfba901f0f6ab9bac08491c54f58006b8caac",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FAKE",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Fato ou Fake, em 2018-09-25."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/09/25/veja-o-que-e-fato-ou-fake-na-entrevista-de-garotinho-ao-g1-e-a-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Garotinho ao G1 e à CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "http://g1.globo.com/Noticias/Rio/0,,MUL583531-5606,00-",
+        "origin": "cited_by_publisher",
+        "title": "O Ministério Público Federal denunciou o ex-governador"
+      },
+      {
+        "url": "http://procweb.jfrj.jus.br/portal/consulta/resconsproc.asp",
+        "origin": "cited_by_publisher",
+        "title": "o ex-governador foi denunciado por garantir politicamente a manutenção do grupo"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-garotinho-2018-09-25-07",
+    "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "candidate_slug": "garotinho",
+    "candidate_name": "Garotinho",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Garotinho disse que as atividades da milícia cresceram mais de 350% nos governos Cabral e Pezão e eram embrionárias em seu governo.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2018-09-25",
+      "context": "Anthony Garotinho, candidato ao governo do Rio de Janeiro em 2018, em entrevista ao g1 e à CBN, em 25 de setembro de 2018.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Garotinho"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake marcou #NÃOÉBEMASSIM: a fonte não sustenta quantificação de crescimento de 350% e o relatório também atribuía responsabilidades a governos anteriores.",
+    "publishedAt": "2018-09-25T22:08:11.921-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/09/25/veja-o-que-e-fato-ou-fake-na-entrevista-de-garotinho-ao-g1-e-a-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "f35cf3a8d78f69482cbd79bd579bfba901f0f6ab9bac08491c54f58006b8caac",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Garotinho",
+      "contextExcerpt": "Garotinho no contexto da checagem original de Fato ou Fake, em 2018-09-25."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/09/25/veja-o-que-e-fato-ou-fake-na-entrevista-de-garotinho-ao-g1-e-a-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Garotinho ao G1 e à CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://api.whatsapp.com/send?phone=5521973059827&text=&source=&data=",
+        "origin": "cited_by_publisher",
+        "title": "+55 (21) 97305-9827"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/09/01/veja-o-que-e-fato-ou-fake-nas-entrevistas-dos-presidenciaveis-para-o-jornal-nacional-e-para-o-jornal-das-dez.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Veja o que é #FATO ou #FAKE nas entrevistas dos presidenciáveis para o Jornal Nacional e para o Jornal das Dez"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/09/21/veja-o-que-e-fato-ou-fake-nas-entrevistas-dos-presidenciaveis-ao-g1-e-a-cbn.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Veja o que é #FATO ou #FAKE nas entrevistas dos presidenciáveis ao G1 e à CBN"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/09/09/veja-o-que-e-fato-ou-fake-nas-entrevistas-dos-candidatos-a-vice-presidente-a-globonews.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Veja o que é #FATO ou #FAKE nas entrevistas dos candidatos a vice-presidente à GloboNews"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/08/04/veja-o-que-e-fato-ou-fake-nas-entrevistas-dos-presidenciaveis-para-a-globonews.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Veja o que é #FATO ou #FAKE nas entrevistas dos presidenciáveis para a GloboNews"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/10/05/veja-o-que-e-fato-ou-fake-nas-falas-dos-presidenciaveis-no-debate-da-globo.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Veja o que é #FATO ou #FAKE nas falas dos presidenciáveis no debate da Globo"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/08/17/veja-o-que-e-fato-ou-fake-nos-planos-de-governo-dos-candidatos-a-presidencia.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Veja o que é #FATO ou #FAKE nos planos de governo dos candidatos à Presidência"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/10/06/fato-ou-fake-na-eleicao-mais-de-700-checagens-durante-a-campanha.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "FATO ou FAKE na eleição: mais de 700 checagens durante a campanha"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/09/25/fato-ou-fake-saiba-como-identificar-se-um-conteudo-e-falso.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Saiba como identificar se um conteúdo é falso"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "A metodologia"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-zema-2022-09-14-01",
+    "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+    "candidate_slug": "romeu-zema",
+    "candidate_name": "Romeu Zema",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Zema disse que Minas Gerais já era o estado mais seguro do Brasil.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2022-09-14",
+      "context": "Romeu Zema, candidato à reeleição ao governo de Minas Gerais em 2022, em sabatina do g1, O Globo, Valor e CBN, em 14 de setembro de 2022.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Romeu Zema"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FAKE",
+    "summary": "O Fato ou Fake marcou #FAKE: Minas ficou em quarto no índice de mortes violentas, atrás de São Paulo, Santa Catarina e Distrito Federal; a assessoria contestou com outra base, mas o veículo manteve o selo.",
+    "publishedAt": "2022-09-14T19:26:57.132-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/09/14/veja-o-que-e-fato-ou-fake-na-sabatina-de-romeu-zema-para-o-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1d2b826302be2c3e211af4b3fa867855d52b0256f9707b58063eae3a0b7fc0fd",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FAKE",
+      "speakerIdentity": "Romeu Zema",
+      "contextExcerpt": "Romeu Zema no contexto da checagem original de Fato ou Fake, em 2022-09-14."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/09/14/veja-o-que-e-fato-ou-fake-na-sabatina-de-romeu-zema-para-o-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na sabatina de Romeu Zema para O Globo, Valor e CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://forumseguranca.org.br/wp-content/uploads/2022/06/anuario-2022.xlsx",
+        "origin": "cited_by_publisher",
+        "title": "Anuário Brasileiro de Segurança Pública de 2022"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-zema-2022-09-14-02",
+    "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+    "candidate_slug": "romeu-zema",
+    "candidate_name": "Romeu Zema",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Zema disse que Minas criou mais de meio milhão de empregos entre 2019 e julho de 2022.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2022-09-14",
+      "context": "Romeu Zema, candidato à reeleição ao governo de Minas Gerais em 2022, em sabatina do g1, O Globo, Valor e CBN, em 14 de setembro de 2022.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Romeu Zema"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: o Caged registrou saldo positivo de 566.116 empregos entre 2019 e julho de 2022.",
+    "publishedAt": "2022-09-14T19:26:57.132-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/09/14/veja-o-que-e-fato-ou-fake-na-sabatina-de-romeu-zema-para-o-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1d2b826302be2c3e211af4b3fa867855d52b0256f9707b58063eae3a0b7fc0fd",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Romeu Zema",
+      "contextExcerpt": "Romeu Zema no contexto da checagem original de Fato ou Fake, em 2022-09-14."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/09/14/veja-o-que-e-fato-ou-fake-na-sabatina-de-romeu-zema-para-o-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na sabatina de Romeu Zema para O Globo, Valor e CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://app.powerbi.com/view?r=eyJrIjoiNWI5NWI0ODEtYmZiYy00Mjg3LTkzNWUtY2UyYjIwMDE1YWI2IiwidCI6IjNlYzkyOTY5LTVhNTEtNGYxOC04YWM5LWVmOThmYmFmYTk3OCJ9",
+        "origin": "cited_by_publisher",
+        "title": "566.116 empregos"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-zema-2022-09-14-03",
+    "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+    "candidate_slug": "romeu-zema",
+    "candidate_name": "Romeu Zema",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Zema disse que economizava por não morar no Palácio das Mangabeiras.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2022-09-14",
+      "context": "Romeu Zema, candidato à reeleição ao governo de Minas Gerais em 2022, em sabatina do g1, O Globo, Valor e CBN, em 14 de setembro de 2022.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Romeu Zema"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake marcou #NÃOÉBEMASSIM: não morar no Palácio das Mangabeiras era a economia alegada, mas o imóvel vazio ainda custava R$ 97 mil por mês.",
+    "publishedAt": "2022-09-14T19:26:57.132-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/09/14/veja-o-que-e-fato-ou-fake-na-sabatina-de-romeu-zema-para-o-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1d2b826302be2c3e211af4b3fa867855d52b0256f9707b58063eae3a0b7fc0fd",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Romeu Zema",
+      "contextExcerpt": "Romeu Zema no contexto da checagem original de Fato ou Fake, em 2022-09-14."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/09/14/veja-o-que-e-fato-ou-fake-na-sabatina-de-romeu-zema-para-o-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na sabatina de Romeu Zema para O Globo, Valor e CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://g1.globo.com/mg/minas-gerais/noticia/2021/06/10/vazia-na-gestao-de-zema-antiga-residencia-oficial-do-governador-ainda-custa-r-97-mil-por-mes.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "custa aos cofres públicos R$ 97 mil por mês"
+      },
+      {
+        "url": "https://twitter.com/romeuzema/status/1109605976657797120",
+        "origin": "cited_by_publisher",
+        "title": "redes sociais"
+      },
+      {
+        "url": "https://g1.globo.com/mg/minas-gerais/noticia/2020/08/28/sem-autorizacao-governo-de-minas-usa-aeronave-que-seria-para-seguranca-publica-em-agendas-politicas.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "o governo utilizou, sem autorização, uma aeronave cedida pela Polícia Federal"
+      },
+      {
+        "url": "https://g1.globo.com/mg/minas-gerais/noticia/2021/09/30/zema-fez-um-voo-a-cada-tres-dias-com-aeronave-oficial-do-governo-de-minas-em-2021.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "candidato fez um total de 69 viagens com aeronaves oficiais"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-zema-2022-09-14-05",
+    "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+    "candidate_slug": "romeu-zema",
+    "candidate_name": "Romeu Zema",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Zema disse que estava reiniciando obras de seis hospitais regionais paralisadas durante o governo Pimentel.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2022-09-14",
+      "context": "Romeu Zema, candidato à reeleição ao governo de Minas Gerais em 2022, em sabatina do g1, O Globo, Valor e CBN, em 14 de setembro de 2022.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Romeu Zema"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "Segundo o Fato ou Fake, cinco obras pararam entre 2015 e 2017, durante o governo Pimentel; uma já estava paralisada desde 2012. Por isso, o veículo fez ressalva à atribuição das seis paralisações àquela gestão.",
+    "publishedAt": "2022-09-14T19:26:57.132-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/09/14/veja-o-que-e-fato-ou-fake-na-sabatina-de-romeu-zema-para-o-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1d2b826302be2c3e211af4b3fa867855d52b0256f9707b58063eae3a0b7fc0fd",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Romeu Zema",
+      "contextExcerpt": "Romeu Zema no contexto da checagem original de Fato ou Fake, em 2022-09-14."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/09/14/veja-o-que-e-fato-ou-fake-na-sabatina-de-romeu-zema-para-o-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na sabatina de Romeu Zema para O Globo, Valor e CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Cronologia das obras descrita pelo próprio Fato ou Fake; a seção não nomeia uma fonte externa."
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-zema-2022-09-14-06",
+    "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+    "candidate_slug": "romeu-zema",
+    "candidate_name": "Romeu Zema",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Zema disse que Minas saiu do 20º lugar e chegou ao primeiro em transparência.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2022-09-14",
+      "context": "Romeu Zema, candidato à reeleição ao governo de Minas Gerais em 2022, em sabatina do g1, O Globo, Valor e CBN, em 14 de setembro de 2022.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Romeu Zema"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: Minas saiu da 20ª posição em 2018 para nota máxima em 2020, dividindo o primeiro lugar.",
+    "publishedAt": "2022-09-14T19:26:57.132-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/09/14/veja-o-que-e-fato-ou-fake-na-sabatina-de-romeu-zema-para-o-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1d2b826302be2c3e211af4b3fa867855d52b0256f9707b58063eae3a0b7fc0fd",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Romeu Zema",
+      "contextExcerpt": "Romeu Zema no contexto da checagem original de Fato ou Fake, em 2022-09-14."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/09/14/veja-o-que-e-fato-ou-fake-na-sabatina-de-romeu-zema-para-o-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na sabatina de Romeu Zema para O Globo, Valor e CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://mbt.cgu.gov.br/publico/avaliacao/escala_brasil_transparente/200000005",
+        "origin": "cited_by_publisher",
+        "title": "2018"
+      },
+      {
+        "url": "https://mbt.cgu.gov.br/publico/avaliacao/escala_brasil_transparente/66",
+        "origin": "cited_by_publisher",
+        "title": "2020, Minas Gerais recebeu nota 10"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-zema-2022-09-14-08",
+    "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+    "candidate_slug": "romeu-zema",
+    "candidate_name": "Romeu Zema",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Zema disse que Minas tinha o maior número absoluto de feminicídios em 2021, cerca de 153 casos.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2022-09-14",
+      "context": "Romeu Zema, candidato à reeleição ao governo de Minas Gerais em 2022, em sabatina do g1, O Globo, Valor e CBN, em 14 de setembro de 2022.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Romeu Zema"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake confirmou o maior total estadual de feminicídios em 2021: Minas registrou 152 casos, próximo dos 153 citados.",
+    "publishedAt": "2022-09-14T19:26:57.132-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/09/14/veja-o-que-e-fato-ou-fake-na-sabatina-de-romeu-zema-para-o-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1d2b826302be2c3e211af4b3fa867855d52b0256f9707b58063eae3a0b7fc0fd",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Romeu Zema",
+      "contextExcerpt": "Romeu Zema no contexto da checagem original de Fato ou Fake, em 2022-09-14."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/09/14/veja-o-que-e-fato-ou-fake-na-sabatina-de-romeu-zema-para-o-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na sabatina de Romeu Zema para O Globo, Valor e CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://forumseguranca.org.br/wp-content/uploads/2022/03/violencia-contra-mulher-2021-v5.pdf",
+        "origin": "cited_by_publisher",
+        "title": "\"Violência contra mulheres em 2021\""
+      },
+      {
+        "url": "https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/31458-populacao-estimada-do-pais-chega-a-213-3-milhoes-de-habitantes-em-2021",
+        "origin": "cited_by_publisher",
+        "title": "O índice foi de 1,4 em 2021, o 9º menor do país"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-zema-2022-09-14-09",
+    "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+    "candidate_slug": "romeu-zema",
+    "candidate_name": "Romeu Zema",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Zema disse que 88% das vítimas de feminicídio em Minas nunca haviam denunciado violência antes.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2022-09-14",
+      "context": "Romeu Zema, candidato à reeleição ao governo de Minas Gerais em 2022, em sabatina do g1, O Globo, Valor e CBN, em 14 de setembro de 2022.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Romeu Zema"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake apontou uma diferença de indicador: 89,65% das vítimas não tinham medida protetiva entre 2020 e o primeiro semestre de 2021. Isso não significa que nunca haviam denunciado violência.",
+    "publishedAt": "2022-09-14T19:26:57.132-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/09/14/veja-o-que-e-fato-ou-fake-na-sabatina-de-romeu-zema-para-o-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1d2b826302be2c3e211af4b3fa867855d52b0256f9707b58063eae3a0b7fc0fd",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Romeu Zema",
+      "contextExcerpt": "Romeu Zema no contexto da checagem original de Fato ou Fake, em 2022-09-14."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/09/14/veja-o-que-e-fato-ou-fake-na-sabatina-de-romeu-zema-para-o-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na sabatina de Romeu Zema para O Globo, Valor e CBN | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://www.mpmg.mp.br/data/files/85/D4/C5/71/4556B710FCE4F5B7760849A8/DIAGNOSTICO%20-%20VDFCM%20nas%20RISP_s%20-%201%20semestre-2021%20-%202021-08-06.pdf",
+        "origin": "cited_by_publisher",
+        "title": "89,65% não tinham medida protetiva contra o agressor"
+      },
+      {
+        "url": "https://g1.globo.com/sp/sao-paulo/noticia/mulher-vitima-de-violencia-enfrenta-medo-e-vergonha-para-denunciar-agressor.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "uma mulher é vítima de violência física ou verbal"
+      },
+      {
+        "url": "https://periodicos.ufjf.br/index.php/csonline/article/view/17512",
+        "origin": "cited_by_publisher",
+        "title": "Por que algumas mulheres não denunciam seus agressores?"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/playlist/videos-fato-ou-fake-explica-1-t.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "5 vídeos"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/playlist/fato-ou-fake-explica-2-t.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "4 vídeos"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/",
+        "origin": "cited_by_publisher",
+        "title": "outras checagens feitas pela equipe do FATO ou FAKE"
+      },
+      {
+        "url": "https://api.whatsapp.com/send?phone=5521973059827&text=&source=&data=",
+        "origin": "cited_by_publisher",
+        "title": "+55 (21) 97305-9827"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2022/06/30/e-fake-mensagem-que-fala-em-fraude-na-sala-escura-do-tse-e-malware-em-cartoes-flash-das-urnas.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "É #FAKE mensagem que fala em fraude na 'sala escura' do TSE e malware em cartões flash das urnas"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2022/06/30/e-fake-que-votos-brancos-e-nulos-possam-ser-transferidos-para-candidatos.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "É #FAKE que votos brancos e nulos possam ser transferidos para candidatos"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2022/06/24/e-fake-video-que-afirma-que-votos-dos-eleitores-vao-para-as-nuvens.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "É #FAKE vídeo que afirma que votos dos eleitores 'vão para as nuvens'"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2022/06/02/e-fake-audio-de-ex-diretor-do-datafolha-sobre-fraude-nas-urnas.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "É #FAKE áudio de ex-diretor do Datafolha sobre fraude nas urnas"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2022/05/13/e-fake-que-dispositivo-chupa-cabra-inserido-em-urna-transfere-votos-entre-candidatos.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "https://g1.globo.com/fato-ou-fake/noticia/2022/05/13/e-fake-que-dispositivo-chupa-cabra-inserido-em-urna-transfere-votos-entre-candidatos.ghtml"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/quiz/eleicoes-2022-voce-sabe-o-que-e-fato-ou-fake-sobre-urnas-eletronicas-faca-o-teste.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Você sabe o que é #FATO ou #FAKE sobre urnas eletrônicas? Faça o teste"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2022/03/28/e-fake-que-titulos-de-eleitor-de-quem-tem-mais-de-70-anos-estao-sendo-cancelados.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "É #FAKE que títulos de eleitor de quem tem mais de 70 anos estão sendo cancelados"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/08/19/fato-ou-fake-como-funciona-a-urna-eletronica-e-quais-sao-as-principais-fakes-sobre-ela.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Fato ou Fake: como funciona a urna eletrônica e quais são as principais #FAKES sobre ela"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/08/18/fato-ou-fake-como-denunciar-fake-news-nas-redes-sociais.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Fato ou Fake: Como denunciar fake news nas redes sociais"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/08/17/fato-ou-fake-como-checar-se-uma-mensagem-que-voce-recebeu-sobre-eleicoes-e-fake.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Fato ou Fake: Como checar se uma mensagem que você recebeu sobre eleições é #FAKE"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-tarcisio-2022-08-22-01",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio disse que só tirou a máscara para uma fotografia durante a pandemia.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2022-08-22",
+      "context": "Tarcísio de Freitas, candidato ao governo de São Paulo em 2022, em entrevista ao g1, em 22 de agosto de 2022.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FAKE",
+    "summary": "O Fato ou Fake classificou a fala como #FAKE porque vídeos mostravam Tarcísio sem máscara por períodos mais longos que o necessário para uma fotografia.",
+    "publishedAt": "2022-08-22T21:18:19.324-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/08/22/veja-o-que-e-fato-ou-fake-na-entrevista-de-tarcisio-de-freitas-para-o-g1.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "cdd571729a8d1f09a3fb8bcb87f6ba1cbb9ae3eae3a0011a7f53655f6663c00a",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FAKE",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "Tarcísio de Freitas no contexto da checagem original de Fato ou Fake, em 2022-08-22."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/08/22/veja-o-que-e-fato-ou-fake-na-entrevista-de-tarcisio-de-freitas-para-o-g1.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Tarcísio de Freitas para o g1 | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://g1.globo.com/sp/sao-paulo/noticia/2021/06/12/governo-de-sp-multa-bolsonaro-e-o-filho-por-nao-usarem-mascaras-durante-passeio-com-motociclistas-em-sp.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "12 de junho de 2021, um sábado, milhares de pessoas participaram da motociata, que começou na capital paulista"
+      },
+      {
+        "url": "https://g1.globo.com/sp/sao-paulo/noticia/2021/07/31/governo-de-sp-autua-bolsonaro-pela-3a-vez-pelo-nao-uso-de-mascaras-durante-ato-com-motociclistas-no-interior-de-sp.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "31 julho de 2021, após passeio com motociclistas realizado em Presidente Prudente"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-tarcisio-2022-08-22-02",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio disse que o superávit previsto era de R$ 14 bilhões e o resultado chegou a R$ 46 bilhões.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2022-08-22",
+      "context": "Tarcísio de Freitas, candidato ao governo de São Paulo em 2022, em entrevista ao g1, em 22 de agosto de 2022.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake marcou #NÃOÉBEMASSIM: a previsão era de R$ 14,1 bilhões e o resultado divulgado foi de R$ 41,9 bilhões, não R$ 46 bilhões.",
+    "publishedAt": "2022-08-22T21:18:19.324-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/08/22/veja-o-que-e-fato-ou-fake-na-entrevista-de-tarcisio-de-freitas-para-o-g1.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "cdd571729a8d1f09a3fb8bcb87f6ba1cbb9ae3eae3a0011a7f53655f6663c00a",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "Tarcísio de Freitas no contexto da checagem original de Fato ou Fake, em 2022-08-22."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/08/22/veja-o-que-e-fato-ou-fake-na-entrevista-de-tarcisio-de-freitas-para-o-g1.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Tarcísio de Freitas para o g1 | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Lei de Diretrizes Orçamentárias do Estado de São Paulo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Balanço geral do Estado de São Paulo"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-tarcisio-2022-08-22-03",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio disse que o primeiro contrato da vacina AstraZeneca foi assinado em junho de 2020.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2022-08-22",
+      "context": "Tarcísio de Freitas, candidato ao governo de São Paulo em 2022, em entrevista ao g1, em 22 de agosto de 2022.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake marcou #NÃOÉBEMASSIM: a parceria da AstraZeneca foi anunciada em junho de 2020, mas a apuração também registrou ofertas da Pfizer ignoradas e acordo posterior.",
+    "publishedAt": "2022-08-22T21:18:19.324-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/08/22/veja-o-que-e-fato-ou-fake-na-entrevista-de-tarcisio-de-freitas-para-o-g1.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "cdd571729a8d1f09a3fb8bcb87f6ba1cbb9ae3eae3a0011a7f53655f6663c00a",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "Tarcísio de Freitas no contexto da checagem original de Fato ou Fake, em 2022-08-22."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/08/22/veja-o-que-e-fato-ou-fake-na-entrevista-de-tarcisio-de-freitas-para-o-g1.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Tarcísio de Freitas para o g1 | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "CPI da Covid no Senado Federal"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Parceria federal com a AstraZeneca"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Ofertas da Pfizer ao governo federal"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Instituto Butantan e depoimento de Dimas Covas"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-tarcisio-2022-08-22-04",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio disse que quase 400 leitos do Hospital São Paulo estavam fechados.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2022-08-22",
+      "context": "Tarcísio de Freitas, candidato ao governo de São Paulo em 2022, em entrevista ao g1, em 22 de agosto de 2022.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FAKE",
+    "summary": "O Fato ou Fake consultou a SPDM, que informou 100 leitos fechados, em vez dos quase 400 alegados; outros 470 estavam abertos em 2022.",
+    "publishedAt": "2022-08-22T21:18:19.324-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/08/22/veja-o-que-e-fato-ou-fake-na-entrevista-de-tarcisio-de-freitas-para-o-g1.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "cdd571729a8d1f09a3fb8bcb87f6ba1cbb9ae3eae3a0011a7f53655f6663c00a",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FAKE",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "Tarcísio de Freitas no contexto da checagem original de Fato ou Fake, em 2022-08-22."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/08/22/veja-o-que-e-fato-ou-fake-na-entrevista-de-tarcisio-de-freitas-para-o-g1.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Tarcísio de Freitas para o g1 | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://g1.globo.com/sp/sao-paulo/noticia/2022/05/23/hospital-sao-paulo-fecha-pronto-socorro-para-reforma-a-partir-desta-segunda-feira.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "fechamento do Pronto-Socorro para reforma, no último mês de maio."
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
+  },
+  {
+    "id": "g1-g1-tarcisio-2022-08-22-05",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio disse que São Paulo não tinha isenção estadual de IPVA para carros elétricos.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2022-08-22",
+      "context": "Tarcísio de Freitas, candidato ao governo de São Paulo em 2022, em entrevista ao g1, em 22 de agosto de 2022.",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake confirmou a alíquota estadual de 4% e a ausência de isenção estadual. A matéria distinguiu os incentivos municipais existentes em São Paulo, São Bernardo do Campo, Sorocaba e Indaiatuba.",
+    "publishedAt": "2022-08-22T21:18:19.324-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/08/22/veja-o-que-e-fato-ou-fake-na-entrevista-de-tarcisio-de-freitas-para-o-g1.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "cdd571729a8d1f09a3fb8bcb87f6ba1cbb9ae3eae3a0011a7f53655f6663c00a",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "Tarcísio de Freitas no contexto da checagem original de Fato ou Fake, em 2022-08-22."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2022/08/22/veja-o-que-e-fato-ou-fake-na-entrevista-de-tarcisio-de-freitas-para-o-g1.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Veja o que é #FATO ou #FAKE na entrevista de Tarcísio de Freitas para o g1 | G1globo.com"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Metodologia do veículo"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/playlist/videos-fato-ou-fake-explica-1-t.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "5 vídeos"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/playlist/fato-ou-fake-explica-2-t.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "4 vídeos"
+      },
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/",
+        "origin": "cited_by_publisher",
+        "title": "outras checagens feitas pela equipe do FATO ou FAKE"
+      },
+      {
+        "url": "https://api.whatsapp.com/send?phone=5521973059827&text=&source=&data=",
+        "origin": "cited_by_publisher",
+        "title": "+55 (21) 97305-9827"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T16:10:24.744Z"
+    }
   }
 ]
