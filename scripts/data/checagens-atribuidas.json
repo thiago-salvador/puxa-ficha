@@ -1,0 +1,59 @@
+[
+  {
+    "id": "aosfatos-lula-roberta-20260827",
+    "candidate_id": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+    "candidate_slug": "lula",
+    "candidate_name": "Luiz Inácio Lula da Silva",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Eu não conheço essa moça, nunca vi essa moça na minha vida.",
+    "claimFormat": "literal",
+    "event": {
+      "date": "2026-08-27",
+      "context": "Entrevista à TV Globo. A pergunta se referia a Roberta Luchsinger e a uma suposta oferta de cargo. A avaliação importada trata da negativa de conhecer ou ter visto Roberta, não da oferta de cargo.",
+      "speaker": "Luiz Inácio Lula da Silva",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
+    },
+    "publisher": "Aos Fatos",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSA",
+    "summary": "O Aos Fatos classificou a negativa como falsa. A agência apontou duas fotos de Lula com Roberta Luchsinger publicadas no Instagram dela, em 27 de outubro e 3 de novembro de 2022.",
+    "publishedAt": "2026-08-27",
+    "originalUrl": "https://www.aosfatos.org/noticias/checamos-entrevista-lula-globo/",
+    "methodologyUrl": "https://www.aosfatos.org/sobre-o-aos-fatos/",
+    "methodologyVersion": "Método descrito na introdução da checagem: transcrição automática revisada, apuração por repórteres e editores e possibilidade de atualização ou correção. Consultado em 22/09/2026.",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "8436721d81f50c02b0414a1ae85de71e22eea1505ab8471288abbdeeb543ada6",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSA",
+      "speakerIdentity": "Luiz Inácio Lula da Silva",
+      "contextExcerpt": "Seção da entrevista em que a jornalista pergunta sobre Roberta Luchsinger. A resposta identificada como Lula contém a negativa; o parágrafo de checagem imediatamente seguinte apresenta o rótulo FALSA e as duas fotografias."
+    },
+    "sources": [
+      {
+        "url": "https://www.instagram.com/p/CkhGguZLjx6/",
+        "origin": "cited_by_publisher",
+        "title": "Publicação de Roberta Luchsinger citada pelo Aos Fatos: 03/11/2022"
+      },
+      {
+        "url": "https://www.instagram.com/p/CkNrT0Trgq-/",
+        "origin": "cited_by_publisher",
+        "title": "Publicação de Roberta Luchsinger citada pelo Aos Fatos: 27/10/2022"
+      },
+      {
+        "url": "https://www.aosfatos.org/noticias/checamos-entrevista-lula-globo/",
+        "origin": "consulted_by_us",
+        "title": "Checagem original e contexto da entrevista, consultados em 22/09/2026"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T11:48:45Z"
+    }
+  }
+]
