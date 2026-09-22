@@ -1,6 +1,6 @@
 import rawChecks from "../../scripts/data/checagens-atribuidas.json"
 
-export const ATTRIBUTED_CHECKS_POLICY = "pf-checagens-v1"
+const ATTRIBUTED_CHECKS_POLICY = "pf-checagens-v1"
 
 export type AttributedSourceOrigin = "cited_by_publisher" | "consulted_by_us"
 
@@ -190,7 +190,7 @@ export function parseAttributedFactCheck(value: unknown): AttributedFactCheck | 
     !validHttpsUrl(value.originalUrl) ||
     !validHttpsUrl(value.methodologyUrl) ||
     !nonEmptyString(value.methodologyVersion) ||
-    !nonEmptyString(value.sourcePolicyVersion) ||
+    value.sourcePolicyVersion !== ATTRIBUTED_CHECKS_POLICY ||
     !/^[a-f0-9]{64}$/i.test(String(value.sourceSnapshotSha256)) ||
     !validDate(value.retrievedAt) ||
     !isRecord(value.sourceEvidence) ||
