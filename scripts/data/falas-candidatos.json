@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-09-22T11:41:54.151Z",
+  "updated_at": "2026-09-22T11:51:04.216Z",
   "quotes": [
     {
       "id": "df3b314a4c73c4f168b08c74c348c04d43481ac749c59cd01af84d05990c24f5",
@@ -6409,6 +6409,110 @@
         "identity_excerpt": "Candidata ao governo do Acre, Mailza Assis, foi sabatinada nesta quinta (17) no JAC1.",
         "date_excerpt": "Candidata ao governo do Acre, Mailza Assis, foi sabatinada nesta quinta (17) no JAC1.",
         "fetched_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/17/mailza-assis-diz-que-se-considera-votada-como-vice-defende-chapa-feminina-e-promete-combater-corrupcao.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "1c3a7a2cefa3ef9a2b2feace8df64b9fbf993647c5dc3042669547be75806299",
+      "candidate_id": "9677309d-5b33-4973-9bbb-d92b766557a3",
+      "candidate_slug": "lenilda-luna",
+      "candidate_name": "Lenilda Luna",
+      "office": "Governador",
+      "uf": "AL",
+      "quote_text": "O orçamento público tem que ser direcionado para quem mais precisa",
+      "context": "“Nós queremos inverter essa ordem. O orçamento público tem que ser direcionado para quem mais precisa, os incentivos, a redistribuição de renda, a reforma agrária, o SUS 100% público.”",
+      "event_context": "Entrevista ao AB1 Alagoas. Em entrevista nesta segunda-feira (14), Lenilda Luna, candidata ao governo de Alagoas pela UP, prometeu priorizar a população de baixa renda e fortalecer o SUS.. Em entrevista nesta segunda-feira (14), Lenilda Luna, candidata ao governo de Alagoas pela UP, prometeu priorizar a população de baixa renda e fortalecer o SUS.",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-14",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/al/alagoas/eleicoes/2026/noticia/2026/09/14/lenilda-luna-promete-priorizar-populacao-de-baixa-renda-e-fortalecer-sus-em-alagoas.ghtml",
+      "article_title": "Lenilda Luna promete priorizar população de baixa renda e fortalecer SUS em Alagoas",
+      "article_published_at": "2026-09-14T14:54:45.587-03:00",
+      "observed_at": "2026-09-22T11:51:04.216Z",
+      "source_sha256": "304c9a5ff4411028b3169ee6fc189cc1802a0695c17b5351b67ff557d55b24c9",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Em entrevista nesta segunda-feira (14), Lenilda Luna, candidata ao governo de Alagoas pela UP, prometeu priorizar a população de baixa renda e fortalecer o SUS.",
+        "date_excerpt": "Em entrevista nesta segunda-feira (14), Lenilda Luna, candidata ao governo de Alagoas pela UP, prometeu priorizar a população de baixa renda e fortalecer o SUS.",
+        "fetched_url": "https://g1.globo.com/al/alagoas/eleicoes/2026/noticia/2026/09/14/lenilda-luna-promete-priorizar-populacao-de-baixa-renda-e-fortalecer-sus-em-alagoas.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "2468bd5ca5f648604ac071d63c81131530f008f1e553da3e6e82d21e13dc18e6",
+      "candidate_id": "ba62f5d0-3e39-40a7-a0af-ee1d86e97e75",
+      "candidate_slug": "jhc",
+      "candidate_name": "JHC",
+      "office": "Governador",
+      "uf": "AL",
+      "quote_text": "Nós vamos criar uma terceira macrorregião de Saúde, que vai ser no Sertão, Alto Sertão.",
+      "context": "“Nós vamos criar uma terceira macrorregião de Saúde, que vai ser no Sertão, Alto Sertão. Para quê? Para que quem mora no interior possa ter atendimento mais fácil e ter um acesso mais próximo de casa”, disse.",
+      "event_context": "Sabatina do AB1 Alagoas. Em entrevista ao AB1 nesta terça-feira (15), o candidato ao governo de Alagoas JHC (PSDB) prometeu fila única na saúde, concurso policial e BRT metropolitano.. Em entrevista ao AB1 nesta terça-feira (15), o candidato ao governo de Alagoas JHC (PSDB) prometeu fila única na saúde, concurso policial e BRT metropolitano.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-15",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/al/alagoas/eleicoes/2026/noticia/2026/09/15/jhc-promete-fila-unica-na-saude-concurso-para-35-mil-policiais-e-brt-metropolitano.ghtml",
+      "article_title": "JHC promete fila única na Saúde, concurso para 3,5 mil policiais e BRT metropolitano",
+      "article_published_at": "2026-09-15T16:51:41.538-03:00",
+      "observed_at": "2026-09-22T11:51:04.216Z",
+      "source_sha256": "8f4e67333d8cf9cf7908daed4204d9256721a22f31954efd2cc9389a213c3804",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Em entrevista ao AB1 nesta terça-feira (15), o candidato ao governo de Alagoas JHC (PSDB) prometeu fila única na saúde, concurso policial e BRT metropolitano.",
+        "date_excerpt": "Em entrevista ao AB1 nesta terça-feira (15), o candidato ao governo de Alagoas JHC (PSDB) prometeu fila única na saúde, concurso policial e BRT metropolitano.",
+        "fetched_url": "https://g1.globo.com/al/alagoas/eleicoes/2026/noticia/2026/09/15/jhc-promete-fila-unica-na-saude-concurso-para-35-mil-policiais-e-brt-metropolitano.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "c745bece020a9321fd8ecd4bf99c4fd42935a0779bba75182546db29d4983ee4",
+      "candidate_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+      "candidate_slug": "renan-filho",
+      "candidate_name": "Renan Filho",
+      "office": "Governador",
+      "uf": "AL",
+      "quote_text": "Eu vou fazer concurso todo ano para segurança, para saúde e para educação",
+      "context": "“Eu vou fazer concurso todo ano para segurança, para saúde e para educação”, afirmou Renan Filho.",
+      "event_context": "Sabatina do AB1 Alagoas. O candidato Renan Filho (MDB) prometeu construir hospitais, 80 clínicas e realizar concursos públicos anualmente em entrevista nesta quarta-feira (16).. O candidato Renan Filho (MDB) prometeu construir hospitais, 80 clínicas e realizar concursos públicos anualmente em entrevista nesta quarta-feira (16).",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-16",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/al/alagoas/eleicoes/2026/noticia/2026/09/16/renan-filho-promete-hospitais-do-cancer-e-de-trauma-80-clinicas-da-familia-e-concurso-anual.ghtml",
+      "article_title": "Renan Filho promete hospitais do câncer e de trauma, 80 clínicas da família e concurso anual",
+      "article_published_at": "2026-09-16T13:31:38.066-03:00",
+      "observed_at": "2026-09-22T11:51:04.216Z",
+      "source_sha256": "9a74b36dd5f4f46a93125695b929b2ff484207aee62db430bbb025dd3dab8e85",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato Renan Filho (MDB) prometeu construir hospitais, 80 clínicas e realizar concursos públicos anualmente em entrevista nesta quarta-feira (16).",
+        "date_excerpt": "O candidato Renan Filho (MDB) prometeu construir hospitais, 80 clínicas e realizar concursos públicos anualmente em entrevista nesta quarta-feira (16).",
+        "fetched_url": "https://g1.globo.com/al/alagoas/eleicoes/2026/noticia/2026/09/16/renan-filho-promete-hospitais-do-cancer-e-de-trauma-80-clinicas-da-familia-e-concurso-anual.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "eb96907b4922757a64dbe41e97a003194898707b5c89b25a2a1f99b61e0aef10",
+      "candidate_id": "fa96e1ad-f460-411b-b30b-3aecb135e8d7",
+      "candidate_slug": "roberto-cidade",
+      "candidate_name": "Roberto Cidade",
+      "office": "Governador",
+      "uf": "AM",
+      "quote_text": "Os incentivos fiscais são muito importantes para que a gente possa atrair investidores",
+      "context": "\"Os incentivos fiscais são muito importantes para que a gente possa atrair investidores, empresas que possam vir para o Amazonas para gerar emprego, renda e oportunidades para o nosso povo. A Zona Franca tem quebrado todos os recordes com investimentos\", afirmou.",
+      "event_context": "Entrevista em emissora de televisão. O candidato ao governo do Amazonas, Roberto Cidade (União Brasil), participou de uma entrevista na manhã desta sexta-feira (11).. O candidato ao governo do Amazonas, Roberto Cidade (União Brasil), participou de uma entrevista em uma emissora de televisão no bairro Aleixo, Zona Centro-Sul de Manaus, na manhã desta sexta-feira (11).",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-11",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/09/11/eleicoes-2026-roberto-cidade-defende-incentivos-fiscais-e-novas-matrizes-economicas-para-o-amazonas.ghtml",
+      "article_title": "Eleições 2026: Roberto Cidade defende incentivos fiscais e novas matrizes econômicas para o Amazonas",
+      "article_published_at": "2026-09-11T14:40:30.151-03:00",
+      "observed_at": "2026-09-22T11:51:04.216Z",
+      "source_sha256": "4a65ae2a064a3171a80e56618439414119707821d975ee7111714b4aa1e5c9d3",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao governo do Amazonas, Roberto Cidade (União Brasil), participou de uma entrevista em uma emissora de televisão no bairro Aleixo, Zona Centro-Sul de Manaus, na manhã desta sexta-feira (11).",
+        "date_excerpt": "O candidato ao governo do Amazonas, Roberto Cidade (União Brasil), participou de uma entrevista em uma emissora de televisão no bairro Aleixo, Zona Centro-Sul de Manaus, na manhã desta sexta-feira (11).",
+        "fetched_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/09/11/eleicoes-2026-roberto-cidade-defende-incentivos-fiscais-e-novas-matrizes-economicas-para-o-amazonas.ghtml",
         "method": "codex_source_review"
       }
     }
