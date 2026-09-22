@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
 
 // cspell:ignore cenario periodo
@@ -157,19 +157,10 @@ export function PesquisasPresidenciaisHero({ pesquisas }: PesquisasProps) {
   const primeiroTurno = pesquisas.filter(
     (pesquisa) => pesquisa.cenario.turn === 1 && resultadoPublicado(pesquisa),
   )
-  const [activeIndex, setActiveIndex] = useState(0)
-
-  useEffect(() => {
-    if (primeiroTurno.length < 2) return
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)")
-    if (media.matches) return
-    const interval = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % primeiroTurno.length)
-    }, 5000)
-    return () => window.clearInterval(interval)
-  }, [primeiroTurno.length])
-
-  const pesquisa = primeiroTurno[activeIndex % Math.max(primeiroTurno.length, 1)]
+  // listarRodadasRecentesDoCandidato entrega as pesquisas em publicationDate
+  // decrescente, com fieldwork.end como desempate. O primeiro resultado é a
+  // pesquisa mais recente que permanece no cabeçalho.
+  const pesquisa = primeiroTurno[0]
 
   if (!pesquisa) {
     return (
@@ -188,7 +179,6 @@ export function PesquisasPresidenciaisHero({ pesquisas }: PesquisasProps) {
   return (
     <div
       data-pf-pesquisa-hero=""
-      data-pf-pesquisa-hero-index={activeIndex}
       className="min-w-0 rounded-[14px] border border-border/70 bg-card px-4 py-3 lg:w-[220px]"
     >
       <p data-pf-pesquisa-hero-instituto="" className="truncate text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
@@ -202,7 +192,6 @@ export function PesquisasPresidenciaisHero({ pesquisas }: PesquisasProps) {
           {resultadoLabel(pesquisa)}
         </p>
       </div>
-      <p className="mt-2 text-[length:var(--text-eyebrow)] leading-tight text-muted-foreground">{pesquisa.cenario.labelRaw}</p>
     </div>
   )
 }
