@@ -8,6 +8,7 @@ import { processosOverviewDisplay } from "@/lib/processos-display"
 import { formatCompact } from "@/lib/utils"
 import type { ProgramaGovernoManifestoPublico } from "@/lib/programa-governo"
 import type { SenadoRunningMatesPayload } from "@/components/SenadoRunningMates"
+import type { CompromissoEvidenciaPublica } from "@/lib/compromisso-evidencia"
 
 type CandidatoProfileProps = {
   ficha: FichaCandidato
@@ -15,6 +16,7 @@ type CandidatoProfileProps = {
   pesquisasEnabled?: boolean
   pesquisas?: PesquisaEleitoralDoCandidato[]
   programaGoverno?: ProgramaGovernoManifestoPublico | null
+  compromissoEvidencias?: CompromissoEvidenciaPublica[]
   senadoRunningMates?: SenadoRunningMatesPayload | null
 }
 
@@ -169,6 +171,7 @@ export function DeferredCandidatoProfileClient({
   pesquisasEnabled = false,
   pesquisas = [],
   programaGoverno = null,
+  compromissoEvidencias,
   senadoRunningMates = null,
 }: {
   slug: string
@@ -177,6 +180,7 @@ export function DeferredCandidatoProfileClient({
   pesquisasEnabled?: boolean
   pesquisas?: PesquisaEleitoralDoCandidato[]
   programaGoverno?: ProgramaGovernoManifestoPublico | null
+  compromissoEvidencias?: CompromissoEvidenciaPublica[]
   senadoRunningMates?: SenadoRunningMatesPayload | null
 }) {
   const shouldLoad = useDeferredBelowFoldLoad()
@@ -217,6 +221,7 @@ export function DeferredCandidatoProfileClient({
       pesquisasEnabled={pesquisasEnabled}
       pesquisas={pesquisas}
       programaGoverno={programaGoverno}
+      compromissoEvidencias={compromissoEvidencias}
       senadoRunningMates={senadoRunningMates}
     />
   ) : (

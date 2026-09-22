@@ -8,6 +8,7 @@ import type {
   ProgramaGovernoApiResponse,
   ProgramaGovernoManifestoPublico,
 } from "@/lib/programa-governo"
+import { teveMandatoNoCongresso, type CompromissoEvidenciaPublica } from "@/lib/compromisso-evidencia"
 import {
   descreverEstadoDaFonte,
   montarDestaquesDaFicha,
@@ -316,6 +317,7 @@ export function CandidatoProfile({
   pesquisasEnabled = false,
   pesquisas = [],
   programaGoverno = null,
+  compromissoEvidencias,
   senadoRunningMates = null,
   initialLegislationSubtab,
   initialLegislationPage,
@@ -326,6 +328,8 @@ export function CandidatoProfile({
   pesquisasEnabled?: boolean
   pesquisas?: PesquisaEleitoralDoCandidato[]
   programaGoverno?: ProgramaGovernoManifestoPublico | null
+  /** Evidências públicas ligadas aos temas do programa; ausente não mostra a seção. */
+  compromissoEvidencias?: CompromissoEvidenciaPublica[]
   /** Suplentes carregados no servidor; só existe em ficha de Senador. */
   senadoRunningMates?: SenadoRunningMatesPayload | null
   /** Apenas para render determinístico de cada subaba no auditor de release. */
@@ -857,6 +861,8 @@ export function CandidatoProfile({
                       <ProgramaGovernoOverview
                         manifesto={programaGoverno}
                         onOpenTab={() => navigateToTab("programa")}
+                        evidencias={compromissoEvidencias}
+                        teveMandatoNoCongresso={teveMandatoNoCongresso(ficha.historico ?? [])}
                       />
                     ) : undefined
                   }
