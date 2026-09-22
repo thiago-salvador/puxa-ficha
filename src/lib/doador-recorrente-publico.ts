@@ -11,7 +11,7 @@
  */
 
 export const DOADOR_RECORRENTE_PUBLICO_COLUMNS =
-  "candidato_id, ano_eleicao, doador_grupo, doador_nome, doador_tipo, valor, outra_ano_eleicao, outra_valor, outra_slug, outra_nome_urna, outra_partido_sigla"
+  "candidato_id, ano_eleicao, doador_grupo, doador_nome, doador_tipo, valor, outra_ano_eleicao, outra_valor, outra_slug, outra_nome_urna, outra_partido_sigla, outra_pessoa_chave"
 
 export interface DoadorRecorrenteViewRow {
   candidato_id: string
@@ -25,6 +25,8 @@ export interface DoadorRecorrenteViewRow {
   outra_slug: string
   outra_nome_urna: string | null
   outra_partido_sigla: string | null
+  /** Chave da pessoa na outra ponta: dois cadastros dela viram uma linha só. */
+  outra_pessoa_chave?: string | null
 }
 
 export interface DoacaoPublica {
@@ -69,7 +71,10 @@ export function agruparDoadoresRecorrentes(
     doador_nome: string
     doador_tipo: "PF" | "PJ"
     doacoes: Map<number, DoacaoPublica>
-    outras: Map<string, { slug: string; nome_urna: string | null; partido_sigla: string | null; doacoes: Map<number, DoacaoPublica> }>
+    outras: Map<
+      string,
+      { slug: string; nome_urna: string | null; partido_sigla: string | null; doacoes: Map<number, DoacaoPublica>; anoDoCadastro: number }
+    >
   }
   const grupos = new Map<string, Acumulado>()
 
@@ -89,15 +94,24 @@ export function agruparDoadoresRecorrentes(
     }
     grupo.doacoes.set(row.ano_eleicao, { ano_eleicao: row.ano_eleicao, valor: numero(row.valor) })
 
-    let outra = grupo.outras.get(row.outra_slug)
+    // Pessoa, não cadastro: o link e o nome ficam os do cadastro do pleito
+    // mais recente dessa pessoa.
+    const pessoa = row.outra_pessoa_chave || row.outra_slug
+    let outra = grupo.outras.get(pessoa)
     if (!outra) {
       outra = {
         slug: row.outra_slug,
         nome_urna: row.outra_nome_urna ?? null,
         partido_sigla: row.outra_partido_sigla ?? null,
         doacoes: new Map(),
+        anoDoCadastro: row.outra_ano_eleicao,
       }
-      grupo.outras.set(row.outra_slug, outra)
+      grupo.outras.set(pessoa, outra)
+    } else if (row.outra_ano_eleicao > outra.anoDoCadastro) {
+      outra.slug = row.outra_slug
+      outra.nome_urna = row.outra_nome_urna ?? null
+      outra.partido_sigla = row.outra_partido_sigla ?? null
+      outra.anoDoCadastro = row.outra_ano_eleicao
     }
     outra.doacoes.set(row.outra_ano_eleicao, { ano_eleicao: row.outra_ano_eleicao, valor: numero(row.outra_valor) })
   }
@@ -108,7 +122,12 @@ export function agruparDoadoresRecorrentes(
       doador_tipo: grupo.doador_tipo,
       doacoes: ordenarDoacoes([...grupo.doacoes.values()]),
       outras_candidaturas: [...grupo.outras.values()]
-        .map((outra) => ({ ...outra, doacoes: ordenarDoacoes([...outra.doacoes.values()]) }))
+        .map((outra) => ({
+          slug: outra.slug,
+          nome_urna: outra.nome_urna,
+          partido_sigla: outra.partido_sigla,
+          doacoes: ordenarDoacoes([...outra.doacoes.values()]),
+        }))
         .sort(
           (a, b) =>
             b.doacoes[0].ano_eleicao - a.doacoes[0].ano_eleicao ||

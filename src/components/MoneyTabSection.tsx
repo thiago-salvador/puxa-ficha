@@ -582,12 +582,12 @@ function DoadoresRecorrentesBlock({ doadores }: { doadores: DoadorRecorrentePubl
         </p>
       ) : (
         <ul className="space-y-4">
-          {doadores.map((doador) => {
+          {doadores.map((doador, ordem) => {
             const visiveis = doador.outras_candidaturas.slice(0, DOADOR_RECORRENTE_OUTRAS_VISIVEIS)
             const restantes = doador.outras_candidaturas.slice(DOADOR_RECORRENTE_OUTRAS_VISIVEIS)
             return (
               <li
-                key={doador.doador_nome}
+                key={`${ordem}-${doador.doador_nome}`}
                 data-pf-doador-recorrente={doador.doacoes.length}
                 className="border-t border-border/50 pt-3 first:border-t-0 first:pt-0"
               >

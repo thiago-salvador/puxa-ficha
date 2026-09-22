@@ -40,7 +40,7 @@ BEGIN
   FROM information_schema.columns
   WHERE table_schema = 'public' AND table_name = 'financiamento_doador_recorrente_publico';
   IF colunas_view IS DISTINCT FROM
-     'ano_eleicao,candidato_id,doador_grupo,doador_nome,doador_tipo,materializado_em,outra_ano_eleicao,outra_nome_urna,outra_partido_sigla,outra_slug,outra_valor,regra_versao,valor' THEN
+     'ano_eleicao,candidato_id,doador_grupo,doador_nome,doador_tipo,materializado_em,outra_ano_eleicao,outra_nome_urna,outra_partido_sigla,outra_pessoa_chave,outra_slug,outra_valor,regra_versao,valor' THEN
     RAISE EXCEPTION 'doador recorrente: colunas da view divergiram: %', colunas_view;
   END IF;
 

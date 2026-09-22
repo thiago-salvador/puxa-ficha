@@ -138,6 +138,12 @@ VALUES
   -- ponta em ficha não publicada
   ('30000000-0000-4000-8000-000000000003', '00000000-0000-4000-8000-00000000000a', '00000000-0000-4000-8000-000000000001', 'pessoa-a', 2014, 'TERCEIRA S.A.', 'PJ', 30, 'doador-recorrente-v1'),
   ('30000000-0000-4000-8000-000000000003', '00000000-0000-4000-8000-00000000000c', '00000000-0000-4000-8000-000000000003', 'pessoa-c', 2014, 'TERCEIRA S.A.', 'PJ', 40, 'doador-recorrente-v1');
+-- execução anterior que a limpeza ainda não removeu: tem que ficar invisível
+INSERT INTO public.financiamento_doador_recorrente
+  (doador_grupo, financiamento_id, candidato_id, pessoa_chave, ano_eleicao, doador_nome, doador_tipo, valor, regra_versao, materializado_em)
+VALUES
+  ('50000000-0000-4000-8000-000000000005', '00000000-0000-4000-8000-00000000000a', '00000000-0000-4000-8000-000000000001', 'pessoa-a', 2014, 'VELHA S.A.', 'PJ', 1, 'doador-recorrente-v1', now() - interval '1 day'),
+  ('50000000-0000-4000-8000-000000000005', '00000000-0000-4000-8000-00000000000b', '00000000-0000-4000-8000-000000000002', 'pessoa-b', 2010, 'VELHA S.A.', 'PJ', 2, 'doador-recorrente-v1', now() - interval '1 day');
 SQL
 }
 
@@ -170,7 +176,19 @@ END
 $anon$;
 COMMIT;
 SQL
-echo "OK: anon vê só o par entre pessoas diferentes, com as duas pontas publicadas"
+echo "OK: anon vê só o par entre pessoas diferentes, com as duas pontas publicadas, e só da execução mais recente"
+
+# O gate de exposição lê a tabela base pelas colunas concedidas; essa leitura
+# precisa funcionar como anon (select=* falha por não ter grant em id).
+psql_db prova <<'SQL'
+BEGIN;
+SET LOCAL ROLE anon;
+SELECT doador_grupo, financiamento_id, candidato_id, pessoa_chave, ano_eleicao,
+       doador_nome, doador_tipo, valor, regra_versao, materializado_em
+FROM public.financiamento_doador_recorrente;
+COMMIT;
+SQL
+echo "OK: anon lê a tabela base pelas colunas concedidas"
 
 psql_db prova <<'SQL'
 BEGIN;

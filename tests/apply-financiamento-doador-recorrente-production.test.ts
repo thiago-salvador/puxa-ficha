@@ -81,6 +81,20 @@ test("workflow de materialização escreve só com opt-in e passa pelo gate de e
   assert.doesNotMatch(jobEnv, /SERVICE_ROLE|SUPABASE_DB_URL/)
 })
 
+test("gate de exposição lê a tabela base pelas colunas concedidas, não por select=*", () => {
+  const gate = readFileSync("scripts/audit-doador-recorrente-exposure.ts", "utf8")
+  const migration = readFileSync(`supabase/migrations/${version}_financiamento_doador_recorrente.sql`, "utf8")
+  const concedidas = migration
+    .match(/GRANT SELECT \(([^)]*)\) ON TABLE public\.financiamento_doador_recorrente TO anon/)?.[1]
+    ?.split(",").map((c) => c.trim()).sort()
+  const lidas = gate
+    .match(/financiamento_doador_recorrente:\s*"([^"]+)"/)?.[1]
+    ?.split(",").map((c) => c.trim()).sort()
+  assert.ok(concedidas && lidas)
+  assert.deepEqual(lidas, concedidas)
+  assert.match(proof, /SELECT doador_grupo, financiamento_id/)
+})
+
 test("runner recusa conectar sem contexto explícito de deploy", () => {
   const env = { ...process.env }
   delete env.PF_DATABASE_URL

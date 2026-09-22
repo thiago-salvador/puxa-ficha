@@ -185,28 +185,55 @@ export function motivoExclusaoDoador(
 }
 
 /**
- * Chave de pessoa: mapa canônico primeiro; depois, cadastros distintos com o
- * mesmo nome completo e a mesma data de nascimento são a mesma pessoa.
+ * Chave de pessoa. Duas relações dizem "mesma pessoa": o slug canônico do mapa
+ * e o par nome completo + nascimento. Elas se encadeiam (A~B pelo mapa, B~C
+ * pelo nome), então a chave é o representante do componente conexo das duas,
+ * por union-find. Resolver uma relação depois da outra deixava A e C com
+ * chaves diferentes, e a ficha mostrava a própria pessoa como "outra
+ * candidatura".
  */
 export function construirChavesDePessoa(
   candidatos: readonly CandidatoPublicoRef[],
   canonicalSlugDe: (slug: string) => string,
 ): Map<string, string> {
-  const porIdentidade = new Map<string, string>()
-  const resultado = new Map<string, string>()
-  const ordenados = [...candidatos].sort((a, b) => a.slug.localeCompare(b.slug))
-
-  for (const candidato of ordenados) {
-    const canonica = canonicalSlugDe(candidato.slug)
-    const nome = normalizarNomePessoa(candidato.nome_completo)
-    const identidade = nome && candidato.data_nascimento ? `${nome}|${candidato.data_nascimento}` : null
-    let chave = canonica
-    if (identidade) {
-      const existente = porIdentidade.get(identidade)
-      if (existente) chave = existente
-      else porIdentidade.set(identidade, canonica)
+  const pai = new Map<string, string>()
+  const achar = (no: string): string => {
+    let raiz = no
+    while (pai.get(raiz) !== raiz) raiz = pai.get(raiz) as string
+    let atual = no
+    while (atual !== raiz) {
+      const proximo = pai.get(atual) as string
+      pai.set(atual, raiz)
+      atual = proximo
     }
-    resultado.set(candidato.id, chave)
+    return raiz
+  }
+  const unir = (a: string, b: string) => {
+    const [ra, rb] = [achar(a), achar(b)]
+    if (ra === rb) return
+    // Representante determinístico: o menor slug canônico do componente.
+    if (ra < rb) pai.set(rb, ra)
+    else pai.set(ra, rb)
+  }
+  const garantir = (no: string) => {
+    if (!pai.has(no)) pai.set(no, no)
+  }
+
+  const porIdentidade = new Map<string, string>()
+  for (const candidato of candidatos) {
+    const canonica = `slug:${canonicalSlugDe(candidato.slug)}`
+    garantir(canonica)
+    const nome = normalizarNomePessoa(candidato.nome_completo)
+    if (!nome || !candidato.data_nascimento) continue
+    const identidade = `${nome}|${candidato.data_nascimento}`
+    const outra = porIdentidade.get(identidade)
+    if (outra) unir(canonica, outra)
+    else porIdentidade.set(identidade, canonica)
+  }
+
+  const resultado = new Map<string, string>()
+  for (const candidato of candidatos) {
+    resultado.set(candidato.id, achar(`slug:${canonicalSlugDe(candidato.slug)}`).slice("slug:".length))
   }
   return resultado
 }

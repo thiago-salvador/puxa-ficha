@@ -140,6 +140,28 @@ describe("doador recorrente: materialização", () => {
     assert.deepEqual(encontrarDocumentoDeDoador(resumirMaterializacao(resultado)), [])
   })
 
+  it("identidade encadeada: mapa canônico liga A a B, nome e nascimento ligam B a C; os três são uma pessoa", () => {
+    // Regressão: resolver as duas relações em sequência deixava A e C com
+    // chaves diferentes, e a ficha de A listava C (ela mesma) como outra candidatura.
+    let seq = 0
+    const resultado = materializarDoadoresRecorrentes({
+      financiamentos: [
+        financiamento("fa", "a", 2014, [pj("BANCO ITAU S.A", CNPJ_ITAU)]),
+        financiamento("fc", "c", 2010, [pj("BANCO ITAU S.A", CNPJ_ITAU)]),
+      ],
+      candidatosPublicos: [
+        candidato("a", "joao-silva", "JOAO SILVA", "1970-05-05"),
+        candidato("b", "joao-silva-2018", "JOÃO DA SILVA", "1970-05-06"),
+        candidato("c", "joao-da-silva", "JOAO DA SILVA", "1970-05-06"),
+      ],
+      nomesDeCandidatos: [],
+      canonicalSlugDe: (slug) => (slug === "joao-silva-2018" ? "joao-silva" : slug),
+      novoGrupo: () => `grupo-${++seq}`,
+    })
+    assert.equal(resultado.grupos, 0)
+    assert.equal(resultado.linhas.length, 0)
+  })
+
   it("a mesma pessoa em dois cadastros (mapa canônico ou nome e nascimento) não forma par", () => {
     const resultado = materializar(
       [
@@ -206,6 +228,21 @@ describe("doador recorrente: formato público", () => {
   })
 })
 
+describe("doador recorrente: outra ponta por pessoa", () => {
+  it("dois cadastros da mesma pessoa na outra ponta viram uma linha, com o link do pleito mais recente", () => {
+    const base = { candidato_id: "c1", doador_grupo: "g1", doador_tipo: "PJ", doador_nome: "EMPRESA S.A.", ano_eleicao: 2014, valor: 10 }
+    const rows: DoadorRecorrenteViewRow[] = [
+      { ...base, outra_ano_eleicao: 2010, outra_valor: 5, outra_slug: "fulana-2010", outra_nome_urna: "Fulana", outra_partido_sigla: null, outra_pessoa_chave: "fulana" },
+      { ...base, outra_ano_eleicao: 2014, outra_valor: 7, outra_slug: "fulana", outra_nome_urna: "Fulana de Tal", outra_partido_sigla: null, outra_pessoa_chave: "fulana" },
+    ]
+    const [grupo] = agruparDoadoresRecorrentes(rows)
+    assert.equal(grupo.outras_candidaturas.length, 1)
+    assert.equal(grupo.outras_candidaturas[0].slug, "fulana")
+    assert.equal(grupo.outras_candidaturas[0].nome_urna, "Fulana de Tal")
+    assert.deepEqual(grupo.outras_candidaturas[0].doacoes.map((d) => d.ano_eleicao), [2014, 2010])
+  })
+})
+
 describe("doador recorrente: contrato da migration", () => {
   const ler = (path: string) => readFileSync(join(ROOT, path), "utf8")
   const migration = ler(`supabase/migrations/${VERSION}_financiamento_doador_recorrente.sql`)
@@ -236,6 +273,10 @@ describe("doador recorrente: contrato da migration", () => {
     assert.match(migration, /JOIN public\.financiamento_publico AS fa[\s\S]*JOIN public\.financiamento_publico AS fb/)
     assert.match(migration, /CHECK \(doador_tipo <> 'PJ' OR ano_eleicao < 2016\)/)
     assert.match(migration, /RAISE EXCEPTION 'doador recorrente: coluna de documento/)
+    // A view mostra só a execução mais recente: a troca no --apply não expõe
+    // duas execuções ao mesmo tempo.
+    assert.match(migration, /WHERE a\.materializado_em = \(\s*SELECT max\(m\.materializado_em\)/)
+    assert.match(migration, /b\.pessoa_chave AS outra_pessoa_chave/)
   })
 
   it("rollback e readback cobrem a mesma superfície", () => {

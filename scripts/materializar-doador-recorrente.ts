@@ -10,10 +10,10 @@
  *   npx tsx scripts/materializar-doador-recorrente.ts --relatorio caminho.json
  *   npx tsx scripts/materializar-doador-recorrente.ts --apply
  *
- * No --apply, as linhas novas entram antes de as antigas saírem: a ficha nunca
- * fica sem a seção durante a troca. Pares só se formam dentro do mesmo
- * doador_grupo, que é novo a cada execução, então linhas velhas e novas não se
- * cruzam.
+ * No --apply, a execução nova entra num insert só (atômico) e as anteriores
+ * saem depois. A view pública mostra só a execução de materializado_em mais
+ * recente, então a ficha nunca vê as duas ao mesmo tempo nem uma execução
+ * pela metade.
  */
 
 import { randomUUID } from "node:crypto"
@@ -32,7 +32,6 @@ import {
 } from "./lib/doador-recorrente"
 
 const PAGE_SIZE = 500
-const INSERT_CHUNK = 500
 const TABELA = "financiamento_doador_recorrente"
 
 export interface ResumoDoadorRecorrente {
@@ -151,12 +150,13 @@ async function main() {
       recorte: `${resumo.grupos} grupos, ${resumo.linhas} linhas; substitui a materialização anterior`,
     },
     async () => {
+      // Um insert só: o PostgREST roda cada requisição numa transação, então a
+      // execução nova aparece inteira ou não aparece. A view mostra só a
+      // execução mais recente, e a limpeza abaixo só remove as anteriores.
       const tocadas: Array<{ id: string }> = []
-      for (let i = 0; i < resultado.linhas.length; i += INSERT_CHUNK) {
-        const lote = resultado.linhas
-          .slice(i, i + INSERT_CHUNK)
-          .map((linha) => ({ ...linha, materializado_em: execucao }))
-        const { data, error } = await supabase.from(TABELA).insert(lote).select("id")
+      if (resultado.linhas.length > 0) {
+        const linhas = resultado.linhas.map((linha) => ({ ...linha, materializado_em: execucao }))
+        const { data, error } = await supabase.from(TABELA).insert(linhas).select("id")
         if (error) return { data: tocadas, error: { message: `insert: ${error.message}` } }
         tocadas.push(...((data ?? []) as Array<{ id: string }>))
       }

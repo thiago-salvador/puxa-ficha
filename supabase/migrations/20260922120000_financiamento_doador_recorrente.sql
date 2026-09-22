@@ -75,6 +75,7 @@ SELECT
   cb.slug AS outra_slug,
   cb.nome_urna AS outra_nome_urna,
   cb.partido_sigla AS outra_partido_sigla,
+  b.pessoa_chave AS outra_pessoa_chave,
   a.regra_versao,
   a.materializado_em
 FROM public.financiamento_doador_recorrente AS a
@@ -83,7 +84,13 @@ JOIN public.financiamento_doador_recorrente AS b
  AND b.pessoa_chave <> a.pessoa_chave
 JOIN public.financiamento_publico AS fa ON fa.id = a.financiamento_id
 JOIN public.financiamento_publico AS fb ON fb.id = b.financiamento_id
-JOIN public.candidatos_publico AS cb ON cb.id = b.candidato_id;
+JOIN public.candidatos_publico AS cb ON cb.id = b.candidato_id
+-- Só a execução mais recente. O script grava a execução nova num insert só
+-- (atômico) e depois apaga a anterior; entre os dois, este filtro esconde a
+-- velha, e se a limpeza falhar ela continua escondida.
+WHERE a.materializado_em = (
+  SELECT max(m.materializado_em) FROM public.financiamento_doador_recorrente AS m
+);
 
 COMMENT ON VIEW public.financiamento_doador_recorrente_publico IS
   'Par (aparição nesta ficha, aparição em outra candidatura publicada) do mesmo doador. Sem documento nem hash.';

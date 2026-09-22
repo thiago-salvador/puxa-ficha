@@ -72,11 +72,20 @@ function loadEnv(): { url: string; key: string } {
   return { url, key }
 }
 
+// A tabela base só concede SELECT por coluna, sem `id`: `select=*` como anon
+// vira 42501 e o gate caía em erro depois de toda escrita. Lê exatamente as
+// colunas concedidas; a view não tem restrição por coluna.
+const COLUNAS_POR_RELACAO: Record<string, string> = {
+  financiamento_doador_recorrente_publico: "*",
+  financiamento_doador_recorrente:
+    "doador_grupo,financiamento_id,candidato_id,pessoa_chave,ano_eleicao,doador_nome,doador_tipo,valor,regra_versao,materializado_em",
+}
+
 async function lerSuperficie(url: string, key: string, relacao: string): Promise<unknown[] | "ausente"> {
   const linhas: unknown[] = []
   for (let offset = 0; ; offset += PAGE_SIZE) {
     const endpoint = new URL(`${url}/rest/v1/${relacao}`)
-    endpoint.searchParams.set("select", "*")
+    endpoint.searchParams.set("select", COLUNAS_POR_RELACAO[relacao] ?? "*")
     endpoint.searchParams.set("offset", String(offset))
     endpoint.searchParams.set("limit", String(PAGE_SIZE))
     const response = await fetch(endpoint, {
