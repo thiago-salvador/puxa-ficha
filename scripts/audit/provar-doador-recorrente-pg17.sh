@@ -16,6 +16,7 @@ CONTAINER="pf-doador-recorrente-$$"
 IMAGE="postgres:17@sha256:7958605b474b3d264a969cb3a123d6aa00ad1e1fe9da8a69984dabb704d93317"
 FORWARD="$ROOT/supabase/migrations/20260922120000_financiamento_doador_recorrente.sql"
 ROLLBACK="$ROOT/supabase/rollback/20260922120000_financiamento_doador_recorrente.rollback.sql"
+READBACK="$ROOT/supabase/readback/20260922120000_financiamento_doador_recorrente.readback.sql"
 
 cleanup() {
   docker rm -f "$CONTAINER" >/dev/null 2>&1 || true
@@ -144,6 +145,12 @@ echo "== caminho feliz =="
 setup_db prova
 file_db prova "$FORWARD"
 semear_linhas
+
+# O apply grava a versão no ledger e roda o readback na mesma transação; aqui
+# o readback roda depois, como na releitura somente leitura do apply.
+psql_db prova -c "INSERT INTO supabase_migrations.schema_migrations(version) VALUES ('20260922120000');"
+file_db prova "$READBACK"
+echo "OK: readback confere ledger, security_invoker, RLS, colunas da view e ACL"
 
 psql_db prova <<'SQL'
 BEGIN;

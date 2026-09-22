@@ -242,8 +242,16 @@ describe("doador recorrente: contrato da migration", () => {
     assert.match(rollback, /DROP VIEW IF EXISTS public\.financiamento_doador_recorrente_publico/)
     assert.match(rollback, /DROP TABLE IF EXISTS public\.financiamento_doador_recorrente/)
     assert.match(rollback, new RegExp(`DELETE FROM supabase_migrations\\.schema_migrations WHERE version = '${VERSION}'`))
-    assert.match(readback, /BEGIN READ ONLY/)
-    assert.match(readback, /information_schema\.column_privileges/)
-    assert.match(readback, /SET LOCAL ROLE anon/)
+    // O apply embute o readback na própria transação: abrir ou fechar
+    // transação aqui, ou trocar de papel, desfaria ou quebraria o apply.
+    // (O BEGIN sem ponto e vírgula do bloco PL/pgSQL não é transação.)
+    assert.doesNotMatch(
+      readback,
+      /^\s*(BEGIN\s*(;|READ\b|TRANSACTION\b)|COMMIT\s*;|ROLLBACK\s*;|SET\s+(LOCAL\s+)?ROLE\b|RESET\s+ROLE\b)/im,
+    )
+    assert.match(readback, /security_invoker=true/)
+    assert.match(readback, /relrowsecurity/)
+    assert.match(readback, /has_table_privilege\('anon', 'public\.financiamento_doador_recorrente_publico', 'SELECT'\)/)
+    assert.match(readback, /column_name ILIKE '%cnpj%'/)
   })
 })
