@@ -1,7 +1,7 @@
 import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
 import { describe, it } from "node:test"
-import { SOURCES, consolidarFalas, dataEvento, descobrirLinks, extrairArtigo, naJanela, urlAprovada, validarCatalogo, type CandidatoFalas } from "../scripts/lib/falas-monitoramento"
+import { SOURCES, consolidarFalas, dataEvento, descobrirLinks, extrairArtigo, extrairMetadadosArtigo, naJanela, urlAprovada, validarCatalogo, type CandidatoFalas } from "../scripts/lib/falas-monitoramento"
 import { executarMonitoramento } from "../scripts/falas-monitoramento"
 import type { CatalogoFalas } from "../src/lib/falas-candidatos"
 
@@ -17,6 +17,13 @@ function html(p = paragraph, date = "2026-09-10T12:00:00-03:00") {
   return `<html><head><link rel="canonical" href="${url}"><meta property="og:title" content="Entrevista sobre educação"><meta name="author" content="Redação de teste"><meta property="article:published_time" content="${date}"></head><body><article><p>${p}</p></article></body></html>`
 }
 function extract(body = html()) { return extrairArtigo({ html: body, url, source, roster: [candidate, rival], now }) }
+
+it("metadados JSON-LD só valem para ReportageNewsArticle da canônica", () => {
+  const metadata = { "@type": ["CreativeWork", "ReportageNewsArticle"], url, datePublished: "2026-09-02T23:00:00Z", dateModified: "2026-09-03T13:58:00Z" }
+  const body = html().replace("</head>", `<script type="application/ld+json">${JSON.stringify(metadata)}</script></head>`)
+  assert.deepEqual(extrairMetadadosArtigo(body), { url, datePublished: metadata.datePublished, dateModified: metadata.dateModified })
+  assert.equal(extrairMetadadosArtigo(body.replace(`"url":"${url}"`, `"url":"${url}-outro"`)), null)
+})
 
 describe("falas recentes com fonte", () => {
   it("extrai literalmente, com identidade, evento, data e fonte", () => {
@@ -159,11 +166,11 @@ describe("falas recentes com fonte", () => {
     assert.equal(partial.status, "partial")
     assert.equal(partial.candidates[0].status, "not_found_in_consulted_pages")
   })
-  it("agenda duas rodadas semanais e restringe publicação a draft autorizado", () => {
+  it("mantém o coletor complementar manual, sem agenda ou fila de drafts concorrentes", () => {
     const workflow = readFileSync(".github/workflows/falas-monitoramento.yml", "utf8")
-    assert.match(workflow, /cron: "17 11 \* \* 1,4"/)
-    assert.match(workflow, /FALAS_DRAFT_PR_ENABLED == 'true'/)
-    assert.match(workflow, /--draft/)
+    assert.match(workflow, /workflow_dispatch:/)
+    assert.match(workflow, /falas-de-presidenci-veis-e-governadores/)
+    assert.doesNotMatch(workflow, /schedule:|cron:|FALAS_DRAFT_PR_ENABLED|gh pr create|--draft/)
     assert.doesNotMatch(workflow, /gh pr merge|service_role|SUPABASE_SERVICE_ROLE_KEY/)
   })
 })

@@ -1,5 +1,5 @@
 import { load } from "cheerio"
-import { INITIAL_SEARCH_START, SOURCES, dataEvento, naJanela, naJanelaInicial, sha256, urlAprovada, type CandidatoFalas } from "./falas-monitoramento"
+import { INITIAL_SEARCH_START, SOURCES, dataEvento, extrairMetadadosArtigo, naJanela, naJanelaInicial, sha256, urlAprovada, type CandidatoFalas, type MetadadosArtigo } from "./falas-monitoramento"
 import { periodoDaFala, chaveDataFala, type FalaCandidato } from "../../src/lib/falas-candidatos"
 import { lerEvidenciaWeb, type EvidenciaWeb } from "./falas-evidencia-web"
 import { conteudoSerializadoClickPb } from "./falas-conteudo-serializado"
@@ -14,6 +14,7 @@ export interface AchadoRevisado {
   occurred_on: string | null
   occurred_between?: { from: string; to: string }
   article_published_at: string
+  article_modified_at?: string
   publisher: string
   article_url: string
   article_title: string
@@ -73,9 +74,19 @@ export function verificarRevisao(input: { candidate: CandidatoFalas; finding: Ac
   const period = periodoDaFala(finding)
   const inWindow = input.mode === "initial_backfill" ? naJanelaInicial : naJanela
   if (!period || !inWindow(period.from, now) || !inWindow(period.to, now)) return pending("event_outside_window")
-  if (!Number.isFinite(Date.parse(finding.article_published_at)) || Date.parse(finding.article_published_at) > now.getTime()
-    || period.to > finding.article_published_at.slice(0, 10)) return pending("invalid_publication_date")
   const $ = load(html)
+  const articleMetadata = extrairMetadadosArtigo(html)
+  const sameTimestamp = (left: string | undefined, right: string | undefined) => Boolean(left && right && left === right)
+  const articleMetadataEvidence: MetadadosArtigo | null = articleMetadata && articleMetadata.url === finding.article_url
+    && sameTimestamp(articleMetadata.datePublished, finding.article_published_at)
+    && Boolean(finding.article_modified_at && articleMetadata.dateModified && sameTimestamp(articleMetadata.dateModified, finding.article_modified_at)
+      && Date.parse(articleMetadata.dateModified) >= Date.parse(articleMetadata.datePublished) && Date.parse(articleMetadata.dateModified) <= now.getTime())
+    ? articleMetadata : null
+  if (finding.article_modified_at && !articleMetadataEvidence) return pending("invalid_article_modified_date")
+  const publicationBound = articleMetadataEvidence && !finding.occurred_between ? articleMetadataEvidence.dateModified! : finding.article_published_at
+  if (!Number.isFinite(Date.parse(finding.article_published_at)) || Date.parse(finding.article_published_at) > now.getTime()
+    || period.to > publicationBound.slice(0, 10)) return pending("invalid_publication_date")
+  const eventDateReference = articleMetadataEvidence && !finding.occurred_between ? finding.article_modified_at! : finding.article_published_at
   const rangeProof = finding.evidence.event_date_range
   let publicationTimestamp: string | undefined
   if (finding.occurred_between) {
@@ -192,7 +203,7 @@ export function verificarRevisao(input: { candidate: CandidatoFalas; finding: Ac
     if (dateUrl && ![...names, ...verifiedAliases.map((proof) => normalizeId(proof.alias))].some((name) => containsName(dateBody, name))) return pending("event_source_identity_not_verified")
     if (/divulgad|exibid|republicad/i.test(dateEvidence)) return pending("broadcast_date_needs_event_corroboration")
     if (/marcad[oa]|agendad[oa]|será|participará|ocorrerá|acontecerá|previst[oa]/i.test(dateEvidence)) return pending("planned_event_is_not_speech_date")
-    if (dataEvento(dateEvidence, rangeProof?.anchor_published_at ?? dateSource?.article_published_at ?? finding.article_published_at, Boolean(rangeProof)) !== period.from) return pending("event_date_not_resolved")
+    if (dataEvento(dateEvidence, rangeProof?.anchor_published_at ?? dateSource?.article_published_at ?? eventDateReference, Boolean(rangeProof)) !== period.from) return pending("event_date_not_resolved")
     if (rangeProof) {
       const relationship = plain(rangeProof.relationship_excerpt)
       if (relationship.length < 20 || !body.includes(relationship)
@@ -224,7 +235,7 @@ export function verificarRevisao(input: { candidate: CandidatoFalas; finding: Ac
     contextParagraph = (web?.paragraphs.filter((text) => !/^#{1,6}\s/.test(text)) ?? $(paragraphSelector).toArray().map((el) => plain($(el).text()))).filter((text) => text.includes(quoteText)).sort((a,b) => a.length - b.length)[0]
   }
   if (!contextParagraph) return pending("quote_not_in_article_paragraph")
-  const contradiction = contradicaoNoContexto(contextParagraph, quoteText, acceptedNames, period, finding.article_published_at)
+  const contradiction = contradicaoNoContexto(contextParagraph, quoteText, acceptedNames, period, eventDateReference)
   if (contradiction) return pending(contradiction)
   return { reason: "source_context_review", quote: {
     id: sha256(`${candidate.id}:${chaveDataFala(finding)}:${normalizeId(quoteText)}`),
@@ -234,8 +245,8 @@ export function verificarRevisao(input: { candidate: CandidatoFalas; finding: Ac
     event_type: eventType, occurred_on: finding.occurred_on,
     ...(finding.occurred_between ? { occurred_between: finding.occurred_between } : {}),
     publisher: source.publisher, article_url: urlAprovada(canonical, source)!, article_title: finding.article_title,
-    article_published_at: finding.article_published_at, observed_at: now.toISOString(), source_sha256: sha256(web?.raw ?? html),
+    article_published_at: finding.article_published_at, ...(finding.article_modified_at ? { article_modified_at: finding.article_modified_at } : {}), observed_at: now.toISOString(), source_sha256: sha256(web?.raw ?? html),
     ...(!naJanela(period.from, now) ? { collection_scope: { mode: "initial_backfill" as const, from: INITIAL_SEARCH_START } } : {}),
-    attribution: "source_context_review", review_evidence: { ...(liveVideo ? { live_video: liveVideo } : {}), ...(declarationContext ? { declaration_context_excerpt: declarationContext } : {}), identity_excerpt: identity, date_excerpt: dateEvidence, fetched_url: finding.article_url, method: "codex_source_review", ...(finding.evidence.source_credit ? { source_credit: plain(finding.evidence.source_credit) } : {}), ...(rangeProof ? { date_range_proof: { ...rangeProof, publication_timestamp: publicationTimestamp! } } : {}), ...(serialized ? { content_encoding: "react_flight" as const } : {}), ...(finding.evidence.quote_location ? { quote_location: finding.evidence.quote_location } : {}), ...(web ? { source_format: "web_text" as const } : {}), ...(supportingSources.length ? { supporting_sources: supportingSources } : {}) },
+    attribution: "source_context_review", review_evidence: { ...(liveVideo ? { live_video: liveVideo } : {}), ...(declarationContext ? { declaration_context_excerpt: declarationContext } : {}), identity_excerpt: identity, date_excerpt: dateEvidence, fetched_url: finding.article_url, method: "codex_source_review", ...(finding.evidence.source_credit ? { source_credit: plain(finding.evidence.source_credit) } : {}), ...(articleMetadataEvidence ? { article_metadata: { url: articleMetadataEvidence.url, datePublished: articleMetadataEvidence.datePublished, dateModified: articleMetadataEvidence.dateModified! } } : {}), ...(rangeProof ? { date_range_proof: { ...rangeProof, publication_timestamp: publicationTimestamp! } } : {}), ...(serialized ? { content_encoding: "react_flight" as const } : {}), ...(finding.evidence.quote_location ? { quote_location: finding.evidence.quote_location } : {}), ...(web ? { source_format: "web_text" as const } : {}), ...(supportingSources.length ? { supporting_sources: supportingSources } : {}) },
   } }
 }

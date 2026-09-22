@@ -109,7 +109,8 @@ export async function executarMonitoramento(input: {
 }
 
 async function main() {
-  const args = process.argv.slice(2)
+  const rosterOnly = process.argv.includes("--roster-only")
+  const args = process.argv.slice(2).filter((arg) => arg !== "--roster-only")
   const options = new Map<string, string>()
   for (let i = 0; i < args.length; i += 2) {
     if (!["--out", "--source"].includes(args[i]) || !args[i + 1] || args[i + 1].startsWith("--")) throw new Error("Opção inválida; use --out ou --source")
@@ -123,6 +124,10 @@ async function main() {
     const { criarClienteHttpMonitoramento } = await import("./lib/pesquisas-monitoramento-rede")
     const roster = await carregarCandidatos()
     writeFileSync(resolve(output, "roster.json"), JSON.stringify(roster, null, 2) + "\n")
+    if (rosterOnly) {
+      console.log(JSON.stringify({ status: "roster_refreshed", candidates: roster.length, output: resolve(output, "roster.json") }))
+      return
+    }
     const client = criarClienteHttpMonitoramento({ allowedOrigins: sources.map((source) => source.origin), maxBytes: 5_000_000, maxAttempts: 2, timeoutMs: 10_000 })
     const previous = JSON.parse(readFileSync("scripts/data/falas-candidatos.json", "utf8")) as CatalogoFalas
     const report = await executarMonitoramento({ roster, previous, now: new Date(), sources, getText: (url) => client.getText(url),

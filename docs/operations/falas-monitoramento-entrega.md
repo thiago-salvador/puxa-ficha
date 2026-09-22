@@ -1,5 +1,9 @@
 # Falas dos candidatos: complemento de cobertura
 
+Registro histórico do complemento de 12/09/2026. Contagens e pendências abaixo
+não representam o cadastro atual. Para agenda e publicação vigentes, consultar
+[falas-rotina-48h.md](falas-rotina-48h.md).
+
 O catálogo reúne 199 dos 208 candidatos, com uma fala por candidato: 13 presidenciáveis e 186 candidatos a governador. São 194 aspas publicadas em texto e cinco transcrições automáticas identificadas na interface, com fonte e minutagem. A primeira carga aceita somente falas como candidatos a partir de 16/08/2026. As nove aspas anteriores do debate da Band continuam disponíveis.
 
 Este complemento acrescenta Danilo da Silva, também identificado na fonte como Danilo Pinheiro, e Adriano Funileiro. A fala de Danilo ocorreu no lançamento de candidaturas em 22/08 e foi publicada pelo Diário Causa Operária; a identificação do veículo explicita que é o jornal do PCO. A aprovação dessa fonte se restringe à matéria revisada. A fala de Adriano vem da sabatina da MetalTV (SMC), realizada em 31/08, com vídeo original e confirmação da participação pelo Jornal Comunicação da UFPR. A data de publicação do vídeo, 02/09, não foi usada como data do evento.

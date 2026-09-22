@@ -129,8 +129,32 @@ function noticiasEstruturadas(value: unknown): Record<string, unknown>[] {
   if (Array.isArray(value)) return value.flatMap(noticiasEstruturadas)
   if (!value || typeof value !== "object") return []
   const obj = value as Record<string, unknown>
-  if (["NewsArticle", "Article"].includes(String(obj["@type"]))) return [obj]
+  const types = Array.isArray(obj["@type"]) ? obj["@type"].map(String) : [String(obj["@type"])]
+  if (types.some((type) => ["NewsArticle", "Article", "ReportageNewsArticle"].includes(type))) return [obj]
   return noticiasEstruturadas(obj["@graph"])
+}
+
+export interface MetadadosArtigo {
+  url: string
+  datePublished: string
+  dateModified?: string
+}
+
+/** Reads only same-article JSON-LD metadata; unrelated structured data is not evidence. */
+export function extrairMetadadosArtigo(html: string): MetadadosArtigo | null {
+  const $ = load(html)
+  const canonical = $("link[rel=canonical]").attr("href") ?? $("meta[property='og:url']").attr("content")
+  if (!canonical) return null
+  const structured = $("script[type='application/ld+json']").toArray().flatMap((element) => {
+    try { return noticiasEstruturadas(JSON.parse($(element).text())) } catch { return [] }
+  })
+  const matching = structured.filter((entry) => entry.url === canonical && (Array.isArray(entry["@type"]) ? entry["@type"].map(String).includes("ReportageNewsArticle") : entry["@type"] === "ReportageNewsArticle"))
+  if (matching.length !== 1) return null
+  const published = matching[0].datePublished
+  const modified = matching[0].dateModified
+  if (typeof published !== "string" || !/^\d{4}-\d{2}-\d{2}T.*(?:Z|[+-]\d{2}:\d{2})$/.test(published) || !Number.isFinite(Date.parse(published))) return null
+  if (modified !== undefined && (typeof modified !== "string" || !/^\d{4}-\d{2}-\d{2}T.*(?:Z|[+-]\d{2}:\d{2})$/.test(modified) || !Number.isFinite(Date.parse(modified)))) return null
+  return { url: canonical, datePublished: published, ...(modified ? { dateModified: modified } : {}) }
 }
 
 export function extrairArtigo(input: { html: string; url: string; source: FonteFalas; roster: CandidatoFalas[]; now: Date }): EvidenciaArtigo {
@@ -223,7 +247,14 @@ export function validarCatalogo(catalog: CatalogoFalas): void {
     const recorded = q.review_evidence?.recorded_video
     if (recorded) validarEstruturaVideoGravado(q)
     if (["The Papo com André Silva", "MetalTV (SMC)"].includes(q.publisher) && !recorded) throw new Error("Canal exige evidência do episódio gravado")
-    const publicationBound = transcript?.media_published_at ?? q.article_published_at
+    const metadata = q.review_evidence?.article_metadata
+    const modifiedProof = !q.occurred_between && q.attribution === "source_context_review" && typeof q.article_modified_at === "string" && !!metadata
+      && metadata.url === q.article_url && metadata.datePublished === q.article_published_at && metadata.dateModified === q.article_modified_at
+      && Number.isFinite(Date.parse(q.article_published_at)) && Number.isFinite(Date.parse(q.article_modified_at))
+      && Date.parse(q.article_modified_at) >= Date.parse(q.article_published_at) && Date.parse(q.article_modified_at) <= Date.parse(q.observed_at)
+    if (q.article_modified_at !== undefined && !modifiedProof) throw new Error("Data modificada sem prova JSON-LD do mesmo artigo")
+    const publicationBound = transcript?.media_published_at ?? (modifiedProof ? q.article_modified_at! : q.article_published_at)
+    const eventDateReference = modifiedProof ? q.article_modified_at! : q.article_published_at
     if (transcript && (transcript.kind !== "automatic" || transcript.reviewed_context !== true
       || !transcript.engine?.trim() || typeof transcript.speaker_context !== "string" || transcript.speaker_context.trim().length < 30
       || !Number.isFinite(transcript.start_seconds) || !Number.isFinite(transcript.end_seconds)
@@ -261,7 +292,7 @@ export function validarCatalogo(catalog: CatalogoFalas): void {
       || (q.collection_scope ? (q.collection_scope.mode !== "initial_backfill" || q.collection_scope.from !== INITIAL_SEARCH_START || !naJanelaInicial(period.from, new Date(q.observed_at)) || !naJanelaInicial(period.to, new Date(q.observed_at))) : !naJanela(period.from, new Date(q.observed_at)) || !naJanela(period.to, new Date(q.observed_at)))
       || (q.attribution === "explicit_name_same_paragraph" && dataEvento(q.event_context, q.article_published_at) !== q.occurred_on)
       || (q.attribution === "source_context_review" && (!q.review_evidence?.identity_excerpt || !q.review_evidence.date_excerpt || q.review_evidence.method !== "codex_source_review"
-        || (!q.occurred_between && !live && dataEvento(q.review_evidence.date_excerpt, q.article_published_at) !== q.occurred_on)
+        || (!q.occurred_between && !live && dataEvento(q.review_evidence.date_excerpt, eventDateReference) !== q.occurred_on)
         || q.review_evidence.supporting_sources?.some((proof) => !/^[a-f0-9]{64}$/.test(proof.sha256) || !proof.excerpts.length || !SOURCES.some((s) => urlAprovada(proof.url, s) === proof.url))
         || !source || !urlAprovada(q.review_evidence.fetched_url, source)))) throw new Error("Fala sem identidade, fonte, integridade ou data comprovada")
     ids.add(q.id)
