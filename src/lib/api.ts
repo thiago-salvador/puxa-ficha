@@ -31,6 +31,12 @@ import { ensureCurrentCandidacyInHistory, normalizeHistoricoPoliticoForDisplay }
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
 import { normalizeFinanciamentoForDisplay, normalizePatrimonioForDisplay } from "@/lib/person-level-dedupe"
 import { sanitizeFinanciamentoForPublic, sanitizeMaioresDoadoresForPublic } from "@/lib/financiamento-public"
+import {
+  DOADOR_RECORRENTE_PUBLICO_COLUMNS,
+  agruparDoadoresRecorrentes,
+  type DoadorRecorrentePublico,
+  type DoadorRecorrenteViewRow,
+} from "@/lib/doador-recorrente-publico"
 import { isPublicAttentionPoint } from "@/lib/public-attention-point"
 import { sanitizePublicPartyFields, sanitizePublicPartyFieldsList } from "@/lib/public-candidate-sanitize"
 import { classifyAttentionPoints, isNegativeHighestSeverityAttentionPoint } from "@/lib/attention-points"
@@ -1749,6 +1755,30 @@ async function getCandidatoBySlugFromRelationResource(
     )
   }
 
+  // Mesma regra de degradação: falha de leitura (inclusive view ainda não
+  // aplicada) vira `null` e a seção some; nunca vira "nenhum doador em comum".
+  let doadoresRecorrentes: DoadorRecorrentePublico[] | null = null
+  try {
+    const { data: doadoresRecorrentesData, error: doadoresRecorrentesError } = await withSupabaseRetry(
+      `financiamento_doador_recorrente_publico(${slug})`,
+      async (signal) =>
+        supabase
+          .from("financiamento_doador_recorrente_publico")
+          .select(DOADOR_RECORRENTE_PUBLICO_COLUMNS)
+          .in("candidato_id", personLevelIds)
+          .abortSignal(signal)
+    )
+    if (doadoresRecorrentesError) throw doadoresRecorrentesError
+    doadoresRecorrentes = agruparDoadoresRecorrentes(
+      (doadoresRecorrentesData ?? []) as unknown as DoadorRecorrenteViewRow[]
+    )
+  } catch (erro) {
+    console.error(
+      `financiamento_doador_recorrente_publico(${slug}) indisponível, seção omitida:`,
+      erro instanceof Error ? erro.message : erro
+    )
+  }
+
   const historicoConfiavel = normalizeHistoricoPoliticoForDisplay(
     ensureCurrentCandidacyInHistory(candidato, historico.data ?? []),
   )
@@ -1842,6 +1872,7 @@ async function getCandidatoBySlugFromRelationResource(
       ? financiamentoConfiavel
       : sanitizeFinanciamentoForPublic(financiamentoConfiavel),
     financiamento_eleicoes: financiamentoEleicoes,
+    doadores_recorrentes: doadoresRecorrentes,
     votos: sortVotosForPublicDisplay(votos.data ?? []),
     processos: processos.data ?? [],
     pontos_atencao: pontosPublicos,

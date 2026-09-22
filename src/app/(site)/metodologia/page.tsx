@@ -273,9 +273,52 @@ export default function MetodologiaPage() {
 
       <SectionDivider />
 
-      {/* 05 — Links */}
+      {/* 05 — Doadores em comum */}
+      <section
+        id="doadores-recorrentes"
+        className="mx-auto max-w-7xl scroll-mt-24 px-5 py-8 sm:py-12 md:px-12 lg:py-16"
+      >
+        <SectionLabel>05 Doadores em comum</SectionLabel>
+        <SectionTitle>Doadores que também financiam outras candidaturas</SectionTitle>
+        <div className="mt-6 max-w-2xl space-y-5 text-[length:var(--text-body-sm)] font-medium leading-relaxed text-muted-foreground sm:mt-8 sm:text-[length:var(--text-body)]">
+          <p>
+            Na aba Dinheiro de cada ficha, listamos os maiores doadores que também aparecem entre os
+            maiores doadores de outra candidatura publicada no Puxa Ficha. O doador é reconhecido
+            pelo CNPJ registrado na prestação de contas do TSE, nunca só pelo nome, porque nomes
+            iguais podem ser pessoas ou empresas diferentes. O CNPJ não é exibido.
+          </p>
+          <p>
+            Empresas só aparecem em eleições até 2014. Em 2015, o STF julgou inconstitucional a
+            doação de pessoa jurídica a campanhas (ADI 4650), e a proibição vale desde as eleições
+            de 2016. Depois disso, o que a prestação de contas registra com CNPJ são órgãos de
+            partido, contas de outras campanhas ou plataformas de financiamento coletivo, que
+            repassam dinheiro de terceiros. Esses casos ficam de fora em qualquer ano, porque não
+            dizem quem de fato doou.
+          </p>
+          <p>
+            Para doação de pessoa física, o TSE publica o CPF, que o Puxa Ficha não guarda em claro.
+            Doadores pessoa física só entram quando existe um identificador protegido do CPF na
+            base; hoje as prestações publicadas não têm esse identificador, então a lista mostra só
+            empresas.
+          </p>
+          <p>
+            A mesma pessoa em anos diferentes, ou em mais de um cadastro, não conta como outra
+            candidatura. Quando uma ficha ou uma prestação de contas sai do ar, o par some junto.
+          </p>
+        </div>
+        <NoticePanel
+          tone="caution"
+          eyebrow="Limite de leitura"
+          description="Doar para mais de uma candidatura é permitido e comum. A lista mostra coincidência de doador, não irregularidade, contrapartida nem relação entre as candidaturas."
+          className="mt-6 max-w-2xl sm:mt-8"
+        />
+      </section>
+
+      <SectionDivider />
+
+      {/* 06 — Links */}
       <section className="mx-auto max-w-7xl px-5 py-8 sm:py-12 md:px-12 lg:py-16">
-        <SectionLabel>05 Saiba mais</SectionLabel>
+        <SectionLabel>06 Saiba mais</SectionLabel>
         <SectionTitle>Links relacionados</SectionTitle>
         <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
           {[

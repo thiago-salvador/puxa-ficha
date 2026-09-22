@@ -18,7 +18,8 @@ import { PatrimonioEvolucaoAlerta } from "./PatrimonioEvolucaoAlerta"
 import { formatFinanciamentoPleitoPublicLabelForRow } from "@/lib/financiamento-pleito-public-label"
 import { buildFinanciamentoEleicoes, descreverFinanciamentoEleicao, type FinanciamentoEleicaoPublico } from "@/lib/financiamento-eleicoes"
 import type { PatrimonioEleicaoPublico } from "@/lib/public-profile-dto"
-import { FINANCING_COLOR_BY_KEY, type FinancingBreakdownKey, formatFinanciamentoEleicaoEstadoLabel, formatFinancingLabel, formatPatrimonioEleicaoEstadoLabel, formatPublicLabel } from "@/lib/ui-labels"
+import { descreverDoacoes, type DoadorRecorrenteOutraCandidatura, type DoadorRecorrentePublico } from "@/lib/doador-recorrente-publico"
+import { DOADOR_RECORRENTE_COPY, FINANCING_COLOR_BY_KEY, type FinancingBreakdownKey, formatFinanciamentoEleicaoEstadoLabel, formatFinancingLabel, formatPatrimonioEleicaoEstadoLabel, formatPublicLabel } from "@/lib/ui-labels"
 import { financiamentoPleitoNotaRodape, financiamentoPleitoSubtitulo } from "@/lib/financiamento-pleito-display"
 import { sanitizePublicText } from "@/lib/public-text"
 import { buildFinancingComposition } from "@/lib/financiamento-display"
@@ -547,9 +548,121 @@ function PatrimonioEleicoesSemDado({
   )
 }
 
+const DOADOR_RECORRENTE_OUTRAS_VISIVEIS = 5
+
+/**
+ * Doadores desta ficha que também aparecem em outra candidatura publicada.
+ * Lista vazia é estado lido e explícito; `null` (leitura falhou) nem monta.
+ */
+function DoadoresRecorrentesBlock({ doadores }: { doadores: DoadorRecorrentePublico[] }) {
+  const copy = DOADOR_RECORRENTE_COPY
+  return (
+    <div
+      data-pf-doadores-recorrentes={doadores.length}
+      className="mt-6 space-y-4 rounded-[16px] border border-border/50 px-5 py-5"
+    >
+      <div>
+        <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+          {copy.eyebrow}
+        </p>
+        <h3 className="mt-1 text-[length:var(--text-body-lg)] font-bold leading-snug text-foreground">
+          {copy.titulo}
+        </h3>
+        <p className="mt-2 text-[length:var(--text-body-sm)] font-medium leading-relaxed text-muted-foreground">
+          {copy.descricao}
+        </p>
+      </div>
+
+      {doadores.length === 0 ? (
+        <p
+          data-pf-doadores-recorrentes-vazio
+          className="rounded-[12px] bg-muted/40 px-4 py-3 text-[length:var(--text-body-sm)] font-medium leading-relaxed text-foreground"
+        >
+          {copy.vazio}
+        </p>
+      ) : (
+        <ul className="space-y-4">
+          {doadores.map((doador) => {
+            const visiveis = doador.outras_candidaturas.slice(0, DOADOR_RECORRENTE_OUTRAS_VISIVEIS)
+            const restantes = doador.outras_candidaturas.slice(DOADOR_RECORRENTE_OUTRAS_VISIVEIS)
+            return (
+              <li
+                key={doador.doador_nome}
+                data-pf-doador-recorrente={doador.doacoes.length}
+                className="border-t border-border/50 pt-3 first:border-t-0 first:pt-0"
+              >
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                  <Link
+                    href={buildDoadorReverseHref(doador.doador_nome)}
+                    className="min-w-0 break-words font-bold leading-snug text-foreground underline-offset-2 hover:underline"
+                  >
+                    {doador.doador_nome}
+                  </Link>
+                  <span className="shrink-0 text-[length:var(--text-body-sm)] font-medium tabular-nums text-muted-foreground">
+                    {descreverDoacoes(doador.doacoes, formatBRL)}
+                  </span>
+                </div>
+                <p className="mt-2 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                  {copy.tambemFinancia}
+                </p>
+                <ul className="mt-1 space-y-1">
+                  {visiveis.map((outra) => (
+                    <DoadorRecorrenteOutraLinha key={outra.slug} outra={outra} />
+                  ))}
+                </ul>
+                {restantes.length > 0 && (
+                  <details className="mt-1">
+                    <summary className="cursor-pointer py-1 text-[length:var(--text-body-sm)] font-bold text-foreground underline-offset-2 hover:underline">
+                      {copy.maisCandidaturas(restantes.length)}
+                    </summary>
+                    <ul className="mt-1 space-y-1">
+                      {restantes.map((outra) => (
+                        <DoadorRecorrenteOutraLinha key={outra.slug} outra={outra} />
+                      ))}
+                    </ul>
+                  </details>
+                )}
+              </li>
+            )
+          })}
+        </ul>
+      )}
+
+      <div className="space-y-2 border-t border-border/50 pt-3 text-[length:var(--text-body-sm)] font-medium leading-relaxed text-muted-foreground">
+        <p data-pf-doadores-recorrentes-limite>{copy.limite}</p>
+        <p>{copy.regra}</p>
+        <p>
+          {copy.fonte}{" "}
+          <Link href={copy.metodologiaHref} className="font-bold text-foreground underline underline-offset-2">
+            {copy.metodologiaLabel}
+          </Link>
+        </p>
+      </div>
+    </div>
+  )
+}
+
+function DoadorRecorrenteOutraLinha({ outra }: { outra: DoadorRecorrenteOutraCandidatura }) {
+  return (
+    <li className="flex flex-col gap-0.5 text-[length:var(--text-body-sm)] sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+      <Link
+        href={`/candidato/${encodeURIComponent(outra.slug)}`}
+        className="min-w-0 break-words py-0.5 font-medium text-foreground underline underline-offset-2"
+      >
+        {outra.nome_urna ?? outra.slug}
+      </Link>
+      <span className="shrink-0 tabular-nums text-muted-foreground">
+        {descreverDoacoes(outra.doacoes, formatBRL)}
+      </span>
+    </li>
+  )
+}
+
 interface MoneyTabSectionProps {
   patrimonio: Patrimonio[]
   financiamento: Financiamento[]
+  /** Doadores em comum com outras candidaturas; `null`/ausente = seção omitida. */
+  doadoresRecorrentes?: DoadorRecorrentePublico[] | null
   financiamentoEleicoes?: FinanciamentoEleicaoPublico[] | null
   /** Bruto (API); usado só para rótulos de pleito em financiamento, não para `cargo_disputado` atual. */
   historico: HistoricoPolitico[]
@@ -579,6 +692,7 @@ interface MoneyTabSectionProps {
 export function MoneyTabSection({
   patrimonio,
   financiamento,
+  doadoresRecorrentes = null,
   financiamentoEleicoes,
   historico,
   gastos,
@@ -854,6 +968,9 @@ export function MoneyTabSection({
                 </div>
               ))}
           </div>
+          )}
+          {financiamento.length > 0 && doadoresRecorrentes && (
+            <DoadoresRecorrentesBlock doadores={doadoresRecorrentes} />
           )}
           {financiamentoEleicoesSemDado.length > 0 && (
             <div className="mt-6">

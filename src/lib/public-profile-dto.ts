@@ -22,6 +22,7 @@ import {
 } from "@/lib/candidatura-proveniencia"
 import { anosDePleitoDisputado } from "@/lib/pleitos-disputados"
 import { buildFinanciamentoEleicoes } from "@/lib/financiamento-eleicoes"
+import { publicDoadorRecorrente } from "@/lib/doador-recorrente-publico"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
 import { pareceNomeDeInstituicao } from "@/lib/formacao-display"
 import { sanitizePublicText } from "@/lib/public-text"
@@ -753,6 +754,8 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
     financiamento_eleicoes:
       ficha.financiamento_eleicoes ??
       buildFinanciamentoEleicoes(ficha.financiamento ?? [], ficha.historico ?? []),
+    doadores_recorrentes:
+      ficha.doadores_recorrentes == null ? null : ficha.doadores_recorrentes.map(publicDoadorRecorrente),
     votos: (ficha.votos ?? []).map(publicVoto),
     processos: (ficha.processos ?? []).map(publicProcesso),
     pontos_atencao: (ficha.pontos_atencao ?? []).map(publicPontoAtencao),
