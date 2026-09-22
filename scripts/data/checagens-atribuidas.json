@@ -13482,5 +13482,2523 @@
       "reviewerKind": "model_principal",
       "reviewedAt": "2026-09-22T14:15:49Z"
     }
+  },
+  {
+    "id": "g1-cury-globo-2026-08-29-01",
+    "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+    "candidate_slug": "augusto-cury",
+    "candidate_name": "Augusto Cury",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Augusto Cury citou faturamento de R$ 30 bilhões por mês para as bets e valores anuais de R$ 360 bilhões ou R$ 400 bilhões.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-29",
+      "context": "entrevista de Augusto Cury à Globo no primeiro turno",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Augusto Cury"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FAKE",
+    "summary": "O Fato ou Fake comparou os valores com a receita bruta de R$ 37 bilhões registrada pela Secretaria de Prêmios e Apostas em 2025, equivalente a cerca de R$ 3,08 bilhões mensais. A transcrição da fonte contém uma hesitação entre milhões e bilhões; a avaliação considera os valores em bilhões.",
+    "publishedAt": "2026-08-29T23:43:45.575-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/29/veja-o-que-e-fato-ou-fake-na-entrevista-de-augusto-cury-a-globo.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "0a74be378c864be07d96d827df94cc3bec8c61634efdc80bf70ddda99cc24469",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FAKE",
+      "speakerIdentity": "Augusto Cury",
+      "contextExcerpt": "entrevista de Augusto Cury à Globo no primeiro turno; evento em 2026-08-29."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/29/veja-o-que-e-fato-ou-fake-na-entrevista-de-augusto-cury-a-globo.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Augusto Cury (Avante) à Globo no 1º turno | G1"
+      },
+      {
+        "url": "https://g1.globo.com/economia/noticia/2025/08/26/bets-empresas-de-apostas-e-jogos-online-faturaram-r-174-bilhoes-no-1o-semestre.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "os números reais de receita das bets"
+      },
+      {
+        "url": "https://valor.globo.com/brasil/noticia/2026/01/21/bets-registram-receita-bruta-de-r-37-bilhoes-em-2025.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "obtiveram uma receita bruta (valor sem descontos e impostos) de R$ 37 bilhões"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Secretaria de Prêmios e Apostas (SPA)"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Receita Federal"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-cury-globo-2026-08-29-02",
+    "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+    "candidate_slug": "augusto-cury",
+    "candidate_name": "Augusto Cury",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Augusto Cury afirmou que as bets pagam 12% de imposto.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-29",
+      "context": "entrevista de Augusto Cury à Globo no primeiro turno",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Augusto Cury"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake registrou que 12% era a taxação de 2025, mas a Lei Complementar 224/2025 elevou o percentual para 13% em 2026 e previu 14% em 2027 e 15% em 2028. Por isso, classificou a fala como #NÃOÉBEMASSIM no recorte atualizado.",
+    "publishedAt": "2026-08-29T23:43:45.575-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/29/veja-o-que-e-fato-ou-fake-na-entrevista-de-augusto-cury-a-globo.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "0a74be378c864be07d96d827df94cc3bec8c61634efdc80bf70ddda99cc24469",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Augusto Cury",
+      "contextExcerpt": "entrevista de Augusto Cury à Globo no primeiro turno; evento em 2026-08-29."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/29/veja-o-que-e-fato-ou-fake-na-entrevista-de-augusto-cury-a-globo.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Augusto Cury (Avante) à Globo no 1º turno | G1"
+      },
+      {
+        "url": "https://g1.globo.com/politica/noticia/2023/12/31/lula-sanciona-lei-que-regulamenta-apostas-esportivas-mas-veta-isencao-de-ir-para-ganhos-de-ate-r-21-mil.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "governo federal sancionou a Lei Complementar 224/2025"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Lei Complementar 224/2025"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Lei das Bets"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-cury-globo-2026-08-29-03",
+    "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+    "candidate_slug": "augusto-cury",
+    "candidate_name": "Augusto Cury",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Augusto Cury afirmou que cada ponto percentual da Selic acrescenta quase R$ 100 bilhões ao custo de rolagem da dívida federal.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-29",
+      "context": "entrevista de Augusto Cury à Globo no primeiro turno",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Augusto Cury"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake comparou a fala com estimativas do Banco Central para uma alta de 1 ponto mantida por 12 meses: R$ 60,6 bilhões na dívida bruta e R$ 66,1 bilhões na líquida na divulgação de julho. As estimativas de junho eram R$ 59,3 bilhões e R$ 65 bilhões, respectivamente.",
+    "publishedAt": "2026-08-29T23:43:45.575-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/29/veja-o-que-e-fato-ou-fake-na-entrevista-de-augusto-cury-a-globo.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "0a74be378c864be07d96d827df94cc3bec8c61634efdc80bf70ddda99cc24469",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Augusto Cury",
+      "contextExcerpt": "entrevista de Augusto Cury à Globo no primeiro turno; evento em 2026-08-29."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/29/veja-o-que-e-fato-ou-fake-na-entrevista-de-augusto-cury-a-globo.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Augusto Cury (Avante) à Globo no 1º turno | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Banco Central"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Nota Estatísticas Fiscais"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-cury-globo-2026-08-29-04",
+    "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+    "candidate_slug": "augusto-cury",
+    "candidate_name": "Augusto Cury",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Augusto Cury afirmou que a espera por oftalmologia e cardiologia no SUS era de 57 dias e passava de 100 dias em Brasília.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-29",
+      "context": "entrevista de Augusto Cury à Globo no primeiro turno",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Augusto Cury"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "Segundo o Fato ou Fake, 57 dias era a espera média no SUS em 2024 para o conjunto de 57 especialidades. As médias específicas eram de 83 dias para oftalmologia e 52 para cardiologia; no Distrito Federal, de 180,9 e 104,2 dias, respectivamente.",
+    "publishedAt": "2026-08-29T23:43:45.575-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/29/veja-o-que-e-fato-ou-fake-na-entrevista-de-augusto-cury-a-globo.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "0a74be378c864be07d96d827df94cc3bec8c61634efdc80bf70ddda99cc24469",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Augusto Cury",
+      "contextExcerpt": "entrevista de Augusto Cury à Globo no primeiro turno; evento em 2026-08-29."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/29/veja-o-que-e-fato-ou-fake-na-entrevista-de-augusto-cury-a-globo.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Augusto Cury (Avante) à Globo no 1º turno | G1"
+      },
+      {
+        "url": "https://oglobo.globo.com/saude/especial/entre-a-fila-do-sus-e-a-vida-espera-para-consultas-bate-recorde.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "uma reportagem detalhando números do Ministério da Saúde obtidos via Lei de Acesso à Informação (LAI)"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Ministério da Saúde"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Lei de Acesso à Informação"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-cury-globo-2026-08-29-05",
+    "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+    "candidate_slug": "augusto-cury",
+    "candidate_name": "Augusto Cury",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Augusto Cury afirmou que 1.571 mulheres morreram por feminicídio no ano anterior.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-29",
+      "context": "entrevista de Augusto Cury à Globo no primeiro turno",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Augusto Cury"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake confirmou #FATO: o Anuário Brasileiro de Segurança Pública registrou 3.539 mulheres assassinadas em 2025, das quais 1.571 foram vítimas de feminicídio.",
+    "publishedAt": "2026-08-29T23:43:45.575-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/29/veja-o-que-e-fato-ou-fake-na-entrevista-de-augusto-cury-a-globo.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "0a74be378c864be07d96d827df94cc3bec8c61634efdc80bf70ddda99cc24469",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Augusto Cury",
+      "contextExcerpt": "entrevista de Augusto Cury à Globo no primeiro turno; evento em 2026-08-29."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/29/veja-o-que-e-fato-ou-fake-na-entrevista-de-augusto-cury-a-globo.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Augusto Cury (Avante) à Globo no 1º turno | G1"
+      },
+      {
+        "url": "https://g1.globo.com/politica/noticia/2026/07/23/anuario-seguranca-publica-2025.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "divulgado em 23 de julho deste ano"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "20º Anuário Brasileiro de Segurança Pública"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-cury-globo-2026-08-29-06",
+    "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+    "candidate_slug": "augusto-cury",
+    "candidate_name": "Augusto Cury",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Augusto Cury afirmou que um chinês emitia quatro vezes mais carbono que um brasileiro e um americano sete vezes mais.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-29",
+      "context": "entrevista de Augusto Cury à Globo no primeiro turno",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Augusto Cury"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake mostrou que, sem o índice de uso da terra e florestas, as emissões per capita eram 2,37 toneladas no Brasil, 7,9 na China e 14,76 nos Estados Unidos. Com esse fator, o Brasil chegava a 9,82 toneladas, a China a 8,43 e os Estados Unidos a 14,52, alterando as relações citadas.",
+    "publishedAt": "2026-08-29T23:43:45.575-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/29/veja-o-que-e-fato-ou-fake-na-entrevista-de-augusto-cury-a-globo.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "0a74be378c864be07d96d827df94cc3bec8c61634efdc80bf70ddda99cc24469",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Augusto Cury",
+      "contextExcerpt": "entrevista de Augusto Cury à Globo no primeiro turno; evento em 2026-08-29."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/29/veja-o-que-e-fato-ou-fake-na-entrevista-de-augusto-cury-a-globo.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Augusto Cury (Avante) à Globo no 1º turno | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Our World in Data"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Universidade de Oxford"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-cury-globo-2026-08-29-07",
+    "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+    "candidate_slug": "augusto-cury",
+    "candidate_name": "Augusto Cury",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Augusto Cury afirmou que o Brasil produzia 350 milhões de toneladas de alimentos.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-29",
+      "context": "entrevista de Augusto Cury à Globo no primeiro turno",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Augusto Cury"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake sustentou o rótulo com a safra de 350,2 milhões de toneladas registrada pela Conab em 2024/2025. Esse dado verifica o volume citado; a proposta de dobrá-lo em dez anos não é um resultado demonstrado pela checagem.",
+    "publishedAt": "2026-08-29T23:43:45.575-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/29/veja-o-que-e-fato-ou-fake-na-entrevista-de-augusto-cury-a-globo.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "0a74be378c864be07d96d827df94cc3bec8c61634efdc80bf70ddda99cc24469",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Augusto Cury",
+      "contextExcerpt": "entrevista de Augusto Cury à Globo no primeiro turno; evento em 2026-08-29."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/29/veja-o-que-e-fato-ou-fake-na-entrevista-de-augusto-cury-a-globo.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Augusto Cury (Avante) à Globo no 1º turno | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Companhia Nacional de Abastecimento (Conab)"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-cury-sabatina-2026-08-28-01",
+    "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+    "candidate_slug": "augusto-cury",
+    "candidate_name": "Augusto Cury",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Augusto Cury afirmou que o Supremo Tribunal Federal julgou mais de 112 mil processos no ano anterior.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-28",
+      "context": "sabatina de Augusto Cury a O Globo, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Augusto Cury"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: o balanço do STF registrou 116.170 decisões em 2025, acima dos mais de 112 mil mencionados.",
+    "publishedAt": "2026-08-28T17:10:53.617-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/28/veja-o-que-e-fato-ou-fake-na-sabatina-de-augusto-cury-a-o-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "c6187a5f544da2d0ac7728af5d72de025529b372544d6ca6d6cb4b641a965fb4",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Augusto Cury",
+      "contextExcerpt": "sabatina de Augusto Cury a O Globo, Valor e CBN; evento em 2026-08-28."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/28/veja-o-que-e-fato-ou-fake-na-sabatina-de-augusto-cury-a-o-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: sabatina de Augusto Cury a 'O Globo', 'Valor' e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Supremo Tribunal Federal"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-cury-sabatina-2026-08-28-02",
+    "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+    "candidate_slug": "augusto-cury",
+    "candidate_name": "Augusto Cury",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Augusto Cury afirmou que já havia treinado gratuitamente a Polícia Militar algumas vezes.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-28",
+      "context": "sabatina de Augusto Cury a O Globo, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Augusto Cury"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake encontrou registros de parcerias com a Polícia Militar de São Paulo em 2019 e com a Polícia Militar de Minas Gerais em 2021. Os registros descrevem o programa de gestão emocional e sua oferta gratuita ou em parceria às corporações.",
+    "publishedAt": "2026-08-28T17:10:53.617-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/28/veja-o-que-e-fato-ou-fake-na-sabatina-de-augusto-cury-a-o-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "c6187a5f544da2d0ac7728af5d72de025529b372544d6ca6d6cb4b641a965fb4",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Augusto Cury",
+      "contextExcerpt": "sabatina de Augusto Cury a O Globo, Valor e CBN; evento em 2026-08-28."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/28/veja-o-que-e-fato-ou-fake-na-sabatina-de-augusto-cury-a-o-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: sabatina de Augusto Cury a 'O Globo', 'Valor' e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Polícia Militar de São Paulo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Polícia Militar de Minas Gerais"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-cury-sabatina-2026-08-28-03",
+    "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+    "candidate_slug": "augusto-cury",
+    "candidate_name": "Augusto Cury",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Augusto Cury afirmou que havia cerca de 50 mil cargos comissionados no Executivo.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-28",
+      "context": "sabatina de Augusto Cury a O Globo, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Augusto Cury"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: dados do Ministério da Gestão e da Inovação registraram 50.124 cargos em comissão e funções de confiança em 2025.",
+    "publishedAt": "2026-08-28T17:10:53.617-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/28/veja-o-que-e-fato-ou-fake-na-sabatina-de-augusto-cury-a-o-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "c6187a5f544da2d0ac7728af5d72de025529b372544d6ca6d6cb4b641a965fb4",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Augusto Cury",
+      "contextExcerpt": "sabatina de Augusto Cury a O Globo, Valor e CBN; evento em 2026-08-28."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/28/veja-o-que-e-fato-ou-fake-na-sabatina-de-augusto-cury-a-o-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: sabatina de Augusto Cury a 'O Globo', 'Valor' e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Ministério da Gestão e da Inovação em Serviços Públicos"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-cury-sabatina-2026-08-28-04",
+    "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+    "candidate_slug": "augusto-cury",
+    "candidate_name": "Augusto Cury",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Augusto Cury afirmou que o Brasil tinha mais advogados que todos os países do mundo juntos.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-28",
+      "context": "sabatina de Augusto Cury a O Globo, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Augusto Cury"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FAKE",
+    "summary": "O Fato ou Fake marcou #FAKE: havia cerca de 1,5 milhão de advogados no Brasil, enquanto seis territórios comparados na matéria somavam aproximadamente 2,18 milhões. A comparação incluiu Estados Unidos, Itália, Inglaterra e País de Gales, Alemanha, Espanha e França.",
+    "publishedAt": "2026-08-28T17:10:53.617-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/28/veja-o-que-e-fato-ou-fake-na-sabatina-de-augusto-cury-a-o-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "c6187a5f544da2d0ac7728af5d72de025529b372544d6ca6d6cb4b641a965fb4",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FAKE",
+      "speakerIdentity": "Augusto Cury",
+      "contextExcerpt": "sabatina de Augusto Cury a O Globo, Valor e CBN; evento em 2026-08-28."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/28/veja-o-que-e-fato-ou-fake-na-sabatina-de-augusto-cury-a-o-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: sabatina de Augusto Cury a 'O Globo', 'Valor' e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Conselho Federal da OAB"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "American Bar Association"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Cassa Forense"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Solicitors Regulation Authority"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Bundesrechtsanwaltskammer"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Consejo General de la Abogacía Española"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Conseil National des Barreaux"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-cury-sabatina-2026-08-28-05",
+    "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+    "candidate_slug": "augusto-cury",
+    "candidate_name": "Augusto Cury",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Augusto Cury afirmou ser o único candidato a propor mandato de oito anos para ministros do STF, sem vitaliciedade, e duas próximas ministras mulheres.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-28",
+      "context": "sabatina de Augusto Cury a O Globo, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Augusto Cury"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FAKE",
+    "summary": "O Fato ou Fake marcou #FAKE porque identificou propostas semelhantes de Zema, Caiado e Flávio Bolsonaro, além da PEC 16/2019, que já previa oito anos sem recondução. A matéria contestou a exclusividade da proposta, sem transformar isso em avaliação independente.",
+    "publishedAt": "2026-08-28T17:10:53.617-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/28/veja-o-que-e-fato-ou-fake-na-sabatina-de-augusto-cury-a-o-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "c6187a5f544da2d0ac7728af5d72de025529b372544d6ca6d6cb4b641a965fb4",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FAKE",
+      "speakerIdentity": "Augusto Cury",
+      "contextExcerpt": "sabatina de Augusto Cury a O Globo, Valor e CBN; evento em 2026-08-28."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/28/veja-o-que-e-fato-ou-fake-na-sabatina-de-augusto-cury-a-o-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: sabatina de Augusto Cury a 'O Globo', 'Valor' e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Proposta de Romeu Zema"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Proposta de Ronaldo Caiado"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "PEC 45/2025"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "PEC 16/2019"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-cury-sabatina-2026-08-28-06-a",
+    "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+    "candidate_slug": "augusto-cury",
+    "candidate_name": "Augusto Cury",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Augusto Cury afirmou que nunca houve tantas recuperações judiciais no Brasil.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-28",
+      "context": "sabatina de Augusto Cury a O Globo, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Augusto Cury"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake citou a Serasa Experian: 2.466 empresas estavam envolvidas em pedidos de recuperação judicial em 2025, recorde da série iniciada em 2012. O levantamento contabilizava 977 processos, distinguindo empresas de processos.",
+    "publishedAt": "2026-08-28T17:10:53.617-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/28/veja-o-que-e-fato-ou-fake-na-sabatina-de-augusto-cury-a-o-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "c6187a5f544da2d0ac7728af5d72de025529b372544d6ca6d6cb4b641a965fb4",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Augusto Cury",
+      "contextExcerpt": "sabatina de Augusto Cury a O Globo, Valor e CBN; evento em 2026-08-28."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/28/veja-o-que-e-fato-ou-fake-na-sabatina-de-augusto-cury-a-o-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: sabatina de Augusto Cury a 'O Globo', 'Valor' e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Serasa Experian"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Pesquisa Peic da CNC"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-cury-sabatina-2026-08-28-06-b",
+    "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+    "candidate_slug": "augusto-cury",
+    "candidate_name": "Augusto Cury",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Augusto Cury afirmou que 82% das famílias brasileiras estavam endividadas.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-28",
+      "context": "sabatina de Augusto Cury a O Globo, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Augusto Cury"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake confirmou o percentual na Peic de julho de 2026. A medida inclui compromissos pagos em dia; contas em atraso atingiam 29,8% das famílias, um indicador diferente.",
+    "publishedAt": "2026-08-28T17:10:53.617-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/28/veja-o-que-e-fato-ou-fake-na-sabatina-de-augusto-cury-a-o-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "c6187a5f544da2d0ac7728af5d72de025529b372544d6ca6d6cb4b641a965fb4",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Augusto Cury",
+      "contextExcerpt": "sabatina de Augusto Cury a O Globo, Valor e CBN; evento em 2026-08-28."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/28/veja-o-que-e-fato-ou-fake-na-sabatina-de-augusto-cury-a-o-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: sabatina de Augusto Cury a 'O Globo', 'Valor' e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Serasa Experian"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Pesquisa Peic da CNC"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-cury-sabatina-2026-08-28-07",
+    "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+    "candidate_slug": "augusto-cury",
+    "candidate_name": "Augusto Cury",
+    "office": "Presidente",
+    "uf": null,
+    "claim": "Augusto Cury afirmou que o Brasil aumentou em 148% os suicídios de jovens de 10 a 19 anos e atribuiu o crescimento à comparação nas redes sociais.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-28",
+      "context": "sabatina de Augusto Cury a O Globo, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Augusto Cury"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FAKE",
+    "summary": "O Fato ou Fake marcou #FAKE: o Atlas da Violência apontou alta de 2,4 para 3,4 mortes por 100 mil entre 2014 e 2024, ou 41,7%, e de 814 para 1.002 mortes, ou 23,1%. A matéria citou vulnerabilidades ligadas às redes, mas não como explicação única, e separou o dado de 138% sobre tentativas na Polônia.",
+    "publishedAt": "2026-08-28T17:10:53.617-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/28/veja-o-que-e-fato-ou-fake-na-sabatina-de-augusto-cury-a-o-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "c6187a5f544da2d0ac7728af5d72de025529b372544d6ca6d6cb4b641a965fb4",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FAKE",
+      "speakerIdentity": "Augusto Cury",
+      "contextExcerpt": "sabatina de Augusto Cury a O Globo, Valor e CBN; evento em 2026-08-28."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/28/veja-o-que-e-fato-ou-fake-na-sabatina-de-augusto-cury-a-o-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: sabatina de Augusto Cury a 'O Globo', 'Valor' e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Atlas da Violência 2026"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Ipea"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Fórum Brasileiro de Segurança Pública"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Organização Mundial da Saúde"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-douglas-ruas-2026-09-08-01",
+    "candidate_id": "097dc8d0-d05d-42cb-91a0-0582dd561f76",
+    "candidate_slug": "douglas-ruas",
+    "candidate_name": "Douglas Ruas",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Douglas Ruas afirmou que não fazia parte da pedreira ligada à família de Altineu Côrtes e que não sabia quem eram seus sócios.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-08",
+      "context": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Douglas Ruas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake marcou #NÃOÉBEMASSIM: Ruas não integrava formalmente a empresa, mas um dos sócios era filho de Altineu Côrtes e havia relações empresariais indiretas com uma empresa de Ruas.",
+    "publishedAt": "2026-09-08T19:50:30.658-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "4ba0392b441a50c5cc79f7f88b7864068d131fae8f4aab8f1b48e19c0e029493",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Douglas Ruas",
+      "contextExcerpt": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN; evento em 2026-09-08."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Douglas Ruas ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Receita Federal"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Registros empresariais citados pelo Fato ou Fake"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-douglas-ruas-2026-09-08-02",
+    "candidate_id": "097dc8d0-d05d-42cb-91a0-0582dd561f76",
+    "candidate_slug": "douglas-ruas",
+    "candidate_name": "Douglas Ruas",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Douglas Ruas afirmou que Eduardo Paes e Cláudio Castro apareciam juntos em vídeo cantando samba no palco.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-08",
+      "context": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Douglas Ruas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: em fevereiro de 2024, Paes e Castro cantaram “Domingo”, do Só Pra Contrariar, durante uma feijoada no Palácio da Cidade, em vídeo publicado por O Globo.",
+    "publishedAt": "2026-09-08T19:50:30.658-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "4ba0392b441a50c5cc79f7f88b7864068d131fae8f4aab8f1b48e19c0e029493",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Douglas Ruas",
+      "contextExcerpt": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN; evento em 2026-09-08."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Douglas Ruas ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "O Globo"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-douglas-ruas-2026-09-08-03",
+    "candidate_id": "097dc8d0-d05d-42cb-91a0-0582dd561f76",
+    "candidate_slug": "douglas-ruas",
+    "candidate_name": "Douglas Ruas",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Douglas Ruas afirmou que o Rio apreendeu 920 fuzis em 2025, nenhum produzido no Brasil, e que as armas entravam facilmente nas cidades.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-08",
+      "context": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Douglas Ruas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake encontrou 922 fuzis apreendidos no Rio em 2025 nos dados do ISP, que não especificavam a origem de todos eles. A matéria também citou investigações sobre fabricação clandestina de fuzis no Brasil, contestando a afirmação de origem exclusivamente estrangeira.",
+    "publishedAt": "2026-09-08T19:50:30.658-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "4ba0392b441a50c5cc79f7f88b7864068d131fae8f4aab8f1b48e19c0e029493",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Douglas Ruas",
+      "contextExcerpt": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN; evento em 2026-09-08."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Douglas Ruas ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Instituto de Segurança Pública"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Polícia Federal"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Fantástico"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-douglas-ruas-2026-09-08-04",
+    "candidate_id": "097dc8d0-d05d-42cb-91a0-0582dd561f76",
+    "candidate_slug": "douglas-ruas",
+    "candidate_name": "Douglas Ruas",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Douglas Ruas afirmou que Lula vetou dispositivos do Propag e que o Congresso derrubou o veto para aliviar as contas do Rio.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-08",
+      "context": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Douglas Ruas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "Segundo o Fato ou Fake, Lula vetou parte da lei do Propag e o Congresso derrubou vetos, restabelecendo seis dispositivos considerados importantes pela Fazenda fluminense para a adesão do estado.",
+    "publishedAt": "2026-09-08T19:50:30.658-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "4ba0392b441a50c5cc79f7f88b7864068d131fae8f4aab8f1b48e19c0e029493",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Douglas Ruas",
+      "contextExcerpt": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN; evento em 2026-09-08."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Douglas Ruas ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Lei Complementar 212/2025"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Secretaria de Estado de Fazenda do Rio de Janeiro"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-douglas-ruas-2026-09-08-05",
+    "candidate_id": "097dc8d0-d05d-42cb-91a0-0582dd561f76",
+    "candidate_slug": "douglas-ruas",
+    "candidate_name": "Douglas Ruas",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Douglas Ruas afirmou ter zero processos e zero denúncias sobre seus atos no poder público.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-08",
+      "context": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Douglas Ruas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FAKE",
+    "summary": "O Fato ou Fake marcou #FAKE: a matéria citou planilha da PF, procedimento criminal do MPRJ, auditoria com possíveis irregularidades, investigação civil por evolução patrimonial e representação no TRE-RJ. Também registrou que Ruas nega irregularidades.",
+    "publishedAt": "2026-09-08T19:50:30.658-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "4ba0392b441a50c5cc79f7f88b7864068d131fae8f4aab8f1b48e19c0e029493",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FAKE",
+      "speakerIdentity": "Douglas Ruas",
+      "contextExcerpt": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN; evento em 2026-09-08."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Douglas Ruas ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Polícia Federal"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Ministério Público do Estado do Rio de Janeiro"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Tribunal Regional Eleitoral do Rio de Janeiro"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-douglas-ruas-2026-09-08-06",
+    "candidate_id": "097dc8d0-d05d-42cb-91a0-0582dd561f76",
+    "candidate_slug": "douglas-ruas",
+    "candidate_name": "Douglas Ruas",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Douglas Ruas afirmou que mais de 2,4 mil policiais prenderam mais de cem criminosos no Complexo do Alemão e que mais de cem mortos empunharam fuzis e atiraram contra policiais.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-08",
+      "context": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Douglas Ruas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake marcou #NÃOÉBEMASSIM: autoridades não confirmaram individualmente que os mortos estavam armados ou atiraram. O texto comparou 117 mortos, 15 ou 5 alvos de mandados segundo fontes distintas, detenções em flagrante e investigações ainda inconclusivas.",
+    "publishedAt": "2026-09-08T19:50:30.658-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "4ba0392b441a50c5cc79f7f88b7864068d131fae8f4aab8f1b48e19c0e029493",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Douglas Ruas",
+      "contextExcerpt": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN; evento em 2026-09-08."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Douglas Ruas ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Comissão Interamericana de Direitos Humanos"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Polícia Civil do Estado do Rio de Janeiro"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Ministério Público do Estado do Rio de Janeiro"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-douglas-ruas-2026-09-08-07-a",
+    "candidate_id": "097dc8d0-d05d-42cb-91a0-0582dd561f76",
+    "candidate_slug": "douglas-ruas",
+    "candidate_name": "Douglas Ruas",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Douglas Ruas negou que São Gonçalo concentrasse mais da metade das verbas da Secretaria Estadual das Cidades.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-08",
+      "context": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Douglas Ruas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FAKE",
+    "summary": "Segundo o Fato ou Fake, São Gonçalo concentrava R$ 773,3 milhões dos R$ 1,4 bilhão em contratos ativos da secretaria em 2025, ou 55,2%. Esse recorte é de contratos, sem afirmar que todo o montante já havia sido pago.",
+    "publishedAt": "2026-09-08T19:50:30.658-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "4ba0392b441a50c5cc79f7f88b7864068d131fae8f4aab8f1b48e19c0e029493",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FAKE",
+      "speakerIdentity": "Douglas Ruas",
+      "contextExcerpt": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN; evento em 2026-09-08."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Douglas Ruas ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Secretaria Estadual das Cidades"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Controladoria Geral do Estado"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-douglas-ruas-2026-09-08-07-b",
+    "candidate_id": "097dc8d0-d05d-42cb-91a0-0582dd561f76",
+    "candidate_slug": "douglas-ruas",
+    "candidate_name": "Douglas Ruas",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Douglas Ruas afirmou que o documento não poderia ser chamado de auditoria porque os gestores não haviam sido notificados.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-08",
+      "context": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Douglas Ruas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FAKE",
+    "summary": "O Fato ou Fake identificou a Nota de Auditoria 20260009 como documento oficial da Controladoria estadual. A matéria explicou que se tratava de etapa preliminar e que a notificação para defesa ocorreria posteriormente.",
+    "publishedAt": "2026-09-08T19:50:30.658-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "4ba0392b441a50c5cc79f7f88b7864068d131fae8f4aab8f1b48e19c0e029493",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FAKE",
+      "speakerIdentity": "Douglas Ruas",
+      "contextExcerpt": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN; evento em 2026-09-08."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Douglas Ruas ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Secretaria Estadual das Cidades"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Controladoria Geral do Estado"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-douglas-ruas-2026-09-08-08",
+    "candidate_id": "097dc8d0-d05d-42cb-91a0-0582dd561f76",
+    "candidate_slug": "douglas-ruas",
+    "candidate_name": "Douglas Ruas",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Douglas Ruas afirmou que o estado do Rio tinha a maior tarifa de metrô do país.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-08",
+      "context": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Douglas Ruas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: a tarifa comum do metrô do Rio era R$ 7,90, acima de R$ 5,40 em São Paulo e R$ 5 em Porto Alegre.",
+    "publishedAt": "2026-09-08T19:50:30.658-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "4ba0392b441a50c5cc79f7f88b7864068d131fae8f4aab8f1b48e19c0e029493",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Douglas Ruas",
+      "contextExcerpt": "entrevista de Douglas Ruas a O Globo, Extra, Valor e CBN; evento em 2026-09-08."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/08/veja-o-que-e-fato-ou-fake-na-entrevista-de-douglas-ruas-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Douglas Ruas ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Dados comparativos de tarifas de metrô citados pelo Fato ou Fake"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-eduardo-paes-2026-09-11-01",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Eduardo Paes afirmou que o governo do PL no Rio teve quatro secretários presos ligados ao crime organizado e associou Douglas Ruas e Rodrigo Bacellar à sucessão de Cláudio Castro.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-11",
+      "context": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO e detalhou as prisões de Allan Turnowski, Raphael Montenegro, Alessandro Pitombeira Carracena e Rodrigo Bacellar. A matéria descreveu as acusações e situações processuais de cada caso, sem transformar suspeitas em condenações definitivas.",
+    "publishedAt": "2026-09-11T20:17:04.631-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "5a25bd7a3d0ff0d884e0863f16436882a2c32dad37aff2fa06021911c93dbbc5",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN; evento em 2026-09-11."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Eduardo Paes ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Ministério Público do Estado do Rio de Janeiro"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Polícia Federal"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Supremo Tribunal Federal"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-eduardo-paes-2026-09-11-02-a",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Eduardo Paes afirmou que o Rio de Janeiro tinha o pior Ideb do Brasil.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-11",
+      "context": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake explicou que o Ideb varia por etapa e rede. No ensino médio estadual de 2025, o Rio marcou 3,7, empatado com outros estados e acima do Distrito Federal, que tinha 3,6.",
+    "publishedAt": "2026-09-11T20:17:04.631-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "5a25bd7a3d0ff0d884e0863f16436882a2c32dad37aff2fa06021911c93dbbc5",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN; evento em 2026-09-11."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Eduardo Paes ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Inep"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Ideb"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-eduardo-paes-2026-09-11-02-b",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Eduardo Paes afirmou que São Gonçalo estava na penúltima posição do Ideb.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-11",
+      "context": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "Segundo o Fato ou Fake, São Gonçalo tinha 4,9 nos anos iniciais da rede municipal em 2025, empatado com Duque de Caxias na terceira menor nota fluminense. Japeri e Belford Roxo tinham notas inferiores.",
+    "publishedAt": "2026-09-11T20:17:04.631-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "5a25bd7a3d0ff0d884e0863f16436882a2c32dad37aff2fa06021911c93dbbc5",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN; evento em 2026-09-11."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Eduardo Paes ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Inep"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Ideb"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-eduardo-paes-2026-09-11-03",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Eduardo Paes afirmou que a lei orgânica da Polícia Civil foi alterada para nomear Marcus Vinícius Amim, apoiado por Rodrigo Bacellar, e que Amim depois foi para a segurança da Alerj.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-11",
+      "context": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: a Alerj alterou o requisito legal, Amim comandou a Polícia Civil, recebeu apoio de Bacellar e depois coordenou a segurança da Assembleia. A matéria também registrou que ele foi alvo de operação da PF e de investigação disciplinar, sem concluir culpa.",
+    "publishedAt": "2026-09-11T20:17:04.631-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "5a25bd7a3d0ff0d884e0863f16436882a2c32dad37aff2fa06021911c93dbbc5",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN; evento em 2026-09-11."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Eduardo Paes ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Assembleia Legislativa do Estado do Rio de Janeiro"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Polícia Federal"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Corregedoria da Polícia Civil"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-eduardo-paes-2026-09-11-04",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Eduardo Paes afirmou que Antonio Rueda e o União Brasil não apoiavam sua candidatura.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-11",
+      "context": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake distinguiu a neutralidade formal da federação União Progressista das manifestações individuais de Antonio Rueda. A matéria registrou sua participação em agendas de aliados de Paes e seu apoio a Pedro Paulo.",
+    "publishedAt": "2026-09-11T20:17:04.631-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "5a25bd7a3d0ff0d884e0863f16436882a2c32dad37aff2fa06021911c93dbbc5",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN; evento em 2026-09-11."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Eduardo Paes ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "União Progressista"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Polícia Federal"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Procuradoria-Geral da República"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-eduardo-paes-2026-09-11-05",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Eduardo Paes afirmou que havia déficit de 20 mil vagas no sistema penitenciário do Rio.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-11",
+      "context": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: a Secretaria de Polícia Penal estimou déficit de cerca de 19 mil vagas, e apenas 8 das 47 unidades não apresentavam falta de vagas.",
+    "publishedAt": "2026-09-11T20:17:04.631-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "5a25bd7a3d0ff0d884e0863f16436882a2c32dad37aff2fa06021911c93dbbc5",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN; evento em 2026-09-11."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Eduardo Paes ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Secretaria de Polícia Penal do Rio de Janeiro"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-eduardo-paes-2026-09-11-06",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Eduardo Paes afirmou que o Rio era o estado que mais gastava em segurança pública.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-11",
+      "context": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake marcou #NÃOÉBEMASSIM: o Rio empenhou R$ 17,37 bilhões em 2025, segundo maior valor absoluto e quarto por habitante, atrás de São Paulo em valor absoluto. O Rio liderou em percentual de despesas em um dos recortes, mas não em todos.",
+    "publishedAt": "2026-09-11T20:17:04.631-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "5a25bd7a3d0ff0d884e0863f16436882a2c32dad37aff2fa06021911c93dbbc5",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN; evento em 2026-09-11."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Eduardo Paes ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "20º Anuário Brasileiro de Segurança Pública"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Fórum Brasileiro de Segurança Pública"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Tesouro Nacional"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-eduardo-paes-2026-09-11-07-a",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Eduardo Paes afirmou que o Rio gastava o dobro por aluno em relação a Goiás.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-11",
+      "context": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake citou R$ 19.580 por aluno ao ano no Rio e R$ 10.704 em Goiás: diferença de 83%, próxima, mas inferior a 100%.",
+    "publishedAt": "2026-09-11T20:17:04.631-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "5a25bd7a3d0ff0d884e0863f16436882a2c32dad37aff2fa06021911c93dbbc5",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN; evento em 2026-09-11."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Eduardo Paes ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Movimento EducAçãoRio"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Inep"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-eduardo-paes-2026-09-11-07-b",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Eduardo Paes afirmou que Goiás tinha o melhor Ideb do Brasil.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-11",
+      "context": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "summary": "O Fato ou Fake apontou que, no resultado mais recente do ensino médio citado, o Paraná tinha 5,1 e Goiás, 5,0. O recorte de etapa e ano impede tratar a liderança como geral e permanente.",
+    "publishedAt": "2026-09-11T20:17:04.631-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "5a25bd7a3d0ff0d884e0863f16436882a2c32dad37aff2fa06021911c93dbbc5",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN; evento em 2026-09-11."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Eduardo Paes ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Movimento EducAçãoRio"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Inep"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "g1-eduardo-paes-2026-09-11-09",
+    "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "candidate_slug": "eduardo-paes",
+    "candidate_name": "Eduardo Paes",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Eduardo Paes afirmou que a relação entre a dívida da Prefeitura do Rio e sua receita era de 40% a 50% e que havia capacidade para continuar investindo.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-09-11",
+      "context": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Paes"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "summary": "O Fato ou Fake marcou #FATO: a relação variou de 48,55% em 2024 a 35,84% em 2025, com base nos relatórios fiscais municipais. A checagem vinculou a capacidade de investimento à distância em relação ao limite da Lei de Responsabilidade Fiscal.",
+    "publishedAt": "2026-09-11T20:17:04.631-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "5a25bd7a3d0ff0d884e0863f16436882a2c32dad37aff2fa06021911c93dbbc5",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Eduardo Paes",
+      "contextExcerpt": "entrevista de Eduardo Paes a O Globo, Extra, Valor e CBN; evento em 2026-09-11."
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/09/11/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-eduardo-paes-a-o-globo-extra-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: entrevista de Eduardo Paes ao Globo, Extra, Valor e CBN | G1"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Prefeitura do Rio de Janeiro"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Tribunal de Contas do Município do Rio de Janeiro"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Lei de Responsabilidade Fiscal"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "lupa-cyro-garcia-2016-09-13-01",
+    "candidate_id": "6991016f-b50a-4984-b60a-40521bcdf6ee",
+    "candidate_slug": "cyro-garcia",
+    "candidate_name": "Cyro Garcia",
+    "office": "Governador",
+    "uf": "RJ",
+    "claim": "Cyro Garcia afirmou que tinha propostas específicas para o Rio, incluindo romper imediatamente contratos com organizações sociais na saúde.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2016-09-13",
+      "context": "sabatina de Cyro Garcia pela CBN RJ; candidato à Prefeitura do Rio de Janeiro em 2016",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Cyro Garcia"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO, MAS",
+    "summary": "A Lupa classificou como VERDADEIRO, MAS: o programa de Cyro realmente propunha romper com organizações sociais e fundações privadas na saúde e educação, mas não mencionava “Rio de Janeiro” e era quase idêntico ao programa de Altino Prazeres.",
+    "publishedAt": "2016-09-13T15:05:47+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2016/09/13/cyro-diz-ter-propostas-especificas-mas-nao-cita-rio-de-janeiro-em-programa/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "eab0a73b536f31c4bbea9c31db8d1f831aa6ab3dbae4ad68b4b2ae93992e681a",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO, MAS",
+      "speakerIdentity": "Cyro Garcia",
+      "contextExcerpt": "sabatina de Cyro Garcia pela CBN RJ; candidato à Prefeitura do Rio de Janeiro em 2016; data da fala: 2016-09-13. Checagem histórica, sem atualização automática dos dados para 2026."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2016/09/13/cyro-diz-ter-propostas-especificas-mas-nao-cita-rio-de-janeiro-em-programa/",
+        "origin": "consulted_by_us",
+        "title": "Cyro diz ter propostas ‘específicas’, mas não cita ‘Rio de Janeiro’ em programa • Lupa"
+      },
+      {
+        "url": "https://assets.lupa.news/423/4232830.pdf",
+        "origin": "cited_by_publisher",
+        "title": "proposta de governo de Cyro Garcia"
+      },
+      {
+        "url": "https://assets.lupa.news/423/4232831.pdf",
+        "origin": "cited_by_publisher",
+        "title": "Altino Prazeres, candidato do PSTU à Prefeitura de São Paulo"
+      },
+      {
+        "url": "http://piaui.folha.uol.com.br/lupa/2016/09/13/altino-quer-governar-capital-paulista-com-programa-quase-igual-ao-do-pstu-no-rio/",
+        "origin": "cited_by_publisher",
+        "title": "nossa checagem sobre o programa"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "lupa-eduardo-braide-2020-11-13-01",
+    "candidate_id": "3c885bab-cc3e-4fcf-aa1a-7b9c0ebf38e9",
+    "candidate_slug": "eduardo-braide",
+    "candidate_name": "Eduardo Braide",
+    "office": "Governador",
+    "uf": "MA",
+    "claim": "Eduardo Braide afirmou que, quando dirigia a Caema, não havia poluição nas praias.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2020-10-20",
+      "context": "debate do jornal O Estado em parceria com o portal Imirante; candidato à Prefeitura de São Luís em 2020",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Braide"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa classificou como FALSO: estudo de 2005 já identificava coliformes fecais e praias impróprias para banho em São Luís. A publicação periódica de laudos só começou em 2012, após decisão judicial.",
+    "publishedAt": "2020-11-13T17:30:34+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2020/11/13/sao-luis-braide-praias-saneamento/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "4a1b0b2df50411255f29bc8cde2f778c1bebf7651f200cf432ce88dfa8ff972e",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Eduardo Braide",
+      "contextExcerpt": "debate do jornal O Estado em parceria com o portal Imirante; candidato à Prefeitura de São Luís em 2020; data da fala: 2020-10-20. Checagem histórica, sem atualização automática dos dados para 2026."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2020/11/13/sao-luis-braide-praias-saneamento/",
+        "origin": "consulted_by_us",
+        "title": "São Luís: Braide erra ao falar sobre poluição em praias e saneamento básico • Lupa"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=sdBWIdYu40Y",
+        "origin": "cited_by_publisher",
+        "title": "debate do jornal O Estado em parceria com o portal Imirante"
+      },
+      {
+        "url": "http://www.caema.ma.gov.br/portalcaema/index.php?option=com_content&view=article&id=676&Itemid=102",
+        "origin": "cited_by_publisher",
+        "title": "Companhia de Saneamento Ambiental do Maranhão (Caema)"
+      },
+      {
+        "url": "https://assets.lupa.news/425/4256539.pdf",
+        "origin": "cited_by_publisher",
+        "title": "dissertação do mestrado"
+      },
+      {
+        "url": "https://www.sema.ma.gov.br/arquivo/?tp=6",
+        "origin": "cited_by_publisher",
+        "title": "laudos de balneabilidade das praias de São Luís"
+      },
+      {
+        "url": "https://mpf.jusbrasil.com.br/noticias/3093450/mpf-ma-situacao-de-poluicao-das-praias-de-sao-luis-devera-ser-divulgada-amplamente-pela-sema",
+        "origin": "cited_by_publisher",
+        "title": "decisão judicial"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "lupa-eduardo-braide-2020-11-13-02",
+    "candidate_id": "3c885bab-cc3e-4fcf-aa1a-7b9c0ebf38e9",
+    "candidate_slug": "eduardo-braide",
+    "candidate_name": "Eduardo Braide",
+    "office": "Governador",
+    "uf": "MA",
+    "claim": "Eduardo Braide afirmou que, quando dirigia a Caema, o saneamento funcionava melhor.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2020-10-20",
+      "context": "debate do jornal O Estado em parceria com o portal Imirante; candidato à Prefeitura de São Luís em 2020",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Braide"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa classificou como FALSO: em São Luís, coleta de esgoto era 27,5% em 2005 e 32,29% em 2006, contra 31,4% em 2018; o tratamento era 12,91% e 18,67% contra 34,55% em 2018. A matéria também citou a desativação de duas grandes estações em 2005.",
+    "publishedAt": "2020-11-13T17:30:34+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2020/11/13/sao-luis-braide-praias-saneamento/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "4a1b0b2df50411255f29bc8cde2f778c1bebf7651f200cf432ce88dfa8ff972e",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Eduardo Braide",
+      "contextExcerpt": "debate do jornal O Estado em parceria com o portal Imirante; candidato à Prefeitura de São Luís em 2020; data da fala: 2020-10-20. Checagem histórica, sem atualização automática dos dados para 2026."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2020/11/13/sao-luis-braide-praias-saneamento/",
+        "origin": "consulted_by_us",
+        "title": "São Luís: Braide erra ao falar sobre poluição em praias e saneamento básico • Lupa"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=sdBWIdYu40Y",
+        "origin": "cited_by_publisher",
+        "title": "debate do jornal O Estado em parceria com o portal Imirante"
+      },
+      {
+        "url": "http://app4.mdr.gov.br/serieHistorica/",
+        "origin": "cited_by_publisher",
+        "title": "Sistema Nacional de Informações sobre Saneamento (Snis)"
+      },
+      {
+        "url": "https://docs.google.com/spreadsheets/d/1Hev2edqty2LmOpkY5oaDdVwkdDVt2K4RWBBF2nr7sXo/edit?usp=sharing",
+        "origin": "cited_by_publisher",
+        "title": "coleta e tratamento de esgoto"
+      },
+      {
+        "url": "https://drive.google.com/file/d/1_W_6ICbF8yeSgGCyycQMpWRT3yPxY1iA/view?usp=sharing",
+        "origin": "cited_by_publisher",
+        "title": "pesquisa de Sofia Zagallo"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "lupa-eduardo-braide-2020-11-13-03",
+    "candidate_id": "3c885bab-cc3e-4fcf-aa1a-7b9c0ebf38e9",
+    "candidate_slug": "eduardo-braide",
+    "candidate_name": "Eduardo Braide",
+    "office": "Governador",
+    "uf": "MA",
+    "claim": "Eduardo Braide afirmou que fez na Caema um concurso público para mais de mil vagas.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2020-10-20",
+      "context": "debate do jornal O Estado em parceria com o portal Imirante; candidato à Prefeitura de São Luís em 2020",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Braide"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO, MAS",
+    "summary": "A Lupa classificou como VERDADEIRO, MAS: o concurso ofereceu 1.015 vagas, mas decorreu de acordo com o Ministério Público do Trabalho que exigia 729 contratações para substituir terceirizados.",
+    "publishedAt": "2020-11-13T17:30:34+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2020/11/13/sao-luis-braide-praias-saneamento/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "4a1b0b2df50411255f29bc8cde2f778c1bebf7651f200cf432ce88dfa8ff972e",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO, MAS",
+      "speakerIdentity": "Eduardo Braide",
+      "contextExcerpt": "debate do jornal O Estado em parceria com o portal Imirante; candidato à Prefeitura de São Luís em 2020; data da fala: 2020-10-20. Checagem histórica, sem atualização automática dos dados para 2026."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2020/11/13/sao-luis-braide-praias-saneamento/",
+        "origin": "consulted_by_us",
+        "title": "São Luís: Braide erra ao falar sobre poluição em praias e saneamento básico • Lupa"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=sdBWIdYu40Y",
+        "origin": "cited_by_publisher",
+        "title": "debate do jornal O Estado em parceria com o portal Imirante"
+      },
+      {
+        "url": "http://www.cespe.unb.br/concursos/_antigos/2006/CAEMA2006/",
+        "origin": "cited_by_publisher",
+        "title": "certame"
+      },
+      {
+        "url": "https://drive.google.com/file/d/1dA3af5FUEEzueC2vusbcI4kvy8lJS9Ol/view?usp=sharing",
+        "origin": "cited_by_publisher",
+        "title": "ata da audiência que resultou em acordo"
+      },
+      {
+        "url": "https://drive.google.com/file/d/1W4e17pOk8I4FWMIOv-oAk2aWCZgxl4JJ/view?usp=sharing",
+        "origin": "cited_by_publisher",
+        "title": "requerimento do MPT"
+      },
+      {
+        "url": "https://drive.google.com/file/d/1_8pe4te6XzXZqDx3dVW9BE0qmU7yw6Xv/view?usp=sharing",
+        "origin": "cited_by_publisher",
+        "title": "solicitação de anuência do procurador do trabalho"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "lupa-eduardo-braide-2020-11-13-04",
+    "candidate_id": "3c885bab-cc3e-4fcf-aa1a-7b9c0ebf38e9",
+    "candidate_slug": "eduardo-braide",
+    "candidate_name": "Eduardo Braide",
+    "office": "Governador",
+    "uf": "MA",
+    "claim": "Eduardo Braide afirmou que Teresina era menor que São Luís, tinha oito terminais de integração e inaugurara os dois últimos naquele ano.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2020-10-20",
+      "context": "debate do jornal O Estado em parceria com o portal Imirante; candidato à Prefeitura de São Luís em 2020",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Eduardo Braide"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO, MAS",
+    "summary": "A Lupa classificou como VERDADEIRO, MAS: Teresina tinha oito terminais e inaugurou dois em 2020, enquanto São Luís tinha cinco, e era menor em população. Em área territorial, porém, Teresina era maior que São Luís.",
+    "publishedAt": "2020-11-13T17:30:34+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2020/11/13/sao-luis-braide-praias-saneamento/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "4a1b0b2df50411255f29bc8cde2f778c1bebf7651f200cf432ce88dfa8ff972e",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO, MAS",
+      "speakerIdentity": "Eduardo Braide",
+      "contextExcerpt": "debate do jornal O Estado em parceria com o portal Imirante; candidato à Prefeitura de São Luís em 2020; data da fala: 2020-10-20. Checagem histórica, sem atualização automática dos dados para 2026."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2020/11/13/sao-luis-braide-praias-saneamento/",
+        "origin": "consulted_by_us",
+        "title": "São Luís: Braide erra ao falar sobre poluição em praias e saneamento básico • Lupa"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=sdBWIdYu40Y",
+        "origin": "cited_by_publisher",
+        "title": "debate do jornal O Estado em parceria com o portal Imirante"
+      },
+      {
+        "url": "https://strans.pmt.pi.gov.br/2020/02/20/terminais-rui-barbosa-e-buenos-aires-iniciam-funcionamento-no-final-deste-mes/",
+        "origin": "cited_by_publisher",
+        "title": "foram inaugurados em 2020"
+      },
+      {
+        "url": "https://assets.lupa.news/425/4256542.pdf",
+        "origin": "cited_by_publisher",
+        "title": "cinco terminais de integração"
+      },
+      {
+        "url": "https://www.ibge.gov.br/cidades-e-estados.html?view=municipio",
+        "origin": "cited_by_publisher",
+        "title": "dados do IBGE"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "lupa-hildon-chaves-2020-11-13-01",
+    "candidate_id": "5a325c79-3414-4d70-8926-673e91cbd578",
+    "candidate_slug": "hildon-chaves",
+    "candidate_name": "Hildon Chaves",
+    "office": "Governador",
+    "uf": "RO",
+    "claim": "Hildon Chaves afirmou que Porto Velho elevou o Ideb de 4,7 para 5,1 e depois para 5,3.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2020-10-22",
+      "context": "sabatina da Rede TV Rondônia; candidato à Prefeitura de Porto Velho em 2020",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Hildon Chaves"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO, MAS",
+    "summary": "A Lupa classificou como VERDADEIRO, MAS: os valores conferidos foram 4,8 em 2015, 5,1 em 2017 e 5,3 em 2019, apenas nos anos iniciais do ensino fundamental. O Ideb também possui outros recortes de ensino.",
+    "publishedAt": "2020-11-14T02:09:02+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2020/11/13/porto-velho-hildon-chaves-saude-saneamento/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "7be395e7f66b465510e9b92814cf4b8ba8595a2874a88bd4b03b966300f9ee27",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO, MAS",
+      "speakerIdentity": "Hildon Chaves",
+      "contextExcerpt": "sabatina da Rede TV Rondônia; candidato à Prefeitura de Porto Velho em 2020; data da fala: 2020-10-22. Checagem histórica, sem atualização automática dos dados para 2026."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2020/11/13/porto-velho-hildon-chaves-saude-saneamento/",
+        "origin": "consulted_by_us",
+        "title": "Porto Velho: Hildon Chaves erra dados sobre saúde e saneamento • Lupa"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=Fn8MhZe2RI8",
+        "origin": "cited_by_publisher",
+        "title": "sabatina da Rede TV Rondônia"
+      },
+      {
+        "url": "https://drive.google.com/file/d/1nzXnKB6auNac9-Bjxfpp616fEt6RALwc/view?usp=sharing",
+        "origin": "cited_by_publisher",
+        "title": "atingiu a nota 4,8 em 2015 para os anos iniciais (1º ao 5º ano) do ensino fundamental."
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "lupa-hildon-chaves-2020-11-13-02",
+    "candidate_id": "5a325c79-3414-4d70-8926-673e91cbd578",
+    "candidate_slug": "hildon-chaves",
+    "candidate_name": "Hildon Chaves",
+    "office": "Governador",
+    "uf": "RO",
+    "claim": "Hildon Chaves afirmou que Porto Velho mantinha historicamente cobertura de 45% a 50% no programa de Saúde da Família.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2020-11-05",
+      "context": "debate da SIC TV; candidato à Prefeitura de Porto Velho em 2020",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Hildon Chaves"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa classificou como FALSO: a cobertura era 53,42% em julho de 2020, ficou acima de 49% desde 2017, chegou a 67,59% em 2010 e já havia sido 28,07% em 2007.",
+    "publishedAt": "2020-11-14T02:09:02+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2020/11/13/porto-velho-hildon-chaves-saude-saneamento/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "7be395e7f66b465510e9b92814cf4b8ba8595a2874a88bd4b03b966300f9ee27",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Hildon Chaves",
+      "contextExcerpt": "debate da SIC TV; candidato à Prefeitura de Porto Velho em 2020; data da fala: 2020-11-05. Checagem histórica, sem atualização automática dos dados para 2026."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2020/11/13/porto-velho-hildon-chaves-saude-saneamento/",
+        "origin": "consulted_by_us",
+        "title": "Porto Velho: Hildon Chaves erra dados sobre saúde e saneamento • Lupa"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=UgP6uv3sh0Q",
+        "origin": "cited_by_publisher",
+        "title": "debate da SIC TV"
+      },
+      {
+        "url": "https://egestorab.saude.gov.br/paginas/acessoPublico/relatorios/relHistoricoCoberturaAB.xhtml",
+        "origin": "cited_by_publisher",
+        "title": "Informação e Gestão da Atenção Básica"
+      },
+      {
+        "url": "https://drive.google.com/file/d/13EBbogv5EjGl18KS-IrerKoDQ9XgoPPQ/view?usp=sharing",
+        "origin": "cited_by_publisher",
+        "title": "alcançava 53,42%"
+      },
+      {
+        "url": "https://drive.google.com/file/d/13M4lbNJqzoHFlhwJdw6sfqRD3KXjZwTQ/view?usp=sharing",
+        "origin": "cited_by_publisher",
+        "title": "novembro de 2010 quando atingiu 67,59%"
+      },
+      {
+        "url": "https://drive.google.com/file/d/1VfQG0faUCUz11TroiYaqsp1w8kjCpQQn/view?usp=sharing",
+        "origin": "cited_by_publisher",
+        "title": "2007, no mês de julho e agosto com cobertura de 28,07%"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "lupa-hildon-chaves-2020-11-13-03",
+    "candidate_id": "5a325c79-3414-4d70-8926-673e91cbd578",
+    "candidate_slug": "hildon-chaves",
+    "candidate_name": "Hildon Chaves",
+    "office": "Governador",
+    "uf": "RO",
+    "claim": "Hildon Chaves afirmou que Porto Velho tinha menos de 20% de atendimento de água.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2020-11-05",
+      "context": "debate da SIC TV; candidato à Prefeitura de Porto Velho em 2020",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Hildon Chaves"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa classificou como FALSO: dados do Instituto Trata Brasil indicavam atendimento total de água para 35,26% da população de Porto Velho.",
+    "publishedAt": "2020-11-14T02:09:02+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2020/11/13/porto-velho-hildon-chaves-saude-saneamento/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "7be395e7f66b465510e9b92814cf4b8ba8595a2874a88bd4b03b966300f9ee27",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Hildon Chaves",
+      "contextExcerpt": "debate da SIC TV; candidato à Prefeitura de Porto Velho em 2020; data da fala: 2020-11-05. Checagem histórica, sem atualização automática dos dados para 2026."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2020/11/13/porto-velho-hildon-chaves-saude-saneamento/",
+        "origin": "consulted_by_us",
+        "title": "Porto Velho: Hildon Chaves erra dados sobre saúde e saneamento • Lupa"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=UgP6uv3sh0Q",
+        "origin": "cited_by_publisher",
+        "title": "em debate da SIC TV"
+      },
+      {
+        "url": "https://drive.google.com/file/d/1k2MM3W0TbvHXT9ln82Tba9O917IhmTCg/view?usp=sharing",
+        "origin": "cited_by_publisher",
+        "title": "35,26% dos portovelhenses"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
+  },
+  {
+    "id": "lupa-hildon-chaves-2020-11-13-04",
+    "candidate_id": "5a325c79-3414-4d70-8926-673e91cbd578",
+    "candidate_slug": "hildon-chaves",
+    "candidate_name": "Hildon Chaves",
+    "office": "Governador",
+    "uf": "RO",
+    "claim": "Hildon Chaves afirmou que menos de 2% do esgoto de Porto Velho era tratado.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2020-11-05",
+      "context": "debate da SIC TV; candidato à Prefeitura de Porto Velho em 2020",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Hildon Chaves"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa classificou como FALSO: dados do Instituto Trata Brasil de 2020 indicavam que 4,76% do esgoto de Porto Velho era tratado.",
+    "publishedAt": "2020-11-14T02:09:02+00:00",
+    "originalUrl": "https://www.agencialupa.org/jornalismo/2020/11/13/porto-velho-hildon-chaves-saude-saneamento/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "7be395e7f66b465510e9b92814cf4b8ba8595a2874a88bd4b03b966300f9ee27",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Hildon Chaves",
+      "contextExcerpt": "debate da SIC TV; candidato à Prefeitura de Porto Velho em 2020; data da fala: 2020-11-05. Checagem histórica, sem atualização automática dos dados para 2026."
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2020/11/13/porto-velho-hildon-chaves-saude-saneamento/",
+        "origin": "consulted_by_us",
+        "title": "Porto Velho: Hildon Chaves erra dados sobre saúde e saneamento • Lupa"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=UgP6uv3sh0Q",
+        "origin": "cited_by_publisher",
+        "title": "em debate da SIC TV"
+      },
+      {
+        "url": "https://drive.google.com/file/d/1k2MM3W0TbvHXT9ln82Tba9O917IhmTCg/view?usp=sharing",
+        "origin": "cited_by_publisher",
+        "title": "4,76% do esgoto de Porto Velho é tratado."
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T15:07:33.812Z"
+    }
   }
 ]
