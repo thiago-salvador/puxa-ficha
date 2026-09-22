@@ -1656,5 +1656,1161 @@
       "reviewerKind": "model_principal",
       "reviewedAt": "2026-09-22T12:36:40.811Z"
     }
+  },
+  {
+    "id": "lupa-roda-01-2026",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad disse ter comandado na Receita Federal a Operação Carbono Oculto e a apresentou como a maior operação de combate ao crime organizado.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-31",
+      "context": "entrevista Roda Viva, TV Cultura",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALTA CONTEXTO",
+    "summary": "A Lupa classificou como FALTA CONTEXTO: a Receita teve papel central, mas a operação foi conduzida por uma força-tarefa que também envolveu Polícia Federal, Ministério Público e polícias estaduais. A checagem registra que a operação foi deflagrada em agosto de 2025 e investigou um esquema bilionário ligado ao setor de combustíveis e ao PCC.",
+    "publishedAt": "2026-09-01T20:00:00+00:00",
+    "originalUrl": "https://www.agencialupa.org/checagem/2026/09/01/no-roda-viva-haddad-erra-sobre-bets-e-generaliza-dado-sobre-crimes-em-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "d96736c78178971d4c495b040067700b9b774140a657b0824a1ca7b27f0e7cde",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALTA CONTEXTO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "entrevista Roda Viva, TV Cultura"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/checagem/2026/09/01/no-roda-viva-haddad-erra-sobre-bets-e-generaliza-dado-sobre-crimes-em-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original da checagem"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=hCkTOT3xpRg",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://www.bbc.com/portuguese/articles/c3r4e3g87e2o",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://transparenciainternacional.org.br/posts/operacao-carbono-oculto-revelacoes-e-desdobramentos/",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://g1.globo.com/sp/sao-paulo/noticia/2025/08/28/megaoperacao-com-1400-agentes-mira-esquema-bilionario-do-pcc-no-setor-de-combustiveis-com-350-alvos-r-76-bi-foram-sonegados.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://g1.globo.com/sp/sao-paulo/noticia/2025/08/28/megaoperacao-que-mira-esquema-bilionario-do-pcc-e-a-maior-ja-realizada-no-brasil-contra-crime-organizado.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://g1.globo.com/sp/sao-paulo/noticia/2025/08/28/pcc-controla-40-fundos-de-investimentos-com-patrimonio-de-mais-de-r-30-bilhoes-diz-receita-federal.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "b2355a7875892c6418f390afbef2c7fb48cfcfafbdc6c49ba2cb63b147e409c6",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.436Z"
+    }
+  },
+  {
+    "id": "lupa-roda-02-2026",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad afirmou que apenas 31% dos homicídios ocorridos em São Paulo foram esclarecidos.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-31",
+      "context": "entrevista Roda Viva, TV Cultura",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa classificou como VERDADEIRO: o Instituto Sou da Paz encontrou 31% de homicídios de 2023 esclarecidos no estado, o dado mais recente da série. Nesse estudo, esclarecimento significa denúncia criminal do Ministério Público apresentada até o fim do ano seguinte ao crime.",
+    "publishedAt": "2026-09-01T20:00:00+00:00",
+    "originalUrl": "https://www.agencialupa.org/checagem/2026/09/01/no-roda-viva-haddad-erra-sobre-bets-e-generaliza-dado-sobre-crimes-em-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "d96736c78178971d4c495b040067700b9b774140a657b0824a1ca7b27f0e7cde",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "entrevista Roda Viva, TV Cultura"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/checagem/2026/09/01/no-roda-viva-haddad-erra-sobre-bets-e-generaliza-dado-sobre-crimes-em-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original da checagem"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=hCkTOT3xpRg",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://soudapaz.org/documentos/diagnostico-sobre-a-investigacao-de-homicidios-no-brasil/",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "d6d19c755ee3fd71a282ec0844effd38482d367f4b61b5d23b7b410536b94d36",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.437Z"
+    }
+  },
+  {
+    "id": "lupa-roda-03-2026",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad afirmou que Tarcísio não havia feito qualquer crítica ao tarifaço dos Estados Unidos e que dissera não ser assunto dele.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-31",
+      "context": "entrevista Roda Viva, TV Cultura",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa classificou como FALSO: embora Tarcísio tenha evitado comentar em algumas ocasiões, ele criticou a tarifa adicional de 25% e afirmou que a medida poderia prejudicar a economia brasileira. A matéria também registra declarações anteriores em que o governador chamou a situação de complicada e defendeu deixar a questão política de lado.",
+    "publishedAt": "2026-09-01T20:00:00+00:00",
+    "originalUrl": "https://www.agencialupa.org/checagem/2026/09/01/no-roda-viva-haddad-erra-sobre-bets-e-generaliza-dado-sobre-crimes-em-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "d96736c78178971d4c495b040067700b9b774140a657b0824a1ca7b27f0e7cde",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "entrevista Roda Viva, TV Cultura"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/checagem/2026/09/01/no-roda-viva-haddad-erra-sobre-bets-e-generaliza-dado-sobre-crimes-em-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original da checagem"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=hCkTOT3xpRg",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://www1.folha.uol.com.br/colunas/painel/2026/07/adversarios-de-tarcisio-exploram-tarifaco-enquanto-governador-evita-o-tema.shtml",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://www.facebook.com/watch/?v=625480140590535",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://g1.globo.com/sp/sao-carlos-regiao/noticia/2026/06/02/tarcisio-chama-de-sem-sentido-tarifa-de-25percent-dos-eua-sobre-produtos-brasileiros.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://g1.globo.com/economia/noticia/2026/06/02/eua-concluem-investigacao-e-propoem-retaliacao-comercial-contra-o-brasil-por-decisoes-judiciais-tarifas-e-desmatamento.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://www1.folha.uol.com.br/poder/2025/07/tarcisio-ve-tarifaco-como-algo-complicado-e-chama-exigencia-por-anistia-como-ponto-de-vista.shtml",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "71450d106e2d152287edeb5ad45023a97071a46379bbefd1c3683a7efbc814c3",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.437Z"
+    },
+    "labelStatus": "literal"
+  },
+  {
+    "id": "lupa-roda-07-2026",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad afirmou que recorreu ao STF para entregar ao Congresso um orçamento com superávit primário, algo que não teria recebido.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-31",
+      "context": "entrevista Roda Viva, TV Cultura",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa classificou como VERDADEIRO: o projeto de orçamento de 2027 previa superávit primário de R$ 18,6 bilhões, ou R$ 83,4 bilhões com os ajustes citados pelo Ministério da Fazenda. O projeto de 2023 previa déficit de R$ 63,7 bilhões. A comparação é entre previsões orçamentárias, não resultados realizados; a agência também contextualizou a ADI 7.633 sobre compensação fiscal.",
+    "publishedAt": "2026-09-01T20:00:00+00:00",
+    "originalUrl": "https://www.agencialupa.org/checagem/2026/09/01/no-roda-viva-haddad-erra-sobre-bets-e-generaliza-dado-sobre-crimes-em-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "d96736c78178971d4c495b040067700b9b774140a657b0824a1ca7b27f0e7cde",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "entrevista Roda Viva, TV Cultura"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/checagem/2026/09/01/no-roda-viva-haddad-erra-sobre-bets-e-generaliza-dado-sobre-crimes-em-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original da checagem"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=hCkTOT3xpRg",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/setembro/governo-federal-apresenta-projeto-de-orcamento-de-2027-com-previsao-de-superavit-primario-de-r-18-6-bilhoes",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://www.gov.br/gestao/pt-br/acesso-a-informacao/acoes-e-programas/principais-acoes-na-area-economica/acoes-2022/projeto-de-lei-orcamentaria-anual-preve-deficit-primario-de-r-63-7-bilhoes-em-2023",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://noticias.stf.jus.br/postsnoticias/stf-decide-que-desoneracao-tributaria-exige-compensacao-nas-contas-publicas/?utm_source=chatgpt.com",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "59f7215c9dc879ecb87e2b477f738d8163026520ca983e538d7ef7aec68283fa",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.437Z"
+    }
+  },
+  {
+    "id": "lupa-roda-05-2026",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad afirmou que, após criar a Controladoria-Geral do Município de São Paulo e uma carreira própria para o controlador, o órgão desbaratou a Máfia do ISS em três meses.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-31",
+      "context": "entrevista Roda Viva, TV Cultura",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "labelStatus": "literal",
+    "summary": "A Lupa classificou como VERDADEIRO: Haddad criou a CGM-SP em maio de 2013 e a lei instituiu sua estrutura e atribuições. Meses depois, o órgão detectou o esquema de auditores que cobravam propina para conceder descontos ilegais no ISS, conhecido como Máfia do ISS.",
+    "publishedAt": "2026-09-01T20:00:00+00:00",
+    "originalUrl": "https://www.agencialupa.org/checagem/2026/09/01/no-roda-viva-haddad-erra-sobre-bets-e-generaliza-dado-sobre-crimes-em-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "d96736c78178971d4c495b040067700b9b774140a657b0824a1ca7b27f0e7cde",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "entrevista Roda Viva, TV Cultura"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/checagem/2026/09/01/no-roda-viva-haddad-erra-sobre-bets-e-generaliza-dado-sobre-crimes-em-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original da checagem"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=hCkTOT3xpRg",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://prefeitura.sp.gov.br/web/controladoria_geral/w/cgm-sp-completa-13-anos-de-atua%C3%A7%C3%A3o-no-fortalecimento-do-controle-interno-e-da-integridade-p%C3%BAblica",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://prefeitura.sp.gov.br/web/controladoria_geral/w/legislacao/170319",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://prefeitura.sp.gov.br/w/noticia/controladoria-recupera-r-133-9-milhoes-da-mafia-do",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "0ea4e4808c7b95bc31b239c036fc11b9499a9a1ebbb64375d531a9c0b839288b",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.437Z"
+    }
+  },
+  {
+    "id": "lupa-junho-01-2026",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que o governo garantiu ao Brasil a maior carga tributária da história, próxima de 22% do PIB.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-06-01",
+      "context": "entrevista Pânico/Jovem Pan",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "SUBESTIMADO",
+    "summary": "A Lupa classificou como SUBESTIMADO: a carga tributária bruta do governo geral chegou a 32,4% do PIB em 2025, enquanto 21,6% correspondeu apenas ao governo federal. A assessoria explicou que usou o recorte da União, mas a frase mencionou a carga tributária do Brasil, que inclui estados e municípios.",
+    "publishedAt": "2026-06-03T14:21:18+00:00",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/06/03/haddad-e-tarcisio-checamos-declaracoes-dos-pre-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1a49f7e45d2905b76b24248d9203958938ba3988d00e1500d931244f3b475f6c",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "SUBESTIMADO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "entrevista Pânico/Jovem Pan"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/06/03/haddad-e-tarcisio-checamos-declaracoes-dos-pre-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original da checagem"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=0ZBhm3WvQxo",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/abril/carga-tributaria-bruta-do-governo-geral-atinge-32-40-do-pib-em-2025-mostra-boletim-do-tesouro-nacional",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/abril/imagem/cargagrafico1.png",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://uploads.lupa.news/2026/06/Captura-de-Tela-2026-06-03-as-13.56.50.png",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "479da1b7754d8ba6b474d148a9b7f253eab7443be283ef875003a09eaf28f919",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.437Z"
+    }
+  },
+  {
+    "id": "lupa-junho-04-2026",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad afirmou que a carga tributária brasileira era praticamente igual à do fim do governo FHC, oscilando cerca de 0,5 ponto percentual.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-06-01",
+      "context": "entrevista Frente a Frente, Folha de S.Paulo e UOL",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALTA CONTEXTO",
+    "summary": "A Lupa classificou como FALTA CONTEXTO: os percentuais são próximos, com variação de 0,4 ponto, mas as metodologias mudaram. Pela série do Tesouro, 2025 fechou em 32,4% do PIB; pela série histórica da FGV com a metodologia anterior, 2024 chegava a 34,24%.",
+    "publishedAt": "2026-06-03T14:21:18+00:00",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/06/03/haddad-e-tarcisio-checamos-declaracoes-dos-pre-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1a49f7e45d2905b76b24248d9203958938ba3988d00e1500d931244f3b475f6c",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALTA CONTEXTO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "entrevista Frente a Frente, Folha de S.Paulo e UOL"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/06/03/haddad-e-tarcisio-checamos-declaracoes-dos-pre-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original da checagem"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=MBwqbra9mRY",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://newblogs.correiobraziliense.com.br/blog-da-rosana-hessel/peso-da-carga-tributaria-deve-ser-maior-acima-de-34-do-pib/",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://blogdoibre.fgv.br/posts/carga-tributaria-dividendos-e-amnesia-seletiva",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/abril/carga-tributaria-bruta-do-governo-geral-atinge-32-40-do-pib-em-2025-mostra-boletim-do-tesouro-nacional",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://g1.globo.com/jornal-nacional/noticia/2026/04/10/carga-tributaria-no-brasil-atinge-o-nivel-mais-alto-em-15-anos.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://g1.globo.com/economia/noticia/2025/12/13/com-aumento-de-impostos-carga-tributaria-bate-recorde-historico-em-2024-e-alcanca-maior-nivel-em-mais-de-duas-decadas.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://observatorio-politica-fiscal.ibre.fgv.br/series-historicas/carga-tributaria/carga-tributaria-no-brasil-1990-2024",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "aafd9a38dafccac423225e92d3000882562660f89698d3cf86ef14eba8100e6e",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.437Z"
+    }
+  },
+  {
+    "id": "lupa-junho-05-2026",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad afirmou que a classificação do PCC e do Comando Vermelho como terroristas pelos Estados Unidos afetaria a economia, instituições financeiras e negócios brasileiros.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-06-01",
+      "context": "entrevista Frente a Frente, Folha de S.Paulo e UOL",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa classificou como VERDADEIRO: a designação pode elevar custos de controle e auditoria e aumentar riscos de sanções para bancos e empresas que operem com os Estados Unidos. A checagem relaciona esses efeitos ao uso do sistema financeiro por organizações investigadas por lavagem de dinheiro.",
+    "publishedAt": "2026-06-03T14:21:18+00:00",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/06/03/haddad-e-tarcisio-checamos-declaracoes-dos-pre-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1a49f7e45d2905b76b24248d9203958938ba3988d00e1500d931244f3b475f6c",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "entrevista Frente a Frente, Folha de S.Paulo e UOL"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/06/03/haddad-e-tarcisio-checamos-declaracoes-dos-pre-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original da checagem"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=MBwqbra9mRY",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://www.bbc.com/portuguese/articles/cq8p97zged8o",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://economia.uol.com.br/noticias/redacao/2026/06/02/como-classificacao-de-terroristas-para-cv-e-pcc-impacta-economia-nacional.htm",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://www.infomoney.com.br/mundo/pix-vistos-big-techs-entenda-impacto-da-designacao-de-cv-e-pcc-como-terroristas/",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://transparenciainternacional.org.br/posts/operacao-carbono-oculto-revelacoes-e-desdobramentos/",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://g1.globo.com/politica/noticia/2026/05/30/decisao-eua-veja-os-possiveis-impactos-economicos-da-classificacao-do-pcc-e-do-cv-como-grupos-terroristas.ghtml",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://www.bbc.com/portuguese/articles/cvgzxk3k70yo",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://economia.uol.com.br/noticias/redacao/2026/06/02/como-classificacao-de-terroristas-para-cv-e-pcc-impacta-economia-nacional.htm?iap=1&forcedFormat=NORMAL&uol_app=placaruolfoundResult+1",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "9a9f7ce5254e266f54f9dbc9847ecc337b86240d8fb0c0d0fbf31b8ae5427b54",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.437Z"
+    }
+  },
+  {
+    "id": "lupa-junho-06-2026",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad afirmou que Tarcísio fez menos concessões rodoviárias que Renan Filho quando ambos comandaram a pasta de transportes.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-06-01",
+      "context": "entrevista Frente a Frente, Folha de S.Paulo e UOL",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa classificou como VERDADEIRO: Tarcísio participou de seis leilões e cerca de 3.900 km concedidos entre 2019 e 2022, enquanto Renan Filho participou de 23 leilões e concedeu 10 mil km entre 2023 e abril de 2026. A matéria ressalva que os períodos ocorreram sob estruturas ministeriais diferentes.",
+    "publishedAt": "2026-06-03T14:21:18+00:00",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/06/03/haddad-e-tarcisio-checamos-declaracoes-dos-pre-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1a49f7e45d2905b76b24248d9203958938ba3988d00e1500d931244f3b475f6c",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "entrevista Frente a Frente, Folha de S.Paulo e UOL"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/06/03/haddad-e-tarcisio-checamos-declaracoes-dos-pre-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original da checagem"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=MBwqbra9mRY",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://www1.folha.uol.com.br/poder/2026/05/concessoes-rodoviarias-poem-em-xeque-bandeira-eleitoral-de-tarcisio.shtml",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://www.tribunadosertao.com.br/politica/2026/06/01/912850-nos-transportes-renan-filho-teve-desempenho-3-vezes-melhor-que-tarcisio",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      },
+      {
+        "url": "https://www.cadaminuto.com.br/noticia/2026/06/01/nos-transportes-renan-filho-teve-desempenho-3x-melhor-que-tarcisio",
+        "origin": "cited_by_publisher",
+        "title": "Fonte citada no bloco original"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "b11757f531f9bfa5103489241f9e071685a8a34332360195718338a925c930f5",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.437Z"
+    }
+  },
+  {
+    "id": "g1-tarcisio-02-2026",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que a maioria absoluta das reclamações sobre a Sabesp no Procon era sobre tarifa e que a troca de hidrômetros explicava a percepção negativa.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-20",
+      "context": "sabatina de O Globo, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "labelStatus": "literal",
+    "summary": "O Fato ou Fake marcou #NÃOÉBEMASSIM: 72,3% das 22.585 queixas registradas em 2026 eram cobranças, mas 7,5% tratavam de prestação do serviço. A matéria também informa que as reclamações já haviam crescido antes da troca dos hidrômetros, sem dados para atribuir a ela a principal causa.",
+    "publishedAt": "2026-08-20T21:28:00-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "c79c21f2372499754c535de68a8895b2ab30bc005c8e6935974ba84c4baea970",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "sabatina de O Globo, Valor e CBN"
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: original da checagem"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Procon-SP"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "5f0ecfbafbf7c6e5777504e13b37110df18532b720fef4caf203fcd13daa9108",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.437Z"
+    }
+  },
+  {
+    "id": "g1-tarcisio-04-2026",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que o 190 recebia de 20 a 22 milhões de chamados por ano, mais de 60 mil por dia, e que 35 mil viravam ocorrências.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-20",
+      "context": "sabatina de O Globo, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#NÃOÉBEMASSIM",
+    "labelStatus": "literal",
+    "summary": "O Fato ou Fake marcou #NÃOÉBEMASSIM: um vídeo do Copom citou cerca de 28 mil ligações diárias pelo 190 sem informar o período, enquanto a assessoria usou uma média de 2025 que soma 190 e 193. O balanço citado totaliza 20,8 milhões de atendimentos, cerca de 57 mil por dia, e 17 mil ocorrências, abaixo das 35 mil alegadas.",
+    "publishedAt": "2026-08-20T21:28:00-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "c79c21f2372499754c535de68a8895b2ab30bc005c8e6935974ba84c4baea970",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#NÃOÉBEMASSIM",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "sabatina de O Globo, Valor e CBN"
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: original da checagem"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Perfil oficial do Copom no Instagram, vídeo de junho de 2026"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Perfil oficial do Copom no Instagram, balanço de janeiro de 2026"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Nota da assessoria do candidato"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "22d0e4b1b8009c162007644574c2cef4be17e398ea4a22caba9f41b3bbc16b8e",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.437Z"
+    }
+  },
+  {
+    "id": "g1-tarcisio-05-2026",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que São Paulo não registrou nenhum roubo a banco no primeiro semestre de 2026.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-20",
+      "context": "sabatina de O Globo, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "labelStatus": "literal",
+    "summary": "O Fato ou Fake marcou #FATO: os dados da Secretaria da Segurança Pública registravam zero roubo a banco no primeiro semestre de 2026. A matéria compara o resultado com 20 casos em 2023 e quatro em cada ano de 2024 e 2025.",
+    "publishedAt": "2026-08-20T21:28:00-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "c79c21f2372499754c535de68a8895b2ab30bc005c8e6935974ba84c4baea970",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "sabatina de O Globo, Valor e CBN"
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: original da checagem"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Secretaria da Segurança Pública de São Paulo (SSP-SP)"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "364e3a38da96077efeac746834ce473cbb445026f96d72f710eb252f9e8be036",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.437Z"
+    }
+  },
+  {
+    "id": "g1-tarcisio-06-2026",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que a letalidade policial de São Paulo era menor que a do Ceará, Bahia, Pará e Goiás.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-20",
+      "context": "sabatina de O Globo, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "labelStatus": "literal",
+    "summary": "O Fato ou Fake marcou #FATO: o Anuário Brasileiro de Segurança Pública 2025, com dados de 2024, registrou 1,8 morte por intervenção policial por 100 mil habitantes em São Paulo, abaixo de Ceará (2,4), Goiás (5,1), Pará (7,0) e Bahia (10,5). São Paulo ficou em 16º no conjunto das 27 unidades da Federação.",
+    "publishedAt": "2026-08-20T21:28:00-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "c79c21f2372499754c535de68a8895b2ab30bc005c8e6935974ba84c4baea970",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "sabatina de O Globo, Valor e CBN"
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: original da checagem"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Anuário Brasileiro de Segurança Pública 2025"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "fd2f5ea16ef4acc84e84c95b5f78b736ad04d711ad983dc34355e9aea7442aa5",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.437Z"
+    }
+  },
+  {
+    "id": "g1-tarcisio-07-2026",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que São Paulo recebeu pela primeira vez o selo ouro do MEC por alfabetização na idade certa com o resultado de 2024.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-20",
+      "context": "sabatina de O Globo, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "labelStatus": "literal",
+    "summary": "O Fato ou Fake marcou #FATO: São Paulo passou do selo prata para o ouro na segunda edição do programa, com 58% dos alunos no nível adequado contra meta de 57%. Os indicadores avaliados eram de leitura e escrita de 2024.",
+    "publishedAt": "2026-08-20T21:28:00-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "c79c21f2372499754c535de68a8895b2ab30bc005c8e6935974ba84c4baea970",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "sabatina de O Globo, Valor e CBN"
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: original da checagem"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "MEC, Selo Nacional Compromisso com a Criança Alfabetizada"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "4403adb5342f5a2da3759efffc8c9d375a527fda42acf7d46f5b876571484d28",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.437Z"
+    }
+  },
+  {
+    "id": "g1-tarcisio-09-2026",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que a Billings tem capacidade de reserva maior que a Cantareira, mas não é usada tanto por causa da poluição.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-20",
+      "context": "sabatina de O Globo, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "labelStatus": "literal",
+    "summary": "O Fato ou Fake marcou #FATO: a Billings tem volume útil de 995,6 milhões de metros cúbicos, acima dos 981,56 milhões da Cantareira, e a poluição impede o aproveitamento de toda a capacidade. A matéria relaciona o problema a despejos de esgoto em trechos da represa.",
+    "publishedAt": "2026-08-20T21:28:00-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "c79c21f2372499754c535de68a8895b2ab30bc005c8e6935974ba84c4baea970",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "sabatina de O Globo, Valor e CBN"
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: original da checagem"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Agência Nacional de Águas e Saneamento Básico (ANA)"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Sistema de Acompanhamento de Reservatórios (SAR)"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "3c3140e0bb0e4b0ec0bac15977352399cdf7558044058e29eb8529f6e013dda9",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.437Z"
+    }
+  },
+  {
+    "id": "g1-tarcisio-10-2026",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que Guarulhos tratava 2% do esgoto no passado e 45% naquele momento, com previsão de chegar a 78% no fim de 2026, e que Cajamar e Franco da Rocha tratavam quase zero em 2022.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-20",
+      "context": "sabatina de O Globo, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#É FATO",
+    "labelStatus": "literal",
+    "summary": "O Fato ou Fake marcou #É FATO: o SNIS registrou 2,12% em Guarulhos em 2016 e 0,72% e 3,41% em Cajamar e Franco da Rocha em 2022, enquanto a Sabesp informou 45% de tratamento em 2026. A matéria explica a mudança do SNIS para o Sinisa e separa tratamento de coleta.",
+    "publishedAt": "2026-08-20T21:28:00-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "c79c21f2372499754c535de68a8895b2ab30bc005c8e6935974ba84c4baea970",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#É FATO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "sabatina de O Globo, Valor e CBN"
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: original da checagem"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Sistema Nacional de Informações sobre Saneamento (SNIS)"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Sabesp"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "50458d68a249648d19b92f30d7462f3eff21ad661c133452a34dcb165953627b",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.437Z"
+    }
+  },
+  {
+    "id": "g1-tarcisio-11-2026",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que a gestão aumentou as aulas semanais de português de 10 para 16 e de matemática de 10 para 17, alta de 60% e 70%.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-20",
+      "context": "sabatina de O Globo, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "labelStatus": "literal",
+    "summary": "O Fato ou Fake marcou #FATO: a mudança entrou em vigor em 2024 e os números citados correspondem à soma das séries do ensino médio, incluindo componentes associados. A Secretaria da Educação confirmou os dados e informou novos aumentos para 2026.",
+    "publishedAt": "2026-08-20T21:28:00-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "c79c21f2372499754c535de68a8895b2ab30bc005c8e6935974ba84c4baea970",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "sabatina de O Globo, Valor e CBN"
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: original da checagem"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Secretaria da Educação do Estado de São Paulo"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "7075ab993ea0a5e7dfe17cf33a341191ed3be6301d0e7602245eaf16b8071774",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.437Z"
+    }
+  },
+  {
+    "id": "g1-tarcisio-12-2026",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que as câmeras usadas por policiais militares passaram de 10.520 para 15 mil.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-20",
+      "context": "sabatina de O Globo, Valor e CBN",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Fato ou Fake",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "#FATO",
+    "labelStatus": "literal",
+    "summary": "O Fato ou Fake marcou #FATO: o programa Olho Vivo e o Muralha Paulista chegaram a 15 mil câmeras operacionais, contra pouco mais de 10 mil no início da gestão. A Secretaria da Segurança Pública informou aumento de cerca de 50% e descreveu as funcionalidades do novo modelo.",
+    "publishedAt": "2026-08-20T21:28:00-03:00",
+    "originalUrl": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+    "methodologyUrl": "https://g1.globo.com/fato-ou-fake/noticia/2018/07/30/g1-lanca-fato-ou-fake-novo-servico-de-checagem-de-conteudos-suspeitos.ghtml",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "c79c21f2372499754c535de68a8895b2ab30bc005c8e6935974ba84c4baea970",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "#FATO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "sabatina de O Globo, Valor e CBN"
+    },
+    "sources": [
+      {
+        "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/20/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-tarcisio-de-freitas-ao-globo-valor-e-cbn.ghtml",
+        "origin": "consulted_by_us",
+        "title": "Fato ou Fake: original da checagem"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Secretaria da Segurança Pública de São Paulo"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Supremo Tribunal Federal, acordo sobre câmeras corporais"
+      }
+    ],
+    "corrections": [],
+    "literalSha256": "90b649a9db45bf2a471f2b0d5675684f3003a3254e7fa5de906094a9f2a3533f",
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T13:13:37.437Z"
+    }
   }
 ]
