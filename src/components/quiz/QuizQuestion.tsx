@@ -52,6 +52,7 @@ export function QuizQuestion({ pergunta, initialAnswer, onSubmit, onBack, reduce
   }, [pergunta.id, reducedMotion])
 
   const headingId = `quiz-pergunta-${pergunta.id}`
+  const oQueEId = `${headingId}-o-que-e`
 
   const selectedIndex = OPTIONS.findIndex((opt) => opt.value === likert)
   // Tabulação móvel: só uma opção fica alcançável por Tab, então o grupo inteiro
@@ -98,9 +99,26 @@ export function QuizQuestion({ pergunta, initialAnswer, onSubmit, onBack, reduce
       <h2 id={headingId} className="text-lg font-medium leading-snug text-foreground md:text-xl">
         {pergunta.texto}
       </h2>
+      {pergunta.o_que_e ? (
+        <section id={oQueEId} aria-label={pergunta.o_que_e.rotulo} className="rounded-lg border border-border bg-card px-4 py-3 text-sm">
+          <p className="font-medium text-foreground">{pergunta.o_que_e.rotulo}</p>
+          <p className="mt-1 leading-relaxed text-muted-foreground">{pergunta.o_que_e.texto}</p>
+          <p className="mt-2 text-xs text-muted-foreground">
+            Fonte:{" "}
+            <a
+              href={pergunta.o_que_e.fonte.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              {pergunta.o_que_e.fonte.titulo}
+            </a>
+          </p>
+        </section>
+      ) : null}
       {pergunta.contexto ? (
         <details className="rounded-lg border border-border bg-muted/30 px-3 py-2 text-sm">
-          <summary className="cursor-pointer font-medium text-foreground">Entenda melhor</summary>
+          <summary className="cursor-pointer font-medium text-foreground">Como a comparação funciona</summary>
           <p className="mt-2 text-muted-foreground">{pergunta.contexto}</p>
         </details>
       ) : null}
@@ -114,6 +132,7 @@ export function QuizQuestion({ pergunta, initialAnswer, onSubmit, onBack, reduce
         className="flex flex-col gap-2"
         role="radiogroup"
         aria-labelledby={headingId}
+        aria-describedby={pergunta.o_que_e ? oQueEId : undefined}
         aria-required="true"
       >
         {OPTIONS.map((opt, index) => (
