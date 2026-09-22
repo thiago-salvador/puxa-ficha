@@ -3,6 +3,88 @@
   "updated_at": "2026-09-22T01:25:30.749Z",
   "quotes": [
     {
+      "id": "6929ccc9d85c6d33fb480d51ce7cee98af8f566c5eacc090a6ed3597d1769b05",
+      "candidate_id": "4f302760-52e7-461e-9a65-43d1aaa657df",
+      "candidate_slug": "expedito-mendonca",
+      "candidate_name": "Expedito Mendonça",
+      "office": "Governador",
+      "uf": "DF",
+      "quote_text": "Que a administração da saúde pública seja feita pelos próprios usuários, no âmbito do estado.",
+      "context": "“Que a administração da saúde pública seja feita pelos próprios usuários, no âmbito do estado. Defendemos recomposição salarial para os trabalhadores da educação, mais escolas, mais contratação e que os professores que hoje são temporários sejam incorporados ao quadro da fundação educacional\", destacou.",
+      "event_context": "Entrevista à TV da Câmara Legislativa após mobilização na Rodoviária.. Os discursos desta segunda-feira (14) destacaram propostas para a mobilidade urbana. Entre as medidas, estiveram em destaque a ampliação do Metrô e do VLT, e o transporte para o Entorno do DF.. Os discursos desta segunda-feira (14) destacaram propostas para a mobilidade urbana. Entre as medidas, estiveram em destaque a ampliação do Metrô e do VLT, e o transporte para o Entorno do DF.",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-14",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/df/distrito-federal/eleicoes/2026/noticia/2026/09/14/candidatos-do-df-cumprem-agenda-na-rodoviaria-do-plano-e-defendem-propostas-para-mobilidade.ghtml",
+      "article_title": "Candidatos ao governo do DF prometem metrô no Entorno e VLT | G1",
+      "article_published_at": "2026-09-14T20:14:04.394-03:00",
+      "observed_at": "2026-09-22T01:27:39.160Z",
+      "source_sha256": "6a534b6531aa2731d3ad890311e5fa9f407000c133eea6b0f99c2142b454101c",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Após a mobilização, Expedito Mendonça seguiu para a sede do partido, localizada no Conic, onde concedeu uma entrevista à TV da Câmara Legislativa. Durante a sabatina, o candidato reforçou a proposta voltada para a área de habitação e defendeu a força-tarefa para a construção das casas populares.",
+        "date_excerpt": "Os discursos desta segunda-feira (14) destacaram propostas para a mobilidade urbana. Entre as medidas, estiveram em destaque a ampliação do Metrô e do VLT, e o transporte para o Entorno do DF.",
+        "fetched_url": "https://g1.globo.com/df/distrito-federal/eleicoes/2026/noticia/2026/09/14/candidatos-do-df-cumprem-agenda-na-rodoviaria-do-plano-e-defendem-propostas-para-mobilidade.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "d56357034ee69c7c4829c45c1e5d92559be5aba2fc05c79f1a65e4d2da85ee63",
+      "candidate_id": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+      "candidate_slug": "ronaldo-caiado",
+      "candidate_name": "Ronaldo Caiado",
+      "office": "Presidente",
+      "uf": null,
+      "quote_text": "eu não sou um personagem criado para disputar uma eleição",
+      "context": "\"No meu currículo, tenho muito a mostrar e nada a esconder. A minha apresentação à população não é só a carteira de identidade. Eu tenho um orgulho muito grande do meu nome, do meu sobrenome, mas eu construí a minha vida política. Eu não preciso ter que estar vinculado a A ou B. Eu tenho autonomia, eu não sou um personagem criado para disputar uma eleição\", disse Caiado.",
+      "event_context": "Sabatina à Folha de S.Paulo e ao UOL.. O candidato à Presidência Ronaldo Caiado (PSD) afirmou nesta sexta-feira (4) que, diferentemente de Flávio Bolsonaro, não é um “personagem criado para disputar uma eleição”.. O candidato à Presidência Ronaldo Caiado (PSD) afirmou nesta sexta-feira (4) que, diferentemente de Flávio Bolsonaro, não é um “personagem criado para disputar uma eleição”.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-04",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/09/04/caiado-flavio-stf.ghtml",
+      "article_title": "Ronaldo Caiado critica Flávio Bolsonaro e defende reformas no STF | G1",
+      "article_published_at": "2026-09-04T16:33:46.805-03:00",
+      "observed_at": "2026-09-22T01:27:39.160Z",
+      "source_sha256": "fe6814010b6fa5d5992fb2d13a32454a360ec4edbe2b3e268895085a84c27e04",
+      "collection_scope": {
+        "mode": "initial_backfill",
+        "from": "2026-08-16"
+      },
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato à Presidência Ronaldo Caiado (PSD) afirmou nesta sexta-feira (4) que, diferentemente de Flávio Bolsonaro, não é um “personagem criado para disputar uma eleição”. Em sabatina à Folha de S.Paulo e ao UOL, o candidato também comentou o avanço de Augusto Cury (Avante), que o ultrapassou nas pesquisas eleitorais divulgadas nesta semana e se consolidou em terceiro lugar.",
+        "date_excerpt": "O candidato à Presidência Ronaldo Caiado (PSD) afirmou nesta sexta-feira (4) que, diferentemente de Flávio Bolsonaro, não é um “personagem criado para disputar uma eleição”.",
+        "fetched_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/09/04/caiado-flavio-stf.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "e5d3642c65a47947ba0bb3b77b9386c5f8a7ca0f1bc3a0216ab99086e21f1222",
+      "candidate_id": "91dc9c87-6811-494c-8c51-1bccfdf08c29",
+      "candidate_slug": "celina-leao",
+      "candidate_name": "Celina Leao",
+      "office": "Governador",
+      "uf": "DF",
+      "quote_text": "Eu era vice do Ibaneis, eu não era governadora do Ibaneis.",
+      "context": "\"Eu era vice do Ibaneis, eu não era governadora do Ibaneis. Por mais que você tenha uma autonomia de representá-lo, você não tem uma autonomia de tomar decisão sobre aquilo que é a sua prioridade\", falou.",
+      "event_context": "Sabatina no DF1 com Celina Leão.. Celina Leão (PP), candidata ao governo do Distrito Federal, passou por sabatina no DF1, na manhã desta terça-feira (15).. Celina Leão (PP), candidata ao governo do Distrito Federal, passou por sabatina no DF1, na manhã desta terça-feira (15).",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-15",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/df/distrito-federal/eleicoes/2026/noticia/2026/09/15/veja-como-foi-sabatina-da-globo-com-celina-leao-candidata-ao-governo-do-df.ghtml",
+      "article_title": "Celina Leão minimiza responsabilidade como vice e descarta quebra do BRB em sabatina na Globo | G1",
+      "article_published_at": "2026-09-15T12:49:29.283-03:00",
+      "observed_at": "2026-09-22T01:27:39.160Z",
+      "source_sha256": "f45f286c49283c7ca51713d3e30e07b4a4011a71caf8cbcd15fb8a18beaf6d01",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Celina Leão (PP), candidata ao governo do Distrito Federal, passou por sabatina no DF1, na manhã desta terça-feira (15).",
+        "date_excerpt": "Celina Leão (PP), candidata ao governo do Distrito Federal, passou por sabatina no DF1, na manhã desta terça-feira (15).",
+        "fetched_url": "https://g1.globo.com/df/distrito-federal/eleicoes/2026/noticia/2026/09/15/veja-como-foi-sabatina-da-globo-com-celina-leao-candidata-ao-governo-do-df.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "101d4f117e2ebd7829fde82fbcd82fccd879623a60686bd3f41ba7beecd16eb5",
       "candidate_id": "4cbc3b25-075a-4d87-89bd-58d1e0b2a5f2",
       "candidate_slug": "renan-santos",
