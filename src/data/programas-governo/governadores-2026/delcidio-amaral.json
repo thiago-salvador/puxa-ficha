@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -408,6 +408,7 @@
     "texto": "A educação do século XXI exige inovação. Vamos universalizar o acesso à tecnologia digital e aos recursos científicos em todas as escolas, integrando comunidades, pais e mestres. A cultura gera emprego, renda e dignidade. A tecnologia deve servir para emancipar o cidadão, não para excluí-lo. O turismo sul-mato-grossense não se processará sem a participação ativa da sociedade e do trade turístico. Implantar o Cinturão Digital de Mato Grosso do Sul, conectando todas as repartições públicas, escolas estaduais e postos de saúde por fibra óptica de alta velocidade. Desenvolver na SANESUL um Programa de Revitalização e Modernização de seus Sistemas de Tratamento de Água e de Esgotos Domésticos, transformando-a novamente em referência nacional de eficiência pública. Criar o Programa Estadual de Incentivo às Fontes Alternativas de Energia, fomentando a instalação de cooperativas de energia solar, usinas eólicas e pequenas centrais geradoras de energia limpa.",
     "frases": [
       {
+        "id": "cdd9627ad0d61c02",
         "texto": "A educação do século XXI exige inovação.",
         "evidencias": [
           {
@@ -418,6 +419,7 @@
         ]
       },
       {
+        "id": "76940b1e5bb73ef1",
         "texto": "Vamos universalizar o acesso à tecnologia digital e aos recursos científicos em todas as escolas, integrando comunidades, pais e mestres.",
         "evidencias": [
           {
@@ -428,6 +430,7 @@
         ]
       },
       {
+        "id": "e79a5b10e18594fb",
         "texto": "A cultura gera emprego, renda e dignidade.",
         "evidencias": [
           {
@@ -438,6 +441,7 @@
         ]
       },
       {
+        "id": "924846a7bea5491c",
         "texto": "A tecnologia deve servir para emancipar o cidadão, não para excluí-lo.",
         "evidencias": [
           {
@@ -448,6 +452,7 @@
         ]
       },
       {
+        "id": "382c102147195758",
         "texto": "O turismo sul-mato-grossense não se processará sem a participação ativa da sociedade e do trade turístico.",
         "evidencias": [
           {
@@ -458,6 +463,7 @@
         ]
       },
       {
+        "id": "8976aff34d4d1308",
         "texto": "Implantar o Cinturão Digital de Mato Grosso do Sul, conectando todas as repartições públicas, escolas estaduais e postos de saúde por fibra óptica de alta velocidade.",
         "evidencias": [
           {
@@ -468,6 +474,7 @@
         ]
       },
       {
+        "id": "9ac12bb4a8934028",
         "texto": "Desenvolver na SANESUL um Programa de Revitalização e Modernização de seus Sistemas de Tratamento de Água e de Esgotos Domésticos, transformando-a novamente em referência nacional de eficiência pública.",
         "evidencias": [
           {
@@ -478,6 +485,7 @@
         ]
       },
       {
+        "id": "bbf0a107f876cbd1",
         "texto": "Criar o Programa Estadual de Incentivo às Fontes Alternativas de Energia, fomentando a instalação de cooperativas de energia solar, usinas eólicas e pequenas centrais geradoras de energia limpa.",
         "evidencias": [
           {

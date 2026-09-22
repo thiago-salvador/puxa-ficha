@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1178,6 +1178,7 @@
     "texto": "O Governo do Estado criará o PROSAN, com mapeamento digital de toda a legislação estadual vigente e comissão executiva de revisão normativa vinculada à Casa Civil. O Governo do Estado criará o SIISA-RJ como camada estadual de execução do Cadastro Nacional de Animais Domésticos (CNAD/SinPatinhas), criado pela Lei Federal nº 15.046/2024, que já atribui aos estados essa fiscalização. O Governo do Estado criará o Programa Estadual de Locação Social, com retrofit de imóveis públicos ociosos para famílias realocadas de áreas de risco iminente mapeadas pela Defesa Civil e pelo INEA. O Governo do Estado criará a Rota Estácio de Sá, com dois circuitos sinalizados — um curto e caminhável no Aterro do Flamengo, outro pelo Centro Colonial —, cada parada com totem e QR code abrindo mapa digital, áudio-guia e microconteúdo escolar. O Governo do Estado instituirá o RJ Competitivo, programa voltado a empresas de logística e distribuição, indústria de transformação, tecnologia e agroindústria que se instalem ou ampliem operações no Estado. O Governo do Estado instituirá o programa Gasto Sustentável RJ, com auditoria cruzada contínua da folha de pagamento.",
     "frases": [
       {
+        "id": "f71687ee1e3ae88c",
         "texto": "O Governo do Estado criará o PROSAN, com mapeamento digital de toda a legislação estadual vigente e comissão executiva de revisão normativa vinculada à Casa Civil.",
         "evidencias": [
           {
@@ -1188,6 +1189,7 @@
         ]
       },
       {
+        "id": "7b850cdf6950c043",
         "texto": "O Governo do Estado criará o SIISA-RJ como camada estadual de execução do Cadastro Nacional de Animais Domésticos (CNAD/SinPatinhas), criado pela Lei Federal nº 15.046/2024, que já atribui aos estados essa fiscalização.",
         "evidencias": [
           {
@@ -1198,6 +1200,7 @@
         ]
       },
       {
+        "id": "23803b4153878c1d",
         "texto": "O Governo do Estado criará o Programa Estadual de Locação Social, com retrofit de imóveis públicos ociosos para famílias realocadas de áreas de risco iminente mapeadas pela Defesa Civil e pelo INEA.",
         "evidencias": [
           {
@@ -1208,6 +1211,7 @@
         ]
       },
       {
+        "id": "6b4459ef574f460f",
         "texto": "O Governo do Estado criará a Rota Estácio de Sá, com dois circuitos sinalizados — um curto e caminhável no Aterro do Flamengo, outro pelo Centro Colonial —, cada parada com totem e QR code abrindo mapa digital, áudio-guia e microconteúdo escolar.",
         "evidencias": [
           {
@@ -1218,6 +1222,7 @@
         ]
       },
       {
+        "id": "df07054d235ff280",
         "texto": "O Governo do Estado instituirá o RJ Competitivo, programa voltado a empresas de logística e distribuição, indústria de transformação, tecnologia e agroindústria que se instalem ou ampliem operações no Estado.",
         "evidencias": [
           {
@@ -1228,6 +1233,7 @@
         ]
       },
       {
+        "id": "0157a34c534dbc89",
         "texto": "O Governo do Estado instituirá o programa Gasto Sustentável RJ, com auditoria cruzada contínua da folha de pagamento.",
         "evidencias": [
           {

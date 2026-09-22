@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "Na área salarial, o programa prevê a reposição integral de 100% das perdas salariais como medida de reajuste dos vencimentos dos trabalhadores. No emprego, o programa propõe a redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais). Na economia nacional, o programa propõe o cancelamento de todas as privatizações realizadas (Eletrobrás, Vale, bancos, telefonia etc.). Para o funcionalismo, o programa prevê a realização de concursos públicos periódicos para repor o quadro de servidores. Na política agrária, o programa propõe o assentamento imediato dos milhões de sem-terra acampados em todo o País. Na saúde pública, o programa prevê mais verbas para a saúde pública, segundo o ponto dedicado ao setor no programa oficial.",
     "frases": [
       {
+        "id": "b6dc8f804af38bb1",
         "texto": "Na área salarial, o programa prevê a reposição integral de 100% das perdas salariais como medida de reajuste dos vencimentos dos trabalhadores.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "674249e9a73935bc",
         "texto": "No emprego, o programa propõe a redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais).",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "00bbef7e65890243",
         "texto": "Na economia nacional, o programa propõe o cancelamento de todas as privatizações realizadas (Eletrobrás, Vale, bancos, telefonia etc.).",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "0d5f11df881e6335",
         "texto": "Para o funcionalismo, o programa prevê a realização de concursos públicos periódicos para repor o quadro de servidores.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "bc1132a9311e739d",
         "texto": "Na política agrária, o programa propõe o assentamento imediato dos milhões de sem-terra acampados em todo o País.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "c6d79cfcba10b1c9",
         "texto": "Na saúde pública, o programa prevê mais verbas para a saúde pública, segundo o ponto dedicado ao setor no programa oficial.",
         "evidencias": [
           {

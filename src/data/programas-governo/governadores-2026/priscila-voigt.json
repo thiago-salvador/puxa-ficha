@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -156,6 +156,7 @@
     "texto": "Na área das empresas públicas, o programa defende a reversão das privatizações das empresas públicas. No âmbito do serviço público, o programa defende concursos públicos. Como resposta às cheias e inundações, o programa propõe a construção e o desenvolvimento de estruturas de defesa nas cidades e em nível de estado. Na política habitacional para as enchentes, o programa propõe a construção e entrega de moradias definitivas para todas as famílias atingidas e ainda não contempladas pelo governo. O programa propõe investimento massivo na UERGS. Nas atividades escolares, o programa defende contratação direta em 100% das atividades escolares. Nas atividades do SUS, o programa defende contratação direta em 100% das atividades do SUS em todos os municípios do estado. Sobre a dívida pública estadual, o programa propõe auditoria e suspensão da dívida pública do estado.",
     "frases": [
       {
+        "id": "7dddb96707be307c",
         "texto": "Na área das empresas públicas, o programa defende a reversão das privatizações das empresas públicas.",
         "evidencias": [
           {
@@ -166,6 +167,7 @@
         ]
       },
       {
+        "id": "24dc96f8674c6965",
         "texto": "No âmbito do serviço público, o programa defende concursos públicos.",
         "evidencias": [
           {
@@ -176,6 +178,7 @@
         ]
       },
       {
+        "id": "72bdbe4876cd53a7",
         "texto": "Como resposta às cheias e inundações, o programa propõe a construção e o desenvolvimento de estruturas de defesa nas cidades e em nível de estado.",
         "evidencias": [
           {
@@ -186,6 +189,7 @@
         ]
       },
       {
+        "id": "7e75d2c1c2e96b0f",
         "texto": "Na política habitacional para as enchentes, o programa propõe a construção e entrega de moradias definitivas para todas as famílias atingidas e ainda não contempladas pelo governo.",
         "evidencias": [
           {
@@ -196,6 +200,7 @@
         ]
       },
       {
+        "id": "ac20ca30b41be296",
         "texto": "O programa propõe investimento massivo na UERGS.",
         "evidencias": [
           {
@@ -206,6 +211,7 @@
         ]
       },
       {
+        "id": "1d7dce4e670dfc82",
         "texto": "Nas atividades escolares, o programa defende contratação direta em 100% das atividades escolares.",
         "evidencias": [
           {
@@ -216,6 +222,7 @@
         ]
       },
       {
+        "id": "8aefa04ca7e0008b",
         "texto": "Nas atividades do SUS, o programa defende contratação direta em 100% das atividades do SUS em todos os municípios do estado.",
         "evidencias": [
           {
@@ -226,6 +233,7 @@
         ]
       },
       {
+        "id": "636abd476be44434",
         "texto": "Sobre a dívida pública estadual, o programa propõe auditoria e suspensão da dívida pública do estado.",
         "evidencias": [
           {

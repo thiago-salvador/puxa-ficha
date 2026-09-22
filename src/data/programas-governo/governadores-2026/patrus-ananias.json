@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -996,6 +996,7 @@
     "texto": "O plano propõe critérios de justiça distributiva com relação aos recursos do estado, de maneira a priorizar regiões e territórios historicamente excluídos e vulnerabilizados. Reforçar a cooperação com os municípios nos anos iniciais, apoiando a melhoria da oferta e da aprendizagem. O Governo de Patrus Ananias atuará para ampliar o acesso aos serviços de saúde, reduzir filas e tempos de espera em todos os níveis de atenção, fortalecer a atenção primária, qualificar a assistência especializada e de alta complexidade e articular os serviços em redes de atenção, assegurando atendimento integral à população. Construir uma política estadual de enfrentamento à emergência climática considerando as especificidades e desigualdades dos territórios de Minas Gerais e integrando mitigação, adaptação, justiça climática, transformação ecológica, governança e educação ambiental. Preservar as empresas públicas estratégicas, mantendo sob controle do Estado empresas como Cemig, Codemig e outras estatais fundamentais ao desenvolvimento de Minas Gerais. Criar o Portal Estadual de Participação e Monitoramento, em que a população possa apresentar propostas e prioridades regionais; acompanhar obras e investimentos pactuados; fiscalizar prazos e execução.",
     "frases": [
       {
+        "id": "95b66b6dee16be8c",
         "texto": "O plano propõe critérios de justiça distributiva com relação aos recursos do estado, de maneira a priorizar regiões e territórios historicamente excluídos e vulnerabilizados.",
         "evidencias": [
           {
@@ -1006,6 +1007,7 @@
         ]
       },
       {
+        "id": "ff679f344889bcac",
         "texto": "Reforçar a cooperação com os municípios nos anos iniciais, apoiando a melhoria da oferta e da aprendizagem.",
         "evidencias": [
           {
@@ -1016,6 +1018,7 @@
         ]
       },
       {
+        "id": "6028d296e4b8c7df",
         "texto": "O Governo de Patrus Ananias atuará para ampliar o acesso aos serviços de saúde, reduzir filas e tempos de espera em todos os níveis de atenção, fortalecer a atenção primária, qualificar a assistência especializada e de alta complexidade e articular os serviços em redes de atenção, assegurando atendimento integral à população.",
         "evidencias": [
           {
@@ -1026,6 +1029,7 @@
         ]
       },
       {
+        "id": "bb395c437704c4ef",
         "texto": "Construir uma política estadual de enfrentamento à emergência climática considerando as especificidades e desigualdades dos territórios de Minas Gerais e integrando mitigação, adaptação, justiça climática, transformação ecológica, governança e educação ambiental.",
         "evidencias": [
           {
@@ -1036,6 +1040,7 @@
         ]
       },
       {
+        "id": "2eb3b8bd791a75bd",
         "texto": "Preservar as empresas públicas estratégicas, mantendo sob controle do Estado empresas como Cemig, Codemig e outras estatais fundamentais ao desenvolvimento de Minas Gerais.",
         "evidencias": [
           {
@@ -1046,6 +1051,7 @@
         ]
       },
       {
+        "id": "319f41a0bbe4249b",
         "texto": "Criar o Portal Estadual de Participação e Monitoramento, em que a população possa apresentar propostas e prioridades regionais; acompanhar obras e investimentos pactuados; fiscalizar prazos e execução.",
         "evidencias": [
           {

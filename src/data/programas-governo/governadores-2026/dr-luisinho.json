@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -604,6 +604,7 @@
     "texto": "O programa propõe a criação do Polo Industrial do Acre, descrito como estrutura voltada à transformação do estado em polo produtivo da Amazônia. A Faculdade Estadual do Polo Industrial prevê ensino técnico e superior integrado, com cursos alinhados à economia real e acesso facilitado. O Banco de Desenvolvimento do Acre é apresentado como instituição destinada a financiar o crescimento econômico estadual por meio de crédito para a indústria. O programa prevê complexos regionais de saúde para levar saúde de qualidade para perto das pessoas, com hospitais completos nas áreas regionais indicadas. O Programa Casa para Todos prevê 40 mil moradias em 8 anos, conforme a meta habitacional apresentada no documento. A gestão ambiental estadual proposta inclui a valorização da floresta em pé por meio da bioeconomia.",
     "frases": [
       {
+        "id": "9920bb8a57f20930",
         "texto": "O programa propõe a criação do Polo Industrial do Acre, descrito como estrutura voltada à transformação do estado em polo produtivo da Amazônia.",
         "evidencias": [
           {
@@ -619,6 +620,7 @@
         ]
       },
       {
+        "id": "f45530cb039da4ec",
         "texto": "A Faculdade Estadual do Polo Industrial prevê ensino técnico e superior integrado, com cursos alinhados à economia real e acesso facilitado.",
         "evidencias": [
           {
@@ -639,6 +641,7 @@
         ]
       },
       {
+        "id": "5c8d6b5c966df276",
         "texto": "O Banco de Desenvolvimento do Acre é apresentado como instituição destinada a financiar o crescimento econômico estadual por meio de crédito para a indústria.",
         "evidencias": [
           {
@@ -654,6 +657,7 @@
         ]
       },
       {
+        "id": "3f209b193fdb1072",
         "texto": "O programa prevê complexos regionais de saúde para levar saúde de qualidade para perto das pessoas, com hospitais completos nas áreas regionais indicadas.",
         "evidencias": [
           {
@@ -669,6 +673,7 @@
         ]
       },
       {
+        "id": "1dc4990d11e2e10f",
         "texto": "O Programa Casa para Todos prevê 40 mil moradias em 8 anos, conforme a meta habitacional apresentada no documento.",
         "evidencias": [
           {
@@ -679,6 +684,7 @@
         ]
       },
       {
+        "id": "d2329401b8c83da0",
         "texto": "A gestão ambiental estadual proposta inclui a valorização da floresta em pé por meio da bioeconomia.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1066,6 +1066,7 @@
     "texto": "Será implantado o Programa Bahia sem Fome, destinado a garantir segurança alimentar e nutricional às famílias em situação de pobreza. O esporte será utilizado como ferramenta de saúde, educação, prevenção da violência, convivência e profissionalização. O Estado organizará editais regionalizados e simplificados, garantindo que os recursos culturais cheguem ao interior. O governo implantará uma política estadual de inclusão baseada em acessibilidade,\nautonomia e participação. O governo também estabelecerá metas de redução da violência letal contra as\nmulheres e fortalecerá o atendimento especializado às vítimas. Cada Território de Identidade terá um plano próprio de desenvolvimento, baseado\nem suas vocações produtivas, recursos naturais, conhecimento local e\ncapacidade de organização. Será criado um programa permanente de segurança hídrica para as regiões mais\nafetadas pela seca. O Estado buscará ampliar a cobertura de internet de alta velocidade, apoiar redes\npúblicas de conectividade e criar pontos gratuitos de acesso em localidades\nprioritárias.",
     "frases": [
       {
+        "id": "b03673187477f086",
         "texto": "Será implantado o Programa Bahia sem Fome, destinado a garantir segurança alimentar e nutricional às famílias em situação de pobreza.",
         "evidencias": [
           {
@@ -1076,6 +1077,7 @@
         ]
       },
       {
+        "id": "8c3cc5332b7f5794",
         "texto": "O esporte será utilizado como ferramenta de saúde, educação, prevenção da violência, convivência e profissionalização.",
         "evidencias": [
           {
@@ -1086,6 +1088,7 @@
         ]
       },
       {
+        "id": "cf052a5f180606f5",
         "texto": "O Estado organizará editais regionalizados e simplificados, garantindo que os recursos culturais cheguem ao interior.",
         "evidencias": [
           {
@@ -1096,6 +1099,7 @@
         ]
       },
       {
+        "id": "ba6d5e0ee1613baf",
         "texto": "O governo implantará uma política estadual de inclusão baseada em acessibilidade,\nautonomia e participação.",
         "evidencias": [
           {
@@ -1106,6 +1110,7 @@
         ]
       },
       {
+        "id": "d6f083d583307bca",
         "texto": "O governo também estabelecerá metas de redução da violência letal contra as\nmulheres e fortalecerá o atendimento especializado às vítimas.",
         "evidencias": [
           {
@@ -1116,6 +1121,7 @@
         ]
       },
       {
+        "id": "b047e932f5fc4d26",
         "texto": "Cada Território de Identidade terá um plano próprio de desenvolvimento, baseado\nem suas vocações produtivas, recursos naturais, conhecimento local e\ncapacidade de organização.",
         "evidencias": [
           {
@@ -1126,6 +1132,7 @@
         ]
       },
       {
+        "id": "2bfb38a1bdac2657",
         "texto": "Será criado um programa permanente de segurança hídrica para as regiões mais\nafetadas pela seca.",
         "evidencias": [
           {
@@ -1136,6 +1143,7 @@
         ]
       },
       {
+        "id": "bddaa531cd0390ea",
         "texto": "O Estado buscará ampliar a cobertura de internet de alta velocidade, apoiar redes\npúblicas de conectividade e criar pontos gratuitos de acesso em localidades\nprioritárias.",
         "evidencias": [
           {

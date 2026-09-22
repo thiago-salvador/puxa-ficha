@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -618,6 +618,7 @@
     "texto": "O plano orienta a ação do governo entre 2027 e 2030, unindo crescimento econômico, inclusão social, sustentabilidade e melhoria da qualidade de vida. Na economia, o plano propõe ampliar a assistência técnica e a extensão rural aos produtores de todas as regiões do estado. O documento prevê fortalecer as cadeias da sociobiodiversidade, com foco na agregação de valor. Na infraestrutura, propõe implantar o Programa Acre Estrada Segura, com recuperação e modernização das rodovias estaduais. Para o saneamento, propõe implantar o Programa Água, Saneamento e Vida, ampliando a cobertura de água e esgoto nos municípios. Na educação, propõe implantar o Programa Acre Alfabetizado, com diagnóstico das turmas e formação de professores. Na saúde, prevê reorganizar a rede estadual para reduzir as filas de espera por atendimento. Na segurança pública, propõe instalar o Gabinete Estadual de Enfrentamento ao Crime Organizado, integrando forças policiais e órgãos de inteligência.",
     "frases": [
       {
+        "id": "180886e101956f4a",
         "texto": "O plano orienta a ação do governo entre 2027 e 2030, unindo crescimento econômico, inclusão social, sustentabilidade e melhoria da qualidade de vida.",
         "evidencias": [
           {
@@ -628,6 +629,7 @@
         ]
       },
       {
+        "id": "d6976cc9f0fda173",
         "texto": "Na economia, o plano propõe ampliar a assistência técnica e a extensão rural aos produtores de todas as regiões do estado.",
         "evidencias": [
           {
@@ -643,6 +645,7 @@
         ]
       },
       {
+        "id": "b5faadaff4d9222f",
         "texto": "O documento prevê fortalecer as cadeias da sociobiodiversidade, com foco na agregação de valor.",
         "evidencias": [
           {
@@ -653,6 +656,7 @@
         ]
       },
       {
+        "id": "bff931cdce987e86",
         "texto": "Na infraestrutura, propõe implantar o Programa Acre Estrada Segura, com recuperação e modernização das rodovias estaduais.",
         "evidencias": [
           {
@@ -663,6 +667,7 @@
         ]
       },
       {
+        "id": "2fa2ec4a1d169dda",
         "texto": "Para o saneamento, propõe implantar o Programa Água, Saneamento e Vida, ampliando a cobertura de água e esgoto nos municípios.",
         "evidencias": [
           {
@@ -673,6 +678,7 @@
         ]
       },
       {
+        "id": "5824129d73ac976f",
         "texto": "Na educação, propõe implantar o Programa Acre Alfabetizado, com diagnóstico das turmas e formação de professores.",
         "evidencias": [
           {
@@ -683,6 +689,7 @@
         ]
       },
       {
+        "id": "97ed507a9813b78d",
         "texto": "Na saúde, prevê reorganizar a rede estadual para reduzir as filas de espera por atendimento.",
         "evidencias": [
           {
@@ -698,6 +705,7 @@
         ]
       },
       {
+        "id": "2eab3e5f01eeba38",
         "texto": "Na segurança pública, propõe instalar o Gabinete Estadual de Enfrentamento ao Crime Organizado, integrando forças policiais e órgãos de inteligência.",
         "evidencias": [
           {

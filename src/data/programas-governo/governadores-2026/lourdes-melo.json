@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "No campo salarial, o programa propõe a reposição integral de 100% das perdas salariais, estabelecendo que a recomposição alcance a totalidade das perdas. Quanto à jornada, o programa propõe o limite máximo de 35 horas semanais, definido como sete horas diárias distribuídas em cinco dias por semana. Na política de privatizações, o programa propõe o cancelamento de todas as privatizações realizadas, abrangendo todas as privatizações que já foram realizadas. Para o setor petrolífero, o programa propõe a nacionalização do petróleo e uma Petrobrás 100% estatal. Na educação, o programa propõe mais verbas para a educação, com a proposta expressa em termos de ampliação das verbas educacionais. O programa propõe o assentamento imediato dos milhões de sem-terra acampados em todo o País, indicando que a medida se aplica aos acampados. Na habitação, o programa propõe a elaboração de um plano nacional para construir milhões de moradias populares, com abrangência nacional para essa construção. O programa propõe o fim dos vestibulares, com a proposta expressa de encerrar os vestibulares.",
     "frases": [
       {
+        "id": "d06e8ec0fcb8a2ce",
         "texto": "No campo salarial, o programa propõe a reposição integral de 100% das perdas salariais, estabelecendo que a recomposição alcance a totalidade das perdas.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "4337a690464095b1",
         "texto": "Quanto à jornada, o programa propõe o limite máximo de 35 horas semanais, definido como sete horas diárias distribuídas em cinco dias por semana.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "10f53e958d1df765",
         "texto": "Na política de privatizações, o programa propõe o cancelamento de todas as privatizações realizadas, abrangendo todas as privatizações que já foram realizadas.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "5a48815d5dbf8832",
         "texto": "Para o setor petrolífero, o programa propõe a nacionalização do petróleo e uma Petrobrás 100% estatal.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "857a577dd5ad4107",
         "texto": "Na educação, o programa propõe mais verbas para a educação, com a proposta expressa em termos de ampliação das verbas educacionais.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "f3893e1f524da082",
         "texto": "O programa propõe o assentamento imediato dos milhões de sem-terra acampados em todo o País, indicando que a medida se aplica aos acampados.",
         "evidencias": [
           {
@@ -202,6 +208,7 @@
         ]
       },
       {
+        "id": "fb456bdb0c879867",
         "texto": "Na habitação, o programa propõe a elaboração de um plano nacional para construir milhões de moradias populares, com abrangência nacional para essa construção.",
         "evidencias": [
           {
@@ -212,6 +219,7 @@
         ]
       },
       {
+        "id": "f4f82b1521fa845b",
         "texto": "O programa propõe o fim dos vestibulares, com a proposta expressa de encerrar os vestibulares.",
         "evidencias": [
           {

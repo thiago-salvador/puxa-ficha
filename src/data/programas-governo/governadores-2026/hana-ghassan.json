@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1010,6 +1010,7 @@
     "texto": "O plano apresenta uma visão estratégica para o desenvolvimento do Pará no período de 2027 a 2030. O documento prevê fortalecer a Atenção Primária como porta de entrada do SUS, integrada aos serviços de Média e Alta Complexidade, garantindo uma rede regionalizada. O plano propõe fortalecer e ampliar as escolas de tempo integral, com projeto de vida, tutoria e protagonismo juvenil. O documento planeja expandir totens e câmeras de videomonitoramento com reconhecimento facial. O plano propõe expandir as Delegacias Especializadas de Atendimento à Mulher, com funcionamento de 24 horas. O documento prevê impulsionar a inovação e a bioeconomia paraense. O plano propõe pavimentar, requalificar e duplicar 2 mil km de rodovias estaduais. O documento prevê implementar o mercado de carbono, com recursos do programa estadual de REDD+.",
     "frases": [
       {
+        "id": "f2a423a35c49c630",
         "texto": "O plano apresenta uma visão estratégica para o desenvolvimento do Pará no período de 2027 a 2030.",
         "evidencias": [
           {
@@ -1020,6 +1021,7 @@
         ]
       },
       {
+        "id": "d8cce34cc975a508",
         "texto": "O documento prevê fortalecer a Atenção Primária como porta de entrada do SUS, integrada aos serviços de Média e Alta Complexidade, garantindo uma rede regionalizada.",
         "evidencias": [
           {
@@ -1030,6 +1032,7 @@
         ]
       },
       {
+        "id": "394d63ae00aa1d8a",
         "texto": "O plano propõe fortalecer e ampliar as escolas de tempo integral, com projeto de vida, tutoria e protagonismo juvenil.",
         "evidencias": [
           {
@@ -1040,6 +1043,7 @@
         ]
       },
       {
+        "id": "f6448a71fd1e1d3a",
         "texto": "O documento planeja expandir totens e câmeras de videomonitoramento com reconhecimento facial.",
         "evidencias": [
           {
@@ -1050,6 +1054,7 @@
         ]
       },
       {
+        "id": "d4fc0aeaeb47dd1e",
         "texto": "O plano propõe expandir as Delegacias Especializadas de Atendimento à Mulher, com funcionamento de 24 horas.",
         "evidencias": [
           {
@@ -1060,6 +1065,7 @@
         ]
       },
       {
+        "id": "28b87279f14426f6",
         "texto": "O documento prevê impulsionar a inovação e a bioeconomia paraense.",
         "evidencias": [
           {
@@ -1070,6 +1076,7 @@
         ]
       },
       {
+        "id": "a296f8f585f4f8b7",
         "texto": "O plano propõe pavimentar, requalificar e duplicar 2 mil km de rodovias estaduais.",
         "evidencias": [
           {
@@ -1080,6 +1087,7 @@
         ]
       },
       {
+        "id": "cc5dd95785d68686",
         "texto": "O documento prevê implementar o mercado de carbono, com recursos do programa estadual de REDD+.",
         "evidencias": [
           {

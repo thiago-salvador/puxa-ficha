@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -86,6 +86,7 @@
     "texto": "O Plano de Governo de Mato Grosso do Sul, intitulado Emprego e Desenvolvimento Descentralizado, é apresentado por Jeferson José Bezerra (Agir). O plano prevê o Crédito MS Empreendedor, linha de crédito estadual com juros subsidiados e prazo estendido para micro e pequenas empresas do interior. O plano propõe, na desburocratização, alvará digital único e simplificação de obrigações estaduais para pequenos negócios. A qualificação profissional está planejada com cursos técnicos regionalizados em parceria com SENAI/SENAC e empresas âncora, orientados à demanda real de cada região. No Pantanal, o plano propõe turismo sustentável e ecoturismo. O plano prevê a interiorização de escritórios e serviços estaduais, com concursos públicos com vagas regionalizadas. O plano estabelece orçamento regionalizado, com plano plurianual e recursos destinados por região. Na saúde, o plano propõe regionalização da rede hospitalar e telemedicina para reduzir deslocamentos do interior à capital.",
     "frases": [
       {
+        "id": "05487a2839412f8d",
         "texto": "O Plano de Governo de Mato Grosso do Sul, intitulado Emprego e Desenvolvimento Descentralizado, é apresentado por Jeferson José Bezerra (Agir).",
         "evidencias": [
           {
@@ -101,6 +102,7 @@
         ]
       },
       {
+        "id": "5fffe9859b47ce99",
         "texto": "O plano prevê o Crédito MS Empreendedor, linha de crédito estadual com juros subsidiados e prazo estendido para micro e pequenas empresas do interior.",
         "evidencias": [
           {
@@ -121,6 +123,7 @@
         ]
       },
       {
+        "id": "b0d1fbd91b100ecd",
         "texto": "O plano propõe, na desburocratização, alvará digital único e simplificação de obrigações estaduais para pequenos negócios.",
         "evidencias": [
           {
@@ -136,6 +139,7 @@
         ]
       },
       {
+        "id": "7626ad5bd180c688",
         "texto": "A qualificação profissional está planejada com cursos técnicos regionalizados em parceria com SENAI/SENAC e empresas âncora, orientados à demanda real de cada região.",
         "evidencias": [
           {
@@ -156,6 +160,7 @@
         ]
       },
       {
+        "id": "d3d94c1ae44dc282",
         "texto": "No Pantanal, o plano propõe turismo sustentável e ecoturismo.",
         "evidencias": [
           {
@@ -166,6 +171,7 @@
         ]
       },
       {
+        "id": "12c39611ca1d8c1d",
         "texto": "O plano prevê a interiorização de escritórios e serviços estaduais, com concursos públicos com vagas regionalizadas.",
         "evidencias": [
           {
@@ -181,6 +187,7 @@
         ]
       },
       {
+        "id": "64f7c48a57b1ee6e",
         "texto": "O plano estabelece orçamento regionalizado, com plano plurianual e recursos destinados por região.",
         "evidencias": [
           {
@@ -196,6 +203,7 @@
         ]
       },
       {
+        "id": "9f59da03d52ac004",
         "texto": "Na saúde, o plano propõe regionalização da rede hospitalar e telemedicina para reduzir deslocamentos do interior à capital.",
         "evidencias": [
           {

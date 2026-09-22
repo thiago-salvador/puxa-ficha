@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -492,6 +492,7 @@
     "texto": "O Plano Estratégico de Governo 2027–2030, denominado Projeto NOVO Tocantins, organiza o diagnóstico dos principais problemas do Estado e estabelece prioridades para as áreas essenciais. O modelo de governo prevê a instituição de um núcleo central de governança responsável por acompanhar as prioridades do governo e integrar secretarias. Na administração estadual, o plano propõe uma reforma administrativa com redução e reorganização das secretarias. Na saúde, o plano propõe fortalecer os hospitais regionais para ampliar a capacidade de média e alta complexidade. Na segurança pública, o plano prevê a expansão dos efetivos de forma responsável. Na educação, o governo estabelecerá metas de alfabetização na idade adequada e programas de recomposição para estudantes com defasagem. No desenvolvimento econômico, o plano propõe agregar valor à produção agropecuária por meio da industrialização. Na infraestrutura, o plano prevê um programa permanente de conservação rodoviária.",
     "frases": [
       {
+        "id": "fd0707830a8af8ef",
         "texto": "O Plano Estratégico de Governo 2027–2030, denominado Projeto NOVO Tocantins, organiza o diagnóstico dos principais problemas do Estado e estabelece prioridades para as áreas essenciais.",
         "evidencias": [
           {
@@ -502,6 +503,7 @@
         ]
       },
       {
+        "id": "b14961d86f97d17e",
         "texto": "O modelo de governo prevê a instituição de um núcleo central de governança responsável por acompanhar as prioridades do governo e integrar secretarias.",
         "evidencias": [
           {
@@ -512,6 +514,7 @@
         ]
       },
       {
+        "id": "ac3e9bea2a4f9af3",
         "texto": "Na administração estadual, o plano propõe uma reforma administrativa com redução e reorganização das secretarias.",
         "evidencias": [
           {
@@ -522,6 +525,7 @@
         ]
       },
       {
+        "id": "8e340c04cc583edd",
         "texto": "Na saúde, o plano propõe fortalecer os hospitais regionais para ampliar a capacidade de média e alta complexidade.",
         "evidencias": [
           {
@@ -532,6 +536,7 @@
         ]
       },
       {
+        "id": "a2b7284079cad798",
         "texto": "Na segurança pública, o plano prevê a expansão dos efetivos de forma responsável.",
         "evidencias": [
           {
@@ -542,6 +547,7 @@
         ]
       },
       {
+        "id": "808857869cd90097",
         "texto": "Na educação, o governo estabelecerá metas de alfabetização na idade adequada e programas de recomposição para estudantes com defasagem.",
         "evidencias": [
           {
@@ -552,6 +558,7 @@
         ]
       },
       {
+        "id": "c4cc166440efd7ed",
         "texto": "No desenvolvimento econômico, o plano propõe agregar valor à produção agropecuária por meio da industrialização.",
         "evidencias": [
           {
@@ -562,6 +569,7 @@
         ]
       },
       {
+        "id": "30a990b66a187650",
         "texto": "Na infraestrutura, o plano prevê um programa permanente de conservação rodoviária.",
         "evidencias": [
           {

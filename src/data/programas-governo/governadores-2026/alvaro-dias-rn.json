@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1360,6 +1360,7 @@
     "texto": "O programa propõe implantar o Programa RN Saúde 2030, com governança da saúde orientada por resultados. O programa propõe modernizar, integrar e ampliar o Sistema Estadual de Regulação, unificando o gerenciamento de consultas, exames, cirurgias eletivas, internações, leitos hospitalares e transporte sanitário. Na assistência à saúde, o programa propõe fortalecer a regionalização da assistência à saúde, reorganizando a rede hospitalar estadual e ampliando a oferta de serviços especializados nas regiões de saúde. O programa propõe garantir a alfabetização de todas as crianças na idade certa. O programa propõe elaborar e implementar o Plano Estadual de Mobilidade Regional. O programa propõe elaborar e implementar o Plano Estadual de Segurança Hídrica — RN Água Segura 2035. O programa prevê definir medidas para controlar despesas, eliminar desperdícios e melhorar a arrecadação sem aumentar impostos, além de recuperar gradualmente a capacidade de investimento do Estado.",
     "frases": [
       {
+        "id": "f1935b4e0a8373f2",
         "texto": "O programa propõe implantar o Programa RN Saúde 2030, com governança da saúde orientada por resultados.",
         "evidencias": [
           {
@@ -1370,6 +1371,7 @@
         ]
       },
       {
+        "id": "6122da7d4257c3c0",
         "texto": "O programa propõe modernizar, integrar e ampliar o Sistema Estadual de Regulação, unificando o gerenciamento de consultas, exames, cirurgias eletivas, internações, leitos hospitalares e transporte sanitário.",
         "evidencias": [
           {
@@ -1380,6 +1382,7 @@
         ]
       },
       {
+        "id": "cce37f66d18c2968",
         "texto": "Na assistência à saúde, o programa propõe fortalecer a regionalização da assistência à saúde, reorganizando a rede hospitalar estadual e ampliando a oferta de serviços especializados nas regiões de saúde.",
         "evidencias": [
           {
@@ -1390,6 +1393,7 @@
         ]
       },
       {
+        "id": "309b2ad4894a1eb3",
         "texto": "O programa propõe garantir a alfabetização de todas as crianças na idade certa.",
         "evidencias": [
           {
@@ -1400,6 +1404,7 @@
         ]
       },
       {
+        "id": "a832ed172a8223a0",
         "texto": "O programa propõe elaborar e implementar o Plano Estadual de Mobilidade Regional.",
         "evidencias": [
           {
@@ -1410,6 +1415,7 @@
         ]
       },
       {
+        "id": "ef3a087e961f018b",
         "texto": "O programa propõe elaborar e implementar o Plano Estadual de Segurança Hídrica — RN Água Segura 2035.",
         "evidencias": [
           {
@@ -1420,6 +1426,7 @@
         ]
       },
       {
+        "id": "29ed3592cda22047",
         "texto": "O programa prevê definir medidas para controlar despesas, eliminar desperdícios e melhorar a arrecadação sem aumentar impostos, além de recuperar gradualmente a capacidade de investimento do Estado.",
         "evidencias": [
           {

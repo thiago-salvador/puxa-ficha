@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1066,6 +1066,7 @@
     "texto": "O programa registra a proposta de Instituir o Programa Maranhão Participativo como política permanente, vinculada à participação social institucional. O documento apresenta a proposta de Implantar o Orçamento Participativo Digital para apoiar a definição das prioridades de investimento do Estado. A seção de transparência prevê Publicar em plataforma pública de dados abertos os indicadores e resultados das políticas, com linguagem clara e formatos acessíveis. O plano propõe Integrar em um único sistema estadual de evidências os observatórios e painéis propostos isoladamente por vários GTs, formando uma base comum de acompanhamento. A prestação de contas inclui Realizar prestação de contas pública e periódica dos compromissos deste plano, em audiências e conferências abertas. O documento também prevê Institucionalizar por lei os programas estruturantes, incorporando suas metas ao PPA, à LDO e à LOA.",
     "frases": [
       {
+        "id": "ea85a4a5aea9d620",
         "texto": "O programa registra a proposta de Instituir o Programa Maranhão Participativo como política permanente, vinculada à participação social institucional.",
         "evidencias": [
           {
@@ -1076,6 +1077,7 @@
         ]
       },
       {
+        "id": "784fc80f05a29a92",
         "texto": "O documento apresenta a proposta de Implantar o Orçamento Participativo Digital para apoiar a definição das prioridades de investimento do Estado.",
         "evidencias": [
           {
@@ -1086,6 +1088,7 @@
         ]
       },
       {
+        "id": "9091496d910b78c1",
         "texto": "A seção de transparência prevê Publicar em plataforma pública de dados abertos os indicadores e resultados das políticas, com linguagem clara e formatos acessíveis.",
         "evidencias": [
           {
@@ -1096,6 +1099,7 @@
         ]
       },
       {
+        "id": "039eb8102db769e2",
         "texto": "O plano propõe Integrar em um único sistema estadual de evidências os observatórios e painéis propostos isoladamente por vários GTs, formando uma base comum de acompanhamento.",
         "evidencias": [
           {
@@ -1106,6 +1110,7 @@
         ]
       },
       {
+        "id": "2ca3acd2c1a34661",
         "texto": "A prestação de contas inclui Realizar prestação de contas pública e periódica dos compromissos deste plano, em audiências e conferências abertas.",
         "evidencias": [
           {
@@ -1116,6 +1121,7 @@
         ]
       },
       {
+        "id": "2d470eb836cd2e91",
         "texto": "O documento também prevê Institucionalizar por lei os programas estruturantes, incorporando suas metas ao PPA, à LDO e à LOA.",
         "evidencias": [
           {

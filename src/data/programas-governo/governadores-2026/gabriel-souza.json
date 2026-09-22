@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -940,6 +940,7 @@
     "texto": "O plano de governo apresentado para o período de 2027 a 2030 estabelece o recorte temporal do programa. Atualmente, 96% dos 758 serviços estaduais estão digitalizados. Entre 2019 e 2025, a alíquota modal do ICMS foi reduzida de 18% para 17%. O Ensino Médio em Tempo Integral passou de 18 escolas em 2019 para 432 escolas em 2025. Em 2025, o Rio Grande do Sul registrou a menor taxa de homicídios de sua série histórica, de 9,7. O programa propõe consolidar a implementação do ProClima 2050 e do Plano de Ação Climática, PLAC-RS. O programa propõe implantar uma plataforma digital interoperável para integração, compartilhamento e gestão de dados ambientais. O programa informa que os planos municipais de contingência estão presentes nos 497 municípios.",
     "frases": [
       {
+        "id": "0cdf8d7b78041efc",
         "texto": "O plano de governo apresentado para o período de 2027 a 2030 estabelece o recorte temporal do programa.",
         "evidencias": [
           {
@@ -950,6 +951,7 @@
         ]
       },
       {
+        "id": "c00f152e8368eb70",
         "texto": "Atualmente, 96% dos 758 serviços estaduais estão digitalizados.",
         "evidencias": [
           {
@@ -960,6 +962,7 @@
         ]
       },
       {
+        "id": "0a4b1fc741b9a4cc",
         "texto": "Entre 2019 e 2025, a alíquota modal do ICMS foi reduzida de 18% para 17%.",
         "evidencias": [
           {
@@ -970,6 +973,7 @@
         ]
       },
       {
+        "id": "f52b8700b80d85fa",
         "texto": "O Ensino Médio em Tempo Integral passou de 18 escolas em 2019 para 432 escolas em 2025.",
         "evidencias": [
           {
@@ -980,6 +984,7 @@
         ]
       },
       {
+        "id": "75cca94997593962",
         "texto": "Em 2025, o Rio Grande do Sul registrou a menor taxa de homicídios de sua série histórica, de 9,7.",
         "evidencias": [
           {
@@ -990,6 +995,7 @@
         ]
       },
       {
+        "id": "e3e6ff73c124bd56",
         "texto": "O programa propõe consolidar a implementação do ProClima 2050 e do Plano de Ação Climática, PLAC-RS.",
         "evidencias": [
           {
@@ -1000,6 +1006,7 @@
         ]
       },
       {
+        "id": "31bf01bafcb6d9fe",
         "texto": "O programa propõe implantar uma plataforma digital interoperável para integração, compartilhamento e gestão de dados ambientais.",
         "evidencias": [
           {
@@ -1010,6 +1017,7 @@
         ]
       },
       {
+        "id": "70e18e20c5f87c00",
         "texto": "O programa informa que os planos municipais de contingência estão presentes nos 497 municípios.",
         "evidencias": [
           {

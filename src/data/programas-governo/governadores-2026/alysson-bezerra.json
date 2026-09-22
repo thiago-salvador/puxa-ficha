@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -660,6 +660,7 @@
     "texto": "A proposta prevê uma Radiografia Geral do Rio Grande do Norte como primeira medida, com levantamento da situação das contas, contratos, dívidas, previdência, folha, obras, patrimônio, hospitais, escolas, estradas, filas e capacidade de atendimento. Planeja combinar recursos estaduais com transferências federais, emendas, financiamentos, consórcios, concessões e parcerias, considerando custo, risco, benefício público e capacidade de manutenção. Propõe criar uma secretaria dedicada a estruturar a captação de recursos federais e multilaterais, desenvolver projetos estratégicos e acelerar investimentos, obras e ações. Prevê preparar áreas, energia renovável, transmissão, fibra óptica e licenciamento coordenado para atrair data centers, computação em nuvem e inteligência artificial. Estabelece programa estadual permanente para reduzir o tempo de espera por consultas, exames e cirurgias. Propõe bolsa mensal para estudantes de baixa renda da rede estadual, vinculada à matrícula, frequência, bom comportamento, vacinação e permanência. Planeja integrar Polícia Militar, Polícia Civil, Polícia Científica, Corpo de Bombeiros, Polícia Penal, Guardas Municipais, forças de segurança nacional e demais órgãos em planejamento permanente.",
     "frases": [
       {
+        "id": "d44972d80619792d",
         "texto": "A proposta prevê uma Radiografia Geral do Rio Grande do Norte como primeira medida, com levantamento da situação das contas, contratos, dívidas, previdência, folha, obras, patrimônio, hospitais, escolas, estradas, filas e capacidade de atendimento.",
         "evidencias": [
           {
@@ -670,6 +671,7 @@
         ]
       },
       {
+        "id": "a48f1a25a52fcdab",
         "texto": "Planeja combinar recursos estaduais com transferências federais, emendas, financiamentos, consórcios, concessões e parcerias, considerando custo, risco, benefício público e capacidade de manutenção.",
         "evidencias": [
           {
@@ -680,6 +682,7 @@
         ]
       },
       {
+        "id": "dee562efb67b0ce5",
         "texto": "Propõe criar uma secretaria dedicada a estruturar a captação de recursos federais e multilaterais, desenvolver projetos estratégicos e acelerar investimentos, obras e ações.",
         "evidencias": [
           {
@@ -690,6 +693,7 @@
         ]
       },
       {
+        "id": "d7160e5c9014af66",
         "texto": "Prevê preparar áreas, energia renovável, transmissão, fibra óptica e licenciamento coordenado para atrair data centers, computação em nuvem e inteligência artificial.",
         "evidencias": [
           {
@@ -700,6 +704,7 @@
         ]
       },
       {
+        "id": "98711e7a8752c754",
         "texto": "Estabelece programa estadual permanente para reduzir o tempo de espera por consultas, exames e cirurgias.",
         "evidencias": [
           {
@@ -710,6 +715,7 @@
         ]
       },
       {
+        "id": "56618afd9e99316d",
         "texto": "Propõe bolsa mensal para estudantes de baixa renda da rede estadual, vinculada à matrícula, frequência, bom comportamento, vacinação e permanência.",
         "evidencias": [
           {
@@ -720,6 +726,7 @@
         ]
       },
       {
+        "id": "dda462c053325625",
         "texto": "Planeja integrar Polícia Militar, Polícia Civil, Polícia Científica, Corpo de Bombeiros, Polícia Penal, Guardas Municipais, forças de segurança nacional e demais órgãos em planejamento permanente.",
         "evidencias": [
           {

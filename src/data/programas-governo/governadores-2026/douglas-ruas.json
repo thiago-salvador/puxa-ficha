@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -758,6 +758,7 @@
     "texto": "O plano prevê uma central estadual unificada de regulação digital, com prontuário eletrônico único aberto aos municípios. O plano prevê polos regionais de alta complexidade para diagnóstico, intervenções terapêuticas, orientação e capacitação às famílias. O plano prevê alfabetização na idade certa em regime de colaboração com os municípios, com apoio técnico, avaliação da leitura, capacitação de professores e gestores. O plano prevê escritórios regionais de desenvolvimento, um em cada uma das 8 regiões do estado, para apoiar prefeituras na formulação de projetos. O plano prevê a revisão e modernização da bilhetagem única estadual, com integração progressiva entre metrô, trem, barcas, BRT e ônibus intermunicipais. O plano prevê o monitoramento de encostas e áreas vulneráveis, com uso de tecnologia, fiscalização em parceria com os municípios e apoio técnico às prefeituras.",
     "frases": [
       {
+        "id": "abe04c67b9ffd969",
         "texto": "O plano prevê uma central estadual unificada de regulação digital, com prontuário eletrônico único aberto aos municípios.",
         "evidencias": [
           {
@@ -768,6 +769,7 @@
         ]
       },
       {
+        "id": "12e0b2d2ee7d7094",
         "texto": "O plano prevê polos regionais de alta complexidade para diagnóstico, intervenções terapêuticas, orientação e capacitação às famílias.",
         "evidencias": [
           {
@@ -778,6 +780,7 @@
         ]
       },
       {
+        "id": "e874d66299bab766",
         "texto": "O plano prevê alfabetização na idade certa em regime de colaboração com os municípios, com apoio técnico, avaliação da leitura, capacitação de professores e gestores.",
         "evidencias": [
           {
@@ -788,6 +791,7 @@
         ]
       },
       {
+        "id": "4f939c21bdd7db85",
         "texto": "O plano prevê escritórios regionais de desenvolvimento, um em cada uma das 8 regiões do estado, para apoiar prefeituras na formulação de projetos.",
         "evidencias": [
           {
@@ -798,6 +802,7 @@
         ]
       },
       {
+        "id": "a815f16e4993c157",
         "texto": "O plano prevê a revisão e modernização da bilhetagem única estadual, com integração progressiva entre metrô, trem, barcas, BRT e ônibus intermunicipais.",
         "evidencias": [
           {
@@ -808,6 +813,7 @@
         ]
       },
       {
+        "id": "b4fffc993995a391",
         "texto": "O plano prevê o monitoramento de encostas e áreas vulneráveis, com uso de tecnologia, fiscalização em parceria com os municípios e apoio técnico às prefeituras.",
         "evidencias": [
           {

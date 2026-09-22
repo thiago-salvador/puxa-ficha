@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "Na área salarial, o programa prevê reposição integral das perdas salariais dos trabalhadores, apresentada como medida de recomposição dos vencimentos. Na política de remuneração, propõe escala móvel dos salários, acionada quando o custo de vida do trabalhador subir 3%. Na jornada, propõe limite de 7 horas diárias, distribuídas em cinco dias por semana, totalizando 35 horas semanais. Para trabalhadores demitidos, prevê salário-desemprego equivalente ao último salário recebido, segundo a formulação apresentada no documento. Sobre empresas privatizadas, propõe o cancelamento de todas as privatizações realizadas, conforme o item dedicado à economia nacional. Na habitação, propõe plano nacional para construir moradias populares, sob controle dos trabalhadores, como medida de acesso habitacional. No ensino superior, propõe livre ingresso nas universidades por meio do fim dos vestibulares, conforme o eixo educacional. Na conectividade, prevê internet gratuita para toda a população, dentro do conjunto de propostas sobre comunicação.",
     "frases": [
       {
+        "id": "0578863f79f550ae",
         "texto": "Na área salarial, o programa prevê reposição integral das perdas salariais dos trabalhadores, apresentada como medida de recomposição dos vencimentos.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "5f9ab656102ad88f",
         "texto": "Na política de remuneração, propõe escala móvel dos salários, acionada quando o custo de vida do trabalhador subir 3%.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "589142dcde8fa9fa",
         "texto": "Na jornada, propõe limite de 7 horas diárias, distribuídas em cinco dias por semana, totalizando 35 horas semanais.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "a0086c62708598d8",
         "texto": "Para trabalhadores demitidos, prevê salário-desemprego equivalente ao último salário recebido, segundo a formulação apresentada no documento.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "aac1b39276fef439",
         "texto": "Sobre empresas privatizadas, propõe o cancelamento de todas as privatizações realizadas, conforme o item dedicado à economia nacional.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "4e0d72c56b168bb4",
         "texto": "Na habitação, propõe plano nacional para construir moradias populares, sob controle dos trabalhadores, como medida de acesso habitacional.",
         "evidencias": [
           {
@@ -202,6 +208,7 @@
         ]
       },
       {
+        "id": "380bac35ba08ad6e",
         "texto": "No ensino superior, propõe livre ingresso nas universidades por meio do fim dos vestibulares, conforme o eixo educacional.",
         "evidencias": [
           {
@@ -212,6 +219,7 @@
         ]
       },
       {
+        "id": "e18b6e9020a2600f",
         "texto": "Na conectividade, prevê internet gratuita para toda a população, dentro do conjunto de propostas sobre comunicação.",
         "evidencias": [
           {

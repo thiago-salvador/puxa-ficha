@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -660,6 +660,7 @@
     "texto": "O próximo mandato organiza a agenda de governo em quatro dimensões estratégicas complementares. Implantar o LABSEJUSP, para ampliar e modernizar o uso de inteligência, tecnologia e análise de dados na prevenção e repressão ao crime. Integrar políticas de assistência social, qualificação profissional e inclusão produtiva, ampliando oportunidades de encaminhamento para o emprego aos beneficiários de programas sociais. Fortalecer os hospitais de média complexidade como elemento estruturante da assistência regional. Consolidar programa permanente de modernização da infraestrutura das escolas estaduais. Aplicar recursos via FUNDECT em editais de pesquisa específicos voltados para os desafios do estado, buscando a aproximação entre universidades, centros de pesquisa e setor produtivo. Expandir soluções regionalizadas para gestão de resíduos sólidos, consolidando a atuação da MSB. Consolidar identidade digital única e segura do cidadão para acesso a todos os serviços estaduais.",
     "frases": [
       {
+        "id": "10c912b7286df1fc",
         "texto": "O próximo mandato organiza a agenda de governo em quatro dimensões estratégicas complementares.",
         "evidencias": [
           {
@@ -670,6 +671,7 @@
         ]
       },
       {
+        "id": "25842392854cfc8e",
         "texto": "Implantar o LABSEJUSP, para ampliar e modernizar o uso de inteligência, tecnologia e análise de dados na prevenção e repressão ao crime.",
         "evidencias": [
           {
@@ -680,6 +682,7 @@
         ]
       },
       {
+        "id": "8363b3535370e227",
         "texto": "Integrar políticas de assistência social, qualificação profissional e inclusão produtiva, ampliando oportunidades de encaminhamento para o emprego aos beneficiários de programas sociais.",
         "evidencias": [
           {
@@ -690,6 +693,7 @@
         ]
       },
       {
+        "id": "6f9675068e609afa",
         "texto": "Fortalecer os hospitais de média complexidade como elemento estruturante da assistência regional.",
         "evidencias": [
           {
@@ -700,6 +704,7 @@
         ]
       },
       {
+        "id": "aced034e016d564e",
         "texto": "Consolidar programa permanente de modernização da infraestrutura das escolas estaduais.",
         "evidencias": [
           {
@@ -710,6 +715,7 @@
         ]
       },
       {
+        "id": "efdcf59f5b760211",
         "texto": "Aplicar recursos via FUNDECT em editais de pesquisa específicos voltados para os desafios do estado, buscando a aproximação entre universidades, centros de pesquisa e setor produtivo.",
         "evidencias": [
           {
@@ -720,6 +726,7 @@
         ]
       },
       {
+        "id": "07be1c65519aeb5f",
         "texto": "Expandir soluções regionalizadas para gestão de resíduos sólidos, consolidando a atuação da MSB.",
         "evidencias": [
           {
@@ -730,6 +737,7 @@
         ]
       },
       {
+        "id": "1f2bf4ddae032400",
         "texto": "Consolidar identidade digital única e segura do cidadão para acesso a todos os serviços estaduais.",
         "evidencias": [
           {

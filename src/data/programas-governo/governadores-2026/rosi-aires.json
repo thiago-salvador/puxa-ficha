@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -212,6 +212,7 @@
     "texto": "Na educação, o programa prevê a eleição direta para diretores das escolas estaduais, em cumprimento à LDB. O programa propõe a criação de novos campi da UERR no interior do Estado. Na saúde pública, o programa planeja criar policlínicas regionais no sul do estado para reduzir deslocamentos. O programa prevê um painel público de filas para consultas, exames e cirurgias. Na política ambiental, o programa propõe fortalecer a fiscalização ambiental, com monitoramento por satélite e combate ao garimpo ilegal. Para a população migrante, o programa prevê criar um Centro Estadual de Referência para Migrantes e Refugiados, com orientação jurídica, regularização documental e encaminhamento para serviços públicos. O programa também prevê instituir um Conselho Estadual de Direitos dos Migrantes, Refugiados e Apátridas, com participação da sociedade civil.",
     "frases": [
       {
+        "id": "bfbb74d1a099761d",
         "texto": "Na educação, o programa prevê a eleição direta para diretores das escolas estaduais, em cumprimento à LDB.",
         "evidencias": [
           {
@@ -222,6 +223,7 @@
         ]
       },
       {
+        "id": "3bbeb09b1d454cea",
         "texto": "O programa propõe a criação de novos campi da UERR no interior do Estado.",
         "evidencias": [
           {
@@ -232,6 +234,7 @@
         ]
       },
       {
+        "id": "08a07fa4d0a4d4df",
         "texto": "Na saúde pública, o programa planeja criar policlínicas regionais no sul do estado para reduzir deslocamentos.",
         "evidencias": [
           {
@@ -242,6 +245,7 @@
         ]
       },
       {
+        "id": "f7cc639628ca511d",
         "texto": "O programa prevê um painel público de filas para consultas, exames e cirurgias.",
         "evidencias": [
           {
@@ -252,6 +256,7 @@
         ]
       },
       {
+        "id": "4b633ae861767238",
         "texto": "Na política ambiental, o programa propõe fortalecer a fiscalização ambiental, com monitoramento por satélite e combate ao garimpo ilegal.",
         "evidencias": [
           {
@@ -262,6 +267,7 @@
         ]
       },
       {
+        "id": "ff01608eb5043926",
         "texto": "Para a população migrante, o programa prevê criar um Centro Estadual de Referência para Migrantes e Refugiados, com orientação jurídica, regularização documental e encaminhamento para serviços públicos.",
         "evidencias": [
           {
@@ -272,6 +278,7 @@
         ]
       },
       {
+        "id": "29c53ef7767127e0",
         "texto": "O programa também prevê instituir um Conselho Estadual de Direitos dos Migrantes, Refugiados e Apátridas, com participação da sociedade civil.",
         "evidencias": [
           {

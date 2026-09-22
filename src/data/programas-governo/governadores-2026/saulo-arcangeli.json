@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -4104,6 +4104,7 @@
     "texto": "O programa prevê o fim da escala 6×1, com redução da jornada de trabalho sem redução salarial e sem retirada de direitos. Também propõe garantir uma renda mínima no estado para trabalhadores desempregados, pessoas sem renda e famílias em situação de vulnerabilidade. Na área ambiental, propõe proibir a pulverização aérea, por drones e aviões, em todo o território maranhense. Para o saneamento, reafirma o compromisso com uma CAEMA pública e 100% estatal. Na educação, propõe destinar 10% do orçamento estadual ao setor. Na habitação, estima que o Maranhão possui déficit habitacional em torno de 372 mil moradias. No transporte, propõe implantar tarifa zero em todo o sistema de transporte coletivo urbano e metropolitano sob responsabilidade do Estado. Na assistência social, propõe realizar concursos públicos para recompor as equipes de referência do SUAS.",
     "frases": [
       {
+        "id": "34e7e14871967519",
         "texto": "O programa prevê o fim da escala 6×1, com redução da jornada de trabalho sem redução salarial e sem retirada de direitos.",
         "evidencias": [
           {
@@ -4114,6 +4115,7 @@
         ]
       },
       {
+        "id": "42bac6dae4394d49",
         "texto": "Também propõe garantir uma renda mínima no estado para trabalhadores desempregados, pessoas sem renda e famílias em situação de vulnerabilidade.",
         "evidencias": [
           {
@@ -4124,6 +4126,7 @@
         ]
       },
       {
+        "id": "9de85af7d5d83868",
         "texto": "Na área ambiental, propõe proibir a pulverização aérea, por drones e aviões, em todo o território maranhense.",
         "evidencias": [
           {
@@ -4134,6 +4137,7 @@
         ]
       },
       {
+        "id": "66fb5e33c7e5ed36",
         "texto": "Para o saneamento, reafirma o compromisso com uma CAEMA pública e 100% estatal.",
         "evidencias": [
           {
@@ -4144,6 +4148,7 @@
         ]
       },
       {
+        "id": "ae5cebc856548d2a",
         "texto": "Na educação, propõe destinar 10% do orçamento estadual ao setor.",
         "evidencias": [
           {
@@ -4154,6 +4159,7 @@
         ]
       },
       {
+        "id": "621b7e24eceabec7",
         "texto": "Na habitação, estima que o Maranhão possui déficit habitacional em torno de 372 mil moradias.",
         "evidencias": [
           {
@@ -4164,6 +4170,7 @@
         ]
       },
       {
+        "id": "e42df08da7d93aca",
         "texto": "No transporte, propõe implantar tarifa zero em todo o sistema de transporte coletivo urbano e metropolitano sob responsabilidade do Estado.",
         "evidencias": [
           {
@@ -4174,6 +4181,7 @@
         ]
       },
       {
+        "id": "b0d202afaad4c5f7",
         "texto": "Na assistência social, propõe realizar concursos públicos para recompor as equipes de referência do SUAS.",
         "evidencias": [
           {

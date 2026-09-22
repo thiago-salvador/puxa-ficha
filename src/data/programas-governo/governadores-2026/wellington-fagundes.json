@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -842,6 +842,7 @@
     "texto": "O programa prevê a participação direta da população na formulação do orçamento do Estado. Propõe disponibilizar a prestação de serviços públicos por meio digital, aplicativos ou videochamadas. Planeja instituir política estadual permanente de proteção à gestante, ao puerpério e à primeira infância. Propõe incluir conteúdos de tecnologia, robótica, inteligência artificial e pensamento computacional na educação básica. Prevê ampliar a pavimentação de rodovias estaduais prioritárias, com o objetivo de reduzir o custo do transporte da produção. Planeja instituir programa permanente de fomento à pesquisa aplicada, à inovação e à transferência de tecnologia. Propõe migrar o sistema estadual de licenciamento de modelo cartorário para modelo baseado em gestão por risco, digitalização integral dos processos, trilhas diferenciadas por nível de impacto e análise automatizada de dados geoespaciais.",
     "frases": [
       {
+        "id": "017e30057e9eb74e",
         "texto": "O programa prevê a participação direta da população na formulação do orçamento do Estado.",
         "evidencias": [
           {
@@ -852,6 +853,7 @@
         ]
       },
       {
+        "id": "c2d92edfef9ec9ae",
         "texto": "Propõe disponibilizar a prestação de serviços públicos por meio digital, aplicativos ou videochamadas.",
         "evidencias": [
           {
@@ -862,6 +864,7 @@
         ]
       },
       {
+        "id": "3d1ea57e49d5963f",
         "texto": "Planeja instituir política estadual permanente de proteção à gestante, ao puerpério e à primeira infância.",
         "evidencias": [
           {
@@ -872,6 +875,7 @@
         ]
       },
       {
+        "id": "f0b2deee3ba089ed",
         "texto": "Propõe incluir conteúdos de tecnologia, robótica, inteligência artificial e pensamento computacional na educação básica.",
         "evidencias": [
           {
@@ -882,6 +886,7 @@
         ]
       },
       {
+        "id": "0fa044e9aaa051b5",
         "texto": "Prevê ampliar a pavimentação de rodovias estaduais prioritárias, com o objetivo de reduzir o custo do transporte da produção.",
         "evidencias": [
           {
@@ -892,6 +897,7 @@
         ]
       },
       {
+        "id": "71f9a60143b85224",
         "texto": "Planeja instituir programa permanente de fomento à pesquisa aplicada, à inovação e à transferência de tecnologia.",
         "evidencias": [
           {
@@ -902,6 +908,7 @@
         ]
       },
       {
+        "id": "2067b4ae550dfad8",
         "texto": "Propõe migrar o sistema estadual de licenciamento de modelo cartorário para modelo baseado em gestão por risco, digitalização integral dos processos, trilhas diferenciadas por nível de impacto e análise automatizada de dados geoespaciais.",
         "evidencias": [
           {

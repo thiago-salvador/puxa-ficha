@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -156,6 +156,7 @@
     "texto": "O programa prevê reduzir a violência no estado por meio de um novo modelo de patrulhamento territorial e do treinamento dos policiais. O programa propõe estancar o crescimento territorial do crime organizado em todo o estado por meio de investigações que rastreiem o caminho do dinheiro desses grupos. Na saúde, prevê recuperar os serviços públicos estaduais, ampliando o atendimento nas regiões distantes da capital e assegurando o fornecimento de remédios em todo o estado. Na educação, prevê expandir o ensino médio profissionalizante em tempo integral em todo o estado, de acordo com as vocações econômicas de cada região. No transporte, propõe investir na melhoria do transporte metropolitano e intermunicipal, expandindo o BRT para mais cidades. Na gestão fiscal, prevê colocar as contas públicas em ordem, reequilibrar as finanças e estabelecer metas claras com prestação de contas e transparência em cada área do governo.",
     "frases": [
       {
+        "id": "77a0fae5a45d6124",
         "texto": "O programa prevê reduzir a violência no estado por meio de um novo modelo de patrulhamento territorial e do treinamento dos policiais.",
         "evidencias": [
           {
@@ -166,6 +167,7 @@
         ]
       },
       {
+        "id": "0e7805b8d48784d1",
         "texto": "O programa propõe estancar o crescimento territorial do crime organizado em todo o estado por meio de investigações que rastreiem o caminho do dinheiro desses grupos.",
         "evidencias": [
           {
@@ -176,6 +178,7 @@
         ]
       },
       {
+        "id": "5154ecabab1711d6",
         "texto": "Na saúde, prevê recuperar os serviços públicos estaduais, ampliando o atendimento nas regiões distantes da capital e assegurando o fornecimento de remédios em todo o estado.",
         "evidencias": [
           {
@@ -186,6 +189,7 @@
         ]
       },
       {
+        "id": "067104e68c096398",
         "texto": "Na educação, prevê expandir o ensino médio profissionalizante em tempo integral em todo o estado, de acordo com as vocações econômicas de cada região.",
         "evidencias": [
           {
@@ -196,6 +200,7 @@
         ]
       },
       {
+        "id": "c20d52d22f283545",
         "texto": "No transporte, propõe investir na melhoria do transporte metropolitano e intermunicipal, expandindo o BRT para mais cidades.",
         "evidencias": [
           {
@@ -206,6 +211,7 @@
         ]
       },
       {
+        "id": "edbf80711fa0a47e",
         "texto": "Na gestão fiscal, prevê colocar as contas públicas em ordem, reequilibrar as finanças e estabelecer metas claras com prestação de contas e transparência em cada área do governo.",
         "evidencias": [
           {

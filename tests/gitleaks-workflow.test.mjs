@@ -198,8 +198,8 @@ test("allowlists require exact public values and exact paths", () => {
 
   assert.doesNotMatch(config, /^\[allowlist\]$/m)
   assert.doesNotMatch(config, /regexTarget\s*=\s*"line"/)
-  assert.equal((config.match(/condition\s*=\s*"AND"/g) ?? []).length, 8)
-  assert.equal((config.match(/regexTarget\s*=\s*"secret"/g) ?? []).length, 8)
+  assert.equal((config.match(/condition\s*=\s*"AND"/g) ?? []).length, 10)
+  assert.equal((config.match(/regexTarget\s*=\s*"secret"/g) ?? []).length, 10)
   assert.match(config, /id\s*=\s*"generic-api-key"/)
 })
 

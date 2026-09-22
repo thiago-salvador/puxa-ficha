@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "O programa prevê a redução da jornada de trabalho para o regime geral de 30 horas semanais no funcionalismo público estadual, sem redução salarial. O programa propõe a realização de concurso público para preencher vagas do funcionalismo público estadual. O programa planeja frentes estaduais de trabalho focadas em infraestrutura social para garantir emprego a jovens adultos paraibanos. O programa propõe a criação do Banco Estadual da Paraíba sob controle popular para combater juros abusivos. O programa prevê uma empresa pública de transporte coletivo intermunicipal ligando as microrregiões do estado. O programa propõe a desapropriação de latifúndios improdutivos para a reforma agrária popular. O programa prevê hospitais regionais como parte da descentralização da estrutura de saúde. O programa propõe a criação de uma Empresa Pública de Produção Cultural utilizando a estrutura da EPC.",
     "frases": [
       {
+        "id": "36d3ba62ac357314",
         "texto": "O programa prevê a redução da jornada de trabalho para o regime geral de 30 horas semanais no funcionalismo público estadual, sem redução salarial.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "b49c837285b17c53",
         "texto": "O programa propõe a realização de concurso público para preencher vagas do funcionalismo público estadual.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "d956f9334a433112",
         "texto": "O programa planeja frentes estaduais de trabalho focadas em infraestrutura social para garantir emprego a jovens adultos paraibanos.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "ac33acef0e54425e",
         "texto": "O programa propõe a criação do Banco Estadual da Paraíba sob controle popular para combater juros abusivos.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "8798cf21be073476",
         "texto": "O programa prevê uma empresa pública de transporte coletivo intermunicipal ligando as microrregiões do estado.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "b39296bb78e70a85",
         "texto": "O programa propõe a desapropriação de latifúndios improdutivos para a reforma agrária popular.",
         "evidencias": [
           {
@@ -202,6 +208,7 @@
         ]
       },
       {
+        "id": "33e7625ed6b804c4",
         "texto": "O programa prevê hospitais regionais como parte da descentralização da estrutura de saúde.",
         "evidencias": [
           {
@@ -212,6 +219,7 @@
         ]
       },
       {
+        "id": "da81df184fb609fe",
         "texto": "O programa propõe a criação de uma Empresa Pública de Produção Cultural utilizando a estrutura da EPC.",
         "evidencias": [
           {

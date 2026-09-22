@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -114,6 +114,7 @@
     "texto": "Fortalecer a atenção primária como porta de entrada do sistema e principal instrumento de promoção da saúde e prevenção de doenças, em articulação com os municípios. Utilizar a tecnologia como principal vetor de ampliação do acesso, com ênfase em telessaúde, diagnóstico remoto e integração dos sistemas de informação em saúde. Aprofundar a educação profissional e tecnológica, alinhando a oferta às vocações produtivas de cada região do estado. Priorizar o controle dos fluxos ilícitos nas divisas do estado, por meio de policiamento, monitoramento e integração de bases de dados com as demais unidades da federação e com a União. Priorizar a primeira infância, articulando segurança alimentar, acolhimento à gestante e cuidados iniciais com o recém-nascido. Fortalecer os instrumentos de rastreabilidade e certificação da produção, como condição de acesso aos mercados mais exigentes. Avançar na universalização do saneamento e na destinação adequada dos resíduos sólidos urbanos, mediante arranjos regionais e parcerias.",
     "frases": [
       {
+        "id": "ae2931c8aca17a42",
         "texto": "Fortalecer a atenção primária como porta de entrada do sistema e principal instrumento de promoção da saúde e prevenção de doenças, em articulação com os municípios.",
         "evidencias": [
           {
@@ -124,6 +125,7 @@
         ]
       },
       {
+        "id": "5e5ec3dae993150f",
         "texto": "Utilizar a tecnologia como principal vetor de ampliação do acesso, com ênfase em telessaúde, diagnóstico remoto e integração dos sistemas de informação em saúde.",
         "evidencias": [
           {
@@ -134,6 +136,7 @@
         ]
       },
       {
+        "id": "bc68178cc40d5e42",
         "texto": "Aprofundar a educação profissional e tecnológica, alinhando a oferta às vocações produtivas de cada região do estado.",
         "evidencias": [
           {
@@ -144,6 +147,7 @@
         ]
       },
       {
+        "id": "20a88c826e8959b2",
         "texto": "Priorizar o controle dos fluxos ilícitos nas divisas do estado, por meio de policiamento, monitoramento e integração de bases de dados com as demais unidades da federação e com a União.",
         "evidencias": [
           {
@@ -154,6 +158,7 @@
         ]
       },
       {
+        "id": "14b3fcbd489a46cc",
         "texto": "Priorizar a primeira infância, articulando segurança alimentar, acolhimento à gestante e cuidados iniciais com o recém-nascido.",
         "evidencias": [
           {
@@ -164,6 +169,7 @@
         ]
       },
       {
+        "id": "db9872ec671c3bc6",
         "texto": "Fortalecer os instrumentos de rastreabilidade e certificação da produção, como condição de acesso aos mercados mais exigentes.",
         "evidencias": [
           {
@@ -174,6 +180,7 @@
         ]
       },
       {
+        "id": "06d9dafba251e722",
         "texto": "Avançar na universalização do saneamento e na destinação adequada dos resíduos sólidos urbanos, mediante arranjos regionais e parcerias.",
         "evidencias": [
           {

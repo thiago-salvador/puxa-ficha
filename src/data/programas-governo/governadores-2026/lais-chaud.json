@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -366,6 +366,7 @@
     "texto": "O programa prevê elaborar o PPA, a LDO e a LOA com participação popular, ampliando os mecanismos de orçamento participativo e garantindo transparência sobre a execução dos recursos públicos. Propõe fortalecer a agricultura familiar e os pequenos produtores rurais, ampliando crédito de baixo custo, assistência técnica, seguro rural, infraestrutura e programas de comercialização. Planeja ampliar os investimentos públicos em saneamento, estabelecendo um plano estadual para universalizar o abastecimento de água, a coleta e o tratamento de esgoto. Propõe fortalecer a atenção básica e ampliar as equipes de Saúde da Família, garantindo acompanhamento contínuo de pessoas com hipertensão, diabetes e outras doenças crônicas. Prevê criar um Plano Estadual de Acessibilidade, com metas para adaptação de escolas, unidades de saúde, prédios públicos, espaços culturais, esportivos e demais equipamentos públicos. Propõe ampliar e interiorizar as Delegacias Especializadas de Atendimento à Mulher, garantindo atendimento especializado 24 horas por dia, 7 dias por semana, em todas as regiões do estado.",
     "frases": [
       {
+        "id": "298bc0027203c44b",
         "texto": "O programa prevê elaborar o PPA, a LDO e a LOA com participação popular, ampliando os mecanismos de orçamento participativo e garantindo transparência sobre a execução dos recursos públicos.",
         "evidencias": [
           {
@@ -376,6 +377,7 @@
         ]
       },
       {
+        "id": "ceb2bcc914deb412",
         "texto": "Propõe fortalecer a agricultura familiar e os pequenos produtores rurais, ampliando crédito de baixo custo, assistência técnica, seguro rural, infraestrutura e programas de comercialização.",
         "evidencias": [
           {
@@ -386,6 +388,7 @@
         ]
       },
       {
+        "id": "bccfd4cff8c5e2a4",
         "texto": "Planeja ampliar os investimentos públicos em saneamento, estabelecendo um plano estadual para universalizar o abastecimento de água, a coleta e o tratamento de esgoto.",
         "evidencias": [
           {
@@ -396,6 +399,7 @@
         ]
       },
       {
+        "id": "bc2cf5faab6dbb0a",
         "texto": "Propõe fortalecer a atenção básica e ampliar as equipes de Saúde da Família, garantindo acompanhamento contínuo de pessoas com hipertensão, diabetes e outras doenças crônicas.",
         "evidencias": [
           {
@@ -406,6 +410,7 @@
         ]
       },
       {
+        "id": "d56b700721289847",
         "texto": "Prevê criar um Plano Estadual de Acessibilidade, com metas para adaptação de escolas, unidades de saúde, prédios públicos, espaços culturais, esportivos e demais equipamentos públicos.",
         "evidencias": [
           {
@@ -416,6 +421,7 @@
         ]
       },
       {
+        "id": "6a590d76762f3cbc",
         "texto": "Propõe ampliar e interiorizar as Delegacias Especializadas de Atendimento à Mulher, garantindo atendimento especializado 24 horas por dia, 7 dias por semana, em todas as regiões do estado.",
         "evidencias": [
           {

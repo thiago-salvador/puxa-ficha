@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "O programa propõe reajuste imediato dos salários diante da inflação, da cassação dos direitos trabalhistas e dos juros exorbitantes. O documento prevê reposição integral de 100% das perdas salariais dos trabalhadores. A proposta estabelece aumento emergencial de 50% de todos os salários. O texto prevê aumento automático dos salários toda vez que o custo de vida do trabalhador subir 3%. Na área do trabalho, o programa propõe redução da jornada para o máximo de 7 horas por dia, durante 5 dias por semana. No campo econômico, o programa prevê cancelamento de todas as privatizações realizadas, incluindo Eletrobrás, Vale, bancos e telefonia. O programa prevê mais verbas para a educação. O documento prevê um plano de emergência para construção de hospitais e postos de saúde em todo o País.",
     "frases": [
       {
+        "id": "b72801c3c22d9c2d",
         "texto": "O programa propõe reajuste imediato dos salários diante da inflação, da cassação dos direitos trabalhistas e dos juros exorbitantes.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "0bd1467e67914788",
         "texto": "O documento prevê reposição integral de 100% das perdas salariais dos trabalhadores.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "34544056c9abb596",
         "texto": "A proposta estabelece aumento emergencial de 50% de todos os salários.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "9fc15e90f84e51b9",
         "texto": "O texto prevê aumento automático dos salários toda vez que o custo de vida do trabalhador subir 3%.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "d6abe6dc94c36e8c",
         "texto": "Na área do trabalho, o programa propõe redução da jornada para o máximo de 7 horas por dia, durante 5 dias por semana.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "06664ace3b01dfd4",
         "texto": "No campo econômico, o programa prevê cancelamento de todas as privatizações realizadas, incluindo Eletrobrás, Vale, bancos e telefonia.",
         "evidencias": [
           {
@@ -202,6 +208,7 @@
         ]
       },
       {
+        "id": "22a222cb46878113",
         "texto": "O programa prevê mais verbas para a educação.",
         "evidencias": [
           {
@@ -212,6 +219,7 @@
         ]
       },
       {
+        "id": "22c82dd8c91044af",
         "texto": "O documento prevê um plano de emergência para construção de hospitais e postos de saúde em todo o País.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -338,6 +338,7 @@
     "texto": "O plano prevê a criação de um portal de transparência em tempo real para divulgar contratos, licitações e despesas com cartões corporativos. Propõe desburocratizar a abertura e o fechamento de empresas. Planeja oferecer o programa Juro Zero para iniciar negócios de micro e pequenos empreendedores. Prevê educação em tempo integral nas escolas estaduais com atividades de reforço escolar no contraturno. Propõe ampliar a telemedicina para municípios menores com consultas remotas e integração digital dos prontuários. O plano prevê o prazo máximo de 60 dias para cirurgias indicadas pelo sistema público. Prevê tecnologia de reconhecimento facial em todo o território catarinense observadas normas de proteção de dados e garantias individuais. O plano prevê elaborar a Lei de Regionalização do Saneamento em Santa Catarina.",
     "frases": [
       {
+        "id": "0a9cfb1e5788d914",
         "texto": "O plano prevê a criação de um portal de transparência em tempo real para divulgar contratos, licitações e despesas com cartões corporativos.",
         "evidencias": [
           {
@@ -348,6 +349,7 @@
         ]
       },
       {
+        "id": "fdacb8378668fbf4",
         "texto": "Propõe desburocratizar a abertura e o fechamento de empresas.",
         "evidencias": [
           {
@@ -358,6 +360,7 @@
         ]
       },
       {
+        "id": "38f35b3fae9468d4",
         "texto": "Planeja oferecer o programa Juro Zero para iniciar negócios de micro e pequenos empreendedores.",
         "evidencias": [
           {
@@ -368,6 +371,7 @@
         ]
       },
       {
+        "id": "3002add3ae4a2f04",
         "texto": "Prevê educação em tempo integral nas escolas estaduais com atividades de reforço escolar no contraturno.",
         "evidencias": [
           {
@@ -378,6 +382,7 @@
         ]
       },
       {
+        "id": "c2b07c5515eef9fc",
         "texto": "Propõe ampliar a telemedicina para municípios menores com consultas remotas e integração digital dos prontuários.",
         "evidencias": [
           {
@@ -388,6 +393,7 @@
         ]
       },
       {
+        "id": "4b417ac4286a4c1f",
         "texto": "O plano prevê o prazo máximo de 60 dias para cirurgias indicadas pelo sistema público.",
         "evidencias": [
           {
@@ -398,6 +404,7 @@
         ]
       },
       {
+        "id": "2002eb179df0c283",
         "texto": "Prevê tecnologia de reconhecimento facial em todo o território catarinense observadas normas de proteção de dados e garantias individuais.",
         "evidencias": [
           {
@@ -408,6 +415,7 @@
         ]
       },
       {
+        "id": "e7c40f315ef04f18",
         "texto": "O plano prevê elaborar a Lei de Regionalização do Saneamento em Santa Catarina.",
         "evidencias": [
           {

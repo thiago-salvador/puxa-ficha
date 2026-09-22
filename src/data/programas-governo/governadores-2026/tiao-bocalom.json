@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -604,6 +604,7 @@
     "texto": "O plano prevê a implantação de prontuário eletrônico integrado em todas as unidades de saúde estaduais. O programa propõe a criação de uma agência estadual de inteligência de mercado para o agronegócio acreano. O documento prevê a ampliação da conectividade digital em regiões urbanas e rurais com uso da infraestrutura da Infovia Acre. O plano propõe a expansão de plataformas on-line unificadas para acesso rápido a serviços públicos. O programa prevê a implementação de uma política estadual de fortalecimento da Educação Especial. O documento propõe a criação de um programa de recuperação de dependentes químicos em parceria com prefeituras e entidades especializadas na área. O plano prevê a execução de cronograma permanente de conservação de ramais em parceria com as prefeituras municipais. O documento propõe a criação de um Programa Estadual de Qualificação Digital voltado a jovens e trabalhadores.",
     "frases": [
       {
+        "id": "285e27c10c064c22",
         "texto": "O plano prevê a implantação de prontuário eletrônico integrado em todas as unidades de saúde estaduais.",
         "evidencias": [
           {
@@ -614,6 +615,7 @@
         ]
       },
       {
+        "id": "e31c527ba5a9aaeb",
         "texto": "O programa propõe a criação de uma agência estadual de inteligência de mercado para o agronegócio acreano.",
         "evidencias": [
           {
@@ -624,6 +626,7 @@
         ]
       },
       {
+        "id": "d6727181e6a6c4db",
         "texto": "O documento prevê a ampliação da conectividade digital em regiões urbanas e rurais com uso da infraestrutura da Infovia Acre.",
         "evidencias": [
           {
@@ -634,6 +637,7 @@
         ]
       },
       {
+        "id": "f5f50dcacb5a8f12",
         "texto": "O plano propõe a expansão de plataformas on-line unificadas para acesso rápido a serviços públicos.",
         "evidencias": [
           {
@@ -644,6 +648,7 @@
         ]
       },
       {
+        "id": "20d07ab85f915a33",
         "texto": "O programa prevê a implementação de uma política estadual de fortalecimento da Educação Especial.",
         "evidencias": [
           {
@@ -654,6 +659,7 @@
         ]
       },
       {
+        "id": "8fc57b04d1661f34",
         "texto": "O documento propõe a criação de um programa de recuperação de dependentes químicos em parceria com prefeituras e entidades especializadas na área.",
         "evidencias": [
           {
@@ -664,6 +670,7 @@
         ]
       },
       {
+        "id": "b650178a8a495806",
         "texto": "O plano prevê a execução de cronograma permanente de conservação de ramais em parceria com as prefeituras municipais.",
         "evidencias": [
           {
@@ -674,6 +681,7 @@
         ]
       },
       {
+        "id": "a9a3dcc5ad883770",
         "texto": "O documento propõe a criação de um Programa Estadual de Qualificação Digital voltado a jovens e trabalhadores.",
         "evidencias": [
           {

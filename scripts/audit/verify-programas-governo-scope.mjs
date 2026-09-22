@@ -44,6 +44,8 @@ const EXACT = new Set([
   "scripts/programas-governo-governadores-2026-manifesto.ts",
   "scripts/programas-governo-governadores-2026.ts",
   "scripts/programas-governo-approve.ts",
+  "scripts/programas-governo-frase-ids.ts",
+  "tests/programa-governo-frase-id.test.ts",
   "scripts/programas-governo-stage.ts",
   "scripts/test-fixtures/generate-programa-pdfs.mjs",
   "scripts/prompts/programa-governo-judge-v1.schema.json",

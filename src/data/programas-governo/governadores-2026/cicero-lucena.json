@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1262,6 +1262,7 @@
     "texto": "Este Plano de Governo para o período de 2027 a 2030 nasceu dessa escuta presente por cada região, cada município. Aumentar a capacidade operacional do aparato de segurança com seis “Centros Regionais de Comando e Controle” e cinco mil câmeras de videomonitoramento inteligente, com reconhecimento facial e integração levando tecnologia de prevenção às cidades. Implantar uma rede estadual de policlínicas inspirada em experiências exitosas de outros estados brasileiros, fortalecendo a assistência ambulatorial especializada. Implantar o “SAMU Aéreo Paraíba”, com bases em João Pessoa, Campina Grande, Patos e Sousa; com serviços aeromédicos, Pelotão Aeromédico Estadual e plantão permanente. Fornecer progressivamente o Kit Básico de Tecnologia da Informação aos estudantes da rede estadual, com política definida de suporte, manutenção e formação de professores e alunos. Divulgar os dados públicos em tempo real, com padrões comuns entre as secretarias. Instalar dessalinizadores movidos a energia solar onde a água disponível é salobra, com manutenção contratada. Instalar cinco Hospitais do Pet em regiões estratégicas, com consultas, exames, cirurgias e urgência permanente, a exemplo do Hospital Pet em João Pessoa.",
     "frases": [
       {
+        "id": "2b5904aa66d192cb",
         "texto": "Este Plano de Governo para o período de 2027 a 2030 nasceu dessa escuta presente por cada região, cada município.",
         "evidencias": [
           {
@@ -1272,6 +1273,7 @@
         ]
       },
       {
+        "id": "542cfde76dc0c9b7",
         "texto": "Aumentar a capacidade operacional do aparato de segurança com seis “Centros Regionais de Comando e Controle” e cinco mil câmeras de videomonitoramento inteligente, com reconhecimento facial e integração levando tecnologia de prevenção às cidades.",
         "evidencias": [
           {
@@ -1282,6 +1284,7 @@
         ]
       },
       {
+        "id": "bbc53e15708d183e",
         "texto": "Implantar uma rede estadual de policlínicas inspirada em experiências exitosas de outros estados brasileiros, fortalecendo a assistência ambulatorial especializada.",
         "evidencias": [
           {
@@ -1292,6 +1295,7 @@
         ]
       },
       {
+        "id": "6323fd72fa14b246",
         "texto": "Implantar o “SAMU Aéreo Paraíba”, com bases em João Pessoa, Campina Grande, Patos e Sousa; com serviços aeromédicos, Pelotão Aeromédico Estadual e plantão permanente.",
         "evidencias": [
           {
@@ -1302,6 +1306,7 @@
         ]
       },
       {
+        "id": "9ab4c405712a4c77",
         "texto": "Fornecer progressivamente o Kit Básico de Tecnologia da Informação aos estudantes da rede estadual, com política definida de suporte, manutenção e formação de professores e alunos.",
         "evidencias": [
           {
@@ -1312,6 +1317,7 @@
         ]
       },
       {
+        "id": "4ee895be8b8714a7",
         "texto": "Divulgar os dados públicos em tempo real, com padrões comuns entre as secretarias.",
         "evidencias": [
           {
@@ -1322,6 +1328,7 @@
         ]
       },
       {
+        "id": "9a877c6d3c724ffc",
         "texto": "Instalar dessalinizadores movidos a energia solar onde a água disponível é salobra, com manutenção contratada.",
         "evidencias": [
           {
@@ -1332,6 +1339,7 @@
         ]
       },
       {
+        "id": "791e0afa3ac1d61e",
         "texto": "Instalar cinco Hospitais do Pet em regiões estratégicas, com consultas, exames, cirurgias e urgência permanente, a exemplo do Hospital Pet em João Pessoa.",
         "evidencias": [
           {

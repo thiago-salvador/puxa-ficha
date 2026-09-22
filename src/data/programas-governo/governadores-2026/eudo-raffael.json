@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -128,6 +128,7 @@
     "texto": "O programa prevê participação direta do povo nas decisões políticas por meio de conselhos populares, assembleias territoriais e orçamento participativo. A proposta educacional orienta a escola pública por uma perspectiva crítica, científica e popular, com acesso universal, permanência e qualidade em todos os níveis. Na saúde, o documento defende um sistema 100% estatal, com foco na medicina preventiva e na atenção básica voltada às especificidades amazônicas. Para o trabalho, o programa propõe industrialização sustentável, geração de empregos dignos, economia solidária e valorização do salário. Na mobilidade urbana, o plano defende sistemas de transporte 100% públicos e gratuitos, com integração entre zonas rurais e urbanas. Sobre deficiência, o documento prevê acessibilidade plena e inclusão em todas as políticas públicas, com autonomia, participação social e equidade nas oportunidades. Na comunicação, a proposta trata o acesso à internet e à informação como serviço público universal.",
     "frases": [
       {
+        "id": "429476342fd11ad9",
         "texto": "O programa prevê participação direta do povo nas decisões políticas por meio de conselhos populares, assembleias territoriais e orçamento participativo.",
         "evidencias": [
           {
@@ -138,6 +139,7 @@
         ]
       },
       {
+        "id": "2889f169c2c9864c",
         "texto": "A proposta educacional orienta a escola pública por uma perspectiva crítica, científica e popular, com acesso universal, permanência e qualidade em todos os níveis.",
         "evidencias": [
           {
@@ -148,6 +150,7 @@
         ]
       },
       {
+        "id": "7066e9b96dcdf0c9",
         "texto": "Na saúde, o documento defende um sistema 100% estatal, com foco na medicina preventiva e na atenção básica voltada às especificidades amazônicas.",
         "evidencias": [
           {
@@ -158,6 +161,7 @@
         ]
       },
       {
+        "id": "0a09a9c45e053211",
         "texto": "Para o trabalho, o programa propõe industrialização sustentável, geração de empregos dignos, economia solidária e valorização do salário.",
         "evidencias": [
           {
@@ -168,6 +172,7 @@
         ]
       },
       {
+        "id": "21959b9dcf143981",
         "texto": "Na mobilidade urbana, o plano defende sistemas de transporte 100% públicos e gratuitos, com integração entre zonas rurais e urbanas.",
         "evidencias": [
           {
@@ -183,6 +188,7 @@
         ]
       },
       {
+        "id": "421e955cc6495255",
         "texto": "Sobre deficiência, o documento prevê acessibilidade plena e inclusão em todas as políticas públicas, com autonomia, participação social e equidade nas oportunidades.",
         "evidencias": [
           {
@@ -193,6 +199,7 @@
         ]
       },
       {
+        "id": "185ec03d310d0ca6",
         "texto": "Na comunicação, a proposta trata o acesso à internet e à informação como serviço público universal.",
         "evidencias": [
           {

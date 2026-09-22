@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -324,6 +324,7 @@
     "texto": "O documento defende que a soberania nacional depende de as riquezas produzidas no país permanecerem sob controle nacional e serem direcionadas às necessidades da população. O programa propõe a expropriação de empresas estratégicas dos setores de mineração, petróleo e energia. No campo do trabalho, defende o fim da escala 6x1 sem redução de salários e direitos. Propõe a redução da jornada de trabalho para 36 horas semanais sem redução dos salários. Na saúde, defende um SUS público, universal, gratuito e 100% estatal. No meio ambiente, defende medidas como o fim do uso de agrotóxicos e a aceleração da demarcação de terras indígenas e territórios quilombolas. Na segurança pública, defende a desmilitarização da Polícia Militar e a unificação das polícias em uma única instituição de caráter civil. O documento se apresenta como parte de uma estratégia de construção de um governo socialista da classe trabalhadora, sem capitalistas.",
     "frases": [
       {
+        "id": "2d2f143fd2f40457",
         "texto": "O documento defende que a soberania nacional depende de as riquezas produzidas no país permanecerem sob controle nacional e serem direcionadas às necessidades da população.",
         "evidencias": [
           {
@@ -333,6 +334,7 @@
         ]
       },
       {
+        "id": "6851f132ecd6ad6d",
         "texto": "O programa propõe a expropriação de empresas estratégicas dos setores de mineração, petróleo e energia.",
         "evidencias": [
           {
@@ -342,6 +344,7 @@
         ]
       },
       {
+        "id": "8f9ddcaa479c5bd4",
         "texto": "No campo do trabalho, defende o fim da escala 6x1 sem redução de salários e direitos.",
         "evidencias": [
           {
@@ -351,6 +354,7 @@
         ]
       },
       {
+        "id": "9cec51203c64b361",
         "texto": "Propõe a redução da jornada de trabalho para 36 horas semanais sem redução dos salários.",
         "evidencias": [
           {
@@ -360,6 +364,7 @@
         ]
       },
       {
+        "id": "c0c75ce08698c3ae",
         "texto": "Na saúde, defende um SUS público, universal, gratuito e 100% estatal.",
         "evidencias": [
           {
@@ -369,6 +374,7 @@
         ]
       },
       {
+        "id": "088d64887e75af7b",
         "texto": "No meio ambiente, defende medidas como o fim do uso de agrotóxicos e a aceleração da demarcação de terras indígenas e territórios quilombolas.",
         "evidencias": [
           {
@@ -378,6 +384,7 @@
         ]
       },
       {
+        "id": "9a6e314d3a10fa30",
         "texto": "Na segurança pública, defende a desmilitarização da Polícia Militar e a unificação das polícias em uma única instituição de caráter civil.",
         "evidencias": [
           {
@@ -391,6 +398,7 @@
         ]
       },
       {
+        "id": "d195dd4f4de7badb",
         "texto": "O documento se apresenta como parte de uma estratégia de construção de um governo socialista da classe trabalhadora, sem capitalistas.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -156,6 +156,7 @@
     "texto": "Todos com o mesmo recorte: o que muda para quem vive longe da capital, em qualquer região do estado. Meta. Criar uma bolsa estadual de fixação para especialistas nas regiões de maior carência, vinculada a metas de permanência, e ampliar as residências médicas regionalizadas. Meta. Central de regulação com painel público em tempo real e prazo máximo por procedimento, com a mesma régua para capital e interior. Meta. Apoiar pequenas agroindústrias e unidades de beneficiamento nos municípios produtores, respeitando a vocação de cada região, com crédito orientado e simplificação sanitária proporcional ao risco. Meta. Priorizar infraestrutura hídrica permanente (poços, cisternas, reúso, pequenas barragens) nas zonas rurais mais vulneráveis, com capacitação para que a água vire produção. Meta. Alinhar as escolas profissionalizantes à vocação de cada região: caprinovinocultura e agroindústria nos sertões; fruticultura no Jaguaribe; turismo e hotelaria no Litoral Norte e no Cariri; energias renováveis no Litoral Oeste. Meta. Integrar segurança, educação, assistência e esporte em territórios vulneráveis, oferecendo à juventude uma alternativa concreta ao recrutamento.",
     "frases": [
       {
+        "id": "3a949ab3df993949",
         "texto": "Todos com o mesmo recorte: o que muda para quem vive longe da capital, em qualquer região do estado.",
         "evidencias": [
           {
@@ -166,6 +167,7 @@
         ]
       },
       {
+        "id": "81c513fc8472a06c",
         "texto": "Meta. Criar uma bolsa estadual de fixação para especialistas nas regiões de maior carência, vinculada a metas de permanência, e ampliar as residências médicas regionalizadas.",
         "evidencias": [
           {
@@ -176,6 +178,7 @@
         ]
       },
       {
+        "id": "eb6124397330ee63",
         "texto": "Meta. Central de regulação com painel público em tempo real e prazo máximo por procedimento, com a mesma régua para capital e interior.",
         "evidencias": [
           {
@@ -186,6 +189,7 @@
         ]
       },
       {
+        "id": "c520476d90bcc4fc",
         "texto": "Meta. Apoiar pequenas agroindústrias e unidades de beneficiamento nos municípios produtores, respeitando a vocação de cada região, com crédito orientado e simplificação sanitária proporcional ao risco.",
         "evidencias": [
           {
@@ -196,6 +200,7 @@
         ]
       },
       {
+        "id": "46eba9b12d09e241",
         "texto": "Meta. Priorizar infraestrutura hídrica permanente (poços, cisternas, reúso, pequenas barragens) nas zonas rurais mais vulneráveis, com capacitação para que a água vire produção.",
         "evidencias": [
           {
@@ -206,6 +211,7 @@
         ]
       },
       {
+        "id": "0bd8876490082016",
         "texto": "Meta. Alinhar as escolas profissionalizantes à vocação de cada região: caprinovinocultura e agroindústria nos sertões; fruticultura no Jaguaribe; turismo e hotelaria no Litoral Norte e no Cariri; energias renováveis no Litoral Oeste.",
         "evidencias": [
           {
@@ -216,6 +222,7 @@
         ]
       },
       {
+        "id": "5b97c7d8c4797c14",
         "texto": "Meta. Integrar segurança, educação, assistência e esporte em territórios vulneráveis, oferecendo à juventude uma alternativa concreta ao recrutamento.",
         "evidencias": [
           {

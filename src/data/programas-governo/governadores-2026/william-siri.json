@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -2046,6 +2046,7 @@
     "texto": "O programa propõe estabelecer um calendário progressivo de concursos públicos para recompor os quadros de servidores estaduais. Também propõe desenvolver um aplicativo em formato de Gabinete Virtual para contato direto com o cidadão fluminense. Propõe criar o Banco de Desenvolvimento do Estado do Rio de Janeiro (BADERJ). Propõe criar o programa Renda Básica Fluminense, com auxílio financeiro permanente às 600 mil famílias mais pobres do estado. Propõe criar o Programa Estadual de Combate ao Roubo e Furto de Celulares. Propõe instituir uma Política Estadual de Pagamento por Serviços Ambientais. Propõe implementar o Programa Rio sem Plástico para eliminar gradualmente a produção, o consumo e o descarte de plástico e isopor no estado. Propõe iniciar o processo de retomada pública e reestatização da CEDAE.",
     "frases": [
       {
+        "id": "6a1b84bc38e10159",
         "texto": "O programa propõe estabelecer um calendário progressivo de concursos públicos para recompor os quadros de servidores estaduais.",
         "evidencias": [
           {
@@ -2056,6 +2057,7 @@
         ]
       },
       {
+        "id": "b8a03e9e0b24662d",
         "texto": "Também propõe desenvolver um aplicativo em formato de Gabinete Virtual para contato direto com o cidadão fluminense.",
         "evidencias": [
           {
@@ -2066,6 +2068,7 @@
         ]
       },
       {
+        "id": "eb7e0e25b8dcd78c",
         "texto": "Propõe criar o Banco de Desenvolvimento do Estado do Rio de Janeiro (BADERJ).",
         "evidencias": [
           {
@@ -2076,6 +2079,7 @@
         ]
       },
       {
+        "id": "f4f63c613fa28d89",
         "texto": "Propõe criar o programa Renda Básica Fluminense, com auxílio financeiro permanente às 600 mil famílias mais pobres do estado.",
         "evidencias": [
           {
@@ -2086,6 +2090,7 @@
         ]
       },
       {
+        "id": "1639e9e44f0324a2",
         "texto": "Propõe criar o Programa Estadual de Combate ao Roubo e Furto de Celulares.",
         "evidencias": [
           {
@@ -2096,6 +2101,7 @@
         ]
       },
       {
+        "id": "702aa8dd6a5e160e",
         "texto": "Propõe instituir uma Política Estadual de Pagamento por Serviços Ambientais.",
         "evidencias": [
           {
@@ -2106,6 +2112,7 @@
         ]
       },
       {
+        "id": "4cc14fedaf3d0443",
         "texto": "Propõe implementar o Programa Rio sem Plástico para eliminar gradualmente a produção, o consumo e o descarte de plástico e isopor no estado.",
         "evidencias": [
           {
@@ -2116,6 +2123,7 @@
         ]
       },
       {
+        "id": "9c88ec37f48834a2",
         "texto": "Propõe iniciar o processo de retomada pública e reestatização da CEDAE.",
         "evidencias": [
           {

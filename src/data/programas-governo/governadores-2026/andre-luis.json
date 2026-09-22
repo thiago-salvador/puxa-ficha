@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -688,6 +688,7 @@
     "texto": "O plano prevê um painel público com ficha completa de cada obra estadual: critério de seleção, contrato, empresa, valor, cronograma, estágio físico-financeiro, atrasos com justificativa. O programa Maranhão Saneado prioriza municípios e territórios de piores indicadores de água e esgoto. O plano prevê segurança hídrica para comunidades rurais, ribeirinhas, insulares e isoladas, com tecnologias adequadas a cada território. A proposta Bio Maranhão prevê bioeconomia com autorização legal de acesso (SisGen), consentimento das comunidades e repartição de benefícios com quebradeiras, indígenas, quilombolas e extrativistas. O plano prevê prontuário eletrônico estadual integrado à RNDS/SUS Digital, com linha do tempo clínica, controle de acesso, logs, auditoria. A proposta Elucidação de Homicídios prevê criar e publicar o indicador oficial de esclarecimento do Maranhão. O plano prevê trilha do primeiro emprego com orientação, curso vinculado a vaga real, aprendizagem e acompanhamento de 12 meses.",
     "frases": [
       {
+        "id": "40cc217bbbbf4f44",
         "texto": "O plano prevê um painel público com ficha completa de cada obra estadual: critério de seleção, contrato, empresa, valor, cronograma, estágio físico-financeiro, atrasos com justificativa.",
         "evidencias": [
           {
@@ -698,6 +699,7 @@
         ]
       },
       {
+        "id": "aa267ff185e745ea",
         "texto": "O programa Maranhão Saneado prioriza municípios e territórios de piores indicadores de água e esgoto.",
         "evidencias": [
           {
@@ -708,6 +710,7 @@
         ]
       },
       {
+        "id": "79891c37f591478f",
         "texto": "O plano prevê segurança hídrica para comunidades rurais, ribeirinhas, insulares e isoladas, com tecnologias adequadas a cada território.",
         "evidencias": [
           {
@@ -718,6 +721,7 @@
         ]
       },
       {
+        "id": "ce4b63f91e6968e9",
         "texto": "A proposta Bio Maranhão prevê bioeconomia com autorização legal de acesso (SisGen), consentimento das comunidades e repartição de benefícios com quebradeiras, indígenas, quilombolas e extrativistas.",
         "evidencias": [
           {
@@ -728,6 +732,7 @@
         ]
       },
       {
+        "id": "d89f47432c116504",
         "texto": "O plano prevê prontuário eletrônico estadual integrado à RNDS/SUS Digital, com linha do tempo clínica, controle de acesso, logs, auditoria.",
         "evidencias": [
           {
@@ -738,6 +743,7 @@
         ]
       },
       {
+        "id": "347b90191bd4c708",
         "texto": "A proposta Elucidação de Homicídios prevê criar e publicar o indicador oficial de esclarecimento do Maranhão.",
         "evidencias": [
           {
@@ -748,6 +754,7 @@
         ]
       },
       {
+        "id": "1d43d11d7bc23db2",
         "texto": "O plano prevê trilha do primeiro emprego com orientação, curso vinculado a vaga real, aprendizagem e acompanhamento de 12 meses.",
         "evidencias": [
           {

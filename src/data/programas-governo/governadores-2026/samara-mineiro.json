@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -198,6 +198,7 @@
     "texto": "O programa propõe auditoria imediata nas operações do Banco de Brasília, com medidas de controle social sobre a gestão financeira. O programa prevê que a administração do BRB seja 100% estatal. Na saúde, propõe retomar a administração direta de todos os hospitais públicos pelo Estado. O documento prevê a criação de um Laboratório Farmacêutico Público do Distrito Federal para produzir medicamentos e insumos estratégicos para o SUS. Na mobilidade, propõe criar uma empresa pública para o transporte no Distrito Federal. Na educação, prevê a construção de novas creches públicas para ampliar o atendimento a crianças de 0 a 3 anos. Na área ambiental, prevê coleta seletiva em 100% do Distrito Federal, com protagonismo às cooperativas de catadores. O programa propõe regularização fundiária social, com escrituração gratuita de vilas e bairros populares historicamente marginalizados.",
     "frases": [
       {
+        "id": "36bba5d5efc1f261",
         "texto": "O programa propõe auditoria imediata nas operações do Banco de Brasília, com medidas de controle social sobre a gestão financeira.",
         "evidencias": [
           {
@@ -208,6 +209,7 @@
         ]
       },
       {
+        "id": "531183f52c3180d8",
         "texto": "O programa prevê que a administração do BRB seja 100% estatal.",
         "evidencias": [
           {
@@ -218,6 +220,7 @@
         ]
       },
       {
+        "id": "18ec280b9242c455",
         "texto": "Na saúde, propõe retomar a administração direta de todos os hospitais públicos pelo Estado.",
         "evidencias": [
           {
@@ -228,6 +231,7 @@
         ]
       },
       {
+        "id": "9a8ab165834f3f67",
         "texto": "O documento prevê a criação de um Laboratório Farmacêutico Público do Distrito Federal para produzir medicamentos e insumos estratégicos para o SUS.",
         "evidencias": [
           {
@@ -238,6 +242,7 @@
         ]
       },
       {
+        "id": "2b930cfe78412a7b",
         "texto": "Na mobilidade, propõe criar uma empresa pública para o transporte no Distrito Federal.",
         "evidencias": [
           {
@@ -248,6 +253,7 @@
         ]
       },
       {
+        "id": "44875a814798dd18",
         "texto": "Na educação, prevê a construção de novas creches públicas para ampliar o atendimento a crianças de 0 a 3 anos.",
         "evidencias": [
           {
@@ -258,6 +264,7 @@
         ]
       },
       {
+        "id": "5e6ae5878d1c79d9",
         "texto": "Na área ambiental, prevê coleta seletiva em 100% do Distrito Federal, com protagonismo às cooperativas de catadores.",
         "evidencias": [
           {
@@ -268,6 +275,7 @@
         ]
       },
       {
+        "id": "9e3325cfbc3e8589",
         "texto": "O programa propõe regularização fundiária social, com escrituração gratuita de vilas e bairros populares historicamente marginalizados.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1234,6 +1234,7 @@
     "texto": "O programa prevê a elaboração das peças orçamentárias com participação da população por meio de audiências de orçamento participativo, submetendo a aprovação a referendo popular. O programa prevê a criação de uma Estatal Eólica do Ceará como instrumento público para a área de energia eólica. O programa propõe a criação de uma Empresa Estadual de Moradia Popular como medida institucional para a política habitacional estadual. O programa prevê a ampliação da rede de saúde da família, com equipes dotadas de suporte profissional e insumos para o atendimento. O programa propõe a redução da tarifa de transporte público, vinculando o gasto com transporte a uma parcela do salário mínimo. O programa propõe a construção de salas de cinema públicas nos municípios, com estrutura flexível conforme a quantidade de habitantes.",
     "frases": [
       {
+        "id": "0b62f338f0a2bdda",
         "texto": "O programa prevê a elaboração das peças orçamentárias com participação da população por meio de audiências de orçamento participativo, submetendo a aprovação a referendo popular.",
         "evidencias": [
           {
@@ -1244,6 +1245,7 @@
         ]
       },
       {
+        "id": "e2667cf7acf797a9",
         "texto": "O programa prevê a criação de uma Estatal Eólica do Ceará como instrumento público para a área de energia eólica.",
         "evidencias": [
           {
@@ -1254,6 +1256,7 @@
         ]
       },
       {
+        "id": "1e87e1285c4c7884",
         "texto": "O programa propõe a criação de uma Empresa Estadual de Moradia Popular como medida institucional para a política habitacional estadual.",
         "evidencias": [
           {
@@ -1264,6 +1267,7 @@
         ]
       },
       {
+        "id": "d20ac2d543078af9",
         "texto": "O programa prevê a ampliação da rede de saúde da família, com equipes dotadas de suporte profissional e insumos para o atendimento.",
         "evidencias": [
           {
@@ -1274,6 +1278,7 @@
         ]
       },
       {
+        "id": "38d02c5ece99021c",
         "texto": "O programa propõe a redução da tarifa de transporte público, vinculando o gasto com transporte a uma parcela do salário mínimo.",
         "evidencias": [
           {
@@ -1284,6 +1289,7 @@
         ]
       },
       {
+        "id": "c79797027505719b",
         "texto": "O programa propõe a construção de salas de cinema públicas nos municípios, com estrutura flexível conforme a quantidade de habitantes.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -576,6 +576,7 @@
     "texto": "O programa prevê a implantação gradual dos CIEPs, com educação em tempo integral, alimentação, reforço pedagógico, cultura, esporte, tecnologia e apoio socioemocional nas escolas estaduais. Na saúde pública, propõe regionalizar a média e alta complexidade, fortalecendo hospitais-polo, UTIs e serviços especializados no interior do Rio Grande do Sul. Para a proteção climática, planeja um Sistema Integrado de Alerta Precoce nas bacias críticas, com monitoramento contínuo dos riscos hidrometeorológicos. Na mobilidade urbana, propõe implantar o Bilhete Único Metropolitano, integrando ônibus municipais, intermunicipais e Trensurb, com tarifas socialmente justas. No desenvolvimento produtivo, prevê um Programa Estadual de Abastecimento para disponibilizar produtos da agricultura familiar diretamente aos consumidores, ampliando o mercado dos produtores. Na gestão pública, propõe ampliar a transparência e o acompanhamento público de obras, investimentos e programas, com mecanismos participativos de monitoramento.",
     "frases": [
       {
+        "id": "d953a75144b80f1c",
         "texto": "O programa prevê a implantação gradual dos CIEPs, com educação em tempo integral, alimentação, reforço pedagógico, cultura, esporte, tecnologia e apoio socioemocional nas escolas estaduais.",
         "evidencias": [
           {
@@ -586,6 +587,7 @@
         ]
       },
       {
+        "id": "4febc60acff377ae",
         "texto": "Na saúde pública, propõe regionalizar a média e alta complexidade, fortalecendo hospitais-polo, UTIs e serviços especializados no interior do Rio Grande do Sul.",
         "evidencias": [
           {
@@ -596,6 +598,7 @@
         ]
       },
       {
+        "id": "f75631cbad377a1f",
         "texto": "Para a proteção climática, planeja um Sistema Integrado de Alerta Precoce nas bacias críticas, com monitoramento contínuo dos riscos hidrometeorológicos.",
         "evidencias": [
           {
@@ -606,6 +609,7 @@
         ]
       },
       {
+        "id": "8b42f1ea04a1a063",
         "texto": "Na mobilidade urbana, propõe implantar o Bilhete Único Metropolitano, integrando ônibus municipais, intermunicipais e Trensurb, com tarifas socialmente justas.",
         "evidencias": [
           {
@@ -616,6 +620,7 @@
         ]
       },
       {
+        "id": "dc8ef066aa71f53c",
         "texto": "No desenvolvimento produtivo, prevê um Programa Estadual de Abastecimento para disponibilizar produtos da agricultura familiar diretamente aos consumidores, ampliando o mercado dos produtores.",
         "evidencias": [
           {
@@ -626,6 +631,7 @@
         ]
       },
       {
+        "id": "08fc6e398b45b52f",
         "texto": "Na gestão pública, propõe ampliar a transparência e o acompanhamento público de obras, investimentos e programas, com mecanismos participativos de monitoramento.",
         "evidencias": [
           {

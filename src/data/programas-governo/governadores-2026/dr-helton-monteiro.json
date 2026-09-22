@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -702,6 +702,7 @@
     "texto": "O programa prevê criar programa estadual de obras públicas que integre moradia popular, infraestrutura urbana e equipamentos comunitários. O programa prevê instituir programa estadual de renda mínima que complemente o Bolsa Família para famílias com crianças pequenas. O programa prevê levar internet banda larga gratuita a todas as escolas públicas, praças e centros comunitários do estado. O programa prevê implementar jornada de 30 horas semanais para servidores estaduais, sem redução salarial. O programa prevê universalizar a coleta e o tratamento de esgoto em todos os 75 municípios sergipanos. O programa prevê ampliar a rede de CAPS em todas as regiões, com equipes multidisciplinares, leitos de acolhimento, programas de prevenção ao suicídio e atendimento humanizado. O programa prevê garantir acesso universal à água potável em todo o estado, com proteção de nascentes.",
     "frases": [
       {
+        "id": "4439588455525c1b",
         "texto": "O programa prevê criar programa estadual de obras públicas que integre moradia popular, infraestrutura urbana e equipamentos comunitários.",
         "evidencias": [
           {
@@ -712,6 +713,7 @@
         ]
       },
       {
+        "id": "0add999a9a8a6554",
         "texto": "O programa prevê instituir programa estadual de renda mínima que complemente o Bolsa Família para famílias com crianças pequenas.",
         "evidencias": [
           {
@@ -722,6 +724,7 @@
         ]
       },
       {
+        "id": "e67f8ec5a5bae6cd",
         "texto": "O programa prevê levar internet banda larga gratuita a todas as escolas públicas, praças e centros comunitários do estado.",
         "evidencias": [
           {
@@ -732,6 +735,7 @@
         ]
       },
       {
+        "id": "7d2a5b7f34fd59a2",
         "texto": "O programa prevê implementar jornada de 30 horas semanais para servidores estaduais, sem redução salarial.",
         "evidencias": [
           {
@@ -742,6 +746,7 @@
         ]
       },
       {
+        "id": "6d7b83346a145b45",
         "texto": "O programa prevê universalizar a coleta e o tratamento de esgoto em todos os 75 municípios sergipanos.",
         "evidencias": [
           {
@@ -752,6 +757,7 @@
         ]
       },
       {
+        "id": "7adb476933da0522",
         "texto": "O programa prevê ampliar a rede de CAPS em todas as regiões, com equipes multidisciplinares, leitos de acolhimento, programas de prevenção ao suicídio e atendimento humanizado.",
         "evidencias": [
           {
@@ -762,6 +768,7 @@
         ]
       },
       {
+        "id": "68c04cf6108567c2",
         "texto": "O programa prevê garantir acesso universal à água potável em todo o estado, com proteção de nascentes.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -730,6 +730,7 @@
     "texto": "O plano apresenta cinco pilares estratégicos, identificados como eixos estratégicos do governo no documento oficial que reúne as propostas do programa. Na área de inclusão digital, o plano propõe a aquisição de 23.000 novos Chromebooks, conforme a medida registrada no documento oficial do programa. Na educação militar, o plano estabelece atingir até 263 unidades de escolas militares, meta apresentada no documento oficial do programa. O plano estabelece, como meta temporal e territorial, atingir 100% de cobertura estadual de APH Móvel até 2028 no programa oficial. Na habitação, o plano propõe a construção de mais 60 mil novas casas populares, conforme a proposta registrada no documento oficial do programa. Na gestão ambiental, o plano propõe implementar a análise automatizada do Cadastro Ambiental Rural, medida descrita no documento oficial do programa.",
     "frases": [
       {
+        "id": "caf3c15fde60e256",
         "texto": "O plano apresenta cinco pilares estratégicos, identificados como eixos estratégicos do governo no documento oficial que reúne as propostas do programa.",
         "evidencias": [
           {
@@ -740,6 +741,7 @@
         ]
       },
       {
+        "id": "bf48ea4522abdf61",
         "texto": "Na área de inclusão digital, o plano propõe a aquisição de 23.000 novos Chromebooks, conforme a medida registrada no documento oficial do programa.",
         "evidencias": [
           {
@@ -750,6 +752,7 @@
         ]
       },
       {
+        "id": "5129a4b8b542c240",
         "texto": "Na educação militar, o plano estabelece atingir até 263 unidades de escolas militares, meta apresentada no documento oficial do programa.",
         "evidencias": [
           {
@@ -760,6 +763,7 @@
         ]
       },
       {
+        "id": "817d9c5f57afbbf0",
         "texto": "O plano estabelece, como meta temporal e territorial, atingir 100% de cobertura estadual de APH Móvel até 2028 no programa oficial.",
         "evidencias": [
           {
@@ -770,6 +774,7 @@
         ]
       },
       {
+        "id": "a2353c2349a6d8e3",
         "texto": "Na habitação, o plano propõe a construção de mais 60 mil novas casas populares, conforme a proposta registrada no documento oficial do programa.",
         "evidencias": [
           {
@@ -780,6 +785,7 @@
         ]
       },
       {
+        "id": "2d5b24ee108b0b63",
         "texto": "Na gestão ambiental, o plano propõe implementar a análise automatizada do Cadastro Ambiental Rural, medida descrita no documento oficial do programa.",
         "evidencias": [
           {

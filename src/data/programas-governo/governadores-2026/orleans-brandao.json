@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -450,6 +450,7 @@
     "texto": "O programa prevê a transformação digital do Governo do Estado por meio da adoção de processos ágeis, inteligentes e integrados, contemplando órgãos da administração pública direta e indireta. O programa propõe ampliar e requalificar a infraestrutura rodoviária, portuária e aeroportuária para fortalecer as vantagens logísticas do estado. Na saúde, o programa planeja implementar a Rede Estadual de Saúde Digital (Telessaúde), integrando inovação tecnológica com suporte clínico especializado. Na educação, o programa prevê apoiar municípios na implantação de creches, incluindo infraestrutura, equipamentos e capacitação profissional para educação de crianças de 0 a 3 anos. Na área ambiental, o programa propõe elaborar o Plano Estadual de Emergência Climática em parceria com universidades e outras instituições. Para a proteção animal, o programa prevê criar uma Secretaria Estadual de Proteção e Bem-Estar Animal para formular, coordenar e executar políticas públicas estaduais.",
     "frases": [
       {
+        "id": "1be37243046a9a7d",
         "texto": "O programa prevê a transformação digital do Governo do Estado por meio da adoção de processos ágeis, inteligentes e integrados, contemplando órgãos da administração pública direta e indireta.",
         "evidencias": [
           {
@@ -460,6 +461,7 @@
         ]
       },
       {
+        "id": "b94d5e9321d90158",
         "texto": "O programa propõe ampliar e requalificar a infraestrutura rodoviária, portuária e aeroportuária para fortalecer as vantagens logísticas do estado.",
         "evidencias": [
           {
@@ -470,6 +472,7 @@
         ]
       },
       {
+        "id": "f51b874b6db4e98e",
         "texto": "Na saúde, o programa planeja implementar a Rede Estadual de Saúde Digital (Telessaúde), integrando inovação tecnológica com suporte clínico especializado.",
         "evidencias": [
           {
@@ -480,6 +483,7 @@
         ]
       },
       {
+        "id": "48c3b45bc956f709",
         "texto": "Na educação, o programa prevê apoiar municípios na implantação de creches, incluindo infraestrutura, equipamentos e capacitação profissional para educação de crianças de 0 a 3 anos.",
         "evidencias": [
           {
@@ -490,6 +494,7 @@
         ]
       },
       {
+        "id": "9636a1fdb6061fd4",
         "texto": "Na área ambiental, o programa propõe elaborar o Plano Estadual de Emergência Climática em parceria com universidades e outras instituições.",
         "evidencias": [
           {
@@ -500,6 +505,7 @@
         ]
       },
       {
+        "id": "3c5802fa545e63aa",
         "texto": "Para a proteção animal, o programa prevê criar uma Secretaria Estadual de Proteção e Bem-Estar Animal para formular, coordenar e executar políticas públicas estaduais.",
         "evidencias": [
           {

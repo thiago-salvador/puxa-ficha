@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -184,6 +184,7 @@
     "texto": "O programa defende a ampliação do Mais Médicos em Mato Grosso do Sul, incluindo regiões afastadas, periferias urbanas e comunidades indígenas. O programa propõe o Saúde em Casa, com atendimento na residência de idosos, pessoas com deficiência e pacientes com dificuldade de locomoção. O Saúde em Casa contará com UTIs móveis, conforme previsão apresentada no programa oficial. O programa prevê descentralizar serviços de saúde, fortalecendo hospitais regionais e unidades especializadas para evitar deslocamentos longos em busca de atendimento. O programa prevê qualificação contínua dos profissionais da saúde, mediante cursos, especializações e programas de atualização permanente. Na cultura, o programa propõe calendário estadual permanente organizado com municípios, movimentos culturais e artistas locais. O programa defende ampliar editais públicos de incentivo à cultura, conforme a proposta cultural apresentada. No esporte, o programa prevê programas permanentes de incentivo às modalidades de base, escolar e universitária.",
     "frases": [
       {
+        "id": "c5454ac8e34896df",
         "texto": "O programa defende a ampliação do Mais Médicos em Mato Grosso do Sul, incluindo regiões afastadas, periferias urbanas e comunidades indígenas.",
         "evidencias": [
           {
@@ -194,6 +195,7 @@
         ]
       },
       {
+        "id": "f4539cb139d147c2",
         "texto": "O programa propõe o Saúde em Casa, com atendimento na residência de idosos, pessoas com deficiência e pacientes com dificuldade de locomoção.",
         "evidencias": [
           {
@@ -204,6 +206,7 @@
         ]
       },
       {
+        "id": "2e1e1720cc20ffd0",
         "texto": "O Saúde em Casa contará com UTIs móveis, conforme previsão apresentada no programa oficial.",
         "evidencias": [
           {
@@ -214,6 +217,7 @@
         ]
       },
       {
+        "id": "cdc01b431edda6f2",
         "texto": "O programa prevê descentralizar serviços de saúde, fortalecendo hospitais regionais e unidades especializadas para evitar deslocamentos longos em busca de atendimento.",
         "evidencias": [
           {
@@ -224,6 +228,7 @@
         ]
       },
       {
+        "id": "f9f941b4db09e984",
         "texto": "O programa prevê qualificação contínua dos profissionais da saúde, mediante cursos, especializações e programas de atualização permanente.",
         "evidencias": [
           {
@@ -234,6 +239,7 @@
         ]
       },
       {
+        "id": "32d33ad42ec7701f",
         "texto": "Na cultura, o programa propõe calendário estadual permanente organizado com municípios, movimentos culturais e artistas locais.",
         "evidencias": [
           {
@@ -244,6 +250,7 @@
         ]
       },
       {
+        "id": "716b06e65f996f5a",
         "texto": "O programa defende ampliar editais públicos de incentivo à cultura, conforme a proposta cultural apresentada.",
         "evidencias": [
           {
@@ -254,6 +261,7 @@
         ]
       },
       {
+        "id": "e220bf2f2a028678",
         "texto": "No esporte, o programa prevê programas permanentes de incentivo às modalidades de base, escolar e universitária.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -755,6 +755,7 @@
   "resumo": {
     "frases": [
       {
+        "id": "01d13657914cddb4",
         "texto": "O documento reúne propostas de governo organizadas em áreas temáticas como segurança pública, economia, trabalho, saúde, educação, meio ambiente e política externa.",
         "evidencias": [
           {
@@ -792,6 +793,7 @@
         ]
       },
       {
+        "id": "078e1a8af0c927e8",
         "texto": "Na área de segurança pública, o documento propõe classificar as facções criminosas que atuam no país como organizações terroristas.",
         "evidencias": [
           {
@@ -801,6 +803,7 @@
         ]
       },
       {
+        "id": "652712b4727741f8",
         "texto": "O texto defende reduzir a maioridade penal para 16 anos ou menos, permitindo excepcionalmente a responsabilização de pessoas mais jovens em casos de crimes graves.",
         "evidencias": [
           {
@@ -810,6 +813,7 @@
         ]
       },
       {
+        "id": "378568cd1dc1967d",
         "texto": "No eixo de combate à corrupção, o documento propõe limitar drasticamente o foro privilegiado, mantendo-o apenas para o Presidente da República.",
         "evidencias": [
           {
@@ -819,6 +823,7 @@
         ]
       },
       {
+        "id": "3b06bb157e13b97c",
         "texto": "Nas finanças públicas, o documento propõe privatizar todas as empresas estatais.",
         "evidencias": [
           {
@@ -828,6 +833,7 @@
         ]
       },
       {
+        "id": "725bb952338f2fc3",
         "texto": "No mercado de trabalho, o documento propõe criar um regime de contratação alternativo à CLT, com prevalência do negociado entre as partes sobre o legislado.",
         "evidencias": [
           {
@@ -837,6 +843,7 @@
         ]
       },
       {
+        "id": "64e46add59ce1189",
         "texto": "Na área de desenvolvimento social, o documento propõe condicionar a permanência no programa Bolsa Família à busca de emprego ou qualificação profissional, prevendo a suspensão do benefício em caso de recusa de trabalho.",
         "evidencias": [
           {
@@ -846,6 +853,7 @@
         ]
       },
       {
+        "id": "0e93c66bbdaf24c1",
         "texto": "Na política externa, o documento defende a retirada do Brasil do bloco BRICS.",
         "evidencias": [
           {

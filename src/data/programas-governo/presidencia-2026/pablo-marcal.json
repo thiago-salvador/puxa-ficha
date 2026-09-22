@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -279,6 +279,7 @@
     "texto": "O plano de governo de Pablo Marçal está organizado em um diagnóstico do Brasil seguido por sete missões. O diagnóstico caracteriza o Brasil como uma potência adormecida com abundância de recursos naturais e população jovem. O texto atribui o baixo crescimento econômico do país a uma produtividade inferior ao seu potencial. O documento propõe uma empresarização da sociedade como estratégia para ampliar a autonomia econômica dos brasileiros. O plano propõe reduzir a carga tributária sobre produção e investimento e simplificar barreiras regulatórias. O documento declara compromisso em manter o Programa Bolsa Família como parte da proteção à dignidade da pessoa humana. O plano propõe uma âncora fiscal baseada na redução gradual da relação dívida/PIB. O documento prevê a criação de um Ministério da Empresarização como parte da estratégia para gerar prosperidade econômica.",
     "frases": [
       {
+        "id": "ec00901d01bed243",
         "texto": "O plano de governo de Pablo Marçal está organizado em um diagnóstico do Brasil seguido por sete missões.",
         "evidencias": [
           {
@@ -288,6 +289,7 @@
         ]
       },
       {
+        "id": "e6a63fe5a93e2c74",
         "texto": "O diagnóstico caracteriza o Brasil como uma potência adormecida com abundância de recursos naturais e população jovem.",
         "evidencias": [
           {
@@ -301,6 +303,7 @@
         ]
       },
       {
+        "id": "f2c841f0a714ce4a",
         "texto": "O texto atribui o baixo crescimento econômico do país a uma produtividade inferior ao seu potencial.",
         "evidencias": [
           {
@@ -310,6 +313,7 @@
         ]
       },
       {
+        "id": "8ba4380c5d0a607d",
         "texto": "O documento propõe uma empresarização da sociedade como estratégia para ampliar a autonomia econômica dos brasileiros.",
         "evidencias": [
           {
@@ -319,6 +323,7 @@
         ]
       },
       {
+        "id": "752d8309892e7afd",
         "texto": "O plano propõe reduzir a carga tributária sobre produção e investimento e simplificar barreiras regulatórias.",
         "evidencias": [
           {
@@ -332,6 +337,7 @@
         ]
       },
       {
+        "id": "646ca579ab62406b",
         "texto": "O documento declara compromisso em manter o Programa Bolsa Família como parte da proteção à dignidade da pessoa humana.",
         "evidencias": [
           {
@@ -341,6 +347,7 @@
         ]
       },
       {
+        "id": "1ebe317ada48aee9",
         "texto": "O plano propõe uma âncora fiscal baseada na redução gradual da relação dívida/PIB.",
         "evidencias": [
           {
@@ -350,6 +357,7 @@
         ]
       },
       {
+        "id": "b59bec8ac0a75ec6",
         "texto": "O documento prevê a criação de um Ministério da Empresarização como parte da estratégia para gerar prosperidade econômica.",
         "evidencias": [
           {

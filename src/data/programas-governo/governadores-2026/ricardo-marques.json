@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1094,6 +1094,7 @@
     "texto": "O programa prevê fortalecer a Atenção Primária à Saúde em todos os municípios, com cofinanciamento estadual regular e apoio técnico às equipes municipais. O programa propõe implantar o programa ‘‘Fila Zero’’, uma estratégia permanente de redução das filas de consultas, exames, cirurgias e procedimentos de média e alta complexidade. O programa planeja criar o programa ‘’Conecta Sergipe’’, para expandir e universalizar o acesso à redes de telefonia e internet de alta velocidade para todos os municípios. O programa propõe criar a política estadual do ‘’Alfabetiza Sergipe’’ para melhorar a cooperação entre Estado e municípios. O programa prevê a criação do ‘‘Programa Sergipe Verde’’ para modernizar as ações estaduais de recuperação de áreas degradadas e proteção de ecossistemas estratégicos. O programa propõe instituir uma política estadual de uso responsável da inteligência artificial na gestão pública, com governança, supervisão humana e proteção de dados.",
     "frases": [
       {
+        "id": "10ebd008b7d4e65f",
         "texto": "O programa prevê fortalecer a Atenção Primária à Saúde em todos os municípios, com cofinanciamento estadual regular e apoio técnico às equipes municipais.",
         "evidencias": [
           {
@@ -1104,6 +1105,7 @@
         ]
       },
       {
+        "id": "a8243941b2867359",
         "texto": "O programa propõe implantar o programa ‘‘Fila Zero’’, uma estratégia permanente de redução das filas de consultas, exames, cirurgias e procedimentos de média e alta complexidade.",
         "evidencias": [
           {
@@ -1114,6 +1116,7 @@
         ]
       },
       {
+        "id": "1bf9458ace660628",
         "texto": "O programa planeja criar o programa ‘’Conecta Sergipe’’, para expandir e universalizar o acesso à redes de telefonia e internet de alta velocidade para todos os municípios.",
         "evidencias": [
           {
@@ -1124,6 +1127,7 @@
         ]
       },
       {
+        "id": "36880754b9dd2cf7",
         "texto": "O programa propõe criar a política estadual do ‘’Alfabetiza Sergipe’’ para melhorar a cooperação entre Estado e municípios.",
         "evidencias": [
           {
@@ -1134,6 +1138,7 @@
         ]
       },
       {
+        "id": "a52b6d0368565ee0",
         "texto": "O programa prevê a criação do ‘‘Programa Sergipe Verde’’ para modernizar as ações estaduais de recuperação de áreas degradadas e proteção de ecossistemas estratégicos.",
         "evidencias": [
           {
@@ -1144,6 +1149,7 @@
         ]
       },
       {
+        "id": "a24b3405f6332fe5",
         "texto": "O programa propõe instituir uma política estadual de uso responsável da inteligência artificial na gestão pública, com governança, supervisão humana e proteção de dados.",
         "evidencias": [
           {

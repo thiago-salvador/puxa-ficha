@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -324,6 +324,7 @@
     "texto": "O plano prevê a digitalização progressiva dos serviços estaduais de maior demanda, reunidos em portal e aplicativo únicos. A proposta prevê um portal único de transparência orçamentária, com dados abertos, atualização mensal e linguagem cidadã. Na educação, o governo cofinanciará a expansão de vagas em creches e pré-escolas municipais, priorizando municípios de menor capacidade fiscal. Na saúde, será implantada central única de regulação, com fila pública, auditável e ordenada por critérios exclusivamente clínicos. Na segurança, o videomonitoramento integrado será expandido nas principais rodovias e centros urbanos, com análise de imagens e leitura automática de placas. No saneamento, será elaborado plano estadual de universalização com metas por município, priorizando municípios do interior com os piores indicadores de cobertura. Na agropecuária, o Estado incentivará a implantação de agroindústrias de pequeno e médio porte no interior. No turismo, a estratégia prevê a estruturação e sinalização de roteiros regionais integrados, costurando litoral, cânions e interior histórico em produtos turísticos completos.",
     "frases": [
       {
+        "id": "c5d30588d06095e8",
         "texto": "O plano prevê a digitalização progressiva dos serviços estaduais de maior demanda, reunidos em portal e aplicativo únicos.",
         "evidencias": [
           {
@@ -334,6 +335,7 @@
         ]
       },
       {
+        "id": "623427c7614529f4",
         "texto": "A proposta prevê um portal único de transparência orçamentária, com dados abertos, atualização mensal e linguagem cidadã.",
         "evidencias": [
           {
@@ -344,6 +346,7 @@
         ]
       },
       {
+        "id": "ec0f1aed2a3bff28",
         "texto": "Na educação, o governo cofinanciará a expansão de vagas em creches e pré-escolas municipais, priorizando municípios de menor capacidade fiscal.",
         "evidencias": [
           {
@@ -354,6 +357,7 @@
         ]
       },
       {
+        "id": "eab1b12c70a60fd9",
         "texto": "Na saúde, será implantada central única de regulação, com fila pública, auditável e ordenada por critérios exclusivamente clínicos.",
         "evidencias": [
           {
@@ -364,6 +368,7 @@
         ]
       },
       {
+        "id": "30a2924d9b23e322",
         "texto": "Na segurança, o videomonitoramento integrado será expandido nas principais rodovias e centros urbanos, com análise de imagens e leitura automática de placas.",
         "evidencias": [
           {
@@ -374,6 +379,7 @@
         ]
       },
       {
+        "id": "fc7b5ac7ee2b50a7",
         "texto": "No saneamento, será elaborado plano estadual de universalização com metas por município, priorizando municípios do interior com os piores indicadores de cobertura.",
         "evidencias": [
           {
@@ -384,6 +390,7 @@
         ]
       },
       {
+        "id": "f356f02d289851cf",
         "texto": "Na agropecuária, o Estado incentivará a implantação de agroindústrias de pequeno e médio porte no interior.",
         "evidencias": [
           {
@@ -394,6 +401,7 @@
         ]
       },
       {
+        "id": "93b57930ca6c3669",
         "texto": "No turismo, a estratégia prevê a estruturação e sinalização de roteiros regionais integrados, costurando litoral, cânions e interior histórico em produtos turísticos completos.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -660,6 +660,7 @@
     "texto": "O programa prevê a redução da jornada de trabalho para 36 horas semanais, sem redução salarial ou flexibilização de direitos. O programa propõe o reconhecimento do vínculo empregatício de trabalhadores de aplicativos quando houver subordinação real às plataformas. O programa prevê a abertura completa dos contratos da dívida pública estadual, incluindo empréstimos, garantias, juros, prazos, credores e condições de pagamento. O programa defende serviços públicos estaduais com atendimento universal, gratuito e de qualidade para toda a população cearense. O programa propõe água sob controle público e social, com prioridade para a população trabalhadora, comunidades rurais, periferias, assentamentos, povos indígenas, quilombolas e pequenos produtores. O programa defende a criação de uma empresa pública estadual de obras, sob controle dos trabalhadores, para construir moradias, escolas, creches, hospitais, saneamento, equipamentos culturais e infraestrutura urbana.",
     "frases": [
       {
+        "id": "85248025d1f14e2f",
         "texto": "O programa prevê a redução da jornada de trabalho para 36 horas semanais, sem redução salarial ou flexibilização de direitos.",
         "evidencias": [
           {
@@ -670,6 +671,7 @@
         ]
       },
       {
+        "id": "46ceed43b58d7db4",
         "texto": "O programa propõe o reconhecimento do vínculo empregatício de trabalhadores de aplicativos quando houver subordinação real às plataformas.",
         "evidencias": [
           {
@@ -680,6 +682,7 @@
         ]
       },
       {
+        "id": "bcadf2de0710f276",
         "texto": "O programa prevê a abertura completa dos contratos da dívida pública estadual, incluindo empréstimos, garantias, juros, prazos, credores e condições de pagamento.",
         "evidencias": [
           {
@@ -690,6 +693,7 @@
         ]
       },
       {
+        "id": "8a997cbadeb9a9e3",
         "texto": "O programa defende serviços públicos estaduais com atendimento universal, gratuito e de qualidade para toda a população cearense.",
         "evidencias": [
           {
@@ -700,6 +704,7 @@
         ]
       },
       {
+        "id": "c3ec33d4da6aff15",
         "texto": "O programa propõe água sob controle público e social, com prioridade para a população trabalhadora, comunidades rurais, periferias, assentamentos, povos indígenas, quilombolas e pequenos produtores.",
         "evidencias": [
           {
@@ -710,6 +715,7 @@
         ]
       },
       {
+        "id": "7474a23f2ea81d5e",
         "texto": "O programa defende a criação de uma empresa pública estadual de obras, sob controle dos trabalhadores, para construir moradias, escolas, creches, hospitais, saneamento, equipamentos culturais e infraestrutura urbana.",
         "evidencias": [
           {

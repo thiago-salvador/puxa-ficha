@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -114,6 +114,7 @@
     "texto": "O programa prevê a estatização total das empresas de ônibus e do metrô, sob controle dos trabalhadores e usuários, dentro de uma proposta de transporte público. Também propõe a criação de programa para fornecimento gratuito a PCD’s de veículos adaptados, incluindo carros, motos e bicicletas. Na saúde pública, prevê o fim do IGESDF, com saúde 100% pública e estatal. O documento propõe a criação de um centro de saúde especializado para transexuais e travestis. Na educação, propõe salário digno para os professores e profissionais da educação, conforme o eixo de educação libertadora. Na política habitacional, propõe um plano habitacional popular, construído de forma democrática com os movimentos sociais. Esse plano prevê a construção de moradias dignas para acabar com o déficit habitacional e as remoções violentas.",
     "frases": [
       {
+        "id": "d860cde38ca1270d",
         "texto": "O programa prevê a estatização total das empresas de ônibus e do metrô, sob controle dos trabalhadores e usuários, dentro de uma proposta de transporte público.",
         "evidencias": [
           {
@@ -124,6 +125,7 @@
         ]
       },
       {
+        "id": "318ca0ed5f8bd31a",
         "texto": "Também propõe a criação de programa para fornecimento gratuito a PCD’s de veículos adaptados, incluindo carros, motos e bicicletas.",
         "evidencias": [
           {
@@ -134,6 +136,7 @@
         ]
       },
       {
+        "id": "cab32b007f17235a",
         "texto": "Na saúde pública, prevê o fim do IGESDF, com saúde 100% pública e estatal.",
         "evidencias": [
           {
@@ -144,6 +147,7 @@
         ]
       },
       {
+        "id": "eb8708237be152e0",
         "texto": "O documento propõe a criação de um centro de saúde especializado para transexuais e travestis.",
         "evidencias": [
           {
@@ -154,6 +158,7 @@
         ]
       },
       {
+        "id": "5749f1b0ac5081aa",
         "texto": "Na educação, propõe salário digno para os professores e profissionais da educação, conforme o eixo de educação libertadora.",
         "evidencias": [
           {
@@ -164,6 +169,7 @@
         ]
       },
       {
+        "id": "0ac0e50b8a4cc18a",
         "texto": "Na política habitacional, propõe um plano habitacional popular, construído de forma democrática com os movimentos sociais.",
         "evidencias": [
           {
@@ -174,6 +180,7 @@
         ]
       },
       {
+        "id": "e9bc7233886315ae",
         "texto": "Esse plano prevê a construção de moradias dignas para acabar com o déficit habitacional e as remoções violentas.",
         "evidencias": [
           {

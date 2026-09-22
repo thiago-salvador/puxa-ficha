@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -2012,6 +2012,7 @@
     "texto": "O plano de governo abrange os 52 municípios de Rondônia. O plano de governo está organizado em quatorze eixos. Na área de integridade, o programa propõe consolidar o Programa Estadual de Integridade e Combate à Corrupção. Em ações de cidadania, o programa propõe expandir as ações itinerantes de cidadania. Na segurança, o programa propõe implantar células avançadas de inteligência e barreiras tecnológicas em pontos estratégicos das rotas de drogas e armas. Na saúde, a construção do Novo Hospital e Pronto-Socorro de alta complexidade será prioridade do governo proposto. Na educação, o programa propõe criar a Faculdade do Governo para levar oportunidades aos jovens dos 52 municípios de Rondônia. O programa também propõe ampliar a utilização da telemedicina para aumentar o acesso a atendimentos especializados.",
     "frases": [
       {
+        "id": "4b307558c4669602",
         "texto": "O plano de governo abrange os 52 municípios de Rondônia.",
         "evidencias": [
           {
@@ -2022,6 +2023,7 @@
         ]
       },
       {
+        "id": "e2e3cb9ef8e8422f",
         "texto": "O plano de governo está organizado em quatorze eixos.",
         "evidencias": [
           {
@@ -2032,6 +2034,7 @@
         ]
       },
       {
+        "id": "c839562046cbb2dc",
         "texto": "Na área de integridade, o programa propõe consolidar o Programa Estadual de Integridade e Combate à Corrupção.",
         "evidencias": [
           {
@@ -2042,6 +2045,7 @@
         ]
       },
       {
+        "id": "fe2471f9463672bd",
         "texto": "Em ações de cidadania, o programa propõe expandir as ações itinerantes de cidadania.",
         "evidencias": [
           {
@@ -2052,6 +2056,7 @@
         ]
       },
       {
+        "id": "d44447c6575310ec",
         "texto": "Na segurança, o programa propõe implantar células avançadas de inteligência e barreiras tecnológicas em pontos estratégicos das rotas de drogas e armas.",
         "evidencias": [
           {
@@ -2062,6 +2067,7 @@
         ]
       },
       {
+        "id": "fdbe3f478cde63b2",
         "texto": "Na saúde, a construção do Novo Hospital e Pronto-Socorro de alta complexidade será prioridade do governo proposto.",
         "evidencias": [
           {
@@ -2072,6 +2078,7 @@
         ]
       },
       {
+        "id": "2f3180bc154eed4e",
         "texto": "Na educação, o programa propõe criar a Faculdade do Governo para levar oportunidades aos jovens dos 52 municípios de Rondônia.",
         "evidencias": [
           {
@@ -2082,6 +2089,7 @@
         ]
       },
       {
+        "id": "7b676fce5a20ed01",
         "texto": "O programa também propõe ampliar a utilização da telemedicina para aumentar o acesso a atendimentos especializados.",
         "evidencias": [
           {

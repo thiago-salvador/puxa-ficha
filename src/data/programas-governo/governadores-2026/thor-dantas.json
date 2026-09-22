@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -632,6 +632,7 @@
     "texto": "Em 2023, a Estratégia Saúde da Família alcançava 79,8% da população, conforme o dado registrado para esse ano. Em abril de 2026, havia mais de 87 mil consultas especializadas reprimidas no sistema de regulação, conforme o registro daquele período. Em fevereiro de 2026, o CNES registrava 1.614 leitos no estado, de acordo com o dado informado para aquele mês. Em 2023, o PIB do Acre chegou a R$ 26,3 bilhões, conforme o valor indicado no levantamento. As exportações do Acre somaram aproximadamente US$ 62,3 milhões no primeiro semestre de 2026, segundo o valor informado. Quase 80% das rodovias do Acre encontram-se em estado ruim ou péssimo, conforme a classificação apresentada. As condições do pavimento elevam em 71% o custo operacional do transporte, segundo o indicador registrado no documento. Em 2024, a taxa de homicídios de jovens de 15 a 29 anos foi de 37,6 por 100 mil, conforme o registro.",
     "frases": [
       {
+        "id": "412ae3a2ebb35f13",
         "texto": "Em 2023, a Estratégia Saúde da Família alcançava 79,8% da população, conforme o dado registrado para esse ano.",
         "evidencias": [
           {
@@ -642,6 +643,7 @@
         ]
       },
       {
+        "id": "580d52d322d86472",
         "texto": "Em abril de 2026, havia mais de 87 mil consultas especializadas reprimidas no sistema de regulação, conforme o registro daquele período.",
         "evidencias": [
           {
@@ -652,6 +654,7 @@
         ]
       },
       {
+        "id": "0cb10fcec9a938e2",
         "texto": "Em fevereiro de 2026, o CNES registrava 1.614 leitos no estado, de acordo com o dado informado para aquele mês.",
         "evidencias": [
           {
@@ -662,6 +665,7 @@
         ]
       },
       {
+        "id": "a51e5c15b19ee80b",
         "texto": "Em 2023, o PIB do Acre chegou a R$ 26,3 bilhões, conforme o valor indicado no levantamento.",
         "evidencias": [
           {
@@ -672,6 +676,7 @@
         ]
       },
       {
+        "id": "c445c207c525f21b",
         "texto": "As exportações do Acre somaram aproximadamente US$ 62,3 milhões no primeiro semestre de 2026, segundo o valor informado.",
         "evidencias": [
           {
@@ -682,6 +687,7 @@
         ]
       },
       {
+        "id": "1a554943cc2bd3f4",
         "texto": "Quase 80% das rodovias do Acre encontram-se em estado ruim ou péssimo, conforme a classificação apresentada.",
         "evidencias": [
           {
@@ -692,6 +698,7 @@
         ]
       },
       {
+        "id": "3782fc87116da927",
         "texto": "As condições do pavimento elevam em 71% o custo operacional do transporte, segundo o indicador registrado no documento.",
         "evidencias": [
           {
@@ -702,6 +709,7 @@
         ]
       },
       {
+        "id": "46db737ac634a494",
         "texto": "Em 2024, a taxa de homicídios de jovens de 15 a 29 anos foi de 37,6 por 100 mil, conforme o registro.",
         "evidencias": [
           {

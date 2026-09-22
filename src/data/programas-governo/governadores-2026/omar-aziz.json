@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -21926,6 +21926,7 @@
     "texto": "Na saúde, o plano prevê reduzir, até 2030, a taxa de glosa hospitalar de 11,3% para menos de 5%. Na saúde mental, o plano prevê criar 15 novos Centros de Atenção Psicossocial, distribuídos pelos polos regionais e municípios de maior porte do interior. Na educação, o Programa Estadual Bolsa Licenciatura começa com 200 bolsas no primeiro ano e prevê expansão progressiva. Na habitação, o Programa Amazonas Habitação estabelece destinação mínima de 35% dos recursos totais aos 61 municípios do interior. Na transformação digital, o programa prevê aplicar inteligência artificial em 15 políticas públicas estaduais até 2032. Na segurança pública, o Protocolo Ronda Digital é uma plataforma integrada que unifica dados, sistemas, ocorrências, inteligência e comunicação com a população. Na agenda ambiental, o plano prevê implementar pelo menos três corredores ecológicos conectando Unidades de Conservação e terras indígenas.",
     "frases": [
       {
+        "id": "32e435ca04621355",
         "texto": "Na saúde, o plano prevê reduzir, até 2030, a taxa de glosa hospitalar de 11,3% para menos de 5%.",
         "evidencias": [
           {
@@ -21936,6 +21937,7 @@
         ]
       },
       {
+        "id": "235e5b1f8c3d730a",
         "texto": "Na saúde mental, o plano prevê criar 15 novos Centros de Atenção Psicossocial, distribuídos pelos polos regionais e municípios de maior porte do interior.",
         "evidencias": [
           {
@@ -21946,6 +21948,7 @@
         ]
       },
       {
+        "id": "91e87431d06424e3",
         "texto": "Na educação, o Programa Estadual Bolsa Licenciatura começa com 200 bolsas no primeiro ano e prevê expansão progressiva.",
         "evidencias": [
           {
@@ -21956,6 +21959,7 @@
         ]
       },
       {
+        "id": "3b5375dc5def9835",
         "texto": "Na habitação, o Programa Amazonas Habitação estabelece destinação mínima de 35% dos recursos totais aos 61 municípios do interior.",
         "evidencias": [
           {
@@ -21966,6 +21970,7 @@
         ]
       },
       {
+        "id": "56ed862819d8c0d3",
         "texto": "Na transformação digital, o programa prevê aplicar inteligência artificial em 15 políticas públicas estaduais até 2032.",
         "evidencias": [
           {
@@ -21976,6 +21981,7 @@
         ]
       },
       {
+        "id": "d274748cefd271a7",
         "texto": "Na segurança pública, o Protocolo Ronda Digital é uma plataforma integrada que unifica dados, sistemas, ocorrências, inteligência e comunicação com a população.",
         "evidencias": [
           {
@@ -21986,6 +21992,7 @@
         ]
       },
       {
+        "id": "e967bc8fdf35e6f6",
         "texto": "Na agenda ambiental, o plano prevê implementar pelo menos três corredores ecológicos conectando Unidades de Conservação e terras indígenas.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -310,6 +310,7 @@
     "texto": "O programa prevê instituir um Centro de Governo capaz de conduzir o ciclo completo, do plano à entrega. Também prevê não aumentar imposto. Na área de inteligência artificial, propõe adotar uma política responsável, com avaliação de impacto, supervisão humana e direito de contestação de decisões automatizadas. A plataforma única de serviços será implantada por etapas, com metas anuais de digitalização e foco na experiência do usuário. O programa propõe implantar polos regionais de inovação com vocação temática ligada à economia local. Entre as medidas de crédito, está criar um fundo de garantia para viabilizar crédito. Na formação profissional, prevê levar trilhas de formação profissional a todos os municípios. Em infraestrutura, propõe construir um corredor multimodal que integre porto, rodovias, aeroporto e, no futuro, ferrovia.",
     "frases": [
       {
+        "id": "13ee6a0df81334da",
         "texto": "O programa prevê instituir um Centro de Governo capaz de conduzir o ciclo completo, do plano à entrega.",
         "evidencias": [
           {
@@ -320,6 +321,7 @@
         ]
       },
       {
+        "id": "1f8e1d6719bea1e5",
         "texto": "Também prevê não aumentar imposto.",
         "evidencias": [
           {
@@ -330,6 +332,7 @@
         ]
       },
       {
+        "id": "2cf435e5a2acf7e2",
         "texto": "Na área de inteligência artificial, propõe adotar uma política responsável, com avaliação de impacto, supervisão humana e direito de contestação de decisões automatizadas.",
         "evidencias": [
           {
@@ -340,6 +343,7 @@
         ]
       },
       {
+        "id": "3571f3f481521a64",
         "texto": "A plataforma única de serviços será implantada por etapas, com metas anuais de digitalização e foco na experiência do usuário.",
         "evidencias": [
           {
@@ -350,6 +354,7 @@
         ]
       },
       {
+        "id": "8db0ce28c61fe2eb",
         "texto": "O programa propõe implantar polos regionais de inovação com vocação temática ligada à economia local.",
         "evidencias": [
           {
@@ -360,6 +365,7 @@
         ]
       },
       {
+        "id": "7515dc0888826ca2",
         "texto": "Entre as medidas de crédito, está criar um fundo de garantia para viabilizar crédito.",
         "evidencias": [
           {
@@ -370,6 +376,7 @@
         ]
       },
       {
+        "id": "fa55e45509ed9ccf",
         "texto": "Na formação profissional, prevê levar trilhas de formação profissional a todos os municípios.",
         "evidencias": [
           {
@@ -380,6 +387,7 @@
         ]
       },
       {
+        "id": "9f611b0f27f02b90",
         "texto": "Em infraestrutura, propõe construir um corredor multimodal que integre porto, rodovias, aeroporto e, no futuro, ferrovia.",
         "evidencias": [
           {

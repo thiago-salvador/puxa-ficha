@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "Na política salarial, o programa propõe reposição integral de 100% das perdas salariais. Na organização do trabalho, o programa propõe jornada máxima de 35 horas semanais, distribuída em sete horas por dia durante cinco dias por semana. Na legislação trabalhista, o programa propõe o cancelamento da reforma trabalhista, com retorno e ampliação de toda a legislação de proteção dos trabalhadores. Na previdência, o programa propõe aposentadoria, no máximo, aos 25 anos de trabalho para mulheres e aos 30 anos de trabalho para homens. Na política agrária, o programa propõe o assentamento imediato dos milhões de sem-terra acampados em todo o País. Na habitação, o programa propõe a elaboração de um plano nacional de construção de milhões de moradias populares para garantir habitação digna à população e gerar milhões de empregos, sob o controle dos trabalhadores.",
     "frases": [
       {
+        "id": "e279332469b0cd5e",
         "texto": "Na política salarial, o programa propõe reposição integral de 100% das perdas salariais.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "916fbcb0fa470daf",
         "texto": "Na organização do trabalho, o programa propõe jornada máxima de 35 horas semanais, distribuída em sete horas por dia durante cinco dias por semana.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "3ba2388942658ad5",
         "texto": "Na legislação trabalhista, o programa propõe o cancelamento da reforma trabalhista, com retorno e ampliação de toda a legislação de proteção dos trabalhadores.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "85dd36816050de1c",
         "texto": "Na previdência, o programa propõe aposentadoria, no máximo, aos 25 anos de trabalho para mulheres e aos 30 anos de trabalho para homens.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "1c98e4ee7c04f1fd",
         "texto": "Na política agrária, o programa propõe o assentamento imediato dos milhões de sem-terra acampados em todo o País.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "f68de1d102263b1f",
         "texto": "Na habitação, o programa propõe a elaboração de um plano nacional de construção de milhões de moradias populares para garantir habitação digna à população e gerar milhões de empregos, sob o controle dos trabalhadores.",
         "evidencias": [
           {

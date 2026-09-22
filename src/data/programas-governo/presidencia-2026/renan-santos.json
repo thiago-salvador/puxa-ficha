@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -485,6 +485,7 @@
   "resumo": {
     "frases": [
       {
+        "id": "a1aab9e826c36cec",
         "texto": "O documento é o resumo executivo do Livro Amarelo, plano de governo do Partido Missão apresentado pelo presidenciável Renan Santos para as eleições de 2026, organizado em três partes: Estado Novo, Reformas de Base e País do Futuro.",
         "evidencias": [
           {
@@ -514,6 +515,7 @@
         ]
       },
       {
+        "id": "d661b19e8db109a3",
         "texto": "Na área fiscal, propõe uma PEC de Transição baseada na 'PEC do Equilíbrio Fiscal' para desindexar benefícios previdenciários e reduzir renúncias fiscais.",
         "evidencias": [
           {
@@ -527,6 +529,7 @@
         ]
       },
       {
+        "id": "f835fd24dda64343",
         "texto": "Na segurança pública, propõe a adoção do Direito Penal do Inimigo e uma Lei Antifacção para o combate ao crime organizado.",
         "evidencias": [
           {
@@ -540,6 +543,7 @@
         ]
       },
       {
+        "id": "452995cee8593ad4",
         "texto": "No pacto federativo, prevê a Grande Consolidação Municipal para reduzir o número de municípios brasileiros.",
         "evidencias": [
           {
@@ -553,6 +557,7 @@
         ]
       },
       {
+        "id": "3cc5b593379c58d5",
         "texto": "Na assistência social, propõe substituir o Bolsa Família por um programa de Frentes Cidadãs de trabalho remunerado.",
         "evidencias": [
           {
@@ -566,6 +571,7 @@
         ]
       },
       {
+        "id": "cfd60a8f13fbd6ba",
         "texto": "Na saúde, propõe o sistema ENER de fila por risco clínico em substituição à ordem cronológica.",
         "evidencias": [
           {
@@ -575,6 +581,7 @@
         ]
       },
       {
+        "id": "08eb3017b6a90c5d",
         "texto": "No plano internacional, apresenta propostas de política externa voltadas à liderança do Brasil no Sul Global e à desdolarização regional.",
         "evidencias": [
           {
@@ -588,6 +595,7 @@
         ]
       },
       {
+        "id": "4434aed108f297a6",
         "texto": "O documento também detalha um programa de desfavelização de dez anos para converter favelas em bairros formais.",
         "evidencias": [
           {

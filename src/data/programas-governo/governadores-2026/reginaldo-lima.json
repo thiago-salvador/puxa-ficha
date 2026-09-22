@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -548,6 +548,7 @@
     "texto": "No eixo de soberania territorial, o programa propõe a demarcação total e imediata dos territórios indígenas, quilombolas e de uso comum das comunidades tradicionais. Na política agrária, o programa propõe redirecionar os subsídios destinados à soja exportadora para o fomento da agroecologia e da produção de alimentos para o povo maranhense. No eixo dedicado às mulheres, o programa prevê a criação e ampliação de creches e lares de idosos como política de valorização e socialização do trabalho doméstico e de cuidados. Para o enfrentamento da violência de gênero, o programa prevê uma política estadual articulada entre estado e municípios para ampliar a rede de atendimento especializado. Para a juventude, o programa propõe a criação de uma Frente Estadual de Trabalho e Juventude, descrita como programa de emprego público planejado. Em Alcântara, o programa defende a titulação definitiva dos territórios quilombolas para garantir segurança jurídica às comunidades. No campo científico, o programa defende um programa espacial próprio sob controle público, transparente e orientado pelas necessidades do desenvolvimento nacional.",
     "frases": [
       {
+        "id": "4ccc947fbbf0901f",
         "texto": "No eixo de soberania territorial, o programa propõe a demarcação total e imediata dos territórios indígenas, quilombolas e de uso comum das comunidades tradicionais.",
         "evidencias": [
           {
@@ -558,6 +559,7 @@
         ]
       },
       {
+        "id": "46fb55804a17f9ef",
         "texto": "Na política agrária, o programa propõe redirecionar os subsídios destinados à soja exportadora para o fomento da agroecologia e da produção de alimentos para o povo maranhense.",
         "evidencias": [
           {
@@ -568,6 +570,7 @@
         ]
       },
       {
+        "id": "66426d97f62336bb",
         "texto": "No eixo dedicado às mulheres, o programa prevê a criação e ampliação de creches e lares de idosos como política de valorização e socialização do trabalho doméstico e de cuidados.",
         "evidencias": [
           {
@@ -578,6 +581,7 @@
         ]
       },
       {
+        "id": "67ed018ce1420ad3",
         "texto": "Para o enfrentamento da violência de gênero, o programa prevê uma política estadual articulada entre estado e municípios para ampliar a rede de atendimento especializado.",
         "evidencias": [
           {
@@ -588,6 +592,7 @@
         ]
       },
       {
+        "id": "33cb004f744ebb52",
         "texto": "Para a juventude, o programa propõe a criação de uma Frente Estadual de Trabalho e Juventude, descrita como programa de emprego público planejado.",
         "evidencias": [
           {
@@ -598,6 +603,7 @@
         ]
       },
       {
+        "id": "06a78e20c04d9622",
         "texto": "Em Alcântara, o programa defende a titulação definitiva dos territórios quilombolas para garantir segurança jurídica às comunidades.",
         "evidencias": [
           {
@@ -608,6 +614,7 @@
         ]
       },
       {
+        "id": "52d425bc9aea1ce9",
         "texto": "No campo científico, o programa defende um programa espacial próprio sob controle público, transparente e orientado pelas necessidades do desenvolvimento nacional.",
         "evidencias": [
           {

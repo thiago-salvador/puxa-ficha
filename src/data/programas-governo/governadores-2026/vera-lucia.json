@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -800,6 +800,7 @@
     "texto": "O programa prevê a construção de Conselhos Populares nos locais de trabalho, estudo e moradia. Esses conselhos participarão da definição das prioridades do governo, da elaboração do orçamento estadual, da fiscalização das políticas públicas e das principais decisões do estado. O programa prevê iniciar imediatamente a reestatização do Metrô, da CPTM e dos demais serviços essenciais. O programa prevê implantar a Tarifa Zero por meio de um sistema de transporte público, integrado, reestatizado e administrado em função das necessidades da população. O programa prevê criar uma rede estadual de proteção com casas-abrigo, centros de atendimento e Delegacias da Mulher 24 horas em todas as regiões do estado. O programa prevê implementar um plano estadual de habitação popular baseado na desapropriação de imóveis vazios para moradia. O programa prevê a criação de um polo estadual de tecnologia, semicondutores e inteligência artificial 100% público, vinculado às universidades estaduais.",
     "frases": [
       {
+        "id": "e96a73bf000dd22f",
         "texto": "O programa prevê a construção de Conselhos Populares nos locais de trabalho, estudo e moradia.",
         "evidencias": [
           {
@@ -810,6 +811,7 @@
         ]
       },
       {
+        "id": "89de5edf51ea2bff",
         "texto": "Esses conselhos participarão da definição das prioridades do governo, da elaboração do orçamento estadual, da fiscalização das políticas públicas e das principais decisões do estado.",
         "evidencias": [
           {
@@ -820,6 +822,7 @@
         ]
       },
       {
+        "id": "46c51ccf9d12c174",
         "texto": "O programa prevê iniciar imediatamente a reestatização do Metrô, da CPTM e dos demais serviços essenciais.",
         "evidencias": [
           {
@@ -830,6 +833,7 @@
         ]
       },
       {
+        "id": "f9d905619db1eff0",
         "texto": "O programa prevê implantar a Tarifa Zero por meio de um sistema de transporte público, integrado, reestatizado e administrado em função das necessidades da população.",
         "evidencias": [
           {
@@ -840,6 +844,7 @@
         ]
       },
       {
+        "id": "a6c5b576a37baddb",
         "texto": "O programa prevê criar uma rede estadual de proteção com casas-abrigo, centros de atendimento e Delegacias da Mulher 24 horas em todas as regiões do estado.",
         "evidencias": [
           {
@@ -850,6 +855,7 @@
         ]
       },
       {
+        "id": "ce432b466060ad06",
         "texto": "O programa prevê implementar um plano estadual de habitação popular baseado na desapropriação de imóveis vazios para moradia.",
         "evidencias": [
           {
@@ -860,6 +866,7 @@
         ]
       },
       {
+        "id": "19562491e98bc081",
         "texto": "O programa prevê a criação de um polo estadual de tecnologia, semicondutores e inteligência artificial 100% público, vinculado às universidades estaduais.",
         "evidencias": [
           {

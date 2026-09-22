@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -394,6 +394,7 @@
     "texto": "Na área de emprego, o programa prevê a criação de frentes emergenciais de trabalho, nos bairros pobres e interiores de todo o estado, com obras de infraestrutura em saneamento. No desenvolvimento agrário, apresenta a defesa irrestrita da agrigultura familiar e o fortalecimento da política de investimento e proteção a esse setor. Para o direito à cidade, prevê a recuperação de imóveis vazios para destinação à moradia e equipamentos comunitários. Na educação, propõe efetivar um plano estadual da Escola Básica Integral. Na cultura, estabelece a criação de centros educativos de arte comunitária regionalizados, com o estudo de música, teatro, dança, artes plásticas e audiovisual de forma pública, gratuita e de qualidade. Na segurança pública, propõe o combate ao crime organizado com as forças de inteligência do estado. Na saúde, prevê a implementação de Rede de Centros de Saúde da Família em todo o estado.",
     "frases": [
       {
+        "id": "29b50bc4de5b6e21",
         "texto": "Na área de emprego, o programa prevê a criação de frentes emergenciais de trabalho, nos bairros pobres e interiores de todo o estado, com obras de infraestrutura em saneamento.",
         "evidencias": [
           {
@@ -404,6 +405,7 @@
         ]
       },
       {
+        "id": "fb4c702c0a6f8d91",
         "texto": "No desenvolvimento agrário, apresenta a defesa irrestrita da agrigultura familiar e o fortalecimento da política de investimento e proteção a esse setor.",
         "evidencias": [
           {
@@ -414,6 +416,7 @@
         ]
       },
       {
+        "id": "fe19d8d1009bd7e7",
         "texto": "Para o direito à cidade, prevê a recuperação de imóveis vazios para destinação à moradia e equipamentos comunitários.",
         "evidencias": [
           {
@@ -424,6 +427,7 @@
         ]
       },
       {
+        "id": "dbe4ca714e2c5fda",
         "texto": "Na educação, propõe efetivar um plano estadual da Escola Básica Integral.",
         "evidencias": [
           {
@@ -434,6 +438,7 @@
         ]
       },
       {
+        "id": "297819abae669acc",
         "texto": "Na cultura, estabelece a criação de centros educativos de arte comunitária regionalizados, com o estudo de música, teatro, dança, artes plásticas e audiovisual de forma pública, gratuita e de qualidade.",
         "evidencias": [
           {
@@ -444,6 +449,7 @@
         ]
       },
       {
+        "id": "f81a030c5e9e9b38",
         "texto": "Na segurança pública, propõe o combate ao crime organizado com as forças de inteligência do estado.",
         "evidencias": [
           {
@@ -454,6 +460,7 @@
         ]
       },
       {
+        "id": "aa63723f2b5bad3f",
         "texto": "Na saúde, prevê a implementação de Rede de Centros de Saúde da Família em todo o estado.",
         "evidencias": [
           {

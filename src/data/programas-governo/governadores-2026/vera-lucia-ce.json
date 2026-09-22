@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -954,6 +954,7 @@
     "texto": "Articular com o Governo Federal e com o Poder Judiciário a transferência de lideranças de organizações criminosas que preencham os requisitos legais para estabelecimentos de segurança máxima, impedindo que continuem comandando atividades criminosas de dentro das unidades prisionais. Investir em infraestrutura, tecnologia e capacitação profissional para ampliar o atendimento por telemedicina, garantindo acesso a especialistas para moradores de regiões afastadas e pacientes com dificuldade de locomoção. Criar um programa estadual de ampliação do acesso às creches, em parceria com os municípios, organizações credenciadas e instituições privadas, priorizando as localidades onde houver maior déficit de vagas. Implantar uma plataforma estadual que concentre serviços e informações necessários para quem deseja abrir ou ampliar um negócio. Estruturar uma rede integrada de acolhimento, saúde, assistência social, capacitação profissional e reinserção social para pessoas em situação de rua e para aquelas que enfrentam dependência química. Acelerar os investimentos em abastecimento de água, coleta e tratamento de esgoto, drenagem e manejo adequado de resíduos.",
     "frases": [
       {
+        "id": "d2d527199175ed47",
         "texto": "Articular com o Governo Federal e com o Poder Judiciário a transferência de lideranças de organizações criminosas que preencham os requisitos legais para estabelecimentos de segurança máxima, impedindo que continuem comandando atividades criminosas de dentro das unidades prisionais.",
         "evidencias": [
           {
@@ -964,6 +965,7 @@
         ]
       },
       {
+        "id": "87e51a1b52d18e51",
         "texto": "Investir em infraestrutura, tecnologia e capacitação profissional para ampliar o atendimento por telemedicina, garantindo acesso a especialistas para moradores de regiões afastadas e pacientes com dificuldade de locomoção.",
         "evidencias": [
           {
@@ -974,6 +976,7 @@
         ]
       },
       {
+        "id": "86b3b6d024694207",
         "texto": "Criar um programa estadual de ampliação do acesso às creches, em parceria com os municípios, organizações credenciadas e instituições privadas, priorizando as localidades onde houver maior déficit de vagas.",
         "evidencias": [
           {
@@ -984,6 +987,7 @@
         ]
       },
       {
+        "id": "40903d1c2c4f4b55",
         "texto": "Implantar uma plataforma estadual que concentre serviços e informações necessários para quem deseja abrir ou ampliar um negócio.",
         "evidencias": [
           {
@@ -994,6 +998,7 @@
         ]
       },
       {
+        "id": "0c2496c25d3011fe",
         "texto": "Estruturar uma rede integrada de acolhimento, saúde, assistência social, capacitação profissional e reinserção social para pessoas em situação de rua e para aquelas que enfrentam dependência química.",
         "evidencias": [
           {
@@ -1004,6 +1009,7 @@
         ]
       },
       {
+        "id": "340c475e815a7de9",
         "texto": "Acelerar os investimentos em abastecimento de água, coleta e tratamento de esgoto, drenagem e manejo adequado de resíduos.",
         "evidencias": [
           {

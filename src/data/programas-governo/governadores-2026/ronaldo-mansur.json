@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -380,6 +380,7 @@
     "texto": "O programa propõe uma nova abordagem para a economia baiana. O nosso governo terá eixos de desenvolvimento que contemplem o estado em sua globalidade. Propomos a construção de um modelo de segurança cidadã no qual a vida e a integridade das pessoas não sejam sacrificadas pela defesa da ordem ou do patrimônio do “andar de cima” da sociedade. O princípio estruturante da nossa proposta de governo é a garantia do preceito constitucional da educação como um direito e um dever do Estado. O PSOL se pauta historicamente pela defesa e ampliação do Sistema Único de Saúde, público, estatal, descentralizado e intersetorial. Defenderemos o patrimônio socioambiental e energético do estado. Criar zonas e aglomerações comerciais e industriais. O debate sobre política de drogas deve ser pautado com base no direito à saúde pública e no investimento em prevenção.",
     "frases": [
       {
+        "id": "a0022fcc7c639ec3",
         "texto": "O programa propõe uma nova abordagem para a economia baiana.",
         "evidencias": [
           {
@@ -390,6 +391,7 @@
         ]
       },
       {
+        "id": "f5b576cbe4fed747",
         "texto": "O nosso governo terá eixos de desenvolvimento que contemplem o estado em sua globalidade.",
         "evidencias": [
           {
@@ -400,6 +402,7 @@
         ]
       },
       {
+        "id": "64f62fa96ffa5745",
         "texto": "Propomos a construção de um modelo de segurança cidadã no qual a vida e a integridade das pessoas não sejam sacrificadas pela defesa da ordem ou do patrimônio do “andar de cima” da sociedade.",
         "evidencias": [
           {
@@ -410,6 +413,7 @@
         ]
       },
       {
+        "id": "dc0785b6823a9dac",
         "texto": "O princípio estruturante da nossa proposta de governo é a garantia do preceito constitucional da educação como um direito e um dever do Estado.",
         "evidencias": [
           {
@@ -420,6 +424,7 @@
         ]
       },
       {
+        "id": "e0dfa4b44cf58e60",
         "texto": "O PSOL se pauta historicamente pela defesa e ampliação do Sistema Único de Saúde, público, estatal, descentralizado e intersetorial.",
         "evidencias": [
           {
@@ -430,6 +435,7 @@
         ]
       },
       {
+        "id": "e0940be04bb87173",
         "texto": "Defenderemos o patrimônio socioambiental e energético do estado.",
         "evidencias": [
           {
@@ -440,6 +446,7 @@
         ]
       },
       {
+        "id": "1a2af4ca06b08ba6",
         "texto": "Criar zonas e aglomerações comerciais e industriais.",
         "evidencias": [
           {
@@ -450,6 +457,7 @@
         ]
       },
       {
+        "id": "a3593ac4c8553a20",
         "texto": "O debate sobre política de drogas deve ser pautado com base no direito à saúde pública e no investimento em prevenção.",
         "evidencias": [
           {

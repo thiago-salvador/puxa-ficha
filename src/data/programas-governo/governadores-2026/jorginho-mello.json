@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -352,6 +352,7 @@
     "texto": "O Plano de Governo para o Estado de Santa Catarina, quadriênio 2027-2030, fundamenta-se no compromisso de continuar a transformar intenções políticas em resultados concretos que elevem a qualidade de vida da população. A modernização do Estado é uma exigência contemporânea para enfrentar os desafios de um cenário globalizado e digital. A governança pública será orientada pela transparência, assegurando que a máquina estatal continue a operar com responsabilidade e respeito aos direitos fundamentais de todos os catarinenses. Diretriz Central: expandir a logística de transporte com foco em eficiência, dinamização das vocações regionais e escoamento acelerado da produção agroindustrial e industrial catarinense. Diretriz Central: garantir acesso universal, rápido e regionalizado à saúde de alta e média complexidade, fortalecendo a rede filantrópica, os hospitais próprios e as redes municipais. Ampliar a educação em tempo integral nas escolas públicas estaduais catarinenses. Campo Competitivo: investir na inovação tecnológica, resiliência climática, conservação de solo e competitividade da agricultura familiar catarinense.",
     "frases": [
       {
+        "id": "3e4c25456157e3f6",
         "texto": "O Plano de Governo para o Estado de Santa Catarina, quadriênio 2027-2030, fundamenta-se no compromisso de continuar a transformar intenções políticas em resultados concretos que elevem a qualidade de vida da população.",
         "evidencias": [
           {
@@ -362,6 +363,7 @@
         ]
       },
       {
+        "id": "c51160b8e4208d2a",
         "texto": "A modernização do Estado é uma exigência contemporânea para enfrentar os desafios de um cenário globalizado e digital.",
         "evidencias": [
           {
@@ -372,6 +374,7 @@
         ]
       },
       {
+        "id": "0dc278469bf7401e",
         "texto": "A governança pública será orientada pela transparência, assegurando que a máquina estatal continue a operar com responsabilidade e respeito aos direitos fundamentais de todos os catarinenses.",
         "evidencias": [
           {
@@ -382,6 +385,7 @@
         ]
       },
       {
+        "id": "77aa7aa348b4bc17",
         "texto": "Diretriz Central: expandir a logística de transporte com foco em eficiência, dinamização das vocações regionais e escoamento acelerado da produção agroindustrial e industrial catarinense.",
         "evidencias": [
           {
@@ -392,6 +396,7 @@
         ]
       },
       {
+        "id": "e2829b3b50349031",
         "texto": "Diretriz Central: garantir acesso universal, rápido e regionalizado à saúde de alta e média complexidade, fortalecendo a rede filantrópica, os hospitais próprios e as redes municipais.",
         "evidencias": [
           {
@@ -402,6 +407,7 @@
         ]
       },
       {
+        "id": "b3808b1564178654",
         "texto": "Ampliar a educação em tempo integral nas escolas públicas estaduais catarinenses.",
         "evidencias": [
           {
@@ -412,6 +418,7 @@
         ]
       },
       {
+        "id": "42e7c2f0b9ce4597",
         "texto": "Campo Competitivo: investir na inovação tecnológica, resiliência climática, conservação de solo e competitividade da agricultura familiar catarinense.",
         "evidencias": [
           {

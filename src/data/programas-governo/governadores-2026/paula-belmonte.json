@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -772,6 +772,7 @@
     "texto": "O programa prevê colocar a população no centro das decisões e políticas públicas, como diretriz para a atuação governamental. Na educação, o programa propõe ampliar gradualmente a Educação Integral, começando pelas regiões de maior vulnerabilidade. Na saúde, o programa planeja implantar um prontuário eletrônico integrado, acessível aos diferentes níveis da rede. Na mobilidade, o programa propõe investir no sistema ferroviário para transportar grandes volumes de passageiros. Na gestão pública, o programa prevê integrar os sistemas do Governo do Distrito Federal para conectar os órgãos públicos. Na transparência, o programa propõe criar uma estrutura permanente e estratégica para atuar na prevenção e no combate à corrupção. Na habitação, o programa prevê enfrentar o déficit habitacional com uma política permanente de produção e oferta de moradias.",
     "frases": [
       {
+        "id": "0cf951da83991cf4",
         "texto": "O programa prevê colocar a população no centro das decisões e políticas públicas, como diretriz para a atuação governamental.",
         "evidencias": [
           {
@@ -782,6 +783,7 @@
         ]
       },
       {
+        "id": "3937dc60e8f701c1",
         "texto": "Na educação, o programa propõe ampliar gradualmente a Educação Integral, começando pelas regiões de maior vulnerabilidade.",
         "evidencias": [
           {
@@ -792,6 +794,7 @@
         ]
       },
       {
+        "id": "b3f47689ddc5ef5d",
         "texto": "Na saúde, o programa planeja implantar um prontuário eletrônico integrado, acessível aos diferentes níveis da rede.",
         "evidencias": [
           {
@@ -802,6 +805,7 @@
         ]
       },
       {
+        "id": "bc428ad1f28017e4",
         "texto": "Na mobilidade, o programa propõe investir no sistema ferroviário para transportar grandes volumes de passageiros.",
         "evidencias": [
           {
@@ -812,6 +816,7 @@
         ]
       },
       {
+        "id": "5d9704b57fcbac61",
         "texto": "Na gestão pública, o programa prevê integrar os sistemas do Governo do Distrito Federal para conectar os órgãos públicos.",
         "evidencias": [
           {
@@ -822,6 +827,7 @@
         ]
       },
       {
+        "id": "73b26d51caea51ef",
         "texto": "Na transparência, o programa propõe criar uma estrutura permanente e estratégica para atuar na prevenção e no combate à corrupção.",
         "evidencias": [
           {
@@ -832,6 +838,7 @@
         ]
       },
       {
+        "id": "88ead6b7b829db55",
         "texto": "Na habitação, o programa prevê enfrentar o déficit habitacional com uma política permanente de produção e oferta de moradias.",
         "evidencias": [
           {

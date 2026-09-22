@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -436,6 +436,7 @@
     "texto": "O Estado fortalecerá a média e a alta complexidade no interior, respeitando a regionalização própria do SUS e usando os doze polos deste Plano como referência complementar de presença administrativa e logística. Telemedicina será usada para aproximar especialistas dos profissionais e pacientes do interior, apoiar diagnóstico e evitar viagens que não precisam acontecer. A cultura será tratada como direito, identidade e trabalho. O planejamento estadual será multimodal: rios, portos e terminais, embarcações, aeroportos e aeródromos regionais, rodovias, vicinais, pontes e conectividade precisam ser combinados conforme a realidade de cada região. A saúde mental terá ampliação progressiva da capacidade dos CAPS e serviços equivalentes, atendimento em crise, prevenção do suicídio, cuidado continuado e apoio às famílias, dentro das responsabilidades do SUS. A Defesa Civil será fortalecida nas ações de prevenção, mitigação, preparação, resposta e recuperação, articuladas às políticas de adaptação climática.",
     "frases": [
       {
+        "id": "cbaff03288e84165",
         "texto": "O Estado fortalecerá a média e a alta complexidade no interior, respeitando a regionalização própria do SUS e usando os doze polos deste Plano como referência complementar de presença administrativa e logística.",
         "evidencias": [
           {
@@ -446,6 +447,7 @@
         ]
       },
       {
+        "id": "20501010abea602d",
         "texto": "Telemedicina será usada para aproximar especialistas dos profissionais e pacientes do interior, apoiar diagnóstico e evitar viagens que não precisam acontecer.",
         "evidencias": [
           {
@@ -456,6 +458,7 @@
         ]
       },
       {
+        "id": "505835ca56dcc6f9",
         "texto": "A cultura será tratada como direito, identidade e trabalho.",
         "evidencias": [
           {
@@ -466,6 +469,7 @@
         ]
       },
       {
+        "id": "483d0fbccee46cf1",
         "texto": "O planejamento estadual será multimodal: rios, portos e terminais, embarcações, aeroportos e aeródromos regionais, rodovias, vicinais, pontes e conectividade precisam ser combinados conforme a realidade de cada região.",
         "evidencias": [
           {
@@ -476,6 +480,7 @@
         ]
       },
       {
+        "id": "f8b7e88fab364fb8",
         "texto": "A saúde mental terá ampliação progressiva da capacidade dos CAPS e serviços equivalentes, atendimento em crise, prevenção do suicídio, cuidado continuado e apoio às famílias, dentro das responsabilidades do SUS.",
         "evidencias": [
           {
@@ -486,6 +491,7 @@
         ]
       },
       {
+        "id": "b4279347b4758a9a",
         "texto": "A Defesa Civil será fortalecida nas ações de prevenção, mitigação, preparação, resposta e recuperação, articuladas às políticas de adaptação climática.",
         "evidencias": [
           {

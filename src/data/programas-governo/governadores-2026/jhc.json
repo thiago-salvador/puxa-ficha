@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -786,6 +786,7 @@
     "texto": "O plano propõe ampliar a capacidade de imunização da rede estadual. O plano propõe levar solução regional de saúde mental aos 42 municípios sem CAPS. O plano propõe criar os primeiros parques estaduais de Alagoas. O plano propõe criar o Passe Livre Estudantil Estadual, com redução do custo do deslocamento para estudantes. O plano propõe criar uma instituição autônoma e permanente para prevenir, investigar e enfrentar a corrupção na administração pública estadual. O plano propõe publicar um portfólio único, público e atualizado dos projetos de infraestrutura que Alagoas pretende viabilizar até 2030. O programa Alagoas Trabalha prevê metas específicas de geração de empregos formais fora da Região Metropolitana. O plano propõe implantar uma rede de matadouros públicos no interior de Alagoas.",
     "frases": [
       {
+        "id": "28146556a554fc67",
         "texto": "O plano propõe ampliar a capacidade de imunização da rede estadual.",
         "evidencias": [
           {
@@ -796,6 +797,7 @@
         ]
       },
       {
+        "id": "6e47c17bec5f416c",
         "texto": "O plano propõe levar solução regional de saúde mental aos 42 municípios sem CAPS.",
         "evidencias": [
           {
@@ -806,6 +808,7 @@
         ]
       },
       {
+        "id": "ad08395991e0ffe0",
         "texto": "O plano propõe criar os primeiros parques estaduais de Alagoas.",
         "evidencias": [
           {
@@ -816,6 +819,7 @@
         ]
       },
       {
+        "id": "b37baf811c2494d7",
         "texto": "O plano propõe criar o Passe Livre Estudantil Estadual, com redução do custo do deslocamento para estudantes.",
         "evidencias": [
           {
@@ -826,6 +830,7 @@
         ]
       },
       {
+        "id": "62b538902c8f8a57",
         "texto": "O plano propõe criar uma instituição autônoma e permanente para prevenir, investigar e enfrentar a corrupção na administração pública estadual.",
         "evidencias": [
           {
@@ -836,6 +841,7 @@
         ]
       },
       {
+        "id": "421f52fe2e922b02",
         "texto": "O plano propõe publicar um portfólio único, público e atualizado dos projetos de infraestrutura que Alagoas pretende viabilizar até 2030.",
         "evidencias": [
           {
@@ -846,6 +852,7 @@
         ]
       },
       {
+        "id": "0608486f0466f71a",
         "texto": "O programa Alagoas Trabalha prevê metas específicas de geração de empregos formais fora da Região Metropolitana.",
         "evidencias": [
           {
@@ -856,6 +863,7 @@
         ]
       },
       {
+        "id": "7210562581703fae",
         "texto": "O plano propõe implantar uma rede de matadouros públicos no interior de Alagoas.",
         "evidencias": [
           {

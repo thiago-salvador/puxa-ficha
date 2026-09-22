@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -86,6 +86,7 @@
     "texto": "O plano de governo prevê o Programa Educação IA para educação digital, inteligência artificial, desenvolvimento de competências digitais, uso ético das tecnologias emergentes no processo educacional, ambiente digital de aprendizagem nas escolas da rede estadual de educação. O programa Escola da Hora Tech propõe manutenção de laboratórios, aquisição de insumos, execução de práticas pedagógicas, fortalecimento da oferta de cursos técnicos. O Programa Mãe Estudante: Espaço Afeto prevê apoio à amamentação, permanência escolar das estudantes mães. O documento propõe combater o analfabetismo na idade adulta. O plano prevê criar um programa de residência tecnológica. Na área ambiental, o plano prevê criar o Programa de Restauração Florestal e Combate à Desertificação. O plano prevê investir em energias renováveis (solar) na rede pública. O documento propõe criar a “Agenda 21 de Alagoas”, para orientar políticas públicas de desenvolvimento ambiental.",
     "frases": [
       {
+        "id": "45edef807ee5e81a",
         "texto": "O plano de governo prevê o Programa Educação IA para educação digital, inteligência artificial, desenvolvimento de competências digitais, uso ético das tecnologias emergentes no processo educacional, ambiente digital de aprendizagem nas escolas da rede estadual de educação.",
         "evidencias": [
           {
@@ -96,6 +97,7 @@
         ]
       },
       {
+        "id": "47fd4e56b424a04e",
         "texto": "O programa Escola da Hora Tech propõe manutenção de laboratórios, aquisição de insumos, execução de práticas pedagógicas, fortalecimento da oferta de cursos técnicos.",
         "evidencias": [
           {
@@ -106,6 +108,7 @@
         ]
       },
       {
+        "id": "e0c1a0ae4ee30627",
         "texto": "O Programa Mãe Estudante: Espaço Afeto prevê apoio à amamentação, permanência escolar das estudantes mães.",
         "evidencias": [
           {
@@ -116,6 +119,7 @@
         ]
       },
       {
+        "id": "97c2430fd1d63c7a",
         "texto": "O documento propõe combater o analfabetismo na idade adulta.",
         "evidencias": [
           {
@@ -126,6 +130,7 @@
         ]
       },
       {
+        "id": "b1c9627556c7f8df",
         "texto": "O plano prevê criar um programa de residência tecnológica.",
         "evidencias": [
           {
@@ -136,6 +141,7 @@
         ]
       },
       {
+        "id": "e269287d5461e67a",
         "texto": "Na área ambiental, o plano prevê criar o Programa de Restauração Florestal e Combate à Desertificação.",
         "evidencias": [
           {
@@ -146,6 +152,7 @@
         ]
       },
       {
+        "id": "2c91c4fe6007d493",
         "texto": "O plano prevê investir em energias renováveis (solar) na rede pública.",
         "evidencias": [
           {
@@ -156,6 +163,7 @@
         ]
       },
       {
+        "id": "fd4ba7e25cd856b9",
         "texto": "O documento propõe criar a “Agenda 21 de Alagoas”, para orientar políticas públicas de desenvolvimento ambiental.",
         "evidencias": [
           {

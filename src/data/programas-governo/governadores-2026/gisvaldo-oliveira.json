@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -576,6 +576,7 @@
     "texto": "O programa prevê o fomento da agricultura familiar por meio de assessoria técnica, conforme uma proposta voltada à produção de pequenos produtores. O programa propõe investir no turismo ecológico responsável, valorizando especificidades locais do Litoral ao Sertão. O programa prevê criar espaços públicos de trabalho compartilhados para micro e pequenos empreendedores. O programa propõe buscar o desmatamento zero da vegetação nativa no estado, com fiscalização do desmatamento. O programa prevê criar uma Secretaria Estadual de Direitos Humanos para articular políticas de promoção, proteção e defesa. O programa prevê realizar concurso público para preenchimento total do quadro de professores e funcionários efetivos da educação básica. O programa prevê o fortalecimento da Rede de Atenção Psicossocial orientada pelos pressupostos da Reforma Psiquiátrica Brasileira. O programa propõe reformular o Portal da Transparência, divulgando dados sobre obras, renúncias fiscais, emendas parlamentares.",
     "frases": [
       {
+        "id": "9dda3a5f7cf1836b",
         "texto": "O programa prevê o fomento da agricultura familiar por meio de assessoria técnica, conforme uma proposta voltada à produção de pequenos produtores.",
         "evidencias": [
           {
@@ -586,6 +587,7 @@
         ]
       },
       {
+        "id": "5663e5a1e1ff37a5",
         "texto": "O programa propõe investir no turismo ecológico responsável, valorizando especificidades locais do Litoral ao Sertão.",
         "evidencias": [
           {
@@ -596,6 +598,7 @@
         ]
       },
       {
+        "id": "46a5255aaf6474d1",
         "texto": "O programa prevê criar espaços públicos de trabalho compartilhados para micro e pequenos empreendedores.",
         "evidencias": [
           {
@@ -606,6 +609,7 @@
         ]
       },
       {
+        "id": "83a5e1ed026d2823",
         "texto": "O programa propõe buscar o desmatamento zero da vegetação nativa no estado, com fiscalização do desmatamento.",
         "evidencias": [
           {
@@ -616,6 +620,7 @@
         ]
       },
       {
+        "id": "52b4f2ff54a353bb",
         "texto": "O programa prevê criar uma Secretaria Estadual de Direitos Humanos para articular políticas de promoção, proteção e defesa.",
         "evidencias": [
           {
@@ -626,6 +631,7 @@
         ]
       },
       {
+        "id": "9615a1a1b74a03e0",
         "texto": "O programa prevê realizar concurso público para preenchimento total do quadro de professores e funcionários efetivos da educação básica.",
         "evidencias": [
           {
@@ -636,6 +642,7 @@
         ]
       },
       {
+        "id": "c175ede2217c3047",
         "texto": "O programa prevê o fortalecimento da Rede de Atenção Psicossocial orientada pelos pressupostos da Reforma Psiquiátrica Brasileira.",
         "evidencias": [
           {
@@ -646,6 +653,7 @@
         ]
       },
       {
+        "id": "a14a692d2903230b",
         "texto": "O programa propõe reformular o Portal da Transparência, divulgando dados sobre obras, renúncias fiscais, emendas parlamentares.",
         "evidencias": [
           {

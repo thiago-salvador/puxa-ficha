@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -86,6 +86,7 @@
     "texto": "Na saúde pública, o programa prevê a construção de laboratórios de análises clínicas no estado em todas as regiões Polos. O documento prevê a ampliação do sistema de entrega de medicamentos de alto e baixo custo. Na infraestrutura aeroportuária, o programa propõe a reativação do Aeroporto Augusto Severo para voos domésticos. Na segurança pública, o programa prevê concurso público para 10 mil policiais militares, 5 mil policiais civis, 2 mil policiais penais. Na educação, o programa prevê a construção de novas escolas. Na política salarial educacional, o programa prevê aumento salarial de 10% para os professores a partir de março de 2027. Para profissionais recém-formados, o programa prevê oportunidade de emprego por processo seletivo e avaliação de currículo. O plano prevê a criação de um Novo Banco do RN voltado para o crescimento do RN.",
     "frases": [
       {
+        "id": "3deba4404d89166f",
         "texto": "Na saúde pública, o programa prevê a construção de laboratórios de análises clínicas no estado em todas as regiões Polos.",
         "evidencias": [
           {
@@ -96,6 +97,7 @@
         ]
       },
       {
+        "id": "519e08985129f1dd",
         "texto": "O documento prevê a ampliação do sistema de entrega de medicamentos de alto e baixo custo.",
         "evidencias": [
           {
@@ -106,6 +108,7 @@
         ]
       },
       {
+        "id": "2d5905c81c025640",
         "texto": "Na infraestrutura aeroportuária, o programa propõe a reativação do Aeroporto Augusto Severo para voos domésticos.",
         "evidencias": [
           {
@@ -116,6 +119,7 @@
         ]
       },
       {
+        "id": "396b7cb407652639",
         "texto": "Na segurança pública, o programa prevê concurso público para 10 mil policiais militares, 5 mil policiais civis, 2 mil policiais penais.",
         "evidencias": [
           {
@@ -126,6 +130,7 @@
         ]
       },
       {
+        "id": "40aa60a70fd7bb64",
         "texto": "Na educação, o programa prevê a construção de novas escolas.",
         "evidencias": [
           {
@@ -136,6 +141,7 @@
         ]
       },
       {
+        "id": "a999ebc1cfaf0ae3",
         "texto": "Na política salarial educacional, o programa prevê aumento salarial de 10% para os professores a partir de março de 2027.",
         "evidencias": [
           {
@@ -146,6 +152,7 @@
         ]
       },
       {
+        "id": "2e5eedc9491cd2c2",
         "texto": "Para profissionais recém-formados, o programa prevê oportunidade de emprego por processo seletivo e avaliação de currículo.",
         "evidencias": [
           {
@@ -156,6 +163,7 @@
         ]
       },
       {
+        "id": "0048c87b72f99426",
         "texto": "O plano prevê a criação de um Novo Banco do RN voltado para o crescimento do RN.",
         "evidencias": [
           {

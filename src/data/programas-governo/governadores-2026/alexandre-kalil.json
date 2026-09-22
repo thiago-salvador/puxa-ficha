@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -2102,6 +2102,7 @@
     "texto": "O programa reconhece que Minas Gerais possui 853 municípios com realidades econômicas, sociais, demográficas, ambientais e territoriais distintas. A regionalização será um princípio permanente de governo. As principais políticas públicas terão objetivos, responsabilidades, metas e mecanismos de acompanhamento para avaliar sua implementação e seus resultados. O Governo ampliará a integração de sistemas, o compartilhamento seguro de informações, a digitalização de serviços e o uso responsável de dados e inteligência artificial. A Secretaria de Estado de Saúde de Minas Gerais retomará plenamente seu papel de coordenação estadual do SUS. O Governo implantará uma carteira permanente de investimentos estratégicos de Minas Gerais, organizada por áreas e regiões. O Estado organizará uma estratégia integrada de prevenção, monitoramento e resposta a incêndios florestais. O Governo instituirá uma Política Estadual de Governança e Inteligência de Dados.",
     "frases": [
       {
+        "id": "d2a0b3b9cc59c82e",
         "texto": "O programa reconhece que Minas Gerais possui 853 municípios com realidades econômicas, sociais, demográficas, ambientais e territoriais distintas.",
         "evidencias": [
           {
@@ -2112,6 +2113,7 @@
         ]
       },
       {
+        "id": "ed1854225fbdb0ce",
         "texto": "A regionalização será um princípio permanente de governo.",
         "evidencias": [
           {
@@ -2122,6 +2124,7 @@
         ]
       },
       {
+        "id": "5c7d2755f8dd141b",
         "texto": "As principais políticas públicas terão objetivos, responsabilidades, metas e mecanismos de acompanhamento para avaliar sua implementação e seus resultados.",
         "evidencias": [
           {
@@ -2132,6 +2135,7 @@
         ]
       },
       {
+        "id": "7308e9d7600e2c12",
         "texto": "O Governo ampliará a integração de sistemas, o compartilhamento seguro de informações, a digitalização de serviços e o uso responsável de dados e inteligência artificial.",
         "evidencias": [
           {
@@ -2142,6 +2146,7 @@
         ]
       },
       {
+        "id": "2509dda28e377921",
         "texto": "A Secretaria de Estado de Saúde de Minas Gerais retomará plenamente seu papel de coordenação estadual do SUS.",
         "evidencias": [
           {
@@ -2152,6 +2157,7 @@
         ]
       },
       {
+        "id": "a3e26309d8c4afa0",
         "texto": "O Governo implantará uma carteira permanente de investimentos estratégicos de Minas Gerais, organizada por áreas e regiões.",
         "evidencias": [
           {
@@ -2162,6 +2168,7 @@
         ]
       },
       {
+        "id": "ad9ea0fee0362f18",
         "texto": "O Estado organizará uma estratégia integrada de prevenção, monitoramento e resposta a incêndios florestais.",
         "evidencias": [
           {
@@ -2172,6 +2179,7 @@
         ]
       },
       {
+        "id": "635659fcd0f27fd3",
         "texto": "O Governo instituirá uma Política Estadual de Governança e Inteligência de Dados.",
         "evidencias": [
           {

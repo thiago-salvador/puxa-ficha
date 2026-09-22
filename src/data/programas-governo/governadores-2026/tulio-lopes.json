@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -422,6 +422,7 @@
     "texto": "Por isso, propomos a construção de um governo dos(as) trabalhadores(as). O Poder Popular será exercido como prática permanente de controle, fiscalização e veto político sobre a ação do Estado, criando condições materiais e pedagógicas para o fortalecimento da organização coletiva do povo trabalhador. Propomos a criação de conselhos populares, com vistas à estruturação de novas formas de participação popular, possibilitando a fiscalização, o veto e o enfrentamento aos interesses do poder econômico. Nosso governo afirma a economia planificada como princípio político: para atender às necessidades sociais, com controle público e popular dos setores estratégicos e prioridade ao emprego, ao abastecimento interno e à qualidade de vida. Planejar significa subordinar a produção às necessidades da maioria, e não ao mercado. A saúde não é custo, é direito. Trata-se nesta perspectiva de organizar a produção para atender às necessidades sociais, com controle social popular dos meios de produção da vida.",
     "frases": [
       {
+        "id": "626a710b544ea979",
         "texto": "Por isso, propomos a construção de um governo dos(as) trabalhadores(as).",
         "evidencias": [
           {
@@ -432,6 +433,7 @@
         ]
       },
       {
+        "id": "ede0499d7c7def1c",
         "texto": "O Poder Popular será exercido como prática permanente de controle, fiscalização e veto político sobre a ação do Estado, criando condições materiais e pedagógicas para o fortalecimento da organização coletiva do povo trabalhador.",
         "evidencias": [
           {
@@ -442,6 +444,7 @@
         ]
       },
       {
+        "id": "3dfb54f9a0c8a850",
         "texto": "Propomos a criação de conselhos populares, com vistas à estruturação de novas formas de participação popular, possibilitando a fiscalização, o veto e o enfrentamento aos interesses do poder econômico.",
         "evidencias": [
           {
@@ -452,6 +455,7 @@
         ]
       },
       {
+        "id": "d77df5f794599c22",
         "texto": "Nosso governo afirma a economia planificada como princípio político: para atender às necessidades sociais, com controle público e popular dos setores estratégicos e prioridade ao emprego, ao abastecimento interno e à qualidade de vida.",
         "evidencias": [
           {
@@ -462,6 +466,7 @@
         ]
       },
       {
+        "id": "2fb90d523b7c3c4f",
         "texto": "Planejar significa subordinar a produção às necessidades da maioria, e não ao mercado.",
         "evidencias": [
           {
@@ -472,6 +477,7 @@
         ]
       },
       {
+        "id": "3eaf574a905b1809",
         "texto": "A saúde não é custo, é direito.",
         "evidencias": [
           {
@@ -482,6 +488,7 @@
         ]
       },
       {
+        "id": "3c83b428c8dc4093",
         "texto": "Trata-se nesta perspectiva de organizar a produção para atender às necessidades sociais, com controle social popular dos meios de produção da vida.",
         "evidencias": [
           {

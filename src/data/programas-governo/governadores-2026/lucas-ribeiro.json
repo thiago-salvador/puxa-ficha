@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -492,6 +492,7 @@
     "texto": "O programa prevê incluir a Paraíba na Rede Nacional de Observatórios de Segurança. O programa prevê implantar novos Centros Integrados de Comando e Controle (CICC), com monitoramento tecnológico, câmeras inteligentes e drones. O programa prevê ampliar o socorro aeromédico com um helicóptero equipado com UTI aérea e integrado ao Corpo de Bombeiros. O programa prevê construir uma nova instalação para o Instituto de Polícia Científica da Paraíba (IPC). O programa prevê criar o Complexo Integrado de Saúde Mental e Bem-Estar. O programa prevê criar um novo Centro de Referência para Imunobiológicos Especiais (CRIE) em Campina Grande. O programa prevê criar o Passe Livre Universitário, estendendo aos estudantes do ensino superior o benefício de transporte público gratuito. O programa prevê criar a Rede Estadual de Causa Animal.",
     "frases": [
       {
+        "id": "cfa7a9fa07f956ea",
         "texto": "O programa prevê incluir a Paraíba na Rede Nacional de Observatórios de Segurança.",
         "evidencias": [
           {
@@ -502,6 +503,7 @@
         ]
       },
       {
+        "id": "963e901c87c2b73b",
         "texto": "O programa prevê implantar novos Centros Integrados de Comando e Controle (CICC), com monitoramento tecnológico, câmeras inteligentes e drones.",
         "evidencias": [
           {
@@ -512,6 +514,7 @@
         ]
       },
       {
+        "id": "e2d299af852ffe07",
         "texto": "O programa prevê ampliar o socorro aeromédico com um helicóptero equipado com UTI aérea e integrado ao Corpo de Bombeiros.",
         "evidencias": [
           {
@@ -522,6 +525,7 @@
         ]
       },
       {
+        "id": "5cfd3d08ab505c89",
         "texto": "O programa prevê construir uma nova instalação para o Instituto de Polícia Científica da Paraíba (IPC).",
         "evidencias": [
           {
@@ -532,6 +536,7 @@
         ]
       },
       {
+        "id": "7fdcfa798be9cb64",
         "texto": "O programa prevê criar o Complexo Integrado de Saúde Mental e Bem-Estar.",
         "evidencias": [
           {
@@ -542,6 +547,7 @@
         ]
       },
       {
+        "id": "8d9573a6c0699a54",
         "texto": "O programa prevê criar um novo Centro de Referência para Imunobiológicos Especiais (CRIE) em Campina Grande.",
         "evidencias": [
           {
@@ -552,6 +558,7 @@
         ]
       },
       {
+        "id": "f82b3c2d6e453113",
         "texto": "O programa prevê criar o Passe Livre Universitário, estendendo aos estudantes do ensino superior o benefício de transporte público gratuito.",
         "evidencias": [
           {
@@ -562,6 +569,7 @@
         ]
       },
       {
+        "id": "3073faca7a332d34",
         "texto": "O programa prevê criar a Rede Estadual de Causa Animal.",
         "evidencias": [
           {

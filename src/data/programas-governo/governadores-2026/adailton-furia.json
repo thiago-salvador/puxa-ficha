@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1668,6 +1668,7 @@
     "texto": "O plano oficial organiza 245 compromissos em quatro pilares complementares, estrutura apresentada na formulação geral do programa. As prioridades declaradas para a gestão são saúde, educação e segurança, áreas indicadas no documento oficial. Na área da saúde, a LOA de 2026 destina R$ 2,54 bilhões ao núcleo correspondente, conforme o programa registra. Na educação, o Indicador Criança Alfabetizada alcançou 75% em 2025, resultado apresentado entre os dados educacionais do documento. O programa prevê publicar, no primeiro ano de governo, metas quantitativas para políticas prioritárias, estabelecendo objetivos mensuráveis para essas políticas. Também prevê um painel público para acompanhar prioridades estratégicas, entregas, responsáveis e providências diante de riscos ou atrasos, com informações sobre o andamento. Por fim, o programa prevê integrar painéis setoriais em uma única plataforma estadual de transparência, reunindo essas informações em uma estrutura comum de consulta pública.",
     "frases": [
       {
+        "id": "a4aaa69315b0ed47",
         "texto": "O plano oficial organiza 245 compromissos em quatro pilares complementares, estrutura apresentada na formulação geral do programa.",
         "evidencias": [
           {
@@ -1678,6 +1679,7 @@
         ]
       },
       {
+        "id": "65be38ea48190bb6",
         "texto": "As prioridades declaradas para a gestão são saúde, educação e segurança, áreas indicadas no documento oficial.",
         "evidencias": [
           {
@@ -1688,6 +1690,7 @@
         ]
       },
       {
+        "id": "13d35e5acb59707a",
         "texto": "Na área da saúde, a LOA de 2026 destina R$ 2,54 bilhões ao núcleo correspondente, conforme o programa registra.",
         "evidencias": [
           {
@@ -1698,6 +1701,7 @@
         ]
       },
       {
+        "id": "1f2fd2b0f1331c41",
         "texto": "Na educação, o Indicador Criança Alfabetizada alcançou 75% em 2025, resultado apresentado entre os dados educacionais do documento.",
         "evidencias": [
           {
@@ -1708,6 +1712,7 @@
         ]
       },
       {
+        "id": "72ca5dcbd1e71fbb",
         "texto": "O programa prevê publicar, no primeiro ano de governo, metas quantitativas para políticas prioritárias, estabelecendo objetivos mensuráveis para essas políticas.",
         "evidencias": [
           {
@@ -1718,6 +1723,7 @@
         ]
       },
       {
+        "id": "d0099b6ab2f71d7a",
         "texto": "Também prevê um painel público para acompanhar prioridades estratégicas, entregas, responsáveis e providências diante de riscos ou atrasos, com informações sobre o andamento.",
         "evidencias": [
           {
@@ -1728,6 +1734,7 @@
         ]
       },
       {
+        "id": "cfc22e2b67b4392b",
         "texto": "Por fim, o programa prevê integrar painéis setoriais em uma única plataforma estadual de transparência, reunindo essas informações em uma estrutura comum de consulta pública.",
         "evidencias": [
           {

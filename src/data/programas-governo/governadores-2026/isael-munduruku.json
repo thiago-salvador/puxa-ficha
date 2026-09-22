@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -744,6 +744,7 @@
     "texto": "O programa de governo de Isael Munduruku para o Amazonas prevê rede estadual de saúde com transporte fluvial, terrestre e aeromédico, atenção básica e teleassistência. O plano propõe educação escolar indígena específica, diferenciada, intercultural, comunitária e bilíngue ou multilíngue. A proposta planeja economia da floresta em pé com crédito, assistência técnica, cooperativismo e repartição de benefícios. O documento prevê manter a Zona Franca como estratégica, com inovação, descarbonização e integração com o interior. O texto prevê o Plano Estadual de Adaptação Climática construído com os territórios e incorporado a todas as secretarias. O programa propõe trajetória estadual de desmatamento zero, com metas anuais e transparência por município. A proposta prevê criar Secretaria Estadual dos Povos Indígenas, com orçamento, quadro técnico e conselho deliberativo. O plano prevê solarizar escolas e unidades de saúde como parte da transição energética.",
     "frases": [
       {
+        "id": "72d2461fbdacba28",
         "texto": "O programa de governo de Isael Munduruku para o Amazonas prevê rede estadual de saúde com transporte fluvial, terrestre e aeromédico, atenção básica e teleassistência.",
         "evidencias": [
           {
@@ -764,6 +765,7 @@
         ]
       },
       {
+        "id": "eef1351ff9ee90be",
         "texto": "O plano propõe educação escolar indígena específica, diferenciada, intercultural, comunitária e bilíngue ou multilíngue.",
         "evidencias": [
           {
@@ -774,6 +776,7 @@
         ]
       },
       {
+        "id": "cbcc10fc41f9f7f4",
         "texto": "A proposta planeja economia da floresta em pé com crédito, assistência técnica, cooperativismo e repartição de benefícios.",
         "evidencias": [
           {
@@ -784,6 +787,7 @@
         ]
       },
       {
+        "id": "b53bfb018b4043f1",
         "texto": "O documento prevê manter a Zona Franca como estratégica, com inovação, descarbonização e integração com o interior.",
         "evidencias": [
           {
@@ -794,6 +798,7 @@
         ]
       },
       {
+        "id": "c71ecd5a6c9cf597",
         "texto": "O texto prevê o Plano Estadual de Adaptação Climática construído com os territórios e incorporado a todas as secretarias.",
         "evidencias": [
           {
@@ -804,6 +809,7 @@
         ]
       },
       {
+        "id": "f758a5c1a830f4dc",
         "texto": "O programa propõe trajetória estadual de desmatamento zero, com metas anuais e transparência por município.",
         "evidencias": [
           {
@@ -814,6 +820,7 @@
         ]
       },
       {
+        "id": "2f46782d174c7fd3",
         "texto": "A proposta prevê criar Secretaria Estadual dos Povos Indígenas, com orçamento, quadro técnico e conselho deliberativo.",
         "evidencias": [
           {
@@ -824,6 +831,7 @@
         ]
       },
       {
+        "id": "49aaaddaf62d77ef",
         "texto": "O plano prevê solarizar escolas e unidades de saúde como parte da transição energética.",
         "evidencias": [
           {

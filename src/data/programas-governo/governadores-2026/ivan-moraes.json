@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1248,6 +1248,7 @@
     "texto": "O programa propõe implantar uma política estadual de cofinanciamento da Rede de Atenção Psicossocial. O programa propõe instituir a Tarifa Zero nos sistemas de transporte metropolitano e intermunicipal sob responsabilidade do Estado. O programa propõe instituir um pacto entre o Estado e os municípios para garantir a alfabetização e a aprendizagem adequada em matemática. O programa propõe instituir a Política Estadual de Justiça Climática e Adaptação. O programa propõe criar centros regionais de atendimento às mulheres em todas as regiões de Pernambuco, com equipes multidisciplinares para acolhimento, orientação, acompanhamento psicossocial, encaminhamento jurídico, articulação com a rede de proteção e apoio à autonomia econômica das mulheres. O programa propõe criar um Observatório Estadual de Violência Digital contra Mulheres, vinculado à política estadual para as mulheres, com a finalidade de monitorar, mapear e enfrentar ataques misóginos, ameaças virtuais, discursos de ódio, assédio e perseguição digital. O programa propõe criar uma política de cotas para pessoas trans nos cursos da Universidade de Pernambuco.",
     "frases": [
       {
+        "id": "5f3882a09c800bf3",
         "texto": "O programa propõe implantar uma política estadual de cofinanciamento da Rede de Atenção Psicossocial.",
         "evidencias": [
           {
@@ -1258,6 +1259,7 @@
         ]
       },
       {
+        "id": "6ea90db9bd3ad829",
         "texto": "O programa propõe instituir a Tarifa Zero nos sistemas de transporte metropolitano e intermunicipal sob responsabilidade do Estado.",
         "evidencias": [
           {
@@ -1268,6 +1270,7 @@
         ]
       },
       {
+        "id": "702495c138fafc31",
         "texto": "O programa propõe instituir um pacto entre o Estado e os municípios para garantir a alfabetização e a aprendizagem adequada em matemática.",
         "evidencias": [
           {
@@ -1278,6 +1281,7 @@
         ]
       },
       {
+        "id": "6b19403a3f78e15f",
         "texto": "O programa propõe instituir a Política Estadual de Justiça Climática e Adaptação.",
         "evidencias": [
           {
@@ -1288,6 +1292,7 @@
         ]
       },
       {
+        "id": "ccca900724aaa972",
         "texto": "O programa propõe criar centros regionais de atendimento às mulheres em todas as regiões de Pernambuco, com equipes multidisciplinares para acolhimento, orientação, acompanhamento psicossocial, encaminhamento jurídico, articulação com a rede de proteção e apoio à autonomia econômica das mulheres.",
         "evidencias": [
           {
@@ -1298,6 +1303,7 @@
         ]
       },
       {
+        "id": "aaff8fd9bdf33cec",
         "texto": "O programa propõe criar um Observatório Estadual de Violência Digital contra Mulheres, vinculado à política estadual para as mulheres, com a finalidade de monitorar, mapear e enfrentar ataques misóginos, ameaças virtuais, discursos de ódio, assédio e perseguição digital.",
         "evidencias": [
           {
@@ -1308,6 +1314,7 @@
         ]
       },
       {
+        "id": "2465da7ce5ad734e",
         "texto": "O programa propõe criar uma política de cotas para pessoas trans nos cursos da Universidade de Pernambuco.",
         "evidencias": [
           {
