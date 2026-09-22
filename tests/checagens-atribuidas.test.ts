@@ -8,6 +8,7 @@ import {
   selectApprovedAttributedFactChecks,
   validateAttributedFactCheckDataset,
   type AttributedFactCheck,
+  type CandidateRosterIdentity,
 } from "../src/lib/checagens-atribuidas"
 
 const baseCheck = (): AttributedFactCheck => ({
@@ -80,12 +81,15 @@ test("dataset público real contém somente registros aprovados e sem IDs duplic
   assert.equal(publicDataset[0].review.approved, true)
   assert.equal(publicDataset[0].review.reviewerKind, "model_principal")
   assert.deepEqual(
-    validateAttributedFactCheckDataset(publicDataset, liveRoster.map((candidate) => ({
-      candidate_id: candidate.id,
-      candidate_slug: candidate.slug,
-      office: candidate.cargo_disputado,
-      uf: candidate.estado,
-    }))),
+    validateAttributedFactCheckDataset(publicDataset, liveRoster.map((candidate): CandidateRosterIdentity => {
+      assert.ok(candidate.cargo_disputado === "Presidente" || candidate.cargo_disputado === "Governador")
+      return {
+        candidate_id: candidate.id,
+        candidate_slug: candidate.slug,
+        office: candidate.cargo_disputado,
+        uf: candidate.estado,
+      }
+    })),
     [],
   )
   assert.equal(validateAttributedFactCheckDataset(publicDataset, [{
