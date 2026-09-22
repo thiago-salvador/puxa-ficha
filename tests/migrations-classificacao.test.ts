@@ -440,7 +440,10 @@ describe("classificador puro (#136)", () => {
     // Liquido 492 + 1 = 493 migrations.
     // Issue #433, dimas-cassimiro (22/09/2026): mais uma migration de dado com
     // os mesmos guards (clone da 20260921200000). Liquido 493 + 1 = 494 migrations.
-    assert.equal(manifesto.aplicadas_esperadas, 389)
+    // Issue #424, fontes de pontos_atencao (22/09/2026): DML puro com guards
+    // de preimagem exata, mesmo esqueleto da 20260825123000 (issue #96).
+    // Liquido 494 + 1 = 495 migrations.
+    assert.equal(manifesto.aplicadas_esperadas, 390)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
