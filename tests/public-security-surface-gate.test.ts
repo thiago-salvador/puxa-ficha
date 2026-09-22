@@ -15,14 +15,18 @@ describe("public security surface gate", () => {
       { url: "https://example.supabase.co", anonKey: "anon-test" },
       fetchImpl,
     )
-    // 7 checagens originais mais as 14 tabelas internas, que o linter do Supabase
+    // 7 checagens originais mais as 15 tabelas internas, que o linter do Supabase
     // marca como rls_enabled_no_policy e que precisam continuar negando anon.
-    assert.equal(results.length, 21)
+    assert.equal(results.length, 22)
     const internas = results.filter((result) => result.name.startsWith("interna-negada-"))
-    assert.equal(internas.length, 14)
+    assert.equal(internas.length, 15)
     assert.ok(
       internas.some((result) => result.name === "interna-negada-financiamento_doador_search"),
       "o probe precisa cobrir a tabela interna de busca de doadores",
+    )
+    assert.ok(
+      internas.some((result) => result.name === "interna-negada-compromisso_evidencia"),
+      "vinculo compromisso x evidencia sem revisao nunca pode ser lido por anon",
     )
     assert.ok(internas.every((result) => result.passed))
     assert.ok(results.every((result) => result.passed))

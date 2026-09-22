@@ -56,6 +56,7 @@ export async function auditPublicSecuritySurface(
     "analytics_launch_events",
     "candidate_changes",
     "coleta_log",
+    "compromisso_evidencia",
     "financiamento_quarentena",
     "financiamento_doador_search",
     "financiamento_verificacoes",
