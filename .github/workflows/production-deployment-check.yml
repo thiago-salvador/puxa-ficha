@@ -60,7 +60,14 @@ jobs:
             curl -fsS --connect-timeout 10 --max-time 30 \
               -H "Authorization: Bearer ${VERCEL_TOKEN}" "$@"
           }
-          dep_id=""; dep_url=""
+          # O check e do tipo webhook: a Vercel NAO cria o check run sozinha
+          # (medido em 22/09 no deploy dpl_G3wNVAKt9n2KvibfWqGgB29cFY7c:
+          # `runs: []`). Este workflow cria o run assim que o deploy aparece,
+          # ainda durante o build, para ele existir em `queued` antes do READY.
+          check_id="$(api "https://api.vercel.com/v2/projects/${VERCEL_PROJECT_ID}/checks?teamId=${VERCEL_TEAM_ID}" |
+            jq -r --arg n "$CHECK_NAME" '[.checks[]? | select(.name == $n)] | .[0].id // empty')"
+          [[ -n "$check_id" ]] || { echo "FAIL: check '${CHECK_NAME}' nao configurado no projeto" >&2; exit 1; }
+          dep_id=""; dep_url=""; run_id=""; run_dep=""
           # Build do Next leva minutos; 120 x 10 s cobre ate 20 min.
           for _ in $(seq 1 120); do
             if deployments="$(api "https://api.vercel.com/v6/deployments?projectId=${VERCEL_PROJECT_ID}&teamId=${VERCEL_TEAM_ID}&target=production&meta-githubCommitSha=${EXPECTED_SHA}&limit=20")"; then
@@ -68,6 +75,21 @@ jobs:
                 [.deployments[]
                   | select(.meta.githubCommitSha == $sha and .target == "production")]
                 | sort_by(.createdAt // 0) | reverse | .[0] // empty' <<<"$deployments")"
+              cand_id="$(jq -r '.uid // .id // empty' <<<"$dep")"
+              # Redeploy do mesmo SHA no meio do build: o run fica com o deploy novo.
+              if [[ -n "$cand_id" && "$cand_id" != "$run_dep" ]]; then run_id=""; fi
+              if [[ -n "$cand_id" && -z "$run_id" ]]; then
+                runs="$(api "https://api.vercel.com/v2/deployments/${cand_id}/check-runs?teamId=${VERCEL_TEAM_ID}" || echo '{}')"
+                run_id="$(jq -r --arg c "$check_id" '[.runs[]? | select(.checkId == $c)] | .[0].id // empty' <<<"$runs")"
+                if [[ -z "$run_id" ]]; then
+                  run_id="$(jq -n --arg c "$check_id" '{checkId:$c}' |
+                    curl -fsS --connect-timeout 10 --max-time 30 --retry 4 --retry-delay 5 -X POST \
+                      -H "Authorization: Bearer ${VERCEL_TOKEN}" -H "Content-Type: application/json" \
+                      --data @- "https://api.vercel.com/v2/deployments/${cand_id}/check-runs?teamId=${VERCEL_TEAM_ID}" |
+                    jq -r '.id // empty')" || run_id=""
+                fi
+                if [[ -n "$run_id" ]]; then run_dep="$cand_id"; fi
+              fi
               state="$(jq -r '.readyState // .state // empty' <<<"$dep")"
               if [[ "$state" == "ERROR" || "$state" == "CANCELED" ]]; then
                 echo "FAIL: deploy de producao do SHA terminou em $state" >&2
@@ -84,18 +106,11 @@ jobs:
           [[ "$dep_id" =~ ^[A-Za-z0-9_-]+$ ]] || { echo "FAIL: deploy READY nao encontrado" >&2; exit 1; }
           [[ "$dep_url" =~ ^https://[A-Za-z0-9.-]+\.vercel\.app$ ]]
 
-          run_id=""
-          for _ in $(seq 1 18); do
-            runs="$(api "https://api.vercel.com/v2/deployments/${dep_id}/check-runs?teamId=${VERCEL_TEAM_ID}" || echo '{}')"
-            run_id="$(jq -r --arg n "$CHECK_NAME" '[.runs[]? | select(.name == $n)] | .[0].id // empty' <<<"$runs")"
-            [[ -n "$run_id" ]] && break
-            sleep 10
-          done
-          if [[ -z "$run_id" ]]; then
-            # Sem check run nao ha o que reportar; a suite roda mesmo assim e
-            # decide o status do job. Com o check configurado, a Vercel fecha
-            # por timeout e o dominio nao troca.
-            echo "::warning::check run '${CHECK_NAME}' ausente no deploy ${dep_id}"
+          if [[ -z "$run_id" || "$run_dep" != "$dep_id" ]]; then
+            # Sem check run nao ha o que reportar. Falha visivel: a suite nao
+            # pode liberar nada que a Vercel nao esteja esperando.
+            echo "FAIL: nao foi possivel criar ou achar o check run '${CHECK_NAME}' no deploy ${dep_id}" >&2
+            exit 1
           fi
           printf 'id=%s\nurl=%s\nrun_id=%s\n' "$dep_id" "$dep_url" "$run_id" >>"$GITHUB_OUTPUT"
 
