@@ -15,6 +15,7 @@ import {
   erroDeRedeEhMorte,
   estadoDesligado,
   hostDaUrl,
+  custoNoFiltro,
   LIMITE_BYTES_FILTRO_IN,
   lotesPorTamanhoDeFiltro,
   mapPorHost,
@@ -623,8 +624,6 @@ describe("runLinkCheck: confirmação de morte entre execuções", () => {
 })
 
 describe("lotesPorTamanhoDeFiltro: filtro .in() dentro do teto da query string", () => {
-  const custo = (valor: string) => encodeURIComponent(`"${valor}",`).length
-
   it("196 URLs longas, o caso de 2026-09-22, saem em vários lotes sob o teto e sem perder nem repetir URL", () => {
     const urls = Array.from(
       { length: 196 },
@@ -634,10 +633,16 @@ describe("lotesPorTamanhoDeFiltro: filtro .in() dentro do teto da query string",
 
     assert.ok(lotes.length > 1, "uma requisição só estouraria o teto")
     for (const lote of lotes) {
-      const bytes = lote.reduce((soma, url) => soma + custo(url), 0)
+      const bytes = lote.reduce((soma, url) => soma + custoNoFiltro(url), 0)
       assert.ok(bytes <= LIMITE_BYTES_FILTRO_IN, `lote de ${bytes} bytes passa do teto`)
     }
     assert.deepEqual(lotes.flat(), urls)
+  })
+
+  it("custo segue a codificação do cliente, que codifica ( ) ! ~ * e o encodeURIComponent não", () => {
+    const valor = "https://a.test/x(1)!~*"
+    assert.equal(custoNoFiltro(valor), new URLSearchParams({ v: `"${valor}",` }).toString().length - 2)
+    assert.ok(custoNoFiltro(valor) > encodeURIComponent(`"${valor}",`).length)
   })
 
   it("lista curta cabe num lote só, e lista vazia não gera requisição", () => {

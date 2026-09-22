@@ -248,17 +248,26 @@ export function estadoDesligado(): EstadoDeFontes {
 export const LIMITE_BYTES_FILTRO_IN = 4000
 
 /**
- * Divide `valores` em lotes cuja soma de tamanhos codificados fica abaixo de
- * `limiteBytes`. A conta é conservadora: aspas e vírgula sempre contam, mesmo
- * quando o cliente não as usaria. Valor que sozinho excede o teto vai num lote
- * próprio, porque cortá-lo mudaria o filtro.
+ * Bytes que `valor` ocupa na query string do filtro. Usa a mesma codificação
+ * que o cliente monta (`URLSearchParams`, que codifica também `( ) ! ~ *`, ao
+ * contrário de `encodeURIComponent`), e conta aspas e vírgula sempre, mesmo
+ * quando o cliente não as usaria.
+ */
+export function custoNoFiltro(valor: string): number {
+  return new URLSearchParams({ v: `"${valor}",` }).toString().length - "v=".length
+}
+
+/**
+ * Divide `valores` em lotes cuja soma de `custoNoFiltro` fica abaixo de
+ * `limiteBytes`. Valor que sozinho excede o teto vai num lote próprio, porque
+ * cortá-lo mudaria o filtro.
  */
 export function lotesPorTamanhoDeFiltro(valores: readonly string[], limiteBytes = LIMITE_BYTES_FILTRO_IN): string[][] {
   const lotes: string[][] = []
   let atual: string[] = []
   let bytes = 0
   for (const valor of valores) {
-    const custo = encodeURIComponent(`"${valor}",`).length
+    const custo = custoNoFiltro(valor)
     if (atual.length > 0 && bytes + custo > limiteBytes) {
       lotes.push(atual)
       atual = []
