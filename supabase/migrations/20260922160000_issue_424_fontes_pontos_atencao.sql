@@ -10,7 +10,7 @@
 -- mesmo em cada claim abaixo, confirmado por curl e, quando aplicavel, pela
 -- API do Wayback Machine (`archive.org/wayback/available`).
 --
--- Duas categorias, mesmo padrao da issue #96 (20260825123000):
+-- Tres categorias, mesmo padrao da issue #96 (20260825123000):
 --
 --   1. Fonte generica ou morta com REPOSICAO real encontrada: a URL troca
 --      para uma pagina oficial especifica (biografia na Camara, perfil na
@@ -23,18 +23,22 @@
 --      (fao.org, 404 confirmado) e outra viva (Radio Senado); a correcao
 --      apenas remove a morta e mantem a viva, que ja sustentava a claim
 --      sozinha.
---   2. Nenhuma fonte utilizavel encontrada: despublicacao. As duas claims de
---      Michelle Bolsonaro citam uma unica fonte cada (Folha, BBC), ambas 404
---      confirmado em 22/09/2026, sem snapshot no Wayback
---      (`archived_snapshots: {}` para as duas URLs) e sem a mesma materia
---      republicada sob outra URL localizada em busca. A claim de Joao Roma
---      (Ministro) tem fontes `sem_caminho` como as outras seis, mas a
---      descricao publicada nomeia "Joao Carlos Bacelar Batista", que NAO e o
---      titular desta ficha (Joao Inacio Ribeiro Roma Neto, nome de urna Joao
---      Roma, confirmado em `candidatos_publico`) — trocar so a URL deixaria
---      no ar uma claim sobre a pessoa errada, entao ela sai do ar junto com
---      as duas sem fonte nenhuma. A divergencia de identidade fica registrada
---      aqui para investigacao separada; esta migration nao tenta corrigi-la.
+--   2. As duas claims de Michelle Bolsonaro citavam uma unica fonte cada
+--      (Folha, BBC), ambas 404 em 22/09/2026 e sem snapshot no Wayback. Foram
+--      reescritas com fontes novas verificadas (CNN Brasil), porque o texto
+--      antigo nao se sustentava nas fontes encontradas: os depositos de
+--      Queiroz foram cheques entre 2011 e 2016 (nao Pix, nem ate 2018), os
+--      R$ 89 mil somam cheques de Queiroz e de Marcia Aguiar, o STF arquivou
+--      o pedido de investigacao a pedido da PGR, e ela nao consta entre os
+--      indiciados pela PF no caso das joias. A frase opinativa sobre o
+--      "capital politico do marido" saiu por nao ter fonte.
+--   3. Despublicacao: a claim de Joao Roma (Ministro) tem fontes
+--      `sem_caminho` como as outras seis, mas a descricao publicada nomeia
+--      "Joao Carlos Bacelar Batista", que NAO e o titular desta ficha (Joao
+--      Inacio Ribeiro Roma Neto, nome de urna Joao Roma, confirmado em
+--      `candidatos_publico`) — trocar so a URL deixaria no ar uma claim sobre
+--      a pessoa errada. A divergencia de identidade fica registrada aqui para
+--      investigacao separada; esta migration nao tenta corrigi-la.
 --
 -- Esta migration e fail-closed: aceita somente a preimagem medida em 22/09/2026
 -- ou o estado final exato, quando executada novamente.
@@ -117,6 +121,25 @@ INSERT INTO _pf_issue_424_updates (
   'Carreira política: 2 mandato(s) registrado(s)',
   'João Alberto Rodrigues Capiberibe (PSB) possui 2 mandato(s) registrado(s): Governador (AP), Prefeito (Macapá).',
   $j$[{"url":"https://www25.senado.leg.br/web/senadores/senador/-/perfil/3394","data":"2026-09-22","titulo":"Senado Federal, perfil de João Capiberibe"}]$j$::jsonb
+
+),
+(
+  '72d7742f-0281-4f98-aee1-f8bae33f5fca',
+  'Joias sauditas e Pix de Queiroz',
+  'Nome ligado ao caso das joias sauditas (recebeu presentes oficiais em nome próprio). Também recebeu depósitos via Pix de Fabricio Queiroz (R$ 89 mil entre 2011 e 2018), envolvido no caso das rachadinhas.',
+  $j$[{"url":"https://www1.folha.uol.com.br/poder/2020/08/michelle-bolsonaro-recebeu-r-89-mil-de-queiroz-e-mulher.shtml","data":"2020-08-20","titulo":"Michelle e os depositos de Queiroz"}]$j$::jsonb,
+  'Joias sauditas e cheques de Queiroz',
+  'Joias avaliadas em R$ 16,5 milhões, que seriam presente da Arábia Saudita para ela como primeira-dama, foram apreendidas pela Receita em Guarulhos em 2021; a PF indiciou Jair Bolsonaro e outras 11 pessoas no caso, e ela não foi indiciada. Entre 2011 e 2016 recebeu cheques de Fabrício Queiroz, investigado nas rachadinhas, e de Márcia Aguiar, esposa dele, que somam R$ 89 mil; o STF arquivou o pedido de investigação dos cheques a pedido da PGR.',
+  $j$[{"url":"https://www.cnnbrasil.com.br/politica/entenda-caso-de-joias-que-o-governo-bolsonaro-tentou-trazer-ilegalmente-ao-brasil/","data":"2023-03-04","titulo":"CNN Brasil: Entenda caso de joias que o governo Bolsonaro tentou trazer ilegalmente ao Brasil"},{"url":"https://www.cnnbrasil.com.br/politica/saiba-quem-sao-os-indiciados-com-bolsonaro-no-caso-das-joias-sauditas/","data":"2024-07-04","titulo":"CNN Brasil: Saiba quem são os indiciados com Bolsonaro no caso das joias sauditas"},{"url":"https://www.cnnbrasil.com.br/politica/stf-forma-maioria-para-arquivar-noticia-crime-de-cheques-de-queiroz-a-michelle/","data":"2021-07-05","titulo":"CNN Brasil: STF forma maioria para arquivar pedido para apurar cheques de Queiroz a Michelle"}]$j$::jsonb
+),
+(
+  '7430457c-3193-4fd8-8bbf-c8d054d1b1ff',
+  'Sem experiência política ou cargo público previo',
+  'Nunca ocupou cargo público, nunca disputou eleição e não possui experiência em gestão pública. Candidatura baseada inteiramente no capital político do marido Jair Bolsonaro.',
+  $j$[{"url":"https://www.bbc.com/portuguese/articles/cnk4n8e4n4eo","data":"2024-10-01","titulo":"Michelle Bolsonaro como candidata"}]$j$::jsonb,
+  'Sem experiência política ou cargo público prévio',
+  'Disputa em 2026 a primeira eleição; nunca ocupou cargo público. Foi primeira-dama de 2019 a 2022 e presidiu o PL Mulher.',
+  $j$[{"url":"https://www.cnnbrasil.com.br/eleicoes/quem-e-michelle-bolsonaro-candidata-ao-senado-pelo-distrito-federal/","data":"2026-09-18","titulo":"CNN Brasil: Quem é Michelle Bolsonaro, candidata ao Senado pelo Distrito Federal"}]$j$::jsonb
 );
 
 DO $guard$
@@ -144,7 +167,7 @@ BEGIN
       AND coalesce(p.dados_relacionados, '{}'::jsonb) ? 'issue_424_link_check_2026_09_22'
     );
 
-  IF existing_count <> 0 AND (existing_count <> 7 OR matched <> 7) THEN
+  IF existing_count <> 0 AND (existing_count <> 9 OR matched <> 9) THEN
     RAISE EXCEPTION 'issue #424: estado parcial ou divergente nas correcoes (existentes=%, correspondentes=%)', existing_count, matched;
   END IF;
 END
@@ -184,20 +207,6 @@ CREATE TEMP TABLE _pf_issue_424_hide (
 
 INSERT INTO _pf_issue_424_hide (id, titulo_antes, descricao_antes, fontes_antes, motivo) VALUES
 (
-  '72d7742f-0281-4f98-aee1-f8bae33f5fca',
-  'Joias sauditas e Pix de Queiroz',
-  'Nome ligado ao caso das joias sauditas (recebeu presentes oficiais em nome próprio). Também recebeu depósitos via Pix de Fabricio Queiroz (R$ 89 mil entre 2011 e 2018), envolvido no caso das rachadinhas.',
-  $j$[{"url":"https://www1.folha.uol.com.br/poder/2020/08/michelle-bolsonaro-recebeu-r-89-mil-de-queiroz-e-mulher.shtml","data":"2020-08-20","titulo":"Michelle e os depositos de Queiroz"}]$j$::jsonb,
-  'A única fonte (Folha de S.Paulo) responde 404 desde ao menos 21/09/2026 (link-check CI run 35619106186) e seguia 404 em 22/09/2026 (curl direto e nova execução do link-check). Sem captura no Wayback Machine (archive.org/wayback/available devolve archived_snapshots vazio) e sem a mesma matéria republicada sob outra URL localizada em busca. Sem fonte verificável, a claim não pode permanecer publicada.'
-),
-(
-  '7430457c-3193-4fd8-8bbf-c8d054d1b1ff',
-  'Sem experiência política ou cargo público previo',
-  'Nunca ocupou cargo público, nunca disputou eleição e não possui experiência em gestão pública. Candidatura baseada inteiramente no capital político do marido Jair Bolsonaro.',
-  $j$[{"url":"https://www.bbc.com/portuguese/articles/cnk4n8e4n4eo","data":"2024-10-01","titulo":"Michelle Bolsonaro como candidata"}]$j$::jsonb,
-  'A única fonte (BBC Brasil) responde 404 desde ao menos 21/09/2026 (link-check CI run 35619106186) e seguia 404 em 22/09/2026 (curl direto e nova execução do link-check). Sem captura no Wayback Machine (archive.org/wayback/available devolve archived_snapshots vazio) e sem a mesma matéria republicada sob outra URL localizada em busca. Sem fonte verificável, a claim não pode permanecer publicada.'
-),
-(
   'd472211d-710d-4807-9c0f-772b0f15e7a2',
   'Carreira política: 1 mandato(s) registrado(s)',
   'João Carlos Bacelar Batista (PL) possui 1 mandato(s) registrado(s): Ministro.',
@@ -230,7 +239,7 @@ BEGIN
       AND coalesce(p.dados_relacionados, '{}'::jsonb) ? 'issue_424_link_check_2026_09_22'
     );
 
-  IF existing_count <> 0 AND (existing_count <> 3 OR matched <> 3) THEN
+  IF existing_count <> 0 AND (existing_count <> 1 OR matched <> 1) THEN
     RAISE EXCEPTION 'issue #424: estado parcial ou divergente nas despublicacoes (existentes=%, correspondentes=%)', existing_count, matched;
   END IF;
 END
@@ -286,7 +295,7 @@ BEGIN
 
   IF NOT (
     (updated_count = 0 AND hidden_count = 0)
-    OR (updated_count = 7 AND hidden_count = 3)
+    OR (updated_count = 9 AND hidden_count = 1)
   ) THEN
     RAISE EXCEPTION 'issue #424: pos-condicao falhou (corrigidas=%, despublicadas=%)', updated_count, hidden_count;
   END IF;

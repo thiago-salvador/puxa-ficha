@@ -39,8 +39,8 @@ BEGIN
 
   IF total_count <> 10
      OR marked_count <> 10
-     OR corrected_count <> 7
-     OR hidden_count <> 3 THEN
+     OR corrected_count <> 9
+     OR hidden_count <> 1 THEN
     RAISE EXCEPTION
       'issue #424: readback falhou (total=%, marcados=%, corrigidos=%, despublicados=%)',
       total_count, marked_count, corrected_count, hidden_count;

@@ -26,7 +26,7 @@ BEGIN
   )
     AND coalesce(dados_relacionados, '{}'::jsonb) ? 'issue_424_link_check_2026_09_22';
 
-  IF marked_count <> 10 OR corrected_count <> 7 OR hidden_count <> 3 THEN
+  IF marked_count <> 10 OR corrected_count <> 9 OR hidden_count <> 1 THEN
     RAISE EXCEPTION
       'issue #424: rollback recusado (marcados=%, corrigidos=%, despublicados=%)',
       marked_count, corrected_count, hidden_count;
