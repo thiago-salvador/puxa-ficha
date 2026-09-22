@@ -5,7 +5,7 @@ const ATTRIBUTED_CHECKS_POLICY = "pf-checagens-v1"
 export type AttributedSourceOrigin = "cited_by_publisher" | "consulted_by_us"
 
 export interface AttributedCheckSource {
-  url: string
+  url?: string
   origin: AttributedSourceOrigin
   title?: string
   excerpt?: string
@@ -110,11 +110,11 @@ function validDate(value: unknown): value is string {
   return probe.getUTCFullYear() === year && probe.getUTCMonth() === month - 1 && probe.getUTCDate() === day
 }
 
-function validHttpsUrl(value: unknown): value is string {
+function validHttpsUrl(value: unknown, allowHttp = false): value is string {
   if (!nonEmptyString(value)) return false
   try {
     const url = new URL(value)
-    return url.protocol === "https:" && !url.username && !url.password
+    return (url.protocol === "https:" || allowHttp && url.protocol === "http:") && !url.username && !url.password
   } catch {
     return false
   }
@@ -125,12 +125,14 @@ function hasIndependentVerdict(value: Record<string, unknown>): boolean {
 }
 
 function parseSource(value: unknown): AttributedCheckSource | null {
-  if (!isRecord(value) || !validHttpsUrl(value.url)) return null
+  if (!isRecord(value)) return null
   if (value.origin !== "cited_by_publisher" && value.origin !== "consulted_by_us") return null
+  if (value.url !== undefined && !validHttpsUrl(value.url, true)) return null
+  if (value.url === undefined && (value.origin !== "cited_by_publisher" || !nonEmptyString(value.title))) return null
   if (value.title !== undefined && !nonEmptyString(value.title)) return null
   if (value.excerpt !== undefined && !nonEmptyString(value.excerpt)) return null
   return {
-    url: value.url,
+    ...(value.url === undefined ? {} : { url: value.url }),
     origin: value.origin,
     ...(value.title === undefined ? {} : { title: value.title }),
     ...(value.excerpt === undefined ? {} : { excerpt: value.excerpt }),
