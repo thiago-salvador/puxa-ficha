@@ -28,6 +28,13 @@ const VALOR_DOCUMENTO_RES: ReadonlyArray<[string, RegExp]> = [
   ["hash_sha256", /\b[0-9a-f]{64}\b/i],
 ]
 
+// Slug de candidato derivado do sequencial do TSE (`tse-2026-190001234567`):
+// o número é o SQ_CANDIDATO, público e já servido em candidatos_publico, e não
+// documento de doador. Só vale para o valor inteiro, em campo de slug ou de
+// chave de pessoa; qualquer outro lugar continua reprovando 11 ou 14 dígitos.
+const CAMPO_SLUG_RE = /\.(?:slug|outra_slug|pessoa_chave|outra_pessoa_chave)$/
+const SLUG_TSE_RE = /^tse-\d{4}-\d{11,12}$/
+
 export interface AchadoDocumento {
   caminho: string
   motivo: string
@@ -37,6 +44,7 @@ export interface AchadoDocumento {
 export function encontrarDocumentoDeDoador(valor: unknown, caminho = "$"): AchadoDocumento[] {
   const achados: AchadoDocumento[] = []
   if (typeof valor === "string") {
+    if (CAMPO_SLUG_RE.test(caminho) && SLUG_TSE_RE.test(valor)) return achados
     for (const [motivo, re] of VALOR_DOCUMENTO_RES) {
       if (re.test(valor)) achados.push({ caminho, motivo })
     }
