@@ -1,5 +1,7 @@
 "use client"
 
+// cspell:words atribuidas
+
 import { memo, useCallback, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react"
 import dynamic from "next/dynamic"
 import type { FichaCandidato, LegislacaoMandatoExecutivo, ProjetoLei } from "@/lib/types"
@@ -50,6 +52,7 @@ import {
   VotosEmptyState,
 } from "./EmptyState"
 import type { CandidatoProfileNavTabId, CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
+import { getApprovedAttributedFactChecks } from "@/lib/checagens-atribuidas"
 import {
   CANDIDATO_PROFILE_NAV_TAB_IDS,
   normalizeCandidatoProfileNavTab,
@@ -62,6 +65,7 @@ import { FollowCandidateButton } from "./alerts/FollowCandidateButton"
 import { SenadoRunningMates, type SenadoRunningMatesPayload } from "./SenadoRunningMates"
 import { CandidateGeneralData } from "./CandidateGeneralData"
 import { AttributedFactChecks } from "./AttributedFactChecks"
+import { AttributedFactChecksOverview } from "./AttributedFactChecksOverview"
 import { EditorialBadge } from "./attention-points/EditorialBadge"
 import {
   FONTES_LINK_CLASS_ALERTAS,
@@ -450,11 +454,23 @@ export function CandidatoProfile({
   )
   const curationVerifiedCount = pontosAtencao.filter((ponto) => ponto.verificado === true).length
 
+  const attributedChecks =
+    ficha.cargo_disputado === "Presidente" || ficha.cargo_disputado === "Governador"
+      ? getApprovedAttributedFactChecks({
+          candidate_id: ficha.id,
+          candidate_slug: ficha.slug,
+          office: ficha.cargo_disputado,
+          uf: ficha.estado,
+        })
+      : []
+  const checagensEnabled = attributedChecks.length > 0
+
   const tabDefsById: Record<CandidatoProfileNavTabId, { label: string; dataCount: number }> = {
     geral: { label: fixedCopy.generalOverview, dataCount: 0 },
     pesquisas: { label: "Pesquisas", dataCount: pesquisas.length },
     programa: { label: "Programa", dataCount: 0 },
     media: { label: "Mídia", dataCount: ficha.noticias?.length ?? 0 },
+    checagens: { label: "Checagens", dataCount: attributedChecks.length },
     dinheiro: {
       label: "Dinheiro",
       dataCount:
@@ -481,6 +497,7 @@ export function CandidatoProfile({
     CANDIDATO_PROFILE_NAV_TAB_IDS
       .filter((id) => id !== "pesquisas" || pesquisasEnabled)
       .filter((id) => id !== "programa" || programaEnabled)
+      .filter((id) => id !== "checagens" || checagensEnabled)
       .map((id) => ({ id, ...tabDefsById[id] }))
 
   const locationSearch = useSyncExternalStore(
@@ -817,15 +834,6 @@ export function CandidatoProfile({
         votacoes: ficha.votacoes_verificacao,
       }} />
 
-      {(ficha.cargo_disputado === "Presidente" || ficha.cargo_disputado === "Governador") && (
-        <AttributedFactChecks
-          candidateId={ficha.id}
-          candidateSlug={ficha.slug}
-          office={ficha.cargo_disputado}
-          uf={ficha.estado}
-        />
-      )}
-
       {/* Tab navigation */}
       {tabs.length > 0 && (
         <>
@@ -860,6 +868,14 @@ export function CandidatoProfile({
                       />
                     ) : undefined
                   }
+                  factChecksCard={
+                    checagensEnabled ? (
+                      <AttributedFactChecksOverview
+                        checks={attributedChecks}
+                        onOpenTab={() => navigateToTab("checagens")}
+                      />
+                    ) : undefined
+                  }
                   closingCard={
                     senadoRunningMates ? (
                       <SenadoRunningMates
@@ -878,6 +894,16 @@ export function CandidatoProfile({
                 />
                 <CandidateGeneralData ficha={ficha} />
               </div>
+            )}
+
+            {/* CHECAGENS TAB */}
+            {activeTab === "checagens" && checagensEnabled && (
+              <AttributedFactChecks
+                candidateId={ficha.id}
+                candidateSlug={ficha.slug}
+                office={ficha.cargo_disputado}
+                uf={ficha.estado}
+              />
             )}
 
             {/* PESQUISAS TAB */}

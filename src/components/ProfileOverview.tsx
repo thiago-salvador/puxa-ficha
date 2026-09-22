@@ -820,12 +820,15 @@ export function ProfileOverview({
   onNavigateTab,
   leadingCard,
   trailingCard,
+  factChecksCard,
   closingCard,
 }: {
   ficha: FichaCandidato
   onNavigateTab: (tabId: string) => void
   leadingCard?: React.ReactNode
   trailingCard?: React.ReactNode
+  /** Resumo das checagens atribuídas; a lista completa fica na aba Checagens. */
+  factChecksCard?: React.ReactNode
   /** Último card da grade (suplentes do Senado), antes do bloco de alertas. */
   closingCard?: React.ReactNode
 }) {
@@ -851,7 +854,7 @@ export function ProfileOverview({
     ficha.sites_candidato?.resultado === "indeterminado" ? sitesTseCollectedAt : null
   const hasDebateQuotes = hasCandidateDebatePressQuotes(ficha.slug, ficha.id)
 
-  if (!hasOverviewData(ficha) && !leadingCard && !trailingCard && !closingCard && !hasDebateQuotes) {
+  if (!hasOverviewData(ficha) && !leadingCard && !trailingCard && !factChecksCard && !closingCard && !hasDebateQuotes) {
     return <EmptyOverviewState />
   }
 
@@ -904,6 +907,7 @@ export function ProfileOverview({
           onNavigateTab={onNavigateTab}
         />
       </OverviewMasonryItem>
+      <OverviewMasonryItem>{factChecksCard}</OverviewMasonryItem>
       <OverviewMasonryItem>
         <ProcessesTeaser processos={processos} onNavigate={() => onNavigateTab("justica")} />
       </OverviewMasonryItem>
