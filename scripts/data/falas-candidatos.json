@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-09-22T11:36:01.050Z",
+  "updated_at": "2026-09-22T11:41:54.151Z",
   "quotes": [
     {
       "id": "df3b314a4c73c4f168b08c74c348c04d43481ac749c59cd01af84d05990c24f5",
@@ -6331,6 +6331,85 @@
         "fetched_url": "https://www.poder360.com.br/poder-eleicoes-2026/em-sc-lula-reforca-que-vai-acabar-com-as-bets/",
         "method": "codex_source_review",
         "source_format": "web_text"
+      }
+    },
+    {
+      "id": "372c82334a1696d367eb1007e1dfdf821eca10581eb9c2558ef9187b992770eb",
+      "candidate_id": "89dc7944-ed0a-4a1f-8ad5-fdd3edd9347a",
+      "candidate_slug": "tiao-bocalom",
+      "candidate_name": "Tiao Bocalom",
+      "office": "Governador",
+      "uf": "AC",
+      "quote_text": "O meu projeto sempre foi o produzir para empregar, nunca mudei.",
+      "context": "O candidato afirmou concorrer ao governo do Acre pela quarta vez e relembrou críticas recebidas no passado sobre sua proposta voltada à produção agrícola e à economia do estado. “O meu projeto sempre foi o produzir para empregar, nunca mudei. Estou feliz hoje porque muita gente hoje está exatamente executando esse projeto, coisa que lá atrás muita gente dizia que o Bocalom era doido, que não sabia o que estava falando, que só falava de agricultura, em produção, em economia”, afirmou.",
+      "event_context": "Primeiro debate entre os candidatos ao Governo do Acre, promovido pelo ac24horas e realizado nesta sexta-feira (11) na sede do jornal.. O candidato Tião Bocalom (PP) fez sua apresentação inicial no primeiro bloco do debate promovido pelo ac24horas entre os candidatos ao Governo do Acre, realizado nesta sexta-feira (11)",
+      "event_type": "debate",
+      "occurred_on": "2026-09-11",
+      "publisher": "ac24horas",
+      "article_url": "https://ac24horas.com/2026/09/11/bocalom-inicia-debate-com-lema-produzir-para-empregar-e-cita-revolucao-na-prefeitura/",
+      "article_title": "Bocalom inicia com lema ‘Produzir para Empregar’ e cita revolução na prefeitura",
+      "article_published_at": "2026-09-11T20:13:09-05:00",
+      "observed_at": "2026-09-22T11:41:54.151Z",
+      "source_sha256": "c6d326ddd9733797fc607867b7f5efbd0ff78b82db19e7ebc8c5f87e67a415a5",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato Tião Bocalom (PP) fez sua apresentação inicial no primeiro bloco do debate promovido pelo ac24horas entre os candidatos ao Governo do Acre, realizado nesta sexta-feira (11)",
+        "date_excerpt": "O candidato Tião Bocalom (PP) fez sua apresentação inicial no primeiro bloco do debate promovido pelo ac24horas entre os candidatos ao Governo do Acre, realizado nesta sexta-feira (11)",
+        "fetched_url": "https://ac24horas.com/2026/09/11/bocalom-inicia-debate-com-lema-produzir-para-empregar-e-cita-revolucao-na-prefeitura/",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "6d4ab169e3511ad343f91d26085b8fddd1edc52cd2982cbf7bedb54e61bf0db0",
+      "candidate_id": "128ab70f-daf2-472b-926f-ec65b7287dd1",
+      "candidate_slug": "thor-dantas",
+      "candidate_name": "Thor Dantas",
+      "office": "Governador",
+      "uf": "AC",
+      "quote_text": "O nosso Acre precisa de um plano urgente para resolver esses problemas.",
+      "context": "“O nosso Acre precisa de um plano urgente para resolver esses problemas. Nós temos um plano para resolver os próximos quatro anos e o nosso time para estar na solução, para resolvermos pelos próximos quatro anos”, declarou.",
+      "event_context": "Primeiro debate entre os candidatos ao Governo do Acre, promovido pelo ac24horas e realizado nesta sexta-feira (11).. O candidato ao governo do Acre Thor Dantas (PSB) afirmou nesta sexta-feira, 11, durante sua apresentação inicial no primeiro debate entre os candidatos ao governo do Estado",
+      "event_type": "debate",
+      "occurred_on": "2026-09-11",
+      "publisher": "ac24horas",
+      "article_url": "https://ac24horas.com/2026/09/11/thor-dantas-defende-verdadeira-mudanca-para-o-acre/",
+      "article_title": "Thor Dantas defende “verdadeira mudança” para o Acre",
+      "article_published_at": "2026-09-11T20:01:39-05:00",
+      "observed_at": "2026-09-22T11:41:54.151Z",
+      "source_sha256": "90760295f7298ec625b573f3688d3f8375f151bafa52c0058370655106ba9be8",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao governo do Acre Thor Dantas (PSB) afirmou nesta sexta-feira, 11, durante sua apresentação inicial no primeiro debate entre os candidatos ao governo do Estado",
+        "date_excerpt": "O candidato ao governo do Acre Thor Dantas (PSB) afirmou nesta sexta-feira, 11, durante sua apresentação inicial no primeiro debate entre os candidatos ao governo do Estado",
+        "fetched_url": "https://ac24horas.com/2026/09/11/thor-dantas-defende-verdadeira-mudanca-para-o-acre/",
+        "method": "codex_source_review",
+        "quote_location": "article_paragraph"
+      }
+    },
+    {
+      "id": "86788efaaaed57b0e5fda871203f821076648facc7097e3dc51deab5429f454c",
+      "candidate_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+      "candidate_slug": "mailza-assis",
+      "candidate_name": "Mailza Assis",
+      "office": "Governador",
+      "uf": "AC",
+      "quote_text": "Eu estava lá compondo a chapa, eu fazia parte da Chapa, então considero que fui votada.",
+      "context": "\"Eu estava lá compondo a chapa, eu fazia parte da Chapa, então considero que fui votada. Mas, embora alguns questionam o meu voto, tenho muitos serviços prestados. Como senadora, trouxe recursos pro meu estado, defendi e aprovei leis que ajudaram a nação, e também como vice-governadora. Uma chapa não se forma sem um vice-governador. Fui escolhida e, reconhecendo também o meu trabalho, trabalhei durante todo esse tempo\", defendeu.",
+      "event_context": "Sabatina no JAC1. Candidata ao governo do Acre, Mailza Assis, foi sabatinada nesta quinta (17) no JAC1.. Candidata ao governo do Acre, Mailza Assis, foi sabatinada nesta quinta (17) no JAC1.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-17",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/17/mailza-assis-diz-que-se-considera-votada-como-vice-defende-chapa-feminina-e-promete-combater-corrupcao.ghtml",
+      "article_title": "Mailza Assis diz que se considera 'votada' como vice, defende chapa feminina e promete combater corrupção",
+      "article_published_at": "2026-09-17T15:42:42.999-03:00",
+      "observed_at": "2026-09-22T11:41:54.151Z",
+      "source_sha256": "c9547bf1edc66f72c17900a5cac3cfdf6d6a5b47f4188b001dbf2840c52c5c30",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Candidata ao governo do Acre, Mailza Assis, foi sabatinada nesta quinta (17) no JAC1.",
+        "date_excerpt": "Candidata ao governo do Acre, Mailza Assis, foi sabatinada nesta quinta (17) no JAC1.",
+        "fetched_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/17/mailza-assis-diz-que-se-considera-votada-como-vice-defende-chapa-feminina-e-promete-combater-corrupcao.ghtml",
+        "method": "codex_source_review"
       }
     }
   ]
