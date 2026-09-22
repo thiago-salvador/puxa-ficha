@@ -1,4 +1,4 @@
--- Readback da migration 20260922120000 (doador recorrente).
+-- Readback da migration 20260922140000 (doador recorrente).
 --
 -- Roda dentro da transação do apply, antes do COMMIT, e de novo sozinho em
 -- modo somente leitura. Por isso não abre nem fecha transação e não troca de
@@ -9,9 +9,9 @@ DECLARE
   colunas_view text;
 BEGIN
   IF NOT EXISTS (
-    SELECT 1 FROM supabase_migrations.schema_migrations WHERE version = '20260922120000'
+    SELECT 1 FROM supabase_migrations.schema_migrations WHERE version = '20260922140000'
   ) THEN
-    RAISE EXCEPTION 'doador recorrente: 20260922120000 ausente do ledger';
+    RAISE EXCEPTION 'doador recorrente: 20260922140000 ausente do ledger';
   END IF;
 
   IF NOT EXISTS (

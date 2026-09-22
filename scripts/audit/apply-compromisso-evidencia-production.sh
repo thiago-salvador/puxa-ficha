@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Aplica somente a migration 20260922140000 (doador recorrente), com predecessor, hash, lock,
+# Aplica somente a migration 20260922130000 (compromisso_evidencia), com predecessor, hash, lock,
 # ledger e readback fechados para o projeto de producao do Puxa Ficha.
 set -euo pipefail
 case $- in *x*) set +x ;; esac
@@ -44,14 +44,14 @@ pf_configure_libpq_from_url
 export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
-version=20260922140000
-previous_version=20260922130000
-previous_digest=sha256:d1e2e1322778bd6689cb12a08635972b209ddd2cc11f54a2205693f2ebaf2a93
-migration="$ROOT/supabase/migrations/${version}_financiamento_doador_recorrente.sql"
-rollback="$ROOT/supabase/rollback/${version}_financiamento_doador_recorrente.rollback.sql"
-readback="$ROOT/supabase/readback/${version}_financiamento_doador_recorrente.readback.sql"
+version=20260922130000
+previous_version=20260921220000
+previous_digest=sha256:05b9f19a7dd1d8f15c1d806be023b6e5260b7c4b6dbadbdf357a485796653a6d
+migration="$ROOT/supabase/migrations/${version}_compromisso_evidencia.sql"
+rollback="$ROOT/supabase/rollback/${version}_compromisso_evidencia.rollback.sql"
+readback="$ROOT/supabase/readback/${version}_compromisso_evidencia.readback.sql"
 [[ -f "$migration" && -f "$rollback" && -f "$readback" ]] || {
-  echo "FAIL: artefato do doador recorrente ausente" >&2
+  echo "FAIL: artefato da vinculo compromisso x evidencia ausente" >&2
   exit 2
 }
 
@@ -64,11 +64,11 @@ IFS='|' read -r ledger_top previous_count previous_key version_count version_key
 if [[ "$ledger_top" == "$version" && "$version_count" == "1" && "$version_key" == "$digest" && "$previous_count" == "1" && "$previous_key" == "$previous_digest" ]]; then
   PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300000 -c lock_timeout=5000' \
     psql -X -v ON_ERROR_STOP=1 -f "$readback"
-  echo "PASS: doador recorrente ja aplicado, ledger e readback conferem"
+  echo "PASS: vinculo compromisso x evidencia ja aplicada, ledger e readback conferem"
   exit 0
 fi
 if [[ "$ledger_top" != "$previous_version" || "$previous_count" != "1" || "$previous_key" != "$previous_digest" || "$version_count" != "0" ]]; then
-  echo "FAIL: ledger inicial do doador recorrente inesperado: $state" >&2
+  echo "FAIL: ledger inicial da vinculo compromisso x evidencia inesperado: $state" >&2
   exit 1
 fi
 
@@ -97,16 +97,16 @@ name = pathlib.Path(migration_path).stem.removeprefix(version + "_")
 created_by = "Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions:" + sha
 
 print("BEGIN;")
-print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:financiamento-doador-recorrente-production', 0));")
-print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(previous)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(previous)} AND idempotency_key={lit(previous_digest)}) <> 1 OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'doador recorrente: ledger divergiu sob lock'; END IF; END $ledger$;")
+print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:compromisso-evidencia-production', 0));")
+print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(previous)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(previous)} AND idempotency_key={lit(previous_digest)}) <> 1 OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'vinculo compromisso x evidencia: ledger divergiu sob lock'; END IF; END $ledger$;")
 print(body, end="" if body.endswith("\n") else "\n")
 print("INSERT INTO supabase_migrations.schema_migrations (version, statements, name, created_by, idempotency_key, rollback) VALUES (")
 print(f"  {lit(version)}, ARRAY[convert_from(decode({lit(b64(raw))}, 'base64'), 'UTF8')], {lit(name)}, {lit(created_by)}, {lit(digest)}, ARRAY[convert_from(decode({lit(b64(rollback))}, 'base64'), 'UTF8')]);")
 print(readback.decode("utf-8"), end="" if readback.endswith(b"\n") else "\n")
-print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(version)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(version)} AND idempotency_key={lit(digest)}) <> 1 THEN RAISE EXCEPTION 'doador recorrente: ledger final divergiu'; END IF; END $ledger$;")
+print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(version)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(version)} AND idempotency_key={lit(digest)}) <> 1 THEN RAISE EXCEPTION 'vinculo compromisso x evidencia: ledger final divergiu'; END IF; END $ledger$;")
 print("COMMIT;")
 PY
 
 PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300000 -c lock_timeout=5000' \
   psql -X -v ON_ERROR_STOP=1 -f "$readback"
-echo "PASS: doador recorrente aplicado, ledger e readback concluidos"
+echo "PASS: vinculo compromisso x evidencia aplicada, ledger e readback concluidos"

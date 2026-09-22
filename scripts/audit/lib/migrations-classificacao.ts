@@ -472,9 +472,16 @@ export const MEDICAO_REPLAY = Object.freeze({
   // estado privado e um trigger estreito; o replay do schema inclui a DDL.
   // CI run 35260822465 mediu 114 aplicadas, zero falhas e hash
   // 2d82edf8754893bdb44aac0b53046d3363ea30d3004f994c3cee14420a24b750.
-  // 114 -> 115 em 22/09/2026: a 20260922120000 (doador recorrente) e classe
-  // schema, sem DML, e entra no replay de schema.
-  schemaReplayTamanho: 115,
+  // 114 -> 115 em 22/09/2026: 20260922130000 cria a tabela privada
+  // compromisso_evidencia, a funcao de filtro e a view publica (DDL pura) e
+  // entra no replay de schema. CI run 35747022903 (com a origem cascata) mediu 115 aplicadas, zero
+  // falhas e hash
+  // c49de1042990f5f02c899e8ea04fb404ed56d0bc1b6aeff882c883dbb3b8c266.
+  // 115 -> 116 em 22/09/2026: a 20260922140000 (doador recorrente) e classe
+  // schema, sem DML, e entra no replay de schema. Medido no --schema-gate local PG17:
+  // 116 aplicadas, zero falhas e hash
+  // 3fdb860861d80a7e679681886d6972749880278a04a41017d9ad2539489e2c5c.
+  schemaReplayTamanho: 116,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

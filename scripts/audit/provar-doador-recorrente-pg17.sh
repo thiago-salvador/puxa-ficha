@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Prova em PostgreSQL 17 da migration 20260922120000 (doador recorrente).
+# Prova em PostgreSQL 17 da migration 20260922140000 (doador recorrente).
 #
 # O que fica provado, com anon de verdade e não com leitura de SQL:
 #   1. anon lê a view e enxerga o par entre pessoas diferentes;
@@ -14,9 +14,9 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 CONTAINER="pf-doador-recorrente-$$"
 IMAGE="postgres:17@sha256:7958605b474b3d264a969cb3a123d6aa00ad1e1fe9da8a69984dabb704d93317"
-FORWARD="$ROOT/supabase/migrations/20260922120000_financiamento_doador_recorrente.sql"
-ROLLBACK="$ROOT/supabase/rollback/20260922120000_financiamento_doador_recorrente.rollback.sql"
-READBACK="$ROOT/supabase/readback/20260922120000_financiamento_doador_recorrente.readback.sql"
+FORWARD="$ROOT/supabase/migrations/20260922140000_financiamento_doador_recorrente.sql"
+ROLLBACK="$ROOT/supabase/rollback/20260922140000_financiamento_doador_recorrente.rollback.sql"
+READBACK="$ROOT/supabase/readback/20260922140000_financiamento_doador_recorrente.readback.sql"
 
 cleanup() {
   docker rm -f "$CONTAINER" >/dev/null 2>&1 || true
@@ -154,7 +154,7 @@ semear_linhas
 
 # O apply grava a versão no ledger e roda o readback na mesma transação; aqui
 # o readback roda depois, como na releitura somente leitura do apply.
-psql_db prova -c "INSERT INTO supabase_migrations.schema_migrations(version) VALUES ('20260922120000');"
+psql_db prova -c "INSERT INTO supabase_migrations.schema_migrations(version) VALUES ('20260922140000');"
 file_db prova "$READBACK"
 echo "OK: readback confere ledger, security_invoker, RLS, colunas da view e ACL"
 
@@ -264,7 +264,7 @@ BEGIN
      OR to_regclass('public.financiamento_doador_recorrente_publico') IS NOT NULL THEN
     RAISE EXCEPTION 'rollback deixou objeto de pé';
   END IF;
-  IF EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version = '20260922120000') THEN
+  IF EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version = '20260922140000') THEN
     RAISE EXCEPTION 'rollback deixou a versão no ledger';
   END IF;
 END

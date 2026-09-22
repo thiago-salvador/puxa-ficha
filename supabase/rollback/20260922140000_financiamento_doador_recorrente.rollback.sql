@@ -6,7 +6,7 @@ BEGIN;
 DROP VIEW IF EXISTS public.financiamento_doador_recorrente_publico;
 DROP TABLE IF EXISTS public.financiamento_doador_recorrente;
 
-DELETE FROM supabase_migrations.schema_migrations WHERE version = '20260922120000';
+DELETE FROM supabase_migrations.schema_migrations WHERE version = '20260922140000';
 
 DO $guard$
 BEGIN

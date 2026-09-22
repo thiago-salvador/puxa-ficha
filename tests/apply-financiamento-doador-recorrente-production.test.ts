@@ -4,7 +4,7 @@ import { createHash } from "node:crypto"
 import { readFileSync } from "node:fs"
 import test from "node:test"
 
-const version = "20260922120000"
+const version = "20260922140000"
 const runnerPath = "scripts/audit/apply-financiamento-doador-recorrente-production.sh"
 const runner = readFileSync(runnerPath, "utf8")
 const applyWorkflow = readFileSync(".github/workflows/apply-financiamento-doador-recorrente-production.yml", "utf8")
@@ -13,10 +13,10 @@ const proof = readFileSync("scripts/audit/provar-doador-recorrente-pg17.sh", "ut
 const sha256 = (path: string) => `sha256:${createHash("sha256").update(readFileSync(path)).digest("hex")}`
 
 test("apply do doador recorrente fixa a migration, o topo atual do ledger e o projeto de produção", () => {
-  const predecessor = "supabase/migrations/20260921220000_issue_400_vice_to_capitao_osmar_deferido.sql"
+  const predecessor = "supabase/migrations/20260922130000_compromisso_evidencia.sql"
   for (const value of [
     `version=${version}`,
-    "previous_version=20260921220000",
+    "previous_version=20260922130000",
     `previous_digest=${sha256(predecessor)}`,
     "wskpzsobvqwhnbsdsmok",
     "pg_advisory_xact_lock",

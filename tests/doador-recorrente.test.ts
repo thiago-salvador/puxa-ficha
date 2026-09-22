@@ -14,7 +14,7 @@ import { encontrarDocumentoDeDoador } from "../scripts/audit-doador-recorrente-e
 import { agruparDoadoresRecorrentes, descreverDoacoes, type DoadorRecorrenteViewRow } from "../src/lib/doador-recorrente-publico"
 
 const ROOT = process.cwd()
-const VERSION = "20260922120000"
+const VERSION = "20260922140000"
 const CNPJ_ITAU = "60701190000104"
 const CNPJ_OAS = "14310577000104"
 const HASH_PF = "b".repeat(64)

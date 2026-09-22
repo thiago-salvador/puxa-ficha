@@ -1,4 +1,4 @@
-name: Aplicar doador recorrente
+name: Aplicar vínculo compromisso x evidência
 
 on:
   workflow_dispatch:
@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   apply:
-    name: Doador recorrente 20260922140000, ledger e readback
+    name: Compromisso x evidência 20260922130000, ledger e readback
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 25
@@ -50,9 +50,9 @@ jobs:
       - run: npm ci --ignore-scripts
       - uses: ./.github/actions/install-postgresql-client-17
         timeout-minutes: 12
-      - name: Provar ACL, pares, CHECK, guard, readback e rollback em PostgreSQL 17 descartável
-        run: bash scripts/audit/provar-doador-recorrente-pg17.sh
+      - name: Provar ACL, filtro público e rollback em PostgreSQL 17 descartável
+        run: bash scripts/audit/provar-compromisso-evidencia-pg17.sh
       - name: Aplicar migration fechada em produção
         env:
           PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
-        run: bash scripts/audit/apply-financiamento-doador-recorrente-production.sh
+        run: bash scripts/audit/apply-compromisso-evidencia-production.sh
