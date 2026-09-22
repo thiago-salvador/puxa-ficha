@@ -16014,8 +16014,8 @@
       "date": "2026-08-07",
       "context": "Ronaldo Caiado ao g1 e à GloboNews com Andréia Sadi e Natuza Nery",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Fato ou Fake",
     "assessmentOrigin": "publisher",
@@ -16066,8 +16066,8 @@
       "date": "2026-08-07",
       "context": "Ronaldo Caiado ao g1 e à GloboNews com Andréia Sadi e Natuza Nery",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Fato ou Fake",
     "assessmentOrigin": "publisher",
@@ -16118,8 +16118,8 @@
       "date": "2026-08-07",
       "context": "Ronaldo Caiado ao g1 e à GloboNews com Andréia Sadi e Natuza Nery",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Fato ou Fake",
     "assessmentOrigin": "publisher",
@@ -16170,8 +16170,8 @@
       "date": "2026-08-07",
       "context": "Ronaldo Caiado ao g1 e à GloboNews com Andréia Sadi e Natuza Nery",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Fato ou Fake",
     "assessmentOrigin": "publisher",
@@ -16222,8 +16222,8 @@
       "date": "2026-08-07",
       "context": "Ronaldo Caiado ao g1 e à GloboNews com Andréia Sadi e Natuza Nery",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Fato ou Fake",
     "assessmentOrigin": "publisher",
@@ -16246,6 +16246,10 @@
         "url": "https://g1.globo.com/fato-ou-fake/noticia/2026/08/07/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-ronaldo-caiado-ao-g1-e-a-globonews.ghtml",
         "title": "Veja o que é fato ou fake na entrevista de Caiado ao g1 e à GloboNews | G1",
         "origin": "consulted_by_us"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "IBGE: Síntese de Indicadores Sociais, publicada em 3/12/2025, e resposta da assessoria ao Fato ou Fake"
       }
     ],
     "corrections": [],
@@ -16269,8 +16273,8 @@
       "date": "2026-08-07",
       "context": "Ronaldo Caiado ao g1 e à GloboNews com Andréia Sadi e Natuza Nery",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Fato ou Fake",
     "assessmentOrigin": "publisher",
@@ -16293,6 +16297,10 @@
         "url": "https://g1.globo.com/fato-ou-fake/noticia/2026/08/07/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-ronaldo-caiado-ao-g1-e-a-globonews.ghtml",
         "title": "Veja o que é fato ou fake na entrevista de Caiado ao g1 e à GloboNews | G1",
         "origin": "consulted_by_us"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "FAO: sistema AQUASTAT, recursos hídricos renováveis, dados de 2023"
       }
     ],
     "corrections": [],
@@ -16316,8 +16324,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado à Globo com Renata Vasconcellos e César Tralli",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Fato ou Fake",
     "assessmentOrigin": "publisher",
@@ -16383,8 +16391,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado à Globo com Renata Vasconcellos e César Tralli",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Fato ou Fake",
     "assessmentOrigin": "publisher",
@@ -16435,8 +16443,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado à Globo com Renata Vasconcellos e César Tralli",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Fato ou Fake",
     "assessmentOrigin": "publisher",
@@ -16492,8 +16500,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado à Globo com Renata Vasconcellos e César Tralli",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Fato ou Fake",
     "assessmentOrigin": "publisher",
@@ -16549,8 +16557,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado à Globo com Renata Vasconcellos e César Tralli",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Fato ou Fake",
     "assessmentOrigin": "publisher",
@@ -16573,6 +16581,10 @@
         "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/25/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-ronaldo-caiado-a-globo.ghtml",
         "title": "Fato ou Fake: entrevista de Ronaldo Caiado (PSD) à Globo no 1º turno | G1",
         "origin": "consulted_by_us"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Europol: seções Sobre a Europol e perguntas frequentes do site oficial"
       }
     ],
     "corrections": [],
@@ -16596,8 +16608,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado à Globo com Renata Vasconcellos e César Tralli",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Fato ou Fake",
     "assessmentOrigin": "publisher",
@@ -16620,6 +16632,10 @@
         "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/25/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-ronaldo-caiado-a-globo.ghtml",
         "title": "Fato ou Fake: entrevista de Ronaldo Caiado (PSD) à Globo no 1º turno | G1",
         "origin": "consulted_by_us"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Europol: perguntas frequentes sobre poderes de prisão e atuação dos agentes"
       }
     ],
     "corrections": [],
@@ -16643,8 +16659,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado à Globo com Renata Vasconcellos e César Tralli",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Fato ou Fake",
     "assessmentOrigin": "publisher",
@@ -16715,8 +16731,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado à Globo com Renata Vasconcellos e César Tralli",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Fato ou Fake",
     "assessmentOrigin": "publisher",
@@ -16772,8 +16788,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado à Globo com Renata Vasconcellos e César Tralli",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Fato ou Fake",
     "assessmentOrigin": "publisher",
@@ -16796,6 +16812,10 @@
         "url": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/08/25/veja-o-que-e-fato-e-o-que-e-fake-na-entrevista-de-ronaldo-caiado-a-globo.ghtml",
         "title": "Fato ou Fake: entrevista de Ronaldo Caiado (PSD) à Globo no 1º turno | G1",
         "origin": "consulted_by_us"
+      },
+      {
+        "origin": "cited_by_publisher",
+        "title": "Inep: Taxas de Rendimento Escolar de 2025, divulgadas em junho de 2026; resposta da assessoria de Caiado"
       }
     ],
     "corrections": [],
@@ -16819,8 +16839,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado à Globo com Renata Vasconcellos e César Tralli",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Fato ou Fake",
     "assessmentOrigin": "publisher",
@@ -16871,8 +16891,8 @@
       "date": "2026-08-07",
       "context": "Ronaldo Caiado ao g1 e à GloboNews com Andréia Sadi e Natuza Nery",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -16928,8 +16948,8 @@
       "date": "2026-08-07",
       "context": "Ronaldo Caiado ao g1 e à GloboNews com Andréia Sadi e Natuza Nery",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -16980,8 +17000,8 @@
       "date": "2026-08-07",
       "context": "Ronaldo Caiado ao g1 e à GloboNews com Andréia Sadi e Natuza Nery",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -17042,8 +17062,8 @@
       "date": "2026-08-07",
       "context": "Ronaldo Caiado ao g1 e à GloboNews com Andréia Sadi e Natuza Nery",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -17119,8 +17139,8 @@
       "date": "2026-08-07",
       "context": "Ronaldo Caiado ao g1 e à GloboNews com Andréia Sadi e Natuza Nery",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -17176,8 +17196,8 @@
       "date": "2026-08-07",
       "context": "Ronaldo Caiado ao g1 e à GloboNews com Andréia Sadi e Natuza Nery",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -17238,8 +17258,8 @@
       "date": "2026-08-07",
       "context": "Ronaldo Caiado ao g1 e à GloboNews com Andréia Sadi e Natuza Nery",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -17320,8 +17340,8 @@
       "date": "2026-08-07",
       "context": "Ronaldo Caiado ao g1 e à GloboNews com Andréia Sadi e Natuza Nery",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -17397,8 +17417,8 @@
       "date": "2026-08-07",
       "context": "Ronaldo Caiado ao g1 e à GloboNews com Andréia Sadi e Natuza Nery",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -17459,8 +17479,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado ao Jornal Nacional",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -17529,8 +17549,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado ao Jornal Nacional",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -17601,8 +17621,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado ao Jornal Nacional",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -17673,8 +17693,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado ao Jornal Nacional",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -17725,8 +17745,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado ao Jornal Nacional",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -17777,8 +17797,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado ao Jornal Nacional",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -17829,8 +17849,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado ao Jornal Nacional",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -17904,8 +17924,8 @@
       "date": "2026-08-25",
       "context": "Ronaldo Caiado ao Jornal Nacional",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -17966,8 +17986,8 @@
       "date": "2026-04-06",
       "context": "Ronaldo Caiado ao programa Frente a Frente, da Folha de S. Paulo e UOL",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -18053,8 +18073,8 @@
       "date": "2026-04-06",
       "context": "Ronaldo Caiado ao programa Frente a Frente, da Folha de S. Paulo e UOL",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -18115,8 +18135,8 @@
       "date": "2026-04-06",
       "context": "Ronaldo Caiado ao programa Frente a Frente, da Folha de S. Paulo e UOL",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -18187,8 +18207,8 @@
       "date": "2026-04-06",
       "context": "Ronaldo Caiado ao programa Frente a Frente, da Folha de S. Paulo e UOL",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
@@ -18254,8 +18274,8 @@
       "date": "2026-04-06",
       "context": "Ronaldo Caiado ao programa Frente a Frente, da Folha de S. Paulo e UOL",
       "speaker": "Ronaldo Caiado",
-      "speakerIdentityReviewed": false,
-      "contextReviewed": false
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true
     },
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",

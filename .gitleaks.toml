@@ -151,5 +151,5 @@ id = "grafana-api-key"
   description = "Identificador exato de relatório público Power BI citado pela Lupa, acessível sem autenticação"
   condition = "AND"
   regexTarget = "secret"
-  regexes = ['''^eyJrIjoiMDI0OTAyYzEtMzAyNS00ZGUxLWE5NGUtOWIxYTBlZTA1ZjBiIiwidCI6ImViMDkwNDIwLTQ0NGMtNDNmNy05MWYyLTRiOGRhNmJmZThlMSJ9$''']
+  regexes = ['''^eyJrIjoiMDI0OTAyYzEtMzAyNS00ZGUxLWE5NGUtOWIxYTBlZTA1ZjBiIiwidCI6ImViMDkwNDIwLTQ0NGMtNDNmNy05MWYyLTRiOGRhNmJmZThlMSJ9$''', '''^eyJrIjoiMGVjMzIwZWQtM2IzZS00NmE0LTkwNjUtZjI1YjMyNTVhZGY0IiwidCI6IjI2ZjczODk3LWM4YWMtNGIxZS05NzhmLWVhNGMwNzc0MzRiZiJ9$''']
   paths = ['''^scripts/data/checagens-atribuidas\.json$''']
