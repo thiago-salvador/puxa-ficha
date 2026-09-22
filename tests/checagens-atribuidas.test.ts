@@ -125,6 +125,10 @@ test("preserva fonte nominal do veículo sem inventar URL", () => {
   check.sources = [{ title: "URL inválida", origin: "cited_by_publisher", url: "javascript:alert(1)" }]
   assert.equal(parseAttributedFactCheck(check), null)
   assert.equal(parseAttributedFactCheck({ ...baseCheck(), sourcePolicyVersion: "unknown" }), null)
+  check.sources = [{ title: "Fonte original em HTTP", origin: "cited_by_publisher", url: "http://example.org/documento" }]
+  assert.deepEqual(parseAttributedFactCheck(check)?.sources, check.sources)
+  check.sources[0].url = "http://user:password@example.org/documento"
+  assert.equal(parseAttributedFactCheck(check), null)
 })
 
 test("falha fechado para identidade trocada, cargo ou UF divergente", () => {
