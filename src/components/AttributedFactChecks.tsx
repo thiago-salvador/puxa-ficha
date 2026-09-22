@@ -51,6 +51,7 @@ function AttributedFactCheckCard({ check }: { check: AttributedFactCheck }) {
 
   return (
     <article
+      id={`checagem-${check.id}`}
       data-pf-attributed-check-id={check.id}
       className="rounded-[16px] border border-border/60 bg-card px-5 py-5 sm:px-6"
     >
@@ -138,6 +139,27 @@ function AttributedFactCheckCard({ check }: { check: AttributedFactCheck }) {
               </a>
             </span>
           ))}
+        </div>
+      )}
+
+      {check.relatedChecks && check.relatedChecks.length > 0 && (
+        <div className="mt-4 border-t border-border/60 pt-4">
+          <h3 className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+            Avaliações relacionadas
+          </h3>
+          <ul className="mt-2 space-y-2 text-[length:var(--text-caption)]">
+            {check.relatedChecks.map((relation) => (
+              <li key={`${relation.relationship}-${relation.checkId}`}>
+                <a
+                  href={`#checagem-${relation.checkId}`}
+                  className="font-bold text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  {relation.relationship === "same_occurrence" ? "Outra avaliação desta fala" : "A mesma afirmação em outra ocasião"}
+                </a>
+                <span className="ml-2 text-muted-foreground">{relation.rationale}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </article>
