@@ -1,5 +1,10 @@
 # Falas de candidatos na imprensa
 
+O contrato vigente de agenda, economia, cobertura e publicação está em
+[falas-rotina-48h.md](falas-rotina-48h.md). A rotina busca todos os presidenciáveis
+e candidatos a governador a cada dois dias e publica as aspas aprovadas na mesma
+execução. As regras de prova e os formatos de evidência abaixo continuam válidos.
+
 O monitoramento busca falas dos presidenciáveis e candidatos a governador publicados no site. A rotina cobre hoje e os 13 dias anteriores no calendário de São Paulo. Na primeira carga, autorizada nesta tarefa, a busca dos perfis sem aspa avança por 14 dias e, para preencher lacunas, o período da campanha oficial iniciado em 16 de agosto de 2026. Cada frase precisa de atribuição, contexto, data da fala e link da matéria original. Falas anteriores à campanha e declarações como pré-candidato são rejeitadas, inclusive quando republicadas depois. O fallback amplia termos e fontes, nunca o período anterior a 16/08/2026.
 
 ## Consultas alternativas e divisão do trabalho
@@ -93,6 +98,6 @@ Registre cada consulta concluída em `research/pendencias-economicas-recibos.jso
 
 ## Publicação
 
-A prévia local não comprova publicação. A ficha mostra fonte, data e link individual por citação. A pesquisa ativa no Codex prepara alterações locais; publicação, merge, deploy e banco precisam de autorização específica.
+A prévia local não comprova publicação. A ficha mostra fonte, data e link individual por citação. A autorização de 21/09/2026 inclui publicar as aspas aprovadas via PR, CI, merge e deploy, com prova nas fichas públicas. Incertezas de autoria ou data permanecem pendentes; não impedem publicar as demais. Escrita no banco não faz parte dessa autorização nem é necessária para o catálogo versionado.
 
-Se o workflow chegar à branch principal, a coleta complementar terá o mesmo calendário. A criação de propostas no GitHub depende de `FALAS_DRAFT_PR_ENABLED=true`; o workflow não faz merge automático. A ativação no GitHub deve ser verificada separadamente do agendamento do Codex.
+O heartbeat é o agendador único a cada dois dias. O workflow GitHub é complemento manual de coleta, sem agenda nem criação de rascunhos. A rotina principal revisa e publica pelo fluxo normal do repositório; uma fila local ou um PR aberto não concluem a entrega.

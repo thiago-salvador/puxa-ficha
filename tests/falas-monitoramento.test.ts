@@ -159,11 +159,11 @@ describe("falas recentes com fonte", () => {
     assert.equal(partial.status, "partial")
     assert.equal(partial.candidates[0].status, "not_found_in_consulted_pages")
   })
-  it("agenda duas rodadas semanais e restringe publicação a draft autorizado", () => {
+  it("mantém o coletor complementar manual, sem agenda ou fila de drafts concorrentes", () => {
     const workflow = readFileSync(".github/workflows/falas-monitoramento.yml", "utf8")
-    assert.match(workflow, /cron: "17 11 \* \* 1,4"/)
-    assert.match(workflow, /FALAS_DRAFT_PR_ENABLED == 'true'/)
-    assert.match(workflow, /--draft/)
+    assert.match(workflow, /workflow_dispatch:/)
+    assert.match(workflow, /falas-de-presidenci-veis-e-governadores/)
+    assert.doesNotMatch(workflow, /schedule:|cron:|FALAS_DRAFT_PR_ENABLED|gh pr create|--draft/)
     assert.doesNotMatch(workflow, /gh pr merge|service_role|SUPABASE_SERVICE_ROLE_KEY/)
   })
 })

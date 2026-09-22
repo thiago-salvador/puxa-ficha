@@ -21,6 +21,7 @@ export function medirCobertura(roster: CandidatoFalas[], catalog: CatalogoFalas,
     const attempts = searches.filter((entry) => entry.candidate_id === candidate.id)
     const searchStatus = attempts.some((entry) => entry.status === "searched") ? "searched" : attempts.some((entry) => entry.status === "blocked") ? "blocked" : "not_searched"
     return { id: candidate.id, slug: candidate.slug, name: candidate.nome_urna, office: candidate.cargo_disputado, uf: candidate.estado,
+      search_status: searchStatus,
       status: quotes.length ? "covered" : searchStatus === "searched" ? "searched_without_verified_quote" : searchStatus === "blocked" ? "search_blocked" : "not_searched",
       freshness: recent.length ? "recent" : quotes.length ? "historical" : "missing",
       quote_count: quotes.length, recent_quote_count: recent.length, quote_ids: quotes.map((quote) => quote.id),
@@ -31,7 +32,9 @@ export function medirCobertura(roster: CandidatoFalas[], catalog: CatalogoFalas,
   return { schema_version: "falas-cobertura-v2", observed_at: now.toISOString(), window_days: 14, initial_search_start: "2026-08-16", total: candidates.length, covered,
     recent_covered: recentCovered, historical_only: covered - recentCovered, recent_coverage_complete: candidates.length > 0 && recentCovered === candidates.length,
     missing: candidates.length - covered, coverage_complete: candidates.length > 0 && covered === candidates.length,
-    search_attempted_for_all: candidates.length > 0 && candidates.every((candidate) => candidate.status !== "not_searched" && candidate.queries.length > 0),
+    // A prior quote does not prove that this candidate was searched in the
+    // current input. Keep this separate from editorial quote coverage.
+    search_attempted_for_all: candidates.length > 0 && candidates.every((candidate) => candidate.search_status !== "not_searched" && candidate.queries.length > 0),
     search_complete: roster.length > 0 && roster.every((candidate) => searches.some((entry) => entry.candidate_id === candidate.id && entry.status === "searched" && entry.queries.length > 0)), candidates }
 }
 

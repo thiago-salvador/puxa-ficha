@@ -60,3 +60,11 @@ test("pagina de cobertura só cria hrefs HTTPS sem userinfo e escapa URLs rejeit
   assert.match(page, /https:\/\/usuario:senha@example\.com\/privado/)
   assert.doesNotMatch(page, /href="https:\/\/usuario:senha@/i)
 })
+
+test("busca pendente não é inferida de uma aspa histórica coberta", () => {
+  const coverage = medirCobertura([candidate], catalog, [], new Date("2026-09-11T12:00:00Z"))
+  assert.equal(coverage.covered, 1)
+  assert.equal(coverage.search_attempted_for_all, false)
+  assert.equal(coverage.search_complete, false)
+  assert.equal(coverage.candidates[0].search_status, "not_searched")
+})

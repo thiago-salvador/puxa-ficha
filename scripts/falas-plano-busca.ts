@@ -1,10 +1,12 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 import { FONTES_REGIONAIS_POR_UF, gerarPlanoBuscaFalas, type CandidatoPlanoBusca } from "./lib/falas-plano-busca"
+import { gerarPlanoEconomicoFalas } from "./lib/falas-plano-economico"
 import verifiedAliases from "./data/falas-aliases.json"
 
 const initial = process.argv.includes("--backfill")
 const output = resolve("reports/falas-monitoramento", initial ? "plano-backfill.json" : "plano-recorrente.json")
+const economicOutput = resolve("reports/falas-monitoramento/plano-economico.json")
 const roster = JSON.parse(readFileSync("reports/falas-monitoramento/roster.json", "utf8")) as CandidatoPlanoBusca[]
 const plan = gerarPlanoBuscaFalas({
   roster: roster.map((candidate) => ({
@@ -24,4 +26,6 @@ const plan = gerarPlanoBuscaFalas({
 })
 mkdirSync(resolve("reports/falas-monitoramento"), { recursive: true })
 writeFileSync(output, JSON.stringify(plan, null, 2) + "\n")
-console.log(JSON.stringify({ output, candidates: plan.candidates.length, queries: plan.candidates.reduce((sum, row) => sum + row.queries.length, 0), mode: plan.mode }))
+const economicPlan = gerarPlanoEconomicoFalas(plan, { fallbackPlanPath: output })
+writeFileSync(economicOutput, JSON.stringify(economicPlan, null, 2) + "\n")
+console.log(JSON.stringify({ output, economic_output: economicOutput, candidates: plan.candidates.length, queries: plan.candidates.reduce((sum, row) => sum + row.queries.length, 0), economic_batches: economicPlan.batches.length, economic_queries: economicPlan.batches.reduce((sum, batch) => sum + batch.fallback_google_queries.length, 0), mode: plan.mode }))
