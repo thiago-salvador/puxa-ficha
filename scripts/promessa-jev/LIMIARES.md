@@ -21,6 +21,14 @@ compromisso foi cumprido.
 Na dúvida entre `relacionada` e `nao_relacionada`, o rótulo é `nao_relacionada`
 quando o leitor precisaria de explicação externa para ver a ligação.
 
+Esclarecimento acrescentado durante a rotulagem, antes da primeira rodada do Jev:
+o assunto do tema é o que o **título** nomeia. Tema de título amplo ("Segurança
+pública", "Economia, política fiscal e industrial") aceita como `relacionada`
+evidência claramente dentro desse assunto, mesmo sem tratar da medida descrita.
+Tema de título estreito ("Saúde digital", "Orçamento participativo") não aceita
+evidência que só divide a área maior. Mesma direção com medida diferente é
+`relacionada`, não `sustenta`.
+
 ## Perguntas e regra de decisão (v1)
 
 Numa só request por par:
