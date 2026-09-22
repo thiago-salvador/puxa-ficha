@@ -8,6 +8,8 @@
 -- * A view pública já nasce com o filtro definitivo: somente linha verificada,
 --   de candidato público, com relação 'sustenta' ou 'relacionada'. 'contradiz'
 --   fica restrita à revisão e não é exposta nesta versão.
+-- * `origem = 'cascata'` marca vínculo verificado pela cascata automática
+--   (código, Jev e verificador independente); `revisado_por` nomeia a versão.
 -- * A view roda como quem consulta (security_invoker). O filtro está numa
 --   função SECURITY DEFINER que avalia uma linha por id, repetido na view
 --   porque service_role tem BYPASSRLS.
@@ -24,7 +26,7 @@ CREATE TABLE public.compromisso_evidencia (
     CHECK (tipo_evidencia IN ('votacao_chave', 'posicao_declarada', 'fala', 'projeto_lei', 'contradicao')),
   evidencia_ref text NOT NULL CHECK (length(btrim(evidencia_ref)) BETWEEN 1 AND 200),
   relacao text NOT NULL CHECK (relacao IN ('sustenta', 'contradiz', 'relacionada')),
-  origem text NOT NULL CHECK (origem IN ('jev_sombra', 'curadoria')),
+  origem text NOT NULL CHECK (origem IN ('jev_sombra', 'cascata', 'curadoria')),
   probabilidade numeric(5,4) CHECK (probabilidade BETWEEN 0 AND 1),
   verificado boolean NOT NULL DEFAULT false,
   revisado_por text,
@@ -34,7 +36,7 @@ CREATE TABLE public.compromisso_evidencia (
   updated_at timestamptz NOT NULL DEFAULT now(),
   CONSTRAINT compromisso_evidencia_alvo_check CHECK (num_nonnulls(frase_id, tema_id) >= 1),
   CONSTRAINT compromisso_evidencia_origem_probabilidade_check
-    CHECK (origem <> 'jev_sombra' OR probabilidade IS NOT NULL),
+    CHECK (origem NOT IN ('jev_sombra', 'cascata') OR probabilidade IS NOT NULL),
   CONSTRAINT compromisso_evidencia_verificado_revisao_check
     CHECK (NOT verificado OR (
       revisado_por IS NOT NULL AND length(btrim(revisado_por)) > 0

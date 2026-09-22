@@ -82,7 +82,7 @@ test("rollback, readbacks e prova cobrem ledger, ACL, filtro e remocao", () => {
   assert.match(rollback, /DELETE FROM supabase_migrations\.schema_migrations WHERE version='20260922130000'/)
   assert.match(readback, /has_any_column_privilege\('anon', 'public\.compromisso_evidencia', 'SELECT'\)/)
   assert.match(readback, /nao exige verificado/)
-  for (const trecho of ["'v-sustenta'", "'p-contradiz'", "'pd-pendente'", "'f-privado'", "abertura_simulada", "esperava 5 rejeicoes"]) {
+  for (const trecho of ["'v-sustenta'", "'p-contradiz'", "'pd-pendente'", "'f-privado'", "abertura_simulada", "esperava 6 rejeicoes"]) {
     assert.ok(pgProof.includes(trecho), trecho)
   }
 })

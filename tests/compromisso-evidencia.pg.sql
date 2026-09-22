@@ -30,10 +30,11 @@ VALUES
   ('00000000-0000-0000-0000-000000000001','2026:PRESIDENTE:BR:280002542548',NULL,'economia','fala','f-relacionada','relacionada','curadoria',NULL,true,'revisor','2026-09-22T12:00:00Z','fala trata do tema, sem medir cumprimento'),
   ('00000000-0000-0000-0000-000000000001','2026:PRESIDENTE:BR:280002542548',NULL,'economia','projeto_lei','p-contradiz','contradiz','jev_sombra',0.80,true,'revisor','2026-09-22T12:00:00Z','contradiz fica restrito a revisao na v1'),
   ('00000000-0000-0000-0000-000000000001','2026:PRESIDENTE:BR:280002542548',NULL,'economia','posicao_declarada','pd-pendente','sustenta','jev_sombra',0.70,false,NULL,NULL,NULL),
-  ('00000000-0000-0000-0000-000000000002','2026:GOVERNADOR:SP:250002500000',NULL,'saude','fala','f-privado','sustenta','curadoria',NULL,true,'revisor','2026-09-22T12:00:00Z','candidato despublicado nao aparece');
-DO $$ BEGIN ASSERT (SELECT count(*) = 5 FROM public.compromisso_evidencia); END $$;
+  ('00000000-0000-0000-0000-000000000002','2026:GOVERNADOR:SP:250002500000',NULL,'saude','fala','f-privado','sustenta','curadoria',NULL,true,'revisor','2026-09-22T12:00:00Z','candidato despublicado nao aparece'),
+  ('00000000-0000-0000-0000-000000000001','2026:PRESIDENTE:BR:280002542548',NULL,'economia','projeto_lei','p-cascata','relacionada','cascata',0.88,true,'cascata c2','2026-09-22T12:00:00Z','aprovado pelas camadas da cascata');
+DO $$ BEGIN ASSERT (SELECT count(*) = 6 FROM public.compromisso_evidencia); END $$;
 DO $$ BEGIN
-  ASSERT (SELECT array_agg(evidencia_ref ORDER BY evidencia_ref) = ARRAY['f-relacionada','v-sustenta']
+  ASSERT (SELECT array_agg(evidencia_ref ORDER BY evidencia_ref) = ARRAY['f-relacionada','p-cascata','v-sustenta']
           FROM public.compromisso_evidencia_publica), 'view publica para service_role';
 END $$;
 RESET ROLE;
@@ -51,6 +52,10 @@ BEGIN
     VALUES ('00000000-0000-0000-0000-000000000001','2026:PRESIDENTE:BR:280002542548','economia','fala','x2','sustenta','jev_sombra');
   EXCEPTION WHEN check_violation THEN failures := failures + 1; END;
   BEGIN
+    INSERT INTO public.compromisso_evidencia (candidato_id, programa_chave, tema_id, tipo_evidencia, evidencia_ref, relacao, origem)
+    VALUES ('00000000-0000-0000-0000-000000000001','2026:PRESIDENTE:BR:280002542548','economia','fala','x6','relacionada','cascata');
+  EXCEPTION WHEN check_violation THEN failures := failures + 1; END;
+  BEGIN
     INSERT INTO public.compromisso_evidencia (candidato_id, programa_chave, tipo_evidencia, evidencia_ref, relacao, origem)
     VALUES ('00000000-0000-0000-0000-000000000001','2026:PRESIDENTE:BR:280002542548','fala','x3','sustenta','curadoria');
   EXCEPTION WHEN check_violation THEN failures := failures + 1; END;
@@ -62,7 +67,7 @@ BEGIN
     INSERT INTO public.compromisso_evidencia (candidato_id, programa_chave, tema_id, tipo_evidencia, evidencia_ref, relacao, origem)
     VALUES ('00000000-0000-0000-0000-000000000001','2026:PRESIDENTE:BR:280002542548','economia','fala','x5','cumpriu','curadoria');
   EXCEPTION WHEN check_violation THEN failures := failures + 1; END;
-  ASSERT failures = 5, format('esperava 5 rejeicoes, veio %s', failures);
+  ASSERT failures = 6, format('esperava 6 rejeicoes, veio %s', failures);
 END $$;
 
 -- anon and authenticated cannot read the table nor, while closed, the view.
@@ -93,9 +98,9 @@ CREATE POLICY abertura_simulada ON public.compromisso_evidencia FOR SELECT TO an
   USING (public.is_public_compromisso_evidencia(id));
 SET LOCAL ROLE anon;
 DO $$ BEGIN
-  ASSERT (SELECT array_agg(evidencia_ref ORDER BY evidencia_ref) = ARRAY['f-relacionada','v-sustenta']
+  ASSERT (SELECT array_agg(evidencia_ref ORDER BY evidencia_ref) = ARRAY['f-relacionada','p-cascata','v-sustenta']
           FROM public.compromisso_evidencia_publica), 'view publica para anon apos abertura';
-  ASSERT (SELECT count(*) = 2 FROM public.compromisso_evidencia), 'tabela aberta vaza linha fora do filtro';
+  ASSERT (SELECT count(*) = 3 FROM public.compromisso_evidencia), 'tabela aberta vaza linha fora do filtro';
 END $$;
 ROLLBACK;
 
