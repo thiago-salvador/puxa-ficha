@@ -315,5 +315,1316 @@
       "reviewerKind": "model_principal",
       "reviewedAt": "2026-09-22T12:29:18.591Z"
     }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-01",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad afirmou que o ensino médio estadual paulista caiu da terceira para a décima posição no ranking de qualidade.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa confirmou a comparação do Ideb: São Paulo passou de nota 4,4 e terceiro lugar em 2021 para 4,3 e décimo lugar em 2025.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://qedu.org.br/uf/35-sao-paulo/ideb",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-02",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que São Paulo mantinha as posições no Ideb citadas por ele para o ensino fundamental e médio.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa apontou divergências nos rankings de 2023 e 2025. A resposta do governo destacou o aumento das notas, mas a agência manteve o rótulo porque a fala tratava das posições entre estados.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://qedu.org.br/uf/35-sao-paulo/ideb",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://uploads.agencialupa.org/2026/08/Nota-ascom-SP.png",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-03",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que São Paulo tinha o menor indicador histórico de latrocínios.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa confirmou o recorte do primeiro semestre de 2026: 44 latrocínios, o menor número para esse período na série da SSP iniciada em 2001.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://veja.abril.com.br/politica/o-que-revelam-os-novos-numeros-sobre-latrocinios-no-estado-de-sao-paulo/",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-04",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad comparou 61% de crianças alfabetizadas na idade certa em São Paulo com 66% no Brasil.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa confirmou os percentuais no Indicador Criança Alfabetizada de 2025, referente ao final do segundo ano do ensino fundamental.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://www.gov.br/mec/pt-br/crianca-alfabetizada/monitoramento-e-avaliacao/arquivos/sp_ica2025.pdf",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.estadao.com.br/educacao/quais-sao-os-estados-que-nao-bateram-a-meta-de-criancas-alfabetizadas-na-idade-adequada/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://educacao.uol.com.br/noticias/2026/03/23/alfabetizacao-governo-lula.ghtm",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://g1.globo.com/educacao/noticia/2026/03/23/indicador-crianca-alfabetizada-2025-mec.ghtml",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-05",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que Lula vetou o Propag e que o Congresso precisou derrubar o veto.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALTA CONTEXTO",
+    "summary": "Segundo a Lupa, Lula sancionou o programa em janeiro de 2025 com 13 vetos parciais. O Congresso derrubou os vetos em novembro, por acordo; a fala omitia que o veto não abrangia todo o programa.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALTA CONTEXTO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://www12.senado.leg.br/institucional/presidencia/noticia/rodrigo-pacheco/senado-aprova-programa-de-pleno-pagamento-de-dividas-dos-estados-propag",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://oglobo.globo.com/economia/noticia/2025/01/14/lula-veta-trechos-do-projeto-de-renegociacao-de-dividas-dos-estados-saiba-quais.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.estadao.com.br/economia/lula-sanciona-renegociacao-dividas-estados-vetos/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.estadao.com.br/economia/novo-programa-socorro-estados-pressiona-contas-governo-federal/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://ibre.fgv.br/blog-da-conjuntura-economica/artigos/propag-veto-presidencial-e-tecnicamente-correto-mas-nao-adesao",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.cnnbrasil.com.br/politica/em-acordo-congresso-derruba-vetos-a-renegociacao-de-dividas-estaduais/#goog_rewarded",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.cnnbrasil.com.br/economia/macroeconomia/acordo-deve-derrubar-veto-ao-propag-e-abrir-corrida-para-mais-adesoes/",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-06",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad destacou a Receita Federal como protagonista da Operação Carbono Oculto no combate ao crime organizado.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALTA CONTEXTO",
+    "summary": "A Lupa reconheceu a participação da Receita, mas ressaltou que a operação foi conjunta, envolvendo também Polícia Federal, Ministério Público de São Paulo e polícias estaduais.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALTA CONTEXTO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://www.bbc.com/portuguese/articles/c3r4e3g87e2o",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://transparenciainternacional.org.br/posts/operacao-carbono-oculto-revelacoes-e-desdobramentos/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://g1.globo.com/sp/sao-paulo/noticia/2025/08/28/megaoperacao-com-1400-agentes-mira-esquema-bilionario-do-pcc-no-setor-de-combustiveis-com-350-alvos-r-76-bi-foram-sonegados.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://g1.globo.com/sp/sao-paulo/noticia/2025/08/28/megaoperacao-que-mira-esquema-bilionario-do-pcc-e-a-maior-ja-realizada-no-brasil-contra-crime-organizado.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://g1.globo.com/sp/sao-paulo/noticia/2025/08/28/pcc-controla-40-fundos-de-investimentos-com-patrimonio-de-mais-de-r-30-bilhoes-diz-receita-federal.ghtml",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-07",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que São Paulo tinha o menor indicador de segurança pública do Brasil.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "EXAGERADO",
+    "summary": "A Lupa apontou que a posição variava por indicador no Anuário de Segurança Pública: o estado liderava em homicídio doloso, mas não em mortes violentas intencionais nem em diversos crimes patrimoniais.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "EXAGERADO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026.pdf",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://uploads.agencialupa.org/2026/08/notaseguranca.jpg",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-08",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad afirmou que Roberto Campos Neto deixou a presidência do Banco Central com juros de 14,25%.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "EXAGERADO",
+    "summary": "A Lupa informou que a Selic encerrou dezembro de 2024 em 12,25%. A taxa de 14,25% foi atingida em março de 2025, já na gestão de Gabriel Galípolo.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "EXAGERADO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://oglobo.globo.com/economia/financas/noticia/2024/12/11/em-despedida-de-campos-neto-banco-central-entrega-choque-de-juros-e-eleva-selic-em-1-pp-para-1225percent.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.bcb.gov.br/controleinflacao/historicotaxasjuros",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.bcb.gov.br/controleinflacao/comunicadoscopom/20457",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.bcb.gov.br/controleinflacao/comunicadoscopom/20581",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-09",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad atribuiu à cidade de São Paulo 20% dos roubos de celulares registrados no Brasil.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALTA CONTEXTO",
+    "summary": "A Lupa explicou que os 20% correspondiam à soma de roubos e furtos de celulares, não apenas aos roubos. O dado era do Anuário Brasileiro de Segurança Pública de 2026.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALTA CONTEXTO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026.pdf",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.poder360.com.br/poder-seguranca-publica/sp-tem-queda-de-todos-os-tipos-de-roubo-no-1o-bimestre-de-2026/#:~:text=A%20capital%20registrou,in%C3%ADcio%20do%20ano.",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-10",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad questionou Tarcísio por não colocar as Delegacias da Mulher para funcionar 24 horas.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALTA CONTEXTO",
+    "summary": "A Lupa informou que 19 das 144 delegacias especializadas funcionavam 24 horas. Também distinguiu essas unidades das 235 salas de atendimento instaladas em delegacias com plantão.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALTA CONTEXTO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://www.bibliotecajuridica.sp.gov.br/rede-de-protecao-a-mulher-em-delegacias-cresce-80-em-sp-desde-2022/?utm_source=chatgpt.com#:~:text=Das%20144%20delegacias%2C%2019%20funcionam%2024%20horas%3A%20sete%20na%20capital%2C%20duas%20na%20Grande%20S%C3%A3o%20Paulo%20e%20dez%20no%20interior.",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www2.camara.leg.br/legin/fed/lei/2023/lei-14541-3-abril-2023-793991-publicacaooriginal-167488-pl.html",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.bs9.com.br/estado/2026/08/08/sao-paulo-amplia-salas-ddm-24-horas-para-fortalecer-combate-a-violencia-contra-a-mulher.html#:~:text=O%20estado%20de,menores%20de%20idade.",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.bs9.com.br/estado/2026/08/08/sao-paulo-amplia-salas-ddm-24-horas-para-fortalecer-combate-a-violencia-contra-a-mulher.html#:~:text=Desde%202023%2C%20foram%20implantadas%20173%20Salas%20DDM%2024%20horas.%20Com%20isso%2C%20a%20rede%20de%20atendimento%20especializado%20%C3%A0s%20mulheres%20v%C3%ADtimas%20de%20viol%C3%AAncia%20passou%20de%2062%20para%20235%20espa%C3%A7os%2C%20crescimento%20de%20279%25.",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.agenciasp.sp.gov.br/sp-mulher-segura-conheca-o-aplicativo-que-permite-denunciar-violencia-domestica-e-acionar-botao-do-panico-contra-agressores/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.agenciasp.sp.gov.br/sp-mulher-segura-conheca-o-aplicativo-que-permite-denunciar-violencia-domestica-e-acionar-botao-do-panico-contra-agressores/#:~:text=Contato%20de%20emerg%C3%AAncia%20e%20Cabine,auxiliar%20no%20acolhimento%20da%20v%C3%ADtima.",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-11",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio relacionou dois meses de queda dos feminicídios ao funcionamento da política de prevenção.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALTA CONTEXTO",
+    "summary": "Segundo a Lupa, maio e junho tiveram queda na comparação anual, mas o primeiro semestre de 2026 terminou com recorde de 141 casos. As medidas citadas não demonstravam a relação causal afirmada.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALTA CONTEXTO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://www.cnnbrasil.com.br/blogs/adriana-de-luca/nacional/sudeste/sp/feminicidios-recuam-em-sp-pelo-segundo-mes-seguido-numeros-ainda-preocupam/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www1.folha.uol.com.br/cotidiano/2026/07/sp-registra-141-feminicidios-no-primeiro-semestre-e-chega-ao-patamar-mais-alto-da-serie-historica.shtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.estadao.com.br/sao-paulo/estupros-e-feminicidios-sobem-no-1-semestre-em-sao-paulo-homicidios-e-roubos-caem/?srsltid=AfmBOopkcZQcWzZRUsfR9JZTMiUU8Sm2w6tWt891eG04tiXHHSfh2geu#:~:text=Os%20casos%20de%20estupro%20subiram%206%25%20no%20per%C3%ADodo%20no%20Estado%2C%20com%207%2C7%20mil%20ocorr%C3%AAncias%20%E2%80%93%20foram%20quase%201%2C2%20mil%20somente%20em%20junho%2C%2015%2C36%25%20a%20mais%20do%20que%20no%20mesmo%20m%C3%AAs%20em%202025%2C%20mostram%20os%20dados%20oficiais%3B",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026.pdf",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://uploads.agencialupa.org/2026/08/notaseguranca.jpg",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-12",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que Haddad não entregou UPAs quando era prefeito de São Paulo.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa registrou três unidades entregues na gestão Haddad, entre 2014 e 2016, além de 12 obras deixadas em andamento e inauguradas nas gestões seguintes.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://www.estadao.com.br/sao-paulo/haddad-inaugura-primeira-upa-da-cidade/?srsltid=AfmBOopuLA2LwLv_s1I0Q_r7RBkzDksbgnxKLfX4Max3Fb9fRFVf9xzt",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://prefeitura.sp.gov.br/w/noticia/prefeitura-inaugura-na-vila-santa-catarina-segunda",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www1.folha.uol.com.br/poder/eleicoes-2016/2016/08/1806907-um-dia-antes-de-inauguracao-haddad-faz-vistoria-em-unidade-medica-que-homenageara-socrates.shtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://capital.sp.gov.br/web/saude/w/noticias/185656",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.agencialupa.org/jornalismo/2021/01/01/prefeitura-sp-checagem-metas-bruno-covas/#:~:text=Construir%20e%20equipar%2012%20UPAs%E2%80%9D",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-13",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que a privatização da Sabesp foi seguida de descontos de 10%, 1% e 0,5% para diferentes consumidores.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "VERDADEIRO",
+    "summary": "A Lupa confirmou as reduções anunciadas em julho de 2024: 10% na tarifa social e vulnerável, 1% na residencial padrão e 0,5% nas tarifas comercial e industrial.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "VERDADEIRO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://g1.globo.com/jornal-nacional/noticia/2024/07/23/sabesp-maior-empresa-de-saneamento-do-brasil-e-privatizada-em-sao-paulo.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/sabesp-sbsp3-reducao-tarifas-privatizacao-como-fica-conta-agua/?srsltid=AfmBOoqPPeiUOegEH_nOo4ePkamjQFkmawl4ETR-nr1t8AFV9zLj4B66",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-14",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio atribuiu à sua gestão os dois maiores concursos da história da Polícia Civil paulista.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALTA CONTEXTO",
+    "summary": "A Lupa explicou que uma seleção começou em 2021 e a outra foi autorizada em 2022, antes da gestão Tarcísio. Seu governo conduziu etapas, ampliou convocações e nomeou aprovados.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALTA CONTEXTO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://blogs.correiobraziliense.com.br/papodeconcurseiro/policia-civil-de-sp-republica-autorizacao-para-concurso-com-2-939-vagas/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://sipesp.org.br/governo-de-sp-autoriza-o-maior-concurso-da-historia-da-policia-civil/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.estrategiaconcursos.com.br/blog/concurso-pc-sp-edital-publicado-2023/",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-15",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que Cajamar, Franco da Rocha e Francisco Morato não tratavam esgoto em 2022.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "EXAGERADO",
+    "summary": "A Lupa encontrou índices inferiores a 5%, mas diferentes de zero: 0,72%, 3,41% e 0,19%, respectivamente, nos dados do SNIS com referência em 2022.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "EXAGERADO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://uploads.lupa.news/2026/06/Planilha_AE_Indicadores_SABESP-35503000-1.xls",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/06/03/haddad-e-tarcisio-checamos-declaracoes-dos-pre-candidatos-ao-governo-de-sp/#:~:text=S%C3%B3%20para%20voc%C3%AA%20ter%20uma%20ideia%2C%20sabe%20quanto%20Francisco%20Morato%2C%20Franco%20da%20Rocha%2C%20Caieiras%20e%20Cajamar%20tratavam%20de%20esgoto%20em%202022%3F%20Zero.%20Zero.%20Est%C3%A3o%20tratando%20hoje%2065%25.%E2%80%9D",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-16",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad afirmou que Rubens Ometto foi o maior doador da campanha de Tarcísio em 2022.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa informou que Ometto doou R$ 200 mil. Fabiano Zettel e Otto Medeiros de Azevedo Júnior doaram R$ 2 milhões cada, segundo os dados eleitorais citados pela agência.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://valor.globo.com/executivo-de-valor/noticia/2023/06/19/rubens-ometto-tempo-de-delegar-e-definir-estrategias.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/SUDESTE/SP/2040602022/250001615967/2022/SP/prestacao/receitas",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.cnnbrasil.com.br/politica/alvo-da-pf-doou-r-5-mi-para-campanhas-de-bolsonaro-e-tarcisio-em-2022/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.rumolog.com/nossas-malhas/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www1.folha.uol.com.br/mercado/2026/07/governo-fecha-acordo-de-ultima-hora-com-rumo-e-prorroga-concessao-da-malha-oeste-por-mais-180-dias.shtml",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-17",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad afirmou que o governo de Tarcísio prometeu isenção de Imposto de Renda até R$ 5 mil e não a entregou.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALSO",
+    "summary": "A Lupa não localizou essa promessa de Tarcísio e destacou que o tributo é federal. A agência distinguiu a promessa de Bolsonaro da atuação de Tarcísio como ministro da Infraestrutura.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALSO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://www.google.com/search?sca_esv=d346734f88221b29&rlz=1C5CHFA_enBR964BR964&sxsrf=APpeQnt3gKFNuCC0VwLPHhBLETBx_thkwA:1786325975066&q=tarcisio+de+freitas+promete+isentar+imposto+de+renda+at%C3%A9+5+mil&tbm=nws&source=lnms&fbs=ABfTbFVGaQeaqnsRPI5sOMG32Ksz_Qb61Fj5ZtxC2tjOZZgQR5ciZaQ31W5Tb7ABaDpcXvEcgGQwVA5_KeWSjOyZxGhHOwg_ZtPM5xxu6agvJAHiqIm_5GmJkWKcEtbRYKi_P3GA_tcIt-x4XbrpiErMAh7ARI0Nsi059_PTuScKyWakCQ0j2ErEiJnUV25W0NTaDxnU0_eZcdG8wo4HhvFb4S1Ct4F3bw&sa=X&ved=2ahUKEwjql8np9pSWAxVBgGEGHTQ1PHkQ0pQJegQIGBAB&biw=1438&bih=708&dpr=2",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://uploads.agencialupa.org/2026/08/5_1660082556447.pdf",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.planalto.gov.br/ccivil_03/leis/l9250.htm",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://x.com/Haddad_Fernando/status/2057491371888402540",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://g1.globo.com/politica/eleicoes/2018/noticia/2018/09/24/bolsonaro-diz-que-se-eleito-nao-havera-espaco-para-indicacoes-politicas-nos-ministerios.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://economia.uol.com.br/noticias/redacao/2022/08/08/isencao-ir-governo-bolsonaro./",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://oglobo.globo.com/economia/noticia/2022/08/imposto-de-renda-bolsonaro-nao-cumpriu-promessa-de-2018-calculadora-mostra-perdas-do-contribuinte.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/ultimas-noticias/tarcisio-gomes-de-freitas-toma-posse-como-ministro-da-infraestrutura-2",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.metropoles.com/sao-paulo/tarcisio-elogia-milei-e-critica-isencao-do-ir-em-fala-na-faria-lima#goog_rewarded",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://g1.globo.com/economia/imposto-de-renda/noticia/2023/08/28/lula-imposto-de-renda-faixa.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.cnnbrasil.com.br/economia/macroeconomia/ir-2026-isencao-para-salario-ate-r-5-mil-comeca-a-valer-veja-tabela/",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-18",
+    "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+    "candidate_slug": "tarcisio-gov-sp",
+    "candidate_name": "Tarcísio de Freitas",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Tarcísio afirmou que os indicadores de feminicídio do Ceará e do Rio Grande do Norte eram muito maiores que o de São Paulo.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Tarcísio de Freitas"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "EXAGERADO",
+    "summary": "A Lupa comparou as taxas de 2025 por 100 mil mulheres: Ceará, 1,0; São Paulo, 1,1; Rio Grande do Norte, 1,2. Os valores eram próximos, e o Ceará estava abaixo de São Paulo.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "EXAGERADO",
+      "speakerIdentity": "Tarcísio de Freitas",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://forumseguranca.org.br/wp-content/uploads/2026/03/nota-tecnica-dia-mulher-2026.pdf",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-19",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad afirmou que o governo paulista deixava o livro didático de lado para usar slides nas aulas.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "FALTA CONTEXTO",
+    "summary": "A Lupa explicou que o governo anunciou em 2023 a troca por material digital, mas recuou e aderiu ao programa nacional de livros. Os slides permaneceram como material de apoio.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "FALTA CONTEXTO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://g1.globo.com/sp/sao-paulo/noticia/2023/08/01/governo-de-sp-nao-adere-livros-didaticos-do-mec-para-2024-e-diz-que-usara-material-proprio-e-100percent-digital-a-partir-do-6oano.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.andes.org.br/conteudos/noticia/apos-criticas-governador-de-sP-agora-diz-que-livros-didaticos-serao-impressos1",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://oglobo.globo.com/brasil/oferta/tarcisio-recua-e-governo-de-sp-voltara-ao-plano-de-livros-didaticos-do-mec.ghtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://atendimento.educacao.sp.gov.br/knowledgebase/article/SED-07589/pt-br",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://educacao.uol.com.br/noticias/2023/09/01/slides-tarcisio-erros-portugues-informacao.htm",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-20",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad comparou R$ 13 bilhões de financiamento do BNDES na gestão Tarcísio com R$ 3 bilhões na gestão Doria.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "SUBESTIMADO",
+    "summary": "A Lupa consultou o sistema do BNDES e encontrou R$ 15,2 bilhões para 2023 a 2026 e R$ 1,857 bilhão para 2019 a 2022, valores diferentes dos citados.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "SUBESTIMADO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://www.bndes.gov.br/wps/portal/site/home/transparencia/consulta-operacoes-bndes/consulta-op-dir-ind-nao-aut",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
+  },
+  {
+    "id": "lupa-debate-sp-20260809-21",
+    "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+    "candidate_slug": "haddad-gov-sp",
+    "candidate_name": "Fernando Haddad",
+    "office": "Governador",
+    "uf": "SP",
+    "claim": "Haddad relacionou a redução ou interrupção do uso de crack por dois terços dos atendidos pelo Braços Abertos à volta ao trabalho.",
+    "claimFormat": "paraphrase",
+    "event": {
+      "date": "2026-08-09",
+      "context": "primeiro debate com candidatos ao governo de SP na Band",
+      "speakerIdentityReviewed": true,
+      "contextReviewed": true,
+      "speaker": "Fernando Haddad"
+    },
+    "publisher": "Agência Lupa",
+    "assessmentOrigin": "publisher",
+    "originalLabel": "EXAGERADO",
+    "summary": "A Lupa explicou que o estudo apresentava resultados separados: 65% relataram reduzir o consumo e 73% ingressaram na frente de emprego. O levantamento não demonstrava que eram as mesmas pessoas.",
+    "publishedAt": "2026-08-09T23:18:02Z",
+    "originalUrl": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+    "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
+    "methodologyVersion": "captured-2026-09-22",
+    "sourcePolicyVersion": "pf-checagens-v1",
+    "sourceSnapshotSha256": "1588deb1f0aa0fc6438ca844dd637a3d43d9185af48e858537a2409e7dc23468",
+    "retrievedAt": "2026-09-22",
+    "sourceEvidence": {
+      "originalLabel": "EXAGERADO",
+      "speakerIdentity": "Fernando Haddad",
+      "contextExcerpt": "primeiro debate com candidatos ao governo de SP na Band"
+    },
+    "sources": [
+      {
+        "url": "https://www.agencialupa.org/noticias/2026/08/09/ao-vivo-checagem-do-primeiro-debate-com-candidatos-ao-governo-de-sp/",
+        "origin": "consulted_by_us",
+        "title": "Lupa: original"
+      },
+      {
+        "url": "https://legislacao.prefeitura.sp.gov.br/decreto-55067-de-28-de-abril-de-2014",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://veja.abril.com.br/coluna/maquiavel/haddad-promete-reviver-programa-apelidado-de-bolsa-crack/",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://uploads.agencialupa.org/2026/08/crack-reduzir-danos-20170313.pdf",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www1.folha.uol.com.br/opiniao/2016/09/1810900-atencao-a-cracolandia.shtml",
+        "origin": "cited_by_publisher"
+      },
+      {
+        "url": "https://www.cartacapital.com.br/politica/melancolica-despedida/#:~:text=Parte%20das%20depauperadas,do%20New%20Luz.",
+        "origin": "cited_by_publisher"
+      }
+    ],
+    "corrections": [],
+    "review": {
+      "approved": true,
+      "reviewer": "Codex, modelo principal",
+      "reviewerKind": "model_principal",
+      "reviewedAt": "2026-09-22T12:36:40.811Z"
+    }
   }
 ]
