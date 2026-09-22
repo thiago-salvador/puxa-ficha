@@ -30,9 +30,8 @@ const PROGRAMA_GOVERNO_UFS = [
 ] as const
 
 /** v1: frases sem id. v2: toda frase do resumo carrega `id` derivado de slug e texto. */
-export const PROGRAMA_GOVERNO_REGISTRO_VERSOES = [1, 2] as const
+const PROGRAMA_GOVERNO_REGISTRO_VERSOES = [1, 2] as const
 export type ProgramaGovernoRegistroVersion = (typeof PROGRAMA_GOVERNO_REGISTRO_VERSOES)[number]
-export const PROGRAMA_GOVERNO_REGISTRO_VERSAO_ATUAL: ProgramaGovernoRegistroVersion = 2
 
 export type ProgramaGovernoEstadoCanonico = (typeof PROGRAMA_GOVERNO_ESTADOS_CANONICOS)[number]
 export type ProgramaGovernoEstado = (typeof PROGRAMA_GOVERNO_ESTADOS)[number]
@@ -622,7 +621,7 @@ function sha256(value: string): string {
 }
 
 /** Texto usado no id: NFC, espaços colapsados, sem espaço nas pontas. Caixa e pontuação preservadas. */
-export function normalizarTextoFraseProgramaGoverno(texto: string): string {
+function normalizarTextoFraseProgramaGoverno(texto: string): string {
   return texto.normalize("NFC").replace(/\s+/gu, " ").trim()
 }
 
