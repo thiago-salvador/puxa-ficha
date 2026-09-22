@@ -88,9 +88,13 @@ WITH candidacies AS (
       -- não estão em data/candidatos.json). Até alguém publicar evidência confirmada
       -- para o universo de 181 pares, este snapshot reporta "incompleto" — o mesmo
       -- comportamento que seguiu a reconciliação 154 -> 152 até a evidência de 09-09.
+      -- 181 -> 235 (issue #425): quatro votações do quiz voltaram ao catálogo com
+      -- votacao_id_api exato (Reforma Trabalhista, Teto de Gastos, Reforma da
+      -- Previdência, Autonomia do Banco Central). Vale a mesma regra: incompleto até
+      -- a publicação da evidência confirmada para os 235 pares.
       WHEN log.fonte = 'destaques-votacoes' THEN
         count(*) FILTER (WHERE log.escopo = 'global' AND log.detalhe LIKE 'provenance_v1:%') = 1
-        AND count(*) FILTER (WHERE log.escopo = 'candidato' AND log.detalhe LIKE 'provenance_v1:%') = 181
+        AND count(*) FILTER (WHERE log.escopo = 'candidato' AND log.detalhe LIKE 'provenance_v1:%') = 235
         AND count(*) FILTER (WHERE log.resultado NOT IN ('encontrado', 'sem_achado_no_escopo')) = 0
       ELSE NULL
     END
