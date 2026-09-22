@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -492,6 +492,7 @@
     "texto": "O plano prevê uma rede única de saúde que conectará prevenção, atendimento básico, diagnóstico, tratamento, cirurgias, reabilitação, atendimento especializado e alta complexidade. O plano prevê alfabetização na idade adequada. O plano prevê formação continuada dos professores. A política de segurança será organizada sobre prevenção, investigação qualificada e presença efetiva do Estado. A Delegacia Social será um programa permanente de caráter preventivo, educativo, comunitário e articulador, vinculado à Secretaria de Estado responsável pela assistência social. O governo estimulará a criação de trabalho e renda por meio de formação, crédito e apoio aos pequenos negócios. Cada programa deverá possuir diagnóstico, objetivo, público atendido, orçamento, fonte de recursos, prazo, órgão responsável, indicador e forma de avaliação. A Coordenação Estadual acompanhará continuamente o desempenho do programa por meio de indicadores quantitativos e qualitativos.",
     "frases": [
       {
+        "id": "c36ab9096c7ea200",
         "texto": "O plano prevê uma rede única de saúde que conectará prevenção, atendimento básico, diagnóstico, tratamento, cirurgias, reabilitação, atendimento especializado e alta complexidade.",
         "evidencias": [
           {
@@ -502,6 +503,7 @@
         ]
       },
       {
+        "id": "b06d979638202721",
         "texto": "O plano prevê alfabetização na idade adequada.",
         "evidencias": [
           {
@@ -512,6 +514,7 @@
         ]
       },
       {
+        "id": "4affa80d6afaa5b8",
         "texto": "O plano prevê formação continuada dos professores.",
         "evidencias": [
           {
@@ -522,6 +525,7 @@
         ]
       },
       {
+        "id": "298cbd5fc9ab327c",
         "texto": "A política de segurança será organizada sobre prevenção, investigação qualificada e presença efetiva do Estado.",
         "evidencias": [
           {
@@ -532,6 +536,7 @@
         ]
       },
       {
+        "id": "674d9be49bddb2c0",
         "texto": "A Delegacia Social será um programa permanente de caráter preventivo, educativo, comunitário e articulador, vinculado à Secretaria de Estado responsável pela assistência social.",
         "evidencias": [
           {
@@ -542,6 +547,7 @@
         ]
       },
       {
+        "id": "d19c86206daa01cc",
         "texto": "O governo estimulará a criação de trabalho e renda por meio de formação, crédito e apoio aos pequenos negócios.",
         "evidencias": [
           {
@@ -552,6 +558,7 @@
         ]
       },
       {
+        "id": "7a7dbe8c3e8f1f93",
         "texto": "Cada programa deverá possuir diagnóstico, objetivo, público atendido, orçamento, fonte de recursos, prazo, órgão responsável, indicador e forma de avaliação.",
         "evidencias": [
           {
@@ -562,6 +569,7 @@
         ]
       },
       {
+        "id": "9dd730618a7477a2",
         "texto": "A Coordenação Estadual acompanhará continuamente o desempenho do programa por meio de indicadores quantitativos e qualitativos.",
         "evidencias": [
           {

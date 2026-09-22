@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -828,6 +828,7 @@
     "texto": "O programa prevê ampliar o apoio técnico aos municípios, compartilhando plataformas tecnológicas, metodologias de gestão, soluções digitais e instrumentos de planejamento voltados à eficiência da gestão municipal. Também propõe implantar o Cadastro Imobiliário Público Integrado com os municípios cearenses, criando uma base patrimonial unificada associada ao Sistema Nacional de Gestão de Informações Territoriais. Na segurança pública, planeja modernizar o sistema estadual com expansão da Rede Ceará Seguro, integração de câmeras públicas e privadas, inteligência artificial, análise criminal e monitoramento em tempo real. Na área hídrica, prevê ampliar e diversificar a oferta de água, universalizando o acesso ao abastecimento e ao saneamento ambiental, com prioridade para populações rurais, comunidades tradicionais e territórios vulneráveis. Em mobilidade, propõe fortalecer o transporte urbano sustentável, acessível e integrado, ampliando a oferta de transporte coletivo, incentivando a mobilidade ativa e desenvolvendo soluções tecnológicas para qualificar os serviços. No campo da conectividade, planeja expandir o Cinturão Digital do Ceará para os 184 municípios, assegurando conectividade de alta capacidade a laboratórios de governo, instituições de ciência e educação.",
     "frases": [
       {
+        "id": "ff8f49bb3ef56e4b",
         "texto": "O programa prevê ampliar o apoio técnico aos municípios, compartilhando plataformas tecnológicas, metodologias de gestão, soluções digitais e instrumentos de planejamento voltados à eficiência da gestão municipal.",
         "evidencias": [
           {
@@ -838,6 +839,7 @@
         ]
       },
       {
+        "id": "8229c4315dbad93a",
         "texto": "Também propõe implantar o Cadastro Imobiliário Público Integrado com os municípios cearenses, criando uma base patrimonial unificada associada ao Sistema Nacional de Gestão de Informações Territoriais.",
         "evidencias": [
           {
@@ -848,6 +850,7 @@
         ]
       },
       {
+        "id": "3d4e0313a204ea6c",
         "texto": "Na segurança pública, planeja modernizar o sistema estadual com expansão da Rede Ceará Seguro, integração de câmeras públicas e privadas, inteligência artificial, análise criminal e monitoramento em tempo real.",
         "evidencias": [
           {
@@ -858,6 +861,7 @@
         ]
       },
       {
+        "id": "927dc1f4c91660b8",
         "texto": "Na área hídrica, prevê ampliar e diversificar a oferta de água, universalizando o acesso ao abastecimento e ao saneamento ambiental, com prioridade para populações rurais, comunidades tradicionais e territórios vulneráveis.",
         "evidencias": [
           {
@@ -868,6 +872,7 @@
         ]
       },
       {
+        "id": "f892cdbfb7333d90",
         "texto": "Em mobilidade, propõe fortalecer o transporte urbano sustentável, acessível e integrado, ampliando a oferta de transporte coletivo, incentivando a mobilidade ativa e desenvolvendo soluções tecnológicas para qualificar os serviços.",
         "evidencias": [
           {
@@ -878,6 +883,7 @@
         ]
       },
       {
+        "id": "27db776c7131d4b2",
         "texto": "No campo da conectividade, planeja expandir o Cinturão Digital do Ceará para os 184 municípios, assegurando conectividade de alta capacidade a laboratórios de governo, instituições de ciência e educação.",
         "evidencias": [
           {

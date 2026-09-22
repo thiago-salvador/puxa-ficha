@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -744,6 +744,7 @@
     "texto": "O programa prevê a criação da Secretaria de Segurança Pública, Defesa Social e Administração Penitenciária, unificando inteligência policial e penitenciária sob o mesmo comando. O documento propõe elevar a Polícia Penal do Ceará a órgão vinculado autônomo, com comando e orçamento próprios. O plano propõe criar o Gabinete Integrado de Reconstrução Territorial, vinculado diretamente à Casa Civil. A política rural prevê elevar a compra pública local da agricultura familiar acima do piso previsto em lei. A política educacional propõe uma Rede Estadual de Saúde Mental nas Escolas. O plano prevê revisar o portfólio técnico das escolas profissionais para alinhá-lo à vocação econômica de cada município. A política de saúde prevê uma Central de Regulação Única Digital com painel público em tempo real. O programa propõe a abertura de capital da Cagece com controle estatal preservado.",
     "frases": [
       {
+        "id": "7593272481a75be5",
         "texto": "O programa prevê a criação da Secretaria de Segurança Pública, Defesa Social e Administração Penitenciária, unificando inteligência policial e penitenciária sob o mesmo comando.",
         "evidencias": [
           {
@@ -754,6 +755,7 @@
         ]
       },
       {
+        "id": "1c8488f8ef391518",
         "texto": "O documento propõe elevar a Polícia Penal do Ceará a órgão vinculado autônomo, com comando e orçamento próprios.",
         "evidencias": [
           {
@@ -764,6 +766,7 @@
         ]
       },
       {
+        "id": "1cbe18c287b31e41",
         "texto": "O plano propõe criar o Gabinete Integrado de Reconstrução Territorial, vinculado diretamente à Casa Civil.",
         "evidencias": [
           {
@@ -774,6 +777,7 @@
         ]
       },
       {
+        "id": "ba53dae3e3a08b39",
         "texto": "A política rural prevê elevar a compra pública local da agricultura familiar acima do piso previsto em lei.",
         "evidencias": [
           {
@@ -784,6 +788,7 @@
         ]
       },
       {
+        "id": "8c7be7ecd3971bad",
         "texto": "A política educacional propõe uma Rede Estadual de Saúde Mental nas Escolas.",
         "evidencias": [
           {
@@ -794,6 +799,7 @@
         ]
       },
       {
+        "id": "32fb3210908d4e09",
         "texto": "O plano prevê revisar o portfólio técnico das escolas profissionais para alinhá-lo à vocação econômica de cada município.",
         "evidencias": [
           {
@@ -804,6 +810,7 @@
         ]
       },
       {
+        "id": "8c165e06651b568f",
         "texto": "A política de saúde prevê uma Central de Regulação Única Digital com painel público em tempo real.",
         "evidencias": [
           {
@@ -814,6 +821,7 @@
         ]
       },
       {
+        "id": "48b8486b93dd172b",
         "texto": "O programa propõe a abertura de capital da Cagece com controle estatal preservado.",
         "evidencias": [
           {

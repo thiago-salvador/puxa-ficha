@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -184,6 +184,7 @@
     "texto": "O programa prevê publicar periodicamente o andamento das metas para informar o que foi realizado, o que está em execução, o que sofreu atraso e por quê. Na gestão administrativa, o programa propõe digitalizar e simplificar serviços estaduais como medida de organização da prestação pública. Na educação, propõe fortalecer a formação continuada dos profissionais da área dentro do eixo de valorização de quem ensina. Na saúde, prevê fortalecer hospitais regionais para ampliar a realização regional de procedimentos e reduzir a dependência de Teresina. Na segurança pública, prevê fortalecer a inteligência policial e a integração de dados como parte de uma condução técnica do setor. No desenvolvimento econômico, propõe criar política estadual de industrialização sustentável vinculada à transformação de matérias-primas dentro do Estado. Na infraestrutura, planeja elaborar Plano Estadual de Infraestrutura e Logística para conectar produção, pessoas, escolas, hospitais, mercados e oportunidades.",
     "frases": [
       {
+        "id": "057ba22f2f05403e",
         "texto": "O programa prevê publicar periodicamente o andamento das metas para informar o que foi realizado, o que está em execução, o que sofreu atraso e por quê.",
         "evidencias": [
           {
@@ -194,6 +195,7 @@
         ]
       },
       {
+        "id": "761da95002e15e8a",
         "texto": "Na gestão administrativa, o programa propõe digitalizar e simplificar serviços estaduais como medida de organização da prestação pública.",
         "evidencias": [
           {
@@ -204,6 +206,7 @@
         ]
       },
       {
+        "id": "7a39e325e6b15735",
         "texto": "Na educação, propõe fortalecer a formação continuada dos profissionais da área dentro do eixo de valorização de quem ensina.",
         "evidencias": [
           {
@@ -214,6 +217,7 @@
         ]
       },
       {
+        "id": "0b741bb5546fc66a",
         "texto": "Na saúde, prevê fortalecer hospitais regionais para ampliar a realização regional de procedimentos e reduzir a dependência de Teresina.",
         "evidencias": [
           {
@@ -224,6 +228,7 @@
         ]
       },
       {
+        "id": "dd46a13c520fc6a9",
         "texto": "Na segurança pública, prevê fortalecer a inteligência policial e a integração de dados como parte de uma condução técnica do setor.",
         "evidencias": [
           {
@@ -234,6 +239,7 @@
         ]
       },
       {
+        "id": "ee259f126a66e774",
         "texto": "No desenvolvimento econômico, propõe criar política estadual de industrialização sustentável vinculada à transformação de matérias-primas dentro do Estado.",
         "evidencias": [
           {
@@ -244,6 +250,7 @@
         ]
       },
       {
+        "id": "27f636f2e11b00df",
         "texto": "Na infraestrutura, planeja elaborar Plano Estadual de Infraestrutura e Logística para conectar produção, pessoas, escolas, hospitais, mercados e oportunidades.",
         "evidencias": [
           {

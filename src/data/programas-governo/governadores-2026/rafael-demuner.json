@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -366,6 +366,7 @@
     "texto": "O programa propõe criar um salário-mínimo capixaba de R$ 3.242,00, conforme a seção dedicada à valorização do trabalho no Espírito Santo. O documento prevê jornada de 36 horas semanais para servidores públicos estaduais e trabalhadores terceirizados contratados pelo Estado, sem redução salarial. O programa planeja estruturar uma rede estadual integrada de enfrentamento à violência contra as mulheres, com atendimento territorializado, humanizado, articulado entre serviços públicos. A proposta inclui criar uma Universidade Estadual do Espírito Santo, ampliando o acesso da juventude trabalhadora ao ensino superior público gratuito em todas as regiões do estado. O documento prevê implementar a tarifa zero no transporte público, associada no programa ao custo de vida das famílias capixabas. O programa propõe criar territórios livres de mineração, impedindo novos empreendimentos em áreas de interesse ambiental, hídrico, agrícola, cultural ou comunitário.",
     "frases": [
       {
+        "id": "7ef5cadf933b4735",
         "texto": "O programa propõe criar um salário-mínimo capixaba de R$ 3.242,00, conforme a seção dedicada à valorização do trabalho no Espírito Santo.",
         "evidencias": [
           {
@@ -376,6 +377,7 @@
         ]
       },
       {
+        "id": "61be1b298060d24f",
         "texto": "O documento prevê jornada de 36 horas semanais para servidores públicos estaduais e trabalhadores terceirizados contratados pelo Estado, sem redução salarial.",
         "evidencias": [
           {
@@ -386,6 +388,7 @@
         ]
       },
       {
+        "id": "e4c88707e026a817",
         "texto": "O programa planeja estruturar uma rede estadual integrada de enfrentamento à violência contra as mulheres, com atendimento territorializado, humanizado, articulado entre serviços públicos.",
         "evidencias": [
           {
@@ -396,6 +399,7 @@
         ]
       },
       {
+        "id": "56f0d0ddd17092a4",
         "texto": "A proposta inclui criar uma Universidade Estadual do Espírito Santo, ampliando o acesso da juventude trabalhadora ao ensino superior público gratuito em todas as regiões do estado.",
         "evidencias": [
           {
@@ -406,6 +410,7 @@
         ]
       },
       {
+        "id": "11fb391a277e2595",
         "texto": "O documento prevê implementar a tarifa zero no transporte público, associada no programa ao custo de vida das famílias capixabas.",
         "evidencias": [
           {
@@ -416,6 +421,7 @@
         ]
       },
       {
+        "id": "9803ffc30a995895",
         "texto": "O programa propõe criar territórios livres de mineração, impedindo novos empreendimentos em áreas de interesse ambiental, hídrico, agrícola, cultural ou comunitário.",
         "evidencias": [
           {

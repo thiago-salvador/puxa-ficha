@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -982,6 +982,7 @@
     "texto": "O programa prevê reativar conselhos estaduais para ampliar a participação social nas decisões públicas. Também propõe modernizar e digitalizar os serviços públicos mediante integração de sistemas, simplificação burocrática, digitalização de processos, expansão de serviços online ao cidadão. Na saúde, propõe fortalecer hospitais regionais para ampliar o atendimento de média e alta complexidade. Na educação, prevê universalizar escolas conectadas com internet de alta velocidade, laboratórios digitais, equipamentos tecnológicos, plataformas educacionais, inclusão digital para estudantes, professores. Para a agricultura familiar, propõe reestruturar a assistência técnica e extensão rural mediante concurso público, equipes regionalizadas, atendimento contínuo, agroecologia, irrigação, agroindustrialização, gestão produtiva, inovação tecnológica, produção sustentável. Na área ambiental, propõe criar o Programa Serra da Bodoquena Viva com foco em proteção de nascentes, controle de erosões, recuperação de matas ciliares, monitoramento da qualidade da água, preservação dos rios cristalinos, combate ao turvamento dos rios. No turismo, propõe criar o Plano Estadual de Turismo Sustentável e Desenvolvimento Regional, integrando turismo, meio ambiente, cultura, infraestrutura, economia criativa, desenvolvimento regional, geração de empregos.",
     "frases": [
       {
+        "id": "69dfde4937e2ccbf",
         "texto": "O programa prevê reativar conselhos estaduais para ampliar a participação social nas decisões públicas.",
         "evidencias": [
           {
@@ -992,6 +993,7 @@
         ]
       },
       {
+        "id": "65bc2e5e03b9acac",
         "texto": "Também propõe modernizar e digitalizar os serviços públicos mediante integração de sistemas, simplificação burocrática, digitalização de processos, expansão de serviços online ao cidadão.",
         "evidencias": [
           {
@@ -1002,6 +1004,7 @@
         ]
       },
       {
+        "id": "a18403eac222c962",
         "texto": "Na saúde, propõe fortalecer hospitais regionais para ampliar o atendimento de média e alta complexidade.",
         "evidencias": [
           {
@@ -1012,6 +1015,7 @@
         ]
       },
       {
+        "id": "71f30387b0a88c6c",
         "texto": "Na educação, prevê universalizar escolas conectadas com internet de alta velocidade, laboratórios digitais, equipamentos tecnológicos, plataformas educacionais, inclusão digital para estudantes, professores.",
         "evidencias": [
           {
@@ -1022,6 +1026,7 @@
         ]
       },
       {
+        "id": "89eb5e53bf4461bb",
         "texto": "Para a agricultura familiar, propõe reestruturar a assistência técnica e extensão rural mediante concurso público, equipes regionalizadas, atendimento contínuo, agroecologia, irrigação, agroindustrialização, gestão produtiva, inovação tecnológica, produção sustentável.",
         "evidencias": [
           {
@@ -1032,6 +1037,7 @@
         ]
       },
       {
+        "id": "efb91aef97bed0f2",
         "texto": "Na área ambiental, propõe criar o Programa Serra da Bodoquena Viva com foco em proteção de nascentes, controle de erosões, recuperação de matas ciliares, monitoramento da qualidade da água, preservação dos rios cristalinos, combate ao turvamento dos rios.",
         "evidencias": [
           {
@@ -1042,6 +1048,7 @@
         ]
       },
       {
+        "id": "3e43dd619cfef216",
         "texto": "No turismo, propõe criar o Plano Estadual de Turismo Sustentável e Desenvolvimento Regional, integrando turismo, meio ambiente, cultura, infraestrutura, economia criativa, desenvolvimento regional, geração de empregos.",
         "evidencias": [
           {

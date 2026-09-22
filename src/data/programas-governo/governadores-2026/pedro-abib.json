@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -618,6 +618,7 @@
     "texto": "Entre as medidas de organização administrativa, o plano propõe criar, no âmbito do Gabinete do Governador, a Coordenação de Projetos Estruturais e Compliance. Na área educacional, o plano prevê ampliar o número de vagas em escolas em tempo integral, indicando essa expansão como medida prevista no documento. Na área da saúde, o plano propõe universalizar os serviços de telemedicina na rede estadual, registrando essa universalização como uma diretriz apresentada. Na área de segurança urbana, o plano prevê adotar estruturas urbanas de prevenção ao crime com iluminação, conforme a formulação apresentada. No campo cultural e econômico, o plano propõe criar a Política Estadual de Apoio à Economia Criativa, com edital anual de fomento, integrada à Superintendência de Cultura e Economia Criativa. No campo da pesquisa, o plano prevê criar rubrica orçamentária própria e específica para pesquisa, apresentando essa rubrica como medida orçamentária prevista.",
     "frases": [
       {
+        "id": "88b6f925b0716874",
         "texto": "Entre as medidas de organização administrativa, o plano propõe criar, no âmbito do Gabinete do Governador, a Coordenação de Projetos Estruturais e Compliance.",
         "evidencias": [
           {
@@ -628,6 +629,7 @@
         ]
       },
       {
+        "id": "dc662a709edaede4",
         "texto": "Na área educacional, o plano prevê ampliar o número de vagas em escolas em tempo integral, indicando essa expansão como medida prevista no documento.",
         "evidencias": [
           {
@@ -638,6 +640,7 @@
         ]
       },
       {
+        "id": "7fbebea020d61fdf",
         "texto": "Na área da saúde, o plano propõe universalizar os serviços de telemedicina na rede estadual, registrando essa universalização como uma diretriz apresentada.",
         "evidencias": [
           {
@@ -648,6 +651,7 @@
         ]
       },
       {
+        "id": "206906ac527bc9dd",
         "texto": "Na área de segurança urbana, o plano prevê adotar estruturas urbanas de prevenção ao crime com iluminação, conforme a formulação apresentada.",
         "evidencias": [
           {
@@ -658,6 +662,7 @@
         ]
       },
       {
+        "id": "108a3b05ff1c8329",
         "texto": "No campo cultural e econômico, o plano propõe criar a Política Estadual de Apoio à Economia Criativa, com edital anual de fomento, integrada à Superintendência de Cultura e Economia Criativa.",
         "evidencias": [
           {
@@ -668,6 +673,7 @@
         ]
       },
       {
+        "id": "051f36ba511fe838",
         "texto": "No campo da pesquisa, o plano prevê criar rubrica orçamentária própria e específica para pesquisa, apresentando essa rubrica como medida orçamentária prevista.",
         "evidencias": [
           {

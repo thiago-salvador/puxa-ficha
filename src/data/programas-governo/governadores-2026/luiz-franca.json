@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1416,6 +1416,7 @@
     "texto": "O programa prevê uma reorganização administrativa do Poder Executivo nos primeiros cem dias. Também propõe integrar os canais de atendimento do Estado por meio do Paraná Resolve. Para a infraestrutura, estabelece que obras estaduais paralisadas por mais de noventa dias tenham causa, responsável, decisão preliminar e cronograma identificados. Na educação, define Língua Portuguesa e Matemática como prioridade pedagógica permanente da rede estadual. Na saúde, determina que a prioridade nas filas considere gravidade, progressão da doença, autonomia, vulnerabilidades, prioridades legais e tempo de espera. O programa prevê padrões abertos de comunicação para organizar a integração dos sistemas de saúde estaduais, municipais e nacionais. Também institui um sistema de defesa funcional para policiais militares, civis, penais e científicos e bombeiros militares investigados ou processados por atos praticados no exercício regular da função. A Casa Civil coordenará a Política Estadual de Governança e Rastreabilidade dos Dados Públicos.",
     "frases": [
       {
+        "id": "4a6cf2e86c7a45f8",
         "texto": "O programa prevê uma reorganização administrativa do Poder Executivo nos primeiros cem dias.",
         "evidencias": [
           {
@@ -1426,6 +1427,7 @@
         ]
       },
       {
+        "id": "da43988e7fc29b20",
         "texto": "Também propõe integrar os canais de atendimento do Estado por meio do Paraná Resolve.",
         "evidencias": [
           {
@@ -1436,6 +1438,7 @@
         ]
       },
       {
+        "id": "fd5d5567880758f8",
         "texto": "Para a infraestrutura, estabelece que obras estaduais paralisadas por mais de noventa dias tenham causa, responsável, decisão preliminar e cronograma identificados.",
         "evidencias": [
           {
@@ -1446,6 +1449,7 @@
         ]
       },
       {
+        "id": "e58c15857ac7fac6",
         "texto": "Na educação, define Língua Portuguesa e Matemática como prioridade pedagógica permanente da rede estadual.",
         "evidencias": [
           {
@@ -1456,6 +1460,7 @@
         ]
       },
       {
+        "id": "d44ccd541674a267",
         "texto": "Na saúde, determina que a prioridade nas filas considere gravidade, progressão da doença, autonomia, vulnerabilidades, prioridades legais e tempo de espera.",
         "evidencias": [
           {
@@ -1466,6 +1471,7 @@
         ]
       },
       {
+        "id": "edac803061779c91",
         "texto": "O programa prevê padrões abertos de comunicação para organizar a integração dos sistemas de saúde estaduais, municipais e nacionais.",
         "evidencias": [
           {
@@ -1476,6 +1482,7 @@
         ]
       },
       {
+        "id": "62c51231afdf3be6",
         "texto": "Também institui um sistema de defesa funcional para policiais militares, civis, penais e científicos e bombeiros militares investigados ou processados por atos praticados no exercício regular da função.",
         "evidencias": [
           {
@@ -1486,6 +1493,7 @@
         ]
       },
       {
+        "id": "0a1d4e70e117ca0c",
         "texto": "A Casa Civil coordenará a Política Estadual de Governança e Rastreabilidade dos Dados Públicos.",
         "evidencias": [
           {

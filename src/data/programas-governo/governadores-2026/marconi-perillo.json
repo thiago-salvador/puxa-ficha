@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1886,6 +1886,7 @@
     "texto": "O programa prevê expandir progressivamente a oferta de educação em tempo integral, com ampliação gradual dessa modalidade de atendimento. O programa prevê realizar concursos públicos para recompor e fortalecer os quadros da educação. Na saúde, o programa prevê implantar um painel integrado de controle e monitoramento de saúde 24 horas. O programa prevê realizar concursos públicos para recompor e ampliar os efetivos das forças de segurança. O programa prevê ampliar progressivamente a oferta de serviços públicos digitais completos. O plano propõe implantar uma estratégia estadual de segurança hídrica que integre planejamento, gestão das bacias, proteção de nascentes e mananciais, monitoramento e uso eficiente da água. O programa prevê retomar o Cheque Moradia, atualizado para as necessidades atuais. O programa prevê acabar com a cobrança previdenciária de 14,25% sobre aposentadorias e pensões.",
     "frases": [
       {
+        "id": "172f44a0afe1c5d3",
         "texto": "O programa prevê expandir progressivamente a oferta de educação em tempo integral, com ampliação gradual dessa modalidade de atendimento.",
         "evidencias": [
           {
@@ -1896,6 +1897,7 @@
         ]
       },
       {
+        "id": "456e195c09a421d2",
         "texto": "O programa prevê realizar concursos públicos para recompor e fortalecer os quadros da educação.",
         "evidencias": [
           {
@@ -1906,6 +1908,7 @@
         ]
       },
       {
+        "id": "b00de1580354c577",
         "texto": "Na saúde, o programa prevê implantar um painel integrado de controle e monitoramento de saúde 24 horas.",
         "evidencias": [
           {
@@ -1916,6 +1919,7 @@
         ]
       },
       {
+        "id": "3021521156b88217",
         "texto": "O programa prevê realizar concursos públicos para recompor e ampliar os efetivos das forças de segurança.",
         "evidencias": [
           {
@@ -1926,6 +1930,7 @@
         ]
       },
       {
+        "id": "ea5b87fbb1a783c0",
         "texto": "O programa prevê ampliar progressivamente a oferta de serviços públicos digitais completos.",
         "evidencias": [
           {
@@ -1936,6 +1941,7 @@
         ]
       },
       {
+        "id": "b219959e09889e5a",
         "texto": "O plano propõe implantar uma estratégia estadual de segurança hídrica que integre planejamento, gestão das bacias, proteção de nascentes e mananciais, monitoramento e uso eficiente da água.",
         "evidencias": [
           {
@@ -1946,6 +1952,7 @@
         ]
       },
       {
+        "id": "b7573819d25dd2bd",
         "texto": "O programa prevê retomar o Cheque Moradia, atualizado para as necessidades atuais.",
         "evidencias": [
           {
@@ -1956,6 +1963,7 @@
         ]
       },
       {
+        "id": "8a7ab74dfe5ec4e0",
         "texto": "O programa prevê acabar com a cobrança previdenciária de 14,25% sobre aposentadorias e pensões.",
         "evidencias": [
           {

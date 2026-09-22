@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1164,6 +1164,7 @@
     "texto": "O direito à saúde deve ser assegurado de forma universal, integral e humanizada. Será instituído o Plano Estadual de Inclusão da Pessoa com Deficiência, com vigência permanente, estabelecendo metas, indicadores e ações integradas entre todas as secretarias estaduais. Será implantado o programa Escola do Futuro, modernizando a rede estadual de ensino. Será implantado o Programa Piauí Seguro Digital, modernizando a segurança pública. Será implantado o programa Empresa Fácil Piauí. Será implantado o programa Piauí Conectado, com ações para ampliar o acesso à internet de alta velocidade. Será implantado um programa permanente de segurança hídrica contemplando construção e recuperação de barragens, ampliação das adutoras, perfuração de poços, sistemas simplificados de abastecimento, proteção de nascentes, recuperação de matas ciliares e uso racional da água.",
     "frases": [
       {
+        "id": "70812628b300c109",
         "texto": "O direito à saúde deve ser assegurado de forma universal, integral e humanizada.",
         "evidencias": [
           {
@@ -1174,6 +1175,7 @@
         ]
       },
       {
+        "id": "7e663153a1261580",
         "texto": "Será instituído o Plano Estadual de Inclusão da Pessoa com Deficiência, com vigência permanente, estabelecendo metas, indicadores e ações integradas entre todas as secretarias estaduais.",
         "evidencias": [
           {
@@ -1184,6 +1186,7 @@
         ]
       },
       {
+        "id": "0e7a88df84fbccd3",
         "texto": "Será implantado o programa Escola do Futuro, modernizando a rede estadual de ensino.",
         "evidencias": [
           {
@@ -1194,6 +1197,7 @@
         ]
       },
       {
+        "id": "138f2bd54285dc67",
         "texto": "Será implantado o Programa Piauí Seguro Digital, modernizando a segurança pública.",
         "evidencias": [
           {
@@ -1204,6 +1208,7 @@
         ]
       },
       {
+        "id": "8027b81443b2ef65",
         "texto": "Será implantado o programa Empresa Fácil Piauí.",
         "evidencias": [
           {
@@ -1214,6 +1219,7 @@
         ]
       },
       {
+        "id": "cd446e78f4c43beb",
         "texto": "Será implantado o programa Piauí Conectado, com ações para ampliar o acesso à internet de alta velocidade.",
         "evidencias": [
           {
@@ -1224,6 +1230,7 @@
         ]
       },
       {
+        "id": "dd23b0250f8beb2f",
         "texto": "Será implantado um programa permanente de segurança hídrica contemplando construção e recuperação de barragens, ampliação das adutoras, perfuração de poços, sistemas simplificados de abastecimento, proteção de nascentes, recuperação de matas ciliares e uso racional da água.",
         "evidencias": [
           {

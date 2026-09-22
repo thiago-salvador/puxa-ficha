@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -156,6 +156,7 @@
     "texto": "O programa prevê a suspensão imediata do processo de privatização do metrô do Recife como medida de atendimento público. O programa propõe no eixo de saneamento investir no saneamento básico a partir do bloqueio da concessão da Compesa. O programa prevê a expansão urgente do funcionamento das Delegacias da Mulher para 24h como medida de atendimento contínuo. O programa propõe a ampliação da rede de creches com vagas em tempo integral para atendimento às crianças. O programa prevê a criação de assembleias populares por todas as macrorregiões do estado dentro da proposta de orçamento regional participativo. O programa propõe a construção de hospitais regionais de especialidades no Agreste conforme a seção sobre infraestrutura no interior do estado. O programa prevê garantir a contratação de médicos, enfermeiros e equipes técnicas por meio de concursos públicos estatutários, fixando profissionais no interior do estado.",
     "frases": [
       {
+        "id": "4d8ef20c981b2fa7",
         "texto": "O programa prevê a suspensão imediata do processo de privatização do metrô do Recife como medida de atendimento público.",
         "evidencias": [
           {
@@ -166,6 +167,7 @@
         ]
       },
       {
+        "id": "63db3caca669b5a1",
         "texto": "O programa propõe no eixo de saneamento investir no saneamento básico a partir do bloqueio da concessão da Compesa.",
         "evidencias": [
           {
@@ -176,6 +178,7 @@
         ]
       },
       {
+        "id": "e9fa85e3635d6fa8",
         "texto": "O programa prevê a expansão urgente do funcionamento das Delegacias da Mulher para 24h como medida de atendimento contínuo.",
         "evidencias": [
           {
@@ -186,6 +189,7 @@
         ]
       },
       {
+        "id": "4171a675dec3b603",
         "texto": "O programa propõe a ampliação da rede de creches com vagas em tempo integral para atendimento às crianças.",
         "evidencias": [
           {
@@ -196,6 +200,7 @@
         ]
       },
       {
+        "id": "42efeeabec59775d",
         "texto": "O programa prevê a criação de assembleias populares por todas as macrorregiões do estado dentro da proposta de orçamento regional participativo.",
         "evidencias": [
           {
@@ -206,6 +211,7 @@
         ]
       },
       {
+        "id": "7f5d9bd44be9ae57",
         "texto": "O programa propõe a construção de hospitais regionais de especialidades no Agreste conforme a seção sobre infraestrutura no interior do estado.",
         "evidencias": [
           {
@@ -216,6 +222,7 @@
         ]
       },
       {
+        "id": "2c01a53d27913e89",
         "texto": "O programa prevê garantir a contratação de médicos, enfermeiros e equipes técnicas por meio de concursos públicos estatutários, fixando profissionais no interior do estado.",
         "evidencias": [
           {

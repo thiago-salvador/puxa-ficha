@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "Na política salarial, o programa prevê a reposição integral de 100% das perdas salariais, conforme trecho do documento. Sobre os salários, o programa oficial propõe uma escala móvel, com aumento automático toda vez que o custo de vida subir 3%. Quanto à jornada de trabalho, o programa propõe redução para no máximo 7 horas por dia, durante 5 dias por semana, totalizando 35 horas semanais. Na administração pública, o programa propõe a realização de concursos públicos periódicos, com a finalidade de repor o quadro de servidores. Na política agrária, o programa propõe o assentamento imediato dos milhões de sem-terra acampados em todo o País. Na habitação, o programa propõe a elaboração de um plano nacional de construção de milhões de moradias populares.",
     "frases": [
       {
+        "id": "e20e970c1f93aede",
         "texto": "Na política salarial, o programa prevê a reposição integral de 100% das perdas salariais, conforme trecho do documento.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "e433e66f4aa6aa56",
         "texto": "Sobre os salários, o programa oficial propõe uma escala móvel, com aumento automático toda vez que o custo de vida subir 3%.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "baa951906277c0fd",
         "texto": "Quanto à jornada de trabalho, o programa propõe redução para no máximo 7 horas por dia, durante 5 dias por semana, totalizando 35 horas semanais.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "a8b80ef4912a4a9a",
         "texto": "Na administração pública, o programa propõe a realização de concursos públicos periódicos, com a finalidade de repor o quadro de servidores.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "75ac9e6091f4a89d",
         "texto": "Na política agrária, o programa propõe o assentamento imediato dos milhões de sem-terra acampados em todo o País.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "aac05227a0c60b3d",
         "texto": "Na habitação, o programa propõe a elaboração de um plano nacional de construção de milhões de moradias populares.",
         "evidencias": [
           {

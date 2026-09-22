@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "O plano descreve a modernização da gestão pública pela digitalização dos serviços públicos como diretriz administrativa estadual. Na saúde, o programa prevê a informatização completa da rede estadual de saúde como medida de organização dos serviços. Ainda na saúde, a proposta prevê a ampliação do uso da telemedicina como diretriz específica do eixo de saúde. Na educação, o documento propõe a expansão das Escolas Técnicas Estaduais dentro das ações educacionais apresentadas no plano. Na segurança pública, o plano prevê a ampliação do uso de drones para apoiar as atividades das forças de segurança. Para a mobilidade urbana, o programa inclui a expansão da malha cicloviária como ação de transporte estadual. Na habitação, a proposta estabelece a regularização fundiária como medida da política habitacional apresentada no documento.",
     "frases": [
       {
+        "id": "4e8b4079339b56c9",
         "texto": "O plano descreve a modernização da gestão pública pela digitalização dos serviços públicos como diretriz administrativa estadual.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "b8528a46afbbd1cf",
         "texto": "Na saúde, o programa prevê a informatização completa da rede estadual de saúde como medida de organização dos serviços.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "560319a39e5f6c70",
         "texto": "Ainda na saúde, a proposta prevê a ampliação do uso da telemedicina como diretriz específica do eixo de saúde.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "2c4227c79aeb8459",
         "texto": "Na educação, o documento propõe a expansão das Escolas Técnicas Estaduais dentro das ações educacionais apresentadas no plano.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "276e4d7ed7dd9248",
         "texto": "Na segurança pública, o plano prevê a ampliação do uso de drones para apoiar as atividades das forças de segurança.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "86c9309a15a6b4e1",
         "texto": "Para a mobilidade urbana, o programa inclui a expansão da malha cicloviária como ação de transporte estadual.",
         "evidencias": [
           {
@@ -202,6 +208,7 @@
         ]
       },
       {
+        "id": "9eb0534d9976d890",
         "texto": "Na habitação, a proposta estabelece a regularização fundiária como medida da política habitacional apresentada no documento.",
         "evidencias": [
           {

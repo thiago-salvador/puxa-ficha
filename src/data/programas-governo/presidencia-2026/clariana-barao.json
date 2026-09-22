@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -162,6 +162,7 @@
     "texto": "O documento apresenta um plano de governo estruturado em seis capítulos integrados. O primeiro capítulo trata da proteção de mulheres e crianças como eixo transversal, enquanto os demais capítulos tratam dos meios para produzir autonomia, oportunidade, liberdade, saúde e capacidade de entrega. O plano propõe uma rede nacional de proteção e resposta à violência, no âmbito da proteção a mulheres e crianças. Na área econômica, o plano propõe simplificação regulatória para o ambiente de negócios. Na educação, o plano propõe a alfabetização na idade adequada. Na segurança, o plano propõe o uso de sensores, radares e monitoramento remoto para a vigilância de fronteiras. Na saúde, o plano propõe fortalecer a atenção primária por meio de equipes completas e acesso territorial ampliado. No capítulo sobre o Estado, o plano propõe o princípio de solicitar dados dos cidadãos ao poder público apenas uma única vez.",
     "frases": [
       {
+        "id": "e4032f2d4a95d065",
         "texto": "O documento apresenta um plano de governo estruturado em seis capítulos integrados.",
         "evidencias": [
           {
@@ -171,6 +172,7 @@
         ]
       },
       {
+        "id": "59acc19dfa9e6cd2",
         "texto": "O primeiro capítulo trata da proteção de mulheres e crianças como eixo transversal, enquanto os demais capítulos tratam dos meios para produzir autonomia, oportunidade, liberdade, saúde e capacidade de entrega.",
         "evidencias": [
           {
@@ -184,6 +186,7 @@
         ]
       },
       {
+        "id": "8cce2a7699dd30a9",
         "texto": "O plano propõe uma rede nacional de proteção e resposta à violência, no âmbito da proteção a mulheres e crianças.",
         "evidencias": [
           {
@@ -197,6 +200,7 @@
         ]
       },
       {
+        "id": "86a5057db96226d2",
         "texto": "Na área econômica, o plano propõe simplificação regulatória para o ambiente de negócios.",
         "evidencias": [
           {
@@ -210,6 +214,7 @@
         ]
       },
       {
+        "id": "7ee613f5140d7b17",
         "texto": "Na educação, o plano propõe a alfabetização na idade adequada.",
         "evidencias": [
           {
@@ -223,6 +228,7 @@
         ]
       },
       {
+        "id": "8f772ac67be870f4",
         "texto": "Na segurança, o plano propõe o uso de sensores, radares e monitoramento remoto para a vigilância de fronteiras.",
         "evidencias": [
           {
@@ -236,6 +242,7 @@
         ]
       },
       {
+        "id": "15a4a148b56c9bef",
         "texto": "Na saúde, o plano propõe fortalecer a atenção primária por meio de equipes completas e acesso territorial ampliado.",
         "evidencias": [
           {
@@ -249,6 +256,7 @@
         ]
       },
       {
+        "id": "0175ab205a39cc81",
         "texto": "No capítulo sobre o Estado, o plano propõe o princípio de solicitar dados dos cidadãos ao poder público apenas uma única vez.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -254,6 +254,7 @@
     "texto": "O plano prevê a transformação da matriz logística de Mato Grosso com ampliação dos modais ferroviário e hidroviário por meio da integração intermodal. Na industrialização, propõe-se a criação de Zonas de Desenvolvimento Industrial dotadas de infraestrutura energética, logística e tributária simplificada. Para segurança pública, prevê o fortalecimento do GEFRON com drones de longa distância, sensores termais e imageamento por satélite. Na educação, planeja universalizar o ensino técnico profissionalizante por convênios com o SENAI, SENAR e demais instituições. Na administração, propõe a evolução do Portal de Transparência para disponibilizar dados abertos legíveis por máquina em tempo real. Na saúde, prevê uma Fila Única Estadual Digital com consulta pública da posição do cidadão, do tempo estimado de espera e dos critérios de prioridade clínica.",
     "frases": [
       {
+        "id": "b6c9384aa79bc994",
         "texto": "O plano prevê a transformação da matriz logística de Mato Grosso com ampliação dos modais ferroviário e hidroviário por meio da integração intermodal.",
         "evidencias": [
           {
@@ -264,6 +265,7 @@
         ]
       },
       {
+        "id": "2787661eaaa1ae53",
         "texto": "Na industrialização, propõe-se a criação de Zonas de Desenvolvimento Industrial dotadas de infraestrutura energética, logística e tributária simplificada.",
         "evidencias": [
           {
@@ -274,6 +276,7 @@
         ]
       },
       {
+        "id": "2bfbacc9d1e4e99f",
         "texto": "Para segurança pública, prevê o fortalecimento do GEFRON com drones de longa distância, sensores termais e imageamento por satélite.",
         "evidencias": [
           {
@@ -284,6 +287,7 @@
         ]
       },
       {
+        "id": "adaec913386470f4",
         "texto": "Na educação, planeja universalizar o ensino técnico profissionalizante por convênios com o SENAI, SENAR e demais instituições.",
         "evidencias": [
           {
@@ -294,6 +298,7 @@
         ]
       },
       {
+        "id": "d958fbdbdf05fc4b",
         "texto": "Na administração, propõe a evolução do Portal de Transparência para disponibilizar dados abertos legíveis por máquina em tempo real.",
         "evidencias": [
           {
@@ -304,6 +309,7 @@
         ]
       },
       {
+        "id": "b42bd1c9b2d0405a",
         "texto": "Na saúde, prevê uma Fila Única Estadual Digital com consulta pública da posição do cidadão, do tempo estimado de espera e dos critérios de prioridade clínica.",
         "evidencias": [
           {

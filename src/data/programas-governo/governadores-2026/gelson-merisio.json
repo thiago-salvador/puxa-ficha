@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1080,6 +1080,7 @@
     "texto": "Esse novo ciclo exige um Estado capaz de planejar, coordenar investimentos, produzir conhecimento, fortalecer a cooperação entre instituições e orientar o desenvolvimento de forma integrada. O Plano Santa Catarina do Campo Democrático será o principal instrumento dessa estratégia, articulando infraestrutura, desenvolvimento econômico, educação, saúde, inovação, meio ambiente, habitação, mobilidade e adaptação climática em uma única visão de longo prazo. Será criado o Sistema Estadual de Inteligência Territorial, integrando bases de dados, observatórios regionais, laboratórios de inovação e mecanismos de avaliação de políticas públicas. Nosso governo assumirá como prioridade a superação da pobreza extrema por meio da integração das políticas sociais, da inclusão produtiva e da ampliação das oportunidades de desenvolvimento humano. Promover um sistema de mobilidade seguro, acessível, eficiente e ambientalmente sustentável. Instituir a Política Estadual de Adaptação às Mudanças Climáticas como eixo permanente do planejamento e dos investimentos públicos. Ampliar os mecanismos permanentes de participação da sociedade na formulação, implementação e avaliação das politicas públicas.",
     "frases": [
       {
+        "id": "b650f539a91efe62",
         "texto": "Esse novo ciclo exige um Estado capaz de planejar, coordenar investimentos, produzir conhecimento, fortalecer a cooperação entre instituições e orientar o desenvolvimento de forma integrada.",
         "evidencias": [
           {
@@ -1090,6 +1091,7 @@
         ]
       },
       {
+        "id": "2bf79218d25320e9",
         "texto": "O Plano Santa Catarina do Campo Democrático será o principal instrumento dessa estratégia, articulando infraestrutura, desenvolvimento econômico, educação, saúde, inovação, meio ambiente, habitação, mobilidade e adaptação climática em uma única visão de longo prazo.",
         "evidencias": [
           {
@@ -1100,6 +1102,7 @@
         ]
       },
       {
+        "id": "7e1cc83894075583",
         "texto": "Será criado o Sistema Estadual de Inteligência Territorial, integrando bases de dados, observatórios regionais, laboratórios de inovação e mecanismos de avaliação de políticas públicas.",
         "evidencias": [
           {
@@ -1110,6 +1113,7 @@
         ]
       },
       {
+        "id": "c5708095c32ba04d",
         "texto": "Nosso governo assumirá como prioridade a superação da pobreza extrema por meio da integração das políticas sociais, da inclusão produtiva e da ampliação das oportunidades de desenvolvimento humano.",
         "evidencias": [
           {
@@ -1120,6 +1124,7 @@
         ]
       },
       {
+        "id": "48a50f96f23e9383",
         "texto": "Promover um sistema de mobilidade seguro, acessível, eficiente e ambientalmente sustentável.",
         "evidencias": [
           {
@@ -1130,6 +1135,7 @@
         ]
       },
       {
+        "id": "a1a5fa81dcba6391",
         "texto": "Instituir a Política Estadual de Adaptação às Mudanças Climáticas como eixo permanente do planejamento e dos investimentos públicos.",
         "evidencias": [
           {
@@ -1140,6 +1146,7 @@
         ]
       },
       {
+        "id": "4a2fcc79ec2b13bd",
         "texto": "Ampliar os mecanismos permanentes de participação da sociedade na formulação, implementação e avaliação das politicas públicas.",
         "evidencias": [
           {

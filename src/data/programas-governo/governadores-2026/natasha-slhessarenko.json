@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -450,6 +450,7 @@
     "texto": "O programa prevê alinhar a política estadual aos objetivos do novo Plano Nacional de Educação, conforme as diretrizes apresentadas no documento oficial para a educação pública. O programa propõe que toda criança da rede esteja alfabetizada ao fim do 2º ano, mediante ações de recomposição da aprendizagem previstas para o percurso escolar. O programa planeja criar programa estadual permanente de cofinanciamento com os municípios para ampliar vagas públicas em creches, com oferta gratuita prevista no texto. O programa prevê uma fila única estadual para consulta especializada, com posição do paciente publicada para acompanhamento individual da tramitação regulatória. O programa propõe um portal público com mapa de criminalidade por tipo de crime, permitindo consulta organizada das ocorrências por unidade policial. O programa planeja ampliar a conectividade digital nos municípios do interior, tratando esse serviço como infraestrutura básica para a população dessas localidades.",
     "frases": [
       {
+        "id": "a51cf9c21410fd1c",
         "texto": "O programa prevê alinhar a política estadual aos objetivos do novo Plano Nacional de Educação, conforme as diretrizes apresentadas no documento oficial para a educação pública.",
         "evidencias": [
           {
@@ -460,6 +461,7 @@
         ]
       },
       {
+        "id": "3ff80e4449371191",
         "texto": "O programa propõe que toda criança da rede esteja alfabetizada ao fim do 2º ano, mediante ações de recomposição da aprendizagem previstas para o percurso escolar.",
         "evidencias": [
           {
@@ -470,6 +472,7 @@
         ]
       },
       {
+        "id": "cf111a7a5799b3bd",
         "texto": "O programa planeja criar programa estadual permanente de cofinanciamento com os municípios para ampliar vagas públicas em creches, com oferta gratuita prevista no texto.",
         "evidencias": [
           {
@@ -480,6 +483,7 @@
         ]
       },
       {
+        "id": "5d3d86f13c7d91cb",
         "texto": "O programa prevê uma fila única estadual para consulta especializada, com posição do paciente publicada para acompanhamento individual da tramitação regulatória.",
         "evidencias": [
           {
@@ -490,6 +494,7 @@
         ]
       },
       {
+        "id": "19fb06cb03b72ada",
         "texto": "O programa propõe um portal público com mapa de criminalidade por tipo de crime, permitindo consulta organizada das ocorrências por unidade policial.",
         "evidencias": [
           {
@@ -500,6 +505,7 @@
         ]
       },
       {
+        "id": "128df7d89c9432a7",
         "texto": "O programa planeja ampliar a conectividade digital nos municípios do interior, tratando esse serviço como infraestrutura básica para a população dessas localidades.",
         "evidencias": [
           {

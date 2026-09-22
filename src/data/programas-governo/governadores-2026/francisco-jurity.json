@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -72,6 +72,7 @@
     "texto": "O programa propõe ampliar e equipar hospitais regionais e UPAs, definindo essa medida como uma ação de estrutura e equipamento hospitalar. Também propõe fortalecer a Estratégia Saúde da Família nos 224 municípios, indicando a abrangência municipal dessa ação. O programa propõe um programa de combate às filas de cirurgias e exames, com referência específica a esses dois tipos de atendimento. Na educação, o programa propõe escola em tempo integral como uma medida descrita para o setor. O programa propõe ensino técnico em todas as regiões, estabelecendo abrangência regional para essa oferta. Na segurança, propõe mais policiamento nas cidades e zona rural, contemplando esses dois espaços territoriais. O programa propõe programas de prevenção às drogas, apresentando uma frente específica de prevenção relacionada ao tema.",
     "frases": [
       {
+        "id": "984adbe110fc14c9",
         "texto": "O programa propõe ampliar e equipar hospitais regionais e UPAs, definindo essa medida como uma ação de estrutura e equipamento hospitalar.",
         "evidencias": [
           {
@@ -82,6 +83,7 @@
         ]
       },
       {
+        "id": "e81f1eedd6c802c4",
         "texto": "Também propõe fortalecer a Estratégia Saúde da Família nos 224 municípios, indicando a abrangência municipal dessa ação.",
         "evidencias": [
           {
@@ -92,6 +94,7 @@
         ]
       },
       {
+        "id": "63ddd911b722a7e7",
         "texto": "O programa propõe um programa de combate às filas de cirurgias e exames, com referência específica a esses dois tipos de atendimento.",
         "evidencias": [
           {
@@ -102,6 +105,7 @@
         ]
       },
       {
+        "id": "39013f8a2b7024d8",
         "texto": "Na educação, o programa propõe escola em tempo integral como uma medida descrita para o setor.",
         "evidencias": [
           {
@@ -112,6 +116,7 @@
         ]
       },
       {
+        "id": "ae83a87b5004fa23",
         "texto": "O programa propõe ensino técnico em todas as regiões, estabelecendo abrangência regional para essa oferta.",
         "evidencias": [
           {
@@ -122,6 +127,7 @@
         ]
       },
       {
+        "id": "6f8b5c9c6730a3c5",
         "texto": "Na segurança, propõe mais policiamento nas cidades e zona rural, contemplando esses dois espaços territoriais.",
         "evidencias": [
           {
@@ -132,6 +138,7 @@
         ]
       },
       {
+        "id": "04b682e78c4da864",
         "texto": "O programa propõe programas de prevenção às drogas, apresentando uma frente específica de prevenção relacionada ao tema.",
         "evidencias": [
           {

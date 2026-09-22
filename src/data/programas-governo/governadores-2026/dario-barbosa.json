@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -114,6 +114,7 @@
     "texto": "O programa prevê a cobrança e execução da dívida ativa das grandes empresas devedoras do Estado, conforme a seção de desenvolvimento econômico e emprego. O programa propõe um Plano de Obras Públicas e Estatais para geração de empregos, apresentado como medida de desenvolvimento da infraestrutura do RN. Na saúde pública, o programa prevê o fortalecimento do SUS 100% público e estatal, conforme a seção dedicada ao setor. Na educação pública, o programa prevê a universalização do acesso às creches, ensino básico e universidades, dentro da defesa da educação pública. Para a mobilidade urbana, o programa propõe a criação de empresa estatal de transporte coletivo, vinculada à organização do transporte no estado. Na moradia, o programa prevê a ampliação do saneamento básico para cobrir 100% de todo o RN, conforme a seção de moradia e saneamento. Na cultura, o programa prevê a criação de escolas estaduais de arte, como proposta específica de incentivo à cultura no estado.",
     "frases": [
       {
+        "id": "f2dc542af624b124",
         "texto": "O programa prevê a cobrança e execução da dívida ativa das grandes empresas devedoras do Estado, conforme a seção de desenvolvimento econômico e emprego.",
         "evidencias": [
           {
@@ -124,6 +125,7 @@
         ]
       },
       {
+        "id": "cc4f54d4fc87672e",
         "texto": "O programa propõe um Plano de Obras Públicas e Estatais para geração de empregos, apresentado como medida de desenvolvimento da infraestrutura do RN.",
         "evidencias": [
           {
@@ -134,6 +136,7 @@
         ]
       },
       {
+        "id": "58ea9fe39d689f48",
         "texto": "Na saúde pública, o programa prevê o fortalecimento do SUS 100% público e estatal, conforme a seção dedicada ao setor.",
         "evidencias": [
           {
@@ -144,6 +147,7 @@
         ]
       },
       {
+        "id": "b9ef73b7e5a37bb8",
         "texto": "Na educação pública, o programa prevê a universalização do acesso às creches, ensino básico e universidades, dentro da defesa da educação pública.",
         "evidencias": [
           {
@@ -154,6 +158,7 @@
         ]
       },
       {
+        "id": "fcbf7258d5812af8",
         "texto": "Para a mobilidade urbana, o programa propõe a criação de empresa estatal de transporte coletivo, vinculada à organização do transporte no estado.",
         "evidencias": [
           {
@@ -164,6 +169,7 @@
         ]
       },
       {
+        "id": "951246d73d0fbebc",
         "texto": "Na moradia, o programa prevê a ampliação do saneamento básico para cobrir 100% de todo o RN, conforme a seção de moradia e saneamento.",
         "evidencias": [
           {
@@ -174,6 +180,7 @@
         ]
       },
       {
+        "id": "82f0a4115f580468",
         "texto": "Na cultura, o programa prevê a criação de escolas estaduais de arte, como proposta específica de incentivo à cultura no estado.",
         "evidencias": [
           {

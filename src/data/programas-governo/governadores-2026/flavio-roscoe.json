@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -324,6 +324,7 @@
     "texto": "O programa prevê publicar mensalmente a posição de caixa do Tesouro estadual, separada do resultado orçamentário. O programa propõe instituir força-tarefa permanente de fiscalização de CFEM, com prioridade para os R$ 6,25 bilhões já reconhecidos em dívida ativa. O programa prevê publicar, por macrorregião de saúde, o tempo médio de espera por cirurgia eletiva e por exame de diagnóstico. O objetivo é universalizar o acesso à internet de alta velocidade nas escolas estaduais. O programa prevê priorizar a expansão de vagas de creche nos 55 municípios que hoje não têm nenhuma unidade pública. O programa propõe criar núcleos regionais do San Pedro Valley em pelo menos três polos industriais do interior. O programa prevê criar, dentro da Secretaria de Estado de Desenvolvimento Econômico, uma estrutura permanente de monitoramento de risco comercial internacional.",
     "frases": [
       {
+        "id": "311ec9726c1594c4",
         "texto": "O programa prevê publicar mensalmente a posição de caixa do Tesouro estadual, separada do resultado orçamentário.",
         "evidencias": [
           {
@@ -334,6 +335,7 @@
         ]
       },
       {
+        "id": "03e3743d81b963ae",
         "texto": "O programa propõe instituir força-tarefa permanente de fiscalização de CFEM, com prioridade para os R$ 6,25 bilhões já reconhecidos em dívida ativa.",
         "evidencias": [
           {
@@ -344,6 +346,7 @@
         ]
       },
       {
+        "id": "5380e06623c5b527",
         "texto": "O programa prevê publicar, por macrorregião de saúde, o tempo médio de espera por cirurgia eletiva e por exame de diagnóstico.",
         "evidencias": [
           {
@@ -354,6 +357,7 @@
         ]
       },
       {
+        "id": "a9dfc843164d8e2a",
         "texto": "O objetivo é universalizar o acesso à internet de alta velocidade nas escolas estaduais.",
         "evidencias": [
           {
@@ -364,6 +368,7 @@
         ]
       },
       {
+        "id": "381202ae54a9bf52",
         "texto": "O programa prevê priorizar a expansão de vagas de creche nos 55 municípios que hoje não têm nenhuma unidade pública.",
         "evidencias": [
           {
@@ -374,6 +379,7 @@
         ]
       },
       {
+        "id": "a579d927b33f4e67",
         "texto": "O programa propõe criar núcleos regionais do San Pedro Valley em pelo menos três polos industriais do interior.",
         "evidencias": [
           {
@@ -384,6 +390,7 @@
         ]
       },
       {
+        "id": "8598abfc17d1dda9",
         "texto": "O programa prevê criar, dentro da Secretaria de Estado de Desenvolvimento Econômico, uma estrutura permanente de monitoramento de risco comercial internacional.",
         "evidencias": [
           {

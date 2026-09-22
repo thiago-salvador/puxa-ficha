@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -2172,6 +2172,7 @@
     "texto": "O programa prevê universalizar a oferta de matrículas em tempo integral nas escolas da Rede Estadual, ampliando o número de escolas e vagas por todo o estado. Na saúde, o programa prevê implantar a plataforma digital integrada Minha Saúde ES para a rede estadual de saúde, reunindo prontuário eletrônico único, histórico clínico, exames, prescrições, vacinação, teleconsultas e serviços digitais ao cidadão. Na infraestrutura hospitalar, o programa prevê concluir e colocar em funcionamento o Hospital Geral de Cariacica, com mais de 400 leitos. Na segurança pública, o programa prevê instituir uma Política Estadual Permanente de Enfrentamento ao Crime Organizado. No sistema prisional, prevê construir quatro novas unidades nas regiões Sul, Metropolitana, Noroeste e Norte do Estado. Na proteção social, o programa propõe construir um Sistema Estadual de Proteção Social, Cuidado e Inclusão. Na segurança hídrica, prevê concluir a obra e iniciar a operação da Barragem dos Imigrantes, cujo reservatório terá capacidade de armazenar 23 bilhões de litros de água.",
     "frases": [
       {
+        "id": "b00c7e882ca8d253",
         "texto": "O programa prevê universalizar a oferta de matrículas em tempo integral nas escolas da Rede Estadual, ampliando o número de escolas e vagas por todo o estado.",
         "evidencias": [
           {
@@ -2182,6 +2183,7 @@
         ]
       },
       {
+        "id": "cef2aa8555425444",
         "texto": "Na saúde, o programa prevê implantar a plataforma digital integrada Minha Saúde ES para a rede estadual de saúde, reunindo prontuário eletrônico único, histórico clínico, exames, prescrições, vacinação, teleconsultas e serviços digitais ao cidadão.",
         "evidencias": [
           {
@@ -2192,6 +2194,7 @@
         ]
       },
       {
+        "id": "25299ddbce07e5cc",
         "texto": "Na infraestrutura hospitalar, o programa prevê concluir e colocar em funcionamento o Hospital Geral de Cariacica, com mais de 400 leitos.",
         "evidencias": [
           {
@@ -2202,6 +2205,7 @@
         ]
       },
       {
+        "id": "12c079535b3d1648",
         "texto": "Na segurança pública, o programa prevê instituir uma Política Estadual Permanente de Enfrentamento ao Crime Organizado.",
         "evidencias": [
           {
@@ -2212,6 +2216,7 @@
         ]
       },
       {
+        "id": "3b6b3153de28cdf8",
         "texto": "No sistema prisional, prevê construir quatro novas unidades nas regiões Sul, Metropolitana, Noroeste e Norte do Estado.",
         "evidencias": [
           {
@@ -2222,6 +2227,7 @@
         ]
       },
       {
+        "id": "1670646a83b74906",
         "texto": "Na proteção social, o programa propõe construir um Sistema Estadual de Proteção Social, Cuidado e Inclusão.",
         "evidencias": [
           {
@@ -2232,6 +2238,7 @@
         ]
       },
       {
+        "id": "cf9ba18ae3526738",
         "texto": "Na segurança hídrica, prevê concluir a obra e iniciar a operação da Barragem dos Imigrantes, cujo reservatório terá capacidade de armazenar 23 bilhões de litros de água.",
         "evidencias": [
           {

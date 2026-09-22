@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1354,6 +1354,7 @@
     "texto": "O documento propõe criar a Tabela SUS Paranaense, com pagamento complementar padronizado aos serviços de saúde. Também prevê integrar sistemas estaduais de informação, regulação, monitoramento e prontuário eletrônico interoperável em toda a rede de saúde. O programa prevê levar internet de alta velocidade a todas as regiões do estado, utilizando antenas, satélites, fibra e provedores locais. O plano prevê criar um código de ética para a alta administração do Governo do Estado do Paraná. Na segurança, o documento prevê implantar videomonitoramento estadual integrando câmeras públicas e privadas com inteligência artificial. Também prevê uma unidade de segurança máxima para isolar lideranças e integrantes de alta periculosidade do crime organizado. Em saneamento, o plano prevê universalizar água tratada e esgoto em todas as regiões. Na habitação, o programa prevê criar o Casa Própria Paraná para famílias com renda mensal de até R$ 3.200,00.",
     "frases": [
       {
+        "id": "5cb80033836b9b05",
         "texto": "O documento propõe criar a Tabela SUS Paranaense, com pagamento complementar padronizado aos serviços de saúde.",
         "evidencias": [
           {
@@ -1364,6 +1365,7 @@
         ]
       },
       {
+        "id": "be0707dfae84bae6",
         "texto": "Também prevê integrar sistemas estaduais de informação, regulação, monitoramento e prontuário eletrônico interoperável em toda a rede de saúde.",
         "evidencias": [
           {
@@ -1374,6 +1376,7 @@
         ]
       },
       {
+        "id": "1c031c608a7e6e46",
         "texto": "O programa prevê levar internet de alta velocidade a todas as regiões do estado, utilizando antenas, satélites, fibra e provedores locais.",
         "evidencias": [
           {
@@ -1384,6 +1387,7 @@
         ]
       },
       {
+        "id": "11c57f83d788eefa",
         "texto": "O plano prevê criar um código de ética para a alta administração do Governo do Estado do Paraná.",
         "evidencias": [
           {
@@ -1394,6 +1398,7 @@
         ]
       },
       {
+        "id": "f4ded075264d1bff",
         "texto": "Na segurança, o documento prevê implantar videomonitoramento estadual integrando câmeras públicas e privadas com inteligência artificial.",
         "evidencias": [
           {
@@ -1404,6 +1409,7 @@
         ]
       },
       {
+        "id": "913bb015e66ba42b",
         "texto": "Também prevê uma unidade de segurança máxima para isolar lideranças e integrantes de alta periculosidade do crime organizado.",
         "evidencias": [
           {
@@ -1414,6 +1420,7 @@
         ]
       },
       {
+        "id": "fcd3b448e5e09986",
         "texto": "Em saneamento, o plano prevê universalizar água tratada e esgoto em todas as regiões.",
         "evidencias": [
           {
@@ -1424,6 +1431,7 @@
         ]
       },
       {
+        "id": "c44c2d65ed35bfa4",
         "texto": "Na habitação, o programa prevê criar o Casa Própria Paraná para famílias com renda mensal de até R$ 3.200,00.",
         "evidencias": [
           {

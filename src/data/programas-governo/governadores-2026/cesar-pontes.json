@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "No tema da remuneração, o programa prevê a reposição integral de 100% das perdas salariais, conforme a proposta apresentada. Ainda sobre remuneração, o programa propõe um aumento emergencial de 50% para todos os salários, segundo a formulação programática. O programa também propõe aumentos automáticos dos salários toda vez que o custo de vida do trabalhador subir 3%. Na organização do trabalho, o programa propõe limitar a jornada de trabalho a 35 horas semanais, como previsto na proposta. Em relação à legislação trabalhista, o programa propõe o cancelamento da reforma trabalhista, conforme o item correspondente. No campo das privatizações, o programa propõe o cancelamento de todas as privatizações realizadas, de acordo com sua formulação. Sobre o teto de gastos, o programa propõe o seu fim, conforme a formulação apresentada no documento.",
     "frases": [
       {
+        "id": "083fe8fc73adbeae",
         "texto": "No tema da remuneração, o programa prevê a reposição integral de 100% das perdas salariais, conforme a proposta apresentada.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "91fb4bdbb136d448",
         "texto": "Ainda sobre remuneração, o programa propõe um aumento emergencial de 50% para todos os salários, segundo a formulação programática.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "ef3fb195e504edfc",
         "texto": "O programa também propõe aumentos automáticos dos salários toda vez que o custo de vida do trabalhador subir 3%.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "31d5b72a177c6b2a",
         "texto": "Na organização do trabalho, o programa propõe limitar a jornada de trabalho a 35 horas semanais, como previsto na proposta.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "8c3fa47ff60b4954",
         "texto": "Em relação à legislação trabalhista, o programa propõe o cancelamento da reforma trabalhista, conforme o item correspondente.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "ea68d995ead036f2",
         "texto": "No campo das privatizações, o programa propõe o cancelamento de todas as privatizações realizadas, de acordo com sua formulação.",
         "evidencias": [
           {
@@ -202,6 +208,7 @@
         ]
       },
       {
+        "id": "4c736a9315d7cd36",
         "texto": "Sobre o teto de gastos, o programa propõe o seu fim, conforme a formulação apresentada no documento.",
         "evidencias": [
           {

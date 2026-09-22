@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -940,6 +940,7 @@
     "texto": "O plano está organizado em três eixos, doze programas e sete prioridades que serão acompanhadas diretamente pelo governador. Toda pessoa encaminhada pela regulação estadual poderá acompanhar o pedido, conhecer a prioridade clínica, receber uma previsão de atendimento e saber qual providência será tomada se houver atraso relevante. Cada estudante terá acompanhamento da aprendizagem, apoio quando surgir dificuldade e uma ponte clara para o ensino técnico, a universidade, o trabalho ou o próprio negócio. A população seguirá vivendo com ordem e liberdade. Quem fizer um curso financiado pelo Estado terá formação ligada a uma oportunidade concreta e acompanhamento para entrar, permanecer e avançar no trabalho. Quem viaja ou transporta produção conhecerá a condição da via. Os principais serviços estaduais terão prazo publicado, acompanhamento simples e responsável pelo atraso.",
     "frases": [
       {
+        "id": "83e0c3b828acb1d5",
         "texto": "O plano está organizado em três eixos, doze programas e sete prioridades que serão acompanhadas diretamente pelo governador.",
         "evidencias": [
           {
@@ -950,6 +951,7 @@
         ]
       },
       {
+        "id": "8548e3d7367b3749",
         "texto": "Toda pessoa encaminhada pela regulação estadual poderá acompanhar o pedido, conhecer a prioridade clínica, receber uma previsão de atendimento e saber qual providência será tomada se houver atraso relevante.",
         "evidencias": [
           {
@@ -960,6 +962,7 @@
         ]
       },
       {
+        "id": "861521cce6de40c6",
         "texto": "Cada estudante terá acompanhamento da aprendizagem, apoio quando surgir dificuldade e uma ponte clara para o ensino técnico, a universidade, o trabalho ou o próprio negócio.",
         "evidencias": [
           {
@@ -970,6 +973,7 @@
         ]
       },
       {
+        "id": "5867d180cd6aac4f",
         "texto": "A população seguirá vivendo com ordem e liberdade.",
         "evidencias": [
           {
@@ -980,6 +984,7 @@
         ]
       },
       {
+        "id": "02c7c04b5562207a",
         "texto": "Quem fizer um curso financiado pelo Estado terá formação ligada a uma oportunidade concreta e acompanhamento para entrar, permanecer e avançar no trabalho.",
         "evidencias": [
           {
@@ -990,6 +995,7 @@
         ]
       },
       {
+        "id": "ad9783479ec20126",
         "texto": "Quem viaja ou transporta produção conhecerá a condição da via.",
         "evidencias": [
           {
@@ -1000,6 +1006,7 @@
         ]
       },
       {
+        "id": "0265f6df10da5a1b",
         "texto": "Os principais serviços estaduais terão prazo publicado, acompanhamento simples e responsável pelo atraso.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -198,6 +198,7 @@
     "texto": "A saúde é apresentada como prioridade no plano de governo. O documento propõe aperfeiçoar a regulação de consultas, exames, cirurgias e leitos. Na educação, o plano prevê ampliar progressivamente as escolas em tempo integral conforme a demanda, a infraestrutura e a capacidade financeira. O plano propõe criar uma política de desenvolvimento da comunicação dos estudantes, com expressão oral, leitura, argumentação, apresentação de trabalhos, escuta, liderança e comunicação digital responsável, respeitando as diretrizes educacionais. Em parceria com os municípios, prevê ampliar e fortalecer programas estaduais de apoio à educação infantil. Para a inserção profissional, prevê fortalecer programas de primeiro emprego. Na infraestrutura rodoviária, propõe criar um mapa público das condições das rodovias estaduais. No saneamento, prevê acompanhar metas de universalização de água e esgotamento sanitário.",
     "frases": [
       {
+        "id": "a15276a00271dfd1",
         "texto": "A saúde é apresentada como prioridade no plano de governo.",
         "evidencias": [
           {
@@ -208,6 +209,7 @@
         ]
       },
       {
+        "id": "d7b00bd2152ce9cb",
         "texto": "O documento propõe aperfeiçoar a regulação de consultas, exames, cirurgias e leitos.",
         "evidencias": [
           {
@@ -218,6 +220,7 @@
         ]
       },
       {
+        "id": "7f9fda98f5ffb3fb",
         "texto": "Na educação, o plano prevê ampliar progressivamente as escolas em tempo integral conforme a demanda, a infraestrutura e a capacidade financeira.",
         "evidencias": [
           {
@@ -228,6 +231,7 @@
         ]
       },
       {
+        "id": "e50f9eb1033f18ea",
         "texto": "O plano propõe criar uma política de desenvolvimento da comunicação dos estudantes, com expressão oral, leitura, argumentação, apresentação de trabalhos, escuta, liderança e comunicação digital responsável, respeitando as diretrizes educacionais.",
         "evidencias": [
           {
@@ -238,6 +242,7 @@
         ]
       },
       {
+        "id": "66439f7470f60d2d",
         "texto": "Em parceria com os municípios, prevê ampliar e fortalecer programas estaduais de apoio à educação infantil.",
         "evidencias": [
           {
@@ -248,6 +253,7 @@
         ]
       },
       {
+        "id": "80156f133b23a1d3",
         "texto": "Para a inserção profissional, prevê fortalecer programas de primeiro emprego.",
         "evidencias": [
           {
@@ -258,6 +264,7 @@
         ]
       },
       {
+        "id": "e6a97c396fb3871e",
         "texto": "Na infraestrutura rodoviária, propõe criar um mapa público das condições das rodovias estaduais.",
         "evidencias": [
           {
@@ -268,6 +275,7 @@
         ]
       },
       {
+        "id": "dcf567977029d3e5",
         "texto": "No saneamento, prevê acompanhar metas de universalização de água e esgotamento sanitário.",
         "evidencias": [
           {

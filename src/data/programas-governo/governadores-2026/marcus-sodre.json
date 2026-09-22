@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -744,6 +744,7 @@
     "texto": "O programa apresenta um governo dos trabalhadores, formado por conselhos populares, como proposta de organização política para Santa Catarina e o Brasil. Os conselhos populares devem deliberar e fiscalizar 100% do orçamento público em Santa Catarina. O documento propõe suspender o pagamento das dívidas públicas como medida central da política econômica. Defende um plano de obras públicas para construir hospitais, postos de saúde, escolas e creches em áreas de infraestrutura social. Prevê uma previdência pública solidária e por repartição, com integralidade das aposentadorias, paridade e dignidade para os beneficiários. Propõe a construção de restaurantes populares como medida pública de combate à fome. Defende a garantia de uma saúde 100% SUS, gratuita e de qualidade, com atendimento estadualizado em diferentes graus de complexidade. Propõe uma tarifa única válida para o dia todo no transporte coletivo, com redução da tarifa rumo à tarifa zero.",
     "frases": [
       {
+        "id": "38136467a7bb41fc",
         "texto": "O programa apresenta um governo dos trabalhadores, formado por conselhos populares, como proposta de organização política para Santa Catarina e o Brasil.",
         "evidencias": [
           {
@@ -754,6 +755,7 @@
         ]
       },
       {
+        "id": "4f622ab30b8f5dc8",
         "texto": "Os conselhos populares devem deliberar e fiscalizar 100% do orçamento público em Santa Catarina.",
         "evidencias": [
           {
@@ -764,6 +766,7 @@
         ]
       },
       {
+        "id": "0b332357a7b02437",
         "texto": "O documento propõe suspender o pagamento das dívidas públicas como medida central da política econômica.",
         "evidencias": [
           {
@@ -774,6 +777,7 @@
         ]
       },
       {
+        "id": "52992c43340a7c47",
         "texto": "Defende um plano de obras públicas para construir hospitais, postos de saúde, escolas e creches em áreas de infraestrutura social.",
         "evidencias": [
           {
@@ -784,6 +788,7 @@
         ]
       },
       {
+        "id": "579a1cd9a28ed2c2",
         "texto": "Prevê uma previdência pública solidária e por repartição, com integralidade das aposentadorias, paridade e dignidade para os beneficiários.",
         "evidencias": [
           {
@@ -794,6 +799,7 @@
         ]
       },
       {
+        "id": "e349e0d3e4fb238d",
         "texto": "Propõe a construção de restaurantes populares como medida pública de combate à fome.",
         "evidencias": [
           {
@@ -804,6 +810,7 @@
         ]
       },
       {
+        "id": "153e80d7bde9aab1",
         "texto": "Defende a garantia de uma saúde 100% SUS, gratuita e de qualidade, com atendimento estadualizado em diferentes graus de complexidade.",
         "evidencias": [
           {
@@ -814,6 +821,7 @@
         ]
       },
       {
+        "id": "e4d530e9abf52cbd",
         "texto": "Propõe uma tarifa única válida para o dia todo no transporte coletivo, com redução da tarifa rumo à tarifa zero.",
         "evidencias": [
           {

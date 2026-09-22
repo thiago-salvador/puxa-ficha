@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -170,6 +170,7 @@
     "texto": "No eixo Trabalho e Desenvolvimento Econômico, o programa prevê a redução da jornada de trabalho para 30h semanais para todo funcionalismo público estadual. No mesmo eixo, o documento propõe a realização de concursos públicos para elevação do quadro estadual de professores e trabalhadores da saúde. Na Mobilidade Urbana, o plano prevê a estatização de todo o transporte estadual, garantindo passe livre para todos. Na área de Habitação, o texto propõe a garantia de moradia digna para todas as famílias brasileiras. Em Segurança Pública e Direitos Humanos, o programa prevê a proibição de operações militares em vilas e favelas. Na área de Educação, o documento estabelece educação pública e gratuita para todos e em todos os níveis. No eixo Meio Ambiente, o documento prevê o combate ao desmatamento ilegal como medida de proteção ambiental no estado.",
     "frases": [
       {
+        "id": "0c55c57fb17c81d6",
         "texto": "No eixo Trabalho e Desenvolvimento Econômico, o programa prevê a redução da jornada de trabalho para 30h semanais para todo funcionalismo público estadual.",
         "evidencias": [
           {
@@ -180,6 +181,7 @@
         ]
       },
       {
+        "id": "397b6f5ed3bab6ac",
         "texto": "No mesmo eixo, o documento propõe a realização de concursos públicos para elevação do quadro estadual de professores e trabalhadores da saúde.",
         "evidencias": [
           {
@@ -190,6 +192,7 @@
         ]
       },
       {
+        "id": "bb4ea1f3e7ef7de6",
         "texto": "Na Mobilidade Urbana, o plano prevê a estatização de todo o transporte estadual, garantindo passe livre para todos.",
         "evidencias": [
           {
@@ -200,6 +203,7 @@
         ]
       },
       {
+        "id": "c05ad10c2f063d68",
         "texto": "Na área de Habitação, o texto propõe a garantia de moradia digna para todas as famílias brasileiras.",
         "evidencias": [
           {
@@ -210,6 +214,7 @@
         ]
       },
       {
+        "id": "9ca7013fc0f59ef5",
         "texto": "Em Segurança Pública e Direitos Humanos, o programa prevê a proibição de operações militares em vilas e favelas.",
         "evidencias": [
           {
@@ -220,6 +225,7 @@
         ]
       },
       {
+        "id": "ada80e6b493999a3",
         "texto": "Na área de Educação, o documento estabelece educação pública e gratuita para todos e em todos os níveis.",
         "evidencias": [
           {
@@ -230,6 +236,7 @@
         ]
       },
       {
+        "id": "ed54118a59cc5c8f",
         "texto": "No eixo Meio Ambiente, o documento prevê o combate ao desmatamento ilegal como medida de proteção ambiental no estado.",
         "evidencias": [
           {

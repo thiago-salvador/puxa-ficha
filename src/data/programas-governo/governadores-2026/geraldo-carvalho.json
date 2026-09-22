@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -324,6 +324,7 @@
     "texto": "O programa propõe o fim da escala 6x1. Também propõe criar um Plano Estadual de Obras e Serviços Públicos, com prioridades definidas no documento. Prevê elaborar um Plano Estadual de Industrialização e Transição Ecológica, articulado a universidades, institutos federais, trabalhadores e comunidades. Propõe criar uma empresa pública estadual de desenvolvimento e engenharia para planejar e executar obras, projetos, inovação e planejamento regional. Prevê orçamento participativo estadual abrangendo 100% dos recursos, com plenárias territoriais e publicação do cumprimento das deliberações. Na educação, propõe reativar escolas do campo, reabrir unidades onde houver demanda social e garantir transporte escolar. Na área ambiental, propõe criar plano estadual de adaptação climática com metas para seca, calor extremo, queimadas e enchentes. No transporte, propõe criar uma empresa 100% pública.",
     "frases": [
       {
+        "id": "ae4c6908fb39eb9b",
         "texto": "O programa propõe o fim da escala 6x1.",
         "evidencias": [
           {
@@ -334,6 +335,7 @@
         ]
       },
       {
+        "id": "4546c6b625931fee",
         "texto": "Também propõe criar um Plano Estadual de Obras e Serviços Públicos, com prioridades definidas no documento.",
         "evidencias": [
           {
@@ -344,6 +346,7 @@
         ]
       },
       {
+        "id": "02708960d7f36b3d",
         "texto": "Prevê elaborar um Plano Estadual de Industrialização e Transição Ecológica, articulado a universidades, institutos federais, trabalhadores e comunidades.",
         "evidencias": [
           {
@@ -354,6 +357,7 @@
         ]
       },
       {
+        "id": "9040f71068dbf2b7",
         "texto": "Propõe criar uma empresa pública estadual de desenvolvimento e engenharia para planejar e executar obras, projetos, inovação e planejamento regional.",
         "evidencias": [
           {
@@ -364,6 +368,7 @@
         ]
       },
       {
+        "id": "4a621eabc2f39a1f",
         "texto": "Prevê orçamento participativo estadual abrangendo 100% dos recursos, com plenárias territoriais e publicação do cumprimento das deliberações.",
         "evidencias": [
           {
@@ -374,6 +379,7 @@
         ]
       },
       {
+        "id": "f2caa601c9bc9dda",
         "texto": "Na educação, propõe reativar escolas do campo, reabrir unidades onde houver demanda social e garantir transporte escolar.",
         "evidencias": [
           {
@@ -384,6 +390,7 @@
         ]
       },
       {
+        "id": "829d8972f3d2da84",
         "texto": "Na área ambiental, propõe criar plano estadual de adaptação climática com metas para seca, calor extremo, queimadas e enchentes.",
         "evidencias": [
           {
@@ -394,6 +401,7 @@
         ]
       },
       {
+        "id": "bf6fe7cc62d910d8",
         "texto": "No transporte, propõe criar uma empresa 100% pública.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -800,6 +800,7 @@
     "texto": "O programa apresenta um plano de ação para transformar a vontade de servir o povo capixaba em resultados cotidianos. Na educação, prevê apoio técnico, pedagógico e financeiro aos municípios para garantir a alfabetização até o final do 2º ano do Ensino Fundamental. Na segurança pública, propõe integrar câmeras privadas à rede pública com operação apoiada por inteligência artificial. Na saúde, planeja implantar uma Central Estadual Integrada de Regulação com painel público de transparência. Na habitação, propõe ações continuadas de regularização fundiária para entregar títulos. No meio ambiente, prevê uma Plataforma Estadual de Inteligência Territorial e IA para integrar bases ambientais, agrícolas, hídricas, climáticas e fundiárias. Na mobilidade metropolitana, planeja modernizar os terminais do Transcol para garantir acessibilidade e conforto aos passageiros. Na gestão pública, propõe tornar os serviços públicos acessíveis de forma integrada e segura.",
     "frases": [
       {
+        "id": "d05bfba5ecd2787e",
         "texto": "O programa apresenta um plano de ação para transformar a vontade de servir o povo capixaba em resultados cotidianos.",
         "evidencias": [
           {
@@ -810,6 +811,7 @@
         ]
       },
       {
+        "id": "616d4cf4f4ad925c",
         "texto": "Na educação, prevê apoio técnico, pedagógico e financeiro aos municípios para garantir a alfabetização até o final do 2º ano do Ensino Fundamental.",
         "evidencias": [
           {
@@ -820,6 +822,7 @@
         ]
       },
       {
+        "id": "c142065152107a34",
         "texto": "Na segurança pública, propõe integrar câmeras privadas à rede pública com operação apoiada por inteligência artificial.",
         "evidencias": [
           {
@@ -830,6 +833,7 @@
         ]
       },
       {
+        "id": "236243dcf01b88cf",
         "texto": "Na saúde, planeja implantar uma Central Estadual Integrada de Regulação com painel público de transparência.",
         "evidencias": [
           {
@@ -840,6 +844,7 @@
         ]
       },
       {
+        "id": "e787c604697ac9ac",
         "texto": "Na habitação, propõe ações continuadas de regularização fundiária para entregar títulos.",
         "evidencias": [
           {
@@ -850,6 +855,7 @@
         ]
       },
       {
+        "id": "cb312565d97a8fda",
         "texto": "No meio ambiente, prevê uma Plataforma Estadual de Inteligência Territorial e IA para integrar bases ambientais, agrícolas, hídricas, climáticas e fundiárias.",
         "evidencias": [
           {
@@ -860,6 +866,7 @@
         ]
       },
       {
+        "id": "fb0277304691b8b5",
         "texto": "Na mobilidade metropolitana, planeja modernizar os terminais do Transcol para garantir acessibilidade e conforto aos passageiros.",
         "evidencias": [
           {
@@ -870,6 +877,7 @@
         ]
       },
       {
+        "id": "2609b9536741a562",
         "texto": "Na gestão pública, propõe tornar os serviços públicos acessíveis de forma integrada e segura.",
         "evidencias": [
           {

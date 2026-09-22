@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -711,6 +711,7 @@
     "texto": "O documento apresenta as diretrizes do plano de governo de Flávio Bolsonaro para o período 2027-2030, organizado em capítulos temáticos que acompanham diferentes áreas de política pública. Na área de segurança pública, o plano propõe classificar facções como PCC e CV como organizações narcoterroristas e reduzir a maioridade penal de 18 para 16 anos. O programa Brasil por Elas prevê Centrais da Mulher, um aplicativo com assistente virtual chamado ClarIA e um sistema de pontuação denominado Ganha, Ganha. Na área de gestão pública, o plano propõe digitalizar os serviços públicos federais e criar uma identidade digital única integrada ao Gov.br. Em relação à tributação, o texto propõe revisar a reforma tributária em curso, reduzindo o IVA e a carga sobre produção e consumo. Na área trabalhista, o plano propõe reduzir gradualmente o custo do trabalho e defende a prevalência do negociado sobre o legislado. Sobre infraestrutura, o documento prevê investimento de R$ 900 bilhões em quatro anos em rodovias, hidrovias, portos, aeroportos e ferrovias.",
     "frases": [
       {
+        "id": "a20fbd7bd657d457",
         "texto": "O documento apresenta as diretrizes do plano de governo de Flávio Bolsonaro para o período 2027-2030, organizado em capítulos temáticos que acompanham diferentes áreas de política pública.",
         "evidencias": [
           {
@@ -728,6 +729,7 @@
         ]
       },
       {
+        "id": "85f1b24bbf4a7af5",
         "texto": "Na área de segurança pública, o plano propõe classificar facções como PCC e CV como organizações narcoterroristas e reduzir a maioridade penal de 18 para 16 anos.",
         "evidencias": [
           {
@@ -741,6 +743,7 @@
         ]
       },
       {
+        "id": "2b44456d9f59121c",
         "texto": "O programa Brasil por Elas prevê Centrais da Mulher, um aplicativo com assistente virtual chamado ClarIA e um sistema de pontuação denominado Ganha, Ganha.",
         "evidencias": [
           {
@@ -758,6 +761,7 @@
         ]
       },
       {
+        "id": "16123dd88d2b624e",
         "texto": "Na área de gestão pública, o plano propõe digitalizar os serviços públicos federais e criar uma identidade digital única integrada ao Gov.br.",
         "evidencias": [
           {
@@ -771,6 +775,7 @@
         ]
       },
       {
+        "id": "a87afdb686195fa7",
         "texto": "Em relação à tributação, o texto propõe revisar a reforma tributária em curso, reduzindo o IVA e a carga sobre produção e consumo.",
         "evidencias": [
           {
@@ -784,6 +789,7 @@
         ]
       },
       {
+        "id": "b9bac855c0bb9c8f",
         "texto": "Na área trabalhista, o plano propõe reduzir gradualmente o custo do trabalho e defende a prevalência do negociado sobre o legislado.",
         "evidencias": [
           {
@@ -797,6 +803,7 @@
         ]
       },
       {
+        "id": "eee437444f5710c1",
         "texto": "Sobre infraestrutura, o documento prevê investimento de R$ 900 bilhões em quatro anos em rodovias, hidrovias, portos, aeroportos e ferrovias.",
         "evidencias": [
           {

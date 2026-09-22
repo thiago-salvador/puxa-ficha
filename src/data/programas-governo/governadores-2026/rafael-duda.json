@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -730,6 +730,7 @@
     "texto": "O programa prevê Conselhos Populares para governar o Estado e as principais empresas, conforme a proposta de controle operário da produção e das riquezas. No setor mineral, o programa propõe a estatização das mineradoras, incluindo a reestatização da Vale e da CSN sob controle operário e popular. Na administração pública, o documento propõe reverter todas as privatizações realizadas pelo governo de Romeu Zema, abrangendo empresas e infraestrutura. Para o trabalho, o programa propõe jornada diária de 6 horas para todos, com a criação de outro turno destinado à contratação de mais pessoas. Na educação pública, o documento propõe investir 30% do total da arrecadação, conforme a medida apresentada na seção sobre o sistema universal. Na saúde, o programa propõe acabar com a gestão privada nos estabelecimentos de saúde, conforme a seção dedicada ao sistema público, gratuito e de qualidade.",
     "frases": [
       {
+        "id": "210e7383d72b9558",
         "texto": "O programa prevê Conselhos Populares para governar o Estado e as principais empresas, conforme a proposta de controle operário da produção e das riquezas.",
         "evidencias": [
           {
@@ -740,6 +741,7 @@
         ]
       },
       {
+        "id": "85911c3570b5e9aa",
         "texto": "No setor mineral, o programa propõe a estatização das mineradoras, incluindo a reestatização da Vale e da CSN sob controle operário e popular.",
         "evidencias": [
           {
@@ -750,6 +752,7 @@
         ]
       },
       {
+        "id": "5846e7fa2f7267b1",
         "texto": "Na administração pública, o documento propõe reverter todas as privatizações realizadas pelo governo de Romeu Zema, abrangendo empresas e infraestrutura.",
         "evidencias": [
           {
@@ -760,6 +763,7 @@
         ]
       },
       {
+        "id": "6f57eb34fb8260ed",
         "texto": "Para o trabalho, o programa propõe jornada diária de 6 horas para todos, com a criação de outro turno destinado à contratação de mais pessoas.",
         "evidencias": [
           {
@@ -770,6 +774,7 @@
         ]
       },
       {
+        "id": "be6f349a7d46a6fd",
         "texto": "Na educação pública, o documento propõe investir 30% do total da arrecadação, conforme a medida apresentada na seção sobre o sistema universal.",
         "evidencias": [
           {
@@ -780,6 +785,7 @@
         ]
       },
       {
+        "id": "7f21b2daf68ed60f",
         "texto": "Na saúde, o programa propõe acabar com a gestão privada nos estabelecimentos de saúde, conforme a seção dedicada ao sistema público, gratuito e de qualidade.",
         "evidencias": [
           {

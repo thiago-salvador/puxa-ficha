@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -604,6 +604,7 @@
     "texto": "O documento informa que 80% da extensão territorial do Pará é coberta pelo bioma amazônico, conforme o dado territorial registrado na fonte. Em 2025, a economia paraense cresceu 4,51%, conforme a informação econômica registrada no documento oficial consultado. Cerca de 56,5% dos trabalhadores paraenses atuam na informalidade, conforme o percentual de trabalhadores informado no documento. No primeiro trimestre de 2026, o rendimento médio no Pará foi de R$ 2.528, conforme o indicador de renda registrado na fonte. Em 2023, o Pará ocupou o 7º lugar nacional em violência com morte, conforme a posição indicada no documento. O Pará aparece como o segundo estado brasileiro com maior índice de conflitos no campo, atrás do Maranhão, segundo a informação registrada na fonte. Também foram registradas 21 disputas severas pelo acesso e uso da água no Pará, conforme o dado sobre acesso e uso da água registrado no documento.",
     "frases": [
       {
+        "id": "f776c0bcc684992b",
         "texto": "O documento informa que 80% da extensão territorial do Pará é coberta pelo bioma amazônico, conforme o dado territorial registrado na fonte.",
         "evidencias": [
           {
@@ -614,6 +615,7 @@
         ]
       },
       {
+        "id": "d4ddefb6033240ac",
         "texto": "Em 2025, a economia paraense cresceu 4,51%, conforme a informação econômica registrada no documento oficial consultado.",
         "evidencias": [
           {
@@ -624,6 +626,7 @@
         ]
       },
       {
+        "id": "acc2a11b15eeaece",
         "texto": "Cerca de 56,5% dos trabalhadores paraenses atuam na informalidade, conforme o percentual de trabalhadores informado no documento.",
         "evidencias": [
           {
@@ -634,6 +637,7 @@
         ]
       },
       {
+        "id": "448e7e1c9666a220",
         "texto": "No primeiro trimestre de 2026, o rendimento médio no Pará foi de R$ 2.528, conforme o indicador de renda registrado na fonte.",
         "evidencias": [
           {
@@ -644,6 +648,7 @@
         ]
       },
       {
+        "id": "1f7e20dfed25971e",
         "texto": "Em 2023, o Pará ocupou o 7º lugar nacional em violência com morte, conforme a posição indicada no documento.",
         "evidencias": [
           {
@@ -654,6 +659,7 @@
         ]
       },
       {
+        "id": "37675b28f51feaae",
         "texto": "O Pará aparece como o segundo estado brasileiro com maior índice de conflitos no campo, atrás do Maranhão, segundo a informação registrada na fonte.",
         "evidencias": [
           {
@@ -664,6 +670,7 @@
         ]
       },
       {
+        "id": "94d29bae1054735a",
         "texto": "Também foram registradas 21 disputas severas pelo acesso e uso da água no Pará, conforme o dado sobre acesso e uso da água registrado no documento.",
         "evidencias": [
           {

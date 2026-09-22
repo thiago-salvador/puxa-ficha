@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -240,6 +240,7 @@
     "texto": "O programa propõe erradicar o analfabetismo nos dois primeiros anos do governo por meio de um grande mutirão com aulas gratuitas nas escolas públicas. Partindo dessas experiências, nosso programa prevê elevar a pelo menos 50% a porcentagem de escolas da rede estadual com essa modalidade. Na formação docente, será instituído um Programa Estadual Permanente de Formação Docente articulado entre a Secretaria Estadual de Educação, a UERN, a UFRN, o IFRN e outras instituições públicas e privadas de ensino superior. Para a UERN, o programa prevê aumento progressivo e sustentado do orçamento como medida de fortalecimento institucional. Na saúde, propõe a estruturação da rede de serviços em todos os municípios, de forma regionalizada e hierarquizada, de acordo com o perfil sócio-epidemiológico e as reais necessidades de cada localidade adstrita. Na indústria, o governo fará um Grande Plano Estadual de Industrialização por um Processo de Substituição de Importações, identificando produtos hoje importados que possam ser produzidos aqui.",
     "frases": [
       {
+        "id": "9e60253dd739520c",
         "texto": "O programa propõe erradicar o analfabetismo nos dois primeiros anos do governo por meio de um grande mutirão com aulas gratuitas nas escolas públicas.",
         "evidencias": [
           {
@@ -250,6 +251,7 @@
         ]
       },
       {
+        "id": "737519f455d45581",
         "texto": "Partindo dessas experiências, nosso programa prevê elevar a pelo menos 50% a porcentagem de escolas da rede estadual com essa modalidade.",
         "evidencias": [
           {
@@ -260,6 +262,7 @@
         ]
       },
       {
+        "id": "66b2aec0ab3afe33",
         "texto": "Na formação docente, será instituído um Programa Estadual Permanente de Formação Docente articulado entre a Secretaria Estadual de Educação, a UERN, a UFRN, o IFRN e outras instituições públicas e privadas de ensino superior.",
         "evidencias": [
           {
@@ -270,6 +273,7 @@
         ]
       },
       {
+        "id": "c087ea035839ccac",
         "texto": "Para a UERN, o programa prevê aumento progressivo e sustentado do orçamento como medida de fortalecimento institucional.",
         "evidencias": [
           {
@@ -280,6 +284,7 @@
         ]
       },
       {
+        "id": "a03a0a7beb9f994c",
         "texto": "Na saúde, propõe a estruturação da rede de serviços em todos os municípios, de forma regionalizada e hierarquizada, de acordo com o perfil sócio-epidemiológico e as reais necessidades de cada localidade adstrita.",
         "evidencias": [
           {
@@ -290,6 +295,7 @@
         ]
       },
       {
+        "id": "733c7b5c0f13f6a1",
         "texto": "Na indústria, o governo fará um Grande Plano Estadual de Industrialização por um Processo de Substituição de Importações, identificando produtos hoje importados que possam ser produzidos aqui.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -549,6 +549,7 @@
     "texto": "O plano de governo do Partido Democrata, apresentado pela chapa Wilson Grassi e Suêd Haidar, propõe substituir tributos federais sobre folha, faturamento e produção por um Imposto Único Federal cobrado sobre movimentações financeiras. O documento propõe elevar o limite de isenção do Imposto de Renda da Pessoa Física para cinco salários mínimos. Na segurança pública, o plano prevê submeter a plebiscito a adoção de um modelo penitenciário de segurança máxima destinado a lideranças de facções criminosas. Na saúde, o texto propõe um programa nacional permanente de vigilância de zoonoses, com financiamento federal pactuado e meta de cobertura por município. Na educação, o plano propõe enviar ao Congresso uma emenda constitucional para transformar pesquisadores bolsistas em servidores públicos de carreira. Na habitação, o plano propõe reconhecer o histórico de pagamento de aluguel como comprovação de capacidade de pagamento para financiamento habitacional. Na defesa nacional, o plano apoia a Proposta de Emenda à Constituição nº 55/2023, que destina no mínimo 2% do produto interno bruto à defesa. O documento afirma que a reforma tributária depende de emenda constitucional.",
     "frases": [
       {
+        "id": "9171be25c736994c",
         "texto": "O plano de governo do Partido Democrata, apresentado pela chapa Wilson Grassi e Suêd Haidar, propõe substituir tributos federais sobre folha, faturamento e produção por um Imposto Único Federal cobrado sobre movimentações financeiras.",
         "evidencias": [
           {
@@ -562,6 +563,7 @@
         ]
       },
       {
+        "id": "4b171b9285f4ffcd",
         "texto": "O documento propõe elevar o limite de isenção do Imposto de Renda da Pessoa Física para cinco salários mínimos.",
         "evidencias": [
           {
@@ -571,6 +573,7 @@
         ]
       },
       {
+        "id": "bb44ed1b05cc4447",
         "texto": "Na segurança pública, o plano prevê submeter a plebiscito a adoção de um modelo penitenciário de segurança máxima destinado a lideranças de facções criminosas.",
         "evidencias": [
           {
@@ -584,6 +587,7 @@
         ]
       },
       {
+        "id": "94856adb5576054d",
         "texto": "Na saúde, o texto propõe um programa nacional permanente de vigilância de zoonoses, com financiamento federal pactuado e meta de cobertura por município.",
         "evidencias": [
           {
@@ -593,6 +597,7 @@
         ]
       },
       {
+        "id": "6699d7de1c97ebfd",
         "texto": "Na educação, o plano propõe enviar ao Congresso uma emenda constitucional para transformar pesquisadores bolsistas em servidores públicos de carreira.",
         "evidencias": [
           {
@@ -602,6 +607,7 @@
         ]
       },
       {
+        "id": "e01f30af48089495",
         "texto": "Na habitação, o plano propõe reconhecer o histórico de pagamento de aluguel como comprovação de capacidade de pagamento para financiamento habitacional.",
         "evidencias": [
           {
@@ -611,6 +617,7 @@
         ]
       },
       {
+        "id": "2f71a5d01fba1ce6",
         "texto": "Na defesa nacional, o plano apoia a Proposta de Emenda à Constituição nº 55/2023, que destina no mínimo 2% do produto interno bruto à defesa.",
         "evidencias": [
           {
@@ -620,6 +627,7 @@
         ]
       },
       {
+        "id": "7b009f4f132fa514",
         "texto": "O documento afirma que a reforma tributária depende de emenda constitucional.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "Na política salarial, o programa prevê reposição integral de 100% das perdas salariais, como medida de recomposição dos vencimentos dos trabalhadores diante da inflação. Na jornada trabalhista, o programa propõe redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana, sem prejuízo dos salários. No setor público empresarial, o programa propõe o cancelamento de todas as privatizações realizadas, conforme o item dedicado à economia nacional. Na saúde pública, o programa propõe plano de emergência para construção de hospitais e postos de saúde em todo o País. Na política habitacional, o programa propõe elaboração de um plano nacional de construção de milhões de moradias populares, sob o controle dos trabalhadores. Na comunicação digital, o programa propõe quebra do monopólio na Internet pelas grandes empresas privadas de telecomunicações.",
     "frases": [
       {
+        "id": "ce7f7ab0b173f70b",
         "texto": "Na política salarial, o programa prevê reposição integral de 100% das perdas salariais, como medida de recomposição dos vencimentos dos trabalhadores diante da inflação.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "703f264691e4a5ec",
         "texto": "Na jornada trabalhista, o programa propõe redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana, sem prejuízo dos salários.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "829e8952ceaa25cd",
         "texto": "No setor público empresarial, o programa propõe o cancelamento de todas as privatizações realizadas, conforme o item dedicado à economia nacional.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "1758e51916e34b87",
         "texto": "Na saúde pública, o programa propõe plano de emergência para construção de hospitais e postos de saúde em todo o País.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "433b9c0d0b2455bc",
         "texto": "Na política habitacional, o programa propõe elaboração de um plano nacional de construção de milhões de moradias populares, sob o controle dos trabalhadores.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "58cd4684ce9b5321",
         "texto": "Na comunicação digital, o programa propõe quebra do monopólio na Internet pelas grandes empresas privadas de telecomunicações.",
         "evidencias": [
           {

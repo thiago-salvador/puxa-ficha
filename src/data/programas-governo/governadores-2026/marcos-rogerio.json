@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1402,6 +1402,7 @@
     "texto": "Na saúde, a operação extraordinária prevê viabilidade financeira imediata para cirurgias eletivas, consultas e exames. O Programa Cirurgia Já constituirá uma política permanente para impedir a recomposição do passivo e manter prazos máximos de atendimento. Na infraestrutura, o programa prevê uma carteira de investimentos de longo prazo integrada por rodovias, pontes definitivas, portos secos, aeroportos, hidrovias, ferrovias autorizativas e corredores logísticos regionais. Na educação, o Programa Escola Digital universalizará o acesso à internet de alta velocidade em todas as escolas estaduais. Na produção rural, o Programa Campo Irrigado fornecerá gratuitamente kits de irrigação a agricultores familiares e pequenos produtores rurais. Na gestão orçamentária, o Programa Orçamento Base Zero terá como meta reduzir em até 30% as despesas discricionárias no quadriênio. Na política tributária, o governo não criará novos impostos, não elevará alíquotas estaduais e não aumentará a carga tributária.",
     "frases": [
       {
+        "id": "d627a3e3dd62deca",
         "texto": "Na saúde, a operação extraordinária prevê viabilidade financeira imediata para cirurgias eletivas, consultas e exames.",
         "evidencias": [
           {
@@ -1412,6 +1413,7 @@
         ]
       },
       {
+        "id": "f00587f8eb86e166",
         "texto": "O Programa Cirurgia Já constituirá uma política permanente para impedir a recomposição do passivo e manter prazos máximos de atendimento.",
         "evidencias": [
           {
@@ -1422,6 +1424,7 @@
         ]
       },
       {
+        "id": "ec167e5e4ee5811a",
         "texto": "Na infraestrutura, o programa prevê uma carteira de investimentos de longo prazo integrada por rodovias, pontes definitivas, portos secos, aeroportos, hidrovias, ferrovias autorizativas e corredores logísticos regionais.",
         "evidencias": [
           {
@@ -1432,6 +1435,7 @@
         ]
       },
       {
+        "id": "03b6c7e6e6e4997c",
         "texto": "Na educação, o Programa Escola Digital universalizará o acesso à internet de alta velocidade em todas as escolas estaduais.",
         "evidencias": [
           {
@@ -1442,6 +1446,7 @@
         ]
       },
       {
+        "id": "62c7d5c835aa608e",
         "texto": "Na produção rural, o Programa Campo Irrigado fornecerá gratuitamente kits de irrigação a agricultores familiares e pequenos produtores rurais.",
         "evidencias": [
           {
@@ -1452,6 +1457,7 @@
         ]
       },
       {
+        "id": "1ec7020f4eaed2e1",
         "texto": "Na gestão orçamentária, o Programa Orçamento Base Zero terá como meta reduzir em até 30% as despesas discricionárias no quadriênio.",
         "evidencias": [
           {
@@ -1462,6 +1468,7 @@
         ]
       },
       {
+        "id": "5d91e961ee93cda6",
         "texto": "Na política tributária, o governo não criará novos impostos, não elevará alíquotas estaduais e não aumentará a carga tributária.",
         "evidencias": [
           {

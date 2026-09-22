@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "Na saúde, o plano apresenta a informatização completa da rede estadual de saúde entre as propostas listadas para o setor. No mesmo eixo, o documento registra a integração eletrônica dos prontuários médicos como uma proposta da rede estadual de saúde. Na educação, o programa propõe a expansão das Escolas Técnicas Estaduais, conforme a lista de propostas do eixo educacional. Na segurança pública, o plano prevê a ampliação do uso de drones, monitoramento eletrônico e inteligência artificial, conforme a lista de propostas do setor. Para a mobilidade urbana, o documento propõe a expansão da malha cicloviária, incluída na lista de propostas sobre deslocamento urbano. Na transformação digital, o programa prevê a implantação do Governo Digital, apresentada como a primeira proposta desse eixo.",
     "frases": [
       {
+        "id": "57a9ab9f54b8b33c",
         "texto": "Na saúde, o plano apresenta a informatização completa da rede estadual de saúde entre as propostas listadas para o setor.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "a2e84e55d0de5e2c",
         "texto": "No mesmo eixo, o documento registra a integração eletrônica dos prontuários médicos como uma proposta da rede estadual de saúde.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "8b497d33e530059d",
         "texto": "Na educação, o programa propõe a expansão das Escolas Técnicas Estaduais, conforme a lista de propostas do eixo educacional.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "1bf762830c004f28",
         "texto": "Na segurança pública, o plano prevê a ampliação do uso de drones, monitoramento eletrônico e inteligência artificial, conforme a lista de propostas do setor.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "0313649e1926eb16",
         "texto": "Para a mobilidade urbana, o documento propõe a expansão da malha cicloviária, incluída na lista de propostas sobre deslocamento urbano.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "3b4178d3fd6a669e",
         "texto": "Na transformação digital, o programa prevê a implantação do Governo Digital, apresentada como a primeira proposta desse eixo.",
         "evidencias": [
           {

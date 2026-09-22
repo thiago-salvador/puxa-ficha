@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "O documento apresenta um programa oficial de luta para as eleições de 2026, organizado em pontos centrais. No campo salarial, prevê reposição integral de 100% das perdas salariais dos trabalhadores brasileiros. Para o trabalho, propõe redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana. Na previdência, defende aposentadoria, no máximo, aos 25 anos de trabalho para as mulheres. Sobre empresas estatais, propõe o cancelamento de todas as privatizações realizadas. Na educação, defende ensino público, gratuito e de qualidade para todo o povo. Na saúde, prevê plano de emergência para construção de hospitais e postos de saúde em todo o País. Na moradia, propõe elaboração de um plano nacional de construção de milhões de moradias populares.",
     "frases": [
       {
+        "id": "57712309ee83c945",
         "texto": "O documento apresenta um programa oficial de luta para as eleições de 2026, organizado em pontos centrais.",
         "evidencias": [
           {
@@ -157,6 +158,7 @@
         ]
       },
       {
+        "id": "79a06c1bacc0bd24",
         "texto": "No campo salarial, prevê reposição integral de 100% das perdas salariais dos trabalhadores brasileiros.",
         "evidencias": [
           {
@@ -167,6 +169,7 @@
         ]
       },
       {
+        "id": "1ece922622c7b71e",
         "texto": "Para o trabalho, propõe redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana.",
         "evidencias": [
           {
@@ -177,6 +180,7 @@
         ]
       },
       {
+        "id": "16a0d5910b324f11",
         "texto": "Na previdência, defende aposentadoria, no máximo, aos 25 anos de trabalho para as mulheres.",
         "evidencias": [
           {
@@ -187,6 +191,7 @@
         ]
       },
       {
+        "id": "293eec35cdbb0a60",
         "texto": "Sobre empresas estatais, propõe o cancelamento de todas as privatizações realizadas.",
         "evidencias": [
           {
@@ -197,6 +202,7 @@
         ]
       },
       {
+        "id": "e67574b1f4aa4e81",
         "texto": "Na educação, defende ensino público, gratuito e de qualidade para todo o povo.",
         "evidencias": [
           {
@@ -207,6 +213,7 @@
         ]
       },
       {
+        "id": "368e4b42c5c6420b",
         "texto": "Na saúde, prevê plano de emergência para construção de hospitais e postos de saúde em todo o País.",
         "evidencias": [
           {
@@ -217,6 +224,7 @@
         ]
       },
       {
+        "id": "dbff1dd80d11054d",
         "texto": "Na moradia, propõe elaboração de um plano nacional de construção de milhões de moradias populares.",
         "evidencias": [
           {

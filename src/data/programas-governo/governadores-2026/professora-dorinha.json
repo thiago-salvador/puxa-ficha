@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1402,6 +1402,7 @@
     "texto": "Na educação, o plano prevê política estadual de apoio aos municípios para ampliar a oferta de creches para crianças de 0 a 3 anos. Na saúde, o documento propõe concluir a obra do Hospital Geral de Gurupi. Na segurança pública, o plano prevê implantar o Programa Territórios de Paz para prevenção da violência. Na assistência social, o plano propõe dobrar o cofinanciamento do Benefício Eventual aos municípios. Na infraestrutura, o plano propõe elaborar o Plano Estadual de Saneamento Básico com metas de cobertura de água e esgoto. No desenvolvimento econômico, o documento prevê instituir estratégia estadual de neoindustrialização sustentável alinhada às vocações do território. Na agropecuária, o plano propõe implantar o Programa Produzir e Transformar para atrair indústrias de processamento de soja e milho. Na governança digital, o plano prevê implantar a Política Estadual de Inteligência Artificial.",
     "frases": [
       {
+        "id": "6b037c9a7c3a23b4",
         "texto": "Na educação, o plano prevê política estadual de apoio aos municípios para ampliar a oferta de creches para crianças de 0 a 3 anos.",
         "evidencias": [
           {
@@ -1412,6 +1413,7 @@
         ]
       },
       {
+        "id": "42cb751a609fb452",
         "texto": "Na saúde, o documento propõe concluir a obra do Hospital Geral de Gurupi.",
         "evidencias": [
           {
@@ -1422,6 +1424,7 @@
         ]
       },
       {
+        "id": "1000bbe735e04945",
         "texto": "Na segurança pública, o plano prevê implantar o Programa Territórios de Paz para prevenção da violência.",
         "evidencias": [
           {
@@ -1432,6 +1435,7 @@
         ]
       },
       {
+        "id": "0fc104a25b83f4f7",
         "texto": "Na assistência social, o plano propõe dobrar o cofinanciamento do Benefício Eventual aos municípios.",
         "evidencias": [
           {
@@ -1442,6 +1446,7 @@
         ]
       },
       {
+        "id": "921f3719a640002a",
         "texto": "Na infraestrutura, o plano propõe elaborar o Plano Estadual de Saneamento Básico com metas de cobertura de água e esgoto.",
         "evidencias": [
           {
@@ -1452,6 +1457,7 @@
         ]
       },
       {
+        "id": "bc43bc9ff9d0df27",
         "texto": "No desenvolvimento econômico, o documento prevê instituir estratégia estadual de neoindustrialização sustentável alinhada às vocações do território.",
         "evidencias": [
           {
@@ -1462,6 +1468,7 @@
         ]
       },
       {
+        "id": "cf330fd351d36d2b",
         "texto": "Na agropecuária, o plano propõe implantar o Programa Produzir e Transformar para atrair indústrias de processamento de soja e milho.",
         "evidencias": [
           {
@@ -1472,6 +1479,7 @@
         ]
       },
       {
+        "id": "86f5c2a0931afba1",
         "texto": "Na governança digital, o plano prevê implantar a Política Estadual de Inteligência Artificial.",
         "evidencias": [
           {

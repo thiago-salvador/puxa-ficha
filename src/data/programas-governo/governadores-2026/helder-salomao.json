@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -926,6 +926,7 @@
     "texto": "O programa prevê revisar e adequar o Programa Estadual de Agroecologia como política estadual estruturante. O programa prevê intensificar a implementação do Plano Estadual de Adaptação às Mudanças Climáticas, com foco nas áreas de risco e áreas agrícolas sujeitas à desertificação. O programa prevê aperfeiçoar a integração entre órgãos ambientais para combater o desmatamento ilegal, intensificando a fiscalização por satélite e drones. O programa prevê fortalecer e integrar os órgãos ambientais estaduais. O programa prevê instituir uma política estadual de economia azul no Espírito Santo, instrumento de planejamento estratégico e governança integrada do ordenamento territorial estadual. O programa prevê criar o Programa Capixaba de Bioeconomia, focado na valorização econômica de resíduos e produtos de base biológica para a economia. O programa prevê impulsionar a descarbonização das cadeias produtivas e uma transição energética justa. O programa prevê instituir o Programa Capixaba de Transição Energética no Transporte Público.",
     "frases": [
       {
+        "id": "1bd3df3c00c204ac",
         "texto": "O programa prevê revisar e adequar o Programa Estadual de Agroecologia como política estadual estruturante.",
         "evidencias": [
           {
@@ -936,6 +937,7 @@
         ]
       },
       {
+        "id": "dfe5bf092316dad4",
         "texto": "O programa prevê intensificar a implementação do Plano Estadual de Adaptação às Mudanças Climáticas, com foco nas áreas de risco e áreas agrícolas sujeitas à desertificação.",
         "evidencias": [
           {
@@ -946,6 +948,7 @@
         ]
       },
       {
+        "id": "ad0d67646b7981ce",
         "texto": "O programa prevê aperfeiçoar a integração entre órgãos ambientais para combater o desmatamento ilegal, intensificando a fiscalização por satélite e drones.",
         "evidencias": [
           {
@@ -956,6 +959,7 @@
         ]
       },
       {
+        "id": "6d7a5db7dd53012c",
         "texto": "O programa prevê fortalecer e integrar os órgãos ambientais estaduais.",
         "evidencias": [
           {
@@ -966,6 +970,7 @@
         ]
       },
       {
+        "id": "744162006511fdcb",
         "texto": "O programa prevê instituir uma política estadual de economia azul no Espírito Santo, instrumento de planejamento estratégico e governança integrada do ordenamento territorial estadual.",
         "evidencias": [
           {
@@ -976,6 +981,7 @@
         ]
       },
       {
+        "id": "15dc6a9bcb54a9f5",
         "texto": "O programa prevê criar o Programa Capixaba de Bioeconomia, focado na valorização econômica de resíduos e produtos de base biológica para a economia.",
         "evidencias": [
           {
@@ -986,6 +992,7 @@
         ]
       },
       {
+        "id": "4b61ee09bbc2c16c",
         "texto": "O programa prevê impulsionar a descarbonização das cadeias produtivas e uma transição energética justa.",
         "evidencias": [
           {
@@ -996,6 +1003,7 @@
         ]
       },
       {
+        "id": "ba6e866b66ca42f8",
         "texto": "O programa prevê instituir o Programa Capixaba de Transição Energética no Transporte Público.",
         "evidencias": [
           {

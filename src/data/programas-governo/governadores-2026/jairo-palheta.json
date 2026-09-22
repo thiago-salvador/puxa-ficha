@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "O programa prevê reposição integral de 100% das perdas salariais dos trabalhadores, conforme o ponto dedicado à proteção dos salários. No campo do trabalho, propõe redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais), sem prejuízo dos salários. Quanto à previdência, defende reajuste das aposentadorias e pensões, com reposição de 100% das perdas, conforme o ponto dedicado às reformas previdenciárias. Para a saúde pública, propõe um plano de emergência para construção de hospitais e postos de saúde em todo o País, dentro do ponto sobre saúde pública e gratuita. Na habitação, prevê elaboração de um plano nacional de construção de milhões de moradias populares, para garantir habitação digna à população. Nas escolas, propõe eleição dos diretores e de todos os postos de direção nas escolas, sob controle da comunidade escolar.",
     "frases": [
       {
+        "id": "158f05eb986879cc",
         "texto": "O programa prevê reposição integral de 100% das perdas salariais dos trabalhadores, conforme o ponto dedicado à proteção dos salários.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "6ea6b4a7daf26169",
         "texto": "No campo do trabalho, propõe redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais), sem prejuízo dos salários.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "7f1a3104b4ea0035",
         "texto": "Quanto à previdência, defende reajuste das aposentadorias e pensões, com reposição de 100% das perdas, conforme o ponto dedicado às reformas previdenciárias.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "3b62a7eff8ac9a3d",
         "texto": "Para a saúde pública, propõe um plano de emergência para construção de hospitais e postos de saúde em todo o País, dentro do ponto sobre saúde pública e gratuita.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "8d04bbc56fe4d134",
         "texto": "Na habitação, prevê elaboração de um plano nacional de construção de milhões de moradias populares, para garantir habitação digna à população.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "149b33d7dd873e5f",
         "texto": "Nas escolas, propõe eleição dos diretores e de todos os postos de direção nas escolas, sob controle da comunidade escolar.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -968,6 +968,7 @@
     "texto": "O programa prevê ampliar o acesso à água para a produção agropecuária no Agreste e no Sertão, com dessalinização, cisternas, barragens e irrigação de menor consumo. O programa propõe integrar programas de transferência de renda a trilhas de formação adequadas ao perfil de cada pessoa, considerando as atividades econômicas de cada região. O programa planeja integrar as bases de dados de todo o Estado para reduzir a apresentação repetida de documentos nos serviços públicos. O programa prevê fortalecer polos regionais descentralizados de saúde, com prioridade para Serra Talhada, Petrolina, Caruaru e Garanhuns. O programa propõe alternar formação técnica na escola com aprendizagem prática remunerada nas empresas parceiras para estudantes do ensino médio. O programa propõe integrar dados de todas as forças de segurança em plataforma única, com análise preditiva e compartilhamento de informações em tempo real.",
     "frases": [
       {
+        "id": "f3d33a6522bea598",
         "texto": "O programa prevê ampliar o acesso à água para a produção agropecuária no Agreste e no Sertão, com dessalinização, cisternas, barragens e irrigação de menor consumo.",
         "evidencias": [
           {
@@ -978,6 +979,7 @@
         ]
       },
       {
+        "id": "b0a134bdbc29f78a",
         "texto": "O programa propõe integrar programas de transferência de renda a trilhas de formação adequadas ao perfil de cada pessoa, considerando as atividades econômicas de cada região.",
         "evidencias": [
           {
@@ -988,6 +990,7 @@
         ]
       },
       {
+        "id": "27f44f5262ab7e6b",
         "texto": "O programa planeja integrar as bases de dados de todo o Estado para reduzir a apresentação repetida de documentos nos serviços públicos.",
         "evidencias": [
           {
@@ -998,6 +1001,7 @@
         ]
       },
       {
+        "id": "5595fe129a5f993b",
         "texto": "O programa prevê fortalecer polos regionais descentralizados de saúde, com prioridade para Serra Talhada, Petrolina, Caruaru e Garanhuns.",
         "evidencias": [
           {
@@ -1008,6 +1012,7 @@
         ]
       },
       {
+        "id": "45883d9ffe942e45",
         "texto": "O programa propõe alternar formação técnica na escola com aprendizagem prática remunerada nas empresas parceiras para estudantes do ensino médio.",
         "evidencias": [
           {
@@ -1018,6 +1023,7 @@
         ]
       },
       {
+        "id": "a1b9f984518bc31c",
         "texto": "O programa propõe integrar dados de todas as forças de segurança em plataforma única, com análise preditiva e compartilhamento de informações em tempo real.",
         "evidencias": [
           {

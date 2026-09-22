@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -828,6 +828,7 @@
     "texto": "O programa propõe conselhos regionais e setoriais com participação de sindicatos, movimentos populares, povos indígenas, quilombolas, agricultores familiares, universidades e comunidades para discutir prioridades de investimento e desenvolvimento. O programa prevê a reestatização da COSANPA e da CELPA como parte da ampliação da atuação estatal na economia. O programa propõe um programa de emprego com contratação direta na construção de moradias populares, priorizando municípios com maior desemprego e vulnerabilidade. O programa prevê uma rede estadual pública de transporte hidroviário, com linhas regulares para comunidades ribeirinhas. O programa propõe uma fila estadual única, pública e transparente para consultas, exames e cirurgias, permitindo acompanhar a posição e o tempo de espera. O programa prevê um Banco Estadual de Terras e Imóveis Públicos destinado à habitação popular.",
     "frases": [
       {
+        "id": "e18c81e97a6a7feb",
         "texto": "O programa propõe conselhos regionais e setoriais com participação de sindicatos, movimentos populares, povos indígenas, quilombolas, agricultores familiares, universidades e comunidades para discutir prioridades de investimento e desenvolvimento.",
         "evidencias": [
           {
@@ -838,6 +839,7 @@
         ]
       },
       {
+        "id": "7fde651dd80db1f6",
         "texto": "O programa prevê a reestatização da COSANPA e da CELPA como parte da ampliação da atuação estatal na economia.",
         "evidencias": [
           {
@@ -848,6 +850,7 @@
         ]
       },
       {
+        "id": "286911f1ec1f3da8",
         "texto": "O programa propõe um programa de emprego com contratação direta na construção de moradias populares, priorizando municípios com maior desemprego e vulnerabilidade.",
         "evidencias": [
           {
@@ -858,6 +861,7 @@
         ]
       },
       {
+        "id": "df451bc8d4c72075",
         "texto": "O programa prevê uma rede estadual pública de transporte hidroviário, com linhas regulares para comunidades ribeirinhas.",
         "evidencias": [
           {
@@ -868,6 +872,7 @@
         ]
       },
       {
+        "id": "939c71c8dd473351",
         "texto": "O programa propõe uma fila estadual única, pública e transparente para consultas, exames e cirurgias, permitindo acompanhar a posição e o tempo de espera.",
         "evidencias": [
           {
@@ -878,6 +883,7 @@
         ]
       },
       {
+        "id": "48c07a6866d05c0c",
         "texto": "O programa prevê um Banco Estadual de Terras e Imóveis Públicos destinado à habitação popular.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -226,6 +226,7 @@
     "texto": "O programa prevê a suspensão da dívida pública estadual para realizar auditoria das obrigações mantidas com entes estatais e privados, conforme sua primeira proposta econômica. No setor elétrico, o documento propõe a reestatização da energia elétrica como medida de reorganização da prestação desse serviço no estado. Na segurança pública, prevê a desmilitarização das polícias e das guardas municipais como alteração institucional do modelo de segurança estadual. Na saúde pública, propõe a criação de entidade estadual dedicada à pesquisa e à produção de vacinas e medicamentos para atendimento da população. Na educação, defende a oferta pública, gratuita, laica e de qualidade como diretriz para o sistema educacional do Rio de Janeiro. Na habitação, planeja a regularização fundiária de unidades habitacionais situadas em favelas, ocupações e bairros populares, vinculada ao direito humano à moradia. Na mobilidade urbana, propõe a administração estatal dos trens e metrôs sob controle popular, conforme a proposta apresentada no capítulo sobre direito à cidade.",
     "frases": [
       {
+        "id": "9dc625e83f10bc28",
         "texto": "O programa prevê a suspensão da dívida pública estadual para realizar auditoria das obrigações mantidas com entes estatais e privados, conforme sua primeira proposta econômica.",
         "evidencias": [
           {
@@ -236,6 +237,7 @@
         ]
       },
       {
+        "id": "652ebbb774dfa650",
         "texto": "No setor elétrico, o documento propõe a reestatização da energia elétrica como medida de reorganização da prestação desse serviço no estado.",
         "evidencias": [
           {
@@ -246,6 +248,7 @@
         ]
       },
       {
+        "id": "fc9f7341a4b0dc10",
         "texto": "Na segurança pública, prevê a desmilitarização das polícias e das guardas municipais como alteração institucional do modelo de segurança estadual.",
         "evidencias": [
           {
@@ -256,6 +259,7 @@
         ]
       },
       {
+        "id": "9ea82e89524bc9c8",
         "texto": "Na saúde pública, propõe a criação de entidade estadual dedicada à pesquisa e à produção de vacinas e medicamentos para atendimento da população.",
         "evidencias": [
           {
@@ -266,6 +270,7 @@
         ]
       },
       {
+        "id": "5036925da54a5aca",
         "texto": "Na educação, defende a oferta pública, gratuita, laica e de qualidade como diretriz para o sistema educacional do Rio de Janeiro.",
         "evidencias": [
           {
@@ -276,6 +281,7 @@
         ]
       },
       {
+        "id": "8ca4215f26637448",
         "texto": "Na habitação, planeja a regularização fundiária de unidades habitacionais situadas em favelas, ocupações e bairros populares, vinculada ao direito humano à moradia.",
         "evidencias": [
           {
@@ -286,6 +292,7 @@
         ]
       },
       {
+        "id": "9983f82301e3d03f",
         "texto": "Na mobilidade urbana, propõe a administração estatal dos trens e metrôs sob controle popular, conforme a proposta apresentada no capítulo sobre direito à cidade.",
         "evidencias": [
           {

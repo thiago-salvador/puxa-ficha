@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "Em matéria salarial, o programa prevê a reposição integral de 100% das perdas salariais dos trabalhadores. Para acompanhar a inflação, o programa propõe escala móvel dos salários, com aumento automático toda vez que o custo de vida do trabalhador subir 3%. No eixo da jornada laboral, o programa planeja a redução do tempo de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais). No campo habitacional, o programa propõe a expropriação dos imóveis vagos dos especuladores do mercado imobiliário. No ensino superior, o programa prevê livre ingresso nas universidades. Na saúde pública, o programa propõe um plano de emergência para a construção de hospitais e postos de saúde em todo o País. No campo da comunicação digital, o programa defende Internet gratuita para toda a população.",
     "frases": [
       {
+        "id": "66b28a2653a01ac4",
         "texto": "Em matéria salarial, o programa prevê a reposição integral de 100% das perdas salariais dos trabalhadores.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "92ecbf96190a927b",
         "texto": "Para acompanhar a inflação, o programa propõe escala móvel dos salários, com aumento automático toda vez que o custo de vida do trabalhador subir 3%.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "a9aff683687c273e",
         "texto": "No eixo da jornada laboral, o programa planeja a redução do tempo de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais).",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "d16aee8f3040257a",
         "texto": "No campo habitacional, o programa propõe a expropriação dos imóveis vagos dos especuladores do mercado imobiliário.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "f5391c47630722e2",
         "texto": "No ensino superior, o programa prevê livre ingresso nas universidades.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "95b7d9ff79b54dc5",
         "texto": "Na saúde pública, o programa propõe um plano de emergência para a construção de hospitais e postos de saúde em todo o País.",
         "evidencias": [
           {
@@ -202,6 +208,7 @@
         ]
       },
       {
+        "id": "9ed561cea6da7e66",
         "texto": "No campo da comunicação digital, o programa defende Internet gratuita para toda a população.",
         "evidencias": [
           {

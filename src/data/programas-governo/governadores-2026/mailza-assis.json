@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -996,6 +996,7 @@
     "texto": "O plano organiza suas propostas em Dez Eixos Estratégicos. Na educação, prevê expandir gradativamente a oferta da educação em tempo integral em todas as regionais do Acre. O programa prevê concluir os Planos de Gestão Territorial e Ambiental de todas as Terras Indígenas do Acre. O programa prevê assegurar o pagamento regular de bolsas para até 148 agentes agroflorestais indígenas. Na saúde, prevê implantar o prontuário eletrônico unificado em toda a rede estadual de saúde. Também prevê fortalecer a Rede de Atenção Psicossocial, ampliando o acesso aos serviços de saúde mental. Na administração pública, prevê ampliar a oferta de serviços públicos digitais em plataforma integrada. O programa prevê ampliar a cobertura do sinal de televisão da Nova TV Aldeia para cinco municípios: Cruzeiro do Sul, Tarauacá, Feijó, Brasiléia e Sena Madureira.",
     "frases": [
       {
+        "id": "9aba735678e8fcd3",
         "texto": "O plano organiza suas propostas em Dez Eixos Estratégicos.",
         "evidencias": [
           {
@@ -1006,6 +1007,7 @@
         ]
       },
       {
+        "id": "7051a3b9e981ca5f",
         "texto": "Na educação, prevê expandir gradativamente a oferta da educação em tempo integral em todas as regionais do Acre.",
         "evidencias": [
           {
@@ -1016,6 +1018,7 @@
         ]
       },
       {
+        "id": "9904a867b61ac79f",
         "texto": "O programa prevê concluir os Planos de Gestão Territorial e Ambiental de todas as Terras Indígenas do Acre.",
         "evidencias": [
           {
@@ -1026,6 +1029,7 @@
         ]
       },
       {
+        "id": "5f1248f829e1368d",
         "texto": "O programa prevê assegurar o pagamento regular de bolsas para até 148 agentes agroflorestais indígenas.",
         "evidencias": [
           {
@@ -1036,6 +1040,7 @@
         ]
       },
       {
+        "id": "8ece4cd1b43dbcaf",
         "texto": "Na saúde, prevê implantar o prontuário eletrônico unificado em toda a rede estadual de saúde.",
         "evidencias": [
           {
@@ -1046,6 +1051,7 @@
         ]
       },
       {
+        "id": "d5eb0ee95c722c5f",
         "texto": "Também prevê fortalecer a Rede de Atenção Psicossocial, ampliando o acesso aos serviços de saúde mental.",
         "evidencias": [
           {
@@ -1056,6 +1062,7 @@
         ]
       },
       {
+        "id": "a2b5858cfabeb304",
         "texto": "Na administração pública, prevê ampliar a oferta de serviços públicos digitais em plataforma integrada.",
         "evidencias": [
           {
@@ -1066,6 +1073,7 @@
         ]
       },
       {
+        "id": "06f4d39d78e18294",
         "texto": "O programa prevê ampliar a cobertura do sinal de televisão da Nova TV Aldeia para cinco municípios: Cruzeiro do Sul, Tarauacá, Feijó, Brasiléia e Sena Madureira.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -212,6 +212,7 @@
     "texto": "O programa propõe a substituição do atual regime por uma Democracia Operária baseada em Conselhos Populares. O documento prevê mandatos revogáveis para representantes eleitos que não cumprirem as decisões do Conselho. O plano prevê que vereadores, deputados, secretários e o governador recebam o mesmo salário médio de um trabalhador. A proposta inclui a redução da jornada de trabalho sem redução salarial, com divisão do trabalho existente entre os desempregados. O programa propõe a criação de uma empresa estadual de construção para executar um plano de obras públicas. O texto prevê a estatização do sistema de transporte coletivo de Macapá e Santana. O documento propõe a reestatização do saneamento, com retorno da Companhia de Água e Esgoto ao controle estatal. O plano prevê a desmilitarização das polícias e a criação de uma Polícia Civil Unificada.",
     "frases": [
       {
+        "id": "a6b0dcef89a314fe",
         "texto": "O programa propõe a substituição do atual regime por uma Democracia Operária baseada em Conselhos Populares.",
         "evidencias": [
           {
@@ -222,6 +223,7 @@
         ]
       },
       {
+        "id": "77b799e1652288c6",
         "texto": "O documento prevê mandatos revogáveis para representantes eleitos que não cumprirem as decisões do Conselho.",
         "evidencias": [
           {
@@ -232,6 +234,7 @@
         ]
       },
       {
+        "id": "7c5c2eea20a5d1da",
         "texto": "O plano prevê que vereadores, deputados, secretários e o governador recebam o mesmo salário médio de um trabalhador.",
         "evidencias": [
           {
@@ -242,6 +245,7 @@
         ]
       },
       {
+        "id": "e5f42ed044270ad1",
         "texto": "A proposta inclui a redução da jornada de trabalho sem redução salarial, com divisão do trabalho existente entre os desempregados.",
         "evidencias": [
           {
@@ -252,6 +256,7 @@
         ]
       },
       {
+        "id": "6ad098d2dcb6167c",
         "texto": "O programa propõe a criação de uma empresa estadual de construção para executar um plano de obras públicas.",
         "evidencias": [
           {
@@ -262,6 +267,7 @@
         ]
       },
       {
+        "id": "1132574d1eb05af1",
         "texto": "O texto prevê a estatização do sistema de transporte coletivo de Macapá e Santana.",
         "evidencias": [
           {
@@ -277,6 +283,7 @@
         ]
       },
       {
+        "id": "d360f592d7e37227",
         "texto": "O documento propõe a reestatização do saneamento, com retorno da Companhia de Água e Esgoto ao controle estatal.",
         "evidencias": [
           {
@@ -287,6 +294,7 @@
         ]
       },
       {
+        "id": "981f761c1d8bfa85",
         "texto": "O plano prevê a desmilitarização das polícias e a criação de uma Polícia Civil Unificada.",
         "evidencias": [
           {

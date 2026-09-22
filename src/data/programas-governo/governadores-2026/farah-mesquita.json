@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -282,6 +282,7 @@
     "texto": "O plano de governo de Farah Mesquita, candidato ao governo de Roraima pelo Solidariedade, organiza as propostas em dez eixos temáticos. No desenvolvimento econômico, prevê o programa Emprega Roraima, central estadual de intermediação de mão de obra integrada a cursos técnicos e qualificação profissional. Na saúde, propõe mutirão permanente de consultas e cirurgias para reduzir as filas de espera em especialidades críticas. Na educação, planeja garantir que toda criança esteja alfabetizada na idade certa por meio do programa Roraima Alfabetiza. Na segurança pública, prevê central única de comando e controle unindo Polícia Civil, Militar e Corpo de Bombeiros. No desenvolvimento rural, propõe força-tarefa estadual de regularização fundiária para dar segurança jurídica a produtores e comunidades rurais. Na infraestrutura, planeja recuperação e manutenção contínua das principais rodovias estaduais. Na gestão pública, prevê portal da transparência com divulgação em tempo real de gastos, contratos e licitações do governo estadual.",
     "frases": [
       {
+        "id": "37b6c2dc6300d816",
         "texto": "O plano de governo de Farah Mesquita, candidato ao governo de Roraima pelo Solidariedade, organiza as propostas em dez eixos temáticos.",
         "evidencias": [
           {
@@ -297,6 +298,7 @@
         ]
       },
       {
+        "id": "d8ef9f119351f192",
         "texto": "No desenvolvimento econômico, prevê o programa Emprega Roraima, central estadual de intermediação de mão de obra integrada a cursos técnicos e qualificação profissional.",
         "evidencias": [
           {
@@ -307,6 +309,7 @@
         ]
       },
       {
+        "id": "e2af5e44744fe2d4",
         "texto": "Na saúde, propõe mutirão permanente de consultas e cirurgias para reduzir as filas de espera em especialidades críticas.",
         "evidencias": [
           {
@@ -317,6 +320,7 @@
         ]
       },
       {
+        "id": "484632c6bcebab4e",
         "texto": "Na educação, planeja garantir que toda criança esteja alfabetizada na idade certa por meio do programa Roraima Alfabetiza.",
         "evidencias": [
           {
@@ -327,6 +331,7 @@
         ]
       },
       {
+        "id": "eba9eeac4d0c7604",
         "texto": "Na segurança pública, prevê central única de comando e controle unindo Polícia Civil, Militar e Corpo de Bombeiros.",
         "evidencias": [
           {
@@ -337,6 +342,7 @@
         ]
       },
       {
+        "id": "215f07aff5b325f8",
         "texto": "No desenvolvimento rural, propõe força-tarefa estadual de regularização fundiária para dar segurança jurídica a produtores e comunidades rurais.",
         "evidencias": [
           {
@@ -347,6 +353,7 @@
         ]
       },
       {
+        "id": "46947ed3937468d1",
         "texto": "Na infraestrutura, planeja recuperação e manutenção contínua das principais rodovias estaduais.",
         "evidencias": [
           {
@@ -357,6 +364,7 @@
         ]
       },
       {
+        "id": "47468b24536c9629",
         "texto": "Na gestão pública, prevê portal da transparência com divulgação em tempo real de gastos, contratos e licitações do governo estadual.",
         "evidencias": [
           {

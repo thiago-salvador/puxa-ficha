@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "O programa propõe a reposição integral de 100% das perdas salariais dos trabalhadores diante da inflação descrita no documento. Também prevê aumento emergencial de 50% de todos os salários como medida de reajuste imediato dos vencimentos. Na área trabalhista, defende a redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana, sem prejuízo dos salários. No campo econômico, propõe o cancelamento de todas as privatizações realizadas. Para a saúde pública, defende um plano de emergência para construção de hospitais e postos de saúde em todo o País. Sobre terras indígenas, prevê demarcação e posse da terra para todos os índios das retomadas. Em moradia, propõe a elaboração de um plano nacional de construção de milhões de moradias populares para garantir habitação digna à população.",
     "frases": [
       {
+        "id": "e4437ad18e327717",
         "texto": "O programa propõe a reposição integral de 100% das perdas salariais dos trabalhadores diante da inflação descrita no documento.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "683b9cce90f58085",
         "texto": "Também prevê aumento emergencial de 50% de todos os salários como medida de reajuste imediato dos vencimentos.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "d87cc10a89faa0c1",
         "texto": "Na área trabalhista, defende a redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana, sem prejuízo dos salários.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "1506ddb6433d87fa",
         "texto": "No campo econômico, propõe o cancelamento de todas as privatizações realizadas.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "1f76aab1444d3768",
         "texto": "Para a saúde pública, defende um plano de emergência para construção de hospitais e postos de saúde em todo o País.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "ff458b691e726484",
         "texto": "Sobre terras indígenas, prevê demarcação e posse da terra para todos os índios das retomadas.",
         "evidencias": [
           {
@@ -202,6 +208,7 @@
         ]
       },
       {
+        "id": "e9a03d3e77f573d5",
         "texto": "Em moradia, propõe a elaboração de um plano nacional de construção de milhões de moradias populares para garantir habitação digna à população.",
         "evidencias": [
           {

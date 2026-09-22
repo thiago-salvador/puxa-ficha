@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1528,6 +1528,7 @@
     "texto": "Na área de gestão fiscal, o programa informa que, no primeiro ano de governo, houve uma economia de R$ 2,5 bilhões nos gastos públicos. Na política social, o programa Mães de Pernambuco investe R$ 360 milhões por ano. Na educação infantil, a proposta prevê a construção de 250 novas creches. Na segurança pública, mais de 7 mil novos profissionais foram convocados. Na infraestrutura rodoviária, o programa PE na Estrada prevê a entrega de mais de 3.500 quilômetros de rodovias. Na área de recursos hídricos, a primeira etapa da Adutora do Agreste beneficia 1,3 milhão de pessoas. Na saúde, o Programa Cuida PE realizou 1,3 milhão de exames de imagem. Na atividade econômica, a indústria de Pernambuco cresceu 14,9% nos cinco primeiros meses de 2026.",
     "frases": [
       {
+        "id": "978b13af7e16da56",
         "texto": "Na área de gestão fiscal, o programa informa que, no primeiro ano de governo, houve uma economia de R$ 2,5 bilhões nos gastos públicos.",
         "evidencias": [
           {
@@ -1538,6 +1539,7 @@
         ]
       },
       {
+        "id": "3d1c2c7bca1ca405",
         "texto": "Na política social, o programa Mães de Pernambuco investe R$ 360 milhões por ano.",
         "evidencias": [
           {
@@ -1548,6 +1550,7 @@
         ]
       },
       {
+        "id": "390a99b593f3206d",
         "texto": "Na educação infantil, a proposta prevê a construção de 250 novas creches.",
         "evidencias": [
           {
@@ -1558,6 +1561,7 @@
         ]
       },
       {
+        "id": "6a24dec7561a7612",
         "texto": "Na segurança pública, mais de 7 mil novos profissionais foram convocados.",
         "evidencias": [
           {
@@ -1568,6 +1572,7 @@
         ]
       },
       {
+        "id": "5e48269d23fa1952",
         "texto": "Na infraestrutura rodoviária, o programa PE na Estrada prevê a entrega de mais de 3.500 quilômetros de rodovias.",
         "evidencias": [
           {
@@ -1578,6 +1583,7 @@
         ]
       },
       {
+        "id": "da72503ea9ed43f1",
         "texto": "Na área de recursos hídricos, a primeira etapa da Adutora do Agreste beneficia 1,3 milhão de pessoas.",
         "evidencias": [
           {
@@ -1588,6 +1594,7 @@
         ]
       },
       {
+        "id": "70b062a32c1f050e",
         "texto": "Na saúde, o Programa Cuida PE realizou 1,3 milhão de exames de imagem.",
         "evidencias": [
           {
@@ -1598,6 +1605,7 @@
         ]
       },
       {
+        "id": "7793fe5ff8843781",
         "texto": "Na atividade econômica, a indústria de Pernambuco cresceu 14,9% nos cinco primeiros meses de 2026.",
         "evidencias": [
           {

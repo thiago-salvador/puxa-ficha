@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -996,6 +996,7 @@
     "texto": "Promover a inovação no setor produtivo mediante a adoção de tecnologias, irrigação, energias renováveis, biotecnologia e soluções digitais que aumentem a eficiência, a sustentabilidade e a competitividade da economia do Piauí. Expandir e diversificar os cursos técnicos, de formação profissional, de graduação e de pós-graduação nas 28 microrregiões do Piauí, com a participação da Universidade Estadual do Piauí (UESPI), do Piauí Instituto de Tecnologia (PIT) e das demais instituições públicas e privadas de ensino. Consolidar o programa Piauí Saúde Digital como política permanente e garantir o tempo médio de espera para consultas especializadas para 10 dias. Democratizar o acesso a sessões de terapia psicológica online e de curto prazo para a população geral, em apoio às Unidades Básicas de Saúde (UBS). Garantir acessibilidade digital nos canais do Gov.PI Cidadão para pessoas com deficiência, idosos e usuários de baixa escolaridade. Promover a proteção e recuperação do meio ambiente nos territórios, com a redução de 50% dos focos de queimadas e de 50% do desmatamento ilegal.",
     "frases": [
       {
+        "id": "1bea02ed3389eb28",
         "texto": "Promover a inovação no setor produtivo mediante a adoção de tecnologias, irrigação, energias renováveis, biotecnologia e soluções digitais que aumentem a eficiência, a sustentabilidade e a competitividade da economia do Piauí.",
         "evidencias": [
           {
@@ -1006,6 +1007,7 @@
         ]
       },
       {
+        "id": "23811cc0c68be555",
         "texto": "Expandir e diversificar os cursos técnicos, de formação profissional, de graduação e de pós-graduação nas 28 microrregiões do Piauí, com a participação da Universidade Estadual do Piauí (UESPI), do Piauí Instituto de Tecnologia (PIT) e das demais instituições públicas e privadas de ensino.",
         "evidencias": [
           {
@@ -1016,6 +1018,7 @@
         ]
       },
       {
+        "id": "47098c52bbbffaba",
         "texto": "Consolidar o programa Piauí Saúde Digital como política permanente e garantir o tempo médio de espera para consultas especializadas para 10 dias.",
         "evidencias": [
           {
@@ -1026,6 +1029,7 @@
         ]
       },
       {
+        "id": "07fa1aa258ecafa8",
         "texto": "Democratizar o acesso a sessões de terapia psicológica online e de curto prazo para a população geral, em apoio às Unidades Básicas de Saúde (UBS).",
         "evidencias": [
           {
@@ -1036,6 +1040,7 @@
         ]
       },
       {
+        "id": "e627c88eaa223a9d",
         "texto": "Garantir acessibilidade digital nos canais do Gov.PI Cidadão para pessoas com deficiência, idosos e usuários de baixa escolaridade.",
         "evidencias": [
           {
@@ -1046,6 +1051,7 @@
         ]
       },
       {
+        "id": "66c0f8d0547ec5d8",
         "texto": "Promover a proteção e recuperação do meio ambiente nos territórios, com a redução de 50% dos focos de queimadas e de 50% do desmatamento ilegal.",
         "evidencias": [
           {

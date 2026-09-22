@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "revisao": {
     "reviewer": "Codex (revisão editorial nesta tarefa)",
@@ -169,6 +169,7 @@
     "texto": "O programa propõe interiorizar o ensino superior por meio da UNITINS, aproximando a formação das vocações econômicas de cada região do Tocantins. Na saúde, prevê regionalizar a assistência, fortalecendo hospitais e serviços em diferentes pontos do estado para oferecer atendimento mais perto de casa. Para a agricultura familiar, estabelece o objetivo de alcançar cem mil famílias produtivas em quatro anos, ampliando a renda e a produção. Na logística, propõe integrar os diferentes modais de transporte em uma estratégia estadual para reduzir custos e aproximar produtores dos mercados consumidores. Para a segurança, defende fortalecer a atuação conjunta das forças estaduais e municipais, com maior presença, inteligência e capacidade operacional no território. Na área ambiental, busca proteger recursos hídricos, nascentes, florestas e biodiversidade, associando o crescimento econômico à preservação das riquezas naturais do estado. O plano trata a responsabilidade fiscal como condição para que o estado mantenha sua capacidade permanente de investimento. A governança proposta prevê estruturar cada programa com objetivos e indicadores, permitindo acompanhar a execução das políticas e avaliar os resultados apresentados.",
     "frases": [
       {
+        "id": "b0e60abd020733f8",
         "texto": "O programa propõe interiorizar o ensino superior por meio da UNITINS, aproximando a formação das vocações econômicas de cada região do Tocantins.",
         "evidencias": [
           {
@@ -179,6 +180,7 @@
         ]
       },
       {
+        "id": "06f2b5e1b49db0ae",
         "texto": "Na saúde, prevê regionalizar a assistência, fortalecendo hospitais e serviços em diferentes pontos do estado para oferecer atendimento mais perto de casa.",
         "evidencias": [
           {
@@ -194,6 +196,7 @@
         ]
       },
       {
+        "id": "615e76bd810acaed",
         "texto": "Para a agricultura familiar, estabelece o objetivo de alcançar cem mil famílias produtivas em quatro anos, ampliando a renda e a produção.",
         "evidencias": [
           {
@@ -204,6 +207,7 @@
         ]
       },
       {
+        "id": "e409018db5ca44ff",
         "texto": "Na logística, propõe integrar os diferentes modais de transporte em uma estratégia estadual para reduzir custos e aproximar produtores dos mercados consumidores.",
         "evidencias": [
           {
@@ -219,6 +223,7 @@
         ]
       },
       {
+        "id": "9758d59741542412",
         "texto": "Para a segurança, defende fortalecer a atuação conjunta das forças estaduais e municipais, com maior presença, inteligência e capacidade operacional no território.",
         "evidencias": [
           {
@@ -229,6 +234,7 @@
         ]
       },
       {
+        "id": "76dc5bc88e264378",
         "texto": "Na área ambiental, busca proteger recursos hídricos, nascentes, florestas e biodiversidade, associando o crescimento econômico à preservação das riquezas naturais do estado.",
         "evidencias": [
           {
@@ -239,6 +245,7 @@
         ]
       },
       {
+        "id": "4baae17bfe2e6f91",
         "texto": "O plano trata a responsabilidade fiscal como condição para que o estado mantenha sua capacidade permanente de investimento.",
         "evidencias": [
           {
@@ -249,6 +256,7 @@
         ]
       },
       {
+        "id": "e80e86ea3553662e",
         "texto": "A governança proposta prevê estruturar cada programa com objetivos e indicadores, permitindo acompanhar a execução das políticas e avaliar os resultados apresentados.",
         "evidencias": [
           {

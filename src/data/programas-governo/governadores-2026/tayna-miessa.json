@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -366,6 +366,7 @@
     "texto": "O programa propõe a elaboração das peças orçamentárias estaduais junto à população, por meio de audiências de orçamento participativo. A proposta prevê taxação progressiva das grandes propriedades agrícolas, comerciais e industriais do Estado. Na segurança pública, o programa propõe reduzir o uso da força letal por meio de protocolos claros, câmeras corporais, transparência e auditoria independente. Na educação, o documento propõe passe livre estudantil no transporte público municipal e intermunicipal para atividades curriculares e extracurriculares. Na moradia, o programa propõe a entrega de moradias 100% subsidiadas pelo Estado às famílias em extrema vulnerabilidade social. Na saúde, a proposta prevê ampliar a rede de saúde da família, com suporte profissional e insumos para famílias com histórico de diabetes, hipertensão arterial e cardiopatias. Na cultura, o documento propõe a construção de salas de cinema públicas em todos os municípios, com entrada de valor simbólico.",
     "frases": [
       {
+        "id": "8ed269d21392f079",
         "texto": "O programa propõe a elaboração das peças orçamentárias estaduais junto à população, por meio de audiências de orçamento participativo.",
         "evidencias": [
           {
@@ -376,6 +377,7 @@
         ]
       },
       {
+        "id": "3244cdfed3c2226b",
         "texto": "A proposta prevê taxação progressiva das grandes propriedades agrícolas, comerciais e industriais do Estado.",
         "evidencias": [
           {
@@ -386,6 +388,7 @@
         ]
       },
       {
+        "id": "d033bffb535b5d8c",
         "texto": "Na segurança pública, o programa propõe reduzir o uso da força letal por meio de protocolos claros, câmeras corporais, transparência e auditoria independente.",
         "evidencias": [
           {
@@ -396,6 +399,7 @@
         ]
       },
       {
+        "id": "acf00df5a630455a",
         "texto": "Na educação, o documento propõe passe livre estudantil no transporte público municipal e intermunicipal para atividades curriculares e extracurriculares.",
         "evidencias": [
           {
@@ -406,6 +410,7 @@
         ]
       },
       {
+        "id": "60e7312847ca30d4",
         "texto": "Na moradia, o programa propõe a entrega de moradias 100% subsidiadas pelo Estado às famílias em extrema vulnerabilidade social.",
         "evidencias": [
           {
@@ -416,6 +421,7 @@
         ]
       },
       {
+        "id": "3a78e7480c09d883",
         "texto": "Na saúde, a proposta prevê ampliar a rede de saúde da família, com suporte profissional e insumos para famílias com histórico de diabetes, hipertensão arterial e cardiopatias.",
         "evidencias": [
           {
@@ -426,6 +432,7 @@
         ]
       },
       {
+        "id": "92a7fab4293cf69c",
         "texto": "Na cultura, o documento propõe a construção de salas de cinema públicas em todos os municípios, com entrada de valor simbólico.",
         "evidencias": [
           {

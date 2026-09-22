@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -782,6 +782,7 @@
   "resumo": {
     "frases": [
       {
+        "id": "c9737169321b4c0c",
         "texto": "O programa de governo apresenta um balanço do mandato 2023-2026 e propõe a continuidade das políticas em curso.",
         "evidencias": [
           {
@@ -795,6 +796,7 @@
         ]
       },
       {
+        "id": "a981e3bf74d94a62",
         "texto": "O texto afirma que a economia brasileira passou a crescer em torno de 3% ao ano no período.",
         "evidencias": [
           {
@@ -804,6 +806,7 @@
         ]
       },
       {
+        "id": "7c25b571f951b7da",
         "texto": "O documento propõe a criação do Ministério da Segurança Pública após aprovação de PEC específica pelo Congresso.",
         "evidencias": [
           {
@@ -813,6 +816,7 @@
         ]
       },
       {
+        "id": "9c306527d34c6320",
         "texto": "O programa defende a continuidade da política de valorização do salário-mínimo.",
         "evidencias": [
           {
@@ -822,6 +826,7 @@
         ]
       },
       {
+        "id": "8392ca06102d48f2",
         "texto": "O texto estabelece a meta de alcançar desmatamento líquido zero até 2030.",
         "evidencias": [
           {
@@ -831,6 +836,7 @@
         ]
       },
       {
+        "id": "969f6798266ca0b7",
         "texto": "O programa defende avançar na regulação democrática das redes sociais e plataformas digitais.",
         "evidencias": [
           {
@@ -840,6 +846,7 @@
         ]
       },
       {
+        "id": "3d0c65cfe92318f8",
         "texto": "O documento afirma que o Brasil saiu do Mapa da Fome da ONU.",
         "evidencias": [
           {
@@ -849,6 +856,7 @@
         ]
       },
       {
+        "id": "83cc529fd0f959ee",
         "texto": "O programa propõe o fim da escala 6x1 e a redução da jornada de trabalho para 40 horas semanais, sem redução salarial.",
         "evidencias": [
           {

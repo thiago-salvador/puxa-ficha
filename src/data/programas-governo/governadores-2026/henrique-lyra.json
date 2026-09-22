@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -142,6 +142,7 @@
     "texto": "O programa prevê um reajuste imediato dos salários, acompanhado de uma política de proteção dos vencimentos dos trabalhadores diante da inflação. Na área trabalhista, o programa propõe reduzir a jornada de trabalho para o máximo de 35 horas semanais, sem prejuízo dos salários, para que todos trabalhem. Na economia nacional, o programa prevê o cancelamento de todas as privatizações realizadas, conforme o item sobre empresas estatais. Para os serviços públicos, o programa propõe concursos públicos periódicos para repor o quadro de servidores, dentro do item dedicado ao funcionalismo. Na política agrária, o programa prevê o assentamento imediato dos milhões de sem-terra acampados em todo o País, como medida de acesso à terra. Na saúde pública, o programa prevê um plano de emergência para construção de hospitais e postos de saúde em todo o País, conforme o item dedicado ao setor.",
     "frases": [
       {
+        "id": "d299ffa17d810e6f",
         "texto": "O programa prevê um reajuste imediato dos salários, acompanhado de uma política de proteção dos vencimentos dos trabalhadores diante da inflação.",
         "evidencias": [
           {
@@ -152,6 +153,7 @@
         ]
       },
       {
+        "id": "a3104e8f67fd8a12",
         "texto": "Na área trabalhista, o programa propõe reduzir a jornada de trabalho para o máximo de 35 horas semanais, sem prejuízo dos salários, para que todos trabalhem.",
         "evidencias": [
           {
@@ -162,6 +164,7 @@
         ]
       },
       {
+        "id": "52afd165e0e7380f",
         "texto": "Na economia nacional, o programa prevê o cancelamento de todas as privatizações realizadas, conforme o item sobre empresas estatais.",
         "evidencias": [
           {
@@ -172,6 +175,7 @@
         ]
       },
       {
+        "id": "29ee6b8c6d607c76",
         "texto": "Para os serviços públicos, o programa propõe concursos públicos periódicos para repor o quadro de servidores, dentro do item dedicado ao funcionalismo.",
         "evidencias": [
           {
@@ -182,6 +186,7 @@
         ]
       },
       {
+        "id": "d77824483fcc4d80",
         "texto": "Na política agrária, o programa prevê o assentamento imediato dos milhões de sem-terra acampados em todo o País, como medida de acesso à terra.",
         "evidencias": [
           {
@@ -192,6 +197,7 @@
         ]
       },
       {
+        "id": "a091a9980b377d51",
         "texto": "Na saúde pública, o programa prevê um plano de emergência para construção de hospitais e postos de saúde em todo o País, conforme o item dedicado ao setor.",
         "evidencias": [
           {

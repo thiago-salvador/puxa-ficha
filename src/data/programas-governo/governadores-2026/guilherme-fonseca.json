@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -156,6 +156,7 @@
     "texto": "O programa prevê salário mínimo estadual, rumo ao salário-mínimo necessário, calculado pelo DIEESE, para garantir direitos básicos constitucionais. Na saúde, propõe a defesa do SUS público, universal, gratuito e 100% estatal, com ampliação do investimento público na atenção básica. Na educação, prevê ampliação de vagas em creches, escolas e na UPE por meio de plano de obras públicas. Em moradia, propõe construção de moradias populares e infraestrutura por empresa pública de obras. No transporte público, prevê tarifa zero financiada por meio da taxação das grandes empresas, conforme a proposta apresentada. Na segurança pública, propõe incorporação de câmeras corporais para todos os agentes de segurança pública, com gravação ininterrupta, armazenamento das imagens sob controle de órgãos civis e acesso às gravações quando houver processo legal.",
     "frases": [
       {
+        "id": "f3f6a47fe1f1334a",
         "texto": "O programa prevê salário mínimo estadual, rumo ao salário-mínimo necessário, calculado pelo DIEESE, para garantir direitos básicos constitucionais.",
         "evidencias": [
           {
@@ -166,6 +167,7 @@
         ]
       },
       {
+        "id": "3e4e81af9cb9dd3f",
         "texto": "Na saúde, propõe a defesa do SUS público, universal, gratuito e 100% estatal, com ampliação do investimento público na atenção básica.",
         "evidencias": [
           {
@@ -176,6 +178,7 @@
         ]
       },
       {
+        "id": "dcec548a2f094a90",
         "texto": "Na educação, prevê ampliação de vagas em creches, escolas e na UPE por meio de plano de obras públicas.",
         "evidencias": [
           {
@@ -186,6 +189,7 @@
         ]
       },
       {
+        "id": "2d05e72066df3bf9",
         "texto": "Em moradia, propõe construção de moradias populares e infraestrutura por empresa pública de obras.",
         "evidencias": [
           {
@@ -196,6 +200,7 @@
         ]
       },
       {
+        "id": "d2fcb7e92857986f",
         "texto": "No transporte público, prevê tarifa zero financiada por meio da taxação das grandes empresas, conforme a proposta apresentada.",
         "evidencias": [
           {
@@ -206,6 +211,7 @@
         ]
       },
       {
+        "id": "79d029d601e94e2a",
         "texto": "Na segurança pública, propõe incorporação de câmeras corporais para todos os agentes de segurança pública, com gravação ininterrupta, armazenamento das imagens sob controle de órgãos civis e acesso às gravações quando houver processo legal.",
         "evidencias": [
           {

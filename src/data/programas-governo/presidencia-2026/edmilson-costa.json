@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -171,6 +171,7 @@
     "texto": "O Partido Comunista Brasileiro (PCB) apresenta Edmilson Costa e Cleusa Santos como candidatos a presidente e vice-presidente nas eleições de 2026. O programa defende a construção do Poder Popular como caminho para o socialismo, rejeitando soluções reformistas. O documento propõe a convocação de uma Assembleia Constituinte de Novo Tipo e a extinção do Senado, substituído por um Parlamento Unicameral. O programa propõe a nacionalização e estatização do sistema monetário e financeiro, incluindo a criação do Banco dos Trabalhadores. O texto defende que a Petrobras seja 100% estatal. O programa propõe a redução da jornada de trabalho para 30 horas semanais sem redução salarial e o fim da escala 6x1. O documento defende a reforma agrária popular, com desapropriação sem indenização de latifúndios improdutivos que não cumpram função social. O programa afirma solidariedade a Cuba, Palestina, Venezuela e Irã, entre outros povos em luta contra o imperialismo.",
     "frases": [
       {
+        "id": "15da739e799ffbfc",
         "texto": "O Partido Comunista Brasileiro (PCB) apresenta Edmilson Costa e Cleusa Santos como candidatos a presidente e vice-presidente nas eleições de 2026.",
         "evidencias": [
           {
@@ -180,6 +181,7 @@
         ]
       },
       {
+        "id": "29ff1c21d754d3f1",
         "texto": "O programa defende a construção do Poder Popular como caminho para o socialismo, rejeitando soluções reformistas.",
         "evidencias": [
           {
@@ -193,6 +195,7 @@
         ]
       },
       {
+        "id": "19190daf42397284",
         "texto": "O documento propõe a convocação de uma Assembleia Constituinte de Novo Tipo e a extinção do Senado, substituído por um Parlamento Unicameral.",
         "evidencias": [
           {
@@ -206,6 +209,7 @@
         ]
       },
       {
+        "id": "6c83cd9bb37b0d2b",
         "texto": "O programa propõe a nacionalização e estatização do sistema monetário e financeiro, incluindo a criação do Banco dos Trabalhadores.",
         "evidencias": [
           {
@@ -215,6 +219,7 @@
         ]
       },
       {
+        "id": "62a6afe0888449d8",
         "texto": "O texto defende que a Petrobras seja 100% estatal.",
         "evidencias": [
           {
@@ -224,6 +229,7 @@
         ]
       },
       {
+        "id": "243e4a71141a6c59",
         "texto": "O programa propõe a redução da jornada de trabalho para 30 horas semanais sem redução salarial e o fim da escala 6x1.",
         "evidencias": [
           {
@@ -233,6 +239,7 @@
         ]
       },
       {
+        "id": "22c3573a6b3f03e1",
         "texto": "O documento defende a reforma agrária popular, com desapropriação sem indenização de latifúndios improdutivos que não cumpram função social.",
         "evidencias": [
           {
@@ -242,6 +249,7 @@
         ]
       },
       {
+        "id": "cf5d44312ec5216b",
         "texto": "O programa afirma solidariedade a Cuba, Palestina, Venezuela e Irã, entre outros povos em luta contra o imperialismo.",
         "evidencias": [
           {

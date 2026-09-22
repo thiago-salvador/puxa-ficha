@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -240,6 +240,7 @@
     "texto": "O programa declara que não defende os modelos de Cuba, China ou Venezuela, conforme formulação registrada em seu texto oficial. O programa afirma que o Estado não é um árbitro neutro entre as classes sociais, segundo a formulação apresentada em seu texto. O programa propõe a defesa do SUS 100% público, universal, gratuito e estatal, conforme descrito no documento programático oficial apresentado. O programa afirma que a política repressiva fortaleceu o narcotráfico, registrando essa relação entre a política e o narcotráfico em seu texto. Sobre o clima, o programa afirma que a temperatura global poderá subir entre 2,5 °C e 2,9 °C até o final do século. No Paraná, o programa informa que a destruição da vegetação nativa subiu de 430 hectares em 2024 para 684 hectares em 2025.",
     "frases": [
       {
+        "id": "7ec98f63d0c118c0",
         "texto": "O programa declara que não defende os modelos de Cuba, China ou Venezuela, conforme formulação registrada em seu texto oficial.",
         "evidencias": [
           {
@@ -250,6 +251,7 @@
         ]
       },
       {
+        "id": "6dd56319645d6cc0",
         "texto": "O programa afirma que o Estado não é um árbitro neutro entre as classes sociais, segundo a formulação apresentada em seu texto.",
         "evidencias": [
           {
@@ -260,6 +262,7 @@
         ]
       },
       {
+        "id": "ab116efe5fc5aa2f",
         "texto": "O programa propõe a defesa do SUS 100% público, universal, gratuito e estatal, conforme descrito no documento programático oficial apresentado.",
         "evidencias": [
           {
@@ -270,6 +273,7 @@
         ]
       },
       {
+        "id": "680357edf5da9ce0",
         "texto": "O programa afirma que a política repressiva fortaleceu o narcotráfico, registrando essa relação entre a política e o narcotráfico em seu texto.",
         "evidencias": [
           {
@@ -280,6 +284,7 @@
         ]
       },
       {
+        "id": "37d2f9182223b524",
         "texto": "Sobre o clima, o programa afirma que a temperatura global poderá subir entre 2,5 °C e 2,9 °C até o final do século.",
         "evidencias": [
           {
@@ -290,6 +295,7 @@
         ]
       },
       {
+        "id": "ebad7bd464082e4d",
         "texto": "No Paraná, o programa informa que a destruição da vegetação nativa subiu de 430 hectares em 2024 para 684 hectares em 2025.",
         "evidencias": [
           {

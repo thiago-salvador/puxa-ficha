@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -927,6 +927,7 @@
     "texto": "O plano de governo, apresentado para o período de 2027 a 2030, organiza suas propostas em 26 temas de governo. O documento define a segurança pública como responsabilidade direta da Presidência da República. O plano prevê a criação do Ministério da Segurança Pública e de um Sistema Integrado de Proteção à Soberania Nacional. O texto propõe encaminhar ao Congresso, no início do mandato, proposta de emenda à Constituição para extinguir a reeleição consecutiva no Poder Executivo. O plano estabelece como meta reduzir o tempo mediano das filas prioritárias de saúde em pelo menos 50% até 2030. O documento propõe elevar a taxa de investimento total da economia dos atuais cerca de 17% do PIB para aproximadamente 25%. O plano prevê a regulamentação e o endurecimento das regras dos jogos e apostas on-line, com proibição de publicidade em veículos de comunicação de massa e redes sociais. O texto propõe trabalhar pela aprovação de uma PEC para reduzir a maioridade penal para 16 anos para determinados crimes.",
     "frases": [
       {
+        "id": "fb229d392f480e4a",
         "texto": "O plano de governo, apresentado para o período de 2027 a 2030, organiza suas propostas em 26 temas de governo.",
         "evidencias": [
           {
@@ -936,6 +937,7 @@
         ]
       },
       {
+        "id": "b3491f140b26c903",
         "texto": "O documento define a segurança pública como responsabilidade direta da Presidência da República.",
         "evidencias": [
           {
@@ -945,6 +947,7 @@
         ]
       },
       {
+        "id": "9b4d7034292b87aa",
         "texto": "O plano prevê a criação do Ministério da Segurança Pública e de um Sistema Integrado de Proteção à Soberania Nacional.",
         "evidencias": [
           {
@@ -958,6 +961,7 @@
         ]
       },
       {
+        "id": "29345e5935ad3016",
         "texto": "O texto propõe encaminhar ao Congresso, no início do mandato, proposta de emenda à Constituição para extinguir a reeleição consecutiva no Poder Executivo.",
         "evidencias": [
           {
@@ -967,6 +971,7 @@
         ]
       },
       {
+        "id": "c862e6522d20f0d5",
         "texto": "O plano estabelece como meta reduzir o tempo mediano das filas prioritárias de saúde em pelo menos 50% até 2030.",
         "evidencias": [
           {
@@ -976,6 +981,7 @@
         ]
       },
       {
+        "id": "0e8ad153d472dc8c",
         "texto": "O documento propõe elevar a taxa de investimento total da economia dos atuais cerca de 17% do PIB para aproximadamente 25%.",
         "evidencias": [
           {
@@ -985,6 +991,7 @@
         ]
       },
       {
+        "id": "786535b255920edb",
         "texto": "O plano prevê a regulamentação e o endurecimento das regras dos jogos e apostas on-line, com proibição de publicidade em veículos de comunicação de massa e redes sociais.",
         "evidencias": [
           {
@@ -994,6 +1001,7 @@
         ]
       },
       {
+        "id": "a18f78abfd0995c1",
         "texto": "O texto propõe trabalhar pela aprovação de uma PEC para reduzir a maioridade penal para 16 anos para determinados crimes.",
         "evidencias": [
           {

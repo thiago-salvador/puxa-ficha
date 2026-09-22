@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -156,6 +156,7 @@
     "texto": "O plano prevê unificar os serviços estaduais no portal único GovPará, eliminando o uso de papel, reduzindo custos burocráticos, encurtando prazos de atendimento ao cidadão. No eixo de segurança, o documento propõe a consolidação dos Centros Integrados de Comando e Controle nas 13 Regiões de Integração, com unificação de bancos de dados institucionais. Na saúde, o programa prevê conectividade via satélite em 100% das Unidades Básicas de Saúde municipais para teleconsultorias em tempo real com especialistas. Na educação, o plano propõe dobrar as vagas de cursos técnicos integrados ao Ensino Médio, adaptando currículos às vocações regionais. Na política ambiental, o documento prevê monitoramento por satélite de alta resolução com alertas em tempo real para combate contínuo a crimes ambientais. No saneamento, o plano prevê levar água tratada a 90% da população urbana/rural por meio da aceleração das metas do Marco Legal do Saneamento.",
     "frases": [
       {
+        "id": "82bf1db4a6f124a2",
         "texto": "O plano prevê unificar os serviços estaduais no portal único GovPará, eliminando o uso de papel, reduzindo custos burocráticos, encurtando prazos de atendimento ao cidadão.",
         "evidencias": [
           {
@@ -166,6 +167,7 @@
         ]
       },
       {
+        "id": "9fe67e272d0cabd2",
         "texto": "No eixo de segurança, o documento propõe a consolidação dos Centros Integrados de Comando e Controle nas 13 Regiões de Integração, com unificação de bancos de dados institucionais.",
         "evidencias": [
           {
@@ -176,6 +178,7 @@
         ]
       },
       {
+        "id": "5f949c9bd037fcad",
         "texto": "Na saúde, o programa prevê conectividade via satélite em 100% das Unidades Básicas de Saúde municipais para teleconsultorias em tempo real com especialistas.",
         "evidencias": [
           {
@@ -186,6 +189,7 @@
         ]
       },
       {
+        "id": "ea367f7c95eccdcf",
         "texto": "Na educação, o plano propõe dobrar as vagas de cursos técnicos integrados ao Ensino Médio, adaptando currículos às vocações regionais.",
         "evidencias": [
           {
@@ -196,6 +200,7 @@
         ]
       },
       {
+        "id": "1187e4b8001ebd53",
         "texto": "Na política ambiental, o documento prevê monitoramento por satélite de alta resolução com alertas em tempo real para combate contínuo a crimes ambientais.",
         "evidencias": [
           {
@@ -206,6 +211,7 @@
         ]
       },
       {
+        "id": "b7ed5005f6a7fb5d",
         "texto": "No saneamento, o plano prevê levar água tratada a 90% da população urbana/rural por meio da aceleração das metas do Marco Legal do Saneamento.",
         "evidencias": [
           {

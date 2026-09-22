@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -2046,6 +2046,7 @@
     "texto": "O plano de governo abrange o período de 2027 a 2030. O Plano SIGA organiza o programa em quatro pilares: Segurança, Investimentos, Gestão e Ambiente. O objetivo central declarado é promover empregos com segurança. Na segurança, o programa prevê reduzir a letalidade violenta de cerca de 21 para 12 mortos por 100 mil habitantes em oito anos. Também prevê retomar e manter 20 territórios até 2030. Na mobilidade, o Corredor Pavuna-Arco terá mais de 20 quilômetros e 22 estações, ligando cinco municípios da Baixada Fluminense. Na agenda ambiental, o Rio Verde prevê o plantio de 2,5 milhões de árvores e a recuperação de 20 unidades de conservação. Na gestão pública, todos os contratos do estado serão publicados em tempo real e rastreáveis do empenho ao pagamento no primeiro ano.",
     "frases": [
       {
+        "id": "b9d9731d067f107b",
         "texto": "O plano de governo abrange o período de 2027 a 2030.",
         "evidencias": [
           {
@@ -2056,6 +2057,7 @@
         ]
       },
       {
+        "id": "79a0a0ac4a47363f",
         "texto": "O Plano SIGA organiza o programa em quatro pilares: Segurança, Investimentos, Gestão e Ambiente.",
         "evidencias": [
           {
@@ -2066,6 +2068,7 @@
         ]
       },
       {
+        "id": "15eb8ee234fe4169",
         "texto": "O objetivo central declarado é promover empregos com segurança.",
         "evidencias": [
           {
@@ -2076,6 +2079,7 @@
         ]
       },
       {
+        "id": "33c0f7045d96108e",
         "texto": "Na segurança, o programa prevê reduzir a letalidade violenta de cerca de 21 para 12 mortos por 100 mil habitantes em oito anos.",
         "evidencias": [
           {
@@ -2086,6 +2090,7 @@
         ]
       },
       {
+        "id": "3e83362f28cc8b5c",
         "texto": "Também prevê retomar e manter 20 territórios até 2030.",
         "evidencias": [
           {
@@ -2096,6 +2101,7 @@
         ]
       },
       {
+        "id": "abdf4b9bf2fd08c0",
         "texto": "Na mobilidade, o Corredor Pavuna-Arco terá mais de 20 quilômetros e 22 estações, ligando cinco municípios da Baixada Fluminense.",
         "evidencias": [
           {
@@ -2106,6 +2112,7 @@
         ]
       },
       {
+        "id": "78260e15b63c8d31",
         "texto": "Na agenda ambiental, o Rio Verde prevê o plantio de 2,5 milhões de árvores e a recuperação de 20 unidades de conservação.",
         "evidencias": [
           {
@@ -2116,6 +2123,7 @@
         ]
       },
       {
+        "id": "6ab94e5c37931444",
         "texto": "Na gestão pública, todos os contratos do estado serão publicados em tempo real e rastreáveis do empenho ao pagamento no primeiro ano.",
         "evidencias": [
           {

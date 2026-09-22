@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -90,6 +90,7 @@
     "texto": "O programa do PCO para as eleições de 2026 apresenta as eleições como uma tribuna secundária de propaganda das reivindicações da classe trabalhadora, não como instrumento de promessas. O documento defende a revolução, o governo operário e o comunismo como lema central da candidatura. Entre as propostas econômicas, o texto propõe reposição integral das perdas salariais e criação de uma escala móvel de salários vinculada à inflação. O programa propõe a redução da jornada de trabalho para 35 horas semanais como medida para combater o desemprego. O texto defende a revogação das reformas trabalhista e da previdência aprovadas após 2016, com retorno integral da CLT. O programa propõe o cancelamento das privatizações realizadas e a reestatização de empresas como Petrobras, Eletrobrás e Vale. O documento defende a reforma agrária com expropriação de latifúndios e demarcação de terras indígenas. O texto propõe a dissolução da polícia militar e a formação de comitês de autodefesa dos trabalhadores.",
     "frases": [
       {
+        "id": "5ede5ed61cf84170",
         "texto": "O programa do PCO para as eleições de 2026 apresenta as eleições como uma tribuna secundária de propaganda das reivindicações da classe trabalhadora, não como instrumento de promessas.",
         "evidencias": [
           {
@@ -103,6 +104,7 @@
         ]
       },
       {
+        "id": "d19bef5388ef50c7",
         "texto": "O documento defende a revolução, o governo operário e o comunismo como lema central da candidatura.",
         "evidencias": [
           {
@@ -112,6 +114,7 @@
         ]
       },
       {
+        "id": "631ba5a13595b890",
         "texto": "Entre as propostas econômicas, o texto propõe reposição integral das perdas salariais e criação de uma escala móvel de salários vinculada à inflação.",
         "evidencias": [
           {
@@ -125,6 +128,7 @@
         ]
       },
       {
+        "id": "a7dfe58936de823a",
         "texto": "O programa propõe a redução da jornada de trabalho para 35 horas semanais como medida para combater o desemprego.",
         "evidencias": [
           {
@@ -134,6 +138,7 @@
         ]
       },
       {
+        "id": "80ae1e8daefc85ec",
         "texto": "O texto defende a revogação das reformas trabalhista e da previdência aprovadas após 2016, com retorno integral da CLT.",
         "evidencias": [
           {
@@ -147,6 +152,7 @@
         ]
       },
       {
+        "id": "f41d6acb0483b17a",
         "texto": "O programa propõe o cancelamento das privatizações realizadas e a reestatização de empresas como Petrobras, Eletrobrás e Vale.",
         "evidencias": [
           {
@@ -160,6 +166,7 @@
         ]
       },
       {
+        "id": "80362e0d59b6be25",
         "texto": "O documento defende a reforma agrária com expropriação de latifúndios e demarcação de terras indígenas.",
         "evidencias": [
           {
@@ -173,6 +180,7 @@
         ]
       },
       {
+        "id": "7395c66cbdc049db",
         "texto": "O texto propõe a dissolução da polícia militar e a formação de comitês de autodefesa dos trabalhadores.",
         "evidencias": [
           {

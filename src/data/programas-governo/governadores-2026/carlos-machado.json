@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -2592,6 +2592,7 @@
     "texto": "O programa estabelece que os Conselhos Populares constituirão a principal instituição permanente de participação democrática do Estado de São Paulo. Na área fiscal, o programa propõe revisar a política de renúncias fiscais do Estado de São Paulo. Na política de desenvolvimento, o programa prevê a criação de um Fundo Estadual de Reindustrialização e Desenvolvimento Tecnológico com R$ 40 bilhões anuais. Na saúde, serão destinados R$ 12 bilhões anuais em investimentos adicionais. Ainda na saúde, o Governo do Estado estabelecerá como meta estrutural alcançar a disponibilidade de 3 leitos hospitalares por mil habitantes. Na educação estadual, o programa instituirá eleição direta para todos os níveis de direção. O programa estabelece, também, o limite máximo de 20 estudantes por sala de aula ao final do mandato. Na segurança pública, será criado o Centro Estadual de Inteligência e Tecnologia para a Segurança Pública.",
     "frases": [
       {
+        "id": "1f0e57346e0c4c9a",
         "texto": "O programa estabelece que os Conselhos Populares constituirão a principal instituição permanente de participação democrática do Estado de São Paulo.",
         "evidencias": [
           {
@@ -2602,6 +2603,7 @@
         ]
       },
       {
+        "id": "fa9bd948f0094282",
         "texto": "Na área fiscal, o programa propõe revisar a política de renúncias fiscais do Estado de São Paulo.",
         "evidencias": [
           {
@@ -2612,6 +2614,7 @@
         ]
       },
       {
+        "id": "6426b7cc0a23a2fa",
         "texto": "Na política de desenvolvimento, o programa prevê a criação de um Fundo Estadual de Reindustrialização e Desenvolvimento Tecnológico com R$ 40 bilhões anuais.",
         "evidencias": [
           {
@@ -2622,6 +2625,7 @@
         ]
       },
       {
+        "id": "9c1756a0458a8579",
         "texto": "Na saúde, serão destinados R$ 12 bilhões anuais em investimentos adicionais.",
         "evidencias": [
           {
@@ -2632,6 +2636,7 @@
         ]
       },
       {
+        "id": "0b5af874307aea7e",
         "texto": "Ainda na saúde, o Governo do Estado estabelecerá como meta estrutural alcançar a disponibilidade de 3 leitos hospitalares por mil habitantes.",
         "evidencias": [
           {
@@ -2642,6 +2647,7 @@
         ]
       },
       {
+        "id": "8bbaa0bd66a4e245",
         "texto": "Na educação estadual, o programa instituirá eleição direta para todos os níveis de direção.",
         "evidencias": [
           {
@@ -2652,6 +2658,7 @@
         ]
       },
       {
+        "id": "92c4e85321cbfc41",
         "texto": "O programa estabelece, também, o limite máximo de 20 estudantes por sala de aula ao final do mandato.",
         "evidencias": [
           {
@@ -2662,6 +2669,7 @@
         ]
       },
       {
+        "id": "394b9e708d0c27d3",
         "texto": "Na segurança pública, será criado o Centro Estadual de Inteligência e Tecnologia para a Segurança Pública.",
         "evidencias": [
           {

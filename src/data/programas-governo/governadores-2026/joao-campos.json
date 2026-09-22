@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -464,6 +464,7 @@
     "texto": "O programa prevê fortalecer o esporte como parte da formação integral, criando mais oportunidades para estudantes, atletas e paratletas. O programa propõe criar o Crédito Criativo, específico para trabalhadores da economia criativa, em parceria com a AGE e instituições financeiras, acompanhado por orientação em gestão e planejamento financeiro. O programa prevê interiorizar o desenvolvimento a partir das vocações regionais, fortalecendo cidades-polo e criando novas oportunidades de emprego, renda e investimento em todas as regiões do Estado. O programa propõe integrar todas as regiões de Pernambuco por uma infraestrutura logística moderna e eficiente, conectando polos produtivos, cidades, portos, aeroportos e mercados para reduzir custos, ampliar a competitividade e gerar novas oportunidades de desenvolvimento. O programa prevê fortalecer a política estadual de mobilidade ativa para ampliar e integrar a infraestrutura cicloviária de Pernambuco, com recursos para implantação e cofinanciamento de novas ciclovias e ciclofaixas nos municípios. O programa propõe criar uma plataforma única para integrar serviços estaduais e municipais, acessível por aplicativo, portal, WhatsApp e atendimento assistido.",
     "frases": [
       {
+        "id": "08c4661a062ebb95",
         "texto": "O programa prevê fortalecer o esporte como parte da formação integral, criando mais oportunidades para estudantes, atletas e paratletas.",
         "evidencias": [
           {
@@ -474,6 +475,7 @@
         ]
       },
       {
+        "id": "b6802a1ed3411171",
         "texto": "O programa propõe criar o Crédito Criativo, específico para trabalhadores da economia criativa, em parceria com a AGE e instituições financeiras, acompanhado por orientação em gestão e planejamento financeiro.",
         "evidencias": [
           {
@@ -484,6 +486,7 @@
         ]
       },
       {
+        "id": "a6ebc124b0e720fe",
         "texto": "O programa prevê interiorizar o desenvolvimento a partir das vocações regionais, fortalecendo cidades-polo e criando novas oportunidades de emprego, renda e investimento em todas as regiões do Estado.",
         "evidencias": [
           {
@@ -494,6 +497,7 @@
         ]
       },
       {
+        "id": "392cfe36412be837",
         "texto": "O programa propõe integrar todas as regiões de Pernambuco por uma infraestrutura logística moderna e eficiente, conectando polos produtivos, cidades, portos, aeroportos e mercados para reduzir custos, ampliar a competitividade e gerar novas oportunidades de desenvolvimento.",
         "evidencias": [
           {
@@ -504,6 +508,7 @@
         ]
       },
       {
+        "id": "fe3494a14d31e8b3",
         "texto": "O programa prevê fortalecer a política estadual de mobilidade ativa para ampliar e integrar a infraestrutura cicloviária de Pernambuco, com recursos para implantação e cofinanciamento de novas ciclovias e ciclofaixas nos municípios.",
         "evidencias": [
           {
@@ -514,6 +519,7 @@
         ]
       },
       {
+        "id": "e1c82ae76546a505",
         "texto": "O programa propõe criar uma plataforma única para integrar serviços estaduais e municipais, acessível por aplicativo, portal, WhatsApp e atendimento assistido.",
         "evidencias": [
           {

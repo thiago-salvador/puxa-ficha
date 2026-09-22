@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -1262,6 +1262,7 @@
     "texto": "Entre 2002 e 2023, o Rio Grande do Sul registrou o menor crescimento do Produto Interno Bruto entre os Estados brasileiros. Na educação, o plano propõe criar 2 mil escolas empreendedoras como meta do programa. Na saúde, o programa propõe organizar a rede estadual em sete grandes polos regionais, com centros de especialidades próximos à residência dos pacientes. Na segurança digital, o programa propõe criar uma força estadual permanente de inteligência cibernética para combater estelionatos, fraudes digitais, lavagem de dinheiro e crimes praticados por organizações criminosas. Na prevenção de riscos, o programa propõe implantar um sistema integrado de alertas multicanal. No saneamento, o programa propõe estabelecer metas regionais de universalização de água e esgoto. Na administração pública, o plano propõe universalizar o processo administrativo eletrônico e a assinatura digital, conforme previsto no programa.",
     "frases": [
       {
+        "id": "283369b8f9139028",
         "texto": "Entre 2002 e 2023, o Rio Grande do Sul registrou o menor crescimento do Produto Interno Bruto entre os Estados brasileiros.",
         "evidencias": [
           {
@@ -1272,6 +1273,7 @@
         ]
       },
       {
+        "id": "75ced86017cfd30a",
         "texto": "Na educação, o plano propõe criar 2 mil escolas empreendedoras como meta do programa.",
         "evidencias": [
           {
@@ -1282,6 +1284,7 @@
         ]
       },
       {
+        "id": "a24df8d87a263bab",
         "texto": "Na saúde, o programa propõe organizar a rede estadual em sete grandes polos regionais, com centros de especialidades próximos à residência dos pacientes.",
         "evidencias": [
           {
@@ -1292,6 +1295,7 @@
         ]
       },
       {
+        "id": "3ce7843b94a27856",
         "texto": "Na segurança digital, o programa propõe criar uma força estadual permanente de inteligência cibernética para combater estelionatos, fraudes digitais, lavagem de dinheiro e crimes praticados por organizações criminosas.",
         "evidencias": [
           {
@@ -1302,6 +1306,7 @@
         ]
       },
       {
+        "id": "69904c8cf9ea5a99",
         "texto": "Na prevenção de riscos, o programa propõe implantar um sistema integrado de alertas multicanal.",
         "evidencias": [
           {
@@ -1312,6 +1317,7 @@
         ]
       },
       {
+        "id": "5b4a4a3f584aa479",
         "texto": "No saneamento, o programa propõe estabelecer metas regionais de universalização de água e esgoto.",
         "evidencias": [
           {
@@ -1322,6 +1328,7 @@
         ]
       },
       {
+        "id": "87e0d0e59cb8ba47",
         "texto": "Na administração pública, o plano propõe universalizar o processo administrativo eletrônico e a assinatura digital, conforme previsto no programa.",
         "evidencias": [
           {

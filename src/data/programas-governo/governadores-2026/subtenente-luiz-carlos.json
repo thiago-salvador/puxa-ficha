@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -128,6 +128,7 @@
     "texto": "O programa prevê modernizar o sistema de saúde por meio da substituição de equipamentos médicos velhos e sem manutenção. O documento também propõe oferecer capacitação contínua aos profissionais da saúde. No desenvolvimento econômico, o documento propõe criar cem mil empregos por meio do programa jovem aprendiz com parcerias com o setor privado. Na segurança pública, prevê um sistema único para combater o crime organizado, compartilhar informações e realizar operações em conjunto entre polícia Militar, polícia Civil, polícia Penal e Guarda municipal. Em infraestrutura, planeja substituir as pontes de madeira existentes no estado por pontes de concreto. Na educação, propõe ampliar escolas de tempo integral. No sistema prisional, propõe criar presídio de segurança máxima. No meio ambiente, prevê reduzir o desmatamento ilegal.",
     "frases": [
       {
+        "id": "1e9ed5704d385c1b",
         "texto": "O programa prevê modernizar o sistema de saúde por meio da substituição de equipamentos médicos velhos e sem manutenção.",
         "evidencias": [
           {
@@ -138,6 +139,7 @@
         ]
       },
       {
+        "id": "429c142f57ad77ee",
         "texto": "O documento também propõe oferecer capacitação contínua aos profissionais da saúde.",
         "evidencias": [
           {
@@ -148,6 +150,7 @@
         ]
       },
       {
+        "id": "ae724d85ecadb19e",
         "texto": "No desenvolvimento econômico, o documento propõe criar cem mil empregos por meio do programa jovem aprendiz com parcerias com o setor privado.",
         "evidencias": [
           {
@@ -158,6 +161,7 @@
         ]
       },
       {
+        "id": "bfd34efd8bdad9a5",
         "texto": "Na segurança pública, prevê um sistema único para combater o crime organizado, compartilhar informações e realizar operações em conjunto entre polícia Militar, polícia Civil, polícia Penal e Guarda municipal.",
         "evidencias": [
           {
@@ -168,6 +172,7 @@
         ]
       },
       {
+        "id": "ed81f44d47552f71",
         "texto": "Em infraestrutura, planeja substituir as pontes de madeira existentes no estado por pontes de concreto.",
         "evidencias": [
           {
@@ -178,6 +183,7 @@
         ]
       },
       {
+        "id": "716bb962be942536",
         "texto": "Na educação, propõe ampliar escolas de tempo integral.",
         "evidencias": [
           {
@@ -188,6 +194,7 @@
         ]
       },
       {
+        "id": "e3d75f5311225227",
         "texto": "No sistema prisional, propõe criar presídio de segurança máxima.",
         "evidencias": [
           {
@@ -198,6 +205,7 @@
         ]
       },
       {
+        "id": "20f99e1ea9a54a90",
         "texto": "No meio ambiente, prevê reduzir o desmatamento ilegal.",
         "evidencias": [
           {

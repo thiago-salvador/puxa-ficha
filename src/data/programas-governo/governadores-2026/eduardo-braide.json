@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -436,6 +436,7 @@
     "texto": "O programa prevê a criação da Força Estadual de Combate à Pobreza, de caráter intersetorial, para integrar políticas de renda, educação, saúde, segurança alimentar, qualificação, acesso a oportunidades. Na saúde, propõe a implantação do Programa Hospital Novo para construir hospitais regionais ou macrorregionais. Na educação, planeja a criação do Programa Escola Nova para construir escolas, quadras poliesportivas, requalificar unidades existentes, climatizar ambientes escolares. No desenvolvimento econômico, prevê apoio ao acesso a linhas de crédito para produtores rurais, agricultores familiares, empreendedores, comerciantes, micro e pequenas empresas. Em infraestrutura, propõe a ampliação da oferta de água tratada, da coleta de esgoto, do tratamento de esgoto, com investimentos prioritários nas regiões de menor cobertura. Na segurança, prevê a implantação da Muralha Digital nas regiões do Maranhão, com câmeras de reconhecimento facial.",
     "frases": [
       {
+        "id": "ca57be89e5f767fa",
         "texto": "O programa prevê a criação da Força Estadual de Combate à Pobreza, de caráter intersetorial, para integrar políticas de renda, educação, saúde, segurança alimentar, qualificação, acesso a oportunidades.",
         "evidencias": [
           {
@@ -446,6 +447,7 @@
         ]
       },
       {
+        "id": "1f4d90a36e385e39",
         "texto": "Na saúde, propõe a implantação do Programa Hospital Novo para construir hospitais regionais ou macrorregionais.",
         "evidencias": [
           {
@@ -456,6 +458,7 @@
         ]
       },
       {
+        "id": "f73bc90c240522a9",
         "texto": "Na educação, planeja a criação do Programa Escola Nova para construir escolas, quadras poliesportivas, requalificar unidades existentes, climatizar ambientes escolares.",
         "evidencias": [
           {
@@ -466,6 +469,7 @@
         ]
       },
       {
+        "id": "a1805c581ff8badf",
         "texto": "No desenvolvimento econômico, prevê apoio ao acesso a linhas de crédito para produtores rurais, agricultores familiares, empreendedores, comerciantes, micro e pequenas empresas.",
         "evidencias": [
           {
@@ -476,6 +480,7 @@
         ]
       },
       {
+        "id": "5ef40b70015cc48a",
         "texto": "Em infraestrutura, propõe a ampliação da oferta de água tratada, da coleta de esgoto, do tratamento de esgoto, com investimentos prioritários nas regiões de menor cobertura.",
         "evidencias": [
           {
@@ -486,6 +491,7 @@
         ]
       },
       {
+        "id": "527fc56aa0fb9964",
         "texto": "Na segurança, prevê a implantação da Muralha Digital nas regiões do Maranhão, com câmeras de reconhecimento facial.",
         "evidencias": [
           {

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -2466,6 +2466,7 @@
     "texto": "O plano estabelece que cada meta terá linha de base, fonte, prazo e memória de cálculo, conforme os parâmetros definidos para seu acompanhamento. A Rede Maranhense de ZPEs articulará polos em São Luís, Bacabeira, Açailândia, Imperatriz e Caxias, compondo uma rede de produção e logística. O Programa Maranhão que Agrega Valor identificará etapas produtivas realizadas fora do Estado que possam ser internalizadas competitivamente em suas cadeias. Cada grande investimento apoiado pelo Estado será acompanhado, quando juridicamente cabível, por um Contrato de Desenvolvimento Territorial. Para 2033, a meta de referência é alcançar 99% de cobertura de água e 90% de coleta e tratamento de esgoto. O plano prevê consórcios regionais de resíduos sólidos, com aterros licenciados operando por consórcio e apoio técnico e financeiro do Estado. Na saúde, será estruturada uma fila única estadual digital integrada à regulação, organizando o acesso aos serviços. A partir de 2027, o Estado consolidará um Painel Maranhense de Segurança por Resultados, com indicadores territoriais e séries comparáveis.",
     "frases": [
       {
+        "id": "136d94e4e79ebe9a",
         "texto": "O plano estabelece que cada meta terá linha de base, fonte, prazo e memória de cálculo, conforme os parâmetros definidos para seu acompanhamento.",
         "evidencias": [
           {
@@ -2476,6 +2477,7 @@
         ]
       },
       {
+        "id": "d46ec25bfb018bf5",
         "texto": "A Rede Maranhense de ZPEs articulará polos em São Luís, Bacabeira, Açailândia, Imperatriz e Caxias, compondo uma rede de produção e logística.",
         "evidencias": [
           {
@@ -2486,6 +2488,7 @@
         ]
       },
       {
+        "id": "d98dcf453d7e7ed1",
         "texto": "O Programa Maranhão que Agrega Valor identificará etapas produtivas realizadas fora do Estado que possam ser internalizadas competitivamente em suas cadeias.",
         "evidencias": [
           {
@@ -2496,6 +2499,7 @@
         ]
       },
       {
+        "id": "975530f835bb2aea",
         "texto": "Cada grande investimento apoiado pelo Estado será acompanhado, quando juridicamente cabível, por um Contrato de Desenvolvimento Territorial.",
         "evidencias": [
           {
@@ -2506,6 +2510,7 @@
         ]
       },
       {
+        "id": "dc82fb88d11c8b31",
         "texto": "Para 2033, a meta de referência é alcançar 99% de cobertura de água e 90% de coleta e tratamento de esgoto.",
         "evidencias": [
           {
@@ -2516,6 +2521,7 @@
         ]
       },
       {
+        "id": "03192432a305b57f",
         "texto": "O plano prevê consórcios regionais de resíduos sólidos, com aterros licenciados operando por consórcio e apoio técnico e financeiro do Estado.",
         "evidencias": [
           {
@@ -2526,6 +2532,7 @@
         ]
       },
       {
+        "id": "35a5990c67a0b162",
         "texto": "Na saúde, será estruturada uma fila única estadual digital integrada à regulação, organizando o acesso aos serviços.",
         "evidencias": [
           {
@@ -2536,6 +2543,7 @@
         ]
       },
       {
+        "id": "f07d2ee7050af331",
         "texto": "A partir de 2027, o Estado consolidará um Painel Maranhense de Segurança por Resultados, com indicadores territoriais e séries comparáveis.",
         "evidencias": [
           {

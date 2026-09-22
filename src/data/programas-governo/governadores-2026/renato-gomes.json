@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "estado": "aprovado",
   "fonte": {
     "ano": 2026,
@@ -912,6 +912,7 @@
     "texto": "O plano prevê painéis públicos de contas, físicos e digitais, em pontos estratégicos do Estado, com atualização em tempo real. O plano propõe um Portal da Transparência reconstruído para o cidadão, com API pública sem login, download em massa e linguagem popular. Na saúde, o plano prevê hospitais regionais 24h, fixação de médicos no interior, regulação com prazo legal e transparência. Na educação, o plano propõe ensino médio técnico atrelado às vagas reais do MS, reforma do MS Qualifica e fortalecimento da UEMS. Na segurança, o plano propõe uma central integrada de inteligência para seguir o dinheiro do crime, com plataforma única tributária e criminal. Na infraestrutura, o plano propõe substituir pontes de madeira por concreto de forma faseada, priorizando eixos de escoamento e acesso à saúde.",
     "frases": [
       {
+        "id": "3056df6d268172b2",
         "texto": "O plano prevê painéis públicos de contas, físicos e digitais, em pontos estratégicos do Estado, com atualização em tempo real.",
         "evidencias": [
           {
@@ -922,6 +923,7 @@
         ]
       },
       {
+        "id": "133555627d1b5f26",
         "texto": "O plano propõe um Portal da Transparência reconstruído para o cidadão, com API pública sem login, download em massa e linguagem popular.",
         "evidencias": [
           {
@@ -932,6 +934,7 @@
         ]
       },
       {
+        "id": "cc0ce6406c302544",
         "texto": "Na saúde, o plano prevê hospitais regionais 24h, fixação de médicos no interior, regulação com prazo legal e transparência.",
         "evidencias": [
           {
@@ -942,6 +945,7 @@
         ]
       },
       {
+        "id": "729e74806947c6cc",
         "texto": "Na educação, o plano propõe ensino médio técnico atrelado às vagas reais do MS, reforma do MS Qualifica e fortalecimento da UEMS.",
         "evidencias": [
           {
@@ -952,6 +956,7 @@
         ]
       },
       {
+        "id": "de6b2e46848521f9",
         "texto": "Na segurança, o plano propõe uma central integrada de inteligência para seguir o dinheiro do crime, com plataforma única tributária e criminal.",
         "evidencias": [
           {
@@ -962,6 +967,7 @@
         ]
       },
       {
+        "id": "c0e2837e4e1b6ef9",
         "texto": "Na infraestrutura, o plano propõe substituir pontes de madeira por concreto de forma faseada, priorizando eixos de escoamento e acesso à saúde.",
         "evidencias": [
           {
