@@ -95,3 +95,4 @@ supabase/.branches/
 
 # Artefatos locais de auditoria/curadoria — regeneráveis, não commitados.
 .artifacts/
+/reports/promessa-evidencia/
