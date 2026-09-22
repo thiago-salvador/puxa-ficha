@@ -135,3 +135,13 @@ id = "sumologic-access-token"
   regexTarget = "secret"
   regexes = ['''^ae5aafb1651779d9252ee7d6b60b1db44c0490f09de40775e1b22aee142348de$''']
   paths = ['''^docs/operations/pesquisas-s0/DIAGNOSTICO-REMOTO\.md$''']
+
+[[rules]]
+id = "grafana-api-key"
+
+  [[rules.allowlists]]
+  description = "Identificador exato de relatório público Power BI citado pela Lupa, acessível sem autenticação"
+  condition = "AND"
+  regexTarget = "secret"
+  regexes = ['''^eyJrIjoiMDI0OTAyYzEtMzAyNS00ZGUxLWE5NGUtOWIxYTBlZTA1ZjBiIiwidCI6ImViMDkwNDIwLTQ0NGMtNDNmNy05MWYyLTRiOGRhNmJmZThlMSJ9$''']
+  paths = ['''^scripts/data/checagens-atribuidas\.json$''']
