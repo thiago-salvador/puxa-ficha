@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-09-22T11:51:04.216Z",
+  "updated_at": "2026-09-22T12:10:00.000Z",
   "quotes": [
     {
       "id": "df3b314a4c73c4f168b08c74c348c04d43481ac749c59cd01af84d05990c24f5",
@@ -6514,6 +6514,60 @@
         "date_excerpt": "O candidato ao governo do Amazonas, Roberto Cidade (União Brasil), participou de uma entrevista em uma emissora de televisão no bairro Aleixo, Zona Centro-Sul de Manaus, na manhã desta sexta-feira (11).",
         "fetched_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/09/11/eleicoes-2026-roberto-cidade-defende-incentivos-fiscais-e-novas-matrizes-economicas-para-o-amazonas.ghtml",
         "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "1de67c26322f7416e952a9b2dd73b3c7a7320a032fc4a889e200cc69d740613f",
+      "candidate_id": "d97908e9-5b30-4d0e-a01b-c0348682949d",
+      "candidate_slug": "clecio-luis",
+      "candidate_name": "Clecio Luis",
+      "office": "Governador",
+      "uf": "AP",
+      "quote_text": "A próxima meta, terminando esses que estamos construindo agora, é construir o nosso Centro de Tratamento Oncológico lá na Zona Norte",
+      "context": "\"A próxima meta, terminando esses que estamos construindo agora, é construir o nosso Centro de Tratamento Oncológico lá na Zona Norte, ao lado do Centro de Radioterapia que está funcionando. Nós vamos mudar toda a Unacon para lá e vai ter um grande centro e hospital de câncer, cuidado pelo Hospital de Amor, com tudo o que precisa para um bom tratamento oncológico aqui no nosso Amapá”, afirmou.",
+      "event_context": "Entrevista ao vivo no Jap1, em sabatina da Rede Amazônica no Amapá. O candidato à reeleição Clécio Luís (União Brasil) falou sobre o Centro de Tratamento Oncológico nesta terça-feira (15). O candidato à reeleição ao governo do Amapá, Clécio Luís (União Brasil), participou de entrevista no Jap1, nesta terça-feira (15), em Macapá.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-15",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ap/amapa/eleicoes/2026/noticia/2026/09/15/clecio-luis-diz-que-proxima-meta-e-construir-centro-oncologico-na-zona-norte-de-macapa.ghtml",
+      "article_title": "Clécio Luís diz que meta é construir Centro Oncológico em Macapá",
+      "article_published_at": "2026-09-15T16:35:22.200-03:00",
+      "observed_at": "2026-09-22T12:10:00.000Z",
+      "source_sha256": "73f6c6006d474987bcf30a24abf0c61fa5523846b67c9421170d7991bc23d6c3",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato à reeleição ao governo do Amapá, Clécio Luís (União Brasil), participou de entrevista no Jap1, nesta terça-feira (15), em Macapá.",
+        "date_excerpt": "O candidato à reeleição ao governo do Amapá, Clécio Luís (União Brasil), participou de entrevista no Jap1, nesta terça-feira (15), em Macapá.",
+        "fetched_url": "https://g1.globo.com/ap/amapa/eleicoes/2026/noticia/2026/09/15/clecio-luis-diz-que-proxima-meta-e-construir-centro-oncologico-na-zona-norte-de-macapa.ghtml",
+        "method": "codex_source_review",
+        "quote_location": "article_paragraph"
+      }
+    },
+    {
+      "id": "4c163859eee5e523c7e939c0738b099efd457cb28ca306e20b365559ded974ee",
+      "candidate_id": "9f2c557f-7c5a-459b-b0f5-faa6d561a4ce",
+      "candidate_slug": "dr-furlan",
+      "candidate_name": "Dr. Furlan",
+      "office": "Governador",
+      "uf": "AP",
+      "quote_text": "Eu estou aqui pedindo uma oportunidade para asfaltar a BR-156, a 210, e fazer as pontes.",
+      "context": "\"Toda eleição se discute a BR-156 e eles não fizeram. Eu estou aqui pedindo uma oportunidade para asfaltar a BR-156, a 210, e fazer as pontes. Nós vamos buscar parcerias e firmar convênios. Se não for possível, nós vamos atrás de operações de empréstimo para fazer a BR-156\", afirmou.",
+      "event_context": "Entrevista ao vivo no Jap1, em sabatina da Rede Amazônica no Amapá. O candidato Dr. Furlan (PSD) falou sobre a BR-156 nesta sexta-feira (18). O candidato Dr. Furlan (PSD) propôs nesta sexta-feira (18) buscar empréstimos e parcerias para pavimentar a BR-156.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-18",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ap/amapa/eleicoes/2026/noticia/2026/09/18/dr-furlan-diz-que-meta-e-buscar-parcerias-para-pavimentar-a-br-156.ghtml",
+      "article_title": "Dr. Furlan propõe parcerias para pavimentar a BR-156 no Amapá",
+      "article_published_at": "2026-09-18T15:46:37.639-03:00",
+      "observed_at": "2026-09-22T12:10:00.000Z",
+      "source_sha256": "b806cf308fd0b39c4be535eeec058ed96dad7422053ede5583efe1a5ff801486",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato Dr. Furlan (PSD) propôs nesta sexta-feira (18) buscar empréstimos e parcerias para pavimentar a BR-156.",
+        "date_excerpt": "O candidato Dr. Furlan (PSD) propôs nesta sexta-feira (18) buscar empréstimos e parcerias para pavimentar a BR-156.",
+        "fetched_url": "https://g1.globo.com/ap/amapa/eleicoes/2026/noticia/2026/09/18/dr-furlan-diz-que-meta-e-buscar-parcerias-para-pavimentar-a-br-156.ghtml",
+        "method": "codex_source_review",
+        "quote_location": "article_paragraph"
       }
     }
   ]
