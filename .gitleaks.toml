@@ -126,6 +126,14 @@ id = "generic-api-key"
   ]
   paths = ['''^tests/fixtures/senado-ementa-curation-proofs\.json$''']
 
+
+  [[rules.allowlists]]
+  description = "Identificadores públicos exatos do PDF Serasa vinculado pela Lupa, removidos do catálogo mas presentes no histórico deste lote"
+  condition = "AND"
+  regexTarget = "secret"
+  regexes = ['''^7b5eb707-8c49-4c21-b8fc-f0edeb96bfa9$''', '''^b212bb18f00a40869a6cd42f77cbeefc$''']
+  paths = ['''^scripts/data/checagens-atribuidas\.json$''']
+
 [[rules]]
 id = "sumologic-access-token"
 
@@ -135,3 +143,13 @@ id = "sumologic-access-token"
   regexTarget = "secret"
   regexes = ['''^ae5aafb1651779d9252ee7d6b60b1db44c0490f09de40775e1b22aee142348de$''']
   paths = ['''^docs/operations/pesquisas-s0/DIAGNOSTICO-REMOTO\.md$''']
+
+[[rules]]
+id = "grafana-api-key"
+
+  [[rules.allowlists]]
+  description = "Identificador exato de relatório público Power BI citado pela Lupa, pelo Aos Fatos ou pelo Fato ou Fake, acessível sem autenticação"
+  condition = "AND"
+  regexTarget = "secret"
+  regexes = ['''^eyJrIjoiMDI0OTAyYzEtMzAyNS00ZGUxLWE5NGUtOWIxYTBlZTA1ZjBiIiwidCI6ImViMDkwNDIwLTQ0NGMtNDNmNy05MWYyLTRiOGRhNmJmZThlMSJ9$''', '''^eyJrIjoiMGVjMzIwZWQtM2IzZS00NmE0LTkwNjUtZjI1YjMyNTVhZGY0IiwidCI6IjI2ZjczODk3LWM4YWMtNGIxZS05NzhmLWVhNGMwNzc0MzRiZiJ9$''', '''^eyJrIjoiMDc0ZWFjYTgtYjA1OS00YzBmLWJkNTctZmVjODM2YzlmYzBjIiwidCI6ImViMDkwNDIwLTQ0NGMtNDNmNy05MWYyLTRiOGRhNmJmZThlMSJ9$''', '''^eyJrIjoiNWI5NWI0ODEtYmZiYy00Mjg3LTkzNWUtY2UyYjIwMDE1YWI2IiwidCI6IjNlYzkyOTY5LTVhNTEtNGYxOC04YWM5LWVmOThmYmFmYTk3OCJ9$''']
+  paths = ['''^scripts/data/checagens-atribuidas\.json$''']
