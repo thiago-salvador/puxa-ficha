@@ -1,0 +1,2214 @@
+{
+ "versao": "c2",
+ "conjunto": "holdout",
+ "rodado_em": "2026-09-22T15:22:34.720Z",
+ "jevV1": {
+  "6cf1514cab248dd8": {
+   "estado_sha256": "e4944863580c3badb128d41421adc054f19499dacc4b84e5f8ff1db249b2bf6d",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.88,
+     "probabilities": {
+      "contradiz": 0,
+      "sustenta": 0.05,
+      "nao_relacionada": 0.04,
+      "relacionada": 0.91
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.7
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.67
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.09
+    }
+   },
+   "input_tokens": 1820,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "0fc12cd23bdc5e51": {
+   "estado_sha256": "dd8793d176384222c641d9ee75c3c9234211846e9722e338293bf083f8e0cf7a",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.89,
+     "probabilities": {
+      "contradiz": 0,
+      "sustenta": 0.03,
+      "relacionada": 0.91,
+      "nao_relacionada": 0.06
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.48
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.5
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.08
+    }
+   },
+   "input_tokens": 1769,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "5cc0e84e21d9271d": {
+   "estado_sha256": "43b4523324050e5a940b356790a06ce1377a110bac9835baa3603e505e57d5c8",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.61,
+     "probabilities": {
+      "relacionada": 0.7,
+      "contradiz": 0,
+      "nao_relacionada": 0.03,
+      "sustenta": 0.27
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.44
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.56
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.04
+    }
+   },
+   "input_tokens": 1664,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "63a87b6e47066ab0": {
+   "estado_sha256": "0250a4a815706470f85fc8ec9216fe559dd477a4195f7a970ff35fa841e5beae",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.72,
+     "probabilities": {
+      "sustenta": 0.15,
+      "contradiz": 0,
+      "nao_relacionada": 0.06,
+      "relacionada": 0.79
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.62
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.59
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.07
+    }
+   },
+   "input_tokens": 1746,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "e7f89a5d8da350be": {
+   "estado_sha256": "2a75fd3ce01644e9c99c5f6a6a05a7a108e105df3a1f692cb3a5ee54838179e5",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.6,
+     "probabilities": {
+      "sustenta": 0.02,
+      "nao_relacionada": 0.28,
+      "relacionada": 0.7,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.18
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.22
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.08
+    }
+   },
+   "input_tokens": 1702,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "4b8f32b616248cd4": {
+   "estado_sha256": "fba664504289f154d205e604154e6a0b2933c91e0b19fe11f22d604f0ff3d1b9",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.65,
+     "probabilities": {
+      "sustenta": 0.09,
+      "relacionada": 0.73,
+      "nao_relacionada": 0.16,
+      "contradiz": 0.02
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.21
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.48
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.26
+    }
+   },
+   "input_tokens": 1696,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "1160afa10babbf4c": {
+   "estado_sha256": "dcf2384ed39080226c627aa315241aea5cf04ac708877b741f35ffa960fe9c3e",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.8,
+     "probabilities": {
+      "contradiz": 0,
+      "nao_relacionada": 0.05,
+      "relacionada": 0.85,
+      "sustenta": 0.1
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.6
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.58
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.1
+    }
+   },
+   "input_tokens": 1730,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "a140144d1a3ac7a2": {
+   "estado_sha256": "816ba00e5fc3ff639772cec4b30ca9cd52c117b88c60ce4d9e247f6f6f049a30",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.52,
+     "probabilities": {
+      "sustenta": 0.01,
+      "nao_relacionada": 0.35,
+      "contradiz": 0,
+      "relacionada": 0.64
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.29
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.42
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.1
+    }
+   },
+   "input_tokens": 1853,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "0e5ae4dd33c887db": {
+   "estado_sha256": "e4f07827847cad158ba54cf4727e58913c28da3c7bfd6a91f9e331889cf4a83c",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "sustenta",
+     "confidence": 0.5,
+     "probabilities": {
+      "nao_relacionada": 0,
+      "contradiz": 0,
+      "relacionada": 0.37,
+      "sustenta": 0.63
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.79
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.74
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.09
+    }
+   },
+   "input_tokens": 1728,
+   "preRotulo": "sustenta",
+   "descartado": false
+  },
+  "232c46f5e77d7f3f": {
+   "estado_sha256": "0da8a1099f822d03fa72b7d69aee36a3c26abf5bb6ad3a7f1b9bc9c729a46107",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "sustenta",
+     "confidence": 0.74,
+     "probabilities": {
+      "nao_relacionada": 0,
+      "sustenta": 0.81,
+      "contradiz": 0,
+      "relacionada": 0.19
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.89
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.7
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.05
+    }
+   },
+   "input_tokens": 1799,
+   "preRotulo": "sustenta",
+   "descartado": false
+  },
+  "92a2a076b4bf1117": {
+   "estado_sha256": "ade5adb8ad76b70324f41ed5385e510211ab80f86aac0de1afdaed5c3bad8536",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "sustenta",
+     "confidence": 0.66,
+     "probabilities": {
+      "sustenta": 0.75,
+      "relacionada": 0.25,
+      "nao_relacionada": 0,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.9
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.8
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.08
+    }
+   },
+   "input_tokens": 1600,
+   "preRotulo": "sustenta",
+   "descartado": false
+  },
+  "e3b45851f9da7767": {
+   "estado_sha256": "6570d83b08a652b31ef4024824087a08a0dbc312c92ec317f3954df80aebbb3a",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "sustenta",
+     "confidence": 1,
+     "probabilities": {
+      "sustenta": 1,
+      "contradiz": 0,
+      "relacionada": 0,
+      "nao_relacionada": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.97
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.92
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.02
+    }
+   },
+   "input_tokens": 1814,
+   "preRotulo": "sustenta",
+   "descartado": false
+  },
+  "33e5c85440736a29": {
+   "estado_sha256": "0a060f06d76d8511dad4892a2b9f4ae7c74a08c456fde415c88c92bedb409d34",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "sustenta",
+     "confidence": 0.31,
+     "probabilities": {
+      "sustenta": 0.47,
+      "nao_relacionada": 0.23,
+      "relacionada": 0.29,
+      "contradiz": 0.01
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.51
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.51
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.14
+    }
+   },
+   "input_tokens": 1785,
+   "preRotulo": "sustenta",
+   "descartado": false
+  },
+  "045e254387866936": {
+   "estado_sha256": "13d39b0880452348ed5016aa33fd14d451e581e4d190d33a7c92e98e381a2030",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.78,
+     "probabilities": {
+      "nao_relacionada": 0.16,
+      "relacionada": 0.83,
+      "sustenta": 0.01,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.46
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.56
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.12
+    }
+   },
+   "input_tokens": 1697,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "584f382ffda17892": {
+   "estado_sha256": "4cdec5af102466ac01c5706cd79f957770d4f145945e7d60faf66140e286633a",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.34,
+     "probabilities": {
+      "relacionada": 0.5,
+      "nao_relacionada": 0.46,
+      "sustenta": 0.02,
+      "contradiz": 0.02
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.14
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.38
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.22
+    }
+   },
+   "input_tokens": 1658,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "9e58eb129d93a808": {
+   "estado_sha256": "c4483d8cc2314c425fb70674f6212dfaf43c171992452267c4c326d51b1ff6e7",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.49,
+     "probabilities": {
+      "sustenta": 0.02,
+      "nao_relacionada": 0.36,
+      "contradiz": 0,
+      "relacionada": 0.62
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.18
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.22
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.15
+    }
+   },
+   "input_tokens": 1776,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "8f3d9b129ccfb26a": {
+   "estado_sha256": "eb51dec6bc162ef5e8e17759cdcd3675165590d675c9d7e797d0f404b07d5570",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.78,
+     "probabilities": {
+      "contradiz": 0,
+      "nao_relacionada": 0.14,
+      "relacionada": 0.84,
+      "sustenta": 0.02
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.24
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.31
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.15
+    }
+   },
+   "input_tokens": 1763,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "b159b9484ab70ba3": {
+   "estado_sha256": "d9c3f42453578665262f01941c59444b9567a63f58ab33107ac93deaa389b378",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.58,
+     "probabilities": {
+      "sustenta": 0.03,
+      "relacionada": 0.69,
+      "nao_relacionada": 0.26,
+      "contradiz": 0.02
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.31
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.52
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.18
+    }
+   },
+   "input_tokens": 1735,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "e0fc387a1f060167": {
+   "estado_sha256": "84caa2b58b373bbe5476e7a65686774ad683b95cea0b9e473e8e3e219be56db7",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "sustenta",
+     "confidence": 0.93,
+     "probabilities": {
+      "sustenta": 0.95,
+      "nao_relacionada": 0,
+      "contradiz": 0,
+      "relacionada": 0.05
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.9
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.74
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.03
+    }
+   },
+   "input_tokens": 1685,
+   "preRotulo": "sustenta",
+   "descartado": false
+  },
+  "66b9a9e16a93860c": {
+   "estado_sha256": "3e160bb88fd9710a606f6f183a57d156a6a7f93b96612bb1f7c0ec17ecf5e969",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.83,
+     "probabilities": {
+      "relacionada": 0.88,
+      "contradiz": 0,
+      "sustenta": 0.01,
+      "nao_relacionada": 0.11
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.31
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.4
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.15
+    }
+   },
+   "input_tokens": 1674,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "0bb21fae3cef9d7d": {
+   "estado_sha256": "b5d3bd16678d7e2a5c3e011c05c54fdf374da7fceae13943c6914b67fcc7974e",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.65,
+     "probabilities": {
+      "contradiz": 0,
+      "relacionada": 0.74,
+      "sustenta": 0.06,
+      "nao_relacionada": 0.2
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.21
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.26
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.16
+    }
+   },
+   "input_tokens": 1693,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "22a1f55bdae4c830": {
+   "estado_sha256": "bfb4ddbfe82b67c075c378534c2d73e78f1f38612f0c042d57f45ebaf8253a58",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "sustenta",
+     "confidence": 0.78,
+     "probabilities": {
+      "relacionada": 0.15,
+      "contradiz": 0,
+      "sustenta": 0.84,
+      "nao_relacionada": 0.01
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.85
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.6
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.04
+    }
+   },
+   "input_tokens": 1809,
+   "preRotulo": "sustenta",
+   "descartado": false
+  },
+  "34c7a6bc5fa74754": {
+   "estado_sha256": "867705e6557d8c81194d2a5ae569a2e3c013a7bd54aa527413d3d9b0b79188c6",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.6,
+     "probabilities": {
+      "contradiz": 0,
+      "relacionada": 0.7,
+      "nao_relacionada": 0.22,
+      "sustenta": 0.08
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.27
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.28
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.1
+    }
+   },
+   "input_tokens": 1721,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "95a156812250e5a0": {
+   "estado_sha256": "60a1ad8afa37c310c5d7fe1a26dd5276b78cb90345047874b07584cb27d31b87",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "sustenta",
+     "confidence": 0.99,
+     "probabilities": {
+      "relacionada": 0,
+      "sustenta": 1,
+      "contradiz": 0,
+      "nao_relacionada": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.97
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.93
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.03
+    }
+   },
+   "input_tokens": 1738,
+   "preRotulo": "sustenta",
+   "descartado": false
+  },
+  "909c15539304f105": {
+   "estado_sha256": "382f13e395690a60ec49348fb0295ab7128bc4ca0c08c8bec948b6f8593fd2a5",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.3,
+     "probabilities": {
+      "sustenta": 0.07,
+      "contradiz": 0.01,
+      "nao_relacionada": 0.44,
+      "relacionada": 0.48
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.21
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.37
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.15
+    }
+   },
+   "input_tokens": 1810,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "d11b286b708e67be": {
+   "estado_sha256": "e1f40cd7d24d8dc6203c57381594e9054981b050332980ad4207a3d667f3e2cc",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.82,
+     "probabilities": {
+      "sustenta": 0.07,
+      "nao_relacionada": 0.06,
+      "relacionada": 0.87,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.49
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.48
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.08
+    }
+   },
+   "input_tokens": 1617,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "06ab49d0f5b72176": {
+   "estado_sha256": "82e9b76fe9dea354bb5bce29f882555dbf03ff54a4d6c14f91f7ec7ad411afb8",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "sustenta",
+     "confidence": 0.99,
+     "probabilities": {
+      "contradiz": 0,
+      "sustenta": 1,
+      "relacionada": 0,
+      "nao_relacionada": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.97
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.94
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.06
+    }
+   },
+   "input_tokens": 1697,
+   "preRotulo": "sustenta",
+   "descartado": false
+  },
+  "1b422fb8ac93a813": {
+   "estado_sha256": "22ddbeec1e0b19ae42d1c48357564e355990d128da755c73c0b87e1f32ad497b",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.75,
+     "probabilities": {
+      "nao_relacionada": 0.11,
+      "relacionada": 0.81,
+      "contradiz": 0.02,
+      "sustenta": 0.06
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.56
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.53
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.19
+    }
+   },
+   "input_tokens": 1779,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "256efc32044ed4d2": {
+   "estado_sha256": "60b276723a3d3d48afbb4dfd07e0ca52f21c35928e6b22f13c4629c304101697",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.47,
+     "probabilities": {
+      "contradiz": 0,
+      "nao_relacionada": 0.39,
+      "relacionada": 0.61,
+      "sustenta": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.17
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.24
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.11
+    }
+   },
+   "input_tokens": 1678,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "4cd7353bc38db675": {
+   "estado_sha256": "aa23cfde63bf2c0eaed1e971615b064932504f85ac86a3df513562c7b02678d3",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.55,
+     "probabilities": {
+      "relacionada": 0.67,
+      "nao_relacionada": 0.27,
+      "contradiz": 0,
+      "sustenta": 0.06
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.28
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.27
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.09
+    }
+   },
+   "input_tokens": 1677,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "1d2fc2bb3ef4ba6b": {
+   "estado_sha256": "968d0c5b8e477bbedb6b66ea590e777539d6ad42b9bbc1c57dfcc2b19e019703",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.42,
+     "probabilities": {
+      "nao_relacionada": 0.07,
+      "relacionada": 0.57,
+      "contradiz": 0,
+      "sustenta": 0.36
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.36
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.55
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.07
+    }
+   },
+   "input_tokens": 1748,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "68aa4a99fbc3855d": {
+   "estado_sha256": "61672ca3903e4a12b310f56b4a1f8d9c132e0cef2f6724e90bdac5389c53386e",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.24,
+     "probabilities": {
+      "relacionada": 0.43,
+      "nao_relacionada": 0.31,
+      "contradiz": 0,
+      "sustenta": 0.26
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.47
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.36
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.09
+    }
+   },
+   "input_tokens": 1656,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "608b7426a6e29d6a": {
+   "estado_sha256": "a5cb62964cbb5d3234c6ab853c3ac8eba4536ac07aca5aae98c6dbd975db89c5",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.96,
+     "probabilities": {
+      "relacionada": 0.97,
+      "contradiz": 0,
+      "sustenta": 0,
+      "nao_relacionada": 0.03
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.46
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.58
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.08
+    }
+   },
+   "input_tokens": 1781,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "ecea278b0b2c8830": {
+   "estado_sha256": "8cd9c1a2be6ccbab88b42e68c7f2bc29986459868c87aa81e42c0b9864d7b985",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.53,
+     "probabilities": {
+      "sustenta": 0.34,
+      "nao_relacionada": 0.01,
+      "relacionada": 0.65,
+      "contradiz": 0
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.75
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.74
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.07
+    }
+   },
+   "input_tokens": 1812,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "10db21bf3d79ce3e": {
+   "estado_sha256": "51a30b1f00213dd5dd32f0ef71dac48d8847c80344d0a3f4a9979595c7341edf",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.87,
+     "probabilities": {
+      "relacionada": 0.91,
+      "contradiz": 0,
+      "sustenta": 0.04,
+      "nao_relacionada": 0.05
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.4
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.47
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.05
+    }
+   },
+   "input_tokens": 1684,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "085ef69a2ffc8395": {
+   "estado_sha256": "c1ddc9ac36d3cc5bb74f93b7f99340cbaa78d9e0df94e02f4756f8252c89323b",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "sustenta",
+     "confidence": 0.45,
+     "probabilities": {
+      "contradiz": 0,
+      "nao_relacionada": 0.01,
+      "relacionada": 0.4,
+      "sustenta": 0.59
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.82
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.76
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.05
+    }
+   },
+   "input_tokens": 1622,
+   "preRotulo": "sustenta",
+   "descartado": false
+  },
+  "04cf3036c1362d5e": {
+   "estado_sha256": "d31ebea9ac91601e5ce2081a7d8071941dd4434725fa1000b50fff3321c7ff70",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "sustenta",
+     "confidence": 0.41,
+     "probabilities": {
+      "sustenta": 0.56,
+      "nao_relacionada": 0.02,
+      "relacionada": 0.41,
+      "contradiz": 0.01
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.58
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.62
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.15
+    }
+   },
+   "input_tokens": 1780,
+   "preRotulo": "sustenta",
+   "descartado": false
+  },
+  "71ff3d79ee09f303": {
+   "estado_sha256": "40a4b9216769cd2b2d98b8d4501ac9092fb32b200340c97e5bc0b7d82d7fab86",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.48,
+     "probabilities": {
+      "contradiz": 0.01,
+      "relacionada": 0.6,
+      "sustenta": 0.02,
+      "nao_relacionada": 0.37
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.31
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.39
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.31
+    }
+   },
+   "input_tokens": 1651,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "3d07f6d63f0a3384": {
+   "estado_sha256": "f761cea7385d9f5e504ca4fa00190a66260647d9e4947d34a23e12e31e068af6",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.72,
+     "probabilities": {
+      "sustenta": 0.01,
+      "contradiz": 0,
+      "nao_relacionada": 0.19,
+      "relacionada": 0.8
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.32
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.45
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.16
+    }
+   },
+   "input_tokens": 1810,
+   "preRotulo": "relacionada",
+   "descartado": false
+  },
+  "a93e7af488d1663b": {
+   "estado_sha256": "8f0d8468f4363d50cc8cc4d06a64bbb9209ec42394d9fb07d7ad4f31bc8fb20f",
+   "model": "jev-1.13.0",
+   "answers": {
+    "relacao": {
+     "type": "choice",
+     "choice": "relacionada",
+     "confidence": 0.52,
+     "probabilities": {
+      "relacionada": 0.64,
+      "contradiz": 0.01,
+      "sustenta": 0.01,
+      "nao_relacionada": 0.34
+     }
+    },
+    "mesmo_compromisso": {
+     "type": "noul",
+     "noul": 0.16
+    },
+    "assunto_do_titulo": {
+     "type": "noul",
+     "noul": 0.29
+    },
+    "direcao_oposta": {
+     "type": "noul",
+     "noul": 0.16
+    }
+   },
+   "input_tokens": 1899,
+   "preRotulo": "relacionada",
+   "descartado": false
+  }
+ },
+ "cache": {
+  "jevCascata": {
+   "6cf1514cab248dd8": {
+    "chave": "6cf1514cab248dd8|e4944863580c3badb128d41421adc054f19499dacc4b84e5f8ff1db249b2bf6d|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.83
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.12
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.26
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.3
+     }
+    }
+   },
+   "63a87b6e47066ab0": {
+    "chave": "63a87b6e47066ab0|0250a4a815706470f85fc8ec9216fe559dd477a4195f7a970ff35fa841e5beae|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.3
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.03
+     }
+    }
+   },
+   "4b8f32b616248cd4": {
+    "chave": "4b8f32b616248cd4|fba664504289f154d205e604154e6a0b2933c91e0b19fe11f22d604f0ff3d1b9|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.48
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.59
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.39
+     }
+    }
+   },
+   "e7f89a5d8da350be": {
+    "chave": "e7f89a5d8da350be|2a75fd3ce01644e9c99c5f6a6a05a7a108e105df3a1f692cb3a5ee54838179e5|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.84
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.57
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.03
+     }
+    }
+   },
+   "0fc12cd23bdc5e51": {
+    "chave": "0fc12cd23bdc5e51|dd8793d176384222c641d9ee75c3c9234211846e9722e338293bf083f8e0cf7a|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.52
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.43
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.02
+     }
+    }
+   },
+   "5cc0e84e21d9271d": {
+    "chave": "5cc0e84e21d9271d|43b4523324050e5a940b356790a06ce1377a110bac9835baa3603e505e57d5c8|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.58
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.12
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.27
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.64
+     }
+    }
+   },
+   "1160afa10babbf4c": {
+    "chave": "1160afa10babbf4c|dcf2384ed39080226c627aa315241aea5cf04ac708877b741f35ffa960fe9c3e|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.39
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.11
+     }
+    }
+   },
+   "e3b45851f9da7767": {
+    "chave": "e3b45851f9da7767|6570d83b08a652b31ef4024824087a08a0dbc312c92ec317f3954df80aebbb3a|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.12
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.03
+     }
+    }
+   },
+   "92a2a076b4bf1117": {
+    "chave": "92a2a076b4bf1117|ade5adb8ad76b70324f41ed5385e510211ab80f86aac0de1afdaed5c3bad8536|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.88
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.14
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.06
+     }
+    }
+   },
+   "0e5ae4dd33c887db": {
+    "chave": "0e5ae4dd33c887db|e4f07827847cad158ba54cf4727e58913c28da3c7bfd6a91f9e331889cf4a83c|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.77
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.22
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.02
+     }
+    }
+   },
+   "a140144d1a3ac7a2": {
+    "chave": "a140144d1a3ac7a2|816ba00e5fc3ff639772cec4b30ca9cd52c117b88c60ce4d9e247f6f6f049a30|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.53
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.04
+     }
+    }
+   },
+   "232c46f5e77d7f3f": {
+    "chave": "232c46f5e77d7f3f|0da8a1099f822d03fa72b7d69aee36a3c26abf5bb6ad3a7f1b9bc9c729a46107|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.87
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.25
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.02
+     }
+    }
+   },
+   "33e5c85440736a29": {
+    "chave": "33e5c85440736a29|0a060f06d76d8511dad4892a2b9f4ae7c74a08c456fde415c88c92bedb409d34|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.52
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.28
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.04
+     }
+    }
+   },
+   "9e58eb129d93a808": {
+    "chave": "9e58eb129d93a808|c4483d8cc2314c425fb70674f6212dfaf43c171992452267c4c326d51b1ff6e7|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.62
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.7
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.03
+     }
+    }
+   },
+   "045e254387866936": {
+    "chave": "045e254387866936|13d39b0880452348ed5016aa33fd14d451e581e4d190d33a7c92e98e381a2030|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.62
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.54
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.04
+     }
+    }
+   },
+   "584f382ffda17892": {
+    "chave": "584f382ffda17892|4cdec5af102466ac01c5706cd79f957770d4f145945e7d60faf66140e286633a|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.25
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.68
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.06
+     }
+    }
+   },
+   "8f3d9b129ccfb26a": {
+    "chave": "8f3d9b129ccfb26a|eb51dec6bc162ef5e8e17759cdcd3675165590d675c9d7e797d0f404b07d5570|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.81
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.62
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.03
+     }
+    }
+   },
+   "b159b9484ab70ba3": {
+    "chave": "b159b9484ab70ba3|d9c3f42453578665262f01941c59444b9567a63f58ab33107ac93deaa389b378|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.57
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.53
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.07
+     }
+    }
+   },
+   "e0fc387a1f060167": {
+    "chave": "e0fc387a1f060167|84caa2b58b373bbe5476e7a65686774ad683b95cea0b9e473e8e3e219be56db7|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.87
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.24
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.02
+     }
+    }
+   },
+   "66b9a9e16a93860c": {
+    "chave": "66b9a9e16a93860c|3e160bb88fd9710a606f6f183a57d156a6a7f93b96612bb1f7c0ec17ecf5e969|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.81
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.56
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.04
+     }
+    }
+   },
+   "22a1f55bdae4c830": {
+    "chave": "22a1f55bdae4c830|bfb4ddbfe82b67c075c378534c2d73e78f1f38612f0c042d57f45ebaf8253a58|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.8
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.18
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.03
+     }
+    }
+   },
+   "0bb21fae3cef9d7d": {
+    "chave": "0bb21fae3cef9d7d|b5d3bd16678d7e2a5c3e011c05c54fdf374da7fceae13943c6914b67fcc7974e|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.28
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.76
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.04
+     }
+    }
+   },
+   "34c7a6bc5fa74754": {
+    "chave": "34c7a6bc5fa74754|867705e6557d8c81194d2a5ae569a2e3c013a7bd54aa527413d3d9b0b79188c6|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.36
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.68
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.03
+     }
+    }
+   },
+   "95a156812250e5a0": {
+    "chave": "95a156812250e5a0|60a1ad8afa37c310c5d7fe1a26dd5276b78cb90345047874b07584cb27d31b87|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.02
+     }
+    }
+   },
+   "909c15539304f105": {
+    "chave": "909c15539304f105|382f13e395690a60ec49348fb0295ab7128bc4ca0c08c8bec948b6f8593fd2a5|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.33
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.04
+     }
+    }
+   },
+   "06ab49d0f5b72176": {
+    "chave": "06ab49d0f5b72176|82e9b76fe9dea354bb5bce29f882555dbf03ff54a4d6c14f91f7ec7ad411afb8|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.02
+     }
+    }
+   },
+   "1b422fb8ac93a813": {
+    "chave": "1b422fb8ac93a813|22ddbeec1e0b19ae42d1c48357564e355990d128da755c73c0b87e1f32ad497b|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.49
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.02
+     }
+    }
+   },
+   "256efc32044ed4d2": {
+    "chave": "256efc32044ed4d2|60b276723a3d3d48afbb4dfd07e0ca52f21c35928e6b22f13c4629c304101697|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.29
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.68
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.02
+     }
+    }
+   },
+   "1d2fc2bb3ef4ba6b": {
+    "chave": "1d2fc2bb3ef4ba6b|968d0c5b8e477bbedb6b66ea590e777539d6ad42b9bbc1c57dfcc2b19e019703|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.58
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.34
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.07
+     }
+    }
+   },
+   "608b7426a6e29d6a": {
+    "chave": "608b7426a6e29d6a|a5cb62964cbb5d3234c6ab853c3ac8eba4536ac07aca5aae98c6dbd975db89c5|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.79
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.41
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.22
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.71
+     }
+    }
+   },
+   "68aa4a99fbc3855d": {
+    "chave": "68aa4a99fbc3855d|61672ca3903e4a12b310f56b4a1f8d9c132e0cef2f6724e90bdac5389c53386e|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.46
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.72
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.26
+     }
+    }
+   },
+   "ecea278b0b2c8830": {
+    "chave": "ecea278b0b2c8830|8cd9c1a2be6ccbab88b42e68c7f2bc29986459868c87aa81e42c0b9864d7b985|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.81
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.25
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.05
+     }
+    }
+   },
+   "10db21bf3d79ce3e": {
+    "chave": "10db21bf3d79ce3e|51a30b1f00213dd5dd32f0ef71dac48d8847c80344d0a3f4a9979595c7341edf|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.45
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.28
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.5
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.06
+     }
+    }
+   },
+   "04cf3036c1362d5e": {
+    "chave": "04cf3036c1362d5e|d31ebea9ac91601e5ce2081a7d8071941dd4434725fa1000b50fff3321c7ff70|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.69
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.33
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.03
+     }
+    }
+   },
+   "085ef69a2ffc8395": {
+    "chave": "085ef69a2ffc8395|c1ddc9ac36d3cc5bb74f93b7f99340cbaa78d9e0df94e02f4756f8252c89323b|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.84
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.17
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.05
+     }
+    }
+   },
+   "71ff3d79ee09f303": {
+    "chave": "71ff3d79ee09f303|40a4b9216769cd2b2d98b8d4501ac9092fb32b200340c97e5bc0b7d82d7fab86|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.49
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.58
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.02
+     }
+    }
+   },
+   "3d07f6d63f0a3384": {
+    "chave": "3d07f6d63f0a3384|f761cea7385d9f5e504ca4fa00190a66260647d9e4947d34a23e12e31e068af6|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.47
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.3
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.13
+     }
+    }
+   },
+   "a93e7af488d1663b": {
+    "chave": "a93e7af488d1663b|8f0d8468f4363d50cc8cc4d06a64bbb9209ec42394d9fb07d7ad4f31bc8fb20f|60a31f08e854bd143b06b225163836e0349dd75f4469a8f41cbe662db5e40417",
+    "model": "jev-1.13.0",
+    "answers": {
+     "objeto_concreto": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "ato_simbolico": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "precisa_explicacao": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "frase_generica": {
+      "type": "noul",
+      "noul": 0.03
+     }
+    }
+   }
+  },
+  "verificador": {
+   "06ab49d0f5b72176": {
+    "par_id": "06ab49d0f5b72176",
+    "mesmo_assunto": "sim",
+    "ato_simbolico": false,
+    "modelo": "gpt-5.6-luna"
+   },
+   "ecea278b0b2c8830": {
+    "par_id": "ecea278b0b2c8830",
+    "mesmo_assunto": "sim",
+    "ato_simbolico": false,
+    "modelo": "gpt-5.6-luna"
+   },
+   "085ef69a2ffc8395": {
+    "par_id": "085ef69a2ffc8395",
+    "mesmo_assunto": "sim",
+    "ato_simbolico": false,
+    "modelo": "gpt-5.6-luna"
+   },
+   "04cf3036c1362d5e": {
+    "par_id": "04cf3036c1362d5e",
+    "mesmo_assunto": "sim",
+    "ato_simbolico": false,
+    "modelo": "gpt-5.6-luna"
+   },
+   "6cf1514cab248dd8": {
+    "par_id": "6cf1514cab248dd8",
+    "mesmo_assunto": "sim",
+    "ato_simbolico": false,
+    "modelo": "gpt-5.6-luna"
+   },
+   "63a87b6e47066ab0": {
+    "par_id": "63a87b6e47066ab0",
+    "mesmo_assunto": "sim",
+    "ato_simbolico": false,
+    "modelo": "gpt-5.6-luna"
+   },
+   "1160afa10babbf4c": {
+    "par_id": "1160afa10babbf4c",
+    "mesmo_assunto": "sim",
+    "ato_simbolico": false,
+    "modelo": "gpt-5.6-luna"
+   },
+   "0e5ae4dd33c887db": {
+    "par_id": "0e5ae4dd33c887db",
+    "mesmo_assunto": "sim",
+    "ato_simbolico": false,
+    "modelo": "gpt-5.6-luna"
+   },
+   "232c46f5e77d7f3f": {
+    "par_id": "232c46f5e77d7f3f",
+    "mesmo_assunto": "sim",
+    "ato_simbolico": false,
+    "modelo": "gpt-5.6-luna"
+   },
+   "92a2a076b4bf1117": {
+    "par_id": "92a2a076b4bf1117",
+    "mesmo_assunto": "sim",
+    "ato_simbolico": false,
+    "modelo": "gpt-5.6-luna"
+   },
+   "e3b45851f9da7767": {
+    "par_id": "e3b45851f9da7767",
+    "mesmo_assunto": "sim",
+    "ato_simbolico": false,
+    "modelo": "gpt-5.6-luna"
+   },
+   "e0fc387a1f060167": {
+    "par_id": "e0fc387a1f060167",
+    "mesmo_assunto": "sim",
+    "ato_simbolico": false,
+    "modelo": "gpt-5.6-luna"
+   },
+   "22a1f55bdae4c830": {
+    "par_id": "22a1f55bdae4c830",
+    "mesmo_assunto": "sim",
+    "ato_simbolico": false,
+    "modelo": "gpt-5.6-luna"
+   },
+   "95a156812250e5a0": {
+    "par_id": "95a156812250e5a0",
+    "mesmo_assunto": "sim",
+    "ato_simbolico": false,
+    "modelo": "gpt-5.6-luna"
+   }
+  },
+  "falhasVerificador": []
+ }
+}

@@ -1,6 +1,6 @@
 "use client"
 
-// cspell:words multidocument nivel secao secoes
+// cspell:words multidocument nivel secao secoes relacao
 
 import {
   useCallback,
@@ -26,6 +26,11 @@ import type {
   ProgramaGovernoManifestoPublico,
   ProgramaGovernoSecao,
 } from "@/lib/programa-governo"
+import {
+  agruparEvidenciasPorTema,
+  type CompromissoEvidenciaPublica,
+} from "@/lib/compromisso-evidencia"
+import { compromissoEvidenciaCopy } from "@/lib/ui-labels"
 
 export type ProgramaGovernoLoadState = "idle" | "loading" | "loaded" | "failed"
 
@@ -282,12 +287,95 @@ function ProgramStateNotice({ manifesto }: { manifesto: ProgramaGovernoManifesto
   )
 }
 
+function formatEvidenciaData(value: string | null) {
+  if (!value) return null
+  if (/^\d{4}$/u.test(value)) return value
+  const data = new Date(value)
+  if (Number.isNaN(data.getTime())) return null
+  return new Intl.DateTimeFormat("pt-BR", { dateStyle: "short", timeZone: "UTC" }).format(data)
+}
+
+function ProgramaEvidenciasRelacionadas({
+  temas,
+  evidencias,
+  mostrarSemCongresso,
+}: {
+  temas: ReadonlyArray<{ id: string; titulo: string }>
+  evidencias: ReadonlyArray<CompromissoEvidenciaPublica>
+  mostrarSemCongresso: boolean
+}) {
+  const porTema = agruparEvidenciasPorTema(evidencias)
+  const temasComEvidencia = temas.filter((tema) => (porTema.get(tema.id)?.length ?? 0) > 0)
+  return (
+    <section aria-labelledby="compromisso-evidencias-title" className="mt-6 border-t border-border/60 pt-5" data-pf-compromisso-evidencias="">
+      <h3 id="compromisso-evidencias-title" className="text-base font-semibold text-foreground">
+        {compromissoEvidenciaCopy.titulo}
+      </h3>
+      <p className="mt-1 max-w-3xl text-sm text-muted-foreground">{compromissoEvidenciaCopy.aviso}</p>
+      {mostrarSemCongresso && (
+        <p className="mt-1 max-w-3xl text-sm text-muted-foreground" data-pf-compromisso-evidencias-sem-congresso="">
+          {compromissoEvidenciaCopy.semCongresso}
+        </p>
+      )}
+      {temasComEvidencia.length === 0 ? (
+        <p className="mt-3 text-sm text-foreground" data-pf-compromisso-evidencias-vazio="">{compromissoEvidenciaCopy.vazio}</p>
+      ) : (
+        <ul className="mt-3 space-y-2">
+          {temasComEvidencia.map((tema) => {
+            const itens = porTema.get(tema.id) ?? []
+            return (
+              <li key={tema.id} className="rounded-[8px] border border-border/60 bg-muted/30">
+                <details>
+                  <summary className="flex min-h-11 cursor-pointer flex-col items-start gap-0.5 px-4 py-2 text-sm font-semibold text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+                    <span>{tema.titulo}</span>
+                    <span className="shrink-0 text-xs font-medium text-muted-foreground">{compromissoEvidenciaCopy.contagem(itens.length)}</span>
+                  </summary>
+                  <ul className="space-y-3 px-4 pb-4">
+                    {itens.map((item) => {
+                      const data = formatEvidenciaData(item.data)
+                      return (
+                        <li key={item.id} className="border-t border-border/40 pt-3 text-sm">
+                          <p className="flex flex-wrap items-center gap-2 text-xs font-semibold text-muted-foreground">
+                            <span className="rounded-full bg-background px-2 py-0.5 text-foreground">{compromissoEvidenciaCopy.tipo[item.tipo]}</span>
+                            <span>{compromissoEvidenciaCopy.relacao[item.relacao]}</span>
+                            {item.referencia && <span>{item.referencia}</span>}
+                            {data && <span>{data}</span>}
+                          </p>
+                          <p className="mt-1 line-clamp-4 text-foreground">
+                            {item.tipo === "fala" ? `“${item.texto}”` : item.texto}
+                          </p>
+                          {item.url && (
+                            <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-1 inline-flex min-h-11 items-center gap-1 text-xs font-semibold text-foreground underline underline-offset-2">
+                              {compromissoEvidenciaCopy.fonte}
+                              <ExternalLink className="size-3.5" aria-hidden="true" />
+                              <span className="sr-only">(abre em nova aba)</span>
+                            </a>
+                          )}
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </details>
+              </li>
+            )
+          })}
+        </ul>
+      )}
+    </section>
+  )
+}
+
 export function ProgramaGovernoOverview({
   manifesto,
   onOpenTab,
+  evidencias,
+  teveMandatoNoCongresso = true,
 }: {
   manifesto: ProgramaGovernoManifestoPublico
   onOpenTab: () => void
+  /** Ausente: a seção de evidências não aparece. Lista vazia: estado vazio explícito. */
+  evidencias?: ReadonlyArray<CompromissoEvidenciaPublica>
+  teveMandatoNoCongresso?: boolean
 }) {
   const context = electionContext(manifesto.fonte)
   return (
@@ -329,6 +417,13 @@ export function ProgramaGovernoOverview({
               </li>
             ))}
           </ul>
+          {evidencias && (
+            <ProgramaEvidenciasRelacionadas
+              temas={manifesto.resumo.temas}
+              evidencias={evidencias}
+              mostrarSemCongresso={manifesto.fonte.cargo === "GOVERNADOR" && !teveMandatoNoCongresso}
+            />
+          )}
           <div className="mt-6 flex flex-wrap gap-3">
             <button
               type="button"
