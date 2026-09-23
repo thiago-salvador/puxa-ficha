@@ -17,7 +17,7 @@ source "$ROOT/scripts/audit/lib/configure-libpq-from-url.sh"
 [[ "$GITHUB_REF" == "refs/heads/main" ]] || { echo "FAIL: main is required" >&2; exit 2; }
 remote_url="$(git remote get-url origin)"
 case "$remote_url" in
-  https://github.com/*/puxa-ficha.git|git@github.com:*/puxa-ficha.git) ;;
+  https://github.com/thiago-salvador/puxa-ficha|https://github.com/thiago-salvador/puxa-ficha.git|git@github.com:thiago-salvador/puxa-ficha.git) ;;
   *) echo "FAIL: origin is not the expected repository" >&2; exit 2 ;;
 esac
 [[ "$(git ls-remote "$remote_url" refs/heads/main | cut -f1)" == "$PF_EXPECTED_SHA" ]] || {
