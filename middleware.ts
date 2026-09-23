@@ -48,6 +48,8 @@ function nextWithContentSecurityPolicy(request: NextRequest) {
   const requestHeaders = new Headers(request.headers)
   requestHeaders.set("x-nonce", nonce)
   requestHeaders.set("Content-Security-Policy", csp)
+  // A colinha contém escolhas na query. O layout omite o beacon desta rota.
+  requestHeaders.set("x-pf-private-colinha", request.nextUrl.pathname === "/colinha" ? "1" : "0")
 
   const response = NextResponse.next({
     request: {

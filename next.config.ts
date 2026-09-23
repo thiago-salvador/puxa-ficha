@@ -152,6 +152,23 @@ export const puxaFichaNextConfig: NextConfig = {
         source: "/((?!embed/).*)",
         headers: securityHeaders,
       },
+      // A URL da colinha contém escolhas. Evita propagá-las por Referer e cache.
+      {
+        source: "/colinha",
+        headers: [
+          { key: "Referrer-Policy", value: "no-referrer" },
+          { key: "Cache-Control", value: "private, no-store" },
+          { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
+        ],
+      },
+      {
+        source: "/api/colinha/:path*",
+        headers: [
+          { key: "Referrer-Policy", value: "no-referrer" },
+          { key: "Cache-Control", value: "private, no-store" },
+          { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
+        ],
+      },
       {
         source: "/preview/:path*",
         headers: [

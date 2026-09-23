@@ -31,6 +31,7 @@ next-env.d.ts
 # production data downloads (large, regenerable via the ingest pipeline)
 data/tse/
 data/tse-cpf/
+data/tse-fotos-2026/espelhos/quarentena/
 data/operations/
 # fila de revisão manual, reescrita a cada execução de backfill-historico-periodo-fim
 data/manual-review-periodo-fim.csv
@@ -95,4 +96,11 @@ supabase/.branches/
 
 # Artefatos locais de auditoria/curadoria — regeneráveis, não commitados.
 .artifacts/
+artifacts/fotos-roster-2026-espelhos.zip*
+artifacts/relatorio-mirror-fotos.json
+artifacts/relatorio-fotos-2026-espelhos.json
+artifacts/fotos-tse-2026-espelhos-LEIA-ME.md
+artifacts/NAO-USAR-ESPELHOS-fotos-2026.md
+scripts/data/candidate-photo-tse-mirror.json
+scripts/data/candidate-photo-tse-secondary-mirror.json
 /reports/promessa-evidencia/

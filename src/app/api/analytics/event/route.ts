@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server"
 import {
+  ANALYTICS_EVENTS,
   isAnalyticsEventName,
+  sanitizeColinhaSharePayload,
   sanitizeAnalyticsPayload,
 } from "@/lib/analytics-events"
 import {
@@ -106,7 +108,11 @@ export function createAnalyticsEventPostHandler(deps: AnalyticsEventDeps = defau
       return NextResponse.json({ ok: false, reason: "invalid_event" }, { status: 400 })
     }
 
-    const payload = sanitizeAnalyticsPayload((body as { payload?: unknown }).payload)
+    const rawPayload = (body as { payload?: unknown }).payload
+    const payload = eventName === ANALYTICS_EVENTS.colinhaShare
+      ? sanitizeColinhaSharePayload(rawPayload)
+      : sanitizeAnalyticsPayload(rawPayload)
+    if (!payload) return NextResponse.json({ ok: false, reason: "invalid_format" }, { status: 400 })
 
     // Segundo portão, durável: reserva e grava na mesma transação. O contador
     // em memória é por instância e não é o teto. Sem a coluna, o evento ainda

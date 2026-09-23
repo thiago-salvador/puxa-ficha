@@ -1,11 +1,13 @@
 "use client"
 
 import {
+  ANALYTICS_EVENTS,
   ANALYTICS_PROOF_ID_RE,
   type AnalyticsEventName,
   type AnalyticsPayload,
   getAnalyticsProofIdFromPayload,
   sanitizeAnalyticsPayload,
+  sanitizeColinhaSharePayload,
 } from "@/lib/analytics-events"
 
 export function readProofIdFromUrl(): string | null {
@@ -39,9 +41,14 @@ function postLaunchEvent(eventName: AnalyticsEventName, payload: AnalyticsPayloa
 }
 
 export function trackLaunchEvent(eventName: AnalyticsEventName, payload?: unknown) {
-  const sanitized = sanitizeAnalyticsPayload(payload)
-  const proofId = getAnalyticsProofIdFromPayload(sanitized) ?? readProofIdFromUrl()
-  if (proofId) sanitized.proof_id = proofId
+  const sanitized: AnalyticsPayload | null = eventName === ANALYTICS_EVENTS.colinhaShare
+    ? sanitizeColinhaSharePayload(payload)
+    : sanitizeAnalyticsPayload(payload)
+  if (!sanitized) return
+  if (eventName !== ANALYTICS_EVENTS.colinhaShare) {
+    const proofId = getAnalyticsProofIdFromPayload(sanitized) ?? readProofIdFromUrl()
+    if (proofId) sanitized.proof_id = proofId
+  }
 
   postLaunchEvent(eventName, sanitized)
 }

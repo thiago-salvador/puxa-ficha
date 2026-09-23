@@ -23,13 +23,14 @@ function launchTrackCallBlocks(source: string): string[] {
 }
 
 describe("analytics D1 instrumentation", () => {
-  it("declara os cinco eventos mínimos de lançamento", () => {
+  it("declara os cinco eventos mínimos de lançamento e o compartilhamento da colinha", () => {
     assert.deepEqual(Object.values(ANALYTICS_EVENTS), [
       "Candidate Click",
       "Comparison Start",
       "Quiz Complete",
       "External Source Click",
       "Search Zero Results",
+      "Colinha Share",
     ])
   })
 
