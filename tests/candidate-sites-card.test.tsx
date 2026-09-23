@@ -109,7 +109,7 @@ test("snapshot traz a lista integral e deduplicada do Flavio Bolsonaro", () => {
   const record = candidateSitesDataset.candidates["flavio-bolsonaro"]
   assert.ok(record)
   assert.equal(record.sq_candidato, "280002551544")
-  assert.equal(record.sites.length, 37)
+  assert.equal(record.sites.length, 41)
   const urls = record.sites.map((site) => site.url?.toLowerCase())
   assert.ok(urls.some((url) => url?.includes("t.me/senadorflaviobolsonaro")))
   assert.ok(urls.some((url) => url?.includes("discord.gg/exyyrj5tf")))

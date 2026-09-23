@@ -4,24 +4,24 @@
   "source": {
     "catalog_url": "https://dadosabertos.tse.jus.br/api/3/action/package_show?id=candidatos-2026",
     "candidate_resource_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
-    "candidate_resource_sha256": "72293d243494be123d1962144925d94e02dfdc9063dca355773adce96dfe2e57",
+    "candidate_resource_sha256": "c77e6e7aebcd8f4467f7623b79b385ed0d847c5b5cab4b63aa571b28fadea4ef",
     "resource_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/rede_social_candidato_2026.zip",
-    "resource_sha256": "24dd2bd5500ec8bb97078c00967e5035f5c8ef76e5934d7e6499dcb5a852353b",
+    "resource_sha256": "70947e26a7ee6c1acae42aab0258d11870f52afd32954da2369b712623805cd9",
     "license": "Creative Commons Atribuição",
-    "collected_at": "2026-08-26T22:12:16.324Z",
-    "generated_at_tse": "26/08/2026 16:30:24"
+    "collected_at": "2026-09-23T22:04:43.000Z",
+    "generated_at_tse": "23/09/2026 16:30:46"
   },
   "counts": {
-    "profiles_total": 616,
-    "profiles_matched": 482,
-    "profiles_with_sites": 453,
-    "site_rows": 2325,
-    "unique_entries": 2282,
-    "unique_sites": 2200,
-    "non_linkable_entries": 82,
-    "duplicate_rows_removed": 43,
+    "profiles_total": 612,
+    "profiles_matched": 474,
+    "profiles_with_sites": 454,
+    "site_rows": 2835,
+    "unique_entries": 2749,
+    "unique_sites": 2668,
+    "non_linkable_entries": 81,
+    "duplicate_rows_removed": 86,
     "ambiguous_profiles": 1,
-    "declared_sq_missing": 1
+    "declared_sq_missing": 0
   },
   "ambiguous_profiles": [
     {
@@ -32,12 +32,7 @@
       ]
     }
   ],
-  "unmatched_declared_profiles": [
-    {
-      "slug": "tse-2026-130002554332",
-      "sq_candidato": "130002554332"
-    }
-  ],
+  "unmatched_declared_profiles": [],
   "verified_empty_profiles": [
     {
       "slug": "ariel-capistrano",
@@ -57,11 +52,6 @@
     {
       "slug": "policial-edjane",
       "sq_candidato": "250002548080",
-      "match_method": "sq_candidato"
-    },
-    {
-      "slug": "tse-2026-100002542867",
-      "sq_candidato": "100002542867",
       "match_method": "sq_candidato"
     },
     {
@@ -95,11 +85,6 @@
       "match_method": "sq_candidato"
     },
     {
-      "slug": "tse-2026-160002551043",
-      "sq_candidato": "160002551043",
-      "match_method": "sq_candidato"
-    },
-    {
       "slug": "tse-2026-180002540449",
       "sq_candidato": "180002540449",
       "match_method": "sq_candidato"
@@ -115,11 +100,6 @@
       "match_method": "sq_candidato"
     },
     {
-      "slug": "tse-2026-200002550225",
-      "sq_candidato": "200002550225",
-      "match_method": "sq_candidato"
-    },
-    {
       "slug": "tse-2026-200002550541",
       "sq_candidato": "200002550541",
       "match_method": "sq_candidato"
@@ -127,11 +107,6 @@
     {
       "slug": "tse-2026-20002552524",
       "sq_candidato": "20002552524",
-      "match_method": "sq_candidato"
-    },
-    {
-      "slug": "tse-2026-230002534806",
-      "sq_candidato": "230002534806",
       "match_method": "sq_candidato"
     },
     {
@@ -145,11 +120,6 @@
       "match_method": "sq_candidato"
     },
     {
-      "slug": "tse-2026-270002550610",
-      "sq_candidato": "270002550610",
-      "match_method": "sq_candidato"
-    },
-    {
       "slug": "tse-2026-270002551270",
       "sq_candidato": "270002551270",
       "match_method": "sq_candidato"
@@ -160,28 +130,8 @@
       "match_method": "sq_candidato"
     },
     {
-      "slug": "tse-2026-270002552968",
-      "sq_candidato": "270002552968",
-      "match_method": "sq_candidato"
-    },
-    {
-      "slug": "tse-2026-40002535270",
-      "sq_candidato": "40002535270",
-      "match_method": "sq_candidato"
-    },
-    {
       "slug": "tse-2026-50002536577",
       "sq_candidato": "50002536577",
-      "match_method": "sq_candidato"
-    },
-    {
-      "slug": "tse-2026-50002536625",
-      "sq_candidato": "50002536625",
-      "match_method": "sq_candidato"
-    },
-    {
-      "slug": "tse-2026-90002545243",
-      "sq_candidato": "90002545243",
       "match_method": "sq_candidato"
     }
   ],
@@ -250,6 +200,21 @@
           "order": 1,
           "url": "https://candidatos.pco.org.br/",
           "original_url": "HTTPS://CANDIDATOS.PCO.ORG.BR"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/adrianoteixeira.pco29/",
+          "original_url": "https://www.instagram.com/adrianoteixeira.pco29/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/adriano.teixeira.33",
+          "original_url": "https://www.facebook.com/adriano.teixeira.33"
+        },
+        {
+          "order": 4,
+          "url": "https://x.com/AdriaHistoria",
+          "original_url": "https://x.com/AdriaHistoria"
         }
       ]
     },
@@ -424,6 +389,11 @@
           "order": 6,
           "url": "https://www.instagram.com/dralexandresalomao.adv?igsi=MWFpYmc2dGdqb2NpbA==",
           "original_url": "https://www.instagram.com/dralexandresalomao.adv?igsi=MWFpYmc2dGdqb2NpbA=="
+        },
+        {
+          "order": 7,
+          "url": "https://www.dralexandresalomao.com.br/",
+          "original_url": "https://www.dralexandresalomao.com.br/"
         }
       ]
     },
@@ -501,6 +471,57 @@
           "order": 10,
           "url": "https://soundcloud.com/allyson-governador-44",
           "original_url": "https://soundcloud.com/allyson-governador-44"
+        },
+        {
+          "order": 11,
+          "url": "https://open.spotify.com/s/WfMI3F8",
+          "original_url": "https://open.spotify.com/s/WfMI3F8"
+        },
+        {
+          "order": 12,
+          "url": "https://www.twibbonize.com/u/allyson44",
+          "original_url": "https://www.twibbonize.com/u/allyson44"
+        }
+      ]
+    },
+    "andre-do-prado": {
+      "sq_candidato": "250002541308",
+      "match_method": "nome_completo_exato_unico",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://x.com/_ANDREDOPRADO",
+          "original_url": "HTTPS://X.COM/_ANDREDOPRADO"
+        },
+        {
+          "order": 2,
+          "url": "https://www.facebook.com/DEP.ANDREDOPRADO",
+          "original_url": "HTTPS://WWW.FACEBOOK.COM/DEP.ANDREDOPRADO"
+        },
+        {
+          "order": 3,
+          "url": "https://www.tiktok.com/@ANDREDOPRADO_",
+          "original_url": "HTTPS://WWW.TIKTOK.COM/@ANDREDOPRADO_"
+        },
+        {
+          "order": 4,
+          "url": "https://www.instagram.com/ANDREDOPRADOSP/",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/ANDREDOPRADOSP/"
+        },
+        {
+          "order": 5,
+          "url": "https://www.tiktok.com/@andredopradosp",
+          "original_url": "https://www.tiktok.com/@andredopradosp"
+        },
+        {
+          "order": 6,
+          "url": "https://x.com/andredopradosp",
+          "original_url": "https://x.com/andredopradosp"
+        },
+        {
+          "order": 7,
+          "url": "https://k.kwai.com/u/@andredopradosp/CQMyLvGu",
+          "original_url": "https://k.kwai.com/u/@andredopradosp/CQMyLvGu"
         }
       ]
     },
@@ -734,6 +755,26 @@
           "order": 1,
           "url": "https://instagram.com/drbenonimendes",
           "original_url": "https://instagram.com/drbenonimendes"
+        },
+        {
+          "order": 3,
+          "url": "https://www.tiktok.com/@adv.benonimendes",
+          "original_url": "https://www.tiktok.com/@adv.benonimendes"
+        },
+        {
+          "order": 4,
+          "url": "https://www.facebook.com/drbenmendes",
+          "original_url": "https://www.facebook.com/drbenmendes"
+        },
+        {
+          "order": 5,
+          "url": "https://drbenmendes.com/",
+          "original_url": "https://drbenmendes.com/"
+        },
+        {
+          "order": 6,
+          "url": "https://queroapoiar.com.br/benmendes",
+          "original_url": "https://queroapoiar.com.br/benmendes"
         }
       ]
     },
@@ -745,6 +786,26 @@
           "order": 1,
           "url": "https://candidatos.pco.org.br/C/NOME-DE-URNA-2026",
           "original_url": "HTTPS://CANDIDATOS.PCO.ORG.BR/C/NOME-DE-URNA-2026"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/bruno_pco29/",
+          "original_url": "https://www.instagram.com/bruno_pco29/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/brunodiaslindodaporra",
+          "original_url": "https://www.facebook.com/brunodiaslindodaporra"
+        },
+        {
+          "order": 4,
+          "url": "https://x.com/BrunoDi24592488",
+          "original_url": "https://x.com/BrunoDi24592488"
+        },
+        {
+          "order": 5,
+          "url": "https://www.threads.com/@bruno_pco29",
+          "original_url": "https://www.threads.com/@bruno_pco29"
         }
       ]
     },
@@ -797,6 +858,62 @@
           "order": 1,
           "url": "https://candidatos.pco.org.br/",
           "original_url": "https://candidatos.pco.org.br"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/camilosdf/",
+          "original_url": "https://www.instagram.com/camilosdf/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/camilosdf",
+          "original_url": "https://www.facebook.com/camilosdf"
+        }
+      ]
+    },
+    "capitao-wagner": {
+      "sq_candidato": "60002540753",
+      "match_method": "nome_completo_exato_unico",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/CAPITAOWAGNERSOUSA/",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/CAPITAOWAGNERSOUSA/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.tiktok.com/@capitaowagnersousa",
+          "original_url": "https://www.tiktok.com/@capitaowagnersousa"
+        },
+        {
+          "order": 4,
+          "url": "https://youtube.com/@capitaowagnersousa",
+          "original_url": "https://youtube.com/@capitaowagnersousa"
+        },
+        {
+          "order": 5,
+          "url": "https://k.kwai.com/u/@capitaowagnersousa/C3qDxabk",
+          "original_url": "https://k.kwai.com/u/@capitaowagnersousa/C3qDxabk"
+        },
+        {
+          "order": 6,
+          "url": "https://www.facebook.com/capitaowagnersousa",
+          "original_url": "https://www.facebook.com/capitaowagnersousa"
+        },
+        {
+          "order": 7,
+          "url": "http://www.capitaowagner.com.br/",
+          "original_url": "http://www.capitaowagner.com.br/"
+        },
+        {
+          "order": 8,
+          "url": "http://www.capitaowagnersenador.com.br/",
+          "original_url": "http://www.capitaowagnersenador.com.br/"
+        },
+        {
+          "order": 9,
+          "url": "https://www.instagram.com/capitaowagnersousareserva",
+          "original_url": "https://www.instagram.com/capitaowagnersousareserva"
         }
       ]
     },
@@ -1336,6 +1453,46 @@
           "order": 12,
           "url": "https://www.instagram.com/juntascomclecio_?igsi=MzFoZDdvdHEzaG52",
           "original_url": "https://www.instagram.com/juntascomclecio_?igsi=MzFoZDdvdHEzaG52"
+        },
+        {
+          "order": 13,
+          "url": "https://www.clecio44.com.br/",
+          "original_url": "https://www.clecio44.com.br"
+        },
+        {
+          "order": 14,
+          "url": "https://www.timedoclecio.com.br/",
+          "original_url": "https://www.timedoclecio.com.br"
+        },
+        {
+          "order": 15,
+          "url": "https://www.tiktok.com/@timedoclecio?_r=1&_t=ZS-99SCZRfs7BF",
+          "original_url": "https://www.tiktok.com/@timedoclecio?_r=1&_t=ZS-99SCZRfs7BF"
+        },
+        {
+          "order": 16,
+          "url": "https://k.kwai.com/u/@Timedoclecio/gC5cIAx3",
+          "original_url": "https://k.kwai.com/u/@Timedoclecio/gC5cIAx3"
+        },
+        {
+          "order": 17,
+          "url": "https://www.cleciogovernador44.com.br/",
+          "original_url": "https://www.cleciogovernador44.com.br"
+        },
+        {
+          "order": 18,
+          "url": "https://open.spotify.com/intl-pt/artist/3FbDhO58hakeQf4G5sHTIe?si=Y16-OG48SW-QbqDbWsgGxQ",
+          "original_url": "https://open.spotify.com/intl-pt/artist/3FbDhO58hakeQf4G5sHTIe?si=Y16-OG48SW-QbqDbWsgGxQ"
+        },
+        {
+          "order": 19,
+          "url": "https://twibify.com/campaign/tocomclecio?utm_source=copy&utm_medium=clipboard&utm_campaign=campaign_",
+          "original_url": "https://twibify.com/campaign/tocomclecio?utm_source=copy&utm_medium=clipboard&utm_campaign=campaign_"
+        },
+        {
+          "order": 20,
+          "url": "https://www.whatsapp.com/channel/0029VbAF4BOI1rcpr3FP9N2U",
+          "original_url": "https://www.whatsapp.com/channel/0029VbAF4BOI1rcpr3FP9N2U"
         }
       ]
     },
@@ -1404,6 +1561,11 @@
           "order": 1,
           "url": "https://candidatos.pco.org.br/",
           "original_url": "https://candidatos.pco.org.br"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/daniellemesvasques/",
+          "original_url": "https://www.instagram.com/daniellemesvasques/"
         }
       ]
     },
@@ -1424,8 +1586,13 @@
       "sites": [
         {
           "order": 1,
-          "url": "https://candidatos.pco.org.br/",
-          "original_url": "https://candidatos.pco.org.br"
+          "url": "https://www.instagram.com/danilopinheiroevangelista/",
+          "original_url": "https://www.instagram.com/danilopinheiroevangelista/"
+        },
+        {
+          "order": 2,
+          "url": "https://www.facebook.com/profile.php?id=61592886041303",
+          "original_url": "https://www.facebook.com/profile.php?id=61592886041303"
         }
       ]
     },
@@ -1677,6 +1844,16 @@
           "order": 5,
           "url": "https://www.tiktok.com/@DOUTORDANIELSANTOS",
           "original_url": "HTTPS://WWW.TIKTOK.COM/@DOUTORDANIELSANTOS"
+        },
+        {
+          "order": 6,
+          "url": "https://www.kwai.com/@doutordanielsantos?page_source=detail",
+          "original_url": "https://www.kwai.com/@doutordanielsantos?page_source=detail"
+        },
+        {
+          "order": 7,
+          "url": "https://www.threads.com/@doutordanielsantos?xmt=AQG0XaoNrC_B6gBJ",
+          "original_url": "https://www.threads.com/@doutordanielsantos?xmt=AQG0XaoNrC_B6gBJ uqwOtVBAtZlO2K0OotB-Fr8nylZo3Os"
         }
       ]
     },
@@ -2209,163 +2386,668 @@
         },
         {
           "order": 53,
-          "url": "https://chat.whatsapp.com/EGQLVJlhBOLLX1L8Ir83rc",
-          "original_url": "https://chat.whatsapp.com/EGQLVJlhBOLLX1L8Ir83rc"
-        },
-        {
-          "order": 54,
           "url": "https://chat.whatsapp.com/IzaMD2L0wVE7H7fF8bskZE",
           "original_url": "https://chat.whatsapp.com/IzaMD2L0wVE7H7fF8bskZE"
         },
         {
-          "order": 55,
+          "order": 54,
           "url": "https://chat.whatsapp.com/IALtakMhPU53ecbrGpBl4q",
           "original_url": "https://chat.whatsapp.com/IALtakMhPU53ecbrGpBl4q"
         },
         {
-          "order": 56,
+          "order": 55,
           "url": "https://chat.whatsapp.com/LKvT2rjZKW0AMF2CSUbxzK",
           "original_url": "https://chat.whatsapp.com/LKvT2rjZKW0AMF2CSUbxzK"
         },
         {
-          "order": 57,
+          "order": 56,
           "url": "https://chat.whatsapp.com/JK4tn0kD1tT5NljWHbVmwi",
           "original_url": "https://chat.whatsapp.com/JK4tn0kD1tT5NljWHbVmwi"
         },
         {
-          "order": 58,
+          "order": 57,
           "url": "https://chat.whatsapp.com/LoVoyuNitFzLlKw75LqHEv",
           "original_url": "https://chat.whatsapp.com/LoVoyuNitFzLlKw75LqHEv"
         },
         {
-          "order": 59,
+          "order": 58,
           "url": "https://chat.whatsapp.com/KRFdEezZvOoAIAre0LmSip",
           "original_url": "https://chat.whatsapp.com/KRFdEezZvOoAIAre0LmSip"
         },
         {
-          "order": 60,
+          "order": 59,
           "url": "https://chat.whatsapp.com/EmzSTQcUQJz3pivkGYJHLK",
           "original_url": "https://chat.whatsapp.com/EmzSTQcUQJz3pivkGYJHLK"
         },
         {
-          "order": 61,
+          "order": 60,
           "url": "https://chat.whatsapp.com/Fne5ZsyZdBnFWTuJcu7gfg",
           "original_url": "https://chat.whatsapp.com/Fne5ZsyZdBnFWTuJcu7gfg"
         },
         {
-          "order": 62,
+          "order": 61,
           "url": "https://chat.whatsapp.com/EF8BfB9rPlS32U0XjO5j7C",
           "original_url": "https://chat.whatsapp.com/EF8BfB9rPlS32U0XjO5j7C"
         },
         {
-          "order": 63,
+          "order": 62,
           "url": "https://chat.whatsapp.com/CWTb1iAC4PhAKsknDXw0km",
           "original_url": "https://chat.whatsapp.com/CWTb1iAC4PhAKsknDXw0km"
         },
         {
-          "order": 64,
+          "order": 63,
           "url": "https://chat.whatsapp.com/LYD7fNPFswx4aHzy6vwZ4t",
           "original_url": "https://chat.whatsapp.com/LYD7fNPFswx4aHzy6vwZ4t"
         },
         {
-          "order": 65,
+          "order": 64,
           "url": "https://chat.whatsapp.com/FDAJK1mNttB0lpXe4AWOYZ",
           "original_url": "https://chat.whatsapp.com/FDAJK1mNttB0lpXe4AWOYZ"
         },
         {
-          "order": 66,
+          "order": 65,
           "url": "https://chat.whatsapp.com/HZ2zilzglnPLEeerTEATuM",
           "original_url": "https://chat.whatsapp.com/HZ2zilzglnPLEeerTEATuM"
         },
         {
-          "order": 67,
+          "order": 66,
           "url": "https://chat.whatsapp.com/F4bvmQWG0RwKokcYWkbtnN",
           "original_url": "https://chat.whatsapp.com/F4bvmQWG0RwKokcYWkbtnN"
         },
         {
-          "order": 68,
+          "order": 67,
           "url": "https://chat.whatsapp.com/LMmaYJVN7823x3DFKhdbU6",
           "original_url": "https://chat.whatsapp.com/LMmaYJVN7823x3DFKhdbU6"
         },
         {
-          "order": 69,
+          "order": 68,
           "url": "https://chat.whatsapp.com/KS1ZV9zGWO1C7uVkvVijvI",
           "original_url": "https://chat.whatsapp.com/KS1ZV9zGWO1C7uVkvVijvI"
         },
         {
-          "order": 70,
+          "order": 69,
           "url": "https://chat.whatsapp.com/CUjGB0QeFfD8Az0SlXIoQZ",
           "original_url": "https://chat.whatsapp.com/CUjGB0QeFfD8Az0SlXIoQZ"
         },
         {
-          "order": 71,
+          "order": 70,
           "url": "https://chat.whatsapp.com/Is9Ydf06xGh7b5S1lYbGR2",
           "original_url": "https://chat.whatsapp.com/Is9Ydf06xGh7b5S1lYbGR2"
         },
         {
-          "order": 72,
+          "order": 71,
           "url": "https://chat.whatsapp.com/HGTxbt0rBAbDQjkYpyzvjx",
           "original_url": "https://chat.whatsapp.com/HGTxbt0rBAbDQjkYpyzvjx"
         },
         {
-          "order": 73,
+          "order": 72,
           "url": "https://chat.whatsapp.com/KcGSTNAEAHZ61e2v2immwI",
           "original_url": "https://chat.whatsapp.com/KcGSTNAEAHZ61e2v2immwI"
         },
         {
-          "order": 74,
+          "order": 73,
           "url": "https://chat.whatsapp.com/C1hjXTkVvh9DGnEc1vRYRj",
           "original_url": "https://chat.whatsapp.com/C1hjXTkVvh9DGnEc1vRYRj"
         },
         {
-          "order": 75,
+          "order": 74,
           "url": "https://chat.whatsapp.com/GdrutWzaTVpF1gugeV2Czo",
           "original_url": "https://chat.whatsapp.com/GdrutWzaTVpF1gugeV2Czo"
         },
         {
-          "order": 76,
+          "order": 75,
           "url": "https://chat.whatsapp.com/GQW3jgbaALe3X9TiRhPcWv",
           "original_url": "https://chat.whatsapp.com/GQW3jgbaALe3X9TiRhPcWv"
         },
         {
-          "order": 77,
+          "order": 76,
           "url": "https://chat.whatsapp.com/FT6uL7ES7Bt4g0Wkl36gtp",
           "original_url": "https://chat.whatsapp.com/FT6uL7ES7Bt4g0Wkl36gtp"
         },
         {
-          "order": 78,
+          "order": 77,
           "url": "https://chat.whatsapp.com/FEizv2kfUjP1wVRmVCSnqq",
           "original_url": "https://chat.whatsapp.com/FEizv2kfUjP1wVRmVCSnqq"
         },
         {
-          "order": 79,
+          "order": 78,
           "url": "https://chat.whatsapp.com/FmJBzk5N1V5CPOBhTVdhJ3",
           "original_url": "https://chat.whatsapp.com/FmJBzk5N1V5CPOBhTVdhJ3"
         },
         {
-          "order": 80,
+          "order": 79,
           "url": "https://chat.whatsapp.com/DbgxmsRfszXKtssHh2oD3o",
           "original_url": "https://chat.whatsapp.com/DbgxmsRfszXKtssHh2oD3o"
         },
         {
-          "order": 81,
+          "order": 80,
           "url": "https://sndflw.com/i/cearadetodos",
           "original_url": "https://sndflw.com/i/cearadetodos"
         },
         {
-          "order": 82,
+          "order": 81,
           "url": "https://sndflw.com/i/cedetodos-fech",
           "original_url": "https://sndflw.com/i/cedetodos-fech"
         },
         {
-          "order": 83,
+          "order": 82,
           "url": "https://open.spotify.com/intl-pt/artist/69uolt2WjzfdUoBzNywItr",
           "original_url": "https://open.spotify.com/intl-pt/artist/69uolt2WjzfdUoBzNywItr"
         },
         {
-          "order": 84,
+          "order": 83,
           "url": "https://www.instagram.com/channel/AbbTcbyjlOumA9Lx/",
           "original_url": "https://www.instagram.com/channel/AbbTcbyjlOumA9Lx/"
+        },
+        {
+          "order": 84,
+          "url": "https://chat.whatsapp.com/JExScG1SODD1cy9Ps1uGd1",
+          "original_url": "https://chat.whatsapp.com/JExScG1SODD1cy9Ps1uGd1"
+        },
+        {
+          "order": 85,
+          "url": "https://chat.whatsapp.com/JVjGPVllNUr9MAw9I8cYLT",
+          "original_url": "https://chat.whatsapp.com/JVjGPVllNUr9MAw9I8cYLT"
+        },
+        {
+          "order": 86,
+          "url": "https://chat.whatsapp.com/LgED1p10ZOZBiiMWcxxeir",
+          "original_url": "https://chat.whatsapp.com/LgED1p10ZOZBiiMWcxxeir"
+        },
+        {
+          "order": 87,
+          "url": "https://chat.whatsapp.com/DwbwYX4gDpULjYc5nqYnQb",
+          "original_url": "https://chat.whatsapp.com/DwbwYX4gDpULjYc5nqYnQb"
+        },
+        {
+          "order": 88,
+          "url": "https://chat.whatsapp.com/LU3TYtA9tCU8fuECZUqhsa",
+          "original_url": "https://chat.whatsapp.com/LU3TYtA9tCU8fuECZUqhsa"
+        },
+        {
+          "order": 89,
+          "url": "https://chat.whatsapp.com/EF8u1kF1Nve9iS6ddXPR51",
+          "original_url": "https://chat.whatsapp.com/EF8u1kF1Nve9iS6ddXPR51"
+        },
+        {
+          "order": 90,
+          "url": "https://chat.whatsapp.com/G4SaGeLe86fBzMovh2fTXV",
+          "original_url": "https://chat.whatsapp.com/G4SaGeLe86fBzMovh2fTXV"
+        },
+        {
+          "order": 91,
+          "url": "https://chat.whatsapp.com/HF3xQWq7BZxFkXzT0hvx3z",
+          "original_url": "https://chat.whatsapp.com/HF3xQWq7BZxFkXzT0hvx3z"
+        },
+        {
+          "order": 92,
+          "url": "https://chat.whatsapp.com/JHVe01cmA6k3gWG7LbfHH0",
+          "original_url": "https://chat.whatsapp.com/JHVe01cmA6k3gWG7LbfHH0"
+        },
+        {
+          "order": 93,
+          "url": "https://chat.whatsapp.com/DExYkCZClJs7XNCXnT8Vnd",
+          "original_url": "https://chat.whatsapp.com/DExYkCZClJs7XNCXnT8Vnd"
+        },
+        {
+          "order": 94,
+          "url": "https://chat.whatsapp.com/IcPLXlJSEiT9odHtKKOLZn",
+          "original_url": "https://chat.whatsapp.com/IcPLXlJSEiT9odHtKKOLZn"
+        },
+        {
+          "order": 95,
+          "url": "https://chat.whatsapp.com/JGAZJ20DVPS6zX3ffowWyq",
+          "original_url": "https://chat.whatsapp.com/JGAZJ20DVPS6zX3ffowWyq"
+        },
+        {
+          "order": 96,
+          "url": "https://chat.whatsapp.com/IJuRy0IV3FS8UbHkJUoOPt",
+          "original_url": "https://chat.whatsapp.com/IJuRy0IV3FS8UbHkJUoOPt"
+        },
+        {
+          "order": 97,
+          "url": "https://chat.whatsapp.com/CIjvC2tZeRd0dypXBsKgVm",
+          "original_url": "https://chat.whatsapp.com/CIjvC2tZeRd0dypXBsKgVm"
+        },
+        {
+          "order": 98,
+          "url": "https://chat.whatsapp.com/BRyO1xD1JGHGKDmGxVbELg",
+          "original_url": "https://chat.whatsapp.com/BRyO1xD1JGHGKDmGxVbELg"
+        },
+        {
+          "order": 99,
+          "url": "https://chat.whatsapp.com/HwbuNGZQ0MYE3Ycz7WP9gx",
+          "original_url": "https://chat.whatsapp.com/HwbuNGZQ0MYE3Ycz7WP9gx"
+        },
+        {
+          "order": 100,
+          "url": "https://chat.whatsapp.com/LRWJdwzC8z50YwwqJnOshU",
+          "original_url": "https://chat.whatsapp.com/LRWJdwzC8z50YwwqJnOshU"
+        },
+        {
+          "order": 101,
+          "url": "https://chat.whatsapp.com/EkFUDUTPjcn0rkeX8Z1xkW",
+          "original_url": "https://chat.whatsapp.com/EkFUDUTPjcn0rkeX8Z1xkW"
+        },
+        {
+          "order": 102,
+          "url": "https://chat.whatsapp.com/J5KRY4LudAHHA9MuwK1lnG",
+          "original_url": "https://chat.whatsapp.com/J5KRY4LudAHHA9MuwK1lnG"
+        },
+        {
+          "order": 103,
+          "url": "https://chat.whatsapp.com/FCCuJgiha716mM61XiGXwt",
+          "original_url": "https://chat.whatsapp.com/FCCuJgiha716mM61XiGXwt"
+        },
+        {
+          "order": 104,
+          "url": "https://chat.whatsapp.com/HE4X2YKrgZkFFAvbsMhr9l",
+          "original_url": "https://chat.whatsapp.com/HE4X2YKrgZkFFAvbsMhr9l"
+        },
+        {
+          "order": 105,
+          "url": "https://chat.whatsapp.com/KLfItoINEBlEoGieSyq721",
+          "original_url": "https://chat.whatsapp.com/KLfItoINEBlEoGieSyq721"
+        },
+        {
+          "order": 106,
+          "url": "https://chat.whatsapp.com/ExNdGHJ3fa2IhFsmy6foUX",
+          "original_url": "https://chat.whatsapp.com/ExNdGHJ3fa2IhFsmy6foUX"
+        },
+        {
+          "order": 107,
+          "url": "https://chat.whatsapp.com/Hf6TpO5PWe53nX1raGgKAa",
+          "original_url": "https://chat.whatsapp.com/Hf6TpO5PWe53nX1raGgKAa"
+        },
+        {
+          "order": 108,
+          "url": "https://chat.whatsapp.com/GfrpcVZZAo07uvGUhOspsw",
+          "original_url": "https://chat.whatsapp.com/GfrpcVZZAo07uvGUhOspsw"
+        },
+        {
+          "order": 109,
+          "url": "https://chat.whatsapp.com/EkHMOMWZrHPFOEnkRPUQEc",
+          "original_url": "https://chat.whatsapp.com/EkHMOMWZrHPFOEnkRPUQEc"
+        },
+        {
+          "order": 110,
+          "url": "https://chat.whatsapp.com/Eur3332egYC6EcWk5iekwW",
+          "original_url": "https://chat.whatsapp.com/Eur3332egYC6EcWk5iekwW"
+        },
+        {
+          "order": 111,
+          "url": "https://chat.whatsapp.com/EWjYrTQmsZ41NPjKGPxmR7",
+          "original_url": "https://chat.whatsapp.com/EWjYrTQmsZ41NPjKGPxmR7"
+        },
+        {
+          "order": 112,
+          "url": "https://chat.whatsapp.com/GpcGrcSLa1s2a7MozBL39C",
+          "original_url": "https://chat.whatsapp.com/GpcGrcSLa1s2a7MozBL39C"
+        },
+        {
+          "order": 113,
+          "url": "https://chat.whatsapp.com/JDBQ2hgEWRAAkL0YtlRPjO",
+          "original_url": "https://chat.whatsapp.com/JDBQ2hgEWRAAkL0YtlRPjO"
+        },
+        {
+          "order": 114,
+          "url": "https://chat.whatsapp.com/DDGoKnxpmy25uH0uIzktX8",
+          "original_url": "https://chat.whatsapp.com/DDGoKnxpmy25uH0uIzktX8"
+        },
+        {
+          "order": 115,
+          "url": "https://chat.whatsapp.com/CC99nXoygKi3HfhaEmsnWl",
+          "original_url": "https://chat.whatsapp.com/CC99nXoygKi3HfhaEmsnWl"
+        },
+        {
+          "order": 116,
+          "url": "https://chat.whatsapp.com/C8ABf7IlEFO82qOljyrURI",
+          "original_url": "https://chat.whatsapp.com/C8ABf7IlEFO82qOljyrURI"
+        },
+        {
+          "order": 123,
+          "url": "https://chat.whatsapp.com/EGQLVJlhBOLLX1L8Ir83rc",
+          "original_url": "https://chat.whatsapp.com/EGQLVJlhBOLLX1L8Ir83rc"
+        },
+        {
+          "order": 141,
+          "url": "https://chat.whatsapp.com/LUF91fI4ZAv8uNcF5a7BJT",
+          "original_url": "https://chat.whatsapp.com/LUF91fI4ZAv8uNcF5a7BJT"
+        },
+        {
+          "order": 142,
+          "url": "https://chat.whatsapp.com/FoJ6TCUdDPb3pSwiKwC1Sj",
+          "original_url": "https://chat.whatsapp.com/FoJ6TCUdDPb3pSwiKwC1Sj"
+        },
+        {
+          "order": 143,
+          "url": "https://chat.whatsapp.com/C1nvfZk6hqq9omlE9Ihmq0",
+          "original_url": "https://chat.whatsapp.com/C1nvfZk6hqq9omlE9Ihmq0"
+        },
+        {
+          "order": 144,
+          "url": "https://chat.whatsapp.com/HHuEPiN18XHFwiN5DSsry4",
+          "original_url": "https://chat.whatsapp.com/HHuEPiN18XHFwiN5DSsry4"
+        },
+        {
+          "order": 149,
+          "url": "https://chat.whatsapp.com/GuuXfWsshMT4TGvFbNHZO8",
+          "original_url": "https://chat.whatsapp.com/GuuXfWsshMT4TGvFbNHZO8"
+        },
+        {
+          "order": 150,
+          "url": "https://chat.whatsapp.com/EtMNUGBvewfDQVmxGztTwv",
+          "original_url": "https://chat.whatsapp.com/EtMNUGBvewfDQVmxGztTwv"
+        },
+        {
+          "order": 151,
+          "url": "https://chat.whatsapp.com/Ct9yCtPrI76IGSd1jyhbKo",
+          "original_url": "https://chat.whatsapp.com/Ct9yCtPrI76IGSd1jyhbKo"
+        },
+        {
+          "order": 152,
+          "url": "https://chat.whatsapp.com/ICFeIvzgSFJ60kbiEvNu1Q",
+          "original_url": "https://chat.whatsapp.com/ICFeIvzgSFJ60kbiEvNu1Q"
+        },
+        {
+          "order": 153,
+          "url": "https://chat.whatsapp.com/GIf997RJyYc6JTo83qFNRd",
+          "original_url": "https://chat.whatsapp.com/GIf997RJyYc6JTo83qFNRd"
+        },
+        {
+          "order": 154,
+          "url": "https://chat.whatsapp.com/JOA2B0QVoEnCQtZByKfK4F",
+          "original_url": "https://chat.whatsapp.com/JOA2B0QVoEnCQtZByKfK4F"
+        },
+        {
+          "order": 155,
+          "url": "https://chat.whatsapp.com/CUuZUXbPVv18VQWtmiTVLk",
+          "original_url": "https://chat.whatsapp.com/CUuZUXbPVv18VQWtmiTVLk"
+        },
+        {
+          "order": 156,
+          "url": "https://chat.whatsapp.com/IcQZujia0pIB2SbPLRgkjD",
+          "original_url": "https://chat.whatsapp.com/IcQZujia0pIB2SbPLRgkjD"
+        },
+        {
+          "order": 157,
+          "url": "https://chat.whatsapp.com/Hw6qwC9fkwJ9elBs9mffA4",
+          "original_url": "https://chat.whatsapp.com/Hw6qwC9fkwJ9elBs9mffA4"
+        },
+        {
+          "order": 158,
+          "url": "https://chat.whatsapp.com/GaWZwI8v4aL3Tlj8lHHnue",
+          "original_url": "https://chat.whatsapp.com/GaWZwI8v4aL3Tlj8lHHnue"
+        },
+        {
+          "order": 159,
+          "url": "https://chat.whatsapp.com/Ljv5AHWMTqK40ZTwqCHzsf",
+          "original_url": "https://chat.whatsapp.com/Ljv5AHWMTqK40ZTwqCHzsf"
+        },
+        {
+          "order": 160,
+          "url": "https://chat.whatsapp.com/ISTVQgt2SvFJ2AHXX28P9o",
+          "original_url": "https://chat.whatsapp.com/ISTVQgt2SvFJ2AHXX28P9o"
+        },
+        {
+          "order": 161,
+          "url": "https://chat.whatsapp.com/DIsXS1fAl992A37iUwv3LM",
+          "original_url": "https://chat.whatsapp.com/DIsXS1fAl992A37iUwv3LM"
+        },
+        {
+          "order": 162,
+          "url": "https://chat.whatsapp.com/D5qDvhoezazCJSVmkcTWSu",
+          "original_url": "https://chat.whatsapp.com/D5qDvhoezazCJSVmkcTWSu"
+        },
+        {
+          "order": 163,
+          "url": "https://chat.whatsapp.com/GaQaeZruxMPLrZOXkFIPdu",
+          "original_url": "https://chat.whatsapp.com/GaQaeZruxMPLrZOXkFIPdu"
+        },
+        {
+          "order": 164,
+          "url": "https://chat.whatsapp.com/JqG0zFpA7LaKiiw9hpJI6o",
+          "original_url": "https://chat.whatsapp.com/JqG0zFpA7LaKiiw9hpJI6o"
+        },
+        {
+          "order": 165,
+          "url": "https://chat.whatsapp.com/H4a828zopWVKRFI7DXzRFI",
+          "original_url": "https://chat.whatsapp.com/H4a828zopWVKRFI7DXzRFI"
+        },
+        {
+          "order": 166,
+          "url": "https://chat.whatsapp.com/LFcxFgYj6v89dpptlJ7n53",
+          "original_url": "https://chat.whatsapp.com/LFcxFgYj6v89dpptlJ7n53"
+        },
+        {
+          "order": 167,
+          "url": "https://chat.whatsapp.com/HIBZ3aUKhfG3sgmChNnczO",
+          "original_url": "https://chat.whatsapp.com/HIBZ3aUKhfG3sgmChNnczO"
+        },
+        {
+          "order": 168,
+          "url": "https://chat.whatsapp.com/Iyx6rmmg5drL5rPTIZftRQ",
+          "original_url": "https://chat.whatsapp.com/Iyx6rmmg5drL5rPTIZftRQ"
+        },
+        {
+          "order": 169,
+          "url": "https://chat.whatsapp.com/KaYq2HkzyxT1y9FdxRwnLn",
+          "original_url": "https://chat.whatsapp.com/KaYq2HkzyxT1y9FdxRwnLn"
+        },
+        {
+          "order": 170,
+          "url": "https://chat.whatsapp.com/GeG6gUSelFrAwcauOhKj5k",
+          "original_url": "https://chat.whatsapp.com/GeG6gUSelFrAwcauOhKj5k"
+        },
+        {
+          "order": 171,
+          "url": "https://chat.whatsapp.com/BebgZ06xs1d6SAbLWxIglv",
+          "original_url": "https://chat.whatsapp.com/BebgZ06xs1d6SAbLWxIglv"
+        },
+        {
+          "order": 172,
+          "url": "https://chat.whatsapp.com/Em2JogClDk0KcQ9FwIJcOl",
+          "original_url": "https://chat.whatsapp.com/Em2JogClDk0KcQ9FwIJcOl"
+        },
+        {
+          "order": 173,
+          "url": "https://chat.whatsapp.com/JmVQAdPxyAp0cSEEmyDwrJ",
+          "original_url": "https://chat.whatsapp.com/JmVQAdPxyAp0cSEEmyDwrJ"
+        },
+        {
+          "order": 174,
+          "url": "https://chat.whatsapp.com/G0DTPeuxfL7FQNVhqQkJVf",
+          "original_url": "https://chat.whatsapp.com/G0DTPeuxfL7FQNVhqQkJVf"
+        },
+        {
+          "order": 175,
+          "url": "https://chat.whatsapp.com/JxMel86TQAZEHJAh1KigIM",
+          "original_url": "https://chat.whatsapp.com/JxMel86TQAZEHJAh1KigIM"
+        },
+        {
+          "order": 176,
+          "url": "https://chat.whatsapp.com/FtMDvRZsqlRL3ypM2CtiRh",
+          "original_url": "https://chat.whatsapp.com/FtMDvRZsqlRL3ypM2CtiRh"
+        },
+        {
+          "order": 177,
+          "url": "https://chat.whatsapp.com/ETon6WVIlYi1Wg96HsySYF",
+          "original_url": "https://chat.whatsapp.com/ETon6WVIlYi1Wg96HsySYF"
+        },
+        {
+          "order": 178,
+          "url": "https://chat.whatsapp.com/Lc08CFy18AWDDlIoR3yGtf",
+          "original_url": "https://chat.whatsapp.com/Lc08CFy18AWDDlIoR3yGtf"
+        },
+        {
+          "order": 179,
+          "url": "https://chat.whatsapp.com/L1z2Nhe3D8cJcFWM4nMGT0",
+          "original_url": "https://chat.whatsapp.com/L1z2Nhe3D8cJcFWM4nMGT0"
+        },
+        {
+          "order": 180,
+          "url": "https://chat.whatsapp.com/DLXgq9LjBPpCNmjNdSuBel",
+          "original_url": "https://chat.whatsapp.com/DLXgq9LjBPpCNmjNdSuBel"
+        },
+        {
+          "order": 181,
+          "url": "https://chat.whatsapp.com/FzC0z9YeQI24uGLuw9nGDR",
+          "original_url": "https://chat.whatsapp.com/FzC0z9YeQI24uGLuw9nGDR"
+        },
+        {
+          "order": 182,
+          "url": "https://chat.whatsapp.com/Hk7Ccdj6D9Z1OJK8nVI4li",
+          "original_url": "https://chat.whatsapp.com/Hk7Ccdj6D9Z1OJK8nVI4li"
+        },
+        {
+          "order": 183,
+          "url": "https://chat.whatsapp.com/DjqFieIdyJlKa3AUNe3zy9",
+          "original_url": "https://chat.whatsapp.com/DjqFieIdyJlKa3AUNe3zy9"
+        },
+        {
+          "order": 184,
+          "url": "https://chat.whatsapp.com/ICps3Knwzk9D9fIDeFE7cj",
+          "original_url": "https://chat.whatsapp.com/ICps3Knwzk9D9fIDeFE7cj"
+        },
+        {
+          "order": 185,
+          "url": "https://chat.whatsapp.com/IzVIZRBCsNv5NkI3qfvKDA",
+          "original_url": "https://chat.whatsapp.com/IzVIZRBCsNv5NkI3qfvKDA"
+        },
+        {
+          "order": 186,
+          "url": "https://chat.whatsapp.com/DKzvwr7dEYYEvLn9i45cFL",
+          "original_url": "https://chat.whatsapp.com/DKzvwr7dEYYEvLn9i45cFL"
+        },
+        {
+          "order": 187,
+          "url": "https://chat.whatsapp.com/LcRvMWH8cbw9mMiTaPgv6y",
+          "original_url": "https://chat.whatsapp.com/LcRvMWH8cbw9mMiTaPgv6y"
+        },
+        {
+          "order": 188,
+          "url": "https://chat.whatsapp.com/HNnpRIY7klv3vhto27yZeR",
+          "original_url": "https://chat.whatsapp.com/HNnpRIY7klv3vhto27yZeR"
+        },
+        {
+          "order": 189,
+          "url": "https://chat.whatsapp.com/GhdQTVXYdgQDwjkIk8RP1O",
+          "original_url": "https://chat.whatsapp.com/GhdQTVXYdgQDwjkIk8RP1O"
+        },
+        {
+          "order": 190,
+          "url": "https://chat.whatsapp.com/LivYsWcefeU3hQdg5eYBZp",
+          "original_url": "https://chat.whatsapp.com/LivYsWcefeU3hQdg5eYBZp"
+        },
+        {
+          "order": 191,
+          "url": "https://chat.whatsapp.com/BcyYZnrYxIvHp6nBp5j3uP",
+          "original_url": "https://chat.whatsapp.com/BcyYZnrYxIvHp6nBp5j3uP"
+        },
+        {
+          "order": 192,
+          "url": "https://chat.whatsapp.com/C48eh4U3I5PHJLFpcdsLuO",
+          "original_url": "https://chat.whatsapp.com/C48eh4U3I5PHJLFpcdsLuO"
+        },
+        {
+          "order": 195,
+          "url": "https://chat.whatsapp.com/I3UfIFHb8zX9D1okLzonu4",
+          "original_url": "https://chat.whatsapp.com/I3UfIFHb8zX9D1okLzonu4"
+        },
+        {
+          "order": 196,
+          "url": "https://chat.whatsapp.com/LNDAg7Y9QqIFNpYSLyyYnx",
+          "original_url": "https://chat.whatsapp.com/LNDAg7Y9QqIFNpYSLyyYnx"
+        },
+        {
+          "order": 197,
+          "url": "https://chat.whatsapp.com/GdTXYuh8mD58dK8i5gt0s8",
+          "original_url": "https://chat.whatsapp.com/GdTXYuh8mD58dK8i5gt0s8"
+        },
+        {
+          "order": 198,
+          "url": "https://chat.whatsapp.com/C0JgnobAsjnLcnm3WBeBVt",
+          "original_url": "https://chat.whatsapp.com/C0JgnobAsjnLcnm3WBeBVt"
+        },
+        {
+          "order": 199,
+          "url": "https://chat.whatsapp.com/E4yyRAYxJP3L3aRVtDjNor",
+          "original_url": "https://chat.whatsapp.com/E4yyRAYxJP3L3aRVtDjNor"
+        },
+        {
+          "order": 200,
+          "url": "https://chat.whatsapp.com/GQsOorIIrbbDFuzz1LgQxY",
+          "original_url": "https://chat.whatsapp.com/GQsOorIIrbbDFuzz1LgQxY"
+        },
+        {
+          "order": 201,
+          "url": "https://chat.whatsapp.com/H11O6qHxuXl5FMn9q2DFZH",
+          "original_url": "https://chat.whatsapp.com/H11O6qHxuXl5FMn9q2DFZH"
+        },
+        {
+          "order": 202,
+          "url": "https://chat.whatsapp.com/DMgtgnCDOWbGLZhNwBAwJ5",
+          "original_url": "https://chat.whatsapp.com/DMgtgnCDOWbGLZhNwBAwJ5"
+        },
+        {
+          "order": 203,
+          "url": "https://chat.whatsapp.com/GXmKC7OaHVTGjnAsjaqJJV",
+          "original_url": "https://chat.whatsapp.com/GXmKC7OaHVTGjnAsjaqJJV"
+        },
+        {
+          "order": 204,
+          "url": "https://chat.whatsapp.com/Fyp1AjOlfiICC0zBBaSRpw",
+          "original_url": "https://chat.whatsapp.com/Fyp1AjOlfiICC0zBBaSRpw"
+        },
+        {
+          "order": 205,
+          "url": "https://chat.whatsapp.com/HA8lZ1fUy7BIvyroejTyVu",
+          "original_url": "https://chat.whatsapp.com/HA8lZ1fUy7BIvyroejTyVu"
+        },
+        {
+          "order": 206,
+          "url": "https://chat.whatsapp.com/KowgdXI1nvDBeg6oqs1Bqe",
+          "original_url": "https://chat.whatsapp.com/KowgdXI1nvDBeg6oqs1Bqe"
+        },
+        {
+          "order": 207,
+          "url": "https://chat.whatsapp.com/EIIxL2KXvvu2kjR8vauKEl",
+          "original_url": "https://chat.whatsapp.com/EIIxL2KXvvu2kjR8vauKEl"
+        },
+        {
+          "order": 208,
+          "url": "https://chat.whatsapp.com/B5WNRBnQxBH5omKf647Lm0",
+          "original_url": "https://chat.whatsapp.com/B5WNRBnQxBH5omKf647Lm0"
+        },
+        {
+          "order": 209,
+          "url": "https://chat.whatsapp.com/IHns2mJfeIwG9q96AcVZFr",
+          "original_url": "https://chat.whatsapp.com/IHns2mJfeIwG9q96AcVZFr"
+        },
+        {
+          "order": 210,
+          "url": "https://chat.whatsapp.com/H1w92mkTmVSGIAc6hHm3WM",
+          "original_url": "https://chat.whatsapp.com/H1w92mkTmVSGIAc6hHm3WM"
+        },
+        {
+          "order": 211,
+          "url": "https://chat.whatsapp.com/EGSTNo1oxK82WHfUnG2aem",
+          "original_url": "https://chat.whatsapp.com/EGSTNo1oxK82WHfUnG2aem"
+        },
+        {
+          "order": 212,
+          "url": "https://chat.whatsapp.com/CgRUS0Pkgof8gUajiIRYvb",
+          "original_url": "https://chat.whatsapp.com/CgRUS0Pkgof8gUajiIRYvb"
+        },
+        {
+          "order": 213,
+          "url": "https://chat.whatsapp.com/JiLDOwVttcaFZNdVz6Lkt1",
+          "original_url": "https://chat.whatsapp.com/JiLDOwVttcaFZNdVz6Lkt1"
+        },
+        {
+          "order": 214,
+          "url": "https://chat.whatsapp.com/HQI6kaAmN9kC5RCbdPkZDa",
+          "original_url": "https://chat.whatsapp.com/HQI6kaAmN9kC5RCbdPkZDa"
         }
       ]
     },
@@ -2449,6 +3131,11 @@
           "order": 7,
           "url": "https://www.tiktok.com/@expeditonetto1?_r=1&_t=ZS-996NVNnEXxw",
           "original_url": "https://www.tiktok.com/@expeditonetto1?_r=1&_t=ZS-996NVNnEXxw"
+        },
+        {
+          "order": 8,
+          "url": "https://www.expeditonetto.com/",
+          "original_url": "https://www.expeditonetto.com/"
         }
       ]
     },
@@ -2563,6 +3250,61 @@
           "order": 1,
           "url": null,
           "original_url": "@FELIPECOSTACAMARAO"
+        },
+        {
+          "order": 2,
+          "url": "https://www.facebook.com/FelipeCostaCamarao",
+          "original_url": "https://www.facebook.com/FelipeCostaCamarao"
+        },
+        {
+          "order": 3,
+          "url": "https://www.youtube.com/@felipecostacamarao",
+          "original_url": "https://www.youtube.com/@felipecostacamarao"
+        },
+        {
+          "order": 4,
+          "url": "https://www.threads.com/@felipecostacamarao",
+          "original_url": "https://www.threads.com/@felipecostacamarao"
+        },
+        {
+          "order": 5,
+          "url": "https://www.instagram.com/felipecostacamarao",
+          "original_url": "https://www.instagram.com/felipecostacamarao"
+        },
+        {
+          "order": 6,
+          "url": "https://www.kwai.com/@felipeccamarao",
+          "original_url": "https://www.kwai.com/@felipeccamarao"
+        },
+        {
+          "order": 7,
+          "url": "https://www.tiktok.com/@felipecostacamarao",
+          "original_url": "https://www.tiktok.com/@felipecostacamarao"
+        },
+        {
+          "order": 8,
+          "url": "https://x.com/FelipeCCamarao",
+          "original_url": "https://x.com/FelipeCCamarao"
+        },
+        {
+          "order": 9,
+          "url": "https://linktr.ee/FelipeCamarao",
+          "original_url": "https://linktr.ee/FelipeCamarao"
+        },
+        {
+          "order": 10,
+          "url": "https://www.flickr.com/photos/felipecamarao/albums",
+          "original_url": "https://www.flickr.com/photos/felipecamarao/albums"
+        },
+        {
+          "order": 11,
+          "url": "https://drive.google.com/file/d/1_RI1nG5GQWByxvB0bkK4AFZN4O3CqrNt/view",
+          "original_url": "https://drive.google.com/file/d/1_RI1nG5GQWByxvB0bkK4AFZN4O3CqrNt/view"
+        },
+        {
+          "order": 12,
+          "url": "https://felipecamarao.com.br/",
+          "original_url": "https://felipecamarao.com.br/"
         }
       ]
     },
@@ -2754,6 +3496,26 @@
           "order": 42,
           "url": "https://tvcelular.com.br/",
           "original_url": "https://tvcelular.com.br"
+        },
+        {
+          "order": 43,
+          "url": "https://www.youtube.com/@CanalTvCelular",
+          "original_url": "https://www.youtube.com/@CanalTvCelular"
+        },
+        {
+          "order": 44,
+          "url": "https://www.facebook.com/canaltvcelular",
+          "original_url": "https://www.facebook.com/canaltvcelular"
+        },
+        {
+          "order": 45,
+          "url": "https://www.tiktok.com/@canaltvcelular",
+          "original_url": "https://www.tiktok.com/@canaltvcelular"
+        },
+        {
+          "order": 46,
+          "url": "https://www.instagram.com/tvcelular.com.br",
+          "original_url": "https://www.instagram.com/tvcelular.com.br"
         }
       ]
     },
@@ -2841,6 +3603,16 @@
           "order": 12,
           "url": "https://linktr.ee/gabrielazevedo",
           "original_url": "https://linktr.ee/gabrielazevedo"
+        },
+        {
+          "order": 13,
+          "url": "https://bsky.app/profile/gabrielazevedo.bsky.social",
+          "original_url": "https://bsky.app/profile/gabrielazevedo.bsky.social"
+        },
+        {
+          "order": 14,
+          "url": "https://central15.live/",
+          "original_url": "https://central15.live/"
         }
       ]
     },
@@ -3007,6 +3779,43 @@
           "order": 4,
           "url": "https://www.threads.com/@GISVALDOOLIVEIRA",
           "original_url": "HTTPS://WWW.THREADS.COM/@GISVALDOOLIVEIRA"
+        }
+      ]
+    },
+    "godeiro-linharess": {
+      "sq_candidato": "200002554482",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/godeirolinharess27/",
+          "original_url": "https://www.instagram.com/godeirolinharess27/"
+        }
+      ]
+    },
+    "guilherme-derrite": {
+      "sq_candidato": "250002541312",
+      "match_method": "nome_completo_exato_unico",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://x.com/DERRITESP",
+          "original_url": "HTTPS://X.COM/DERRITESP"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/GUILHERMEDERRITE",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/GUILHERMEDERRITE"
+        },
+        {
+          "order": 3,
+          "url": "https://www.tiktok.com/TAG/DERRITE",
+          "original_url": "HTTPS://WWW.TIKTOK.COM/TAG/DERRITE"
+        },
+        {
+          "order": 4,
+          "url": "https://www.facebook.com/GUILHERMEDERRITE",
+          "original_url": "HTTPS://WWW.FACEBOOK.COM/GUILHERMEDERRITE"
         }
       ]
     },
@@ -3365,6 +4174,11 @@
           "order": 1,
           "url": "https://candidatos.pco.org.br/",
           "original_url": "https://candidatos.pco.org.br"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/29jairo29/",
+          "original_url": "https://www.instagram.com/29jairo29/"
         }
       ]
     },
@@ -3508,6 +4322,21 @@
           "order": 13,
           "url": "https://www.facebook.com/JOAOCAMPOSPSB",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/JOAOCAMPOSPSB"
+        },
+        {
+          "order": 14,
+          "url": "https://www.maiorsalariodobrasil.com.br/",
+          "original_url": "https://www.maiorsalariodobrasil.com.br/"
+        },
+        {
+          "order": 15,
+          "url": "https://www.furateto.com.br/",
+          "original_url": "https://www.furateto.com.br/"
+        },
+        {
+          "order": 16,
+          "url": "http://www.aempresadafamilia.com.br/",
+          "original_url": "http://www.aempresadafamilia.com.br/"
         }
       ]
     },
@@ -3559,6 +4388,77 @@
           "order": 9,
           "url": "https://www.youtube.com/@joaorodriguessc55",
           "original_url": "https://www.youtube.com/@joaorodriguessc55"
+        }
+      ]
+    },
+    "joao-roma": {
+      "sq_candidato": "50002533123",
+      "match_method": "nome_completo_exato_unico",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.joaoroma.com.br/",
+          "original_url": "WWW.JOAOROMA.COM.BR"
+        },
+        {
+          "order": 2,
+          "url": "https://sticker.ly/USER/JOAOROMA",
+          "original_url": "HTTPS://STICKER.LY/USER/JOAOROMA"
+        },
+        {
+          "order": 3,
+          "url": "https://www.instagram.com/JOAOROMANETO/",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/JOAOROMANETO/"
+        },
+        {
+          "order": 4,
+          "url": "https://linktr.ee/JOAOROMANETO/",
+          "original_url": "HTTPS://LINKTR.EE/JOAOROMANETO/"
+        },
+        {
+          "order": 5,
+          "url": "https://t.me/JOAOROMANETO",
+          "original_url": "HTTPS://T.ME/JOAOROMANETO"
+        },
+        {
+          "order": 6,
+          "url": "https://www.kwai.com/@JOAOROMANETOOFICIAL",
+          "original_url": "HTTPS://WWW.KWAI.COM/@JOAOROMANETOOFICIAL"
+        },
+        {
+          "order": 7,
+          "url": "https://www.linkedin.com/IN/JOAOROMANETO/",
+          "original_url": "HTTPS://WWW.LINKEDIN.COM/IN/JOAOROMANETO/"
+        },
+        {
+          "order": 8,
+          "url": "https://www.flickr.com/JOAOROMANETO/",
+          "original_url": "HTTPS://WWW.FLICKR.COM/JOAOROMANETO/"
+        },
+        {
+          "order": 9,
+          "url": "https://x.com/JOAOROMANETO",
+          "original_url": "HTTPS://X.COM/JOAOROMANETO"
+        },
+        {
+          "order": 10,
+          "url": "https://www.youtube.com/@JOAOROMANETO",
+          "original_url": "HTTPS://WWW.YOUTUBE.COM/@JOAOROMANETO"
+        },
+        {
+          "order": 11,
+          "url": "https://www.tiktok.com/@JOAOROMANETO",
+          "original_url": "HTTPS://WWW.TIKTOK.COM/@JOAOROMANETO"
+        },
+        {
+          "order": 12,
+          "url": "https://www.facebook.com/JOAOROMANETO",
+          "original_url": "HTTPS://WWW.FACEBOOK.COM/JOAOROMANETO"
+        },
+        {
+          "order": 13,
+          "url": "https://www.threads.com/@JOAOROMANETO/",
+          "original_url": "HTTPS://WWW.THREADS.COM/@JOAOROMANETO/"
         }
       ]
     },
@@ -3675,6 +4575,16 @@
           "order": 22,
           "url": "https://linktr.ee/joelrodrigues11",
           "original_url": "https://linktr.ee/joelrodrigues11"
+        },
+        {
+          "order": 23,
+          "url": "https://k.kwai.com/u/@joelrodriguespi/CGQQSzBm",
+          "original_url": "https://k.kwai.com/u/@joelrodriguespi/CGQQSzBm"
+        },
+        {
+          "order": 24,
+          "url": "https://open.spotify.com/show/6CIpTrw25pIOlBIllTnbdp?si=1VoRa7hFSMaRJDBKMm4x7g&utm_source=native-sha",
+          "original_url": "https://open.spotify.com/show/6CIpTrw25pIOlBIllTnbdp?si=1VoRa7hFSMaRJDBKMm4x7g&utm_source=native-sha"
         }
       ]
     },
@@ -3711,6 +4621,11 @@
           "order": 6,
           "url": "https://www.instagram.com/JORGINHOMELLO/",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/JORGINHOMELLO/"
+        },
+        {
+          "order": 7,
+          "url": "https://www.instagram.com/mulherescomjorginho",
+          "original_url": "https://www.instagram.com/mulherescomjorginho"
         }
       ]
     },
@@ -3844,6 +4759,17 @@
         }
       ]
     },
+    "leonardo-avalanche": {
+      "sq_candidato": "280002553883",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/leonardoavalanche/",
+          "original_url": "https://www.instagram.com/leonardoavalanche/"
+        }
+      ]
+    },
     "lourdes-melo": {
       "sq_candidato": "180002553722",
       "match_method": "nome_completo_exato_unico",
@@ -3873,6 +4799,16 @@
           "order": 1,
           "url": "https://candidatos.pco.org.br/",
           "original_url": "https://candidatos.pco.org.br"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/lmonteiro.29/",
+          "original_url": "https://www.instagram.com/lmonteiro.29/"
+        },
+        {
+          "order": 3,
+          "url": "https://x.com/lmonteiro29",
+          "original_url": "https://x.com/lmonteiro29"
         }
       ]
     },
@@ -4083,12 +5019,137 @@
         {
           "order": 23,
           "url": "http://www.mercadodamentira.com.br/",
-          "original_url": "HTTP://WWW.MERCADODAMENTIRA.COM.BR/"
+          "original_url": "HTTP://WWW.MERCADODAMENTIRA.COM.BR"
         },
         {
           "order": 24,
           "url": "https://opiordosbolsonaros.com.br/",
           "original_url": "https://opiordosbolsonaros.com.br"
+        },
+        {
+          "order": 25,
+          "url": "https://podeespalhar.com.br/",
+          "original_url": "https://podeespalhar.com.br"
+        },
+        {
+          "order": 26,
+          "url": "https://comitepopular.org.br/",
+          "original_url": "https://comitepopular.org.br"
+        },
+        {
+          "order": 27,
+          "url": "https://doelula13.com.br/",
+          "original_url": "https://doelula13.com.br"
+        },
+        {
+          "order": 28,
+          "url": "https://geracao.lula.com.br/",
+          "original_url": "https://geracao.lula.com.br"
+        },
+        {
+          "order": 29,
+          "url": "https://brasilquermaistempo.com.br/",
+          "original_url": "https://brasilquermaistempo.com.br"
+        },
+        {
+          "order": 30,
+          "url": "https://brasilquermais.com.br/",
+          "original_url": "https://brasilquermais.com.br"
+        },
+        {
+          "order": 31,
+          "url": "https://www.timelulanosenado.com.br/",
+          "original_url": "https://www.timelulanosenado.com.br"
+        },
+        {
+          "order": 32,
+          "url": "https://www.tiktok.com/@pode_espalhar",
+          "original_url": "https://www.tiktok.com/@pode_espalhar"
+        },
+        {
+          "order": 33,
+          "url": "https://www.tiktok.com/@evangelicoscomlula",
+          "original_url": "https://www.tiktok.com/@evangelicoscomlula"
+        },
+        {
+          "order": 34,
+          "url": "https://www.tiktok.com/@comitedeluta?lang=en",
+          "original_url": "https://www.tiktok.com/@comitedeluta?lang=en"
+        },
+        {
+          "order": 35,
+          "url": "https://www.instagram.com/comitepopularoficial",
+          "original_url": "https://www.instagram.com/comitepopularoficial"
+        },
+        {
+          "order": 36,
+          "url": "https://www.instagram.com/lulaversoficial",
+          "original_url": "https://www.instagram.com/lulaversoficial"
+        },
+        {
+          "order": 37,
+          "url": "https://www.instagram.com/pode_espalhar",
+          "original_url": "https://www.instagram.com/pode_espalhar"
+        },
+        {
+          "order": 38,
+          "url": "https://www.instagram.com/geracaolula",
+          "original_url": "https://www.instagram.com/geracaolula"
+        },
+        {
+          "order": 39,
+          "url": "https://www.instagram.com/evangelicoscomlula",
+          "original_url": "https://www.instagram.com/evangelicoscomlula"
+        },
+        {
+          "order": 40,
+          "url": "http://instagram.com/brasilquermais",
+          "original_url": "http://instagram.com/brasilquermais"
+        },
+        {
+          "order": 41,
+          "url": "https://x.com/lulaverso",
+          "original_url": "https://x.com/lulaverso"
+        },
+        {
+          "order": 42,
+          "url": "https://x.com/pode_espalhar",
+          "original_url": "https://x.com/pode_espalhar"
+        },
+        {
+          "order": 43,
+          "url": "https://x.com/LulaEvangelicos",
+          "original_url": "https://x.com/LulaEvangelicos"
+        },
+        {
+          "order": 44,
+          "url": "https://x.com/comitespop",
+          "original_url": "https://x.com/comitespop"
+        },
+        {
+          "order": 45,
+          "url": "https://www.facebook.com/people/Pode-Espalhar/61577944114979",
+          "original_url": "https://www.facebook.com/people/Pode-Espalhar/61577944114979"
+        },
+        {
+          "order": 46,
+          "url": "https://www.facebook.com/evangelicoscomlula",
+          "original_url": "https://www.facebook.com/evangelicoscomlula"
+        },
+        {
+          "order": 47,
+          "url": "https://www.facebook.com/lulaverso",
+          "original_url": "https://www.facebook.com/lulaverso"
+        },
+        {
+          "order": 48,
+          "url": "https://www.facebook.com/geracaolula",
+          "original_url": "https://www.facebook.com/geracaolula"
+        },
+        {
+          "order": 49,
+          "url": "https://www.kwai.com/u/@podeespalhar/Cu4CfgOx",
+          "original_url": "https://www.kwai.com/u/@podeespalhar/Cu4CfgOx"
         }
       ]
     },
@@ -4182,6 +5243,11 @@
           "order": 10,
           "url": "https://www.facebook.com/MarconiPerillo",
           "original_url": "https://www.facebook.com/MarconiPerillo"
+        },
+        {
+          "order": 12,
+          "url": "https://chat.whatsapp.com/EUEsQ1aWxuzCrnnO2WZxMi",
+          "original_url": "https://chat.whatsapp.com/EUEsQ1aWxuzCrnnO2WZxMi"
         }
       ]
     },
@@ -4296,6 +5362,32 @@
           "order": 1,
           "url": "https://candidatos.pco.org.br/",
           "original_url": "https://candidatos.pco.org.br"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/bona50522/",
+          "original_url": "https://www.instagram.com/bona50522/"
+        }
+      ]
+    },
+    "michelle-bolsonaro": {
+      "sq_candidato": "70002552936",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/michellebolsonaro",
+          "original_url": "https://www.instagram.com/michellebolsonaro"
+        },
+        {
+          "order": 2,
+          "url": "https://michellebolsonaro222.com.br/",
+          "original_url": "https://michellebolsonaro222.com.br/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/profile.php?id=61583200587558",
+          "original_url": "https://www.facebook.com/profile.php?id=61583200587558"
         }
       ]
     },
@@ -4717,8 +5809,8 @@
         },
         {
           "order": 9,
-          "url": "https://open.spotify.com/intl-pt/artist/4FqcbeVdisyAtDLsd1n2gQ?si=SpfyEFBGRlOvSW_fT3lAbQ&nd=1&dlsi=b",
-          "original_url": "https://open.spotify.com/intl-pt/artist/4FqcbeVdisyAtDLsd1n2gQ?si=SpfyEFBGRlOvSW_fT3lAbQ&nd=1&dlsi=b"
+          "url": "https://open.spotify.com/intl-pt/artist/4FqcbeVdisyAtDLsd1n2gQ?si=SpfyEFBGRlOvSW_fT3lAbQ&nd=1&dlsi=bbcf1d0b461d412a",
+          "original_url": "https://open.spotify.com/intl-pt/artist/4FqcbeVdisyAtDLsd1n2gQ?si=SpfyEFBGRlOvSW_fT3lAbQ&nd=1&dlsi=bbcf1d0b461d412a"
         }
       ]
     },
@@ -4843,6 +5935,11 @@
           "order": 8,
           "url": "https://x.com/RAQUELLYRA",
           "original_url": "X.COM/RAQUELLYRA"
+        },
+        {
+          "order": 9,
+          "url": "https://psdpe55.org.br/",
+          "original_url": "https://psdpe55.org.br/"
         }
       ]
     },
@@ -5190,6 +6287,11 @@
           "order": 7,
           "url": "https://www.facebook.com/RicardoRFerraco/",
           "original_url": "https://www.facebook.com/RicardoRFerraco/"
+        },
+        {
+          "order": 8,
+          "url": "https://www.youtube.com/@ricardoferracoOficial",
+          "original_url": "https://www.youtube.com/@ricardoferracoOficial"
         }
       ]
     },
@@ -5375,6 +6477,21 @@
           "order": 25,
           "url": "https://www.instagram.com/mulherescomcidade/",
           "original_url": "https://www.instagram.com/mulherescomcidade/"
+        },
+        {
+          "order": 26,
+          "url": "https://www.youtube.com/@Cidade44",
+          "original_url": "https://www.youtube.com/@Cidade44"
+        },
+        {
+          "order": 27,
+          "url": "https://www.instagram.com/verdadesdoam?stkn=djJzZGwybGRkaXU3&utm_source=qr",
+          "original_url": "https://www.instagram.com/verdadesdoam?stkn=djJzZGwybGRkaXU3&utm_source=qr"
+        },
+        {
+          "order": 28,
+          "url": "https://www.instagram.com/boracomcidade?stkn=aW81bmU5bDlyeDZ0&utm_source=qr",
+          "original_url": "https://www.instagram.com/boracomcidade?stkn=aW81bmU5bDlyeDZ0&utm_source=qr"
         }
       ]
     },
@@ -5747,6 +6864,11 @@
           "order": 5,
           "url": "https://www.facebook.com/SHARE/1FGYWAJT31/?MIBEXTID=WWXIFR",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/SHARE/1FGYWAJT31/?MIBEXTID=WWXIFR"
+        },
+        {
+          "order": 6,
+          "url": "https://www.threads.net/@samuelcostagov40",
+          "original_url": "https://www.threads.net/@samuelcostagov40"
         }
       ]
     },
@@ -5824,6 +6946,26 @@
           "order": 12,
           "url": "https://drive.google.com/drive/mobile/foders/1xqKj2mH0O41nHl0d9GfA_13hHU-o0DvK",
           "original_url": "https://drive.google.com/drive/mobile/foders/1xqKj2mH0O41nHl0d9GfA_13hHU-o0DvK"
+        },
+        {
+          "order": 13,
+          "url": "https://giphy.com/channel/sandroalexpr",
+          "original_url": "https://giphy.com/channel/sandroalexpr"
+        },
+        {
+          "order": 14,
+          "url": "https://www.flickr.com/people/198503627@N08/",
+          "original_url": "https://www.flickr.com/people/198503627@N08/"
+        },
+        {
+          "order": 15,
+          "url": "https://wa.me/554137989186",
+          "original_url": "https://wa.me/554137989186"
+        },
+        {
+          "order": 16,
+          "url": "https://www.flickr.com/photos/204896780@N05/",
+          "original_url": "https://www.flickr.com/photos/204896780@N05/"
         }
       ]
     },
@@ -5945,18 +7087,24 @@
         },
         {
           "order": 19,
-          "url": "https://www.juntosparana.com.br/",
-          "original_url": "https://www.juntosparana.com.br"
-        },
-        {
-          "order": 20,
           "url": "https://t.me/sergiofmoro",
           "original_url": "https://t.me/sergiofmoro"
         },
         {
-          "order": 21,
+          "order": 20,
           "url": "https://open.spotify.com/intl-pt/artist/3FlHpj4hdeXwlOpu2vFvDz",
           "original_url": "https://open.spotify.com/intl-pt/artist/3FlHpj4hdeXwlOpu2vFvDz"
+        }
+      ]
+    },
+    "siqueira-campos-jr": {
+      "sq_candidato": "270002554375",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.facebook.com/share/19T2gnZ5x9/",
+          "original_url": "https://www.facebook.com/share/19T2gnZ5x9/"
         }
       ]
     },
@@ -6094,6 +7242,32 @@
         }
       ]
     },
+    "teresa-surita": {
+      "sq_candidato": "230002553006",
+      "match_method": "nome_completo_exato_unico",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.tiktok.com/@TERESASURITA?_R=1&_T=ZS-98P97AXK5UT",
+          "original_url": "HTTPS://WWW.TIKTOK.COM/@TERESASURITA?_R=1&_T=ZS-98P97AXK5UT"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/TERESASURITA",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/TERESASURITA"
+        },
+        {
+          "order": 3,
+          "url": "https://facebook.com/TERESASURITA",
+          "original_url": "HTTPS://FACEBOOK.COM/TERESASURITA"
+        },
+        {
+          "order": 4,
+          "url": "https://www.youtube.com/@TERESA_SURITA",
+          "original_url": "HTTPS://WWW.YOUTUBE.COM/@TERESA_SURITA"
+        }
+      ]
+    },
     "thor-dantas": {
       "sq_candidato": "10002550719",
       "match_method": "nome_completo_exato_unico",
@@ -6181,6 +7355,16 @@
           "order": 1,
           "url": "https://www.instagram.com/CIDONIOGONCALVES/",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/CIDONIOGONCALVES/"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/cidoniogoncalves?igsh=MXFoYnAzajJyMG14Mg%3D%3D",
+          "original_url": "https://www.instagram.com/cidoniogoncalves?igsh=MXFoYnAzajJyMG14Mg%3D%3D"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/people/Cidonio-Gon%C3%A7alves/pfbid02L5uAr69x134H2bLzEWQukvS3jvmVTKvLsdcQw6",
+          "original_url": "https://www.facebook.com/people/Cidonio-Gon%C3%A7alves/pfbid02L5uAr69x134H2bLzEWQukvS3jvmVTKvLsdcQw6"
         }
       ]
     },
@@ -6195,50 +7379,44 @@
         }
       ]
     },
-    "tse-2026-100002548011": {
-      "sq_candidato": "100002548011",
+    "tse-2026-100002542867": {
+      "sq_candidato": "100002542867",
       "match_method": "sq_candidato",
       "sites": [
         {
           "order": 1,
-          "url": "https://youtube.com/@LAHESIOBONFIM?SI=PIBIH80FQSTW0732",
-          "original_url": "HTTPS://YOUTUBE.COM/@LAHESIOBONFIM?SI=PIBIH80FQSTW0732"
+          "url": "https://fufuca111.com.br/bio",
+          "original_url": "https://fufuca111.com.br/bio"
         },
         {
           "order": 2,
-          "url": "https://www.facebook.com/SHARE/1FQCPJFFEZ/",
-          "original_url": "HTTPS://WWW.FACEBOOK.COM/SHARE/1FQCPJFFEZ/"
+          "url": "https://fufuca111.com.br/",
+          "original_url": "https://fufuca111.com.br"
         },
         {
           "order": 3,
-          "url": "https://www.instagram.com/LAHESIOBONFIMOFICIAL?IGSH=MXZHCGZ6DTRIANNPNA==",
-          "original_url": "HTTPS://WWW.INSTAGRAM.COM/LAHESIOBONFIMOFICIAL?IGSH=MXZHCGZ6DTRIANNPNA=="
-        }
-      ]
-    },
-    "tse-2026-100002548853": {
-      "sq_candidato": "100002548853",
-      "match_method": "sq_candidato",
-      "sites": [
-        {
-          "order": 1,
-          "url": "https://www.tiktok.com/@ENILTONRODRIGUE50",
-          "original_url": "HTTPS://WWW.TIKTOK.COM/@ENILTONRODRIGUE50"
-        },
-        {
-          "order": 2,
-          "url": "https://www.facebook.com/ENILTONSRODRIGUES/",
-          "original_url": "HTTPS://WWW.FACEBOOK.COM/ENILTONSRODRIGUES/"
-        },
-        {
-          "order": 3,
-          "url": "https://www.instagram.com/ENILTON_RODRIGUES/",
-          "original_url": "HTTPS://WWW.INSTAGRAM.COM/ENILTON_RODRIGUES/"
+          "url": "https://open.spotify.com/artist/7FH9DAsBmqYSJKDhuternz?si=lGdz7ea1SpWtNj7WpbFiyA&utm_source=copy-lin",
+          "original_url": "https://open.spotify.com/artist/7FH9DAsBmqYSJKDhuternz?si=lGdz7ea1SpWtNj7WpbFiyA&utm_source=copy-lin"
         },
         {
           "order": 4,
-          "url": "https://www.eniltonrodrigues.com.br/",
-          "original_url": "HTTPS://WWW.ENILTONRODRIGUES.COM.BR/"
+          "url": "https://www.tiktok.com/@fufuca111",
+          "original_url": "https://www.tiktok.com/@fufuca111"
+        },
+        {
+          "order": 5,
+          "url": "https://www.instagram.com/andre_fufuca/",
+          "original_url": "https://www.instagram.com/andre_fufuca/"
+        },
+        {
+          "order": 6,
+          "url": "https://web.facebook.com/andrefufuca",
+          "original_url": "https://web.facebook.com/andrefufuca"
+        },
+        {
+          "order": 8,
+          "url": "https://x.com/andre_fufuca",
+          "original_url": "https://x.com/andre_fufuca"
         }
       ]
     },
@@ -6281,6 +7459,16 @@
           "order": 2,
           "url": "https://www.facebook.com/PREFEITOHILTONGONCALO/",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/PREFEITOHILTONGONCALO/"
+        },
+        {
+          "order": 5,
+          "url": "https://www.instagram.com/hiltongoncalo_",
+          "original_url": "https://www.instagram.com/hiltongoncalo_"
+        },
+        {
+          "order": 6,
+          "url": "https://www.tiktok.com/@drhiltongoncalo33",
+          "original_url": "https://www.tiktok.com/@drhiltongoncalo33"
         }
       ]
     },
@@ -6536,6 +7724,21 @@
           "order": 7,
           "url": "https://panhou.com.br/jogo/",
           "original_url": "https://panhou.com.br/jogo/"
+        },
+        {
+          "order": 8,
+          "url": "http://www.pedrotaques.com.br/",
+          "original_url": "http://www.pedrotaques.com.br"
+        },
+        {
+          "order": 9,
+          "url": "http://www.voudetaques.com.br/",
+          "original_url": "http://www.voudetaques.com.br"
+        },
+        {
+          "order": 10,
+          "url": "http://www.panhou.com.br/",
+          "original_url": "http://www.panhou.com.br"
         }
       ]
     },
@@ -6625,37 +7828,16 @@
           "order": 5,
           "url": "https://www.youtube.com/@josemedeiros222",
           "original_url": "https://www.youtube.com/@josemedeiros222"
-        }
-      ]
-    },
-    "tse-2026-110002552698": {
-      "sq_candidato": "110002552698",
-      "match_method": "sq_candidato",
-      "sites": [
-        {
-          "order": 1,
-          "url": "https://www.threads.com/@janainariva",
-          "original_url": "https://www.threads.com/@janainariva"
         },
         {
-          "order": 2,
-          "url": "https://www.tiktok.com/@janainarivamt",
-          "original_url": "https://www.tiktok.com/@janainarivamt"
+          "order": 6,
+          "url": "https://www.instagram.com/senadorzemedeiros222?igsi=cHFxeTZ5emtpM3g1",
+          "original_url": "https://www.instagram.com/senadorzemedeiros222?igsi=cHFxeTZ5emtpM3g1"
         },
         {
-          "order": 3,
-          "url": "https://www.instagram.com/janainariva",
-          "original_url": "https://www.instagram.com/janainariva"
-        },
-        {
-          "order": 4,
-          "url": "https://www.youtube.com/@JanainaRivamt",
-          "original_url": "https://www.youtube.com/@JanainaRivamt"
-        },
-        {
-          "order": 5,
-          "url": "https://www.facebook.com/janainarivamt",
-          "original_url": "https://www.facebook.com/janainarivamt"
+          "order": 7,
+          "url": "http://www.zemedeiros.com.br/",
+          "original_url": "http://www.zemedeiros.com.br"
         }
       ]
     },
@@ -6677,6 +7859,37 @@
           "order": 3,
           "url": "https://www.instagram.com/nelsonferreiraju?igsh=MTNpMHJzejVsd2Jzcg==",
           "original_url": "https://www.instagram.com/nelsonferreiraju?igsh=MTNpMHJzejVsd2Jzcg=="
+        }
+      ]
+    },
+    "tse-2026-110002553706": {
+      "sq_candidato": "110002553706",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/benygodoysenador?igsh=YndpM3J0eGR2OTgy&igsi=YndpM3J0eG",
+          "original_url": "https://www.instagram.com/benygodoysenador?igsh=YndpM3J0eGR2OTgy&igsi=YndpM3J0eG"
+        },
+        {
+          "order": 2,
+          "url": "https://vm.tiktok.com/ZS9kDtJbwyekh-aGXmT/",
+          "original_url": "https://vm.tiktok.com/ZS9kDtJbwyekh-aGXmT/"
+        },
+        {
+          "order": 3,
+          "url": "https://kwai-video.com/u/@benygodoysenador/obx3C9Uf",
+          "original_url": "https://kwai-video.com/u/@benygodoysenador/obx3C9Uf"
+        },
+        {
+          "order": 4,
+          "url": "https://www.facebook.com/share/1EbebCxNiE/",
+          "original_url": "https://www.facebook.com/share/1EbebCxNiE/"
+        },
+        {
+          "order": 5,
+          "url": "https://youtube.com/@benygodoysenador?si=l4I2gfA2H94vncv-",
+          "original_url": "https://youtube.com/@benygodoysenador?si=l4I2gfA2H94vncv-"
         }
       ]
     },
@@ -6801,6 +8014,11 @@
           "order": 8,
           "url": "https://www.threads.com/@CAPITAOCONTAR?XMT=AQG0JZS_AYRZSHX2MAMTU5JKO87VG5SADZDAO",
           "original_url": "HTTPS://WWW.THREADS.COM/@CAPITAOCONTAR?XMT=AQG0JZS_AYRZSHX2MAMTU5JKO87VG5SADZDAO"
+        },
+        {
+          "order": 9,
+          "url": "http://www.casadadireitams.com.br/",
+          "original_url": "http://www.casadadireitams.com.br/"
         }
       ]
     },
@@ -6810,8 +8028,8 @@
       "sites": [
         {
           "order": 1,
-          "url": "https://www.instagram.com/SORAYATHRONICKE/",
-          "original_url": "HTTPS://WWW.INSTAGRAM.COM/SORAYATHRONICKE/"
+          "url": "https://www.instagram.com/SORAYATHRONICKE",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/SORAYATHRONICKE"
         },
         {
           "order": 2,
@@ -6822,6 +8040,31 @@
           "order": 3,
           "url": "https://www.facebook.com/SENADORASORAYA",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/SENADORASORAYA"
+        },
+        {
+          "order": 4,
+          "url": "https://www.sorayathronicke.com.br/",
+          "original_url": "https://www.sorayathronicke.com.br/"
+        },
+        {
+          "order": 5,
+          "url": "https://www.youtube.com/@senadora.soraya",
+          "original_url": "https://www.youtube.com/@senadora.soraya"
+        },
+        {
+          "order": 6,
+          "url": "https://x.com/senadorasoraya",
+          "original_url": "https://x.com/senadorasoraya"
+        },
+        {
+          "order": 7,
+          "url": "https://www.flickr.com/photos/185991762@N04/",
+          "original_url": "https://www.flickr.com/photos/185991762@N04/"
+        },
+        {
+          "order": 8,
+          "url": "https://www.facebook.com/sorayathronickesenadora",
+          "original_url": "https://www.facebook.com/sorayathronickesenadora"
         }
       ]
     },
@@ -6920,6 +8163,16 @@
           "order": 6,
           "url": "https://www.instagram.com/ROBERTOOSHIRO",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/ROBERTOOSHIRO"
+        },
+        {
+          "order": 11,
+          "url": "https://www.linkedin.com/in/roberto-oshiro-716a1826",
+          "original_url": "https://www.linkedin.com/in/roberto-oshiro-716a1826"
+        },
+        {
+          "order": 13,
+          "url": "https://x.com/RobertoOshiro",
+          "original_url": "https://x.com/RobertoOshiro"
         }
       ]
     },
@@ -6931,6 +8184,36 @@
           "order": 1,
           "url": "https://www.instagram.com/VALTER_J._O?IGSH=MTDTY2F3EDVUYWE3AG==",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/VALTER_J._O?IGSH=MTDTY2F3EDVUYWE3AG=="
+        },
+        {
+          "order": 2,
+          "url": "https://www.facebook.com/profile.php?id=61593739315514",
+          "original_url": "https://www.facebook.com/profile.php?id=61593739315514"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/profile.php?id=61593509132470",
+          "original_url": "https://www.facebook.com/profile.php?id=61593509132470"
+        },
+        {
+          "order": 4,
+          "url": "https://www.youtube.com/@valterdacomagran258",
+          "original_url": "https://www.youtube.com/@valterdacomagran258"
+        },
+        {
+          "order": 5,
+          "url": "https://www.instagram.com/valterdacomagran258/",
+          "original_url": "https://www.instagram.com/valterdacomagran258/"
+        },
+        {
+          "order": 6,
+          "url": "https://www.tiktok.com/@valterdacomagran",
+          "original_url": "https://www.tiktok.com/@valterdacomagran"
+        },
+        {
+          "order": 7,
+          "url": "https://senadorvaltercomagran.com/",
+          "original_url": "https://senadorvaltercomagran.com"
         }
       ]
     },
@@ -7124,6 +8407,21 @@
           "order": 2,
           "url": "https://www.instagram.com/MARCO.ANTONIO.COSTA",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/MARCO.ANTONIO.COSTA"
+        },
+        {
+          "order": 3,
+          "url": "https://www.instagram.com/realmacosta",
+          "original_url": "https://www.instagram.com/realmacosta"
+        },
+        {
+          "order": 4,
+          "url": "https://x.com/realmacosta",
+          "original_url": "https://x.com/realmacosta"
+        },
+        {
+          "order": 5,
+          "url": "https://tiktok.com/realmarcoantoniocosta",
+          "original_url": "https://tiktok.com/realmarcoantoniocosta"
         }
       ]
     },
@@ -7199,6 +8497,16 @@
           "order": 2,
           "url": "https://www.facebook.com/ManoelCarvalhoMuriae/",
           "original_url": "https://www.facebook.com/ManoelCarvalhoMuriae/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.tiktok.com/@manoelcarvalho8634",
+          "original_url": "https://www.tiktok.com/@manoelcarvalho8634"
+        },
+        {
+          "order": 4,
+          "url": "https://www.youtube.com/@manoelteodoropereiradecarv3706",
+          "original_url": "https://www.youtube.com/@manoelteodoropereiradecarv3706"
         }
       ]
     },
@@ -7283,112 +8591,6 @@
           "order": 4,
           "url": "https://x.com/ZEQUINHAMARINHO",
           "original_url": "HTTPS://X.COM/ZEQUINHAMARINHO"
-        }
-      ]
-    },
-    "tse-2026-140002544855": {
-      "sq_candidato": "140002544855",
-      "match_method": "sq_candidato",
-      "sites": [
-        {
-          "order": 1,
-          "url": "https://k.kwai.com/U/@EDERMAUROPA/CT3FCZKH",
-          "original_url": "HTTPS://K.KWAI.COM/U/@EDERMAUROPA/CT3FCZKH"
-        },
-        {
-          "order": 2,
-          "url": "https://whatsapp.com/CHANNEL/0029VBCUVBI0BIDJLB2HGM01",
-          "original_url": "HTTPS://WHATSAPP.COM/CHANNEL/0029VBCUVBI0BIDJLB2HGM01"
-        },
-        {
-          "order": 3,
-          "url": "https://www.youtube.com/C/DELEGADO%C3%89DERMAUROPA",
-          "original_url": "HTTPS://WWW.YOUTUBE.COM/C/DELEGADO%C3%89DERMAUROPA"
-        },
-        {
-          "order": 4,
-          "url": "http://www.delegadoedermauro.com.br/",
-          "original_url": "HTTP://WWW.DELEGADOEDERMAURO.COM.BR/"
-        },
-        {
-          "order": 5,
-          "url": "http://www.facebook.com/EDERMAUROPA/",
-          "original_url": "HTTP://WWW.FACEBOOK.COM/EDERMAUROPA/"
-        },
-        {
-          "order": 6,
-          "url": "https://t.me/EDERMAUROPA",
-          "original_url": "HTTPS://T.ME/EDERMAUROPA"
-        },
-        {
-          "order": 7,
-          "url": "https://www.tiktok.com/@EDERMAUROPA",
-          "original_url": "HTTPS://WWW.TIKTOK.COM/@EDERMAUROPA"
-        },
-        {
-          "order": 8,
-          "url": "https://twitter.com/EDERMAUROPA",
-          "original_url": "TWITTER - HTTPS://TWITTER.COM/EDERMAUROPA"
-        },
-        {
-          "order": 9,
-          "url": "https://www.facebook.com/EDERMAUROOFICIAL",
-          "original_url": "HTTPS://WWW.FACEBOOK.COM/EDERMAUROOFICIAL"
-        },
-        {
-          "order": 10,
-          "url": "http://www.instagram.com/EDERMAUROPA/",
-          "original_url": "HTTP://WWW.INSTAGRAM.COM/EDERMAUROPA/"
-        },
-        {
-          "order": 11,
-          "url": "http://www.facebook.com/EDERMAUROPARA",
-          "original_url": "HTTP://WWW.FACEBOOK.COM/EDERMAUROPARA"
-        },
-        {
-          "order": 12,
-          "url": "https://www.instagram.com/EDERMAUROPA/",
-          "original_url": "https://www.instagram.com/EDERMAUROPA/"
-        },
-        {
-          "order": 13,
-          "url": "https://www.threads.com/@edermauropa",
-          "original_url": "https://www.threads.com/@edermauropa"
-        },
-        {
-          "order": 14,
-          "url": "https://web.facebook.com/EderMauroPara/",
-          "original_url": "https://web.facebook.com/EderMauroPara/"
-        },
-        {
-          "order": 15,
-          "url": "https://www.kwai.com/@edermauroPA",
-          "original_url": "https://www.kwai.com/@edermauroPA"
-        },
-        {
-          "order": 16,
-          "url": "https://x.com/EderMauroPA",
-          "original_url": "https://x.com/EderMauroPA"
-        },
-        {
-          "order": 17,
-          "url": "https://www.youtube.com/@edermauro222",
-          "original_url": "https://www.youtube.com/@edermauro222"
-        },
-        {
-          "order": 18,
-          "url": "https://www.youtube.com/DelegadoEderMauroPA",
-          "original_url": "https://www.youtube.com/DelegadoEderMauroPA"
-        },
-        {
-          "order": 19,
-          "url": "https://timebarra.com.br/",
-          "original_url": "https://timebarra.com.br/"
-        },
-        {
-          "order": 21,
-          "url": "https://www.edermauro.com.br/",
-          "original_url": "www.edermauro.com.br"
         }
       ]
     },
@@ -7493,6 +8695,16 @@
           "order": 7,
           "url": "https://www.twibbonize.com/oparatajunto",
           "original_url": "https://www.twibbonize.com/oparatajunto"
+        },
+        {
+          "order": 8,
+          "url": "https://www.youtube.com/channel/UCmTe1roZl5bi4X2N2f5RR6A",
+          "original_url": "https://www.youtube.com/channel/UCmTe1roZl5bi4X2N2f5RR6A"
+        },
+        {
+          "order": 9,
+          "url": "https://k.kwai.com/u/@helderbarbalho124/C5A8jhzi",
+          "original_url": "https://k.kwai.com/u/@helderbarbalho124/C5A8jhzi"
         }
       ]
     },
@@ -7524,6 +8736,11 @@
           "order": 5,
           "url": "https://www.youtube.com/@CHICAODOPARA",
           "original_url": "HTTPS://WWW.YOUTUBE.COM/@CHICAODOPARA"
+        },
+        {
+          "order": 6,
+          "url": "https://chicaosenador.com.br/",
+          "original_url": "https://chicaosenador.com.br"
         }
       ]
     },
@@ -7551,6 +8768,36 @@
           "order": 2,
           "url": "https://www.instagram.com/eulivianoronha/",
           "original_url": "https://www.instagram.com/eulivianoronha/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.instagram.com/eulivianoronha?igsh=MWJ0bXN3eHY3c3loYg%3D%3D",
+          "original_url": "https://www.instagram.com/eulivianoronha?igsh=MWJ0bXN3eHY3c3loYg%3D%3D"
+        },
+        {
+          "order": 4,
+          "url": "https://www.instagram.com/eulivianoronhareserva?igsh=MXg5dDFlOWF3NndqYg%3D%3D",
+          "original_url": "https://www.instagram.com/eulivianoronhareserva?igsh=MXg5dDFlOWF3NndqYg%3D%3D"
+        },
+        {
+          "order": 5,
+          "url": "https://www.threads.com/@eulivianoronha?igshid=NTc4MTIwNjQ2YQ%3D%3D",
+          "original_url": "https://www.threads.com/@eulivianoronha?igshid=NTc4MTIwNjQ2YQ%3D%3D"
+        },
+        {
+          "order": 6,
+          "url": "https://x.com/livianoronha_pa?s=11&t=DBdbKNcA9HHkG-PpMTXS9g",
+          "original_url": "https://x.com/livianoronha_pa?s=11&t=DBdbKNcA9HHkG-PpMTXS9g"
+        },
+        {
+          "order": 7,
+          "url": "https://x.com/eulivianoronha?s=11&t=DBdbKNcA9HHkG-PpMTXS9g",
+          "original_url": "https://x.com/eulivianoronha?s=11&t=DBdbKNcA9HHkG-PpMTXS9g"
+        },
+        {
+          "order": 8,
+          "url": "https://www.facebook.com/eulivianoronha/?rdid=Uqsg3O9eKl34CkgJ",
+          "original_url": "https://www.facebook.com/eulivianoronha/?rdid=Uqsg3O9eKl34CkgJ"
         }
       ]
     },
@@ -7820,43 +9067,43 @@
         },
         {
           "order": 6,
-          "url": "https://www.kwai.com/@GLEISIHOFFMANN686",
-          "original_url": "HTTPS://WWW.KWAI.COM/@GLEISIHOFFMANN686"
-        },
-        {
-          "order": 7,
           "url": "http://wa.me/5541988001313",
           "original_url": "HTTP://WA.ME/5541988001313"
         },
         {
-          "order": 8,
+          "order": 7,
           "url": "https://chat.whatsapp.com/CN9XXT1KSBE4LN63GQZI8S",
           "original_url": "CHAT.WHATSAPP.COM/CN9XXT1KSBE4LN63GQZI8S"
         },
         {
-          "order": 9,
+          "order": 8,
           "url": "https://www.tiktok.com/@GLEISIHOFFMANNREAL",
           "original_url": "HTTPS://WWW.TIKTOK.COM/@GLEISIHOFFMANNREAL"
         },
         {
-          "order": 10,
+          "order": 9,
           "url": "https://gleisi131.com.br/",
           "original_url": "GLEISI131.COM.BR"
         },
         {
-          "order": 11,
+          "order": 10,
           "url": "https://whatsapp.com/CHANNEL/0029VB3OWAMFY72CLTUCMI1I",
           "original_url": "HTTPS://WHATSAPP.COM/CHANNEL/0029VB3OWAMFY72CLTUCMI1I"
         },
         {
-          "order": 12,
+          "order": 11,
           "url": "https://chat.whatsapp.com/BKV4NDU9ZVE1W6FRRHGPYX",
           "original_url": "HTTPS://CHAT.WHATSAPP.COM/BKV4NDU9ZVE1W6FRRHGPYX"
         },
         {
-          "order": 13,
+          "order": 12,
           "url": "https://gleisisenadora.com/",
           "original_url": "GLEISISENADORA.COM"
+        },
+        {
+          "order": 13,
+          "url": "http://www.kwai.com/@gleisihoffmann131",
+          "original_url": "http://www.kwai.com/@gleisihoffmann131"
         }
       ]
     },
@@ -7918,6 +9165,16 @@
           "order": 13,
           "url": "https://giphy.com/channel/drrosinha132",
           "original_url": "https://giphy.com/channel/drrosinha132"
+        },
+        {
+          "order": 15,
+          "url": "https://www.flickr.com/photos/dr_rosinha/",
+          "original_url": "https://www.flickr.com/photos/dr_rosinha/"
+        },
+        {
+          "order": 16,
+          "url": "https://www.instagram.com/rosinhasenador",
+          "original_url": "https://www.instagram.com/rosinhasenador"
         }
       ]
     },
@@ -7959,6 +9216,11 @@
           "order": 8,
           "url": "https://docs.google.com/forms/d/e/1FAIpQLSfzpbHr4UYV2frY6_FAuBW8Bph7zRMU8_Ym62PgSGetfI_EEQ/viewform",
           "original_url": "https://docs.google.com/forms/d/e/1FAIpQLSfzpbHr4UYV2frY6_FAuBW8Bph7zRMU8_Ym62PgSGetfI_EEQ/viewform"
+        },
+        {
+          "order": 9,
+          "url": "https://meusenadorassina.com.br/",
+          "original_url": "https://meusenadorassina.com.br/"
         }
       ]
     },
@@ -8025,52 +9287,16 @@
           "order": 12,
           "url": "https://www.instagram.com/deltan.dalanhudo?igsi=bGpoOHRoOGFta2Yw",
           "original_url": "https://www.instagram.com/deltan.dalanhudo?igsi=bGpoOHRoOGFta2Yw"
-        }
-      ]
-    },
-    "tse-2026-160002547963": {
-      "sq_candidato": "160002547963",
-      "match_method": "sq_candidato",
-      "sites": [
-        {
-          "order": 1,
-          "url": "https://www.threads.com/@ALEXANDRE.CURI",
-          "original_url": "HTTPS://WWW.THREADS.COM/@ALEXANDRE.CURI"
         },
         {
-          "order": 2,
-          "url": "https://www.tiktok.com/@ALEXANDRECURI",
-          "original_url": "HTTPS://WWW.TIKTOK.COM/@ALEXANDRECURI"
+          "order": 13,
+          "url": "https://www.facebook.com/profile.php?id=100009092247459",
+          "original_url": "https://www.facebook.com/profile.php?id=100009092247459"
         },
         {
-          "order": 3,
-          "url": "https://www.facebook.com/ALEXANDRECURIOFICIAL",
-          "original_url": "HTTPS://WWW.FACEBOOK.COM/ALEXANDRECURIOFICIAL"
-        },
-        {
-          "order": 4,
-          "url": "https://alexandrecuri.com.br/",
-          "original_url": "HTTPS://ALEXANDRECURI.COM.BR/"
-        },
-        {
-          "order": 5,
-          "url": "https://www.youtube.com/@ALEXANDRECURIOFICIAL",
-          "original_url": "HTTPS://WWW.YOUTUBE.COM/@ALEXANDRECURIOFICIAL"
-        },
-        {
-          "order": 6,
-          "url": "https://www.facebook.com/ALEXANDRECURI/",
-          "original_url": "HTTPS://WWW.FACEBOOK.COM/ALEXANDRECURI/"
-        },
-        {
-          "order": 7,
-          "url": "https://www.instagram.com/ALEXANDRE.CURI/",
-          "original_url": "HTTPS://WWW.INSTAGRAM.COM/ALEXANDRE.CURI/"
-        },
-        {
-          "order": 8,
-          "url": "https://x.com/ALEXANDRECURI",
-          "original_url": "HTTPS://X.COM/ALEXANDRECURI"
+          "order": 14,
+          "url": "https://meusenadorassina.com.br/",
+          "original_url": "https://meusenadorassina.com.br/"
         }
       ]
     },
@@ -8142,6 +9368,22 @@
           "order": 13,
           "url": "https://truthsocial.com/@CRISTINAGRAEML",
           "original_url": "HTTPS://TRUTHSOCIAL.COM/@CRISTINAGRAEML"
+        },
+        {
+          "order": 14,
+          "url": "https://whatsapp.com/channel/0029Vb5tEvL7j6g1eKPK6s0Z",
+          "original_url": "https://whatsapp.com/channel/0029Vb5tEvL7j6g1eKPK6s0Z"
+        }
+      ]
+    },
+    "tse-2026-160002551043": {
+      "sq_candidato": "160002551043",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/reel/DcJiCsKRzsw/?stkn=cjZ3ZmFtb2Jsb3Js",
+          "original_url": "https://www.instagram.com/reel/DcJiCsKRzsw/?stkn=cjZ3ZmFtb2Jsb3Js"
         }
       ]
     },
@@ -8151,18 +9393,23 @@
       "sites": [
         {
           "order": 1,
-          "url": "https://www.instagram.com/KAREN.GUERREIRO7?IGSH=BNFJA21QCMZMBM52&UTM_SOURCE=QR",
-          "original_url": "HTTPS://WWW.INSTAGRAM.COM/KAREN.GUERREIRO7?IGSH=BNFJA21QCMZMBM52&UTM_SOURCE=QR"
+          "url": "https://www.instagram.com/karen.guerreiro7",
+          "original_url": "https://www.instagram.com/karen.guerreiro7"
         },
         {
           "order": 2,
-          "url": "https://www.tiktok.com/@karen.guerreiro38",
-          "original_url": "https://www.tiktok.com/@karen.guerreiro38"
+          "url": "https://www.instagram.com/karen.guerreiro7?igsi=bnFja21qcmZmbm52&utm_source=qr",
+          "original_url": "https://www.instagram.com/karen.guerreiro7?igsi=bnFja21qcmZmbm52&utm_source=qr"
         },
         {
           "order": 3,
-          "url": "https://www.instagram.com/karen.guerreiro7",
-          "original_url": "https://www.instagram.com/karen.guerreiro7"
+          "url": "https://www.tiktok.com/@karen.guerreiro38?_r=1&_t=ZS-99BPxdRSPMi",
+          "original_url": "https://www.tiktok.com/@karen.guerreiro38?_r=1&_t=ZS-99BPxdRSPMi"
+        },
+        {
+          "order": 4,
+          "url": "https://www.facebook.com/people/Karenguerreiro7/61572968800566/",
+          "original_url": "https://www.facebook.com/people/Karenguerreiro7/61572968800566/"
         }
       ]
     },
@@ -8195,6 +9442,11 @@
           "order": 3,
           "url": "https://www.instagram.com/CARLOSSANTANNAPE",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/CARLOSSANTANNAPE"
+        },
+        {
+          "order": 4,
+          "url": "https://www.tiktok.com/@carlossantannape",
+          "original_url": "https://www.tiktok.com/@carlossantannape"
         }
       ]
     },
@@ -8269,6 +9521,21 @@
           "order": 8,
           "url": null,
           "original_url": "YOUTUBE: @MENDONÇAFILHO-W1I"
+        },
+        {
+          "order": 9,
+          "url": "https://biolink.info/mendoncafilho222",
+          "original_url": "https://biolink.info/mendoncafilho222"
+        },
+        {
+          "order": 10,
+          "url": "https://open.spotify.com/user/316irmvmu5662twxf2vxhmcunmi4",
+          "original_url": "https://open.spotify.com/user/316irmvmu5662twxf2vxhmcunmi4"
+        },
+        {
+          "order": 11,
+          "url": "https://www.deezer.com/pt/artist/109642182",
+          "original_url": "https://www.deezer.com/pt/artist/109642182"
         }
       ]
     },
@@ -8419,6 +9686,11 @@
           "order": 3,
           "url": "https://www.tiktok.com/@TULIO.GADELHA",
           "original_url": "HTTPS://WWW.TIKTOK.COM/@TULIO.GADELHA"
+        },
+        {
+          "order": 4,
+          "url": "https://tulio555.com/",
+          "original_url": "https://tulio555.com/"
         }
       ]
     },
@@ -8497,6 +9769,11 @@
           "order": 6,
           "url": "https://x.com/julio_cesar_pi?s=21",
           "original_url": "https://x.com/julio_cesar_pi?s=21"
+        },
+        {
+          "order": 7,
+          "url": "https://julimdopiaui.com.br/",
+          "original_url": "https://julimdopiaui.com.br/"
         }
       ]
     },
@@ -8578,163 +9855,163 @@
         },
         {
           "order": 3,
-          "url": "https://www.youtube.com/USER/CIRONOGUEIRASENADOR",
-          "original_url": "HTTPS://WWW.YOUTUBE.COM/USER/CIRONOGUEIRASENADOR"
-        },
-        {
-          "order": 4,
           "url": "https://www.tiktok.com/@CIRONOGUEIRAOFICIAL",
           "original_url": "HTTPS://WWW.TIKTOK.COM/@CIRONOGUEIRAOFICIAL"
         },
         {
-          "order": 5,
+          "order": 4,
           "url": "https://cironogueira.com.br/",
           "original_url": "HTTPS://CIRONOGUEIRA.COM.BR/"
         },
         {
-          "order": 6,
+          "order": 5,
           "url": "https://www.facebook.com/CIRONOGUEIRA/?LOCALE=PT_BR",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/CIRONOGUEIRA/?LOCALE=PT_BR"
         },
         {
-          "order": 7,
+          "order": 6,
           "url": "https://www.instagram.com/CIRONOGUEIRAPIAUI/",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/CIRONOGUEIRAPIAUI/"
         },
         {
-          "order": 8,
-          "url": "https://www.facebook.com/SHARE/1EG7NKYNHD/?MIBEXTID=WWXIFR",
-          "original_url": "HTTPS://WWW.FACEBOOK.COM/SHARE/1EG7NKYNHD/?MIBEXTID=WWXIFR"
-        },
-        {
-          "order": 9,
+          "order": 7,
           "url": "https://x.com/CIRONOGUEIRAPI",
           "original_url": "HTTPS://X.COM/CIRONOGUEIRAPI"
         },
         {
-          "order": 10,
-          "url": "https://k.kwai.com/U/@CIRONOGUEIRAOFICIAL/IRZCCDWJ",
-          "original_url": "HTTPS://K.KWAI.COM/U/@CIRONOGUEIRAOFICIAL/IRZCCDWJ"
-        },
-        {
-          "order": 11,
+          "order": 8,
           "url": "https://www.youtube.com/@CIRONOGUEIRAOFICIAL",
           "original_url": "HTTPS://WWW.YOUTUBE.COM/@CIRONOGUEIRAOFICIAL"
         },
         {
-          "order": 13,
-          "url": "https://www.facebook.com/SHARE/1AKPDU4DK3/?MIBEXTID=WWXIFR",
-          "original_url": "HTTPS://WWW.FACEBOOK.COM/SHARE/1AKPDU4DK3/?MIBEXTID=WWXIFR"
-        },
-        {
-          "order": 15,
+          "order": 11,
           "url": "https://www.threads.com/@CIRONOGUEIRAPIAUI",
           "original_url": "HTTPS://WWW.THREADS.COM/@CIRONOGUEIRAPIAUI"
         },
         {
-          "order": 16,
-          "url": "https://www.tiktok.com/@CIRONOGUEIRAOFICIAL?_R=1&_T=ZS-97GSFCHLZZF",
-          "original_url": "HTTPS://WWW.TIKTOK.COM/@CIRONOGUEIRAOFICIAL?_R=1&_T=ZS-97GSFCHLZZF"
-        },
-        {
-          "order": 18,
+          "order": 13,
           "url": "https://tocomciro111.com/",
           "original_url": "https://tocomciro111.com/"
         },
         {
-          "order": 19,
+          "order": 14,
           "url": "https://www.facebook.com/cironogueirapiaui",
           "original_url": "https://www.facebook.com/cironogueirapiaui"
         },
         {
-          "order": 20,
+          "order": 15,
           "url": "https://www.instagram.com/cironogueira/",
           "original_url": "https://www.instagram.com/cironogueira/"
         },
         {
-          "order": 21,
+          "order": 16,
           "url": "https://www.instagram.com/teresinacomciro/",
           "original_url": "https://www.instagram.com/teresinacomciro/"
         },
         {
-          "order": 22,
+          "order": 17,
           "url": "https://www.instagram.com/picoscomciro/",
           "original_url": "https://www.instagram.com/picoscomciro/"
         },
         {
-          "order": 23,
+          "order": 18,
           "url": "https://www.instagram.com/parnaibacomciro/",
           "original_url": "https://www.instagram.com/parnaibacomciro/"
         },
         {
-          "order": 24,
+          "order": 19,
           "url": "https://www.instagram.com/florianocomciro/",
           "original_url": "https://www.instagram.com/florianocomciro/"
         },
         {
-          "order": 25,
+          "order": 20,
           "url": "https://www.instagram.com/meusenadorciro/",
           "original_url": "https://www.instagram.com/meusenadorciro/"
         },
         {
-          "order": 26,
+          "order": 21,
           "url": "https://www.instagram.com/piauicomciro/",
           "original_url": "https://www.instagram.com/piauicomciro/"
         },
         {
-          "order": 27,
+          "order": 22,
           "url": "https://www.instagram.com/amigosdociropi/",
           "original_url": "https://www.instagram.com/amigosdociropi/"
         },
         {
-          "order": 28,
+          "order": 23,
           "url": "https://www.instagram.com/cirosenadordagente",
           "original_url": "https://www.instagram.com/cirosenadordagente"
         },
         {
-          "order": 29,
+          "order": 24,
           "url": "https://www.instagram.com/tocomciropi",
           "original_url": "https://www.instagram.com/tocomciropi"
         },
         {
-          "order": 30,
+          "order": 25,
           "url": "https://whatsapp.com/channel/0029VbARor0HLHQf2aED720Y",
           "original_url": "https://whatsapp.com/channel/0029VbARor0HLHQf2aED720Y"
         },
         {
-          "order": 31,
+          "order": 26,
           "url": "https://open.spotify.com/intl-pt/artist/7dlUudRIBl00BrqUIrC58m?si=6PqkrvdLSj-drG5bMv0sHQ",
           "original_url": "https://open.spotify.com/intl-pt/artist/7dlUudRIBl00BrqUIrC58m?si=6PqkrvdLSj-drG5bMv0sHQ"
         },
         {
-          "order": 33,
+          "order": 28,
           "url": "https://music.apple.com/br/artist/ciro-nogueira/6796064638",
           "original_url": "https://music.apple.com/br/artist/ciro-nogueira/6796064638"
         },
         {
-          "order": 34,
+          "order": 29,
           "url": "https://music.amazon.com.br/artists/B0HFFJQRRY",
           "original_url": "https://music.amazon.com.br/artists/B0HFFJQRRY"
         },
         {
-          "order": 35,
+          "order": 30,
           "url": "https://www.deezer.com/br/artist/406982592",
           "original_url": "https://www.deezer.com/br/artist/406982592"
         },
         {
-          "order": 36,
+          "order": 31,
           "url": "https://tidal.com/artist/83597958",
           "original_url": "https://tidal.com/artist/83597958"
         },
         {
-          "order": 37,
+          "order": 32,
           "url": "https://www.instagram.com/euecascadebalapi/",
           "original_url": "https://www.instagram.com/euecascadebalapi/"
         },
         {
-          "order": 38,
+          "order": 33,
           "url": "https://linktr.ee/cironogueira111",
           "original_url": "https://linktr.ee/cironogueira111"
+        },
+        {
+          "order": 34,
+          "url": "https://www.instagram.com/cocadadociro?igsi=MXBwenpob2NmMWpxbA%3D%3D&utm_source=qr",
+          "original_url": "https://www.instagram.com/cocadadociro?igsi=MXBwenpob2NmMWpxbA%3D%3D&utm_source=qr"
+        },
+        {
+          "order": 35,
+          "url": "https://open.spotify.com/show/5bmOFg0tUNssISIp4sF17i",
+          "original_url": "https://open.spotify.com/show/5bmOFg0tUNssISIp4sF17i"
+        },
+        {
+          "order": 36,
+          "url": "https://drive.google.com/drive/u/2/folders/137daWEoQ4ISC6pswO66zgLU5-sAHjNp7",
+          "original_url": "https://drive.google.com/drive/u/2/folders/137daWEoQ4ISC6pswO66zgLU5-sAHjNp7"
+        },
+        {
+          "order": 37,
+          "url": "https://chat.whatsapp.com/B6hMy7RfQ0k7un03Q3DxBa?s=cl&p=i&mlu=4&ilr=4",
+          "original_url": "https://chat.whatsapp.com/B6hMy7RfQ0k7un03Q3DxBa?s=cl&p=i&mlu=4&ilr=4"
+        },
+        {
+          "order": 38,
+          "url": "https://www.kwai.com/@cironogueiraoficial",
+          "original_url": "https://www.kwai.com/@cironogueiraoficial"
         }
       ]
     },
@@ -8848,6 +10125,11 @@
           "order": 2,
           "url": "https://www.facebook.com/ANTONIOBARROS",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/ANTONIOBARROS - HTTPS://WWW.FACEBOOK.COM/ANTONIOBARROS"
+        },
+        {
+          "order": 5,
+          "url": "https://www.tiktok.com/@antoniobarrosaf",
+          "original_url": "https://www.tiktok.com/@antoniobarrosaf"
         }
       ]
     },
@@ -8880,6 +10162,11 @@
           "order": 2,
           "url": "https://www.facebook.com/MMADALENANUNES",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/MMADALENANUNES"
+        },
+        {
+          "order": 3,
+          "url": "https://www.instagram.com/bancadafeminista.pi/",
+          "original_url": "https://www.instagram.com/bancadafeminista.pi/"
         }
       ]
     },
@@ -8891,17 +10178,6 @@
           "order": 1,
           "url": "https://www.instagram.com/FRANCINALDOPSOL/",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/FRANCINALDOPSOL/"
-        }
-      ]
-    },
-    "tse-2026-180002552962": {
-      "sq_candidato": "180002552962",
-      "match_method": "sq_candidato",
-      "sites": [
-        {
-          "order": 1,
-          "url": "https://www.instagram.com/alexandremariano67_?igsh=NjdhamJtcjZ6OHU2&igsi=NjdhamJ",
-          "original_url": "https://www.instagram.com/alexandremariano67_?igsh=NjdhamJtcjZ6OHU2&igsi=NjdhamJ"
         }
       ]
     },
@@ -8985,6 +10261,26 @@
           "order": 4,
           "url": "https://www.instagram.com/MONICATEREZABENICIO/?HL=EN",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/MONICATEREZABENICIO/?HL=EN"
+        },
+        {
+          "order": 5,
+          "url": "https://www.threads.com/@monicaterezabenicio?igshid=NTc4MTIwNjQ2YQ==",
+          "original_url": "https://www.threads.com/@monicaterezabenicio?igshid=NTc4MTIwNjQ2YQ=="
+        },
+        {
+          "order": 6,
+          "url": "https://queroapoiar.com.br/carlosminc",
+          "original_url": "https://queroapoiar.com.br/carlosminc"
+        },
+        {
+          "order": 7,
+          "url": "https://chat.whatsapp.com/CehgcTLD77cKoP3D2unlvn",
+          "original_url": "https://chat.whatsapp.com/CehgcTLD77cKoP3D2unlvn"
+        },
+        {
+          "order": 8,
+          "url": "https://www.youtube.com/@monica_benicio",
+          "original_url": "https://www.youtube.com/@monica_benicio"
         }
       ]
     },
@@ -9032,6 +10328,11 @@
           "order": 6,
           "url": "https://www.facebook.com/CARLOSJORDYOFICIAL/?LOCALE=PT_BR",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/CARLOSJORDYOFICIAL/?LOCALE=PT_BR"
+        },
+        {
+          "order": 7,
+          "url": "https://www.instagram.com/carlosjordyapoio",
+          "original_url": "https://www.instagram.com/carlosjordyapoio"
         }
       ]
     },
@@ -9046,8 +10347,48 @@
         },
         {
           "order": 2,
+          "url": "https://www.instagram.com/secco.helio?igsi=azVrdHh6aTNramg5",
+          "original_url": "https://www.instagram.com/secco.helio?igsi=azVrdHh6aTNramg5"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/share/1DCspkmGaQ/?mibextid=wwXIfr",
+          "original_url": "https://www.facebook.com/share/1DCspkmGaQ/?mibextid=wwXIfr"
+        },
+        {
+          "order": 4,
+          "url": "https://www.tiktok.com/@secco.helio?_r=1&_t=ZS-99Ljg3f21f3",
+          "original_url": "https://www.tiktok.com/@secco.helio?_r=1&_t=ZS-99Ljg3f21f3"
+        },
+        {
+          "order": 5,
+          "url": "https://x.com/seccohelio?s=11&t=niO99Ns8clbwP31Zf5YaWg",
+          "original_url": "https://x.com/seccohelio?s=11&t=niO99Ns8clbwP31Zf5YaWg"
+        },
+        {
+          "order": 6,
+          "url": "https://youtu.be/f3-yhiRPaSk?si=WxuusRwc7tLfjJQn",
+          "original_url": "https://youtu.be/f3-yhiRPaSk?si=WxuusRwc7tLfjJQn"
+        },
+        {
+          "order": 7,
+          "url": "https://www.linkedin.com/in/helio-secco-347813a2?utm_source=share_via&utm_content=pro-file&utm_mediu",
+          "original_url": "https://www.linkedin.com/in/helio-secco-347813a2?utm_source=share_via&utm_content=pro-file&utm_mediu"
+        },
+        {
+          "order": 8,
           "url": "https://heliosecco.com.br/",
-          "original_url": "HELIOSECCO.COM.BR"
+          "original_url": "https://heliosecco.com.br/"
+        },
+        {
+          "order": 9,
+          "url": "https://kwai-video.com/u/@heliosecco144/L1TCxSDi",
+          "original_url": "https://kwai-video.com/u/@heliosecco144/L1TCxSDi"
+        },
+        {
+          "order": 10,
+          "url": "https://www.threads.com/@secco.helio",
+          "original_url": "https://www.threads.com/@secco.helio"
         }
       ]
     },
@@ -9064,6 +10405,16 @@
           "order": 2,
           "url": "https://www.facebook.com/MIDIASMARCOSDIAS",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/MIDIASMARCOSDIAS"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/marcosdiasoficial2026",
+          "original_url": "https://www.facebook.com/marcosdiasoficial2026"
+        },
+        {
+          "order": 4,
+          "url": "https://senadormarcosdias.com.br/",
+          "original_url": "https://senadormarcosdias.com.br/"
         }
       ]
     },
@@ -9200,6 +10551,36 @@
           "order": 1,
           "url": "https://www.facebook.com/MARCELOCRIVELLA",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/MARCELOCRIVELLA"
+        },
+        {
+          "order": 3,
+          "url": "https://www.instagram.com/marcelocrivella",
+          "original_url": "https://www.instagram.com/marcelocrivella"
+        },
+        {
+          "order": 4,
+          "url": "https://www.marcelocrivella.com.br/",
+          "original_url": "https://www.marcelocrivella.com.br"
+        },
+        {
+          "order": 5,
+          "url": "https://www.marcelocrivella.org/",
+          "original_url": "https://www.marcelocrivella.org"
+        },
+        {
+          "order": 7,
+          "url": "https://www.youtube.com/user/marcelocrivella",
+          "original_url": "https://www.youtube.com/user/marcelocrivella"
+        },
+        {
+          "order": 8,
+          "url": "https://x.com/MCrivella",
+          "original_url": "https://x.com/MCrivella"
+        },
+        {
+          "order": 9,
+          "url": "https://www.tiktok.com/@marcelocrivella",
+          "original_url": "https://www.tiktok.com/@marcelocrivella"
         }
       ]
     },
@@ -9340,6 +10721,11 @@
           "order": 3,
           "url": "http://facebook.com/SAMANDAALVES",
           "original_url": "HTTP://FACEBOOK.COM/SAMANDAALVES"
+        },
+        {
+          "order": 4,
+          "url": "https://www.samanda131.com.br/",
+          "original_url": "https://www.samanda131.com.br/"
         }
       ]
     },
@@ -9418,6 +10804,21 @@
           "order": 4,
           "url": "https://www.tiktok.com/@SENADORSTYVENSONVALENTIM",
           "original_url": "HTTPS://WWW.TIKTOK.COM/@SENADORSTYVENSONVALENTIM"
+        },
+        {
+          "order": 5,
+          "url": "https://www.facebook.com/SenadorStyvensonValentim",
+          "original_url": "https://www.facebook.com/SenadorStyvensonValentim"
+        },
+        {
+          "order": 6,
+          "url": "https://www.facebook.com/styvensonvalentim",
+          "original_url": "https://www.facebook.com/styvensonvalentim"
+        },
+        {
+          "order": 7,
+          "url": "https://www.facebook.com/capitaostyvensonsenadorRN",
+          "original_url": "https://www.facebook.com/capitaostyvensonsenadorRN"
         }
       ]
     },
@@ -9454,6 +10855,11 @@
           "order": 6,
           "url": "https://www.youtube.com/@ZENAIDERN",
           "original_url": "HTTPS://WWW.YOUTUBE.COM/@ZENAIDERN"
+        },
+        {
+          "order": 7,
+          "url": "https://www.facebook.com/drazenaide",
+          "original_url": "https://www.facebook.com/drazenaide"
         }
       ]
     },
@@ -9931,6 +11337,36 @@
           "order": 1,
           "url": null,
           "original_url": "@RENATOJAGUARAOOFICIAL"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/renatojaguarao?igsh=MW9rbXdiaTFsc3M1aA==",
+          "original_url": "https://www.instagram.com/renatojaguarao?igsh=MW9rbXdiaTFsc3M1aA=="
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/share/1D6cVyZ3Cm/",
+          "original_url": "https://www.facebook.com/share/1D6cVyZ3Cm/"
+        },
+        {
+          "order": 4,
+          "url": "https://www.facebook.com/renatojaguarao",
+          "original_url": "https://www.facebook.com/renatojaguarao"
+        },
+        {
+          "order": 5,
+          "url": "https://www.tiktok.com/@renato_jaguarao",
+          "original_url": "https://www.tiktok.com/@renato_jaguarao"
+        },
+        {
+          "order": 6,
+          "url": "https://youtube.com/@",
+          "original_url": "https://youtube.com/@"
+        },
+        {
+          "order": 7,
+          "url": null,
+          "original_url": "https:www.renatojaguaraosenado234.com.br"
         }
       ]
     },
@@ -9942,6 +11378,21 @@
           "order": 1,
           "url": "https://miltoncardoso.oficial/",
           "original_url": "MILTONCARDOSO.OFICIAL"
+        },
+        {
+          "order": 2,
+          "url": "https://www.facebook.com/miltoncardososenadorcoragem/",
+          "original_url": "https://www.facebook.com/miltoncardososenadorcoragem/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.instagram.com/miltoncardososenadorcoragem/",
+          "original_url": "https://www.instagram.com/miltoncardososenadorcoragem/"
+        },
+        {
+          "order": 4,
+          "url": "https://www.tiktok.com/@miltoncardoso455",
+          "original_url": "https://www.tiktok.com/@miltoncardoso455"
         }
       ]
     },
@@ -9978,6 +11429,16 @@
           "order": 6,
           "url": "https://www.facebook.com/PROFILE.PHP?ID=100000386097558",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/PROFILE.PHP?ID=100000386097558"
+        },
+        {
+          "order": 7,
+          "url": "https://rigottosenador151.com.br/",
+          "original_url": "https://rigottosenador151.com.br/"
+        },
+        {
+          "order": 8,
+          "url": "https://www.flickr.com/photos/rigottosenador151/",
+          "original_url": "https://www.flickr.com/photos/rigottosenador151/"
         }
       ]
     },
@@ -10002,28 +11463,38 @@
         },
         {
           "order": 4,
-          "url": "https://x.com/depfrederico55",
-          "original_url": "https://x.com/depfrederico55"
-        },
-        {
-          "order": 5,
           "url": "https://www.youtube.com/@fredericoantunes-w6c",
           "original_url": "https://www.youtube.com/@fredericoantunes-w6c"
         },
         {
-          "order": 6,
+          "order": 5,
           "url": "https://www.threads.com/@depfredericoantunes",
           "original_url": "https://www.threads.com/@depfredericoantunes"
         },
         {
+          "order": 6,
+          "url": "https://www.flickr.com/photos/frederico_antunes/",
+          "original_url": "https://www.flickr.com/photos/frederico_antunes/"
+        },
+        {
           "order": 7,
-          "url": "https://www.tiktok.com/@fredericoantunes55",
-          "original_url": "https://www.tiktok.com/@fredericoantunes55"
+          "url": "https://x.com/fredantunes_rs",
+          "original_url": "https://x.com/fredantunes_rs"
         },
         {
           "order": 8,
-          "url": "https://www.flickr.com/photos/frederico_antunes/",
-          "original_url": "https://www.flickr.com/photos/frederico_antunes/"
+          "url": "https://www.tiktok.com/@fredericoantunes555",
+          "original_url": "https://www.tiktok.com/@fredericoantunes555"
+        },
+        {
+          "order": 9,
+          "url": "https://chat.whatsapp.com/JcxNjVQx4el6HpxXkIvib0",
+          "original_url": "https://chat.whatsapp.com/JcxNjVQx4el6HpxXkIvib0"
+        },
+        {
+          "order": 10,
+          "url": "https://admin.frederico.dailypag.com.br/p/fa-a-parte-da-rede-frederico-senador",
+          "original_url": "https://admin.frederico.dailypag.com.br/p/fa-a-parte-da-rede-frederico-senador"
         }
       ]
     },
@@ -10035,6 +11506,86 @@
           "order": 1,
           "url": null,
           "original_url": "@COLETIVA_SENADORS"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/coletiva_senadors/",
+          "original_url": "https://www.instagram.com/coletiva_senadors/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.instagram.com/portopstu/",
+          "original_url": "https://www.instagram.com/portopstu/"
+        },
+        {
+          "order": 4,
+          "url": "https://www.facebook.com/pstuportoalegre/",
+          "original_url": "https://www.facebook.com/pstuportoalegre/"
+        },
+        {
+          "order": 5,
+          "url": "https://www.facebook.com/PSTURS/?locale=pt_BR",
+          "original_url": "https://www.facebook.com/PSTURS/?locale=pt_BR"
+        },
+        {
+          "order": 6,
+          "url": "https://www.facebook.com/danielamaidana.adv/",
+          "original_url": "https://www.facebook.com/danielamaidana.adv/"
+        },
+        {
+          "order": 7,
+          "url": "https://www.facebook.com/profile.php?id=61592639741432#",
+          "original_url": "https://www.facebook.com/profile.php?id=61592639741432#"
+        },
+        {
+          "order": 8,
+          "url": "https://www.instagram.com/pstuserragaucha/",
+          "original_url": "https://www.instagram.com/pstuserragaucha/"
+        },
+        {
+          "order": 9,
+          "url": "https://www.instagram.com/pstu_litoralnortegaucho/",
+          "original_url": "https://www.instagram.com/pstu_litoralnortegaucho/"
+        },
+        {
+          "order": 10,
+          "url": "https://www.instagram.com/pstugravatai/",
+          "original_url": "https://www.instagram.com/pstugravatai/"
+        },
+        {
+          "order": 11,
+          "url": "https://www.facebook.com/pstu.gravatai/",
+          "original_url": "https://www.facebook.com/pstu.gravatai/"
+        },
+        {
+          "order": 12,
+          "url": "https://www.instagram.com/pstupf/",
+          "original_url": "https://www.instagram.com/pstupf/"
+        },
+        {
+          "order": 13,
+          "url": "https://www.instagram.com/pstucanoas/",
+          "original_url": "https://www.instagram.com/pstucanoas/"
+        },
+        {
+          "order": 14,
+          "url": "https://www.instagram.com/marcelinhaaz/",
+          "original_url": "https://www.instagram.com/marcelinhaaz/"
+        },
+        {
+          "order": 15,
+          "url": "https://www.instagram.com/marcelaazevedo_lutamulhercanal/",
+          "original_url": "https://www.instagram.com/marcelaazevedo_lutamulhercanal/"
+        },
+        {
+          "order": 16,
+          "url": "https://www.instagram.com/maada_84/",
+          "original_url": "https://www.instagram.com/maada_84/"
+        },
+        {
+          "order": 17,
+          "url": "https://www.instagram.com/aitanagodoy16/",
+          "original_url": "https://www.instagram.com/aitanagodoy16/"
         }
       ]
     },
@@ -10046,6 +11597,61 @@
           "order": 1,
           "url": null,
           "original_url": "@REGISETHUR"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/regisethur/",
+          "original_url": "https://www.instagram.com/regisethur/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.instagram.com/portopstu/",
+          "original_url": "https://www.instagram.com/portopstu/"
+        },
+        {
+          "order": 4,
+          "url": "https://www.facebook.com/pstuportoalegre/",
+          "original_url": "https://www.facebook.com/pstuportoalegre/"
+        },
+        {
+          "order": 5,
+          "url": "https://www.facebook.com/PSTURS/?locale=pt_BR",
+          "original_url": "https://www.facebook.com/PSTURS/?locale=pt_BR"
+        },
+        {
+          "order": 6,
+          "url": "https://www.facebook.com/regisbatistaethur/",
+          "original_url": "https://www.facebook.com/regisbatistaethur/"
+        },
+        {
+          "order": 7,
+          "url": "https://www.instagram.com/pstuserragaucha/",
+          "original_url": "https://www.instagram.com/pstuserragaucha/"
+        },
+        {
+          "order": 8,
+          "url": "https://www.instagram.com/pstu_litoralnortegaucho/",
+          "original_url": "https://www.instagram.com/pstu_litoralnortegaucho/"
+        },
+        {
+          "order": 9,
+          "url": "https://www.instagram.com/pstugravatai/",
+          "original_url": "https://www.instagram.com/pstugravatai/"
+        },
+        {
+          "order": 10,
+          "url": "https://www.facebook.com/pstu.gravatai/",
+          "original_url": "https://www.facebook.com/pstu.gravatai/"
+        },
+        {
+          "order": 11,
+          "url": "https://www.instagram.com/pstupf/",
+          "original_url": "https://www.instagram.com/pstupf/"
+        },
+        {
+          "order": 12,
+          "url": "https://www.instagram.com/pstucanoas/",
+          "original_url": "https://www.instagram.com/pstucanoas/"
         }
       ]
     },
@@ -10082,6 +11688,11 @@
           "order": 6,
           "url": "https://www.youtube.com/@DEPUTADOSANDERSON",
           "original_url": "HTTPS://WWW.YOUTUBE.COM/@DEPUTADOSANDERSON"
+        },
+        {
+          "order": 7,
+          "url": "https://open.spotify.com/user/317bql7n2uodk4bsyqdq4e4ftwl4?si=Ng6EzVeGTp-nDGfScPmPhA&utm_source=copy",
+          "original_url": "https://open.spotify.com/user/317bql7n2uodk4bsyqdq4e4ftwl4?si=Ng6EzVeGTp-nDGfScPmPhA&utm_source=copy"
         }
       ]
     },
@@ -10128,6 +11739,11 @@
           "order": 8,
           "url": "https://www.tiktok.com/@marcelvanhattembr",
           "original_url": "https://www.tiktok.com/@marcelvanhattembr"
+        },
+        {
+          "order": 9,
+          "url": "https://www.kwai.com/@marcelvanhattem",
+          "original_url": "https://www.kwai.com/@marcelvanhattem"
         }
       ]
     },
@@ -10291,62 +11907,11 @@
           "order": 24,
           "url": "https://www.tiktok.com/@brunoscheid222",
           "original_url": "https://www.tiktok.com/@brunoscheid222"
-        }
-      ]
-    },
-    "tse-2026-220002539996": {
-      "sq_candidato": "220002539996",
-      "match_method": "sq_candidato",
-      "sites": [
-        {
-          "order": 1,
-          "url": "https://www.tiktok.com/@DRFERNANDOMAXIMO",
-          "original_url": "HTTPS://WWW.TIKTOK.COM/@DRFERNANDOMAXIMO"
         },
         {
-          "order": 2,
-          "url": "https://www.threads.com/@DRFERNANDOMAXIMO007",
-          "original_url": "HTTPS://WWW.THREADS.COM/@DRFERNANDOMAXIMO007"
-        },
-        {
-          "order": 3,
-          "url": "https://x.com/FERNANDOMAXIMOX",
-          "original_url": "HTTPS://X.COM/FERNANDOMAXIMOX"
-        },
-        {
-          "order": 4,
-          "url": "https://www.youtube.com/@DR.FERNANDOM%C3%A1XIMO",
-          "original_url": "HTTPS://WWW.YOUTUBE.COM/@DR.FERNANDOM%C3%A1XIMO"
-        },
-        {
-          "order": 5,
-          "url": "https://k.kwai.com/U/@DRFERNANDOMAXIMO007",
-          "original_url": "HTTPS://K.KWAI.COM/U/@DRFERNANDOMAXIMO007"
-        },
-        {
-          "order": 6,
-          "url": "https://whatsapp.com/CHANNEL/0029VB8V29JD8SDSSWSYOK0F",
-          "original_url": "HTTPS://WHATSAPP.COM/CHANNEL/0029VB8V29JD8SDSSWSYOK0F"
-        },
-        {
-          "order": 7,
-          "url": "https://fernandomaximosenador.com.br/",
-          "original_url": "HTTPS://FERNANDOMAXIMOSENADOR.COM.BR"
-        },
-        {
-          "order": 8,
-          "url": "https://www.instagram.com/DRFERNANDOMAXIMO007",
-          "original_url": "HTTPS://WWW.INSTAGRAM.COM/DRFERNANDOMAXIMO007"
-        },
-        {
-          "order": 9,
-          "url": "https://www.facebook.com/DRFERNANDOMAXIMO007",
-          "original_url": "HTTPS://WWW.FACEBOOK.COM/DRFERNANDOMAXIMO007"
-        },
-        {
-          "order": 10,
-          "url": "https://k.kwai.com/U/@DRFERNANDOMAXIMO",
-          "original_url": "HTTPS://K.KWAI.COM/U/@DRFERNANDOMAXIMO"
+          "order": 25,
+          "url": "https://www.instagram.com/brunoparatodos222/",
+          "original_url": "https://www.instagram.com/brunoparatodos222/"
         }
       ]
     },
@@ -10399,6 +11964,26 @@
           "order": 1,
           "url": "https://engenheirothulio.ro/",
           "original_url": "@ENGENHEIROTHULIO.RO"
+        },
+        {
+          "order": 2,
+          "url": "https://instagram.com/engenheirothulio.ro",
+          "original_url": "https://instagram.com/engenheirothulio.ro"
+        },
+        {
+          "order": 3,
+          "url": "https://tiktok.com/@engenheirothulio.ro",
+          "original_url": "https://tiktok.com/@engenheirothulio.ro"
+        },
+        {
+          "order": 4,
+          "url": "https://youtube.com/@engenheirothulio",
+          "original_url": "https://youtube.com/@engenheirothulio"
+        },
+        {
+          "order": 5,
+          "url": "https://x.com/castrothulio",
+          "original_url": "https://x.com/castrothulio"
         }
       ]
     },
@@ -10522,6 +12107,46 @@
           "order": 5,
           "url": "https://www.facebook.com/SHARE/1BDRCLWUY4/?MIBEXTID=WWXIFR",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/SHARE/1BDRCLWUY4/?MIBEXTID=WWXIFR"
+        },
+        {
+          "order": 6,
+          "url": "https://www.instagram.com/neidinhasurui",
+          "original_url": "https://www.instagram.com/neidinhasurui"
+        },
+        {
+          "order": 7,
+          "url": "https://www.facebook.com/neidinha.surui",
+          "original_url": "https://www.facebook.com/neidinha.surui"
+        },
+        {
+          "order": 8,
+          "url": "https://www.facebook.com/ivaneide.bandeiracardozo",
+          "original_url": "https://www.facebook.com/ivaneide.bandeiracardozo"
+        },
+        {
+          "order": 9,
+          "url": "https://wa.me/5569999848907",
+          "original_url": "https://wa.me/5569999848907"
+        },
+        {
+          "order": 10,
+          "url": "https://www.threads.com/@neidinha_surui",
+          "original_url": "https://www.threads.com/@neidinha_surui"
+        },
+        {
+          "order": 11,
+          "url": "https://www.youtube.com/@neidinhasurui6207",
+          "original_url": "https://www.youtube.com/@neidinhasurui6207"
+        },
+        {
+          "order": 12,
+          "url": "https://x.com/NeidinhaSurui",
+          "original_url": "https://x.com/NeidinhaSurui"
+        },
+        {
+          "order": 13,
+          "url": "https://doe.la/neidinhasurui",
+          "original_url": "https://doe.la/neidinhasurui"
         }
       ]
     },
@@ -10616,6 +12241,67 @@
           "order": 2,
           "url": "https://www.instagram.com/DEPUTADONICOLETTI/",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/DEPUTADONICOLETTI/"
+        }
+      ]
+    },
+    "tse-2026-230002534806": {
+      "sq_candidato": "230002534806",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/depheliolopes?igsi=OWt2aDVidGNlNDI%3D&utm_source=qr",
+          "original_url": "https://www.instagram.com/depheliolopes?igsi=OWt2aDVidGNlNDI%3D&utm_source=qr"
+        },
+        {
+          "order": 2,
+          "url": "https://www.facebook.com/share/1F3GpYVN4x/?mibextid=wwXIfr",
+          "original_url": "https://www.facebook.com/share/1F3GpYVN4x/?mibextid=wwXIfr"
+        },
+        {
+          "order": 3,
+          "url": "https://www.tiktok.com/@depheliolopes?_r=1&_t=ZS-99N4fUoclKD",
+          "original_url": "https://www.tiktok.com/@depheliolopes?_r=1&_t=ZS-99N4fUoclKD"
+        },
+        {
+          "order": 4,
+          "url": "https://www.threads.com/@depheliolopes?igshid=NTc4MTIwNjQ2YQ==",
+          "original_url": "https://www.threads.com/@depheliolopes?igshid=NTc4MTIwNjQ2YQ=="
+        },
+        {
+          "order": 5,
+          "url": "http://www.heliolopes.com.br/",
+          "original_url": "http://www.heliolopes.com.br/"
+        },
+        {
+          "order": 6,
+          "url": "http://www.heliobolsonaro.com.br/",
+          "original_url": "http://www.heliobolsonaro.com.br/"
+        },
+        {
+          "order": 7,
+          "url": "https://k.kwai.com/u/@Helio_lopes/63PTyJCj",
+          "original_url": "https://k.kwai.com/u/@Helio_lopes/63PTyJCj"
+        },
+        {
+          "order": 8,
+          "url": "https://youtube.com/@depheliolopes?si=JluTpJti5w9W3Mc-",
+          "original_url": "https://youtube.com/@depheliolopes?si=JluTpJti5w9W3Mc-"
+        },
+        {
+          "order": 9,
+          "url": "https://x.com/depheliolopes?s=11",
+          "original_url": "https://x.com/depheliolopes?s=11"
+        },
+        {
+          "order": 10,
+          "url": "https://truthsocial.com/@depheliolopes",
+          "original_url": "https://truthsocial.com/@depheliolopes"
+        },
+        {
+          "order": 11,
+          "url": "https://rumble.com/user/depheliolopes?e9s=src_v1_cmdEra",
+          "original_url": "https://rumble.com/user/depheliolopes?e9s=src_v1_cmdEra"
         }
       ]
     },
@@ -10730,32 +12416,6 @@
         }
       ]
     },
-    "tse-2026-230002553006": {
-      "sq_candidato": "230002553006",
-      "match_method": "sq_candidato",
-      "sites": [
-        {
-          "order": 1,
-          "url": "https://www.tiktok.com/@TERESASURITA?_R=1&_T=ZS-98P97AXK5UT",
-          "original_url": "HTTPS://WWW.TIKTOK.COM/@TERESASURITA?_R=1&_T=ZS-98P97AXK5UT"
-        },
-        {
-          "order": 2,
-          "url": "https://www.instagram.com/TERESASURITA",
-          "original_url": "HTTPS://WWW.INSTAGRAM.COM/TERESASURITA"
-        },
-        {
-          "order": 3,
-          "url": "https://facebook.com/TERESASURITA",
-          "original_url": "HTTPS://FACEBOOK.COM/TERESASURITA"
-        },
-        {
-          "order": 4,
-          "url": "https://www.youtube.com/@TERESA_SURITA",
-          "original_url": "HTTPS://WWW.YOUTUBE.COM/@TERESA_SURITA"
-        }
-      ]
-    },
     "tse-2026-230002553010": {
       "sq_candidato": "230002553010",
       "match_method": "sq_candidato",
@@ -10780,32 +12440,6 @@
           "order": 1,
           "url": "https://www.instagram.com/MARCIOJUNQUEIRARR?IGSH=MTKYBJN4DHPPDMTNZW==",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/MARCIOJUNQUEIRARR?IGSH=MTKYBJN4DHPPDMTNZW=="
-        }
-      ]
-    },
-    "tse-2026-240002533898": {
-      "sq_candidato": "240002533898",
-      "match_method": "sq_candidato",
-      "sites": [
-        {
-          "order": 1,
-          "url": "https://www.instagram.com/DECIOLIMA/",
-          "original_url": "HTTPS://WWW.INSTAGRAM.COM/DECIOLIMA/"
-        },
-        {
-          "order": 2,
-          "url": "https://x.com/DECIOLIMAPT",
-          "original_url": "HTTPS://X.COM/DECIOLIMAPT"
-        },
-        {
-          "order": 3,
-          "url": "https://www.threads.com/@DECIOLIMA",
-          "original_url": "HTTPS://WWW.THREADS.COM/@DECIOLIMA"
-        },
-        {
-          "order": 4,
-          "url": "https://www.facebook.com/DECIOLIMAOFICIAL",
-          "original_url": "HTTPS://WWW.FACEBOOK.COM/DECIOLIMAOFICIAL"
         }
       ]
     },
@@ -10976,8 +12610,28 @@
       "sites": [
         {
           "order": 1,
-          "url": null,
-          "original_url": "RUA GUANABARA, 61 CENTRO INDAIAL - SC"
+          "url": "https://www.instagram.com/tuliopfu",
+          "original_url": "https://www.instagram.com/tuliopfu"
+        },
+        {
+          "order": 2,
+          "url": "https://www.tiktok.com/@tulioteconta",
+          "original_url": "https://www.tiktok.com/@tulioteconta"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/tulioteconta",
+          "original_url": "https://www.facebook.com/tulioteconta"
+        },
+        {
+          "order": 4,
+          "url": "https://www.youtube.com/@tulioteconta",
+          "original_url": "https://www.youtube.com/@tulioteconta"
+        },
+        {
+          "order": 5,
+          "url": "https://x.com/tulioteconta",
+          "original_url": "https://x.com/tulioteconta"
         }
       ]
     },
@@ -11040,6 +12694,36 @@
           "order": 6,
           "url": "https://tocomamin.com.br/",
           "original_url": "https://tocomamin.com.br/"
+        },
+        {
+          "order": 7,
+          "url": "https://chat.whatsapp.com/DA7ZLUeHFYm9unIOXqMocf?s=cl&p=i&mlu=4",
+          "original_url": "https://chat.whatsapp.com/DA7ZLUeHFYm9unIOXqMocf?s=cl&p=i&mlu=4"
+        },
+        {
+          "order": 8,
+          "url": "https://chat.whatsapp.com/BbdIPUzFZHtHen4dfZOuGw?s=cl&p=i&mlu=4",
+          "original_url": "https://chat.whatsapp.com/BbdIPUzFZHtHen4dfZOuGw?s=cl&p=i&mlu=4"
+        },
+        {
+          "order": 9,
+          "url": "https://chat.whatsapp.com/KKmM0jqMf2J1yIVAU5Bep2?s=cl&p=i&mlu=4",
+          "original_url": "https://chat.whatsapp.com/KKmM0jqMf2J1yIVAU5Bep2?s=cl&p=i&mlu=4"
+        },
+        {
+          "order": 10,
+          "url": "https://chat.whatsapp.com/BRdq4SJuBTw4hd1gS45Rwb?s=cl&p=i&mlu=4",
+          "original_url": "https://chat.whatsapp.com/BRdq4SJuBTw4hd1gS45Rwb?s=cl&p=i&mlu=4"
+        },
+        {
+          "order": 11,
+          "url": "https://chat.whatsapp.com/B5WYKUM9kRR6xyMpGrE5Eo?s=sw&p=i&mlu=4",
+          "original_url": "https://chat.whatsapp.com/B5WYKUM9kRR6xyMpGrE5Eo?s=sw&p=i&mlu=4"
+        },
+        {
+          "order": 12,
+          "url": "https://chat.whatsapp.com/EM10GEXXNP966alUjoZWto?s=sw&p=i&mlu=4",
+          "original_url": "https://chat.whatsapp.com/EM10GEXXNP966alUjoZWto?s=sw&p=i&mlu=4"
         }
       ]
     },
@@ -11067,6 +12751,11 @@
           "order": 1,
           "url": "https://www.instagram.com/JEFERSONROCHA.AGRO?IGSH=D3JVNHFWBTJ2C2JZ",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/JEFERSONROCHA.AGRO?IGSH=D3JVNHFWBTJ2C2JZ"
+        },
+        {
+          "order": 2,
+          "url": "https://www.jefersonrocha.store/",
+          "original_url": "https://www.jefersonrocha.store/"
         }
       ]
     },
@@ -11104,58 +12793,16 @@
           "order": 4,
           "url": "https://www.instagram.com/RICARDOSALLESMMA",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/RICARDOSALLESMMA"
-        }
-      ]
-    },
-    "tse-2026-250002541308": {
-      "sq_candidato": "250002541308",
-      "match_method": "sq_candidato",
-      "sites": [
-        {
-          "order": 1,
-          "url": "https://x.com/_ANDREDOPRADO",
-          "original_url": "HTTPS://X.COM/_ANDREDOPRADO"
         },
         {
-          "order": 2,
-          "url": "https://www.facebook.com/DEP.ANDREDOPRADO",
-          "original_url": "HTTPS://WWW.FACEBOOK.COM/DEP.ANDREDOPRADO"
+          "order": 5,
+          "url": "https://www.tiktok.com/@ricardo.sallesmma",
+          "original_url": "https://www.tiktok.com/@ricardo.sallesmma"
         },
         {
-          "order": 3,
-          "url": "https://www.tiktok.com/@ANDREDOPRADO_",
-          "original_url": "HTTPS://WWW.TIKTOK.COM/@ANDREDOPRADO_"
-        },
-        {
-          "order": 4,
-          "url": "https://www.instagram.com/ANDREDOPRADOSP/",
-          "original_url": "HTTPS://WWW.INSTAGRAM.COM/ANDREDOPRADOSP/"
-        }
-      ]
-    },
-    "tse-2026-250002541312": {
-      "sq_candidato": "250002541312",
-      "match_method": "sq_candidato",
-      "sites": [
-        {
-          "order": 1,
-          "url": "https://x.com/DERRITESP",
-          "original_url": "HTTPS://X.COM/DERRITESP"
-        },
-        {
-          "order": 2,
-          "url": "https://www.instagram.com/GUILHERMEDERRITE",
-          "original_url": "HTTPS://WWW.INSTAGRAM.COM/GUILHERMEDERRITE"
-        },
-        {
-          "order": 3,
-          "url": "https://www.tiktok.com/TAG/DERRITE",
-          "original_url": "HTTPS://WWW.TIKTOK.COM/TAG/DERRITE"
-        },
-        {
-          "order": 4,
-          "url": "https://www.facebook.com/GUILHERMEDERRITE",
-          "original_url": "HTTPS://WWW.FACEBOOK.COM/GUILHERMEDERRITE"
+          "order": 6,
+          "url": "https://www.youtube.com/@conservatalk",
+          "original_url": "https://www.youtube.com/@conservatalk"
         }
       ]
     },
@@ -11208,6 +12855,11 @@
           "order": 6,
           "url": "https://youtube.com/@CANALDOWELLER",
           "original_url": "HTTPS://YOUTUBE.COM/@CANALDOWELLER"
+        },
+        {
+          "order": 7,
+          "url": "https://wellergoncalves.com.br/",
+          "original_url": "https://wellergoncalves.com.br"
         }
       ]
     },
@@ -11256,6 +12908,11 @@
           "order": 4,
           "url": "https://www.tiktok.com/@GERALDOARUFINO",
           "original_url": "HTTPS://WWW.TIKTOK.COM/@GERALDOARUFINO"
+        },
+        {
+          "order": 5,
+          "url": "https://www.instagram.com/geraldoarufino/",
+          "original_url": "https://www.instagram.com/geraldoarufino/"
         }
       ]
     },
@@ -11297,6 +12954,21 @@
           "order": 7,
           "url": "https://www.instagram.com/MARINASILVAOFICIAL/",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/MARINASILVAOFICIAL/"
+        },
+        {
+          "order": 8,
+          "url": "https://www.whatsapp.com/channel/0029Vb8oLQY7j6g6CP0wVJ2L",
+          "original_url": "https://www.whatsapp.com/channel/0029Vb8oLQY7j6g6CP0wVJ2L"
+        },
+        {
+          "order": 9,
+          "url": "https://www.kwai.com/@marinasilva_",
+          "original_url": "https://www.kwai.com/@marinasilva_"
+        },
+        {
+          "order": 10,
+          "url": "https://marinasilva180.com.br/",
+          "original_url": "https://marinasilva180.com.br/"
         }
       ]
     },
@@ -11468,6 +13140,11 @@
           "order": 5,
           "url": "https://x.com/_ALESSANDROSE?S=11",
           "original_url": "HTTPS://X.COM/_ALESSANDROSE?S=11"
+        },
+        {
+          "order": 6,
+          "url": "https://www.facebook.com/AlessandroVieiraSE/",
+          "original_url": "https://www.facebook.com/AlessandroVieiraSE/"
         }
       ]
     },
@@ -11843,6 +13520,11 @@
           "order": 12,
           "url": "https://sticker.ly/user/eduardo.senadorto",
           "original_url": "https://sticker.ly/user/eduardo.senadorto"
+        },
+        {
+          "order": 13,
+          "url": "https://www.deezer.com/br/album/1062708821?host=6916504381&utm_campaign=clipboard-generic&utm_source",
+          "original_url": "https://www.deezer.com/br/album/1062708821?host=6916504381&utm_campaign=clipboard-generic&utm_source"
         }
       ]
     },
@@ -11911,6 +13593,63 @@
           "order": 2,
           "url": "https://www.facebook.com/deputadoeliborges/about",
           "original_url": "https://www.facebook.com/deputadoeliborges/about"
+        },
+        {
+          "order": 3,
+          "url": "https://www.tiktok.com/@eliborgesto",
+          "original_url": "https://www.tiktok.com/@eliborgesto"
+        },
+        {
+          "order": 4,
+          "url": "https://eliborges.com.br/",
+          "original_url": "https://eliborges.com.br/"
+        }
+      ]
+    },
+    "tse-2026-270002550610": {
+      "sq_candidato": "270002550610",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/coronel.nilton",
+          "original_url": "https://www.instagram.com/coronel.nilton"
+        }
+      ]
+    },
+    "tse-2026-270002552968": {
+      "sq_candidato": "270002552968",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/flaviobraga.to/",
+          "original_url": "https://www.instagram.com/flaviobraga.to/"
+        },
+        {
+          "order": 2,
+          "url": "https://www.tiktok.com/@flaviobraga.to?_r=1&_t=ZS-99NGJl74fY5",
+          "original_url": "https://www.tiktok.com/@flaviobraga.to?_r=1&_t=ZS-99NGJl74fY5"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/flaviobraga277",
+          "original_url": "https://www.facebook.com/flaviobraga277"
+        },
+        {
+          "order": 4,
+          "url": "https://www.youtube.com/@ap.flaviobraga?app=desktop&fbclid=PAT01DUAUD4dtwZG9mAmV4dG4DYWVtAjEwAHNydGM",
+          "original_url": "https://www.youtube.com/@ap.flaviobraga?app=desktop&fbclid=PAT01DUAUD4dtwZG9mAmV4dG4DYWVtAjEwAHNydGM"
+        },
+        {
+          "order": 5,
+          "url": "https://flaviobraga277.com.br/",
+          "original_url": "https://flaviobraga277.com.br/"
+        },
+        {
+          "order": 6,
+          "url": "https://flaviobraga277.com.br/bio",
+          "original_url": "https://flaviobraga277.com.br/bio"
         }
       ]
     },
@@ -12038,22 +13777,6 @@
         }
       ]
     },
-    "tse-2026-30002550229": {
-      "sq_candidato": "30002550229",
-      "match_method": "sq_candidato",
-      "sites": [
-        {
-          "order": 1,
-          "url": "https://www.facebook.com/CAPI401SENADOR",
-          "original_url": "HTTPS://WWW.FACEBOOK.COM/CAPI401SENADOR"
-        },
-        {
-          "order": 2,
-          "url": "https://www.instagram.com/CAPI401SENADOR",
-          "original_url": "HTTPS://WWW.INSTAGRAM.COM/CAPI401SENADOR"
-        }
-      ]
-    },
     "tse-2026-30002551381": {
       "sq_candidato": "30002551381",
       "match_method": "sq_candidato",
@@ -12114,6 +13837,21 @@
           "order": 4,
           "url": "https://allinyserrao.com.br/",
           "original_url": "HTTPS://ALLINYSERRAO.COM.BR"
+        },
+        {
+          "order": 5,
+          "url": "https://www.threads.com/@allinyserrao",
+          "original_url": "https://www.threads.com/@allinyserrao"
+        },
+        {
+          "order": 6,
+          "url": "https://x.com/allinyserrao",
+          "original_url": "https://x.com/allinyserrao"
+        },
+        {
+          "order": 7,
+          "url": "https://k.kwai.com/u@allinyserrao255/e50CDnBi",
+          "original_url": "https://k.kwai.com/u@allinyserrao255/e50CDnBi"
         }
       ]
     },
@@ -12128,84 +13866,19 @@
         }
       ]
     },
-    "tse-2026-40002531447": {
-      "sq_candidato": "40002531447",
+    "tse-2026-40002535270": {
+      "sq_candidato": "40002535270",
       "match_method": "sq_candidato",
       "sites": [
         {
           "order": 1,
-          "url": "https://x.com/EDUARDOBRAGA_AM",
-          "original_url": "HTTPS://X.COM/EDUARDOBRAGA_AM"
+          "url": "https://www.facebook.com/share/1ExsASrZ5Z/",
+          "original_url": "https://www.facebook.com/share/1ExsASrZ5Z/"
         },
         {
           "order": 2,
-          "url": "https://www.kwai.com/@EDUARDOBRAGA_AM",
-          "original_url": "HTTPS://WWW.KWAI.COM/@EDUARDOBRAGA_AM"
-        },
-        {
-          "order": 3,
-          "url": "https://www.youtube.com/@EDUARDOBRAGA_AM",
-          "original_url": "HTTPS://WWW.YOUTUBE.COM/@EDUARDOBRAGA_AM"
-        },
-        {
-          "order": 4,
-          "url": "https://www.twibbonize.com/U/SENADOREDUARDOBRAGA",
-          "original_url": "HTTPS://WWW.TWIBBONIZE.COM/U/SENADOREDUARDOBRAGA"
-        },
-        {
-          "order": 5,
-          "url": "https://open.spotify.com/SHO",
-          "original_url": "HTTPS://OPEN.SPOTIFY.COM/SHO W/64IDJIVVN42XULQAQRDUBV"
-        },
-        {
-          "order": 6,
-          "url": null,
-          "original_url": "HTTPS://.WWW.SENADOREDUARDOBRAGA155.COM.BR"
-        },
-        {
-          "order": 7,
-          "url": "https://www.instagram.com/EDUARDOBRAGA_AM",
-          "original_url": "HTTPS://WWW.INSTAGRAM.COM/EDUARDOBRAGA_AM"
-        },
-        {
-          "order": 8,
-          "url": "https://www.tiktok.com/@EDUARDOBRAGA_AM",
-          "original_url": "HTTPS://WWW.TIKTOK.COM/@EDUARDOBRAGA_AM"
-        },
-        {
-          "order": 9,
-          "url": "https://www.facebook.com/EDUARDOBRAGA15",
-          "original_url": "HTTPS://WWW.FACEBOOK.COM/EDUARDOBRAGA15"
-        },
-        {
-          "order": 10,
-          "url": "https://eduardobragaam.com.br/",
-          "original_url": "HTTPS://EDUARDOBRAGAAM.COM.BR"
-        },
-        {
-          "order": 11,
-          "url": "https://www.threads.com/@eduardobraga_am?igshid=NTc4MTIwN",
-          "original_url": "https://www.threads.com/@eduardobraga_am?igshid=NTc4MTIwN"
-        },
-        {
-          "order": 12,
-          "url": "https://chat.whatsapp.com/IlB3JjBop2c9Et6L",
-          "original_url": "https://chat.whatsapp.com/IlB3JjBop2c9Et6L"
-        },
-        {
-          "order": 13,
-          "url": "https://wa.me/qr/7FPYHQRKJ6NMN1",
-          "original_url": "https://wa.me/qr/7FPYHQRKJ6NMN1"
-        },
-        {
-          "order": 14,
-          "url": "https://br319ja.com.br/",
-          "original_url": "https://br319ja.com.br"
-        },
-        {
-          "order": 15,
-          "url": "https://chat.whatsapp.com/LIMY5KoIj1Y8TYa",
-          "original_url": "https://chat.whatsapp.com/LIMY5KoIj1Y8TYa"
+          "url": "https://www.instagram.com/evandropstu?igsi=MW1haTgzd2QycmcwZQ==",
+          "original_url": "https://www.instagram.com/evandropstu?igsi=MW1haTgzd2QycmcwZQ=="
         }
       ]
     },
@@ -12293,6 +13966,21 @@
           "order": 11,
           "url": "https://www.kwai.com/@pliniovalerio444?kpn=KWAI&share_device_id=FDCB27D9-F911-4C8C-8DED-D7EA709DF9FF",
           "original_url": "https://www.kwai.com/@pliniovalerio444?kpn=KWAI&share_device_id=FDCB27D9-F911-4C8C-8DED-D7EA709DF9FF"
+        },
+        {
+          "order": 12,
+          "url": "https://www.twibbonize.com/u/pliniovalerio26ihqd",
+          "original_url": "https://www.twibbonize.com/u/pliniovalerio26ihqd"
+        },
+        {
+          "order": 13,
+          "url": "https://linktr.ee/pliniovalerio455",
+          "original_url": "https://linktr.ee/pliniovalerio455"
+        },
+        {
+          "order": 14,
+          "url": "https://chat.whatsapp.com/DdPbmjqtQ3v3A5bClvkQBt",
+          "original_url": "https://chat.whatsapp.com/DdPbmjqtQ3v3A5bClvkQBt"
         }
       ]
     },
@@ -12440,6 +14128,11 @@
           "order": 6,
           "url": "https://www.tiktok.com/@CAPITAOALBERTONETO?_R=1&_T=ZS-98THWZLBMFR",
           "original_url": "HTTPS://WWW.TIKTOK.COM/@CAPITAOALBERTONETO?_R=1&_T=ZS-98THWZLBMFR"
+        },
+        {
+          "order": 7,
+          "url": "https://linktr.ee/capitaoalbertoneto222",
+          "original_url": "https://linktr.ee/capitaoalbertoneto222"
         }
       ]
     },
@@ -12508,77 +14201,6 @@
           "order": 2,
           "url": "https://www.facebook.com/ISMAEL.GONCALVES.944/",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/ISMAEL.GONCALVES.944/"
-        }
-      ]
-    },
-    "tse-2026-50002533123": {
-      "sq_candidato": "50002533123",
-      "match_method": "sq_candidato",
-      "sites": [
-        {
-          "order": 1,
-          "url": "https://www.joaoroma.com.br/",
-          "original_url": "WWW.JOAOROMA.COM.BR"
-        },
-        {
-          "order": 2,
-          "url": "https://sticker.ly/USER/JOAOROMA",
-          "original_url": "HTTPS://STICKER.LY/USER/JOAOROMA"
-        },
-        {
-          "order": 3,
-          "url": "https://www.instagram.com/JOAOROMANETO/",
-          "original_url": "HTTPS://WWW.INSTAGRAM.COM/JOAOROMANETO/"
-        },
-        {
-          "order": 4,
-          "url": "https://linktr.ee/JOAOROMANETO/",
-          "original_url": "HTTPS://LINKTR.EE/JOAOROMANETO/"
-        },
-        {
-          "order": 5,
-          "url": "https://t.me/JOAOROMANETO",
-          "original_url": "HTTPS://T.ME/JOAOROMANETO"
-        },
-        {
-          "order": 6,
-          "url": "https://www.kwai.com/@JOAOROMANETOOFICIAL",
-          "original_url": "HTTPS://WWW.KWAI.COM/@JOAOROMANETOOFICIAL"
-        },
-        {
-          "order": 7,
-          "url": "https://www.linkedin.com/IN/JOAOROMANETO/",
-          "original_url": "HTTPS://WWW.LINKEDIN.COM/IN/JOAOROMANETO/"
-        },
-        {
-          "order": 8,
-          "url": "https://www.flickr.com/JOAOROMANETO/",
-          "original_url": "HTTPS://WWW.FLICKR.COM/JOAOROMANETO/"
-        },
-        {
-          "order": 9,
-          "url": "https://x.com/JOAOROMANETO",
-          "original_url": "HTTPS://X.COM/JOAOROMANETO"
-        },
-        {
-          "order": 10,
-          "url": "https://www.youtube.com/@JOAOROMANETO",
-          "original_url": "HTTPS://WWW.YOUTUBE.COM/@JOAOROMANETO"
-        },
-        {
-          "order": 11,
-          "url": "https://www.tiktok.com/@JOAOROMANETO",
-          "original_url": "HTTPS://WWW.TIKTOK.COM/@JOAOROMANETO"
-        },
-        {
-          "order": 12,
-          "url": "https://www.facebook.com/JOAOROMANETO",
-          "original_url": "HTTPS://WWW.FACEBOOK.COM/JOAOROMANETO"
-        },
-        {
-          "order": 13,
-          "url": "https://www.threads.com/@JOAOROMANETO/",
-          "original_url": "HTTPS://WWW.THREADS.COM/@JOAOROMANETO/"
         }
       ]
     },
@@ -12708,6 +14330,11 @@
           "order": 11,
           "url": "https://www.flickr.com/PHOTOS/193924948@N02/",
           "original_url": "FLICKR: HTTPS://WWW.FLICKR.COM/PHOTOS/193924948@N02/"
+        },
+        {
+          "order": 12,
+          "url": "https://www.ossenadoresdelula.com.br/",
+          "original_url": "https://www.ossenadoresdelula.com.br/"
         }
       ]
     },
@@ -12754,6 +14381,32 @@
           "order": 8,
           "url": "https://whatsapp.com/channel/0029Valjuh0LtOj7wQBCtA2N",
           "original_url": "https://whatsapp.com/channel/0029Valjuh0LtOj7wQBCtA2N"
+        },
+        {
+          "order": 9,
+          "url": "https://www.ossenadoresdelula.com.br/",
+          "original_url": "https://www.ossenadoresdelula.com.br/"
+        }
+      ]
+    },
+    "tse-2026-50002536625": {
+      "sq_candidato": "50002536625",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://carlossodresenador.com.br/",
+          "original_url": "https://carlossodresenador.com.br/"
+        },
+        {
+          "order": 2,
+          "url": "https://www.facebook.com/carlossodre.ba/",
+          "original_url": "https://www.facebook.com/carlossodre.ba/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.instagram.com/carlossodre.ba",
+          "original_url": "https://www.instagram.com/carlossodre.ba"
         }
       ]
     },
@@ -12811,17 +14464,6 @@
         }
       ]
     },
-    "tse-2026-60002540753": {
-      "sq_candidato": "60002540753",
-      "match_method": "sq_candidato",
-      "sites": [
-        {
-          "order": 1,
-          "url": "https://www.instagram.com/CAPITAOWAGNERSOUSA/",
-          "original_url": "HTTPS://WWW.INSTAGRAM.COM/CAPITAOWAGNERSOUSA/"
-        }
-      ]
-    },
     "tse-2026-60002540754": {
       "sq_candidato": "60002540754",
       "match_method": "sq_candidato",
@@ -12845,6 +14487,26 @@
           "order": 4,
           "url": null,
           "original_url": "TWITER: ALCIDESFERNM"
+        },
+        {
+          "order": 5,
+          "url": "https://x.com/alcidesfernm",
+          "original_url": "https://x.com/alcidesfernm"
+        },
+        {
+          "order": 6,
+          "url": "https://www.facebook.com/share/1H82BRe8Tx/?mibextid=wwXIfr",
+          "original_url": "https://www.facebook.com/share/1H82BRe8Tx/?mibextid=wwXIfr"
+        },
+        {
+          "order": 7,
+          "url": "https://www.tiktok.com/@alcidesfernandesbr?_r=1&_t=ZS-99Oz3reD7HW",
+          "original_url": "https://www.tiktok.com/@alcidesfernandesbr?_r=1&_t=ZS-99Oz3reD7HW"
+        },
+        {
+          "order": 8,
+          "url": "https://www.instagram.com/alcidesfernandes?igsi=dTJyN2liZzFwMWly",
+          "original_url": "https://www.instagram.com/alcidesfernandes?igsi=dTJyN2liZzFwMWly"
         }
       ]
     },
@@ -12926,6 +14588,21 @@
           "order": 16,
           "url": "https://chat.luiziannelins.com/r/1HJR9TND",
           "original_url": "https://chat.luiziannelins.com/r/1HJR9TND"
+        },
+        {
+          "order": 17,
+          "url": "https://chat.whatsapp.com/J9CjngZRXgK5TUmBiGdJmx?s=sw&p=i&mlu=4",
+          "original_url": "https://chat.whatsapp.com/J9CjngZRXgK5TUmBiGdJmx?s=sw&p=i&mlu=4"
+        },
+        {
+          "order": 18,
+          "url": "https://chat.luiziannelins.com/?guard=1",
+          "original_url": "https://chat.luiziannelins.com/?guard=1"
+        },
+        {
+          "order": 19,
+          "url": "https://open.spotify.com/album/0hxxG3KHjjzI6jxv1prtDT?si=tVZSxL7RRF-JX5hdKuxPWg&utm_source=whatsapp",
+          "original_url": "https://open.spotify.com/album/0hxxG3KHjjzI6jxv1prtDT?si=tVZSxL7RRF-JX5hdKuxPWg&utm_source=whatsapp"
         }
       ]
     },
@@ -13088,6 +14765,41 @@
           "order": 6,
           "url": "https://www.instagram.com/MEU.NUTRI/",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/MEU.NUTRI/"
+        },
+        {
+          "order": 7,
+          "url": "https://www.instagram.com/tiago360_senador_df/",
+          "original_url": "https://www.instagram.com/tiago360_senador_df/"
+        },
+        {
+          "order": 8,
+          "url": "https://www.kwai.com/@tiagosenador360",
+          "original_url": "https://www.kwai.com/@tiagosenador360"
+        },
+        {
+          "order": 9,
+          "url": "https://www.threads.com/@tiago360_senador_df",
+          "original_url": "https://www.threads.com/@tiago360_senador_df"
+        },
+        {
+          "order": 10,
+          "url": "https://www.facebook.com/tiago360senador/",
+          "original_url": "https://www.facebook.com/tiago360senador/"
+        },
+        {
+          "order": 11,
+          "url": "https://www.youtube.com/@tiago360senador",
+          "original_url": "https://www.youtube.com/@tiago360senador"
+        },
+        {
+          "order": 12,
+          "url": "https://x.com/tiago360senador",
+          "original_url": "https://x.com/tiago360senador"
+        },
+        {
+          "order": 13,
+          "url": "https://www.tiktok.com/@tiago360senador",
+          "original_url": "https://www.tiktok.com/@tiago360senador"
         }
       ]
     },
@@ -13198,22 +14910,11 @@
           "order": 7,
           "url": "https://www.tiktok.com/@biakicis.df?_r=1&_t=ZS-990ryX3lvw0",
           "original_url": "https://www.tiktok.com/@biakicis.df?_r=1&_t=ZS-990ryX3lvw0"
-        }
-      ]
-    },
-    "tse-2026-70002552936": {
-      "sq_candidato": "70002552936",
-      "match_method": "sq_candidato",
-      "sites": [
-        {
-          "order": 1,
-          "url": "https://www.instagram.com/michellebolsonaro",
-          "original_url": "https://www.instagram.com/michellebolsonaro"
         },
         {
-          "order": 2,
-          "url": "https://www.senadoramichellebolsonaro.com.br/",
-          "original_url": "www.senadoramichellebolsonaro.com.br"
+          "order": 8,
+          "url": "https://k.kwai.com/u/@biakicisreal/A3WhCK1c",
+          "original_url": "https://k.kwai.com/u/@biakicisreal/A3WhCK1c"
         }
       ]
     },
@@ -13241,6 +14942,21 @@
           "order": 1,
           "url": "https://www.instagram.com/RONALDOFONSECA.OFICIAL/",
           "original_url": "WWW.INSTAGRAM.COM/RONALDOFONSECA.OFICIAL/"
+        },
+        {
+          "order": 2,
+          "url": "https://www.ronaldofonseca.com.br/",
+          "original_url": "https://www.ronaldofonseca.com.br/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/share/1DeL1TWL4y/?mibextid=wwXIfr",
+          "original_url": "https://www.facebook.com/share/1DeL1TWL4y/?mibextid=wwXIfr"
+        },
+        {
+          "order": 4,
+          "url": "https://www.tiktok.com/@ronaldofonsecaoficial?_r=1&_t=ZS-99NDV4IYlxw",
+          "original_url": "https://www.tiktok.com/@ronaldofonsecaoficial?_r=1&_t=ZS-99NDV4IYlxw"
         }
       ]
     },
@@ -13262,6 +14978,11 @@
           "order": 3,
           "url": "https://www.facebook.com/LEONARDOMONJARDIM",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/LEONARDOMONJARDIM"
+        },
+        {
+          "order": 4,
+          "url": "https://www.facebook.com/leonardomonjardim2",
+          "original_url": "https://www.facebook.com/leonardomonjardim2"
         }
       ]
     },
@@ -13323,6 +15044,16 @@
           "order": 11,
           "url": "https://www.facebook.com/MARCOSDOVAL",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/MARCOSDOVAL"
+        },
+        {
+          "order": 12,
+          "url": "https://www.tiktok.com/@marcosdovalapoio",
+          "original_url": "https://www.tiktok.com/@marcosdovalapoio"
+        },
+        {
+          "order": 13,
+          "url": "https://chat.whatsapp.com/GrMtZ3NPycGF7trgoGdl6r",
+          "original_url": "https://chat.whatsapp.com/GrMtZ3NPycGF7trgoGdl6r"
         }
       ]
     },
@@ -13441,6 +15172,11 @@
           "order": 11,
           "url": "https://www.threads.com/@fabianocontarato",
           "original_url": "https://www.threads.com/@fabianocontarato"
+        },
+        {
+          "order": 12,
+          "url": "https://kwai.com/@fabianocontarato",
+          "original_url": "https://kwai.com/@fabianocontarato"
         }
       ]
     },
@@ -13503,6 +15239,396 @@
           "order": 6,
           "url": "http://www.renatocasagrande.com.br/",
           "original_url": "http://www.renatocasagrande.com.br/"
+        },
+        {
+          "order": 7,
+          "url": "https://chat.whatsapp.com/JYujcpsLJCE5kbTIm6QxQI",
+          "original_url": "https://chat.whatsapp.com/JYujcpsLJCE5kbTIm6QxQI"
+        },
+        {
+          "order": 8,
+          "url": "https://chat.whatsapp.com/BFab2qpgf70H6KsIWrYNOF",
+          "original_url": "https://chat.whatsapp.com/BFab2qpgf70H6KsIWrYNOF"
+        },
+        {
+          "order": 9,
+          "url": "https://chat.whatsapp.com/EH80ycSFbIx6qaRIG9vD9M",
+          "original_url": "https://chat.whatsapp.com/EH80ycSFbIx6qaRIG9vD9M"
+        },
+        {
+          "order": 10,
+          "url": "https://chat.whatsapp.com/BG5I4wCdFoELwlYdBxvzpy",
+          "original_url": "https://chat.whatsapp.com/BG5I4wCdFoELwlYdBxvzpy"
+        },
+        {
+          "order": 11,
+          "url": "https://chat.whatsapp.com/KtKv0rB0hz8I5Msn9hpFsW",
+          "original_url": "https://chat.whatsapp.com/KtKv0rB0hz8I5Msn9hpFsW"
+        },
+        {
+          "order": 12,
+          "url": "https://chat.whatsapp.com/DBDmSj1JrjTBL7OakUk4yc",
+          "original_url": "https://chat.whatsapp.com/DBDmSj1JrjTBL7OakUk4yc"
+        },
+        {
+          "order": 13,
+          "url": "https://chat.whatsapp.com/Gnfr5jnYbdSB4QjOjgaDil",
+          "original_url": "https://chat.whatsapp.com/Gnfr5jnYbdSB4QjOjgaDil"
+        },
+        {
+          "order": 14,
+          "url": "https://chat.whatsapp.com/CNhReid2pOLB17P17s2aE9",
+          "original_url": "https://chat.whatsapp.com/CNhReid2pOLB17P17s2aE9"
+        },
+        {
+          "order": 15,
+          "url": "https://chat.whatsapp.com/GEL5xn7hTYk2fcerl4IOhn",
+          "original_url": "https://chat.whatsapp.com/GEL5xn7hTYk2fcerl4IOhn"
+        },
+        {
+          "order": 16,
+          "url": "https://chat.whatsapp.com/CXSo7hg8dGe2WQ76SBfuer",
+          "original_url": "https://chat.whatsapp.com/CXSo7hg8dGe2WQ76SBfuer"
+        },
+        {
+          "order": 17,
+          "url": "https://chat.whatsapp.com/F7Iszq2dM4YDkY1Qb91gqE",
+          "original_url": "https://chat.whatsapp.com/F7Iszq2dM4YDkY1Qb91gqE"
+        },
+        {
+          "order": 18,
+          "url": "https://chat.whatsapp.com/JNyVuLtSXOw0pmiLrHtjrx",
+          "original_url": "https://chat.whatsapp.com/JNyVuLtSXOw0pmiLrHtjrx"
+        },
+        {
+          "order": 19,
+          "url": "https://chat.whatsapp.com/Erq8fjzd75oGdSgIdFHOcW",
+          "original_url": "https://chat.whatsapp.com/Erq8fjzd75oGdSgIdFHOcW"
+        },
+        {
+          "order": 20,
+          "url": "https://chat.whatsapp.com/JVO4VNJLQyHGlO0d0BPkrf",
+          "original_url": "https://chat.whatsapp.com/JVO4VNJLQyHGlO0d0BPkrf"
+        },
+        {
+          "order": 21,
+          "url": "https://chat.whatsapp.com/IP3BOXc6F5b0SWaRnigxOl",
+          "original_url": "https://chat.whatsapp.com/IP3BOXc6F5b0SWaRnigxOl"
+        },
+        {
+          "order": 22,
+          "url": "https://chat.whatsapp.com/JIpfzJSE4TsH3CGAHJVikb",
+          "original_url": "https://chat.whatsapp.com/JIpfzJSE4TsH3CGAHJVikb"
+        },
+        {
+          "order": 23,
+          "url": "https://chat.whatsapp.com/GoyhmQNkl9oEPt2SREMtFq",
+          "original_url": "https://chat.whatsapp.com/GoyhmQNkl9oEPt2SREMtFq"
+        },
+        {
+          "order": 24,
+          "url": "https://chat.whatsapp.com/DVB73p36tbJGSysoiZwPXo",
+          "original_url": "https://chat.whatsapp.com/DVB73p36tbJGSysoiZwPXo"
+        },
+        {
+          "order": 25,
+          "url": "https://chat.whatsapp.com/F6W8p8YBogr2yeH7zvV2vq",
+          "original_url": "https://chat.whatsapp.com/F6W8p8YBogr2yeH7zvV2vq"
+        },
+        {
+          "order": 26,
+          "url": "https://chat.whatsapp.com/JrEgK6tGnyP8nVGgwaYehM",
+          "original_url": "https://chat.whatsapp.com/JrEgK6tGnyP8nVGgwaYehM"
+        },
+        {
+          "order": 27,
+          "url": "https://chat.whatsapp.com/DW0tWDKNaXLFymQVjkMnpU",
+          "original_url": "https://chat.whatsapp.com/DW0tWDKNaXLFymQVjkMnpU"
+        },
+        {
+          "order": 28,
+          "url": "https://chat.whatsapp.com/Jv2cwHPe8xZEmmaQdrCtLi",
+          "original_url": "https://chat.whatsapp.com/Jv2cwHPe8xZEmmaQdrCtLi"
+        },
+        {
+          "order": 29,
+          "url": "https://chat.whatsapp.com/LVZK7FOT2gHG66FUpHIVNn",
+          "original_url": "https://chat.whatsapp.com/LVZK7FOT2gHG66FUpHIVNn"
+        },
+        {
+          "order": 30,
+          "url": "https://chat.whatsapp.com/KGBLnUP9yxIDQy6UDHPTtG",
+          "original_url": "https://chat.whatsapp.com/KGBLnUP9yxIDQy6UDHPTtG"
+        },
+        {
+          "order": 31,
+          "url": "https://chat.whatsapp.com/L6M8mAkxYouEP9FvJjvF7x",
+          "original_url": "https://chat.whatsapp.com/L6M8mAkxYouEP9FvJjvF7x"
+        },
+        {
+          "order": 32,
+          "url": "https://chat.whatsapp.com/IO9NF0Fw5K29xlamjuBWnC",
+          "original_url": "https://chat.whatsapp.com/IO9NF0Fw5K29xlamjuBWnC"
+        },
+        {
+          "order": 33,
+          "url": "https://chat.whatsapp.com/BoJJ2Z1nMb53qIVo8GXvaC",
+          "original_url": "https://chat.whatsapp.com/BoJJ2Z1nMb53qIVo8GXvaC"
+        },
+        {
+          "order": 34,
+          "url": "https://chat.whatsapp.com/HwcmRUdlx7rFQFSCqZEDzO",
+          "original_url": "https://chat.whatsapp.com/HwcmRUdlx7rFQFSCqZEDzO"
+        },
+        {
+          "order": 35,
+          "url": "https://chat.whatsapp.com/FkJm451vuSpFHE7l2hT3Cb",
+          "original_url": "https://chat.whatsapp.com/FkJm451vuSpFHE7l2hT3Cb"
+        },
+        {
+          "order": 36,
+          "url": "https://chat.whatsapp.com/EQ5VaTuP613E4DN4RsIrHl",
+          "original_url": "https://chat.whatsapp.com/EQ5VaTuP613E4DN4RsIrHl"
+        },
+        {
+          "order": 37,
+          "url": "https://chat.whatsapp.com/KQgPEMqWqzy5aSh4BVFzlO",
+          "original_url": "https://chat.whatsapp.com/KQgPEMqWqzy5aSh4BVFzlO"
+        },
+        {
+          "order": 38,
+          "url": "https://chat.whatsapp.com/FCPOWVbh90SCKeSX0PRiw7",
+          "original_url": "https://chat.whatsapp.com/FCPOWVbh90SCKeSX0PRiw7"
+        },
+        {
+          "order": 39,
+          "url": "https://chat.whatsapp.com/KMLUNdP9QqO5Jv0aenVh99",
+          "original_url": "https://chat.whatsapp.com/KMLUNdP9QqO5Jv0aenVh99"
+        },
+        {
+          "order": 40,
+          "url": "https://chat.whatsapp.com/JnsP7A2KJej5lxEKkJGQQJ",
+          "original_url": "https://chat.whatsapp.com/JnsP7A2KJej5lxEKkJGQQJ"
+        },
+        {
+          "order": 41,
+          "url": "https://chat.whatsapp.com/KK3qYhFr4tdLFrSUqyO6Qd",
+          "original_url": "https://chat.whatsapp.com/KK3qYhFr4tdLFrSUqyO6Qd"
+        },
+        {
+          "order": 42,
+          "url": "https://chat.whatsapp.com/EJPheY8QvMNAPGYyOT5VSo",
+          "original_url": "https://chat.whatsapp.com/EJPheY8QvMNAPGYyOT5VSo"
+        },
+        {
+          "order": 43,
+          "url": "https://chat.whatsapp.com/L7NcJgPeMlc7ef0ET6OsNn",
+          "original_url": "https://chat.whatsapp.com/L7NcJgPeMlc7ef0ET6OsNn"
+        },
+        {
+          "order": 44,
+          "url": "https://chat.whatsapp.com/FwT2dBibYvZ77PNge7sIzo",
+          "original_url": "https://chat.whatsapp.com/FwT2dBibYvZ77PNge7sIzo"
+        },
+        {
+          "order": 45,
+          "url": "https://chat.whatsapp.com/LXZNv7cQ6RKJrbh5DlpMFF",
+          "original_url": "https://chat.whatsapp.com/LXZNv7cQ6RKJrbh5DlpMFF"
+        },
+        {
+          "order": 46,
+          "url": "https://chat.whatsapp.com/IegCqZHCdWi3a4q2237IR5",
+          "original_url": "https://chat.whatsapp.com/IegCqZHCdWi3a4q2237IR5"
+        },
+        {
+          "order": 47,
+          "url": "https://chat.whatsapp.com/LPEP5rDNiSO1PH5TKMKyj2",
+          "original_url": "https://chat.whatsapp.com/LPEP5rDNiSO1PH5TKMKyj2"
+        },
+        {
+          "order": 48,
+          "url": "https://chat.whatsapp.com/ImOXintRQ7c1eq5acwmRpg",
+          "original_url": "https://chat.whatsapp.com/ImOXintRQ7c1eq5acwmRpg"
+        },
+        {
+          "order": 49,
+          "url": "https://chat.whatsapp.com/EA5xm5yHSgzCZ7YH25tryf",
+          "original_url": "https://chat.whatsapp.com/EA5xm5yHSgzCZ7YH25tryf"
+        },
+        {
+          "order": 50,
+          "url": "https://chat.whatsapp.com/Ikcl1wS1KhR9ISQMg9AicA",
+          "original_url": "https://chat.whatsapp.com/Ikcl1wS1KhR9ISQMg9AicA"
+        },
+        {
+          "order": 51,
+          "url": "https://chat.whatsapp.com/LGHtjWzqg23588pyVwNnJE",
+          "original_url": "https://chat.whatsapp.com/LGHtjWzqg23588pyVwNnJE"
+        },
+        {
+          "order": 52,
+          "url": "https://chat.whatsapp.com/Bvjd1mMCytqDPPdByk7Pf4",
+          "original_url": "https://chat.whatsapp.com/Bvjd1mMCytqDPPdByk7Pf4"
+        },
+        {
+          "order": 53,
+          "url": "https://chat.whatsapp.com/Llj3phcEky1LVsi10gcUUz",
+          "original_url": "https://chat.whatsapp.com/Llj3phcEky1LVsi10gcUUz"
+        },
+        {
+          "order": 54,
+          "url": "https://chat.whatsapp.com/B78iLi9Riz07o0ukg8mzBp",
+          "original_url": "https://chat.whatsapp.com/B78iLi9Riz07o0ukg8mzBp"
+        },
+        {
+          "order": 55,
+          "url": "https://chat.whatsapp.com/JW501b9KUQs7fD5cyoEIVT",
+          "original_url": "https://chat.whatsapp.com/JW501b9KUQs7fD5cyoEIVT"
+        },
+        {
+          "order": 56,
+          "url": "https://chat.whatsapp.com/CLrFEDumtIk2ZE23Xbjnq0",
+          "original_url": "https://chat.whatsapp.com/CLrFEDumtIk2ZE23Xbjnq0"
+        },
+        {
+          "order": 57,
+          "url": "https://chat.whatsapp.com/CASGrTFKOdZ01bbwVT7UYC",
+          "original_url": "https://chat.whatsapp.com/CASGrTFKOdZ01bbwVT7UYC"
+        },
+        {
+          "order": 58,
+          "url": "https://chat.whatsapp.com/FAgEmvnJHOnCIxglQE0vxx",
+          "original_url": "https://chat.whatsapp.com/FAgEmvnJHOnCIxglQE0vxx"
+        },
+        {
+          "order": 59,
+          "url": "https://chat.whatsapp.com/GEoz4vmOD0bDZCwYZuQf1A",
+          "original_url": "https://chat.whatsapp.com/GEoz4vmOD0bDZCwYZuQf1A"
+        },
+        {
+          "order": 60,
+          "url": "https://chat.whatsapp.com/Ig5wNdYpuVVCX46hZbXDOg",
+          "original_url": "https://chat.whatsapp.com/Ig5wNdYpuVVCX46hZbXDOg"
+        },
+        {
+          "order": 61,
+          "url": "https://chat.whatsapp.com/DrITkgnPJ4cE9ogdiWPHxN",
+          "original_url": "https://chat.whatsapp.com/DrITkgnPJ4cE9ogdiWPHxN"
+        },
+        {
+          "order": 62,
+          "url": "https://chat.whatsapp.com/BGfspFEfxrqAomxwEV7hrg",
+          "original_url": "https://chat.whatsapp.com/BGfspFEfxrqAomxwEV7hrg"
+        },
+        {
+          "order": 63,
+          "url": "https://chat.whatsapp.com/BA3HleXmeVG0UIqEBTrXV2",
+          "original_url": "https://chat.whatsapp.com/BA3HleXmeVG0UIqEBTrXV2"
+        },
+        {
+          "order": 64,
+          "url": "https://chat.whatsapp.com/HhMXuXjsP0e5RO6TL8KTRF",
+          "original_url": "https://chat.whatsapp.com/HhMXuXjsP0e5RO6TL8KTRF"
+        },
+        {
+          "order": 65,
+          "url": "https://chat.whatsapp.com/JfSWg8saMYYBpWIAXS2b6r",
+          "original_url": "https://chat.whatsapp.com/JfSWg8saMYYBpWIAXS2b6r"
+        },
+        {
+          "order": 66,
+          "url": "https://chat.whatsapp.com/EzJFijmPeueIFv8rQTkfKx",
+          "original_url": "https://chat.whatsapp.com/EzJFijmPeueIFv8rQTkfKx"
+        },
+        {
+          "order": 67,
+          "url": "https://chat.whatsapp.com/Ccu6dixWsQkCxdOAlI5X0h",
+          "original_url": "https://chat.whatsapp.com/Ccu6dixWsQkCxdOAlI5X0h"
+        },
+        {
+          "order": 68,
+          "url": "https://chat.whatsapp.com/KLv2mt6SwkHIqA0zwGZYHQ",
+          "original_url": "https://chat.whatsapp.com/KLv2mt6SwkHIqA0zwGZYHQ"
+        },
+        {
+          "order": 69,
+          "url": "https://chat.whatsapp.com/CiHHArfV6Uo3Rc1WXefdbu",
+          "original_url": "https://chat.whatsapp.com/CiHHArfV6Uo3Rc1WXefdbu"
+        },
+        {
+          "order": 70,
+          "url": "https://chat.whatsapp.com/CWXw71DaeoQ03MMX8S2sS4",
+          "original_url": "https://chat.whatsapp.com/CWXw71DaeoQ03MMX8S2sS4"
+        },
+        {
+          "order": 71,
+          "url": "https://chat.whatsapp.com/GtBLMl3tuLyGBuectYMph7",
+          "original_url": "https://chat.whatsapp.com/GtBLMl3tuLyGBuectYMph7"
+        },
+        {
+          "order": 72,
+          "url": "https://chat.whatsapp.com/HboOvo1CLwV3HbthmbCnMR",
+          "original_url": "https://chat.whatsapp.com/HboOvo1CLwV3HbthmbCnMR"
+        },
+        {
+          "order": 73,
+          "url": "https://chat.whatsapp.com/CejSHg6qV02EygWQ9bc5Dt",
+          "original_url": "https://chat.whatsapp.com/CejSHg6qV02EygWQ9bc5Dt"
+        },
+        {
+          "order": 74,
+          "url": "https://chat.whatsapp.com/KumVNpc3NXzCg4y3wbp0ZE",
+          "original_url": "https://chat.whatsapp.com/KumVNpc3NXzCg4y3wbp0ZE"
+        },
+        {
+          "order": 75,
+          "url": "https://chat.whatsapp.com/HxN9bQAga62AAIqcwHExl4",
+          "original_url": "https://chat.whatsapp.com/HxN9bQAga62AAIqcwHExl4"
+        },
+        {
+          "order": 76,
+          "url": "https://chat.whatsapp.com/FWca0AJrhArKeCa0bgXJEh",
+          "original_url": "https://chat.whatsapp.com/FWca0AJrhArKeCa0bgXJEh"
+        },
+        {
+          "order": 77,
+          "url": "https://chat.whatsapp.com/HybpPpYJfwx6QBGo4tPdP2",
+          "original_url": "https://chat.whatsapp.com/HybpPpYJfwx6QBGo4tPdP2"
+        },
+        {
+          "order": 78,
+          "url": "https://chat.whatsapp.com/Inbgd9PhSrvEaxZK0Aoins",
+          "original_url": "https://chat.whatsapp.com/Inbgd9PhSrvEaxZK0Aoins"
+        },
+        {
+          "order": 79,
+          "url": "https://chat.whatsapp.com/HKNFq24eocHKBCJjUQOuV4",
+          "original_url": "https://chat.whatsapp.com/HKNFq24eocHKBCJjUQOuV4"
+        },
+        {
+          "order": 80,
+          "url": "https://chat.whatsapp.com/KWbYpG7Y8OTIwrwYrRh2af",
+          "original_url": "https://chat.whatsapp.com/KWbYpG7Y8OTIwrwYrRh2af"
+        },
+        {
+          "order": 81,
+          "url": "https://chat.whatsapp.com/HR3ufm6KpBIJu9CCUAhE4Q",
+          "original_url": "https://chat.whatsapp.com/HR3ufm6KpBIJu9CCUAhE4Q"
+        },
+        {
+          "order": 82,
+          "url": "https://chat.whatsapp.com/Duny5M62Cad7iNnaGklqbv",
+          "original_url": "https://chat.whatsapp.com/Duny5M62Cad7iNnaGklqbv"
+        },
+        {
+          "order": 83,
+          "url": "https://chat.whatsapp.com/GDeiZlJOl60DhbXwKDC8Ac",
+          "original_url": "https://chat.whatsapp.com/GDeiZlJOl60DhbXwKDC8Ac"
+        },
+        {
+          "order": 84,
+          "url": "https://chat.whatsapp.com/JeRSda8Ikp6CsvJLpxB1Re",
+          "original_url": "https://chat.whatsapp.com/JeRSda8Ikp6CsvJLpxB1Re"
         }
       ]
     },
@@ -13540,6 +15666,46 @@
           "order": 3,
           "url": "https://www.instagram.com/SERGIOMENEGUELLI/",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/SERGIOMENEGUELLI/"
+        },
+        {
+          "order": 4,
+          "url": "https://www.threads.com/@sergiomeneguelli",
+          "original_url": "https://www.threads.com/@sergiomeneguelli"
+        },
+        {
+          "order": 5,
+          "url": "https://www.youtube.com/@SergioMeneguelli",
+          "original_url": "https://www.youtube.com/@SergioMeneguelli"
+        },
+        {
+          "order": 6,
+          "url": "https://x.com/sergiomenegueli",
+          "original_url": "https://x.com/sergiomenegueli"
+        },
+        {
+          "order": 7,
+          "url": "https://www.linkedin.com/in/s%C3%A9rgiomeneguelli-14b62360/",
+          "original_url": "https://www.linkedin.com/in/s%C3%A9rgiomeneguelli-14b62360/"
+        },
+        {
+          "order": 8,
+          "url": "https://www.facebook.com/groups/515651411792403",
+          "original_url": "https://www.facebook.com/groups/515651411792403"
+        },
+        {
+          "order": 9,
+          "url": "https://www.facebook.com/groups/3886892794865069",
+          "original_url": "https://www.facebook.com/groups/3886892794865069"
+        },
+        {
+          "order": 10,
+          "url": "https://www.facebook.com/groups/516460495034407",
+          "original_url": "https://www.facebook.com/groups/516460495034407"
+        },
+        {
+          "order": 11,
+          "url": "https://sergiomeneguelli.com.br/",
+          "original_url": "https://sergiomeneguelli.com.br/"
         }
       ]
     },
@@ -13610,48 +15776,48 @@
         },
         {
           "order": 2,
-          "url": "https://www.instagram.com/maguinhamalta?igsh=N3BodmIwNHhuYms5&utm_source=qr",
-          "original_url": "https://www.instagram.com/maguinhamalta?igsh=N3BodmIwNHhuYms5&utm_source=qr"
-        },
-        {
-          "order": 3,
           "url": "https://www.facebook.com/share/14kWRYV7t2f/?mibextid=wwXIfr",
           "original_url": "https://www.facebook.com/share/14kWRYV7t2f/?mibextid=wwXIfr"
         },
         {
-          "order": 4,
+          "order": 3,
           "url": "https://www.threads.com/@maguinhamalta?igshid=NTc4MTIwNjQ2YQ==",
           "original_url": "https://www.threads.com/@maguinhamalta?igshid=NTc4MTIwNjQ2YQ=="
         },
         {
-          "order": 5,
+          "order": 4,
           "url": "https://www.tiktok.com/@maguinhamalta?_r=1&_t=ZS-93zpxEO1bdM",
           "original_url": "https://www.tiktok.com/@maguinhamalta?_r=1&_t=ZS-93zpxEO1bdM"
         },
         {
-          "order": 6,
+          "order": 5,
           "url": "https://www.malta222.com.br/",
           "original_url": "www.malta222.com.br"
         },
         {
-          "order": 7,
+          "order": 6,
           "url": "https://k.kwai.com/u/@maguinhamalta/xWe0CaC2",
           "original_url": "https://k.kwai.com/u/@maguinhamalta/xWe0CaC2"
         },
         {
-          "order": 8,
+          "order": 7,
           "url": "https://x.com/maguinhamalta?s=11",
           "original_url": "https://x.com/maguinhamalta?s=11"
         },
         {
-          "order": 9,
+          "order": 8,
           "url": "https://www.maguinhamalta222.com.br/",
           "original_url": "www.maguinhamalta222.com.br"
         },
         {
-          "order": 10,
+          "order": 9,
           "url": "https://www.facebook.com/share/1HR6sFJJvN/?mibextid=wwXIfr",
           "original_url": "https://www.facebook.com/share/1HR6sFJJvN/?mibextid=wwXIfr"
+        },
+        {
+          "order": 10,
+          "url": "https://www.instagram.com/maguinhamalta222/",
+          "original_url": "https://www.instagram.com/maguinhamalta222/"
         }
       ]
     },
@@ -13673,6 +15839,21 @@
           "order": 3,
           "url": "https://www.tiktok.com/@GRACINHACAIADO",
           "original_url": "HTTPS://WWW.TIKTOK.COM/@GRACINHACAIADO"
+        },
+        {
+          "order": 4,
+          "url": "https://whatsapp.com/channel/0029VbDOUfj9Gv7UL6fuSn3N",
+          "original_url": "https://whatsapp.com/channel/0029VbDOUfj9Gv7UL6fuSn3N"
+        },
+        {
+          "order": 5,
+          "url": "https://chat.whatsapp.com/F3dJfNJk1izB2hWN7mTRRy",
+          "original_url": "https://chat.whatsapp.com/F3dJfNJk1izB2hWN7mTRRy"
+        },
+        {
+          "order": 6,
+          "url": "https://gracinhacaiado.com.br/",
+          "original_url": "https://gracinhacaiado.com.br"
         }
       ]
     },
@@ -13709,17 +15890,6 @@
           "order": 6,
           "url": "https://www.youtube.com/GUSTAVOMENDANHAGO",
           "original_url": "HTTPS://WWW.YOUTUBE.COM/GUSTAVOMENDANHAGO"
-        }
-      ]
-    },
-    "tse-2026-90002541454": {
-      "sq_candidato": "90002541454",
-      "match_method": "sq_candidato",
-      "sites": [
-        {
-          "order": 1,
-          "url": "https://cintiadiaspsol.com.br/",
-          "original_url": "EMAIL: CADYGO@GMAIL.COM CINTIADIASPSOL@GMAIL.COM - SITE: CINTIADIASPSOL.COM.BR -"
         }
       ]
     },
@@ -13767,6 +15937,16 @@
           "order": 5,
           "url": "https://www.youtube.com/@VANDERLANCARDOSOOFICIAL",
           "original_url": "HTTPS://WWW.YOUTUBE.COM/@VANDERLANCARDOSOOFICIAL"
+        },
+        {
+          "order": 6,
+          "url": "https://vanderlan555.com.br/",
+          "original_url": "https://vanderlan555.com.br/"
+        },
+        {
+          "order": 7,
+          "url": "https://www.vanderlan.com.br/",
+          "original_url": "https://www.vanderlan.com.br/"
         }
       ]
     },
@@ -13823,6 +16003,31 @@
           "order": 10,
           "url": "https://youtube.com/@GUSTAVOGAYER",
           "original_url": "YOUTUBE.COM/@GUSTAVOGAYER"
+        },
+        {
+          "order": 11,
+          "url": "http://www.instagram.com/gustavogayerdep/",
+          "original_url": "http://www.instagram.com/gustavogayerdep/"
+        },
+        {
+          "order": 12,
+          "url": "http://www.youtube.com/@papoconservador",
+          "original_url": "http://www.youtube.com/@papoconservador"
+        },
+        {
+          "order": 13,
+          "url": "http://www.facebook.com/gustavogayerdeputadofederal/",
+          "original_url": "http://www.facebook.com/gustavogayerdeputadofederal/"
+        },
+        {
+          "order": 14,
+          "url": "http://t.me.joinchat/Odbt4Rfd5djLjnjH2Uc4Lw",
+          "original_url": "http://t.me.joinchat/Odbt4Rfd5djLjnjH2Uc4Lw"
+        },
+        {
+          "order": 15,
+          "url": "http://gustavogayer.com.br/",
+          "original_url": "http://gustavogayer.com.br"
         }
       ]
     },
@@ -13844,6 +16049,37 @@
           "order": 3,
           "url": "https://www.instagram.com/OSEIASVARAO",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/OSEIASVARAO"
+        },
+        {
+          "order": 4,
+          "url": "http://x.com/oseiasvarao?s=11&t=f99g5re_9VyXwvZMXsoiNw",
+          "original_url": "http://x.com/oseiasvarao?s=11&t=f99g5re_9VyXwvZMXsoiNw"
+        },
+        {
+          "order": 5,
+          "url": "http://kwai.com/@OseiasVarao",
+          "original_url": "http://kwai.com/@OseiasVarao"
+        },
+        {
+          "order": 6,
+          "url": "http://www.tiktok.com/@oseiasvarao",
+          "original_url": "http://www.tiktok.com/@oseiasvarao"
+        }
+      ]
+    },
+    "tse-2026-90002545243": {
+      "sq_candidato": "90002545243",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/ernesto_roller?igsi=MXJvZDVoNWIwZptdw%3D%3D&utm_source=qr",
+          "original_url": "https://www.instagram.com/ernesto_roller?igsi=MXJvZDVoNWIwZptdw%3D%3D&utm_source=qr"
+        },
+        {
+          "order": 2,
+          "url": "https://www.facebook.com/profile.php?id=100084465016169&mibextid=wwXIfr&rdid=Bd982j9D1JvMJN7n&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BQtf4bbQQ%2F%3Fmibextid%3DaaXIfr#",
+          "original_url": "https://www.facebook.com/profile.php?id=100084465016169&mibextid=wwXIfr&rdid=Bd982j9D1JvMJN7n&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BQtf4bbQQ%2F%3Fmibextid%3DaaXIfr#"
         }
       ]
     },
@@ -13855,6 +16091,51 @@
           "order": 1,
           "url": null,
           "original_url": "@OIURECASTRO"
+        },
+        {
+          "order": 2,
+          "url": "https://iurecastro.com/",
+          "original_url": "https://iurecastro.com"
+        },
+        {
+          "order": 3,
+          "url": "https://instagram.com/iurecastro234",
+          "original_url": "https://instagram.com/iurecastro234"
+        },
+        {
+          "order": 4,
+          "url": "https://facebook.com/iurecastro234",
+          "original_url": "https://facebook.com/iurecastro234"
+        },
+        {
+          "order": 5,
+          "url": "https://www.tiktok.com/@iurecastro234",
+          "original_url": "https://www.tiktok.com/@iurecastro234"
+        },
+        {
+          "order": 6,
+          "url": "https://www.youtube.com/@iurecastro234",
+          "original_url": "https://www.youtube.com/@iurecastro234"
+        },
+        {
+          "order": 7,
+          "url": "https://x.com/iurecastro234",
+          "original_url": "https://x.com/iurecastro234"
+        },
+        {
+          "order": 8,
+          "url": "https://www.threads.com/@iurecastro234",
+          "original_url": "https://www.threads.com/@iurecastro234"
+        },
+        {
+          "order": 9,
+          "url": "https://linkedin.com/in/iure-castro-5b9a21168",
+          "original_url": "https://linkedin.com/in/iure-castro-5b9a21168"
+        },
+        {
+          "order": 10,
+          "url": "https://www.kwai.com/@iurecastro234",
+          "original_url": "https://www.kwai.com/@iurecastro234"
         }
       ]
     },
@@ -14187,6 +16468,11 @@
           "order": 6,
           "url": "https://williamsirirj.com/",
           "original_url": "HTTPS://WILLIAMSIRIRJ.COM/"
+        },
+        {
+          "order": 7,
+          "url": "https://www.tiktok.com/@williamsirirj",
+          "original_url": "https://www.tiktok.com/@williamsirirj"
         }
       ]
     },
@@ -14238,6 +16524,11 @@
           "order": 9,
           "url": "https://veterinariowilsongrassi.com.br/",
           "original_url": "HTTPS://VETERINARIOWILSONGRASSI.COM.BR"
+        },
+        {
+          "order": 10,
+          "url": "https://www.facebook.com/people/Juntos-Pelos-Animais-Brasil/61593832842222/",
+          "original_url": "https://www.facebook.com/people/Juntos-Pelos-Animais-Brasil/61593832842222/"
         }
       ]
     },
