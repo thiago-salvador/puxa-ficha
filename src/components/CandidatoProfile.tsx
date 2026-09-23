@@ -65,6 +65,7 @@ import { groupLegislacaoProfileItems } from "@/lib/legislacao-profile-groups"
 import { FollowCandidateButton } from "./alerts/FollowCandidateButton"
 import { SenadoRunningMates, type SenadoRunningMatesPayload } from "./SenadoRunningMates"
 import { CandidateGeneralData } from "./CandidateGeneralData"
+import { CandidateSitesCitation } from "./CandidateSitesCitation"
 import { AttributedFactChecks } from "./AttributedFactChecks"
 import { AttributedFactChecksOverview } from "./AttributedFactChecksOverview"
 import { EditorialBadge } from "./attention-points/EditorialBadge"
@@ -899,6 +900,11 @@ export function CandidatoProfile({
                   candidateSlug={ficha.slug}
                 />
                 <CandidateGeneralData ficha={ficha} />
+                <CandidateSitesCitation
+                  candidateName={ficha.nome_urna}
+                  candidateSlug={ficha.slug}
+                  sites={ficha.sites_candidato}
+                />
               </div>
             )}
 
