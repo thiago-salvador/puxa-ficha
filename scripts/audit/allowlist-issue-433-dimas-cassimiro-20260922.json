@@ -1,0 +1,52 @@
+{
+  "versao": "2026-09-22",
+  "fonte": "DivulgaCandContas, detalhe da candidatura SQ 100002552700 (MA, Governador, PCO), https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MA/20322002026/candidato/100002552700, lido ao vivo em 2026-09-22T22:15:47.064Z: descricaoSituacao \"Deferido\", isCandidatoInapto false, descricaoSituacaoCandidato \"Consta da urna\", dataUltimaAtualizacao \"2026-09-22 09:07\", st_SUBSTITUIDO false. SHA-256 do corpo (6624 bytes) 187a4495d54ea8b59403f062458999ff85758d238b11dc1ea8576b2425439507. Issue #433, auditoria run 35748910912.",
+  "motivo": "A candidatura estava publicada como 'indeferido com recurso' e o TSE ja a da como Deferido, apta e concorrendo. A ficha permanece no ar: so situacao_candidatura e ultima_atualizacao mudam; status ('candidato') e publicavel (true) ficam intactos porque nao ha nada terminal a reconciliar, ao contrario das issues #400 e #383.",
+  "coorte": [
+    "dimas-cassimiro"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "dimas-cassimiro",
+      "campos": [
+        "situacao_candidatura",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "issue-433-dimas-cassimiro-deferido",
+      "campos": [
+        "migration_version",
+        "tabela",
+        "row_id",
+        "candidato_id",
+        "preimage",
+        "postimage",
+        "registrado_em"
+      ]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260922150000",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
+    }
+  ]
+}

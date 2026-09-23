@@ -15,6 +15,9 @@ import {
   erroDeRedeEhMorte,
   estadoDesligado,
   hostDaUrl,
+  custoNoFiltro,
+  LIMITE_BYTES_FILTRO_IN,
+  lotesPorTamanhoDeFiltro,
   mapPorHost,
   runLinkCheck,
   type EstadoDeFontes,
@@ -617,5 +620,42 @@ describe("runLinkCheck: confirmação de morte entre execuções", () => {
 
     assert.deepEqual(fake.registrados, [])
     assert.deepEqual(fake.esquecidos, [])
+  })
+})
+
+describe("lotesPorTamanhoDeFiltro: filtro .in() dentro do teto da query string", () => {
+  it("196 URLs longas, o caso de 2026-09-22, saem em vários lotes sob o teto e sem perder nem repetir URL", () => {
+    const urls = Array.from(
+      { length: 196 },
+      (_, k) => `https://www1.folha.uol.com.br/poder/2026/09/materia-${k}-${"trecho-longo-do-titulo-".repeat(4)}(atualizada).shtml?utm=a,b`,
+    )
+    const lotes = lotesPorTamanhoDeFiltro(urls)
+
+    assert.ok(lotes.length > 1, "uma requisição só estouraria o teto")
+    for (const lote of lotes) {
+      const bytes = lote.reduce((soma, url) => soma + custoNoFiltro(url), 0)
+      assert.ok(bytes <= LIMITE_BYTES_FILTRO_IN, `lote de ${bytes} bytes passa do teto`)
+    }
+    assert.deepEqual(lotes.flat(), urls)
+  })
+
+  it("custo segue a codificação do cliente, que codifica ( ) ! ~ * e o encodeURIComponent não", () => {
+    const valor = "https://a.test/x(1)!~*"
+    assert.equal(custoNoFiltro(valor), new URLSearchParams({ v: `"${valor}",` }).toString().length - 2)
+    assert.ok(custoNoFiltro(valor) > encodeURIComponent(`"${valor}",`).length)
+  })
+
+  it("lista curta cabe num lote só, e lista vazia não gera requisição", () => {
+    assert.deepEqual(lotesPorTamanhoDeFiltro(["https://a.test/1", "https://a.test/2"]), [["https://a.test/1", "https://a.test/2"]])
+    assert.deepEqual(lotesPorTamanhoDeFiltro([]), [])
+  })
+
+  it("valor maior que o teto vai sozinho, sem ser cortado", () => {
+    const gigante = `https://a.test/${"x".repeat(LIMITE_BYTES_FILTRO_IN)}`
+    assert.deepEqual(lotesPorTamanhoDeFiltro(["https://a.test/1", gigante, "https://a.test/2"]), [
+      ["https://a.test/1"],
+      [gigante],
+      ["https://a.test/2"],
+    ])
   })
 })

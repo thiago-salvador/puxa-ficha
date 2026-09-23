@@ -1,0 +1,24 @@
+{
+  "_comentario": "Allowlist fechada da issue #424. A migration contém guards por 10 UUIDs e aceita somente a preimagem medida em 22/09/2026 ou a posimagem exata.",
+  "recorte": "issue-424-link-check-20260922",
+  "migration": "20260922160000_issue_424_fontes_pontos_atencao.sql",
+  "fonte": "Issue #424 (gate link-check-fontes, run 35619106186) e reprodução local do dry-run em 2026-09-22",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "pontos_atencao",
+      "ref": "issue_424",
+      "campos": [
+        "titulo",
+        "descricao",
+        "fontes",
+        "visivel",
+        "despublicacao_motivo",
+        "despublicado_em",
+        "dados_relacionados"
+      ]
+    }
+  ]
+}
