@@ -702,7 +702,7 @@ const getCachedGlobalSearchIndexResource = unstableCacheWithSingleFlight(
   // sobrevive a deploy, e a rota de revalidacao por tag depende de
   // PF_REVALIDATE_SECRET, entao o bump da chave e o caminho que funciona sem
   // segredo. Mesma chave aplicada a todos os resources que listam candidatos.
-  ["global-search-index", "bloco1-incerto-suppress", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "busca-candidatura-colunas-enxutas-20260916", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
+  ["global-search-index", "bloco1-incerto-suppress", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "busca-candidatura-colunas-enxutas-20260916", "party-filter-payload-20260923", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos"],
