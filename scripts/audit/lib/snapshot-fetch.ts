@@ -96,6 +96,8 @@ const MARCA_COLETA_INICIO = "-- @coleta-opcional-inicio"
 const MARCA_COLETA_FIM = "-- @coleta-opcional-fim"
 const MARCA_AUSENCIAS_INICIO = "-- @ausencias-opcionais-inicio"
 const MARCA_AUSENCIAS_FIM = "-- @ausencias-opcionais-fim"
+const MARCA_NUMERO_URNA_INICIO = "-- @numero-urna-opcional-inicio"
+const MARCA_NUMERO_URNA_FIM = "-- @numero-urna-opcional-fim"
 
 /**
  * Remove do SQL um bloco opcional delimitado por marcadores.
@@ -147,6 +149,10 @@ export function removerBlocoDeAusencias(sql: string): string {
   )
 }
 
+export function removerBlocoDeNumeroUrna(sql: string): string {
+  return removerBlocoOpcional(sql, MARCA_NUMERO_URNA_INICIO, MARCA_NUMERO_URNA_FIM, "de número de urna", "numero_urna")
+}
+
 /**
  * Roda `coverage-snapshot.sql` e devolve o array que o relatório consome.
  * O SQL devolve uma linha e uma coluna (`snapshot`) com o array inteiro.
@@ -166,12 +172,14 @@ export async function obterSnapshot(
   const token = opcoes.token || resolverToken()
   let sql = readFileSync(caminhoSql, "utf8")
 
-  const [{ existe_coleta, existe_ausencias }] = await consultar<{
+  const [{ existe_coleta, existe_ausencias, existe_numero_urna }] = await consultar<{
     existe_coleta: boolean
     existe_ausencias: boolean
+    existe_numero_urna: boolean
   }>(
     "select to_regclass('public.coleta_log_ultima') is not null as existe_coleta, " +
-      "to_regclass('public.patrimonio_ausencia_oficial') is not null as existe_ausencias",
+      "to_regclass('public.patrimonio_ausencia_oficial') is not null as existe_ausencias, " +
+      "exists (select 1 from information_schema.columns where table_schema='public' and table_name='candidatos' and column_name='numero_urna') as existe_numero_urna",
     ref,
     token
   )
@@ -189,6 +197,10 @@ export async function obterSnapshot(
     )
     sql = removerBlocoDeAusencias(sql)
   }
+  if (!existe_numero_urna) {
+    console.error("[cobertura] candidatos.numero_urna não existe neste banco; o snapshot marca a coluna como parcial")
+    sql = removerBlocoDeNumeroUrna(sql)
+  }
 
   const linhas = await consultar<{ snapshot: unknown[] | null }>(sql, ref, token)
   const snapshot = linhas[0]?.snapshot
@@ -201,4 +213,3 @@ export async function obterSnapshot(
   }
   return snapshot
 }
-
