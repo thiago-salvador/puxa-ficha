@@ -79,8 +79,8 @@ if [[ "$ledger_top" != "$previous_version" || "$previous_count" != "1" || "$prev
   exit 1
 fi
 
-# The ledger, the candidate and the alert audience all have to match before the
-# workflow may write. The migration repeats these checks under the candidate row lock.
+# The ledger and the candidate both have to match before the workflow may write.
+# The migration repeats this check under the candidate row lock.
 PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300000 -c lock_timeout=5000' \
   psql -X -v ON_ERROR_STOP=1 -Atq -c "
 DO \$preflight\$ BEGIN
@@ -100,13 +100,6 @@ DO \$preflight\$ BEGIN
      OR EXISTS (SELECT 1 FROM public.identidade_timeline_quarentena_snapshot
                  WHERE migration_version = '20260923233000') THEN
     RAISE EXCEPTION 'eliziane mudancas: preimagem ou recibo divergiu';
-  END IF;
-  IF EXISTS (SELECT 1 FROM public.alert_subscriptions
-              WHERE candidato_id = 'b8e8b3d1-1e2e-482f-b0dd-dbf927c5c681')
-     OR EXISTS (SELECT 1 FROM public.alert_cohort_subscriptions a
-                 WHERE (a.cargo IS NULL OR a.cargo ILIKE 'senad%')
-                   AND (a.uf IS NULL OR a.uf = 'MA')) THEN
-    RAISE EXCEPTION 'eliziane mudancas: ha assinante de alerta que receberia o historico como novidade';
   END IF;
 END \$preflight\$;"
 

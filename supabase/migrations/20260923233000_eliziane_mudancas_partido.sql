@@ -20,8 +20,10 @@
 -- linha usa ano 2026 e data_mudanca NULL, como as demais mudancas observadas
 -- entre eleicoes do TSE. A filiacao original ao PPS (anterior a 2006) nao tem
 -- data verificada e fica de fora.
--- Cada INSERT em mudancas_partido gera um item em candidate_changes, que entra
--- no digest de alertas; a migration aborta se houver assinante que o receberia.
+-- Cada INSERT em mudancas_partido gera, por trigger, um item em candidate_changes,
+-- que o digest de alertas trata como novidade. Isto e historico de 2015 a 2026,
+-- nao mudanca de hoje: a migration apaga esses quatro itens e guarda o conteudo
+-- deles no recibo do coleta_log.
 -- Aplicacao em producao exige autorizacao separada e ledger/readback.
 BEGIN;
 DO $apply$
@@ -36,6 +38,7 @@ DECLARE
   ]::uuid[];
   candidate_row jsonb;
   inserted jsonb;
+  removed_changes jsonb;
   affected integer;
 BEGIN
   IF current_setting('pf.replay', true) = 'true' OR NOT EXISTS (SELECT 1 FROM public.candidatos) THEN
@@ -66,13 +69,6 @@ BEGIN
     OR EXISTS (SELECT 1 FROM public.identidade_timeline_quarentena_snapshot WHERE migration_version = '20260923233000') THEN
     RAISE EXCEPTION 'eliziane mudancas: preimagem/identidade ou recibo divergiu';
   END IF;
-  IF EXISTS (SELECT 1 FROM public.alert_subscriptions WHERE candidato_id = target_id)
-    OR EXISTS (SELECT 1 FROM public.alert_cohort_subscriptions a
-               WHERE (a.cargo IS NULL OR a.cargo ILIKE 'senad%')
-                 AND (a.uf IS NULL OR a.uf = 'MA')) THEN
-    RAISE EXCEPTION 'eliziane mudancas: ha assinante de alerta que receberia o historico como novidade';
-  END IF;
-
   -- @write tabela=mudancas_partido slug=tse-2026-100002541459 campos=id,candidato_id,partido_anterior,partido_novo,ano,data_mudanca,contexto,created_at
   INSERT INTO public.mudancas_partido
     (id,candidato_id,partido_anterior,partido_novo,ano,data_mudanca,contexto,created_at)
@@ -105,11 +101,20 @@ BEGIN
   GET DIAGNOSTICS affected = ROW_COUNT;
   IF affected <> 4 THEN RAISE EXCEPTION 'eliziane mudancas: snapshot afetou % linhas', affected; END IF;
 
-  IF (SELECT count(*) FROM public.candidate_changes
-      WHERE registro_id = ANY (row_ids) AND tabela_origem = 'mudancas_partido'
-        AND candidato_id = target_id) <> 4 THEN
+  SELECT jsonb_agg(to_jsonb(cc) ORDER BY cc.registro_id) INTO removed_changes
+  FROM public.candidate_changes cc
+  WHERE cc.registro_id = ANY (row_ids) AND cc.tabela_origem = 'mudancas_partido'
+    AND cc.candidato_id = target_id;
+  IF coalesce(jsonb_array_length(removed_changes),0) <> 4 THEN
     RAISE EXCEPTION 'eliziane mudancas: candidate_changes divergiu do esperado';
   END IF;
+
+  -- @write tabela=candidate_changes ref=b8e8b3d1-1e2e-482f-b0dd-dbf927c5c681 campos=id
+  DELETE FROM public.candidate_changes cc
+  WHERE cc.candidato_id = 'b8e8b3d1-1e2e-482f-b0dd-dbf927c5c681'
+    AND cc.registro_id = ANY (row_ids) AND cc.tabela_origem = 'mudancas_partido';
+  GET DIAGNOSTICS affected = ROW_COUNT;
+  IF affected <> 4 THEN RAISE EXCEPTION 'eliziane mudancas: DELETE candidate_changes afetou % linhas', affected; END IF;
 
   SELECT jsonb_agg(to_jsonb(m) ORDER BY m.ano) INTO inserted
   FROM public.mudancas_partido m WHERE m.id = ANY (row_ids);
@@ -120,6 +125,7 @@ BEGIN
   VALUES ('senado-filiacoes','candidato','tse-2026-100002541459',target_id,
           'encontrado',4,
           jsonb_build_object('before','[]'::jsonb,'after',inserted,
+            'candidate_changes_removidos',removed_changes,
             'senado_codigo_parlamentar','5718',
             'senado_filiacoes_sha256','19dac162d11871d8d09310fd66f777c9f54f327464454de6ab4e3d80c83c1342',
             'camara_deputado_id','178883',

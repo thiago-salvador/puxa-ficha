@@ -22,17 +22,13 @@ BEGIN
     RAISE EXCEPTION 'eliziane mudancas rollback: estado atual divergiu da posimagem';
   END IF;
 
+  -- DELETE nao dispara trigger de candidate_changes; os itens do INSERT ja
+  -- foram removidos pela propria migration.
   -- @write tabela=mudancas_partido slug=tse-2026-100002541459 campos=id
   DELETE FROM public.mudancas_partido
    WHERE id = ANY (ids) AND candidato_id = 'b8e8b3d1-1e2e-482f-b0dd-dbf927c5c681';
   GET DIAGNOSTICS affected = ROW_COUNT;
   IF affected <> 4 THEN RAISE EXCEPTION 'eliziane mudancas rollback: DELETE afetou % linhas', affected; END IF;
-
-  -- @write tabela=candidate_changes ref=20260923233000 campos=id
-  DELETE FROM public.candidate_changes
-   WHERE registro_id = ANY (ids) AND tabela_origem = 'mudancas_partido';
-  GET DIAGNOSTICS affected = ROW_COUNT;
-  IF affected <> 4 THEN RAISE EXCEPTION 'eliziane mudancas rollback: candidate_changes afetou % linhas', affected; END IF;
 
   -- @write tabela=identidade_timeline_quarentena_snapshot ref=20260923233000 campos=migration_version,tabela,row_id
   DELETE FROM public.identidade_timeline_quarentena_snapshot

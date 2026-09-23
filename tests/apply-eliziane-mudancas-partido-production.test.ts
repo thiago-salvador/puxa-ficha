@@ -32,7 +32,7 @@ test(`apply exige o predecessor ${previousVersion} e calcula o digest dele do ar
   assert.doesNotMatch(runner, /sha256:[0-9a-f]{8,}/)
   assert.match(runner, /wskpzsobvqwhnbsdsmok/)
   assert.match(runner, /PGSSLMODE=verify-full/)
-  assert.match(runner, /alert_cohort_subscriptions/)
+  assert.doesNotMatch(runner, /alert_cohort_subscriptions/)
   assert.doesNotMatch(runner, /supabase db push|apply_migration/)
 })
 
@@ -54,13 +54,16 @@ test("migration e readback cabem no runner transacional", () => {
     assert.doesNotMatch(sql, /^\s*(ROLLBACK;|SET ROLE)/im, path)
   }
   const migration = readFileSync(migrationPath, "utf8")
-  const guardAssinante = migration.indexOf("alert_cohort_subscriptions")
-  const primeiraEscrita = migration.indexOf("INSERT INTO public.mudancas_partido")
-  assert.ok(guardAssinante > 0 && guardAssinante < primeiraEscrita, "guard de assinante vem antes da escrita")
+  // O histórico não pode chegar ao digest de alertas como novidade: os itens que
+  // o trigger cria em candidate_changes saem na mesma transação do INSERT.
+  const insercao = migration.indexOf("INSERT INTO public.mudancas_partido")
+  const remocao = migration.indexOf("DELETE FROM public.candidate_changes")
+  assert.ok(insercao > 0 && remocao > insercao && remocao < migration.indexOf("COMMIT;"))
+  assert.match(migration, /'candidate_changes_removidos',removed_changes/)
   assert.match(migration, /FOR UPDATE;/)
   assert.match(migration, /current_setting\('pf\.replay', true\) = 'true'/)
   const rollback = readFileSync(rollbackPath, "utf8")
-  assert.match(rollback, /DELETE FROM public\.candidate_changes/)
+  assert.doesNotMatch(rollback, /DELETE FROM public\.candidate_changes/)
   assert.match(rollback, /DELETE FROM supabase_migrations\.schema_migrations WHERE version = '20260923233000'/)
 })
 
