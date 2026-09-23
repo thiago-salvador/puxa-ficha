@@ -13,7 +13,7 @@ export const SENSITIVE_ANALYTICS_PROP_KEY_RE =
 export type AnalyticsEventName = (typeof ANALYTICS_EVENTS)[keyof typeof ANALYTICS_EVENTS]
 export type AnalyticsLaunchRequiredEventName = Exclude<AnalyticsEventName, typeof ANALYTICS_EVENTS.colinhaShare>
 
-export const ANALYTICS_EVENT_NAMES = Object.values(ANALYTICS_EVENTS) as AnalyticsEventName[]
+const ANALYTICS_EVENT_NAMES = Object.values(ANALYTICS_EVENTS) as AnalyticsEventName[]
 /** Readback do lançamento X05 continua exigindo somente os cinco eventos originais. */
 export const ANALYTICS_LAUNCH_REQUIRED_EVENT_NAMES = ANALYTICS_EVENT_NAMES.filter(
   (name) => name !== ANALYTICS_EVENTS.colinhaShare,

@@ -2,9 +2,9 @@ import "server-only"
 
 import { createServerSupabaseClient } from "@/lib/supabase"
 
-export const DEPUTADOS_ROSTER_PUBLIC_RELATION =
+const DEPUTADOS_ROSTER_PUBLIC_RELATION =
   process.env.PF_DEPUTADOS_ROSTER_PUBLIC_RELATION?.trim() || "candidatos_roster_2026_publico"
-export const DEPUTADOS_ROSTER_TABLE_RELATION = "candidatos_roster_2026"
+const DEPUTADOS_ROSTER_TABLE_RELATION = "candidatos_roster_2026"
 export const DEPUTADOS_PAGE_SIZE = 24
 
 export type DeputadoCargo = "deputado_federal" | "deputado_estadual" | "deputado_distrital"
