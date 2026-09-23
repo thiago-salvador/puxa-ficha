@@ -10,6 +10,7 @@ import {
   filterAlertCandidatesByExposedCargo,
 } from "@/lib/alerts"
 import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
+import { ALERT_COHORT_CARGOS, resolveAlertCohort, type AlertCohortCandidate, type AlertCohortSubscription } from "@/lib/alerts-cohort"
 import {
   buildAlertDigestEmail,
   type AlertDigestEmailCandidate,
@@ -21,6 +22,7 @@ import { sendTransactionalEmail } from "@/lib/email"
 import { buildAbsoluteUrl } from "@/lib/metadata"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { formatCargoDisputadoPublicLabel } from "@/lib/ui-labels"
+import { isSenadoEnabled } from "@/lib/senado-feature"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export const runtime = "nodejs"
@@ -87,6 +89,15 @@ interface CandidateChangeRow {
   registro_id: string | null
   metadata: { url?: unknown; fonte?: unknown; data_publicacao?: unknown } | null
   created_at: string
+}
+
+interface DigestCandidateRow {
+  id: string
+  slug: string
+  nome_urna: string
+  partido_sigla: string
+  cargo_disputado: string
+  estado: string | null
 }
 
 type DatabaseWriteError = { message?: string } | null | undefined
@@ -243,13 +254,68 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
       },
     })
 
+    const batchSubscribers = (subscribers ?? []) as DigestSubscriberRow[]
+    const cohortSubscriptionsBySubscriber = new Map<string, AlertCohortSubscription[]>()
+    const subscribedCargos = new Set<string>()
+    const cohortCandidates: DigestCandidateRow[] = []
+    const senadoEnabled = isSenadoEnabled()
+    if (batchSubscribers.length > 0) {
+      const { data: cohortRows, error: cohortSubscriptionsError } = await supabase
+        .from("alert_cohort_subscriptions")
+        .select("subscriber_id, cargo, uf")
+        .abortSignal(supabaseQueryTimeoutSignal())
+        .in("subscriber_id", batchSubscribers.map((subscriber) => subscriber.id))
+      if (cohortSubscriptionsError) {
+        deps.logAlertsApiExit("send-digest", 503, "cohort_subscriptions_query_failed")
+        return NextResponse.json({ error: "Could not load cohort subscriptions" }, { status: 503 })
+      }
+
+      for (const row of (cohortRows ?? []) as Array<AlertCohortSubscription & { subscriber_id: string }>) {
+        const current = cohortSubscriptionsBySubscriber.get(row.subscriber_id) ?? []
+        current.push({ cargo: row.cargo, uf: row.uf })
+        cohortSubscriptionsBySubscriber.set(row.subscriber_id, current)
+        subscribedCargos.add(row.cargo)
+      }
+      const cohortCargos = ALERT_COHORT_CARGOS.filter((cargo) =>
+        (cargo !== "Senador" || senadoEnabled) && subscribedCargos.has(cargo),
+      )
+
+      if (cohortCargos.length > 0) {
+        let lastCandidateId: string | null = null
+        while (true) {
+          const query = supabase
+            .from("candidatos_publico")
+            .select("id, slug, nome_urna, partido_sigla, cargo_disputado, estado")
+            .abortSignal(supabaseQueryTimeoutSignal())
+            .in("cargo_disputado", cohortCargos)
+            .neq("status", "removido")
+          const { data, error } = await (lastCandidateId ? query.gt("id", lastCandidateId) : query)
+            .order("id", { ascending: true })
+            .limit(1000)
+          if (error) {
+            deps.logAlertsApiExit("send-digest", 503, "cohort_candidates_query_failed")
+            return NextResponse.json({ error: "Could not load cohort candidates" }, { status: 503 })
+          }
+          const page = (data ?? []) as DigestCandidateRow[]
+          cohortCandidates.push(...page)
+          if (page.length < 1000) break
+          const nextCandidateId = page.at(-1)?.id
+          if (!nextCandidateId || nextCandidateId === lastCandidateId) {
+            deps.logAlertsApiExit("send-digest", 503, "cohort_candidates_cursor_invalid")
+            return NextResponse.json({ error: "Could not page cohort candidates" }, { status: 503 })
+          }
+          lastCandidateId = nextCandidateId
+        }
+      }
+    }
+
     let processed = 0
     let sent = 0
     let failed = 0
     let skipped = 0
     let enviadosSemRegistro = 0
 
-    for (const subscriber of (subscribers ?? []) as DigestSubscriberRow[]) {
+    for (const subscriber of batchSubscribers) {
       processed += 1
 
       const { data: existingLog, error: existingLogError } = await supabase
@@ -299,11 +365,12 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
         continue
       }
 
-      const candidateIds = Array.from(
+      const directCandidateIds = Array.from(
         new Set((subscriptionRows ?? []).map((row) => row.candidato_id).filter(Boolean)),
       )
 
-      if (candidateIds.length === 0) {
+      const cohortSubscriptions = cohortSubscriptionsBySubscriber.get(subscriber.id) ?? []
+      if (directCandidateIds.length === 0 && cohortSubscriptions.length === 0) {
         deps.logAlertsEvent({
           route: "send-digest",
           event: "subscriber_skipped",
@@ -313,27 +380,55 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
         continue
       }
 
-      const { data: candidateRows, error: candidatesError } = await supabase
-        .from("candidatos_publico")
-        .select("id, slug, nome_urna, partido_sigla, cargo_disputado")
-        .abortSignal(supabaseQueryTimeoutSignal())
-        .in("id", candidateIds)
+      let directCandidates: DigestCandidateRow[] = []
+      if (directCandidateIds.length > 0) {
+        const { data, error } = await supabase
+          .from("candidatos_publico")
+          .select("id, slug, nome_urna, partido_sigla, cargo_disputado, estado")
+          .abortSignal(supabaseQueryTimeoutSignal())
+          .neq("status", "removido")
+          .in("id", directCandidateIds)
+        if (error) {
+          deps.logAlertsEvent({
+            route: "send-digest",
+            event: "subscriber_step_failed",
+            level: "warn",
+            detail: { subscriberId: subscriber.id, step: "candidates_publico_query" },
+          })
+          failed += 1
+          continue
+        }
+        directCandidates = (data ?? []) as DigestCandidateRow[]
+      }
 
-      if (candidatesError) {
+      const publicCandidates = [...cohortCandidates, ...directCandidates]
+      const resolvedCohort = resolveAlertCohort({
+        cohort: publicCandidates.map((candidate): AlertCohortCandidate => ({
+          id: candidate.id,
+          slug: candidate.slug,
+          cargo: candidate.cargo_disputado,
+          uf: candidate.estado ?? null,
+        })),
+        directCandidateIds,
+        subscriptions: cohortSubscriptions,
+        senadoEnabled,
+      })
+      if (resolvedCohort.truncated) {
         deps.logAlertsEvent({
           route: "send-digest",
-          event: "subscriber_step_failed",
-          level: "warn",
-          detail: { subscriberId: subscriber.id, step: "candidates_publico_query" },
+          event: "cohort_resolution_truncated",
+          level: "error",
+          detail: { subscriberId: subscriber.id },
         })
         failed += 1
         continue
       }
+      const candidateIds = resolvedCohort.candidateIds
 
       // Candidatura de cargo fora do ar (Senado com SENADO_ENABLED desligada)
       // não entra no email, mesmo que a assinatura exista.
       const candidateMap = new Map(
-        filterAlertCandidatesByExposedCargo(candidateRows ?? []).map((row) => [row.id, row]),
+        filterAlertCandidatesByExposedCargo(publicCandidates).map((row) => [row.id, row]),
       )
       const windowStart = subscriber.last_digest_sent_at || subscriber.verified_at || subscriber.created_at
 
@@ -488,6 +583,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
           items: grouped,
           manageUrl,
           unsubscribeUrl,
+          fullListUrl: buildAbsoluteUrl("/imprensa"),
         })
       } catch {
         deps.logAlertsEvent({

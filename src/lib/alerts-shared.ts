@@ -103,11 +103,33 @@ function buildAlertAccessUrl(params: Record<string, string>): string {
  * seguir nao estava la. O slug viaja junto e a rota de acesso efetiva o follow
  * DEPOIS de validar o token.
  */
-export function buildAlertManageUrl(manageToken: string, followSlug?: string | null): string {
+export function buildAlertManageUrl(
+  manageToken: string,
+  followSlug?: string | null,
+  cohortSubscriptions?: readonly { cargo: string; uf: string | null }[],
+): string {
   const params: Record<string, string> = { manage: manageToken }
   const normalizado = normalizeCandidateSlug(followSlug ?? "")
   if (normalizado) params.follow = normalizado
+  if (cohortSubscriptions?.length) params.cohort = JSON.stringify(cohortSubscriptions)
   return buildAlertAccessUrl(params)
+}
+
+export function parseAlertCohortAccessParam(raw: string | null): Array<{ cargo: string; uf: string | null }> {
+  if (!raw || raw.length > 4096) return []
+  try {
+    const parsed = JSON.parse(raw) as unknown
+    if (!Array.isArray(parsed)) return []
+    return parsed.slice(0, 11).map((value) => {
+      const item = value as Record<string, unknown> | null
+      return {
+        cargo: typeof item?.cargo === "string" ? item.cargo : "",
+        uf: typeof item?.uf === "string" ? item.uf : item?.uf == null ? null : String(item.uf),
+      }
+    })
+  } catch {
+    return []
+  }
 }
 
 export function buildAlertVerifyUrl(verifyToken: string, manageToken: string): string {
@@ -390,6 +412,7 @@ export function buildAlertDigestEmail(input: {
   items: AlertDigestEmailCandidate[]
   manageUrl: string
   unsubscribeUrl: string
+  fullListUrl?: string
 }): { subject: string; text: string; html: string } {
   const subject =
     input.items.length === 1
@@ -416,6 +439,7 @@ export function buildAlertDigestEmail(input: {
     "Aqui vai o resumo das atualizações relevantes nas fichas que você acompanha:",
     "",
     ...textSections,
+    ...(input.fullListUrl ? [`Ver a lista completa: ${input.fullListUrl}`] : []),
     `Gerenciar alertas: ${input.manageUrl}`,
     `Cancelar todos os alertas: ${input.unsubscribeUrl}`,
   ].join("\n")
@@ -481,6 +505,7 @@ export function buildAlertDigestEmail(input: {
     body: [emailHeading("O que mudou"), emailLead(escapeHtml(resumoLead)), htmlItems].join(""),
     footer: emailFooter(
       [
+        ...(input.fullListUrl ? [{ label: "Ver lista completa", href: input.fullListUrl }] : []),
         { label: "Gerenciar alertas", href: input.manageUrl },
         { label: "Cancelar todos os alertas", href: input.unsubscribeUrl },
       ],

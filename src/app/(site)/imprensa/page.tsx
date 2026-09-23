@@ -1,6 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { AlertCohortSubscribe } from "@/components/alerts/AlertCohortSubscribe"
 import { ImprensaCitationButton } from "@/components/ImprensaCitationButton"
+import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
+import { isSenadoEnabled } from "@/lib/senado-feature"
 import {
   normalizeImprensaFilters,
   type ImprensaFilters,
@@ -55,6 +58,7 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
   if (filters.uf) query.set("uf", filters.uf)
   const queryString = query.toString()
   const exportSuffix = queryString ? `&${queryString}` : ""
+  const alertsEnabled = isAlertsEmailFeatureEnabled()
 
   return (
     <div className={styles.shell}>
@@ -78,6 +82,8 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
           <nav className={styles.utilityLinks} aria-label="Recursos da Mesa">
             <Link href="/metodologia">Metodologia e fontes</Link>
             <Link href="/embed">Criar embed</Link>
+            <Link href="/imprensa/atualizacoes">Atualizações verificadas</Link>
+            <Link href="/imprensa/frescor">Frescor das fontes</Link>
             <Link href="#dicionario">Dicionário de campos</Link>
             <a href={`/api/imprensa/export?format=csv${exportSuffix}`} download>
               Baixar CSV
@@ -108,6 +114,15 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
             <Link className={styles.reset} href="/imprensa">Limpar</Link>
           </div>
         </form>
+
+        {alertsEnabled && (
+          <section className={styles.notice} aria-labelledby="imprensa-alertas-title">
+            <h2 id="imprensa-alertas-title" className="text-lg font-semibold text-foreground">Alertas por cargo e UF</h2>
+            <div className="mb-4"><p>Escolha o recorte para receber um resumo das mudanças nas fichas publicadas. Os candidatos incluídos podem mudar entre envios. A assinatura exige confirmação por email e pode ser gerenciada ou cancelada a qualquer momento.</p></div>
+            <AlertCohortSubscribe initialCargo={filters.cargo ?? undefined} initialUf={filters.uf} senadoEnabled={isSenadoEnabled()} />
+            <div className="mt-3"><p><Link className={styles.sourceLink} href="/alertas/gerenciar">Gerenciar alertas</Link></p></div>
+          </section>
+        )}
 
         <div className={styles.datasetHeader}>
           <h2 className={styles.datasetTitle}>Candidatos no recorte</h2>
