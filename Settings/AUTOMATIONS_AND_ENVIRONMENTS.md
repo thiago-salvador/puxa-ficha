@@ -65,7 +65,8 @@ segura.
 | `PF_CRON_CHAIN_ORIGIN` | Origem do autoencadeamento dos crons | Opcional. Produção cai para `https://puxaficha.com.br`; fora dela cai para a origem da request. Só HTTPS ou loopback pode carregar segredo. | Vercel por ambiente |
 | `PF_RUNTIME_SMOKE_ORIGIN` | Origem sondada pelo runtime smoke e watchdog | Opcional, cai para `https://puxaficha.com.br`. | Vercel ou workflow |
 | `PF_QUIZ_SHORT_LINKS_FILE`, `PF_DOADOR_REVERSE_FIXTURE_FILE` | Stores locais para testes focados | Opcionais. Ausentes, o runtime usa Supabase; presentes, apontam para fixture local. | Teste local |
-| `NEXT_PUBLIC_SITE_URL`, `VERCEL_URL` | Origem canônica, metadata e allowlist de escrita | A pública cai para `https://puxaficha.com.br`. `VERCEL_URL` é fornecida pela plataforma. | Vercel ou operador local |
+| `NEXT_PUBLIC_SITE_URL`, `SITE_URL`, `VERCEL_URL` | Origem canônica, metadata, colinha compartilhável e allowlist de escrita | A URL da colinha usa `NEXT_PUBLIC_SITE_URL`, depois `SITE_URL`, depois a origem da request. `VERCEL_URL` é fornecida pela plataforma. | Vercel ou operador local |
+| `PF_DEPUTADOS_ROSTER_PUBLIC_RELATION` | View de leitura do roster usada pela lista e pelo card da colinha | Opcional para teste local de cobertura parcial; ausente usa `candidatos_roster_2026_publico`. Não configurar em produção. | Teste local |
 | `NEXT_PUBLIC_X_HANDLE` | Metadata e compartilhamento no X | Opcional, cai para `@puxaficha`. | Vercel |
 | `PF_CURATION_PHASE` | Janela de frescor editorial | Opcional na leitura, mas o valor `hardening` muda a política. Ausência segue o comportamento de launch codificado e deve ser decisão consciente. | Vercel |
 | `PF_SUPABASE_FETCH_CONCURRENCY`, `PF_SUPABASE_FETCH_QUEUE_TIMEOUT_MS` | Limitador de fetch do Supabase | Opcionais; inteiros positivos. Fallbacks: 24 e 10.000 ms. | Vercel |

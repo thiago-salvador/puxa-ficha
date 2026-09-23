@@ -22,6 +22,19 @@ import {
  * hash; foto nova ou reposição precisa cumprir o slot.
  */
 describe("gate de resolução de fotos de candidato", () => {
+  it("miniatura sem ZIP oficial não ganha exceção pelo nome", () => {
+    const photo: PhotoInfo = {
+      file: "tse-2026-123-thumb.jpg",
+      width: 161,
+      height: 225,
+      sha256: "hash-espelho",
+    }
+    assert.equal(TSE_OFFICIAL_FILE_PATTERN.test(photo.file), false)
+    const result = auditPhotos([photo], [], [])
+    assert.equal(result.ok, false)
+    assert.equal(result.tseOfficial.length, 0)
+  })
+
   it("o repositório atual passa no gate (legadas toleradas pela baseline)", () => {
     const baseline = JSON.parse(
       readFileSync("scripts/data/candidate-photo-baseline.json", "utf8")

@@ -1,7 +1,8 @@
 import "server-only"
 
 import {
-  ANALYTICS_EVENT_NAMES,
+  ANALYTICS_LAUNCH_REQUIRED_EVENT_NAMES,
+  type AnalyticsLaunchRequiredEventName,
   type AnalyticsEventName,
   type AnalyticsPayload,
   getAnalyticsProofIdFromPayload,
@@ -12,10 +13,10 @@ import { createServiceRoleSupabaseClient } from "@/lib/supabase"
 import { isMissingQuotaRpc, readQuotaRpcStatus } from "@/lib/quota-rpc"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
-export type AnalyticsLaunchCounts = Record<AnalyticsEventName, number>
+export type AnalyticsLaunchCounts = Record<AnalyticsLaunchRequiredEventName, number>
 
 function emptyCounts(): AnalyticsLaunchCounts {
-  return Object.fromEntries(ANALYTICS_EVENT_NAMES.map((eventName) => [eventName, 0])) as AnalyticsLaunchCounts
+  return Object.fromEntries(ANALYTICS_LAUNCH_REQUIRED_EVENT_NAMES.map((eventName) => [eventName, 0])) as AnalyticsLaunchCounts
 }
 
 /**
@@ -245,7 +246,7 @@ export async function readAnalyticsLaunchCounts(input: {
   for (const row of data ?? []) {
     // Keep the original launch counts comparable after adding the viewed stage.
     if (row.event_name === "Comparison Start" && sanitizeAnalyticsPayload(row.payload).stage === "viewed") continue
-    const eventName = row.event_name as AnalyticsEventName
+    const eventName = row.event_name as AnalyticsLaunchRequiredEventName
     if (Object.prototype.hasOwnProperty.call(counts, eventName)) {
       counts[eventName] += 1
     }
@@ -254,6 +255,6 @@ export async function readAnalyticsLaunchCounts(input: {
   return {
     counts,
     tasks: summarizeAnalyticsTasks(data ?? []),
-    missing: ANALYTICS_EVENT_NAMES.filter((eventName) => counts[eventName] <= 0),
+    missing: ANALYTICS_LAUNCH_REQUIRED_EVENT_NAMES.filter((eventName) => counts[eventName] <= 0),
   }
 }

@@ -34,7 +34,6 @@ export const metadata: Metadata = {
     image: "/opengraph-image",
   }),
 }
-
 const prose =
   "text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[length:var(--text-body-lg)]"
 const listClass =
@@ -66,6 +65,12 @@ export default function DeputadosPage() {
           >
             Deputados
           </h1>
+          <Link
+            href="/deputados/sp"
+            className="mt-8 inline-flex min-h-11 items-center rounded-lg bg-white px-5 py-3 text-sm font-bold text-black transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+          >
+            Consultar lista por UF
+          </Link>
         </div>
       </section>
 

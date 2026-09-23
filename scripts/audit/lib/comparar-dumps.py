@@ -45,7 +45,7 @@ DELTAS_ESPERADOS = {
     (
         "<",
         "ADD CONSTRAINT candidatos_publicacao_minima_2026_check CHECK (((publicavel IS DISTINCT FROM true) "
-        "OR (cargo_disputado <> ALL (ARRAY['Presidente'::text, 'Governador'::text])) OR "
+        "OR (cargo_disputado <> ALL (ARRAY['Presidente'::text, 'Governador'::text, 'Senador'::text])) OR "
         "((COALESCE(btrim(foto_url), ''::text) <> ''::text) AND (COALESCE(btrim(partido_sigla), ''::text) <> ''::text) "
         "AND (COALESCE(btrim(situacao_candidatura), ''::text) <> ''::text) AND (COALESCE(btrim(biografia), ''::text) <> ''::text) "
         "AND (COALESCE(btrim(naturalidade), ''::text) <> ''::text) AND (data_nascimento IS NOT NULL) "
@@ -60,14 +60,14 @@ DELTAS_ESPERADOS = {
         "COMMENT ON CONSTRAINT candidatos_situacao_candidatura_dominio ON public.candidatos IS "
         "'Vocabulario fechado de situacao_candidatura. NULL e permitido de proposito (ausencia de informacao). "
         "Espelha SITUACAO_CANDIDATURA_DOMINIO em src/lib/situacao-candidatura.ts: mudou la, muda aqui na mesma PR. "
-        "Os quatro estados de julgamento entraram em 03/09/2026, quando o julgamento de 2026 apareceu em "
-        "consulta_cand_complementar (134 deferidos, 4 indeferidos e 2 deferidos com recurso entre as 206 fichas "
-        "publicaveis com SQ).';",
+        '"pendente de julgamento" entrou em 16/09/2026 (issue #340), DS_SITUACAO_JULGAMENTO codigo 17 de '
+        'consulta_cand_complementar, distinto de "aguardando julgamento" (codigo 8) e de proposito fora de '
+        "SITUACAO_JULGAMENTO_PUBLICADO: nao e deferimento nem indeferimento.';",
     ),
     (
         ">",
         "CONSTRAINT candidatos_publicacao_minima_2026_check CHECK (((publicavel IS DISTINCT FROM true) "
-        "OR (cargo_disputado <> ALL (ARRAY['Presidente'::text, 'Governador'::text])) OR "
+        "OR (cargo_disputado <> ALL (ARRAY['Presidente'::text, 'Governador'::text, 'Senador'::text])) OR "
         "((COALESCE(btrim(foto_url), ''::text) <> ''::text) AND (COALESCE(btrim(partido_sigla), ''::text) <> ''::text) "
         "AND (COALESCE(btrim(situacao_candidatura), ''::text) <> ''::text) AND (COALESCE(btrim(biografia), ''::text) <> ''::text) "
         "AND (COALESCE(btrim(naturalidade), ''::text) <> ''::text) AND (data_nascimento IS NOT NULL) "
@@ -80,7 +80,7 @@ DELTAS_ESPERADOS = {
         ">",
         "CONSTRAINT candidatos_situacao_candidatura_dominio CHECK ((situacao_candidatura = ANY "
         "(ARRAY['aguardando julgamento'::text, 'candidatura declarada'::text, 'incerto'::text, 'deferido'::text, "
-        "'deferido com recurso'::text, 'indeferido'::text, 'indeferido com recurso'::text])))",
+        "'deferido com recurso'::text, 'indeferido'::text, 'indeferido com recurso'::text, 'pendente de julgamento'::text])))",
     ),
 }
 

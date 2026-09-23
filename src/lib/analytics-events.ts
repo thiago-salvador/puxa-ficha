@@ -4,14 +4,20 @@ export const ANALYTICS_EVENTS = {
   quizComplete: "Quiz Complete",
   externalSourceClick: "External Source Click",
   searchZeroResults: "Search Zero Results",
+  colinhaShare: "Colinha Share",
 } as const
 
 export const SENSITIVE_ANALYTICS_PROP_KEY_RE =
   /(^|_)(cpf|email|href|name|nome|secret|slug|token|url)($|_)|(^|_)query$/i
 
 export type AnalyticsEventName = (typeof ANALYTICS_EVENTS)[keyof typeof ANALYTICS_EVENTS]
+export type AnalyticsLaunchRequiredEventName = Exclude<AnalyticsEventName, typeof ANALYTICS_EVENTS.colinhaShare>
 
-export const ANALYTICS_EVENT_NAMES = Object.values(ANALYTICS_EVENTS) as AnalyticsEventName[]
+const ANALYTICS_EVENT_NAMES = Object.values(ANALYTICS_EVENTS) as AnalyticsEventName[]
+/** Readback do lançamento X05 continua exigindo somente os cinco eventos originais. */
+export const ANALYTICS_LAUNCH_REQUIRED_EVENT_NAMES = ANALYTICS_EVENT_NAMES.filter(
+  (name) => name !== ANALYTICS_EVENTS.colinhaShare,
+) as AnalyticsLaunchRequiredEventName[]
 
 const ANALYTICS_EVENT_NAME_SET = new Set<string>(ANALYTICS_EVENT_NAMES)
 
@@ -23,6 +29,7 @@ const ANALYTICS_ALLOWED_PAYLOAD_KEYS = [
   "area",
   "candidate_count",
   "eixo",
+  "format",
   "host",
   "proof_id",
   "question_count",
@@ -51,6 +58,10 @@ export function sanitizeAnalyticsPayload(input: unknown): AnalyticsPayload {
       if (value === "ready" || value === "viewed") out[key] = value
       continue
     }
+    if (key === "format") {
+      if (value === "feed" || value === "story" || value === "text" || value === "print") out[key] = value
+      continue
+    }
 
     if (typeof value === "string") {
       const trimmed = value.trim()
@@ -69,6 +80,12 @@ export function sanitizeAnalyticsPayload(input: unknown): AnalyticsPayload {
   }
 
   return out as AnalyticsPayload
+}
+
+/** A colinha nunca envia UF, SQ, nome, partido, prova ou qualquer outro campo. */
+export function sanitizeColinhaSharePayload(input: unknown): Pick<AnalyticsPayload, "format"> | null {
+  const format = sanitizeAnalyticsPayload(input).format
+  return typeof format === "string" ? { format } : null
 }
 
 /** Aggregate actions, never candidate identity or an inference of understanding. */

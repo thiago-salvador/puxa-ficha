@@ -35,12 +35,27 @@ function isSensitiveKey(key: string): boolean {
 
 const REDACTED = "[REDACTED]"
 
+function isColinhaPath(input: string): boolean {
+  try {
+    const pathname = new URL(input, "https://puxaficha.invalid").pathname
+    return /^\/(?:colinha(?:\/|$)|api\/colinha(?:\/|$))/.test(pathname)
+  } catch {
+    return false
+  }
+}
+
+function scrubColinhaUrlInText(value: string): string {
+  return value.replace(/https?:\/\/[^\s"']+?\/(?:colinha|api\/colinha\/[^?\s"']+)\?[^\s"']+/g, (url) =>
+    redactSensitiveUrl(url) ?? url)
+}
+
 export function redactSensitiveUrl(input: string | undefined | null): string | undefined {
   if (!input) return input ?? undefined
   const raw = input
   const qIndex = raw.indexOf("?")
   if (qIndex === -1) return raw
   const head = raw.slice(0, qIndex)
+  if (isColinhaPath(head)) return `${head}?${REDACTED}`
   const rest = raw.slice(qIndex + 1)
   const hashIndex = rest.indexOf("#")
   const queryPart = hashIndex === -1 ? rest : rest.slice(0, hashIndex)
@@ -73,10 +88,12 @@ type ScrubbableEvent = {
   request?: {
     url?: string | undefined
     query_string?: string | Record<string, string> | undefined
+    headers?: Record<string, string> | undefined
   } | undefined
   breadcrumbs?: Array<{ data?: Record<string, unknown> | undefined } | null | undefined> | undefined
   tags?: Record<string, unknown> | undefined
   extra?: Record<string, unknown> | undefined
+  exception?: { values?: Array<{ value?: string | undefined }> | undefined } | undefined
 }
 
 export function scrubSentryEvent<T>(event: T | null | undefined): T | null {
@@ -87,7 +104,17 @@ export function scrubSentryEvent<T>(event: T | null | undefined): T | null {
     target.request.url = redactSensitiveUrl(target.request.url)
   }
   if (target.request && target.request.query_string !== undefined) {
-    target.request.query_string = scrubQueryString(target.request.query_string)
+    target.request.query_string = isColinhaPath(target.request.url ?? "")
+      ? REDACTED
+      : scrubQueryString(target.request.query_string)
+  }
+  if (target.request?.headers) {
+    for (const key of Object.keys(target.request.headers)) {
+      if (/^referr?er$/i.test(key)) {
+        const value = target.request.headers[key]
+        target.request.headers[key] = redactSensitiveUrl(value) ?? value
+      }
+    }
   }
 
   if (Array.isArray(target.breadcrumbs)) {
@@ -103,6 +130,9 @@ export function scrubSentryEvent<T>(event: T | null | undefined): T | null {
 
   scrubBagInPlace(target.tags)
   scrubBagInPlace(target.extra)
+  for (const exception of target.exception?.values ?? []) {
+    if (exception.value) exception.value = scrubColinhaUrlInText(exception.value)
+  }
 
   return event
 }
@@ -112,6 +142,8 @@ function scrubBagInPlace(bag: Record<string, unknown> | undefined) {
   for (const key of Object.keys(bag)) {
     if (isSensitiveKey(key)) {
       bag[key] = REDACTED
+    } else if (typeof bag[key] === "string") {
+      bag[key] = scrubColinhaUrlInText(bag[key] as string)
     }
   }
 }

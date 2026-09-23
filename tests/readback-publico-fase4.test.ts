@@ -402,10 +402,11 @@ test("watchdog propaga cancelamento externo ao grupo inteiro", async () => {
     await new Promise((resolve) => setTimeout(resolve, 20))
   }
   assert.ok(existsSync(childPidPath), "fixture não iniciou o processo descendente")
+  const closed = new Promise<number | null>((resolve) => wrapper.once("close", resolve))
   wrapper.kill("SIGTERM")
   await new Promise((resolve) => setTimeout(resolve, 100))
   wrapper.kill("SIGTERM")
-  const exitCode = await new Promise<number | null>((resolve) => wrapper.once("close", resolve))
+  const exitCode = await closed
   assert.equal(exitCode, 143)
   const childPid = Number(readFileSync(childPidPath, "utf8"))
   let alive = true
