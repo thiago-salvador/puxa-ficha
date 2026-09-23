@@ -2,11 +2,13 @@
 
 import {
   startTransition,
+  Suspense,
   useDeferredValue,
   useId,
   useMemo,
   useRef,
   useState,
+  useEffect,
 } from "react"
 import Link from "next/link"
 import { useVirtualizer } from "@tanstack/react-virtual"
@@ -24,6 +26,8 @@ import { CandidatoCard } from "@/components/CandidatoCard"
 import { CandidatePhoto } from "@/components/CandidatePhoto"
 import { GlobalSearchToolbarButton } from "@/components/GlobalSearchProvider"
 import { PartyCombobox } from "@/components/PartyCombobox"
+import { PartyLogoMark } from "@/components/PartyLogoMark"
+import { PartyFilterNavigationSync } from "@/components/PartyFilterNavigationSync"
 import { SortOrderMenu, type SortKey } from "@/components/SortOrderMenu"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import {
@@ -40,6 +44,7 @@ import { compareCandidateSortValues } from "@/lib/candidate-sort"
 import { PATRIMONIO_ATIPICO_ROTULO } from "@/lib/patrimonio-atipico"
 import { normalizeForSearch } from "@/lib/search-normalize"
 import type { Candidato } from "@/lib/types"
+import { readPartyFilterFromSearchParams, replacePartyFilterInBrowserUrl, subscribeToPartyFilterUrlChanges } from "@/lib/party-filter-url"
 
 interface CandidatoGridProps {
   candidatos: Candidato[]
@@ -214,11 +219,23 @@ export function CandidatoGrid({
 
   const partidos = useMemo(
     () =>
-      [...new Set(candidatos.map((c) => c.partido_sigla))]
-        .filter((value) => !isUncertainParty(value))
+      [...new Set(candidatos.map((c) => resolveCanonicalPartySigla(c.partido_sigla)))]
+        .filter((value): value is string => value != null && !isUncertainParty(value))
         .sort(),
     [candidatos]
   )
+
+  useEffect(() => {
+    const onPopState = () => {
+      setPartidoFilter(readPartyFilterFromSearchParams(window.location.search))
+    }
+    onPopState()
+    return subscribeToPartyFilterUrlChanges(onPopState)
+  }, [])
+
+  const handlePartyFilterChange = (value: string) => {
+    setPartidoFilter(replacePartyFilterInBrowserUrl(value))
+  }
 
   const filtered = useMemo(() => {
     let result = filtrarCandidatosPorBusca(candidatos, deferredQuery)
@@ -306,6 +323,9 @@ export function CandidatoGrid({
 
   return (
     <>
+      <Suspense fallback={null}>
+        <PartyFilterNavigationSync onChange={setPartidoFilter} />
+      </Suspense>
       <div className="mb-5 flex flex-col gap-3 sm:mb-10 sm:gap-4">
         <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
           <div className="flex min-w-0 items-center gap-3 xl:flex-1">
@@ -367,7 +387,7 @@ export function CandidatoGrid({
             <PartyCombobox
               options={partidos}
               value={partidoFilter}
-              onChange={setPartidoFilter}
+              onChange={handlePartyFilterChange}
             />
             <SortOrderMenu value={sort} onChange={setSort} />
             {viewToggle}
@@ -381,7 +401,7 @@ export function CandidatoGrid({
           <PartyCombobox
             options={partidos}
             value={partidoFilter}
-            onChange={setPartidoFilter}
+            onChange={handlePartyFilterChange}
           />
           <SortOrderMenu value={sort} onChange={setSort} />
           {viewToggle}
@@ -389,7 +409,7 @@ export function CandidatoGrid({
             <button
               type="button"
               onClick={() => {
-                setPartidoFilter("")
+                handlePartyFilterChange("")
                 setSort("nome")
               }}
               className="min-h-11 w-full rounded-full border border-border px-4 text-left text-[length:var(--text-caption)] font-semibold text-foreground"
@@ -406,10 +426,11 @@ export function CandidatoGrid({
           {partidoFilter && (
             <button
               type="button"
-              onClick={() => setPartidoFilter("")}
+              onClick={() => handlePartyFilterChange("")}
               className="inline-flex min-h-11 min-w-11 items-center justify-center p-0.5 md:min-h-0 md:p-0"
             >
               <span className="rounded-full border border-border px-3 py-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.05em] text-foreground transition-colors hover:bg-muted">
+                <PartyLogoMark sigla={partidoFilter} className="h-5 w-7 rounded-[4px] border-0 p-0 shadow-none" />
                 Partido: {partidoFilter} ×
               </span>
             </button>

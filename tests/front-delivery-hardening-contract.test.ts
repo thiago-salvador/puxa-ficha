@@ -4,7 +4,7 @@ import { test } from "node:test"
 
 test("UF route permanently redirects uppercase paths to the lowercase canonical URL", () => {
   const source = readFileSync("src/app/(site)/uf/[uf]/page.tsx", "utf8")
-  assert.match(source, /permanentRedirect\(`\/uf\/\$\{uf\.toLowerCase\(\)\}`\)/)
+  assert.match(source, /permanentRedirect\(getCanonicalStateRedirectPath\(uf, await searchParams\)\)/)
 })
 
 test("sitemap does not manufacture request-time lastmod for static URLs", () => {

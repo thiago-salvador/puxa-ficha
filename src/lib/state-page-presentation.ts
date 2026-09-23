@@ -1,5 +1,18 @@
 import { getEstadoNome } from "@/lib/br-uf"
 
+export function getCanonicalStateRedirectPath(
+  uf: string,
+  searchParams: Record<string, string | string[] | undefined>,
+): string {
+  const query = new URLSearchParams()
+  for (const [key, value] of Object.entries(searchParams)) {
+    if (Array.isArray(value)) value.forEach((item) => query.append(key, item))
+    else if (value !== undefined) query.append(key, value)
+  }
+  const suffix = query.size > 0 ? `?${query.toString()}` : ""
+  return `/uf/${uf.toLowerCase()}${suffix}`
+}
+
 export function getStatePagePresentation(uf: string) {
   const name = getEstadoNome(uf)
   if (!name) return null
