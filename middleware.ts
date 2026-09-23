@@ -73,7 +73,7 @@ const CANDIDATO_NOT_FOUND_BODY = `<!doctype html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<title>404 - Candidato nao encontrado - Puxa Ficha</title>
+<title>404 - Candidato não encontrado - Puxa Ficha</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
@@ -88,7 +88,7 @@ a:hover{opacity:0.7}
 <body>
 <main class="wrap">
 <h1>404</h1>
-<p>Candidato nao encontrado. O slug informado nao corresponde a nenhuma ficha publica.</p>
+<p>Candidato não encontrado. O endereço informado não corresponde a nenhuma ficha pública.</p>
 <a href="/">Voltar para a home</a>
 </main>
 </body>
@@ -210,8 +210,8 @@ function guardRankingRoute(request: NextRequest): NextResponse | null {
   const slug = decodeURIComponent(slugSegment)
   if (getRankingDefinitionBySlug(slug)) return null
   return buildSoftNotFoundResponse(
-    "Ranking nao encontrado",
-    "Ranking nao encontrado. O slug informado nao corresponde a nenhuma lista publica.",
+    "Ranking não encontrado",
+    "Ranking não encontrado. O endereço informado não corresponde a nenhuma lista pública.",
   )
 }
 
@@ -223,8 +223,8 @@ function guardUfRoute(request: NextRequest): NextResponse | null {
   const uf = safeDecodePathSegment(ufSegment)
   if (resolveEstadoUf(uf)) return null
   return buildSoftNotFoundResponse(
-    "UF nao encontrada",
-    "UF nao encontrada. Use a sigla de duas letras do estado brasileiro (ex.: sp, rj, mg).",
+    "UF não encontrada",
+    "UF não encontrada. Use a sigla de duas letras do estado brasileiro (ex.: sp, rj, mg).",
   )
 }
 
