@@ -620,6 +620,13 @@
       "ate": "20260923001140",
       "allowlist": "scripts/audit/allowlist-link-check-48-claims-20260922.json",
       "divida": null
+    },
+    {
+      "nome": "eliziane-partido-20260923",
+      "desde": "20260923175946",
+      "ate": "20260923175946",
+      "allowlist": "scripts/audit/allowlist-eliziane-partido-20260923.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
