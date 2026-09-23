@@ -1,6 +1,7 @@
 import "server-only"
 
 import { createServerSupabaseClient } from "@/lib/supabase"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 import type { ColinhaCandidate, ColinhaState, SlotId } from "@/lib/colinha"
 
 const RELATION = "candidatos_roster_2026_publico"
@@ -30,6 +31,7 @@ async function enrichPublished(rows: RosterRow[]): Promise<ColinhaCandidate[]> {
     .from("candidatos")
     .select("sq_candidato_2026,slug")
     .in("sq_candidato_2026", sqs)
+    .abortSignal(supabaseQueryTimeoutSignal())
   if (error || !identities?.length) return rows
 
   const slugBySq = new Map(identities.map((row) => [String(row.sq_candidato_2026), String(row.slug)]))
@@ -38,6 +40,7 @@ async function enrichPublished(rows: RosterRow[]): Promise<ColinhaCandidate[]> {
     .from("candidatos_publico")
     .select("id,slug,foto_url")
     .in("slug", slugs)
+    .abortSignal(supabaseQueryTimeoutSignal())
   if (publishedError || !published?.length) return rows
   const photoBySlug = new Map(published.map((row) => [String(row.slug), row.foto_url as string | null]))
   const idBySlug = new Map(published.map((row) => [String(row.slug), String(row.id)]))
@@ -45,6 +48,7 @@ async function enrichPublished(rows: RosterRow[]): Promise<ColinhaCandidate[]> {
     .from("v_comparador")
     .select("id,patrimonio_declarado,total_processos,pontos_atencao")
     .in("id", [...idBySlug.values()])
+    .abortSignal(supabaseQueryTimeoutSignal())
   const summaryById = summaryError ? new Map<string, {
     patrimonio: number | null; processos: number | null; pontos_atencao: number | null
   }>() : new Map((summaries ?? []).map((row) => [String(row.id), {
@@ -79,6 +83,7 @@ export async function loadColinhaCandidatesForSelection(state: ColinhaState): Pr
     const client = createServerSupabaseClient({ cacheMode: "no-store" })
     const { data, error } = await client.from(RELATION).select(COLUMNS)
       .eq("ano", 2026).in("uf", [state.uf, "BR"]).in("sq_candidato", sqs)
+      .abortSignal(supabaseQueryTimeoutSignal())
     if (error) return empty(true)
     const rows = (data ?? []) as unknown as RosterRow[]
     return result(rows, await enrichPublished(rows))
@@ -110,7 +115,7 @@ export async function searchColinhaCandidates(
     if (safe) {
       request = request.or(`nome_urna.ilike.%${safe}%,nome_completo.ilike.%${safe}%,numero_urna.ilike.%${safe}%,partido_sigla.ilike.%${safe}%`)
     }
-    const { data, error } = await request
+    const { data, error } = await request.abortSignal(supabaseQueryTimeoutSignal())
     if (error) return empty(true)
     const rows = (data ?? []) as unknown as RosterRow[]
     return result(rows, await enrichPublished(rows))

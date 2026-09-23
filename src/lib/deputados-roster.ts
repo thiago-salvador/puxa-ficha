@@ -1,6 +1,7 @@
 import "server-only"
 
 import { createServerSupabaseClient } from "@/lib/supabase"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 const DEPUTADOS_ROSTER_PUBLIC_RELATION =
   process.env.PF_DEPUTADOS_ROSTER_PUBLIC_RELATION?.trim() || "candidatos_roster_2026_publico"
@@ -63,6 +64,7 @@ async function runRosterQuery(
     .eq("cargo", cargo)
     .order("nome_urna", { ascending: true })
     .range((page - 1) * DEPUTADOS_PAGE_SIZE, page * DEPUTADOS_PAGE_SIZE - 1)
+    .abortSignal(supabaseQueryTimeoutSignal())
 
   if (search) {
     const escaped = cleanFilter(search).replace(/[%_]/g, "")
