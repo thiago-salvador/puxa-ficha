@@ -65,6 +65,7 @@ import { groupLegislacaoProfileItems } from "@/lib/legislacao-profile-groups"
 import { FollowCandidateButton } from "./alerts/FollowCandidateButton"
 import { SenadoRunningMates, type SenadoRunningMatesPayload } from "./SenadoRunningMates"
 import { CandidateGeneralData } from "./CandidateGeneralData"
+import { CiteEvidenceButton } from "./CiteEvidenceButton"
 import { AttributedFactChecks } from "./AttributedFactChecks"
 import { AttributedFactChecksOverview } from "./AttributedFactChecksOverview"
 import { EditorialBadge } from "./attention-points/EditorialBadge"
@@ -899,6 +900,18 @@ export function CandidatoProfile({
                   candidateSlug={ficha.slug}
                 />
                 <CandidateGeneralData ficha={ficha} />
+                {ficha.sites_candidato &&
+                  (ficha.sites_candidato.resultado === "publicado" || ficha.sites_candidato.resultado === "vazio_confirmado") && (
+                    <div className="max-w-prose space-y-2 rounded border border-border p-4">
+                      <p className="text-sm text-muted-foreground">
+                        Cite este recorte dos sites declarados no TSE, com a data da coleta do pacote oficial.
+                      </p>
+                      <CiteEvidenceButton
+                        label="Como citar os sites declarados"
+                        citation={`Puxa Ficha. Sites declarados no TSE em 2026 para ${ficha.nome_urna}: ${ficha.sites_candidato.resultado === "publicado" ? `${ficha.sites_candidato.sites.length} URL(s) publicadas no recorte da ficha` : "nenhum registro localizado no pacote oficial consultado"}. Fonte: ${ficha.sites_candidato.fonte_url}. Pacote coletado em ${ficha.sites_candidato.coletado_em}. Ficha: https://puxaficha.com.br/candidato/${ficha.slug}?tab=geral. A coleta não comprova a lista completa de sites da pessoa.`}
+                      />
+                    </div>
+                  )}
               </div>
             )}
 
