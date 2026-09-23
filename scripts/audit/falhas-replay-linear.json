@@ -1,7 +1,8 @@
 {
   "_comentario": "Conjunto FECHADO das migrations que falham no replay linear REAL (tolerante) em banco vazio, medido pelo harness scripts/audit/replay-migrations.sh. O modo --gate compara o resultado de uma execucao real contra esta lista: falha NOVA e regressao de replay em qualquer posicao (inclusive depois da 179a, que o modo estrito nunca alcanca); falha que sumiu exige regenerar este manifesto deliberadamente no mesmo PR. Regenerar: scripts/audit/replay-migrations.sh linear --tolerante e copiar os nomes.",
-  "aplicadas_esperadas": 393,
+  "aplicadas_esperadas": 394,
   "_comentario_20260923120000_20260923130000": "Medido no --gate local PostgreSQL 17 apos rebase em 3e7adad8: roster e analytics da colinha aplicam limpo; 393 aplicadas + 105 falhas conhecidas = 498 migrations. O conjunto de falhas permaneceu igual ao manifesto da main.",
+  "_comentario_20260923140000": "Medido no --gate local PostgreSQL 17 sobre 490b8208: numero_urna aplica limpa; 394 aplicadas + 105 falhas conhecidas = 499 migrations. O conjunto de falhas permaneceu igual.",
   "_comentario_20260923001140": "Medido no replay PG17 local: 391 aplicadas + 105 falhas conhecidas = 496 migrations. A curadoria dos 48 IDs retorna sem escrita somente no replay sintetico com coorte totalmente ausente; em producao, ausencia parcial ou drift aborta.",
   "_comentario_20260922160000": "aplicadas_esperadas 389 -> 390 em 22/09/2026: a migration da issue #424 (fontes de pontos_atencao apos o link-check) e DML puro com guards de preimagem exata, mesmo esqueleto da 20260825123000 (issue #96), entao aplica limpo no banco sintetico. Liquido 494 + 1 = 495 migrations.",
   "_comentario_20260922150000": "aplicadas_esperadas 388 -> 389 em 22/09/2026: a migration da issue #433 (dimas-cassimiro Deferido) e DML puro com guard de coorte vazia e guard de pf.replay, clone da 20260921200000, entao aplica limpo no banco sintetico. Liquido 493 + 1 = 494 migrations.",

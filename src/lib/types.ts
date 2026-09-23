@@ -36,6 +36,7 @@ export interface Candidato {
     | 'Deputado Federal'
     | 'Nenhum';
   estado: string | null; // UF pra governadores
+  numero_urna?: string | null;
 
   status: 'pre-candidato' | 'candidato' | 'indeferido' | 'desistente' | 'removido';
   situacao_candidatura?: string | null;

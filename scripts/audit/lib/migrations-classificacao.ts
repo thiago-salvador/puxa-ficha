@@ -484,7 +484,10 @@ export const MEDICAO_REPLAY = Object.freeze({
   // 116 -> 118 em 23/09/2026: roster e analytics da colinha são duas DDLs.
   // Remedido no --schema-gate local PG17 sobre 3e7adad8: 118 aplicadas,
   // 380 puladas, zero falhas; hash 297b4cee1bc6967bf5f1ca534668d4a3d09a89cc77a52f4e5ab6fe0f368a9aef.
-  schemaReplayTamanho: 118,
+  // 118 -> 119: numero_urna da Frente 5 adiciona coluna, indice, view e grants.
+  // --schema-gate PG17 sobre 490b8208: 119 aplicadas, 380 puladas, zero falhas;
+  // hash d9668f6a171e73ed339fd00d539ae8a86144fe0f35708dc1021de12191c549b8.
+  schemaReplayTamanho: 119,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

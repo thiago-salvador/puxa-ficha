@@ -1,0 +1,36 @@
+name: Reverter schema numero_urna em produção
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: "SHA de 40 caracteres já mergeado em main"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-db-migrations
+  cancel-in-progress: false
+
+jobs:
+  rollback:
+    name: Reverter 20260923140000 numero_urna
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment: production
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.expected_sha }}
+          persist-credentials: false
+      - uses: ./.github/actions/install-postgresql-client-17
+      - name: Reverter migration fechada
+        env:
+          PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+          PF_EXPECTED_SHA: ${{ inputs.expected_sha }}
+          GITHUB_REF: ${{ github.ref }}
+        run: bash scripts/audit/rollback-numero-urna-production.sh
