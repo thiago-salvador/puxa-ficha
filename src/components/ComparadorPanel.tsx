@@ -29,9 +29,9 @@ import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { formacaoPublicaDe } from "@/lib/formacao-display"
 import { comparadorToggleLabel } from "@/lib/comparador-labels"
+import { mergeComparadorQueryString } from "@/lib/comparador-query"
 import type { CandidatoComparavel } from "@/lib/types"
 import {
-  COMPARADOR_EIXO_DEFAULT,
   COMPARADOR_EIXOS,
   type ComparadorEixo,
   comparadorEixoLabels,
@@ -63,21 +63,13 @@ function buildCompararQueryString(
   candidatos: CandidatoComparavel[],
   selectedIds: string[],
   eixo: ComparadorEixo,
-  scope: { cargo: string; uf: string } | null
+  scope: { cargo: string; uf: string } | null,
+  currentSearch: string,
 ): string {
-  const params = new URLSearchParams()
-  selectedIds.slice(0, 4).forEach((id, index) => {
-    const c = candidatos.find((x) => x.id === id)
-    if (c) params.set(`c${index + 1}`, c.slug)
-  })
-  if (eixo !== COMPARADOR_EIXO_DEFAULT) {
-    params.set("eixo", eixo)
-  }
-  if (scope) {
-    params.set("cargo", scope.cargo)
-    params.set("uf", scope.uf)
-  }
-  return params.toString()
+  const slugs = selectedIds.slice(0, 4)
+    .map((id) => candidatos.find((candidate) => candidate.id === id)?.slug)
+    .filter((slug): slug is string => Boolean(slug))
+  return mergeComparadorQueryString(currentSearch, slugs, eixo, scope)
 }
 
 function resolveInitialSelectedIds(
@@ -193,21 +185,15 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
 
   useEffect(() => {
     if (candidatos.length === 0) return
-    const qs = buildCompararQueryString(candidatos, selectedIds, eixo, hubScope)
     const current = searchParams.toString()
+    const qs = buildCompararQueryString(candidatos, selectedIds, eixo, hubScope, current)
     if (qs === current) return
-    if (selectedIds.length === 0) {
-      if (current.length > 0) {
-        router.replace(pathname, { scroll: false })
-      }
-      return
-    }
     router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false })
   }, [candidatos, eixo, hubScope, pathname, router, searchParams, selectedIds])
 
   const shareUrl =
     typeof window !== "undefined" && candidatos.length > 0 && selectedIds.length >= 2
-      ? `${window.location.origin}${pathname}?${buildCompararQueryString(candidatos, selectedIds, eixo, hubScope)}`
+      ? `${window.location.origin}${pathname}?${buildCompararQueryString(candidatos, selectedIds, eixo, hubScope, searchParams.toString())}`
       : ""
 
   const copyShareLink = async () => {

@@ -140,6 +140,66 @@ describe("filterGlobalSearchPalette", () => {
     },
   ]
 
+  it("aplica a normalização canônica de partido à busca da paleta", () => {
+    const result = filterGlobalSearchPalette("PODEMOS", [], [
+      {
+        href: "/candidato/a",
+        title: "Fulano",
+        subtitle: "PODE · Deputado · SP",
+        searchText: normalizeForSearch("Fulano São Paulo"),
+        party_sigla: "PODE",
+      },
+      {
+        href: "/candidato/b",
+        title: "Ciclano",
+        subtitle: "PT · Deputado · SP",
+        searchText: normalizeForSearch("Ciclano São Paulo"),
+        party_sigla: "PT",
+      },
+    ])
+    assert.deepEqual(result.candidates.map((item) => item.href), ["/candidato/a"])
+  })
+
+  it("combina o filtro de partido da URL com a busca textual", () => {
+    const result = filterGlobalSearchPalette("São", [], [
+      {
+        href: "/candidato/a",
+        title: "Fulano",
+        subtitle: "PT · Deputado · SP",
+        searchText: normalizeForSearch("Fulano São Paulo"),
+        party_sigla: "PT",
+      },
+      {
+        href: "/candidato/b",
+        title: "Ciclano",
+        subtitle: "PODE · Deputado · RJ",
+        searchText: normalizeForSearch("Ciclano São Paulo"),
+        party_sigla: "PODE",
+      },
+    ], undefined, "PT")
+    assert.deepEqual(result.candidates.map((item) => item.href), ["/candidato/a"])
+  })
+
+  it("aplica o filtro de partido da URL antes de digitar na paleta", () => {
+    const result = filterGlobalSearchPalette("", [], [
+      { href: "/candidato/a", title: "Fulano", subtitle: "PT", searchText: "fulano", party_sigla: "PT" },
+      { href: "/candidato/b", title: "Ciclano", subtitle: "PODE", searchText: "ciclano", party_sigla: "PODE" },
+    ], undefined, "PT")
+    assert.deepEqual(result.candidates.map((item) => item.href), ["/candidato/a"])
+  })
+
+  it("ignora filtro de URL inválido ou incerto", () => {
+    const candidate: GlobalSearchIndexItem = {
+      href: "/candidato/a",
+      title: "Fulano",
+      subtitle: "PT · Deputado · SP",
+      searchText: normalizeForSearch("Fulano"),
+      party_sigla: "PT",
+    }
+    assert.equal(filterGlobalSearchPalette("Fulano", [], [candidate], undefined, "INCERTO").candidates.length, 1)
+    assert.equal(filterGlobalSearchPalette("Fulano", [], [candidate], undefined, "NAO-EXISTE").candidates.length, 1)
+  })
+
   it("matches query without accents against indexed text", () => {
     const r = filterGlobalSearchPalette("economia", shortcuts, candidates)
     assert.equal(r.candidates.length, 1)

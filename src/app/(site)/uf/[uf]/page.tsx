@@ -30,7 +30,7 @@ import { StateIndicators } from "@/components/StateIndicators"
 import { StateRankingCards } from "@/components/StateRankingCards"
 import { formatCompact } from "@/lib/utils"
 import { buildTwitterMetadata } from "@/lib/metadata"
-import { getStatePagePresentation } from "@/lib/state-page-presentation"
+import { getCanonicalStateRedirectPath, getStatePagePresentation } from "@/lib/state-page-presentation"
 import { ShareButtons } from "@/components/ShareButtons"
 import { StateIndicatorComparison } from "@/components/StateIndicatorComparison"
 import { StatePrograms } from "@/components/StatePrograms"
@@ -83,11 +83,13 @@ export async function generateMetadata({
 
 export default async function UfHubPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ uf: string }>
+  searchParams: Promise<Record<string, string | string[] | undefined>>
 }) {
   const { uf } = await params
-  if (uf !== uf.toLowerCase()) permanentRedirect(`/uf/${uf.toLowerCase()}`)
+  if (uf !== uf.toLowerCase()) permanentRedirect(getCanonicalStateRedirectPath(uf, await searchParams))
   const nome = getEstadoNome(uf)
   if (!nome) notFound()
   const presentation = getStatePagePresentation(uf)!
