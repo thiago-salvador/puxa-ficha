@@ -7,7 +7,7 @@ import {
   type VerifiedCandidateUpdate,
 } from "@/lib/verified-candidate-updates"
 
-export const IMPRENSA_ATUALIZACOES_PAGE_SIZE = 20
+const IMPRENSA_ATUALIZACOES_PAGE_SIZE = 20
 
 export interface ImprensaAtualizacoesPage {
   status: "available" | "unavailable"

@@ -22,7 +22,7 @@ export interface ResolveAlertCohortInput {
 }
 
 export const ALERT_COHORT_MAX_SUBSCRIPTIONS = 10
-export const ALERT_COHORT_MAX_CANDIDATES = 500
+const ALERT_COHORT_MAX_CANDIDATES = 500
 export const ALERT_COHORT_CARGOS = ["Presidente", "Governador", "Senador"] as const
 export const ALERT_COHORT_UFS = [
   "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA",
