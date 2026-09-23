@@ -1,6 +1,7 @@
 import "server-only"
 
 import { createServiceRoleSupabaseClient } from "@/lib/supabase"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 import {
   buildImprensaFreshnessDataset,
   type FreshnessReceipt,
@@ -20,6 +21,7 @@ export async function getImprensaFreshnessDataset(): Promise<ImprensaFreshnessDa
         .order("escopo", { ascending: true })
         .order("alvo", { ascending: true })
         .range(offset, offset + 499)
+        .abortSignal(supabaseQueryTimeoutSignal())
       if (error) throw new Error(`coleta_log_ultima (${source}): ${error.message}`)
       const page = Array.isArray(data) ? data : []
       for (const row of page) {
