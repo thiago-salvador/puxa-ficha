@@ -483,11 +483,16 @@ export const MEDICAO_REPLAY = Object.freeze({
   // schema, sem DML, e entra no replay de schema. Medido no --schema-gate local PG17:
   // 116 aplicadas, zero falhas e hash
   // 3fdb860861d80a7e679681886d6972749880278a04a41017d9ad2539489e2c5c.
-  // 118 -> 119 em 23/09/2026: 20260923145603, apos 20260923130000,
-  // adiciona tabela, indices, politicas e trigger; schema-gate PG17 mediu
-  // 119 aplicadas, 380 puladas, zero falhas; hash
-  // 42bd5abb0be1d1006f48f8d697829fa46e38a6041963fd3ec33984a494da67ba.
-  schemaReplayTamanho: 119,
+  // 116 -> 118 em 23/09/2026: roster e analytics da colinha são duas DDLs.
+  // Remedido no --schema-gate local PG17 sobre 3e7adad8: 118 aplicadas,
+  // 380 puladas, zero falhas; hash 297b4cee1bc6967bf5f1ca534668d4a3d09a89cc77a52f4e5ab6fe0f368a9aef.
+  // 118 -> 119: numero_urna da Frente 5 adiciona coluna, indice, view e grants.
+  // --schema-gate PG17 sobre 490b8208: 119 aplicadas, 380 puladas, zero falhas;
+  // hash d9668f6a171e73ed339fd00d539ae8a86144fe0f35708dc1021de12191c549b8.
+  // 119 -> 120: assinaturas por recorte após numero_urna. --schema-gate PG17
+  // mediu 120 aplicadas, 380 puladas, zero falhas; hash
+  // 86205cf1b7110a461b925b59b2669f09e43b1f30bf01fd593a902430a969c2fa.
+  schemaReplayTamanho: 120,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

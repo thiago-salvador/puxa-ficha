@@ -1,6 +1,11 @@
 import type { Candidato } from "@/lib/types"
 import { getEstadoNome } from "@/lib/br-uf"
-import { formatPartyPublicLabel, isUncertainParty } from "@/lib/party-utils"
+import {
+  formatPartyPublicLabel,
+  isUncertainParty,
+  matchesPartySiglaFilter,
+  resolveCanonicalPartySigla,
+} from "@/lib/party-utils"
 import { normalizeForSearch } from "@/lib/search-normalize"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { formatCargoDisputadoPublicLabel } from "@/lib/ui-labels"
@@ -23,6 +28,8 @@ export interface GlobalSearchIndexItem {
   /** Só temas e títulos de votação normalizados; vazio se não houver votos mapeados. */
   searchTextVotacao?: string
   foto_url?: string | null
+  /** Sigla bruta da legenda, usada para canonicalização em filtros. */
+  party_sigla?: string | null
   badge?: string | null
 }
 
@@ -209,6 +216,7 @@ export function buildGlobalSearchIndexItems(
       searchTextBio,
       searchTextVotacao: searchTextVotacao || undefined,
       foto_url: c.foto_url,
+      party_sigla: c.partido_sigla,
     }
   })
 }
@@ -271,20 +279,29 @@ export function filterGlobalSearchPalette(
   query: string,
   shortcuts: GlobalSearchIndexItem[],
   candidates: GlobalSearchIndexItem[],
-  displayLimit = DEFAULT_DISPLAY_LIMIT
+  displayLimit = DEFAULT_DISPLAY_LIMIT,
+  partyFilter = "",
 ): { shortcuts: GlobalSearchIndexItem[]; candidates: GlobalSearchIndexItem[] } {
   const q = normalizeForSearch(query)
+  const canonicalPartyFilter = resolveCanonicalPartySigla(partyFilter)
+  const candidatesByParty = canonicalPartyFilter
+    ? candidates.filter((c) => matchesPartySiglaFilter(c.party_sigla, canonicalPartyFilter))
+    : candidates
   if (!q) {
     return {
       shortcuts,
-      candidates: candidates.slice(0, displayLimit),
+      candidates: candidatesByParty.slice(0, displayLimit),
     }
   }
   const filteredShortcuts = shortcuts
     .filter((s) => paletteItemHaystack(s).includes(q))
     .sort((a, b) => scoreShortcutForQuery(b, q) - scoreShortcutForQuery(a, q))
-  const filteredCandidates = candidates
-    .filter((c) => c.searchText.includes(q))
+  const partyQuery = resolveCanonicalPartySigla(query)
+  const filteredCandidates = candidatesByParty
+    .filter((c) =>
+      c.searchText.includes(q) ||
+      (partyQuery != null && matchesPartySiglaFilter(c.party_sigla, partyQuery)),
+    )
     .sort((a, b) => scoreCandidateForQuery(b, q) - scoreCandidateForQuery(a, q))
     .slice(0, displayLimit)
   return { shortcuts: filteredShortcuts, candidates: filteredCandidates }

@@ -2,6 +2,7 @@
 
 import {
   createContext,
+  Suspense,
   useCallback,
   useContext,
   useDeferredValue,
@@ -16,6 +17,10 @@ import { Dialog } from "@base-ui/react/dialog"
 import { Search, Command, ArrowUpRight, X } from "lucide-react"
 
 import { CandidatePhoto } from "@/components/CandidatePhoto"
+import { PartyLogoMark } from "@/components/PartyLogoMark"
+import { PartyFilterNavigationSync } from "@/components/PartyFilterNavigationSync"
+import { readPartyFilterFromSearchParams, replacePartyFilterInBrowserUrl, subscribeToPartyFilterUrlChanges } from "@/lib/party-filter-url"
+import { isUncertainParty, matchesPartySiglaFilter, resolveCanonicalPartySigla } from "@/lib/party-utils"
 import {
   filterGlobalSearchPalette,
   GLOBAL_SEARCH_PALETTE_DISPLAY_LIMIT,
@@ -195,8 +200,9 @@ function buildPaletteModel(args: {
   filtered: { shortcuts: GlobalSearchIndexItem[]; candidates: GlobalSearchIndexItem[] }
   recentQueries: string[]
   recentCandidates: GlobalSearchIndexItem[]
+  partyFilter: string
 }): { flatRows: PaletteNavRow[]; sections: PaletteSectionSpec[] } {
-  const { queryNormalized, shortcutItems, initialCandidates, filtered, recentQueries, recentCandidates } =
+  const { queryNormalized, shortcutItems, initialCandidates, filtered, recentQueries, recentCandidates, partyFilter } =
     args
 
   if (queryNormalized) {
@@ -220,9 +226,12 @@ function buildPaletteModel(args: {
     return { flatRows: rows, sections }
   }
 
-  const recentHrefSet = new Set(recentCandidates.map((c) => c.href))
+  const visibleRecentCandidates = partyFilter
+    ? recentCandidates.filter((candidate) => matchesPartySiglaFilter(candidate.party_sigla, partyFilter))
+    : recentCandidates
+  const recentHrefSet = new Set(visibleRecentCandidates.map((c) => c.href))
   const explore = exploreCandidatesExcludingHrefs(
-    initialCandidates,
+    partyFilter ? filtered.candidates : initialCandidates,
     recentHrefSet,
     GLOBAL_SEARCH_PALETTE_DISPLAY_LIMIT
   )
@@ -234,10 +243,10 @@ function buildPaletteModel(args: {
       rows: recentQueries.map((query) => ({ kind: "recent_query" as const, query })),
     })
   }
-  if (recentCandidates.length > 0) {
+  if (visibleRecentCandidates.length > 0) {
     sections.push({
       label: "Fichas recentes",
-      rows: recentCandidates.map((item) => ({ kind: "link" as const, item })),
+      rows: visibleRecentCandidates.map((item) => ({ kind: "link" as const, item })),
     })
   }
   sections.push({
@@ -268,12 +277,21 @@ export function GlobalSearchProvider({
   const lastZeroResultQueryRef = useRef("")
   const [open, setOpen] = useState(false)
   const [query, setQuery] = useState("")
+  const [partyFilter, setPartyFilter] = useState("")
   const [activeIndex, setActiveIndex] = useState(-1)
   const [candidates, setCandidates] = useState<GlobalSearchIndexItem[]>(initialCandidates)
   const [loadState, setLoadState] = useState<SearchIndexLoadState>(
     initialCandidates.length > 0 ? "ready" : "idle"
   )
   const deferredQuery = useDeferredValue(query)
+
+  useEffect(() => {
+    const syncPartyFilter = () => {
+      setPartyFilter(readPartyFilterFromSearchParams(window.location.search))
+    }
+    syncPartyFilter()
+    return subscribeToPartyFilterUrlChanges(syncPartyFilter)
+  }, [])
 
   const shortcutItems = useMemo(() => buildShortcutItems(senadoEnabled), [senadoEnabled])
 
@@ -359,9 +377,20 @@ export function GlobalSearchProvider({
   const queryNorm = normalizeForSearch(deferredQuery)
 
   const filtered = useMemo(
-    () => filterGlobalSearchPalette(deferredQuery, shortcutItems, candidates),
-    [deferredQuery, candidates, shortcutItems]
+    () => filterGlobalSearchPalette(deferredQuery, shortcutItems, candidates, undefined, partyFilter),
+    [deferredQuery, candidates, shortcutItems, partyFilter]
   )
+
+  const partyOptions = useMemo(
+    () => [...new Set(candidates.map((item) => resolveCanonicalPartySigla(item.party_sigla)))]
+      .filter((value): value is string => value != null && !isUncertainParty(value))
+      .sort((a, b) => (a === partyFilter ? -1 : b === partyFilter ? 1 : a.localeCompare(b, "pt-BR"))),
+    [candidates, partyFilter],
+  )
+
+  const handlePartyFilterChange = useCallback((value: string) => {
+    setPartyFilter(replacePartyFilterInBrowserUrl(value))
+  }, [])
 
   const { flatRows, sections } = useMemo(
     () =>
@@ -372,12 +401,14 @@ export function GlobalSearchProvider({
         filtered,
         recentQueries: recentsSnapshot.queries,
         recentCandidates: recentsSnapshot.candidates,
+        partyFilter,
       }),
     [
       queryNorm,
       shortcutItems,
       candidates,
       filtered,
+      partyFilter,
       recentsSnapshot.queries,
       recentsSnapshot.candidates,
     ]
@@ -463,6 +494,9 @@ export function GlobalSearchProvider({
 
   return (
     <GlobalSearchContext.Provider value={contextValue}>
+      <Suspense fallback={null}>
+        <PartyFilterNavigationSync onChange={setPartyFilter} />
+      </Suspense>
       {children}
 
       <Dialog.Root open={open} onOpenChange={setOpen}>
@@ -511,6 +545,22 @@ export function GlobalSearchProvider({
                     className="h-12 w-full rounded-full border border-border bg-background pl-11 pr-4 text-base font-medium text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-foreground/40 focus:ring-2 focus:ring-foreground/10 md:text-[length:var(--text-body)]"
                   />
                 </div>
+                {partyOptions.length > 0 && (
+                  <div className="mt-3 flex gap-2 overflow-x-auto pb-1" aria-label="Filtrar busca por partido">
+                    {partyOptions.map((party) => (
+                      <button
+                        key={party}
+                        type="button"
+                        aria-pressed={partyFilter === party}
+                        onClick={() => handlePartyFilterChange(partyFilter === party ? "" : party)}
+                        className={`inline-flex min-h-9 shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-1 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.05em] transition-colors ${partyFilter === party ? "border-foreground bg-foreground text-background" : "border-border text-foreground hover:bg-muted"}`}
+                      >
+                        <PartyLogoMark sigla={party} className="h-5 w-7 rounded-[3px] border-0 p-0 shadow-none" />
+                        {party}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div aria-live="polite" aria-atomic="true" className="sr-only">
@@ -627,6 +677,10 @@ export function GlobalSearchProvider({
                                           className="size-11 shrink-0 rounded-full object-cover object-top"
                                           fallbackClassName="size-11 shrink-0 rounded-full"
                                           initialsClassName="text-xs"
+                                        />
+                                        <PartyLogoMark
+                                          sigla={item.party_sigla}
+                                          className="h-8 w-10 rounded-[5px] border-0 p-0 shadow-none"
                                         />
                                         <div className="min-w-0 flex-1">
                                           <p className="font-heading text-[18px] uppercase leading-none text-foreground">

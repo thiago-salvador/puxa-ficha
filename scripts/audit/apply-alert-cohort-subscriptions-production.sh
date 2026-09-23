@@ -49,9 +49,9 @@ export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
 version=20260923145603
-previous_version=20260923130000
-previous_digest=sha256:eb7297339774d38cf32bb3607a372cb23d047a7adc2e719300141f4681c95895
-previous_migration="$ROOT/supabase/migrations/${previous_version}_analytics_colinha_share.sql"
+previous_version=20260923140000
+previous_digest=sha256:a925f656a6fc5ac68581ab0bb73890a6a415306843c8b89dcb5b4e1c4b3e65f4
+previous_migration="$ROOT/supabase/migrations/${previous_version}_numero_urna_schema.sql"
 migration="$ROOT/supabase/migrations/${version}_alert_cohort_subscriptions.sql"
 rollback="$ROOT/supabase/rollback/${version}_alert_cohort_subscriptions.rollback.sql"
 readback="$ROOT/supabase/readback/${version}_alert_cohort_subscriptions.readback.sql"

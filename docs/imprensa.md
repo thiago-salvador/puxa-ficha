@@ -28,6 +28,6 @@ Os dados do TSE exigem crédito à fonte e observação da licença indicada no 
 - `/imprensa`: tabela, filtros, proveniência e links para as fichas.
 - `/api/imprensa/export?format=csv|json&cargo=...&uf=...`: export principal; `/api/imprensa/export/sites` e `/api/imprensa/export/processos`: ocorrências longas. As respostas de export usam `X-Robots-Tag: noindex`.
 
-Antes de promover código que consulta `alert_cohort_subscriptions`, aplicar e conferir o readback de `20260923145603_alert_cohort_subscriptions.sql`, após `20260923130000_analytics_colinha_share.sql`. Sem a tabela de recortes, o digest responde 503 para o lote inteiro e interrompe também os alertas por candidato.
+Antes de promover código que consulta `alert_cohort_subscriptions`, aplicar e conferir o readback de `20260923145603_alert_cohort_subscriptions.sql`, após `20260923140000_numero_urna_schema.sql`. Sem a tabela de recortes, o digest responde 503 para o lote inteiro e interrompe também os alertas por candidato.
 
 Em ambiente local configurado, executar `npm run typecheck`, `npm run lint`, `npm run build` e os testes `tests/imprensa-*.test.ts` com Node 24 e `--conditions=react-server`. Para conferir a amostra contra a rota, iniciar o servidor e executar `node scripts/verify-imprensa-sample.mjs <url-base>`. A suíte visual da Mesa está em `tests/visual/imprensa.spec.ts`.
