@@ -89,6 +89,8 @@ export const TABELAS_DE_CONTEUDO: readonly string[] = [
  * candidatos, mas continuam sendo estado privado de reversão, não conteúdo.
  */
 export const TABELAS_DE_ESTADO: readonly string[] = [
+  "alert_cohort_subscriptions",
+  "alert_subscriptions",
   "alert_subscribers",
   "analytics_launch_events",
   "coleta_log",
@@ -481,10 +483,11 @@ export const MEDICAO_REPLAY = Object.freeze({
   // schema, sem DML, e entra no replay de schema. Medido no --schema-gate local PG17:
   // 116 aplicadas, zero falhas e hash
   // 3fdb860861d80a7e679681886d6972749880278a04a41017d9ad2539489e2c5c.
-  // 116 -> 118 em 23/09/2026: roster e analytics da colinha são duas DDLs.
-  // Remedido no --schema-gate local PG17 sobre 3e7adad8: 118 aplicadas,
-  // 380 puladas, zero falhas; hash 297b4cee1bc6967bf5f1ca534668d4a3d09a89cc77a52f4e5ab6fe0f368a9aef.
-  schemaReplayTamanho: 118,
+  // 118 -> 119 em 23/09/2026: 20260923145603, apos 20260923130000,
+  // adiciona tabela, indices, politicas e trigger; schema-gate PG17 mediu
+  // 119 aplicadas, 380 puladas, zero falhas; hash
+  // 527747b9df889ecce88f54f4b11aff60915cb5da7fde4ba863ffe7cc5e68ce20.
+  schemaReplayTamanho: 119,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.
