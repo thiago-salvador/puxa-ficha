@@ -8,8 +8,10 @@ import {
   buildSearchTextForCandidato,
   filterGlobalSearchIndexToPublicSlugs,
   filterGlobalSearchPalette,
+  groupNumericSearchCandidates,
   mergeVotacaoTagsByCandidatoId,
   normalizeForSearch,
+  parseNumericSearchQuery,
   resolveGlobalSearchHref,
   type GlobalSearchIndexItem,
   type VotacaoSearchRow,
@@ -81,12 +83,14 @@ describe("buildSearchTextForCandidato", () => {
 
 describe("buildGlobalSearchIndexItems", () => {
   it("embeds tema in searchText", () => {
-    const c = baseCandidato()
+    const c = baseCandidato({ numero_urna: "4545" })
     const items = buildGlobalSearchIndexItems([c], new Map([
       [c.id, { temas: ["Meio ambiente"], titulos: [] }],
     ]))
     assert.equal(items.length, 1)
     assert.ok(items[0].searchText.includes("meio ambiente"))
+    assert.equal(items[0].numero_urna, "4545")
+    assert.ok(items[0].searchText.includes("4545"))
     assert.equal(items[0].href, "/candidato/maria")
   })
 
@@ -212,6 +216,40 @@ describe("filterGlobalSearchPalette", () => {
       },
     ])
     assert.equal(r2.candidates.length, 1)
+  })
+
+  it("matches an exact urna number and restricts by UF", () => {
+    const items: GlobalSearchIndexItem[] = [
+      { href: "/candidato/sp", title: "A", subtitle: "Governador · SP · Urna 4545", searchText: "a", numero_urna: "4545", estado: "SP", cargo_disputado: "Governador", party_sigla: "PT" },
+      { href: "/candidato/rj", title: "B", subtitle: "Governador · RJ · Urna 4545", searchText: "b", numero_urna: "4545", estado: "RJ", cargo_disputado: "Governador", party_sigla: "PODE" },
+    ]
+    assert.deepEqual(filterGlobalSearchPalette("4545 RJ", [], items).candidates.map((item) => item.href), ["/candidato/rj"])
+    assert.deepEqual(filterGlobalSearchPalette("4545", [], items).candidates.map((item) => item.href), ["/candidato/sp", "/candidato/rj"])
+    assert.deepEqual(filterGlobalSearchPalette("4545", [], items, undefined, "PT").candidates.map((item) => item.href), ["/candidato/sp"])
+  })
+
+  it("prioriza o presidenciável ao buscar um número também usado por governador", () => {
+    const items: GlobalSearchIndexItem[] = [
+      { href: "/candidato/governador", title: "Governador", subtitle: "SP", searchText: "governador", numero_urna: "22", estado: "SP", cargo_disputado: "Governador" },
+      { href: "/candidato/presidente", title: "Presidente", subtitle: "BR", searchText: "presidente", numero_urna: "22", estado: "BR", cargo_disputado: "Presidente" },
+    ]
+    assert.deepEqual(filterGlobalSearchPalette("22", [], items).candidates.map((item) => item.href), ["/candidato/presidente", "/candidato/governador"])
+  })
+
+  it("does not turn digits embedded in a candidate name into numeric hits", () => {
+    const item: GlobalSearchIndexItem = { href: "/candidato/a", title: "A13", subtitle: "PT", searchText: "a13", numero_urna: "13", estado: "SP", cargo_disputado: "Governador" }
+    const nameOnly: GlobalSearchIndexItem = { href: "/candidato/b", title: "B13", subtitle: "PT", searchText: "b13", numero_urna: null, estado: "SP", cargo_disputado: "Governador" }
+    assert.equal(parseNumericSearchQuery("A13"), null)
+    assert.equal(filterGlobalSearchPalette("A13", [], [item]).candidates.length, 1)
+    assert.deepEqual(filterGlobalSearchPalette("13 SP", [], [item, nameOnly]).candidates.map((candidate) => candidate.href), ["/candidato/a"])
+  })
+
+  it("groups repeated numbers by UF and cargo", () => {
+    const items: GlobalSearchIndexItem[] = [
+      { href: "/candidato/a", title: "A", subtitle: "", searchText: "", numero_urna: "13", estado: "SP", cargo_disputado: "Governador" },
+      { href: "/candidato/b", title: "B", subtitle: "", searchText: "", numero_urna: "13", estado: "RJ", cargo_disputado: "Senador" },
+    ]
+    assert.deepEqual(groupNumericSearchCandidates(items).map((group) => group.label), ["RJ · Senador", "SP · Governador"])
   })
 
   it("returns truncated candidates when query empty", () => {
