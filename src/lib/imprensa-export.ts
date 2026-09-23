@@ -62,7 +62,7 @@ function mainCellsWithMetadata(dataset: ImprensaDataset, row: ImprensaRow): Cell
 
 /** Prefixa valores perigosos para impedir execução como fórmula em planilhas. */
 export function neutralizeCsvFormula(value: string): string {
-  return /^[=+\-@]/.test(value) ? `'${value}` : value
+  return /^[\t\r\n]|^\s*[=+\-@]/u.test(value) ? `'${value}` : value
 }
 
 export function escapeCsvCell(value: Cell): string {

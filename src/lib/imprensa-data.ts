@@ -2,6 +2,7 @@ import "server-only"
 
 import { getCandidatoSlugStaticParams } from "@/lib/api"
 import { getCandidateSitesTseBySlug } from "@/lib/candidate-sites-data"
+import { getCitableCandidateSites } from "@/lib/candidate-sites-proof"
 import { createServerSupabaseClient } from "@/lib/supabase"
 import { shouldExposeCargo } from "@/lib/senado-feature"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
@@ -120,16 +121,6 @@ function requireHttps(raw: unknown): string | null {
   }
 }
 
-function requirePublicSiteUrl(raw: unknown): string | null {
-  if (typeof raw !== "string" || !raw.trim()) return null
-  try {
-    const url = new URL(raw.trim())
-    return url.protocol === "http:" || url.protocol === "https:" ? url.toString() : null
-  } catch {
-    return null
-  }
-}
-
 function requireJudicialProcessUrl(raw: unknown): string | null {
   const url = requireHttps(raw)
   if (!url) return null
@@ -225,24 +216,15 @@ export function __setImprensaDataDependenciesForTests(
 
 function mapSites(value: Awaited<ReturnType<typeof getCandidateSitesTseBySlug>>): ImprensaRow["sites"] {
   const semDado: ImprensaRow["sites"] = { estado: "sem_dado", quantidade: null, fonteUrl: null, fonteSha256: null, coletadoEm: null, ocorrencias: [] }
-  if (!value) return semDado
-  const ocorrencias = value.sites
-    .map((site) => ({ ordem: site.ordem, url: requirePublicSiteUrl(site.url) }))
-    .filter((site): site is { ordem: number; url: string } => Boolean(site.url))
-  const fonteUrl = requireHttps(value.fonte_url)
-  const fonteSha256 = typeof value.fonte_sha256 === "string" && /^[a-f0-9]{64}$/i.test(value.fonte_sha256) ? value.fonte_sha256 : null
-  const coletadoEm = typeof value.coletado_em === "string" && !Number.isNaN(Date.parse(value.coletado_em)) ? value.coletado_em : null
-  if (!fonteUrl || !fonteSha256 || !coletadoEm || ocorrencias.length !== value.sites.length) return semDado
-  if (value.resultado === "publicado" && !ocorrencias.length) return semDado
-  if (value.resultado === "vazio_confirmado" && ocorrencias.length) return semDado
-  if (value.resultado !== "publicado" && value.resultado !== "vazio_confirmado") return semDado
+  const evidence = getCitableCandidateSites(value)
+  if (!evidence) return semDado
   return {
-    estado: value.resultado,
-    quantidade: ocorrencias.length,
-    fonteUrl,
-    fonteSha256,
-    coletadoEm,
-    ocorrencias,
+    estado: evidence.resultado,
+    quantidade: evidence.sites.length,
+    fonteUrl: evidence.fonteUrl,
+    fonteSha256: evidence.fonteSha256,
+    coletadoEm: evidence.coletadoEm,
+    ocorrencias: evidence.sites,
   }
 }
 

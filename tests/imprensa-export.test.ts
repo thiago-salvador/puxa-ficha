@@ -56,6 +56,9 @@ test("CSV preserva UTF-8, quebras, separadores e neutraliza fórmulas", () => {
   for (const dangerous of ["=SUM(A1)", "+SUM(A1)", "-SUM(A1)", "@SUM(A1)"]) {
     assert.equal(neutralizeCsvFormula(dangerous), `'${dangerous}`)
   }
+  for (const dangerous of ["\t=SUM(A1)", "\n=SUM(A1)", "\r=SUM(A1)", " =SUM(A1)"]) {
+    assert.equal(neutralizeCsvFormula(dangerous), `'${dangerous}`)
+  }
   assert.match(csv, /sites_quantidade/)
   assert.match(csv, /chapa_estado/)
 })
