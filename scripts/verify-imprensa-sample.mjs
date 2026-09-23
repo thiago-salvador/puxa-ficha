@@ -1,11 +1,14 @@
 import assert from "node:assert/strict"
 import { readFile } from "node:fs/promises"
 
-const base = process.env.IMPRENSA_VERIFY_BASE_URL ?? "http://127.0.0.1:3118"
+const base = process.argv[2] ?? "http://127.0.0.1:3118"
 const siteSnapshot = JSON.parse(await readFile(new URL("../src/data/candidate-sites-tse-2026.json", import.meta.url), "utf8"))
 
 async function read(path) {
-  const response = await fetch(new URL(path, base), { cache: "no-store" })
+  const response = await fetch(new URL(path, base), {
+    cache: "no-store",
+    signal: AbortSignal.timeout(15_000),
+  })
   assert.equal(response.status, 200, `${path}: HTTP ${response.status}`)
   return response.json()
 }
