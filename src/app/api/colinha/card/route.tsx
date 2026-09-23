@@ -1,3 +1,4 @@
+// cspell:words noarchive supabase
 import type { NextRequest } from "next/server"
 import {
   formatColinhaText,
