@@ -12,6 +12,13 @@
   ],
   "recortes": [
     {
+      "nome": "alert-unsubscribe-all-20260923",
+      "desde": "20260923145603",
+      "ate": "20260923145603",
+      "allowlist": "scripts/audit/allowlist-alert-unsubscribe-all-20260923.json",
+      "divida": null
+    },
+    {
       "nome": "quiz-position-quarantine-20260917",
       "desde": "20260917182024",
       "ate": "20260917182024",

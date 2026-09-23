@@ -74,8 +74,12 @@ SECURITY INVOKER
 SET search_path = ''
 AS $$
 BEGIN
-  DELETE FROM public.alert_subscriptions WHERE subscriber_id = p_subscriber_id;
-  DELETE FROM public.alert_cohort_subscriptions WHERE subscriber_id = p_subscriber_id;
+  -- @write tabela=alert_subscriptions ref=alert-unsubscribe-all campos=subscriber_id
+  DELETE FROM public.alert_subscriptions
+  WHERE 'alert-unsubscribe-all' IS NOT NULL AND subscriber_id = p_subscriber_id;
+  -- @write tabela=alert_cohort_subscriptions ref=alert-unsubscribe-all campos=subscriber_id
+  DELETE FROM public.alert_cohort_subscriptions
+  WHERE 'alert-unsubscribe-all' IS NOT NULL AND subscriber_id = p_subscriber_id;
 END;
 $$;
 
