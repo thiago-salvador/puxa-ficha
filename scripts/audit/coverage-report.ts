@@ -263,6 +263,8 @@ export function lerSnapshot(path: string, slugs?: Set<string>): CandidatoCoverag
     | "legislacaoExecutivoTemInventarioCompleto"
   > & {
     coleta?: ColetaPorFonte
+    numeroUrna?: unknown
+    numeroUrnaAusenciaRazao?: unknown
     patrimonioAusenciasOficiais?: unknown
     financiamentoAnosComReceitaPositiva?: unknown
     financiamentoVerificacoes?: unknown
@@ -273,7 +275,9 @@ export function lerSnapshot(path: string, slugs?: Set<string>): CandidatoCoverag
   const idsNoSeed = idsOficiaisNoSeed()
   return bruto
     .filter((c) => (slugs ? slugs.has(c.slug) : true))
-    .map(({ coleta, patrimonioAusenciasOficiais, financiamentoAnosComReceitaPositiva, financiamentoVerificacoes, posicoesTemasSemDeclaracao, projetosCoverageIds, legislacaoExecutivoCoverageIds, ...c }) => {
+    .map((raw) => {
+      const numeroUrnaSchema = Object.prototype.hasOwnProperty.call(raw, "numeroUrna") ? "present" as const : "absent" as const
+      const { coleta, patrimonioAusenciasOficiais, financiamentoAnosComReceitaPositiva, financiamentoVerificacoes, posicoesTemasSemDeclaracao, projetosCoverageIds, legislacaoExecutivoCoverageIds, numeroUrna, numeroUrnaAusenciaRazao, ...c } = raw
       const ids = idsNoSeed.get(c.slug)
       const sitesTse = candidateSitesDataset.candidates[
         c.slug as keyof typeof candidateSitesDataset.candidates
@@ -287,6 +291,9 @@ export function lerSnapshot(path: string, slugs?: Set<string>): CandidatoCoverag
       const executivoCoverage = stringsValidas(legislacaoExecutivoCoverageIds)
       return {
         ...c,
+        numeroUrna: typeof numeroUrna === "string" ? numeroUrna : null,
+        numeroUrnaSchema,
+        numeroUrnaAusenciaRazao: ["renuncia", "indeferimento", "desistencia"].includes(String(numeroUrnaAusenciaRazao)) ? numeroUrnaAusenciaRazao as "renuncia" | "indeferimento" | "desistencia" : null,
         programaGovernoEstado: lerEstadoProgramaGoverno(c.slug),
         redes: c.redes || temSiteTsePublico,
         redesVazioConfirmado: c.redesVazioConfirmado || redesVazioConfirmadoNoSnapshot,
@@ -803,7 +810,7 @@ Gerado por <code>scripts/audit/coverage-report.ts</code>.</p>
   <li><b>Não se aplica</b> é inferido do histórico político registrado no próprio site: cota parlamentar exige mandato de deputado federal ou senador com fim a partir de 2009 (quando começa a cota digital do CEAP); votações-chave, mandato federal com fim a partir de 2012 (janela das votações carregadas no banco); projetos de lei, mandato parlamentar em qualquer esfera; legislação do Executivo, chefia de Executivo; patrimônio e financiamento, já ter declarado ao TSE, isto é, SQ_CANDIDATO conhecido no seed do projeto ou candidatura / mandato eletivo no histórico com início até 2024. A pré-candidatura de 2026 não conta, e cargo por nomeação (ministro, secretário, presidência de partido) também não. Histórico incompleto pode gerar falso "não se aplica".</li>
   <li><b>Patrimônio mede por eleição aplicável</b>, não por presença: o denominador são as eleições a partir de 2006 (janela da série bem_candidato dos dados abertos do TSE) registradas no histórico com proveniência TSE, unidas aos anos com bem publicado e aos anos com ausência oficial confirmada. A célula mostra cobertos/aplicáveis, e candidatura aplicável sem dado nem confirmação é lacuna ainda que haja bem publicado em outro ano. "Ausência confirmada" é o pacote oficial bem_candidato lido de ponta a ponta sem bens para o SQ_CANDIDATO (tabela <code>patrimonio_ausencia_oficial</code>); sem essa tabela no banco, a leitura degrada para lista vazia e toda eleição sem dado conta como lacuna. 2026 fica de fora até o snapshot do TSE estabilizar. Quem declarou ao TSE mas não tem nenhuma eleição aplicável na janela também sai como "não se aplica". Evolução patrimonial e bens ano a ano continuam medindo só o conjunto publicado.</li>
   <li><b>Zero</b> (cargos ocupados, trocas de partido, contradições, processos, alertas, sanções): o traço embaixo da célula diz por que ela está zerada, lido da última tentativa em <code>coleta_log</code>. Verde, todas as fontes responderam vazio. Azul, a curadoria terminou sem achado no escopo declarado, sem prometer ausência absoluta. Âmbar, falta tentativa. Vermelho, a tentativa foi inconclusiva. Cinza, não existe ingest automático. Sem traço, o log não foi lido.</li>
-  <li><b>Preenchimento</b>: entram no índice exatamente 16 colunas: foto, bio, redes sociais, dados pessoais (cheio com 3 de 4 ou mais), patrimônio, evolução patrimonial, bens ano a ano, financiamento, doadores detalhados, votações-chave, projetos de lei, cota parlamentar, legislação do Executivo, notícias, programa de governo de 2026 e posições (quiz). Só contam as aplicáveis ao candidato; parcial vale meio ponto. Ficam fora as seis colunas de zero acima, "proj. em destaque" e "itens a revisar" (curadoria editorial), por isso pode haver 100% com célula amarela de destaque.</li>
+  <li><b>Preenchimento</b>: entram no índice exatamente 17 colunas: foto, bio, redes sociais, dados pessoais (cheio com 3 de 4 ou mais), patrimônio, evolução patrimonial, bens ano a ano, financiamento, doadores detalhados, votações-chave, projetos de lei, cota parlamentar, legislação do Executivo, notícias, programa de governo de 2026, posições (quiz) e número de urna. Só contam as aplicáveis ao candidato; parcial vale meio ponto. Ficam fora as seis colunas de zero acima, "proj. em destaque" e "itens a revisar" (curadoria editorial), por isso pode haver 100% com célula amarela de destaque.</li>
   <li>Alertas contam pontos de atenção visíveis que não sejam "feito positivo". Dados pessoais = idade (da view pública <code>candidatos_publico</code>, derivada da data de nascimento), naturalidade, formação e profissão. Posições (quiz) é x/3, um por tema do quiz presidencial.</li>
 </ul>
 ${blocoPendentes}
