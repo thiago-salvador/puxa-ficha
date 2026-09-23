@@ -51,7 +51,7 @@ BEGIN
   -- @write tabela=candidatos slug=tse-2026-100002541459 campos=partido_sigla,partido_atual
   UPDATE public.candidatos c
   SET partido_sigla = 'PT', partido_atual = 'PT'
-  WHERE c.id = target_id AND to_jsonb(c) = before_row;
+  WHERE c.id = target_id AND c.slug = 'tse-2026-100002541459' AND to_jsonb(c) = before_row;
   GET DIAGNOSTICS affected = ROW_COUNT;
   IF affected <> 1 THEN RAISE EXCEPTION 'eliziane partido: UPDATE afetou % linhas', affected; END IF;
 
@@ -70,7 +70,7 @@ BEGIN
             'source_sq','100002541459','source_uf','MA','source_cargo','SENADOR',
             'source_numero','133','source_nr_partido','13','source_sg_partido','PT')::text,
           'https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip',
-          receipt,'escrita');
+          'migration:20260923175946','escrita');
 END
 $apply$;
 COMMIT;
