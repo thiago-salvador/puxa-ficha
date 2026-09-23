@@ -50,7 +50,7 @@ export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
 version=20260923175946
 previous_version=20260923145603
-previous_digest=sha256:936f7711e6239bdb4cc1183ee7a7ec5219ec9db90306a0a076b4c0cae9b2844
+previous_digest=sha256:936f7711e6239bdb4cc1183ee7a7ec5219ec9db90306a0a076b4c0cae9b2844b
 previous_migration="$ROOT/supabase/migrations/${previous_version}_alert_cohort_subscriptions.sql"
 migration="$ROOT/supabase/migrations/${version}_eliziane_partido_tse_2026.sql"
 rollback="$ROOT/supabase/rollback/${version}_eliziane_partido_tse_2026.rollback.sql"
