@@ -1,8 +1,8 @@
 import type { ImprensaDataset, ImprensaRow } from "@/lib/imprensa-data"
 
-export const IMPRENSA_EXPORT_VERSION = "1"
-export const IMPRENSA_EXPORT_MAX_BYTES = 4 * 1024 * 1024
-export const IMPRENSA_EXPORT_TTL_SECONDS = 300
+const IMPRENSA_EXPORT_VERSION = "1"
+const IMPRENSA_EXPORT_MAX_BYTES = 4 * 1024 * 1024
+const IMPRENSA_EXPORT_TTL_SECONDS = 300
 
 const MAIN_COLUMNS = [
   "version",
@@ -65,7 +65,7 @@ export function neutralizeCsvFormula(value: string): string {
   return /^[\t\r\n]|^\s*[=+\-@]/u.test(value) ? `'${value}` : value
 }
 
-export function escapeCsvCell(value: Cell): string {
+function escapeCsvCell(value: Cell): string {
   if (value === null || value === undefined) return ""
   const text = neutralizeCsvFormula(String(value))
   return `"${text.replaceAll('"', '""')}"`
