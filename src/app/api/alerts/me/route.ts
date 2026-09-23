@@ -85,6 +85,13 @@ async function handleAlertsMe(
     return jsonNoStore({ error: "Could not load subscriptions" }, { status: 503 })
   }
 
+  const { data: cohortSubscriptions, error: cohortSubscriptionsError } = await supabase
+    .from("alert_cohort_subscriptions")
+    .select("cargo, uf")
+    .abortSignal(supabaseQueryTimeoutSignal())
+    .eq("subscriber_id", subscriber.id)
+    .order("created_at", { ascending: true })
+
   const candidateIds = (subscriptions ?? []).map((row) => row.candidato_id).filter(Boolean)
   let candidates: Array<{
     id: string
@@ -112,7 +119,9 @@ async function handleAlertsMe(
     )
   }
 
-  logAlertsApiExit("me", 200, "ok", { subscriptionCount: candidates.length })
+  logAlertsApiExit("me", 200, cohortSubscriptionsError ? "cohort_subscriptions_unavailable" : "ok", {
+    subscriptionCount: candidates.length,
+  })
   return jsonNoStore({
     ok: true,
     subscriber: {
@@ -122,6 +131,11 @@ async function handleAlertsMe(
       lastDigestSentAt: subscriber.last_digest_sent_at,
     },
     subscriptions: candidates,
+    cohortSubscriptionsUnavailable: Boolean(cohortSubscriptionsError),
+    cohortSubscriptions: (cohortSubscriptions ?? []).map((row) => ({
+      cargo: row.cargo,
+      uf: row.uf ?? null,
+    })),
   })
 }
 

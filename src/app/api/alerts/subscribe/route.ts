@@ -25,6 +25,14 @@ import {
   normalizeCandidateSlug,
 } from "@/lib/alerts"
 import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
+import {
+  ALERT_COHORT_CARGOS,
+  ALERT_COHORT_MAX_SUBSCRIPTIONS,
+  ALERT_COHORT_UFS,
+  resolveAlertCohort,
+  type AlertCohortCandidate,
+  type AlertCohortSubscription,
+} from "@/lib/alerts-cohort"
 import { isAlertSubscribeHoneypotFilled } from "@/lib/alerts-honeypot"
 import {
   readAlertManageTokenCookie,
@@ -258,6 +266,84 @@ function optionalName(body: unknown): string | null {
   return normalized ? normalized.slice(0, 120) : null
 }
 
+function cohortSubscriptions(body: unknown): AlertCohortSubscription[] {
+  const raw = (body as Record<string, unknown> | null)?.cohortSubscriptions
+  if (!Array.isArray(raw)) return []
+  return raw.slice(0, ALERT_COHORT_MAX_SUBSCRIPTIONS + 1).map((value) => {
+    const item = value as Record<string, unknown> | null
+    return {
+      cargo: typeof item?.cargo === "string" ? item.cargo : "",
+      uf: typeof item?.uf === "string" ? item.uf : item?.uf == null ? null : String(item.uf),
+    }
+  })
+}
+
+async function resolvePublicCohort(
+  supabase: AlertsServiceRoleClient,
+  subscriptions: AlertCohortSubscription[],
+): Promise<{ candidateIds: string[]; candidates: Array<{
+  id: string
+  slug: string
+  nome_urna: string
+  partido_sigla: string
+  cargo_disputado: string
+  estado: string | null
+}>; invalid: boolean; error: boolean }> {
+  const { data, error } = await supabase
+    .from("candidatos_publico")
+    .select("id, slug, nome_urna, partido_sigla, cargo_disputado, estado")
+    .in("cargo_disputado", [...ALERT_COHORT_CARGOS])
+    .neq("status", "removido")
+    .abortSignal(supabaseQueryTimeoutSignal())
+  if (error) return { candidateIds: [], candidates: [], invalid: false, error: true }
+
+  const candidates = (data ?? []) as Array<{
+    id: string
+    slug: string
+    nome_urna: string
+    partido_sigla: string
+    cargo_disputado: string
+    estado: string | null
+  }>
+  const resolved = resolveAlertCohort({
+    cohort: candidates.map((candidate): AlertCohortCandidate => ({
+      id: candidate.id,
+      slug: candidate.slug,
+      cargo: candidate.cargo_disputado,
+      uf: candidate.estado ?? null,
+    })),
+    subscriptions,
+    allowedUfs: ALERT_COHORT_UFS,
+    senadoEnabled: process.env.SENADO_ENABLED?.trim().toLowerCase() === "true",
+  })
+  return {
+    candidateIds: resolved.candidateIds,
+    candidates: candidates.filter((candidate) => resolved.candidateIds.includes(candidate.id)),
+    invalid: resolved.invalidSubscriptions.length > 0 || resolved.validSubscriptions.length !== subscriptions.length,
+    error: false,
+  }
+}
+
+async function upsertCohortSubscriptions(
+  supabase: AlertsServiceRoleClient,
+  subscriberId: string,
+  subscriptions: AlertCohortSubscription[],
+): Promise<{ message?: string } | null> {
+  if (subscriptions.length === 0) return null
+  const { error } = await supabase
+    .from("alert_cohort_subscriptions")
+    .upsert(
+      subscriptions.map((subscription) => ({
+        subscriber_id: subscriberId,
+        cargo: subscription.cargo,
+        uf: subscription.uf,
+      })),
+      { onConflict: "subscriber_id,cargo,uf", ignoreDuplicates: true },
+    )
+    .abortSignal(supabaseQueryTimeoutSignal())
+  return error
+}
+
 async function markVerificationEmailSent(
   supabase: AlertsServiceRoleClient,
   subscriberId: string,
@@ -339,26 +425,52 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
 
     const email = normalizeAlertEmail(alertBodyStringField(body, "email"))
     const candidateSlug = normalizeCandidateSlug(alertBodyStringField(body, "candidateSlug"))
+    const requestedCohortSubscriptions = cohortSubscriptions(body)
     const manageToken = resolveAlertManageToken([
       alertBodyStringField(body, "manageToken"),
       readAlertManageTokenCookie(req),
     ])
     const nome = optionalName(body)
 
-    if (!email || !candidateSlug) {
+    if (!email || (!candidateSlug && requestedCohortSubscriptions.length === 0)) {
       deps.logAlertsApiExit("subscribe", 400, "invalid_payload")
       return NextResponse.json({ error: "Invalid payload" }, { status: 400 })
     }
 
-    const candidate = await deps.findPublicCandidateBySlug(candidateSlug)
-    if (!candidate) {
-      deps.logAlertsApiExit("subscribe", 404, "candidate_not_found", { candidateSlug })
-      return NextResponse.json({ error: "Candidate not found" }, { status: 404 })
+    if (requestedCohortSubscriptions.length > ALERT_COHORT_MAX_SUBSCRIPTIONS) {
+      deps.logAlertsApiExit("subscribe", 400, "too_many_cohort_subscriptions")
+      return NextResponse.json({ error: "Too many cohort subscriptions" }, { status: 400 })
     }
 
     const emailHash = hashAlertEmail(email)
     const existingSubscriber = await deps.findSubscriberByEmailHash(emailHash)
     const supabase = deps.createAlertsServiceRoleClient()
+    const requestedCandidate = candidateSlug ? await deps.findPublicCandidateBySlug(candidateSlug) : null
+    if (candidateSlug && !requestedCandidate) {
+      deps.logAlertsApiExit("subscribe", 404, "candidate_not_found", { candidateSlug })
+      return NextResponse.json({ error: "Candidate not found" }, { status: 404 })
+    }
+    const candidate = requestedCandidate ?? {
+      id: "",
+      slug: "coorte",
+      nome_urna: "os recortes escolhidos",
+      partido_sigla: "",
+      cargo_disputado: "",
+      estado: null,
+    }
+    let validCohortSubscriptions: AlertCohortSubscription[] = []
+    if (requestedCohortSubscriptions.length > 0) {
+      const cohort = await resolvePublicCohort(supabase, requestedCohortSubscriptions)
+      if (cohort.error) {
+        deps.logAlertsApiExit("subscribe", 503, "cohort_candidates_query_failed")
+        return NextResponse.json({ error: "Could not load alert cohort" }, { status: 503 })
+      }
+      if (cohort.invalid) {
+        deps.logAlertsApiExit("subscribe", 400, "invalid_cohort_subscription")
+        return NextResponse.json({ error: "Invalid alert cohort" }, { status: 400 })
+      }
+      validCohortSubscriptions = requestedCohortSubscriptions
+    }
     const requestTime = deps.now()
     const now = requestTime.getTime()
     const ipHash = hashAlertIp(extractClientIp(req.headers))
@@ -394,6 +506,30 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
           event: "invalid_manage_token_verified_flow",
           level: "warn",
         })
+      }
+
+      if (!requestedCandidate && authorizedManageToken) {
+        const cohortError = await upsertCohortSubscriptions(
+          supabase,
+          existingSubscriber.id,
+          validCohortSubscriptions,
+        )
+        if (cohortError) {
+          deps.logAlertsApiExit("subscribe", 503, "db_upsert_cohort_subscription_failed_verified")
+          return NextResponse.json({ error: "Could not update cohort subscription" }, { status: 503 })
+        }
+        deps.logAlertsApiExit("subscribe", 200, "verified_cohort_following", {
+          cohortSubscriptionCount: validCohortSubscriptions.length,
+        })
+        return setAlertManageTokenCookie(
+          NextResponse.json({
+            ok: true,
+            verified: true,
+            following: true,
+            cohortSubscriptions: validCohortSubscriptions,
+          }),
+          authorizedManageToken,
+        )
       }
 
       if (!authorizedManageToken) {
@@ -434,7 +570,11 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
         // a UI promete o contrario: a pessoa abria o link e o candidato nao
         // estava la. Quem efetiva o follow e /alertas/acesso, depois de validar
         // o token contra um assinante real.
-        const manageUrl = buildAlertManageUrl(nextManageToken, candidate.slug)
+        const manageUrl = buildAlertManageUrl(
+          nextManageToken,
+          requestedCandidate?.slug,
+          validCohortSubscriptions,
+        )
         const deleteDataUrl = buildAlertDeleteDataUrl(nextManageToken)
         const accessEmail = buildAlertManageAccessEmail({
           candidateName: candidate.nome_urna,
@@ -494,6 +634,16 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
         return NextResponse.json({ error: "Could not update subscription" }, { status: 503 })
       }
 
+      const cohortError = await upsertCohortSubscriptions(
+        supabase,
+        existingSubscriber.id,
+        validCohortSubscriptions,
+      )
+      if (cohortError) {
+        deps.logAlertsApiExit("subscribe", 503, "db_upsert_cohort_subscription_failed_verified")
+        return NextResponse.json({ error: "Could not update cohort subscription" }, { status: 503 })
+      }
+
       deps.logAlertsApiExit("subscribe", 200, "verified_following", { candidateSlug: candidate.slug })
       return setAlertManageTokenCookie(
         NextResponse.json({
@@ -509,17 +659,29 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
     let emailBudgetReserved = false
 
     if (existingSubscriber && cooldownActive) {
-      const { error: subscriptionError } = await supabase.from("alert_subscriptions").upsert(
-        {
-          subscriber_id: existingSubscriber.id,
-          candidato_id: candidate.id,
-        },
-        { onConflict: "subscriber_id,candidato_id", ignoreDuplicates: true },
-      ).abortSignal(supabaseQueryTimeoutSignal())
+      const { error: subscriptionError } = requestedCandidate
+        ? await supabase.from("alert_subscriptions").upsert(
+            {
+              subscriber_id: existingSubscriber.id,
+              candidato_id: candidate.id,
+            },
+            { onConflict: "subscriber_id,candidato_id", ignoreDuplicates: true },
+          ).abortSignal(supabaseQueryTimeoutSignal())
+        : { error: null }
 
       if (subscriptionError) {
         deps.logAlertsApiExit("subscribe", 503, "db_pending_subscription_cooldown_failed")
         return NextResponse.json({ error: "Could not save pending subscription" }, { status: 503 })
+      }
+
+      const cohortError = await upsertCohortSubscriptions(
+        supabase,
+        existingSubscriber.id,
+        validCohortSubscriptions,
+      )
+      if (cohortError) {
+        deps.logAlertsApiExit("subscribe", 503, "db_pending_cohort_subscription_failed")
+        return NextResponse.json({ error: "Could not save pending cohort subscription" }, { status: 503 })
       }
 
       deps.logAlertsApiExit("subscribe", 200, "requires_verification_cooldown", {
@@ -654,17 +816,25 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
       return NextResponse.json({ error: "Could not create subscriber" }, { status: 503 })
     }
 
-    const { error: subscriptionError } = await supabase.from("alert_subscriptions").upsert(
-      {
-        subscriber_id: subscriberId,
-        candidato_id: candidate.id,
-      },
-      { onConflict: "subscriber_id,candidato_id", ignoreDuplicates: true },
-    ).abortSignal(supabaseQueryTimeoutSignal())
+    const { error: subscriptionError } = requestedCandidate
+      ? await supabase.from("alert_subscriptions").upsert(
+          {
+            subscriber_id: subscriberId,
+            candidato_id: candidate.id,
+          },
+          { onConflict: "subscriber_id,candidato_id", ignoreDuplicates: true },
+        ).abortSignal(supabaseQueryTimeoutSignal())
+      : { error: null }
 
     if (subscriptionError) {
       deps.logAlertsApiExit("subscribe", 503, "db_create_subscription_failed")
       return NextResponse.json({ error: "Could not create subscription" }, { status: 503 })
+    }
+
+    const cohortError = await upsertCohortSubscriptions(supabase, subscriberId, validCohortSubscriptions)
+    if (cohortError) {
+      deps.logAlertsApiExit("subscribe", 503, "db_create_cohort_subscription_failed")
+      return NextResponse.json({ error: "Could not create cohort subscription" }, { status: 503 })
     }
 
     const verifyUrl = buildAlertVerifyUrl(verifyToken, nextManageToken)

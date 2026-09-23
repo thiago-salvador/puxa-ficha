@@ -13,6 +13,8 @@ export interface CandidateRow {
   nome_urna: string
   partido_sigla: string
   cargo_disputado: string
+  estado?: string | null
+  status?: string | null
 }
 
 interface AlertSubscriberRecordBase {
@@ -45,6 +47,14 @@ interface SubscriptionRow {
   candidato_id: string
 }
 
+interface CohortSubscriptionRow {
+  id: string
+  subscriber_id: string
+  cargo: string
+  uf: string | null
+  created_at?: string
+}
+
 export interface NotificationLogRow {
   id: string
   subscriber_id: string
@@ -72,12 +82,13 @@ interface AlertsTables {
   candidatos_publico: CandidateRow[]
   alert_subscribers: SubscriberRow[]
   alert_subscriptions: SubscriptionRow[]
+  alert_cohort_subscriptions: CohortSubscriptionRow[]
   notification_log: NotificationLogRow[]
   candidate_changes: CandidateChangeRow[]
 }
 
 type TableName = keyof AlertsTables
-type MutationOperation = "update" | "select"
+type MutationOperation = "update" | "select" | "upsert"
 
 type QueryError = { code?: string; message: string }
 
@@ -163,6 +174,11 @@ class SelectMutationQuery<T extends Record<string, unknown>> {
 
   eq(field: string, value: unknown) {
     this.filters.push((row) => row[field as keyof T] === value)
+    return this
+  }
+
+  neq(field: string, value: unknown) {
+    this.filters.push((row) => row[field as keyof T] !== value)
     return this
   }
 
@@ -309,6 +325,7 @@ class SelectMutationQuery<T extends Record<string, unknown>> {
 
   private async execute(): QueryResult<unknown> {
     if (this.operation === "select") {
+      this.fixture.selectCalls.push(this.tableName)
       const selectError = this.fixture.consumeMutationError(this.tableName, "select")
       if (selectError) {
         return { data: null, error: selectError, count: null }
@@ -316,7 +333,9 @@ class SelectMutationQuery<T extends Record<string, unknown>> {
 
       const allMatchingRows = this.rows.filter((row) => this.filters.every((filter) => filter(row)))
       const rows = this.getMatchingRows()
-      const projectedRows = rows.map((row) => projectColumns(row, this.columns))
+      // O PostgREST limita a resposta mesmo sem `.limit()`. Simular o teto
+      // impede que um teste aprove uma consulta que perde a linha 1.001.
+      const projectedRows = rows.slice(0, 1000).map((row) => projectColumns(row, this.columns))
       const count = this.options.count === "exact" ? allMatchingRows.length : null
 
       if (this.options.head) {
@@ -367,6 +386,12 @@ class SelectMutationQuery<T extends Record<string, unknown>> {
         "notification_log",
         this.fixture
           .getTable("notification_log")
+          .filter((row) => !rows.some((subscriber) => subscriber.id === row.subscriber_id)),
+      )
+      this.fixture.setTable(
+        "alert_cohort_subscriptions",
+        this.fixture
+          .getTable("alert_cohort_subscriptions")
           .filter((row) => !rows.some((subscriber) => subscriber.id === row.subscriber_id)),
       )
     }
@@ -426,6 +451,7 @@ export class AlertsRouteFixture {
   private idCounter = 1
   private pendingEmailError: Error | null = null
   private pendingRpcError: QueryError | null = null
+  private pendingUnsubscribeDeleteError: "direct" | "cohort" | "missing_table" | null = null
   private pendingMutationErrors: Array<{
     tableName: TableName
     operation: MutationOperation
@@ -433,6 +459,7 @@ export class AlertsRouteFixture {
   }> = []
 
   readonly emails: SendEmailInput[] = []
+  readonly selectCalls: TableName[] = []
   readonly apiExits: Array<{ route: string; status: number; reason: string; detail?: unknown }> = []
   readonly events: Array<{
     route: string
@@ -446,6 +473,7 @@ export class AlertsRouteFixture {
       candidatos_publico: cloneValue(seed.candidatos_publico ?? []),
       alert_subscribers: cloneValue(seed.alert_subscribers ?? []),
       alert_subscriptions: cloneValue(seed.alert_subscriptions ?? []),
+      alert_cohort_subscriptions: cloneValue(seed.alert_cohort_subscriptions ?? []),
       notification_log: cloneValue(seed.notification_log ?? []),
       candidate_changes: cloneValue(seed.candidate_changes ?? []),
     }
@@ -494,6 +522,14 @@ export class AlertsRouteFixture {
     this.pendingRpcError = error
   }
 
+  failNextUnsubscribeDelete(step: "direct" | "cohort" | "missing_table") {
+    this.pendingUnsubscribeDeleteError = step
+  }
+
+  failNextUpsert(tableName: TableName, error: QueryError) {
+    this.pendingMutationErrors.push({ tableName, operation: "upsert", error })
+  }
+
   consumeMutationError(tableName: TableName, operation: MutationOperation) {
     const index = this.pendingMutationErrors.findIndex(
       (pending) => pending.tableName === tableName && pending.operation === operation,
@@ -535,6 +571,8 @@ export class AlertsRouteFixture {
           },
           upsert: (payload: Record<string, unknown> | Array<Record<string, unknown>>, options?: { onConflict?: string; ignoreDuplicates?: boolean }) =>
             abortable((async () => {
+              const error = this.consumeMutationError(tableName, "upsert")
+              if (error) return { data: null, error, count: 0 }
               const rows = Array.isArray(payload) ? payload : [payload]
               for (const row of rows) {
                 this.applyUpsert(tableName, row, options)
@@ -551,6 +589,21 @@ export class AlertsRouteFixture {
     const pending = this.pendingRpcError
     this.pendingRpcError = null
     if (pending) return { data: null, error: pending }
+
+    if (fn === "alert_unsubscribe_all") {
+      const failedStep = this.pendingUnsubscribeDeleteError
+      this.pendingUnsubscribeDeleteError = null
+      if (failedStep) {
+        return { data: null, error: {
+          code: failedStep === "missing_table" ? "42P01" : "XX000",
+          message: failedStep === "missing_table" ? "relation alert_cohort_subscriptions does not exist" : `delete ${failedStep} failed`,
+        } }
+      }
+      const subscriberId = String(args.p_subscriber_id ?? "")
+      this.tables.alert_subscriptions = this.tables.alert_subscriptions.filter((row) => row.subscriber_id !== subscriberId)
+      this.tables.alert_cohort_subscriptions = this.tables.alert_cohort_subscriptions.filter((row) => row.subscriber_id !== subscriberId)
+      return { data: null, error: null }
+    }
 
     if (fn === "reserve_alert_email_ip_budget") {
       const emailIpHash = String(args.p_email_ip_hash ?? "")
@@ -629,6 +682,17 @@ export class AlertsRouteFixture {
       } satisfies SubscriptionRow
     }
 
+    if (tableName === "alert_cohort_subscriptions") {
+      const subscription = row as Partial<CohortSubscriptionRow>
+      return {
+        id: subscription.id ?? this.nextId("cohort"),
+        subscriber_id: subscription.subscriber_id ?? "",
+        cargo: subscription.cargo ?? "",
+        uf: subscription.uf ?? null,
+        created_at: subscription.created_at ?? new Date().toISOString(),
+      } satisfies CohortSubscriptionRow
+    }
+
     if (tableName === "notification_log") {
       const logRow = row as Partial<NotificationLogRow>
       return {
@@ -664,6 +728,8 @@ export class AlertsRouteFixture {
       nome_urna: (row.nome_urna as string | undefined) ?? "",
       partido_sigla: (row.partido_sigla as string | undefined) ?? "",
       cargo_disputado: (row.cargo_disputado as string | undefined) ?? "",
+      estado: (row.estado as string | null | undefined) ?? null,
+      status: (row.status as string | null | undefined) ?? null,
     } satisfies CandidateRow
   }
 
@@ -687,6 +753,24 @@ export class AlertsRouteFixture {
       }
       this.tables.alert_subscriptions.push(
         this.normalizeInsertedRow(tableName, row) as SubscriptionRow,
+      )
+      return
+    }
+
+    if (tableName === "alert_cohort_subscriptions" && options?.onConflict === "subscriber_id,cargo,uf") {
+      const existing = this.tables.alert_cohort_subscriptions.find(
+        (subscription) =>
+          subscription.subscriber_id === row.subscriber_id &&
+          subscription.cargo === row.cargo &&
+          subscription.uf === (row.uf ?? null),
+      )
+      if (existing && options.ignoreDuplicates) return
+      if (existing) {
+        Object.assign(existing, cloneValue(row))
+        return
+      }
+      this.tables.alert_cohort_subscriptions.push(
+        this.normalizeInsertedRow(tableName, row) as CohortSubscriptionRow,
       )
       return
     }
@@ -829,6 +913,8 @@ export function seedCandidate(overrides: Partial<CandidateRow> = {}): CandidateR
     nome_urna: overrides.nome_urna ?? "Lula",
     partido_sigla: overrides.partido_sigla ?? "PT",
     cargo_disputado: overrides.cargo_disputado ?? "Presidente",
+    ...(overrides.estado !== undefined ? { estado: overrides.estado } : {}),
+    ...(overrides.status !== undefined ? { status: overrides.status } : {}),
   }
 }
 

@@ -461,11 +461,6 @@ export const EXCECOES_DE_RUNTIME: readonly ExcecaoDeclarada[] = [
       "Visitante liga e desliga o alerta de um candidato em alert_subscriptions, pela própria conta.",
   },
   {
-    arquivo: "app/api/alerts/unsubscribe-all/route.ts",
-    motivo:
-      "Descadastro total pedido pelo visitante em alert_subscriptions. Exigir trilha de operador para o usuário sair da lista inverte de quem é o ato.",
-  },
-  {
     arquivo: "app/api/alerts/delete-data/route.ts",
     motivo:
       "Apagamento de dados a pedido do titular em alert_subscribers. É direito dele, exercido por ele, e a trilha do ato é o próprio fluxo de confirmação.",

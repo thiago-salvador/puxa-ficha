@@ -20,6 +20,7 @@ export interface AlertPublicCandidate {
   nome_urna: string
   partido_sigla: string
   cargo_disputado: string
+  estado?: string | null
 }
 
 export interface AlertSubscriberRecord {
@@ -96,7 +97,7 @@ export async function findPublicCandidateBySlug(
   const supabase = client ?? createAlertsServiceRoleClient()
   const { data, error } = await supabase
     .from("candidatos_publico")
-    .select("id, slug, nome_urna, partido_sigla, cargo_disputado")
+    .select("id, slug, nome_urna, partido_sigla, cargo_disputado, estado")
     .abortSignal(supabaseQueryTimeoutSignal())
     .eq("slug", normalized)
     .maybeSingle()
