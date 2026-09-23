@@ -1,0 +1,21 @@
+{
+  "_comentario": "Recorte fechado dos 48 UUIDs do link-check run 35798572764. A migration exige preimagem completa e ficha fora de candidatos_publico; readback e rollback usam snapshot integral.",
+  "recorte": "link-check-48-claims-20260922",
+  "migration": "20260923001140_despublicar_48_claims_fontes.sql",
+  "fonte": "GitHub Actions run 35798572764, 2026-09-22; consulta read-only em producao de 48 IDs e hashes",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "20260923001140",
+      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+    },
+    {
+      "tabela": "pontos_atencao",
+      "ref": "20260923001140",
+      "campos": ["visivel", "despublicacao_motivo", "despublicado_em"]
+    }
+  ]
+}

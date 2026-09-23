@@ -443,7 +443,10 @@ describe("classificador puro (#136)", () => {
     // Issue #424, fontes de pontos_atencao (22/09/2026): DML puro com guards
     // de preimagem exata, mesmo esqueleto da 20260825123000 (issue #96).
     // Liquido 494 + 1 = 495 migrations.
-    assert.equal(manifesto.aplicadas_esperadas, 390)
+    // Despublicacao das 48 claims sem fonte utilizavel (23/09/2026): no-op
+    // apenas na coorte totalmente ausente do replay sintetico. Medido em PG17:
+    // 391 aplicadas + 105 falhas conhecidas = 496 migrations.
+    assert.equal(manifesto.aplicadas_esperadas, 391)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

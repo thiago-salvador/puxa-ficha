@@ -606,6 +606,13 @@
       "ate": "20260922160000",
       "allowlist": "scripts/audit/allowlist-issue-424-link-check-20260922.json",
       "divida": null
+    },
+    {
+      "nome": "link-check-48-claims-20260922",
+      "desde": "20260923001140",
+      "ate": "20260923001140",
+      "allowlist": "scripts/audit/allowlist-link-check-48-claims-20260922.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
