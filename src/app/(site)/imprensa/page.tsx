@@ -2,11 +2,10 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { ImprensaCitationButton } from "@/components/ImprensaCitationButton"
 import {
-  getImprensaDataset,
   normalizeImprensaFilters,
-  type ImprensaDataset,
   type ImprensaFilters,
 } from "@/lib/imprensa-data"
+import { getImprensaDatasetCached, type ImprensaPageDataset } from "@/lib/imprensa-cache"
 import styles from "./imprensa.module.css"
 
 export const metadata: Metadata = {
@@ -39,10 +38,10 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
   const params = await searchParams
   const rawFilters = { cargo: first(params.cargo), uf: first(params.uf) }
   const filters: ImprensaFilters = normalizeImprensaFilters(rawFilters)
-  let dataset: ImprensaDataset | null = null
+  let dataset: ImprensaPageDataset | null = null
   let sourceError: string | null = null
   try {
-    dataset = await getImprensaDataset(filters)
+    dataset = await getImprensaDatasetCached(filters)
   } catch {
     sourceError = "A consulta pública está indisponível no momento."
   }
