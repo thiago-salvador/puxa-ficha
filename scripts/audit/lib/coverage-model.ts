@@ -163,6 +163,12 @@ export interface CandidatoCoverage {
   partido_sigla: string | null
   cargo_disputado: string | null
   estado: string | null
+  /** Número oficial de urna do TSE 2026; ausente no snapshot quando a coluna ainda não existe. */
+  numeroUrna?: string | null
+  /** O schema ausente é parcialidade da medição, não ausência do dado. */
+  numeroUrnaSchema?: "present" | "absent"
+  /** Motivo oficial documentado que exclui a ficha do gap corrigível. */
+  numeroUrnaAusenciaRazao?: "renuncia" | "indeferimento" | "desistencia" | null
 
   foto: boolean
   /** URL crua para impedir que placeholder persistido conte como foto. */
@@ -463,6 +469,7 @@ export const COLUNAS: ColunaDef[] = [
   { key: "bio", label: "Bio" },
   { key: "redes", label: "Redes sociais" },
   { key: "dados", label: "Dados pessoais" },
+  { key: "numero_urna", label: "Número de urna" },
   { key: "cargos", label: "Cargos ocupados" },
   { key: "partidos", label: "Hist. partidário" },
   { key: "patrimonio", label: "Patrimônio (anos)" },
@@ -493,12 +500,13 @@ export const COLUNAS: ColunaDef[] = [
   { key: "revisar", label: "Aguardando aprovação" }
 ]
 
-/** As 16 colunas que entram no índice de preenchimento. */
+/** As 17 colunas que entram no índice de preenchimento. */
 export const COLUNAS_DO_INDICE = [
   "foto",
   "bio",
   "redes",
   "dados",
+  "numero_urna",
   "patrimonio",
   "evolucao",
   "bens",
@@ -613,6 +621,19 @@ export function calcularCelulas(c: CandidatoCoverage): Record<string, Cell> {
     `${dp}/4`,
     "idade (view pública), naturalidade, formação, profissão"
   )
+
+  if (!c.temSqAtualNoBanco && !c.temSqNoSeed) {
+    out.numero_urna = cell("na", "—", "não é candidatura publicada do pleito de 2026")
+  } else if (c.numeroUrnaSchema !== "present") {
+    out.numero_urna = cell("partial", "Não lido", "a coluna numero_urna ainda não existe no schema consultado")
+  } else if (c.numeroUrna) {
+    out.numero_urna = cell("ok", c.numeroUrna, "número oficial de urna do TSE 2026")
+  } else if (c.numeroUrnaAusenciaRazao) {
+    const labels = { renuncia: "renúncia", indeferimento: "indeferimento", desistencia: "desistência" }
+    out.numero_urna = cell("na", "—", `sem número de urna: ${labels[c.numeroUrnaAusenciaRazao]}; não é gap corrigível`)
+  } else {
+    out.numero_urna = cell("missing", "—", "candidatura publicada sem número de urna reconciliado")
+  }
 
   const mandatos = c.historico.filter((h) => h.tipo_evento === "mandato").length
   const candidaturas = c.historico.filter((h) => h.tipo_evento === "candidatura").length

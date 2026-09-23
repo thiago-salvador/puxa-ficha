@@ -21,6 +21,18 @@ from (
     'partido_sigla', c.partido_sigla,
     'cargo_disputado', c.cargo_disputado,
     'estado', c.estado,
+    -- O bloco é removido por snapshot-fetch quando a migration numero_urna
+    -- ainda não existe. Ausência de coluna vira `partial` no modelo; não vira
+    -- zero nem gap corrigível.
+    -- @numero-urna-opcional-inicio
+    'numeroUrna', c.numero_urna,
+    'numeroUrnaAusenciaRazao', case
+      when lower(regexp_replace(coalesce(c.situacao_candidatura, ''), '[^a-záéíóúãõç ]', '', 'gi')) in ('renuncia', 'renunciou', 'renúncia') then 'renuncia'
+      when lower(regexp_replace(coalesce(c.situacao_candidatura, ''), '[^a-záéíóúãõç ]', '', 'gi')) in ('indeferido', 'indeferida') then 'indeferimento'
+      when lower(regexp_replace(coalesce(c.situacao_candidatura, ''), '[^a-záéíóúãõç ]', '', 'gi')) in ('desistente', 'desistiu', 'desistencia', 'desistência') then 'desistencia'
+      else null
+    end,
+    -- @numero-urna-opcional-fim
     'temSqAtualNoBanco', exists (
       select 1
       from candidatos c_raw
