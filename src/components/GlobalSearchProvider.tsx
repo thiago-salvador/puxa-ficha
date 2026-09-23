@@ -23,8 +23,10 @@ import { readPartyFilterFromSearchParams, replacePartyFilterInBrowserUrl, subscr
 import { isUncertainParty, matchesPartySiglaFilter, resolveCanonicalPartySigla } from "@/lib/party-utils"
 import {
   filterGlobalSearchPalette,
+  groupNumericSearchCandidates,
   GLOBAL_SEARCH_PALETTE_DISPLAY_LIMIT,
   normalizeForSearch,
+  parseNumericSearchQuery,
   readGlobalSearchIndexResponse,
   resolveGlobalSearchHref,
   type GlobalSearchIndexItem,
@@ -42,7 +44,7 @@ import { ANALYTICS_EVENTS } from "@/lib/analytics-events"
 import { trackLaunchEvent } from "@/lib/analytics-client"
 
 const SCOPE_LABEL =
-  "Busca em candidatos publicados (nome, partido, UF, temas de votação) e atalhos do site"
+  "Busca em candidatos publicados (nome, número de urna, partido, UF, temas de votação) e atalhos do site"
 
 type GlobalSearchOpenVia = "cmd_k" | "slash" | "toolbar"
 type SearchIndexLoadState = "idle" | "loading" | "ready" | "error"
@@ -206,10 +208,6 @@ function buildPaletteModel(args: {
     args
 
   if (queryNormalized) {
-    const rows: PaletteNavRow[] = [
-      ...filtered.shortcuts.map((item) => ({ kind: "link" as const, item })),
-      ...filtered.candidates.map((item) => ({ kind: "link" as const, item })),
-    ]
     const sections: PaletteSectionSpec[] = []
     if (filtered.shortcuts.length > 0) {
       sections.push({
@@ -217,13 +215,23 @@ function buildPaletteModel(args: {
         rows: filtered.shortcuts.map((item) => ({ kind: "link" as const, item })),
       })
     }
-    if (filtered.candidates.length > 0) {
+    const numericGroups = parseNumericSearchQuery(queryNormalized)
+      ? groupNumericSearchCandidates(filtered.candidates)
+      : []
+    if (numericGroups.length > 0) {
+      for (const group of numericGroups) {
+        sections.push({
+          label: group.label,
+          rows: group.items.map((item) => ({ kind: "link" as const, item })),
+        })
+      }
+    } else if (filtered.candidates.length > 0) {
       sections.push({
         label: "Candidatos",
         rows: filtered.candidates.map((item) => ({ kind: "link" as const, item })),
       })
     }
-    return { flatRows: rows, sections }
+    return { flatRows: sections.flatMap((section) => section.rows), sections }
   }
 
   const visibleRecentCandidates = partyFilter

@@ -137,6 +137,9 @@ function stubPreMigrationDatabase(options: StubOptions): void {
     const wantsObject = (headers.get("accept") ?? "").includes("vnd.pgrst.object")
 
     if (table === "candidatos_publico" || table === "candidatos") {
+      if (table === "candidatos_publico" && select.split(",").includes("numero_urna")) {
+        return postgrestError("42703", "column candidatos_publico.numero_urna does not exist")
+      }
       return wantsObject ? json(CANDIDATO_ROW) : json([CANDIDATO_ROW])
     }
     if (table === "patrimonio_ausencia_oficial") {
@@ -159,6 +162,31 @@ function stubPreMigrationDatabase(options: StubOptions): void {
 }
 
 describe("ficha antes das migrations de contexto eleitoral", () => {
+  it("mantém busca por nome sem numero_urna e não cacheia índice incompleto", async () => {
+    const api = await loadApi()
+    const selects: Record<string, string[]> = {}
+    console.warn = () => {}
+    console.error = () => {}
+    stubPreMigrationDatabase({ selects })
+
+    const first = await api.getGlobalSearchIndexResource()
+    assert.equal(first.sourceStatus, "degraded")
+    assert.equal(first.data.length, 1)
+    assert.equal(first.data[0].title, CANDIDATO_ROW.nome_urna)
+    assert.equal(first.data[0].numero_urna, null)
+
+    const candidateSelects = (selects.candidatos_publico ?? []).filter((columns) =>
+      columns.includes("nome_completo") && columns.includes("foto_url") && !columns.includes("verificacao_campos")
+    )
+    assert.equal(candidateSelects.length, 2, "uma consulta nova e um fallback")
+    assert.ok(candidateSelects[0].includes("numero_urna"))
+    assert.ok(!candidateSelects[1].includes("numero_urna"))
+
+    await api.getGlobalSearchIndexResource()
+    const repeated = (selects.candidatos_publico ?? []).filter((columns) => columns === candidateSelects[0])
+    assert.equal(repeated.length, 2, "índice incompleto não pode entrar no cache")
+  })
+
   it("Governador carrega com o conjunto de colunas de origin/main e avisa uma vez", async () => {
     const api = await loadApi()
     const selects: Record<string, string[]> = {}
