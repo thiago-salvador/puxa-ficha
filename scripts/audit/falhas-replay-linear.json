@@ -1,6 +1,7 @@
 {
   "_comentario": "Conjunto FECHADO das migrations que falham no replay linear REAL (tolerante) em banco vazio, medido pelo harness scripts/audit/replay-migrations.sh. O modo --gate compara o resultado de uma execucao real contra esta lista: falha NOVA e regressao de replay em qualquer posicao (inclusive depois da 179a, que o modo estrito nunca alcanca); falha que sumiu exige regenerar este manifesto deliberadamente no mesmo PR. Regenerar: scripts/audit/replay-migrations.sh linear --tolerante e copiar os nomes.",
-  "aplicadas_esperadas": 394,
+  "aplicadas_esperadas": 395,
+  "_comentario_20260923145603": "Assinaturas por recorte após 20260923140000: --gate PG17 mediu 395 aplicadas + 105 falhas históricas = 500 migrations; conjunto de falhas inalterado.",
   "_comentario_20260923120000_20260923130000": "Medido no --gate local PostgreSQL 17 apos rebase em 3e7adad8: roster e analytics da colinha aplicam limpo; 393 aplicadas + 105 falhas conhecidas = 498 migrations. O conjunto de falhas permaneceu igual ao manifesto da main.",
   "_comentario_20260923140000": "Medido no --gate local PostgreSQL 17 sobre 490b8208: numero_urna aplica limpa; 394 aplicadas + 105 falhas conhecidas = 499 migrations. O conjunto de falhas permaneceu igual.",
   "_comentario_20260923001140": "Medido no replay PG17 local: 391 aplicadas + 105 falhas conhecidas = 496 migrations. A curadoria dos 48 IDs retorna sem escrita somente no replay sintetico com coorte totalmente ausente; em producao, ausencia parcial ou drift aborta.",

@@ -89,6 +89,8 @@ export const TABELAS_DE_CONTEUDO: readonly string[] = [
  * candidatos, mas continuam sendo estado privado de reversão, não conteúdo.
  */
 export const TABELAS_DE_ESTADO: readonly string[] = [
+  "alert_cohort_subscriptions",
+  "alert_subscriptions",
   "alert_subscribers",
   "analytics_launch_events",
   "coleta_log",
@@ -487,7 +489,10 @@ export const MEDICAO_REPLAY = Object.freeze({
   // 118 -> 119: numero_urna da Frente 5 adiciona coluna, indice, view e grants.
   // --schema-gate PG17 sobre 490b8208: 119 aplicadas, 380 puladas, zero falhas;
   // hash d9668f6a171e73ed339fd00d539ae8a86144fe0f35708dc1021de12191c549b8.
-  schemaReplayTamanho: 119,
+  // 119 -> 120: assinaturas por recorte após numero_urna. --schema-gate PG17
+  // mediu 120 aplicadas, 380 puladas, zero falhas; hash
+  // 86205cf1b7110a461b925b59b2669f09e43b1f30bf01fd593a902430a969c2fa.
+  schemaReplayTamanho: 120,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

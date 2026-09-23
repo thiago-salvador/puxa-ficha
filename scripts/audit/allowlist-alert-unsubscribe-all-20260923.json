@@ -1,0 +1,18 @@
+{
+  "motivo": "Cancelamento transacional das assinaturas de alerta pelo identificador do assinante.",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "alert_subscriptions",
+      "ref": "alert-unsubscribe-all",
+      "campos": ["subscriber_id"]
+    },
+    {
+      "tabela": "alert_cohort_subscriptions",
+      "ref": "alert-unsubscribe-all",
+      "campos": ["subscriber_id"]
+    }
+  ]
+}
