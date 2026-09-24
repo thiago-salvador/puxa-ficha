@@ -4,6 +4,7 @@ import { resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 import { dataEmBrasilia } from "../src/lib/representacoes-etica"
 import { fetchJSON } from "./lib/helpers"
+import { consultarFichaPublica, OPCAO_FICHA_NAO_PUBLICAVEL } from "./lib/ficha-publica-representacoes"
 import { aprovarPceSenado, type ProcessoPceAtual, type RevisaoPceSenado } from "./lib/representacoes-etica-senado-aprovacao"
 import {
   SENADO_DADOS_ABERTOS,
@@ -30,7 +31,7 @@ async function main(): Promise<void> {
   const itemId = argumento("item")
   const reviewPath = argumento("revisao")
   if (!queuePath || !itemId || !reviewPath) {
-    throw new Error("uso: --fila=<fila.json> --item=pce-<id> --revisao=<recibo.json> [--dataset=<arquivo>] [--substituir] [--apply]")
+    throw new Error("uso: --fila=<fila.json> --item=pce-<id> --revisao=<recibo.json> [--dataset=<arquivo>] [--substituir] [--permitir-ficha-nao-publicavel] [--apply]")
   }
   const queue = JSON.parse(readFileSync(resolve(queuePath), "utf8")) as FilaPceSenado
   const review = JSON.parse(readFileSync(resolve(reviewPath), "utf8")) as RevisaoPceSenado
@@ -44,6 +45,7 @@ async function main(): Promise<void> {
   const datasetPath = resolve(process.cwd(), argumento("dataset") ?? DATASET_PADRAO)
   const seed = JSON.parse(readFileSync(resolve(process.cwd(), "data/candidatos.json"), "utf8")) as CandidatoSeedSenado[]
   const dataset = JSON.parse(readFileSync(datasetPath, "utf8"))
+  const fichaPublica = await consultarFichaPublica(review.candidate_slug)
   const result = aprovarPceSenado({
     fila: queue,
     itemId,
@@ -54,6 +56,8 @@ async function main(): Promise<void> {
     dataset,
     agora: new Date(),
     substituir: process.argv.includes("--substituir"),
+    fichaPublica,
+    permitirFichaNaoPublicavel: process.argv.includes(OPCAO_FICHA_NAO_PUBLICAVEL),
   })
   const apply = process.argv.includes("--apply")
   if (apply) gravarAtomico(datasetPath, `${JSON.stringify(result.dataset, null, 2)}\n`)

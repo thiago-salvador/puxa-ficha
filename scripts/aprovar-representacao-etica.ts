@@ -37,6 +37,7 @@ import {
   type RepresentacaoEticaCamaraAprovada,
 } from "../src/lib/representacoes-etica"
 import { fetchJSON } from "./lib/helpers"
+import { consultarFichaPublica, exigirFichaPublica, FONTE_FICHA_PUBLICA, OPCAO_FICHA_NAO_PUBLICAVEL } from "./lib/ficha-publica-representacoes"
 import {
   CAMARA_API,
   FILA_SCHEMA_VERSION,
@@ -62,6 +63,8 @@ export interface OpcoesAprovacao {
   aprovadoEm: string
   dataset: unknown
   substituir: boolean
+  fichaPublica: boolean
+  permitirFichaNaoPublicavel?: boolean
   /** Item remontado agora nas fontes oficiais; null quando as fontes não sustentam o par. */
   remontado: ItemFila | null
 }
@@ -102,6 +105,7 @@ export function aprovarRepresentacao(opcoes: OpcoesAprovacao): {
     throw new Error(`a fila diverge das fontes (${diferencas.join("; ")}); colete de novo e revise`)
   }
   if (!dasFontes.ultimo_andamento) throw new Error("item sem último andamento nas fontes; não há data para exibir")
+  const fichaNaoPublicavelPermitida = exigirFichaPublica(opcoes.fichaPublica, opcoes.permitirFichaNaoPublicavel === true)
 
   // Tudo que vai para o dataset sai do item remontado, nunca da fila.
   const candidato: unknown = {
@@ -120,7 +124,12 @@ export function aprovarRepresentacao(opcoes: OpcoesAprovacao): {
     verificado_em: dasFontes.verificado_em,
     url_oficial: dasFontes.representacao.url_oficial,
     identidade: { metodo: dasFontes.candidato.metodo_identidade, conferida_em: dasFontes.verificado_em },
-    revisao: { aprovado: true, revisor_tipo: "humano", aprovado_em: opcoes.aprovadoEm },
+    revisao: {
+      aprovado: true, revisor_tipo: "humano", aprovado_em: opcoes.aprovadoEm,
+      ...(fichaNaoPublicavelPermitida ? { ficha_nao_publicavel: {
+        permitido: true, opcao: OPCAO_FICHA_NAO_PUBLICAVEL, fonte: FONTE_FICHA_PUBLICA, conferida_em: opcoes.aprovadoEm,
+      } } : {}),
+    },
   }
   const parsed = parseRepresentacaoAprovada(candidato)
   if (!parsed.ok) throw new Error(`item recusado: ${parsed.motivo}`)
@@ -225,13 +234,16 @@ async function main() {
   const itemId = argumento("item")
   const fase = argumento("fase")
   if (!filaPath || !itemId || !fase) {
-    throw new Error("uso: --fila=<arquivo> --item=<id> --fase=<fase> [--substituir] [--apply]")
+    throw new Error("uso: --fila=<arquivo> --item=<id> --fase=<fase> [--substituir] [--permitir-ficha-nao-publicavel] [--apply]")
   }
   const datasetPath = resolve(process.cwd(), argumento("dataset") ?? DATASET_PADRAO)
   const fila = JSON.parse(readFileSync(resolve(filaPath), "utf8")) as Fila
   const seed = JSON.parse(readFileSync(resolve(process.cwd(), "data/candidatos.json"), "utf8")) as CandidatoSeed[]
   const agora = new Date()
   const fontes = await remontarNasFontes(fila, itemId, seed, agora)
+  const alvoSlug = fila.itens.find((item) => item.id === itemId)?.candidato.slug
+  if (!alvoSlug) throw new Error(`item ${itemId} não está na fila`)
+  const fichaPublica = await consultarFichaPublica(alvoSlug)
   const { item, dataset } = aprovarRepresentacao({
     fila,
     itemId,
@@ -239,6 +251,8 @@ async function main() {
     aprovadoEm: dataEmBrasilia(agora),
     dataset: JSON.parse(readFileSync(datasetPath, "utf8")),
     substituir: process.argv.includes("--substituir"),
+    fichaPublica,
+    permitirFichaNaoPublicavel: process.argv.includes(OPCAO_FICHA_NAO_PUBLICAVEL),
     remontado: fontes.remontado,
   })
   const aplicar = process.argv.includes("--apply")
