@@ -1,0 +1,140 @@
+/**
+ * Formata `nome_urna` publicado em CAIXA ALTA pelo TSE para exibição em
+ * title case, sem tocar no dado armazenado (o formatter é aplicado só na
+ * borda de leitura, nunca grava de volta no banco).
+ *
+ * Medido em produção (2026-09-24): 292 páginas públicas de candidatos
+ * `tse-2026-*` exibem `nome_urna` em CAIXA ALTA como o TSE publica
+ * ("AÉCIO NEVES", "CARLOS CLEY"), enquanto páginas curadas já têm o nome em
+ * caixa normal ("ACM Neto", "Fabio Trad", "JHC"). Levantamento via SQL
+ * read-only no Supabase (projeto wskpzsobvqwhnbsdsmok) sobre os 292 nomes
+ * confirmou: nenhum tem hífen, apóstrofo ou numeral romano; os únicos
+ * tokens recorrentes que parecem sigla (MLB, JHC) não têm vogal e já caem
+ * na regra "token sem vogal fica maiúsculo". A lista de siglas abaixo cobre
+ * esses casos e outras siglas partidárias/de movimento com vogal que podem
+ * aparecer (PSOL, ACM), mesmo que não estejam na amostra atual.
+ *
+ * Regra geral: só reformata quando a palavra INTEIRA não tem nenhuma letra
+ * minúscula (nome misto, ex. "ACM Neto", fica intocado). Isso evita mexer
+ * em nomes que já vieram curados em caixa normal.
+ */
+
+/** Siglas de partido/movimento e outras que devem permanecer maiúsculas mesmo tendo vogal. */
+const UPPERCASE_ACRONYMS = new Set(["MLB", "PT", "PSOL", "MST", "ACM", "JHC"])
+
+/** Preposições e partículas que ficam minúsculas quando não são a primeira palavra. */
+const LOWERCASE_PARTICLES = new Set(["da", "das", "de", "do", "dos", "e", "di", "du", "del"])
+
+/** Sufixos de geração: forma CAIXA ALTA -> forma exibida. */
+const GENERATION_SUFFIXES: Record<string, string> = {
+  JR: "Jr",
+  "JR.": "Jr.",
+  JUNIOR: "Junior",
+  FILHO: "Filho",
+  NETO: "Neto",
+  SOBRINHO: "Sobrinho",
+}
+
+/** Tratamentos/títulos: forma CAIXA ALTA (sem ponto) -> forma exibida (sem ponto; o ponto original é preservado à parte). */
+const TITLE_PREFIXES: Record<string, string> = {
+  DR: "Dr",
+  DRA: "Dra",
+  PROF: "Prof",
+  PROFESSOR: "Professor",
+  PROFESSORA: "Professora",
+  CAPITÃO: "Capitão",
+  CAPITAO: "Capitão",
+  DELEGADO: "Delegado",
+  PASTOR: "Pastor",
+}
+
+const ROMAN_NUMERAL_RE = /^[IVXLCDM]+$/
+
+function hasLowerCase(value: string): boolean {
+  return value.toLocaleLowerCase("pt-BR") !== value && /\p{Ll}/u.test(value)
+}
+
+function hasVowel(value: string): boolean {
+  return /[AEIOUÀ-ÖØ-Ý]/i.test(value)
+}
+
+function titleCaseWord(word: string): string {
+  if (!word) return word
+  const chars = Array.from(word)
+  const first = chars[0].toLocaleUpperCase("pt-BR")
+  const rest = chars.slice(1).join("").toLocaleLowerCase("pt-BR")
+  return first + rest
+}
+
+/**
+ * Formata um único token (já separado por espaço). Pode conter hífen ou
+ * apóstrofo internos (ex. "SANTA-RITA", "D'ÁVILA"), tratados subtoken a
+ * subtoken preservando o separador original.
+ */
+function formatToken(token: string, isFirstWord: boolean): string {
+  if (!token) return token
+
+  // Hífen ou apóstrofo: formatar cada pedaço e recompor com o separador original.
+  const splitMatch = token.match(/^([^-']+)([-'])(.+)$/)
+  if (splitMatch) {
+    const [, head, sep, tail] = splitMatch
+    return `${formatToken(head, isFirstWord)}${sep}${formatToken(tail, false)}`
+  }
+
+  // Título colado ao nome sem espaço (ex. "DR.HILTON"): formata o título e o
+  // restante separadamente, preservando o ponto. Visto em produção 2026-09-24.
+  const titleDotMatch = token.match(/^(DR|DRA|PROF|PROFESSOR|PROFESSORA)\.(.+)$/i)
+  if (titleDotMatch) {
+    const [, title, rest] = titleDotMatch
+    const upperTitle = title.toLocaleUpperCase("pt-BR")
+    return `${TITLE_PREFIXES[upperTitle] ?? titleCaseWord(title)}.${formatToken(rest, false)}`
+  }
+
+  const bare = token.replace(/\.$/, "")
+  const hadDot = token.endsWith(".") && bare.length > 0
+  const upperBare = bare.toLocaleUpperCase("pt-BR")
+
+  if (ROMAN_NUMERAL_RE.test(bare) && bare.length > 1) {
+    return bare.toLocaleUpperCase("pt-BR") + (hadDot ? "." : "")
+  }
+  if (UPPERCASE_ACRONYMS.has(upperBare)) {
+    return upperBare + (hadDot ? "." : "")
+  }
+  if (upperBare in GENERATION_SUFFIXES) {
+    return GENERATION_SUFFIXES[upperBare] + (hadDot ? "." : "")
+  }
+  if (upperBare in TITLE_PREFIXES) {
+    return TITLE_PREFIXES[upperBare] + (hadDot ? "." : "")
+  }
+  if (!isFirstWord && LOWERCASE_PARTICLES.has(bare.toLocaleLowerCase("pt-BR"))) {
+    return bare.toLocaleLowerCase("pt-BR") + (hadDot ? "." : "")
+  }
+  // Token sem vogal (siglas curtas não catalogadas, ex. iniciais isoladas):
+  // mantido maiúsculo em vez de virar uma "palavra" title-case sem sentido.
+  if (bare.length > 1 && !hasVowel(bare)) {
+    return upperBare + (hadDot ? "." : "")
+  }
+
+  return titleCaseWord(bare) + (hadDot ? "." : "")
+}
+
+/**
+ * Formata um nome publicado pelo TSE em CAIXA ALTA para exibição em title
+ * case. Nomes com QUALQUER letra minúscula (já curados) são retornados
+ * intocados — a função só age quando o nome inteiro está em caixa alta.
+ */
+export function formatDisplayName(raw: string | null | undefined): string {
+  if (raw == null) return ""
+  if (!raw.trim()) return raw
+  if (hasLowerCase(raw)) return raw
+
+  const words = raw.split(/(\s+)/)
+  let sawWord = false
+  const formatted = words.map((piece) => {
+    if (/^\s+$/.test(piece) || piece === "") return piece
+    const isFirstWord = !sawWord
+    sawWord = true
+    return formatToken(piece, isFirstWord)
+  })
+  return formatted.join("")
+}

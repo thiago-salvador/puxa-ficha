@@ -6,6 +6,7 @@ import { getCitableCandidateSites } from "@/lib/candidate-sites-proof"
 import { createServerSupabaseClient } from "@/lib/supabase"
 import { shouldExposeCargo } from "@/lib/senado-feature"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
+import { formatDisplayName } from "@/lib/display-name"
 
 export interface ImprensaFilters {
   cargo: string | null
@@ -14,14 +15,20 @@ export interface ImprensaFilters {
 
 export interface ImprensaRow {
   slug: string
+  /** Formatado para exibição (title case); ver `nomeOriginal` para citação/exportação. */
   nome: string
+  /** Grafia original do TSE (CAIXA ALTA), preservada para "Como citar" e para os exports. */
+  nomeOriginal: string
   cargo: string
   uf: string | null
   partido: string | null
   fichaUrl: string
   chapa: {
     estado: "publicado" | "sem_dado"
+    /** Formatado para exibição (title case); ver `viceNomeOriginal` para exportação. */
     viceNome: string | null
+    /** Grafia original do TSE, preservada para exportação. */
+    viceNomeOriginal: string | null
     fonteUrl: string | null
     fonteSha256: string | null
     snapshotEm: string | null
@@ -245,16 +252,16 @@ function mapProcesses(rows: ProcessoRow[]): ImprensaRow["processos"] {
 }
 
 function mapChapa(rows: ChapaRow[]): ImprensaRow["chapa"] {
-  if (rows.length !== 1) return { estado: "sem_dado", viceNome: null, fonteUrl: null, fonteSha256: null, snapshotEm: null }
+  if (rows.length !== 1) return { estado: "sem_dado", viceNome: null, viceNomeOriginal: null, fonteUrl: null, fonteSha256: null, snapshotEm: null }
   const row = rows[0]
   const fonteUrl = requireHttps(row.fonte_url)
   const fonteSha256 = typeof row.fonte_sha256 === "string" && /^[a-f0-9]{64}$/i.test(row.fonte_sha256) ? row.fonte_sha256 : null
   const snapshotEm = typeof row.snapshot_em === "string" && !Number.isNaN(Date.parse(row.snapshot_em)) ? row.snapshot_em : null
-  const viceNome = typeof row.vice_nome_urna === "string" && row.vice_nome_urna.trim() ? row.vice_nome_urna.trim() : null
-  if (row.identidade_status !== "confirmada" || row.vinculo_titular_status !== "confirmado" || !viceNome || !fonteUrl || !fonteSha256 || !snapshotEm) {
-    return { estado: "sem_dado", viceNome: null, fonteUrl: null, fonteSha256: null, snapshotEm: null }
+  const viceNomeOriginal = typeof row.vice_nome_urna === "string" && row.vice_nome_urna.trim() ? row.vice_nome_urna.trim() : null
+  if (row.identidade_status !== "confirmada" || row.vinculo_titular_status !== "confirmado" || !viceNomeOriginal || !fonteUrl || !fonteSha256 || !snapshotEm) {
+    return { estado: "sem_dado", viceNome: null, viceNomeOriginal: null, fonteUrl: null, fonteSha256: null, snapshotEm: null }
   }
-  return { estado: "publicado", viceNome, fonteUrl, fonteSha256, snapshotEm }
+  return { estado: "publicado", viceNome: formatDisplayName(viceNomeOriginal), viceNomeOriginal, fonteUrl, fonteSha256, snapshotEm }
 }
 
 export async function getImprensaDataset(filters: ImprensaFilters): Promise<ImprensaDataset> {
@@ -277,7 +284,8 @@ export async function getImprensaDataset(filters: ImprensaFilters): Promise<Impr
   for (const chapa of chapas) chapaByCandidate.set(chapa.titular_candidato_id, [...(chapaByCandidate.get(chapa.titular_candidato_id) ?? []), chapa])
   const rows = await Promise.all(selected.map(async (candidate) => ({
     slug: candidate.slug,
-    nome: candidate.nome_urna ?? "",
+    nome: formatDisplayName(candidate.nome_urna ?? ""),
+    nomeOriginal: candidate.nome_urna ?? "",
     cargo: candidate.cargo_disputado ?? "",
     uf: candidate.estado ?? null,
     partido: candidate.partido_sigla ?? null,
