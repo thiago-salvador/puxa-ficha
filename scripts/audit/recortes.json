@@ -648,6 +648,13 @@
       "ate": "20260924120000",
       "allowlist": "scripts/audit/allowlist-verified-history-situacao-dominio-20260924.json",
       "divida": null
+    },
+    {
+      "nome": "issue-483-arruda-20260924",
+      "desde": "20260924180000",
+      "ate": "20260924180000",
+      "allowlist": "scripts/audit/allowlist-issue-483-arruda-20260924.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
