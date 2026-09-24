@@ -271,3 +271,58 @@ test("seleção executável substitui erro antigo e preserva erro atual", () => 
   }
   assert.deepEqual(selectLatestSourceEvidence([recentSuccess, currentError]), [currentError])
 })
+
+test("política de erro parcial só existe em fonte scheduled", () => {
+  const withPolicy = loadFreshnessRegistry().filter((item) => item.partial_error_policy)
+  assert.ok(withPolicy.some((item) => item.source_id === "google-news"))
+  for (const item of withPolicy) {
+    assert.equal(item.refresh_mode, "scheduled")
+    assert.equal(item.partial_error_policy, "technical_debt")
+  }
+})
+
+test("google-news: erro parcial vira dívida visível; falha total e atraso continuam bloqueando", () => {
+  const registry = loadFreshnessRegistry()
+  const news = registry.find((item) => item.source_id === "google-news")
+  const camara = registry.find((item) => item.source_id === "camara")
+  assert.ok(news)
+  assert.ok(camara)
+  const now = new Date("2026-09-24T15:53:00.000Z")
+  // Formato da evidência gerada por data-freshness-snapshot.sql para a execução
+  // de 24/09: 1 timeout em 513 alvos.
+  const partial = {
+    source_id: "google-news",
+    checked_at: "2026-09-24T08:17:18.043Z",
+    source_error: "1 erro(s) na execução mais recente",
+    review_required: false,
+    error_count: 1,
+    debt_count: 0,
+    total_count: 513,
+    execution_id: "exec-parcial",
+    target_inventory: { total_count: 565, error_count: 1, debt_count: 0 },
+  }
+  const older = { ...partial, checked_at: "2026-09-23T08:17:08.633Z", source_error: null, error_count: 0, execution_id: "exec-anterior" }
+
+  for (const strict of [false, true]) {
+    const result = evaluateSourceFreshness(news, aggregateSourceEvidence(news, [older, partial]), now, { strict })
+    assert.equal(result.status, "technical_debt", `strict=${strict}`)
+    assert.equal(result.negative_claims_allowed, false)
+    assert.equal(result.error_count, 1)
+    assert.equal(result.source_error, "1 erro(s) na execução mais recente")
+    assert.ok(result.age_hours !== null && result.age_hours < 8)
+
+    const total = { ...partial, error_count: 513, source_error: "513 erro(s) na execução mais recente" }
+    assert.equal(evaluateSourceFreshness(news, aggregateSourceEvidence(news, [total]), now, { strict }).status, "source_error")
+
+    const late = { ...partial, checked_at: "2026-09-22T23:00:00.000Z" }
+    const lateResult = evaluateSourceFreshness(news, aggregateSourceEvidence(news, [late]), now, { strict })
+    assert.equal(lateResult.status, "stale", `strict=${strict}`)
+    assert.equal(lateResult.negative_claims_allowed, false)
+
+    const invalid = { ...partial, checked_at: "não é data" }
+    assert.equal(evaluateSourceFreshness(news, invalid, now, { strict }).status, "source_error")
+
+    const withoutPolicy = { ...partial, source_id: "camara" }
+    assert.equal(evaluateSourceFreshness(camara, withoutPolicy, now, { strict }).status, "source_error")
+  }
+})

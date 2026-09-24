@@ -202,7 +202,17 @@ export function evaluateSourceFreshness(
     stale_source_ids: staleIds,
   })
 
-  if (evidence.source_error && source.refresh_mode === "scheduled") {
+  // Erro em parte dos alvos, com os demais coletados na mesma execução. Só vale
+  // para fonte que declara a política; falha total segue como source_error.
+  const errorCount = evidence.error_count ?? 0
+  const partialError =
+    source.refresh_mode === "scheduled" &&
+    source.partial_error_policy === "technical_debt" &&
+    Boolean(evidence.source_error) &&
+    errorCount > 0 &&
+    (evidence.total_count ?? 0) > errorCount &&
+    validCheckedAt(evidence.checked_at) !== null
+  if (evidence.source_error && source.refresh_mode === "scheduled" && !partialError) {
     return result("source_error", null, false)
   }
   if (evidence.review_required) {
@@ -211,6 +221,11 @@ export function evaluateSourceFreshness(
   const invalidCheckedAt = evidence.checked_at != null && validCheckedAt(evidence.checked_at) === null
   if (strict && source.refresh_mode === "scheduled" && staleIds.length > 0 && !invalidCheckedAt) {
     return result("stale", ageHoursForResult(evidence.checked_at), false)
+  }
+  if (partialError) {
+    const ageHours = ageHoursForResult(evidence.checked_at)
+    const stale = ageHours === null || (source.max_age_hours !== null && ageHours > source.max_age_hours)
+    return result(stale ? "stale" : "technical_debt", ageHours, false)
   }
   if (evidence.source_error || (evidence.debt_count ?? 0) > 0) {
     return result("technical_debt", ageHoursForResult(evidence.checked_at), false)
