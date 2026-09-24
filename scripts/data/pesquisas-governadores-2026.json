@@ -380,7 +380,7 @@
               "id": "real-time-big-data-ac-01699-2026-1t",
               "turn": 1,
               "geography": "Acre",
-              "label_raw": "Intenção de voto para governador do Acre, 1º turno estimulado",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -522,7 +522,7 @@
               "id": "data-control-ac-07272-2026-1t",
               "turn": 1,
               "geography": "Acre",
-              "label_raw": "Intenção de voto para governador do Acre, 1º turno estimulado",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -1794,7 +1794,7 @@
               "id": "projeta-pesquisa-de-mercado-e-opiniao-publica-am-06136-2026-1t",
               "turn": 1,
               "geography": "Amazonas",
-              "label_raw": "Se as eleições para Governo do Estado do Amazonas fossem hoje, e os candidatos fossem os seguintes, em quem você votaria? (Estimulada) — coluna Amazonas (estado)",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": "Se as eleições para Governo do Estado do Amazonas fossem hoje, e os candidatos fossem os seguintes, em quem você votaria?",
                 "status": "publicado"
@@ -4931,7 +4931,7 @@
               "id": "quaest-df-02596-2026-1t",
               "turn": 1,
               "geography": "Distrito Federal",
-              "label_raw": "Cenário 1 (1º turno, com Arruda)",
+              "label_raw": "Intenção de voto estimulada no 1º turno, com José Roberto Arruda; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -5035,7 +5035,7 @@
               "id": "quaest-df-02596-2026-1t-cenario-2",
               "turn": 1,
               "geography": "Distrito Federal",
-              "label_raw": "Cenário 2 (1º turno, sem Arruda)",
+              "label_raw": "Intenção de voto estimulada no 1º turno, sem José Roberto Arruda; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -5200,7 +5200,7 @@
               "id": "instituto-opiniao-inteligencia-politica-pesquisa-correio-opiniao-df-03622-2026-1t",
               "turn": 1,
               "geography": "Distrito Federal",
-              "label_raw": "Estimulada — 4ª rodada, amostra total (com Arruda)",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -5276,7 +5276,7 @@
               "id": "instituto-opiniao-inteligencia-politica-pesquisa-correio-opiniao-df-03622-2026-1t-espontaneo",
               "turn": 1,
               "geography": "Distrito Federal",
-              "label_raw": "Espontânea — 4ª rodada",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -5758,7 +5758,7 @@
               "id": "parana-pesquisas-es-05719-2026-1t",
               "turn": 1,
               "geography": "Espírito Santo",
-              "label_raw": "Estimulado 1º turno - Governador (% do total da amostra)",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -5820,7 +5820,7 @@
               "id": "parana-pesquisas-es-05719-2026-1t-espontaneo",
               "turn": 1,
               "geography": "Espírito Santo",
-              "label_raw": "Espontânea - Governador",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -7192,7 +7192,7 @@
               "id": "parana-pesquisas-mt-09335-2026-1t",
               "turn": 1,
               "geography": "Mato Grosso",
-              "label_raw": "1º TURNO - intenções de voto para governador",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -8295,7 +8295,7 @@
               "id": "instituto-ranking-brasil-inteligencia-ms-04287-2026-1t",
               "turn": 1,
               "geography": "Mato Grosso do Sul",
-              "label_raw": "Estimulada — 11ª rodada",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -8378,7 +8378,7 @@
               "id": "instituto-ranking-brasil-inteligencia-ms-04287-2026-1t-espontaneo",
               "turn": 1,
               "geography": "Mato Grosso do Sul",
-              "label_raw": "Espontânea — 11ª rodada",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -8543,7 +8543,7 @@
               "id": "instituto-novo-ibrape-ms-09851-2026-1t",
               "turn": 1,
               "geography": "Mato Grosso do Sul",
-              "label_raw": "Governo de Mato Grosso do Sul",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -9787,7 +9787,7 @@
               "id": "quaest-mg-03276-2026-1t",
               "turn": 1,
               "geography": "Minas Gerais",
-              "label_raw": "Cenário estimulado 1º turno, base total da amostra",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -9976,7 +9976,7 @@
               "id": "atlasintel-mg-03290-2026-1t",
               "turn": 1,
               "geography": "Minas Gerais",
-              "label_raw": "Cenário estimulado 1º turno, base total da amostra (1.799 entrevistados)",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -10144,7 +10144,7 @@
               "id": "real-time-big-data-mg-07331-2026-1t",
               "turn": 1,
               "geography": "Minas Gerais",
-              "label_raw": "Cenário estimulado 1º turno, base total da amostra (2.000 entrevistados)",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -12943,7 +12943,7 @@
               "id": "real-time-big-data-pr-00532-2026-1t",
               "turn": 1,
               "geography": "Paraná",
-              "label_raw": "Cenário estimulado (primeiro turno)",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -13005,7 +13005,7 @@
               "id": "real-time-big-data-pr-00532-2026-1t-espontaneo",
               "turn": 1,
               "geography": "Paraná",
-              "label_raw": "Cenário espontâneo",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -13142,7 +13142,7 @@
               "id": "atlasintel-pr-02671-2026-1t",
               "turn": 1,
               "geography": "Paraná",
-              "label_raw": "Cenário estimulado - votos totais",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -13293,7 +13293,7 @@
               "id": "alfa-inteligencia-pr-03640-2026-1t",
               "turn": 1,
               "geography": "Paraná",
-              "label_raw": "Pesquisa estimulada (primeiro turno)",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -13348,7 +13348,7 @@
               "id": "alfa-inteligencia-pr-03640-2026-1t-espontaneo",
               "turn": 1,
               "geography": "Paraná",
-              "label_raw": "Pesquisa espontânea (primeiro turno)",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -13492,7 +13492,7 @@
               "id": "parana-pesquisas-pr-01022-2026-1t",
               "turn": 1,
               "geography": "Paraná",
-              "label_raw": "Cenário estimulado",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -13547,7 +13547,7 @@
               "id": "parana-pesquisas-pr-01022-2026-1t-espontaneo",
               "turn": 1,
               "geography": "Paraná",
-              "label_raw": "Cenário espontâneo",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -13677,7 +13677,7 @@
               "id": "neokemp-pr-08899-2026-1t",
               "turn": 1,
               "geography": "Paraná",
-              "label_raw": "Cenário estimulado (quando são mostrados os nomes dos concorrentes)",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -13842,7 +13842,7 @@
               "id": "irg-pesquisas-pr-01172-2026-1t",
               "turn": 1,
               "geography": "Paraná",
-              "label_raw": "Cenário estimulado (primeiro turno, com chapa governador+vice)",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -13911,7 +13911,7 @@
               "id": "irg-pesquisas-pr-01172-2026-1t-espontaneo",
               "turn": 1,
               "geography": "Paraná",
-              "label_raw": "Cenário espontâneo (primeiro turno)",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -14069,7 +14069,7 @@
               "id": "neokemp-pr-07451-2026-1t",
               "turn": 1,
               "geography": "Paraná",
-              "label_raw": "Cenário estimulado de primeiro turno",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -16330,7 +16330,7 @@
               "id": "quaest-rj-04982-2026-1t",
               "turn": 1,
               "geography": "Rio de Janeiro",
-              "label_raw": "Cenário estimulado com Garotinho",
+              "label_raw": "Intenção de voto estimulada no 1º turno, com Garotinho; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -16420,7 +16420,7 @@
               "id": "quaest-rj-04982-2026-1t-cenario-2",
               "turn": 1,
               "geography": "Rio de Janeiro",
-              "label_raw": "Cenário estimulado sem Garotinho",
+              "label_raw": "Intenção de voto estimulada no 1º turno, sem Garotinho; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -16590,7 +16590,7 @@
               "id": "atlasintel-rj-01150-2026-1t",
               "turn": 1,
               "geography": "Rio de Janeiro",
-              "label_raw": "Cenário estimulado com Garotinho (1º turno)",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -16744,7 +16744,7 @@
               "id": "parana-pesquisas-rj-04036-2026-1t",
               "turn": 1,
               "geography": "Rio de Janeiro",
-              "label_raw": "Cenário estimulado com Garotinho",
+              "label_raw": "Intenção de voto estimulada no 1º turno, com Garotinho; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -16834,7 +16834,7 @@
               "id": "parana-pesquisas-rj-04036-2026-1t-cenario-2",
               "turn": 1,
               "geography": "Rio de Janeiro",
-              "label_raw": "Cenário estimulado sem Garotinho",
+              "label_raw": "Intenção de voto estimulada no 1º turno, sem Garotinho; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -16875,7 +16875,7 @@
               "id": "parana-pesquisas-rj-04036-2026-1t-espontaneo",
               "turn": 1,
               "geography": "Rio de Janeiro",
-              "label_raw": "Pesquisa espontânea",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -18417,7 +18417,7 @@
               "id": "atlasintel-rs-00981-2026-1t",
               "turn": 1,
               "geography": "Rio Grande do Sul",
-              "label_raw": "1º turno, % do total da amostra",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -18535,7 +18535,7 @@
               "id": "parana-pesquisas-rs-00319-2026-1t",
               "turn": 1,
               "geography": "Rio Grande do Sul",
-              "label_raw": "1º turno, % do total da amostra",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -19820,7 +19820,7 @@
               "id": "real-time-big-data-sc-00866-2026-1t",
               "turn": 1,
               "geography": "Santa Catarina",
-              "label_raw": "Cenário estimulado 1º turno, % do total da amostra",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -19889,7 +19889,7 @@
               "id": "real-time-big-data-sc-00866-2026-1t-espontaneo",
               "turn": 1,
               "geography": "Santa Catarina",
-              "label_raw": "Cenário espontâneo",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -20031,7 +20031,7 @@
               "id": "parana-pesquisas-sc-00523-2026-1t",
               "turn": 1,
               "geography": "Santa Catarina",
-              "label_raw": "Cenário estimulado 1º turno, % do total da amostra",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -20114,7 +20114,7 @@
               "id": "parana-pesquisas-sc-00523-2026-1t-espontaneo",
               "turn": 1,
               "geography": "Santa Catarina",
-              "label_raw": "Cenário espontâneo (parcial, só 3 nomes citados nas matérias acessadas)",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -21012,7 +21012,7 @@
               "id": "quaest-sp-02456-2026-1t",
               "turn": 1,
               "geography": "São Paulo",
-              "label_raw": "No cenário estimulado, Tarcísio de Freitas abre 17 pontos percentuais para Fernando Haddad",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -21088,7 +21088,7 @@
               "id": "quaest-sp-02456-2026-1t-espontaneo",
               "turn": 1,
               "geography": "São Paulo",
-              "label_raw": "Na pesquisa espontânea, indecisos somam 56%",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -21221,7 +21221,7 @@
               "id": "parana-pesquisas-sp-03057-2026-1t",
               "turn": 1,
               "geography": "São Paulo",
-              "label_raw": "Tarcísio de Freitas tem mais de 50% no cenário estimulado",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -21297,7 +21297,7 @@
               "id": "parana-pesquisas-sp-03057-2026-1t-espontaneo",
               "turn": 1,
               "geography": "São Paulo",
-              "label_raw": "Na pesquisa espontânea, mais de 40% dos entrevistados dizem não saber em quem votar",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -21466,7 +21466,7 @@
               "id": "atlasintel-sp-02676-2026-1t",
               "turn": 1,
               "geography": "São Paulo",
-              "label_raw": "No cenário de votos totais, Tarcísio de Freitas abre mais de 14 pontos percentuais",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -21610,7 +21610,7 @@
               "id": "real-time-big-data-sp-07495-2026-1t",
               "turn": 1,
               "geography": "São Paulo",
-              "label_raw": "Na pesquisa estimulada, Tarcísio de Freitas lidera com mais de 50%",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -21658,7 +21658,7 @@
               "id": "real-time-big-data-sp-07495-2026-1t-espontaneo",
               "turn": 1,
               "geography": "São Paulo",
-              "label_raw": "Na pesquisa espontânea, mais de 40% não sabem em quem votar",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
               "question": {
                 "value": null,
                 "status": "indeterminado"

@@ -38,6 +38,7 @@ Um arquivo JSON com uma lista de rodadas:
 - `capture_file` guarda o trecho literal da publicação com números e metodologia; o hash vai para o catálogo.
 - Percentuais são do total da amostra. Campos não publicados ficam `null`, nunca inferidos.
 - Rodadas marcadas com `"status": "nao_confirmada"` são ignoradas.
+- O rótulo publicado é gerado ("Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados"); `label_raw` da coleta não vai ao site, porque costuma repetir a manchete. Quando a rodada tem mais de um cenário estimulado, cada um precisa de `note` com a diferença objetiva (ex.: `"sem Fulano"`).
 
 E um arquivo de decisões de alias por escopo (`"BR"` ou a sigla da UF): cada nome impresso aponta
 para o slug do candidato, ou `null` para linhas que não são candidatos (brancos, nulos, indecisos,

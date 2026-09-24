@@ -38,7 +38,10 @@ export interface RodadaColetada {
   capture_file: string
   scenarios: {
     kind: "estimulado" | "espontaneo"
-    label_raw: string
+    /** Collector's own description; never published (headlines are editorial). */
+    label_raw?: string
+    /** Neutral distinction between stimulated scenarios of the same round, e.g. "sem Fulano". */
+    note?: string
     question: string | null
     results: { raw_label: string; value_percent: number }[]
   }[]
@@ -95,6 +98,10 @@ export function validarRodada(rodada: RodadaColetada, aliases: DecisoesAlias): s
   if (!/^https:\/\//.test(rodada.result_url ?? "")) problems.push(`${where}: result_url ausente`)
   if (!rodada.capture_file || !existsSync(rodada.capture_file)) problems.push(`${where}: captura literal ausente`)
   if (!rodada.scenarios?.some((scenario) => scenario.kind === "estimulado")) problems.push(`${where}: sem cenário estimulado`)
+  const stimulatedNotes = (rodada.scenarios ?? []).filter((scenario) => scenario.kind === "estimulado").map((scenario) => scenario.note?.trim() ?? "")
+  if (stimulatedNotes.length > 1 && (stimulatedNotes.some((note) => !note) || new Set(stimulatedNotes).size !== stimulatedNotes.length)) {
+    problems.push(`${where}: cenários estimulados múltiplos exigem nota distinta em cada um`)
+  }
   for (const scenario of rodada.scenarios ?? []) {
     const labels = new Set<string>()
     let total = 0
@@ -107,7 +114,7 @@ export function validarRodada(rodada: RodadaColetada, aliases: DecisoesAlias): s
       labels.add(result.raw_label)
       if (!(result.raw_label in (aliases[rodada.uf] ?? {}))) problems.push(`${where}: sem decisão de alias para "${result.raw_label}"`)
     }
-    if (total > 102) problems.push(`${where}: cenário "${scenario.label_raw}" soma ${total.toFixed(1)}%`)
+    if (total > 102) problems.push(`${where}: cenário ${scenario.kind} ${scenario.note ?? ""} soma ${total.toFixed(1)}%`)
   }
   return problems
 }
@@ -205,7 +212,7 @@ export function montarRodada(rodada: RodadaColetada, aliases: DecisoesAlias, cat
       id: scenarioId,
       turn: 1,
       geography,
-      label_raw: scenario.label_raw,
+      label_raw: `Intenção de voto ${scenario.kind === "estimulado" ? "estimulada" : "espontânea"} no 1º turno${scenario.note ? `, ${scenario.note.trim()}` : ""}; percentuais do total de entrevistados`,
       question: vs(scenario.question),
       comparability_key: `2026|${office}|${rodada.uf}|1|${mode}|${list}|total_amostra`,
       resultados: scenario.results.map((result) => {

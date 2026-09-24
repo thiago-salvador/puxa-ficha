@@ -41,6 +41,7 @@ describe("importação manual auditada de pesquisas", () => {
     const resultados = poll.cenarios[0].resultados
     assert.equal(resultados.find((entry) => entry.rawLabel === "Lula")?.candidateSlug, "lula")
     assert.equal(resultados.find((entry) => entry.rawLabel === "Não sabem")?.matchStatus, "not_candidate")
+    assert.equal(poll.cenarios[0].labelRaw, "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados")
   })
 
   it("aceita governador e reaproveita o dataset da UF", () => {
@@ -64,6 +65,14 @@ describe("importação manual auditada de pesquisas", () => {
     assert.ok(semCaptura.problems.some((problem) => problem.includes("captura literal ausente")))
     const outraUf = importarRodadas([rodada({ registration: "SP-00001/2026" })], aliases, "2026-09-24T12:00:00Z", carregarCatalogos())
     assert.ok(outraUf.problems.some((problem) => problem.includes("registro de outra UF")))
+  })
+
+  it("exige nota distinta quando a rodada tem mais de um cenário estimulado", () => {
+    const base = rodada().scenarios[0]
+    const semNota = importarRodadas([rodada({ scenarios: [base, { ...base }] })], aliases, "2026-09-24T12:00:00Z", carregarCatalogos())
+    assert.ok(semNota.problems.some((problem) => problem.includes("nota distinta")))
+    const comNota = importarRodadas([rodada({ scenarios: [{ ...base, note: "com Fulano" }, { ...base, note: "sem Fulano" }] })], aliases, "2026-09-24T12:00:00Z", carregarCatalogos())
+    assert.deepEqual(comNota.problems, [])
   })
 
   it("não duplica rodada já catalogada pelo mesmo registro", () => {
