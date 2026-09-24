@@ -2,6 +2,206 @@
   "policy": "pf-representacoes-etica-v1",
   "itens": [
     {
+      "id": "camara-rep-2364435-dep-204472",
+      "candidate_slug": "tse-2026-110002552693",
+      "casa": "camara",
+      "deputado_id": 204472,
+      "proposicao": {
+        "id": 2364435,
+        "sigla": "REP",
+        "numero": 4,
+        "ano": 2023
+      },
+      "fase": "arquivada",
+      "ultimo_andamento_em": "2023-12-05",
+      "verificado_em": "2026-09-24",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2364435",
+      "identidade": {
+        "metodo": "cpf_tse_camara",
+        "conferida_em": "2026-09-24"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-24"
+      }
+    },
+    {
+      "id": "camara-rep-2368405-dep-160575",
+      "candidate_slug": "tse-2026-70002552490",
+      "casa": "camara",
+      "deputado_id": 160575,
+      "proposicao": {
+        "id": 2368405,
+        "sigla": "REP",
+        "numero": 12,
+        "ano": 2023
+      },
+      "fase": "arquivada",
+      "ultimo_andamento_em": "2023-12-14",
+      "verificado_em": "2026-09-24",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2368405",
+      "identidade": {
+        "metodo": "cpf_tse_camara",
+        "conferida_em": "2026-09-24"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-24"
+      }
+    },
+    {
+      "id": "camara-rep-2376378-dep-220633",
+      "candidate_slug": "tse-2026-250002532794",
+      "casa": "camara",
+      "deputado_id": 220633,
+      "proposicao": {
+        "id": 2376378,
+        "sigla": "REP",
+        "numero": 20,
+        "ano": 2023
+      },
+      "fase": "arquivada",
+      "ultimo_andamento_em": "2024-02-06",
+      "verificado_em": "2026-09-24",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2376378",
+      "identidade": {
+        "metodo": "cpf_tse_camara",
+        "conferida_em": "2026-09-24"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-24"
+      }
+    },
+    {
+      "id": "camara-rep-2376389-dep-220552",
+      "candidate_slug": "luciano-zucco",
+      "casa": "camara",
+      "deputado_id": 220552,
+      "proposicao": {
+        "id": 2376389,
+        "sigla": "REP",
+        "numero": 21,
+        "ano": 2023
+      },
+      "fase": "arquivada",
+      "ultimo_andamento_em": "2024-02-06",
+      "verificado_em": "2026-09-24",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2376389",
+      "identidade": {
+        "metodo": "seed_ids_camara",
+        "conferida_em": "2026-09-24"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-24"
+      }
+    },
+    {
+      "id": "camara-rep-2410507-dep-220633",
+      "candidate_slug": "tse-2026-250002532794",
+      "casa": "camara",
+      "deputado_id": 220633,
+      "proposicao": {
+        "id": 2410507,
+        "sigla": "REP",
+        "numero": 23,
+        "ano": 2023
+      },
+      "fase": "arquivada",
+      "ultimo_andamento_em": "2024-07-08",
+      "verificado_em": "2026-09-24",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2410507",
+      "identidade": {
+        "metodo": "cpf_tse_camara",
+        "conferida_em": "2026-09-24"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-24"
+      }
+    },
+    {
+      "id": "camara-rep-2545934-dep-220568",
+      "candidate_slug": "tse-2026-90002543556",
+      "casa": "camara",
+      "deputado_id": 220568,
+      "proposicao": {
+        "id": 2545934,
+        "sigla": "REP",
+        "numero": 6,
+        "ano": 2025
+      },
+      "fase": "arquivamento_aprovado_conselho",
+      "ultimo_andamento_em": "2025-11-05",
+      "verificado_em": "2026-09-24",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2545934",
+      "identidade": {
+        "metodo": "cpf_tse_camara",
+        "conferida_em": "2026-09-24"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-24"
+      }
+    },
+    {
+      "id": "camara-rep-2545992-dep-178908",
+      "candidate_slug": "delegado-eder-mauro",
+      "casa": "camara",
+      "deputado_id": 178908,
+      "proposicao": {
+        "id": 2545992,
+        "sigla": "REP",
+        "numero": 11,
+        "ano": 2025
+      },
+      "fase": "arquivamento_aprovado_conselho",
+      "ultimo_andamento_em": "2026-03-18",
+      "verificado_em": "2026-09-24",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2545992",
+      "identidade": {
+        "metodo": "seed_ids_camara",
+        "conferida_em": "2026-09-24"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-24"
+      }
+    },
+    {
+      "id": "camara-rep-2546018-dep-204472",
+      "candidate_slug": "tse-2026-110002552693",
+      "casa": "camara",
+      "deputado_id": 204472,
+      "proposicao": {
+        "id": 2546018,
+        "sigla": "REP",
+        "numero": 18,
+        "ano": 2025
+      },
+      "fase": "arquivamento_aprovado_conselho",
+      "ultimo_andamento_em": "2026-03-19",
+      "verificado_em": "2026-09-24",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2546018",
+      "identidade": {
+        "metodo": "cpf_tse_camara",
+        "conferida_em": "2026-09-24"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-24"
+      }
+    },
+    {
       "id": "camara-rep-2563294-dep-156190",
       "candidate_slug": "tse-2026-210002547819",
       "casa": "camara",
