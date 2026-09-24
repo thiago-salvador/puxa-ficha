@@ -1,0 +1,12 @@
+{
+  "primeira_pagina": {
+    "path": "/proposicoes?siglaTipo=REP&ano=2023&itens=100&ordem=ASC&ordenarPor=id",
+    "ids": [2366795],
+    "next": "/proposicoes?siglaTipo=REP&ano=2023&itens=100&ordem=ASC&ordenarPor=id&pagina=2"
+  },
+  "segunda_pagina": {
+    "path": "/proposicoes?siglaTipo=REP&ano=2023&itens=100&ordem=ASC&ordenarPor=id&pagina=2",
+    "ids": [2376389],
+    "next": null
+  }
+}

@@ -41,6 +41,7 @@
     "lint:spell": "cspell lint --no-progress \"src/app/(site)/privacidade/page.tsx\" \"src/app/(site)/sobre/page.tsx\" src/app/not-found.tsx \"src/app/(site)/page.tsx\" src/app/layout.tsx",
     "lint:spell:ui": "cspell lint --no-progress \"src/app/**/*.tsx\" \"src/components/**/*.tsx\" --exclude \"**/internaltest/**\" --exclude \"**/styleguide/**\" --exclude \"**/preview/**\"",
     "test": "node --import tsx --test tests/**/*.test.ts tests/**/*.test.tsx tests/**/*.test.mjs",
+    "test:representacoes-etica": "node --import tsx --test tests/representacoes-etica.test.tsx tests/representacoes-etica-senado.test.tsx",
     "test:pesquisas:dados": "node --conditions react-server --import tsx --test tests/pesquisas-eleitorais-dados.test.ts",
     "test:programas-governo:schema": "node --conditions react-server --import tsx --test tests/programa-governo-schema.test.ts",
     "test:programas-governo:extracao": "node --conditions react-server --import tsx --test tests/programa-governo-extracao.test.ts",

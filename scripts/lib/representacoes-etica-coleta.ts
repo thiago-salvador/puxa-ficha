@@ -490,9 +490,15 @@ export function avaliarRepresentacao(
     recursos,
   })
   // Cada lista já vem ordenada; basta comparar o último de cada uma.
+  const tramitacoesPrincipalRelevantes = (principal?.tramitacoes ?? []).filter(
+    (t) => t.siglaOrgao === "COETICA" || t.siglaOrgao === "PLEN",
+  )
   const ultimo = [
     { t: tramitacoes.at(-1), id: rep.id },
     ...recursosDoConselho.map((r) => ({ t: r.tramitacoes.at(-1), id: r.id })),
+    ...(tramitacoesPrincipalRelevantes.length > 0
+      ? [{ t: tramitacoesPrincipalRelevantes.at(-1), id: principal!.id }]
+      : []),
   ].reduce<{ t: TramitacaoCamara; id: number } | null>((maior, candidato) => {
     if (!candidato.t) return maior
     if (!maior || candidato.t.dataHora.localeCompare(maior.t.dataHora) > 0) return { t: candidato.t, id: candidato.id }
