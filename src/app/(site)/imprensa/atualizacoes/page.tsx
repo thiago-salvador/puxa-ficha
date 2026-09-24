@@ -46,7 +46,7 @@ export default async function ImprensaAtualizacoesPage({
       </section>
 
       <div className="pt-8 sm:pt-12"><SectionDivider /></div>
-      <main className="mx-auto max-w-7xl px-5 py-8 sm:py-12 md:px-12 lg:py-16">
+      <div className="mx-auto max-w-7xl px-5 py-8 sm:py-12 md:px-12 lg:py-16">
         <Link href="/imprensa" className="mb-8 inline-flex min-h-11 items-center font-semibold text-foreground underline underline-offset-4">Voltar à Mesa de apuração</Link>
         <div className="max-w-3xl">
           <SectionLabel>Fonte e detecção</SectionLabel>
@@ -85,7 +85,7 @@ export default async function ImprensaAtualizacoesPage({
             </nav>
           </>
         )}
-      </main>
+      </div>
       <Footer />
     </div>
   )
