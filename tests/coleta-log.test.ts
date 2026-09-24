@@ -293,6 +293,9 @@ describe("FONTES cobre todo source declarado pelos ingests", () => {
       // O coletor executivo é um entrypoint dedicado em scripts/, fora de
       // scripts/lib; ainda assim sua fonte precisa permanecer no mapa.
       "gastos-executivo",
+      // Recibo global da observação semanal, gravado pelo entrypoint
+      // scripts/observe-home-updates.ts, fora dos coletores de scripts/lib.
+      "tse-observacao",
     ])
     const orfas = Object.keys(FONTES).filter(
       (f) => !declarados.has(f) && !excecoes.has(f),

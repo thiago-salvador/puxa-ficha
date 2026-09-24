@@ -120,6 +120,10 @@ export const FONTES: Readonly<Record<string, EscopoColeta>> = Object.freeze({
   // última tentativa real do ingest do TSE (perfil/patrimônio/financiamento)
   // com um desfecho que só fala do CPF.
   "tse-cpf": "candidato",
+  // Observação semanal dos pacotes oficiais do TSE (scripts/observe-home-updates.ts).
+  // Fonte própria pelo mesmo motivo de `tse-cpf`: a observação não grava fato
+  // de ficha e não pode ocupar o lugar do recibo `tse`. O alvo é o pacote.
+  "tse-observacao": "global",
   "senado-cohort": "candidato",
 
   // Cardinalidade do acervo autoral que a Camara declara para o candidato
