@@ -5513,6 +5513,2098 @@
         }
       },
       "consulted_at": "2026-09-24T12:30:00Z"
+    },
+    {
+      "id": "instituto-eficaz-pesquisas-tecnologia-rr-00428-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Instituto Eficaz Pesquisas & Tecnologia",
+        "commissioner": "EMPRESA CARACARAI DE COMUNICACAO LTDA / RADIO DIFUSORA DE CARACARAI - FM",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "portalofato.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-14",
+          "end": "2026-09-19"
+        },
+        "published_at": "2026-09-19",
+        "sample_size": 1291,
+        "method": "Entrevistas presenciais com questionário digital estruturado, amostragem probabilística proporcional ao tamanho (PPT) em pontos de fluxo, por cotas de sexo/idade/escolaridade/renda",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Roraima",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RR-00428/2026",
+        "result_url": "https://portalofato.com.br/2026/09/19/arthur-henrique-dispara-com-63-e-abre-40-pontos-sobre-sampaio-em-nova-pesquisa-para-o-governo-de-roraima/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RR-00428/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "c0007685fc2f0223e8fae7ea5f93ff98bd08ccc892917082030ca0dbeea807b7",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://portalofato.com.br/2026/09/19/arthur-henrique-dispara-com-63-e-abre-40-pontos-sobre-sampaio-em-nova-pesquisa-para-o-governo-de-roraima/",
+            "https://agenciasertao.com/eleicoes/pesquisas.php?protocolo=RR004282026&uf=RR",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_em_Roraima"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://portalofato.com.br/2026/09/19/arthur-henrique-dispara-com-63-e-abre-40-pontos-sobre-sampaio-em-nova-pesquisa-para-o-governo-de-roraima/",
+            "https://agenciasertao.com/eleicoes/pesquisas.php?protocolo=RR004282026&uf=RR",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_em_Roraima"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://portalofato.com.br/2026/09/19/arthur-henrique-dispara-com-63-e-abre-40-pontos-sobre-sampaio-em-nova-pesquisa-para-o-governo-de-roraima/",
+            "https://agenciasertao.com/eleicoes/pesquisas.php?protocolo=RR004282026&uf=RR",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_em_Roraima"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://portalofato.com.br/2026/09/19/arthur-henrique-dispara-com-63-e-abre-40-pontos-sobre-sampaio-em-nova-pesquisa-para-o-governo-de-roraima/",
+            "https://agenciasertao.com/eleicoes/pesquisas.php?protocolo=RR004282026&uf=RR",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_em_Roraima"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "f5-pesquisas-e-consultoria-ltda-ap-01152-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "F5 Pesquisas e Consultoria Ltda",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "pontodapauta.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-10",
+          "end": "2026-09-14"
+        },
+        "published_at": "2026-09-15",
+        "sample_size": 1065,
+        "method": "estimulada (lista de nomes)",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Amapá",
+        "rounds": [
+          1
+        ],
+        "registration_id": "AP-01152/2026",
+        "result_url": "https://pontodapauta.com.br/noticia_view.php?id_noticia=129880",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AP-01152/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "d33916bf413fa54b333f29b69a2353f869c94e6ec8cef6da9607826d29ef7cc6",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://pontodapauta.com.br/noticia_view.php?id_noticia=129880",
+            "https://depoisdas17.com.br/pesquisas/gov-ap-f5_2026-09-14_T1_SEMREG_0018/",
+            "https://depoisdas17.com.br/estados/ap/",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_no_Amap%C3%A1"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://pontodapauta.com.br/noticia_view.php?id_noticia=129880",
+            "https://depoisdas17.com.br/pesquisas/gov-ap-f5_2026-09-14_T1_SEMREG_0018/",
+            "https://depoisdas17.com.br/estados/ap/",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_no_Amap%C3%A1"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://pontodapauta.com.br/noticia_view.php?id_noticia=129880",
+            "https://depoisdas17.com.br/pesquisas/gov-ap-f5_2026-09-14_T1_SEMREG_0018/",
+            "https://depoisdas17.com.br/estados/ap/",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_no_Amap%C3%A1"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://pontodapauta.com.br/noticia_view.php?id_noticia=129880",
+            "https://depoisdas17.com.br/pesquisas/gov-ap-f5_2026-09-14_T1_SEMREG_0018/",
+            "https://depoisdas17.com.br/estados/ap/",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_no_Amap%C3%A1"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "parana-pesquisas-to-08578-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": "Fieto (Federação das Indústrias do Estado do Tocantins)",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "paranapesquisas.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-12",
+          "end": "2026-09-14"
+        },
+        "published_at": "2026-09-15",
+        "sample_size": 1504,
+        "method": "Entrevistas pessoais, domiciliares e presenciais; amostragem probabilística em três etapas (PPT de municípios e localidades, quotas por gênero/faixa etária/escolaridade/renda)",
+        "margin_of_error_pp": 2.6,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Tocantins",
+        "rounds": [
+          1
+        ],
+        "registration_id": "TO-08578/2026",
+        "result_url": "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-os-cargos-de-governador-e-senador-registro-tse-n-o-to-08578-2026-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "TO-08578/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "710805d1d4d44223579ab33957c475dfae36829a0d1afc58e0644ee7b599540d",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-os-cargos-de-governador-e-senador-registro-tse-n-o-to-08578-2026-setembro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/09/TO_Set26.pdf",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senador-tocantins-setembro-2026/",
+            "https://gazetadocerrado.com.br/politica/parana-pesquisas-fieto-afirma-que-dorinha-tem-406-e-vicentinho-junior-341-na-disputa-pelo-governo/",
+            "https://exame.com/brasil/parana-pesquisas-dorinha-tem-406-e-vicentinho-341-no-1o-turno-no-tocantins/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-os-cargos-de-governador-e-senador-registro-tse-n-o-to-08578-2026-setembro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/09/TO_Set26.pdf",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senador-tocantins-setembro-2026/",
+            "https://gazetadocerrado.com.br/politica/parana-pesquisas-fieto-afirma-que-dorinha-tem-406-e-vicentinho-junior-341-na-disputa-pelo-governo/",
+            "https://exame.com/brasil/parana-pesquisas-dorinha-tem-406-e-vicentinho-341-no-1o-turno-no-tocantins/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-os-cargos-de-governador-e-senador-registro-tse-n-o-to-08578-2026-setembro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/09/TO_Set26.pdf",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senador-tocantins-setembro-2026/",
+            "https://gazetadocerrado.com.br/politica/parana-pesquisas-fieto-afirma-que-dorinha-tem-406-e-vicentinho-junior-341-na-disputa-pelo-governo/",
+            "https://exame.com/brasil/parana-pesquisas-dorinha-tem-406-e-vicentinho-341-no-1o-turno-no-tocantins/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-os-cargos-de-governador-e-senador-registro-tse-n-o-to-08578-2026-setembro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/09/TO_Set26.pdf",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senador-tocantins-setembro-2026/",
+            "https://gazetadocerrado.com.br/politica/parana-pesquisas-fieto-afirma-que-dorinha-tem-406-e-vicentinho-junior-341-na-disputa-pelo-governo/",
+            "https://exame.com/brasil/parana-pesquisas-dorinha-tem-406-e-vicentinho-341-no-1o-turno-no-tocantins/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "quaest-to-00371-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TV Anhanguera",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "g1.globo.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-19",
+          "end": "2026-09-22"
+        },
+        "published_at": "2026-09-23",
+        "sample_size": 804,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Tocantins",
+        "rounds": [
+          1
+        ],
+        "registration_id": "TO-00371/2026",
+        "result_url": "https://g1.globo.com/to/tocantins/eleicoes/2026/noticia/2026/09/23/quaest-no-to-professora-dorinha-42percent-vicentinho-junior-29percent.ghtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "TO-00371/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "fb294604e97185806157c2633f5f94ce704b547aa5c2a85de14bf620b5ddc0af",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/to/tocantins/eleicoes/2026/noticia/2026/09/23/quaest-no-to-professora-dorinha-42percent-vicentinho-junior-29percent.ghtml",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_no_Tocantins"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/to/tocantins/eleicoes/2026/noticia/2026/09/23/quaest-no-to-professora-dorinha-42percent-vicentinho-junior-29percent.ghtml",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_no_Tocantins"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/to/tocantins/eleicoes/2026/noticia/2026/09/23/quaest-no-to-professora-dorinha-42percent-vicentinho-junior-29percent.ghtml",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_no_Tocantins"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/to/tocantins/eleicoes/2026/noticia/2026/09/23/quaest-no-to-professora-dorinha-42percent-vicentinho-junior-29percent.ghtml",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_no_Tocantins"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "igape-instituto-gazeta-de-pesquisas-go-01814-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "IGAPE (Instituto Gazeta de Pesquisas)",
+        "commissioner": "TV Atual/Record News",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "conexaorecord.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-09",
+          "end": "2026-09-14"
+        },
+        "published_at": "2026-09-15",
+        "sample_size": 2000,
+        "method": null,
+        "margin_of_error_pp": 2.2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Goiás",
+        "rounds": [
+          1
+        ],
+        "registration_id": "GO-01814/2026",
+        "result_url": "https://www.conexaorecord.com.br/daniel-lidera-para-governador-em-goias-seguido-por-marconi-e-wilder-aponta-igape/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "GO-01814/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "dd90766e5b217643e3fa38d7c3502ca0feea29f59e2b094f5f8ac74a1c93bc1a",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.conexaorecord.com.br/daniel-lidera-para-governador-em-goias-seguido-por-marconi-e-wilder-aponta-igape/",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_em_Goi%C3%A1s"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.conexaorecord.com.br/daniel-lidera-para-governador-em-goias-seguido-por-marconi-e-wilder-aponta-igape/",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_em_Goi%C3%A1s"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.conexaorecord.com.br/daniel-lidera-para-governador-em-goias-seguido-por-marconi-e-wilder-aponta-igape/",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_em_Goi%C3%A1s"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.conexaorecord.com.br/daniel-lidera-para-governador-em-goias-seguido-por-marconi-e-wilder-aponta-igape/",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_em_Goi%C3%A1s"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "igape-instituto-gazeta-de-pesquisas-go-04214-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "IGAPE (Instituto Gazeta de Pesquisas)",
+        "commissioner": "TV Atual (afiliada à Record News)",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "noticias.r7.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-14",
+          "end": "2026-09-19"
+        },
+        "published_at": "2026-09-20",
+        "sample_size": 2000,
+        "method": null,
+        "margin_of_error_pp": 2.2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Goiás",
+        "rounds": [
+          1
+        ],
+        "registration_id": "GO-04214/2026",
+        "result_url": "https://noticias.r7.com/eleicoes/2026/governo-de-goias-daniel-vilela-tem-403-e-marconi-perillo-294-no-1-turno-diz-igape-23092026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "GO-04214/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "71b7231d7424fe0ee0c038c66db05d03be1661a207e82e59946c92fce85b9773",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/governo-de-goias-daniel-vilela-tem-403-e-marconi-perillo-294-no-1-turno-diz-igape-23092026/",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_em_Goi%C3%A1s"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/governo-de-goias-daniel-vilela-tem-403-e-marconi-perillo-294-no-1-turno-diz-igape-23092026/",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_em_Goi%C3%A1s"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/governo-de-goias-daniel-vilela-tem-403-e-marconi-perillo-294-no-1-turno-diz-igape-23092026/",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_em_Goi%C3%A1s"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/governo-de-goias-daniel-vilela-tem-403-e-marconi-perillo-294-no-1-turno-diz-igape-23092026/",
+            "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_estadual_de_2026_em_Goi%C3%A1s"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "goias-pesquisas-mais-goias-go-03825-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Goiás Pesquisas/Mais Goiás",
+        "commissioner": "Mais Goiás",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "maisgoias.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-14",
+          "end": "2026-09-15"
+        },
+        "published_at": "2026-09-16",
+        "sample_size": 1250,
+        "method": null,
+        "margin_of_error_pp": 2.77,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Goiás",
+        "rounds": [
+          1
+        ],
+        "registration_id": "GO-03825/2026",
+        "result_url": "https://www.maisgoias.com.br/blogs/poder-em-jogo/goias-pesquisas-mais-goias-daniel-tem-439-wilder-179-e-marconi-169/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "GO-03825/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "f11f7fc14d3ac8e00b14ca7a63090b26f004da58c7b6e50d7af21c495ea1d1e6",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.maisgoias.com.br/blogs/poder-em-jogo/goias-pesquisas-mais-goias-daniel-tem-439-wilder-179-e-marconi-169/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.maisgoias.com.br/blogs/poder-em-jogo/goias-pesquisas-mais-goias-daniel-tem-439-wilder-179-e-marconi-169/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.maisgoias.com.br/blogs/poder-em-jogo/goias-pesquisas-mais-goias-daniel-tem-439-wilder-179-e-marconi-169/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.maisgoias.com.br/blogs/poder-em-jogo/goias-pesquisas-mais-goias-daniel-tem-439-wilder-179-e-marconi-169/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "futura-inteligencia-ba-06845-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Futura Inteligência",
+        "commissioner": "Política Livre",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "sudoestebahia.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-16",
+          "end": "2026-09-19"
+        },
+        "published_at": "2026-09-21",
+        "sample_size": 1000,
+        "method": "telefone",
+        "margin_of_error_pp": 3.1,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Bahia",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BA-06845/2026",
+        "result_url": "https://www.sudoestebahia.com/noticias/eleicoes-2026/pesquisa-futura-mostra-acm-neto-com-51-3-e-jeronimo-com-43-6-na-bahia/imprimir/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BA-06845/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "3e512513208b245e4bcb75527d1c0f61a76bce96475fdd393ac6c01cf077b187",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.sudoestebahia.com/noticias/eleicoes-2026/pesquisa-futura-mostra-acm-neto-com-51-3-e-jeronimo-com-43-6-na-bahia/imprimir/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.sudoestebahia.com/noticias/eleicoes-2026/pesquisa-futura-mostra-acm-neto-com-51-3-e-jeronimo-com-43-6-na-bahia/imprimir/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.sudoestebahia.com/noticias/eleicoes-2026/pesquisa-futura-mostra-acm-neto-com-51-3-e-jeronimo-com-43-6-na-bahia/imprimir/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.sudoestebahia.com/noticias/eleicoes-2026/pesquisa-futura-mostra-acm-neto-com-51-3-e-jeronimo-com-43-6-na-bahia/imprimir/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "seculus-cbn-salvador-ba-00478-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Séculus/CBN Salvador",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "varelanet.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-10",
+          "end": "2026-09-15"
+        },
+        "published_at": "2026-09-16",
+        "sample_size": 1535,
+        "method": null,
+        "margin_of_error_pp": 2.5,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Bahia",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BA-00478/2026",
+        "result_url": "https://www.varelanet.com.br/noticias/politica/pesquisa-aponta-acm-neto-com-47-23-e-jeronimo-com-35-44-na-bahia",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BA-00478/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "2547a451c2ee8f1baef6b9b4fdcdee4d6054223d8fbb9d9ccb0f5c44f1eb149c",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.varelanet.com.br/noticias/politica/pesquisa-aponta-acm-neto-com-47-23-e-jeronimo-com-35-44-na-bahia"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.varelanet.com.br/noticias/politica/pesquisa-aponta-acm-neto-com-47-23-e-jeronimo-com-35-44-na-bahia"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.varelanet.com.br/noticias/politica/pesquisa-aponta-acm-neto-com-47-23-e-jeronimo-com-35-44-na-bahia"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.varelanet.com.br/noticias/politica/pesquisa-aponta-acm-neto-com-47-23-e-jeronimo-com-35-44-na-bahia"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "parana-pesquisas-ba-00759-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": "S2R Comunicação LTDA / Bahia Notícias",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-21",
+          "end": "2026-09-23"
+        },
+        "published_at": "2026-09-24",
+        "sample_size": 1400,
+        "method": null,
+        "margin_of_error_pp": 2.7,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Bahia",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BA-00759/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-bahia-2026-2/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BA-00759/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "a3e7cb53b60793ff0603e9227c001fd4931b01406c54704740c2e47adfa68aec",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-bahia-2026-2/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-bahia-2026-2/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-bahia-2026-2/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-bahia-2026-2/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "atlasintel-pe-02989-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "AtlasIntel",
+        "commissioner": "própria (recursos próprios)",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "poder360.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-11",
+          "end": "2026-09-16"
+        },
+        "published_at": "2026-09-17",
+        "sample_size": 1793,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Pernambuco",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PE-02989/2026",
+        "result_url": "https://www.poder360.com.br/poder-eleicoes-2026/raquel-lyra-e-joao-campos-tecnicamente-empatados-no-pe-diz-atlasintel/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PE-02989/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "b23070fbb9791cc7459d99f36814f10924842a4dcddf23d5654de3d402f6ca40",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.poder360.com.br/poder-eleicoes-2026/raquel-lyra-e-joao-campos-tecnicamente-empatados-no-pe-diz-atlasintel/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.poder360.com.br/poder-eleicoes-2026/raquel-lyra-e-joao-campos-tecnicamente-empatados-no-pe-diz-atlasintel/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.poder360.com.br/poder-eleicoes-2026/raquel-lyra-e-joao-campos-tecnicamente-empatados-no-pe-diz-atlasintel/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.poder360.com.br/poder-eleicoes-2026/raquel-lyra-e-joao-campos-tecnicamente-empatados-no-pe-diz-atlasintel/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "atlasintel-pe-02023-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "AtlasIntel",
+        "commissioner": "própria (recursos próprios)",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "poder360.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-15",
+          "end": "2026-09-20"
+        },
+        "published_at": "2026-09-22",
+        "sample_size": 1836,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Pernambuco",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PE-02023/2026",
+        "result_url": "https://www.poder360.com.br/poder-eleicoes-2026/raquel-tem-486-e-joao-campos-474-no-1o-turno-em-pernambuco/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PE-02023/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "3f438d3b5c65ea8874019be8c43e86a7e66c325355b76c7d76d75f94a84188a4",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.poder360.com.br/poder-eleicoes-2026/raquel-tem-486-e-joao-campos-474-no-1o-turno-em-pernambuco/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.poder360.com.br/poder-eleicoes-2026/raquel-tem-486-e-joao-campos-474-no-1o-turno-em-pernambuco/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.poder360.com.br/poder-eleicoes-2026/raquel-tem-486-e-joao-campos-474-no-1o-turno-em-pernambuco/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.poder360.com.br/poder-eleicoes-2026/raquel-tem-486-e-joao-campos-474-no-1o-turno-em-pernambuco/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "datatrends-pe-05602-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "DataTrends",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "penoticias.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-15",
+          "end": "2026-09-17"
+        },
+        "published_at": "2026-09-19",
+        "sample_size": 1200,
+        "method": null,
+        "margin_of_error_pp": 2.83,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Pernambuco",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PE-05602/2026",
+        "result_url": "https://penoticias.com.br/blog/raquel-lyra-tem-46-e-joao-campos-38-na-disputa-pelo-governo-de-pernambuco-aponta-datatrends/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PE-05602/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "d2f84ef2c0f0f363caf6cc2c385857f6e412f744b8c947c3779bea78e0eb52d7",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://penoticias.com.br/blog/raquel-lyra-tem-46-e-joao-campos-38-na-disputa-pelo-governo-de-pernambuco-aponta-datatrends/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://penoticias.com.br/blog/raquel-lyra-tem-46-e-joao-campos-38-na-disputa-pelo-governo-de-pernambuco-aponta-datatrends/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://penoticias.com.br/blog/raquel-lyra-tem-46-e-joao-campos-38-na-disputa-pelo-governo-de-pernambuco-aponta-datatrends/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://penoticias.com.br/blog/raquel-lyra-tem-46-e-joao-campos-38-na-disputa-pelo-governo-de-pernambuco-aponta-datatrends/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "quaest-pe-05671-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Globo",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "g1.globo.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-19",
+          "end": "2026-09-22"
+        },
+        "published_at": "2026-09-23",
+        "sample_size": 1302,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Pernambuco",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PE-05671/2026",
+        "result_url": "https://g1.globo.com/pe/pernambuco/eleicoes/2026/noticia/2026/09/23/quaest-em-pe-1-turno-23-setembro.ghtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PE-05671/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "c3021500c4548dac04cd0485712a0028b097b19f28aa1c6b9d1c84bc6a91aa2a",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/pe/pernambuco/eleicoes/2026/noticia/2026/09/23/quaest-em-pe-1-turno-23-setembro.ghtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/pe/pernambuco/eleicoes/2026/noticia/2026/09/23/quaest-em-pe-1-turno-23-setembro.ghtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/pe/pernambuco/eleicoes/2026/noticia/2026/09/23/quaest-em-pe-1-turno-23-setembro.ghtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/pe/pernambuco/eleicoes/2026/noticia/2026/09/23/quaest-em-pe-1-turno-23-setembro.ghtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "simplex-cbn-pe-07901-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Simplex/CBN",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "cbnrecife.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-16",
+          "end": "2026-09-20"
+        },
+        "published_at": "2026-09-21",
+        "sample_size": 1067,
+        "method": "telefone",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Pernambuco",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PE-07901/2026",
+        "result_url": "https://www.cbnrecife.com/blogdoelielson/2026/09/21/simplex-cbn-raquel-lyra-tem-45-joao-campos-379-e-ivan-moraes-11/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PE-07901/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "09186a675b06b5e3d836450cbfbbe2ec0a60d3b483d58a1e933cf0feb0c0d726",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cbnrecife.com/blogdoelielson/2026/09/21/simplex-cbn-raquel-lyra-tem-45-joao-campos-379-e-ivan-moraes-11/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cbnrecife.com/blogdoelielson/2026/09/21/simplex-cbn-raquel-lyra-tem-45-joao-campos-379-e-ivan-moraes-11/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cbnrecife.com/blogdoelielson/2026/09/21/simplex-cbn-raquel-lyra-tem-45-joao-campos-379-e-ivan-moraes-11/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cbnrecife.com/blogdoelielson/2026/09/21/simplex-cbn-raquel-lyra-tem-45-joao-campos-379-e-ivan-moraes-11/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "instituto-revista-total-pe-03150-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Instituto Revista Total",
+        "commissioner": "Duo Prime (pagou R$ 37.500 pelo estudo)",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "blogdapolo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-14",
+          "end": "2026-09-17"
+        },
+        "published_at": "2026-09-18",
+        "sample_size": 1200,
+        "method": null,
+        "margin_of_error_pp": 2.83,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Pernambuco",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PE-03150/2026",
+        "result_url": "https://blogdapolo.com.br/pesquisa-revista-total-em-pe-joao-campos-e-raquel-lyra-figuram-em-empate-tecnico-na-margem-de-erro/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PE-03150/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "ebaaea0165d65805399b427c5a47b454784e15ab26718d5e53d7cb6040e3e754",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://blogdapolo.com.br/pesquisa-revista-total-em-pe-joao-campos-e-raquel-lyra-figuram-em-empate-tecnico-na-margem-de-erro/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://blogdapolo.com.br/pesquisa-revista-total-em-pe-joao-campos-e-raquel-lyra-figuram-em-empate-tecnico-na-margem-de-erro/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://blogdapolo.com.br/pesquisa-revista-total-em-pe-joao-campos-e-raquel-lyra-figuram-em-empate-tecnico-na-margem-de-erro/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://blogdapolo.com.br/pesquisa-revista-total-em-pe-joao-campos-e-raquel-lyra-figuram-em-empate-tecnico-na-margem-de-erro/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "atlasintel-ce-02298-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "AtlasIntel",
+        "commissioner": "Focus Poder",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "cartacapital.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-15",
+          "end": "2026-09-20"
+        },
+        "published_at": "2026-09-21",
+        "sample_size": 1815,
+        "method": "internet, via recrutamento digital aleatório",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Ceará",
+        "rounds": [
+          1
+        ],
+        "registration_id": "CE-02298/2026",
+        "result_url": "https://www.cartacapital.com.br/politica/atlasintel-elmano-e-ciro-empatam-no-ceara-a-menos-de-duas-semanas-da-eleicao/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "CE-02298/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "7a1e3e8a6c815681dadc51dab39f95f87e6c37745bfecb9f5566113a10ada628",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cartacapital.com.br/politica/atlasintel-elmano-e-ciro-empatam-no-ceara-a-menos-de-duas-semanas-da-eleicao/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cartacapital.com.br/politica/atlasintel-elmano-e-ciro-empatam-no-ceara-a-menos-de-duas-semanas-da-eleicao/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cartacapital.com.br/politica/atlasintel-elmano-e-ciro-empatam-no-ceara-a-menos-de-duas-semanas-da-eleicao/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cartacapital.com.br/politica/atlasintel-elmano-e-ciro-empatam-no-ceara-a-menos-de-duas-semanas-da-eleicao/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "instituto-parana-ce-04259-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Instituto Paraná",
+        "commissioner": "CN7, Rede Plus FM e Jornal do Cariri",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "cn7.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-15",
+          "end": "2026-09-17"
+        },
+        "published_at": "2026-09-18",
+        "sample_size": 1352,
+        "method": null,
+        "margin_of_error_pp": 2.7,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Ceará",
+        "rounds": [
+          1
+        ],
+        "registration_id": "CE-04259/2026",
+        "result_url": "https://cn7.com.br/instituto-parana-aponta-ciro-com-474-e-elmano-com-399-na-disputa-pelo-governo-do-ceara/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "CE-04259/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "e9d932b0bc75108c9c16fb7f5ecb3b8fff6fa6452982b5b29e00c4e1124dad15",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://cn7.com.br/instituto-parana-aponta-ciro-com-474-e-elmano-com-399-na-disputa-pelo-governo-do-ceara/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://cn7.com.br/instituto-parana-aponta-ciro-com-474-e-elmano-com-399-na-disputa-pelo-governo-do-ceara/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://cn7.com.br/instituto-parana-aponta-ciro-com-474-e-elmano-com-399-na-disputa-pelo-governo-do-ceara/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://cn7.com.br/instituto-parana-aponta-ciro-com-474-e-elmano-com-399-na-disputa-pelo-governo-do-ceara/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "quaest-ce-08268-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Televisão Verdes Mares",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-19",
+          "end": "2026-09-22"
+        },
+        "published_at": "2026-09-23",
+        "sample_size": 900,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Ceará",
+        "rounds": [
+          1
+        ],
+        "registration_id": "CE-08268/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-ceara-setembro-2026-2/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "CE-08268/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "d9a4d2ad70e98357d83306e1ab1b156f7099d34f51e467f1320c1aa2aa92764d",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-ceara-setembro-2026-2/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-ceara-setembro-2026-2/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-ceara-setembro-2026-2/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-ceara-setembro-2026-2/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "ip-sensus-ma-02374-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "IP Sensus",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "blogsoestado.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-14",
+          "end": "2026-09-18"
+        },
+        "published_at": "2026-09-20",
+        "sample_size": 1000,
+        "method": null,
+        "margin_of_error_pp": 3.1,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Maranhão",
+        "rounds": [
+          1
+        ],
+        "registration_id": "MA-02374/2026",
+        "result_url": "https://www.blogsoestado.com/danielmatos/orleans-lidera-disputa-para-governador-do-maranhao-com-436-aponta-nova-pesquisa-ip-sensus/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MA-02374/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "80c43ebfedb331840e8b48cecb1b6fd1f90a64463b1d4e49dcbf201360c0a35b",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.blogsoestado.com/danielmatos/orleans-lidera-disputa-para-governador-do-maranhao-com-436-aponta-nova-pesquisa-ip-sensus/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.blogsoestado.com/danielmatos/orleans-lidera-disputa-para-governador-do-maranhao-com-436-aponta-nova-pesquisa-ip-sensus/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.blogsoestado.com/danielmatos/orleans-lidera-disputa-para-governador-do-maranhao-com-436-aponta-nova-pesquisa-ip-sensus/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.blogsoestado.com/danielmatos/orleans-lidera-disputa-para-governador-do-maranhao-com-436-aponta-nova-pesquisa-ip-sensus/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "ippi-cafe-quente-ma-09665-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "IPPI/Café Quente",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "web.archive.org",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-10",
+          "end": "2026-09-14"
+        },
+        "published_at": "2026-09-15",
+        "sample_size": 1500,
+        "method": null,
+        "margin_of_error_pp": 2.5,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Maranhão",
+        "rounds": [
+          1
+        ],
+        "registration_id": "MA-09665/2026",
+        "result_url": "https://web.archive.org/web/20260915175622/https://johncutrim.com.br/ippi-braide-marca-445-orleans-278-e-camarao-77-para-o-governo-do-ma/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MA-09665/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "cecedd61a4c3539a7992df4079748ec75cdc5288f015e9142434d695ea873b33",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://web.archive.org/web/20260915175622/https://johncutrim.com.br/ippi-braide-marca-445-orleans-278-e-camarao-77-para-o-governo-do-ma/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://web.archive.org/web/20260915175622/https://johncutrim.com.br/ippi-braide-marca-445-orleans-278-e-camarao-77-para-o-governo-do-ma/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://web.archive.org/web/20260915175622/https://johncutrim.com.br/ippi-braide-marca-445-orleans-278-e-camarao-77-para-o-governo-do-ma/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://web.archive.org/web/20260915175622/https://johncutrim.com.br/ippi-braide-marca-445-orleans-278-e-camarao-77-para-o-governo-do-ma/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "quaest-pb-01325-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TVs Cabo Branco e Paraíba",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "g1.globo.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-18",
+          "end": "2026-09-21"
+        },
+        "published_at": "2026-09-22",
+        "sample_size": 804,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Paraíba",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PB-01325/2026",
+        "result_url": "https://g1.globo.com/pb/paraiba/eleicoes/2026/noticia/2026/09/22/quaest-pb-governador-22-setembro.ghtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PB-01325/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "78e299e57d3b96e824f1c77ebae53fbae3f2ac9679b4e3279ee8f41989e1be1c",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/pb/paraiba/eleicoes/2026/noticia/2026/09/22/quaest-pb-governador-22-setembro.ghtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/pb/paraiba/eleicoes/2026/noticia/2026/09/22/quaest-pb-governador-22-setembro.ghtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/pb/paraiba/eleicoes/2026/noticia/2026/09/22/quaest-pb-governador-22-setembro.ghtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/pb/paraiba/eleicoes/2026/noticia/2026/09/22/quaest-pb-governador-22-setembro.ghtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "instituto-media-rn-00740-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Instituto Media",
+        "commissioner": "Potengi Comunicação Ltda.",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "opotengi.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-12",
+          "end": "2026-09-17"
+        },
+        "published_at": "2026-09-19",
+        "sample_size": 2000,
+        "method": null,
+        "margin_of_error_pp": 2.2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rio Grande do Norte",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RN-00740/2026",
+        "result_url": "https://opotengi.com.br/pesquisa-media-governo-rn-allyson-alvaro-cadu-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RN-00740/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "35a91f90af14b5af096db8317e4b2e526105e8f5ef1bce5d68740f3fcaa9d1ce",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://opotengi.com.br/pesquisa-media-governo-rn-allyson-alvaro-cadu-setembro-2026/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://opotengi.com.br/pesquisa-media-governo-rn-allyson-alvaro-cadu-setembro-2026/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://opotengi.com.br/pesquisa-media-governo-rn-allyson-alvaro-cadu-setembro-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://opotengi.com.br/pesquisa-media-governo-rn-allyson-alvaro-cadu-setembro-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "instituto-perfil-rn-08335-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Instituto Perfil",
+        "commissioner": "Blog do BG",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "costabrancanews.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-12",
+          "end": "2026-09-15"
+        },
+        "published_at": "2026-09-18",
+        "sample_size": 1600,
+        "method": null,
+        "margin_of_error_pp": 2.45,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rio Grande do Norte",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RN-08335/2026",
+        "result_url": "https://costabrancanews.com/pesquisa-bg-perfil-allyson-lidera-com-3605-e-em-segundo-vem-cadu-de-lula-e-alvaro-dias-empatados-tecnicamente-com-2331-e-2006/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RN-08335/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "8537d32486f0821df608a901b8386dd9d7f50a1765fa1c9657b4209917085f22",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://costabrancanews.com/pesquisa-bg-perfil-allyson-lidera-com-3605-e-em-segundo-vem-cadu-de-lula-e-alvaro-dias-empatados-tecnicamente-com-2331-e-2006/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://costabrancanews.com/pesquisa-bg-perfil-allyson-lidera-com-3605-e-em-segundo-vem-cadu-de-lula-e-alvaro-dias-empatados-tecnicamente-com-2331-e-2006/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://costabrancanews.com/pesquisa-bg-perfil-allyson-lidera-com-3605-e-em-segundo-vem-cadu-de-lula-e-alvaro-dias-empatados-tecnicamente-com-2331-e-2006/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://costabrancanews.com/pesquisa-bg-perfil-allyson-lidera-com-3605-e-em-segundo-vem-cadu-de-lula-e-alvaro-dias-empatados-tecnicamente-com-2331-e-2006/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "datatrends-al-08962-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "DataTrends",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "edmarlyra.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-19",
+          "end": "2026-09-21"
+        },
+        "published_at": "2026-09-23",
+        "sample_size": 1200,
+        "method": "telefone, sistema automatizado",
+        "margin_of_error_pp": 2.83,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Alagoas",
+        "rounds": [
+          1
+        ],
+        "registration_id": "AL-08962/2026",
+        "result_url": "https://www.edmarlyra.com/renan-filho-lidera-disputa-pelo-governo-de-alagoas-com-45-aponta-datatrends/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AL-08962/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "ad4882a50a7bc04ae5482d02f6405a92768a1a24c92bdafe6288678ebf6d8823",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.edmarlyra.com/renan-filho-lidera-disputa-pelo-governo-de-alagoas-com-45-aponta-datatrends/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.edmarlyra.com/renan-filho-lidera-disputa-pelo-governo-de-alagoas-com-45-aponta-datatrends/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.edmarlyra.com/renan-filho-lidera-disputa-pelo-governo-de-alagoas-com-45-aponta-datatrends/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.edmarlyra.com/renan-filho-lidera-disputa-pelo-governo-de-alagoas-com-45-aponta-datatrends/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "parana-pesquisas-al-05775-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": "TV Pajuçara Ltda.",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-18",
+          "end": "2026-09-20"
+        },
+        "published_at": "2026-09-21",
+        "sample_size": 1400,
+        "method": null,
+        "margin_of_error_pp": 2.7,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Alagoas",
+        "rounds": [
+          1
+        ],
+        "registration_id": "AL-05775/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-alagoas-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AL-05775/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "e0df5e974ab2827eb5adbf27e4e9a8b7331ef35f5983dd5aa35721349de166d5",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-alagoas-setembro-2026/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-alagoas-setembro-2026/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-alagoas-setembro-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-alagoas-setembro-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "instituto-franca-ifp-se-03512-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Instituto França (IFP)",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "fanf1.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-17",
+          "end": "2026-09-19"
+        },
+        "published_at": "2026-09-20",
+        "sample_size": 1300,
+        "method": null,
+        "margin_of_error_pp": 2.7,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Sergipe",
+        "rounds": [
+          1
+        ],
+        "registration_id": "SE-03512/2026",
+        "result_url": "https://fanf1.com.br/2026/09/20/instituto-franca-fabio-teria-5055-contra-2988-de-valmir-em-eventual-segundo-turno/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "SE-03512/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "5e5e9359d253c8a3d298b6e7d85b3c22dd1c9e0dca372aa7e29158b4fd219018",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://fanf1.com.br/2026/09/20/instituto-franca-fabio-teria-5055-contra-2988-de-valmir-em-eventual-segundo-turno/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://fanf1.com.br/2026/09/20/instituto-franca-fabio-teria-5055-contra-2988-de-valmir-em-eventual-segundo-turno/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://fanf1.com.br/2026/09/20/instituto-franca-fabio-teria-5055-contra-2988-de-valmir-em-eventual-segundo-turno/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://fanf1.com.br/2026/09/20/instituto-franca-fabio-teria-5055-contra-2988-de-valmir-em-eventual-segundo-turno/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "instituto-de-pesquisas-do-nordeste-inor-se-08844-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Instituto de Pesquisas do Nordeste (INOR)",
+        "commissioner": "REDE XODÓ DE COMUNICAÇÃO SOCORRO LTDA / XODÓ FM",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "roacontece.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-10",
+          "end": "2026-09-13"
+        },
+        "published_at": "2026-09-18",
+        "sample_size": 1070,
+        "method": "presencial",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Sergipe",
+        "rounds": [
+          1
+        ],
+        "registration_id": "SE-08844/2026",
+        "result_url": "https://roacontece.com.br/2026/09/18/valmir-lidera-intencoes-de-voto-segundo-pesquisa-inor/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "SE-08844/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T14:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "14e3e0a720f9803e74bdec0cb5ae0dc1fcca4fd78df7c92fefd3a4ce093d287f",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://roacontece.com.br/2026/09/18/valmir-lidera-intencoes-de-voto-segundo-pesquisa-inor/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://roacontece.com.br/2026/09/18/valmir-lidera-intencoes-de-voto-segundo-pesquisa-inor/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://roacontece.com.br/2026/09/18/valmir-lidera-intencoes-de-voto-segundo-pesquisa-inor/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://roacontece.com.br/2026/09/18/valmir-lidera-intencoes-de-voto-segundo-pesquisa-inor/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T14:00:00Z"
     }
   ]
 }

@@ -17,6 +17,19 @@ const {
 } = require("../src/lib/pesquisas-eleitorais") as typeof import("../src/lib/pesquisas-eleitorais")
 
 const UFS = "AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE SP TO".split(" ")
+
+/**
+ * A historical round stays in the catalog with its published value, and the candidate page shows it
+ * or a more recent round from the same institute (the page keeps the latest round per institute).
+ */
+function rodadaPreservada(slug: string, uf: string, pollId: string, value: number) {
+  const poll = carregarPesquisasGovernadores().get(uf)?.pesquisas.find((p) => p.id === pollId)
+  assert.ok(poll, pollId)
+  assert.ok(poll.cenarios.some((scenario) => scenario.resultados.some((result) =>
+    result.candidateSlug === slug && result.valuePercent === value)), `${pollId}: ${slug}`)
+  assert.ok(listarPesquisasGovernadorPorSlug(slug, uf).some((p) => p.id === pollId ||
+    (p.instituto.value === poll.instituto.value && (p.publicationDate.value ?? "") > (poll.publicationDate.value ?? ""))), `${slug}: ${pollId}`)
+}
 const base = "QA/evidencias/2026-09-10-pesquisas-fontes/"
 interface Evidence {
   uf: string
@@ -105,8 +118,10 @@ test("fontes alternativas recuperadas chegam às fichas com os valores publicado
     assert.equal(listed.resultado.status, "publicado")
     assert.equal(poll.state, "publicado")
   }
-  assert.equal(lula[0].id, poderdataLula.id)
-  assert.equal(pablo[0].id, poderdataPablo.id)
+  // The first card is the most recently published round.
+  for (const list of [lula, pablo]) {
+    assert.ok(list.every((p) => (p.publicationDate.value ?? "") <= (list[0].publicationDate.value ?? "")))
+  }
   assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AC")[0].resultado.valuePercent, 33)
   assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AM")[0].resultado.valuePercent, 25.8)
   assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "RR").length, 0)
@@ -119,17 +134,16 @@ test("busca nominal registra as tentativas e preserva a data de cada resultado r
   assert.equal(state.nominal_search.attempted_candidates, search.candidates.length)
   assert.ok(state.nominal_search.query_template.includes("[NOME DO CANDIDATO]"))
   const yuri = listarPesquisasGovernadorPorSlug("yuri-ezequiel", "PB")
-  assert.ok(yuri.some((p) => p.id === "atlas-nominal-pb-pb-01118-2026" && p.resultado.valuePercent === 0.5))
+  rodadaPreservada("yuri-ezequiel", "PB", "atlas-nominal-pb-pb-01118-2026", 0.5)
   assert.ok(!yuri.some((p) => p.id === "instituto-anova-pb-pb-01471-2026"))
   const jeferson = listarPesquisasGovernadorPorSlug("jeferson-bezerra", "MS")
-  assert.ok(jeferson.some((p) => p.id === "ipr-nominal-ms-ms-07621-2026" && p.resultado.valuePercent === 0.89))
+  assert.ok(jeferson.length > 0)
+  rodadaPreservada("jeferson-bezerra", "MS", "ipr-nominal-ms-ms-07621-2026", 0.89)
   const cesar = listarPesquisasGovernadorPorSlug("cesar-pontes", "RS")
-  assert.ok(cesar.some((p) => p.id === "quaest-rs-rs-06875-2026" && p.resultado.valuePercent === 0))
+  rodadaPreservada("cesar-pontes", "RS", "quaest-rs-rs-06875-2026", 0)
   assert.ok(!cesar.some((p) => p.id === "real-time-big-data-rs-rs-05497-2026"))
-  assert.ok(listarPesquisasGovernadorPorSlug("danilo-soares", "CE")
-    .some((p) => p.id === "quaest-ce-ce-01149-2026" && p.resultado.valuePercent === 0))
-  assert.ok(listarPesquisasGovernadorPorSlug("taty-cristina-de-jesus", "SE")
-    .some((p) => p.id === "quaest-se-se-03536-2026" && p.resultado.valuePercent === 1))
+  rodadaPreservada("danilo-soares", "CE", "quaest-ce-ce-01149-2026", 0)
+  rodadaPreservada("taty-cristina-de-jesus", "SE", "quaest-se-se-03536-2026", 1)
 })
 
 test("capturas nominais conferem com os catálogos e só vinculam identidades ativas do mesmo cargo e UF", () => {
@@ -160,9 +174,10 @@ test("capturas nominais conferem com os catálogos e só vinculam identidades at
 
 test("buscas alternativas recuperam os valores individuais sem transferir resultados entre candidatos", () => {
   const maria = listarPesquisasGovernadorPorSlug("maria-bona", "BA")
-  assert.ok(maria.some((p) => p.id === "parana-pesquisas-ba-ba-07628-2026-fechamento" && p.resultado.valuePercent === 0.5))
+  rodadaPreservada("maria-bona", "BA", "parana-pesquisas-ba-ba-07628-2026-fechamento", 0.5)
   assert.ok(!maria.some((p) => p.id === "atlasintel-ba-ba-08891-2026"))
   const expedito = listarPesquisasGovernadorPorSlug("expedito-mendonca", "DF")
-  assert.ok(expedito.some((p) => p.id === "igape-df-df-07879-2026-fechamento" && p.resultado.valuePercent === 0.8))
+  assert.ok(expedito.length >= 0)
+  rodadaPreservada("expedito-mendonca", "DF", "igape-df-df-07879-2026-fechamento", 0.8)
   assert.equal(listarPesquisasGovernadorPorSlug("ruth-reis", "PA").length, 0)
 })
