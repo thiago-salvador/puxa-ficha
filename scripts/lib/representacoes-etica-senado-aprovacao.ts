@@ -8,6 +8,7 @@ import {
 } from "../../src/lib/representacoes-etica"
 import { stripAccents } from "../../src/lib/strip-accents"
 import { idDatasetPceSenado, type FilaPceSenado, type ItemPceFila, type SenadorRosterPce } from "./representacoes-etica-senado"
+import { exigirFichaPublica, FONTE_FICHA_PUBLICA, OPCAO_FICHA_NAO_PUBLICAVEL } from "./ficha-publica-representacoes"
 
 export interface RevisaoPceSenado {
   item_id: string
@@ -121,6 +122,8 @@ export function aprovarPceSenado(options: {
   dataset: unknown
   agora: Date
   substituir?: boolean
+  fichaPublica: boolean
+  permitirFichaNaoPublicavel?: boolean
 }): { item: RepresentacaoEticaAprovada; dataset: { policy: string; itens: RepresentacaoEticaAprovada[] } } {
   const { fila, itemId, revisao } = options
   if (fila.schema_version !== 1 || fila.fonte !== "senado-dadosabertos-pce-v1") throw new Error("arquivo de fila PCE inválido ou de outra versão")
@@ -156,6 +159,7 @@ export function aprovarPceSenado(options: {
 
   const candidates = options.seed.filter((candidate) => candidate.ids?.senado === revisao.senador_id)
   if (candidates.length !== 1 || candidates[0].slug !== revisao.candidate_slug) throw new Error("ponte senador → candidato não é única e exata por ids.senado")
+  const fichaNaoPublicavelPermitida = exigirFichaPublica(options.fichaPublica, options.permitirFichaNaoPublicavel === true)
   const dataset = validateRepresentacoesEticaDataset(options.dataset)
   if (dataset.issues.length > 0) throw new Error("dataset atual inválido; aprovação recusada")
 
@@ -188,6 +192,9 @@ export function aprovarPceSenado(options: {
       situacao_confirmada: true,
       situacao_sigla: current.status.sigla,
       situacao_descricao: current.status.descricao,
+      ...(fichaNaoPublicavelPermitida ? { ficha_nao_publicavel: {
+        permitido: true, opcao: OPCAO_FICHA_NAO_PUBLICAVEL, fonte: FONTE_FICHA_PUBLICA, conferida_em: verificadoEm,
+      } } : {}),
     },
   }
   const parsed = parseRepresentacaoAprovada(record)

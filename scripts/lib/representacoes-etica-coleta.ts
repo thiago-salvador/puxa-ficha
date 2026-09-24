@@ -25,6 +25,7 @@ import {
   type TramitacaoCamara,
 } from "../../src/lib/representacoes-etica-fase"
 import { dataEmBrasilia, idRepresentacaoEtica, urlFichaTramitacaoCamara } from "../../src/lib/representacoes-etica"
+import type { ConsultaFichasPublicas } from "./ficha-publica-representacoes"
 
 export const CAMARA_API = "https://dadosabertos.camara.leg.br/api/v2"
 export const FILA_SCHEMA_VERSION = 1 as const
@@ -350,6 +351,11 @@ export interface AndamentoFila {
 export interface ItemFila {
   id: string
   status_revisao: "pendente"
+  /** A ausência da view pública não retira o item da fila de revisão. */
+  ficha_publica?: {
+    publicavel: boolean | null
+    motivo: "visivel_em_candidatos_publico" | "ausente_em_candidatos_publico" | "consulta_indisponivel"
+  }
   candidato: {
     slug: string
     nome_urna: string
@@ -400,6 +406,31 @@ export interface Fila {
   itens: ItemFila[]
   alvos_sem_candidato: Array<{ proposicao_id: number; numero: number; ano: number; deputado_id: number; nome: string; motivo: string }>
   alvos_nao_resolvidos: Array<{ proposicao_id: number; numero: number; ano: number; trecho: string; ambiguos: ResolucaoAlvos["ambiguos"] }>
+}
+
+/** Marca cada vínculo sem filtrar a fila; uma falha de consulta permanece explícita. */
+export async function anotarFichasPublicas(fila: Fila, consulta: ConsultaFichasPublicas): Promise<Fila> {
+  let publicos: ReadonlySet<string>
+  try {
+    publicos = await consulta(fila.itens.map((item) => item.candidato.slug))
+  } catch {
+    return {
+      ...fila,
+      itens: fila.itens.map((item) => ({
+        ...item,
+        ficha_publica: { publicavel: null, motivo: "consulta_indisponivel" },
+      })),
+    }
+  }
+  return {
+    ...fila,
+    itens: fila.itens.map((item) => ({
+      ...item,
+      ficha_publica: publicos.has(item.candidato.slug)
+        ? { publicavel: true, motivo: "visivel_em_candidatos_publico" }
+        : { publicavel: false, motivo: "ausente_em_candidatos_publico" },
+    })),
+  }
 }
 
 const MAX_DESPACHO = 2000

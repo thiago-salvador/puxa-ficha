@@ -112,6 +112,34 @@ describe("golden sanitizado do serviço PCE do Senado", () => {
 })
 
 describe("ponte PCE → senador → candidato", () => {
+  it("bloqueia ficha não publicável e registra override apenas após ausência confirmada", async () => {
+    const fila = await filaFixture()
+    const item = fila.itens[0]!
+    const options = {
+      fila,
+      itemId: item.id,
+      revisao: revisaoAlfa(item.id),
+      processoAtual: processoAtualAlfa,
+      roster: fila.roster,
+      seed,
+      dataset: { policy: REPRESENTACOES_ETICA_POLICY, itens: [] },
+      agora: new Date("2026-09-24T12:00:00Z"),
+      fichaPublica: false,
+    }
+    assert.throws(() => aprovarPceSenado(options), /sem ficha pública.*--permitir-ficha-nao-publicavel/)
+    const { item: aprovado, dataset } = aprovarPceSenado({ ...options, permitirFichaNaoPublicavel: true })
+    assert.deepEqual(aprovado.revisao.ficha_nao_publicavel, {
+      permitido: true,
+      opcao: "--permitir-ficha-nao-publicavel",
+      fonte: "candidatos_publico",
+      conferida_em: "2026-09-24",
+    })
+    assert.deepEqual(validateRepresentacoesEticaDataset(dataset).issues, [])
+    assert.deepEqual(validateRepresentacoesEticaDataset(dataset).itens[0]?.revisao.ficha_nao_publicavel, aprovado.revisao.ficha_nao_publicavel)
+    assert.throws(() => aprovarPceSenado({ ...options, fichaPublica: undefined as unknown as boolean, permitirFichaNaoPublicavel: true }), /indisponível/)
+    assert.throws(() => aprovarPceSenado({ ...options, fichaPublica: true, permitirFichaNaoPublicavel: true }), /desnecessário/)
+  })
+
   it("só prepara um item depois das três confirmações humanas e do id oficial exato", async () => {
     const fila = await filaFixture()
     const item = fila.itens[0]!
@@ -124,6 +152,7 @@ describe("ponte PCE → senador → candidato", () => {
       roster: fila.roster,
       seed,
       dataset: dataAtual,
+      fichaPublica: true,
       agora: new Date("2026-09-24T12:00:00Z"),
     })
     assert.equal(result.item.casa, "senado")
@@ -155,6 +184,7 @@ describe("ponte PCE → senador → candidato", () => {
       roster: fila.roster,
       seed,
       dataset,
+      fichaPublica: true,
       agora: new Date("2026-09-24T12:00:00Z"),
     })
     assert.equal(result.item.casa, "senado")
@@ -180,6 +210,7 @@ describe("ponte PCE → senador → candidato", () => {
       roster: fila.roster,
       seed,
       dataset,
+      fichaPublica: true,
       agora: new Date("2026-09-24T12:00:00Z"),
     }
     assert.throws(() => aprovarPceSenado({ ...base, revisao: { ...revisaoAlfa(item.id), papel_confirmado: "autor" } as unknown as RevisaoPceSenado }), /recibo humano/)
@@ -198,6 +229,7 @@ describe("ponte PCE → senador → candidato", () => {
       roster: fila.roster,
       seed,
       dataset,
+      fichaPublica: true,
       agora: new Date("2026-09-24T12:00:00Z"),
     }
     assert.throws(() => aprovarPceSenado({ ...base, processoAtual: { ...processoAtualAlfa, conteudo: { ementa: "ementa alterada" } } }), /ementa mudou/)
@@ -216,6 +248,7 @@ describe("ponte PCE → senador → candidato", () => {
       roster: fila.roster,
       seed,
       dataset,
+      fichaPublica: true,
       agora: new Date("2026-09-24T12:00:00Z"),
     }
     const autor = { ...revisaoAlfa(item.id), senador_id: 88002, candidate_slug: "senador-ficticio-beta" }
@@ -236,6 +269,7 @@ describe("ponte PCE → senador → candidato", () => {
       roster: fila.roster,
       seed,
       dataset,
+      fichaPublica: true,
       agora: new Date("2026-09-24T12:00:00Z"),
     }), /não identifica/)
   })
@@ -253,6 +287,7 @@ describe("ponte PCE → senador → candidato", () => {
       roster: fila.roster,
       seed,
       dataset,
+      fichaPublica: true,
       agora: new Date("2026-09-24T12:00:00Z"),
     }), /mais de um|múltipl|nomes/i)
   })
@@ -270,6 +305,7 @@ describe("ponte PCE → senador → candidato", () => {
       roster: fila.roster,
       seed,
       dataset,
+      fichaPublica: true,
       agora: new Date("2026-09-24T12:00:00Z"),
     }), /papel|alvo|em face|contra/i)
   })
@@ -286,6 +322,7 @@ describe("ponte PCE → senador → candidato", () => {
       roster: fila.roster,
       seed,
       dataset,
+      fichaPublica: true,
       agora: new Date("2026-09-24T12:00:00Z"),
     }), /situação.*mudou|divergente|revisad/i)
   })

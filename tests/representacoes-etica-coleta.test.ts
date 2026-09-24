@@ -7,6 +7,7 @@ import { cachePodeGuardar, dentroDeCheckoutGit } from "../scripts/coletar-repres
 import { remontarRepresentacaoNasFontes } from "../scripts/aprovar-representacao-etica"
 import {
   CAMARA_API,
+  anotarFichasPublicas,
   carregarLegislatura,
   coletarRepresentacoesEtica,
   indiceDeNomes,
@@ -67,6 +68,26 @@ async function coletarGolden(api: ApiCamara = apiGravada) {
     concorrencia: 2,
   })
 }
+
+describe("visibilidade da ficha na fila", () => {
+  it("marca ficha ausente sem ocultar o item e preserva o motivo", async () => {
+    const fila = await coletarGolden()
+    const slug = fila.itens[0]!.candidato.slug
+    const anotada = await anotarFichasPublicas(fila, async () => new Set(fila.itens.map((item) => item.candidato.slug).filter((item) => item !== slug)))
+    assert.equal(anotada.itens.length, fila.itens.length)
+    assert.deepEqual(anotada.itens.find((item) => item.candidato.slug === slug)?.ficha_publica, {
+      publicavel: false, motivo: "ausente_em_candidatos_publico",
+    })
+    assert.ok(anotada.itens.some((item) => item.ficha_publica?.publicavel === true))
+  })
+
+  it("mantém todos os itens com consulta indisponível explícita", async () => {
+    const fila = await coletarGolden()
+    const anotada = await anotarFichasPublicas(fila, async () => { throw new Error("offline") })
+    assert.equal(anotada.itens.length, fila.itens.length)
+    assert.ok(anotada.itens.every((item) => item.ficha_publica?.publicavel === null && item.ficha_publica.motivo === "consulta_indisponivel"))
+  })
+})
 
 describe("paginação da API", () => {
   it("segue next até a segunda página e coleta seus itens", async () => {

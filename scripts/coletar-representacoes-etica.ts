@@ -22,8 +22,10 @@ import { existsSync, mkdirSync, readFileSync, realpathSync, renameSync, statSync
 import { dirname, join, resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 import { fetchJSON } from "./lib/helpers"
+import { consultarFichasPublicas } from "./lib/ficha-publica-representacoes"
 import {
   CAMARA_API,
+  anotarFichasPublicas,
   coletarRepresentacoesEtica,
   type ApiCamara,
   type CandidatoSeed,
@@ -107,7 +109,8 @@ async function main() {
     ? Promise.resolve(new Map<string, string>())
     : cpfPorSqDoTse(seed, resolve(process.cwd(), CACHE_TSE))
 
-  const fila = await coletarRepresentacoesEtica({ api: apiComCache(cacheDir, dia), legislatura, seed, cpfPorSq, agora })
+  const coletada = await coletarRepresentacoesEtica({ api: apiComCache(cacheDir, dia), legislatura, seed, cpfPorSq, agora })
+  const fila = await anotarFichasPublicas(coletada, consultarFichasPublicas)
   mkdirSync(dirname(out), { recursive: true, mode: 0o700 })
   gravarAtomico(out, `${JSON.stringify(fila, null, 2)}\n`)
 
@@ -118,6 +121,8 @@ async function main() {
       total_representacoes: fila.total_representacoes,
       contagem_por_ano: fila.contagem_por_ano,
       itens_para_revisao: fila.itens.length,
+      fichas_nao_publicaveis: fila.itens.filter((item) => item.ficha_publica?.publicavel === false).length,
+      fichas_com_consulta_indisponivel: fila.itens.filter((item) => item.ficha_publica?.publicavel === null).length,
       alvos_sem_candidato: fila.alvos_sem_candidato.length,
       alvos_nao_resolvidos: fila.alvos_nao_resolvidos.length,
       identidade: fila.identidade,

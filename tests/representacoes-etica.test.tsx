@@ -277,13 +277,29 @@ describe("aprovação", () => {
   const filaCom = (item: ItemFila) => ({ schema_version: 1, fonte: "camara-dadosabertos-v2", itens: [item] }) as unknown as Fila
   const vazio = { policy: REPRESENTACOES_ETICA_POLICY, itens: [] }
   // Nas fontes de hoje o item é idêntico ao da fila.
-  const base = { fila: filaCom(itemFila), itemId: itemFila.id, aprovadoEm: "2026-09-23", dataset: vazio, substituir: false, remontado: itemFila }
+  const base = { fila: filaCom(itemFila), itemId: itemFila.id, aprovadoEm: "2026-09-23", dataset: vazio, substituir: false, remontado: itemFila, fichaPublica: true }
 
   it("grava a fase escolhida pelo revisor com dados remontados nas fontes", () => {
     const { item, dataset } = aprovarRepresentacao({ ...base, fase: "procedente_conselho_recurso_pendente" })
     assert.deepEqual(item, aprovado)
     assert.equal(dataset.itens.length, 1)
     assert.deepEqual(validateRepresentacoesEticaDataset(dataset).issues, [])
+  })
+
+  it("recusa ficha não publicável sem override e registra a exceção explícita", () => {
+    const opcoes = { ...base, fase: "arquivada", fichaPublica: false }
+    assert.throws(() => aprovarRepresentacao(opcoes), /sem ficha pública.*--permitir-ficha-nao-publicavel/)
+    const { item, dataset } = aprovarRepresentacao({ ...opcoes, permitirFichaNaoPublicavel: true })
+    assert.deepEqual(item.revisao.ficha_nao_publicavel, {
+      permitido: true,
+      opcao: "--permitir-ficha-nao-publicavel",
+      fonte: "candidatos_publico",
+      conferida_em: "2026-09-23",
+    })
+    assert.deepEqual(validateRepresentacoesEticaDataset(dataset).issues, [])
+    assert.deepEqual(validateRepresentacoesEticaDataset(dataset).itens[0]?.revisao.ficha_nao_publicavel, item.revisao.ficha_nao_publicavel)
+    assert.throws(() => aprovarRepresentacao({ ...base, fase: "arquivada", fichaPublica: undefined as unknown as boolean, permitirFichaNaoPublicavel: true }), /indisponível/)
+    assert.throws(() => aprovarRepresentacao({ ...base, fase: "arquivada", permitirFichaNaoPublicavel: true }), /desnecessário/)
   })
 
   it("recusa fase fora do enum, item fora da fila e reaprovação sem --substituir", () => {

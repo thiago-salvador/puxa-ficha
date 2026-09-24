@@ -18,7 +18,12 @@ interface CamposRepresentacaoEticaAprovada {
   ultimo_andamento_em: string
   verificado_em: string
   url_oficial: string
-  revisao: { aprovado: true; revisor_tipo: "humano"; aprovado_em: string }
+  revisao: {
+    aprovado: true
+    revisor_tipo: "humano"
+    aprovado_em: string
+    ficha_nao_publicavel?: { permitido: true; opcao: "--permitir-ficha-nao-publicavel"; fonte: "candidatos_publico"; conferida_em: string }
+  }
 }
 
 export interface RepresentacaoEticaCamaraAprovada extends CamposRepresentacaoEticaAprovada {
@@ -49,6 +54,7 @@ export interface RepresentacaoEticaSenadoAprovada extends CamposRepresentacaoEti
     situacao_confirmada: true
     situacao_sigla: string
     situacao_descricao: string
+    ficha_nao_publicavel?: { permitido: true; opcao: "--permitir-ficha-nao-publicavel"; fonte: "candidatos_publico"; conferida_em: string }
   }
 }
 
@@ -112,6 +118,15 @@ export function parseRepresentacaoAprovada(
   if (!isRecord(revisao) || revisao.aprovado !== true || revisao.revisor_tipo !== "humano" || !dataValida(revisao.aprovado_em)) {
     return { ok: false, motivo: "sem aprovação humana registrada" }
   }
+  const fichaOverride = revisao.ficha_nao_publicavel
+  if (fichaOverride !== undefined && (!isRecord(fichaOverride) || fichaOverride.permitido !== true ||
+      fichaOverride.opcao !== "--permitir-ficha-nao-publicavel" || fichaOverride.fonte !== "candidatos_publico" ||
+      !dataValida(fichaOverride.conferida_em))) {
+    return { ok: false, motivo: "override de ficha não publicável inválido" }
+  }
+  const overrideValidado = isRecord(fichaOverride)
+    ? { ficha_nao_publicavel: { permitido: true as const, opcao: "--permitir-ficha-nao-publicavel" as const, fonte: "candidatos_publico" as const, conferida_em: fichaOverride.conferida_em as string } }
+    : {}
   if (casa === "camara") {
     if (!inteiroPositivo(deputado_id)) return { ok: false, motivo: "deputado_id inválido" }
     if (!isRecord(proposicao)) return { ok: false, motivo: "proposicao ausente" }
@@ -132,7 +147,7 @@ export function parseRepresentacaoAprovada(
         proposicao: { id: proposicao.id, sigla: "REP", numero: proposicao.numero, ano: proposicao.ano },
         fase, ultimo_andamento_em, verificado_em, url_oficial,
         identidade: { metodo: identidade.metodo, conferida_em: identidade.conferida_em as string },
-        revisao: { aprovado: true, revisor_tipo: "humano", aprovado_em: revisao.aprovado_em as string },
+        revisao: { aprovado: true, revisor_tipo: "humano", aprovado_em: revisao.aprovado_em as string, ...overrideValidado },
       },
     }
   }
@@ -171,6 +186,7 @@ export function parseRepresentacaoAprovada(
           aprovado: true, revisor_tipo: "humano", aprovado_em: revisao.aprovado_em as string,
           alvo_confirmado: true, candidato_confirmado: true, situacao_confirmada: true,
           situacao_sigla: revisao.situacao_sigla as string, situacao_descricao: revisao.situacao_descricao as string,
+          ...overrideValidado,
         },
       },
     }
