@@ -157,7 +157,7 @@ describe("seleção estadual por UF", () => {
   })
 
   it("não cruza candidaturas ou resultados entre estados", () => {
-    assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AM")[0]?.resultado.valuePercent, 31)
+    assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AM")[0]?.resultado.valuePercent, 25.8)
     assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AC").length, 0)
     assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AC")[0]?.resultado.valuePercent, 33)
     assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AM").length, 0)

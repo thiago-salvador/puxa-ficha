@@ -24,7 +24,7 @@ test("all 27 UF charts default to an available stimulated scenario and SP retain
       const rows = groups[0].weeks.at(-1)!.results
       assert.equal(rows.length, 7)
       assert.equal(rows.find(r => r.result.candidateSlug === "vivian-mendes")?.value, 0)
-      assert.equal(rows.find(r => r.result.candidateSlug === "tarcisio-gov-sp")?.value, 42)
+      assert.equal(rows.find(r => r.result.candidateSlug === "tarcisio-gov-sp")?.value, 44)
       assert.equal(rows.find(r => r.result.candidateSlug === "haddad-gov-sp")?.value, 27)
     }
   }

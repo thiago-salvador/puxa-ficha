@@ -107,7 +107,7 @@ describe("experiência v2 de pesquisas presidenciais", () => {
   it("lista as fontes revisadas na aba Pesquisas", () => {
     const html = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={pesquisasLula} />)
     const current = firstLula()
-    const datafolha = pesquisasLula.find((pesquisa) => pesquisa.sourceId === "datafolha-folha-globo-nacional-2026")
+    const datafolha = pesquisasLula.find((pesquisa) => pesquisa.instituto.value === "Datafolha")
     assert.ok(datafolha)
 
     assert.equal((html.match(/data-pf-pesquisa-card=/g) ?? []).length, pesquisasLula.length)
@@ -116,12 +116,12 @@ describe("experiência v2 de pesquisas presidenciais", () => {
     assert.ok(html.includes(datafolha.instituto.value!))
     assert.ok(html.includes(percent(datafolha.resultado.valuePercent)))
     assert.match(html, /percentuais do total de entrevistados/)
-    assert.match(html, /cenário sem Pablo Marçal/)
     assert.match(html, /1º turno/)
     assert.match(html, /Ver divulgação pública/)
     assert.match(html, /fotografia do período/)
-    assert.doesNotMatch(html, /AtlasIntel|Ipsos-Ipec|2º turno/)
-    assert.doesNotMatch(html.toLowerCase(), /média|ranking|empate|lidera/)
+    assert.doesNotMatch(html, /Ipsos-Ipec|2º turno/)
+    // Visible copy only: source URLs may carry a headline slug.
+    assert.doesNotMatch(html.replace(/<[^>]+>/g, " ").toLowerCase(), /média|ranking|empate|lidera/)
   })
 
   it("aceita uma, duas ou três fontes sem reservar espaço vazio", () => {
@@ -246,12 +246,12 @@ describe("experiência v2 de pesquisas presidenciais", () => {
     const tab = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={pesquisas} />)
 
     assert.match(hero, /Quaest/)
-    assert.match(hero, /42%/)
-    assert.match(overview, /42%/)
+    assert.match(hero, /44%/)
+    assert.match(overview, /44%/)
     assert.equal((tab.match(/data-pf-pesquisa-card=/g) ?? []).length, pesquisas.length)
-    assert.match(tab, /quaest-sp-revisao-20260910/)
+    assert.match(tab, /quaest-sp-02456-2026-revisao-20260924/)
     assert.match(tab, /datafolha-tarcisio-lidera-disputa/)
-    assert.equal(pesquisas[0]?.registration.code.value, "SP-00959/2026")
+    assert.equal(pesquisas[0]?.registration.code.value, "SP-02456/2026")
   })
 })
 

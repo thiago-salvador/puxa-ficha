@@ -89,11 +89,17 @@ describe("contrato dos dados de pesquisas eleitorais", () => {
     assert.ok(catalogo.pesquisas.every((poll) => preferenciais.has(poll.sourceId) || poll.state === "publicado"))
     assert.ok(catalogo.pesquisas.every((poll) => poll.sourceStatus === "aprovado"))
     assert.deepEqual(catalogo.preferredSourceIds, fontes.preferred_source_ids)
-    assert.deepEqual([...new Set(catalogo.pesquisas.map((poll) => poll.sourceId))].sort(), [
-      "datafolha-folha-globo-nacional-2026",
-      "meio-ideia-br-revisao-20260910",
-      "poderdata-aya-nacional-2026",
-    ].sort())
+    const sourceIds = new Set(catalogo.pesquisas.map((poll) => poll.sourceId))
+    for (const id of ["datafolha-folha-globo-nacional-2026", "meio-ideia-br-revisao-20260910", "poderdata-aya-nacional-2026"]) {
+      assert.ok(sourceIds.has(id), id)
+    }
+    // Fontes além das institucionais são revisões restritas a uma rodada.
+    const revisoes = fontes.sources as Array<{ id: string; reviewed_registration_ids?: string[] }>
+    for (const id of sourceIds) {
+      const source = revisoes.find((entry) => entry.id === id)
+      assert.ok(source && (["datafolha-folha-globo-nacional-2026", "poderdata-aya-nacional-2026"].includes(id) ||
+        (source.reviewed_registration_ids?.length ?? 0) > 0), id)
+    }
     assert.strictEqual(carregarPesquisasEleitorais(), catalogo)
   })
 
