@@ -449,7 +449,8 @@ describe("classificador puro (#136)", () => {
     // --gate PG17 mediu 395 aplicadas + 105 falhas históricas = 500 migrations.
     // Eliziane (20260923175946): --gate PG17 mediu 396 + 105 = 501.
     // Exercicio reaberto no Senado (20260924003000): --gate PG17 mediu 398 + 105 = 503.
-    assert.equal(manifesto.aplicadas_esperadas, 398)
+    // Situacoes da RPC do historico verificado (20260924120000): --gate PG17 mediu 399 + 105 = 504.
+    assert.equal(manifesto.aplicadas_esperadas, 399)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

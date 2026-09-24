@@ -19,6 +19,7 @@ const PAGE_LINKS: FooterLink[] = [
   { href: "/comparar", label: "Comparador" },
   { href: "/rankings", label: "Listas" },
   { href: "/doadores", label: "Doadores" },
+  { href: "/colinha", label: "Colinha" },
   { href: "/metodologia", label: "Metodologia" },
   { href: "/sobre", label: "Sobre" },
   { href: "/privacidade", label: "Privacidade" },

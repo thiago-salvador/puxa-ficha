@@ -1,6 +1,7 @@
 {
   "_comentario": "Separacao aditiva das migrations mistas ja aplicadas. Os arquivos de origem permanecem imutaveis como historico de curadoria; o substituto puro de schema reproduz apenas a DDL. O replay de schema exclui uma origem somente se o hash continuar igual e o substituto existir e for schema puro.",
-  "schema_dump_sha256": "86205cf1b7110a461b925b59b2669f09e43b1f30bf01fd593a902430a969c2fa",
+  "schema_dump_sha256": "830241ffa7174576e53b01533a775d46d3dd2f93802cb884bf4c873c9c104cd0",
+  "_comentario_20260924120000": "Lista de situações da RPC observe_verified_candidate_change igual ao domínio de situacao_candidatura: --schema-gate PG17 mediu 121 aplicadas, 383 puladas e zero falhas; hash 830241ffa7174576e53b01533a775d46d3dd2f93802cb884bf4c873c9c104cd0.",
   "_comentario_20260923145603": "Assinaturas por recorte após 20260923140000: --schema-gate PG17 mediu 120 migrations aplicadas, 380 puladas e zero falhas; hash 86205cf1b7110a461b925b59b2669f09e43b1f30bf01fd593a902430a969c2fa.",
   "_comentario_20260923120000_20260923130000": "Hash remedido no --schema-gate local PostgreSQL 17 apos rebase em 3e7adad8 e renomeacao das migrations: 118 aplicadas, 380 puladas, zero falhas; 297b4cee1bc6967bf5f1ca534668d4a3d09a89cc77a52f4e5ab6fe0f368a9aef. As tres migrations novas da main sao de dados, por isso o hash de schema permaneceu igual.",
   "_comentario_20260923140000": "Medido no --schema-gate local PostgreSQL 17 sobre 490b8208: 119 aplicadas, 380 puladas, zero falhas; hash d9668f6a171e73ed339fd00d539ae8a86144fe0f35708dc1021de12191c549b8 após 20260923140000_numero_urna_schema.sql.",

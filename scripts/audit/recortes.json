@@ -641,6 +641,13 @@
       "ate": "20260924003000",
       "allowlist": "scripts/audit/allowlist-senado-exercicio-reaberto-20260924.json",
       "divida": null
+    },
+    {
+      "nome": "verified-history-situacao-dominio-20260924",
+      "desde": "20260924120000",
+      "ate": "20260924120000",
+      "allowlist": "scripts/audit/allowlist-verified-history-situacao-dominio-20260924.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

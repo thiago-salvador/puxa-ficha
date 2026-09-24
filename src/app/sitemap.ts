@@ -47,6 +47,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: "weekly" as const,
     priority: 0.6,
   }))
+  // A Mesa de apuração e a colinha ficam de fora do sitemap: ambas declaram
+  // `robots: { index: false }` no próprio metadata (a Mesa é pública só por
+  // link; a colinha tem estado por URL). Sitemap e noindex não podem apontar
+  // em direções opostas.
+  const deputadosUrls = ufs.map((uf) => ({
+    url: `${SITE_ORIGIN}/deputados/${uf}`,
+    changeFrequency: "weekly" as const,
+    priority: 0.5,
+  }))
   const senadoUrls = isSenadoEnabled()
     ? [
         {
@@ -134,5 +143,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...rankingUrls,
     ...ufUrls,
     ...senadoUrls,
+    ...deputadosUrls,
   ]
 }

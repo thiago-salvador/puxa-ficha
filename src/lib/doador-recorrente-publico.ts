@@ -10,6 +10,8 @@
  * com as doações que ela recebeu desse doador.
  */
 
+import { formatDisplayName } from "@/lib/display-name"
+
 export const DOADOR_RECORRENTE_PUBLICO_COLUMNS =
   "candidato_id, ano_eleicao, doador_grupo, doador_nome, doador_tipo, valor, outra_ano_eleicao, outra_valor, outra_slug, outra_nome_urna, outra_partido_sigla, outra_pessoa_chave"
 
@@ -151,7 +153,7 @@ export function publicDoadorRecorrente(item: DoadorRecorrentePublico): DoadorRec
     doacoes: doacoes(item.doacoes),
     outras_candidaturas: item.outras_candidaturas.map((outra) => ({
       slug: outra.slug,
-      nome_urna: outra.nome_urna,
+      nome_urna: outra.nome_urna ? formatDisplayName(outra.nome_urna) : outra.nome_urna,
       partido_sigla: outra.partido_sigla,
       doacoes: doacoes(outra.doacoes),
     })),

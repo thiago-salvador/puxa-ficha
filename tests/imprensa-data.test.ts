@@ -67,6 +67,7 @@ test("monta coorte, filtros e estados sem transformar ausência em zero", async 
     assert.deepEqual(dataset.rows[0].chapa, {
       estado: "publicado",
       viceNome: "Vice Ana",
+      viceNomeOriginal: "Vice Ana",
       fonteUrl: "https://divulgacandcontas.tse.jus.br/candidatura/1",
       fonteSha256: "a".repeat(64),
       snapshotEm: "2026-09-05T23:23:41.730Z",
@@ -82,6 +83,25 @@ test("monta coorte, filtros e estados sem transformar ausência em zero", async 
     assert.equal(unfiltered.rows.find((row) => row.slug === "bruno")?.sites.estado, "vazio_confirmado")
     assert.equal(unfiltered.rows.find((row) => row.slug === "bruno")?.sites.quantidade, 0)
     assert.equal(unfiltered.rows.find((row) => row.slug === "deputado")?.sites.quantidade, null)
+  } finally {
+    __setImprensaDataDependenciesForTests(null)
+  }
+})
+
+test("nome formatado para exibição preserva o original do TSE para citação/exportação", async () => {
+  __setImprensaDataDependenciesForTests({
+    loadSlugs: async () => [{ slug: "carlos-cley" }],
+    loadCandidates: async () => [
+      { id: "5", slug: "carlos-cley", nome_urna: "CARLOS CLEY", cargo_disputado: "Governador", estado: "SP", partido_sigla: "ABC" },
+    ],
+    loadProcesses: async () => [],
+    loadChapas: async () => [],
+    loadSites: async () => null,
+  })
+  try {
+    const dataset = await getImprensaDataset({ cargo: null, uf: null })
+    assert.equal(dataset.rows[0].nome, "Carlos Cley")
+    assert.equal(dataset.rows[0].nomeOriginal, "CARLOS CLEY")
   } finally {
     __setImprensaDataDependenciesForTests(null)
   }

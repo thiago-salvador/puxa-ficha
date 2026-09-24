@@ -73,7 +73,7 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
         </div>
       </section>
 
-      <main className={styles.content}>
+      <div className={styles.content}>
         <section className={styles.intro} aria-labelledby="mesa-intro">
           <p id="mesa-intro" className={styles.introText}>
             Use cargo e UF para reduzir a coorte. Sites declarados no TSE, composição de chapa e processos
@@ -173,7 +173,7 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
                       </div>
                       {row.chapa.fonteUrl && <a className={`${styles.sourceLink} ${styles.meta}`} href={row.chapa.fonteUrl} rel="noreferrer">Fonte do snapshot</a>}
                       {row.chapa.fonteUrl && row.chapa.snapshotEm && (
-                        <ImprensaCitationButton candidateName={row.nome} section="chapa" slug={row.slug} sourceUrl={row.chapa.fonteUrl} collectedAt={dateLabel(row.chapa.snapshotEm)} collectionLabel="Snapshot oficial em" />
+                        <ImprensaCitationButton candidateName={row.nomeOriginal} section="chapa" slug={row.slug} sourceUrl={row.chapa.fonteUrl} collectedAt={dateLabel(row.chapa.snapshotEm)} collectionLabel="Snapshot oficial em" />
                       )}
                     </td>
                     <td>
@@ -189,7 +189,7 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
                         <Link href={`${row.fichaUrl}?tab=justica`}>Justiça</Link>
                         <a href={`/api/card/${encodeURIComponent(row.slug)}?format=feed`} rel="noreferrer">Card público</a>
                         {row.sites.fonteUrl && row.sites.coletadoEm && (
-                          <ImprensaCitationButton candidateName={row.nome} section="sites" slug={row.slug} sourceUrl={row.sites.fonteUrl} collectedAt={dateLabel(row.sites.coletadoEm)} />
+                          <ImprensaCitationButton candidateName={row.nomeOriginal} section="sites" slug={row.slug} sourceUrl={row.sites.fonteUrl} collectedAt={dateLabel(row.sites.coletadoEm)} />
                         )}
                       </div>
                     </td>
@@ -221,7 +221,7 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
           <p className="mt-2">Ao reutilizar um recorte, credite Puxa Ficha e a fonte específica exibida na linha. O <Link className={styles.sourceLink} href="/embed">embed</Link> e o card público são recursos de apresentação, não novas fontes factuais.</p>
           {dataset?.generatedAt && <p className="mt-2">Conjunto gerado em {dateLabel(dataset.generatedAt)}{dataset.version ? ` · versão ${dataset.version}` : ""}.</p>}
         </section>
-      </main>
+      </div>
     </div>
   )
 }

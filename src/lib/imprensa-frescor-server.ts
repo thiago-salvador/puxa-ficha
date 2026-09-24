@@ -4,6 +4,8 @@ import { createServiceRoleSupabaseClient } from "@/lib/supabase"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 import {
   buildImprensaFreshnessDataset,
+  freshnessReceiptSources,
+  IMPRENSA_FRESHNESS_SOURCES,
   type FreshnessReceipt,
   type ImprensaFreshnessDataset,
 } from "@/lib/imprensa-frescor"
@@ -11,7 +13,8 @@ import {
 export async function getImprensaFreshnessDataset(): Promise<ImprensaFreshnessDataset> {
   const admin = createServiceRoleSupabaseClient({ cacheMode: "no-store" })
   const receipts: FreshnessReceipt[] = []
-  for (const source of ["tse", "camara", "senado", "transparencia"]) {
+  const sources = [...new Set(IMPRENSA_FRESHNESS_SOURCES.flatMap((item) => freshnessReceiptSources(item)))]
+  for (const source of sources) {
     for (let offset = 0; ; offset += 500) {
       const { data, error } = await admin
         .from("coleta_log_ultima")

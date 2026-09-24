@@ -8,6 +8,11 @@ export interface FreshnessSourceDefinition {
   authorityUrl: string
   cadence: string
   maxAgeHours: number | null
+  /**
+   * Fontes de `coleta_log_ultima` que contam como coleta desta linha. Sem o
+   * campo, vale só `id`.
+   */
+  receiptSources?: readonly string[]
 }
 
 export interface FreshnessReceipt {
@@ -41,6 +46,11 @@ function freshnessLimit(sourceId: string): number | null {
     : null
 }
 
+function freshnessCollectionSources(sourceId: string): string[] {
+  const entry = freshnessCatalog.find((source) => source.source_id === sourceId)
+  return entry ? [...entry.collection_source_ids] : []
+}
+
 function freshnessCadence(sourceId: string): string {
   return freshnessCatalog.find((source) => source.source_id === sourceId)?.cadence ?? "not_demonstrated"
 }
@@ -52,6 +62,11 @@ export const IMPRENSA_FRESHNESS_SOURCES: readonly FreshnessSourceDefinition[] = 
     authorityUrl: "https://dadosabertos.tse.jus.br/",
     cadence: freshnessCadence("tse-current"),
     maxAgeHours: freshnessLimit("tse-current"),
+    // O limiar vem de `tse-current`, então a coleta também vem de todos os
+    // membros dele no catálogo, inclusive a observação semanal dos pacotes
+    // (`tse-observacao`) e a leitura diária da auditoria de frescor
+    // (`tse-auditoria-snapshot`). Ler só `tse` media apenas o ingest manual.
+    receiptSources: freshnessCollectionSources("tse-current"),
   },
   {
     id: "camara",
@@ -76,6 +91,10 @@ export const IMPRENSA_FRESHNESS_SOURCES: readonly FreshnessSourceDefinition[] = 
   },
 ] as const
 
+export function freshnessReceiptSources(source: FreshnessSourceDefinition): readonly string[] {
+  return source.receiptSources && source.receiptSources.length > 0 ? source.receiptSources : [source.id]
+}
+
 const SUCCESS_RESULTS = new Set(["encontrado", "vazio_confirmado"])
 
 function validDate(value: string | null | undefined): string | null {
@@ -88,8 +107,9 @@ export function buildImprensaFreshnessSource(
   receipts: readonly FreshnessReceipt[],
   now: string = new Date().toISOString(),
 ): ImprensaFreshnessSource {
+  const members = new Set(freshnessReceiptSources(source))
   const ordered = receipts
-    .filter((receipt) => receipt.fonte === source.id && validDate(receipt.executado_em))
+    .filter((receipt) => members.has(receipt.fonte) && validDate(receipt.executado_em))
     .sort((a, b) => Date.parse(b.executado_em) - Date.parse(a.executado_em))
   const latest = ordered[0] ?? null
   const successful = ordered.find((receipt) => SUCCESS_RESULTS.has(receipt.resultado)) ?? null
