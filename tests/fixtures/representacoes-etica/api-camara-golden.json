@@ -1,0 +1,3154 @@
+{
+ "/legislaturas/57": {
+  "dados": {
+   "id": 57,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/legislaturas/57",
+   "dataInicio": "2023-02-01",
+   "dataFim": "2027-01-31"
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/legislaturas/57"
+   }
+  ]
+ },
+ "/proposicoes/2563294": {
+  "dados": {
+   "id": 2563294,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2563294",
+   "siglaTipo": "REP",
+   "codTipo": 146,
+   "numero": 25,
+   "ano": 2025,
+   "ementa": "Representação em desfavor do Senhor Deputado MARCEL VAN HATTEM por suposto procedimento incompatível com o decoro parlamentar.",
+   "dataApresentacao": "2025-09-23T11:27",
+   "uriOrgaoNumerador": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
+   "statusProposicao": {
+    "dataHora": "2026-05-19T19:35",
+    "sequencia": 22,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Recurso",
+    "codTipoTramitacao": "192",
+    "descricaoSituacao": null,
+    "codSituacao": null,
+    "despacho": "Apresentação do REC n. 13/2026 (Recurso do Conselho de Ética que contraria norma constitucional ou regimental (Art. 13 ou 14, CEDP)), pelo Deputado Marcel van Hattem (NOVO/RS), que \"RECURSO contra a decisão do Conselho de Ética e Decoro Parlamentar da Câmara dos Deputados que aprovou o parecer do Relator, Deputado Moses Rodrigues, pela procedência da Representação n° 25/2025 e ( pela aplicação da penalidade de suspensão do exercício do mandato parlamentar pelo prazo de 2 (dois) meses, haja vista graves vícios constitucionais, regimentais e procedimentais que maculam o presente processo disciplinar desde sua origem e impõem a reforma da decisão recorrida\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3132796",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   "uriAutores": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2563294/autores",
+   "descricaoTipo": "Representação",
+   "ementaDetalhada": "",
+   "keywords": "Processo disciplinar (processo legislativo), deputado federal, Partido Novo (NOVO), quebra, decoro parlamentar.",
+   "uriPropPrincipal": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2563290",
+   "uriPropAnterior": null,
+   "uriPropPosterior": null,
+   "urlInteiroTeor": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3004837",
+   "urnFinal": null,
+   "texto": null,
+   "justificativa": null
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2563294"
+   }
+  ]
+ },
+ "/proposicoes/2563290": {
+  "dados": {
+   "id": 2563290,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2563290",
+   "siglaTipo": "REP",
+   "codTipo": 146,
+   "numero": 24,
+   "ano": 2025,
+   "ementa": "Representação em desfavor do Senhor Deputado MARCOS POLLON por suposto procedimento incompatível com o decoro parlamentar.",
+   "dataApresentacao": "2025-09-23T11:24",
+   "uriOrgaoNumerador": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+   "statusProposicao": {
+    "dataHora": "2026-05-19T20:09",
+    "sequencia": 67,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Recurso",
+    "codTipoTramitacao": "192",
+    "descricaoSituacao": "Aguardando Encaminhamento",
+    "codSituacao": 910,
+    "despacho": "Apresentação do REC n. 14/2026 (Recurso do Conselho de Ética que contraria norma constitucional ou regimental (Art. 13 ou 14, CEDP)), pelo Deputado Marcos Pollon (PL/MS), que \"RECURSO ORDINÁRIO DA DECISÃO PROFERIDA PELO CONSELHO DE ÉTICA, com fulcro no artigo 14, §4 do Código de Ética da Câmara dos Deputados\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3132798",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   "uriAutores": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2563290/autores",
+   "descricaoTipo": "Representação",
+   "ementaDetalhada": "",
+   "keywords": "Processo disciplinar (processo legislativo), deputado federal, Partido Liberal (PL), quebra, decoro parlamentar.",
+   "uriPropPrincipal": null,
+   "uriPropAnterior": null,
+   "uriPropPosterior": null,
+   "urlInteiroTeor": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3004835",
+   "urnFinal": null,
+   "texto": null,
+   "justificativa": null
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2563290"
+   }
+  ]
+ },
+ "/proposicoes/2366795": {
+  "dados": {
+   "id": 2366795,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2366795",
+   "siglaTipo": "REP",
+   "codTipo": 146,
+   "numero": 8,
+   "ano": 2023,
+   "ementa": "Representação de autoria do Partido Liberal (PL) em desfavor das Senhoras Deputadas  CÉLIA NUNES CORREA, ÉRIKA JUCÁ KOKAY, FERNANDA MELCHIONNA E SILVA, JULIANA CARDOSO, SÂMIA DE SOUZA BOMFIM E TALÍRIA PETRONE SOARES, Protocolizada em 30 de maio de 2023. Imputação de conduta incompatível com o decoro parlamentar.",
+   "dataApresentacao": "2023-05-31T23:18",
+   "uriOrgaoNumerador": null,
+   "statusProposicao": {
+    "dataHora": "2023-06-12T03:00",
+    "sequencia": 12,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Despacho",
+    "codTipoTramitacao": "1023",
+    "descricaoSituacao": "Retirado pelo(a) Autor(a)",
+    "codSituacao": 950,
+    "despacho": "Defiro a retirada da Representação n. 8/2023, nos termos dos arts. 104, caput, do Regimento Interno da Câmara dos Deputados, e 14, § 5º, do Código de Ética e Decoro Parlamentar da Câmara dos Deputados. Arquive-se. Publique-se.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   "uriAutores": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2366795/autores",
+   "descricaoTipo": "Representação",
+   "ementaDetalhada": "",
+   "keywords": "Processo disciplinar (processo legislativo), Deputada federal, Partido Político, Partido Socialismo e Liberdade (PSOL), Partido dos Trabalhadores (PT), quebra, decoro parlamentar.",
+   "uriPropPrincipal": null,
+   "uriPropAnterior": null,
+   "uriPropPosterior": null,
+   "urlInteiroTeor": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2282602",
+   "urnFinal": null,
+   "texto": null,
+   "justificativa": null
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2366795"
+   }
+  ]
+ },
+ "/proposicoes/2376389": {
+  "dados": {
+   "id": 2376389,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2376389",
+   "siglaTipo": "REP",
+   "codTipo": 146,
+   "numero": 21,
+   "ano": 2023,
+   "ementa": "Representação de autoria do Partido Socialismo e Liberdade (PSOL) em desfavor do Senhor Deputado ZUCCO, protocolizada em 14 de julho de 2023. Alegação de quebra de  decoro parlamentar.",
+   "dataApresentacao": "2023-08-07T15:20",
+   "uriOrgaoNumerador": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+   "statusProposicao": {
+    "dataHora": "2024-02-06T00:00",
+    "sequencia": 22,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/74550",
+    "regime": ".",
+    "descricaoTramitacao": "Arquivamento",
+    "codTipoTramitacao": "502",
+    "descricaoSituacao": "Arquivada",
+    "codSituacao": 923,
+    "despacho": "Arquivada",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   "uriAutores": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2376389/autores",
+   "descricaoTipo": "Representação",
+   "ementaDetalhada": "",
+   "keywords": "Processo disciplinar (processo legislativo), Deputado federal, Republicanos (partido político), quebra, decoro parlamentar.",
+   "uriPropPrincipal": null,
+   "uriPropAnterior": null,
+   "uriPropPosterior": null,
+   "urlInteiroTeor": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2307626",
+   "urnFinal": null,
+   "texto": null,
+   "justificativa": null
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2376389"
+   }
+  ]
+ },
+ "/proposicoes/2617174": {
+  "dados": {
+   "id": 2617174,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2617174",
+   "siglaTipo": "REP",
+   "codTipo": 146,
+   "numero": 3,
+   "ano": 2026,
+   "ementa": "Representação de autoria do Partido Novo em desfavor dos Senhores Deputados Chico Alencar, Glauber Braga, Ivan Valente, Pastor Henrique Vieira, Tarcísio Motta e Lindbergh Farias e das Senhoras Deputadas Célia Xakriabá, Erika Hilton, Fernanda Melchionna, Luiza Erundina, Professora Luciene Cavalcante, Sâmia Bomfim e Talíria Petrone protocolizada em 26 de novembro de 2025. Alegação de quebra de decoro parlamentar.",
+   "dataApresentacao": "2026-04-16T15:07",
+   "uriOrgaoNumerador": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+   "statusProposicao": {
+    "dataHora": "2026-08-27T00:00",
+    "sequencia": 14,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/220694",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Aguardando Parecer",
+    "codSituacao": 915,
+    "despacho": "Autorizada prorrogação do prazo para protocolo do parecer preliminar até o dia 28/8/26.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   "uriAutores": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2617174/autores",
+   "descricaoTipo": "Representação",
+   "ementaDetalhada": "",
+   "keywords": "Representação contra deputado, Partido dos Trabalhadores (PT), Partido Socialismo e Liberdade (PSOL), Partido Novo (NOVO), Decoro parlamentar, Ética parlamentar.",
+   "uriPropPrincipal": null,
+   "uriPropAnterior": null,
+   "uriPropPosterior": null,
+   "urlInteiroTeor": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3115232",
+   "urnFinal": null,
+   "texto": null,
+   "justificativa": null
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2617174"
+   }
+  ]
+ },
+ "/proposicoes/2617169": {
+  "dados": {
+   "id": 2617169,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2617169",
+   "siglaTipo": "REP",
+   "codTipo": 146,
+   "numero": 2,
+   "ano": 2026,
+   "ementa": "Representação de autoria do Partido Socialismo e Liberdade (PSOL) em desfavor do Senhor Deputado PAULO BILYNSKYJ, protocolizada em 17/11/2025. Alegação de quebra de decoro parlamentar.",
+   "dataApresentacao": "2026-04-16T14:47",
+   "uriOrgaoNumerador": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+   "statusProposicao": {
+    "dataHora": "2026-06-02T00:00",
+    "sequencia": 15,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/220583",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Aguardando Deliberação",
+    "codSituacao": 903,
+    "despacho": "Relatório.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3140878",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   "uriAutores": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2617169/autores",
+   "descricaoTipo": "Representação",
+   "ementaDetalhada": "",
+   "keywords": "Representação contra deputado, Partido Liberal (PL), Partido Socialismo e Liberdade (PSOL), quebra, Decoro parlamentar, Ética parlamentar.",
+   "uriPropPrincipal": null,
+   "uriPropAnterior": null,
+   "uriPropPosterior": null,
+   "urlInteiroTeor": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3115224",
+   "urnFinal": null,
+   "texto": null,
+   "justificativa": null
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2617169"
+   }
+  ]
+ },
+ "/proposicoes?siglaTipo=REP&ano=2023&itens=100&ordem=ASC&ordenarPor=id": {
+  "dados": [
+   {
+    "id": 2366795,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2366795",
+    "siglaTipo": "REP",
+    "codTipo": 146,
+    "numero": 8,
+    "ano": 2023,
+    "ementa": "Representação de autoria do Partido Liberal (PL) em desfavor das Senhoras Deputadas  CÉLIA NUNES CORREA, ÉRIKA JUCÁ KOKAY, FERNANDA MELCHIONNA E SILVA, JULIANA CARDOSO, SÂMIA DE SOUZA BOMFIM E TALÍRIA PETRONE SOARES, Protocolizada em 30 de maio de 2023. Imputação de conduta incompatível com o decoro parlamentar.",
+    "dataApresentacao": "2023-05-31T23:18"
+   },
+   {
+    "id": 2376389,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2376389",
+    "siglaTipo": "REP",
+    "codTipo": 146,
+    "numero": 21,
+    "ano": 2023,
+    "ementa": "Representação de autoria do Partido Socialismo e Liberdade (PSOL) em desfavor do Senhor Deputado ZUCCO, protocolizada em 14 de julho de 2023. Alegação de quebra de  decoro parlamentar.",
+    "dataApresentacao": "2023-08-07T15:20"
+   }
+  ],
+  "links": []
+ },
+ "/proposicoes?siglaTipo=REP&ano=2024&itens=100&ordem=ASC&ordenarPor=id": {
+  "dados": [],
+  "links": []
+ },
+ "/proposicoes?siglaTipo=REP&ano=2025&itens=100&ordem=ASC&ordenarPor=id": {
+  "dados": [
+   {
+    "id": 2563290,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2563290",
+    "siglaTipo": "REP",
+    "codTipo": 146,
+    "numero": 24,
+    "ano": 2025,
+    "ementa": "Representação em desfavor do Senhor Deputado MARCOS POLLON por suposto procedimento incompatível com o decoro parlamentar.",
+    "dataApresentacao": "2025-09-23T11:24"
+   },
+   {
+    "id": 2563294,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2563294",
+    "siglaTipo": "REP",
+    "codTipo": 146,
+    "numero": 25,
+    "ano": 2025,
+    "ementa": "Representação em desfavor do Senhor Deputado MARCEL VAN HATTEM por suposto procedimento incompatível com o decoro parlamentar.",
+    "dataApresentacao": "2025-09-23T11:27"
+   }
+  ],
+  "links": []
+ },
+ "/proposicoes?siglaTipo=REP&ano=2026&itens=100&ordem=ASC&ordenarPor=id": {
+  "dados": [
+   {
+    "id": 2617169,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2617169",
+    "siglaTipo": "REP",
+    "codTipo": 146,
+    "numero": 2,
+    "ano": 2026,
+    "ementa": "Representação de autoria do Partido Socialismo e Liberdade (PSOL) em desfavor do Senhor Deputado PAULO BILYNSKYJ, protocolizada em 17/11/2025. Alegação de quebra de decoro parlamentar.",
+    "dataApresentacao": "2026-04-16T14:47"
+   },
+   {
+    "id": 2617174,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2617174",
+    "siglaTipo": "REP",
+    "codTipo": 146,
+    "numero": 3,
+    "ano": 2026,
+    "ementa": "Representação de autoria do Partido Novo em desfavor dos Senhores Deputados Chico Alencar, Glauber Braga, Ivan Valente, Pastor Henrique Vieira, Tarcísio Motta e Lindbergh Farias e das Senhoras Deputadas Célia Xakriabá, Erika Hilton, Fernanda Melchionna, Luiza Erundina, Professora Luciene Cavalcante, Sâmia Bomfim e Talíria Petrone protocolizada em 26 de novembro de 2025. Alegação de quebra de decoro parlamentar.",
+    "dataApresentacao": "2026-04-16T15:07"
+   }
+  ],
+  "links": []
+ },
+ "/proposicoes/2563294/tramitacoes": {
+  "dados": [
+   {
+    "dataHora": "2025-09-23T00:00",
+    "sequencia": 7,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Notificações",
+    "codTipoTramitacao": "1005",
+    "descricaoSituacao": null,
+    "codSituacao": null,
+    "despacho": "PROC n.109/2025.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3005562",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-09-23T00:00",
+    "sequencia": 8,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Notificações",
+    "codTipoTramitacao": "1005",
+    "descricaoSituacao": null,
+    "codSituacao": null,
+    "despacho": "Parecer da Corregedoria Parlamentar, referente ao Processo nº 991.224/2025.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3004948",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-09-23T11:27",
+    "sequencia": 1,
+    "siglaOrgao": "PLEN",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Proposição",
+    "codTipoTramitacao": "100",
+    "descricaoSituacao": null,
+    "codSituacao": null,
+    "despacho": "Apresentação da REP n. 25/2025 (Representação), pelo Mesa Diretora, que \"Representação em desfavor do Senhor Deputado MARCEL VAN HATTEM por suposto procedimento incompatível com o decoro parlamentar\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3004837",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-09-23T12:51",
+    "sequencia": 9,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Despacho",
+    "codTipoTramitacao": "1023",
+    "descricaoSituacao": null,
+    "codSituacao": null,
+    "despacho": "Encaminhe-se ao Conselho de Ética e Decoro Parlamentar, nos termos do art. 15, § 3º, do Regimento Interno da Câmara dos Deputados, assim como do art. 9º, § 2º, I, do Código de Ética e Decoro Parlamentar.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3004845",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-09-23T15:02",
+    "sequencia": 12,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Recebimento",
+    "codTipoTramitacao": "500",
+    "descricaoSituacao": "Aguardando Recebimento",
+    "codSituacao": 917,
+    "despacho": "Recebimento pelo COETICA.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-07T00:00",
+    "sequencia": 13,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Notificações",
+    "codTipoTramitacao": "1005",
+    "descricaoSituacao": null,
+    "codSituacao": null,
+    "despacho": "Apensem-se as Representações n. 25 e 27, de 2025, à Representação n. 24, de 2025. Publique-se.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3014398",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-07T00:00",
+    "sequencia": 15,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Instauração de Processo - COÉTICA",
+    "codTipoTramitacao": "1059",
+    "descricaoSituacao": "Aguardando Recebimento",
+    "codSituacao": 917,
+    "despacho": "Instaurado o Processo nº 24 referente à Representação nº 25 de 2025, em desfavor do Deputado Marcel Van Hattem.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-09T09:15",
+    "sequencia": 16,
+    "siglaOrgao": "PLEN",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Requerimento",
+    "codTipoTramitacao": "194",
+    "descricaoSituacao": null,
+    "codSituacao": null,
+    "despacho": "Apresentação do REQ n. 4205/2025 (Requerimento de Desapensação), pelo Deputado Sóstenes Cavalcante (PL/RJ), que \"Requer o desapensamento das representações nº 25/2025 e 27/2025 da representação nº 24/2025\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3018522",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-09T09:18",
+    "sequencia": 18,
+    "siglaOrgao": "PLEN",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Recurso",
+    "codTipoTramitacao": "192",
+    "descricaoSituacao": null,
+    "codSituacao": null,
+    "despacho": "Apresentação do REC n. 19/2025 (Recurso), pelo Deputado Sóstenes Cavalcante (PL/RJ), que \"Interpor recurso contra a decisão de apensamento das representações nº 24/2025, 25/2025 e 27/2025\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3018564",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-05-12T00:00",
+    "sequencia": 20,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": null,
+    "codSituacao": null,
+    "despacho": "Publicação no Diário da Câmara dos Deputados - DCD.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3130121",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-05-12T18:44",
+    "sequencia": 19,
+    "siglaOrgao": "COAPS(SGM)",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/100047",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Recebimento",
+    "codTipoTramitacao": "500",
+    "descricaoSituacao": null,
+    "codSituacao": null,
+    "despacho": "Publique-se o despacho encaminhado pelo Ofício em epígrafe.Juntem-se o Ofício n. 018/26-CEDPA/P e o despacho que o acompanha aos autos dos Processos n. 23/2025, 24/2025 e 26/2025.Publique-se.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3127320",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-05-13T00:00",
+    "sequencia": 21,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": null,
+    "codSituacao": null,
+    "despacho": "Início do prazo de 5 (cinco) dias úteis para que o representado possa recorrer à CCJC (art. 14, § 4º, inciso VII do Código de Ética), encerrando-se em 19/5/26.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-05-19T19:35",
+    "sequencia": 22,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Recurso",
+    "codTipoTramitacao": "192",
+    "descricaoSituacao": "Aguardando Recebimento",
+    "codSituacao": 917,
+    "despacho": "Apresentação do REC n. 13/2026 (Recurso do Conselho de Ética que contraria norma constitucional ou regimental (Art. 13 ou 14, CEDP)), pelo Deputado Marcel van Hattem (NOVO/RS), que \"RECURSO contra a decisão do Conselho de Ética e Decoro Parlamentar da Câmara dos Deputados que aprovou o parecer do Relator, Deputado Moses Rodrigues, pela procedência da Representação n° 25/2025 e ( pela aplicação da penalidade de suspensão do exercício do mandato parlamentar pelo prazo de 2 (dois) meses, haja vista graves vícios constitucionais, regimentais e procedimentais que maculam o presente processo disciplinar desde sua origem e impõem a reforma da decisão recorrida\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3132728",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   }
+  ],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2563294/tramitacoes"
+   }
+  ]
+ },
+ "/proposicoes/2563294/relacionadas": {
+  "dados": [
+   {
+    "id": 2570292,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2570292",
+    "siglaTipo": "REC",
+    "codTipo": "379",
+    "numero": "19",
+    "ano": "2025",
+    "ementa": "Interpor recurso contra a decisão de apensamento das representações nº 24/2025, 25/2025 e 27/2025.",
+    "dataApresentacao": "2025-10-09T09:18"
+   },
+   {
+    "id": 2625984,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2625984",
+    "siglaTipo": "REC",
+    "codTipo": "618",
+    "numero": "13",
+    "ano": "2026",
+    "ementa": "RECURSO contra a decisão do Conselho de Ética e Decoro Parlamentar da Câmara dos Deputados que aprovou o parecer do Relator, Deputado Moses Rodrigues, pela procedência da Representação n° 25/2025 e ( pela aplicação da penalidade de suspensão do exercício do mandato parlamentar pelo prazo de 2 (dois) meses, haja vista graves vícios constitucionais, regimentais e procedimentais que maculam o presente processo disciplinar desde sua origem e impõem a reforma da decisão recorrida.",
+    "dataApresentacao": "2026-05-19T19:35"
+   },
+   {
+    "id": 2570268,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2570268",
+    "siglaTipo": "REQ",
+    "codTipo": "305",
+    "numero": "4205",
+    "ano": "2025",
+    "ementa": "Requer o desapensamento das representações nº 25/2025 e 27/2025 da representação nº 24/2025.",
+    "dataApresentacao": "2025-10-09T09:15"
+   }
+  ],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2563294/relacionadas"
+   }
+  ]
+ },
+ "/proposicoes/2570292": {
+  "dados": {
+   "id": 2570292,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2570292",
+   "siglaTipo": "REC",
+   "codTipo": 379,
+   "numero": 19,
+   "ano": 2025,
+   "ementa": "Interpor recurso contra a decisão de apensamento das representações nº 24/2025, 25/2025 e 27/2025.",
+   "dataApresentacao": "2025-10-09T09:18",
+   "uriOrgaoNumerador": null,
+   "statusProposicao": {
+    "dataHora": "2025-10-09T09:18",
+    "sequencia": 1,
+    "siglaOrgao": "PLEN",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Proposição",
+    "codTipoTramitacao": "100",
+    "descricaoSituacao": "Aguardando Despacho do Presidente da Câmara dos Deputados (Chancela)",
+    "codSituacao": 1201,
+    "despacho": "Apresentação do REC n. 19/2025 (Recurso), pelo Deputado Sóstenes Cavalcante (PL/RJ), que \"Interpor recurso contra a decisão de apensamento das representações nº 24/2025, 25/2025 e 27/2025\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3019785",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   "uriAutores": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2570292/autores",
+   "descricaoTipo": "Recurso contra apensação/desapensação de proposição (Art. 142, I, RICD)",
+   "ementaDetalhada": null,
+   "keywords": null,
+   "uriPropPrincipal": null,
+   "uriPropAnterior": null,
+   "uriPropPosterior": null,
+   "urlInteiroTeor": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3018564",
+   "urnFinal": null,
+   "texto": null,
+   "justificativa": null
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2570292"
+   }
+  ]
+ },
+ "/proposicoes/2570292/tramitacoes": {
+  "dados": [
+   {
+    "dataHora": "2025-10-09T09:18",
+    "sequencia": 1,
+    "siglaOrgao": "PLEN",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Proposição",
+    "codTipoTramitacao": "100",
+    "descricaoSituacao": "Aguardando Despacho do Presidente da Câmara dos Deputados (Chancela)",
+    "codSituacao": 1201,
+    "despacho": "Apresentação do REC n. 19/2025 (Recurso), pelo Deputado Sóstenes Cavalcante (PL/RJ), que \"Interpor recurso contra a decisão de apensamento das representações nº 24/2025, 25/2025 e 27/2025\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3018564",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   }
+  ],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2570292/tramitacoes"
+   }
+  ]
+ },
+ "/proposicoes/2625984": {
+  "dados": {
+   "id": 2625984,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2625984",
+   "siglaTipo": "REC",
+   "codTipo": 618,
+   "numero": 13,
+   "ano": 2026,
+   "ementa": "RECURSO contra a decisão do Conselho de Ética e Decoro Parlamentar da Câmara dos Deputados que aprovou o parecer do Relator, Deputado Moses Rodrigues, pela procedência da Representação n° 25/2025 e ( pela aplicação da penalidade de suspensão do exercício do mandato parlamentar pelo prazo de 2 (dois) meses, haja vista graves vícios constitucionais, regimentais e procedimentais que maculam o presente processo disciplinar desde sua origem e impõem a reforma da decisão recorrida.",
+   "dataApresentacao": "2026-05-19T19:35",
+   "uriOrgaoNumerador": null,
+   "statusProposicao": {
+    "dataHora": "2026-05-19T19:35",
+    "sequencia": 1,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Proposição",
+    "codTipoTramitacao": "100",
+    "descricaoSituacao": "Aguardando Despacho do Presidente da Câmara dos Deputados",
+    "codSituacao": 905,
+    "despacho": "Apresentação do REC n. 13/2026 (Recurso do Conselho de Ética que contraria norma constitucional ou regimental (Art. 13 ou 14, CEDP)), pelo Deputado Marcel van Hattem (NOVO/RS), que \"RECURSO contra a decisão do Conselho de Ética e Decoro Parlamentar da Câmara dos Deputados que aprovou o parecer do Relator, Deputado Moses Rodrigues, pela procedência da Representação n° 25/2025 e ( pela aplicação da penalidade de suspensão do exercício do mandato parlamentar pelo prazo de 2 (dois) meses, haja vista graves vícios constitucionais, regimentais e procedimentais que maculam o presente processo disciplinar desde sua origem e impõem a reforma da decisão recorrida\".",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   "uriAutores": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2625984/autores",
+   "descricaoTipo": "Recurso do Conselho de Ética que contraria norma constitucional ou regimental (Art. 13 ou 14, CEDP)",
+   "ementaDetalhada": null,
+   "keywords": null,
+   "uriPropPrincipal": null,
+   "uriPropAnterior": null,
+   "uriPropPosterior": null,
+   "urlInteiroTeor": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3132728",
+   "urnFinal": null,
+   "texto": null,
+   "justificativa": null
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2625984"
+   }
+  ]
+ },
+ "/proposicoes/2625984/tramitacoes": {
+  "dados": [
+   {
+    "dataHora": "2026-05-19T19:35",
+    "sequencia": 1,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Proposição",
+    "codTipoTramitacao": "100",
+    "descricaoSituacao": "Aguardando Despacho do Presidente da Câmara dos Deputados",
+    "codSituacao": 905,
+    "despacho": "Apresentação do REC n. 13/2026 (Recurso do Conselho de Ética que contraria norma constitucional ou regimental (Art. 13 ou 14, CEDP)), pelo Deputado Marcel van Hattem (NOVO/RS), que \"RECURSO contra a decisão do Conselho de Ética e Decoro Parlamentar da Câmara dos Deputados que aprovou o parecer do Relator, Deputado Moses Rodrigues, pela procedência da Representação n° 25/2025 e ( pela aplicação da penalidade de suspensão do exercício do mandato parlamentar pelo prazo de 2 (dois) meses, haja vista graves vícios constitucionais, regimentais e procedimentais que maculam o presente processo disciplinar desde sua origem e impõem a reforma da decisão recorrida\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3132728",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   }
+  ],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2625984/tramitacoes"
+   }
+  ]
+ },
+ "/proposicoes/2563290/tramitacoes": {
+  "dados": [
+   {
+    "dataHora": "2025-09-23T00:00",
+    "sequencia": 1,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Proposição",
+    "codTipoTramitacao": "100",
+    "descricaoSituacao": "Aguardando Encaminhamento",
+    "codSituacao": 910,
+    "despacho": "Apresentação da REP n. 24/2025 (Representação), pelo Mesa Diretora, que \"Representação em desfavor do Senhor Deputado MARCOS POLLON por suposto procedimento incompatível com o decoro parlamentar\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3004835",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-09-23T00:00",
+    "sequencia": 7,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Notificações",
+    "codTipoTramitacao": "1005",
+    "descricaoSituacao": "Aguardando Encaminhamento",
+    "codSituacao": 910,
+    "despacho": "PROC n.107/2025.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3005424",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-09-23T00:00",
+    "sequencia": 8,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Notificações",
+    "codTipoTramitacao": "1005",
+    "descricaoSituacao": "Aguardando Encaminhamento",
+    "codSituacao": 910,
+    "despacho": "Parecer da Corregedoria Parlamentar, referente ao Processo nº 991.252/2025.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3004943",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-09-23T12:56",
+    "sequencia": 9,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Despacho",
+    "codTipoTramitacao": "1023",
+    "descricaoSituacao": "Aguardando Encaminhamento",
+    "codSituacao": 910,
+    "despacho": "Encaminhe-se ao Conselho de Ética e Decoro Parlamentar, nos termos do art. 15, § 3º, do Regimento Interno da Câmara dos Deputados, assim como do art. 9º, § 2º, I, do Código de Ética e Decoro Parlamentar.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3004841",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-09-23T15:02",
+    "sequencia": 12,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Recebimento",
+    "codTipoTramitacao": "500",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Recebimento pelo COETICA.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-07T00:00",
+    "sequencia": 16,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Instauração de Processo - COÉTICA",
+    "codTipoTramitacao": "1059",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Instaurado o Processo nº 23 referente à Representação nº 24 de 2025, em desfavor do Deputado Marcos Pollon..",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-07T00:00",
+    "sequencia": 17,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Sorteio para Escolha do(a) Relator(a)",
+    "codTipoTramitacao": "1060",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Realizado sorteio para escolha do relator, foram sorteados os Deputados Castro Neto (PSD/PI), Albuquerque (REPUBLIANOS/RR0 e Zé Haroldo Cathedral (PSD/RR).",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-07T00:00",
+    "sequencia": 18,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Deputado Zé Haroldo Cathedral retirou seu nome da lista tríplice para escolha de relator.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-07T13:48",
+    "sequencia": 14,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Despacho",
+    "codTipoTramitacao": "1023",
+    "descricaoSituacao": "Aguardando Encaminhamento",
+    "codSituacao": 910,
+    "despacho": "Apensem-se as Representações n. 25 e 27, de 2025, à Representação n. 24, de 2025. Publique-se.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3014398",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-09T00:00",
+    "sequencia": 21,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "O Deputado Castro Neto retirou seu nome da lista tríplice para escolha do relator.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-09T09:15",
+    "sequencia": 19,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Requerimento",
+    "codTipoTramitacao": "194",
+    "descricaoSituacao": "Aguardando Encaminhamento",
+    "codSituacao": 910,
+    "despacho": "Apresentação do REQ n. 4205/2025 (Requerimento de Desapensação), pelo Deputado Sóstenes Cavalcante (PL/RJ), que \"Requer o desapensamento das representações nº 25/2025 e 27/2025 da representação nº 24/2025\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3018522",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-09T09:18",
+    "sequencia": 20,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Recurso",
+    "codTipoTramitacao": "192",
+    "descricaoSituacao": "Aguardando Encaminhamento",
+    "codSituacao": 910,
+    "despacho": "Apresentação do REC n. 19/2025 (Recurso), pelo Deputado Sóstenes Cavalcante (PL/RJ), que \"Interpor recurso contra a decisão de apensamento das representações nº 24/2025, 25/2025 e 27/2025\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3018564",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-21T00:00",
+    "sequencia": 22,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Sorteio para Escolha do(a) Relator(a)",
+    "codTipoTramitacao": "1060",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Realizado sorteio de 2 nomes para compor a lista tríplice destinada à escolha do relator, foram sorteados os Deputados Josenildo (PDT/AP) e Moses Rodrigues (União/CE).",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-23T00:00",
+    "sequencia": 23,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Designação de Relator(a)",
+    "codTipoTramitacao": "320",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Designado Relator, Dep. Moses Rodrigues (UNIÃO-CE)",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-28T00:00",
+    "sequencia": 24,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Primeira tentativa de notificação do Deputado Marcel Van Hattem.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-29T00:00",
+    "sequencia": 25,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Notificação do Representado",
+    "codTipoTramitacao": "1501",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Notificado o Deputado Zé Trovão.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3033690",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-29T00:00",
+    "sequencia": 26,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Segunda tentativa de notificação do Deputado Marcel Van Hattem.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-29T00:00",
+    "sequencia": 27,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Duas tentativas de notificação do Deputado Marcos Pollon.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-10-30T00:00",
+    "sequencia": 28,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Terceira tentativa de notificação do Deputado Marcos Pollon.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-11-04T00:00",
+    "sequencia": 29,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Notificação do Representado",
+    "codTipoTramitacao": "1501",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Notificado o Deputado Marcel Van Hattem.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3038543",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-11-04T00:00",
+    "sequencia": 30,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Quarta tentativa de notificação do Deputado Marcos Pollon.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-11-05T00:00",
+    "sequencia": 31,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Notificação do Representado",
+    "codTipoTramitacao": "1501",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Notificado, por Edital, o Deputado Marcos Pollon referente à Representação nº 24 de 2025.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3040071",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-11-12T00:00",
+    "sequencia": 32,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Protocolada Defesa Escrita do Deputado Zé Trovão referente à Represesntação n. 27 de 2025.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3045758",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-11-18T00:00",
+    "sequencia": 33,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Protocolada Defesa Escrita do Deputado Marcel Van Hattem referente à Representação n. 25 de 2025.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3050268",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-11-19T00:00",
+    "sequencia": 34,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Protocolada Defesa Escrita do Deputado Marcos Pollon referente à Representação n. 24 de 2025.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3050269",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-11-24T00:00",
+    "sequencia": 35,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Início da Instrução Probatória",
+    "codTipoTramitacao": "1061",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Início da Instrução Probatória de 30 (trinta) dias úteis.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-11-26T00:00",
+    "sequencia": 36,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação do Plano de Trabalho",
+    "codTipoTramitacao": "1505",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Apresentação do Plano de Trabalho",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3053849",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-12-01T00:00",
+    "sequencia": 37,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Pedido de reconsideração do Deputado Marcos Pollon acerca das testemunhas de defesa.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3064092",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-12-03T00:00",
+    "sequencia": 38,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Manifestação do Relator.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3064097",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-12-09T00:00",
+    "sequencia": 39,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Início da oitiva do Deputado Messias Donato.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-12-09T00:00",
+    "sequencia": 40,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Oitivas das seguintes testemunhas: Deputados Coronel Meira, Adriana Ventura e Alfredo Gaspar.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-12-10T00:00",
+    "sequencia": 41,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Continuação da oitiva do Deputado Messias Donato.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-12-10T00:00",
+    "sequencia": 42,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Oitiva dos Deputados Sóstenes Cavalcante, Nikolas Ferreira e início da oitiva do Deputado Zucco.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-12-16T00:00",
+    "sequencia": 43,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Oitiva das seguintes testemunhas de defesa: Deputados Zucco, Delegado Paulo Bilynksyj, Maurício Marcon, Sargento Gonçalves e Alberto Fraga.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2025-12-16T00:00",
+    "sequencia": 44,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Oitiva da Sra. Carolina Barreto Siebra, testemunha de defesa.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-02-03T00:00",
+    "sequencia": 45,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Nova oitiva da Sra. Carolina Barreto Siebra para que o Deputado Marcos Pollon pudesse inquirir, conforme acordo em reunião realizada em 16/12/25.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-02-03T00:00",
+    "sequencia": 46,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Nova oitiva do Deputado Sargento Gonçalves para que o Deputado Marcos Pollon pudesse inquirir, conforme acordo em reunião realizada em 16/12/25.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-02-10T00:00",
+    "sequencia": 47,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Oitiva dos Deputados Alberto Fraga e Delegado Paulo Bilynskyj.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-02-10T00:00",
+    "sequencia": 48,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Oitiva dos Representados: Deputados Zé Trovão, Marcos Polllon e Marcel van Hattem.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-02-10T00:00",
+    "sequencia": 49,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Encerramento da Instrução Probatória",
+    "codTipoTramitacao": "1062",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Encerrada a instrução probatória (30 dias úteis improrrogáveis - art. 14, §4º, IV do Código de Ética).",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-02-27T00:00",
+    "sequencia": 50,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Parecer do(a) Relator(a)",
+    "codTipoTramitacao": "322",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Protocolado Parecer (relatório e voto) do Deputado Moses Rodrigues - Relator.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-02-27T00:00",
+    "sequencia": 51,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Relatório.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3096219",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-03-17T00:00",
+    "sequencia": 52,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Em reunião, os processos não foram apreciados em função de aprovação de requerimento de retirada de pauta.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-04-28T00:00",
+    "sequencia": 53,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Leitura do Voto do relator, Deputado Moses Rodrigues",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3119334",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-04-28T00:00",
+    "sequencia": 54,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Concedida vista do processo ao Deputado Cabo Gilberto Silva.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-05-05T00:00",
+    "sequencia": 57,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Defesa dos Representados: Deputados Marcos Pollon, Marcel van Hattem e Zé Trovão.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-05-05T00:00",
+    "sequencia": 58,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Discussão.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-05-05T00:00",
+    "sequencia": 59,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "O Parecer do relator, Deputado Moses Rodrigues, foi aprovado da seguinte forma:1) Na parte referente ao Deputado Marcos Pollon, foi aprovada a suspensão temporária do exercício do mandato por 2 meses; 13 votos favoráveis e 4 contrários.2)  Na parte referente ao Deputado Marcel van Hattem, foi aprovada a suspensão temporária do exercício do mandato por 2 meses; 13 votos favoráveis e 4 contrários.3) Na parte referente ao Deputado Zé Trovão, foi aprovada a suspensão temporária do exercício do mandato por 2 meses; 15 votos favoráveis e 4 contrários.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-05-05T00:00",
+    "sequencia": 60,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Parecer final aprovado.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3125779",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-05-05T00:00",
+    "sequencia": 61,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Parecer do Conselho.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3131994",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-05-05T18:32",
+    "sequencia": 55,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Requerimento",
+    "codTipoTramitacao": "194",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Apresentação do RPDR n. 1/2026 (Votação Nominal do Requerimento Procedimental Genérico), pelo Deputado Cabo Gilberto Silva (PL/PB), que \"Votação Nominal do Requerimento Procedimental Genérico - REP 24/2025-Requerimento Procedimental Genérico - REP 24/2025\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3123705",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-05-05T18:33",
+    "sequencia": 56,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Requerimento",
+    "codTipoTramitacao": "194",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Apresentação do RPDR n. 2/2026 (Requerimento Procedimental Genérico de Sessão/Reunião), pelo Deputado Cabo Gilberto Silva (PL/PB), que \"Requerimento Procedimental Genérico - REP 24/2025\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3123707",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-05-12T00:00",
+    "sequencia": 65,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Publicação DCD",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3128470",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-05-12T18:43",
+    "sequencia": 63,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Despacho",
+    "codTipoTramitacao": "1023",
+    "descricaoSituacao": "Aguardando Encaminhamento",
+    "codSituacao": 910,
+    "despacho": "Publique-se o despacho encaminhado pelo Ofício em epígrafe.Juntem-se o Ofício n. 018/26-CEDPA/P e o despacho que o acompanha aos autos dos Processos n. 23/2025, 24/2025 e 26/2025.Publique-se.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3127320",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-05-13T00:00",
+    "sequencia": 66,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Início do prazo de 5 (cinco) dias úteis para que os representados possam recorrer à CCJC (art. 14, § 4º, inciso VII do Código de Ética), encerrando-se no dia 19/5/26.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-05-19T20:09",
+    "sequencia": 67,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/178997",
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Recurso",
+    "codTipoTramitacao": "192",
+    "descricaoSituacao": "Aguardando Encaminhamento",
+    "codSituacao": 910,
+    "despacho": "Apresentação do REC n. 14/2026 (Recurso do Conselho de Ética que contraria norma constitucional ou regimental (Art. 13 ou 14, CEDP)), pelo Deputado Marcos Pollon (PL/MS), que \"RECURSO ORDINÁRIO DA DECISÃO PROFERIDA PELO CONSELHO DE ÉTICA, com fulcro no artigo 14, §4 do Código de Ética da Câmara dos Deputados\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3132743",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   }
+  ],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2563290/tramitacoes"
+   }
+  ]
+ },
+ "/proposicoes/2563290/relacionadas": {
+  "dados": [
+   {
+    "id": 2570292,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2570292",
+    "siglaTipo": "REC",
+    "codTipo": "379",
+    "numero": "19",
+    "ano": "2025",
+    "ementa": "Interpor recurso contra a decisão de apensamento das representações nº 24/2025, 25/2025 e 27/2025.",
+    "dataApresentacao": "2025-10-09T09:18"
+   },
+   {
+    "id": 2625993,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2625993",
+    "siglaTipo": "REC",
+    "codTipo": "618",
+    "numero": "14",
+    "ano": "2026",
+    "ementa": "RECURSO ORDINÁRIO DA DECISÃO PROFERIDA PELO CONSELHO DE ÉTICA, com fulcro no artigo 14, §4 do Código de Ética da Câmara dos Deputados.",
+    "dataApresentacao": "2026-05-19T20:09"
+   },
+   {
+    "id": 2570268,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2570268",
+    "siglaTipo": "REQ",
+    "codTipo": "305",
+    "numero": "4205",
+    "ano": "2025",
+    "ementa": "Requer o desapensamento das representações nº 25/2025 e 27/2025 da representação nº 24/2025.",
+    "dataApresentacao": "2025-10-09T09:15"
+   },
+   {
+    "id": 2563294,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2563294",
+    "siglaTipo": "REP",
+    "codTipo": "146",
+    "numero": "25",
+    "ano": "2025",
+    "ementa": "Representação em desfavor do Senhor Deputado MARCEL VAN HATTEM por suposto procedimento incompatível com o decoro parlamentar.",
+    "dataApresentacao": "2025-09-23T11:27"
+   },
+   {
+    "id": 2570292,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2570292",
+    "siglaTipo": "REC",
+    "codTipo": "379",
+    "numero": "19",
+    "ano": "2025",
+    "ementa": "Interpor recurso contra a decisão de apensamento das representações nº 24/2025, 25/2025 e 27/2025.",
+    "dataApresentacao": "2025-10-09T09:18"
+   },
+   {
+    "id": 2625984,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2625984",
+    "siglaTipo": "REC",
+    "codTipo": "618",
+    "numero": "13",
+    "ano": "2026",
+    "ementa": "RECURSO contra a decisão do Conselho de Ética e Decoro Parlamentar da Câmara dos Deputados que aprovou o parecer do Relator, Deputado Moses Rodrigues, pela procedência da Representação n° 25/2025 e ( pela aplicação da penalidade de suspensão do exercício do mandato parlamentar pelo prazo de 2 (dois) meses, haja vista graves vícios constitucionais, regimentais e procedimentais que maculam o presente processo disciplinar desde sua origem e impõem a reforma da decisão recorrida.",
+    "dataApresentacao": "2026-05-19T19:35"
+   },
+   {
+    "id": 2570268,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2570268",
+    "siglaTipo": "REQ",
+    "codTipo": "305",
+    "numero": "4205",
+    "ano": "2025",
+    "ementa": "Requer o desapensamento das representações nº 25/2025 e 27/2025 da representação nº 24/2025.",
+    "dataApresentacao": "2025-10-09T09:15"
+   },
+   {
+    "id": 2563299,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2563299",
+    "siglaTipo": "REP",
+    "codTipo": "146",
+    "numero": "27",
+    "ano": "2025",
+    "ementa": "Representação em desfavor do Senhor Deputado ZÉ TROVÃO por suposto procedimento incompatível com o decoro parlamentar.",
+    "dataApresentacao": "2025-09-23T11:31"
+   },
+   {
+    "id": 2570292,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2570292",
+    "siglaTipo": "REC",
+    "codTipo": "379",
+    "numero": "19",
+    "ano": "2025",
+    "ementa": "Interpor recurso contra a decisão de apensamento das representações nº 24/2025, 25/2025 e 27/2025.",
+    "dataApresentacao": "2025-10-09T09:18"
+   },
+   {
+    "id": 2625967,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2625967",
+    "siglaTipo": "REC",
+    "codTipo": "618",
+    "numero": "12",
+    "ano": "2026",
+    "ementa": "RECURSO ORDINÁRIO DA DECISÃO PROFERIDA PELO CONSELHO DE ÉTICA, com fulcro no artigo 14, §4 do Código de Ética da Câmara dos Deputados do pedido de efeito suspensivo.",
+    "dataApresentacao": "2026-05-19T19:10"
+   },
+   {
+    "id": 2570268,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2570268",
+    "siglaTipo": "REQ",
+    "codTipo": "305",
+    "numero": "4205",
+    "ano": "2025",
+    "ementa": "Requer o desapensamento das representações nº 25/2025 e 27/2025 da representação nº 24/2025.",
+    "dataApresentacao": "2025-10-09T09:15"
+   },
+   {
+    "id": 2609432,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2609432",
+    "siglaTipo": "RPD",
+    "codTipo": "328",
+    "numero": "1",
+    "ano": "0",
+    "ementa": "Requerimento de Retirada de Matéria da Pauta - REP 24/2025",
+    "dataApresentacao": "2026-03-17T14:50"
+   },
+   {
+    "id": 2609441,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2609441",
+    "siglaTipo": "RPD",
+    "codTipo": "1051",
+    "numero": "2",
+    "ano": "0",
+    "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - REP 24/2025-Requerimento de Retirada de Matéria da Pauta - REP 24/2025",
+    "dataApresentacao": "2026-03-17T14:50"
+   },
+   {
+    "id": 2613734,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2613734",
+    "siglaTipo": "RPD",
+    "codTipo": "328",
+    "numero": "3",
+    "ano": "0",
+    "ementa": "Requerimento de Retirada de Matéria da Pauta - REP 24/2025",
+    "dataApresentacao": "2026-04-07T13:07"
+   },
+   {
+    "id": 2613735,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2613735",
+    "siglaTipo": "RPD",
+    "codTipo": "1051",
+    "numero": "4",
+    "ano": "0",
+    "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - REP 24/2025-Requerimento de Retirada de Matéria da Pauta - REP 24/2025",
+    "dataApresentacao": "2026-04-07T13:07"
+   },
+   {
+    "id": 2613741,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2613741",
+    "siglaTipo": "RPD",
+    "codTipo": "329",
+    "numero": "5",
+    "ano": "0",
+    "ementa": "Requerimento de Adiamento da Discussão - REP 24/2025",
+    "dataApresentacao": "2026-04-07T13:07"
+   },
+   {
+    "id": 2613742,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2613742",
+    "siglaTipo": "RPD",
+    "codTipo": "1040",
+    "numero": "6",
+    "ano": "0",
+    "ementa": "Votação Nominal do Requerimento de Adiamento da Discussão - REP 24/2025-Requerimento de Adiamento da Discussão - REP 24/2025",
+    "dataApresentacao": "2026-04-07T13:07"
+   },
+   {
+    "id": 2613746,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2613746",
+    "siglaTipo": "RPD",
+    "codTipo": "336",
+    "numero": "7",
+    "ano": "0",
+    "ementa": "Requerimento de Adiamento da Votação - REP 24/2025",
+    "dataApresentacao": "2026-04-07T13:07"
+   },
+   {
+    "id": 2613747,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2613747",
+    "siglaTipo": "RPD",
+    "codTipo": "1042",
+    "numero": "8",
+    "ano": "0",
+    "ementa": "Votação Nominal do Requerimento de Adiamento da Votação - REP 24/2025-Requerimento de Adiamento da Votação - REP 24/2025",
+    "dataApresentacao": "2026-04-07T13:07"
+   },
+   {
+    "id": 2621037,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2621037",
+    "siglaTipo": "RPD",
+    "codTipo": "328",
+    "numero": "9",
+    "ano": "0",
+    "ementa": "Requerimento de Retirada de Matéria da Pauta - REP 24/2025",
+    "dataApresentacao": "2026-05-05T11:26"
+   },
+   {
+    "id": 2621040,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2621040",
+    "siglaTipo": "RPD",
+    "codTipo": "1051",
+    "numero": "10",
+    "ano": "0",
+    "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - REP 24/2025-Requerimento de Retirada de Matéria da Pauta - REP 24/2025",
+    "dataApresentacao": "2026-05-05T11:26"
+   },
+   {
+    "id": 2621043,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2621043",
+    "siglaTipo": "RPD",
+    "codTipo": "332",
+    "numero": "11",
+    "ano": "0",
+    "ementa": "Requerimento de Votação Nominal - REP 24/2025",
+    "dataApresentacao": "2026-05-05T11:26"
+   },
+   {
+    "id": 2621044,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2621044",
+    "siglaTipo": "RPD",
+    "codTipo": "329",
+    "numero": "12",
+    "ano": "0",
+    "ementa": "Requerimento de Adiamento da Discussão - REP 24/2025",
+    "dataApresentacao": "2026-05-05T11:26"
+   },
+   {
+    "id": 2621045,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2621045",
+    "siglaTipo": "RPD",
+    "codTipo": "1040",
+    "numero": "13",
+    "ano": "0",
+    "ementa": "Votação Nominal do Requerimento de Adiamento da Discussão - REP 24/2025-Requerimento de Adiamento da Discussão - REP 24/2025",
+    "dataApresentacao": "2026-05-05T11:26"
+   },
+   {
+    "id": 2621046,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2621046",
+    "siglaTipo": "RPD",
+    "codTipo": "336",
+    "numero": "14",
+    "ano": "0",
+    "ementa": "Requerimento de Adiamento da Votação - REP 24/2025",
+    "dataApresentacao": "2026-05-05T11:26"
+   },
+   {
+    "id": 2621048,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2621048",
+    "siglaTipo": "RPD",
+    "codTipo": "1042",
+    "numero": "15",
+    "ano": "0",
+    "ementa": "Votação Nominal do Requerimento de Adiamento da Votação - REP 24/2025-Requerimento de Adiamento da Votação - REP 24/2025",
+    "dataApresentacao": "2026-05-05T11:26"
+   },
+   {
+    "id": 2621519,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2621519",
+    "siglaTipo": "RPD",
+    "codTipo": "468",
+    "numero": "16",
+    "ano": "0",
+    "ementa": "Requerimento de Encerramento da Discussão - Comissões - REP 24/2025",
+    "dataApresentacao": "2026-05-05T16:31"
+   },
+   {
+    "id": 2621521,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2621521",
+    "siglaTipo": "RPD",
+    "codTipo": "1045",
+    "numero": "17",
+    "ano": "0",
+    "ementa": "Votação Nominal do Requerimento de Encerramento da Discussão - Comissões - REP 24/2025-Requerimento de Encerramento da Discussão - Comissões - REP 24/2025",
+    "dataApresentacao": "2026-05-05T16:31"
+   },
+   {
+    "id": 2621646,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2621646",
+    "siglaTipo": "RPDR",
+    "codTipo": "1057",
+    "numero": "1",
+    "ano": "2026",
+    "ementa": "Votação Nominal do Requerimento Procedimental Genérico - REP 24/2025-Requerimento Procedimental Genérico - REP 24/2025",
+    "dataApresentacao": "2026-05-05T18:32"
+   },
+   {
+    "id": 2621647,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2621647",
+    "siglaTipo": "RPDR",
+    "codTipo": "889",
+    "numero": "2",
+    "ano": "2026",
+    "ementa": "Requerimento Procedimental Genérico - REP 24/2025",
+    "dataApresentacao": "2026-05-05T18:33"
+   }
+  ],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2563290/relacionadas"
+   }
+  ]
+ },
+ "/proposicoes/2625993": {
+  "dados": {
+   "id": 2625993,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2625993",
+   "siglaTipo": "REC",
+   "codTipo": 618,
+   "numero": 14,
+   "ano": 2026,
+   "ementa": "RECURSO ORDINÁRIO DA DECISÃO PROFERIDA PELO CONSELHO DE ÉTICA, com fulcro no artigo 14, §4 do Código de Ética da Câmara dos Deputados.",
+   "dataApresentacao": "2026-05-19T20:09",
+   "uriOrgaoNumerador": null,
+   "statusProposicao": {
+    "dataHora": "2026-05-19T20:09",
+    "sequencia": 1,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Proposição",
+    "codTipoTramitacao": "100",
+    "descricaoSituacao": "Aguardando Despacho do Presidente da Câmara dos Deputados",
+    "codSituacao": 905,
+    "despacho": "Apresentação do REC n. 14/2026 (Recurso do Conselho de Ética que contraria norma constitucional ou regimental (Art. 13 ou 14, CEDP)), pelo Deputado Marcos Pollon (PL/MS), que \"RECURSO ORDINÁRIO DA DECISÃO PROFERIDA PELO CONSELHO DE ÉTICA, com fulcro no artigo 14, §4 do Código de Ética da Câmara dos Deputados\".",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   "uriAutores": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2625993/autores",
+   "descricaoTipo": "Recurso do Conselho de Ética que contraria norma constitucional ou regimental (Art. 13 ou 14, CEDP)",
+   "ementaDetalhada": null,
+   "keywords": null,
+   "uriPropPrincipal": null,
+   "uriPropAnterior": null,
+   "uriPropPosterior": null,
+   "urlInteiroTeor": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3132743",
+   "urnFinal": null,
+   "texto": null,
+   "justificativa": null
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2625993"
+   }
+  ]
+ },
+ "/proposicoes/2625993/tramitacoes": {
+  "dados": [
+   {
+    "dataHora": "2026-05-19T20:09",
+    "sequencia": 1,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Proposição",
+    "codTipoTramitacao": "100",
+    "descricaoSituacao": "Aguardando Despacho do Presidente da Câmara dos Deputados",
+    "codSituacao": 905,
+    "despacho": "Apresentação do REC n. 14/2026 (Recurso do Conselho de Ética que contraria norma constitucional ou regimental (Art. 13 ou 14, CEDP)), pelo Deputado Marcos Pollon (PL/MS), que \"RECURSO ORDINÁRIO DA DECISÃO PROFERIDA PELO CONSELHO DE ÉTICA, com fulcro no artigo 14, §4 do Código de Ética da Câmara dos Deputados\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3132743",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   }
+  ],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2625993/tramitacoes"
+   }
+  ]
+ },
+ "/proposicoes/2625967": {
+  "dados": {
+   "id": 2625967,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2625967",
+   "siglaTipo": "REC",
+   "codTipo": 618,
+   "numero": 12,
+   "ano": 2026,
+   "ementa": "RECURSO ORDINÁRIO DA DECISÃO PROFERIDA PELO CONSELHO DE ÉTICA, com fulcro no artigo 14, §4 do Código de Ética da Câmara dos Deputados do pedido de efeito suspensivo.",
+   "dataApresentacao": "2026-05-19T19:10",
+   "uriOrgaoNumerador": null,
+   "statusProposicao": {
+    "dataHora": "2026-05-19T19:10",
+    "sequencia": 1,
+    "siglaOrgao": "PLEN",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Proposição",
+    "codTipoTramitacao": "100",
+    "descricaoSituacao": "Aguardando Despacho do Presidente da Câmara dos Deputados",
+    "codSituacao": 905,
+    "despacho": "Apresentação do REC n. 12/2026 (Recurso do Conselho de Ética que contraria norma constitucional ou regimental (Art. 13 ou 14, CEDP)), pelo Deputado Zé Trovão (PL/SC), que \"RECURSO ORDINÁRIO DA DECISÃO PROFERIDA PELO CONSELHO DE ÉTICA, com fulcro no artigo 14, §4 do Código de Ética da Câmara dos Deputados do pedido de efeito suspensivo\".",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   "uriAutores": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2625967/autores",
+   "descricaoTipo": "Recurso do Conselho de Ética que contraria norma constitucional ou regimental (Art. 13 ou 14, CEDP)",
+   "ementaDetalhada": null,
+   "keywords": null,
+   "uriPropPrincipal": null,
+   "uriPropAnterior": null,
+   "uriPropPosterior": null,
+   "urlInteiroTeor": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3132859",
+   "urnFinal": null,
+   "texto": null,
+   "justificativa": null
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2625967"
+   }
+  ]
+ },
+ "/proposicoes/2625967/tramitacoes": {
+  "dados": [
+   {
+    "dataHora": "2026-05-19T19:10",
+    "sequencia": 1,
+    "siglaOrgao": "PLEN",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Proposição",
+    "codTipoTramitacao": "100",
+    "descricaoSituacao": "Aguardando Despacho do Presidente da Câmara dos Deputados",
+    "codSituacao": 905,
+    "despacho": "Apresentação do REC n. 12/2026 (Recurso do Conselho de Ética que contraria norma constitucional ou regimental (Art. 13 ou 14, CEDP)), pelo Deputado Zé Trovão (PL/SC), que \"RECURSO ORDINÁRIO DA DECISÃO PROFERIDA PELO CONSELHO DE ÉTICA, com fulcro no artigo 14, §4 do Código de Ética da Câmara dos Deputados do pedido de efeito suspensivo\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3132859",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   }
+  ],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2625967/tramitacoes"
+   }
+  ]
+ },
+ "/proposicoes/2366795/tramitacoes": {
+  "dados": [
+   {
+    "dataHora": "2023-05-31T23:18",
+    "sequencia": 1,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Proposição",
+    "codTipoTramitacao": "100",
+    "descricaoSituacao": "Retirado pelo(a) Autor(a)",
+    "codSituacao": 950,
+    "despacho": "Apresentação da REP n. 8/2023 (Representação), pelo Partido Liberal, que \"Representação de autoria do Partido Liberal (PL) em desfavor das Senhoras Deputadas  CÉLIA NUNES CORREA, ÉRIKA JUCÁ KOKAY, FERNANDA MELCHIONNA E SILVA, JULIANA CARDOSO, SÂMIA DE SOUZA BOMFIM E TALÍRIA PETRONE SOARES, Protocolizada em 30 de maio de 2023. Imputação de conduta incompatível com o decoro parlamentar\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2282602",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2023-05-31T23:47",
+    "sequencia": 5,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Distribuição",
+    "codTipoTramitacao": "110",
+    "descricaoSituacao": "Retirado pelo(a) Autor(a)",
+    "codSituacao": 950,
+    "despacho": "Numere-se, publique-se e encaminhe-se ao Conselho de Ética e Decoro Parlamentar.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2282604",
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   {
+    "dataHora": "2023-06-01T09:58",
+    "sequencia": 9,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Recebimento",
+    "codTipoTramitacao": "500",
+    "descricaoSituacao": "Aguardando Designação de Relator(a)",
+    "codSituacao": 907,
+    "despacho": "Recebimento pelo COETICA.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   {
+    "dataHora": "2023-06-02T00:00",
+    "sequencia": 11,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Publicação de Documento",
+    "codTipoTramitacao": "611",
+    "descricaoSituacao": "Retirado pelo(a) Autor(a)",
+    "codSituacao": 950,
+    "despacho": "Recebido no dia 2/6/2023, oficio sn/2023, do Senhor Valdemar Costa Neto,  Presidente do Partido Liberal, solicitandoa a retirada de tramitação de Representação  n. 8/2023 uma vez que individualizará as condutas para facilitar as respectivas tramitações perante o Conselho de Ética e Decoro Parlamentar.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2286066",
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   {
+    "dataHora": "2023-06-12T03:00",
+    "sequencia": 12,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Despacho",
+    "codTipoTramitacao": "1023",
+    "descricaoSituacao": "Retirado pelo(a) Autor(a)",
+    "codSituacao": 950,
+    "despacho": "Defiro a retirada da Representação n. 8/2023, nos termos dos arts. 104, caput, do Regimento Interno da Câmara dos Deputados, e 14, § 5º, do Código de Ética e Decoro Parlamentar da Câmara dos Deputados. Arquive-se. Publique-se.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2283563",
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   }
+  ],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2366795/tramitacoes"
+   }
+  ]
+ },
+ "/proposicoes/2366795/relacionadas": {
+  "dados": [],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2366795/relacionadas"
+   }
+  ]
+ },
+ "/proposicoes/2376389/tramitacoes": {
+  "dados": [
+   {
+    "dataHora": "2023-08-07T03:00",
+    "sequencia": 2,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Despacho",
+    "codTipoTramitacao": "1023",
+    "descricaoSituacao": "Arquivada",
+    "codSituacao": 923,
+    "despacho": "Numere-se, publique-se e encaminhe-se ao Conselho de Ética e Decoro Parlamentar.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2307758",
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   {
+    "dataHora": "2023-08-07T15:20",
+    "sequencia": 1,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Proposição",
+    "codTipoTramitacao": "100",
+    "descricaoSituacao": "Arquivada",
+    "codSituacao": 923,
+    "despacho": "Apresentação da REP n. 21/2023 (Representação), pelo [AUTOR!], que \"Representação de autoria do Partido Socialismo e Liberdade (PSOL) em desfavor do Senhor Deputado ZUCCO, protocolizada em 14 de julho de 2023. Alegação de quebra de  decoro parlamentar\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2307626",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2023-08-09T17:45",
+    "sequencia": 8,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Recebimento",
+    "codTipoTramitacao": "500",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Recebimento pelo COETICA.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   {
+    "dataHora": "2023-08-30T00:00",
+    "sequencia": 9,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Instauração de Processo - COÉTICA",
+    "codTipoTramitacao": "1059",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Instaurado o Processo nº 20 referente à Representação nº 21 de 2023.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   {
+    "dataHora": "2023-08-30T00:00",
+    "sequencia": 10,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Sorteio para Escolha do(a) Relator(a)",
+    "codTipoTramitacao": "1060",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Realizado sorteio para escolha do relator, foram sorteados os Deputados Jack Rocha (PT/ES), Miguel Ângelo (PT/MG) e João Leão (PP/BA).",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   {
+    "dataHora": "2023-09-27T00:00",
+    "sequencia": 11,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/74550",
+    "regime": ".",
+    "descricaoTramitacao": "Designação de Relator(a)",
+    "codTipoTramitacao": "320",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Designado Relator, Dep. João Leão (PP-BA)",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   {
+    "dataHora": "2023-10-11T00:00",
+    "sequencia": 12,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/74550",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Protocolado Parecer Preliminar do Relator, Deputado João Leão.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   {
+    "dataHora": "2023-10-11T00:00",
+    "sequencia": 13,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/74550",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Defesa Prévia do Deputado Zucco.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2344357",
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   {
+    "dataHora": "2023-10-24T00:00",
+    "sequencia": 14,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/74550",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Leitura do Parecer Preliminar.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2349223",
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   {
+    "dataHora": "2023-10-24T00:00",
+    "sequencia": 15,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/74550",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Discussão.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   {
+    "dataHora": "2023-10-24T00:00",
+    "sequencia": 16,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/74550",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Em votação, o Parecer Prelinminar do Dep. João Leão foi aprovado por 11 votos favoráveis e 1 contrário.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2349227",
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   {
+    "dataHora": "2023-10-24T00:00",
+    "sequencia": 17,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/74550",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Tramitação Finalizada",
+    "codSituacao": 1285,
+    "despacho": "Parecer do Conselho.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2349819",
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   {
+    "dataHora": "2023-12-14T00:00",
+    "sequencia": 20,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/74550",
+    "regime": ".",
+    "descricaoTramitacao": "Abertura de Prazo",
+    "codTipoTramitacao": "350",
+    "descricaoSituacao": "Arquivada",
+    "codSituacao": 923,
+    "despacho": "Prazo para apresentação de recurso (5 sessões a partir de 18/12/2023)",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   {
+    "dataHora": "2023-12-14T03:00",
+    "sequencia": 19,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/74550",
+    "regime": ".",
+    "descricaoTramitacao": "Despacho",
+    "codTipoTramitacao": "1023",
+    "descricaoSituacao": "Arquivada",
+    "codSituacao": 923,
+    "despacho": "Junte-se o Ofício n. 23/2023-CEDPA/P aos autos do Processo n. 20/2023. Publique-se o parecer referido em epígrafe. Transcorrido in albis o prazo recursal previsto no art. 14, § 4º, III, do Código de Ética e Decoro Parlamentar, arquive-se o Processo n. 20/2023.Publique-se.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2374488",
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   {
+    "dataHora": "2024-02-06T00:00",
+    "sequencia": 22,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/74550",
+    "regime": ".",
+    "descricaoTramitacao": "Arquivamento",
+    "codTipoTramitacao": "502",
+    "descricaoSituacao": "Arquivada",
+    "codSituacao": 923,
+    "despacho": "Arquivada",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   },
+   {
+    "dataHora": "2024-02-06T21:33",
+    "sequencia": 21,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/74550",
+    "regime": ".",
+    "descricaoTramitacao": "Encerramento de Prazo",
+    "codTipoTramitacao": "600",
+    "descricaoSituacao": "Arquivada",
+    "codSituacao": 923,
+    "despacho": "Encerramento automático do Prazo de Recurso 06/02/2024 21:33:00. Não foram apresentados recursos.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Anulada"
+   }
+  ],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2376389/tramitacoes"
+   }
+  ]
+ },
+ "/proposicoes/2376389/relacionadas": {
+  "dados": [],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2376389/relacionadas"
+   }
+  ]
+ },
+ "/proposicoes/2617174/tramitacoes": {
+  "dados": [
+   {
+    "dataHora": "2026-04-16T15:07",
+    "sequencia": 1,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Proposição",
+    "codTipoTramitacao": "100",
+    "descricaoSituacao": "Aguardando Parecer",
+    "codSituacao": 915,
+    "despacho": "Apresentação da REP n. 3/2026 (Representação), pelo Novo, que \"Representação de autoria do Partido Novo em desfavor dos Senhores Deputados Chico Alencar, Glauber Braga, Ivan Valente, Pastor Henrique Vieira, Tarcísio Motta e Lindbergh Farias e das Senhoras Deputadas Célia Xakriabá, Erika Hilton, Fernanda Melchionna, Luiza Erundina, Professora Luciene Cavalcante, Sâmia Bomfim e Talíria Petrone protocolizada em 26 de novembro de 2025. Alegação de quebra de decoro parlamentar\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3115232",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-04-16T16:36",
+    "sequencia": 6,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Distribuição",
+    "codTipoTramitacao": "110",
+    "descricaoSituacao": "Aguardando Parecer",
+    "codSituacao": 915,
+    "despacho": "Numere-se, publique-se e encaminhe-se ao Conselho de Ética e Decoro Parlamentar.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3115380",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-04-16T17:56",
+    "sequencia": 8,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Recebimento",
+    "codTipoTramitacao": "500",
+    "descricaoSituacao": "Aguardando Parecer",
+    "codSituacao": 915,
+    "despacho": "Recebimento pelo COETICA.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-06-09T00:00",
+    "sequencia": 9,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Instauração de Processo - COÉTICA",
+    "codTipoTramitacao": "1059",
+    "descricaoSituacao": "Aguardando Parecer",
+    "codSituacao": 915,
+    "despacho": "Instaurado o Processo nº 3/26 referente à Representação nº 3/26.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-06-09T00:00",
+    "sequencia": 10,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Sorteio para Escolha do(a) Relator(a)",
+    "codTipoTramitacao": "1060",
+    "descricaoSituacao": "Aguardando Parecer",
+    "codSituacao": 915,
+    "despacho": "Realizado sorteio para escolha do relator, foram sorteados os Deputados Ricardo Maia (MDB/BA), Dr. Victor Linhalis (PSB/ES) e Delegado Fábio Costa (PP/AL).",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-08-10T00:00",
+    "sequencia": 11,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/220694",
+    "regime": ".",
+    "descricaoTramitacao": "Designação de Relator(a)",
+    "codTipoTramitacao": "320",
+    "descricaoSituacao": "Aguardando Parecer",
+    "codSituacao": 915,
+    "despacho": "Designado Relator, Dep. Ricardo Maia (MDB-BA)",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-08-20T00:00",
+    "sequencia": 12,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/220694",
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Proposição interna - Comissão",
+    "codTipoTramitacao": "300",
+    "descricaoSituacao": "Aguardando Parecer",
+    "codSituacao": 915,
+    "despacho": "Protocolada defesa prévia dos Representados da Bancada do PSOL..",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3174252",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-08-21T00:00",
+    "sequencia": 13,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/220694",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Aguardando Parecer",
+    "codSituacao": 915,
+    "despacho": "Protocolada defesa prévia do Dep. Lindbergh Farias.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3174330",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-08-27T00:00",
+    "sequencia": 14,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/220694",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Aguardando Parecer",
+    "codSituacao": 915,
+    "despacho": "Autorizada prorrogação do prazo para protocolo do parecer preliminar até o dia 28/8/26.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   }
+  ],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2617174/tramitacoes"
+   }
+  ]
+ },
+ "/proposicoes/2617174/relacionadas": {
+  "dados": [],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2617174/relacionadas"
+   }
+  ]
+ },
+ "/proposicoes/2617169/tramitacoes": {
+  "dados": [
+   {
+    "dataHora": "2026-04-16T14:47",
+    "sequencia": 1,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Apresentação de Proposição",
+    "codTipoTramitacao": "100",
+    "descricaoSituacao": "Aguardando Deliberação",
+    "codSituacao": 903,
+    "despacho": "Apresentação da REP n. 2/2026 (Representação), pelo [AUTOR!], que \"Representação de autoria do Partido Socialismo e Liberdade (PSOL) em desfavor do Senhor Deputado PAULO BILYNSKYJ, protocolizada em 17/11/2025. Alegação de quebra de decoro parlamentar\".",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3115224",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-04-16T16:10",
+    "sequencia": 6,
+    "siglaOrgao": "MESA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/4",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Distribuição",
+    "codTipoTramitacao": "110",
+    "descricaoSituacao": "Aguardando Deliberação",
+    "codSituacao": 903,
+    "despacho": "Numere-se, publique-se e encaminhe-se ao Conselho de Ética e Decoro Parlamentar.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3115337",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-04-16T17:56",
+    "sequencia": 8,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Recebimento",
+    "codTipoTramitacao": "500",
+    "descricaoSituacao": "Aguardando Deliberação",
+    "codSituacao": 903,
+    "despacho": "Recebimento pelo COETICA.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-04-29T00:00",
+    "sequencia": 9,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Instauração de Processo - COÉTICA",
+    "codTipoTramitacao": "1059",
+    "descricaoSituacao": "Aguardando Deliberação",
+    "codSituacao": 903,
+    "despacho": "Instaurado o Processo nº 2/26, referente à Representação nº 2/26.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-04-29T00:00",
+    "sequencia": 10,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": null,
+    "regime": ".",
+    "descricaoTramitacao": "Sorteio para Escolha do(a) Relator(a)",
+    "codTipoTramitacao": "1060",
+    "descricaoSituacao": "Aguardando Deliberação",
+    "codSituacao": 903,
+    "despacho": "Realizado sorteio para escolha do relator, foram sorteados os Deputados Gutemberg Reis - MDB/RJ, Delegado Fábio Costa - PP/AL e Welter - PT/PR.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-05-19T00:00",
+    "sequencia": 11,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/220583",
+    "regime": ".",
+    "descricaoTramitacao": "Designação de Relator(a)",
+    "codTipoTramitacao": "320",
+    "descricaoSituacao": "Aguardando Deliberação",
+    "codSituacao": 903,
+    "despacho": "Designado Relator, Dep. Delegado Fabio Costa (PP-AL)",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-05-20T00:00",
+    "sequencia": 12,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/220583",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Aguardando Deliberação",
+    "codSituacao": 903,
+    "despacho": "Início do prazo de 10 (dez) dias úteis para o relator protocolar o Parecer Preliminar, encerrando-se em 2/6/26.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-06-01T00:00",
+    "sequencia": 13,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/220583",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Aguardando Deliberação",
+    "codSituacao": 903,
+    "despacho": "Defesa Prévia.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3141178",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-06-02T00:00",
+    "sequencia": 14,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/220583",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Aguardando Deliberação",
+    "codSituacao": 903,
+    "despacho": "Protocolado Parecer Preliminar (relatório e voto) do Dep. Del. Fabio Costa, relator.",
+    "url": null,
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   },
+   {
+    "dataHora": "2026-06-02T00:00",
+    "sequencia": 15,
+    "siglaOrgao": "COETICA",
+    "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/5971",
+    "uriUltimoRelator": "https://dadosabertos.camara.leg.br/api/v2/deputados/220583",
+    "regime": ".",
+    "descricaoTramitacao": "Providência Interna",
+    "codTipoTramitacao": "199",
+    "descricaoSituacao": "Aguardando Deliberação",
+    "codSituacao": 903,
+    "despacho": "Relatório.",
+    "url": "https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=3140878",
+    "ambito": "Regimental",
+    "apreciacao": "Indefinida"
+   }
+  ],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2617169/tramitacoes"
+   }
+  ]
+ },
+ "/proposicoes/2617169/relacionadas": {
+  "dados": [],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2617169/relacionadas"
+   }
+  ]
+ },
+ "/deputados?idLegislatura=57&itens=100&ordem=ASC&ordenarPor=id": {
+  "dados": [
+   {
+    "id": 73531,
+    "nome": "Ivan Valente"
+   },
+   {
+    "id": 74171,
+    "nome": "Chico Alencar"
+   },
+   {
+    "id": 74646,
+    "nome": "Aécio Neves"
+   },
+   {
+    "id": 74784,
+    "nome": "Luiza Erundina"
+   },
+   {
+    "id": 74858,
+    "nome": "Lindbergh Farias"
+   },
+   {
+    "id": 152605,
+    "nome": "Glauber Braga"
+   },
+   {
+    "id": 156190,
+    "nome": "Marcel van Hattem"
+   },
+   {
+    "id": 160575,
+    "nome": "Erika Kokay"
+   },
+   {
+    "id": 204407,
+    "nome": "Fernanda Melchionna"
+   },
+   {
+    "id": 204464,
+    "nome": "Talíria Petrone"
+   },
+   {
+    "id": 204535,
+    "nome": "Sâmia Bomfim"
+   },
+   {
+    "id": 206018,
+    "nome": "Célia Xakriabá"
+   },
+   {
+    "id": 220547,
+    "nome": "Marcos Pollon"
+   },
+   {
+    "id": 220552,
+    "nome": "Zucco"
+   },
+   {
+    "id": 220598,
+    "nome": "Tarcísio Motta"
+   },
+   {
+    "id": 220615,
+    "nome": "Pastor Henrique Vieira"
+   },
+   {
+    "id": 220640,
+    "nome": "Juliana Cardoso"
+   },
+   {
+    "id": 220645,
+    "nome": "Erika Hilton"
+   },
+   {
+    "id": 220654,
+    "nome": "Delegado Paulo Bilynskyj"
+   },
+   {
+    "id": 221338,
+    "nome": "Professora Luciene Cavalcante"
+   }
+  ],
+  "links": []
+ },
+ "/deputados/73531": {
+  "dados": {
+   "id": 73531,
+   "nomeCivil": "IVAN VALENTE",
+   "cpf": "10000791989",
+   "ultimoStatus": {
+    "nome": "Ivan Valente"
+   }
+  },
+  "links": []
+ },
+ "/deputados/74171": {
+  "dados": {
+   "id": 74171,
+   "nomeCivil": "FRANCISCO RODRIGUES DE ALENCAR FILHO",
+   "cpf": "10001583816",
+   "ultimoStatus": {
+    "nome": "Chico Alencar"
+   }
+  },
+  "links": []
+ },
+ "/deputados/74646": {
+  "dados": {
+   "id": 74646,
+   "nomeCivil": "AÉCIO NEVES DA CUNHA",
+   "cpf": "10002375753",
+   "ultimoStatus": {
+    "nome": "Aécio Neves"
+   }
+  },
+  "links": []
+ },
+ "/deputados/74784": {
+  "dados": {
+   "id": 74784,
+   "nomeCivil": "LUIZA ERUNDINA DE SOUSA",
+   "cpf": "10003167690",
+   "ultimoStatus": {
+    "nome": "Luiza Erundina"
+   }
+  },
+  "links": []
+ },
+ "/deputados/74858": {
+  "dados": {
+   "id": 74858,
+   "nomeCivil": "LUIZ LINDBERGH FARIAS FILHO",
+   "cpf": "10003959520",
+   "ultimoStatus": {
+    "nome": "Lindbergh Farias"
+   }
+  },
+  "links": []
+ },
+ "/deputados/152605": {
+  "dados": {
+   "id": 152605,
+   "nomeCivil": "GLAUBER DE MEDEIROS BRAGA",
+   "cpf": "10004751400",
+   "ultimoStatus": {
+    "nome": "Glauber Braga"
+   }
+  },
+  "links": []
+ },
+ "/deputados/156190": {
+  "dados": {
+   "id": 156190,
+   "nomeCivil": "MARCEL VAN HATTEM",
+   "cpf": "10005543339",
+   "ultimoStatus": {
+    "nome": "Marcel van Hattem"
+   }
+  },
+  "links": []
+ },
+ "/deputados/160575": {
+  "dados": {
+   "id": 160575,
+   "nomeCivil": "ÉRIKA JUCÁ KOKAY",
+   "cpf": "10006335276",
+   "ultimoStatus": {
+    "nome": "Erika Kokay"
+   }
+  },
+  "links": []
+ },
+ "/deputados/204407": {
+  "dados": {
+   "id": 204407,
+   "nomeCivil": "FERNANDA MELCHIONNA E SILVA",
+   "cpf": "10007127103",
+   "ultimoStatus": {
+    "nome": "Fernanda Melchionna"
+   }
+  },
+  "links": []
+ },
+ "/deputados/204464": {
+  "dados": {
+   "id": 204464,
+   "nomeCivil": "TALIRIA PETRONE SOARES",
+   "cpf": "10007919042",
+   "ultimoStatus": {
+    "nome": "Talíria Petrone"
+   }
+  },
+  "links": []
+ },
+ "/deputados/204535": {
+  "dados": {
+   "id": 204535,
+   "nomeCivil": "SAMIA DE SOUZA BOMFIM",
+   "cpf": "10008710961",
+   "ultimoStatus": {
+    "nome": "Sâmia Bomfim"
+   }
+  },
+  "links": []
+ },
+ "/deputados/206018": {
+  "dados": {
+   "id": 206018,
+   "nomeCivil": "CÉLIA NUNES CORREA",
+   "cpf": "10009502807",
+   "ultimoStatus": {
+    "nome": "Célia Xakriabá"
+   }
+  },
+  "links": []
+ },
+ "/deputados/220547": {
+  "dados": {
+   "id": 220547,
+   "nomeCivil": "MARCOS SBOROWSKI POLLON",
+   "cpf": "10010294708",
+   "ultimoStatus": {
+    "nome": "Marcos Pollon"
+   }
+  },
+  "links": []
+ },
+ "/deputados/220552": {
+  "dados": {
+   "id": 220552,
+   "nomeCivil": "LUCIANO LORENZINI ZUCCO",
+   "cpf": "10011086637",
+   "ultimoStatus": {
+    "nome": "Zucco"
+   }
+  },
+  "links": []
+ },
+ "/deputados/220598": {
+  "dados": {
+   "id": 220598,
+   "nomeCivil": "TARCISIO MOTTA DE CARVALHO",
+   "cpf": "10011878576",
+   "ultimoStatus": {
+    "nome": "Tarcísio Motta"
+   }
+  },
+  "links": []
+ },
+ "/deputados/220615": {
+  "dados": {
+   "id": 220615,
+   "nomeCivil": "HENRIQUE DOS SANTOS VIEIRA LIMA",
+   "cpf": "10012670448",
+   "ultimoStatus": {
+    "nome": "Pastor Henrique Vieira"
+   }
+  },
+  "links": []
+ },
+ "/deputados/220640": {
+  "dados": {
+   "id": 220640,
+   "nomeCivil": "JULIANA CARDOSO",
+   "cpf": "10013462385",
+   "ultimoStatus": {
+    "nome": "Juliana Cardoso"
+   }
+  },
+  "links": []
+ },
+ "/deputados/220645": {
+  "dados": {
+   "id": 220645,
+   "nomeCivil": "ERIKA SANTOS SILVA",
+   "cpf": "10014254212",
+   "ultimoStatus": {
+    "nome": "Erika Hilton"
+   }
+  },
+  "links": []
+ },
+ "/deputados/220654": {
+  "dados": {
+   "id": 220654,
+   "nomeCivil": "PAULO FRANCISCO MUNIZ BILYNSKYJ",
+   "cpf": "10015046150",
+   "ultimoStatus": {
+    "nome": "Delegado Paulo Bilynskyj"
+   }
+  },
+  "links": []
+ },
+ "/deputados/221338": {
+  "dados": {
+   "id": 221338,
+   "nomeCivil": "LUCIENE CAVALCANTE DA SILVA",
+   "cpf": "10015838099",
+   "ultimoStatus": {
+    "nome": "Professora Luciene Cavalcante"
+   }
+  },
+  "links": []
+ }
+}

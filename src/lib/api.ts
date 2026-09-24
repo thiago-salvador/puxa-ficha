@@ -567,24 +567,34 @@ export async function getCandidatoCountByEstadoResource(
  */
 async function getGlobalSearchCandidatesUncached(): Promise<DataResource<GlobalSearchCandidateRow[]>> {
   const supabase = createServerSupabaseClient()
-  const { data, error } = await withSupabaseRetry<GlobalSearchCandidateRow[]>(
-    "getGlobalSearchCandidates",
-    async (signal) => {
-      let query = supabase
-        .from(CANDIDATO_PUBLIC_RELATION)
-        .select(GLOBAL_SEARCH_CANDIDATE_COLUMNS.join(","))
-        .neq("status", "removido")
-      if (!isSenadoEnabled()) query = query.neq("cargo_disputado", "Senador")
-      return query.order("nome_urna").abortSignal(signal) as unknown as SupabaseRunResult<GlobalSearchCandidateRow[]>
+  const currentColumns = GLOBAL_SEARCH_CANDIDATE_COLUMNS.join(",")
+  const preMigrationColumns = GLOBAL_SEARCH_CANDIDATE_COLUMNS.filter((column) => column !== "numero_urna").join(",")
+  let usedPreMigrationColumns = false
+  const { data, error } = await selectWithPreMigrationColumns<GlobalSearchCandidateRow>(
+    CANDIDATO_PUBLIC_RELATION,
+    currentColumns,
+    preMigrationColumns,
+    (columns) => {
+      if (columns === preMigrationColumns) usedPreMigrationColumns = true
+      return withSupabaseRetry<GlobalSearchCandidateRow[]>("getGlobalSearchCandidates", async (signal) => {
+        let query = supabase
+          .from(CANDIDATO_PUBLIC_RELATION)
+          .select(columns)
+          .neq("status", "removido")
+        if (!isSenadoEnabled()) query = query.neq("cargo_disputado", "Senador")
+        return query.order("nome_urna").abortSignal(signal) as unknown as SupabaseRunResult<GlobalSearchCandidateRow[]>
+      }, { attemptTimeoutMs: SUPABASE_FIRST_FOLD_ATTEMPT_TIMEOUT_MS })
     },
-    { attemptTimeoutMs: SUPABASE_FIRST_FOLD_ATTEMPT_TIMEOUT_MS }
   )
 
   if (error || !data) {
+    const message = error && typeof error === "object" && "message" in error
+      ? String(error.message)
+      : undefined
     if (IS_DEV) {
-      warnDevSupabaseFailure("getGlobalSearchCandidates", error)
+      warnDevSupabaseFailure("getGlobalSearchCandidates", { message })
     } else {
-      console.error("getGlobalSearchCandidates failed:", error?.message)
+      console.error("getGlobalSearchCandidates failed:", message)
     }
     // Mesma mensagem da lista completa: o contrato visível da busca não muda.
     throw new DegradedDataError(
@@ -592,7 +602,13 @@ async function getGlobalSearchCandidatesUncached(): Promise<DataResource<GlobalS
     )
   }
 
-  return liveResource(sanitizePublicPartyFieldsList(data))
+  const candidates = sanitizePublicPartyFieldsList(data)
+  // A busca por nome continua disponível se o schema for revertido antes do
+  // código. O resultado incompleto não entra no cache persistente do índice.
+  if (usedPreMigrationColumns) {
+    return degradedResource(candidates, "Números de urna indisponíveis até a migração do banco.")
+  }
+  return liveResource(candidates)
 }
 
 const VOTACAO_SEARCH_PAGE_SIZE = 1000
@@ -702,7 +718,7 @@ const getCachedGlobalSearchIndexResource = unstableCacheWithSingleFlight(
   // sobrevive a deploy, e a rota de revalidacao por tag depende de
   // PF_REVALIDATE_SECRET, entao o bump da chave e o caminho que funciona sem
   // segredo. Mesma chave aplicada a todos os resources que listam candidatos.
-  ["global-search-index", "bloco1-incerto-suppress", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "busca-candidatura-colunas-enxutas-20260916", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
+  ["global-search-index", "bloco1-incerto-suppress", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "busca-candidatura-colunas-enxutas-20260916", "party-filter-payload-20260923", "numero-urna-20260923", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos"],

@@ -1,6 +1,12 @@
 import type { Candidato } from "@/lib/types"
 import { getEstadoNome } from "@/lib/br-uf"
-import { formatPartyPublicLabel, isUncertainParty } from "@/lib/party-utils"
+import { resolveEstadoUf } from "@/lib/br-uf"
+import {
+  formatPartyPublicLabel,
+  isUncertainParty,
+  matchesPartySiglaFilter,
+  resolveCanonicalPartySigla,
+} from "@/lib/party-utils"
 import { normalizeForSearch } from "@/lib/search-normalize"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { formatCargoDisputadoPublicLabel } from "@/lib/ui-labels"
@@ -23,6 +29,11 @@ export interface GlobalSearchIndexItem {
   /** Só temas e títulos de votação normalizados; vazio se não houver votos mapeados. */
   searchTextVotacao?: string
   foto_url?: string | null
+  /** Sigla bruta da legenda, usada para canonicalização em filtros. */
+  party_sigla?: string | null
+  numero_urna?: string | null
+  estado?: string | null
+  cargo_disputado?: string | null
   badge?: string | null
 }
 
@@ -135,6 +146,7 @@ export const GLOBAL_SEARCH_CANDIDATE_COLUMNS = [
   "cargo_atual",
   "cargo_disputado",
   "estado",
+  "numero_urna",
   "foto_url",
 ] as const
 
@@ -164,6 +176,7 @@ function buildSearchTextBioOnly(c: GlobalSearchCandidateRow): string {
     isUncertainParty(c.partido_sigla) ? null : c.partido_sigla,
     isUncertainParty(c.partido_atual) ? null : c.partido_atual,
     c.cargo_disputado,
+    c.numero_urna,
   ].filter((value): value is string => Boolean(value))
   if (c.cargo_atual) chunks.push(c.cargo_atual)
   if (c.estado) {
@@ -194,6 +207,7 @@ export function buildGlobalSearchIndexItems(
       formatPartyPublicLabel(c.partido_sigla) || null,
       buildSearchSubtitleCargo(c),
       c.estado,
+      c.numero_urna ? `Urna ${c.numero_urna}` : null,
     ]
       .filter(Boolean)
       .join(" · ")
@@ -209,6 +223,10 @@ export function buildGlobalSearchIndexItems(
       searchTextBio,
       searchTextVotacao: searchTextVotacao || undefined,
       foto_url: c.foto_url,
+      party_sigla: c.partido_sigla,
+      numero_urna: c.numero_urna,
+      estado: c.estado,
+      cargo_disputado: c.cargo_disputado,
     }
   })
 }
@@ -235,6 +253,8 @@ function scoreShortcutForQuery(item: GlobalSearchIndexItem, q: string): number {
 /** Maior = melhor posição na lista. */
 function scoreCandidateForQuery(item: GlobalSearchIndexItem, q: string): number {
   if (!q) return 0
+  const numeric = parseNumericSearchQuery(q)
+  if (numeric) return item.numero_urna === numeric.numero && (!numeric.estado || item.estado === numeric.estado) ? 100 : 0
   const t = normalizeForSearch(item.title)
   const bio = item.searchTextBio ?? item.searchText
   const vot = item.searchTextVotacao ?? ""
@@ -246,6 +266,33 @@ function scoreCandidateForQuery(item: GlobalSearchIndexItem, q: string): number 
   if (vot.includes(q) && !bio.includes(q)) return 42
   if (item.searchText.includes(q)) return 35
   return 0
+}
+
+function numericCandidatePriority(item: GlobalSearchIndexItem): number {
+  return normalizeForSearch(item.cargo_disputado ?? "") === "presidente" ? 1 : 0
+}
+
+export interface NumericSearchQuery { numero: string; estado: string | null }
+
+export function parseNumericSearchQuery(query: string): NumericSearchQuery | null {
+  const tokens = query.trim().split(/\s+/).filter(Boolean)
+  const numberTokens = tokens.filter((token) => /^\d+$/.test(token))
+  if (numberTokens.length !== 1 || tokens.length > 2) return null
+  const other = tokens.find((token) => !/^\d+$/.test(token))
+  if (other && !resolveEstadoUf(other)) return null
+  return { numero: numberTokens[0], estado: other ? resolveEstadoUf(other)!.toUpperCase() : null }
+}
+
+export function groupNumericSearchCandidates(items: readonly GlobalSearchIndexItem[]): Array<{ label: string; items: GlobalSearchIndexItem[] }> {
+  const groups = new Map<string, GlobalSearchIndexItem[]>()
+  for (const item of items) {
+    const key = `${item.estado ?? "BR"}|${item.cargo_disputado ?? ""}`
+    groups.set(key, [...(groups.get(key) ?? []), item])
+  }
+  return [...groups.entries()].sort(([a], [b]) => a.localeCompare(b, "pt-BR")).map(([key, grouped]) => {
+    const [estado, cargo] = key.split("|")
+    return { label: [estado, cargo].filter(Boolean).join(" · "), items: grouped }
+  })
 }
 
 /**
@@ -271,20 +318,41 @@ export function filterGlobalSearchPalette(
   query: string,
   shortcuts: GlobalSearchIndexItem[],
   candidates: GlobalSearchIndexItem[],
-  displayLimit = DEFAULT_DISPLAY_LIMIT
+  displayLimit = DEFAULT_DISPLAY_LIMIT,
+  partyFilter = "",
 ): { shortcuts: GlobalSearchIndexItem[]; candidates: GlobalSearchIndexItem[] } {
   const q = normalizeForSearch(query)
+  const numeric = parseNumericSearchQuery(query)
+  const canonicalPartyFilter = resolveCanonicalPartySigla(partyFilter)
+  const candidatesByParty = canonicalPartyFilter
+    ? candidates.filter((c) => matchesPartySiglaFilter(c.party_sigla, canonicalPartyFilter))
+    : candidates
   if (!q) {
     return {
       shortcuts,
-      candidates: candidates.slice(0, displayLimit),
+      candidates: candidatesByParty.slice(0, displayLimit),
+    }
+  }
+  if (numeric) {
+    return {
+      shortcuts: [],
+      candidates: candidatesByParty
+        .filter((item) => item.numero_urna === numeric.numero && (!numeric.estado || item.estado === numeric.estado))
+        .sort((a, b) =>
+          scoreCandidateForQuery(b, q) - scoreCandidateForQuery(a, q)
+          || numericCandidatePriority(b) - numericCandidatePriority(a),
+        ),
     }
   }
   const filteredShortcuts = shortcuts
     .filter((s) => paletteItemHaystack(s).includes(q))
     .sort((a, b) => scoreShortcutForQuery(b, q) - scoreShortcutForQuery(a, q))
-  const filteredCandidates = candidates
-    .filter((c) => c.searchText.includes(q))
+  const partyQuery = resolveCanonicalPartySigla(query)
+  const filteredCandidates = candidatesByParty
+    .filter((c) =>
+      c.searchText.includes(q) ||
+      (partyQuery != null && matchesPartySiglaFilter(c.party_sigla, partyQuery)),
+    )
     .sort((a, b) => scoreCandidateForQuery(b, q) - scoreCandidateForQuery(a, q))
     .slice(0, displayLimit)
   return { shortcuts: filteredShortcuts, candidates: filteredCandidates }

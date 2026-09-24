@@ -2,6 +2,7 @@
 
 import { Combobox } from "@base-ui/react/combobox"
 import { Check, ChevronDown, X } from "lucide-react"
+import { PartyLogoMark } from "@/components/PartyLogoMark"
 
 interface PartyComboboxProps {
   options: string[]
@@ -54,7 +55,10 @@ export function PartyCombobox({
                   value={option}
                   className="flex cursor-pointer items-center justify-between rounded-[12px] px-3 py-2 text-[length:var(--text-body-sm)] font-semibold uppercase tracking-[0.05em] text-foreground outline-none transition-colors data-[highlighted]:bg-muted focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
-                  <span>{option}</span>
+                  <span className="flex items-center gap-2">
+                    <PartyLogoMark sigla={option} className="h-6 w-8 rounded-[4px] border-0 p-0 shadow-none" />
+                    <span>{option}</span>
+                  </span>
                   <Combobox.ItemIndicator className="text-foreground">
                     <Check className="size-3.5" />
                   </Combobox.ItemIndicator>

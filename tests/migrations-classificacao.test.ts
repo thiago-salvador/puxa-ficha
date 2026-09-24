@@ -445,9 +445,11 @@ describe("classificador puro (#136)", () => {
     // Liquido 494 + 1 = 495 migrations.
     // Despublicacao das 48 claims sem fonte utilizavel (23/09/2026): no-op
     // apenas na coorte totalmente ausente do replay sintetico. Medido em PG17:
-    // 391 da main + roster e analytics da colinha: --gate PG17 mediu
-    // 393 aplicadas + 105 falhas conhecidas = 498 migrations.
-    assert.equal(manifesto.aplicadas_esperadas, 393)
+    // 391 da base + roster, analytics, numero_urna e assinaturas por recorte:
+    // --gate PG17 mediu 395 aplicadas + 105 falhas históricas = 500 migrations.
+    // Eliziane (20260923175946): --gate PG17 mediu 396 + 105 = 501.
+    // Exercicio reaberto no Senado (20260924003000): --gate PG17 mediu 398 + 105 = 503.
+    assert.equal(manifesto.aplicadas_esperadas, 398)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

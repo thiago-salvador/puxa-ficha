@@ -110,6 +110,7 @@ describe("flag do Senado em alertas e notícias", () => {
       nome_urna: SENADOR.nome_urna,
       partido_sigla: SENADOR.partido_sigla,
       cargo_disputado: "Senador",
+      estado: undefined,
     })
   })
 

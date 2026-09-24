@@ -12,6 +12,13 @@
   ],
   "recortes": [
     {
+      "nome": "alert-unsubscribe-all-20260923",
+      "desde": "20260923145603",
+      "ate": "20260923145603",
+      "allowlist": "scripts/audit/allowlist-alert-unsubscribe-all-20260923.json",
+      "divida": null
+    },
+    {
       "nome": "quiz-position-quarantine-20260917",
       "desde": "20260917182024",
       "ate": "20260917182024",
@@ -612,6 +619,27 @@
       "desde": "20260923001140",
       "ate": "20260923001140",
       "allowlist": "scripts/audit/allowlist-link-check-48-claims-20260922.json",
+      "divida": null
+    },
+    {
+      "nome": "eliziane-partido-20260923",
+      "desde": "20260923175946",
+      "ate": "20260923175946",
+      "allowlist": "scripts/audit/allowlist-eliziane-partido-20260923.json",
+      "divida": null
+    },
+    {
+      "nome": "eliziane-mudancas-partido-20260923",
+      "desde": "20260923233000",
+      "ate": "20260923233000",
+      "allowlist": "scripts/audit/allowlist-eliziane-mudancas-partido-20260923.json",
+      "divida": null
+    },
+    {
+      "nome": "senado-exercicio-reaberto-20260924",
+      "desde": "20260924003000",
+      "ate": "20260924003000",
+      "allowlist": "scripts/audit/allowlist-senado-exercicio-reaberto-20260924.json",
       "divida": null
     }
   ],

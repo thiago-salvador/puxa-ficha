@@ -86,12 +86,10 @@ export function createUnsubscribeAllHandler(deps: UnsubscribeAllDeps = defaultUn
 
     const supabase = deps.createAlertsServiceRoleClient()
     const { error } = await supabase
-      .from("alert_subscriptions")
-      .delete()
+      .rpc("alert_unsubscribe_all", { p_subscriber_id: subscriber.id })
       .abortSignal(supabaseQueryTimeoutSignal())
-      .eq("subscriber_id", subscriber.id)
     if (error) {
-      deps.logAlertsApiExit("unsubscribe-all", 503, "db_delete_subscriptions_failed")
+      deps.logAlertsApiExit("unsubscribe-all", 503, "db_unsubscribe_all_failed")
       return NextResponse.json({ error: "Could not cancel all subscriptions" }, { status: 503 })
     }
 
