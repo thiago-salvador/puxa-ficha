@@ -627,6 +627,13 @@
       "ate": "20260923175946",
       "allowlist": "scripts/audit/allowlist-eliziane-partido-20260923.json",
       "divida": null
+    },
+    {
+      "nome": "eliziane-mudancas-partido-20260923",
+      "desde": "20260923233000",
+      "ate": "20260923233000",
+      "allowlist": "scripts/audit/allowlist-eliziane-mudancas-partido-20260923.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
