@@ -97,15 +97,50 @@ test("missing results keep their denominator and zero is a real observation", ()
   assert.equal(missing.count, 0)
 })
 
-test("different scenarios, candidate lists, electorates and unknown metadata remain separate", () => {
+test("candidate lists and free-text electorates join the weekly series; base and turn stay separate", () => {
   const a = survey("2026-09-08", "A")
   const variants = Array.from({ length: 5 }, (_, index) => survey("2026-09-10", `B${index}`))
   variants[0].scenario.comparabilityKey += "|validos"
   variants[1].scenario.resultados.pop()
-  variants[2].sample.population.value = "Votos válidos"
+  variants[2].sample.population.value = "Eleitores de 16 anos ou mais em 60 municípios"
   variants[3].sample.population.status = "indeterminado"
   variants[4].scenario.turn = 2
-  for (const variant of variants) assert.equal(groupWeeklyPollSeries([a, variant]).length, 2)
+  assert.equal(groupWeeklyPollSeries([a, variants[0]]).length, 2)
+  assert.equal(groupWeeklyPollSeries([a, variants[4]]).length, 2)
+  for (const variant of variants.slice(1, 4)) assert.equal(groupWeeklyPollSeries([a, variant]).length, 1)
+})
+
+test("published spellings of the total-sample base join the same series", () => {
+  const a = survey("2026-09-08", "A")
+  const b = survey("2026-09-09", "B")
+  const c = survey("2026-09-10", "C")
+  b.scenario.comparabilityKey = "2026|Presidente|BR|1|estimulada|outra-lista|total_entrevistados"
+  c.scenario.comparabilityKey = "2026|Presidente|BR|1|estimulado|lista-c|total"
+  assert.equal(groupWeeklyPollSeries([a, b, c]).length, 1)
+})
+
+test("institutes with different candidate lists average each candidate over the surveys that list them", () => {
+  const a = survey("2026-09-08", "A", [30, 40, 10])
+  const b = survey("2026-09-09", "B", [34, 36])
+  b.registration.code.value = "BR-00002/2026"
+  a.registration.code.value = "BR-00001/2026"
+  const [series] = groupWeeklyPollSeries([a, b])
+  const week = series.weeks.at(-1)!
+  const byCandidate = Object.fromEntries(week.results.map(item => [item.result.candidateSlug, { value: item.value, count: item.count, total: item.total }]))
+  assert.deepEqual(byCandidate["candidate-0"], { value: 32, count: 2, total: 2 })
+  assert.deepEqual(byCandidate["candidate-1"], { value: 38, count: 2, total: 2 })
+  assert.deepEqual(byCandidate["candidate-2"], { value: 10, count: 1, total: 2 })
+})
+
+test("a survey with several stimulated scenarios counts once, with its most complete list", () => {
+  const full = survey("2026-09-08", "A", [30, 40, 10])
+  const reduced = survey("2026-09-08", "A", [35, 45])
+  full.registration.code.value = reduced.registration.code.value = "BR-00003/2026"
+  full.scenario.id = "com-c"; reduced.scenario.id = "sem-c"
+  reduced.id = full.id
+  const [week] = aggregatePollWeeks([reduced, full])
+  assert.equal(week.polls.length, 1)
+  assert.equal(week.polls[0].scenario.id, "com-c")
 })
 
 test("unknown or malformed mode isolates the poll by its own key", () => {
