@@ -34,6 +34,7 @@ import {
   parseRepresentacaoAprovada,
   validateRepresentacoesEticaDataset,
   type RepresentacaoEticaAprovada,
+  type RepresentacaoEticaCamaraAprovada,
 } from "../src/lib/representacoes-etica"
 import { fetchJSON } from "./lib/helpers"
 import {
@@ -81,7 +82,7 @@ function divergencias(daFila: ItemFila, dasFontes: ItemFila): string[] {
 
 /** Monta o dataset novo sem tocar em disco. Lança com o motivo quando recusa. */
 export function aprovarRepresentacao(opcoes: OpcoesAprovacao): {
-  item: RepresentacaoEticaAprovada
+  item: RepresentacaoEticaCamaraAprovada
   dataset: { policy: string; itens: RepresentacaoEticaAprovada[] }
 } {
   if (opcoes.fila?.schema_version !== FILA_SCHEMA_VERSION || opcoes.fila.fonte !== "camara-dadosabertos-v2" || !Array.isArray(opcoes.fila.itens)) {
@@ -123,6 +124,7 @@ export function aprovarRepresentacao(opcoes: OpcoesAprovacao): {
   }
   const parsed = parseRepresentacaoAprovada(candidato)
   if (!parsed.ok) throw new Error(`item recusado: ${parsed.motivo}`)
+  if (parsed.item.casa !== "camara") throw new Error("o coletor Câmara só pode aprovar itens da Câmara")
   if (parsed.item.verificado_em > opcoes.aprovadoEm) throw new Error("verificado_em no futuro em relação à aprovação")
 
   const atual = validateRepresentacoesEticaDataset(opcoes.dataset)
@@ -157,28 +159,62 @@ export async function remontarNasFontes(
   itemId: string,
   seed: readonly CandidatoSeed[],
   agora: Date,
+  cacheFontes?: {
+    legislatura: Awaited<ReturnType<typeof carregarLegislatura>>
+    cpfPorSqPorAno: ReadonlyMap<string, ReadonlyMap<string, string>>
+    api?: ApiCamara
+    onConsulta?: (path: string) => void
+  },
 ): Promise<{ remontado: ItemFila | null; pacotesTse: PacoteTseConsultado[]; deputadosConsultados: number }> {
   const daFila = fila.itens?.find((i) => i.id === itemId)
   if (!daFila) throw new Error(`item ${itemId} não está na fila`)
+  return remontarRepresentacaoNasFontes(daFila, fila.legislatura.id, seed, agora, cacheFontes)
+}
+
+/** Mesmo caminho da aprovação, aceitando um ponteiro de item já publicado. */
+export async function remontarRepresentacaoNasFontes(
+  daFila: Pick<ItemFila, "id"> & { candidato: Pick<ItemFila["candidato"], "slug">; representacao: Pick<ItemFila["representacao"], "id"> },
+  legislaturaId: number,
+  seed: readonly CandidatoSeed[],
+  agora: Date,
+  cacheFontes?: {
+    legislatura: Awaited<ReturnType<typeof carregarLegislatura>>
+    cpfPorSqPorAno: ReadonlyMap<string, ReadonlyMap<string, string>>
+    api?: ApiCamara
+    onConsulta?: (path: string) => void
+  },
+): Promise<{ remontado: ItemFila | null; pacotesTse: PacoteTseConsultado[]; deputadosConsultados: number }> {
   const alvo = seed.find((c) => c.slug === daFila.candidato.slug)
   if (!alvo) throw new Error(`candidato ${daFila.candidato.slug} não está no seed`)
   const anoAlvo = sqMaisRecente(alvo)?.ano
   const mesmoAno = anoAlvo ? seed.filter((c) => sqMaisRecente(c)?.ano === anoAlvo) : []
+  const fonteApi = cacheFontes?.api ?? apiAoVivo
+  const api: ApiCamara = cacheFontes?.onConsulta
+    ? { get: async (path) => {
+      const resposta = await fonteApi.get(path)
+      cacheFontes.onConsulta?.(path)
+      return resposta
+    } }
+    : fonteApi
 
   const [legislatura, rep, tse] = await Promise.all([
-    carregarLegislatura(apiAoVivo, fila.legislatura.id, 4),
-    apiAoVivo.get(`/proposicoes/${daFila.representacao.id}`).then((r) => r.dados as ProposicaoDetalhe),
-    mesmoAno.length > 0 ? cpfPorSqDoTseFresco(mesmoAno) : Promise.resolve({ cpfPorSq: new Map<string, string>(), pacotes: [] }),
+    cacheFontes?.legislatura ?? carregarLegislatura(api, legislaturaId, 4),
+    api.get(`/proposicoes/${daFila.representacao.id}`).then((r) => r.dados as ProposicaoDetalhe),
+    mesmoAno.length > 0
+      ? cacheFontes?.cpfPorSqPorAno.get(anoAlvo!)
+        ? Promise.resolve({ cpfPorSq: cacheFontes.cpfPorSqPorAno.get(anoAlvo!)!, pacotes: [] })
+        : cpfPorSqDoTseFresco(mesmoAno)
+      : Promise.resolve({ cpfPorSq: new Map<string, string>(), pacotes: [] }),
   ])
   if (rep.siglaTipo !== "REP") throw new Error(`proposição ${daFila.representacao.id} não é REP nas fontes`)
-  const avaliacao = avaliarRepresentacao(await carregarRepresentacao(apiAoVivo, rep), {
+  const avaliacao = avaliarRepresentacao(await carregarRepresentacao(api, rep), {
     nomes: legislatura.nomes,
     porDeputado: legislatura.porDeputado,
     indices: indicesDeCandidatos(seed, tse.cpfPorSq),
     hoje: dataEmBrasilia(agora),
   })
   return {
-    remontado: avaliacao.itens.find((i) => i.id === itemId) ?? null,
+    remontado: avaliacao.itens.find((i) => i.id === daFila.id) ?? null,
     pacotesTse: tse.pacotes,
     deputadosConsultados: legislatura.deputados.length,
   }
