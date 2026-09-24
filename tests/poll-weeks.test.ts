@@ -100,11 +100,12 @@ test("missing results keep their denominator and zero is a real observation", ()
 test("candidate lists and free-text electorates join the weekly series; base and turn stay separate", () => {
   const a = survey("2026-09-08", "A")
   const variants = Array.from({ length: 5 }, (_, index) => survey("2026-09-10", `B${index}`))
-  variants[0].scenario.comparabilityKey += "|validos"
+  variants[0].scenario.comparabilityKey = "2026|Presidente|BR|1|estimulado|teste-abc|votos_validos"
   variants[1].scenario.resultados.pop()
   variants[2].sample.population.value = "Eleitores de 16 anos ou mais em 60 municípios"
   variants[3].sample.population.status = "indeterminado"
   variants[4].scenario.turn = 2
+  variants[4].scenario.comparabilityKey = "2026|Presidente|BR|2|estimulado|teste-abc|total_amostra"
   assert.equal(groupWeeklyPollSeries([a, variants[0]]).length, 2)
   assert.equal(groupWeeklyPollSeries([a, variants[4]]).length, 2)
   for (const variant of variants.slice(1, 4)) assert.equal(groupWeeklyPollSeries([a, variant]).length, 1)
