@@ -120,30 +120,34 @@ export function Footer() {
               Projeto de Thiago Salvador
             </p>
           </div>
-          <nav aria-label="Links do rodapé" className="hidden grid-cols-1 gap-8 sm:grid sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-            {FOOTER_GROUPS.map((group) => (
-              <div key={group.title} className="space-y-2">
-                <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
-                  {group.title}
-                </span>
-                <FooterLinkList links={group.links} />
-              </div>
-            ))}
-          </nav>
-          <nav aria-label="Links do rodapé" className="grid gap-1 sm:hidden">
-            {FOOTER_GROUPS.map((group) => (
-              <details key={group.title} className="group border-b border-border/70">
-                <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground [&::-webkit-details-marker]:hidden">
-                  {group.title}
-                  <span aria-hidden="true" className="text-lg font-normal leading-none transition-transform group-open:rotate-45">
-                    +
+          {/* Um único landmark: as versões desktop e mobile ficam dentro do
+              mesmo <nav>, e só uma delas aparece por breakpoint. */}
+          <nav aria-label="Links do rodapé">
+            <div className="hidden grid-cols-1 gap-8 sm:grid sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+              {FOOTER_GROUPS.map((group) => (
+                <div key={group.title} className="space-y-2">
+                  <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
+                    {group.title}
                   </span>
-                </summary>
-                <div className="pb-2 pl-1">
                   <FooterLinkList links={group.links} />
                 </div>
-              </details>
-            ))}
+              ))}
+            </div>
+            <div className="grid gap-1 sm:hidden">
+              {FOOTER_GROUPS.map((group) => (
+                <details key={group.title} className="group border-b border-border/70">
+                  <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground [&::-webkit-details-marker]:hidden">
+                    {group.title}
+                    <span aria-hidden="true" className="text-lg font-normal leading-none transition-transform group-open:rotate-45">
+                      +
+                    </span>
+                  </summary>
+                  <div className="pb-2 pl-1">
+                    <FooterLinkList links={group.links} />
+                  </div>
+                </details>
+              ))}
+            </div>
           </nav>
         </div>
       </div>
