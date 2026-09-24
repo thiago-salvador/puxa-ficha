@@ -7605,6 +7605,156 @@
         }
       },
       "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "instituto-exatus-rn-03910-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Instituto Exatus",
+        "commissioner": "Grupo Agora RN",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "agorarn.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-14",
+          "end": "2026-09-16"
+        },
+        "published_at": "2026-09-17",
+        "sample_size": 1500,
+        "method": null,
+        "margin_of_error_pp": 2.53,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rio Grande do Norte",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RN-03910/2026",
+        "result_url": "https://agorarn.com.br/politica/exatus-allyson-43-cadu-alvaro-segundo-turno-governo-rn/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RN-03910/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T16:26:45Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "55c77bcd533cde8bc64eada788c359641047b34aabcb665838e87fc2545f4564",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://agorarn.com.br/politica/exatus-allyson-43-cadu-alvaro-segundo-turno-governo-rn/",
+            "https://agorarn.com.br/politica/allyson-4333-cadu-2107-alvaro-2027-pesquisa-exatus/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://agorarn.com.br/politica/exatus-allyson-43-cadu-alvaro-segundo-turno-governo-rn/",
+            "https://agorarn.com.br/politica/allyson-4333-cadu-2107-alvaro-2027-pesquisa-exatus/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://agorarn.com.br/politica/exatus-allyson-43-cadu-alvaro-segundo-turno-governo-rn/",
+            "https://agorarn.com.br/politica/allyson-4333-cadu-2107-alvaro-2027-pesquisa-exatus/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://agorarn.com.br/politica/exatus-allyson-43-cadu-alvaro-segundo-turno-governo-rn/",
+            "https://agorarn.com.br/politica/allyson-4333-cadu-2107-alvaro-2027-pesquisa-exatus/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T16:26:45Z"
+    },
+    {
+      "id": "doxa-pesquisa-ap-03045-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Doxa Pesquisa",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "pesquisasdoxa.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-16",
+          "end": "2026-09-19"
+        },
+        "published_at": "2026-09-22",
+        "sample_size": 800,
+        "method": null,
+        "margin_of_error_pp": 3.5,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Amapá",
+        "rounds": [
+          1
+        ],
+        "registration_id": "AP-03045/2026",
+        "result_url": "https://www.pesquisasdoxa.com/post/furlan-lidera-disputa-ao-governo-ao-senado-rayssa-lidera-e-2-vaga-disputada-entre-alliny-e-acacio",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AP-03045/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T16:37:27Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "46a1f9915f1c2ef5a6d00ce644ea309000b49792dbb5c14b24f65b98f2a88e6c",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.pesquisasdoxa.com/post/furlan-lidera-disputa-ao-governo-ao-senado-rayssa-lidera-e-2-vaga-disputada-entre-alliny-e-acacio"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.pesquisasdoxa.com/post/furlan-lidera-disputa-ao-governo-ao-senado-rayssa-lidera-e-2-vaga-disputada-entre-alliny-e-acacio"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.pesquisasdoxa.com/post/furlan-lidera-disputa-ao-governo-ao-senado-rayssa-lidera-e-2-vaga-disputada-entre-alliny-e-acacio"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.pesquisasdoxa.com/post/furlan-lidera-disputa-ao-governo-ao-senado-rayssa-lidera-e-2-vaga-disputada-entre-alliny-e-acacio"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T16:37:27Z"
     }
   ]
 }

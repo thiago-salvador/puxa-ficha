@@ -1432,7 +1432,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|AP|1|estimulada|lista-real-time-big-data-2026-09-08-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-debc171abf5f88a5",
+      "exact_aliases_version": "monitor-2026-9bc84cf39e7f418d",
       "exact_aliases": [
         {
           "raw_label": "Carlos Cley",
@@ -1498,6 +1498,51 @@
           "geography": "Amapá",
           "turn": 1,
           "scenario_id": "f5-pesquisas-e-consultoria-ltda-ap-01152-2026-1t"
+        },
+        {
+          "raw_label": "Dr. Furlan (PSD)",
+          "candidate_slug": "dr-furlan",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amapá",
+          "turn": 1,
+          "scenario_id": "doxa-pesquisa-ap-03045-2026-1t"
+        },
+        {
+          "raw_label": "Clécio (União)",
+          "candidate_slug": "clecio-luis",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amapá",
+          "turn": 1,
+          "scenario_id": "doxa-pesquisa-ap-03045-2026-1t"
+        },
+        {
+          "raw_label": "Delegado Marcos (DC)",
+          "candidate_slug": "marcos-reategui",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amapá",
+          "turn": 1,
+          "scenario_id": "doxa-pesquisa-ap-03045-2026-1t"
+        },
+        {
+          "raw_label": "Jairo Palheta (PCO)",
+          "candidate_slug": "jairo-palheta",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amapá",
+          "turn": 1,
+          "scenario_id": "doxa-pesquisa-ap-03045-2026-1t"
+        },
+        {
+          "raw_label": "Carlos Cley (PSTU)",
+          "candidate_slug": "carlos-cley",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amapá",
+          "turn": 1,
+          "scenario_id": "doxa-pesquisa-ap-03045-2026-1t"
         }
       ],
       "pesquisas": [
@@ -1789,6 +1834,150 @@
                   "candidate_slug": "marcos-reategui",
                   "match_status": "exact_alias",
                   "value_percent": 0.1,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "doxa-pesquisa-ap-03045-2026",
+          "source_id": "doxa-pesquisa-ap-03045-2026-revisao-20260924",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Doxa Pesquisa",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-16",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-19",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-22",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 800,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores dos municípios de Macapá, Santana, Mazagão e Porto Grande",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3.5,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "AP-03045/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Amapá",
+            "code": "AP"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.pesquisasdoxa.com/post/furlan-lidera-disputa-ao-governo-ao-senado-rayssa-lidera-e-2-vaga-disputada-entre-alliny-e-acacio",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-24T16:37:27Z",
+            "capture": {
+              "format": "text",
+              "sha256": "46a1f9915f1c2ef5a6d00ce644ea309000b49792dbb5c14b24f65b98f2a88e6c",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "doxa-pesquisa-ap-03045-2026-1t",
+              "turn": 1,
+              "geography": "Amapá",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|AP|1|estimulada|97648fd02cacdee1f325a159e28ebf2e5f467109ca168512e8e9548e54f8b7b8|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Dr. Furlan (PSD)",
+                  "candidate_slug": "dr-furlan",
+                  "match_status": "exact_alias",
+                  "value_percent": 60.7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Clécio (União)",
+                  "candidate_slug": "clecio-luis",
+                  "match_status": "exact_alias",
+                  "value_percent": 35.7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "NS/SR",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 2.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 1.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Delegado Marcos (DC)",
+                  "candidate_slug": "marcos-reategui",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Jairo Palheta (PCO)",
+                  "candidate_slug": "jairo-palheta",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Carlos Cley (PSTU)",
+                  "candidate_slug": "carlos-cley",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
                   "status": "publicado"
                 }
               ]
@@ -23095,7 +23284,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|RN|1|estimulada|lista-instituto-exatus-2026-09-04-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-1e94c35e6f1baf7c",
+      "exact_aliases_version": "monitor-2026-f2a042bf4cce8d55",
       "exact_aliases": [
         {
           "raw_label": "Allyson Bezerra",
@@ -23312,6 +23501,87 @@
           "geography": "Rio Grande do Norte",
           "turn": 1,
           "scenario_id": "instituto-perfil-rn-08335-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Allyson Bezerra",
+          "candidate_slug": "alysson-bezerra",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 1,
+          "scenario_id": "instituto-exatus-rn-03910-2026-1t"
+        },
+        {
+          "raw_label": "Cadu de Lula",
+          "candidate_slug": "cadu-xavier",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 1,
+          "scenario_id": "instituto-exatus-rn-03910-2026-1t"
+        },
+        {
+          "raw_label": "Álvaro Dias",
+          "candidate_slug": "alvaro-dias-rn",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 1,
+          "scenario_id": "instituto-exatus-rn-03910-2026-1t"
+        },
+        {
+          "raw_label": "Rodrigo de Bolsonaro",
+          "candidate_slug": "rodrigo-bolsonaro",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 1,
+          "scenario_id": "instituto-exatus-rn-03910-2026-1t"
+        },
+        {
+          "raw_label": "Professor Robério Paulino",
+          "candidate_slug": "roberio-paulino",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 1,
+          "scenario_id": "instituto-exatus-rn-03910-2026-1t"
+        },
+        {
+          "raw_label": "Arinalda do MLB",
+          "candidate_slug": "arinalda-do-mlb",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 1,
+          "scenario_id": "instituto-exatus-rn-03910-2026-1t"
+        },
+        {
+          "raw_label": "Henrique Lyra",
+          "candidate_slug": "henrique-lyra",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 1,
+          "scenario_id": "instituto-exatus-rn-03910-2026-1t"
+        },
+        {
+          "raw_label": "Dário Barbosa",
+          "candidate_slug": "dario-barbosa",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 1,
+          "scenario_id": "instituto-exatus-rn-03910-2026-1t"
+        },
+        {
+          "raw_label": "Carlos Jararaca",
+          "candidate_slug": "carlos-jararaca",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 1,
+          "scenario_id": "instituto-exatus-rn-03910-2026-1t"
         }
       ],
       "pesquisas": [
@@ -23868,6 +24138,180 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 4.94,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "instituto-exatus-rn-03910-2026",
+          "source_id": "instituto-exatus-rn-03910-2026-revisao-20260924",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Instituto Exatus",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Grupo Agora RN",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-14",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-16",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-17",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1500,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2.53,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "RN-03910/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Rio Grande do Norte",
+            "code": "RN"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://agorarn.com.br/politica/exatus-allyson-43-cadu-alvaro-segundo-turno-governo-rn/",
+            "supporting_urls": [
+              "https://agorarn.com.br/politica/allyson-4333-cadu-2107-alvaro-2027-pesquisa-exatus/"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-24T16:26:45Z",
+            "capture": {
+              "format": "text",
+              "sha256": "55c77bcd533cde8bc64eada788c359641047b34aabcb665838e87fc2545f4564",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "instituto-exatus-rn-03910-2026-1t",
+              "turn": 1,
+              "geography": "Rio Grande do Norte",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|RN|1|estimulada|c73cdc5cae464eb2b4615dd2f29033f5596b9a72a6ea603d9cdc5fb99d5c2527|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Allyson Bezerra",
+                  "candidate_slug": "alysson-bezerra",
+                  "match_status": "exact_alias",
+                  "value_percent": 43.33,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Cadu de Lula",
+                  "candidate_slug": "cadu-xavier",
+                  "match_status": "exact_alias",
+                  "value_percent": 21.07,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Álvaro Dias",
+                  "candidate_slug": "alvaro-dias-rn",
+                  "match_status": "exact_alias",
+                  "value_percent": 20.27,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Rodrigo de Bolsonaro",
+                  "candidate_slug": "rodrigo-bolsonaro",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.07,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professor Robério Paulino",
+                  "candidate_slug": "roberio-paulino",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.13,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Arinalda do MLB",
+                  "candidate_slug": "arinalda-do-mlb",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.07,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Henrique Lyra",
+                  "candidate_slug": "henrique-lyra",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Dário Barbosa",
+                  "candidate_slug": "dario-barbosa",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Carlos Jararaca",
+                  "candidate_slug": "carlos-jararaca",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nenhum/branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 5.53,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não souberam ou preferiram não responder",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 9.53,
                   "status": "publicado"
                 }
               ]
