@@ -1434,6 +1434,168 @@
         }
       },
       "consulted_at": "2026-09-24T14:00:00Z"
+    },
+    {
+      "id": "futura-br-00749-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Futura",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "static.poder360.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-11",
+          "end": "2026-09-15"
+        },
+        "published_at": "2026-09-17",
+        "sample_size": 2000,
+        "method": "Entrevistas telefônicas assistidas por computador (CATI)",
+        "margin_of_error_pp": 2.2,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-00749/2026",
+        "result_url": "https://static.poder360.com.br/uploads/2026/09/Pesquisa-Presidente-Brasil-Futura-Setembro.pdf",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-00749/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T16:25:55Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "244f871e82b4ae7cb3c1b0209c453bfabd2f6461a011fbb8bd79a8caabc95b6f",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://static.poder360.com.br/uploads/2026/09/Pesquisa-Presidente-Brasil-Futura-Setembro.pdf",
+            "https://www.poder360.com.br/poder-eleicoes-2026/lula-e-aprovado-por-441-e-desaprovado-por-531-diz-pesquisa/",
+            "https://www.bol.uol.com.br/noticias/2026/09/22/pesquisa-atualizada-para-presidente-veja-numeros-mais-recentes.ghtm"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://static.poder360.com.br/uploads/2026/09/Pesquisa-Presidente-Brasil-Futura-Setembro.pdf",
+            "https://www.poder360.com.br/poder-eleicoes-2026/lula-e-aprovado-por-441-e-desaprovado-por-531-diz-pesquisa/",
+            "https://www.bol.uol.com.br/noticias/2026/09/22/pesquisa-atualizada-para-presidente-veja-numeros-mais-recentes.ghtm"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://static.poder360.com.br/uploads/2026/09/Pesquisa-Presidente-Brasil-Futura-Setembro.pdf",
+            "https://www.poder360.com.br/poder-eleicoes-2026/lula-e-aprovado-por-441-e-desaprovado-por-531-diz-pesquisa/",
+            "https://www.bol.uol.com.br/noticias/2026/09/22/pesquisa-atualizada-para-presidente-veja-numeros-mais-recentes.ghtm"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://static.poder360.com.br/uploads/2026/09/Pesquisa-Presidente-Brasil-Futura-Setembro.pdf",
+            "https://www.poder360.com.br/poder-eleicoes-2026/lula-e-aprovado-por-441-e-desaprovado-por-531-diz-pesquisa/",
+            "https://www.bol.uol.com.br/noticias/2026/09/22/pesquisa-atualizada-para-presidente-veja-numeros-mais-recentes.ghtm"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T16:25:55Z"
+    },
+    {
+      "id": "atlasintel-br-06221-2026-revisao-20260924",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "AtlasIntel",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "cdn1.atlasintel.org",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-11",
+          "end": "2026-09-16"
+        },
+        "published_at": "2026-09-17",
+        "sample_size": 5018,
+        "method": "Recrutamento digital aleatório (Atlas RDR)",
+        "margin_of_error_pp": 1,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-06221/2026",
+        "result_url": "https://cdn1.atlasintel.org/pesquisa_atlas_bloomberg__nacional_260916__e482014325df7284.pdf",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-06221/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-24T16:25:55Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "6e1d776c3bab0eca235ce539a1639c76e63899ee197e1e8b5f3883097a21d4f8",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://cdn1.atlasintel.org/pesquisa_atlas_bloomberg__nacional_260916__e482014325df7284.pdf",
+            "https://www.bol.uol.com.br/noticias/2026/09/22/pesquisa-atualizada-para-presidente-veja-numeros-mais-recentes.ghtm",
+            "https://www.metropoles.com/brasil/pesquisa-atlas-lula-tem-441-flavio-417-no-1o-turno"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://cdn1.atlasintel.org/pesquisa_atlas_bloomberg__nacional_260916__e482014325df7284.pdf",
+            "https://www.bol.uol.com.br/noticias/2026/09/22/pesquisa-atualizada-para-presidente-veja-numeros-mais-recentes.ghtm",
+            "https://www.metropoles.com/brasil/pesquisa-atlas-lula-tem-441-flavio-417-no-1o-turno"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://cdn1.atlasintel.org/pesquisa_atlas_bloomberg__nacional_260916__e482014325df7284.pdf",
+            "https://www.bol.uol.com.br/noticias/2026/09/22/pesquisa-atualizada-para-presidente-veja-numeros-mais-recentes.ghtm",
+            "https://www.metropoles.com/brasil/pesquisa-atlas-lula-tem-441-flavio-417-no-1o-turno"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://cdn1.atlasintel.org/pesquisa_atlas_bloomberg__nacional_260916__e482014325df7284.pdf",
+            "https://www.bol.uol.com.br/noticias/2026/09/22/pesquisa-atualizada-para-presidente-veja-numeros-mais-recentes.ghtm",
+            "https://www.metropoles.com/brasil/pesquisa-atlas-lula-tem-441-flavio-417-no-1o-turno"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-24T16:25:55Z"
     }
   ],
   "media_fallback_policy": {
