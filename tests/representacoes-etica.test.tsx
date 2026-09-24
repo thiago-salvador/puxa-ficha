@@ -295,14 +295,14 @@ describe("aprovação", () => {
     assert.throws(() => aprovarRepresentacao({ ...base, fila: { itens: [itemFila] } as unknown as Fila, fase: "arquivada" }), /fila inválido/)
   })
 
-  it("recusa número da REP e último andamento adulterados na fila (auditoria, rodada 2)", () => {
+  it("recusa número da REP e último andamento adulterados na fila", () => {
     const numero = { ...itemFila, representacao: { ...itemFila.representacao, numero: 999 } }
     assert.throws(() => aprovarRepresentacao({ ...base, fila: filaCom(numero), fase: "recurso_apresentado" }), /número da REP: fila 999, fontes 25/)
     const data = { ...itemFila, ultimo_andamento: { ...itemFila.ultimo_andamento!, data: "2026-09-23" } }
     assert.throws(() => aprovarRepresentacao({ ...base, fila: filaCom(data), fase: "recurso_apresentado" }), /último andamento: fila 2026-09-23, fontes 2026-05-19/)
   })
 
-  it("recusa quando as fontes não sustentam o par: nome curto contido no nome de outro deputado (auditoria, rodada 2)", () => {
+  it("recusa quando as fontes não sustentam o par: nome curto contido no nome de outro deputado", () => {
     // A fila aponta para "Vicentinho" (1), mas a ementa nomeia "Vicentinho Júnior" (2).
     const deputados: DeputadoLegislatura[] = [
       { id: 1, nome: "Vicentinho", nomeCivil: "VICENTE PAULO DA SILVA", cpf: "11144477735" },
