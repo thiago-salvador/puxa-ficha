@@ -5,6 +5,8 @@ import { establishAutomationBypass } from "../../scripts/vercel-automation-bypas
 type RouteA11y = {
   name: string
   path: string
+  /** Test budget for routes whose DOM makes the axe pass itself slow. */
+  timeoutMs?: number
 }
 
 const ROUTES: RouteA11y[] = [
@@ -23,7 +25,8 @@ const ROUTES: RouteA11y[] = [
   { name: "quiz-result", path: "/quiz/resultado" },
   { name: "embed-home", path: "/embed" },
   { name: "embed-candidate", path: "/embed/lula" },
-  { name: "imprensa", path: "/imprensa" },
+  // About 14k elements: axe alone takes ~17s locally and exceeds 30s on the release runner.
+  { name: "imprensa", path: "/imprensa", timeoutMs: 90_000 },
   { name: "imprensa-atualizacoes", path: "/imprensa/atualizacoes" },
   { name: "imprensa-frescor", path: "/imprensa/frescor" },
 ]
@@ -49,6 +52,7 @@ function formatViolations(violations: Awaited<ReturnType<AxeBuilder["analyze"]>>
 test.describe("Acessibilidade automatizada", () => {
   for (const route of ROUTES) {
     test(`${route.name} has no moderate, serious or critical axe violations`, async ({ page }) => {
+      if (route.timeoutMs) test.setTimeout(route.timeoutMs)
       // Com dados placeholder o slug do embed cai em notFound() e o axe avalia
       // a página 404, não a rota real. O job "Acessibilidade (produção)" cobre
       // esta rota contra produção, onde o candidato existe.
