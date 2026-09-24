@@ -14,6 +14,8 @@ export interface DivulgaCandReceipt {
   checked_at: string;
   http_status: number | null;
   sha256: string | null;
+  /** Trecho curto e sanitizado do corpo em respostas não-2xx (nunca em 2xx). */
+  error_excerpt?: string | null;
 }
 
 type CurrentCandidacy = OfficialCandidacy & { party: string; checked_at: string | null };
@@ -128,16 +130,53 @@ function listUrl(
   return `${DIVULGACAND_BASE}/listar/2026/${scope}/${ELECTION_ID_2026}/${officeCode}/candidatos`;
 }
 
-async function fetchJsonWithRetry(
+export type DelayImpl = (ms: number) => Promise<void>;
+
+const realDelay: DelayImpl = (ms) =>
+  new Promise((resolve) => setTimeout(resolve, ms));
+
+const ALWAYS_RETRYABLE_STATUS = [403, 408, 429, 500, 502, 503, 504];
+
+/**
+ * 400 é retryable só nos endpoints de candidatura (lista e detalhe): a TSE
+ * devolveu 400 transitório num detalhe que respondeu 200 oito minutos antes e
+ * de novo no dia seguinte (JHC/AL, run 36024469024, 24/09/2026). Em qualquer
+ * outro endpoint, 400 continua definitivo.
+ */
+function isDivulgaCandCandidacyEndpoint(url: string): boolean {
+  return (
+    url.includes("/candidatura/listar/") ||
+    (url.includes("/candidatura/buscar/") && url.includes("/candidato/"))
+  );
+}
+
+/** Só chamado em respostas não-2xx: corpo de 200 pode conter dado do candidato. */
+function sanitizeErrorExcerpt(body: string): string | null {
+  const cleaned = body
+    .slice(0, 1000)
+    .replace(/[\u0000-\u001F\u007F]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 200);
+  return cleaned || null;
+}
+
+function retryBackoffMs(attempt: number): number {
+  const base = attempt === 1 ? 2000 : 5000;
+  return base + Math.floor(Math.random() * 200);
+}
+
+export async function fetchJsonWithRetry(
   url: string,
   fetchImpl: FetchLike,
   attempts = 3,
   receipts?: DivulgaCandReceipt[],
+  delayImpl: DelayImpl = realDelay,
 ): Promise<unknown> {
   let lastError: Error | null = null;
   for (let attempt = 1; attempt <= attempts; attempt++) {
     const receipt: DivulgaCandReceipt = {
-      url, checked_at: new Date().toISOString(), http_status: null, sha256: null,
+      url, checked_at: new Date().toISOString(), http_status: null, sha256: null, error_excerpt: null,
     };
     receipts?.push(receipt);
     try {
@@ -158,14 +197,21 @@ async function fetchJsonWithRetry(
         if (body.length > 2_000_000) throw new Error("resposta excede limite");
         return JSON.parse(body) as unknown;
       }
-      lastError = new Error(`DivulgaCand HTTP ${response.status}: ${url}`);
-      if (![403, 408, 429, 500, 502, 503, 504].includes(response.status)) break;
+      const excerpt = sanitizeErrorExcerpt(body);
+      receipt.error_excerpt = excerpt;
+      lastError = new Error(
+        `DivulgaCand HTTP ${response.status}: ${url}${excerpt ? ` — corpo: ${excerpt}` : ""}`,
+      );
+      const retryable =
+        ALWAYS_RETRYABLE_STATUS.includes(response.status) ||
+        (response.status === 400 && isDivulgaCandCandidacyEndpoint(url));
+      if (!retryable) break;
     } catch {
       // Erros de parse podem incluir trechos privados do corpo da resposta.
       lastError = new Error(`DivulgaCand resposta inválida ou indisponível: ${url}`);
     }
     if (attempt < attempts)
-      await new Promise((resolve) => setTimeout(resolve, attempt * 250));
+      await delayImpl(retryBackoffMs(attempt));
   }
   throw lastError ?? new Error(`DivulgaCand sem resposta: ${url}`);
 }
@@ -173,6 +219,7 @@ async function fetchJsonWithRetry(
 export async function collectCurrentOfficialCandidacies(
   fetchImpl: FetchLike = fetch,
   receipts: DivulgaCandReceipt[] = [],
+  delayImpl: DelayImpl = realDelay,
 ) {
   const records: Array<
     OfficialCandidacy & { party: string; checked_at: string | null }
@@ -182,7 +229,7 @@ export async function collectCurrentOfficialCandidacies(
   for (const uf of BRAZIL_UFS) {
     const url = listUrl("Governador", uf);
     const rows = sanitizeCandidateList(
-      await fetchJsonWithRetry(url, fetchImpl, 3, receipts),
+      await fetchJsonWithRetry(url, fetchImpl, 3, receipts, delayImpl),
       "Governador",
       uf,
     );
@@ -196,7 +243,7 @@ export async function collectCurrentOfficialCandidacies(
 
   const presidentUrl = listUrl("Presidente", null);
   const presidents = sanitizeCandidateList(
-    await fetchJsonWithRetry(presidentUrl, fetchImpl, 3, receipts),
+    await fetchJsonWithRetry(presidentUrl, fetchImpl, 3, receipts, delayImpl),
     "Presidente",
     null,
   );
@@ -219,17 +266,31 @@ export async function collectCurrentOfficialCandidacies(
 
   // A lista pode manter julgamento antigo. Verificar cada titular no detalhe,
   // inclusive terminais, com concorrência limitada e sem persistir PII.
+  // Cada worker resolve (nunca rejeita) para não abandonar as outras buscas
+  // em andamento: uma falha isolada não pode deixar recibos com
+  // http_status null para requisições que na verdade completaram.
   const detailed: CurrentCandidacy[] = new Array(records.length);
+  const detailErrors: string[] = [];
   let next = 0;
   await Promise.all(Array.from({ length: Math.min(4, records.length) }, async () => {
     while (next < records.length) {
       const index = next++;
       const row = records[index];
       const url = `${DIVULGACAND_BASE}/buscar/2026/${row.uf ?? "BR"}/${ELECTION_ID_2026}/candidato/${row.sq_candidato}`;
-      const raw = await fetchJsonWithRetry(url, fetchImpl, 3, receipts);
-      detailed[index] = sanitizeCandidateDetail(raw, row);
+      try {
+        const raw = await fetchJsonWithRetry(url, fetchImpl, 3, receipts, delayImpl);
+        detailed[index] = sanitizeCandidateDetail(raw, row);
+      } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
+        detailErrors.push(`SQ ${row.sq_candidato}: ${message}`);
+      }
     }
   }));
+  if (detailErrors.length > 0) {
+    throw new Error(
+      `DivulgaCand detalhe falhou para ${detailErrors.length} candidatura(s): ${detailErrors.join(" | ")}`,
+    );
+  }
   sources.push(...detailed.map((row) => `${DIVULGACAND_BASE}/buscar/2026/${row.uf ?? "BR"}/${ELECTION_ID_2026}/candidato/${row.sq_candidato}`));
   return { records: detailed, sources, receipts };
 }
@@ -285,6 +346,7 @@ export async function collectDirectCandidaciesMissingFromCdn(
   receipts: DivulgaCandReceipt[] = [],
   fetchImpl: FetchLike = fetch,
   now?: Date,
+  delayImpl: DelayImpl = realDelay,
 ): Promise<CandidacyRecord[]> {
   const seen = new Set<string>();
   for (const row of current) {
@@ -302,7 +364,7 @@ export async function collectDirectCandidaciesMissingFromCdn(
   async function detail(sq: string, uf: string | null) {
     if (!/^\d+$/.test(sq)) throw new Error("DivulgaCand SQ inválido");
     const url = `${DIVULGACAND_BASE}/buscar/2026/${uf ?? "BR"}/${ELECTION_ID_2026}/candidato/${sq}`;
-    const raw = await fetchJsonWithRetry(url, fetchImpl, 3, receipts);
+    const raw = await fetchJsonWithRetry(url, fetchImpl, 3, receipts, delayImpl);
     if (!raw || typeof raw !== "object" || Array.isArray(raw)) {
       throw new Error(`DivulgaCand detalhe inválido para SQ ${sq}`);
     }
