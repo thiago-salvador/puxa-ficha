@@ -20,7 +20,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|AC|1|estimulada|lista-quaest-2026-08-27-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-e8006af4b5efbe07",
+      "exact_aliases_version": "monitor-2026-a3faef5e961ebe2e",
       "exact_aliases": [
         {
           "raw_label": "Alan Rick",
@@ -47,32 +47,94 @@
           "candidate_slug": "tiao-bocalom"
         },
         {
+          "raw_label": "Mailza Assis",
+          "candidate_slug": "mailza-assis",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Acre",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-ac-01699-2026-1t"
+        },
+        {
+          "raw_label": "Alan Rick",
+          "candidate_slug": "alan-rick",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Acre",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-ac-01699-2026-1t"
+        },
+        {
           "raw_label": "Bocalom",
-          "candidate_slug": "tiao-bocalom"
+          "candidate_slug": "tiao-bocalom",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Acre",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-ac-01699-2026-1t"
         },
         {
           "raw_label": "Thor Dantas (PSB)",
-          "candidate_slug": "thor-dantas"
+          "candidate_slug": "thor-dantas",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Acre",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-ac-01699-2026-1t"
         },
         {
           "raw_label": "Mailza Assis (PP)",
-          "candidate_slug": "mailza-assis"
+          "candidate_slug": "mailza-assis",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Acre",
+          "turn": 1,
+          "scenario_id": "data-control-ac-07272-2026-1t"
         },
         {
           "raw_label": "Alan Rick (Republicanos)",
-          "candidate_slug": "alan-rick"
+          "candidate_slug": "alan-rick",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Acre",
+          "turn": 1,
+          "scenario_id": "data-control-ac-07272-2026-1t"
         },
         {
           "raw_label": "Tião Bocalom (PSDB)",
-          "candidate_slug": "tiao-bocalom"
+          "candidate_slug": "tiao-bocalom",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Acre",
+          "turn": 1,
+          "scenario_id": "data-control-ac-07272-2026-1t"
+        },
+        {
+          "raw_label": "Thor Dantas (PSB)",
+          "candidate_slug": "thor-dantas",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Acre",
+          "turn": 1,
+          "scenario_id": "data-control-ac-07272-2026-1t"
         },
         {
           "raw_label": "Eudo Raffael (PCB)",
-          "candidate_slug": "eudo-raffael"
+          "candidate_slug": "eudo-raffael",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Acre",
+          "turn": 1,
+          "scenario_id": "data-control-ac-07272-2026-1t"
         },
         {
           "raw_label": "Dr. Luizinho (Agir)",
-          "candidate_slug": "dr-luisinho"
+          "candidate_slug": "dr-luisinho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Acre",
+          "turn": 1,
+          "scenario_id": "data-control-ac-07272-2026-1t"
         }
       ],
       "pesquisas": [
@@ -960,7 +1022,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|AM|1|estimulada|lista-atlasintel-2026-09-04-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-7f90402f5bc2917b",
+      "exact_aliases_version": "monitor-2026-85ff6f712e1235d2",
       "exact_aliases": [
         {
           "raw_label": "Cabo Daciolo",
@@ -1017,31 +1079,66 @@
         },
         {
           "raw_label": "OMAR AZIZ",
-          "candidate_slug": "omar-aziz"
+          "candidate_slug": "omar-aziz",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amazonas",
+          "turn": 1,
+          "scenario_id": "projeta-pesquisa-de-mercado-e-opiniao-publica-am-06136-2026-1t"
         },
         {
           "raw_label": "ROBERTO CIDADE",
-          "candidate_slug": "roberto-cidade"
+          "candidate_slug": "roberto-cidade",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amazonas",
+          "turn": 1,
+          "scenario_id": "projeta-pesquisa-de-mercado-e-opiniao-publica-am-06136-2026-1t"
         },
         {
           "raw_label": "MARIA DO CARMO",
-          "candidate_slug": "maria-do-carmo"
+          "candidate_slug": "maria-do-carmo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amazonas",
+          "turn": 1,
+          "scenario_id": "projeta-pesquisa-de-mercado-e-opiniao-publica-am-06136-2026-1t"
         },
         {
           "raw_label": "DAVID ALMEIDA",
-          "candidate_slug": "david-almeida"
+          "candidate_slug": "david-almeida",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amazonas",
+          "turn": 1,
+          "scenario_id": "projeta-pesquisa-de-mercado-e-opiniao-publica-am-06136-2026-1t"
         },
         {
           "raw_label": "CABO DACIOLO",
-          "candidate_slug": "cabo-daciolo"
+          "candidate_slug": "cabo-daciolo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amazonas",
+          "turn": 1,
+          "scenario_id": "projeta-pesquisa-de-mercado-e-opiniao-publica-am-06136-2026-1t"
         },
         {
           "raw_label": "ISAEL MUNDURUKU",
-          "candidate_slug": "isael-munduruku"
+          "candidate_slug": "isael-munduruku",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amazonas",
+          "turn": 1,
+          "scenario_id": "projeta-pesquisa-de-mercado-e-opiniao-publica-am-06136-2026-1t"
         },
         {
           "raw_label": "GILBERTO VASCONCELOS",
-          "candidate_slug": "gilberto-vasconcelos"
+          "candidate_slug": "gilberto-vasconcelos",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amazonas",
+          "turn": 1,
+          "scenario_id": "projeta-pesquisa-de-mercado-e-opiniao-publica-am-06136-2026-1t"
         }
       ],
       "pesquisas": [
@@ -3357,7 +3454,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|DF|1|estimulada|lista-real-time-big-data-2026-09-09-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-50b85393ce680544",
+      "exact_aliases_version": "monitor-2026-ac4a424be5711466",
       "exact_aliases": [
         {
           "raw_label": "Cappelli",
@@ -3502,12 +3599,301 @@
           "scenario_id": "datafolha-df-df-07561-2026-1t-espontaneo"
         },
         {
+          "raw_label": "Celina Leão (PP)",
+          "candidate_slug": "celina-leao",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t"
+        },
+        {
+          "raw_label": "Leandro Grass (PT)",
+          "candidate_slug": "leandro-grass",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t"
+        },
+        {
           "raw_label": "Arruda (PSD)",
-          "candidate_slug": "jose-roberto-arruda"
+          "candidate_slug": "jose-roberto-arruda",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t"
+        },
+        {
+          "raw_label": "Paula Belmonte (PSDB)",
+          "candidate_slug": "paula-belmonte",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t"
+        },
+        {
+          "raw_label": "Cappelli (PSB)",
+          "candidate_slug": "ricardo-cappelli",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t"
+        },
+        {
+          "raw_label": "Kiko Caputo (Novo)",
+          "candidate_slug": "kiko-caputo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t"
+        },
+        {
+          "raw_label": "Professora Samara Mineiro (UP)",
+          "candidate_slug": "samara-mineiro",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t"
+        },
+        {
+          "raw_label": "Elisson (Agir)",
+          "candidate_slug": "elisson-ferreira",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t"
+        },
+        {
+          "raw_label": "Professor Robson (PSTU)",
+          "candidate_slug": "robson-raymundo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t"
         },
         {
           "raw_label": "Expedito Mendonça (PCO)",
-          "candidate_slug": "expedito-mendonca"
+          "candidate_slug": "expedito-mendonca",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t"
+        },
+        {
+          "raw_label": "Rico Pinheiro (PRTB)",
+          "candidate_slug": "rico-pinheiro",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t"
+        },
+        {
+          "raw_label": "Celina Leão (PP)",
+          "candidate_slug": "celina-leao",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "Leandro Grass (PT)",
+          "candidate_slug": "leandro-grass",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "Paula Belmonte (PSDB)",
+          "candidate_slug": "paula-belmonte",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "Kiko Caputo (Novo)",
+          "candidate_slug": "kiko-caputo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "Cappelli (PSB)",
+          "candidate_slug": "ricardo-cappelli",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "Professora Samara Mineiro (UP)",
+          "candidate_slug": "samara-mineiro",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "Professor Robson (PSTU)",
+          "candidate_slug": "robson-raymundo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "Expedito Mendonça (PCO)",
+          "candidate_slug": "expedito-mendonca",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "quaest-df-02596-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "Celina Leão (PP)",
+          "candidate_slug": "celina-leao",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "instituto-opiniao-inteligencia-politica-pesquisa-correio-opiniao-df-03622-2026-1t"
+        },
+        {
+          "raw_label": "Arruda (PSD)",
+          "candidate_slug": "jose-roberto-arruda",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "instituto-opiniao-inteligencia-politica-pesquisa-correio-opiniao-df-03622-2026-1t"
+        },
+        {
+          "raw_label": "Leandro Grass (PT)",
+          "candidate_slug": "leandro-grass",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "instituto-opiniao-inteligencia-politica-pesquisa-correio-opiniao-df-03622-2026-1t"
+        },
+        {
+          "raw_label": "Paula Belmonte (PSDB)",
+          "candidate_slug": "paula-belmonte",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "instituto-opiniao-inteligencia-politica-pesquisa-correio-opiniao-df-03622-2026-1t"
+        },
+        {
+          "raw_label": "Kiko Caputo (Novo)",
+          "candidate_slug": "kiko-caputo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "instituto-opiniao-inteligencia-politica-pesquisa-correio-opiniao-df-03622-2026-1t"
+        },
+        {
+          "raw_label": "Ricardo Cappelli (PSB)",
+          "candidate_slug": "ricardo-cappelli",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "instituto-opiniao-inteligencia-politica-pesquisa-correio-opiniao-df-03622-2026-1t"
+        },
+        {
+          "raw_label": "Professora Samara Mineiro (UP)",
+          "candidate_slug": "samara-mineiro",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "instituto-opiniao-inteligencia-politica-pesquisa-correio-opiniao-df-03622-2026-1t"
+        },
+        {
+          "raw_label": "Celina Leão (PP)",
+          "candidate_slug": "celina-leao",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "instituto-opiniao-inteligencia-politica-pesquisa-correio-opiniao-df-03622-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Leandro Grass (PT)",
+          "candidate_slug": "leandro-grass",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "instituto-opiniao-inteligencia-politica-pesquisa-correio-opiniao-df-03622-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Arruda (PSD)",
+          "candidate_slug": "jose-roberto-arruda",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "instituto-opiniao-inteligencia-politica-pesquisa-correio-opiniao-df-03622-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Paula Belmonte (PSDB)",
+          "candidate_slug": "paula-belmonte",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "instituto-opiniao-inteligencia-politica-pesquisa-correio-opiniao-df-03622-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Kiko Caputo (Novo)",
+          "candidate_slug": "kiko-caputo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "instituto-opiniao-inteligencia-politica-pesquisa-correio-opiniao-df-03622-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Ricardo Cappelli (PSB)",
+          "candidate_slug": "ricardo-cappelli",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "instituto-opiniao-inteligencia-politica-pesquisa-correio-opiniao-df-03622-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Professora Samara Mineiro (UP)",
+          "candidate_slug": "samara-mineiro",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "instituto-opiniao-inteligencia-politica-pesquisa-correio-opiniao-df-03622-2026-1t-espontaneo"
         }
       ],
       "pesquisas": [
@@ -4985,7 +5371,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|ES|1|estimulada|lista-real-time-big-data-2026-09-09-cenario-1|total_entrevistados"
       },
-      "exact_aliases_version": "monitor-2026-c5e2ec8b45a1e975",
+      "exact_aliases_version": "monitor-2026-0f83421e419877c0",
       "exact_aliases": [
         {
           "raw_label": "Breno Barcelos",
@@ -5009,23 +5395,93 @@
         },
         {
           "raw_label": "Lorenzo Pazolini (Republicanos)",
-          "candidate_slug": "pazolini"
+          "candidate_slug": "pazolini",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-es-05719-2026-1t"
         },
         {
           "raw_label": "Ricardo Ferraço (MDB)",
-          "candidate_slug": "ricardo-ferraco"
+          "candidate_slug": "ricardo-ferraco",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-es-05719-2026-1t"
         },
         {
           "raw_label": "Helder Salomão (PT)",
-          "candidate_slug": "helder-salomao"
+          "candidate_slug": "helder-salomao",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-es-05719-2026-1t"
         },
         {
           "raw_label": "Breno Barcelos (Missão)",
-          "candidate_slug": "breno-barcelar"
+          "candidate_slug": "breno-barcelar",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-es-05719-2026-1t"
         },
         {
           "raw_label": "Rafael Demuner (UP)",
-          "candidate_slug": "rafael-demuner"
+          "candidate_slug": "rafael-demuner",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-es-05719-2026-1t"
+        },
+        {
+          "raw_label": "Lorenzo Pazolini (Republicanos)",
+          "candidate_slug": "pazolini",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-es-05719-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Ricardo Ferraço (MDB)",
+          "candidate_slug": "ricardo-ferraco",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-es-05719-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Helder Salomão (PT)",
+          "candidate_slug": "helder-salomao",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-es-05719-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Breno Barcelos (Missão)",
+          "candidate_slug": "breno-barcelar",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-es-05719-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Rafael Demuner (UP)",
+          "candidate_slug": "rafael-demuner",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-es-05719-2026-1t-espontaneo"
         }
       ],
       "pesquisas": [
@@ -6137,7 +6593,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|MT|1|estimulada|lista-parana-pesquisas-2026-09-09-cenario-2|total_entrevistados"
       },
-      "exact_aliases_version": "monitor-2026-fcc93fd6e342e953",
+      "exact_aliases_version": "monitor-2026-cb36cf796b55b798",
       "exact_aliases": [
         {
           "raw_label": "Doutora Natasha",
@@ -6180,16 +6636,58 @@
           "candidate_slug": "wellington-fagundes"
         },
         {
+          "raw_label": "Otaviano Pivetta (Republicanos)",
+          "candidate_slug": "otaviano-pivetta",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-mt-09335-2026-1t"
+        },
+        {
+          "raw_label": "Wellington Fagundes (PL)",
+          "candidate_slug": "wellington-fagundes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-mt-09335-2026-1t"
+        },
+        {
           "raw_label": "Doutora Natasha (PSD)",
-          "candidate_slug": "natasha-slhessarenko"
+          "candidate_slug": "natasha-slhessarenko",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-mt-09335-2026-1t"
         },
         {
           "raw_label": "Sargento Laudicério (Agir)",
-          "candidate_slug": "laudicerio-aguiar"
+          "candidate_slug": "laudicerio-aguiar",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-mt-09335-2026-1t"
         },
         {
           "raw_label": "Mauricio Coelho (Mobiliza)",
-          "candidate_slug": "mauricio-coelho"
+          "candidate_slug": "mauricio-coelho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-mt-09335-2026-1t"
+        },
+        {
+          "raw_label": "Rafaell Milas (Missão)",
+          "candidate_slug": "rafaell-milas",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-mt-09335-2026-1t"
         }
       ],
       "pesquisas": [
@@ -6782,7 +7280,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|MS|1|estimulada|lista-atlasintel-2026-09-03-cenario-1|total_entrevistados"
       },
-      "exact_aliases_version": "monitor-2026-f1f3e2b2e3b002d7",
+      "exact_aliases_version": "monitor-2026-3bdb8383a0353bad",
       "exact_aliases": [
         {
           "raw_label": "Daniel Lemes",
@@ -6850,28 +7348,211 @@
           "scenario_id": "real-time-big-data-ms-2026-08-06-primeiro-turno-estimulado"
         },
         {
+          "raw_label": "Eduardo Riedel (PP)",
+          "candidate_slug": "eduardo-riedel",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-ranking-brasil-inteligencia-ms-04287-2026-1t"
+        },
+        {
+          "raw_label": "Fábio Trad (PT)",
+          "candidate_slug": "fabio-trad",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-ranking-brasil-inteligencia-ms-04287-2026-1t"
+        },
+        {
           "raw_label": "Delcídio do Amaral (PRD)",
-          "candidate_slug": "delcidio-amaral"
+          "candidate_slug": "delcidio-amaral",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-ranking-brasil-inteligencia-ms-04287-2026-1t"
+        },
+        {
+          "raw_label": "João Henrique Catan (Novo)",
+          "candidate_slug": "joao-henrique-catan",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-ranking-brasil-inteligencia-ms-04287-2026-1t"
         },
         {
           "raw_label": "Renato Gomes (DC)",
-          "candidate_slug": "renato-gomes"
+          "candidate_slug": "renato-gomes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-ranking-brasil-inteligencia-ms-04287-2026-1t"
         },
         {
           "raw_label": "Jefferson Bezerra (AGIR)",
-          "candidate_slug": "jeferson-bezerra"
+          "candidate_slug": "jeferson-bezerra",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-ranking-brasil-inteligencia-ms-04287-2026-1t"
+        },
+        {
+          "raw_label": "Lucien Rezende (PSOL)",
+          "candidate_slug": "lucien-rezende",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-ranking-brasil-inteligencia-ms-04287-2026-1t"
         },
         {
           "raw_label": "Daniel Lemes (PCO)",
-          "candidate_slug": "daniel-lemes"
+          "candidate_slug": "daniel-lemes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-ranking-brasil-inteligencia-ms-04287-2026-1t"
+        },
+        {
+          "raw_label": "Eduardo Riedel (PP)",
+          "candidate_slug": "eduardo-riedel",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-ranking-brasil-inteligencia-ms-04287-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Fábio Trad (PT)",
+          "candidate_slug": "fabio-trad",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-ranking-brasil-inteligencia-ms-04287-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Delcídio do Amaral (PRD)",
+          "candidate_slug": "delcidio-amaral",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-ranking-brasil-inteligencia-ms-04287-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Renato Gomes (DC)",
+          "candidate_slug": "renato-gomes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-ranking-brasil-inteligencia-ms-04287-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "João Henrique Catan (Novo)",
+          "candidate_slug": "joao-henrique-catan",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-ranking-brasil-inteligencia-ms-04287-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Jefferson Bezerra (AGIR)",
+          "candidate_slug": "jeferson-bezerra",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-ranking-brasil-inteligencia-ms-04287-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Lucien Rezende (PSOL)",
+          "candidate_slug": "lucien-rezende",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-ranking-brasil-inteligencia-ms-04287-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Eduardo Riedel (PP)",
+          "candidate_slug": "eduardo-riedel",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-novo-ibrape-ms-09851-2026-1t"
+        },
+        {
+          "raw_label": "Fábio Trad (PT)",
+          "candidate_slug": "fabio-trad",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-novo-ibrape-ms-09851-2026-1t"
+        },
+        {
+          "raw_label": "Delcídio do Amaral (PRD)",
+          "candidate_slug": "delcidio-amaral",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-novo-ibrape-ms-09851-2026-1t"
+        },
+        {
+          "raw_label": "João Henrique Catan (Novo)",
+          "candidate_slug": "joao-henrique-catan",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-novo-ibrape-ms-09851-2026-1t"
+        },
+        {
+          "raw_label": "Lucien Rezende (PSOL)",
+          "candidate_slug": "lucien-rezende",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-novo-ibrape-ms-09851-2026-1t"
         },
         {
           "raw_label": "Economista Renato",
-          "candidate_slug": "renato-gomes"
+          "candidate_slug": "renato-gomes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-novo-ibrape-ms-09851-2026-1t"
+        },
+        {
+          "raw_label": "Daniel Lemes (PCO)",
+          "candidate_slug": "daniel-lemes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-novo-ibrape-ms-09851-2026-1t"
         },
         {
           "raw_label": "Jeferson Bezerra (Agir)",
-          "candidate_slug": "jeferson-bezerra"
+          "candidate_slug": "jeferson-bezerra",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "instituto-novo-ibrape-ms-09851-2026-1t"
         }
       ],
       "pesquisas": [
@@ -7964,7 +8645,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|MG|1|estimulada|lista-quaest-2026-09-08-cenario-1|total_entrevistados"
       },
-      "exact_aliases_version": "monitor-2026-4cf4193c98310501",
+      "exact_aliases_version": "monitor-2026-52b3f1f0d742ea79",
       "exact_aliases": [
         {
           "raw_label": "Alexandre Kalil",
@@ -8051,16 +8732,238 @@
           "candidate_slug": "tulio-lopes"
         },
         {
+          "raw_label": "Cleitinho Azevedo (Republicanos)",
+          "candidate_slug": "cleitinho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-03276-2026-1t"
+        },
+        {
+          "raw_label": "Patrus Ananias (PT)",
+          "candidate_slug": "patrus-ananias",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-03276-2026-1t"
+        },
+        {
+          "raw_label": "Alexandre Kalil (PDT)",
+          "candidate_slug": "alexandre-kalil",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-03276-2026-1t"
+        },
+        {
+          "raw_label": "Mateus Simões (PSD)",
+          "candidate_slug": "mateus-simoes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-03276-2026-1t"
+        },
+        {
           "raw_label": "Flávio Roscoe (PL)",
-          "candidate_slug": "flavio-roscoe"
+          "candidate_slug": "flavio-roscoe",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-03276-2026-1t"
         },
         {
           "raw_label": "Gabriel (MDB)",
-          "candidate_slug": "gabriel-azevedo"
+          "candidate_slug": "gabriel-azevedo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-03276-2026-1t"
+        },
+        {
+          "raw_label": "Ben Mendes (Missão)",
+          "candidate_slug": "ben-mendes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-03276-2026-1t"
         },
         {
           "raw_label": "Professor Túlio Lopes (PCB)",
-          "candidate_slug": "tulio-lopes"
+          "candidate_slug": "tulio-lopes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-03276-2026-1t"
+        },
+        {
+          "raw_label": "Indira Xavier (UP)",
+          "candidate_slug": "indira-xavier",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-03276-2026-1t"
+        },
+        {
+          "raw_label": "Henrique Áreas (PCO)",
+          "candidate_slug": "henrique-areas",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-03276-2026-1t"
+        },
+        {
+          "raw_label": "Rafael Duda (PSTU)",
+          "candidate_slug": "rafael-duda",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-03276-2026-1t"
+        },
+        {
+          "raw_label": "Cleitinho Azevedo (Republicanos)",
+          "candidate_slug": "cleitinho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "atlasintel-mg-03290-2026-1t"
+        },
+        {
+          "raw_label": "Patrus Ananias (PT)",
+          "candidate_slug": "patrus-ananias",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "atlasintel-mg-03290-2026-1t"
+        },
+        {
+          "raw_label": "Alexandre Kalil (PDT)",
+          "candidate_slug": "alexandre-kalil",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "atlasintel-mg-03290-2026-1t"
+        },
+        {
+          "raw_label": "Flávio Roscoe (PL)",
+          "candidate_slug": "flavio-roscoe",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "atlasintel-mg-03290-2026-1t"
+        },
+        {
+          "raw_label": "Mateus Simões (PSD)",
+          "candidate_slug": "mateus-simoes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "atlasintel-mg-03290-2026-1t"
+        },
+        {
+          "raw_label": "Gabriel Azevedo (MDB)",
+          "candidate_slug": "gabriel-azevedo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "atlasintel-mg-03290-2026-1t"
+        },
+        {
+          "raw_label": "Ben Mendes (Missão)",
+          "candidate_slug": "ben-mendes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "atlasintel-mg-03290-2026-1t"
+        },
+        {
+          "raw_label": "Cleitinho Azevedo (Republicanos)",
+          "candidate_slug": "cleitinho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-mg-07331-2026-1t"
+        },
+        {
+          "raw_label": "Patrus Ananias (PT)",
+          "candidate_slug": "patrus-ananias",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-mg-07331-2026-1t"
+        },
+        {
+          "raw_label": "Alexandre Kalil (PDT)",
+          "candidate_slug": "alexandre-kalil",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-mg-07331-2026-1t"
+        },
+        {
+          "raw_label": "Mateus Simões (PSD)",
+          "candidate_slug": "mateus-simoes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-mg-07331-2026-1t"
+        },
+        {
+          "raw_label": "Flávio Roscoe (PL)",
+          "candidate_slug": "flavio-roscoe",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-mg-07331-2026-1t"
+        },
+        {
+          "raw_label": "Gabriel (MDB)",
+          "candidate_slug": "gabriel-azevedo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-mg-07331-2026-1t"
+        },
+        {
+          "raw_label": "Ben Mendes (Missão)",
+          "candidate_slug": "ben-mendes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-mg-07331-2026-1t"
+        },
+        {
+          "raw_label": "Indira Xavier (UP)",
+          "candidate_slug": "indira-xavier",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-mg-07331-2026-1t"
         }
       ],
       "pesquisas": [
@@ -10640,7 +11543,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|PR|1|estimulada|lista-irg-pesquisas-2026-09-04-cenario-2|total_entrevistados"
       },
-      "exact_aliases_version": "monitor-2026-dd461db740148313",
+      "exact_aliases_version": "monitor-2026-2464f11429c848d6",
       "exact_aliases": [
         {
           "raw_label": "Adriano Teixeira e José Carlos",
@@ -10743,44 +11646,490 @@
           "scenario_id": "real-time-big-data-pr-pr-09262-2026-2t-249840bfd6dd342b"
         },
         {
+          "raw_label": "Sergio Moro (PL)",
+          "candidate_slug": "sergio-moro-gov-pr",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-pr-00532-2026-1t"
+        },
+        {
+          "raw_label": "Sandro Alex (PSD)",
+          "candidate_slug": "sandro-alex",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-pr-00532-2026-1t"
+        },
+        {
+          "raw_label": "Requião Filho (PDT)",
+          "candidate_slug": "requiao-filho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-pr-00532-2026-1t"
+        },
+        {
+          "raw_label": "Luiz França (Missão)",
+          "candidate_slug": "luiz-franca",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-pr-00532-2026-1t"
+        },
+        {
+          "raw_label": "Sergio Moro (PL)",
+          "candidate_slug": "sergio-moro-gov-pr",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-pr-00532-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Sandro Alex (PSD)",
+          "candidate_slug": "sandro-alex",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-pr-00532-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Requião Filho (PDT)",
+          "candidate_slug": "requiao-filho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-pr-00532-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Sergio Moro (PL)",
+          "candidate_slug": "sergio-moro-gov-pr",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "atlasintel-pr-02671-2026-1t"
+        },
+        {
+          "raw_label": "Requião Filho (PDT)",
+          "candidate_slug": "requiao-filho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "atlasintel-pr-02671-2026-1t"
+        },
+        {
+          "raw_label": "Sandro Alex (PSD)",
+          "candidate_slug": "sandro-alex",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "atlasintel-pr-02671-2026-1t"
+        },
+        {
+          "raw_label": "Luiz França (Missão)",
+          "candidate_slug": "luiz-franca",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "atlasintel-pr-02671-2026-1t"
+        },
+        {
           "raw_label": "Tayná Miessa (UP)",
-          "candidate_slug": "tayna-miessa"
+          "candidate_slug": "tayna-miessa",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "atlasintel-pr-02671-2026-1t"
         },
         {
           "raw_label": "Adriano Funileiro (PCO)",
-          "candidate_slug": "adriano-funileiro"
+          "candidate_slug": "adriano-funileiro",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "atlasintel-pr-02671-2026-1t"
+        },
+        {
+          "raw_label": "Sergio Moro (PL)",
+          "candidate_slug": "sergio-moro-gov-pr",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "alfa-inteligencia-pr-03640-2026-1t"
+        },
+        {
+          "raw_label": "Sandro Alex (PSD)",
+          "candidate_slug": "sandro-alex",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "alfa-inteligencia-pr-03640-2026-1t"
+        },
+        {
+          "raw_label": "Requião Filho (PDT)",
+          "candidate_slug": "requiao-filho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "alfa-inteligencia-pr-03640-2026-1t"
+        },
+        {
+          "raw_label": "Luiz França (Missão)",
+          "candidate_slug": "luiz-franca",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "alfa-inteligencia-pr-03640-2026-1t"
+        },
+        {
+          "raw_label": "Sergio Moro (PL)",
+          "candidate_slug": "sergio-moro-gov-pr",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "alfa-inteligencia-pr-03640-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Sandro Alex (PSD)",
+          "candidate_slug": "sandro-alex",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "alfa-inteligencia-pr-03640-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Requião Filho (PDT)",
+          "candidate_slug": "requiao-filho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "alfa-inteligencia-pr-03640-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Luiz França (Missão)",
+          "candidate_slug": "luiz-franca",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "alfa-inteligencia-pr-03640-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Sergio Moro (PL)",
+          "candidate_slug": "sergio-moro-gov-pr",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-pr-01022-2026-1t"
+        },
+        {
+          "raw_label": "Requião Filho (PDT)",
+          "candidate_slug": "requiao-filho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-pr-01022-2026-1t"
+        },
+        {
+          "raw_label": "Sandro Alex (PSD)",
+          "candidate_slug": "sandro-alex",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-pr-01022-2026-1t"
+        },
+        {
+          "raw_label": "Sergio Moro (PL)",
+          "candidate_slug": "sergio-moro-gov-pr",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-pr-01022-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Requião Filho (PDT)",
+          "candidate_slug": "requiao-filho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-pr-01022-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Sandro Alex (PSD)",
+          "candidate_slug": "sandro-alex",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-pr-01022-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Sergio Moro (PL)",
+          "candidate_slug": "sergio-moro-gov-pr",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "neokemp-pr-08899-2026-1t"
+        },
+        {
+          "raw_label": "Requião Filho (PDT)",
+          "candidate_slug": "requiao-filho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "neokemp-pr-08899-2026-1t"
+        },
+        {
+          "raw_label": "Sandro Alex (PSD)",
+          "candidate_slug": "sandro-alex",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "neokemp-pr-08899-2026-1t"
+        },
+        {
+          "raw_label": "Luiz França (Missão)",
+          "candidate_slug": "luiz-franca",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "neokemp-pr-08899-2026-1t"
+        },
+        {
+          "raw_label": "Tayná Miessa (UP)",
+          "candidate_slug": "tayna-miessa",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "neokemp-pr-08899-2026-1t"
+        },
+        {
+          "raw_label": "Adriano Funileiro (PCO)",
+          "candidate_slug": "adriano-funileiro",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "neokemp-pr-08899-2026-1t"
         },
         {
           "raw_label": "Doutor Alexandre Salomão (Mobiliza)",
-          "candidate_slug": "alexandre-salomao"
+          "candidate_slug": "alexandre-salomao",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "neokemp-pr-08899-2026-1t"
         },
         {
           "raw_label": "Samuel de Mattos (PSTU)",
-          "candidate_slug": "samuel-de-mattos"
+          "candidate_slug": "samuel-de-mattos",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "neokemp-pr-08899-2026-1t"
         },
         {
           "raw_label": "Sergio Moro (PL) e Edson Vasconcelos (PL)",
-          "candidate_slug": "sergio-moro-gov-pr"
+          "candidate_slug": "sergio-moro-gov-pr",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "irg-pesquisas-pr-01172-2026-1t"
         },
         {
           "raw_label": "Sandro Alex (PSD) e Rafael Greca (MDB)",
-          "candidate_slug": "sandro-alex"
+          "candidate_slug": "sandro-alex",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "irg-pesquisas-pr-01172-2026-1t"
         },
         {
           "raw_label": "Requião Filho (PDT) e Michele Caputo (Solidariedade)",
-          "candidate_slug": "requiao-filho"
+          "candidate_slug": "requiao-filho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "irg-pesquisas-pr-01172-2026-1t"
         },
         {
           "raw_label": "Luiz França (Missão) e João Adolfo (Missão)",
-          "candidate_slug": "luiz-franca"
+          "candidate_slug": "luiz-franca",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "irg-pesquisas-pr-01172-2026-1t"
         },
         {
           "raw_label": "Tayná Miessa (UP) e William Araki (UP)",
-          "candidate_slug": "tayna-miessa"
+          "candidate_slug": "tayna-miessa",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "irg-pesquisas-pr-01172-2026-1t"
         },
         {
           "raw_label": "Samuel de Mattos (PSTU) e Helena Figueiredo (PSTU)",
-          "candidate_slug": "samuel-de-mattos"
+          "candidate_slug": "samuel-de-mattos",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "irg-pesquisas-pr-01172-2026-1t"
+        },
+        {
+          "raw_label": "Sergio Moro (PL)",
+          "candidate_slug": "sergio-moro-gov-pr",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "irg-pesquisas-pr-01172-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Requião Filho (PDT)",
+          "candidate_slug": "requiao-filho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "irg-pesquisas-pr-01172-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Sandro Alex (PSD)",
+          "candidate_slug": "sandro-alex",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "irg-pesquisas-pr-01172-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Luiz França (Missão)",
+          "candidate_slug": "luiz-franca",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "irg-pesquisas-pr-01172-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Tayná Miessa (UP)",
+          "candidate_slug": "tayna-miessa",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "irg-pesquisas-pr-01172-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Sergio Moro (PL)",
+          "candidate_slug": "sergio-moro-gov-pr",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "neokemp-pr-07451-2026-1t"
+        },
+        {
+          "raw_label": "Requião Filho (PDT)",
+          "candidate_slug": "requiao-filho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "neokemp-pr-07451-2026-1t"
+        },
+        {
+          "raw_label": "Sandro Alex (PSD)",
+          "candidate_slug": "sandro-alex",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "neokemp-pr-07451-2026-1t"
+        },
+        {
+          "raw_label": "Adriano Funileiro (PCO)",
+          "candidate_slug": "adriano-funileiro",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "neokemp-pr-07451-2026-1t"
+        },
+        {
+          "raw_label": "Luiz França (Missão)",
+          "candidate_slug": "luiz-franca",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "neokemp-pr-07451-2026-1t"
+        },
+        {
+          "raw_label": "Tayná Miessa (UP)",
+          "candidate_slug": "tayna-miessa",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "neokemp-pr-07451-2026-1t"
+        },
+        {
+          "raw_label": "Samuel de Mattos (PSTU)",
+          "candidate_slug": "samuel-de-mattos",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "neokemp-pr-07451-2026-1t"
+        },
+        {
+          "raw_label": "Doutor Alexandre Salomão (Mobiliza)",
+          "candidate_slug": "alexandre-salomao",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Paraná",
+          "turn": 1,
+          "scenario_id": "neokemp-pr-07451-2026-1t"
         }
       ],
       "pesquisas": [
@@ -14054,7 +15403,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|RJ|1|estimulada|lista-parana-pesquisas-2026-09-08-cenario-1|total_entrevistados"
       },
-      "exact_aliases_version": "monitor-2026-effb9330b54c0825",
+      "exact_aliases_version": "monitor-2026-c2feb78e4335fa71",
       "exact_aliases": [
         {
           "raw_label": "André Marinho",
@@ -14129,16 +15478,337 @@
           "candidate_slug": "william-siri"
         },
         {
+          "raw_label": "Eduardo Paes (PSD)",
+          "candidate_slug": "eduardo-paes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "quaest-rj-04982-2026-1t"
+        },
+        {
+          "raw_label": "Douglas Ruas (PL)",
+          "candidate_slug": "douglas-ruas",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "quaest-rj-04982-2026-1t"
+        },
+        {
           "raw_label": "Garotinho (Republicanos)",
-          "candidate_slug": "garotinho"
+          "candidate_slug": "garotinho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "quaest-rj-04982-2026-1t"
+        },
+        {
+          "raw_label": "Cyro Garcia (PSTU)",
+          "candidate_slug": "cyro-garcia",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "quaest-rj-04982-2026-1t"
+        },
+        {
+          "raw_label": "William Siri (PSOL)",
+          "candidate_slug": "william-siri",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "quaest-rj-04982-2026-1t"
+        },
+        {
+          "raw_label": "Coronel Busnello (Missão)",
+          "candidate_slug": "coronel-busnello",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "quaest-rj-04982-2026-1t"
+        },
+        {
+          "raw_label": "André Marinho (Novo)",
+          "candidate_slug": "andre-marinho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "quaest-rj-04982-2026-1t"
+        },
+        {
+          "raw_label": "Juliete Pantoja (UP)",
+          "candidate_slug": "juliete-pantoja",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "quaest-rj-04982-2026-1t"
+        },
+        {
+          "raw_label": "Luan Monteiro (PCO)",
+          "candidate_slug": "luan-monteiro",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "quaest-rj-04982-2026-1t"
+        },
+        {
+          "raw_label": "Eduardo Paes (PSD)",
+          "candidate_slug": "eduardo-paes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "quaest-rj-04982-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "Douglas Ruas (PL)",
+          "candidate_slug": "douglas-ruas",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "quaest-rj-04982-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "William Siri (PSOL)",
+          "candidate_slug": "william-siri",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "quaest-rj-04982-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "Cyro Garcia (PSTU)",
+          "candidate_slug": "cyro-garcia",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "quaest-rj-04982-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "Coronel Busnello (Missão)",
+          "candidate_slug": "coronel-busnello",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "quaest-rj-04982-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "André Marinho (Novo)",
+          "candidate_slug": "andre-marinho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "quaest-rj-04982-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "Juliete Pantoja (UP)",
+          "candidate_slug": "juliete-pantoja",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "quaest-rj-04982-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "Luan Monteiro (PCO)",
+          "candidate_slug": "luan-monteiro",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "quaest-rj-04982-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "Eduardo Paes (PSD)",
+          "candidate_slug": "eduardo-paes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "atlasintel-rj-01150-2026-1t"
+        },
+        {
+          "raw_label": "Douglas Ruas (PL)",
+          "candidate_slug": "douglas-ruas",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "atlasintel-rj-01150-2026-1t"
+        },
+        {
+          "raw_label": "Garotinho (Republicanos)",
+          "candidate_slug": "garotinho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "atlasintel-rj-01150-2026-1t"
+        },
+        {
+          "raw_label": "Coronel Busnello (Missão)",
+          "candidate_slug": "coronel-busnello",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "atlasintel-rj-01150-2026-1t"
+        },
+        {
+          "raw_label": "William Siri (PSOL)",
+          "candidate_slug": "william-siri",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "atlasintel-rj-01150-2026-1t"
+        },
+        {
+          "raw_label": "André Marinho (Novo)",
+          "candidate_slug": "andre-marinho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "atlasintel-rj-01150-2026-1t"
+        },
+        {
+          "raw_label": "Eduardo Paes (PSD)",
+          "candidate_slug": "eduardo-paes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rj-04036-2026-1t"
+        },
+        {
+          "raw_label": "Douglas Ruas (PL)",
+          "candidate_slug": "douglas-ruas",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rj-04036-2026-1t"
+        },
+        {
+          "raw_label": "Garotinho (Republicanos)",
+          "candidate_slug": "garotinho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rj-04036-2026-1t"
+        },
+        {
+          "raw_label": "André Marinho (Novo)",
+          "candidate_slug": "andre-marinho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rj-04036-2026-1t"
+        },
+        {
+          "raw_label": "Cyro Garcia (PSTU)",
+          "candidate_slug": "cyro-garcia",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rj-04036-2026-1t"
         },
         {
           "raw_label": "Juliete (UP)",
-          "candidate_slug": "juliete-pantoja"
+          "candidate_slug": "juliete-pantoja",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rj-04036-2026-1t"
+        },
+        {
+          "raw_label": "William Siri (PSOL)",
+          "candidate_slug": "william-siri",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rj-04036-2026-1t"
+        },
+        {
+          "raw_label": "Coronel Busnello (Missão)",
+          "candidate_slug": "coronel-busnello",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rj-04036-2026-1t"
+        },
+        {
+          "raw_label": "Luan Monteiro (PCO)",
+          "candidate_slug": "luan-monteiro",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rj-04036-2026-1t"
+        },
+        {
+          "raw_label": "Eduardo Paes (PSD)",
+          "candidate_slug": "eduardo-paes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rj-04036-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "Douglas Ruas (PL)",
+          "candidate_slug": "douglas-ruas",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rj-04036-2026-1t-cenario-2"
+        },
+        {
+          "raw_label": "Eduardo Paes",
+          "candidate_slug": "eduardo-paes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rj-04036-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Douglas Ruas",
+          "candidate_slug": "douglas-ruas",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rj-04036-2026-1t-espontaneo"
         },
         {
           "raw_label": "Garotinho",
-          "candidate_slug": "garotinho"
+          "candidate_slug": "garotinho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio de Janeiro",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rj-04036-2026-1t-espontaneo"
         }
       ],
       "pesquisas": [
@@ -15500,7 +17170,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|RS|1|estimulada|lista-real-time-big-data-2026-09-10-cenario-1|total_entrevistados"
       },
-      "exact_aliases_version": "monitor-2026-9857ff58f24b0c81",
+      "exact_aliases_version": "monitor-2026-d298162e3b4291c0",
       "exact_aliases": [
         {
           "raw_label": "Gabriel Souza",
@@ -15558,6 +17228,96 @@
           "geography": "Rio Grande do Sul",
           "turn": 1,
           "scenario_id": "real-time-big-data-rs-rs-09640-2026-1t-780d665f58cae3fa"
+        },
+        {
+          "raw_label": "Luciano Zucco (PL)",
+          "candidate_slug": "luciano-zucco",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Sul",
+          "turn": 1,
+          "scenario_id": "atlasintel-rs-00981-2026-1t"
+        },
+        {
+          "raw_label": "Juliana Brizola (PDT)",
+          "candidate_slug": "juliana-brizola",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Sul",
+          "turn": 1,
+          "scenario_id": "atlasintel-rs-00981-2026-1t"
+        },
+        {
+          "raw_label": "Gabriel Souza (MDB)",
+          "candidate_slug": "gabriel-souza",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Sul",
+          "turn": 1,
+          "scenario_id": "atlasintel-rs-00981-2026-1t"
+        },
+        {
+          "raw_label": "Zucco (PL)",
+          "candidate_slug": "luciano-zucco",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Sul",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rs-00319-2026-1t"
+        },
+        {
+          "raw_label": "Juliana Brizola (PDT)",
+          "candidate_slug": "juliana-brizola",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Sul",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rs-00319-2026-1t"
+        },
+        {
+          "raw_label": "Gabriel Souza (MDB)",
+          "candidate_slug": "gabriel-souza",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Sul",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rs-00319-2026-1t"
+        },
+        {
+          "raw_label": "Marcelo Maranata (PSDB)",
+          "candidate_slug": "marcelo-maranata",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Sul",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rs-00319-2026-1t"
+        },
+        {
+          "raw_label": "Cesar Pontes (PCO)",
+          "candidate_slug": "cesar-pontes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Sul",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rs-00319-2026-1t"
+        },
+        {
+          "raw_label": "Rejane de Oliveira (PSTU)",
+          "candidate_slug": "rejane-oliveira",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Sul",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rs-00319-2026-1t"
+        },
+        {
+          "raw_label": "Priscila Voigt (UP)",
+          "candidate_slug": "priscila-voigt",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Sul",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-rs-00319-2026-1t"
         }
       ],
       "pesquisas": [
@@ -17454,7 +19214,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|SC|1|estimulada|lista-quaest-2026-08-24-cenario-1|total_entrevistados"
       },
-      "exact_aliases_version": "monitor-2026-12ade650463a2a0c",
+      "exact_aliases_version": "monitor-2026-d7d41d43ed228056",
       "exact_aliases": [
         {
           "raw_label": "Bruno Pedreiro",
@@ -17490,35 +19250,174 @@
         },
         {
           "raw_label": "Jorginho Mello (PL)",
-          "candidate_slug": "jorginho-mello"
+          "candidate_slug": "jorginho-mello",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-sc-00866-2026-1t"
         },
         {
           "raw_label": "João Rodrigues (PSD)",
-          "candidate_slug": "joao-rodrigues"
+          "candidate_slug": "joao-rodrigues",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-sc-00866-2026-1t"
         },
         {
           "raw_label": "Gelson Merísio (PSB)",
-          "candidate_slug": "gelson-merisio"
+          "candidate_slug": "gelson-merisio",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-sc-00866-2026-1t"
         },
         {
           "raw_label": "Marcelo Brigadeiro (Missão)",
-          "candidate_slug": "marcelo-brigadeiro"
+          "candidate_slug": "marcelo-brigadeiro",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-sc-00866-2026-1t"
         },
         {
           "raw_label": "Professor Marcus Sodré (PSTU)",
-          "candidate_slug": "marcus-sodre"
+          "candidate_slug": "marcus-sodre",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-sc-00866-2026-1t"
+        },
+        {
+          "raw_label": "Jorginho Mello (PL)",
+          "candidate_slug": "jorginho-mello",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-sc-00866-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "João Rodrigues (PSD)",
+          "candidate_slug": "joao-rodrigues",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-sc-00866-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Gelson Merísio (PSB)",
+          "candidate_slug": "gelson-merisio",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-sc-00866-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Jorginho Mello (PL)",
+          "candidate_slug": "jorginho-mello",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sc-00523-2026-1t"
+        },
+        {
+          "raw_label": "João Rodrigues (PSD)",
+          "candidate_slug": "joao-rodrigues",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sc-00523-2026-1t"
+        },
+        {
+          "raw_label": "Gelson Merísio (PSB)",
+          "candidate_slug": "gelson-merisio",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sc-00523-2026-1t"
+        },
+        {
+          "raw_label": "Marcelo Brigadeiro (Missão)",
+          "candidate_slug": "marcelo-brigadeiro",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sc-00523-2026-1t"
+        },
+        {
+          "raw_label": "Professor Marcus Sodré (PSTU)",
+          "candidate_slug": "marcus-sodre",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sc-00523-2026-1t"
         },
         {
           "raw_label": "Laís Chaud (UP)",
-          "candidate_slug": "lais-chaud"
+          "candidate_slug": "lais-chaud",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sc-00523-2026-1t"
         },
         {
           "raw_label": "Ralf Zimmer (PRD)",
-          "candidate_slug": "ralf-zimmer"
+          "candidate_slug": "ralf-zimmer",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sc-00523-2026-1t"
         },
         {
           "raw_label": "Bruno Pedreiro do PCO (PCO)",
-          "candidate_slug": "bruno-pedreiro-do-pco"
+          "candidate_slug": "bruno-pedreiro-do-pco",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sc-00523-2026-1t"
+        },
+        {
+          "raw_label": "Jorginho Mello",
+          "candidate_slug": "jorginho-mello",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sc-00523-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "João Rodrigues",
+          "candidate_slug": "joao-rodrigues",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sc-00523-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Gelson Merísio",
+          "candidate_slug": "gelson-merisio",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Santa Catarina",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sc-00523-2026-1t-espontaneo"
         }
       ],
       "pesquisas": [
@@ -18268,7 +20167,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|SP|1|estimulada|lista-quaest-2026-09-08-cenario-2|total_entrevistados"
       },
-      "exact_aliases_version": "monitor-2026-cfbdd80da5badf9b",
+      "exact_aliases_version": "monitor-2026-15663a3e33ce192a",
       "exact_aliases": [
         {
           "raw_label": "Carlos Machado",
@@ -18328,11 +20227,291 @@
         },
         {
           "raw_label": "Tarcísio (Republicanos)",
-          "candidate_slug": "tarcisio-gov-sp"
+          "candidate_slug": "tarcisio-gov-sp",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "quaest-sp-02456-2026-1t"
+        },
+        {
+          "raw_label": "Fernando Haddad (PT)",
+          "candidate_slug": "haddad-gov-sp",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "quaest-sp-02456-2026-1t"
         },
         {
           "raw_label": "Policial Edjane (Agir)",
-          "candidate_slug": "policial-edjane"
+          "candidate_slug": "policial-edjane",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "quaest-sp-02456-2026-1t"
+        },
+        {
+          "raw_label": "Vera Lúcia (PSTU)",
+          "candidate_slug": "vera-lucia",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "quaest-sp-02456-2026-1t"
+        },
+        {
+          "raw_label": "Carlos Machado (PCB)",
+          "candidate_slug": "carlos-machado",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "quaest-sp-02456-2026-1t"
+        },
+        {
+          "raw_label": "Izadora Dias (PCO)",
+          "candidate_slug": "izadora-dias",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "quaest-sp-02456-2026-1t"
+        },
+        {
+          "raw_label": "Vivian Mendes (UP)",
+          "candidate_slug": "vivian-mendes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "quaest-sp-02456-2026-1t"
+        },
+        {
+          "raw_label": "Tarcísio (Republicanos)",
+          "candidate_slug": "tarcisio-gov-sp",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "quaest-sp-02456-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Fernando Haddad (PT)",
+          "candidate_slug": "haddad-gov-sp",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "quaest-sp-02456-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Tarcísio (Republicanos)",
+          "candidate_slug": "tarcisio-gov-sp",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sp-03057-2026-1t"
+        },
+        {
+          "raw_label": "Fernando Haddad (PT)",
+          "candidate_slug": "haddad-gov-sp",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sp-03057-2026-1t"
+        },
+        {
+          "raw_label": "Vera Lúcia (PSTU)",
+          "candidate_slug": "vera-lucia",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sp-03057-2026-1t"
+        },
+        {
+          "raw_label": "Carlos Machado (PCB)",
+          "candidate_slug": "carlos-machado",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sp-03057-2026-1t"
+        },
+        {
+          "raw_label": "Izadora Dias (PCO)",
+          "candidate_slug": "izadora-dias",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sp-03057-2026-1t"
+        },
+        {
+          "raw_label": "Policial Edjane (Agir)",
+          "candidate_slug": "policial-edjane",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sp-03057-2026-1t"
+        },
+        {
+          "raw_label": "Vivian Mendes (UP)",
+          "candidate_slug": "vivian-mendes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sp-03057-2026-1t"
+        },
+        {
+          "raw_label": "Tarcísio (Republicanos)",
+          "candidate_slug": "tarcisio-gov-sp",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sp-03057-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Fernando Haddad (PT)",
+          "candidate_slug": "haddad-gov-sp",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sp-03057-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Izadora Dias (PCO)",
+          "candidate_slug": "izadora-dias",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sp-03057-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Carlos Machado (PCB)",
+          "candidate_slug": "carlos-machado",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sp-03057-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Policial Edjane (Agir)",
+          "candidate_slug": "policial-edjane",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sp-03057-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Vera Lúcia (PSTU)",
+          "candidate_slug": "vera-lucia",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sp-03057-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Vivian Mendes (UP)",
+          "candidate_slug": "vivian-mendes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-sp-03057-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Tarcísio (Republicanos)",
+          "candidate_slug": "tarcisio-gov-sp",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "atlasintel-sp-02676-2026-1t"
+        },
+        {
+          "raw_label": "Fernando Haddad (PT)",
+          "candidate_slug": "haddad-gov-sp",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "atlasintel-sp-02676-2026-1t"
+        },
+        {
+          "raw_label": "Vivian Mendes (UP)",
+          "candidate_slug": "vivian-mendes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "atlasintel-sp-02676-2026-1t"
+        },
+        {
+          "raw_label": "Carlos Machado (PCB)",
+          "candidate_slug": "carlos-machado",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "atlasintel-sp-02676-2026-1t"
+        },
+        {
+          "raw_label": "Vera Lúcia (PSTU)",
+          "candidate_slug": "vera-lucia",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "atlasintel-sp-02676-2026-1t"
+        },
+        {
+          "raw_label": "Tarcísio (Republicanos)",
+          "candidate_slug": "tarcisio-gov-sp",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-sp-07495-2026-1t"
+        },
+        {
+          "raw_label": "Fernando Haddad (PT)",
+          "candidate_slug": "haddad-gov-sp",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-sp-07495-2026-1t"
+        },
+        {
+          "raw_label": "Tarcísio (Republicanos)",
+          "candidate_slug": "tarcisio-gov-sp",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-sp-07495-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Fernando Haddad (PT)",
+          "candidate_slug": "haddad-gov-sp",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-sp-07495-2026-1t-espontaneo"
         }
       ],
       "pesquisas": [

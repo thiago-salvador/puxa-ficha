@@ -52,6 +52,9 @@ describe("importação manual auditada de pesquisas", () => {
     const dataset = (catalogos.gov.datasets as { publication_scope: { geography_code: string } }[]).find((entry) => entry.publication_scope.geography_code === "PI")
     const catalogo = parsePesquisasEleitoraisJson(JSON.stringify(dataset), JSON.stringify(catalogos.govFontes))
     assert.ok(catalogo.pesquisas.some((entry) => entry.registration.code.value === "PI-99999/2026"))
+    const aliases = (dataset as unknown as { exact_aliases: { raw_label: string; scenario_id?: string }[] }).exact_aliases
+    assert.ok(aliases.filter((alias) => alias.raw_label === "Rafael Fonteles" && alias.scenario_id?.startsWith("instituto-exemplo-pi-99999-2026")).length === 1,
+      "alias novo fica escopado ao cenário")
   })
 
   it("falha fechado sem decisão de alias, sem captura ou com registro de outra UF", () => {

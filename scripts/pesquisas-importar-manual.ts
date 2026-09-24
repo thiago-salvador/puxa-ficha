@@ -211,9 +211,8 @@ export function montarRodada(rodada: RodadaColetada, aliases: DecisoesAlias, cat
       resultados: scenario.results.map((result) => {
         const slug = decisions[result.raw_label]
         if (slug) {
-          newAliases.push(rodada.uf === "BR"
-            ? { raw_label: result.raw_label, candidate_slug: slug, year: 2026, office, geography, turn: 1, scenario_id: scenarioId }
-            : { raw_label: result.raw_label, candidate_slug: slug })
+          // Scoped to the scenario so a reviewed spelling never becomes a UF-wide alias for the monitor.
+          newAliases.push({ raw_label: result.raw_label, candidate_slug: slug, year: 2026, office, geography, turn: 1, scenario_id: scenarioId })
         }
         return {
           raw_label: result.raw_label,
