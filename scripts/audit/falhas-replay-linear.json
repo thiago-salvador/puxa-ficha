@@ -1,6 +1,7 @@
 {
   "_comentario": "Conjunto FECHADO das migrations que falham no replay linear REAL (tolerante) em banco vazio, medido pelo harness scripts/audit/replay-migrations.sh. O modo --gate compara o resultado de uma execucao real contra esta lista: falha NOVA e regressao de replay em qualquer posicao (inclusive depois da 179a, que o modo estrito nunca alcanca); falha que sumiu exige regenerar este manifesto deliberadamente no mesmo PR. Regenerar: scripts/audit/replay-migrations.sh linear --tolerante e copiar os nomes.",
-  "aplicadas_esperadas": 398,
+  "aplicadas_esperadas": 399,
+  "_comentario_20260924120000": "Lista de situacoes da RPC do historico verificado igual ao dominio de situacao_candidatura: --gate PG17 mediu 399 aplicadas + 105 falhas historicas = 504 migrations; conjunto de falhas inalterado.",
   "_comentario_20260924003000": "Exercicio reaberto de dez senadores (issue #470): --gate PG17 mediu 398 aplicadas + 105 falhas historicas = 503 migrations; conjunto de falhas inalterado.",
   "_comentario_20260923233000": "Trajetoria partidaria de Eliziane: --gate PG17 mediu 397 aplicadas + 105 falhas historicas = 502 migrations; conjunto de falhas inalterado.",
   "_comentario_20260923175946": "Correcao de partido de Eliziane: --gate PG17 mediu 396 aplicadas + 105 falhas historicas = 501 migrations; conjunto de falhas inalterado.",

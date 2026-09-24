@@ -492,7 +492,11 @@ export const MEDICAO_REPLAY = Object.freeze({
   // 119 -> 120: assinaturas por recorte após numero_urna. --schema-gate PG17
   // mediu 120 aplicadas, 380 puladas, zero falhas; hash
   // 86205cf1b7110a461b925b59b2669f09e43b1f30bf01fd593a902430a969c2fa.
-  schemaReplayTamanho: 120,
+  // 120 -> 121: 20260924120000 troca a lista de situações da RPC do histórico
+  // verificado pelo domínio de situacao_candidatura (DDL pura). --schema-gate
+  // PG17 mediu 121 aplicadas, 383 puladas, zero falhas; hash
+  // 830241ffa7174576e53b01533a775d46d3dd2f93802cb884bf4c873c9c104cd0.
+  schemaReplayTamanho: 121,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.
