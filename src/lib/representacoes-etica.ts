@@ -12,24 +12,49 @@ import { isFaseRepresentacao, type FaseRepresentacao } from "./representacoes-et
 
 export const REPRESENTACOES_ETICA_POLICY = "pf-representacoes-etica-v1"
 
-export interface RepresentacaoEticaAprovada {
+interface CamposRepresentacaoEticaAprovada {
   id: string
   candidate_slug: string
+  ultimo_andamento_em: string
+  verificado_em: string
+  url_oficial: string
+  revisao: { aprovado: true; revisor_tipo: "humano"; aprovado_em: string }
+}
+
+export interface RepresentacaoEticaCamaraAprovada extends CamposRepresentacaoEticaAprovada {
   casa: "camara"
   deputado_id: number
   proposicao: { id: number; sigla: "REP"; numero: number; ano: number }
   fase: FaseRepresentacao
-  /** Data (YYYY-MM-DD) do último andamento lido na API. */
-  ultimo_andamento_em: string
-  /** Data (YYYY-MM-DD) em que a fase foi conferida na fonte oficial. */
-  verificado_em: string
-  url_oficial: string
   /** Como o deputado foi ligado ao candidato e quando isso foi reconferido nas fontes (sem CPF). */
-  identidade: { metodo: MetodoIdentidadeRepresentacao; conferida_em: string }
-  revisao: { aprovado: true; revisor_tipo: "humano"; aprovado_em: string }
+  identidade: { metodo: "seed_ids_camara" | "cpf_tse_camara"; conferida_em: string }
 }
 
-export type MetodoIdentidadeRepresentacao = "seed_ids_camara" | "cpf_tse_camara"
+export interface RepresentacaoEticaSenadoAprovada extends CamposRepresentacaoEticaAprovada {
+  casa: "senado"
+  senador_id: number
+  processo: { id: number; sigla: "PCE"; numero: number; ano: number }
+  situacao_oficial: { sigla: string; descricao: string }
+  identidade: {
+    metodo: "seed_ids_senado"
+    conferida_em: string
+    alvo: { metodo: "ementa" | "documento"; fonte_url: string; trecho_sha256: string; conferida_em: string }
+  }
+  revisao: {
+    aprovado: true
+    revisor_tipo: "humano"
+    aprovado_em: string
+    alvo_confirmado: true
+    candidato_confirmado: true
+    situacao_confirmada: true
+    situacao_sigla: string
+    situacao_descricao: string
+  }
+}
+
+export type RepresentacaoEticaAprovada = RepresentacaoEticaCamaraAprovada | RepresentacaoEticaSenadoAprovada
+
+export type MetodoIdentidadeRepresentacao = "seed_ids_camara" | "cpf_tse_camara" | "seed_ids_senado"
 
 interface RepresentacoesEticaIssue {
   index: number
@@ -47,8 +72,16 @@ export function urlFichaTramitacaoCamara(proposicaoId: number): string {
   return `https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=${proposicaoId}`
 }
 
+export function urlProcessoSenado(processoId: number): string {
+  return `https://legis.senado.leg.br/dadosabertos/processo/${processoId}?v=1`
+}
+
 export function idRepresentacaoEtica(proposicaoId: number, deputadoId: number): string {
   return `camara-rep-${proposicaoId}-dep-${deputadoId}`
+}
+
+export function idProcessoEticaSenado(processoId: number, senadorId: number): string {
+  return `senado-pce-${processoId}-sen-${senadorId}`
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -70,48 +103,79 @@ export function parseRepresentacaoAprovada(
   value: unknown,
 ): { ok: true; item: RepresentacaoEticaAprovada } | { ok: false; motivo: string } {
   if (!isRecord(value)) return { ok: false, motivo: "item não é objeto" }
-  const { id, candidate_slug, casa, deputado_id, proposicao, fase, ultimo_andamento_em, verificado_em, url_oficial, identidade, revisao } =
+  const { id, candidate_slug, casa, deputado_id, senador_id, proposicao, processo, fase, situacao_oficial, ultimo_andamento_em, verificado_em, url_oficial, identidade, revisao } =
     value
   if (typeof candidate_slug !== "string" || candidate_slug.trim() === "") return { ok: false, motivo: "candidate_slug ausente" }
-  if (casa !== "camara") return { ok: false, motivo: "casa diferente de camara" }
-  if (!inteiroPositivo(deputado_id)) return { ok: false, motivo: "deputado_id inválido" }
-  if (!isRecord(proposicao)) return { ok: false, motivo: "proposicao ausente" }
-  if (proposicao.sigla !== "REP") return { ok: false, motivo: "proposicao não é REP" }
-  if (!inteiroPositivo(proposicao.id) || !inteiroPositivo(proposicao.numero) || !inteiroPositivo(proposicao.ano)) {
-    return { ok: false, motivo: "proposicao com id, número ou ano inválido" }
-  }
-  if (id !== idRepresentacaoEtica(proposicao.id, deputado_id)) return { ok: false, motivo: "id não bate com proposição e deputado" }
-  if (!isFaseRepresentacao(fase)) return { ok: false, motivo: "fase fora do enum" }
   if (!dataValida(ultimo_andamento_em)) return { ok: false, motivo: "ultimo_andamento_em inválido" }
   if (!dataValida(verificado_em)) return { ok: false, motivo: "verificado_em inválido" }
   if (verificado_em < ultimo_andamento_em) return { ok: false, motivo: "verificado_em anterior ao último andamento" }
-  if (url_oficial !== urlFichaTramitacaoCamara(proposicao.id)) return { ok: false, motivo: "url_oficial não é a ficha oficial da proposição" }
-  if (
-    !isRecord(identidade) ||
-    (identidade.metodo !== "seed_ids_camara" && identidade.metodo !== "cpf_tse_camara") ||
-    !dataValida(identidade.conferida_em)
-  ) {
-    return { ok: false, motivo: "sem registro da conferência de identidade" }
-  }
   if (!isRecord(revisao) || revisao.aprovado !== true || revisao.revisor_tipo !== "humano" || !dataValida(revisao.aprovado_em)) {
     return { ok: false, motivo: "sem aprovação humana registrada" }
   }
-  return {
-    ok: true,
-    item: {
-      id,
-      candidate_slug,
-      casa,
-      deputado_id,
-      proposicao: { id: proposicao.id, sigla: "REP", numero: proposicao.numero, ano: proposicao.ano },
-      fase,
-      ultimo_andamento_em,
-      verificado_em,
-      url_oficial,
-      identidade: { metodo: identidade.metodo, conferida_em: identidade.conferida_em as string },
-      revisao: { aprovado: true, revisor_tipo: "humano", aprovado_em: revisao.aprovado_em as string },
-    },
+  if (casa === "camara") {
+    if (!inteiroPositivo(deputado_id)) return { ok: false, motivo: "deputado_id inválido" }
+    if (!isRecord(proposicao)) return { ok: false, motivo: "proposicao ausente" }
+    if (proposicao.sigla !== "REP") return { ok: false, motivo: "proposicao não é REP" }
+    if (!inteiroPositivo(proposicao.id) || !inteiroPositivo(proposicao.numero) || !inteiroPositivo(proposicao.ano)) {
+      return { ok: false, motivo: "proposicao com id, número ou ano inválido" }
+    }
+    if (id !== idRepresentacaoEtica(proposicao.id, deputado_id)) return { ok: false, motivo: "id não bate com proposição e deputado" }
+    if (!isFaseRepresentacao(fase)) return { ok: false, motivo: "fase fora do enum" }
+    if (url_oficial !== urlFichaTramitacaoCamara(proposicao.id)) return { ok: false, motivo: "url_oficial não é a ficha oficial da proposição" }
+    if (!isRecord(identidade) || (identidade.metodo !== "seed_ids_camara" && identidade.metodo !== "cpf_tse_camara") || !dataValida(identidade.conferida_em)) {
+      return { ok: false, motivo: "sem registro da conferência de identidade" }
+    }
+    return {
+      ok: true,
+      item: {
+        id, candidate_slug, casa, deputado_id,
+        proposicao: { id: proposicao.id, sigla: "REP", numero: proposicao.numero, ano: proposicao.ano },
+        fase, ultimo_andamento_em, verificado_em, url_oficial,
+        identidade: { metodo: identidade.metodo, conferida_em: identidade.conferida_em as string },
+        revisao: { aprovado: true, revisor_tipo: "humano", aprovado_em: revisao.aprovado_em as string },
+      },
+    }
   }
+  if (casa === "senado") {
+    if (!inteiroPositivo(senador_id)) return { ok: false, motivo: "senador_id inválido" }
+    if (!isRecord(processo) || processo.sigla !== "PCE" || !inteiroPositivo(processo.id) || !inteiroPositivo(processo.numero) || !inteiroPositivo(processo.ano)) {
+      return { ok: false, motivo: "processo PCE inválido" }
+    }
+    if (id !== idProcessoEticaSenado(processo.id, senador_id)) return { ok: false, motivo: "id não bate com processo e senador" }
+    if (url_oficial !== urlProcessoSenado(processo.id)) return { ok: false, motivo: "url_oficial não é a fonte oficial do processo no Senado" }
+    if (!isRecord(situacao_oficial) || typeof situacao_oficial.sigla !== "string" || !situacao_oficial.sigla || typeof situacao_oficial.descricao !== "string" || !situacao_oficial.descricao.trim()) {
+      return { ok: false, motivo: "situação oficial ausente" }
+    }
+    if (!isRecord(identidade) || identidade.metodo !== "seed_ids_senado" || !dataValida(identidade.conferida_em) || !isRecord(identidade.alvo)) {
+      return { ok: false, motivo: "sem registro das duas pontes de identidade" }
+    }
+    const alvo = identidade.alvo
+    if ((alvo.metodo !== "ementa" && alvo.metodo !== "documento") || typeof alvo.fonte_url !== "string" || !/^https:\/\/legis\.senado\.leg\.br\/dadosabertos\/processo(?:\/|\?)/.test(alvo.fonte_url) || typeof alvo.trecho_sha256 !== "string" || !/^[a-f0-9]{64}$/.test(alvo.trecho_sha256) || !dataValida(alvo.conferida_em)) {
+      return { ok: false, motivo: "evidência oficial do alvo incompleta" }
+    }
+    if (revisao.alvo_confirmado !== true || revisao.candidato_confirmado !== true || revisao.situacao_confirmada !== true || revisao.situacao_sigla !== situacao_oficial.sigla || revisao.situacao_descricao !== situacao_oficial.descricao) {
+      return { ok: false, motivo: "aprovação humana não confirma alvo, candidato e situação" }
+    }
+    return {
+      ok: true,
+      item: {
+        id, candidate_slug, casa, senador_id,
+        processo: { id: processo.id, sigla: "PCE", numero: processo.numero, ano: processo.ano },
+        situacao_oficial: { sigla: situacao_oficial.sigla, descricao: situacao_oficial.descricao },
+        ultimo_andamento_em, verificado_em, url_oficial,
+        identidade: {
+          metodo: "seed_ids_senado", conferida_em: identidade.conferida_em as string,
+          alvo: { metodo: alvo.metodo, fonte_url: alvo.fonte_url, trecho_sha256: alvo.trecho_sha256, conferida_em: alvo.conferida_em as string },
+        },
+        revisao: {
+          aprovado: true, revisor_tipo: "humano", aprovado_em: revisao.aprovado_em as string,
+          alvo_confirmado: true, candidato_confirmado: true, situacao_confirmada: true,
+          situacao_sigla: revisao.situacao_sigla as string, situacao_descricao: revisao.situacao_descricao as string,
+        },
+      },
+    }
+  }
+  return { ok: false, motivo: "casa diferente de camara ou senado" }
 }
 
 export function validateRepresentacoesEticaDataset(dataset: unknown): {
@@ -161,6 +225,8 @@ export function indexarRepresentacoesEtica(dataset: unknown): (candidateSlug: st
 
 export const getRepresentacoesEticaAprovadas = indexarRepresentacoesEtica(rawDataset)
 
-export function representacaoTitulo(item: Pick<RepresentacaoEticaAprovada, "proposicao">): string {
-  return `Representação ${item.proposicao.numero}/${item.proposicao.ano}`
+export function representacaoTitulo(item: RepresentacaoEticaAprovada): string {
+  return item.casa === "camara"
+    ? `Representação ${item.proposicao.numero}/${item.proposicao.ano}`
+    : `PCE ${item.processo.numero}/${item.processo.ano}`
 }

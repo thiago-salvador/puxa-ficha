@@ -4,17 +4,24 @@ import { tmpdir } from "node:os"
 import { join } from "node:path"
 import { describe, it } from "node:test"
 import { cachePodeGuardar, dentroDeCheckoutGit } from "../scripts/coletar-representacoes-etica"
+import { remontarRepresentacaoNasFontes } from "../scripts/aprovar-representacao-etica"
 import {
+  CAMARA_API,
+  carregarLegislatura,
   coletarRepresentacoesEtica,
   indiceDeNomes,
   indicesDeCandidatos,
   resolverAlvos,
+  sqMaisRecente,
   trechoDoAlvo,
   vincularCandidato,
   type ApiCamara,
   type CandidatoSeed,
   type DeputadoLegislatura,
 } from "../scripts/lib/representacoes-etica-coleta"
+import type { ItemFila } from "../scripts/lib/representacoes-etica-coleta"
+import { montarFilaDeMudancas } from "../scripts/lib/representacoes-etica-monitor"
+import { FASES_SO_REVISAO_HUMANA } from "../src/lib/representacoes-etica-fase"
 
 const FIXTURE = "tests/fixtures/representacoes-etica"
 const respostas = JSON.parse(readFileSync(`${FIXTURE}/api-camara-golden.json`, "utf8")) as Record<
@@ -23,6 +30,7 @@ const respostas = JSON.parse(readFileSync(`${FIXTURE}/api-camara-golden.json`, "
 >
 // A variável existe para o controle negativo: um golden adulterado precisa falhar.
 const golden = JSON.parse(readFileSync(process.env.PF_REP_ETICA_GOLDEN ?? `${FIXTURE}/golden.json`, "utf8"))
+const paginationFixture = JSON.parse(readFileSync(`${FIXTURE}/pagination-two-pages.json`, "utf8"))
 
 const apiGravada: ApiCamara = {
   async get(path) {
@@ -49,9 +57,9 @@ function cpfPorSqDoGolden(): Map<string, string> {
   return mapa
 }
 
-async function coletarGolden() {
+async function coletarGolden(api: ApiCamara = apiGravada) {
   return coletarRepresentacoesEtica({
-    api: apiGravada,
+    api,
     legislatura: golden.legislatura,
     seed: seedDoGolden(),
     cpfPorSq: cpfPorSqDoGolden(),
@@ -59,6 +67,128 @@ async function coletarGolden() {
     concorrencia: 2,
   })
 }
+
+describe("paginação da API", () => {
+  it("segue next até a segunda página e coleta seus itens", async () => {
+    const paginas = [paginationFixture.primeira_pagina, paginationFixture.segunda_pagina]
+    const caminhoPrimeira = paginas[0].path
+    const caminhoSegunda = paginas[1].path
+    const pathOriginal = "/proposicoes?siglaTipo=REP&ano=2023&itens=100&ordem=ASC&ordenarPor=id"
+    const registros = (respostas[pathOriginal].dados as Array<{ id: number }>)
+    const visitados: string[] = []
+    const apiComDuasPaginas: ApiCamara = {
+      async get(path) {
+        visitados.push(path)
+        if (path === caminhoPrimeira || path === caminhoSegunda) {
+          const pagina = paginas.find((item) => item.path === path)!
+          return {
+            dados: pagina.ids.map((id: number) => registros.find((item) => item.id === id)!),
+            links: pagina.next ? [{ rel: "next", href: `${CAMARA_API}${pagina.next}` }] : [],
+          }
+        }
+        return apiGravada.get(path)
+      },
+    }
+
+    const fila = await coletarGolden(apiComDuasPaginas)
+    assert.ok(visitados.includes(caminhoSegunda), "o caminho next da página 2 foi consultado")
+    assert.equal(fila.total_representacoes, golden.total_representacoes)
+    assert.ok(fila.itens.some((item) => item.representacao.id === 2376389), "REP listada somente na página 2 foi coletada")
+  })
+})
+
+describe("monitor de mudanças publicado", () => {
+  it("registra as consultas reais das tramitações da REP apensada e da principal", async () => {
+    const fila = await coletarGolden()
+    const marcel = fila.itens.find((item) => item.id === "camara-rep-2563294-dep-156190")!
+    const seed = seedDoGolden()
+    const ano = sqMaisRecente(seed.find((item) => item.slug === marcel.candidato.slug)!)?.ano
+    assert.ok(ano)
+    const visitados: string[] = []
+    const fontes = await remontarRepresentacaoNasFontes(
+      { id: marcel.id, candidato: { slug: marcel.candidato.slug }, representacao: { id: marcel.representacao.id } },
+      golden.legislatura,
+      seed,
+      new Date(golden.agora),
+      {
+        legislatura: await carregarLegislatura(apiGravada, golden.legislatura, 2),
+        cpfPorSqPorAno: new Map([[ano, cpfPorSqDoGolden()]]),
+        api: apiGravada,
+        onConsulta: (path) => visitados.push(path),
+      },
+    )
+    assert.equal(fontes.remontado?.representacao.apensada_a, 2563290)
+    assert.ok(visitados.includes("/proposicoes/2563294/tramitacoes"))
+    assert.ok(visitados.includes("/proposicoes/2563290/tramitacoes"))
+    assert.ok(visitados.every((path) => !path.includes("cpf")), "a trilha não contém CPF")
+  })
+
+  it("gera revisão em mudança sintética e não modifica o dataset", () => {
+    const original = JSON.parse(readFileSync("scripts/data/representacoes-conselho-etica.json", "utf8"))
+    const dataset = { ...original, itens: [{ ...original.itens[0], fase: "apresentada" }] }
+    const antes = JSON.stringify(dataset)
+    const publicado = dataset.itens[0]
+    const faseNova = publicado.fase === "apresentada" ? "encaminhada_conselho" : "apresentada"
+    const dataNova = publicado.ultimo_andamento_em === "2026-05-19" ? "2026-05-20" : "2026-05-19"
+    const atual = {
+      id: publicado.id,
+      status_revisao: "pendente",
+      candidato: { slug: publicado.candidate_slug, nome_urna: "Sintético", cargo_disputado: "deputado federal", estado: null, metodo_identidade: publicado.identidade.metodo },
+      deputado: { id: publicado.deputado_id, nome: "Deputado sintético", via_alvo: "nome_parlamentar", nome_casado: "Deputado sintético", url_api: "https://example.invalid" },
+      representacao: { id: publicado.proposicao.id, sigla: "REP", numero: publicado.proposicao.numero, ano: publicado.proposicao.ano, ementa: "", data_apresentacao: "2026-01-01", url_oficial: publicado.url_oficial, url_api: "", apensada_a: null, situacao_camara: null },
+      fase_sugerida: { fase: faseNova, data: dataNova, evidencia: { origem: "representacao", proposicao_id: publicado.proposicao.id, siglaOrgao: "", codTipoTramitacao: "0", descricao: "Movimento sintético para teste" } },
+      fase_sugerida_label: "Fase sintética para teste",
+      ultimo_andamento: { proposicao_id: publicado.proposicao.id, data: dataNova, orgao: "", descricao: "Movimento sintético", despacho: "Texto sintético para teste" },
+      recursos: [],
+      despachos_para_revisao: [],
+      verificado_em: "2026-09-24",
+    } as ItemFila
+
+    const fila = montarFilaDeMudancas(dataset, { itens: [atual] }, "2026-09-24T12:00:00.000Z")
+    assert.equal(fila.itens_publicados_verificados, 1)
+    assert.equal(fila.alertas.length, 1)
+    assert.deepEqual(fila.alertas[0].motivos, ["data do último andamento mudou", "fase sugerida diverge após movimento"])
+
+    const atualSemMovimento = {
+      ...atual,
+      ultimo_andamento: { ...atual.ultimo_andamento!, data: publicado.ultimo_andamento_em },
+    }
+    assert.equal(montarFilaDeMudancas(dataset, { itens: [atualSemMovimento] }, "2026-09-24T12:00:00.000Z").alertas.length, 0,
+      "uma diferença antiga entre rótulo editorial e sugestão automática não gera alerta repetido")
+
+    const publicadoHumano = { ...publicado, fase: "procedente_conselho_recurso_pendente" }
+    const datasetHumano = { ...dataset, itens: [publicadoHumano] }
+    assert.ok(FASES_SO_REVISAO_HUMANA.has(publicadoHumano.fase), "a fase publicada depende de revisão humana")
+    const atualHumano = {
+      ...atual,
+      id: publicadoHumano.id,
+      candidato: { ...atual.candidato, slug: publicadoHumano.candidate_slug },
+      deputado: { ...atual.deputado, id: publicadoHumano.deputado_id },
+      representacao: { ...atual.representacao, id: publicadoHumano.proposicao.id },
+      ultimo_andamento: { ...atual.ultimo_andamento!, data: dataNova },
+      fase_sugerida: { ...atual.fase_sugerida!, fase: "apresentada" },
+    } as ItemFila
+    const alertaFaseHumana = montarFilaDeMudancas(datasetHumano, { itens: [atualHumano] }, "2026-09-24T12:00:00.000Z").alertas[0]
+    assert.deepEqual(alertaFaseHumana.motivos, ["data do último andamento mudou"],
+      "fase editorial que exige leitura humana não diverge da sugestão automática")
+
+    const movimentoMesmaFase = {
+      ...atual,
+      fase_sugerida: { ...atual.fase_sugerida!, fase: publicado.fase },
+    } as ItemFila
+    const alertaDataSomente = montarFilaDeMudancas(dataset, { itens: [movimentoMesmaFase] }, "2026-09-24T12:00:00.000Z")
+    assert.deepEqual(alertaDataSomente.alertas[0].motivos, ["data do último andamento mudou"],
+      "movimento novo alerta mesmo quando a fase aprovada permanece igual")
+    assert.equal(JSON.stringify(dataset), antes, "o monitor é somente leitura sobre o dataset publicado")
+  })
+
+  it("encaminha vínculo ausente para revisão sem afirmar que o processo acabou", () => {
+    const dataset = JSON.parse(readFileSync("scripts/data/representacoes-conselho-etica.json", "utf8"))
+    const fila = montarFilaDeMudancas(dataset, { itens: [] }, "2026-09-24T12:00:00.000Z")
+    assert.equal(fila.alertas.length, dataset.itens.length)
+    assert.ok(fila.alertas.every((alerta) => alerta.estado === "revisar_vinculo" && alerta.atual === null))
+  })
+})
 
 describe("golden do coletor de representações", () => {
   it("bate 100% das expectativas lidas da tramitação crua", async () => {
@@ -126,6 +256,41 @@ describe("golden do coletor de representações", () => {
     const voto = marcel.despachos_para_revisao.find((d) => d.proposicao_id === 2563290 && d.data === "2026-05-05" && /Marcel van Hattem/.test(d.despacho))
     assert.ok(voto, "registro de 05/05/2026 da REP 24/2025 ausente")
     assert.match(voto.despacho, /suspensão temporária do exercício do mandato por 2 meses; 13 votos favoráveis e 4 contrários/)
+  })
+
+  it("inclui votação nova no processo principal da REP 25/2025 apensada e alerta pela data", async () => {
+    const tramitacaoNova = {
+      dataHora: "2026-05-20T00:00",
+      sequencia: 999,
+      siglaOrgao: "COETICA",
+      codTipoTramitacao: "199",
+      descricaoTramitacao: "Providência Interna",
+      codSituacao: null,
+      descricaoSituacao: null,
+      despacho: "Votação realizada no processo principal.",
+      url: null,
+    }
+    const apiComVotoNovo: ApiCamara = {
+      async get(path) {
+        const resposta = await apiGravada.get(path)
+        if (path === "/proposicoes/2563290/tramitacoes") {
+          return { ...resposta, dados: [...(resposta.dados as unknown[]), tramitacaoNova] }
+        }
+        return resposta
+      },
+    }
+    const fila = await coletarGolden(apiComVotoNovo)
+    const marcel = fila.itens.find((item) => item.id === "camara-rep-2563294-dep-156190")!
+    assert.equal(marcel.representacao.apensada_a, 2563290, "REP 25/2025 está apensada à REP 24/2025")
+    assert.equal(marcel.ultimo_andamento?.proposicao_id, 2563290)
+    assert.equal(marcel.ultimo_andamento?.data, "2026-05-20")
+
+    const dataset = JSON.parse(readFileSync("scripts/data/representacoes-conselho-etica.json", "utf8"))
+    const alerta = montarFilaDeMudancas(dataset, { itens: [marcel] }, "2026-09-24T12:00:00.000Z").alertas
+      .find((item) => item.id === marcel.id)
+    assert.ok(alerta, "votação posterior no principal deve gerar alerta de mudança")
+    assert.deepEqual(alerta.motivos, ["data do último andamento mudou"],
+      "a fase publicada depende de revisão humana, então não se compara à sugestão automática")
   })
 
   it("todo item da fila nasce pendente de revisão", async () => {

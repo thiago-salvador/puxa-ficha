@@ -18,7 +18,7 @@ import {
   indexarRepresentacoesEtica,
   selectRepresentacoesEtica,
   validateRepresentacoesEticaDataset,
-  type RepresentacaoEticaAprovada,
+  type RepresentacaoEticaCamaraAprovada,
 } from "@/lib/representacoes-etica"
 import { stripAccents } from "@/lib/strip-accents"
 import { aprovarRepresentacao } from "../scripts/aprovar-representacao-etica"
@@ -44,7 +44,7 @@ function tramitacao(partial: Partial<TramitacaoCamara> & Pick<TramitacaoCamara, 
   }
 }
 
-const aprovado: RepresentacaoEticaAprovada = {
+const aprovado: RepresentacaoEticaCamaraAprovada = {
   id: "camara-rep-2563294-dep-156190",
   candidate_slug: "tse-2026-210002547819",
   casa: "camara",
@@ -291,7 +291,8 @@ describe("aprovação", () => {
     assert.throws(() => aprovarRepresentacao({ ...base, itemId: "x", fase: "arquivada" }), /não está na fila/)
     const { dataset } = aprovarRepresentacao({ ...base, fase: "recurso_apresentado" })
     assert.throws(() => aprovarRepresentacao({ ...base, dataset, fase: "arquivada" }), /já aprovado/)
-    assert.equal(aprovarRepresentacao({ ...base, dataset, fase: "arquivada", substituir: true }).dataset.itens[0].fase, "arquivada")
+    const atualizado = aprovarRepresentacao({ ...base, dataset, fase: "arquivada", substituir: true }).dataset.itens[0]
+    assert.equal(atualizado?.casa === "camara" ? atualizado.fase : null, "arquivada")
     assert.throws(() => aprovarRepresentacao({ ...base, fila: { itens: [itemFila] } as unknown as Fila, fase: "arquivada" }), /fila inválido/)
   })
 
