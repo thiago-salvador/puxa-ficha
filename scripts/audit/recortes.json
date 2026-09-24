@@ -634,6 +634,13 @@
       "ate": "20260923233000",
       "allowlist": "scripts/audit/allowlist-eliziane-mudancas-partido-20260923.json",
       "divida": null
+    },
+    {
+      "nome": "senado-exercicio-reaberto-20260924",
+      "desde": "20260924003000",
+      "ate": "20260924003000",
+      "allowlist": "scripts/audit/allowlist-senado-exercicio-reaberto-20260924.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

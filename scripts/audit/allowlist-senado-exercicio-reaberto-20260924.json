@@ -1,0 +1,42 @@
+{
+  "versao": "2026-09-24",
+  "fonte": "Senado Federal, mandatos do parlamentar (https://legis.senado.leg.br/dadosabertos/senador/{codigo}/mandatos.json, lidos em 23/09/2026) para os códigos 5411, 5718, 4560, 285, 5990, 5748, 739, 470, 5926 e 5899; SHA256 de cada JSON no recibo do coleta_log.",
+  "motivo": "Issue #470. Os dez senadores se afastaram no meio do mandato 2019-2027 e voltaram ao exercício; historico_politico só tem a linha do primeiro intervalo e a ficha mostra o mandato encerrado. Inserir, para cada um, a linha do intervalo em aberto que ingestMandatos grava a partir do mesmo payload (Senador, mandato, proveniência senado, período sem fim). Nenhuma linha existente muda.",
+  "coorte": [
+    "tse-2026-100002537338",
+    "tse-2026-100002541459",
+    "tse-2026-10002535804",
+    "tse-2026-10002548050",
+    "tse-2026-130002545590",
+    "tse-2026-150002544905",
+    "tse-2026-180002540446",
+    "tse-2026-230002550794",
+    "tse-2026-30002530069",
+    "tse-2026-90002543215"
+  ],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [
+    { "tabela": "historico_politico", "slug": "tse-2026-100002537338", "campos": ["id", "candidato_id", "cargo", "periodo_inicio", "periodo_fim", "partido", "estado", "eleito_por", "tipo_evento", "proveniencia"], "max_registros": 1 },
+    { "tabela": "historico_politico", "slug": "tse-2026-100002541459", "campos": ["id", "candidato_id", "cargo", "periodo_inicio", "periodo_fim", "partido", "estado", "eleito_por", "tipo_evento", "proveniencia"], "max_registros": 1 },
+    { "tabela": "historico_politico", "slug": "tse-2026-10002535804", "campos": ["id", "candidato_id", "cargo", "periodo_inicio", "periodo_fim", "partido", "estado", "eleito_por", "tipo_evento", "proveniencia"], "max_registros": 1 },
+    { "tabela": "historico_politico", "slug": "tse-2026-10002548050", "campos": ["id", "candidato_id", "cargo", "periodo_inicio", "periodo_fim", "partido", "estado", "eleito_por", "tipo_evento", "proveniencia"], "max_registros": 1 },
+    { "tabela": "historico_politico", "slug": "tse-2026-130002545590", "campos": ["id", "candidato_id", "cargo", "periodo_inicio", "periodo_fim", "partido", "estado", "eleito_por", "tipo_evento", "proveniencia"], "max_registros": 1 },
+    { "tabela": "historico_politico", "slug": "tse-2026-150002544905", "campos": ["id", "candidato_id", "cargo", "periodo_inicio", "periodo_fim", "partido", "estado", "eleito_por", "tipo_evento", "proveniencia"], "max_registros": 1 },
+    { "tabela": "historico_politico", "slug": "tse-2026-180002540446", "campos": ["id", "candidato_id", "cargo", "periodo_inicio", "periodo_fim", "partido", "estado", "eleito_por", "tipo_evento", "proveniencia"], "max_registros": 1 },
+    { "tabela": "historico_politico", "slug": "tse-2026-230002550794", "campos": ["id", "candidato_id", "cargo", "periodo_inicio", "periodo_fim", "partido", "estado", "eleito_por", "tipo_evento", "proveniencia"], "max_registros": 1 },
+    { "tabela": "historico_politico", "slug": "tse-2026-30002530069", "campos": ["id", "candidato_id", "cargo", "periodo_inicio", "periodo_fim", "partido", "estado", "eleito_por", "tipo_evento", "proveniencia"], "max_registros": 1 },
+    { "tabela": "historico_politico", "slug": "tse-2026-90002543215", "campos": ["id", "candidato_id", "cargo", "periodo_inicio", "periodo_fim", "partido", "estado", "eleito_por", "tipo_evento", "proveniencia"], "max_registros": 1 }
+  ],
+  "referencias": [
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "20260924003000",
+      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260924003000",
+      "campos": ["fonte", "escopo", "alvo", "candidato_id", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    }
+  ]
+}
