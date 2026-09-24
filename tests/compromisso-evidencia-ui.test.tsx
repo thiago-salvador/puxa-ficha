@@ -67,6 +67,16 @@ describe("evidências relacionadas na seção do programa", () => {
     assert.match(html, /data-pf-compromisso-evidencias-vazio/u)
   })
 
+  it("ponto de atenção (tipo contradicao) recebe rótulo neutro, não a categoria editorial", () => {
+    const html = render({
+      manifesto: presidencial,
+      evidencias: [evidencia({ id: "c", tipo: "contradicao", referencia: "", texto: "Ponto de atenção registrado." })],
+    })
+    assert.ok(html.includes(compromissoEvidenciaCopy.tipo.contradicao))
+    assert.equal(compromissoEvidenciaCopy.tipo.contradicao, "Ponto de atenção")
+    assert.doesNotMatch(html, /Contradição registrada/u, "rótulo não pode ler como veredito sobre o compromisso")
+  })
+
   it("governador sem mandato no Congresso recebe a nota fixa; presidencial e governador com mandato não", () => {
     assert.match(render({ manifesto: governador, evidencias: [], teveMandatoNoCongresso: false }), /data-pf-compromisso-evidencias-sem-congresso/u)
     assert.doesNotMatch(render({ manifesto: governador, evidencias: [], teveMandatoNoCongresso: true }), /data-pf-compromisso-evidencias-sem-congresso/u)

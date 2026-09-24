@@ -224,7 +224,12 @@ export const compromissoEvidenciaCopy = {
     projeto_lei: "Projeto de lei",
     posicao_declarada: "Posição declarada",
     fala: "Fala",
-    contradicao: "Contradição registrada",
+    // Rótulo neutro: o tipo "contradicao" vem da tabela pontos_atencao, mas
+    // aqui, ao lado de um compromisso do programa, a categoria editorial do
+    // ponto de atenção ("Contradição") leria como veredito sobre a promessa.
+    // A categoria em si continua exibida sem alteração na seção de Pontos de
+    // Atenção (tokenLabels.attentionCategory, abaixo).
+    contradicao: "Ponto de atenção",
   },
 } as const
 
