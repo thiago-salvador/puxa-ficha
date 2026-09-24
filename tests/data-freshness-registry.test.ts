@@ -9,6 +9,7 @@ import {
   loadFreshnessRegistry,
   selectLatestSourceEvidence,
 } from "../scripts/lib/data-freshness/registry"
+import type { FreshnessSource } from "../scripts/lib/data-freshness/types"
 import { DESTAQUES_EXPECTED_PAIRS } from "../scripts/lib/destaques-votacoes-provenance"
 
 function destaquesEvidence(checkedAt: string) {
@@ -325,7 +326,7 @@ test("google-news: erro parcial vira dívida visível; falha total e atraso cont
     const midRunBlock = { ...partial, error_count: 213, source_error: "213 erro(s) na execução mais recente" }
     assert.equal(evaluateSourceFreshness(news, aggregateSourceEvidence(news, [midRunBlock]), now, { strict }).status, "source_error")
 
-    const policyWithoutCeiling = { ...news, partial_error_max_ratio: undefined }
+    const policyWithoutCeiling: FreshnessSource = { ...news, partial_error_max_ratio: undefined }
     assert.equal(evaluateSourceFreshness(policyWithoutCeiling, partial, now, { strict }).status, "source_error")
 
     const late = { ...partial, checked_at: "2026-09-22T23:00:00.000Z" }
