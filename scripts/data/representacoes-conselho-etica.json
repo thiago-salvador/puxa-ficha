@@ -1,0 +1,30 @@
+{
+  "policy": "pf-representacoes-etica-v1",
+  "itens": [
+    {
+      "id": "camara-rep-2563294-dep-156190",
+      "candidate_slug": "tse-2026-210002547819",
+      "casa": "camara",
+      "deputado_id": 156190,
+      "proposicao": {
+        "id": 2563294,
+        "sigla": "REP",
+        "numero": 25,
+        "ano": 2025
+      },
+      "fase": "procedente_conselho_recurso_pendente",
+      "ultimo_andamento_em": "2026-05-19",
+      "verificado_em": "2026-09-23",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2563294",
+      "identidade": {
+        "metodo": "cpf_tse_camara",
+        "conferida_em": "2026-09-23"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-23"
+      }
+    }
+  ]
+}
