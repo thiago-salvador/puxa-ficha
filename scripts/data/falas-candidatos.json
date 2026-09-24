@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-09-24T09:00:54.880Z",
+  "updated_at": "2026-09-24T09:22:49.778Z",
   "quotes": [
     {
       "id": "00c8f1873899039478dd4a8f3e86452d4e3e3c020b05a042d133191ce8a6b32b",
@@ -300,6 +300,32 @@
         "fetched_url": "https://primeirapagina.com.br/politica/pulpito-vazio-e-troca-de-propostas-candidatos-ao-governo-de-ms-avaliam-1o-debate-das-eleicoes-2026/",
         "method": "codex_source_review",
         "source_format": "web_text"
+      }
+    },
+    {
+      "id": "0e3447bee6bbba39404e4004e8a24f8160e7330e7a8fc71d0279fb3d936283a8",
+      "candidate_id": "05bc8f5b-1419-4fb6-a34b-6e06263bb8f1",
+      "candidate_slug": "lais-chaud",
+      "candidate_name": "Laís Chaud",
+      "office": "Governador",
+      "uf": "SC",
+      "quote_text": "A nossa forma de governar é uma forma diferente, porque, independente de ter deputados ou não, os governos da Unidade Popular se propõem a ser um governo governado pela população, pela maioria do povo, pelos trabalhadores.",
+      "context": "\"A nossa forma de governar é uma forma diferente, porque, independente de ter deputados ou não, os governos da Unidade Popular se propõem a ser um governo governado pela população, pela maioria do povo, pelos trabalhadores. A gente vê muitas questões que se apresentam, que os deputados precisam votar, em leis, em resoluções e tudo mais, mas que, no fim, acabam não representando o desejo da maioria. E nós, o atual, o possível, na verdade, governo da Unidade Popular, representaria o desejo da maioria\", declarou.",
+      "event_context": "entrevista. desta quinta-feira (17)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-17",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/sc/santa-catarina/eleicoes/2026/noticia/2026/09/17/entrevista-na-nsc-lais-chaud.ghtml",
+      "article_title": "Laís Chaud é entrevistada no Jornal do Almoço; veja como foi | G1",
+      "article_published_at": "2026-09-17T13:00:00.725-03:00",
+      "observed_at": "2026-09-24T09:22:49.778Z",
+      "source_sha256": "c4187e5c521233d22baa3cc863a3017ff42271c964e8869e9845de60932df3a5",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Laís Chaud",
+        "date_excerpt": "desta quinta-feira (17)",
+        "fetched_url": "https://g1.globo.com/sc/santa-catarina/eleicoes/2026/noticia/2026/09/17/entrevista-na-nsc-lais-chaud.ghtml",
+        "method": "codex_source_review"
       }
     },
     {
@@ -2433,6 +2459,32 @@
       }
     },
     {
+      "id": "60e3cdfa65b720e40add1809d257d0176b3890ab2dd4dca19e83b6cb03627bef",
+      "candidate_id": "8a59da03-a2ad-4385-9516-eb738f970df0",
+      "candidate_slug": "ivan-moraes",
+      "candidate_name": "Ivan Moraes",
+      "office": "Governador",
+      "uf": "PE",
+      "quote_text": "O meu governo vai ser o governo do ônibus de graça",
+      "context": "Na mobilidade, o candidato apresentou uma das principais propostas da entrevista: a implantação de tarifa zero no transporte coletivo. “O meu governo vai ser o governo do ônibus de graça”, afirmou.",
+      "event_context": "entrevista. nesta quarta-feira (16)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-16",
+      "publisher": "Jornal do Commercio",
+      "article_url": "https://jc.uol.com.br/politica/2026/09/16/ivan-moraes-reforca-critica-a-revezamento-de-herdeiros-na-politica-de-pe-e-promete-onibus-de-graca.html",
+      "article_title": "Ivan Moraes reforça critica a 'revezamento de herdeiros' na política de PE e promete ônibus de graça",
+      "article_published_at": "2026-09-16 12:58:15",
+      "observed_at": "2026-09-24T09:22:49.778Z",
+      "source_sha256": "1f64be2e09b18d193c079f40c8a03386147086df75a539ade3741d8871bf6451",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Ivan Moraes",
+        "date_excerpt": "nesta quarta-feira (16)",
+        "fetched_url": "https://jc.uol.com.br/politica/2026/09/16/ivan-moraes-reforca-critica-a-revezamento-de-herdeiros-na-politica-de-pe-e-promete-onibus-de-graca.html",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "6300735e12b18c3ff5a49f7ebb74347a479e46d117c6d0502f41e2b353d5433c",
       "candidate_id": "00b971a6-5f12-4fa3-961f-5806abfd6fb0",
       "candidate_slug": "sandro-alex",
@@ -4336,6 +4388,32 @@
       }
     },
     {
+      "id": "933b548b56ffdd6112cdeac0063037d8ad7f1ad06c5beda14660f8028b93b75d",
+      "candidate_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+      "candidate_slug": "joao-rodrigues",
+      "candidate_name": "João Rodrigues",
+      "office": "Governador",
+      "uf": "SC",
+      "quote_text": "Esse é um dos motivos que me leva, em sendo governador, privatizar a Casan. O sistema de Chapecó, é a CASAN que atende, e lamentavelmente, não consegue acompanhar o crescimento da cidade. Isso trava o desenvolvimento de Chapecó, porque para aprovar qualquer projeto novo de novos condomínios, loteamentos, trava muito na Casan",
+      "context": "\"Esse é um dos motivos que me leva, em sendo governador, privatizar a Casan. O sistema de Chapecó, é a CASAN que atende, e lamentavelmente, não consegue acompanhar o crescimento da cidade. Isso trava o desenvolvimento de Chapecó, porque para aprovar qualquer projeto novo de novos condomínios, loteamentos, trava muito na Casan\".",
+      "event_context": "entrevista. desta terça-feira (15)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-15",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/sc/santa-catarina/eleicoes/2026/noticia/2026/09/15/entrevista-na-nsc-joao-rodrigues.ghtml",
+      "article_title": "João Rodrigues (PSD) é entrevistado no Jornal do Almoço; veja como foi | G1",
+      "article_published_at": "2026-09-15T13:39:18.482-03:00",
+      "observed_at": "2026-09-24T09:22:49.778Z",
+      "source_sha256": "69a6ec740907e5864f5e93a812ac3a41dc147feee53a74d5ade08f60eda9118b",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "João Rodrigues",
+        "date_excerpt": "desta terça-feira (15)",
+        "fetched_url": "https://g1.globo.com/sc/santa-catarina/eleicoes/2026/noticia/2026/09/15/entrevista-na-nsc-joao-rodrigues.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "94fdffdb633075fa7cf2358a365475d1ee256791380359ba7facec4d5531a9d9",
       "candidate_id": "e2648b98-f9a9-4487-9fdd-49609ac520d6",
       "candidate_slug": "geraldo-carvalho",
@@ -4358,6 +4436,32 @@
         "identity_excerpt": "Já Geraldo Carvalho (PSTU) afirmou que pretende apresentar as principais propostas",
         "date_excerpt": "nesta segunda-feira (7)",
         "fetched_url": "https://conectapiaui.com.br/noticia/politica/tv-cidade-verde-promove-debate-com-candidatos-ao-governo-do-piaui-21924.html",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "9595205debbe57dc0c11664bef37a664bc5548e043cae9b63a42663bc7b57157",
+      "candidate_id": "5e05e0d3-a64a-41b9-9f9a-bd160f43cec2",
+      "candidate_slug": "marcus-sodre",
+      "candidate_name": "Marcus Sodré",
+      "office": "Governador",
+      "uf": "SC",
+      "quote_text": "A questão da autodefesa significa organizar as mulheres e os trabalhadores, homens e mulheres, para que eles contribuam e ajudem a proteger a mulher. Essa proteção da mulher precisa ser coletiva.",
+      "context": "“A questão da autodefesa significa organizar as mulheres e os trabalhadores, homens e mulheres, para que eles contribuam e ajudem a proteger a mulher. Essa proteção da mulher precisa ser coletiva. A violência contra as mulheres não é um caso individualizado, precisa haver uma política pública de estado consistente, com financiamento, mas também a organização dos trabalhadores vai contribuir para que a mulher seja de fato defendida”, fala.",
+      "event_context": "entrevista. desta quarta-feira (16)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-16",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/sc/santa-catarina/eleicoes/2026/noticia/2026/09/16/entrevista-na-nsc-professor-marcus-sodre-defende-autodefesa-coletiva-para-mulheres-e-abrir-ferrovias-para-cargas-e-transporte-de-pessoas.ghtml",
+      "article_title": "Professor Marcus Sodré é entrevistado no Jornal do Almoço; como foi | G1",
+      "article_published_at": "2026-09-16T10:56:21.222-03:00",
+      "observed_at": "2026-09-24T09:22:49.778Z",
+      "source_sha256": "43c755aa27a45961c93408aa0171e992f312bcf05ba486cc64f3cea480a26b96",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Marcus Sodré",
+        "date_excerpt": "desta quarta-feira (16)",
+        "fetched_url": "https://g1.globo.com/sc/santa-catarina/eleicoes/2026/noticia/2026/09/16/entrevista-na-nsc-professor-marcus-sodre-defende-autodefesa-coletiva-para-mulheres-e-abrir-ferrovias-para-cargas-e-transporte-de-pessoas.ghtml",
         "method": "codex_source_review"
       }
     },
@@ -4861,6 +4965,32 @@
       }
     },
     {
+      "id": "acab062f81e10b0a5c935ffd9f013b7e58492844ba0fe561b5eeebbf43832dd1",
+      "candidate_id": "a9ce3c0b-9fa4-4e28-9c2e-809b1fa5e639",
+      "candidate_slug": "marcos-rogerio",
+      "candidate_name": "Marcos Rogerio",
+      "office": "Governador",
+      "uf": "RO",
+      "quote_text": "Primeiro, fazer uma revisão da estrutura das escolas. Nós temos escolas hoje em péssimas condições. Falta reforma, faltam melhorias, acesso tecnológico, né? E garantir professores em sala de aula para assegurar um bom ambiente de aprendizagem. Hoje, nove de cada dez alunos terminam o ensino sem o básico em Matemática e Português. A gente precisa reverter isso. O aluno tem que sair preparado da sala de aula.",
+      "context": "\"Primeiro, fazer uma revisão da estrutura das escolas. Nós temos escolas hoje em péssimas condições. Falta reforma, faltam melhorias, acesso tecnológico, né? E garantir professores em sala de aula para assegurar um bom ambiente de aprendizagem. Hoje, nove de cada dez alunos terminam o ensino sem o básico em Matemática e Português. A gente precisa reverter isso. O aluno tem que sair preparado da sala de aula.\"",
+      "event_context": "entrevista. nesta segunda (21)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-21",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ro/rondonia/eleicoes/2026/noticia/2026/09/21/gravacoes-debate-e-entrevistas-veja-como-foi-a-agenda-dos-candidatos-ao-governo-de-ro-nesta-segunda-21.ghtml",
+      "article_title": "Agenda dos candidatos ao Governo de Rondônia: debates e entrevistas | G1",
+      "article_published_at": "2026-09-21T20:09:10.167-03:00",
+      "observed_at": "2026-09-24T09:22:49.778Z",
+      "source_sha256": "805a4453c3b1d5d64623e8bf23fa9be1fd9b7e001204755b6259e823eb452bfd",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Marcos Rogério",
+        "date_excerpt": "nesta segunda (21)",
+        "fetched_url": "https://g1.globo.com/ro/rondonia/eleicoes/2026/noticia/2026/09/21/gravacoes-debate-e-entrevistas-veja-como-foi-a-agenda-dos-candidatos-ao-governo-de-ro-nesta-segunda-21.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "ade62da9931a50656d7e93b68366652fe94a21e20497715d65b88139027fec3c",
       "candidate_id": "68a1eec9-75c1-4dca-a68c-7a4e64033c9b",
       "candidate_slug": "araceli-lemos",
@@ -5322,6 +5452,58 @@
       }
     },
     {
+      "id": "c3f16c2dd1e8fdfb0870f1522cad99f2ea28355bf07ada287e61c2a60f584df1",
+      "candidate_id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+      "candidate_slug": "efraim-filho",
+      "candidate_name": "Efraim Filho",
+      "office": "Governador",
+      "uf": "PB",
+      "quote_text": "Qual é o item número um da valorização da polícia? É o escalonamento vertical, que o governo até hoje prometeu fazer e não fez. É você ter sistemas de progressão justos na ascensão dos policiais. Sobre vagas, é preciso que você tenha a correção do déficit, 5.600 policiais. O meu compromisso é que até 2030, até o quarto ano, fazer o concurso e a convocação de 5.600 policiais para voltarmos a ter polícia nas ruas",
+      "context": "\"Qual é o item número um da valorização da polícia? É o escalonamento vertical, que o governo até hoje prometeu fazer e não fez. É você ter sistemas de progressão justos na ascensão dos policiais. Sobre vagas, é preciso que você tenha a correção do déficit, 5.600 policiais. O meu compromisso é que até 2030, até o quarto ano, fazer o concurso e a convocação de 5.600 policiais para voltarmos a ter polícia nas ruas\", disse.",
+      "event_context": "sabatina e entrevista. nesta segunda-feira (14)",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-14",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/pb/paraiba/eleicoes/2026/noticia/2026/09/14/efraim-filho-candidato-governo-paraiba-promete-concurso-da-pm-e-reducao-do-icms.ghtml",
+      "article_title": "Candidato Efraim Filho promete concurso da PM e redução do ICMS na PB | G1",
+      "article_published_at": "2026-09-14T12:50:46.569-03:00",
+      "observed_at": "2026-09-24T09:22:49.778Z",
+      "source_sha256": "643dffc9f6bed3c480bb31aa3eafbfa02bd1aae4cdcc81579d11b91097bc7200",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Efraim Filho",
+        "date_excerpt": "nesta segunda-feira (14)",
+        "fetched_url": "https://g1.globo.com/pb/paraiba/eleicoes/2026/noticia/2026/09/14/efraim-filho-candidato-governo-paraiba-promete-concurso-da-pm-e-reducao-do-icms.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "c434ba2dc0abcb4ce64a12d8aa4e45dfb70df0c6d13855e308a2c43cbeac0dfa",
+      "candidate_id": "5b63badb-bf2b-4535-bead-b1e85ad6c609",
+      "candidate_slug": "expedito-netto",
+      "candidate_name": "Expedito Netto",
+      "office": "Governador",
+      "uf": "RO",
+      "quote_text": "Eu irei conceder um crédito de R$ 1 a R$ 21 mil para aquelas pessoas que desejam obter as suas novas ferramentas de trabalho. A sua moto, o que você precisa para ser feirante, o que você precisa para ser manicure, tudo o que você pode pensar para iniciar uma nova profissão ou iniciar um novo trabalho",
+      "context": "“Eu irei conceder um crédito de R$ 1 a R$ 21 mil para aquelas pessoas que desejam obter as suas novas ferramentas de trabalho. A sua moto, o que você precisa para ser feirante, o que você precisa para ser manicure, tudo o que você pode pensar para iniciar uma nova profissão ou iniciar um novo trabalho\", disse o candidato.",
+      "event_context": "entrevista. nesta quarta-feira (16)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-16",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ro/rondonia/eleicoes/2026/noticia/2026/09/16/entrevista-com-o-candidato-ao-governo-de-ro-expedito-netto-no-jro1.ghtml",
+      "article_title": "Expedito Netto promete crédito de até R$ 21 mil para trabalhadores | G1",
+      "article_published_at": "2026-09-16T14:37:55.536-03:00",
+      "observed_at": "2026-09-24T09:22:49.778Z",
+      "source_sha256": "e83f0b65bad38d57fe1e62d5c50a96c114a65d9689d6c1c19c3b4c276849d287",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Expedito Netto",
+        "date_excerpt": "nesta quarta-feira (16)",
+        "fetched_url": "https://g1.globo.com/ro/rondonia/eleicoes/2026/noticia/2026/09/16/entrevista-com-o-candidato-ao-governo-de-ro-expedito-netto-no-jro1.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "c472cdbfdcfe04dd5598ce4c094043f67dee6b162beb00ffaa7d2c6bb2ceeb63",
       "candidate_id": "8871eb1a-3c89-4c09-8147-45c5903e6ceb",
       "candidate_slug": "santiago-belizario",
@@ -5348,6 +5530,32 @@
         "identity_excerpt": "Santiago Belizário",
         "date_excerpt": "nesta quinta-feira (27)",
         "fetched_url": "https://www.gp1.com.br/politica/noticia/2026/8/27/santiago-belizario-defende-reestruturacao-das-policias-militar-e-civil-do-piaui-630071.html",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "c64b3e855552a91d645f572af6cfc3902e121d81c80c63a3639e527a5219095f",
+      "candidate_id": "76a6620b-1fd4-46df-806f-5101bd660f7f",
+      "candidate_slug": "cicero-lucena",
+      "candidate_name": "Cicero Lucena",
+      "office": "Governador",
+      "uf": "PB",
+      "quote_text": "Nós vamos ter que revogar, porque esse projeto de R$ 3 bilhões é investimento em 25 anos, o Marco do Saneamento é para agora é 2033, então faltam 8 anos, sete anos (...) o que quero lhe dizer é que esse projeto não está pensando nisso. O investimento que está previsto nesse projeto para João Pessoa é 25% do que João Pessoa precisa. Então nós temos que revogar e encontrar mecanismos",
+      "context": "\"Nós vamos ter que revogar, porque esse projeto de R$ 3 bilhões é investimento em 25 anos, o Marco do Saneamento é para agora é 2033, então faltam 8 anos, sete anos (...) o que quero lhe dizer é que esse projeto não está pensando nisso. O investimento que está previsto nesse projeto para João Pessoa é 25% do que João Pessoa precisa. Então nós temos que revogar e encontrar mecanismos\", disse Cícero.",
+      "event_context": "sabatina e entrevista. nesta terça-feira (15)",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-15",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/pb/paraiba/eleicoes/2026/noticia/2026/09/15/cicero-lucena-candidato-ao-governo-da-paraiba-diz-que-vai-revogar-ppp-da-cagepa-e-descentralizar-servicos-de-saude.ghtml",
+      "article_title": "Cícero Lucena quer revogar PPP da Cagepa e descentralizar saúde na PB | G1",
+      "article_published_at": "2026-09-15T12:42:05.883-03:00",
+      "observed_at": "2026-09-24T09:22:49.778Z",
+      "source_sha256": "09f71bc32938e665effe893f56604128932a9ebe0e52c06b4ed235db90607dbc",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Cícero Lucena",
+        "date_excerpt": "nesta terça-feira (15)",
+        "fetched_url": "https://g1.globo.com/pb/paraiba/eleicoes/2026/noticia/2026/09/15/cicero-lucena-candidato-ao-governo-da-paraiba-diz-que-vai-revogar-ppp-da-cagepa-e-descentralizar-servicos-de-saude.ghtml",
         "method": "codex_source_review"
       }
     },
@@ -5529,6 +5737,32 @@
         "fetched_url": "https://www.poder360.com.br/poder-eleicoes-2026/em-sc-lula-reforca-que-vai-acabar-com-as-bets/",
         "method": "codex_source_review",
         "source_format": "web_text"
+      }
+    },
+    {
+      "id": "cbbfbcbcb25be832315b18759d5b2bc90e529c37e81293ab292fd567e5e7d7a0",
+      "candidate_id": "85bcd355-89c2-464d-bfce-620fe8631285",
+      "candidate_slug": "gelson-merisio",
+      "candidate_name": "Gelson Merisio",
+      "office": "Governador",
+      "uf": "SC",
+      "quote_text": "Primeiro eu tenho que aumentar o efetivo e a forma de aumentar o efetivo rapidamente é você trazer de volta os da reserva que podem ainda trabalhar no policiamento ostensivo. Depois é uma programação de concursos, tem que fazer 6 meses da academia. Uma prioridade em segurança pública. Não tem nenhum investimento melhor para o estado do que segurança pública",
+      "context": "\"Primeiro eu tenho que aumentar o efetivo e a forma de aumentar o efetivo rapidamente é você trazer de volta os da reserva que podem ainda trabalhar no policiamento ostensivo. Depois é uma programação de concursos, tem que fazer 6 meses da academia. Uma prioridade em segurança pública. Não tem nenhum investimento melhor para o estado do que segurança pública\".",
+      "event_context": "entrevista. desta sexta-feira (18)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-18",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/sc/santa-catarina/eleicoes/2026/noticia/2026/09/18/entrevista-na-nsc-gelson-merisio.ghtml",
+      "article_title": "Gelson Merísio é entrevistado no Jornal do Almoço; veja como foi | G1",
+      "article_published_at": "2026-09-18T13:37:28.188-03:00",
+      "observed_at": "2026-09-24T09:22:49.778Z",
+      "source_sha256": "2fe87b487b5ce81a1d0019f57d4a518908a1504499ac17bf2df62ca115a69732",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Gelson Merísio",
+        "date_excerpt": "desta sexta-feira (18)",
+        "fetched_url": "https://g1.globo.com/sc/santa-catarina/eleicoes/2026/noticia/2026/09/18/entrevista-na-nsc-gelson-merisio.ghtml",
+        "method": "codex_source_review"
       }
     },
     {
