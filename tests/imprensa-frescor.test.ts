@@ -60,3 +60,81 @@ test("limiar do catálogo distingue recibo antigo de agenda futura", () => {
   assert.equal(beyondLimit.status, "limiar_excedido")
   assert.equal(beyondLimit.proximaColetaDemonstrada, null)
 })
+
+test("linha do TSE lê todos os membros de tse-current no catálogo, inclusive a observação", () => {
+  const tse = IMPRENSA_FRESHNESS_SOURCES.find((item) => item.id === "tse")
+  assert.deepEqual(tse?.receiptSources, ["tse", "tse-situacao", "tse-cpf", "tse-observacao", "tse-auditoria-snapshot"])
+  assert.equal(tse?.maxAgeHours, 36)
+  for (const id of ["camara", "senado", "transparencia"]) {
+    assert.equal(IMPRENSA_FRESHNESS_SOURCES.find((item) => item.id === id)?.receiptSources, undefined)
+  }
+})
+
+test("observação semanal dos pacotes do TSE conta como última coleta, e fonte alheia não conta", () => {
+  // Regressão de 24/09: o ingest manual parou em 14/09 e a observação de 23/09
+  // leu os pacotes oficiais, mas a página só olhava a fonte `tse`.
+  const tse = IMPRENSA_FRESHNESS_SOURCES.find((item) => item.id === "tse")
+  assert.ok(tse)
+  const receipts = [
+    receipt({ executado_em: "2026-09-14T21:04:36.000Z" }),
+    receipt({
+      fonte: "tse-observacao",
+      executado_em: "2026-09-23T13:19:18.000Z",
+      url: "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    }),
+    receipt({ fonte: "tse-historico", executado_em: "2026-09-24T09:00:00.000Z" }),
+    receipt({ fonte: "camara", executado_em: "2026-09-24T09:30:00.000Z" }),
+  ]
+  const result = buildImprensaFreshnessSource(tse, receipts, "2026-09-24T12:00:00.000Z")
+  assert.equal(result.status, "sem_agenda")
+  assert.equal(result.ultimaColetaBemSucedida, "2026-09-23T13:19:18.000Z")
+  assert.equal(result.ultimaColetaTentada, "2026-09-23T13:19:18.000Z")
+  assert.equal(result.fonteUrl, "https://dadosabertos.tse.jus.br/dataset/candidatos-2026")
+  assert.equal(result.verificacaoDoCampo, null)
+  assert.equal(result.atualizacaoDaFicha, null)
+
+  const withoutObservation = buildImprensaFreshnessSource(tse, receipts.slice(0, 1), "2026-09-24T12:00:00.000Z")
+  assert.equal(withoutObservation.status, "limiar_excedido")
+})
+
+test("recibo da auditoria diária com menos de 36 h mantém o TSE dentro do limiar entre observações", () => {
+  const tse = IMPRENSA_FRESHNESS_SOURCES.find((item) => item.id === "tse")
+  assert.ok(tse)
+  const receipts = [
+    receipt({ fonte: "tse-observacao", executado_em: "2026-09-23T13:19:18.000Z" }),
+    receipt({
+      fonte: "tse-auditoria-snapshot",
+      executado_em: "2026-09-27T11:40:00.000Z",
+      url: "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+    }),
+  ]
+  // Quatro dias depois da observação semanal, 23 h depois da auditoria.
+  const result = buildImprensaFreshnessSource(tse, receipts, "2026-09-28T10:40:00.000Z")
+  assert.equal(result.status, "sem_agenda")
+  assert.equal(result.ultimaColetaBemSucedida, "2026-09-27T11:40:00.000Z")
+  assert.equal(result.fonteUrl, "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip")
+  assert.equal(result.verificacaoDoCampo, null)
+  assert.equal(result.atualizacaoDaFicha, null)
+
+  // Sem a auditoria, a mesma data fica além do limiar.
+  const onlyWeekly = buildImprensaFreshnessSource(tse, receipts.slice(0, 1), "2026-09-28T10:40:00.000Z")
+  assert.equal(onlyWeekly.status, "limiar_excedido")
+
+  // Auditoria que falhou na fonte continua aparecendo como erro.
+  const failed = buildImprensaFreshnessSource(tse, [
+    ...receipts,
+    receipt({ fonte: "tse-auditoria-snapshot", executado_em: "2026-09-28T11:40:00.000Z", resultado: "erro", url: null }),
+  ], "2026-09-28T12:00:00.000Z")
+  assert.equal(failed.status, "erro_na_fonte")
+})
+
+test("erro mais recente da observação continua visível na linha do TSE", () => {
+  const tse = IMPRENSA_FRESHNESS_SOURCES.find((item) => item.id === "tse")
+  assert.ok(tse)
+  const result = buildImprensaFreshnessSource(tse, [
+    receipt({ executado_em: "2026-09-23T10:00:00.000Z" }),
+    receipt({ fonte: "tse-observacao", executado_em: "2026-09-23T13:00:00.000Z", resultado: "erro", url: null }),
+  ], "2026-09-23T14:00:00.000Z")
+  assert.equal(result.status, "erro_na_fonte")
+  assert.equal(result.ultimaColetaBemSucedida, "2026-09-23T10:00:00.000Z")
+})

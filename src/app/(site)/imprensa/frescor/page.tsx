@@ -119,7 +119,7 @@ export default async function ImprensaFrescorPage() {
         </div>
       </section>
 
-      <main className="mx-auto max-w-5xl px-5 py-10 md:px-8 md:py-14">
+      <div className="mx-auto max-w-5xl px-5 py-10 md:px-8 md:py-14">
         <div className="mb-8 flex flex-wrap gap-4 text-[length:var(--text-body-sm)]">
           <Link className="font-semibold text-foreground underline underline-offset-4" href="/imprensa">Voltar à Mesa de apuração</Link>
           <Link className="font-semibold text-foreground underline underline-offset-4" href="/metodologia">Metodologia e fontes</Link>
@@ -140,7 +140,7 @@ export default async function ImprensaFrescorPage() {
             </p>
           </>
         )}
-      </main>
+      </div>
     </div>
   )
 }

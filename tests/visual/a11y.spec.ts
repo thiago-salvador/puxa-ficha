@@ -23,6 +23,9 @@ const ROUTES: RouteA11y[] = [
   { name: "quiz-result", path: "/quiz/resultado" },
   { name: "embed-home", path: "/embed" },
   { name: "embed-candidate", path: "/embed/lula" },
+  { name: "imprensa", path: "/imprensa" },
+  { name: "imprensa-atualizacoes", path: "/imprensa/atualizacoes" },
+  { name: "imprensa-frescor", path: "/imprensa/frescor" },
 ]
 
 test.beforeEach(async ({ context, baseURL }) => {
@@ -75,6 +78,11 @@ test.describe("Acessibilidade automatizada", () => {
           { timeout: 10_000 },
         )
         .catch(() => undefined)
+
+      // Cada rota deve ter um único landmark <main>: um segundo <main> aninhado
+      // dentro do layout (id="main-content") já quebra a árvore de acessibilidade
+      // mesmo quando o axe não sinaliza landmark-one-main (ex.: rule desabilitada).
+      await expect(page.locator("main")).toHaveCount(1)
 
       const results = await new AxeBuilder({ page }).analyze()
       const blockingViolations = results.violations.filter((violation) =>

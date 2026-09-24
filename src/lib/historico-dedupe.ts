@@ -1,4 +1,5 @@
 import { canonicalCargo } from "@/lib/cargo-utils"
+import { observacaoComSituacaoVigente } from "@/lib/candidatura-corrente-situacao"
 import { longFormMatchesUfSigla, normalizeBrUfToken } from "@/lib/br-uf"
 import { isHistoricoCandidaturaRow } from "@/lib/historico-tipo-evento"
 import { resolveHistoricoRowProvenance } from "@/lib/historico-provenance"
@@ -16,6 +17,12 @@ function historicoCanonKeyForRow(row: Pick<HistoricoPolitico, "cargo" | "cargo_c
  * também guarda mandatos e pleitos anteriores. Projeta a candidatura atual na
  * trajetória quando a linha denormalizada não existe, sem apagar um mandato do
  * mesmo cargo e ano.
+ *
+ * A situação do registro na linha da candidatura corrente sai de
+ * `situacao_candidatura`, a mesma do cabeçalho, e não do texto gravado na
+ * observação (`candidatura-corrente-situacao.ts`): a observação congela a
+ * situação do dia em que foi escrita e nenhuma atualização de situação a
+ * reescreve.
  */
 export function ensureCurrentCandidacyInHistory(
   candidato: Pick<
@@ -26,6 +33,7 @@ export function ensureCurrentCandidacyInHistory(
     | "estado"
     | "status"
     | "fonte_dados"
+    | "situacao_candidatura"
   >,
   rows: HistoricoPolitico[],
   electionYear = CURRENT_CANDIDACY_ELECTION_YEAR,
@@ -56,9 +64,12 @@ export function ensureCurrentCandidacyInHistory(
     // `manual`/`misto` aqui faria a âncora de pleitos ignorar 2026 e esconder
     // patrimônio e financiamento já coletados. A normalização é apenas da
     // candidatura corrente e não reclassifica outras linhas da trajetória.
-    return hasOfficialRegistration
-      ? rows.map((row) => isCurrentCandidacy(row) ? { ...row, proveniencia: "tse" } : row)
-      : rows
+    return rows.map((row) => {
+      if (!isCurrentCandidacy(row)) return row
+      const observacoes = observacaoComSituacaoVigente(row.observacoes, candidato.situacao_candidatura)
+      const comSituacao = observacoes === row.observacoes ? row : { ...row, observacoes }
+      return hasOfficialRegistration ? { ...comSituacao, proveniencia: "tse" } : comSituacao
+    })
   }
 
   const proveniencia = hasOfficialRegistration || candidato.fonte_dados.some((fonte) => /\btse\b/i.test(fonte))
@@ -78,7 +89,7 @@ export function ensureCurrentCandidacyInHistory(
       partido: candidato.partido_sigla,
       estado: candidato.estado ?? "BR",
       eleito_por: "",
-      observacoes: null,
+      observacoes: observacaoComSituacaoVigente(null, candidato.situacao_candidatura),
       proveniencia,
     },
   ]

@@ -32,8 +32,21 @@ describe("Sanitizacao publica de partido centralizada em src/lib/api.ts", () => 
   it("getCandidatosResource retorna lista sanitizada via helper", () => {
     assert.match(
       apiSrc,
-      /return\s+liveResource\(sanitizePublicPartyFieldsList\(data as Candidato\[\]\)\)/,
-      "getCandidatosResourceUncached deve sanitizar a lista no exit",
+      /return\s+liveResource\(sanitizePublicDisplayNameFieldsList\(sanitizePublicPartyFieldsList\(data as Candidato\[\]\)\)\)/,
+      "getCandidatosResourceUncached deve sanitizar a lista (partido e nome_urna) no exit",
+    )
+  })
+
+  it("api.ts importa o helper canonico de display-name para nome_urna", () => {
+    assert.match(
+      apiSrc,
+      /import\s*\{[^}]*sanitizePublicDisplayNameFields[^}]*\}\s*from\s*"@\/lib\/public-candidate-sanitize"/,
+      "api.ts deve importar sanitizePublicDisplayNameFields do helper central",
+    )
+    assert.match(
+      apiSrc,
+      /import\s*\{[^}]*sanitizePublicDisplayNameFieldsList[^}]*\}\s*from\s*"@\/lib\/public-candidate-sanitize"/,
+      "api.ts deve importar sanitizePublicDisplayNameFieldsList",
     )
   })
 

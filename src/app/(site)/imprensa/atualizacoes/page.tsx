@@ -5,6 +5,7 @@ import { NoticePanel } from "@/components/NoticePanel"
 import { SectionDivider, SectionLabel, SectionTitle } from "@/components/SectionHeader"
 import { formatUpdateValue } from "@/lib/verified-candidate-updates"
 import { getImprensaAtualizacoesPage } from "@/lib/imprensa-atualizacoes"
+import { formatDisplayName } from "@/lib/display-name"
 
 export const metadata: Metadata = {
   title: "Atualizações verificadas | Puxa Ficha",
@@ -46,7 +47,7 @@ export default async function ImprensaAtualizacoesPage({
       </section>
 
       <div className="pt-8 sm:pt-12"><SectionDivider /></div>
-      <main className="mx-auto max-w-7xl px-5 py-8 sm:py-12 md:px-12 lg:py-16">
+      <div className="mx-auto max-w-7xl px-5 py-8 sm:py-12 md:px-12 lg:py-16">
         <Link href="/imprensa" className="mb-8 inline-flex min-h-11 items-center font-semibold text-foreground underline underline-offset-4">Voltar à Mesa de apuração</Link>
         <div className="max-w-3xl">
           <SectionLabel>Fonte e detecção</SectionLabel>
@@ -66,7 +67,7 @@ export default async function ImprensaAtualizacoesPage({
               {resource.updates.map((update) => (
                 <li key={update.id} className="rounded-[16px] border border-border/60 bg-card p-5 sm:p-6">
                   <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                    <h2 className="text-[length:var(--text-body-lg)] font-bold text-foreground">{update.candidate_name}</h2>
+                    <h2 className="text-[length:var(--text-body-lg)] font-bold text-foreground">{formatDisplayName(update.candidate_name)}</h2>
                     <time dateTime={update.detected_at} className="text-[length:var(--text-caption)] font-semibold text-muted-foreground">Detectada em {formatDetectedAt(update.detected_at)}</time>
                   </div>
                   <p className="mt-2 text-[length:var(--text-body-sm)] font-bold uppercase tracking-[0.08em] text-muted-foreground">{fieldLabel(update.field)} · {update.year}</p>
@@ -85,7 +86,7 @@ export default async function ImprensaAtualizacoesPage({
             </nav>
           </>
         )}
-      </main>
+      </div>
       <Footer />
     </div>
   )

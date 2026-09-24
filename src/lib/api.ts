@@ -38,7 +38,8 @@ import {
   type DoadorRecorrenteViewRow,
 } from "@/lib/doador-recorrente-publico"
 import { isPublicAttentionPoint } from "@/lib/public-attention-point"
-import { sanitizePublicPartyFields, sanitizePublicPartyFieldsList } from "@/lib/public-candidate-sanitize"
+import { sanitizePublicPartyFields, sanitizePublicPartyFieldsList, sanitizePublicDisplayNameFields, sanitizePublicDisplayNameFieldsList } from "@/lib/public-candidate-sanitize"
+import { formatDisplayName } from "@/lib/display-name"
 import { classifyAttentionPoints, isNegativeHighestSeverityAttentionPoint } from "@/lib/attention-points"
 import { SUPABASE_FIRST_FOLD_ATTEMPT_TIMEOUT_MS, withSupabaseRetry, type SupabaseRunResult } from "@/lib/supabase-retry"
 import { getCanonicalPerson } from "@/lib/canonical-person-map"
@@ -360,7 +361,7 @@ async function getCandidatosResourceUncached(
   // (substitui as 4 fronteiras do Bloco 1: CandidatoFichaView, embed/page.tsx,
   // uf/[uf]/page.tsx, preview/candidato/[slug]/page.tsx). Ver
   // src/lib/public-candidate-sanitize.ts.
-  return liveResource(sanitizePublicPartyFieldsList(data as Candidato[]))
+  return liveResource(sanitizePublicDisplayNameFieldsList(sanitizePublicPartyFieldsList(data as Candidato[])))
 }
 
 const getCachedCandidatosResource = unstableCacheWithSingleFlight(
@@ -371,7 +372,7 @@ const getCachedCandidatosResource = unstableCacheWithSingleFlight(
   // Bumped 2026-05-15: swap da coorte presidencial remove tarcisio/eduardo-leite
   // da superficie publica e adiciona augusto-cury/cabo-daciolo/edmilson-costa.
   // Bumped 2026-05-22: publicacao da lista editorial de pre-candidatos dos lotes 1 e 2.
-  ["public-candidatos-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "candidate-roster-cas-20260915", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
+  ["public-candidatos-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "candidate-roster-cas-20260915", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos"],
@@ -453,12 +454,12 @@ async function getCandidatoNavResourceUncached(
     )
   }
 
-  return liveResource(data as CandidatoNavItem[])
+  return liveResource(sanitizePublicDisplayNameFieldsList(data as CandidatoNavItem[]))
 }
 
 const getCachedCandidatoNavResource = unstableCacheWithSingleFlight(
   async (cargo?: string, estado?: string) => getCandidatoNavResourceUncached(cargo, estado),
-  ["public-candidato-nav-resource", "slug-nome-urna-20260603", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "nav-por-disputa-20260815", "candidate-roster-cas-20260915", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
+  ["public-candidato-nav-resource", "slug-nome-urna-20260603", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "nav-por-disputa-20260815", "candidate-roster-cas-20260915", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos"],
@@ -602,7 +603,7 @@ async function getGlobalSearchCandidatesUncached(): Promise<DataResource<GlobalS
     )
   }
 
-  const candidates = sanitizePublicPartyFieldsList(data)
+  const candidates = sanitizePublicDisplayNameFieldsList(sanitizePublicPartyFieldsList(data))
   // A busca por nome continua disponível se o schema for revertido antes do
   // código. O resultado incompleto não entra no cache persistente do índice.
   if (usedPreMigrationColumns) {
@@ -718,7 +719,7 @@ const getCachedGlobalSearchIndexResource = unstableCacheWithSingleFlight(
   // sobrevive a deploy, e a rota de revalidacao por tag depende de
   // PF_REVALIDATE_SECRET, entao o bump da chave e o caminho que funciona sem
   // segredo. Mesma chave aplicada a todos os resources que listam candidatos.
-  ["global-search-index", "bloco1-incerto-suppress", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "busca-candidatura-colunas-enxutas-20260916", "party-filter-payload-20260923", "numero-urna-20260923", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
+  ["global-search-index", "bloco1-incerto-suppress", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "busca-candidatura-colunas-enxutas-20260916", "party-filter-payload-20260923", "numero-urna-20260923", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos"],
@@ -803,7 +804,7 @@ const getCandidatoPublicRowForRequest = cache(async function loadCandidatoPublic
     return liveResource(null)
   }
 
-  return liveResource(data ?? null)
+  return liveResource(data ? sanitizePublicDisplayNameFields(data) : null)
 })
 
 async function getCandidatoSlugParamsUncached(): Promise<{ slug: string }[]> {
@@ -869,7 +870,7 @@ const getCachedCandidatoMetadataResource = unstableCacheWithSingleFlight(
     requireLiveResourceForCache(await getCandidatoMetadataResourceUncached(slug)),
   // Bumped 2026-04-26: payload publico agora carrega partido_sigla/partido_atual
   // ja sanitizados via sanitizePublicPartyFields. Suffix invalida cache antigo.
-  ["public-candidato-metadata-resource", "central-party-sanitize", "no-cache-degraded-v1", "presidential-cohort-20260515", "public-profile-density-20260517", "editorial-full-closure-20260518", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "reescrita-claims-homonimo-20260726", "consolidacao-mapa-fome-20260726", "chapas-tse-20260815", "chapas-bio-card-20260813", "onda-p-20260814", "party-siglas-lote2-20260815", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
+  ["public-candidato-metadata-resource", "central-party-sanitize", "no-cache-degraded-v1", "presidential-cohort-20260515", "public-profile-density-20260517", "editorial-full-closure-20260518", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "reescrita-claims-homonimo-20260726", "consolidacao-mapa-fome-20260726", "chapas-tse-20260815", "chapas-bio-card-20260813", "onda-p-20260814", "party-siglas-lote2-20260815", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidato-metadata"],
@@ -946,7 +947,12 @@ async function fetchChapa2026(
   if (isMissingChapa2026ViewError(error)) return null
   if (error) throw new Error(`chapas_2026_publico: ${error.message ?? error.code ?? "erro"}`)
   if (!data) return null
-  return data as unknown as Chapa2026
+  const chapa = data as unknown as Chapa2026
+  return {
+    ...chapa,
+    titular_nome_urna: formatDisplayName(chapa.titular_nome_urna),
+    vice_nome_urna: formatDisplayName(chapa.vice_nome_urna),
+  }
 }
 
 /**
@@ -2179,7 +2185,7 @@ const getCachedCandidatoBySlugResource = unstableCacheWithSingleFlight(
   // vigente passou a ser projetada na trajetória quando a linha denormalizada
   // de `historico_politico` estiver ausente. Sem o bump, perfis já aquecidos
   // continuariam omitindo 2026 durante o TTL.
-  ["public-candidato-ficha-resource", "central-party-sanitize", "no-cache-degraded-v1", "legislacao-paged-v4", "lme-trim-2mb-20260501", "pl-lazy-preview-20260711", "presidential-cohort-20260515", "editorial-full-closure-20260518", "pre-candidates-lote12-20260522", "photos-names-20260610", "raw-empty-core-lote2-20260630", "raw-empty-core-lote3-20260630", "raw-empty-core-lote4-20260630", "raw-empty-core-news-lote5-20260630", "raw-empty-core-lote6-20260630", "raw-empty-core-lote7-20260630", "raw-empty-core-lote8-20260630", "raw-empty-core-lote9-20260630", "raw-empty-core-lote10-20260630", "raw-empty-core-lote11-20260630", "pe-state-html-gaps-20260708", "rr-state-completion-20260710-v2", "reescrita-claims-homonimo-20260726", "consolidacao-mapa-fome-20260726", "lme-preview-lazy-20260803", "density-bypass-clear-20260804", "sancoes-proveniencia-20260805", "verificacao-campos-tse-min-20260809", "frescor-data-calendario-20260809", "ultima-verificacao-qualquer-dado-20260809", "chapas-tse-20260815", "chapas-bio-card-20260813", "onda-p-20260814", "party-siglas-lote2-20260815", "gastos-executivo-cpgf-20260816", "gastos-executivo-ug-20260820", "trajetoria-candidatura-atual-20260906", "historico-cas-20260915", "candidate-roster-cas-20260915", "candidate-history-cas-20260915", "historico-dedupe-type-cas-20260915", "candidate-beny-sources-cas-20260915", "candidate-beny-sanctions-receipt-cas-20260915", "filiacao-google-public-copy-v2-20260916", "timeline-partidaria-registro-20260918", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
+  ["public-candidato-ficha-resource", "central-party-sanitize", "no-cache-degraded-v1", "legislacao-paged-v4", "lme-trim-2mb-20260501", "pl-lazy-preview-20260711", "presidential-cohort-20260515", "editorial-full-closure-20260518", "pre-candidates-lote12-20260522", "photos-names-20260610", "raw-empty-core-lote2-20260630", "raw-empty-core-lote3-20260630", "raw-empty-core-lote4-20260630", "raw-empty-core-news-lote5-20260630", "raw-empty-core-lote6-20260630", "raw-empty-core-lote7-20260630", "raw-empty-core-lote8-20260630", "raw-empty-core-lote9-20260630", "raw-empty-core-lote10-20260630", "raw-empty-core-lote11-20260630", "pe-state-html-gaps-20260708", "rr-state-completion-20260710-v2", "reescrita-claims-homonimo-20260726", "consolidacao-mapa-fome-20260726", "lme-preview-lazy-20260803", "density-bypass-clear-20260804", "sancoes-proveniencia-20260805", "verificacao-campos-tse-min-20260809", "frescor-data-calendario-20260809", "ultima-verificacao-qualquer-dado-20260809", "chapas-tse-20260815", "chapas-bio-card-20260813", "onda-p-20260814", "party-siglas-lote2-20260815", "gastos-executivo-cpgf-20260816", "gastos-executivo-ug-20260820", "trajetoria-candidatura-atual-20260906", "historico-cas-20260915", "candidate-roster-cas-20260915", "candidate-history-cas-20260915", "historico-dedupe-type-cas-20260915", "candidate-beny-sources-cas-20260915", "candidate-beny-sanctions-receipt-cas-20260915", "filiacao-google-public-copy-v2-20260916", "timeline-partidaria-registro-20260918", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidato-ficha"],
@@ -2324,7 +2330,7 @@ const getCachedCandidatosComResumoResource = unstableCacheWithSingleFlight(
     rejectPartialForCache(getCandidatosComResumoResourceUncached(cargo, estado)),
   // Bumped 2026-04-26: dados de candidato vem ja sanitizados via getCandidatosResource;
   // o suffix forca bust de cache antigo do Bloco 1.
-  ["public-candidatos-resumo-resource", "central-party-sanitize", "sort-count-nullability-20260908", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "patrimonio-atipico-grade-20260916", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
+  ["public-candidatos-resumo-resource", "central-party-sanitize", "sort-count-nullability-20260908", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "patrimonio-atipico-grade-20260916", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos-resumo"],
@@ -2468,7 +2474,7 @@ async function getCandidatosComparaveisResourceUncached(
 
   // Sanitiza partido_sigla/partido_atual antes do payload publico sair
   // (substitui mapping pontual em ComparadorPanel/RankingTable defensivos).
-  return liveResource(sanitizePublicPartyFieldsList(normalizedRows as CandidatoComparavel[]))
+  return liveResource(sanitizePublicDisplayNameFieldsList(sanitizePublicPartyFieldsList(normalizedRows as CandidatoComparavel[])))
 }
 
 const getCachedCandidatosComparaveisResource = unstableCacheWithSingleFlight(
@@ -2479,7 +2485,7 @@ const getCachedCandidatosComparaveisResource = unstableCacheWithSingleFlight(
   // alimentava alertas_graves no servidor, nunca lido no cliente).
   // Bumped 2026-08-20: comparador B v1 (cargo_atual, bloco CEAP, sem votos).
   // Bumped 2026-08-20: sem flag de gastos_executivo no payload do comparador.
-  ["public-candidatos-comparaveis-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "comparaveis-strip-pontos-20260603", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "evolucao-patrimonial-lista-20260819", "comparador-b-v1-20260820", "comparador-ceap-federal-20260820", "comparador-sem-executivo-20260820", "timeline-partidaria-registro-20260918", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
+  ["public-candidatos-comparaveis-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "comparaveis-strip-pontos-20260603", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "evolucao-patrimonial-lista-20260819", "comparador-b-v1-20260820", "comparador-ceap-federal-20260820", "comparador-sem-executivo-20260820", "timeline-partidaria-registro-20260918", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos-comparaveis"],
@@ -3149,7 +3155,7 @@ async function getQuizAlignmentDatasetResourceUncached(
 const getCachedQuizAlignmentDatasetResource = unstableCacheWithSingleFlight(
   async (cargo: string, estado: string) =>
     rejectPartialForCache(getQuizAlignmentDatasetResourceUncached(cargo, estado || undefined)),
-  ["quiz-alignment-dataset-resource", "quiz-votacao-reference-v1", "quiz-paged-enrichment-v1", "fase2", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "quiz-mudancas-despublicado-v1", "timeline-partidaria-registro-20260918", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
+  ["quiz-alignment-dataset-resource", "quiz-votacao-reference-v1", "quiz-paged-enrichment-v1", "fase2", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "quiz-mudancas-despublicado-v1", "timeline-partidaria-registro-20260918", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["quiz-dataset"],

@@ -1,4 +1,5 @@
 import { formatPartyPublicLabel, isUncertainParty } from "@/lib/party-utils"
+import { formatDisplayName } from "@/lib/display-name"
 
 /**
  * Centraliza a sanitização publica de partido em payloads que cruzam para client/RSC.
@@ -55,4 +56,31 @@ export function sanitizePublicPartyFieldsList<
   T extends { partido_sigla?: string | null; partido_atual?: string | null },
 >(rows: readonly T[]): T[] {
   return rows.map((row) => sanitizePublicPartyFields(row))
+}
+
+/**
+ * Formata `nome_urna` publicado pelo TSE em CAIXA ALTA para title case, na
+ * mesma fronteira de leitura das demais sanitizações públicas (nunca grava de
+ * volta no banco; ver `src/lib/display-name.ts` para a regra completa).
+ *
+ * Nomes já curados em caixa normal (ex.: "ACM Neto") passam intocados —
+ * `formatDisplayName` só age quando a palavra inteira está em caixa alta.
+ */
+export function sanitizePublicDisplayNameFields<
+  T extends { nome_urna?: string | null },
+>(row: T): T {
+  const next: T = { ...row }
+  if ("nome_urna" in next && typeof next.nome_urna === "string") {
+    next.nome_urna = formatDisplayName(next.nome_urna) as T["nome_urna"]
+  }
+  return next
+}
+
+/**
+ * Sanitizacao de `nome_urna` para uma lista; util para resources que retornam arrays.
+ */
+export function sanitizePublicDisplayNameFieldsList<
+  T extends { nome_urna?: string | null },
+>(rows: readonly T[]): T[] {
+  return rows.map((row) => sanitizePublicDisplayNameFields(row))
 }

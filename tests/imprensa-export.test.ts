@@ -19,6 +19,7 @@ function dataset(): ImprensaDataset {
     rows: [{
       slug: "joao-da-silva",
       nome: "João, Silva\nJúnior",
+      nomeOriginal: "João, Silva\nJúnior",
       cargo: "Deputado Federal",
       uf: "SP",
       partido: "ABC",
@@ -34,6 +35,7 @@ function dataset(): ImprensaDataset {
       chapa: {
         estado: "sem_dado",
         viceNome: null,
+        viceNomeOriginal: null,
         fonteUrl: null,
         fonteSha256: null,
         snapshotEm: null,
