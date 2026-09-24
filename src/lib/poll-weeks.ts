@@ -53,26 +53,35 @@ function comparabilityDimensions(poll: StatePollScenario): {
   const mode = comparabilityMode(poll)
   if (!mode) return null
   const [, , , , , , rawUniverse] = parts
-  const universe = normalizeDimension(rawUniverse)
+  // "total" and "total_entrevistados" are published spellings of the same base as "total_amostra".
+  const normalized = normalizeDimension(rawUniverse)
+  const universe = normalized === "total" || normalized === "total_entrevistados" ? "total_amostra" : normalized
   if (universe !== "total_amostra" && universe !== "votos_validos") return null
   return { mode, universe }
 }
 
-/** Keep factual comparability dimensions; list IDs and poll IDs never define a series. */
+/** Named candidates with an exact identity in this scenario. */
+function namedCandidates(poll: StatePollScenario) {
+  return poll.scenario.resultados.filter(result => result.matchStatus === "exact_alias" && result.candidateSlug)
+}
+
+/**
+ * Keep factual comparability dimensions. Governor and president series combine every institute
+ * that asked the same kind of question (stimulated or spontaneous) on the same base (total sample
+ * or valid votes) in the same turn; candidate lists and free-text electorate descriptions do not
+ * split the series, and each candidate is averaged over the surveys that list them.
+ */
 function weeklySeriesKey(poll: StatePollScenario) {
   const dimensions = comparabilityDimensions(poll)
   const population = poll.sample.population
-  const candidates = poll.scenario.resultados
-    .filter(result => result.matchStatus === "exact_alias" && result.candidateSlug)
-    .map(resultKey)
-    .sort()
-  const metadataVerified = population.status === "publicado" && Boolean(population.value?.trim())
-    && poll.method.status === "publicado" && Boolean(poll.method.value?.trim())
-    && poll.instituto.status === "publicado" && Boolean(poll.instituto.value?.trim())
+  const candidates = namedCandidates(poll).map(resultKey).sort()
+  const identified = poll.instituto.status === "publicado" && Boolean(poll.instituto.value?.trim())
     && candidates.length > 0 && !poll.scenario.resultados.some(result => result.matchStatus === "indeterminado")
   if (poll.office === "Senador") {
     // Senate scenarios (two votes per state) group by the published question,
     // denominator and methodology signature, never by provenance or institute.
+    const metadataVerified = identified && population.status === "publicado" && Boolean(population.value?.trim())
+      && poll.method.status === "publicado" && Boolean(poll.method.value?.trim())
     if (!senadoMeasure(poll) || !metadataVerified) return JSON.stringify(["isolated", pollKey(poll)])
     return JSON.stringify([
       poll.electionYear,
@@ -84,7 +93,7 @@ function weeklySeriesKey(poll: StatePollScenario) {
       normalizeDimension(population.value!),
     ])
   }
-  if (!dimensions || !metadataVerified) return JSON.stringify(["isolated", pollKey(poll)])
+  if (!dimensions || !identified) return JSON.stringify(["isolated", pollKey(poll)])
   return JSON.stringify([
     poll.electionYear,
     normalizeDimension(poll.office),
@@ -92,8 +101,6 @@ function weeklySeriesKey(poll: StatePollScenario) {
     poll.scenario.turn,
     dimensions.mode,
     dimensions.universe,
-    candidates,
-    normalizeDimension(population.value!),
   ])
 }
 
@@ -105,7 +112,9 @@ function surveyIdentity(poll: StatePollScenario) {
 /** One vote per distinct survey. Never round inputs or borrow a missing result from another week. */
 export function aggregatePollWeeks(polls: StatePollScenario[]): PollWeek[] {
   const unique = new Map<string, StatePollScenario>()
-  for (const poll of [...polls].sort((a, b) => (b.publicationDate.value ?? "").localeCompare(a.publicationDate.value ?? "") || pollKey(a).localeCompare(pollKey(b)))) {
+  // One scenario per survey: the most recent publication, then the most complete candidate list.
+  for (const poll of [...polls].sort((a, b) => (b.publicationDate.value ?? "").localeCompare(a.publicationDate.value ?? "") ||
+    namedCandidates(b).length - namedCandidates(a).length || pollKey(a).localeCompare(pollKey(b)))) {
     if (poll.sourceStatus !== "aprovado" || poll.state !== "publicado") continue
     const identity = `${weeklySeriesKey(poll)}:${surveyIdentity(poll)}`
     if (!unique.has(identity)) unique.set(identity, poll)
@@ -144,7 +153,13 @@ export function groupWeeklyPollSeries(polls: StatePollScenario[]): WeeklySeries[
   }
   return [...groups].flatMap(([id, members]) => {
     const weeks = aggregatePollWeeks(members)
-    return weeks.length ? [{ id, label: weeks.at(-1)!.polls.at(-1)!.scenario.labelRaw, polls: weeks.flatMap(week => week.polls), weeks }] : []
+    if (!weeks.length) return []
+    const seriesPolls = weeks.flatMap(week => week.polls)
+    const labels = new Set(seriesPolls.map(poll => poll.scenario.labelRaw))
+    const mode = comparabilityMode(seriesPolls[0])
+    const label = labels.size === 1 || !mode ? weeks.at(-1)!.polls.at(-1)!.scenario.labelRaw
+      : `Intenção de voto ${mode === "estimulada" ? "estimulada" : "espontânea"} no ${seriesPolls[0].scenario.turn}º turno`
+    return [{ id, label, polls: seriesPolls, weeks }]
   }).sort((a, b) => {
     // The initial view should show the prompted candidate list, not a sparse
     // spontaneous scenario chosen accidentally by lexicographic ID order.

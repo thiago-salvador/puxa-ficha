@@ -12,7 +12,7 @@ const { loadStatePrograms } = require("../src/lib/state-programs") as typeof imp
 const { loadStatePolls } = require("../src/lib/state-polls") as typeof import("../src/lib/state-polls")
 const { carregarPesquisasGovernadores } = require("../src/lib/pesquisas-eleitorais") as typeof import("../src/lib/pesquisas-eleitorais")
 
-test("all 27 UF charts default to an available stimulated scenario and SP retains all seven named results", () => {
+test("all 27 UF charts default to an available stimulated scenario and SP averages its latest week across institutes", () => {
   const catalogs = carregarPesquisasGovernadores()
   assert.equal(catalogs.size, 27)
   for (const [uf, catalog] of catalogs) {
@@ -23,9 +23,11 @@ test("all 27 UF charts default to an available stimulated scenario and SP retain
     if (uf === "SP") {
       const rows = groups[0].weeks.at(-1)!.results
       assert.equal(rows.length, 7)
-      assert.equal(rows.find(r => r.result.candidateSlug === "vivian-mendes")?.value, 0)
-      assert.equal(rows.find(r => r.result.candidateSlug === "tarcisio-gov-sp")?.value, 44)
-      assert.equal(rows.find(r => r.result.candidateSlug === "haddad-gov-sp")?.value, 27)
+      // Week of 21/09: Paraná Pesquisas (50.7/33.3) and Quaest (44/27) averaged across institutes.
+      assert.equal(groups[0].weeks.at(-1)!.polls.length, 2)
+      assert.equal(rows.find(r => r.result.candidateSlug === "vivian-mendes")?.value, 0.3)
+      assert.equal(rows.find(r => r.result.candidateSlug === "tarcisio-gov-sp")?.value, 47.35)
+      assert.equal(rows.find(r => r.result.candidateSlug === "haddad-gov-sp")?.value, 30.15)
     }
   }
 })
