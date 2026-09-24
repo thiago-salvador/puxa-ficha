@@ -283,16 +283,29 @@ export function parseNumericSearchQuery(query: string): NumericSearchQuery | nul
   return { numero: numberTokens[0], estado: other ? resolveEstadoUf(other)!.toUpperCase() : null }
 }
 
+/** Uma chave de grupo é presidencial quando o cargo (segundo segmento) normaliza para "presidente". */
+function isPresidentialGroupKey(key: string): boolean {
+  const cargo = key.split("|")[1] ?? ""
+  return normalizeForSearch(cargo) === "presidente"
+}
+
 export function groupNumericSearchCandidates(items: readonly GlobalSearchIndexItem[]): Array<{ label: string; items: GlobalSearchIndexItem[] }> {
   const groups = new Map<string, GlobalSearchIndexItem[]>()
   for (const item of items) {
     const key = `${item.estado ?? "BR"}|${item.cargo_disputado ?? ""}`
     groups.set(key, [...(groups.get(key) ?? []), item])
   }
-  return [...groups.entries()].sort(([a], [b]) => a.localeCompare(b, "pt-BR")).map(([key, grouped]) => {
-    const [estado, cargo] = key.split("|")
-    return { label: [estado, cargo].filter(Boolean).join(" · "), items: grouped }
-  })
+  return [...groups.entries()]
+    .sort(([a], [b]) => {
+      const aPresidencial = isPresidentialGroupKey(a)
+      const bPresidencial = isPresidentialGroupKey(b)
+      if (aPresidencial !== bPresidencial) return aPresidencial ? -1 : 1
+      return a.localeCompare(b, "pt-BR")
+    })
+    .map(([key, grouped]) => {
+      const [estado, cargo] = key.split("|")
+      return { label: [estado, cargo].filter(Boolean).join(" · "), items: grouped }
+    })
 }
 
 /**
