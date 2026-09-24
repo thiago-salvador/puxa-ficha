@@ -278,6 +278,8 @@ test("política de erro parcial só existe em fonte scheduled", () => {
   for (const item of withPolicy) {
     assert.equal(item.refresh_mode, "scheduled")
     assert.equal(item.partial_error_policy, "technical_debt")
+    assert.ok(typeof item.partial_error_max_ratio === "number")
+    assert.ok(item.partial_error_max_ratio > 0 && item.partial_error_max_ratio <= 0.05)
   }
 })
 
@@ -313,6 +315,18 @@ test("google-news: erro parcial vira dívida visível; falha total e atraso cont
 
     const total = { ...partial, error_count: 513, source_error: "513 erro(s) na execução mais recente" }
     assert.equal(evaluateSourceFreshness(news, aggregateSourceEvidence(news, [total]), now, { strict }).status, "source_error")
+
+    // Teto de 5%: 25/513 (4,9%) ainda é dívida; 26/513 (5,1%) volta a bloquear,
+    // como num bloqueio da fonte no meio da execução.
+    const atCeiling = { ...partial, error_count: 25, source_error: "25 erro(s) na execução mais recente" }
+    assert.equal(evaluateSourceFreshness(news, aggregateSourceEvidence(news, [atCeiling]), now, { strict }).status, "technical_debt")
+    const aboveCeiling = { ...partial, error_count: 26, source_error: "26 erro(s) na execução mais recente" }
+    assert.equal(evaluateSourceFreshness(news, aggregateSourceEvidence(news, [aboveCeiling]), now, { strict }).status, "source_error")
+    const midRunBlock = { ...partial, error_count: 213, source_error: "213 erro(s) na execução mais recente" }
+    assert.equal(evaluateSourceFreshness(news, aggregateSourceEvidence(news, [midRunBlock]), now, { strict }).status, "source_error")
+
+    const policyWithoutCeiling = { ...news, partial_error_max_ratio: undefined }
+    assert.equal(evaluateSourceFreshness(policyWithoutCeiling, partial, now, { strict }).status, "source_error")
 
     const late = { ...partial, checked_at: "2026-09-22T23:00:00.000Z" }
     const lateResult = evaluateSourceFreshness(news, aggregateSourceEvidence(news, [late]), now, { strict })
