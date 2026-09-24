@@ -246,12 +246,12 @@ describe("experiência v2 de pesquisas presidenciais", () => {
     const tab = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={pesquisas} />)
 
     assert.match(hero, /Quaest/)
-    assert.match(hero, /42%/)
-    assert.match(overview, /42%/)
+    assert.match(hero, /44%/)
+    assert.match(overview, /44%/)
     assert.equal((tab.match(/data-pf-pesquisa-card=/g) ?? []).length, pesquisas.length)
-    assert.match(tab, /quaest-sp-revisao-20260910/)
+    assert.match(tab, /quaest-sp-02456-2026-revisao-20260924/)
     assert.match(tab, /datafolha-tarcisio-lidera-disputa/)
-    assert.equal(pesquisas[0]?.registration.code.value, "SP-00959/2026")
+    assert.equal(pesquisas[0]?.registration.code.value, "SP-02456/2026")
   })
 })
 

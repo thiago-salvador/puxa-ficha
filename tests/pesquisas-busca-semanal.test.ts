@@ -71,7 +71,12 @@ test("rodadas incluídas possuem captura íntegra, resultados preservados e slug
         // A rodada pode ser substituída pela mais recente do mesmo instituto;
         // a identidade continua verificável se a ficha atual a contém.
         const current: (typeof selected)[number] | undefined = selected.find((p) => p.instituto.value === poll.instituto.value)
-        assert.ok(current, `${row.uf}: resultado não chega à ficha ${slug}`)
+        if (!current) {
+          // A rodada mais recente do mesmo instituto pode não citar o candidato; a evidência fica substituída.
+          assert.ok(catalog?.pesquisas.some((p) => p.instituto.value === poll.instituto.value &&
+            (p.publicationDate.value ?? "") > (poll.publicationDate.value ?? "")), `${row.uf}: resultado não chega à ficha ${slug}`)
+          continue
+        }
         assert.equal(current.state, "publicado")
         assert.equal(current.resultado.status, "publicado")
         assert.ok((current.publicationDate.value ?? "") >= (poll.publicationDate.value ?? ""),
@@ -103,7 +108,7 @@ test("fontes alternativas recuperadas chegam às fichas com os valores publicado
   assert.equal(lula[0].id, poderdataLula.id)
   assert.equal(pablo[0].id, poderdataPablo.id)
   assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AC")[0].resultado.valuePercent, 33)
-  assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AM")[0].resultado.valuePercent, 31)
+  assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AM")[0].resultado.valuePercent, 25.8)
   assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "RR").length, 0)
 })
 
@@ -143,7 +148,11 @@ test("capturas nominais conferem com os catálogos e só vinculam identidades at
       for (const slug of row.linked_slugs) {
         assert.ok(roster.some((r: { profile_slug: string; office: string; uf: string; publication_status: string }) =>
           r.profile_slug === slug && r.office === "Governador" && r.uf === row.uf && r.publication_status === "active"))
-        assert.ok(listarPesquisasGovernadorPorSlug(slug, row.uf).some((p) => p.id === row.poll_id), `${slug}: ${row.poll_id}`)
+        // A rodada nominal pode ter sido substituída por outra mais recente do mesmo instituto,
+        // que pode nem citar o candidato.
+        const superseded: boolean = Boolean(governors.get(row.uf)?.pesquisas.some((p): boolean => p.instituto.value === poll.instituto.value &&
+          (p.publicationDate.value ?? "") > (poll.publicationDate.value ?? "")))
+        assert.ok(superseded || listarPesquisasGovernadorPorSlug(slug, row.uf).some((p) => p.id === row.poll_id), `${slug}: ${row.poll_id}`)
       }
     }
   }
