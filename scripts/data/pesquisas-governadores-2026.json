@@ -1816,7 +1816,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|AM|1|estimulada|lista-atlasintel-2026-09-04-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-85ff6f712e1235d2",
+      "exact_aliases_version": "monitor-2026-d1d5b55fca2db07b",
       "exact_aliases": [
         {
           "raw_label": "Cabo Daciolo",
@@ -1872,7 +1872,7 @@
           "scenario_id": "real-time-big-data-am-2026-08-26-primeiro-turno-estimulado"
         },
         {
-          "raw_label": "OMAR AZIZ",
+          "raw_label": "Omar Aziz",
           "candidate_slug": "omar-aziz",
           "year": 2026,
           "office": "Governador",
@@ -1881,7 +1881,7 @@
           "scenario_id": "projeta-pesquisa-de-mercado-e-opiniao-publica-am-06136-2026-1t"
         },
         {
-          "raw_label": "ROBERTO CIDADE",
+          "raw_label": "Roberto Cidade",
           "candidate_slug": "roberto-cidade",
           "year": 2026,
           "office": "Governador",
@@ -1890,7 +1890,7 @@
           "scenario_id": "projeta-pesquisa-de-mercado-e-opiniao-publica-am-06136-2026-1t"
         },
         {
-          "raw_label": "MARIA DO CARMO",
+          "raw_label": "Maria do Carmo",
           "candidate_slug": "maria-do-carmo",
           "year": 2026,
           "office": "Governador",
@@ -1899,7 +1899,7 @@
           "scenario_id": "projeta-pesquisa-de-mercado-e-opiniao-publica-am-06136-2026-1t"
         },
         {
-          "raw_label": "DAVID ALMEIDA",
+          "raw_label": "David Almeida",
           "candidate_slug": "david-almeida",
           "year": 2026,
           "office": "Governador",
@@ -1908,7 +1908,7 @@
           "scenario_id": "projeta-pesquisa-de-mercado-e-opiniao-publica-am-06136-2026-1t"
         },
         {
-          "raw_label": "CABO DACIOLO",
+          "raw_label": "Cabo Daciolo",
           "candidate_slug": "cabo-daciolo",
           "year": 2026,
           "office": "Governador",
@@ -1917,7 +1917,7 @@
           "scenario_id": "projeta-pesquisa-de-mercado-e-opiniao-publica-am-06136-2026-1t"
         },
         {
-          "raw_label": "ISAEL MUNDURUKU",
+          "raw_label": "Isael Munduruku",
           "candidate_slug": "isael-munduruku",
           "year": 2026,
           "office": "Governador",
@@ -1926,7 +1926,7 @@
           "scenario_id": "projeta-pesquisa-de-mercado-e-opiniao-publica-am-06136-2026-1t"
         },
         {
-          "raw_label": "GILBERTO VASCONCELOS",
+          "raw_label": "Gilberto Vasconcelos",
           "candidate_slug": "gilberto-vasconcelos",
           "year": 2026,
           "office": "Governador",
@@ -2596,56 +2596,56 @@
               "comparability_key": "2026|Governador|AM|1|estimulada|afd69e69cebc9371b17d6fee3d781fbb73415e80af627e9a91fa1dad8a0ea712|total_amostra",
               "resultados": [
                 {
-                  "raw_label": "OMAR AZIZ",
+                  "raw_label": "Omar Aziz",
                   "candidate_slug": "omar-aziz",
                   "match_status": "exact_alias",
                   "value_percent": 25.8,
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "ROBERTO CIDADE",
+                  "raw_label": "Roberto Cidade",
                   "candidate_slug": "roberto-cidade",
                   "match_status": "exact_alias",
                   "value_percent": 24.36,
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "MARIA DO CARMO",
+                  "raw_label": "Maria do Carmo",
                   "candidate_slug": "maria-do-carmo",
                   "match_status": "exact_alias",
                   "value_percent": 15.82,
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "DAVID ALMEIDA",
+                  "raw_label": "David Almeida",
                   "candidate_slug": "david-almeida",
                   "match_status": "exact_alias",
                   "value_percent": 15.41,
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "CABO DACIOLO",
+                  "raw_label": "Cabo Daciolo",
                   "candidate_slug": "cabo-daciolo",
                   "match_status": "exact_alias",
                   "value_percent": 2.27,
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "ISAEL MUNDURUKU",
+                  "raw_label": "Isael Munduruku",
                   "candidate_slug": "isael-munduruku",
                   "match_status": "exact_alias",
                   "value_percent": 0.82,
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "GILBERTO VASCONCELOS",
+                  "raw_label": "Gilberto Vasconcelos",
                   "candidate_slug": "gilberto-vasconcelos",
                   "match_status": "exact_alias",
                   "value_percent": 0.43,
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "BRANCO / NULO",
+                  "raw_label": "Branco / Nulo",
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 6.52,
