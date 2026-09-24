@@ -15,6 +15,7 @@ const NAV_ITEMS = [
   { href: "/rankings", label: "Listas" },
   { href: "/doadores", label: "Doadores" },
   { href: "/quiz", label: "Quiz" },
+  { href: "/colinha", label: "Colinha" },
   { href: "/sobre", label: "Sobre" },
 ]
 
