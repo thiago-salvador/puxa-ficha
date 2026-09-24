@@ -124,17 +124,28 @@ async function ingestPerfil(
     ultima_atualizacao: new Date().toISOString(),
   }
 
+  const { data: current, error: currentError } = await supabase
+    .from("candidatos")
+    .select("foto_url, sq_candidato_2026")
+    .eq("id", candidatoId)
+    .abortSignal(context.signal)
+    .single()
+  if (currentError) throw new Error(`candidatos: ${currentError.message}`)
+  // Issue #472: a 2026 TSE registration is the authority for party, birth
+  // date and birthplace (the cohort ingest writes naturalidade from the TSE
+  // complement and cites it in the biography). The Senado profile lags party
+  // switches (it still listed PSD for a PT candidate), so it only fills
+  // fields TSE does not publish.
+  const registroTse = Boolean(current?.sq_candidato_2026)
+
   if (ident) {
     const hasCurrentSenateSeat = Boolean(ident.CodigoPublicoNaLegAtual)
 
     // Only set photo if candidate doesn't already have one (Wikipedia photos preferred)
-    if (ident.UrlFotoParlamentar) {
-      const { data: current } = await supabase.from("candidatos").select("foto_url").eq("id", candidatoId).abortSignal(context.signal).single()
-      if (!current?.foto_url) updates.foto_url = ident.UrlFotoParlamentar as string
-    }
+    if (ident.UrlFotoParlamentar && !current?.foto_url) updates.foto_url = ident.UrlFotoParlamentar as string
     // The Senado detail endpoint reflects the parliamentary profile there. For ex-senators it
     // should not override current-party curation outside the current legislature.
-    if (hasCurrentSenateSeat && ident.SiglaPartidoParlamentar) {
+    if (!registroTse && hasCurrentSenateSeat && ident.SiglaPartidoParlamentar) {
       updates.partido_sigla = ident.SiglaPartidoParlamentar
       updates.partido_atual = ident.SiglaPartidoParlamentar
     }
@@ -142,8 +153,8 @@ async function ingestPerfil(
   }
 
   if (dadosBasicos) {
-    if (dadosBasicos.DataNascimento) updates.data_nascimento = dadosBasicos.DataNascimento
-    if (dadosBasicos.Naturalidade && dadosBasicos.UfNaturalidade) {
+    if (!registroTse && dadosBasicos.DataNascimento) updates.data_nascimento = dadosBasicos.DataNascimento
+    if (!registroTse && dadosBasicos.Naturalidade && dadosBasicos.UfNaturalidade) {
       updates.naturalidade = `${dadosBasicos.Naturalidade}/${dadosBasicos.UfNaturalidade}`
     }
   }

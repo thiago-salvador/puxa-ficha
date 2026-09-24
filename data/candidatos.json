@@ -5008,7 +5008,7 @@
     "estado": "MA",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5411,
       "tse_sq_candidato": {
         "2026": "100002537338"
       }
@@ -5036,7 +5036,7 @@
     "estado": "MA",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5718,
       "tse_sq_candidato": {
         "2026": "100002541459"
       }
@@ -5078,7 +5078,7 @@
     "estado": "MA",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 3359,
       "tse_sq_candidato": {
         "2026": "100002549583"
       }
@@ -5134,7 +5134,7 @@
     "estado": "AC",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 4560,
       "tse_sq_candidato": {
         "2026": "10002535804"
       }
@@ -5148,7 +5148,7 @@
     "estado": "AC",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 4990,
       "tse_sq_candidato": {
         "2026": "10002536441"
       }
@@ -5190,7 +5190,7 @@
     "estado": "AC",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5902,
       "tse_sq_candidato": {
         "2026": "10002544274"
       }
@@ -5204,7 +5204,7 @@
     "estado": "AC",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 4558,
       "tse_sq_candidato": {
         "2026": "10002548046"
       }
@@ -5218,7 +5218,7 @@
     "estado": "AC",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 285,
       "tse_sq_candidato": {
         "2026": "10002548050"
       }
@@ -5246,7 +5246,7 @@
     "estado": "MT",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 6295,
       "tse_sq_candidato": {
         "2026": "110002544986"
       }
@@ -5260,7 +5260,7 @@
     "estado": "MT",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5010,
       "tse_sq_candidato": {
         "2026": "110002544988"
       }
@@ -5302,7 +5302,7 @@
     "estado": "MT",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 6304,
       "tse_sq_candidato": {
         "2026": "110002551967"
       }
@@ -5400,7 +5400,7 @@
     "estado": "MS",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5988,
       "tse_sq_candidato": {
         "2026": "120002547434"
       }
@@ -5484,7 +5484,7 @@
     "estado": "MG",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5990,
       "tse_sq_candidato": {
         "2026": "130002545590"
       }
@@ -5708,7 +5708,7 @@
     "estado": "PA",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 3806,
       "tse_sq_candidato": {
         "2026": "140002542691"
       }
@@ -5890,7 +5890,7 @@
     "estado": "PB",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5748,
       "tse_sq_candidato": {
         "2026": "150002544905"
       }
@@ -5988,7 +5988,7 @@
     "estado": "PR",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5006,
       "tse_sq_candidato": {
         "2026": "160002547656"
       }
@@ -6198,7 +6198,7 @@
     "estado": "PE",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5008,
       "tse_sq_candidato": {
         "2026": "170002547773"
       }
@@ -6282,7 +6282,7 @@
     "estado": "PI",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 742,
       "tse_sq_candidato": {
         "2026": "180002533967"
       }
@@ -6310,7 +6310,7 @@
     "estado": "PI",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 739,
       "tse_sq_candidato": {
         "2026": "180002540446"
       }
@@ -6520,7 +6520,7 @@
     "estado": "RJ",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5936,
       "tse_sq_candidato": {
         "2026": "190002535142"
       }
@@ -6604,7 +6604,7 @@
     "estado": "RJ",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 7,
       "tse_sq_candidato": {
         "2026": "190002548141"
       }
@@ -6674,7 +6674,7 @@
     "estado": "RJ",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 3366,
       "tse_sq_candidato": {
         "2026": "190002550184"
       }
@@ -6786,7 +6786,7 @@
     "estado": "RN",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5959,
       "tse_sq_candidato": {
         "2026": "200002534448"
       }
@@ -6800,7 +6800,7 @@
     "estado": "RN",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5783,
       "tse_sq_candidato": {
         "2026": "200002535507"
       }
@@ -6996,7 +6996,7 @@
     "estado": "AL",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 3613,
       "tse_sq_candidato": {
         "2026": "20002553726"
       }
@@ -7010,7 +7010,7 @@
     "estado": "AL",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 70,
       "tse_sq_candidato": {
         "2026": "20002553727"
       }
@@ -7234,7 +7234,7 @@
     "estado": "RO",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 4981,
       "tse_sq_candidato": {
         "2026": "220002541490"
       }
@@ -7444,7 +7444,7 @@
     "estado": "RR",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 470,
       "tse_sq_candidato": {
         "2026": "230002550794"
       }
@@ -7612,7 +7612,7 @@
     "estado": "SC",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 22,
       "tse_sq_candidato": {
         "2026": "240002548632"
       }
@@ -7850,7 +7850,7 @@
     "estado": "SE",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5982,
       "tse_sq_candidato": {
         "2026": "260002533084"
       }
@@ -7892,7 +7892,7 @@
     "estado": "SE",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5352,
       "tse_sq_candidato": {
         "2026": "260002547285"
       }
@@ -7920,7 +7920,7 @@
     "estado": "SE",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 4721,
       "tse_sq_candidato": {
         "2026": "260002549127"
       }
@@ -8060,7 +8060,7 @@
     "estado": "TO",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 3777,
       "tse_sq_candidato": {
         "2026": "270002546333"
       }
@@ -8172,7 +8172,7 @@
     "estado": "AP",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5926,
       "tse_sq_candidato": {
         "2026": "30002530069"
       }
@@ -8200,7 +8200,7 @@
     "estado": "AP",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5012,
       "tse_sq_candidato": {
         "2026": "30002549909"
       }
@@ -8312,7 +8312,7 @@
     "estado": "AM",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5502,
       "tse_sq_candidato": {
         "2026": "40002537344"
       }
@@ -8396,7 +8396,7 @@
     "estado": "BA",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5967,
       "tse_sq_candidato": {
         "2026": "50002533124"
       }
@@ -8438,7 +8438,7 @@
     "estado": "BA",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 581,
       "tse_sq_candidato": {
         "2026": "50002536317"
       }
@@ -8578,7 +8578,7 @@
     "estado": "CE",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5973,
       "tse_sq_candidato": {
         "2026": "60002542479"
       }
@@ -8704,7 +8704,7 @@
     "estado": "DF",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5979,
       "tse_sq_candidato": {
         "2026": "70002552492"
       }
@@ -8788,7 +8788,7 @@
     "estado": "ES",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5942,
       "tse_sq_candidato": {
         "2026": "80002538202"
       }
@@ -8830,7 +8830,7 @@
     "estado": "ES",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5953,
       "tse_sq_candidato": {
         "2026": "80002550187"
       }
@@ -8844,7 +8844,7 @@
     "estado": "ES",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 2331,
       "tse_sq_candidato": {
         "2026": "80002551368"
       }
@@ -8858,7 +8858,7 @@
     "estado": "ES",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 3868,
       "tse_sq_candidato": {
         "2026": "80002551370"
       }
@@ -8970,7 +8970,7 @@
     "estado": "GO",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 5899,
       "tse_sq_candidato": {
         "2026": "90002543215"
       }
