@@ -179,7 +179,9 @@
     "evidence_type": "runtime_endpoint",
     "evidence_ref": "/api/news/refresh",
     "stale_policy": "show_with_warning",
-    "negative_claims_allowed_when_stale": false
+    "negative_claims_allowed_when_stale": false,
+    "partial_error_policy": "technical_debt",
+    "partial_error_max_ratio": 0.05
   },
   {
     "source_id": "editorial-curation",
