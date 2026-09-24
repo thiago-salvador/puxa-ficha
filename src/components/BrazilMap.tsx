@@ -425,7 +425,7 @@ export function BrazilMap({
                           onBlur={() => setHovered(null)}
                           onClick={() => rememberState(uf)}
                         >
-                          <span className="font-bold">{uf}</span>
+                          <span className="w-7 shrink-0 whitespace-nowrap font-bold">{uf}</span>
                           <span className="font-medium">{STATE_NAMES[uf]}</span>
                         </Link>
                       </li>

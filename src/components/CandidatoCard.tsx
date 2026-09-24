@@ -102,7 +102,7 @@ export const CandidatoCard = memo(function CandidatoCard({
           />
 
           {/* Glass overlay - slides up on hover */}
-          <div className="absolute inset-x-0 bottom-0 sm:translate-y-[calc(100%-5.5rem)] sm:transition-transform sm:duration-500 sm:ease-[cubic-bezier(0.16,1,0.3,1)] sm:group-hover:translate-y-0 sm:group-focus-within:translate-y-0 sm:motion-reduce:transition-none">
+          <div className="absolute inset-x-0 bottom-0 sm:max-h-full sm:overflow-y-auto sm:translate-y-[calc(100%-5.5rem)] sm:transition-transform sm:duration-500 sm:ease-[cubic-bezier(0.16,1,0.3,1)] sm:group-hover:translate-y-0 sm:group-focus-within:translate-y-0 sm:motion-reduce:transition-none">
             <div className="glass-dark flex min-h-[5.5rem] flex-col justify-end px-3 pb-2.5 pt-2.5 sm:min-h-0 sm:block sm:px-5 sm:pb-5 sm:pt-4">
 
               {/* Party logo + sigla — always visible.
@@ -134,12 +134,12 @@ export const CandidatoCard = memo(function CandidatoCard({
               </h3>
 
               {/* Mobile: compact inline stats — always visible, fixed single line */}
-              <div className="mt-1 flex min-h-[14px] items-center gap-1.5 text-[length:var(--text-eyebrow)] font-bold text-white/80 sm:hidden">
+              <div className="mt-1 flex min-h-[14px] flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[length:var(--text-eyebrow)] font-bold text-white/80 sm:hidden">
                 {hasMainStats ? (
                   <>
-                    <span className="flex min-w-0 items-center gap-0.5">
+                    <span className="flex min-w-0 flex-wrap items-center gap-0.5">
                       <Landmark className="size-3.5 shrink-0" />
-                      {patrimonio != null ? <FormattedNumber value={patrimonio} /> : PUBLIC_DATA_VOCABULARY.unverified.label}
+                      <span className="whitespace-nowrap">{patrimonio != null ? <FormattedNumber value={patrimonio} /> : PUBLIC_DATA_VOCABULARY.unverified.label}</span>
                       {mostrarAvisoAtipico && (
                         <span
                           data-pf-patrimonio-atipico=""
@@ -182,12 +182,12 @@ export const CandidatoCard = memo(function CandidatoCard({
               <div className="hidden sm:block sm:opacity-0 sm:transition-opacity sm:delay-75 sm:duration-300 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
                 <div className="my-3 h-px bg-white/20" />
                 {hasMainStats ? (
-                  <div className="grid grid-cols-2 gap-x-4">
-                    <div>
-                      <p className="font-heading text-[26px] leading-none text-white">
+                  <div className="flex flex-wrap gap-x-4 gap-y-3">
+                    <div className="min-w-0">
+                      <p className="whitespace-nowrap font-heading text-[length:var(--text-heading-sm)] leading-none text-white xl:text-[26px]">
                         {patrimonio != null ? <FormattedNumber value={patrimonio} /> : PUBLIC_DATA_VOCABULARY.unverified.label}
                       </p>
-                      <p className="mt-1 flex items-center gap-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-wide text-white/60">
+                      <p className="mt-1 flex items-center gap-1 whitespace-nowrap text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-wide text-white/60">
                         <Landmark className="size-3 shrink-0" />
                         Patrimônio
                       </p>
@@ -201,10 +201,10 @@ export const CandidatoCard = memo(function CandidatoCard({
                       )}
                     </div>
                     <div>
-                      <p className="font-heading text-[26px] leading-none text-white">
+                      <p className="whitespace-nowrap font-heading text-[length:var(--text-heading-sm)] leading-none text-white xl:text-[26px]">
                         <span title={processosDisplay.sub}>{processosDisplay.value}<span className="sr-only">{processosDisplay.sub ? `: ${processosDisplay.sub}` : ""}</span></span>
                       </p>
-                      <p className="mt-1 flex items-center gap-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-wide text-white/60">
+                      <p className="mt-1 flex items-center gap-1 whitespace-nowrap text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-wide text-white/60">
                         <Scale className="size-3 shrink-0" />
                         Processo{processos !== 1 ? "s" : ""}
                       </p>

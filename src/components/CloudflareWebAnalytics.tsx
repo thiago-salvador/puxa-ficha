@@ -16,6 +16,7 @@ export async function CloudflareWebAnalytics() {
       src="https://static.cloudflareinsights.com/beacon.min.js"
       strategy="afterInteractive"
       type="module"
+      crossOrigin="anonymous"
       nonce={nonce}
       data-cf-beacon={JSON.stringify({ token: CLOUDFLARE_WEB_ANALYTICS_TOKEN })}
     />

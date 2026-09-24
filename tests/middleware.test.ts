@@ -279,6 +279,23 @@ describe("middleware route protection", () => {
     assert.equal(response.headers.get("x-robots-tag"), "noindex, nofollow")
   })
 
+  it("serve as páginas 404 do middleware em português acentuado e sem jargão", async () => {
+    globalThis.fetch = async () => slugListResponse(["lula"])
+
+    const cases = [
+      ["http://localhost/candidato/slug-desconhecido", "Candidato não encontrado"],
+      ["http://localhost/rankings/lista-inexistente", "Ranking não encontrado"],
+      ["http://localhost/uf/zz", "UF não encontrada"],
+    ] as const
+    for (const [url, titulo] of cases) {
+      const response = await middleware(request(url))
+      assert.equal(response.status, 404, url)
+      const html = await response.text()
+      assert.ok(html.includes(`<title>404 - ${titulo} - Puxa Ficha</title>`), url)
+      assert.doesNotMatch(html, /\bnao\b|\bslug\b|\bpublica\b/, url)
+    }
+  })
+
   it("keeps candidato routes fail-open only when the internal slug list is unavailable", async () => {
     globalThis.fetch = async () => new Response("unavailable", { status: 503 })
 

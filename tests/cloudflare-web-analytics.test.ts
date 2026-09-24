@@ -18,6 +18,8 @@ test("Cloudflare beacon keeps its production, nonce and CSP contract without net
   assert.match(component, /get\("x-pf-private-colinha"\) === "1"/)
   assert.match(read("middleware.ts"), /requestHeaders\.set\("x-pf-private-colinha"/)
   assert.match(component, /nonce=\{nonce\}/)
+  assert.match(component, /type="module"/)
+  assert.match(component, /crossOrigin="anonymous"/)
   assert.match(component, /static\.cloudflareinsights\.com\/beacon\.min\.js/)
   assert.match(component, /data-cf-beacon=/)
   assert.match(layout, /<CloudflareWebAnalytics\s*\/>/)
