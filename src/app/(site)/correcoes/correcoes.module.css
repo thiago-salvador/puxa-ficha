@@ -1,0 +1,147 @@
+.shell {
+  --ink: #111111;
+  --paper: #f7f6f2;
+  --rule: #d9d7d0;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+.hero {
+  background: var(--ink);
+  color: white;
+}
+
+.eyebrow {
+  color: #ffb1a3;
+  font: 700 11px/1.2 var(--font-inter), sans-serif;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.heroInner,
+.content {
+  margin: 0 auto;
+  max-width: 900px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.heroInner {
+  padding-bottom: 56px;
+  padding-top: 88px;
+}
+
+.heroTitle {
+  font: 400 clamp(2.5rem, 7vw, 4.5rem)/.92 var(--font-anton), sans-serif;
+  letter-spacing: -.03em;
+  margin: 10px 0 0;
+  text-transform: uppercase;
+}
+
+.heroCopy {
+  color: #d8d8d8;
+  font-size: 16px;
+  line-height: 1.55;
+  margin: 20px 0 0;
+  max-width: 620px;
+}
+
+.content {
+  padding-bottom: 72px;
+  padding-top: 40px;
+}
+
+.meta {
+  color: #666;
+  font-size: 13px;
+}
+
+.notice {
+  background: #fff;
+  border: 1px solid var(--rule);
+  margin-top: 24px;
+  padding: 20px;
+}
+
+.list {
+  border-top: 1px solid var(--rule);
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+}
+
+.item {
+  border-bottom: 1px solid var(--rule);
+  padding: 18px 0;
+}
+
+.itemHead {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  justify-content: space-between;
+}
+
+.itemDate {
+  color: #666;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.itemCandidato {
+  font-weight: 750;
+}
+
+.itemAlvo {
+  color: #666;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.itemResumo {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+.itemResumoVazio {
+  color: #888;
+  font-size: 13px;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.itemLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.itemLinks a {
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footnote {
+  border-top: 1px solid var(--rule);
+  color: #666;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 42px;
+  padding-top: 20px;
+}
+
+@media (max-width: 700px) {
+  .heroInner { padding-bottom: 40px; padding-top: 64px; }
+  .content { padding-bottom: 48px; padding-top: 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shell *, .shell *::before, .shell *::after { transition-duration: .01ms !important; }
+}
