@@ -15,9 +15,8 @@ export async function CloudflareWebAnalytics() {
       id="cf-web-analytics"
       src="https://static.cloudflareinsights.com/beacon.min.js"
       strategy="afterInteractive"
-      // Script clássico, como o snippet oficial: com type="module" o navegador busca
-      // em modo CORS e descarta o preload que o Next injeta (aviso no console e
-      // download duplicado).
+      type="module"
+      crossOrigin="anonymous"
       nonce={nonce}
       data-cf-beacon={JSON.stringify({ token: CLOUDFLARE_WEB_ANALYTICS_TOKEN })}
     />
