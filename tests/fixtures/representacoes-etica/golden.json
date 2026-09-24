@@ -1,0 +1,83 @@
+{
+  "descricao": "Golden do coletor de representações ao Conselho de Ética. Respostas reais da API de Dados Abertos da Câmara gravadas em 2026-09-23 (api-camara-golden.json), com CPF trocado por valor sintético. Expectativas lidas da tramitação crua, não da saída do coletor.",
+  "agora": "2026-09-23T12:00:00.000Z",
+  "legislatura": 57,
+  "seed_slugs": [
+    "tse-2026-210002547819",
+    "tse-2026-70002552490",
+    "luciano-zucco",
+    "erika-hilton",
+    "tarcisio-motta",
+    "aecio-neves"
+  ],
+  "cpf_tse_igual_ao_da_camara": [
+    { "sq": "210002547819", "deputado_id": 156190 },
+    { "sq": "70002552490", "deputado_id": 160575 }
+  ],
+  "total_representacoes": 6,
+  "itens": [
+    {
+      "caso": "REP 25/2025: recurso contra o Conselho; identidade só pelo CPF (seed sem ids.camara)",
+      "id": "camara-rep-2563294-dep-156190",
+      "slug": "tse-2026-210002547819",
+      "metodo_identidade": "cpf_tse_camara",
+      "via_alvo": "nome_parlamentar",
+      "fase": "recurso_apresentado",
+      "data_fase": "2026-05-19",
+      "ultimo_andamento": "2026-05-19",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2563294"
+    },
+    {
+      "caso": "REP 8/2023: vários alvos por nome civil; retirada pelo autor",
+      "id": "camara-rep-2366795-dep-160575",
+      "slug": "tse-2026-70002552490",
+      "metodo_identidade": "cpf_tse_camara",
+      "via_alvo": "nome_civil",
+      "fase": "retirada",
+      "data_fase": "2023-06-12",
+      "ultimo_andamento": "2023-06-12",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2366795"
+    },
+    {
+      "caso": "REP 21/2023: arquivada; identidade pelo ids.camara do seed",
+      "id": "camara-rep-2376389-dep-220552",
+      "slug": "luciano-zucco",
+      "metodo_identidade": "seed_ids_camara",
+      "via_alvo": "nome_parlamentar",
+      "fase": "arquivada",
+      "data_fase": "2024-02-06",
+      "ultimo_andamento": "2024-02-06",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2376389"
+    },
+    {
+      "caso": "REP 3/2026: treze alvos, dois candidatos",
+      "id": "camara-rep-2617174-dep-220645",
+      "slug": "erika-hilton",
+      "metodo_identidade": "seed_ids_camara",
+      "via_alvo": "nome_parlamentar",
+      "fase": "processo_instaurado",
+      "data_fase": "2026-06-09",
+      "ultimo_andamento": "2026-08-27",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2617174"
+    },
+    {
+      "caso": "REP 3/2026: segundo candidato da mesma representação",
+      "id": "camara-rep-2617174-dep-220598",
+      "slug": "tarcisio-motta",
+      "metodo_identidade": "seed_ids_camara",
+      "via_alvo": "nome_parlamentar",
+      "fase": "processo_instaurado",
+      "data_fase": "2026-06-09",
+      "ultimo_andamento": "2026-08-27",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2617174"
+    }
+  ],
+  "sem_item": [
+    { "caso": "deputado da legislatura com ids.camara no seed e nenhuma representação", "slug": "aecio-neves" }
+  ],
+  "alvos_sem_candidato_inclui": [
+    { "caso": "alvo que não é candidato no seed", "proposicao_id": 2563290, "deputado_id": 220547 },
+    { "caso": "nome sem o título parlamentar (Delegado)", "proposicao_id": 2617169, "deputado_id": 220654 }
+  ],
+  "alvos_nao_resolvidos": 0
+}

@@ -1,6 +1,6 @@
 "use client"
 
-// cspell:words atribuidas
+// cspell:words atribuidas representacoes etica
 
 import { memo, useCallback, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react"
 import dynamic from "next/dynamic"
@@ -54,6 +54,8 @@ import {
 } from "./EmptyState"
 import type { CandidatoProfileNavTabId, CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
 import { getApprovedAttributedFactChecks } from "@/lib/checagens-atribuidas"
+import { getRepresentacoesEticaAprovadas } from "@/lib/representacoes-etica"
+import { RepresentacoesEticaCategoria } from "./RepresentacoesEticaCategoria"
 import {
   CANDIDATO_PROFILE_NAV_TAB_IDS,
   normalizeCandidatoProfileNavTab,
@@ -469,6 +471,7 @@ export function CandidatoProfile({
         })
       : []
   const checagensEnabled = attributedChecks.length > 0
+  const representacoesEtica = getRepresentacoesEticaAprovadas(ficha.slug)
 
   const tabDefsById: Record<CandidatoProfileNavTabId, { label: string; dataCount: number }> = {
     geral: { label: fixedCopy.generalOverview, dataCount: 0 },
@@ -485,7 +488,7 @@ export function CandidatoProfile({
         (ficha.transparencia?.length ?? 0) +
         gastosExecutivo.length,
     },
-    justica: { label: "Justiça", dataCount: processos.length + sancoes.length },
+    justica: { label: "Justiça", dataCount: processos.length + sancoes.length + representacoesEtica.length },
     votos: { label: "Votos", dataCount: votos.length },
     trajetoria: { label: "Trajetória", dataCount: profileTrajetoriaTabBadgeCount(historico, mudancas) },
     legislacao: {
@@ -1088,6 +1091,9 @@ export function CandidatoProfile({
                     </div>
                   )
                 })}
+                {/* Processos disciplinares (Conselho de Ética): categoria própria da
+                    aba, fora de "Processos judiciais (N)" e do card de processos. */}
+                <RepresentacoesEticaCategoria representacoes={representacoesEtica} />
                 {/* Sanções administrativas: bloco com proveniência do zero.
                     Só a coleta com desfecho vazio_confirmado autoriza dizer
                     "nada encontrado"; sem verificação o bloco fica neutro. */}
