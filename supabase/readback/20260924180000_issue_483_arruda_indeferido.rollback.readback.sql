@@ -14,6 +14,7 @@ BEGIN
 
   IF (SELECT to_jsonb(c) FROM public.candidatos c WHERE c.slug = 'jose-roberto-arruda')
        IS DISTINCT FROM b->'candidato'
+     OR b->'candidato' IS DISTINCT FROM r->'before'
      OR b->'candidato'->>'situacao_candidatura' IS DISTINCT FROM 'indeferido com recurso'
      OR b->'candidato'->>'status' IS DISTINCT FROM 'candidato'
      OR b->'candidato'->'publicavel' IS DISTINCT FROM 'true'::jsonb THEN

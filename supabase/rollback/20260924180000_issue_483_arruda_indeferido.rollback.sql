@@ -39,6 +39,13 @@ BEGIN
     RAISE EXCEPTION 'issue-483 rollback: escrita esperada=1 atual=%', afetadas;
   END IF;
 
+  -- O CAS acima prova o estado de partida; esta comparacao prova o de
+  -- chegada: a linha restaurada tem de ser a preimagem integral do recibo.
+  IF (SELECT to_jsonb(c) FROM public.candidatos c WHERE c.slug = 'jose-roberto-arruda')
+       IS DISTINCT FROM r->'before' THEN
+    RAISE EXCEPTION 'issue-483 rollback: linha restaurada nao e a preimagem do recibo';
+  END IF;
+
   -- Cardinalidade conferida: a chave e (migration_version,tabela,row_id), entao
   -- 'issue-483-arruda-indeferido' pode ter zero ou varias linhas. Zero
   -- significa que a migration nao gravou o snapshot; mais de uma, que alguem
