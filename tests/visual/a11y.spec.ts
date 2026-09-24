@@ -23,7 +23,9 @@ const ROUTES: RouteA11y[] = [
   { name: "quiz-result", path: "/quiz/resultado" },
   { name: "embed-home", path: "/embed" },
   { name: "embed-candidate", path: "/embed/lula" },
-  { name: "imprensa", path: "/imprensa" },
+  // Recorte filtrado: mesmos componentes da Mesa, mas sem as ~500 linhas da
+  // coorte inteira, cuja análise do axe passava do timeout de 30 s.
+  { name: "imprensa", path: "/imprensa?cargo=Governador&uf=SP" },
   { name: "imprensa-atualizacoes", path: "/imprensa/atualizacoes" },
   { name: "imprensa-frescor", path: "/imprensa/frescor" },
 ]
