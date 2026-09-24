@@ -296,6 +296,8 @@ describe("FONTES cobre todo source declarado pelos ingests", () => {
       // Recibo global da observação semanal, gravado pelo entrypoint
       // scripts/observe-home-updates.ts, fora dos coletores de scripts/lib.
       "tse-observacao",
+      // Recibo da auditoria diária, gravado por scripts/audit.
+      "tse-auditoria-snapshot",
     ])
     const orfas = Object.keys(FONTES).filter(
       (f) => !declarados.has(f) && !excecoes.has(f),

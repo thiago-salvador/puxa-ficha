@@ -64,7 +64,8 @@ export const IMPRENSA_FRESHNESS_SOURCES: readonly FreshnessSourceDefinition[] = 
     maxAgeHours: freshnessLimit("tse-current"),
     // O limiar vem de `tse-current`, então a coleta também vem de todos os
     // membros dele no catálogo, inclusive a observação semanal dos pacotes
-    // (`tse-observacao`). Ler só `tse` media apenas o ingest manual.
+    // (`tse-observacao`) e a leitura diária da auditoria de frescor
+    // (`tse-auditoria-snapshot`). Ler só `tse` media apenas o ingest manual.
     receiptSources: freshnessCollectionSources("tse-current"),
   },
   {

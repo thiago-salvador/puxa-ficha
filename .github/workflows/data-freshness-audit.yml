@@ -59,6 +59,13 @@ jobs:
         id: tse_monitors
         continue-on-error: true
         run: npm run audit:data-freshness:tse-dependent
+      # Recibo global da leitura oficial do TSE em coleta_log, lido por
+      # /imprensa/frescor. Sem SUPABASE_URL e SUPABASE_SERVICE_ROLE_KEY neste
+      # job, o script só avisa; com elas, falha se o recibo não for gravado.
+      - name: Registrar recibo da leitura oficial do TSE
+        id: tse_receipt
+        if: always() && steps.audit.outcome != 'skipped'
+        run: npm run audit:data-freshness:tse-receipt
       - name: Publicar resumo no run
         if: always()
         run: |
