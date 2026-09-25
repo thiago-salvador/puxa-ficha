@@ -9,6 +9,7 @@ import { basename, join, resolve } from "node:path"
 import { Readable } from "node:stream"
 import { pipeline } from "node:stream/promises"
 import { pathToFileURL } from "node:url"
+import { assertOutsideRepository } from "./lib/private-output"
 
 type Family = "perfil_atual" | "historico_politico" | "patrimonio" | "financiamento"
 type Resource = { name?: string; url?: string; format?: string }
@@ -98,8 +99,7 @@ async function fileSha256(path: string): Promise<string> {
 
 async function localCache(url: string, directory: string | null): Promise<{ path: string; sha256: string; bytes: number; reused_cache: true } | null> {
   if (!directory) return null
-  const root = resolve(directory)
-  if (!root.includes("/evidencias-privadas/") && !root.startsWith("/tmp/")) throw new Error("--cache-dir precisa ser privado")
+  const root = assertOutsideRepository(directory, "--cache-dir")
   const path = join(root, basename(new URL(url).pathname))
   if (!existsSync(path)) return null
   const fd = openSync(path, "r")
@@ -121,8 +121,7 @@ async function main(): Promise<void> {
   if (selectedFamilies.size === 0 || [...selectedFamilies].some((family) => !["perfil_atual", "historico_politico", "patrimonio", "financiamento"].includes(family))) {
     throw new Error("--families aceita perfil_atual,historico_politico,patrimonio,financiamento")
   }
-  const out = resolve(destination)
-  if (!out.includes("/evidencias-privadas/") && !out.startsWith("/tmp/")) throw new Error("destino deve ser pasta privada fora do repositório")
+  const out = assertOutsideRepository(destination, "destino")
   mkdirSync(out, { recursive: true, mode: 0o700 })
   const cacheDirectory = option("cache-dir")
   const assets: Asset[] = []

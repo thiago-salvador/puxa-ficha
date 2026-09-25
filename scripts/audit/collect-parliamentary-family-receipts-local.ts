@@ -186,15 +186,6 @@ function valueAtPath(value: unknown, path: readonly string[] | undefined): unkno
   return current
 }
 
-function objectArrays(value: unknown): Array<Record<string, unknown>[]> {
-  if (Array.isArray(value)) {
-    const own = value.filter((item): item is Record<string, unknown> => Boolean(object(item)))
-    return [own, ...value.flatMap(objectArrays)]
-  }
-  const record = object(value)
-  return record ? Object.values(record).flatMap(objectArrays) : []
-}
-
 function rowsFromPayload(value: unknown, path: readonly string[] | undefined): Record<string, unknown>[] {
   if (!path || path.length === 0) throw new Error("rows_path obrigatório; o coletor não escolhe o maior array")
   const selected = valueAtPath(value, path)

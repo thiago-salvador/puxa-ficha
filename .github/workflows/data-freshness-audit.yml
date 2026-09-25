@@ -160,7 +160,7 @@ jobs:
             reports/data-freshness/summary.md \
             thiago-salvador
 
-  # Gate de cobertura (Operação Ficha Completa, eval 9): toda ficha pública
+  # Gate de cobertura: toda ficha pública
   # precisa de recibo de fonte em cada família aplicável. Lê os perfis pela API
   # pública e os recibos por candidato em transação somente leitura. Começa em
   # modo aviso; depois de duas execuções limpas (GATE_SEM_RECIBO cells=0 no

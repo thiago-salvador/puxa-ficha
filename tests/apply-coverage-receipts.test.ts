@@ -3,6 +3,7 @@ import { describe, it } from "node:test"
 import { planCoverageReceipts } from "../scripts/audit/apply-coverage-receipts"
 import { adaptLatestReceipts, buildCoverageMatrix, type CoverageProfile } from "../scripts/audit/audit-cobertura-fichas"
 import { publicFamilyPayloadSha256 } from "../scripts/audit/lib/coverage-source-proof"
+import { assertOutsideRepository } from "../scripts/audit/lib/private-output"
 
 const URL_BENS = "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip"
 
@@ -31,6 +32,16 @@ function receipt(subject: CoverageProfile, overrides: Record<string, unknown> = 
 }
 
 const ALLOW = new Set(["tse-patrimonio"])
+
+describe("saída privada dos coletores", () => {
+  it("recusa pasta dentro do repositório e aceita pasta fora dele", () => {
+    const root = "/repo/puxa-ficha"
+    assert.throws(() => assertOutsideRepository("/repo/puxa-ficha/reports/x", "destino", root), /fora do repositório/)
+    assert.throws(() => assertOutsideRepository("/repo/puxa-ficha", "destino", root), /fora do repositório/)
+    assert.equal(assertOutsideRepository("/privado/coleta", "destino", root), "/privado/coleta")
+    assert.equal(assertOutsideRepository("/repo/puxa-ficha-evidencias", "destino", root), "/repo/puxa-ficha-evidencias")
+  })
+})
 
 describe("prova de cobertura por ano sobrevive a recibo mais novo sem prova", () => {
   const cell = (subject: CoverageProfile, rows: Record<string, unknown>[]) =>

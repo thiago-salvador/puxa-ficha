@@ -17,6 +17,7 @@ import { createHash } from "node:crypto"
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { join, resolve } from "node:path"
 import { pathToFileURL } from "node:url"
+import { assertOutsideRepository } from "./lib/private-output"
 
 type House = "camara" | "senado"
 type Family = "projetos_lei" | "votos_candidato" | "gastos_parlamentares"
@@ -53,11 +54,15 @@ function officialUrl(value: string): URL {
   return url
 }
 
+/** Metadados da página sem os bytes decodificados. */
+function stripValue<T extends { value: unknown }>(item: T): Omit<T, "value"> {
+  const copy: Partial<T> = { ...item }
+  delete copy.value
+  return copy as Omit<T, "value">
+}
+
 function privateDestination(value: string): string {
-  const destination = resolve(value)
-  if (!destination.includes("/evidencias-privadas/") && !destination.startsWith("/tmp/")) {
-    throw new Error("destino precisa estar em evidencias-privadas ou /tmp")
-  }
+  const destination = assertOutsideRepository(value, "destino")
   mkdirSync(destination, { recursive: true, mode: 0o700 })
   return destination
 }
@@ -295,7 +300,7 @@ async function main(): Promise<void> {
       if (house === "camara") {
         const projects = await capturePaginated(destination, `familias/${house}/${officialId}/projetos_lei`, `${CAMARA}/proposicoes`, { idDeputadoAutor: officialId, ordem: "DESC", ordenarPor: "id" })
         const projectsBundle = writeBundle(destination, `familias/${house}/${officialId}/projetos_lei`, projects as Array<Page & { value: unknown }>)
-        addObservation({ house, family: "projetos_lei", officialId, sourceUrl: familySource(house, "projetos_lei", officialId), sourcePath: projectsBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: projects.map(({ value: _value, ...page }) => page), bundleSha256: projectsBundle.sha256 })
+        addObservation({ house, family: "projetos_lei", officialId, sourceUrl: familySource(house, "projetos_lei", officialId), sourcePath: projectsBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: projects.map(stripValue), bundleSha256: projectsBundle.sha256 })
 
         // The existing Câmara ingest reads each year and uses the legislature
         // matching that year. Keeping those query parameters here prevents a
@@ -307,7 +312,7 @@ async function main(): Promise<void> {
           expensePages.push(...pages as Array<Page & { value: unknown }>)
         }
         const expensesBundle = writeBundle(destination, `familias/${house}/${officialId}/gastos_parlamentares`, expensePages)
-        addObservation({ house, family: "gastos_parlamentares", officialId, sourceUrl: `${CAMARA}/deputados/${officialId}/despesas`, sourcePath: expensesBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: expensePages.map(({ value: _value, ...page }) => page), bundleSha256: expensesBundle.sha256, extra: { years, id_legislatura_by_year: Object.fromEntries(years.map((year) => [year, year <= 2022 ? 56 : 57])) } })
+        addObservation({ house, family: "gastos_parlamentares", officialId, sourceUrl: `${CAMARA}/deputados/${officialId}/despesas`, sourcePath: expensesBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: expensePages.map(stripValue), bundleSha256: expensesBundle.sha256, extra: { years, id_legislatura_by_year: Object.fromEntries(years.map((year) => [year, year <= 2022 ? 56 : 57])) } })
         if (camaraVoteIds.length === 0) {
           pending.push({ house, family: "votos_candidato", official_id: officialId, reason: "IDs exatos de votações-chave da Câmara não foram fornecidos; endpoint por deputado é deliberadamente recusado pelo ingest existente", source: familySource(house, "votos_candidato", officialId) })
         } else {
@@ -322,7 +327,7 @@ async function main(): Promise<void> {
             pending.push({ house, family: "votos_candidato", official_id: officialId, reason: "as páginas de votação não contêm linha nominal do deputado alvo", source: `${CAMARA}/votacoes/{votacao_id}/votos` })
           } else {
             const bundle = writeBundle(destination, `familias/${house}/${officialId}/votos_candidato`, filteredPages)
-            addObservation({ house, family: "votos_candidato", officialId, sourceUrl: `${CAMARA}/votacoes/{votacao_id}/votos?deputado=${officialId}`, sourcePath: bundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: filteredPages.map(({ value: _value, ...page }) => page), bundleSha256: bundle.sha256, extra: { vote_ids: camaraVoteIds } })
+            addObservation({ house, family: "votos_candidato", officialId, sourceUrl: `${CAMARA}/votacoes/{votacao_id}/votos?deputado=${officialId}`, sourcePath: bundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: filteredPages.map(stripValue), bundleSha256: bundle.sha256, extra: { vote_ids: camaraVoteIds } })
           }
         }
       } else {
@@ -330,7 +335,7 @@ async function main(): Promise<void> {
           try {
             const page = await capturePage(destination, `familias/${house}/${officialId}/${family}`, 1, url)
             const bundle = writeBundle(destination, `familias/${house}/${officialId}/${family}`, [page])
-            addObservation({ house, family, officialId, sourceUrl: url, sourcePath: bundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: [((({ value: _value, ...rest }) => rest)(page))], bundleSha256: bundle.sha256 })
+            addObservation({ house, family, officialId, sourceUrl: url, sourcePath: bundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: [((stripValue)(page))], bundleSha256: bundle.sha256 })
           } catch (error) {
             pending.push({ house, family, official_id: officialId, reason: error instanceof Error ? error.message : String(error), source: url })
           }
@@ -346,7 +351,7 @@ async function main(): Promise<void> {
             expensePages.push(filterBundlePages([page], officialId)[0]!)
           }
           const expenseBundle = writeBundle(destination, `familias/${house}/${officialId}/gastos_parlamentares`, expensePages)
-          addObservation({ house, family: "gastos_parlamentares", officialId, sourceUrl: `${CEAPS}/{ano}?codSenador=${officialId}`, sourcePath: expenseBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: expensePages.map(({ value: _value, ...page }) => page), bundleSha256: expenseBundle.sha256, extra: { years, source_filter: { field: "codSenador", value: officialId } } })
+          addObservation({ house, family: "gastos_parlamentares", officialId, sourceUrl: `${CEAPS}/{ano}?codSenador=${officialId}`, sourcePath: expenseBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: expensePages.map(stripValue), bundleSha256: expenseBundle.sha256, extra: { years, source_filter: { field: "codSenador", value: officialId } } })
         } catch (error) {
           pending.push({ house, family: "gastos_parlamentares", official_id: officialId, reason: error instanceof Error ? error.message : String(error), source: familySource(house, "gastos_parlamentares", officialId) })
         }

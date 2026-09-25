@@ -21,6 +21,7 @@ import { basename, dirname, resolve } from "node:path"
 import { pipeline } from "node:stream/promises"
 import { fileURLToPath } from "node:url"
 import { parseCSV } from "../lib/parse-csv-local"
+import { stripAccents } from "../../src/lib/strip-accents"
 import { publicFamilyPayloadSha256, publicFamilyRowCount } from "./lib/coverage-source-proof"
 import type { CoverageProfile } from "./audit-cobertura-fichas"
 
@@ -157,7 +158,7 @@ function identityRows(rows: readonly Row[], candidate: Candidate, year: number, 
 }
 
 function normalized(value: unknown): string {
-  return text(value).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, " ").toUpperCase()
+  return stripAccents(text(value)).replace(/\s+/g, " ").toUpperCase()
 }
 
 function publicFamilyEntries(profile: CoverageProfile, family: TseFamily): Record<string, unknown>[] {
@@ -240,7 +241,7 @@ function compareFinanciamento(profile: CoverageProfile, rows: readonly Row[]): b
 }
 
 /** Compara somente projeções que possuem uma chave pública estável. Perfis exigem fontes externas e nunca fecham aqui. */
-function comparePublicProjection(profile: CoverageProfile, family: TseFamily, rows: readonly Row[], assets: readonly SourceAsset[]): boolean {
+function comparePublicProjection(profile: CoverageProfile, family: TseFamily, rows: readonly Row[]): boolean {
   if (family === "perfil_atual") return false
   const publicRows = publicFamilyEntries(profile, family)
   if (publicRows.length === 0) return false
@@ -340,7 +341,7 @@ export function buildReceipt(input: {
   const revision = sourceRevision(assets)
   const publicDigest = readback ? publicFamilyPayloadSha256(readback.public_profile, family) : null
   const publicRows = readback ? publicFamilyRowCount(readback.public_profile, family) : 0
-  const sourceMatch = readback ? comparePublicProjection(readback.public_profile, family, matches, assets) : false
+  const sourceMatch = readback ? comparePublicProjection(readback.public_profile, family, matches) : false
   const readbackOk = Boolean(readback && readback.candidato_id === candidateId && readback.public_profile.slug === candidate.slug && readback.public_profile.id === candidateId && sourceMatch && publicRows > 0)
   const profileCoreOk = family !== "perfil_atual" || Boolean(readback?.core_fields && CORE_FIELDS.every((field) => readback.core_fields?.includes(field)))
   const found = manifestComplete && !ufMissing && matches.length > 0 && readbackOk && profileCoreOk
