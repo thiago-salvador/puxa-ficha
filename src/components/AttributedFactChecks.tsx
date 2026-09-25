@@ -9,6 +9,7 @@ import {
   type AttributedCheckSource,
   type AttributedFactCheck,
 } from "@/lib/checagens-atribuidas"
+import { formatarDataBusca, listarEmProsa, type ReciboChecagensVisivel } from "@/lib/buscas-recibos"
 
 function formatDate(value: string): string {
   const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(value)
@@ -166,16 +167,27 @@ function AttributedFactCheckCard({ check }: { check: AttributedFactCheck }) {
   )
 }
 
+/** Texto do recibo da busca nominal. Só é chamado com recibo válido. */
+function searchReceiptText(receipt: ReciboChecagensVisivel, publishedChecks: number): string {
+  const when = `Busca feita em ${formatarDataBusca(receipt.searchedAt)} em ${listarEmProsa(receipt.agencias)}`
+  if (publishedChecks > 0) return `${when}.`
+  if (receipt.result === "vazio_confirmado") return `${when}: nenhuma checagem com o nome deste candidato no título.`
+  const matches = receipt.leads === 1 ? "1 matéria cita" : `${receipt.leads} matérias citam`
+  return `${when}: ${matches} o nome deste candidato no título. Nenhuma checagem de fala dele foi conferida e publicada aqui até agora.`
+}
+
 export function AttributedFactChecks({
   candidateId,
   candidateSlug,
   office,
   uf,
+  searchReceipt = null,
 }: {
   candidateId: string
   candidateSlug: string
   office: string
   uf: string | null
+  searchReceipt?: ReciboChecagensVisivel | null
 }) {
   const checks = getApprovedAttributedFactChecks({
     candidate_id: candidateId,
@@ -183,7 +195,7 @@ export function AttributedFactChecks({
     office,
     uf,
   })
-  if (checks.length === 0) return null
+  if (checks.length === 0 && !searchReceipt) return null
 
   return (
     <section
@@ -198,10 +210,21 @@ export function AttributedFactChecks({
         <p className="mt-1 max-w-3xl text-[length:var(--text-body-sm)] leading-relaxed text-muted-foreground">
           Avaliações publicadas por veículos de checagem e associadas a esta afirmação após conferência editorial.
         </p>
+        {searchReceipt && (
+          <p
+            data-pf-checagens-busca={searchReceipt.result}
+            data-pf-checagens-busca-em={searchReceipt.searchedAt}
+            className="mt-2 max-w-3xl text-[length:var(--text-caption)] leading-relaxed text-foreground"
+          >
+            {searchReceiptText(searchReceipt, checks.length)}
+          </p>
+        )}
       </div>
-      <div className="space-y-4">
-        {checks.map((check) => <AttributedFactCheckCard key={check.id} check={check} />)}
-      </div>
+      {checks.length > 0 && (
+        <div className="space-y-4">
+          {checks.map((check) => <AttributedFactCheckCard key={check.id} check={check} />)}
+        </div>
+      )}
     </section>
   )
 }

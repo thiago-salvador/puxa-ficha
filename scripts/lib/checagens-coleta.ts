@@ -1,0 +1,411 @@
+/**
+ * Coleta nominal de checagens (política pf-checagens-v1).
+ *
+ * O acervo de checagens atribuídas nasceu de pacotes de leads por veículo, sem
+ * recibo por candidato. Por isso uma ficha sem aba "Checagens" não dizia se a
+ * busca foi feita. Este módulo faz a busca candidato a candidato, agência a
+ * agência, e devolve um recibo que separa três estados:
+ *
+ *   - encontrado: pelo menos uma matéria de agência cita o nome no título
+ *     (lead para revisão editorial, nunca publicação automática);
+ *   - vazio_confirmado: todas as agências responderam e nenhuma matéria
+ *     citou o nome no título;
+ *   - erro: pelo menos uma agência não respondeu. Nesse caso nada no site pode
+ *     afirmar ausência.
+ *
+ * Módulo puro: sem rede, fs ou Supabase. O runner injeta `fetchText`.
+ */
+
+import { stripAccents } from "../../src/lib/strip-accents"
+import { isValidGoogleNewsRss } from "../../src/lib/news/google-news"
+import { newsTitleMentionsCandidate } from "../../src/lib/news/name-match"
+import type { EntradaColeta } from "./coleta-log"
+
+export const FONTE_CHECAGENS_AGENCIAS = "checagens-agencias"
+export const SCHEMA_RECIBOS_CHECAGENS = "checagens-recibos-v1" as const
+export const POLITICA_CHECAGENS = "pf-checagens-v1"
+/** O Google News devolve no máximo 100 itens por consulta. */
+export const TETO_ITENS_POR_CONSULTA = 100
+
+export interface AgenciaChecagem {
+  id: string
+  /** Nome canônico, o mesmo gravado em `publisher` no catálogo público. */
+  nome: string
+  /** Filtros `site:` da consulta. Caminho restringe a seção de checagem. */
+  sites: readonly string[]
+  /** Domínios aceitos no atributo `source url` do item devolvido. */
+  dominios: readonly string[]
+}
+
+/**
+ * Agências já usadas no catálogo e as que o contrato editorial lista. A ordem
+ * é a do recibo. Mudar um nome aqui exige mudar o catálogo, e o teste de
+ * nome canônico por domínio pega a divergência.
+ */
+export const AGENCIAS_CHECAGEM: readonly AgenciaChecagem[] = Object.freeze([
+  { id: "lupa", nome: "Lupa", sites: ["agencialupa.org", "piaui.folha.uol.com.br/lupa"], dominios: ["agencialupa.org", "piaui.folha.uol.com.br"] },
+  { id: "aos-fatos", nome: "Aos Fatos", sites: ["aosfatos.org"], dominios: ["aosfatos.org"] },
+  { id: "fato-ou-fake", nome: "Fato ou Fake", sites: ["g1.globo.com/fato-ou-fake"], dominios: ["g1.globo.com"] },
+  { id: "estadao-verifica", nome: "Estadão Verifica", sites: ["estadao.com.br/estadao-verifica"], dominios: ["estadao.com.br"] },
+  { id: "uol-confere", nome: "UOL Confere", sites: ["noticias.uol.com.br/confere"], dominios: ["uol.com.br"] },
+  { id: "afp-checamos", nome: "AFP Checamos", sites: ["checamos.afp.com"], dominios: ["afp.com"] },
+  { id: "comprova", nome: "Comprova", sites: ["projetocomprova.com.br"], dominios: ["projetocomprova.com.br"] },
+])
+
+/** Nome canônico do veículo pelo host da checagem original. */
+export function publisherCanonicoPorHost(host: string): string | null {
+  const normalized = host.toLowerCase().replace(/^www\./, "")
+  for (const agencia of AGENCIAS_CHECAGEM) {
+    if (agencia.dominios.some((dominio) => normalized === dominio || normalized.endsWith(`.${dominio}`))) return agencia.nome
+  }
+  return null
+}
+
+export interface CandidatoChecagem {
+  id: string
+  slug: string
+  nome_urna: string
+  nome_completo?: string | null
+  cargo_disputado: "Presidente" | "Governador"
+  estado: string | null
+}
+
+export interface ItemBusca {
+  titulo: string
+  link: string
+  fonte: string
+  fonte_url: string | null
+  data_publicacao: string | null
+}
+
+export interface LeadChecagem {
+  agencia: string
+  titulo: string
+  link: string
+  data_publicacao: string | null
+}
+
+export type EstadoAgencia =
+  | { status: "ok"; itens: number; leads: LeadChecagem[] }
+  | { status: "erro"; erro: string }
+
+export type ResultadoRecibo = "encontrado" | "vazio_confirmado" | "erro"
+
+export interface ReciboChecagem {
+  schema_version: typeof SCHEMA_RECIBOS_CHECAGENS
+  candidate_id: string
+  candidate_slug: string
+  candidate_name: string
+  office: CandidatoChecagem["cargo_disputado"]
+  uf: string | null
+  searched_at: string
+  result: ResultadoRecibo
+  leads: LeadChecagem[]
+  agencias: Record<string, { status: "ok" | "erro"; itens?: number; leads?: number; erro?: string }>
+  escopo: string
+}
+
+export function descricaoEscopo(): string {
+  return `Google News RSS, nome de urna entre aspas, uma consulta por agência (${AGENCIAS_CHECAGEM.map((a) => a.nome).join(", ")}); sem limite de data; teto de ${TETO_ITENS_POR_CONSULTA} itens por consulta; lead exige o nome no título`
+}
+
+export function consultaDaAgencia(nomeUrna: string, agencia: AgenciaChecagem): string {
+  const sites = agencia.sites.map((site) => `site:${site}`)
+  const filtro = sites.length === 1 ? sites[0] : `(${sites.join(" OR ")})`
+  return `"${nomeUrna.replace(/"/g, "")}" ${filtro}`
+}
+
+export function urlDeBusca(nomeUrna: string, agencia: AgenciaChecagem): string {
+  return `https://news.google.com/rss/search?q=${encodeURIComponent(consultaDaAgencia(nomeUrna, agencia))}&hl=pt-BR&gl=BR&ceid=BR:pt-419`
+}
+
+function decodeEntities(value: string): string {
+  return value
+    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
+    .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, "\"").replace(/&#39;/g, "'").replace(/&apos;/g, "'")
+    .replace(/&#(\d+);/g, (_, code: string) => String.fromCodePoint(Number(code)))
+    .replace(/&amp;/g, "&")
+    .trim()
+}
+
+/** Parser dos itens do RSS preservando o domínio declarado em `<source url>`. */
+export function parseItensBusca(xml: string): ItemBusca[] {
+  const itens: ItemBusca[] = []
+  for (const match of xml.matchAll(/<item>([\s\S]*?)<\/item>/g)) {
+    const body = match[1]
+    const titulo = body.match(/<title>([\s\S]*?)<\/title>/)?.[1]
+    const link = body.match(/<link>([\s\S]*?)<\/link>/)?.[1]?.trim()
+    if (!titulo || !link || !link.startsWith("https://")) continue
+    const source = body.match(/<source([^>]*)>([\s\S]*?)<\/source>/)
+    const fonteUrl = source?.[1].match(/url="([^"]*)"/)?.[1] ?? null
+    const pubDate = body.match(/<pubDate>([\s\S]*?)<\/pubDate>/)?.[1]?.trim()
+    const parsed = pubDate ? new Date(pubDate) : null
+    itens.push({
+      titulo: decodeEntities(titulo),
+      link: decodeEntities(link),
+      fonte: source ? decodeEntities(source[2]) : "",
+      fonte_url: fonteUrl ? decodeEntities(fonteUrl) : null,
+      data_publicacao: parsed && Number.isFinite(parsed.getTime()) ? parsed.toISOString() : null,
+    })
+  }
+  return itens
+}
+
+function hostDe(url: string | null): string | null {
+  if (!url) return null
+  try {
+    return new URL(url).hostname.toLowerCase().replace(/^www\./, "")
+  } catch {
+    return null
+  }
+}
+
+/** Sufixo " - Veículo" que o Google News acrescenta ao título. */
+export function tituloSemVeiculo(titulo: string, fonte: string): string {
+  const suffix = ` - ${fonte}`
+  return fonte && titulo.endsWith(suffix) ? titulo.slice(0, -suffix.length).trim() : titulo.trim()
+}
+
+/**
+ * Leads de uma resposta: item do domínio da agência cujo título cita o
+ * candidato. O critério de nome é o mesmo das notícias da ficha
+ * (`newsTitleMentionsCandidate`), frouxo na direção de manter o lead: a
+ * revisão editorial é quem descarta.
+ */
+export function leadsDaResposta(itens: readonly ItemBusca[], candidato: CandidatoChecagem, agencia: AgenciaChecagem): LeadChecagem[] {
+  const vistos = new Set<string>()
+  const leads: LeadChecagem[] = []
+  for (const item of itens) {
+    const host = hostDe(item.fonte_url)
+    if (!host || !agencia.dominios.some((dominio) => host === dominio || host.endsWith(`.${dominio}`))) continue
+    const titulo = tituloSemVeiculo(item.titulo, item.fonte)
+    if (!newsTitleMentionsCandidate(titulo, { nome_urna: candidato.nome_urna, nome_completo: candidato.nome_completo })) continue
+    const chave = stripAccents(titulo).toLowerCase()
+    if (vistos.has(chave)) continue
+    vistos.add(chave)
+    leads.push({ agencia: agencia.id, titulo, link: item.link, data_publicacao: item.data_publicacao })
+  }
+  return leads
+}
+
+export function montarRecibo(candidato: CandidatoChecagem, estados: Record<string, EstadoAgencia>, searchedAt: Date): ReciboChecagem {
+  const agencias: ReciboChecagem["agencias"] = {}
+  const leads: LeadChecagem[] = []
+  let erro = false
+  for (const agencia of AGENCIAS_CHECAGEM) {
+    const estado = estados[agencia.id]
+    if (!estado) {
+      erro = true
+      agencias[agencia.id] = { status: "erro", erro: "agência não consultada" }
+      continue
+    }
+    if (estado.status === "erro") {
+      erro = true
+      agencias[agencia.id] = { status: "erro", erro: estado.erro.slice(0, 200) }
+      continue
+    }
+    agencias[agencia.id] = { status: "ok", itens: estado.itens, leads: estado.leads.length }
+    leads.push(...estado.leads)
+  }
+  return {
+    schema_version: SCHEMA_RECIBOS_CHECAGENS,
+    candidate_id: candidato.id,
+    candidate_slug: candidato.slug,
+    candidate_name: candidato.nome_urna,
+    office: candidato.cargo_disputado,
+    uf: candidato.estado,
+    searched_at: searchedAt.toISOString(),
+    result: erro ? "erro" : leads.length > 0 ? "encontrado" : "vazio_confirmado",
+    leads,
+    agencias,
+    escopo: descricaoEscopo(),
+  }
+}
+
+/** Linha de `coleta_log` do recibo. Volume é o número de leads, não de checagens publicadas. */
+export function entradaColetaDoRecibo(recibo: ReciboChecagem): EntradaColeta {
+  const porAgencia = AGENCIAS_CHECAGEM.map((agencia) => {
+    const estado = recibo.agencias[agencia.id]
+    return estado?.status === "ok" ? `${agencia.id}=${estado.leads ?? 0}/${estado.itens ?? 0}` : `${agencia.id}=erro`
+  }).join(" ")
+  return {
+    fonte: FONTE_CHECAGENS_AGENCIAS,
+    alvo: recibo.candidate_slug,
+    escopo: "candidato",
+    resultado: recibo.result,
+    volume: recibo.result === "vazio_confirmado" ? 0 : recibo.leads.length,
+    detalhe: `${POLITICA_CHECAGENS}; leads/itens por agência: ${porAgencia}; ${recibo.escopo}`.slice(0, 1000),
+  }
+}
+
+/** Forma pública, versionada no repositório e lida pelo site no build. */
+export interface ReciboChecagemPublico {
+  candidate_id: string
+  candidate_slug: string
+  searched_at: string
+  result: "encontrado" | "vazio_confirmado"
+  leads: number
+}
+
+export interface CatalogoRecibosChecagens {
+  schema_version: typeof SCHEMA_RECIBOS_CHECAGENS
+  policy: typeof POLITICA_CHECAGENS
+  agencias: string[]
+  escopo: string
+  updated_at: string
+  receipts: ReciboChecagemPublico[]
+}
+
+/**
+ * Consolida recibos novos sobre o catálogo anterior. Recibo com erro nunca
+ * substitui um recibo válido anterior e nunca entra no catálogo público: o
+ * site não pode afirmar ausência a partir de uma busca que falhou.
+ */
+export function consolidarCatalogoRecibos(
+  anterior: CatalogoRecibosChecagens | null,
+  recibos: readonly ReciboChecagem[],
+  now: Date,
+): CatalogoRecibosChecagens {
+  const porChave = new Map<string, ReciboChecagemPublico>()
+  for (const recibo of anterior?.receipts ?? []) porChave.set(`${recibo.candidate_id}\u0000${recibo.candidate_slug}`, recibo)
+  for (const recibo of recibos) {
+    if (recibo.result === "erro") continue
+    const chave = `${recibo.candidate_id}\u0000${recibo.candidate_slug}`
+    const atual = porChave.get(chave)
+    if (atual && atual.searched_at > recibo.searched_at) continue
+    porChave.set(chave, {
+      candidate_id: recibo.candidate_id,
+      candidate_slug: recibo.candidate_slug,
+      searched_at: recibo.searched_at,
+      result: recibo.result,
+      leads: recibo.result === "encontrado" ? recibo.leads.length : 0,
+    })
+  }
+  return {
+    schema_version: SCHEMA_RECIBOS_CHECAGENS,
+    policy: POLITICA_CHECAGENS,
+    agencias: AGENCIAS_CHECAGEM.map((agencia) => agencia.nome),
+    escopo: descricaoEscopo(),
+    updated_at: now.toISOString(),
+    receipts: [...porChave.values()].sort((a, b) => a.candidate_slug.localeCompare(b.candidate_slug) || a.candidate_id.localeCompare(b.candidate_id)),
+  }
+}
+
+export interface OpcoesColeta {
+  roster: readonly CandidatoChecagem[]
+  fetchText: (url: string) => Promise<{ status: number; body: string }>
+  now?: () => Date
+  /** Pausa entre consultas do mesmo trabalhador, para não martelar a fonte. */
+  pausaMs?: number
+  concorrencia?: number
+  tentativas?: number
+  /** Espera base depois de 429/503, multiplicada pela tentativa. */
+  esperaBloqueioMs?: number
+  sleep?: (ms: number) => Promise<void>
+  onRecibo?: (recibo: ReciboChecagem, indice: number) => void
+}
+
+async function consultarAgencia(
+  candidato: CandidatoChecagem,
+  agencia: AgenciaChecagem,
+  opcoes: Required<Pick<OpcoesColeta, "fetchText" | "tentativas" | "sleep" | "pausaMs" | "esperaBloqueioMs">>,
+): Promise<EstadoAgencia> {
+  let ultimoErro = "sem resposta"
+  let bloqueado = false
+  for (let tentativa = 0; tentativa < opcoes.tentativas; tentativa++) {
+    // Limite de taxa (429/503) pede espera longa; erro comum, só uma pausa curta.
+    if (tentativa > 0) await opcoes.sleep(bloqueado ? opcoes.esperaBloqueioMs * tentativa : opcoes.pausaMs * 4 * tentativa)
+    try {
+      const resposta = await opcoes.fetchText(urlDeBusca(candidato.nome_urna, agencia))
+      if (resposta.status < 200 || resposta.status >= 300) {
+        ultimoErro = `HTTP ${resposta.status}`
+        bloqueado = resposta.status === 429 || resposta.status === 503
+        continue
+      }
+      if (!isValidGoogleNewsRss(resposta.body)) {
+        ultimoErro = "resposta não é RSS válido"
+        continue
+      }
+      const itens = parseItensBusca(resposta.body)
+      return { status: "ok", itens: itens.length, leads: leadsDaResposta(itens, candidato, agencia) }
+    } catch (error) {
+      ultimoErro = error instanceof Error ? error.message : String(error)
+    }
+  }
+  return { status: "erro", erro: ultimoErro }
+}
+
+export async function coletarChecagens(opcoes: OpcoesColeta): Promise<ReciboChecagem[]> {
+  const now = opcoes.now ?? (() => new Date())
+  const sleep = opcoes.sleep ?? ((ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms)))
+  const pausaMs = opcoes.pausaMs ?? 400
+  const tentativas = Math.max(1, opcoes.tentativas ?? 3)
+  const esperaBloqueioMs = Math.max(0, opcoes.esperaBloqueioMs ?? 30_000)
+  const concorrencia = Math.min(4, Math.max(1, opcoes.concorrencia ?? 2))
+  const identidades = new Set<string>()
+  for (const candidato of opcoes.roster) {
+    if (!candidato.id || !candidato.slug || !candidato.nome_urna?.trim()) throw new Error("Roster inválido: candidatura sem id, slug ou nome de urna")
+    if (candidato.cargo_disputado !== "Presidente" && candidato.cargo_disputado !== "Governador") throw new Error(`Cargo fora do escopo: ${candidato.slug}`)
+    const chave = `${candidato.id}\u0000${candidato.slug}`
+    if (identidades.has(chave)) throw new Error(`Candidatura duplicada no roster: ${candidato.slug}`)
+    identidades.add(chave)
+  }
+  const recibos: ReciboChecagem[] = new Array(opcoes.roster.length)
+  let proximo = 0
+  const trabalhador = async () => {
+    while (proximo < opcoes.roster.length) {
+      const indice = proximo++
+      const candidato = opcoes.roster[indice]
+      const estados: Record<string, EstadoAgencia> = {}
+      for (const agencia of AGENCIAS_CHECAGEM) {
+        estados[agencia.id] = await consultarAgencia(candidato, agencia, { fetchText: opcoes.fetchText, tentativas, sleep, pausaMs, esperaBloqueioMs })
+        await sleep(pausaMs)
+      }
+      const recibo = montarRecibo(candidato, estados, now())
+      recibos[indice] = recibo
+      opcoes.onRecibo?.(recibo, indice)
+      // Candidatura inteira em erro costuma ser limite de taxa: esfria antes da próxima.
+      if (recibo.result === "erro") await sleep(esperaBloqueioMs * 2)
+    }
+  }
+  await Promise.all(Array.from({ length: concorrencia }, trabalhador))
+  return recibos
+}
+
+export interface ResumoColeta {
+  total: number
+  encontrado: number
+  vazio_confirmado: number
+  erro: number
+  leads: number
+  erros_por_agencia: Record<string, number>
+}
+
+export function resumirColeta(recibos: readonly ReciboChecagem[]): ResumoColeta {
+  const errosPorAgencia: Record<string, number> = {}
+  for (const recibo of recibos) {
+    for (const [agencia, estado] of Object.entries(recibo.agencias)) {
+      if (estado.status === "erro") errosPorAgencia[agencia] = (errosPorAgencia[agencia] ?? 0) + 1
+    }
+  }
+  return {
+    total: recibos.length,
+    encontrado: recibos.filter((recibo) => recibo.result === "encontrado").length,
+    vazio_confirmado: recibos.filter((recibo) => recibo.result === "vazio_confirmado").length,
+    erro: recibos.filter((recibo) => recibo.result === "erro").length,
+    leads: recibos.reduce((total, recibo) => total + recibo.leads.length, 0),
+    erros_por_agencia: errosPorAgencia,
+  }
+}
+
+/**
+ * Junta uma retomada à rodada anterior: o recibo novo substitui o antigo da
+ * mesma candidatura, os demais ficam como estavam.
+ */
+export function mesclarRecibos(anteriores: readonly ReciboChecagem[], novos: readonly ReciboChecagem[]): ReciboChecagem[] {
+  const novosPorChave = new Map(novos.map((recibo) => [`${recibo.candidate_id}\u0000${recibo.candidate_slug}`, recibo]))
+  const mesclados = anteriores.map((recibo) => novosPorChave.get(`${recibo.candidate_id}\u0000${recibo.candidate_slug}`) ?? recibo)
+  const existentes = new Set(anteriores.map((recibo) => `${recibo.candidate_id}\u0000${recibo.candidate_slug}`))
+  for (const recibo of novos) if (!existentes.has(`${recibo.candidate_id}\u0000${recibo.candidate_slug}`)) mesclados.push(recibo)
+  return mesclados
+}

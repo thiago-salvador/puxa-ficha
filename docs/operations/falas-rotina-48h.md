@@ -65,12 +65,23 @@ npm run audit:falas:rodada -- \
   --roster reports/falas-monitoramento/roster.json \
   --receipts reports/falas-monitoramento/rodada-atual/recibos.json \
   --round-start "$INICIO_DA_RODADA_ISO" \
-  --catalog scripts/data/falas-candidatos.json
+  --catalog scripts/data/falas-candidatos.json \
+  --export-site scripts/data/falas-recibos.json
 ```
 
 O início identifica a rodada real, não uma data escolhida para aceitar recibos
 antigos. Consulte `--help` para os argumentos. Arquivar o resumo com
-total, pesquisados, sem resultado, bloqueados e faltantes. Se faltar um nome,
+total, pesquisados, sem resultado, bloqueados e faltantes.
+
+`--export-site` atualiza o recibo público versionado que o site lê para dizer
+"busca feita em <data>, nenhuma fala com aspas conferida" nas fichas sem aspa.
+Só entra busca válida; bloqueio ou busca planejada não viram recibo. O arquivo
+vai no mesmo PR do catálogo de falas.
+
+O resumo também traz `found` e `found_without_quote`: recibo `found` promete
+aspa explícita na fonte, então cada `found` sem aspa publicada na janela precisa
+de destino (aspa importada ou recusa registrada nas pendências). Com
+`--require-found-quote` a auditoria sai 1 enquanto houver algum. Se faltar um nome,
 continuar apenas essa busca. Um bloqueio real deve ser reportado como rodada
 parcial, nunca como ausência de novidades. Revalidar o cadastro ao concluir e
 pesquisar inclusões ou identidades alteradas antes de declarar cobertura completa.

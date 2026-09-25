@@ -1,0 +1,45 @@
+{
+  "schema_version": "checagens-recibos-v1",
+  "policy": "pf-checagens-v1",
+  "agencias": [
+    "Lupa",
+    "Aos Fatos",
+    "Fato ou Fake",
+    "Estadão Verifica",
+    "UOL Confere",
+    "AFP Checamos",
+    "Comprova"
+  ],
+  "escopo": "Google News RSS, nome de urna entre aspas, uma consulta por agência (Lupa, Aos Fatos, Fato ou Fake, Estadão Verifica, UOL Confere, AFP Checamos, Comprova); sem limite de data; teto de 100 itens por consulta; lead exige o nome no título",
+  "updated_at": "2026-09-25T22:11:19.562Z",
+  "receipts": [
+    {
+      "candidate_id": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+      "candidate_slug": "lula",
+      "searched_at": "2026-09-25T22:05:26.799Z",
+      "result": "encontrado",
+      "leads": 610
+    },
+    {
+      "candidate_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+      "candidate_slug": "mailza-assis",
+      "searched_at": "2026-09-25T22:05:19.643Z",
+      "result": "vazio_confirmado",
+      "leads": 0
+    },
+    {
+      "candidate_id": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+      "candidate_slug": "ronaldo-caiado",
+      "searched_at": "2026-09-25T22:05:24.378Z",
+      "result": "encontrado",
+      "leads": 16
+    },
+    {
+      "candidate_id": "128ab70f-daf2-472b-926f-ec65b7287dd1",
+      "candidate_slug": "thor-dantas",
+      "searched_at": "2026-09-25T22:05:18.932Z",
+      "result": "vazio_confirmado",
+      "leads": 0
+    }
+  ]
+}
