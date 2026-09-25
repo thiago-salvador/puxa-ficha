@@ -5,7 +5,7 @@ import { tmpdir } from "node:os"
 import path from "node:path"
 import test from "node:test"
 
-import { collectParliamentaryFamilyReceipts, type ParliamentarySourceObservation } from "../scripts/audit/collect-parliamentary-family-receipts-local"
+import { assertExpenseEmptinessCoversMandates, collectParliamentaryFamilyReceipts, mandateYears, type ParliamentarySourceObservation } from "../scripts/audit/collect-parliamentary-family-receipts-local"
 
 function fixture(sourceRows: unknown[], dtoRows: unknown[], total = sourceRows.length) {
   const dir = mkdtempSync(path.join(tmpdir(), "pf-parliament-proof-"))
@@ -73,6 +73,19 @@ test("ID alheio e DTO divergente não produzem recibo positivo", () => {
     assert.equal(result.receipts.length, 0)
     assert.match(result.errors[0] ?? "", /IDs parlamentares/)
   } finally { rmSync(dir, { recursive: true, force: true }) }
+})
+
+test("vazio de gastos só vale se a consulta cobre o mandato e não há mandato ativo sem despesa", () => {
+  const history = (rows: Array<[string, number, number | null]>) => ({ historico: rows.map(([cargo, periodo_inicio, periodo_fim]) => ({ tipo_evento: "mandato", cargo, periodo_inicio, periodo_fim })) })
+  assert.deepEqual(mandateYears({ ...history([["Deputado Federal", 2019, 2022], ["Senador", 2011, 2012]]), historico: [...history([["Deputado Federal", 2019, 2022], ["Senador", 2011, 2012]]).historico, { tipo_evento: "candidatura", cargo: "Deputado Federal", periodo_inicio: 2026 }] }, "camara", 2026), [2019, 2020, 2021, 2022])
+  assert.deepEqual(mandateYears(history([["Deputado Estadual", 2019, 2022]]), "camara", 2026), [])
+  const observation = (years: number[]) => ({ house: "camara", family: "gastos_parlamentares", years }) as unknown as ParliamentarySourceObservation
+  const all = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+  assert.throws(() => assertExpenseEmptinessCoversMandates(history([["Deputado Federal", 1987, 1990]]), observation(all)), /anterior a 2009/)
+  assert.throws(() => assertExpenseEmptinessCoversMandates(history([["Deputado Federal", 2011, 2014]]), observation(all)), /não consultados: 2011,2012,2013,2014/)
+  assert.throws(() => assertExpenseEmptinessCoversMandates(history([["Deputado Federal", 2019, 2022]]), observation(all)), /mandato ativo/)
+  // Controle positivo: sem mandato federal no histórico, o vazio da consulta segue válido.
+  assert.doesNotThrow(() => assertExpenseEmptinessCoversMandates(history([]), observation(all)))
 })
 
 test("vazio exige total oficial explícito zero e DTO sem linhas", () => {

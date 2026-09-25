@@ -442,6 +442,45 @@ function detailFor(input: {
   })
 }
 
+/** Primeiro ano com despesa de cota disponível na API oficial de cada casa. */
+export const EXPENSE_SOURCE_FIRST_YEAR: Record<"camara" | "senado", number> = { camara: 2009, senado: 2008 }
+
+/** Anos de mandato federal da casa, segundo o histórico publicado da ficha. */
+export function mandateYears(profile: Record<string, unknown>, house: "camara" | "senado", currentYear = new Date().getUTCFullYear()): number[] {
+  const office = house === "camara" ? "Deputado Federal" : "Senador"
+  const years = new Set<number>()
+  for (const raw of Array.isArray(profile.historico) ? profile.historico : []) {
+    const row = object(raw)
+    if (!row || row.tipo_evento === "candidatura") continue
+    const cargo = typeof row.cargo_canonico === "string" ? row.cargo_canonico : typeof row.cargo === "string" ? row.cargo : ""
+    if (!cargo.startsWith(office.slice(0, 8)) || (house === "camara" && !/federal/i.test(cargo))) continue
+    const start = typeof row.periodo_inicio === "number" ? row.periodo_inicio : null
+    const end = typeof row.periodo_fim === "number" ? row.periodo_fim : currentYear
+    if (start === null) continue
+    for (let year = start; year <= Math.min(end, currentYear); year++) years.add(year)
+  }
+  return [...years].sort((a, b) => a - b)
+}
+
+/**
+ * Um vazio de gastos só prova ausência quando a consulta cobriu os anos de
+ * mandato dentro da janela da fonte. Mandato todo antes da janela não gera
+ * vazio (a fonte não tem esses anos), e zero despesa em ano de mandato ativo
+ * é implausível para a cota parlamentar: vai para revisão, não para vazio.
+ */
+export function assertExpenseEmptinessCoversMandates(profile: Record<string, unknown>, observation: ParliamentarySourceObservation): void {
+  const house = observation.house
+  const mandates = mandateYears(profile, house)
+  const inWindow = mandates.filter((year) => year >= EXPENSE_SOURCE_FIRST_YEAR[house])
+  if (mandates.length > 0 && inWindow.length === 0) {
+    throw new Error(`mandato anterior a ${EXPENSE_SOURCE_FIRST_YEAR[house]}: a fonte de gastos não cobre esses anos, vazio não prova ausência`)
+  }
+  const queried = new Set(observation.years ?? [])
+  const missing = inWindow.filter((year) => !queried.has(year))
+  if (missing.length > 0) throw new Error(`anos de mandato não consultados: ${missing.join(",")}`)
+  if (inWindow.length > 0) throw new Error(`zero despesa em ano de mandato ativo (${inWindow.join(",")}) exige revisão da identidade ou da fonte`)
+}
+
 function makeReceipt(candidate: ParliamentaryCandidate, observation: ParliamentarySourceObservation, executedAt: string): ParliamentaryReceipt {
   const officialId = normalizedId(observation.official_id)
   if (!validOfficialUrl(observation.source.source_url, observation.family, officialId)) throw new Error("source_url oficial não contém casa/ID verificável")
@@ -515,6 +554,7 @@ function makeReceipt(candidate: ParliamentaryCandidate, observation: Parliamenta
   const publicPayloadSha256 = publicFamilyPayloadSha256(publicProfile, observation.family)
   const dtoSubsetSha256 = sha256(canonicalJson(dtoRows))
   const dtoCount = dtoRows.length
+  if (dtoCount === 0 && observation.family === "gastos_parlamentares") assertExpenseEmptinessCoversMandates(publicProfile, observation)
   const resultado: ReceiptResult = dtoCount > 0 ? "encontrado" : "vazio_confirmado"
   return {
     fonte: sourceName(observation.house, observation.family),
