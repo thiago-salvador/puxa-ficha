@@ -1,0 +1,75 @@
+name: "Reverter correção do histórico de mandatos federais"
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: "SHA de 40 caracteres já mergeado em main"
+        required: true
+      mode:
+        description: "dry-run ensaia o rollback e desfaz; apply reverte. O ensaio roda sempre antes."
+        required: true
+        default: dry-run
+        type: choice
+        options:
+          - dry-run
+          - apply
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rollback-historico-mandatos-federais-production
+  cancel-in-progress: false
+
+jobs:
+  rollback:
+    name: Rollback de uma migration de dado
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: production
+    # PF_DATABASE_URL fica no env de cada passo que o usa, nunca no job.
+    env:
+      PF_EXPECTED_SHA: ${{ github.event.inputs.expected_sha }}
+    steps:
+      - name: Validar ref e input
+        env:
+          DISPATCH_SHA: ${{ github.sha }}
+          DISPATCH_REF: ${{ github.ref }}
+          PF_MODE: ${{ github.event.inputs.mode }}
+          PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          set -euo pipefail
+          test "$DISPATCH_REF" = "refs/heads/main"
+          test "${#PF_EXPECTED_SHA}" -eq 40
+          test "$PF_EXPECTED_SHA" = "$DISPATCH_SHA"
+          test -n "${PF_DATABASE_URL:-}"
+          case "$PF_MODE" in dry-run|apply) ;; *) echo "modo inválido: $PF_MODE" >&2; exit 1 ;; esac
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.inputs.expected_sha }}
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - uses: ./.github/actions/install-postgresql-client-17
+        timeout-minutes: 12
+
+      - run: npm ci --ignore-scripts
+
+      # O ensaio roda rollbacks e readbacks de rollback na mesma transacao e
+      # termina em ROLLBACK; o modo apply so roda depois dele.
+      - name: Ensaio do rollback (dry-run, não grava)
+        env:
+          PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: bash scripts/audit/rollback-historico-mandatos-federais-production.sh dry-run
+
+      - name: Reverter conjunto fechado
+        if: ${{ github.event.inputs.mode == 'apply' }}
+        env:
+          PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: bash scripts/audit/rollback-historico-mandatos-federais-production.sh apply
