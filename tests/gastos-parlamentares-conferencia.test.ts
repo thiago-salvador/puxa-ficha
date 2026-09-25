@@ -61,8 +61,16 @@ describe("conferência de gastos parlamentares", () => {
     assert.equal(classificarLinha({ dbCents: 675_320, idOficial: 1, api: { cents: 0, rows: 0 }, csv: { cents: 0, rows: 0 } }), "fonte_sem_linhas")
     assert.equal(classificarLinha({ dbCents: 27, idOficial: 1, api: { cents: 0, rows: 0 } }), "fonte_sem_linhas")
     assert.equal(classificarLinha({ dbCents: 100, idOficial: null, api: null }), "sem_id_oficial")
+    // Zero gravado com zero lançamentos na fonte confere (0 = 0).
+    assert.equal(classificarLinha({ dbCents: 0, idOficial: 1, api: { cents: 0, rows: 0 }, csv: { cents: 0, rows: 0 } }), "confere_zero")
+    assert.equal(classificarLinha({ dbCents: 0, idOficial: 1, api: { cents: 0, rows: 0 } }), "confere_zero")
+    // Zero gravado sem consulta à fonte não confere nada.
+    assert.equal(classificarLinha({ dbCents: 0, idOficial: 1, api: null }), "fonte_sem_linhas")
+    // Zero gravado com lançamentos na fonte continua divergência.
+    assert.equal(classificarLinha({ dbCents: 0, idOficial: 1, api: { cents: 500_000, rows: 3 } }), "diverge")
     assert.equal(statusVaiParaQuarentena("confere_api"), false)
     assert.equal(statusVaiParaQuarentena("confere_csv"), false)
+    assert.equal(statusVaiParaQuarentena("confere_zero"), false)
     for (const status of ["diverge", "fonte_sem_linhas", "sem_id_oficial"] as const) {
       assert.equal(statusVaiParaQuarentena(status), true)
     }

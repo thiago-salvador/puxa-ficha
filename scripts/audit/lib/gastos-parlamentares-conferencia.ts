@@ -10,6 +10,7 @@ export type CasaGasto = "camara" | "senado" | "fora_da_regra"
 export type StatusConferencia =
   | "confere_api"
   | "confere_csv"
+  | "confere_zero"
   | "diverge"
   | "fonte_sem_linhas"
   | "sem_id_oficial"
@@ -75,12 +76,15 @@ export function classificarLinha(entrada: EntradaClassificacao): StatusConferenc
   const csv = entrada.csv ?? null
   if (api && api.rows > 0 && dentroDaTolerancia(entrada.dbCents, api.cents)) return "confere_api"
   if (csv && csv.rows > 0 && dentroDaTolerancia(entrada.dbCents, csv.cents)) return "confere_csv"
-  if ((api?.rows ?? 0) === 0 && (csv?.rows ?? 0) === 0) return "fonte_sem_linhas"
+  if ((api?.rows ?? 0) === 0 && (csv?.rows ?? 0) === 0) {
+    // Zero publicado e zero gravado é o mesmo total (0 = 0), não ausência de fonte.
+    return api && entrada.dbCents === 0 ? "confere_zero" : "fonte_sem_linhas"
+  }
   return "diverge"
 }
 
 export function statusVaiParaQuarentena(status: StatusConferencia): boolean {
-  return status !== "confere_api" && status !== "confere_csv"
+  return status !== "confere_api" && status !== "confere_csv" && status !== "confere_zero"
 }
 
 /**

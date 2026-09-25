@@ -14,6 +14,7 @@ const NAME = "quarentena_gastos_parlamentares_universo"
 const migration = readFileSync(`supabase/migrations/${VERSION}_${NAME}.sql`, "utf8")
 const readback = readFileSync(`supabase/readback/${VERSION}_${NAME}.readback.sql`, "utf8")
 const rollback = readFileSync(`supabase/rollback/${VERSION}_${NAME}.rollback.sql`, "utf8")
+const rollbackReadback = readFileSync(`supabase/readback/${VERSION}_${NAME}.rollback.readback.sql`, "utf8")
 const receiptBody = readFileSync("QA/evidencias/2026-09-25-gastos-quarentena-universo/preflight.json")
 const receipt = JSON.parse(receiptBody.toString("utf8")) as {
   resumo: { quarentena: number; quarentena_fichas: number }
@@ -68,5 +69,22 @@ describe("quarentena ampliada de gastos parlamentares", () => {
     assert.match(readback, new RegExp(`v_rows <> ${receipt.resumo.quarentena} OR v_profiles <> ${receipt.resumo.quarentena_fichas}`))
     assert.match(rollback, /WHERE despublicacao_motivo = 'gastos-universo: /)
     assert.doesNotMatch(rollback, /gastos-129/)
+    assert.match(rollback, /max\(version\) FROM supabase_migrations\.schema_migrations\) IS DISTINCT FROM '20260925221042'/)
+    assert.match(rollback, /DELETE FROM supabase_migrations\.schema_migrations WHERE version = '20260925221042'/)
+    assert.equal(rollback.match(/^BEGIN;$/gm)?.length, 1)
+    assert.equal(rollback.match(/^COMMIT;$/gm)?.length, 1)
+    assert.doesNotMatch(rollbackReadback, /^\s*(BEGIN(\s+READ\s+ONLY)?\s*;|COMMIT\s*;|ROLLBACK\s*;|SET\s+(LOCAL\s+)?ROLE\b)/im)
+    assert.match(rollbackReadback, /versão continua no ledger/)
+  })
+
+  it("apply prova leitura anônima em sessão separada e o rollback tem workflow próprio", () => {
+    const apply = readFileSync("scripts/audit/apply-gastos-parlamentares-quarentena-universo-production.sh", "utf8")
+    assert.match(apply, /anon_session_sql\(\) \{\n  echo 'BEGIN READ ONLY;'\n  echo 'SET LOCAL ROLE anon;'/)
+    assert.equal(apply.match(/anon_session_sql \| PGOPTIONS="\$ro_opts" psql/g)?.length, 2)
+    assert.match(apply, /anon ainda lê linha em quarentena/)
+    const workflow = readFileSync(".github/workflows/rollback-gastos-parlamentares-quarentena-universo-production.yml", "utf8")
+    assert.match(workflow, /rollback-gastos-parlamentares-quarentena-universo-production\.sh dry-run/)
+    assert.match(workflow, /if: \$\{\{ github\.event\.inputs\.mode == 'apply' \}\}/)
+    assert.match(workflow, /environment: production/)
   })
 })
