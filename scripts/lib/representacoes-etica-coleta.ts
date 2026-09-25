@@ -406,6 +406,38 @@ export interface Fila {
   itens: ItemFila[]
   alvos_sem_candidato: Array<{ proposicao_id: number; numero: number; ano: number; deputado_id: number; nome: string; motivo: string }>
   alvos_nao_resolvidos: Array<{ proposicao_id: number; numero: number; ano: number; trecho: string; ambiguos: ResolucaoAlvos["ambiguos"] }>
+  /**
+   * Universo verificado, para o recibo por candidato: quem do seed foi casado
+   * com um deputado da legislatura (com ou sem REP), quem não tem identificador
+   * para o cruzamento e quais deputados ficaram com vínculo bloqueado.
+   */
+  cobertura?: CoberturaCamara
+}
+
+export interface CoberturaCamara {
+  deputados_candidatos: Array<{ slug: string; deputado_id: number; metodo: MetodoIdentidade }>
+  candidatos_sem_identificador: string[]
+  vinculos_bloqueados: Array<{ deputado_id: number; motivo: string }>
+}
+
+/** Casa todos os deputados da legislatura com o seed, não só os alvos de REP. */
+export function coberturaCamara(
+  deputados: readonly DeputadoLegislatura[],
+  indices: IndicesCandidatos,
+): CoberturaCamara {
+  const deputadosCandidatos: CoberturaCamara["deputados_candidatos"] = []
+  const bloqueados: CoberturaCamara["vinculos_bloqueados"] = []
+  for (const deputado of deputados) {
+    const vinculo = vincularCandidato(deputado, indices)
+    if (vinculo.slug !== null) deputadosCandidatos.push({ slug: vinculo.slug, deputado_id: deputado.id, metodo: vinculo.metodo })
+    else if (vinculo.motivo !== "sem_candidato") bloqueados.push({ deputado_id: deputado.id, motivo: vinculo.motivo })
+  }
+  const comIdentificador = new Set([...indices.porIdCamara.values(), ...indices.cpfDoSlug.keys()])
+  return {
+    deputados_candidatos: deputadosCandidatos.sort((x, y) => x.slug.localeCompare(y.slug) || x.deputado_id - y.deputado_id),
+    candidatos_sem_identificador: [...indices.porSlug.keys()].filter((slug) => !comIdentificador.has(slug)).sort(),
+    vinculos_bloqueados: bloqueados.sort((x, y) => x.deputado_id - y.deputado_id),
+  }
 }
 
 /** Marca cada vínculo sem filtrar a fila; uma falha de consulta permanece explícita. */
@@ -671,6 +703,7 @@ export async function coletarRepresentacoesEtica(opcoes: {
     itens: [],
     alvos_sem_candidato: [],
     alvos_nao_resolvidos: [],
+    cobertura: coberturaCamara(deputados, indices),
   }
 
   const contexto: ContextoAvaliacao = { nomes, porDeputado, indices, hoje }

@@ -1,0 +1,136 @@
+import assert from "node:assert/strict"
+import { describe, it } from "node:test"
+
+import { coberturaCamara, indicesDeCandidatos, type Fila } from "../scripts/lib/representacoes-etica-coleta"
+import { alvoDaEmentaPce, montarRecibosRepresentacoes } from "../scripts/lib/representacoes-etica-recibos"
+import type { FilaPceSenado } from "../scripts/lib/representacoes-etica-senado"
+import { exigirFilaRecente } from "../scripts/registrar-recibos-representacoes"
+import { FONTES } from "../scripts/lib/coleta-log"
+
+const roster = [
+  { senador_id: 1, nome: "Ana Senadora", nome_completo: "Ana Maria Senadora", uf: "MA" },
+  { senador_id: 2, nome: "Fulvio", nome_completo: "Fulvio Teste Silva", uf: "SP" },
+  { senador_id: 3, nome: "Bruno Senador", nome_completo: "Bruno Senador Costa", uf: "AC" },
+]
+
+function pce(numero: number, ementa: string) {
+  return {
+    id: `pce-${numero}`, status_revisao: "pendente_identidade_editorial" as const,
+    processo: { id: numero, sigla: "PCE" as const, numero, ano: 2026 },
+    ementa_oficial: ementa, data_apresentacao: "2026-01-01",
+    situacao_atual: { sigla: null, descricao: "x", data: null }, ultimo_andamento_em: null, tramitacoes: [],
+    documentos_estado: "carregados" as const, documentos: [], url_oficial: `https://legis.senado.leg.br/dadosabertos/processo/${numero}`,
+    alvo: null, candidato_slug: null,
+  }
+}
+
+function filaSenado(itens: FilaPceSenado["itens"] = [
+  pce(1, "Requer a abertura de procedimento disciplinar em face do Senador Fulvio com fundamento na Resolução nº 20"),
+  pce(2, "Requer a abertura de procedimento em face dos Senadores que impediram a sessão"),
+]): FilaPceSenado {
+  return {
+    schema_version: 1, fonte: "senado-dadosabertos-pce-v1", legislatura_recorte: 57,
+    gerado_em: "2026-09-25T21:00:00Z",
+    fontes: { processos: "https://legis.senado.leg.br/dadosabertos/processo?sigla=PCE", senadores: "x" },
+    contagem_por_ano: {}, total_processos: itens.length, roster,
+    candidatos_por_senador_id: { "1": ["ana"], "2": ["fulvio"] },
+    itens,
+  }
+}
+
+function filaCamara(overrides: Partial<Fila> = {}): Fila {
+  return {
+    schema_version: 1, fonte: "camara-dadosabertos-v2",
+    legislatura: { id: 57, dataInicio: "2023-02-01", dataFim: "2027-01-31" },
+    gerado_em: "2026-09-25T21:00:00Z", contagem_por_ano: {}, total_representacoes: 1,
+    identidade: { candidatos_no_seed: 5, com_id_camara: 2, com_cpf_tse: 3, deputados_na_legislatura: 3 },
+    itens: [{
+      candidato: { slug: "dep-com-rep" }, representacao: { numero: 8, ano: 2023 },
+    }] as unknown as Fila["itens"],
+    alvos_sem_candidato: [],
+    alvos_nao_resolvidos: [{ proposicao_id: 9, numero: 16, ano: 2023, trecho: "x", ambiguos: [{ nome: "X", deputado_ids: [300] }] }],
+    cobertura: {
+      deputados_candidatos: [
+        { slug: "dep-com-rep", deputado_id: 100, metodo: "seed_ids_camara" },
+        { slug: "dep-limpo", deputado_id: 200, metodo: "cpf_tse_camara" },
+        { slug: "dep-ambiguo", deputado_id: 300, metodo: "cpf_tse_camara" },
+      ],
+      candidatos_sem_identificador: ["sem-id"],
+      vinculos_bloqueados: [],
+    },
+    ...overrides,
+  }
+}
+
+const publicos = [
+  { slug: "dep-com-rep", nome_completo: "Deputada Com Rep" },
+  { slug: "dep-limpo", nome_completo: "Deputado Limpo" },
+  { slug: "dep-ambiguo", nome_completo: "Deputado Ambiguo" },
+  { slug: "sem-id", nome_completo: "Sem Identificador" },
+  { slug: "ana", nome_completo: "Ana Maria Senadora" },
+  { slug: "fulvio", nome_completo: "Fulvio Teste Silva" },
+  { slug: "homonimo-bruno", nome_completo: "Bruno Senador Costa" },
+  { slug: "governador", nome_completo: "Fulano Governador" },
+]
+
+describe("recibo por candidato da busca de representações", () => {
+  it("lê o representado da ementa, inclusive nome parlamentar de um token", () => {
+    assert.deepEqual(alvoDaEmentaPce("em face do Senador Fulvio com fundamento", roster).senador_ids, [2])
+    const coletivo = alvoDaEmentaPce("em face dos Senadores que impediram a sessão", roster)
+    assert.equal(coletivo.sem_alvo_individual, true)
+    const fora = alvoDaEmentaPce("em face do Senador Otavio Pires, com fundamento no art. 55", roster)
+    assert.deepEqual(fora.senador_ids, [])
+    assert.equal(fora.texto_alvo, "OTAVIO PIRES")
+    assert.equal(alvoDaEmentaPce("Despacho sobre petição", roster).sem_alvo_individual, true)
+  })
+
+  it("distingue encontrado, vazio verificado, indeterminado e não aplicável", () => {
+    const recibos = new Map(montarRecibosRepresentacoes({ publicos, camara: filaCamara(), senado: filaSenado() })
+      .map((r) => [r.alvo, r]))
+    assert.equal(recibos.get("dep-com-rep")?.resultado, "encontrado")
+    assert.equal(recibos.get("dep-com-rep")?.volume, 1)
+    assert.equal(recibos.get("dep-limpo")?.resultado, "vazio_confirmado")
+    assert.equal(recibos.get("dep-ambiguo")?.resultado, "indeterminado")
+    assert.equal(recibos.get("sem-id")?.resultado, "indeterminado")
+    assert.equal(recibos.get("ana")?.resultado, "vazio_confirmado")
+    assert.equal(recibos.get("fulvio")?.resultado, "encontrado")
+    assert.equal(recibos.get("homonimo-bruno")?.resultado, "indeterminado", "nome do roster sem ids.senado")
+    assert.match(recibos.get("ana")?.detalhe ?? "", /PCE 2\/2026/)
+    for (const recibo of recibos.values()) {
+      assert.equal(recibo.fonte, "representacoes-etica")
+      assert.equal(recibo.volume === 0, recibo.resultado !== "encontrado")
+    }
+  })
+
+  it("não aplicável só para quem não é parlamentar em nenhuma das casas", () => {
+    const camara = filaCamara({ cobertura: { deputados_candidatos: [], candidatos_sem_identificador: [], vinculos_bloqueados: [] } })
+    const recibos = new Map(montarRecibosRepresentacoes({ publicos, camara, senado: filaSenado() }).map((r) => [r.alvo, r]))
+    assert.equal(recibos.get("governador")?.resultado, "nao_aplicavel")
+    assert.equal(recibos.get("ana")?.resultado, "vazio_confirmado")
+  })
+
+  it("recusa fila sem cobertura, Senado com documento em falha e fila velha", () => {
+    assert.throws(() => montarRecibosRepresentacoes({ publicos, camara: filaCamara({ cobertura: undefined }), senado: filaSenado() }), /sem cobertura/)
+    const falha = filaSenado([{ ...pce(1, "x"), documentos_estado: "falha" as const }])
+    assert.throws(() => montarRecibosRepresentacoes({ publicos, camara: filaCamara(), senado: falha }), /documentos em falha/)
+    assert.throws(() => exigirFilaRecente("2026-09-20T00:00:00Z", "Câmara", Date.parse("2026-09-25T00:00:00Z")), /36 h/)
+    assert.doesNotThrow(() => exigirFilaRecente("2026-09-25T00:00:00Z", "Câmara", Date.parse("2026-09-25T10:00:00Z")))
+  })
+
+  it("cobertura da Câmara casa todos os deputados, não só alvos, e lista quem não tem identificador", () => {
+    const seed = [
+      { slug: "a", nome_urna: "A", cargo_disputado: "Governador", estado: "SP", ids: { camara: 10 } },
+      { slug: "b", nome_urna: "B", cargo_disputado: "Senador", estado: "SP", ids: {} },
+    ]
+    const cobertura = coberturaCamara(
+      [{ id: 10, nome: "A", nomeCivil: "A", cpf: null }, { id: 11, nome: "Z", nomeCivil: "Z", cpf: null }] as never,
+      indicesDeCandidatos(seed as never, new Map()),
+    )
+    assert.deepEqual(cobertura.deputados_candidatos.map((d) => d.slug), ["a"])
+    assert.deepEqual(cobertura.candidatos_sem_identificador, ["b"])
+  })
+
+  it("fonte nova tem escopo de candidato", () => {
+    assert.equal(FONTES["representacoes-etica"], "candidato")
+  })
+})

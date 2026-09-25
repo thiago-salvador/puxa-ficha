@@ -100,3 +100,27 @@ fingir cobertura seria pior que declarar o limite.
   constar em `--url`.
 - O padrão é dry-run. `--apply` grava apenas em `coleta_log`; processos e outros
   dados de candidato continuam fora do escopo do comando.
+
+## Renovação agendada dos recibos (2026-09-25)
+
+- A ficha só afirma zero com recibo `vazio_confirmado` de até 14 dias. O
+  workflow `processos-coleta-judicial.yml` roda segunda e quinta e renova, antes
+  do prazo, todo recibo conclusivo (`encontrado` ou `vazio_confirmado`) com 9
+  dias ou mais; na mesma execução busca os candidatos públicos sem recibo.
+- A busca continua sendo a do coletor (`curadoria-processos-lote.ts
+  --coorte-atual`): DJEN por nome completo exato, identidade eleitoral oficial e
+  DataJud só por CNJ encontrado. O workflow grava apenas recibos em
+  `coleta_log`, pelo aplicador auditado (backup, preflight e readback). Nenhuma
+  linha de `processos` é criada ou alterada fora da revisão editorial.
+- Nome exato fora dos destinatários também conta como ocorrência. Uma
+  comunicação em que o nome aparece no texto (a intimação costuma ir ao
+  advogado), em que o destinatário traz o nome seguido de apelido entre
+  parênteses, ou em que o destinatário é o mesmo nome acrescido de sobrenome no
+  fim impede o `vazio_confirmado`: o recibo fica `indeterminado` até revisão.
+  Nome contido em outro com prenome diferente continua tratado como outra
+  pessoa.
+- Falha da coleta vira recibo `erro` para cada alvo da execução, e o run fica
+  vermelho. `check-processos-receipts.ts` roda antes e depois e reprova
+  candidato público sem recibo.
+- O catálogo de frescor separa a busca judicial (`processos-judiciais`, 336 h,
+  semanal) da curadoria editorial, que segue com 1.800 h.

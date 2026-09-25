@@ -166,8 +166,8 @@ export function validarRevisaoManual(argv: string[]): RevisaoManual {
   if (!new Set<ProvaIdentidade>(["id-oficial", "cargo-e-uf", "nao-confirmada"]).has(identidade)) {
     throw new Error("nome sozinho não prova identidade; use id-oficial, cargo-e-uf ou nao-confirmada")
   }
-  if (identidade === "nao-confirmada" && resultado !== "indeterminado") {
-    throw new Error("--identidade=nao-confirmada só é permitida para --resultado=indeterminado")
+  if (identidade === "nao-confirmada" && resultado !== "indeterminado" && resultado !== "erro") {
+    throw new Error("--identidade=nao-confirmada só é permitida para --resultado=indeterminado ou erro")
   }
 
   const urls = identidade === "nao-confirmada"

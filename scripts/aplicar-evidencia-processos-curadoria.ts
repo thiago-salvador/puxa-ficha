@@ -93,7 +93,14 @@ interface EvidenciaFinal {
   candidatos_iniciais: string[]
   lotes: LoteEvidencia[]
   resumo: Record<string, number>
+  /** Presente quando a evidência veio de `--coorte-atual`; ativa a semântica de renovação. */
+  coorte_atual?: { modo: string; snapshot_sha256: string | null }
 }
+
+const MODOS_COORTE_ATUAL = new Set([
+  "dry-run-coorte-atual-sem-recibo",
+  "dry-run-coorte-atual-renovacao",
+])
 
 export interface PlanoRegistro {
   lote: number
@@ -109,6 +116,7 @@ export interface LinhaExistentePreflight {
   alvo: string
   resultado: string
   detalhe: string | null
+  executado_em?: string | null
 }
 
 export interface ResultadoPreflight {
@@ -492,6 +500,8 @@ function criarPlanoIdentidadeNaoConfirmada(
   lote: LoteEvidencia,
   caminho: string,
 ): PlanoRegistro {
+  // Falha de fonte antes da identidade também vira recibo: `erro`, nunca silêncio.
+  const resultado: ResultadoRegistro = candidato.classificacao === "erro" ? "erro" : "indeterminado"
   if (candidato.processos.length > 0) {
     falhar(`${caminho}.processos`, "identidade nao confirmada nao pode publicar processos")
   }
@@ -523,7 +533,7 @@ function criarPlanoIdentidadeNaoConfirmada(
     argumento("slug", candidato.slug),
     "--frente=processos",
     argumento("data", data),
-    "--resultado=indeterminado",
+    argumento("resultado", resultado),
     argumento("detalhe", detalhe),
     "--identidade=nao-confirmada",
     ...urls.map((url) => argumento("url", url)),
@@ -535,7 +545,7 @@ function criarPlanoIdentidadeNaoConfirmada(
     slug: candidato.slug,
     data,
     classificacao: candidato.classificacao,
-    resultado: "indeterminado",
+    resultado,
     homonimosDescartados: candidato.homonimos_descartados.length,
     args,
   }
@@ -543,7 +553,8 @@ function criarPlanoIdentidadeNaoConfirmada(
 
 function criarPlano(candidato: RegistroEvidencia, lote: LoteEvidencia): PlanoRegistro {
   const caminho = `lote ${lote.numero}/${candidato.slug}`
-  if (candidato.classificacao === "bloqueado" && candidato.identidade.status !== "confirmada") {
+  if ((candidato.classificacao === "bloqueado" || candidato.classificacao === "erro")
+    && candidato.identidade.status !== "confirmada") {
     return criarPlanoIdentidadeNaoConfirmada(candidato, lote, caminho)
   }
   const identidadeUrls = urlsDoCampo(candidato.identidade, `${caminho}.identidade`)
@@ -560,7 +571,7 @@ function criarPlano(candidato: RegistroEvidencia, lote: LoteEvidencia): PlanoReg
   )
   const resultado = resultadoDaClassificacao(candidato.classificacao)
 
-  if (candidato.busca.consultado_em !== undefined && candidato.busca.completo !== true) {
+  if (candidato.classificacao !== "erro" && candidato.busca.consultado_em !== undefined && candidato.busca.completo !== true) {
     falhar(`${caminho}.busca.completo`, "true obrigatório para recibo DJEN novo")
   }
 
@@ -701,6 +712,123 @@ function validarResumo(evidencia: EvidenciaFinal, candidatos: RegistroEvidencia[
   }
 }
 
+/**
+ * Evidência gerada por `curadoria-processos-lote --coorte-atual`: registra só
+ * os alvos da execução (qualquer tamanho), sem o snapshot de agosto.
+ */
+export function validarEvidenciaCoorteAtual(valor: unknown): EvidenciaFinal {
+  const raiz = objeto(valor, "evidence")
+  if (raiz.schema_version !== 1) falhar("evidence.schema_version", "esperado 1")
+  const fontes = objeto(raiz.fontes, "evidence.fontes")
+  const modo = texto(fontes.modo, "evidence.fontes.modo")
+  if (!MODOS_COORTE_ATUAL.has(modo)) falhar("evidence.fontes.modo", `modo nao aplicavel: ${modo}`)
+  const candidatosIniciais = lista(raiz.candidatos_iniciais, "evidence.candidatos_iniciais")
+    .map((item, indice) => slug(item, `evidence.candidatos_iniciais[${indice}]`))
+  const total = inteiro(raiz.total_inicial, "evidence.total_inicial")
+  if (total < 1 || candidatosIniciais.length !== total || new Set(candidatosIniciais).size !== total) {
+    falhar("evidence.candidatos_iniciais", "total_inicial deve igualar a quantidade de slugs unicos")
+  }
+  const lotes = lista(raiz.lotes, "evidence.lotes").map((item, indice) => lerLote(item, `evidence.lotes[${indice}]`))
+  if (lotes.length === 0) falhar("evidence.lotes", "ao menos um lote obrigatorio")
+  lotes.sort((a, b) => a.numero - b.numero)
+  lotes.forEach((lote, indice) => {
+    if (lote.numero !== indice + 1) falhar(`evidence.lotes[${indice}].numero`, `esperado ${indice + 1}`)
+    if (lote.slugs.length !== lote.candidatos.length) falhar(`evidence.lotes[${indice}]`, "slugs e candidatos divergem")
+    lote.candidatos.forEach((candidato, candidatoIndice) => {
+      if (lote.slugs[candidatoIndice] !== candidato.slug) {
+        falhar(`evidence.lotes[${indice}].candidatos[${candidatoIndice}].slug`, "ordem diverge de lote.slugs")
+      }
+    })
+  })
+  const candidatos = lotes.flatMap((lote) => lote.candidatos)
+  const classificados = candidatos.map((candidato) => candidato.slug)
+  const iniciais = new Set(candidatosIniciais)
+  if (new Set(classificados).size !== classificados.length) falhar("evidence.lotes", "slug repetido entre lotes")
+  const divergentes = classificados.filter((item) => !iniciais.has(item))
+    .concat(candidatosIniciais.filter((item) => !new Set(classificados).has(item)))
+  if (divergentes.length > 0) falhar("evidence.lotes", `coorte diverge dos candidatos iniciais: ${divergentes.join(", ")}`)
+  const resumoRegistro = objeto(raiz.resumo, "evidence.resumo")
+  const resumo = Object.fromEntries(Object.entries(resumoRegistro).map(([chave, valor]) => [chave, inteiro(valor, `evidence.resumo.${chave}`)]))
+  const evidencia: EvidenciaFinal = {
+    schema_version: 1,
+    total_inicial: total,
+    candidatos_iniciais: candidatosIniciais,
+    lotes,
+    resumo,
+    coorte_atual: {
+      modo,
+      snapshot_sha256: typeof fontes.snapshot_sha256 === "string" ? fontes.snapshot_sha256 : null,
+    },
+  }
+  validarResumo(evidencia, candidatos)
+  return evidencia
+}
+
+function evidenciaDaCoorteAtual(valor: unknown): boolean {
+  if (!valor || typeof valor !== "object") return false
+  const fontes = (valor as Record<string, unknown>).fontes
+  return Boolean(fontes && typeof fontes === "object"
+    && typeof (fontes as Record<string, unknown>).modo === "string"
+    && String((fontes as Record<string, unknown>).modo).startsWith("dry-run-coorte-atual"))
+}
+
+export function validarEvidencia(valor: unknown): EvidenciaFinal {
+  return evidenciaDaCoorteAtual(valor) ? validarEvidenciaCoorteAtual(valor) : validarEvidenciaFinal(valor)
+}
+
+/**
+ * Renovação: recibo anterior do mesmo alvo não é conflito, é o que está sendo
+ * renovado. Conflito é só um recibo mais novo que a própria evidência, que
+ * seria rebaixado por uma busca mais velha.
+ */
+export function validarPreflightRenovacao(
+  planos: PlanoRegistro[],
+  slugsPublicos: string[],
+  existentes: LinhaExistentePreflight[],
+  concluidoEmPorLote: Map<number, string>,
+): ResultadoPreflight {
+  const publicos = new Set(slugsPublicos)
+  const ausentes = planos.map((plano) => plano.slug).filter((item) => !publicos.has(item))
+  if (ausentes.length > 0) throw new Error(`preflight: fora de candidatos_publico: ${ausentes.join(", ")}`)
+  const porAlvo = new Map<string, LinhaExistentePreflight[]>()
+  for (const linha of existentes) porAlvo.set(linha.alvo, [...(porAlvo.get(linha.alvo) ?? []), linha])
+  const equivalentes: PlanoRegistro[] = []
+  const pendentes: PlanoRegistro[] = []
+  const conflitos: string[] = []
+  for (const plano of planos) {
+    const linhas = porAlvo.get(plano.slug) ?? []
+    const concluido = Date.parse(concluidoEmPorLote.get(plano.lote) ?? "")
+    if (!Number.isFinite(concluido)) throw new Error(`preflight: lote ${plano.lote} sem concluido_em`)
+    const esperado = detalheEsperadoDoPlano(plano)
+    if (linhas.some((linha) => linha.resultado === plano.resultado && linha.detalhe === esperado)) {
+      equivalentes.push(plano)
+      continue
+    }
+    if (linhas.some((linha) => linha.executado_em && Date.parse(linha.executado_em) > concluido)) {
+      conflitos.push(plano.slug)
+      continue
+    }
+    pendentes.push(plano)
+  }
+  if (conflitos.length > 0) {
+    throw new Error(`preflight: ${conflitos.length} alvo(s) com recibo mais novo que a evidencia: ${[...new Set(conflitos)].sort().join(", ")}`)
+  }
+  return { pendentes, equivalentes }
+}
+
+function detalheEsperadoDoPlano(plano: PlanoRegistro): string {
+  const argumentos = (nome: string): string[] => plano.args
+    .filter((item) => item.startsWith(`--${nome}=`))
+    .map((item) => item.slice(nome.length + 3))
+  return [
+    `revisao_em=${plano.data}`,
+    `identidade=${argumentos("identidade")[0] ?? ""}`,
+    `identidade_urls=${argumentos("identidade-url").join(",")}`,
+    `urls_consultadas=${argumentos("url").join(",")}`,
+    `detalhe=${argumentos("detalhe")[0] ?? ""}`,
+  ].join("; ")
+}
+
 export function validarEvidenciaFinal(valor: unknown): EvidenciaFinal {
   const raiz = objeto(valor, "evidence")
   if (raiz.schema_version !== 1) falhar("evidence.schema_version", "esperado 1")
@@ -768,18 +896,7 @@ export function validarPreflight(
     throw new Error(`preflight: coorte publica divergente; ausentes=${ausentes.join(", ") || "nenhum"}`)
   }
 
-  const detalheEsperado = (plano: PlanoRegistro): string => {
-    const argumentos = (nome: string): string[] => plano.args
-      .filter((item) => item.startsWith(`--${nome}=`))
-      .map((item) => item.slice(nome.length + 3))
-    return [
-      `revisao_em=${plano.data}`,
-      `identidade=${argumentos("identidade")[0] ?? ""}`,
-      `identidade_urls=${argumentos("identidade-url").join(",")}`,
-      `urls_consultadas=${argumentos("url").join(",")}`,
-      `detalhe=${argumentos("detalhe")[0] ?? ""}`,
-    ].join("; ")
-  }
+  const detalheEsperado = detalheEsperadoDoPlano
   const porAlvo = new Map<string, LinhaExistentePreflight[]>()
   for (const linha of existentes) {
     porAlvo.set(linha.alvo, [...(porAlvo.get(linha.alvo) ?? []), linha])
@@ -813,7 +930,7 @@ async function linhasExistentesPreflight(slugs: string[]): Promise<LinhaExistent
   for (let inicio = 0; ; inicio += TAMANHO_PAGINA_PREFLIGHT) {
     const { data, error } = await supabase
       .from("coleta_log")
-      .select("alvo,resultado,detalhe")
+      .select("id,alvo,resultado,detalhe,executado_em,execucao,candidato_id,url,volume")
       .eq("fonte", FONTE_CURADORIA)
       .in("alvo", slugs)
       .order("id", { ascending: true })
@@ -825,13 +942,39 @@ async function linhasExistentesPreflight(slugs: string[]): Promise<LinhaExistent
   }
 }
 
-async function executarPreflightRemoto(planos: PlanoRegistro[]): Promise<ResultadoPreflight> {
+async function executarPreflightRemoto(
+  planos: PlanoRegistro[],
+  evidencia: EvidenciaFinal,
+): Promise<ResultadoPreflight & { existentes: LinhaExistentePreflight[] }> {
   const slugs = planos.map((plano) => plano.slug)
   const { data, error } = await supabase.from("candidatos_publico").select("slug").in("slug", slugs)
   if (error) throw new Error(`preflight: nao foi possivel validar candidatos_publico: ${error.message}`)
   const slugsPublicos = (data ?? []).map((linha) => texto(linha.slug, "preflight.candidatos_publico.slug"))
   const existentes = await linhasExistentesPreflight(slugs)
-  return validarPreflight(planos, slugsPublicos, existentes)
+  const resultado = evidencia.coorte_atual
+    ? validarPreflightRenovacao(
+      planos,
+      slugsPublicos,
+      existentes,
+      new Map(evidencia.lotes.map((lote) => [lote.numero, lote.concluido_em])),
+    )
+    : validarPreflight(planos, slugsPublicos, existentes)
+  return { ...resultado, existentes }
+}
+
+/** Confere, fora de transação, que o último recibo de cada alvo é o recém-gravado. */
+async function readbackRecibos(planos: PlanoRegistro[]): Promise<{ conferidos: number; divergentes: string[] }> {
+  const slugs = planos.map((plano) => plano.slug)
+  const { data, error } = await supabase.from("coleta_log_ultima")
+    .select("alvo,resultado,detalhe")
+    .eq("fonte", FONTE_CURADORIA).eq("escopo", "candidato").in("alvo", slugs)
+  if (error) throw new Error(`readback: ${error.message}`)
+  const porAlvo = new Map((data ?? []).map((linha) => [String(linha.alvo), linha]))
+  const divergentes = planos.filter((plano) => {
+    const linha = porAlvo.get(plano.slug)
+    return !linha || linha.resultado !== plano.resultado || linha.detalhe !== detalheEsperadoDoPlano(plano)
+  }).map((plano) => plano.slug)
+  return { conferidos: planos.length - divergentes.length, divergentes }
 }
 
 export function adquirirLockAplicacao(evidence: string): () => void {
@@ -867,8 +1010,8 @@ function lerOpcoes(argv: string[]): Opcoes {
   const limitFlags = argv.filter((arg) => arg.startsWith("--limit="))
   if (limitFlags.length > 1) throw new Error("--limit deve ser unico")
   const limit = limitFlags.length === 1 ? Number(limitFlags[0].slice("--limit=".length)) : undefined
-  if (limit !== undefined && (!Number.isInteger(limit) || limit < 1 || limit > TOTAL_CANDIDATOS)) {
-    throw new Error(`--limit deve estar entre 1 e ${TOTAL_CANDIDATOS}`)
+  if (limit !== undefined && (!Number.isInteger(limit) || limit < 1 || limit > 1_000)) {
+    throw new Error("--limit deve estar entre 1 e 1000")
   }
   if (argv.includes("--apply") && limit !== undefined) {
     throw new Error("--limit e exclusivo do dry-run; --apply sempre processa a evidencia completa")
@@ -881,15 +1024,20 @@ function lerOpcoes(argv: string[]): Opcoes {
 export async function main(argv = process.argv.slice(2)): Promise<void> {
   const opcoes = lerOpcoes(argv)
   const bruto = JSON.parse(readFileSync(opcoes.evidence, "utf8")) as unknown
-  const evidencia = validarEvidenciaFinal(bruto)
+  const evidencia = validarEvidencia(bruto)
   const planos = criarPlanos(evidencia)
 
-  // Todos os 185 planos ja foram validados antes desta bifurcacao.
+  // Todos os planos ja foram validados antes desta bifurcacao.
   if (!opcoes.apply) {
     const selecionados = planos.slice(0, opcoes.limit ?? planos.length)
     console.log(JSON.stringify({
       modo: "dry-run",
       evidence: opcoes.evidence,
+      coorte_atual: evidencia.coorte_atual ?? null,
+      contagem_por_resultado: planos.reduce<Record<string, number>>((acc, plano) => {
+        acc[plano.resultado] = (acc[plano.resultado] ?? 0) + 1
+        return acc
+      }, {}),
       candidatos_validados: planos.length,
       lotes_validados: evidencia.lotes.length,
       planos_exibidos: selecionados.length,
@@ -909,17 +1057,24 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
 
   const liberarLock = adquirirLockAplicacao(opcoes.evidence)
   try {
-    const preflight = await executarPreflightRemoto(planos)
+    const preflight = await executarPreflightRemoto(planos, evidencia)
+    // Backup das linhas existentes dos alvos antes de qualquer escrita (0600, ao lado da evidência).
+    const backupPath = `${opcoes.evidence}.backup-coleta_log-${new Date().toISOString().replace(/[:.]/g, "-")}.json`
+    writeFileSync(backupPath, `${JSON.stringify({ gerado_em: new Date().toISOString(), fonte: FONTE_CURADORIA, linhas: preflight.existentes }, null, 2)}\n`, { encoding: "utf8", mode: 0o600, flag: "wx" })
     for (const plano of preflight.pendentes) {
       await registrarRevisao([...plano.args, "--apply"])
     }
+    const readback = await readbackRecibos(planos)
     console.log(JSON.stringify({
       modo: "apply",
+      backup: backupPath,
       candidatos_validados: planos.length,
       candidatos_pulados: preflight.equivalentes.length,
       candidatos_inseridos: preflight.pendentes.length,
       lotes: evidencia.lotes.length,
+      readback,
     }))
+    if (readback.divergentes.length > 0) process.exitCode = 1
   } finally {
     liberarLock()
   }

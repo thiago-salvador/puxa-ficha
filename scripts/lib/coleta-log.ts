@@ -129,6 +129,7 @@ export const FONTES: Readonly<Record<string, EscopoColeta>> = Object.freeze({
   // fonte, não a atualização da ficha; por isso não é `tse`.
   "tse-auditoria-snapshot": "global",
   "senado-cohort": "candidato",
+  "representacoes-etica": "candidato",
 
   // Cardinalidade do acervo autoral que a Camara declara para o candidato
   // (issue #138). Fonte propria pelo mesmo motivo de `tse-cpf`: o `camara` do
