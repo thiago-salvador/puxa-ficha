@@ -1639,18 +1639,20 @@
       },
       "criteria": {
         "methodology_transparency": {
-          "pass": true,
+          "pass": false,
           "evidence_urls": [
             "https://www1.folha.uol.com.br/poder/2026/09/datafolha-lula-tem-40-e-flavio-bolsonaro-36-em-1o-turno-rivais-empatam-em-2o-turno.shtml",
             "https://veja.abril.com.br/politica/lula-x-flavio-bolsonaro-o-que-aponta-a-nova-pesquisa-datafolha-a-dez-dias-da-eleicao/"
-          ]
+          ],
+          "note": "Nível de confiança não foi publicado nas divulgações consultadas; método, campo e margem foram identificados."
         },
         "result_access": {
-          "pass": true,
+          "pass": false,
           "evidence_urls": [
             "https://www1.folha.uol.com.br/poder/2026/09/datafolha-lula-tem-40-e-flavio-bolsonaro-36-em-1o-turno-rivais-empatam-em-2o-turno.shtml",
             "https://veja.abril.com.br/politica/lula-x-flavio-bolsonaro-o-que-aponta-a-nova-pesquisa-datafolha-a-dez-dias-da-eleicao/"
-          ]
+          ],
+          "note": "A divulgação detalha três resultados da espontânea, sem apresentar sua distribuição completa; nenhum valor ausente foi inferido."
         },
         "sample_identification": {
           "pass": true,

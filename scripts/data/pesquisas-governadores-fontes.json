@@ -7726,10 +7726,11 @@
       },
       "criteria": {
         "methodology_transparency": {
-          "pass": true,
+          "pass": false,
           "evidence_urls": [
             "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-bahia-setembro-2026/"
-          ]
+          ],
+          "note": "Método de coleta não foi publicado na divulgação consultada; campo, amostra, margem e confiança foram identificados."
         },
         "result_access": {
           "pass": true,
@@ -7738,10 +7739,11 @@
           ]
         },
         "sample_identification": {
-          "pass": true,
+          "pass": false,
           "evidence_urls": [
             "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-bahia-setembro-2026/"
-          ]
+          ],
+          "note": "A população alvo não foi publicada na divulgação consultada; o tamanho da amostra foi identificado."
         },
         "publication_stability": {
           "pass": true,
@@ -7799,11 +7801,12 @@
       },
       "criteria": {
         "methodology_transparency": {
-          "pass": true,
+          "pass": false,
           "evidence_urls": [
             "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-goias-setembro-2026/",
             "https://www1.folha.uol.com.br/poder/2026/09/quaest-daniel-vilela-segue-na-lideranca-da-disputa-ao-governo-de-goias.shtml"
-          ]
+          ],
+          "note": "Método de coleta não foi publicado nas divulgações consultadas; campo, amostra, margem e confiança foram identificados."
         },
         "result_access": {
           "pass": true,
