@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# Aplica a migration de dado de 25/09/2026:
+# Aplica, em ordem de arquivo, as migrations de dado de 25/09/2026:
 #   20260925230000  historico de mandatos federais sem respaldo nas listas
 #                   oficiais do Senado e da Camara (3 despublicadas, 5 corrigidas)
+#   20260925230100  nome civil de dez fichas nao publicadas pelo cadastro da Camara
 # com predecessor, hash, lock, ledger e readback fechados para o projeto de
 # producao do Puxa Ficha. Molde de apply-dados-no-ar-senado-claims-production.sh.
 #
@@ -62,8 +63,8 @@ base_migration="$ROOT/supabase/migrations/${base_version}_quarentena_gastos_parl
 [[ -f "$base_migration" ]] || { echo "FAIL: predecessor ${base_version} ausente" >&2; exit 2; }
 base_digest="sha256:$(shasum -a 256 "$base_migration" | cut -d' ' -f1)"
 
-versions=(20260925230000)
-names=(historico_mandatos_federais_sem_fonte)
+versions=(20260925230000 20260925230100)
+names=(historico_mandatos_federais_sem_fonte nome_civil_fichas_nao_publicas)
 
 digests=()
 for i in "${!versions[@]}"; do

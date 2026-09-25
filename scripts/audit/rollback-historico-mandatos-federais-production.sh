@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# Reverte a migration 20260925230000 (historico de mandatos federais) quando
-# ela estiver no topo do ledger, numa transacao so, com o rollback versionado e
-# o readback de rollback. Molde de rollback-dados-no-ar-senado-claims-production.sh.
+# Reverte, em ordem inversa, as migrations 20260925230100 (nome civil) e
+# 20260925230000 (historico de mandatos federais) que estiverem no topo do
+# ledger, numa transacao so, com os rollbacks versionados e os readbacks de
+# rollback. Molde de rollback-dados-no-ar-senado-claims-production.sh.
 #
 #   scripts/audit/rollback-historico-mandatos-federais-production.sh dry-run   # ensaio, nao grava
 #   scripts/audit/rollback-historico-mandatos-federais-production.sh apply     # grava
@@ -49,8 +50,8 @@ export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
 base_version=20260925163543
-versions=(20260925230000)
-names=(historico_mandatos_federais_sem_fonte)
+versions=(20260925230000 20260925230100)
+names=(historico_mandatos_federais_sem_fonte nome_civil_fichas_nao_publicas)
 
 digests=()
 for i in "${!versions[@]}"; do

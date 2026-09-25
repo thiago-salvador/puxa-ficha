@@ -1,8 +1,8 @@
 {
   "versao": "2026-09-25",
-  "_comentario": "Allowlist fechada da migration 20260925230000. Aceita somente a preimagem medida em 2026-09-25 das oito linhas de historico_politico e grava snapshot de preimagem e recibo em coleta_log.",
-  "fonte": "Senado Dados Abertos (senador/lista/legislatura/47 a 57, 2026-09-25) e Camara Dados Abertos (deputados?idLegislatura=47 a 57 e deputados/{id}/historico para 74813, 133917, 141413, 74674, 204487 e 74287, 2026-09-25).",
-  "motivo": "Linhas de mandato federal publicadas sem respaldo nas listas oficiais por legislatura: tres despublicadas e cinco com periodo corrigido.",
+  "_comentario": "Allowlist fechada das migrations 20260925230000 (historico de mandatos federais) e 20260925230100 (nome civil de dez fichas nao publicadas). Cada uma aceita somente a preimagem medida em 2026-09-25 e grava snapshot de preimagem e recibo em coleta_log.",
+  "fonte": "Senado Dados Abertos (senador/lista/legislatura/47 a 57, 2026-09-25) e Camara Dados Abertos (deputados?idLegislatura=47 a 57 e deputados/{id}/historico para 74813, 133917, 141413, 74674, 204487 e 74287, 2026-09-25). Nome civil: Camara Dados Abertos deputados/{id} (nomeCivil) para as dez fichas, 2026-09-25.",
+  "motivo": "Linhas de mandato federal publicadas sem respaldo nas listas oficiais por legislatura (tres despublicadas e cinco com periodo corrigido) e nome civil de dez fichas nao publicadas divergente do cadastro da Camara.",
   "coorte": [
     "joel-rodrigues",
     "ronaldo-caiado",
@@ -11,31 +11,236 @@
     "decio-lima",
     "ricardo-ferraco",
     "capitao-wagner",
-    "jose-roberto-arruda"
+    "jose-roberto-arruda",
+    "nikolas-ferreira",
+    "rodrigo-pacheco",
+    "da-vitoria",
+    "sergio-vidigal",
+    "adriana-accorsi",
+    "beto-faro",
+    "pedro-cunha-lima",
+    "paulo-martins-gov-pr",
+    "confucio-moura",
+    "thiago-de-joaldo"
   ],
   "fora_por_construcao": {
     "slugs": []
   },
   "entries": [
-    { "tabela": "historico_politico", "slug": "joel-rodrigues", "campos": ["despublicado_em", "despublicacao_motivo"], "max_registros": 1 },
-    { "tabela": "historico_politico", "slug": "ronaldo-caiado", "campos": ["despublicado_em", "despublicacao_motivo"], "max_registros": 1 },
-    { "tabela": "historico_politico", "slug": "cicero-lucena", "campos": ["despublicado_em", "despublicacao_motivo"], "max_registros": 1 },
-    { "tabela": "historico_politico", "slug": "eduardo-braga", "campos": ["periodo_inicio", "periodo_fim", "observacoes"], "max_registros": 1 },
-    { "tabela": "historico_politico", "slug": "decio-lima", "campos": ["periodo_inicio", "periodo_fim", "observacoes"], "max_registros": 1 },
-    { "tabela": "historico_politico", "slug": "ricardo-ferraco", "campos": ["periodo_inicio", "periodo_fim", "observacoes"], "max_registros": 1 },
-    { "tabela": "historico_politico", "slug": "capitao-wagner", "campos": ["periodo_inicio", "periodo_fim", "observacoes"], "max_registros": 1 },
-    { "tabela": "historico_politico", "slug": "jose-roberto-arruda", "campos": ["periodo_inicio", "periodo_fim", "observacoes"], "max_registros": 1 }
+    {
+      "tabela": "historico_politico",
+      "slug": "joel-rodrigues",
+      "campos": [
+        "despublicado_em",
+        "despublicacao_motivo"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "ronaldo-caiado",
+      "campos": [
+        "despublicado_em",
+        "despublicacao_motivo"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "cicero-lucena",
+      "campos": [
+        "despublicado_em",
+        "despublicacao_motivo"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "eduardo-braga",
+      "campos": [
+        "periodo_inicio",
+        "periodo_fim",
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "decio-lima",
+      "campos": [
+        "periodo_inicio",
+        "periodo_fim",
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "ricardo-ferraco",
+      "campos": [
+        "periodo_inicio",
+        "periodo_fim",
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "capitao-wagner",
+      "campos": [
+        "periodo_inicio",
+        "periodo_fim",
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "jose-roberto-arruda",
+      "campos": [
+        "periodo_inicio",
+        "periodo_fim",
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "nikolas-ferreira",
+      "campos": [
+        "nome_completo"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "rodrigo-pacheco",
+      "campos": [
+        "nome_completo"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "da-vitoria",
+      "campos": [
+        "nome_completo"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "sergio-vidigal",
+      "campos": [
+        "nome_completo"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "adriana-accorsi",
+      "campos": [
+        "nome_completo"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "beto-faro",
+      "campos": [
+        "nome_completo"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "pedro-cunha-lima",
+      "campos": [
+        "nome_completo"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "paulo-martins-gov-pr",
+      "campos": [
+        "nome_completo"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "confucio-moura",
+      "campos": [
+        "nome_completo"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "thiago-de-joaldo",
+      "campos": [
+        "nome_completo"
+      ],
+      "max_registros": 1
+    }
   ],
   "referencias": [
     {
       "tabela": "identidade_timeline_quarentena_snapshot",
       "ref": "hist-federal-20260925",
-      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+      "campos": [
+        "migration_version",
+        "tabela",
+        "row_id",
+        "candidato_id",
+        "preimage",
+        "postimage",
+        "registrado_em"
+      ]
+    },
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "nome-civil-20260925",
+      "campos": [
+        "migration_version",
+        "tabela",
+        "row_id",
+        "candidato_id",
+        "preimage",
+        "postimage",
+        "registrado_em"
+      ]
     },
     {
       "tabela": "coleta_log",
       "ref": "migration:20260925230000",
-      "campos": ["fonte", "escopo", "alvo", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260925230100",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
     }
   ]
 }

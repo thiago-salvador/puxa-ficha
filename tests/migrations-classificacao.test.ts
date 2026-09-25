@@ -500,8 +500,8 @@ describe("classificador puro (#136)", () => {
     // Issue #483, jose-roberto-arruda Indeferido (20260924180000): --gate PG17 mediu 400 + 105 = 505.
     // Recibos de sites e situacao TSE (20260924204852 e 20260924205031):
     // --gate PG17 mediu 402 + as mesmas 105 falhas = 507 migrations.
-    // Historico de mandatos federais (20260925230000): --gate PG17 mediu 405 + 105 = 510.
-    assert.equal(manifesto.aplicadas_esperadas, 405)
+    // Historico federal e nome civil (20260925230000/0100): --gate PG17 mediu 406 + 105 = 511.
+    assert.equal(manifesto.aplicadas_esperadas, 406)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

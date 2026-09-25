@@ -680,7 +680,7 @@
     {
       "nome": "historico-mandatos-federais-20260925",
       "desde": "20260925230000",
-      "ate": "20260925230000",
+      "ate": "20260925230100",
       "allowlist": "scripts/audit/allowlist-historico-mandatos-federais-20260925.json",
       "divida": null
     }
