@@ -159,3 +159,68 @@ jobs:
             '${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}' \
             reports/data-freshness/summary.md \
             thiago-salvador
+
+  # Gate de cobertura (Operação Ficha Completa, eval 9): toda ficha pública
+  # precisa de recibo de fonte em cada família aplicável. Lê os perfis pela API
+  # pública e os recibos por candidato em transação somente leitura. Começa em
+  # modo aviso; depois de duas execuções limpas (GATE_SEM_RECIBO cells=0 no
+  # log), o dono troca a variável de repositório COVERAGE_GATE_MODE para
+  # "enforce" e o job passa a reprovar. Exceções nominais aprovadas vão em
+  # data/cobertura-excecoes.json, quando o arquivo existir.
+  cobertura:
+    name: Gate de cobertura das fichas
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: "npm"
+      - run: npm ci
+      - uses: ./.github/actions/install-postgresql-client-17
+        timeout-minutes: 12
+      - name: Exportar recibos por candidato em transação somente leitura
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SUPABASE_DB_URL:-}" ]; then
+            echo "::error::SUPABASE_DB_URL ausente. É o mesmo secret do backup-db.yml." >&2
+            exit 1
+          fi
+          # Fora de reports/: o detalhe antigo de alguns recibos tem dado pessoal
+          # e este arquivo não pode ir para artefato.
+          umask 077
+          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -Atq \
+            -f scripts/audit/coverage-receipts-snapshot.sql \
+            > "$RUNNER_TEMP/coverage-receipts.json"
+      - name: Matriz e gate de recibos
+        env:
+          COVERAGE_GATE_MODE: ${{ vars.COVERAGE_GATE_MODE || 'warn' }}
+        run: |
+          set -euo pipefail
+          mkdir -p reports/cobertura
+          exceptions=()
+          if [ -f data/cobertura-excecoes.json ]; then exceptions=(--exceptions=data/cobertura-excecoes.json); fi
+          npm run audit:cobertura-fichas -- \
+            --receipts="$RUNNER_TEMP/coverage-receipts.json" \
+            --out=reports/cobertura/matriz.json \
+            --gate=sem-recibo --mode="$COVERAGE_GATE_MODE" \
+            "${exceptions[@]}" | tee reports/cobertura/resumo.log
+          {
+            echo "## Gate de cobertura (modo $COVERAGE_GATE_MODE)"
+            grep -E '^GATE_SEM_RECIBO' reports/cobertura/resumo.log || echo "sem linha GATE_SEM_RECIBO"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Preservar matriz (sem recibos brutos)
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v6.0.0
+        with:
+          name: cobertura-fichas-${{ github.run_id }}
+          path: reports/cobertura/
+          if-no-files-found: warn
+          retention-days: 30

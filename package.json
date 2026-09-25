@@ -182,6 +182,7 @@
     "data:curadoria:registrar": "tsx scripts/registrar-revisao-curadoria.ts",
     "data:curadoria:processos:lote": "tsx scripts/curadoria-processos-lote.ts",
     "audit:cobertura": "tsx scripts/audit/coverage-report.ts",
+    "audit:cobertura-fichas": "node --import tsx scripts/audit/audit-cobertura-fichas.ts",
     "audit:cobertura:check": "tsx scripts/audit/check-report.ts",
     "audit:contrato-fichas-publicas": "tsx scripts/audit/check-public-profile-contract.ts",
     "audit:contrato-noticias": "tsx scripts/audit/audit-news-public-contract.ts",
