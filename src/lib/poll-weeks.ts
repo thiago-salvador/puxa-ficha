@@ -1,5 +1,5 @@
 import type { StatePollScenario } from "./state-polls"
-import { assinaturaSenadoScenario, fieldworkDate, formatPollDate, pollKey, publishedValue, resultKey, seriesCandidates, type PollResult } from "./poll-series"
+import { fieldworkDate, formatPollDate, pollKey, publishedValue, resultKey, seriesCandidates, type PollResult } from "./poll-series"
 
 const DAY = 86_400_000
 export type PollWeek = {
@@ -44,20 +44,27 @@ function comparabilityMode(poll: StatePollScenario): "estimulada" | "espontanea"
   return mode.startsWith("estimul") ? "estimulada" : "espontanea"
 }
 
-function comparabilityDimensions(poll: StatePollScenario): {
-  mode: "estimulada" | "espontanea"
-  universe: "total_amostra" | "votos_validos"
-} | null {
+/**
+ * "total_mencoes" exists only for the Senate: the two votes summed and rescaled to 100% of all
+ * mentions. It is its own base and never joins a series of shares of respondents.
+ */
+function comparabilityUniverse(poll: StatePollScenario): "total_amostra" | "votos_validos" | "total_mencoes" | null {
   const parts = poll.scenario.comparabilityKey.split("|").map(part => part.trim())
   if (parts.length !== 7) return null
-  const mode = comparabilityMode(poll)
-  if (!mode) return null
-  const [, , , , , , rawUniverse] = parts
   // "total" and "total_entrevistados" are published spellings of the same base as "total_amostra".
-  const normalized = normalizeDimension(rawUniverse)
+  const normalized = normalizeDimension(parts[6])
   const universe = normalized === "total" || normalized === "total_entrevistados" ? "total_amostra" : normalized
-  if (universe !== "total_amostra" && universe !== "votos_validos") return null
-  return { mode, universe }
+  if (universe === "total_mencoes") return poll.office === "Senador" ? universe : null
+  return universe === "total_amostra" || universe === "votos_validos" ? universe : null
+}
+
+function comparabilityDimensions(poll: StatePollScenario): {
+  mode: "estimulada" | "espontanea"
+  universe: "total_amostra" | "votos_validos" | "total_mencoes"
+} | null {
+  const mode = comparabilityMode(poll)
+  const universe = comparabilityUniverse(poll)
+  return mode && universe ? { mode, universe } : null
 }
 
 /** Named candidates with an exact identity in this scenario. */
@@ -73,24 +80,23 @@ function namedCandidates(poll: StatePollScenario) {
  */
 function weeklySeriesKey(poll: StatePollScenario) {
   const dimensions = comparabilityDimensions(poll)
-  const population = poll.sample.population
   const candidates = namedCandidates(poll).map(resultKey).sort()
   const identified = poll.instituto.status === "publicado" && Boolean(poll.instituto.value?.trim())
     && candidates.length > 0 && !poll.scenario.resultados.some(result => result.matchStatus === "indeterminado")
   if (poll.office === "Senador") {
-    // Senate scenarios (two votes per state) group by the published question,
-    // denominator and methodology signature, never by provenance or institute.
-    const metadataVerified = identified && population.status === "publicado" && Boolean(population.value?.trim())
-      && poll.method.status === "publicado" && Boolean(poll.method.value?.trim())
-    if (!senadoMeasure(poll) || !metadataVerified) return JSON.stringify(["isolated", pollKey(poll)])
+    // Senate scenarios (two votes per state) follow the governor rule: every institute that
+    // measured the same vote (first, second or both) on the same base joins one weekly series,
+    // and each candidate is averaged over the surveys that list them.
+    const measure = senadoMeasure(poll)
+    const universe = comparabilityUniverse(poll)
+    if (!measure || !universe || !identified) return JSON.stringify(["isolated", pollKey(poll)])
     return JSON.stringify([
       poll.electionYear,
       normalizeDimension(poll.office),
       poll.geography.code.toLocaleUpperCase("pt-BR"),
       poll.scenario.turn,
-      assinaturaSenadoScenario(poll),
-      candidates,
-      normalizeDimension(population.value!),
+      measure,
+      universe,
     ])
   }
   if (!dimensions || !identified) return JSON.stringify(["isolated", pollKey(poll)])

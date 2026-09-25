@@ -7913,6 +7913,383 @@
         }
       },
       "consulted_at": "2026-09-25T12:12:00Z"
+    },
+    {
+      "id": "quaest-ro-08556-2026-revisao-20260925",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Rádio TV do Amazonas / Rede Amazônica Rádio e Televisão",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-20",
+          "end": "2026-09-23"
+        },
+        "published_at": "2026-09-24",
+        "sample_size": 804,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rondônia",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RO-08556/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-rondonia-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RO-08556/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-25T23:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "fc726755c162f7420b0eef87c731dfe1ca1297d530e4e0c8585f1146436b87bc",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-rondonia-setembro-2026/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-rondonia-setembro-2026/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-rondonia-setembro-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-rondonia-setembro-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-25T23:00:00Z"
+    },
+    {
+      "id": "verita-ro-01935-2026-revisao-20260925",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Veritá",
+        "commissioner": "Instituto Veritá Ltda. (recursos próprios)",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "newsrondonia.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-07",
+          "end": "2026-09-12"
+        },
+        "published_at": "2026-09-12",
+        "sample_size": 1220,
+        "method": "Coleta telefônica automatizada",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": null,
+        "office": "Governador",
+        "geography": "Rondônia",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RO-01935/2026",
+        "result_url": "https://newsrondonia.com.br/politica/2026/09/15/justica-eleitoral-rejeita-pedido-da-coligacao-de-furia-e-confirma-pesquisa-verita-que-aponta-marcos-rogerio-na-lideranca",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RO-01935/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-25T23:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "ee31fb04176279bf11bbc287cd40bff95f2f41a2d40351f3663e33a6355accda",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://newsrondonia.com.br/politica/2026/09/15/justica-eleitoral-rejeita-pedido-da-coligacao-de-furia-e-confirma-pesquisa-verita-que-aponta-marcos-rogerio-na-lideranca",
+            "https://www.cnnbrasil.com.br/eleicoes/verita-bruno-bolsonaro-e-fernando-maximo-lideram-corrida-ao-senado-em-ro/",
+            "https://newsrondonia.com.br/politica/2026/09/19/pesquisa-verita-de-2026-e-comparada-com-levantamentos-anteriores-em-rondonia"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://newsrondonia.com.br/politica/2026/09/15/justica-eleitoral-rejeita-pedido-da-coligacao-de-furia-e-confirma-pesquisa-verita-que-aponta-marcos-rogerio-na-lideranca",
+            "https://www.cnnbrasil.com.br/eleicoes/verita-bruno-bolsonaro-e-fernando-maximo-lideram-corrida-ao-senado-em-ro/",
+            "https://newsrondonia.com.br/politica/2026/09/19/pesquisa-verita-de-2026-e-comparada-com-levantamentos-anteriores-em-rondonia"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://newsrondonia.com.br/politica/2026/09/15/justica-eleitoral-rejeita-pedido-da-coligacao-de-furia-e-confirma-pesquisa-verita-que-aponta-marcos-rogerio-na-lideranca",
+            "https://www.cnnbrasil.com.br/eleicoes/verita-bruno-bolsonaro-e-fernando-maximo-lideram-corrida-ao-senado-em-ro/",
+            "https://newsrondonia.com.br/politica/2026/09/19/pesquisa-verita-de-2026-e-comparada-com-levantamentos-anteriores-em-rondonia"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://newsrondonia.com.br/politica/2026/09/15/justica-eleitoral-rejeita-pedido-da-coligacao-de-furia-e-confirma-pesquisa-verita-que-aponta-marcos-rogerio-na-lideranca",
+            "https://www.cnnbrasil.com.br/eleicoes/verita-bruno-bolsonaro-e-fernando-maximo-lideram-corrida-ao-senado-em-ro/",
+            "https://newsrondonia.com.br/politica/2026/09/19/pesquisa-verita-de-2026-e-comparada-com-levantamentos-anteriores-em-rondonia"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-25T23:00:00Z"
+    },
+    {
+      "id": "phoenix-ro-02620-2026-revisao-20260925",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Phoenix",
+        "commissioner": "ABC Publicidade Ltda",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "rondoniagora.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-03",
+          "end": "2026-09-05"
+        },
+        "published_at": "2026-09-09",
+        "sample_size": 1123,
+        "method": null,
+        "margin_of_error_pp": 2.9,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rondônia",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RO-02620/2026",
+        "result_url": "https://www.rondoniagora.com/eleicoes/justica-eleitoral-nega-liminar-e-garante-divulgacao-de-pesquisa-em-rondonia",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RO-02620/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-25T23:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "88e698e6486afa3938a8c378f55549dda4f6b4727cbb07a14cc80d278d487beb",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.rondoniagora.com/eleicoes/justica-eleitoral-nega-liminar-e-garante-divulgacao-de-pesquisa-em-rondonia",
+            "https://www.diarioro.com.br/2026/09/09/justica-eleitoral-nega-liminar-e-garante-divulgacao-de-pesquisa-em-rondonia/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.rondoniagora.com/eleicoes/justica-eleitoral-nega-liminar-e-garante-divulgacao-de-pesquisa-em-rondonia",
+            "https://www.diarioro.com.br/2026/09/09/justica-eleitoral-nega-liminar-e-garante-divulgacao-de-pesquisa-em-rondonia/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.rondoniagora.com/eleicoes/justica-eleitoral-nega-liminar-e-garante-divulgacao-de-pesquisa-em-rondonia",
+            "https://www.diarioro.com.br/2026/09/09/justica-eleitoral-nega-liminar-e-garante-divulgacao-de-pesquisa-em-rondonia/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.rondoniagora.com/eleicoes/justica-eleitoral-nega-liminar-e-garante-divulgacao-de-pesquisa-em-rondonia",
+            "https://www.diarioro.com.br/2026/09/09/justica-eleitoral-nega-liminar-e-garante-divulgacao-de-pesquisa-em-rondonia/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-25T23:00:00Z"
+    },
+    {
+      "id": "phoenix-ro-00523-2026-revisao-20260925",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Phoenix",
+        "commissioner": "ABC Publicidade Ltda",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "diarioonorte.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-18",
+          "end": "2026-09-20"
+        },
+        "published_at": "2026-09-20",
+        "sample_size": 801,
+        "method": "Abordagem pessoal domiciliar, questionário estruturado",
+        "margin_of_error_pp": 3.5,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rondônia",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RO-00523/2026",
+        "result_url": "https://www.diarioonorte.com/2026/09/marcos-rogerio-lidera-corrida-ao.html",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RO-00523/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-25T23:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "bde66be943161b4cb8dddba861bcea7b364119c6adbe1e62ff1d9471ae9a4009",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.diarioonorte.com/2026/09/marcos-rogerio-lidera-corrida-ao.html"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.diarioonorte.com/2026/09/marcos-rogerio-lidera-corrida-ao.html"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.diarioonorte.com/2026/09/marcos-rogerio-lidera-corrida-ao.html"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.diarioonorte.com/2026/09/marcos-rogerio-lidera-corrida-ao.html"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-25T23:00:00Z"
+    },
+    {
+      "id": "verita-ro-03403-2026-revisao-20260925",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Veritá",
+        "commissioner": "Instituto Veritá (iniciativa própria)",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "rondoniadinamica.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-24",
+          "end": "2026-08-28"
+        },
+        "published_at": "2026-08-31",
+        "sample_size": 1220,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": null,
+        "office": "Governador",
+        "geography": "Rondônia",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RO-03403/2026",
+        "result_url": "https://www.rondoniadinamica.com/noticias/2026/08/marcos-rogerio-chega-a-407-e-tem-quase-o-dobro-do-2-colocado-em-pesquisa-verita-para-o-governo-de-rondonia,252975.shtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RO-03403/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-25T23:00:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "2658b4ee9cad2986df1f315281e8b3c1def6a674370e59a9f94473292e6045d7",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.rondoniadinamica.com/noticias/2026/08/marcos-rogerio-chega-a-407-e-tem-quase-o-dobro-do-2-colocado-em-pesquisa-verita-para-o-governo-de-rondonia,252975.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.rondoniadinamica.com/noticias/2026/08/marcos-rogerio-chega-a-407-e-tem-quase-o-dobro-do-2-colocado-em-pesquisa-verita-para-o-governo-de-rondonia,252975.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.rondoniadinamica.com/noticias/2026/08/marcos-rogerio-chega-a-407-e-tem-quase-o-dobro-do-2-colocado-em-pesquisa-verita-para-o-governo-de-rondonia,252975.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.rondoniadinamica.com/noticias/2026/08/marcos-rogerio-chega-a-407-e-tem-quase-o-dobro-do-2-colocado-em-pesquisa-verita-para-o-governo-de-rondonia,252975.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-25T23:00:00Z"
     }
   ]
 }

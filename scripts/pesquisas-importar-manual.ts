@@ -1,5 +1,5 @@
 /**
- * Imports manually reviewed poll rounds (Presidente BR and Governador by UF) into the
+ * Imports manually reviewed poll rounds (Presidente BR, Governador and Senador by UF) into the
  * versioned catalogs read by the site.
  *
  * Input rounds use the flat collection format documented in
@@ -19,7 +19,31 @@ import { BRAZIL_STATES } from "../src/data/brazil-states"
 
 type Json = Record<string, unknown>
 
+export type CargoPesquisa = "Presidente" | "Governador" | "Senador"
+/** Senate 2026 has two seats: each stimulated scenario states which vote it measures. */
+export type MedidaSenado = "primeiro-voto" | "segundo-voto" | "agregado"
+const MEDIDAS_SENADO: MedidaSenado[] = ["primeiro-voto", "segundo-voto", "agregado"]
+const ROTULO_MEDIDA: Record<MedidaSenado, string> = {
+  "primeiro-voto": "primeiro voto",
+  "segundo-voto": "segundo voto",
+  agregado: "soma do primeiro e do segundo voto",
+}
+const TOTAL_UM_VOTO = 102
+
+/**
+ * Base of a Senate scenario, derived from its own numbers. Two votes per voter over the whole
+ * sample add up to far more than 100%; an aggregate that adds up to about 100% can only be the
+ * share of all mentions (the "consolidado dos dois votos reduzido para 100%" that most outlets
+ * publish), which is a different base and must not be labeled as a share of respondents.
+ */
+export function baseCenarioSenado(scenario: RodadaColetada["scenarios"][number]): "total_amostra" | "total_mencoes" {
+  const total = scenario.results.reduce((sum, result) => sum + result.value_percent, 0)
+  return scenario.measure === "agregado" && total <= TOTAL_UM_VOTO ? "total_mencoes" : "total_amostra"
+}
+
 export interface RodadaColetada {
+  /** Omitted means Presidente for "BR" and Governador for a UF, as before Senate support. */
+  cargo?: CargoPesquisa
   uf: string
   status?: string
   instituto: string
@@ -38,6 +62,8 @@ export interface RodadaColetada {
   capture_file: string
   scenarios: {
     kind: "estimulado" | "espontaneo"
+    /** Required for Senador stimulated scenarios. */
+    measure?: MedidaSenado
     /** Collector's own description; never published (headlines are editorial). */
     label_raw?: string
     /** Neutral distinction between stimulated scenarios of the same round, e.g. "sem Fulano". */
@@ -48,13 +74,18 @@ export interface RodadaColetada {
   notes?: string
 }
 
-/** Per scope ("BR" or UF): printed label -> candidate slug, or null for non-candidate lines. */
+/**
+ * Per scope ("BR", UF for Governador, "SEN-<UF>" for Senador): printed label -> candidate slug,
+ * or null for non-candidate lines.
+ */
 export type DecisoesAlias = Record<string, Record<string, string | null>>
 
 const PRES = "scripts/data/pesquisas-presidencia-2026.json"
 const PRES_FONTES = "scripts/data/pesquisas-eleitorais-fontes.json"
 const GOV = "scripts/data/pesquisas-governadores-2026.json"
 const GOV_FONTES = "scripts/data/pesquisas-governadores-fontes.json"
+/** Senate datasets and their source scorecard live in one root file (see src/lib/senado-polls.ts). */
+const SEN = "scripts/data/pesquisas-senado-2026.json"
 const PESQELE = "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
 const DATE = /^\d{4}-\d{2}-\d{2}$/
 
@@ -78,11 +109,29 @@ function registrationParts(code: string | null) {
   return match ? { uf: match[1].toUpperCase(), number: match[2], year: `20${match[3]}` } : null
 }
 
+export function cargoDe(rodada: RodadaColetada): CargoPesquisa {
+  return rodada.cargo ?? (rodada.uf === "BR" ? "Presidente" : "Governador")
+}
+
+/** Alias decisions are scoped by office so a Senate spelling never resolves a governor line. */
+export function escopoAlias(rodada: RodadaColetada): string {
+  return cargoDe(rodada) === "Senador" ? `SEN-${rodada.uf}` : rodada.uf
+}
+
+/** Senate spontaneous answers have no published measure in the site contract, so they are not imported. */
+function cenariosImportaveis(rodada: RodadaColetada) {
+  return cargoDe(rodada) === "Senador" ? (rodada.scenarios ?? []).filter((scenario) => scenario.kind === "estimulado") : rodada.scenarios ?? []
+}
+
 /** Returns human-readable problems; an empty list means the round can be imported. */
 export function validarRodada(rodada: RodadaColetada, aliases: DecisoesAlias): string[] {
   const problems: string[] = []
-  const where = `${rodada.uf} ${rodada.instituto} ${rodada.fieldwork_end ?? "?"}`
+  const cargo = cargoDe(rodada)
+  const where = `${cargo === "Senador" ? "Senado " : ""}${rodada.uf} ${rodada.instituto} ${rodada.fieldwork_end ?? "?"}`
   if (rodada.uf !== "BR" && !BRAZIL_STATES.some((state) => state.sigla === rodada.uf)) problems.push(`${where}: UF inválida`)
+  if ((cargo === "Presidente") !== (rodada.uf === "BR")) problems.push(`${where}: cargo ${cargo} incompatível com ${rodada.uf}`)
+  // The Senate page publishes only rounds with a TSE registration (src/lib/senado-polls.ts).
+  if (cargo === "Senador" && !rodada.registration) problems.push(`${where}: Senado exige registration publicado`)
   if (!rodada.instituto?.trim()) problems.push(`${where}: instituto ausente`)
   for (const key of ["fieldwork_end", "publication_date"] as const) {
     if (!rodada[key] || !DATE.test(rodada[key]!)) problems.push(`${where}: ${key} ausente ou inválido`)
@@ -98,11 +147,25 @@ export function validarRodada(rodada: RodadaColetada, aliases: DecisoesAlias): s
   if (!/^https:\/\//.test(rodada.result_url ?? "")) problems.push(`${where}: result_url ausente`)
   if (!rodada.capture_file || !existsSync(rodada.capture_file)) problems.push(`${where}: captura literal ausente`)
   if (!rodada.scenarios?.some((scenario) => scenario.kind === "estimulado")) problems.push(`${where}: sem cenário estimulado`)
-  const stimulatedNotes = (rodada.scenarios ?? []).filter((scenario) => scenario.kind === "estimulado").map((scenario) => scenario.note?.trim() ?? "")
-  if (stimulatedNotes.length > 1 && (stimulatedNotes.some((note) => !note) || new Set(stimulatedNotes).size !== stimulatedNotes.length)) {
-    problems.push(`${where}: cenários estimulados múltiplos exigem nota distinta em cada um`)
+  const stimulated = (rodada.scenarios ?? []).filter((scenario) => scenario.kind === "estimulado")
+  if (cargo === "Senador") {
+    for (const scenario of stimulated) {
+      if (!scenario.measure || !MEDIDAS_SENADO.includes(scenario.measure)) problems.push(`${where}: cenário do Senado sem medida (primeiro-voto, segundo-voto ou agregado)`)
+    }
   }
-  for (const scenario of rodada.scenarios ?? []) {
+  // Distinct notes are required among stimulated scenarios that measure the same thing.
+  const byMeasure = new Map<string, string[]>()
+  for (const scenario of stimulated) {
+    const key = cargo === "Senador" ? scenario.measure ?? "" : ""
+    byMeasure.set(key, [...(byMeasure.get(key) ?? []), scenario.note?.trim() ?? ""])
+  }
+  for (const notes of byMeasure.values()) {
+    if (notes.length > 1 && (notes.some((note) => !note) || new Set(notes).size !== notes.length)) {
+      problems.push(`${where}: cenários estimulados múltiplos exigem nota distinta em cada um`)
+    }
+  }
+  const decisions = aliases[escopoAlias(rodada)] ?? {}
+  for (const scenario of cenariosImportaveis(rodada)) {
     const labels = new Set<string>()
     let total = 0
     for (const result of scenario.results) {
@@ -112,25 +175,41 @@ export function validarRodada(rodada: RodadaColetada, aliases: DecisoesAlias): s
       total += result.value_percent
       if (labels.has(result.raw_label)) problems.push(`${where}: rótulo duplicado ${result.raw_label}`)
       labels.add(result.raw_label)
-      if (!(result.raw_label in (aliases[rodada.uf] ?? {}))) problems.push(`${where}: sem decisão de alias para "${result.raw_label}"`)
+      if (!(result.raw_label in decisions)) problems.push(`${where}: sem decisão de alias para "${result.raw_label}" (escopo ${escopoAlias(rodada)})`)
     }
-    if (total > 102) problems.push(`${where}: cenário ${scenario.kind} ${scenario.note ?? ""} soma ${total.toFixed(1)}%`)
+    // Two mentions per voter: the aggregate Senate measure can reach 200%.
+    const limit = cargo === "Senador" && scenario.measure === "agregado" ? 202 : TOTAL_UM_VOTO
+    if (total > limit) problems.push(`${where}: cenário ${scenario.kind} ${scenario.measure ?? ""} ${scenario.note ?? ""} soma ${total.toFixed(1)}%`)
   }
   return problems
 }
 
-export interface Catalogos { pres: Json; presFontes: Json; gov: Json; govFontes: Json }
+export interface Catalogos { pres: Json; presFontes: Json; gov: Json; govFontes: Json; sen: Json }
 
 export function carregarCatalogos(): Catalogos {
   const read = (path: string) => JSON.parse(readFileSync(path, "utf8")) as Json
-  return { pres: read(PRES), presFontes: read(PRES_FONTES), gov: read(GOV), govFontes: read(GOV_FONTES) }
+  return { pres: read(PRES), presFontes: read(PRES_FONTES), gov: read(GOV), govFontes: read(GOV_FONTES), sen: read(SEN) }
 }
 
-function datasetDe(catalogos: Catalogos, uf: string): Json {
-  if (uf === "BR") return catalogos.pres
-  const dataset = (catalogos.gov.datasets as Json[]).find((entry) => (entry.publication_scope as Json).geography_code === uf)
-  if (!dataset) throw new Error(`dataset de governador ausente para ${uf}`)
+function entradaSenado(catalogos: Catalogos, uf: string): Json {
+  const entry = (catalogos.sen.datasets as Json[]).find((item) => item.uf === uf)
+  if (!entry) throw new Error(`dataset de Senado ausente para ${uf}`)
+  return entry
+}
+
+function datasetDe(catalogos: Catalogos, rodada: RodadaColetada): Json {
+  const cargo = cargoDe(rodada)
+  if (cargo === "Presidente") return catalogos.pres
+  if (cargo === "Senador") return entradaSenado(catalogos, rodada.uf).dataset as Json
+  const dataset = (catalogos.gov.datasets as Json[]).find((entry) => (entry.publication_scope as Json).geography_code === rodada.uf)
+  if (!dataset) throw new Error(`dataset de governador ausente para ${rodada.uf}`)
   return dataset
+}
+
+function fontesDe(catalogos: Catalogos, cargo: CargoPesquisa): Json {
+  if (cargo === "Presidente") return catalogos.presFontes
+  if (cargo === "Senador") return catalogos.sen.source_catalog as Json
+  return catalogos.govFontes
 }
 
 function reusableSource(fontes: Json, instituto: string, office: string, geography: string) {
@@ -145,15 +224,16 @@ function reusableSource(fontes: Json, instituto: string, office: string, geograp
 
 /** Builds the catalog entries for one validated round. Pure: does not touch the catalogs. */
 export function montarRodada(rodada: RodadaColetada, aliases: DecisoesAlias, catalogos: Catalogos, reviewedAt: string) {
-  const office = rodada.uf === "BR" ? "Presidente" : "Governador"
+  const office = cargoDe(rodada)
   const geography = rodada.uf === "BR" ? "Brasil" : BRAZIL_STATES.find((state) => state.sigla === rodada.uf)!.name
-  const fontes = rodada.uf === "BR" ? catalogos.presFontes : catalogos.govFontes
+  const fontes = fontesDe(catalogos, office)
   const capture = readFileSync(rodada.capture_file)
   const captureSha = createHash("sha256").update(capture).digest("hex")
   const parts = registrationParts(rodada.registration)
   const instituteSlug = slugify(rodada.instituto)
   const roundKey = parts ? `${parts.uf.toLowerCase()}-${parts.number}-${parts.year}` : `${rodada.uf.toLowerCase()}-${rodada.fieldwork_end}`
-  const id = `${instituteSlug}-${roundKey}`
+  // One registration usually covers governor and Senate; the office suffix keeps both ids distinct.
+  const id = `${instituteSlug}-${roundKey}${office === "Senador" ? "-senado" : ""}`
   const existing = reusableSource(fontes, rodada.instituto, office, geography)
   const preferred = (fontes.preferred_source_ids as string[]) ?? []
   const sourceId = existing ? String(existing.id) : `${instituteSlug}-${roundKey}-revisao-${reviewedAt.slice(0, 10).replace(/-/g, "")}`
@@ -200,21 +280,34 @@ export function montarRodada(rodada: RodadaColetada, aliases: DecisoesAlias, cat
     },
     consulted_at: reviewedAt,
   }
-  const decisions = aliases[rodada.uf]
+  const decisions = aliases[escopoAlias(rodada)]
   const newAliases: Json[] = []
   let estimulados = 0
-  const cenarios = rodada.scenarios.map((scenario) => {
+  const senado = office === "Senador"
+  const porMedida = new Map<string, number>()
+  const cenarios = cenariosImportaveis(rodada).map((scenario) => {
     const index = scenario.kind === "estimulado" ? ++estimulados : 0
-    const scenarioId = `${id}-1t${scenario.kind === "espontaneo" ? "-espontaneo" : estimulados > 1 ? `-cenario-${index}` : ""}`
+    const indexMedida = senado ? (porMedida.get(scenario.measure!) ?? 0) + 1 : 0
+    if (senado) porMedida.set(scenario.measure!, indexMedida)
+    const scenarioId = senado
+      ? `${id}-${scenario.measure}${indexMedida > 1 ? `-cenario-${indexMedida}` : ""}`
+      : `${id}-1t${scenario.kind === "espontaneo" ? "-espontaneo" : estimulados > 1 ? `-cenario-${index}` : ""}`
     const list = createHash("sha256").update(stable(scenario.results.map((result) => decisions[result.raw_label]).filter(Boolean).sort())).digest("hex")
-    const mode = scenario.kind === "estimulado" ? "estimulada" : "espontanea"
+    const mode = senado ? scenario.measure! : scenario.kind === "estimulado" ? "estimulada" : "espontanea"
+    const note = scenario.note ? `, ${scenario.note.trim()}` : ""
+    const base = senado ? baseCenarioSenado(scenario) : "total_amostra"
+    const senadoLabel = base === "total_mencoes"
+      ? `Intenção de voto estimulada para o Senado, primeiro e segundo voto somados e reduzidos a 100%${note}; percentuais do total de menções`
+      : `Intenção de voto estimulada para o Senado, ${ROTULO_MEDIDA[scenario.measure!]}${note}; percentuais do total de entrevistados${scenario.measure === "agregado" ? " (a soma dos dois votos passa de 100%)" : ""}`
     return {
       id: scenarioId,
       turn: 1,
       geography,
-      label_raw: `Intenção de voto ${scenario.kind === "estimulado" ? "estimulada" : "espontânea"} no 1º turno${scenario.note ? `, ${scenario.note.trim()}` : ""}; percentuais do total de entrevistados`,
+      label_raw: senado
+        ? senadoLabel
+        : `Intenção de voto ${scenario.kind === "estimulado" ? "estimulada" : "espontânea"} no 1º turno${note}; percentuais do total de entrevistados`,
       question: vs(scenario.question),
-      comparability_key: `2026|${office}|${rodada.uf}|1|${mode}|${list}|total_amostra`,
+      comparability_key: `2026|${office}|${rodada.uf}|1|${mode}|${list}|${base}`,
       resultados: scenario.results.map((result) => {
         const slug = decisions[result.raw_label]
         if (slug) {
@@ -270,7 +363,8 @@ export function importarRodadas(rodadas: RodadaColetada[], aliases: DecisoesAlia
     if (rodada.status === "nao_confirmada") { skipped.push(`${rodada.uf} ${rodada.instituto}: não confirmada`); continue }
     const found = validarRodada(rodada, aliases)
     if (found.length) { problems.push(...found); continue }
-    const dataset = datasetDe(catalogos, rodada.uf)
+    const cargo = cargoDe(rodada)
+    const dataset = datasetDe(catalogos, rodada)
     const polls = dataset.pesquisas as Json[]
     const built = montarRodada(rodada, aliases, catalogos, reviewedAt)
     const sameRegistration = rodada.registration && polls.some((poll) => {
@@ -280,8 +374,14 @@ export function importarRodadas(rodadas: RodadaColetada[], aliases: DecisoesAlia
     })
     if (sameRegistration || polls.some((poll) => poll.id === built.poll.id)) { skipped.push(`${built.poll.id}: já no catálogo`); continue }
     polls.push(built.poll)
-    if (built.source) (rodada.uf === "BR" ? catalogos.presFontes : catalogos.govFontes).sources = [
-      ...((rodada.uf === "BR" ? catalogos.presFontes : catalogos.govFontes).sources as Json[]), built.source]
+    const fontes = fontesDe(catalogos, cargo)
+    if (built.source) fontes.sources = [...(fontes.sources as Json[]), built.source]
+    if (cargo === "Senador") {
+      const entry = entradaSenado(catalogos, rodada.uf)
+      entry.state = "com_pesquisa_publicada"
+      entry.reason = "Rodadas importadas por revisão manual auditada, com resultado, metodologia e registro lidos na publicação."
+      delete entry.checked_at
+    }
     const datasetAliases = dataset.exact_aliases as Json[]
     for (const alias of built.aliases) {
       if (datasetAliases.some((known) => known.raw_label === alias.raw_label && known.candidate_slug !== alias.candidate_slug &&
@@ -296,21 +396,57 @@ export function importarRodadas(rodadas: RodadaColetada[], aliases: DecisoesAlia
   return { problems, planned, skipped, catalogos }
 }
 
+export interface AusenciaChecada { uf: string; cargo: CargoPesquisa; checked_at: string }
+
+/**
+ * Records a dated, checked absence for Senate UFs that still have no imported round, so the
+ * catalog states when the search happened instead of carrying an undated default.
+ */
+export function registrarAusenciasSenado(ausencias: AusenciaChecada[], catalogos: Catalogos) {
+  const problems: string[] = []
+  const recorded: string[] = []
+  for (const ausencia of ausencias) {
+    if (ausencia.cargo !== "Senador") continue
+    if (!DATE.test(ausencia.checked_at ?? "")) { problems.push(`${ausencia.uf}: checked_at inválido`); continue }
+    const entry = entradaSenado(catalogos, ausencia.uf)
+    if (((entry.dataset as Json).pesquisas as Json[]).length) { problems.push(`${ausencia.uf}: ausência declarada em UF com pesquisa importada`); continue }
+    const [year, month, day] = ausencia.checked_at.split("-")
+    entry.state = "sem_pesquisa_qualificada"
+    entry.reason = `Checagem de ${day}/${month}/${year}: nenhuma pesquisa com resultado, metodologia e registro verificáveis foi encontrada para o Senado nesta UF.`
+    entry.checked_at = ausencia.checked_at
+    recorded.push(`${ausencia.uf} (${ausencia.checked_at})`)
+  }
+  return { problems, recorded }
+}
+
 function main() {
   const args = process.argv.slice(2)
   const values = (flag: string) => args.flatMap((arg, index) => (arg === flag ? [args[index + 1]] : []))
   const inputs = values("--input")
-  const [aliasesPath] = values("--aliases")
-  if (!inputs.length || !aliasesPath) throw new Error("uso: --input rodadas.json [--input ...] --aliases aliases.json [--write]")
+  const aliasesPaths = values("--aliases")
+  if (!inputs.length || !aliasesPaths.length) {
+    throw new Error("uso: --input rodadas.json [--input ...] --aliases aliases.json [--aliases ...] [--ausencias ausencias.json] [--write]")
+  }
   const rodadas = inputs.flatMap((path) => JSON.parse(readFileSync(path, "utf8")) as RodadaColetada[])
-  const aliases = JSON.parse(readFileSync(aliasesPath, "utf8")) as DecisoesAlias
+  const aliases: DecisoesAlias = {}
+  for (const path of aliasesPaths) {
+    for (const [scope, decisions] of Object.entries(JSON.parse(readFileSync(path, "utf8")) as DecisoesAlias)) {
+      for (const [label, slug] of Object.entries(decisions)) {
+        if (label in (aliases[scope] ?? {}) && aliases[scope][label] !== slug) throw new Error(`decisões de alias divergentes para "${label}" em ${scope}`)
+        aliases[scope] = { ...aliases[scope], [label]: slug }
+      }
+    }
+  }
   const reviewedAt = values("--reviewed-at")[0] ?? new Date().toISOString().replace(/\.\d+Z$/, "Z")
   const { catalogos, ...result } = importarRodadas(rodadas, aliases, reviewedAt, carregarCatalogos())
-  console.log(JSON.stringify(result, null, 2))
-  if (result.problems.length) { process.exitCode = 1; return }
+  const ausencias = values("--ausencias").flatMap((path) => JSON.parse(readFileSync(path, "utf8")) as AusenciaChecada[])
+  const absence = registrarAusenciasSenado(ausencias, catalogos)
+  console.log(JSON.stringify({ ...result, ausencias: absence }, null, 2))
+  if (result.problems.length || absence.problems.length) { process.exitCode = 1; return }
   if (args.includes("--write")) {
     const save = (path: string, value: Json) => writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`)
     save(PRES, catalogos.pres); save(PRES_FONTES, catalogos.presFontes); save(GOV, catalogos.gov); save(GOV_FONTES, catalogos.govFontes)
+    save(SEN, catalogos.sen)
   }
 }
 

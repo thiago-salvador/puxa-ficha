@@ -130,7 +130,12 @@ function loadCatalogs(): Map<string, CatalogoPesquisasEleitorais> {
   return catalogs
 }
 
-/** Returns only source-approved, provenance-complete, comparable Senate scenarios. */
+/**
+ * Returns only source-approved, provenance-complete, comparable Senate scenarios. Like the
+ * governor pages, a round reviewed one by one (state "publicado") needs no standing preference
+ * for its institute. The TSE registration must be published; method and population follow the
+ * governor rule (shown when the publication states them, never required, never inferred).
+ */
 export function selecionarSenadoPolls(
   catalog: CatalogoPesquisasEleitorais | undefined,
   uf: string,
@@ -141,7 +146,7 @@ export function selecionarSenadoPolls(
   return catalog.pesquisas.flatMap(({ cenarios, ...poll }) => {
     if (
       poll.sourceStatus !== "aprovado" ||
-      !catalog.preferredSourceIds.includes(poll.sourceId) ||
+      (!catalog.preferredSourceIds.includes(poll.sourceId) && poll.state !== "publicado") ||
       poll.electionYear !== 2026 ||
       poll.office !== "Senador" ||
       poll.geography.code !== normalizedUf ||
@@ -149,16 +154,14 @@ export function selecionarSenadoPolls(
       poll.registration.code.status !== "publicado" ||
       !poll.registration.code.value ||
       poll.registration.url.status !== "publicado" ||
-      !poll.registration.url.value ||
-      poll.method.status !== "publicado" ||
-      !poll.method.value?.trim() ||
-      poll.sample.population.status !== "publicado" ||
-      !poll.sample.population.value?.trim()
+      !poll.registration.url.value
     ) return []
     return cenarios
       .filter((scenario) => {
         const measure = scenario.comparabilityKey.split("|")[4]
-        return scenario.turn === 1 && scenario.question.status === "publicado" && !!scenario.question.value?.trim() && SENADO_POLL_MEASURES.includes(measure as SenadoPollMeasure)
+        // The measure (first vote, second vote or both) defines the question; its literal wording is
+        // shown when published, as on governor pages, and is not a publication requirement.
+        return scenario.turn === 1 && SENADO_POLL_MEASURES.includes(measure as SenadoPollMeasure)
       })
       .map((scenario) => ({ ...poll, scenario }))
   }).sort((a, b) => (b.publicationDate.value ?? "").localeCompare(a.publicationDate.value ?? "") || a.id.localeCompare(b.id))

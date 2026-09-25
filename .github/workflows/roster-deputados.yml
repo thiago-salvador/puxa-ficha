@@ -1,0 +1,111 @@
+name: Atualizar roster oficial de deputados 2026
+
+# Coletor agendado do roster de /deputados/[uf] (PR #449). Até aqui o roster
+# era um snapshot único de 23/09/2026, gravado por execução manual de
+# `scripts/ingest-roster-deputados.ts`; renúncias, indeferimentos e
+# substituições publicadas depois disso não chegavam ao site.
+#
+# O job baixa os dois pacotes oficiais do TSE (consulta_cand e
+# consulta_cand_complementar), roda o dry-run, confere o piso de cobertura e só
+# então faz o upsert em `candidatos_roster_2026`. Falha fechada: pacote
+# ausente, bloqueado ou truncado deixa o job vermelho sem escrita, e o
+# cron-watchdog abre a issue com o motivo.
+#
+# Fotos: `foto_path` segue nulo. Os pacotes de foto por UF e as URLs de imagem
+# do DivulgaCand responderam 403 na medição de 25/09/2026; nenhuma URL é
+# gravada sem fonte oficial acessível.
+
+on:
+  schedule:
+    # Terça e sexta, 08:41 UTC (05:41 em Brasília), fora do horário de pico do TSE.
+    - cron: "41 8 * * 2,5"
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: >-
+          Gravar em produção (upsert em candidatos_roster_2026). Desligado, o
+          dispatch só baixa, mede e publica o dry-run.
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: roster-deputados
+  cancel-in-progress: false
+
+jobs:
+  roster:
+    name: Pacote TSE, dry-run, piso e upsert
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    environment: production
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      # O snapshot de 23/09 tinha 20.061 linhas com os cargos majoritários.
+      # Abaixo de ~95% disso o pacote veio truncado ou o parser quebrou.
+      ROSTER_PISO_TOTAL: "19000"
+      ROSTER_DIR: .tse-roster
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Baixar pacotes oficiais do TSE
+        run: |
+          set -euo pipefail
+          mkdir -p "$ROSTER_DIR"
+          for name in consulta_cand/consulta_cand_2026.zip consulta_cand_complementar/consulta_cand_complementar_2026.zip; do
+            target="$ROSTER_DIR/$(basename "$name")"
+            if ! curl -fsSL --retry 3 --retry-delay 30 --max-time 1200 \
+              -o "$target" "https://cdn.tse.jus.br/estatistica/sead/odsele/$name"; then
+              echo "::error title=Pacote TSE indisponível::download de $name falhou; nenhuma escrita feita"
+              exit 1
+            fi
+            unzip -tq "$target"
+            echo "$(basename "$name"): $(stat -c %s "$target") bytes, sha256 $(sha256sum "$target" | cut -d' ' -f1)"
+          done
+      - name: Dry-run e piso de cobertura
+        run: |
+          set -euo pipefail
+          mkdir -p reports/roster-deputados
+          node --import tsx scripts/ingest-roster-deputados.ts \
+            --snapshot="$ROSTER_DIR/consulta_cand_2026.zip" \
+            --complement="$ROSTER_DIR/consulta_cand_complementar_2026.zip" \
+            --include-majoritarios \
+            --out=reports/roster-deputados/dry-run.json > /dev/null
+          jq '{status, snapshot_em, total, counts, coverage_proven}' reports/roster-deputados/dry-run.json
+          jq -e --argjson piso "$ROSTER_PISO_TOTAL" \
+            '.status == "dry_run" and .coverage_proven == true and .total >= $piso' \
+            reports/roster-deputados/dry-run.json > /dev/null || {
+              echo "::error title=Roster abaixo do piso::dry-run sem cobertura provada ou com menos de $ROSTER_PISO_TOTAL linhas; nenhuma escrita feita"
+              exit 1
+            }
+      - name: Gravar em produção
+        if: github.event_name == 'schedule' || inputs.apply
+        run: |
+          set -euo pipefail
+          node --import tsx scripts/ingest-roster-deputados.ts \
+            --snapshot="$ROSTER_DIR/consulta_cand_2026.zip" \
+            --complement="$ROSTER_DIR/consulta_cand_complementar_2026.zip" \
+            --include-majoritarios \
+            --apply \
+            --out=reports/roster-deputados/apply.json > /dev/null
+          jq '{status, snapshot_em, total, counts}' reports/roster-deputados/apply.json
+          jq -e '.status == "applied"' reports/roster-deputados/apply.json > /dev/null
+      - name: Publicar relatório
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v6.0.0
+        with:
+          name: roster-deputados-${{ github.run_id }}
+          path: reports/roster-deputados/
+          if-no-files-found: warn
+          retention-days: 30
