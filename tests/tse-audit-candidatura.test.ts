@@ -1,0 +1,255 @@
+import test from "node:test"
+import assert from "node:assert/strict"
+import { FONTES, montarLinhas } from "../scripts/lib/coleta-log"
+import {
+  compareFichasTse,
+  situacaoAtualDoDivulgaCand,
+  type OfficialFichaRow,
+  type PublishedFicha,
+} from "../scripts/lib/data-freshness/ficha-tse"
+import {
+  FONTE_TSE_AUDITORIA_CANDIDATURA,
+  recibosAuditoriaCandidatura,
+} from "../scripts/lib/data-freshness/tse-audit-receipt"
+import { TSE_CANDIDACY_URL, TSE_COMPLEMENTAR_URL } from "../scripts/lib/data-freshness/tse-source"
+import type { JulgamentoTse } from "../scripts/lib/tse-situacao-julgamento"
+import type { CandidateSitesTseDataset } from "../src/lib/types"
+
+const SHA = "a".repeat(64)
+const SHA_COMP = "b".repeat(64)
+const CHECKED = "2026-09-24T16:56:50.458Z"
+
+const source = {
+  status: "fresh",
+  mode: "live_official",
+  checked_at: CHECKED,
+  source_url: TSE_CANDIDACY_URL,
+  source_sha256: SHA,
+  complementar: { status: "ok", url: TSE_COMPLEMENTAR_URL, sha256: SHA_COMP, checked_at: CHECKED },
+}
+
+const official: OfficialFichaRow[] = [
+  { sq_candidato: "250001", cargo: "GOVERNADOR", uf: "SP", nome_urna: "FULANO", partido_sigla: "AAA", numero_urna: "10", sq_coligacao: "C1" },
+  { sq_candidato: "250002", cargo: "VICE GOVERNADOR", uf: "SP", nome_urna: "VICE", partido_sigla: "AAA", numero_urna: "10", sq_coligacao: "C1" },
+  { sq_candidato: "250003", cargo: "SENADOR", uf: "SP", nome_urna: "SENADORA", partido_sigla: "BBB", numero_urna: "222", sq_coligacao: "C2" },
+  // Suplente e senador sem ficha: universo oficial maior não vira inclusão.
+  { sq_candidato: "250004", cargo: "1º SUPLENTE", uf: "SP", nome_urna: "SUPLENTE", partido_sigla: "BBB", numero_urna: "2221", sq_coligacao: "C2" },
+  { sq_candidato: "250005", cargo: "SENADOR", uf: "SP", nome_urna: "SEM FICHA", partido_sigla: "CCC", numero_urna: "333", sq_coligacao: "C3" },
+  { sq_candidato: "1", cargo: "PRESIDENTE", uf: "BR", nome_urna: "PRESIDENTA", partido_sigla: "DDD", numero_urna: "44", sq_coligacao: "C4" },
+  { sq_candidato: "2", cargo: "VICE PRESIDENTE", uf: "BR", nome_urna: "VICE", partido_sigla: "DDD", numero_urna: "44", sq_coligacao: "C4" },
+]
+
+const julgamentos = new Map<string, JulgamentoTse>([
+  ["250001", { sq: "250001", codigo: "2", descricao: "DEFERIDO" }],
+  ["250003", { sq: "250003", codigo: "2", descricao: "DEFERIDO" }],
+  ["1", { sq: "1", codigo: "17", descricao: "PENDENTE DE JULGAMENTO" }],
+])
+
+const sitesTse = new Map([
+  ["250003", [{ DT_GERACAO: "24/09/2026", HH_GERACAO: "12:30:10", SQ_CANDIDATO: "250003", NR_ORDEM_REDE_SOCIAL: "1", DS_URL: "HTTPS://WWW.SENADORA.COM.BR" }]],
+])
+
+const publishedSites = {
+  schema_version: 1,
+  candidates: {
+    "senadora-sp": { sq_candidato: "250003", match_method: "sq_candidato", sites: [{ order: 1, url: "https://www.senadora.com.br/", original_url: "HTTPS://WWW.SENADORA.COM.BR" }] },
+  },
+  verified_empty_profiles: [
+    { slug: "fulano-sp", sq_candidato: "250001", match_method: "sq_candidato" },
+    { slug: "presidenta", sq_candidato: "1", match_method: "sq_candidato" },
+  ],
+} as unknown as CandidateSitesTseDataset
+
+function ficha(overrides: Partial<PublishedFicha> & Pick<PublishedFicha, "slug">): PublishedFicha {
+  return {
+    candidato_id: `uuid-${overrides.slug}`,
+    office: "Governador",
+    uf: "SP",
+    nome_urna: "Nome de exibição editorial",
+    partido_sigla: "AAA",
+    situacao_candidatura: "deferido",
+    numero_urna: "10",
+    sq_candidato: "250001",
+    registro_nome_urna: "Fulano",
+    vice_sq_candidatos: ["250002"],
+    ...overrides,
+  }
+}
+
+const fichas: PublishedFicha[] = [
+  ficha({ slug: "fulano-sp" }),
+  ficha({
+    slug: "senadora-sp", office: "Senador", partido_sigla: "BBB", numero_urna: "222",
+    sq_candidato: "250003", registro_nome_urna: "Senadora", vice_sq_candidatos: [],
+  }),
+  ficha({
+    slug: "presidenta", office: "Presidente", uf: null, partido_sigla: "DDD", numero_urna: "44",
+    sq_candidato: "1", registro_nome_urna: "Presidenta", situacao_candidatura: "pendente de julgamento",
+    vice_sq_candidatos: ["2"],
+  }),
+]
+
+function compare(input: Partial<Parameters<typeof compareFichasTse>[0]> = {}) {
+  return compareFichasTse({ fichas, official, julgamentos, sitesTse, publishedSites, ...input })
+}
+
+test("fichas que conferem viram encontrado com volume 1 e o contrato fixo do detalhe", () => {
+  const comparison = compare({ fichas: fichas.slice(0, 2) })
+  assert.equal(comparison.status, "ok")
+  assert.deepEqual(comparison.counts.por_cargo, { PRESIDENTE: 0, GOVERNADOR: 1, SENADOR: 1 })
+  const { recibos, ignorado } = recibosAuditoriaCandidatura({ source, fichas: comparison.fichas })
+  assert.equal(ignorado, null)
+  assert.equal(recibos.length, 2)
+  const gov = recibos.find((item) => item.alvo === "fulano-sp")!
+  assert.equal(gov.fonte, FONTE_TSE_AUDITORIA_CANDIDATURA)
+  assert.equal(gov.escopo, "candidato")
+  assert.equal(gov.candidato_id, "uuid-fulano-sp")
+  assert.equal(gov.url, TSE_CANDIDACY_URL)
+  assert.equal(gov.resultado, "encontrado")
+  assert.equal(gov.volume, 1)
+  assert.deepEqual(JSON.parse(gov.detalhe!), {
+    contract_version: 1,
+    kind: "tse-daily-candidacy-check",
+    source_revision: { url: TSE_CANDIDACY_URL, sha256: SHA, checked_at: CHECKED },
+    complementar_revision: { url: TSE_COMPLEMENTAR_URL, sha256: SHA_COMP, checked_at: CHECKED },
+    identity: { sq_candidato: "250001", cargo: "GOVERNADOR", uf: "SP", match: "SQ_CANDIDATO+CARGO+UF" },
+    checks: { nome_urna: "ok", partido_sigla: "ok", situacao: "ok", numero_urna: "ok", sites: "ok", chapa_vice: "ok" },
+    divergences: 0,
+  })
+})
+
+test("senador sem chapa: chapa_vice nao_aplicavel não impede encontrado", () => {
+  const comparison = compare()
+  const senadora = comparison.fichas.find((row) => row.slug === "senadora-sp")!
+  assert.equal(senadora.cargo, "SENADOR")
+  assert.equal(senadora.checks.chapa_vice, "nao_aplicavel")
+  assert.equal(senadora.checks.sites, "ok")
+  const { recibos } = recibosAuditoriaCandidatura({ source, fichas: comparison.fichas })
+  const recibo = recibos.find((item) => item.alvo === "senadora-sp")!
+  assert.equal(recibo.resultado, "encontrado")
+  assert.equal(JSON.parse(recibo.detalhe!).checks.chapa_vice, "nao_aplicavel")
+  const presidenta = recibos.find((item) => item.alvo === "presidenta")!
+  assert.deepEqual(JSON.parse(presidenta.detalhe!).identity.uf, "BR")
+})
+
+test("universo oficial maior (suplente e senador sem ficha) não reprova a conferência", () => {
+  const comparison = compare()
+  assert.equal(comparison.counts.fichas, 3)
+  assert.equal(comparison.status, "ok")
+})
+
+test("situação divergente do Senado reprova e vira indeterminado com divergences contado", () => {
+  const comparison = compare({
+    fichas: [ficha({
+      slug: "senadora-sp", office: "Senador", partido_sigla: "BBB", numero_urna: "222",
+      sq_candidato: "250003", registro_nome_urna: "Senadora", vice_sq_candidatos: [],
+      situacao_candidatura: "aguardando julgamento",
+    })],
+  })
+  assert.equal(comparison.status, "review_required")
+  assert.deepEqual(comparison.fichas[0].blocking, ["situacao"])
+  const [recibo] = recibosAuditoriaCandidatura({ source, fichas: comparison.fichas }).recibos
+  assert.equal(recibo.resultado, "indeterminado")
+  assert.equal(recibo.volume, 0)
+  const detalhe = JSON.parse(recibo.detalhe!)
+  assert.equal(detalhe.checks.situacao, "divergente")
+  assert.equal(detalhe.divergences, 1)
+})
+
+test("indeferido oficial com ficha publicada aguardando julgamento reprova (terminal publicado)", () => {
+  const comparison = compare({
+    julgamentos: new Map([["250003", { sq: "250003", codigo: "14", descricao: "INDEFERIDO" }]]),
+    fichas: [ficha({
+      slug: "senadora-sp", office: "Senador", partido_sigla: "BBB", numero_urna: "222",
+      sq_candidato: "250003", registro_nome_urna: "Senadora", vice_sq_candidatos: [],
+      situacao_candidatura: "aguardando julgamento",
+    })],
+  })
+  assert.equal(comparison.status, "review_required")
+  assert.equal(comparison.fichas[0].checks.situacao, "divergente")
+})
+
+test("número, partido e nome do registro divergentes reprovam; nome editorial da ficha não entra", () => {
+  const comparison = compare({
+    fichas: [ficha({ slug: "fulano-sp", nome_urna: "Outro nome editorial", numero_urna: "11", partido_sigla: "ZZZ", registro_nome_urna: "Beltrano" })],
+  })
+  assert.deepEqual(comparison.fichas[0].blocking, ["nome_urna", "partido_sigla", "numero_urna"])
+  assert.equal(comparison.fichas[0].divergences, 3)
+})
+
+test("SQ sem registro com o mesmo cargo e UF: identidade não fecha e reprova", () => {
+  const comparison = compare({ fichas: [ficha({ slug: "fulano-sp", uf: "RJ" })] })
+  const [row] = comparison.fichas
+  assert.equal(row.identity_match, false)
+  assert.deepEqual(row.blocking, ["identidade"])
+  const [recibo] = recibosAuditoriaCandidatura({ source, fichas: comparison.fichas }).recibos
+  assert.equal(recibo.resultado, "indeterminado")
+})
+
+test("DivulgaCand ao vivo vence o complementar na situação de Gov/Pres", () => {
+  const comparison = compare({
+    fichas: [ficha({ slug: "fulano-sp", situacao_candidatura: "indeferido" })],
+    situacaoAtual: situacaoAtualDoDivulgaCand(["fulano-sp"], []),
+  })
+  assert.equal(comparison.fichas[0].checks.situacao, "ok")
+})
+
+test("sites e vice divergentes não reprovam o job, mas deixam o recibo indeterminado", () => {
+  const comparison = compare({
+    fichas: [ficha({ slug: "fulano-sp", vice_sq_candidatos: ["250002", "999"] })],
+    sitesTse: new Map([["250001", [{ DT_GERACAO: "", HH_GERACAO: "", SQ_CANDIDATO: "250001", NR_ORDEM_REDE_SOCIAL: "1", DS_URL: "https://novo.example.com.br" }]]]),
+  })
+  assert.equal(comparison.status, "ok")
+  assert.equal(comparison.fichas[0].checks.sites, "divergente")
+  assert.equal(comparison.fichas[0].checks.chapa_vice, "divergente")
+  const [recibo] = recibosAuditoriaCandidatura({ source, fichas: comparison.fichas }).recibos
+  assert.equal(recibo.resultado, "indeterminado")
+})
+
+test("recurso de redes não lido marca sites nao_verificado e o recibo não é encontrado", () => {
+  const comparison = compare({ fichas: fichas.slice(0, 1), sitesTse: null })
+  assert.equal(comparison.fichas[0].checks.sites, "nao_verificado")
+  const [recibo] = recibosAuditoriaCandidatura({ source, fichas: comparison.fichas }).recibos
+  assert.equal(recibo.resultado, "indeterminado")
+})
+
+test("fonte com erro não monta recibo por candidato", () => {
+  const comparison = compare()
+  const resultado = recibosAuditoriaCandidatura({
+    source: { status: "source_error", checked_at: CHECKED },
+    fichas: comparison.fichas,
+  })
+  assert.deepEqual(resultado.recibos, [])
+  assert.match(resultado.ignorado ?? "", /fonte oficial com erro/)
+})
+
+test("SHA-256 inválido não monta recibo por candidato", () => {
+  const comparison = compare()
+  for (const sha of ["", "abc", "A".repeat(64), `${SHA}0`]) {
+    const resultado = recibosAuditoriaCandidatura({ source: { ...source, source_sha256: sha }, fichas: comparison.fichas })
+    assert.deepEqual(resultado.recibos, [], sha)
+    assert.match(resultado.ignorado ?? "", /SHA-256/)
+  }
+})
+
+test("complementar sem SHA válido vira complementar_revision null, sem derrubar o recibo", () => {
+  const comparison = compare({ fichas: fichas.slice(0, 1) })
+  const [recibo] = recibosAuditoriaCandidatura({
+    source: { ...source, complementar: { status: "error" } },
+    fichas: comparison.fichas,
+  }).recibos
+  assert.equal(JSON.parse(recibo.detalhe!).complementar_revision, null)
+})
+
+test("detalhe não carrega nome nem texto livre, e a linha usa o candidato_id da ficha", () => {
+  const comparison = compare()
+  const { recibos } = recibosAuditoriaCandidatura({ source, fichas: comparison.fichas })
+  for (const recibo of recibos) {
+    assert.doesNotMatch(recibo.detalhe!, /FULANO|Fulano|SENADORA|Senadora|PRESIDENTA|editorial/)
+  }
+  assert.equal(FONTES[FONTE_TSE_AUDITORIA_CANDIDATURA], "candidato")
+  const linhas = montarLinhas(recibos, new Map(recibos.map((item) => [item.alvo, item.candidato_id])))
+  assert.deepEqual(linhas.map((linha) => linha.candidato_id).sort(), ["uuid-fulano-sp", "uuid-presidenta", "uuid-senadora-sp"])
+  assert.ok(linhas.every((linha) => linha.escopo === "candidato"))
+  assert.deepEqual(linhas.map((linha) => linha.volume).sort(), [1, 1, 1])
+})

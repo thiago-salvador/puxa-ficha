@@ -55,6 +55,15 @@ function matchesProfileScope(profile: PerfilSitesTse, candidate: LinhaCandidatoT
   return !expectedUf || candidate.SG_UF.trim().toUpperCase() === expectedUf
 }
 
+/**
+ * Aplica ao `DS_URL` do TSE o mesmo filtro de publicação do snapshot de sites.
+ * Exportado para a auditoria diária conferir o publicado contra a fonte com a
+ * mesma régua, sem uma segunda implementação que possa divergir desta.
+ */
+export function normalizeTseSiteUrl(value: string): URL | null {
+  return normalizeHttpUrl(value)
+}
+
 function normalizeHttpUrl(value: string): URL | null {
   const raw = value.trim()
   const explicitUrl = raw.match(/https?:\/\/[^\s]+/i)?.[0]?.replace(/[),.;]+$/, "")

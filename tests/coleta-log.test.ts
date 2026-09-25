@@ -298,6 +298,7 @@ describe("FONTES cobre todo source declarado pelos ingests", () => {
       "tse-observacao",
       // Recibo da auditoria diária, gravado por scripts/audit.
       "tse-auditoria-snapshot",
+      "tse-auditoria-candidatura",
     ])
     const orfas = Object.keys(FONTES).filter(
       (f) => !declarados.has(f) && !excecoes.has(f),

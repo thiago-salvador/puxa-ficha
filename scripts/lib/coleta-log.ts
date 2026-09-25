@@ -128,6 +128,10 @@ export const FONTES: Readonly<Record<string, EscopoColeta>> = Object.freeze({
   // (scripts/audit/registrar-recibo-auditoria-tse.ts). Prova a leitura da
   // fonte, não a atualização da ficha; por isso não é `tse`.
   "tse-auditoria-snapshot": "global",
+  // Conferência por ficha pública da mesma auditoria diária (Gov, Pres e
+  // Senado): identidade por SQ+cargo+UF e checks de campo contra o TSE. O
+  // detalhe é JSON versionado lido pela matriz de cobertura.
+  "tse-auditoria-candidatura": "candidato",
   "senado-cohort": "candidato",
 
   // Cardinalidade do acervo autoral que a Camara declara para o candidato
