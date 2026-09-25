@@ -18,3 +18,14 @@ export const RELATORES_OFICIAIS: readonly Apoiador[] = []
 export const APOIADORES_PUBLICOS: readonly Apoiador[] = [
   { nome: "Daniela Godoi Gonçalves" },
 ]
+
+/**
+ * Total de apoios pagos no painel de apoiadores do APOIA.se, conferido em
+ * 25/09/2026. Atualizar junto com as listas acima a cada novo apoio.
+ */
+export const APOIOS_TOTAL: number = 5
+
+export const APOIOS_SEM_NOME = Math.max(
+  0,
+  APOIOS_TOTAL - APOIADORES_PUBLICOS.length - RELATORES_OFICIAIS.length,
+)

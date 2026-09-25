@@ -4,7 +4,12 @@ import Link from "next/link"
 import { SectionLabel, SectionTitle, SectionDivider } from "@/components/SectionHeader"
 import { Footer } from "@/components/Footer"
 import { buildTwitterMetadata } from "@/lib/metadata"
-import { APOIADORES_PUBLICOS, RELATORES_OFICIAIS } from "@/data/apoiadores"
+import {
+  APOIADORES_PUBLICOS,
+  APOIOS_SEM_NOME,
+  APOIOS_TOTAL,
+  RELATORES_OFICIAIS,
+} from "@/data/apoiadores"
 
 const title = "Sobre o projeto | Puxa Ficha"
 const description =
@@ -302,47 +307,59 @@ export default function SobrePage() {
           sem anúncio.
         </p>
         {RELATORES_OFICIAIS.length > 0 ? (
-          <div className="mt-6 max-w-2xl">
+          <div className="mt-8 max-w-2xl border-2 border-foreground p-5">
             <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-foreground">
               Relatores oficiais
             </p>
-            <ul className="mt-3 flex flex-wrap gap-3">
+            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
               {RELATORES_OFICIAIS.map((apoiador) => (
                 <li
                   key={apoiador.nome}
-                  className="border-2 border-foreground px-4 py-2 text-[length:var(--text-body-lg)] font-bold text-foreground"
+                  className="text-[length:var(--text-body-lg)] font-bold uppercase text-foreground"
                 >
+                  <span aria-hidden="true">★ </span>
                   {apoiador.nome}
                 </li>
               ))}
             </ul>
           </div>
         ) : null}
-        <ul className="mt-6 flex max-w-2xl flex-wrap gap-2">
+        <p className="mt-8 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-foreground">
+          Mural de apoiadores
+        </p>
+        <ul className="mt-4 flex max-w-2xl flex-wrap gap-3">
           {APOIADORES_PUBLICOS.map((apoiador) => (
             <li
               key={apoiador.nome}
-              className="border border-foreground/30 px-3 py-2 text-[length:var(--text-body)] font-medium text-foreground"
+              className="border-2 border-foreground px-4 py-3 text-[length:var(--text-body)] font-bold text-foreground"
             >
-              <span className="block text-[10px] font-bold uppercase tracking-[0.12em] text-foreground/60">
-                Apoio confirmado
+              <span className="block text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-foreground/70">
+                <span aria-hidden="true">▣ </span>
+                Apoiador confirmado
               </span>
               {apoiador.nome}
             </li>
           ))}
         </ul>
-        <p className="mt-4 max-w-2xl text-[length:var(--text-body)] font-medium leading-relaxed text-foreground/70">
-          Outras pessoas apoiam de forma anônima. Para entrar nesta lista,{" "}
+        {APOIOS_SEM_NOME > 0 ? (
+          <p className="mt-4 text-[length:var(--text-body)] font-medium text-foreground/70">
+            + {APOIOS_SEM_NOME} {APOIOS_SEM_NOME === 1 ? "pessoa apoia" : "pessoas apoiam"} de
+            forma anônima.
+          </p>
+        ) : null}
+        <div className="mt-6 flex flex-wrap items-center gap-4">
+          <p className="text-[length:var(--text-body)] font-bold text-foreground">
+            {APOIOS_TOTAL} {APOIOS_TOTAL === 1 ? "apoio" : "apoios"} até agora
+          </p>
           <a
             href="https://apoia.se/puxaficha"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-bold text-foreground underline decoration-foreground/20 underline-offset-2 hover:decoration-foreground/60"
+            className="rounded-full border border-foreground px-5 py-2.5 text-[length:var(--text-body-sm)] font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background"
           >
-            apoie no APOIA.se
+            Apoie no APOIA.se →
           </a>
-          .
-        </p>
+        </div>
       </section>
 
       <Footer />
