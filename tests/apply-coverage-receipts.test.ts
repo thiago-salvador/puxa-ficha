@@ -1,7 +1,7 @@
 import assert from "node:assert/strict"
 import { describe, it } from "node:test"
 import { planCoverageReceipts } from "../scripts/audit/apply-coverage-receipts"
-import type { CoverageProfile } from "../scripts/audit/audit-cobertura-fichas"
+import { adaptLatestReceipts, buildCoverageMatrix, type CoverageProfile } from "../scripts/audit/audit-cobertura-fichas"
 import { publicFamilyPayloadSha256 } from "../scripts/audit/lib/coverage-source-proof"
 
 const URL_BENS = "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip"
@@ -31,6 +31,38 @@ function receipt(subject: CoverageProfile, overrides: Record<string, unknown> = 
 }
 
 const ALLOW = new Set(["tse-patrimonio"])
+
+describe("prova de cobertura por ano sobrevive a recibo mais novo sem prova", () => {
+  const cell = (subject: CoverageProfile, rows: Record<string, unknown>[]) =>
+    buildCoverageMatrix([subject], [], adaptLatestReceipts(rows, [subject]).joins).cells.find((item) => item.familia === "patrimonio")!
+
+  it("recibo 2026 da mesma fonte, sem prova, não apaga a prova que ainda confere", () => {
+    const subject = profile()
+    const proof = receipt(subject)
+    const f2 = { fonte: "tse-patrimonio", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", resultado: "encontrado", volume: 3, executado_em: "2026-09-25T15:00:00Z", detalhe: JSON.stringify({ family: "patrimonio", ano: 2026 }) }
+    const result = cell(subject, [proof, f2])
+    assert.equal(result.estado, "publicado")
+    assert.match(result.motivo, /anos 2022/)
+  })
+
+  it("controles negativos: erro posterior reabre, payload alterado invalida, sem prova não fecha", () => {
+    const subject = profile()
+    const later = { fonte: "tse-patrimonio", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", volume: 0, executado_em: "2026-09-25T15:00:00Z" }
+    assert.equal(cell(subject, [receipt(subject), { ...later, resultado: "erro", detalhe: "falha" }]).estado, "erro")
+    assert.equal(cell(profile({ patrimonio: [{ ano_eleicao: 2022, valor_total: 99 }] }), [receipt(subject)]).estado, "frescor_indefinido")
+    assert.equal(cell(subject, [{ ...later, resultado: "encontrado", volume: 1, detalhe: "{}" }]).estado, "frescor_indefinido")
+  })
+
+  it("o plano grava anos_cobertos e recusa prova anual sem ano", () => {
+    const subject = profile()
+    const plan = planCoverageReceipts([receipt(subject)], [subject], ALLOW)
+    assert.deepEqual(JSON.parse(plan.planned[0]!.detalhe!).anos_cobertos, [2022])
+    const noYear = JSON.parse(receipt(subject).detalhe)
+    noYear.coverage_proof.source_revisions = [{ url: URL_BENS, sha256: "d".repeat(64) }]
+    const rejected = planCoverageReceipts([receipt(subject, { detalhe: JSON.stringify(noYear) })], [subject], ALLOW)
+    assert.match(rejected.rejected[0]?.motivo ?? "", /anos/)
+  })
+})
 
 describe("apply-coverage-receipts: plano só com recibos que fecham célula", () => {
   it("aceita prova que confere com o payload público do momento", () => {

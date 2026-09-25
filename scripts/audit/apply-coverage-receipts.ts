@@ -82,11 +82,22 @@ export function planCoverageReceipts(rows: LatestReceiptRow[], profiles: Coverag
       reject(`a régua não fecha ${familia} com este recibo (${cell?.estado ?? "sem célula"})`)
       continue
     }
+    // Famílias anuais: o detalhe precisa dizer quais eleições a prova cobre,
+    // para que recibo de outro ano na mesma fonte não seja lido como substituto.
+    let detail: Record<string, unknown> | null = null
+    try { detail = typeof row.detalhe === "string" ? JSON.parse(row.detalhe) as Record<string, unknown> : row.detalhe as Record<string, unknown> ?? null } catch { detail = null }
+    const revisions = Array.isArray((detail?.coverage_proof as Record<string, unknown> | undefined)?.source_revisions)
+      ? (detail!.coverage_proof as Record<string, unknown>).source_revisions as Array<Record<string, unknown>> : []
+    const years = [...new Set(revisions.map((revision) => Number(revision?.year)).filter((year) => Number.isInteger(year) && year > 1900))].sort((a, b) => a - b)
+    if (["patrimonio", "financiamento", "historico_politico"].includes(familia) && years.length === 0) {
+      reject("prova sem os anos/eleições cobertos")
+      continue
+    }
     seen.add(key)
     planned.push({
       fonte, escopo: "candidato", alvo, candidato_id: text(profile.id)!, resultado,
       volume: resultado === "encontrado" ? Math.max(1, Math.trunc(Number(row.volume) || 1)) : 0,
-      url: text(row.url), detalhe: typeof row.detalhe === "string" ? row.detalhe : row.detalhe ? JSON.stringify(row.detalhe) : null,
+      url: text(row.url), detalhe: detail ? JSON.stringify({ ...detail, anos_cobertos: years }) : null,
       familia, estado_projetado: cell.estado,
     })
   }
@@ -104,7 +115,12 @@ async function loadProfiles(slugs: string[]): Promise<CoverageProfile[]> {
   const base = (arg("base-url") ?? "https://puxaficha.com.br").replace(/\/$/, "")
   const profiles: CoverageProfile[] = []
   for (const slug of slugs) {
-    const response = await fetch(`${base}/api/candidato-profile/${encodeURIComponent(slug)}`, { headers: { accept: "application/json" } })
+    let response = await fetch(`${base}/api/candidato-profile/${encodeURIComponent(slug)}`, { headers: { accept: "application/json" } })
+    // A rota pública limita por IP; 429 é espera, não ausência.
+    for (let attempt = 1; response.status === 429 && attempt <= 5; attempt++) {
+      await new Promise((accept) => setTimeout(accept, 5_000 * attempt))
+      response = await fetch(`${base}/api/candidato-profile/${encodeURIComponent(slug)}`, { headers: { accept: "application/json" } })
+    }
     if (!response.ok) throw new Error(`perfil ${slug}: HTTP ${response.status}`)
     const envelope = await response.json() as { data?: CoverageProfile; sourceStatus?: unknown }
     if (envelope.sourceStatus !== "live" || envelope.data?.slug !== slug) throw new Error(`perfil ${slug} não publicado ou divergente`)

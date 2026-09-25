@@ -346,7 +346,12 @@ export function adaptLatestReceipts(rows: LatestReceiptRow[], profiles: Coverage
         .map((item) => record(item))
         .filter((item): item is Receipt => Boolean(item))
         .sort((a, b) => Date.parse(parseDate(b.executado_em) ?? "1970-01-01") - Date.parse(parseDate(a.executado_em) ?? "1970-01-01"))[0] ?? incoming
-      bucket[family] = { ...representative, __receipts: receipts }
+      // Recibos com prova de cobertura ficam guardados à parte: um recibo mais
+      // novo sem prova (ex.: coleta anual de outro ano na mesma fonte) não
+      // apaga a prova que ainda confere com o payload público.
+      const previousProofs = Array.isArray(previous?.__proofs) ? previous.__proofs as Receipt[] : []
+      const proofs = record(incoming.coverage_proof) ? [...previousProofs, incoming] : previousProofs
+      bucket[family] = { ...representative, __receipts: receipts, __proofs: proofs }
     }
   }
   return { joins, rejected, ignored_partial_receipts: ignoredPartialReceipts }
@@ -628,10 +633,42 @@ function dailyCheckVerdict(receipt: Receipt, profile: CoverageProfile, family: C
   return { estado: "publicado", motivo: "campos oficiais iguais ao pacote do dia e campos curados com recibo datado", receipt }
 }
 
+/**
+ * Família guiada por revisão oficial (patrimônio, financiamento, histórico,
+ * perfil) fecha com a prova mais recente que ainda confere com o payload
+ * público atual, mesmo que haja recibo mais novo sem prova na mesma fonte. Um
+ * erro posterior à prova, ou vazio posterior que contradiga ano publicado,
+ * reabre a célula. Payload alterado invalida a prova pelo hash.
+ */
+function provenVerdict(receipt: Receipt | null, profile: CoverageProfile, family: CoverageFamily): Verdict | null {
+  if (FRESHNESS_DAYS[family] !== null || requiredSources(profile, family).length) return null
+  const proofs = (Array.isArray(receipt?.__proofs) ? receipt.__proofs as Receipt[] : [])
+    .filter((item) => ["encontrado", "publicado", "vazio_confirmado"].includes(text(item.resultado) ?? "") && parseDate(item.executado_em) && Date.parse(parseDate(item.executado_em)!) <= Date.now())
+    .sort((a, b) => Date.parse(parseDate(b.executado_em)!) - Date.parse(parseDate(a.executado_em)!))
+  const proof = proofs.find((item) => validCoverageSourceProof(profile, family, item))
+  if (!proof) return null
+  const provedAt = Date.parse(parseDate(proof.executado_em)!)
+  const later = Object.values(record(receipt?.__receipts) ?? {}).map(record)
+    .filter((item): item is Receipt => Boolean(item) && Date.parse(parseDate(item!.executado_em) ?? "1970-01-01") > provedAt)
+  if (later.some((item) => text(item.resultado) === "erro")) {
+    return { estado: "erro", motivo: "erro de coleta posterior à prova de cobertura", receipt: later.find((item) => text(item.resultado) === "erro") }
+  }
+  const contradiction = later.find((item) => text(item.resultado) === "vazio_confirmado" && hasMaterializedDataInReceiptScope(profile, family, item))
+  if (contradiction) return { estado: "erro", motivo: "vazio posterior à prova contradiz ano publicado", receipt: contradiction }
+  const years = (Array.isArray(record(proof.coverage_proof)?.source_revisions) ? record(proof.coverage_proof)!.source_revisions as unknown[] : [])
+    .map((item) => Number(record(item)?.year)).filter((year) => Number.isInteger(year) && year > 0)
+  const suffix = years.length ? ` (anos ${[...new Set(years)].sort().join(", ")})` : ""
+  return text(proof.resultado) === "vazio_confirmado"
+    ? { estado: "vazio_confirmado", motivo: `prova de cobertura: fonte oficial sem registros no escopo${suffix}`, receipt: proof }
+    : { estado: "publicado", motivo: `prova de cobertura: payload público igual à revisão oficial${suffix}`, receipt: proof }
+}
+
 function verdictFor(receipt: Receipt | null, profile: CoverageProfile, family: CoverageFamily): Verdict {
   const stored = record(receipt?.__receipts)
   const daily = (family === "perfil_atual" || family === "chapa_vice") ? record(stored?.[DAILY_CHECK_SOURCE]) : null
   if (daily) return dailyCheckVerdict(daily, profile, family)
+  const proven = provenVerdict(receipt, profile, family)
+  if (proven) return proven
   const estado = stateFromReceipt(receipt, profile, family)
   if (family === "historico_politico" && estado === "frescor_indefinido" && text(receipt?.resultado) === "vazio_confirmado" &&
       currentCycleCandidacyRows(profile).length === 1 && !hasMaterializedDataInReceiptScope(profile, family)) {
