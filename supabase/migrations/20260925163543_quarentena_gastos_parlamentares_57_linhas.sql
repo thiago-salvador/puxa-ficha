@@ -115,9 +115,10 @@ DECLARE
   v_updated integer;
 BEGIN
   IF current_setting('pf.replay', true) = 'true' THEN RETURN; END IF;
+  -- @write tabela=gastos_parlamentares ref=gastos-129 campos=despublicado_em,despublicacao_motivo
   UPDATE public.gastos_parlamentares g
   SET despublicado_em = now(),
-      despublicacao_motivo = 'Totais CEAP/CEAPS em conferência com a fonte oficial; triagem 129 casos 2026-09-25'
+      despublicacao_motivo = 'gastos-129: Totais CEAP/CEAPS em conferência com a fonte oficial; triagem 129 casos 2026-09-25'
   FROM pf_gastos_129_preimage e
   WHERE g.id = e.id
     AND g.total_gasto = e.total_cents::numeric / 100

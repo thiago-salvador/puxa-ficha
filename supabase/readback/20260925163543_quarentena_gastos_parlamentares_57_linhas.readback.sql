@@ -9,7 +9,7 @@ BEGIN
   SELECT count(*), count(DISTINCT candidato_id)
   INTO v_rows, v_profiles
   FROM public.gastos_parlamentares
-  WHERE despublicacao_motivo = 'Totais CEAP/CEAPS em conferência com a fonte oficial; triagem 129 casos 2026-09-25'
+  WHERE despublicacao_motivo = 'gastos-129: Totais CEAP/CEAPS em conferência com a fonte oficial; triagem 129 casos 2026-09-25'
     AND despublicado_em IS NOT NULL;
   IF v_rows <> 57 OR v_profiles <> 40 THEN
     RAISE EXCEPTION 'quarentena incompleta: % linhas, % fichas', v_rows, v_profiles;
@@ -44,7 +44,7 @@ DO $$
 BEGIN
   IF EXISTS (
     SELECT 1 FROM public.gastos_parlamentares
-    WHERE despublicacao_motivo = 'Totais CEAP/CEAPS em conferência com a fonte oficial; triagem 129 casos 2026-09-25'
+    WHERE despublicacao_motivo = 'gastos-129: Totais CEAP/CEAPS em conferência com a fonte oficial; triagem 129 casos 2026-09-25'
   ) THEN
     RAISE EXCEPTION 'anon ainda lê gasto em quarentena';
   END IF;
