@@ -1,6 +1,8 @@
+// Must stay the first import: it pins the env before any src/ module loads.
+import { restoreAlertsTestEnv } from "./helpers/alerts-test-env"
 import assert from "node:assert/strict"
 import { createRequire } from "node:module"
-import { afterEach, beforeEach, describe, it } from "node:test"
+import { after, afterEach, beforeEach, describe, it } from "node:test"
 import {
   AlertsRouteFixture,
   seedCandidate,
@@ -80,19 +82,16 @@ type MutativeAlertsCase = {
 }
 
 describe("alerts HTTP routes", () => {
-  const savedCronSecret = process.env.CRON_SECRET
-
   beforeEach(() => {
     process.env.CRON_SECRET = CRON_SECRET
   })
 
   afterEach(() => {
-    if (savedCronSecret === undefined) {
-      delete process.env.CRON_SECRET
-      return
-    }
+    delete process.env.CRON_SECRET
+  })
 
-    process.env.CRON_SECRET = savedCronSecret
+  after(() => {
+    restoreAlertsTestEnv()
   })
 
   describe("CSRF guard for mutative alert routes", () => {
