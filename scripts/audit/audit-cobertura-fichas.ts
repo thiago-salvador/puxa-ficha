@@ -2,6 +2,7 @@ import { chmod, readFile, writeFile } from "node:fs/promises"
 import path from "node:path"
 import { pathToFileURL } from "node:url"
 import { isHistoricoCandidaturaRow } from "../../src/lib/historico-tipo-evento"
+import { validCoverageSourceProof } from "./lib/coverage-source-proof"
 
 /**
  * Etapa 0: matriz somente leitura da cobertura pública por candidato e família.
@@ -263,6 +264,7 @@ export function adaptLatestReceipts(rows: LatestReceiptRow[], profiles: Coverage
       url: text(row.url),
       source_sha256: text(detail?.resource_sha256),
       periodo: text(row.periodo),
+      coverage_proof: detail?.coverage_proof,
     }
     const bucket = joins[alvo] ?? {}
     joins[alvo] = bucket
@@ -399,16 +401,27 @@ function stateFromSingleReceipt(receipt: Receipt | null, profile: CoverageProfil
       : "indeterminado"
   }
   const maxAge = FRESHNESS_DAYS[family]
-  if (maxAge === null) return "frescor_indefinido"
+  if (maxAge === null) {
+    if (!validCoverageSourceProof(profile, family, receipt)) return "frescor_indefinido"
+    if (effectiveResult === "vazio_confirmado") return "vazio_confirmado"
+    return effectiveResult === "encontrado" || effectiveResult === "publicado" ? "publicado" : "indeterminado"
+  }
   if (when && (Date.now() - Date.parse(when)) > maxAge * 86_400_000) return "desatualizado"
   if (effectiveResult === "encontrado" || effectiveResult === "publicado") {
     // Contagem declarada pela Câmara ou Senado não prova persistência,
     // readback nem cobertura do DTO público. Exigir reconciliação por órgão
     // antes de fechar qualquer família parlamentar.
-    if (["projetos_lei", "votos_candidato", "gastos_parlamentares"].includes(family)) return "indeterminado"
+    if (["projetos_lei", "votos_candidato", "gastos_parlamentares"].includes(family)) {
+      return validCoverageSourceProof(profile, family, receipt) ? "publicado" : "indeterminado"
+    }
     return hasMaterializedData(profile, family) ? "publicado" : "indeterminado"
   }
-  if (effectiveResult === "vazio_confirmado") return "vazio_confirmado"
+  if (effectiveResult === "vazio_confirmado") {
+    if (["projetos_lei", "votos_candidato", "gastos_parlamentares"].includes(family)) {
+      return validCoverageSourceProof(profile, family, receipt) ? "vazio_confirmado" : "indeterminado"
+    }
+    return "vazio_confirmado"
+  }
   return "sem_recibo"
 }
 
@@ -426,7 +439,9 @@ function stateFromReceipt(receipt: Receipt | null, profile: CoverageProfile, fam
   if (sourceStates.includes("indeterminado")) return "indeterminado"
   if (sourceStates.includes("desatualizado")) return "desatualizado"
   if (sourceStates.includes("frescor_indefinido")) return "frescor_indefinido"
-  if (sourceStates.includes("vazio_confirmado") && sourceStates.includes("publicado")) return "erro"
+  // Duas casas podem ter resultados diferentes. Sem uma prova que atribua
+  // cada linha pública à casa/ID correspondente, a união ainda é inconclusiva.
+  if (sourceStates.includes("vazio_confirmado") && sourceStates.includes("publicado")) return "indeterminado"
   if (sourceStates.every((state) => state === "vazio_confirmado")) return "vazio_confirmado"
   if (sourceStates.every((state) => state === "publicado")) return "publicado"
   return "indeterminado"
@@ -528,6 +543,7 @@ function parseArgs(args: string[]) {
     baseUrl: value("--base-url=") ?? "https://puxaficha.com.br",
     input: value("--input="),
     receipts: value("--receipts="),
+    receiptsExtra: args.filter((arg) => arg.startsWith("--receipts-extra=")).map((arg) => arg.slice("--receipts-extra=".length)),
     out: value("--out="),
     strict: args.includes("--strict"),
   }
@@ -541,20 +557,22 @@ async function main(): Promise<void> {
   let joins: CoverageReceiptJoin = {}
   let rejectedReceipts: ReceiptAdapterResult["rejected"] = []
   let ignoredPartialReceipts = 0
-  if (options.receipts) {
-    const rawReceipts = JSON.parse(await readFile(path.resolve(options.receipts), "utf8")) as unknown
-    const rows = Array.isArray(rawReceipts)
-      ? rawReceipts as LatestReceiptRow[]
-      : record(rawReceipts)?.rows && Array.isArray(record(rawReceipts)?.rows)
-        ? record(rawReceipts)?.rows as LatestReceiptRow[]
-        : null
-    if (rows) {
-      const adapted = adaptLatestReceipts(rows, fetched.profiles)
+  const receiptPaths = [options.receipts, ...options.receiptsExtra].filter((item): item is string => Boolean(item))
+  if (receiptPaths.length) {
+    const loaded = await Promise.all(receiptPaths.map(async (file) => JSON.parse(await readFile(path.resolve(file), "utf8")) as unknown))
+    const rowGroups = loaded.map((raw) => Array.isArray(raw)
+      ? raw as LatestReceiptRow[]
+      : Array.isArray(record(raw)?.rows) ? record(raw)?.rows as LatestReceiptRow[]
+        : Array.isArray(record(raw)?.receipts) ? record(raw)?.receipts as LatestReceiptRow[] : null)
+    if (rowGroups.every((rows) => rows !== null)) {
+      const adapted = adaptLatestReceipts(rowGroups.flatMap((rows) => rows ?? []), fetched.profiles)
       joins = adapted.joins
       rejectedReceipts = adapted.rejected
       ignoredPartialReceipts = adapted.ignored_partial_receipts
+    } else if (loaded.length === 1 && rowGroups[0] === null) {
+      joins = loaded[0] as CoverageReceiptJoin
     } else {
-      joins = rawReceipts as CoverageReceiptJoin
+      throw new Error("--receipts-extra exige que cada entrada seja uma lista, rows[] ou receipts[]")
     }
   }
   const matrix = buildCoverageMatrix(fetched.profiles, fetched.errors, joins)

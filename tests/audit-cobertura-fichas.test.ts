@@ -9,6 +9,7 @@ import {
   buildCoverageMatrix,
   type CoverageProfile,
 } from "../scripts/audit/audit-cobertura-fichas"
+import { publicFamilyPayloadSha256 } from "../scripts/audit/lib/coverage-source-proof"
 
 function profile(overrides: Partial<CoverageProfile> = {}): CoverageProfile {
   return {
@@ -50,6 +51,54 @@ describe("matriz de cobertura das fichas", () => {
       "ana-exemplo": { patrimonio: { resultado: "encontrado", executado_em: new Date().toISOString(), fonte: "TSE" } },
     })
     assert.equal(matrix.cells.find((item) => item.familia === "patrimonio")?.estado, "frescor_indefinido")
+  })
+
+  it("fecha revisão histórica só com hash do DTO público, fonte oficial e identidade coerentes", () => {
+    const candidate = profile({ historico: [{ tipo_evento: "candidatura", cargo: "Deputado Federal", periodo_inicio: 2026 }] })
+    const url = "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip"
+    const proof = {
+      family: "historico_politico",
+      method: "official-source-to-public-readback",
+      source_revisions: [{ year: 2026, url, sha256: "a".repeat(64) }],
+      public_payload_sha256: publicFamilyPayloadSha256(candidate, "historico_politico"),
+      source_rows: 1, public_rows: 1, matched_rows: 1, unmatched_rows: 0,
+      scope_complete: true,
+      identity: { slug: "ana-exemplo", candidate_id: "candidate-1", source_id: "12345" },
+    }
+    const row = {
+      fonte: "tse-historico", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1",
+      resultado: "encontrado", volume: 1, executado_em: new Date().toISOString(), url,
+      detalhe: JSON.stringify({ coverage_proof: proof }),
+    }
+    const state = (subject: CoverageProfile, receipt = row) =>
+      buildCoverageMatrix([subject], [], adaptLatestReceipts([receipt], [subject]).joins)
+        .cells.find((cell) => cell.familia === "historico_politico")?.estado
+    assert.equal(state(candidate), "publicado")
+    assert.equal(state({ ...candidate, historico: [...(candidate.historico as object[]), { id: 2 }] }), "frescor_indefinido")
+    assert.equal(state(candidate, { ...row, detalhe: JSON.stringify({ coverage_proof: { ...proof, source_revisions: [{ url: "https://example.com/zip", sha256: "a".repeat(64) }] } }) }), "frescor_indefinido")
+    assert.equal(state(candidate, { ...row, detalhe: JSON.stringify({ coverage_proof: { ...proof, identity: { ...proof.identity, candidate_id: "wrong" } } }) }), "frescor_indefinido")
+  })
+
+  it("só fecha família parlamentar quando a fonte por casa reconcilia o DTO", () => {
+    const candidate = profile({ projetos_lei: [{ id: 12 }] })
+    const url = "https://dadosabertos.camara.leg.br/api/v2/deputados/12345/proposicoes"
+    const proof = {
+      family: "projetos_lei", method: "official-source-to-public-readback",
+      source_revisions: [{ url, sha256: "b".repeat(64) }],
+      public_payload_sha256: publicFamilyPayloadSha256(candidate, "projetos_lei"),
+      source_rows: 1, public_rows: 1, matched_rows: 1, unmatched_rows: 0, scope_complete: true,
+      identity: { slug: "ana-exemplo", candidate_id: "candidate-1", source_id: "12345", house: "camara", roster_url: "https://dadosabertos.camara.leg.br/api/v2/deputados", roster_sha256: "c".repeat(64) },
+    }
+    const row = {
+      fonte: "camara-proposicoes", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1",
+      resultado: "encontrado", volume: 1, executado_em: new Date().toISOString(), url,
+      detalhe: JSON.stringify({ coverage_proof: proof }),
+    }
+    const state = (subject: CoverageProfile, receipt = row) =>
+      buildCoverageMatrix([subject], [], adaptLatestReceipts([receipt], [subject]).joins)
+        .cells.find((cell) => cell.familia === "projetos_lei")?.estado
+    assert.equal(state(candidate), "publicado")
+    assert.equal(state(candidate, { ...row, detalhe: JSON.stringify({ coverage_proof: { ...proof, public_rows: 2 } }) }), "indeterminado")
   })
 
   it("não trata badge histórico sem data como recibo nem encobre verificação datada", () => {
@@ -346,6 +395,35 @@ describe("matriz de cobertura das fichas", () => {
     } finally {
       rmSync(dir, { recursive: true, force: true })
     }
+  })
+
+  it("projeção estrita junta recibos locais adicionais antes de decidir estado", () => {
+    const dir = mkdtempSync(path.join(tmpdir(), "puxa-ficha-matrix-extra-"))
+    const candidate = profile({ historico: [{ tipo_evento: "candidatura", cargo: "Deputado Federal", periodo_inicio: 2026 }] })
+    const input = path.join(dir, "input.json")
+    const original = path.join(dir, "original.json")
+    const additional = path.join(dir, "additional.json")
+    const output = path.join(dir, "out.json")
+    const url = "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip"
+    writeFileSync(input, JSON.stringify([candidate]))
+    writeFileSync(original, JSON.stringify([{ fonte: "tse-historico", escopo: "candidato", alvo: candidate.slug, candidato_id: candidate.id, resultado: "indeterminado", volume: 0, executado_em: "2026-01-01T00:00:00Z" }]))
+    writeFileSync(additional, JSON.stringify({ receipts: [{
+      fonte: "tse-historico", escopo: "candidato", alvo: candidate.slug, candidato_id: candidate.id,
+      resultado: "encontrado", volume: 1, executado_em: new Date().toISOString(), url,
+      detalhe: JSON.stringify({ coverage_proof: {
+        family: "historico_politico", method: "official-source-to-public-readback",
+        source_revisions: [{ year: 2026, url, sha256: "a".repeat(64) }],
+        public_payload_sha256: publicFamilyPayloadSha256(candidate, "historico_politico"),
+        source_rows: 1, public_rows: 1, matched_rows: 1, unmatched_rows: 0, scope_complete: true,
+        identity: { slug: candidate.slug, candidate_id: candidate.id, source_id: "12345" },
+      } }),
+    }] }))
+    const result = spawnSync(process.execPath, ["--import", "tsx", "scripts/audit/audit-cobertura-fichas.ts", "--strict", `--input=${input}`, `--receipts=${original}`, `--receipts-extra=${additional}`, `--out=${output}`], { cwd: path.resolve(import.meta.dirname, ".."), encoding: "utf8" })
+    try {
+      assert.equal(result.status, 1) // outras famílias ainda abertas
+      const matrix = JSON.parse(readFileSync(output, "utf8")) as { cells: Array<{ familia: string; estado: string }> }
+      assert.equal(matrix.cells.find((cell) => cell.familia === "historico_politico")?.estado, "publicado")
+    } finally { rmSync(dir, { recursive: true, force: true }) }
   })
 
   it("não publica recibo TSE antigo e não permite escopo amplo fechar a célula", () => {
