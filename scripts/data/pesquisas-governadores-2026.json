@@ -21672,7 +21672,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|PI|1|estimulada|lista-instituto-amostragem-2026-09-04-cenario-1|votos_validos"
       },
-      "exact_aliases_version": "monitor-2026-9ad9911166995065",
+      "exact_aliases_version": "monitor-2026-9186120ff9c18a62",
       "exact_aliases": [
         {
           "raw_label": "Dra. Lúcia Santos",
@@ -21784,6 +21784,24 @@
           "geography": "Piauí",
           "turn": 1,
           "scenario_id": "datafolha-pi-pi-06656-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Rafael Fonteles",
+          "candidate_slug": "rafael-fonteles",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Piauí",
+          "turn": 1,
+          "scenario_id": "datamax-pi-07373-2026-1t"
+        },
+        {
+          "raw_label": "Joel Rodrigues",
+          "candidate_slug": "joel-rodrigues",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Piauí",
+          "turn": 1,
+          "scenario_id": "datamax-pi-07373-2026-1t"
         }
       ],
       "pesquisas": [
@@ -22463,6 +22481,131 @@
             "value": null,
             "status": "indeterminado"
           }
+        },
+        {
+          "id": "datamax-pi-07373-2026",
+          "source_id": "datamax-pi-07373-2026-revisao-20260925",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Datamax",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-14",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-19",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-21",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1200,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores distribuídos por 58 municípios dos 12 Territórios de Desenvolvimento do Piauí",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2.83,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "PI-07373/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Piauí",
+            "code": "PI"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://folhaexpressa.com/politica/pesquisa-datamax-rafael-marca-74-e-fica-52-pontos-e-fica-a-frente-de-joel-rodrigues/",
+            "supporting_urls": [
+              "https://www.webpiaui.com.br/localizacao/manchete/datamax-aponta-rafael-com-7494-dos-votos-validos/"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-25T23:00:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "a88b6eeef97a9602c3748ad6bd17bc676f752dec5539a960a827bc016ff2b01e",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "datamax-pi-07373-2026-1t",
+              "turn": 1,
+              "geography": "Piauí",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|PI|1|estimulada|8e016e2398c9868c66d1caf5774bf93d8df65285637726fc82119247bbed5db1|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Rafael Fonteles",
+                  "candidate_slug": "rafael-fonteles",
+                  "match_status": "exact_alias",
+                  "value_percent": 63.42,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Joel Rodrigues",
+                  "candidate_slug": "joel-rodrigues",
+                  "match_status": "exact_alias",
+                  "value_percent": 18.75,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "não souberam ou não quiseram responder",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 9.67,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "branco ou nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4.25,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
         }
       ]
     },

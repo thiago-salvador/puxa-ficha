@@ -489,79 +489,6 @@
         "consulted_at": "2026-09-25T23:00:00Z"
       },
       {
-        "id": "verita-sp-03139-2026-revisao-20260925",
-        "status": "aprovado",
-        "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
-        "roles": {
-          "institute": "Veritá",
-          "commissioner": "próprio instituto",
-          "official_registry": "TSE/PesqEle (registro informado na publicação)",
-          "publication_vehicle": "cnnbrasil.com.br",
-          "dissemination_partner": null
-        },
-        "representative_poll": {
-          "field_period": {
-            "start": "2026-09-07",
-            "end": "2026-09-12"
-          },
-          "published_at": "2026-09-12",
-          "sample_size": 3025,
-          "method": null,
-          "margin_of_error_pp": 2,
-          "confidence_level_pct": 95,
-          "office": "Senador",
-          "geography": "São Paulo",
-          "rounds": [
-            1
-          ],
-          "registration_id": "SP-03139/2026",
-          "result_url": "https://www.cnnbrasil.com.br/eleicoes/verita-derrite-e-do-prado-lideram-corrida-pelo-senado-em-sao-paulo/",
-          "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
-        },
-        "reviewed_registration_ids": [
-          "SP-03139/2026"
-        ],
-        "review": {
-          "reviewed_at": "2026-09-25T23:00:00Z",
-          "reviewer": "revisão manual auditada",
-          "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
-          "capture_sha256": "152c3bbe58b5d7e1bf942f4bdc068f3d87a4af53b32c7d243a92ea29d3134a39",
-          "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
-        },
-        "criteria": {
-          "methodology_transparency": {
-            "pass": true,
-            "evidence_urls": [
-              "https://www.cnnbrasil.com.br/eleicoes/verita-derrite-e-do-prado-lideram-corrida-pelo-senado-em-sao-paulo/"
-            ]
-          },
-          "result_access": {
-            "pass": true,
-            "evidence_urls": [
-              "https://www.cnnbrasil.com.br/eleicoes/verita-derrite-e-do-prado-lideram-corrida-pelo-senado-em-sao-paulo/"
-            ]
-          },
-          "sample_identification": {
-            "pass": true,
-            "evidence_urls": [
-              "https://www.cnnbrasil.com.br/eleicoes/verita-derrite-e-do-prado-lideram-corrida-pelo-senado-em-sao-paulo/"
-            ]
-          },
-          "publication_stability": {
-            "pass": true,
-            "evidence_urls": [
-              "https://www.cnnbrasil.com.br/eleicoes/verita-derrite-e-do-prado-lideram-corrida-pelo-senado-em-sao-paulo/"
-            ]
-          },
-          "corrections": {
-            "pass": false,
-            "evidence_urls": [],
-            "note": "Política de correções não examinada; inclusão restrita a esta rodada."
-          }
-        },
-        "consulted_at": "2026-09-25T23:00:00Z"
-      },
-      {
         "id": "datafolha-rj-09217-2026-revisao-20260925",
         "status": "aprovado",
         "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
@@ -5773,87 +5700,6 @@
         "consulted_at": "2026-09-25T23:00:00Z"
       },
       {
-        "id": "verita-ap-08459-2026-revisao-20260925",
-        "status": "aprovado",
-        "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
-        "roles": {
-          "institute": "Veritá",
-          "commissioner": "Veritá (iniciativa própria do instituto)",
-          "official_registry": "TSE/PesqEle (registro informado na publicação)",
-          "publication_vehicle": "noticias.r7.com",
-          "dissemination_partner": null
-        },
-        "representative_poll": {
-          "field_period": {
-            "start": "2026-09-04",
-            "end": "2026-09-09"
-          },
-          "published_at": "2026-09-11",
-          "sample_size": 1030,
-          "method": null,
-          "margin_of_error_pp": 3.5,
-          "confidence_level_pct": 95,
-          "office": "Senador",
-          "geography": "Amapá",
-          "rounds": [
-            1
-          ],
-          "registration_id": "AP-08459/2026",
-          "result_url": "https://noticias.r7.com/eleicoes/2026/verita-rayssa-furlan-tem-254-e-lucas-barreto-226-na-disputa-ao-senado-no-amapa-11092026/",
-          "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
-        },
-        "reviewed_registration_ids": [
-          "AP-08459/2026"
-        ],
-        "review": {
-          "reviewed_at": "2026-09-25T23:00:00Z",
-          "reviewer": "revisão manual auditada",
-          "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
-          "capture_sha256": "33a8d80b264bde4ff3bc6e29e986f543c1341d08202bab26def0319fba7705a3",
-          "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
-        },
-        "criteria": {
-          "methodology_transparency": {
-            "pass": true,
-            "evidence_urls": [
-              "https://noticias.r7.com/eleicoes/2026/verita-rayssa-furlan-tem-254-e-lucas-barreto-226-na-disputa-ao-senado-no-amapa-11092026/",
-              "https://agenciasertao.com/eleicoes/pesquisas.php?protocolo=AP084592026&uf=BR",
-              "https://depoisdas17.com.br/pesquisas/sen-ap-verita_2026-09-09_T1_AP084592026_0022/"
-            ]
-          },
-          "result_access": {
-            "pass": true,
-            "evidence_urls": [
-              "https://noticias.r7.com/eleicoes/2026/verita-rayssa-furlan-tem-254-e-lucas-barreto-226-na-disputa-ao-senado-no-amapa-11092026/",
-              "https://agenciasertao.com/eleicoes/pesquisas.php?protocolo=AP084592026&uf=BR",
-              "https://depoisdas17.com.br/pesquisas/sen-ap-verita_2026-09-09_T1_AP084592026_0022/"
-            ]
-          },
-          "sample_identification": {
-            "pass": true,
-            "evidence_urls": [
-              "https://noticias.r7.com/eleicoes/2026/verita-rayssa-furlan-tem-254-e-lucas-barreto-226-na-disputa-ao-senado-no-amapa-11092026/",
-              "https://agenciasertao.com/eleicoes/pesquisas.php?protocolo=AP084592026&uf=BR",
-              "https://depoisdas17.com.br/pesquisas/sen-ap-verita_2026-09-09_T1_AP084592026_0022/"
-            ]
-          },
-          "publication_stability": {
-            "pass": true,
-            "evidence_urls": [
-              "https://noticias.r7.com/eleicoes/2026/verita-rayssa-furlan-tem-254-e-lucas-barreto-226-na-disputa-ao-senado-no-amapa-11092026/",
-              "https://agenciasertao.com/eleicoes/pesquisas.php?protocolo=AP084592026&uf=BR",
-              "https://depoisdas17.com.br/pesquisas/sen-ap-verita_2026-09-09_T1_AP084592026_0022/"
-            ]
-          },
-          "corrections": {
-            "pass": false,
-            "evidence_urls": [],
-            "note": "Política de correções não examinada; inclusão restrita a esta rodada."
-          }
-        },
-        "consulted_at": "2026-09-25T23:00:00Z"
-      },
-      {
         "id": "doxa-ap-05423-2026-revisao-20260925",
         "status": "aprovado",
         "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
@@ -6697,79 +6543,6 @@
         "consulted_at": "2026-09-25T23:00:00Z"
       },
       {
-        "id": "verita-ro-01935-2026-revisao-20260925",
-        "status": "aprovado",
-        "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
-        "roles": {
-          "institute": "Veritá",
-          "commissioner": "Instituto Veritá Ltda. (recursos próprios)",
-          "official_registry": "TSE/PesqEle (registro informado na publicação)",
-          "publication_vehicle": "cnnbrasil.com.br",
-          "dissemination_partner": null
-        },
-        "representative_poll": {
-          "field_period": {
-            "start": "2026-09-07",
-            "end": "2026-09-12"
-          },
-          "published_at": "2026-09-12",
-          "sample_size": 1220,
-          "method": "Ligação telefônica",
-          "margin_of_error_pp": 3,
-          "confidence_level_pct": 95,
-          "office": "Senador",
-          "geography": "Rondônia",
-          "rounds": [
-            1
-          ],
-          "registration_id": "RO-01935/2026",
-          "result_url": "https://www.cnnbrasil.com.br/eleicoes/verita-bruno-bolsonaro-e-fernando-maximo-lideram-corrida-ao-senado-em-ro/",
-          "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
-        },
-        "reviewed_registration_ids": [
-          "RO-01935/2026"
-        ],
-        "review": {
-          "reviewed_at": "2026-09-25T23:00:00Z",
-          "reviewer": "revisão manual auditada",
-          "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
-          "capture_sha256": "de7f081c05799998c23fc361bfd8c528d7904d6d9501a35fd1fb0be9613e51b9",
-          "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
-        },
-        "criteria": {
-          "methodology_transparency": {
-            "pass": true,
-            "evidence_urls": [
-              "https://www.cnnbrasil.com.br/eleicoes/verita-bruno-bolsonaro-e-fernando-maximo-lideram-corrida-ao-senado-em-ro/"
-            ]
-          },
-          "result_access": {
-            "pass": true,
-            "evidence_urls": [
-              "https://www.cnnbrasil.com.br/eleicoes/verita-bruno-bolsonaro-e-fernando-maximo-lideram-corrida-ao-senado-em-ro/"
-            ]
-          },
-          "sample_identification": {
-            "pass": true,
-            "evidence_urls": [
-              "https://www.cnnbrasil.com.br/eleicoes/verita-bruno-bolsonaro-e-fernando-maximo-lideram-corrida-ao-senado-em-ro/"
-            ]
-          },
-          "publication_stability": {
-            "pass": true,
-            "evidence_urls": [
-              "https://www.cnnbrasil.com.br/eleicoes/verita-bruno-bolsonaro-e-fernando-maximo-lideram-corrida-ao-senado-em-ro/"
-            ]
-          },
-          "corrections": {
-            "pass": false,
-            "evidence_urls": [],
-            "note": "Política de correções não examinada; inclusão restrita a esta rodada."
-          }
-        },
-        "consulted_at": "2026-09-25T23:00:00Z"
-      },
-      {
         "id": "phoenix-ro-02620-2026-revisao-20260925",
         "status": "aprovado",
         "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
@@ -7525,6 +7298,152 @@
             "evidence_urls": [
               "https://portalofato.com.br/2026/09/19/teresa-surita-lidera-disputa-pelo-senado-com-219-revela-eficaz/",
               "https://agenciasertao.com/eleicoes/pesquisas.php?protocolo=RR004282026&uf=RR"
+            ]
+          },
+          "corrections": {
+            "pass": false,
+            "evidence_urls": [],
+            "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+          }
+        },
+        "consulted_at": "2026-09-25T23:00:00Z"
+      },
+      {
+        "id": "atlasintel-pi-03771-2026-revisao-20260925",
+        "status": "aprovado",
+        "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+        "roles": {
+          "institute": "AtlasIntel",
+          "commissioner": "TV Meio Norte",
+          "official_registry": "TSE/PesqEle (registro informado na publicação)",
+          "publication_vehicle": "conectapiaui.com.br",
+          "dissemination_partner": null
+        },
+        "representative_poll": {
+          "field_period": {
+            "start": "2026-08-28",
+            "end": "2026-09-02"
+          },
+          "published_at": "2026-09-03",
+          "sample_size": 1600,
+          "method": null,
+          "margin_of_error_pp": 2,
+          "confidence_level_pct": 95,
+          "office": "Senador",
+          "geography": "Piauí",
+          "rounds": [
+            1
+          ],
+          "registration_id": "PI-03771/2026",
+          "result_url": "https://conectapiaui.com.br/noticia/pesquisas/marcelo-castro-lidera-disputa-ao-senado-no-piaui-seguido-por-julio-cesar-21850.html",
+          "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+        },
+        "reviewed_registration_ids": [
+          "PI-03771/2026"
+        ],
+        "review": {
+          "reviewed_at": "2026-09-25T23:00:00Z",
+          "reviewer": "revisão manual auditada",
+          "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+          "capture_sha256": "3bd2ffcb68d469bf2ceae75c2e77f682896612f334322876ccf6bf9383c04b4b",
+          "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+        },
+        "criteria": {
+          "methodology_transparency": {
+            "pass": true,
+            "evidence_urls": [
+              "https://conectapiaui.com.br/noticia/pesquisas/marcelo-castro-lidera-disputa-ao-senado-no-piaui-seguido-por-julio-cesar-21850.html"
+            ]
+          },
+          "result_access": {
+            "pass": true,
+            "evidence_urls": [
+              "https://conectapiaui.com.br/noticia/pesquisas/marcelo-castro-lidera-disputa-ao-senado-no-piaui-seguido-por-julio-cesar-21850.html"
+            ]
+          },
+          "sample_identification": {
+            "pass": true,
+            "evidence_urls": [
+              "https://conectapiaui.com.br/noticia/pesquisas/marcelo-castro-lidera-disputa-ao-senado-no-piaui-seguido-por-julio-cesar-21850.html"
+            ]
+          },
+          "publication_stability": {
+            "pass": true,
+            "evidence_urls": [
+              "https://conectapiaui.com.br/noticia/pesquisas/marcelo-castro-lidera-disputa-ao-senado-no-piaui-seguido-por-julio-cesar-21850.html"
+            ]
+          },
+          "corrections": {
+            "pass": false,
+            "evidence_urls": [],
+            "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+          }
+        },
+        "consulted_at": "2026-09-25T23:00:00Z"
+      },
+      {
+        "id": "datafolha-pi-03643-2026-revisao-20260925",
+        "status": "aprovado",
+        "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+        "roles": {
+          "institute": "Datafolha",
+          "commissioner": "TV Rádio Clube de Teresina S/A",
+          "official_registry": "TSE/PesqEle (registro informado na publicação)",
+          "publication_vehicle": "opovo.com.br",
+          "dissemination_partner": null
+        },
+        "representative_poll": {
+          "field_period": {
+            "start": "2026-09-14",
+            "end": "2026-09-17"
+          },
+          "published_at": "2026-09-17",
+          "sample_size": 826,
+          "method": "quantitativo, por amostragem, com aplicação de questionário estruturado e abordagem pessoal em pontos de fluxo populacional",
+          "margin_of_error_pp": 3,
+          "confidence_level_pct": 95,
+          "office": "Senador",
+          "geography": "Piauí",
+          "rounds": [
+            1
+          ],
+          "registration_id": "PI-03643/2026",
+          "result_url": "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/17/datafolha-senado-piaui-tem-empate-entre-ciro-marcelo-e-julio.html",
+          "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+        },
+        "reviewed_registration_ids": [
+          "PI-03643/2026"
+        ],
+        "review": {
+          "reviewed_at": "2026-09-25T23:00:00Z",
+          "reviewer": "revisão manual auditada",
+          "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+          "capture_sha256": "db82b8b49718391c48c965571b2859704febb113a8097724cdee74d8b66deb58",
+          "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+        },
+        "criteria": {
+          "methodology_transparency": {
+            "pass": true,
+            "evidence_urls": [
+              "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/17/datafolha-senado-piaui-tem-empate-entre-ciro-marcelo-e-julio.html"
+            ]
+          },
+          "result_access": {
+            "pass": true,
+            "evidence_urls": [
+              "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/17/datafolha-senado-piaui-tem-empate-entre-ciro-marcelo-e-julio.html"
+            ]
+          },
+          "sample_identification": {
+            "pass": true,
+            "evidence_urls": [
+              "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/17/datafolha-senado-piaui-tem-empate-entre-ciro-marcelo-e-julio.html"
+            ]
+          },
+          "publication_stability": {
+            "pass": true,
+            "evidence_urls": [
+              "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/17/datafolha-senado-piaui-tem-empate-entre-ciro-marcelo-e-julio.html"
             ]
           },
           "corrections": {
@@ -11693,7 +11612,7 @@
           "turn": 1,
           "comparability_key": "2026|Senador|AP|1|sem-pesquisa-qualificada|ausencia"
         },
-        "exact_aliases_version": "monitor-2026-feeb6dc1433a5724",
+        "exact_aliases_version": "monitor-2026-f47bfec200a705a7",
         "exact_aliases": [
           {
             "raw_label": "Rayssa Furlan (Podemos)",
@@ -12000,87 +11919,6 @@
             "geography": "Amapá",
             "turn": 1,
             "scenario_id": "quaest-ap-09438-2026-senado-agregado"
-          },
-          {
-            "raw_label": "Rayssa Furlan (Pode)",
-            "candidate_slug": "tse-2026-30002530071",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Amapá",
-            "turn": 1,
-            "scenario_id": "verita-ap-08459-2026-senado-agregado"
-          },
-          {
-            "raw_label": "Lucas Barreto (PSD)",
-            "candidate_slug": "tse-2026-30002530069",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Amapá",
-            "turn": 1,
-            "scenario_id": "verita-ap-08459-2026-senado-agregado"
-          },
-          {
-            "raw_label": "Randolfe (PT)",
-            "candidate_slug": "tse-2026-30002549909",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Amapá",
-            "turn": 1,
-            "scenario_id": "verita-ap-08459-2026-senado-agregado"
-          },
-          {
-            "raw_label": "Alliny Serrão (União)",
-            "candidate_slug": "tse-2026-30002551576",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Amapá",
-            "turn": 1,
-            "scenario_id": "verita-ap-08459-2026-senado-agregado"
-          },
-          {
-            "raw_label": "Acácio Favacho (MDB)",
-            "candidate_slug": "tse-2026-30002549911",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Amapá",
-            "turn": 1,
-            "scenario_id": "verita-ap-08459-2026-senado-agregado"
-          },
-          {
-            "raw_label": "Capi (PSB)",
-            "candidate_slug": "joao-capiberibe",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Amapá",
-            "turn": 1,
-            "scenario_id": "verita-ap-08459-2026-senado-agregado"
-          },
-          {
-            "raw_label": "Juíza Jô (DC)",
-            "candidate_slug": "tse-2026-30002551382",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Amapá",
-            "turn": 1,
-            "scenario_id": "verita-ap-08459-2026-senado-agregado"
-          },
-          {
-            "raw_label": "Helio Silva (PCO)",
-            "candidate_slug": "tse-2026-30002553708",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Amapá",
-            "turn": 1,
-            "scenario_id": "verita-ap-08459-2026-senado-agregado"
-          },
-          {
-            "raw_label": "Professor Uzian Pinto (DC)",
-            "candidate_slug": "tse-2026-30002551381",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Amapá",
-            "turn": 1,
-            "scenario_id": "verita-ap-08459-2026-senado-agregado"
           },
           {
             "raw_label": "Rayssa Furlan",
@@ -12965,181 +12803,6 @@
                     "candidate_slug": null,
                     "match_status": "not_candidate",
                     "value_percent": 11,
-                    "status": "publicado"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "verita-ap-08459-2026-senado",
-            "source_id": "verita-ap-08459-2026-revisao-20260925",
-            "source_status": "aprovado",
-            "publishable_by_default": false,
-            "state": "publicado",
-            "instituto": {
-              "value": "Veritá",
-              "status": "publicado"
-            },
-            "contratante": {
-              "value": "Veritá (iniciativa própria do instituto)",
-              "status": "publicado"
-            },
-            "fieldwork": {
-              "start": {
-                "value": "2026-09-04",
-                "status": "publicado"
-              },
-              "end": {
-                "value": "2026-09-09",
-                "status": "publicado"
-              }
-            },
-            "publication_date": {
-              "value": "2026-09-11",
-              "status": "publicado"
-            },
-            "sample": {
-              "size": {
-                "value": 1030,
-                "status": "publicado"
-              },
-              "population": {
-                "value": null,
-                "status": "indeterminado"
-              }
-            },
-            "margin_error_pp": {
-              "value": 3.5,
-              "status": "publicado"
-            },
-            "confidence_percent": {
-              "value": 95,
-              "status": "publicado"
-            },
-            "method": {
-              "value": null,
-              "status": "indeterminado"
-            },
-            "registration": {
-              "code": {
-                "value": "AP-08459/2026",
-                "status": "publicado"
-              },
-              "url": {
-                "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
-                "status": "publicado"
-              }
-            },
-            "geography": {
-              "type": "unidade_federativa",
-              "label": "Amapá",
-              "code": "AP"
-            },
-            "office": "Senador",
-            "provenance": {
-              "result_url": "https://noticias.r7.com/eleicoes/2026/verita-rayssa-furlan-tem-254-e-lucas-barreto-226-na-disputa-ao-senado-no-amapa-11092026/",
-              "supporting_urls": [
-                "https://agenciasertao.com/eleicoes/pesquisas.php?protocolo=AP084592026&uf=BR",
-                "https://depoisdas17.com.br/pesquisas/sen-ap-verita_2026-09-09_T1_AP084592026_0022/"
-              ],
-              "source_kind": "divulgacao_jornalistica_publica",
-              "route_class": "importacao_manual_auditada",
-              "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
-              "consulted_at": "2026-09-25T23:00:00Z",
-              "capture": {
-                "format": "text",
-                "sha256": "33a8d80b264bde4ff3bc6e29e986f543c1341d08202bab26def0319fba7705a3",
-                "status": "publicado"
-              }
-            },
-            "cenarios": [
-              {
-                "id": "verita-ap-08459-2026-senado-agregado",
-                "turn": 1,
-                "geography": "Amapá",
-                "label_raw": "Intenção de voto estimulada para o Senado, primeiro e segundo voto somados e reduzidos a 100%; percentuais do total de menções",
-                "question": {
-                  "value": null,
-                  "status": "indeterminado"
-                },
-                "comparability_key": "2026|Senador|AP|1|agregado|a0575c6a68f7b4ed869aa79b7e5e5ef80f0f8c8d3c3ba126049b14acd38b1137|total_mencoes",
-                "resultados": [
-                  {
-                    "raw_label": "Rayssa Furlan (Pode)",
-                    "candidate_slug": "tse-2026-30002530071",
-                    "match_status": "exact_alias",
-                    "value_percent": 25.4,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Lucas Barreto (PSD)",
-                    "candidate_slug": "tse-2026-30002530069",
-                    "match_status": "exact_alias",
-                    "value_percent": 22.6,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Randolfe (PT)",
-                    "candidate_slug": "tse-2026-30002549909",
-                    "match_status": "exact_alias",
-                    "value_percent": 19,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Alliny Serrão (União)",
-                    "candidate_slug": "tse-2026-30002551576",
-                    "match_status": "exact_alias",
-                    "value_percent": 13.2,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Acácio Favacho (MDB)",
-                    "candidate_slug": "tse-2026-30002549911",
-                    "match_status": "exact_alias",
-                    "value_percent": 11.6,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Capi (PSB)",
-                    "candidate_slug": "joao-capiberibe",
-                    "match_status": "exact_alias",
-                    "value_percent": 3.9,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Juíza Jô (DC)",
-                    "candidate_slug": "tse-2026-30002551382",
-                    "match_status": "exact_alias",
-                    "value_percent": 0.5,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Helio Silva (PCO)",
-                    "candidate_slug": "tse-2026-30002553708",
-                    "match_status": "exact_alias",
-                    "value_percent": 0.4,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Professor Uzian Pinto (DC)",
-                    "candidate_slug": "tse-2026-30002551381",
-                    "match_status": "exact_alias",
-                    "value_percent": 0.2,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Não sabe/Não respondeu (NS/NR)",
-                    "candidate_slug": null,
-                    "match_status": "not_candidate",
-                    "value_percent": 2.1,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Branco/Nulo",
-                    "candidate_slug": null,
-                    "match_status": "not_candidate",
-                    "value_percent": 1.2,
                     "status": "publicado"
                   }
                 ]
@@ -25255,8 +24918,8 @@
     },
     {
       "uf": "PI",
-      "state": "sem_pesquisa_qualificada",
-      "reason": "Nenhuma pesquisa primária com resultado e metodologia verificáveis foi catalogada para o Senado nesta UF.",
+      "state": "com_pesquisa_publicada",
+      "reason": "Rodadas importadas por revisão manual auditada, com resultado, metodologia e registro lidos na publicação.",
       "dataset": {
         "schema_version": "1.0.0",
         "election_scope": {
@@ -25276,9 +24939,896 @@
           "turn": 1,
           "comparability_key": "2026|Senador|PI|1|sem-pesquisa-qualificada|ausencia"
         },
-        "exact_aliases_version": "2026-09-13.PI",
-        "exact_aliases": [],
-        "pesquisas": []
+        "exact_aliases_version": "monitor-2026-17dd93bfcc9c7464",
+        "exact_aliases": [
+          {
+            "raw_label": "Marcelo Castro",
+            "candidate_slug": "tse-2026-180002533967",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "atlasintel-pi-03771-2026-senado-agregado"
+          },
+          {
+            "raw_label": "Júlio César",
+            "candidate_slug": "tse-2026-180002533964",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "atlasintel-pi-03771-2026-senado-agregado"
+          },
+          {
+            "raw_label": "Ciro Nogueira",
+            "candidate_slug": "tse-2026-180002540446",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "atlasintel-pi-03771-2026-senado-agregado"
+          },
+          {
+            "raw_label": "Tiago Junqueira",
+            "candidate_slug": "tse-2026-180002540449",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "atlasintel-pi-03771-2026-senado-agregado"
+          },
+          {
+            "raw_label": "Ciro Nogueira",
+            "candidate_slug": "tse-2026-180002540446",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Marcelo Castro",
+            "candidate_slug": "tse-2026-180002533967",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Julio César",
+            "candidate_slug": "tse-2026-180002533964",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Tiago Junqueira",
+            "candidate_slug": "tse-2026-180002540449",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Major Paulo Roberto",
+            "candidate_slug": "tse-2026-180002544457",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Jorge Lopes",
+            "candidate_slug": "tse-2026-180002548568",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Maria Madalena Nunes",
+            "candidate_slug": "tse-2026-180002550977",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Antônio José Lira",
+            "candidate_slug": "tse-2026-180002549936",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Danniel Rocha",
+            "candidate_slug": "tse-2026-180002537340",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Irmão Evandro Marques",
+            "candidate_slug": "tse-2026-180002547860",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Missionário Evandro Craveiro",
+            "candidate_slug": "tse-2026-180002548157",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Francinaldo Leão",
+            "candidate_slug": "tse-2026-180002550979",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Antônio Barros",
+            "candidate_slug": "tse-2026-180002549933",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Pedro Laurentino",
+            "candidate_slug": "tse-2026-180002541938",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Cloves José",
+            "candidate_slug": "tse-2026-180002553753",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Jardenya Bezerra",
+            "candidate_slug": "tse-2026-180002548155",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Dionisio Carvalho",
+            "candidate_slug": "tse-2026-180002547863",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Toinho Dufrango",
+            "candidate_slug": "tse-2026-180002544459",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-primeiro-voto"
+          },
+          {
+            "raw_label": "Julio César",
+            "candidate_slug": "tse-2026-180002533964",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          },
+          {
+            "raw_label": "Marcelo Castro",
+            "candidate_slug": "tse-2026-180002533967",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          },
+          {
+            "raw_label": "Ciro Nogueira",
+            "candidate_slug": "tse-2026-180002540446",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          },
+          {
+            "raw_label": "Tiago Junqueira",
+            "candidate_slug": "tse-2026-180002540449",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          },
+          {
+            "raw_label": "Pedro Laurentino",
+            "candidate_slug": "tse-2026-180002541938",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          },
+          {
+            "raw_label": "Jorge Lopes",
+            "candidate_slug": "tse-2026-180002548568",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          },
+          {
+            "raw_label": "Major Paulo Roberto",
+            "candidate_slug": "tse-2026-180002544457",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          },
+          {
+            "raw_label": "Antônio Barros",
+            "candidate_slug": "tse-2026-180002549933",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          },
+          {
+            "raw_label": "Antônio José Lira",
+            "candidate_slug": "tse-2026-180002549936",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          },
+          {
+            "raw_label": "Dionisio Carvalho",
+            "candidate_slug": "tse-2026-180002547863",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          },
+          {
+            "raw_label": "Irmão Evandro Marques",
+            "candidate_slug": "tse-2026-180002547860",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          },
+          {
+            "raw_label": "Francinaldo Leão",
+            "candidate_slug": "tse-2026-180002550979",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          },
+          {
+            "raw_label": "Jardenya Bezerra",
+            "candidate_slug": "tse-2026-180002548155",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          },
+          {
+            "raw_label": "Toinho Dufrango",
+            "candidate_slug": "tse-2026-180002544459",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          },
+          {
+            "raw_label": "Cloves José",
+            "candidate_slug": "tse-2026-180002553753",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          },
+          {
+            "raw_label": "Maria Madalena Nunes",
+            "candidate_slug": "tse-2026-180002550977",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          },
+          {
+            "raw_label": "Missionário Evandro Craveiro",
+            "candidate_slug": "tse-2026-180002548157",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          },
+          {
+            "raw_label": "Danniel Rocha",
+            "candidate_slug": "tse-2026-180002537340",
+            "year": 2026,
+            "office": "Senador",
+            "geography": "Piauí",
+            "turn": 1,
+            "scenario_id": "datafolha-pi-03643-2026-senado-segundo-voto"
+          }
+        ],
+        "pesquisas": [
+          {
+            "id": "atlasintel-pi-03771-2026-senado",
+            "source_id": "atlasintel-pi-03771-2026-revisao-20260925",
+            "source_status": "aprovado",
+            "publishable_by_default": false,
+            "state": "publicado",
+            "instituto": {
+              "value": "AtlasIntel",
+              "status": "publicado"
+            },
+            "contratante": {
+              "value": "TV Meio Norte",
+              "status": "publicado"
+            },
+            "fieldwork": {
+              "start": {
+                "value": "2026-08-28",
+                "status": "publicado"
+              },
+              "end": {
+                "value": "2026-09-02",
+                "status": "publicado"
+              }
+            },
+            "publication_date": {
+              "value": "2026-09-03",
+              "status": "publicado"
+            },
+            "sample": {
+              "size": {
+                "value": 1600,
+                "status": "publicado"
+              },
+              "population": {
+                "value": "eleitores",
+                "status": "publicado"
+              }
+            },
+            "margin_error_pp": {
+              "value": 2,
+              "status": "publicado"
+            },
+            "confidence_percent": {
+              "value": 95,
+              "status": "publicado"
+            },
+            "method": {
+              "value": null,
+              "status": "indeterminado"
+            },
+            "registration": {
+              "code": {
+                "value": "PI-03771/2026",
+                "status": "publicado"
+              },
+              "url": {
+                "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+                "status": "publicado"
+              }
+            },
+            "geography": {
+              "type": "unidade_federativa",
+              "label": "Piauí",
+              "code": "PI"
+            },
+            "office": "Senador",
+            "provenance": {
+              "result_url": "https://conectapiaui.com.br/noticia/pesquisas/marcelo-castro-lidera-disputa-ao-senado-no-piaui-seguido-por-julio-cesar-21850.html",
+              "supporting_urls": [],
+              "source_kind": "divulgacao_jornalistica_publica",
+              "route_class": "importacao_manual_auditada",
+              "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+              "consulted_at": "2026-09-25T23:00:00Z",
+              "capture": {
+                "format": "text",
+                "sha256": "3bd2ffcb68d469bf2ceae75c2e77f682896612f334322876ccf6bf9383c04b4b",
+                "status": "publicado"
+              }
+            },
+            "cenarios": [
+              {
+                "id": "atlasintel-pi-03771-2026-senado-agregado",
+                "turn": 1,
+                "geography": "Piauí",
+                "label_raw": "Intenção de voto estimulada para o Senado, primeiro e segundo voto somados e reduzidos a 100%; percentuais do total de menções",
+                "question": {
+                  "value": null,
+                  "status": "indeterminado"
+                },
+                "comparability_key": "2026|Senador|PI|1|agregado|26e9614cb271e3c2a0f3c34c8d2e9d8a6d14241f1ba7dc5a33eae45686b74862|total_mencoes",
+                "resultados": [
+                  {
+                    "raw_label": "Marcelo Castro",
+                    "candidate_slug": "tse-2026-180002533967",
+                    "match_status": "exact_alias",
+                    "value_percent": 22.4,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Júlio César",
+                    "candidate_slug": "tse-2026-180002533964",
+                    "match_status": "exact_alias",
+                    "value_percent": 17.2,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Ciro Nogueira",
+                    "candidate_slug": "tse-2026-180002540446",
+                    "match_status": "exact_alias",
+                    "value_percent": 13.3,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Tiago Junqueira",
+                    "candidate_slug": "tse-2026-180002540449",
+                    "match_status": "exact_alias",
+                    "value_percent": 8.2,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "votos brancos e nulos",
+                    "candidate_slug": null,
+                    "match_status": "not_candidate",
+                    "value_percent": 15.1,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "não souberam em quem votar",
+                    "candidate_slug": null,
+                    "match_status": "not_candidate",
+                    "value_percent": 15.1,
+                    "status": "publicado"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "datafolha-pi-03643-2026-senado",
+            "source_id": "datafolha-pi-03643-2026-revisao-20260925",
+            "source_status": "aprovado",
+            "publishable_by_default": false,
+            "state": "publicado",
+            "instituto": {
+              "value": "Datafolha",
+              "status": "publicado"
+            },
+            "contratante": {
+              "value": "TV Rádio Clube de Teresina S/A",
+              "status": "publicado"
+            },
+            "fieldwork": {
+              "start": {
+                "value": "2026-09-14",
+                "status": "publicado"
+              },
+              "end": {
+                "value": "2026-09-17",
+                "status": "publicado"
+              }
+            },
+            "publication_date": {
+              "value": "2026-09-17",
+              "status": "publicado"
+            },
+            "sample": {
+              "size": {
+                "value": 826,
+                "status": "publicado"
+              },
+              "population": {
+                "value": "eleitores no estado do Piauí",
+                "status": "publicado"
+              }
+            },
+            "margin_error_pp": {
+              "value": 3,
+              "status": "publicado"
+            },
+            "confidence_percent": {
+              "value": 95,
+              "status": "publicado"
+            },
+            "method": {
+              "value": "quantitativo, por amostragem, com aplicação de questionário estruturado e abordagem pessoal em pontos de fluxo populacional",
+              "status": "publicado"
+            },
+            "registration": {
+              "code": {
+                "value": "PI-03643/2026",
+                "status": "publicado"
+              },
+              "url": {
+                "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+                "status": "publicado"
+              }
+            },
+            "geography": {
+              "type": "unidade_federativa",
+              "label": "Piauí",
+              "code": "PI"
+            },
+            "office": "Senador",
+            "provenance": {
+              "result_url": "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/17/datafolha-senado-piaui-tem-empate-entre-ciro-marcelo-e-julio.html",
+              "supporting_urls": [],
+              "source_kind": "divulgacao_jornalistica_publica",
+              "route_class": "importacao_manual_auditada",
+              "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+              "consulted_at": "2026-09-25T23:00:00Z",
+              "capture": {
+                "format": "text",
+                "sha256": "db82b8b49718391c48c965571b2859704febb113a8097724cdee74d8b66deb58",
+                "status": "publicado"
+              }
+            },
+            "cenarios": [
+              {
+                "id": "datafolha-pi-03643-2026-senado-primeiro-voto",
+                "turn": 1,
+                "geography": "Piauí",
+                "label_raw": "Intenção de voto estimulada para o Senado, primeiro voto; percentuais do total de entrevistados",
+                "question": {
+                  "value": "em quem votariam para a primeira vaga no Senado",
+                  "status": "publicado"
+                },
+                "comparability_key": "2026|Senador|PI|1|primeiro-voto|533da727573592e4cd44d9904ada11aa539320e6d3be1c1b466e63a3c3261708|total_amostra",
+                "resultados": [
+                  {
+                    "raw_label": "Ciro Nogueira",
+                    "candidate_slug": "tse-2026-180002540446",
+                    "match_status": "exact_alias",
+                    "value_percent": 24,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Marcelo Castro",
+                    "candidate_slug": "tse-2026-180002533967",
+                    "match_status": "exact_alias",
+                    "value_percent": 19,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Julio César",
+                    "candidate_slug": "tse-2026-180002533964",
+                    "match_status": "exact_alias",
+                    "value_percent": 14,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Tiago Junqueira",
+                    "candidate_slug": "tse-2026-180002540449",
+                    "match_status": "exact_alias",
+                    "value_percent": 5,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Major Paulo Roberto",
+                    "candidate_slug": "tse-2026-180002544457",
+                    "match_status": "exact_alias",
+                    "value_percent": 2,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Jorge Lopes",
+                    "candidate_slug": "tse-2026-180002548568",
+                    "match_status": "exact_alias",
+                    "value_percent": 2,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Maria Madalena Nunes",
+                    "candidate_slug": "tse-2026-180002550977",
+                    "match_status": "exact_alias",
+                    "value_percent": 1,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Antônio José Lira",
+                    "candidate_slug": "tse-2026-180002549936",
+                    "match_status": "exact_alias",
+                    "value_percent": 1,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Danniel Rocha",
+                    "candidate_slug": "tse-2026-180002537340",
+                    "match_status": "exact_alias",
+                    "value_percent": 1,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Irmão Evandro Marques",
+                    "candidate_slug": "tse-2026-180002547860",
+                    "match_status": "exact_alias",
+                    "value_percent": 1,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Missionário Evandro Craveiro",
+                    "candidate_slug": "tse-2026-180002548157",
+                    "match_status": "exact_alias",
+                    "value_percent": 1,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Francinaldo Leão",
+                    "candidate_slug": "tse-2026-180002550979",
+                    "match_status": "exact_alias",
+                    "value_percent": 1,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Antônio Barros",
+                    "candidate_slug": "tse-2026-180002549933",
+                    "match_status": "exact_alias",
+                    "value_percent": 0,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Pedro Laurentino",
+                    "candidate_slug": "tse-2026-180002541938",
+                    "match_status": "exact_alias",
+                    "value_percent": 0,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Cloves José",
+                    "candidate_slug": "tse-2026-180002553753",
+                    "match_status": "exact_alias",
+                    "value_percent": 0,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Jardenya Bezerra",
+                    "candidate_slug": "tse-2026-180002548155",
+                    "match_status": "exact_alias",
+                    "value_percent": 0,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Dionisio Carvalho",
+                    "candidate_slug": "tse-2026-180002547863",
+                    "match_status": "exact_alias",
+                    "value_percent": 0,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Toinho Dufrango",
+                    "candidate_slug": "tse-2026-180002544459",
+                    "match_status": "exact_alias",
+                    "value_percent": 0,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Branco/nulo/nenhum",
+                    "candidate_slug": null,
+                    "match_status": "not_candidate",
+                    "value_percent": 15,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Indecisos",
+                    "candidate_slug": null,
+                    "match_status": "not_candidate",
+                    "value_percent": 14,
+                    "status": "publicado"
+                  }
+                ]
+              },
+              {
+                "id": "datafolha-pi-03643-2026-senado-segundo-voto",
+                "turn": 1,
+                "geography": "Piauí",
+                "label_raw": "Intenção de voto estimulada para o Senado, segundo voto; percentuais do total de entrevistados",
+                "question": {
+                  "value": "em quem votariam para a segunda vaga no Senado",
+                  "status": "publicado"
+                },
+                "comparability_key": "2026|Senador|PI|1|segundo-voto|533da727573592e4cd44d9904ada11aa539320e6d3be1c1b466e63a3c3261708|total_amostra",
+                "resultados": [
+                  {
+                    "raw_label": "Julio César",
+                    "candidate_slug": "tse-2026-180002533964",
+                    "match_status": "exact_alias",
+                    "value_percent": 16,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Marcelo Castro",
+                    "candidate_slug": "tse-2026-180002533967",
+                    "match_status": "exact_alias",
+                    "value_percent": 15,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Ciro Nogueira",
+                    "candidate_slug": "tse-2026-180002540446",
+                    "match_status": "exact_alias",
+                    "value_percent": 11,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Tiago Junqueira",
+                    "candidate_slug": "tse-2026-180002540449",
+                    "match_status": "exact_alias",
+                    "value_percent": 4,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Pedro Laurentino",
+                    "candidate_slug": "tse-2026-180002541938",
+                    "match_status": "exact_alias",
+                    "value_percent": 2,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Jorge Lopes",
+                    "candidate_slug": "tse-2026-180002548568",
+                    "match_status": "exact_alias",
+                    "value_percent": 1,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Major Paulo Roberto",
+                    "candidate_slug": "tse-2026-180002544457",
+                    "match_status": "exact_alias",
+                    "value_percent": 1,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Antônio Barros",
+                    "candidate_slug": "tse-2026-180002549933",
+                    "match_status": "exact_alias",
+                    "value_percent": 1,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Antônio José Lira",
+                    "candidate_slug": "tse-2026-180002549936",
+                    "match_status": "exact_alias",
+                    "value_percent": 1,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Dionisio Carvalho",
+                    "candidate_slug": "tse-2026-180002547863",
+                    "match_status": "exact_alias",
+                    "value_percent": 1,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Irmão Evandro Marques",
+                    "candidate_slug": "tse-2026-180002547860",
+                    "match_status": "exact_alias",
+                    "value_percent": 1,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Francinaldo Leão",
+                    "candidate_slug": "tse-2026-180002550979",
+                    "match_status": "exact_alias",
+                    "value_percent": 1,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Jardenya Bezerra",
+                    "candidate_slug": "tse-2026-180002548155",
+                    "match_status": "exact_alias",
+                    "value_percent": 1,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Toinho Dufrango",
+                    "candidate_slug": "tse-2026-180002544459",
+                    "match_status": "exact_alias",
+                    "value_percent": 1,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Cloves José",
+                    "candidate_slug": "tse-2026-180002553753",
+                    "match_status": "exact_alias",
+                    "value_percent": 1,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Maria Madalena Nunes",
+                    "candidate_slug": "tse-2026-180002550977",
+                    "match_status": "exact_alias",
+                    "value_percent": 0,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Missionário Evandro Craveiro",
+                    "candidate_slug": "tse-2026-180002548157",
+                    "match_status": "exact_alias",
+                    "value_percent": 0,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Danniel Rocha",
+                    "candidate_slug": "tse-2026-180002537340",
+                    "match_status": "exact_alias",
+                    "value_percent": 0,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Branco/nulo/nenhum",
+                    "candidate_slug": null,
+                    "match_status": "not_candidate",
+                    "value_percent": 21,
+                    "status": "publicado"
+                  },
+                  {
+                    "raw_label": "Indecisos",
+                    "candidate_slug": null,
+                    "match_status": "not_candidate",
+                    "value_percent": 20,
+                    "status": "publicado"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -28301,7 +28851,7 @@
           "turn": 1,
           "comparability_key": "2026|Senador|RO|1|sem-pesquisa-qualificada|ausencia"
         },
-        "exact_aliases_version": "monitor-2026-f70398df7f4cbbf8",
+        "exact_aliases_version": "monitor-2026-79229089ad983dbd",
         "exact_aliases": [
           {
             "raw_label": "Dr. Fernando Máximo (PL)",
@@ -28392,96 +28942,6 @@
             "geography": "Rondônia",
             "turn": 1,
             "scenario_id": "quaest-ro-08556-2026-senado-agregado"
-          },
-          {
-            "raw_label": "Bruno Bolsonaro Scheid",
-            "candidate_slug": "tse-2026-220002539995",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Rondônia",
-            "turn": 1,
-            "scenario_id": "verita-ro-01935-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Dr. Fernando Máximo",
-            "candidate_slug": "dr-fernando-maximo",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Rondônia",
-            "turn": 1,
-            "scenario_id": "verita-ro-01935-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Sílvia Cristina (PP)",
-            "candidate_slug": "tse-2026-220002547309",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Rondônia",
-            "turn": 1,
-            "scenario_id": "verita-ro-01935-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Mariana Carvalho (Republicanos)",
-            "candidate_slug": "tse-2026-220002547310",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Rondônia",
-            "turn": 1,
-            "scenario_id": "verita-ro-01935-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Acir Gugacz (PDT)",
-            "candidate_slug": "tse-2026-220002541490",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Rondônia",
-            "turn": 1,
-            "scenario_id": "verita-ro-01935-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Luciana Oliveira (PT)",
-            "candidate_slug": "tse-2026-220002551948",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Rondônia",
-            "turn": 1,
-            "scenario_id": "verita-ro-01935-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Engenheiro Thulio (Missão)",
-            "candidate_slug": "tse-2026-220002541944",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Rondônia",
-            "turn": 1,
-            "scenario_id": "verita-ro-01935-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Aires Mota (PV)",
-            "candidate_slug": "tse-2026-220002551946",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Rondônia",
-            "turn": 1,
-            "scenario_id": "verita-ro-01935-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Luis Fernando (PSD)",
-            "candidate_slug": "tse-2026-220002539771",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Rondônia",
-            "turn": 1,
-            "scenario_id": "verita-ro-01935-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Neidinha (PSB)",
-            "candidate_slug": "tse-2026-220002550928",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "Rondônia",
-            "turn": 1,
-            "scenario_id": "verita-ro-01935-2026-senado-primeiro-voto"
           },
           {
             "raw_label": "Sílvia Cristina",
@@ -29002,185 +29462,6 @@
                     "candidate_slug": null,
                     "match_status": "not_candidate",
                     "value_percent": 27,
-                    "status": "publicado"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "verita-ro-01935-2026-senado",
-            "source_id": "verita-ro-01935-2026-revisao-20260925",
-            "source_status": "aprovado",
-            "publishable_by_default": false,
-            "state": "publicado",
-            "instituto": {
-              "value": "Veritá",
-              "status": "publicado"
-            },
-            "contratante": {
-              "value": "Instituto Veritá Ltda. (recursos próprios)",
-              "status": "publicado"
-            },
-            "fieldwork": {
-              "start": {
-                "value": "2026-09-07",
-                "status": "publicado"
-              },
-              "end": {
-                "value": "2026-09-12",
-                "status": "publicado"
-              }
-            },
-            "publication_date": {
-              "value": "2026-09-12",
-              "status": "publicado"
-            },
-            "sample": {
-              "size": {
-                "value": 1220,
-                "status": "publicado"
-              },
-              "population": {
-                "value": "eleitores do estado de Rondônia com 16 anos ou mais",
-                "status": "publicado"
-              }
-            },
-            "margin_error_pp": {
-              "value": 3,
-              "status": "publicado"
-            },
-            "confidence_percent": {
-              "value": 95,
-              "status": "publicado"
-            },
-            "method": {
-              "value": "Ligação telefônica",
-              "status": "publicado"
-            },
-            "registration": {
-              "code": {
-                "value": "RO-01935/2026",
-                "status": "publicado"
-              },
-              "url": {
-                "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
-                "status": "publicado"
-              }
-            },
-            "geography": {
-              "type": "unidade_federativa",
-              "label": "Rondônia",
-              "code": "RO"
-            },
-            "office": "Senador",
-            "provenance": {
-              "result_url": "https://www.cnnbrasil.com.br/eleicoes/verita-bruno-bolsonaro-e-fernando-maximo-lideram-corrida-ao-senado-em-ro/",
-              "supporting_urls": [],
-              "source_kind": "divulgacao_jornalistica_publica",
-              "route_class": "importacao_manual_auditada",
-              "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
-              "consulted_at": "2026-09-25T23:00:00Z",
-              "capture": {
-                "format": "text",
-                "sha256": "de7f081c05799998c23fc361bfd8c528d7904d6d9501a35fd1fb0be9613e51b9",
-                "status": "publicado"
-              }
-            },
-            "cenarios": [
-              {
-                "id": "verita-ro-01935-2026-senado-primeiro-voto",
-                "turn": 1,
-                "geography": "Rondônia",
-                "label_raw": "Intenção de voto estimulada para o Senado, primeiro voto; percentuais do total de entrevistados",
-                "question": {
-                  "value": null,
-                  "status": "indeterminado"
-                },
-                "comparability_key": "2026|Senador|RO|1|primeiro-voto|2b47f67621f6a6da0f71965599a3366956ec17e8ab6fd7417af7e6503d03e9e2|total_amostra",
-                "resultados": [
-                  {
-                    "raw_label": "Bruno Bolsonaro Scheid",
-                    "candidate_slug": "tse-2026-220002539995",
-                    "match_status": "exact_alias",
-                    "value_percent": 23.7,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Dr. Fernando Máximo",
-                    "candidate_slug": "dr-fernando-maximo",
-                    "match_status": "exact_alias",
-                    "value_percent": 21.9,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Sílvia Cristina (PP)",
-                    "candidate_slug": "tse-2026-220002547309",
-                    "match_status": "exact_alias",
-                    "value_percent": 11.6,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Mariana Carvalho (Republicanos)",
-                    "candidate_slug": "tse-2026-220002547310",
-                    "match_status": "exact_alias",
-                    "value_percent": 7.4,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Acir Gugacz (PDT)",
-                    "candidate_slug": "tse-2026-220002541490",
-                    "match_status": "exact_alias",
-                    "value_percent": 7,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Luciana Oliveira (PT)",
-                    "candidate_slug": "tse-2026-220002551948",
-                    "match_status": "exact_alias",
-                    "value_percent": 6.7,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Engenheiro Thulio (Missão)",
-                    "candidate_slug": "tse-2026-220002541944",
-                    "match_status": "exact_alias",
-                    "value_percent": 1.1,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Aires Mota (PV)",
-                    "candidate_slug": "tse-2026-220002551946",
-                    "match_status": "exact_alias",
-                    "value_percent": 0.8,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Luis Fernando (PSD)",
-                    "candidate_slug": "tse-2026-220002539771",
-                    "match_status": "exact_alias",
-                    "value_percent": 0.7,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Neidinha (PSB)",
-                    "candidate_slug": "tse-2026-220002550928",
-                    "match_status": "exact_alias",
-                    "value_percent": 0.6,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "não souberam ou não responderam",
-                    "candidate_slug": null,
-                    "match_status": "not_candidate",
-                    "value_percent": 16.1,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "brancos e nulos",
-                    "candidate_slug": null,
-                    "match_status": "not_candidate",
-                    "value_percent": 2.4,
                     "status": "publicado"
                   }
                 ]
@@ -34123,7 +34404,7 @@
           "turn": 1,
           "comparability_key": "2026|Senador|SP|1|sem-pesquisa-qualificada|ausencia"
         },
-        "exact_aliases_version": "monitor-2026-b4a8bb7d20382d4b",
+        "exact_aliases_version": "monitor-2026-1bf0fe2f431f4f2f",
         "exact_aliases": [
           {
             "raw_label": "Marina Silva (Rede)",
@@ -34799,132 +35080,6 @@
             "geography": "São Paulo",
             "turn": 1,
             "scenario_id": "parana-pesquisas-sp-03057-2026-senado-agregado"
-          },
-          {
-            "raw_label": "Guilherme Derrite (PP)",
-            "candidate_slug": "guilherme-derrite",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "São Paulo",
-            "turn": 1,
-            "scenario_id": "verita-sp-03139-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "André do Prado (PL)",
-            "candidate_slug": "andre-do-prado",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "São Paulo",
-            "turn": 1,
-            "scenario_id": "verita-sp-03139-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Marina Silva (Rede)",
-            "candidate_slug": "tse-2026-250002551501",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "São Paulo",
-            "turn": 1,
-            "scenario_id": "verita-sp-03139-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Simone Tebet (PSB)",
-            "candidate_slug": "tse-2026-250002551502",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "São Paulo",
-            "turn": 1,
-            "scenario_id": "verita-sp-03139-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Salles (Novo)",
-            "candidate_slug": "tse-2026-250002532794",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "São Paulo",
-            "turn": 1,
-            "scenario_id": "verita-sp-03139-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Guto Schiavetto (Missão)",
-            "candidate_slug": "tse-2026-250002554075",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "São Paulo",
-            "turn": 1,
-            "scenario_id": "verita-sp-03139-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Dra Eliana Ferreira (PSTU)",
-            "candidate_slug": "tse-2026-250002541362",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "São Paulo",
-            "turn": 1,
-            "scenario_id": "verita-sp-03139-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Maíra de Souza (UP)",
-            "candidate_slug": "tse-2026-250002544516",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "São Paulo",
-            "turn": 1,
-            "scenario_id": "verita-sp-03139-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Geraldo Rufino (Podemos)",
-            "candidate_slug": "tse-2026-250002544673",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "São Paulo",
-            "turn": 1,
-            "scenario_id": "verita-sp-03139-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Ednelson Cesaretti (PCO)",
-            "candidate_slug": "tse-2026-250002552955",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "São Paulo",
-            "turn": 1,
-            "scenario_id": "verita-sp-03139-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Marcio Alves (UP)",
-            "candidate_slug": "tse-2026-250002544514",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "São Paulo",
-            "turn": 1,
-            "scenario_id": "verita-sp-03139-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Soninha Francine (Cidadania)",
-            "candidate_slug": "tse-2026-250002552369",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "São Paulo",
-            "turn": 1,
-            "scenario_id": "verita-sp-03139-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Petter Maahs (PCB)",
-            "candidate_slug": "tse-2026-250002552153",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "São Paulo",
-            "turn": 1,
-            "scenario_id": "verita-sp-03139-2026-senado-primeiro-voto"
-          },
-          {
-            "raw_label": "Weller Gonçalves (PSTU)",
-            "candidate_slug": "tse-2026-250002541365",
-            "year": 2026,
-            "office": "Senador",
-            "geography": "São Paulo",
-            "turn": 1,
-            "scenario_id": "verita-sp-03139-2026-senado-primeiro-voto"
           }
         ],
         "pesquisas": [
@@ -36101,213 +36256,6 @@
                     "candidate_slug": null,
                     "match_status": "not_candidate",
                     "value_percent": 6.6,
-                    "status": "publicado"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "verita-sp-03139-2026-senado",
-            "source_id": "verita-sp-03139-2026-revisao-20260925",
-            "source_status": "aprovado",
-            "publishable_by_default": false,
-            "state": "publicado",
-            "instituto": {
-              "value": "Veritá",
-              "status": "publicado"
-            },
-            "contratante": {
-              "value": "próprio instituto",
-              "status": "publicado"
-            },
-            "fieldwork": {
-              "start": {
-                "value": "2026-09-07",
-                "status": "publicado"
-              },
-              "end": {
-                "value": "2026-09-12",
-                "status": "publicado"
-              }
-            },
-            "publication_date": {
-              "value": "2026-09-12",
-              "status": "publicado"
-            },
-            "sample": {
-              "size": {
-                "value": 3025,
-                "status": "publicado"
-              },
-              "population": {
-                "value": "eleitores paulistas",
-                "status": "publicado"
-              }
-            },
-            "margin_error_pp": {
-              "value": 2,
-              "status": "publicado"
-            },
-            "confidence_percent": {
-              "value": 95,
-              "status": "publicado"
-            },
-            "method": {
-              "value": null,
-              "status": "indeterminado"
-            },
-            "registration": {
-              "code": {
-                "value": "SP-03139/2026",
-                "status": "publicado"
-              },
-              "url": {
-                "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
-                "status": "publicado"
-              }
-            },
-            "geography": {
-              "type": "unidade_federativa",
-              "label": "São Paulo",
-              "code": "SP"
-            },
-            "office": "Senador",
-            "provenance": {
-              "result_url": "https://www.cnnbrasil.com.br/eleicoes/verita-derrite-e-do-prado-lideram-corrida-pelo-senado-em-sao-paulo/",
-              "supporting_urls": [],
-              "source_kind": "divulgacao_jornalistica_publica",
-              "route_class": "importacao_manual_auditada",
-              "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
-              "consulted_at": "2026-09-25T23:00:00Z",
-              "capture": {
-                "format": "text",
-                "sha256": "152c3bbe58b5d7e1bf942f4bdc068f3d87a4af53b32c7d243a92ea29d3134a39",
-                "status": "publicado"
-              }
-            },
-            "cenarios": [
-              {
-                "id": "verita-sp-03139-2026-senado-primeiro-voto",
-                "turn": 1,
-                "geography": "São Paulo",
-                "label_raw": "Intenção de voto estimulada para o Senado, primeiro voto; percentuais do total de entrevistados",
-                "question": {
-                  "value": null,
-                  "status": "indeterminado"
-                },
-                "comparability_key": "2026|Senador|SP|1|primeiro-voto|8705dd975e08ee817640918c9a31bcb7a26c321812816a8f9872076ae69ad6b5|total_amostra",
-                "resultados": [
-                  {
-                    "raw_label": "Guilherme Derrite (PP)",
-                    "candidate_slug": "guilherme-derrite",
-                    "match_status": "exact_alias",
-                    "value_percent": 21,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "André do Prado (PL)",
-                    "candidate_slug": "andre-do-prado",
-                    "match_status": "exact_alias",
-                    "value_percent": 20.3,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Marina Silva (Rede)",
-                    "candidate_slug": "tse-2026-250002551501",
-                    "match_status": "exact_alias",
-                    "value_percent": 15.7,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Simone Tebet (PSB)",
-                    "candidate_slug": "tse-2026-250002551502",
-                    "match_status": "exact_alias",
-                    "value_percent": 13.1,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Salles (Novo)",
-                    "candidate_slug": "tse-2026-250002532794",
-                    "match_status": "exact_alias",
-                    "value_percent": 3.9,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Guto Schiavetto (Missão)",
-                    "candidate_slug": "tse-2026-250002554075",
-                    "match_status": "exact_alias",
-                    "value_percent": 2.2,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Dra Eliana Ferreira (PSTU)",
-                    "candidate_slug": "tse-2026-250002541362",
-                    "match_status": "exact_alias",
-                    "value_percent": 1.8,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Maíra de Souza (UP)",
-                    "candidate_slug": "tse-2026-250002544516",
-                    "match_status": "exact_alias",
-                    "value_percent": 1,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Geraldo Rufino (Podemos)",
-                    "candidate_slug": "tse-2026-250002544673",
-                    "match_status": "exact_alias",
-                    "value_percent": 1,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Ednelson Cesaretti (PCO)",
-                    "candidate_slug": "tse-2026-250002552955",
-                    "match_status": "exact_alias",
-                    "value_percent": 0.6,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Marcio Alves (UP)",
-                    "candidate_slug": "tse-2026-250002544514",
-                    "match_status": "exact_alias",
-                    "value_percent": 0.3,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Soninha Francine (Cidadania)",
-                    "candidate_slug": "tse-2026-250002552369",
-                    "match_status": "exact_alias",
-                    "value_percent": 0.2,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Petter Maahs (PCB)",
-                    "candidate_slug": "tse-2026-250002552153",
-                    "match_status": "exact_alias",
-                    "value_percent": 0.2,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Weller Gonçalves (PSTU)",
-                    "candidate_slug": "tse-2026-250002541365",
-                    "match_status": "exact_alias",
-                    "value_percent": 0.1,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Branco/Nulo",
-                    "candidate_slug": null,
-                    "match_status": "not_candidate",
-                    "value_percent": 3.7,
-                    "status": "publicado"
-                  },
-                  {
-                    "raw_label": "Indecisos",
-                    "candidate_slug": null,
-                    "match_status": "not_candidate",
-                    "value_percent": 15,
                     "status": "publicado"
                   }
                 ]
