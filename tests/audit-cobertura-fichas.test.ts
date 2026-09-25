@@ -283,9 +283,9 @@ describe("matriz de cobertura das fichas", () => {
 
   it("só adapta TSE quando candidato_id, slug, fonte e escopo conferem", () => {
     const result = adaptLatestReceipts([
-      { fonte: "tse", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-23T10:00:00Z", resultado: "encontrado", volume: 1 },
+      { fonte: "tse-current", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-23T10:00:00Z", resultado: "encontrado", volume: 1 },
       { fonte: "tse-historico", escopo: "global", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-23T10:00:00Z", resultado: "encontrado", volume: 1 },
-      { fonte: "tse", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-other", executado_em: "2026-09-23T10:00:00Z", resultado: "encontrado", volume: 1 },
+      { fonte: "tse-current", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-other", executado_em: "2026-09-23T10:00:00Z", resultado: "encontrado", volume: 1 },
     ], [profile()])
     assert.ok(result.joins["ana-exemplo"]?.perfil_atual)
     assert.equal(result.joins["ana-exemplo"]?.historico_politico, undefined)
@@ -295,7 +295,7 @@ describe("matriz de cobertura das fichas", () => {
   it("une recibos das 12 famílias somente por fonte, slug, candidato e escopo", () => {
     const now = "2026-09-23T10:00:00Z"
     const sources = [
-      "tse", "tse-historico", "filiacao", "patrimonio", "financiamento", "camara-proposicoes",
+      "tse-current", "tse-historico", "filiacao", "patrimonio", "financiamento", "camara-proposicoes",
       "destaques-votacoes", "ceaps-senado", "gastos-executivo", "processos-curadoria", "sites-tse", "chapa",
     ]
     const rows = sources.map((fonte) => ({
@@ -428,7 +428,7 @@ describe("matriz de cobertura das fichas", () => {
 
   it("não publica recibo TSE antigo e não permite escopo amplo fechar a célula", () => {
     const result = adaptLatestReceipts([
-      { fonte: "tse", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2020-01-01T10:00:00Z", resultado: "encontrado", volume: 1 },
+      { fonte: "tse-current", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2020-01-01T10:00:00Z", resultado: "encontrado", volume: 1 },
       { fonte: "tse-historico", escopo: "global", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-23T10:00:00Z", resultado: "encontrado", volume: 1 },
     ], [profile({ partido_sigla: "ABC", situacao_candidatura: "deferido", foto_url: "https://example.test/foto", biografia: "Bio", naturalidade: "SP", data_nascimento: "1980-01-01", formacao: "Direito", profissao_declarada: "Advogada", genero: "F", estado_civil: "Solteira", cor_raca: "branca", historico: [{ cargo: "Deputado Federal" }] })])
     const matrix = buildCoverageMatrix([profile({ partido_sigla: "ABC", situacao_candidatura: "deferido", foto_url: "https://example.test/foto", biografia: "Bio", naturalidade: "SP", data_nascimento: "1980-01-01", formacao: "Direito", profissao_declarada: "Advogada", genero: "F", estado_civil: "Solteira", cor_raca: "branca", historico: [{ cargo: "Deputado Federal" }] })], [], result.joins)

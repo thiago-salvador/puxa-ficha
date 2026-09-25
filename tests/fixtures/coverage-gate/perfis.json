@@ -1,0 +1,24 @@
+[
+  {
+    "id": "00000000-0000-4000-8000-000000000001",
+    "slug": "ficticia-com-recibos",
+    "nome_completo": "Pessoa Ficticia Um",
+    "cargo_disputado": "Senador",
+    "estado": "SP",
+    "cargo_atual": null,
+    "ids": {},
+    "historico": [],
+    "section_freshness": {}
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000002",
+    "slug": "ficticia-sem-recibo",
+    "nome_completo": "Pessoa Ficticia Dois",
+    "cargo_disputado": "Senador",
+    "estado": "RJ",
+    "cargo_atual": null,
+    "ids": {},
+    "historico": [],
+    "section_freshness": {}
+  }
+]

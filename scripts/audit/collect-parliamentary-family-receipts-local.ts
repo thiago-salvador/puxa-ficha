@@ -179,8 +179,9 @@ function readRawJson(filePath: string): { bytes: Buffer; value: unknown } {
 function valueAtPath(value: unknown, path: readonly string[] | undefined): unknown {
   let current = value
   for (const part of path ?? []) {
-    if (!object(current)) return undefined
-    current = current[part]
+    const container = object(current)
+    if (!container) return undefined
+    current = container[part]
   }
   return current
 }
