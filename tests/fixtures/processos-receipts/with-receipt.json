@@ -1,0 +1,16 @@
+{
+  "rows": [
+    {
+      "candidate_id": "fixture-1",
+      "slug": "fixture-1",
+      "receipt_candidate_id": "fixture-1",
+      "receipt_slug": "fixture-1",
+      "receipt_source": "processos-curadoria",
+      "receipt_scope": "candidato",
+      "receipt_executed_at": "2026-09-24T10:00:00.000Z",
+      "receipt_result": "vazio_confirmado",
+      "receipt_volume": 0,
+      "has_receipt": true
+    }
+  ]
+}

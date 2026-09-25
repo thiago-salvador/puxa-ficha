@@ -5,6 +5,7 @@ import { join } from "node:path"
 import { describe, it } from "node:test"
 
 import {
+  assertPreflightNotTruncated,
   chaveConferenciaDatajud,
   classificarResultadoDjen,
   cnjValido,
@@ -13,16 +14,26 @@ import {
   executarLotesEmOrdem,
   filtrarHomonimosDescartados,
   gravarCheckpointConcorrente,
+  identificadorForteNoTexto,
   instituicoesAtivas,
   lotesSolicitados,
   ordenar,
   pesquisarCandidato,
+  pesquisarCandidatoPorCnjs,
   prioridade,
   processarComDoisWorkers,
+  selecionarAlvosSemRecibo,
+  selecionarAlvosComCnj,
   validarCacheDjen,
   validarRespostaDatajud,
   validarRespostaDjen,
 } from "../scripts/curadoria-processos-lote"
+
+it("preflight falha fechado quando a paginação pode truncar a coorte", () => {
+  assert.doesNotThrow(() => assertPreflightNotTruncated(999, 1000, "candidatos"))
+  assert.throws(() => assertPreflightNotTruncated(1000, 1000, "candidatos"), /coorte incompleta/)
+  assert.throws(() => assertPreflightNotTruncated(2000, 2000, "recibos"), /coorte incompleta/)
+})
 
 type Snapshot = Parameters<typeof prioridade>[0]
 type Candidato = Parameters<typeof contextoPolitico>[0]
@@ -53,6 +64,140 @@ function candidato(overrides: Partial<Candidato> = {}): Candidato {
 }
 
 describe("curadoria de processos em lote", () => {
+  it("recorta a coorte atual sem recibo por candidato_id e não reabre indeterminados", () => {
+    const candidatos = [
+      { id: "a", slug: "alpha" },
+      { id: "b", slug: "beta" },
+      { id: "c", slug: "charlie" },
+    ]
+    const alvos = selecionarAlvosSemRecibo(candidatos, [
+      { candidato_id: "a", alvo: "alpha", fonte: "processos-curadoria", escopo: "candidato", executado_em: "2026-09-24T00:00:00Z", resultado: "indeterminado" },
+      { candidato_id: "b", alvo: "beta", fonte: "processos-curadoria", escopo: "candidato", executado_em: "2026-09-24T00:00:00Z", resultado: "vazio_confirmado" },
+      { candidato_id: "fora-da-coorte", alvo: "fora", fonte: "processos-curadoria", escopo: "candidato", executado_em: "2026-09-24T00:00:00Z", resultado: "indeterminado" },
+    ])
+    assert.deepEqual(alvos, ["charlie"])
+  })
+
+  it("não fecha recibo com slug, fonte, escopo, data ou resultado inválidos", () => {
+    const candidatos = [{ id: "a", slug: "alpha" }, { id: "b", slug: "beta" }]
+    const base = { candidato_id: "a", alvo: "alpha", fonte: "processos-curadoria", escopo: "candidato", executado_em: "2026-09-24T00:00:00Z", resultado: "indeterminado" }
+    const recibosInvalidos = [
+      { ...base, alvo: "outro-slug" },
+      { ...base, fonte: "outra-fonte" },
+      { ...base, escopo: "territorio" },
+      { ...base, executado_em: "amanhã" },
+      { ...base, executado_em: "2099-01-01T00:00:00Z" },
+      { ...base, resultado: "desconhecido" },
+    ]
+    for (const recibo of recibosInvalidos) {
+      assert.deepEqual(selecionarAlvosSemRecibo(candidatos, [recibo]), ["alpha", "beta"])
+    }
+    assert.deepEqual(selecionarAlvosSemRecibo(candidatos, [{ ...base }]), ["beta"])
+  })
+
+  it("agenda CNJ inclui apenas pendentes com numero persistido, sem busca nominal", () => {
+    const candidatos = [
+      { id: "a", slug: "alpha" }, { id: "b", slug: "beta" },
+      { id: "c", slug: "charlie" }, { id: "d", slug: "delta" },
+    ]
+    const recibos = [
+      { candidato_id: "a", alvo: "alpha", fonte: "processos-curadoria", escopo: "candidato", executado_em: "2026-09-24T00:00:00Z", resultado: "indeterminado" },
+      { candidato_id: "b", alvo: "beta", fonte: "processos-curadoria", escopo: "candidato", executado_em: "2026-09-24T00:00:00Z", resultado: "encontrado" },
+      { candidato_id: "c", alvo: "charlie", fonte: "processos-curadoria", escopo: "candidato", executado_em: "2026-09-24T00:00:00Z", resultado: "indeterminado" },
+    ]
+    const processos = [
+      { candidato_id: "a", numero_processo: "4004910-65.2025.8.26.0506", tribunal: "TJSP" },
+      { candidato_id: "b", numero_processo: "0709932-06.2017.8.07.0001", tribunal: "TJDFT" },
+      { candidato_id: "c", numero_processo: "sem numero", tribunal: "TJMG" },
+      { candidato_id: "d", numero_processo: "0830146-17.2019.8.12.0001", tribunal: "TJMS" },
+    ]
+    const selecao = selecionarAlvosComCnj(candidatos, recibos, processos)
+    assert.deepEqual(selecao.alvos, ["alpha", "delta"])
+    assert.deepEqual(selecao.residuais, ["charlie"])
+    assert.equal(selecao.cnjsPorSlug.get("alpha")?.[0].numero_cnj, "4004910-65.2025.8.26.0506")
+  })
+
+  it("readback CNJ exige parte exata e contexto oficial e nunca promove ausência a vazio", async () => {
+    const numero = "4004910-65.2025.8.26.0506"
+    const requests: string[] = []
+    const resultado = await pesquisarCandidatoPorCnjs(
+      candidato(), snapshot(), undefined, new Map(), [{ numero_cnj: numero, tribunal: "TJSP" }],
+      async (requested) => {
+        requests.push(requested)
+        return { count: 1, items: [{ id: 1, ativo: true, numero_processo: numero, destinatarios: [{ nome: "Carlos da Silva Teste", polo: "ATIVO" }], texto: "Carlos da Silva Teste governador de Minas Gerais" }] }
+      },
+      async () => ({ status: "confirmada", nome: "Carlos da Silva Teste", cpf: "12345678901" }),
+    )
+    assert.deepEqual(requests, [numero])
+    assert.equal(resultado.classificacao, "encontrado")
+    assert.equal(resultado.processos[0].url.includes("numeroProcesso="), true)
+    assert.equal(JSON.stringify(resultado).includes("12345678901"), false)
+
+    const ambiguo = await pesquisarCandidatoPorCnjs(
+      candidato(), snapshot(), undefined, new Map(), [{ numero_cnj: numero, tribunal: "TJSP" }],
+      async () => ({ count: 1, items: [{ id: 1, ativo: true, numero_processo: numero, destinatarios: [{ nome: "Carlos da Silva Teste" }], texto: "Intimacao sem identificador" }] }),
+      async () => ({ status: "confirmada", nome: "Carlos da Silva Teste" }),
+    )
+    assert.equal(ambiguo.classificacao, "bloqueado")
+    assert.equal(ambiguo.processos.length, 0)
+    assert.notEqual(ambiguo.classificacao, "vazio_confirmado")
+  })
+
+  it("homônimo com nome e cargo genérico, ou UF divergente, não recebe processo", () => {
+    const c = candidato()
+    assert.equal(identificadorForteNoTexto(c, "Carlos da Silva Teste governador", c.nome_completo, {}), false)
+    assert.equal(identificadorForteNoTexto(c, "Carlos da Silva Teste governador do Rio de Janeiro", c.nome_completo, {}), false)
+    assert.equal(identificadorForteNoTexto(c, "Carlos da Silva Teste citado; Joao governador de Minas Gerais", c.nome_completo, {}), false)
+    assert.equal(identificadorForteNoTexto(c, "Governador de Minas Gerais Joao; Carlos da Silva Teste citado", c.nome_completo, {}), false)
+    assert.equal(identificadorForteNoTexto(c, "Carlos da Silva Teste governador de Minas Gerais", c.nome_completo, {}), true)
+    assert.equal(identificadorForteNoTexto(c, "Governador de Minas Gerais Carlos da Silva Teste", c.nome_completo, {}), true)
+    assert.equal(identificadorForteNoTexto(c, "Carlos da Silva Teste CPF 123.456.789-01", c.nome_completo, { cpf: "12345678901" }), true)
+  })
+
+  it("duas falhas deixam CNJs restantes residuais e impedem encontrado parcial", async () => {
+    const cnjs = [
+      "0830146-17.2019.8.12.0001",
+      "5024899-25.2018.4.03.0000",
+      "0829093-19.2025.8.14.0006",
+      "0818103-61.2026.8.10.0000",
+    ].map((numero_cnj) => ({ numero_cnj, tribunal: "TJMS" }))
+    const chamados: string[] = []
+    const resultado = await pesquisarCandidatoPorCnjs(
+      candidato(), snapshot(), undefined, new Map(), cnjs,
+      async (numero) => {
+        chamados.push(numero)
+        if (numero !== cnjs[0].numero_cnj) throw new Error("HTTP 503")
+        return { count: 1, items: [{ id: 1, ativo: true, numero_processo: numero, destinatarios: [{ nome: "Carlos da Silva Teste" }], texto: "Carlos da Silva Teste governador de Minas Gerais" }] }
+      },
+      async () => ({ status: "confirmada", nome: "Carlos da Silva Teste" }),
+    )
+    assert.deepEqual(chamados, cnjs.slice(0, 3).map((x) => x.numero_cnj))
+    assert.equal(resultado.classificacao, "erro")
+    assert.equal(resultado.processos.length, 1)
+    assert.deepEqual(resultado.busca.cnjs_respondidos, [cnjs[0].numero_cnj])
+    assert.deepEqual(resultado.busca.cnjs_nao_consultados, [cnjs[3].numero_cnj])
+    assert.equal(resultado.busca.parcial, true)
+    assert.equal(resultado.ocorrencias_ambiguas.length, 3)
+  })
+
+  it("fonte já suspensa marca todos os CNJs pendentes como não consultados", async () => {
+    const cnjs = [
+      { numero_cnj: "0830146-17.2019.8.12.0001", tribunal: "TJMS" },
+      { numero_cnj: "5024899-25.2018.4.03.0000", tribunal: "TRF3" },
+    ]
+    let chamadas = 0
+    const resultado = await pesquisarCandidatoPorCnjs(
+      candidato(), snapshot(), undefined, new Map(), cnjs,
+      async () => { chamadas += 1; throw new Error("DJEN por CNJ suspenso após duas falhas consecutivas") },
+      async () => ({ status: "confirmada", nome: "Carlos da Silva Teste" }),
+    )
+    assert.equal(chamadas, 1)
+    assert.equal(resultado.classificacao, "erro")
+    assert.deepEqual(resultado.busca.cnjs_respondidos, [])
+    assert.deepEqual(resultado.busca.cnjs_nao_consultados, cnjs.map((x) => x.numero_cnj))
+    assert.equal(resultado.ocorrencias_ambiguas.length, 2)
+  })
+
   it("rejeita resposta DJEN com schema HTTP inválido em vez de assumir vazio", () => {
     assert.throws(() => validarRespostaDjen({ count: "0", items: [] }), /count inteiro nao-negativo/)
     assert.throws(() => validarRespostaDjen({ count: 0 }), /items array esperado/)

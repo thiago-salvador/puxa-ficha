@@ -396,7 +396,8 @@ test("EmbedWidget preserva zero judicial somente quando o escopo foi verificado"
         total_processos: 0,
         processos_verificacao: {
           resultado: "vazio_confirmado",
-          executado_em: "2026-08-13T00:00:00Z",
+          executado_em: new Date().toISOString(),
+          escopo: "candidato",
         },
       })}
     />,

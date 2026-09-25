@@ -7,6 +7,7 @@ import {
   type VerificacaoCampos,
 } from "@/lib/verificacao-campos"
 import { formatDate } from "@/lib/utils"
+import { processosVazioFrescor } from "@/lib/processos-display"
 import { NoticePanel } from "./NoticePanel"
 
 interface EmptyStateProps {
@@ -115,10 +116,31 @@ export function getPatrimonioEmptyState(
  * de falar como se ninguém tivesse procurado: só a ficha SEM linha nenhuma pode
  * dizer que não há tentativa registrada.
  */
-export function getProcessosEmptyState(verificacao?: ProcessosVerificacao | null) {
+export function getProcessosEmptyState(verificacao?: ProcessosVerificacao | null, now = new Date(), omittedCount = 0) {
   const data = verificacao?.executado_em ? formatDate(verificacao.executado_em) : null
 
+  if (omittedCount > 0) return {
+    title: "Cobertura judicial parcial",
+    description: `${omittedCount} registro(s) ficaram fora da ficha por não trazerem URL judicial com CNJ exato. Isso não confirma ausência de processos.`,
+    type: "neutral" as const,
+  }
+
   if (verificacao?.resultado === "vazio_confirmado") {
+    const frescor = processosVazioFrescor(verificacao, now)
+    if (frescor === "invalido") {
+      return {
+        title: "Estado da busca judicial indeterminado",
+        description: "O recibo de busca não comprova data e escopo válidos. Não é possível afirmar ausência de processos nesta ficha.",
+        type: "neutral" as const,
+      }
+    }
+    if (frescor === "desatualizado") {
+      return {
+        title: "Busca judicial desatualizada",
+        description: `A última busca concluída${data ? ` em ${data}` : ""} não encontrou processo publicável no recorte consultado naquela data. O resultado não comprova a situação atual nem equivale a uma certidão de ficha limpa.`,
+        type: "neutral" as const,
+      }
+    }
     return {
       title: "Nenhum processo confirmado no escopo consultado",
       description: `A busca concluída${data ? ` em ${data}` : ""} não encontrou processo publicável nas fontes verificadas. O resultado vale apenas para esse escopo e não equivale a uma certidão de ficha limpa.`,

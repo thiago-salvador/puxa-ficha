@@ -29,6 +29,7 @@ import { buildPatrimonioEleicoes, publicTransparencia } from "@/lib/public-profi
 import { buildFinanciamentoEleicoes, type FinanciamentoVerificacaoPublica } from "@/lib/financiamento-eleicoes"
 import { ensureCurrentCandidacyInHistory, normalizeHistoricoPoliticoForDisplay } from "@/lib/historico-dedupe"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
+import { urlFonteJudicialEspecifica } from "@/lib/djen-consulta-url"
 import { normalizeFinanciamentoForDisplay, normalizePatrimonioForDisplay } from "@/lib/person-level-dedupe"
 import { sanitizeFinanciamentoForPublic, sanitizeMaioresDoadoresForPublic } from "@/lib/financiamento-public"
 import {
@@ -71,7 +72,7 @@ export { mergeSourceMessages, mergeSourceStatuses } from "@/lib/data-resource"
 export { parseFederalAcervoReceiptDetail, projectFederalAcervoReceipts } from "@/lib/federal-acervo-receipts"
 
 /** Único ponto de bump para invalidar todas as superfícies públicas em cache. */
-export const CURRENT_DATA_WAVE = "ceaps-utf8-20260821"
+export const CURRENT_DATA_WAVE = "judicial-source-20260924"
 
 const supabaseUrl = getAppSupabaseUrl()
 const USE_MOCK = !supabaseUrl || supabaseUrl.includes("placeholder")
@@ -975,26 +976,29 @@ async function fetchChapa2026(
 async function fetchColetaVerificacao(
   slug: string,
   fonte: string,
+  candidateId?: string,
 ): Promise<SancoesVerificacao | null> {
   try {
     const admin = createServiceRoleSupabaseClient({ cacheMode: "no-store" })
     const { data, error } = await withSupabaseRetry(
       `coleta_log_ultima(${slug})`,
-      async (signal) =>
-        admin
+      async (signal) => {
+        let query = admin
           .from("coleta_log_ultima")
-        .select("fonte, resultado, executado_em, detalhe, url, escopo")
+          .select("candidato_id, fonte, resultado, executado_em, detalhe, url, escopo")
           .eq("fonte", fonte)
           .eq("escopo", "candidato")
           .eq("alvo", slug)
-          .abortSignal(signal)
-          .maybeSingle()
+        if (candidateId) query = query.eq("candidato_id", candidateId)
+        return query.abortSignal(signal).maybeSingle()
+      }
     )
 
     if (error || !data) return null
     // O client não tem schema tipado para a view; validamos o shape em runtime.
     const row = data as {
       fonte?: unknown
+      candidato_id?: unknown
       resultado?: unknown
       executado_em?: unknown
       detalhe?: unknown
@@ -1004,7 +1008,10 @@ async function fetchColetaVerificacao(
     const resultado = row.resultado as SancoesVerificacao["resultado"]
     if (!COLETA_RESULTADOS_VALIDOS.has(resultado)) return null
     if (typeof row.executado_em !== "string" || row.executado_em.length === 0) return null
-    if (fonte === "processos-curadoria") return projectProcessosVerificacaoRow(row)
+    if (fonte === "processos-curadoria") {
+      if (!candidateId || row.candidato_id !== candidateId) return null
+      return projectProcessosVerificacaoRow(row)
+    }
     // `detalhe` de coleta pode conter diagnóstico operacional (CPF ausente,
     // endpoint, erro). Só as auditorias de Destaques e a fonte de sanções
     // escrevem copy pública deliberada; processos tem projeção própria acima.
@@ -1124,10 +1131,11 @@ async function fetchTransparenciaVerificacao(slug: string): Promise<Transparenci
 
 /** Metadado da mesma fonte da ficha, em lotes para evitar uma consulta por card. */
 async function fetchProcessosVerificacoesBatch(
-  slugs: string[],
+  candidates: Array<{ id: string; slug: string }>,
 ): Promise<Map<string, SancoesVerificacao>> {
   const verificacoes = new Map<string, SancoesVerificacao>()
-  const alvos = [...new Set(slugs.filter(Boolean))]
+  const bySlug = new Map(candidates.map((candidate) => [candidate.slug, candidate.id]))
+  const alvos = [...bySlug.keys()].filter(Boolean)
   if (alvos.length === 0) return verificacoes
   try {
     const admin = createServiceRoleSupabaseClient({ cacheMode: "no-store" })
@@ -1137,7 +1145,7 @@ async function fetchProcessosVerificacoesBatch(
         `coleta_log_ultima(comparador:${offset})`,
         async (signal) => admin
           .from("coleta_log_ultima")
-          .select("alvo, resultado, executado_em")
+          .select("candidato_id, alvo, resultado, executado_em")
           .eq("fonte", "processos-curadoria")
           .eq("escopo", "candidato")
           .in("alvo", lote)
@@ -1146,7 +1154,7 @@ async function fetchProcessosVerificacoesBatch(
       if (error) continue
       for (const row of data ?? []) {
         const resultado = row.resultado as SancoesVerificacao["resultado"]
-        if (typeof row.alvo !== "string" || !lote.includes(row.alvo)) continue
+        if (typeof row.alvo !== "string" || !lote.includes(row.alvo) || row.candidato_id !== bySlug.get(row.alvo)) continue
         if (!COLETA_RESULTADOS_VALIDOS.has(resultado)) continue
         if (typeof row.executado_em !== "string" || !row.executado_em) continue
         verificacoes.set(row.alvo, {
@@ -1289,8 +1297,8 @@ async function fetchTCUVerificacao(slug: string): Promise<TCUVerificacao | null>
   }
 }
 
-async function fetchProcessosVerificacao(slug: string): Promise<SancoesVerificacao | null> {
-  return fetchColetaVerificacao(slug, "processos-curadoria")
+async function fetchProcessosVerificacao(slug: string, candidateId: string): Promise<SancoesVerificacao | null> {
+  return fetchColetaVerificacao(slug, "processos-curadoria", candidateId)
 }
 
 async function fetchFiliacaoVerificacao(slug: string): Promise<SancoesVerificacao | null> {
@@ -1684,7 +1692,7 @@ async function getCandidatoBySlugFromRelationResource(
       fetchSancoesVerificacao(slug),
       // Mesma proveniência para o vazio judicial. Encontrado sem linha pública
       // significa item em revisão, não ficha limpa.
-      fetchProcessosVerificacao(slug),
+      fetchProcessosVerificacao(slug, id),
       fetchFiliacaoVerificacao(slug),
       // Recibo TCU é uma fonte independente da curadoria judicial. Achados
       // permanecem em revisão editorial até haver ponto de atenção verificado.
@@ -1869,6 +1877,10 @@ async function getCandidatoBySlugFromRelationResource(
     historicoConfiavel,
     financiamentoVerificacoes,
   )
+  const processosBrutos = processos.data ?? []
+  const processosPublicos = processosBrutos.filter((row) =>
+    Boolean(urlFonteJudicialEspecifica(row.url_fonte, row.numero_processo)),
+  )
 
   // Sanitizacao publica de partido_sigla/partido_atual no ponto onde o payload
   // da ficha e construido. Substitui o mapping pontual `fichaForPublicDisplay` que
@@ -1896,7 +1908,8 @@ async function getCandidatoBySlugFromRelationResource(
     financiamento_eleicoes: financiamentoEleicoes,
     doadores_recorrentes: doadoresRecorrentes,
     votos: sortVotosForPublicDisplay(votos.data ?? []),
-    processos: processos.data ?? [],
+    processos: processosPublicos,
+    processos_omitidos_sem_fonte_oficial: processosBrutos.length - processosPublicos.length,
     pontos_atencao: pontosPublicos,
     projetos_lei: projetos.data ?? [],
     projetos_lei_total: projetos.count ?? (projetos.data ?? []).length,
@@ -1941,8 +1954,8 @@ async function getCandidatoBySlugFromRelationResource(
         contexto_do_pleito: !newsTitleMentionsCandidate(noticia.titulo, candidato),
       })),
     indicadores_estaduais: indicadores.data ?? [],
-    total_processos: (processos.data ?? []).length,
-    processos_criminais: (processos.data ?? []).filter(processoPodeContarComoCriminal).length,
+    total_processos: processosPublicos.length,
+    processos_criminais: processosPublicos.filter(processoPodeContarComoCriminal).length,
     total_mudancas_partido: countPartySwitches(mudancasRaw),
     total_pontos_atencao: pontosPublicos.length,
     pontos_criticos: pontosPublicos.filter((p) => isNegativeHighestSeverityAttentionPoint(p)).length,
@@ -2207,6 +2220,38 @@ export interface CandidatoResumo {
   pontos_atencao: number
 }
 
+async function fetchOfficialProcessCountsByCandidateIds(
+  supabase: ReturnType<typeof createServerSupabaseClient>,
+  candidateIds: string[],
+): Promise<Map<string, number>> {
+  const counts = new Map<string, number>()
+  for (let offset = 0; offset < candidateIds.length; offset += 80) {
+    const batch = candidateIds.slice(offset, offset + 80)
+    for (let page = 0; ; page += 1) {
+      const { data, error } = await withSupabaseRetry(
+        "processos(resumo-fonte-oficial)",
+        async (signal) => supabase.from("processos")
+          .select("id,candidato_id,numero_processo,url_fonte")
+          .in("candidato_id", batch)
+          .order("candidato_id")
+          .order("id")
+          .range(page * 1000, page * 1000 + 999)
+          .abortSignal(signal),
+        { attemptTimeoutMs: SUPABASE_FIRST_FOLD_ATTEMPT_TIMEOUT_MS },
+      )
+      if (error || !data) {
+        throw new DegradedDataError("A consulta das fontes judiciais falhou; a contagem não pode ser cacheada como zero.")
+      }
+      for (const row of data) {
+        if (!urlFonteJudicialEspecifica(row.url_fonte, row.numero_processo)) continue
+        counts.set(row.candidato_id, (counts.get(row.candidato_id) ?? 0) + 1)
+      }
+      if (data.length < 1000) break
+    }
+  }
+  return counts
+}
+
 async function getCandidatosComResumoResourceUncached(
   cargo?: string,
   estado?: string
@@ -2260,17 +2305,34 @@ async function getCandidatosComResumoResourceUncached(
     { attemptTimeoutMs: SUPABASE_FIRST_FOLD_ATTEMPT_TIMEOUT_MS }
   )
 
-  const sortCounts = new Map((compareError ? [] : compareRows ?? []).map((row) => [row.id, row.total_processos]))
+  // A view soma inclusive links jornalísticos ou homepages; a grade só pode
+  // contar as mesmas linhas judiciais específicas que a ficha e a Imprensa.
+  let officialProcessCounts = new Map<string, number>()
+  let officialProcessCountsError = false
+  try {
+    officialProcessCounts = await fetchOfficialProcessCountsByCandidateIds(
+      supabase,
+      candidatos.map((candidate) => candidate.id),
+    )
+  } catch {
+    // Mantém o último total oficial conhecido para exibição, mas a resposta
+    // degradada abaixo nunca entra no cache como se a falha fosse zero.
+    officialProcessCountsError = true
+    for (const candidate of candidatos) {
+      const known = ultimoEnriquecimento(candidate.id)
+      if (known) officialProcessCounts.set(candidate.id, known.processos)
+    }
+  }
   const compareMap = new Map<string, ResumoEnriquecimento>()
   for (const row of compareRows ?? []) {
     compareMap.set(row.id, {
       patrimonio: row.patrimonio_declarado ?? null,
-      processos: row.total_processos ?? 0,
+      processos: officialProcessCounts.get(row.id) ?? 0,
       pontosAtencao: Array.isArray(row.pontos_atencao) ? row.pontos_atencao.length : 0,
     })
   }
 
-  if (!compareError) {
+  if (!compareError && !officialProcessCountsError) {
     lembrarEnriquecimento(compareMap)
   }
 
@@ -2280,7 +2342,7 @@ async function getCandidatosComResumoResourceUncached(
     const enriquecimento = compareMap.get(c.id) ?? ultimoEnriquecimento(c.id)
     return {
       candidato: c,
-      processos_ordenacao: sortCounts.get(c.id) ?? null,
+      processos_ordenacao: enriquecimento?.processos ?? 0,
       patrimonio: enriquecimento?.patrimonio ?? null,
       patrimonio_atipico: false,
       processos: enriquecimento?.processos ?? 0,
@@ -2310,6 +2372,13 @@ async function getCandidatosComResumoResourceUncached(
     return degradedResource(
       data,
       "Nem todos os resumos puderam ser enriquecidos. Alguns totais podem estar zerados temporariamente."
+    )
+  }
+
+  if (officialProcessCountsError) {
+    return degradedResource(
+      data,
+      "A consulta das fontes judiciais falhou; a contagem não pode ser cacheada como zero."
     )
   }
 
@@ -2401,18 +2470,21 @@ async function getCandidatosComparaveisResourceUncached(
   const legislativoById = new Map<string, boolean>()
   let patrimonioPorId = new Map<string, PatrimonioAnoValor[]>()
   let processosVerificacoes = new Map<string, SancoesVerificacao>()
+  let officialProcessCounts = new Map<string, number>()
   if (comparadorIds.length > 0) {
-    const [mudRows, gastoMap, patrimonioMap, cargoMap, legislativoMap, processosMap] =
+    const [mudRows, gastoMap, patrimonioMap, cargoMap, legislativoMap, processosMap, processCounts] =
       await Promise.all([
         fetchMudancasPartidoRowsPaged(supabase, comparadorIds),
         fetchGastoTotalsByCandidatoIds(supabase, comparadorIds),
         fetchPatrimonioSeriesByCandidatoIds(supabase, comparadorIds),
         fetchCargoAtualByCandidatoIds(supabase, comparadorIds),
         fetchLegislativeHistoryFlagsByCandidatoIds(supabase, comparadorIds),
-        fetchProcessosVerificacoesBatch(baseRows.map((row) => row.slug)),
+        fetchProcessosVerificacoesBatch(baseRows.map((row) => ({ id: row.id, slug: row.slug }))),
+        fetchOfficialProcessCountsByCandidateIds(supabase, comparadorIds),
       ])
     patrimonioPorId = patrimonioMap
     processosVerificacoes = processosMap
+    officialProcessCounts = processCounts
 
     const byCandidato = new Map<string, MudancaPartido[]>()
     for (const row of mudRows) {
@@ -2451,6 +2523,8 @@ async function getCandidatosComparaveisResourceUncached(
 
     const normalized = {
       ...row,
+      total_processos: officialProcessCounts.get(row.id) ?? 0,
+      processos_omitidos_sem_fonte_oficial: Math.max(0, (row.total_processos ?? 0) - (officialProcessCounts.get(row.id) ?? 0)),
       processos_verificacao: processosVerificacoes.get(row.slug) ?? null,
       cargo_atual: cargoAtualById.has(row.id) ? (cargoAtualById.get(row.id) ?? null) : null,
       alertas_graves: alertasGraves.length,

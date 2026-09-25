@@ -76,6 +76,41 @@ export function urlFonteEPortalJudiciario(valor: string | null | undefined): boo
   }
 }
 
+function cnjComDigitoValido(raw: unknown): string | null {
+  if (typeof raw !== "string") return null
+  if (!/^\d{20}$/.test(raw) && !/^\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}$/.test(raw)) return null
+  const digits = cnjSomenteDigitos(raw)
+  const check = 98 - Number(BigInt(`${digits.slice(0, 7)}${digits.slice(9)}00`) % BigInt(97))
+  return Number(digits.slice(7, 9)) === check ? digits : null
+}
+
+/** Só a URL que contém o CNJ exato sustenta a linha de forma automática. */
+export function urlFonteJudicialEspecifica(raw: unknown, numeroProcesso: unknown): string | null {
+  if (typeof raw !== "string" || !raw.trim()) return null
+  const cnj = cnjComDigitoValido(numeroProcesso)
+  if (!cnj) return null
+  try {
+    const url = new URL(raw.trim())
+    if (url.protocol !== "https:" || !url.hostname.toLowerCase().endsWith(".jus.br")) return null
+    if (url.username || url.password || url.hash) return null
+    if (url.hostname === DJEN_CONSULTA_HOST || url.hostname === DJEN_API_HOST) {
+      try {
+        urlConsultaDjenDeFonte(url.toString(), String(numeroProcesso))
+        return url.toString()
+      } catch {
+        return null
+      }
+    }
+    if (url.pathname === "/") return null
+    const location = decodeURIComponent(`${url.pathname}${url.search}`)
+    const exactDigits = new RegExp(`(?:^|\\D)${cnj}(?:$|\\D)`)
+    if (!location.includes(String(numeroProcesso)) && !exactDigits.test(location)) return null
+    return url.toString()
+  } catch {
+    return null
+  }
+}
+
 function urlEhPlanilhaOuJson(valor: string): boolean {
   try {
     const url = new URL(valor)

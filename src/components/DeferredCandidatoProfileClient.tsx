@@ -23,6 +23,7 @@ type CandidatoProfileProps = {
 type ProfileComponent = ComponentType<CandidatoProfileProps>
 type DeferredProfileOverview = {
   processos: number
+  processosOmitidos?: number
   processosVerificacao?: FichaCandidato["processos_verificacao"]
   patrimonio: number | null
   mudancas: number | null
@@ -73,6 +74,8 @@ function CandidatoProfileSkeleton({ overview }: { overview: DeferredProfileOverv
     overview.processos,
     null,
     overview.processosVerificacao,
+    new Date(),
+    overview.processosOmitidos ?? 0,
   )
   return (
     <section className="mx-auto max-w-7xl px-5 py-8 md:px-12 lg:py-12" aria-busy="true" aria-labelledby="candidate-profile-loading-title">

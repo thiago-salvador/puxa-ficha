@@ -9,12 +9,36 @@ import {
   processoFonteLabel,
   processoPodeContarComoCriminal,
   processoTemporalLabel,
+  processosBuscaAvisoComLinhas,
   processosMaiorVerificadoNaComparacao,
   processosOverviewDisplay,
   processosResumoLabel,
   processosListaCount,
 } from "../src/lib/processos-display"
 import { getProcessosEmptyState } from "../src/components/EmptyState"
+
+describe("aviso de cobertura com linhas judiciais publicadas", () => {
+  const now = new Date("2026-09-24T12:00:00Z")
+  it("expõe falha, indeterminação, ausência de recibo e contradição sem esconder linhas", () => {
+    assert.match(processosBuscaAvisoComLinhas({ resultado: "erro" }, now)?.title ?? "", /não concluída/)
+    assert.match(processosBuscaAvisoComLinhas({ resultado: "indeterminado" }, now)?.description ?? "", /fontes próprias/)
+    assert.match(processosBuscaAvisoComLinhas(null, now)?.title ?? "", /sem recibo/)
+    assert.match(processosBuscaAvisoComLinhas({ resultado: "vazio_confirmado" }, now)?.title ?? "", /contraditório/)
+  })
+
+  it("sinaliza recibo vencido ou futuro e não adverte quando a busca encontrada está atual", () => {
+    assert.match(processosBuscaAvisoComLinhas({ resultado: "encontrado", executado_em: "2026-08-20T12:00:00Z", escopo: "candidato" }, now)?.title ?? "", /desatualizada/)
+    assert.match(processosBuscaAvisoComLinhas({ resultado: "encontrado", executado_em: "2026-09-25T12:00:00Z", escopo: "candidato" }, now)?.title ?? "", /indefinido/)
+    assert.equal(processosBuscaAvisoComLinhas({ resultado: "encontrado", executado_em: "2026-09-24T11:00:00Z", escopo: "candidato" }, now), null)
+  })
+
+  it("linha omitida impede zero mesmo com recibo de vazio recente", () => {
+    const receipt = { resultado: "vazio_confirmado" as const, executado_em: "2026-09-23T00:00:00Z", escopo: "candidato" }
+    assert.deepEqual(processosOverviewDisplay(0, 0, receipt, now, 1), { value: "—", sub: "cobertura parcial" })
+    assert.match(getProcessosEmptyState(receipt, now, 1).title, /parcial/)
+    assert.match(processosBuscaAvisoComLinhas(receipt, now, 1)?.title ?? "", /contraditório/)
+  })
+})
 
 describe("processosOverviewDisplay", () => {
   it("zero nunca vira '0': é ausência de verificação, não contagem", () => {
@@ -25,9 +49,14 @@ describe("processosOverviewDisplay", () => {
 
   it("zero só aparece quando a coleta confirmou vazio no escopo", () => {
     assert.deepEqual(
-      processosOverviewDisplay(0, 0, { resultado: "vazio_confirmado" }),
+      processosOverviewDisplay(0, 0, { resultado: "vazio_confirmado", executado_em: "2026-09-23T00:00:00Z", escopo: "candidato" }, new Date("2026-09-24T00:00:00Z")),
       { value: 0, sub: "escopo verificado" },
     )
+    assert.deepEqual(processosOverviewDisplay(0, 0, { resultado: "vazio_confirmado" }), { value: "—", sub: "recibo incompleto" })
+    const antigo = { resultado: "vazio_confirmado" as const, executado_em: "2026-08-01T00:00:00Z", escopo: "candidato" }
+    assert.deepEqual(processosOverviewDisplay(0, 0, antigo, new Date("2026-09-24T00:00:00Z")), { value: "—", sub: "busca desatualizada" })
+    assert.equal(processosListaCount(0, antigo, new Date("2026-09-24T00:00:00Z")), "—")
+    assert.equal(processosResumoLabel(0, antigo, new Date("2026-09-24T00:00:00Z")), "Processos: busca desatualizada")
   })
 
   it("contagem positiva continua numérica, com destaque criminal", () => {
@@ -76,7 +105,7 @@ describe("comunicação processual sem mérito inferido", () => {
     const fonte = readFileSync("src/lib/api.ts", "utf8")
     assert.match(
       fonte,
-      /processos_criminais: \(processos\.data \?\? \[\]\)\.filter\(processoPodeContarComoCriminal\)\.length/,
+      /const processosPublicos = processosBrutos\.filter\([\s\S]*?urlFonteJudicialEspecifica\(row\.url_fonte, row\.numero_processo\)[\s\S]*?processos_criminais: processosPublicos\.filter\(processoPodeContarComoCriminal\)\.length/,
     )
     assert.doesNotMatch(
       fonte,
@@ -115,14 +144,31 @@ describe("processosResumoLabel", () => {
     assert.equal(processosListaCount(4), 4)
   })
 
-  it("o mesmo recibo produz a mesma contagem na lista e na ficha", () => {
-    for (const resultado of ["vazio_confirmado", "erro", "indeterminado"] as const) {
+  it("cada recibo conserva o rótulo público esperado sem usar o overview como gabarito", () => {
+    const casos = [
+      ["vazio_confirmado", "Processos: recibo incompleto"],
+      ["erro", "Processos: busca não concluída"],
+      ["indeterminado", "Processos: identidade não confirmada"],
+    ] as const
+    for (const [resultado, esperado] of casos) {
       const recibo = { resultado }
-      const overview = processosOverviewDisplay(0, 0, recibo)
-      assert.equal(processosListaCount(0, recibo), overview.value)
-      assert.equal(processosResumoLabel(0, recibo), resultado === "vazio_confirmado"
-        ? "0 processos" : `Processos: ${overview.sub}`)
+      assert.equal(processosListaCount(0, recibo), "—")
+      assert.equal(processosResumoLabel(0, recibo), esperado)
     }
+  })
+
+  it("mantém o instante serializado no limite exato dos 14 dias", () => {
+    const recibo = { resultado: "vazio_confirmado" as const, executado_em: "2026-09-10T12:00:00Z", escopo: "candidato" }
+    assert.equal(processosResumoLabel(0, recibo, new Date("2026-09-24T12:00:00Z")), "0 processos")
+    assert.equal(processosResumoLabel(0, recibo, new Date("2026-09-24T12:00:00.001Z")), "Processos: busca desatualizada")
+  })
+
+  it("não chama zero de ausência verificada quando há linha judicial omitida", () => {
+    const now = new Date("2026-09-24T12:00:00Z")
+    const receipt = { resultado: "vazio_confirmado" as const, executado_em: "2026-09-23T00:00:00Z", escopo: "candidato" }
+    assert.equal(processosResumoLabel(0, receipt, now, 1), "Processos: cobertura parcial")
+    assert.equal(processosListaCount(0, receipt, now, 1), "—")
+    assert.equal(processosResumoLabel(0, receipt, now, 0), "0 processos")
   })
 })
 
@@ -144,15 +190,28 @@ describe("ComparadorPanel: a mesma régua do overview vale na comparação, a li
     // O único `{candidato.total_processos}` que pode sobrar é o data-attribute.
     const semDataAttr = fonte.replace(/data-pf-comparador-processos=\{candidato\.total_processos\}/g, "")
     assert.doesNotMatch(semDataAttr, /(?<!\$)\{candidato\.total_processos\}/)
-    assert.match(fonte, /processosOverviewDisplay\(candidato\.total_processos, undefined, candidato\.processos_verificacao\)/)
-    assert.match(fonte, /processosListaCount\(candidato\.total_processos, candidato\.processos_verificacao\)/)
+    assert.match(fonte, /processosOverviewDisplay\(candidato\.total_processos, undefined, candidato\.processos_verificacao, processosNow, candidato\.processos_omitidos_sem_fonte_oficial \?\? 0\)/)
+    assert.match(fonte, /processosListaCount\(candidato\.total_processos, candidato\.processos_verificacao, processosNow, candidato\.processos_omitidos_sem_fonte_oficial \?\? 0\)/)
   })
 
   it("a lista compacta e o aria-label usam o resolvedor compartilhado", () => {
-    const ocorrencias = fonte.match(/processosResumoLabel\(candidato\.total_processos, candidato\.processos_verificacao\)/g) ?? []
+    const ocorrencias = fonte.match(/processosResumoLabel\(candidato\.total_processos, candidato\.processos_verificacao, processosNow, candidato\.processos_omitidos_sem_fonte_oficial \?\? 0\)/g) ?? []
     assert.equal(ocorrencias.length, 2, "esperado no aria-label e na lista compacta")
     assert.doesNotMatch(fonte, /sem contagem de processos verificada/)
     assert.doesNotMatch(fonte, /sem contagem verificada/)
+  })
+
+  it("recebe um relógio serializado do servidor em todas as rotas e não lê o relógio no render", () => {
+    assert.match(fonte, /const processosNow = useMemo\(\(\) => new Date\(referenceNow\), \[referenceNow\]\)/)
+    assert.doesNotMatch(fonte, /new Date\(\)/)
+    for (const path of [
+      "src/app/(site)/page.tsx",
+      "src/app/(site)/comparar/page.tsx",
+      "src/app/(site)/uf/[uf]/page.tsx",
+      "src/app/(site)/uf/[uf]/senado/page.tsx",
+    ]) {
+      assert.match(readFileSync(path, "utf8"), /<ComparadorPanel[\s\S]*?referenceNow=\{new Date\(\)\.toISOString\(\)\}/)
+    }
   })
 
   it("a lista não mostra colunas de votações nem de gastos, e a comparação não usa 0 de CEAP", () => {

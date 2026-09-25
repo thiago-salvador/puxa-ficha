@@ -42,6 +42,7 @@ function dataset(): ImprensaDataset {
       },
       processos: {
         estado: "cobertura_parcial",
+        buscaEstado: "contraditorio",
         quantidade: null,
         ocorrencias: [{ numero: "1", tipo: "civil", tribunal: "TJ", urlFonte: "https://tribunal.example/processo/1", dataInicio: "2020-01-01", dataDecisao: null }],
       },
@@ -62,6 +63,7 @@ test("CSV preserva UTF-8, quebras, separadores e neutraliza fórmulas", () => {
     assert.equal(neutralizeCsvFormula(dangerous), `'${dangerous}`)
   }
   assert.match(csv, /sites_quantidade/)
+  assert.match(csv, /processos_busca_estado/)
   assert.match(csv, /chapa_estado/)
 })
 

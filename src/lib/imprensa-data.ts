@@ -3,7 +3,8 @@ import "server-only"
 import { getCandidatoSlugStaticParams } from "@/lib/api"
 import { getCandidateSitesTseBySlug } from "@/lib/candidate-sites-data"
 import { getCitableCandidateSites } from "@/lib/candidate-sites-proof"
-import { createServerSupabaseClient } from "@/lib/supabase"
+import { urlFonteJudicialEspecifica } from "@/lib/djen-consulta-url"
+import { createServerSupabaseClient, createServiceRoleSupabaseClient } from "@/lib/supabase"
 import { shouldExposeCargo } from "@/lib/senado-feature"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 import { formatDisplayName } from "@/lib/display-name"
@@ -42,8 +43,10 @@ export interface ImprensaRow {
     ocorrencias: { ordem: number; url: string }[]
   }
   processos: {
-    estado: "publicado" | "cobertura_parcial" | "sem_dado"
+    estado: "publicado" | "cobertura_parcial" | "vazio_confirmado" | "indeterminado" | "nao_buscado" | "erro" | "desatualizado" | "sem_dado"
+    buscaEstado: "encontrado" | "vazio_confirmado" | "indeterminado" | "nao_buscado" | "erro" | "desatualizado" | "contraditorio"
     quantidade: number | null
+    quantidadeOmitida?: number
     ocorrencias: {
       numero: string | null
       tipo: string
@@ -84,6 +87,13 @@ type ProcessoRow = {
   data_decisao?: string | null
 }
 
+type ProcessoReceiptRow = {
+  candidato_id?: string | null
+  alvo?: string | null
+  resultado?: string | null
+  executado_em?: string | null
+}
+
 type ChapaRow = {
   titular_candidato_id: string
   vice_nome_urna?: string | null
@@ -98,6 +108,7 @@ type ImprensaDependencies = {
   loadSlugs: typeof getCandidatoSlugStaticParams
   loadCandidates: (slugs: string[]) => Promise<CandidateRow[]>
   loadProcesses: (candidateIds: string[]) => Promise<ProcessoRow[]>
+  loadProcessReceipts: (candidateIds: string[], slugs: string[]) => Promise<ProcessoReceiptRow[]>
   loadChapas: (candidateIds: string[]) => Promise<ChapaRow[]>
   loadSites: typeof getCandidateSitesTseBySlug
 }
@@ -126,17 +137,6 @@ function requireHttps(raw: unknown): string | null {
   } catch {
     return null
   }
-}
-
-function requireJudicialProcessUrl(raw: unknown): string | null {
-  const url = requireHttps(raw)
-  if (!url) return null
-  const parsed = new URL(url)
-  // Processo só é atribuível a uma fonte judicial oficial e a uma página
-  // específica. Homepage de tribunal e links de notícia não sustentam a linha.
-  if (!parsed.hostname.toLowerCase().endsWith(".jus.br")) return null
-  if (parsed.pathname === "/" && !parsed.search) return null
-  return parsed.toString()
 }
 
 function defaultDependencies(): ImprensaDependencies {
@@ -182,6 +182,24 @@ function defaultDependencies(): ImprensaDependencies {
       }
       return rows
     },
+    loadProcessReceipts: async (candidateIds, slugs) => {
+      if (!candidateIds.length || !slugs.length) return []
+      const client = createServiceRoleSupabaseClient({ cacheMode: "no-store" })
+      const rows: ProcessoReceiptRow[] = []
+      for (let start = 0; start < candidateIds.length; start += PROCESS_BATCH_SIZE) {
+        const result = await client
+          .from("coleta_log_ultima")
+          .select("candidato_id,alvo,resultado,executado_em")
+          .eq("fonte", "processos-curadoria")
+          .eq("escopo", "candidato")
+          .in("alvo", slugs.slice(start, start + PROCESS_BATCH_SIZE))
+          .abortSignal(supabaseQueryTimeoutSignal())
+        if (result.error) throw new Error(`coleta_log_ultima(processos-curadoria): ${result.error.message}`)
+        if (!Array.isArray(result.data)) throw new Error("coleta_log_ultima(processos-curadoria): resposta inválida")
+        rows.push(...(result.data as ProcessoReceiptRow[]))
+      }
+      return rows
+    },
     loadChapas: async (candidateIds) => {
       const client = createServerSupabaseClient({ cacheMode: "no-store" })
       const rows: ChapaRow[] = []
@@ -218,7 +236,16 @@ export function __setImprensaDataDependenciesForTests(
     return
   }
   const defaults = defaultDependencies()
-  testDependencies = { ...defaults, ...dependencies }
+  // Existing focused fixtures predate the receipt projection. A fixture that
+  // does not provide receipts explicitly represents "nao_buscado".
+  testDependencies = { ...defaults, loadProcessReceipts: async () => [], ...dependencies }
+}
+
+let testNow: (() => Date) | null = null
+
+/** Clock override for deterministic freshness tests; production uses wall clock. */
+export function __setImprensaNowForTests(now: (() => Date) | null): void {
+  testNow = now
 }
 
 function mapSites(value: Awaited<ReturnType<typeof getCandidateSitesTseBySlug>>): ImprensaRow["sites"] {
@@ -235,20 +262,43 @@ function mapSites(value: Awaited<ReturnType<typeof getCandidateSitesTseBySlug>>)
   }
 }
 
-function mapProcesses(rows: ProcessoRow[]): ImprensaRow["processos"] {
+const PROCESS_RECEIPT_MAX_AGE_MS = 14 * 24 * 60 * 60 * 1000
+
+function processSearchState(receipt: ProcessoReceiptRow | null, hasRows: boolean): ImprensaRow["processos"]["buscaEstado"] {
+  if (!receipt) return "nao_buscado"
+  const executedAt = receipt.executado_em ? Date.parse(receipt.executado_em) : Number.NaN
+  if (!Number.isFinite(executedAt)) return "indeterminado"
+  const now = (testNow ? testNow() : new Date()).getTime()
+  if (executedAt > now) return "indeterminado"
+  const result = receipt.resultado
+  if (result === "erro") return "erro"
+  if (result === "indeterminado" || result === "sem_achado_no_escopo" || result === "nao_aplicavel") return "indeterminado"
+  if (result === "vazio_confirmado" && hasRows) return "contraditorio"
+  if (result !== "encontrado" && result !== "vazio_confirmado") return "indeterminado"
+  if (now - executedAt > PROCESS_RECEIPT_MAX_AGE_MS) return "desatualizado"
+  return result
+}
+
+function mapProcesses(rows: ProcessoRow[], receipt: ProcessoReceiptRow | null): ImprensaRow["processos"] {
   const comprovadas = rows
     .map((item) => ({
       numero: item.numero_processo ?? null,
       tipo: item.tipo ?? "desconhecido",
       tribunal: item.tribunal ?? "",
-      urlFonte: requireJudicialProcessUrl(item.url_fonte),
+      urlFonte: urlFonteJudicialEspecifica(item.url_fonte, item.numero_processo),
       dataInicio: item.data_inicio ?? null,
       dataDecisao: item.data_decisao ?? null,
     }))
   const ocorrencias = comprovadas.filter((item): item is ImprensaRow["processos"]["ocorrencias"][number] => Boolean(item.urlFonte))
-  if (!rows.length) return { estado: "sem_dado", quantidade: null, ocorrencias: [] }
-  if (ocorrencias.length !== rows.length) return { estado: "cobertura_parcial", quantidade: null, ocorrencias }
-  return { estado: "publicado", quantidade: ocorrencias.length, ocorrencias }
+  const quantidadeOmitida = rows.length - ocorrencias.length
+  const buscaEstado = processSearchState(receipt, rows.length > 0)
+  if (!rows.length) {
+    const estado = receipt?.resultado === "encontrado" || buscaEstado === "encontrado" || buscaEstado === "contraditorio" ? "indeterminado" : buscaEstado
+    return { estado, buscaEstado, quantidade: estado === "vazio_confirmado" ? 0 : null, quantidadeOmitida: 0, ocorrencias: [] }
+  }
+  if (!ocorrencias.length) return { estado: "cobertura_parcial", buscaEstado, quantidade: null, quantidadeOmitida, ocorrencias }
+  if (quantidadeOmitida > 0) return { estado: "cobertura_parcial", buscaEstado, quantidade: ocorrencias.length, quantidadeOmitida, ocorrencias }
+  return { estado: "publicado", buscaEstado, quantidade: ocorrencias.length, quantidadeOmitida, ocorrencias }
 }
 
 function mapChapa(rows: ChapaRow[]): ImprensaRow["chapa"] {
@@ -277,9 +327,17 @@ export async function getImprensaDataset(filters: ImprensaFilters): Promise<Impr
   const availableUfs = [...new Set(exposed.map((candidate) => candidate.estado?.toUpperCase()).filter((value): value is string => Boolean(value)))].sort()
   const selected = exposed.filter((candidate) => (!filters.cargo || candidate.cargo_disputado === filters.cargo) && (!filters.uf || candidate.estado?.toUpperCase() === filters.uf))
   const processes = await deps.loadProcesses(selected.map((candidate) => candidate.id))
+  const processReceipts = await deps.loadProcessReceipts(selected.map((candidate) => candidate.id), selected.map((candidate) => candidate.slug))
   const chapas = await deps.loadChapas(selected.map((candidate) => candidate.id))
   const processByCandidate = new Map<string, ProcessoRow[]>()
   for (const process of processes) processByCandidate.set(process.candidato_id, [...(processByCandidate.get(process.candidato_id) ?? []), process])
+  const receiptBySlug = new Map<string, ProcessoReceiptRow>()
+  const candidateBySlug = new Map(selected.map((candidate) => [candidate.slug, candidate]))
+  for (const receipt of [...processReceipts].sort((a, b) => Date.parse(b.executado_em ?? "") - Date.parse(a.executado_em ?? ""))) {
+    const candidate = receipt.alvo ? candidateBySlug.get(receipt.alvo) : undefined
+    if (!candidate || receipt.candidato_id !== candidate.id || receiptBySlug.has(candidate.slug)) continue
+    receiptBySlug.set(candidate.slug, receipt)
+  }
   const chapaByCandidate = new Map<string, ChapaRow[]>()
   for (const chapa of chapas) chapaByCandidate.set(chapa.titular_candidato_id, [...(chapaByCandidate.get(chapa.titular_candidato_id) ?? []), chapa])
   const rows = await Promise.all(selected.map(async (candidate) => ({
@@ -292,7 +350,7 @@ export async function getImprensaDataset(filters: ImprensaFilters): Promise<Impr
     fichaUrl: `/candidato/${candidate.slug}`,
     chapa: mapChapa(chapaByCandidate.get(candidate.id) ?? []),
     sites: mapSites(await deps.loadSites(candidate.slug)),
-    processos: mapProcesses(processByCandidate.get(candidate.id) ?? []),
+    processos: mapProcesses(processByCandidate.get(candidate.id) ?? [], receiptBySlug.get(candidate.slug) ?? null),
   })))
   return { version: "1", generatedAt: new Date().toISOString(), filters, availableCargos, availableUfs, rows }
 }

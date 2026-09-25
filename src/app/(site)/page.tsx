@@ -284,7 +284,7 @@ export default async function Home() {
             <SlashDivider className="mt-6 mb-8 sm:mt-8 sm:mb-10" />
           </section>
           <Suspense fallback={<div className="mx-auto max-w-7xl px-5 md:px-12"><div className="h-96 animate-pulse rounded-xl bg-muted" /></div>}>
-            <ComparadorPanel candidatos={comparaveis} />
+            <ComparadorPanel candidatos={comparaveis} referenceNow={new Date().toISOString()} />
           </Suspense>
         </>
       )}

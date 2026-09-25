@@ -36,7 +36,7 @@ test("todo cache público com single-flight inclui o ponto único de bump", () =
     )
   }
 
-  assert.match(source, /export const CURRENT_DATA_WAVE = "ceaps-utf8-20260821"/)
+  assert.match(source, /export const CURRENT_DATA_WAVE = "judicial-source-20260924"/)
   assert.match(
     source,
     /\["public-candidato-count-by-estado"[^\n]+SENADO_CACHE_VARIANT[^\n]+CURRENT_DATA_WAVE\]/,

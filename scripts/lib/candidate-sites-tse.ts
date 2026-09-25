@@ -37,6 +37,7 @@ export interface ReciboSitesTse {
 
 const HTTP_SCHEME_RE = /^https?:\/\//i
 const BARE_DOMAIN_RE = /^[^\s/?#]+\.[^\s]+$/
+const EMAIL_ADDRESS_RE = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i
 
 function normalizeName(value: string): string {
   return stripAccents(value)
@@ -46,11 +47,12 @@ function normalizeName(value: string): string {
 }
 
 function matchesProfileScope(profile: PerfilSitesTse, candidate: LinhaCandidatoTse): boolean {
-  const cargo = normalizeName(profile.cargo_disputado ?? "")
-  if (!cargo || cargo === "NENHUM" || normalizeName(candidate.DS_CARGO) !== cargo) return false
+  const declaredCargo = profile.cargo_disputado?.trim()
+  const cargo = normalizeName(declaredCargo ?? "")
+  if (declaredCargo && (cargo === "NENHUM" || normalizeName(candidate.DS_CARGO) !== cargo)) return false
 
   const expectedUf = cargo === "PRESIDENTE" ? "BR" : profile.estado?.trim().toUpperCase()
-  return Boolean(expectedUf) && candidate.SG_UF.trim().toUpperCase() === expectedUf
+  return !expectedUf || candidate.SG_UF.trim().toUpperCase() === expectedUf
 }
 
 function normalizeHttpUrl(value: string): URL | null {
@@ -167,7 +169,12 @@ export function buildCandidateSitesTseDataset({
     // O SQ 2026 curado é a identidade primária. Nomes podem estar desatualizados;
     // se o SQ não existir no pacote atual, falha fechado sem fallback nominal.
     if (declaredSq) {
-      match = candidateBySq.get(declaredSq) ?? null
+      const declaredCandidate = candidateBySq.get(declaredSq) ?? null
+      // O SQ sozinho não autoriza cruzar um registro de outra candidatura:
+      // cargo e UF continuam sendo parte da identidade do perfil no pacote.
+      match = declaredCandidate && matchesProfileScope(profile, declaredCandidate)
+        ? declaredCandidate
+        : null
       if (!match) {
         unmatchedDeclaredProfiles.push({ slug: profile.slug, sq_candidato: declaredSq })
       }
@@ -217,7 +224,7 @@ export function buildCandidateSitesTseDataset({
       sites.push({
         order: parseOrder(row.NR_ORDEM_REDE_SOCIAL),
         url: parsed?.toString() ?? null,
-        original_url: originalUrl,
+        original_url: EMAIL_ADDRESS_RE.test(originalUrl) ? "[email redigido]" : originalUrl,
       })
     }
 

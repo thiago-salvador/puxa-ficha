@@ -3,6 +3,7 @@ import assert from "node:assert/strict"
 import {
   CORTE_HISTORICO_PROJETOS,
   GASTOS_RECENT_ANOS,
+  classificarReciboProposicoes,
   hasFullVotacaoIdCoverage,
   hasGastosRecentYearsComplete,
   pareceCorteHistorico,
@@ -47,6 +48,23 @@ test("projetosLeiSincronizado: sem cardinalidade declarada, nunca pula", () => {
 
 test("projetosLeiSincronizado: zero declarado e zero no banco e sincronizado", () => {
   assert.equal(projetosLeiSincronizado(0, 0), true)
+})
+
+test("recibo de proposições exige paginação, escrita e readback concordantes", () => {
+  const completo = { declarado: 3, tentado: 3, persistido: 3, falhou: 0, readback: 3 }
+  assert.equal(classificarReciboProposicoes(completo), "encontrado")
+  assert.equal(classificarReciboProposicoes({ ...completo, readback: 4 }), "encontrado")
+  assert.equal(classificarReciboProposicoes({ ...completo, declarado: null }), "indeterminado")
+  assert.equal(classificarReciboProposicoes({ ...completo, tentado: 2 }), "indeterminado")
+  assert.equal(classificarReciboProposicoes({ ...completo, readback: 2 }), "indeterminado")
+  assert.equal(classificarReciboProposicoes({ ...completo, readback: null }), "indeterminado")
+  assert.equal(classificarReciboProposicoes({ ...completo, persistido: 2, falhou: 1 }), "erro")
+})
+
+test("recibo de zero exige ausência também no readback", () => {
+  const vazio = { declarado: 0, tentado: 0, persistido: 0, falhou: 0, readback: 0 }
+  assert.equal(classificarReciboProposicoes(vazio), "vazio_confirmado")
+  assert.equal(classificarReciboProposicoes({ ...vazio, readback: 1 }), "indeterminado")
 })
 
 /**

@@ -46,6 +46,29 @@ export function projetosLeiSincronizado(
 }
 
 /**
+ * A cardinalidade declarada só vira recibo conclusivo quando a paginação,
+ * as escritas e a releitura do banco concordam. Uma contagem antiga no banco
+ * não prova que a consulta atual terminou; um zero oficial com linhas locais
+ * também não prova ausência publicável.
+ */
+export function classificarReciboProposicoes(input: {
+  declarado: number | null
+  tentado: number
+  persistido: number
+  falhou: number
+  readback: number | null
+}): "encontrado" | "vazio_confirmado" | "indeterminado" | "erro" {
+  const { declarado, tentado, persistido, falhou, readback } = input
+  if (![tentado, persistido, falhou].every((n) => Number.isSafeInteger(n) && n >= 0)) return "indeterminado"
+  if (falhou > 0) return "erro"
+  if (declarado === null || readback === null ||
+    ![declarado, readback].every((n) => Number.isSafeInteger(n) && n >= 0)) return "indeterminado"
+  if (tentado !== declarado || persistido !== tentado || readback < declarado) return "indeterminado"
+  if (declarado === 0 && readback !== 0) return "indeterminado"
+  return declarado > 0 ? "encontrado" : "vazio_confirmado"
+}
+
+/**
  * Assinatura do corte historico: exatamente 100 linhas de fonte Camara e o que
  * o `slice(0, 100)` deixava para tras. Nao decide nada sozinha, serve para o
  * log e para a regua explicarem por que aquele numero e suspeito.
