@@ -81,8 +81,11 @@ jobs:
             --snapshot="$ROSTER_DIR/consulta_cand_2026.zip" \
             --complement="$ROSTER_DIR/consulta_cand_complementar_2026.zip" \
             --include-majoritarios \
+            --piso="$ROSTER_PISO_TOTAL" \
+            --removed-out=reports/roster-deputados/fora-do-pacote.json \
             --out=reports/roster-deputados/dry-run.json > /dev/null
-          jq '{status, snapshot_em, total, counts, coverage_proven}' reports/roster-deputados/dry-run.json
+          # Linhas que saíram do pacote ficam na tabela (o upsert não apaga); só são relatadas.
+          jq '{status, snapshot_em, total, counts, coverage_proven, apply_block, fora_do_pacote: .removed_from_package.count}' reports/roster-deputados/dry-run.json
           jq -e --argjson piso "$ROSTER_PISO_TOTAL" \
             '.status == "dry_run" and .coverage_proven == true and .total >= $piso' \
             reports/roster-deputados/dry-run.json > /dev/null || {
@@ -97,6 +100,7 @@ jobs:
             --snapshot="$ROSTER_DIR/consulta_cand_2026.zip" \
             --complement="$ROSTER_DIR/consulta_cand_complementar_2026.zip" \
             --include-majoritarios \
+            --piso="$ROSTER_PISO_TOTAL" \
             --apply \
             --out=reports/roster-deputados/apply.json > /dev/null
           jq '{status, snapshot_em, total, counts}' reports/roster-deputados/apply.json

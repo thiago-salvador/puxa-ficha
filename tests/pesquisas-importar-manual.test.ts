@@ -81,7 +81,7 @@ describe("importação manual auditada de pesquisas", () => {
       cargo: "Senador", uf: "SP", registration: "SP-99999/2026", population: "eleitores de SP",
       scenarios: [
         { kind: "estimulado", measure: "primeiro-voto", question: null, results: [{ raw_label: "Simone Tebet", value_percent: 30 }, { raw_label: "Nenhum", value_percent: 20 }] },
-        { kind: "estimulado", measure: "agregado", question: null, results: [{ raw_label: "Simone Tebet", value_percent: 90 }, { raw_label: "Salles", value_percent: 80 }] },
+        { kind: "estimulado", measure: "agregado", base: "total_amostra", question: null, results: [{ raw_label: "Simone Tebet", value_percent: 90 }, { raw_label: "Salles", value_percent: 80 }] },
         { kind: "espontaneo", question: null, results: [{ raw_label: "Não sabe", value_percent: 70 }] },
       ],
     })
@@ -104,7 +104,7 @@ describe("importação manual auditada de pesquisas", () => {
     assert.ok(semEscopo.problems.some((problem) => problem.includes("escopo SEN-SP")))
   })
 
-  it("Senado exige medida e registro, e aceita soma até 200% só no agregado", () => {
+  it("Senado exige medida, base declarada no agregado e registro; soma só confere a base", () => {
     const base = rodada({ cargo: "Senador", uf: "SP", registration: "SP-99998/2026" })
     const decisoes = { "SEN-SP": { "Lula": null, "Flávio Bolsonaro": null, "Brancos e nulos": null, "Não sabem": null } }
     const semMedida = importarRodadas([base], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
@@ -117,17 +117,25 @@ describe("importação manual auditada de pesquisas", () => {
     const alto = [{ raw_label: "Lula", value_percent: 90 }, { raw_label: "Flávio Bolsonaro", value_percent: 80 }]
     const primeiro = importarRodadas([{ ...base, scenarios: [{ kind: "estimulado", measure: "primeiro-voto", question: null, results: alto }] }], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
     assert.ok(primeiro.problems.some((problem) => problem.includes("soma 170.0%")))
-    const agregado = importarRodadas([{ ...base, scenarios: [{ kind: "estimulado", measure: "agregado", question: null, results: alto }] }], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
+    const semBase = importarRodadas([{ ...base, scenarios: [{ kind: "estimulado", measure: "agregado", question: null, results: alto }] }], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
+    assert.ok(semBase.problems.some((problem) => problem.includes("sem base declarada")), "a base nunca é inferida pela soma")
+    const agregado = importarRodadas([{ ...base, scenarios: [{ kind: "estimulado", measure: "agregado", base: "total_amostra", question: null, results: alto }] }], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
     assert.deepEqual(agregado.problems, [])
+    const cem = [{ raw_label: "Lula", value_percent: 60 }, { raw_label: "Flávio Bolsonaro", value_percent: 38 }]
+    const amostraBaixa = importarRodadas([{ ...base, scenarios: [{ kind: "estimulado", measure: "agregado", base: "total_amostra", question: null, results: cem }] }], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
+    assert.ok(amostraBaixa.problems.some((problem) => problem.includes("incompatível com a base declarada")), "soma de dois votos sobre entrevistados abaixo de 130% é rejeitada")
+    const mencoesAlta = importarRodadas([{ ...base, scenarios: [{ kind: "estimulado", measure: "agregado", base: "total_mencoes", question: null, results: alto }] }], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
+    assert.ok(mencoesAlta.problems.some((problem) => problem.includes("incompatível com a base declarada")), "menções acima de 102% são rejeitadas")
+    const mencoesPrimeiro = importarRodadas([{ ...base, scenarios: [{ kind: "estimulado", measure: "primeiro-voto", base: "total_mencoes", question: null, results: cem }] }], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
+    assert.ok(mencoesPrimeiro.problems.some((problem) => problem.includes("só existe na soma")))
     const presidenteEmUf = importarRodadas([rodada({ cargo: "Presidente", uf: "SP", registration: "SP-99997/2026" })], { SP: aliases.BR }, "2026-09-25T12:00:00Z", carregarCatalogos())
     assert.ok(presidenteEmUf.problems.some((problem) => problem.includes("incompatível")))
   })
 
-  it("consolidado dos dois votos reduzido a 100% vira base de menções, nunca de entrevistados", () => {
-    const reduzido = { kind: "estimulado" as const, measure: "agregado" as const, question: null, results: [{ raw_label: "Simone Tebet", value_percent: 60 }, { raw_label: "Salles", value_percent: 40 }] }
+  it("consolidado declarado como reduzido a 100% vira base de menções, nunca de entrevistados", () => {
+    const reduzido = { kind: "estimulado" as const, measure: "agregado" as const, base: "total_mencoes" as const, question: null, results: [{ raw_label: "Simone Tebet", value_percent: 60 }, { raw_label: "Salles", value_percent: 40 }] }
     assert.equal(baseCenarioSenado(reduzido), "total_mencoes")
-    assert.equal(baseCenarioSenado({ ...reduzido, results: [{ raw_label: "Simone Tebet", value_percent: 90 }, { raw_label: "Salles", value_percent: 80 }] }), "total_amostra")
-    assert.equal(baseCenarioSenado({ ...reduzido, measure: "primeiro-voto" }), "total_amostra")
+    assert.equal(baseCenarioSenado({ ...reduzido, base: undefined, measure: "primeiro-voto" }), "total_amostra")
     const sen = rodada({ cargo: "Senador", uf: "SP", registration: "SP-99996/2026", scenarios: [reduzido] })
     const { problems, catalogos } = importarRodadas([sen], { "SEN-SP": { "Simone Tebet": "tse-2026-250002551502", "Salles": "tse-2026-250002532794" } }, "2026-09-25T12:00:00Z", carregarCatalogos())
     assert.deepEqual(problems, [])

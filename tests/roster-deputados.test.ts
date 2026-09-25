@@ -1,7 +1,7 @@
 import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
 import test from "node:test"
-import { buildRoster, cargoFromRow, compareRoster, parseSnapshotTimestamp, rosterQuality, type RosterRecord } from "../scripts/lib/roster-deputados"
+import { buildRoster, cargoFromRow, compareRoster, parseSnapshotTimestamp, ROSTER_MIN_TOTAL, rosterApplyBlock, rosterQuality, type RosterRecord } from "../scripts/lib/roster-deputados"
 
 test("snapshot usa data de geração do pacote e não a data de ingestão", () => {
   assert.equal(parseSnapshotTimestamp("01/08/2026", "12:30:00"), "2026-08-01T12:30:00.000Z")
@@ -66,6 +66,24 @@ test("migration pública tem whitelist e não contém CPF", () => {
   assert.match(sql, /GRANT SELECT ON public\.candidatos_roster_2026_publico TO anon, authenticated/)
   assert.doesNotMatch(sql, /cpf/i)
   for (const column of ["ano", "sq_candidato", "uf", "cargo", "nome_urna", "nome_completo", "numero_urna", "partido_sigla", "situacao_registro", "fonte_url", "sha256_pacote", "coletado_em", "snapshot_em", "foto_path"]) assert.match(sql, new RegExp(`\\b${column}\\b`))
+})
+
+test("apply falha fechado abaixo do piso ou sem cobertura provada", () => {
+  const ok = { snapshot_em: "2026-09-23T13:43:00Z" }
+  assert.equal(ROSTER_MIN_TOTAL, 19000)
+  assert.equal(rosterApplyBlock(Array(19000).fill(ok)), null)
+  assert.match(rosterApplyBlock(Array(18999).fill(ok)) ?? "", /abaixo do piso: 18999/)
+  assert.match(rosterApplyBlock([...Array(19000).fill(ok), { snapshot_em: null }]) ?? "", /cobertura não provada/)
+  assert.match(rosterApplyBlock([]) ?? "", /cobertura não provada/)
+  assert.match(rosterApplyBlock(Array(5).fill(ok), Number.NaN) ?? "", /piso inválido/)
+  assert.equal(rosterApplyBlock(Array(5).fill(ok), 5), null)
+})
+
+test("linhas fora do novo pacote são relatadas e o apply só faz upsert", () => {
+  const script = readFileSync("scripts/ingest-roster-deputados.ts", "utf8")
+  assert.match(script, /rosterApplyBlock\(summary\.records, minTotal\)/)
+  assert.match(script, /removed_from_package/)
+  assert.doesNotMatch(script, /\.delete\(/)
 })
 
 void ({} as RosterRecord)

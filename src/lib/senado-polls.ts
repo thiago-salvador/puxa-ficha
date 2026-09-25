@@ -95,6 +95,11 @@ function validateSenadoCatalog(catalog: CatalogoPesquisasEleitorais, expectedUf?
       issues.push(`${poll.id} possui eleição, cargo ou UF incompatível`)
       continue
     }
+    // A state Senate poll is registered in its own UF; a national (BR-) or other-UF code belongs to another survey.
+    const registration = poll.registration.code.value
+    if (registration && !new RegExp(`^${uf}-\\d{5}/2026$`).test(registration)) {
+      issues.push(`${poll.id}: registro ${registration} não é da UF ${uf}`)
+    }
     for (const scenario of poll.cenarios) {
       if (scenario.turn !== 1) issues.push(`${scenario.id}: Senado rejeita segundo turno`)
       if (!scenario.comparabilityKey.startsWith(expectedPrefix)) issues.push(`${scenario.id}: comparabilityKey incompatível com UF/cargo/ano`)

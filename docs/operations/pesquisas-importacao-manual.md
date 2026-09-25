@@ -55,10 +55,13 @@ todo cenário estimulado declara `"measure"`: `"primeiro-voto"`, `"segundo-voto"
 (soma das duas menções; o total pode chegar a 200%). Cenários espontâneos de Senado não são
 importados.
 
-A base sai dos próprios números. `agregado` que soma até 102% só pode ser o "consolidado dos dois
-votos reduzido para 100%" que a maioria dos veículos publica: vira base `total_mencoes`, com
-rótulo "percentuais do total de menções", e nunca entra na mesma série que percentuais do total
-de entrevistados. `agregado` acima disso e os votos separados ficam em `total_amostra`. A página `/uf/<uf>/senado` só publica rodada com registro TSE informado, então o
+Todo cenário `agregado` declara `"base"` a partir do texto capturado: `"total_mencoes"` quando a
+publicação diz que os dois votos foram somados e reduzidos a 100% (rótulo "percentuais do total de
+menções"), `"total_amostra"` quando os percentuais são do total de entrevistados. A base nunca é
+inferida pela soma; a soma só confere a declaração e a rodada é recusada quando a contradiz
+(menções acima de 102%, soma de dois votos sobre entrevistados abaixo de 130%). Sem frase que
+sustente a base, o cenário agregado não é importado. As duas bases nunca entram na mesma série.
+Primeiro e segundo voto ficam em `total_amostra`. A página `/uf/<uf>/senado` só publica rodada com registro TSE informado, então o
 importador recusa a rodada sem ele. Método e população seguem a regra de Governador: `null`
 quando a publicação não os traz.
 

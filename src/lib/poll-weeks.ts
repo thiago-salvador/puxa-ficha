@@ -36,6 +36,23 @@ function senadoMeasure(poll: StatePollScenario): string | null {
   return measure && SENADO_WEEKLY_MEASURES.has(measure) ? measure : null
 }
 
+/**
+ * Senate series label comes from the series dimensions (vote measured and base), never from one
+ * round's own label, which may carry a scenario note that does not apply to the other institutes.
+ */
+function senadoSeriesLabel(poll: StatePollScenario): string | null {
+  if (poll.office !== "Senador") return null
+  const measure = senadoMeasure(poll)
+  const universe = comparabilityUniverse(poll)
+  if (!measure || !universe) return null
+  if (universe === "total_mencoes") {
+    return "Intenção de voto estimulada para o Senado, primeiro e segundo voto somados e reduzidos a 100%; percentuais do total de menções"
+  }
+  const vote = measure === "primeiro-voto" ? "primeiro voto" : measure === "segundo-voto" ? "segundo voto" : "soma do primeiro e do segundo voto"
+  const base = universe === "votos_validos" ? "percentuais dos votos válidos" : "percentuais do total de entrevistados"
+  return `Intenção de voto estimulada para o Senado, ${vote}; ${base}${measure === "agregado" && universe === "total_amostra" ? " (a soma dos dois votos passa de 100%)" : ""}`
+}
+
 function comparabilityMode(poll: StatePollScenario): "estimulada" | "espontanea" | null {
   const parts = scopedComparabilityParts(poll)
   if (!parts) return null
@@ -163,8 +180,9 @@ export function groupWeeklyPollSeries(polls: StatePollScenario[]): WeeklySeries[
     const seriesPolls = weeks.flatMap(week => week.polls)
     const labels = new Set(seriesPolls.map(poll => poll.scenario.labelRaw))
     const mode = comparabilityMode(seriesPolls[0])
-    const label = labels.size === 1 || !mode ? weeks.at(-1)!.polls.at(-1)!.scenario.labelRaw
-      : `Intenção de voto ${mode === "estimulada" ? "estimulada" : "espontânea"} no ${seriesPolls[0].scenario.turn}º turno`
+    const senado = senadoSeriesLabel(seriesPolls[0])
+    const label = senado ?? (labels.size === 1 || !mode ? weeks.at(-1)!.polls.at(-1)!.scenario.labelRaw
+      : `Intenção de voto ${mode === "estimulada" ? "estimulada" : "espontânea"} no ${seriesPolls[0].scenario.turn}º turno`)
     return [{ id, label, polls: seriesPolls, weeks }]
   }).sort((a, b) => {
     // The initial view should show the prompted candidate list, not a sparse

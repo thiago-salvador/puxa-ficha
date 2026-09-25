@@ -28,17 +28,21 @@ const ROTULO_MEDIDA: Record<MedidaSenado, string> = {
   "segundo-voto": "segundo voto",
   agregado: "soma do primeiro e do segundo voto",
 }
+export type BaseSenado = "total_amostra" | "total_mencoes"
+const BASES_SENADO: BaseSenado[] = ["total_amostra", "total_mencoes"]
 const TOTAL_UM_VOTO = 102
+/** Two votes over the whole sample: a published aggregate below this is not a sum over respondents. */
+const MINIMO_SOMA_DOIS_VOTOS = 130
+const MAXIMO_SOMA_DOIS_VOTOS = 202
 
 /**
- * Base of a Senate scenario, derived from its own numbers. Two votes per voter over the whole
- * sample add up to far more than 100%; an aggregate that adds up to about 100% can only be the
- * share of all mentions (the "consolidado dos dois votos reduzido para 100%" that most outlets
- * publish), which is a different base and must not be labeled as a share of respondents.
+ * Base of a Senate scenario as declared by the collector from the captured text:
+ * "total_mencoes" when the publication says the two votes were summed and rescaled to 100%
+ * ("consolidado ... reduzido para 100%"), "total_amostra" for shares of respondents. The sum is
+ * never used to infer the base; `validarRodada` uses it only to reject a declaration it contradicts.
  */
-export function baseCenarioSenado(scenario: RodadaColetada["scenarios"][number]): "total_amostra" | "total_mencoes" {
-  const total = scenario.results.reduce((sum, result) => sum + result.value_percent, 0)
-  return scenario.measure === "agregado" && total <= TOTAL_UM_VOTO ? "total_mencoes" : "total_amostra"
+export function baseCenarioSenado(scenario: RodadaColetada["scenarios"][number]): BaseSenado {
+  return scenario.base ?? "total_amostra"
 }
 
 export interface RodadaColetada {
@@ -64,6 +68,8 @@ export interface RodadaColetada {
     kind: "estimulado" | "espontaneo"
     /** Required for Senador stimulated scenarios. */
     measure?: MedidaSenado
+    /** Senador only, required with measure "agregado": base stated in the captured text. */
+    base?: BaseSenado
     /** Collector's own description; never published (headlines are editorial). */
     label_raw?: string
     /** Neutral distinction between stimulated scenarios of the same round, e.g. "sem Fulano". */
@@ -151,7 +157,12 @@ export function validarRodada(rodada: RodadaColetada, aliases: DecisoesAlias): s
   if (cargo === "Senador") {
     for (const scenario of stimulated) {
       if (!scenario.measure || !MEDIDAS_SENADO.includes(scenario.measure)) problems.push(`${where}: cenário do Senado sem medida (primeiro-voto, segundo-voto ou agregado)`)
+      if (scenario.base != null && !BASES_SENADO.includes(scenario.base))problems.push(`${where}: base desconhecida (${scenario.base})`)
+      if (scenario.measure === "agregado" && !scenario.base) problems.push(`${where}: agregado do Senado sem base declarada (total_amostra ou total_mencoes)`)
+      if (scenario.measure !== "agregado" && scenario.base === "total_mencoes") problems.push(`${where}: base de menções só existe na soma dos dois votos`)
     }
+  } else if (stimulated.some((scenario) => scenario.base != null || scenario.measure != null)) {
+    problems.push(`${where}: medida e base são exclusivas do Senado`)
   }
   // Distinct notes are required among stimulated scenarios that measure the same thing.
   const byMeasure = new Map<string, string[]>()
@@ -177,9 +188,13 @@ export function validarRodada(rodada: RodadaColetada, aliases: DecisoesAlias): s
       labels.add(result.raw_label)
       if (!(result.raw_label in decisions)) problems.push(`${where}: sem decisão de alias para "${result.raw_label}" (escopo ${escopoAlias(rodada)})`)
     }
-    // Two mentions per voter: the aggregate Senate measure can reach 200%.
-    const limit = cargo === "Senador" && scenario.measure === "agregado" ? 202 : TOTAL_UM_VOTO
-    if (total > limit) problems.push(`${where}: cenário ${scenario.kind} ${scenario.measure ?? ""} ${scenario.note ?? ""} soma ${total.toFixed(1)}%`)
+    // Consistency with the declared base: two mentions per respondent add up to well over 100%;
+    // mentions rescaled to 100% or a single vote cannot pass it.
+    const somaDoisVotos = cargo === "Senador" && scenario.measure === "agregado" && scenario.base === "total_amostra"
+    const [minimo, maximo] = somaDoisVotos ? [MINIMO_SOMA_DOIS_VOTOS, MAXIMO_SOMA_DOIS_VOTOS] : [0, TOTAL_UM_VOTO]
+    if (total > maximo || total < minimo) {
+      problems.push(`${where}: cenário ${scenario.kind} ${scenario.measure ?? ""} ${scenario.base ?? ""} ${scenario.note ?? ""} soma ${total.toFixed(1)}%, incompatível com a base declarada`)
+    }
   }
   return problems
 }

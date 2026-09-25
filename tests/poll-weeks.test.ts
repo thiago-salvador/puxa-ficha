@@ -188,6 +188,11 @@ test("Senado faz média entre institutos da mesma medida e separa voto ou base d
   const mentionsA = structuredClone(first)
   mentionsA.scenario.comparabilityKey = "2026|Senador|SP|1|agregado|lista-a|total_mencoes"
   assert.equal(groupWeeklyPollSeries([mentionsA, mentions]).length, 1, "menções reduzidas a 100% fazem média entre si")
+  mentionsA.scenario.labelRaw = "rótulo de uma rodada, com Fulano"
+  assert.equal(groupWeeklyPollSeries([mentionsA, mentions])[0].label,
+    "Intenção de voto estimulada para o Senado, primeiro e segundo voto somados e reduzidos a 100%; percentuais do total de menções",
+    "rótulo da série sai de medida e base, não da nota de uma rodada")
+  assert.equal(groupWeeklyPollSeries([first])[0].label, "Intenção de voto estimulada para o Senado, primeiro voto; percentuais do total de entrevistados")
   const aggregateRespondents = structuredClone(mentions)
   aggregateRespondents.id = "G-2026-09-10"
   aggregateRespondents.scenario.comparabilityKey = "2026|Senador|SP|1|agregado|lista-b|total_amostra"

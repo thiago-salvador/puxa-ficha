@@ -119,6 +119,9 @@ describe("catálogo e loader de pesquisas do Senado", () => {
   })
 
   it("exige registro publicado; método, denominador e enunciado seguem a regra de governador", () => {
+    for (const code of ["BR-01234/2026", "RJ-01234/2026", "SP-1234/2026", "SP-01234/2022"]) {
+      rejects(() => parse({ pesquisas: [pesquisa({ registration: { code: { value: code, status: "publicado" }, url: { value: "https://example.test/registro", status: "publicado" } } })] }), /não é da UF SP/)
+    }
     const missingRegistration = parse({ pesquisas: [pesquisa({ registration: { code: { value: null, status: "indeterminado" }, url: { value: null, status: "indeterminado" } } })] })
     assert.deepEqual(selecionarSenadoPolls(missingRegistration, "SP"), [])
     const missingMethod = parse({ pesquisas: [pesquisa({ method: { value: null, status: "indeterminado" } })] })
