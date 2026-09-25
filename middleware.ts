@@ -20,43 +20,23 @@ import {
 const applyProductionHttpsHeaders =
   process.env.VERCEL === "1" || process.env.PF_FORCE_PRODUCTION_SECURITY_HEADERS === "1"
 
-function createCspNonce() {
-  return Buffer.from(crypto.randomUUID()).toString("base64")
-}
-
 function frameAncestorsForPath(pathname: string): "'none'" | "*" {
   return pathname === "/embed" || pathname.startsWith("/embed/") ? "*" : "'none'"
 }
 
-function contentSecurityPolicyForRequest(request: NextRequest, nonce: string): string {
-  return buildContentSecurityPolicy({
-    nonce,
-    frameAncestors: frameAncestorsForPath(request.nextUrl.pathname),
-    applyProductionHttpsHeaders,
-  })
-}
-
+/**
+ * Só para respostas geradas aqui (404 de guarda, redirect de acesso). Páginas
+ * servidas pelo Next recebem a mesma política estática via next.config.ts.
+ * Não há mais nonce: ver src/lib/content-security-policy.ts.
+ */
 function withContentSecurityPolicy(request: NextRequest, response: Response): Response {
-  const nonce = createCspNonce()
-  response.headers.set("Content-Security-Policy", contentSecurityPolicyForRequest(request, nonce))
-  return response
-}
-
-function nextWithContentSecurityPolicy(request: NextRequest) {
-  const nonce = createCspNonce()
-  const csp = contentSecurityPolicyForRequest(request, nonce)
-  const requestHeaders = new Headers(request.headers)
-  requestHeaders.set("x-nonce", nonce)
-  requestHeaders.set("Content-Security-Policy", csp)
-  // A colinha contém escolhas na query. O layout omite o beacon desta rota.
-  requestHeaders.set("x-pf-private-colinha", request.nextUrl.pathname === "/colinha" ? "1" : "0")
-
-  const response = NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  })
-  response.headers.set("Content-Security-Policy", csp)
+  response.headers.set(
+    "Content-Security-Policy",
+    buildContentSecurityPolicy({
+      frameAncestors: frameAncestorsForPath(request.nextUrl.pathname),
+      applyProductionHttpsHeaders,
+    }),
+  )
   return response
 }
 
@@ -107,52 +87,66 @@ function candidatoNotFoundResponse() {
 
 const CANDIDATO_SLUG_PATTERN = /^[a-z0-9][a-z0-9-]*$/
 
+/**
+ * Lista de slugs em memória da instância, por 5 minutos. O `cache-control` da
+ * rota interna não segurava na prática: `/api/candidato-slugs` rodou 45 mil
+ * vezes em 3 dias, uma por visita a ficha. Com Fluid a instância é reusada
+ * entre requests, então a lista é buscada poucas vezes por janela. Falha e
+ * lista vazia não entram no cache (mesma regra fail-open de antes), e buscas
+ * simultâneas dividem a mesma promise.
+ */
+const CANDIDATO_SLUGS_TTL_MS = 5 * 60 * 1000
+let candidatoSlugsCache: { slugs: Set<string>; expiresAt: number } | null = null
+let candidatoSlugsInFlight: Promise<Set<string> | null> | null = null
+
+async function fetchCandidatoSlugs(request: NextRequest): Promise<Set<string> | null> {
+  const url = new URL("/api/candidato-slugs", request.nextUrl.origin)
+  const res = await fetch(url, {
+    headers: { "x-middleware-internal": "candidato-slugs" },
+    signal: AbortSignal.timeout(1500),
+  })
+  if (!res.ok) return null
+  const payload = (await res.json()) as { slugs?: unknown }
+  if (!Array.isArray(payload.slugs) || payload.slugs.length === 0) return null
+  return new Set(payload.slugs.filter((value): value is string => typeof value === "string"))
+}
+
+/** Só para testes: o cache é por instância e atravessaria os casos. */
+export function resetCandidatoSlugsCacheForTests() {
+  candidatoSlugsCache = null
+  candidatoSlugsInFlight = null
+}
+
+async function getCandidatoSlugs(request: NextRequest): Promise<Set<string> | null> {
+  const now = Date.now()
+  if (candidatoSlugsCache && candidatoSlugsCache.expiresAt > now) return candidatoSlugsCache.slugs
+  if (!candidatoSlugsInFlight) {
+    candidatoSlugsInFlight = fetchCandidatoSlugs(request)
+      .then((slugs) => {
+        if (slugs) candidatoSlugsCache = { slugs, expiresAt: Date.now() + CANDIDATO_SLUGS_TTL_MS }
+        return slugs
+      })
+      .catch(() => null)
+      .finally(() => {
+        candidatoSlugsInFlight = null
+      })
+  }
+  return candidatoSlugsInFlight
+}
+
 async function isValidCandidatoSlug(request: NextRequest, slug: string): Promise<boolean> {
   if (!CANDIDATO_SLUG_PATTERN.test(slug) || slug.length > 80) {
     return false
   }
-  try {
-    const url = new URL("/api/candidato-slugs", request.nextUrl.origin)
-    // Sem `next: { revalidate, tags }` de proposito. Dentro do middleware essas
-    // duas opcoes NAO fazem nada: o Next monta um work unit store do tipo
-    // `request`, e o fetch instrumentado so acumula tag e revalidate quando o
-    // store e de cache ou de prerender (packages/next/src/server/lib/patch-fetch.ts).
-    // Sem config explicita de fetchCache, o mesmo arquivo ainda liga
-    // `autoNoCache`. Ou seja: nao havia cache de Data Cache aqui para 300s
-    // governar, e `revalidateTag("public-candidatos")` nunca alcancou esta
-    // chamada. Ter as opcoes escritas dava a impressao contraria.
-    //
-    // A frescura real vem de duas coisas:
-    //   1. o `cache-control` da propria resposta, respeitado pelo CDN, que e
-    //      quem atende esta chamada: lista saudavel sai com
-    //      `public, max-age=60, s-maxage=300, stale-while-revalidate=600`;
-    //      falha e lista vazia saem `no-store` e nao ficam no CDN;
-    //   2. o `unstable_cache` de `getCandidatoSlugStaticParams` (1h, tag
-    //      `public-candidatos`), com SENADO_CACHE_VARIANT na chave. A rota e
-    //      `force-dynamic`, sem ISR; o cache de CDN e por deployment, e trocar
-    //      a flag do Senado na Vercel exige redeploy.
-    // Teto de 1500ms porque este fetch está no caminho de TODA requisição a
-    // /candidato/*: sem ele, uma conexão pendurada segura a rota mais quente do
-    // site até o limite do runtime. O TimeoutError cai no catch abaixo, que já é
-    // fail-open, então o pior caso vira "o page render decide", não indisponibilidade.
-    const res = await fetch(url, {
-      headers: { "x-middleware-internal": "candidato-slugs" },
-      signal: AbortSignal.timeout(1500),
-    })
-    if (!res.ok) {
-      // Fail-open: se o endpoint interno falhou, deixa o page render decidir.
-      // Isso evita que um incidente no Supabase transforme todo mundo em 404.
-      return true
-    }
-    const payload = (await res.json()) as { slugs?: unknown }
-    // Fail-open tambem em lista vazia: uma leitura falha/degradada nunca pode
-    // 404-ar toda ficha. Lista legitimamente vazia => nao ha /candidato/* mesmo,
-    // e o page render emite o proprio 404 (review 2026-06-09).
-    if (!Array.isArray(payload.slugs) || payload.slugs.length === 0) return true
-    return payload.slugs.includes(slug)
-  } catch {
-    return true
-  }
+  // Fail-open: endpoint interno falho, lento (teto de 1500ms, esta chamada fica
+  // no caminho de toda /candidato/*) ou lista vazia deixam o page render
+  // decidir, para um incidente no Supabase nunca virar 404 em toda ficha
+  // (review 2026-06-09). Sem `next: { revalidate, tags }` no fetch: dentro do
+  // middleware essas opções não fazem nada (patch-fetch.ts só acumula tag com
+  // store de cache ou prerender).
+  const slugs = await getCandidatoSlugs(request)
+  if (!slugs) return true
+  return slugs.has(slug)
 }
 
 async function guardCandidatoRoute(request: NextRequest): Promise<NextResponse | null> {
@@ -365,15 +359,11 @@ export async function middleware(request: NextRequest) {
   switch (match?.guard.id) {
     case "preview-access": {
       const response = await protectPreviewRoute(request)
-      return response
-        ? withContentSecurityPolicy(request, response)
-        : nextWithContentSecurityPolicy(request)
+      return response ? withContentSecurityPolicy(request, response) : NextResponse.next()
     }
     case "internal-access": {
       const response = await protectInternalRoute(request, match.prefix)
-      return response
-        ? withContentSecurityPolicy(request, response)
-        : nextWithContentSecurityPolicy(request)
+      return response ? withContentSecurityPolicy(request, response) : NextResponse.next()
     }
     case "candidate-slug": {
       const response = await guardCandidatoRoute(request)
@@ -392,9 +382,12 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  return nextWithContentSecurityPolicy(request)
+  return NextResponse.next()
 }
 
+// Só as rotas com guarda. Até 2026-09-25 havia um catch-all aqui para pôr
+// nonce de CSP em toda página: 287 mil execuções de middleware em 3 dias sem
+// guarda nenhuma a aplicar. A CSP agora vem estática do next.config.ts.
 export const config = {
   matcher: [
     "/preview/:path*",
@@ -403,6 +396,7 @@ export const config = {
     "/candidato/:path*",
     "/rankings/:path*",
     "/uf/:path*",
-    "/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|.*\\..*).*)",
+    // Guarda do Senado: /senado exato; /uf/xx/senado já cai em /uf/:path*.
+    "/senado",
   ],
 }

@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import { Inter, Anton } from "next/font/google"
-import { headers } from "next/headers"
 import { SITE_URL } from "@/lib/metadata"
 import { getPreviewMetadataRobots } from "@/lib/preview-indexing"
 import "./globals.css"
@@ -23,14 +22,11 @@ export const metadata: Metadata = {
   robots: getPreviewMetadataRobots(),
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  // Keeps CSP nonce rendering request-scoped; Next applies the nonce to framework scripts.
-  await headers()
-
   return (
     <html lang="pt-BR" className={`${inter.variable} ${anton.variable}`}>
       <head>
