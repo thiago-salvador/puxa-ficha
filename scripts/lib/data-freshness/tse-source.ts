@@ -284,6 +284,7 @@ export function parseOfficialFichaRows(bytes: Uint8Array): OfficialFichaRow[] {
       cargo,
       uf: (row.SG_UF ?? "").trim().toUpperCase(),
       nome_urna: row.NM_URNA_CANDIDATO ?? "",
+      nome_civil: row.NM_CANDIDATO ?? "",
       partido_sigla: row.SG_PARTIDO ?? "",
       numero_urna: row.NR_CANDIDATO ?? "",
       sq_coligacao: row.SQ_COLIGACAO ?? "",

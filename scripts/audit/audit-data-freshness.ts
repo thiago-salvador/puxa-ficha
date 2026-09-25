@@ -324,6 +324,17 @@ function attachPublishedProfiles(
   }));
 }
 
+/** Aviso, não falha: nome civil (NM_CANDIDATO) diferente do banco ou do seed. Só slugs. */
+function nomeCivilMarkdown(checks: FichaTseComparison): string {
+  const { nome_civil_divergente_banco: banco, nome_civil_divergente_seed: seed } = checks.counts;
+  if (banco === 0 && seed === 0) return "- Nome civil igual ao TSE no banco e no seed\n";
+  const lista = checks.fichas
+    .filter((row) => row.nome_civil?.banco === "divergente" || row.nome_civil?.seed === "divergente")
+    .map((row) => `${row.slug} (${[row.nome_civil?.banco === "divergente" ? "banco" : null, row.nome_civil?.seed === "divergente" ? "seed" : null].filter(Boolean).join("+")})`)
+    .join(", ");
+  return `- Aviso: nome civil diferente do TSE em ${banco} ficha(s) no banco e ${seed} no seed; valores oficiais em diff.json (ficha_checks). ${lista}\n`;
+}
+
 function fichaChecksMarkdown(checks: FichaTseComparison | null): string {
   if (!checks) return "";
   const { counts } = checks;
@@ -337,6 +348,7 @@ function fichaChecksMarkdown(checks: FichaTseComparison | null): string {
     `- Identidade sem registro oficial por SQ+cargo+UF: ${counts.identidade_sem_match}\n` +
     `- Fichas com divergência que exige revisão: ${counts.bloqueantes}\n` +
     `- Fichas só com divergência informativa (sites ou vice): ${counts.com_divergencia_informativa}\n` +
+    nomeCivilMarkdown(checks) +
     (blocking.length > 0
       ? `\n| Ficha | Cargo | UF | Checks |\n|---|---|---|---|\n${rows}\n`
       : "")
@@ -440,6 +452,20 @@ async function auxiliaryResource<T>(
         error: error instanceof Error ? error.message : String(error),
       },
     };
+  }
+}
+
+/** nome_completo do seed por slug, para o aviso de nome civil; vazio se o seed não abrir. */
+function readSeedNames(path: string): Map<string, string> {
+  try {
+    const seed = JSON.parse(readFileSync(path, "utf8")) as Array<{ slug?: unknown; nome_completo?: unknown }>;
+    return new Map(
+      (Array.isArray(seed) ? seed : [])
+        .filter((row) => typeof row.slug === "string" && typeof row.nome_completo === "string")
+        .map((row) => [row.slug as string, row.nome_completo as string]),
+    );
+  } catch {
+    return new Map();
   }
 }
 
@@ -740,10 +766,14 @@ async function main(): Promise<void> {
     (profile) => !profile.ready,
   );
   const publicSlugs = new Set(publicProfiles.map((profile) => profile.slug));
+  const seedNames = readSeedNames(resolve("data/candidatos.json"));
   const fichaChecks: FichaTseComparison | null =
     fichaSources && Array.isArray(published.public_candidacies)
       ? compareFichasTse({
-          fichas: published.public_candidacies,
+          fichas: published.public_candidacies.map((ficha) => ({
+            ...ficha,
+            seed_nome_completo: seedNames.get(ficha.slug) ?? null,
+          })),
           official: fichaSources.rows,
           julgamentos: fichaSources.julgamentos,
           sitesTse: fichaSources.sites,

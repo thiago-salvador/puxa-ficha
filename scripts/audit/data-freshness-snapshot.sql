@@ -163,6 +163,7 @@ WITH candidacies AS (
     'office', c.cargo_disputado,
     'uf', c.estado,
     'nome_urna', c.nome_urna,
+    'nome_completo', c.nome_completo,
     'partido_sigla', c.partido_sigla,
     'situacao_candidatura', c.situacao_candidatura,
     'numero_urna', c.numero_urna,

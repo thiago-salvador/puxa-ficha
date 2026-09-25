@@ -253,3 +253,31 @@ test("detalhe não carrega nome nem texto livre, e a linha usa o candidato_id da
   assert.ok(linhas.every((linha) => linha.escopo === "candidato"))
   assert.deepEqual(linhas.map((linha) => linha.volume).sort(), [1, 1, 1])
 })
+
+test("nome civil do TSE diferente do banco ou do seed vira aviso, sem reprovar nem mudar o recibo", () => {
+  const withName = official.map((row) => row.sq_candidato === "250001" ? { ...row, nome_civil: "FULANO DE TAL SILVA" } : row)
+  const igual = compare({
+    fichas: [ficha({ slug: "fulano-sp", nome_completo: "Fulano de Tal Silva", seed_nome_completo: "Fulano de Tál Silva" })],
+    official: withName,
+  })
+  assert.deepEqual(igual.fichas[0]?.nome_civil, { banco: "ok", seed: "ok" })
+  assert.equal(igual.counts.nome_civil_divergente_banco, 0)
+
+  const divergente = compare({
+    fichas: [ficha({ slug: "fulano-sp", nome_completo: "Fulano de Tal Silva", seed_nome_completo: "Fulana Outra Pessoa" })],
+    official: withName,
+  })
+  const row = divergente.fichas[0]!
+  assert.deepEqual(row.nome_civil, { banco: "ok", seed: "divergente", oficial: "FULANO DE TAL SILVA" })
+  assert.equal(divergente.counts.nome_civil_divergente_seed, 1)
+  // Controle: aviso não reprova, não entra em checks nem no recibo.
+  assert.equal(divergente.status, "ok")
+  assert.deepEqual(row.blocking, [])
+  assert.equal("nome_civil" in row.checks, false)
+  const { recibos } = recibosAuditoriaCandidatura({ source, fichas: divergente.fichas })
+  assert.equal(recibos[0]?.resultado, "encontrado")
+  assert.doesNotMatch(recibos[0]?.detalhe ?? "", /FULANO DE TAL|Fulana/)
+
+  const semSeed = compare({ fichas: [ficha({ slug: "fulano-sp", nome_completo: null })], official: withName })
+  assert.deepEqual(semSeed.fichas[0]?.nome_civil, { banco: "ausente", seed: "ausente" })
+})

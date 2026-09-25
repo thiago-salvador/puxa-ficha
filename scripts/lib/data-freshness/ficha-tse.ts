@@ -34,6 +34,8 @@ export interface OfficialFichaRow {
   /** SG_UF como vem no pacote (BR para Presidente). */
   uf: string
   nome_urna: string
+  /** NM_CANDIDATO: nome civil registrado. Só entra no aviso de nome civil. */
+  nome_civil?: string
   partido_sigla: string
   numero_urna: string
   sq_coligacao: string
@@ -47,6 +49,10 @@ export interface PublishedFicha {
   uf: string | null
   /** Nome de exibição editorial; não entra na comparação. */
   nome_urna?: string | null
+  /** candidatos.nome_completo; comparado com NM_CANDIDATO só como aviso. */
+  nome_completo?: string | null
+  /** nome_completo do seed data/candidatos.json, anexado pela auditoria. */
+  seed_nome_completo?: string | null
   partido_sigla: string | null
   situacao_candidatura: string | null
   numero_urna: string | null
@@ -79,6 +85,12 @@ export interface FichaTseResult {
   blocking: string[]
   /** Motivos sem nome completo, CPF ou texto livre da fonte. */
   notes: string[]
+  /**
+   * Nome civil (NM_CANDIDATO) contra banco e seed. Aviso: não reprova, não
+   * entra em checks nem no recibo por ficha. O valor oficial só aparece quando
+   * há divergência, para o dono do seed corrigir.
+   */
+  nome_civil?: { banco: CheckCore; seed: CheckCore; oficial?: string }
 }
 
 export interface FichaTseComparison {
@@ -89,6 +101,8 @@ export interface FichaTseComparison {
     identidade_sem_match: number
     bloqueantes: number
     com_divergencia_informativa: number
+    nome_civil_divergente_banco: number
+    nome_civil_divergente_seed: number
   }
   fichas: FichaTseResult[]
 }
@@ -294,6 +308,13 @@ export function compareFichasTse(input: CompareFichasTseInput): FichaTseComparis
       chapa_vice: compareChapaVice(cargo!, official, ficha.vice_sq_candidatos ?? [], officialBySq),
     }
     const blocking = BLOCKING_CHECKS.filter((name) => checks[name] !== "ok")
+    const nomeBanco = compareText(official.nome_civil, ficha.nome_completo)
+    const nomeSeed = compareText(official.nome_civil, ficha.seed_nome_completo)
+    const nomeCivil = official.nome_civil === undefined ? undefined : {
+      banco: nomeBanco,
+      seed: nomeSeed,
+      ...(nomeBanco === "divergente" || nomeSeed === "divergente" ? { oficial: official.nome_civil } : {}),
+    }
     results.push({
       slug: ficha.slug,
       candidato_id: ficha.candidato_id,
@@ -305,6 +326,7 @@ export function compareFichasTse(input: CompareFichasTseInput): FichaTseComparis
       divergences: Object.values(checks).filter((value) => value === "divergente").length,
       blocking: [...blocking],
       notes,
+      ...(nomeCivil ? { nome_civil: nomeCivil } : {}),
     })
   }
 
@@ -321,6 +343,8 @@ export function compareFichasTse(input: CompareFichasTseInput): FichaTseComparis
       com_divergencia_informativa: results.filter((row) =>
         row.blocking.length === 0 && Object.values(row.checks).some((value) =>
           value !== "ok" && value !== "nao_aplicavel")).length,
+      nome_civil_divergente_banco: results.filter((row) => row.nome_civil?.banco === "divergente").length,
+      nome_civil_divergente_seed: results.filter((row) => row.nome_civil?.seed === "divergente").length,
     },
     fichas: results,
   }
