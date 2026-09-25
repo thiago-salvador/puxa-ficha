@@ -655,6 +655,20 @@
       "ate": "20260924180000",
       "allowlist": "scripts/audit/allowlist-issue-483-arruda-20260924.json",
       "divida": null
+    },
+    {
+      "nome": "sites-tse-2026-receipts-20260924",
+      "desde": "20260924204852",
+      "ate": "20260924204852",
+      "allowlist": "scripts/audit/allowlist-sites-tse-2026-receipts-20260924.json",
+      "divida": null
+    },
+    {
+      "nome": "situacao-tse-2026-receipts-20260924",
+      "desde": "20260924205031",
+      "ate": "20260924205031",
+      "allowlist": "scripts/audit/allowlist-situacao-tse-2026-receipts-20260924.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

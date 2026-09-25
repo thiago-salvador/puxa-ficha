@@ -1,0 +1,15 @@
+{
+  "versao": "2026-09-24",
+  "fonte": "TSE, rede_social_candidato_2026.zip, SHA256 88f3168f4fe8f1758c9153b548c7194dfe37aa76f5e08eb7acd731dbf31ac176, unido por SQ à coorte pública de 513 perfis.",
+  "motivo": "Registrar 513 recibos por candidato para o snapshot versionado de sites: 476 com URL publicável, 19 com entrada sem URL e 18 vazios confirmados. A migration confere slug, SQ e tamanho da coorte antes da escrita; não altera dados de candidatos.",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260924204852",
+      "campos": ["fonte", "escopo", "alvo", "candidato_id", "executado_em", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    }
+  ]
+}
