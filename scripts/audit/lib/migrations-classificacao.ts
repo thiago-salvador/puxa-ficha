@@ -193,6 +193,51 @@ export function temGuardDeAusencia(corpo: string): boolean {
 }
 
 /**
+ * Guard do harness de replay descartável. Exige o teste executável da flag,
+ * RETURN no mesmo IF e que o bloco venha antes do primeiro acesso a candidatos.
+ * Comentários são removidos, mas literais são preservados para validar os
+ * valores exatos de current_setting.
+ */
+export function temGuardDeReplayDescartavel(sql: string): boolean {
+  const corpo = stripComentariosPreservandoLiterais(sql)
+  const guard = /\bIF\s+current_setting\s*\(\s*'pf\.replay'\s*,\s*true\s*\)\s*=\s*'true'\s+THEN\s+(?:RAISE\s+NOTICE\s+'(?:[^']|'')*'\s*;\s*)?RETURN\s*;\s*END\s+IF\s*;/gi
+  const acessoCandidatos = /\b(?:FROM|JOIN|UPDATE|INTO\s+\w+\s+FROM)\s+(?:public\.)?candidatos\b/gi
+  const primeiroAcesso = acessoCandidatos.exec(corpo)?.index ?? Number.POSITIVE_INFINITY
+  for (const m of corpo.matchAll(guard)) {
+    if (m.index! < primeiroAcesso) return true
+  }
+  return false
+}
+
+function stripComentariosPreservandoLiterais(sql: string): string {
+  let resultado = ""
+  let literal = false
+  for (let i = 0; i < sql.length; i++) {
+    const atual = sql[i]
+    if (atual === "'" && literal && sql[i + 1] === "'") {
+      resultado += "''"
+      i++
+    } else if (atual === "'") {
+      literal = !literal
+      resultado += atual
+    } else if (!literal && atual === "-" && sql[i + 1] === "-") {
+      while (i < sql.length && sql[i] !== "\n") i++
+      resultado += "\n"
+    } else if (!literal && atual === "/" && sql[i + 1] === "*") {
+      i += 2
+      let profundidade = 1
+      while (i < sql.length && profundidade > 0) {
+        if (sql[i] === "/" && sql[i + 1] === "*") { profundidade++; i++ }
+        else if (sql[i] === "*" && sql[i + 1] === "/") { profundidade--; i++ }
+        i++
+      }
+      resultado += " "
+    } else resultado += atual
+  }
+  return resultado
+}
+
+/**
  * Palavras que o regex de DML captura mas que não são tabela.
  *
  * `DO UPDATE SET` de um `ON CONFLICT` casa como `UPDATE set`, e é o caso que
@@ -282,7 +327,7 @@ export function classificarMigration(arquivo: string, sql: string): Classificaca
   // "posso replayar isto num banco vazio", e quem quebra é o dado.
   const classe: ClasseMigration = tabelasDeConteudo.length > 0 ? "curadoria" : "schema"
 
-  const temGuard = temGuardDeAusencia(corpo)
+  const temGuard = temGuardDeAusencia(corpo) || temGuardDeReplayDescartavel(sql)
   const temRaiseException = RE_RAISE_EXCEPTION.test(corpo)
   const leCandidatos = RE_LE_CANDIDATOS.test(corpo) || /\bINTO\s+\w+\s*\n?\s*FROM\s+(?:public\.)?candidatos\b/i.test(corpo)
   const temDdlPersistente = RE_DDL_PERSISTENTE.test(corpo)
