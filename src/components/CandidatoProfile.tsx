@@ -28,6 +28,7 @@ import {
   processoPodeContarComoCriminal,
   processoTemporalLabel,
   processStatusRepeatsDescription,
+  processosBuscaAvisoComLinhas,
   processosOverviewDisplay,
   urlPublicaDoProcesso,
 } from "@/lib/processos-display"
@@ -356,10 +357,15 @@ export function CandidatoProfile({
   const financiamento = ficha.financiamento ?? []
   const financiamentoEleicoes = ficha.financiamento_eleicoes ?? null
   const processos = ficha.processos ?? []
+  const processosBuscaAviso = processos.length > 0
+    ? processosBuscaAvisoComLinhas(ficha.processos_verificacao, new Date(), ficha.processos_omitidos_sem_fonte_oficial ?? 0)
+    : null
   const processosOverview = processosOverviewDisplay(
     ficha.total_processos,
     processos.filter(processoPodeContarComoCriminal).length,
     ficha.processos_verificacao,
+    new Date(),
+    ficha.processos_omitidos_sem_fonte_oficial ?? 0,
   )
   const sancoes = ficha.sancoes_administrativas ?? []
   const votos = ficha.votos ?? []
@@ -999,8 +1005,9 @@ export function CandidatoProfile({
                 {/* Sem "(0)": zero aqui é ausência de verificação, não contagem apurada. */}
                 <SectionLabel>{processos.length > 0 ? `Processos judiciais (${processos.length})` : "Processos judiciais"}</SectionLabel>
                 <SectionTitle>{fixedCopy.justiceSituation}</SectionTitle>
+                {processosBuscaAviso && <NoticePanel className="mt-4" tone="caution" {...processosBuscaAviso} />}
                 {processos.length === 0 && (
-                  <EmptyState {...getProcessosEmptyState(ficha.processos_verificacao)} />
+                  <EmptyState {...getProcessosEmptyState(ficha.processos_verificacao, new Date(), ficha.processos_omitidos_sem_fonte_oficial ?? 0)} />
                 )}
                 {/* Group by type */}
                 {(["procedural", "criminal", "improbidade", "eleitoral", "civil", "historico"] as const).map((tipo) => {

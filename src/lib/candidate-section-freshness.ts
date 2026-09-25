@@ -752,19 +752,26 @@ export function buildSectionFreshness(
     .sort()
     .at(-1) ?? null
   const latestVoteDate = parseDate(latestVoteDateString)
-  const federalProjectsNotApplicable = resolveFederalSectionNotApplicable(
+  // A candidatura ao Congresso não prova mandato. Um mandato registrado, por
+  // outro lado, contradiz um recibo que afirma ausência de mandato federal.
+  const hasFederalMandate = ["Deputado Federal", "Senador"].includes(candidato.cargo_atual ?? "") ||
+    data.historico.some((row) =>
+      !isHistoricoCandidaturaRow(row) &&
+      ["Deputado Federal", "Senador"].includes(row.cargo_canonico ?? row.cargo),
+    )
+  const federalProjectsNotApplicable = hasFederalMandate ? null : resolveFederalSectionNotApplicable(
     "projetos_lei",
     data.federalAcervoReceipts,
   )
-  const federalVotesNotApplicable = resolveFederalSectionNotApplicable(
+  const federalVotesNotApplicable = hasFederalMandate ? null : resolveFederalSectionNotApplicable(
     "votos_candidato",
     data.federalAcervoReceipts,
   )
-  const federalExpensesNotApplicable = resolveFederalSectionNotApplicable(
+  const federalExpensesNotApplicable = hasFederalMandate ? null : resolveFederalSectionNotApplicable(
     "gastos_parlamentares",
     data.federalAcervoReceipts,
   )
-  const federalExpensesTemporalNotApplicable = resolveFederalExpenseTemporalNotApplicable(
+  const federalExpensesTemporalNotApplicable = hasFederalMandate ? null : resolveFederalExpenseTemporalNotApplicable(
     data.gastosParlamentaresAplicabilidade,
   )
   const patrimonioSeriesFreshness = buildPatrimonioSeriesFreshness(data.patrimonioEleicoes)

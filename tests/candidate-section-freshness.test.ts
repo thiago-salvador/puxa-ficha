@@ -82,6 +82,28 @@ test("recibo federal completo marca legislação, votos e gastos como não aplic
   assert.equal(freshness.gastos_executivo?.status, "missing")
 })
 
+test("histórico de candidatura federal não invalida recibo de ausência de mandato", () => {
+  const freshness = buildSectionFreshness(candidato, {
+    ...emptyData,
+    historico: [{ tipo_evento: "candidatura", cargo: "Senador" } as never],
+    federalAcervoReceipts: receipts(),
+  })
+  assert.equal(freshness.projetos_lei?.status, "not_applicable")
+  assert.equal(freshness.votos_candidato?.status, "not_applicable")
+  assert.equal(freshness.gastos_parlamentares?.status, "not_applicable")
+})
+
+test("mandato federal registrado impede badge not_applicable contraditório", () => {
+  const freshness = buildSectionFreshness(candidato, {
+    ...emptyData,
+    historico: [{ tipo_evento: "mandato", cargo: "Senador" } as never],
+    federalAcervoReceipts: receipts(),
+  })
+  assert.equal(freshness.projetos_lei?.status, "missing")
+  assert.equal(freshness.votos_candidato?.status, "missing")
+  assert.equal(freshness.gastos_parlamentares?.status, "missing")
+})
+
 test("recibo incompleto ou inválido não fecha a seção", () => {
   const invalid = receipts()
   invalid.senado = {

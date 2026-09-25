@@ -397,6 +397,14 @@ function stableJson(value: unknown): string {
   return JSON.stringify(value) ?? "undefined"
 }
 
+function sameAssetMultiset(left: unknown, right: unknown): boolean {
+  if (!Array.isArray(left) || !Array.isArray(right) || left.length !== right.length) return false
+  const sorted = (items: unknown[]) => items.map(stableJson).sort()
+  const before = sorted(left)
+  const after = sorted(right)
+  return before.every((item, index) => item === after[index])
+}
+
 export function decidePatrimonioLegacyReconciliation(input: {
   contextCount: number
   legacyRows: LegacyPatrimonioRow[]
@@ -412,7 +420,7 @@ export function decidePatrimonioLegacyReconciliation(input: {
   }
   const legacy = input.legacyRows[0]
   const legacyTotal = Number(legacy.valor_total)
-  if (!Number.isFinite(legacyTotal) || legacyTotal !== input.valorTotal || stableJson(legacy.bens) !== stableJson(input.bens)) {
+  if (!Number.isFinite(legacyTotal) || legacyTotal !== input.valorTotal || !sameAssetMultiset(legacy.bens, input.bens)) {
     return { action: "block", reason: "legado sem SQ diverge do total ou dos itens do contexto nominal" }
   }
   return { action: "update_legacy", id: legacy.id, expectedTotal: legacyTotal, expectedBens: legacy.bens }

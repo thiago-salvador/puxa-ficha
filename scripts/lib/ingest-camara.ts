@@ -4,6 +4,7 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSy
 import { dirname, resolve } from "node:path"
 import {
   GASTOS_RECENT_ANOS,
+  classificarReciboProposicoes,
   hasFullVotacaoIdCoverage,
   hasGastosRecentYearsComplete,
   pareceCorteHistorico,
@@ -1019,23 +1020,15 @@ async function registrarCardinalidadeProposicoes(
     `projeto_lei=${outcome.projetosLei} outras=${outcome.outrasProposicoes}`
   const url = `${API}/proposicoes?idDeputadoAutor=${encodeURIComponent(String(idCamara))}&ordem=DESC&ordenarPor=id`
 
-  if (outcome.declarado == null) {
-    await registrarColeta({
-      fonte: FONTE_CAMARA_PROPOSICOES,
-      alvo: slug,
-      resultado: "indeterminado",
-      detalhe: `cardinalidade nao declarada pela fonte; ${detalhe}`,
-      url,
-    })
-    return
-  }
-
+  const resultado = classificarReciboProposicoes(outcome)
   await registrarColeta({
     fonte: FONTE_CAMARA_PROPOSICOES,
     alvo: slug,
-    resultado: outcome.declarado > 0 ? "encontrado" : "vazio_confirmado",
-    volume: outcome.declarado,
-    detalhe,
+    resultado,
+    volume: resultado === "encontrado" ? (outcome.declarado ?? 0) : 0,
+    detalhe: resultado === "indeterminado" && outcome.declarado == null
+      ? `cardinalidade nao declarada pela fonte; ${detalhe}`
+      : detalhe,
     url,
   })
 }

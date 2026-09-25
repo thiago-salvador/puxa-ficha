@@ -330,7 +330,13 @@ describe("fail-soft legítimo continua cacheável", () => {
 
   it("degradação parcial entrega o payload e NÃO cacheia: resumo sem enriquecimento", async () => {
     const api = await loadApi()
-    stubFetchByTable({ candidatos_publico: () => okJson([CANDIDATO_ROW]) }, failResponse)
+    stubFetchByTable(
+      {
+        candidatos_publico: () => okJson([CANDIDATO_ROW]),
+        processos: () => okJson([]),
+      },
+      failResponse
+    )
 
     const resource = await api.getCandidatosComResumoResource()
 
@@ -361,6 +367,11 @@ describe("fail-soft legítimo continua cacheável", () => {
               pontos_atencao: [{ titulo: "a" }, { titulo: "b" }],
             },
           ]),
+        processos: () => okJson([
+          { id: "proc-1", candidato_id: CANDIDATO_ROW.id, numero_processo: "40049106520258260506", url_fonte: "https://www.tjsp.jus.br/processos/40049106520258260506" },
+          { id: "proc-2", candidato_id: CANDIDATO_ROW.id, numero_processo: "40049106520258260506", url_fonte: "https://www.tjsp.jus.br/processos/40049106520258260506" },
+          { id: "proc-3", candidato_id: CANDIDATO_ROW.id, numero_processo: "40049106520258260506", url_fonte: "https://www.tjsp.jus.br/processos/40049106520258260506" },
+        ]),
         // Série de patrimônio do aviso F3 (patrimonio_atipico) responde vazia.
         patrimonio: () => okJson([]),
       },

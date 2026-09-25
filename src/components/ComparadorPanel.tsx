@@ -53,6 +53,8 @@ const VALID_UF_SIGLA = new Set<string>(BRAZIL_STATES.map((s) => s.sigla))
 
 interface Props {
   candidatos: CandidatoComparavel[]
+  /** Instante do render no servidor, serializado para a primeira hidratação. */
+  referenceNow: string
   /** Slugs de candidatos a selecionar na montagem (ex.: vindo de `?c1=&c2=` no quiz). */
   initialSelectedSlugs?: string[]
   /** Valor inicial de `?eixo=` vindo do servidor. */
@@ -85,10 +87,11 @@ function resolveInitialSelectedIds(
   return next
 }
 
-export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo }: Props) {
+export function ComparadorPanel({ candidatos, referenceNow, initialSelectedSlugs, initialEixo }: Props) {
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
+  const processosNow = useMemo(() => new Date(referenceNow), [referenceNow])
   const hubScope = useMemo(() => {
     const m = pathname.match(/^\/uf\/([a-z]{2})(?:\/senado)?\/?$/i)
     if (!m) return null
@@ -274,7 +277,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                 aria-pressed={selected}
                 aria-label={`${comparadorToggleLabel(candidato.nome_urna, selected)}. ${
                   candidato.idade ? `${candidato.idade} anos, ` : ""
-                }${processosResumoLabel(candidato.total_processos, candidato.processos_verificacao)}, evolução patrimonial ${formatEvolucaoPatrimonialPct(candidato.evolucao_patrimonial_pct)}`}
+                }${processosResumoLabel(candidato.total_processos, candidato.processos_verificacao, processosNow, candidato.processos_omitidos_sem_fonte_oficial ?? 0)}, evolução patrimonial ${formatEvolucaoPatrimonialPct(candidato.evolucao_patrimonial_pct)}`}
                 className={`flex w-full items-center gap-3 rounded-[12px] border px-4 py-3.5 text-left transition-all ${
                   selected
                     ? "border-foreground bg-foreground/[0.03]"
@@ -315,7 +318,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                   className="flex max-w-[40%] shrink-0 flex-col items-end gap-0.5 whitespace-normal text-right text-[length:var(--text-eyebrow)] font-bold text-muted-foreground"
                 >
                   {candidato.idade && <span>{candidato.idade} anos</span>}
-                  <span>{processosResumoLabel(candidato.total_processos, candidato.processos_verificacao)}</span>
+                  <span>{processosResumoLabel(candidato.total_processos, candidato.processos_verificacao, processosNow, candidato.processos_omitidos_sem_fonte_oficial ?? 0)}</span>
                   <span>
                     {formatEvolucaoPatrimonialPct(candidato.evolucao_patrimonial_pct)}
                   </span>
@@ -468,7 +471,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                         </span>
                       </td>
                       <td className="py-3 pr-4 text-right text-[length:var(--text-body-sm)] font-bold tabular-nums text-foreground">
-                        {processosListaCount(candidato.total_processos, candidato.processos_verificacao)}
+                        {processosListaCount(candidato.total_processos, candidato.processos_verificacao, processosNow, candidato.processos_omitidos_sem_fonte_oficial ?? 0)}
                       </td>
                       <td className="py-3 text-right text-[length:var(--text-body-sm)] font-bold tabular-nums text-foreground">
                         {candidato.alertas_graves}
@@ -691,13 +694,15 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                   </CompRow>
                   <CompRow label="Processos" icon={<Scale className="size-3.5" />} highlight={false}>
                     {selectedCandidatos.map((candidato) => {
-                      const values = selectedCandidatos.map((item) => item.total_processos)
+                      const values = selectedCandidatos.map((item) =>
+                        (item.processos_omitidos_sem_fonte_oficial ?? 0) > 0 ? null : item.total_processos,
+                      )
                       const isMax = processosMaiorVerificadoNaComparacao(
-                        candidato.total_processos,
+                        (candidato.processos_omitidos_sem_fonte_oficial ?? 0) > 0 ? null : candidato.total_processos,
                         values,
                       )
 
-                      const display = processosOverviewDisplay(candidato.total_processos, undefined, candidato.processos_verificacao)
+                      const display = processosOverviewDisplay(candidato.total_processos, undefined, candidato.processos_verificacao, processosNow, candidato.processos_omitidos_sem_fonte_oficial ?? 0)
 
                       return (
                         <td key={candidato.id} className="py-3 text-center">

@@ -715,6 +715,8 @@ export interface FichaCandidato extends Candidato {
   doadores_recorrentes?: import("@/lib/doador-recorrente-publico").DoadorRecorrentePublico[] | null;
   votos: VotoCandidato[];
   processos: Processo[];
+  /** Linhas judiciais omitidas do público por falta de URL com CNJ oficial exato. */
+  processos_omitidos_sem_fonte_oficial?: number;
   pontos_atencao: PontoAtencao[];
   projetos_lei: ProjetoLei[];
   /** Total materializado; `projetos_lei` pode conter apenas a prévia inicial. */
@@ -806,6 +808,7 @@ export interface CandidatoComparavel {
   formacao: string | null;
   formacao_instituicao?: string | null;
   total_processos: number;
+  processos_omitidos_sem_fonte_oficial?: number;
   processos_verificacao?: ProcessosVerificacao | null;
   mudancas_partido: number;
   alertas_graves: number;

@@ -37,6 +37,7 @@ import type {
 } from "@/lib/types"
 
 const VERIFICADO_EM = "2026-08-07T18:27:03.374Z"
+const PROCESSOS_VERIFICADO_EM = new Date().toISOString()
 
 function fonteBemCandidato(ano: number) {
   return `https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_${ano}.zip`
@@ -414,7 +415,8 @@ test("X10: zero verificado, fonte ausente e fonte falha não se confundem após 
     const verificacao = item.resultado ? {
       fonte: "DJEN",
       resultado: item.resultado,
-      executado_em: VERIFICADO_EM,
+      executado_em: PROCESSOS_VERIFICADO_EM,
+      escopo: "candidato",
       detalhe: "Consulta de teste no recorte documentado.",
       url: "https://comunica.pje.jus.br/consulta",
     } : null

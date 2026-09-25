@@ -24,6 +24,7 @@ import { anosDePleitoDisputado } from "@/lib/pleitos-disputados"
 import { buildFinanciamentoEleicoes } from "@/lib/financiamento-eleicoes"
 import { publicDoadorRecorrente } from "@/lib/doador-recorrente-publico"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
+import { urlFonteJudicialEspecifica } from "@/lib/djen-consulta-url"
 import { pareceNomeDeInstituicao } from "@/lib/formacao-display"
 import { sanitizePublicText } from "@/lib/public-text"
 import { formatProcessSummaryLabel } from "@/lib/ui-labels"
@@ -691,6 +692,11 @@ function publicSocialLinks(value: Record<string, unknown> | null | undefined) {
 
 export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
   const cargoProveniencia = resolveCargoDisputadoProveniencia(ficha)
+  const processosBrutos = ficha.processos ?? []
+  const processosPublicos = processosBrutos.filter((row) =>
+    Boolean(urlFonteJudicialEspecifica(row.url_fonte, row.numero_processo)),
+  )
+  const processosOmitidos = (ficha.processos_omitidos_sem_fonte_oficial ?? 0) + processosBrutos.length - processosPublicos.length
 
   return {
     id: ficha.id,
@@ -757,7 +763,8 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
     doadores_recorrentes:
       ficha.doadores_recorrentes == null ? null : ficha.doadores_recorrentes.map(publicDoadorRecorrente),
     votos: (ficha.votos ?? []).map(publicVoto),
-    processos: (ficha.processos ?? []).map(publicProcesso),
+    processos: processosPublicos.map(publicProcesso),
+    processos_omitidos_sem_fonte_oficial: processosOmitidos,
     pontos_atencao: (ficha.pontos_atencao ?? []).map(publicPontoAtencao),
     projetos_lei: (ficha.projetos_lei ?? []).map(publicProjetoLei),
     projetos_lei_total: ficha.projetos_lei_total ?? (ficha.projetos_lei ?? []).length,
@@ -789,8 +796,8 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
     sancoes_administrativas: (ficha.sancoes_administrativas ?? []).map(publicSancao),
     noticias: (ficha.noticias ?? []).map(publicNoticia),
     indicadores_estaduais: (ficha.indicadores_estaduais ?? []).map(publicIndicador),
-    total_processos: ficha.total_processos,
-    processos_criminais: (ficha.processos ?? []).filter(
+    total_processos: processosPublicos.length,
+    processos_criminais: processosPublicos.filter(
       processoPodeContarComoCriminal,
     ).length,
     total_mudancas_partido: ficha.total_mudancas_partido,

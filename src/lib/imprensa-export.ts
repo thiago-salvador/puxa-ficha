@@ -26,7 +26,9 @@ const MAIN_COLUMNS = [
   "chapa_fonte_sha256",
   "chapa_snapshot_em",
   "processos_estado",
+  "processos_busca_estado",
   "processos_quantidade",
+  "processos_quantidade_omitida",
 ] as const
 
 export type ImprensaExportKind = "csv" | "json"
@@ -53,7 +55,9 @@ function mainCells(row: ImprensaRow): Cell[] {
     row.chapa.fonteSha256,
     row.chapa.snapshotEm,
     row.processos?.estado ?? null,
+    row.processos?.buscaEstado ?? null,
     row.processos?.quantidade ?? null,
+    row.processos?.quantidadeOmitida ?? 0,
   ]
 }
 
@@ -103,7 +107,9 @@ export function serializeImprensaJson(dataset: ImprensaDataset): string {
       chapa: { estado: row.chapa.estado, viceNome: row.chapa.viceNomeOriginal, fonteUrl: row.chapa.fonteUrl, fonteSha256: row.chapa.fonteSha256, snapshotEm: row.chapa.snapshotEm },
       processos: {
         estado: row.processos.estado,
+        buscaEstado: row.processos.buscaEstado,
         quantidade: row.processos.quantidade,
+        quantidadeOmitida: row.processos.quantidadeOmitida,
       },
     })),
   })

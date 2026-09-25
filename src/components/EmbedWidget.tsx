@@ -85,6 +85,8 @@ export function EmbedWidget({ ficha }: { ficha: FichaCandidato }) {
     ficha.total_processos,
     ficha.processos_criminais,
     ficha.processos_verificacao,
+    new Date(),
+    ficha.processos_omitidos_sem_fonte_oficial ?? 0,
   )
   const mudancasPartido = ficha.mudancas_partido ?? []
   const fichaUrl = `${SITE_ORIGIN}/candidato/${ficha.slug}`

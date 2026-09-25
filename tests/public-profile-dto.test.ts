@@ -129,14 +129,14 @@ function fixtureProfile(): FichaCandidato {
         candidato_id: "cand-1",
         tipo: "civil",
         tribunal: "TJ",
-        numero_processo: "0000000-00.2020.0.00.0000",
+        numero_processo: "4004910-65.2025.8.26.0506",
         descricao: "Processo público",
         status: "em_andamento",
         data_inicio: null,
         data_decisao: null,
         gravidade: "baixa",
         fonte: "DJEN",
-        url_fonte: "https://comunica.pje.jus.br/consulta?numeroProcesso=00000000020200000000",
+        url_fonte: "https://comunica.pje.jus.br/consulta?numeroProcesso=40049106520258260506",
       },
     ],
     pontos_atencao: [
@@ -279,6 +279,29 @@ function fixtureProfile(): FichaCandidato {
     section_freshness: {},
   }
 }
+
+it("omite linha judicial sem página oficial da lista e da contagem pública", () => {
+  const ficha = fixtureProfile()
+  ficha.processos = [
+    ...ficha.processos!,
+    { ...ficha.processos![0], id: "proc-sem-fonte", url_fonte: "https://noticias.example/processo" },
+  ]
+  ficha.total_processos = 2
+  const dto = toPublicCandidatoProfileDto(ficha)
+  assert.equal(dto.processos.length, 1)
+  assert.equal(dto.total_processos, 1)
+  assert.equal(dto.processos[0].url_fonte, "https://comunica.pje.jus.br/consulta?numeroProcesso=40049106520258260506")
+})
+
+it("DTO preserva a contagem omitida para impedir zero falso", () => {
+  const ficha = fixtureProfile()
+  ficha.processos = [{ ...ficha.processos![0], url_fonte: "https://www.tjsp.jus.br/Processos" }]
+  ficha.total_processos = 1
+  const dto = toPublicCandidatoProfileDto(ficha)
+  assert.equal(dto.processos.length, 0)
+  assert.equal(dto.total_processos, 0)
+  assert.equal(dto.processos_omitidos_sem_fonte_oficial, 1)
+})
 
 describe("public profile DTO", () => {
   it("mascara sequências document-like em strings publicáveis", () => {

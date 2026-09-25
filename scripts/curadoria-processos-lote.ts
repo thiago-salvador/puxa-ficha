@@ -9,6 +9,7 @@
 import { execFileSync } from "node:child_process"
 import {
   closeSync,
+  chmodSync,
   createWriteStream,
   existsSync,
   mkdirSync,
@@ -82,6 +83,7 @@ interface SeedCandidato {
 
 export interface Comunicacao {
   id: number
+  ativo?: boolean
   data_disponibilizacao?: string
   siglaTribunal?: string
   nomeClasse?: string
@@ -292,6 +294,128 @@ function flags(argv: string[]): Map<string, string> {
     .map((x) => { const i = x.indexOf("="); return [x.slice(2, i), x.slice(i + 1)] }))
 }
 
+function flagPresente(argv: string[], nome: string): boolean {
+  return argv.some((valor) => valor === `--${nome}` || valor.startsWith(`--${nome}=`))
+}
+
+export interface CandidatoCoorteAtual {
+  id: string
+  slug: string
+}
+
+export interface ReciboProcessosAtual {
+  candidato_id?: string | null
+  alvo?: string | null
+  fonte?: string | null
+  escopo?: string | null
+  executado_em?: string | null
+  resultado?: string | null
+}
+
+const RESULTADOS_RECIBO_VALIDOS = new Set(["encontrado", "vazio_confirmado", "indeterminado", "erro", "bloqueado"])
+
+/**
+ * Recorta somente a coorte atual sem recibo. O resultado `indeterminado` não
+ * reabre busca: ele já tem recibo e só pode voltar ao protocolo com fonte nova
+ * ou segundo identificador, decidido fora deste coletor.
+ */
+export function selecionarAlvosSemRecibo(
+  candidatos: CandidatoCoorteAtual[],
+  recibos: ReciboProcessosAtual[],
+): string[] {
+  const ids = new Set(candidatos.map((c) => c.id))
+  const slugPorId = new Map(candidatos.map((c) => [c.id, c.slug]))
+  const comRecibo = new Set(
+    recibos
+      .filter((r) => {
+        if (typeof r.candidato_id !== "string" || !ids.has(r.candidato_id)) return false
+        if (r.alvo !== slugPorId.get(r.candidato_id)) return false
+        if (r.fonte !== "processos-curadoria" || r.escopo !== "candidato") return false
+        if (typeof r.executado_em !== "string" || !Number.isFinite(Date.parse(r.executado_em)) || Date.parse(r.executado_em) > Date.now()) return false
+        return typeof r.resultado === "string" && RESULTADOS_RECIBO_VALIDOS.has(r.resultado)
+      })
+      .map((r) => r.candidato_id as string),
+  )
+  return candidatos.filter((c) => !comRecibo.has(c.id)).map((c) => c.slug).sort()
+}
+
+interface CoorteAtualPreflight {
+  candidatos: CandidatoBanco[]
+  alvos: string[]
+  cnjsPorSlug: Map<string, Array<{ numero_cnj: string; tribunal: string }>>
+  residuais: string[]
+}
+
+interface ProcessoCnjAtual {
+  candidato_id?: string | null
+  numero_processo?: string | null
+  tribunal?: string | null
+}
+
+/** A agenda só reabre pendências com um número judicial já conhecido. */
+export function selecionarAlvosComCnj(
+  candidatos: CandidatoCoorteAtual[],
+  recibos: ReciboProcessosAtual[],
+  processos: ProcessoCnjAtual[],
+): { alvos: string[]; cnjsPorSlug: Map<string, Array<{ numero_cnj: string; tribunal: string }>>; residuais: string[] } {
+  const candidatosPorId = new Map(candidatos.map((c) => [c.id, c]))
+  const ultimo = new Map(recibos.filter((r) =>
+    typeof r.candidato_id === "string" && candidatosPorId.has(r.candidato_id)
+    && r.alvo === candidatosPorId.get(r.candidato_id)?.slug
+    && r.fonte === "processos-curadoria" && r.escopo === "candidato"
+    && typeof r.executado_em === "string" && Number.isFinite(Date.parse(r.executado_em))
+    && Date.parse(r.executado_em) <= Date.now() && typeof r.resultado === "string"
+    && RESULTADOS_RECIBO_VALIDOS.has(r.resultado),
+  ).map((r) => [r.candidato_id as string, r.resultado as string]))
+  const cnjsPorSlug = new Map<string, Array<{ numero_cnj: string; tribunal: string }>>()
+  for (const row of processos) {
+    const c = row.candidato_id ? candidatosPorId.get(row.candidato_id) : undefined
+    if (!c || !new Set([undefined, "indeterminado", "erro", "bloqueado"]).has(ultimo.get(c.id))) continue
+    if (!cnjValido(row.numero_processo ?? "") || !row.tribunal?.trim()) continue
+    const anteriores = cnjsPorSlug.get(c.slug) ?? []
+    if (!anteriores.some((p) => p.numero_cnj === row.numero_processo)) {
+      cnjsPorSlug.set(c.slug, [...anteriores, { numero_cnj: row.numero_processo!, tribunal: row.tribunal.trim() }])
+    }
+  }
+  const pendentes = candidatos.filter((c) => new Set([undefined, "indeterminado", "erro", "bloqueado"]).has(ultimo.get(c.id)))
+  return {
+    alvos: pendentes.map((c) => c.slug).filter((slug) => cnjsPorSlug.has(slug)).sort(),
+    cnjsPorSlug,
+    residuais: pendentes.map((c) => c.slug).filter((slug) => !cnjsPorSlug.has(slug)).sort(),
+  }
+}
+
+export function assertPreflightNotTruncated(count: number, limit: number, source: string): void {
+  if (count >= limit) throw new Error(`preflight ${source}: limite ${limit} atingido; coorte incompleta`)
+}
+
+async function lerCoorteAtualParaDryRun(somenteCnj = false): Promise<CoorteAtualPreflight> {
+  const { data, error } = await supabase.from("candidatos")
+    .select("id,slug,nome_completo,nome_urna,cargo_disputado,cargo_atual,estado,partido_sigla,biografia,sq_candidato_2026")
+    .eq("publicavel", true).neq("status", "removido").order("slug").limit(1000)
+  if (error) throw new Error(`preflight candidatos: ${error.message}`)
+  const candidatos = (data ?? []) as CandidatoBanco[]
+  if (candidatos.length === 0) throw new Error("preflight candidatos: coorte publica vazia")
+  assertPreflightNotTruncated(candidatos.length, 1000, "candidatos")
+  const { data: recibos, error: recibosError } = await supabase.from("coleta_log_ultima")
+    .select("candidato_id,alvo,resultado,executado_em,escopo,fonte")
+    .eq("fonte", "processos-curadoria").eq("escopo", "candidato")
+    .limit(2000)
+  if (recibosError) throw new Error(`preflight recibos processos-curadoria: ${recibosError.message}`)
+  assertPreflightNotTruncated((recibos ?? []).length, 2000, "recibos processos-curadoria")
+  if (!somenteCnj) return {
+    candidatos,
+    alvos: selecionarAlvosSemRecibo(candidatos, (recibos ?? []) as ReciboProcessosAtual[]),
+    cnjsPorSlug: new Map(),
+    residuais: [],
+  }
+  const { data: processos, error: processosError } = await supabase.from("processos")
+    .select("candidato_id,numero_processo,tribunal").limit(2000)
+  if (processosError) throw new Error(`preflight processos com CNJ: ${processosError.message}`)
+  assertPreflightNotTruncated((processos ?? []).length, 2000, "processos com CNJ")
+  return { candidatos, ...selecionarAlvosComCnj(candidatos, (recibos ?? []) as ReciboProcessosAtual[], (processos ?? []) as ProcessoCnjAtual[]) }
+}
+
 export function lotesSolicitados(argv: string[]): number[] {
   const opcoes = flags(argv)
   const lote = opcoes.get("lote")
@@ -426,7 +550,7 @@ async function carregarIdentidadesTse(
   for (const candidato of candidatos) {
     const ids = Object.entries(seeds.get(candidato.slug)?.ids?.tse_sq_candidato ?? {})
       .sort((a, b) => Number(b[0]) - Number(a[0]))
-    const latest = ids[0]
+    const latest = ids[0] ?? (candidato.sq_candidato_2026 ? ["2026", candidato.sq_candidato_2026] as const : undefined)
     if (!latest) continue
     porAno.set(latest[0], [...(porAno.get(latest[0]) ?? []), { candidato, sq: latest[1] }])
   }
@@ -682,6 +806,41 @@ async function buscarDjenSerializado(
   }
 }
 
+let falhasNumeroConsecutivas = 0
+const DJEN_NUMERO_SUSPENSO = "DJEN por CNJ suspenso após duas falhas consecutivas"
+
+async function buscarDjenNumeroSerializado(numero: string): Promise<{ count: number; items: Comunicacao[] }> {
+  const anterior = filaDjen
+  let liberar: () => void = () => undefined
+  filaDjen = new Promise<void>((resolve) => { liberar = resolve })
+  await anterior
+  try {
+    if (falhasNumeroConsecutivas >= 2) throw new Error(DJEN_NUMERO_SUSPENSO)
+    const digits = numero.replace(/\D/g, "")
+    const base = `${DJEN}/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=${digits}`
+    const itens: Comunicacao[] = []
+    let total = 0
+    for (let pagina = 1; pagina <= 10; pagina += 1) {
+      const resposta = validarRespostaDjen(await fetchJson<unknown>(`${base}&pagina=${pagina}`, undefined, 1, 20_000))
+      if (pagina > 1 && resposta.count !== total) throw new Error("DJEN por CNJ: total mudou durante paginacao")
+      total = resposta.count
+      if (total > 1000) throw new Error("DJEN por CNJ: limite paginavel excedido")
+      itens.push(...resposta.items)
+      if (itens.length >= total) break
+      if (resposta.items.length === 0) throw new Error("DJEN por CNJ: pagina vazia antes do total")
+    }
+    if (itens.length !== total) throw new Error("DJEN por CNJ: resposta truncada")
+    falhasNumeroConsecutivas = 0
+    return { count: total, items: itens }
+  } catch (erro) {
+    if (!(erro instanceof Error && erro.message === DJEN_NUMERO_SUSPENSO)) falhasNumeroConsecutivas += 1
+    throw erro
+  } finally {
+    await new Promise((resolve) => setTimeout(resolve, 300))
+    liberar()
+  }
+}
+
 export function contextoPolitico(
   c: CandidatoBanco,
   _snap: SnapshotCandidato,
@@ -726,6 +885,33 @@ export function cpfCompativelNoTexto(texto: string, nomeCompleto: string, cpf: s
     `(?:${nomeRegex}.{0,100}\\bCPF(?:\\s+N)?\\s+${cpfRegex}\\b|\\bCPF(?:\\s+N)?\\s+${cpfRegex}.{0,100}${nomeRegex})`,
     "i",
   ).test(texto)
+}
+
+/** Segundo identificador estrito para monitoramento por CNJ: CPF ou cargo estadual com UF. */
+export function identificadorForteNoTexto(
+  c: CandidatoBanco,
+  texto: string,
+  nomeCompleto: string,
+  identidade: Record<string, unknown>,
+): boolean {
+  const cpf = String(identidade.cpf ?? "").replace(/\D/g, "")
+  if (cpfCompativelNoTexto(texto, nomeCompleto, cpf)) return true
+  const uf = UF_NOME[normalizar(c.estado)]
+  if (!uf) return false
+  const cargos = [c.cargo_disputado, c.cargo_atual].map(normalizar)
+  const generos: string[] = []
+  if (cargos.some((cargo) => /^GOVERNADOR(?:A)?$/.test(cargo))) generos.push("GOVERNADOR(?:A)?")
+  if (cargos.some((cargo) => /^VICE GOVERNADOR(?:A)?$/.test(cargo))) generos.push("VICE GOVERNADOR(?:A)?")
+  if (cargos.some((cargo) => /\bSENADOR(?:A)?\b/.test(cargo))) generos.push("SENADOR(?:A)?")
+  if (cargos.some((cargo) => /\bDEPUTAD[OA] ESTADUAL\b/.test(cargo))) generos.push("DEPUTAD[OA] ESTADUAL")
+  if (generos.length === 0) return false
+  const nome = escaparRegex(normalizar(nomeCompleto))
+  const cargoUf = `(?:${generos.join("|")})\\s+(?:DO|DA|DE|PELO|PELA|POR)\\s+(?:ESTADO\\s+(?:DO|DA|DE)\\s+)?${escaparRegex(uf)}`
+  const t = normalizar(texto)
+  // Atribuicao gramatical direta: nenhum nome ou frase livre entre a parte e o cargo/UF.
+  const depois = `\\b${nome}\\b\\s+(?:(?:O|A|EX|ATUAL|ENTAO)\\s+|(?:NA CONDICAO DE|QUE EXERCE O CARGO DE)\\s+)?${cargoUf}\\b`
+  const antes = `\\b${cargoUf}\\b\\s+(?:(?:O|A)\\s+)?${nome}\\b`
+  return new RegExp(`${depois}|${antes}`).test(t)
 }
 
 export async function chaveDatajud(): Promise<string> {
@@ -1022,6 +1208,105 @@ export async function pesquisarCandidato(
   }
 }
 
+/** Readback dirigido: CNJ já persistido, destinatário exato e contexto político oficial. Nunca busca por nome. */
+export async function pesquisarCandidatoPorCnjs(
+  c: CandidatoBanco,
+  snap: SnapshotCandidato,
+  seed: SeedCandidato | undefined,
+  identidadesTse: Map<string, Record<string, unknown>>,
+  cnjs: Array<{ numero_cnj: string; tribunal: string }>,
+  buscarNumero: (numero: string) => Promise<{ count: number; items: Comunicacao[] }> = buscarDjenNumeroSerializado,
+  confirmar: typeof confirmarIdentidade = confirmarIdentidade,
+): Promise<RegistroCandidato> {
+  let identidade: Record<string, unknown>
+  try { identidade = await confirmar(c, seed, identidadesTse) }
+  catch (erro) { identidade = { status: "bloqueada", motivo: erro instanceof Error ? erro.message : String(erro) } }
+  const identidadePersistida = { ...identidade }
+  delete identidadePersistida.cpf
+  const dataConsulta = new Date().toISOString()
+  const base: RegistroCandidato = {
+    slug: c.slug, nome_urna: c.nome_urna, nome_completo: c.nome_completo,
+    cargo: c.cargo_disputado, uf: c.estado, partido: c.partido_sigla,
+    prioridade: prioridade(snap), banco: { coleta_log: "pendente" },
+    identidade: identidadePersistida,
+    busca: { fonte: "DJEN/PJe-CNJ", consultado_em: dataConsulta, termos: "numeroProcesso; sem busca por nome", cnjs_previstos: cnjs.map((x) => x.numero_cnj) },
+    ocorrencias_ambiguas: [], homonimos_descartados: [], processos: [],
+    classificacao: "bloqueado", motivo: "sem atribuicao judicial suficiente",
+  }
+  if (identidade.status !== "confirmada") {
+    base.motivo = "identidade eleitoral nao confirmada; consulta judicial nao iniciada"
+    base.ocorrencias_ambiguas = cnjs.map(({ numero_cnj, tribunal }) => ({ numero_cnj, tribunal, motivo: "nao consultado: identidade eleitoral nao confirmada" }))
+    base.busca = { ...base.busca, cnjs_respondidos: [], cnjs_nao_consultados: cnjs.map((x) => x.numero_cnj), parcial: true }
+    return base
+  }
+  let falhas = 0
+  let falhasConsecutivas = 0
+  let semAtribuicao = 0
+  const respondidos: string[] = []
+  const naoConsultados: string[] = []
+  const nome = typeof identidade.nome === "string" ? identidade.nome : c.nome_completo
+  for (const [indice, { numero_cnj: numero, tribunal }] of cnjs.entries()) {
+    const url = `${DJEN}/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=${numero.replace(/\D/g, "")}`
+    try {
+      const resposta = await buscarNumero(numero)
+      if (!Number.isInteger(resposta.count) || !Array.isArray(resposta.items) || resposta.count !== resposta.items.length) {
+        throw new Error("DJEN por CNJ: resposta incompleta")
+      }
+      respondidos.push(numero)
+      falhasConsecutivas = 0
+      const itens = resposta.items.filter((item) =>
+        item.ativo === true && String(item.numero_processo ?? item.numeroprocessocommascara ?? "").replace(/\D/g, "") === numero.replace(/\D/g, ""),
+      )
+      const atribuivel = itens.find((item) =>
+        (item.destinatarios ?? []).some((parte) => normalizar(parte.nome) === normalizar(nome))
+        && identificadorForteNoTexto(c, item.texto ?? "", nome, identidade),
+      )
+      if (atribuivel) {
+        base.processos.push({
+          numero_cnj: numero, tribunal, classe: atribuivel.nomeClasse ?? null,
+          orgao: atribuivel.nomeOrgao ?? null,
+          polo: atribuivel.destinatarios?.find((parte) => normalizar(parte.nome) === normalizar(nome))?.polo ?? null,
+          url,
+          contexto_identidade: "destinatario exato e CPF igual ou cargo estadual ligado a UF na comunicacao oficial; texto omitido",
+          datajud: { status: "nao_consultado_em_monitoramento" },
+        })
+      } else {
+        semAtribuicao += 1
+        base.ocorrencias_ambiguas.push({ numero_cnj: numero, tribunal, motivo: "CNJ oficial sem segundo identificador suficiente para atribuir a pessoa" })
+      }
+    } catch (erro) {
+      const mensagem = erro instanceof Error ? erro.message : String(erro)
+      const fonteSuspensa = mensagem === DJEN_NUMERO_SUSPENSO
+      if (fonteSuspensa) {
+        naoConsultados.push(numero)
+        base.ocorrencias_ambiguas.push({ numero_cnj: numero, tribunal, motivo: "nao consultado: DJEN suspenso apos duas falhas consecutivas" })
+      } else {
+        falhas += 1
+        falhasConsecutivas += 1
+        base.ocorrencias_ambiguas.push({ numero_cnj: numero, tribunal, motivo: "fonte oficial indisponivel ou incompleta", erro: mensagem })
+      }
+      if (fonteSuspensa || falhasConsecutivas >= 2) {
+        for (const restante of cnjs.slice(indice + 1)) {
+          naoConsultados.push(restante.numero_cnj)
+          base.ocorrencias_ambiguas.push({ numero_cnj: restante.numero_cnj, tribunal: restante.tribunal, motivo: "nao consultado: interrompido apos duas falhas na fonte" })
+        }
+        break
+      }
+    }
+  }
+  base.busca = { ...base.busca, url: `${DJEN}/api/v1/comunicacao`, falhas, sem_atribuicao: semAtribuicao, cnjs_respondidos: respondidos, cnjs_nao_consultados: naoConsultados, parcial: falhas > 0 || naoConsultados.length > 0 }
+  if (falhas > 0 || naoConsultados.length > 0) {
+    base.classificacao = "erro"
+    base.motivo = "readback DJEN por CNJ parcial ou falhou; achados parciais nao fecham o candidato"
+  } else if (base.processos.length > 0) {
+    base.classificacao = "encontrado"
+    base.motivo = "CNJ, destinatario e contexto oficiais; atribuicao e publicacao exigem revisao independente"
+  } else {
+    base.motivo = "CNJs conhecidos sem segundo identificador judicial suficiente; nao confirmar vazio"
+  }
+  return base
+}
+
 function resumo(lotes: Evidencia["lotes"]): Record<string, number> {
   const candidatos = lotes.flatMap((l) => l.candidatos)
   return {
@@ -1040,6 +1325,7 @@ function gravarAtomico(path: string, dados: Evidencia): void {
   const texto = `${JSON.stringify(dados, null, 2)}\n`
   writeFileSync(temp, texto, { encoding: "utf8", mode: 0o600 })
   renameSync(temp, path)
+  chmodSync(path, 0o600)
 }
 
 async function adquirirLockCheckpoint(
@@ -1130,21 +1416,53 @@ async function main(): Promise<void> {
   const argv = process.argv.slice(2)
   const opcoes = flags(argv)
   const targetSlugs = slugsSolicitados(argv)
-  const numeros = targetSlugs ? [1] : lotesSolicitados(argv)
+  const coorteAtual = flagPresente(argv, "coorte-atual")
+  const dryRun = flagPresente(argv, "dry-run")
+  const somenteCnj = flagPresente(argv, "somente-cnj")
+  if (somenteCnj && (!coorteAtual || !dryRun)) throw new Error("--somente-cnj exige --coorte-atual --dry-run")
+  if (coorteAtual && (!opcoes.has("evidence") || !opcoes.has("cache"))) throw new Error("--coorte-atual exige --evidence e --cache explicitos")
+  if (coorteAtual && targetSlugs) throw new Error("--coorte-atual nao pode ser combinado com --slugs")
+  if (coorteAtual && (opcoes.has("lote") || opcoes.has("lotes"))) throw new Error("--coorte-atual nao pode ser combinado com --lote ou --lotes")
+  if (coorteAtual && !dryRun) throw new Error("--coorte-atual exige --dry-run; a coorte atual so pode ser sondada sem escrita")
+  const numeros = coorteAtual || targetSlugs ? [1] : lotesSolicitados(argv)
   const snapshotPath = resolve(opcoes.get("snapshot") ?? "/tmp/2026-08-05-processos-inicial-snapshot.json")
   const evidencePath = resolve(opcoes.get("evidence") ?? "~/.disposable-html/2026-08-05-puxa-ficha-processos-curadoria.evidence.json".replace("~", process.env.HOME ?? ""))
   const cache = resolve(opcoes.get("cache") ?? "/tmp/puxa-ficha-processos-curadoria-cache")
+  const coortePreflight = coorteAtual ? await lerCoorteAtualParaDryRun(somenteCnj) : null
+  if (coortePreflight && coortePreflight.alvos.length === 0) {
+    console.log(JSON.stringify({
+      modo: somenteCnj ? "dry-run-coorte-atual-somente-cnj" : "dry-run-coorte-atual-sem-recibo",
+      coorte: coortePreflight.candidatos.length,
+      alvos: 0,
+      residuais: coortePreflight.residuais.length,
+      residuais_sem_cnj: somenteCnj ? coortePreflight.residuais : undefined,
+      resumo: { classificados: 0, encontrado: 0, vazio_confirmado: 0, bloqueado: 0, erro: 0 },
+      evidencia: "nao-sobrescrita",
+    }, null, 2))
+    return
+  }
   await executarLotesEmOrdem(
     numeros,
     async (selecionados) => {
-      const snapshot = JSON.parse(readFileSync(snapshotPath, "utf8")) as SnapshotCandidato[]
-      const iniciais = ordenar(snapshot.filter((c) => c.processos === 0))
-      if (!targetSlugs && iniciais.length !== 185) throw new Error(`coorte inicial inesperada: ${iniciais.length}`)
+      let iniciais: SnapshotCandidato[]
+      let currentTargets: string[] | null = null
+      if (coorteAtual) {
+        currentTargets = coortePreflight!.alvos
+        iniciais = coortePreflight!.candidatos.map((c) => ({
+          slug: c.slug, nome_urna: c.nome_urna, cargo_disputado: c.cargo_disputado,
+          estado: c.estado ?? undefined, partido_sigla: c.partido_sigla ?? undefined, processos: 0,
+        }))
+      } else {
+        const snapshot = JSON.parse(readFileSync(snapshotPath, "utf8")) as SnapshotCandidato[]
+        iniciais = ordenar(snapshot.filter((c) => c.processos === 0))
+        if (!targetSlugs && iniciais.length !== 185) throw new Error(`coorte inicial inesperada: ${iniciais.length}`)
+      }
       const initialBySlug = new Map(iniciais.map((candidate) => [candidate.slug, candidate]))
       const missingTargets = targetSlugs?.filter((slug) => !initialBySlug.has(slug)) ?? []
       if (missingTargets.length > 0) throw new Error(`alvos ausentes ou já materializados: ${missingTargets.join(",")}`)
-      const scopedInitials = targetSlugs ? targetSlugs.map((slug) => initialBySlug.get(slug)!) : iniciais
-      const lotes = targetSlugs
+      const scopedSlugs = coorteAtual ? currentTargets! : targetSlugs
+      const scopedInitials = scopedSlugs ? scopedSlugs.map((slug) => initialBySlug.get(slug)!) : iniciais
+      const lotes = scopedSlugs
         ? new Map([[1, scopedInitials]])
         : new Map(selecionados.map((numero) => {
             const lote = iniciais.slice((numero - 1) * TAMANHO_LOTE, numero * TAMANHO_LOTE)
@@ -1153,7 +1471,7 @@ async function main(): Promise<void> {
           }))
       const slugs = [...lotes.values()].flatMap((lote) => lote.map((c) => c.slug))
       const { data, error } = await supabase.from("candidatos")
-        .select("id,slug,nome_completo,nome_urna,cargo_disputado,cargo_atual,estado,partido_sigla,biografia")
+        .select("id,slug,nome_completo,nome_urna,cargo_disputado,cargo_atual,estado,partido_sigla,biografia,sq_candidato_2026")
         .in("slug", slugs)
       if (error) throw new Error(error.message)
       const candidatosBanco = data as CandidatoBanco[]
@@ -1162,12 +1480,12 @@ async function main(): Promise<void> {
       const identidadesTse = await carregarIdentidadesTse(candidatosBanco, seeds, cache)
       const inventario = await fetchJson<InventarioTribunais[]>(`${DJEN}/api/v1/comunicacao/tribunal`)
       const tribunais = instituicoesAtivas(inventario)
-      const datajudKey = await chaveDatajud()
+      const datajudKey = somenteCnj ? null : await chaveDatajud()
       const anterior: Evidencia | null = existsSync(evidencePath)
         ? JSON.parse(readFileSync(evidencePath, "utf8")) as Evidencia
         : null
-      const snapshotInicialEm = anterior?.snapshot_inicial_em ?? statSync(snapshotPath).mtime.toISOString()
-      return { iniciais: scopedInitials, lotes, banco, seeds, identidadesTse, tribunais, datajudKey, anterior, snapshotInicialEm }
+      const snapshotInicialEm = anterior?.snapshot_inicial_em ?? (coorteAtual ? new Date().toISOString() : statSync(snapshotPath).mtime.toISOString())
+      return { iniciais, lotes, banco, seeds, identidadesTse, tribunais, datajudKey, anterior, snapshotInicialEm }
     },
     async (numero, contexto) => {
       const lote = contexto.lotes.get(numero)
@@ -1175,18 +1493,19 @@ async function main(): Promise<void> {
       const resultados = await processarComDoisWorkers(lote, async (snap) => {
         const c = contexto.banco.get(snap.slug)
         if (!c) throw new Error(`candidato ausente no banco: ${snap.slug}`)
-        const resultado = await pesquisarCandidato(
-          c,
-          snap,
-          contexto.seeds.get(c.slug),
-          contexto.identidadesTse,
-          contexto.tribunais,
-          cache,
-        )
+        const resultado = somenteCnj
+          ? await pesquisarCandidatoPorCnjs(
+            c, snap, contexto.seeds.get(c.slug), contexto.identidadesTse,
+            coortePreflight!.cnjsPorSlug.get(c.slug) ?? [],
+          )
+          : await pesquisarCandidato(
+            c, snap, contexto.seeds.get(c.slug), contexto.identidadesTse,
+            contexto.tribunais, cache,
+          )
         console.error(`[processos] ${c.slug}: ${resultado.classificacao}`)
         return resultado
       })
-      await conferirDatajudResultados(resultados, contexto.datajudKey)
+      if (!somenteCnj) await conferirDatajudResultados(resultados, contexto.datajudKey!)
       return { slugs: lote.map((c) => c.slug), resultados }
     },
     async (numero, lote, contexto) => {
@@ -1194,10 +1513,10 @@ async function main(): Promise<void> {
       const evidencia = await gravarCheckpointConcorrente(evidencePath, {
         lote: { numero, concluido_em: agora, slugs: lote.slugs, candidatos: lote.resultados },
         supabase_ref: "wskpzsobvqwhnbsdsmok",
-        base_commit: targetSlugs
+        base_commit: targetSlugs || coorteAtual
           ? execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim()
           : "022d3ed292b6f0918636c813cf5271e615999809",
-        branch: targetSlugs
+        branch: targetSlugs || coorteAtual
           ? execFileSync("git", ["branch", "--show-current"], { encoding: "utf8" }).trim()
           : "codex/processos-curadoria-20260805",
         snapshot_inicial_em: contexto.snapshotInicialEm,
@@ -1208,6 +1527,9 @@ async function main(): Promise<void> {
           datajud: "https://datajud-wiki.cnj.jus.br/api-publica/",
           tse: TSE_CDN,
           criterio: "docs/criterio-processos-judiciais.md",
+          modo: somenteCnj ? "dry-run-coorte-atual-somente-cnj" : coorteAtual ? "dry-run-coorte-atual-sem-recibo" : "curadoria-lote",
+          regra_indeterminados: "nao_reconsultar_sem_nova_fonte_ou_segundo_identificador",
+          residuais_sem_cnj: somenteCnj ? coortePreflight?.residuais : undefined,
         },
       })
       contexto.anterior = evidencia
