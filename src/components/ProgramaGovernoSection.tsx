@@ -302,6 +302,8 @@ function textoDoEstadoSemVinculo(estado: Exclude<EstadoEvidenciasPrograma, { est
       return compromissoEvidenciaCopy.estado.nenhum_par
     case "avaliados_nao_publicados":
       return compromissoEvidenciaCopy.estado.avaliados_nao_publicados(estado.paresAvaliados)
+    case "vinculos_sem_exibicao":
+      return compromissoEvidenciaCopy.estado.vinculos_sem_exibicao
     case "sem_documento_oficial":
       return compromissoEvidenciaCopy.estado.sem_documento_oficial
     case "nao_processado":
@@ -347,7 +349,7 @@ function ProgramaEvidenciasRelacionadas({
           data-pf-compromisso-evidencias-vazio=""
           role={estado.estado === "erro_leitura" ? "status" : undefined}
         >
-          {estado.estado === "com_vinculos" ? compromissoEvidenciaCopy.estado.erro_leitura : textoDoEstadoSemVinculo(estado)}
+          {estado.estado === "com_vinculos" ? compromissoEvidenciaCopy.estado.fora_dos_temas : textoDoEstadoSemVinculo(estado)}
         </p>
       ) : (
         <ul className="mt-3 space-y-2">
@@ -405,7 +407,12 @@ function ProgramaEvidenciasRelacionadas({
  * em vez de cartão ausente. O texto não afirma nada sobre o TSE além do motivo.
  */
 export function ProgramaGovernoPendente({ pendencia }: { pendencia: ProgramaGovernoPendencia }) {
-  const copy = programaGovernoPendenteCopy[pendencia.motivo]
+  const copy = pendencia.motivo === "registro_duplicado_tse"
+    ? {
+        title: programaGovernoPendenteCopy.registro_duplicado_tse.title,
+        description: programaGovernoPendenteCopy.registro_duplicado_tse.description(formatDate(`${pendencia.consultadoEm}T12:00:00.000Z`)),
+      }
+    : programaGovernoPendenteCopy.nao_coletado
   return (
     <section
       aria-labelledby="programa-governo-pendente-title"
@@ -425,6 +432,19 @@ export function ProgramaGovernoPendente({ pendencia }: { pendencia: ProgramaGove
       </div>
       <h3 className="mt-5 text-base font-semibold text-foreground">{copy.title}</h3>
       <p className="mt-1 max-w-3xl text-sm leading-6 text-muted-foreground">{copy.description}</p>
+      {pendencia.motivo === "registro_duplicado_tse" && (
+        <a
+          href={pendencia.fonteUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 inline-flex min-h-11 items-center gap-2 rounded-[8px] border border-border px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted"
+          data-pf-programa-pendente-fonte=""
+        >
+          <ExternalLink className="size-4" aria-hidden="true" />
+          Abrir pacote oficial do TSE
+          <span className="sr-only">(abre em nova aba)</span>
+        </a>
+      )}
     </section>
   )
 }

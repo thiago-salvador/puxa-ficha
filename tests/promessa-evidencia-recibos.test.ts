@@ -21,7 +21,7 @@ const base = {
   ],
   programaPorSlug: new Map([["com-vinculo", programa("1")], ["barrado", programa("2")], ["sem-par", programa("3")]]),
   pares: [par("c-com", "1", "t1", "p1"), par("c-com", "1", "t2", "p2"), par("c-barrado", "2", "t1", "p3"), par("c-barrado", "2", "t1", "p4")],
-  publicados: [{ candidato_id: "c-com", programa_chave: programa("1"), tema_id: "t1", tipo_evidencia: "projeto_lei", evidencia_ref: "p1" }],
+  publicados: [{ candidato_id: "c-com", programa_chave: programa("1"), tema_id: "t1", tipo_evidencia: "projeto_lei", evidencia_ref: "p1", origem: "cascata" }],
   versao: "c2",
   execucao: "promessa-evidencia:2026-09-25T08:34:00.000Z",
   agora: "2026-09-25T08:34:00.000Z",
@@ -62,7 +62,7 @@ describe("recibo por candidato do processamento promessa x evidência", () => {
     const recibos = montarRecibos({
       ...base,
       pares: [...base.pares, par("c-barrado", "9", "t1", "px")],
-      publicados: [...base.publicados, { candidato_id: "c-barrado", programa_chave: programa("9"), tema_id: "t1", tipo_evidencia: "projeto_lei", evidencia_ref: "px" }],
+      publicados: [...base.publicados, { candidato_id: "c-barrado", programa_chave: programa("9"), tema_id: "t1", tipo_evidencia: "projeto_lei", evidencia_ref: "px", origem: "cascata" }],
     })
     assert.equal(recibos.find((r) => r.alvo === "barrado")!.resultado, "sem_achado_no_escopo")
   })
@@ -70,8 +70,17 @@ describe("recibo por candidato do processamento promessa x evidência", () => {
   it("trava: vínculo publicado fora dos pares atuais impede o recibo", () => {
     assert.throws(() => montarRecibos({
       ...base,
-      publicados: [{ candidato_id: "c-com", programa_chave: programa("1"), tema_id: "t9", tipo_evidencia: "fala", evidencia_ref: "f1" }],
+      publicados: [{ candidato_id: "c-com", programa_chave: programa("1"), tema_id: "t9", tipo_evidencia: "fala", evidencia_ref: "f1", origem: "cascata" }],
     }), /fora dos pares atuais/u)
+  })
+
+  it("vínculo de outra origem (jev_sombra, curadoria) fora dos pares não trava e conta como publicado", () => {
+    const recibos = montarRecibos({
+      ...base,
+      publicados: [...base.publicados, { candidato_id: "c-vazio", programa_chave: programa("3"), tema_id: "t5", tipo_evidencia: "fala", evidencia_ref: "f9", origem: "jev_sombra" }],
+    })
+    const semPar = recibos.find((r) => r.alvo === "sem-par")!
+    assert.deepEqual([semPar.resultado, semPar.volume], ["encontrado", 1])
   })
 
   it("trava: candidato do universo sem programa aprovado", () => {

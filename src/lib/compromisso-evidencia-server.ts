@@ -155,14 +155,14 @@ async function carregarRecibo(db: Cliente, slug: string, candidatoId: string): P
  * lança: erro de leitura vira `erro_leitura`, que a ficha mostra como tal. A
  * view e o recibo são lidos em paralelo.
  */
-export async function getCompromissoEvidenciasEstado(input: {
-  candidatoId: string
-  slug: string
-  programaChave: string
-}): Promise<EstadoEvidenciasPrograma> {
+export async function getCompromissoEvidenciasEstado(
+  input: { candidatoId: string; slug: string; programaChave: string },
+  /** Só para teste: cliente substituto. */
+  deps: { criarCliente?: () => Cliente } = {},
+): Promise<EstadoEvidenciasPrograma> {
   let db: Cliente
   try {
-    db = createServiceRoleSupabaseClient({ cacheMode: "isr" })
+    db = (deps.criarCliente ?? (() => createServiceRoleSupabaseClient({ cacheMode: "isr" })))()
   } catch {
     return { estado: "erro_leitura" }
   }

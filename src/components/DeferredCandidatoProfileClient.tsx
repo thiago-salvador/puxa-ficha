@@ -229,7 +229,7 @@ export function DeferredCandidatoProfileClient({
       pesquisas={pesquisas}
       programaGoverno={programaGoverno}
       compromissoEvidencias={compromissoEvidencias}
-        programaPendente={programaPendente}
+      programaPendente={programaPendente}
       senadoRunningMates={senadoRunningMates}
     />
   ) : (

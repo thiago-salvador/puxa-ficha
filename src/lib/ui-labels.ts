@@ -218,6 +218,8 @@ export const compromissoEvidenciaCopy = {
       n === null
         ? "Encontramos registros públicos do candidato que podiam tratar dos temas do programa, mas nenhum passou nos critérios automáticos de publicação. Isso não significa que não existam."
         : `Avaliamos ${n} ${n === 1 ? "possível vínculo" : "possíveis vínculos"} entre registros públicos do candidato e os temas do programa. Nenhum passou nos critérios automáticos de publicação, o que não significa que não existam.`,
+    vinculos_sem_exibicao: "Há vínculos registrados entre este programa e registros públicos do candidato, mas a fonte deles não pode ser exibida agora.",
+    fora_dos_temas: "Os vínculos registrados não correspondem aos temas da versão atual deste programa.",
     sem_documento_oficial: "Sem programa de governo oficial localizado, não há compromisso para comparar com registros públicos do candidato.",
     nao_processado: "Este programa ainda não foi comparado com os registros públicos do candidato.",
     erro_leitura: "Não foi possível carregar as evidências agora. Isso é uma falha de leitura, não ausência de registro.",
@@ -249,8 +251,9 @@ export const programaGovernoPendenteCopy = {
     description: "O programa de governo desta candidatura ainda não foi coletado pelo Puxa Ficha. Isso não permite concluir que a candidatura não tenha registrado um programa no TSE.",
   },
   registro_duplicado_tse: {
-    title: "Programa não coletado: registro duplicado no TSE",
-    description: "O TSE mantém dois registros de candidatura ativos para este nome, sem um registro único. Até isso ser resolvido, o programa não é coletado, para não atribuir o documento ao registro errado.",
+    title: "Programa ainda não exibido",
+    description: (consultadoEm: string) =>
+      `No pacote oficial de programas de governo do TSE consultado em ${consultadoEm}, o documento desta candidatura aparece sob dois registros de candidatura diferentes. Até haver um registro único, o Puxa Ficha não exibe o programa, para não atribuí-lo ao registro errado.`,
   },
 } as const
 

@@ -9,11 +9,24 @@
  * (ver docs/operations/programas-governo-governadores-2026-inventario.md,
  * "Ambiguidade atual"): coletar seria escolher um dos dois sem base oficial.
  */
-export type ProgramaGovernoPendencia = {
-  motivo: "nao_coletado" | "registro_duplicado_tse"
-}
+export type ProgramaGovernoPendencia =
+  | { motivo: "nao_coletado" }
+  | { motivo: "registro_duplicado_tse"; fonteUrl: string; consultadoEm: string }
 
-const REGISTRO_DUPLICADO_TSE: ReadonlySet<string> = new Set(["laudicerio-aguiar"])
+/**
+ * Candidaturas cujo programa aparece no pacote oficial do TSE sob mais de um
+ * SQ_CANDIDATO. Fonte e data vêm do inventário de 29/08/2026
+ * (scripts/data/programas-governo-governadores-2026/inventario-2026-08-29.json,
+ * documentos MT:110002553937:01 e MT:110002554073:01; ver
+ * docs/operations/programas-governo-governadores-2026-inventario.md, seção
+ * "Ambiguidade atual").
+ */
+const REGISTRO_DUPLICADO_TSE: ReadonlyMap<string, { fonteUrl: string; consultadoEm: string }> = new Map([
+  ["laudicerio-aguiar", {
+    fonteUrl: "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MT.zip",
+    consultadoEm: "2026-08-29",
+  }],
+])
 
 const CARGOS_COM_PROGRAMA: ReadonlySet<string> = new Set(["Presidente", "Governador"])
 
@@ -24,5 +37,6 @@ export function programaGovernoPendencia(input: {
   semRegistro: boolean
 }): ProgramaGovernoPendencia | null {
   if (!input.semRegistro || !CARGOS_COM_PROGRAMA.has(input.cargoDisputado ?? "")) return null
-  return { motivo: REGISTRO_DUPLICADO_TSE.has(input.slug) ? "registro_duplicado_tse" : "nao_coletado" }
+  const duplicado = REGISTRO_DUPLICADO_TSE.get(input.slug)
+  return duplicado ? { motivo: "registro_duplicado_tse", ...duplicado } : { motivo: "nao_coletado" }
 }

@@ -13,7 +13,11 @@
  * pré-filtro porque a evidência foi despublicada). Se a entrada é a mesma e só o
  * rótulo do Jev ou do verificador variou, o vínculo fica publicado e vira item
  * de revisão em `variancia-AAAA-MM-DD.json`. A impressão da entrada (sha256)
- * vai no `motivo`, coluna privada. Toda escrita passa por `escreverAuditado`. Cada execução
+ * vai no `motivo`, coluna privada, e só é gravada quando a cascata aprova o
+ * vínculo. Linha publicada antes da trava (sem impressão) que a cascata não
+ * reaprova fica publicada SEM impressão, marcada `sem_impressao_anterior`, e
+ * vai à revisão humana: carimbar a entrada de hoje nela apagaria a detecção de
+ * mudança desde a publicação original. Toda escrita passa por `escreverAuditado`. Cada execução
  * grava uma amostra dos publicados para auditoria e, com `--apply`, um recibo
  * por candidato em `coleta_log` (ver `promessa-evidencia-recibos.ts`).
  */
@@ -82,9 +86,12 @@ export type VinculoAtivo = {
 
 export type PlanoReconciliacao = {
   retirar: Array<{ id: string; chave: string; causa: "par_ausente" | "entrada_alterada" }>
+  /**
+   * Continuam publicados. `sem_impressao_anterior`: linha anterior à trava, sem
+   * como provar que a entrada é a mesma de quando foi publicada; vai à revisão
+   * humana e segue assim, sem impressão, até decisão ou reaprovação da cascata.
+   */
   mantidosPorVariancia: Array<{ id: string; chave: string; impressao: string; sem_impressao_anterior: boolean }>
-  /** Vínculos publicados antes da impressão existir: recebem a impressão atual. */
-  carimbar: Array<{ id: string; motivo: string }>
 }
 
 /**
@@ -98,7 +105,7 @@ export function planejarReconciliacao(input: {
   pares: ReadonlyArray<Pick<ParCandidato, "programaChave" | "compromisso" | "evidencia">>
 }): PlanoReconciliacao {
   const atual = new Map(input.pares.map((p) => [chaveVinculo(p.programaChave, p.compromisso.temaId, p.evidencia.tipo, p.evidencia.ref), impressaoDaEntrada(p)]))
-  const plano: PlanoReconciliacao = { retirar: [], mantidosPorVariancia: [], carimbar: [] }
+  const plano: PlanoReconciliacao = { retirar: [], mantidosPorVariancia: [] }
   for (const ativa of input.ativas) {
     const chave = chaveVinculo(ativa.programa_chave, ativa.tema_id, ativa.tipo_evidencia, ativa.evidencia_ref)
     if (input.publicadasAgora.has(chave)) continue
@@ -113,9 +120,6 @@ export function planejarReconciliacao(input: {
       continue
     }
     plano.mantidosPorVariancia.push({ id: ativa.id, chave, impressao: impressaoAtual, sem_impressao_anterior: !anterior })
-    if (!anterior) {
-      plano.carimbar.push({ id: ativa.id, motivo: `${(ativa.motivo ?? "aprovado pela cascata").trim()} | ${MARCA_IMPRESSAO}${impressaoAtual}` })
-    }
   }
   return plano
 }
@@ -230,7 +234,8 @@ async function main(): Promise<void> {
   const contagemPlano = (plano: PlanoReconciliacao) => ({
     retirar_entrada_alterada: plano.retirar.filter((r) => r.causa === "entrada_alterada").length,
     retirar_par_ausente: plano.retirar.filter((r) => r.causa === "par_ausente").length,
-    mantidos_por_variancia: plano.mantidosPorVariancia.length,
+    mantidos_com_impressao: plano.mantidosPorVariancia.filter((m) => !m.sem_impressao_anterior).length,
+    mantidos_sem_impressao_revisao: plano.mantidosPorVariancia.filter((m) => m.sem_impressao_anterior).length,
   })
   if (!db) {
     // Dry-run lê o estado publicado (somente leitura) para mostrar o plano de
@@ -262,28 +267,26 @@ async function main(): Promise<void> {
       () => db.from("compromisso_evidencia").update({ verificado: false, updated_at: agora }).in("id", retirar).select("id"),
     )).length
   }
-  let carimbados = 0
-  if (plano.carimbar.length > 0) {
-    carimbados = (await escreverAuditado(
-      { script: SCRIPT, tabela: "compromisso_evidencia", motivo: "registra a impressao da entrada em vinculo publicado antes da trava de variancia", recorte: `${plano.carimbar.length} linha(s), so a coluna motivo` },
-      async () => {
-        const respostas = await Promise.all(plano.carimbar.map((c) =>
-          db.from("compromisso_evidencia").update({ motivo: c.motivo }).eq("id", c.id).select("id")))
-        return { data: respostas.flatMap((r) => r.data ?? []), error: respostas.find((r) => r.error)?.error ?? null }
-      },
-    )).length
-  }
+
   // Recibo por candidato depois da publicação: lê o estado publicado que acabou
-  // de ser gravado, então descreve exatamente o que a ficha vai mostrar.
-  const recibos = await gravarRecibos({ db, apply: true, versao: VERSAO_CASCATA, agora })
+  // de ser gravado, então descreve exatamente o que a ficha vai mostrar. Falha
+  // aqui não desfaz nem invalida a publicação: sai com código 2 (publicado, sem
+  // recibo), e a ficha continua usando o recibo anterior do mesmo programa.
+  let recibos: Record<string, unknown>
+  try {
+    const gravados = await gravarRecibos({ db, apply: true, versao: VERSAO_CASCATA, agora })
+    recibos = { gravados: gravados.gravados, ...distribuicao(gravados.recibos) }
+  } catch (erro) {
+    recibos = { erro: erro instanceof Error ? erro.message : String(erro) }
+    process.exitCode = 2
+  }
   console.log(JSON.stringify({
     ...resumo,
     gravadas: gravadas.length,
     retiradas,
     ...contagemPlano(plano),
-    carimbados,
     arquivo_variancia: arquivoVariancia,
-    recibos: { gravados: recibos.gravados, ...distribuicao(recibos.recibos) },
+    recibos,
   }, null, 2))
 }
 

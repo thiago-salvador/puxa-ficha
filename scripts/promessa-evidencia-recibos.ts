@@ -52,7 +52,15 @@ export type LinhaRecibo = {
   executado_em: string
 }
 
-export type VinculoPublicado = { candidato_id: string; programa_chave: string; tema_id: string | null; tipo_evidencia: string; evidencia_ref: string }
+export type VinculoPublicado = {
+  candidato_id: string
+  programa_chave: string
+  tema_id: string | null
+  tipo_evidencia: string
+  evidencia_ref: string
+  /** Origem na tabela privada. Só `cascata` precisa existir nos pares da execução. */
+  origem: string | null
+}
 
 type Cliente = ReturnType<typeof ensureSupabaseClient>
 
@@ -72,7 +80,9 @@ export function montarRecibos(input: {
   const chavePar = (programa: string, tema: string | null, tipo: string, ref: string) => [programa, tema ?? "", tipo, ref].join("|")
   const paresConhecidos = new Set(input.pares.map((p) => chavePar(p.programaChave, p.compromisso.temaId, p.evidencia.tipo, p.evidencia.ref)))
   const idsUniverso = new Set(input.candidatos.map((c) => c.id))
-  const fora = input.publicados.filter((v) => idsUniverso.has(v.candidato_id)
+  // Trava só para vínculos da cascata: curadoria e revisão humana (jev_sombra)
+  // podem ligar evidência que o pré-filtro não gera, e continuam contando.
+  const fora = input.publicados.filter((v) => v.origem === "cascata" && idsUniverso.has(v.candidato_id)
     && !paresConhecidos.has(chavePar(v.programa_chave, v.tema_id, v.tipo_evidencia, v.evidencia_ref)))
   if (fora.length > 0) {
     throw new Error(`${fora.length} vínculo(s) publicado(s) fora dos pares atuais; rode coletar e pares da mesma execução antes do recibo`)
@@ -107,11 +117,17 @@ export function distribuicao(recibos: ReadonlyArray<LinhaRecibo>): Record<LinhaR
   return saida
 }
 
+/** O que a ficha mostra (view pública), com a origem lida da tabela privada. */
 async function lerPublicados(db: Cliente): Promise<VinculoPublicado[]> {
-  const { data, error } = await db.from("compromisso_evidencia_publica")
-    .select("candidato_id,programa_chave,tema_id,tipo_evidencia,evidencia_ref")
-  if (error) throw new Error(`compromisso_evidencia_publica: ${error.message}`)
-  return (data ?? []) as VinculoPublicado[]
+  const [view, tabela] = await Promise.all([
+    db.from("compromisso_evidencia_publica").select("id,candidato_id,programa_chave,tema_id,tipo_evidencia,evidencia_ref"),
+    db.from("compromisso_evidencia").select("id,origem").eq("verificado", true),
+  ])
+  if (view.error) throw new Error(`compromisso_evidencia_publica: ${view.error.message}`)
+  if (tabela.error) throw new Error(`compromisso_evidencia: ${tabela.error.message}`)
+  const origem = new Map(((tabela.data ?? []) as Array<{ id: string; origem: string }>).map((l) => [l.id, l.origem]))
+  return ((view.data ?? []) as Array<Omit<VinculoPublicado, "origem"> & { id: string }>)
+    .map(({ id, ...v }) => ({ ...v, origem: origem.get(id) ?? null }))
 }
 
 /** Lê entradas locais e banco, monta os recibos e, com `apply`, grava num insert só. */

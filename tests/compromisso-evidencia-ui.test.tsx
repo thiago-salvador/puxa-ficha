@@ -106,9 +106,19 @@ describe("evidências relacionadas na seção do programa", () => {
     assert.match(html, /<details>/u, "lista recolhida, acessível por teclado")
   })
 
-  it("evidência de tema que não existe no programa não aparece", () => {
+  it("evidência de tema que não existe no programa não aparece e o texto é neutro, não falha de leitura", () => {
     const html = render({ manifesto: presidencial, evidencias: com([evidencia({ temaId: "tema-inexistente" })]) })
     assert.match(html, /data-pf-compromisso-evidencias-vazio/u)
+    assert.ok(html.includes(compromissoEvidenciaCopy.estado.fora_dos_temas))
+    assert.ok(!html.includes(compromissoEvidenciaCopy.estado.erro_leitura))
+    assert.doesNotMatch(html, /role="status"/u)
+  })
+
+  it("vínculo registrado sem fonte exibível tem texto próprio, não 'nenhum passou nos critérios'", () => {
+    const html = render({ manifesto: presidencial, evidencias: { estado: "vinculos_sem_exibicao", processadoEm: "2026-09-25T08:34:00Z" } })
+    assert.match(html, /data-pf-compromisso-evidencias-estado="vinculos_sem_exibicao"/u)
+    assert.ok(html.includes(compromissoEvidenciaCopy.estado.vinculos_sem_exibicao))
+    assert.doesNotMatch(html, /nenhum passou/iu)
   })
 
   it("ponto de atenção (tipo contradicao) recebe rótulo neutro, não a categoria editorial", () => {
@@ -214,17 +224,28 @@ describe("ficha de Executivo sem registro de programa", () => {
   it("só Presidente e Governador sem registro recebem pendência; duplicidade tem motivo próprio", () => {
     assert.deepEqual(programaGovernoPendencia({ slug: "ruth-reis", cargoDisputado: "Governador", semRegistro: true }), { motivo: "nao_coletado" })
     assert.deepEqual(programaGovernoPendencia({ slug: "leonardo-avalanche", cargoDisputado: "Presidente", semRegistro: true }), { motivo: "nao_coletado" })
-    assert.deepEqual(programaGovernoPendencia({ slug: "laudicerio-aguiar", cargoDisputado: "Governador", semRegistro: true }), { motivo: "registro_duplicado_tse" })
+    assert.deepEqual(programaGovernoPendencia({ slug: "laudicerio-aguiar", cargoDisputado: "Governador", semRegistro: true }), {
+      motivo: "registro_duplicado_tse",
+      fonteUrl: "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MT.zip",
+      consultadoEm: "2026-08-29",
+    })
     assert.equal(programaGovernoPendencia({ slug: "x", cargoDisputado: "Senador", semRegistro: true }), null)
     assert.equal(programaGovernoPendencia({ slug: "ruth-reis", cargoDisputado: "Governador", semRegistro: false }), null)
   })
 
   it("o cartão pendente mostra o motivo sem afirmar ausência no TSE", () => {
-    for (const motivo of ["nao_coletado", "registro_duplicado_tse"] as const) {
-      const html = renderToStaticMarkup(<ProgramaGovernoPendente pendencia={{ motivo }} />)
-      assert.match(html, new RegExp(`data-pf-programa-pendente="${motivo}"`, "u"))
-      assert.ok(html.includes(programaGovernoPendenteCopy[motivo].title))
-      assert.doesNotMatch(html, /não tem programa|não registrou/iu)
-    }
+    const naoColetado = renderToStaticMarkup(<ProgramaGovernoPendente pendencia={{ motivo: "nao_coletado" }} />)
+    assert.match(naoColetado, /data-pf-programa-pendente="nao_coletado"/u)
+    assert.ok(naoColetado.includes(programaGovernoPendenteCopy.nao_coletado.title))
+    assert.doesNotMatch(naoColetado, /não tem programa|não registrou|href=/iu)
+  })
+
+  it("duplicidade cita a fonte pública do TSE e a data da consulta", () => {
+    const pendencia = programaGovernoPendencia({ slug: "laudicerio-aguiar", cargoDisputado: "Governador", semRegistro: true })!
+    const html = renderToStaticMarkup(<ProgramaGovernoPendente pendencia={pendencia} />)
+    assert.match(html, /data-pf-programa-pendente="registro_duplicado_tse"/u)
+    assert.ok(html.includes("consultado em 29 de agosto de 2026"))
+    assert.match(html, /href="https:\/\/cdn\.tse\.jus\.br\/estatistica\/sead\/odsele\/proposta_governo\/proposta_governo_2026_MT\.zip"/u)
+    assert.doesNotMatch(html, /ativos/iu, "não afirma estado do registro além do que o pacote mostra")
   })
 })

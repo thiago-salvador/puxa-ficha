@@ -7,7 +7,9 @@
  *
  * Regras de entrada:
  * - candidato público (`publicavel` e status diferente de removido);
- * - posição declarada só com `verificado = true` e sem quarentena ativa;
+ * - posição declarada só com `verificado = true`, `gerado_por = curadoria` (a ficha
+ *   só exibe posição curada; par com posição que não aparece seria vínculo
+ *   invisível) e sem quarentena ativa;
  * - ponto de atenção de contradição só verificado e visível;
  * - fala só do catálogo revisado (`scripts/data/falas-candidatos.json`).
  */
@@ -154,7 +156,7 @@ export async function coletarSnapshot(): Promise<SnapshotEvidencias> {
       .in("candidato_id", lote).order("id").range(de, ate)))
     posicoesBrutas.push(...await paginar<SnapshotPosicao>((de, ate) => db.from("posicoes_declaradas")
       .select("id,candidato_id,tema,posicao,descricao,fonte,url_fonte")
-      .in("candidato_id", lote).eq("verificado", true).order("id").range(de, ate)))
+      .in("candidato_id", lote).eq("verificado", true).eq("gerado_por", "curadoria").order("id").range(de, ate)))
     quarentena.push(...await paginar((de, ate) => db.from("quiz_position_quarantine")
       .select("candidato_id,tema,posicao,url_fonte").in("candidato_id", lote).eq("ativo", true)
       .order("candidato_id").range(de, ate)))

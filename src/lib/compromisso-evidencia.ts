@@ -46,6 +46,8 @@ export type ReciboPromessaEvidencia = {
  *   candidato em eixo comum com os temas do programa.
  * - `avaliados_nao_publicados`: processado; houve pares candidatos, mas nenhum
  *   passou nos critérios automáticos de publicação.
+ * - `vinculos_sem_exibicao`: o recibo registra vínculo publicado, mas nenhum
+ *   pôde ser exibido (fonte ausente ou não exibível na ficha).
  * - `sem_documento_oficial`: não há programa oficial para comparar.
  * - `nao_processado`: sem recibo concluído para o programa atual.
  * - `erro_leitura`: a leitura falhou agora; nada pode ser afirmado.
@@ -54,6 +56,7 @@ export type EstadoEvidenciasPrograma =
   | { estado: "com_vinculos"; itens: CompromissoEvidenciaPublica[]; processadoEm: string | null }
   | { estado: "nenhum_par"; processadoEm: string }
   | { estado: "avaliados_nao_publicados"; processadoEm: string; paresAvaliados: number | null }
+  | { estado: "vinculos_sem_exibicao"; processadoEm: string }
   | { estado: "sem_documento_oficial" }
   | { estado: "nao_processado" }
   | { estado: "erro_leitura" }
@@ -109,10 +112,11 @@ export function estadoDasEvidencias(input: {
     case "vazio_confirmado":
       return { estado: "nenhum_par", processadoEm: reciboAtual.executadoEm }
     case "sem_achado_no_escopo":
-    // `encontrado` sem item exibível: o vínculo existe, mas a fonte dele não
-    // pôde ser mostrada (ex.: posição sem texto de curadoria).
-    case "encontrado":
       return { estado: "avaliados_nao_publicados", processadoEm: reciboAtual.executadoEm, paresAvaliados: reciboAtual.paresAvaliados }
+    // Vínculo publicado cuja fonte a ficha não consegue exibir (ex.: votação
+    // sem título, fala fora do catálogo). Não é "nenhum passou nos critérios".
+    case "encontrado":
+      return { estado: "vinculos_sem_exibicao", processadoEm: reciboAtual.executadoEm }
     default:
       return { estado: "nao_processado" }
   }

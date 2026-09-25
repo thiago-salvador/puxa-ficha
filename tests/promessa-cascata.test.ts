@@ -111,7 +111,6 @@ test("mesma entrada e rotulo novo barrado: o vinculo continua publicado e vira i
   assert.deepEqual(plano.retirar, [])
   assert.equal(plano.mantidosPorVariancia.length, 1)
   assert.equal(plano.mantidosPorVariancia[0].sem_impressao_anterior, false)
-  assert.deepEqual(plano.carimbar, [])
 })
 
 test("impressao ignora so o rotulo: resposta do Jev e do verificador nao entram", () => {
@@ -147,15 +146,45 @@ test("vinculo republicado nesta execucao nao entra na reconciliacao", () => {
   const ativa = publicadoOntem(p)
   const chave = [ativa.programa_chave, ativa.tema_id, ativa.tipo_evidencia, ativa.evidencia_ref].join("|")
   const plano = planejarReconciliacao({ ativas: [ativa], publicadasAgora: new Set([chave]), pares: [p] })
-  assert.deepEqual([plano.retirar, plano.mantidosPorVariancia, plano.carimbar], [[], [], []])
+  assert.deepEqual([plano.retirar, plano.mantidosPorVariancia], [[], []])
 })
 
-test("vinculo antigo sem impressao e com par presente fica publicado e recebe a impressao atual", () => {
+test("vinculo antigo sem impressao que a cascata nao reaprova: fica publicado, sem impressao, e vai a revisao", () => {
   const p = par("Cria o corredor multimodal")
   const antigo = { ...publicadoOntem(p), motivo: "aprovado pelas quatro camadas da cascata c2" }
   const plano = planejarReconciliacao({ ativas: [antigo], publicadasAgora: new Set(), pares: [p] })
   assert.deepEqual(plano.retirar, [])
+  assert.equal(plano.mantidosPorVariancia.length, 1)
   assert.equal(plano.mantidosPorVariancia[0].sem_impressao_anterior, true)
-  assert.equal(impressaoNoMotivo(plano.carimbar[0].motivo), impressaoDaEntrada(p))
-  assert.ok(plano.carimbar[0].motivo.startsWith("aprovado pelas quatro camadas da cascata c2 | entrada="))
+  assert.deepEqual(Object.keys(plano).sort(), ["mantidosPorVariancia", "retirar"], "o plano nao tem caminho de carimbo")
+  // Execucao seguinte com a mesma rejeicao: continua igual, ainda sem impressao.
+  const seguinte = planejarReconciliacao({ ativas: [antigo], publicadasAgora: new Set(), pares: [p] })
+  assert.deepEqual(seguinte, plano)
+  const fonte = readFileSync("scripts/promessa-evidencia-publicar.ts", "utf8")
+  assert.doesNotMatch(fonte, /update\(\{ motivo/u, "motivo so muda pelo upsert do que a cascata aprovou")
+})
+
+test("vinculo antigo sem impressao que a cascata reaprova recebe a impressao pela publicacao", () => {
+  const p = par("Cria o corredor multimodal")
+  const [linha] = linhasParaPublicar({ pares: [p], publicar: [p.parId], cache: cascataC2, versao: "c2", agora: "2026-09-26T08:34:00.000Z" })
+  assert.equal(impressaoNoMotivo(linha.motivo), impressaoDaEntrada(p))
+  const antigo = { ...publicadoOntem(p), motivo: "aprovado pelas quatro camadas da cascata c2" }
+  const chave = [linha.programa_chave, linha.tema_id, linha.tipo_evidencia, linha.evidencia_ref].join("|")
+  const plano = planejarReconciliacao({ ativas: [antigo], publicadasAgora: new Set([chave]), pares: [p] })
+  assert.deepEqual(plano, { retirar: [], mantidosPorVariancia: [] })
+})
+
+test("vinculo antigo sem impressao cujo par sumiu e retirado", () => {
+  const p = par("Cria o corredor multimodal")
+  const antigo = { ...publicadoOntem(p), motivo: "aprovado pelas quatro camadas da cascata c2" }
+  const plano = planejarReconciliacao({ ativas: [antigo], publicadasAgora: new Set(), pares: [] })
+  assert.deepEqual(plano.retirar.map((r) => r.causa), ["par_ausente"])
+})
+
+test("falha do recibo nao invalida a publicacao: sai com codigo 2 depois de publicar", () => {
+  const fonte = readFileSync("scripts/promessa-evidencia-publicar.ts", "utf8")
+  const bloco = fonte.slice(fonte.indexOf("let recibos: Record<string, unknown>"))
+  assert.match(bloco, /try \{\s*const gravados = await gravarRecibos/u)
+  assert.match(bloco, /catch \(erro\) \{\s*recibos = \{ erro:[^}]*\}\s*process\.exitCode = 2/u)
+  assert.ok(fonte.indexOf("let recibos: Record<string, unknown>") > fonte.indexOf("retiradas = (await escreverAuditado"))
 })
