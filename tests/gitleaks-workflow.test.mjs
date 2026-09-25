@@ -207,7 +207,7 @@ test("controlled fixture survives every former allowlist bypass and stays redact
   const secret = controlledValue()
   const cases = [
     {
-      path: "src/components/CloudflareWebAnalytics.tsx",
+      path: "src/components/CloudflareWebAnalyticsBeacon.tsx",
       contents: `CLOUDFLARE_WEB_ANALYTICS_TOKEN=${secret}\n`,
     },
     {
@@ -299,7 +299,7 @@ test("merge resolution secret is found only when the range includes parent diffs
 test("only exact known false positives at their exact paths are allowed", () => {
   const directory = mkdtempSync(path.join(tmpdir(), "puxa-ficha-gitleaks-"))
   const publicFiles = [
-    "src/components/CloudflareWebAnalytics.tsx",
+    "src/components/CloudflareWebAnalyticsBeacon.tsx",
     "src/lib/remote-image-hosts.ts",
     "supabase/migrations/20260510183000_seed_projetos_lei_amelio_soldado_sapl_completo.sql",
     "supabase/rollback/20260811100000_votacoes_senado_chave_exata.rollback.sql",

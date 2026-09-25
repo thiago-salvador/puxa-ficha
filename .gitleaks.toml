@@ -12,7 +12,7 @@ id = "generic-api-key"
   condition = "AND"
   regexTarget = "secret"
   regexes = ['''^f47edf88957444dc83600ce372955b50$''']
-  paths = ['''^src/components/CloudflareWebAnalytics\.tsx$''']
+  paths = ['''^src/components/CloudflareWebAnalyticsBeacon\.tsx$''']
 
   [[rules.allowlists]]
   description = "Hostname público sinalizado pelo detector genérico"
