@@ -32,11 +32,20 @@ BEGIN
       RAISE EXCEPTION 'claims-mandatos-20260925 rollback: claim % nao esta na postimagem', linha->>'id';
     END IF;
 
+    -- Falha fechada: o trigger recusaria devolver o titulo antigo a uma linha
+    -- de IA; o rollback so vale para linha de curadoria.
+    IF NOT EXISTS (SELECT 1 FROM public.pontos_atencao p
+                   WHERE p.id = (linha->>'id')::uuid
+                     AND p.gerado_por IS DISTINCT FROM 'ia') THEN
+      RAISE EXCEPTION 'claims-mandatos-20260925 rollback: claim % e de IA; rollback fora do escopo', linha->>'id';
+    END IF;
+
     UPDATE public.pontos_atencao p
     SET titulo = linha->'before'->>'titulo',
         descricao = linha->'before'->>'descricao',
         fontes = linha->'before'->'fontes'
-    WHERE p.id = (linha->>'id')::uuid;
+    WHERE p.id = (linha->>'id')::uuid
+      AND p.gerado_por IS DISTINCT FROM 'ia';
     GET DIAGNOSTICS afetadas = ROW_COUNT;
     IF afetadas <> 1 THEN
       RAISE EXCEPTION 'claims-mandatos-20260925 rollback: escrita esperada=1 atual=% em %', afetadas, linha->>'id';

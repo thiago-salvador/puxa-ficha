@@ -33,6 +33,9 @@ const PERFIL_SENADO = {
 // simula a lista indisponível.
 type ListaAtual = string[] | "falha"
 
+// 80 códigos fictícios além do fixture: lista completa plausível (piso 70).
+const OUTROS_80 = Array.from({ length: 80 }, (_, i) => String(10000 + i))
+
 function listaEmExercicio(codigos: string[]) {
   return {
     ListaParlamentarEmExercicio: {
@@ -45,7 +48,7 @@ function listaEmExercicio(codigos: string[]) {
 
 async function perfilGravado(
   atual: Record<string, unknown>,
-  listaAtual: ListaAtual = ["9999", "5672"],
+  listaAtual: ListaAtual = ["9999", ...OUTROS_80],
 ): Promise<{ patch: Record<string, unknown>; errors: string[] }> {
   const previousFetch = globalThis.fetch
   const previousUrl = process.env.SUPABASE_URL
@@ -131,7 +134,7 @@ test("Senado: sem registro TSE 2026, perfil do Senado mantém o comportamento an
 test("Senado: fora da lista em exercício, 'Senador(a)' gravado antes é limpo e o partido não muda", async () => {
   const { patch, errors } = await perfilGravado(
     { foto_url: null, sq_candidato_2026: null, cargo_atual: "Senador(a)" },
-    ["5672"],
+    OUTROS_80,
   )
   assert.deepEqual(errors, [])
   assert.equal("cargo_atual" in patch, true)
@@ -143,10 +146,22 @@ test("Senado: fora da lista em exercício, 'Senador(a)' gravado antes é limpo e
 test("Senado: fora da lista em exercício, outro cargo atual curado não é tocado", async () => {
   const { patch, errors } = await perfilGravado(
     { foto_url: null, sq_candidato_2026: "999999999472", cargo_atual: "Deputado(a) Federal" },
-    ["5672"],
+    OUTROS_80,
   )
   assert.deepEqual(errors, [])
   assert.equal("cargo_atual" in patch, false)
+})
+
+test("Senado: lista em exercício parcial (abaixo do piso) não grava nem limpa cargo_atual", async () => {
+  // Senador em exercício (9999) fora de uma lista truncada: sem o piso, o
+  // ingest limparia o cargo dele.
+  const { patch, errors } = await perfilGravado(
+    { foto_url: null, sq_candidato_2026: null, cargo_atual: "Senador(a)" },
+    OUTROS_80.slice(0, 12),
+  )
+  assert.deepEqual(errors, [])
+  assert.equal("cargo_atual" in patch, false)
+  assert.equal("partido_sigla" in patch, false)
 })
 
 test("Senado: lista em exercício indisponível não grava nem limpa cargo_atual", async () => {

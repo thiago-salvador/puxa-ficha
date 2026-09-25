@@ -32,10 +32,11 @@
 -- Os outros 43 perfis publicados com 'Senador(a)' estão na lista oficial em
 -- exercício e não mudam.
 --
--- Preimagem aceita por linha: 'Senador(a)' (medida em 2026-09-25), o valor
--- final (reaplicação) ou NULL (o ingest corrigido limpa 'Senador(a)' de quem
--- está fora da lista em exercício). Só linhas diferentes do valor final são
--- escritas; snapshot de cada linha escrita e recibo em coleta_log com
+-- Preimagem aceita por linha: 'Senador(a)' (medida em 2026-09-25) ou o valor
+-- final. Nas duas linhas cujo valor final é NULL, isso cobre também o caso de
+-- o ingest corrigido ter limpado 'Senador(a)' antes do apply. Qualquer outro
+-- valor, NULL inclusive nas linhas com cargo final preenchido, reprova. Só
+-- linhas diferentes do valor final são escritas; snapshot de cada linha escrita e recibo em coleta_log com
 -- before/after.
 --
 -- NÃO aplicar por `supabase db push` nem por automação: produção só recebe
@@ -82,7 +83,6 @@ BEGIN
   IF (SELECT count(*) FROM public.candidatos c
        JOIN _pf_cargo_atual_20260925 u ON u.slug = c.slug AND u.sq = c.sq_candidato_2026
        WHERE c.cargo_atual = 'Senador(a)'
-          OR c.cargo_atual IS NULL
           OR c.cargo_atual IS NOT DISTINCT FROM u.cargo_depois) <> 9
   THEN
     RAISE EXCEPTION 'cargo-atual-20260925: preimagem das nove fichas divergiu';
@@ -90,7 +90,7 @@ BEGIN
 
   SELECT count(*) INTO pendentes
   FROM public.candidatos c
-  JOIN _pf_cargo_atual_20260925 u ON u.slug = c.slug
+  JOIN _pf_cargo_atual_20260925 u ON u.slug = c.slug AND u.sq = c.sq_candidato_2026
   WHERE c.cargo_atual IS DISTINCT FROM u.cargo_depois;
 
   -- @write tabela=identidade_timeline_quarentena_snapshot ref=cargo-atual-20260925 campos=migration_version,tabela,row_id,candidato_id,preimage,postimage,registrado_em
@@ -102,7 +102,7 @@ BEGIN
            'ultima_atualizacao', to_char(verificado_em, 'YYYY-MM-DD"T"HH24:MI:SS"Z"')),
          verificado_em
   FROM public.candidatos c
-  JOIN _pf_cargo_atual_20260925 u ON u.slug = c.slug
+  JOIN _pf_cargo_atual_20260925 u ON u.slug = c.slug AND u.sq = c.sq_candidato_2026
   WHERE c.cargo_atual IS DISTINCT FROM u.cargo_depois
   ON CONFLICT (migration_version,tabela,row_id) DO NOTHING;
 
@@ -125,6 +125,8 @@ BEGIN
     AND c.slug IN ('jorginho-mello','mailza-assis','tse-2026-100002549583',
                    'tse-2026-10002544274','tse-2026-110002551967','tse-2026-160002547656',
                    'tse-2026-190002548141','tse-2026-190002550184','tse-2026-220002541490')
+    AND EXISTS (SELECT 1 FROM _pf_cargo_atual_20260925 u
+                WHERE u.slug = c.slug AND u.sq = c.sq_candidato_2026)
     AND to_jsonb(c) = s.preimage;
 
   GET DIAGNOSTICS quantidade = ROW_COUNT;
@@ -145,7 +147,7 @@ BEGIN
                       'after', to_jsonb(c)) ORDER BY c.slug)
              FROM public.identidade_timeline_quarentena_snapshot s
              JOIN public.candidatos c ON c.id = s.row_id
-             JOIN _pf_cargo_atual_20260925 u ON u.slug = c.slug
+             JOIN _pf_cargo_atual_20260925 u ON u.slug = c.slug AND u.sq = c.sq_candidato_2026
              WHERE s.migration_version = 'cargo-atual-20260925'
                AND s.tabela = 'candidatos'), '[]'::jsonb)
          )::text,
@@ -154,7 +156,7 @@ BEGIN
   WHERE NOT EXISTS (SELECT 1 FROM public.coleta_log WHERE execucao = 'migration:20260925220200');
 
   IF (SELECT count(*) FROM public.candidatos c
-       JOIN _pf_cargo_atual_20260925 u ON u.slug = c.slug
+       JOIN _pf_cargo_atual_20260925 u ON u.slug = c.slug AND u.sq = c.sq_candidato_2026
        WHERE c.cargo_atual IS NOT DISTINCT FROM u.cargo_depois) <> 9
   THEN
     RAISE EXCEPTION 'cargo-atual-20260925: pos-condicao falhou';

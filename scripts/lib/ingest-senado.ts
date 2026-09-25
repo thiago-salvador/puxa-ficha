@@ -81,6 +81,9 @@ async function withTimeout<T>(operation: (signal: AbortSignal) => Promise<T>, ti
   }
 }
 
+/** O Senado tem 81 cadeiras; lista oficial com menos códigos que isto é tratada como parcial. */
+export const SENADORES_EM_EXERCICIO_MINIMO = 70
+
 /**
  * Códigos dos senadores em exercício hoje, pela lista oficial do Senado.
  *
@@ -89,8 +92,9 @@ async function withTimeout<T>(operation: (signal: AbortSignal) => Promise<T>, ti
  * marcava como "Senador(a)" quem tinha saído do cargo anos antes (Gleisi
  * Hoffmann, Benedita da Silva, Marcelo Crivella, entre outros, em 25/09/2026).
  *
- * `null` quando a lista não pôde ser lida ou veio vazia: o chamador não mexe em
- * `cargo_atual` nem no partido nessa execução, em vez de adivinhar.
+ * `null` quando a lista não pôde ser lida ou veio com menos códigos que o piso
+ * de plausibilidade: o chamador não mexe em `cargo_atual` nem no partido nessa
+ * execução, em vez de adivinhar.
  */
 export async function carregarSenadoresEmExercicio(): Promise<Set<string> | null> {
   try {
@@ -104,8 +108,14 @@ export async function carregarSenadoresEmExercicio(): Promise<Set<string> | null
         .filter((codigo) => codigo != null && String(codigo).trim() !== "")
         .map((codigo) => String(codigo).trim()),
     )
-    if (codigos.size === 0) {
-      warn("senado", "lista de senadores em exercício veio vazia; cargo_atual não será alterado nesta execução")
+    // O Senado tem 81 cadeiras. Lista parcial (resposta truncada, paginação,
+    // manutenção) faria o ingest limpar o cargo de senador em exercício; abaixo
+    // do piso, a lista não decide nada.
+    if (codigos.size < SENADORES_EM_EXERCICIO_MINIMO) {
+      warn(
+        "senado",
+        `lista de senadores em exercício com ${codigos.size} código(s), abaixo do piso de ${SENADORES_EM_EXERCICIO_MINIMO}; cargo_atual não será alterado nesta execução`,
+      )
       return null
     }
     return codigos

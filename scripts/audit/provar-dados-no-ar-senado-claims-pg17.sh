@@ -177,10 +177,27 @@ q -q -c "UPDATE public.candidatos SET situacao_candidatura='aguardando julgament
 q -q -c "UPDATE public.pontos_atencao SET descricao=descricao || ' ' WHERE id='59afc792-415e-4e59-9fc0-6f71ea883b0c'"
 falha_esperada "migration de claims aceitou preimagem adulterada" "supabase/migrations/$V2.sql"
 q -q -c "UPDATE public.pontos_atencao SET descricao=rtrim(descricao) WHERE id='59afc792-415e-4e59-9fc0-6f71ea883b0c'"
+# Guard falha fechada: a mesma claim marcada como IA não é tocada.
+# (o próprio trigger recusa marcar como IA uma linha com esse título; a
+# fixture o desliga só para montar e desmontar o caso)
+fixture_gerado_por() {
+  q -q -c "ALTER TABLE public.pontos_atencao DISABLE TRIGGER trg_bloquear_contagem_ia_cargos_como_mandatos; UPDATE public.pontos_atencao SET gerado_por='$1' WHERE id='59afc792-415e-4e59-9fc0-6f71ea883b0c'; ALTER TABLE public.pontos_atencao ENABLE TRIGGER trg_bloquear_contagem_ia_cargos_como_mandatos;"
+}
+fixture_gerado_por ia
+falha_esperada "migration de claims aceitou claim de IA" "supabase/migrations/$V2.sql"
+fixture_gerado_por curadoria
 q -q -c "UPDATE public.candidatos SET cargo_atual='Ministro' WHERE slug='tse-2026-160002547656'"
 falha_esperada "migration de cargo_atual aceitou preimagem adulterada" "supabase/migrations/$V3.sql"
-# Ficha já limpa pelo ingest corrigido (NULL) é preimagem aceita.
+# NULL só vale como preimagem onde o cargo final também é NULL.
 q -q -c "UPDATE public.candidatos SET cargo_atual=NULL WHERE slug='tse-2026-160002547656'"
+falha_esperada "migration de cargo_atual aceitou NULL numa linha com cargo final preenchido" "supabase/migrations/$V3.sql"
+q -q -c "UPDATE public.candidatos SET cargo_atual='Senador(a)' WHERE slug='tse-2026-160002547656'"
+# SQ trocado reprova mesmo com slug certo.
+q -q -c "UPDATE public.candidatos SET sq_candidato_2026='0' WHERE slug='mailza-assis'"
+falha_esperada "migration de cargo_atual aceitou SQ divergente" "supabase/migrations/$V3.sql"
+q -q -c "UPDATE public.candidatos SET sq_candidato_2026='10002544107' WHERE slug='mailza-assis'"
+# Ficha já limpa pelo ingest corrigido (NULL) numa linha de cargo final NULL é aceita e não é reescrita.
+q -q -c "UPDATE public.candidatos SET cargo_atual=NULL WHERE slug='tse-2026-110002551967'"
 [[ "$(q -Atq -c "SELECT count(*) FROM public.coleta_log")" == "0" ]] || { echo "FAIL: tentativa abortada deixou recibo" >&2; exit 1; }
 
 # Forward em ordem de arquivo, com ledger e readback depois de cada uma.
@@ -195,7 +212,7 @@ estado="$(q -Atq -F '|' -c "SELECT
   (SELECT titulo FROM public.pontos_atencao WHERE id='59afc792-415e-4e59-9fc0-6f71ea883b0c'),
   (SELECT string_agg(coalesce(cargo_atual,'NULL'), ';' ORDER BY slug) FROM public.candidatos WHERE slug <> 'sentinela-senador' AND slug NOT IN ('alexandre-curi','tse-2026-190002554290')),
   (SELECT volume FROM public.coleta_log WHERE execucao='migration:20260925220200')")"
-esperado="deferido,candidato,true|indeferido,removido,false|0|Carreira política|Governador de Santa Catarina;Governadora do Acre;Deputado(a) Federal;Deputado(a) Federal;NULL;Deputado(a) Federal;Deputado(a) Federal;Deputado(a) Federal;NULL|9"
+esperado="deferido,candidato,true|indeferido,removido,false|0|Carreira política|Governador de Santa Catarina;Governadora do Acre;Deputado(a) Federal;Deputado(a) Federal;NULL;Deputado(a) Federal;Deputado(a) Federal;Deputado(a) Federal;NULL|8"
 [[ "$estado" == "$esperado" ]] || { echo "FAIL: forward inesperado: $estado" >&2; exit 1; }
 [[ "$(digest_sentinelas)" == "$sentinelas_antes" ]] || { echo "FAIL: forward tocou sentinela" >&2; exit 1; }
 
@@ -215,8 +232,8 @@ q -q < "supabase/rollback/$V3.rollback.sql"; q -q < "supabase/readback/$V3.rollb
 q -q < "supabase/rollback/$V2.rollback.sql"; q -q < "supabase/readback/$V2.rollback.readback.sql"
 q -q < "supabase/rollback/$V1.rollback.sql"; q -q < "supabase/readback/$V1.rollback.readback.sql"
 
-# De volta ao estado pré-apply (com a ficha já limpa pelo ingest, como antes do forward).
-q -q -c "UPDATE public.candidatos SET cargo_atual='Senador(a)' WHERE slug='tse-2026-160002547656'"
+# De volta ao estado pré-apply (a ficha limpa pelo ingest não foi escrita e segue NULL).
+q -q -c "UPDATE public.candidatos SET cargo_atual='Senador(a)' WHERE slug='tse-2026-110002551967'"
 [[ "$(digest_tudo)" == "$tudo_antes" ]] || { echo "FAIL: rollback não devolveu o estado inicial" >&2; exit 1; }
 [[ "$(q -Atq -c "SELECT max(version) FROM supabase_migrations.schema_migrations")" == "20260925163543" ]] || { echo "FAIL: ledger final" >&2; exit 1; }
 [[ "$(q -Atq -c "SELECT count(*) FROM public.identidade_timeline_quarentena_snapshot")" == "0" ]] || { echo "FAIL: snapshot sobrou" >&2; exit 1; }

@@ -8,8 +8,8 @@
 -- Varredura em 2026-09-25 sobre todas as claims com visivel=true e sem
 -- despublicacao: títulos ou descrições com contagem de mandatos
 -- ("N mandato(s)", "N mandatos", "mandato(s) registrado(s)") e todas as claims
--- intituladas "Carreira política". Duas contam cargos como mandatos (abaixo). A
--- claim de Ricardo Ferraço ("5 cargo(s) eletivo(s)") lista apenas cargos
+-- intituladas "Carreira política". Uma, publicada, conta cargos como mandatos
+-- (abaixo). A claim de Ricardo Ferraço ("5 cargo(s) eletivo(s)") lista apenas cargos
 -- eletivos, com os mandatos repetidos contados à parte, e fica como está.
 --
 -- 1. 59afc792-415e-4e59-9fc0-6f71ea883b0c, hana-ghassan (pública). "2
@@ -24,12 +24,9 @@
 --    A página da Agência Pará citada antes mostra hoje só o comunicado do
 --    período eleitoral, sem o texto da notícia, e sai da lista de fontes.
 --
--- A outra claim com o mesmo título, ddf1d924-7480-41ba-b212-7ebfef785cd0
--- (janaina-riva, gerada por IA e não verificada), fica fora da superfície
--- pública pela RLS e não pode ser publicada como está: qualquer UPDATE nela
--- mantém o título "Carreira política: 1 mandato(s)" e é recusado pelo trigger.
--- Não é reescrita aqui porque o rollback preservador não conseguiria devolver
--- esse título.
+-- Linhas que o trigger bloquear_contagem_ia_cargos_como_mandatos recusaria
+-- (gerado_por='ia') ficam fora do escopo: o guard exige gerado_por diferente
+-- de 'ia', e o rollback preservador não conseguiria devolver o título delas.
 --
 -- Título "Carreira política" e descrição que nomeia os cargos sem contá-los
 -- como mandatos, no padrão da 20260922160000. Snapshot de preimagem e recibo
@@ -86,6 +83,7 @@ BEGIN
        JOIN _pf_claims_mandatos_20260925 u ON u.id = p.id
        WHERE p.visivel IS TRUE
          AND p.despublicado_em IS NULL
+         AND p.gerado_por IS DISTINCT FROM 'ia'
          AND p.titulo = u.titulo_antes
          AND p.descricao = u.descricao_antes
          AND p.fontes = u.fontes_antes) <> 1
