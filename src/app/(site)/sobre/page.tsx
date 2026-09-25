@@ -4,6 +4,7 @@ import Link from "next/link"
 import { SectionLabel, SectionTitle, SectionDivider } from "@/components/SectionHeader"
 import { Footer } from "@/components/Footer"
 import { buildTwitterMetadata } from "@/lib/metadata"
+import { APOIADORES_PUBLICOS, RELATORES_OFICIAIS } from "@/data/apoiadores"
 
 const title = "Sobre o projeto | Puxa Ficha"
 const description =
@@ -221,7 +222,14 @@ export default function SobrePage() {
             de seguir relevante depois da eleição.
           </p>
           <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[length:var(--text-body-lg)]">
-            O apoio começa em R$ 19, com nome no mural de apoiadores e uma ficha de apoiador
+            O apoio começa em R$ 19, com nome no{" "}
+            <a
+              href="#apoiadores"
+              className="font-bold text-foreground underline decoration-foreground/20 underline-offset-2 hover:decoration-foreground/60"
+            >
+              mural de apoiadores
+            </a>{" "}
+            e uma ficha de apoiador
             personalizada no estilo dossiê do site. A partir de R$ 49, a ficha vem em versão
             estendida, com carimbo dourado e número de série. A partir de R$ 99, o nome entra nos
             créditos do relatório retrospectivo que será publicado aberto depois da eleição, com os
@@ -278,6 +286,62 @@ export default function SobrePage() {
           questionado e a fonte oficial ou documento que sustenta a correção. Use o assunto{" "}
           <strong>Retificação de ficha</strong>. O pedido será analisado sem promessa de remoção
           automática de dados de interesse público.
+        </p>
+      </section>
+
+      <SectionDivider />
+
+      <section
+        id="apoiadores"
+        className="mx-auto max-w-7xl scroll-mt-24 px-5 py-8 sm:py-12 md:px-12 lg:py-16"
+      >
+        <SectionLabel>05 Apoiadores</SectionLabel>
+        <SectionTitle>Quem tornou o projeto possível</SectionTitle>
+        <p className="mt-6 max-w-2xl text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:mt-8">
+          O Puxa Ficha existe porque estas pessoas decidiram bancar informação pública, gratuita e
+          sem anúncio.
+        </p>
+        {RELATORES_OFICIAIS.length > 0 ? (
+          <div className="mt-6 max-w-2xl">
+            <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-foreground">
+              Relatores oficiais
+            </p>
+            <ul className="mt-3 flex flex-wrap gap-3">
+              {RELATORES_OFICIAIS.map((apoiador) => (
+                <li
+                  key={apoiador.nome}
+                  className="border-2 border-foreground px-4 py-2 text-[length:var(--text-body-lg)] font-bold text-foreground"
+                >
+                  {apoiador.nome}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+        <ul className="mt-6 flex max-w-2xl flex-wrap gap-2">
+          {APOIADORES_PUBLICOS.map((apoiador) => (
+            <li
+              key={apoiador.nome}
+              className="border border-foreground/30 px-3 py-2 text-[length:var(--text-body)] font-medium text-foreground"
+            >
+              <span className="block text-[10px] font-bold uppercase tracking-[0.12em] text-foreground/60">
+                Apoio confirmado
+              </span>
+              {apoiador.nome}
+            </li>
+          ))}
+        </ul>
+        <p className="mt-4 max-w-2xl text-[length:var(--text-body)] font-medium leading-relaxed text-foreground/70">
+          Outras pessoas apoiam de forma anônima. Para entrar nesta lista,{" "}
+          <a
+            href="https://apoia.se/puxaficha"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-foreground underline decoration-foreground/20 underline-offset-2 hover:decoration-foreground/60"
+          >
+            apoie no APOIA.se
+          </a>
+          .
         </p>
       </section>
 
