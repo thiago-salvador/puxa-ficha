@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import {
   clearStoredAlertManageToken,
   clearStoredAlertState,
+  hasStoredAlertSessionHint,
   setStoredCandidateFollowState,
   writeStoredFollowedCandidateSlugs,
 } from "@/lib/alerts-client"
@@ -49,6 +50,14 @@ export function FollowCandidateButton({
     let cancelled = false
 
     async function loadSession() {
+      // Sem sinal local de sessão, o visitante nunca confirmou email neste
+      // navegador: não há o que consultar. Antes a chamada rodava em toda ficha
+      // aberta (35 mil em 3 dias) para responder "anônimo" quase sempre.
+      if (!hasStoredAlertSessionHint()) {
+        setSessionLoading(false)
+        return
+      }
+
       setSessionLoading(true)
 
       const response = await fetch("/api/alerts/me", {

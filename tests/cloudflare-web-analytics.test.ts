@@ -7,24 +7,30 @@ function read(relativePath: string): string {
   return readFileSync(path.resolve(process.cwd(), relativePath), "utf8")
 }
 
-test("Cloudflare beacon keeps its production, nonce and CSP contract without network I/O", () => {
+test("Cloudflare beacon keeps its production, privacy and CSP contract without network I/O", () => {
   const component = read("src/components/CloudflareWebAnalytics.tsx")
+  const beacon = read("src/components/CloudflareWebAnalyticsBeacon.tsx")
   const layout = read("src/app/(site)/layout.tsx")
   const csp = read("src/lib/content-security-policy.ts")
 
   assert.match(component, /VERCEL_ENV !== "production"/)
-  assert.match(component, /headers\(\)/)
-  assert.match(component, /get\("x-nonce"\)/)
-  assert.match(component, /get\("x-pf-private-colinha"\) === "1"/)
-  assert.match(read("middleware.ts"), /requestHeaders\.set\("x-pf-private-colinha"/)
-  assert.match(component, /nonce=\{nonce\}/)
-  assert.match(component, /type="module"/)
-  assert.match(component, /crossOrigin="anonymous"/)
-  assert.match(component, /static\.cloudflareinsights\.com\/beacon\.min\.js/)
-  assert.match(component, /data-cf-beacon=/)
+  // Sem request: ler headers() aqui deixava o layout inteiro dinâmico.
+  assert.doesNotMatch(component, /headers\(\)|x-nonce/)
+  assert.doesNotMatch(beacon, /headers\(\)|nonce/)
+  // A colinha continua sem beacon (a query contém escolhas), agora pelo pathname.
+  assert.match(beacon, /^"use client"/)
+  assert.match(beacon, /usePathname\(\)/)
+  assert.match(beacon, /PRIVATE_PATHNAMES = new Set\(\["\/colinha"\]\)/)
+  assert.doesNotMatch(read("middleware.ts"), /x-pf-private-colinha/)
+  assert.match(beacon, /type="module"/)
+  assert.match(beacon, /crossOrigin="anonymous"/)
+  assert.match(beacon, /static\.cloudflareinsights\.com\/beacon\.min\.js/)
+  assert.match(beacon, /data-cf-beacon=/)
   assert.match(layout, /<CloudflareWebAnalytics\s*\/>/)
   assert.match(csp, /"https:\/\/cloudflareinsights\.com"/)
   assert.match(csp, /"https:\/\/static\.cloudflareinsights\.com"/)
-  assert.doesNotMatch(component, /\bfetch\s*\(|\bsendBeacon\s*\(/)
-  assert.doesNotMatch(component, /API_KEY|AUTH_TOKEN|PASSWORD|SECRET/)
+  for (const source of [component, beacon]) {
+    assert.doesNotMatch(source, /\bfetch\s*\(|\bsendBeacon\s*\(/)
+    assert.doesNotMatch(source, /API_KEY|AUTH_TOKEN|PASSWORD|SECRET/)
+  }
 })

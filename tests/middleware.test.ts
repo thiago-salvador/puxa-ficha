@@ -1,7 +1,7 @@
 import assert from "node:assert/strict"
 import { afterEach, beforeEach, describe, it } from "node:test"
 import { NextRequest } from "next/server"
-import { middleware } from "../middleware"
+import { config, middleware, resetCandidatoSlugsCacheForTests } from "../middleware"
 import { deriveAccessCookieValue } from "@/lib/access-cookie-digest"
 
 const env = process.env as Record<string, string | undefined>
@@ -20,6 +20,7 @@ function slugListResponse(slugs: unknown, init?: ResponseInit) {
 
 describe("middleware route protection", () => {
   beforeEach(() => {
+    resetCandidatoSlugsCacheForTests()
     savedFetch = globalThis.fetch
     savedEnv.NODE_ENV = env.NODE_ENV
     savedEnv.VERCEL = env.VERCEL
@@ -330,10 +331,38 @@ describe("middleware route protection", () => {
     assert.equal(response.headers.get("x-middleware-next"), "1")
   })
 
-  it("keeps embed routes public and frameable", async () => {
-    const response = await middleware(request("http://localhost/embed/lula"))
+  it("reusa a lista de slugs entre requests e não guarda falha", async () => {
+    let chamadas = 0
+    globalThis.fetch = async () => {
+      chamadas += 1
+      return chamadas === 1 ? new Response("unavailable", { status: 503 }) : slugListResponse(["lula"])
+    }
 
+    // Falha não entra no cache: a request seguinte busca de novo.
+    assert.equal((await middleware(request("http://localhost/candidato/lula"))).headers.get("x-middleware-next"), "1")
+    assert.equal((await middleware(request("http://localhost/candidato/lula"))).headers.get("x-middleware-next"), "1")
+    assert.equal((await middleware(request("http://localhost/candidato/outro-slug"))).status, 404)
+    assert.equal(chamadas, 2, "lista saudável fica em memória; só a falha força nova busca")
+  })
+
+  it("keeps embed routes public and frameable", async () => {
+    // /embed saiu do matcher: o middleware não roda ali, e a CSP com
+    // frame-ancestors * vem do next.config.ts (coberto em security-hardening).
+    const matchers = config.matcher.join(" ")
+    assert.doesNotMatch(matchers, /embed/)
+    const response = await middleware(request("http://localhost/embed/lula"))
     assert.equal(response.headers.get("x-middleware-next"), "1")
-    assert.match(response.headers.get("Content-Security-Policy") ?? "", /frame-ancestors \*/)
+  })
+
+  it("só roda nas rotas com guarda, sem catch-all", () => {
+    assert.deepEqual(config.matcher, [
+      "/preview/:path*",
+      "/internaltest/:path*",
+      "/styleguide/:path*",
+      "/candidato/:path*",
+      "/rankings/:path*",
+      "/uf/:path*",
+      "/senado",
+    ])
   })
 })

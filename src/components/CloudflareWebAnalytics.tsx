@@ -1,24 +1,11 @@
-import Script from "next/script"
-import { headers } from "next/headers"
+import { CloudflareWebAnalyticsBeacon } from "@/components/CloudflareWebAnalyticsBeacon"
 
-const CLOUDFLARE_WEB_ANALYTICS_TOKEN = "f47edf88957444dc83600ce372955b50"
-
-export async function CloudflareWebAnalytics() {
+/**
+ * Não lê o request de propósito: fazer isso aqui deixava todo o layout do site
+ * dinâmico. A CSP deixou de usar nonce (host explícito em script-src) e a
+ * exclusão da colinha passou para o client, pelo pathname.
+ */
+export function CloudflareWebAnalytics() {
   if (process.env.VERCEL_ENV !== "production") return null
-
-  const requestHeaders = await headers()
-  if (requestHeaders.get("x-pf-private-colinha") === "1") return null
-  const nonce = requestHeaders.get("x-nonce") ?? undefined
-
-  return (
-    <Script
-      id="cf-web-analytics"
-      src="https://static.cloudflareinsights.com/beacon.min.js"
-      strategy="afterInteractive"
-      type="module"
-      crossOrigin="anonymous"
-      nonce={nonce}
-      data-cf-beacon={JSON.stringify({ token: CLOUDFLARE_WEB_ANALYTICS_TOKEN })}
-    />
-  )
+  return <CloudflareWebAnalyticsBeacon />
 }

@@ -10,9 +10,9 @@ import { EmbedWidget } from "@/components/EmbedWidget"
 import { EmbedResizer } from "@/components/EmbedResizer"
 import { DataUnavailableState } from "@/components/DataUnavailableState"
 
-// Embed também passa pelo RootLayout com CSP nonce; a página fica dinâmica e o
-// cache permanece no recurso de ficha. Isso evita expansão de build sem quebrar
-// requests públicos com DYNAMIC_SERVER_USAGE.
+// Continua dinâmica mesmo sem o nonce no RootLayout (removido em 2026-09-25):
+// usa o mesmo recurso de ficha da rota /candidato, cujo bypass de
+// release-verify em Preview lê `headers()`. O cache permanece no recurso.
 export const dynamic = "force-dynamic"
 
 export async function generateMetadata({
