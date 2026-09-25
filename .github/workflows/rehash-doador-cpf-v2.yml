@@ -34,8 +34,10 @@ on:
 permissions:
   contents: read
 
+# Mesmo grupo do ingest.yml: o rehash faz CAS em financiamento e não pode
+# correr junto de uma ingestão que regrava a mesma linha.
 concurrency:
-  group: rehash-doador-cpf-v2
+  group: ingest-pipeline
   cancel-in-progress: false
 
 jobs:

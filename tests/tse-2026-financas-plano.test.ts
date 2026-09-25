@@ -10,6 +10,7 @@ import {
   type EstadoProducao,
   type PlannedRow,
 } from "../scripts/lib/tse-2026-financas-plano"
+import { decidirPortao, lerArgs, linhasDeReciboDeFalha } from "../scripts/tse-2026-financas"
 
 const PACOTE = { url_receitas: "https://tse/receitas.zip", url_bens: "https://tse/bens.zip" }
 const vazio = (): EstadoProducao => ({ financiamento: [], verificacoes: [], patrimonio: [], ausencias: [] })
@@ -159,6 +160,73 @@ describe("plano de finanças TSE 2026", () => {
   })
 })
 
+describe("plano de finanças TSE 2026: casos de revisão", () => {
+  it("receita publicada que sumiu do pacote vira erro e revisão, sem apagar nada", () => {
+    const estado = vazio()
+    estado.financiamento.push(existente("f1", "c1", { sq_candidato: "sq-a" }))
+    const ausente: PlannedRow = {
+      table: "financiamento_verificacoes",
+      slug: "a",
+      row: { candidato_id: "c1", ano_eleicao: 2026, sq_candidato: "sq-a", uf_candidatura: "SP", resultado: "ausencia_oficial" },
+    }
+    const plano = planejarFinancas2026({ publicos: [{ id: "c1", slug: "a" }], planejadas: [ausente], estado, pacote: PACOTE })
+    assert.equal(plano.acoes.length, 0)
+    assert.equal(plano.revisao[0]?.motivo, "receita_sumiu_do_pacote")
+    assert.equal(plano.recibos.find((r) => r.fonte === "tse-financiamento")?.resultado, "erro")
+    assert.ok(travasDoPlano(plano, estado).some((f) => f.includes("sumiu")))
+  })
+
+  it("receita de outra identidade não sobrescreve a linha existente", () => {
+    const estado = vazio()
+    estado.financiamento.push(existente("f1", "c1", { sq_candidato: "sq-outro" }))
+    const plano = planejarFinancas2026({ publicos: [{ id: "c1", slug: "a" }], planejadas: [fin("a", "c1")], estado, pacote: PACOTE })
+    assert.equal(plano.acoes.length, 0)
+    assert.equal(plano.revisao[0]?.motivo, "financiamento_outra_identidade")
+  })
+
+  it("só apaga a verificação do mesmo contexto SQ/UF do insert", () => {
+    const estado = vazio()
+    estado.verificacoes.push(
+      { id: "v1", candidato_id: "c1", ano_eleicao: 2026, sq_candidato: "sq-a", uf_candidatura: "SP", resultado: "ausencia_oficial", verificado_em: null },
+      { id: "v2", candidato_id: "c1", ano_eleicao: 2026, sq_candidato: "sq-velho", uf_candidatura: "RJ", resultado: "ausencia_oficial", verificado_em: null },
+    )
+    const plano = planejarFinancas2026({ publicos: [{ id: "c1", slug: "a" }], planejadas: [fin("a", "c1")], estado, pacote: PACOTE })
+    const apagadas = plano.acoes.filter((a) => a.tipo === "apagar_verificacao").map((a) => ("id" in a ? a.id : ""))
+    assert.deepEqual(apagadas, ["v1"])
+    assert.ok(plano.revisao.some((r) => r.motivo === "verificacao_outra_identidade"))
+  })
+})
+
+describe("coletor TSE 2026: portão e argumentos", () => {
+  it("lerArgs reconhece apply, agendado, out e sha", () => {
+    assert.deepEqual(lerArgs(["--apply", "--agendado", "--out=x", "--expected-plan-sha=abc"]), {
+      aplicar: true, agendado: true, out: "x", expectedPlanSha: "abc",
+    })
+    assert.deepEqual(lerArgs([]), { aplicar: false, agendado: false, out: null, expectedPlanSha: null })
+  })
+
+  it("agendado não exige sha, mas respeita travas e sonda de CAS", () => {
+    const agendado = lerArgs(["--apply", "--agendado"])
+    assert.deepEqual(decidirPortao(agendado, "s", [], []), { aplicar: true })
+    assert.equal((decidirPortao(agendado, "s", ["queda"], []) as { codigo: number }).codigo, 2)
+    assert.equal((decidirPortao(agendado, "s", [], ["cas"]) as { codigo: number }).codigo, 5)
+  })
+
+  it("manual exige o sha revisado e também passa pela sonda", () => {
+    assert.equal((decidirPortao(lerArgs(["--apply"]), "s", [], []) as { codigo: number }).codigo, 3)
+    assert.equal((decidirPortao(lerArgs(["--apply", "--expected-plan-sha=t"]), "s", [], []) as { codigo: number }).codigo, 3)
+    assert.deepEqual(decidirPortao(lerArgs(["--apply", "--expected-plan-sha=s"]), "s", [], []), { aplicar: true })
+    assert.equal((decidirPortao(lerArgs(["--apply", "--expected-plan-sha=s"]), "s", [], ["x"]) as { codigo: number }).codigo, 5)
+  })
+
+  it("rodada que não aplica deixa recibo de erro nas duas fontes por ficha", () => {
+    const linhas = linhasDeReciboDeFalha([{ id: "c1", slug: "a" }, { id: "c2", slug: "b" }], "pacote indisponível")
+    assert.equal(linhas.length, 4)
+    assert.deepEqual([...new Set(linhas.map((l) => l.fonte))].sort(), ["tse-financiamento", "tse-patrimonio"])
+    assert.ok(linhas.every((l) => l.resultado === "erro" && l.volume === 0 && l.detalhe.includes("pacote indisponível")))
+  })
+})
+
 describe("coletor TSE 2026: contrato de escrita", () => {
   const src = readFileSync("scripts/tse-2026-financas.ts", "utf8")
   it("toda escrita de domínio passa por escreverAuditado com CAS", () => {
@@ -166,7 +234,9 @@ describe("coletor TSE 2026: contrato de escrita", () => {
     assert.match(src, /\.is\("despublicado_em", null\)/)
     assert.match(src, /exigirChaveV2\(process\.env\.PF_DOADOR_CPF_HASH_SALT\)/)
   })
-  it("apply manual exige o sha do plano revisado", () => {
+  it("apply manual exige o sha do plano revisado; ação que lança vira conflito", () => {
     assert.match(src, /opts\.expectedPlanSha !== sha/)
+    assert.match(src, /conflitos\.push\(\{ slug: acao\.slug, tipo: acao\.tipo, motivo: `exceção:/)
+    assert.match(src, /await gravarRecibosDeFalha\(`rodada abortou antes de aplicar/)
   })
 })

@@ -63,7 +63,11 @@ describe("rehash cpf_hash v2", () => {
 
   it("recusa chave que não é a v2", () => {
     assert.throws(() => exigirChaveV2(undefined), /ausente/)
-    assert.throws(() => exigirChaveV2("outra-chave"), /não é a chave v2/)
+    assert.throws(() => exigirChaveV2("outra-chave"), (err: Error) => {
+      assert.match(err.message, /não é a chave v2/)
+      assert.doesNotMatch(err.message, /[0-9a-f]{16}/, "mensagem não expõe impressão digital")
+      return true
+    })
     assert.equal(fingerprintDaChave("abc").length, 16)
   })
 })

@@ -43,8 +43,10 @@ on:
 permissions:
   contents: read
 
+# Mesmo grupo do ingest.yml: financiamento e bens não podem ser escritos por
+# duas rodadas ao mesmo tempo.
 concurrency:
-  group: tse-2026-financas
+  group: ingest-pipeline
   cancel-in-progress: false
 
 jobs:
@@ -77,25 +79,33 @@ jobs:
           set -euo pipefail
           mkdir -p reports/tse-2026
           args=(--out=reports/tse-2026)
-          aplicou=false
+          modo=dry-run
           if [ "$PF_TSE2026_EVENTO" = "schedule" ]; then
             args+=(--apply --agendado)
-            aplicou=true
+            modo=apply
           elif [ "$PF_TSE2026_APLICAR" = "true" ]; then
             [[ "$PF_EXPECTED_PLAN_SHA" =~ ^[0-9a-f]{64}$ ]] || { echo "expected_plan_sha obrigatório para aplicar" >&2; exit 1; }
             args+=(--apply "--expected-plan-sha=$PF_EXPECTED_PLAN_SHA")
-            aplicou=true
+            modo=apply
           else
             export PF_DRY_RUN=1
           fi
-          echo "aplicou=$aplicou" >> "$GITHUB_OUTPUT"
+          set +e
           node --import tsx scripts/tse-2026-financas.ts "${args[@]}" | tee reports/tse-2026/saida.json
+          codigo=${PIPESTATUS[0]}
+          set -e
+          # 0 = tudo aplicado; 4 = aplicado com conflito de CAS em parte das
+          # ações. Nos dois houve escrita e o cache precisa ser revalidado.
+          aplicou=false
+          if [ "$modo" = "apply" ] && { [ "$codigo" = "0" ] || [ "$codigo" = "4" ]; }; then aplicou=true; fi
+          echo "aplicou=$aplicou" >> "$GITHUB_OUTPUT"
           {
-            echo '### TSE 2026 finanças'
+            echo "### TSE 2026 finanças ($modo, exit $codigo)"
             echo '```json'
-            jq -c '{plano_sha256, resumo}' reports/tse-2026/plano-resumo.json
+            jq -c '{plano_sha256, resumo}' reports/tse-2026/plano-resumo.json 2>/dev/null || echo '{}'
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
+          exit "$codigo"
       - name: Apagar plano privado e pré-imagem do runner
         if: always()
         run: rm -f reports/tse-2026/plano-privado.json reports/tse-2026/backup-preimagem.json

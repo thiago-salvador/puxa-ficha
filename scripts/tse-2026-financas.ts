@@ -25,6 +25,8 @@ import { exigirChaveV2 } from "./lib/rehash-doador-cpf-v2"
 import { financiamentoReceitasZipUrls } from "./lib/tse-financiamento-receitas-urls"
 import {
   ANO_FINANCAS_2026,
+  FONTE_RECIBO_FINANCIAMENTO,
+  FONTE_RECIBO_PATRIMONIO,
   planejarFinancas2026,
   stableJson,
   travasDoPlano,
@@ -303,11 +305,84 @@ async function gravarRecibos(plano: PlanoFinancas2026, conflitos: Conflito[]): P
   return linhas.length
 }
 
+function mensagemDe(err: unknown): string {
+  return err instanceof Error ? err.message : String(err)
+}
+
+/**
+ * Recibo `erro` por ficha pública nas duas fontes, para a rodada que não
+ * chegou a aplicar (pacote indisponível, travas, sha divergente, exceção). Sem
+ * isso a matriz de cobertura continuaria mostrando o recibo anterior como se
+ * esta tentativa não tivesse existido. Nunca lança: o erro original é o que
+ * o chamador precisa ver.
+ */
+export function linhasDeReciboDeFalha(publicos: FichaPublica[], motivo: string) {
+  const detalhe = JSON.stringify({ escopo: "candidato", ano: ANO_FINANCAS_2026, motivo: motivo.slice(0, 300) })
+  return publicos.flatMap((p) =>
+    [FONTE_RECIBO_FINANCIAMENTO, FONTE_RECIBO_PATRIMONIO].map((fonte) => ({
+      fonte,
+      escopo: "candidato",
+      alvo: p.slug,
+      candidato_id: p.id,
+      resultado: "erro",
+      volume: 0,
+      detalhe,
+      url: null,
+      execucao: EXECUCAO,
+      duracao_ms: null,
+    })),
+  )
+}
+
+async function gravarRecibosDeFalha(motivo: string, publicos: FichaPublica[] | null): Promise<void> {
+  try {
+    const lista = publicos ?? (await carregarPublicos())
+    const linhas = linhasDeReciboDeFalha(lista, motivo)
+    for (let i = 0; i < linhas.length; i += 200) {
+      const { error } = await supabase.from("coleta_log").insert(linhas.slice(i, i + 200))
+      if (error) throw new Error(error.message)
+    }
+    console.error(`recibos de erro gravados: ${linhas.length}`)
+  } catch (err) {
+    console.error(`recibos de erro NÃO gravados: ${mensagemDe(err)}`)
+  }
+}
+
+/** Portão entre o plano e a primeira escrita. Puro, para teste. */
+export function decidirPortao(
+  opts: OpcoesCli,
+  sha: string,
+  falhasDeTravas: string[],
+  falhasDeCas: string[],
+): { aplicar: true } | { aplicar: false; codigo: number; motivo: string } {
+  if (opts.agendado) {
+    if (falhasDeTravas.length > 0) {
+      return { aplicar: false, codigo: 2, motivo: `travas reprovaram: ${falhasDeTravas.join("; ")}` }
+    }
+  } else if (opts.expectedPlanSha !== sha) {
+    return { aplicar: false, codigo: 3, motivo: `plano_sha256 ${sha} difere do revisado (${opts.expectedPlanSha ?? "ausente"})` }
+  }
+  if (falhasDeCas.length > 0) {
+    return { aplicar: false, codigo: 5, motivo: `sonda de CAS falhou em ${falhasDeCas.length} ação(ões): ${falhasDeCas.slice(0, 3).join("; ")}` }
+  }
+  return { aplicar: true }
+}
+
 export async function main(argv = process.argv.slice(2)): Promise<number> {
   const opts = lerArgs(argv)
+  if (!opts.aplicar) return executar(opts)
+  try {
+    return await executar(opts)
+  } catch (err) {
+    await gravarRecibosDeFalha(`rodada abortou antes de aplicar: ${mensagemDe(err)}`, null)
+    throw err
+  }
+}
+
+async function executar(opts: OpcoesCli): Promise<number> {
   exigirChaveV2(process.env.PF_DOADOR_CPF_HASH_SALT)
 
-  const { plano, estado } = await planejar()
+  const { plano, estado, publicos } = await planejar()
   const sha = shaDoPlano(plano)
   const publico = planoPublico(plano)
   console.log(JSON.stringify({ modo: opts.aplicar ? "apply" : "dry-run", plano_sha256: sha, resumo: publico.resumo }, null, 2))
@@ -318,27 +393,27 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     const backup = salvar(opts.out, "backup-preimagem.json", backupDoPlano(plano, estado))
     console.error(`plano: ${plan}\nresumo: ${resumo}\nbackup: ${backup}`)
   }
-  if (!opts.aplicar) {
-    const sonda = await sondarCas(plano)
-    console.log(JSON.stringify({ sonda_cas: { ok: sonda.ok, falhas: sonda.falhas.length, exemplos: sonda.falhas.slice(0, 5) } }))
-    return sonda.falhas.length > 0 ? 5 : 0
-  }
+  const sonda = await sondarCas(plano)
+  console.log(JSON.stringify({ sonda_cas: { ok: sonda.ok, falhas: sonda.falhas.length, exemplos: sonda.falhas.slice(0, 5) } }))
+  if (!opts.aplicar) return sonda.falhas.length > 0 ? 5 : 0
 
-  if (opts.agendado) {
-    const falhas = travasDoPlano(plano, estado)
-    if (falhas.length > 0) {
-      console.error(`Travas reprovaram a aplicação agendada:\n- ${falhas.join("\n- ")}`)
-      return 2
-    }
-  } else if (opts.expectedPlanSha !== sha) {
-    console.error(`plano_sha256 ${sha} difere do revisado (${opts.expectedPlanSha ?? "ausente"}); nada gravado`)
-    return 3
+  const portao = decidirPortao(opts, sha, opts.agendado ? travasDoPlano(plano, estado) : [], sonda.falhas)
+  if (!portao.aplicar) {
+    console.error(`${portao.motivo}; nada gravado`)
+    await gravarRecibosDeFalha(portao.motivo, publicos)
+    return portao.codigo
   }
 
   const conflitos: Conflito[] = []
   for (const acao of plano.acoes) {
-    const c = await aplicarAcao(acao)
-    if (c) conflitos.push(c)
+    try {
+      const c = await aplicarAcao(acao)
+      if (c) conflitos.push(c)
+    } catch (err) {
+      // Uma ação que lança não pode derrubar as seguintes nem os recibos: a
+      // trilha de erro dela já foi gravada por escreverAuditado.
+      conflitos.push({ slug: acao.slug, tipo: acao.tipo, motivo: `exceção: ${mensagemDe(err)}` })
+    }
   }
   const recibos = await gravarRecibos(plano, conflitos)
   console.log(JSON.stringify({ aplicadas: plano.acoes.length - conflitos.length, conflitos, recibos }, null, 2))

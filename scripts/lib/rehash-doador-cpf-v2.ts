@@ -27,9 +27,8 @@ export function fingerprintDaChave(chave: string): string {
 /** Lança se a chave presente não é a v2 registrada. */
 export function exigirChaveV2(chave: string | undefined): void {
   if (!chave?.trim()) throw new Error("PF_DOADOR_CPF_HASH_SALT ausente: rehash e coleta com CPF exigem a chave v2")
-  const fp = fingerprintDaChave(chave)
-  if (fp !== DONOR_CPF_HASH_V2_FINGERPRINT) {
-    throw new Error(`PF_DOADOR_CPF_HASH_SALT não é a chave v2 (impressão ${fp}); nada foi gravado`)
+  if (fingerprintDaChave(chave) !== DONOR_CPF_HASH_V2_FINGERPRINT) {
+    throw new Error("PF_DOADOR_CPF_HASH_SALT não é a chave v2; nada foi gravado")
   }
 }
 

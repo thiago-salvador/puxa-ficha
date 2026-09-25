@@ -123,6 +123,7 @@ export type ItemRevisao = {
     | "patrimonio_divergente"
     | "bens_sumiram_do_pacote"
     | "sem_identidade_2026"
+    | "verificacao_outra_identidade"
   detalhe: string
 }
 
@@ -167,8 +168,9 @@ export interface ResumoPlano {
 }
 
 function num(value: unknown): number | null {
-  if (value === null || value === undefined || value === "") return null
-  const n = typeof value === "number" ? value : Number(value)
+  if (typeof value === "number") return Number.isFinite(value) ? value : null
+  if (typeof value !== "string" || !value.trim()) return null
+  const n = Number(value)
   return Number.isFinite(n) ? n : null
 }
 
@@ -347,10 +349,22 @@ export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
           }
           continue
         }
-        // Linha nova: a verificação do mesmo pleito sai antes (trigger de recusa).
+        // Linha nova: a verificação do MESMO contexto (candidato, ano, SQ, UF)
+        // sai antes; é o recorte exato do trigger
+        // `financiamento_publicado_recusa_verificacao` (IS NOT DISTINCT FROM).
+        // Verificação de outro contexto não bloqueia o insert e vai para revisão.
         for (const v of verFicha) {
-          acoes.push({ tipo: "apagar_verificacao", slug: ficha.slug, id: v.id, antes: v })
-          resumo.financiamento.verificacoes_vencidas_apagadas++
+          if (chave(v.candidato_id, v.sq_candidato, v.uf_candidatura) === k) {
+            acoes.push({ tipo: "apagar_verificacao", slug: ficha.slug, id: v.id, antes: v })
+            resumo.financiamento.verificacoes_vencidas_apagadas++
+          } else {
+            revisao.push({
+              slug: ficha.slug,
+              familia: "financiamento",
+              motivo: "verificacao_outra_identidade",
+              detalhe: `verificação ${v.resultado} em ${v.sq_candidato}/${v.uf_candidatura}; receita nova em ${text(row.sq_candidato)}/${text(row.uf_candidatura)}`,
+            })
+          }
         }
         const linha = { ...row }
         delete linha.doadores_completos
