@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
-# Aplica, em ordem de arquivo, as migrations de dado de 25/09/2026:
-#   20260925230000  historico de mandatos federais sem respaldo nas listas
-#                   oficiais do Senado e da Camara (3 despublicadas, 5 corrigidas)
-#   20260925230100  nome civil de dez fichas nao publicadas pelo cadastro da Camara
+# Aplica, em ordem de arquivo, as tres migrations de dado de 25/09/2026:
+#   20260925220000  situacao de alexandre-curi (Deferido) e tse-2026-190002554290 (Indeferido, terminal)
+#   20260925220100  claim de carreira de hana-ghassan sem contar secretaria como mandato
+#   20260925220200  cargo_atual de nove fichas que nao exercem mandato no Senado
 # com predecessor, hash, lock, ledger e readback fechados para o projeto de
-# producao do Puxa Ficha. Molde de apply-dados-no-ar-senado-claims-production.sh.
+# producao do Puxa Ficha. Molde de apply-issue-483-arruda-production.sh, com a
+# lista de versoes em laco (aceita prefixo do conjunto ja aplicado).
 #
 # Ordem obrigatoria de .coderabbit.yaml para script que escreve em producao:
 # dry-run, apply, readback e recibo. Os dois modos geram a MESMA transacao; o
 # dry-run fecha em ROLLBACK e o apply em COMMIT.
 #
-#   scripts/audit/apply-historico-mandatos-federais-production.sh dry-run   # ensaio, nao grava
-#   scripts/audit/apply-historico-mandatos-federais-production.sh apply     # grava
+#   scripts/audit/apply-dados-no-ar-senado-claims-production.sh dry-run   # ensaio, nao grava
+#   scripts/audit/apply-dados-no-ar-senado-claims-production.sh apply     # grava
 set -euo pipefail
 case $- in *x*) set +x ;; esac
 
@@ -55,16 +56,15 @@ pf_configure_libpq_from_url
 export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
-# Predecessor: o topo do ledger e da arvore nesta base. PROVISORIO: se outras
-# migrations entrarem antes desta, base_version e base_migration passam a
-# apontar para a ultima delas (o teste de runners exige que o arquivo exista).
-base_version=20260925220200
-base_migration="$ROOT/supabase/migrations/${base_version}_cargo_atual_ex_senadores.sql"
+# Predecessor comum: o topo do ledger antes deste conjunto. Gravado por
+# apply-gastos-parlamentares-quarentena-production, que sempre escreve digest.
+base_version=20260925163543
+base_migration="$ROOT/supabase/migrations/${base_version}_quarentena_gastos_parlamentares_57_linhas.sql"
 [[ -f "$base_migration" ]] || { echo "FAIL: predecessor ${base_version} ausente" >&2; exit 2; }
 base_digest="sha256:$(shasum -a 256 "$base_migration" | cut -d' ' -f1)"
 
-versions=(20260925230000 20260925230100)
-names=(historico_mandatos_federais_sem_fonte nome_civil_fichas_nao_publicas)
+versions=(20260925220000 20260925220100 20260925220200)
+names=(senado_situacao_curi_ribeiro_afonso claims_contagem_mandatos cargo_atual_ex_senadores)
 
 digests=()
 for i in "${!versions[@]}"; do
@@ -116,7 +116,7 @@ done
 if [[ "$aplicadas" == "${#versions[@]}" ]]; then
   [[ "$topo" == "${versions[${#versions[@]}-1]}" ]] || { echo "FAIL: o conjunto esta no ledger mas o topo e $topo" >&2; exit 1; }
   rodar_readbacks
-  echo "PASS: conjunto historico-federal ja aplicado, ledger e readbacks conferem"
+  echo "PASS: conjunto dados-no-ar ja aplicado, ledger e readbacks conferem"
   exit 0
 fi
 
@@ -178,7 +178,7 @@ for i in range(0, len(resto), 5):
     readback = pathlib.Path(readback_path).read_bytes()
     created_by = "Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions:" + sha
 
-    print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(previous)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(previous)} AND idempotency_key={lit(previous_digest)}) <> 1 OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'historico-federal: ledger divergiu sob lock antes de {version}'; END IF; END $ledger$;")
+    print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(previous)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(previous)} AND idempotency_key={lit(previous_digest)}) <> 1 OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'dados-no-ar: ledger divergiu sob lock antes de {version}'; END IF; END $ledger$;")
     print(body, end="" if body.endswith("\n") else "\n")
     print("INSERT INTO supabase_migrations.schema_migrations (version, statements, name, created_by, idempotency_key, rollback) VALUES (")
     print(f"  {lit(version)}, ARRAY[convert_from(decode({lit(b64(raw))}, 'base64'), 'UTF8')], {lit(name)}, {lit(created_by)}, {lit(digest)}, ARRAY[convert_from(decode({lit(b64(rollback))}, 'base64'), 'UTF8')]);")
@@ -190,7 +190,7 @@ for i in range(0, len(resto), 5):
     corpo = re.sub(r"(?im)^\s*BEGIN READ ONLY;\s*$", "", corpo)
     corpo = re.sub(r"(?im)^\s*COMMIT;\s*$", "", corpo)
     print(corpo, end="" if corpo.endswith("\n") else "\n")
-    print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(version)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(version)} AND idempotency_key={lit(digest)}) <> 1 THEN RAISE EXCEPTION 'historico-federal: ledger final divergiu em {version}'; END IF; END $ledger$;")
+    print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(version)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(version)} AND idempotency_key={lit(digest)}) <> 1 THEN RAISE EXCEPTION 'dados-no-ar: ledger final divergiu em {version}'; END IF; END $ledger$;")
 
 print(fecho + ";")
 PYGEN
@@ -199,7 +199,7 @@ PYGEN
 if [[ "$modo" == "dry-run" ]]; then
   gerar_sql ROLLBACK "${args[@]}" | \
     PGOPTIONS='-c statement_timeout=300000 -c lock_timeout=5000' psql -X -v ON_ERROR_STOP=1 -f -
-  echo "PASS: dry-run do conjunto historico-federal rodou migrations, ledger e readbacks e desfez tudo"
+  echo "PASS: dry-run do conjunto dados-no-ar rodou migrations, ledger e readbacks e desfez tudo"
   exit 0
 fi
 
@@ -207,10 +207,10 @@ fi
 # estado atual do banco e os mesmos artefatos, e so grava se o ensaio passar.
 gerar_sql ROLLBACK "${args[@]}" | \
   PGOPTIONS='-c statement_timeout=300000 -c lock_timeout=5000' psql -X -v ON_ERROR_STOP=1 -f -
-echo "PASS: ensaio pre-apply do conjunto historico-federal conferido; gravando"
+echo "PASS: ensaio pre-apply do conjunto dados-no-ar conferido; gravando"
 
 gerar_sql COMMIT "${args[@]}" | \
   PGOPTIONS='-c statement_timeout=300000 -c lock_timeout=5000' psql -X -v ON_ERROR_STOP=1 -f -
 
 rodar_readbacks
-echo "PASS: conjunto historico-federal aplicado, ledger e readbacks concluidos"
+echo "PASS: conjunto dados-no-ar aplicado, ledger e readbacks concluidos"

@@ -52,7 +52,7 @@ CREATE TABLE supabase_migrations.schema_migrations (
   rollback text[]
 );
 INSERT INTO supabase_migrations.schema_migrations(version, idempotency_key)
-VALUES ('20260925163543', 'sha256:fixture');
+VALUES ('20260925220200', 'sha256:fixture');
 
 CREATE TABLE public.candidatos (
   id uuid PRIMARY KEY,
@@ -195,7 +195,7 @@ q -q < "supabase/rollback/$V.rollback.sql"
 q -q < "supabase/readback/$V.rollback.readback.sql"
 
 [[ "$(digest_tudo)" == "$tudo_antes" ]] || { echo "FAIL: rollback não devolveu o estado inicial" >&2; exit 1; }
-[[ "$(q -Atq -c "SELECT max(version) FROM supabase_migrations.schema_migrations")" == "20260925163543" ]] || { echo "FAIL: ledger final" >&2; exit 1; }
+[[ "$(q -Atq -c "SELECT max(version) FROM supabase_migrations.schema_migrations")" == "20260925220200" ]] || { echo "FAIL: ledger final" >&2; exit 1; }
 [[ "$(q -Atq -c "SELECT count(*) FROM public.identidade_timeline_quarentena_snapshot")" == "0" ]] || { echo "FAIL: snapshot sobrou" >&2; exit 1; }
 
 echo "PASS: histórico de mandatos federais e nome civil têm pré-estado, adulteração, linha já despublicada, outra ficha, ficha publicada, forward, readbacks, migration posterior, rollback inverso e sentinelas provados em PostgreSQL 17"
