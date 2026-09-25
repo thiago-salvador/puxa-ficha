@@ -478,6 +478,7 @@ async function ingestGastos(
       candidato_id: candidatoId,
       ano,
       total_gasto: Math.round(totalGasto * 100) / 100,
+      coletado_em: fetchedAt,
       detalhamento: expenseSnapshotDir
         ? {
             categorias: detalhamento,

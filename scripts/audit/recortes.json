@@ -669,6 +669,13 @@
       "ate": "20260924205031",
       "allowlist": "scripts/audit/allowlist-situacao-tse-2026-receipts-20260924.json",
       "divida": null
+    },
+    {
+      "nome": "gastos-parlamentares-quarentena-20260925",
+      "desde": "20260925163543",
+      "ate": "20260925163543",
+      "allowlist": "scripts/audit/allowlist-gastos-parlamentares-quarentena-20260925.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

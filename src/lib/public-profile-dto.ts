@@ -21,6 +21,7 @@ import {
   resolveCargoDisputadoProveniencia,
 } from "@/lib/candidatura-proveniencia"
 import { anosDePleitoDisputado } from "@/lib/pleitos-disputados"
+import { gastoParlamentarEmRevisao } from "@/lib/gastos-parlamentares-em-revisao"
 import { buildFinanciamentoEleicoes } from "@/lib/financiamento-eleicoes"
 import { publicDoadorRecorrente } from "@/lib/doador-recorrente-publico"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
@@ -503,6 +504,7 @@ function publicGastosParlamentares(row: FichaCandidato["gastos_parlamentares"][n
     id: compactPublicId("gasto", row.id, index),
     ano: row.ano,
     total_gasto: row.total_gasto,
+    coletado_em: row.coletado_em ?? null,
     detalhamento: detalhamento.map((item) => ({
       categoria: typeof item.categoria === "string" ? item.categoria : "",
       valor: typeof item.valor === "number" ? item.valor : Number(item.valor) || 0,
@@ -692,6 +694,9 @@ function publicSocialLinks(value: Record<string, unknown> | null | undefined) {
 
 export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
   const cargoProveniencia = resolveCargoDisputadoProveniencia(ficha)
+  const gastosParlamentaresPublicos = (ficha.gastos_parlamentares ?? []).filter((row) =>
+    !gastoParlamentarEmRevisao(ficha.slug, row.ano),
+  )
   const processosBrutos = ficha.processos ?? []
   const processosPublicos = processosBrutos.filter((row) =>
     Boolean(urlFonteJudicialEspecifica(row.url_fonte, row.numero_processo)),
@@ -788,10 +793,10 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
       (ficha.legislacao_mandato_executivo ?? []).length,
     legislacao_mandato_executivo_truncados:
       ficha.legislacao_mandato_executivo_truncados ?? false,
-    gastos_parlamentares: (ficha.gastos_parlamentares ?? [])
+    gastos_parlamentares: gastosParlamentaresPublicos
       .filter((row) => gastoParlamentarExibivel(row.fonte, row.detalhamento))
       .map(publicGastosParlamentares),
-    transparencia: publicTransparencia(ficha.gastos_parlamentares ?? [], ficha.transparencia ?? []),
+    transparencia: publicTransparencia(gastosParlamentaresPublicos, ficha.transparencia ?? []),
     gastos_executivo: (ficha.gastos_executivo ?? []).map(publicGastosExecutivo),
     sancoes_administrativas: (ficha.sancoes_administrativas ?? []).map(publicSancao),
     noticias: (ficha.noticias ?? []).map(publicNoticia),

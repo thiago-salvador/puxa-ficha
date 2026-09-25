@@ -370,6 +370,8 @@ export interface GastoParlamentar {
   candidato_id: string;
   ano: number;
   total_gasto: number;
+  /** Momento da consulta à fonte oficial que produziu o total anual. */
+  coletado_em?: string | null;
   detalhamento: GastoCategoria[];
   gastos_destaque: GastoDestaque[];
   /** Rótulo da origem da linha. Decide se ela pode ser exibida: ver `gastoParlamentarExibivel`. */
