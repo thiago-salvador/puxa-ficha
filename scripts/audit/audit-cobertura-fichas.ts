@@ -240,7 +240,8 @@ function isChapaApplicable(profile: CoverageProfile): boolean {
 }
 
 function applicable(profile: CoverageProfile, family: CoverageFamily): boolean {
-  if (["projetos_lei", "votos_candidato", "gastos_parlamentares"].includes(family)) return federalParliamentary(profile)
+  if (family === "gastos_parlamentares") return federalParliamentary(profile) && expenseSources(profile).length > 0
+  if (["projetos_lei", "votos_candidato"].includes(family)) return federalParliamentary(profile)
   if (family === "gastos_executivo") return isExecutive(profile)
   if (family === "chapa_vice") return isChapaApplicable(profile)
   return true
@@ -273,9 +274,70 @@ function federalSources(profile: CoverageProfile): string[] {
   return [...sources]
 }
 
+/** Primeiro ano da série oficial de cotas parlamentares (CSV anual da Câmara e CEAPS do Senado). */
+export const EXPENSE_SERIES_FIRST_YEAR = 2008
+const TERM_YEARS: Record<"camara" | "senado", number> = { camara: 4, senado: 8 }
+
+/**
+ * Casas cuja cota parlamentar se aplica à ficha. Regra escrita: um mandato
+ * federal conta só se alcança a série oficial de cotas (2008 em diante). Sem
+ * fim registrado, o mandato vale pelo prazo constitucional do cargo (4 anos
+ * deputado, 8 senador), salvo quando a pessoa ocupa hoje esse cargo. ID
+ * oficial sem nenhuma linha de mandato daquela casa mantém a casa aplicável.
+ */
+function federalMandateIntervals(profile: CoverageProfile, house: "camara" | "senado", now = new Date().getUTCFullYear()): Array<[number | null, number]> {
+  const current = text(profile.cargo_atual) ?? ""
+  const intervals: Array<[number | null, number]> = []
+  for (const item of Array.isArray(profile.historico) ? profile.historico : []) {
+    const row = record(item)
+    if (!row || isCandidacyRow(row)) continue
+    const cargo = text(row.cargo_canonico) ?? text(row.cargo)
+    if (cargo !== (house === "camara" ? "Deputado Federal" : "Senador")) continue
+    const start = typeof row.periodo_inicio === "number" ? row.periodo_inicio : null
+    const holdsNow = house === "camara" ? /^Deputad[oa]\(?a?\)? Federal/.test(current) : /^Senador/.test(current)
+    const end = typeof row.periodo_fim === "number" ? row.periodo_fim
+      : holdsNow || start === null ? now
+      : start + TERM_YEARS[house]
+    intervals.push([start, Math.min(end, now)])
+  }
+  return intervals
+}
+
+function expenseSources(profile: CoverageProfile): string[] {
+  const ids = record(profile.ids)
+  const sources: string[] = []
+  for (const house of ["camara", "senado"] as const) {
+    const intervals = federalMandateIntervals(profile, house)
+    if (intervals.length ? intervals.some(([, end]) => end >= EXPENSE_SERIES_FIRST_YEAR) : present(ids?.[house])) sources.push(house)
+  }
+  return sources
+}
+
+/**
+ * Cota zerada declarada pela fonte oficial (`cota-parlamentar-zero`): fecha como
+ * vazio só se os anos consultados cobrem todos os anos de mandato da casa dentro
+ * da série de cotas. Consulta vazia fora do mandato não prova nada.
+ */
+function validExpenseZero(profile: CoverageProfile, family: CoverageFamily, receipt: Receipt): boolean {
+  if (family !== "gastos_parlamentares") return false
+  const detail = record(receipt.cota_zero)
+  if (!detail || detail.contract_version !== 1 || detail.kind !== "cota-parlamentar-zero") return false
+  const house = detail.house === "camara" || detail.house === "senado" ? detail.house : null
+  if (!house || sourceKey(text(receipt.fonte) ?? "") !== house) return false
+  const publicId = record(profile.ids)?.[house]
+  if (present(publicId) && String(publicId) !== text(detail.source_id)) return false
+  const queried = new Set(Array.isArray(detail.anos) ? detail.anos.filter((year): year is number => Number.isInteger(year)) : [])
+  const required = new Set<number>()
+  for (const [start, end] of federalMandateIntervals(profile, house)) {
+    if (start === null) return false
+    for (let year = Math.max(start, EXPENSE_SERIES_FIRST_YEAR); year <= end; year++) required.add(year)
+  }
+  return required.size > 0 && [...required].every((year) => queried.has(year))
+}
+
 function requiredSources(profile: CoverageProfile, family: CoverageFamily): string[] {
   if (!["projetos_lei", "votos_candidato", "gastos_parlamentares"].includes(family)) return []
-  return federalSources(profile)
+  return family === "gastos_parlamentares" ? expenseSources(profile) : federalSources(profile)
 }
 
 /**
@@ -324,6 +386,7 @@ export function adaptLatestReceipts(rows: LatestReceiptRow[], profiles: Coverage
       periodo: text(row.periodo),
       coverage_proof: detail?.coverage_proof,
       execucao: text(row.execucao),
+      ...(detail?.kind === "cota-parlamentar-zero" ? { cota_zero: detail } : {}),
       ...(fonte!.toLocaleLowerCase() === DAILY_CHECK_SOURCE ? { daily_check: detail, candidato_id: candidateId } : {}),
     }
     const bucket = joins[alvo] ?? {}
@@ -526,7 +589,7 @@ function stateFromSingleReceipt(receipt: Receipt | null, profile: CoverageProfil
   }
   if (effectiveResult === "vazio_confirmado") {
     if (["projetos_lei", "votos_candidato", "gastos_parlamentares"].includes(family)) {
-      return validCoverageSourceProof(profile, family, receipt) ? "vazio_confirmado" : "indeterminado"
+      return validCoverageSourceProof(profile, family, receipt) || validExpenseZero(profile, family, receipt) ? "vazio_confirmado" : "indeterminado"
     }
     return "vazio_confirmado"
   }

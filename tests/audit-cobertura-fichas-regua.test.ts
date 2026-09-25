@@ -165,6 +165,48 @@ describe("régua: recibo por ficha da auditoria diária", () => {
   })
 })
 
+describe("régua: aplicabilidade da cota parlamentar", () => {
+  const gastos = (subject: CoverageProfile) => buildCoverageMatrix([subject]).cells.find((cell) => cell.familia === "gastos_parlamentares")!
+  const mandate = (cargo: string, periodo_inicio: number, periodo_fim: number | null) => ({ tipo_evento: "mandato", cargo, periodo_inicio, periodo_fim })
+
+  it("mandato federal inteiro antes da série de cotas (2008) não se aplica, inclusive sem fim registrado", () => {
+    assert.equal(gastos(profile({ historico: [mandate("Deputado Federal", 2002, null), mandate("Senador", 1995, 2001)] })).aplicavel, false)
+    assert.equal(gastos(profile({ historico: [mandate("Deputado Federal", 1987, 1991)] })).aplicavel, false)
+    // projetos seguem aplicáveis: a regra é só da cota.
+    assert.equal(buildCoverageMatrix([profile({ historico: [mandate("Deputado Federal", 2002, null)] })]).cells.find((cell) => cell.familia === "projetos_lei")!.aplicavel, true)
+  })
+
+  it("controles positivos: mandato na série, cargo atual sem fim e ID oficial sem linha de mandato", () => {
+    assert.equal(gastos(profile({ historico: [mandate("Deputado Federal", 2019, 2023)] })).aplicavel, true)
+    assert.equal(gastos(profile({ historico: [mandate("Deputado Federal", 2003, 2008)] })).aplicavel, true)
+    assert.equal(gastos(profile({ cargo_atual: "Senador(a)", historico: [mandate("Senador", 2003, null)] })).aplicavel, true)
+    assert.equal(gastos(profile({ historico: [mandate("Senador", 2021, null)] })).aplicavel, true)
+    assert.equal(gastos(profile({ ids: { camara: 12345 } })).aplicavel, true)
+  })
+})
+
+describe("régua: cota parlamentar zerada pela fonte oficial", () => {
+  const anos = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+  const zero = (overrides: Record<string, unknown> = {}, detail: Record<string, unknown> = {}) => row({
+    fonte: "camara-gastos", resultado: "vazio_confirmado", volume: 0, url: "https://dadosabertos.camara.leg.br/api/v2/deputados/204377/despesas",
+    detalhe: JSON.stringify({ contract_version: 1, kind: "cota-parlamentar-zero", house: "camara", source_id: "204377", anos, ...detail }), ...overrides,
+  })
+  const deputada = (historico: unknown[], ids: Record<string, unknown> = {}) => profile({ ids, historico, gastos_parlamentares: [] })
+  const federal = (periodo_inicio: number, periodo_fim: number | null) => ({ tipo_evento: "mandato", cargo: "Deputado Federal", periodo_inicio, periodo_fim })
+
+  it("fecha como vazio quando os anos consultados cobrem o mandato na série", () => {
+    assert.equal(cellOf(deputada([federal(2019, 2023)]), [zero()], "gastos_parlamentares").estado, "vazio_confirmado")
+  })
+
+  it("controles negativos: mandato fora dos anos consultados, ano faltando, ID alheio, recibo velho e vazio sem contrato", () => {
+    assert.equal(cellOf(deputada([federal(2010, 2014)]), [zero()], "gastos_parlamentares").estado, "indeterminado")
+    assert.equal(cellOf(deputada([federal(2019, 2023)]), [zero({}, { anos: [2020, 2021, 2022, 2023] })], "gastos_parlamentares").estado, "indeterminado")
+    assert.equal(cellOf(deputada([federal(2019, 2023)], { camara: 999 }), [zero()], "gastos_parlamentares").estado, "indeterminado")
+    assert.equal(cellOf(deputada([federal(2019, 2023)]), [zero({ executado_em: new Date(Date.now() - 20 * 86_400_000).toISOString() })], "gastos_parlamentares").estado, "desatualizado")
+    assert.equal(cellOf(deputada([federal(2019, 2023)]), [zero({ detalhe: "sem despesas" })], "gastos_parlamentares").estado, "indeterminado")
+  })
+})
+
 describe("régua: exceções nominais aprovadas", () => {
   const approved = { slug: "ana-exemplo", familia: "processos", estado: "sem_recibo", motivo: "tribunal sem consulta pública", aprovado_por: "Dono", aprovado_em: "2026-09-25" }
 

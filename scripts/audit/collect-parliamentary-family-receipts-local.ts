@@ -434,7 +434,7 @@ function detailFor(input: {
 }
 
 /** Primeiro ano com despesa de cota disponível na API oficial de cada casa. */
-export const EXPENSE_SOURCE_FIRST_YEAR: Record<"camara" | "senado", number> = { camara: 2009, senado: 2008 }
+export const EXPENSE_SOURCE_FIRST_YEAR: Record<"camara" | "senado", number> = { camara: 2008, senado: 2008 }
 
 /** Anos de mandato federal da casa, segundo o histórico publicado da ficha. */
 export function mandateYears(profile: Record<string, unknown>, house: "camara" | "senado", currentYear = new Date().getUTCFullYear()): number[] {

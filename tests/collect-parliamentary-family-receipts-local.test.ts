@@ -81,7 +81,7 @@ test("vazio de gastos só vale se a consulta cobre o mandato e não há mandato 
   assert.deepEqual(mandateYears(history([["Deputado Estadual", 2019, 2022]]), "camara", 2026), [])
   const observation = (years: number[]) => ({ house: "camara", family: "gastos_parlamentares", years }) as unknown as ParliamentarySourceObservation
   const all = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
-  assert.throws(() => assertExpenseEmptinessCoversMandates(history([["Deputado Federal", 1987, 1990]]), observation(all)), /anterior a 2009/)
+  assert.throws(() => assertExpenseEmptinessCoversMandates(history([["Deputado Federal", 1987, 1990]]), observation(all)), /anterior a 2008/)
   assert.throws(() => assertExpenseEmptinessCoversMandates(history([["Deputado Federal", 2011, 2014]]), observation(all)), /não consultados: 2011,2012,2013,2014/)
   assert.throws(() => assertExpenseEmptinessCoversMandates(history([["Deputado Federal", 2019, 2022]]), observation(all)), /mandato ativo/)
   // Controle positivo: sem mandato federal no histórico, o vazio da consulta segue válido.
