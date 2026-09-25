@@ -1,0 +1,20 @@
+{
+  "versao": "2026-09-24",
+  "fonte": "TSE, consulta_cand_complementar_2026.zip, auditoria privada de 513 candidaturas unidas por SQ.",
+  "motivo": "Atualizar 19 situações não terminais após comparação de valor anterior, SQ, status e publicação, e registrar 513 recibos da consulta limitada a situação: 362 conferidos e 151 indeterminados. Não altera CPF nem certifica a ficha completa.",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "candidatos",
+      "ref": "migration:20260924205031",
+      "campos": ["situacao_candidatura"]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260924205031",
+      "campos": ["fonte", "escopo", "alvo", "candidato_id", "executado_em", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    }
+  ]
+}
