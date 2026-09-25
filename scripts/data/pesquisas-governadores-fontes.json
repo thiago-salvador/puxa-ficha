@@ -7683,6 +7683,236 @@
         }
       },
       "consulted_at": "2026-09-24T16:26:45Z"
+    },
+    {
+      "id": "quaest-ba-01850-2026-revisao-20260925",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TV Bahia",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-20",
+          "end": "2026-09-23"
+        },
+        "published_at": "2026-09-24",
+        "sample_size": 900,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Bahia",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BA-01850/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-bahia-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BA-01850/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-25T12:12:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "3e64fb6167657ecceb059dbfd98df03bf8a01c3f201632e202ebc5682598c34b",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-bahia-setembro-2026/"
+          ],
+          "note": "Método de coleta não foi publicado na divulgação consultada; campo, amostra, margem e confiança foram identificados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-bahia-setembro-2026/"
+          ]
+        },
+        "sample_identification": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-bahia-setembro-2026/"
+          ],
+          "note": "A população alvo não foi publicada na divulgação consultada; o tamanho da amostra foi identificado."
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-bahia-setembro-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-25T12:12:00Z"
+    },
+    {
+      "id": "quaest-go-01667-2026-revisao-20260925",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TV Anhanguera",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-20",
+          "end": "2026-09-23"
+        },
+        "published_at": "2026-09-24",
+        "sample_size": 804,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Goiás",
+        "rounds": [
+          1
+        ],
+        "registration_id": "GO-01667/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-goias-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "GO-01667/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-25T12:12:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "15623ed6bbf230120b4bdd955f01a28d1adf227e538f57fda927dabe64556e9e",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-goias-setembro-2026/",
+            "https://www1.folha.uol.com.br/poder/2026/09/quaest-daniel-vilela-segue-na-lideranca-da-disputa-ao-governo-de-goias.shtml"
+          ],
+          "note": "Método de coleta não foi publicado nas divulgações consultadas; campo, amostra, margem e confiança foram identificados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-goias-setembro-2026/",
+            "https://www1.folha.uol.com.br/poder/2026/09/quaest-daniel-vilela-segue-na-lideranca-da-disputa-ao-governo-de-goias.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-goias-setembro-2026/",
+            "https://www1.folha.uol.com.br/poder/2026/09/quaest-daniel-vilela-segue-na-lideranca-da-disputa-ao-governo-de-goias.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-goias-setembro-2026/",
+            "https://www1.folha.uol.com.br/poder/2026/09/quaest-daniel-vilela-segue-na-lideranca-da-disputa-ao-governo-de-goias.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-25T12:12:00Z"
+    },
+    {
+      "id": "mt-dados-mt-00691-2026-revisao-20260925",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "MT Dados",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "mtdados.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-11",
+          "end": "2026-09-17"
+        },
+        "published_at": "2026-09-18",
+        "sample_size": 3080,
+        "method": "Pesquisa quantitativa tipo Survey; metodologia híbrida",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Mato Grosso",
+        "rounds": [
+          1
+        ],
+        "registration_id": "MT-00691/2026",
+        "result_url": "https://www.mtdados.com.br/pesquisa-governo-mt-2026-4a-rodada",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MT-00691/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-25T12:12:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "e6db6f45871604c728d10d76cf52e75d001fc48417eb84f0b5bbfe97b90e6ff2",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.mtdados.com.br/pesquisa-governo-mt-2026-4a-rodada",
+            "https://portaljvc.com.br/eleicoes-2026/pivetta-amplia-lideranca-sobre-fagundes-na-disputa-pelo-governo-de-mt/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.mtdados.com.br/pesquisa-governo-mt-2026-4a-rodada",
+            "https://portaljvc.com.br/eleicoes-2026/pivetta-amplia-lideranca-sobre-fagundes-na-disputa-pelo-governo-de-mt/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.mtdados.com.br/pesquisa-governo-mt-2026-4a-rodada",
+            "https://portaljvc.com.br/eleicoes-2026/pivetta-amplia-lideranca-sobre-fagundes-na-disputa-pelo-governo-de-mt/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.mtdados.com.br/pesquisa-governo-mt-2026-4a-rodada",
+            "https://portaljvc.com.br/eleicoes-2026/pivetta-amplia-lideranca-sobre-fagundes-na-disputa-pelo-governo-de-mt/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-25T12:12:00Z"
     }
   ]
 }

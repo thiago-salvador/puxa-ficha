@@ -2683,7 +2683,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|BA|1|estimulada|lista-real-time-big-data-2026-09-09-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-fd30583b3079cf8c",
+      "exact_aliases_version": "monitor-2026-b569d66709abe427",
       "exact_aliases": [
         {
           "raw_label": "ACM Neto",
@@ -2955,6 +2955,78 @@
           "geography": "Bahia",
           "turn": 1,
           "scenario_id": "parana-pesquisas-ba-00759-2026-1t"
+        },
+        {
+          "raw_label": "ACM Neto (União Brasil)",
+          "candidate_slug": "acm-neto",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Bahia",
+          "turn": 1,
+          "scenario_id": "quaest-ba-01850-2026-1t"
+        },
+        {
+          "raw_label": "Jerônimo Rodrigues (PT)",
+          "candidate_slug": "jeronimo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Bahia",
+          "turn": 1,
+          "scenario_id": "quaest-ba-01850-2026-1t"
+        },
+        {
+          "raw_label": "Maria Bona (PCO)",
+          "candidate_slug": "maria-bona",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Bahia",
+          "turn": 1,
+          "scenario_id": "quaest-ba-01850-2026-1t"
+        },
+        {
+          "raw_label": "Aroldo Felix (UP)",
+          "candidate_slug": "aroldo-felix",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Bahia",
+          "turn": 1,
+          "scenario_id": "quaest-ba-01850-2026-1t"
+        },
+        {
+          "raw_label": "Ronaldo Mansur (PSOL)",
+          "candidate_slug": "ronaldo-mansur",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Bahia",
+          "turn": 1,
+          "scenario_id": "quaest-ba-01850-2026-1t"
+        },
+        {
+          "raw_label": "Ariel Capistrano (DC)",
+          "candidate_slug": "ariel-capistrano",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Bahia",
+          "turn": 1,
+          "scenario_id": "quaest-ba-01850-2026-1t"
+        },
+        {
+          "raw_label": "ACM Neto (União Brasil)",
+          "candidate_slug": "acm-neto",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Bahia",
+          "turn": 1,
+          "scenario_id": "quaest-ba-01850-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Jerônimo Rodrigues (PT)",
+          "candidate_slug": "jeronimo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Bahia",
+          "turn": 1,
+          "scenario_id": "quaest-ba-01850-2026-1t-espontaneo"
         }
       ],
       "pesquisas": [
@@ -4450,6 +4522,205 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 4.1,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quaest-ba-01850-2026",
+          "source_id": "quaest-ba-01850-2026-revisao-20260925",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Quaest",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "TV Bahia",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-20",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-23",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-24",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 900,
+              "status": "publicado"
+            },
+            "population": {
+              "value": null,
+              "status": "indeterminado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "BA-01850/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Bahia",
+            "code": "BA"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-bahia-setembro-2026/",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-25T12:12:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "3e64fb6167657ecceb059dbfd98df03bf8a01c3f201632e202ebc5682598c34b",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "quaest-ba-01850-2026-1t",
+              "turn": 1,
+              "geography": "Bahia",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|BA|1|estimulada|41bb63cdfe96f1e7e70289c91e5895abf053231c9425352677ca9345d198afae|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "ACM Neto (União Brasil)",
+                  "candidate_slug": "acm-neto",
+                  "match_status": "exact_alias",
+                  "value_percent": 42,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Jerônimo Rodrigues (PT)",
+                  "candidate_slug": "jeronimo",
+                  "match_status": "exact_alias",
+                  "value_percent": 40,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Maria Bona (PCO)",
+                  "candidate_slug": "maria-bona",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Aroldo Felix (UP)",
+                  "candidate_slug": "aroldo-felix",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ronaldo Mansur (PSOL)",
+                  "candidate_slug": "ronaldo-mansur",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ariel Capistrano (DC)",
+                  "candidate_slug": "ariel-capistrano",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/Nulo/Não vai votar",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 9,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "quaest-ba-01850-2026-1t-espontaneo",
+              "turn": 1,
+              "geography": "Bahia",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|BA|1|espontanea|6dab20caf09f35a2d32e190f4ed173cf32ba817d12c127fc6aad0bec4f9f3fde|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "ACM Neto (União Brasil)",
+                  "candidate_slug": "acm-neto",
+                  "match_status": "exact_alias",
+                  "value_percent": 29,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Jerônimo Rodrigues (PT)",
+                  "candidate_slug": "jeronimo",
+                  "match_status": "exact_alias",
+                  "value_percent": 27,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Outros",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/Nulo/Não vai votar",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 40,
                   "status": "publicado"
                 }
               ]
@@ -8776,7 +9047,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|GO|1|estimulada|lista-goias-pesquisas-2026-09-08-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-848581b555e12180",
+      "exact_aliases_version": "monitor-2026-dcb0384e93f392e4",
       "exact_aliases": [
         {
           "raw_label": "Daniel Vilela",
@@ -9044,6 +9315,114 @@
           "geography": "Goiás",
           "turn": 1,
           "scenario_id": "goias-pesquisas-mais-goias-go-03825-2026-1t"
+        },
+        {
+          "raw_label": "Daniel Vilela (MDB)",
+          "candidate_slug": "daniel-vilela",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Goiás",
+          "turn": 1,
+          "scenario_id": "quaest-go-01667-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Marconi Perillo (PSDB)",
+          "candidate_slug": "marconi-perillo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Goiás",
+          "turn": 1,
+          "scenario_id": "quaest-go-01667-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Wilder Morais (PL)",
+          "candidate_slug": "wilder-morais",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Goiás",
+          "turn": 1,
+          "scenario_id": "quaest-go-01667-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Luis Cesar Bueno (PT)",
+          "candidate_slug": "luis-cesar-bueno",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Goiás",
+          "turn": 1,
+          "scenario_id": "quaest-go-01667-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Luciana Amorim (UP)",
+          "candidate_slug": "luciana-amorim",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Goiás",
+          "turn": 1,
+          "scenario_id": "quaest-go-01667-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Danilo Pinheiro Evangelista da Silva (PCO)",
+          "candidate_slug": "danilo-pinheiro",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Goiás",
+          "turn": 1,
+          "scenario_id": "quaest-go-01667-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Daniel Vilela (MDB)",
+          "candidate_slug": "daniel-vilela",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Goiás",
+          "turn": 1,
+          "scenario_id": "quaest-go-01667-2026-1t"
+        },
+        {
+          "raw_label": "Marconi Perillo (PSDB)",
+          "candidate_slug": "marconi-perillo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Goiás",
+          "turn": 1,
+          "scenario_id": "quaest-go-01667-2026-1t"
+        },
+        {
+          "raw_label": "Wilder Morais (PL)",
+          "candidate_slug": "wilder-morais",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Goiás",
+          "turn": 1,
+          "scenario_id": "quaest-go-01667-2026-1t"
+        },
+        {
+          "raw_label": "Luis Cesar Bueno (PT)",
+          "candidate_slug": "luis-cesar-bueno",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Goiás",
+          "turn": 1,
+          "scenario_id": "quaest-go-01667-2026-1t"
+        },
+        {
+          "raw_label": "Luciana Amorim (UP)",
+          "candidate_slug": "luciana-amorim",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Goiás",
+          "turn": 1,
+          "scenario_id": "quaest-go-01667-2026-1t"
+        },
+        {
+          "raw_label": "Danilo Pinheiro Evangelista da Silva (PCO)",
+          "candidate_slug": "danilo-pinheiro",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Goiás",
+          "turn": 1,
+          "scenario_id": "quaest-go-01667-2026-1t"
         }
       ],
       "pesquisas": [
@@ -9859,6 +10238,228 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 5.6,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quaest-go-01667-2026",
+          "source_id": "quaest-go-01667-2026-revisao-20260925",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Quaest",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "TV Anhanguera",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-20",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-23",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-24",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 804,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores maiores de 16 anos",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "GO-01667/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Goiás",
+            "code": "GO"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-goias-setembro-2026/",
+            "supporting_urls": [
+              "https://www1.folha.uol.com.br/poder/2026/09/quaest-daniel-vilela-segue-na-lideranca-da-disputa-ao-governo-de-goias.shtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-25T12:12:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "15623ed6bbf230120b4bdd955f01a28d1adf227e538f57fda927dabe64556e9e",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "quaest-go-01667-2026-1t-espontaneo",
+              "turn": 1,
+              "geography": "Goiás",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|GO|1|espontanea|e3dbf4154910490e6ebace3a59406254ddec27d5bd6d71c1bf2a32bf9cec0e4d|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Daniel Vilela (MDB)",
+                  "candidate_slug": "daniel-vilela",
+                  "match_status": "exact_alias",
+                  "value_percent": 26,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Marconi Perillo (PSDB)",
+                  "candidate_slug": "marconi-perillo",
+                  "match_status": "exact_alias",
+                  "value_percent": 7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Wilder Morais (PL)",
+                  "candidate_slug": "wilder-morais",
+                  "match_status": "exact_alias",
+                  "value_percent": 4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Luis Cesar Bueno (PT)",
+                  "candidate_slug": "luis-cesar-bueno",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Luciana Amorim (UP)",
+                  "candidate_slug": "luciana-amorim",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Danilo Pinheiro Evangelista da Silva (PCO)",
+                  "candidate_slug": "danilo-pinheiro",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/não vai votar",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 57,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "quaest-go-01667-2026-1t",
+              "turn": 1,
+              "geography": "Goiás",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|GO|1|estimulada|e3dbf4154910490e6ebace3a59406254ddec27d5bd6d71c1bf2a32bf9cec0e4d|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Daniel Vilela (MDB)",
+                  "candidate_slug": "daniel-vilela",
+                  "match_status": "exact_alias",
+                  "value_percent": 42,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Marconi Perillo (PSDB)",
+                  "candidate_slug": "marconi-perillo",
+                  "match_status": "exact_alias",
+                  "value_percent": 19,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Wilder Morais (PL)",
+                  "candidate_slug": "wilder-morais",
+                  "match_status": "exact_alias",
+                  "value_percent": 15,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Luis Cesar Bueno (PT)",
+                  "candidate_slug": "luis-cesar-bueno",
+                  "match_status": "exact_alias",
+                  "value_percent": 5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Luciana Amorim (UP)",
+                  "candidate_slug": "luciana-amorim",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Danilo Pinheiro Evangelista da Silva (PCO)",
+                  "candidate_slug": "danilo-pinheiro",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/não vai votar",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 10,
                   "status": "publicado"
                 }
               ]
@@ -10941,7 +11542,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|MT|1|estimulada|lista-parana-pesquisas-2026-09-09-cenario-2|total_entrevistados"
       },
-      "exact_aliases_version": "monitor-2026-cb36cf796b55b798",
+      "exact_aliases_version": "monitor-2026-88fe57883eca670c",
       "exact_aliases": [
         {
           "raw_label": "Doutora Natasha",
@@ -11036,6 +11637,105 @@
           "geography": "Mato Grosso",
           "turn": 1,
           "scenario_id": "parana-pesquisas-mt-09335-2026-1t"
+        },
+        {
+          "raw_label": "Otaviano Pivetta",
+          "candidate_slug": "otaviano-pivetta",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso",
+          "turn": 1,
+          "scenario_id": "mt-dados-mt-00691-2026-1t"
+        },
+        {
+          "raw_label": "Wellington Fagundes",
+          "candidate_slug": "wellington-fagundes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso",
+          "turn": 1,
+          "scenario_id": "mt-dados-mt-00691-2026-1t"
+        },
+        {
+          "raw_label": "Doutora Natasha",
+          "candidate_slug": "natasha-slhessarenko",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso",
+          "turn": 1,
+          "scenario_id": "mt-dados-mt-00691-2026-1t"
+        },
+        {
+          "raw_label": "Sargento Laudicério",
+          "candidate_slug": "laudicerio-aguiar",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso",
+          "turn": 1,
+          "scenario_id": "mt-dados-mt-00691-2026-1t"
+        },
+        {
+          "raw_label": "Rafaell Milas",
+          "candidate_slug": "rafaell-milas",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso",
+          "turn": 1,
+          "scenario_id": "mt-dados-mt-00691-2026-1t"
+        },
+        {
+          "raw_label": "Maurício Coelho",
+          "candidate_slug": "mauricio-coelho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso",
+          "turn": 1,
+          "scenario_id": "mt-dados-mt-00691-2026-1t"
+        },
+        {
+          "raw_label": "Otaviano Pivetta",
+          "candidate_slug": "otaviano-pivetta",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso",
+          "turn": 1,
+          "scenario_id": "mt-dados-mt-00691-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Wellington Fagundes",
+          "candidate_slug": "wellington-fagundes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso",
+          "turn": 1,
+          "scenario_id": "mt-dados-mt-00691-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Doutora Natasha",
+          "candidate_slug": "natasha-slhessarenko",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso",
+          "turn": 1,
+          "scenario_id": "mt-dados-mt-00691-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Sargento Laudicério",
+          "candidate_slug": "laudicerio-aguiar",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso",
+          "turn": 1,
+          "scenario_id": "mt-dados-mt-00691-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Rafael Milass",
+          "candidate_slug": "rafaell-milas",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso",
+          "turn": 1,
+          "scenario_id": "mt-dados-mt-00691-2026-1t-espontaneo"
         }
       ],
       "pesquisas": [
@@ -11601,6 +12301,228 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 5.8,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mt-dados-mt-00691-2026",
+          "source_id": "mt-dados-mt-00691-2026-revisao-20260925",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "MT Dados",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-11",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-17",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-18",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 3080,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores aptos a votar em Mato Grosso",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Pesquisa quantitativa tipo Survey; metodologia híbrida",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "MT-00691/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Mato Grosso",
+            "code": "MT"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.mtdados.com.br/pesquisa-governo-mt-2026-4a-rodada",
+            "supporting_urls": [
+              "https://portaljvc.com.br/eleicoes-2026/pivetta-amplia-lideranca-sobre-fagundes-na-disputa-pelo-governo-de-mt/"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-25T12:12:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "e6db6f45871604c728d10d76cf52e75d001fc48417eb84f0b5bbfe97b90e6ff2",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "mt-dados-mt-00691-2026-1t",
+              "turn": 1,
+              "geography": "Mato Grosso",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|MT|1|estimulada|9bc1b7d877aa73ddf43bcc1349a2fe613fcdb641070e6a51d9803378876c5345|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Otaviano Pivetta",
+                  "candidate_slug": "otaviano-pivetta",
+                  "match_status": "exact_alias",
+                  "value_percent": 34,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Wellington Fagundes",
+                  "candidate_slug": "wellington-fagundes",
+                  "match_status": "exact_alias",
+                  "value_percent": 26,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Doutora Natasha",
+                  "candidate_slug": "natasha-slhessarenko",
+                  "match_status": "exact_alias",
+                  "value_percent": 14,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Sargento Laudicério",
+                  "candidate_slug": "laudicerio-aguiar",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Rafaell Milas",
+                  "candidate_slug": "rafaell-milas",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Maurício Coelho",
+                  "candidate_slug": "mauricio-coelho",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo/branco",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/indeciso",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 17,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "mt-dados-mt-00691-2026-1t-espontaneo",
+              "turn": 1,
+              "geography": "Mato Grosso",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|MT|1|espontanea|04281c2a49bb2655f5fc933468c4f81c9a2d831c36f830c21eff2dc842ea9512|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Otaviano Pivetta",
+                  "candidate_slug": "otaviano-pivetta",
+                  "match_status": "exact_alias",
+                  "value_percent": 20.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Wellington Fagundes",
+                  "candidate_slug": "wellington-fagundes",
+                  "match_status": "exact_alias",
+                  "value_percent": 16.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Doutora Natasha",
+                  "candidate_slug": "natasha-slhessarenko",
+                  "match_status": "exact_alias",
+                  "value_percent": 5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Sargento Laudicério",
+                  "candidate_slug": "laudicerio-aguiar",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Rafael Milass",
+                  "candidate_slug": "rafaell-milas",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Outros citados",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 6.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/indeciso",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 50.4,
                   "status": "publicado"
                 }
               ]
