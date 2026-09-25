@@ -1,4 +1,7 @@
 import assert from "node:assert/strict"
+import { mkdirSync, mkdtempSync, rmSync, symlinkSync, writeFileSync } from "node:fs"
+import { tmpdir } from "node:os"
+import { join } from "node:path"
 import { describe, it } from "node:test"
 
 import {
@@ -10,6 +13,7 @@ import {
 } from "../scripts/aplicar-evidencia-processos-curadoria"
 import {
   cargoSolicitado,
+  csvsDoConsultaCand,
   exigirCaminhoPersistente,
   margemDiasSolicitada,
   mencionaNomeNoTexto,
@@ -319,5 +323,22 @@ describe("conferência de CPF usa o texto bruto em memória", () => {
     )
     assert.equal(resultado.classificacao, "encontrado")
     assert.equal(resultado.busca.conferencia_cpf, "texto_bruto_em_memoria")
+  })
+})
+
+describe("identidade TSE nunca falha em silêncio", () => {
+  it("segue diretório de cache ligado por symlink e recusa extração sem CSV", () => {
+    const raiz = mkdtempSync(join(tmpdir(), "pf-consulta-cand-"))
+    try {
+      const real = join(raiz, "real")
+      mkdirSync(real)
+      writeFileSync(join(real, "consulta_cand_2022_MG.csv"), "SQ_CANDIDATO;NM_CANDIDATO\n")
+      symlinkSync(real, join(raiz, "link"))
+      assert.equal(csvsDoConsultaCand(join(raiz, "link"), "2022").length, 1)
+      mkdirSync(join(raiz, "vazio"))
+      assert.throws(() => csvsDoConsultaCand(join(raiz, "vazio"), "2022"), /nenhum CSV/)
+    } finally {
+      rmSync(raiz, { recursive: true, force: true })
+    }
   })
 })

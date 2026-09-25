@@ -701,6 +701,18 @@ function cpfDaLinhaTse(bruto: string | null | undefined): string {
   return normalizarCpfTse(bruto) || (bruto ?? "")
 }
 
+/**
+ * CSVs extraídos do consulta_cand. `-L` segue diretório de cache ligado por
+ * symlink; zero arquivos falha alto, porque identidade TSE ausente viraria
+ * "bloqueada" em silêncio para todo candidato daquele ano.
+ */
+export function csvsDoConsultaCand(extraido: string, ano: string): string[] {
+  const arquivos = execFileSync("find", ["-L", extraido, "-type", "f", "-name", "*.csv"], { encoding: "utf8" })
+    .trim().split("\n").filter(Boolean)
+  if (arquivos.length === 0) throw new Error(`consulta_cand_${ano}: nenhum CSV em ${extraido}`)
+  return arquivos
+}
+
 async function carregarIdentidadesTse(
   candidatos: CandidatoBanco[],
   seeds: Map<string, SeedCandidato>,
@@ -724,8 +736,7 @@ async function carregarIdentidadesTse(
       mkdirSync(extraido, { recursive: true })
       execFileSync("unzip", ["-oq", zip, "-d", extraido])
     }
-    const arquivos = execFileSync("find", [extraido, "-type", "f", "-name", "*.csv"], { encoding: "utf8" })
-      .trim().split("\n").filter(Boolean)
+    const arquivos = csvsDoConsultaCand(extraido, ano)
     for (const arquivo of arquivos) {
       await parseCSV(arquivo, (row) => {
         const alvo = alvos.find((item) => item.sq === row.SQ_CANDIDATO)
@@ -768,8 +779,7 @@ async function carregarIdentidadesTse(
       mkdirSync(extraido, { recursive: true })
       execFileSync("unzip", ["-oq", zip, "-d", extraido])
     }
-    const arquivos = execFileSync("find", [extraido, "-type", "f", "-name", "*.csv"], { encoding: "utf8" })
-      .trim().split("\n").filter(Boolean)
+    const arquivos = csvsDoConsultaCand(extraido, ano)
     for (const arquivo of arquivos) {
       await parseCSV(arquivo, (row) => {
         const alvo = (pendentesPorNome.get(normalizar(row.NM_CANDIDATO)) ?? []).find((c) => {
