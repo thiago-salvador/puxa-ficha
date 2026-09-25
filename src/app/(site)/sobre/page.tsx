@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer"
 import { buildTwitterMetadata } from "@/lib/metadata"
 import {
   APOIADORES_PUBLICOS,
+  APOIOS_CONFERIDO_EM,
   APOIOS_SEM_NOME,
   APOIOS_TOTAL,
   RELATORES_OFICIAIS,
@@ -349,7 +350,7 @@ export default function SobrePage() {
         ) : null}
         <div className="mt-6 flex flex-wrap items-center gap-4">
           <p className="text-[length:var(--text-body)] font-bold text-foreground">
-            {APOIOS_TOTAL} {APOIOS_TOTAL === 1 ? "apoio" : "apoios"} até agora
+            {APOIOS_TOTAL} {APOIOS_TOTAL === 1 ? "apoio" : "apoios"} até {APOIOS_CONFERIDO_EM}
           </p>
           <a
             href="https://apoia.se/puxaficha"

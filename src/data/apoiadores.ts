@@ -25,6 +25,9 @@ export const APOIADORES_PUBLICOS: readonly Apoiador[] = [
  */
 export const APOIOS_TOTAL: number = 5
 
+/** Data da última conferência do total, mostrada ao lado do número. */
+export const APOIOS_CONFERIDO_EM = "25/09/2026"
+
 export const APOIOS_SEM_NOME = Math.max(
   0,
   APOIOS_TOTAL - APOIADORES_PUBLICOS.length - RELATORES_OFICIAIS.length,
