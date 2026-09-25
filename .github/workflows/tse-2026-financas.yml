@@ -1,0 +1,138 @@
+name: TSE 2026 finanças (receita parcial e bens)
+
+# Reconfere todo dia o pacote oficial de 2026 do TSE (prestação de contas
+# parcial e bens declarados) contra as 513 fichas públicas e grava:
+#   - financiamento 2026 novo ou atualizado (só linha de máquina, fonte TSE,
+#     publicada; CAS por linha);
+#   - remoção da ausência oficial que o pacote do dia desmente;
+#   - bens 2026 onde a ficha afirmava ausência (bem existente nunca é
+#     reescrito: divergência vai para o relatório de revisão);
+#   - um recibo por ficha em coleta_log (`tse-financiamento`, `tse-patrimonio`).
+# Toda escrita passa por scripts/tse-2026-financas.ts (escreverAuditado).
+#
+# Disparos:
+#   schedule         aplica sozinho, mas só se as travas do plano passarem
+#                    (queda de arrecadação > 20%, dado publicado que sumiu do
+#                    pacote, pacote cobrindo menos fichas que a produção).
+#   workflow_dispatch sem `aplicar`: dry-run e relatório. Com `aplicar`: exige
+#                    o `expected_plan_sha` impresso por um dry-run anterior;
+#                    pacote que mudou no meio do caminho recusa a escrita.
+# Sem actions/cache em data/tse de propósito: o pacote de 2026 muda todo dia.
+#
+# Secrets: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, PF_DOADOR_CPF_HASH_SALT
+# (chave v2; o script confere a impressão digital antes de qualquer coisa),
+# PF_REVALIDATE_SECRET.
+
+on:
+  schedule:
+    # Todo dia às 10:40 UTC (07:40 em Brasília).
+    - cron: "40 10 * * *"
+  workflow_dispatch:
+    inputs:
+      aplicar:
+        description: "Escrever em produção (exige expected_plan_sha)"
+        required: false
+        type: boolean
+        default: false
+      expected_plan_sha:
+        description: "plano_sha256 do dry-run revisado"
+        required: false
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tse-2026-financas
+  cancel-in-progress: false
+
+jobs:
+  coletar:
+    name: Plano, travas e escrita auditada
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    outputs:
+      aplicou: ${{ steps.executar.outputs.aplicou }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Executar coletor
+        id: executar
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          PF_DOADOR_CPF_HASH_SALT: ${{ secrets.PF_DOADOR_CPF_HASH_SALT }}
+          PF_TSE2026_EVENTO: ${{ github.event_name }}
+          PF_TSE2026_APLICAR: ${{ inputs.aplicar }}
+          PF_EXPECTED_PLAN_SHA: ${{ inputs.expected_plan_sha }}
+        run: |
+          set -euo pipefail
+          mkdir -p reports/tse-2026
+          args=(--out=reports/tse-2026)
+          aplicou=false
+          if [ "$PF_TSE2026_EVENTO" = "schedule" ]; then
+            args+=(--apply --agendado)
+            aplicou=true
+          elif [ "$PF_TSE2026_APLICAR" = "true" ]; then
+            [[ "$PF_EXPECTED_PLAN_SHA" =~ ^[0-9a-f]{64}$ ]] || { echo "expected_plan_sha obrigatório para aplicar" >&2; exit 1; }
+            args+=(--apply "--expected-plan-sha=$PF_EXPECTED_PLAN_SHA")
+            aplicou=true
+          else
+            export PF_DRY_RUN=1
+          fi
+          echo "aplicou=$aplicou" >> "$GITHUB_OUTPUT"
+          node --import tsx scripts/tse-2026-financas.ts "${args[@]}" | tee reports/tse-2026/saida.json
+          {
+            echo '### TSE 2026 finanças'
+            echo '```json'
+            jq -c '{plano_sha256, resumo}' reports/tse-2026/plano-resumo.json
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Apagar plano privado e pré-imagem do runner
+        if: always()
+        run: rm -f reports/tse-2026/plano-privado.json reports/tse-2026/backup-preimagem.json
+      - if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v6.0.0
+        with:
+          name: tse-2026-financas-${{ github.run_id }}
+          path: reports/tse-2026/plano-resumo.json
+          if-no-files-found: warn
+
+  revalidate:
+    name: Revalidar cache público
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [coletar]
+    # Também após conflito de CAS (exit 4): as demais escritas já entraram.
+    if: ${{ !cancelled() && needs.coletar.outputs.aplicou == 'true' }}
+    env:
+      REVALIDATE_URL: https://puxaficha.com.br/api/revalidate
+      REVALIDATE_SECRET: ${{ secrets.PF_REVALIDATE_SECRET }}
+      # Mesmo conjunto de tags públicas de revalidate-cache.yml.
+      TAGS_JSON: >-
+        ["public-candidatos","public-candidato-metadata","public-candidato-ficha","public-candidatos-resumo","public-candidatos-comparaveis","public-indicadores-all","public-indicadores-estado","quiz-dataset","ranking-data","doador-reverse"]
+    steps:
+      - name: POST /api/revalidate
+        run: |
+          set -euo pipefail
+          if [ -z "${REVALIDATE_SECRET:-}" ]; then
+            echo "PF_REVALIDATE_SECRET ausente nos GitHub Actions secrets." >&2
+            exit 1
+          fi
+          jq -cn --argjson tags "$TAGS_JSON" '{tags: $tags}' > /tmp/payload.json
+          status="$(curl -sS -o /tmp/resp.json -w "%{http_code}" \
+            -X POST "$REVALIDATE_URL" \
+            -H "content-type: application/json" \
+            -H "x-pf-revalidate-secret: ${REVALIDATE_SECRET}" \
+            --data-binary @/tmp/payload.json)"
+          echo "HTTP ${status}"
+          echo "HTTP ${status}" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$status" != "200" ]; then exit 1; fi
