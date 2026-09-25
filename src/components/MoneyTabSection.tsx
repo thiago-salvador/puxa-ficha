@@ -1016,7 +1016,7 @@ export function MoneyTabSection({
         financiamentoEleicoesSemDado.length === 0 &&
         patrimonio.length > 0 && <EmptyState {...getFinanciamentoEmptyState()} />}
 
-      {(gastos.length > 0 || freshness?.gastos_parlamentares?.status === "not_applicable") && (
+      {(gastos.length > 0 || freshness?.gastos_parlamentares?.status === "not_applicable" || freshness?.gastos_parlamentares?.status === "stale") && (
         <div>
           <SectionLabel>Gastos parlamentares</SectionLabel>
           <SectionTitle>Uso da cota parlamentar (<GlossaryTerm term="CEAP" />)</SectionTitle>
@@ -1042,6 +1042,11 @@ export function MoneyTabSection({
                 }
               >
                 <div className="space-y-4">
+                  {gasto.ano === 2026 && gasto.coletado_em && (
+                    <p data-pf-money-consultado-em={gasto.coletado_em} className="text-[length:var(--text-caption)] text-muted-foreground">
+                      Consulta à fonte oficial em {formatDate(gasto.coletado_em)}. O total de 2026 pode mudar.
+                    </p>
+                  )}
                   {(gasto.detalhamento ?? []).length > 0 && (
                     <HorizontalBars
                       items={(gasto.detalhamento ?? []).map((item) => ({

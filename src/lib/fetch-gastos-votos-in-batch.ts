@@ -5,6 +5,7 @@ import type { PatrimonioAnoValor } from "@/lib/evolucao-patrimonial"
 import type { LegislacaoMandatoExecutivo, MudancaPartido } from "@/lib/types"
 import { legislativeHistoryFlagsFromRows } from "@/lib/legislative-history"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
+import { gastoParlamentarEmRevisao } from "@/lib/gastos-parlamentares-em-revisao"
 
 /** PostgREST / Supabase default max rows per request. */
 const PAGE_SIZE = 1000
@@ -29,7 +30,7 @@ const CANDIDATO_ID_CHUNK = 100
 export const LEGISLACAO_MANDATO_EXECUTIVO_PUBLIC_SELECT =
   "id,candidato_id,tipo_relacao,tipo_norma,numero,ano,data_norma,ementa,signatario,autoridade_papel,fonte_primaria_url,metadata" as const
 
-type GastoRow = { candidato_id: string; total_gasto: number | string | null }
+type GastoRow = { candidato_id: string; ano: number; total_gasto: number | string | null }
 type CargoAtualRow = { id: string; cargo_atual: string | null }
 type HistoricoLegislativoRow = {
   candidato_id: string
@@ -48,7 +49,8 @@ type PatrimonioRow = {
  */
 export async function fetchGastoTotalsByCandidatoIds(
   supabase: SupabaseClient,
-  candidatoIds: string[]
+  candidatoIds: string[],
+  slugsByCandidatoId: Map<string, string>,
 ): Promise<Map<string, number>> {
   const ids = [...new Set(candidatoIds)].filter(Boolean)
   if (ids.length === 0) {
@@ -64,7 +66,7 @@ export async function fetchGastoTotalsByCandidatoIds(
     while (true) {
       const { data, error } = await supabase
         .from("gastos_parlamentares")
-        .select("candidato_id,total_gasto")
+        .select("candidato_id,ano,total_gasto")
         .abortSignal(supabaseQueryTimeoutSignal())
         .in("candidato_id", idChunk)
         .range(from, from + PAGE_SIZE - 1)
@@ -74,7 +76,9 @@ export async function fetchGastoTotalsByCandidatoIds(
       }
 
       const rows = (data ?? []) as GastoRow[]
-      all.push(...rows)
+      all.push(...rows.filter((row) =>
+        !gastoParlamentarEmRevisao(slugsByCandidatoId.get(row.candidato_id) ?? "", row.ano),
+      ))
       if (rows.length < PAGE_SIZE) break
       from += PAGE_SIZE
     }

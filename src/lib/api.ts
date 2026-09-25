@@ -1,4 +1,5 @@
 import "server-only"
+import { anosGastosParlamentaresEmRevisao, gastoParlamentarEmRevisao } from "@/lib/gastos-parlamentares-em-revisao"
 import { cache } from "react"
 import { unstable_noStore as noStore } from "next/cache"
 import { headers } from "next/headers"
@@ -1881,6 +1882,10 @@ async function getCandidatoBySlugFromRelationResource(
   const processosPublicos = processosBrutos.filter((row) =>
     Boolean(urlFonteJudicialEspecifica(row.url_fonte, row.numero_processo)),
   )
+  const gastosParlamentaresPublicos = (gastos.data ?? []).filter((row) =>
+    !gastoParlamentarEmRevisao(candidato.slug, row.ano),
+  )
+  const gastosEmRevisaoAnos = anosGastosParlamentaresEmRevisao(candidato.slug)
 
   // Sanitizacao publica de partido_sigla/partido_atual no ponto onde o payload
   // da ficha e construido. Substitui o mapping pontual `fichaForPublicDisplay` que
@@ -1931,8 +1936,8 @@ async function getCandidatoBySlugFromRelationResource(
       legislacaoExecutivo.count ?? legislacaoExecutivoOrdenado.length,
     legislacao_mandato_executivo_truncados:
       (legislacaoExecutivo.count ?? 0) > legislacaoExecutivoOrdenado.length,
-    gastos_parlamentares: gastos.data ?? [],
-    transparencia: publicTransparencia(gastos.data ?? [], transparenciaVerificacao),
+    gastos_parlamentares: gastosParlamentaresPublicos,
+    transparencia: publicTransparencia(gastosParlamentaresPublicos, transparenciaVerificacao),
     gastos_executivo: gastosExecutivo.data ?? [],
     sancoes_administrativas: sancoes.data ?? [],
     sancoes_verificacao: sancoesVerificacao,
@@ -1976,7 +1981,7 @@ async function getCandidatoBySlugFromRelationResource(
       projetosNaturezaProjetosTotal: projetosLeiNaturezaCount.error
         ? null
         : (projetosLeiNaturezaCount.count ?? null),
-      gastos: gastos.data ?? [],
+      gastos: gastosParlamentaresPublicos,
       gastosExecutivo: gastosExecutivo.data ?? [],
       historicoEmRevisao: false,
       timelinePartidariaIncompleta: timelinePartidariaIncompleta,
@@ -1991,6 +1996,14 @@ async function getCandidatoBySlugFromRelationResource(
         (candidato.verificacao_campos?.federal_acervo as Record<string, unknown> | undefined)?.gastos_parlamentares_aplicabilidade,
       gastosExecutivoVerificacao,
     }),
+  }
+
+  if (gastosEmRevisaoAnos.length > 0 && ficha.section_freshness?.gastos_parlamentares) {
+    ficha.section_freshness.gastos_parlamentares = {
+      ...ficha.section_freshness.gastos_parlamentares,
+      status: "stale",
+      message: `Totais de ${gastosEmRevisaoAnos.join(", ")} temporariamente indisponíveis para conferência com a fonte oficial.`,
+    }
   }
 
   if (relatedErrors.length > 0) {
@@ -2198,7 +2211,7 @@ const getCachedCandidatoBySlugResource = unstableCacheWithSingleFlight(
   // vigente passou a ser projetada na trajetória quando a linha denormalizada
   // de `historico_politico` estiver ausente. Sem o bump, perfis já aquecidos
   // continuariam omitindo 2026 durante o TTL.
-  ["public-candidato-ficha-resource", "central-party-sanitize", "no-cache-degraded-v1", "legislacao-paged-v4", "lme-trim-2mb-20260501", "pl-lazy-preview-20260711", "presidential-cohort-20260515", "editorial-full-closure-20260518", "pre-candidates-lote12-20260522", "photos-names-20260610", "raw-empty-core-lote2-20260630", "raw-empty-core-lote3-20260630", "raw-empty-core-lote4-20260630", "raw-empty-core-news-lote5-20260630", "raw-empty-core-lote6-20260630", "raw-empty-core-lote7-20260630", "raw-empty-core-lote8-20260630", "raw-empty-core-lote9-20260630", "raw-empty-core-lote10-20260630", "raw-empty-core-lote11-20260630", "pe-state-html-gaps-20260708", "rr-state-completion-20260710-v2", "reescrita-claims-homonimo-20260726", "consolidacao-mapa-fome-20260726", "lme-preview-lazy-20260803", "density-bypass-clear-20260804", "sancoes-proveniencia-20260805", "verificacao-campos-tse-min-20260809", "frescor-data-calendario-20260809", "ultima-verificacao-qualquer-dado-20260809", "chapas-tse-20260815", "chapas-bio-card-20260813", "onda-p-20260814", "party-siglas-lote2-20260815", "gastos-executivo-cpgf-20260816", "gastos-executivo-ug-20260820", "trajetoria-candidatura-atual-20260906", "historico-cas-20260915", "candidate-roster-cas-20260915", "candidate-history-cas-20260915", "historico-dedupe-type-cas-20260915", "candidate-beny-sources-cas-20260915", "candidate-beny-sanctions-receipt-cas-20260915", "filiacao-google-public-copy-v2-20260916", "timeline-partidaria-registro-20260918", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
+  ["public-candidato-ficha-resource", "central-party-sanitize", "no-cache-degraded-v1", "legislacao-paged-v4", "lme-trim-2mb-20260501", "pl-lazy-preview-20260711", "presidential-cohort-20260515", "editorial-full-closure-20260518", "pre-candidates-lote12-20260522", "photos-names-20260610", "raw-empty-core-lote2-20260630", "raw-empty-core-lote3-20260630", "raw-empty-core-lote4-20260630", "raw-empty-core-news-lote5-20260630", "raw-empty-core-lote6-20260630", "raw-empty-core-lote7-20260630", "raw-empty-core-lote8-20260630", "raw-empty-core-lote9-20260630", "raw-empty-core-lote10-20260630", "raw-empty-core-lote11-20260630", "pe-state-html-gaps-20260708", "rr-state-completion-20260710-v2", "reescrita-claims-homonimo-20260726", "consolidacao-mapa-fome-20260726", "lme-preview-lazy-20260803", "density-bypass-clear-20260804", "sancoes-proveniencia-20260805", "verificacao-campos-tse-min-20260809", "frescor-data-calendario-20260809", "ultima-verificacao-qualquer-dado-20260809", "chapas-tse-20260815", "chapas-bio-card-20260813", "onda-p-20260814", "party-siglas-lote2-20260815", "gastos-executivo-cpgf-20260816", "gastos-executivo-ug-20260820", "trajetoria-candidatura-atual-20260906", "historico-cas-20260915", "candidate-roster-cas-20260915", "candidate-history-cas-20260915", "historico-dedupe-type-cas-20260915", "candidate-beny-sources-cas-20260915", "candidate-beny-sanctions-receipt-cas-20260915", "filiacao-google-public-copy-v2-20260916", "timeline-partidaria-registro-20260918", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, "gastos-em-revisao-20260925", CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidato-ficha"],
@@ -2475,7 +2488,7 @@ async function getCandidatosComparaveisResourceUncached(
     const [mudRows, gastoMap, patrimonioMap, cargoMap, legislativoMap, processosMap, processCounts] =
       await Promise.all([
         fetchMudancasPartidoRowsPaged(supabase, comparadorIds),
-        fetchGastoTotalsByCandidatoIds(supabase, comparadorIds),
+        fetchGastoTotalsByCandidatoIds(supabase, comparadorIds, new Map(baseRows.map((row) => [row.id, row.slug]))),
         fetchPatrimonioSeriesByCandidatoIds(supabase, comparadorIds),
         fetchCargoAtualByCandidatoIds(supabase, comparadorIds),
         fetchLegislativeHistoryFlagsByCandidatoIds(supabase, comparadorIds),
@@ -2559,7 +2572,7 @@ const getCachedCandidatosComparaveisResource = unstableCacheWithSingleFlight(
   // alimentava alertas_graves no servidor, nunca lido no cliente).
   // Bumped 2026-08-20: comparador B v1 (cargo_atual, bloco CEAP, sem votos).
   // Bumped 2026-08-20: sem flag de gastos_executivo no payload do comparador.
-  ["public-candidatos-comparaveis-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "comparaveis-strip-pontos-20260603", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "evolucao-patrimonial-lista-20260819", "comparador-b-v1-20260820", "comparador-ceap-federal-20260820", "comparador-sem-executivo-20260820", "timeline-partidaria-registro-20260918", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
+  ["public-candidatos-comparaveis-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "comparaveis-strip-pontos-20260603", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "evolucao-patrimonial-lista-20260819", "comparador-b-v1-20260820", "comparador-ceap-federal-20260820", "comparador-sem-executivo-20260820", "timeline-partidaria-registro-20260918", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, "gastos-em-revisao-20260925", CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos-comparaveis"],
@@ -2661,7 +2674,11 @@ async function getAggregateRankingEntriesResource(
     case "gastos_parlamentares": {
       let totalsMap: Map<string, number>
       try {
-        totalsMap = await fetchGastoTotalsByCandidatoIds(supabase, candidateIds)
+        totalsMap = await fetchGastoTotalsByCandidatoIds(
+          supabase,
+          candidateIds,
+          new Map(candidatos.map((candidato) => [candidato.id, candidato.slug])),
+        )
       } catch (fetchError) {
         const err =
           fetchError instanceof Error ? fetchError : new Error(String(fetchError))
@@ -2730,7 +2747,7 @@ const getCachedRankingDataResource = unstableCacheWithSingleFlight(
     getRankingDataResourceUncached(slug, cargo || undefined, estado || undefined),
   // Bumped 2026-05-21: copy pública de rankings virou "listas temáticas";
   // invalida definition.title/contextExplanation serializados no Data Cache.
-  ["ranking-data-resource-public-copy-20260521", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", SENADO_CACHE_VARIANT, CURRENT_DATA_WAVE],
+  ["ranking-data-resource-public-copy-20260521", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", SENADO_CACHE_VARIANT, "gastos-em-revisao-20260925", CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["ranking-data"],
