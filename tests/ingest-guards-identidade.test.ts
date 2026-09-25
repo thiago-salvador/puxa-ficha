@@ -233,6 +233,22 @@ test("ceaps oficial: filtra senador e ano no conjunto anual", () => {
   assert.deepEqual(dados?.anosDescartados, [])
 })
 
+test("ceaps oficial: ajustes negativos reduzem o total e a categoria, sem virar destaque", () => {
+  const conferencia = agregarDespesasCeapsOficial(
+    [
+      { codSenador: 456, ano: 2023, tipoDespesa: "Passagens", fornecedor: "A", valorReembolsado: 439262.62 },
+      { codSenador: 456, ano: 2023, tipoDespesa: "Passagens", fornecedor: "Estorno", valorReembolsado: -6004.87 },
+    ],
+    456,
+    2023,
+  )
+  assert.equal(conferencia.ok, true)
+  const dados = conferencia.ok ? conferencia.dados : null
+  assert.equal(dados?.total, 433257.75)
+  assert.equal(dados?.porCategoria.PASSAGENS, 433257.75)
+  assert.deepEqual(dados?.destaques.map((item) => item.fornecedor), ["A"])
+})
+
 test("ceaps oficial: payload nao lista e erro, nao vazio confirmado", () => {
   const conferencia = agregarDespesasCeapsOficial(
     { erro: "indisponivel" } as unknown as never,

@@ -18,6 +18,7 @@ export interface DespesaCeapsOficial {
 }
 
 const despesasPorAno = new Map<number, Promise<DespesaCeapsOficial[]>>()
+const consultaPorAno = new Map<number, string>()
 
 interface Despesa {
   TipoDespesa?: string
@@ -219,7 +220,9 @@ export function agregarDespesasCeapsOficial(
     String(despesa.codSenador ?? "").trim() === String(senadoId),
   )
   let registrosDoAno = 0
-  let total = 0
+  let totalCents = 0
+  let hasNonzeroValue = false
+  const porCategoriaCents: Record<string, number> = {}
 
   for (const despesa of registrosDoSenador) {
     const anoRetornado = String(despesa.ano ?? "").trim()
@@ -233,17 +236,21 @@ export function agregarDespesasCeapsOficial(
     if (valor === null) {
       return { ok: false, motivo: "registro CEAPS com valorReembolsado invalido" }
     }
-    if (valor <= 0) continue
+    if (valor === 0) continue
+    hasNonzeroValue = true
 
     const categoria = (despesa.tipoDespesa || "OUTROS").trim().toUpperCase()
-    porCategoria[categoria] = (porCategoria[categoria] ?? 0) + valor
-    total += valor
-    allDespesas.push({
-      fornecedor: (despesa.fornecedor || "").trim(),
-      tipo: categoria,
-      valor,
-      data: despesa.data ?? null,
-    })
+    const cents = Math.round(valor * 100)
+    porCategoriaCents[categoria] = (porCategoriaCents[categoria] ?? 0) + cents
+    totalCents += cents
+    if (valor > 0) {
+      allDespesas.push({
+        fornecedor: (despesa.fornecedor || "").trim(),
+        tipo: categoria,
+        valor,
+        data: despesa.data ?? null,
+      })
+    }
   }
 
   // A API respondeu por este senador, mas somente com outro ano (ou sem
@@ -256,11 +263,14 @@ export function agregarDespesasCeapsOficial(
     }
   }
 
-  if (total === 0) return { ok: true, dados: null }
+  if (!hasNonzeroValue) return { ok: true, dados: null }
+  for (const [categoria, cents] of Object.entries(porCategoriaCents)) {
+    porCategoria[categoria] = cents / 100
+  }
   return {
     ok: true,
     dados: {
-      total,
+      total: totalCents / 100,
       porCategoria,
       destaques: allDespesas.sort((a, b) => b.valor - a.valor).slice(0, 5),
       anosDescartados: [...new Set(anosDescartados)],
@@ -305,7 +315,7 @@ interface GastoDestaque {
  * como zero verificado.
  */
 type TentativaDespesas =
-  | { tipo: "ok"; dados: DespesasAgregadas }
+  | { tipo: "ok"; dados: DespesasAgregadas; consultadoEm: string }
   | { tipo: "vazio" }
   | { tipo: "erro"; motivo: string }
 
@@ -316,12 +326,16 @@ async function fetchDespesasAno(senadoId: number, ano: number): Promise<Tentativ
   try {
     let request = despesasPorAno.get(ano)
     if (!request) {
-      request = fetchJSON<DespesaCeapsOficial[]>(url, { Accept: "application/json" })
+      request = fetchJSON<DespesaCeapsOficial[]>(url, { Accept: "application/json" }).then((response) => {
+        consultaPorAno.set(ano, new Date().toISOString())
+        return response
+      })
       despesasPorAno.set(ano, request)
     }
     data = await request
   } catch (err) {
     despesasPorAno.delete(ano)
+    consultaPorAno.delete(ano)
     const motivo = err instanceof Error ? err.message : String(err)
     warn("ceaps-senado", `  HTTP erro no conjunto anual ${ano}: ${motivo}`)
     return { tipo: "erro", motivo }
@@ -345,7 +359,9 @@ async function fetchDespesasAno(senadoId: number, ano: number): Promise<Tentativ
     )
   }
 
-  return { tipo: "ok", dados }
+  const consultadoEm = consultaPorAno.get(ano)
+  if (!consultadoEm) return { tipo: "erro", motivo: `sem horário da consulta CEAPS ${ano}` }
+  return { tipo: "ok", dados, consultadoEm }
 }
 
 export async function ingestCeapsSenado(): Promise<IngestResult[]> {
@@ -428,6 +444,7 @@ export async function ingestCeapsSenado(): Promise<IngestResult[]> {
             candidato_id: candidatoId,
             ano,
             total_gasto: Math.round(total * 100) / 100,
+            coletado_em: tentativa.consultadoEm,
             detalhamento,
             gastos_destaque: gastosDestaque,
             fonte: "Senado",

@@ -1,0 +1,1153 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-25T17:34:46.074Z",
+  "evidence_sha256": "775e5af5c0bc4bd371162334ded355a5bced1c8662d215fe2962980e7e559416",
+  "summary": {
+    "rows": 57,
+    "profiles": 40,
+    "senate": 49,
+    "camara": 8
+  },
+  "rows": [
+    {
+      "slug": "alan-rick",
+      "year": 2023,
+      "house": "senado",
+      "official_id": 5672,
+      "legislature": null,
+      "preimage": {
+        "id": "32c3878e-bb0c-4fbe-bc44-187fdf4212b3",
+        "total_cents": 43926262,
+        "fonte": "Senado",
+        "detalhamento_sha256": "819fd011dc653eaf1b67a173844ad878d93b7dc736523e977157dc20ea3a56d2"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2023",
+      "source_sha256": "bee42880b88a01b10879c00c3a0daa50370d1cc964b3d537fa2866c62e25a88d",
+      "source_rows": 262,
+      "source_pages": 1,
+      "official_total_cents": 43325775,
+      "difference_cents": 600487,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "alan-rick",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5672,
+      "legislature": null,
+      "preimage": {
+        "id": "a85ede0d-73b8-4ee2-87c9-1bdb41f56ec3",
+        "total_cents": 17901910,
+        "fonte": "Senado",
+        "detalhamento_sha256": "bfb4463cdec8484960e8cb1b2e925d0d120a54405419fc324946d420899fb140"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 126,
+      "source_pages": 1,
+      "official_total_cents": 23666793,
+      "difference_cents": -5764883,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "cleitinho",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 6337,
+      "legislature": null,
+      "preimage": {
+        "id": "806ce0bb-de6c-4e79-95fa-f23e5d839c25",
+        "total_cents": 3500299,
+        "fonte": "Senado",
+        "detalhamento_sha256": "c64e1fa1916b754838b15807907fef0d4ec4ad034086605cf560edacd2a5dacd"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 98,
+      "source_pages": 1,
+      "official_total_cents": 4297725,
+      "difference_cents": -797426,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "efraim-filho",
+      "year": 2023,
+      "house": "senado",
+      "official_id": 4642,
+      "legislature": null,
+      "preimage": {
+        "id": "15b97c77-05bf-4c4e-acf7-a343adba43a3",
+        "total_cents": 40183829,
+        "fonte": "Senado",
+        "detalhamento_sha256": "597dcbdaf973a9116d3a3ca0b2203b028eb9d7774a2e1aea918dead061b40591"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2023",
+      "source_sha256": "bee42880b88a01b10879c00c3a0daa50370d1cc964b3d537fa2866c62e25a88d",
+      "source_rows": 228,
+      "source_pages": 1,
+      "official_total_cents": 40153039,
+      "difference_cents": 30790,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "efraim-filho",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 4642,
+      "legislature": null,
+      "preimage": {
+        "id": "a53a3cae-71ca-4ab2-bd8f-80b7ac91e5f1",
+        "total_cents": 14484928,
+        "fonte": "Senado",
+        "detalhamento_sha256": "ae23a79322d6b8d5c2a395ca423f36d6eed69047d634835dc8b6d57791338283"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 97,
+      "source_pages": 1,
+      "official_total_cents": 19833069,
+      "difference_cents": -5348141,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5894,
+      "legislature": null,
+      "preimage": {
+        "id": "5d8d797c-4001-4eb6-81f5-bc6e9e2fb068",
+        "total_cents": 7602821,
+        "fonte": "Senado",
+        "detalhamento_sha256": "94e1ed4093e0ea5c6e2172581aec71a222bf435b083b6f58da781e22b382bdcc"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 85,
+      "source_pages": 1,
+      "official_total_cents": 8119859,
+      "difference_cents": -517038,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "marcos-rogerio",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5422,
+      "legislature": null,
+      "preimage": {
+        "id": "ce9286c5-8a6d-4444-a9f3-0932acf3fa59",
+        "total_cents": 30287465,
+        "fonte": "Senado",
+        "detalhamento_sha256": "b899e6d08060214c29e67d8232ed46849a927098e8e25b0cd8cccca55d839a2e"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 136,
+      "source_pages": 1,
+      "official_total_cents": 33497408,
+      "difference_cents": -3209943,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "omar-aziz",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5525,
+      "legislature": null,
+      "preimage": {
+        "id": "856c6dd5-1626-4788-91d3-80838928a805",
+        "total_cents": 34696169,
+        "fonte": "Senado",
+        "detalhamento_sha256": "5996917f0aac19238e6bdd2f085716c82a0ee7c600eecd2e7edfa43bd731fa4f"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 51,
+      "source_pages": 1,
+      "official_total_cents": 40341689,
+      "difference_cents": -5645520,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "professora-dorinha",
+      "year": 2023,
+      "house": "senado",
+      "official_id": 5386,
+      "legislature": null,
+      "preimage": {
+        "id": "5f51389e-3038-46ce-8b34-7dbcae95b595",
+        "total_cents": 28702474,
+        "fonte": "Senado",
+        "detalhamento_sha256": "1c136e0b1052645c81732b4573275c6736e51d5479f081a3abbfba9b2acb5858"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2023",
+      "source_sha256": "bee42880b88a01b10879c00c3a0daa50370d1cc964b3d537fa2866c62e25a88d",
+      "source_rows": 172,
+      "source_pages": 1,
+      "official_total_cents": 28674934,
+      "difference_cents": 27540,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "professora-dorinha",
+      "year": 2024,
+      "house": "senado",
+      "official_id": 5386,
+      "legislature": null,
+      "preimage": {
+        "id": "465729d6-d37e-44a4-b85e-77e292954ecd",
+        "total_cents": 32849324,
+        "fonte": "Senado",
+        "detalhamento_sha256": "3b0dc39abdfa380f39962d233af1a05c8da3ca00a7e79b880232919245b2a2fd"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2024",
+      "source_sha256": "bbd961cf491fcd28ce115237548e6e1a1b9ee5f2240ba11b26ce087ef0f4f861",
+      "source_rows": 209,
+      "source_pages": 1,
+      "official_total_cents": 32689455,
+      "difference_cents": 159869,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "professora-dorinha",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5386,
+      "legislature": null,
+      "preimage": {
+        "id": "fb9430ea-e0ea-422e-9e93-80b613782d0a",
+        "total_cents": 14451150,
+        "fonte": "Senado",
+        "detalhamento_sha256": "797eec5b463b62a8278badd35bed96a5363bfca9954c31b48bde2c923e40225f"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 114,
+      "source_pages": 1,
+      "official_total_cents": 18172990,
+      "difference_cents": -3721840,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "renan-filho",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5207,
+      "legislature": null,
+      "preimage": {
+        "id": "57c31fcd-39c0-4806-b2e9-b29afd74b671",
+        "total_cents": 10141243,
+        "fonte": "Senado",
+        "detalhamento_sha256": "ad38c6061f3f5545552eeeae2fde47e9f27ba072322ab2a88b78d73610c74727"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 85,
+      "source_pages": 1,
+      "official_total_cents": 15813139,
+      "difference_cents": -5671896,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "sergio-moro-gov-pr",
+      "year": 2023,
+      "house": "senado",
+      "official_id": 6331,
+      "legislature": null,
+      "preimage": {
+        "id": "c144ba8a-a55c-417e-8c4f-cd5095a026ad",
+        "total_cents": 25837536,
+        "fonte": "Senado",
+        "detalhamento_sha256": "b2749308b349518f98d610621da0c6a4052cb6f5933d17420089296831a8f117"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2023",
+      "source_sha256": "bee42880b88a01b10879c00c3a0daa50370d1cc964b3d537fa2866c62e25a88d",
+      "source_rows": 383,
+      "source_pages": 1,
+      "official_total_cents": 25761032,
+      "difference_cents": 76504,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "sergio-moro-gov-pr",
+      "year": 2024,
+      "house": "senado",
+      "official_id": 6331,
+      "legislature": null,
+      "preimage": {
+        "id": "7948ea7c-aa81-435b-8601-d192ff79ce80",
+        "total_cents": 31136528,
+        "fonte": "Senado",
+        "detalhamento_sha256": "133e44f3efcd51dfeb850a6b2096f55187a7401dd15a644fa97b681ce3a4620a"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2024",
+      "source_sha256": "bbd961cf491fcd28ce115237548e6e1a1b9ee5f2240ba11b26ce087ef0f4f861",
+      "source_rows": 492,
+      "source_pages": 1,
+      "official_total_cents": 30876523,
+      "difference_cents": 260005,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "sergio-moro-gov-pr",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 6331,
+      "legislature": null,
+      "preimage": {
+        "id": "57adc33a-45ed-48e8-9f3c-9a0691c501af",
+        "total_cents": 21843413,
+        "fonte": "Senado",
+        "detalhamento_sha256": "4bc63fe327d9f74e0ad204668c319bdda337eefd82c19ed17ab28de1e504b4dd"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 484,
+      "source_pages": 1,
+      "official_total_cents": 38436726,
+      "difference_cents": -16593313,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-100002537338",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5411,
+      "legislature": null,
+      "preimage": {
+        "id": "c51d1ef5-6145-4743-a3f2-01b0c26f369a",
+        "total_cents": 31204043,
+        "fonte": "Senado",
+        "detalhamento_sha256": "d9f477d6214278d3e33ed4feb053f50a5258b0c293248191c0a02aa91dbb6c8a"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 146,
+      "source_pages": 1,
+      "official_total_cents": 34280183,
+      "difference_cents": -3076140,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-100002541459",
+      "year": 2023,
+      "house": "senado",
+      "official_id": 5718,
+      "legislature": null,
+      "preimage": {
+        "id": "1ff40098-c266-4eeb-8075-5c0feabfbfca",
+        "total_cents": 46140243,
+        "fonte": "Senado",
+        "detalhamento_sha256": "0d07dfa0cb36b96338efcf34f671b41b19b1dd643245f5c189ae6fec49c3061c"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2023",
+      "source_sha256": "bee42880b88a01b10879c00c3a0daa50370d1cc964b3d537fa2866c62e25a88d",
+      "source_rows": 119,
+      "source_pages": 1,
+      "official_total_cents": 46067647,
+      "difference_cents": 72596,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-10002544274",
+      "year": 2026,
+      "house": "camara",
+      "official_id": 220589,
+      "legislature": 57,
+      "preimage": {
+        "id": "d944182e-5576-4e07-8d0e-29b096849ea2",
+        "total_cents": 37009406,
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/deputados/220589/despesas",
+        "detalhamento_sha256": "55e581dd506710aeb9ca0e7c7a5826df907caf2985a053832e324b105217694b"
+      },
+      "source_url": "https://dadosabertos.camara.leg.br/api/v2/deputados/220589/despesas",
+      "source_sha256": "ca43f0a2689988f61b9084bb65bd123991abeb6776b826d4ddd002985e6a26c5",
+      "source_rows": 294,
+      "source_pages": 3,
+      "official_total_cents": 38196220,
+      "difference_cents": -1186814,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-10002548046",
+      "year": 2015,
+      "house": "senado",
+      "official_id": 4558,
+      "legislature": null,
+      "preimage": {
+        "id": "7c6a1a45-bd0f-434c-bb02-ac22bf642f41",
+        "total_cents": 38669547,
+        "fonte": "Senado",
+        "detalhamento_sha256": "0f94e6dabe1aadbd934d2f4db39bcc4557d4a7a42bcd75307ba4078c482dc00e"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2015",
+      "source_sha256": "09004e8a3d1b47580c8c7d29035af689a72c2433902da910666262444178c0f7",
+      "source_rows": 204,
+      "source_pages": 1,
+      "official_total_cents": 38519547,
+      "difference_cents": 150000,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-10002548050",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 285,
+      "legislature": null,
+      "preimage": {
+        "id": "56f89ba9-45f7-4f44-b338-c02a8a93408b",
+        "total_cents": 34245508,
+        "fonte": "Senado",
+        "detalhamento_sha256": "b76b578d8c7ff6de7f9880580ae71300613691224f565f3c8230e4344ec696c4"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 47,
+      "source_pages": 1,
+      "official_total_cents": 34806949,
+      "difference_cents": -561441,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-110002544986",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 6295,
+      "legislature": null,
+      "preimage": {
+        "id": "65028607-f18d-463a-af49-d35fe7f9602a",
+        "total_cents": 16794374,
+        "fonte": "Senado",
+        "detalhamento_sha256": "60b5ed4dd24ab06d4938e17a90f5159e57a9afd4b5d2936772e8cbf4f10e3454"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 103,
+      "source_pages": 1,
+      "official_total_cents": 18238967,
+      "difference_cents": -1444593,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-120002547434",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5988,
+      "legislature": null,
+      "preimage": {
+        "id": "0465fcc0-9974-438b-9359-137a76d6ae27",
+        "total_cents": 37086293,
+        "fonte": "Senado",
+        "detalhamento_sha256": "4d74d2540aa407013fba3cb5d523373107195ac07efcf52a603fb80bb1e2fbc5"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 206,
+      "source_pages": 1,
+      "official_total_cents": 38783334,
+      "difference_cents": -1697041,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-130002545590",
+      "year": 2023,
+      "house": "senado",
+      "official_id": 5990,
+      "legislature": null,
+      "preimage": {
+        "id": "f7de777b-f527-4e78-8a7c-796bea442545",
+        "total_cents": 35924186,
+        "fonte": "Senado",
+        "detalhamento_sha256": "02d60072ef4036691bb8dc3941a59a2899289855fe949dc17e4b92ce064ee660"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2023",
+      "source_sha256": "bee42880b88a01b10879c00c3a0daa50370d1cc964b3d537fa2866c62e25a88d",
+      "source_rows": 459,
+      "source_pages": 1,
+      "official_total_cents": 35912318,
+      "difference_cents": 11868,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-130002545590",
+      "year": 2024,
+      "house": "senado",
+      "official_id": 5990,
+      "legislature": null,
+      "preimage": {
+        "id": "3ce77dfe-23aa-474a-9412-e673c39a7279",
+        "total_cents": 26194797,
+        "fonte": "Senado",
+        "detalhamento_sha256": "23f80b3c1a3b0f611d94bd2b17fbe829dbe8bca6d60ddcf8cc5580ed8ca23441"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2024",
+      "source_sha256": "bbd961cf491fcd28ce115237548e6e1a1b9ee5f2240ba11b26ce087ef0f4f861",
+      "source_rows": 278,
+      "source_pages": 1,
+      "official_total_cents": 26135728,
+      "difference_cents": 59069,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-130002545590",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5990,
+      "legislature": null,
+      "preimage": {
+        "id": "df3bb75d-70d4-4b28-bf65-745c8160c003",
+        "total_cents": 33579731,
+        "fonte": "Senado",
+        "detalhamento_sha256": "336237fe151c1533f3a736a1be5eb19db4507c1a88908ab3345573f85b3ff360"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 394,
+      "source_pages": 1,
+      "official_total_cents": 33579535,
+      "difference_cents": 196,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-140002542691",
+      "year": 2011,
+      "house": "camara",
+      "official_id": 73933,
+      "legislature": 54,
+      "preimage": {
+        "id": "5bbcace3-ad93-4cc7-bd87-967b025b2edf",
+        "total_cents": 38987096,
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/deputados/73933/despesas",
+        "detalhamento_sha256": "b9ade873c99e3b74a9b5aeec8af68f33febee5319d0f3b3e951162eac2d7f8d0"
+      },
+      "source_url": "https://dadosabertos.camara.leg.br/api/v2/deputados/73933/despesas",
+      "source_sha256": "2c92184924f77d4a83f8b6567950eb5b874ed92fb51739ebc90ed349b33b2a15",
+      "source_rows": 425,
+      "source_pages": 5,
+      "official_total_cents": 36197686,
+      "difference_cents": 2789410,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-150002544905",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5748,
+      "legislature": null,
+      "preimage": {
+        "id": "eb056dc6-2b7d-4d13-96e9-f6519da1c61b",
+        "total_cents": 14150304,
+        "fonte": "Senado",
+        "detalhamento_sha256": "1faae746ad3d8411f5b1ad85572d47672d690a737b1e02976afcce2f423cb097"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 85,
+      "source_pages": 1,
+      "official_total_cents": 14306410,
+      "difference_cents": -156106,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-180002533967",
+      "year": 2023,
+      "house": "senado",
+      "official_id": 742,
+      "legislature": null,
+      "preimage": {
+        "id": "5a12d7a6-c622-4a6b-a6fd-7b38383cddf0",
+        "total_cents": 35843256,
+        "fonte": "Senado",
+        "detalhamento_sha256": "bcc81f7ae775ddfd9713c076c487341c4cad5483f9adcb455c98dd872d8fb6ff"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2023",
+      "source_sha256": "bee42880b88a01b10879c00c3a0daa50370d1cc964b3d537fa2866c62e25a88d",
+      "source_rows": 220,
+      "source_pages": 1,
+      "official_total_cents": 35747752,
+      "difference_cents": 95504,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-190002535142",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5936,
+      "legislature": null,
+      "preimage": {
+        "id": "20fd9bcc-760d-4ebc-99cf-3436ada43457",
+        "total_cents": 32968551,
+        "fonte": "Senado",
+        "detalhamento_sha256": "0b8991eaa6869db472b7008b7ead815e11a132134128b686c55830677602c9b6"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 482,
+      "source_pages": 1,
+      "official_total_cents": 34323624,
+      "difference_cents": -1355073,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-190002548141",
+      "year": 2015,
+      "house": "camara",
+      "official_id": 73701,
+      "legislature": 55,
+      "preimage": {
+        "id": "06933ad7-a3de-43a4-99c4-3d32a4e0a962",
+        "total_cents": 40727179,
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/deputados/73701/despesas",
+        "detalhamento_sha256": "7c59c6267ef7e021a6c3c129cce79d5094ef56b7c86cf4fd682c1d9ed3e3809c"
+      },
+      "source_url": "https://dadosabertos.camara.leg.br/api/v2/deputados/73701/despesas",
+      "source_sha256": "42769131b3c1450856578c9261a02f579f732bb3c8018d66483c5d1d3a201c5b",
+      "source_rows": 855,
+      "source_pages": 9,
+      "official_total_cents": 38824629,
+      "difference_cents": 1902550,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-190002548141",
+      "year": 2019,
+      "house": "camara",
+      "official_id": 73701,
+      "legislature": 56,
+      "preimage": {
+        "id": "d1f47768-a8e6-4430-8f17-3582ace84c8f",
+        "total_cents": 42609837,
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/deputados/73701/despesas",
+        "detalhamento_sha256": "1a908852b58cea17573e94f681ec840ab2df625253700cd4aa6bb4ad16769a99"
+      },
+      "source_url": "https://dadosabertos.camara.leg.br/api/v2/deputados/73701/despesas",
+      "source_sha256": "708c15a905189f95841515ac94bebb4ca56fdf19b9b259ef353acac30f73389b",
+      "source_rows": 662,
+      "source_pages": 7,
+      "official_total_cents": 40225552,
+      "difference_cents": 2384285,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-190002548141",
+      "year": 2023,
+      "house": "camara",
+      "official_id": 73701,
+      "legislature": 57,
+      "preimage": {
+        "id": "58e3ab85-9b18-47f1-9eb9-0b290f9510a8",
+        "total_cents": 41814403,
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/deputados/73701/despesas",
+        "detalhamento_sha256": "0f5c3f4457ef19d7df17d175cad2f12b6228d695f231583dffeecb059ff40775"
+      },
+      "source_url": "https://dadosabertos.camara.leg.br/api/v2/deputados/73701/despesas",
+      "source_sha256": "0068a1e622d0c0c07d242df1718d535666ee6c4a17fdbffbe718b6bc77322b90",
+      "source_rows": 356,
+      "source_pages": 4,
+      "official_total_cents": 41191064,
+      "difference_cents": 623339,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-190002548141",
+      "year": 2025,
+      "house": "camara",
+      "official_id": 73701,
+      "legislature": 57,
+      "preimage": {
+        "id": "8f8beb57-0f09-41fa-8234-9af600a6a253",
+        "total_cents": 49793546,
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/deputados/73701/despesas",
+        "detalhamento_sha256": "76620631ee46d805ca3930c4f273b37402a9db1a960f936003cf2b21dac9287a"
+      },
+      "source_url": "https://dadosabertos.camara.leg.br/api/v2/deputados/73701/despesas",
+      "source_sha256": "df2875edf0d7f5e6622659f7650836db1957c0e2389deea60c45ceeda1f1f3d2",
+      "source_rows": 361,
+      "source_pages": 4,
+      "official_total_cents": 49600307,
+      "difference_cents": 193239,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-190002548141",
+      "year": 2026,
+      "house": "camara",
+      "official_id": 73701,
+      "legislature": 57,
+      "preimage": {
+        "id": "acbedbda-ca35-41eb-87c6-4d64da5eec30",
+        "total_cents": 27120918,
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/deputados/73701/despesas",
+        "detalhamento_sha256": "12bb788e0eda36f6884ea5b638fb704efcd61cedb773b0e4f07cd64b6e6fa384"
+      },
+      "source_url": "https://dadosabertos.camara.leg.br/api/v2/deputados/73701/despesas",
+      "source_sha256": "2b2b6f72e92a59a8b87d091a7be0aec89b5ef2ff0a4cb0bc12548251ee9d1b0b",
+      "source_rows": 240,
+      "source_pages": 3,
+      "official_total_cents": 27882136,
+      "difference_cents": -761218,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-200002535507",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5783,
+      "legislature": null,
+      "preimage": {
+        "id": "55365325-bbb7-4f24-a8e4-79a4ef64ebbb",
+        "total_cents": 27160687,
+        "fonte": "Senado",
+        "detalhamento_sha256": "9a37de84ec90fa2ae8e6e13cdc55e3bf3d56ffe58768ff6aa5753ff7d15d23a1"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 197,
+      "source_pages": 1,
+      "official_total_cents": 27376834,
+      "difference_cents": -216147,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-20002553727",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 70,
+      "legislature": null,
+      "preimage": {
+        "id": "1abca4f2-9aa3-4f9e-ac1e-175c3b29d650",
+        "total_cents": 13812000,
+        "fonte": "Senado",
+        "detalhamento_sha256": "4d1085616fcb0ab161ceb070b28f7fd9c4dcf4fcdeb44bcad30ff9bd0198739c"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 88,
+      "source_pages": 1,
+      "official_total_cents": 14303379,
+      "difference_cents": -491379,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-230002550794",
+      "year": 2023,
+      "house": "senado",
+      "official_id": 470,
+      "legislature": null,
+      "preimage": {
+        "id": "fad1801a-9729-4135-abcd-d69b1e59d188",
+        "total_cents": 50060344,
+        "fonte": "Senado",
+        "detalhamento_sha256": "6b3cfea6a3d79131cd48a29e42f938ce7bfab6cc4ceec1e7367a2f13432d6756"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2023",
+      "source_sha256": "bee42880b88a01b10879c00c3a0daa50370d1cc964b3d537fa2866c62e25a88d",
+      "source_rows": 129,
+      "source_pages": 1,
+      "official_total_cents": 49117498,
+      "difference_cents": 942846,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-230002550794",
+      "year": 2024,
+      "house": "senado",
+      "official_id": 470,
+      "legislature": null,
+      "preimage": {
+        "id": "6a6b9c6c-ed18-49c5-8276-34bc5ae67ac1",
+        "total_cents": 54896609,
+        "fonte": "Senado",
+        "detalhamento_sha256": "0e6a8c0b3ee2f0e7922deacfa14be28053ec6f25199a4f24ca3be38916c95a31"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2024",
+      "source_sha256": "bbd961cf491fcd28ce115237548e6e1a1b9ee5f2240ba11b26ce087ef0f4f861",
+      "source_rows": 106,
+      "source_pages": 1,
+      "official_total_cents": 54565192,
+      "difference_cents": 331417,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-230002550794",
+      "year": 2025,
+      "house": "senado",
+      "official_id": 470,
+      "legislature": null,
+      "preimage": {
+        "id": "7499629a-cc81-45e1-ae8b-9d126f1f7f13",
+        "total_cents": 55432435,
+        "fonte": "Senado",
+        "detalhamento_sha256": "20184581dbc4119e0dda9b035babe69fa225d84c5af46a2414d410bced245a31"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2025",
+      "source_sha256": "91fe878083c51915b12f8a5e1e3be39e902ef22ade73b54d01e76206096d628f",
+      "source_rows": 105,
+      "source_pages": 1,
+      "official_total_cents": 54608377,
+      "difference_cents": 824058,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-240002548632",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 22,
+      "legislature": null,
+      "preimage": {
+        "id": "c045d184-3dd7-4cf6-a376-a64837ddb711",
+        "total_cents": 25295343,
+        "fonte": "Senado",
+        "detalhamento_sha256": "a9a42f435c602d25d980abe5af7a5cb6b7b7a7dd384edfa898b87326a2a9cf8e"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 387,
+      "source_pages": 1,
+      "official_total_cents": 25862747,
+      "difference_cents": -567404,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-260002533084",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5982,
+      "legislature": null,
+      "preimage": {
+        "id": "9a19b52b-bfc8-4334-a973-c1312339be26",
+        "total_cents": 37917780,
+        "fonte": "Senado",
+        "detalhamento_sha256": "57a44a3c36029772cb34a5bc75fce8a3ff35c13b15134120ff82602187bf4088"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 135,
+      "source_pages": 1,
+      "official_total_cents": 38607223,
+      "difference_cents": -689443,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-260002547285",
+      "year": 2023,
+      "house": "senado",
+      "official_id": 5352,
+      "legislature": null,
+      "preimage": {
+        "id": "0b1fc969-adea-43df-afc4-269f30409a95",
+        "total_cents": 53140181,
+        "fonte": "Senado",
+        "detalhamento_sha256": "89ba2f8921c0e4ac261c514a9a4e6d97c187e4cf8842140f16ff167f6263ccdc"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2023",
+      "source_sha256": "bee42880b88a01b10879c00c3a0daa50370d1cc964b3d537fa2866c62e25a88d",
+      "source_rows": 216,
+      "source_pages": 1,
+      "official_total_cents": 52881313,
+      "difference_cents": 258868,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-260002547285",
+      "year": 2024,
+      "house": "senado",
+      "official_id": 5352,
+      "legislature": null,
+      "preimage": {
+        "id": "66802c1a-7c7e-4dab-abbf-5908a422f021",
+        "total_cents": 55972421,
+        "fonte": "Senado",
+        "detalhamento_sha256": "18c2dc2e3d71fa4ade5356cf265a9117d5e242502a4cc2252e2c11eb857b2f4d"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2024",
+      "source_sha256": "bbd961cf491fcd28ce115237548e6e1a1b9ee5f2240ba11b26ce087ef0f4f861",
+      "source_rows": 217,
+      "source_pages": 1,
+      "official_total_cents": 55967223,
+      "difference_cents": 5198,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-270002546333",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 3777,
+      "legislature": null,
+      "preimage": {
+        "id": "4cf9dfa9-1ea8-4400-8d83-db3b169a8a63",
+        "total_cents": 18141544,
+        "fonte": "Senado",
+        "detalhamento_sha256": "fbb033e804143780bc8e18f8937229e3f8afbae3302a5d183d915cb0482671e0"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 78,
+      "source_pages": 1,
+      "official_total_cents": 18391544,
+      "difference_cents": -250000,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-30002530069",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5926,
+      "legislature": null,
+      "preimage": {
+        "id": "bfda6c97-c557-4b48-a42d-205121d9b41f",
+        "total_cents": 35585364,
+        "fonte": "Senado",
+        "detalhamento_sha256": "0d0fdbc328ef5a05f61ac36581a50a17105542c9e809a4b62b7311c84efd9e1f"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 181,
+      "source_pages": 1,
+      "official_total_cents": 36223449,
+      "difference_cents": -638085,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-30002549909",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5012,
+      "legislature": null,
+      "preimage": {
+        "id": "79d3cbf5-c18b-413c-9897-9e94189a5b02",
+        "total_cents": 34980490,
+        "fonte": "Senado",
+        "detalhamento_sha256": "aa68078da61e2cbff8e6ae6b1c2096a3d7bb03e67b7a0025becd76528fc19607"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 118,
+      "source_pages": 1,
+      "official_total_cents": 35401541,
+      "difference_cents": -421051,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-40002537344",
+      "year": 2023,
+      "house": "senado",
+      "official_id": 5502,
+      "legislature": null,
+      "preimage": {
+        "id": "62ccbf1b-be30-4c6b-962c-a3fcc280d745",
+        "total_cents": 48112821,
+        "fonte": "Senado",
+        "detalhamento_sha256": "19d79107be9cddc1ee94288b2d888f88ae203b811213b22cac2f5b4feb498e1d"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2023",
+      "source_sha256": "bee42880b88a01b10879c00c3a0daa50370d1cc964b3d537fa2866c62e25a88d",
+      "source_rows": 264,
+      "source_pages": 1,
+      "official_total_cents": 47465562,
+      "difference_cents": 647259,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-40002537344",
+      "year": 2024,
+      "house": "senado",
+      "official_id": 5502,
+      "legislature": null,
+      "preimage": {
+        "id": "4e970b31-59d6-4fd5-933a-b9c90548a8e4",
+        "total_cents": 45419038,
+        "fonte": "Senado",
+        "detalhamento_sha256": "cfc4b6ed3947268327be2dc030d1272fac10b16237ba7afed4bad9dfe5a62b64"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2024",
+      "source_sha256": "bbd961cf491fcd28ce115237548e6e1a1b9ee5f2240ba11b26ce087ef0f4f861",
+      "source_rows": 230,
+      "source_pages": 1,
+      "official_total_cents": 45264838,
+      "difference_cents": 154200,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-50002536317",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 581,
+      "legislature": null,
+      "preimage": {
+        "id": "78ba4ac6-3430-4f2f-9018-7c4d0b7bee65",
+        "total_cents": 29430407,
+        "fonte": "Senado",
+        "detalhamento_sha256": "c5d6c2bb4757482a7e4d895a5804678d83c55ebadff2739ec4bbb34e281afba3"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 290,
+      "source_pages": 1,
+      "official_total_cents": 33377407,
+      "difference_cents": -3947000,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-60002542479",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5973,
+      "legislature": null,
+      "preimage": {
+        "id": "087742e3-95ba-4334-9d59-054425b9a492",
+        "total_cents": 23347230,
+        "fonte": "Senado",
+        "detalhamento_sha256": "39f3616b2ba0ebe9af4e95af16a65e075e7752de95c4ac760f4a2173e1e0ad85"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 160,
+      "source_pages": 1,
+      "official_total_cents": 24818424,
+      "difference_cents": -1471194,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-70002552492",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5979,
+      "legislature": null,
+      "preimage": {
+        "id": "ae85a85c-f7dc-4af8-9752-d3bb75909734",
+        "total_cents": 15566548,
+        "fonte": "Senado",
+        "detalhamento_sha256": "3f5c6bd4732679fd150182af4ba811ce872bacb8cc2ff3b43a4c003271555a16"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 192,
+      "source_pages": 1,
+      "official_total_cents": 17086548,
+      "difference_cents": -1520000,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-80002538202",
+      "year": 2024,
+      "house": "senado",
+      "official_id": 5942,
+      "legislature": null,
+      "preimage": {
+        "id": "3c36e26b-a1a2-4fec-9ee8-c3f095948644",
+        "total_cents": 18031769,
+        "fonte": "Senado",
+        "detalhamento_sha256": "4987522b60478c10e55ee2c81b18d4e898432584cd96efec9a6d2f30aa3886fd"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2024",
+      "source_sha256": "bbd961cf491fcd28ce115237548e6e1a1b9ee5f2240ba11b26ce087ef0f4f861",
+      "source_rows": 105,
+      "source_pages": 1,
+      "official_total_cents": 18030319,
+      "difference_cents": 1450,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-80002538202",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5942,
+      "legislature": null,
+      "preimage": {
+        "id": "4b32e0ea-262b-49a5-ac23-242f1e359a34",
+        "total_cents": 34549483,
+        "fonte": "Senado",
+        "detalhamento_sha256": "dbf6430e4bbbe54a42259e48e3bb5790986320dcca238af817cc0aa69f7d12ae"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 114,
+      "source_pages": 1,
+      "official_total_cents": 37866876,
+      "difference_cents": -3317393,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-80002550187",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5953,
+      "legislature": null,
+      "preimage": {
+        "id": "bb432102-16e2-4d3b-b9ae-16cc00d8a71c",
+        "total_cents": 26839314,
+        "fonte": "Senado",
+        "detalhamento_sha256": "ff833deb22dcccb2ec6a82f0d678b2f8475c365da1d5d06d4c0bb9d427d22bb0"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 568,
+      "source_pages": 1,
+      "official_total_cents": 28009266,
+      "difference_cents": -1169952,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "tse-2026-80002551368",
+      "year": 2011,
+      "house": "camara",
+      "official_id": 73507,
+      "legislature": 54,
+      "preimage": {
+        "id": "c43bc5d6-07d8-43cc-b195-eef8181e1c03",
+        "total_cents": 32801234,
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/deputados/73507/despesas",
+        "detalhamento_sha256": "f6d7fb2431733993edd69c4dccc546db29b7d8a93e5d94145352e8eb3b7d9df5"
+      },
+      "source_url": "https://dadosabertos.camara.leg.br/api/v2/deputados/73507/despesas",
+      "source_sha256": "ad3fb347a087fc6e5a246a1feb251fdbe3d7e3146d6a75056ed99bed9942118a",
+      "source_rows": 972,
+      "source_pages": 10,
+      "official_total_cents": 30173509,
+      "difference_cents": 2627725,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "wellington-fagundes",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 1173,
+      "legislature": null,
+      "preimage": {
+        "id": "0dfffa99-999d-4b06-aa0a-9a5311591840",
+        "total_cents": 34478877,
+        "fonte": "Senado",
+        "detalhamento_sha256": "6c564c37c94c7bb84c7513dfaef2041aeedf4493bd7f593148b35fe2e5334fd0"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 202,
+      "source_pages": 1,
+      "official_total_cents": 37612062,
+      "difference_cents": -3133185,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    },
+    {
+      "slug": "wilder-morais",
+      "year": 2026,
+      "house": "senado",
+      "official_id": 5070,
+      "legislature": null,
+      "preimage": {
+        "id": "3969d305-5e6a-48c7-bca5-887be31782d2",
+        "total_cents": 8817448,
+        "fonte": "Senado",
+        "detalhamento_sha256": "9a15dbe0348b036070e565a8676acbb7ed4ae9a7c1789800e924c8f1d07d08a6"
+      },
+      "source_url": "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/2026",
+      "source_sha256": "69c7665d2a5e03d6523387244e6bb933481682888284b040fcc9f2d6f88b86fa",
+      "source_rows": 75,
+      "source_pages": 1,
+      "official_total_cents": 11790218,
+      "difference_cents": -2972770,
+      "checked_at": "2026-09-25T17:34:46.074Z"
+    }
+  ]
+}

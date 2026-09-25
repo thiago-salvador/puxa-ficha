@@ -1,6 +1,7 @@
 {
   "_comentario": "Separacao aditiva das migrations mistas ja aplicadas. Os arquivos de origem permanecem imutaveis como historico de curadoria; o substituto puro de schema reproduz apenas a DDL. O replay de schema exclui uma origem somente se o hash continuar igual e o substituto existir e for schema puro.",
-  "schema_dump_sha256": "830241ffa7174576e53b01533a775d46d3dd2f93802cb884bf4c873c9c104cd0",
+  "schema_dump_sha256": "723838642b85db170cd91d2cda6be15a3b018a372d6570d1b11dc542ca326f40",
+  "_comentario_20260925163543": "Quarentena dos 57 gastos em schema e curadoria separados: --schema-gate PG17 mediu 122 aplicadas, 387 puladas e zero falhas em 509 migrations. Novas colunas despublicado_em, despublicacao_motivo e coletado_em e policy de leitura mudaram o dump para 723838642b85db170cd91d2cda6be15a3b018a372d6570d1b11dc542ca326f40.",
   "_comentario_20260924205031": "Sites e situacao TSE sao migrations somente de dados: --schema-gate PG17 mediu 121 aplicadas, 386 puladas e zero falhas em 507 migrations; hash de schema inalterado 830241ffa7174576e53b01533a775d46d3dd2f93802cb884bf4c873c9c104cd0.",
   "_comentario_20260924120000": "Lista de situações da RPC observe_verified_candidate_change igual ao domínio de situacao_candidatura: --schema-gate PG17 mediu 121 aplicadas, 383 puladas e zero falhas; hash 830241ffa7174576e53b01533a775d46d3dd2f93802cb884bf4c873c9c104cd0.",
   "_comentario_20260923145603": "Assinaturas por recorte após 20260923140000: --schema-gate PG17 mediu 120 migrations aplicadas, 380 puladas e zero falhas; hash 86205cf1b7110a461b925b59b2669f09e43b1f30bf01fd593a902430a969c2fa.",
