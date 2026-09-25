@@ -84,9 +84,10 @@ BEGIN
     SELECT 1 FROM pg_policies
     WHERE schemaname = 'public' AND tablename = 'gastos_parlamentares'
       AND policyname = 'Leitura pública' AND cmd = 'SELECT'
-      AND qual = 'is_public_candidate(candidato_id)'
+      AND qual LIKE '%is_public_candidate(candidato_id)%'
+      AND qual LIKE '%despublicado_em IS NULL%'
   ) THEN
-    RAISE EXCEPTION 'política pública de gastos divergiu do preflight';
+    RAISE EXCEPTION 'política pública de gastos divergiu do schema da quarentena';
   END IF;
   IF (
     SELECT count(*) FROM pg_policies
@@ -95,6 +96,8 @@ BEGIN
   ) <> 1 THEN
     RAISE EXCEPTION 'há outra política que pode expor gastos em quarentena';
   END IF;
+  -- O replay sintético não possui as 57 linhas de produção.
+  IF current_setting('pf.replay', true) = 'true' THEN RETURN; END IF;
   SELECT count(*) INTO v_matched
   FROM pf_gastos_129_preimage e
   JOIN public.gastos_parlamentares g ON g.id = e.id
@@ -107,15 +110,11 @@ BEGIN
   END IF;
 END $$;
 
-ALTER TABLE public.gastos_parlamentares
-  ADD COLUMN despublicado_em timestamptz,
-  ADD COLUMN despublicacao_motivo text,
-  ADD COLUMN coletado_em timestamptz;
-
 DO $$
 DECLARE
   v_updated integer;
 BEGIN
+  IF current_setting('pf.replay', true) = 'true' THEN RETURN; END IF;
   UPDATE public.gastos_parlamentares g
   SET despublicado_em = now(),
       despublicacao_motivo = 'Totais CEAP/CEAPS em conferência com a fonte oficial; triagem 129 casos 2026-09-25'
@@ -129,8 +128,5 @@ BEGIN
     RAISE EXCEPTION 'quarentena marcou %/57 linhas', v_updated;
   END IF;
 END $$;
-
-ALTER POLICY "Leitura pública" ON public.gastos_parlamentares
-  USING (public.is_public_candidate(candidato_id) AND despublicado_em IS NULL);
 
 COMMIT;
