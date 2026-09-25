@@ -23,6 +23,8 @@ describe("recibos de busca no site", () => {
   it("lê recibo válido e falha fechado em qualquer defeito", () => {
     const valid = { ...identity, searched_at: "2026-09-25T12:00:00Z", result: "vazio_confirmado", leads: 0 }
     assert.deepEqual(selecionarReciboChecagens(catalog([valid]), identity), { searchedAt: valid.searched_at, result: "vazio_confirmado", leads: 0, agencias: ["Lupa", "Aos Fatos"] })
+    assert.deepEqual(selecionarReciboChecagens(catalog([{ ...valid, agencias: ["Lupa"] }]), identity)?.agencias, ["Lupa"])
+    assert.equal(selecionarReciboChecagens(catalog([{ ...valid, agencias: [] }]), identity), null)
     assert.equal(selecionarReciboChecagens(catalog([{ ...valid, result: "erro" }]), identity), null)
     assert.equal(selecionarReciboChecagens(catalog([{ ...valid, result: "encontrado", leads: 0 }]), identity), null)
     assert.equal(selecionarReciboChecagens(catalog([{ ...valid, searched_at: "ontem" }]), identity), null)

@@ -11,6 +11,7 @@ import {
   leadsDaResposta,
   mesclarRecibos,
   montarRecibo,
+  parseBuscaNativa,
   parseItensBusca,
   publisherCanonicoPorHost,
   resumirColeta,
@@ -64,10 +65,13 @@ describe("coleta nominal de checagens", () => {
     const encontrado = montarRecibo(caiado, okEmTodas({ "aos-fatos": 2 }), now)
     assert.equal(encontrado.result, "encontrado")
     assert.equal(encontrado.leads.length, 2)
-    const falhou = { ...okEmTodas({ lupa: 3 }), comprova: { status: "erro" as const, erro: "HTTP 503" } }
+    const falhou = { ...okEmTodas(), comprova: { status: "erro" as const, erro: "HTTP 503" } }
     const recibo = montarRecibo(caiado, falhou, now)
     assert.equal(recibo.result, "erro", "uma agência sem resposta impede afirmar ausência")
     assert.deepEqual(recibo.agencias.comprova, { status: "erro", erro: "HTTP 503" })
+    const parcial = montarRecibo(caiado, { ...okEmTodas({ lupa: 3 }), comprova: { status: "erro" as const, erro: "HTTP 503" } }, now)
+    assert.equal(parcial.result, "encontrado", "lead achado vale mesmo com outra agência fora do ar")
+    assert.equal(resumirColeta([parcial]).encontrado_parcial, 1)
     const faltando = okEmTodas()
     delete faltando["afp-checamos"]
     assert.equal(montarRecibo(caiado, faltando, now).result, "erro")
@@ -89,29 +93,48 @@ describe("coleta nominal de checagens", () => {
     const erro = montarRecibo({ ...caiado, id: "cand-b", slug: "b" }, { ...okEmTodas(), lupa: { status: "erro", erro: "HTTP 503" } }, now)
     const catalogo = consolidarCatalogoRecibos(consolidarCatalogoRecibos(null, [novo, erro], now), [antigo], now)
     assert.equal(catalogo.receipts.length, 1)
-    assert.deepEqual(catalogo.receipts[0], { candidate_id: "cand-caiado", candidate_slug: "ronaldo-caiado", searched_at: novo.searched_at, result: "vazio_confirmado", leads: 0 })
+    assert.deepEqual(catalogo.receipts[0], { candidate_id: "cand-caiado", candidate_slug: "ronaldo-caiado", searched_at: novo.searched_at, result: "vazio_confirmado", leads: 0, agencias: AGENCIAS_CHECAGEM.map((agencia) => agencia.nome) })
+    const parcial = montarRecibo({ ...caiado, id: "cand-c", slug: "c" }, { ...okEmTodas({ lupa: 1 }), comprova: { status: "erro", erro: "HTTP 503" } }, now)
+    const publico = consolidarCatalogoRecibos(null, [parcial], now).receipts[0]
+    assert.equal(publico.agencias.includes("Comprova"), false, "agência que falhou não aparece como consultada")
+    assert.equal(publico.agencias.includes("Lupa"), true)
     assert.equal(catalogo.agencias.length, AGENCIAS_CHECAGEM.length)
   })
 
-  it("repete a consulta depois de 503 e recusa candidatura fora do escopo", async () => {
+  it("usa a busca nativa primeiro, cai para o Google e repete depois de 503", async () => {
     const pedidos: string[] = []
-    let primeira = true
+    let primeiroGoogle = true
     const recibos = await coletarChecagens({
       roster: [caiado],
       sleep: async () => {},
       fetchText: async (url) => {
         pedidos.push(url)
-        if (primeira) { primeira = false; return { status: 503, body: "" } }
+        if (url.includes("agencialupa.org/wp-json")) return { status: 200, body: JSON.stringify([{ title: "Caiado erra sobre fome e Ideb", url: "https://www.agencialupa.org/checagem/2026/04/07/caiado" }]) }
+        if (url.includes("projetocomprova.com.br/wp-json")) return { status: 403, body: "Access Denied" }
+        if (primeiroGoogle) { primeiroGoogle = false; return { status: 503, body: "" } }
         return { status: 200, body: rss([]) }
       },
       now: () => now,
     })
-    assert.equal(recibos[0].result, "vazio_confirmado")
-    assert.equal(pedidos.length, AGENCIAS_CHECAGEM.length + 1)
+    const recibo = recibos[0]
+    assert.equal(recibo.result, "encontrado")
+    assert.deepEqual(recibo.leads.map((lead) => lead.link), ["https://www.agencialupa.org/checagem/2026/04/07/caiado"])
+    assert.equal(recibo.agencias.lupa.transporte, "wp-rest")
+    assert.equal(recibo.agencias.comprova.transporte, "google-news")
+    assert.match(recibo.agencias.comprova.falhas?.[0] ?? "", /busca nativa: HTTP 403/)
+    assert.equal(recibo.agencias["aos-fatos"].transporte, "google-news")
+    assert.ok(pedidos.some((url) => url.startsWith("https://news.google.com/")))
     await assert.rejects(
       coletarChecagens({ roster: [{ ...caiado, cargo_disputado: "Senador" as never }], fetchText: async () => ({ status: 200, body: rss([]) }), sleep: async () => {} }),
       /Cargo fora do escopo/,
     )
+  })
+
+  it("lê a busca nativa do WordPress e recusa resposta que não é lista", () => {
+    assert.deepEqual(parseBuscaNativa(JSON.stringify([{ title: "Caiado &#8216;erra&#8217;", url: "https://www.agencialupa.org/x" }, { title: "sem url" }])), [
+      { titulo: "Caiado ‘erra’", link: "https://www.agencialupa.org/x", fonte: "", fonte_url: "https://www.agencialupa.org/x", data_publicacao: null },
+    ])
+    assert.throws(() => parseBuscaNativa(JSON.stringify({ code: "rest_no_route" })), /não devolveu lista/)
   })
 
   it("marca erro quando a fonte devolve algo que não é RSS", async () => {

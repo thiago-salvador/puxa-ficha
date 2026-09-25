@@ -35,7 +35,17 @@ export interface AgenciaChecagem {
   sites: readonly string[]
   /** Domínios aceitos no atributo `source url` do item devolvido. */
   dominios: readonly string[]
+  /**
+   * Busca nativa da própria agência (WordPress REST `/wp-json/wp/v2/search`).
+   * Quando existe, é a primeira via: devolve a URL original e não depende do
+   * Google. O Google News fica como segunda via.
+   */
+  wpSearch?: string
 }
+
+export type TransporteBusca = "wp-rest" | "google-news"
+/** Páginas de 100 resultados lidas na busca nativa. */
+export const PAGINAS_WP = 3
 
 /**
  * Agências já usadas no catálogo e as que o contrato editorial lista. A ordem
@@ -43,13 +53,13 @@ export interface AgenciaChecagem {
  * nome canônico por domínio pega a divergência.
  */
 export const AGENCIAS_CHECAGEM: readonly AgenciaChecagem[] = Object.freeze([
-  { id: "lupa", nome: "Lupa", sites: ["agencialupa.org", "piaui.folha.uol.com.br/lupa"], dominios: ["agencialupa.org", "piaui.folha.uol.com.br"] },
+  { id: "lupa", nome: "Lupa", sites: ["agencialupa.org", "piaui.folha.uol.com.br/lupa"], dominios: ["agencialupa.org", "piaui.folha.uol.com.br"], wpSearch: "https://www.agencialupa.org/wp-json/wp/v2/search" },
   { id: "aos-fatos", nome: "Aos Fatos", sites: ["aosfatos.org"], dominios: ["aosfatos.org"] },
   { id: "fato-ou-fake", nome: "Fato ou Fake", sites: ["g1.globo.com/fato-ou-fake"], dominios: ["g1.globo.com"] },
   { id: "estadao-verifica", nome: "Estadão Verifica", sites: ["estadao.com.br/estadao-verifica"], dominios: ["estadao.com.br"] },
   { id: "uol-confere", nome: "UOL Confere", sites: ["noticias.uol.com.br/confere"], dominios: ["uol.com.br"] },
   { id: "afp-checamos", nome: "AFP Checamos", sites: ["checamos.afp.com"], dominios: ["afp.com"] },
-  { id: "comprova", nome: "Comprova", sites: ["projetocomprova.com.br"], dominios: ["projetocomprova.com.br"] },
+  { id: "comprova", nome: "Comprova", sites: ["projetocomprova.com.br"], dominios: ["projetocomprova.com.br"], wpSearch: "https://projetocomprova.com.br/wp-json/wp/v2/search" },
 ])
 
 /** Nome canônico do veículo pelo host da checagem original. */
@@ -86,7 +96,7 @@ export interface LeadChecagem {
 }
 
 export type EstadoAgencia =
-  | { status: "ok"; itens: number; leads: LeadChecagem[] }
+  | { status: "ok"; itens: number; leads: LeadChecagem[]; transporte?: TransporteBusca; falhas?: string[] }
   | { status: "erro"; erro: string }
 
 export type ResultadoRecibo = "encontrado" | "vazio_confirmado" | "erro"
@@ -101,12 +111,34 @@ export interface ReciboChecagem {
   searched_at: string
   result: ResultadoRecibo
   leads: LeadChecagem[]
-  agencias: Record<string, { status: "ok" | "erro"; itens?: number; leads?: number; erro?: string }>
+  agencias: Record<string, { status: "ok" | "erro"; itens?: number; leads?: number; erro?: string; transporte?: TransporteBusca; falhas?: string[] }>
   escopo: string
 }
 
 export function descricaoEscopo(): string {
-  return `Google News RSS, nome de urna entre aspas, uma consulta por agência (${AGENCIAS_CHECAGEM.map((a) => a.nome).join(", ")}); sem limite de data; teto de ${TETO_ITENS_POR_CONSULTA} itens por consulta; lead exige o nome no título`
+  const nativas = AGENCIAS_CHECAGEM.filter((a) => a.wpSearch).map((a) => a.nome).join(", ")
+  return `uma consulta por agência (${AGENCIAS_CHECAGEM.map((a) => a.nome).join(", ")}) com o nome de urna; busca nativa WordPress em ${nativas} (até ${PAGINAS_WP * 100} resultados) e Google News RSS nas demais ou como segunda via (teto de ${TETO_ITENS_POR_CONSULTA} itens); sem limite de data; lead exige o nome no título`
+}
+
+export function urlBuscaNativa(nomeUrna: string, agencia: AgenciaChecagem, pagina: number): string | null {
+  if (!agencia.wpSearch) return null
+  return `${agencia.wpSearch}?search=${encodeURIComponent(nomeUrna.replace(/"/g, ""))}&per_page=100&page=${pagina}`
+}
+
+/** Resposta de `/wp-json/wp/v2/search`: lista de `{ title, url }`. Lança se não for lista. */
+export function parseBuscaNativa(body: string): ItemBusca[] {
+  const data = JSON.parse(body) as unknown
+  if (!Array.isArray(data)) throw new Error("busca nativa não devolveu lista")
+  const itens: ItemBusca[] = []
+  for (const row of data) {
+    if (!row || typeof row !== "object") continue
+    const record = row as Record<string, unknown>
+    const titulo = typeof record.title === "string" ? decodeEntities(record.title) : null
+    const url = typeof record.url === "string" ? record.url : null
+    if (!titulo || !url || !url.startsWith("https://")) continue
+    itens.push({ titulo, link: url, fonte: "", fonte_url: url, data_publicacao: null })
+  }
+  return itens
 }
 
 export function consultaDaAgencia(nomeUrna: string, agencia: AgenciaChecagem): string {
@@ -204,7 +236,11 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
       agencias[agencia.id] = { status: "erro", erro: estado.erro.slice(0, 200) }
       continue
     }
-    agencias[agencia.id] = { status: "ok", itens: estado.itens, leads: estado.leads.length }
+    agencias[agencia.id] = {
+      status: "ok", itens: estado.itens, leads: estado.leads.length,
+      ...(estado.transporte ? { transporte: estado.transporte } : {}),
+      ...(estado.falhas?.length ? { falhas: estado.falhas.map((falha) => falha.slice(0, 200)) } : {}),
+    }
     leads.push(...estado.leads)
   }
   return {
@@ -215,7 +251,8 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
     office: candidato.cargo_disputado,
     uf: candidato.estado,
     searched_at: searchedAt.toISOString(),
-    result: erro ? "erro" : leads.length > 0 ? "encontrado" : "vazio_confirmado",
+    // Lead achado vale mesmo com outra agência em erro; ausência só com todas respondendo.
+    result: leads.length > 0 ? "encontrado" : erro ? "erro" : "vazio_confirmado",
     leads,
     agencias,
     escopo: descricaoEscopo(),
@@ -226,7 +263,7 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
 export function entradaColetaDoRecibo(recibo: ReciboChecagem): EntradaColeta {
   const porAgencia = AGENCIAS_CHECAGEM.map((agencia) => {
     const estado = recibo.agencias[agencia.id]
-    return estado?.status === "ok" ? `${agencia.id}=${estado.leads ?? 0}/${estado.itens ?? 0}` : `${agencia.id}=erro`
+    return estado?.status === "ok" ? `${agencia.id}=${estado.leads ?? 0}/${estado.itens ?? 0}(${estado.transporte ?? "?"})` : `${agencia.id}=erro(${estado?.erro ?? "não consultada"})`
   }).join(" ")
   return {
     fonte: FONTE_CHECAGENS_AGENCIAS,
@@ -245,6 +282,8 @@ export interface ReciboChecagemPublico {
   searched_at: string
   result: "encontrado" | "vazio_confirmado"
   leads: number
+  /** Agências que responderam nesta busca. Só elas podem aparecer no texto do site. */
+  agencias: string[]
 }
 
 export interface CatalogoRecibosChecagens {
@@ -279,6 +318,7 @@ export function consolidarCatalogoRecibos(
       searched_at: recibo.searched_at,
       result: recibo.result,
       leads: recibo.result === "encontrado" ? recibo.leads.length : 0,
+      agencias: AGENCIAS_CHECAGEM.filter((agencia) => recibo.agencias[agencia.id]?.status === "ok").map((agencia) => agencia.nome),
     })
   }
   return {
@@ -301,15 +341,54 @@ export interface OpcoesColeta {
   tentativas?: number
   /** Espera base depois de 429/503, multiplicada pela tentativa. */
   esperaBloqueioMs?: number
+  /** Desliga a via Google News (ex.: IP bloqueado). Agência sem via nativa vira erro declarado. */
+  semGoogle?: boolean
   sleep?: (ms: number) => Promise<void>
   onRecibo?: (recibo: ReciboChecagem, indice: number) => void
 }
 
-async function consultarAgencia(
+type OpcoesConsulta = Required<Pick<OpcoesColeta, "fetchText" | "tentativas" | "sleep" | "pausaMs" | "esperaBloqueioMs" | "semGoogle">>
+
+async function consultarNativa(candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<EstadoAgencia> {
+  const itens: ItemBusca[] = []
+  for (let pagina = 1; pagina <= PAGINAS_WP; pagina++) {
+    let ultimoErro = "sem resposta"
+    let lidos: ItemBusca[] | null = null
+    for (let tentativa = 0; tentativa < opcoes.tentativas && !lidos; tentativa++) {
+      if (tentativa > 0) await opcoes.sleep(opcoes.pausaMs * 4 * tentativa)
+      try {
+        const resposta = await opcoes.fetchText(urlBuscaNativa(candidato.nome_urna, agencia, pagina)!)
+        // WordPress responde 400 ao pedir página além da última.
+        if (pagina > 1 && resposta.status === 400) { lidos = []; break }
+        if (resposta.status < 200 || resposta.status >= 300) { ultimoErro = `HTTP ${resposta.status}`; continue }
+        lidos = parseBuscaNativa(resposta.body)
+      } catch (error) {
+        ultimoErro = error instanceof Error ? error.message : String(error)
+      }
+    }
+    if (!lidos) return { status: "erro", erro: `busca nativa: ${ultimoErro}` }
+    itens.push(...lidos)
+    if (lidos.length < 100) break
+    await opcoes.sleep(opcoes.pausaMs)
+  }
+  return { status: "ok", itens: itens.length, leads: leadsDaResposta(itens, candidato, agencia), transporte: "wp-rest" }
+}
+
+async function consultarAgencia(candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<EstadoAgencia> {
+  if (!agencia.wpSearch) return consultarGoogle(candidato, agencia, opcoes)
+  const nativa = await consultarNativa(candidato, agencia, opcoes)
+  if (nativa.status === "ok") return nativa
+  const google = await consultarGoogle(candidato, agencia, opcoes)
+  if (google.status === "ok") return { ...google, falhas: [nativa.erro] }
+  return { status: "erro", erro: `${nativa.erro}; google-news: ${google.erro}` }
+}
+
+async function consultarGoogle(
   candidato: CandidatoChecagem,
   agencia: AgenciaChecagem,
-  opcoes: Required<Pick<OpcoesColeta, "fetchText" | "tentativas" | "sleep" | "pausaMs" | "esperaBloqueioMs">>,
+  opcoes: OpcoesConsulta,
 ): Promise<EstadoAgencia> {
+  if (opcoes.semGoogle) return { status: "erro", erro: "google-news: via desligada nesta execução" }
   let ultimoErro = "sem resposta"
   let bloqueado = false
   for (let tentativa = 0; tentativa < opcoes.tentativas; tentativa++) {
@@ -327,12 +406,12 @@ async function consultarAgencia(
         continue
       }
       const itens = parseItensBusca(resposta.body)
-      return { status: "ok", itens: itens.length, leads: leadsDaResposta(itens, candidato, agencia) }
+      return { status: "ok", itens: itens.length, leads: leadsDaResposta(itens, candidato, agencia), transporte: "google-news" }
     } catch (error) {
       ultimoErro = error instanceof Error ? error.message : String(error)
     }
   }
-  return { status: "erro", erro: ultimoErro }
+  return { status: "erro", erro: `google-news: ${ultimoErro}` }
 }
 
 export async function coletarChecagens(opcoes: OpcoesColeta): Promise<ReciboChecagem[]> {
@@ -358,14 +437,14 @@ export async function coletarChecagens(opcoes: OpcoesColeta): Promise<ReciboChec
       const candidato = opcoes.roster[indice]
       const estados: Record<string, EstadoAgencia> = {}
       for (const agencia of AGENCIAS_CHECAGEM) {
-        estados[agencia.id] = await consultarAgencia(candidato, agencia, { fetchText: opcoes.fetchText, tentativas, sleep, pausaMs, esperaBloqueioMs })
+        estados[agencia.id] = await consultarAgencia(candidato, agencia, { fetchText: opcoes.fetchText, tentativas, sleep, pausaMs, esperaBloqueioMs, semGoogle: opcoes.semGoogle ?? false })
         await sleep(pausaMs)
       }
       const recibo = montarRecibo(candidato, estados, now())
       recibos[indice] = recibo
       opcoes.onRecibo?.(recibo, indice)
       // Candidatura inteira em erro costuma ser limite de taxa: esfria antes da próxima.
-      if (recibo.result === "erro") await sleep(esperaBloqueioMs * 2)
+      if (recibo.result === "erro" && !opcoes.semGoogle) await sleep(esperaBloqueioMs * 2)
     }
   }
   await Promise.all(Array.from({ length: concorrencia }, trabalhador))
@@ -377,6 +456,7 @@ export interface ResumoColeta {
   encontrado: number
   vazio_confirmado: number
   erro: number
+  encontrado_parcial: number
   leads: number
   erros_por_agencia: Record<string, number>
 }
@@ -393,6 +473,7 @@ export function resumirColeta(recibos: readonly ReciboChecagem[]): ResumoColeta 
     encontrado: recibos.filter((recibo) => recibo.result === "encontrado").length,
     vazio_confirmado: recibos.filter((recibo) => recibo.result === "vazio_confirmado").length,
     erro: recibos.filter((recibo) => recibo.result === "erro").length,
+    encontrado_parcial: recibos.filter((recibo) => recibo.result === "encontrado" && Object.values(recibo.agencias).some((estado) => estado.status === "erro")).length,
     leads: recibos.reduce((total, recibo) => total + recibo.leads.length, 0),
     erros_por_agencia: errosPorAgencia,
   }

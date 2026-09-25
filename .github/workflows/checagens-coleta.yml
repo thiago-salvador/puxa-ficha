@@ -28,6 +28,11 @@ on:
         description: Slugs separados por vírgula. Vazio = cadastro inteiro.
         required: false
         type: string
+      gravar:
+        description: Gravar recibos no coleta_log. Desligado = dry-run, só artefato.
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -72,15 +77,18 @@ jobs:
         run: node --import tsx --test tests/checagens-coleta.test.ts
 
       # O input não é interpolado no `run:`; chega como variável de ambiente.
-      - name: Buscar e gravar recibos
+      - name: Buscar e gravar recibos (dry-run no disparo manual sem gravar)
         if: steps.vigencia.outputs.ativa == 'true'
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY || secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           CHECAGENS_SLUGS: ${{ inputs.slugs }}
+          # Agendada grava; disparo manual grava só com gravar=true.
+          CHECAGENS_GRAVAR: ${{ github.event_name == 'schedule' || inputs.gravar == true }}
         run: |
-          args=(--out reports/checagens-coleta/run --catalogo scripts/data/checagens-recibos.json --gravar-log)
+          args=(--out reports/checagens-coleta/run --catalogo scripts/data/checagens-recibos.json)
+          if [ "$CHECAGENS_GRAVAR" = "true" ]; then args+=(--gravar-log); fi
           if [ -n "$CHECAGENS_SLUGS" ]; then args+=(--slugs "$CHECAGENS_SLUGS"); fi
           npm run coletar:checagens -- "${args[@]}"
 

@@ -46,10 +46,12 @@ function sameIdentity(row: Record<string, unknown>, identity: IdentidadeRecibo):
 
 export function selecionarReciboChecagens(raw: unknown, identity: IdentidadeRecibo): ReciboChecagensVisivel | null {
   if (!isRecord(raw) || raw.schema_version !== "checagens-recibos-v1" || !Array.isArray(raw.receipts) || !Array.isArray(raw.agencias)) return null
-  const agencias = raw.agencias.filter((agencia): agencia is string => typeof agencia === "string" && agencia.trim().length > 0)
-  if (agencias.length === 0) return null
   const row = raw.receipts.find((item): item is Record<string, unknown> => isRecord(item) && sameIdentity(item, identity))
   if (!row || !validInstant(row.searched_at)) return null
+  // Cada recibo lista as agências que responderam; o texto nunca cita agência que falhou.
+  const source = Array.isArray(row.agencias) ? row.agencias : raw.agencias
+  const agencias = source.filter((agencia): agencia is string => typeof agencia === "string" && agencia.trim().length > 0)
+  if (agencias.length === 0) return null
   if (row.result !== "encontrado" && row.result !== "vazio_confirmado") return null
   const leads = typeof row.leads === "number" && Number.isInteger(row.leads) && row.leads >= 0 ? row.leads : null
   if (leads === null || (row.result === "encontrado") !== (leads > 0)) return null

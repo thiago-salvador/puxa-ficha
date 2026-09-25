@@ -41,7 +41,7 @@ function opcoes(argv: string[]): { valores: Map<string, string>; flags: Set<stri
   for (let indice = 0; indice < argv.length; indice++) {
     const arg = argv[indice]
     if (!arg.startsWith("--")) throw new Error(`Argumento inválido: ${arg}`)
-    if (arg === "--gravar-log" || arg === "--help") {
+    if (arg === "--gravar-log" || arg === "--help" || arg === "--sem-google") {
       flags.add(arg.slice(2))
       continue
     }
@@ -104,7 +104,7 @@ async function registrarRecibosExistentes(arquivo: string, catalogoPath: string 
 export async function executarColetaChecagens(argv = process.argv.slice(2)): Promise<number> {
   const { valores, flags } = opcoes(argv)
   if (flags.has("help")) {
-    console.log("Uso: coletar:checagens [--roster ARQUIVO] [--slugs a,b] [--out DIR] [--catalogo ARQUIVO] [--concorrencia N] [--pausa-ms N] [--espera-bloqueio-ms N] [--retomar recibos.json] [--gravar-log]")
+    console.log("Uso: coletar:checagens [--roster ARQUIVO] [--slugs a,b] [--out DIR] [--catalogo ARQUIVO] [--concorrencia N] [--pausa-ms N] [--espera-bloqueio-ms N] [--retomar recibos.json] [--sem-google] [--gravar-log]")
     return 0
   }
   const inicio = new Date()
@@ -139,6 +139,7 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
     concorrencia: Number(valores.get("concorrencia") ?? 1),
     pausaMs: Number(valores.get("pausa-ms") ?? 1_000),
     esperaBloqueioMs: Number(valores.get("espera-bloqueio-ms") ?? 30_000),
+    semGoogle: flags.has("sem-google"),
     onRecibo: (recibo) => {
       concluidos++
       // Checkpoint: uma interrupção não apaga as buscas já feitas.
@@ -163,7 +164,8 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
   }
   writeFileSync(resolve(out, "resumo.json"), JSON.stringify(resumo, null, 2) + "\n")
   console.log(JSON.stringify(resumo))
-  return resumo.erro > 0 ? 1 : 0
+  // Vermelho quando alguma candidatura ficou sem busca completa, mesmo com lead achado.
+  return resumo.erro > 0 || resumo.encontrado_parcial > 0 ? 1 : 0
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
