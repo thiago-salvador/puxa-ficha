@@ -9,7 +9,8 @@
  * Grava só o que passou em todas as camadas, como `relacionada`, origem
  * `cascata`. Reconcilia: vínculo da cascata que deixou de passar volta a
  * `verificado = false`. Toda escrita passa por `escreverAuditado`. Cada execução
- * grava uma amostra dos publicados para auditoria.
+ * grava uma amostra dos publicados para auditoria e, com `--apply`, um recibo
+ * por candidato em `coleta_log` (ver `promessa-evidencia-recibos.ts`).
  */
 import { createHash } from "node:crypto"
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
@@ -19,6 +20,7 @@ import { fileURLToPath, pathToFileURL } from "node:url"
 import { escreverAuditado } from "./lib/escrita-auditada"
 import { ensureSupabaseClient } from "./lib/supabase"
 import type { ParCandidato } from "./promessa-evidencia-pares"
+import { distribuicao, gravarRecibos } from "./promessa-evidencia-recibos"
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const PASTA = path.join(ROOT, "reports/promessa-evidencia")
@@ -147,7 +149,10 @@ async function main(): Promise<void> {
       () => db.from("compromisso_evidencia").update({ verificado: false, updated_at: agora }).in("id", retirar).select("id"),
     )).length
   }
-  console.log(JSON.stringify({ ...resumo, gravadas: gravadas.length, retiradas }, null, 2))
+  // Recibo por candidato depois da publicação: lê o estado publicado que acabou
+  // de ser gravado, então descreve exatamente o que a ficha vai mostrar.
+  const recibos = await gravarRecibos({ db, apply: true, versao: VERSAO_CASCATA, agora })
+  console.log(JSON.stringify({ ...resumo, gravadas: gravadas.length, retiradas, recibos: { gravados: recibos.gravados, ...distribuicao(recibos.recibos) } }, null, 2))
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {

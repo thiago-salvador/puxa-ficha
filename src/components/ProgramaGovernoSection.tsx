@@ -28,9 +28,10 @@ import type {
 } from "@/lib/programa-governo"
 import {
   agruparEvidenciasPorTema,
-  type CompromissoEvidenciaPublica,
+  type EstadoEvidenciasPrograma,
 } from "@/lib/compromisso-evidencia"
-import { compromissoEvidenciaCopy } from "@/lib/ui-labels"
+import type { ProgramaGovernoPendencia } from "@/lib/programa-governo-pendencia"
+import { compromissoEvidenciaCopy, programaGovernoPendenteCopy } from "@/lib/ui-labels"
 
 export type ProgramaGovernoLoadState = "idle" | "loading" | "loaded" | "failed"
 
@@ -295,30 +296,59 @@ function formatEvidenciaData(value: string | null) {
   return new Intl.DateTimeFormat("pt-BR", { dateStyle: "short", timeZone: "UTC" }).format(data)
 }
 
+function textoDoEstadoSemVinculo(estado: Exclude<EstadoEvidenciasPrograma, { estado: "com_vinculos" }>): string {
+  switch (estado.estado) {
+    case "nenhum_par":
+      return compromissoEvidenciaCopy.estado.nenhum_par
+    case "avaliados_nao_publicados":
+      return compromissoEvidenciaCopy.estado.avaliados_nao_publicados(estado.paresAvaliados)
+    case "sem_documento_oficial":
+      return compromissoEvidenciaCopy.estado.sem_documento_oficial
+    case "nao_processado":
+      return compromissoEvidenciaCopy.estado.nao_processado
+    case "erro_leitura":
+      return compromissoEvidenciaCopy.estado.erro_leitura
+  }
+}
+
 function ProgramaEvidenciasRelacionadas({
   temas,
-  evidencias,
+  estado,
   mostrarSemCongresso,
 }: {
   temas: ReadonlyArray<{ id: string; titulo: string }>
-  evidencias: ReadonlyArray<CompromissoEvidenciaPublica>
+  estado: EstadoEvidenciasPrograma
   mostrarSemCongresso: boolean
 }) {
-  const porTema = agruparEvidenciasPorTema(evidencias)
+  const porTema = agruparEvidenciasPorTema(estado.estado === "com_vinculos" ? estado.itens : [])
   const temasComEvidencia = temas.filter((tema) => (porTema.get(tema.id)?.length ?? 0) > 0)
+  const processadoEm = "processadoEm" in estado && estado.processadoEm ? formatEvidenciaData(estado.processadoEm) : null
   return (
-    <section aria-labelledby="compromisso-evidencias-title" className="mt-6 border-t border-border/60 pt-5" data-pf-compromisso-evidencias="">
+    <section
+      aria-labelledby="compromisso-evidencias-title"
+      className="mt-6 border-t border-border/60 pt-5"
+      data-pf-compromisso-evidencias=""
+      data-pf-compromisso-evidencias-estado={estado.estado}
+    >
       <h3 id="compromisso-evidencias-title" className="text-base font-semibold text-foreground">
         {compromissoEvidenciaCopy.titulo}
       </h3>
-      <p className="mt-1 max-w-3xl text-sm text-muted-foreground">{compromissoEvidenciaCopy.aviso}</p>
-      {mostrarSemCongresso && (
+      {estado.estado !== "sem_documento_oficial" && (
+        <p className="mt-1 max-w-3xl text-sm text-muted-foreground">{compromissoEvidenciaCopy.aviso}</p>
+      )}
+      {mostrarSemCongresso && estado.estado !== "sem_documento_oficial" && (
         <p className="mt-1 max-w-3xl text-sm text-muted-foreground" data-pf-compromisso-evidencias-sem-congresso="">
           {compromissoEvidenciaCopy.semCongresso}
         </p>
       )}
-      {temasComEvidencia.length === 0 ? (
-        <p className="mt-3 text-sm text-foreground" data-pf-compromisso-evidencias-vazio="">{compromissoEvidenciaCopy.vazio}</p>
+      {estado.estado !== "com_vinculos" || temasComEvidencia.length === 0 ? (
+        <p
+          className="mt-3 max-w-3xl text-sm text-foreground"
+          data-pf-compromisso-evidencias-vazio=""
+          role={estado.estado === "erro_leitura" ? "status" : undefined}
+        >
+          {estado.estado === "com_vinculos" ? compromissoEvidenciaCopy.estado.erro_leitura : textoDoEstadoSemVinculo(estado)}
+        </p>
       ) : (
         <ul className="mt-3 space-y-2">
           {temasComEvidencia.map((tema) => {
@@ -361,6 +391,40 @@ function ProgramaEvidenciasRelacionadas({
           })}
         </ul>
       )}
+      {processadoEm && (
+        <p className="mt-2 text-xs text-muted-foreground" data-pf-compromisso-evidencias-processado="">
+          {compromissoEvidenciaCopy.processadoEm(processadoEm)}
+        </p>
+      )}
+    </section>
+  )
+}
+
+/**
+ * Ficha de Presidente ou Governador sem registro de programa: estado explícito
+ * em vez de cartão ausente. O texto não afirma nada sobre o TSE além do motivo.
+ */
+export function ProgramaGovernoPendente({ pendencia }: { pendencia: ProgramaGovernoPendencia }) {
+  const copy = programaGovernoPendenteCopy[pendencia.motivo]
+  return (
+    <section
+      aria-labelledby="programa-governo-pendente-title"
+      className="rounded-[12px] border border-border/60 bg-card p-5 sm:p-6"
+      data-pf-programa-pendente={pendencia.motivo}
+    >
+      <div className="flex min-w-0 items-center gap-3">
+        <span className="grid size-10 shrink-0 place-items-center rounded-full bg-muted">
+          <FileText className="size-5" aria-hidden="true" />
+        </span>
+        <div>
+          <p className="text-xs font-bold uppercase tracking-[0.08em] text-muted-foreground">Eleições 2026</p>
+          <h2 id="programa-governo-pendente-title" className="text-xl font-semibold text-foreground">
+            Programa de governo
+          </h2>
+        </div>
+      </div>
+      <h3 className="mt-5 text-base font-semibold text-foreground">{copy.title}</h3>
+      <p className="mt-1 max-w-3xl text-sm leading-6 text-muted-foreground">{copy.description}</p>
     </section>
   )
 }
@@ -373,8 +437,8 @@ export function ProgramaGovernoOverview({
 }: {
   manifesto: ProgramaGovernoManifestoPublico
   onOpenTab: () => void
-  /** Ausente: a seção de evidências não aparece. Lista vazia: estado vazio explícito. */
-  evidencias?: ReadonlyArray<CompromissoEvidenciaPublica>
+  /** Ausente: a seção de evidências não aparece. Presente: estado explícito, inclusive vazio e erro. */
+  evidencias?: EstadoEvidenciasPrograma
   teveMandatoNoCongresso?: boolean
 }) {
   const context = electionContext(manifesto.fonte)
@@ -420,7 +484,7 @@ export function ProgramaGovernoOverview({
           {evidencias && (
             <ProgramaEvidenciasRelacionadas
               temas={manifesto.resumo.temas}
-              evidencias={evidencias}
+              estado={evidencias}
               mostrarSemCongresso={manifesto.fonte.cargo === "GOVERNADOR" && !teveMandatoNoCongresso}
             />
           )}
@@ -442,7 +506,12 @@ export function ProgramaGovernoOverview({
           )}
         </div>
       ) : (
-        <ProgramStateNotice manifesto={manifesto} />
+        <>
+          <ProgramStateNotice manifesto={manifesto} />
+          {evidencias?.estado === "sem_documento_oficial" && (
+            <ProgramaEvidenciasRelacionadas temas={[]} estado={evidencias} mostrarSemCongresso={false} />
+          )}
+        </>
       )}
     </section>
   )
