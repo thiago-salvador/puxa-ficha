@@ -73,7 +73,10 @@ test.describe("Quiz e2e", () => {
       await expect(page.getByRole("radio", { name: "Concordo totalmente" })).toHaveAttribute("aria-checked", "true")
 
       await page.reload()
-      await page.waitForLoadState("networkidle")
+      // Sem networkidle: com a home estática, o prefetch dela pode manter uma
+      // resposta aberta até o router abortar. As asserções abaixo já esperam a
+      // hidratação e a restauração do sessionStorage.
+      await page.waitForLoadState("load")
       await expect(page.getByText(/pergunta 1 de/i)).toBeVisible()
       await expect(page.getByRole("radio", { name: "Concordo totalmente" })).toHaveAttribute("aria-checked", "true")
 
