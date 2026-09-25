@@ -39,7 +39,11 @@ BEGIN
   FROM jsonb_to_recordset(changes) AS e(slug text,sq text,before text,after text)
   WHERE c.slug=e.slug AND c.sq_candidato_2026=e.sq
     AND c.situacao_candidatura=e.before
-    AND c.status='candidato' AND c.publicavel IS TRUE;
+    AND c.status='candidato' AND c.publicavel IS TRUE
+    AND NOT EXISTS (
+      SELECT 1 FROM public.coleta_log prior
+      WHERE prior.execucao='migration:20260924205031'
+    );
   GET DIAGNOSTICS changed = ROW_COUNT;
   IF changed <> 19 THEN RAISE EXCEPTION 'situacao_tse_2026: updates %, esperado 19',changed; END IF;
 
