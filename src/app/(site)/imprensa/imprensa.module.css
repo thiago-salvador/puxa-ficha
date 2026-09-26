@@ -2,9 +2,10 @@
   --ink: #111111;
   --paper: #f7f6f2;
   --rule: #d9d7d0;
-  background: var(--paper);
+  background: linear-gradient(#111111 0 64px, var(--paper) 64px);
   color: var(--ink);
   min-height: 100vh;
+  padding-top: 80px;
 }
 
 .hero {
@@ -176,6 +177,31 @@
   overflow-x: auto;
 }
 
+.rowTools {
+  background: #fff;
+  border: 1px solid var(--rule);
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 2fr 1fr 1fr;
+  margin: 18px 0;
+  padding: 16px;
+}
+.rowTools label { display: grid; font-size: 11px; font-weight: 800; gap: 6px; text-transform: uppercase; }
+.rowTools input, .rowTools select { background: white; border: 1px solid #aaa; border-radius: 4px; color: var(--ink); font: inherit; min-height: 42px; min-width: 0; padding: 0 10px; width: 100%; }
+.summaryStates { display: grid; gap: 12px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 18px 0; }
+.summaryStates section { background: white; border: 1px solid var(--rule); padding: 14px; }
+.summaryStates h3 { font-size: 13px; font-weight: 800; margin-bottom: 8px; }
+.summaryStates ul { display: grid; gap: 4px; font-size: 12px; }
+.summaryStates li { display: flex; justify-content: space-between; gap: 12px; }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; margin: 14px 0; }
+.legend [data-key="published"] { color: #276749; }
+.legend [data-key="partial"] { color: #9a6700; }
+.legend [data-key="unknown"] { color: #666; }
+.publishability { font-size: 11px; font-weight: 800; margin-top: 8px; text-transform: uppercase; }
+.mobileCards { display: none; }
+.mobileCard { background: white; border: 1px solid var(--rule); display: grid; gap: 12px; min-width: 0; padding: 16px; }
+.mobileCard header { border-bottom: 1px solid var(--rule); padding-bottom: 10px; }
+
 .table {
   border-collapse: collapse;
   min-width: 920px;
@@ -241,6 +267,10 @@
   .introText { font-size: 16px; }
   .utilityLinks { margin-top: 18px; }
   .filters { grid-template-columns: 1fr; margin-top: 24px; padding: 16px; }
+  .rowTools { grid-template-columns: 1fr; }
+  .summaryStates { grid-template-columns: 1fr; }
+  .tableWrap { display: none; }
+  .mobileCards { display: grid; gap: 12px; }
   .datasetHeader { align-items: flex-start; display: block; margin-top: 32px; }
   .count { display: block; margin-top: 7px; }
 }

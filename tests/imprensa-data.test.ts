@@ -2,6 +2,7 @@ import "./helpers/server-only"
 import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
 import test from "node:test"
+import type { SenadoRunningMate } from "../src/lib/senado-running-mates"
 import {
   __setImprensaDataDependenciesForTests,
   __setImprensaNowForTests,
@@ -48,6 +49,14 @@ test("monta coorte, filtros e estados sem transformar ausência em zero", async 
       { titular_candidato_id: "2", vice_nome_urna: "Vice Bruno", identidade_status: "confirmada", vinculo_titular_status: "confirmado", fonte_url: "https://divulgacandcontas.tse.jus.br/candidatura/2", fonte_sha256: "b".repeat(64), snapshot_em: "2026-09-05T23:23:41.730Z" },
       { titular_candidato_id: "2", vice_nome_urna: "Outro Vice", identidade_status: "confirmada", vinculo_titular_status: "confirmado", fonte_url: "https://divulgacandcontas.tse.jus.br/candidatura/2b", fonte_sha256: "c".repeat(64), snapshot_em: "2026-09-05T23:23:41.730Z" },
     ],
+    loadSenadoRunningMates: async (slugs) => {
+      const data: Record<string, SenadoRunningMate[]> = {}
+      if (slugs.includes("senado")) data.senado = [
+      { ordem: 1, nome_urna: "SUPLENTE UM", situacao: null, fonte_url: "https://divulgacandcontas.tse.jus.br/suplencia/1", sq_candidato: "1001" },
+      { ordem: 2, nome_urna: "SUPLENTE DOIS", situacao: null, fonte_url: "https://divulgacandcontas.tse.jus.br/suplencia/2", sq_candidato: "1002" },
+      ]
+      return { data, absence: {}, unavailable: false }
+    },
     loadSites: async (slug) => slug === "ana" ? {
       ano_eleicao: 2026,
       fonte_url: "https://example.com/sites.zip",
@@ -74,8 +83,10 @@ test("monta coorte, filtros e estados sem transformar ausência em zero", async 
     assert.equal(dataset.rows[0].sites.quantidade, 2)
     assert.deepEqual(dataset.rows[0].chapa, {
       estado: "publicado",
+      suplentesEstado: "nao_aplicavel",
       viceNome: "Vice Ana",
       viceNomeOriginal: "Vice Ana",
+      suplentes: [],
       fonteUrl: "https://divulgacandcontas.tse.jus.br/candidatura/1",
       fonteSha256: "a".repeat(64),
       snapshotEm: "2026-09-05T23:23:41.730Z",
@@ -88,12 +99,21 @@ test("monta coorte, filtros e estados sem transformar ausência em zero", async 
     assert.deepEqual(dataset.availableCargos, ["Deputado Federal", "Governador"])
     assert.deepEqual(dataset.availableUfs, ["MG", "RJ", "SP"])
 
-    const unfiltered = await getImprensaDataset({ cargo: null, uf: null })
+    const priorSenadoFlag = process.env.SENADO_ENABLED
+    let unfiltered
+    try {
+      process.env.SENADO_ENABLED = "true"
+      unfiltered = await getImprensaDataset({ cargo: null, uf: null })
+    } finally {
+      if (priorSenadoFlag === undefined) delete process.env.SENADO_ENABLED
+      else process.env.SENADO_ENABLED = priorSenadoFlag
+    }
     assert.equal(unfiltered.rows.find((row) => row.slug === "bruno")?.chapa.estado, "sem_dado")
     assert.equal(unfiltered.rows.find((row) => row.slug === "bruno")?.sites.estado, "vazio_confirmado")
     assert.equal(unfiltered.rows.find((row) => row.slug === "bruno")?.sites.quantidade, 0)
     assert.equal(unfiltered.rows.find((row) => row.slug === "bruno")?.processos.estado, "desatualizado")
     assert.equal(unfiltered.rows.find((row) => row.slug === "bruno")?.processos.buscaEstado, "desatualizado")
+    assert.deepEqual(unfiltered.rows.find((row) => row.slug === "senado")?.chapa.suplentes, ["Suplente Um", "Suplente Dois"])
     assert.equal(unfiltered.rows.find((row) => row.slug === "deputado")?.processos.estado, "indeterminado")
     assert.equal(unfiltered.rows.find((row) => row.slug === "deputado")?.sites.quantidade, null)
   } finally {

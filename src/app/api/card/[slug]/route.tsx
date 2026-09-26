@@ -1,4 +1,5 @@
 import type { NextRequest } from "next/server"
+import sharp from "sharp"
 import * as Sentry from "@sentry/nextjs"
 import { getCandidatoBySlugResource } from "@/lib/api"
 import {
@@ -93,14 +94,39 @@ export function createCardGetHandler(deps: CardRouteDeps = defaultCardRouteDeps)
         const cardData = deps.extractCardData(resource.data, photoDataUri)
         const img = await deps.buildSocialCard(cardData, format)
 
-        const body = img.body
+        if (!img.body) throw new Error("Card sem imagem para aplicar o aviso")
+        const source = Buffer.from(await img.arrayBuffer())
+        const pngSignature = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])
+        if (!source.subarray(0, 8).equals(pngSignature)) {
+          throw new Error("Card fora do formato PNG para aplicar o aviso")
+        }
+        const isStory = format === "story"
+        const height = isStory ? 1920 : 1080
+        const banner = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="72"><rect width="1080" height="72" fill="#fff7ed"/><text x="540" y="47" text-anchor="middle" fill="#7c2d12" font-family="Arial,sans-serif" font-size="29" font-weight="700">Confira os dados na fonte original antes de publicar.</text></svg>`)
+        const content = await sharp(source)
+          .resize({ width: 1080, height: height - 72, fit: "inside" })
+          .png()
+          .toBuffer()
+        const contentMetadata = await sharp(content).metadata()
+        const contentWidth = contentMetadata.width ?? 1080
+        const body = await sharp({
+          create: { width: 1080, height, channels: 4, background: "#ffffff" },
+        })
+          .composite([
+            { input: content, left: Math.floor((1080 - contentWidth) / 2), top: 0 },
+            { input: banner, left: 0, top: height - 72 },
+          ])
+          .png()
+          .toBuffer()
         const headers = new Headers(img.headers)
         headers.set(
           "Cache-Control",
           "public, max-age=3600, s-maxage=86400, stale-while-revalidate=3600",
         )
         headers.set("X-Robots-Tag", "noindex")
+        headers.set("X-Imprensa-Aviso", "Confira os dados na fonte original antes de publicar.")
 
+        headers.set("Content-Type", "image/png")
         return new Response(body, { status: 200, headers })
       },
     )

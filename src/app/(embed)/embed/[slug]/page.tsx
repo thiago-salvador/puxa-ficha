@@ -75,6 +75,7 @@ export default async function EmbedCandidatePage({
   return (
     <EmbedResizer>
       <main aria-label="Ficha do candidato (embed)" className="p-3">
+        <p role="note" className="mb-3 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-950">Confira os dados na fonte original antes de publicar.</p>
         {showNotice ? (
           <p className="mb-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-[length:var(--text-caption)] leading-snug text-amber-950">
             {resource.sourceMessage}

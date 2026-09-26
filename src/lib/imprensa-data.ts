@@ -8,6 +8,7 @@ import { createServerSupabaseClient, createServiceRoleSupabaseClient } from "@/l
 import { shouldExposeCargo } from "@/lib/senado-feature"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 import { formatDisplayName } from "@/lib/display-name"
+import { loadSenadoRunningMates } from "@/lib/senado-running-mates"
 
 export interface ImprensaFilters {
   cargo: string | null
@@ -25,11 +26,13 @@ export interface ImprensaRow {
   partido: string | null
   fichaUrl: string
   chapa: {
-    estado: "publicado" | "sem_dado"
+    estado: "publicado" | "sem_dado" | "nao_aplicavel" | "indisponivel"
+    suplentesEstado: "publicado" | "vazio_confirmado" | "indeterminado" | "indisponivel" | "nao_aplicavel"
     /** Formatado para exibição (title case); ver `viceNomeOriginal` para exportação. */
     viceNome: string | null
     /** Grafia original do TSE, preservada para exportação. */
     viceNomeOriginal: string | null
+    suplentes: string[]
     fonteUrl: string | null
     fonteSha256: string | null
     snapshotEm: string | null
@@ -110,6 +113,7 @@ type ImprensaDependencies = {
   loadProcesses: (candidateIds: string[]) => Promise<ProcessoRow[]>
   loadProcessReceipts: (candidateIds: string[], slugs: string[]) => Promise<ProcessoReceiptRow[]>
   loadChapas: (candidateIds: string[]) => Promise<ChapaRow[]>
+  loadSenadoRunningMates: typeof loadSenadoRunningMates
   loadSites: typeof getCandidateSitesTseBySlug
 }
 
@@ -141,6 +145,7 @@ function requireHttps(raw: unknown): string | null {
 
 function defaultDependencies(): ImprensaDependencies {
   return {
+    loadSenadoRunningMates,
     loadSlugs: getCandidatoSlugStaticParams,
     loadCandidates: async (slugs) => {
       const client = createServerSupabaseClient({ cacheMode: "no-store" })
@@ -238,7 +243,7 @@ export function __setImprensaDataDependenciesForTests(
   const defaults = defaultDependencies()
   // Existing focused fixtures predate the receipt projection. A fixture that
   // does not provide receipts explicitly represents "nao_buscado".
-  testDependencies = { ...defaults, loadProcessReceipts: async () => [], ...dependencies }
+  testDependencies = { ...defaults, loadProcessReceipts: async () => [], loadSenadoRunningMates: async () => ({ data: {}, absence: {}, unavailable: false }), ...dependencies }
 }
 
 let testNow: (() => Date) | null = null
@@ -302,16 +307,16 @@ function mapProcesses(rows: ProcessoRow[], receipt: ProcessoReceiptRow | null): 
 }
 
 function mapChapa(rows: ChapaRow[]): ImprensaRow["chapa"] {
-  if (rows.length !== 1) return { estado: "sem_dado", viceNome: null, viceNomeOriginal: null, fonteUrl: null, fonteSha256: null, snapshotEm: null }
+  if (rows.length !== 1) return { estado: "sem_dado", suplentesEstado: "nao_aplicavel", viceNome: null, viceNomeOriginal: null, suplentes: [], fonteUrl: null, fonteSha256: null, snapshotEm: null }
   const row = rows[0]
   const fonteUrl = requireHttps(row.fonte_url)
   const fonteSha256 = typeof row.fonte_sha256 === "string" && /^[a-f0-9]{64}$/i.test(row.fonte_sha256) ? row.fonte_sha256 : null
   const snapshotEm = typeof row.snapshot_em === "string" && !Number.isNaN(Date.parse(row.snapshot_em)) ? row.snapshot_em : null
   const viceNomeOriginal = typeof row.vice_nome_urna === "string" && row.vice_nome_urna.trim() ? row.vice_nome_urna.trim() : null
   if (row.identidade_status !== "confirmada" || row.vinculo_titular_status !== "confirmado" || !viceNomeOriginal || !fonteUrl || !fonteSha256 || !snapshotEm) {
-    return { estado: "sem_dado", viceNome: null, viceNomeOriginal: null, fonteUrl: null, fonteSha256: null, snapshotEm: null }
+    return { estado: "sem_dado", suplentesEstado: "nao_aplicavel", viceNome: null, viceNomeOriginal: null, suplentes: [], fonteUrl: null, fonteSha256: null, snapshotEm: null }
   }
-  return { estado: "publicado", viceNome: formatDisplayName(viceNomeOriginal), viceNomeOriginal, fonteUrl, fonteSha256, snapshotEm }
+  return { estado: "publicado", suplentesEstado: "nao_aplicavel", viceNome: formatDisplayName(viceNomeOriginal), viceNomeOriginal, suplentes: [], fonteUrl, fonteSha256, snapshotEm }
 }
 
 export async function getImprensaDataset(filters: ImprensaFilters): Promise<ImprensaDataset> {
@@ -329,6 +334,40 @@ export async function getImprensaDataset(filters: ImprensaFilters): Promise<Impr
   const processes = await deps.loadProcesses(selected.map((candidate) => candidate.id))
   const processReceipts = await deps.loadProcessReceipts(selected.map((candidate) => candidate.id), selected.map((candidate) => candidate.slug))
   const chapas = await deps.loadChapas(selected.map((candidate) => candidate.id))
+  const senateByUf = new Map<string, CandidateRow[]>()
+  for (const candidate of selected.filter((item) => item.cargo_disputado === "Senador" && item.estado)) {
+    const uf = candidate.estado!.toUpperCase()
+    senateByUf.set(uf, [...(senateByUf.get(uf) ?? []), candidate])
+  }
+  const senateResults: Array<{ candidates: CandidateRow[]; result: Awaited<ReturnType<ImprensaDependencies["loadSenadoRunningMates"]>> }> = []
+  const senateGroups = [...senateByUf]
+  for (let start = 0; start < senateGroups.length; start += 5) {
+    const batch = await Promise.all(senateGroups.slice(start, start + 5).map(async ([uf, candidates]) => ({
+      candidates,
+      result: await deps.loadSenadoRunningMates(candidates.map((candidate) => candidate.slug), uf),
+    })))
+    senateResults.push(...batch)
+  }
+  const senateChapaBySlug = new Map<string, ImprensaRow["chapa"]>()
+  for (const { candidates, result } of senateResults) {
+    for (const candidate of candidates) {
+      const mates = result.data[candidate.slug] ?? []
+      const absence = result.absence[candidate.slug]
+      if (mates.length === 2) {
+        senateChapaBySlug.set(candidate.slug, {
+          estado: "publicado", suplentesEstado: "publicado", viceNome: null, viceNomeOriginal: null,
+          suplentes: mates.map((mate) => formatDisplayName(mate.nome_urna)),
+          fonteUrl: mates[0].fonte_url, fonteSha256: null, snapshotEm: null,
+        })
+      } else if (result.unavailable) {
+        senateChapaBySlug.set(candidate.slug, { estado: "nao_aplicavel", suplentesEstado: "indisponivel", viceNome: null, viceNomeOriginal: null, suplentes: [], fonteUrl: null, fonteSha256: null, snapshotEm: null })
+      } else if (absence) {
+        senateChapaBySlug.set(candidate.slug, { estado: "nao_aplicavel", suplentesEstado: "vazio_confirmado", viceNome: null, viceNomeOriginal: null, suplentes: [], fonteUrl: absence.fonte_url, fonteSha256: absence.fonte_sha256 ?? null, snapshotEm: absence.fonte_data })
+      } else {
+        senateChapaBySlug.set(candidate.slug, { estado: "nao_aplicavel", suplentesEstado: "indeterminado", viceNome: null, viceNomeOriginal: null, suplentes: [], fonteUrl: null, fonteSha256: null, snapshotEm: null })
+      }
+    }
+  }
   const processByCandidate = new Map<string, ProcessoRow[]>()
   for (const process of processes) processByCandidate.set(process.candidato_id, [...(processByCandidate.get(process.candidato_id) ?? []), process])
   const receiptBySlug = new Map<string, ProcessoReceiptRow>()
@@ -348,7 +387,7 @@ export async function getImprensaDataset(filters: ImprensaFilters): Promise<Impr
     uf: candidate.estado ?? null,
     partido: candidate.partido_sigla ?? null,
     fichaUrl: `/candidato/${candidate.slug}`,
-    chapa: mapChapa(chapaByCandidate.get(candidate.id) ?? []),
+    chapa: senateChapaBySlug.get(candidate.slug) ?? mapChapa(chapaByCandidate.get(candidate.id) ?? []),
     sites: mapSites(await deps.loadSites(candidate.slug)),
     processos: mapProcesses(processByCandidate.get(candidate.id) ?? [], receiptBySlug.get(candidate.slug) ?? null),
   })))

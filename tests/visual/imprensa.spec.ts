@@ -1,11 +1,15 @@
 import { expect, test } from "playwright/test"
 
 test("Mesa preserva recorte, export e proveniência em tela", async ({ page, request }, testInfo) => {
+  if (testInfo.project.name === "mobile") await page.setViewportSize({ width: 375, height: 812 })
   const filters = "cargo=Governador&uf=SP"
-  const response = await page.goto(`/imprensa?${filters}`)
+  const response = await page.goto(`/imprensa/mesa?${filters}`)
   expect(response?.status()).toBe(200)
   await expect(page.getByRole("heading", { name: "Mesa de apuração" })).toBeVisible()
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/)
+  const headerBox = await page.locator("header").first().boundingBox()
+  const noticeBox = await page.getByText("Confira os dados na fonte original antes de publicar.", { exact: true }).boundingBox()
+  expect(headerBox && noticeBox && noticeBox.y >= headerBox.y + headerBox.height).toBe(true)
   await expect(page.getByLabel("Cargo", { exact: true })).toHaveValue("Governador")
   await expect(page.getByLabel("UF", { exact: true })).toHaveValue("SP")
   await page.screenshot({ path: testInfo.outputPath("imprensa-primeira-tela.png") })
@@ -21,11 +25,19 @@ test("Mesa preserva recorte, export e proveniência em tela", async ({ page, req
   expect(jsonResponse.headers()["x-robots-tag"]).toContain("noindex")
   const json = await jsonResponse.json()
   expect(json.filters).toEqual({ cargo: "Governador", uf: "SP" })
+  expect(json.aviso).toBe("Confira os dados na fonte original antes de publicar.")
   expect(json.rows).toHaveLength(count)
   expect(json.rows[0].fichaUrl).toMatch(/^\/candidato\//)
   expect(json.rows[0].sites.ocorrencias).toBeUndefined()
   expect(json.rows[0].processos.ocorrencias).toBeUndefined()
   expect(json.rows[0].chapa.estado).toMatch(/^(publicado|sem_dado)$/)
+  await page.getByRole("searchbox", { name: "Buscar por nome" }).fill(json.rows[0].nome)
+  await expect(page.locator("tbody tr")).toHaveCount(1)
+  await page.getByRole("searchbox", { name: "Buscar por nome" }).fill("")
+  await page.locator("label").filter({ hasText: /^Estado do dado/ }).locator("select").selectOption(json.rows[0].sites.estado)
+  await expect(page.locator("tbody tr")).toHaveCount(count)
+  await page.getByLabel("Ordenar").selectOption("desc")
+  await expect(page.getByLabel("Ordenar")).toHaveValue("desc")
 
   const csvResponse = await request.get(`/api/imprensa/export?format=csv&${filters}`)
   expect(csvResponse.status()).toBe(200)
@@ -38,7 +50,10 @@ test("Mesa preserva recorte, export e proveniência em tela", async ({ page, req
   const long = await longResponse.json()
   expect(long.rows.every((row: { slug: string }) => json.rows.some((candidate: { slug: string }) => candidate.slug === row.slug))).toBe(true)
 
-  await expect(rows.first().getByRole("link", { name: /abrir ficha|ficha/i }).first()).toHaveAttribute("href", /\/candidato\//)
+  const fichaLink = testInfo.project.name === "mobile"
+    ? page.locator('[class*="mobileCard"] a[href^="/candidato/"]').first()
+    : rows.first().getByRole("link", { name: "Ficha geral" })
+  await expect(fichaLink).toHaveAttribute("href", /\/candidato\//)
   await expect(page.getByRole("link", { name: "Baixar CSV" })).toHaveAttribute("href", /cargo=Governador.*uf=SP/)
   const downloadPromise = page.waitForEvent("download")
   await page.getByRole("link", { name: "Baixar CSV" }).click()
@@ -49,11 +64,12 @@ test("Mesa preserva recorte, export e proveniência em tela", async ({ page, req
   await expect(page.getByLabel("UF", { exact: true })).toHaveValue("")
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 2)
   expect(overflow).toBe(false)
+  if (testInfo.project.name === "mobile") await expect(page.locator('[class*="mobileCard"]').first()).toBeVisible()
   await page.screenshot({ path: testInfo.outputPath("imprensa.png"), fullPage: true })
 })
 
 test("recorte nacional mostra evidência e ficha sem exigir UF", async ({ page, request }) => {
-  const response = await page.goto("/imprensa?cargo=Presidente")
+  const response = await page.goto("/imprensa/mesa?cargo=Presidente")
   expect(response?.status()).toBe(200)
   await expect(page.getByLabel("Cargo", { exact: true })).toHaveValue("Presidente")
   await expect(page.getByLabel("UF", { exact: true })).toHaveValue("")
@@ -61,7 +77,7 @@ test("recorte nacional mostra evidência e ficha sem exigir UF", async ({ page, 
   expect(exported.rows.length).toBeGreaterThan(0)
   expect(exported.rows.some((row: { sites: { estado: string }; chapa: { estado: string } }) => row.sites.estado === "publicado" || row.chapa.estado === "publicado")).toBe(true)
   await expect(page.locator("tbody tr")).toHaveCount(exported.rows.length)
-  await expect(page.locator("tbody tr").first().getByRole("link", { name: "Ficha geral" })).toHaveAttribute("href", /\/candidato\//)
+  await expect(page.locator('a[href^="/candidato/"]').first()).toHaveAttribute("href", /\/candidato\//)
 })
 
 test("páginas de mudanças e frescor mantêm escopo, navegação e layout", async ({ page }, testInfo) => {
@@ -73,7 +89,8 @@ test("páginas de mudanças e frescor mantêm escopo, navegação e layout", asy
     expect(response?.status()).toBe(200)
     await expect(page.getByRole("heading", { name: title, exact: true })).toBeVisible()
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/)
-    await expect(page.getByRole("link", { name: "Voltar à Mesa de apuração" })).toHaveAttribute("href", "/imprensa")
+    await expect(page.getByText("Confira os dados na fonte original antes de publicar.")).toBeVisible()
+    await expect(page.getByRole("link", { name: "Voltar à Mesa de apuração" })).toHaveAttribute("href", "/imprensa/mesa")
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 2)
     expect(overflow).toBe(false)
     await page.screenshot({ path: testInfo.outputPath(filename), fullPage: true })
@@ -82,7 +99,7 @@ test("páginas de mudanças e frescor mantêm escopo, navegação e layout", asy
 
 test("formulário de alertas usa o recorte da Mesa quando a flag está ativa", async ({ page }, testInfo) => {
   test.skip(process.env.NEXT_PUBLIC_ALERTS_EMAIL_ENABLED !== "true", "Alertas por email desativados neste preview")
-  await page.goto("/imprensa?cargo=Governador&uf=SP")
+  await page.goto("/imprensa/mesa?cargo=Governador&uf=SP")
   const alerts = page.getByRole("region", { name: "Alertas por cargo e UF" })
   await expect(alerts.getByRole("combobox", { name: "Cargo" })).toHaveValue("Governador")
   await expect(alerts.getByRole("combobox", { name: "UF" })).toHaveValue("SP")
@@ -91,6 +108,28 @@ test("formulário de alertas usa o recorte da Mesa quando a flag está ativa", a
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 2)
   expect(overflow).toBe(false)
   await alerts.screenshot({ path: testInfo.outputPath("imprensa-alertas.png") })
-  await page.goto("/imprensa?cargo=Governador&uf=XX")
+  await page.goto("/imprensa/mesa?cargo=Governador&uf=XX")
   await expect(page.getByRole("region", { name: "Alertas por cargo e UF" }).getByRole("combobox", { name: "UF" })).toHaveValue("")
+})
+
+test("Sala indexável apresenta os nove blocos, três tarefas e aviso", async ({ page }, testInfo) => {
+  if (testInfo.project.name === "mobile") await page.setViewportSize({ width: 375, height: 812 })
+  const response = await page.goto("/imprensa")
+  expect(response?.status()).toBe(200)
+  await expect(page.getByRole("heading", { name: "Sala de imprensa" })).toBeVisible()
+  const robots = page.locator('meta[name="robots"]')
+  if (await robots.count()) await expect(robots).not.toHaveAttribute("content", /noindex/)
+  const headerBox = await page.locator("header").first().boundingBox()
+  const noticeBox = await page.getByText("Confira os dados na fonte original antes de publicar.", { exact: true }).boundingBox()
+  expect(headerBox && noticeBox && noticeBox.y >= headerBox.y + headerBox.height).toBe(true)
+  for (const id of ["o-que-e", "numeros", "confianca", "pautas", "ferramentas", "kit", "contato", "perguntas", "atualizacoes"]) {
+    await expect(page.locator(`#${id}`)).toBeAttached()
+  }
+  await expect(page.getByText("Confira os dados na fonte original antes de publicar.")).toBeVisible()
+  await expect(page.getByRole("link", { name: "Achar fonte sobre um candidato" })).toBeVisible()
+  await expect(page.getByRole("link", { name: "Baixar recorte" })).toBeVisible()
+  await expect(page.getByRole("link", { name: /atualizações/i }).first()).toBeVisible()
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 2)
+  expect(overflow).toBe(false)
+  await page.screenshot({ path: testInfo.outputPath("imprensa-sala.png"), fullPage: true })
 })

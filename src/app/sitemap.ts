@@ -73,6 +73,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     {
+      url: `${SITE_ORIGIN}/imprensa`,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
       url: SITE_ORIGIN,
       changeFrequency: "daily",
       priority: 1,

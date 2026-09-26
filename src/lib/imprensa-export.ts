@@ -3,6 +3,7 @@ import type { ImprensaDataset, ImprensaRow } from "@/lib/imprensa-data"
 const IMPRENSA_EXPORT_VERSION = "1"
 const IMPRENSA_EXPORT_MAX_BYTES = 4 * 1024 * 1024
 const IMPRENSA_EXPORT_TTL_SECONDS = 300
+export const IMPRENSA_AVISO = "Confira os dados na fonte original antes de publicar."
 
 const MAIN_COLUMNS = [
   "version",
@@ -29,6 +30,8 @@ const MAIN_COLUMNS = [
   "processos_busca_estado",
   "processos_quantidade",
   "processos_quantidade_omitida",
+  "chapa_suplentes_estado",
+  "chapa_suplentes",
 ] as const
 
 export type ImprensaExportKind = "csv" | "json"
@@ -58,6 +61,8 @@ function mainCells(row: ImprensaRow): Cell[] {
     row.processos?.buscaEstado ?? null,
     row.processos?.quantidade ?? null,
     row.processos?.quantidadeOmitida ?? 0,
+    row.chapa.suplentesEstado,
+    row.chapa.suplentes.join("; ") || null,
   ]
 }
 
@@ -78,6 +83,7 @@ function escapeCsvCell(value: Cell): string {
 
 export function serializeImprensaCsv(dataset: ImprensaDataset): string {
   const lines = [
+    `# ${IMPRENSA_AVISO}`,
     MAIN_COLUMNS.map(escapeCsvCell).join(","),
     ...dataset.rows.map((row) => mainCellsWithMetadata(dataset, row).map(escapeCsvCell).join(",")),
   ]
@@ -88,6 +94,7 @@ export function serializeImprensaJson(dataset: ImprensaDataset): string {
   return JSON.stringify({
     version: IMPRENSA_EXPORT_VERSION,
     generatedAt: dataset.generatedAt,
+    aviso: IMPRENSA_AVISO,
     filters: dataset.filters,
     rows: dataset.rows.map((row) => ({
       slug: row.slug,
@@ -104,7 +111,7 @@ export function serializeImprensaJson(dataset: ImprensaDataset): string {
         fonteSha256: row.sites.fonteSha256,
         coletadoEm: row.sites.coletadoEm,
       },
-      chapa: { estado: row.chapa.estado, viceNome: row.chapa.viceNomeOriginal, fonteUrl: row.chapa.fonteUrl, fonteSha256: row.chapa.fonteSha256, snapshotEm: row.chapa.snapshotEm },
+      chapa: { estado: row.chapa.estado, suplentesEstado: row.chapa.suplentesEstado, viceNome: row.chapa.viceNomeOriginal, suplentes: row.chapa.suplentes, fonteUrl: row.chapa.fonteUrl, fonteSha256: row.chapa.fonteSha256, snapshotEm: row.chapa.snapshotEm },
       processos: {
         estado: row.processos.estado,
         buscaEstado: row.processos.buscaEstado,
@@ -177,6 +184,7 @@ export function serializeImprensaLongJson(
   return JSON.stringify({
     version: IMPRENSA_EXPORT_VERSION,
     generatedAt: dataset.generatedAt,
+    aviso: IMPRENSA_AVISO,
     filters: dataset.filters,
     family,
     rows: buildImprensaLongRows(dataset, family),
@@ -193,6 +201,7 @@ export function serializeImprensaLongCsv(
     : ["slug", "numero", "tipo", "tribunal", "url_fonte", "data_inicio", "data_decisao"]
   const columns = ["version", "generated_at", "cargo_filtro", "uf_filtro", ...familyColumns]
   const lines = [
+    `# ${IMPRENSA_AVISO}`,
     columns.map(escapeCsvCell).join(","),
     ...rows.map((row) => [dataset.version, dataset.generatedAt, dataset.filters.cargo, dataset.filters.uf, ...familyColumns.map((column) => (row as unknown as Record<string, Cell>)[column])].map(escapeCsvCell).join(",")),
   ]

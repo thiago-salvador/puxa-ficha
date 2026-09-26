@@ -109,6 +109,7 @@ export default async function ImprensaFrescorPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <p role="note" className="mx-auto max-w-5xl px-5 pt-6 font-semibold text-amber-900 md:px-8">Confira os dados na fonte original antes de publicar.</p>
       <section className="border-b border-border bg-black text-white">
         <div className="mx-auto max-w-5xl px-5 py-16 md:px-8 md:py-20">
           <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-neutral-400">Mesa de apuração</p>
@@ -121,7 +122,7 @@ export default async function ImprensaFrescorPage() {
 
       <div className="mx-auto max-w-5xl px-5 py-10 md:px-8 md:py-14">
         <div className="mb-8 flex flex-wrap gap-4 text-[length:var(--text-body-sm)]">
-          <Link className="font-semibold text-foreground underline underline-offset-4" href="/imprensa">Voltar à Mesa de apuração</Link>
+          <Link className="font-semibold text-foreground underline underline-offset-4" href="/imprensa/mesa">Voltar à Mesa de apuração</Link>
           <Link className="font-semibold text-foreground underline underline-offset-4" href="/metodologia">Metodologia e fontes</Link>
         </div>
 
