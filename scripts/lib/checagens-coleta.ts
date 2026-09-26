@@ -343,11 +343,20 @@ export interface OpcoesColeta {
   esperaBloqueioMs?: number
   /** Desliga a via Google News (ex.: IP bloqueado). Agência sem via nativa vira erro declarado. */
   semGoogle?: boolean
+  /** Interrompe a rodada no primeiro 429/503 do Google, sem insistir. Recibos já concluídos ficam. */
+  pararNoBloqueio?: boolean
   sleep?: (ms: number) => Promise<void>
   onRecibo?: (recibo: ReciboChecagem, indice: number) => void
 }
 
-type OpcoesConsulta = Required<Pick<OpcoesColeta, "fetchText" | "tentativas" | "sleep" | "pausaMs" | "esperaBloqueioMs" | "semGoogle">>
+type OpcoesConsulta = Required<Pick<OpcoesColeta, "fetchText" | "tentativas" | "sleep" | "pausaMs" | "esperaBloqueioMs" | "semGoogle" | "pararNoBloqueio">>
+
+/** Limite de taxa com `pararNoBloqueio`: a rodada para e a candidatura em curso não gera recibo. */
+export class BloqueioDeTaxa extends Error {
+  constructor(readonly status: number, readonly candidateSlug: string) {
+    super(`limite de taxa (HTTP ${status}) em ${candidateSlug}`)
+  }
+}
 
 async function consultarNativa(candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<EstadoAgencia> {
   const itens: ItemBusca[] = []
@@ -399,6 +408,7 @@ async function consultarGoogle(
       if (resposta.status < 200 || resposta.status >= 300) {
         ultimoErro = `HTTP ${resposta.status}`
         bloqueado = resposta.status === 429 || resposta.status === 503
+        if (bloqueado && opcoes.pararNoBloqueio) throw new BloqueioDeTaxa(resposta.status, candidato.slug)
         continue
       }
       if (!isValidGoogleNewsRss(resposta.body)) {
@@ -408,6 +418,7 @@ async function consultarGoogle(
       const itens = parseItensBusca(resposta.body)
       return { status: "ok", itens: itens.length, leads: leadsDaResposta(itens, candidato, agencia), transporte: "google-news" }
     } catch (error) {
+      if (error instanceof BloqueioDeTaxa) throw error
       ultimoErro = error instanceof Error ? error.message : String(error)
     }
   }
@@ -437,7 +448,7 @@ export async function coletarChecagens(opcoes: OpcoesColeta): Promise<ReciboChec
       const candidato = opcoes.roster[indice]
       const estados: Record<string, EstadoAgencia> = {}
       for (const agencia of AGENCIAS_CHECAGEM) {
-        estados[agencia.id] = await consultarAgencia(candidato, agencia, { fetchText: opcoes.fetchText, tentativas, sleep, pausaMs, esperaBloqueioMs, semGoogle: opcoes.semGoogle ?? false })
+        estados[agencia.id] = await consultarAgencia(candidato, agencia, { fetchText: opcoes.fetchText, tentativas, sleep, pausaMs, esperaBloqueioMs, semGoogle: opcoes.semGoogle ?? false, pararNoBloqueio: opcoes.pararNoBloqueio ?? false })
         await sleep(pausaMs)
       }
       const recibo = montarRecibo(candidato, estados, now())
@@ -448,7 +459,7 @@ export async function coletarChecagens(opcoes: OpcoesColeta): Promise<ReciboChec
     }
   }
   await Promise.all(Array.from({ length: concorrencia }, trabalhador))
-  return recibos
+  return recibos.filter(Boolean)
 }
 
 export interface ResumoColeta {
@@ -477,6 +488,11 @@ export function resumirColeta(recibos: readonly ReciboChecagem[]): ResumoColeta 
     leads: recibos.reduce((total, recibo) => total + recibo.leads.length, 0),
     erros_por_agencia: errosPorAgencia,
   }
+}
+
+/** Recibo que precisa ser refeito: erro geral ou alguma agência sem resposta. */
+export function reciboIncompleto(recibo: ReciboChecagem): boolean {
+  return recibo.result === "erro" || Object.values(recibo.agencias).some((estado) => estado.status === "erro")
 }
 
 /**

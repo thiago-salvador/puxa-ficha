@@ -5,6 +5,7 @@ import publicDataset from "../scripts/data/checagens-atribuidas.json"
 import committedReceipts from "../scripts/data/checagens-recibos.json"
 import {
   AGENCIAS_CHECAGEM,
+  BloqueioDeTaxa,
   coletarChecagens,
   consolidarCatalogoRecibos,
   entradaColetaDoRecibo,
@@ -13,6 +14,7 @@ import {
   montarRecibo,
   parseBuscaNativa,
   parseItensBusca,
+  reciboIncompleto,
   publisherCanonicoPorHost,
   resumirColeta,
   urlDeBusca,
@@ -141,6 +143,30 @@ describe("coleta nominal de checagens", () => {
     const recibos = await coletarChecagens({ roster: [caiado], tentativas: 1, sleep: async () => {}, fetchText: async () => ({ status: 200, body: "<html>captcha</html>" }) })
     assert.equal(recibos[0].result, "erro")
     assert.equal(resumirColeta(recibos).erros_por_agencia.lupa, 1)
+  })
+
+  it("para no primeiro 429/503 quando pedido, sem recibo para a candidatura em curso", async () => {
+    const outro = { ...caiado, id: "cand-b", slug: "b" }
+    let google = 0
+    const concluidos: string[] = []
+    await assert.rejects(coletarChecagens({
+      roster: [caiado, outro],
+      pararNoBloqueio: true,
+      concorrencia: 1,
+      sleep: async () => {},
+      onRecibo: (recibo) => concluidos.push(recibo.candidate_slug),
+      fetchText: async (url) => {
+        if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
+        google++
+        return google > AGENCIAS_CHECAGEM.length ? { status: 429, body: "" } : { status: 200, body: rss([]) }
+      },
+    }), (error: unknown) => error instanceof BloqueioDeTaxa && error.candidateSlug === "b")
+    assert.deepEqual(concluidos, ["ronaldo-caiado"])
+  })
+
+  it("recibo parcial conta como incompleto para retomada", () => {
+    assert.equal(reciboIncompleto(montarRecibo(caiado, okEmTodas(), now)), false)
+    assert.equal(reciboIncompleto(montarRecibo(caiado, { ...okEmTodas({ lupa: 2 }), comprova: { status: "erro", erro: "HTTP 503" } }, now)), true)
   })
 
   it("retomada substitui só o recibo refeito", () => {

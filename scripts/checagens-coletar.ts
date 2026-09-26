@@ -4,7 +4,7 @@
  *   npm run coletar:checagens -- [--roster ARQUIVO] [--slugs a,b] [--out DIR]
  *     [--catalogo scripts/data/checagens-recibos.json] [--gravar-log]
  *   npm run coletar:checagens -- --de-recibos DIR/recibos.json [--catalogo ...] [--gravar-log]
- *   npm run coletar:checagens -- --retomar DIR/recibos.json --out DIR2  (refaz só os recibos com erro)
+ *   npm run coletar:checagens -- --retomar DIR/recibos.json --out DIR2  (refaz recibos com erro ou com agência sem resposta)
  *
  * Sem `--gravar-log` é dry-run: grava só os arquivos de saída. Com a flag, os
  * recibos vão para `public.coleta_log` (fonte `checagens-agencias`) com a
@@ -26,7 +26,9 @@ import {
   coletarChecagens,
   consolidarCatalogoRecibos,
   entradaColetaDoRecibo,
+  BloqueioDeTaxa,
   mesclarRecibos,
+  reciboIncompleto,
   resumirColeta,
   type CandidatoChecagem,
   type CatalogoRecibosChecagens,
@@ -41,7 +43,7 @@ function opcoes(argv: string[]): { valores: Map<string, string>; flags: Set<stri
   for (let indice = 0; indice < argv.length; indice++) {
     const arg = argv[indice]
     if (!arg.startsWith("--")) throw new Error(`Argumento inválido: ${arg}`)
-    if (arg === "--gravar-log" || arg === "--help" || arg === "--sem-google") {
+    if (arg === "--gravar-log" || arg === "--help" || arg === "--sem-google" || arg === "--parar-no-bloqueio") {
       flags.add(arg.slice(2))
       continue
     }
@@ -104,7 +106,7 @@ async function registrarRecibosExistentes(arquivo: string, catalogoPath: string 
 export async function executarColetaChecagens(argv = process.argv.slice(2)): Promise<number> {
   const { valores, flags } = opcoes(argv)
   if (flags.has("help")) {
-    console.log("Uso: coletar:checagens [--roster ARQUIVO] [--slugs a,b] [--out DIR] [--catalogo ARQUIVO] [--concorrencia N] [--pausa-ms N] [--espera-bloqueio-ms N] [--retomar recibos.json] [--sem-google] [--gravar-log]")
+    console.log("Uso: coletar:checagens [--roster ARQUIVO] [--slugs a,b] [--out DIR] [--catalogo ARQUIVO] [--concorrencia N] [--pausa-ms N] [--espera-bloqueio-ms N] [--retomar recibos.json] [--sem-google] [--parar-no-bloqueio] [--gravar-log]")
     return 0
   }
   const inicio = new Date()
@@ -117,7 +119,7 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
   const retomar = valores.get("retomar")
   const anteriores = retomar ? lerRecibos(resolve(retomar)) : []
   if (retomar) {
-    const comErro = new Set(anteriores.filter((recibo) => recibo.result === "erro").map((recibo) => recibo.candidate_slug))
+    const comErro = new Set(anteriores.filter(reciboIncompleto).map((recibo) => recibo.candidate_slug))
     roster = roster.filter((candidato) => comErro.has(candidato.slug))
   }
   const slugs = valores.get("slugs")?.split(",").map((slug) => slug.trim()).filter(Boolean)
@@ -133,6 +135,7 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
   let concluidos = 0
   const parciais: ReciboChecagem[] = []
   const parcialPath = resolve(out, "recibos.parcial.json")
+  let parouPorBloqueio: string | null = null
   const coletados = await coletarChecagens({
     roster,
     fetchText,
@@ -140,6 +143,7 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
     pausaMs: Number(valores.get("pausa-ms") ?? 1_000),
     esperaBloqueioMs: Number(valores.get("espera-bloqueio-ms") ?? 30_000),
     semGoogle: flags.has("sem-google"),
+    pararNoBloqueio: flags.has("parar-no-bloqueio"),
     onRecibo: (recibo) => {
       concluidos++
       // Checkpoint: uma interrupção não apaga as buscas já feitas.
@@ -147,9 +151,15 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
       writeFileSync(parcialPath, JSON.stringify({ schema_version: "checagens-recibos-v1", execucao: EXECUCAO, receipts: retomar ? mesclarRecibos(anteriores, parciais) : parciais }) + "\n")
       if (concluidos % 20 === 0 || recibo.result === "erro") console.error(`[checagens] ${concluidos}/${roster.length} ${recibo.candidate_slug}: ${recibo.result}`)
     },
+  }).catch((error: unknown) => {
+    if (!(error instanceof BloqueioDeTaxa)) throw error
+    // Para no primeiro bloqueio: o que já foi concluído é o checkpoint.
+    parouPorBloqueio = error.message
+    return [...parciais]
   })
   const recibos = retomar ? mesclarRecibos(anteriores, coletados) : coletados
-  const resumo = { ...resumirColeta(recibos), inicio: inicio.toISOString(), fim: new Date().toISOString(), execucao: EXECUCAO, gravou_log: false, linhas_log: 0 }
+  const resumo = { ...resumirColeta(recibos), inicio: inicio.toISOString(), fim: new Date().toISOString(), execucao: EXECUCAO, gravou_log: false, linhas_log: 0,
+    refeitos: coletados.length, pendentes_de_busca: roster.length - coletados.length, parou_por_bloqueio: parouPorBloqueio }
   writeFileSync(resolve(out, "recibos.json"), JSON.stringify({ schema_version: "checagens-recibos-v1", execucao: EXECUCAO, receipts: recibos }, null, 2) + "\n")
 
   const catalogoPath = valores.get("catalogo")
@@ -158,6 +168,7 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
     const anterior = existsSync(caminho) ? JSON.parse(readFileSync(caminho, "utf8")) as CatalogoRecibosChecagens : null
     writeFileSync(caminho, JSON.stringify(consolidarCatalogoRecibos(anterior, recibos, new Date()), null, 2) + "\n")
   }
+  if (flags.has("gravar-log") && parouPorBloqueio) throw new Error("Rodada interrompida por limite de taxa: nada gravado no coleta_log")
   if (flags.has("gravar-log")) {
     resumo.linhas_log = await gravarColetaLog(recibos)
     resumo.gravou_log = true
@@ -165,6 +176,7 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
   writeFileSync(resolve(out, "resumo.json"), JSON.stringify(resumo, null, 2) + "\n")
   console.log(JSON.stringify(resumo))
   // Vermelho quando alguma candidatura ficou sem busca completa, mesmo com lead achado.
+  if (parouPorBloqueio) return 3
   return resumo.erro > 0 || resumo.encontrado_parcial > 0 ? 1 : 0
 }
 
