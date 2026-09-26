@@ -1,0 +1,82 @@
+{
+  "versao": "2026-09-25",
+  "_comentario": "Allowlist fechada das migrations 20260925220000, 20260925220100 e 20260925220200. Cada uma aceita somente a preimagem medida em 2026-09-25 (ou o estado final, na reaplicacao) e grava snapshot de preimagem e recibo em coleta_log.",
+  "fonte": "DivulgaCandContas (lista de candidaturas ao Senado 2026 nas 27 UFs e detalhe dos SQ 160002547963 e 190002554290, lidos em 2026-09-25T21:58:50Z); Senado Dados Abertos (senador/lista/atual e senador/{codigo}/mandatos, 2026-09-25); Camara Dados Abertos (deputados/{id}, 2026-09-25); g1 (2026-04-02) para os governos do Para e do Acre; TSE DivulgaCandContas 2022 para Hana Ghassan e Jorginho Mello.",
+  "motivo": "Dado publicado divergia da fonte oficial: duas situacoes de candidatura ao Senado ainda como 'aguardando julgamento' (uma deferida, outra indeferida e inapta), uma claim de carreira que contava secretaria estadual como mandato e nove fichas com cargo_atual 'Senador(a)' para quem nao exerce mandato no Senado.",
+  "coorte": [
+    "alexandre-curi",
+    "tse-2026-190002554290",
+    "jorginho-mello",
+    "mailza-assis",
+    "tse-2026-100002549583",
+    "tse-2026-10002544274",
+    "tse-2026-110002551967",
+    "tse-2026-160002547656",
+    "tse-2026-190002548141",
+    "tse-2026-190002550184",
+    "tse-2026-220002541490"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "alexandre-curi",
+      "campos": ["situacao_candidatura", "status", "publicavel", "ultima_atualizacao"],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "tse-2026-190002554290",
+      "campos": ["situacao_candidatura", "status", "publicavel", "ultima_atualizacao"],
+      "max_registros": 1
+    },
+    { "tabela": "candidatos", "slug": "jorginho-mello", "campos": ["cargo_atual", "ultima_atualizacao"], "max_registros": 1 },
+    { "tabela": "candidatos", "slug": "mailza-assis", "campos": ["cargo_atual", "ultima_atualizacao"], "max_registros": 1 },
+    { "tabela": "candidatos", "slug": "tse-2026-100002549583", "campos": ["cargo_atual", "ultima_atualizacao"], "max_registros": 1 },
+    { "tabela": "candidatos", "slug": "tse-2026-10002544274", "campos": ["cargo_atual", "ultima_atualizacao"], "max_registros": 1 },
+    { "tabela": "candidatos", "slug": "tse-2026-110002551967", "campos": ["cargo_atual", "ultima_atualizacao"], "max_registros": 1 },
+    { "tabela": "candidatos", "slug": "tse-2026-160002547656", "campos": ["cargo_atual", "ultima_atualizacao"], "max_registros": 1 },
+    { "tabela": "candidatos", "slug": "tse-2026-190002548141", "campos": ["cargo_atual", "ultima_atualizacao"], "max_registros": 1 },
+    { "tabela": "candidatos", "slug": "tse-2026-190002550184", "campos": ["cargo_atual", "ultima_atualizacao"], "max_registros": 1 },
+    { "tabela": "candidatos", "slug": "tse-2026-220002541490", "campos": ["cargo_atual", "ultima_atualizacao"], "max_registros": 1 }
+  ],
+  "referencias": [
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "senado-situacao-20260925",
+      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+    },
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "claims-mandatos-20260925",
+      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+    },
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "cargo-atual-20260925",
+      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+    },
+    {
+      "tabela": "pontos_atencao",
+      "ref": "claims-mandatos-20260925",
+      "campos": ["titulo", "descricao", "fontes"]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260925220000",
+      "campos": ["fonte", "escopo", "alvo", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260925220100",
+      "campos": ["fonte", "escopo", "alvo", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260925220200",
+      "campos": ["fonte", "escopo", "alvo", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    }
+  ]
+}

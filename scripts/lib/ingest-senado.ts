@@ -81,6 +81,51 @@ async function withTimeout<T>(operation: (signal: AbortSignal) => Promise<T>, ti
   }
 }
 
+/** O Senado tem 81 cadeiras; lista oficial com menos códigos que isto é tratada como parcial. */
+export const SENADORES_EM_EXERCICIO_MINIMO = 70
+
+/**
+ * Códigos dos senadores em exercício hoje, pela lista oficial do Senado.
+ *
+ * `CodigoPublicoNaLegAtual` do detalhe não serve para isso: o Senado preenche
+ * o campo também para ex-senadores e suplentes que já exerceram, e o ingest
+ * marcava como "Senador(a)" quem tinha saído do cargo anos antes (Gleisi
+ * Hoffmann, Benedita da Silva, Marcelo Crivella, entre outros, em 25/09/2026).
+ *
+ * `null` quando a lista não pôde ser lida ou veio com menos códigos que o piso
+ * de plausibilidade: o chamador não mexe em `cargo_atual` nem no partido nessa
+ * execução, em vez de adivinhar.
+ */
+export async function carregarSenadoresEmExercicio(): Promise<Set<string> | null> {
+  try {
+    const json = await fetchJSON<Record<string, unknown>>(`${API}/senador/lista/atual.json`, HEADERS, 2)
+    const parlamentares = ensureArray(
+      dig(json, "ListaParlamentarEmExercicio", "Parlamentares", "Parlamentar") as unknown[] | undefined,
+    )
+    const codigos = new Set(
+      parlamentares
+        .map((p) => dig(p, "IdentificacaoParlamentar", "CodigoParlamentar"))
+        .filter((codigo) => codigo != null && String(codigo).trim() !== "")
+        .map((codigo) => String(codigo).trim()),
+    )
+    // O Senado tem 81 cadeiras. Lista parcial (resposta truncada, paginação,
+    // manutenção) faria o ingest limpar o cargo de senador em exercício; abaixo
+    // do piso, a lista não decide nada.
+    if (codigos.size < SENADORES_EM_EXERCICIO_MINIMO) {
+      warn(
+        "senado",
+        `lista de senadores em exercício com ${codigos.size} código(s), abaixo do piso de ${SENADORES_EM_EXERCICIO_MINIMO}; cargo_atual não será alterado nesta execução`,
+      )
+      return null
+    }
+    return codigos
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err)
+    warn("senado", `lista de senadores em exercício indisponível (${msg}); cargo_atual não será alterado nesta execução`)
+    return null
+  }
+}
+
 async function ingestPerfil(
   codigo: number,
   candidatoId: string,
@@ -89,6 +134,7 @@ async function ingestPerfil(
   expectedNomeUrna: string,
   candidateEstado?: string,
   context: CandidateContext = defaultContext(),
+  emExercicio: Set<string> | null = null,
 ) {
   const json = await fetchJSON<Record<string, unknown>>(`${API}/senador/${codigo}.json`, HEADERS, undefined, undefined, { signal: context.signal })
   const parlamentar = dig(json, "DetalheParlamentar", "Parlamentar") as Record<string, unknown> | undefined
@@ -126,7 +172,7 @@ async function ingestPerfil(
 
   const { data: current, error: currentError } = await supabase
     .from("candidatos")
-    .select("foto_url, sq_candidato_2026")
+    .select("foto_url, sq_candidato_2026, cargo_atual")
     .eq("id", candidatoId)
     .abortSignal(context.signal)
     .single()
@@ -139,17 +185,21 @@ async function ingestPerfil(
   const registroTse = Boolean(current?.sq_candidato_2026)
 
   if (ident) {
-    const hasCurrentSenateSeat = Boolean(ident.CodigoPublicoNaLegAtual)
+    // true/false só com a lista oficial em mãos; null = não decidir.
+    const hasCurrentSenateSeat = emExercicio ? emExercicio.has(String(codigo)) : null
 
     // Only set photo if candidate doesn't already have one (Wikipedia photos preferred)
     if (ident.UrlFotoParlamentar && !current?.foto_url) updates.foto_url = ident.UrlFotoParlamentar as string
     // The Senado detail endpoint reflects the parliamentary profile there. For ex-senators it
     // should not override current-party curation outside the current legislature.
-    if (!registroTse && hasCurrentSenateSeat && ident.SiglaPartidoParlamentar) {
+    if (!registroTse && hasCurrentSenateSeat === true && ident.SiglaPartidoParlamentar) {
       updates.partido_sigla = ident.SiglaPartidoParlamentar
       updates.partido_atual = ident.SiglaPartidoParlamentar
     }
-    if (hasCurrentSenateSeat) updates.cargo_atual = "Senador(a)"
+    if (hasCurrentSenateSeat === true) updates.cargo_atual = "Senador(a)"
+    // Fora da lista em exercício: limpa só o rótulo que este ingest gravou.
+    // Outro cargo curado (governador, deputado) fica como está.
+    else if (hasCurrentSenateSeat === false && current?.cargo_atual === "Senador(a)") updates.cargo_atual = null
   }
 
   if (dadosBasicos) {
@@ -538,6 +588,7 @@ export async function ingestSenado(options?: IngestSenadoOptions | string[]): Pr
   )
   const verificacaoPorSlug = await loadVerificacaoCampos(candidatos.map((cand) => cand.slug))
   const results: IngestResult[] = []
+  const emExercicio = candidatos.some((cand) => cand.ids.senado) ? await carregarSenadoresEmExercicio() : null
 
   for (const cand of candidatos) {
     if (!cand.ids.senado) continue
@@ -591,6 +642,7 @@ export async function ingestSenado(options?: IngestSenadoOptions | string[]): Pr
             cand.nome_urna,
             cand.estado,
             context,
+            emExercicio,
           )
           await sleep(500, signal)
 

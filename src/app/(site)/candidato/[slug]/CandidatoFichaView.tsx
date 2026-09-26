@@ -47,7 +47,9 @@ import {
 } from "@/lib/pesquisas-eleitorais"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { getProgramaGovernoManifesto } from "@/lib/programa-governo-server"
-import { getCompromissoEvidenciasPublicas } from "@/lib/compromisso-evidencia-server"
+import { getCompromissoEvidenciasEstado } from "@/lib/compromisso-evidencia-server"
+import { normalizarProgramaGovernoEstado } from "@/lib/programa-governo"
+import { programaGovernoPendencia } from "@/lib/programa-governo-pendencia"
 import { loadSenadoRunningMates } from "@/lib/senado-running-mates"
 
 const getFicha = (slug: string) => getCandidatoBySlugResource(slug)
@@ -114,13 +116,24 @@ export async function CandidatoFichaView({
       : Promise.resolve(null),
     getCandidatoNavResource(ficha.cargo_disputado, navEstado),
   ])
-  // Evidências só existem para programa aprovado; falha de leitura vira lista vazia.
+  // Evidências só existem para programa aprovado; sem documento oficial vira
+  // estado explícito, e falha de leitura vira `erro_leitura`, nunca lista vazia.
   const compromissoEvidencias = programaGoverno?.estado === "aprovado"
-    ? await getCompromissoEvidenciasPublicas(
-        ficha.id,
-        `2026:${programaGoverno.fonte.cargo}:${programaGoverno.fonte.uf}:${programaGoverno.fonte.sqCandidato}`,
-      )
-    : undefined
+    ? await getCompromissoEvidenciasEstado({
+        candidatoId: ficha.id,
+        slug: ficha.slug,
+        programaChave: `2026:${programaGoverno.fonte.cargo}:${programaGoverno.fonte.uf}:${programaGoverno.fonte.sqCandidato}`,
+      })
+    : programaGoverno && normalizarProgramaGovernoEstado(programaGoverno.estado) === "sem_documento_oficial"
+      ? { estado: "sem_documento_oficial" as const }
+      : undefined
+  // Sem registro de programa: estado explícito em vez de cartão ausente. Só
+  // quando o programa foi de fato procurado (a rota da linha do tempo não procura).
+  const programaPendente = programaGovernoPendencia({
+    slug: ficha.slug,
+    cargoDisputado: ficha.cargo_disputado,
+    semRegistro: programaGoverno === null && seoSubpath !== "timeline",
+  })
   const runningMates =
     ficha.cargo_disputado === "Senador" && ficha.estado
       ? await loadSenadoRunningMates([ficha.slug], ficha.estado)
@@ -481,6 +494,7 @@ export async function CandidatoFichaView({
         pesquisas={pesquisas}
         programaGoverno={programaGoverno}
         compromissoEvidencias={compromissoEvidencias}
+        programaPendente={programaPendente}
         senadoRunningMates={runningMates}
       />
 

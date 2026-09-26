@@ -10,7 +10,8 @@ import type {
   ProgramaGovernoApiResponse,
   ProgramaGovernoManifestoPublico,
 } from "@/lib/programa-governo"
-import { teveMandatoNoCongresso, type CompromissoEvidenciaPublica } from "@/lib/compromisso-evidencia"
+import { teveMandatoNoCongresso, type EstadoEvidenciasPrograma } from "@/lib/compromisso-evidencia"
+import type { ProgramaGovernoPendencia } from "@/lib/programa-governo-pendencia"
 import {
   descreverEstadoDaFonte,
   montarDestaquesDaFicha,
@@ -55,6 +56,7 @@ import {
 } from "./EmptyState"
 import type { CandidatoProfileNavTabId, CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
 import { getApprovedAttributedFactChecks } from "@/lib/checagens-atribuidas"
+import { getReciboChecagens } from "@/lib/buscas-recibos"
 import { getRepresentacoesEticaAprovadas } from "@/lib/representacoes-etica"
 import { RepresentacoesEticaCategoria } from "./RepresentacoesEticaCategoria"
 import {
@@ -85,6 +87,7 @@ import {
 } from "./PesquisasPresidenciaisSection"
 import {
   ProgramaGovernoOverview,
+  ProgramaGovernoPendente,
   ProgramaGovernoTab,
   type ProgramaGovernoLoadState,
   useProgramaGovernoDocuments,
@@ -326,6 +329,7 @@ export function CandidatoProfile({
   pesquisas = [],
   programaGoverno = null,
   compromissoEvidencias,
+  programaPendente = null,
   senadoRunningMates = null,
   initialLegislationSubtab,
   initialLegislationPage,
@@ -337,7 +341,8 @@ export function CandidatoProfile({
   pesquisas?: PesquisaEleitoralDoCandidato[]
   programaGoverno?: ProgramaGovernoManifestoPublico | null
   /** Evidências públicas ligadas aos temas do programa; ausente não mostra a seção. */
-  compromissoEvidencias?: CompromissoEvidenciaPublica[]
+  compromissoEvidencias?: EstadoEvidenciasPrograma
+  programaPendente?: ProgramaGovernoPendencia | null
   /** Suplentes carregados no servidor; só existe em ficha de Senador. */
   senadoRunningMates?: SenadoRunningMatesPayload | null
   /** Apenas para render determinístico de cada subaba no auditor de release. */
@@ -476,7 +481,13 @@ export function CandidatoProfile({
           uf: ficha.estado,
         })
       : []
-  const checagensEnabled = attributedChecks.length > 0
+  // A aba também abre com recibo de busca sem checagem publicada: o leitor vê
+  // que a busca foi feita. Sem recibo, a aba some e nada afirma ausência.
+  const checagensReceipt =
+    ficha.cargo_disputado === "Presidente" || ficha.cargo_disputado === "Governador"
+      ? getReciboChecagens({ candidate_id: ficha.id, candidate_slug: ficha.slug })
+      : null
+  const checagensEnabled = attributedChecks.length > 0 || checagensReceipt !== null
   const representacoesEtica = getRepresentacoesEticaAprovadas(ficha.slug)
 
   const tabDefsById: Record<CandidatoProfileNavTabId, { label: string; dataCount: number }> = {
@@ -882,10 +893,12 @@ export function CandidatoProfile({
                         evidencias={compromissoEvidencias}
                         teveMandatoNoCongresso={teveMandatoNoCongresso(ficha.historico ?? [])}
                       />
+                    ) : programaPendente ? (
+                      <ProgramaGovernoPendente pendencia={programaPendente} />
                     ) : undefined
                   }
                   factChecksCard={
-                    checagensEnabled ? (
+                    attributedChecks.length > 0 ? (
                       <AttributedFactChecksOverview
                         checks={attributedChecks}
                         onOpenTab={() => navigateToTab("checagens")}
@@ -924,6 +937,7 @@ export function CandidatoProfile({
                 candidateSlug={ficha.slug}
                 office={ficha.cargo_disputado}
                 uf={ficha.estado}
+                searchReceipt={checagensReceipt}
               />
             )}
 

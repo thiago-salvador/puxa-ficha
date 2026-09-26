@@ -75,11 +75,17 @@ function rejects(run: () => unknown, pattern: RegExp) {
 }
 
 describe("catálogo e loader de pesquisas do Senado", () => {
-  it("declara as 27 UFs explicitamente e mantém ausência honesta", () => {
+  it("declara as 27 UFs explicitamente e só publica rodada com registro da própria UF", () => {
     const catalogs = carregarPesquisasSenado()
     assert.deepEqual([...catalogs.keys()].sort(), UFS.sort())
     assert.equal(catalogs.size, 27)
-    assert.equal(loadSenadoPolls("SP").length, 0)
+    for (const uf of UFS) {
+      for (const poll of loadSenadoPolls(uf)) {
+        assert.equal(poll.office, "Senador")
+        assert.match(poll.registration.code.value ?? "", new RegExp(`^${uf}-\\d{5}/2026$`), `${poll.id} registro da UF`)
+        assert.ok(poll.provenance.resultUrl.startsWith("https://"), `${poll.id} com URL de resultado`)
+      }
+    }
     assert.deepEqual(loadSenadoPolls("invalid"), [])
   })
 
@@ -112,11 +118,18 @@ describe("catálogo e loader de pesquisas do Senado", () => {
     rejects(() => parse({ pesquisas: [pesquisa({ cenarios: [{ ...pesquisa().cenarios[0], comparability_key: "2026|Senador|SP|1|turno-2|fixture" }] })] }), /medida Senado inválida/)
   })
 
-  it("não publica método, denominador ou enunciado ausentes", () => {
+  it("exige registro publicado; método, denominador e enunciado seguem a regra de governador", () => {
+    for (const code of ["BR-01234/2026", "RJ-01234/2026", "SP-1234/2026", "SP-01234/2022"]) {
+      rejects(() => parse({ pesquisas: [pesquisa({ registration: { code: { value: code, status: "publicado" }, url: { value: "https://example.test/registro", status: "publicado" } } })] }), /não é da UF SP/)
+    }
+    const missingRegistration = parse({ pesquisas: [pesquisa({ registration: { code: { value: null, status: "indeterminado" }, url: { value: null, status: "indeterminado" } } })] })
+    assert.deepEqual(selecionarSenadoPolls(missingRegistration, "SP"), [])
     const missingMethod = parse({ pesquisas: [pesquisa({ method: { value: null, status: "indeterminado" } })] })
-    assert.deepEqual(selecionarSenadoPolls(missingMethod, "SP"), [])
+    assert.equal(selecionarSenadoPolls(missingMethod, "SP").length, 1)
+    const missingPopulation = parse({ pesquisas: [pesquisa({ sample: { ...pesquisa().sample, population: { value: null, status: "indeterminado" } } })] })
+    assert.equal(selecionarSenadoPolls(missingPopulation, "SP").length, 1)
     const missingQuestion = parse({ pesquisas: [pesquisa({ cenarios: [{ ...pesquisa().cenarios[0], question: { value: null, status: "indeterminado" } }] })] })
-    assert.deepEqual(selecionarSenadoPolls(missingQuestion, "SP"), [])
+    assert.equal(selecionarSenadoPolls(missingQuestion, "SP").length, 1)
   })
 
   it("preserva deduplicação de resultados e rejeita colisão conflitante", () => {

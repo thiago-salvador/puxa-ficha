@@ -4,7 +4,7 @@
     "label": "TSE: candidaturas e campanha atual",
     "authority_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
     "methodology_source_ids": ["tse"],
-    "collection_source_ids": ["tse", "tse-situacao", "tse-cpf", "tse-observacao", "tse-auditoria-snapshot"],
+    "collection_source_ids": ["tse", "tse-situacao", "tse-cpf", "tse-observacao", "tse-auditoria-snapshot", "tse-auditoria-candidatura"],
     "cadence": "daily",
     "max_age_hours": 36,
     "refresh_mode": "scheduled",
@@ -321,6 +321,34 @@
     "evidence_type": "coleta_log",
     "evidence_ref": "coleta_log_ultima:siconfi",
     "stale_policy": "show_with_warning",
+    "negative_claims_allowed_when_stale": false
+  },
+  {
+    "source_id": "camara-cota-zero",
+    "label": "Câmara: cota parlamentar zerada na fonte oficial",
+    "authority_url": "https://dadosabertos.camara.leg.br",
+    "methodology_source_ids": [],
+    "collection_source_ids": ["camara-gastos"],
+    "cadence": "monthly",
+    "max_age_hours": 1080,
+    "refresh_mode": "manual",
+    "evidence_type": "coleta_log",
+    "evidence_ref": "coleta_log_ultima:camara-gastos",
+    "stale_policy": "show_with_warning",
+    "negative_claims_allowed_when_stale": false
+  },
+  {
+    "source_id": "promessa-evidencia",
+    "label": "Promessas e evidências por candidato",
+    "authority_url": "https://puxaficha.org/metodologia",
+    "methodology_source_ids": [],
+    "collection_source_ids": ["promessa-evidencia"],
+    "cadence": "on_demand",
+    "max_age_hours": 1800,
+    "refresh_mode": "versioned_review",
+    "evidence_type": "coleta_log",
+    "evidence_ref": "coleta_log_ultima:promessa-evidencia",
+    "stale_policy": "review_required",
     "negative_claims_allowed_when_stale": false
   }
 ]

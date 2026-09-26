@@ -1,0 +1,95 @@
+name: Rehash cpf_hash v2 de doador (#409)
+
+# Acrescenta `cpf_hash`/`cpf_hash_versao = 2` aos doadores pessoa física das
+# prestações publicadas que ainda não têm hash, sem reingerir o pleito:
+# nomes, valores, tipos e CNPJ ficam como estão (invariante conferida em
+# código) e cada linha só muda se o jsonb atual for igual ao lido no plano.
+# O plano vem do ingest canônico em dry-run sobre o pacote oficial do ano.
+#
+# Sem `aplicar`: dry-run por ano com resumo (contagens e slugs, nunca hash).
+# Com `aplicar`: exige `expected_plan_shas` no formato `2018=<sha>,2024=<sha>`,
+# copiado do dry-run; ano sem sha ou com plano diferente não grava.
+#
+# Secrets: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, PF_DOADOR_CPF_HASH_SALT.
+
+on:
+  workflow_dispatch:
+    inputs:
+      anos:
+        description: "Anos separados por vírgula"
+        required: true
+        type: string
+        default: "2006,2012,2014,2016,2018,2020,2022,2024"
+      aplicar:
+        description: "Escrever em produção"
+        required: false
+        type: boolean
+        default: false
+      expected_plan_shas:
+        description: "ano=sha separados por vírgula (obrigatório com aplicar)"
+        required: false
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+
+# Mesmo grupo do ingest.yml: o rehash faz CAS em financiamento e não pode
+# correr junto de uma ingestão que regrava a mesma linha.
+concurrency:
+  group: ingest-pipeline
+  cancel-in-progress: false
+
+jobs:
+  rehash:
+    name: Rehash ${{ matrix.ano }}
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        ano: ${{ fromJSON(format('[{0}]', inputs.anos)) }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Plano e escrita opcional
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          PF_DOADOR_CPF_HASH_SALT: ${{ secrets.PF_DOADOR_CPF_HASH_SALT }}
+          PF_REHASH_ANO: ${{ matrix.ano }}
+          PF_REHASH_APLICAR: ${{ inputs.aplicar }}
+          PF_EXPECTED_PLAN_SHAS: ${{ inputs.expected_plan_shas }}
+        run: |
+          set -euo pipefail
+          mkdir -p reports/rehash
+          args=("--anos=$PF_REHASH_ANO" --out=reports/rehash)
+          if [ "$PF_REHASH_APLICAR" = "true" ]; then
+            args+=(--apply "--expected-plan-sha=$PF_EXPECTED_PLAN_SHAS")
+          else
+            export PF_DRY_RUN=1
+          fi
+          node --import tsx scripts/rehash-doador-cpf-v2.ts "${args[@]}" | tee "reports/rehash/saida-$PF_REHASH_ANO.jsonl"
+          {
+            echo "### Rehash $PF_REHASH_ANO"
+            echo '```'
+            grep '^{' "reports/rehash/saida-$PF_REHASH_ANO.jsonl" || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Apagar plano privado e pré-imagem do runner
+        if: always()
+        run: rm -f reports/rehash/*-plano-privado.json reports/rehash/*-backup-preimagem.json
+      - if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v6.0.0
+        with:
+          name: rehash-doador-cpf-v2-${{ matrix.ano }}-${{ github.run_id }}
+          path: reports/rehash
+          if-no-files-found: warn

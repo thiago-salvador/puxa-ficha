@@ -105,7 +105,9 @@ test("gravador lê os artefatos da auditoria e usa a gravação estrita", () => 
   assert.throws(() => lerArtefatosAuditoriaTse(join(tmpdir(), "nao-existe-tse-audit")), /source\.json ausente/)
 
   const script = readFileSync(new URL("../scripts/audit/registrar-recibo-auditoria-tse.ts", import.meta.url), "utf8")
-  assert.match(script, /await registrarColetaOuFalhar\(recibo\)/)
+  assert.match(script, /await registrarColetaOuFalhar\(global\)/)
+  // Re-run da mesma execução não grava o global de novo.
+  assert.match(script, /reciboGlobalPendente\(recibo, await globaisJaGravados\(recibo\.fonte\)\)/)
   assert.doesNotMatch(script, /\bregistrarColeta\(/)
   const workflow = readFileSync(new URL("../.github/workflows/data-freshness-audit.yml", import.meta.url), "utf8")
   assert.match(workflow, /run: npm run audit:data-freshness:tse-receipt/)

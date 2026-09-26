@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-09-24T09:22:49.778Z",
+  "updated_at": "2026-09-26T08:53:06.221Z",
   "quotes": [
     {
       "id": "00c8f1873899039478dd4a8f3e86452d4e3e3c020b05a042d133191ce8a6b32b",
@@ -272,6 +272,32 @@
       }
     },
     {
+      "id": "0c017aefa98da7a2ce6fc4000fcb45c7d55626dd88ec10267cf148e35e311142",
+      "candidate_id": "2df15aa1-0bd3-4bab-89bf-13d780645e54",
+      "candidate_slug": "ciro-gomes-gov-ce",
+      "candidate_name": "Ciro Gomes",
+      "office": "Governador",
+      "uf": "CE",
+      "quote_text": "Eu definitivamente não vim aqui explicar um governo de 30 anos atrás que terminou como um dos melhores governos avaliados do país quando você é um dos que têm as piores avaliações do país",
+      "context": "“Eu definitivamente não vim aqui explicar um governo de 30 anos atrás que terminou como um dos melhores governos avaliados do país quando você é um dos que têm as piores avaliações do país”, respondeu Ciro.",
+      "event_context": "Debate do jornal O Povo sobre emprego e gestão pública.. Os candidatos ao governo do Ceará Ciro Gomes (PSDB) e Elmano de Freitas (PT) se enfrentaram em mais um debate na noite desta quarta-feira (23) e discutiram propostas e investimentos em áreas estratégicas do estado como saúde, educação e geração de emprego.",
+      "event_type": "debate",
+      "occurred_on": "2026-09-23",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ce/ceara/eleicoes/2026/noticia/2026/09/23/debate-para-o-governo-do-ceara-ciro-e-elmano-discutem-investimentos-em-saude-educacao-e-geracao-de-emprego.ghtml",
+      "article_title": "Debate para o governo do Ceará: Ciro e Elmano discutem investimentos em saúde, educação e geração de emprego",
+      "article_published_at": "2026-09-23T22:28:40.955-03:00",
+      "observed_at": "2026-09-26T08:46:57.582Z",
+      "source_sha256": "cff4f6ed149e080ef2d1d3745861d2c4fa40a128cfe0151976ae65fca857b78e",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Os candidatos ao governo do Ceará Ciro Gomes (PSDB) e Elmano de Freitas (PT) se enfrentaram em mais um debate na noite desta quarta-feira (23) e discutiram propostas e investimentos em áreas estratégicas do estado como saúde, educação e geração de emprego.",
+        "date_excerpt": "Os candidatos ao governo do Ceará Ciro Gomes (PSDB) e Elmano de Freitas (PT) se enfrentaram em mais um debate na noite desta quarta-feira (23) e discutiram propostas e investimentos em áreas estratégicas do estado como saúde, educação e geração de emprego.",
+        "fetched_url": "https://g1.globo.com/ce/ceara/eleicoes/2026/noticia/2026/09/23/debate-para-o-governo-do-ceara-ciro-e-elmano-discutem-investimentos-em-saude-educacao-e-geracao-de-emprego.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "0c01fff0ec7053f5dab79dd26bee0832ca2092875c008558c54e2ca1871c6807",
       "candidate_id": "50b7b4a3-1cf0-43ac-83af-eec9d2a04ebc",
       "candidate_slug": "daniel-lemes",
@@ -492,6 +518,32 @@
       }
     },
     {
+      "id": "131ce0eed315dfdd5bc44622c372a3cf478ff71e340ce2a7be5dd169affeb733",
+      "candidate_id": "fa96e1ad-f460-411b-b30b-3aecb135e8d7",
+      "candidate_slug": "roberto-cidade",
+      "candidate_name": "Roberto Cidade",
+      "office": "Governador",
+      "uf": "AM",
+      "quote_text": "Desde o momento que eu assumi o Governo do Estado do Amazonas, eu determinei que todos os contratos firmados entre alguém que tem relação comigo, que seja da minha família, fossem rescindidos",
+      "context": "\"Desde o momento que eu assumi o Governo do Estado do Amazonas, eu determinei que todos os contratos firmados entre alguém que tem relação comigo, que seja da minha família, fossem rescindidos\", afirmou.",
+      "event_context": "Entrevista e sabatina da Rede Amazônica.. O candidato à reeleição ao Governo do Amazonas, Roberto Cidade (União Brasil), afirmou nesta quarta-feira (16), durante entrevista à Rede Amazônica, que determinou o encerramento de contratos entre empresas ligadas à sua família e o Governo do Amazonas. A declaração foi dada após ser questionado sobre a manutenção de um contrato da Universidade do Estado do Amazonas (UEA) com uma empresa da família do candidato.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-16",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/09/16/em-sabatina-roberto-cidade-afirma-que-determinou-o-fim-de-contratos-da-familia-com-o-estado-e-classifica-vinculo-como-imoral.ghtml",
+      "article_title": "Em sabatina, Roberto Cidade afirma que determinou o fim de contratos da família com o Estado e classifica vínculo como imoral",
+      "article_published_at": "2026-09-16T13:41:10.500-03:00",
+      "observed_at": "2026-09-26T08:46:57.582Z",
+      "source_sha256": "608fd65e302dab47f19c1dc786c4cb631a1be7497306b670d4e3e420a250a433",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato à reeleição ao Governo do Amazonas, Roberto Cidade (União Brasil), afirmou nesta quarta-feira (16), durante entrevista à Rede Amazônica, que determinou o encerramento de contratos entre empresas ligadas à sua família e o Governo do Amazonas. A declaração foi dada após ser questionado sobre a manutenção de um contrato da Universidade do Estado do Amazonas (UEA) com uma empresa da família do candidato.",
+        "date_excerpt": "O candidato à reeleição ao Governo do Amazonas, Roberto Cidade (União Brasil), afirmou nesta quarta-feira (16), durante entrevista à Rede Amazônica, que determinou o encerramento de contratos entre empresas ligadas à sua família e o Governo do Amazonas. A declaração foi dada após ser questionado sobre a manutenção de um contrato da Universidade do Estado do Amazonas (UEA) com uma empresa da família do candidato.",
+        "fetched_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/09/16/em-sabatina-roberto-cidade-afirma-que-determinou-o-fim-de-contratos-da-familia-com-o-estado-e-classifica-vinculo-como-imoral.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "1371acff7d319a2a8d4973946455b5be474fd5cf94b68357b492d910a9c7f744",
       "candidate_id": "27f37162-6a32-4e9b-8f41-f30a9e569384",
       "candidate_slug": "eduardo-riedel",
@@ -602,6 +654,32 @@
         "identity_excerpt": "pelo candidato Álvaro Dias (PL), no programa Sabatina TCM, da TV Cabo Mossoró (TCM Telecom), Canal 10",
         "date_excerpt": "Entrevistado nessa quarta-feira (26), ao vivo",
         "fetched_url": "https://blogcarlossantos.com.br/alvaro-diz-que-perda-de-prefeitos-para-allyson-nao-e-importante/",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "1967424f5f76ccc928a6d7751c67cee1bfef12a4525df4fc148a00b693c47892",
+      "candidate_id": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+      "candidate_slug": "david-almeida",
+      "candidate_name": "David Almeida",
+      "office": "Governador",
+      "uf": "AM",
+      "quote_text": "Nesse primeiro momento nós vamos fazer contratações emergenciais para iniciar o fluxo, esvaziar esse fluxo nessa fila do SisReg",
+      "context": "\"Nesse primeiro momento nós vamos fazer contratações emergenciais para iniciar o fluxo, esvaziar esse fluxo nessa fila do SisReg\", disse.",
+      "event_context": "Sabatina da Rede Amazônica com os candidatos ao Governo do Amazonas.. O candidato ao Governo do Amazonas David Almeida (Avante) criticou, nesta quinta-feira (17), a falta de ampliação da rede estadual de saúde e afirmou que, se eleito, pretende construir um hospital e pronto-socorro infantil e uma maternidade em Manaus. Ele também prometeu zerar, no primeiro ano de governo, a fila do Sistema de Regulação (SisReg), que reúne pacientes à espera de consultas, exames e cirurgias.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-17",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/09/17/em-sabatina-david-almeida-critica-falta-de-hospitais-na-rede-estadual-e-promete-zerar-fila-do-sisreg.ghtml",
+      "article_title": "Em sabatina, David Almeida critica falta de hospitais na rede estadual e promete zerar fila do SisReg",
+      "article_published_at": "2026-09-17T13:58:59.796-03:00",
+      "observed_at": "2026-09-26T08:46:57.582Z",
+      "source_sha256": "b1e6f0543008066c340755a5134eb885ed7cd4a96618f3cc54a8629ed53a9a46",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao Governo do Amazonas David Almeida (Avante) criticou, nesta quinta-feira (17), a falta de ampliação da rede estadual de saúde e afirmou que, se eleito, pretende construir um hospital e pronto-socorro infantil e uma maternidade em Manaus. Ele também prometeu zerar, no primeiro ano de governo, a fila do Sistema de Regulação (SisReg), que reúne pacientes à espera de consultas, exames e cirurgias.",
+        "date_excerpt": "O candidato ao Governo do Amazonas David Almeida (Avante) criticou, nesta quinta-feira (17), a falta de ampliação da rede estadual de saúde e afirmou que, se eleito, pretende construir um hospital e pronto-socorro infantil e uma maternidade em Manaus. Ele também prometeu zerar, no primeiro ano de governo, a fila do Sistema de Regulação (SisReg), que reúne pacientes à espera de consultas, exames e cirurgias.",
+        "fetched_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/09/17/em-sabatina-david-almeida-critica-falta-de-hospitais-na-rede-estadual-e-promete-zerar-fila-do-sisreg.ghtml",
         "method": "codex_source_review"
       }
     },
@@ -4466,6 +4544,32 @@
       }
     },
     {
+      "id": "95b04c17b58cfc0328569e21d3c55fde4fcbce3bf0e585f7be9089662bf438ec",
+      "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+      "candidate_slug": "augusto-cury",
+      "candidate_name": "Augusto Cury",
+      "office": "Presidente",
+      "uf": null,
+      "quote_text": "As bets têm que ser enquadradas mesmo, porque dão dependência nos níveis da cocaína",
+      "context": "\"As bets têm que ser enquadradas mesmo, porque dão dependência nos níveis da cocaína\", declarou o candidato.",
+      "event_context": "Entrevistas e discursos durante agenda de campanha em Salvador.. O candidato à Presidência da República Augusto Cury cumpriu agenda de campanha em Salvador na noite desta sexta-feira (25), onde participou de um culto da Igreja Batista Lírio dos Vales, no bairro da Pituba, dentro da programação da Conferência Resplandecer. Durante entrevistas e discursos, o presidenciável criticou medidas recentes adotadas pelo presidente Luiz Inácio Lula da Silva (PT), relacionadas às apostas esportivas online, as chamadas bets, e ao reajuste do Bolsa Família.",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-25",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ba/bahia/eleicoes/2026/noticia/2026/09/25/augusto-cury-critica-medidas-de-lula-sobre-bets-e-bolsa-familia-durante-agenda-de-campanha-em-salvador.ghtml",
+      "article_title": "Augusto Cury critica medidas de Lula sobre bets e Bolsa Família durante agenda de campanha em Salvador",
+      "article_published_at": "2026-09-25T23:37:16.917-03:00",
+      "observed_at": "2026-09-26T08:46:57.582Z",
+      "source_sha256": "35ffe9c7212f86c7a679a167bdd72f33c85a017e2cd4f8e4878cd9b75c853052",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato à Presidência da República Augusto Cury cumpriu agenda de campanha em Salvador na noite desta sexta-feira (25), onde participou de um culto da Igreja Batista Lírio dos Vales, no bairro da Pituba, dentro da programação da Conferência Resplandecer. Durante entrevistas e discursos, o presidenciável criticou medidas recentes adotadas pelo presidente Luiz Inácio Lula da Silva (PT), relacionadas às apostas esportivas online, as chamadas bets, e ao reajuste do Bolsa Família.",
+        "date_excerpt": "O candidato à Presidência da República Augusto Cury cumpriu agenda de campanha em Salvador na noite desta sexta-feira (25), onde participou de um culto da Igreja Batista Lírio dos Vales, no bairro da Pituba, dentro da programação da Conferência Resplandecer. Durante entrevistas e discursos, o presidenciável criticou medidas recentes adotadas pelo presidente Luiz Inácio Lula da Silva (PT), relacionadas às apostas esportivas online, as chamadas bets, e ao reajuste do Bolsa Família.",
+        "fetched_url": "https://g1.globo.com/ba/bahia/eleicoes/2026/noticia/2026/09/25/augusto-cury-critica-medidas-de-lula-sobre-bets-e-bolsa-familia-durante-agenda-de-campanha-em-salvador.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "9a60a3ae1b419b5eda95395a36c04958e0717c85b0a53dca8c06042d557656b1",
       "candidate_id": "4bbfe1e0-c79b-45b6-bf3f-96be1bc6432f",
       "candidate_slug": "camilo-duarte",
@@ -7141,6 +7245,32 @@
         "identity_excerpt": "O candidato Carlos Cley, do PSTU, abriu nesta quarta-feira, 16, a nova rodada de entrevistas do Sistema Diário de Comunicação, desta vez com os candidatos ao Governo do Amapá nas Eleições 2026.",
         "date_excerpt": "O candidato Carlos Cley, do PSTU, abriu nesta quarta-feira, 16, a nova rodada de entrevistas do Sistema Diário de Comunicação, desta vez com os candidatos ao Governo do Amapá nas Eleições 2026.",
         "fetched_url": "https://www.diariodoamapa.com.br/cadernos/politica/carlos-cley-defende-participacao-popular-no-orcamento-e-estatizacao-de-servicos-publicos/",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "a0510ff341252eb9bc0a3e9f37268781e8a8c8a5839eee6ae10e287e7ef91db8",
+      "candidate_id": "89dc7944-ed0a-4a1f-8ad5-fdd3edd9347a",
+      "candidate_slug": "tiao-bocalom",
+      "candidate_name": "Tiao Bocalom",
+      "office": "Governador",
+      "uf": "AC",
+      "quote_text": "Eu não busco apoio em troca de secretaria. Eu busco apoio em troca de um projeto que precisa dar certo. Qual é o projeto que precisa dar certo? Que o nosso povo saia dessa pobreza",
+      "context": "“Eu não busco apoio em troca de secretaria. Eu busco apoio em troca de um projeto que precisa dar certo. Qual é o projeto que precisa dar certo? Que o nosso povo saia dessa pobreza”, salientou.",
+      "event_context": "Sabatina da CBN Amazônia Rio Branco. Candidato Tião Bocalom (PSDB) foi sabatinado nesta quinta (24) pela CBN Amazônia Rio Branco.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-24",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/24/entrevista-tiao-bocalom-cbn-rio-branco.ghtml",
+      "article_title": "'Derrubar o que for necessário', diz Bocalom sobre relação entre conservação ambiental e produção no AC",
+      "article_published_at": "2026-09-24T13:38:34.004-03:00",
+      "observed_at": "2026-09-26T08:53:06.221Z",
+      "source_sha256": "1033451d5cbca6faed1f30b89ff8cf2c6eb1d145262429db41e8f6b854589d16",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Candidato Tião Bocalom (PSDB) foi sabatinado nesta quinta (24) pela CBN Amazônia Rio Branco.",
+        "date_excerpt": "Candidato Tião Bocalom (PSDB) foi sabatinado nesta quinta (24) pela CBN Amazônia Rio Branco.",
+        "fetched_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/24/entrevista-tiao-bocalom-cbn-rio-branco.ghtml",
         "method": "codex_source_review"
       }
     }

@@ -9,7 +9,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "280000625869",
-        "2022": "280001607829"
+        "2022": "280001607829",
+        "2026": "280002542548"
       }
     },
     "wikipedia_title": "Luiz_Inácio_Lula_da_Silva"
@@ -29,7 +30,8 @@
         "2010": "190000000070",
         "2014": "190000000095",
         "2016": "190000011736",
-        "2018": "190000614721"
+        "2018": "190000614721",
+        "2026": "280002551544"
       }
     },
     "wikipedia_title": "Flávio_Bolsonaro"
@@ -44,7 +46,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "130000600702",
-        "2022": "130001701690"
+        "2022": "130001701690",
+        "2026": "280002539826"
       }
     },
     "wikipedia_title": "Romeu_Zema"
@@ -59,7 +62,8 @@
       "senado": 456,
       "tse_sq_candidato": {
         "2018": "90000613470",
-        "2022": "90001646326"
+        "2022": "90001646326",
+        "2026": "280002551932"
       }
     },
     "wikipedia_title": "Ronaldo_Caiado"
@@ -116,7 +120,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2026": "280002540694"
+      }
     },
     "wikipedia_title": "Renan_Santos"
   },
@@ -146,7 +152,8 @@
       "tse_sq_candidato": {
         "2018": "280000601174",
         "2020": "100000718146",
-        "2022": "100001600008"
+        "2022": "100001600008",
+        "2026": "280002541457"
       }
     }
   },
@@ -174,7 +181,8 @@
         "2006": "12132",
         "2008": "14144",
         "2018": "280000602500",
-        "2022": "190001643311"
+        "2022": "190001643311",
+        "2026": "40002551740"
       },
       "tse_uf_candidatura": {
         "2006": "RJ",
@@ -192,7 +200,8 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
-        "2010": "280000000018"
+        "2010": "280000000018",
+        "2026": "280002551975"
       }
     },
     "wikipedia_title": "Edmilson_Costa"
@@ -209,7 +218,8 @@
         "2002": "9570",
         "2006": "27",
         "2010": "280000000007",
-        "2014": "280000000081"
+        "2014": "280000000081",
+        "2026": "280002552487"
       }
     },
     "wikipedia_title": "Rui_Costa_Pimenta",
@@ -217,7 +227,7 @@
   },
   {
     "slug": "samara-martins",
-    "nome_completo": "SAMARA MARTINS DA SILVA",
+    "nome_completo": "Samara Martins da Silva Feitosa",
     "nome_urna": "Samara Martins",
     "cargo_disputado": "Presidente",
     "ids": {
@@ -225,7 +235,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2020": "200000724019",
-        "2022": "280001602703"
+        "2022": "280001602703",
+        "2026": "280002538811"
       }
     }
   },
@@ -242,7 +253,8 @@
         "2010": "130000000952",
         "2014": "280000000085",
         "2018": "130000613206",
-        "2022": "130001613348"
+        "2022": "130001613348",
+        "2026": "130002554332"
       }
     },
     "wikipedia_title": "Aécio_Neves"
@@ -257,7 +269,8 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
-        "2022": "250001615967"
+        "2022": "250001615967",
+        "2026": "250002541303"
       }
     },
     "wikipedia_title": "Tarcísio_de_Freitas"
@@ -275,7 +288,8 @@
         "2012": "250000050277",
         "2016": "250000011576",
         "2018": "280000629808",
-        "2022": "250001612465"
+        "2022": "250001612465",
+        "2026": "250002549705"
       }
     },
     "wikipedia_title": "Fernando_Haddad"
@@ -373,7 +387,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "250000619454",
-        "2022": "250001610161"
+        "2022": "250001610161",
+        "2026": "250002541308"
       }
     },
     "wikipedia_title": "André_do_Prado"
@@ -406,7 +421,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "250000605452",
-        "2022": "250001611359"
+        "2022": "250001611359",
+        "2026": "250002541312"
       }
     },
     "wikipedia_title": "Guilherme_Derrite"
@@ -421,7 +437,8 @@
       "camara": null,
       "senado": 6331,
       "tse_sq_candidato": {
-        "2022": "160001621846"
+        "2022": "160001621846",
+        "2026": "160002540833"
       }
     },
     "wikipedia_title": "Sergio_Moro"
@@ -443,7 +460,7 @@
   },
   {
     "slug": "alexandre-curi",
-    "nome_completo": "Alexandre Curi",
+    "nome_completo": "Alexandre Maranhao Khury",
     "nome_urna": "Alexandre Curi",
     "cargo_disputado": "Governador",
     "estado": "PR",
@@ -452,7 +469,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "160000623295",
-        "2022": "160001623100"
+        "2022": "160001623100",
+        "2026": "160002547963"
       }
     },
     "wikipedia_title": "Alexandre_Curi"
@@ -489,7 +507,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "160000612511",
-        "2022": "160001615006"
+        "2022": "160001615006",
+        "2026": "160002547666"
       }
     },
     "wikipedia_title": "Requião_Filho"
@@ -525,21 +544,24 @@
         "2010": "160000000600",
         "2014": "160000000207",
         "2018": "160000619719",
-        "2022": "160001622302"
+        "2022": "160001622302",
+        "2026": "160002549553"
       }
     },
     "wikipedia_title": "Sandro_Alex"
   },
   {
     "slug": "luiz-franca",
-    "nome_completo": "Luiz Felipe Franca",
+    "nome_completo": "Luiz Felipe Martins Franca",
     "nome_urna": "Luiz Franca",
     "cargo_disputado": "Governador",
     "estado": "PR",
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2026": "160002551353"
+      }
     }
   },
   {
@@ -571,7 +593,8 @@
       "tse_sq_candidato": {
         "2010": "240000000218",
         "2014": "240000000213",
-        "2018": "240000627221"
+        "2018": "240000627221",
+        "2026": "240002551001"
       }
     },
     "wikipedia_title": "João_Rodrigues_(político_de_Santa_Catarina)"
@@ -587,7 +610,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "240000624336",
-        "2022": "240001647445"
+        "2022": "240001647445",
+        "2026": "240002533898"
       }
     },
     "wikipedia_title": "Décio_Lima"
@@ -620,7 +644,8 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
-        "2018": "240000609728"
+        "2018": "240000609728",
+        "2026": "240002544118"
       }
     }
   },
@@ -635,14 +660,15 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "210000603583",
-        "2022": "210001601587"
+        "2022": "210001601587",
+        "2026": "210002547857"
       }
     },
     "wikipedia_title": "Luciano_Zucco"
   },
   {
     "slug": "juliana-brizola",
-    "nome_completo": "Juliana Daudt Brizola",
+    "nome_completo": "Juliana Brizola",
     "nome_urna": "Juliana Brizola",
     "cargo_disputado": "Governador",
     "estado": "RS",
@@ -655,7 +681,8 @@
         "2018": "210000604676",
         "2020": "210001189949",
         "2022": "210001621265",
-        "2024": "210002355259"
+        "2024": "210002355259",
+        "2026": "210002551508"
       }
     },
     "wikipedia_title": "Juliana_Brizola"
@@ -678,7 +705,7 @@
   },
   {
     "slug": "gabriel-souza",
-    "nome_completo": "Gabriel Souza",
+    "nome_completo": "Gabriel Vieira de Souza",
     "nome_urna": "Gabriel Souza",
     "cargo_disputado": "Governador",
     "estado": "RS",
@@ -687,14 +714,15 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "210000605318",
-        "2022": "210001609848"
+        "2022": "210001609848",
+        "2026": "210002542892"
       }
     },
     "wikipedia_title": "Gabriel_Souza_(político)"
   },
   {
     "slug": "marcelo-maranata",
-    "nome_completo": "Marcelo Maranata",
+    "nome_completo": "Marcelo Maranata Soares Reinaldo",
     "nome_urna": "Marcelo Maranata",
     "cargo_disputado": "Governador",
     "estado": "RS",
@@ -703,7 +731,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "210000605932",
-        "2020": "210000884394"
+        "2020": "210000884394",
+        "2026": "210002535802"
       }
     },
     "wikipedia_title": "Marcelo_Maranata"
@@ -736,7 +765,8 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
-        "2022": "210001605930"
+        "2022": "210001605930",
+        "2026": "210002541367"
       }
     }
   },
@@ -768,14 +798,15 @@
         "2012": "190000004018",
         "2018": "190000609934",
         "2020": "190000688286",
-        "2024": "190002135253"
+        "2024": "190002135253",
+        "2026": "190002543380"
       }
     },
     "wikipedia_title": "Eduardo_Paes"
   },
   {
     "slug": "douglas-ruas",
-    "nome_completo": "Douglas Ruas",
+    "nome_completo": "Douglas Ruas dos Santos",
     "nome_urna": "Douglas Ruas",
     "cargo_disputado": "Governador",
     "estado": "RJ",
@@ -783,7 +814,8 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
-        "2022": "190001596741"
+        "2022": "190001596741",
+        "2026": "190002542887"
       }
     },
     "wikipedia_title": "Douglas_Ruas"
@@ -833,7 +865,8 @@
         "2014": "190000000585",
         "2018": "190000621818",
         "2022": "190001619506",
-        "2024": "190002208866"
+        "2024": "190002208866",
+        "2026": "190002550196"
       }
     },
     "wikipedia_title": "Anthony_Garotinho"
@@ -907,7 +940,8 @@
         "2018": "190000607900",
         "2020": "190000858699",
         "2022": "190001639537",
-        "2024": "190001951101"
+        "2024": "190001951101",
+        "2026": "190002540198"
       }
     },
     "wikipedia_title": "Cyro_Garcia"
@@ -925,7 +959,8 @@
         "2012": "190000028329",
         "2020": "190001128515",
         "2022": "190001609712",
-        "2024": "190002135108"
+        "2024": "190002135108",
+        "2026": "190002547272"
       }
     }
   },
@@ -941,7 +976,8 @@
       "tse_sq_candidato": {
         "2020": "190001092078",
         "2022": "190001717287",
-        "2024": "190002346684"
+        "2024": "190002346684",
+        "2026": "190002552513"
       }
     }
   },
@@ -966,7 +1002,7 @@
   },
   {
     "slug": "cleitinho",
-    "nome_completo": "Cleitinho Azevedo",
+    "nome_completo": "Cleiton Gontijo de Azevedo",
     "nome_urna": "Cleitinho",
     "cargo_disputado": "Governador",
     "estado": "MG",
@@ -998,7 +1034,7 @@
   },
   {
     "slug": "mateus-simoes",
-    "nome_completo": "Mateus Simoes",
+    "nome_completo": "Mateus Simões de Almeida",
     "nome_urna": "Mateus Simoes",
     "cargo_disputado": "Governador",
     "estado": "MG",
@@ -1008,7 +1044,8 @@
       "tse_sq_candidato": {
         "2014": "130000000535",
         "2016": "130000085406",
-        "2022": "130001701691"
+        "2022": "130001701691",
+        "2026": "130002541911"
       }
     },
     "wikipedia_title": "Mateus_Simões"
@@ -1079,7 +1116,8 @@
         "2014": "130000001203",
         "2016": "130000083186",
         "2020": "130000756879",
-        "2022": "130001621812"
+        "2022": "130001621812",
+        "2026": "130002539775"
       }
     },
     "wikipedia_title": "Alexandre_Kalil"
@@ -1093,7 +1131,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2026": "130002544411"
+      }
     }
   },
   {
@@ -1108,13 +1148,14 @@
       "tse_sq_candidato": {
         "2014": "130000001766",
         "2016": "130000083665",
-        "2018": "130000606639"
+        "2018": "130000606639",
+        "2026": "130002544122"
       }
     }
   },
   {
     "slug": "pazolini",
-    "nome_completo": "Lorenzo Pazolini",
+    "nome_completo": "Lorenzo Silva de Pazolini",
     "nome_urna": "Pazolini",
     "cargo_disputado": "Governador",
     "estado": "ES",
@@ -1140,7 +1181,8 @@
       "senado": 635,
       "tse_sq_candidato": {
         "2018": "80000625509",
-        "2022": "80001649124"
+        "2022": "80001649124",
+        "2026": "80002552172"
       }
     },
     "wikipedia_title": "Ricardo_Ferraço"
@@ -1201,7 +1243,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "80000626736",
-        "2022": "80001719429"
+        "2022": "80001719429",
+        "2026": "80002551833"
       }
     },
     "wikipedia_title": "Hélder_Salomão"
@@ -1235,7 +1278,8 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
-        "2022": "50001603638"
+        "2022": "50001603638",
+        "2026": "50002536314"
       }
     },
     "wikipedia_title": "Jerônimo_Rodrigues"
@@ -1247,7 +1291,7 @@
     "cargo_disputado": "Governador",
     "estado": "BA",
     "ids": {
-      "camara": null,
+      "camara": 74058,
       "senado": null,
       "tse_sq_candidato": {
         "2022": "50001609248",
@@ -1267,7 +1311,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "50000608625",
-        "2022": "50001604884"
+        "2022": "50001604884",
+        "2026": "50002533123"
       }
     },
     "wikipedia_title": "João_Roma"
@@ -1315,7 +1360,8 @@
       "tse_sq_candidato": {
         "2018": "60000612023",
         "2020": "60000983767",
-        "2022": "60001633585"
+        "2022": "60001633585",
+        "2026": "60002543969"
       }
     },
     "wikipedia_title": "Elmano_de_Freitas"
@@ -1385,14 +1431,15 @@
         "2018": "60000601233",
         "2020": "60000653316",
         "2022": "60001608845",
-        "2024": "60001939602"
+        "2024": "60001939602",
+        "2026": "60002540753"
       }
     },
     "wikipedia_title": "Capitão_Wagner"
   },
   {
     "slug": "eduardo-braide",
-    "nome_completo": "Eduardo Costa Braide",
+    "nome_completo": "Eduardo Salim Braide",
     "nome_urna": "Eduardo Braide",
     "cargo_disputado": "Governador",
     "estado": "MA",
@@ -1406,7 +1453,8 @@
         "2016": "100000020418",
         "2018": "100000615044",
         "2020": "100000756891",
-        "2024": "100002092730"
+        "2024": "100002092730",
+        "2026": "100002545679"
       }
     },
     "wikipedia_title": "Eduardo_Braide"
@@ -1433,14 +1481,15 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
-        "2022": "100001667488"
+        "2022": "100001667488",
+        "2026": "100002542556"
       }
     },
     "wikipedia_title": "Felipe_Camarão_(político)"
   },
   {
     "slug": "lahesio-bonfim",
-    "nome_completo": "Lahesio Rodrigues Bonfim",
+    "nome_completo": "Lahesio Rodrigues do Bonfim",
     "nome_urna": "Lahesio Bonfim",
     "cargo_disputado": "Senador",
     "estado": "MA",
@@ -1449,14 +1498,15 @@
       "senado": null,
       "tse_sq_candidato": {
         "2020": "100000825685",
-        "2022": "100001609046"
+        "2022": "100001609046",
+        "2026": "100002548011"
       }
     },
     "wikipedia_title": "Lahesio_Bonfim"
   },
   {
     "slug": "enilton-rodrigues",
-    "nome_completo": "Enilton Rodrigues",
+    "nome_completo": "Enilton Silva Rodrigues",
     "nome_urna": "Enilton Rodrigues",
     "cargo_disputado": "Governador",
     "estado": "MA",
@@ -1467,7 +1517,8 @@
         "2018": "100000618779",
         "2020": "100000996020",
         "2022": "100001713289",
-        "2024": "100002106225"
+        "2024": "100002106225",
+        "2026": "100002548853"
       }
     },
     "wikipedia_title": "Enilton_Rodrigues"
@@ -1542,7 +1593,7 @@
   },
   {
     "slug": "ivan-moraes",
-    "nome_completo": "Ivan Moraes Filho",
+    "nome_completo": "Ivan Vasconcellos de Moraes Filho",
     "nome_urna": "Ivan Moraes",
     "cargo_disputado": "Governador",
     "estado": "PE",
@@ -1572,14 +1623,15 @@
         "2006": "10057",
         "2012": "150000005309",
         "2020": "150000976695",
-        "2024": "150002036085"
+        "2024": "150002036085",
+        "2026": "150002544133"
       }
     },
     "wikipedia_title": "Cícero_Lucena"
   },
   {
     "slug": "lucas-ribeiro",
-    "nome_completo": "Lucas Ribeiro",
+    "nome_completo": "Lucas Ribeiro Novais de Araújo",
     "nome_urna": "Lucas Ribeiro",
     "cargo_disputado": "Governador",
     "estado": "PB",
@@ -1588,7 +1640,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2020": "150000774537",
-        "2022": "150001613756"
+        "2022": "150001613756",
+        "2026": "150002551789"
       }
     },
     "wikipedia_title": "Lucas_Ribeiro_(político_da_Paraíba)"
@@ -1663,7 +1716,7 @@
   },
   {
     "slug": "joel-rodrigues",
-    "nome_completo": "Joel Rodrigues de Castro",
+    "nome_completo": "Joel Rodrigues da Silva",
     "nome_urna": "Joel Rodrigues",
     "cargo_disputado": "Governador",
     "estado": "PI",
@@ -1708,7 +1761,8 @@
       "tse_sq_candidato": {
         "2018": "200000600342",
         "2020": "200000661444",
-        "2024": "200001959098"
+        "2024": "200001959098",
+        "2026": "200002535255"
       }
     },
     "wikipedia_title": "Allyson_Bezerra"
@@ -1757,7 +1811,8 @@
         "2012": "260000005723",
         "2014": "260000000184",
         "2018": "260000623594",
-        "2022": "260001612779"
+        "2022": "260001612779",
+        "2026": "260002542491"
       }
     },
     "wikipedia_title": "Fábio_Mitidieri"
@@ -1799,7 +1854,7 @@
   },
   {
     "slug": "jhc",
-    "nome_completo": "Joao Henrique Caldas",
+    "nome_completo": "João Henrique Holanda Caldas",
     "nome_urna": "JHC",
     "cargo_disputado": "Governador",
     "estado": "AL",
@@ -1811,7 +1866,8 @@
         "2016": "20000002086",
         "2018": "20000616803",
         "2020": "20000842791",
-        "2024": "20002309875"
+        "2024": "20002309875",
+        "2026": "20002553350"
       }
     },
     "wikipedia_title": "João_Henrique_Caldas"
@@ -1834,7 +1890,7 @@
   },
   {
     "slug": "alan-rick",
-    "nome_completo": "Alan Rick Pereira da Silva",
+    "nome_completo": "Alan Rick Miranda",
     "nome_urna": "Alan Rick",
     "cargo_disputado": "Governador",
     "estado": "AC",
@@ -1851,7 +1907,7 @@
   },
   {
     "slug": "mailza-assis",
-    "nome_completo": "Mailza Gomes Assis",
+    "nome_completo": "Mailza Assis Cameli",
     "nome_urna": "Mailza Assis",
     "cargo_disputado": "Governador",
     "estado": "AC",
@@ -1880,7 +1936,8 @@
         "2014": "10000000364",
         "2018": "10000600232",
         "2020": "10001003637",
-        "2024": "10001908807"
+        "2024": "10001908807",
+        "2026": "10002544015"
       }
     },
     "wikipedia_title": "Tião_Bocalom"
@@ -1902,7 +1959,7 @@
   },
   {
     "slug": "omar-aziz",
-    "nome_completo": "Omar Jose Abdel Aziz",
+    "nome_completo": "Omar Jose Abdelaziz",
     "nome_urna": "Omar Aziz",
     "cargo_disputado": "Governador",
     "estado": "AM",
@@ -1919,7 +1976,7 @@
   },
   {
     "slug": "maria-do-carmo",
-    "nome_completo": "Maria do Carmo Seffair",
+    "nome_completo": "Maria do Carmo Seffair Lins de Albuquerque",
     "nome_urna": "Maria do Carmo",
     "cargo_disputado": "Governador",
     "estado": "AM",
@@ -1928,7 +1985,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2022": "40001650567",
-        "2024": "40002142181"
+        "2024": "40002142181",
+        "2026": "40002541626"
       }
     }
   },
@@ -1967,7 +2025,7 @@
   },
   {
     "slug": "eduardo-braga",
-    "nome_completo": "Eduardo Braga Granata",
+    "nome_completo": "Carlos Eduardo de Souza Braga",
     "nome_urna": "Eduardo Braga",
     "cargo_disputado": "Senador",
     "estado": "AM",
@@ -1978,7 +2036,8 @@
         "2010": "40000000291",
         "2014": "40000012063",
         "2018": "40000618261",
-        "2022": "40001610345"
+        "2022": "40001610345",
+        "2026": "40002531447"
       }
     },
     "wikipedia_title": "Eduardo_Braga"
@@ -2018,7 +2077,8 @@
         "2010": "30000000086",
         "2012": "30000000648",
         "2016": "30000002139",
-        "2022": "30001619676"
+        "2022": "30001619676",
+        "2026": "30002536311"
       }
     },
     "wikipedia_title": "Clécio_Luís"
@@ -2035,7 +2095,8 @@
       "tse_sq_candidato": {
         "2018": "30000620049",
         "2020": "30001034733",
-        "2022": "30001608736"
+        "2022": "30001608736",
+        "2026": "30002550229"
       }
     },
     "wikipedia_title": "João_Capiberibe"
@@ -2050,7 +2111,8 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
-        "2022": "140001651992"
+        "2022": "140001651992",
+        "2026": "140002551598"
       }
     },
     "wikipedia_title": "Hana_Ghassan"
@@ -2069,13 +2131,14 @@
         "2016": "140000012852",
         "2018": "140000614283",
         "2020": "140001027099",
-        "2024": "140002359059"
+        "2024": "140002359059",
+        "2026": "140002549930"
       }
     }
   },
   {
     "slug": "delegado-eder-mauro",
-    "nome_completo": "Eder Braga Mauro",
+    "nome_completo": "Eder Mauro Cardoso Barra",
     "nome_urna": "Delegado Eder Mauro",
     "cargo_disputado": "Senador",
     "estado": "PA",
@@ -2084,7 +2147,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "140000606383",
-        "2022": "140001598311"
+        "2022": "140001598311",
+        "2026": "140002544855"
       }
     },
     "wikipedia_title": "Delegado_Éder_Mauro"
@@ -2129,7 +2193,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2010": "140000000143",
-        "2018": "140000604416"
+        "2018": "140000604416",
+        "2026": "140002542386"
       }
     }
   },
@@ -2165,14 +2230,15 @@
       "senado": 5422,
       "tse_sq_candidato": {
         "2018": "220000609853",
-        "2022": "220001647595"
+        "2022": "220001647595",
+        "2026": "220002541939"
       }
     },
     "wikipedia_title": "Marcos_Rogério"
   },
   {
     "slug": "adailton-furia",
-    "nome_completo": "Adailton de Souza Furia",
+    "nome_completo": "Adailton Antunes Ferreira",
     "nome_urna": "Adailton Furia",
     "cargo_disputado": "Governador",
     "estado": "RO",
@@ -2196,21 +2262,24 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
-        "2020": "220001051415"
+        "2020": "220001051415",
+        "2026": "220002542916"
       }
     },
     "wikipedia_title": "Hildon_Chaves"
   },
   {
     "slug": "dr-fernando-maximo",
-    "nome_completo": "Fernando Maximo de Oliveira",
+    "nome_completo": "Fernando Rodrigues Máximo",
     "nome_urna": "Dr. Fernando Maximo",
     "cargo_disputado": "Senador",
     "estado": "RO",
     "ids": {
       "camara": 220610,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2026": "220002539996"
+      }
     },
     "wikipedia_title": "Fernando_Máximo"
   },
@@ -2240,7 +2309,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "220000609735",
-        "2022": "220001635101"
+        "2022": "220001635101",
+        "2026": "220002542185"
       }
     },
     "wikipedia_title": "Expedito_Netto"
@@ -2257,7 +2327,8 @@
       "tse_sq_candidato": {
         "2016": "230000001882",
         "2020": "230000679861",
-        "2022": "230002529896"
+        "2022": "230002529896",
+        "2026": "230002549223"
       }
     },
     "wikipedia_title": "Arthur_Henrique_(político)"
@@ -2286,14 +2357,15 @@
       "camara": 160608,
       "senado": null,
       "tse_sq_candidato": {
-        "2022": "230001602186"
+        "2022": "230001602186",
+        "2026": "230002553006"
       }
     },
     "wikipedia_title": "Teresa_Surita"
   },
   {
     "slug": "soldado-sampaio",
-    "nome_completo": "Soldado Sampaio",
+    "nome_completo": "Francisco dos Santos Sampaio",
     "nome_urna": "Soldado Sampaio",
     "cargo_disputado": "Governador",
     "estado": "RR",
@@ -2302,7 +2374,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "230000616424",
-        "2022": "230001600061"
+        "2022": "230001600061",
+        "2026": "230002551571"
       }
     },
     "wikipedia_title": "Soldado_Sampaio"
@@ -2318,7 +2391,8 @@
       "senado": 5386,
       "tse_sq_candidato": {
         "2018": "270000618831",
-        "2022": "270001649254"
+        "2022": "270001649254",
+        "2026": "270002544599"
       }
     },
     "wikipedia_title": "Professora_Dorinha"
@@ -2333,7 +2407,8 @@
       "camara": 141479,
       "senado": null,
       "tse_sq_candidato": {
-        "2022": "270001652199"
+        "2022": "270001652199",
+        "2026": "270002544494"
       }
     },
     "wikipedia_title": "Laurez_Moreira"
@@ -2365,14 +2440,15 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "270000610948",
-        "2022": "270001643407"
+        "2022": "270001643407",
+        "2026": "270002544544"
       }
     },
     "wikipedia_title": "Vicentinho_Júnior"
   },
   {
     "slug": "ataides-oliveira",
-    "nome_completo": "Ataides de Oliveira Leite",
+    "nome_completo": "Ataídes de Oliveira",
     "nome_urna": "Ataides Oliveira",
     "cargo_disputado": "Governador",
     "estado": "TO",
@@ -2387,7 +2463,7 @@
   },
   {
     "slug": "celina-leao",
-    "nome_completo": "Celina Leao Rocha de Siqueira Campos",
+    "nome_completo": "Celina Leão Hizim Ferreira",
     "nome_urna": "Celina Leao",
     "cargo_disputado": "Governador",
     "estado": "DF",
@@ -2396,14 +2472,15 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "70000614533",
-        "2022": "70001651045"
+        "2022": "70001651045",
+        "2026": "70002553055"
       }
     },
     "wikipedia_title": "Celina_Leão"
   },
   {
     "slug": "leandro-grass",
-    "nome_completo": "Leandro Grass Peixoto",
+    "nome_completo": "Leandro Antônio Grass Peixoto",
     "nome_urna": "Leandro Grass",
     "cargo_disputado": "Governador",
     "estado": "DF",
@@ -2412,14 +2489,15 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "70000612417",
-        "2022": "70001597108"
+        "2022": "70001597108",
+        "2026": "70002552496"
       }
     },
     "wikipedia_title": "Leandro_Grass"
   },
   {
     "slug": "ricardo-cappelli",
-    "nome_completo": "Ricardo Ribeiro Cappelli",
+    "nome_completo": "Ricardo Garcia Cappelli",
     "nome_urna": "Ricardo Cappelli",
     "cargo_disputado": "Governador",
     "estado": "DF",
@@ -2432,7 +2510,7 @@
   },
   {
     "slug": "paula-belmonte",
-    "nome_completo": "Paula Francinete Belmonte da Silva",
+    "nome_completo": "Paula Moreno Paro Belmonte",
     "nome_urna": "Paula Belmonte",
     "cargo_disputado": "Governador",
     "estado": "DF",
@@ -2441,14 +2519,15 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "70000618962",
-        "2022": "70001728079"
+        "2022": "70001728079",
+        "2026": "70002552965"
       }
     },
     "wikipedia_title": "Paula_Belmonte"
   },
   {
     "slug": "daniel-vilela",
-    "nome_completo": "Daniel Goulart Vilela",
+    "nome_completo": "Daniel Elias Carvalho Vilela",
     "nome_urna": "Daniel Vilela",
     "cargo_disputado": "Governador",
     "estado": "GO",
@@ -2457,7 +2536,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "90000609231",
-        "2022": "90001646327"
+        "2022": "90001646327",
+        "2026": "90002540993"
       }
     },
     "wikipedia_title": "Daniel_Vilela"
@@ -2473,7 +2553,8 @@
       "senado": 4535,
       "tse_sq_candidato": {
         "2018": "90000609445",
-        "2022": "90001615126"
+        "2022": "90001615126",
+        "2026": "90002543463"
       }
     },
     "wikipedia_title": "Marconi_Perillo"
@@ -2497,7 +2578,7 @@
   },
   {
     "slug": "wilder-morais",
-    "nome_completo": "Wilder Gomes de Morais",
+    "nome_completo": "Wilder Pedro de Morais",
     "nome_urna": "Wilder Morais",
     "cargo_disputado": "Governador",
     "estado": "GO",
@@ -2507,7 +2588,8 @@
       "tse_sq_candidato": {
         "2018": "90000613469",
         "2020": "90001220915",
-        "2022": "90001652051"
+        "2022": "90001652051",
+        "2026": "90002551791"
       }
     },
     "wikipedia_title": "Wilder_Morais"
@@ -2540,7 +2622,8 @@
         "2014": "90000000511",
         "2020": "90000746350",
         "2022": "90001674691",
-        "2024": "90002192685"
+        "2024": "90002192685",
+        "2026": "90002541454"
       }
     }
   },
@@ -2562,7 +2645,7 @@
   },
   {
     "slug": "fabio-trad",
-    "nome_completo": "Fabio Trad",
+    "nome_completo": "Fábio Ricardo Trad",
     "nome_urna": "Fabio Trad",
     "cargo_disputado": "Governador",
     "estado": "MS",
@@ -2571,14 +2654,15 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "120000613463",
-        "2022": "120001650734"
+        "2022": "120001650734",
+        "2026": "120002539834"
       }
     },
     "wikipedia_title": "Fábio_Trad"
   },
   {
     "slug": "joao-henrique-catan",
-    "nome_completo": "Joao Henrique Catan",
+    "nome_completo": "João Henrique Miranda Soares Catan",
     "nome_urna": "Joao Henrique Catan",
     "cargo_disputado": "Governador",
     "estado": "MS",
@@ -2594,7 +2678,7 @@
   },
   {
     "slug": "lucien-rezende",
-    "nome_completo": "Lucien Miranda de Rezende",
+    "nome_completo": "Lucien Roberto Garcia de Rezende",
     "nome_urna": "Lucien Rezende",
     "cargo_disputado": "Governador",
     "estado": "MS",
@@ -2608,7 +2692,7 @@
   },
   {
     "slug": "otaviano-pivetta",
-    "nome_completo": "Otaviano Pivetta",
+    "nome_completo": "Otaviano Olavo Pivetta",
     "nome_urna": "Otaviano Pivetta",
     "cargo_disputado": "Governador",
     "estado": "MT",
@@ -2617,14 +2701,15 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "110000612720",
-        "2022": "110001643542"
+        "2022": "110001643542",
+        "2026": "110002551480"
       }
     },
     "wikipedia_title": "Otaviano_Pivetta"
   },
   {
     "slug": "wellington-fagundes",
-    "nome_completo": "Wellington Fagundes",
+    "nome_completo": "Wellington Antônio Fagundes",
     "nome_urna": "Wellington Fagundes",
     "cargo_disputado": "Governador",
     "estado": "MT",
@@ -2633,14 +2718,15 @@
       "senado": 1173,
       "tse_sq_candidato": {
         "2018": "110000609942",
-        "2022": "110001676176"
+        "2022": "110001676176",
+        "2026": "110002551737"
       }
     },
     "wikipedia_title": "Wellington_Fagundes"
   },
   {
     "slug": "janaina-riva",
-    "nome_completo": "Janaina Riva",
+    "nome_completo": "Janaina Greyce Riva Fagundes",
     "nome_urna": "Janaina Riva",
     "cargo_disputado": "Senador",
     "estado": "MT",
@@ -2649,14 +2735,15 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "110000623368",
-        "2022": "110001623186"
+        "2022": "110001623186",
+        "2026": "110002552698"
       }
     },
     "wikipedia_title": "Janaína_Riva"
   },
   {
     "slug": "natasha-slhessarenko",
-    "nome_completo": "Natasha Slhessarenko",
+    "nome_completo": "Natasha Slhessarenko Fraife Barreto",
     "nome_urna": "Natasha Slhessarenko",
     "cargo_disputado": "Governador",
     "estado": "MT",
@@ -2686,14 +2773,16 @@
   },
   {
     "slug": "isael-munduruku",
-    "nome_completo": "Isael Munduruku",
+    "nome_completo": "Isael Franklin Gonçalves",
     "nome_urna": "Isael Munduruku",
     "cargo_disputado": "Governador",
     "estado": "AM",
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2026": "40002550776"
+      }
     }
   },
   {
@@ -2703,27 +2792,30 @@
     "cargo_disputado": "Governador",
     "estado": "DF",
     "ids": {
-      "camara": null,
+      "camara": 74287,
       "senado": null,
       "tse_sq_candidato": {
         "2002": "463",
         "2006": "10382",
         "2014": "70000000153",
-        "2022": "70001615918"
+        "2022": "70001615918",
+        "2026": "70002552586"
       }
     },
     "wikipedia_title": "José_Roberto_Arruda"
   },
   {
     "slug": "breno-barcelar",
-    "nome_completo": "Breno Barcelos",
+    "nome_completo": "Breno Augusto Fagundes Barcelos",
     "nome_urna": "Breno Barcelos",
     "cargo_disputado": "Governador",
     "estado": "ES",
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2026": "80002541012"
+      }
     }
   },
   {
@@ -2803,7 +2895,8 @@
         "2018": "110000619196",
         "2020": "110000677466",
         "2022": "110001621192",
-        "2024": "110002118851"
+        "2024": "110002118851",
+        "2026": "110002554073"
       }
     }
   },
@@ -2823,7 +2916,7 @@
   },
   {
     "slug": "mauricio-coelho",
-    "nome_completo": "Mauricio Coelho Ribeiro da Silva",
+    "nome_completo": "Mauricio Coelho de Souza Junior",
     "nome_urna": "Mauricio Coelho",
     "cargo_disputado": "Governador",
     "estado": "MT",
@@ -2853,14 +2946,16 @@
   },
   {
     "slug": "rafaell-milas",
-    "nome_completo": "Rafaell Milas",
+    "nome_completo": "Rafaell Milas de Oliveira",
     "nome_urna": "Rafaell Milas",
     "cargo_disputado": "Governador",
     "estado": "MT",
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2026": "110002543953"
+      }
     },
     "wikipedia_title": "Rafaell_Milas"
   },
@@ -2895,7 +2990,8 @@
         "2018": "180000626503",
         "2020": "180001237871",
         "2022": "180001713460",
-        "2024": "180002337603"
+        "2024": "180002337603",
+        "2026": "180002553722"
       }
     },
     "wikipedia_title": "Lourdes_Melo"
@@ -2911,7 +3007,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "180000604119",
-        "2020": "180001057808"
+        "2020": "180001057808",
+        "2026": "180002544216"
       }
     }
   },
@@ -2992,7 +3089,8 @@
         "2014": "220000000176",
         "2020": "220000685117",
         "2022": "220001612149",
-        "2024": "220002330987"
+        "2024": "220002330987",
+        "2026": "220002550927"
       }
     }
   },
@@ -3010,14 +3108,15 @@
         "2006": "10081",
         "2010": "240000000349",
         "2014": "240000000255",
-        "2018": "240000621321"
+        "2018": "240000621321",
+        "2026": "240002548628"
       }
     },
     "wikipedia_title": "Gelson_Merísio"
   },
   {
     "slug": "lais-chaud",
-    "nome_completo": "Lais Chaud",
+    "nome_completo": "Laís Paganelli Chaud",
     "nome_urna": "Lais Chaud",
     "cargo_disputado": "Governador",
     "estado": "SC",
@@ -3038,7 +3137,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2018": "240000609638",
-        "2022": "240001611148"
+        "2022": "240001611148",
+        "2026": "240002552157"
       }
     }
   },
@@ -3075,7 +3175,8 @@
         "2016": "40000001600",
         "2018": "40000609263",
         "2022": "40001618472",
-        "2024": "40002079169"
+        "2024": "40002079169",
+        "2026": "40002541741"
       }
     },
     "wikipedia_title": "Roberto_Cidade"
@@ -3106,12 +3207,14 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2026": "220002551251"
+      }
     }
   },
   {
     "slug": "samara-mineiro",
-    "nome_completo": "Samara Mineiro",
+    "nome_completo": "Samara Mineiro Oliveira",
     "nome_urna": "Samara Mineiro",
     "cargo_disputado": "Governador",
     "estado": "DF",
@@ -3137,7 +3240,7 @@
   },
   {
     "slug": "serley-leal",
-    "nome_completo": "Serley Leal",
+    "nome_completo": "Serley de Souza Leal",
     "nome_urna": "Serley Leal",
     "cargo_disputado": "Governador",
     "estado": "CE",
@@ -3147,7 +3250,8 @@
       "tse_sq_candidato": {
         "2012": "60000015399",
         "2020": "60000717317",
-        "2022": "60001634109"
+        "2022": "60001634109",
+        "2026": "60002533729"
       }
     }
   },
@@ -3176,7 +3280,8 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
-        "2022": "250001602002"
+        "2022": "250001602002",
+        "2026": "250002544912"
       }
     }
   },
@@ -3235,14 +3340,16 @@
   },
   {
     "slug": "francisco-jurity",
-    "nome_completo": "Francisco Jurity",
+    "nome_completo": "Francisco José Martins Jurity",
     "nome_urna": "Francisco Jurity",
     "cargo_disputado": "Governador",
     "estado": "PI",
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2026": "180002548565"
+      }
     }
   },
   {
@@ -3258,7 +3365,8 @@
         "2018": "180000608796",
         "2020": "180001238894",
         "2022": "180001713732",
-        "2024": "180001905550"
+        "2024": "180001905550",
+        "2026": "180002548388"
       }
     }
   },
@@ -3303,7 +3411,8 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
-        "2024": "180001905702"
+        "2024": "180001905702",
+        "2026": "180002549995"
       }
     }
   },
@@ -3326,14 +3435,16 @@
   },
   {
     "slug": "kiko-caputo",
-    "nome_completo": "Kiko Caputo",
+    "nome_completo": "Francisco Queiroz Caputo Neto",
     "nome_urna": "Kiko Caputo",
     "cargo_disputado": "Governador",
     "estado": "DF",
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2026": "70002547775"
+      }
     }
   },
   {
@@ -3353,7 +3464,7 @@
   },
   {
     "slug": "rafael-duda",
-    "nome_completo": "Rafael Duda",
+    "nome_completo": "Rafael Ribeiro de Avila",
     "nome_urna": "Rafael Duda",
     "cargo_disputado": "Governador",
     "estado": "MG",
@@ -3363,13 +3474,14 @@
       "tse_sq_candidato": {
         "2020": "130000788972",
         "2022": "130001644584",
-        "2024": "130002061506"
+        "2024": "130002061506",
+        "2026": "130002546802"
       }
     }
   },
   {
     "slug": "henrique-areas",
-    "nome_completo": "Henrique Áreas",
+    "nome_completo": "Henrique Áreas de Araujo",
     "nome_urna": "Henrique Áreas",
     "cargo_disputado": "Governador",
     "estado": "MG",
@@ -3379,7 +3491,8 @@
       "tse_sq_candidato": {
         "2016": "250000077188",
         "2018": "250000615443",
-        "2020": "250001172315"
+        "2020": "250001172315",
+        "2026": "130002552308"
       },
       "tse_uf_candidatura": {
         "2016": "SP",
@@ -3390,7 +3503,7 @@
   },
   {
     "slug": "indira-xavier",
-    "nome_completo": "Indira Xavier",
+    "nome_completo": "Indira Ivanise Xavier",
     "nome_urna": "Indira Xavier",
     "cargo_disputado": "Governador",
     "estado": "MG",
@@ -3399,7 +3512,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2022": "130001693598",
-        "2024": "130001975891"
+        "2024": "130001975891",
+        "2026": "130002547874"
       }
     }
   },
@@ -3466,14 +3580,16 @@
   },
   {
     "slug": "huggo-leonardo",
-    "nome_completo": "Huggo Leonardo",
+    "nome_completo": "Huggo Leonardo de Lima Anastacio",
     "nome_urna": "Huggo Leonardo",
     "cargo_disputado": "Governador",
     "estado": "CE",
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2026": "60002540417"
+      }
     }
   },
   {
@@ -3515,7 +3631,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2020": "60001133056",
-        "2022": "60001608950"
+        "2022": "60001608950",
+        "2026": "60002549967"
       }
     }
   },
@@ -3536,7 +3653,7 @@
   },
   {
     "slug": "andre-luis",
-    "nome_completo": "André Luís",
+    "nome_completo": "André Luís Caetano dos Santos",
     "nome_urna": "André Luís",
     "cargo_disputado": "Governador",
     "estado": "MA",
@@ -3548,19 +3665,21 @@
   },
   {
     "slug": "renan-hallais",
-    "nome_completo": "Renan Hallais",
+    "nome_completo": "Renan Lucio Sant Anna Hallais",
     "nome_urna": "Renan Hallais",
     "cargo_disputado": "Governador",
     "estado": "PE",
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2026": "170002540337"
+      }
     }
   },
   {
     "slug": "camila-falcao",
-    "nome_completo": "Camila Falcão",
+    "nome_completo": "Maria Camila da Silva Falcão",
     "nome_urna": "Camila Falcão",
     "cargo_disputado": "Governador",
     "estado": "PE",
@@ -3584,7 +3703,7 @@
   },
   {
     "slug": "renato-gomes",
-    "nome_completo": "Renato da Silveira Gomes",
+    "nome_completo": "Renato Wanderley Gomes",
     "nome_urna": "Renato Gomes",
     "cargo_disputado": "Governador",
     "estado": "MS",
@@ -3596,7 +3715,7 @@
   },
   {
     "slug": "jeferson-bezerra",
-    "nome_completo": "Jeferson Bezerra",
+    "nome_completo": "Jeferson Jose Bezerra",
     "nome_urna": "Jeferson Bezerra",
     "cargo_disputado": "Governador",
     "estado": "MS",
@@ -3607,7 +3726,8 @@
         "2016": "120000001730",
         "2020": "120000850578",
         "2022": "120001611531",
-        "2024": "120002315556"
+        "2024": "120002315556",
+        "2026": "120002550198"
       }
     }
   },
@@ -3650,7 +3770,8 @@
       "tse_sq_candidato": {
         "2020": "260000657536",
         "2022": "260001600206",
-        "2024": "260001926363"
+        "2024": "260001926363",
+        "2026": "260002549466"
       }
     }
   },
@@ -3666,13 +3787,14 @@
       "tse_sq_candidato": {
         "2006": "10106",
         "2010": "260000000243",
-        "2014": "260000000285"
+        "2014": "260000000285",
+        "2026": "260002551712"
       }
     }
   },
   {
     "slug": "dr-helton-monteiro",
-    "nome_completo": "Dr. Helton Monteiro",
+    "nome_completo": "José Helton Silva Monteiro",
     "nome_urna": "Dr. Helton Monteiro",
     "cargo_disputado": "Governador",
     "estado": "SE",
@@ -3719,20 +3841,23 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
-        "2022": "10001649411"
+        "2022": "10001649411",
+        "2026": "10002550719"
       }
     }
   },
   {
     "slug": "eudo-raffael",
-    "nome_completo": "Eudo Raffael",
+    "nome_completo": "Eudo Raffael Lima da Silva",
     "nome_urna": "Eudo Raffael",
     "cargo_disputado": "Governador",
     "estado": "AC",
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2026": "10002549500"
+      }
     }
   },
   {
@@ -3750,7 +3875,8 @@
         "2016": "200000010691",
         "2018": "200000601427",
         "2020": "200000981908",
-        "2024": "200002231543"
+        "2024": "200002231543",
+        "2026": "200002546757"
       }
     }
   },
@@ -3768,7 +3894,8 @@
         "2014": "200000000011",
         "2016": "200000011476",
         "2018": "200000611619",
-        "2022": "200001652247"
+        "2022": "200001652247",
+        "2026": "200002542481"
       }
     }
   },
@@ -3827,13 +3954,14 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
-        "2022": "250001700018"
+        "2022": "250001700018",
+        "2026": "250002553062"
       }
     }
   },
   {
     "slug": "patrus-ananias",
-    "nome_completo": "Patrus Ananias de Souza",
+    "nome_completo": "Patrus Ananias de Sousa",
     "nome_urna": "Patrus Ananias",
     "cargo_disputado": "Governador",
     "estado": "MG",
@@ -3843,7 +3971,8 @@
       "tse_sq_candidato": {
         "2014": "130000000890",
         "2018": "130000626967",
-        "2022": "130001607244"
+        "2022": "130001607244",
+        "2026": "130002550464"
       }
     }
   },
@@ -3873,7 +4002,8 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
-        "2014": "240000000204"
+        "2014": "240000000204",
+        "2026": "240002541913"
       }
     }
   },
@@ -3917,7 +4047,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2022": "20001653097",
-        "2024": "20002309911"
+        "2024": "20002309911",
+        "2026": "20002539642"
       }
     }
   },
@@ -3930,7 +4061,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2026": "50002544692"
+      }
     }
   },
   {
@@ -3972,7 +4105,8 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
-        "2022": "90001649536"
+        "2022": "90001649536",
+        "2026": "90002545476"
       }
     },
     "wikipedia_title": "Luis_Cesar_Bueno"
@@ -4021,38 +4155,44 @@
   },
   {
     "slug": "elisson-ferreira",
-    "nome_completo": "Elisson Ferreira",
+    "nome_completo": "Elisson Ferreira Freire",
     "nome_urna": "Elisson Ferreira",
     "cargo_disputado": "Governador",
     "estado": "DF",
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2026": "70002551298"
+      }
     }
   },
   {
     "slug": "yuri-ezequiel",
-    "nome_completo": "Yuri Ezequiel",
+    "nome_completo": "Yuri Ezequiel de Lima Silva",
     "nome_urna": "Yuri Ezequiel",
     "cargo_disputado": "Governador",
     "estado": "PB",
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2026": "150002540204"
+      }
     }
   },
   {
     "slug": "carlos-machado",
-    "nome_completo": "Carlos Machado",
+    "nome_completo": "Carlos Alberto Machado",
     "nome_urna": "Carlos Machado",
     "cargo_disputado": "Governador",
     "estado": "SP",
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2026": "250002550913"
+      }
     }
   },
   {
@@ -4668,7 +4808,7 @@
     "slug": "leonardo-avalanche",
     "nome_completo": "Leonardo Alves de Araújo",
     "nome_urna": "Leonardo Avalanche",
-    "cargo_disputado": "Vice-Presidente",
+    "cargo_disputado": "Presidente",
     "ids": {
       "camara": null,
       "senado": null,
@@ -4677,7 +4817,7 @@
         "2008": "13788",
         "2016": "90000024503",
         "2018": "90000628107",
-        "2026": "280002553883"
+        "2026": "280002554479"
       },
       "tse_uf_candidatura": {
         "2006": "GO",
@@ -5007,7 +5147,7 @@
     "cargo_disputado": "Senador",
     "estado": "MA",
     "ids": {
-      "camara": null,
+      "camara": 167493,
       "senado": 5411,
       "tse_sq_candidato": {
         "2026": "100002537338"
@@ -5035,7 +5175,7 @@
     "cargo_disputado": "Senador",
     "estado": "MA",
     "ids": {
-      "camara": null,
+      "camara": 178883,
       "senado": 5718,
       "tse_sq_candidato": {
         "2026": "100002541459"
@@ -5049,7 +5189,7 @@
     "cargo_disputado": "Senador",
     "estado": "MA",
     "ids": {
-      "camara": null,
+      "camara": 178882,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "100002542867"
@@ -5077,7 +5217,7 @@
     "cargo_disputado": "Senador",
     "estado": "MA",
     "ids": {
-      "camara": null,
+      "camara": 73806,
       "senado": 3359,
       "tse_sq_candidato": {
         "2026": "100002549583"
@@ -5105,7 +5245,7 @@
     "cargo_disputado": "Senador",
     "estado": "MA",
     "ids": {
-      "camara": null,
+      "camara": 168175,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "100002553336"
@@ -5119,7 +5259,7 @@
     "cargo_disputado": "Senador",
     "estado": "AC",
     "ids": {
-      "camara": null,
+      "camara": 204471,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "10002533895"
@@ -5133,7 +5273,7 @@
     "cargo_disputado": "Senador",
     "estado": "AC",
     "ids": {
-      "camara": null,
+      "camara": 141541,
       "senado": 4560,
       "tse_sq_candidato": {
         "2026": "10002535804"
@@ -5189,7 +5329,7 @@
     "cargo_disputado": "Senador",
     "estado": "AC",
     "ids": {
-      "camara": null,
+      "camara": 220589,
       "senado": 5902,
       "tse_sq_candidato": {
         "2026": "10002544274"
@@ -5203,7 +5343,7 @@
     "cargo_disputado": "Senador",
     "estado": "AC",
     "ids": {
-      "camara": null,
+      "camara": 141446,
       "senado": 4558,
       "tse_sq_candidato": {
         "2026": "10002548046"
@@ -5217,7 +5357,7 @@
     "cargo_disputado": "Senador",
     "estado": "AC",
     "ids": {
-      "camara": null,
+      "camara": 74363,
       "senado": 285,
       "tse_sq_candidato": {
         "2026": "10002548050"
@@ -5315,7 +5455,7 @@
     "cargo_disputado": "Senador",
     "estado": "MT",
     "ids": {
-      "camara": null,
+      "camara": 204472,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "110002552693"
@@ -5371,7 +5511,7 @@
     "cargo_disputado": "Senador",
     "estado": "MS",
     "ids": {
-      "camara": null,
+      "camara": 160615,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "120002535764"
@@ -5413,7 +5553,7 @@
     "cargo_disputado": "Senador",
     "estado": "MS",
     "ids": {
-      "camara": null,
+      "camara": 74376,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "120002547435"
@@ -5525,7 +5665,7 @@
     "cargo_disputado": "Senador",
     "estado": "MG",
     "ids": {
-      "camara": null,
+      "camara": 146788,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "130002548381"
@@ -5539,7 +5679,7 @@
     "cargo_disputado": "Senador",
     "estado": "MG",
     "ids": {
-      "camara": null,
+      "camara": 204509,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "130002550557"
@@ -5595,7 +5735,7 @@
     "cargo_disputado": "Senador",
     "estado": "MG",
     "ids": {
-      "camara": null,
+      "camara": 160758,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "130002551786"
@@ -5693,7 +5833,7 @@
     "cargo_disputado": "Senador",
     "estado": "PA",
     "ids": {
-      "camara": null,
+      "camara": 204496,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "140002538404"
@@ -5707,7 +5847,7 @@
     "cargo_disputado": "Senador",
     "estado": "PA",
     "ids": {
-      "camara": null,
+      "camara": 73933,
       "senado": 3806,
       "tse_sq_candidato": {
         "2026": "140002542691"
@@ -5889,7 +6029,7 @@
     "cargo_disputado": "Senador",
     "estado": "PB",
     "ids": {
-      "camara": null,
+      "camara": 178913,
       "senado": 5748,
       "tse_sq_candidato": {
         "2026": "150002544905"
@@ -5917,7 +6057,7 @@
     "cargo_disputado": "Senador",
     "estado": "PB",
     "ids": {
-      "camara": null,
+      "camara": 149327,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "150002548968"
@@ -5987,7 +6127,7 @@
     "cargo_disputado": "Senador",
     "estado": "PR",
     "ids": {
-      "camara": null,
+      "camara": 107283,
       "senado": 5006,
       "tse_sq_candidato": {
         "2026": "160002547656"
@@ -6001,7 +6141,7 @@
     "cargo_disputado": "Senador",
     "estado": "PR",
     "ids": {
-      "camara": null,
+      "camara": 73459,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "160002547658"
@@ -6015,7 +6155,7 @@
     "cargo_disputado": "Senador",
     "estado": "PR",
     "ids": {
-      "camara": null,
+      "camara": 204411,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "160002547660"
@@ -6029,7 +6169,7 @@
     "cargo_disputado": "Senador",
     "estado": "PR",
     "ids": {
-      "camara": null,
+      "camara": 220705,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "160002547661"
@@ -6155,7 +6295,7 @@
     "cargo_disputado": "Senador",
     "estado": "PE",
     "ids": {
-      "camara": null,
+      "camara": 74428,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "170002539456"
@@ -6183,7 +6323,7 @@
     "cargo_disputado": "Senador",
     "estado": "PE",
     "ids": {
-      "camara": null,
+      "camara": 204428,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "170002547771"
@@ -6197,7 +6337,7 @@
     "cargo_disputado": "Senador",
     "estado": "PE",
     "ids": {
-      "camara": null,
+      "camara": 74420,
       "senado": 5008,
       "tse_sq_candidato": {
         "2026": "170002547773"
@@ -6211,7 +6351,7 @@
     "cargo_disputado": "Senador",
     "estado": "PE",
     "ids": {
-      "camara": null,
+      "camara": 74047,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "170002549655"
@@ -6225,7 +6365,7 @@
     "cargo_disputado": "Senador",
     "estado": "PE",
     "ids": {
-      "camara": null,
+      "camara": 157130,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "170002552097"
@@ -6239,7 +6379,7 @@
     "cargo_disputado": "Senador",
     "estado": "PE",
     "ids": {
-      "camara": null,
+      "camara": 141421,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "170002552102"
@@ -6267,7 +6407,7 @@
     "cargo_disputado": "Senador",
     "estado": "PI",
     "ids": {
-      "camara": null,
+      "camara": 74317,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "180002533964"
@@ -6281,7 +6421,7 @@
     "cargo_disputado": "Senador",
     "estado": "PI",
     "ids": {
-      "camara": null,
+      "camara": 74460,
       "senado": 742,
       "tse_sq_candidato": {
         "2026": "180002533967"
@@ -6309,7 +6449,7 @@
     "cargo_disputado": "Senador",
     "estado": "PI",
     "ids": {
-      "camara": null,
+      "camara": 74313,
       "senado": 739,
       "tse_sq_candidato": {
         "2026": "180002540446"
@@ -6561,7 +6701,7 @@
     "cargo_disputado": "Senador",
     "estado": "RJ",
     "ids": {
-      "camara": null,
+      "camara": 204460,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "190002542888"
@@ -6603,7 +6743,7 @@
     "cargo_disputado": "Senador",
     "estado": "RJ",
     "ids": {
-      "camara": null,
+      "camara": 73701,
       "senado": 7,
       "tse_sq_candidato": {
         "2026": "190002548141"
@@ -6617,7 +6757,7 @@
     "cargo_disputado": "Senador",
     "estado": "RJ",
     "ids": {
-      "camara": null,
+      "camara": 122158,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "190002548145"
@@ -6673,7 +6813,7 @@
     "cargo_disputado": "Senador",
     "estado": "RJ",
     "ids": {
-      "camara": null,
+      "camara": 220599,
       "senado": 3366,
       "tse_sq_candidato": {
         "2026": "190002550184"
@@ -6757,7 +6897,7 @@
     "cargo_disputado": "Senador",
     "estado": "RN",
     "ids": {
-      "camara": null,
+      "camara": 178951,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "200002533843"
@@ -6799,7 +6939,7 @@
     "cargo_disputado": "Senador",
     "estado": "RN",
     "ids": {
-      "camara": null,
+      "camara": 178949,
       "senado": 5783,
       "tse_sq_candidato": {
         "2026": "200002535507"
@@ -6967,7 +7107,7 @@
     "cargo_disputado": "Senador",
     "estado": "AL",
     "ids": {
-      "camara": null,
+      "camara": 160541,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "20002553272"
@@ -7009,7 +7149,7 @@
     "cargo_disputado": "Senador",
     "estado": "AL",
     "ids": {
-      "camara": null,
+      "camara": 139346,
       "senado": 70,
       "tse_sq_candidato": {
         "2026": "20002553727"
@@ -7051,7 +7191,7 @@
     "cargo_disputado": "Senador",
     "estado": "RS",
     "ids": {
-      "camara": null,
+      "camara": 141492,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "210002533581"
@@ -7065,7 +7205,7 @@
     "cargo_disputado": "Senador",
     "estado": "RS",
     "ids": {
-      "camara": null,
+      "camara": 74400,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "210002533584"
@@ -7107,7 +7247,7 @@
     "cargo_disputado": "Senador",
     "estado": "RS",
     "ids": {
-      "camara": null,
+      "camara": 73897,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "210002543863"
@@ -7163,7 +7303,7 @@
     "cargo_disputado": "Senador",
     "estado": "RS",
     "ids": {
-      "camara": null,
+      "camara": 204416,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "210002547816"
@@ -7177,7 +7317,7 @@
     "cargo_disputado": "Senador",
     "estado": "RS",
     "ids": {
-      "camara": null,
+      "camara": 156190,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "210002547819"
@@ -7261,7 +7401,7 @@
     "cargo_disputado": "Senador",
     "estado": "RO",
     "ids": {
-      "camara": null,
+      "camara": 204360,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "220002547309"
@@ -7275,7 +7415,7 @@
     "cargo_disputado": "Senador",
     "estado": "RO",
     "ids": {
-      "camara": null,
+      "camara": 178956,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "220002547310"
@@ -7345,7 +7485,7 @@
     "cargo_disputado": "Senador",
     "estado": "RR",
     "ids": {
-      "camara": null,
+      "camara": 204479,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "230002534804"
@@ -7415,7 +7555,7 @@
     "cargo_disputado": "Senador",
     "estado": "RR",
     "ids": {
-      "camara": null,
+      "camara": 220537,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "230002549845"
@@ -7443,7 +7583,7 @@
     "cargo_disputado": "Senador",
     "estado": "RR",
     "ids": {
-      "camara": null,
+      "camara": 73981,
       "senado": 470,
       "tse_sq_candidato": {
         "2026": "230002550794"
@@ -7485,7 +7625,7 @@
     "cargo_disputado": "Senador",
     "estado": "RR",
     "ids": {
-      "camara": null,
+      "camara": 141496,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "230002553636"
@@ -7555,7 +7695,7 @@
     "cargo_disputado": "Senador",
     "estado": "SC",
     "ids": {
-      "camara": null,
+      "camara": 204369,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "240002541931"
@@ -7611,7 +7751,7 @@
     "cargo_disputado": "Senador",
     "estado": "SC",
     "ids": {
-      "camara": null,
+      "camara": 160649,
       "senado": 22,
       "tse_sq_candidato": {
         "2026": "240002548632"
@@ -7667,7 +7807,7 @@
     "cargo_disputado": "Senador",
     "estado": "SP",
     "ids": {
-      "camara": null,
+      "camara": 220633,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "250002532794"
@@ -7751,7 +7891,7 @@
     "cargo_disputado": "Senador",
     "estado": "SP",
     "ids": {
-      "camara": null,
+      "camara": 220637,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "250002551501"
@@ -7877,7 +8017,7 @@
     "cargo_disputado": "Senador",
     "estado": "SE",
     "ids": {
-      "camara": null,
+      "camara": 141468,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "260002545677"
@@ -7891,7 +8031,7 @@
     "cargo_disputado": "Senador",
     "estado": "SE",
     "ids": {
-      "camara": null,
+      "camara": 160568,
       "senado": 5352,
       "tse_sq_candidato": {
         "2026": "260002547285"
@@ -7905,7 +8045,7 @@
     "cargo_disputado": "Senador",
     "estado": "SE",
     "ids": {
-      "camara": null,
+      "camara": 160543,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "260002547290"
@@ -7919,7 +8059,7 @@
     "cargo_disputado": "Senador",
     "estado": "SE",
     "ids": {
-      "camara": null,
+      "camara": 141420,
       "senado": 4721,
       "tse_sq_candidato": {
         "2026": "260002549127"
@@ -7947,7 +8087,7 @@
     "cargo_disputado": "Senador",
     "estado": "SE",
     "ids": {
-      "camara": null,
+      "camara": 165470,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "260002551362"
@@ -8017,7 +8157,7 @@
     "cargo_disputado": "Senador",
     "estado": "TO",
     "ids": {
-      "camara": null,
+      "camara": 74192,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "270002544629"
@@ -8031,7 +8171,7 @@
     "cargo_disputado": "Senador",
     "estado": "TO",
     "ids": {
-      "camara": null,
+      "camara": 73948,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "270002546038"
@@ -8059,7 +8199,7 @@
     "cargo_disputado": "Senador",
     "estado": "TO",
     "ids": {
-      "camara": null,
+      "camara": 73945,
       "senado": 3777,
       "tse_sq_candidato": {
         "2026": "270002546333"
@@ -8073,7 +8213,7 @@
     "cargo_disputado": "Senador",
     "estado": "TO",
     "ids": {
-      "camara": null,
+      "camara": 178993,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "270002548231"
@@ -8087,7 +8227,7 @@
     "cargo_disputado": "Senador",
     "estado": "TO",
     "ids": {
-      "camara": null,
+      "camara": 220542,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "270002548344"
@@ -8101,7 +8241,7 @@
     "cargo_disputado": "Senador",
     "estado": "TO",
     "ids": {
-      "camara": null,
+      "camara": 204364,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "270002548409"
@@ -8213,7 +8353,7 @@
     "cargo_disputado": "Senador",
     "estado": "AP",
     "ids": {
-      "camara": null,
+      "camara": 204379,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "30002549911"
@@ -8311,7 +8451,7 @@
     "cargo_disputado": "Senador",
     "estado": "AM",
     "ids": {
-      "camara": null,
+      "camara": 172711,
       "senado": 5502,
       "tse_sq_candidato": {
         "2026": "40002537344"
@@ -8339,7 +8479,7 @@
     "cargo_disputado": "Senador",
     "estado": "AM",
     "ids": {
-      "camara": null,
+      "camara": 204572,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "40002542686"
@@ -8437,7 +8577,7 @@
     "cargo_disputado": "Senador",
     "estado": "BA",
     "ids": {
-      "camara": null,
+      "camara": 74548,
       "senado": 581,
       "tse_sq_candidato": {
         "2026": "50002536317"
@@ -8451,7 +8591,7 @@
     "cargo_disputado": "Senador",
     "estado": "BA",
     "ids": {
-      "camara": null,
+      "camara": 104254,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "50002536321"
@@ -8563,7 +8703,7 @@
     "cargo_disputado": "Senador",
     "estado": "CE",
     "ids": {
-      "camara": null,
+      "camara": 178866,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "60002542476"
@@ -8689,7 +8829,7 @@
     "cargo_disputado": "Senador",
     "estado": "DF",
     "ids": {
-      "camara": null,
+      "camara": 160575,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "70002552490"
@@ -8731,7 +8871,7 @@
     "cargo_disputado": "Senador",
     "estado": "DF",
     "ids": {
-      "camara": null,
+      "camara": 204374,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "70002552934"
@@ -8759,7 +8899,7 @@
     "cargo_disputado": "Senador",
     "estado": "DF",
     "ids": {
-      "camara": null,
+      "camara": 160637,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "70002553751"
@@ -8843,7 +8983,7 @@
     "cargo_disputado": "Senador",
     "estado": "ES",
     "ids": {
-      "camara": null,
+      "camara": 73507,
       "senado": 2331,
       "tse_sq_candidato": {
         "2026": "80002551368"
@@ -8857,7 +8997,7 @@
     "cargo_disputado": "Senador",
     "estado": "ES",
     "ids": {
-      "camara": null,
+      "camara": 74166,
       "senado": 3868,
       "tse_sq_candidato": {
         "2026": "80002551370"
@@ -8899,7 +9039,7 @@
     "cargo_disputado": "Senador",
     "estado": "ES",
     "ids": {
-      "camara": null,
+      "camara": 178871,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "80002553265"
@@ -8983,7 +9123,7 @@
     "cargo_disputado": "Senador",
     "estado": "GO",
     "ids": {
-      "camara": null,
+      "camara": 220568,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "90002543556"
@@ -9039,7 +9179,7 @@
     "cargo_disputado": "Senador",
     "estado": "GO",
     "ids": {
-      "camara": null,
+      "camara": 204412,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "90002546974"

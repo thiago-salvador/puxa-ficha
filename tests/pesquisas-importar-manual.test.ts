@@ -4,12 +4,13 @@ import { createRequire } from "node:module"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import { describe, it } from "node:test"
-import { carregarCatalogos, importarRodadas, type RodadaColetada } from "../scripts/pesquisas-importar-manual"
+import { baseCenarioSenado, carregarCatalogos, importarRodadas, registrarAusenciasSenado, type RodadaColetada } from "../scripts/pesquisas-importar-manual"
 
 const require = createRequire(import.meta.url)
 const serverOnlyPath = require.resolve("server-only")
 require.cache[serverOnlyPath] = { id: serverOnlyPath, filename: serverOnlyPath, loaded: true, exports: {} } as never
 const { parsePesquisasEleitoraisJson } = require("../src/lib/pesquisas-eleitorais") as typeof import("@/lib/pesquisas-eleitorais")
+const { parseSenadoPesquisasJson, selecionarSenadoPolls } = require("../src/lib/senado-polls") as typeof import("@/lib/senado-polls")
 
 const dir = mkdtempSync(join(tmpdir(), "pesquisas-importar-"))
 const capture = join(dir, "captura.txt")
@@ -73,6 +74,92 @@ describe("importação manual auditada de pesquisas", () => {
     assert.ok(semNota.problems.some((problem) => problem.includes("nota distinta")))
     const comNota = importarRodadas([rodada({ scenarios: [{ ...base, note: "com Fulano" }, { ...base, note: "sem Fulano" }] })], aliases, "2026-09-24T12:00:00Z", carregarCatalogos())
     assert.deepEqual(comNota.problems, [])
+  })
+
+  it("importa Senado por medida, com alias escopado e sem cenário espontâneo", () => {
+    const sen = rodada({
+      cargo: "Senador", uf: "SP", registration: "SP-99999/2026", population: "eleitores de SP",
+      scenarios: [
+        { kind: "estimulado", measure: "primeiro-voto", question: null, results: [{ raw_label: "Simone Tebet", value_percent: 30 }, { raw_label: "Nenhum", value_percent: 20 }] },
+        { kind: "estimulado", measure: "agregado", base: "total_amostra", question: null, results: [{ raw_label: "Simone Tebet", value_percent: 90 }, { raw_label: "Salles", value_percent: 80 }] },
+        { kind: "espontaneo", question: null, results: [{ raw_label: "Não sabe", value_percent: 70 }] },
+      ],
+    })
+    const decisoes = { "SEN-SP": { "Simone Tebet": "tse-2026-250002551502", "Salles": "tse-2026-250002532794", "Nenhum": null } }
+    const { problems, catalogos } = importarRodadas([sen], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
+    assert.deepEqual(problems, [])
+    const entry = (catalogos.sen.datasets as { uf: string; state: string; dataset: unknown }[]).find((item) => item.uf === "SP")!
+    assert.equal(entry.state, "com_pesquisa_publicada")
+    const catalogo = parseSenadoPesquisasJson(JSON.stringify(entry.dataset), JSON.stringify(catalogos.sen.source_catalog), "SP")
+    const poll = catalogo.pesquisas.find((item) => item.registration.code.value === "SP-99999/2026")!
+    assert.equal(poll.id, "instituto-exemplo-sp-99999-2026-senado")
+    assert.deepEqual(poll.cenarios.map((cenario) => cenario.comparabilityKey.split("|")[4]), ["primeiro-voto", "agregado"])
+    assert.deepEqual(poll.cenarios.map((cenario) => cenario.comparabilityKey.split("|")[6]), ["total_amostra", "total_amostra"])
+    assert.match(poll.cenarios[0].labelRaw, /Senado, primeiro voto/)
+    assert.match(poll.cenarios[1].labelRaw, /total de entrevistados \(a soma dos dois votos passa de 100%\)/)
+    const visiveis = selecionarSenadoPolls(catalogo, "SP").filter((item) => item.registration.code.value === "SP-99999/2026")
+    assert.equal(visiveis.length, 2, "rodada revisada aparece sem preferência permanente do instituto")
+    // Governor aliases for SP are not used for the Senate scope.
+    const semEscopo = importarRodadas([sen], { SP: decisoes["SEN-SP"] }, "2026-09-25T12:00:00Z", carregarCatalogos())
+    assert.ok(semEscopo.problems.some((problem) => problem.includes("escopo SEN-SP")))
+  })
+
+  it("Senado exige medida, base declarada no agregado e registro; soma só confere a base", () => {
+    const base = rodada({ cargo: "Senador", uf: "SP", registration: "SP-99998/2026" })
+    const decisoes = { "SEN-SP": { "Lula": null, "Flávio Bolsonaro": null, "Brancos e nulos": null, "Não sabem": null } }
+    const semMedida = importarRodadas([base], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
+    assert.ok(semMedida.problems.some((problem) => problem.includes("sem medida")))
+    const comMedida = base.scenarios.map((scenario) => ({ ...scenario, measure: "primeiro-voto" as const }))
+    const semRegistro = importarRodadas([{ ...base, registration: null, scenarios: comMedida }], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
+    assert.ok(semRegistro.problems.some((problem) => problem.includes("Senado exige registration")))
+    const semMetodo = importarRodadas([{ ...base, method: null, population: null, scenarios: comMedida }], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
+    assert.deepEqual(semMetodo.problems, [], "método e população não publicados ficam nulos, como em Governador")
+    const alto = [{ raw_label: "Lula", value_percent: 90 }, { raw_label: "Flávio Bolsonaro", value_percent: 80 }]
+    const primeiro = importarRodadas([{ ...base, scenarios: [{ kind: "estimulado", measure: "primeiro-voto", question: null, results: alto }] }], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
+    assert.ok(primeiro.problems.some((problem) => problem.includes("soma 170.0%")))
+    const semBase = importarRodadas([{ ...base, scenarios: [{ kind: "estimulado", measure: "agregado", question: null, results: alto }] }], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
+    assert.ok(semBase.problems.some((problem) => problem.includes("sem base declarada")), "a base nunca é inferida pela soma")
+    const agregado = importarRodadas([{ ...base, scenarios: [{ kind: "estimulado", measure: "agregado", base: "total_amostra", question: null, results: alto }] }], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
+    assert.deepEqual(agregado.problems, [])
+    const cem = [{ raw_label: "Lula", value_percent: 60 }, { raw_label: "Flávio Bolsonaro", value_percent: 38 }]
+    const amostraBaixa = importarRodadas([{ ...base, scenarios: [{ kind: "estimulado", measure: "agregado", base: "total_amostra", question: null, results: cem }] }], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
+    assert.ok(amostraBaixa.problems.some((problem) => problem.includes("incompatível com a base declarada")), "soma de dois votos sobre entrevistados abaixo de 130% é rejeitada")
+    const mencoesAlta = importarRodadas([{ ...base, scenarios: [{ kind: "estimulado", measure: "agregado", base: "total_mencoes", question: null, results: alto }] }], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
+    assert.ok(mencoesAlta.problems.some((problem) => problem.includes("incompatível com a base declarada")), "menções acima de 102% são rejeitadas")
+    const mencoesPrimeiro = importarRodadas([{ ...base, scenarios: [{ kind: "estimulado", measure: "primeiro-voto", base: "total_mencoes", question: null, results: cem }] }], decisoes, "2026-09-25T12:00:00Z", carregarCatalogos())
+    assert.ok(mencoesPrimeiro.problems.some((problem) => problem.includes("só existe na soma")))
+    const presidenteEmUf = importarRodadas([rodada({ cargo: "Presidente", uf: "SP", registration: "SP-99997/2026" })], { SP: aliases.BR }, "2026-09-25T12:00:00Z", carregarCatalogos())
+    assert.ok(presidenteEmUf.problems.some((problem) => problem.includes("incompatível")))
+  })
+
+  it("consolidado declarado como reduzido a 100% vira base de menções, nunca de entrevistados", () => {
+    const reduzido = { kind: "estimulado" as const, measure: "agregado" as const, base: "total_mencoes" as const, question: null, results: [{ raw_label: "Simone Tebet", value_percent: 60 }, { raw_label: "Salles", value_percent: 40 }] }
+    assert.equal(baseCenarioSenado(reduzido), "total_mencoes")
+    assert.equal(baseCenarioSenado({ ...reduzido, base: undefined, measure: "primeiro-voto" }), "total_amostra")
+    const sen = rodada({ cargo: "Senador", uf: "SP", registration: "SP-99996/2026", scenarios: [reduzido] })
+    const { problems, catalogos } = importarRodadas([sen], { "SEN-SP": { "Simone Tebet": "tse-2026-250002551502", "Salles": "tse-2026-250002532794" } }, "2026-09-25T12:00:00Z", carregarCatalogos())
+    assert.deepEqual(problems, [])
+    const entry = (catalogos.sen.datasets as { uf: string; dataset: unknown }[]).find((item) => item.uf === "SP")!
+    const cenario = parseSenadoPesquisasJson(JSON.stringify(entry.dataset), JSON.stringify(catalogos.sen.source_catalog), "SP")
+      .pesquisas.find((item) => item.registration.code.value === "SP-99996/2026")!.cenarios[0]
+    assert.equal(cenario.comparabilityKey.split("|")[6], "total_mencoes")
+    assert.match(cenario.labelRaw, /reduzidos a 100%; percentuais do total de menções$/)
+  })
+
+  it("registra ausência checada e datada só em UF de Senado sem rodada", () => {
+    const catalogos = carregarCatalogos()
+    const datasets = catalogos.sen.datasets as { uf: string; dataset: { pesquisas: unknown[] } }[]
+    assert.ok(registrarAusenciasSenado([{ uf: "SP", cargo: "Senador", checked_at: "2026-09-25" }], catalogos).problems
+      .some((problem) => problem.includes("ausência declarada em UF com pesquisa importada")))
+    // In-memory copy only: empty one UF to exercise the absence path.
+    datasets.find((item) => item.uf === "AC")!.dataset.pesquisas = []
+    const { problems, recorded } = registrarAusenciasSenado([{ uf: "AC", cargo: "Senador", checked_at: "2026-09-25" }], catalogos)
+    assert.deepEqual(problems, [])
+    assert.deepEqual(recorded, ["AC (2026-09-25)"])
+    const entry = (catalogos.sen.datasets as { uf: string; reason: string; checked_at?: string }[]).find((item) => item.uf === "AC")!
+    assert.equal(entry.checked_at, "2026-09-25")
+    assert.match(entry.reason, /^Checagem de 25\/09\/2026/)
+    assert.ok(registrarAusenciasSenado([{ uf: "AC", cargo: "Senador", checked_at: "25/09" }], catalogos).problems.length === 1)
   })
 
   it("não duplica rodada já catalogada pelo mesmo registro", () => {

@@ -66,11 +66,95 @@ export const GASTOS_PARLAMENTARES_EM_REVISAO = [
   ["wilder-morais", 2026, 8817448],
 ] as const
 
+/**
+ * Varredura de 25/09/2026 sobre todas as linhas vivas de fichas públicas:
+ * total fora da tolerância da fonte oficial (1% ou R$ 50, contra a API por
+ * deputado com as legislaturas do ano somadas ou o CSV anual da Câmara), sem
+ * lançamentos na fonte, ou sem id oficial que confira por nome e nascimento.
+ * Recibo: QA/evidencias/2026-09-25-gastos-quarentena-universo/preflight.json.
+ * Mesmas linhas da migration 20260925221042.
+ */
+export const GASTOS_PARLAMENTARES_EM_REVISAO_UNIVERSO = [
+  ["aecio-neves", 2023, 45384528],
+  ["daniel-vilela", 2019, 2695],
+  ["delegado-eder-mauro", 2023, 55774496],
+  ["delegado-eder-mauro", 2026, 25814433],
+  ["dr-daniel", 2023, 19056361],
+  ["dr-daniel", 2024, 15051155],
+  ["dr-daniel", 2025, 1896961],
+  ["dr-fernando-maximo", 2023, 57552541],
+  ["dr-fernando-maximo", 2024, 57693920],
+  ["dr-fernando-maximo", 2025, 58199399],
+  ["expedito-netto", 2023, 42502],
+  ["guilherme-derrite", 2026, 23078191],
+  ["helder-salomao", 2023, 29787708],
+  ["helder-salomao", 2026, 24870957],
+  ["joao-rodrigues", 2019, 17447],
+  ["joao-roma", 2023, 2222216],
+  ["jorginho-mello", 2023, 675320],
+  ["luciano-zucco", 2023, 26353307],
+  ["luciano-zucco", 2024, 41309307],
+  ["luciano-zucco", 2025, 48152928],
+  ["luciano-zucco", 2026, 12341759],
+  ["patrus-ananias", 2025, 49618645],
+  ["patrus-ananias", 2026, 26954948],
+  ["ronaldo-caiado", 2009, 16958688],
+  ["ronaldo-caiado", 2010, 19231125],
+  ["ronaldo-caiado", 2011, 25735925],
+  ["ronaldo-caiado", 2012, 23453967],
+  ["ronaldo-caiado", 2013, 30832583],
+  ["ronaldo-caiado", 2014, 31204870],
+  ["sandro-alex", 2023, 11324870],
+  ["tse-2026-10002533895", 2023, 4366512],
+  ["tse-2026-10002548050", 2015, 698850],
+  ["tse-2026-120002547435", 2026, 36912771],
+  ["tse-2026-130002551786", 2026, 32288433],
+  ["tse-2026-140002538404", 2023, 25035365],
+  ["tse-2026-140002538404", 2026, 34268750],
+  ["tse-2026-160002547660", 2023, 52656478],
+  ["tse-2026-160002547660", 2026, 28697827],
+  ["tse-2026-170002539456", 2019, 3608381],
+  ["tse-2026-170002539456", 2026, 31722775],
+  ["tse-2026-170002552097", 2023, 39003696],
+  ["tse-2026-170002552097", 2026, 39480353],
+  ["tse-2026-170002552102", 2026, 40603213],
+  ["tse-2026-180002533964", 2026, 23975343],
+  ["tse-2026-190002542888", 2023, 46292934],
+  ["tse-2026-190002542888", 2026, 34046324],
+  ["tse-2026-20002553272", 2025, 37765099],
+  ["tse-2026-20002553272", 2026, 18330574],
+  ["tse-2026-210002547816", 2026, 37187206],
+  ["tse-2026-210002547819", 2023, 24214050],
+  ["tse-2026-210002547819", 2026, 21924871],
+  ["tse-2026-230002534804", 2023, 56553183],
+  ["tse-2026-230002534804", 2026, 35281839],
+  ["tse-2026-250002532794", 2026, 33981133],
+  ["tse-2026-250002551501", 2026, 16634512],
+  ["tse-2026-260002551362", 2026, 23995076],
+  ["tse-2026-270002548344", 2026, 38012961],
+  ["tse-2026-270002548409", 2023, 46912686],
+  ["tse-2026-30002549911", 2025, 56635933],
+  ["tse-2026-30002549911", 2026, 36407631],
+  ["tse-2026-40002542686", 2023, 40363516],
+  ["tse-2026-40002542686", 2026, 26675670],
+  ["tse-2026-70002552934", 2023, 35511203],
+  ["tse-2026-70002553751", 2019, 2050000],
+  ["tse-2026-80002553265", 2026, 35977935],
+  ["tse-2026-90002546974", 2023, 37440648],
+  ["vicentinho-junior", 2023, 49506764],
+  ["vicentinho-junior", 2025, 23701701],
+] as const
+
+const TODOS_EM_REVISAO: readonly (readonly [string, number, number])[] = [
+  ...GASTOS_PARLAMENTARES_EM_REVISAO,
+  ...GASTOS_PARLAMENTARES_EM_REVISAO_UNIVERSO,
+]
+
 const gastosEmRevisao = new Set<string>(
-  GASTOS_PARLAMENTARES_EM_REVISAO.map(([slug, ano]) => `${slug}:${ano}`),
+  TODOS_EM_REVISAO.map(([slug, ano]) => `${slug}:${ano}`),
 )
 const anosEmRevisaoPorSlug = new Map<string, number[]>()
-for (const [slug, ano] of GASTOS_PARLAMENTARES_EM_REVISAO) {
+for (const [slug, ano] of TODOS_EM_REVISAO) {
   const anos = anosEmRevisaoPorSlug.get(slug) ?? []
   anos.push(ano)
   anosEmRevisaoPorSlug.set(slug, anos)

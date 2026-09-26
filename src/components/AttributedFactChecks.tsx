@@ -9,6 +9,7 @@ import {
   type AttributedCheckSource,
   type AttributedFactCheck,
 } from "@/lib/checagens-atribuidas"
+import { formatarDataBusca, listarEmProsa, type ReciboChecagensVisivel } from "@/lib/buscas-recibos"
 
 function formatDate(value: string): string {
   const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(value)
@@ -166,16 +167,31 @@ function AttributedFactCheckCard({ check }: { check: AttributedFactCheck }) {
   )
 }
 
+/** Texto do recibo da busca nominal. Só é chamado com recibo válido. */
+function searchReceiptText(receipt: ReciboChecagensVisivel, publishedChecks: number): string {
+  // Cobertura parcial sempre visível: a frase nunca cita só quem respondeu.
+  const missing = receipt.naoResponderam.length === 0
+    ? ""
+    : ` (${listarEmProsa(receipt.naoResponderam)} ${receipt.naoResponderam.length === 1 ? "não respondeu" : "não responderam"} nesta busca)`
+  const when = `Busca feita em ${formatarDataBusca(receipt.searchedAt)} em ${listarEmProsa(receipt.agencias)}${missing}`
+  if (publishedChecks > 0) return `${when}.`
+  if (receipt.result === "vazio_confirmado") return `${when}: nenhuma checagem com o nome desta candidatura no título.`
+  const matches = receipt.leads === 1 ? "1 matéria cita" : `${receipt.leads} matérias citam`
+  return `${when}: ${matches} o nome desta candidatura no título. Nenhuma checagem de fala atribuída a ela foi conferida e publicada aqui até agora.`
+}
+
 export function AttributedFactChecks({
   candidateId,
   candidateSlug,
   office,
   uf,
+  searchReceipt = null,
 }: {
   candidateId: string
   candidateSlug: string
   office: string
   uf: string | null
+  searchReceipt?: ReciboChecagensVisivel | null
 }) {
   const checks = getApprovedAttributedFactChecks({
     candidate_id: candidateId,
@@ -183,7 +199,7 @@ export function AttributedFactChecks({
     office,
     uf,
   })
-  if (checks.length === 0) return null
+  if (checks.length === 0 && !searchReceipt) return null
 
   return (
     <section
@@ -195,13 +211,26 @@ export function AttributedFactChecks({
         <h2 id="attributed-fact-checks-title" className="font-heading text-[20px] uppercase tracking-tight text-foreground sm:text-[24px]">
           Checagens atribuídas
         </h2>
-        <p className="mt-1 max-w-3xl text-[length:var(--text-body-sm)] leading-relaxed text-muted-foreground">
-          Avaliações publicadas por veículos de checagem e associadas a esta afirmação após conferência editorial.
-        </p>
+        {checks.length > 0 && (
+          <p className="mt-1 max-w-3xl text-[length:var(--text-body-sm)] leading-relaxed text-muted-foreground">
+            Avaliações publicadas por veículos de checagem e associadas a esta afirmação após conferência editorial.
+          </p>
+        )}
+        {searchReceipt && (
+          <p
+            data-pf-checagens-busca={searchReceipt.result}
+            data-pf-checagens-busca-em={searchReceipt.searchedAt}
+            className="mt-2 max-w-3xl text-[length:var(--text-caption)] leading-relaxed text-foreground"
+          >
+            {searchReceiptText(searchReceipt, checks.length)}
+          </p>
+        )}
       </div>
-      <div className="space-y-4">
-        {checks.map((check) => <AttributedFactCheckCard key={check.id} check={check} />)}
-      </div>
+      {checks.length > 0 && (
+        <div className="space-y-4">
+          {checks.map((check) => <AttributedFactCheckCard key={check.id} check={check} />)}
+        </div>
+      )}
     </section>
   )
 }

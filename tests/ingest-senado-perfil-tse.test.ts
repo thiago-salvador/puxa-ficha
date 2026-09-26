@@ -29,7 +29,27 @@ const PERFIL_SENADO = {
   },
 }
 
-async function perfilGravado(atual: Record<string, unknown>): Promise<{ patch: Record<string, unknown>; errors: string[] }> {
+// Lista oficial de senadores em exercício (/senador/lista/atual). "falha"
+// simula a lista indisponível.
+type ListaAtual = string[] | "falha"
+
+// 80 códigos fictícios além do fixture: lista completa plausível (piso 70).
+const OUTROS_80 = Array.from({ length: 80 }, (_, i) => String(10000 + i))
+
+function listaEmExercicio(codigos: string[]) {
+  return {
+    ListaParlamentarEmExercicio: {
+      Parlamentares: {
+        Parlamentar: codigos.map((codigo) => ({ IdentificacaoParlamentar: { CodigoParlamentar: codigo } })),
+      },
+    },
+  }
+}
+
+async function perfilGravado(
+  atual: Record<string, unknown>,
+  listaAtual: ListaAtual = ["9999", ...OUTROS_80],
+): Promise<{ patch: Record<string, unknown>; errors: string[] }> {
   const previousFetch = globalThis.fetch
   const previousUrl = process.env.SUPABASE_URL
   const previousKey = process.env.SUPABASE_SERVICE_ROLE_KEY
@@ -42,6 +62,10 @@ async function perfilGravado(atual: Record<string, unknown>): Promise<{ patch: R
     const url = new URL(String(input))
     const method = init?.method ?? "GET"
     if (url.hostname === "legis.senado.leg.br") {
+      if (url.pathname.endsWith("/senador/lista/atual.json")) {
+        if (listaAtual === "falha") return new Response("indisponivel", { status: 503 })
+        return response(listaEmExercicio(listaAtual))
+      }
       if (url.pathname.endsWith("/9999.json")) return response(PERFIL_SENADO)
       if (url.pathname.endsWith("/9999/mandatos.json")) return response({})
       if (url.pathname.endsWith("/9999/autorias.json")) return response({})
@@ -102,4 +126,50 @@ test("Senado: sem registro TSE 2026, perfil do Senado mantém o comportamento an
   assert.equal(patch.foto_url, "https://example.test/senado-fixture.jpg")
   assert.equal(patch.cargo_atual, "Senador(a)")
   assert.equal(patch.naturalidade, "Cidade Fixture/MA")
+})
+
+// O Senado preenche CodigoPublicoNaLegAtual também para ex-senadores e
+// suplentes que já exerceram. Quem decide "senador hoje" é a lista oficial em
+// exercício; o fixture tem o código preenchido nos três casos abaixo.
+test("Senado: fora da lista em exercício, 'Senador(a)' gravado antes é limpo e o partido não muda", async () => {
+  const { patch, errors } = await perfilGravado(
+    { foto_url: null, sq_candidato_2026: null, cargo_atual: "Senador(a)" },
+    OUTROS_80,
+  )
+  assert.deepEqual(errors, [])
+  assert.equal("cargo_atual" in patch, true)
+  assert.equal(patch.cargo_atual, null)
+  assert.equal("partido_sigla" in patch, false)
+  assert.equal("partido_atual" in patch, false)
+})
+
+test("Senado: fora da lista em exercício, outro cargo atual curado não é tocado", async () => {
+  const { patch, errors } = await perfilGravado(
+    { foto_url: null, sq_candidato_2026: "999999999472", cargo_atual: "Deputado(a) Federal" },
+    OUTROS_80,
+  )
+  assert.deepEqual(errors, [])
+  assert.equal("cargo_atual" in patch, false)
+})
+
+test("Senado: lista em exercício parcial (abaixo do piso) não grava nem limpa cargo_atual", async () => {
+  // Senador em exercício (9999) fora de uma lista truncada: sem o piso, o
+  // ingest limparia o cargo dele.
+  const { patch, errors } = await perfilGravado(
+    { foto_url: null, sq_candidato_2026: null, cargo_atual: "Senador(a)" },
+    OUTROS_80.slice(0, 12),
+  )
+  assert.deepEqual(errors, [])
+  assert.equal("cargo_atual" in patch, false)
+  assert.equal("partido_sigla" in patch, false)
+})
+
+test("Senado: lista em exercício indisponível não grava nem limpa cargo_atual", async () => {
+  const { patch, errors } = await perfilGravado(
+    { foto_url: null, sq_candidato_2026: null, cargo_atual: "Senador(a)" },
+    "falha",
+  )
+  assert.deepEqual(errors, [])
+  assert.equal("cargo_atual" in patch, false)
+  assert.equal("partido_sigla" in patch, false)
 })

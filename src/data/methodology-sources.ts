@@ -54,10 +54,14 @@ export const METHODOLOGY_SOURCES: readonly MethodologySource[] = [
       "Certidões criminais",
     ],
     sourceKind: "base_oficial",
-    // Sem automação: lote manual via workflow_dispatch (verificado 2026-07-25).
+    // Lote manual via workflow_dispatch (verificado 2026-07-25). Desde
+    // 2026-09-25 só o financiamento parcial e os bens de 2026 têm cron
+    // (`.github/workflows/tse-2026-financas.yml`, diário); o resto do TSE
+    // segue sob demanda, então o rótulo da fonte inteira não muda.
     updateFrequency: "sob demanda",
     curationType: "automático",
-    curationNote: "CSVs do TSE baixados e processados em lote, quando há atualização na base de origem.",
+    curationNote:
+      "CSVs do TSE baixados e processados em lote, quando há atualização na base de origem. Financiamento e bens da eleição de 2026 são reconferidos todo dia contra o pacote oficial.",
   },
   {
     id: "tse-historico",

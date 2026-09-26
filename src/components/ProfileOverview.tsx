@@ -35,7 +35,7 @@ import { MetaBadge } from "./MetaBadge"
 import { ProcessoPublicGroupSurface } from "./ProcessoPublicSurface"
 import {
   CandidateDebatesBentoCard,
-  hasCandidateDebatePressQuotes,
+  hasCandidateFalasCard,
 } from "./CandidateDebatesBentoCard"
 import {
   FINANCING_COLOR_BY_KEY,
@@ -852,7 +852,7 @@ export function ProfileOverview({
       : socialNetworksEmptyVerifiedAt
   const sitesTseIndeterminateAt =
     ficha.sites_candidato?.resultado === "indeterminado" ? sitesTseCollectedAt : null
-  const hasDebateQuotes = hasCandidateDebatePressQuotes(ficha.slug, ficha.id)
+  const hasDebateQuotes = hasCandidateFalasCard(ficha.slug, ficha.id)
 
   if (!hasOverviewData(ficha) && !leadingCard && !trailingCard && !factChecksCard && !closingCard && !hasDebateQuotes) {
     return <EmptyOverviewState />

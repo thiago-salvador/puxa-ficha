@@ -301,6 +301,12 @@ describe("FONTES cobre todo source declarado pelos ingests", () => {
       // Recibo por candidato da busca de representações (Câmara e Senado),
       // gravado por scripts/registrar-recibos-representacoes.ts.
       "representacoes-etica",
+      "tse-auditoria-candidatura",
+      // Linha companheira de scripts/lib/ingest-camara.ts, como
+      // `camara-proposicoes`: só o recibo de cota zerada em todos os anos.
+      "camara-gastos",
+      // Recibos da rotina editorial de promessas, gravados fora de scripts/lib.
+      "promessa-evidencia",
     ])
     const orfas = Object.keys(FONTES).filter(
       (f) => !declarados.has(f) && !excecoes.has(f),

@@ -21672,7 +21672,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|PI|1|estimulada|lista-instituto-amostragem-2026-09-04-cenario-1|votos_validos"
       },
-      "exact_aliases_version": "monitor-2026-9ad9911166995065",
+      "exact_aliases_version": "monitor-2026-9186120ff9c18a62",
       "exact_aliases": [
         {
           "raw_label": "Dra. Lúcia Santos",
@@ -21784,6 +21784,24 @@
           "geography": "Piauí",
           "turn": 1,
           "scenario_id": "datafolha-pi-pi-06656-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Rafael Fonteles",
+          "candidate_slug": "rafael-fonteles",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Piauí",
+          "turn": 1,
+          "scenario_id": "datamax-pi-07373-2026-1t"
+        },
+        {
+          "raw_label": "Joel Rodrigues",
+          "candidate_slug": "joel-rodrigues",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Piauí",
+          "turn": 1,
+          "scenario_id": "datamax-pi-07373-2026-1t"
         }
       ],
       "pesquisas": [
@@ -22463,6 +22481,131 @@
             "value": null,
             "status": "indeterminado"
           }
+        },
+        {
+          "id": "datamax-pi-07373-2026",
+          "source_id": "datamax-pi-07373-2026-revisao-20260925",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Datamax",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-14",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-19",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-21",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1200,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores distribuídos por 58 municípios dos 12 Territórios de Desenvolvimento do Piauí",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2.83,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "PI-07373/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Piauí",
+            "code": "PI"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://folhaexpressa.com/politica/pesquisa-datamax-rafael-marca-74-e-fica-52-pontos-e-fica-a-frente-de-joel-rodrigues/",
+            "supporting_urls": [
+              "https://www.webpiaui.com.br/localizacao/manchete/datamax-aponta-rafael-com-7494-dos-votos-validos/"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-25T23:00:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "a88b6eeef97a9602c3748ad6bd17bc676f752dec5539a960a827bc016ff2b01e",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "datamax-pi-07373-2026-1t",
+              "turn": 1,
+              "geography": "Piauí",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|PI|1|estimulada|8e016e2398c9868c66d1caf5774bf93d8df65285637726fc82119247bbed5db1|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Rafael Fonteles",
+                  "candidate_slug": "rafael-fonteles",
+                  "match_status": "exact_alias",
+                  "value_percent": 63.42,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Joel Rodrigues",
+                  "candidate_slug": "joel-rodrigues",
+                  "match_status": "exact_alias",
+                  "value_percent": 18.75,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "não souberam ou não quiseram responder",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 9.67,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "branco ou nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4.25,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -26532,7 +26675,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|RO|1|estimulada|lista-quaest-2026-08-25-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "2026-09-10.RO",
+      "exact_aliases_version": "monitor-2026-a4ba2b0d11e7252f",
       "exact_aliases": [
         {
           "raw_label": "Adailton Fúria",
@@ -26581,6 +26724,249 @@
         {
           "raw_label": "Samuel Costa (Rede)",
           "candidate_slug": "samuel-costa"
+        },
+        {
+          "raw_label": "Marcos Rogério (PL)",
+          "candidate_slug": "marcos-rogerio",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "quaest-ro-08556-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Adailton Fúria (PSD)",
+          "candidate_slug": "adailton-furia",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "quaest-ro-08556-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Hildon Chaves (União)",
+          "candidate_slug": "hildon-chaves",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "quaest-ro-08556-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Expedito Netto (PT)",
+          "candidate_slug": "expedito-netto",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "quaest-ro-08556-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Samuel Costa (PSB)",
+          "candidate_slug": "samuel-costa",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "quaest-ro-08556-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Pedro Abib (MDB)",
+          "candidate_slug": "pedro-abib",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "quaest-ro-08556-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Marcos Rogério (PL)",
+          "candidate_slug": "marcos-rogerio",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "quaest-ro-08556-2026-1t"
+        },
+        {
+          "raw_label": "Adailton Furia (PSD)",
+          "candidate_slug": "adailton-furia",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "quaest-ro-08556-2026-1t"
+        },
+        {
+          "raw_label": "Hildon Chaves (União)",
+          "candidate_slug": "hildon-chaves",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "quaest-ro-08556-2026-1t"
+        },
+        {
+          "raw_label": "Expedito Netto (PT)",
+          "candidate_slug": "expedito-netto",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "quaest-ro-08556-2026-1t"
+        },
+        {
+          "raw_label": "Samuel Costa (PSB)",
+          "candidate_slug": "samuel-costa",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "quaest-ro-08556-2026-1t"
+        },
+        {
+          "raw_label": "Pedro Abib (MDB)",
+          "candidate_slug": "pedro-abib",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "quaest-ro-08556-2026-1t"
+        },
+        {
+          "raw_label": "Marcos Rogério (PL)",
+          "candidate_slug": "marcos-rogerio",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "verita-ro-01935-2026-1t"
+        },
+        {
+          "raw_label": "Adailton Fúria (PSD)",
+          "candidate_slug": "adailton-furia",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "verita-ro-01935-2026-1t"
+        },
+        {
+          "raw_label": "Hildon Chaves (União)",
+          "candidate_slug": "hildon-chaves",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "verita-ro-01935-2026-1t"
+        },
+        {
+          "raw_label": "Expedito Netto (PT)",
+          "candidate_slug": "expedito-netto",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "verita-ro-01935-2026-1t"
+        },
+        {
+          "raw_label": "Samuel Costa (PSB)",
+          "candidate_slug": "samuel-costa",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "verita-ro-01935-2026-1t"
+        },
+        {
+          "raw_label": "Pedro Abib (MDB)",
+          "candidate_slug": "pedro-abib",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "verita-ro-01935-2026-1t"
+        },
+        {
+          "raw_label": "Marcos Rogério (PL)",
+          "candidate_slug": "marcos-rogerio",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "phoenix-ro-00523-2026-1t"
+        },
+        {
+          "raw_label": "Hildon Chaves (UB)",
+          "candidate_slug": "hildon-chaves",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "phoenix-ro-00523-2026-1t"
+        },
+        {
+          "raw_label": "Adailton Fúria",
+          "candidate_slug": "adailton-furia",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "phoenix-ro-00523-2026-1t"
+        },
+        {
+          "raw_label": "Expedito Netto (PT)",
+          "candidate_slug": "expedito-netto",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "phoenix-ro-00523-2026-1t"
+        },
+        {
+          "raw_label": "Pedro Abib (MDB)",
+          "candidate_slug": "pedro-abib",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "phoenix-ro-00523-2026-1t"
+        },
+        {
+          "raw_label": "Samuel Costa (PSB)",
+          "candidate_slug": "samuel-costa",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "phoenix-ro-00523-2026-1t"
+        },
+        {
+          "raw_label": "Marcos Rogério (PL)",
+          "candidate_slug": "marcos-rogerio",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "verita-ro-03403-2026-1t"
+        },
+        {
+          "raw_label": "Adailton Fúria (PSD)",
+          "candidate_slug": "adailton-furia",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "verita-ro-03403-2026-1t"
+        },
+        {
+          "raw_label": "Expedito Netto (PT)",
+          "candidate_slug": "expedito-netto",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rondônia",
+          "turn": 1,
+          "scenario_id": "verita-ro-03403-2026-1t"
         }
       ],
       "pesquisas": [
@@ -26898,6 +27284,668 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 22,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quaest-ro-08556-2026",
+          "source_id": "quaest-ro-08556-2026-revisao-20260925",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Quaest",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Rádio TV do Amazonas / Rede Amazônica Rádio e Televisão",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-20",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-23",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-24",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 804,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores em Rondônia",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "RO-08556/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Rondônia",
+            "code": "RO"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-rondonia-setembro-2026/",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-25T23:00:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "fc726755c162f7420b0eef87c731dfe1ca1297d530e4e0c8585f1146436b87bc",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "quaest-ro-08556-2026-1t-espontaneo",
+              "turn": 1,
+              "geography": "Rondônia",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|RO|1|espontanea|96eb5ec26608432e0c98a770db2f6637c13e7717a94fb13de27f9e8fe3270ec9|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Marcos Rogério (PL)",
+                  "candidate_slug": "marcos-rogerio",
+                  "match_status": "exact_alias",
+                  "value_percent": 19,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Adailton Fúria (PSD)",
+                  "candidate_slug": "adailton-furia",
+                  "match_status": "exact_alias",
+                  "value_percent": 13,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Hildon Chaves (União)",
+                  "candidate_slug": "hildon-chaves",
+                  "match_status": "exact_alias",
+                  "value_percent": 4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Expedito Netto (PT)",
+                  "candidate_slug": "expedito-netto",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Samuel Costa (PSB)",
+                  "candidate_slug": "samuel-costa",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Pedro Abib (MDB)",
+                  "candidate_slug": "pedro-abib",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Outros",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo/Branco/Não vai votar",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 59,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "quaest-ro-08556-2026-1t",
+              "turn": 1,
+              "geography": "Rondônia",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|RO|1|estimulada|96eb5ec26608432e0c98a770db2f6637c13e7717a94fb13de27f9e8fe3270ec9|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Marcos Rogério (PL)",
+                  "candidate_slug": "marcos-rogerio",
+                  "match_status": "exact_alias",
+                  "value_percent": 37,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Adailton Furia (PSD)",
+                  "candidate_slug": "adailton-furia",
+                  "match_status": "exact_alias",
+                  "value_percent": 21,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Hildon Chaves (União)",
+                  "candidate_slug": "hildon-chaves",
+                  "match_status": "exact_alias",
+                  "value_percent": 9,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Expedito Netto (PT)",
+                  "candidate_slug": "expedito-netto",
+                  "match_status": "exact_alias",
+                  "value_percent": 6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Samuel Costa (PSB)",
+                  "candidate_slug": "samuel-costa",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Pedro Abib (MDB)",
+                  "candidate_slug": "pedro-abib",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo/Branco/Não vai votar",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 19,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "verita-ro-01935-2026",
+          "source_id": "verita-ro-01935-2026-revisao-20260925",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Veritá",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Instituto Veritá Ltda. (recursos próprios)",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-07",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-12",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-12",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1220,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores em 20 municípios de Rondônia",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "method": {
+            "value": "Coleta telefônica automatizada",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "RO-01935/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Rondônia",
+            "code": "RO"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://newsrondonia.com.br/politica/2026/09/15/justica-eleitoral-rejeita-pedido-da-coligacao-de-furia-e-confirma-pesquisa-verita-que-aponta-marcos-rogerio-na-lideranca",
+            "supporting_urls": [
+              "https://www.cnnbrasil.com.br/eleicoes/verita-bruno-bolsonaro-e-fernando-maximo-lideram-corrida-ao-senado-em-ro/",
+              "https://newsrondonia.com.br/politica/2026/09/19/pesquisa-verita-de-2026-e-comparada-com-levantamentos-anteriores-em-rondonia"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-25T23:00:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "ee31fb04176279bf11bbc287cd40bff95f2f41a2d40351f3663e33a6355accda",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "verita-ro-01935-2026-1t",
+              "turn": 1,
+              "geography": "Rondônia",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|RO|1|estimulada|96eb5ec26608432e0c98a770db2f6637c13e7717a94fb13de27f9e8fe3270ec9|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Marcos Rogério (PL)",
+                  "candidate_slug": "marcos-rogerio",
+                  "match_status": "exact_alias",
+                  "value_percent": 47.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Adailton Fúria (PSD)",
+                  "candidate_slug": "adailton-furia",
+                  "match_status": "exact_alias",
+                  "value_percent": 19.7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Hildon Chaves (União)",
+                  "candidate_slug": "hildon-chaves",
+                  "match_status": "exact_alias",
+                  "value_percent": 11.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Expedito Netto (PT)",
+                  "candidate_slug": "expedito-netto",
+                  "match_status": "exact_alias",
+                  "value_percent": 10.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Samuel Costa (PSB)",
+                  "candidate_slug": "samuel-costa",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Pedro Abib (MDB)",
+                  "candidate_slug": "pedro-abib",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não souberam ou não responderam",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 6.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Brancos e nulos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 2.9,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "phoenix-ro-00523-2026",
+          "source_id": "phoenix-ro-00523-2026-revisao-20260925",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Phoenix",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "ABC Publicidade Ltda",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-18",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-20",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-20",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 801,
+              "status": "publicado"
+            },
+            "population": {
+              "value": null,
+              "status": "indeterminado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3.5,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Abordagem pessoal domiciliar, questionário estruturado",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "RO-00523/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Rondônia",
+            "code": "RO"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.diarioonorte.com/2026/09/marcos-rogerio-lidera-corrida-ao.html",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-25T23:00:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "bde66be943161b4cb8dddba861bcea7b364119c6adbe1e62ff1d9471ae9a4009",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "phoenix-ro-00523-2026-1t",
+              "turn": 1,
+              "geography": "Rondônia",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|RO|1|estimulada|96eb5ec26608432e0c98a770db2f6637c13e7717a94fb13de27f9e8fe3270ec9|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Marcos Rogério (PL)",
+                  "candidate_slug": "marcos-rogerio",
+                  "match_status": "exact_alias",
+                  "value_percent": 28.21,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Hildon Chaves (UB)",
+                  "candidate_slug": "hildon-chaves",
+                  "match_status": "exact_alias",
+                  "value_percent": 22.72,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Adailton Fúria",
+                  "candidate_slug": "adailton-furia",
+                  "match_status": "exact_alias",
+                  "value_percent": 20.35,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Expedito Netto (PT)",
+                  "candidate_slug": "expedito-netto",
+                  "match_status": "exact_alias",
+                  "value_percent": 6.87,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Pedro Abib (MDB)",
+                  "candidate_slug": "pedro-abib",
+                  "match_status": "exact_alias",
+                  "value_percent": 5.37,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Samuel Costa (PSB)",
+                  "candidate_slug": "samuel-costa",
+                  "match_status": "exact_alias",
+                  "value_percent": 4.62,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "voto nenhum ou nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 6.74,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "indecisos ou que não opinaram",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 5.12,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "verita-ro-03403-2026",
+          "source_id": "verita-ro-03403-2026-revisao-20260925",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Veritá",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Instituto Veritá (iniciativa própria)",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-24",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-08-28",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-08-31",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1220,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "RO-03403/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Rondônia",
+            "code": "RO"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.rondoniadinamica.com/noticias/2026/08/marcos-rogerio-chega-a-407-e-tem-quase-o-dobro-do-2-colocado-em-pesquisa-verita-para-o-governo-de-rondonia,252975.shtml",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-25T23:00:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "2658b4ee9cad2986df1f315281e8b3c1def6a674370e59a9f94473292e6045d7",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "verita-ro-03403-2026-1t",
+              "turn": 1,
+              "geography": "Rondônia",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|RO|1|estimulada|c80b6938d16595d885650f2daf2a979b3e5b225c0224698ec081c586ba8a5b9f|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Marcos Rogério (PL)",
+                  "candidate_slug": "marcos-rogerio",
+                  "match_status": "exact_alias",
+                  "value_percent": 40.7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Adailton Fúria (PSD)",
+                  "candidate_slug": "adailton-furia",
+                  "match_status": "exact_alias",
+                  "value_percent": 22.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Expedito Netto (PT)",
+                  "candidate_slug": "expedito-netto",
+                  "match_status": "exact_alias",
+                  "value_percent": 10.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "outros",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 11.6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "não souberam ou não responderam e votos brancos ou nulos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 15,
                   "status": "publicado"
                 }
               ]

@@ -232,14 +232,34 @@ jobs:
           name: pesquisas-descoberta-${{ github.run_id }}
           path: reports/discovery
 
+      # O monitor segue falhando fechado quando a consolidação bloqueia (todas as
+      # execuções agendadas de 22 a 25/09/2026). Isso é dívida conhecida, não
+      # pane nova: a atualização viva das pesquisas é a importação manual
+      # auditada (docs/operations/pesquisas-importacao-manual.md). A anotação
+      # abaixo põe essa leitura no topo do run vermelho, e o cron-watchdog
+      # mantém a issue `cron-failure` aberta com o recibo.
       - name: Consolidar e falhar fechado
         id: consolidar
         run: |
+          set +e
           npm run pesquisas:atualizacao:consolidate -- \
             --matrix=reports/matrix/matrix.json \
             --input=reports/parts \
             --discovery=reports/discovery/discovery.json \
             --out=reports/consolidated
+          code=$?
+          set -e
+          if [ "$code" -ne 0 ]; then
+            echo "::error title=Monitor de pesquisas bloqueado (dívida conhecida)::Consolidação falhou fechada (exit $code). Nada foi publicado. Rota viva: importação manual auditada (docs/operations/pesquisas-importacao-manual.md). Motivos por alvo no resumo do job e no artefato consolidado."
+            {
+              echo
+              echo "### Dívida conhecida"
+              echo
+              echo "O monitor automático não publica desde 22/09/2026: a consolidação falha fechada quando algum alvo fica bloqueado (descoberta com URL fora da allowlist do adaptador, alvo sem registro TSE legível, fonte que recusa o runner)."
+              echo "A atualização do site segue pela importação manual auditada (\`npm run pesquisas:importar\`). Este run vermelho é o registro da dívida, acompanhado pela issue \`cron-failure\` do watchdog."
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+          exit "$code"
 
       - name: Publicar resumo e proposta consolidada
         if: always()

@@ -15,7 +15,7 @@ function normalizeSenadoSemantic(value: string | null): string | null {
 }
 
 /** Senate series retain only the published question, denominator and methodology semantics. */
-export function assinaturaSenadoScenario(
+function assinaturaSenadoScenario(
   poll: Pick<StatePollScenario, "office" | "scenario" | "sample" | "method">,
 ): string {
   if (poll.office !== "Senador") return poll.scenario.comparabilityKey

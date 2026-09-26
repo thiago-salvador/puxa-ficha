@@ -1306,7 +1306,7 @@ async function processFinanciamento(
   extractDir: string,
   sqMap: Map<string, SqCandidateIdentity>,
   slugAllowlist: Set<string> | null,
-  options: Pick<IngestTseOptions, "dryRun" | "onPlannedRow">,
+  options: Pick<IngestTseOptions, "dryRun" | "onPlannedRow" | "planStorageRows">,
   sourceUrl: string,
   confirmOfficialAbsence: boolean,
 ): Promise<IngestResult[]> {
@@ -1519,10 +1519,18 @@ async function processFinanciamento(
       options.onPlannedRow?.({
         table: "financiamento",
         slug,
-        row: {
-          ...row,
-          maiores_doadores: sanitizeMaioresDoadoresForPublic(row.maiores_doadores),
-        },
+        row: options.planStorageRows
+          ? {
+              ...row,
+              // Lista completa, sem o corte dos 10 maiores, para quem precisa
+              // casar doador por nome (rehash de cpf_hash). Nunca vai a log.
+              doadores_completos: normalizeMaioresDoadoresForStorage(data.doadores, Number.MAX_SAFE_INTEGER),
+              receitas: data.doadores.length,
+            }
+          : {
+              ...row,
+              maiores_doadores: sanitizeMaioresDoadoresForPublic(row.maiores_doadores),
+            },
       })
     } else {
       const { error: staleVerificationError } = await supabase
@@ -1739,7 +1747,7 @@ function logResolverStats(ano: number, resolver: TSEResolver) {
   }
 }
 
-interface PlannedTseRow {
+export interface PlannedTseRow {
   table:
     | "patrimonio"
     | "patrimonio_ausencia_oficial"
@@ -1764,6 +1772,12 @@ export type IngestTseOptions = {
   dryRun?: boolean
   /** Recebe cada linha normalizada quando `dryRun` está ativo. */
   onPlannedRow?: (entry: PlannedTseRow) => void
+  /**
+   * Em `dryRun`, entrega a linha de financiamento como seria gravada (com
+   * `cnpj`/`cpf_hash`) e a lista completa de doadores. Só para escritores
+   * auditados que aplicam a linha por conta própria; o CLI nunca liga isto.
+   */
+  planStorageRows?: boolean
   /** Coorte explícita não publicada, consumida pelo mesmo fluxo TSE após onboarding. */
   cohort?: ExplicitCohortSelection
 }

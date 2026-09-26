@@ -10,7 +10,8 @@ import {
 import { DeferredCandidatoProfileClient } from "@/components/DeferredCandidatoProfileClient"
 import type { ProgramaGovernoManifestoPublico } from "@/lib/programa-governo"
 import type { SenadoRunningMatesPayload } from "@/components/SenadoRunningMates"
-import type { CompromissoEvidenciaPublica } from "@/lib/compromisso-evidencia"
+import type { EstadoEvidenciasPrograma } from "@/lib/compromisso-evidencia"
+import type { ProgramaGovernoPendencia } from "@/lib/programa-governo-pendencia"
 
 export function DeferredCandidatoProfile({
   ficha,
@@ -19,6 +20,7 @@ export function DeferredCandidatoProfile({
   pesquisas = [],
   programaGoverno = null,
   compromissoEvidencias,
+  programaPendente = null,
   senadoRunningMates = null,
 }: {
   ficha: FichaCandidato
@@ -26,7 +28,8 @@ export function DeferredCandidatoProfile({
   pesquisasEnabled?: boolean
   pesquisas?: PesquisaEleitoralDoCandidato[]
   programaGoverno?: ProgramaGovernoManifestoPublico | null
-  compromissoEvidencias?: CompromissoEvidenciaPublica[]
+  compromissoEvidencias?: EstadoEvidenciasPrograma
+  programaPendente?: ProgramaGovernoPendencia | null
   senadoRunningMates?: SenadoRunningMatesPayload | null
 }) {
   const historico = ficha.historico ?? []
@@ -65,6 +68,7 @@ export function DeferredCandidatoProfile({
         pesquisas={pesquisas}
         programaGoverno={programaGoverno}
         compromissoEvidencias={compromissoEvidencias}
+        programaPendente={programaPendente}
         senadoRunningMates={senadoRunningMates}
         overview={{
           processos: (ficha.processos ?? []).filter((row) => Boolean(urlFonteJudicialEspecifica(row.url_fonte, row.numero_processo))).length,
