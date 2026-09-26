@@ -1606,7 +1606,7 @@ export const FIXES: CandidateFix[] = [
     slug: "ataides-oliveira",
     source: "Senado Federal perfil 5164 + curadoria TO 2026-04-11",
     candidateUpdate: {
-      nome_completo: "Ataídes de Oliveira Leite",
+      nome_completo: "Ataídes de Oliveira",
       partido_sigla: "incerto",
       partido_atual: "incerto",
       situacao_candidatura: "incerto",
@@ -1798,7 +1798,7 @@ export const FIXES: CandidateFix[] = [
     slug: "confucio-moura",
     source: "Senado Federal oficial + Extra de Rondônia 2026-03-23",
     candidateUpdate: {
-      nome_completo: "José Confúcio Aires Moura",
+      nome_completo: "CONFÚCIO AIRES MOURA",
       cargo_atual: "Senador(a)",
       cargo_disputado: "Governador",
       situacao_candidatura: "incerto",
@@ -1821,7 +1821,7 @@ export const FIXES: CandidateFix[] = [
     source:
       "Auditoria trajetória partidária 2026-04-12 (linha 14) + DivulgaCandContas TSE 2020/2022 + Câmara dos Deputados + Folha de Rondônia",
     candidateUpdate: {
-      nome_completo: "Fernando Máximo de Oliveira",
+      nome_completo: "FERNANDO RODRIGUES MÁXIMO",
       partido_sigla: "PL",
       partido_atual: "Partido Liberal",
       cargo_atual: "Deputado(a) Federal",
@@ -1938,7 +1938,7 @@ export const FIXES: CandidateFix[] = [
     slug: "adailton-furia",
     source: "DO Municipal Cacoal ed. extraordinaria 02/04/2026 + Rondonia Dinamica",
     candidateUpdate: {
-      nome_completo: "Adailton de Souza Fúria",
+      nome_completo: "Adailton Antunes Ferreira",
       cargo_atual: null,
       situacao_candidatura: "pre-candidato",
       data_nascimento: "1986-09-24",
@@ -3311,7 +3311,7 @@ export const FIXES: CandidateFix[] = [
     slug: "orleans-brandao",
     source: "G1 + O Imparcial MA + Gilberto Leda + curadoria 13.csv",
     candidateUpdate: {
-      nome_completo: "Carlos Orleans Brandão Junior",
+      nome_completo: "Carlos Orleans Braide Brandão",
       partido_sigla: "MDB",
       partido_atual: "Movimento Democrático Brasileiro",
       cargo_atual: "Governador do Maranhão",
@@ -3441,7 +3441,7 @@ export const FIXES: CandidateFix[] = [
     slug: "janaina-riva",
     source: "ALMT (mandato em curso) + PlatoBR / O Livre 2025–2026",
     candidateUpdate: {
-      nome_completo: "Janaina Riva",
+      nome_completo: "JANAINA GREYCE RIVA FAGUNDES",
       partido_atual: "Movimento Democrático Brasileiro",
       partido_sigla: "MDB",
       cargo_atual: "Deputada Estadual",
@@ -3678,7 +3678,7 @@ export const FIXES: CandidateFix[] = [
     slug: "joel-rodrigues",
     source: "O Globo + YouTube (lançamento PP PI 2026) + Parlamento Piauí 2026",
     candidateUpdate: {
-      nome_completo: "Joel Rodrigues de Castro",
+      nome_completo: "Joel Rodrigues da Silva",
       situacao_candidatura: null,
       status: "pre-candidato",
       biografia:
@@ -4385,7 +4385,7 @@ export const FIXES: CandidateFix[] = [
     slug: "hertz-dias",
     source: "G1/O Globo 2026-04-11 + TSE DivulgaCandContas",
     candidateUpdate: {
-      nome_completo: "Hertz Dias",
+      nome_completo: "HERTZ DA CONCEICAO DIAS",
       estado: "MA",
       cargo_atual: null,
       situacao_candidatura: "pre-candidato",
@@ -5696,7 +5696,7 @@ export const FIXES: CandidateFix[] = [
     slug: "alysson-bezerra",
     source: "TSE (mandatos Mossoró) + Agora RN 2026-03",
     candidateUpdate: {
-      nome_completo: "Alysson Leandro Barbate Bezerra",
+      nome_completo: "Allyson Leandro Bezerra Silva",
       profissao_declarada: "Servidor Público Federal",
       cargo_atual: "Prefeito de Mossoró",
       situacao_candidatura: null,
@@ -5926,7 +5926,7 @@ export const FIXES: CandidateFix[] = [
     source:
       "Auditoria trajetória partidária 2026-04-12 (linha 11) + Câmara dos Deputados + TSE DivulgaCandContas + G1 BA",
     candidateUpdate: {
-      nome_completo: "João Inácio Ribeiro Roma Neto",
+      nome_completo: "JOÃO INÁCIO RIBEIRO ROMA NETO",
       partido_sigla: "PL",
       partido_atual: "Partido Liberal",
       cargo_atual: "Deputado(a) Federal",

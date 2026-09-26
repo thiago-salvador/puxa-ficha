@@ -50,6 +50,14 @@ export interface AuditoriaCandidatoRodada {
   covered: boolean
   reasons: string[]
   receipt_count: number
+  /** Algum recibo válido declarou `result=found` (aspa explícita na fonte). */
+  found: boolean
+  /** O catálogo tem aspa do candidato cujo período termina dentro da janela da rodada. */
+  has_window_quote: boolean
+  /** `found` sem aspa na janela: o rótulo afirma algo que a ficha não mostra. */
+  found_without_quote: boolean
+  /** Instante do recibo válido mais recente; null sem busca válida. */
+  searched_at: string | null
 }
 
 export interface AuditoriaRodadaFalas {
@@ -67,10 +75,18 @@ export interface AuditoriaRodadaFalas {
   invalid_receipts: number
   complete: boolean
   missing_names: string[]
+  /** Início da janela de aspas da rodada (14 dias antes do início, inclusive). */
+  quote_window_from: string
+  found: number
+  found_without_quote: number
+  found_without_quote_names: string[]
   candidates: AuditoriaCandidatoRodada[]
 }
 
-type CatalogQuote = { candidate_id?: unknown; candidate_slug?: unknown }
+/** Janela de busca das falas: 14 dias até o início da rodada (falas-rotina-48h.md). */
+export const JANELA_FALAS_DIAS = 14
+
+type CatalogQuote = { candidate_id?: unknown; candidate_slug?: unknown; occurred_on?: unknown; occurred_between?: unknown }
 
 function stringValue(value: unknown): string | null {
   return typeof value === "string" && value.trim() ? value.trim() : null
@@ -149,6 +165,25 @@ function catalogIdentities(catalog: CatalogoFalas | { quotes?: readonly CatalogQ
   }))
 }
 
+function quoteEnd(quote: CatalogQuote): string | null {
+  const occurredOn = stringValue(quote.occurred_on)
+  if (occurredOn) return occurredOn.slice(0, 10)
+  const range = quote.occurred_between
+  if (range && typeof range === "object" && !Array.isArray(range)) return stringValue((range as Record<string, unknown>).to)?.slice(0, 10) ?? null
+  return null
+}
+
+/** Identidades com aspa cujo período termina em `from` ou depois. */
+function windowQuoteIdentities(catalog: CatalogoFalas | { quotes?: readonly CatalogQuote[] } | undefined, from: string): Set<string> {
+  const quotes: readonly CatalogQuote[] = catalog && Array.isArray(catalog.quotes) ? catalog.quotes : []
+  return new Set(quotes.flatMap((quote) => {
+    const id = stringValue(quote.candidate_id)
+    const slug = stringValue(quote.candidate_slug)
+    const end = quoteEnd(quote)
+    return id && slug && end && end >= from ? [identityKey(id, slug)] : []
+  }))
+}
+
 function invalidReceiptReason(receipt: Record<string, unknown>, start: Date, now: Date): string | null {
   const status = normalizeStatus(receipt)
   if (!status) return "status_invalid"
@@ -193,8 +228,8 @@ export function auditarRodadaFalas(input: {
     if (identities.has(key)) throw new Error(`Candidato duplicado na rodada: ${candidate.slug}`)
     identities.add(key)
   }
-  const byKey = new Map<string, { valid: number; noResults: number; blocked: number; planned: number; reasons: Set<string> }>()
-  for (const candidate of input.roster) byKey.set(identityKey(candidate.id, candidate.slug), { valid: 0, noResults: 0, blocked: 0, planned: 0, reasons: new Set() })
+  const byKey = new Map<string, { valid: number; noResults: number; found: number; blocked: number; planned: number; lastObserved: string | null; reasons: Set<string> }>()
+  for (const candidate of input.roster) byKey.set(identityKey(candidate.id, candidate.slug), { valid: 0, noResults: 0, found: 0, blocked: 0, planned: 0, lastObserved: null, reasons: new Set() })
   let invalidReceipts = 0
   for (const receipt of flattenReceipts(input.receipts)) {
     const reason = invalidReceiptReason(receipt, start, now)
@@ -216,20 +251,33 @@ export function auditarRodadaFalas(input: {
     }
     if (!bucket) { invalidReceipts++; continue }
     const status = normalizeStatus(receipt)!
-    if (status === "executed" || status === "no_results") { bucket.valid++; if (status === "no_results") bucket.noResults++ }
+    // A validação acima garante executed <=> result=found.
+    if (status === "executed" || status === "no_results") {
+      bucket.valid++
+      if (status === "no_results") bucket.noResults++
+      else bucket.found++
+      const observed = new Date(stringValue(receipt.observed_at)!).toISOString()
+      if (!bucket.lastObserved || observed > bucket.lastObserved) bucket.lastObserved = observed
+    }
     else if (status === "blocked") { bucket.blocked++; bucket.reasons.add("blocked") }
     else { bucket.planned++; bucket.reasons.add("planned") }
   }
   const coveredKeys = catalogIdentities(input.catalog)
+  const quoteWindowFrom = new Date(start.getTime() - JANELA_FALAS_DIAS * 86_400_000).toISOString().slice(0, 10)
+  const windowKeys = windowQuoteIdentities(input.catalog, quoteWindowFrom)
   const candidates = input.roster.map((candidate) => {
     const key = identityKey(candidate.id, candidate.slug)
     const bucket = byKey.get(key)!
     const status: AuditoriaCandidatoRodada["status"] = bucket.valid ? "searched" : bucket.blocked ? "blocked" : bucket.planned ? "planned" : "not_searched"
     const covered = coveredKeys.has(key)
+    const found = bucket.found > 0
+    const hasWindowQuote = windowKeys.has(key)
     return { candidate_id: candidate.id, candidate_slug: candidate.slug, name: candidate.nome_urna, office: candidate.cargo_disputado, uf: candidate.estado,
       status, searched: status === "searched", no_results: bucket.valid > 0 && bucket.noResults === bucket.valid, covered,
-      reasons: [...bucket.reasons].sort(), receipt_count: bucket.valid + bucket.blocked + bucket.planned }
+      reasons: [...bucket.reasons].sort(), receipt_count: bucket.valid + bucket.blocked + bucket.planned,
+      found, has_window_quote: hasWindowQuote, found_without_quote: found && !hasWindowQuote, searched_at: bucket.lastObserved }
   })
+  const foundWithoutQuote = candidates.filter((candidate) => candidate.found_without_quote)
   const searched = candidates.filter((candidate) => candidate.searched).length
   const noResults = candidates.filter((candidate) => candidate.no_results).length
   const blocked = candidates.filter((candidate) => candidate.status === "blocked").length
@@ -239,7 +287,9 @@ export function auditarRodadaFalas(input: {
   const missingNames = candidates.filter((candidate) => !candidate.searched).map((candidate) => candidate.name)
   return { schema_version: SCHEMA_RODADA_FALAS, round_start: start.toISOString(), now: now.toISOString(), total: candidates.length,
     searched, no_results: noResults, blocked, planned, not_searched: notSearched, covered, covered_but_unsearched: candidates.filter((candidate) => candidate.covered && !candidate.searched).length,
-    invalid_receipts: invalidReceipts, complete: candidates.length > 0 && searched === candidates.length, missing_names: missingNames, candidates }
+    invalid_receipts: invalidReceipts, complete: candidates.length > 0 && searched === candidates.length, missing_names: missingNames,
+    quote_window_from: quoteWindowFrom, found: candidates.filter((candidate) => candidate.found).length,
+    found_without_quote: foundWithoutQuote.length, found_without_quote_names: foundWithoutQuote.map((candidate) => candidate.name), candidates }
 }
 
 export const auditarRodada = auditarRodadaFalas
