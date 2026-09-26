@@ -222,3 +222,31 @@ test("suplentes indeferidos preservam estado explícito, URL HTTPS e snapshot IS
     __setImprensaDataDependenciesForTests(null)
   }
 })
+
+test("vínculo de vice em perfil oficial fica em revisão e não publica nome nem fonte", async () => {
+  const privateViceName = "NOME PRIVADO DO VICE"
+  __setImprensaDataDependenciesForTests({
+    loadSlugs: async () => [{ slug: "governador-vinculo-em-revisao" }],
+    loadCandidates: async () => [{ id: "20", slug: "governador-vinculo-em-revisao", nome_urna: "GOVERNADOR", cargo_disputado: "Governador", estado: "SP", partido_sigla: "ABC" }],
+    loadProcesses: async () => [],
+    loadChapas: async () => [{ titular_candidato_id: "20", vice_nome_urna: privateViceName, identidade_status: "confirmada", vinculo_titular_status: "novo_perfil_oficial", fonte_url: "https://tse.jus.br/chapa", fonte_sha256: "a".repeat(64), snapshot_em: "2026-09-26T12:00:00.000Z" }],
+    loadSites: async () => null,
+  })
+  try {
+    const row = (await getImprensaDataset({ cargo: null, uf: null })).rows[0]
+    assert.equal(row.chapa.estado, "vinculo_em_revisao")
+    assert.equal(row.chapa.viceNome, null)
+    assert.equal(row.chapa.viceNomeOriginal, null)
+    assert.equal(row.chapa.fonteUrl, null)
+    assert.equal(JSON.stringify(row.chapa).includes(privateViceName), false)
+
+    const component = readFileSync(new URL("../src/components/imprensa/ImprensaRows.tsx", import.meta.url), "utf8")
+    const css = readFileSync(new URL("../src/app/(site)/imprensa/imprensa.module.css", import.meta.url), "utf8")
+    assert.match(component, /state === "vinculo_em_revisao"\) return "Vínculo do vice em revisão"/)
+    assert.match(component, /row\.chapa\.estado === "vinculo_em_revisao"\) return false/)
+    assert.match(component, /return "Exige conferência"/)
+    assert.match(css, /\.status\[data-state="vinculo_em_revisao"\]/)
+  } finally {
+    __setImprensaDataDependenciesForTests(null)
+  }
+})

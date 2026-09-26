@@ -284,6 +284,7 @@
 .status[data-state="publicado"] strong { color: #276749; }
 .status[data-state="cobertura_parcial"] strong { color: #9a6700; }
 .status[data-state="sem_dado"] strong { color: #666; }
+.status[data-state="vinculo_em_revisao"] strong { color: #9a6700; }
 .actions { align-items: flex-start; display: flex; flex-wrap: wrap; gap: 7px; }
 .actions a { color: var(--ink); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 

@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { permanentRedirect } from "next/navigation"
 import { getImprensaDatasetCached } from "@/lib/imprensa-cache"
 import { normalizeImprensaFilters } from "@/lib/imprensa-data"
 import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
@@ -33,11 +32,7 @@ function counts(rows: Array<{ cargo: string; uf: string | null; sites: { estado:
   }
 }
 
-type SearchParams = { cargo?: string | string[]; uf?: string | string[]; [key: string]: string | string[] | undefined }
-
-export default async function ImprensaSala({ searchParams }: { searchParams: Promise<SearchParams> }) {
-  const params = await searchParams
-  redirectEmptyFilters(params)
+export default async function ImprensaSala() {
   const alertsEnabled = isAlertsEmailFeatureEnabled()
   const senateEnabled = isSenadoEnabled()
   let summary: ReturnType<typeof counts> | null = null
@@ -121,28 +116,15 @@ export default async function ImprensaSala({ searchParams }: { searchParams: Pro
   )
 }
 
-function redirectEmptyFilters(params: SearchParams) {
-  if (["cargo", "uf"].some((key) => {
-    const value = params[key as keyof SearchParams]
-    return value !== undefined && (Array.isArray(value) ? value.some((item) => item === "") : value === "")
-  })) {
-    const query = new URLSearchParams()
-    for (const [key, value] of Object.entries(params)) {
-      if (Array.isArray(value)) value.forEach((item) => query.append(key, item))
-      else if (value !== undefined) query.append(key, value)
-    }
-    permanentRedirect(`/imprensa/mesa?${query.toString()}`)
-  }
-}
-
 function labelState(state: string): string {
   const labels: Record<string, string> = {
     publicado: "Publicado", vazio_confirmado: "Buscado, nada encontrado", cobertura_parcial: "Cobertura parcial",
     indeterminado: "Indeterminado", nao_buscado: "Não buscado", erro: "Erro na coleta", desatualizado: "Desatualizado",
     contraditorio: "Recibo contraditório", nao_aplicavel: "Não se aplica", indisponivel: "Fonte indisponível",
     sem_dado: "Sem dado", indeferidos_comprovados: "Suplentes indeferidos (comprovante do TSE)",
+    vinculo_em_revisao: "Vínculo do vice em revisão",
   }
-  return labels[state] ?? state
+  return labels[state] ?? "Exige conferência"
 }
 
 function CountCard({ title, values }: { title: string; values: Record<string, number> }) {

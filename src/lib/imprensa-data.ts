@@ -26,7 +26,7 @@ export interface ImprensaRow {
   partido: string | null
   fichaUrl: string
   chapa: {
-    estado: "publicado" | "sem_dado" | "nao_aplicavel" | "indisponivel" | "indeferidos_comprovados" | "indeterminado"
+    estado: "publicado" | "sem_dado" | "indisponivel" | "indeferidos_comprovados" | "indeterminado" | "vinculo_em_revisao"
     suplentesEstado: "publicado" | "indeferidos_comprovados" | "indeterminado" | "indisponivel" | "nao_aplicavel"
     /** Formatado para exibição (title case); ver `viceNomeOriginal` para exportação. */
     viceNome: string | null
@@ -334,6 +334,9 @@ function mapChapa(rows: ChapaRow[]): ImprensaRow["chapa"] {
   const fonteSha256 = typeof row.fonte_sha256 === "string" && /^[a-f0-9]{64}$/i.test(row.fonte_sha256) ? row.fonte_sha256 : null
   const snapshotEm = asIsoSnapshot(row.snapshot_em)
   const viceNomeOriginal = typeof row.vice_nome_urna === "string" && row.vice_nome_urna.trim() ? row.vice_nome_urna.trim() : null
+  if (row.vinculo_titular_status === "novo_perfil_oficial") {
+    return { estado: "vinculo_em_revisao", suplentesEstado: "nao_aplicavel", viceNome: null, viceNomeOriginal: null, suplentes: [], fonteUrl: null, fonteSha256: null, snapshotEm: null }
+  }
   if (row.identidade_status !== "confirmada" || row.vinculo_titular_status !== "confirmado" || !viceNomeOriginal || !fonteUrl || !fonteSha256 || !snapshotEm) {
     return { estado: "sem_dado", suplentesEstado: "nao_aplicavel", viceNome: null, viceNomeOriginal: null, suplentes: [], fonteUrl: null, fonteSha256: null, snapshotEm: null }
   }

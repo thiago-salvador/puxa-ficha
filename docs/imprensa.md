@@ -30,6 +30,17 @@ Os exports longos estão em `/api/imprensa/export/sites` e `/api/imprensa/export
 - `nao_aplicavel`: em `suplentesEstado`, indica que suplentes não se aplicam a candidaturas fora do Senado. Para senadores, `chapa.estado` e `suplentesEstado` usam o mesmo estado dos suplentes.
 - `indeferidos_comprovados`: comprovante do TSE registra dois suplentes indeferidos; isso não significa que suplentes não se aplicam ao Senado. A fonte HTTPS, o hash e o snapshot ISO acompanham o estado.
 - `indeterminado`: não há prova suficiente sobre os suplentes.
+- `vinculo_em_revisao`: o vínculo do vice com a candidatura está em revisão. O nome e a fonte da chapa não são publicados, e o caso exige conferência.
+
+Os enums podem ganhar valores novos. Consumidores devem tratar qualquer valor desconhecido como **exige conferência**, sem convertê-lo em ausência, zero ou publicação.
+
+Valores atuais por campo:
+
+- `chapa.estado`: `publicado`, `sem_dado`, `indisponivel`, `indeferidos_comprovados`, `indeterminado`, `vinculo_em_revisao`.
+- `chapa.suplentesEstado`: `publicado`, `indeferidos_comprovados`, `indeterminado`, `indisponivel`, `nao_aplicavel`.
+- `sites.estado`: `publicado`, `vazio_confirmado`, `sem_dado`.
+- `processos.estado`: `publicado`, `cobertura_parcial`, `vazio_confirmado`, `indeterminado`, `nao_buscado`, `erro`, `desatualizado`, `sem_dado`.
+- `processos.buscaEstado`: `encontrado`, `vazio_confirmado`, `indeterminado`, `nao_buscado`, `erro`, `desatualizado`, `contraditorio`.
 
 As contagens de destaque são recalculadas do JSON do export e devem ser lidas junto de `generatedAt`, que identifica a geração usada. Uma contagem zero só é válida dentro do escopo e estado declarados. A Sala não fixa números de métricas no código.
 
