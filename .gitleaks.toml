@@ -128,6 +128,13 @@ id = "generic-api-key"
 
 
   [[rules.allowlists]]
+  description = "SHA-256 das páginas públicas da API da Câmara no recibo da quarentena de gastos: hash de conferência, não credencial. Só o par api_sha256 com hex minúsculo (o scan por diretório às vezes corta o match antes dos 64), só neste arquivo"
+  condition = "AND"
+  regexTarget = "match"
+  regexes = ['''^api_sha256":"[0-9a-f]{32,64}"?$''']
+  paths = ['''^QA/evidencias/2026-09-25-gastos-quarentena-universo/preflight\.json$''']
+
+  [[rules.allowlists]]
   description = "Identificadores públicos exatos do PDF Serasa vinculado pela Lupa, removidos do catálogo mas presentes no histórico deste lote"
   condition = "AND"
   regexTarget = "secret"

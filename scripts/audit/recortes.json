@@ -683,6 +683,13 @@
       "ate": "20260925220200",
       "allowlist": "scripts/audit/allowlist-dados-no-ar-senado-claims-20260925.json",
       "divida": null
+    },
+    {
+      "nome": "gastos-parlamentares-quarentena-universo-20260925",
+      "desde": "20260925221042",
+      "ate": "20260925221042",
+      "allowlist": "scripts/audit/allowlist-gastos-parlamentares-quarentena-universo-20260925.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
