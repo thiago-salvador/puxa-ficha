@@ -56,6 +56,7 @@ import {
 } from "./EmptyState"
 import type { CandidatoProfileNavTabId, CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
 import { getApprovedAttributedFactChecks } from "@/lib/checagens-atribuidas"
+import { getReciboChecagens } from "@/lib/buscas-recibos"
 import { getRepresentacoesEticaAprovadas } from "@/lib/representacoes-etica"
 import { RepresentacoesEticaCategoria } from "./RepresentacoesEticaCategoria"
 import {
@@ -480,7 +481,13 @@ export function CandidatoProfile({
           uf: ficha.estado,
         })
       : []
-  const checagensEnabled = attributedChecks.length > 0
+  // A aba também abre com recibo de busca sem checagem publicada: o leitor vê
+  // que a busca foi feita. Sem recibo, a aba some e nada afirma ausência.
+  const checagensReceipt =
+    ficha.cargo_disputado === "Presidente" || ficha.cargo_disputado === "Governador"
+      ? getReciboChecagens({ candidate_id: ficha.id, candidate_slug: ficha.slug })
+      : null
+  const checagensEnabled = attributedChecks.length > 0 || checagensReceipt !== null
   const representacoesEtica = getRepresentacoesEticaAprovadas(ficha.slug)
 
   const tabDefsById: Record<CandidatoProfileNavTabId, { label: string; dataCount: number }> = {
@@ -891,7 +898,7 @@ export function CandidatoProfile({
                     ) : undefined
                   }
                   factChecksCard={
-                    checagensEnabled ? (
+                    attributedChecks.length > 0 ? (
                       <AttributedFactChecksOverview
                         checks={attributedChecks}
                         onOpenTab={() => navigateToTab("checagens")}
@@ -930,6 +937,7 @@ export function CandidatoProfile({
                 candidateSlug={ficha.slug}
                 office={ficha.cargo_disputado}
                 uf={ficha.estado}
+                searchReceipt={checagensReceipt}
               />
             )}
 

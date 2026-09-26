@@ -1,0 +1,108 @@
+name: Checagens nas agências (recibo por candidato)
+
+# Busca nominal, candidato a candidato, das agências de checagem para as
+# candidaturas a Presidente e Governador do cadastro público (pf-checagens-v1).
+#
+# O que grava: um recibo por candidatura em public.coleta_log, fonte
+# `checagens-agencias` (encontrado, vazio_confirmado ou erro). Não publica
+# checagem nenhuma: os leads vão no artefato para revisão editorial, e o
+# catálogo público de recibos (scripts/data/checagens-recibos.json) só muda por
+# PR, importando o artefato com `npm run coletar:checagens -- --de-recibos`.
+#
+# Falha o job quando alguma candidatura termina em `erro` (fonte fora do ar ou
+# limite de taxa), depois de gravar os recibos que conseguiu. Vermelho aqui
+# significa "há candidatura sem busca válida nesta semana".
+#
+# Vigência: semanal até o primeiro turno (04/10/2026). Depois disso a execução
+# agendada sai sem buscar; o disparo manual continua disponível.
+#
+# Não roda em pull_request: usa SUPABASE_SERVICE_ROLE_KEY.
+
+on:
+  schedule:
+    # Segundas às 10:00 UTC (07:00 em Brasília).
+    - cron: "0 10 * * 1"
+  workflow_dispatch:
+    inputs:
+      slugs:
+        description: Slugs separados por vírgula. Vazio = cadastro inteiro.
+        required: false
+        type: string
+      gravar:
+        description: Gravar recibos no coleta_log. Desligado = dry-run, só artefato.
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+# Mesmo grupo dos ingests que escrevem no banco: nunca concorre com eles.
+concurrency:
+  group: ingest-pipeline
+  cancel-in-progress: false
+
+jobs:
+  coletar:
+    name: Busca nominal nas agências
+    runs-on: ubuntu-latest
+    # 204 candidaturas x 7 agências com pausa de 1 s (~25 min). Limite de taxa
+    # do Google abre o disjuntor depois de 3 bloqueios seguidos ou 10 min de
+    # espera somada: as agências só-Google viram `erro` no resto da rodada, e o
+    # coleta_log e o resumo são gravados mesmo assim.
+    timeout-minutes: 90
+    steps:
+      - name: Vigência da rotina
+        id: vigencia
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%Y%m%d)" -gt 20261004 ]; then
+            echo "Rotina agendada encerrada após 04/10/2026."
+            echo "ativa=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ativa=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        if: steps.vigencia.outputs.ativa == 'true'
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        if: steps.vigencia.outputs.ativa == 'true'
+        with:
+          node-version: "24"
+          cache: npm
+
+      - if: steps.vigencia.outputs.ativa == 'true'
+        run: npm ci --ignore-scripts
+
+      - name: Testes do coletor
+        if: steps.vigencia.outputs.ativa == 'true'
+        run: node --import tsx --test tests/checagens-coleta.test.ts
+
+      # O input não é interpolado no `run:`; chega como variável de ambiente.
+      - name: Buscar e gravar recibos (dry-run no disparo manual sem gravar)
+        if: steps.vigencia.outputs.ativa == 'true'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY || secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          CHECAGENS_SLUGS: ${{ inputs.slugs }}
+          # Agendada grava; disparo manual grava só com gravar=true.
+          CHECAGENS_GRAVAR: ${{ github.event_name == 'schedule' || inputs.gravar == true }}
+        run: |
+          args=(--out reports/checagens-coleta/run --catalogo scripts/data/checagens-recibos.json)
+          if [ "$CHECAGENS_GRAVAR" = "true" ]; then args+=(--gravar-log); fi
+          if [ -n "$CHECAGENS_SLUGS" ]; then args+=(--slugs "$CHECAGENS_SLUGS"); fi
+          npm run coletar:checagens -- "${args[@]}"
+
+      - name: Guardar recibos, leads e catálogo atualizado
+        if: always() && steps.vigencia.outputs.ativa == 'true'
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: checagens-coleta-${{ github.run_id }}
+          path: |
+            reports/checagens-coleta/run/
+            scripts/data/checagens-recibos.json
+          if-no-files-found: warn
+          retention-days: 30

@@ -8,6 +8,7 @@ import { ChevronLeft, ChevronRight, ExternalLink, Pause, Play } from "lucide-rea
 import debatePressQuotes from "../../scripts/data/debates-presidencia-band-2026-imprensa.json"
 import monitoredQuotes from "../../scripts/data/falas-candidatos.json"
 import { falasDoCandidato, type CatalogoFalas, type TranscricaoFala } from "../lib/falas-candidatos"
+import { formatarDataBusca, getReciboFalas, type ReciboFalasVisivel } from "../lib/buscas-recibos"
 
 export const DEBATE_PRESS_QUOTE_ROTATION_MS = 10_000
 
@@ -42,6 +43,35 @@ function findCandidateQuotes(candidateSlug: string, candidateId: string): { quot
 
 export function hasCandidateDebatePressQuotes(candidateSlug: string, candidateId: string): boolean {
   return (findCandidateQuotes(candidateSlug, candidateId)?.quotes.length ?? 0) > 0
+}
+
+/** Recibo de busca válida sem aspa: o card diz que a busca foi feita. Sem recibo, nada. */
+function emptySearchReceipt(candidateSlug: string, candidateId: string): ReciboFalasVisivel | null {
+  const receipt = getReciboFalas({ candidate_id: candidateId, candidate_slug: candidateSlug })
+  return receipt?.result === "sem_fala" ? receipt : null
+}
+
+/** Card de falas aparece com aspas ou com recibo de busca vazia; nunca sem busca registrada. */
+export function hasCandidateFalasCard(candidateSlug: string, candidateId: string): boolean {
+  return hasCandidateDebatePressQuotes(candidateSlug, candidateId) || emptySearchReceipt(candidateSlug, candidateId) !== null
+}
+
+function FalasSearchEmptyCard({ receipt }: { receipt: ReciboFalasVisivel }) {
+  return (
+    <article
+      data-pf-debates-card=""
+      data-pf-falas-busca-vazia={receipt.searchedAt}
+      className="flex min-w-0 flex-col rounded-[12px] border border-border/50 bg-card px-5 py-4"
+    >
+      <h2 className="text-[length:var(--text-body-sm)] font-semibold text-foreground">Falas</h2>
+      <p className="mt-2 text-[length:var(--text-caption)] leading-relaxed text-foreground">
+        Busca feita em {formatarDataBusca(receipt.searchedAt)}, cobrindo {formatarDataBusca(receipt.windowFrom)} a {formatarDataBusca(receipt.windowTo)}: nenhuma fala com aspas conferida para esta ficha.
+      </p>
+      <p className="mt-2 text-[length:var(--text-eyebrow)] leading-snug text-muted-foreground">
+        A busca olha debates, entrevistas, sabatinas e declarações de campanha na imprensa e se repete a cada dois dias.
+      </p>
+    </article>
+  )
 }
 
 function useReducedMotion(): boolean {
@@ -124,7 +154,10 @@ export function CandidateDebatesBentoCard({
     return () => window.clearInterval(interval)
   }, [interactionPaused, manuallyPaused, quotes.length, reducedMotion, rotationIntervalMs])
 
-  if (!candidate || quotes.length === 0) return null
+  if (!candidate || quotes.length === 0) {
+    const receipt = emptySearchReceipt(candidateSlug, candidateId)
+    return receipt ? <FalasSearchEmptyCard receipt={receipt} /> : null
+  }
 
   const quote = quotes[index] ?? quotes[0]
   const previous = () => setIndex((current) => (current - 1 + quotes.length) % quotes.length)
