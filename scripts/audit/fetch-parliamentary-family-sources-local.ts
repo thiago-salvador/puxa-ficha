@@ -300,7 +300,7 @@ async function main(): Promise<void> {
       if (house === "camara") {
         const projects = await capturePaginated(destination, `familias/${house}/${officialId}/projetos_lei`, `${CAMARA}/proposicoes`, { idDeputadoAutor: officialId, ordem: "DESC", ordenarPor: "id" })
         const projectsBundle = writeBundle(destination, `familias/${house}/${officialId}/projetos_lei`, projects as Array<Page & { value: unknown }>)
-        addObservation({ house, family: "projetos_lei", officialId, sourceUrl: familySource(house, "projetos_lei", officialId), sourcePath: projectsBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: projects.map(stripValue), bundleSha256: projectsBundle.sha256 })
+        addObservation({ house, family: "projetos_lei", officialId, sourceUrl: familySource(house, "projetos_lei", officialId), sourcePath: projectsBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: (projects as Array<Page & { value: unknown }>).map(stripValue), bundleSha256: projectsBundle.sha256 })
 
         // The existing Câmara ingest reads each year and uses the legislature
         // matching that year. Keeping those query parameters here prevents a
