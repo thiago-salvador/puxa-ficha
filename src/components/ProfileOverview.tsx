@@ -1,5 +1,7 @@
 "use client"
 
+// cspell:words variacao
+
 import { useLayoutEffect, useRef } from "react"
 import Link from "next/link"
 import type {
@@ -68,8 +70,12 @@ import { buildCandidateSiteLinks } from "@/lib/candidate-sites"
 import { validarDataDeVerificacao } from "@/lib/verificacao-campos"
 import { CandidateSitesCard } from "./CandidateSitesCard"
 import {
+  estadoValorPatrimonio,
   patrimonioMaisRecenteSemEscolhaArbitraria,
   patrimonioPorAnoSemAmbiguidade,
+  patrimonioTemValorComparavel,
+  patrimonioValorEstadoLabel,
+  variacaoPatrimonialPct,
 } from "@/lib/patrimonio-contexto"
 
 /* ─── Pure helpers ──────────────────────────────────── */
@@ -90,10 +96,7 @@ function getPatrimonioSummary(patrimonio: Patrimonio[]): PatrimonioSummary {
   const latestContext = patrimonioMaisRecenteSemEscolhaArbitraria(patrimonio)
   const latest = latestContext.patrimonio
   const earliest = sorted.length > 1 ? sorted[0] : null
-  const growthPct =
-    latest && earliest && earliest.valor_total > 0
-      ? ((latest.valor_total - earliest.valor_total) / earliest.valor_total) * 100
-      : null
+  const growthPct = latest && earliest ? variacaoPatrimonialPct(earliest, latest) : null
   return { sorted, latest, earliest, growthPct, latestYear: latestContext.ano, latestCount: latestContext.quantidade }
 }
 
@@ -145,6 +148,33 @@ function formatCareerTeaserObservation(observacoes: string | null | undefined): 
   if (/^ELEITO \(TSE \d{4}\)$/i.test(trimmed)) return null
 
   return trimmed
+}
+
+/** Valor do teaser; zero degenerado vira rótulo, nunca "R$ 0" sem contexto. */
+function PatrimonioTeaserValor({
+  patrimonio,
+  as: Tag = "p",
+  className = "",
+}: {
+  patrimonio: Patrimonio
+  as?: "p" | "span"
+  className?: string
+}) {
+  const estado = estadoValorPatrimonio(patrimonio)
+  const rotulo = patrimonioValorEstadoLabel(estado)
+  return (
+    <Tag
+      data-pf-patrimonio-valor-estado={estado}
+      className={`font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-foreground ${className}`.trim()}
+    >
+      {estado === "valor_nao_informado" ? rotulo : <FormattedNumber value={patrimonio.valor_total} />}
+      {estado !== "valor_informado" && estado !== "valor_nao_informado" && rotulo && (
+        <span className="mt-1 block font-sans text-[length:var(--text-caption)] font-medium tracking-normal text-muted-foreground">
+          {rotulo}
+        </span>
+      )}
+    </Tag>
+  )
 }
 
 function getPatrimonioGrowthIndicator(
@@ -393,9 +423,7 @@ function PatrimonioTeaser({
         <p className="mt-1 text-[length:var(--text-eyebrow)] font-medium leading-snug text-muted-foreground">
           Registro único disponível.
         </p>
-        <p className="mt-2 font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-foreground">
-          <FormattedNumber value={latest.valor_total} />
-        </p>
+        <PatrimonioTeaserValor patrimonio={latest} className="mt-2" />
       </TeaserCard>
     )
   }
@@ -410,9 +438,7 @@ function PatrimonioTeaser({
       moneyCardKind="patrimonio"
     >
       <div className="mb-3 flex items-baseline gap-3">
-        <span className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-foreground">
-          <FormattedNumber value={latest.valor_total} />
-        </span>
+        <PatrimonioTeaserValor patrimonio={latest} as="span" />
         {indicator && earliest && growthPct !== null && (
           <span className={`text-[length:var(--text-caption)] font-bold ${indicator.color}`}>
             {indicator.arrow} {Math.abs(Math.round(growthPct))}% desde {earliest.ano_eleicao}
@@ -420,9 +446,11 @@ function PatrimonioTeaser({
         )}
       </div>
       <PatrimonioChart
-        data={summary.sorted.map((p) => ({ id: p.id, ano: p.ano_eleicao, valor: p.valor_total }))}
+        data={summary.sorted
+          .filter((p) => patrimonioTemValorComparavel(p))
+          .map((p) => ({ id: p.id, ano: p.ano_eleicao, valor: p.valor_total }))}
       />
-      <PatrimonioEvolucaoAlerta patrimonio={summary.sorted} className="mt-4 rounded-[12px] px-3 py-3 sm:px-3" />
+      <PatrimonioEvolucaoAlerta patrimonio={summary.sorted.filter((p) => patrimonioTemValorComparavel(p))} className="mt-4 rounded-[12px] px-3 py-3 sm:px-3" />
     </TeaserCard>
   )
 }

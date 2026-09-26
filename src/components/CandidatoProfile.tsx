@@ -1,6 +1,6 @@
 "use client"
 
-// cspell:words atribuidas representacoes etica
+// cspell:words atribuidas representacoes etica variacao
 
 import { memo, useCallback, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react"
 import dynamic from "next/dynamic"
@@ -19,7 +19,13 @@ import {
 } from "@/lib/destaques-ficha"
 import { classifyAttentionPoints } from "@/lib/attention-points"
 import { resolvePatrimonioEleicoes } from "@/lib/public-profile-dto"
-import { patrimonioMaisRecenteSemEscolhaArbitraria, patrimonioPorAnoSemAmbiguidade } from "@/lib/patrimonio-contexto"
+import {
+  estadoValorPatrimonio,
+  patrimonioMaisRecenteSemEscolhaArbitraria,
+  patrimonioPorAnoSemAmbiguidade,
+  patrimonioValorEstadoLabel,
+  variacaoPatrimonialPct,
+} from "@/lib/patrimonio-contexto"
 import {
   groupProcessosForDisplay,
   isProcessStatusNeutral,
@@ -696,18 +702,22 @@ export function CandidatoProfile({
   const latestPatrimonio = latestPatrimonioContexto.patrimonio
   const patrimonioSerieAnual = patrimonioPorAnoSemAmbiguidade(patrimonio)
 
+  // Sem base positiva e informada não há porcentagem: 0 -> X não é "↓ 0%".
   const patrimonioVariacao =
     latestPatrimonio && patrimonioSerieAnual.length >= 2
       ? (() => {
           const sorted = [...patrimonioSerieAnual].sort((a, b) => b.ano_eleicao - a.ano_eleicao)
           const latest = sorted[0]
           const prev = sorted[1]
-          const pct = prev.valor_total > 0
-            ? ((latest.valor_total - prev.valor_total) / prev.valor_total) * 100
-            : 0
+          const pct = variacaoPatrimonialPct(prev, latest)
+          if (pct === null) return null
           return { pct: Math.round(pct), from: prev.ano_eleicao, to: latest.ano_eleicao }
         })()
       : null
+  const latestPatrimonioEstado = latestPatrimonio ? estadoValorPatrimonio(latestPatrimonio) : null
+  const latestPatrimonioEstadoLabel = latestPatrimonioEstado
+    ? patrimonioValorEstadoLabel(latestPatrimonioEstado)
+    : null
 
   const totalGastos =
     gastos.length > 0
@@ -762,7 +772,9 @@ export function CandidatoProfile({
               sub={processosOverview.sub}
             />
             <StatCard
-              value={latestPatrimonio
+              value={latestPatrimonio && latestPatrimonioEstado === "valor_nao_informado"
+                ? "—"
+                : latestPatrimonio
                 ? <FormattedNumber value={latestPatrimonio.valor_total} kind="currency" />
                 : latestPatrimonioContexto.quantidade > 1
                   ? `${latestPatrimonioContexto.quantidade} declarações`
@@ -770,10 +782,13 @@ export function CandidatoProfile({
               label="Patrimônio"
               icon={Landmark}
               dataValueAttr="data-pf-overview-patrimonio"
-              dataRawValue={latestPatrimonio?.valor_total ?? null}
+              dataRawValue={latestPatrimonioEstado === "valor_nao_informado" ? null : latestPatrimonio?.valor_total ?? null}
+              sub={latestPatrimonio && latestPatrimonioEstadoLabel
+                ? `${latestPatrimonioEstadoLabel} (${latestPatrimonio.ano_eleicao})`
+                : undefined}
               trend={patrimonioVariacao ? {
                 value: `${Math.abs(patrimonioVariacao.pct)}% (${patrimonioVariacao.from}-${patrimonioVariacao.to})`,
-                positive: patrimonioVariacao.pct > 0 ? undefined : false,
+                positive: patrimonioVariacao.pct < 0 ? false : undefined,
               } : undefined}
             />
             <StatCard

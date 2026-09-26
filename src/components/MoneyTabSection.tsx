@@ -25,7 +25,13 @@ import { sanitizePublicText } from "@/lib/public-text"
 import { buildFinancingComposition } from "@/lib/financiamento-display"
 import { formatarStatusSigilo, groupGastosExecutivoPorOrgao, rotuloFonteGastosExecutivo, rotuloUnidadeGestora, type GastoExecutivoOrgaoResumo, type SigiloStatus } from "@/lib/gastos-executivo-display"
 import type { SuggestAction } from "./candidato-profile-section-types"
-import { patrimonioContextoLabel, patrimonioPorAnoSemAmbiguidade } from "@/lib/patrimonio-contexto"
+import {
+  estadoValorPatrimonio,
+  patrimonioContextoLabel,
+  patrimonioPorAnoSemAmbiguidade,
+  patrimonioTemValorComparavel,
+  patrimonioValorEstadoLabel,
+} from "@/lib/patrimonio-contexto"
 
 const GASTOS_ESTRUTURA_GOVERNO_ANCHOR_ID = "gastos-estrutura-governo"
 
@@ -393,6 +399,14 @@ function PatrimonioEleicaoSemDadoRow({
  * O desenho é o mesmo do cabeçalho dos cards de financiamento: rótulo do pleito
  * à esquerda, valor em destaque à direita.
  */
+/** Total do cartão: zero degenerado ganha rótulo em vez de "R$ 0". */
+function formatPatrimonioTotal(patrimonio: Patrimonio): string {
+  const estado = estadoValorPatrimonio(patrimonio)
+  if (estado === "valor_nao_informado") return patrimonioValorEstadoLabel(estado) ?? "Valor não informado"
+  const rotulo = patrimonioValorEstadoLabel(estado)
+  return rotulo ? `${formatBRL(patrimonio.valor_total)} · ${rotulo}` : formatBRL(patrimonio.valor_total)
+}
+
 function PatrimonioValorCard({ patrimonio }: { patrimonio: Patrimonio }) {
   return (
     <div
@@ -411,7 +425,7 @@ function PatrimonioValorCard({ patrimonio }: { patrimonio: Patrimonio }) {
         </p>
       </div>
       <span className="shrink-0 text-[24px] font-bold tabular-nums tracking-tight text-foreground sm:text-right sm:text-[length:var(--text-heading)]">
-        {formatBRL(patrimonio.valor_total)}
+        {formatPatrimonioTotal(patrimonio)}
       </span>
     </div>
   )
@@ -747,7 +761,10 @@ export function MoneyTabSection({
           <div className="mt-4">
             <DataFreshnessNotice info={freshness?.patrimonio} />
           </div>
-          <PatrimonioEvolucaoAlerta patrimonio={patrimonioSerieAnual} className="mt-4" />
+          <PatrimonioEvolucaoAlerta
+            patrimonio={patrimonioSerieAnual.filter((item) => patrimonioTemValorComparavel(item))}
+            className="mt-4"
+          />
           {patrimonioAnosComMultiplasDeclaracoes.length > 0 && (
             <NoticePanel
               data-pf-patrimonio-contextos-separados={patrimonioAnosComMultiplasDeclaracoes.join(",")}
@@ -760,7 +777,7 @@ export function MoneyTabSection({
           {patrimonioSerieAnual.length > 1 && (
             <div className="mt-6">
               <PatrimonioChart
-                data={patrimonioSerieAnual.map((item) => ({
+                data={patrimonioSerieAnual.filter((item) => patrimonioTemValorComparavel(item)).map((item) => ({
                   id: item.id,
                   ano: item.ano_eleicao,
                   valor: item.valor_total,
@@ -791,7 +808,7 @@ export function MoneyTabSection({
                   ) : (
                     <ExpandableCard
                       title={patrimonioContextoLabel(item)}
-                      valor={formatBRL(item.valor_total)}
+                      valor={formatPatrimonioTotal(item)}
                       defaultOpen={
                         index === 0 ||
                         expandAllForAudit ||
@@ -813,7 +830,9 @@ export function MoneyTabSection({
                               </p>
                             </div>
                             <span className="ml-3 shrink-0 text-[length:var(--text-body)] font-bold tabular-nums text-foreground">
-                              {formatBRL(bem.valor)}
+                              {bem.valor === 0 && estadoValorPatrimonio(item) === "valor_nao_informado"
+                                ? "Valor não informado"
+                                : formatBRL(bem.valor)}
                             </span>
                           </div>
                         ))}
