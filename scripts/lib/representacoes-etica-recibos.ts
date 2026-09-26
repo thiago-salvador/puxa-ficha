@@ -59,8 +59,8 @@ const INICIO_DO_ALVO = /\b(?:EM FACE|EM DESFAVOR|CONTRA)(?: D?[OA]S?)?(?: (?:EXC
 
 /** Segmentos do representado: cada "em face/em desfavor/contra ... Senador" até pontuação ou marcador de fim. */
 export function segmentosDoAlvoPce(ementa: string): Array<{ segmento: string; coletivo: boolean }> {
-  // Sigla de partido e UF entre parênteses ("(PL-RJ)") não encerra o trecho do alvo.
-  const cru = stripAccents(ementa).replace(/\(\s*[A-Za-z]{2,}\s*[-/]\s*[A-Za-z]{2}\s*\)/g, " ")
+  // Sigla de partido, com ou sem UF, entre parênteses ("(PL-RJ)", "(PL – RJ)", "(PL)") não encerra o trecho do alvo.
+  const cru = stripAccents(ementa).replace(/\(\s*[A-Za-z]{2,}(?:\s*[-/\u2013\u2014]\s*[A-Za-z]{2})?\s*\)/g, " ")
   const saida: Array<{ segmento: string; coletivo: boolean }> = []
   // Os marcadores de início são procurados no texto cru normalizado por trecho
   // entre pontuações, para que o corte em `.;:()` valha antes da normalização.
@@ -85,7 +85,7 @@ export function segmentoDoAlvoPce(ementa: string): { segmento: string; coletivo:
   return segmentosDoAlvoPce(ementa)[0] ?? null
 }
 
-function idsNoTrecho(trecho: string, roster: readonly SenadorRosterPce[], inicios: string[]): Set<number> {
+function idsNoTrecho(trecho: string, roster: readonly SenadorRosterPce[], inicios: string[], umTokenEmQualquerPonto = false): Set<number> {
   const ids = new Set<number>()
   for (const senador of roster) {
     for (const nome of [senador.nome, senador.nome_completo].map(normalizar)) {
@@ -93,7 +93,9 @@ function idsNoTrecho(trecho: string, roster: readonly SenadorRosterPce[], inicio
       const casa = nome.split(" ").length >= 2
         ? new RegExp(`\\b${escapar(nome)}\\b`).test(trecho)
         // Nome de um só token (nome parlamentar) só vale colado ao título.
-        : inicios.some((x) => new RegExp(`^${escapar(nome)}\\b`).test(x))
+        : umTokenEmQualquerPonto
+          ? new RegExp(`\\b${escapar(nome)}\\b`).test(trecho)
+          : inicios.some((x) => new RegExp(`^${escapar(nome)}\\b`).test(x))
       if (casa) ids.add(senador.senador_id)
     }
   }
@@ -109,7 +111,9 @@ function idsNoTrecho(trecho: string, roster: readonly SenadorRosterPce[], inicio
 export function alvoDaEmentaPce(ementa: string, roster: readonly SenadorRosterPce[]): AlvoPce {
   const texto = normalizar(ementa)
   const aposTitulo = [...texto.matchAll(/\b(?:SENADOR(?:A|ES|AS)?|SEN) /g)].map((m) => texto.slice((m.index ?? 0) + m[0].length))
-  const nomesCitados = [...idsNoTrecho(texto, roster, aposTitulo)].sort((a, b) => a - b)
+  // Citado: nome de um token vale em qualquer ponto ("Senador da República Fulvio",
+  // "do Senador Bruno contra Fulvio"); vira indeterminado, nunca alvo.
+  const nomesCitados = [...idsNoTrecho(texto, roster, aposTitulo, true)].sort((a, b) => a - b)
   const segmentos = segmentosDoAlvoPce(ementa)
   if (segmentos.length === 0) return { senador_ids: [], texto_alvo: null, sem_alvo_individual: true, nomes_citados: nomesCitados }
   const ids = new Set<number>()

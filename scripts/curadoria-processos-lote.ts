@@ -958,7 +958,14 @@ export function mencionaNomeNoTexto(item: Comunicacao, nome: string): boolean {
     .filter((d) => d !== nome && new RegExp(`\\b${escaparRegex(nome)}\\b`).test(d))
     .sort((a, b) => b.length - a.length)
   for (const maior of maiores) texto = texto.replace(new RegExp(`\\b${escaparRegex(maior)}\\b`, "g"), " ")
-  return new RegExp(`\\b${escaparRegex(nome)}\\b`).test(texto)
+  if (new RegExp(`\\b${escaparRegex(nome)}\\b`).test(texto)) return true
+  // Forma invertida ("TESTE, CARLOS DA SILVA") também é menção: sem ela o item
+  // sumiria da busca e o vazio_confirmado afirmaria ausência.
+  const tokens = nome.split(" ")
+  for (let k = 1; k < tokens.length; k += 1) {
+    if (new RegExp(`\\b${escaparRegex([...tokens.slice(k), ...tokens.slice(0, k)].join(" "))}\\b`).test(texto)) return true
+  }
+  return false
 }
 
 function periodoConsultaDjen(consultadoEm: string): string {
@@ -1107,6 +1114,8 @@ export function contextoPolitico(
   nomeCompleto: string,
   identidade: Record<string, unknown> = {},
 ): string | null {
+  // Menção em papel não-parte (testemunha, perito, advogado...) nunca atribui.
+  if (papelNaoParteNoTexto(texto, nomeCompleto)) return null
   const t = normalizar(texto)
   const nome = normalizar(nomeCompleto)
   const nomeRegex = escaparRegex(nome)
@@ -1160,22 +1169,22 @@ export function decodificarEntidadesHtml(valor: string): string {
     .replace(/ /g, " ")
 }
 
-/** Texto com pontuação preservada: a guarda à esquerda depende dela. */
-function semiNormalizar(valor: string): string {
-  return stripAccents(decodificarEntidadesHtml(valor)).toUpperCase().replace(/[ \t]+/g, " ")
+/** Tag de bloco vira quebra de linha; as demais viram espaço (nunca colam palavras). */
+const TAG_DE_BLOCO = /<\s*\/?\s*(?:br|p|div|li|ul|ol|tr|td|th|table|tbody|thead|h[1-6]|section|article|blockquote|pre|hr)\b[^>]*>/gi
+
+function removerTags(valor: string): string {
+  return String(valor ?? "").replace(TAG_DE_BLOCO, "\n").replace(/<[^>]*>/g, " ")
 }
 
 /**
- * CPF rotulado COLADO depois do nome no texto oficial, só nessa direção:
- * [início, `:;,.()-` ou quebra de linha] NOME [pontuação] CPF [N°/MF] <CPF>.
- * - O nome precisa começar depois de pontuação (guarda à esquerda): em
- *   "MARIA X, CPF ..." o nome de X está dentro de outro nome e não conta.
- * - Nome embutido em destinatário mais longo (como em `mencionaNomeNoTexto`)
- *   é apagado antes da busca.
- * - Bloco de qualificação entre o nome e o CPF ("brasileiro, casado,
- *   portador do RG...") nunca confirma nem descarta: falha fechada.
- * - CPF antes do nome não conta: é rótulo de quem vem antes.
+ * Texto com pontuação preservada, na mesma base de `normalizar`: sem tags,
+ * entidades decodificadas, sem acento e em maiúsculas. A guarda à esquerda e
+ * o corte de cláusula dependem da pontuação.
  */
+function semiNormalizar(valor: string): string {
+  return stripAccents(decodificarEntidadesHtml(removerTags(valor))).toUpperCase().replace(/[ \t]+/g, " ")
+}
+
 export function cpfsRotuladosDoNome(texto: string, nomeCompleto: string, destinatarios: string[] = []): CpfRotulado[] {
   return mencoesDoNome(texto, nomeCompleto, destinatarios).flatMap((m) => m.rotulo ? [m.rotulo] : [])
 }
@@ -1185,44 +1194,66 @@ const ROTULO_CPF_DEPOIS_DO_NOME = new RegExp(
   `^\\s*[,;:(\\-\\u2013]?\\s*CPF(?:\\s*\\/\\s*(?:MF|CNPJ))?(?:\\s*(?:NUMERO|NO|N)(?![A-Z])(?:\\s*[.°º]){0,2})?\\s*[:.]?\\s*${CPF_ROTULADO}`,
 )
 
-interface MencaoDoNome { inicio: number; fim: number; rotulo: CpfRotulado | null }
+interface MencaoDoNome { inicio: number; fim: number; invertida: boolean; rotulo: CpfRotulado | null }
+
+function tokensDoNome(nomeCompleto: string): string[] {
+  return normalizar(nomeCompleto).split(" ").filter(Boolean)
+}
 
 /**
- * Cada menção ao nome exato no texto (nome embutido em destinatário mais
- * longo é apagado antes), com o CPF rotulado colado depois dela quando existe
- * e a guarda à esquerda passa. Base comum de confirmação e descarte.
+ * Cada menção ao nome exato no texto semi-normalizado, direta ("CARLOS DA
+ * SILVA TESTE") ou invertida ("TESTE, CARLOS DA SILVA"). Nome embutido em
+ * destinatário mais longo é apagado antes. `rotulo` é o CPF rotulado colado
+ * depois da menção, quando existe e a guarda à esquerda passa.
  */
 function mencoesDoNome(texto: string, nomeCompleto: string, destinatarios: string[] = []): MencaoDoNome[] {
-  const tokens = normalizar(nomeCompleto).split(" ").filter(Boolean)
+  const tokens = tokensDoNome(nomeCompleto)
   if (tokens.length === 0) return []
   const t = textoSemNomesMaiores(texto, tokens.join(" "), destinatarios)
-  const nome = new RegExp(`\\b${tokens.map(escaparRegex).join("[\\s'.-]+")}\\b`, "g")
-  return [...t.matchAll(nome)].map((m) => {
-    const inicio = m.index ?? 0
-    const fim = inicio + m[0].length
-    const guarda = /(?:^|[:;,.()\-–\n]\s*)$/.test(t.slice(Math.max(0, inicio - 3), inicio)) || inicio === 0
-    const rotulo = guarda ? ROTULO_CPF_DEPOIS_DO_NOME.exec(t.slice(fim)) : null
-    if (!rotulo) return { inicio, fim, rotulo: null }
-    const bruto = rotulo[1]
-    return {
-      inicio, fim,
-      rotulo: /[*X]/.test(bruto)
-        ? { tipo: "mascarado" as const, digitos: bruto.replace(/[^\d]/g, "") }
-        : { tipo: "completo" as const, digitos: bruto.replace(/\D/g, "") },
+  const junta = (partes: string[]) => partes.map(escaparRegex).join("[\\s'.-]+")
+  const formas: Array<{ regex: RegExp; invertida: boolean }> = [{ regex: new RegExp(`\\b${junta(tokens)}\\b`, "g"), invertida: false }]
+  for (let k = 1; k < tokens.length; k += 1) {
+    formas.push({ regex: new RegExp(`\\b${junta(tokens.slice(k))}\\s*,\\s*${junta(tokens.slice(0, k))}\\b`, "g"), invertida: true })
+  }
+  const mencoes: MencaoDoNome[] = []
+  for (const { regex, invertida } of formas) {
+    for (const m of t.matchAll(regex)) {
+      const inicio = m.index ?? 0
+      const fim = inicio + m[0].length
+      if (mencoes.some((x) => inicio < x.fim && fim > x.inicio)) continue
+      const guarda = inicio === 0 || /(?:^|[:;,.()\-–\n]\s*)$/.test(t.slice(Math.max(0, inicio - 3), inicio))
+      const rotulo = guarda ? ROTULO_CPF_DEPOIS_DO_NOME.exec(t.slice(fim)) : null
+      mencoes.push({
+        inicio, fim, invertida,
+        rotulo: !rotulo ? null : /[*X]/.test(rotulo[1])
+          ? { tipo: "mascarado", digitos: rotulo[1].replace(/[^\d]/g, "") }
+          : { tipo: "completo", digitos: rotulo[1].replace(/\D/g, "") },
+      })
     }
-  })
+  }
+  return mencoes.sort((a, b) => a.inicio - b.inicio)
 }
 
 /** Texto semi-normalizado com os nomes de destinatário que contêm o nome trocados por "#". */
 function textoSemNomesMaiores(texto: string, nomeNorm: string, destinatarios: string[]): string {
   let t = semiNormalizar(texto)
-  const maiores = destinatarios.map(nomeDestinatario)
-    .filter((d) => d !== nomeNorm && new RegExp(`\\b${escaparRegex(nomeNorm)}\\b`).test(d))
-    .sort((a, b) => b.length - a.length)
-  for (const maior of maiores) {
+  for (const maior of nomesMaiores(nomeNorm, destinatarios)) {
     t = t.replace(new RegExp(`\\b${maior.split(" ").map(escaparRegex).join("[\\s'.-]+")}\\b`, "g"), " # ")
   }
   return t
+}
+
+function nomesMaiores(nomeNorm: string, destinatarios: string[]): string[] {
+  return destinatarios.map(nomeDestinatario)
+    .filter((d) => d !== nomeNorm && new RegExp(`\\b${escaparRegex(nomeNorm)}\\b`).test(d))
+    .sort((a, b) => b.length - a.length)
+}
+
+/** Menções diretas contadas na outra normalização (`normalizar`), para conferir que nenhuma se perdeu. */
+function mencoesNormalizadas(texto: string, nomeNorm: string, destinatarios: string[]): number {
+  let t = normalizar(texto)
+  for (const maior of nomesMaiores(nomeNorm, destinatarios)) t = t.replace(new RegExp(`\\b${escaparRegex(maior)}\\b`, "g"), " # ")
+  return [...t.matchAll(new RegExp(`\\b${escaparRegex(nomeNorm)}\\b`, "g"))].length
 }
 
 /** CPF da candidatura só no formato de CPF: 000.000.000-00, com ou sem pontuação (espaço aceito no lugar de ponto ou hífen). */
@@ -1231,7 +1262,7 @@ function regexCpfDaCandidatura(digitos: string, flags = ""): RegExp {
   return new RegExp(`(?<!\\d)${d.slice(0, 3).join("")}[.\\s]?${d.slice(3, 6).join("")}[.\\s]?${d.slice(6, 9).join("")}[-\\s]?${d.slice(9).join("")}(?!\\d)`, flags)
 }
 
-/** Os 11 dígitos da candidatura aparecem em algum ponto do texto cru, em qualquer formatação. */
+/** Os 11 dígitos da candidatura aparecem em algum ponto do texto, no formato de CPF. */
 export function cpfDaCandidaturaNoTexto(texto: string, cpf: string): boolean {
   const digitos = cpf.replace(/\D/g, "")
   if (digitos.length !== 11) return false
@@ -1243,74 +1274,107 @@ export function cpfDaCandidaturaNoTexto(texto: string, cpf: string): boolean {
  * abreviado), defensor, curador, patrono, testemunha, vítima, perito,
  * administrador judicial, juiz e demais auxiliares da Justiça.
  */
-const PAPEL_NAO_PARTE = /\b(?:ADVOGAD[OA]S?|ADV\b|OAB|PROCURADOR(?:A|ES|AS)?|REPRESENTANTE LEGAL|DEFENSOR(?:A|ES|AS)?|CURADOR(?:A|ES|AS)?|PATRON[OA]S?|SOCIEDADE DE ADVOGADOS|TESTEMUNHAS?|VITIMAS?|PERIT[OA]S?|NOMEIO|ADMINISTRADOR(?:A)? JUDICIAL|JUIZ(?:A|ES|AS)?|DESEMBARGADOR(?:A|ES|AS)?|MAGISTRAD[OA]S?|PROMOTOR(?:A|ES|AS)?|LEILOEIR[OA]S?|OFICIAL DE JUSTICA|ESCRIVA[OE]S?|ESCRIVAO|DEPOSITARI[OA]S?|INTERPRETE)\b/
+const PAPEL_NAO_PARTE = /\b(?:ADVOGAD[OA]S?|ADV\b|OAB|PROCURADOR(?:A|ES|AS)?|REPRESENTANTE LEGAL|DEFENSOR(?:A|ES|AS)?|CURADOR(?:A|ES|AS)?|PATRON[OA]S?|SOCIEDADE DE ADVOGADOS|TESTEMUNHAS?|INFORMANTES?|VITIMAS?|PERIT[OA]S?|NOMEIO|ADMINISTRADOR(?:A)? JUDICIAL|JUIZ(?:A|ES|AS)?|DESEMBARGADOR(?:A|ES|AS)?|MAGISTRAD[OA]S?|PROMOTOR(?:A|ES|AS)?|LEILOEIR[OA]S?|OFICIAL DE JUSTICA|ESCRIVA[OE]S?|ESCRIVAO|DEPOSITARI[OA]S?|INTERPRETE)\b/g
+
+/** Rótulos de parte: encerram a herança de um papel não-parte anterior. */
+const PAPEL_DE_PARTE = /\b(?:AUTOR(?:A|ES|AS)?|REUS?|RE(?=\s*[:(])|REQUERENTES?|REQUERID[OA]S?|EXEQUENTES?|EXECUTAD[OA]S?|IMPETRANTES?|IMPETRAD[OA]S?|RECORRENTES?|RECORRID[OA]S?|APELANTES?|APELAD[OA]S?|AGRAVANTES?|AGRAVAD[OA]S?|EMBARGANTES?|EMBARGAD[OA]S?|RECLAMANTES?|RECLAMAD[OA]S?|INVESTIGAD[OA]S?|DENUNCIAD[OA]S?|ACUSAD[OA]S?|QUERELANTES?|QUERELAD[OA]S?|INTERESSAD[OA]S?|POLO (?:ATIVO|PASSIVO)|PARTES?|DEVEDOR(?:A|ES|AS)?|CREDOR(?:A|ES|AS)?|PACIENTES?|REPRESENTAD[OA]S?)\b/g
+
+/** Fim de frase: ". " fora de abreviação, ou linha em branco. `;` e quebra simples não encerram a cláusula. */
+const FIM_DE_FRASE = /(?<!\b(?:DR|DRA|DRS|DRAS|SR|SRA|SRS|SRAS|SRTA|EXMO|EXMA|EXMOS|EXA|EXAS|DD|N|NO|NS|NR|NUM|ART|ARTS|FL|FLS|PROF|PROFA|ADV|ADVS|DES|DESA|MIN|SEN|DEP|ENG|LTDA|CIA|JR|DOC|PROC|REG|OBS|AV|ETC|ID|PAG|VOL|CAP|TEN|CEL|SGT|GAL|MAJ|STA|STO|APTO|MM|MMA|D|S|R|V|VS))\.\s|\n\s*\n/g
+
+function ultimoIndice(regex: RegExp, trecho: string): number {
+  let ultimo = -1
+  for (const m of trecho.matchAll(regex)) ultimo = Math.max(ultimo, (m.index ?? 0) + m[0].length)
+  return ultimo
+}
+
+/**
+ * A menção está num papel não-parte quando:
+ * - o último rótulo de papel desde o início da frase ou do bloco (listas com
+ *   `;` e quebra de linha herdam o rótulo) é não-parte; rótulo de parte
+ *   (AUTOR, RÉU, REQUERIDO…) encerra a herança; ou
+ * - o trecho entre o nome e o fim do item (`;`, quebra de linha, fim de frase
+ *   ou próximo rótulo seguido de ":") traz qualificação não-parte
+ *   ("CARLOS, CPF x, OAB/MG 123", "CARLOS, perito judicial").
+ */
+function mencaoEmPapelNaoParte(t: string, mencao: MencaoDoNome): boolean {
+  const antes = t.slice(0, mencao.inicio)
+  const clausula = antes.slice(Math.max(0, ultimoIndice(FIM_DE_FRASE, antes)))
+  const naoParte = ultimoIndice(PAPEL_NAO_PARTE, clausula)
+  if (naoParte > ultimoIndice(PAPEL_DE_PARTE, clausula)) return true
+  const depois = t.slice(mencao.fim, mencao.fim + 240)
+  const corte = depois.search(new RegExp(`[;\\n]|${FIM_DE_FRASE.source}|${PAPEL_DE_PARTE.source}|${PAPEL_NAO_PARTE.source}\\s*:`))
+  return new RegExp(PAPEL_NAO_PARTE.source).test(corte >= 0 ? depois.slice(0, corte) : depois)
+}
+
+/** Alguma menção ao nome aparece em papel não-parte: nenhuma atribuição automática vale para o item. */
+export function papelNaoParteNoTexto(texto: string, nomeCompleto: string, destinatarios: string[] = []): boolean {
+  const tokens = tokensDoNome(nomeCompleto)
+  if (tokens.length === 0) return false
+  const t = textoSemNomesMaiores(texto, tokens.join(" "), destinatarios)
+  return mencoesDoNome(texto, nomeCompleto, destinatarios).some((m) => mencaoEmPapelNaoParte(t, m))
+}
 
 /** Rótulo de CPF no fim de um trecho: "CPF", "(CPF:", "CPF/MF nº", "CPF/CNPJ n.º". */
 const ROTULO_CPF_NO_FIM = /\(?\s*CPF(?:\s*\/\s*(?:MF|CNPJ))?(?:\s*(?:NUMERO|NO|N)(?![A-Z])(?:\s*[.°º]){0,2})?\s*[:.]?\s*$/
 
 /**
  * Segundo caminho de confirmação (aprovado em 26/09): o CPF completo da
- * candidatura (11 dígitos em qualquer formatação, entidades HTML decodificadas)
- * aparece no texto da comunicação e pertence ao nome exato da candidata:
+ * candidatura aparece no texto da comunicação e pertence ao nome exato:
  * - o nome vem logo antes daquela ocorrência (até 160 caracteres), sem
  *   separador de outra parte no meio (`:`, `;`, ". ", quebra de linha, outro
- *   rótulo de CPF). "AUTOR: JOAO, CPF <cpf da candidata>" não conta;
+ *   rótulo de CPF);
  * - o nome nunca vale dentro de nome mais longo de destinatário;
- * - nenhum CPF completo diferente está colado ao nome (o descarte segue estrito).
- * Trava de papel não-parte: ocorrência cuja vizinhança (até 60 caracteres
- * antes do início do nome, o trecho até o CPF e o resto da frase depois dele)
- * traz advogado, defensor, curador, testemunha, vítima, perito, juiz ou outro
- * papel de `PAPEL_NAO_PARTE` só vale se a candidata for destinatária (parte).
+ * - nenhum CPF completo diferente está colado ao nome;
+ * - nenhuma menção ao nome está em papel não-parte (`papelNaoParteNoTexto`),
+ *   seja ou não destinatária: testemunha e perito também são intimados.
  * Devolve o trecho normalizado centrado no CPF, com o nome dentro; `null`
  * quando não confirma.
  */
 export function contextoPorCpfNoTexto(texto: string, nomeCompleto: string, cpf: string, destinatarios: string[] = []): string | null {
   const digitos = cpf.replace(/\D/g, "")
   if (digitos.length !== 11) return null
-  const tokens = normalizar(nomeCompleto).split(" ").filter(Boolean)
+  const tokens = tokensDoNome(nomeCompleto)
   if (tokens.length === 0) return null
-  const nomeNorm = tokens.join(" ")
   if (cpfsRotuladosDoNome(texto, nomeCompleto, destinatarios).some((r) => r.tipo === "completo" && r.digitos !== digitos)) return null
-  const nomesDest = destinatarios.map(nomeDestinatario)
-  const parte = nomesDest.includes(nomeNorm)
-  const t = textoSemNomesMaiores(texto, nomeNorm, destinatarios)
+  if (papelNaoParteNoTexto(texto, nomeCompleto, destinatarios)) return null
+  const t = textoSemNomesMaiores(texto, tokens.join(" "), destinatarios)
   const nomeRegex = new RegExp(`\\b${tokens.map(escaparRegex).join("[\\s'.-]+")}\\b`, "g")
-  const ocorrencias = [...t.matchAll(regexCpfDaCandidatura(digitos, "g"))]
-  const validas = ocorrencias.filter((m) => {
+  const escolhida = [...t.matchAll(regexCpfDaCandidatura(digitos, "g"))].find((m) => {
     const inicio = m.index ?? 0
     const antes = t.slice(Math.max(0, inicio - 160), inicio)
     const nomes = [...antes.matchAll(nomeRegex)]
     const ultimo = nomes[nomes.length - 1]
     if (!ultimo) return false
     const intervalo = antes.slice((ultimo.index ?? 0) + ultimo[0].length).replace(ROTULO_CPF_NO_FIM, "")
-    if (/[:;\n]|\.\s/.test(intervalo) || /\bCPF\b/.test(intervalo)) return false
-    if (parte) return true
-    // Janela medida a partir do início do nome: nome longo não empurra o papel para fora.
-    const inicioNome = inicio - antes.length + (ultimo.index ?? 0)
-    const anterior = t.slice(Math.max(0, inicioNome - 60), inicioNome).split(/[;\n]/).pop() ?? ""
-    const doNomeAoCpf = t.slice(inicioNome, inicio)
-    const posterior = t.slice(inicio + m[0].length, inicio + m[0].length + 60).split(/[;\n]|\.\s/)[0]
-    return !PAPEL_NAO_PARTE.test(`${anterior} ${doNomeAoCpf} ${posterior}`)
+    return !(/[:;\n]|\.\s/.test(intervalo) || /\bCPF\b/.test(intervalo))
   })
-  const escolhida = validas[0]
   if (!escolhida) return null
   const inicio = escolhida.index ?? 0
   return normalizar(t.slice(Math.max(0, inicio - 300), inicio + escolhida[0].length + 250))
 }
 
 /**
- * Descarte de homônimo: só quando TODA menção ao nome no texto tem CPF
- * COMPLETO diferente colado a ela e os 11 dígitos da candidatura não aparecem
- * em lugar nenhum do texto. Uma menção sem CPF, com CPF mascarado ou fora da
- * guarda à esquerda mantém a ocorrência ambígua. Na dúvida, não descarta.
+ * Descarte de homônimo, só com prova completa:
+ * - os 11 dígitos da candidatura não aparecem em lugar nenhum do texto;
+ * - TODA menção ao nome (direta ou invertida) tem CPF COMPLETO diferente
+ *   colado a ela; menção sem CPF, com CPF mascarado ou fora da guarda à
+ *   esquerda mantém a ocorrência ambígua;
+ * - a contagem de menções diretas bate com a da outra normalização (tag ou
+ *   entidade que esconda uma menção impede o descarte);
+ * - há ao menos tantas menções divergentes quanto destinatários com o nome.
+ * Na dúvida, não descarta.
  */
 export function cpfDivergenteNoTexto(texto: string, nomeCompleto: string, cpf: string, destinatarios: string[] = []): boolean {
   const cpfCandidato = cpf.replace(/\D/g, "")
   if (cpfCandidato.length !== 11) return false
   if (cpfDaCandidaturaNoTexto(texto, cpfCandidato)) return false
+  const nomeNorm = tokensDoNome(nomeCompleto).join(" ")
   const mencoes = mencoesDoNome(texto, nomeCompleto, destinatarios)
-  return mencoes.length > 0
-    && mencoes.every((m) => m.rotulo?.tipo === "completo" && m.rotulo.digitos !== cpfCandidato)
+  if (mencoes.length === 0) return false
+  if (!mencoes.every((m) => m.rotulo?.tipo === "completo" && m.rotulo.digitos !== cpfCandidato)) return false
+  if (mencoes.filter((m) => !m.invertida).length < mencoesNormalizadas(texto, nomeNorm, destinatarios)) return false
+  return mencoes.length >= destinatarios.map(nomeDestinatario).filter((d) => d === nomeNorm).length
 }
 
 /** CPF completo da candidatura colado depois do nome (mesma regra estrita). */
@@ -1327,6 +1391,7 @@ export function identificadorForteNoTexto(
   nomeCompleto: string,
   identidade: Record<string, unknown>,
 ): boolean {
+  if (papelNaoParteNoTexto(texto, nomeCompleto)) return false
   const cpf = String(identidade.cpf ?? "").replace(/\D/g, "")
   if (cpfCompativelNoTexto(texto, nomeCompleto, cpf)) return true
   const uf = UF_NOME[normalizar(c.estado)]
@@ -1607,9 +1672,12 @@ export async function pesquisarCandidato(
     for (const item of exatos) {
       const numero = item.numeroprocessocommascara || item.numero_processo || `comunicacao-${item.id}`
       if (descartarSeCpfDiverge(item, numero)) continue
-      const contexto = contextoPolitico(c, snap, djen.textosBrutos?.get(item.id) ?? item.texto ?? "", nomeConsulta, identidade)
-        ?? porCpf(item)
       const polo = item.destinatarios?.find((d) => nomeDestinatario(d.nome) === nome)?.polo ?? null
+      // Só destinatário de polo ativo ou passivo é parte; testemunha e perito
+      // também são intimados como destinatários e só atribuem pelo CPF.
+      const parte = (item.destinatarios ?? []).some((d) => nomeDestinatario(d.nome) === nome && (d.polo === "A" || d.polo === "P"))
+      const contexto = (parte ? contextoPolitico(c, snap, djen.textosBrutos?.get(item.id) ?? item.texto ?? "", nomeConsulta, identidade) : null)
+        ?? porCpf(item)
       const cnj = cnjValido(numero)
       // Sem texto bruto (cache sanitizado) o descarte por CPF não rodou: nada vira achado.
       if (contexto && cnj && djen.textosBrutos) encontrados.set(numero, { item, contexto, polo })

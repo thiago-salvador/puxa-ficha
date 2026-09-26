@@ -613,10 +613,11 @@ describe("segundo caminho de confirmação: CPF da candidatura no texto (26/09)"
     assert.equal(contextoPorCpfNoTexto(`Réu: CARLOS DA SILVA TESTE, CPF ${outro}`, nome, cpf), null)
   })
 
-  it("trava de advogado: CPF colado a advogado, OAB ou procurador só vale para parte", () => {
+  it("trava de advogado: CPF colado a advogado, OAB ou procurador nunca atribui", () => {
     const advogado = `Advogado: CARLOS DA SILVA TESTE, OAB/DF 12345, CPF ${cpfFmt}`
     assert.equal(contextoPorCpfNoTexto(advogado, nome, cpf), null)
-    assert.notEqual(contextoPorCpfNoTexto(advogado, nome, cpf, ["CARLOS DA SILVA TESTE"]), null)
+    // Rodada 4 (M4): a trava vale também para destinatária.
+    assert.equal(contextoPorCpfNoTexto(advogado, nome, cpf, ["CARLOS DA SILVA TESTE"]), null)
     assert.equal(contextoPorCpfNoTexto(`Procurador: CARLOS DA SILVA TESTE CPF ${cpfFmt}`, nome, cpf), null)
     assert.equal(contextoPorCpfNoTexto(`Representante legal CARLOS DA SILVA TESTE, CPF ${cpfFmt}`, nome, cpf), null)
   })
@@ -711,10 +712,10 @@ describe("re-revisão Opus do #504: descarte por menção e papéis não-parte",
     const longo = "Maria Aparecida da Conceicao dos Santos Oliveira Pereira da Silva Albuquerque"
     const textoLongo = `Advogada Dra. ${longo.toUpperCase()}, CPF ${cpfFmt}`
     assert.equal(contextoPorCpfNoTexto(textoLongo, longo, cpf), null)
-    assert.notEqual(contextoPorCpfNoTexto(textoLongo, longo, cpf, [longo.toUpperCase()]), null)
+    assert.equal(contextoPorCpfNoTexto(textoLongo, longo, cpf, [longo.toUpperCase()]), null)
   })
 
-  it("M4: testemunha, vítima, perito, administrador judicial e juiz não atribuem, salvo destinatária", () => {
+  it("M4: testemunha, vítima, perito, administrador judicial e juiz não atribuem, nem como destinatária", () => {
     for (const texto of [
       `TESTEMUNHA: CARLOS DA SILVA TESTE, CPF ${cpfFmt}`,
       `VITIMA: CARLOS DA SILVA TESTE, CPF ${cpfFmt}`,
@@ -723,7 +724,7 @@ describe("re-revisão Opus do #504: descarte por menção e papéis não-parte",
       `Juiz de Direito CARLOS DA SILVA TESTE, CPF ${cpfFmt}`,
     ]) {
       assert.equal(contextoPorCpfNoTexto(texto, nome, cpf), null, texto)
-      assert.notEqual(contextoPorCpfNoTexto(texto, nome, cpf, ["CARLOS DA SILVA TESTE"]), null, texto)
+      assert.equal(contextoPorCpfNoTexto(texto, nome, cpf, ["CARLOS DA SILVA TESTE"]), null, texto)
     }
   })
 

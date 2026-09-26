@@ -241,3 +241,23 @@ describe("re-revisão Opus do #504: PCE com sigla, SEN. e citado não parseado",
     assert.match(recibos.get("ana")?.detalhe ?? "", /PCE 7\/2026, sem representado parseado/)
   })
 })
+
+describe("rodada 4 do #504: nome de um token citado e siglas", () => {
+  it("M5: nome de um token fora do título entra em nomes_citados e vira indeterminado", () => {
+    for (const ementa of [
+      "Representação em face do Senador da República Fulvio por quebra de decoro",
+      "Representação em face do Senador licenciado Fulvio",
+      "Requerimento do Senador Bruno Senador Costa contra Fulvio",
+    ]) {
+      assert.ok(alvoDaEmentaPce(ementa, roster).nomes_citados.includes(2), ementa)
+      const senado = filaSenado([pce(11, ementa)])
+      const recibos = new Map(montarRecibosRepresentacoes({ publicos, camara: filaCamara(), senado }).map((r) => [r.alvo, r]))
+      assert.notEqual(recibos.get("fulvio")?.resultado, "vazio_confirmado", ementa)
+    }
+  })
+
+  it("m7: sigla sem UF e com travessão não corta o segundo representado", () => {
+    assert.deepEqual(alvoDaEmentaPce("Representação contra o Senador Fulvio Teste Silva (PL) e o Senador Ana Maria Senadora (PT), por quebra de decoro", roster).senador_ids, [1, 2])
+    assert.deepEqual(alvoDaEmentaPce("Representação contra o Senador Fulvio Teste Silva (PL – RJ) e o Senador Ana Maria Senadora (PT—BA)", roster).senador_ids, [1, 2])
+  })
+})
