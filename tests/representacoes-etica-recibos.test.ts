@@ -97,6 +97,18 @@ describe("recibo por candidato da busca de representações", () => {
     assert.equal(fundamento.texto_alvo, "OTAVIO PIRES")
   })
 
+  it("iniciativa, relator e subscrição depois do alvo nunca viram representados", () => {
+    const iniciativa = alvoDaEmentaPce("Representação em face do Senador Fulvio de iniciativa do Senador Bruno Senador Costa", roster)
+    assert.deepEqual(iniciativa.senador_ids, [2])
+    const relator = alvoDaEmentaPce("Denúncia em face do Senador Otavio Pires. Relator: Senador Fulvio", roster)
+    assert.deepEqual(relator.senador_ids, [])
+    assert.equal(relator.texto_alvo, "OTAVIO PIRES")
+    const subscrita = alvoDaEmentaPce("Representação em face do Senador Fulvio subscrita pela Senadora Ana Maria Senadora", roster)
+    assert.deepEqual(subscrita.senador_ids, [2])
+    const doisPontos = alvoDaEmentaPce("Em face do Senador Fulvio; representante: Senador Bruno Senador Costa", roster)
+    assert.deepEqual(doisPontos.senador_ids, [2])
+  })
+
   it("mantém vários representados ligados por 'e do Senador'", () => {
     const dois = alvoDaEmentaPce("em face do Senador Fulvio e da Senadora Ana Maria Senadora, nos termos do Código de Ética", roster)
     assert.deepEqual(dois.senador_ids, [1, 2])

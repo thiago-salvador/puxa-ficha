@@ -728,7 +728,7 @@ export type TipoFalhaColeta = "limite_de_taxa" | "fonte_indisponivel" | "preflig
 export function classificarFalhaColeta(erro: unknown): TipoFalhaColeta {
   const mensagem = erro instanceof Error ? erro.message : String(erro)
   if (mensagem === DISJUNTOR_ABERTO || /HTTP 429/.test(mensagem)) return "limite_de_taxa"
-  if (/^preflight /.test(mensagem)) return "preflight_banco"
+  if (/^preflight[ :]/.test(mensagem)) return "preflight_banco"
   if (/consulta_cand|TSE/.test(mensagem)) return "identidade_tse"
   if (/HTTP 5\d\d|fetch failed|timeout|aborted|ECONN|ENOTFOUND|DataJud|DJEN/i.test(mensagem)) return "fonte_indisponivel"
   return "outro"
@@ -1135,36 +1135,44 @@ export function contextoPolitico(
 }
 
 /**
- * CPF rotulado junto ao nome no texto oficial e DIFERENTE do CPF da
- * candidatura: é outra pessoa com o mesmo nome. Só conta CPF completo (11
- * dígitos); CPF mascarado não prova nada. Se o texto também trouxer o CPF da
- * candidatura junto ao nome, não é divergência.
+ * CPFs completos rotulados COLADOS ao nome no texto oficial: o nome, só
+ * espaço ou pontuação (`,:;()-`, que a normalização vira espaço), o rótulo
+ * CPF (com "N" ou "MF") e os 11 dígitos; ou o inverso. Qualquer palavra no
+ * meio (outra parte, "AUTOR", "REU", outro rótulo) desfaz o vínculo: em
+ * "AUTOR JOAO PEREIRA CPF 111 REU CARLOS", o CPF é do autor, não de Carlos.
+ * CPF mascarado não entra.
  */
-export function cpfDivergenteNoTexto(texto: string, nomeCompleto: string, cpf: string): boolean {
+export function cpfsRotuladosDoNome(texto: string, nomeCompleto: string): string[] {
   const nome = normalizar(nomeCompleto)
-  const cpfCandidato = cpf.replace(/\D/g, "")
-  if (cpfCandidato.length !== 11 || !nome) return false
+  if (!nome) return []
   const t = normalizar(texto)
   const nomeRegex = escaparRegex(nome)
-  const digitos = "((?:\\d[\\s]{0,3}){10}\\d)"
-  const rotulados = [
-    ...t.matchAll(new RegExp(`\\b${nomeRegex}\\b.{0,100}?\\bCPF(?:\\s+N)?\\s+${digitos}\\b`, "g")),
-    ...t.matchAll(new RegExp(`\\bCPF(?:\\s+N)?\\s+${digitos}\\b.{0,100}?\\b${nomeRegex}\\b`, "g")),
-  ].map((m) => m[1].replace(/\D/g, "")).filter((valor) => valor.length === 11)
-  if (rotulados.length === 0 || rotulados.includes(cpfCandidato)) return false
-  return true
+  const rotulo = "CPF(?:\\s+(?:N|MF))?"
+  const digitos = "(\\d{3}\\s?\\d{3}\\s?\\d{3}\\s?\\d{2})(?!\\d)"
+  const depois = new RegExp(`\\b${nomeRegex}\\s{1,8}${rotulo}\\s+${digitos}`, "g")
+  const antes = new RegExp(`\\b${rotulo}\\s+${digitos}\\s{1,8}${nomeRegex}\\b`, "g")
+  return [...new Set([...t.matchAll(depois), ...t.matchAll(antes)]
+    .map((m) => m[1].replace(/\D/g, ""))
+    .filter((valor) => valor.length === 11))]
 }
 
+/**
+ * CPF colado ao nome e DIFERENTE do CPF da candidatura: é outra pessoa com o
+ * mesmo nome. Se o texto também trouxer o CPF da candidatura colado ao nome,
+ * não é divergência.
+ */
+export function cpfDivergenteNoTexto(texto: string, nomeCompleto: string, cpf: string): boolean {
+  const cpfCandidato = cpf.replace(/\D/g, "")
+  if (cpfCandidato.length !== 11) return false
+  const rotulados = cpfsRotuladosDoNome(texto, nomeCompleto)
+  return rotulados.length > 0 && !rotulados.includes(cpfCandidato)
+}
+
+/** CPF da candidatura colado ao nome no texto oficial (mesma regra estrita). */
 export function cpfCompativelNoTexto(texto: string, nomeCompleto: string, cpf: string): boolean {
-  const nome = normalizar(nomeCompleto)
-  const cpfNormalizado = cpf.replace(/\D/g, "")
-  if (cpfNormalizado.length !== 11 || !nome) return false
-  const nomeRegex = escaparRegex(nome)
-  const cpfRegex = cpfNormalizado.split("").join("[.\\s-]{0,3}")
-  return new RegExp(
-    `(?:${nomeRegex}.{0,100}\\bCPF(?:\\s+N)?\\s+${cpfRegex}\\b|\\bCPF(?:\\s+N)?\\s+${cpfRegex}.{0,100}${nomeRegex})`,
-    "i",
-  ).test(texto)
+  const cpfCandidato = cpf.replace(/\D/g, "")
+  if (cpfCandidato.length !== 11) return false
+  return cpfsRotuladosDoNome(texto, nomeCompleto).includes(cpfCandidato)
 }
 
 /** Segundo identificador estrito para monitoramento por CNJ: CPF ou cargo estadual com UF. */

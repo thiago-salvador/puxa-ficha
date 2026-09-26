@@ -49,11 +49,16 @@ export interface AlvoPce {
  * Fim do trecho do representado: o que vem depois (fundamento, autor,
  * motivo) nunca é alvo. "por representação do Senador Y" nomeia o AUTOR.
  */
-const FIM_DO_ALVO = / (?:COM FUNDAMENTO|COM BASE|NOS TERMOS|NA FORMA|NO AMBITO|POR |PELO |PELA |PELOS |PELAS |EM RAZAO|EM DECORRENCIA|EM VIRTUDE|DEVIDO|TENDO EM VISTA|A RESPEITO|ACERCA|SOBRE |QUE |PARA |FORMULAD|APRESENTAD|DE AUTORIA|AUTOR)/
+const FIM_DO_ALVO = / (?:COM FUNDAMENTO|COM BASE|NOS TERMOS|NA FORMA|NO AMBITO|POR |PELO |PELA |PELOS |PELAS |EM RAZAO|EM DECORRENCIA|EM VIRTUDE|DEVIDO|TENDO EM VISTA|A RESPEITO|ACERCA|SOBRE |QUE |PARA |FORMULAD|APRESENTAD|DE AUTORIA|AUTOR|DE INICIATIVA|RELATOR|REPRESENTANTE|OFERECID|SUBSCRIT|REQUERID|PROPOST)/
 
 /** Segmento do representado: de "em face do Senador" até o primeiro marcador de fim. */
 export function segmentoDoAlvoPce(ementa: string): { segmento: string; coletivo: boolean } | null {
-  const texto = normalizar(ementa)
+  // Corta o texto CRU no primeiro `.;:()` depois de "em face": a pontuação
+  // separa o alvo do resto e some na normalização.
+  const cru = stripAccents(ementa)
+  const inicio = cru.search(/em face d/i)
+  if (inicio < 0) return null
+  const texto = normalizar(cru.slice(inicio).split(/[.;:()]/)[0])
   const face = /\bEM FACE D([OA]S?) (?:EX )?SENADOR(?:A|ES|AS)? (.{2,240})/.exec(texto)
   if (!face) return null
   const segmento = face[2].split(FIM_DO_ALVO)[0].trim()

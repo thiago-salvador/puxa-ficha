@@ -7,6 +7,7 @@ import { describe, it } from "node:test"
 import {
   criarPlanos,
   exigirVazioSemLinhasPublicadas,
+  cnjsPublicaveisDoTexto,
   filtrarMudancas,
   validarEvidencia,
   validarEvidenciaCoorteAtual,
@@ -19,7 +20,9 @@ import {
   Disjuntor,
   DISJUNTOR_ABERTO,
   esperaRetry,
+  cpfCompativelNoTexto,
   cpfDivergenteNoTexto,
+  cpfsRotuladosDoNome,
   csvsDoConsultaCand,
   exigirCaminhoPersistente,
   margemDiasSolicitada,
@@ -433,6 +436,7 @@ describe("limite de taxa das fontes oficiais", () => {
     assert.equal(classificarFalhaColeta(new Error("HTTP 429 em https://x")), "limite_de_taxa")
     assert.equal(classificarFalhaColeta(new Error("HTTP 503 em https://comunicaapi.pje.jus.br")), "fonte_indisponivel")
     assert.equal(classificarFalhaColeta(new Error("preflight candidatos: timeout")), "preflight_banco")
+    assert.equal(classificarFalhaColeta(new Error("preflight: candidatos_publico vazio")), "preflight_banco")
     assert.equal(classificarFalhaColeta(new Error("consulta_cand_2022: nenhum CSV em /x")), "identidade_tse")
     assert.equal(classificarFalhaColeta("qualquer"), "outro")
   })
@@ -452,5 +456,38 @@ describe("revalidação grava só mudança de estado", () => {
     assert.equal(filtrarMudancas([plano], [linha("encontrado", [cnj1, cnj2], "2026-09-25T23:00:00Z")]).length, 1)
     assert.equal(filtrarMudancas([{ ...plano, resultado: "indeterminado" }], [linha("encontrado", [cnj1], "2026-09-25T23:00:00Z")]).length, 1)
     assert.equal(filtrarMudancas([plano], [linha("encontrado", [cnj1], "2026-09-25T23:00:00Z"), linha("vazio_confirmado", [], "2026-09-24T00:00:00Z")]).length, 0)
+  })
+})
+
+describe("CPF só vale colado ao nome (conferência do #504)", () => {
+  const cpf = "52998224725"
+  const outro = "11144477735"
+  const nome = "Carlos da Silva Teste"
+  it("CPF de outra parte na janela não é divergência nem compatibilidade", () => {
+    const autorAntes = `AUTOR: JOAO PEREIRA, CPF ${outro.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4")}. REU: CARLOS DA SILVA TESTE`
+    assert.equal(cpfDivergenteNoTexto(autorAntes, nome, cpf), false)
+    const reuAntes = `REU: CARLOS DA SILVA TESTE. AUTOR: JOAO PEREIRA, CPF ${outro}`
+    assert.equal(cpfDivergenteNoTexto(reuAntes, nome, cpf), false)
+    // Mesmo com o CPF da candidatura, se ele é rótulo de outra parte, não identifica.
+    assert.equal(cpfCompativelNoTexto(`REU: CARLOS DA SILVA TESTE. AUTOR: JOAO PEREIRA, CPF ${cpf}`, nome, cpf), false)
+    assert.equal(cpfCompativelNoTexto(`AUTOR: JOAO PEREIRA, CPF ${cpf}. REU: CARLOS DA SILVA TESTE`, nome, cpf), false)
+  })
+
+  it("aceita rótulo colado, nos dois sentidos e com N ou MF", () => {
+    assert.deepEqual(cpfsRotuladosDoNome(`CARLOS DA SILVA TESTE, CPF nº 111.444.777-35`, nome), [outro])
+    assert.deepEqual(cpfsRotuladosDoNome(`CARLOS DA SILVA TESTE (CPF/MF ${outro})`, nome), [outro])
+    assert.deepEqual(cpfsRotuladosDoNome(`CPF ${outro} - CARLOS DA SILVA TESTE`, nome), [outro])
+    assert.equal(cpfCompativelNoTexto(`Réu: CARLOS DA SILVA TESTE, CPF ${cpf}`, nome, cpf), true)
+    assert.deepEqual(cpfsRotuladosDoNome(`CARLOS DA SILVA TESTE, portador do CPF ${outro}`, nome), [])
+  })
+})
+
+describe("revalidação compara só CNJ de URL publicável", () => {
+  it("ignora numeroProcesso fora da URL oficial do DJEN", () => {
+    const d = "50017545020248130441"
+    assert.deepEqual(cnjsPublicaveisDoTexto(`https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=${d}`), [d])
+    assert.deepEqual(cnjsPublicaveisDoTexto(`https://comunica.pje.jus.br/consulta?numeroProcesso=${d}`), [d])
+    assert.deepEqual(cnjsPublicaveisDoTexto(`https://api-publica.datajud.cnj.jus.br/x?numeroProcesso=${d}`), [])
+    assert.deepEqual(cnjsPublicaveisDoTexto(`motivo: numeroProcesso=${d}`), [])
   })
 })

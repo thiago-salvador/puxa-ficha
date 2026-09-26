@@ -953,8 +953,10 @@ async function slugsComLinhasPublicadas(slugs: string[]): Promise<Set<string>> {
   return new Set((linhas ?? []).map((linha) => slugPorId.get(String(linha.candidato_id))).filter((slug): slug is string => Boolean(slug)))
 }
 
-function cnjsDoTexto(valor: string): string[] {
-  return [...new Set([...valor.matchAll(/numeroProcesso=(\d{20})/g)].map((m) => m[1]))].sort()
+/** CNJ só de URL publicável (DJEN por número, API ou portal), nunca de outra URL consultada. */
+export function cnjsPublicaveisDoTexto(valor: string): string[] {
+  const padrao = /https:\/\/comunica(?:api)?\.pje\.jus\.br\/(?:api\/v1\/comunicacao|consulta)\?[^,;\s]*?numeroProcesso=(\d{20})(?!\d)/g
+  return [...new Set([...valor.matchAll(padrao)].map((m) => m[1]))].sort()
 }
 
 /**
@@ -972,8 +974,8 @@ export function filtrarMudancas(planos: PlanoRegistro[], existentes: LinhaExiste
     const linha = ultimo.get(plano.slug)
     if (!linha) return true
     if (linha.resultado !== plano.resultado) return true
-    const publicaveis = cnjsDoTexto(plano.args.filter((arg) => arg.startsWith("--evidencia-publicavel=")).join(" "))
-    const anteriores = cnjsDoTexto((linha.detalhe ?? "").split("; detalhe=")[0])
+    const publicaveis = cnjsPublicaveisDoTexto(plano.args.filter((arg) => arg.startsWith("--evidencia-publicavel=")).join(" "))
+    const anteriores = cnjsPublicaveisDoTexto((linha.detalhe ?? "").split("; detalhe=")[0])
     return plano.resultado === "encontrado" && JSON.stringify(publicaveis) !== JSON.stringify(anteriores)
   })
 }
