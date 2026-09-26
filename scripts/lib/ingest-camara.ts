@@ -11,7 +11,7 @@ import {
   projetosLeiSincronizado,
 } from "./camara-incremental-guards"
 import { contarPorNatureza } from "@/lib/proposicao-natureza"
-import { FONTE_CAMARA_PROPOSICOES, registrarColeta } from "./coleta-log"
+import { FONTE_CAMARA_PROPOSICOES, registrarColeta, type EntradaColeta } from "./coleta-log"
 import { loadCandidatosPublicos, loadVerificacaoCampos, resolveCandidatoId } from "./helpers-db"
 import { deveProcessarAcervoLegislativo, reciboAcervoCongelado } from "./acervo-legislativo-congelado"
 import { fetchJSON, sleep } from "./helpers"
@@ -324,6 +324,40 @@ async function ingestPerfil(
   log("camara", `  ${slug}: perfil atualizado`)
 }
 
+/**
+ * Recibo de cota parlamentar zerada: a API oficial devolveu zero lançamentos
+ * em todos os anos consultados, cada um com a legislatura correta. Só vira
+ * recibo quando nenhum ano teve lançamento; a matriz de cobertura decide se os
+ * anos consultados cobrem o mandato (consulta vazia fora do mandato não prova
+ * nada). Sem linhas, não há o que publicar: o recibo é a prova do zero.
+ */
+export function reciboCotaZeroCamara(
+  idCamara: number,
+  slug: string,
+  anosConsultados: readonly number[],
+  anosVazios: readonly number[],
+): EntradaColeta | null {
+  const consultados = [...new Set(anosConsultados)].sort((a, b) => a - b)
+  const vazios = new Set(anosVazios)
+  if (consultados.length === 0 || consultados.some((ano) => !vazios.has(ano))) return null
+  return {
+    fonte: "camara-gastos",
+    escopo: "candidato",
+    alvo: slug,
+    resultado: "vazio_confirmado",
+    volume: 0,
+    url: `${API}/deputados/${idCamara}/despesas`,
+    detalhe: JSON.stringify({
+      contract_version: 1,
+      kind: "cota-parlamentar-zero",
+      house: "camara",
+      source_id: String(idCamara),
+      anos: consultados,
+      id_legislatura_por_ano: Object.fromEntries(consultados.map((ano) => [ano, ano <= 2022 ? 56 : 57])),
+    }),
+  }
+}
+
 async function ingestGastos(
   idCamara: number,
   candidatoId: string,
@@ -335,6 +369,7 @@ async function ingestGastos(
   // Note: API returns 504 for older years on ex-deputies
   const anos = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
   let totalRows = 0
+  const anosVazios: number[] = []
 
   for (const ano of anos) {
     const idLegislatura = ano <= 2022 ? 56 : 57
@@ -382,6 +417,7 @@ async function ingestGastos(
         const manifestPath = resolve(expenseSnapshotDir, String(idCamara), String(ano), "manifest.json")
         writeFileSync(manifestPath, `${JSON.stringify(emptySnapshot, null, 2)}\n`, "utf8")
       }
+      anosVazios.push(ano)
       continue
     }
 
@@ -512,6 +548,9 @@ async function ingestGastos(
     log("camara", `  ${slug}: gastos ${ano} — R$ ${Math.round(totalGasto).toLocaleString()} (${despesas.length} registros)`)
     await sleep(300)
   }
+
+  const reciboZero = reciboCotaZeroCamara(idCamara, slug, anos, anosVazios)
+  if (reciboZero) await registrarColeta(reciboZero)
 
   return totalRows
 }
