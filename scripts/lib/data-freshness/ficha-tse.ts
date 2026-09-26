@@ -17,6 +17,7 @@ import {
   canonicalCandidateSiteUrlKey,
   parsePublicCandidateSiteUrl,
 } from "../../../src/lib/candidate-sites"
+import type { OfficialCandidacy } from "../../../src/lib/candidate-publication-integrity"
 import type { CandidateSitesTseDataset } from "../../../src/lib/types"
 import { normalizeTseSiteUrl, type LinhaSiteCandidatoTse } from "../candidate-sites-tse"
 import { mapearJulgamento, type JulgamentoTse } from "../tse-situacao-julgamento"
@@ -360,7 +361,7 @@ export function compareFichasTse(input: CompareFichasTseInput): FichaTseComparis
  * divergências de `comparePublicProfileStatuses`.
  */
 export function situacaoAtualDoDivulgaCand(
-  covered: Iterable<{ profile_slug: string | null; cargo: string; uf: string | null }>,
+  covered: Iterable<Pick<OfficialCandidacy, "profile_slug" | "office" | "uf">>,
   divergentSlugs: Iterable<string>,
   fichas: readonly Pick<PublishedFicha, "slug" | "office" | "uf">[],
 ): Map<string, "ok" | "divergente"> {
@@ -372,7 +373,7 @@ export function situacaoAtualDoDivulgaCand(
     // A inscrição só confirma a situação da ficha se for do mesmo cargo e UF:
     // vice ou candidatura em outro estado não falam da ficha publicada.
     const cargoFicha = fichaCargo(ficha.office)
-    const cargoInscricao = fichaCargo(inscricao.cargo)
+    const cargoInscricao = fichaCargo(inscricao.office)
     if (!cargoFicha || cargoFicha !== cargoInscricao) continue
     if (fichaUf(cargoFicha, ficha.uf) !== fichaUf(cargoInscricao, inscricao.uf)) continue
     result.set(ficha.slug, "ok")

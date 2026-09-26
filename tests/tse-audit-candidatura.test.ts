@@ -10,11 +10,13 @@ import {
 import {
   FONTE_TSE_AUDITORIA_CANDIDATURA,
   podeGravarRecibosCandidatura,
+  reciboGlobalPendente,
   recibosAuditoriaCandidatura,
   recibosPendentes,
 } from "../scripts/lib/data-freshness/tse-audit-receipt"
 import { TSE_CANDIDACY_URL, TSE_COMPLEMENTAR_URL } from "../scripts/lib/data-freshness/tse-source"
 import type { JulgamentoTse } from "../scripts/lib/tse-situacao-julgamento"
+import type { OfficialCandidacy } from "../src/lib/candidate-publication-integrity"
 import type { CandidateSitesTseDataset } from "../src/lib/types"
 
 const SHA = "a".repeat(64)
@@ -196,29 +198,37 @@ test("SQ sem registro com o mesmo cargo e UF: identidade não fecha e reprova", 
   assert.ok(Array.isArray(detalhe.reasons) && detalhe.reasons.length > 0, recibo.detalhe!)
 })
 
+/** Inscrição no tipo real que o audit passa (OfficialCandidacy), não num formato só de teste. */
+function inscricaoOficial(overrides: Partial<OfficialCandidacy> & Pick<OfficialCandidacy, "profile_slug" | "office" | "uf">): OfficialCandidacy {
+  return { sq_candidato: "250001", name: "FULANO", status: "APTO", ...overrides }
+}
+
 test("DivulgaCand ao vivo vence o complementar na situação de Gov/Pres", () => {
   const comparison = compare({
     fichas: [ficha({ slug: "fulano-sp", situacao_candidatura: "indeferido" })],
-    situacaoAtual: situacaoAtualDoDivulgaCand([{ profile_slug: "fulano-sp", cargo: "GOVERNADOR", uf: "SP" }], [], fichas),
+    situacaoAtual: situacaoAtualDoDivulgaCand([inscricaoOficial({ profile_slug: "fulano-sp", office: "Governador", uf: "SP" })], [], fichas),
   })
   assert.equal(comparison.fichas[0].checks.situacao, "ok")
 })
 
 test("DivulgaCand só confirma a situação com inscrição do mesmo cargo e UF; divergência vence", () => {
   const indeferido = [ficha({ slug: "fulano-sp", situacao_candidatura: "indeferido" })]
-  const situacao = (inscricao: { profile_slug: string; cargo: string; uf: string | null }, divergentes: string[] = []) =>
+  const situacao = (inscricao: OfficialCandidacy, divergentes: string[] = []) =>
     compare({ fichas: indeferido, situacaoAtual: situacaoAtualDoDivulgaCand([inscricao], divergentes, indeferido) }).fichas[0].checks.situacao
-  // Inscrição de vice ou de outra UF não fala da ficha: cai no complementar (DEFERIDO x indeferido).
-  assert.equal(situacao({ profile_slug: "fulano-sp", cargo: "VICE GOVERNADOR", uf: "SP" }), "divergente")
-  assert.equal(situacao({ profile_slug: "fulano-sp", cargo: "GOVERNADOR", uf: "RJ" }), "divergente")
-  assert.equal(situacao({ profile_slug: "fulano-sp", cargo: "GOVERNADOR", uf: "SP" }), "ok")
-  const comparison = compare({ fichas: indeferido, situacaoAtual: situacaoAtualDoDivulgaCand([{ profile_slug: "fulano-sp", cargo: "GOVERNADOR", uf: "SP" }], ["fulano-sp"], indeferido) })
+  // Inscrição de outro cargo ou de outra UF não fala da ficha: cai no complementar (DEFERIDO x indeferido).
+  assert.equal(situacao(inscricaoOficial({ profile_slug: "fulano-sp", office: "Senador", uf: "SP" })), "divergente")
+  assert.equal(situacao(inscricaoOficial({ profile_slug: "fulano-sp", office: "Governador", uf: "RJ" })), "divergente")
+  assert.equal(situacao(inscricaoOficial({ profile_slug: "fulano-sp", office: "Governador", uf: "SP" })), "ok")
+  const comparison = compare({ fichas: indeferido, situacaoAtual: situacaoAtualDoDivulgaCand([inscricaoOficial({ profile_slug: "fulano-sp", office: "Governador", uf: "SP" })], ["fulano-sp"], indeferido) })
   assert.equal(comparison.fichas[0].checks.situacao, "divergente")
   assert.match(comparison.fichas[0].notes.join(" "), /DivulgaCand/)
   assert.deepEqual(comparison.fichas[0].blocking, ["situacao"])
   // Presidente: UF da inscrição é normalizada para BR.
   const presidenta = [fichas[2]]
-  assert.equal(situacaoAtualDoDivulgaCand([{ profile_slug: "presidenta", cargo: "PRESIDENTE", uf: null }], [], presidenta).get("presidenta"), "ok")
+  assert.equal(situacaoAtualDoDivulgaCand([inscricaoOficial({ profile_slug: "presidenta", office: "Presidente", uf: null })], [], presidenta).get("presidenta"), "ok")
+  // Senador: a inscrição oficial do Senado confirma a ficha do mesmo estado.
+  const senadora = [ficha({ slug: "senadora-sp", office: "Senador", uf: "SP" })]
+  assert.equal(situacaoAtualDoDivulgaCand([inscricaoOficial({ profile_slug: "senadora-sp", office: "Senador", uf: "SP" })], [], senadora).get("senadora-sp"), "ok")
 })
 
 test("sites e vice divergentes não reprovam o job, mas deixam o recibo indeterminado", () => {
@@ -362,4 +372,11 @@ test("senador recém-registrado ainda fora do complementar: recibo indeterminado
   const recibo = recibosAuditoriaCandidatura({ source, fichas: comparison.fichas }).recibos.find((item) => item.alvo === "senadora-sp")!
   assert.equal(recibo.resultado, "indeterminado")
   assert.ok(JSON.parse(recibo.detalhe!).reasons.some((reason: string) => reason.includes("julgamento-ausente")))
+})
+
+test("re-run da mesma execução não grava o recibo global de novo", () => {
+  const global = { fonte: "tse-auditoria-snapshot", escopo: "global", alvo: "tse-2026", resultado: "encontrado", volume: 1 } as const
+  assert.equal(reciboGlobalPendente(global, 0), global)
+  assert.equal(reciboGlobalPendente(global, 1), null)
+  assert.equal(reciboGlobalPendente(global, 3), null)
 })

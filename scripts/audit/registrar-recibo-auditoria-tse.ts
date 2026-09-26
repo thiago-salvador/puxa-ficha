@@ -24,6 +24,7 @@ import type { FichaTseResult } from "../lib/data-freshness/ficha-tse"
 import {
   FONTE_TSE_AUDITORIA_CANDIDATURA,
   podeGravarRecibosCandidatura,
+  reciboGlobalPendente,
   reciboAuditoriaTse,
   recibosAuditoriaCandidatura,
   recibosPendentes,
@@ -65,6 +66,14 @@ export function lerArtefatosRecibosCandidatura(dir: string): ArtefatosRecibosCan
 }
 
 const LOTE = 200
+
+/** Quantos recibos globais desta fonte a execução atual já gravou (re-run do mesmo run_id). */
+async function globaisJaGravados(fonte: string): Promise<number> {
+  const { count, error } = await supabase.from("coleta_log").select("id", { count: "exact", head: true })
+    .eq("fonte", fonte).eq("escopo", "global").eq("execucao", EXECUCAO)
+  if (error) throw new Error(`recibo global já gravado desta execução: ${error.message}`)
+  return count ?? 0
+}
 
 /** Alvos que já têm recibo por candidato desta execução (re-run do mesmo run_id). */
 async function alvosJaGravados(): Promise<Set<string>> {
@@ -115,8 +124,13 @@ async function main(): Promise<void> {
     avisar(dir, "Recibos da auditoria TSE não gravados: SUPABASE_URL e SUPABASE_SERVICE_ROLE_KEY ausentes neste job.")
     return
   }
-  await registrarColetaOuFalhar(recibo)
-  console.log(`TSE_AUDIT_RECEIPT_RECORDED: ${recibo.resultado} volume=${recibo.volume ?? 0}`)
+  const global = reciboGlobalPendente(recibo, await globaisJaGravados(recibo.fonte))
+  if (global) {
+    await registrarColetaOuFalhar(global)
+    console.log(`TSE_AUDIT_RECEIPT_RECORDED: ${global.resultado} volume=${global.volume ?? 0}`)
+  } else {
+    console.log(`TSE_AUDIT_RECEIPT_ALREADY_RECORDED: execução ${EXECUCAO} já tem o recibo global`)
+  }
   const permitido = podeGravarRecibosCandidatura(recibo, artefatosCandidatura.source)
   if (!permitido.ok || porCandidato.recibos.length === 0) {
     console.log(`TSE_CANDIDACY_RECEIPTS_SKIPPED: ${!permitido.ok ? permitido.motivo : porCandidato.ignorado ?? "sem recibos"}`)

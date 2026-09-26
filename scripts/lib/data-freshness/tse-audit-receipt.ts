@@ -262,6 +262,14 @@ export function recibosPendentes(recibos: readonly ReciboCandidatura[], jaGravad
   return recibos.filter((recibo) => !jaGravados.has(recibo.alvo))
 }
 
+/**
+ * Recibo global a gravar nesta rodada: nenhum quando a mesma execução (re-run
+ * do mesmo run_id) já gravou o seu, para o re-run não duplicar o global.
+ */
+export function reciboGlobalPendente(recibo: EntradaColeta, jaGravadosDaExecucao: number): EntradaColeta | null {
+  return jaGravadosDaExecucao > 0 ? null : recibo
+}
+
 /** Credenciais do cliente de escrita dos scripts, sem ler o valor da chave. */
 export function temCredencialDeEscrita(env: Readonly<Record<string, string | undefined>> = process.env): boolean {
   return Boolean((env.SUPABASE_URL ?? env.NEXT_PUBLIC_SUPABASE_URL) && env.SUPABASE_SERVICE_ROLE_KEY)
