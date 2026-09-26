@@ -4,7 +4,7 @@ import test from "node:test"
 
 import { bloqueadoPorCodigo, decidirCascata, REGRAS_CASCATA } from "../scripts/promessa-jev/cascata.mjs"
 import { entradaDoPar, validarRespostaVerificador } from "../scripts/promessa-jev/verificador.mjs"
-import { amostraAuditoria, linhasParaPublicar } from "../scripts/promessa-evidencia-publicar"
+import { amostraAuditoria, impressaoDaEntrada, impressaoNoMotivo, linhasParaPublicar, planejarReconciliacao } from "../scripts/promessa-evidencia-publicar"
 import type { ParCandidato } from "../scripts/promessa-evidencia-pares"
 
 const PASTA = "QA/evidencias/2026-09-22-jev-promessa-evidencia"
@@ -91,4 +91,100 @@ test("resultado registrado da cascata c2 atinge o criterio no ajuste e no holdou
   for (const item of pares.filter((i: { conjunto: string }) => i.conjunto === "holdout")) {
     assert.ok(!golden.has(item.par.parId) && !ajuste.has(item.par.parId), "holdout disjunto")
   }
+})
+
+// Trava de variância (25/09/2026): vínculo publicado só sai quando a entrada muda.
+const cascataC2 = { jevCascata: { p1: { model: "jev", answers: { objeto_concreto: { noul: 0.8 } } } }, verificador: { p1: { modelo: "luna" } } }
+const publicadoOntem = (p: ParCandidato) => {
+  const [linha] = linhasParaPublicar({ pares: [p], publicar: [p.parId], cache: cascataC2, versao: "c2", agora: "2026-09-25T08:34:00.000Z" })
+  return { id: "row-1", programa_chave: linha.programa_chave, tema_id: linha.tema_id, tipo_evidencia: linha.tipo_evidencia, evidencia_ref: linha.evidencia_ref, motivo: linha.motivo }
+}
+
+test("publicador grava a impressao da entrada no motivo", () => {
+  const p = par("Cria o corredor multimodal")
+  assert.equal(impressaoNoMotivo(publicadoOntem(p).motivo), impressaoDaEntrada(p))
+})
+
+test("mesma entrada e rotulo novo barrado: o vinculo continua publicado e vira item de revisao", () => {
+  const p = par("Cria o corredor multimodal")
+  const plano = planejarReconciliacao({ ativas: [publicadoOntem(p)], publicadasAgora: new Set(), pares: [p] })
+  assert.deepEqual(plano.retirar, [])
+  assert.equal(plano.mantidosPorVariancia.length, 1)
+  assert.equal(plano.mantidosPorVariancia[0].sem_impressao_anterior, false)
+})
+
+test("impressao ignora so o rotulo: resposta do Jev e do verificador nao entram", () => {
+  const p = par("Cria o corredor multimodal")
+  const comOutraOrdem = { ...p, evidencia: { ...p.evidencia, conteudo: { ...p.evidencia.conteudo } }, eixosComuns: [] }
+  assert.equal(impressaoDaEntrada(comOutraOrdem), impressaoDaEntrada(p))
+})
+
+test("entrada alterada retira: texto do tema, conteudo da evidencia ou fonte", () => {
+  const p = par("Cria o corredor multimodal")
+  const ativa = publicadoOntem(p)
+  const alteracoes: ParCandidato[] = [
+    { ...p, compromisso: { ...p.compromisso, descricao: "Outra proposta." } },
+    { ...p, compromisso: { ...p.compromisso, frases: [{ id: "a1b2c3d4e5f60718", texto: "Frase nova do programa." }] } },
+    { ...p, evidencia: { ...p.evidencia, conteudo: { ementa: "Ementa corrigida" } } },
+    { ...p, evidencia: { ...p.evidencia, url: "https://www.camara.leg.br/nova" } },
+  ]
+  for (const alterado of alteracoes) {
+    const plano = planejarReconciliacao({ ativas: [ativa], publicadasAgora: new Set(), pares: [alterado] })
+    assert.deepEqual(plano.retirar.map((r) => r.causa), ["entrada_alterada"])
+    assert.deepEqual(plano.mantidosPorVariancia, [])
+  }
+})
+
+test("evidencia despublicada (par sumiu do pre-filtro) retira", () => {
+  const p = par("Cria o corredor multimodal")
+  const plano = planejarReconciliacao({ ativas: [publicadoOntem(p)], publicadasAgora: new Set(), pares: [] })
+  assert.deepEqual(plano.retirar.map((r) => r.causa), ["par_ausente"])
+})
+
+test("vinculo republicado nesta execucao nao entra na reconciliacao", () => {
+  const p = par("Cria o corredor multimodal")
+  const ativa = publicadoOntem(p)
+  const chave = [ativa.programa_chave, ativa.tema_id, ativa.tipo_evidencia, ativa.evidencia_ref].join("|")
+  const plano = planejarReconciliacao({ ativas: [ativa], publicadasAgora: new Set([chave]), pares: [p] })
+  assert.deepEqual([plano.retirar, plano.mantidosPorVariancia], [[], []])
+})
+
+test("vinculo antigo sem impressao que a cascata nao reaprova: fica publicado, sem impressao, e vai a revisao", () => {
+  const p = par("Cria o corredor multimodal")
+  const antigo = { ...publicadoOntem(p), motivo: "aprovado pelas quatro camadas da cascata c2" }
+  const plano = planejarReconciliacao({ ativas: [antigo], publicadasAgora: new Set(), pares: [p] })
+  assert.deepEqual(plano.retirar, [])
+  assert.equal(plano.mantidosPorVariancia.length, 1)
+  assert.equal(plano.mantidosPorVariancia[0].sem_impressao_anterior, true)
+  assert.deepEqual(Object.keys(plano).sort(), ["mantidosPorVariancia", "retirar"], "o plano nao tem caminho de carimbo")
+  // Execucao seguinte com a mesma rejeicao: continua igual, ainda sem impressao.
+  const seguinte = planejarReconciliacao({ ativas: [antigo], publicadasAgora: new Set(), pares: [p] })
+  assert.deepEqual(seguinte, plano)
+  const fonte = readFileSync("scripts/promessa-evidencia-publicar.ts", "utf8")
+  assert.doesNotMatch(fonte, /update\(\{ motivo/u, "motivo so muda pelo upsert do que a cascata aprovou")
+})
+
+test("vinculo antigo sem impressao que a cascata reaprova recebe a impressao pela publicacao", () => {
+  const p = par("Cria o corredor multimodal")
+  const [linha] = linhasParaPublicar({ pares: [p], publicar: [p.parId], cache: cascataC2, versao: "c2", agora: "2026-09-26T08:34:00.000Z" })
+  assert.equal(impressaoNoMotivo(linha.motivo), impressaoDaEntrada(p))
+  const antigo = { ...publicadoOntem(p), motivo: "aprovado pelas quatro camadas da cascata c2" }
+  const chave = [linha.programa_chave, linha.tema_id, linha.tipo_evidencia, linha.evidencia_ref].join("|")
+  const plano = planejarReconciliacao({ ativas: [antigo], publicadasAgora: new Set([chave]), pares: [p] })
+  assert.deepEqual(plano, { retirar: [], mantidosPorVariancia: [] })
+})
+
+test("vinculo antigo sem impressao cujo par sumiu e retirado", () => {
+  const p = par("Cria o corredor multimodal")
+  const antigo = { ...publicadoOntem(p), motivo: "aprovado pelas quatro camadas da cascata c2" }
+  const plano = planejarReconciliacao({ ativas: [antigo], publicadasAgora: new Set(), pares: [] })
+  assert.deepEqual(plano.retirar.map((r) => r.causa), ["par_ausente"])
+})
+
+test("falha do recibo nao invalida a publicacao: sai com codigo 2 depois de publicar", () => {
+  const fonte = readFileSync("scripts/promessa-evidencia-publicar.ts", "utf8")
+  const bloco = fonte.slice(fonte.indexOf("let recibos: Record<string, unknown>"))
+  assert.match(bloco, /try \{\s*const gravados = await gravarRecibos/u)
+  assert.match(bloco, /catch \(erro\) \{\s*recibos = \{ erro:[^}]*\}\s*process\.exitCode = 2/u)
+  assert.ok(fonte.indexOf("let recibos: Record<string, unknown>") > fonte.indexOf("retiradas = (await escreverAuditado"))
 })
