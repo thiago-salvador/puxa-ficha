@@ -15,8 +15,17 @@
 --     Wilson Grassi Junior - "NEGARAM PROVIMENTO AO AGRAVO INTERNO. V.U."
 -- O dígito verificador (módulo 97 da Resolução CNJ 65/2008) confere: 86.
 --
--- Escrita: só numero_processo -> '2254046-86.2021.8.26.0000'. A descrição já
--- nomeia o incidente /50000 e continua como está. A linha segue publicada.
+-- Status: a linha dizia 'em tramitacao (comunicacao publicada)'. Na mesma
+-- consulta do e-SAJ, relida em 2026-09-26 (sha256 do corpo
+-- 384fec73931b4d4f796d3bc873564be5bf23c091e9ed3077eb422083f1a5caed), o
+-- processo aparece "Arquivado administrativamente" e o incidente 50000
+-- "(Encerrado)"; o comunicado do Órgão Especial registra o agravo julgado
+-- ("NEGARAM PROVIMENTO AO AGRAVO INTERNO. V.U."). O status passa a 'arquivado',
+-- valor terminal já usado no vocabulário de processos.
+--
+-- Escrita: numero_processo -> '2254046-86.2021.8.26.0000' e status ->
+-- 'arquivado'. A descrição já nomeia o incidente /50000 e continua como está.
+-- A linha segue publicada.
 -- A preimagem integral da linha fica no recibo em coleta_log (before/after),
 -- que o rollback usa com CAS. Fail-closed: aceita somente a preimagem medida.
 --
@@ -60,9 +69,10 @@ BEGIN
 
   preimagem := (SELECT to_jsonb(p) FROM public.processos p WHERE p.id = alvo);
 
-  -- @write tabela=processos slug=wilson-grassi-junior campos=numero_processo
+  -- @write tabela=processos slug=wilson-grassi-junior campos=numero_processo,status
   UPDATE public.processos p
-  SET numero_processo = '2254046-86.2021.8.26.0000'
+  SET numero_processo = '2254046-86.2021.8.26.0000',
+      status = 'arquivado'
   WHERE p.id = alvo
     AND p.candidato_id = (SELECT c.id FROM public.candidatos c WHERE c.slug = 'wilson-grassi-junior')
     AND to_jsonb(p) = preimagem;
@@ -75,12 +85,12 @@ BEGIN
   -- @write tabela=coleta_log ref=migration:20260926190000 campos=fonte,escopo,alvo,candidato_id,resultado,volume,detalhe,url,execucao,natureza
   INSERT INTO public.coleta_log (fonte,escopo,alvo,candidato_id,resultado,volume,detalhe,url,execucao,natureza)
   SELECT 'tjsp-esaj-2grau','candidato',
-         'processos.numero_processo', p.candidato_id,
+         'processos.numero_processo,status', p.candidato_id,
          'encontrado', 1,
          jsonb_build_object(
-           'resumo','Numero do processo de wilson-grassi-junior volta ao numero unico CNJ 2254046-86.2021.8.26.0000; o sufixo /50000 e o incidente (Agravo Regimental Civel) no e-SAJ do TJSP e segue citado na descricao.',
+           'resumo','Numero do processo de wilson-grassi-junior volta ao numero unico CNJ 2254046-86.2021.8.26.0000 (o sufixo /50000 e o incidente Agravo Regimental Civel no e-SAJ do TJSP e segue citado na descricao) e o status passa a arquivado: o e-SAJ mostra o processo arquivado administrativamente e o incidente encerrado.',
            'fontes', jsonb_build_array(
-             jsonb_build_object('url','https://esaj.tjsp.jus.br/cposg/search.do?cbPesquisa=NUMPROC&dePesquisaNuUnificado=2254046-86.2021.8.26.0000&tipoNuProcesso=UNIFICADO','lido_em','2026-09-26','achado','Habeas Corpus Civel 2254046-86.2021.8.26.0000; incidente 50000 Agravo Regimental Civel'),
+             jsonb_build_object('url','https://esaj.tjsp.jus.br/cposg/search.do?cbPesquisa=NUMPROC&dePesquisaNuUnificado=2254046-86.2021.8.26.0000&tipoNuProcesso=UNIFICADO','lido_em','2026-09-26','sha256','384fec73931b4d4f796d3bc873564be5bf23c091e9ed3077eb422083f1a5caed','achado','Habeas Corpus Civel 2254046-86.2021.8.26.0000 arquivado administrativamente; incidente 50000 Agravo Regimental Civel encerrado'),
              jsonb_build_object('url','https://www.tjsp.jus.br/OrgaoEspecial/Comunicados/Comunicado?codigoComunicado=30327&pagina=2','lido_em','2026-09-26','achado','2254046-86.2021.8.26.0000/50000 Agravo Regimental Civel, agravante Wilson Grassi Junior')),
            'linhas', jsonb_agg(jsonb_build_object(
              'slug', c.slug,
@@ -97,7 +107,8 @@ BEGIN
 
   IF (SELECT count(*) FROM public.processos p
        WHERE p.id = alvo
-         AND p.numero_processo = '2254046-86.2021.8.26.0000') <> 1
+         AND p.numero_processo = '2254046-86.2021.8.26.0000'
+         AND p.status = 'arquivado') <> 1
   THEN
     RAISE EXCEPTION 'processo-cnj-20260926: pos-condicao falhou';
   END IF;

@@ -19,8 +19,9 @@ BEGIN
        IS DISTINCT FROM linha->'after' THEN
     RAISE EXCEPTION 'processo-cnj-20260926 readback: postimagem divergiu';
   END IF;
-  IF (linha->'before') - 'numero_processo' IS DISTINCT FROM (linha->'after') - 'numero_processo'
-     OR linha->'before'->>'numero_processo' <> '2254046-86.2021.8.26.0000/50000' THEN
+  IF (linha->'before') - 'numero_processo' - 'status' IS DISTINCT FROM (linha->'after') - 'numero_processo' - 'status'
+     OR linha->'before'->>'numero_processo' <> '2254046-86.2021.8.26.0000/50000'
+     OR linha->'before'->>'status' <> 'em tramitacao (comunicacao publicada)' THEN
     RAISE EXCEPTION 'processo-cnj-20260926 readback: campo fora da allowlist mudou';
   END IF;
 
@@ -28,8 +29,9 @@ BEGIN
        JOIN public.candidatos c ON c.id = p.candidato_id
        WHERE p.id = '6d93a421-403d-401d-a6ad-a50b03970b81'
          AND c.slug = 'wilson-grassi-junior'
-         AND p.numero_processo = '2254046-86.2021.8.26.0000') <> 1 THEN
-    RAISE EXCEPTION 'processo-cnj-20260926 readback: numero nao confere';
+         AND p.numero_processo = '2254046-86.2021.8.26.0000'
+         AND p.status = 'arquivado') <> 1 THEN
+    RAISE EXCEPTION 'processo-cnj-20260926 readback: numero ou status nao confere';
   END IF;
 END
 $readback$;

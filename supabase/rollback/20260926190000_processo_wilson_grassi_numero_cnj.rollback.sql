@@ -1,4 +1,4 @@
--- Preservador: devolve numero_processo da linha de wilson-grassi-junior à
+-- Preservador: devolve numero_processo e status da linha de wilson-grassi-junior à
 -- preimagem integral do recibo `migration:20260926190000`, com CAS da
 -- postimagem. Só roda depois do rollback da 20260926190100, que tira a CHECK
 -- que recusaria o número antigo.
@@ -33,7 +33,8 @@ BEGIN
   END IF;
 
   UPDATE public.processos p
-  SET numero_processo = linha->'before'->>'numero_processo'
+  SET numero_processo = linha->'before'->>'numero_processo',
+      status = linha->'before'->>'status'
   WHERE p.id = (linha->>'id')::uuid;
   GET DIAGNOSTICS afetadas = ROW_COUNT;
   IF afetadas <> 1 THEN
@@ -46,9 +47,9 @@ BEGIN
   END IF;
 
   INSERT INTO public.coleta_log (fonte,escopo,alvo,candidato_id,resultado,volume,detalhe,url,execucao,natureza)
-  SELECT 'tjsp-esaj-2grau','candidato','processos.numero_processo', p.candidato_id,'encontrado', 1,
+  SELECT 'tjsp-esaj-2grau','candidato','processos.numero_processo,status', p.candidato_id,'encontrado', 1,
          jsonb_build_object(
-           'resumo','Rollback da migration 20260926190000: numero_processo de wilson-grassi-junior volta ao valor anterior.',
+           'resumo','Rollback da migration 20260926190000: numero_processo e status de wilson-grassi-junior voltam ao valor anterior.',
            'linhas', jsonb_build_array(jsonb_build_object('slug', linha->>'slug', 'id', p.id, 'processo', to_jsonb(p)))
          )::text,
          'https://esaj.tjsp.jus.br/cposg/search.do?cbPesquisa=NUMPROC&dePesquisaNuUnificado=2254046-86.2021.8.26.0000&tipoNuProcesso=UNIFICADO',

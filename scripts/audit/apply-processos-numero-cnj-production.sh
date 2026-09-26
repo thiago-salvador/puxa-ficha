@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Aplica, em ordem de arquivo, as migrations de 26/09/2026:
-#   20260926190000  numero_processo de wilson-grassi-junior volta ao numero CNJ
+#   20260926190000  numero_processo de wilson-grassi-junior volta ao numero CNJ; status arquivado
 #   20260926190100  CHECK de numero CNJ valido em processos (schema, NOT VALID)
 # com predecessor, hash, lock, ledger e readback fechados para o projeto de
 # producao do Puxa Ficha. Molde de apply-situacao-godeiro-laudicerio-production.sh.

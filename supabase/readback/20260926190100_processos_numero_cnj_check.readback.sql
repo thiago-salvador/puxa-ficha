@@ -21,14 +21,14 @@ BEGIN
     RAISE EXCEPTION 'processo-cnj-check readback: validador nao confere';
   END IF;
 
-  -- Fora da regra só as três linhas legadas nomeadas na migration.
+  -- Fora da regra exatamente as três linhas legadas nomeadas na migration.
   SELECT coalesce(array_agg(p.numero_processo ORDER BY p.numero_processo), '{}') INTO fora
   FROM public.processos p
   WHERE p.numero_processo IS NOT NULL
     AND NOT public.processo_numero_cnj_valido(p.numero_processo);
   IF EXISTS (SELECT 1 FROM public.candidatos) AND current_setting('pf.replay', true) IS DISTINCT FROM 'true'
-     AND NOT (fora <@ ARRAY['43.0719.0000337/2020-0','HC 201965','TC 008.761/2020-5']) THEN
-    RAISE EXCEPTION 'processo-cnj-check readback: numero fora da regra alem dos legados: %', fora;
+     AND fora IS DISTINCT FROM ARRAY['43.0719.0000337/2020-0','HC 201965','TC 008.761/2020-5']::text[] THEN
+    RAISE EXCEPTION 'processo-cnj-check readback: linhas fora da regra diferentes dos tres legados: %', fora;
   END IF;
 END
 $readback$;

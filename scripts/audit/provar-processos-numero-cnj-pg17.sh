@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Prova em PostgreSQL 17 descartável as migrations 20260926190000 (numero_processo
-# de wilson-grassi-junior volta ao número único CNJ) e 20260926190100 (CHECK de
+# de wilson-grassi-junior volta ao número único CNJ e status passa a arquivado) e
+# 20260926190100 (CHECK de
 # número CNJ válido em processos), sobre o schema real de candidatos e
 # coleta_log (scripts/audit/lib/chapas-2026-real-schema.sql) e as colunas reais
 # de processos: readbacks reprovam o pré-estado, a migration de dado reprova
@@ -125,8 +126,8 @@ q -q < "supabase/migrations/$V2.sql"
 q -q -c "INSERT INTO supabase_migrations.schema_migrations(version, idempotency_key) VALUES ('20260926190100', 'sha256:fixture')"
 q -q < "supabase/readback/$V2.readback.sql"
 
-numero="$(q -Atq -c "SELECT numero_processo FROM public.processos WHERE id='6d93a421-403d-401d-a6ad-a50b03970b81'")"
-[[ "$numero" == "2254046-86.2021.8.26.0000" ]] || { echo "FAIL: forward inesperado: $numero" >&2; exit 1; }
+numero="$(q -Atq -c "SELECT numero_processo || '|' || status FROM public.processos WHERE id='6d93a421-403d-401d-a6ad-a50b03970b81'")"
+[[ "$numero" == "2254046-86.2021.8.26.0000|arquivado" ]] || { echo "FAIL: forward inesperado: $numero" >&2; exit 1; }
 [[ "$(digest_sentinelas)" == "$sentinelas_antes" ]] || { echo "FAIL: forward tocou sentinela" >&2; exit 1; }
 [[ "$(q -Atq -c "SELECT convalidated FROM pg_constraint WHERE conname='processos_numero_processo_cnj_check'")" == "f" ]] || { echo "FAIL: CHECK deveria ficar NOT VALID" >&2; exit 1; }
 
@@ -151,6 +152,18 @@ q -q -c "UPDATE public.processos SET numero_processo='2254046-86.2021.8.26.0000'
 q -q -c "ALTER TABLE public.processos ADD CONSTRAINT processos_numero_processo_cnj_check CHECK (numero_processo IS NULL OR public.processo_numero_cnj_valido(numero_processo)) NOT VALID"
 q -q < "supabase/readback/$V2.readback.sql"
 
+# Igualdade, não subconjunto: se um legado sai da lista sem a migration dizer, o readback reprova.
+q -q -c "ALTER TABLE public.processos DROP CONSTRAINT processos_numero_processo_cnj_check"
+q -q -c "UPDATE public.processos SET numero_processo=NULL WHERE id='00000000-0000-4000-8000-0000000000d3'"
+falha_esperada "readback da CHECK aceitou só dois dos três legados" "supabase/readback/$V2.readback.sql"
+q -q -c "UPDATE public.processos SET numero_processo='43.0719.0000337/2020-0' WHERE id='00000000-0000-4000-8000-0000000000d3'"
+q -q -c "ALTER TABLE public.processos ADD CONSTRAINT processos_numero_processo_cnj_check CHECK (numero_processo IS NULL OR public.processo_numero_cnj_valido(numero_processo)) NOT VALID"
+q -q < "supabase/readback/$V2.readback.sql"
+
+q -q -c "UPDATE public.processos SET status='em_andamento' WHERE id='6d93a421-403d-401d-a6ad-a50b03970b81'"
+falha_esperada "readback de dado aceitou status adulterado" "supabase/readback/$V.readback.sql"
+q -q -c "UPDATE public.processos SET status='arquivado' WHERE id='6d93a421-403d-401d-a6ad-a50b03970b81'"
+
 q -q -c "UPDATE public.processos SET numero_processo='1000001-08.2020.8.26.0053' WHERE id='6d93a421-403d-401d-a6ad-a50b03970b81'"
 falha_esperada "readback de dado aceitou postimagem adulterada" "supabase/readback/$V.readback.sql"
 q -q -c "UPDATE public.processos SET numero_processo='2254046-86.2021.8.26.0000' WHERE id='6d93a421-403d-401d-a6ad-a50b03970b81'"
@@ -169,4 +182,4 @@ q -q < "supabase/readback/$V.rollback.readback.sql"
 [[ "$(digest_processos)" == "$tudo_antes" ]] || { echo "FAIL: rollback não devolveu o estado inicial" >&2; exit 1; }
 [[ "$(q -Atq -c "SELECT max(version) FROM supabase_migrations.schema_migrations")" == "20260926180200" ]] || { echo "FAIL: ledger final" >&2; exit 1; }
 
-echo "PASS: número CNJ de wilson-grassi-junior e CHECK de número CNJ em processos têm pré-estado, preimagem adulterada, forward, sufixo de incidente, dígito errado, número sem máscara, identificador não judicial, legados sem VALIDATE, grants, readbacks, postimagem adulterada, migration posterior, rollback inverso e sentinelas provados em PostgreSQL 17"
+echo "PASS: número CNJ e status de wilson-grassi-junior e CHECK de número CNJ em processos têm pré-estado, preimagem adulterada, forward, sufixo de incidente, dígito errado, número sem máscara, identificador não judicial, legados sem VALIDATE e comparados por igualdade, status adulterado, grants, readbacks, postimagem adulterada, migration posterior, rollback inverso e sentinelas provados em PostgreSQL 17"
