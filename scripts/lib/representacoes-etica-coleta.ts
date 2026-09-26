@@ -62,13 +62,33 @@ export function normalizarNome(valor: string): string {
 }
 
 const INICIO_ALVO = /em\s+desfavor\s+d[aeo]s?\s+/i
+/**
+ * Fim do trecho do alvo: motivo, fundamento, autor ou relator. Cada marcador
+ * termina em fronteira de palavra para não cortar dentro de um nome.
+ */
 const FIM_ALVO =
-  /(,|;|\.|\s)\s*(protocolizad|por\s|pel[ao]s?\s|em\s+raz[aã]o|em\s+face|diante\s|que\s|tendo\s|ante\s|acerca\s|com\s+base|nos\s+termos)/i
+  /(,|;|\.|\s|-|\u2013)\s*(protocolizad[ao]s?\b|por\s|pel[ao]s?\s|em\s+raz[aã]o\b|em\s+face\b|diante\s|que\s|tendo\s|ante\s|acerca\s|com\s+base\b|nos\s+termos\b|de\s+iniciativa\b|de\s+autoria\b|autor(?:a|es|as)?\b|relator(?:a)?\b|representante\b|oferecid[ao]s?\b|subscrit[ao]s?\b|requerid[ao]s?\b|propost[ao]s?\b|formulad[ao]s?\b|apresentad[ao]s?\b)/i
 
-/** Trecho da ementa que nomeia o(s) alvo(s): depois de "em desfavor do(a)" e antes do motivo. */
+/** Abreviações cujo ponto não encerra o trecho ("Dep. Fulano", "Sr. Fulano"). */
+const ABREVIACOES = new Set(["DEP", "DEPS", "SR", "SRA", "SRS", "SRAS", "DR", "DRA", "SEN", "EXMO", "EXMA", "EXMOS", "PROF", "PROFA", "GAL", "CEL", "CAP", "TEN", "SGT", "JR", "N"])
+
+/** Corta no primeiro `.;:()` que não seja ponto de abreviação. */
+export function cortarNaPontuacao(texto: string): string {
+  for (let i = 0; i < texto.length; i += 1) {
+    const ch = texto[i]
+    if (ch === ";" || ch === ":" || ch === "(" || ch === ")") return texto.slice(0, i)
+    if (ch === ".") {
+      const palavra = /([A-Za-zÀ-ÿ]+)$/.exec(texto.slice(0, i))?.[1] ?? ""
+      if (!ABREVIACOES.has(normalizarNome(palavra))) return texto.slice(0, i)
+    }
+  }
+  return texto
+}
+
+/** Trecho da ementa que nomeia o(s) alvo(s): depois de "em desfavor do(a)" e antes do motivo, do autor ou do relator. */
 export function trechoDoAlvo(ementa: string): string {
   const inicio = ementa.search(INICIO_ALVO)
-  const resto = inicio >= 0 ? ementa.slice(inicio).replace(INICIO_ALVO, "") : ementa
+  const resto = cortarNaPontuacao(inicio >= 0 ? ementa.slice(inicio).replace(INICIO_ALVO, "") : ementa)
   const fim = resto.search(FIM_ALVO)
   return (fim >= 0 ? resto.slice(0, fim) : resto).trim()
 }

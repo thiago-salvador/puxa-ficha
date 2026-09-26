@@ -21,6 +21,7 @@ import {
   DISJUNTOR_ABERTO,
   esperaRetry,
   cpfCompativelNoTexto,
+  cpfDaCandidaturaNoTexto,
   cpfDivergenteNoTexto,
   cpfsRotuladosDoNome,
   csvsDoConsultaCand,
@@ -362,6 +363,7 @@ describe("CPF rotulado divergente descarta o homônimo", () => {
     assert.equal(cpfDivergenteNoTexto(`Réu: CARLOS DA SILVA TESTE, CPF ${outro}`, "Carlos da Silva Teste", cpf), true)
     assert.equal(cpfDivergenteNoTexto(`Réu: CARLOS DA SILVA TESTE, CPF ${cpf}`, "Carlos da Silva Teste", cpf), false)
     assert.equal(cpfDivergenteNoTexto("Réu: CARLOS DA SILVA TESTE, CPF ***.444.777-**", "Carlos da Silva Teste", cpf), false)
+    assert.equal(cpfDaCandidaturaNoTexto(`consta 529 982 247 25 no rodapé`, cpf), true)
     assert.equal(cpfDivergenteNoTexto(`Réu: CARLOS DA SILVA TESTE, CPF ${outro}`, "Carlos da Silva Teste", ""), false)
   })
 
@@ -473,12 +475,37 @@ describe("CPF só vale colado ao nome (conferência do #504)", () => {
     assert.equal(cpfCompativelNoTexto(`AUTOR: JOAO PEREIRA, CPF ${cpf}. REU: CARLOS DA SILVA TESTE`, nome, cpf), false)
   })
 
-  it("aceita rótulo colado, nos dois sentidos e com N ou MF", () => {
-    assert.deepEqual(cpfsRotuladosDoNome(`CARLOS DA SILVA TESTE, CPF nº 111.444.777-35`, nome), [outro])
-    assert.deepEqual(cpfsRotuladosDoNome(`CARLOS DA SILVA TESTE (CPF/MF ${outro})`, nome), [outro])
-    assert.deepEqual(cpfsRotuladosDoNome(`CPF ${outro} - CARLOS DA SILVA TESTE`, nome), [outro])
+  it("aceita só rótulo colado depois do nome, com N ou MF", () => {
+    assert.deepEqual(cpfsRotuladosDoNome(`Réu: CARLOS DA SILVA TESTE, CPF nº 111.444.777-35`, nome), [{ tipo: "completo", digitos: outro }])
+    assert.deepEqual(cpfsRotuladosDoNome(`Parte: CARLOS DA SILVA TESTE (CPF/MF ${outro})`, nome), [{ tipo: "completo", digitos: outro }])
+    // CPF ANTES do nome é rótulo de quem vem antes.
+    assert.deepEqual(cpfsRotuladosDoNome(`CPF ${outro} - CARLOS DA SILVA TESTE`, nome), [])
     assert.equal(cpfCompativelNoTexto(`Réu: CARLOS DA SILVA TESTE, CPF ${cpf}`, nome, cpf), true)
-    assert.deepEqual(cpfsRotuladosDoNome(`CARLOS DA SILVA TESTE, portador do CPF ${outro}`, nome), [])
+    // Qualificação entre nome e CPF: falha fechada, nem confirma nem descarta.
+    assert.deepEqual(cpfsRotuladosDoNome(`Réu: CARLOS DA SILVA TESTE, brasileiro, portador do CPF ${outro}`, nome), [])
+    assert.equal(cpfCompativelNoTexto(`Réu: CARLOS DA SILVA TESTE, brasileiro, casado, CPF nº ${cpf}`, nome, cpf), false)
+  })
+})
+
+describe("re-revisão do #504: descarte só com prova completa", () => {
+  const cpf = "52998224725"
+  const outro = "11144477735"
+  const nome = "Carlos da Silva Teste"
+  it("CPF de outra parte antes do nome e CPF mascarado colado ao nome: indecidível, nunca descarta", () => {
+    const texto = "JOAO PEREIRA - CPF: 111.444.777-35; CARLOS DA SILVA TESTE - CPF: ***.982.247-**"
+    assert.equal(cpfDivergenteNoTexto(texto, nome, cpf), false)
+    assert.deepEqual(cpfsRotuladosDoNome(texto, nome), [{ tipo: "mascarado", digitos: "982247" }])
+  })
+
+  it("os 11 dígitos da candidatura em qualquer ponto do texto impedem o descarte", () => {
+    const texto = `Réu: CARLOS DA SILVA TESTE, brasileiro, CPF nº ${cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4")}. Advogado: CARLOS DA SILVA TESTE, CPF ${outro}`
+    assert.equal(cpfDivergenteNoTexto(texto, nome, cpf), false)
+  })
+
+  it("nome dentro de nome mais longo não descarta (guarda à esquerda e destinatário)", () => {
+    assert.equal(cpfDivergenteNoTexto(`MARIA CARLOS DA SILVA TESTE CPF ${outro}`, nome, cpf), false)
+    assert.equal(cpfDivergenteNoTexto(`Parte: MARIA CARLOS DA SILVA TESTE, CPF ${outro}`, nome, cpf, ["MARIA CARLOS DA SILVA TESTE"]), false)
+    assert.equal(cpfDivergenteNoTexto(`Réu: CARLOS DA SILVA TESTE, CPF ${outro}`, nome, cpf), true)
   })
 })
 

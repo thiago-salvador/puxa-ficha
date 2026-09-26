@@ -1118,7 +1118,8 @@ export function contextoPolitico(
   for (const pos of posicoes) {
     const janela = t.slice(Math.max(0, pos - 700), pos + nome.length + 700)
     const identidadeProxima = t.slice(Math.max(0, pos - 220), pos + nome.length + 220)
-    const cpfCompativel = cpfCompativelNoTexto(identidadeProxima, nomeCompleto, cpf)
+    // CPF confere sobre o texto cru (a regra estrita precisa da pontuação), não sobre a janela normalizada.
+    const cpfCompativel = cpfCompativelNoTexto(texto, nomeCompleto, cpf)
     const cargoDepois = new RegExp(`\\b${nomeRegex}\\b(?:\\s+(?:ATUAL|ENTAO|EX|SR|SRA)){0,3}\\s+${CARGO_POLITICO}\\b`).test(identidadeProxima)
     const cargoAntesDireto = new RegExp(`\\b${CARGO_POLITICO}\\s+(?:DO|DA|DE)?\\s*${nomeRegex}\\b`).test(identidadeProxima)
     const cargoAntesComLocal = new RegExp(
@@ -1134,45 +1135,78 @@ export function contextoPolitico(
   return null
 }
 
-/**
- * CPFs completos rotulados COLADOS ao nome no texto oficial: o nome, só
- * espaço ou pontuação (`,:;()-`, que a normalização vira espaço), o rótulo
- * CPF (com "N" ou "MF") e os 11 dígitos; ou o inverso. Qualquer palavra no
- * meio (outra parte, "AUTOR", "REU", outro rótulo) desfaz o vínculo: em
- * "AUTOR JOAO PEREIRA CPF 111 REU CARLOS", o CPF é do autor, não de Carlos.
- * CPF mascarado não entra.
- */
-export function cpfsRotuladosDoNome(texto: string, nomeCompleto: string): string[] {
-  const nome = normalizar(nomeCompleto)
-  if (!nome) return []
-  const t = normalizar(texto)
-  const nomeRegex = escaparRegex(nome)
-  const rotulo = "CPF(?:\\s+(?:N|MF))?"
-  const digitos = "(\\d{3}\\s?\\d{3}\\s?\\d{3}\\s?\\d{2})(?!\\d)"
-  const depois = new RegExp(`\\b${nomeRegex}\\s{1,8}${rotulo}\\s+${digitos}`, "g")
-  const antes = new RegExp(`\\b${rotulo}\\s+${digitos}\\s{1,8}${nomeRegex}\\b`, "g")
-  return [...new Set([...t.matchAll(depois), ...t.matchAll(antes)]
-    .map((m) => m[1].replace(/\D/g, ""))
-    .filter((valor) => valor.length === 11))]
+export interface CpfRotulado {
+  /** `completo`: 11 dígitos; `mascarado`: CPF presente e ilegível (asteriscos ou X). */
+  tipo: "completo" | "mascarado"
+  digitos: string
+}
+
+/** Texto com pontuação preservada: a guarda à esquerda depende dela. */
+function semiNormalizar(valor: string): string {
+  return stripAccents(String(valor ?? "")).toUpperCase().replace(/[ \t]+/g, " ")
 }
 
 /**
- * CPF colado ao nome e DIFERENTE do CPF da candidatura: é outra pessoa com o
- * mesmo nome. Se o texto também trouxer o CPF da candidatura colado ao nome,
- * não é divergência.
+ * CPF rotulado COLADO depois do nome no texto oficial, só nessa direção:
+ * [início, `:;,.()-` ou quebra de linha] NOME [pontuação] CPF [N°/MF] <CPF>.
+ * - O nome precisa começar depois de pontuação (guarda à esquerda): em
+ *   "MARIA X, CPF ..." o nome de X está dentro de outro nome e não conta.
+ * - Nome embutido em destinatário mais longo (como em `mencionaNomeNoTexto`)
+ *   é apagado antes da busca.
+ * - Bloco de qualificação entre o nome e o CPF ("brasileiro, casado,
+ *   portador do RG...") nunca confirma nem descarta: falha fechada.
+ * - CPF antes do nome não conta: é rótulo de quem vem antes.
  */
-export function cpfDivergenteNoTexto(texto: string, nomeCompleto: string, cpf: string): boolean {
-  const cpfCandidato = cpf.replace(/\D/g, "")
-  if (cpfCandidato.length !== 11) return false
-  const rotulados = cpfsRotuladosDoNome(texto, nomeCompleto)
-  return rotulados.length > 0 && !rotulados.includes(cpfCandidato)
+export function cpfsRotuladosDoNome(texto: string, nomeCompleto: string, destinatarios: string[] = []): CpfRotulado[] {
+  const tokens = normalizar(nomeCompleto).split(" ").filter(Boolean)
+  if (tokens.length === 0) return []
+  let t = semiNormalizar(texto)
+  const nomeNorm = tokens.join(" ")
+  for (const maior of destinatarios.map(nomeDestinatario).filter((d) => d !== nomeNorm && d.includes(nomeNorm))) {
+    const regexMaior = maior.split(" ").map(escaparRegex).join("[\\s'.-]+")
+    t = t.replace(new RegExp(`\\b${regexMaior}\\b`, "g"), " # ")
+  }
+  const nome = tokens.map(escaparRegex).join("[\\s'.-]+")
+  const cpf = "(\\d{3}\\.?\\d{3}\\.?\\d{3}-?\\d{2}|[\\d*X]{3}\\.?[\\d*X]{3}\\.?[\\d*X]{3}-?[\\d*X]{2})(?![\\d*X])"
+  const padrao = new RegExp(
+    `(?:^|[:;,.()\\-\\u2013\\n]\\s*)${nome}\\s*[,;:(\\-\\u2013]?\\s*CPF(?:\\s*\\/\\s*MF)?(?:\\s*(?:N[O°º.]?|NUMERO)(?![A-Z])\\.?)?\\s*[:.]?\\s*${cpf}`,
+    "gm",
+  )
+  return [...t.matchAll(padrao)].map((m) => {
+    const bruto = m[1]
+    return /[*X]/.test(bruto)
+      ? { tipo: "mascarado" as const, digitos: bruto.replace(/[^\d]/g, "") }
+      : { tipo: "completo" as const, digitos: bruto.replace(/\D/g, "") }
+  })
 }
 
-/** CPF da candidatura colado ao nome no texto oficial (mesma regra estrita). */
-export function cpfCompativelNoTexto(texto: string, nomeCompleto: string, cpf: string): boolean {
+/** Os 11 dígitos da candidatura aparecem em algum ponto do texto cru, em qualquer formatação. */
+export function cpfDaCandidaturaNoTexto(texto: string, cpf: string): boolean {
+  const digitos = cpf.replace(/\D/g, "")
+  if (digitos.length !== 11) return false
+  return new RegExp(`(?<!\\d)${digitos.split("").join("\\D{0,3}")}(?!\\d)`).test(String(texto ?? ""))
+}
+
+/**
+ * Descarte de homônimo: só quando há CPF COMPLETO colado ao nome, nenhum CPF
+ * mascarado colado ao nome (presente e indecidível mantém a ocorrência
+ * ambígua) e os 11 dígitos da candidatura não aparecem em lugar nenhum do
+ * texto. Na dúvida, não descarta.
+ */
+export function cpfDivergenteNoTexto(texto: string, nomeCompleto: string, cpf: string, destinatarios: string[] = []): boolean {
   const cpfCandidato = cpf.replace(/\D/g, "")
   if (cpfCandidato.length !== 11) return false
-  return cpfsRotuladosDoNome(texto, nomeCompleto).includes(cpfCandidato)
+  if (cpfDaCandidaturaNoTexto(texto, cpfCandidato)) return false
+  const rotulados = cpfsRotuladosDoNome(texto, nomeCompleto, destinatarios)
+  if (rotulados.some((r) => r.tipo === "mascarado")) return false
+  return rotulados.some((r) => r.tipo === "completo" && r.digitos !== cpfCandidato)
+}
+
+/** CPF completo da candidatura colado depois do nome (mesma regra estrita). */
+export function cpfCompativelNoTexto(texto: string, nomeCompleto: string, cpf: string, destinatarios: string[] = []): boolean {
+  const cpfCandidato = cpf.replace(/\D/g, "")
+  if (cpfCandidato.length !== 11) return false
+  return cpfsRotuladosDoNome(texto, nomeCompleto, destinatarios).some((r) => r.tipo === "completo" && r.digitos === cpfCandidato)
 }
 
 /** Segundo identificador estrito para monitoramento por CNJ: CPF ou cargo estadual com UF. */
@@ -1431,7 +1465,8 @@ export async function pesquisarCandidato(
     const ambiguos = new Map<string, Record<string, unknown>>()
     const cpfCandidato = String(identidade.cpf ?? "")
     const descartarSeCpfDiverge = (item: Comunicacao, numero: string): boolean => {
-      if (!cpfDivergenteNoTexto(djen.textosBrutos?.get(item.id) ?? "", nomeConsulta, cpfCandidato)) return false
+      const destinatarios = (item.destinatarios ?? []).map((d) => String(d.nome ?? ""))
+      if (!cpfDivergenteNoTexto(djen.textosBrutos?.get(item.id) ?? "", nomeConsulta, cpfCandidato, destinatarios)) return false
       const chave = cnjValido(numero) ? numero : `comunicacao-${item.id}`
       descartados.set(chave, {
         numero_cnj: chave,

@@ -1,7 +1,7 @@
 import assert from "node:assert/strict"
 import { describe, it } from "node:test"
 
-import { coberturaCamara, indicesDeCandidatos, type Fila } from "../scripts/lib/representacoes-etica-coleta"
+import { coberturaCamara, cortarNaPontuacao, indiceDeNomes, indicesDeCandidatos, resolverAlvos, type Fila } from "../scripts/lib/representacoes-etica-coleta"
 import { alvoDaEmentaPce, montarRecibosRepresentacoes } from "../scripts/lib/representacoes-etica-recibos"
 import type { FilaPceSenado } from "../scripts/lib/representacoes-etica-senado"
 import { divergentes, exigirFilaRecente } from "../scripts/registrar-recibos-representacoes"
@@ -175,5 +175,48 @@ describe("recibo por candidato da busca de representações", () => {
 
   it("fonte nova tem escopo de candidato", () => {
     assert.equal(FONTES["representacoes-etica"], "candidato")
+  })
+})
+
+describe("re-revisão do #504: localizador de alvo e autor/relator", () => {
+  it("acha o representado depois de outra construção 'em face' e nas variantes", () => {
+    assert.deepEqual(alvoDaEmentaPce("Recurso em face da decisão da Mesa. Representação em face do Senador Fulvio, por quebra de decoro", roster).senador_ids, [2])
+    assert.deepEqual(alvoDaEmentaPce("Representação em face do então Senador Fulvio", roster).senador_ids, [2])
+    assert.deepEqual(alvoDaEmentaPce("Denúncia em desfavor do Senador Fulvio", roster).senador_ids, [2])
+    assert.deepEqual(alvoDaEmentaPce("Representação contra o Senador Fulvio", roster).senador_ids, [2])
+  })
+
+  it("senador citado em PCE sem alvo parseado fica indeterminado, nunca vazio", () => {
+    const destinatario = alvoDaEmentaPce("Excelentíssimo Senhor Senador Fulvio, requer providências", roster)
+    assert.deepEqual(destinatario.senador_ids, [])
+    assert.deepEqual(destinatario.nomes_citados, [2])
+    const senado = filaSenado([pce(9, "Excelentíssimo Senhor Senador Fulvio, requer providências")])
+    const recibos = new Map(montarRecibosRepresentacoes({ publicos, camara: filaCamara(), senado }).map((r) => [r.alvo, r]))
+    assert.equal(recibos.get("fulvio")?.resultado, "indeterminado")
+    assert.match(recibos.get("fulvio")?.detalhe ?? "", /PCE 9\/2026, sem representado parseado/)
+    assert.equal(recibos.get("ana")?.resultado, "vazio_confirmado")
+  })
+
+  it("marcador de fim não corta dentro de nome", () => {
+    const rosterNome = [...roster, { senador_id: 4, nome: "Paraiso Autorino", nome_completo: "Paraiso Autorino Relatorio", uf: "PA" }]
+    assert.deepEqual(alvoDaEmentaPce("em face do Senador Paraiso Autorino Relatorio, com fundamento", rosterNome).senador_ids, [4])
+  })
+
+  it("Câmara: iniciativa, relator, autor e autoria nunca viram alvo", () => {
+    const deputados = [
+      { id: 10, nome: "Fulana Alvo", nomeCivil: "Fulana Alvo Silva", cpf: null },
+      { id: 20, nome: "Beltrano Autor", nomeCivil: "Beltrano Autor Souza", cpf: null },
+    ]
+    const indice = indiceDeNomes(deputados as never)
+    const casos = [
+      "Representação em desfavor da Deputada Fulana Alvo de iniciativa do Deputado Beltrano Autor",
+      "Representação em desfavor da Deputada Fulana Alvo. Relator: Deputado Beltrano Autor",
+      "Representação em desfavor da Deputada Fulana Alvo - Autor: Deputado Beltrano Autor",
+      "Representação em desfavor da Deputada Fulana Alvo, de autoria do Deputado Beltrano Autor",
+    ]
+    for (const ementa of casos) {
+      assert.deepEqual(resolverAlvos(ementa, indice).resolvidos.map((r) => r.deputado_id), [10], ementa)
+    }
+    assert.equal(cortarNaPontuacao("Senhor Dep. Fulana Alvo. Imputação"), "Senhor Dep. Fulana Alvo")
   })
 })

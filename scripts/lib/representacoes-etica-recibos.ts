@@ -15,7 +15,7 @@
  * O recibo final é o pior estado informativo das duas casas.
  */
 import type { EntradaColeta, ResultadoColeta } from "./coleta-log"
-import type { Fila } from "./representacoes-etica-coleta"
+import { cortarNaPontuacao, type Fila } from "./representacoes-etica-coleta"
 import type { FilaPceSenado, SenadorRosterPce } from "./representacoes-etica-senado"
 import { stripAccents } from "../../src/lib/strip-accents"
 
@@ -39,56 +39,90 @@ function escapar(valor: string): string {
 export interface AlvoPce {
   /** Senadores do roster nomeados como representados na ementa oficial. */
   senador_ids: number[]
-  /** Nome após "em face do Senador", mesmo quando não está no roster. */
+  /** Nome do representado, mesmo quando não está no roster. */
   texto_alvo: string | null
-  /** Sem representado individual: coletivo ("dos Senadores que...") ou ementa sem alvo. */
+  /** Sem representado individual parseado: coletivo ou ementa sem construção de alvo. */
   sem_alvo_individual: boolean
+  /** Senadores do roster citados em qualquer ponto da ementa (autor, relator, destinatário ou alvo). */
+  nomes_citados: number[]
 }
 
 /**
  * Fim do trecho do representado: o que vem depois (fundamento, autor,
- * motivo) nunca é alvo. "por representação do Senador Y" nomeia o AUTOR.
+ * relator, motivo) nunca é alvo. Cada marcador fecha em fronteira de palavra
+ * para não cortar dentro de um nome.
  */
-const FIM_DO_ALVO = / (?:COM FUNDAMENTO|COM BASE|NOS TERMOS|NA FORMA|NO AMBITO|POR |PELO |PELA |PELOS |PELAS |EM RAZAO|EM DECORRENCIA|EM VIRTUDE|DEVIDO|TENDO EM VISTA|A RESPEITO|ACERCA|SOBRE |QUE |PARA |FORMULAD|APRESENTAD|DE AUTORIA|AUTOR|DE INICIATIVA|RELATOR|REPRESENTANTE|OFERECID|SUBSCRIT|REQUERID|PROPOST)/
+const FIM_DO_ALVO = / (?:COM FUNDAMENTO|COM BASE|NOS TERMOS|NA FORMA|NO AMBITO|POR|PELO|PELA|PELOS|PELAS|EM RAZAO|EM DECORRENCIA|EM VIRTUDE|DEVIDO|TENDO EM VISTA|A RESPEITO|ACERCA|SOBRE|QUE|PARA|FORMULAD[AO]S?|APRESENTAD[AO]S?|DE AUTORIA|AUTOR(?:A|ES|AS)?|DE INICIATIVA|RELATOR(?:A)?|REPRESENTANTE|OFERECID[AO]S?|SUBSCRIT[AO]S?|REQUERID[AO]S?|PROPOST[AO]S?)\b/
 
-/** Segmento do representado: de "em face do Senador" até o primeiro marcador de fim. */
-export function segmentoDoAlvoPce(ementa: string): { segmento: string; coletivo: boolean } | null {
-  // Corta o texto CRU no primeiro `.;:()` depois de "em face": a pontuação
-  // separa o alvo do resto e some na normalização.
+/** Construções que introduzem o representado, em qualquer ponto da ementa. */
+const INICIO_DO_ALVO = /\b(?:EM FACE|EM DESFAVOR|CONTRA)(?: D?[OA]S?)?(?: (?:EXCELENTISSIM[OA]|EXMO|EXMA))?(?: SENHOR(?:A)?)?(?: (?:EX|ENTAO))? SENADOR(?:A|ES|AS)? /g
+
+/** Segmentos do representado: cada "em face/em desfavor/contra ... Senador" até pontuação ou marcador de fim. */
+export function segmentosDoAlvoPce(ementa: string): Array<{ segmento: string; coletivo: boolean }> {
   const cru = stripAccents(ementa)
-  const inicio = cru.search(/em face d/i)
-  if (inicio < 0) return null
-  const texto = normalizar(cru.slice(inicio).split(/[.;:()]/)[0])
-  const face = /\bEM FACE D([OA]S?) (?:EX )?SENADOR(?:A|ES|AS)? (.{2,240})/.exec(texto)
-  if (!face) return null
-  const segmento = face[2].split(FIM_DO_ALVO)[0].trim()
-  return { segmento, coletivo: face[1].endsWith("S") }
+  const saida: Array<{ segmento: string; coletivo: boolean }> = []
+  // Os marcadores de início são procurados no texto cru normalizado por trecho
+  // entre pontuações, para que o corte em `.;:()` valha antes da normalização.
+  let resto = cru
+  while (resto.length > 0) {
+    const trecho = cortarNaPontuacao(resto)
+    const normal = normalizar(trecho)
+    for (const m of normal.matchAll(INICIO_DO_ALVO)) {
+      const depois = normal.slice((m.index ?? 0) + m[0].length)
+      const segmento = depois.split(FIM_DO_ALVO)[0].split(/ (?:EM FACE|EM DESFAVOR|CONTRA) /)[0].trim()
+      if (segmento) saida.push({ segmento, coletivo: /SENADOR(?:ES|AS) $/.test(m[0]) })
+    }
+    const avanca = trecho.length + 1
+    resto = resto.slice(avanca)
+  }
+  return saida
 }
 
-/**
- * Lê o representado na ementa oficial ("em face do Senador X") e casa nomes
- * do roster SÓ dentro desse segmento. Vários alvos ligados por "e do Senador"
- * continuam no segmento; o autor e o fundamento ficam fora.
- */
-export function alvoDaEmentaPce(ementa: string, roster: readonly SenadorRosterPce[]): AlvoPce {
-  const recorte = segmentoDoAlvoPce(ementa)
-  if (!recorte) return { senador_ids: [], texto_alvo: null, sem_alvo_individual: true }
-  const { segmento, coletivo } = recorte
-  // Inícios de nome: começo do segmento e depois de "E [DO|DA] [SENADOR(A)]".
-  const inicios = [segmento, ...segmento.split(/ E (?:D[OA]S? )?(?:SENADOR(?:A|ES|AS)? )?/).slice(1)]
+/** Compatibilidade: primeiro segmento do representado. */
+export function segmentoDoAlvoPce(ementa: string): { segmento: string; coletivo: boolean } | null {
+  return segmentosDoAlvoPce(ementa)[0] ?? null
+}
+
+function idsNoTrecho(trecho: string, roster: readonly SenadorRosterPce[], inicios: string[]): Set<number> {
   const ids = new Set<number>()
   for (const senador of roster) {
     for (const nome of [senador.nome, senador.nome_completo].map(normalizar)) {
       if (!nome || nome.length < 4) continue
       const casa = nome.split(" ").length >= 2
-        ? new RegExp(`\\b${escapar(nome)}\\b`).test(segmento)
+        ? new RegExp(`\\b${escapar(nome)}\\b`).test(trecho)
         // Nome de um só token (nome parlamentar) só vale colado ao título.
-        : inicios.some((trecho) => new RegExp(`^${escapar(nome)}\\b`).test(trecho))
+        : inicios.some((x) => new RegExp(`^${escapar(nome)}\\b`).test(x))
       if (casa) ids.add(senador.senador_id)
     }
   }
+  return ids
+}
+
+/**
+ * Representado(s) da ementa oficial. Nomes do roster só casam dentro do
+ * segmento do alvo; autor, relator e fundamento ficam fora. `nomes_citados`
+ * registra quem aparece em qualquer ponto, para que PCE sem alvo parseado
+ * nunca produza "sem representação" para um senador citado.
+ */
+export function alvoDaEmentaPce(ementa: string, roster: readonly SenadorRosterPce[]): AlvoPce {
+  const texto = normalizar(ementa)
+  const aposTitulo = [...texto.matchAll(/\bSENADOR(?:A|ES|AS)? /g)].map((m) => texto.slice((m.index ?? 0) + m[0].length))
+  const nomesCitados = [...idsNoTrecho(texto, roster, aposTitulo)].sort((a, b) => a - b)
+  const segmentos = segmentosDoAlvoPce(ementa)
+  if (segmentos.length === 0) return { senador_ids: [], texto_alvo: null, sem_alvo_individual: true, nomes_citados: nomesCitados }
+  const ids = new Set<number>()
+  for (const { segmento } of segmentos) {
+    const inicios = [segmento, ...segmento.split(/ E (?:D[OA]S? )?(?:SENADOR(?:A|ES|AS)? )?/).slice(1)]
+    for (const id of idsNoTrecho(segmento, roster, inicios)) ids.add(id)
+  }
+  const coletivo = segmentos.every((x) => x.coletivo)
   const semAlvo = ids.size === 0 && coletivo
-  return { senador_ids: [...ids].sort((a, b) => a - b), texto_alvo: semAlvo || !segmento ? null : segmento, sem_alvo_individual: semAlvo || !segmento }
+  return {
+    senador_ids: [...ids].sort((a, b) => a - b),
+    texto_alvo: semAlvo ? null : segmentos[0].segmento,
+    sem_alvo_individual: semAlvo,
+    nomes_citados: nomesCitados,
+  }
 }
 
 function pior(estados: EstadoCasa[]): EstadoCasa {
@@ -167,10 +201,15 @@ export function montarRecibosRepresentacoes(opcoes: {
       .map((a) => `PCE ${a.item.processo.numero}/${a.item.processo.ano}`)
     const pceNomeForaRoster = alvos.filter((a) => a.alvo.senador_ids.length === 0 && a.alvo.texto_alvo
       && nomeCandidato && new RegExp(`\\b${escapar(a.alvo.texto_alvo)}\\b`).test(nomeCandidato))
+    const pceCitadoSemAlvo = alvos.filter((a) => a.alvo.senador_ids.length === 0
+      && a.alvo.nomes_citados.some((id) => senadoresLigados.includes(id)))
+      .map((a) => `PCE ${a.item.processo.numero}/${a.item.processo.ano}`)
     let senadoEstado: EstadoCasa
     let senadoMotivo: string
     if (pceDoCandidato.length > 0) {
       senadoEstado = "encontrado"; senadoMotivo = pceDoCandidato.join(", ")
+    } else if (pceCitadoSemAlvo.length > 0) {
+      senadoEstado = "indeterminado"; senadoMotivo = `citado em ${pceCitadoSemAlvo.join(", ")}, sem representado parseado na ementa`
     } else if (senadoresPorNome.length > 0 || pceNomeForaRoster.length > 0) {
       senadoEstado = "indeterminado"; senadoMotivo = "nome coincide com senador ou representado sem ids.senado no seed"
     } else if (senadoresLigados.length > 0) {
