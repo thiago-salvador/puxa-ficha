@@ -9,7 +9,9 @@ import {
 } from "../scripts/lib/data-freshness/ficha-tse"
 import {
   FONTE_TSE_AUDITORIA_CANDIDATURA,
+  podeGravarRecibosCandidatura,
   recibosAuditoriaCandidatura,
+  recibosPendentes,
 } from "../scripts/lib/data-freshness/tse-audit-receipt"
 import { TSE_CANDIDACY_URL, TSE_COMPLEMENTAR_URL } from "../scripts/lib/data-freshness/tse-source"
 import type { JulgamentoTse } from "../scripts/lib/tse-situacao-julgamento"
@@ -27,6 +29,7 @@ const source = {
   source_sha256: SHA,
   complementar: { status: "ok", url: TSE_COMPLEMENTAR_URL, sha256: SHA_COMP, checked_at: CHECKED },
   rede_social: { status: "ok" },
+  published_sites: { status: "ok", schema_version: 1 },
 }
 
 const official: OfficialFichaRow[] = [
@@ -109,11 +112,12 @@ test("fichas que conferem viram encontrado com volume 1 e o contrato fixo do det
   assert.equal(gov.resultado, "encontrado")
   assert.equal(gov.volume, 1)
   assert.deepEqual(JSON.parse(gov.detalhe!), {
-    contract_version: 1,
+    contract_version: 2,
     kind: "tse-daily-candidacy-check",
     source_revision: { url: TSE_CANDIDACY_URL, sha256: SHA, checked_at: CHECKED },
     complementar_revision: { url: TSE_COMPLEMENTAR_URL, sha256: SHA_COMP, checked_at: CHECKED },
-    identity: { sq_candidato: "250001", cargo: "GOVERNADOR", uf: "SP", match: "SQ_CANDIDATO+CARGO+UF" },
+    identity: { sq_candidato: "250001", cargo: "GOVERNADOR", uf: "SP", match: "SQ_CANDIDATO+CARGO+UF", matched: true },
+    reasons: [],
     checks: { nome_urna: "ok", partido_sigla: "ok", situacao: "ok", numero_urna: "ok", sites: "ok", chapa_vice: "ok" },
     divergences: 0,
   })
@@ -185,6 +189,11 @@ test("SQ sem registro com o mesmo cargo e UF: identidade não fecha e reprova", 
   assert.deepEqual(row.blocking, ["identidade"])
   const [recibo] = recibosAuditoriaCandidatura({ source, fichas: comparison.fichas }).recibos
   assert.equal(recibo.resultado, "indeterminado")
+  // Contrato v2: a ficha sem par oficial diz que a identidade não fechou e por quê.
+  const detalhe = JSON.parse(recibo.detalhe!)
+  assert.equal(detalhe.contract_version, 2)
+  assert.equal(detalhe.identity.matched, false)
+  assert.ok(Array.isArray(detalhe.reasons) && detalhe.reasons.length > 0, recibo.detalhe!)
 })
 
 test("DivulgaCand ao vivo vence o complementar na situação de Gov/Pres", () => {
@@ -258,11 +267,13 @@ test("complementar ou redes sem leitura ok: nenhum recibo por candidato, para n�
     { ...source, complementar: { status: "ok", url: TSE_COMPLEMENTAR_URL, sha256: "curto", checked_at: CHECKED } },
     { ...source, rede_social: { status: "error" } },
     { ...source, rede_social: null },
+    { ...source, published_sites: { status: "error", error: "schema_version 2 diferente de 1" } },
+    { ...source, published_sites: null },
   ]
   for (const caso of casos) {
     const resultado = recibosAuditoriaCandidatura({ source: caso, fichas: comparison.fichas })
     assert.deepEqual(resultado.recibos, [], JSON.stringify(caso))
-    assert.match(resultado.ignorado ?? "", /complementar|rede_social/)
+    assert.match(resultado.ignorado ?? "", /complementar|rede_social|snapshot publicado de sites/)
   }
   // Controle positivo: as duas fontes ok geram recibo com a revisão do complementar.
   const [recibo] = recibosAuditoriaCandidatura({ source, fichas: comparison.fichas }).recibos
@@ -308,4 +319,47 @@ test("nome civil do TSE diferente do banco ou do seed vira aviso, sem reprovar n
 
   const semSeed = compare({ fichas: [ficha({ slug: "fulano-sp", nome_completo: null })], official: withName })
   assert.deepEqual(semSeed.fichas[0]?.nome_civil, { banco: "ausente", seed: "ausente" })
+})
+
+test("snapshot publicado de sites ilegível: nenhum recibo por candidato, com o motivo explícito", () => {
+  const comparison = compare({ fichas: fichas.slice(0, 2), publishedSites: null })
+  const resultado = recibosAuditoriaCandidatura({
+    source: { ...source, published_sites: { status: "error", error: "Unexpected token" } },
+    fichas: comparison.fichas,
+  })
+  assert.deepEqual(resultado.recibos, [])
+  assert.match(resultado.ignorado ?? "", /snapshot publicado de sites/)
+})
+
+test("recibo global fora de encontrado ou fonte não fresh: não grava por candidato", () => {
+  const global = { fonte: "tse-candidaturas", escopo: "global", alvo: "tse-2026", resultado: "encontrado" } as const
+  assert.deepEqual(podeGravarRecibosCandidatura(global, source), { ok: true })
+  const negados = [
+    podeGravarRecibosCandidatura({ ...global, resultado: "erro" }, source),
+    podeGravarRecibosCandidatura({ ...global, resultado: "indeterminado" }, source),
+    podeGravarRecibosCandidatura(null, source),
+    podeGravarRecibosCandidatura(global, { ...source, status: "stale" }),
+    podeGravarRecibosCandidatura(global, { ...source, status: undefined }),
+    podeGravarRecibosCandidatura(global, { ...source, mode: "fixture" }),
+  ]
+  for (const negado of negados) assert.equal(negado.ok, false, JSON.stringify(negado))
+})
+
+test("reprocessar a mesma execução grava só as fichas ainda sem recibo dela", () => {
+  const comparison = compare()
+  const { recibos } = recibosAuditoriaCandidatura({ source, fichas: comparison.fichas })
+  assert.equal(recibos.length, 3)
+  assert.deepEqual(recibosPendentes(recibos, new Set()).map((item) => item.alvo).sort(), recibos.map((item) => item.alvo).sort())
+  assert.deepEqual(recibosPendentes(recibos, new Set(["fulano-sp", "senadora-sp"])).map((item) => item.alvo), ["presidenta"])
+  assert.deepEqual(recibosPendentes(recibos, new Set(recibos.map((item) => item.alvo))), [])
+})
+
+test("senador recém-registrado ainda fora do complementar: recibo indeterminado com o motivo, sem reprovar o job", () => {
+  const semSenadora = new Map([...julgamentos].filter(([sq]) => sq !== "250003"))
+  const comparison = compare({ fichas: fichas.slice(0, 2), julgamentos: semSenadora })
+  const senadora = comparison.fichas.find((row) => row.slug === "senadora-sp")!
+  assert.equal(senadora.checks.situacao, "ausente")
+  const recibo = recibosAuditoriaCandidatura({ source, fichas: comparison.fichas }).recibos.find((item) => item.alvo === "senadora-sp")!
+  assert.equal(recibo.resultado, "indeterminado")
+  assert.ok(JSON.parse(recibo.detalhe!).reasons.some((reason: string) => reason.includes("julgamento-ausente")))
 })

@@ -287,6 +287,10 @@ export function compareFichasTse(input: CompareFichasTseInput): FichaTseComparis
     } else {
       const mapeado = mapearJulgamento(input.julgamentos.get(official.sq_candidato))
       if (!mapeado.ok) {
+        // Candidatura recém-registrada (caso típico: senador) entra no pacote de
+        // candidaturas antes do complementar, que o TSE regenera com atraso. Sem
+        // julgamento, a situação fica ausente e o recibo sai indeterminado, nunca
+        // encontrado; a rodada seguinte ao complementar novo fecha a célula.
         situacao = "ausente"
         notes.push(`situação oficial sem valor no domínio (${mapeado.bloqueio})`)
       } else if (!ficha.situacao_candidatura) {

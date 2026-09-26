@@ -469,12 +469,20 @@ function readSeedNames(path: string): Map<string, string> {
   }
 }
 
-function readPublishedSites(path: string): CandidateSitesTseDataset | null {
+/**
+ * Snapshot publicado de sites. Não falha a rodada, mas o estado vai para
+ * source.json: sem ele, os sites de toda ficha viram nao_verificado e o recibo
+ * por candidato não pode ser gravado (tse-audit-receipt.ts exige status ok).
+ */
+function readPublishedSites(path: string): { dataset: CandidateSitesTseDataset | null; status: Record<string, unknown> } {
   try {
     const dataset = JSON.parse(readFileSync(path, "utf8")) as CandidateSitesTseDataset;
-    return dataset.schema_version === 1 ? dataset : null;
-  } catch {
-    return null;
+    if (dataset.schema_version !== 1) {
+      return { dataset: null, status: { status: "error", error: `schema_version ${String(dataset.schema_version)} diferente de 1` } };
+    }
+    return { dataset, status: { status: "ok", schema_version: 1 } };
+  } catch (error) {
+    return { dataset: null, status: { status: "error", error: error instanceof Error ? error.message : String(error) } };
   }
 }
 
@@ -767,6 +775,11 @@ async function main(): Promise<void> {
   );
   const publicSlugs = new Set(publicProfiles.map((profile) => profile.slug));
   const seedNames = readSeedNames(resolve("data/candidatos.json"));
+  const publishedSites = readPublishedSites(options.publishedSites);
+  if (fichaSources) source = { ...source, published_sites: publishedSites.status };
+  if (publishedSites.status.status !== "ok") {
+    console.log(`::warning::snapshot publicado de sites não lido (${String(publishedSites.status.error)}); recibos por candidato não serão gravados`);
+  }
   const fichaChecks: FichaTseComparison | null =
     fichaSources && Array.isArray(published.public_candidacies)
       ? compareFichasTse({
@@ -777,7 +790,7 @@ async function main(): Promise<void> {
           official: fichaSources.rows,
           julgamentos: fichaSources.julgamentos,
           sitesTse: fichaSources.sites,
-          publishedSites: readPublishedSites(options.publishedSites),
+          publishedSites: publishedSites.dataset,
           situacaoAtual: currentOfficialWithProfiles.length > 0
             ? situacaoAtualDoDivulgaCand(
                 currentOfficialWithProfiles.filter((row) => row.profile_slug !== null && publicSlugs.has(row.profile_slug)),

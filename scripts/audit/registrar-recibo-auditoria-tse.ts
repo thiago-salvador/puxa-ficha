@@ -19,11 +19,14 @@ import { appendFileSync, existsSync, readFileSync, writeFileSync } from "node:fs
 import { resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 import { supabase } from "../lib/supabase"
-import { montarLinhas, registrarColetaOuFalhar } from "../lib/coleta-log"
+import { EXECUCAO, montarLinhas, registrarColetaOuFalhar } from "../lib/coleta-log"
 import type { FichaTseResult } from "../lib/data-freshness/ficha-tse"
 import {
+  FONTE_TSE_AUDITORIA_CANDIDATURA,
+  podeGravarRecibosCandidatura,
   reciboAuditoriaTse,
   recibosAuditoriaCandidatura,
+  recibosPendentes,
   temCredencialDeEscrita,
   type ArtefatosAuditoriaTse,
   type ArtefatosRecibosCandidatura,
@@ -63,14 +66,28 @@ export function lerArtefatosRecibosCandidatura(dir: string): ArtefatosRecibosCan
 
 const LOTE = 200
 
-/** Insert estrito em lotes, com candidato_id vindo da própria ficha conferida. */
-async function gravarRecibosCandidatura(recibos: ReciboCandidatura[]): Promise<void> {
+/** Alvos que já têm recibo por candidato desta execução (re-run do mesmo run_id). */
+async function alvosJaGravados(): Promise<Set<string>> {
+  const { data, error } = await supabase.from("coleta_log").select("alvo")
+    .eq("fonte", FONTE_TSE_AUDITORIA_CANDIDATURA).eq("execucao", EXECUCAO).limit(5000)
+  if (error) throw new Error(`recibos já gravados desta execução: ${error.message}`)
+  return new Set((data ?? []).map((row) => String((row as { alvo: unknown }).alvo)))
+}
+
+/**
+ * Insert estrito em lotes, com candidato_id vindo da própria ficha conferida.
+ * Os lotes não são uma transação; a atomicidade vem de reprocessar a mesma
+ * execução, que grava só as fichas ainda sem recibo dela (recibosPendentes).
+ */
+async function gravarRecibosCandidatura(todos: ReciboCandidatura[]): Promise<number> {
+  const recibos = recibosPendentes(todos, await alvosJaGravados())
   for (let inicio = 0; inicio < recibos.length; inicio += LOTE) {
     const lote = recibos.slice(inicio, inicio + LOTE)
     const ids = new Map(lote.map((recibo) => [recibo.alvo, recibo.candidato_id]))
     const { error } = await supabase.from("coleta_log").insert(montarLinhas(lote, ids))
     if (error) throw new Error(`recibos por candidato: ${error.message}`)
   }
+  return recibos.length
 }
 
 function avisar(dir: string, aviso: string): void {
@@ -89,7 +106,6 @@ async function main(): Promise<void> {
     resolve(dir, "recibos-candidatura.json"),
     `${JSON.stringify({ ignorado: porCandidato.ignorado, recibos: porCandidato.recibos }, null, 2)}\n`,
   )
-  const aoVivo = artefatosCandidatura.source.mode === "live_official"
   if (!recibo) {
     console.log("TSE_AUDIT_RECEIPT_SKIPPED: rodada sem leitura ao vivo da fonte oficial")
     console.log(`TSE_CANDIDACY_RECEIPTS_DRY_RUN: ${porCandidato.recibos.length} recibo(s) em recibos-candidatura.json`)
@@ -101,11 +117,13 @@ async function main(): Promise<void> {
   }
   await registrarColetaOuFalhar(recibo)
   console.log(`TSE_AUDIT_RECEIPT_RECORDED: ${recibo.resultado} volume=${recibo.volume ?? 0}`)
-  if (!aoVivo || porCandidato.recibos.length === 0) {
-    console.log(`TSE_CANDIDACY_RECEIPTS_SKIPPED: ${porCandidato.ignorado ?? "rodada sem leitura ao vivo"}`)
+  const permitido = podeGravarRecibosCandidatura(recibo, artefatosCandidatura.source)
+  if (!permitido.ok || porCandidato.recibos.length === 0) {
+    console.log(`TSE_CANDIDACY_RECEIPTS_SKIPPED: ${!permitido.ok ? permitido.motivo : porCandidato.ignorado ?? "sem recibos"}`)
     return
   }
-  await gravarRecibosCandidatura(porCandidato.recibos)
+  const gravados = await gravarRecibosCandidatura(porCandidato.recibos)
+  console.log(`TSE_CANDIDACY_RECEIPTS_NEW: ${gravados} de ${porCandidato.recibos.length} (os demais já tinham recibo desta execução)`)
   const encontrados = porCandidato.recibos.filter((item) => item.resultado === "encontrado").length
   console.log(
     `TSE_CANDIDACY_RECEIPTS_RECORDED: ${porCandidato.recibos.length} recibo(s), ` +
