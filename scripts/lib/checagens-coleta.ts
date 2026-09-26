@@ -60,8 +60,17 @@ export interface AgenciaChecagem {
  *   página, com o total em `count`).
  */
 export type ArquivoSecao =
-  | { tipo: "falkor"; url: string; confirmarNaPagina?: boolean }
-  | { tipo: "arc"; url: string; site: string; website: string; secaoRegex: string }
+  | { tipo: "falkor"; url: string; piso: PisoArquivo; confirmarNaPagina?: boolean }
+  | { tipo: "arc"; url: string; site: string; website: string; secaoRegex: string; piso: PisoArquivo }
+
+/**
+ * Leitura parcial não pode virar ausência: o arquivo só vale com pelo menos
+ * `itens` itens e com o mais antigo publicado até `maisAntigoAte` (AAAA-MM-DD).
+ */
+export interface PisoArquivo {
+  itens: number
+  maisAntigoAte: string
+}
 
 export type TransporteBusca = "wp-rest" | "busca-site" | "arquivo-secao" | "google-news"
 /** Páginas de 100 resultados lidas na busca nativa. */
@@ -74,6 +83,10 @@ export const SONDA_BUSCA_SITE = "Lula"
 /** Teto de páginas do arquivo, contra paginação que nunca termina. */
 export const MAX_PAGINAS_ARQUIVO = 2_000
 export const ITENS_POR_PAGINA_ARC = 100
+/** Itens por página do feed Falkor: página cheia sem `nextPage` é paginação que mudou. */
+export const ITENS_POR_PAGINA_FALKOR = 10
+/** Falhas seguidas da via direta de uma agência que abrem o disjuntor dela (sem cair no Google). */
+export const LIMITE_FALHAS_DIRETAS = 3
 /** Teto de matérias abertas por rodada para confirmar título com só parte do nome. */
 // Dry-run de 26/09: 118 matérias abertas em 20 candidaturas (~1.200 projetadas em 204).
 export const MAX_PAGINAS_CONFIRMACAO = 3_000
@@ -88,14 +101,22 @@ export const AGENCIAS_CHECAGEM: readonly AgenciaChecagem[] = Object.freeze([
   { id: "aos-fatos", nome: "Aos Fatos", sites: ["aosfatos.org"], dominios: ["aosfatos.org"], buscaSite: "https://www.aosfatos.org/noticias/" },
   {
     id: "fato-ou-fake", nome: "Fato ou Fake", sites: ["g1.globo.com/fato-ou-fake"], dominios: ["g1.globo.com"],
-    // Instância do feed da página https://g1.globo.com/fato-ou-fake/ (arquivo desde 2018).
+    // Instância do feed da página https://g1.globo.com/fato-ou-fake/. Em 26/09/2026:
+    // 408 páginas, 4.079 itens, o mais antigo de 27/03/2017; a última página tem 9 itens e não tem nextPage.
     // O feed só traz título e resumo: título com parte do nome abre a matéria para confirmar.
-    arquivo: { tipo: "falkor", url: "https://falkor-cda.bastian.globo.com/tenants/g1/instances/9a0574d8-bc61-4d35-9488-7733f754f881/posts/page/", confirmarNaPagina: true },
+    arquivo: {
+      tipo: "falkor", url: "https://falkor-cda.bastian.globo.com/tenants/g1/instances/9a0574d8-bc61-4d35-9488-7733f754f881/posts/page/",
+      piso: { itens: 4_000, maisAntigoAte: "2018-12-31" }, confirmarNaPagina: true,
+    },
   },
   {
     id: "estadao-verifica", nome: "Estadão Verifica", sites: ["estadao.com.br/estadao-verifica"], dominios: ["estadao.com.br"],
     // Mesma consulta que a página https://www.estadao.com.br/estadao-verifica/ faz.
-    arquivo: { tipo: "arc", url: "https://www.estadao.com.br/pf/api/v3/content/fetch/story-feed-query", site: "https://www.estadao.com.br", website: "estadao", secaoRegex: ".*estadao-verifica.*" },
+    // Em 26/09/2026: count 6.381; a data do item mais antigo sai no recibo (desde).
+    arquivo: {
+      tipo: "arc", url: "https://www.estadao.com.br/pf/api/v3/content/fetch/story-feed-query", site: "https://www.estadao.com.br", website: "estadao",
+      secaoRegex: ".*estadao-verifica.*", piso: { itens: 6_000, maisAntigoAte: "2019-12-31" },
+    },
   },
   // UOL Confere e AFP Checamos respondem 403 (Akamai) a acesso automatizado,
   // inclusive em robots.txt, sitemap e RSS: só o Google News chega a elas.
@@ -130,6 +151,8 @@ export interface ItemBusca {
   data_publicacao: string | null
   /** Texto da matéria já normalizado (arquivos de seção), para confirmar menção fraca no título. */
   texto?: string
+  /** Vídeo: a página não tem corpo de matéria, o texto é só título e resumo. */
+  semCorpo?: boolean
 }
 
 export interface LeadChecagem {
@@ -140,7 +163,7 @@ export interface LeadChecagem {
 }
 
 export type EstadoAgencia =
-  | { status: "ok"; itens: number; leads: LeadChecagem[]; transporte?: TransporteBusca; falhas?: string[] }
+  | { status: "ok"; itens: number; leads: LeadChecagem[]; transporte?: TransporteBusca; falhas?: string[]; desde?: string }
   | { status: "erro"; erro: string }
 
 /**
@@ -160,7 +183,8 @@ export interface ReciboChecagem {
   searched_at: string
   result: ResultadoRecibo
   leads: LeadChecagem[]
-  agencias: Record<string, { status: "ok" | "erro"; itens?: number; leads?: number; erro?: string; transporte?: TransporteBusca; falhas?: string[] }>
+  /** `desde`: data (AAAA-MM-DD) do item mais antigo do arquivo de seção; antes dela a busca não cobre. */
+  agencias: Record<string, { status: "ok" | "erro"; itens?: number; leads?: number; erro?: string; transporte?: TransporteBusca; falhas?: string[]; desde?: string }>
   escopo: string
   /** Presente quando o nome de urna é compartilhado com outra candidatura do cadastro. */
   homonimo?: {
@@ -260,7 +284,7 @@ export function aplicarRegraHomonimo(recibo: ReciboChecagem, candidato: Candidat
 export function descricaoEscopo(): string {
   const nomes = (filtro: (agencia: AgenciaChecagem) => boolean) => AGENCIAS_CHECAGEM.filter(filtro).map((a) => a.nome).join(", ")
   const soGoogle = nomes((a) => !a.wpSearch && !a.buscaSite && !a.arquivo)
-  return `uma consulta por agência (${AGENCIAS_CHECAGEM.map((a) => a.nome).join(", ")}) com o nome de urna; busca nativa WordPress em ${nomes((a) => Boolean(a.wpSearch))} (até ${PAGINAS_WP * 100} resultados); busca do site em ${nomes((a) => Boolean(a.buscaSite))} (até ${PAGINAS_BUSCA_SITE * ITENS_POR_PAGINA_BUSCA_SITE} resultados); arquivo completo da seção em ${nomes((a) => Boolean(a.arquivo))}, lido uma vez por rodada (título com só parte do nome exige o nome inteiro no texto da matéria); Google News RSS em ${soGoogle} e como segunda via das demais (teto de ${TETO_ITENS_POR_CONSULTA} itens); sem limite de data; lead exige o nome no título`
+  return `uma consulta por agência (${AGENCIAS_CHECAGEM.map((a) => a.nome).join(", ")}) com o nome de urna; busca nativa WordPress em ${nomes((a) => Boolean(a.wpSearch))} (até ${PAGINAS_WP * 100} resultados); busca do site em ${nomes((a) => Boolean(a.buscaSite))} (até ${PAGINAS_BUSCA_SITE * ITENS_POR_PAGINA_BUSCA_SITE} resultados); arquivo completo da seção em ${nomes((a) => Boolean(a.arquivo))}, lido uma vez por rodada (título com só parte do nome exige o nome inteiro no texto da matéria); Google News RSS em ${soGoogle} e como segunda via das demais (teto de ${TETO_ITENS_POR_CONSULTA} itens); buscas sem limite de data, arquivos de seção só a partir do item mais antigo lido (campo desde do recibo); lead exige o nome no título`
 }
 
 export function urlBuscaSite(nomeUrna: string, agencia: AgenciaChecagem, pagina: number): string | null {
@@ -302,10 +326,20 @@ function dataIso(value: unknown): string | null {
   return Number.isFinite(parsed.getTime()) ? parsed.toISOString() : null
 }
 
-/** Página do feed Falkor do g1. Lança se não vier `items` em lista. */
-export function parseArquivoFalkor(body: string): { itens: ItemBusca[]; proxima: number | null } {
+/**
+ * Página do feed Falkor do g1. `brutos` conta os itens como vieram, antes de
+ * qualquer filtro. Lança quando a paginação não é a esperada: `nextPage`
+ * presente e não numérico, página cheia sem `nextPage` (o fim real é uma
+ * página curta sem o campo) ou página vazia que ainda aponta para outra.
+ */
+export function parseArquivoFalkor(body: string): { itens: ItemBusca[]; brutos: number; proxima: number | null } {
   const data = JSON.parse(body) as { items?: unknown; nextPage?: unknown }
   if (!data || !Array.isArray(data.items)) throw new Error("feed do g1 sem lista de itens")
+  if (data.nextPage !== undefined && data.nextPage !== null && typeof data.nextPage !== "number") throw new Error("feed do g1 com nextPage não numérico")
+  const proxima = typeof data.nextPage === "number" ? data.nextPage : null
+  const brutos = data.items.length
+  if (brutos >= ITENS_POR_PAGINA_FALKOR && proxima === null) throw new Error(`página cheia (${brutos} itens) sem nextPage: paginação mudou`)
+  if (brutos === 0 && proxima !== null) throw new Error("página vazia que aponta para outra: arquivo truncado")
   const itens: ItemBusca[] = []
   for (const row of data.items) {
     const content = (row as { content?: Record<string, unknown> })?.content
@@ -313,9 +347,13 @@ export function parseArquivoFalkor(body: string): { itens: ItemBusca[]; proxima:
     const url = typeof content?.url === "string" ? content.url : ""
     if (!titulo || !url.startsWith("https://")) continue
     const resumo = typeof content?.summary === "string" ? content.summary : ""
-    itens.push({ titulo, link: url, fonte: "", fonte_url: url, data_publicacao: dataIso((row as { publication?: unknown }).publication), texto: normalizarNome(`${titulo} ${resumo}`) })
+    const video = (row as { type?: unknown }).type === "video"
+    itens.push({
+      titulo, link: url, fonte: "", fonte_url: url, data_publicacao: dataIso((row as { publication?: unknown }).publication), texto: normalizarNome(`${titulo} ${resumo}`),
+      ...(video ? { semCorpo: true } : {}),
+    })
   }
-  return { itens, proxima: typeof data.nextPage === "number" ? data.nextPage : null }
+  return { itens, brutos, proxima }
 }
 
 export function urlArquivoArc(arquivo: Extract<ArquivoSecao, { tipo: "arc" }>, offset: number): string {
@@ -324,7 +362,7 @@ export function urlArquivoArc(arquivo: Extract<ArquivoSecao, { tipo: "arc" }>, o
     { term: { "revision.published": 1 } },
     { nested: { path: "taxonomy.sections", query: { bool: { must: [{ regexp: { "taxonomy.sections._id": arquivo.secaoRegex } }] } } } },
   ] } } })
-  const query = { body, headlineSearch: "", included_fields: "headlines.basic,canonical_url,display_date", offset: String(offset), query: "", size: ITENS_POR_PAGINA_ARC, sort: "display_date:desc, first_publish_date:desc" }
+  const query = { body, headlineSearch: "", included_fields: "headlines.basic,subheadlines.basic,description.basic,content_elements,canonical_url,display_date", offset: String(offset), query: "", size: ITENS_POR_PAGINA_ARC, sort: "display_date:desc, first_publish_date:desc" }
   return `${arquivo.url}?query=${encodeURIComponent(JSON.stringify(query))}&_website=${encodeURIComponent(arquivo.website)}`
 }
 
@@ -341,11 +379,16 @@ function textoArc(row: Record<string, unknown>): string {
   return decodeEntities(partes.join(" "))
 }
 
+function temCorpoArc(row: Record<string, unknown>): boolean {
+  return Array.isArray(row.content_elements) && (row.content_elements as Array<Record<string, unknown>>).some((elemento) => elemento?.type === "text" && typeof elemento.content === "string" && elemento.content.trim().length > 0)
+}
+
 /** Página do `story-feed-query` do Arc. Lança se faltar `count` ou `content_elements`. */
-export function parseArquivoArc(body: string, site: string): { itens: ItemBusca[]; total: number; lidos: number } {
+export function parseArquivoArc(body: string, site: string): { itens: ItemBusca[]; total: number; lidos: number; comCorpo: number } {
   const data = JSON.parse(body) as { count?: unknown; content_elements?: unknown }
   if (!data || typeof data.count !== "number" || !Array.isArray(data.content_elements)) throw new Error("arquivo Arc sem count ou content_elements")
   const itens: ItemBusca[] = []
+  let comCorpo = 0
   for (const row of data.content_elements as Array<Record<string, unknown>>) {
     const headlines = row?.headlines as { basic?: unknown } | undefined
     const titulo = typeof headlines?.basic === "string" ? headlines.basic.trim() : ""
@@ -353,9 +396,10 @@ export function parseArquivoArc(body: string, site: string): { itens: ItemBusca[
     if (!titulo || !caminho) continue
     const link = new URL(caminho, site).toString()
     if (!link.startsWith("https://")) continue
+    if (temCorpoArc(row)) comCorpo++
     itens.push({ titulo, link, fonte: "", fonte_url: link, data_publicacao: dataIso(row.display_date), texto: normalizarNome(textoArc(row)) })
   }
-  return { itens, total: data.count, lidos: data.content_elements.length }
+  return { itens, total: data.count, lidos: data.content_elements.length, comCorpo }
 }
 
 export function urlBuscaNativa(nomeUrna: string, agencia: AgenciaChecagem, pagina: number): string | null {
@@ -479,6 +523,7 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
       status: "ok", itens: estado.itens, leads: estado.leads.length,
       ...(estado.transporte ? { transporte: estado.transporte } : {}),
       ...(estado.falhas?.length ? { falhas: estado.falhas.map((falha) => falha.slice(0, 200)) } : {}),
+      ...(estado.desde ? { desde: estado.desde } : {}),
     }
     leads.push(...estado.leads)
   }
@@ -502,7 +547,7 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
 export function entradaColetaDoRecibo(recibo: ReciboChecagem): EntradaColeta {
   const porAgencia = AGENCIAS_CHECAGEM.map((agencia) => {
     const estado = recibo.agencias[agencia.id]
-    return estado?.status === "ok" ? `${agencia.id}=${estado.leads ?? 0}/${estado.itens ?? 0}(${estado.transporte ?? "?"})` : `${agencia.id}=erro(${estado?.erro ?? "não consultada"})`
+    return estado?.status === "ok" ? `${agencia.id}=${estado.leads ?? 0}/${estado.itens ?? 0}(${estado.transporte ?? "?"}${estado.desde ? ` desde ${estado.desde}` : ""})` : `${agencia.id}=erro(${estado?.erro ?? "não consultada"})`
   }).join(" ")
   const homonimo = recibo.homonimo
     ? `; homônimo de ${recibo.homonimo.grupo.join(", ")}: ${recibo.homonimo.descartados} lead(s) sem marca distintiva no título`
@@ -527,6 +572,8 @@ export interface ReciboChecagemPublico {
   leads: number
   /** Agências que responderam nesta busca. Só elas podem aparecer no texto do site. */
   agencias: string[]
+  /** Agências cuja cobertura começa numa data (arquivo de seção): nome → AAAA-MM-DD. */
+  janelas?: Record<string, string>
 }
 
 export interface CatalogoRecibosChecagens {
@@ -548,6 +595,15 @@ export interface CatalogoRecibosChecagens {
  * que passou pela regra; entrada anterior sai mesmo quando a busca nova deu
  * erro, porque pode ter sido contada antes da regra.
  */
+function janelasPublicas(recibo: ReciboChecagem): { janelas?: Record<string, string> } {
+  const janelas: Record<string, string> = {}
+  for (const agencia of AGENCIAS_CHECAGEM) {
+    const estado = recibo.agencias[agencia.id]
+    if (estado?.status === "ok" && estado.desde) janelas[agencia.nome] = estado.desde
+  }
+  return Object.keys(janelas).length ? { janelas } : {}
+}
+
 export function consolidarCatalogoRecibos(
   anterior: CatalogoRecibosChecagens | null,
   recibos: readonly ReciboChecagem[],
@@ -577,6 +633,7 @@ export function consolidarCatalogoRecibos(
       result: recibo.result === "encontrado" ? "encontrado" : "vazio_confirmado",
       leads: recibo.result === "encontrado" ? recibo.leads.length : 0,
       agencias: AGENCIAS_CHECAGEM.filter((agencia) => recibo.agencias[agencia.id]?.status === "ok").map((agencia) => agencia.nome),
+      ...janelasPublicas(recibo),
     })
   }
   return {
@@ -614,6 +671,8 @@ export interface OpcoesColeta {
   limiteBloqueiosSeguidos?: number
   /** Orçamento total de espera por limite de taxa na rodada inteira. */
   orcamentoEsperaMs?: number
+  /** Piso de arquivo por agência, no lugar do da configuração (testes com fixture pequena). */
+  pisos?: Partial<Record<string, PisoArquivo>>
   /** Teto de matérias abertas na rodada para confirmar menção fraca no título (arquivo do g1). */
   orcamentoPaginasConfirmacao?: number
   /** Intervalo mínimo entre pedidos ao mesmo host, somado a todos os trabalhadores. 0 desliga. */
@@ -642,9 +701,12 @@ type OpcoesConsulta = Required<Pick<OpcoesColeta, "fetchText" | "tentativas" | "
   /** Texto de matérias abertas para confirmar menção, compartilhado entre candidaturas. */
   paginas: Map<string, Promise<{ texto: string } | { erro: string }>>
   orcamentoPaginas: { total: number; restantes: number }
+  /** Disjuntor da via direta por agência: aberto, a agência vira erro sem pedir nada nem cair no Google. */
+  disjuntoresDiretos: Map<string, { falhasSeguidas: number; aberto: string | null }>
+  pisos: Partial<Record<string, PisoArquivo>>
 }
 
-type ArquivoLido = { status: "ok"; itens: ItemBusca[] } | { status: "erro"; erro: string }
+type ArquivoLido = { status: "ok"; itens: ItemBusca[]; desde: string } | { status: "erro"; erro: string }
 
 /**
  * Intervalo mínimo por host. A vez é reservada de forma síncrona, então
@@ -692,12 +754,16 @@ async function lerPaginaBuscaSite(nome: string, agencia: AgenciaChecagem, pagina
   return { ...parseBuscaSite(resposta.body, agencia.buscaSite!), fim: false }
 }
 
+function sondarBuscaSite(agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<string | null> {
+  return lerPaginaBuscaSite(SONDA_BUSCA_SITE, agencia, 1, opcoes).then((lida) =>
+    "erro" in lida ? `sonda: ${lida.erro}` : lida.itens.length === 0 ? `sonda "${SONDA_BUSCA_SITE}" sem resultado: leitor da página quebrado` : null)
+}
+
 async function consultarBuscaSite(candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<EstadoAgencia> {
   // Página vazia não se distingue de leitor quebrado; a sonda prova que o leitor acha resultado.
   let sonda = opcoes.sondas.get(agencia.id)
   if (!sonda) {
-    sonda = lerPaginaBuscaSite(SONDA_BUSCA_SITE, agencia, 1, opcoes).then((lida) =>
-      "erro" in lida ? `sonda: ${lida.erro}` : lida.itens.length === 0 ? `sonda "${SONDA_BUSCA_SITE}" sem resultado: leitor da página quebrado` : null)
+    sonda = sondarBuscaSite(agencia, opcoes)
     opcoes.sondas.set(agencia.id, sonda)
   }
   const falhaSonda = await sonda
@@ -712,13 +778,21 @@ async function consultarBuscaSite(candidato: CandidatoChecagem, agencia: Agencia
     const lida = await lerPaginaBuscaSite(candidato.nome_urna, agencia, pagina, opcoes)
     if ("erro" in lida) return { status: "erro", erro: `busca do site: ${lida.erro}` }
     itens.push(...lida.itens)
-    if (lida.fim || lida.itens.length < ITENS_POR_PAGINA_BUSCA_SITE || !lida.ultimaPagina || pagina >= lida.ultimaPagina) break
+    // Fim só por 404 ou página com menos cartões que o normal; links de paginação não decidem.
+    if (lida.fim || lida.itens.length < ITENS_POR_PAGINA_BUSCA_SITE) break
+  }
+  if (itens.length === 0) {
+    // Zero cartões pode ser bloqueio ou template quebrado no meio da rodada: sonda de novo antes de aceitar o vazio.
+    const agora = await sondarBuscaSite(agencia, opcoes)
+    if (agora) return { status: "erro", erro: `busca do site: vazio não confirmado, ${agora}` }
   }
   return { status: "ok", itens: itens.length, leads: leadsDaResposta(itens, candidato, agencia), transporte: "busca-site" }
 }
 
-async function lerArquivo(arquivo: ArquivoSecao, opcoes: OpcoesConsulta): Promise<ArquivoLido> {
+async function lerArquivo(agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<ArquivoLido> {
+  const arquivo = agencia.arquivo!
   const porLink = new Map<string, ItemBusca>()
+  let brutos = 0
   try {
     if (arquivo.tipo === "falkor") {
       let pagina: number | null = 1
@@ -729,9 +803,11 @@ async function lerArquivo(arquivo: ArquivoSecao, opcoes: OpcoesConsulta): Promis
         const resposta = await pedirComTentativas(`${arquivo.url}${pagina}`, opcoes)
         if ("erro" in resposta) return { status: "erro", erro: `arquivo, página ${pagina}: ${resposta.erro}` }
         const lida = parseArquivoFalkor(resposta.body)
+        brutos += lida.brutos
         for (const item of lida.itens) porLink.set(item.link, item)
-        // Página vazia é o fim do arquivo.
-        pagina = lida.itens.length === 0 ? null : lida.proxima
+        if (lida.proxima !== null && lida.proxima <= pagina) return { status: "erro", erro: `arquivo, página ${pagina}: nextPage ${lida.proxima} não avança` }
+        // Fim: página curta ou vazia sem nextPage (o parser recusa página cheia sem o campo).
+        pagina = lida.proxima
       }
     } else {
       let offset = 0
@@ -743,6 +819,9 @@ async function lerArquivo(arquivo: ArquivoSecao, opcoes: OpcoesConsulta): Promis
         if ("erro" in resposta) return { status: "erro", erro: `arquivo, offset ${offset}: ${resposta.erro}` }
         const lida = parseArquivoArc(resposta.body, arquivo.site)
         total = lida.total
+        brutos += lida.lidos
+        // Sem corpo, título com só parte do nome não tem como ser confirmado.
+        if (lida.lidos > 0 && lida.comCorpo === 0) return { status: "erro", erro: `arquivo, offset ${offset}: nenhuma história com corpo (content_elements)` }
         for (const item of lida.itens) porLink.set(item.link, item)
         if (lida.lidos === 0 && offset < total) return { status: "erro", erro: `arquivo parou no offset ${offset} de ${total}` }
         offset += lida.lidos
@@ -752,7 +831,17 @@ async function lerArquivo(arquivo: ArquivoSecao, opcoes: OpcoesConsulta): Promis
     return { status: "erro", erro: `arquivo: ${error instanceof Error ? error.message : String(error)}` }
   }
   if (porLink.size === 0) return { status: "erro", erro: "arquivo vazio: rota mudou" }
-  return { status: "ok", itens: [...porLink.values()] }
+  return conferirPiso([...porLink.values()], brutos, opcoes.pisos[agencia.id] ?? arquivo.piso)
+}
+
+/** Arquivo lido pela metade não confirma ausência: piso de itens, item antigo o bastante e itens descartados no parser. */
+export function conferirPiso(itens: ItemBusca[], brutos: number, piso: PisoArquivo): ArquivoLido {
+  if (itens.length < piso.itens) return { status: "erro", erro: `arquivo com ${itens.length} itens, abaixo do piso de ${piso.itens}: leitura parcial` }
+  if (itens.length < brutos * 0.95) return { status: "erro", erro: `parser descartou ${brutos - itens.length} de ${brutos} itens: formato mudou` }
+  const datas = itens.map((item) => item.data_publicacao).filter((data): data is string => Boolean(data)).sort()
+  const desde = datas[0]?.slice(0, 10)
+  if (!desde || desde > piso.maisAntigoAte) return { status: "erro", erro: `item mais antigo ${desde ?? "sem data"}, depois de ${piso.maisAntigoAte}: leitura parcial` }
+  return { status: "ok", itens, desde }
 }
 
 /** Nome de urna ou nome completo inteiro, como sequência de palavras, num texto já normalizado. */
@@ -764,11 +853,24 @@ export function textoCitaNomeInteiro(textoNormalizado: string, candidato: Candid
   })
 }
 
-/** Texto do corpo da matéria (região `<article>`), normalizado. */
-export function textoDaPagina(html: string): string {
-  const inicio = html.indexOf("<article")
-  const fim = html.lastIndexOf("</article>")
-  const corpo = inicio >= 0 && fim > inicio ? html.slice(inicio, fim) : html
+/**
+ * Texto do corpo principal da matéria (`<article itemprop="articleBody">` até
+ * o fechamento correspondente, com os `<article>` aninhados dentro), normalizado.
+ * Sem esse article, devolve null: chamadas relacionadas e menus não confirmam.
+ */
+export function textoDaPagina(html: string): string | null {
+  const abertura = /<article\b[^>]*\bitemprop="articleBody"[^>]*>/.exec(html)
+  if (!abertura) return null
+  const marcas = /<article\b[^>]*>|<\/article>/g
+  marcas.lastIndex = abertura.index + abertura[0].length
+  let profundidade = 1
+  let fim = -1
+  for (let marca = marcas.exec(html); marca; marca = marcas.exec(html)) {
+    profundidade += marca[0].startsWith("</") ? -1 : 1
+    if (profundidade === 0) { fim = marca.index; break }
+  }
+  if (fim < 0) return null
+  const corpo = html.slice(abertura.index, fim)
   return normalizarNome(decodeEntities(corpo.replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, " ")))
 }
 
@@ -777,7 +879,11 @@ async function textoConfirmado(link: string, opcoes: OpcoesConsulta): Promise<{ 
   if (!pagina) {
     if (opcoes.orcamentoPaginas.restantes <= 0) return { erro: `teto de ${opcoes.orcamentoPaginas.total} páginas de confirmação na rodada` }
     opcoes.orcamentoPaginas.restantes--
-    pagina = pedirComTentativas(link, opcoes).then((resposta) => "erro" in resposta ? resposta : { texto: textoDaPagina(resposta.body) })
+    pagina = pedirComTentativas(link, opcoes).then((resposta) => {
+      if ("erro" in resposta) return resposta
+      const texto = textoDaPagina(resposta.body)
+      return texto === null ? { erro: "matéria sem <article itemprop=\"articleBody\">" } : { texto }
+    })
     opcoes.paginas.set(link, pagina)
   }
   return pagina
@@ -801,7 +907,8 @@ async function leadsDoArquivo(itens: readonly ItemBusca[], candidato: CandidatoC
     const chave = stripAccents(item.titulo).toLowerCase()
     if (vistos.has(chave)) continue
     let confirmado = textoCitaNomeInteiro(normalizarNome(item.titulo), candidato) || (item.texto !== undefined && textoCitaNomeInteiro(item.texto, candidato))
-    if (!confirmado && confirmarNaPagina) {
+    // Vídeo não tem corpo para abrir: sem o nome inteiro no título ou no resumo, não vira lead.
+    if (!confirmado && confirmarNaPagina && !item.semCorpo) {
       const pagina = await textoConfirmado(item.link, opcoes)
       if ("erro" in pagina) return { erro: `confirmação de ${item.link}: ${pagina.erro}` }
       confirmado = textoCitaNomeInteiro(pagina.texto, candidato)
@@ -816,14 +923,14 @@ async function leadsDoArquivo(itens: readonly ItemBusca[], candidato: CandidatoC
 async function consultarArquivo(candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<EstadoAgencia> {
   let lido = opcoes.arquivos.get(agencia.id)
   if (!lido) {
-    lido = lerArquivo(agencia.arquivo!, opcoes)
+    lido = lerArquivo(agencia, opcoes)
     opcoes.arquivos.set(agencia.id, lido)
   }
   const arquivo = await lido
   if (arquivo.status === "erro") return { status: "erro", erro: `arquivo da seção: ${arquivo.erro}` }
   const leads = await leadsDoArquivo(arquivo.itens, candidato, agencia, opcoes)
   if ("erro" in leads) return { status: "erro", erro: `arquivo da seção: ${leads.erro}` }
-  return { status: "ok", itens: arquivo.itens.length, leads: leads.leads, transporte: "arquivo-secao" }
+  return { status: "ok", itens: arquivo.itens.length, leads: leads.leads, transporte: "arquivo-secao", desde: arquivo.desde }
 }
 
 /** Limite de taxa com `pararNoBloqueio`: a rodada para e a candidatura em curso não gera recibo. */
@@ -864,12 +971,23 @@ function temViaDireta(agencia: AgenciaChecagem): boolean {
 
 async function consultarAgencia(candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<EstadoAgencia> {
   if (!temViaDireta(agencia)) return consultarGoogle(candidato, agencia, opcoes)
+  const disjuntor = opcoes.disjuntoresDiretos.get(agencia.id) ?? { falhasSeguidas: 0, aberto: null }
+  opcoes.disjuntoresDiretos.set(agencia.id, disjuntor)
+  // Via direta bloqueada não despeja a rodada no Google: isso derrubaria UOL Confere e AFP Checamos.
+  if (disjuntor.aberto) return { status: "erro", erro: disjuntor.aberto }
   const direta = agencia.wpSearch
     ? await consultarNativa(candidato, agencia, opcoes)
     : agencia.buscaSite
       ? await consultarBuscaSite(candidato, agencia, opcoes)
       : await consultarArquivo(candidato, agencia, opcoes)
-  if (direta.status === "ok") return direta
+  if (direta.status === "ok") {
+    disjuntor.falhasSeguidas = 0
+    return direta
+  }
+  if (++disjuntor.falhasSeguidas >= LIMITE_FALHAS_DIRETAS) {
+    disjuntor.aberto = `via direta com disjuntor aberto após ${disjuntor.falhasSeguidas} falhas seguidas (${direta.erro.slice(0, 120)})`
+    return { status: "erro", erro: disjuntor.aberto }
+  }
   const google = await consultarGoogle(candidato, agencia, opcoes)
   if (google.status === "ok") return { ...google, falhas: [direta.erro] }
   // `google.erro` já começa com "google-news:".
@@ -949,6 +1067,8 @@ export async function coletarChecagens(opcoes: OpcoesColeta): Promise<ReciboChec
     sondas: new Map(),
     parada: { abortada: false },
     paginas: new Map(),
+    disjuntoresDiretos: new Map(),
+    pisos: opcoes.pisos ?? {},
     orcamentoPaginas: { total: orcamentoPaginas, restantes: orcamentoPaginas },
   }
   const concorrencia = Math.min(4, Math.max(1, opcoes.concorrencia ?? 2))
@@ -963,7 +1083,7 @@ export async function coletarChecagens(opcoes: OpcoesColeta): Promise<ReciboChec
   const recibos: ReciboChecagem[] = new Array(opcoes.roster.length)
   // Arquivos de seção começam já: correm em paralelo às buscas por candidatura (hosts diferentes).
   if (opcoes.roster.length > 0) {
-    for (const agencia of AGENCIAS_CHECAGEM) if (agencia.arquivo) consulta.arquivos.set(agencia.id, lerArquivo(agencia.arquivo, consulta))
+    for (const agencia of AGENCIAS_CHECAGEM) if (agencia.arquivo) consulta.arquivos.set(agencia.id, lerArquivo(agencia, consulta))
   }
   let proximo = 0
   // Abort compartilhado: um trabalhador que bate no limite para os outros também.

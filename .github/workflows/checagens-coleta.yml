@@ -37,9 +37,12 @@ on:
 permissions:
   contents: read
 
-# Mesmo grupo dos ingests que escrevem no banco: nunca concorre com eles.
+# Grupo próprio. A rotina só faz insert no coleta_log (fonte checagens-agencias)
+# e não toca tabela de ingest, então não precisa esperar os ingests. No grupo
+# ingest-pipeline, com cancel-in-progress false, um run pendente é substituído
+# pelo próximo enfileirado no grupo: uma coleta de checagens podia sumir da fila.
 concurrency:
-  group: ingest-pipeline
+  group: checagens-coleta
   cancel-in-progress: false
 
 jobs:

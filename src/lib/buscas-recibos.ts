@@ -17,6 +17,8 @@ export interface ReciboChecagensVisivel {
   agencias: string[]
   /** Agências do escopo que não responderam. Vazio quando a busca foi completa. */
   naoResponderam: string[]
+  /** Agências cuja busca só cobre a partir de uma data (arquivo de seção). */
+  janelas: Array<{ agencia: string; desde: string }>
 }
 
 export interface ReciboFalasVisivel {
@@ -63,7 +65,15 @@ export function selecionarReciboChecagens(raw: unknown, identity: IdentidadeReci
   const naoResponderam = escopo.filter((agencia) => !agencias.includes(agencia))
   // Ausência só se afirma com todas as agências respondendo.
   if (row.result === "vazio_confirmado" && naoResponderam.length > 0) return null
-  return { searchedAt: row.searched_at, result: row.result, leads, agencias, naoResponderam }
+  // Janela malformada ou de agência que não respondeu invalida o recibo: o texto não pode esconder o limite de data.
+  let janelas: ReciboChecagensVisivel["janelas"] = []
+  if (row.janelas !== undefined) {
+    if (!isRecord(row.janelas)) return null
+    janelas = Object.entries(row.janelas).map(([agencia, desde]) => ({ agencia, desde: validDay(desde) ? desde : "" }))
+    if (janelas.some((janela) => !janela.desde || !agencias.includes(janela.agencia))) return null
+    janelas.sort((a, b) => agencias.indexOf(a.agencia) - agencias.indexOf(b.agencia))
+  }
+  return { searchedAt: row.searched_at, result: row.result, leads, agencias, naoResponderam, janelas }
 }
 
 export function selecionarReciboFalas(raw: unknown, identity: IdentidadeRecibo): ReciboFalasVisivel | null {
