@@ -159,9 +159,14 @@ describe("invariante 2: papel não-parte perto do nome nunca gera encontrado", (
       // Padrões reais do DJEN: parte que advoga em causa própria e executada fiel depositária.
       `RECORRIDO: ${NOME_UP}, CPF ${CPF_FMT} ADVOGADO(A): ${NOME_UP} (OAB/MG 8142) RECORRIDO: MUNICIPIO X`,
       `EXECUTADO: ${NOME_UP}, CPF ${CPF_FMT}. FIEL DEPOSITARIO: ${NOME_UP}. ULTIMA AVALIACAO: R$ 1,00`,
+      // "&" solto (vindo de &amp;) nunca apaga o nome do trecho salvo.
+      `AUTOR: PALHARES &amp; CIA LTDA, REU: ${NOME_UP}, CPF ${CPF_FMT}; ADVOGADO: FULANO`,
+      `AUTOR: PALHARES & CIA LTDA, REU: ${NOME_UP}, Senador; ADVOGADO: FULANO`,
     ]) {
       const r = await pesquisar([{ id: 1, texto, destinatarios: [{ nome: NOME_UP, polo: "P" }] }])
       assert.equal(r.classificacao, "encontrado", texto)
+      // O aplicador exige o nome no trecho salvo: todo achado o traz.
+      for (const p of r.processos) assert.match(String(p.contexto_identidade), /CARLOS DA SILVA TESTE/, texto)
     }
   })
 })

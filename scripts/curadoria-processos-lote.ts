@@ -269,7 +269,9 @@ const CARGO_POLITICO = "(?:VICE GOVERNADOR(?:A)?|GOVERNADOR(?:A)?|VICE PREFEIT[O
 function normalizar(valor: unknown): string {
   return stripAccents(String(valor ?? ""))
     .replace(/<[^>]+>/g, " ")
-    .replace(/&[^;]+;/g, " ")
+    // Só entidades reais ("&nbsp;", "&#186;"): um "&" solto ("PALHARES & CIA")
+    // nunca apaga o texto até o próximo ";".
+    .replace(/&#?[a-z0-9]{1,10};/gi, " ")
     .toUpperCase()
     .replace(/[^A-Z0-9]+/g, " ")
     .replace(/\s+/g, " ")
