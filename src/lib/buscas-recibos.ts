@@ -49,8 +49,8 @@ export function selecionarReciboChecagens(raw: unknown, identity: IdentidadeReci
   const row = raw.receipts.find((item): item is Record<string, unknown> => isRecord(item) && sameIdentity(item, identity))
   if (!row || !validInstant(row.searched_at)) return null
   // Cada recibo lista as agências que responderam; o texto nunca cita agência que falhou.
-  const source = Array.isArray(row.agencias) ? row.agencias : raw.agencias
-  const agencias = source.filter((agencia): agencia is string => typeof agencia === "string" && agencia.trim().length > 0)
+  if (!Array.isArray(row.agencias)) return null
+  const agencias = row.agencias.filter((agencia): agencia is string => typeof agencia === "string" && agencia.trim().length > 0)
   if (agencias.length === 0) return null
   if (row.result !== "encontrado" && row.result !== "vazio_confirmado") return null
   const leads = typeof row.leads === "number" && Number.isInteger(row.leads) && row.leads >= 0 ? row.leads : null

@@ -3,7 +3,8 @@
  *
  *   npm run coletar:checagens -- [--roster ARQUIVO] [--slugs a,b] [--out DIR]
  *     [--catalogo scripts/data/checagens-recibos.json] [--gravar-log]
- *   npm run coletar:checagens -- --de-recibos DIR/recibos.json [--catalogo ...] [--gravar-log]
+ *   npm run coletar:checagens -- --de-recibos DIR/recibos.json [--roster R] [--catalogo ...] [--salvar-recibos S] [--gravar-log]
+ *     (reaplica a regra de homônimo com o cadastro da rodada: DIR/roster.json ou --roster)
  *   npm run coletar:checagens -- --retomar DIR/recibos.json --out DIR2  (refaz recibos com erro ou com agência sem resposta)
  *
  * Sem `--gravar-log` é dry-run: grava só os arquivos de saída. Com a flag, os
@@ -16,7 +17,7 @@
  */
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
-import { resolve } from "node:path"
+import { dirname, resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 import { createClient } from "@supabase/supabase-js"
 
@@ -27,6 +28,8 @@ import {
   consolidarCatalogoRecibos,
   entradaColetaDoRecibo,
   BloqueioDeTaxa,
+  aplicarRegraHomonimo,
+  gruposDeHomonimos,
   mesclarRecibos,
   reciboIncompleto,
   resumirColeta,
@@ -91,8 +94,28 @@ function lerRecibos(arquivo: string): ReciboChecagem[] {
   return bruto.receipts
 }
 
-async function registrarRecibosExistentes(arquivo: string, catalogoPath: string | undefined, gravarLog: boolean): Promise<number> {
-  const recibos = lerRecibos(arquivo)
+/**
+ * Reaplica a regra de homônimo com o cadastro da própria rodada (roster.json
+ * ao lado do arquivo, ou `--roster`). Sem cadastro não há como saber quem
+ * divide o nome, então a importação é recusada.
+ */
+function reaplicarHomonimos(recibos: ReciboChecagem[], rosterPath: string): ReciboChecagem[] {
+  if (!existsSync(rosterPath)) throw new Error(`Cadastro da rodada ausente (${rosterPath}); informe --roster`)
+  const roster = JSON.parse(readFileSync(rosterPath, "utf8")) as CandidatoChecagem[]
+  const grupos = gruposDeHomonimos(roster)
+  const porChave = new Map(roster.map((candidato) => [`${candidato.id}\u0000${candidato.slug}`, candidato]))
+  return recibos.map((recibo) => {
+    const chave = `${recibo.candidate_id}\u0000${recibo.candidate_slug}`
+    const candidato = porChave.get(chave)
+    if (!candidato) throw new Error(`Recibo fora do cadastro da rodada: ${recibo.candidate_slug}`)
+    return aplicarRegraHomonimo(recibo, candidato, grupos.get(chave))
+  })
+}
+
+async function registrarRecibosExistentes(arquivo: string, catalogoPath: string | undefined, gravarLog: boolean, rosterPath: string | undefined, salvarPath: string | undefined): Promise<number> {
+  const recibos = reaplicarHomonimos(lerRecibos(arquivo), rosterPath ?? resolve(dirname(arquivo), "roster.json"))
+  // Guarda exatamente o que foi importado, com a regra aplicada: é a proveniência do catálogo.
+  if (salvarPath) writeFileSync(salvarPath, JSON.stringify({ schema_version: "checagens-recibos-v1", origem: arquivo, execucao: EXECUCAO, receipts: recibos }, null, 2) + "\n")
   if (catalogoPath) {
     const caminho = resolve(catalogoPath)
     const anterior = existsSync(caminho) ? JSON.parse(readFileSync(caminho, "utf8")) as CatalogoRecibosChecagens : null
@@ -111,13 +134,21 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
   }
   const inicio = new Date()
   const deRecibos = valores.get("de-recibos")
-  if (deRecibos) return registrarRecibosExistentes(resolve(deRecibos), valores.get("catalogo"), flags.has("gravar-log"))
+  if (deRecibos) {
+    const rosterDaRodada = valores.get("roster")
+    const salvar = valores.get("salvar-recibos")
+    return registrarRecibosExistentes(resolve(deRecibos), valores.get("catalogo"), flags.has("gravar-log"), rosterDaRodada ? resolve(rosterDaRodada) : undefined, salvar ? resolve(salvar) : undefined)
+  }
   const rosterPath = valores.get("roster")
   let roster = (rosterPath
     ? JSON.parse(readFileSync(resolve(rosterPath), "utf8"))
     : await carregarCandidatos()) as CandidatoChecagem[]
   const retomar = valores.get("retomar")
-  const anteriores = retomar ? lerRecibos(resolve(retomar)) : []
+  // Recibos anteriores passam pela regra de homônimo com o cadastro da rodada deles.
+  const rosterAnterior = valores.get("roster-anterior")
+  const anteriores = retomar
+    ? reaplicarHomonimos(lerRecibos(resolve(retomar)), rosterAnterior ? resolve(rosterAnterior) : resolve(dirname(resolve(retomar)), "roster.json"))
+    : []
   if (retomar) {
     const comErro = new Set(anteriores.filter(reciboIncompleto).map((recibo) => recibo.candidate_slug))
     roster = roster.filter((candidato) => comErro.has(candidato.slug))

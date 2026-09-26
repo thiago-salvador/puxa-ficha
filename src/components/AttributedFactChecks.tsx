@@ -171,9 +171,9 @@ function AttributedFactCheckCard({ check }: { check: AttributedFactCheck }) {
 function searchReceiptText(receipt: ReciboChecagensVisivel, publishedChecks: number): string {
   const when = `Busca feita em ${formatarDataBusca(receipt.searchedAt)} em ${listarEmProsa(receipt.agencias)}`
   if (publishedChecks > 0) return `${when}.`
-  if (receipt.result === "vazio_confirmado") return `${when}: nenhuma checagem com o nome deste candidato no título.`
+  if (receipt.result === "vazio_confirmado") return `${when}: nenhuma checagem com o nome desta candidatura no título.`
   const matches = receipt.leads === 1 ? "1 matéria cita" : `${receipt.leads} matérias citam`
-  return `${when}: ${matches} o nome deste candidato no título. Nenhuma checagem de fala dele foi conferida e publicada aqui até agora.`
+  return `${when}: ${matches} o nome desta candidatura no título. Nenhuma checagem de fala atribuída a ela foi conferida e publicada aqui até agora.`
 }
 
 export function AttributedFactChecks({
@@ -207,9 +207,11 @@ export function AttributedFactChecks({
         <h2 id="attributed-fact-checks-title" className="font-heading text-[20px] uppercase tracking-tight text-foreground sm:text-[24px]">
           Checagens atribuídas
         </h2>
-        <p className="mt-1 max-w-3xl text-[length:var(--text-body-sm)] leading-relaxed text-muted-foreground">
-          Avaliações publicadas por veículos de checagem e associadas a esta afirmação após conferência editorial.
-        </p>
+        {checks.length > 0 && (
+          <p className="mt-1 max-w-3xl text-[length:var(--text-body-sm)] leading-relaxed text-muted-foreground">
+            Avaliações publicadas por veículos de checagem e associadas a esta afirmação após conferência editorial.
+          </p>
+        )}
         {searchReceipt && (
           <p
             data-pf-checagens-busca={searchReceipt.result}

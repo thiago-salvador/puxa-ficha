@@ -11,27 +11,53 @@
     "Comprova"
   ],
   "escopo": "uma consulta por agência (Lupa, Aos Fatos, Fato ou Fake, Estadão Verifica, UOL Confere, AFP Checamos, Comprova) com o nome de urna; busca nativa WordPress em Lupa, Comprova (até 300 resultados) e Google News RSS nas demais ou como segunda via (teto de 100 itens); sem limite de data; lead exige o nome no título",
-  "updated_at": "2026-09-25T23:51:04.547Z",
+  "updated_at": "2026-09-26T03:44:02.393Z",
   "receipts": [
     {
       "candidate_id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
       "candidate_slug": "acm-neto",
-      "searched_at": "2026-09-25T23:26:17.168Z",
+      "searched_at": "2026-09-26T00:27:45.098Z",
       "result": "encontrado",
       "leads": 4,
       "agencias": [
         "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
         "Comprova"
       ]
     },
     {
       "candidate_id": "18d872c1-3e51-4856-9a93-2ca53b35d78f",
       "candidate_slug": "alexandre-kalil",
-      "searched_at": "2026-09-25T23:26:01.624Z",
+      "searched_at": "2026-09-26T00:27:10.172Z",
       "result": "encontrado",
-      "leads": 6,
+      "leads": 26,
       "agencias": [
         "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "0620a093-7d56-4def-ba68-dc8cb1309984",
+      "candidate_slug": "alexandre-salomao",
+      "searched_at": "2026-09-26T00:21:54.001Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
         "Comprova"
       ]
     },
@@ -60,11 +86,32 @@
     {
       "candidate_id": "049a5051-e7c9-4729-8853-14753d2993e1",
       "candidate_slug": "arthur-henrique",
-      "searched_at": "2026-09-25T23:23:24.983Z",
+      "searched_at": "2026-09-26T00:21:20.122Z",
       "result": "encontrado",
       "leads": 1,
       "agencias": [
         "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "131fa6ef-ec83-40fc-8cb8-d01c79dd30cd",
+      "candidate_slug": "ataides-oliveira",
+      "searched_at": "2026-09-26T00:25:27.516Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
         "Comprova"
       ]
     },
@@ -82,11 +129,16 @@
     {
       "candidate_id": "1787f63a-1d2b-473f-a0bf-69f5d103a560",
       "candidate_slug": "ben-mendes",
-      "searched_at": "2026-09-25T23:25:46.116Z",
+      "searched_at": "2026-09-26T00:26:35.244Z",
       "result": "encontrado",
       "leads": 3,
       "agencias": [
         "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
         "Comprova"
       ]
     },
@@ -131,6 +183,22 @@
       "leads": 42,
       "agencias": [
         "Lupa",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "12357734-561a-48c9-8c91-78fdbeb5b6f7",
+      "candidate_slug": "clebio-genuino",
+      "searched_at": "2026-09-26T00:24:36.355Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
         "Comprova"
       ]
     },
@@ -203,11 +271,16 @@
     {
       "candidate_id": "097dc8d0-d05d-42cb-91a0-0582dd561f76",
       "candidate_slug": "douglas-ruas",
-      "searched_at": "2026-09-25T23:23:56.378Z",
+      "searched_at": "2026-09-26T00:22:28.201Z",
       "result": "encontrado",
-      "leads": 1,
+      "leads": 7,
       "agencias": [
         "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
         "Comprova"
       ]
     },
@@ -245,6 +318,22 @@
       ]
     },
     {
+      "candidate_id": "07472c9c-5a4f-47b0-9000-d28fb031303f",
+      "candidate_slug": "elisson-ferreira",
+      "searched_at": "2026-09-26T00:22:11.008Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
+        "Comprova"
+      ]
+    },
+    {
       "candidate_id": "e10f4186-0132-48f3-be4c-5397642eecd4",
       "candidate_slug": "fabio-trad",
       "searched_at": "2026-09-25T23:46:46.383Z",
@@ -256,6 +345,22 @@
       ]
     },
     {
+      "candidate_id": "0c0e1b6a-cfa6-4da7-82ab-a8ea90b55200",
+      "candidate_slug": "felipe-camarao",
+      "searched_at": "2026-09-26T00:22:44.981Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
+        "Comprova"
+      ]
+    },
+    {
       "candidate_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
       "candidate_slug": "flavio-bolsonaro",
       "searched_at": "2026-09-25T23:32:38.687Z",
@@ -263,6 +368,22 @@
       "leads": 171,
       "agencias": [
         "Lupa",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "2081565f-e38d-4246-81d6-4f28979e8136",
+      "candidate_slug": "gabriel-azevedo",
+      "searched_at": "2026-09-26T00:29:27.526Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
         "Comprova"
       ]
     },
@@ -291,11 +412,32 @@
     {
       "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
       "candidate_slug": "haddad-gov-sp",
-      "searched_at": "2026-09-25T23:24:16.794Z",
+      "searched_at": "2026-09-26T00:23:12.654Z",
       "result": "encontrado",
-      "leads": 90,
+      "leads": 264,
       "agencias": [
         "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "13c6d8ac-fee3-49f7-b1cf-c1a80c69fcea",
+      "candidate_slug": "hana-ghassan",
+      "searched_at": "2026-09-26T00:25:44.168Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
         "Comprova"
       ]
     },
@@ -307,6 +449,22 @@
       "leads": 1,
       "agencias": [
         "Lupa",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "1e3d6e9b-a35b-4aee-9018-c5c5c500f231",
+      "candidate_slug": "henrique-lyra",
+      "searched_at": "2026-09-26T00:28:19.086Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
         "Comprova"
       ]
     },
@@ -329,6 +487,38 @@
       "leads": 2,
       "agencias": [
         "Lupa",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "20e8b8cd-54a6-4e85-89c2-386ef12d2cc8",
+      "candidate_slug": "izadora-dias",
+      "searched_at": "2026-09-26T00:29:44.581Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "10874c20-5864-42f9-a83e-0610502381c6",
+      "candidate_slug": "jeferson-bezerra",
+      "searched_at": "2026-09-26T00:24:03.050Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
         "Comprova"
       ]
     },
@@ -377,6 +567,54 @@
       ]
     },
     {
+      "candidate_id": "0ef8b4e2-ef3d-4f6a-b284-3f4648c1386b",
+      "candidate_slug": "juliete-pantoja",
+      "searched_at": "2026-09-26T00:23:29.218Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "05bc8f5b-1419-4fb6-a34b-6e06263bb8f1",
+      "candidate_slug": "lais-chaud",
+      "searched_at": "2026-09-26T00:21:37.014Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "11aeff6f-ce8d-45bb-a4d1-a798b160e2fe",
+      "candidate_slug": "leonardo-avalanche",
+      "searched_at": "2026-09-26T00:24:19.751Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
+        "Comprova"
+      ]
+    },
+    {
       "candidate_id": "af1bd42d-8ee5-4b53-9267-0a0114b74956",
       "candidate_slug": "lucia-santos",
       "searched_at": "2026-09-25T23:40:59.916Z",
@@ -410,9 +648,20 @@
       ]
     },
     {
-      "candidate_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
-      "candidate_slug": "mailza-assis",
-      "searched_at": "2026-09-25T22:05:19.643Z",
+      "candidate_id": "9fe469dc-058f-487d-b888-ba113f5535ae",
+      "candidate_slug": "omar-aziz",
+      "searched_at": "2026-09-25T23:39:28.899Z",
+      "result": "encontrado",
+      "leads": 1,
+      "agencias": [
+        "Lupa",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+      "candidate_slug": "patrus-ananias",
+      "searched_at": "2026-09-26T00:24:53.322Z",
       "result": "vazio_confirmado",
       "leads": 0,
       "agencias": [
@@ -426,24 +675,18 @@
       ]
     },
     {
-      "candidate_id": "9fe469dc-058f-487d-b888-ba113f5535ae",
-      "candidate_slug": "omar-aziz",
-      "searched_at": "2026-09-25T23:39:28.899Z",
-      "result": "encontrado",
-      "leads": 1,
-      "agencias": [
-        "Lupa",
-        "Comprova"
-      ]
-    },
-    {
       "candidate_id": "17472d91-6cfc-453d-8481-4fac47d07f36",
       "candidate_slug": "paula-belmonte",
-      "searched_at": "2026-09-25T23:25:38.129Z",
+      "searched_at": "2026-09-26T00:26:18.500Z",
       "result": "encontrado",
-      "leads": 1,
+      "leads": 2,
       "agencias": [
         "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
         "Comprova"
       ]
     },
@@ -459,13 +702,66 @@
       ]
     },
     {
-      "candidate_id": "022d27e8-2832-4156-9bc7-7eac817ac901",
-      "candidate_slug": "raquel-lyra",
-      "searched_at": "2026-09-25T23:23:09.469Z",
-      "result": "encontrado",
-      "leads": 1,
+      "candidate_id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
+      "candidate_slug": "professora-dorinha",
+      "searched_at": "2026-09-26T00:20:27.612Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
       "agencias": [
         "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "18647b7b-471f-4e10-998e-6a4e5fbe3efb",
+      "candidate_slug": "rafael-demuner",
+      "searched_at": "2026-09-26T00:26:52.321Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "1eb75804-f098-4956-a1df-fd18d16c5f1d",
+      "candidate_slug": "rafael-duda",
+      "searched_at": "2026-09-26T00:28:36.147Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "022d27e8-2832-4156-9bc7-7eac817ac901",
+      "candidate_slug": "raquel-lyra",
+      "searched_at": "2026-09-26T00:20:45.359Z",
+      "result": "encontrado",
+      "leads": 2,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
         "Comprova"
       ]
     },
@@ -481,6 +777,22 @@
       ]
     },
     {
+      "candidate_id": "1f0abb3a-c57b-462b-a538-15ed782276cb",
+      "candidate_slug": "renan-hallais",
+      "searched_at": "2026-09-26T00:29:10.214Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
+        "Comprova"
+      ]
+    },
+    {
       "candidate_id": "4cbc3b25-075a-4d87-89bd-58d1e0b2a5f2",
       "candidate_slug": "renan-santos",
       "searched_at": "2026-09-25T23:31:56.193Z",
@@ -488,6 +800,22 @@
       "leads": 6,
       "agencias": [
         "Lupa",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "0f65eafa-82d8-4ac8-8ef4-674e42d2d5d0",
+      "candidate_slug": "renato-gomes",
+      "searched_at": "2026-09-26T00:23:46.214Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
         "Comprova"
       ]
     },
@@ -527,11 +855,16 @@
     {
       "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
       "candidate_slug": "romeu-zema",
-      "searched_at": "2026-09-25T23:23:17.146Z",
+      "searched_at": "2026-09-26T00:21:02.621Z",
       "result": "encontrado",
-      "leads": 9,
+      "leads": 20,
       "agencias": [
         "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
         "Comprova"
       ]
     },
@@ -547,6 +880,38 @@
       ]
     },
     {
+      "candidate_id": "1eec3569-c202-4f16-a60a-d67125c51f95",
+      "candidate_slug": "rui-costa-pimenta",
+      "searched_at": "2026-09-26T00:28:53.453Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "1411b8f9-0a20-4454-ae7f-1ae98cf195e4",
+      "candidate_slug": "ruth-reis",
+      "searched_at": "2026-09-26T00:26:00.927Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
+        "Comprova"
+      ]
+    },
+    {
       "candidate_id": "f4e5e4bd-7934-4d04-8534-9a60fac53edd",
       "candidate_slug": "samuel-costa",
       "searched_at": "2026-09-25T23:48:12.413Z",
@@ -554,6 +919,22 @@
       "leads": 1,
       "agencias": [
         "Lupa",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "00b971a6-5f12-4fa3-961f-5806abfd6fb0",
+      "candidate_slug": "sandro-alex",
+      "searched_at": "2026-09-26T00:20:10.877Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
         "Comprova"
       ]
     },
@@ -569,20 +950,41 @@
       ]
     },
     {
-      "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
-      "candidate_slug": "tarcisio-gov-sp",
-      "searched_at": "2026-09-25T23:26:09.353Z",
-      "result": "encontrado",
-      "leads": 20,
+      "candidate_id": "1d5c69c3-4a4e-4f8f-9796-aa2248775e80",
+      "candidate_slug": "siqueira-campos-jr",
+      "searched_at": "2026-09-26T00:28:02.074Z",
+      "result": "vazio_confirmado",
+      "leads": 0,
       "agencias": [
         "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
+        "Comprova"
+      ]
+    },
+    {
+      "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+      "candidate_slug": "tarcisio-gov-sp",
+      "searched_at": "2026-09-26T00:27:28.026Z",
+      "result": "encontrado",
+      "leads": 57,
+      "agencias": [
+        "Lupa",
+        "Aos Fatos",
+        "Fato ou Fake",
+        "Estadão Verifica",
+        "UOL Confere",
+        "AFP Checamos",
         "Comprova"
       ]
     },
     {
       "candidate_id": "128ab70f-daf2-472b-926f-ec65b7287dd1",
       "candidate_slug": "thor-dantas",
-      "searched_at": "2026-09-25T22:05:18.932Z",
+      "searched_at": "2026-09-26T00:25:10.355Z",
       "result": "vazio_confirmado",
       "leads": 0,
       "agencias": [
@@ -601,28 +1003,6 @@
       "searched_at": "2026-09-25T23:37:03.990Z",
       "result": "encontrado",
       "leads": 1,
-      "agencias": [
-        "Lupa",
-        "Comprova"
-      ]
-    },
-    {
-      "candidate_id": "4e667335-32ef-4015-8ca8-c219eff2a9d6",
-      "candidate_slug": "vera-lucia",
-      "searched_at": "2026-09-25T23:32:10.796Z",
-      "result": "encontrado",
-      "leads": 3,
-      "agencias": [
-        "Lupa",
-        "Comprova"
-      ]
-    },
-    {
-      "candidate_id": "2ba79079-e5a4-4275-8cb8-9419bf8db9aa",
-      "candidate_slug": "vera-lucia-ce",
-      "searched_at": "2026-09-25T23:28:56.172Z",
-      "result": "encontrado",
-      "leads": 3,
       "agencias": [
         "Lupa",
         "Comprova"

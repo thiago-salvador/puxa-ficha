@@ -37,15 +37,19 @@ on:
 permissions:
   contents: read
 
+# Mesmo grupo dos ingests que escrevem no banco: nunca concorre com eles.
 concurrency:
-  group: checagens-coleta
+  group: ingest-pipeline
   cancel-in-progress: false
 
 jobs:
   coletar:
     name: Busca nominal nas agências
     runs-on: ubuntu-latest
-    # 204 candidaturas x 7 agências com pausa de 1 s e espera longa em 429/503.
+    # 204 candidaturas x 7 agências com pausa de 1 s (~25 min). Limite de taxa
+    # do Google abre o disjuntor depois de 3 bloqueios seguidos ou 10 min de
+    # espera somada: as agências só-Google viram `erro` no resto da rodada, e o
+    # coleta_log e o resumo são gravados mesmo assim.
     timeout-minutes: 90
     steps:
       - name: Vigência da rotina

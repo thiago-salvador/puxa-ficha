@@ -6,6 +6,9 @@ import committedReceipts from "../scripts/data/checagens-recibos.json"
 import {
   AGENCIAS_CHECAGEM,
   BloqueioDeTaxa,
+  aplicarRegraHomonimo,
+  gruposDeHomonimos,
+  marcadoresDistintivos,
   coletarChecagens,
   consolidarCatalogoRecibos,
   entradaColetaDoRecibo,
@@ -162,6 +165,78 @@ describe("coleta nominal de checagens", () => {
       },
     }), (error: unknown) => error instanceof BloqueioDeTaxa && error.candidateSlug === "b")
     assert.deepEqual(concluidos, ["ronaldo-caiado"])
+  })
+
+  it("homônimos: só lead com marca distintiva no título conta, o resto vira recibo homonimo", async () => {
+    const veraSp: CandidatoChecagem = { id: "vera-sp", slug: "vera-lucia", nome_urna: "Vera Lúcia", nome_completo: "Vera Lúcia Pereira da Silva Salgado", cargo_disputado: "Governador", estado: "SP" }
+    const veraCe: CandidatoChecagem = { id: "vera-ce", slug: "vera-lucia-ce", nome_urna: "Vera Lúcia", nome_completo: "Vera Lucia da Silva", cargo_disputado: "Governador", estado: "CE" }
+    const grupos = gruposDeHomonimos([veraSp, veraCe, caiado])
+    assert.equal(grupos.get("cand-caiado\u0000ronaldo-caiado"), undefined)
+    assert.deepEqual(marcadoresDistintivos(veraSp, grupos.get("vera-sp\u0000vera-lucia")!), ["pereira", "salgado", "sao paulo"])
+    assert.deepEqual(marcadoresDistintivos(veraCe, grupos.get("vera-ce\u0000vera-lucia-ce")!), ["ceara"])
+    const titulos = ["Na CBN, Vera Lúcia erra sobre número de mães solo", "Em São Paulo, Vera Lúcia erra dado de transporte"]
+    const recibos = await coletarChecagens({
+      roster: [veraSp, veraCe],
+      concorrencia: 1,
+      sleep: async () => {},
+      fetchText: async (url) => {
+        if (url.includes("agencialupa.org/wp-json")) return { status: 200, body: JSON.stringify(titulos.map((title, index) => ({ title, url: `https://www.agencialupa.org/checagem/${index}` }))) }
+        if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
+        return { status: 200, body: rss([]) }
+      },
+    })
+    const [sp, ce] = recibos
+    assert.equal(sp.result, "encontrado")
+    assert.deepEqual(sp.leads.map((lead) => lead.titulo), ["Em São Paulo, Vera Lúcia erra dado de transporte"])
+    assert.equal(sp.agencias.lupa.leads, 1)
+    assert.equal(ce.result, "homonimo")
+    assert.equal(ce.leads.length, 0)
+    assert.deepEqual(ce.homonimo, { grupo: ["vera-lucia", "vera-lucia-ce"], descartados: 2, marcadores: ["ceara"] })
+    const entrada = entradaColetaDoRecibo(ce)
+    assert.equal(entrada.resultado, "indeterminado")
+    assert.equal(entrada.volume, 0)
+    assert.match(entrada.detalhe ?? "", /homônimo de vera-lucia, vera-lucia-ce: 2 lead\(s\)/)
+    const publico = consolidarCatalogoRecibos(consolidarCatalogoRecibos(null, [montarRecibo(veraCe, okEmTodas({ lupa: 2 }), new Date("2026-09-20T00:00:00Z"))], now), [ce], now)
+    assert.equal(publico.receipts.length, 0, "homônimo derruba o recibo público anterior e não publica contagem")
+    assert.deepEqual(aplicarRegraHomonimo(ce, veraCe, grupos.get("vera-ce\u0000vera-lucia-ce")), ce, "regra é idempotente")
+  })
+
+  it("disjuntor: 3 limites seguidos desligam o Google na rodada e o resto vira erro sem pedido", async () => {
+    let google = 0
+    const recibos = await coletarChecagens({
+      roster: [caiado, { ...caiado, id: "cand-b", slug: "b" }],
+      concorrencia: 1,
+      sleep: async () => {},
+      fetchText: async (url) => {
+        if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
+        google++
+        return { status: 503, body: "" }
+      },
+    })
+    assert.equal(google, 3, "sem pedido ao Google depois de abrir o disjuntor")
+    assert.deepEqual(recibos.map((recibo) => recibo.result), ["erro", "erro"])
+    assert.match(recibos[1].agencias["aos-fatos"].erro ?? "", /disjuntor aberto após 3 limites de taxa seguidos/)
+    assert.equal(recibos[1].agencias.lupa.status, "ok", "busca nativa segue funcionando")
+  })
+
+  it("disjuntor: orçamento de espera esgota antes dos bloqueios seguidos", async () => {
+    let google = 0
+    const recibos = await coletarChecagens({
+      roster: [caiado],
+      concorrencia: 1,
+      limiteBloqueiosSeguidos: 99,
+      esperaBloqueioMs: 1_000,
+      orcamentoEsperaMs: 2_500,
+      sleep: async () => {},
+      fetchText: async (url) => {
+        if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
+        google++
+        return { status: 429, body: "" }
+      },
+    })
+    assert.equal(recibos[0].result, "erro")
+    assert.match(recibos[0].agencias["afp-checamos"].erro ?? "", /orçamento de espera por limite de taxa esgotado/)
+    assert.ok(google <= 4, `pedidos ao Google: ${google}`)
   })
 
   it("recibo parcial conta como incompleto para retomada", () => {
