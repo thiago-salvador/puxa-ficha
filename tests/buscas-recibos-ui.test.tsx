@@ -22,8 +22,11 @@ const agencias = ["Lupa", "Aos Fatos", "Fato ou Fake", "Estadão Verifica", "UOL
 describe("recibos de busca no site", () => {
   it("lê recibo válido e falha fechado em qualquer defeito", () => {
     const valid = { ...identity, searched_at: "2026-09-25T12:00:00Z", result: "vazio_confirmado", leads: 0, agencias: ["Lupa", "Aos Fatos"] }
-    assert.deepEqual(selecionarReciboChecagens(catalog([valid]), identity), { searchedAt: valid.searched_at, result: "vazio_confirmado", leads: 0, agencias: ["Lupa", "Aos Fatos"] })
-    assert.deepEqual(selecionarReciboChecagens(catalog([{ ...valid, agencias: ["Lupa"] }]), identity)?.agencias, ["Lupa"])
+    assert.deepEqual(selecionarReciboChecagens(catalog([valid]), identity), { searchedAt: valid.searched_at, result: "vazio_confirmado", leads: 0, agencias: ["Lupa", "Aos Fatos"], naoResponderam: [] })
+    const parcial = { ...valid, result: "encontrado", leads: 1, agencias: ["Lupa"] }
+    assert.deepEqual(selecionarReciboChecagens(catalog([parcial]), identity)?.naoResponderam, ["Aos Fatos"])
+    assert.equal(selecionarReciboChecagens(catalog([{ ...valid, agencias: ["Lupa"] }]), identity), null, "vazio só com todas as agências respondendo")
+    assert.equal(selecionarReciboChecagens(catalog([{ ...parcial, agencias: ["Lupa", "Agência Inventada"] }]), identity), null, "agência fora do escopo")
     assert.equal(selecionarReciboChecagens(catalog([{ ...valid, agencias: undefined }]), identity), null, "sem lista própria de agências não herda a do catálogo")
     assert.equal(selecionarReciboChecagens(catalog([{ ...valid, agencias: [] }]), identity), null)
     assert.equal(selecionarReciboChecagens(catalog([{ ...valid, result: "erro" }]), identity), null)
@@ -46,7 +49,7 @@ describe("aba Checagens com recibo", () => {
   )
 
   it("diz que a busca foi feita e nada foi encontrado", () => {
-    const html = render({ searchedAt: "2026-09-25T15:00:00Z", result: "vazio_confirmado", leads: 0, agencias })
+    const html = render({ searchedAt: "2026-09-25T15:00:00Z", result: "vazio_confirmado", leads: 0, agencias, naoResponderam: [] })
     assert.match(html, /data-pf-checagens-busca="vazio_confirmado"/)
     assert.match(html, /Busca feita em 25\/09\/2026 em Lupa, Aos Fatos, Fato ou Fake, Estadão Verifica, UOL Confere, AFP Checamos e Comprova: nenhuma checagem com o nome desta candidatura no título\./)
     assert.doesNotMatch(html, /Avaliações publicadas por veículos/)
@@ -54,9 +57,18 @@ describe("aba Checagens com recibo", () => {
   })
 
   it("com leads em conferência não afirma ausência nas agências", () => {
-    const html = render({ searchedAt: "2026-09-25T15:00:00Z", result: "encontrado", leads: 3, agencias })
+    const html = render({ searchedAt: "2026-09-25T15:00:00Z", result: "encontrado", leads: 3, agencias, naoResponderam: [] })
     assert.match(html, /3 matérias citam o nome desta candidatura no título\. Nenhuma checagem de fala atribuída a ela foi conferida e publicada aqui até agora\./)
     assert.doesNotMatch(html, /nenhuma checagem com o nome/)
+  })
+
+  it("cobertura parcial diz quem não respondeu, com ou sem checagem publicada", () => {
+    const parcial = { searchedAt: "2026-09-25T15:00:00Z", result: "encontrado" as const, leads: 2, agencias: ["Lupa", "Comprova"], naoResponderam: ["Aos Fatos", "Fato ou Fake"] }
+    assert.match(render(parcial), /Busca feita em 25\/09\/2026 em Lupa e Comprova \(Aos Fatos e Fato ou Fake não responderam nesta busca\): 2 matérias citam/)
+    const comChecagens = renderToStaticMarkup(<AttributedFactChecks candidateId="d6740de5-c7d9-4978-ab49-b51a22481aa2" candidateSlug="lula" office="Presidente" uf={null} searchReceipt={parcial} />)
+    assert.match(comChecagens, /data-pf-attributed-check-id/)
+    assert.match(comChecagens, /Busca feita em 25\/09\/2026 em Lupa e Comprova \(Aos Fatos e Fato ou Fake não responderam nesta busca\)\./)
+    assert.match(render({ ...parcial, naoResponderam: ["AFP Checamos"] }), /\(AFP Checamos não respondeu nesta busca\)/)
   })
 
   it("sem recibo e sem checagem não renderiza nada", () => {

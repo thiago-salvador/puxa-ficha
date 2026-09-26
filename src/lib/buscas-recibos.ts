@@ -13,7 +13,10 @@ export interface ReciboChecagensVisivel {
   searchedAt: string
   result: "encontrado" | "vazio_confirmado"
   leads: number
+  /** Agências que responderam nesta busca. */
   agencias: string[]
+  /** Agências do escopo que não responderam. Vazio quando a busca foi completa. */
+  naoResponderam: string[]
 }
 
 export interface ReciboFalasVisivel {
@@ -55,7 +58,12 @@ export function selecionarReciboChecagens(raw: unknown, identity: IdentidadeReci
   if (row.result !== "encontrado" && row.result !== "vazio_confirmado") return null
   const leads = typeof row.leads === "number" && Number.isInteger(row.leads) && row.leads >= 0 ? row.leads : null
   if (leads === null || (row.result === "encontrado") !== (leads > 0)) return null
-  return { searchedAt: row.searched_at, result: row.result, leads, agencias }
+  const escopo = raw.agencias.filter((agencia): agencia is string => typeof agencia === "string" && agencia.trim().length > 0)
+  if (agencias.some((agencia) => !escopo.includes(agencia))) return null
+  const naoResponderam = escopo.filter((agencia) => !agencias.includes(agencia))
+  // Ausência só se afirma com todas as agências respondendo.
+  if (row.result === "vazio_confirmado" && naoResponderam.length > 0) return null
+  return { searchedAt: row.searched_at, result: row.result, leads, agencias, naoResponderam }
 }
 
 export function selecionarReciboFalas(raw: unknown, identity: IdentidadeRecibo): ReciboFalasVisivel | null {

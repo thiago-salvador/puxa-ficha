@@ -187,6 +187,11 @@ function tituloTemMarcador(titulo: string, marcadores: readonly string[]): boole
  * um recibo que deixa de ter homônimo recupera os leads originais.
  */
 export function aplicarRegraHomonimo(recibo: ReciboChecagem, candidato: CandidatoChecagem, grupo: readonly CandidatoChecagem[] | undefined): ReciboChecagem {
+  // Formato antigo: a regra já filtrou `leads` e não guardou os crus. Recalcular
+  // a partir do que sobrou transformaria homônimo em "nada encontrado".
+  if (recibo.homonimo && !Array.isArray(recibo.homonimo.leads_brutos)) {
+    throw new Error(`Recibo de ${recibo.candidate_slug} tem regra de homônimo sem leads crus (formato antigo); refaça a busca dessa candidatura`)
+  }
   const brutos = recibo.homonimo?.leads_brutos ?? recibo.leads
   const semHomonimo = !grupo || grupo.length < 2
   if (semHomonimo && !recibo.homonimo) return recibo
@@ -396,17 +401,27 @@ export interface CatalogoRecibosChecagens {
  * Consolida recibos novos sobre o catálogo anterior. Recibo com erro nunca
  * substitui um recibo válido anterior e nunca entra no catálogo público: o
  * site não pode afirmar ausência a partir de uma busca que falhou.
+ *
+ * `homonimos` são as chaves (id + slug) que o cadastro completo põe em grupo
+ * de mesmo nome de urna. Para elas, só fica no catálogo o recibo desta rodada
+ * que passou pela regra; entrada anterior sai mesmo quando a busca nova deu
+ * erro, porque pode ter sido contada antes da regra.
  */
 export function consolidarCatalogoRecibos(
   anterior: CatalogoRecibosChecagens | null,
   recibos: readonly ReciboChecagem[],
   now: Date,
+  homonimos: ReadonlySet<string> = new Set(),
 ): CatalogoRecibosChecagens {
   const porChave = new Map<string, ReciboChecagemPublico>()
-  for (const recibo of anterior?.receipts ?? []) porChave.set(`${recibo.candidate_id}\u0000${recibo.candidate_slug}`, recibo)
+  for (const recibo of anterior?.receipts ?? []) {
+    const chave = `${recibo.candidate_id}\u0000${recibo.candidate_slug}`
+    if (!homonimos.has(chave)) porChave.set(chave, recibo)
+  }
   for (const recibo of recibos) {
     if (recibo.result === "erro") continue
     const chave = `${recibo.candidate_id}\u0000${recibo.candidate_slug}`
+    if (homonimos.has(chave) && !recibo.homonimo) continue
     const atual = porChave.get(chave)
     if (atual && atual.searched_at > recibo.searched_at) continue
     // Homônimo mais recente derruba o recibo público anterior: a contagem não é atribuível.

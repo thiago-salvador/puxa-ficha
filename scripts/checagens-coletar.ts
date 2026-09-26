@@ -113,14 +113,21 @@ function reaplicarHomonimos(recibos: ReciboChecagem[], rosterPath: string): Reci
   })
 }
 
+/** Chaves (id + slug) em grupo de homônimos no cadastro completo. */
+function chavesHomonimos(roster: readonly CandidatoChecagem[]): Set<string> {
+  return new Set(gruposDeHomonimos(roster).keys())
+}
+
 async function registrarRecibosExistentes(arquivo: string, catalogoPath: string | undefined, gravarLog: boolean, rosterPath: string | undefined, salvarPath: string | undefined): Promise<number> {
-  const recibos = reaplicarHomonimos(lerRecibos(arquivo), rosterPath ?? resolve(dirname(arquivo), "roster.json"))
+  const cadastro = rosterPath ?? resolve(dirname(arquivo), "roster.json")
+  const recibos = reaplicarHomonimos(lerRecibos(arquivo), cadastro)
+  const homonimos = chavesHomonimos(JSON.parse(readFileSync(cadastro, "utf8")) as CandidatoChecagem[])
   // Guarda exatamente o que foi importado, com a regra aplicada: é a proveniência do catálogo.
   if (salvarPath) writeFileSync(salvarPath, JSON.stringify({ schema_version: "checagens-recibos-v1", origem: arquivo, execucao: EXECUCAO, receipts: recibos }, null, 2) + "\n")
   if (catalogoPath) {
     const caminho = resolve(catalogoPath)
     const anterior = existsSync(caminho) ? JSON.parse(readFileSync(caminho, "utf8")) as CatalogoRecibosChecagens : null
-    writeFileSync(caminho, JSON.stringify(consolidarCatalogoRecibos(anterior, recibos, new Date()), null, 2) + "\n")
+    writeFileSync(caminho, JSON.stringify(consolidarCatalogoRecibos(anterior, recibos, new Date(), homonimos), null, 2) + "\n")
   }
   const linhas = gravarLog ? await gravarColetaLog(recibos) : 0
   console.log(JSON.stringify({ ...resumirColeta(recibos), origem: arquivo, execucao: EXECUCAO, gravou_log: gravarLog, linhas_log: linhas }))
@@ -202,7 +209,7 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
   if (catalogoPath) {
     const caminho = resolve(catalogoPath)
     const anterior = existsSync(caminho) ? JSON.parse(readFileSync(caminho, "utf8")) as CatalogoRecibosChecagens : null
-    writeFileSync(caminho, JSON.stringify(consolidarCatalogoRecibos(anterior, recibos, new Date()), null, 2) + "\n")
+    writeFileSync(caminho, JSON.stringify(consolidarCatalogoRecibos(anterior, recibos, new Date(), chavesHomonimos(rosterCompleto)), null, 2) + "\n")
   }
   const resumoPath = resolve(out, "resumo.json")
   // O resumo sai antes de qualquer falha de gravação: a rodada interrompida também precisa de rastro.

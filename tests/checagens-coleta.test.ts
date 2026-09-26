@@ -221,6 +221,26 @@ describe("coleta nominal de checagens", () => {
     )
   })
 
+  it("recusa recibo antigo com regra de homônimo e sem leads crus", () => {
+    const veraSp: CandidatoChecagem = { id: "vera-sp", slug: "vera-lucia", nome_urna: "Vera Lúcia", nome_completo: "Vera Lúcia Pereira da Silva Salgado", cargo_disputado: "Governador", estado: "SP" }
+    const veraCe: CandidatoChecagem = { id: "vera-ce", slug: "vera-lucia-ce", nome_urna: "Vera Lúcia", nome_completo: "Vera Lucia da Silva", cargo_disputado: "Governador", estado: "CE" }
+    const antigo = { ...montarRecibo(veraCe, okEmTodas(), now), result: "homonimo" as const, homonimo: { grupo: ["vera-lucia", "vera-lucia-ce"], descartados: 5, marcadores: ["ceara"] } }
+    assert.throws(() => aplicarRegraHomonimo(antigo as never, veraCe, [veraSp, veraCe]), /sem leads crus \(formato antigo\)/)
+    assert.throws(() => aplicarRegraHomonimo(antigo as never, veraCe, undefined), /formato antigo/)
+  })
+
+  it("catálogo tira entrada pública de homônimo mesmo quando a busca nova dá erro", () => {
+    const veraCe: CandidatoChecagem = { id: "vera-ce", slug: "vera-lucia-ce", nome_urna: "Vera Lúcia", nome_completo: "Vera Lucia da Silva", cargo_disputado: "Governador", estado: "CE" }
+    const antigo = consolidarCatalogoRecibos(null, [montarRecibo(veraCe, okEmTodas({ lupa: 3 }), new Date("2026-09-20T00:00:00Z"))], now)
+    assert.equal(antigo.receipts.length, 1)
+    const erro = montarRecibo(veraCe, { ...okEmTodas(), lupa: { status: "erro", erro: "HTTP 503" } }, now)
+    const chaves = new Set(["vera-ce\u0000vera-lucia-ce"])
+    assert.equal(consolidarCatalogoRecibos(antigo, [erro], now, chaves).receipts.length, 0)
+    assert.equal(consolidarCatalogoRecibos(antigo, [erro], now).receipts.length, 1, "sem grupo informado, erro não mexe no anterior")
+    const semRegra = montarRecibo(veraCe, okEmTodas({ lupa: 1 }), now)
+    assert.equal(consolidarCatalogoRecibos(null, [semRegra], now, chaves).receipts.length, 0, "recibo de homônimo que não passou pela regra não publica")
+  })
+
   it("grupo entre cargos não usa estado como marca", () => {
     const presidente: CandidatoChecagem = { id: "p", slug: "joao-silva", nome_urna: "João Silva", nome_completo: "João Carlos Silva", cargo_disputado: "Presidente", estado: null }
     const governador: CandidatoChecagem = { id: "g", slug: "joao-silva-ba", nome_urna: "João Silva", nome_completo: "João Pedro Silva", cargo_disputado: "Governador", estado: "BA" }

@@ -169,7 +169,11 @@ function AttributedFactCheckCard({ check }: { check: AttributedFactCheck }) {
 
 /** Texto do recibo da busca nominal. Só é chamado com recibo válido. */
 function searchReceiptText(receipt: ReciboChecagensVisivel, publishedChecks: number): string {
-  const when = `Busca feita em ${formatarDataBusca(receipt.searchedAt)} em ${listarEmProsa(receipt.agencias)}`
+  // Cobertura parcial sempre visível: a frase nunca cita só quem respondeu.
+  const missing = receipt.naoResponderam.length === 0
+    ? ""
+    : ` (${listarEmProsa(receipt.naoResponderam)} ${receipt.naoResponderam.length === 1 ? "não respondeu" : "não responderam"} nesta busca)`
+  const when = `Busca feita em ${formatarDataBusca(receipt.searchedAt)} em ${listarEmProsa(receipt.agencias)}${missing}`
   if (publishedChecks > 0) return `${when}.`
   if (receipt.result === "vazio_confirmado") return `${when}: nenhuma checagem com o nome desta candidatura no título.`
   const matches = receipt.leads === 1 ? "1 matéria cita" : `${receipt.leads} matérias citam`
