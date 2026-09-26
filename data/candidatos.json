@@ -1002,7 +1002,7 @@
   },
   {
     "slug": "cleitinho",
-    "nome_completo": "Cleitinho Azevedo",
+    "nome_completo": "Cleiton Gontijo de Azevedo",
     "nome_urna": "Cleitinho",
     "cargo_disputado": "Governador",
     "estado": "MG",
@@ -1291,7 +1291,7 @@
     "cargo_disputado": "Governador",
     "estado": "BA",
     "ids": {
-      "camara": null,
+      "camara": 74058,
       "senado": null,
       "tse_sq_candidato": {
         "2022": "50001609248",
@@ -1439,7 +1439,7 @@
   },
   {
     "slug": "eduardo-braide",
-    "nome_completo": "Eduardo Costa Braide",
+    "nome_completo": "Eduardo Salim Braide",
     "nome_urna": "Eduardo Braide",
     "cargo_disputado": "Governador",
     "estado": "MA",
@@ -1854,7 +1854,7 @@
   },
   {
     "slug": "jhc",
-    "nome_completo": "Joao Henrique Caldas",
+    "nome_completo": "João Henrique Holanda Caldas",
     "nome_urna": "JHC",
     "cargo_disputado": "Governador",
     "estado": "AL",
@@ -1890,7 +1890,7 @@
   },
   {
     "slug": "alan-rick",
-    "nome_completo": "Alan Rick Pereira da Silva",
+    "nome_completo": "Alan Rick Miranda",
     "nome_urna": "Alan Rick",
     "cargo_disputado": "Governador",
     "estado": "AC",
@@ -2025,7 +2025,7 @@
   },
   {
     "slug": "eduardo-braga",
-    "nome_completo": "Eduardo Braga Granata",
+    "nome_completo": "Carlos Eduardo de Souza Braga",
     "nome_urna": "Eduardo Braga",
     "cargo_disputado": "Senador",
     "estado": "AM",
@@ -2138,7 +2138,7 @@
   },
   {
     "slug": "delegado-eder-mauro",
-    "nome_completo": "Eder Braga Mauro",
+    "nome_completo": "Eder Mauro Cardoso Barra",
     "nome_urna": "Delegado Eder Mauro",
     "cargo_disputado": "Senador",
     "estado": "PA",
@@ -2270,7 +2270,7 @@
   },
   {
     "slug": "dr-fernando-maximo",
-    "nome_completo": "Fernando Maximo de Oliveira",
+    "nome_completo": "Fernando Rodrigues Máximo",
     "nome_urna": "Dr. Fernando Maximo",
     "cargo_disputado": "Senador",
     "estado": "RO",
@@ -2448,7 +2448,7 @@
   },
   {
     "slug": "ataides-oliveira",
-    "nome_completo": "Ataides de Oliveira Leite",
+    "nome_completo": "Ataídes de Oliveira",
     "nome_urna": "Ataides Oliveira",
     "cargo_disputado": "Governador",
     "estado": "TO",
@@ -2463,7 +2463,7 @@
   },
   {
     "slug": "celina-leao",
-    "nome_completo": "Celina Leao Rocha de Siqueira Campos",
+    "nome_completo": "Celina Leão Hizim Ferreira",
     "nome_urna": "Celina Leao",
     "cargo_disputado": "Governador",
     "estado": "DF",
@@ -2510,7 +2510,7 @@
   },
   {
     "slug": "paula-belmonte",
-    "nome_completo": "Paula Francinete Belmonte da Silva",
+    "nome_completo": "Paula Moreno Paro Belmonte",
     "nome_urna": "Paula Belmonte",
     "cargo_disputado": "Governador",
     "estado": "DF",
@@ -2527,7 +2527,7 @@
   },
   {
     "slug": "daniel-vilela",
-    "nome_completo": "Daniel Goulart Vilela",
+    "nome_completo": "Daniel Elias Carvalho Vilela",
     "nome_urna": "Daniel Vilela",
     "cargo_disputado": "Governador",
     "estado": "GO",
@@ -2578,7 +2578,7 @@
   },
   {
     "slug": "wilder-morais",
-    "nome_completo": "Wilder Gomes de Morais",
+    "nome_completo": "Wilder Pedro de Morais",
     "nome_urna": "Wilder Morais",
     "cargo_disputado": "Governador",
     "estado": "GO",
@@ -2645,7 +2645,7 @@
   },
   {
     "slug": "fabio-trad",
-    "nome_completo": "Fabio Trad",
+    "nome_completo": "Fábio Ricardo Trad",
     "nome_urna": "Fabio Trad",
     "cargo_disputado": "Governador",
     "estado": "MS",
@@ -2709,7 +2709,7 @@
   },
   {
     "slug": "wellington-fagundes",
-    "nome_completo": "Wellington Fagundes",
+    "nome_completo": "Wellington Antônio Fagundes",
     "nome_urna": "Wellington Fagundes",
     "cargo_disputado": "Governador",
     "estado": "MT",
@@ -2792,7 +2792,7 @@
     "cargo_disputado": "Governador",
     "estado": "DF",
     "ids": {
-      "camara": null,
+      "camara": 74287,
       "senado": null,
       "tse_sq_candidato": {
         "2002": "463",
@@ -5147,7 +5147,7 @@
     "cargo_disputado": "Senador",
     "estado": "MA",
     "ids": {
-      "camara": null,
+      "camara": 167493,
       "senado": 5411,
       "tse_sq_candidato": {
         "2026": "100002537338"
@@ -5175,7 +5175,7 @@
     "cargo_disputado": "Senador",
     "estado": "MA",
     "ids": {
-      "camara": null,
+      "camara": 178883,
       "senado": 5718,
       "tse_sq_candidato": {
         "2026": "100002541459"
@@ -5189,7 +5189,7 @@
     "cargo_disputado": "Senador",
     "estado": "MA",
     "ids": {
-      "camara": null,
+      "camara": 178882,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "100002542867"
@@ -5217,7 +5217,7 @@
     "cargo_disputado": "Senador",
     "estado": "MA",
     "ids": {
-      "camara": null,
+      "camara": 73806,
       "senado": 3359,
       "tse_sq_candidato": {
         "2026": "100002549583"
@@ -5245,7 +5245,7 @@
     "cargo_disputado": "Senador",
     "estado": "MA",
     "ids": {
-      "camara": null,
+      "camara": 168175,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "100002553336"
@@ -5259,7 +5259,7 @@
     "cargo_disputado": "Senador",
     "estado": "AC",
     "ids": {
-      "camara": null,
+      "camara": 204471,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "10002533895"
@@ -5273,7 +5273,7 @@
     "cargo_disputado": "Senador",
     "estado": "AC",
     "ids": {
-      "camara": null,
+      "camara": 141541,
       "senado": 4560,
       "tse_sq_candidato": {
         "2026": "10002535804"
@@ -5329,7 +5329,7 @@
     "cargo_disputado": "Senador",
     "estado": "AC",
     "ids": {
-      "camara": null,
+      "camara": 220589,
       "senado": 5902,
       "tse_sq_candidato": {
         "2026": "10002544274"
@@ -5343,7 +5343,7 @@
     "cargo_disputado": "Senador",
     "estado": "AC",
     "ids": {
-      "camara": null,
+      "camara": 141446,
       "senado": 4558,
       "tse_sq_candidato": {
         "2026": "10002548046"
@@ -5357,7 +5357,7 @@
     "cargo_disputado": "Senador",
     "estado": "AC",
     "ids": {
-      "camara": null,
+      "camara": 74363,
       "senado": 285,
       "tse_sq_candidato": {
         "2026": "10002548050"
@@ -5455,7 +5455,7 @@
     "cargo_disputado": "Senador",
     "estado": "MT",
     "ids": {
-      "camara": null,
+      "camara": 204472,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "110002552693"
@@ -5511,7 +5511,7 @@
     "cargo_disputado": "Senador",
     "estado": "MS",
     "ids": {
-      "camara": null,
+      "camara": 160615,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "120002535764"
@@ -5553,7 +5553,7 @@
     "cargo_disputado": "Senador",
     "estado": "MS",
     "ids": {
-      "camara": null,
+      "camara": 74376,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "120002547435"
@@ -5665,7 +5665,7 @@
     "cargo_disputado": "Senador",
     "estado": "MG",
     "ids": {
-      "camara": null,
+      "camara": 146788,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "130002548381"
@@ -5679,7 +5679,7 @@
     "cargo_disputado": "Senador",
     "estado": "MG",
     "ids": {
-      "camara": null,
+      "camara": 204509,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "130002550557"
@@ -5735,7 +5735,7 @@
     "cargo_disputado": "Senador",
     "estado": "MG",
     "ids": {
-      "camara": null,
+      "camara": 160758,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "130002551786"
@@ -5833,7 +5833,7 @@
     "cargo_disputado": "Senador",
     "estado": "PA",
     "ids": {
-      "camara": null,
+      "camara": 204496,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "140002538404"
@@ -5847,7 +5847,7 @@
     "cargo_disputado": "Senador",
     "estado": "PA",
     "ids": {
-      "camara": null,
+      "camara": 73933,
       "senado": 3806,
       "tse_sq_candidato": {
         "2026": "140002542691"
@@ -6029,7 +6029,7 @@
     "cargo_disputado": "Senador",
     "estado": "PB",
     "ids": {
-      "camara": null,
+      "camara": 178913,
       "senado": 5748,
       "tse_sq_candidato": {
         "2026": "150002544905"
@@ -6057,7 +6057,7 @@
     "cargo_disputado": "Senador",
     "estado": "PB",
     "ids": {
-      "camara": null,
+      "camara": 149327,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "150002548968"
@@ -6127,7 +6127,7 @@
     "cargo_disputado": "Senador",
     "estado": "PR",
     "ids": {
-      "camara": null,
+      "camara": 107283,
       "senado": 5006,
       "tse_sq_candidato": {
         "2026": "160002547656"
@@ -6141,7 +6141,7 @@
     "cargo_disputado": "Senador",
     "estado": "PR",
     "ids": {
-      "camara": null,
+      "camara": 73459,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "160002547658"
@@ -6155,7 +6155,7 @@
     "cargo_disputado": "Senador",
     "estado": "PR",
     "ids": {
-      "camara": null,
+      "camara": 204411,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "160002547660"
@@ -6169,7 +6169,7 @@
     "cargo_disputado": "Senador",
     "estado": "PR",
     "ids": {
-      "camara": null,
+      "camara": 220705,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "160002547661"
@@ -6295,7 +6295,7 @@
     "cargo_disputado": "Senador",
     "estado": "PE",
     "ids": {
-      "camara": null,
+      "camara": 74428,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "170002539456"
@@ -6323,7 +6323,7 @@
     "cargo_disputado": "Senador",
     "estado": "PE",
     "ids": {
-      "camara": null,
+      "camara": 204428,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "170002547771"
@@ -6337,7 +6337,7 @@
     "cargo_disputado": "Senador",
     "estado": "PE",
     "ids": {
-      "camara": null,
+      "camara": 74420,
       "senado": 5008,
       "tse_sq_candidato": {
         "2026": "170002547773"
@@ -6351,7 +6351,7 @@
     "cargo_disputado": "Senador",
     "estado": "PE",
     "ids": {
-      "camara": null,
+      "camara": 74047,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "170002549655"
@@ -6365,7 +6365,7 @@
     "cargo_disputado": "Senador",
     "estado": "PE",
     "ids": {
-      "camara": null,
+      "camara": 157130,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "170002552097"
@@ -6379,7 +6379,7 @@
     "cargo_disputado": "Senador",
     "estado": "PE",
     "ids": {
-      "camara": null,
+      "camara": 141421,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "170002552102"
@@ -6407,7 +6407,7 @@
     "cargo_disputado": "Senador",
     "estado": "PI",
     "ids": {
-      "camara": null,
+      "camara": 74317,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "180002533964"
@@ -6421,7 +6421,7 @@
     "cargo_disputado": "Senador",
     "estado": "PI",
     "ids": {
-      "camara": null,
+      "camara": 74460,
       "senado": 742,
       "tse_sq_candidato": {
         "2026": "180002533967"
@@ -6449,7 +6449,7 @@
     "cargo_disputado": "Senador",
     "estado": "PI",
     "ids": {
-      "camara": null,
+      "camara": 74313,
       "senado": 739,
       "tse_sq_candidato": {
         "2026": "180002540446"
@@ -6701,7 +6701,7 @@
     "cargo_disputado": "Senador",
     "estado": "RJ",
     "ids": {
-      "camara": null,
+      "camara": 204460,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "190002542888"
@@ -6743,7 +6743,7 @@
     "cargo_disputado": "Senador",
     "estado": "RJ",
     "ids": {
-      "camara": null,
+      "camara": 73701,
       "senado": 7,
       "tse_sq_candidato": {
         "2026": "190002548141"
@@ -6757,7 +6757,7 @@
     "cargo_disputado": "Senador",
     "estado": "RJ",
     "ids": {
-      "camara": null,
+      "camara": 122158,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "190002548145"
@@ -6813,7 +6813,7 @@
     "cargo_disputado": "Senador",
     "estado": "RJ",
     "ids": {
-      "camara": null,
+      "camara": 220599,
       "senado": 3366,
       "tse_sq_candidato": {
         "2026": "190002550184"
@@ -6897,7 +6897,7 @@
     "cargo_disputado": "Senador",
     "estado": "RN",
     "ids": {
-      "camara": null,
+      "camara": 178951,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "200002533843"
@@ -6939,7 +6939,7 @@
     "cargo_disputado": "Senador",
     "estado": "RN",
     "ids": {
-      "camara": null,
+      "camara": 178949,
       "senado": 5783,
       "tse_sq_candidato": {
         "2026": "200002535507"
@@ -7107,7 +7107,7 @@
     "cargo_disputado": "Senador",
     "estado": "AL",
     "ids": {
-      "camara": null,
+      "camara": 160541,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "20002553272"
@@ -7149,7 +7149,7 @@
     "cargo_disputado": "Senador",
     "estado": "AL",
     "ids": {
-      "camara": null,
+      "camara": 139346,
       "senado": 70,
       "tse_sq_candidato": {
         "2026": "20002553727"
@@ -7191,7 +7191,7 @@
     "cargo_disputado": "Senador",
     "estado": "RS",
     "ids": {
-      "camara": null,
+      "camara": 141492,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "210002533581"
@@ -7205,7 +7205,7 @@
     "cargo_disputado": "Senador",
     "estado": "RS",
     "ids": {
-      "camara": null,
+      "camara": 74400,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "210002533584"
@@ -7247,7 +7247,7 @@
     "cargo_disputado": "Senador",
     "estado": "RS",
     "ids": {
-      "camara": null,
+      "camara": 73897,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "210002543863"
@@ -7303,7 +7303,7 @@
     "cargo_disputado": "Senador",
     "estado": "RS",
     "ids": {
-      "camara": null,
+      "camara": 204416,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "210002547816"
@@ -7317,7 +7317,7 @@
     "cargo_disputado": "Senador",
     "estado": "RS",
     "ids": {
-      "camara": null,
+      "camara": 156190,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "210002547819"
@@ -7401,7 +7401,7 @@
     "cargo_disputado": "Senador",
     "estado": "RO",
     "ids": {
-      "camara": null,
+      "camara": 204360,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "220002547309"
@@ -7415,7 +7415,7 @@
     "cargo_disputado": "Senador",
     "estado": "RO",
     "ids": {
-      "camara": null,
+      "camara": 178956,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "220002547310"
@@ -7485,7 +7485,7 @@
     "cargo_disputado": "Senador",
     "estado": "RR",
     "ids": {
-      "camara": null,
+      "camara": 204479,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "230002534804"
@@ -7555,7 +7555,7 @@
     "cargo_disputado": "Senador",
     "estado": "RR",
     "ids": {
-      "camara": null,
+      "camara": 220537,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "230002549845"
@@ -7583,7 +7583,7 @@
     "cargo_disputado": "Senador",
     "estado": "RR",
     "ids": {
-      "camara": null,
+      "camara": 73981,
       "senado": 470,
       "tse_sq_candidato": {
         "2026": "230002550794"
@@ -7625,7 +7625,7 @@
     "cargo_disputado": "Senador",
     "estado": "RR",
     "ids": {
-      "camara": null,
+      "camara": 141496,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "230002553636"
@@ -7695,7 +7695,7 @@
     "cargo_disputado": "Senador",
     "estado": "SC",
     "ids": {
-      "camara": null,
+      "camara": 204369,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "240002541931"
@@ -7751,7 +7751,7 @@
     "cargo_disputado": "Senador",
     "estado": "SC",
     "ids": {
-      "camara": null,
+      "camara": 160649,
       "senado": 22,
       "tse_sq_candidato": {
         "2026": "240002548632"
@@ -7807,7 +7807,7 @@
     "cargo_disputado": "Senador",
     "estado": "SP",
     "ids": {
-      "camara": null,
+      "camara": 220633,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "250002532794"
@@ -7891,7 +7891,7 @@
     "cargo_disputado": "Senador",
     "estado": "SP",
     "ids": {
-      "camara": null,
+      "camara": 220637,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "250002551501"
@@ -8017,7 +8017,7 @@
     "cargo_disputado": "Senador",
     "estado": "SE",
     "ids": {
-      "camara": null,
+      "camara": 141468,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "260002545677"
@@ -8031,7 +8031,7 @@
     "cargo_disputado": "Senador",
     "estado": "SE",
     "ids": {
-      "camara": null,
+      "camara": 160568,
       "senado": 5352,
       "tse_sq_candidato": {
         "2026": "260002547285"
@@ -8045,7 +8045,7 @@
     "cargo_disputado": "Senador",
     "estado": "SE",
     "ids": {
-      "camara": null,
+      "camara": 160543,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "260002547290"
@@ -8059,7 +8059,7 @@
     "cargo_disputado": "Senador",
     "estado": "SE",
     "ids": {
-      "camara": null,
+      "camara": 141420,
       "senado": 4721,
       "tse_sq_candidato": {
         "2026": "260002549127"
@@ -8087,7 +8087,7 @@
     "cargo_disputado": "Senador",
     "estado": "SE",
     "ids": {
-      "camara": null,
+      "camara": 165470,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "260002551362"
@@ -8157,7 +8157,7 @@
     "cargo_disputado": "Senador",
     "estado": "TO",
     "ids": {
-      "camara": null,
+      "camara": 74192,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "270002544629"
@@ -8171,7 +8171,7 @@
     "cargo_disputado": "Senador",
     "estado": "TO",
     "ids": {
-      "camara": null,
+      "camara": 73948,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "270002546038"
@@ -8199,7 +8199,7 @@
     "cargo_disputado": "Senador",
     "estado": "TO",
     "ids": {
-      "camara": null,
+      "camara": 73945,
       "senado": 3777,
       "tse_sq_candidato": {
         "2026": "270002546333"
@@ -8213,7 +8213,7 @@
     "cargo_disputado": "Senador",
     "estado": "TO",
     "ids": {
-      "camara": null,
+      "camara": 178993,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "270002548231"
@@ -8227,7 +8227,7 @@
     "cargo_disputado": "Senador",
     "estado": "TO",
     "ids": {
-      "camara": null,
+      "camara": 220542,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "270002548344"
@@ -8241,7 +8241,7 @@
     "cargo_disputado": "Senador",
     "estado": "TO",
     "ids": {
-      "camara": null,
+      "camara": 204364,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "270002548409"
@@ -8353,7 +8353,7 @@
     "cargo_disputado": "Senador",
     "estado": "AP",
     "ids": {
-      "camara": null,
+      "camara": 204379,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "30002549911"
@@ -8451,7 +8451,7 @@
     "cargo_disputado": "Senador",
     "estado": "AM",
     "ids": {
-      "camara": null,
+      "camara": 172711,
       "senado": 5502,
       "tse_sq_candidato": {
         "2026": "40002537344"
@@ -8479,7 +8479,7 @@
     "cargo_disputado": "Senador",
     "estado": "AM",
     "ids": {
-      "camara": null,
+      "camara": 204572,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "40002542686"
@@ -8577,7 +8577,7 @@
     "cargo_disputado": "Senador",
     "estado": "BA",
     "ids": {
-      "camara": null,
+      "camara": 74548,
       "senado": 581,
       "tse_sq_candidato": {
         "2026": "50002536317"
@@ -8591,7 +8591,7 @@
     "cargo_disputado": "Senador",
     "estado": "BA",
     "ids": {
-      "camara": null,
+      "camara": 104254,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "50002536321"
@@ -8703,7 +8703,7 @@
     "cargo_disputado": "Senador",
     "estado": "CE",
     "ids": {
-      "camara": null,
+      "camara": 178866,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "60002542476"
@@ -8829,7 +8829,7 @@
     "cargo_disputado": "Senador",
     "estado": "DF",
     "ids": {
-      "camara": null,
+      "camara": 160575,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "70002552490"
@@ -8871,7 +8871,7 @@
     "cargo_disputado": "Senador",
     "estado": "DF",
     "ids": {
-      "camara": null,
+      "camara": 204374,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "70002552934"
@@ -8899,7 +8899,7 @@
     "cargo_disputado": "Senador",
     "estado": "DF",
     "ids": {
-      "camara": null,
+      "camara": 160637,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "70002553751"
@@ -8983,7 +8983,7 @@
     "cargo_disputado": "Senador",
     "estado": "ES",
     "ids": {
-      "camara": null,
+      "camara": 73507,
       "senado": 2331,
       "tse_sq_candidato": {
         "2026": "80002551368"
@@ -8997,7 +8997,7 @@
     "cargo_disputado": "Senador",
     "estado": "ES",
     "ids": {
-      "camara": null,
+      "camara": 74166,
       "senado": 3868,
       "tse_sq_candidato": {
         "2026": "80002551370"
@@ -9039,7 +9039,7 @@
     "cargo_disputado": "Senador",
     "estado": "ES",
     "ids": {
-      "camara": null,
+      "camara": 178871,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "80002553265"
@@ -9123,7 +9123,7 @@
     "cargo_disputado": "Senador",
     "estado": "GO",
     "ids": {
-      "camara": null,
+      "camara": 220568,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "90002543556"
@@ -9179,7 +9179,7 @@
     "cargo_disputado": "Senador",
     "estado": "GO",
     "ids": {
-      "camara": null,
+      "camara": 204412,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "90002546974"
