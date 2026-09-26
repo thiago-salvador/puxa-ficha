@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Prova em PostgreSQL 17 descartável as migrations 20260926180000 (situação de
-# godeiro-linharess e laudicerio-aguiar) e 20260926180100 (chapa de
-# laudicerio-aguiar com a vice vigente), sobre o schema real de candidatos,
+# godeiro-linharess e laudicerio-aguiar), 20260926180100 (chapa de
+# laudicerio-aguiar com a vice vigente) e 20260926180200 (biografia de
+# laudicerio-aguiar sem a frase de ausência no TSE), sobre o schema real de candidatos,
 # chapas_2026 e coleta_log (scripts/audit/lib/chapas-2026-real-schema.sql, com
 # os CHECK de produção): readbacks reprovam o pré-estado, migrations reprovam
 # preimagem adulterada, ficha despublicada, chapa já confirmada e chapa da
@@ -19,9 +20,10 @@ cd "$ROOT"
 IMAGE="postgres:17@sha256:7958605b474b3d264a969cb3a123d6aa00ad1e1fe9da8a69984dabb704d93317"
 V="20260926180000_situacao_godeiro_laudicerio"
 V2="20260926180100_chapa_laudicerio_vice_vigente"
+V3="20260926180200_biografia_laudicerio_sem_ausencia_tse"
 REAL_SCHEMA="scripts/audit/lib/chapas-2026-real-schema.sql"
 SNAPSHOT_SQL="scripts/audit/data-freshness-snapshot.sql"
-for f in "supabase/migrations/$V.sql" "supabase/migrations/$V2.sql" "$REAL_SCHEMA" "$SNAPSHOT_SQL"; do
+for f in "supabase/migrations/$V.sql" "supabase/migrations/$V2.sql" "supabase/migrations/$V3.sql" "$REAL_SCHEMA" "$SNAPSHOT_SQL"; do
   [[ -f "$f" ]] || { echo "FAIL: artefato ausente: $f" >&2; exit 2; }
 done
 
@@ -73,7 +75,7 @@ INSERT INTO public.candidatos (id, slug, nome_completo, nome_urna, partido_atual
    'RN','candidato',true,'pendente de julgamento','200002554482','https://example.test/f.jpg','bio','Mossoró (RN)','Superior completo',
    'Empresário','Masculino','Solteiro(a)','Parda','1977-04-25','{"candidate_registration":{},"candidate_complement":{}}','2026-09-17T02:27:47Z'),
   ('9f4c6003-20a5-486e-9c7a-90d48d4cdcd0','laudicerio-aguiar','Laudicerio Aguiar Machado','Laudicerio Aguiar','Agir','AGIR','Governador',
-   'MT','candidato',true,'indeferido com recurso','110002554073','https://example.test/l.jpg','bio','Cuiabá (MT)','Superior completo',
+   'MT','candidato',true,'indeferido com recurso','110002554073','https://example.test/l.jpg','Laudicério Aguiar Machado, conhecido como Sargento Laudicério, é sargento da Polícia Militar, cientista social e político de Mato Grosso, natural de Cuiabá. Em maio de 2026, confirmou candidatura ao governo de Mato Grosso pelo Agir. Encerrado o prazo de registro em 15 de agosto de 2026, o nome dele não consta na base oficial de candidaturas do TSE.','Cuiabá (MT)','Superior completo',
    'Sargento','Masculino','Solteiro(a)','Parda','1978-12-18','{"candidate_registration":{},"candidate_complement":{}}','2026-09-09T14:39:29.840203Z'),
   ('3cdec46b-b0b6-48f6-9de8-757958548a25','sargento-karen-fortes','KAREN DE ARRUDA FORTES','SARGENTO KAREN FORTES','AGIR','AGIR','VICE-GOVERNADOR',
    'MT','pre-candidato',false,'candidatura declarada','110002554503',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'{}','2026-09-01T00:00:00Z'),
@@ -144,7 +146,7 @@ vices_esperadas=$'garotinho|["190002550197", "190002554226"]\ngodeiro-linharess|
 # aplicadas: a consulta devolve idempotency_key vazio no fim da linha.
 ledger_runner() {
   local cols="coalesce(max(version),'')"
-  for v in 20260925230100 20260926180000 20260926180100; do
+  for v in 20260925230100 20260926180000 20260926180100 20260926180200; do
     cols+=" || '|' || count(*) filter (where version='$v') || '|' || coalesce(max(idempotency_key) filter (where version='$v'),'')"
   done
   q -Atq -F '|' -c "select $cols from supabase_migrations.schema_migrations"
@@ -153,7 +155,7 @@ trecho_leitura="$(awk '/^# read -a descarta campos vazios/{f=1} /^if \[\[ "\$apl
 [[ -n "$trecho_leitura" ]] || { echo "FAIL: trecho de leitura do ledger não encontrado no runner" >&2; exit 1; }
 programa_leitura="$(mktemp)"
 {
-  printf '%s\n' 'set -euo pipefail' 'versions=(20260926180000 20260926180100)' 'digests=(sha256:d0 sha256:d1)'
+  printf '%s\n' 'set -euo pipefail' 'versions=(20260926180000 20260926180100 20260926180200)' 'digests=(sha256:d0 sha256:d1 sha256:d2)'
   printf 'estado=%q\n' "$(ledger_runner)"
   printf '%s\n' "$trecho_leitura"
   # shellcheck disable=SC2016 # expansão acontece no programa gerado, não aqui
@@ -165,6 +167,11 @@ rm -f "$programa_leitura"
 
 falha_esperada "readback de situação aceitou o pré-estado" "supabase/readback/$V.readback.sql"
 falha_esperada "readback da chapa aceitou o pré-estado" "supabase/readback/$V2.readback.sql"
+falha_esperada "readback da biografia aceitou o pré-estado" "supabase/readback/$V3.readback.sql"
+
+q -q -c "UPDATE public.candidatos SET biografia=biografia||' ' WHERE slug='laudicerio-aguiar'"
+falha_esperada "migration da biografia aceitou texto diferente da preimagem" "supabase/migrations/$V3.sql"
+q -q -c "UPDATE public.candidatos SET biografia=rtrim(biografia) WHERE slug='laudicerio-aguiar'"
 
 q -q -c "UPDATE public.candidatos SET situacao_candidatura='aguardando julgamento' WHERE slug='godeiro-linharess'"
 falha_esperada "migration aceitou situação adulterada" "supabase/migrations/$V.sql"
@@ -196,6 +203,18 @@ q -q < "supabase/readback/$V.readback.sql"
 q -q < "supabase/migrations/$V2.sql"
 q -q -c "INSERT INTO supabase_migrations.schema_migrations(version, idempotency_key) VALUES ('20260926180100', 'sha256:fixture')"
 q -q < "supabase/readback/$V2.readback.sql"
+q -q < "supabase/migrations/$V3.sql"
+q -q -c "INSERT INTO supabase_migrations.schema_migrations(version, idempotency_key) VALUES ('20260926180200', 'sha256:fixture')"
+q -q < "supabase/readback/$V3.readback.sql"
+bio="$(q -Atq -c "SELECT md5(biografia)||':'||length(biografia) FROM public.candidatos WHERE slug='laudicerio-aguiar'")"
+[[ "$bio" == "5aa3e29c19da96a97d8832733ea7a8d8:232" ]] || { echo "FAIL: biografia inesperada: $bio" >&2; exit 1; }
+# Mesma sequência de rodar_readbacks do runner: as três, depois do conjunto inteiro.
+q -q < "supabase/readback/$V.readback.sql"
+q -q < "supabase/readback/$V2.readback.sql"
+q -q < "supabase/readback/$V3.readback.sql"
+q -q -c "UPDATE public.candidatos SET biografia='outra' WHERE slug='laudicerio-aguiar'"
+falha_esperada "readback de situação aceitou biografia fora das duas postimagens" "supabase/readback/$V.readback.sql"
+q -q -c "UPDATE public.candidatos SET biografia='Laudicério Aguiar Machado, conhecido como Sargento Laudicério, é sargento da Polícia Militar, cientista social e político de Mato Grosso, natural de Cuiabá. Em maio de 2026, confirmou candidatura ao governo de Mato Grosso pelo Agir.' WHERE slug='laudicerio-aguiar'"
 
 estado="$(q -Atq -c "SELECT string_agg(slug||':'||situacao_candidatura||':'||status||':'||publicavel||':'||to_char(ultima_atualizacao AT TIME ZONE 'UTC','YYYY-MM-DD\"T\"HH24:MI:SS'), ',' ORDER BY slug) FROM public.candidatos WHERE slug IN ('godeiro-linharess','laudicerio-aguiar')")"
 esperado="godeiro-linharess:deferido:candidato:true:2026-09-26T17:39:58,laudicerio-aguiar:deferido:candidato:true:2026-09-26T17:39:58"
@@ -213,12 +232,19 @@ q -q -c "UPDATE public.chapas_2026 SET identidade_status='duplicidade_oficial' W
 falha_esperada "readback aceitou chapa adulterada" "supabase/readback/$V2.readback.sql"
 q -q -c "UPDATE public.chapas_2026 SET identidade_status='confirmada' WHERE id='5be60ab8-7a47-4a75-ac7e-6e159998ea7d'"
 q -q < "supabase/readback/$V2.readback.sql"
+q -q -c "UPDATE public.candidatos SET biografia=biografia||' Frase nova.' WHERE slug='laudicerio-aguiar'"
+falha_esperada "readback aceitou biografia adulterada" "supabase/readback/$V3.readback.sql"
+q -q -c "UPDATE public.candidatos SET biografia=left(biografia, 232) WHERE slug='laudicerio-aguiar'"
+q -q < "supabase/readback/$V3.readback.sql"
 
 q -q -c "INSERT INTO supabase_migrations.schema_migrations(version, idempotency_key) VALUES ('20260930000000', 'sha256:future')"
-falha_esperada "rollback da chapa aceitou migration posterior" "supabase/rollback/$V2.rollback.sql"
+falha_esperada "rollback da biografia aceitou migration posterior" "supabase/rollback/$V3.rollback.sql"
 q -q -c "DELETE FROM supabase_migrations.schema_migrations WHERE version='20260930000000'"
-falha_esperada "rollback de situação aceitou migration posterior (chapa no topo)" "supabase/rollback/$V.rollback.sql"
+falha_esperada "rollback da chapa aceitou migration posterior (biografia no topo)" "supabase/rollback/$V2.rollback.sql"
+falha_esperada "rollback de situação aceitou migration posterior (biografia no topo)" "supabase/rollback/$V.rollback.sql"
 
+q -q < "supabase/rollback/$V3.rollback.sql"
+q -q < "supabase/readback/$V3.rollback.readback.sql"
 q -q < "supabase/rollback/$V2.rollback.sql"
 q -q < "supabase/readback/$V2.rollback.readback.sql"
 q -q < "supabase/rollback/$V.rollback.sql"
@@ -228,4 +254,4 @@ q -q < "supabase/readback/$V.rollback.readback.sql"
 [[ "$(q -Atq -c "SELECT max(version) FROM supabase_migrations.schema_migrations")" == "20260925230100" ]] || { echo "FAIL: ledger final" >&2; exit 1; }
 [[ "$(q -Atq -c "SELECT count(*) FROM public.identidade_timeline_quarentena_snapshot")" == "0" ]] || { echo "FAIL: snapshot sobrou" >&2; exit 1; }
 
-echo "PASS: situação de godeiro-linharess e laudicerio-aguiar e chapa vigente de laudicerio-aguiar têm pré-estado, adulteração, ficha despublicada, SQ indeferido, chapa já confirmada, chapa indeferida alterada, vice diferente, forward com CHECK reais, vice da auditoria, readbacks, migration posterior, rollback inverso e sentinelas provados em PostgreSQL 17"
+echo "PASS: situação de godeiro-linharess e laudicerio-aguiar e chapa vigente de laudicerio-aguiar e biografia de laudicerio-aguiar têm pré-estado, adulteração, ficha despublicada, SQ indeferido, chapa já confirmada, chapa indeferida alterada, vice diferente, biografia fora da preimagem, forward com CHECK reais, vice da auditoria, readbacks, migration posterior, rollback inverso e sentinelas provados em PostgreSQL 17"

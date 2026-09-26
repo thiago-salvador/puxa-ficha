@@ -701,7 +701,7 @@
     {
       "nome": "situacao-godeiro-laudicerio-20260926",
       "desde": "20260926180000",
-      "ate": "20260926180100",
+      "ate": "20260926180200",
       "allowlist": "scripts/audit/allowlist-situacao-godeiro-laudicerio-20260926.json",
       "divida": null
     }

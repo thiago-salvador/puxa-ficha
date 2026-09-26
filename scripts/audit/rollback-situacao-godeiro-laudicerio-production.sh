@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Reverte, em ordem inversa, as migrations 20260926180100 (chapa de
-# laudicerio-aguiar) e 20260926180000 (situacao de godeiro-linharess e
+# Reverte, em ordem inversa, as migrations 20260926180200 (biografia de
+# laudicerio-aguiar), 20260926180100 (chapa de laudicerio-aguiar) e 20260926180000 (situacao de godeiro-linharess e
 # laudicerio-aguiar) que estiverem no topo do ledger, numa transacao so, com os
 # rollbacks versionados e os readbacks de rollback. Molde de
 # rollback-historico-mandatos-federais-production.sh.
@@ -51,8 +51,8 @@ export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
 base_version=20260925230100
-versions=(20260926180000 20260926180100)
-names=(situacao_godeiro_laudicerio chapa_laudicerio_vice_vigente)
+versions=(20260926180000 20260926180100 20260926180200)
+names=(situacao_godeiro_laudicerio chapa_laudicerio_vice_vigente biografia_laudicerio_sem_ausencia_tse)
 
 digests=()
 for i in "${!versions[@]}"; do

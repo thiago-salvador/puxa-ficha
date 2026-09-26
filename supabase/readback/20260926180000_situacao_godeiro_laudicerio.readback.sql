@@ -1,7 +1,7 @@
 BEGIN READ ONLY;
 SET LOCAL TIME ZONE 'UTC';
 DO $readback$
-DECLARE r jsonb; linha jsonb;
+DECLARE r jsonb; b jsonb; linha jsonb;
 BEGIN
   IF (SELECT count(*) FROM public.coleta_log WHERE execucao = 'migration:20260926180000') <> 1
      OR NOT EXISTS (SELECT 1 FROM public.coleta_log
@@ -14,9 +14,18 @@ BEGIN
     RAISE EXCEPTION 'situacao-gov-20260926 readback: recibo sem as duas linhas';
   END IF;
 
+  -- A 20260926180200 muda só a biografia de laudicerio-aguiar depois desta
+  -- migration. A postimagem é conferida sem biografia, e a biografia só pode
+  -- ser a desta postimagem ou a gravada no recibo da 20260926180200.
+  SELECT detalhe::jsonb INTO b FROM public.coleta_log WHERE execucao = 'migration:20260926180200';
   FOR linha IN SELECT value FROM jsonb_array_elements(r->'linhas') LOOP
-    IF (SELECT to_jsonb(c) FROM public.candidatos c WHERE c.slug = linha->>'slug')
-         IS DISTINCT FROM linha->'after' THEN
+    IF (SELECT to_jsonb(c) - 'biografia' FROM public.candidatos c WHERE c.slug = linha->>'slug')
+         IS DISTINCT FROM (linha->'after') - 'biografia'
+       OR NOT EXISTS (SELECT 1 FROM public.candidatos c WHERE c.slug = linha->>'slug'
+         AND (c.biografia IS NOT DISTINCT FROM linha->'after'->>'biografia'
+              OR (linha->>'slug' = 'laudicerio-aguiar'
+                  AND c.biografia = (SELECT x->'after'->>'biografia' FROM jsonb_array_elements(b->'linhas') x
+                                     WHERE x->>'slug' = 'laudicerio-aguiar')))) THEN
       RAISE EXCEPTION 'situacao-gov-20260926 readback: postimagem divergiu em %', linha->>'slug';
     END IF;
     IF (linha->'before') - 'situacao_candidatura' - 'ultima_atualizacao'

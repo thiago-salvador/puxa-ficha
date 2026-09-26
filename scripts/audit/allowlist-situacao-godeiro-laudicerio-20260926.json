@@ -1,8 +1,8 @@
 {
   "versao": "2026-09-26",
-  "_comentario": "Allowlist fechada das migrations 20260926180000 (situacao de godeiro-linharess e laudicerio-aguiar) e 20260926180100 (chapa de laudicerio-aguiar com a vice vigente). Cada uma aceita somente a preimagem medida em 2026-09-26 e grava snapshot de preimagem e recibo em coleta_log.",
+  "_comentario": "Allowlist fechada das migrations 20260926180000 (situacao de godeiro-linharess e laudicerio-aguiar), 20260926180100 (chapa de laudicerio-aguiar com a vice vigente) e 20260926180200 (biografia de laudicerio-aguiar sem a frase de ausencia no TSE). Cada uma aceita somente a preimagem medida em 2026-09-26 e grava snapshot de preimagem e recibo em coleta_log.",
   "fonte": "TSE DivulgaCandContas, detalhe dos SQ 200002554482, 110002554073, 110002553937, 110002554503 e 110002554099, relido em 2026-09-26T17:39:58Z; os corpos de 200002554482, 110002554073 e 110002553937 tem o mesmo SHA-256 gravado pela auditoria diaria 36259044035.",
-  "motivo": "Situacao publicada de duas fichas de governador divergia do DivulgaCand (ambas Deferido), e a chapa de laudicerio-aguiar seguia em quarentena de duplicidade depois que a inscricao 110002553937 foi indeferida e a vice vigente da inscricao ativa passou a ser SARGENTO KAREN FORTES.",
+  "motivo": "Situacao publicada de duas fichas de governador divergia do DivulgaCand (ambas Deferido), e a chapa de laudicerio-aguiar seguia em quarentena de duplicidade depois que a inscricao 110002553937 foi indeferida e a vice vigente da inscricao ativa passou a ser SARGENTO KAREN FORTES. A biografia de laudicerio-aguiar ainda afirmava que o nome dele nao consta da base oficial de candidaturas do TSE; a frase sai, sem texto novo.",
   "coorte": [
     "godeiro-linharess",
     "laudicerio-aguiar"
@@ -14,13 +14,27 @@
     {
       "tabela": "candidatos",
       "slug": "godeiro-linharess",
-      "campos": ["situacao_candidatura", "ultima_atualizacao"],
+      "campos": [
+        "situacao_candidatura",
+        "ultima_atualizacao"
+      ],
       "max_registros": 1
     },
     {
       "tabela": "candidatos",
       "slug": "laudicerio-aguiar",
-      "campos": ["situacao_candidatura", "ultima_atualizacao"],
+      "campos": [
+        "situacao_candidatura",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "laudicerio-aguiar",
+      "campos": [
+        "biografia"
+      ],
       "max_registros": 1
     }
   ],
@@ -28,27 +42,93 @@
     {
       "tabela": "identidade_timeline_quarentena_snapshot",
       "ref": "situacao-gov-20260926",
-      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+      "campos": [
+        "migration_version",
+        "tabela",
+        "row_id",
+        "candidato_id",
+        "preimage",
+        "postimage",
+        "registrado_em"
+      ]
     },
     {
       "tabela": "identidade_timeline_quarentena_snapshot",
       "ref": "chapa-laudicerio-20260926",
-      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+      "campos": [
+        "migration_version",
+        "tabela",
+        "row_id",
+        "candidato_id",
+        "preimage",
+        "postimage",
+        "registrado_em"
+      ]
+    },
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "bio-laudicerio-20260926",
+      "campos": [
+        "migration_version",
+        "tabela",
+        "row_id",
+        "candidato_id",
+        "preimage",
+        "postimage",
+        "registrado_em"
+      ]
     },
     {
       "tabela": "chapas_2026",
       "ref": "chapa-laudicerio-20260926",
-      "campos": ["identidade_status"]
+      "campos": [
+        "identidade_status"
+      ]
     },
     {
       "tabela": "coleta_log",
       "ref": "migration:20260926180000",
-      "campos": ["fonte", "escopo", "alvo", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
     },
     {
       "tabela": "coleta_log",
       "ref": "migration:20260926180100",
-      "campos": ["fonte", "escopo", "alvo", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260926180200",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
     }
   ]
 }

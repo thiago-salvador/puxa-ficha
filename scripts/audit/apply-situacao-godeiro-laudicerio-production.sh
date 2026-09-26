@@ -2,6 +2,7 @@
 # Aplica, em ordem de arquivo, as migrations de dado de 26/09/2026:
 #   20260926180000  situacao de godeiro-linharess e laudicerio-aguiar (Deferido)
 #   20260926180100  chapa de laudicerio-aguiar com a vice vigente (sai da duplicidade)
+#   20260926180200  biografia de laudicerio-aguiar sem a frase de ausencia no TSE
 # com predecessor, hash, lock, ledger e readback fechados para o projeto de
 # producao do Puxa Ficha. Molde de apply-historico-mandatos-federais-production.sh.
 #
@@ -63,8 +64,8 @@ base_migration="$ROOT/supabase/migrations/${base_version}_nome_civil_fichas_nao_
 [[ -f "$base_migration" ]] || { echo "FAIL: predecessor ${base_version} ausente" >&2; exit 2; }
 base_digest="sha256:$(shasum -a 256 "$base_migration" | cut -d' ' -f1)"
 
-versions=(20260926180000 20260926180100)
-names=(situacao_godeiro_laudicerio chapa_laudicerio_vice_vigente)
+versions=(20260926180000 20260926180100 20260926180200)
+names=(situacao_godeiro_laudicerio chapa_laudicerio_vice_vigente biografia_laudicerio_sem_ausencia_tse)
 
 digests=()
 for i in "${!versions[@]}"; do
