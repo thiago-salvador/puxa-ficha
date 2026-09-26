@@ -144,6 +144,29 @@ digest_sentinelas() {
 tudo_antes="$(digest_tudo)"
 sentinelas_antes="$(digest_sentinelas)"
 
+# Leitura do ledger pelo trecho real do runner, com as duas versões ainda não
+# aplicadas: a consulta devolve idempotency_key vazio no fim da linha.
+ledger_runner() {
+  local cols="coalesce(max(version),'')"
+  for v in 20260925220200 20260925230000 20260925230100; do
+    cols+=" || '|' || count(*) filter (where version='$v') || '|' || coalesce(max(idempotency_key) filter (where version='$v'),'')"
+  done
+  q -Atq -F '|' -c "select $cols from supabase_migrations.schema_migrations"
+}
+trecho_leitura="$(awk '/^# read -a descarta campos vazios/{f=1} /^if \[\[ "\$aplicadas" == "\$\{#versions\[@\]\}" \]\]/{f=0} f' scripts/audit/apply-historico-mandatos-federais-production.sh)"
+[[ -n "$trecho_leitura" ]] || { echo "FAIL: trecho de leitura do ledger não encontrado no runner" >&2; exit 1; }
+programa_leitura="$(mktemp)"
+{
+  printf '%s\n' 'set -euo pipefail' 'versions=(20260925230000 20260925230100)' 'digests=(sha256:d0 sha256:d1)'
+  printf 'estado=%q\n' "$(ledger_runner)"
+  printf '%s\n' "$trecho_leitura"
+  # shellcheck disable=SC2016 # expansão acontece no programa gerado, não aqui
+  printf '%s\n' 'echo "$topo $aplicadas"'
+} > "$programa_leitura"
+leitura="$(bash "$programa_leitura")" || { echo "FAIL: runner não leu o ledger com versões não aplicadas" >&2; exit 1; }
+rm -f "$programa_leitura"
+[[ "$leitura" == "20260925220200 0" ]] || { echo "FAIL: leitura do ledger inesperada: $leitura" >&2; exit 1; }
+
 falha_esperada "readback aceitou o pré-estado" "supabase/readback/$V.readback.sql"
 falha_esperada "readback de nome civil aceitou o pré-estado" "supabase/readback/$V2.readback.sql"
 

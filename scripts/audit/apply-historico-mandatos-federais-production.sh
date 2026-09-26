@@ -98,7 +98,14 @@ rodar_readbacks() {
 }
 
 estado="$(ler_ledger)"
-IFS='|' read -r -a campos <<<"$estado"
+# read -a descarta campos vazios no fim da linha (idempotency_key vazio quando a
+# versão ainda não está no ledger); a sentinela preserva todos os campos.
+IFS='|' read -r -a campos <<<"${estado}|FIM"
+esperados=$((3 + 2 * ${#versions[@]} + 1))
+if [[ "${#campos[@]}" != "$esperados" || "${campos[${#campos[@]}-1]}" != "FIM" ]]; then
+  echo "FAIL: leitura do ledger com ${#campos[@]} campos, esperados $esperados: $estado" >&2
+  exit 1
+fi
 topo="${campos[0]}"; base_count="${campos[1]}"; base_key="${campos[2]}"
 
 # Quantas versoes do conjunto ja estao no ledger, em prefixo e com digest.

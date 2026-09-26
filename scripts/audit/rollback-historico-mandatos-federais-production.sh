@@ -72,7 +72,14 @@ for v in "${versions[@]}"; do
 done
 estado="$(PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300000 -c lock_timeout=5000' \
   psql -X -v ON_ERROR_STOP=1 -Atq -F '|' -c "select $cols from supabase_migrations.schema_migrations")"
-IFS='|' read -r -a campos <<<"$estado"
+# read -a descarta campos vazios no fim da linha (idempotency_key vazio quando a
+# versão ainda não está no ledger); a sentinela preserva todos os campos.
+IFS='|' read -r -a campos <<<"${estado}|FIM"
+esperados=$((1 + 2 * ${#versions[@]} + 1))
+if [[ "${#campos[@]}" != "$esperados" || "${campos[${#campos[@]}-1]}" != "FIM" ]]; then
+  echo "FAIL: leitura do ledger com ${#campos[@]} campos, esperados $esperados: $estado" >&2
+  exit 1
+fi
 topo="${campos[0]}"
 
 # O conjunto aplicado tem de ser um prefixo com digest conferido, e o topo do
