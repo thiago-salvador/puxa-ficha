@@ -532,3 +532,52 @@ describe("volume do recibo encontrado", () => {
     assert.equal(entradaDaRevisao(revisao).volume, 2)
   })
 })
+
+describe("cache sanitizado nunca atribui processo", () => {
+  it("sem texto bruto, homônimo com CPF divergente e contexto político fica ambíguo", async () => {
+    const resultado = await pesquisarCandidato(
+      {
+        id: "id", slug: "carlos", nome_completo: "Carlos da Silva Teste", nome_urna: "Carlos",
+        cargo_disputado: "Senador", cargo_atual: "Senador", estado: "MG", partido_sigla: "PSD", biografia: null,
+      },
+      { slug: "carlos", nome_urna: "Carlos", cargo_disputado: "Senador", processos: 0 },
+      undefined,
+      new Map(),
+      ["TJMG"],
+      "/cache-nao-usado",
+      {
+        confirmarIdentidade: async () => ({ status: "confirmada", metodo: "tse-sq-candidato", nome: "Carlos da Silva Teste", cpf: "52998224725" }),
+        buscarDjen: async (consulta) => ({
+          schema_version: 2,
+          url: "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=x&pagina=1",
+          query_nome: consulta,
+          consultado_em: "2026-09-25T22:00:00Z",
+          total: 1,
+          itens: [{
+            id: 9, siglaTribunal: "TJMG", numeroprocessocommascara: "5001754-50.2024.8.13.0441",
+            texto: "Réu: CARLOS DA SILVA TESTE, Senador, CPF [cpf omitido]",
+            destinatarios: [{ nome: "CARLOS DA SILVA TESTE", polo: "P" }],
+          }],
+          paginas: 1,
+          completo: true,
+        }),
+      },
+    )
+    assert.equal(resultado.busca.conferencia_cpf, "indisponivel_cache_sanitizado")
+    assert.notEqual(resultado.classificacao, "encontrado")
+    assert.equal(resultado.processos.length, 0)
+    assert.equal(resultado.ocorrencias_ambiguas.length, 1)
+  })
+
+  it("aplicador recusa encontrado cuja busca veio do cache sanitizado", () => {
+    const evidencia = evidenciaCoorte()
+    const lote = (evidencia.lotes as Array<{ candidatos: Array<Record<string, unknown>> }>)[0]
+    lote.candidatos[0] = {
+      ...lote.candidatos[0],
+      classificacao: "encontrado",
+      busca: { ...(lote.candidatos[0].busca as Record<string, unknown>), conferencia_cpf: "indisponivel_cache_sanitizado" },
+    }
+    evidencia.resumo = { classificados: 1, encontrado: 1, vazio_confirmado: 0, bloqueado: 0, erro: 0 }
+    assert.throws(() => criarPlanos(validarEvidencia(evidencia)), /conferência de CPF no texto bruto/)
+  })
+})

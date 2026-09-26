@@ -1490,11 +1490,14 @@ export async function pesquisarCandidato(
       const contexto = contextoPolitico(c, snap, djen.textosBrutos?.get(item.id) ?? item.texto ?? "", nomeConsulta, identidade)
       const polo = item.destinatarios?.find((d) => nomeDestinatario(d.nome) === nome)?.polo ?? null
       const cnj = cnjValido(numero)
-      if (contexto && cnj) encontrados.set(numero, { item, contexto, polo })
+      // Sem texto bruto (cache sanitizado) o descarte por CPF não rodou: nada vira achado.
+      if (contexto && cnj && djen.textosBrutos) encontrados.set(numero, { item, contexto, polo })
       else ambiguos.set(numero, {
         numero_cnj: numero,
         tribunal: item.siglaTribunal ?? null,
-        motivo: contexto
+        motivo: contexto && cnj
+          ? "conferencia de CPF indisponivel no cache sanitizado; refazer a busca sem cache"
+          : contexto
           ? "comunicacao oficial sem numero CNJ validavel"
           : "nome exato sem segundo identificador oficial adjacente; identidade ambigua",
       })

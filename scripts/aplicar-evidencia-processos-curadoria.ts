@@ -602,6 +602,11 @@ function criarPlano(candidato: RegistroEvidencia, lote: LoteEvidencia): PlanoReg
     }
   }
 
+  // Busca servida do cache sanitizado não tem o texto bruto: o descarte de
+  // homônimo por CPF divergente não rodou, então nenhuma atribuição dela vale.
+  if (candidato.classificacao === "encontrado" && candidato.busca.conferencia_cpf === "indisponivel_cache_sanitizado") {
+    falhar(`${caminho}.busca.conferencia_cpf`, "encontrado exige conferência de CPF no texto bruto; refazer a busca sem cache")
+  }
   if (candidato.classificacao === "encontrado" && candidato.processos.length === 0) {
     falhar(`${caminho}.processos`, "classificacao encontrado exige ao menos um achado")
   }
