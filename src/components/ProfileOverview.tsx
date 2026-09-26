@@ -429,6 +429,7 @@ function PatrimonioTeaser({
   }
 
   const indicator = getPatrimonioGrowthIndicator(growthPct)
+  const serieComparavel = summary.sorted.filter((p) => patrimonioTemValorComparavel(p))
 
   return (
     <TeaserCard
@@ -445,12 +446,12 @@ function PatrimonioTeaser({
           </span>
         )}
       </div>
-      <PatrimonioChart
-        data={summary.sorted
-          .filter((p) => patrimonioTemValorComparavel(p))
-          .map((p) => ({ id: p.id, ano: p.ano_eleicao, valor: p.valor_total }))}
-      />
-      <PatrimonioEvolucaoAlerta patrimonio={summary.sorted.filter((p) => patrimonioTemValorComparavel(p))} className="mt-4 rounded-[12px] px-3 py-3 sm:px-3" />
+      {serieComparavel.length > 1 && (
+        <PatrimonioChart
+          data={serieComparavel.map((p) => ({ id: p.id, ano: p.ano_eleicao, valor: p.valor_total }))}
+        />
+      )}
+      <PatrimonioEvolucaoAlerta patrimonio={serieComparavel} className="mt-4 rounded-[12px] px-3 py-3 sm:px-3" />
     </TeaserCard>
   )
 }

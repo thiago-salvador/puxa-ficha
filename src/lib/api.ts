@@ -2364,7 +2364,8 @@ async function getCandidatosComResumoResourceUncached(
   })
 
   // F3 na grade: o aviso só aparece ao lado de um patrimônio exibido, então a
-  // série (3 colunas) só é lida para quem tem total positivo no resumo.
+  // série (com os bens, que separam zero declarado de valor não informado) só
+  // é lida para quem tem total positivo no resumo.
   const idsComPatrimonio = data
     .filter((row) => row.patrimonio != null && row.patrimonio > 0)
     .map((row) => row.candidato.id)

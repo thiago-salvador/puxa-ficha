@@ -730,6 +730,8 @@ export function MoneyTabSection({
     (eleicao) => eleicao.estado !== "publicado" || eleicao.contextos?.some((contexto) => contexto.estado === "vazio_confirmado"),
   )
   const patrimonioSerieAnual = patrimonioPorAnoSemAmbiguidade(patrimonio)
+  // Gráfico só com valores comparáveis; a contagem vem depois do filtro.
+  const patrimonioSerieComparavel = patrimonioSerieAnual.filter((item) => patrimonioTemValorComparavel(item))
   const patrimonioContagemPorAno = patrimonio.reduce((acc, row) => {
     acc.set(row.ano_eleicao, (acc.get(row.ano_eleicao) ?? 0) + 1)
     return acc
@@ -762,7 +764,7 @@ export function MoneyTabSection({
             <DataFreshnessNotice info={freshness?.patrimonio} />
           </div>
           <PatrimonioEvolucaoAlerta
-            patrimonio={patrimonioSerieAnual.filter((item) => patrimonioTemValorComparavel(item))}
+            patrimonio={patrimonioSerieComparavel}
             className="mt-4"
           />
           {patrimonioAnosComMultiplasDeclaracoes.length > 0 && (
@@ -774,10 +776,10 @@ export function MoneyTabSection({
               description={`O gráfico não combina candidaturas distintas em ${patrimonioAnosComMultiplasDeclaracoes.join(", ")}. Esses anos estão detalhados separadamente nos cartões abaixo.`}
             />
           )}
-          {patrimonioSerieAnual.length > 1 && (
+          {patrimonioSerieComparavel.length > 1 && (
             <div className="mt-6">
               <PatrimonioChart
-                data={patrimonioSerieAnual.filter((item) => patrimonioTemValorComparavel(item)).map((item) => ({
+                data={patrimonioSerieComparavel.map((item) => ({
                   id: item.id,
                   ano: item.ano_eleicao,
                   valor: item.valor_total,

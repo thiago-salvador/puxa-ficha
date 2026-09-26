@@ -41,6 +41,7 @@ type PatrimonioRow = {
   candidato_id: string
   ano_eleicao: number
   valor_total: number | string | null
+  bens?: Array<{ descricao?: string | null; valor?: unknown }> | null
 }
 
 /**
@@ -201,7 +202,7 @@ export async function fetchPatrimonioSeriesByCandidatoIds(
     while (true) {
       const { data, error } = await supabase
         .from("patrimonio")
-        .select("candidato_id,ano_eleicao,valor_total")
+        .select("candidato_id,ano_eleicao,valor_total,bens")
         .abortSignal(supabaseQueryTimeoutSignal())
         .in("candidato_id", idChunk)
         .is("despublicado_em", null)
@@ -223,6 +224,7 @@ export async function fetchPatrimonioSeriesByCandidatoIds(
     list.push({
       ano_eleicao: row.ano_eleicao,
       valor_total: toNumberOrNull(row.valor_total),
+      bens: Array.isArray(row.bens) ? row.bens : [],
     })
     byId.set(row.candidato_id, list)
   }
