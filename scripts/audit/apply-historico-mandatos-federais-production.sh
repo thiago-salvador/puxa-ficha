@@ -58,8 +58,8 @@ export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 # Predecessor: o topo do ledger e da arvore nesta base. PROVISORIO: se outras
 # migrations entrarem antes desta, base_version e base_migration passam a
 # apontar para a ultima delas (o teste de runners exige que o arquivo exista).
-base_version=20260925220200
-base_migration="$ROOT/supabase/migrations/${base_version}_cargo_atual_ex_senadores.sql"
+base_version=20260925221042
+base_migration="$ROOT/supabase/migrations/${base_version}_quarentena_gastos_parlamentares_universo.sql"
 [[ -f "$base_migration" ]] || { echo "FAIL: predecessor ${base_version} ausente" >&2; exit 2; }
 base_digest="sha256:$(shasum -a 256 "$base_migration" | cut -d' ' -f1)"
 

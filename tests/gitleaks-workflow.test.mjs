@@ -198,8 +198,14 @@ test("allowlists require exact public values and exact paths", () => {
 
   assert.doesNotMatch(config, /^\[allowlist\]$/m)
   assert.doesNotMatch(config, /regexTarget\s*=\s*"line"/)
-  assert.equal((config.match(/condition\s*=\s*"AND"/g) ?? []).length, 10)
+  assert.equal((config.match(/condition\s*=\s*"AND"/g) ?? []).length, 11)
   assert.equal((config.match(/regexTarget\s*=\s*"secret"/g) ?? []).length, 10)
+  // Única exceção por padrão: o par api_sha256 com hex, alvo "match", num único recibo.
+  assert.equal((config.match(/regexTarget\s*=\s*"match"/g) ?? []).length, 1)
+  assert.match(
+    config,
+    /regexTarget = "match"\n  regexes = \['''\^api_sha256":"\[0-9a-f\]\{32,64\}"\?\$'''\]\n  paths = \['''\^QA\/evidencias\/2026-09-25-gastos-quarentena-universo\/preflight\\\.json\$'''\]/,
+  )
   assert.match(config, /id\s*=\s*"generic-api-key"/)
 })
 
@@ -320,6 +326,39 @@ test("only exact known false positives at their exact paths are allowed", () => 
     )
   } finally {
     rmSync(directory, { recursive: true, force: true })
+  }
+})
+
+test("receipt hash exception covers only api_sha256 hex at the exact receipt path", () => {
+  const receipt = "QA/evidencias/2026-09-25-gastos-quarentena-universo/preflight.json"
+  const hex = ["66b5", "bce7", "d121", "3cfd", "56ef", "60c3", "3cc3", "75da", "3f56", "5e82", "d8c8", "b8f5", "6cd2", "7baa", "da5f", "868a"].join("")
+  const allowed = `{"api_sha256":"${hex}"}\n`
+
+  const real = mkdtempSync(path.join(tmpdir(), "puxa-ficha-gitleaks-"))
+  try {
+    copyFixture(real, receipt)
+    const result = scan(real)
+    assert.ifError(result.error)
+    assert.equal(result.status, 0, `${result.output}${JSON.stringify(findingMetadata(result.findings))}`)
+  } finally {
+    rmSync(real, { recursive: true, force: true })
+  }
+
+  for (const [file, contents] of [
+    ["QA/evidencias/outro/preflight.json", allowed],
+    [receipt, `{"api_token":"${hex}"}\n`],
+    [receipt, `{"api_sha256":"${controlledValue()}"}\n`],
+  ]) {
+    const directory = mkdtempSync(path.join(tmpdir(), "puxa-ficha-gitleaks-"))
+    try {
+      writeFixture(directory, file, contents)
+      const result = scan(directory)
+      assert.ifError(result.error)
+      assert.equal(result.status, 17, `${file}: ${contents}`)
+      assert.ok(result.findings.length > 0)
+    } finally {
+      rmSync(directory, { recursive: true, force: true })
+    }
   }
 })
 

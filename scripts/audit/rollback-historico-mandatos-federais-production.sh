@@ -49,7 +49,7 @@ pf_configure_libpq_from_url
 export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
-base_version=20260925220200
+base_version=20260925221042
 versions=(20260925230000 20260925230100)
 names=(historico_mandatos_federais_sem_fonte nome_civil_fichas_nao_publicas)
 

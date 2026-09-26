@@ -55,9 +55,9 @@ test("runners do histórico federal aplicam as duas versões esperadas", () => {
 })
 
 test("apply lê o ledger sem nenhuma versão aplicada (campo vazio no fim)", () => {
-  const r = rodar(versoes, apply, "20260925220200|1|sha256:b|0||0|", 'echo "$topo $aplicadas"')
+  const r = rodar(versoes, apply, "20260925221042|1|sha256:b|0||0|", 'echo "$topo $aplicadas"')
   assert.equal(r.status, 0, r.stderr)
-  assert.equal(r.stdout.trim(), "20260925220200 0")
+  assert.equal(r.stdout.trim(), "20260925221042 0")
 })
 
 test("apply lê o ledger com a primeira versão aplicada", () => {
@@ -73,7 +73,7 @@ test("apply lê o ledger com as duas versões aplicadas", () => {
 })
 
 test("apply reprova leitura com campos faltando", () => {
-  const r = rodar(versoes, apply, "20260925220200|1|sha256:b|0", 'echo "$topo"')
+  const r = rodar(versoes, apply, "20260925221042|1|sha256:b|0", 'echo "$topo"')
   assert.notEqual(r.status, 0)
   assert.match(r.stderr, /leitura do ledger com \d+ campos/)
 })

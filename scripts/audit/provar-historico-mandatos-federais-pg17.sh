@@ -62,7 +62,7 @@ CREATE TABLE supabase_migrations.schema_migrations (
   rollback text[]
 );
 INSERT INTO supabase_migrations.schema_migrations(version, idempotency_key)
-VALUES ('20260925220200', 'sha256:fixture');
+VALUES ('20260925221042', 'sha256:fixture');
 
 CREATE TABLE public.candidatos (
   id uuid PRIMARY KEY,
@@ -158,7 +158,7 @@ sentinelas_antes="$(digest_sentinelas)"
 # aplicadas: a consulta devolve idempotency_key vazio no fim da linha.
 ledger_runner() {
   local cols="coalesce(max(version),'')"
-  for v in 20260925220200 20260925230000 20260925230100; do
+  for v in 20260925221042 20260925230000 20260925230100; do
     cols+=" || '|' || count(*) filter (where version='$v') || '|' || coalesce(max(idempotency_key) filter (where version='$v'),'')"
   done
   q -Atq -F '|' -c "select $cols from supabase_migrations.schema_migrations"
@@ -175,7 +175,7 @@ programa_leitura="$(mktemp)"
 } > "$programa_leitura"
 leitura="$(bash "$programa_leitura")" || { echo "FAIL: runner não leu o ledger com versões não aplicadas" >&2; exit 1; }
 rm -f "$programa_leitura"
-[[ "$leitura" == "20260925220200 0" ]] || { echo "FAIL: leitura do ledger inesperada: $leitura" >&2; exit 1; }
+[[ "$leitura" == "20260925221042 0" ]] || { echo "FAIL: leitura do ledger inesperada: $leitura" >&2; exit 1; }
 
 falha_esperada "readback aceitou o pré-estado" "supabase/readback/$V.readback.sql"
 falha_esperada "readback de nome civil aceitou o pré-estado" "supabase/readback/$V2.readback.sql"
@@ -228,7 +228,7 @@ q -q < "supabase/rollback/$V.rollback.sql"
 q -q < "supabase/readback/$V.rollback.readback.sql"
 
 [[ "$(digest_tudo)" == "$tudo_antes" ]] || { echo "FAIL: rollback não devolveu o estado inicial" >&2; exit 1; }
-[[ "$(q -Atq -c "SELECT max(version) FROM supabase_migrations.schema_migrations")" == "20260925220200" ]] || { echo "FAIL: ledger final" >&2; exit 1; }
+[[ "$(q -Atq -c "SELECT max(version) FROM supabase_migrations.schema_migrations")" == "20260925221042" ]] || { echo "FAIL: ledger final" >&2; exit 1; }
 [[ "$(q -Atq -c "SELECT count(*) FROM public.identidade_timeline_quarentena_snapshot")" == "0" ]] || { echo "FAIL: snapshot sobrou" >&2; exit 1; }
 
 echo "PASS: histórico de mandatos federais e nome civil têm pré-estado, adulteração, linha já despublicada, outra ficha, ficha publicada, forward, readbacks, migration posterior, rollback inverso e sentinelas provados em PostgreSQL 17"
