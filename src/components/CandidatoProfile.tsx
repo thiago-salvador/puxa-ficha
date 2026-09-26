@@ -10,7 +10,8 @@ import type {
   ProgramaGovernoApiResponse,
   ProgramaGovernoManifestoPublico,
 } from "@/lib/programa-governo"
-import { teveMandatoNoCongresso, type CompromissoEvidenciaPublica } from "@/lib/compromisso-evidencia"
+import { teveMandatoNoCongresso, type EstadoEvidenciasPrograma } from "@/lib/compromisso-evidencia"
+import type { ProgramaGovernoPendencia } from "@/lib/programa-governo-pendencia"
 import {
   descreverEstadoDaFonte,
   montarDestaquesDaFicha,
@@ -86,6 +87,7 @@ import {
 } from "./PesquisasPresidenciaisSection"
 import {
   ProgramaGovernoOverview,
+  ProgramaGovernoPendente,
   ProgramaGovernoTab,
   type ProgramaGovernoLoadState,
   useProgramaGovernoDocuments,
@@ -327,6 +329,7 @@ export function CandidatoProfile({
   pesquisas = [],
   programaGoverno = null,
   compromissoEvidencias,
+  programaPendente = null,
   senadoRunningMates = null,
   initialLegislationSubtab,
   initialLegislationPage,
@@ -338,7 +341,8 @@ export function CandidatoProfile({
   pesquisas?: PesquisaEleitoralDoCandidato[]
   programaGoverno?: ProgramaGovernoManifestoPublico | null
   /** Evidências públicas ligadas aos temas do programa; ausente não mostra a seção. */
-  compromissoEvidencias?: CompromissoEvidenciaPublica[]
+  compromissoEvidencias?: EstadoEvidenciasPrograma
+  programaPendente?: ProgramaGovernoPendencia | null
   /** Suplentes carregados no servidor; só existe em ficha de Senador. */
   senadoRunningMates?: SenadoRunningMatesPayload | null
   /** Apenas para render determinístico de cada subaba no auditor de release. */
@@ -889,6 +893,8 @@ export function CandidatoProfile({
                         evidencias={compromissoEvidencias}
                         teveMandatoNoCongresso={teveMandatoNoCongresso(ficha.historico ?? [])}
                       />
+                    ) : programaPendente ? (
+                      <ProgramaGovernoPendente pendencia={programaPendente} />
                     ) : undefined
                   }
                   factChecksCard={

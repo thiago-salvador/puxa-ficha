@@ -115,6 +115,11 @@ export const FONTES: Readonly<Record<string, EscopoColeta>> = Object.freeze({
   "destaques-trajetoria": "candidato",
   "destaques-patrimonio": "candidato",
   "destaques-votacoes": "candidato",
+  // Cota parlamentar zerada pela API da Câmara em todos os anos consultados
+  // (scripts/lib/ingest-camara.ts). Fonte própria: o recibo fala só da cota.
+  "camara-gastos": "candidato",
+  // Pares promessa x evidência por candidato (rotina de promessas).
+  "promessa-evidencia": "candidato",
   // Backfill dedicado de CPF (scripts/backfill-cpf-tse.ts). Fonte própria de
   // propósito: gravar como `tse` sobrescreveria, em `coleta_log_ultima`, a
   // última tentativa real do ingest do TSE (perfil/patrimônio/financiamento)

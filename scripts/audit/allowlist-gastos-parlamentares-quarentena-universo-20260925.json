@@ -1,0 +1,16 @@
+{
+  "_comentario": "Recorte fechado por UUID e CAS de slug, ano, total e fonte na migration 20260925221042. O recibo QA/evidencias/2026-09-25-gastos-quarentena-universo/preflight.json traz a classificacao de todas as linhas vivas e o SHA-256 dele esta no cabecalho da migration. A migration so marca despublicado_em e despublicacao_motivo; o readback exige a contagem exata de linhas e fichas.",
+  "recorte": "gastos-parlamentares-quarentena-universo-20260925",
+  "migration": "20260925221042_quarentena_gastos_parlamentares_universo.sql",
+  "fonte": "Camara (API por deputado e CSV anual) e Senado (CEAPS anual), oficiais ao vivo em 2026-09-25; SHA de cada fonte no recibo de preflight",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "gastos_parlamentares",
+      "ref": "gastos-universo",
+      "campos": ["despublicado_em", "despublicacao_motivo"]
+    }
+  ]
+}
