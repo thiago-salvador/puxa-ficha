@@ -52,9 +52,9 @@ describe("box Debates no bento da ficha", () => {
   })
   it("renderiza fala de governador com a fonte própria do catálogo recorrente", () => {
     const html = renderToStaticMarkup(<CandidateDebatesBentoCard candidateSlug="ciro-gomes-gov-ce" candidateId="2df15aa1-0bd3-4bab-89bf-13d780645e54" />)
-    assert.match(html, /Diário do Nordeste · 09\/09\/2026/)
-    assert.match(html, /https:\/\/diariodonordeste\.verdesmares\.com\.br\/pontopoder\//)
-    assert.match(html, /botar as coisas para funcionar com correção, com humanidade/)
+    assert.match(html, /g1 · 23\/09\/2026/)
+    assert.match(html, /https:\/\/g1\.globo\.com\/ce\/ceara\/eleicoes\/2026\/noticia\/2026\/09\/23\/debate-para-o-governo-do-ceara-ciro-e-elmano-discutem-investimentos-em-saude-educacao-e-geracao-de-emprego\.ghtml/)
+    assert.match(html, /Eu definitivamente não vim aqui explicar um governo de 30 anos atrás que terminou como um dos melhores governos avaliados do país quando você é um dos que têm as piores avaliações do país/)
     assert.doesNotMatch(html, /href="https:\/\/www\.band\.com\.br/)
   })
   it("renderiza uma aspa real com fonte, data e controles", () => {
@@ -67,8 +67,9 @@ describe("box Debates no bento da ficha", () => {
 
     assert.match(html, /data-pf-debates-card/)
     assert.match(html, /<blockquote/)
-    assert.match(html, /CNN Brasil · 07\/09\/2026/)
-    assert.match(html, /As condenações foram realmente exageradas em muitos casos/)
+    assert.match(html, /g1 · 25\/09\/2026/)
+    assert.match(html, /https:\/\/g1\.globo\.com\/ba\/bahia\/eleicoes\/2026\/noticia\/2026\/09\/25\/augusto-cury-critica-medidas-de-lula-sobre-bets-e-bolsa-familia-durante-agenda-de-campanha-em-salvador\.ghtml/)
+    assert.match(html, /As bets têm que ser enquadradas mesmo, porque dão dependência nos níveis da cocaína/)
     assert.match(html, /Ler matéria/)
     assert.match(html, /Pausar rotação das citações/)
     assert.match(html, /Citação anterior/)
