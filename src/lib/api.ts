@@ -2364,8 +2364,7 @@ async function getCandidatosComResumoResourceUncached(
   })
 
   // F3 na grade: o aviso só aparece ao lado de um patrimônio exibido, então a
-  // série (com os bens, que separam zero declarado de valor não informado) só
-  // é lida para quem tem total positivo no resumo.
+  // série (3 colunas) só é lida para quem tem total positivo no resumo.
   const idsComPatrimonio = data
     .filter((row) => row.patrimonio != null && row.patrimonio > 0)
     .map((row) => row.candidato.id)
@@ -2490,7 +2489,7 @@ async function getCandidatosComparaveisResourceUncached(
       await Promise.all([
         fetchMudancasPartidoRowsPaged(supabase, comparadorIds),
         fetchGastoTotalsByCandidatoIds(supabase, comparadorIds, new Map(baseRows.map((row) => [row.id, row.slug]))),
-        fetchPatrimonioSeriesByCandidatoIds(supabase, comparadorIds),
+        fetchPatrimonioSeriesByCandidatoIds(supabase, comparadorIds, { comBens: true }),
         fetchCargoAtualByCandidatoIds(supabase, comparadorIds),
         fetchLegislativeHistoryFlagsByCandidatoIds(supabase, comparadorIds),
         fetchProcessosVerificacoesBatch(baseRows.map((row) => ({ id: row.id, slug: row.slug }))),

@@ -10,6 +10,7 @@ import type { Patrimonio } from "@/lib/types"
  */
 export type PatrimonioValorEstado =
   | "valor_informado"
+  | "zero_sem_detalhamento"
   | "sem_bens_declarados"
   | "bens_valor_zero"
   | "valor_nao_informado"
@@ -55,7 +56,9 @@ export function estadoValorPatrimonio(row: PatrimonioValorLinha): PatrimonioValo
   if (total > 0) return "valor_informado"
 
   const bens = row.bens ?? []
-  if (bens.length === 0) return "valor_nao_informado"
+  // Total zero no arquivo oficial sem lista de bens: é o valor que o TSE
+  // publicou para a candidatura (contrato X10), exibido como R$ 0 sem rótulo.
+  if (bens.length === 0) return "zero_sem_detalhamento"
   // Total zero com item de valor positivo ou sem valor: o total não fecha com
   // os itens, então o zero não é valor declarado.
   if (bens.some((bem) => parseValorPatrimonio(bem.valor) !== 0)) return "valor_nao_informado"

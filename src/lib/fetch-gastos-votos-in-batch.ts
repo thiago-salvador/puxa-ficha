@@ -187,13 +187,22 @@ function toNumberOrNull(value: number | string | null): number | null {
  */
 export async function fetchPatrimonioSeriesByCandidatoIds(
   supabase: SupabaseClient,
-  candidatoIds: string[]
+  candidatoIds: string[],
+  /**
+   * Traz os bens para distinguir zero declarado de valor não informado na
+   * evolução 2026. A grade (patrimônio atípico) usa só valores positivos e
+   * fica na consulta mínima de três colunas.
+   */
+  opcoes: { comBens?: boolean } = {},
 ): Promise<Map<string, PatrimonioAnoValor[]>> {
   const ids = [...new Set(candidatoIds)].filter(Boolean)
   const byId = new Map<string, PatrimonioAnoValor[]>()
   if (ids.length === 0) return byId
 
   const all: PatrimonioRow[] = []
+  const colunas: string = opcoes.comBens
+    ? "candidato_id,ano_eleicao,valor_total,bens"
+    : "candidato_id,ano_eleicao,valor_total"
 
   for (let c = 0; c < ids.length; c += CANDIDATO_ID_CHUNK) {
     const idChunk = ids.slice(c, c + CANDIDATO_ID_CHUNK)
@@ -202,7 +211,7 @@ export async function fetchPatrimonioSeriesByCandidatoIds(
     while (true) {
       const { data, error } = await supabase
         .from("patrimonio")
-        .select("candidato_id,ano_eleicao,valor_total,bens")
+        .select(colunas)
         .abortSignal(supabaseQueryTimeoutSignal())
         .in("candidato_id", idChunk)
         .is("despublicado_em", null)
@@ -212,7 +221,9 @@ export async function fetchPatrimonioSeriesByCandidatoIds(
         throw new Error(`patrimonio batch: ${error.message}`)
       }
 
-      const rows = (data ?? []) as PatrimonioRow[]
+      // select com colunas em variável: o parser tipado do supabase-js não
+      // infere a forma, então a linha é conferida pelo tipo local.
+      const rows = (data ?? []) as unknown as PatrimonioRow[]
       all.push(...rows)
       if (rows.length < PAGE_SIZE) break
       from += PAGE_SIZE
@@ -224,7 +235,7 @@ export async function fetchPatrimonioSeriesByCandidatoIds(
     list.push({
       ano_eleicao: row.ano_eleicao,
       valor_total: toNumberOrNull(row.valor_total),
-      bens: Array.isArray(row.bens) ? row.bens : [],
+      ...(opcoes.comBens ? { bens: Array.isArray(row.bens) ? row.bens : [] } : {}),
     })
     byId.set(row.candidato_id, list)
   }
