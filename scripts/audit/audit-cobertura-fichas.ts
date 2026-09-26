@@ -421,6 +421,8 @@ export function adaptLatestReceipts(rows: LatestReceiptRow[], profiles: Coverage
     if (result === "publicado" && !(typeof row.volume === "number" && row.volume > 0)) { reject("publicado sem volume positivo"); continue }
     if (!["encontrado", "publicado"].includes(result) && typeof row.volume === "number" && row.volume !== 0) { reject("resultado sem volume zero coerente"); continue }
     if (families.length === 0) { ignoredPartialReceipts++; continue }
+    // Revisão humana fechada não é estado da célula: só a pendente (indeterminado) conta.
+    if (fonte === "processos-revisao-humana" && result !== "indeterminado") { ignoredPartialReceipts++; continue }
     const detail = receiptDetail(row.detalhe)
     const incoming: Receipt = {
       resultado: result,

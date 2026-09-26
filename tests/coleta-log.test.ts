@@ -307,9 +307,6 @@ describe("FONTES cobre todo source declarado pelos ingests", () => {
       "camara-gastos",
       // Recibos da rotina editorial de promessas, gravados fora de scripts/lib.
       "promessa-evidencia",
-      // Controle do aplicador de processos (revisão humana da confirmação
-      // editorial), gravado por scripts/aplicar-evidencia-processos-curadoria.ts.
-      "processos-revisao-humana",
     ])
     const orfas = Object.keys(FONTES).filter(
       (f) => !declarados.has(f) && !excecoes.has(f),

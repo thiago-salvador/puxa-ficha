@@ -5,7 +5,9 @@ import {
   cnjsPublicaveisDoTexto,
   confirmacoesEditoriaisDoDetalhe,
   criarPlanos,
+  entradaFechamentoRevisaoHumana,
   entradasRevisaoHumana,
+  main as aplicar,
   filtrarMudancas,
   preservarConfirmacaoEditorial,
   validarEvidencia,
@@ -13,6 +15,10 @@ import {
   type PlanoRegistro,
 } from "../scripts/aplicar-evidencia-processos-curadoria"
 import { entradaDaRevisao, validarRevisaoManual } from "../scripts/registrar-revisao-curadoria"
+import { lerFechamento } from "../scripts/fechar-revisao-humana-processos"
+import { mkdtempSync, rmSync, writeFileSync } from "node:fs"
+import { tmpdir } from "node:os"
+import { join } from "node:path"
 
 const DJEN = "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso="
 const CNJ_PROVADO = "5210894-85.2022.8.13.0024"
@@ -332,5 +338,65 @@ describe("confirmação editorial: rodadas seguidas e travas da revisão", () =>
     ])
     for (const e of entradas) assert.doesNotMatch(String(e.detalhe), /\bcpf\b/i)
     assert.match(String(entradas[0].detalhe), new RegExp(CNJ_PROVADO.replace(/\./g, "\\.")))
+  })
+})
+
+describe("revogação, fechamento da revisão e dry-run simples", () => {
+  it("confirmacao_editorial: [] é revogação explícita: o alvo segue a coleta, sem revisão", () => {
+    const base = String(reciboEditorial("senador-teste", [CNJ_EDITORIAL_B]).detalhe)
+    const revogado = base.replace(/confirmacao_editorial: \[.*\]$/, "confirmacao_editorial: []")
+    assert.deepEqual(confirmacoesEditoriaisDoDetalhe(revogado, "2026-09-26"), [])
+    const ev = evidencia([moro()])
+    const planos = criarPlanos(ev)
+    const r = preservarConfirmacaoEditorial(planos, candidatosPorSlug(ev), [{ alvo: "senador-teste", resultado: "encontrado", detalhe: revogado, executado_em: "2026-09-26T19:00:00Z" }])
+    assert.deepEqual(r.revisaoHumana, [])
+    assert.deepEqual(r.planos, planos)
+    assert.equal(r.planos[0].resultado, "indeterminado")
+  })
+
+  it("fechamento: recibo final nao_aplicavel com o CNJ decidido; valida decisor, data, CNJ e decisão", () => {
+    const e = entradaFechamentoRevisaoHumana("senador-teste", [{ numero_cnj: CNJ_EDITORIAL_B, decisao: "mantido" }], "Thiago Salvador", "2026-09-26", "2026-09-26")
+    assert.equal(e.fonte, "processos-revisao-humana")
+    assert.equal(e.resultado, "nao_aplicavel")
+    assert.equal(e.volume, 0)
+    assert.match(String(e.detalhe), /revisao humana fechada; decidido_por: Thiago Salvador; decidido_em: 2026-09-26; itens: \[\{"numero_cnj":"0002338-27\.2022\.8\.16\.0204","decisao":"mantido"\}\]/)
+    const ok = [{ numero_cnj: CNJ_EDITORIAL_B, decisao: "retirado" as const }]
+    assert.throws(() => entradaFechamentoRevisaoHumana("senador-teste", ok, "Outra Pessoa", "2026-09-26", "2026-09-26"), /decisor/)
+    assert.throws(() => entradaFechamentoRevisaoHumana("senador-teste", ok, "Thiago Salvador", "2026-09-27", "2026-09-26"), /futura/)
+    assert.throws(() => entradaFechamentoRevisaoHumana("senador-teste", ok, "Thiago Salvador", "2026-02-30", "2026-09-26"), /invalida/)
+    assert.throws(() => entradaFechamentoRevisaoHumana("senador-teste", [{ numero_cnj: "123", decisao: "mantido" }], "Thiago Salvador", "2026-09-26", "2026-09-26"), /CNJ invalido/)
+    assert.throws(() => entradaFechamentoRevisaoHumana("senador-teste", [{ numero_cnj: CNJ_EDITORIAL_B, decisao: "talvez" as never }], "Thiago Salvador", "2026-09-26", "2026-09-26"), /decisao/)
+    assert.throws(() => entradaFechamentoRevisaoHumana("senador-teste", [], "Thiago Salvador", "2026-09-26", "2026-09-26"), /ao menos uma/)
+    assert.throws(() => entradaFechamentoRevisaoHumana("senador-teste", [...ok, ...ok], "Thiago Salvador", "2026-09-26", "2026-09-26"), /repetido/)
+  })
+
+  it("CLI de fechamento: dry-run por padrão, CNJ:decisão repetível, recusa flag desconhecida", () => {
+    const f = lerFechamento(["--slug=senador-teste", `--cnj=${CNJ_EDITORIAL_B}:mantido`, `--cnj=${CNJ_EDITORIAL_A}:retirado`, "--decidido-por=Thiago Salvador", "--decidido-em=2026-09-26"])
+    assert.equal(f.apply, false)
+    assert.deepEqual(f.decisoes, [{ numero_cnj: CNJ_EDITORIAL_B, decisao: "mantido" }, { numero_cnj: CNJ_EDITORIAL_A, decisao: "retirado" }])
+    assert.throws(() => lerFechamento(["--slug=a", "--force"]), /flag desconhecida/)
+    assert.throws(() => lerFechamento(["--slug=a", "--apply", "--dry-run"]), /nunca os dois/)
+  })
+
+  it("dry-run simples da coorte atual avisa que não avalia a confirmação editorial", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "editorial-"))
+    const arquivo = join(dir, "evidence.json")
+    const bruto = {
+      schema_version: 1, total_inicial: 1, candidatos_iniciais: ["senador-teste"],
+      fontes: { modo: "dry-run-coorte-atual-renovacao", snapshot_sha256: "abc" },
+      lotes: [{ numero: 1, concluido_em: "2026-09-26T20:05:00Z", slugs: ["senador-teste"], candidatos: [moro()] }],
+      resumo: { classificados: 1, encontrado: 0, vazio_confirmado: 0, bloqueado: 1, erro: 0 },
+    }
+    writeFileSync(arquivo, JSON.stringify(bruto))
+    const saidas: string[] = []
+    const original = console.log
+    console.log = (texto: unknown) => { saidas.push(String(texto)) }
+    try {
+      await aplicar([`--evidence=${arquivo}`, "--dry-run"])
+    } finally {
+      console.log = original
+      rmSync(dir, { recursive: true, force: true })
+    }
+    assert.match(JSON.parse(saidas[0]).aviso, /confirmacao editorial nao avaliada neste modo/)
   })
 })

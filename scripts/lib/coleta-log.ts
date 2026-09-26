@@ -108,10 +108,6 @@ export const FONTES: Readonly<Record<string, EscopoColeta>> = Object.freeze({
   instagram: "candidato",
   "google-news": "candidato",
   "processos-curadoria": "candidato",
-  // Controle do aplicador de processos: alvo cuja confirmação editorial foi a
-  // revisão humana na renovação automática. Fonte própria para não ocupar o
-  // lugar do recibo judicial, que fica intacto até a revisão.
-  "processos-revisao-humana": "candidato",
   "contradicoes-curadoria": "candidato",
   // Auditorias do recorte publicável da aba Destaques. Elas não afirmam
   // ausência de trajetória ou de atividade parlamentar: só registram se o

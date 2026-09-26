@@ -1040,7 +1040,9 @@ export function confirmacoesEditoriaisDoDetalhe(
   if (!revisaoEm || !dataReal(revisaoEm)) return null
   try {
     const lista = JSON.parse(campo[1]) as unknown
-    if (!Array.isArray(lista) || lista.length === 0) return null
+    if (!Array.isArray(lista)) return null
+    // Lista vazia é revogação explícita: a próxima linha sai sem confirmação.
+    if (lista.length === 0) return []
     const validas = lista.filter((item): item is ConfirmacaoEditorial => {
       if (!item || typeof item !== "object") return false
       const c = item as Record<string, unknown>
@@ -1159,8 +1161,49 @@ export function preservarConfirmacaoEditorial(
   return { planos: saida, revisaoHumana }
 }
 
-/** Fonte do recibo de controle que marca alvo parado em revisão humana. */
+/**
+ * Fonte do recibo de controle que marca alvo parado em revisão humana. Fica
+ * fora de `FONTES` e do catálogo de frescor de propósito: não é coleta e não
+ * pode esconder a idade do recibo judicial. A matriz de cobertura a lê pela
+ * família "processos" só enquanto está pendente (`indeterminado`).
+ */
 export const FONTE_REVISAO_HUMANA = "processos-revisao-humana"
+
+export interface DecisaoRevisaoHumana {
+  numero_cnj: string
+  decisao: "mantido" | "retirado"
+}
+
+/**
+ * Fechamento de uma revisão humana: recibo final `nao_aplicavel` na mesma
+ * fonte de controle, que passa a ser o último do alvo e tira a pendência da
+ * matriz. A decisão em si (manter ou retirar o CNJ) vai para o recibo judicial
+ * pelo registrador; este recibo só registra que a revisão fechou e como.
+ */
+export function entradaFechamentoRevisaoHumana(
+  slug: string,
+  decisoes: DecisaoRevisaoHumana[],
+  decididoPor: string,
+  decididoEm: string,
+  hoje: string = new Date().toISOString().slice(0, 10),
+): EntradaColeta {
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error("fechamento: slug invalido")
+  if (decisoes.length === 0) throw new Error("fechamento: ao menos uma decisao por CNJ")
+  for (const d of decisoes) {
+    if (!cnjValido(d.numero_cnj)) throw new Error(`fechamento: CNJ invalido: ${d.numero_cnj}`)
+    if (d.decisao !== "mantido" && d.decisao !== "retirado") throw new Error("fechamento: decisao deve ser mantido ou retirado")
+  }
+  if (new Set(decisoes.map((d) => d.numero_cnj)).size !== decisoes.length) throw new Error("fechamento: CNJ repetido")
+  if (!DECISORES_EDITORIAIS.includes(decididoPor)) throw new Error("fechamento: decisor fora da lista")
+  if (!dataReal(decididoEm) || decididoEm > hoje) throw new Error("fechamento: data de decisao invalida ou futura")
+  return {
+    fonte: FONTE_REVISAO_HUMANA,
+    alvo: slug,
+    resultado: "nao_aplicavel",
+    volume: 0,
+    detalhe: `motivo: revisao humana fechada; decidido_por: ${decididoPor}; decidido_em: ${decididoEm}; itens: ${JSON.stringify(decisoes.map(({ numero_cnj, decisao }) => ({ numero_cnj, decisao })))}`,
+  }
+}
 
 /** Um recibo de controle por alvo em revisão humana (sem CPF; CNJ e motivo). */
 export function entradasRevisaoHumana(revisao: RevisaoHumana[]): EntradaColeta[] {
@@ -1312,6 +1355,11 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
     const selecionados = planos.slice(0, opcoes.limit ?? planos.length)
     console.log(JSON.stringify({
       modo: "dry-run",
+      // Este modo não lê o banco: os planos saem sem a confirmação editorial do
+      // último recibo e podem divergir do --apply.
+      aviso: evidencia.coorte_atual
+        ? "confirmacao editorial nao avaliada neste modo; use --dry-run --somente-mudancas para ver o plano que o --apply grava"
+        : null,
       evidence: opcoes.evidence,
       coorte_atual: evidencia.coorte_atual ?? null,
       contagem_por_resultado: planos.reduce<Record<string, number>>((acc, plano) => {

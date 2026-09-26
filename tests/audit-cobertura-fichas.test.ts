@@ -194,6 +194,29 @@ describe("matriz de cobertura das fichas", () => {
     assert.equal(cell?.verificado_em, "2026-09-20T10:00:00.000Z")
   })
 
+  it("revisão humana da confirmação editorial: pendente marca a célula, fechada é ignorada", () => {
+    const judicial = {
+      fonte: "processos-curadoria", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1",
+      resultado: "encontrado", volume: 2, executado_em: "2026-09-20T18:28:08.000Z",
+    }
+    const pendente = {
+      fonte: "processos-revisao-humana", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1",
+      resultado: "indeterminado", volume: 0, executado_em: "2026-09-21T09:30:00.000Z",
+    }
+    const fechada = { ...pendente, resultado: "nao_aplicavel", executado_em: "2026-09-22T12:00:00.000Z" }
+    const estado = (rows: Array<Record<string, unknown>>) => {
+      const adapted = adaptLatestReceipts(rows as never, [profile()])
+      return { adapted, cell: buildCoverageMatrix([profile()], [], adapted.joins).cells.find((item) => item.familia === "processos") }
+    }
+    const soJudicial = estado([judicial])
+    assert.equal(estado([judicial, pendente]).cell?.estado, "indeterminado")
+    const depois = estado([judicial, fechada])
+    assert.equal(depois.adapted.ignored_partial_receipts, 1)
+    assert.equal(depois.adapted.rejected.length, 0)
+    assert.equal(depois.cell?.estado, soJudicial.cell?.estado)
+    assert.equal(depois.cell?.verificado_em, soJudicial.cell?.verificado_em)
+  })
+
   it("não aceita recibo vazio sem data e escopo", () => {
     const matrix = buildCoverageMatrix([profile()], [], { "ana-exemplo": { processos: {
       resultado: "vazio_confirmado",

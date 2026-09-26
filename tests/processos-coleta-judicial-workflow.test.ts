@@ -60,8 +60,7 @@ describe("workflow agendado da coleta judicial", () => {
   it("catálogo de frescor trata a busca judicial com o mesmo SLA do site", () => {
     const judicial = freshnessCatalog.find((item) => item.source_id === "processos-judiciais")
     assert.ok(judicial)
-    // `processos-revisao-humana` é recibo de controle (indeterminado): não conta como coleta fresca.
-    assert.deepEqual(judicial.collection_source_ids, ["processos-curadoria", "processos-revisao-humana"])
+    assert.deepEqual(judicial.collection_source_ids, ["processos-curadoria"])
     assert.equal(judicial.max_age_hours, 14 * 24)
     assert.equal(judicial.cadence, "weekly")
     const outras = freshnessCatalog.filter((item) => item.source_id !== "processos-judiciais")
