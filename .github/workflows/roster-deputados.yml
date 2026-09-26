@@ -32,8 +32,12 @@ on:
 permissions:
   contents: read
 
+# Só a execução que escreve entra no grupo compartilhado. Dry-run tem grupo
+# próprio: o GitHub guarda uma única execução pendente por grupo e cancela a
+# mais antiga quando outra chega (foi assim que o agendado de 26/09 sumiu), e o
+# vigia do CDN (tse-cdn-watcher.yml) dispara dry-runs a cada 2 h.
 concurrency:
-  group: roster-deputados
+  group: ${{ (github.event_name == 'schedule' || inputs.apply) && 'roster-deputados' || 'roster-deputados-dry-run' }}
   cancel-in-progress: false
 
 jobs:
@@ -41,7 +45,8 @@ jobs:
     name: Pacote TSE, dry-run, piso e upsert
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    # Folga para a janela de retentativa do download (90 min) mais o upsert.
+    timeout-minutes: 150
     environment: production
     env:
       SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -50,6 +55,12 @@ jobs:
       # Abaixo de ~95% disso o pacote veio truncado ou o parser quebrou.
       ROSTER_PISO_TOTAL: "19000"
       ROSTER_DIR: .tse-roster
+      # cdn.tse.jus.br alterna 200 e 403 ao longo do dia. O download tenta de
+      # novo com recuo exponencial (1 min, 2, 4, 8, 10, 10...) por até 90 min,
+      # retoma o parcial por Range e só então falha fechado, sem escrita.
+      PF_TSE_DOWNLOAD_RETRY_WINDOW_MS: "5400000"
+      PF_TSE_DOWNLOAD_RETRY_BASE_MS: "60000"
+      PF_TSE_DOWNLOAD_TIMEOUT_MS: "1200000"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -65,8 +76,8 @@ jobs:
           mkdir -p "$ROSTER_DIR"
           for name in consulta_cand/consulta_cand_2026.zip consulta_cand_complementar/consulta_cand_complementar_2026.zip; do
             target="$ROSTER_DIR/$(basename "$name")"
-            if ! curl -fsSL --retry 3 --retry-delay 30 --max-time 1200 \
-              -o "$target" "https://cdn.tse.jus.br/estatistica/sead/odsele/$name"; then
+            if ! node --import tsx scripts/baixar-pacote-tse.ts \
+              "--url=https://cdn.tse.jus.br/estatistica/sead/odsele/$name" "--out=$target"; then
               echo "::error title=Pacote TSE indisponível::download de $name falhou; nenhuma escrita feita"
               exit 1
             fi

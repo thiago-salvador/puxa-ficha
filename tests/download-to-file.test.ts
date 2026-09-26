@@ -4,7 +4,7 @@ import { join } from "node:path"
 import { fileURLToPath } from "node:url"
 import test from "node:test"
 
-import { downloadToFile } from "../scripts/lib/download-to-file"
+import { downloadPolicyFromEnv, downloadToFile, retryDelayMs } from "../scripts/lib/download-to-file"
 
 const repoRoot = fileURLToPath(new URL("..", import.meta.url))
 
@@ -207,4 +207,180 @@ test("downloadToFile aborta enquanto a escrita ainda está pendente", async () =
   } finally {
     rmSync(dir, { recursive: true, force: true })
   }
+})
+
+function fakeClock() {
+  let t = 0
+  const sleeps: number[] = []
+  return {
+    now: () => t,
+    sleep: async (ms: number) => { sleeps.push(ms); t += ms },
+    sleeps,
+  }
+}
+
+test("downloadToFile tenta de novo depois de 403 intermitente dentro da janela", async () => {
+  const dir = makeTestDir()
+  const dest = join(dir, "pacote.zip")
+  const statuses = [403, 403, 200]
+  const clock = fakeClock()
+  const retries: number[] = []
+  const httpErrors: number[] = []
+  try {
+    const ok = await downloadToFile("https://example.invalid/pacote", dest, {
+      fetcher: async () => {
+        const status = statuses.shift()!
+        return status === 200 ? new Response("zip completo") : new Response("bloqueado", { status })
+      },
+      retry: { windowMs: 60_000, baseDelayMs: 1_000 },
+      now: clock.now,
+      sleep: clock.sleep,
+      onRetry: (info) => retries.push(info.attempt),
+      onHttpError: (status) => httpErrors.push(status),
+    })
+    assert.equal(ok, true)
+    assert.equal(readFileSync(dest, "utf8"), "zip completo")
+    assert.deepEqual(clock.sleeps, [1_000, 2_000])
+    assert.deepEqual(retries, [1, 2])
+    assert.deepEqual(httpErrors, [403, 403])
+    assertNoPartials(dir)
+  } finally {
+    rmSync(dir, { recursive: true, force: true })
+  }
+})
+
+test("downloadToFile falha fechado quando a janela acaba e não deixa parcial", async () => {
+  const dir = makeTestDir()
+  const dest = join(dir, "bloqueado.zip")
+  const clock = fakeClock()
+  let fetches = 0
+  try {
+    const ok = await downloadToFile("https://example.invalid/bloqueado", dest, {
+      fetcher: async () => { fetches += 1; return new Response("bloqueado", { status: 403 }) },
+      retry: { windowMs: 10_000, baseDelayMs: 1_000 },
+      now: clock.now,
+      sleep: clock.sleep,
+    })
+    assert.equal(ok, false)
+    // 1 s + 2 s + 4 s = 7 s; a próxima espera (8 s) passaria da janela.
+    assert.equal(fetches, 4)
+    assert.equal(existsSync(dest), false)
+    assertNoPartials(dir)
+  } finally {
+    rmSync(dir, { recursive: true, force: true })
+  }
+})
+
+test("downloadToFile não repete 404", async () => {
+  const clock = fakeClock()
+  let fetches = 0
+  const ok = await downloadToFile("https://example.invalid/sumiu", "/nao-usado-404", {
+    fetcher: async () => { fetches += 1; return new Response("nada", { status: 404 }) },
+    retry: { windowMs: 60_000, baseDelayMs: 1_000 },
+    now: clock.now,
+    sleep: clock.sleep,
+  })
+  assert.equal(ok, false)
+  assert.equal(fetches, 1)
+  assert.deepEqual(clock.sleeps, [])
+})
+
+test("downloadToFile retoma por Range amarrado ao ETag depois de timeout no corpo", async () => {
+  const dir = makeTestDir()
+  const dest = join(dir, "grande.zip")
+  const clock = fakeClock()
+  const requests: Array<Record<string, string>> = []
+  const resumes: number[] = []
+  const inteiro = "0123456789abcdefghij"
+  let call = 0
+  try {
+    const ok = await downloadToFile("https://example.invalid/grande", dest, {
+      timeoutMs: 50,
+      retry: { windowMs: 60_000, baseDelayMs: 1_000 },
+      now: clock.now,
+      sleep: clock.sleep,
+      onRetry: (info) => resumes.push(info.resumeFrom),
+      fetcher: async (_input, init) => {
+        requests.push({ ...(init?.headers as Record<string, string> | undefined) })
+        call += 1
+        if (call === 1) {
+          // Primeira metade chega e o corpo trava: o timeout da tentativa corta.
+          return new Response(new ReadableStream({
+            start(c) { c.enqueue(new TextEncoder().encode(inteiro.slice(0, 10))) },
+          }), { headers: { etag: '"v1"', "content-length": String(inteiro.length) } })
+        }
+        return new Response(inteiro.slice(10), {
+          status: 206,
+          headers: { etag: '"v1"', "content-range": `bytes 10-19/${inteiro.length}` },
+        })
+      },
+    })
+    assert.equal(ok, true)
+    assert.equal(readFileSync(dest, "utf8"), inteiro)
+    assert.deepEqual(resumes, [10])
+    assert.deepEqual(requests[1], { Range: "bytes=10-", "If-Range": '"v1"' })
+    assertNoPartials(dir)
+  } finally {
+    rmSync(dir, { recursive: true, force: true })
+  }
+})
+
+test("downloadToFile descarta o parcial quando o arquivo mudou no servidor (If-Range devolve 200)", async () => {
+  const dir = makeTestDir()
+  const dest = join(dir, "mudou.zip")
+  const clock = fakeClock()
+  let call = 0
+  try {
+    const ok = await downloadToFile("https://example.invalid/mudou", dest, {
+      timeoutMs: 50,
+      retry: { windowMs: 60_000, baseDelayMs: 1_000 },
+      now: clock.now,
+      sleep: clock.sleep,
+      fetcher: async () => {
+        call += 1
+        if (call === 1) {
+          return new Response(new ReadableStream({
+            start(c) { c.enqueue(new TextEncoder().encode("versao-antiga")) },
+          }), { headers: { etag: '"v1"', "content-length": "40" } })
+        }
+        return new Response("versao-nova-inteira", { headers: { etag: '"v2"' } })
+      },
+    })
+    assert.equal(ok, true)
+    assert.equal(readFileSync(dest, "utf8"), "versao-nova-inteira")
+    assertNoPartials(dir)
+  } finally {
+    rmSync(dir, { recursive: true, force: true })
+  }
+})
+
+test("downloadToFile não publica corpo menor que o Content-Length", async () => {
+  const dir = makeTestDir()
+  const dest = join(dir, "truncado.zip")
+  try {
+    const ok = await downloadToFile("https://example.invalid/truncado", dest, {
+      retry: { windowMs: 0 },
+      fetcher: async () => new Response("curto", { headers: { "content-length": "100" } }),
+    })
+    assert.equal(ok, false)
+    assert.equal(existsSync(dest), false)
+    assertNoPartials(dir)
+  } finally {
+    rmSync(dir, { recursive: true, force: true })
+  }
+})
+
+test("downloadPolicyFromEnv lê janela e timeout e recusa valor inválido", () => {
+  assert.deepEqual(downloadPolicyFromEnv({}), {})
+  assert.deepEqual(
+    downloadPolicyFromEnv({
+      PF_TSE_DOWNLOAD_TIMEOUT_MS: "1200000",
+      PF_TSE_DOWNLOAD_RETRY_WINDOW_MS: "3600000",
+      PF_TSE_DOWNLOAD_RETRY_BASE_MS: "60000",
+    }),
+    { timeoutMs: 1_200_000, retry: { windowMs: 3_600_000, baseDelayMs: 60_000 } },
+  )
+  assert.throws(() => downloadPolicyFromEnv({ PF_TSE_DOWNLOAD_RETRY_WINDOW_MS: "1h" }), /PF_TSE_DOWNLOAD_RETRY_WINDOW_MS/)
+  assert.equal(retryDelayMs(1, { windowMs: 1, baseDelayMs: 30_000 }), 30_000)
+  assert.equal(retryDelayMs(10, { windowMs: 1, baseDelayMs: 30_000, maxDelayMs: 600_000 }), 600_000)
 })

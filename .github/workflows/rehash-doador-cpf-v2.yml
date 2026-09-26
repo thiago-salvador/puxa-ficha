@@ -36,8 +36,12 @@ permissions:
 
 # Mesmo grupo do ingest.yml: o rehash faz CAS em financiamento e não pode
 # correr junto de uma ingestão que regrava a mesma linha.
+# Só a execução que escreve entra no grupo compartilhado. Dry-run tem grupo
+# próprio: o GitHub guarda uma única execução pendente por grupo e cancela a
+# mais antiga quando outra chega (foi assim que o agendado de 26/09 sumiu), e o
+# vigia do CDN (tse-cdn-watcher.yml) dispara dry-runs a cada 2 h.
 concurrency:
-  group: ingest-pipeline
+  group: ${{ inputs.aplicar && 'ingest-pipeline' || 'rehash-doador-cpf-v2-dry-run' }}
   cancel-in-progress: false
 
 jobs:
@@ -45,7 +49,9 @@ jobs:
     name: Rehash ${{ matrix.ano }}
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    # 2012 e 2016 estouraram o teto de 5 min por download em 26/09: cada
+    # tentativa agora tem 30 min e a janela de retentativa 90 min.
+    timeout-minutes: 240
     strategy:
       fail-fast: false
       max-parallel: 3
@@ -66,6 +72,9 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           PF_DOADOR_CPF_HASH_SALT: ${{ secrets.PF_DOADOR_CPF_HASH_SALT }}
           PF_REHASH_ANO: ${{ matrix.ano }}
+          PF_TSE_DOWNLOAD_RETRY_WINDOW_MS: "5400000"
+          PF_TSE_DOWNLOAD_RETRY_BASE_MS: "60000"
+          PF_TSE_DOWNLOAD_TIMEOUT_MS: "1800000"
           PF_REHASH_APLICAR: ${{ inputs.aplicar }}
           PF_EXPECTED_PLAN_SHAS: ${{ inputs.expected_plan_shas }}
         run: |

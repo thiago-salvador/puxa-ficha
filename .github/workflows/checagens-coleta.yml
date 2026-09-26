@@ -37,9 +37,13 @@ on:
 permissions:
   contents: read
 
-# Mesmo grupo dos ingests que escrevem no banco: nunca concorre com eles.
+# A execução que grava fica no grupo dos ingests que escrevem no banco: nunca
+# concorre com eles.
+# Dry-run (disparo manual sem gravar) fica fora do grupo compartilhado: uma
+# execução pendente nova cancela a pendente anterior do mesmo grupo, e o
+# dry-run de 26/09 15:56 derrubou assim o agendado de tse-2026-financas.
 concurrency:
-  group: ingest-pipeline
+  group: ${{ (github.event_name == 'schedule' || inputs.gravar) && 'ingest-pipeline' || 'checagens-coleta-dry-run' }}
   cancel-in-progress: false
 
 jobs:

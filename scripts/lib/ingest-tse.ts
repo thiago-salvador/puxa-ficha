@@ -165,6 +165,8 @@ async function downloadFile(url: string, dest: string): Promise<boolean> {
     onStart: (source) => log("tse", `  Baixando: ${source}`),
     onHttpError: (status, source) => warn("tse", `  HTTP ${status} para ${source}`),
     onError: (err) => warn("tse", `  Falha no download: ${err}`),
+    onRetry: ({ attempt, delayMs, reason, resumeFrom }) =>
+      warn("tse", `  Tentativa ${attempt} falhou (${reason}); nova tentativa em ${Math.round(delayMs / 1000)} s, retomando de ${resumeFrom} bytes`),
   })
 }
 
