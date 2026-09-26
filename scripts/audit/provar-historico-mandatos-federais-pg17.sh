@@ -208,7 +208,7 @@ q -q < "supabase/readback/$V2.readback.sql"
 [[ "$(q -Atq -c "SELECT nome_completo FROM public.candidatos WHERE slug='thiago-de-joaldo'")" == "JOSE THIAGO ALVES DE CARVALHO" ]] || { echo "FAIL: nome civil nao gravado" >&2; exit 1; }
 
 estado="$(q -Atq -F '|' -c "SELECT string_agg(left(id::text,8)||':'||coalesce(periodo_inicio::text,'-')||'-'||coalesce(periodo_fim::text,'-')||':'||(despublicado_em IS NOT NULL), ',' ORDER BY id) FROM public.historico_politico WHERE id::text NOT LIKE '00000000%'")"
-esperado="292d7aaf:1991-1995:false,530a532b:1999-2003:false,8ffbdfc0:2002-2006:false,9fb2198a:2007-2019:false,b6e88c6c:2021--:true,ccc99323:1995-1998:true,e4aa3d93:2019-2023:false,ee91942c:2003-2011:true"
+esperado="292d7aaf:1991-1995:false,530a532b:1999-2003:false,8ffbdfc0:2003-2007:false,9fb2198a:2007-2019:false,b6e88c6c:2021--:true,ccc99323:1995-1998:true,e4aa3d93:2019-2023:false,ee91942c:2003-2011:true"
 [[ "$estado" == "$esperado" ]] || { echo "FAIL: forward inesperado: $estado" >&2; exit 1; }
 [[ "$(digest_sentinelas)" == "$sentinelas_antes" ]] || { echo "FAIL: forward tocou sentinela" >&2; exit 1; }
 

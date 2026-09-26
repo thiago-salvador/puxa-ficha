@@ -34,7 +34,7 @@ BEGIN
          ('9fb2198a-fa50-4c5b-9113-429e25cb65ac'::uuid, 2007, 2019),
          ('530a532b-d2e5-4f1f-978f-ff59846372e9'::uuid, 1999, 2003),
          ('e4aa3d93-53f4-41e2-bee2-0bb0a6eb4b36'::uuid, 2019, 2023),
-         ('8ffbdfc0-1c6c-4918-b059-e581693f5053'::uuid, 2002, 2006)
+         ('8ffbdfc0-1c6c-4918-b059-e581693f5053'::uuid, 2003, 2007)
        ) AS v(id, ini, fim) ON v.id = h.id
        WHERE h.despublicado_em IS NULL
          AND h.periodo_inicio = v.ini

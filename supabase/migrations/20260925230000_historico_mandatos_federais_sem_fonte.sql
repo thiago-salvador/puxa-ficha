@@ -35,10 +35,10 @@
 --   capitao-wagner        e4aa3d93  Deputado Federal 2019-(aberto) -> 2019-2023
 --                         (Câmara, deputado 204487: só a 56ª legislatura; fora
 --                         da lista de deputados em exercício).
---   jose-roberto-arruda   8ffbdfc0  Deputado Federal 2002-(aberto) -> 2002-2006,
---                         na convenção das linhas TSE (ano do pleito ao pleito
---                         seguinte). Câmara, deputado 74287: só a 52ª
---                         legislatura (2003-2007). A ficha exibia "2002 - atual".
+--   jose-roberto-arruda   8ffbdfc0  Deputado Federal 2002-(aberto) -> 2003-2007
+--                         (Câmara, deputado 74287: só a 52ª legislatura; ano de
+--                         início do mandato, como nas demais linhas). A ficha
+--                         exibia "2002 - atual".
 --
 -- Snapshot de preimagem em identidade_timeline_quarentena_snapshot e recibo em
 -- coleta_log com before/after de cada linha. Fail-closed: aceita somente a
@@ -88,7 +88,7 @@ VALUES
   ('e4aa3d93-53f4-41e2-bee2-0bb0a6eb4b36', 'capitao-wagner', 2019, NULL, 'Importado automaticamente de Wikidata P39 em 2026-09-15',
    2019, 2023, 'Deputado federal na 56ª legislatura (2019-2023), conforme histórico da Câmara dos Deputados (deputado 204487).', false, NULL),
   ('8ffbdfc0-1c6c-4918-b059-e581693f5053', 'jose-roberto-arruda', 2002, NULL, 'ELEITO (TSE 2002)',
-   2002, 2006, 'ELEITO (TSE 2002)', false, NULL);
+   2003, 2007, 'Deputado federal na 52ª legislatura (2003-2007), conforme histórico da Câmara dos Deputados (deputado 74287).', false, NULL);
 
 DO $apply$
 DECLARE
