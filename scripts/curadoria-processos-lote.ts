@@ -1147,9 +1147,22 @@ export interface CpfRotulado {
   digitos: string
 }
 
+const ENTIDADES_HTML: Record<string, string> = {
+  nbsp: " ", ordm: "º", ordf: "ª", deg: "°", amp: "&", quot: "\"", apos: "'", lt: "<", gt: ">", ndash: "-", mdash: "-",
+}
+
+/** Entidades HTML do texto do DJEN ("n.&ordm;&nbsp;") viram os caracteres que representam. */
+export function decodificarEntidadesHtml(valor: string): string {
+  return String(valor ?? "")
+    .replace(/&#(\d{1,6});/g, (_, n: string) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([0-9a-f]{1,6});/gi, (_, h: string) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&([a-z]+);/gi, (m, nome: string) => ENTIDADES_HTML[nome.toLowerCase()] ?? m)
+    .replace(/ /g, " ")
+}
+
 /** Texto com pontuação preservada: a guarda à esquerda depende dela. */
 function semiNormalizar(valor: string): string {
-  return stripAccents(String(valor ?? "")).toUpperCase().replace(/[ \t]+/g, " ")
+  return stripAccents(decodificarEntidadesHtml(valor)).toUpperCase().replace(/[ \t]+/g, " ")
 }
 
 /**
@@ -1175,7 +1188,7 @@ export function cpfsRotuladosDoNome(texto: string, nomeCompleto: string, destina
   const nome = tokens.map(escaparRegex).join("[\\s'.-]+")
   const cpf = "(\\d{3}\\.?\\d{3}\\.?\\d{3}-?\\d{2}|[\\d*X]{3}\\.?[\\d*X]{3}\\.?[\\d*X]{3}-?[\\d*X]{2})(?![\\d*X])"
   const padrao = new RegExp(
-    `(?:^|[:;,.()\\-\\u2013\\n]\\s*)${nome}\\s*[,;:(\\-\\u2013]?\\s*CPF(?:\\s*\\/\\s*MF)?(?:\\s*(?:N[O°º.]?|NUMERO)(?![A-Z])\\.?)?\\s*[:.]?\\s*${cpf}`,
+    `(?:^|[:;,.()\\-\\u2013\\n]\\s*)${nome}\\s*[,;:(\\-\\u2013]?\\s*CPF(?:\\s*\\/\\s*(?:MF|CNPJ))?(?:\\s*(?:NUMERO|NO|N)(?![A-Z])(?:\\s*[.°º]){0,2})?\\s*[:.]?\\s*${cpf}`,
     "gm",
   )
   return [...t.matchAll(padrao)].map((m) => {
@@ -1190,7 +1203,59 @@ export function cpfsRotuladosDoNome(texto: string, nomeCompleto: string, destina
 export function cpfDaCandidaturaNoTexto(texto: string, cpf: string): boolean {
   const digitos = cpf.replace(/\D/g, "")
   if (digitos.length !== 11) return false
-  return new RegExp(`(?<!\\d)${digitos.split("").join("\\D{0,3}")}(?!\\d)`).test(String(texto ?? ""))
+  return new RegExp(`(?<!\\d)${digitos.split("").join("\\D{0,3}")}(?!\\d)`).test(decodificarEntidadesHtml(texto))
+}
+
+/** Marcadores de quem atua no processo sem ser parte. */
+const MARCADOR_ADVOGADO = /\b(?:ADVOGAD[OA]S?|OAB|PROCURADOR(?:A|ES|AS)?|REPRESENTANTE LEGAL)\b/
+
+/** Rótulo de CPF no fim de um trecho: "CPF", "(CPF:", "CPF/MF nº", "CPF/CNPJ n.º". */
+const ROTULO_CPF_NO_FIM = /\(?\s*CPF(?:\s*\/\s*(?:MF|CNPJ))?(?:\s*(?:NUMERO|NO|N)(?![A-Z])(?:\s*[.°º]){0,2})?\s*[:.]?\s*$/
+
+/**
+ * Segundo caminho de confirmação (aprovado em 26/09): o CPF completo da
+ * candidatura (11 dígitos em qualquer formatação, entidades HTML decodificadas)
+ * aparece no texto da comunicação e pertence ao nome exato da candidata:
+ * - o nome vem logo antes daquela ocorrência (até 160 caracteres), sem
+ *   separador de outra parte no meio (`:`, `;`, ". ", quebra de linha, outro
+ *   rótulo de CPF). "AUTOR: JOAO, CPF <cpf da candidata>" não conta;
+ * - o nome nunca vale dentro de nome mais longo de destinatário;
+ * - nenhum CPF completo diferente está colado ao nome (o descarte segue estrito).
+ * Trava de advogado: ocorrência colada a advogado, OAB, procurador ou
+ * representante legal só vale se a candidata for destinatária (parte).
+ * Devolve o trecho normalizado centrado no CPF, com o nome dentro; `null`
+ * quando não confirma.
+ */
+export function contextoPorCpfNoTexto(texto: string, nomeCompleto: string, cpf: string, destinatarios: string[] = []): string | null {
+  const digitos = cpf.replace(/\D/g, "")
+  if (digitos.length !== 11) return null
+  const tokens = normalizar(nomeCompleto).split(" ").filter(Boolean)
+  if (tokens.length === 0) return null
+  const nomeNorm = tokens.join(" ")
+  if (cpfsRotuladosDoNome(texto, nomeCompleto, destinatarios).some((r) => r.tipo === "completo" && r.digitos !== digitos)) return null
+  const nomesDest = destinatarios.map(nomeDestinatario)
+  const parte = nomesDest.includes(nomeNorm)
+  let t = semiNormalizar(texto)
+  for (const maior of nomesDest.filter((d) => d !== nomeNorm && new RegExp(`\\b${escaparRegex(nomeNorm)}\\b`).test(d)).sort((a, b) => b.length - a.length)) {
+    t = t.replace(new RegExp(`\\b${maior.split(" ").map(escaparRegex).join("[\\s'.-]+")}\\b`, "g"), " # ")
+  }
+  const nomeRegex = new RegExp(`\\b${tokens.map(escaparRegex).join("[\\s'.-]+")}\\b`, "g")
+  const ocorrencias = [...t.matchAll(new RegExp(`(?<!\\d)${digitos.split("").join("\\D{0,3}")}(?!\\d)`, "g"))]
+  const validas = ocorrencias.filter((m) => {
+    const inicio = m.index ?? 0
+    const antes = t.slice(Math.max(0, inicio - 160), inicio)
+    const nomes = [...antes.matchAll(nomeRegex)]
+    const ultimo = nomes[nomes.length - 1]
+    if (!ultimo) return false
+    const intervalo = antes.slice((ultimo.index ?? 0) + ultimo[0].length).replace(ROTULO_CPF_NO_FIM, "")
+    if (/[:;\n]|\.\s/.test(intervalo) || /\bCPF\b/.test(intervalo)) return false
+    const vizinhanca = t.slice(Math.max(0, inicio - 80), inicio + m[0].length + 40)
+    return parte || !MARCADOR_ADVOGADO.test(vizinhanca)
+  })
+  const escolhida = validas[0]
+  if (!escolhida) return null
+  const inicio = escolhida.index ?? 0
+  return normalizar(t.slice(Math.max(0, inicio - 300), inicio + escolhida[0].length + 250))
 }
 
 /**
@@ -1481,9 +1546,18 @@ export async function pesquisarCandidato(
       })
       return true
     }
+    const porCpf = (item: Comunicacao): string | null => djen.textosBrutos
+      ? contextoPorCpfNoTexto(djen.textosBrutos.get(item.id) ?? "", nomeConsulta, cpfCandidato, (item.destinatarios ?? []).map((d) => String(d.nome ?? "")))
+      : null
     for (const item of semDestinatarios) {
       const numero = item.numeroprocessocommascara || item.numero_processo || `comunicacao-${item.id}`
       if (descartarSeCpfDiverge(item, numero)) continue
+      // Fora dos destinatários, só o CPF completo da candidatura no texto atribui.
+      const contextoCpf = cnjValido(numero) ? porCpf(item) : null
+      if (contextoCpf) {
+        encontrados.set(numero, { item, contexto: contextoCpf, polo: null })
+        continue
+      }
       ambiguos.set(numero, {
         numero_cnj: numero,
         tribunal: item.siglaTribunal ?? null,
@@ -1494,6 +1568,7 @@ export async function pesquisarCandidato(
       const numero = item.numeroprocessocommascara || item.numero_processo || `comunicacao-${item.id}`
       if (descartarSeCpfDiverge(item, numero)) continue
       const contexto = contextoPolitico(c, snap, djen.textosBrutos?.get(item.id) ?? item.texto ?? "", nomeConsulta, identidade)
+        ?? porCpf(item)
       const polo = item.destinatarios?.find((d) => nomeDestinatario(d.nome) === nome)?.polo ?? null
       const cnj = cnjValido(numero)
       // Sem texto bruto (cache sanitizado) o descarte por CPF não rodou: nada vira achado.

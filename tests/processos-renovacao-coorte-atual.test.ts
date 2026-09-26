@@ -20,6 +20,7 @@ import {
   Disjuntor,
   DISJUNTOR_ABERTO,
   esperaRetry,
+  contextoPorCpfNoTexto,
   cpfCompativelNoTexto,
   cpfDaCandidaturaNoTexto,
   cpfDivergenteNoTexto,
@@ -579,5 +580,79 @@ describe("cache sanitizado nunca atribui processo", () => {
     }
     evidencia.resumo = { classificados: 1, encontrado: 1, vazio_confirmado: 0, bloqueado: 0, erro: 0 }
     assert.throws(() => criarPlanos(validarEvidencia(evidencia)), /conferência de CPF no texto bruto/)
+  })
+})
+
+describe("segundo caminho de confirmação: CPF da candidatura no texto (26/09)", () => {
+  const cpf = "52998224725"
+  const cpfFmt = "529.982.247-25"
+  const outro = "11144477735"
+  const nome = "Carlos da Silva Teste"
+
+  it("confirma nos três formatos que a regra estrita perdia", () => {
+    const lista = `Polo passivo: CARLOS DA SILVA TESTE e outros CARLOS DA SILVA TESTE (CPF: ${cpfFmt}); JOAO PEREIRA (CPF: 111.444.777-35)`
+    assert.match(contextoPorCpfNoTexto(lista, nome, cpf) ?? "", /CARLOS DA SILVA TESTE CPF 529 982 247 25/)
+    const html = `Réu: Carlos da Silva Teste (CPF/CNPJ n.&ordm;&nbsp;${cpfFmt})`
+    assert.equal(cpfCompativelNoTexto(html, nome, cpf), true)
+    assert.notEqual(contextoPorCpfNoTexto(html, nome, cpf), null)
+    const cnpj = `Executado: CARLOS DA SILVA TESTE - CPF/CNPJ: ${cpfFmt}`
+    assert.equal(cpfCompativelNoTexto(cnpj, nome, cpf), true)
+    assert.notEqual(contextoPorCpfNoTexto(cnpj, nome, cpf), null)
+    // Qualificação com o próprio CPF: o caminho rotulado segue fechado, o segundo confirma.
+    const qualificacao = `Réu: CARLOS DA SILVA TESTE, brasileiro, casado, CPF nº ${cpfFmt}`
+    assert.equal(cpfCompativelNoTexto(qualificacao, nome, cpf), false)
+    assert.notEqual(contextoPorCpfNoTexto(qualificacao, nome, cpf), null)
+  })
+
+  it("exemplos do revisor seguem sem atribuição", () => {
+    assert.equal(contextoPorCpfNoTexto(`REU: CARLOS DA SILVA TESTE. AUTOR: JOAO PEREIRA, CPF ${cpf}`, nome, cpf), null)
+    assert.equal(contextoPorCpfNoTexto(`AUTOR: JOAO PEREIRA, CPF ${cpf}. REU: CARLOS DA SILVA TESTE`, nome, cpf), null)
+    assert.equal(contextoPorCpfNoTexto("JOAO PEREIRA - CPF: 111.444.777-35; CARLOS DA SILVA TESTE - CPF: ***.982.247-**", nome, cpf), null)
+    assert.equal(contextoPorCpfNoTexto(`Réu: CARLOS DA SILVA TESTE, brasileiro, CPF nº ${cpfFmt}. Advogado: CARLOS DA SILVA TESTE, CPF ${outro}`, nome, cpf), null)
+    assert.equal(contextoPorCpfNoTexto(`Parte: MARIA CARLOS DA SILVA TESTE, CPF ${cpfFmt}`, nome, cpf, ["MARIA CARLOS DA SILVA TESTE"]), null)
+    assert.equal(contextoPorCpfNoTexto(`Réu: CARLOS DA SILVA TESTE, CPF ${outro}`, nome, cpf), null)
+  })
+
+  it("trava de advogado: CPF colado a advogado, OAB ou procurador só vale para parte", () => {
+    const advogado = `Advogado: CARLOS DA SILVA TESTE, OAB/DF 12345, CPF ${cpfFmt}`
+    assert.equal(contextoPorCpfNoTexto(advogado, nome, cpf), null)
+    assert.notEqual(contextoPorCpfNoTexto(advogado, nome, cpf, ["CARLOS DA SILVA TESTE"]), null)
+    assert.equal(contextoPorCpfNoTexto(`Procurador: CARLOS DA SILVA TESTE CPF ${cpfFmt}`, nome, cpf), null)
+    assert.equal(contextoPorCpfNoTexto(`Representante legal CARLOS DA SILVA TESTE, CPF ${cpfFmt}`, nome, cpf), null)
+  })
+
+  it("parte citada fora dos destinatários vira achado pelo CPF no texto bruto", async () => {
+    const resultado = await pesquisarCandidato(
+      {
+        id: "id", slug: "carlos", nome_completo: "Carlos da Silva Teste", nome_urna: "Carlos",
+        cargo_disputado: "Senador", cargo_atual: null, estado: "MG", partido_sigla: "PSD", biografia: null,
+      },
+      { slug: "carlos", nome_urna: "Carlos", cargo_disputado: "Senador", processos: 0 },
+      undefined,
+      new Map(),
+      ["TJMG"],
+      "/cache-nao-usado",
+      {
+        confirmarIdentidade: async () => ({ status: "confirmada", metodo: "tse-sq-candidato", nome: "Carlos da Silva Teste", cpf }),
+        buscarDjen: async (consulta) => ({
+          schema_version: 2,
+          url: "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=x&pagina=1",
+          query_nome: consulta,
+          consultado_em: "2026-09-26T09:00:00Z",
+          total: 1,
+          itens: [{
+            id: 9, siglaTribunal: "TJMG", numeroprocessocommascara: "5001754-50.2024.8.13.0441",
+            texto: "Polo passivo: CARLOS DA SILVA TESTE e outros CARLOS DA SILVA TESTE (CPF: [cpf omitido])",
+            destinatarios: [{ nome: "ADVOGADO DE ALGUEM", polo: "P" }],
+          }],
+          paginas: 1,
+          completo: true,
+          textosBrutos: new Map([[9, `Polo passivo: CARLOS DA SILVA TESTE e outros CARLOS DA SILVA TESTE (CPF: ${cpfFmt})`]]),
+        }),
+      },
+    )
+    assert.equal(resultado.classificacao, "encontrado")
+    assert.equal(resultado.processos.length, 1)
+    assert.match(String(resultado.processos[0].contexto_identidade), /CPF 529 982 247 25/)
   })
 })

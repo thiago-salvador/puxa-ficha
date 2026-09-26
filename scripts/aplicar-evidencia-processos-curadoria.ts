@@ -257,7 +257,10 @@ function contextoVinculaCandidato(contexto: string, candidato: RegistroEvidencia
   const condicao = new RegExp(
     `\\b${nomeRegex}\\s+NA CONDICAO DE ${CARGO_POLITICO_PROVA}\\b`,
   ).test(fonte)
-  return cpfCompativel || cargoDepois || cargoAntesDireto || cargoAntesComLocal || condicao
+  // Segundo caminho (26/09): o trecho oficial traz o nome e o CPF completo da
+  // candidatura; a trava de advogado e o CPF divergente são conferidos no coletor.
+  const cpfNoTrecho = new RegExp(`(?<![0-9])${cpfRegex}(?![0-9])`).test(fonte)
+  return cpfCompativel || cpfNoTrecho || cargoDepois || cargoAntesDireto || cargoAntesComLocal || condicao
 }
 
 function urlsDoCampo(registro: Record<string, unknown>, caminho: string): string[] {
