@@ -4,7 +4,7 @@ import { describe, it } from "node:test"
 import { coberturaCamara, indicesDeCandidatos, type Fila } from "../scripts/lib/representacoes-etica-coleta"
 import { alvoDaEmentaPce, montarRecibosRepresentacoes } from "../scripts/lib/representacoes-etica-recibos"
 import type { FilaPceSenado } from "../scripts/lib/representacoes-etica-senado"
-import { exigirFilaRecente } from "../scripts/registrar-recibos-representacoes"
+import { divergentes, exigirFilaRecente } from "../scripts/registrar-recibos-representacoes"
 import { FONTES } from "../scripts/lib/coleta-log"
 
 const roster = [
@@ -84,6 +84,24 @@ describe("recibo por candidato da busca de representações", () => {
     assert.equal(alvoDaEmentaPce("Despacho sobre petição", roster).sem_alvo_individual, true)
   })
 
+  it("autor citado depois do alvo nunca vira representado", () => {
+    const autorDepois = alvoDaEmentaPce(
+      "Requer a abertura de procedimento disciplinar em face do Senador Fulvio, por representação do Senador Bruno Senador Costa, com fundamento no art. 55",
+      roster,
+    )
+    assert.deepEqual(autorDepois.senador_ids, [2])
+    const autorNome = alvoDaEmentaPce("em face do Senador Fulvio, formulada pela Senadora Ana Maria Senadora", roster)
+    assert.deepEqual(autorNome.senador_ids, [2])
+    const fundamento = alvoDaEmentaPce("em face do Senador Otavio Pires com fundamento em denúncia do Senador Fulvio", roster)
+    assert.deepEqual(fundamento.senador_ids, [])
+    assert.equal(fundamento.texto_alvo, "OTAVIO PIRES")
+  })
+
+  it("mantém vários representados ligados por 'e do Senador'", () => {
+    const dois = alvoDaEmentaPce("em face do Senador Fulvio e da Senadora Ana Maria Senadora, nos termos do Código de Ética", roster)
+    assert.deepEqual(dois.senador_ids, [1, 2])
+  })
+
   it("distingue encontrado, vazio verificado, indeterminado e não aplicável", () => {
     const recibos = new Map(montarRecibosRepresentacoes({ publicos, camara: filaCamara(), senado: filaSenado() })
       .map((r) => [r.alvo, r]))
@@ -128,6 +146,19 @@ describe("recibo por candidato da busca de representações", () => {
     )
     assert.deepEqual(cobertura.deputados_candidatos.map((d) => d.slug), ["a"])
     assert.deepEqual(cobertura.candidatos_sem_identificador, ["b"])
+  })
+
+  it("correção grava só o recibo que mudou", () => {
+    const entradas = [
+      { fonte: "representacoes-etica", alvo: "a", resultado: "encontrado" as const, detalhe: "x" },
+      { fonte: "representacoes-etica", alvo: "b", resultado: "vazio_confirmado" as const, detalhe: "y" },
+      { fonte: "representacoes-etica", alvo: "c", resultado: "nao_aplicavel" as const, detalhe: "z" },
+    ]
+    const ultima = [
+      { alvo: "a", resultado: "encontrado", detalhe: "x" },
+      { alvo: "b", resultado: "encontrado", detalhe: "y" },
+    ]
+    assert.deepEqual(divergentes(entradas, ultima).map((e) => e.alvo), ["b", "c"])
   })
 
   it("fonte nova tem escopo de candidato", () => {

@@ -344,12 +344,12 @@ export function selecionarAlvosSemRecibo(
 export const SLA_RECIBO_PROCESSOS_DIAS = 14
 const RESULTADOS_CONCLUSIVOS = new Set(["encontrado", "vazio_confirmado"])
 
-export type ModoAlvos = "sem-recibo" | "vencendo" | "indeterminados"
+export type ModoAlvos = "sem-recibo" | "vencendo" | "indeterminados" | "encontrados"
 
 export function modoAlvosSolicitado(argv: string[]): ModoAlvos {
   const valor = flags(argv).get("alvos") ?? "sem-recibo"
-  if (valor !== "sem-recibo" && valor !== "vencendo" && valor !== "indeterminados") {
-    throw new Error("use --alvos=sem-recibo, --alvos=vencendo ou --alvos=indeterminados")
+  if (valor !== "sem-recibo" && valor !== "vencendo" && valor !== "indeterminados" && valor !== "encontrados") {
+    throw new Error("use --alvos=sem-recibo, --alvos=vencendo, --alvos=indeterminados ou --alvos=encontrados")
   }
   return valor
 }
@@ -389,9 +389,10 @@ function ultimoReciboValidoPorCandidato(
 }
 
 /**
- * Renovação antes do SLA: reabre somente fichas cujo último recibo é
- * conclusivo (`encontrado` ou `vazio_confirmado`) e já tem idade de pelo menos
- * `SLA - margem` dias. `indeterminado`, `erro` e `bloqueado` continuam fora:
+ * Renovação antes do SLA: reabre fichas cujo último recibo é conclusivo
+ * (`encontrado` ou `vazio_confirmado`) com idade de pelo menos `SLA - margem`
+ * dias, e toda ficha cujo último recibo é `erro`, em qualquer idade.
+ * `indeterminado` e `bloqueado` continuam fora:
  * reconsultar o mesmo nome sem fonte nova repetiria a mesma ambiguidade.
  */
 export function selecionarAlvosVencendo(
@@ -404,8 +405,10 @@ export function selecionarAlvosVencendo(
   const ultimo = ultimoReciboValidoPorCandidato(candidatos, recibos, agora)
   return candidatos.filter((c) => {
     const recibo = ultimo.get(c.id)
-    return recibo !== undefined
-      && RESULTADOS_CONCLUSIVOS.has(recibo.resultado as string)
+    if (recibo === undefined) return false
+    // Falha de fonte não é estado final: a próxima execução sempre tenta de novo.
+    if (recibo.resultado === "erro") return true
+    return RESULTADOS_CONCLUSIVOS.has(recibo.resultado as string)
       && Date.parse(recibo.executado_em as string) <= limite
   }).map((c) => c.slug).sort()
 }
@@ -425,6 +428,16 @@ export function selecionarAlvosIndeterminados(
     const resultado = ultimo.get(c.id)?.resultado
     return resultado === "indeterminado" || resultado === "erro" || resultado === "bloqueado"
   }).map((c) => c.slug).sort()
+}
+
+/** Revalidação: toda ficha cujo último recibo é `encontrado`, em qualquer idade. */
+export function selecionarAlvosEncontrados(
+  candidatos: CandidatoCoorteAtual[],
+  recibos: ReciboProcessosAtual[],
+  agora: number = Date.now(),
+): string[] {
+  const ultimo = ultimoReciboValidoPorCandidato(candidatos, recibos, agora)
+  return candidatos.filter((c) => ultimo.get(c.id)?.resultado === "encontrado").map((c) => c.slug).sort()
 }
 
 /** Caminhos efêmeros perderam o snapshot de agosto no reboot de 24/09. */
@@ -558,7 +571,9 @@ async function lerCoorteAtualParaDryRun(
       ? selecionarAlvosVencendo(candidatos, recibos, margemDias)
       : modo === "indeterminados"
         ? selecionarAlvosIndeterminados(candidatos, recibos)
-        : selecionarAlvosSemRecibo(candidatos, recibos),
+        : modo === "encontrados"
+          ? selecionarAlvosEncontrados(candidatos, recibos)
+          : selecionarAlvosSemRecibo(candidatos, recibos),
     cnjsPorSlug: new Map(),
     residuais: [],
     recibos,
@@ -662,17 +677,61 @@ export function ordenar(coorte: SnapshotCandidato[]): SnapshotCandidato[] {
   return [...coorte].sort((a, b) => prioridade(a) - prioridade(b) || a.slug.localeCompare(b.slug))
 }
 
+/** Espera antes de nova tentativa: respeita Retry-After (s ou data HTTP), senão 30 s, 60 s, 120 s... teto 300 s. */
+export function esperaRetry(tentativa: number, retryAfter: string | null, agora = Date.now()): number {
+  const teto = 300_000
+  if (retryAfter) {
+    const segundos = Number(retryAfter)
+    if (Number.isFinite(segundos) && segundos >= 0) return Math.min(teto, Math.ceil(segundos * 1000))
+    const data = Date.parse(retryAfter)
+    if (Number.isFinite(data)) return Math.min(teto, Math.max(0, data - agora))
+  }
+  return Math.min(teto, 30_000 * 2 ** tentativa)
+}
+
+/**
+ * Disjuntor por fonte: depois de N respostas 429/5xx seguidas (somando
+ * chamadas diferentes), a coleta para em vez de insistir contra o tribunal.
+ */
+export class Disjuntor {
+  private seguidas = 0
+  constructor(readonly limite = 4) {}
+  registrarFalha(): void { this.seguidas += 1 }
+  registrarSucesso(): void { this.seguidas = 0 }
+  get aberto(): boolean { return this.seguidas >= this.limite }
+}
+
+export const DISJUNTOR_ABERTO = "disjuntor aberto: respostas 429/5xx seguidas da fonte oficial"
+const disjuntorFontes = new Disjuntor()
+
 async function fetchJson<T>(url: string, init?: RequestInit, tentativas = 3, timeoutMs = 60_000): Promise<T> {
   for (let i = 0; i < tentativas; i += 1) {
+    if (disjuntorFontes.aberto) throw new Error(DISJUNTOR_ABERTO)
     const resposta = await fetch(url, { ...init, signal: AbortSignal.timeout(timeoutMs) })
-    if (resposta.status === 429 && i + 1 < tentativas) {
-      await new Promise((resolve) => setTimeout(resolve, 61_000))
-      continue
+    if (resposta.status === 429 || resposta.status >= 500) {
+      disjuntorFontes.registrarFalha()
+      if (i + 1 < tentativas && !disjuntorFontes.aberto) {
+        await new Promise((resolve) => setTimeout(resolve, esperaRetry(i, resposta.headers.get("retry-after"))))
+        continue
+      }
     }
     if (!resposta.ok) throw new Error(`HTTP ${resposta.status} em ${url}`)
+    disjuntorFontes.registrarSucesso()
     return await resposta.json() as T
   }
   throw new Error(`limite de tentativas em ${url}`)
+}
+
+export type TipoFalhaColeta = "limite_de_taxa" | "fonte_indisponivel" | "preflight_banco" | "identidade_tse" | "outro"
+
+/** Classificação fechada da falha fatal, lida pelo workflow sem grep de log. */
+export function classificarFalhaColeta(erro: unknown): TipoFalhaColeta {
+  const mensagem = erro instanceof Error ? erro.message : String(erro)
+  if (mensagem === DISJUNTOR_ABERTO || /HTTP 429/.test(mensagem)) return "limite_de_taxa"
+  if (/^preflight /.test(mensagem)) return "preflight_banco"
+  if (/consulta_cand|TSE/.test(mensagem)) return "identidade_tse"
+  if (/HTTP 5\d\d|fetch failed|timeout|aborted|ECONN|ENOTFOUND|DataJud|DJEN/i.test(mensagem)) return "fonte_indisponivel"
+  return "outro"
 }
 
 async function baixar(url: string, destino: string): Promise<void> {
@@ -1075,6 +1134,27 @@ export function contextoPolitico(
   return null
 }
 
+/**
+ * CPF rotulado junto ao nome no texto oficial e DIFERENTE do CPF da
+ * candidatura: é outra pessoa com o mesmo nome. Só conta CPF completo (11
+ * dígitos); CPF mascarado não prova nada. Se o texto também trouxer o CPF da
+ * candidatura junto ao nome, não é divergência.
+ */
+export function cpfDivergenteNoTexto(texto: string, nomeCompleto: string, cpf: string): boolean {
+  const nome = normalizar(nomeCompleto)
+  const cpfCandidato = cpf.replace(/\D/g, "")
+  if (cpfCandidato.length !== 11 || !nome) return false
+  const t = normalizar(texto)
+  const nomeRegex = escaparRegex(nome)
+  const digitos = "((?:\\d[\\s]{0,3}){10}\\d)"
+  const rotulados = [
+    ...t.matchAll(new RegExp(`\\b${nomeRegex}\\b.{0,100}?\\bCPF(?:\\s+N)?\\s+${digitos}\\b`, "g")),
+    ...t.matchAll(new RegExp(`\\bCPF(?:\\s+N)?\\s+${digitos}\\b.{0,100}?\\b${nomeRegex}\\b`, "g")),
+  ].map((m) => m[1].replace(/\D/g, "")).filter((valor) => valor.length === 11)
+  if (rotulados.length === 0 || rotulados.includes(cpfCandidato)) return false
+  return true
+}
+
 export function cpfCompativelNoTexto(texto: string, nomeCompleto: string, cpf: string): boolean {
   const nome = normalizar(nomeCompleto)
   const cpfNormalizado = cpf.replace(/\D/g, "")
@@ -1341,8 +1421,20 @@ export async function pesquisarCandidato(
     const encontrados = new Map<string, { item: Comunicacao; contexto: string; polo: string | null }>()
     const descartados = new Map<string, Record<string, unknown>>()
     const ambiguos = new Map<string, Record<string, unknown>>()
+    const cpfCandidato = String(identidade.cpf ?? "")
+    const descartarSeCpfDiverge = (item: Comunicacao, numero: string): boolean => {
+      if (!cpfDivergenteNoTexto(djen.textosBrutos?.get(item.id) ?? "", nomeConsulta, cpfCandidato)) return false
+      const chave = cnjValido(numero) ? numero : `comunicacao-${item.id}`
+      descartados.set(chave, {
+        numero_cnj: chave,
+        tribunal: item.siglaTribunal ?? null,
+        motivo: "CPF rotulado no texto oficial diverge do CPF da candidatura; homonimo descartado",
+      })
+      return true
+    }
     for (const item of semDestinatarios) {
       const numero = item.numeroprocessocommascara || item.numero_processo || `comunicacao-${item.id}`
+      if (descartarSeCpfDiverge(item, numero)) continue
       ambiguos.set(numero, {
         numero_cnj: numero,
         tribunal: item.siglaTribunal ?? null,
@@ -1351,6 +1443,7 @@ export async function pesquisarCandidato(
     }
     for (const item of exatos) {
       const numero = item.numeroprocessocommascara || item.numero_processo || `comunicacao-${item.id}`
+      if (descartarSeCpfDiverge(item, numero)) continue
       const contexto = contextoPolitico(c, snap, djen.textosBrutos?.get(item.id) ?? item.texto ?? "", nomeConsulta, identidade)
       const polo = item.destinatarios?.find((d) => nomeDestinatario(d.nome) === nome)?.polo ?? null
       const cnj = cnjValido(numero)
@@ -1373,8 +1466,10 @@ export async function pesquisarCandidato(
         datajud: { status: "pendente_conferencia_lote" },
       })
     }
+    // CNJ em que o mesmo nome foi identificado como outra pessoa sai da
+    // ambiguidade: a coincidência já foi resolvida por CPF oficial.
     const ambiguosPendentes = new Map(
-      [...ambiguos].filter(([numero]) => !encontrados.has(numero)),
+      [...ambiguos].filter(([numero]) => !encontrados.has(numero) && !descartados.has(numero)),
     )
     const tetoAtingido = djen.tetoAtingido === true || djen.total >= 10_000
     const resultado = classificarResultadoDjen(processos.length, ambiguosPendentes.size, tetoAtingido)
@@ -1643,7 +1738,9 @@ async function main(): Promise<void> {
     ? "dry-run-coorte-atual-somente-cnj"
     : modoAlvos === "vencendo"
       ? "dry-run-coorte-atual-renovacao"
-      : modoAlvos === "indeterminados" ? "dry-run-coorte-atual-reexame-indeterminados" : "dry-run-coorte-atual-sem-recibo"
+      : modoAlvos === "indeterminados"
+        ? "dry-run-coorte-atual-reexame-indeterminados"
+        : modoAlvos === "encontrados" ? "dry-run-coorte-atual-revalidacao" : "dry-run-coorte-atual-sem-recibo"
   const numeros = coorteAtual || targetSlugs ? [1] : lotesSolicitados(argv)
   const snapshotPath = resolve(opcoes.get("snapshot") ?? "/tmp/2026-08-05-processos-inicial-snapshot.json")
   const evidencePath = resolve(opcoes.get("evidence") ?? "~/.disposable-html/2026-08-05-puxa-ficha-processos-curadoria.evidence.json".replace("~", process.env.HOME ?? ""))
@@ -1787,5 +1884,13 @@ async function main(): Promise<void> {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  main().catch((erro) => { console.error(erro); process.exitCode = 1 })
+  main().catch((erro) => {
+    console.error(erro)
+    process.exitCode = 1
+    const argv = process.argv.slice(2)
+    const evidence = flags(argv).get("evidence")
+    if (evidence && flagPresente(argv, "coorte-atual")) {
+      writeFileSync(`${resolve(evidence)}.falha.json`, `${JSON.stringify({ tipo: classificarFalhaColeta(erro), em: new Date().toISOString() })}\n`, { mode: 0o600 })
+    }
+  })
 }

@@ -5,6 +5,9 @@ name: Coleta judicial por candidato
 # recibos em coleta_log pelo aplicador auditado; nunca grava em processos.
 # Falha da coleta vira recibo `erro` por alvo, nunca silêncio.
 # Evidência nominal fica só no runner: o log e o resumo públicos têm contagens.
+# O backup pré-escrita que o aplicador grava no runner é descartado ao fim do
+# job, de propósito: coleta_log é append-only e mantém os recibos anteriores,
+# então a trilha de rollback é o próprio banco, não um artefato de repo público.
 
 on:
   schedule:
@@ -26,8 +29,10 @@ on:
 permissions:
   contents: read
 
+# Mesmo grupo do ingest.yml: coleta judicial e ingest não disputam o banco nem
+# o limite das fontes oficiais; nenhuma execução cancela outra.
 concurrency:
-  group: processos-coleta-judicial
+  group: ingest-pipeline
   cancel-in-progress: false
 
 jobs:
@@ -82,10 +87,13 @@ jobs:
           falhas=0
           for modo in vencendo sem-recibo; do
             evidencia="$RUNNER_TEMP/processos-$modo.evidence.json"
-            extra=""
-            if [ "$modo" = "vencendo" ]; then extra="--margem-dias=$MARGEM_DIAS"; fi
+            if [ "$modo" = "vencendo" ]; then
+              set -- --alvos=vencendo --margem-dias="$MARGEM_DIAS"
+            else
+              set -- --alvos=sem-recibo
+            fi
             if PF_DRY_RUN=1 node --import tsx scripts/curadoria-processos-lote.ts \
-                --coorte-atual --dry-run --alvos="$modo" $extra \
+                --coorte-atual --dry-run "$@" \
                 --evidence="$evidencia" --cache="$RUNNER_TEMP/processos-cache" \
                 > "$RUNNER_TEMP/coleta-$modo.log" 2>&1; then
               if [ ! -f "$evidencia" ]; then
@@ -113,10 +121,14 @@ jobs:
               echo "::error::Coleta $modo interrompida; log privado retido no runner." >&2
               falhas=$((falhas + 1))
               snapshot="$evidencia.snapshot.json"
+              tipo="sem_classificacao"
+              if [ -f "$evidencia.falha.json" ]; then
+                tipo="$(node -e 'console.log(JSON.parse(require("node:fs").readFileSync(process.argv[1],"utf8")).tipo)' "$evidencia.falha.json")"
+              fi
+              echo "$modo falhou: $tipo" | tee -a "$RUNNER_TEMP/resumo-coleta.txt"
               if [ -f "$snapshot" ] && [ "$APLICAR" = "true" ]; then
-                motivo="$(grep -m1 -oE '(HTTP [0-9]{3}|DJEN[^\"]{0,80}|DataJud[^\"]{0,80}|preflight[^\"]{0,80})' "$RUNNER_TEMP/coleta-$modo.log" || echo 'falha sem mensagem classificada')"
                 if node --import tsx scripts/registrar-erro-coleta-processos.ts --apply \
-                    --snapshot="$snapshot" --motivo="coleta $modo: $motivo" > "$RUNNER_TEMP/erro-$modo.log" 2>&1; then
+                    --snapshot="$snapshot" --tipo="$tipo" --modo="$modo" > "$RUNNER_TEMP/erro-$modo.log" 2>&1; then
                   tail -n 1 "$RUNNER_TEMP/erro-$modo.log" | sed "s/^/$modo recibos de erro: /" | tee -a "$RUNNER_TEMP/resumo-coleta.txt"
                 else
                   echo "::error::Não foi possível gravar os recibos de erro de $modo." >&2
@@ -145,6 +157,7 @@ jobs:
           {
             echo "## Coleta judicial por candidato"
             echo "Aplicar: $APLICAR · margem: $MARGEM_DIAS dias"
+            echo "Backup pré-escrita descartado com o runner; coleta_log é append-only."
             for f in recibos-antes-resumo.json resumo-coleta.txt recibos-depois-resumo.json; do
               if [ -f "$RUNNER_TEMP/$f" ]; then echo; echo "### $f"; echo '```'; cat "$RUNNER_TEMP/$f"; echo '```'; fi
             done

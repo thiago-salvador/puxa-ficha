@@ -6,7 +6,7 @@
  * Padrão dry-run. `--apply` grava pelo registrador canônico, um alvo por vez.
  *
  *   tsx scripts/registrar-erro-coleta-processos.ts \
- *     --snapshot=<evidence>.snapshot.json --motivo="DJEN HTTP 503" [--apply]
+ *     --snapshot=<evidence>.snapshot.json --tipo=fonte_indisponivel --modo=vencendo [--apply]
  */
 import { readFileSync } from "node:fs"
 import { pathToFileURL } from "node:url"
@@ -31,16 +31,26 @@ export function slugsDoSnapshot(valor: unknown): string[] {
   return slugs
 }
 
-export function argumentosErro(slug: string, motivo: string, agora: Date = new Date()): string[] {
-  const limpo = motivo.replace(/[;\r\n]+/g, ", ").replace(/\s+/g, " ").trim().slice(0, 300)
-  if (limpo.length < 12) throw new Error("--motivo precisa descrever a falha (12+ caracteres)")
+export const TIPOS_FALHA: Readonly<Record<string, string>> = Object.freeze({
+  limite_de_taxa: "fonte oficial respondeu com limite de taxa (HTTP 429) repetido; disjuntor aberto",
+  fonte_indisponivel: "fonte oficial (DJEN ou DataJud) indisponivel, com erro 5xx ou tempo esgotado",
+  preflight_banco: "leitura da coorte ou dos recibos no banco falhou antes da busca",
+  identidade_tse: "base de candidaturas do TSE indisponivel para confirmar a identidade",
+  outro: "falha nao classificada; ver log privado da execucao",
+  sem_classificacao: "coleta caiu sem registrar o tipo de falha",
+})
+
+export function argumentosErro(slug: string, tipo: string, modo: string, agora: Date = new Date()): string[] {
+  const descricao = TIPOS_FALHA[tipo]
+  if (!descricao) throw new Error(`--tipo invalido: ${tipo}`)
+  if (!/^[a-z-]{3,20}$/.test(modo)) throw new Error("--modo invalido")
   const data = agora.toISOString().slice(0, 10)
   const args = [
     `--slug=${slug}`,
     "--frente=processos",
     `--data=${data}`,
     "--resultado=erro",
-    `--detalhe=motivo: coleta judicial agendada interrompida antes do resultado: ${limpo}; fontes consultadas: DJEN, DataJud; anos consultados: ${data.slice(0, 4)}`,
+    `--detalhe=motivo: coleta judicial agendada (${modo}) interrompida antes do resultado: ${descricao}; tipo_falha: ${tipo}; fontes consultadas: DJEN, DataJud; anos consultados: ${data.slice(0, 4)}`,
     "--identidade=nao-confirmada",
     `--url=${URL_DJEN}`,
   ]
@@ -50,11 +60,12 @@ export function argumentosErro(slug: string, motivo: string, agora: Date = new D
 
 export async function main(argv = process.argv.slice(2)): Promise<void> {
   const snapshot = argv.find((arg) => arg.startsWith("--snapshot="))?.slice("--snapshot=".length)
-  const motivo = argv.find((arg) => arg.startsWith("--motivo="))?.slice("--motivo=".length)
-  if (!snapshot || !motivo) throw new Error("uso: --snapshot=<arquivo> --motivo=<texto> [--apply]")
+  const tipo = argv.find((arg) => arg.startsWith("--tipo="))?.slice("--tipo=".length)
+  const modo = argv.find((arg) => arg.startsWith("--modo="))?.slice("--modo=".length)
+  if (!snapshot || !tipo || !modo) throw new Error("uso: --snapshot=<arquivo> --tipo=<enum> --modo=<modo> [--apply]")
   const apply = argv.includes("--apply")
   const slugs = slugsDoSnapshot(JSON.parse(readFileSync(snapshot, "utf8")))
-  const planos = slugs.map((slug) => argumentosErro(slug, motivo))
+  const planos = slugs.map((slug) => argumentosErro(slug, tipo, modo))
   if (apply) {
     for (const args of planos) await registrarRevisao([...args, "--apply"])
   }

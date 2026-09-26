@@ -46,28 +46,44 @@ export interface AlvoPce {
 }
 
 /**
- * Lê o representado na ementa oficial ("em face do Senador X"). Sem essa
- * construção, o PCE fica sem alvo individual: petição genérica ou coletiva.
+ * Fim do trecho do representado: o que vem depois (fundamento, autor,
+ * motivo) nunca é alvo. "por representação do Senador Y" nomeia o AUTOR.
+ */
+const FIM_DO_ALVO = / (?:COM FUNDAMENTO|COM BASE|NOS TERMOS|NA FORMA|NO AMBITO|POR |PELO |PELA |PELOS |PELAS |EM RAZAO|EM DECORRENCIA|EM VIRTUDE|DEVIDO|TENDO EM VISTA|A RESPEITO|ACERCA|SOBRE |QUE |PARA |FORMULAD|APRESENTAD|DE AUTORIA|AUTOR)/
+
+/** Segmento do representado: de "em face do Senador" até o primeiro marcador de fim. */
+export function segmentoDoAlvoPce(ementa: string): { segmento: string; coletivo: boolean } | null {
+  const texto = normalizar(ementa)
+  const face = /\bEM FACE D([OA]S?) (?:EX )?SENADOR(?:A|ES|AS)? (.{2,240})/.exec(texto)
+  if (!face) return null
+  const segmento = face[2].split(FIM_DO_ALVO)[0].trim()
+  return { segmento, coletivo: face[1].endsWith("S") }
+}
+
+/**
+ * Lê o representado na ementa oficial ("em face do Senador X") e casa nomes
+ * do roster SÓ dentro desse segmento. Vários alvos ligados por "e do Senador"
+ * continuam no segmento; o autor e o fundamento ficam fora.
  */
 export function alvoDaEmentaPce(ementa: string, roster: readonly SenadorRosterPce[]): AlvoPce {
-  const texto = normalizar(ementa)
-  const face = /\bEM FACE D[OA]S? (?:EX )?SENADOR(?:A|ES|AS)? (.{2,160})/.exec(texto)
-  if (!face) return { senador_ids: [], texto_alvo: null, sem_alvo_individual: true }
-  const alvo = face[1]
-  const coletivo = /\bEM FACE D[OA]S SENADOR(?:ES|AS)\b/.test(texto)
+  const recorte = segmentoDoAlvoPce(ementa)
+  if (!recorte) return { senador_ids: [], texto_alvo: null, sem_alvo_individual: true }
+  const { segmento, coletivo } = recorte
+  // Inícios de nome: começo do segmento e depois de "E [DO|DA] [SENADOR(A)]".
+  const inicios = [segmento, ...segmento.split(/ E (?:D[OA]S? )?(?:SENADOR(?:A|ES|AS)? )?/).slice(1)]
   const ids = new Set<number>()
   for (const senador of roster) {
     for (const nome of [senador.nome, senador.nome_completo].map(normalizar)) {
-      if (!nome) continue
-      const tokens = nome.split(" ").length
-      // Nome de um só token (ex.: nome parlamentar) só vale colado ao título.
-      const padrao = tokens >= 2 ? `\\b${escapar(nome)}\\b` : `^${escapar(nome)}\\b`
-      if (nome.length >= 4 && new RegExp(padrao).test(alvo)) ids.add(senador.senador_id)
+      if (!nome || nome.length < 4) continue
+      const casa = nome.split(" ").length >= 2
+        ? new RegExp(`\\b${escapar(nome)}\\b`).test(segmento)
+        // Nome de um só token (nome parlamentar) só vale colado ao título.
+        : inicios.some((trecho) => new RegExp(`^${escapar(nome)}\\b`).test(trecho))
+      if (casa) ids.add(senador.senador_id)
     }
   }
-  const textoAlvo = alvo.split(/ (?:COM FUNDAMENTO|NOS TERMOS|NA FORMA|POR |PELA |PELO |E DO |E DA |EM RAZAO)/)[0].trim()
   const semAlvo = ids.size === 0 && coletivo
-  return { senador_ids: [...ids].sort((a, b) => a - b), texto_alvo: semAlvo ? null : textoAlvo, sem_alvo_individual: semAlvo }
+  return { senador_ids: [...ids].sort((a, b) => a - b), texto_alvo: semAlvo || !segmento ? null : segmento, sem_alvo_individual: semAlvo || !segmento }
 }
 
 function pior(estados: EstadoCasa[]): EstadoCasa {

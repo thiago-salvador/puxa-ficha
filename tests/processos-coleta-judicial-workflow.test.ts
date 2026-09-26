@@ -26,7 +26,11 @@ describe("workflow agendado da coleta judicial", () => {
   it("coleta em dry-run de escrita e só grava recibos pelo aplicador auditado", () => {
     const coleta = steps.find((step) => step.id === "coleta")?.run ?? ""
     assert.match(coleta, /PF_DRY_RUN=1 node --import tsx scripts\/curadoria-processos-lote\.ts/)
-    assert.match(coleta, /--coorte-atual --dry-run --alvos="\$modo"/)
+    assert.match(coleta, /--coorte-atual --dry-run "\$@"/)
+    assert.match(coleta, /--margem-dias="\$MARGEM_DIAS"/)
+    assert.doesNotMatch(coleta, /\$extra/)
+    assert.match(coleta, /--tipo="\$tipo" --modo="\$modo"/)
+    assert.doesNotMatch(coleta, /grep -m1/)
     assert.match(coleta, /for modo in vencendo sem-recibo/)
     assert.match(coleta, /aplicar-evidencia-processos-curadoria\.ts --apply/)
     assert.match(coleta, /registrar-erro-coleta-processos\.ts --apply/)
@@ -39,6 +43,12 @@ describe("workflow agendado da coleta judicial", () => {
       assert.match(run, /processos-coverage-snapshot\.sql/)
       assert.match(run, /check-processos-receipts\.ts/)
     }
+  })
+
+  it("compartilha o grupo do ingest sem cancelar execução em curso", () => {
+    const bruto = parse(source) as { concurrency: { group: string; "cancel-in-progress": boolean } }
+    assert.deepEqual(bruto.concurrency, { group: "ingest-pipeline", "cancel-in-progress": false })
+    assert.match(source, /backup pré-escrita que o aplicador grava no runner é descartado/)
   })
 
   it("não publica evidência nominal em artefato do repositório público", () => {
@@ -66,12 +76,13 @@ describe("recibo de erro quando a coleta cai", () => {
     assert.throws(() => slugsDoSnapshot({ schema_version: 1, alvos: [{ slug: "Com Espaco" }] }), /slug/)
   })
 
-  it("monta recibo erro validado pelo registrador, sem afirmar identidade", () => {
-    const args = argumentosErro("candidata-teste", "DJEN HTTP 503; tentativa 2", new Date("2026-09-25T12:00:00Z"))
+  it("monta recibo erro validado pelo registrador, sem afirmar identidade nem texto livre", () => {
+    const args = argumentosErro("candidata-teste", "limite_de_taxa", "vencendo", new Date("2026-09-25T12:00:00Z"))
     assert.ok(args.includes("--resultado=erro"))
     assert.ok(args.includes("--identidade=nao-confirmada"))
     assert.ok(args.includes("--data=2026-09-25"))
-    assert.doesNotMatch(args.join(" "), /;\s*tentativa 2/)
-    assert.throws(() => argumentosErro("x", "curto"), /12\+ caracteres/)
+    assert.match(args.join(" "), /tipo_falha: limite_de_taxa/)
+    assert.throws(() => argumentosErro("x", "HTTP 503 qualquer coisa", "vencendo"), /--tipo invalido/)
+    assert.throws(() => argumentosErro("x", "outro", "vencendo; drop"), /--modo invalido/)
   })
 })

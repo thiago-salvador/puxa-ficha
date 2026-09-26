@@ -119,8 +119,16 @@ fingir cobertura seria pior que declarar o limite.
   fim impede o `vazio_confirmado`: o recibo fica `indeterminado` até revisão.
   Nome contido em outro com prenome diferente continua tratado como outra
   pessoa.
-- Falha da coleta vira recibo `erro` para cada alvo da execução, e o run fica
-  vermelho. `check-processos-receipts.ts` roda antes e depois e reprova
+- CPF completo rotulado junto ao nome no texto oficial e diferente do CPF da
+  candidatura descarta a ocorrência como homônimo, com registro em
+  `homonimos_descartados`. CPF mascarado não decide nada.
+- O aplicador recusa `vazio_confirmado` para candidato que já tem linha em
+  `processos`.
+- Falha da coleta vira recibo `erro` para cada alvo da execução, com o tipo
+  de falha de uma lista fechada, e o run fica vermelho. Recibo `erro` é
+  renovado na execução seguinte, em qualquer idade. Respostas 429 ou 5xx
+  respeitam `Retry-After`, esperam em progressão exponencial e, depois de
+  quatro seguidas, a coleta para. `check-processos-receipts.ts` roda antes e depois e reprova
   candidato público sem recibo.
 - O catálogo de frescor separa a busca judicial (`processos-judiciais`, 336 h,
   semanal) da curadoria editorial, que segue com 1.800 h.

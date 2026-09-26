@@ -6,6 +6,8 @@ import { describe, it } from "node:test"
 
 import {
   criarPlanos,
+  exigirVazioSemLinhasPublicadas,
+  filtrarMudancas,
   validarEvidencia,
   validarEvidenciaCoorteAtual,
   validarPreflightRenovacao,
@@ -13,6 +15,11 @@ import {
 } from "../scripts/aplicar-evidencia-processos-curadoria"
 import {
   cargoSolicitado,
+  classificarFalhaColeta,
+  Disjuntor,
+  DISJUNTOR_ABERTO,
+  esperaRetry,
+  cpfDivergenteNoTexto,
   csvsDoConsultaCand,
   exigirCaminhoPersistente,
   margemDiasSolicitada,
@@ -51,7 +58,7 @@ describe("renovação de recibos judiciais antes do SLA", () => {
     { id: "f", slug: "foxtrot" },
   ]
 
-  it("reabre só recibos conclusivos dentro da margem, nunca indeterminado, erro ou sem recibo", () => {
+  it("reabre recibos conclusivos dentro da margem e todo erro, nunca indeterminado ou sem recibo", () => {
     const recibos = [
       recibo("a", "alpha", "vazio_confirmado", 10),
       recibo("b", "beta", "encontrado", 50),
@@ -59,8 +66,10 @@ describe("renovação de recibos judiciais antes do SLA", () => {
       recibo("d", "delta", "indeterminado", 40),
       recibo("e", "echo", "erro", 40),
     ]
-    assert.deepEqual(selecionarAlvosVencendo(candidatos, recibos, 5, AGORA), ["alpha", "beta"])
-    assert.deepEqual(selecionarAlvosVencendo(candidatos, recibos, 0, AGORA), ["beta"])
+    assert.deepEqual(selecionarAlvosVencendo(candidatos, recibos, 5, AGORA), ["alpha", "beta", "echo"])
+    assert.deepEqual(selecionarAlvosVencendo(candidatos, recibos, 0, AGORA), ["beta", "echo"])
+    // erro recente também volta: falha de fonte nunca vira estado final.
+    assert.deepEqual(selecionarAlvosVencendo(candidatos, [recibo("f", "foxtrot", "erro", 0.1)], 5, AGORA), ["foxtrot"])
   })
 
   it("usa o recibo mais recente do candidato e ignora slug trocado ou data futura", () => {
@@ -87,7 +96,7 @@ describe("renovação de recibos judiciais antes do SLA", () => {
   it("valida flags de alvos, margem e cargo", () => {
     assert.equal(modoAlvosSolicitado([]), "sem-recibo")
     assert.equal(modoAlvosSolicitado(["--alvos=vencendo"]), "vencendo")
-    assert.throws(() => modoAlvosSolicitado(["--alvos=todos"]), /sem-recibo, --alvos=vencendo ou --alvos=indeterminados/)
+    assert.throws(() => modoAlvosSolicitado(["--alvos=todos"]), /--alvos=indeterminados ou --alvos=encontrados/)
     assert.equal(margemDiasSolicitada([]), 4)
     assert.equal(margemDiasSolicitada(["--margem-dias=13"]), 13)
     assert.throws(() => margemDiasSolicitada(["--margem-dias=14"]), /entre 0 e 13/)
@@ -340,5 +349,108 @@ describe("identidade TSE nunca falha em silêncio", () => {
     } finally {
       rmSync(raiz, { recursive: true, force: true })
     }
+  })
+})
+
+describe("CPF rotulado divergente descarta o homônimo", () => {
+  const cpf = "52998224725"
+  const outro = "11144477735"
+  it("detecta divergência só com CPF completo junto ao nome", () => {
+    assert.equal(cpfDivergenteNoTexto(`Réu: CARLOS DA SILVA TESTE, CPF ${outro}`, "Carlos da Silva Teste", cpf), true)
+    assert.equal(cpfDivergenteNoTexto(`Réu: CARLOS DA SILVA TESTE, CPF ${cpf}`, "Carlos da Silva Teste", cpf), false)
+    assert.equal(cpfDivergenteNoTexto("Réu: CARLOS DA SILVA TESTE, CPF ***.444.777-**", "Carlos da Silva Teste", cpf), false)
+    assert.equal(cpfDivergenteNoTexto(`Réu: CARLOS DA SILVA TESTE, CPF ${outro}`, "Carlos da Silva Teste", ""), false)
+  })
+
+  it("pesquisa registra homonimo_descartado e não deixa a ocorrência ambígua", async () => {
+    const resultado = await pesquisarCandidato(
+      {
+        id: "id", slug: "carlos", nome_completo: "Carlos da Silva Teste", nome_urna: "Carlos",
+        cargo_disputado: "Senador", cargo_atual: null, estado: "MG", partido_sigla: "PSD", biografia: null,
+      },
+      { slug: "carlos", nome_urna: "Carlos", cargo_disputado: "Senador", processos: 0 },
+      undefined,
+      new Map(),
+      ["TJMG"],
+      "/cache-nao-usado",
+      {
+        confirmarIdentidade: async () => ({ status: "confirmada", metodo: "tse-sq-candidato", nome: "Carlos da Silva Teste", cpf }),
+        buscarDjen: async (consulta) => ({
+          schema_version: 2,
+          url: "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=x&pagina=1",
+          query_nome: consulta,
+          consultado_em: "2026-09-25T22:00:00Z",
+          total: 1,
+          itens: [{
+            id: 11, siglaTribunal: "TJMG", numeroprocessocommascara: "5001754-50.2024.8.13.0441",
+            texto: "Réu: CARLOS DA SILVA TESTE, CPF [cpf omitido]",
+            destinatarios: [{ nome: "CARLOS DA SILVA TESTE", polo: "P" }],
+          }],
+          paginas: 1,
+          completo: true,
+          textosBrutos: new Map([[11, `Réu: CARLOS DA SILVA TESTE, CPF ${outro}`]]),
+        }),
+      },
+    )
+    assert.equal(resultado.processos.length, 0)
+    assert.equal(resultado.ocorrencias_ambiguas.length, 0)
+    assert.equal(resultado.homonimos_descartados.length, 1)
+    assert.match(String(resultado.homonimos_descartados[0].motivo), /diverge do CPF da candidatura/)
+    assert.equal(resultado.classificacao, "vazio_confirmado")
+  })
+})
+
+describe("vazio_confirmado nunca contradiz linha publicada", () => {
+  it("recusa vazio para candidato com linha em processos e aceita os demais", () => {
+    const [plano] = criarPlanos(validarEvidencia(evidenciaCoorte()))
+    assert.equal(plano.resultado, "vazio_confirmado")
+    assert.throws(() => exigirVazioSemLinhasPublicadas([plano], new Set([plano.slug])), /linhas em processos: senadora-teste/)
+    assert.doesNotThrow(() => exigirVazioSemLinhasPublicadas([plano], new Set(["outra-ficha"])))
+    assert.doesNotThrow(() => exigirVazioSemLinhasPublicadas([{ ...plano, resultado: "indeterminado" }], new Set([plano.slug])))
+  })
+})
+
+describe("limite de taxa das fontes oficiais", () => {
+  it("respeita Retry-After e cai para backoff exponencial com teto", () => {
+    assert.equal(esperaRetry(0, "12"), 12_000)
+    assert.equal(esperaRetry(0, "9999"), 300_000)
+    assert.equal(esperaRetry(0, "Fri, 26 Sep 2026 00:00:30 GMT", Date.parse("2026-09-26T00:00:00Z")), 30_000)
+    assert.deepEqual([0, 1, 2, 5].map((i) => esperaRetry(i, null)), [30_000, 60_000, 120_000, 300_000])
+  })
+
+  it("disjuntor abre depois de N falhas seguidas e fecha com sucesso", () => {
+    const d = new Disjuntor(3)
+    d.registrarFalha(); d.registrarFalha()
+    assert.equal(d.aberto, false)
+    d.registrarSucesso(); d.registrarFalha(); d.registrarFalha()
+    assert.equal(d.aberto, false)
+    d.registrarFalha()
+    assert.equal(d.aberto, true)
+  })
+
+  it("classifica a falha fatal por enum fechado", () => {
+    assert.equal(classificarFalhaColeta(new Error(DISJUNTOR_ABERTO)), "limite_de_taxa")
+    assert.equal(classificarFalhaColeta(new Error("HTTP 429 em https://x")), "limite_de_taxa")
+    assert.equal(classificarFalhaColeta(new Error("HTTP 503 em https://comunicaapi.pje.jus.br")), "fonte_indisponivel")
+    assert.equal(classificarFalhaColeta(new Error("preflight candidatos: timeout")), "preflight_banco")
+    assert.equal(classificarFalhaColeta(new Error("consulta_cand_2022: nenhum CSV em /x")), "identidade_tse")
+    assert.equal(classificarFalhaColeta("qualquer"), "outro")
+  })
+})
+
+describe("revalidação grava só mudança de estado", () => {
+  it("filtra por resultado e por conjunto de CNJ publicáveis", () => {
+    const base = { lote: 1, slug: "a", data: "2026-09-25", classificacao: "encontrado" as const, resultado: "encontrado" as const, homonimosDescartados: 0 }
+    const url = (d: string) => `https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=${d}`
+    const cnj1 = "50017545020248130441", cnj2 = "70124986220248220007"
+    const plano = { ...base, args: [`--evidencia-publicavel=${url(cnj1)}`] }
+    const linha = (resultado: string, cnjs: string[], em: string) => ({
+      alvo: "a", resultado, executado_em: em,
+      detalhe: `revisao_em=2026-09-25; identidade=id-oficial; identidade_urls=x; urls_consultadas=${cnjs.map(url).join(",")}; detalhe=numeroProcesso=${cnj2}`,
+    })
+    assert.equal(filtrarMudancas([plano], [linha("encontrado", [cnj1], "2026-09-25T23:00:00Z")]).length, 0)
+    assert.equal(filtrarMudancas([plano], [linha("encontrado", [cnj1, cnj2], "2026-09-25T23:00:00Z")]).length, 1)
+    assert.equal(filtrarMudancas([{ ...plano, resultado: "indeterminado" }], [linha("encontrado", [cnj1], "2026-09-25T23:00:00Z")]).length, 1)
+    assert.equal(filtrarMudancas([plano], [linha("encontrado", [cnj1], "2026-09-25T23:00:00Z"), linha("vazio_confirmado", [], "2026-09-24T00:00:00Z")]).length, 0)
   })
 })

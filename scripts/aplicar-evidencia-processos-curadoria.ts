@@ -100,6 +100,7 @@ interface EvidenciaFinal {
 const MODOS_COORTE_ATUAL = new Set([
   "dry-run-coorte-atual-sem-recibo",
   "dry-run-coorte-atual-renovacao",
+  "dry-run-coorte-atual-revalidacao",
 ])
 
 export interface PlanoRegistro {
@@ -128,6 +129,7 @@ interface Opcoes {
   evidence: string
   apply: boolean
   limit?: number
+  somenteMudancas: boolean
 }
 
 function falhar(caminho: string, mensagem: string): never {
@@ -925,6 +927,57 @@ export function validarPreflight(
   return { pendentes, equivalentes }
 }
 
+/**
+ * `vazio_confirmado` afirma "nenhum processo" na ficha. Candidato com linha
+ * publicada em `processos` nunca recebe esse recibo: seria a contradição que
+ * a UI marca como "recibo judicial contraditório".
+ */
+export function exigirVazioSemLinhasPublicadas(planos: PlanoRegistro[], slugsComLinhas: ReadonlySet<string>): void {
+  const contraditorios = planos
+    .filter((plano) => plano.resultado === "vazio_confirmado" && slugsComLinhas.has(plano.slug))
+    .map((plano) => plano.slug)
+    .sort()
+  if (contraditorios.length > 0) {
+    throw new Error(`preflight: vazio_confirmado recusado para candidato com linhas em processos: ${contraditorios.join(", ")}`)
+  }
+}
+
+async function slugsComLinhasPublicadas(slugs: string[]): Promise<Set<string>> {
+  const { data: candidatos, error } = await supabase.from("candidatos").select("id,slug").in("slug", slugs)
+  if (error) throw new Error(`preflight: nao foi possivel ler candidatos: ${error.message}`)
+  const slugPorId = new Map((candidatos ?? []).map((linha) => [String(linha.id), String(linha.slug)]))
+  if (slugPorId.size === 0) return new Set()
+  const { data: linhas, error: erroProcessos } = await supabase.from("processos")
+    .select("candidato_id").in("candidato_id", [...slugPorId.keys()]).limit(5_000)
+  if (erroProcessos) throw new Error(`preflight: nao foi possivel ler processos: ${erroProcessos.message}`)
+  return new Set((linhas ?? []).map((linha) => slugPorId.get(String(linha.candidato_id))).filter((slug): slug is string => Boolean(slug)))
+}
+
+function cnjsDoTexto(valor: string): string[] {
+  return [...new Set([...valor.matchAll(/numeroProcesso=(\d{20})/g)].map((m) => m[1]))].sort()
+}
+
+/**
+ * Revalidação: só grava o plano cujo estado muda em relação ao último recibo
+ * do alvo (resultado diferente, ou conjunto de CNJ publicáveis diferente).
+ * Recibo que só renovaria a data fica de fora.
+ */
+export function filtrarMudancas(planos: PlanoRegistro[], existentes: LinhaExistentePreflight[]): PlanoRegistro[] {
+  const ultimo = new Map<string, LinhaExistentePreflight>()
+  for (const linha of existentes) {
+    const anterior = ultimo.get(linha.alvo)
+    if (!anterior || Date.parse(linha.executado_em ?? "") > Date.parse(anterior.executado_em ?? "")) ultimo.set(linha.alvo, linha)
+  }
+  return planos.filter((plano) => {
+    const linha = ultimo.get(plano.slug)
+    if (!linha) return true
+    if (linha.resultado !== plano.resultado) return true
+    const publicaveis = cnjsDoTexto(plano.args.filter((arg) => arg.startsWith("--evidencia-publicavel=")).join(" "))
+    const anteriores = cnjsDoTexto((linha.detalhe ?? "").split("; detalhe=")[0])
+    return plano.resultado === "encontrado" && JSON.stringify(publicaveis) !== JSON.stringify(anteriores)
+  })
+}
+
 async function linhasExistentesPreflight(slugs: string[]): Promise<LinhaExistentePreflight[]> {
   const linhas: LinhaExistentePreflight[] = []
   for (let inicio = 0; ; inicio += TAMANHO_PAGINA_PREFLIGHT) {
@@ -950,6 +1003,8 @@ async function executarPreflightRemoto(
   const { data, error } = await supabase.from("candidatos_publico").select("slug").in("slug", slugs)
   if (error) throw new Error(`preflight: nao foi possivel validar candidatos_publico: ${error.message}`)
   const slugsPublicos = (data ?? []).map((linha) => texto(linha.slug, "preflight.candidatos_publico.slug"))
+  const vazios = planos.filter((plano) => plano.resultado === "vazio_confirmado").map((plano) => plano.slug)
+  if (vazios.length > 0) exigirVazioSemLinhasPublicadas(planos, await slugsComLinhasPublicadas(vazios))
   const existentes = await linhasExistentesPreflight(slugs)
   const resultado = evidencia.coorte_atual
     ? validarPreflightRenovacao(
@@ -1001,7 +1056,7 @@ export function adquirirLockAplicacao(evidence: string): () => void {
 
 function lerOpcoes(argv: string[]): Opcoes {
   const desconhecidas = argv.filter((arg) =>
-    arg !== "--apply" && arg !== "--dry-run" && !arg.startsWith("--evidence=") && !arg.startsWith("--limit="),
+    arg !== "--apply" && arg !== "--dry-run" && arg !== "--somente-mudancas" && !arg.startsWith("--evidence=") && !arg.startsWith("--limit="),
   )
   if (desconhecidas.length > 0) throw new Error(`flag desconhecida: ${desconhecidas[0]}`)
   if (argv.includes("--apply") && argv.includes("--dry-run")) throw new Error("use --apply ou --dry-run, nunca os dois")
@@ -1018,7 +1073,7 @@ function lerOpcoes(argv: string[]): Opcoes {
   }
   const evidence = evidenceFlags.length === 1 ? evidenceFlags[0].slice("--evidence=".length).trim() : EVIDENCE_PADRAO
   if (!evidence) throw new Error("--evidence exige caminho nao vazio")
-  return { evidence: resolve(evidence.replace(/^~(?=\/)/, homedir())), apply: argv.includes("--apply"), limit }
+  return { evidence: resolve(evidence.replace(/^~(?=\/)/, homedir())), apply: argv.includes("--apply"), limit, somenteMudancas: argv.includes("--somente-mudancas") }
 }
 
 export async function main(argv = process.argv.slice(2)): Promise<void> {
@@ -1028,6 +1083,19 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
   const planos = criarPlanos(evidencia)
 
   // Todos os planos ja foram validados antes desta bifurcacao.
+  if (opcoes.somenteMudancas && !evidencia.coorte_atual) throw new Error("--somente-mudancas exige evidencia da coorte atual")
+  if (!opcoes.apply && opcoes.somenteMudancas) {
+    // Único dry-run que lê o banco: precisa do último recibo de cada alvo.
+    const mudancas = filtrarMudancas(planos, await linhasExistentesPreflight(planos.map((plano) => plano.slug)))
+    console.log(JSON.stringify({
+      modo: "dry-run-somente-mudancas",
+      evidence: opcoes.evidence,
+      coorte_atual: evidencia.coorte_atual,
+      candidatos_validados: planos.length,
+      mudancas: mudancas.map((plano) => ({ slug: plano.slug, resultado: plano.resultado, args: [...plano.args, "--dry-run"] })),
+    }, null, 2))
+    return
+  }
   if (!opcoes.apply) {
     const selecionados = planos.slice(0, opcoes.limit ?? planos.length)
     console.log(JSON.stringify({
@@ -1057,14 +1125,17 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
 
   const liberarLock = adquirirLockAplicacao(opcoes.evidence)
   try {
-    const preflight = await executarPreflightRemoto(planos, evidencia)
+    const preflightCompleto = await executarPreflightRemoto(planos, evidencia)
+    const preflight = opcoes.somenteMudancas
+      ? { ...preflightCompleto, pendentes: filtrarMudancas(preflightCompleto.pendentes, preflightCompleto.existentes) }
+      : preflightCompleto
     // Backup das linhas existentes dos alvos antes de qualquer escrita (0600, ao lado da evidência).
     const backupPath = `${opcoes.evidence}.backup-coleta_log-${new Date().toISOString().replace(/[:.]/g, "-")}.json`
     writeFileSync(backupPath, `${JSON.stringify({ gerado_em: new Date().toISOString(), fonte: FONTE_CURADORIA, linhas: preflight.existentes }, null, 2)}\n`, { encoding: "utf8", mode: 0o600, flag: "wx" })
     for (const plano of preflight.pendentes) {
       await registrarRevisao([...plano.args, "--apply"])
     }
-    const readback = await readbackRecibos(planos)
+    const readback = await readbackRecibos(opcoes.somenteMudancas ? preflight.pendentes : planos)
     console.log(JSON.stringify({
       modo: "apply",
       backup: backupPath,
