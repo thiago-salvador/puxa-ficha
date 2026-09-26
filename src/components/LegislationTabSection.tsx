@@ -13,7 +13,11 @@ import type { LegislacaoMandatoExecutivo, ProjetoLei, SectionFreshnessInfo, Voto
 import { ExternalLink } from "lucide-react"
 import { DataFreshnessNotice } from "./DataFreshnessNotice"
 import { formatProjectStatusLabel, formatTemaLabel, formatVoteBadgeLabel, formatVoteNote } from "@/lib/ui-labels"
-import { groupLegislacaoProfileItems, resolveExecutiveLegislationInventoryScope } from "@/lib/legislacao-profile-groups"
+import {
+  descricaoDestaquesParlamentares,
+  groupLegislacaoProfileItems,
+  resolveExecutiveLegislationInventoryScope,
+} from "@/lib/legislacao-profile-groups"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { contarPorNatureza, rotuloDoAcervo } from "@/lib/proposicao-natureza"
 import { agruparProposicoesPorEmenta, descreverReapresentacoes } from "@/lib/proposicao-dedupe"
@@ -715,7 +719,7 @@ export function LegislationTabSection({
                   : `Proposições em destaque (${groups.destaquesParlamentares.length})`
               }
               title="Autoria legislativa em destaque"
-              description="Recorte inicial de relevância pública na autoria legislativa: inclui destaques editoriais quando existirem e sinais heurísticos na ementa. Não é uma curadoria editorial definitiva item a item."
+              description={descricaoDestaquesParlamentares(groups.destaquesParlamentares)}
               hasLegislativeHistory={hasLegislativeHistory}
               suggestion={suggestion}
               freshness={freshness}

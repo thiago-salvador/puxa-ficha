@@ -84,6 +84,20 @@ const LEGISLATION_HIGHLIGHT_CRITERIA =
 const COMPLETE_EXECUTIVE_HIGHLIGHT_SCOPE =
   "Este recorte cobre apenas o exercício de chefe do Executivo descrito no inventário completo de atos do Executivo no mandato; outros cargos públicos do candidato não estão refletidos nesta aba."
 
+/**
+ * Descrição da lista de autoria parlamentar em destaque. A lista junta os
+ * projetos marcados com `destaque` (curadoria) e os escolhidos pela heurística
+ * de palavras-chave na ementa; quando nenhum item é curado, a descrição diz
+ * que a seleção inteira é automática, em vez de sugerir curadoria.
+ */
+export function descricaoDestaquesParlamentares(itens: readonly { destaque?: boolean | null }[]): string {
+  const curados = itens.filter((item) => item.destaque === true).length
+  if (curados === 0) {
+    return "Seleção automática por sinais de política pública na ementa (palavras-chave), sem revisão editorial. Nenhum item desta lista passou por curadoria."
+  }
+  return `Seleção mista: ${curados === 1 ? "1 item marcado" : `${curados} itens marcados`} como destaque editorial aparece${curados === 1 ? "" : "m"} primeiro, com o selo; os demais foram escolhidos automaticamente por sinais de política pública na ementa, sem revisão editorial.`
+}
+
 const COMPLETE_PARLAMENTAR_AUTHORSHIP_COVERAGE: Record<string, string> = {
   "ivan-moraes-recife-openlegis-completo-autoria-principal-pl-pelo-2017-2024-cutoff-20260512":
     "Inventário completo da autoria parlamentar: autoria principal de Ivan Moraes na Câmara Municipal do Recife/OpenLegis em PL e PELO no recorte 2017-2024, enumerada por @@materias por ano/tipo e confirmada por authorship firstAuthor=true, com cutoff em 12/05/2026. Este recorte cobre apenas autoria parlamentar principal na Câmara Municipal do Recife/OpenLegis; não cobre inventário global da vida política, atos do Executivo, Assembleia Legislativa, Câmara dos Deputados, campanhas, proposições fora de PL/PELO, proposições sem PDF/ementa/número/ano oficiais, nem superfícies fora do OpenLegis Recife.",
@@ -520,7 +534,7 @@ export function resolveExecutiveLegislationInventoryScope(
       isComplete: true,
       tabLabel: "Inventário completo do mandato",
       listDescription: completeDescription,
-      featuredDescription: `Recorte inicial de até ${LEGISLATION_HIGHLIGHT_LIMIT} destaques de relevância pública dentro do inventário completo de ${totalItems} atos do Executivo no mandato verificados: ${LEGISLATION_HIGHLIGHT_CRITERIA}. O inventário completo do mandato segue disponível na sub-aba própria. ${COMPLETE_EXECUTIVE_HIGHLIGHT_SCOPE}`,
+      featuredDescription: `Seleção automática, sem revisão editorial, de até ${LEGISLATION_HIGHLIGHT_LIMIT} itens de relevância pública dentro do inventário completo de ${totalItems} atos do Executivo no mandato verificados: ${LEGISLATION_HIGHLIGHT_CRITERIA}. O inventário completo do mandato segue disponível na sub-aba própria. ${COMPLETE_EXECUTIVE_HIGHLIGHT_SCOPE}`,
     }
   }
 
@@ -530,7 +544,7 @@ export function resolveExecutiveLegislationInventoryScope(
     tabLabel: "Inventário ampliado",
     listDescription:
       "Inventário ampliado parcial: inclui atos já verificados em fonte oficial no recorte disponível. Não é um inventário completo do mandato; ainda não há base oficial suficiente para afirmar completude.",
-    featuredDescription: `Recorte inicial de até ${LEGISLATION_HIGHLIGHT_LIMIT} destaques de relevância pública dentro do inventário ampliado de ${totalItems} atos confirmados em fonte oficial no recorte disponível: ${LEGISLATION_HIGHLIGHT_CRITERIA}. Este inventário não é completo do mandato e segue disponível na sub-aba própria.`,
+    featuredDescription: `Seleção automática, sem revisão editorial, de até ${LEGISLATION_HIGHLIGHT_LIMIT} itens de relevância pública dentro do inventário ampliado de ${totalItems} atos confirmados em fonte oficial no recorte disponível: ${LEGISLATION_HIGHLIGHT_CRITERIA}. Este inventário não é completo do mandato e segue disponível na sub-aba própria.`,
   }
 }
 
@@ -575,7 +589,7 @@ function resolveParlamentarAuthorshipInventoryScope(
       tabLabel: "Inventário ampliado",
       listDescription:
         "Inventário ampliado parcial: inclui proposições legislativas já verificadas em fonte oficial no recorte disponível. Não é um inventário completo da autoria parlamentar; ainda não há base oficial suficiente para afirmar completude.",
-      featuredDescription: `Recorte inicial de até ${LEGISLATION_HIGHLIGHT_LIMIT} destaques de relevância pública dentro do inventário ampliado de ${projetosLei.length} proposições legislativas confirmadas em fonte oficial no recorte disponível: ${LEGISLATION_HIGHLIGHT_CRITERIA}. Este inventário não é completo da autoria parlamentar e segue disponível na sub-aba própria.`,
+      featuredDescription: `Seleção automática, sem revisão editorial, de até ${LEGISLATION_HIGHLIGHT_LIMIT} itens de relevância pública dentro do inventário ampliado de ${projetosLei.length} proposições legislativas confirmadas em fonte oficial no recorte disponível: ${LEGISLATION_HIGHLIGHT_CRITERIA}. Este inventário não é completo da autoria parlamentar e segue disponível na sub-aba própria.`,
     }
   }
 
@@ -584,7 +598,7 @@ function resolveParlamentarAuthorshipInventoryScope(
     isComplete: true,
     tabLabel: "Inventário completo da autoria parlamentar",
     listDescription: coverage.description,
-    featuredDescription: `Recorte inicial de até ${LEGISLATION_HIGHLIGHT_LIMIT} destaques de relevância pública dentro do ${coverage.outsideCoverageCount > 0 ? `inventário completo do recorte de ${coverage.coverageCount}` : `inventário completo de ${coverage.coverageCount}`} proposições legislativas verificadas como autoria parlamentar: ${LEGISLATION_HIGHLIGHT_CRITERIA}. ${coverage.outsideCoverageCount > 0 ? `Há mais ${coverage.outsideCoverageCount} registros parlamentares verificados fora desse coverage_id; eles permanecem na lista, mas não ampliam o recorte completo. ` : ""}O inventário completo da autoria parlamentar segue disponível na sub-aba própria. Este recorte cobre apenas a autoria parlamentar verificada; outros cargos públicos do candidato não estão refletidos nesta aba.`,
+    featuredDescription: `Seleção automática, sem revisão editorial, de até ${LEGISLATION_HIGHLIGHT_LIMIT} itens de relevância pública dentro do ${coverage.outsideCoverageCount > 0 ? `inventário completo do recorte de ${coverage.coverageCount}` : `inventário completo de ${coverage.coverageCount}`} proposições legislativas verificadas como autoria parlamentar: ${LEGISLATION_HIGHLIGHT_CRITERIA}. ${coverage.outsideCoverageCount > 0 ? `Há mais ${coverage.outsideCoverageCount} registros parlamentares verificados fora desse coverage_id; eles permanecem na lista, mas não ampliam o recorte completo. ` : ""}O inventário completo da autoria parlamentar segue disponível na sub-aba própria. Este recorte cobre apenas a autoria parlamentar verificada; outros cargos públicos do candidato não estão refletidos nesta aba.`,
   }
 }
 
@@ -619,7 +633,7 @@ function resolveLegislationProfileInventoryScope({
       isComplete: true,
       tabLabel: "Inventário completo do mandato",
       listDescription: executiveScope.listDescription,
-      featuredDescription: `Recorte inicial de até ${LEGISLATION_HIGHLIGHT_LIMIT} destaques de relevância pública dentro do inventário completo de ${executiveCount} atos do Executivo no mandato verificados, integrado a ${nonExecutiveCount} registros parlamentares já verificados (total ${totalCount}): ${LEGISLATION_HIGHLIGHT_CRITERIA}. O inventário completo do mandato segue disponível na sub-aba própria. ${COMPLETE_EXECUTIVE_HIGHLIGHT_SCOPE}`,
+      featuredDescription: `Seleção automática, sem revisão editorial, de até ${LEGISLATION_HIGHLIGHT_LIMIT} itens de relevância pública dentro do inventário completo de ${executiveCount} atos do Executivo no mandato verificados, integrado a ${nonExecutiveCount} registros parlamentares já verificados (total ${totalCount}): ${LEGISLATION_HIGHLIGHT_CRITERIA}. O inventário completo do mandato segue disponível na sub-aba própria. ${COMPLETE_EXECUTIVE_HIGHLIGHT_SCOPE}`,
     }
   }
 
@@ -629,7 +643,7 @@ function resolveLegislationProfileInventoryScope({
       isComplete: true,
       tabLabel: "Inventário completo da autoria parlamentar",
       listDescription: `${parlamentarScope.listDescription} A aba também mostra ${executiveCount} atos do Executivo já verificados em fonte oficial como recorte parcial separado; esse recorte executivo não é inventário completo do mandato.`,
-      featuredDescription: `Recorte inicial de até ${LEGISLATION_HIGHLIGHT_LIMIT} destaques de relevância pública dentro do inventário completo do recorte de autoria parlamentar, integrado a ${executiveCount} atos do Executivo já verificados de forma parcial (total ${totalCount}): ${LEGISLATION_HIGHLIGHT_CRITERIA}. O inventário completo da autoria parlamentar segue disponível na sub-aba própria; o recorte de Executivo permanece parcial e separado.`,
+      featuredDescription: `Seleção automática, sem revisão editorial, de até ${LEGISLATION_HIGHLIGHT_LIMIT} itens de relevância pública dentro do inventário completo do recorte de autoria parlamentar, integrado a ${executiveCount} atos do Executivo já verificados de forma parcial (total ${totalCount}): ${LEGISLATION_HIGHLIGHT_CRITERIA}. O inventário completo da autoria parlamentar segue disponível na sub-aba própria; o recorte de Executivo permanece parcial e separado.`,
     }
   }
 
@@ -639,7 +653,7 @@ function resolveLegislationProfileInventoryScope({
     tabLabel: "Inventário ampliado",
     listDescription:
       "Inventário ampliado parcial: inclui registros legislativos já verificados em fontes oficiais e bases públicas estruturadas no recorte disponível. Não é um inventário completo do mandato ou da atuação legislativa; ainda não há base oficial suficiente para afirmar completude.",
-    featuredDescription: `Recorte inicial de até ${LEGISLATION_HIGHLIGHT_LIMIT} destaques de relevância pública dentro do inventário ampliado de ${totalCount} registros legislativos confirmados no recorte disponível: ${LEGISLATION_HIGHLIGHT_CRITERIA}. Este inventário não é completo do mandato ou da atuação legislativa e segue disponível na sub-aba própria.`,
+    featuredDescription: `Seleção automática, sem revisão editorial, de até ${LEGISLATION_HIGHLIGHT_LIMIT} itens de relevância pública dentro do inventário ampliado de ${totalCount} registros legislativos confirmados no recorte disponível: ${LEGISLATION_HIGHLIGHT_CRITERIA}. Este inventário não é completo do mandato ou da atuação legislativa e segue disponível na sub-aba própria.`,
   }
 }
 
