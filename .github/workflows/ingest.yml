@@ -3,15 +3,21 @@ name: Ingestão de dados
 # Ingestão em massa das fontes públicas (TSE, Câmara, Senado, Portal da
 # Transparência) para o Supabase. Nunca roda em pull_request: usa o
 # SUPABASE_SERVICE_ROLE_KEY, e secrets não são expostos a PRs de fork.
-# Tanto workflow_dispatch quanto schedule executam somente o código da main,
-# então o modelo de confiança é o mesmo nos dois disparos.
+# O schedule sempre roda o código da main, mas o workflow_dispatch aceita
+# qualquer branch (`gh workflow run --ref <branch>`), e quem tem push no repo
+# poderia rodar código não revisado com a service role. Por isso todo job que
+# recebe a service role exige `github.ref == 'refs/heads/main'`: disparo de
+# outra ref pula os jobs de ingestão.
 #
-# Cadência: schedule semanal cobre só camara+senado (APIs REST idempotentes,
-# dado que muda toda semana: votações, gastos, proposições). TSE e demais
-# fontes continuam por disparo manual: são lotes pesados e/ou passam por
-# curadoria antes de publicar. Se este cron mudar, o rótulo updateFrequency
-# de src/data/methodology-sources.ts muda no MESMO commit (regra documentada
-# no cabeçalho daquele arquivo).
+# Cadência: schedule semanal cobre só senado (API REST idempotente, dado que
+# muda toda semana). A Câmara saiu do schedule em 26/09/2026: a API dela
+# recusa conexão dos runners hospedados do GitHub (ver o job ingest-camara), e
+# a coleta semanal passou para o agente launchd local descrito em
+# docs/operations/ingest-camara-local.md. TSE e demais fontes continuam por
+# disparo manual: são lotes pesados e/ou passam por curadoria antes de
+# publicar. Se este cron mudar, o rótulo updateFrequency de
+# src/data/methodology-sources.ts muda no MESMO commit (regra documentada no
+# cabeçalho daquele arquivo).
 #
 # Após ingestão bem-sucedida, o job `revalidate` derruba o Data Cache das
 # tags públicas na produção; sem isso o site continua servindo o dado antigo
@@ -23,7 +29,7 @@ name: Ingestão de dados
 
 on:
   schedule:
-    # Quartas às 06:00 UTC (03:00 em Brasília): camara+senado (default de
+    # Quartas às 06:00 UTC (03:00 em Brasília): senado (default de
     # RAW_SOURCES quando não há input).
     - cron: "0 6 * * 3"
   workflow_dispatch:
@@ -65,18 +71,20 @@ jobs:
     # curtos porque o skip incremental pula quem já está completo.
     timeout-minutes: 90
     # No disparo por schedule não existem inputs; o fallback de RAW_SOURCES
-    # ('camara senado') decide o que roda.
+    # ('senado') decide o que roda.
     # `transparencia` cobre `sancoes` por substring no contains(), mas a
     # condição fica explícita: depender de coincidência de prefixo é o tipo de
     # acerto que quebra em silêncio quando alguém renomeia uma fonte.
     # `camara` saiu deste job em 26/09/2026 e tem job próprio (ingest-camara),
     # que roda depois deste; ver o comentário daquele job.
     if: >-
-      github.event_name == 'schedule' ||
-      contains(github.event.inputs.sources, 'senado') ||
-      contains(github.event.inputs.sources, 'transparencia') ||
-      contains(github.event.inputs.sources, 'sancoes') ||
-      contains(github.event.inputs.sources, 'filiacao')
+      github.ref == 'refs/heads/main' && (
+        github.event_name == 'schedule' ||
+        contains(github.event.inputs.sources, 'senado') ||
+        contains(github.event.inputs.sources, 'transparencia') ||
+        contains(github.event.inputs.sources, 'sancoes') ||
+        contains(github.event.inputs.sources, 'filiacao')
+      )
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -91,7 +99,7 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           TRANSPARENCIA_API_KEY: ${{ secrets.TRANSPARENCIA_API_KEY }}
-          RAW_SOURCES: ${{ github.event.inputs.sources || 'camara senado' }}
+          RAW_SOURCES: ${{ github.event.inputs.sources || 'senado' }}
         run: |
           set -euo pipefail
           SAFE=""
@@ -135,18 +143,15 @@ jobs:
     # em 0,2 s fora dele. User-Agent, pausa e concorrência não mudam nada: o SYN
     # não volta.
     #
-    # O runner vem da variável de repositório PF_INGEST_CAMARA_RUNNER (JSON).
-    # Sem ela, o job segue no runner hospedado, e o pré-voo de
-    # scripts/lib/camara-alcance.ts encerra a fonte em ~1 min com um recibo
-    # `erro` por ficha, em vez de gastar os 90 min. Com ela apontando para o
-    # runner auto-hospedado (docs/operations/ingest-camara-runner.md), o mesmo
-    # job roda no Mac do mantenedor: mesmos secrets, mesmo GITHUB_RUN_ID nos
-    # recibos de `coleta_log` (`gh:<run>`), mesma revalidação depois.
-    #
-    # Só este job pode ir para o runner auto-hospedado: este workflow nunca
-    # roda em pull_request, e tests/ingest-camara-runner.test.ts reprova
-    # qualquer outro workflow que tente usar a variável ou o rótulo.
-    runs-on: ${{ fromJSON(vars.PF_INGEST_CAMARA_RUNNER || '"ubuntu-latest"') }}
+    # Por isso a coleta semanal da Câmara não roda mais aqui: roda no agente
+    # launchd local (scripts/camara-local/, docs/operations/ingest-camara-local.md),
+    # num worktree descartável no SHA da main. Este job fica só para disparo
+    # manual. Ele tenta, e o pré-voo de scripts/lib/camara-alcance.ts encerra a
+    # fonte em ~1 min com um recibo `erro` honesto por ficha quando a Câmara
+    # recusa, em vez de gastar os 90 min. Não entra no schedule de propósito:
+    # `coleta_log_ultima` fica com a tentativa mais recente, e um `erro` do
+    # Actions gravado depois da coleta local esconderia o recibo bom.
+    runs-on: ubuntu-latest
     timeout-minutes: 90
     # Depois do REST, e não em paralelo: os dois escrevem projetos_lei e votos,
     # e o ingest nunca foi pensado para escrita concorrente. `!cancelled()`
@@ -154,7 +159,9 @@ jobs:
     needs: [ingest-rest]
     if: >-
       !cancelled() &&
-      (github.event_name == 'schedule' || contains(github.event.inputs.sources, 'camara'))
+      github.ref == 'refs/heads/main' &&
+      github.event_name == 'workflow_dispatch' &&
+      contains(github.event.inputs.sources, 'camara')
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -168,11 +175,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-          # No schedule não existem inputs e a coorte completa estoura os 30
-          # min (3 dos 4 últimos runs cancelados desde 30/07); o caminho
-          # incremental vira o default do cron, e o dispatch manual segue
-          # mandando na flag.
-          INCREMENTAL: ${{ github.event_name == 'schedule' && 'true' || github.event.inputs.incremental }}
+          INCREMENTAL: ${{ github.event.inputs.incremental }}
         run: |
           set -euo pipefail
           # A flag é booleana e vem de `inputs`, nunca de string livre, então
@@ -191,7 +194,7 @@ jobs:
     # patrimônio e financiamento usam candidato + ano, então os três recortes
     # podem rodar em paralelo e continuam agrupados pelo mesmo GITHUB_RUN_ID.
     timeout-minutes: 90
-    if: contains(github.event.inputs.sources, 'tse')
+    if: github.ref == 'refs/heads/main' && contains(github.event.inputs.sources, 'tse')
     strategy:
       fail-fast: false
       matrix:
@@ -236,7 +239,7 @@ jobs:
     name: Google News
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    if: contains(github.event.inputs.sources, 'google-news')
+    if: github.ref == 'refs/heads/main' && contains(github.event.inputs.sources, 'google-news')
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:

@@ -61,7 +61,7 @@ export function resultadoSemAlcance(slug: string, motivo: string): IngestResult 
     rows_upserted: 0,
     errors: [
       `API da Camara inalcancavel deste runner (${motivo}); ficha nao tentada. ` +
-        `Ver docs/operations/ingest-camara-runner.md`,
+        `Ver docs/operations/ingest-camara-local.md`,
     ],
     duration_ms: 0,
   }
