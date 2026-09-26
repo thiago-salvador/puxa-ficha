@@ -138,7 +138,7 @@ describe("invariante 2: papel não-parte perto do nome nunca gera encontrado", (
   })
 
   it("qualificação não-parte depois do nome", async () => {
-    for (const depois of [", CPF {c}, OAB/MG 12345", ", advogado, CPF {c}", ", perito judicial, CPF {c}", " (testemunha), CPF {c}"]) {
+    for (const depois of [", CPF {c}, OAB/MG 12345", ", advogado, CPF {c}", ", perito judicial, CPF {c}", " (testemunha), CPF {c}", " - CPF: {c} (ADVOGADO), FULANO - CPF: 111.444.777-35 (AGRAVADO)"]) {
       for (const dest of destinatarios) {
         const texto = `REU: ${NOME_UP}${depois.replace("{c}", CPF_FMT)}`
         const r = await pesquisar([{ id: 1, texto, destinatarios: dest }])
@@ -162,6 +162,18 @@ describe("invariante 2: papel não-parte perto do nome nunca gera encontrado", (
       // "&" solto (vindo de &amp;) nunca apaga o nome do trecho salvo.
       `AUTOR: PALHARES &amp; CIA LTDA, REU: ${NOME_UP}, CPF ${CPF_FMT}; ADVOGADO: FULANO`,
       `AUTOR: PALHARES & CIA LTDA, REU: ${NOME_UP}, Senador; ADVOGADO: FULANO`,
+      // Lista com papel entre parênteses depois de cada pessoa (TJMT).
+      `PARTE(S): [FULANO DE TAL - CPF: ${OUTRO} (ADVOGADO), ${NOME_UP} - CPF: ${CPF_FMT} (AGRAVADO), BELTRANO - CPF: 000.000.001-91 (ADVOGADO)]`,
+      // Entidades acentuadas e rótulo colado (TJGO), depois do cabeçalho do gabinete do juiz.
+      `GABINETE DO JUIZ FERNANDO TAL CENTRAL DE CUMPRIMENTO DE SENTEN&CCEDIL;A C&IACUTE;VELAUTOR(A): ${NOME_UP} (CPF/CNPJ N.&ordm; ${CPF_FMT})R&EACUTE;(U): FULANO LTDA`,
+      // Rótulo de parte com entidade acentuada encerra a herança da testemunha anterior.
+      `TESTEMUNHA: FULANO DE TAL; R&Eacute;U: ${NOME_UP}, CPF ${CPF_FMT}`,
+      // Abreviação de parte depois da lista de advogados (TJMS).
+      `ADVOGADOS: FULANO DE TAL (OAB 17733/MS), BELTRANO (OAB 20136/MS) - EXEQTE: CENTRO GRAFICO X - EXECTDO: ${NOME_UP}, CPF ${CPF_FMT}`,
+      // Edital com vários processos: o cabeçalho do processo encerra a herança do anterior.
+      `ADVOGADOS: FULANO DE TAL (OAB 17733/MS) PROCESSO 0830146-17.2019.8.12.0001 - CUMPRIMENTO DE SENTENCA - ${NOME_UP}, CPF ${CPF_FMT}`,
+      // Campo seguinte com papel ("RELATOR(A): DESEMBARGADOR") não é qualificação da parte.
+      `AGRAVADO: ${NOME_UP}, CPF ${CPF_FMT}, PREFEITO DO MUNICIPIO DE BELEM RELATOR(A): DESEMBARGADOR JOSE MARIA`,
     ]) {
       const r = await pesquisar([{ id: 1, texto, destinatarios: [{ nome: NOME_UP, polo: "P" }] }])
       assert.equal(r.classificacao, "encontrado", texto)

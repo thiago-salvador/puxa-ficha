@@ -1162,6 +1162,7 @@ export function decodificarEntidadesHtml(valor: string): string {
   return String(valor ?? "")
     .replace(/&#(\d{1,6});/g, (_, n: string) => String.fromCodePoint(Number(n)))
     .replace(/&#x([0-9a-f]{1,6});/gi, (_, h: string) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&([a-z])(acute|grave|circ|tilde|cedil|uml|ring);/gi, (_, letra: string) => letra)
     .replace(/&([a-z]+);/gi, (m, nome: string) => ENTIDADES_HTML[nome.toLowerCase()] ?? m)
     .replace(/ /g, " ")
 }
@@ -1274,10 +1275,14 @@ export function cpfDaCandidaturaNoTexto(texto: string, cpf: string): boolean {
 const PAPEL_NAO_PARTE = /\b(?:ADVOGAD[OA]S?|ADV\b|OAB|PROCURADOR(?:A|ES|AS)?|REPRESENTANTE LEGAL|DEFENSOR(?:A|ES|AS)?|CURADOR(?:A|ES|AS)?|PATRON[OA]S?|SOCIEDADE DE ADVOGADOS|TESTEMUNHAS?|INFORMANTES?|VITIMAS?|PERIT[OA]S?|NOMEIO|ADMINISTRADOR(?:A)? JUDICIAL|JUIZ(?:A|ES|AS)?|DESEMBARGADOR(?:A|ES|AS)?|MAGISTRAD[OA]S?|PROMOTOR(?:A|ES|AS)?|LEILOEIR[OA]S?|OFICIAL DE JUSTICA|ESCRIVA[OE]S?|ESCRIVAO|DEPOSITARI[OA]S?|INTERPRETE)\b/g
 
 /** Rótulos de parte: encerram a herança de um papel não-parte anterior. */
-const PAPEL_DE_PARTE = /\b(?:AUTOR(?:A|ES|AS)?|REUS?|RE(?=\s*[:(])|REQUERENTES?|REQUERID[OA]S?|EXEQUENTES?|EXECUTAD[OA]S?|IMPETRANTES?|IMPETRAD[OA]S?|RECORRENTES?|RECORRID[OA]S?|APELANTES?|APELAD[OA]S?|AGRAVANTES?|AGRAVAD[OA]S?|EMBARGANTES?|EMBARGAD[OA]S?|RECLAMANTES?|RECLAMAD[OA]S?|INVESTIGAD[OA]S?|DENUNCIAD[OA]S?|ACUSAD[OA]S?|QUERELANTES?|QUERELAD[OA]S?|INTERESSAD[OA]S?|POLO (?:ATIVO|PASSIVO)|PARTES?|DEVEDOR(?:A|ES|AS)?|CREDOR(?:A|ES|AS)?|PACIENTES?|REPRESENTAD[OA]S?)\b/g
+const PAPEL_DE_PARTE = /\b(?:EXEQTES?|EXECTD[OA]S?|REQTES?|REQD[OA]S?|RECTES?|RECD[OA]S?|APTES?|APD[OA]S?|AGTES?|AGD[OA]S?|IMPTES?|IMPD[OA]S?|EMBTES?|EMBD[OA]S?|RECLTES?|RECLD[OA]S?|AUTOR(?:A|ES|AS)?|REUS?|RE(?=\s*[:(])|REQUERENTES?|REQUERID[OA]S?|EXEQUENTES?|EXECUTAD[OA]S?|IMPETRANTES?|IMPETRAD[OA]S?|RECORRENTES?|RECORRID[OA]S?|APELANTES?|APELAD[OA]S?|AGRAVANTES?|AGRAVAD[OA]S?|EMBARGANTES?|EMBARGAD[OA]S?|RECLAMANTES?|RECLAMAD[OA]S?|INVESTIGAD[OA]S?|DENUNCIAD[OA]S?|ACUSAD[OA]S?|QUERELANTES?|QUERELAD[OA]S?|INTERESSAD[OA]S?|POLO (?:ATIVO|PASSIVO)|PARTES?|DEVEDOR(?:A|ES|AS)?|CREDOR(?:A|ES|AS)?|PACIENTES?|REPRESENTAD[OA]S?)\b|(?:AUTOR|REU|RE|REQUERENTE|REQUERID[OA]|EXEQUENTE|EXECUTAD[OA]|IMPETRANTE|IMPETRAD[OA]|RECORRENTE|RECORRID[OA]|APELANTE|APELAD[OA]|AGRAVANTE|AGRAVAD[OA]|EMBARGANTE|EMBARGAD[OA]|RECLAMANTE|RECLAMAD[OA]|PARTE)(?:\([A-Z,]{1,5}\))?\s*:/g
 
-/** Fim de frase: ". " fora de abreviação, ou linha em branco. `;` e quebra simples não encerram a cláusula. */
-const FIM_DE_FRASE = /(?<!\b(?:DR|DRA|DRS|DRAS|SR|SRA|SRS|SRAS|SRTA|EXMO|EXMA|EXMOS|EXA|EXAS|DD|N|NO|NS|NR|NUM|ART|ARTS|FL|FLS|PROF|PROFA|ADV|ADVS|DES|DESA|MIN|SEN|DEP|ENG|LTDA|CIA|JR|DOC|PROC|REG|OBS|AV|ETC|ID|PAG|VOL|CAP|TEN|CEL|SGT|GAL|MAJ|STA|STO|APTO|MM|MMA|D|S|R|V|VS))\.\s|\n\s*\n/g
+/**
+ * Fim de cláusula: ". " fora de abreviação, linha em branco ou cabeçalho de
+ * outro processo (edital com vários processos). `;` e quebra simples não
+ * encerram a cláusula.
+ */
+const FIM_DE_FRASE = /(?<!\b(?:DR|DRA|DRS|DRAS|SR|SRA|SRS|SRAS|SRTA|EXMO|EXMA|EXMOS|EXA|EXAS|DD|N|NO|NS|NR|NUM|ART|ARTS|FL|FLS|PROF|PROFA|ADV|ADVS|DES|DESA|MIN|SEN|DEP|ENG|LTDA|CIA|JR|DOC|PROC|REG|OBS|AV|ETC|ID|PAG|VOL|CAP|TEN|CEL|SGT|GAL|MAJ|STA|STO|APTO|MM|MMA|D|S|R|V|VS))\.\s|\n\s*\n|\bPROCESSO(?:\s+N[O°º.]*)?\s*:?\s*\d{5,7}/g
 
 function ultimoIndice(regex: RegExp, trecho: string): number {
   let ultimo = -1
@@ -1296,11 +1301,20 @@ function ultimoIndice(regex: RegExp, trecho: string): number {
  */
 function mencaoEmPapelNaoParte(t: string, mencao: MencaoDoNome): boolean {
   const antes = t.slice(0, mencao.inicio)
+  // Papel entre parênteses ("FULANO - CPF x (ADVOGADO), NOME") descreve a
+  // pessoa anterior da lista: não é herdado pela menção seguinte.
   const clausula = antes.slice(Math.max(0, ultimoIndice(FIM_DE_FRASE, antes)))
+    .replace(/\([^()]{0,40}\)/g, (m) => /^\([A-Z,]{1,5}\)$/.test(m) ? m : " ".repeat(m.length))
   const naoParte = ultimoIndice(PAPEL_NAO_PARTE, clausula)
   if (naoParte > ultimoIndice(PAPEL_DE_PARTE, clausula)) return true
-  const depois = t.slice(mencao.fim, mencao.fim + 240)
-  const corte = depois.search(new RegExp(`[;\\n]|${FIM_DE_FRASE.source}|${PAPEL_DE_PARTE.source}|${PAPEL_NAO_PARTE.source}(?:\\s*\\([A-Z]{1,2}\\))?\\s*:`))
+  // Qualificação depois do nome: pula o CPF rotulado da própria menção e olha
+  // só o resto do item (até 80 caracteres). Corta em `;`, `/`, quebra de linha,
+  // fim de cláusula, rótulo de parte, rótulo de papel que apresenta outra
+  // pessoa ("ADVOGADO(S) DO RECLAMANTE:") ou o CPF da pessoa seguinte.
+  const bruto = t.slice(mencao.fim, mencao.fim + 240)
+  const proprio = ROTULO_CPF_DEPOIS_DO_NOME.exec(bruto)
+  const depois = bruto.slice(proprio ? proprio[0].length : 0).slice(0, 80)
+  const corte = depois.search(new RegExp(`[;\\n/]|${FIM_DE_FRASE.source}|${PAPEL_DE_PARTE.source}|${PAPEL_NAO_PARTE.source}(?:\\([A-Z,]{1,5}\\))?(?:\\s+D[OA]S?(?:\\([A-Z,]{1,5}\\))?\\s+[A-Z]+(?:\\([A-Z,]{1,5}\\))?)?\\s*:|\\b[A-Z][A-Z ]{2,30}(?:\\([A-Z,]{1,5}\\))?\\s*:|\\bCPF\\b|\\d{3}\\.?\\d{3}\\.?\\d{3}-?\\d{2}`))
   return new RegExp(PAPEL_NAO_PARTE.source).test(corte >= 0 ? depois.slice(0, corte) : depois)
 }
 
