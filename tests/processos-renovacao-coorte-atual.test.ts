@@ -656,3 +656,83 @@ describe("segundo caminho de confirmação: CPF da candidatura no texto (26/09)"
     assert.match(String(resultado.processos[0].contexto_identidade), /CPF 529 982 247 25/)
   })
 })
+
+describe("re-revisão Opus do #504: descarte por menção e papéis não-parte", () => {
+  const cpf = "52998224725"
+  const cpfFmt = "529.982.247-25"
+  const outro = "111.444.777-35"
+  const nome = "Carlos da Silva Teste"
+  const candidato = {
+    id: "id", slug: "carlos", nome_completo: "Carlos da Silva Teste", nome_urna: "Carlos",
+    cargo_disputado: "Senador", cargo_atual: null, estado: "MG", partido_sigla: "PSD", biografia: null,
+  }
+  const ficha = { slug: "carlos", nome_urna: "Carlos", cargo_disputado: "Senador", processos: 0 }
+  const djenCom = (itens: Array<{ id: number; texto: string; destinatarios: Array<{ nome: string; polo: string }> }>) =>
+    async (consulta: string) => ({
+      schema_version: 2 as const,
+      url: "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=x&pagina=1",
+      query_nome: consulta, consultado_em: "2026-09-26T15:00:00Z", total: itens.length,
+      itens: itens.map((i) => ({ ...i, siglaTribunal: "TJMG", numeroprocessocommascara: "5001754-50.2024.8.13.0441", texto: i.texto.replace(/\d{3}\.\d{3}\.\d{3}-\d{2}/g, "[cpf omitido]") })),
+      paginas: 1, completo: true as const,
+      textosBrutos: new Map(itens.map((i) => [i.id, i.texto])),
+    })
+  const pesquisar = (itens: Parameters<typeof djenCom>[0]) => pesquisarCandidato(candidato, ficha, undefined, new Map(), ["TJMG"], "/cache-nao-usado", {
+    confirmarIdentidade: async () => ({ status: "confirmada", metodo: "tse-sq-candidato", nome, cpf }),
+    buscarDjen: djenCom(itens),
+  })
+
+  it("B1: uma menção com CPF divergente e outra sem CPF não descarta nem dá vazio", async () => {
+    const texto = `AUTOR: CARLOS DA SILVA TESTE, CPF ${outro}. REU: CARLOS DA SILVA TESTE, brasileiro, casado`
+    assert.equal(cpfDivergenteNoTexto(texto, nome, cpf), false)
+    const resultado = await pesquisar([{ id: 1, texto, destinatarios: [{ nome: "CARLOS DA SILVA TESTE", polo: "P" }] }])
+    assert.notEqual(resultado.classificacao, "vazio_confirmado")
+    assert.equal(resultado.ocorrencias_ambiguas.length, 1)
+  })
+
+  it("B1: descarte de uma comunicação não apaga outra ambígua do mesmo processo", async () => {
+    const resultado = await pesquisar([
+      { id: 1, texto: `Réu: CARLOS DA SILVA TESTE, CPF ${outro}`, destinatarios: [{ nome: "CARLOS DA SILVA TESTE", polo: "P" }] },
+      { id: 2, texto: "Intime-se o terceiro interessado CARLOS DA SILVA TESTE.", destinatarios: [{ nome: "OUTRA PESSOA", polo: "P" }] },
+    ])
+    assert.notEqual(resultado.classificacao, "vazio_confirmado")
+    assert.deepEqual(resultado.ocorrencias_ambiguas.map((o) => o.numero_cnj), ["5001754-50.2024.8.13.0441"])
+    assert.equal(resultado.homonimos_descartados.length, 1)
+  })
+
+  it("M3: advogado abreviado, defensor, curador e nome longo depois de 'Advogada Dra.' não atribuem", () => {
+    for (const texto of [
+      `ADV. CARLOS DA SILVA TESTE, CPF ${cpfFmt}`,
+      `Adv: CARLOS DA SILVA TESTE CPF ${cpfFmt}`,
+      `Defensor dativo CARLOS DA SILVA TESTE, CPF ${cpfFmt}`,
+      `Curador especial CARLOS DA SILVA TESTE, CPF ${cpfFmt}`,
+      `Patrono CARLOS DA SILVA TESTE, CPF ${cpfFmt}`,
+      `Sociedade de Advogados CARLOS DA SILVA TESTE, CPF ${cpfFmt}`,
+    ]) assert.equal(contextoPorCpfNoTexto(texto, nome, cpf), null, texto)
+    const longo = "Maria Aparecida da Conceicao dos Santos Oliveira Pereira da Silva Albuquerque"
+    const textoLongo = `Advogada Dra. ${longo.toUpperCase()}, CPF ${cpfFmt}`
+    assert.equal(contextoPorCpfNoTexto(textoLongo, longo, cpf), null)
+    assert.notEqual(contextoPorCpfNoTexto(textoLongo, longo, cpf, [longo.toUpperCase()]), null)
+  })
+
+  it("M4: testemunha, vítima, perito, administrador judicial e juiz não atribuem, salvo destinatária", () => {
+    for (const texto of [
+      `TESTEMUNHA: CARLOS DA SILVA TESTE, CPF ${cpfFmt}`,
+      `VITIMA: CARLOS DA SILVA TESTE, CPF ${cpfFmt}`,
+      `Nomeio perito CARLOS DA SILVA TESTE, CPF ${cpfFmt}`,
+      `Nomeio como administrador judicial CARLOS DA SILVA TESTE, CPF ${cpfFmt}`,
+      `Juiz de Direito CARLOS DA SILVA TESTE, CPF ${cpfFmt}`,
+    ]) {
+      assert.equal(contextoPorCpfNoTexto(texto, nome, cpf), null, texto)
+      assert.notEqual(contextoPorCpfNoTexto(texto, nome, cpf, ["CARLOS DA SILVA TESTE"]), null, texto)
+    }
+  })
+
+  it("m5: só o formato de CPF conta como CPF da candidatura", () => {
+    assert.equal(cpfDaCandidaturaNoTexto(`CPF ${cpfFmt}`, cpf), true)
+    assert.equal(cpfDaCandidaturaNoTexto(`CPF ${cpf}`, cpf), true)
+    assert.equal(cpfDaCandidaturaNoTexto("protocolo 529/982/247-25", cpf), false)
+    assert.equal(cpfDaCandidaturaNoTexto("itens 5-2-9-9-8-2-2-4-7-2-5", cpf), false)
+    assert.equal(cpfDaCandidaturaNoTexto("fls. 529, 982, 247 e 25", cpf), false)
+    assert.equal(contextoPorCpfNoTexto("Réu: CARLOS DA SILVA TESTE, protocolo 529/982/247-25", nome, cpf), null)
+  })
+})

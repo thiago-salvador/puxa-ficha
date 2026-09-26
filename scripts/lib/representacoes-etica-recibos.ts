@@ -55,21 +55,23 @@ export interface AlvoPce {
 const FIM_DO_ALVO = / (?:COM FUNDAMENTO|COM BASE|NOS TERMOS|NA FORMA|NO AMBITO|POR|PELO|PELA|PELOS|PELAS|EM RAZAO|EM DECORRENCIA|EM VIRTUDE|DEVIDO|TENDO EM VISTA|A RESPEITO|ACERCA|SOBRE|QUE|PARA|FORMULAD[AO]S?|APRESENTAD[AO]S?|DE AUTORIA|AUTOR(?:A|ES|AS)?|DE INICIATIVA|RELATOR(?:A)?|REPRESENTANTE|OFERECID[AO]S?|SUBSCRIT[AO]S?|REQUERID[AO]S?|PROPOST[AO]S?)\b/
 
 /** Construções que introduzem o representado, em qualquer ponto da ementa. */
-const INICIO_DO_ALVO = /\b(?:EM FACE|EM DESFAVOR|CONTRA)(?: D?[OA]S?)?(?: (?:EXCELENTISSIM[OA]|EXMO|EXMA))?(?: SENHOR(?:A)?)?(?: (?:EX|ENTAO))? SENADOR(?:A|ES|AS)? /g
+const INICIO_DO_ALVO = /\b(?:EM FACE|EM DESFAVOR|CONTRA)(?: D?[OA]S?)?(?: (?:EXCELENTISSIM[OA]|EXMO|EXMA))?(?: SENHOR(?:A)?)?(?: (?:EX|ENTAO))? (?:SENADOR(?:A|ES|AS)?|SEN) /g
 
 /** Segmentos do representado: cada "em face/em desfavor/contra ... Senador" até pontuação ou marcador de fim. */
 export function segmentosDoAlvoPce(ementa: string): Array<{ segmento: string; coletivo: boolean }> {
-  const cru = stripAccents(ementa)
+  // Sigla de partido e UF entre parênteses ("(PL-RJ)") não encerra o trecho do alvo.
+  const cru = stripAccents(ementa).replace(/\(\s*[A-Za-z]{2,}\s*[-/]\s*[A-Za-z]{2}\s*\)/g, " ")
   const saida: Array<{ segmento: string; coletivo: boolean }> = []
   // Os marcadores de início são procurados no texto cru normalizado por trecho
   // entre pontuações, para que o corte em `.;:()` valha antes da normalização.
   let resto = cru
   while (resto.length > 0) {
     const trecho = cortarNaPontuacao(resto)
-    const normal = normalizar(trecho)
+    // Vírgula entre nomes vale como "e": "Fulano, Romario e Ciclano".
+    const normal = normalizar(trecho.replace(/,/g, " e "))
     for (const m of normal.matchAll(INICIO_DO_ALVO)) {
       const depois = normal.slice((m.index ?? 0) + m[0].length)
-      const segmento = depois.split(FIM_DO_ALVO)[0].split(/ (?:EM FACE|EM DESFAVOR|CONTRA) /)[0].trim()
+      const segmento = depois.split(FIM_DO_ALVO)[0].split(/ (?:EM FACE|EM DESFAVOR|CONTRA) /)[0].trim().replace(/(?:\s+E)+$/, "")
       if (segmento) saida.push({ segmento, coletivo: /SENADOR(?:ES|AS) $/.test(m[0]) })
     }
     const avanca = trecho.length + 1
@@ -106,13 +108,13 @@ function idsNoTrecho(trecho: string, roster: readonly SenadorRosterPce[], inicio
  */
 export function alvoDaEmentaPce(ementa: string, roster: readonly SenadorRosterPce[]): AlvoPce {
   const texto = normalizar(ementa)
-  const aposTitulo = [...texto.matchAll(/\bSENADOR(?:A|ES|AS)? /g)].map((m) => texto.slice((m.index ?? 0) + m[0].length))
+  const aposTitulo = [...texto.matchAll(/\b(?:SENADOR(?:A|ES|AS)?|SEN) /g)].map((m) => texto.slice((m.index ?? 0) + m[0].length))
   const nomesCitados = [...idsNoTrecho(texto, roster, aposTitulo)].sort((a, b) => a - b)
   const segmentos = segmentosDoAlvoPce(ementa)
   if (segmentos.length === 0) return { senador_ids: [], texto_alvo: null, sem_alvo_individual: true, nomes_citados: nomesCitados }
   const ids = new Set<number>()
   for (const { segmento } of segmentos) {
-    const inicios = [segmento, ...segmento.split(/ E (?:D[OA]S? )?(?:SENADOR(?:A|ES|AS)? )?/).slice(1)]
+    const inicios = [segmento, ...segmento.split(/ E (?:D?[OA]S? )?(?:(?:SENADOR(?:A|ES|AS)?|SEN) )?/).slice(1)]
     for (const id of idsNoTrecho(segmento, roster, inicios)) ids.add(id)
   }
   const coletivo = segmentos.every((x) => x.coletivo)
@@ -201,8 +203,9 @@ export function montarRecibosRepresentacoes(opcoes: {
       .map((a) => `PCE ${a.item.processo.numero}/${a.item.processo.ano}`)
     const pceNomeForaRoster = alvos.filter((a) => a.alvo.senador_ids.length === 0 && a.alvo.texto_alvo
       && nomeCandidato && new RegExp(`\\b${escapar(a.alvo.texto_alvo)}\\b`).test(nomeCandidato))
-    const pceCitadoSemAlvo = alvos.filter((a) => a.alvo.senador_ids.length === 0
-      && a.alvo.nomes_citados.some((id) => senadoresLigados.includes(id)))
+    // PCE que cita o senador vinculado sem parseá-lo como representado: indeterminado, nunca vazio.
+    const pceCitadoSemAlvo = alvos.filter((a) => a.alvo.nomes_citados
+      .some((id) => senadoresLigados.includes(id) && !a.alvo.senador_ids.includes(id)))
       .map((a) => `PCE ${a.item.processo.numero}/${a.item.processo.ano}`)
     let senadoEstado: EstadoCasa
     let senadoMotivo: string

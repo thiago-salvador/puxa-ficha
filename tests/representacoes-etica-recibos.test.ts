@@ -220,3 +220,24 @@ describe("re-revisão do #504: localizador de alvo e autor/relator", () => {
     assert.equal(cortarNaPontuacao("Senhor Dep. Fulana Alvo. Imputação"), "Senhor Dep. Fulana Alvo")
   })
 })
+
+describe("re-revisão Opus do #504: PCE com sigla, SEN. e citado não parseado", () => {
+  it("sigla de partido entre parênteses não corta o segundo representado", () => {
+    const ementa = "Representação contra o Senador Fulvio Teste Silva (PL-RJ) e o Senador Ana Maria Senadora (PT-BA), por quebra de decoro"
+    assert.deepEqual(alvoDaEmentaPce(ementa, roster).senador_ids, [1, 2])
+  })
+
+  it("nome de uma palavra depois de SEN. ou de vírgula vira representado", () => {
+    assert.deepEqual(alvoDaEmentaPce("Denúncia em desfavor do Sen. Fulvio por quebra de decoro", roster).senador_ids, [2])
+    assert.deepEqual(alvoDaEmentaPce("Denúncia em desfavor do Sen. Fulvio", roster).nomes_citados, [2])
+    assert.deepEqual(alvoDaEmentaPce("Representação contra os Senadores Ana Maria Senadora, Fulvio e outros", roster).senador_ids, [1, 2])
+  })
+
+  it("senador citado mas não parseado como alvo fica indeterminado mesmo com outro alvo no PCE", () => {
+    const senado = filaSenado([pce(7, "Representação contra o Senador Fulvio; cita a Senadora Ana Maria Senadora")])
+    const recibos = new Map(montarRecibosRepresentacoes({ publicos, camara: filaCamara(), senado }).map((r) => [r.alvo, r]))
+    assert.equal(recibos.get("fulvio")?.resultado, "encontrado")
+    assert.equal(recibos.get("ana")?.resultado, "indeterminado")
+    assert.match(recibos.get("ana")?.detalhe ?? "", /PCE 7\/2026, sem representado parseado/)
+  })
+})
