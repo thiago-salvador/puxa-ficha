@@ -62,13 +62,33 @@ export function normalizarNome(valor: string): string {
 }
 
 const INICIO_ALVO = /em\s+desfavor\s+d[aeo]s?\s+/i
+/**
+ * Fim do trecho do alvo: motivo, fundamento, autor ou relator. Cada marcador
+ * termina em fronteira de palavra para não cortar dentro de um nome.
+ */
 const FIM_ALVO =
-  /(,|;|\.|\s)\s*(protocolizad|por\s|pel[ao]s?\s|em\s+raz[aã]o|em\s+face|diante\s|que\s|tendo\s|ante\s|acerca\s|com\s+base|nos\s+termos)/i
+  /(,|;|\.|\s|-|\u2013)\s*(protocolizad[ao]s?\b|por\s|pel[ao]s?\s|em\s+raz[aã]o\b|em\s+face\b|diante\s|que\s|tendo\s|ante\s|acerca\s|com\s+base\b|nos\s+termos\b|de\s+iniciativa\b|de\s+autoria\b|autor(?:a|es|as)?\b|relator(?:a)?\b|representante\b|oferecid[ao]s?\b|subscrit[ao]s?\b|requerid[ao]s?\b|propost[ao]s?\b|formulad[ao]s?\b|apresentad[ao]s?\b)/i
 
-/** Trecho da ementa que nomeia o(s) alvo(s): depois de "em desfavor do(a)" e antes do motivo. */
+/** Abreviações cujo ponto não encerra o trecho ("Dep. Fulano", "Sr. Fulano"). */
+const ABREVIACOES = new Set(["DEP", "DEPS", "SR", "SRA", "SRS", "SRAS", "DR", "DRA", "SEN", "EXMO", "EXMA", "EXMOS", "PROF", "PROFA", "GAL", "CEL", "CAP", "TEN", "SGT", "JR", "N"])
+
+/** Corta no primeiro `.;:()` que não seja ponto de abreviação. */
+export function cortarNaPontuacao(texto: string): string {
+  for (let i = 0; i < texto.length; i += 1) {
+    const ch = texto[i]
+    if (ch === ";" || ch === ":" || ch === "(" || ch === ")") return texto.slice(0, i)
+    if (ch === ".") {
+      const palavra = /([A-Za-zÀ-ÿ]+)$/.exec(texto.slice(0, i))?.[1] ?? ""
+      if (!ABREVIACOES.has(normalizarNome(palavra))) return texto.slice(0, i)
+    }
+  }
+  return texto
+}
+
+/** Trecho da ementa que nomeia o(s) alvo(s): depois de "em desfavor do(a)" e antes do motivo, do autor ou do relator. */
 export function trechoDoAlvo(ementa: string): string {
   const inicio = ementa.search(INICIO_ALVO)
-  const resto = inicio >= 0 ? ementa.slice(inicio).replace(INICIO_ALVO, "") : ementa
+  const resto = cortarNaPontuacao(inicio >= 0 ? ementa.slice(inicio).replace(INICIO_ALVO, "") : ementa)
   const fim = resto.search(FIM_ALVO)
   return (fim >= 0 ? resto.slice(0, fim) : resto).trim()
 }
@@ -406,6 +426,38 @@ export interface Fila {
   itens: ItemFila[]
   alvos_sem_candidato: Array<{ proposicao_id: number; numero: number; ano: number; deputado_id: number; nome: string; motivo: string }>
   alvos_nao_resolvidos: Array<{ proposicao_id: number; numero: number; ano: number; trecho: string; ambiguos: ResolucaoAlvos["ambiguos"] }>
+  /**
+   * Universo verificado, para o recibo por candidato: quem do seed foi casado
+   * com um deputado da legislatura (com ou sem REP), quem não tem identificador
+   * para o cruzamento e quais deputados ficaram com vínculo bloqueado.
+   */
+  cobertura?: CoberturaCamara
+}
+
+export interface CoberturaCamara {
+  deputados_candidatos: Array<{ slug: string; deputado_id: number; metodo: MetodoIdentidade }>
+  candidatos_sem_identificador: string[]
+  vinculos_bloqueados: Array<{ deputado_id: number; motivo: string }>
+}
+
+/** Casa todos os deputados da legislatura com o seed, não só os alvos de REP. */
+export function coberturaCamara(
+  deputados: readonly DeputadoLegislatura[],
+  indices: IndicesCandidatos,
+): CoberturaCamara {
+  const deputadosCandidatos: CoberturaCamara["deputados_candidatos"] = []
+  const bloqueados: CoberturaCamara["vinculos_bloqueados"] = []
+  for (const deputado of deputados) {
+    const vinculo = vincularCandidato(deputado, indices)
+    if (vinculo.slug !== null) deputadosCandidatos.push({ slug: vinculo.slug, deputado_id: deputado.id, metodo: vinculo.metodo })
+    else if (vinculo.motivo !== "sem_candidato") bloqueados.push({ deputado_id: deputado.id, motivo: vinculo.motivo })
+  }
+  const comIdentificador = new Set([...indices.porIdCamara.values(), ...indices.cpfDoSlug.keys()])
+  return {
+    deputados_candidatos: deputadosCandidatos.sort((x, y) => x.slug.localeCompare(y.slug) || x.deputado_id - y.deputado_id),
+    candidatos_sem_identificador: [...indices.porSlug.keys()].filter((slug) => !comIdentificador.has(slug)).sort(),
+    vinculos_bloqueados: bloqueados.sort((x, y) => x.deputado_id - y.deputado_id),
+  }
 }
 
 /** Marca cada vínculo sem filtrar a fila; uma falha de consulta permanece explícita. */
@@ -671,6 +723,7 @@ export async function coletarRepresentacoesEtica(opcoes: {
     itens: [],
     alvos_sem_candidato: [],
     alvos_nao_resolvidos: [],
+    cobertura: coberturaCamara(deputados, indices),
   }
 
   const contexto: ContextoAvaliacao = { nomes, porDeputado, indices, hoje }

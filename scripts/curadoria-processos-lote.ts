@@ -7,6 +7,7 @@
  * O DataJud é consultado depois, exclusivamente pelos números CNJ encontrados.
  */
 import { execFileSync } from "node:child_process"
+import { createHash } from "node:crypto"
 import {
   closeSync,
   chmodSync,
@@ -339,11 +340,165 @@ export function selecionarAlvosSemRecibo(
   return candidatos.filter((c) => !comRecibo.has(c.id)).map((c) => c.slug).sort()
 }
 
+/** Janela de validade do recibo judicial exibida no site (dias). */
+export const SLA_RECIBO_PROCESSOS_DIAS = 14
+const RESULTADOS_CONCLUSIVOS = new Set(["encontrado", "vazio_confirmado"])
+
+export type ModoAlvos = "sem-recibo" | "vencendo" | "indeterminados" | "encontrados"
+
+export function modoAlvosSolicitado(argv: string[]): ModoAlvos {
+  const valor = flags(argv).get("alvos") ?? "sem-recibo"
+  if (valor !== "sem-recibo" && valor !== "vencendo" && valor !== "indeterminados" && valor !== "encontrados") {
+    throw new Error("use --alvos=sem-recibo, --alvos=vencendo, --alvos=indeterminados ou --alvos=encontrados")
+  }
+  return valor
+}
+
+export function margemDiasSolicitada(argv: string[]): number {
+  const bruto = flags(argv).get("margem-dias") ?? "4"
+  if (!/^\d+$/.test(bruto) || Number(bruto) >= SLA_RECIBO_PROCESSOS_DIAS) {
+    throw new Error(`--margem-dias deve ser inteiro entre 0 e ${SLA_RECIBO_PROCESSOS_DIAS - 1}`)
+  }
+  return Number(bruto)
+}
+
+export function cargoSolicitado(argv: string[]): string | null {
+  const valor = flags(argv).get("cargo")
+  if (valor === undefined) return null
+  if (!new Set(["Presidente", "Governador", "Senador"]).has(valor)) throw new Error("--cargo deve ser Presidente, Governador ou Senador")
+  return valor
+}
+
+function ultimoReciboValidoPorCandidato(
+  candidatos: CandidatoCoorteAtual[],
+  recibos: ReciboProcessosAtual[],
+  agora: number,
+): Map<string, ReciboProcessosAtual> {
+  const slugPorId = new Map(candidatos.map((c) => [c.id, c.slug]))
+  const ultimo = new Map<string, ReciboProcessosAtual>()
+  for (const r of recibos) {
+    if (typeof r.candidato_id !== "string" || !slugPorId.has(r.candidato_id)) continue
+    if (r.alvo !== slugPorId.get(r.candidato_id)) continue
+    if (r.fonte !== "processos-curadoria" || r.escopo !== "candidato") continue
+    if (typeof r.executado_em !== "string" || !Number.isFinite(Date.parse(r.executado_em)) || Date.parse(r.executado_em) > agora) continue
+    if (typeof r.resultado !== "string" || !RESULTADOS_RECIBO_VALIDOS.has(r.resultado)) continue
+    const anterior = ultimo.get(r.candidato_id)
+    if (!anterior || Date.parse(anterior.executado_em!) < Date.parse(r.executado_em)) ultimo.set(r.candidato_id, r)
+  }
+  return ultimo
+}
+
+/**
+ * Renovação antes do SLA: reabre fichas cujo último recibo é conclusivo
+ * (`encontrado` ou `vazio_confirmado`) com idade de pelo menos `SLA - margem`
+ * dias, e toda ficha cujo último recibo é `erro`, em qualquer idade.
+ * `indeterminado` e `bloqueado` continuam fora:
+ * reconsultar o mesmo nome sem fonte nova repetiria a mesma ambiguidade.
+ */
+export function selecionarAlvosVencendo(
+  candidatos: CandidatoCoorteAtual[],
+  recibos: ReciboProcessosAtual[],
+  margemDias: number,
+  agora: number = Date.now(),
+): string[] {
+  const limite = agora - (SLA_RECIBO_PROCESSOS_DIAS - margemDias) * 86_400_000
+  const ultimo = ultimoReciboValidoPorCandidato(candidatos, recibos, agora)
+  return candidatos.filter((c) => {
+    const recibo = ultimo.get(c.id)
+    if (recibo === undefined) return false
+    // Falha de fonte não é estado final: a próxima execução sempre tenta de novo.
+    if (recibo.resultado === "erro") return true
+    return RESULTADOS_CONCLUSIVOS.has(recibo.resultado as string)
+      && Date.parse(recibo.executado_em as string) <= limite
+  }).map((c) => c.slug).sort()
+}
+
+/**
+ * Reexame dirigido de `indeterminado`, `erro` e `bloqueado` para revisão
+ * humana (dossiê). A evidência deste modo não é aceita pelo aplicador: ela
+ * só alimenta a triagem, nunca grava recibo sozinha.
+ */
+export function selecionarAlvosIndeterminados(
+  candidatos: CandidatoCoorteAtual[],
+  recibos: ReciboProcessosAtual[],
+  agora: number = Date.now(),
+): string[] {
+  const ultimo = ultimoReciboValidoPorCandidato(candidatos, recibos, agora)
+  return candidatos.filter((c) => {
+    const resultado = ultimo.get(c.id)?.resultado
+    return resultado === "indeterminado" || resultado === "erro" || resultado === "bloqueado"
+  }).map((c) => c.slug).sort()
+}
+
+/** Revalidação: toda ficha cujo último recibo é `encontrado`, em qualquer idade. */
+export function selecionarAlvosEncontrados(
+  candidatos: CandidatoCoorteAtual[],
+  recibos: ReciboProcessosAtual[],
+  agora: number = Date.now(),
+): string[] {
+  const ultimo = ultimoReciboValidoPorCandidato(candidatos, recibos, agora)
+  return candidatos.filter((c) => ultimo.get(c.id)?.resultado === "encontrado").map((c) => c.slug).sort()
+}
+
+/** Caminhos efêmeros perderam o snapshot de agosto no reboot de 24/09. */
+export function exigirCaminhoPersistente(caminho: string, rotulo: string): void {
+  if (process.env.PF_PERMITIR_TMP === "1") return
+  if (/^\/(?:private\/)?tmp(?:\/|$)/.test(resolve(caminho))) {
+    throw new Error(`${rotulo} em /tmp nao sobrevive a reboot; use pasta persistente ou PF_PERMITIR_TMP=1`)
+  }
+}
+
+export interface SnapshotCoorteAtual {
+  schema_version: 1
+  gerado_em: string
+  modo: string
+  coorte_publica_total: number
+  filtro_cargo: string | null
+  margem_dias: number | null
+  alvos: Array<{
+    slug: string
+    candidato_id: string
+    cargo_disputado: string
+    estado: string | null
+    ultimo_recibo: { resultado: string; executado_em: string } | null
+  }>
+}
+
+export function montarSnapshotCoorteAtual(
+  candidatos: CandidatoBanco[],
+  recibos: ReciboProcessosAtual[],
+  alvos: string[],
+  meta: { modo: string; filtro_cargo: string | null; margem_dias: number | null; coorte_publica_total: number },
+  agora: number = Date.now(),
+): SnapshotCoorteAtual {
+  const ultimo = ultimoReciboValidoPorCandidato(candidatos, recibos, agora)
+  const porSlug = new Map(candidatos.map((c) => [c.slug, c]))
+  return {
+    schema_version: 1,
+    gerado_em: new Date(agora).toISOString(),
+    ...meta,
+    alvos: alvos.map((slug) => {
+      const c = porSlug.get(slug)
+      if (!c) throw new Error(`snapshot: alvo fora da coorte: ${slug}`)
+      const r = ultimo.get(c.id)
+      return {
+        slug,
+        candidato_id: c.id,
+        cargo_disputado: c.cargo_disputado,
+        estado: c.estado,
+        ultimo_recibo: r ? { resultado: r.resultado as string, executado_em: r.executado_em as string } : null,
+      }
+    }),
+  }
+}
+
 interface CoorteAtualPreflight {
   candidatos: CandidatoBanco[]
   alvos: string[]
   cnjsPorSlug: Map<string, Array<{ numero_cnj: string; tribunal: string }>>
   residuais: string[]
+  recibos: ReciboProcessosAtual[]
+  coortePublicaTotal: number
 }
 
 interface ProcessoCnjAtual {
@@ -389,31 +544,51 @@ export function assertPreflightNotTruncated(count: number, limit: number, source
   if (count >= limit) throw new Error(`preflight ${source}: limite ${limit} atingido; coorte incompleta`)
 }
 
-async function lerCoorteAtualParaDryRun(somenteCnj = false): Promise<CoorteAtualPreflight> {
+async function lerCoorteAtualParaDryRun(
+  somenteCnj = false,
+  modo: ModoAlvos = "sem-recibo",
+  margemDias = 4,
+  cargo: string | null = null,
+): Promise<CoorteAtualPreflight> {
   const { data, error } = await supabase.from("candidatos")
     .select("id,slug,nome_completo,nome_urna,cargo_disputado,cargo_atual,estado,partido_sigla,biografia,sq_candidato_2026")
     .eq("publicavel", true).neq("status", "removido").order("slug").limit(1000)
   if (error) throw new Error(`preflight candidatos: ${error.message}`)
-  const candidatos = (data ?? []) as CandidatoBanco[]
-  if (candidatos.length === 0) throw new Error("preflight candidatos: coorte publica vazia")
-  assertPreflightNotTruncated(candidatos.length, 1000, "candidatos")
-  const { data: recibos, error: recibosError } = await supabase.from("coleta_log_ultima")
+  const coorte = (data ?? []) as CandidatoBanco[]
+  if (coorte.length === 0) throw new Error("preflight candidatos: coorte publica vazia")
+  assertPreflightNotTruncated(coorte.length, 1000, "candidatos")
+  const candidatos = cargo ? coorte.filter((c) => c.cargo_disputado === cargo) : coorte
+  const { data: recibosData, error: recibosError } = await supabase.from("coleta_log_ultima")
     .select("candidato_id,alvo,resultado,executado_em,escopo,fonte")
     .eq("fonte", "processos-curadoria").eq("escopo", "candidato")
     .limit(2000)
   if (recibosError) throw new Error(`preflight recibos processos-curadoria: ${recibosError.message}`)
-  assertPreflightNotTruncated((recibos ?? []).length, 2000, "recibos processos-curadoria")
+  assertPreflightNotTruncated((recibosData ?? []).length, 2000, "recibos processos-curadoria")
+  const recibos = (recibosData ?? []) as ReciboProcessosAtual[]
   if (!somenteCnj) return {
     candidatos,
-    alvos: selecionarAlvosSemRecibo(candidatos, (recibos ?? []) as ReciboProcessosAtual[]),
+    alvos: modo === "vencendo"
+      ? selecionarAlvosVencendo(candidatos, recibos, margemDias)
+      : modo === "indeterminados"
+        ? selecionarAlvosIndeterminados(candidatos, recibos)
+        : modo === "encontrados"
+          ? selecionarAlvosEncontrados(candidatos, recibos)
+          : selecionarAlvosSemRecibo(candidatos, recibos),
     cnjsPorSlug: new Map(),
     residuais: [],
+    recibos,
+    coortePublicaTotal: coorte.length,
   }
   const { data: processos, error: processosError } = await supabase.from("processos")
     .select("candidato_id,numero_processo,tribunal").limit(2000)
   if (processosError) throw new Error(`preflight processos com CNJ: ${processosError.message}`)
   assertPreflightNotTruncated((processos ?? []).length, 2000, "processos com CNJ")
-  return { candidatos, ...selecionarAlvosComCnj(candidatos, (recibos ?? []) as ReciboProcessosAtual[], (processos ?? []) as ProcessoCnjAtual[]) }
+  return {
+    candidatos,
+    ...selecionarAlvosComCnj(candidatos, recibos, (processos ?? []) as ProcessoCnjAtual[]),
+    recibos,
+    coortePublicaTotal: coorte.length,
+  }
 }
 
 export function lotesSolicitados(argv: string[]): number[] {
@@ -502,17 +677,61 @@ export function ordenar(coorte: SnapshotCandidato[]): SnapshotCandidato[] {
   return [...coorte].sort((a, b) => prioridade(a) - prioridade(b) || a.slug.localeCompare(b.slug))
 }
 
+/** Espera antes de nova tentativa: respeita Retry-After (s ou data HTTP), senão 30 s, 60 s, 120 s... teto 300 s. */
+export function esperaRetry(tentativa: number, retryAfter: string | null, agora = Date.now()): number {
+  const teto = 300_000
+  if (retryAfter) {
+    const segundos = Number(retryAfter)
+    if (Number.isFinite(segundos) && segundos >= 0) return Math.min(teto, Math.ceil(segundos * 1000))
+    const data = Date.parse(retryAfter)
+    if (Number.isFinite(data)) return Math.min(teto, Math.max(0, data - agora))
+  }
+  return Math.min(teto, 30_000 * 2 ** tentativa)
+}
+
+/**
+ * Disjuntor por fonte: depois de N respostas 429/5xx seguidas (somando
+ * chamadas diferentes), a coleta para em vez de insistir contra o tribunal.
+ */
+export class Disjuntor {
+  private seguidas = 0
+  constructor(readonly limite = 4) {}
+  registrarFalha(): void { this.seguidas += 1 }
+  registrarSucesso(): void { this.seguidas = 0 }
+  get aberto(): boolean { return this.seguidas >= this.limite }
+}
+
+export const DISJUNTOR_ABERTO = "disjuntor aberto: respostas 429/5xx seguidas da fonte oficial"
+const disjuntorFontes = new Disjuntor()
+
 async function fetchJson<T>(url: string, init?: RequestInit, tentativas = 3, timeoutMs = 60_000): Promise<T> {
   for (let i = 0; i < tentativas; i += 1) {
+    if (disjuntorFontes.aberto) throw new Error(DISJUNTOR_ABERTO)
     const resposta = await fetch(url, { ...init, signal: AbortSignal.timeout(timeoutMs) })
-    if (resposta.status === 429 && i + 1 < tentativas) {
-      await new Promise((resolve) => setTimeout(resolve, 61_000))
-      continue
+    if (resposta.status === 429 || resposta.status >= 500) {
+      disjuntorFontes.registrarFalha()
+      if (i + 1 < tentativas && !disjuntorFontes.aberto) {
+        await new Promise((resolve) => setTimeout(resolve, esperaRetry(i, resposta.headers.get("retry-after"))))
+        continue
+      }
     }
     if (!resposta.ok) throw new Error(`HTTP ${resposta.status} em ${url}`)
+    disjuntorFontes.registrarSucesso()
     return await resposta.json() as T
   }
   throw new Error(`limite de tentativas em ${url}`)
+}
+
+export type TipoFalhaColeta = "limite_de_taxa" | "fonte_indisponivel" | "preflight_banco" | "identidade_tse" | "outro"
+
+/** Classificação fechada da falha fatal, lida pelo workflow sem grep de log. */
+export function classificarFalhaColeta(erro: unknown): TipoFalhaColeta {
+  const mensagem = erro instanceof Error ? erro.message : String(erro)
+  if (mensagem === DISJUNTOR_ABERTO || /HTTP 429/.test(mensagem)) return "limite_de_taxa"
+  if (/^preflight[ :]/.test(mensagem)) return "preflight_banco"
+  if (/consulta_cand|TSE/.test(mensagem)) return "identidade_tse"
+  if (/HTTP 5\d\d|fetch failed|timeout|aborted|ECONN|ENOTFOUND|DataJud|DJEN/i.test(mensagem)) return "fonte_indisponivel"
+  return "outro"
 }
 
 async function baixar(url: string, destino: string): Promise<void> {
@@ -541,6 +760,18 @@ function cpfDaLinhaTse(bruto: string | null | undefined): string {
   return normalizarCpfTse(bruto) || (bruto ?? "")
 }
 
+/**
+ * CSVs extraídos do consulta_cand. `-L` segue diretório de cache ligado por
+ * symlink; zero arquivos falha alto, porque identidade TSE ausente viraria
+ * "bloqueada" em silêncio para todo candidato daquele ano.
+ */
+export function csvsDoConsultaCand(extraido: string, ano: string): string[] {
+  const arquivos = execFileSync("find", ["-L", extraido, "-type", "f", "-name", "*.csv"], { encoding: "utf8" })
+    .trim().split("\n").filter(Boolean)
+  if (arquivos.length === 0) throw new Error(`consulta_cand_${ano}: nenhum CSV em ${extraido}`)
+  return arquivos
+}
+
 async function carregarIdentidadesTse(
   candidatos: CandidatoBanco[],
   seeds: Map<string, SeedCandidato>,
@@ -564,8 +795,7 @@ async function carregarIdentidadesTse(
       mkdirSync(extraido, { recursive: true })
       execFileSync("unzip", ["-oq", zip, "-d", extraido])
     }
-    const arquivos = execFileSync("find", [extraido, "-type", "f", "-name", "*.csv"], { encoding: "utf8" })
-      .trim().split("\n").filter(Boolean)
+    const arquivos = csvsDoConsultaCand(extraido, ano)
     for (const arquivo of arquivos) {
       await parseCSV(arquivo, (row) => {
         const alvo = alvos.find((item) => item.sq === row.SQ_CANDIDATO)
@@ -608,8 +838,7 @@ async function carregarIdentidadesTse(
       mkdirSync(extraido, { recursive: true })
       execFileSync("unzip", ["-oq", zip, "-d", extraido])
     }
-    const arquivos = execFileSync("find", [extraido, "-type", "f", "-name", "*.csv"], { encoding: "utf8" })
-      .trim().split("\n").filter(Boolean)
+    const arquivos = csvsDoConsultaCand(extraido, ano)
     for (const arquivo of arquivos) {
       await parseCSV(arquivo, (row) => {
         const alvo = (pendentesPorNome.get(normalizar(row.NM_CANDIDATO)) ?? []).find((c) => {
@@ -692,6 +921,12 @@ export interface ResultadoDjen {
   paginas: number
   completo: true
   tetoAtingido?: boolean
+  /**
+   * Texto bruto por comunicação, só em memória e só quando a resposta veio da
+   * rede: o cache guarda o texto com o CPF rotulado apagado, e sem o bruto a
+   * conferência de CPF do candidato nunca casaria. Nunca é persistido.
+   */
+  textosBrutos?: Map<number, string>
 }
 
 function sanitizarCpfEmTexto(texto: string): string {
@@ -700,6 +935,30 @@ function sanitizarCpfEmTexto(texto: string): string {
 
 function sanitizarComunicacoes(itens: Comunicacao[]): Comunicacao[] {
   return itens.map((item) => ({ ...item, texto: typeof item.texto === "string" ? sanitizarCpfEmTexto(item.texto) : item.texto }))
+}
+
+/** Nome do destinatário sem apelido ou qualificação entre parênteses. */
+export function nomeDestinatario(valor: unknown): string {
+  return normalizar(String(valor ?? "").replace(/\([^)]*\)/g, " "))
+}
+
+/**
+ * O nome exato aparece no texto da comunicação como palavra inteira, fora de
+ * um nome mais longo de destinatário que o contenha com prenome ou nome do
+ * meio diferente (ex.: "JOSE SILVA" dentro de "MARIA JOSE SILVA" não conta).
+ * Destinatário com o nome exato seguido de sobrenome a mais ("JOSE SILVA
+ * SOUZA") conta: pode ser a mesma pessoa com nome civil alterado.
+ */
+export function mencionaNomeNoTexto(item: Comunicacao, nome: string): boolean {
+  if (!nome) return false
+  const destinatarios = (item.destinatarios ?? []).map((d) => nomeDestinatario(d.nome))
+  if (destinatarios.some((d) => d.startsWith(`${nome} `))) return true
+  let texto = normalizar(item.texto ?? "")
+  const maiores = destinatarios
+    .filter((d) => d !== nome && new RegExp(`\\b${escaparRegex(nome)}\\b`).test(d))
+    .sort((a, b) => b.length - a.length)
+  for (const maior of maiores) texto = texto.replace(new RegExp(`\\b${escaparRegex(maior)}\\b`, "g"), " ")
+  return new RegExp(`\\b${escaparRegex(nome)}\\b`).test(texto)
 }
 
 function periodoConsultaDjen(consultadoEm: string): string {
@@ -786,7 +1045,7 @@ async function buscarDjen(nome: string, cache: string): Promise<ResultadoDjen> {
   const temp = `${cachePath}.tmp-${process.pid}`
   writeFileSync(temp, `${JSON.stringify(resposta)}\n`, { encoding: "utf8", mode: 0o600 })
   renameSync(temp, cachePath)
-  return validarCacheDjen(resposta, nome)
+  return { ...validarCacheDjen(resposta, nome), textosBrutos: new Map(itens.map((item) => [item.id, item.texto ?? ""])) }
 }
 
 let filaDjen: Promise<void> = Promise.resolve()
@@ -856,10 +1115,17 @@ export function contextoPolitico(
   const posicoes: number[] = []
   for (let i = t.indexOf(nome); i >= 0; i = t.indexOf(nome, i + nome.length)) posicoes.push(i)
   const cpf = String(identidade.cpf ?? "").replace(/\D/g, "")
+  // CPF confere sobre o texto cru (a regra estrita precisa da pontuação)...
+  const cpfNoTextoCru = cpfCompativelNoTexto(texto, nomeCompleto, cpf)
+  const cpfRegex = cpf.length === 11 ? cpf.split("").join("[.\\s-]{0,3}") : "(?!)"
   for (const pos of posicoes) {
-    const janela = t.slice(Math.max(0, pos - 700), pos + nome.length + 700)
+    // Janela salva centrada nesta menção: contém toda a vizinhança conferida abaixo.
+    const janela = t.slice(Math.max(0, pos - 400), pos + nome.length + 400)
     const identidadeProxima = t.slice(Math.max(0, pos - 220), pos + nome.length + 220)
-    const cpfCompativel = cpfCompativelNoTexto(identidadeProxima, nomeCompleto, cpf)
+    // ...e a prova publicada precisa mostrar o vínculo: o CPF colado ao nome
+    // dentro desta janela, não em outro ponto do texto.
+    const cpfCompativel = cpfNoTextoCru
+      && new RegExp(`\\b${nomeRegex}\\b.{0,100}\\bCPF(?:\\s+N)?\\s+${cpfRegex}\\b`).test(identidadeProxima)
     const cargoDepois = new RegExp(`\\b${nomeRegex}\\b(?:\\s+(?:ATUAL|ENTAO|EX|SR|SRA)){0,3}\\s+${CARGO_POLITICO}\\b`).test(identidadeProxima)
     const cargoAntesDireto = new RegExp(`\\b${CARGO_POLITICO}\\s+(?:DO|DA|DE)?\\s*${nomeRegex}\\b`).test(identidadeProxima)
     const cargoAntesComLocal = new RegExp(
@@ -869,22 +1135,149 @@ export function contextoPolitico(
     const contextoEspecial = c.slug === "renan-santos"
       && new RegExp(`(?:${nomeRegex}\\s+(?:FUNDADOR|COORDENADOR|INTEGRANTE|REPRESENTANTE|DO|DA)\\s+(?:MISSAO|MOVIMENTO BRASIL LIVRE|MBL)|(?:MISSAO|MOVIMENTO BRASIL LIVRE|MBL)\\s+(?:REPRESENTAD[OA] POR|FUNDADOR|COORDENADOR|INTEGRANTE)\\s+${nomeRegex})`).test(identidadeProxima)
     if (cpfCompativel || cargoDepois || cargoAntesDireto || cargoAntesComLocal || condicao || contextoEspecial) {
-      return janela.slice(0, 900)
+      return janela
     }
   }
   return null
 }
 
-export function cpfCompativelNoTexto(texto: string, nomeCompleto: string, cpf: string): boolean {
-  const nome = normalizar(nomeCompleto)
-  const cpfNormalizado = cpf.replace(/\D/g, "")
-  if (cpfNormalizado.length !== 11 || !nome) return false
-  const nomeRegex = escaparRegex(nome)
-  const cpfRegex = cpfNormalizado.split("").join("[.\\s-]{0,3}")
-  return new RegExp(
-    `(?:${nomeRegex}.{0,100}\\bCPF(?:\\s+N)?\\s+${cpfRegex}\\b|\\bCPF(?:\\s+N)?\\s+${cpfRegex}.{0,100}${nomeRegex})`,
-    "i",
-  ).test(texto)
+export interface CpfRotulado {
+  /** `completo`: 11 dígitos; `mascarado`: CPF presente e ilegível (asteriscos ou X). */
+  tipo: "completo" | "mascarado"
+  digitos: string
+}
+
+const ENTIDADES_HTML: Record<string, string> = {
+  nbsp: " ", ordm: "º", ordf: "ª", deg: "°", amp: "&", quot: "\"", apos: "'", lt: "<", gt: ">", ndash: "-", mdash: "-",
+}
+
+/** Entidades HTML do texto do DJEN ("n.&ordm;&nbsp;") viram os caracteres que representam. */
+export function decodificarEntidadesHtml(valor: string): string {
+  return String(valor ?? "")
+    .replace(/&#(\d{1,6});/g, (_, n: string) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([0-9a-f]{1,6});/gi, (_, h: string) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&([a-z]+);/gi, (m, nome: string) => ENTIDADES_HTML[nome.toLowerCase()] ?? m)
+    .replace(/ /g, " ")
+}
+
+/** Texto com pontuação preservada: a guarda à esquerda depende dela. */
+function semiNormalizar(valor: string): string {
+  return stripAccents(decodificarEntidadesHtml(valor)).toUpperCase().replace(/[ \t]+/g, " ")
+}
+
+/**
+ * CPF rotulado COLADO depois do nome no texto oficial, só nessa direção:
+ * [início, `:;,.()-` ou quebra de linha] NOME [pontuação] CPF [N°/MF] <CPF>.
+ * - O nome precisa começar depois de pontuação (guarda à esquerda): em
+ *   "MARIA X, CPF ..." o nome de X está dentro de outro nome e não conta.
+ * - Nome embutido em destinatário mais longo (como em `mencionaNomeNoTexto`)
+ *   é apagado antes da busca.
+ * - Bloco de qualificação entre o nome e o CPF ("brasileiro, casado,
+ *   portador do RG...") nunca confirma nem descarta: falha fechada.
+ * - CPF antes do nome não conta: é rótulo de quem vem antes.
+ */
+export function cpfsRotuladosDoNome(texto: string, nomeCompleto: string, destinatarios: string[] = []): CpfRotulado[] {
+  const tokens = normalizar(nomeCompleto).split(" ").filter(Boolean)
+  if (tokens.length === 0) return []
+  let t = semiNormalizar(texto)
+  const nomeNorm = tokens.join(" ")
+  for (const maior of destinatarios.map(nomeDestinatario).filter((d) => d !== nomeNorm && d.includes(nomeNorm))) {
+    const regexMaior = maior.split(" ").map(escaparRegex).join("[\\s'.-]+")
+    t = t.replace(new RegExp(`\\b${regexMaior}\\b`, "g"), " # ")
+  }
+  const nome = tokens.map(escaparRegex).join("[\\s'.-]+")
+  const cpf = "(\\d{3}\\.?\\d{3}\\.?\\d{3}-?\\d{2}|[\\d*X]{3}\\.?[\\d*X]{3}\\.?[\\d*X]{3}-?[\\d*X]{2})(?![\\d*X])"
+  const padrao = new RegExp(
+    `(?:^|[:;,.()\\-\\u2013\\n]\\s*)${nome}\\s*[,;:(\\-\\u2013]?\\s*CPF(?:\\s*\\/\\s*(?:MF|CNPJ))?(?:\\s*(?:NUMERO|NO|N)(?![A-Z])(?:\\s*[.°º]){0,2})?\\s*[:.]?\\s*${cpf}`,
+    "gm",
+  )
+  return [...t.matchAll(padrao)].map((m) => {
+    const bruto = m[1]
+    return /[*X]/.test(bruto)
+      ? { tipo: "mascarado" as const, digitos: bruto.replace(/[^\d]/g, "") }
+      : { tipo: "completo" as const, digitos: bruto.replace(/\D/g, "") }
+  })
+}
+
+/** Os 11 dígitos da candidatura aparecem em algum ponto do texto cru, em qualquer formatação. */
+export function cpfDaCandidaturaNoTexto(texto: string, cpf: string): boolean {
+  const digitos = cpf.replace(/\D/g, "")
+  if (digitos.length !== 11) return false
+  return new RegExp(`(?<!\\d)${digitos.split("").join("\\D{0,3}")}(?!\\d)`).test(decodificarEntidadesHtml(texto))
+}
+
+/** Marcadores de quem atua no processo sem ser parte. */
+const MARCADOR_ADVOGADO = /\b(?:ADVOGAD[OA]S?|OAB|PROCURADOR(?:A|ES|AS)?|REPRESENTANTE LEGAL)\b/
+
+/** Rótulo de CPF no fim de um trecho: "CPF", "(CPF:", "CPF/MF nº", "CPF/CNPJ n.º". */
+const ROTULO_CPF_NO_FIM = /\(?\s*CPF(?:\s*\/\s*(?:MF|CNPJ))?(?:\s*(?:NUMERO|NO|N)(?![A-Z])(?:\s*[.°º]){0,2})?\s*[:.]?\s*$/
+
+/**
+ * Segundo caminho de confirmação (aprovado em 26/09): o CPF completo da
+ * candidatura (11 dígitos em qualquer formatação, entidades HTML decodificadas)
+ * aparece no texto da comunicação e pertence ao nome exato da candidata:
+ * - o nome vem logo antes daquela ocorrência (até 160 caracteres), sem
+ *   separador de outra parte no meio (`:`, `;`, ". ", quebra de linha, outro
+ *   rótulo de CPF). "AUTOR: JOAO, CPF <cpf da candidata>" não conta;
+ * - o nome nunca vale dentro de nome mais longo de destinatário;
+ * - nenhum CPF completo diferente está colado ao nome (o descarte segue estrito).
+ * Trava de advogado: ocorrência colada a advogado, OAB, procurador ou
+ * representante legal só vale se a candidata for destinatária (parte).
+ * Devolve o trecho normalizado centrado no CPF, com o nome dentro; `null`
+ * quando não confirma.
+ */
+export function contextoPorCpfNoTexto(texto: string, nomeCompleto: string, cpf: string, destinatarios: string[] = []): string | null {
+  const digitos = cpf.replace(/\D/g, "")
+  if (digitos.length !== 11) return null
+  const tokens = normalizar(nomeCompleto).split(" ").filter(Boolean)
+  if (tokens.length === 0) return null
+  const nomeNorm = tokens.join(" ")
+  if (cpfsRotuladosDoNome(texto, nomeCompleto, destinatarios).some((r) => r.tipo === "completo" && r.digitos !== digitos)) return null
+  const nomesDest = destinatarios.map(nomeDestinatario)
+  const parte = nomesDest.includes(nomeNorm)
+  let t = semiNormalizar(texto)
+  for (const maior of nomesDest.filter((d) => d !== nomeNorm && new RegExp(`\\b${escaparRegex(nomeNorm)}\\b`).test(d)).sort((a, b) => b.length - a.length)) {
+    t = t.replace(new RegExp(`\\b${maior.split(" ").map(escaparRegex).join("[\\s'.-]+")}\\b`, "g"), " # ")
+  }
+  const nomeRegex = new RegExp(`\\b${tokens.map(escaparRegex).join("[\\s'.-]+")}\\b`, "g")
+  const ocorrencias = [...t.matchAll(new RegExp(`(?<!\\d)${digitos.split("").join("\\D{0,3}")}(?!\\d)`, "g"))]
+  const validas = ocorrencias.filter((m) => {
+    const inicio = m.index ?? 0
+    const antes = t.slice(Math.max(0, inicio - 160), inicio)
+    const nomes = [...antes.matchAll(nomeRegex)]
+    const ultimo = nomes[nomes.length - 1]
+    if (!ultimo) return false
+    const intervalo = antes.slice((ultimo.index ?? 0) + ultimo[0].length).replace(ROTULO_CPF_NO_FIM, "")
+    if (/[:;\n]|\.\s/.test(intervalo) || /\bCPF\b/.test(intervalo)) return false
+    const vizinhanca = t.slice(Math.max(0, inicio - 80), inicio + m[0].length + 40)
+    return parte || !MARCADOR_ADVOGADO.test(vizinhanca)
+  })
+  const escolhida = validas[0]
+  if (!escolhida) return null
+  const inicio = escolhida.index ?? 0
+  return normalizar(t.slice(Math.max(0, inicio - 300), inicio + escolhida[0].length + 250))
+}
+
+/**
+ * Descarte de homônimo: só quando há CPF COMPLETO colado ao nome, nenhum CPF
+ * mascarado colado ao nome (presente e indecidível mantém a ocorrência
+ * ambígua) e os 11 dígitos da candidatura não aparecem em lugar nenhum do
+ * texto. Na dúvida, não descarta.
+ */
+export function cpfDivergenteNoTexto(texto: string, nomeCompleto: string, cpf: string, destinatarios: string[] = []): boolean {
+  const cpfCandidato = cpf.replace(/\D/g, "")
+  if (cpfCandidato.length !== 11) return false
+  if (cpfDaCandidaturaNoTexto(texto, cpfCandidato)) return false
+  const rotulados = cpfsRotuladosDoNome(texto, nomeCompleto, destinatarios)
+  if (rotulados.some((r) => r.tipo === "mascarado")) return false
+  return rotulados.some((r) => r.tipo === "completo" && r.digitos !== cpfCandidato)
+}
+
+/** CPF completo da candidatura colado depois do nome (mesma regra estrita). */
+export function cpfCompativelNoTexto(texto: string, nomeCompleto: string, cpf: string, destinatarios: string[] = []): boolean {
+  const cpfCandidato = cpf.replace(/\D/g, "")
+  if (cpfCandidato.length !== 11) return false
+  return cpfsRotuladosDoNome(texto, nomeCompleto, destinatarios).some((r) => r.tipo === "completo" && r.digitos === cpfCandidato)
 }
 
 /** Segundo identificador estrito para monitoramento por CNJ: CPF ou cargo estadual com UF. */
@@ -1103,9 +1496,13 @@ export async function pesquisarCandidato(
   try {
     const djen = await buscar(nomeConsulta, cache)
     const nome = normalizar(nomeConsulta)
-    const exatos = djen.itens.filter((item) => (item.destinatarios ?? []).some((d) => normalizar(d.nome) === nome))
+    const exatos = djen.itens.filter((item) => (item.destinatarios ?? []).some((d) => nomeDestinatario(d.nome) === nome))
+    const exatosIds = new Set(exatos.map((item) => item.id))
+    // Parte citada no texto sem ser destinataria (a intimacao vai ao advogado)
+    // tambem e ocorrencia: sem isso, o vazio_confirmado afirmaria ausencia com
+    // o nome exato presente no acervo consultado.
     const semDestinatarios = djen.itens.filter((item) =>
-      !Array.isArray(item.destinatarios) && normalizar(item.texto ?? "").includes(nome),
+      !exatosIds.has(item.id) && mencionaNomeNoTexto(item, nome),
     )
     if (identidade.status !== "confirmada") {
       const tetoAtingido = djen.tetoAtingido === true || djen.total >= 10_000
@@ -1118,7 +1515,9 @@ export async function pesquisarCandidato(
           total_api: djen.total, ocorrencias_nome_exato: exatos.length,
           ocorrencias_ambiguas: exatos.length + semDestinatarios.length,
           ocorrencias_sem_destinatarios: semDestinatarios.length,
+          ocorrencias_nome_no_texto: semDestinatarios.length,
           teto_publico_atingido: tetoAtingido,
+          completo: djen.completo === true, conferencia_cpf: djen.textosBrutos ? "texto_bruto_em_memoria" : "indisponivel_cache_sanitizado",
           tribunais_consultados: tribunais,
         },
         ocorrencias_ambiguas: [...exatos, ...semDestinatarios].map((item) => ({
@@ -1135,24 +1534,51 @@ export async function pesquisarCandidato(
     const encontrados = new Map<string, { item: Comunicacao; contexto: string; polo: string | null }>()
     const descartados = new Map<string, Record<string, unknown>>()
     const ambiguos = new Map<string, Record<string, unknown>>()
+    const cpfCandidato = String(identidade.cpf ?? "")
+    const descartarSeCpfDiverge = (item: Comunicacao, numero: string): boolean => {
+      const destinatarios = (item.destinatarios ?? []).map((d) => String(d.nome ?? ""))
+      if (!cpfDivergenteNoTexto(djen.textosBrutos?.get(item.id) ?? "", nomeConsulta, cpfCandidato, destinatarios)) return false
+      const chave = cnjValido(numero) ? numero : `comunicacao-${item.id}`
+      descartados.set(chave, {
+        numero_cnj: chave,
+        tribunal: item.siglaTribunal ?? null,
+        motivo: "CPF rotulado no texto oficial diverge do CPF da candidatura; homonimo descartado",
+      })
+      return true
+    }
+    const porCpf = (item: Comunicacao): string | null => djen.textosBrutos
+      ? contextoPorCpfNoTexto(djen.textosBrutos.get(item.id) ?? "", nomeConsulta, cpfCandidato, (item.destinatarios ?? []).map((d) => String(d.nome ?? "")))
+      : null
     for (const item of semDestinatarios) {
       const numero = item.numeroprocessocommascara || item.numero_processo || `comunicacao-${item.id}`
+      if (descartarSeCpfDiverge(item, numero)) continue
+      // Fora dos destinatários, só o CPF completo da candidatura no texto atribui.
+      const contextoCpf = cnjValido(numero) ? porCpf(item) : null
+      if (contextoCpf) {
+        encontrados.set(numero, { item, contexto: contextoCpf, polo: null })
+        continue
+      }
       ambiguos.set(numero, {
         numero_cnj: numero,
         tribunal: item.siglaTribunal ?? null,
-        motivo: "comunicacao sem destinatarios estruturados; identidade nao atribuida automaticamente",
+        motivo: "nome exato no texto da comunicacao, fora dos destinatarios; identidade nao atribuida automaticamente",
       })
     }
     for (const item of exatos) {
       const numero = item.numeroprocessocommascara || item.numero_processo || `comunicacao-${item.id}`
-      const contexto = contextoPolitico(c, snap, item.texto ?? "", nomeConsulta, identidade)
-      const polo = item.destinatarios?.find((d) => normalizar(d.nome) === nome)?.polo ?? null
+      if (descartarSeCpfDiverge(item, numero)) continue
+      const contexto = contextoPolitico(c, snap, djen.textosBrutos?.get(item.id) ?? item.texto ?? "", nomeConsulta, identidade)
+        ?? porCpf(item)
+      const polo = item.destinatarios?.find((d) => nomeDestinatario(d.nome) === nome)?.polo ?? null
       const cnj = cnjValido(numero)
-      if (contexto && cnj) encontrados.set(numero, { item, contexto, polo })
+      // Sem texto bruto (cache sanitizado) o descarte por CPF não rodou: nada vira achado.
+      if (contexto && cnj && djen.textosBrutos) encontrados.set(numero, { item, contexto, polo })
       else ambiguos.set(numero, {
         numero_cnj: numero,
         tribunal: item.siglaTribunal ?? null,
-        motivo: contexto
+        motivo: contexto && cnj
+          ? "conferencia de CPF indisponivel no cache sanitizado; refazer a busca sem cache"
+          : contexto
           ? "comunicacao oficial sem numero CNJ validavel"
           : "nome exato sem segundo identificador oficial adjacente; identidade ambigua",
       })
@@ -1167,8 +1593,10 @@ export async function pesquisarCandidato(
         datajud: { status: "pendente_conferencia_lote" },
       })
     }
+    // CNJ em que o mesmo nome foi identificado como outra pessoa sai da
+    // ambiguidade: a coincidência já foi resolvida por CPF oficial.
     const ambiguosPendentes = new Map(
-      [...ambiguos].filter(([numero]) => !encontrados.has(numero)),
+      [...ambiguos].filter(([numero]) => !encontrados.has(numero) && !descartados.has(numero)),
     )
     const tetoAtingido = djen.tetoAtingido === true || djen.total >= 10_000
     const resultado = classificarResultadoDjen(processos.length, ambiguosPendentes.size, tetoAtingido)
@@ -1180,7 +1608,9 @@ export async function pesquisarCandidato(
         total_api: djen.total, ocorrencias_nome_exato: exatos.length,
         ocorrencias_ambiguas: ambiguosPendentes.size,
         ocorrencias_sem_destinatarios: semDestinatarios.length,
+        ocorrencias_nome_no_texto: semDestinatarios.length,
         teto_publico_atingido: tetoAtingido,
+        completo: djen.completo === true, conferencia_cpf: djen.textosBrutos ? "texto_bruto_em_memoria" : "indisponivel_cache_sanitizado",
         tribunais_consultados: tribunais,
       },
       ocorrencias_ambiguas: [...ambiguosPendentes.values()],
@@ -1424,14 +1854,48 @@ async function main(): Promise<void> {
   if (coorteAtual && targetSlugs) throw new Error("--coorte-atual nao pode ser combinado com --slugs")
   if (coorteAtual && (opcoes.has("lote") || opcoes.has("lotes"))) throw new Error("--coorte-atual nao pode ser combinado com --lote ou --lotes")
   if (coorteAtual && !dryRun) throw new Error("--coorte-atual exige --dry-run; a coorte atual so pode ser sondada sem escrita")
+  const modoAlvos = modoAlvosSolicitado(argv)
+  const margemDias = margemDiasSolicitada(argv)
+  const cargo = cargoSolicitado(argv)
+  if (!coorteAtual && (opcoes.has("alvos") || opcoes.has("margem-dias") || opcoes.has("cargo"))) {
+    throw new Error("--alvos, --margem-dias e --cargo exigem --coorte-atual")
+  }
+  if (somenteCnj && modoAlvos !== "sem-recibo") throw new Error("--somente-cnj nao combina com --alvos=vencendo")
+  const modoEvidencia = somenteCnj
+    ? "dry-run-coorte-atual-somente-cnj"
+    : modoAlvos === "vencendo"
+      ? "dry-run-coorte-atual-renovacao"
+      : modoAlvos === "indeterminados"
+        ? "dry-run-coorte-atual-reexame-indeterminados"
+        : modoAlvos === "encontrados" ? "dry-run-coorte-atual-revalidacao" : "dry-run-coorte-atual-sem-recibo"
   const numeros = coorteAtual || targetSlugs ? [1] : lotesSolicitados(argv)
   const snapshotPath = resolve(opcoes.get("snapshot") ?? "/tmp/2026-08-05-processos-inicial-snapshot.json")
   const evidencePath = resolve(opcoes.get("evidence") ?? "~/.disposable-html/2026-08-05-puxa-ficha-processos-curadoria.evidence.json".replace("~", process.env.HOME ?? ""))
   const cache = resolve(opcoes.get("cache") ?? "/tmp/puxa-ficha-processos-curadoria-cache")
-  const coortePreflight = coorteAtual ? await lerCoorteAtualParaDryRun(somenteCnj) : null
+  const snapshotSaida = coorteAtual ? resolve(opcoes.get("snapshot-saida") ?? `${evidencePath}.snapshot.json`) : null
+  if (coorteAtual) {
+    exigirCaminhoPersistente(evidencePath, "--evidence")
+    exigirCaminhoPersistente(snapshotSaida!, "--snapshot-saida")
+  }
+  const coortePreflight = coorteAtual ? await lerCoorteAtualParaDryRun(somenteCnj, modoAlvos, margemDias, cargo) : null
+  let snapshotSha: string | null = null
+  if (coortePreflight && snapshotSaida) {
+    const snapshot = montarSnapshotCoorteAtual(coortePreflight.candidatos, coortePreflight.recibos, coortePreflight.alvos, {
+      modo: modoEvidencia,
+      filtro_cargo: cargo,
+      margem_dias: modoAlvos === "vencendo" ? margemDias : null,
+      coorte_publica_total: coortePreflight.coortePublicaTotal,
+    })
+    const texto = `${JSON.stringify(snapshot, null, 2)}\n`
+    mkdirSync(dirname(snapshotSaida), { recursive: true })
+    writeFileSync(snapshotSaida, texto, { encoding: "utf8", mode: 0o600 })
+    chmodSync(snapshotSaida, 0o600)
+    snapshotSha = createHash("sha256").update(texto).digest("hex")
+  }
   if (coortePreflight && coortePreflight.alvos.length === 0) {
     console.log(JSON.stringify({
-      modo: somenteCnj ? "dry-run-coorte-atual-somente-cnj" : "dry-run-coorte-atual-sem-recibo",
+      modo: modoEvidencia,
+      snapshot: snapshotSaida,
       coorte: coortePreflight.candidatos.length,
       alvos: 0,
       residuais: coortePreflight.residuais.length,
@@ -1448,7 +1912,10 @@ async function main(): Promise<void> {
       let currentTargets: string[] | null = null
       if (coorteAtual) {
         currentTargets = coortePreflight!.alvos
-        iniciais = coortePreflight!.candidatos.map((c) => ({
+        const alvosSet = new Set(currentTargets)
+        // A evidencia da coorte atual registra apenas os alvos: e ela que o
+        // aplicador valida inteira, sem depender do snapshot de agosto.
+        iniciais = coortePreflight!.candidatos.filter((c) => alvosSet.has(c.slug)).map((c) => ({
           slug: c.slug, nome_urna: c.nome_urna, cargo_disputado: c.cargo_disputado,
           estado: c.estado ?? undefined, partido_sigla: c.partido_sigla ?? undefined, processos: 0,
         }))
@@ -1527,9 +1994,14 @@ async function main(): Promise<void> {
           datajud: "https://datajud-wiki.cnj.jus.br/api-publica/",
           tse: TSE_CDN,
           criterio: "docs/criterio-processos-judiciais.md",
-          modo: somenteCnj ? "dry-run-coorte-atual-somente-cnj" : coorteAtual ? "dry-run-coorte-atual-sem-recibo" : "curadoria-lote",
+          modo: coorteAtual ? modoEvidencia : "curadoria-lote",
           regra_indeterminados: "nao_reconsultar_sem_nova_fonte_ou_segundo_identificador",
           residuais_sem_cnj: somenteCnj ? coortePreflight?.residuais : undefined,
+          coorte_publica_total: coortePreflight?.coortePublicaTotal,
+          filtro_cargo: coorteAtual ? cargo : undefined,
+          margem_dias: coorteAtual && modoAlvos === "vencendo" ? margemDias : undefined,
+          snapshot: snapshotSaida ?? undefined,
+          snapshot_sha256: snapshotSha ?? undefined,
         },
       })
       contexto.anterior = evidencia
@@ -1539,5 +2011,13 @@ async function main(): Promise<void> {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  main().catch((erro) => { console.error(erro); process.exitCode = 1 })
+  main().catch((erro) => {
+    console.error(erro)
+    process.exitCode = 1
+    const argv = process.argv.slice(2)
+    const evidence = flags(argv).get("evidence")
+    if (evidence && flagPresente(argv, "coorte-atual")) {
+      writeFileSync(`${resolve(evidence)}.falha.json`, `${JSON.stringify({ tipo: classificarFalhaColeta(erro), em: new Date().toISOString() })}\n`, { mode: 0o600 })
+    }
+  })
 }
