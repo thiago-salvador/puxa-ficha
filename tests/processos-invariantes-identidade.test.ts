@@ -254,6 +254,10 @@ describe("invariante 2: papel não-parte perto do nome nunca gera encontrado", (
       `ADVOGADOS: FULANO DE TAL (OAB 17733/MS), BELTRANO (OAB 20136/MS) - EXEQTE: CENTRO GRAFICO X - EXECTDO: ${NOME_UP}, CPF ${CPF_FMT}`,
       `ADVOGADOS: FULANO DE TAL (OAB 17733/MS) PROCESSO 0830146-17.2019.8.12.0001 - CUMPRIMENTO DE SENTENCA - ${NOME_UP}, CPF ${CPF_FMT}`,
       `AGRAVADO: ${NOME_UP}, CPF ${CPF_FMT}, PREFEITO DO MUNICIPIO DE BELEM RELATOR(A): DESEMBARGADOR JOSE MARIA`,
+      // Autor apresentado em prosa depois do cabeçalho com advogados (TJGO).
+      `ADVOGADOS: BELTRANO OAB/GO 1, SICRANO OAB/GO 2 TRATA-SE DE ACAO DE INDENIZACAO AJUIZADA POR ${NOME_UP}, Senador, EM RAZAO DE DANOS`,
+      // Denúncia em prosa depois do cabeçalho com o advogado do investigado (TRF3).
+      `INVESTIGADO: ${NOME_UP} ADVOGADO DO(A) INVESTIGADO: RUFO X - MS18103 D E C I S A O O MINISTERIO PUBLICO FEDERAL OFERECE DENUNCIA CONTRA ${NOME_UP}, SENADOR, DANDO-O COMO INCURSO`,
     ]) {
       const r = await pesquisar([{ id: 1, texto, destinatarios: [{ nome: NOME_UP, polo: "P" }] }])
       assert.equal(r.classificacao, "encontrado", texto)
