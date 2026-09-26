@@ -22,6 +22,11 @@ esac
 
 version=20260925221042
 name=quarentena_gastos_parlamentares_universo
+# Topo esperado do ledger depois do rollback (a migration anterior em ordem de arquivo).
+previous="${PF_PREVIOUS_VERSION:-20260925220200}"
+[[ "$previous" =~ ^[0-9]{14}$ && "$previous" < "$version" ]] || { echo "FAIL: previous_version inválida: $previous" >&2; exit 2; }
+expected_prior="$(ls "$ROOT"/supabase/migrations/*.sql | sed 's#.*/##' | sort | awk -v v="$version" '$0 < v' | tail -1)"
+[[ "$expected_prior" == "${previous}_"* ]] || { echo "FAIL: previous_version não é a migration anterior em ordem de arquivo ($expected_prior)" >&2; exit 2; }
 migration="$ROOT/supabase/migrations/${version}_${name}.sql"
 rollback="$ROOT/supabase/rollback/${version}_${name}.rollback.sql"
 rollback_readback="$ROOT/supabase/readback/${version}_${name}.rollback.readback.sql"
@@ -33,9 +38,9 @@ fecho=ROLLBACK
 [[ "$modo" == "apply" ]] && fecho=COMMIT
 
 rollback_sql() {
-  python3 - "$fecho" "$version" "$digest" "$rollback" "$rollback_readback" <<'PY'
+  python3 - "$fecho" "$version" "$digest" "$rollback" "$rollback_readback" "$previous" <<'PY'
 import pathlib, re, sys
-fecho, version, digest, rollback, readback = sys.argv[1:]
+fecho, version, digest, rollback, readback, previous = sys.argv[1:]
 def lit(value): return "'" + value.replace("'", "''") + "'"
 text = pathlib.Path(rollback).read_text(encoding="utf-8")
 begins = list(re.finditer(r"(?im)^\s*BEGIN;\s*$", text))
@@ -50,6 +55,7 @@ print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:production-db-m
 print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(version)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(version)} AND idempotency_key={lit(digest)}) <> 1 THEN RAISE EXCEPTION 'rollback gastos-universo: ledger divergiu sob lock'; END IF; END $ledger$;")
 print(text[begins[0].end():commits[0].start()])
 print(rb)
+print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) IS DISTINCT FROM {lit(previous)} THEN RAISE EXCEPTION 'rollback gastos-universo: topo final não é o predecessor {previous}'; END IF; END $ledger$;")
 print(fecho + ";")
 PY
 }
@@ -96,7 +102,12 @@ export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 estado="$(PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300000 -c lock_timeout=5000' \
   psql -X -v ON_ERROR_STOP=1 -Atq -F '|' -c \
   "select coalesce(max(version),'') || '|' || count(*) filter (where version='$version') || '|' || coalesce(max(idempotency_key) filter (where version='$version'),'') from supabase_migrations.schema_migrations")"
-IFS='|' read -r topo contagem chave <<<"$estado"
+IFS='|' read -r -a campos <<<"${estado}|FIM"
+if [[ "${#campos[@]}" != 4 || "${campos[3]}" != "FIM" ]]; then
+  echo "FAIL: leitura do ledger com ${#campos[@]} campos, esperados 4: $estado" >&2
+  exit 1
+fi
+topo="${campos[0]}" contagem="${campos[1]}" chave="${campos[2]}"
 [[ "$topo" == "$version" && "$contagem" == 1 && "$chave" == "$digest" ]] || {
   echo "FAIL: rollback exige $version no topo do ledger com o digest do checkout: $estado" >&2
   exit 1

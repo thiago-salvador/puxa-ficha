@@ -23,7 +23,8 @@ case "$mode" in
 esac
 [[ -n "$print_only" ]] || tx_mode="$mode"
 
-: "${PF_PREVIOUS_VERSION:?}"
+# Topo do ledger esperado antes desta migration; o workflow passa o mesmo valor.
+PF_PREVIOUS_VERSION="${PF_PREVIOUS_VERSION:-20260925220200}"
 [[ "$PF_PREVIOUS_VERSION" =~ ^[0-9]{14}$ ]] || exit 2
 
 version=20260925221042
@@ -141,7 +142,14 @@ export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
 ledger="$(PGOPTIONS="$ro_opts" psql -X -v ON_ERROR_STOP=1 -Atq -F '|' -c \
   "select coalesce(max(version),'') || '|' || count(*) filter (where version='$previous') || '|' || coalesce(max(idempotency_key) filter (where version='$previous'),'') || '|' || count(*) filter (where version='$version') || '|' || coalesce(max(idempotency_key) filter (where version='$version'),'') from supabase_migrations.schema_migrations")"
-IFS='|' read -r top prior_count prior_key target_count target_key <<<"$ledger"
+# Chave vazia no fim (versão ainda fora do ledger) é normal; a sentinela e a
+# contagem exata de campos (padrão do apply de dados-no-ar) pegam linha truncada.
+IFS='|' read -r -a campos <<<"${ledger}|FIM"
+if [[ "${#campos[@]}" != 6 || "${campos[5]}" != "FIM" ]]; then
+  echo "FAIL: leitura do ledger com ${#campos[@]} campos, esperados 6: $ledger" >&2
+  exit 1
+fi
+top="${campos[0]}" prior_count="${campos[1]}" prior_key="${campos[2]}" target_count="${campos[3]}" target_key="${campos[4]}"
 
 if [[ "$target_count" == 1 && "$target_key" == "$digest" ]]; then
   readback_session_sql | PGOPTIONS="$ro_opts" psql -X -v ON_ERROR_STOP=1 -f -

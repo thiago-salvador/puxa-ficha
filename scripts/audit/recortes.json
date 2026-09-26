@@ -678,6 +678,13 @@
       "divida": null
     },
     {
+      "nome": "dados-no-ar-senado-claims-20260925",
+      "desde": "20260925220000",
+      "ate": "20260925220200",
+      "allowlist": "scripts/audit/allowlist-dados-no-ar-senado-claims-20260925.json",
+      "divida": null
+    },
+    {
       "nome": "gastos-parlamentares-quarentena-universo-20260925",
       "desde": "20260925221042",
       "ate": "20260925221042",

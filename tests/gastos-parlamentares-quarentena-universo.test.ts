@@ -1,4 +1,5 @@
 import assert from "node:assert/strict"
+import { spawnSync } from "node:child_process"
 import { createHash } from "node:crypto"
 import { readFileSync } from "node:fs"
 import { describe, it } from "node:test"
@@ -75,6 +76,38 @@ describe("quarentena ampliada de gastos parlamentares", () => {
     assert.equal(rollback.match(/^COMMIT;$/gm)?.length, 1)
     assert.doesNotMatch(rollbackReadback, /^\s*(BEGIN(\s+READ\s+ONLY)?\s*;|COMMIT\s*;|ROLLBACK\s*;|SET\s+(LOCAL\s+)?ROLE\b)/im)
     assert.match(rollbackReadback, /versão continua no ledger/)
+  })
+
+  it("leitura do ledger aceita chave vazia no fim e reprova linha truncada", () => {
+    const trecho = (script: string, inicio: RegExp, fim: RegExp) => {
+      const linhas = readFileSync(script, "utf8").split("\n")
+      const a = linhas.findIndex((l) => inicio.test(l))
+      const b = linhas.findIndex((l, i) => i > a && fim.test(l))
+      assert.ok(a >= 0 && b > a, `trecho não encontrado em ${script}`)
+      return linhas.slice(a, b + 1).join("\n")
+    }
+    const rodar = (codigo: string, variavel: string, valor: string, eco: string) =>
+      spawnSync("bash", ["-c", ["set -euo pipefail", `${variavel}=${JSON.stringify(valor)}`, codigo, eco].join("\n")], { encoding: "utf8" })
+
+    const apply = trecho("scripts/audit/apply-gastos-parlamentares-quarentena-universo-production.sh", /read -r -a campos <<<"\$\{ledger\}\|FIM"/, /^top="\$\{campos\[0\]\}"/)
+    const eco = 'echo "$top|$prior_count|$prior_key|$target_count|$target_key"'
+    let r = rodar(apply, "ledger", "20260925220200|1||0|", eco)
+    assert.equal(r.status, 0, r.stderr)
+    assert.equal(r.stdout.trim(), "20260925220200|1||0|")
+    r = rodar(apply, "ledger", "20260925221042|1|sha256:a|1|sha256:b", eco)
+    assert.equal(r.stdout.trim(), "20260925221042|1|sha256:a|1|sha256:b")
+    r = rodar(apply, "ledger", "20260925220200|1", eco)
+    assert.notEqual(r.status, 0)
+    assert.match(r.stderr, /esperados 6/)
+
+    const rollback = trecho("scripts/audit/rollback-gastos-parlamentares-quarentena-universo-production.sh", /read -r -a campos <<<"\$\{estado\}\|FIM"/, /^topo="\$\{campos\[0\]\}"/)
+    const ecoRollback = 'echo "$topo|$contagem|$chave"'
+    r = rodar(rollback, "estado", "20260925220200|0|", ecoRollback)
+    assert.equal(r.status, 0, r.stderr)
+    assert.equal(r.stdout.trim(), "20260925220200|0|")
+    r = rodar(rollback, "estado", "20260925221042", ecoRollback)
+    assert.notEqual(r.status, 0)
+    assert.match(r.stderr, /esperados 4/)
   })
 
   it("apply prova leitura anônima em sessão separada e o rollback tem workflow próprio", () => {

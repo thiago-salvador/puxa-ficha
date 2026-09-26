@@ -500,9 +500,9 @@ describe("classificador puro (#136)", () => {
     // Issue #483, jose-roberto-arruda Indeferido (20260924180000): --gate PG17 mediu 400 + 105 = 505.
     // Recibos de sites e situacao TSE (20260924204852 e 20260924205031):
     // --gate PG17 mediu 402 + as mesmas 105 falhas = 507 migrations.
-    // Quarentena de gastos (20260925163542/43): --gate PG17 mediu 404 + 105 = 509.
-    // Quarentena ampliada de gastos (20260925221042): --gate PG17 mediu 405 + 105 = 510.
-    assert.equal(manifesto.aplicadas_esperadas, 405)
+    // Dados no ar de 25/09 (20260925220000/0100/0200): --gate PG17 mediu 407 + 105 = 512.
+    // Quarentena ampliada de gastos (20260925221042): --gate PG17 mediu 408 + 105 = 513.
+    assert.equal(manifesto.aplicadas_esperadas, 408)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

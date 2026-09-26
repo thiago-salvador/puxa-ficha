@@ -7,7 +7,7 @@
 # rollback devolve as linhas, tira a versão do ledger e não toca a quarentena
 # anterior nem a linha de controle.
 #
-#   PF_PREVIOUS_VERSION=20260925163543 scripts/audit/provar-gastos-parlamentares-quarentena-universo-pg17.sh
+#   PF_PREVIOUS_VERSION=20260925220200 scripts/audit/provar-gastos-parlamentares-quarentena-universo-pg17.sh
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"

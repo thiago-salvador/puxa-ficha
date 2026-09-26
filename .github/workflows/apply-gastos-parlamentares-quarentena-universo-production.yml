@@ -10,7 +10,7 @@ on:
       previous_version:
         description: Versão no topo do ledger antes desta migration (a anterior em ordem de arquivo)
         required: true
-        default: '20260925163543'
+        default: '20260925220200'
         type: string
       mode:
         description: Ensaio sem gravação ou aplicação

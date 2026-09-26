@@ -1,4 +1,4 @@
-name: "Reverter quarentena ampliada de gastos parlamentares"
+name: "Reverter correções de dado no ar (situação no Senado, claim e cargo atual)"
 
 on:
   workflow_dispatch:
@@ -6,10 +6,6 @@ on:
       expected_sha:
         description: "SHA de 40 caracteres já mergeado em main"
         required: true
-      previous_version:
-        description: "Topo esperado do ledger depois do rollback (a migration anterior em ordem de arquivo)"
-        required: true
-        default: "20260925220200"
       mode:
         description: "dry-run ensaia o rollback e desfaz; apply reverte. O ensaio roda sempre antes."
         required: true
@@ -23,20 +19,18 @@ permissions:
   contents: read
 
 concurrency:
-  group: production-db-migrations
+  group: rollback-dados-no-ar-senado-claims-production
   cancel-in-progress: false
 
 jobs:
   rollback:
-    name: Rollback da 20260925221042
+    name: Rollback das três migrations de dado, em ordem inversa
     runs-on: ubuntu-latest
     timeout-minutes: 20
     environment: production
     # PF_DATABASE_URL fica no env de cada passo que o usa, nunca no job.
     env:
       PF_EXPECTED_SHA: ${{ github.event.inputs.expected_sha }}
-      PF_PREVIOUS_VERSION: ${{ github.event.inputs.previous_version }}
-      GITHUB_REF: ${{ github.ref }}
     steps:
       - name: Validar ref e input
         env:
@@ -47,8 +41,7 @@ jobs:
         run: |
           set -euo pipefail
           test "$DISPATCH_REF" = "refs/heads/main"
-          [[ "$PF_EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
-          [[ "$PF_PREVIOUS_VERSION" =~ ^[0-9]{14}$ ]]
+          test "${#PF_EXPECTED_SHA}" -eq 40
           test "$PF_EXPECTED_SHA" = "$DISPATCH_SHA"
           test -n "${PF_DATABASE_URL:-}"
           case "$PF_MODE" in dry-run|apply) ;; *) echo "modo inválido: $PF_MODE" >&2; exit 1 ;; esac
@@ -66,15 +59,17 @@ jobs:
       - uses: ./.github/actions/install-postgresql-client-17
         timeout-minutes: 12
 
-      # O ensaio roda rollback e readback de rollback na mesma transação e
-      # termina em ROLLBACK; o modo apply só roda depois dele.
+      - run: npm ci --ignore-scripts
+
+      # O ensaio roda rollbacks e readbacks de rollback na mesma transacao e
+      # termina em ROLLBACK; o modo apply so roda depois dele.
       - name: Ensaio do rollback (dry-run, não grava)
         env:
           PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
-        run: bash scripts/audit/rollback-gastos-parlamentares-quarentena-universo-production.sh dry-run
+        run: bash scripts/audit/rollback-dados-no-ar-senado-claims-production.sh dry-run
 
-      - name: Reverter a quarentena ampliada
+      - name: Reverter conjunto fechado
         if: ${{ github.event.inputs.mode == 'apply' }}
         env:
           PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
-        run: bash scripts/audit/rollback-gastos-parlamentares-quarentena-universo-production.sh apply
+        run: bash scripts/audit/rollback-dados-no-ar-senado-claims-production.sh apply
