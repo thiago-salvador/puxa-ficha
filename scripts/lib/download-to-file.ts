@@ -1,3 +1,4 @@
+import { execFileSync } from "node:child_process"
 import { randomUUID } from "node:crypto"
 import { createWriteStream, existsSync, linkSync, rmSync, statSync } from "node:fs"
 import { pipeline } from "node:stream/promises"
@@ -42,8 +43,33 @@ export interface DownloadToFileHooks {
   timeoutMs?: number
   /** Sem valor: PF_TSE_DOWNLOAD_RETRY_WINDOW_MS (ausente = uma tentativa, comportamento anterior). */
   retry?: DownloadRetryPolicy
+  /**
+   * Prazo absoluto (epoch ms) para todos os downloads. Sem valor:
+   * PF_TSE_DOWNLOAD_DEADLINE_MS contado do primeiro download do processo.
+   */
+  deadlineAt?: number
+  /** Confere o arquivo completo antes de publicar; lançar descarta o parcial e conta como falha transitória. */
+  verify?: (path: string) => void | Promise<void>
   sleep?: (ms: number) => Promise<void>
   now?: () => number
+}
+
+/**
+ * Prazo único do processo: um job que baixa vários pacotes não pode somar uma
+ * janela por arquivo e estourar o timeout do job no meio do apply.
+ */
+let processDeadlineAt: number | null = null
+
+function resolveDeadline(hooks: DownloadToFileHooks, envDeadlineMs: number | undefined, now: () => number): number {
+  if (hooks.deadlineAt !== undefined) return hooks.deadlineAt
+  if (envDeadlineMs === undefined) return Number.POSITIVE_INFINITY
+  processDeadlineAt ??= now() + envDeadlineMs
+  return processDeadlineAt
+}
+
+/** `unzip -tq`: CRC de todos os membros antes de qualquer uso do arquivo. */
+export function verifyZip(path: string): void {
+  execFileSync("unzip", ["-tq", path], { stdio: ["ignore", "ignore", "pipe"] })
 }
 
 type EnvLike = Record<string, string | undefined>
@@ -66,11 +92,14 @@ function positiveIntegerEnv(env: EnvLike, name: string): number | undefined {
 export function downloadPolicyFromEnv(env: EnvLike = process.env): {
   timeoutMs?: number
   retry?: DownloadRetryPolicy
+  deadlineMs?: number
 } {
   const timeoutMs = positiveIntegerEnv(env, "PF_TSE_DOWNLOAD_TIMEOUT_MS")
   const windowMs = positiveIntegerEnv(env, "PF_TSE_DOWNLOAD_RETRY_WINDOW_MS")
   const baseDelayMs = positiveIntegerEnv(env, "PF_TSE_DOWNLOAD_RETRY_BASE_MS")
+  const deadlineMs = positiveIntegerEnv(env, "PF_TSE_DOWNLOAD_DEADLINE_MS")
   return {
+    ...(deadlineMs ? { deadlineMs } : {}),
     ...(timeoutMs ? { timeoutMs } : {}),
     ...(windowMs ? { retry: { windowMs, ...(baseDelayMs ? { baseDelayMs } : {}) } } : {}),
   }
@@ -112,6 +141,12 @@ function expectedLength(response: Response, offset: number, partialContent: bool
   return Number.isSafeInteger(length) ? offset + length : null
 }
 
+/** ETag forte ou, na falta dele, Last-Modified: o que amarra a retomada à mesma versão. */
+function responseValidator(response: Response): string | null {
+  const etag = response.headers.get("etag")
+  return etag && !etag.startsWith("W/") ? etag : response.headers.get("last-modified")
+}
+
 type AttemptOutcome =
   | { ok: true }
   | { ok: false; retryable: boolean; reason: string; status?: number; error?: unknown }
@@ -126,8 +161,11 @@ type AttemptOutcome =
  * 5xx, rede, timeout) espera com recuo exponencial e tenta de novo dentro da
  * janela. O parcial é mantido entre tentativas e retomado por `Range`, amarrado
  * ao ETag/Last-Modified da primeira resposta via `If-Range`: se o arquivo mudou
- * no servidor, a resposta volta inteira (200) e o parcial é descartado. Esgotada
- * a janela, a chamada falha fechado e apaga o parcial.
+ * no servidor, a resposta volta inteira (200) e o parcial é descartado; um 206
+ * com validador diferente também recomeça do zero. Toda requisição pede
+ * `Accept-Encoding: identity`, para que offset e tamanho sejam bytes do arquivo.
+ * Nenhuma tentativa começa depois do prazo do processo e cada uma é cortada
+ * nele. Esgotada a janela ou o prazo, a chamada falha fechado e apaga o parcial.
  */
 export async function downloadToFile(
   url: string,
@@ -145,6 +183,7 @@ export async function downloadToFile(
   const now = hooks.now ?? Date.now
   const sleep = hooks.sleep ?? ((ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms)))
   const fetcher = hooks.fetcher ?? fetch
+  const deadlineAt = resolveDeadline(hooks, envPolicy.deadlineMs, now)
 
   hooks.onStart?.(url)
   const partial = `${dest}.${randomUUID()}.part`
@@ -154,9 +193,10 @@ export async function downloadToFile(
   async function attempt(): Promise<AttemptOutcome> {
     const offset = validator ? partialSize(partial) : 0
     if (offset === 0) rmSync(partial, { force: true })
-    const signal = AbortSignal.timeout(timeoutMs)
-    const init: RequestInit = { signal }
-    if (offset > 0 && validator) init.headers = { Range: `bytes=${offset}-`, "If-Range": validator }
+    const signal = AbortSignal.timeout(Math.max(1, Math.min(timeoutMs, deadlineAt - now())))
+    const headers: Record<string, string> = { "Accept-Encoding": "identity" }
+    if (offset > 0 && validator) Object.assign(headers, { Range: `bytes=${offset}-`, "If-Range": validator })
+    const init: RequestInit = { signal, headers }
 
     const response = await fetcher(url, init)
     if (response.status === 416) {
@@ -179,16 +219,22 @@ export async function downloadToFile(
     const partialContent = response.status === 206
     if (partialContent) {
       const range = parseContentRange(response.headers.get("content-range"))
-      if (offset === 0 || !range || range.start !== offset) {
+      const current = responseValidator(response)
+      const reason =
+        offset === 0 || !range || range.start !== offset
+          ? "Content-Range inesperado"
+          : current !== null && current !== validator
+            ? "206 de outra versão do arquivo"
+            : null
+      if (reason) {
         await response.body?.cancel().catch(() => {})
         rmSync(partial, { force: true })
         validator = null
-        return { ok: false, retryable: true, reason: "Content-Range inesperado" }
+        return { ok: false, retryable: true, reason }
       }
     } else {
       // Resposta inteira: o parcial anterior (se houver) não vale mais.
-      const etag = response.headers.get("etag")
-      validator = etag && !etag.startsWith("W/") ? etag : response.headers.get("last-modified")
+      validator = responseValidator(response)
     }
     const append = partialContent
     const total = expectedLength(response, append ? offset : 0, partialContent)
@@ -226,6 +272,15 @@ export async function downloadToFile(
       }
       return { ok: false, retryable: true, reason: `corpo com ${size} de ${total} bytes` }
     }
+    if (hooks.verify) {
+      try {
+        await hooks.verify(partial)
+      } catch (error) {
+        rmSync(partial, { force: true })
+        validator = null
+        return { ok: false, retryable: true, reason: `arquivo reprovado na conferência: ${String(error).slice(0, 200)}` }
+      }
+    }
 
     try {
       // O hard link publica o arquivo completo atomicamente, sem sobrescrever
@@ -239,6 +294,11 @@ export async function downloadToFile(
   }
 
   for (let attemptNumber = 1; ; attemptNumber += 1) {
+    if (now() >= deadlineAt) {
+      rmSync(partial, { force: true })
+      hooks.onError?.(new Error("prazo de download do processo esgotado"))
+      return false
+    }
     let outcome: AttemptOutcome
     try {
       outcome = await attempt()
@@ -250,7 +310,12 @@ export async function downloadToFile(
 
     const delayMs = retryDelayMs(attemptNumber, retry)
     const elapsed = now() - startedAt
-    if (!outcome.retryable || retry.windowMs <= 0 || elapsed + delayMs > retry.windowMs) {
+    if (
+      !outcome.retryable ||
+      retry.windowMs <= 0 ||
+      elapsed + delayMs > retry.windowMs ||
+      now() + delayMs >= deadlineAt
+    ) {
       rmSync(partial, { force: true })
       return false
     }

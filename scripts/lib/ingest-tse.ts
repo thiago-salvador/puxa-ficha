@@ -34,7 +34,7 @@ import {
   resolveLegacyReceiptSqIdentity,
 } from "./financiamento-receita-legacy-row"
 import { financiamentoReceitaDedupKey } from "./financiamento-receita-dedup"
-import { downloadToFile } from "./download-to-file"
+import { downloadToFile, verifyZip } from "./download-to-file"
 import { observeVerifiedCandidateChange } from "./verified-candidate-changes"
 import { resolveEffectiveElectionContext } from "./tse-effective-election-year"
 import { assertTseContextSchemaReady, pendingContextMigrationError } from "./tse-context-schema"
@@ -165,6 +165,7 @@ async function downloadFile(url: string, dest: string): Promise<boolean> {
     onStart: (source) => log("tse", `  Baixando: ${source}`),
     onHttpError: (status, source) => warn("tse", `  HTTP ${status} para ${source}`),
     onError: (err) => warn("tse", `  Falha no download: ${err}`),
+    verify: dest.toLowerCase().endsWith(".zip") ? verifyZip : undefined,
     onRetry: ({ attempt, delayMs, reason, resumeFrom }) =>
       warn("tse", `  Tentativa ${attempt} falhou (${reason}); nova tentativa em ${Math.round(delayMs / 1000)} s, retomando de ${resumeFrom} bytes`),
   })

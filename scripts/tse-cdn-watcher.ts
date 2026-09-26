@@ -3,7 +3,8 @@
  *
  * Sonda os pacotes de que cada job pendente depende e, para o job cujos
  * pacotes responderam 200/206, dispara o workflow em modo dry-run, a menos que
- * ele já esteja rodando ou já tenha terminado com sucesso na janela recente.
+ * ele já esteja rodando, já tenha terminado com sucesso na janela recente ou
+ * já tenha falhado 2 vezes nela.
  * Nunca dispara com `apply`/`aplicar`: escrita continua exigindo o caminho de
  * apply existente, com o sha do plano revisado.
  *
@@ -96,7 +97,15 @@ export function decidir(
     (run) => run.conclusion === "success" && agoraMs - Date.parse(run.createdAt) < JANELA_SUCESSO_MS,
   )
   if (sucesso) return { disparar: false, motivo: `sucesso recente em ${sucesso.createdAt}` }
-  return { disparar: true, motivo: "CDN aberto e sem sucesso nas últimas 20 h" }
+  // Duas falhas na janela: o problema não é só o CDN intermitente e disparar
+  // de novo a cada 2 h só gasta runner. Volta a disparar quando elas saem da janela.
+  const falhas = runs.filter(
+    (run) => run.conclusion === "failure" && agoraMs - Date.parse(run.createdAt) < JANELA_SUCESSO_MS,
+  )
+  if (falhas.length >= 2) {
+    return { disparar: false, motivo: `${falhas.length} falhas nas últimas 20 h; aguardando revisão ou a janela passar` }
+  }
+  return { disparar: true, motivo: "CDN aberto, sem sucesso e com menos de 2 falhas nas últimas 20 h" }
 }
 
 async function sondar(urls: string[]): Promise<Sonda> {

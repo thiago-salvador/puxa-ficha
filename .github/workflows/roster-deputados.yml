@@ -45,7 +45,10 @@ jobs:
     name: Pacote TSE, dry-run, piso e upsert
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    # Folga para a janela de retentativa do download (90 min) mais o upsert.
+    # Orçamento: setup <= 10 min + download <= 95 min (passo) + dry-run, piso e
+    # upsert >= 45 min. O download é um processo só com prazo de 90 min para os
+    # dois pacotes, então o kill do job nunca cai no meio do upsert por espera
+    # do CDN.
     timeout-minutes: 150
     environment: production
     env:
@@ -56,8 +59,10 @@ jobs:
       ROSTER_PISO_TOTAL: "19000"
       ROSTER_DIR: .tse-roster
       # cdn.tse.jus.br alterna 200 e 403 ao longo do dia. O download tenta de
-      # novo com recuo exponencial (1 min, 2, 4, 8, 10, 10...) por até 90 min,
-      # retoma o parcial por Range e só então falha fechado, sem escrita.
+      # novo com recuo exponencial (1 min, 2, 4, 8, 10, 10...), retoma o parcial
+      # por Range e falha fechado, sem escrita, no prazo único de 90 min do
+      # processo (os dois pacotes juntos).
+      PF_TSE_DOWNLOAD_DEADLINE_MS: "5400000"
       PF_TSE_DOWNLOAD_RETRY_WINDOW_MS: "5400000"
       PF_TSE_DOWNLOAD_RETRY_BASE_MS: "60000"
       PF_TSE_DOWNLOAD_TIMEOUT_MS: "1200000"
@@ -71,18 +76,21 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - name: Baixar pacotes oficiais do TSE
+        # Prazo do processo (90 min) mais folga de 5 min.
+        timeout-minutes: 95
         run: |
           set -euo pipefail
           mkdir -p "$ROSTER_DIR"
-          for name in consulta_cand/consulta_cand_2026.zip consulta_cand_complementar/consulta_cand_complementar_2026.zip; do
-            target="$ROSTER_DIR/$(basename "$name")"
-            if ! node --import tsx scripts/baixar-pacote-tse.ts \
-              "--url=https://cdn.tse.jus.br/estatistica/sead/odsele/$name" "--out=$target"; then
-              echo "::error title=Pacote TSE indisponível::download de $name falhou; nenhuma escrita feita"
-              exit 1
-            fi
+          base=https://cdn.tse.jus.br/estatistica/sead/odsele
+          if ! node --import tsx scripts/baixar-pacote-tse.ts \
+            "--url=$base/consulta_cand/consulta_cand_2026.zip" "--out=$ROSTER_DIR/consulta_cand_2026.zip" \
+            "--url=$base/consulta_cand_complementar/consulta_cand_complementar_2026.zip" "--out=$ROSTER_DIR/consulta_cand_complementar_2026.zip"; then
+            echo "::error title=Pacote TSE indisponível::download dos pacotes do roster falhou; nenhuma escrita feita"
+            exit 1
+          fi
+          for target in "$ROSTER_DIR/consulta_cand_2026.zip" "$ROSTER_DIR/consulta_cand_complementar_2026.zip"; do
             unzip -tq "$target"
-            echo "$(basename "$name"): $(stat -c %s "$target") bytes, sha256 $(sha256sum "$target" | cut -d' ' -f1)"
+            echo "$(basename "$target"): $(stat -c %s "$target") bytes, sha256 $(sha256sum "$target" | cut -d' ' -f1)"
           done
       - name: Dry-run e piso de cobertura
         run: |

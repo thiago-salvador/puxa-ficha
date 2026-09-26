@@ -1,10 +1,10 @@
 import assert from "node:assert/strict"
-import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync } from "node:fs"
+import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs"
 import { join } from "node:path"
 import { fileURLToPath } from "node:url"
 import test from "node:test"
 
-import { downloadPolicyFromEnv, downloadToFile, retryDelayMs } from "../scripts/lib/download-to-file"
+import { downloadPolicyFromEnv, downloadToFile, retryDelayMs, verifyZip } from "../scripts/lib/download-to-file"
 
 const repoRoot = fileURLToPath(new URL("..", import.meta.url))
 
@@ -318,7 +318,8 @@ test("downloadToFile retoma por Range amarrado ao ETag depois de timeout no corp
     assert.equal(ok, true)
     assert.equal(readFileSync(dest, "utf8"), inteiro)
     assert.deepEqual(resumes, [10])
-    assert.deepEqual(requests[1], { Range: "bytes=10-", "If-Range": '"v1"' })
+    assert.deepEqual(requests[0], { "Accept-Encoding": "identity" })
+    assert.deepEqual(requests[1], { "Accept-Encoding": "identity", Range: "bytes=10-", "If-Range": '"v1"' })
     assertNoPartials(dir)
   } finally {
     rmSync(dir, { recursive: true, force: true })
@@ -377,10 +378,129 @@ test("downloadPolicyFromEnv lê janela e timeout e recusa valor inválido", () =
       PF_TSE_DOWNLOAD_TIMEOUT_MS: "1200000",
       PF_TSE_DOWNLOAD_RETRY_WINDOW_MS: "3600000",
       PF_TSE_DOWNLOAD_RETRY_BASE_MS: "60000",
+      PF_TSE_DOWNLOAD_DEADLINE_MS: "5400000",
     }),
-    { timeoutMs: 1_200_000, retry: { windowMs: 3_600_000, baseDelayMs: 60_000 } },
+    { deadlineMs: 5_400_000, timeoutMs: 1_200_000, retry: { windowMs: 3_600_000, baseDelayMs: 60_000 } },
   )
   assert.throws(() => downloadPolicyFromEnv({ PF_TSE_DOWNLOAD_RETRY_WINDOW_MS: "1h" }), /PF_TSE_DOWNLOAD_RETRY_WINDOW_MS/)
   assert.equal(retryDelayMs(1, { windowMs: 1, baseDelayMs: 30_000 }), 30_000)
   assert.equal(retryDelayMs(10, { windowMs: 1, baseDelayMs: 30_000, maxDelayMs: 600_000 }), 600_000)
+})
+
+test("downloadToFile para no prazo do processo mesmo com janela por arquivo maior", async () => {
+  const clock = fakeClock()
+  let fetches = 0
+  const errors: unknown[] = []
+  const ok = await downloadToFile("https://example.invalid/prazo", "/nao-usado-prazo", {
+    fetcher: async () => { fetches += 1; return new Response("bloqueado", { status: 403 }) },
+    retry: { windowMs: 10_000_000, baseDelayMs: 1_000 },
+    deadlineAt: 5_000,
+    now: clock.now,
+    sleep: clock.sleep,
+    onError: (error) => errors.push(error),
+  })
+  assert.equal(ok, false)
+  // t=0, 1 s, 3 s; a espera seguinte (4 s) chegaria em 7 s, depois do prazo de 5 s.
+  assert.equal(fetches, 3)
+  assert.deepEqual(clock.sleeps, [1_000, 2_000])
+
+  let depoisDoPrazo = 0
+  const expirado = await downloadToFile("https://example.invalid/prazo", "/nao-usado-prazo-2", {
+    fetcher: async () => { depoisDoPrazo += 1; return new Response("ok") },
+    deadlineAt: 0,
+    now: () => 10,
+    onError: (error) => errors.push(error),
+  })
+  assert.equal(expirado, false)
+  assert.equal(depoisDoPrazo, 0)
+  assert.match(String(errors.at(-1)), /prazo de download do processo esgotado/)
+})
+
+test("downloadToFile corta a tentativa no prazo do processo", async () => {
+  const dir = makeTestDir()
+  try {
+    const started = Date.now()
+    const ok = await downloadToFile("https://example.invalid/lento", join(dir, "lento.zip"), {
+      timeoutMs: 60_000,
+      deadlineAt: Date.now() + 50,
+      fetcher: async () =>
+        new Response(new ReadableStream({ start(c) { c.enqueue(new TextEncoder().encode("metade")) } })),
+    })
+    assert.equal(ok, false)
+    assert.ok(Date.now() - started < 5_000)
+    assertNoPartials(dir)
+  } finally {
+    rmSync(dir, { recursive: true, force: true })
+  }
+})
+
+test("downloadToFile recomeça do zero quando o 206 vem de outra versão", async () => {
+  const dir = makeTestDir()
+  const dest = join(dir, "versao.zip")
+  const clock = fakeClock()
+  const requests: Array<Record<string, string>> = []
+  let call = 0
+  try {
+    const ok = await downloadToFile("https://example.invalid/versao", dest, {
+      timeoutMs: 50,
+      retry: { windowMs: 60_000, baseDelayMs: 1_000 },
+      now: clock.now,
+      sleep: clock.sleep,
+      fetcher: async (_input, init) => {
+        requests.push({ ...(init?.headers as Record<string, string>) })
+        call += 1
+        if (call === 1) {
+          return new Response(new ReadableStream({
+            start(c) { c.enqueue(new TextEncoder().encode("0123456789")) },
+          }), { headers: { etag: '"v1"', "content-length": "20" } })
+        }
+        if (call === 2) {
+          // Servidor ignorou o If-Range e mandou pedaço da versão nova.
+          return new Response("XXXXXXXXXX", { status: 206, headers: { etag: '"v2"', "content-range": "bytes 10-19/20" } })
+        }
+        return new Response("versao-v2-inteira", { headers: { etag: '"v2"' } })
+      },
+    })
+    assert.equal(ok, true)
+    assert.equal(readFileSync(dest, "utf8"), "versao-v2-inteira")
+    assert.equal(requests[2].Range, undefined)
+    assertNoPartials(dir)
+  } finally {
+    rmSync(dir, { recursive: true, force: true })
+  }
+})
+
+test("downloadToFile confere o arquivo antes de publicar e tenta de novo quando reprova", async () => {
+  const dir = makeTestDir()
+  const dest = join(dir, "conferido.zip")
+  const clock = fakeClock()
+  const bodies = ["corrompido", "integro"]
+  try {
+    const ok = await downloadToFile("https://example.invalid/conferido", dest, {
+      retry: { windowMs: 60_000, baseDelayMs: 1_000 },
+      now: clock.now,
+      sleep: clock.sleep,
+      fetcher: async () => new Response(bodies.shift()!),
+      verify: (path) => {
+        if (readFileSync(path, "utf8") !== "integro") throw new Error("CRC")
+      },
+    })
+    assert.equal(ok, true)
+    assert.equal(readFileSync(dest, "utf8"), "integro")
+    assert.deepEqual(clock.sleeps, [1_000])
+    assertNoPartials(dir)
+  } finally {
+    rmSync(dir, { recursive: true, force: true })
+  }
+})
+
+test("verifyZip recusa arquivo que não é ZIP íntegro", () => {
+  const dir = makeTestDir()
+  try {
+    const falso = join(dir, "falso.zip")
+    writeFileSync(falso, "não é zip")
+    assert.throws(() => verifyZip(falso))
+  } finally {
+    rmSync(dir, { recursive: true, force: true })
+  }
 })
