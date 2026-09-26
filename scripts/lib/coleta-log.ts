@@ -138,6 +138,7 @@ export const FONTES: Readonly<Record<string, EscopoColeta>> = Object.freeze({
   // detalhe é JSON versionado lido pela matriz de cobertura.
   "tse-auditoria-candidatura": "candidato",
   "senado-cohort": "candidato",
+  "representacoes-etica": "candidato",
 
   // Cardinalidade do acervo autoral que a Camara declara para o candidato
   // (issue #138). Fonte propria pelo mesmo motivo de `tse-cpf`: o `camara` do
