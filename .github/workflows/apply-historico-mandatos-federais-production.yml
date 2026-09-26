@@ -1,4 +1,4 @@
-name: "Aplicar correções de dado no ar (situação no Senado, claim e cargo atual)"
+name: "Aplicar correção do histórico de mandatos federais"
 
 on:
   workflow_dispatch:
@@ -24,7 +24,7 @@ concurrency:
 
 jobs:
   apply:
-    name: Três migrations de dado com ledger e readback
+    name: Uma migration de dado com ledger e readback
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -70,10 +70,10 @@ jobs:
       - name: Ensaio (dry-run, não grava)
         env:
           PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
-        run: bash scripts/audit/apply-dados-no-ar-senado-claims-production.sh dry-run
+        run: bash scripts/audit/apply-historico-mandatos-federais-production.sh dry-run
 
       - name: Aplicar conjunto fechado
         if: ${{ github.event.inputs.mode == 'apply' }}
         env:
           PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
-        run: bash scripts/audit/apply-dados-no-ar-senado-claims-production.sh apply
+        run: bash scripts/audit/apply-historico-mandatos-federais-production.sh apply
