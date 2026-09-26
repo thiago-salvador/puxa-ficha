@@ -1,0 +1,224 @@
+name: Coleta agendada de prova de cobertura
+
+# Coletores de prova da matriz de cobertura (audit-cobertura-fichas.ts), antes
+# só locais. Grava apenas recibos em coleta_log, um por ficha e fonte, pelo
+# aplicador auditado (apply-coverage-receipts.ts); nunca grava histórico nem
+# dado parlamentar.
+#
+# - historico: revisão do histórico político contra consulta_cand do TSE e o
+#   exercício datado do Senado (fonte tse-historico). O que diverge vai para o
+#   arquivo de revisão do runner, não para a ficha.
+# - parlamentares: projetos, votos e cota da Câmara e do Senado, com readback
+#   do perfil público (fontes camara-* , senado-*, ceaps-senado).
+#
+# Fonte que não respondeu vira recibo `erro` por ficha; prova que não fechou
+# vira `indeterminado`. Nenhuma falha vira vazio. A API da Câmara costuma
+# recusar IPs do GitHub Actions: nesse caso as fichas da Câmara recebem `erro`
+# honesto e só fecham numa rodada de outra rede com os mesmos scripts.
+#
+# Gravação: no agendamento só grava com a variável de repositório
+# COBERTURA_COLETA_GRAVAR=true; sem ela, o agendamento roda em dry-run. No
+# disparo manual o padrão é dry-run e a gravação exige o input `gravar`.
+# Resumo e log públicos têm só contagens; evidência nominal fica no runner.
+
+on:
+  schedule:
+    # Histórico: fonte guiada por revisão oficial, sem SLA em dias; semanal.
+    - cron: "23 5 * * 0"
+    # Parlamentares: SLA de 9 dias na matriz; segunda e quinta deixam folga.
+    - cron: "43 6 * * 1,4"
+  workflow_dispatch:
+    inputs:
+      familias:
+        description: "Qual coletor rodar"
+        required: true
+        default: "todas"
+        type: choice
+        options: [todas, historico, parlamentares]
+      gravar:
+        description: "Gravar recibos em coleta_log (false = só dry-run)"
+        required: true
+        default: false
+        type: boolean
+      anos:
+        description: "Anos do consulta_cand lidos na revisão do histórico"
+        required: false
+        default: "1996,1998,2000,2002,2004,2006,2008,2010,2012,2014,2016,2018,2020,2022,2024,2026"
+        type: string
+
+permissions:
+  contents: read
+
+# Mesmo grupo do ingest e da coleta judicial: ninguém disputa o banco nem o
+# limite das fontes oficiais, e nenhuma execução cancela outra.
+concurrency:
+  group: ingest-pipeline
+  cancel-in-progress: false
+
+env:
+  COBERTURA_GRAVAR: ${{ (github.event_name == 'schedule' && vars.COBERTURA_COLETA_GRAVAR == 'true') || inputs.gravar == true }}
+
+jobs:
+  historico:
+    name: Revisão do histórico (TSE e Senado)
+    if: >-
+      (github.event_name == 'schedule' && github.event.schedule == '23 5 * * 0') ||
+      (github.event_name == 'workflow_dispatch' && inputs.familias != 'parlamentares')
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      COBERTURA_ANOS: ${{ inputs.anos || '1996,1998,2000,2002,2004,2006,2008,2010,2012,2014,2016,2018,2020,2022,2024,2026' }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: "npm"
+      - run: npm ci
+      - name: Validar segredos de escrita
+        if: env.COBERTURA_GRAVAR == 'true'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          set -euo pipefail
+          for nome in SUPABASE_URL SUPABASE_SERVICE_ROLE_KEY; do
+            if [ -z "${!nome:-}" ]; then echo "::error::$nome ausente" >&2; exit 1; fi
+          done
+      - name: Snapshot dos perfis públicos
+        run: |
+          set -euo pipefail
+          umask 077
+          node --import tsx scripts/audit/exportar-perfis-publicos.ts --out="$RUNNER_TEMP/perfis.json" | tee -a "$RUNNER_TEMP/resumo.txt"
+      - name: Baixar consulta_cand do TSE
+        id: tse
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          umask 077
+          node --import tsx scripts/audit/fetch-tse-family-sources-local.ts \
+            --destino="$RUNNER_TEMP/tse" --years="$COBERTURA_ANOS" --families=historico_politico \
+            | tee -a "$RUNNER_TEMP/resumo.txt"
+      - name: Revisar histórico e montar recibos
+        run: |
+          set -euo pipefail
+          umask 077
+          falha=()
+          if [ "${{ steps.tse.outcome }}" != "success" ]; then falha=(--falha-fonte="download do TSE falhou no runner"); fi
+          node --import tsx scripts/audit/coletar-revisao-historico.ts \
+            --manifest="$RUNNER_TEMP/tse/tse-family-assets.json" --anos="$COBERTURA_ANOS" \
+            --public-profiles="$RUNNER_TEMP/perfis.json" \
+            --out="$RUNNER_TEMP/historico-recibos.json" --revisao="$RUNNER_TEMP/historico-revisao.json" \
+            "${falha[@]}" | sed 's/^/historico: /' | tee -a "$RUNNER_TEMP/resumo.txt"
+      - name: Aplicar recibos (dry-run sem gravar)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          set -euo pipefail
+          umask 077
+          modo=()
+          if [ "$COBERTURA_GRAVAR" = "true" ]; then modo=(--apply --execucao="gh:${GITHUB_RUN_ID}:${GITHUB_RUN_ATTEMPT}:historico"); fi
+          node --import tsx scripts/audit/apply-coverage-receipts.ts \
+            --in="$RUNNER_TEMP/historico-recibos.json" --allow-fonte=tse-historico \
+            --profiles="$RUNNER_TEMP/perfis.json" --out-dir="$RUNNER_TEMP/aplicacao-historico" \
+            --incluir-abertos "${modo[@]}" | sed 's/^/aplicador: /' | tee -a "$RUNNER_TEMP/resumo.txt"
+      - name: Publicar resumo sem dados nominais
+        if: always()
+        run: |
+          {
+            echo "## Revisão agendada do histórico"
+            echo "Gravar: $COBERTURA_GRAVAR · anos: $COBERTURA_ANOS"
+            echo "Itens de revisão ficam no runner; nenhuma linha de histórico é alterada."
+            if [ -f "$RUNNER_TEMP/resumo.txt" ]; then echo '```'; cat "$RUNNER_TEMP/resumo.txt"; echo '```'; fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  parlamentares:
+    name: Prova parlamentar (Câmara e Senado)
+    if: >-
+      (github.event_name == 'schedule' && github.event.schedule == '43 6 * * 1,4') ||
+      (github.event_name == 'workflow_dispatch' && inputs.familias != 'historico')
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: "npm"
+      - run: npm ci
+      - uses: ./.github/actions/install-postgresql-client-17
+        timeout-minutes: 12
+      - name: Validar segredos de escrita
+        if: env.COBERTURA_GRAVAR == 'true'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          set -euo pipefail
+          for nome in SUPABASE_URL SUPABASE_SERVICE_ROLE_KEY; do
+            if [ -z "${!nome:-}" ]; then echo "::error::$nome ausente" >&2; exit 1; fi
+          done
+      - name: Snapshot dos perfis públicos
+        run: |
+          set -euo pipefail
+          umask 077
+          node --import tsx scripts/audit/exportar-perfis-publicos.ts --out="$RUNNER_TEMP/perfis.json" | tee -a "$RUNNER_TEMP/resumo.txt"
+      # IDs exatos das votações-chave da Câmara, em transação somente leitura.
+      # Sem eles, votos da Câmara ficam `indeterminado` (o endpoint por
+      # deputado é recusado de propósito pelo ingest).
+      - name: Ler IDs das votações-chave da Câmara
+        continue-on-error: true
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          set -euo pipefail
+          umask 077
+          if [ -z "${SUPABASE_DB_URL:-}" ]; then echo "::warning::SUPABASE_DB_URL ausente; votos da Câmara sem IDs"; exit 0; fi
+          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -Atq -c "begin transaction read only; select coalesce(json_agg(votacao_id_api order by votacao_id_api), '[]'::json) from votacoes_chave where casa = 'Câmara' and votacao_id_api is not null; commit;" \
+            | grep '^\[' > "$RUNNER_TEMP/camara-votacoes.json"
+          node -e 'console.log("votacoes-chave Câmara: "+JSON.parse(require("node:fs").readFileSync(process.argv[1],"utf8")).length)' "$RUNNER_TEMP/camara-votacoes.json" | tee -a "$RUNNER_TEMP/resumo.txt"
+      - name: Capturar fontes oficiais
+        run: |
+          set -euo pipefail
+          umask 077
+          votos=()
+          if [ -s "$RUNNER_TEMP/camara-votacoes.json" ]; then votos=(--camara-votacoes="$RUNNER_TEMP/camara-votacoes.json"); fi
+          node --import tsx scripts/audit/fetch-parliamentary-family-sources-local.ts \
+            --destino="$RUNNER_TEMP/parl" --public-profiles="$RUNNER_TEMP/perfis.json" "${votos[@]}" \
+            | tee -a "$RUNNER_TEMP/resumo.txt"
+      - name: Montar recibos (provas e falhas)
+        run: |
+          set -euo pipefail
+          umask 077
+          node --import tsx scripts/audit/collect-parliamentary-family-receipts-local.ts \
+            --input="$RUNNER_TEMP/parl/parliamentary-family-sources.json" \
+            --out="$RUNNER_TEMP/parlamentares-recibos.json" --abertos \
+            | sed 's/^/parlamentares: /' | tee -a "$RUNNER_TEMP/resumo.txt"
+      - name: Aplicar recibos (dry-run sem gravar)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          set -euo pipefail
+          umask 077
+          modo=()
+          if [ "$COBERTURA_GRAVAR" = "true" ]; then modo=(--apply --execucao="gh:${GITHUB_RUN_ID}:${GITHUB_RUN_ATTEMPT}:parlamentares"); fi
+          node --import tsx scripts/audit/apply-coverage-receipts.ts \
+            --in="$RUNNER_TEMP/parlamentares-recibos.json" \
+            --allow-fonte=camara-proposicoes,camara-votacoes,camara-gastos,senado-proposicoes,senado-votacoes,ceaps-senado \
+            --profiles="$RUNNER_TEMP/perfis.json" --out-dir="$RUNNER_TEMP/aplicacao-parlamentares" \
+            --incluir-abertos "${modo[@]}" | sed 's/^/aplicador: /' | tee -a "$RUNNER_TEMP/resumo.txt"
+      - name: Publicar resumo sem dados nominais
+        if: always()
+        run: |
+          {
+            echo "## Prova parlamentar agendada"
+            echo "Gravar: $COBERTURA_GRAVAR"
+            echo "Câmara recusando o runner aparece como recibo erro, nunca como vazio."
+            if [ -f "$RUNNER_TEMP/resumo.txt" ]; then echo '```'; cat "$RUNNER_TEMP/resumo.txt"; echo '```'; fi
+          } >> "$GITHUB_STEP_SUMMARY"

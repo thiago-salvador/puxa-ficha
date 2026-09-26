@@ -103,6 +103,28 @@ export interface ParliamentaryReceiptRun {
   receipts: ParliamentaryReceipt[]
   unresolved_without_id: Array<{ slug: string; familia: ParliamentaryFamily; motivo: string }>
   errors: string[]
+  /** As mesmas falhas de `errors`, estruturadas para virar recibo honesto. */
+  failures: ParliamentaryFailure[]
+}
+
+export interface ParliamentaryFailure {
+  slug: string
+  candidato_id: string
+  familia: ParliamentaryFamily
+  house: ParliamentaryHouse
+  official_id: string
+  /** `fonte`: a casa não entregou a observação; `prova`: entregou e a prova não fechou. */
+  tipo: "fonte" | "prova"
+  motivo: string
+}
+
+/** Pendência da captura (`fetch-parliamentary-family-sources-local.ts`). */
+export interface ParliamentaryPending {
+  house: ParliamentaryHouse
+  family: ParliamentaryFamily
+  official_id?: string
+  reason: string
+  source?: string
 }
 
 function normalizedId(value: number | string): string {
@@ -146,7 +168,7 @@ function validOfficialUrl(url: string, family: ParliamentaryFamily, officialId: 
   }
 }
 
-function sourceName(house: ParliamentaryHouse, family: ParliamentaryFamily): ParliamentaryReceipt["fonte"] {
+export function sourceName(house: ParliamentaryHouse, family: ParliamentaryFamily): ParliamentaryReceipt["fonte"] {
   if (house === "camara") {
     if (family === "projetos_lei") return "camara-proposicoes"
     if (family === "votos_candidato") return "camara-votacoes"
@@ -573,6 +595,7 @@ export function collectParliamentaryFamilyReceipts(
   const receipts: ParliamentaryReceipt[] = []
   const unresolved_without_id: ParliamentaryReceiptRun["unresolved_without_id"] = []
   const errors: string[] = []
+  const failures: ParliamentaryFailure[] = []
   const byKey = new Map(observations.map((item) => [`${item.house}:${normalizedId(item.official_id)}:${item.family}`, item]))
 
   for (const candidate of candidates) {
@@ -587,29 +610,70 @@ export function collectParliamentaryFamilyReceipts(
       for (const house of houses) {
         const id = normalizedId(candidate.ids[house] as number | string)
         const observation = byKey.get(`${house}:${id}:${family}`)
+        const base = { slug: candidate.slug, candidato_id: candidate.candidato_id, familia: family, house, official_id: id }
         if (!observation) {
           errors.push(`${candidate.slug}/${family}/${house}/${id}: readback oficial ausente`)
+          failures.push({ ...base, tipo: "fonte", motivo: "readback oficial ausente" })
           continue
         }
         try {
           receipts.push(makeReceipt(candidate, observation, generatedAt))
         } catch (error) {
-          errors.push(`${candidate.slug}/${family}/${house}/${id}: ${error instanceof Error ? error.message : String(error)}`)
+          const motivo = error instanceof Error ? error.message : String(error)
+          errors.push(`${candidate.slug}/${family}/${house}/${id}: ${motivo}`)
+          failures.push({ ...base, tipo: "prova", motivo })
         }
       }
     }
   }
-  return { generated_at: generatedAt, receipts, unresolved_without_id, errors }
+  return { generated_at: generatedAt, receipts, unresolved_without_id, errors, failures }
+}
+
+/** Falha de rede, HTTP ou bloqueio: a casa não respondeu. Outro motivo é lacuna de prova. */
+export function isSourceOutage(reason: string): boolean {
+  return /HTTP\s*\d{3}|fetch failed|timeout|timed out|ETIMEDOUT|ECONN|ENOTFOUND|EAI_AGAIN|aborted|socket|network|bloque/i.test(reason)
+}
+
+/**
+ * Recibo aberto e honesto para cada falha: casa que não respondeu vira `erro`;
+ * observação que chegou e não fechou a prova vira `indeterminado`. Nunca vira
+ * vazio: nenhuma falha é lida como ausência de dado.
+ */
+export function openParliamentaryReceipts(
+  failures: readonly ParliamentaryFailure[],
+  pending: readonly ParliamentaryPending[],
+  generatedAt: string,
+): ParliamentaryReceipt[] {
+  const receipts: ParliamentaryReceipt[] = []
+  const seen = new Set<string>()
+  for (const failure of failures) {
+    const fonte = sourceName(failure.house, failure.familia)
+    const key = `${failure.slug}|${fonte}`
+    if (seen.has(key)) continue
+    seen.add(key)
+    const pendencia = pending.find((item) => item.house === failure.house && item.family === failure.familia && String(item.official_id ?? "") === failure.official_id)
+    const motivo = pendencia?.reason ?? failure.motivo
+    const resultado = failure.tipo === "fonte" && (!pendencia || isSourceOutage(pendencia.reason)) ? "erro" : "indeterminado"
+    receipts.push({
+      fonte, escopo: "candidato", alvo: failure.slug, candidato_id: failure.candidato_id,
+      resultado, volume: 0, familia: failure.familia,
+      url: pendencia?.source && /^https:\/\//.test(pendencia.source) ? pendencia.source.replace(/\{[^}]*\}/g, "") : "",
+      executado_em: generatedAt,
+      detalhe: JSON.stringify({ contract_version: 1, kind: "parlamentar-falha", family: failure.familia, house: failure.house, official_id: failure.official_id, tipo: failure.tipo, motivo: motivo.slice(0, 300) }),
+    })
+  }
+  return receipts
 }
 
 /** Leitura opcional de um pacote JSON local; não consulta rede. */
 export function loadLocalParliamentaryReceiptInputs(path: string): {
   candidates: ParliamentaryCandidate[]
   observations: ParliamentarySourceObservation[]
+  pending: ParliamentaryPending[]
 } {
-  const parsed = JSON.parse(readFileSync(path, "utf8")) as { candidates?: ParliamentaryCandidate[]; observations?: ParliamentarySourceObservation[] }
+  const parsed = JSON.parse(readFileSync(path, "utf8")) as { candidates?: ParliamentaryCandidate[]; observations?: ParliamentarySourceObservation[]; pending?: ParliamentaryPending[] }
   if (!Array.isArray(parsed.candidates) || !Array.isArray(parsed.observations)) throw new Error("pacote local precisa de candidates e observations")
-  return { candidates: parsed.candidates, observations: parsed.observations }
+  return { candidates: parsed.candidates, observations: parsed.observations, pending: Array.isArray(parsed.pending) ? parsed.pending : [] }
 }
 
 function cliArgument(name: string): string | null {
@@ -634,14 +698,18 @@ async function runCli(): Promise<void> {
   const input = cliArgument("input")
   const output = cliArgument("out")
   if (!input || !output) throw new Error("uso: --input=<manifest.json> --out=<arquivo-privado.json>")
-  const { candidates, observations } = loadLocalParliamentaryReceiptInputs(resolve(input))
+  const { candidates, observations, pending } = loadLocalParliamentaryReceiptInputs(resolve(input))
   const result = collectParliamentaryFamilyReceipts(candidates, observations)
-  writePrivateAtomic(output, result)
+  // --abertos grava junto os recibos `erro`/`indeterminado` das falhas; sem a
+  // flag a saída continua só com as provas, como antes.
+  const abertos = process.argv.includes("--abertos") ? openParliamentaryReceipts(result.failures, pending, result.generated_at) : []
+  writePrivateAtomic(output, { ...result, receipts: [...result.receipts, ...abertos] })
   process.stdout.write(JSON.stringify({
     status: result.errors.length === 0 ? "ok" : "partial",
     candidates: candidates.length,
     observations: observations.length,
     receipts: result.receipts.length,
+    open_receipts: abertos.length,
     unresolved_without_id: result.unresolved_without_id.length,
     errors: result.errors.length,
   }) + "\n")
