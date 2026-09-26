@@ -1114,26 +1114,21 @@ export function contextoPolitico(
   nomeCompleto: string,
   identidade: Record<string, unknown> = {},
 ): string | null {
-  // Menção em papel não-parte (testemunha, perito, advogado...) nunca atribui.
-  if (papelNaoParteNoTexto(texto, nomeCompleto)) return null
-  const t = normalizar(texto)
   const nome = normalizar(nomeCompleto)
   const nomeRegex = escaparRegex(nome)
   const estadoEsperado = UF_NOME[normalizar(c.estado)] ?? ""
   const estadoRegex = estadoEsperado ? escaparRegex(estadoEsperado) : "(?!)"
-  const posicoes: number[] = []
-  for (let i = t.indexOf(nome); i >= 0; i = t.indexOf(nome, i + nome.length)) posicoes.push(i)
   const cpf = String(identidade.cpf ?? "").replace(/\D/g, "")
-  // CPF confere sobre o texto cru (a regra estrita precisa da pontuação)...
-  const cpfNoTextoCru = cpfCompativelNoTexto(texto, nomeCompleto, cpf)
   const cpfRegex = cpf.length === 11 ? cpf.split("").join("[.\\s-]{0,3}") : "(?!)"
-  for (const pos of posicoes) {
-    // Janela salva centrada nesta menção: contém toda a vizinhança conferida abaixo.
-    const janela = t.slice(Math.max(0, pos - 400), pos + nome.length + 400)
-    const identidadeProxima = t.slice(Math.max(0, pos - 220), pos + nome.length + 220)
-    // ...e a prova publicada precisa mostrar o vínculo: o CPF colado ao nome
-    // dentro desta janela, não em outro ponto do texto.
-    const cpfCompativel = cpfNoTextoCru
+  // A prova vale só na menção que a carrega, e só se essa menção não está em
+  // papel não-parte (testemunha, perito, advogado...). A mesma pessoa pode
+  // aparecer como parte e, noutro ponto, como advogada de si mesma.
+  const semi = textoSemNomesMaiores(texto, nome, [])
+  for (const m of mencoesLivresDoNome(texto, nomeCompleto)) {
+    if (m.invertida) continue
+    const janela = normalizar(semi.slice(Math.max(0, m.inicio - 400), m.fim + 400))
+    const identidadeProxima = normalizar(semi.slice(Math.max(0, m.inicio - 220), m.fim + 220))
+    const cpfCompativel = m.rotulo?.tipo === "completo" && m.rotulo.digitos === cpf
       && new RegExp(`\\b${nomeRegex}\\b.{0,100}\\bCPF(?:\\s+N)?\\s+${cpfRegex}\\b`).test(identidadeProxima)
     const cargoDepois = new RegExp(`\\b${nomeRegex}\\b(?:\\s+(?:ATUAL|ENTAO|EX|SR|SRA)){0,3}\\s+${CARGO_POLITICO}\\b`).test(identidadeProxima)
     const cargoAntesDireto = new RegExp(`\\b${CARGO_POLITICO}\\s+(?:DO|DA|DE)?\\s*${nomeRegex}\\b`).test(identidadeProxima)
@@ -1303,16 +1298,16 @@ function mencaoEmPapelNaoParte(t: string, mencao: MencaoDoNome): boolean {
   const naoParte = ultimoIndice(PAPEL_NAO_PARTE, clausula)
   if (naoParte > ultimoIndice(PAPEL_DE_PARTE, clausula)) return true
   const depois = t.slice(mencao.fim, mencao.fim + 240)
-  const corte = depois.search(new RegExp(`[;\\n]|${FIM_DE_FRASE.source}|${PAPEL_DE_PARTE.source}|${PAPEL_NAO_PARTE.source}\\s*:`))
+  const corte = depois.search(new RegExp(`[;\\n]|${FIM_DE_FRASE.source}|${PAPEL_DE_PARTE.source}|${PAPEL_NAO_PARTE.source}(?:\\s*\\([A-Z]{1,2}\\))?\\s*:`))
   return new RegExp(PAPEL_NAO_PARTE.source).test(corte >= 0 ? depois.slice(0, corte) : depois)
 }
 
-/** Alguma menção ao nome aparece em papel não-parte: nenhuma atribuição automática vale para o item. */
-export function papelNaoParteNoTexto(texto: string, nomeCompleto: string, destinatarios: string[] = []): boolean {
+/** Menções ao nome fora de papel não-parte: só elas podem carregar a prova que atribui o item. */
+export function mencoesLivresDoNome(texto: string, nomeCompleto: string, destinatarios: string[] = []): MencaoDoNome[] {
   const tokens = tokensDoNome(nomeCompleto)
-  if (tokens.length === 0) return false
+  if (tokens.length === 0) return []
   const t = textoSemNomesMaiores(texto, tokens.join(" "), destinatarios)
-  return mencoesDoNome(texto, nomeCompleto, destinatarios).some((m) => mencaoEmPapelNaoParte(t, m))
+  return mencoesDoNome(texto, nomeCompleto, destinatarios).filter((m) => !mencaoEmPapelNaoParte(t, m))
 }
 
 /** Rótulo de CPF no fim de um trecho: "CPF", "(CPF:", "CPF/MF nº", "CPF/CNPJ n.º". */
@@ -1326,8 +1321,9 @@ const ROTULO_CPF_NO_FIM = /\(?\s*CPF(?:\s*\/\s*(?:MF|CNPJ))?(?:\s*(?:NUMERO|NO|N
  *   rótulo de CPF);
  * - o nome nunca vale dentro de nome mais longo de destinatário;
  * - nenhum CPF completo diferente está colado ao nome;
- * - nenhuma menção ao nome está em papel não-parte (`papelNaoParteNoTexto`),
- *   seja ou não destinatária: testemunha e perito também são intimados.
+ * - a menção dona daquela ocorrência não está em papel não-parte
+ *   (`mencaoEmPapelNaoParte`), seja ou não destinatária: testemunha e perito
+ *   também são intimados.
  * Devolve o trecho normalizado centrado no CPF, com o nome dentro; `null`
  * quando não confirma.
  */
@@ -1337,7 +1333,6 @@ export function contextoPorCpfNoTexto(texto: string, nomeCompleto: string, cpf: 
   const tokens = tokensDoNome(nomeCompleto)
   if (tokens.length === 0) return null
   if (cpfsRotuladosDoNome(texto, nomeCompleto, destinatarios).some((r) => r.tipo === "completo" && r.digitos !== digitos)) return null
-  if (papelNaoParteNoTexto(texto, nomeCompleto, destinatarios)) return null
   const t = textoSemNomesMaiores(texto, tokens.join(" "), destinatarios)
   const nomeRegex = new RegExp(`\\b${tokens.map(escaparRegex).join("[\\s'.-]+")}\\b`, "g")
   const escolhida = [...t.matchAll(regexCpfDaCandidatura(digitos, "g"))].find((m) => {
@@ -1347,7 +1342,9 @@ export function contextoPorCpfNoTexto(texto: string, nomeCompleto: string, cpf: 
     const ultimo = nomes[nomes.length - 1]
     if (!ultimo) return false
     const intervalo = antes.slice((ultimo.index ?? 0) + ultimo[0].length).replace(ROTULO_CPF_NO_FIM, "")
-    return !(/[:;\n]|\.\s/.test(intervalo) || /\bCPF\b/.test(intervalo))
+    if (/[:;\n]|\.\s/.test(intervalo) || /\bCPF\b/.test(intervalo)) return false
+    const inicioNome = inicio - antes.length + (ultimo.index ?? 0)
+    return !mencaoEmPapelNaoParte(t, { inicio: inicioNome, fim: inicioNome + ultimo[0].length, invertida: false, rotulo: null })
   })
   if (!escolhida) return null
   const inicio = escolhida.index ?? 0
@@ -1391,9 +1388,10 @@ export function identificadorForteNoTexto(
   nomeCompleto: string,
   identidade: Record<string, unknown>,
 ): boolean {
-  if (papelNaoParteNoTexto(texto, nomeCompleto)) return false
+  const livres = mencoesLivresDoNome(texto, nomeCompleto)
+  if (livres.length === 0) return false
   const cpf = String(identidade.cpf ?? "").replace(/\D/g, "")
-  if (cpfCompativelNoTexto(texto, nomeCompleto, cpf)) return true
+  if (livres.some((m) => m.rotulo?.tipo === "completo" && m.rotulo.digitos === cpf)) return true
   const uf = UF_NOME[normalizar(c.estado)]
   if (!uf) return false
   const cargos = [c.cargo_disputado, c.cargo_atual].map(normalizar)

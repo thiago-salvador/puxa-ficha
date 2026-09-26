@@ -156,6 +156,9 @@ describe("invariante 2: papel não-parte perto do nome nunca gera encontrado", (
       `ADVOGADO: FULANO, OAB/MG 1; REU: ${NOME_UP}, CPF ${CPF_FMT}`,
       `Polo passivo: ${NOME_UP} e outros ${NOME_UP} (CPF: ${CPF_FMT}); JOAO PEREIRA (CPF: ${OUTRO})`,
       `REU: CARLOS DA <b>SILVA</b> TESTE, CPF ${CPF_FMT}`,
+      // Padrões reais do DJEN: parte que advoga em causa própria e executada fiel depositária.
+      `RECORRIDO: ${NOME_UP}, CPF ${CPF_FMT} ADVOGADO(A): ${NOME_UP} (OAB/MG 8142) RECORRIDO: MUNICIPIO X`,
+      `EXECUTADO: ${NOME_UP}, CPF ${CPF_FMT}. FIEL DEPOSITARIO: ${NOME_UP}. ULTIMA AVALIACAO: R$ 1,00`,
     ]) {
       const r = await pesquisar([{ id: 1, texto, destinatarios: [{ nome: NOME_UP, polo: "P" }] }])
       assert.equal(r.classificacao, "encontrado", texto)
@@ -172,6 +175,15 @@ describe("polo: só destinatário de polo A ou P usa prova sem CPF", () => {
       const r = await pesquisar([{ id: 1, texto, destinatarios: [{ nome: NOME_UP, polo }] }])
       assert.notEqual(r.classificacao, "encontrado", polo)
       assert.notEqual(r.classificacao, "vazio_confirmado", polo)
+    }
+  })
+})
+
+describe("a prova vale só na menção que a carrega", () => {
+  it("CPF numa menção de testemunha não atribui, mesmo com outra menção livre sem prova", async () => {
+    for (const dest of [[], [{ nome: NOME_UP, polo: "P" }]]) {
+      const r = await pesquisar([{ id: 1, texto: `REU: FULANO. TESTEMUNHA: ${NOME_UP}, CPF ${CPF_FMT}. Cite-se ${NOME_UP}.`, destinatarios: dest }])
+      assert.notEqual(r.classificacao, "encontrado", JSON.stringify(dest))
     }
   })
 })
