@@ -202,7 +202,7 @@
     "label": "Busca judicial por candidato (DJEN e DataJud)",
     "authority_url": "https://comunica.pje.jus.br/",
     "methodology_source_ids": [],
-    "collection_source_ids": ["processos-curadoria"],
+    "collection_source_ids": ["processos-curadoria", "processos-revisao-humana"],
     "cadence": "weekly",
     "max_age_hours": 336,
     "refresh_mode": "versioned_review",

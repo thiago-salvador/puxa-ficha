@@ -5,6 +5,7 @@ import {
   cnjsPublicaveisDoTexto,
   confirmacoesEditoriaisDoDetalhe,
   criarPlanos,
+  entradasRevisaoHumana,
   filtrarMudancas,
   preservarConfirmacaoEditorial,
   validarEvidencia,
@@ -198,14 +199,14 @@ describe("confirmação editorial sobrevive à renovação automática", () => {
     const ev = evidencia([erro])
     const r = preservarConfirmacaoEditorial(criarPlanos(ev), candidatosPorSlug(ev), [reciboEditorial("senador-teste", [CNJ_EDITORIAL_B])])
     assert.deepEqual(r.planos, [])
-    assert.equal(r.revisaoHumana[0].motivo, "coleta nova sem conclusao de identidade")
+    assert.equal(r.revisaoHumana[0].motivo, "busca nova sem conclusao sobre o acervo")
 
     const ev2 = evidencia([moro()])
     const ilegivel = { ...reciboEditorial("senador-teste", [CNJ_EDITORIAL_B]) }
     ilegivel.detalhe = String(ilegivel.detalhe).replace("\"confirmacao\":\"editorial\"", "\"confirmacao\":\"outra\"")
     const r2 = preservarConfirmacaoEditorial(criarPlanos(ev2), candidatosPorSlug(ev2), [ilegivel])
     assert.deepEqual(r2.planos, [])
-    assert.match(r2.revisaoHumana[0].motivo, /ilegivel/)
+    assert.match(r2.revisaoHumana[0].motivo, /invalida/)
   })
 
   it("a confirmação editorial nunca rebaixa nem altera um recibo que a coleta prova como encontrado", () => {
@@ -221,8 +222,22 @@ describe("confirmação editorial sobrevive à renovação automática", () => {
     const ev = evidencia([provado])
     const planos = criarPlanos(ev)
     const r = preservarConfirmacaoEditorial(planos, candidatosPorSlug(ev), [reciboEditorial("governador-teste", [CNJ_EDITORIAL_A])])
-    assert.deepEqual(r.planos, planos)
     assert.deepEqual(r.revisaoHumana, [])
+    const [igual] = r.planos
+    assert.equal(igual.resultado, planos[0].resultado)
+    assert.deepEqual(publicaveis(igual), publicaveis(planos[0]))
+    // Só o detalhe muda: a confirmação é regravada para a próxima rodada.
+    assert.deepEqual(igual.args.filter((a) => !a.startsWith("--detalhe=")), planos[0].args.filter((a) => !a.startsWith("--detalhe=")))
+    assert.ok(detalhe(igual).startsWith(`${detalhe(planos[0])}; confirmacao_editorial: `))
+    // Mesmos CNJ e resultado do recibo anterior: a revalidação não grava nada.
+    assert.equal(filtrarMudancas(r.planos, [reciboEditorial("governador-teste", [CNJ_EDITORIAL_A, CNJ_PROVADO].sort())]).length, 0)
+
+    // Provado pela coleta, a confirmação nunca manda o alvo a revisão, nem com a busca no teto público.
+    const noTeto = { ...provado, busca: { ...((provado as Candidato).busca as Record<string, unknown>), teto_publico_atingido: true, total_api: 10_000 } }
+    const evTeto = evidencia([noTeto])
+    const rTeto = preservarConfirmacaoEditorial(criarPlanos(evTeto), candidatosPorSlug(evTeto), [reciboEditorial("governador-teste", [CNJ_EDITORIAL_A])])
+    assert.deepEqual(rTeto.revisaoHumana, [])
+    assert.equal(rTeto.planos[0].resultado, "encontrado")
 
     // Confirmação de outro CNJ só acrescenta: o provado e o resultado ficam.
     const ev2 = evidencia([zema()])
@@ -235,5 +250,87 @@ describe("confirmação editorial sobrevive à renovação automática", () => {
     // Recibo anterior sem confirmação editorial: nada muda.
     const semEditorial = { alvo: "governador-teste", resultado: "encontrado", detalhe: "revisao_em=2026-09-26; detalhe=motivo: x", executado_em: "2026-09-26T18:00:00Z" }
     assert.deepEqual(preservarConfirmacaoEditorial([cru], candidatosPorSlug(ev2), [semEditorial]).planos, [cru])
+  })
+})
+
+function gravar(planos: PlanoRegistro[], quando: string): LinhaExistentePreflight[] {
+  return planos.map((p) => {
+    const entrada = entradaDaRevisao(validarRevisaoManual([...p.args, "--dry-run"]))
+    return { alvo: p.slug, resultado: entrada.resultado, detalhe: entrada.detalhe ?? null, executado_em: quando }
+  })
+}
+
+describe("confirmação editorial: rodadas seguidas e travas da revisão", () => {
+  it("duas renovações seguidas: CNJ confirmado e provado na primeira não some quando a segunda deixa de provar", () => {
+    const existentes = [reciboEditorial("governador-teste", [CNJ_PROVADO, CNJ_EDITORIAL_A].sort())]
+    // Rodada 1: a coleta prova PROVADO, A volta ambíguo.
+    const ev1 = evidencia([zema()])
+    const r1 = preservarConfirmacaoEditorial(criarPlanos(ev1), candidatosPorSlug(ev1), existentes)
+    const gravadas1 = gravar(r1.planos, "2026-09-26T20:10:00Z")
+    assert.deepEqual(confirmacoesEditoriaisDoDetalhe(gravadas1[0].detalhe)!.map((c) => c.numero_cnj).sort(), [CNJ_PROVADO, CNJ_EDITORIAL_A].sort())
+    // Rodada 2: PROVADO volta ambíguo, a coleta não prova nada.
+    const ev2 = evidencia([{ ...zema(), classificacao: "bloqueado", processos: [], ocorrencias_ambiguas: [ambiguo(CNJ_PROVADO), ambiguo(CNJ_EDITORIAL_A)] }])
+    const r2 = preservarConfirmacaoEditorial(criarPlanos(ev2), candidatosPorSlug(ev2), [...existentes, ...gravadas1])
+    assert.deepEqual(r2.revisaoHumana, [])
+    assert.equal(r2.planos[0].resultado, "encontrado")
+    assert.deepEqual(publicaveis(r2.planos[0]), [digitos(CNJ_EDITORIAL_A), digitos(CNJ_PROVADO)].sort())
+    const gravadas2 = gravar(r2.planos, "2026-09-26T20:20:00Z")
+    assert.deepEqual(confirmacoesEditoriaisDoDetalhe(gravadas2[0].detalhe)!.length, 2)
+  })
+
+  it("busca que bate no teto público ou não fecha o acervo não carrega a confirmação", () => {
+    for (const [nome, busca] of [
+      ["teto declarado", { teto_publico_atingido: true }],
+      ["total da API no teto", { total_api: 10_000 }],
+    ] as Array<[string, Record<string, unknown>]>) {
+      const m = moro()
+      const ev = evidencia([{ ...m, busca: { ...(m.busca as Record<string, unknown>), ...busca } }])
+      const r = preservarConfirmacaoEditorial(criarPlanos(ev), candidatosPorSlug(ev), [reciboEditorial("senador-teste", [CNJ_EDITORIAL_B])])
+      assert.deepEqual(r.planos, [], nome)
+      assert.equal(r.revisaoHumana[0]?.motivo, "busca nova sem conclusao sobre o acervo", nome)
+    }
+  })
+
+  it("coleta que não acha o nome (vazio_confirmado) manda o alvo a revisão humana", () => {
+    const m = moro()
+    const vazio = { ...m, classificacao: "vazio_confirmado", motivo: "nenhum processo atribuivel", ocorrencias_ambiguas: [], busca: { ...(m.busca as Record<string, unknown>), total_api: 0 } }
+    const ev = evidencia([vazio])
+    const r = preservarConfirmacaoEditorial(criarPlanos(ev), candidatosPorSlug(ev), [reciboEditorial("senador-teste", [CNJ_EDITORIAL_B])])
+    assert.deepEqual(r.planos, [])
+    assert.equal(r.revisaoHumana[0].motivo, "coleta nova nao achou o nome no acervo")
+  })
+
+  it("decisor fora da lista e data irreal, futura ou posterior à revisão invalidam a confirmação", () => {
+    const base = String(reciboEditorial("senador-teste", [CNJ_EDITORIAL_B]).detalhe)
+    assert.equal(confirmacoesEditoriaisDoDetalhe(base, "2026-09-26")!.length, 1)
+    assert.equal(confirmacoesEditoriaisDoDetalhe(base.replace("Thiago Salvador", "Outra Pessoa"), "2026-09-26"), null)
+    assert.equal(confirmacoesEditoriaisDoDetalhe(base.replace("\"decidido_em\":\"2026-09-26\"", "\"decidido_em\":\"2026-02-30\""), "2026-09-26"), null)
+    assert.equal(confirmacoesEditoriaisDoDetalhe(base, "2026-09-25"), null, "futura em relação a hoje")
+    assert.equal(confirmacoesEditoriaisDoDetalhe(base.replace("\"decidido_em\":\"2026-09-26\"", "\"decidido_em\":\"2026-09-27\""), "2026-09-30"), null, "depois da revisão do recibo")
+  })
+
+  it("empate de executado_em fica com a última linha lida (id ascendente)", () => {
+    const ev = evidencia([moro()])
+    const comEditorial = reciboEditorial("senador-teste", [CNJ_EDITORIAL_B])
+    const semEditorial = { alvo: "senador-teste", resultado: "indeterminado", detalhe: "revisao_em=2026-09-26; detalhe=motivo: revisado", executado_em: comEditorial.executado_em }
+    const depoisSem = preservarConfirmacaoEditorial(criarPlanos(ev), candidatosPorSlug(ev), [comEditorial, semEditorial])
+    assert.equal(depoisSem.planos[0].resultado, "indeterminado")
+    const depoisCom = preservarConfirmacaoEditorial(criarPlanos(ev), candidatosPorSlug(ev), [semEditorial, comEditorial])
+    assert.equal(depoisCom.planos[0].resultado, "encontrado")
+    assert.equal(filtrarMudancas(criarPlanos(ev), [comEditorial, semEditorial]).length, 0, "filtrarMudancas usa o mesmo desempate")
+  })
+
+  it("recibo de controle: um por alvo, fonte própria, sem documento pessoal", () => {
+    const entradas = entradasRevisaoHumana([
+      { slug: "a", numero_cnj: CNJ_EDITORIAL_A, motivo: "coleta nova traz documento divergente colado ao nome" },
+      { slug: "a", numero_cnj: CNJ_PROVADO, motivo: "busca nova sem conclusao sobre o acervo" },
+      { slug: "b", numero_cnj: CNJ_EDITORIAL_B, motivo: "coleta nova nao achou o nome no acervo" },
+    ])
+    assert.deepEqual(entradas.map((e) => [e.fonte, e.alvo, e.resultado, e.volume]), [
+      ["processos-revisao-humana", "a", "indeterminado", 0],
+      ["processos-revisao-humana", "b", "indeterminado", 0],
+    ])
+    for (const e of entradas) assert.doesNotMatch(String(e.detalhe), /\bcpf\b/i)
+    assert.match(String(entradas[0].detalhe), new RegExp(CNJ_PROVADO.replace(/\./g, "\\.")))
   })
 })
