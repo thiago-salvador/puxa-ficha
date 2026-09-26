@@ -1115,11 +1115,17 @@ export function contextoPolitico(
   const posicoes: number[] = []
   for (let i = t.indexOf(nome); i >= 0; i = t.indexOf(nome, i + nome.length)) posicoes.push(i)
   const cpf = String(identidade.cpf ?? "").replace(/\D/g, "")
+  // CPF confere sobre o texto cru (a regra estrita precisa da pontuação)...
+  const cpfNoTextoCru = cpfCompativelNoTexto(texto, nomeCompleto, cpf)
+  const cpfRegex = cpf.length === 11 ? cpf.split("").join("[.\\s-]{0,3}") : "(?!)"
   for (const pos of posicoes) {
-    const janela = t.slice(Math.max(0, pos - 700), pos + nome.length + 700)
+    // Janela salva centrada nesta menção: contém toda a vizinhança conferida abaixo.
+    const janela = t.slice(Math.max(0, pos - 400), pos + nome.length + 400)
     const identidadeProxima = t.slice(Math.max(0, pos - 220), pos + nome.length + 220)
-    // CPF confere sobre o texto cru (a regra estrita precisa da pontuação), não sobre a janela normalizada.
-    const cpfCompativel = cpfCompativelNoTexto(texto, nomeCompleto, cpf)
+    // ...e a prova publicada precisa mostrar o vínculo: o CPF colado ao nome
+    // dentro desta janela, não em outro ponto do texto.
+    const cpfCompativel = cpfNoTextoCru
+      && new RegExp(`\\b${nomeRegex}\\b.{0,100}\\bCPF(?:\\s+N)?\\s+${cpfRegex}\\b`).test(identidadeProxima)
     const cargoDepois = new RegExp(`\\b${nomeRegex}\\b(?:\\s+(?:ATUAL|ENTAO|EX|SR|SRA)){0,3}\\s+${CARGO_POLITICO}\\b`).test(identidadeProxima)
     const cargoAntesDireto = new RegExp(`\\b${CARGO_POLITICO}\\s+(?:DO|DA|DE)?\\s*${nomeRegex}\\b`).test(identidadeProxima)
     const cargoAntesComLocal = new RegExp(
@@ -1129,7 +1135,7 @@ export function contextoPolitico(
     const contextoEspecial = c.slug === "renan-santos"
       && new RegExp(`(?:${nomeRegex}\\s+(?:FUNDADOR|COORDENADOR|INTEGRANTE|REPRESENTANTE|DO|DA)\\s+(?:MISSAO|MOVIMENTO BRASIL LIVRE|MBL)|(?:MISSAO|MOVIMENTO BRASIL LIVRE|MBL)\\s+(?:REPRESENTAD[OA] POR|FUNDADOR|COORDENADOR|INTEGRANTE)\\s+${nomeRegex})`).test(identidadeProxima)
     if (cpfCompativel || cargoDepois || cargoAntesDireto || cargoAntesComLocal || condicao || contextoEspecial) {
-      return janela.slice(0, 900)
+      return janela
     }
   }
   return null
