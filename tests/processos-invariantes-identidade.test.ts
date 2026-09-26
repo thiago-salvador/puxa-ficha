@@ -168,6 +168,8 @@ describe("invariante 2: papel não-parte perto do nome nunca gera encontrado", (
       `GABINETE DO JUIZ FERNANDO TAL CENTRAL DE CUMPRIMENTO DE SENTEN&CCEDIL;A C&IACUTE;VELAUTOR(A): ${NOME_UP} (CPF/CNPJ N.&ordm; ${CPF_FMT})R&EACUTE;(U): FULANO LTDA`,
       // Rótulo de parte com entidade acentuada encerra a herança da testemunha anterior.
       `TESTEMUNHA: FULANO DE TAL; R&Eacute;U: ${NOME_UP}, CPF ${CPF_FMT}`,
+      // Prosa: "AJUIZADA POR X EM FACE DO ..., DO ENTÃO PREFEITO NOME" depois do cabeçalho com advogados (TJRO).
+      `RECORRIDOS: FULANO. ADVOGADOS: BELTRANO OAB/RO 1, SICRANO OAB/RO 2 DECISAO TRATA-SE DE ACAO POPULAR AJUIZADA POR JOAO EM FACE DO MUNICIPIO X, DO ENTAO PREFEITO ${NOME_UP}, E OUTROS`,
       // Abreviação de parte depois da lista de advogados (TJMS).
       `ADVOGADOS: FULANO DE TAL (OAB 17733/MS), BELTRANO (OAB 20136/MS) - EXEQTE: CENTRO GRAFICO X - EXECTDO: ${NOME_UP}, CPF ${CPF_FMT}`,
       // Edital com vários processos: o cabeçalho do processo encerra a herança do anterior.
