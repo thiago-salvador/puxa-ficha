@@ -174,10 +174,14 @@ WITH candidacies AS (
       SELECT min(r.nome_urna) FROM public.candidatos_roster_2026_publico r
       WHERE r.ano = 2026 AND r.sq_candidato = base.sq_candidato_2026
     ),
+    -- Vice da candidatura publicada: só chapas da própria inscrição (mesmo
+    -- SQ). Uma ficha com duas inscrições oficiais (caso de laudicerio-aguiar,
+    -- uma indeferida) não herda o vice da outra coligação.
     'vice_sq_candidatos', COALESCE((
       SELECT jsonb_agg(DISTINCT ch.vice_sq_candidato)
       FROM public.chapas_2026 ch
       WHERE ch.titular_candidato_id = c.id AND ch.vice_sq_candidato IS NOT NULL
+        AND ch.titular_sq_candidato IS NOT DISTINCT FROM base.sq_candidato_2026
     ), '[]'::jsonb)
   ) AS item
   FROM public.candidatos_publico c
