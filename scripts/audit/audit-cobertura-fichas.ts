@@ -228,10 +228,23 @@ function parseDate(value: unknown): string | null {
  * Suplente não é o cargo: "1º Suplente de Senador" fica de fora.
  */
 function federalHouseOfCargo(cargo: string | null): "camara" | "senado" | null {
-  if (!cargo) return null
+  if (!cargo || /suplente/i.test(cargo)) return null
   if (/^Deputad[oa](\(a\))? Federal/.test(cargo)) return "camara"
   if (/^Senador/.test(cargo)) return "senado"
   return null
+}
+
+/**
+ * Casa federal de uma linha de histórico. O rótulo bruto e o canônico são lidos
+ * juntos: "Senador (suplente)" com canônico "Senador" é suplência sem exercício
+ * e não conta. `eleito_por = suplencia` sozinho não exclui: marca o suplente que
+ * assumiu a cadeira e exerceu o mandato (cargo "Senador" sem o rótulo).
+ */
+function federalHouseOfRow(row: Receipt): "camara" | "senado" | null {
+  const raw = text(row.cargo)
+  const canonical = text(row.cargo_canonico)
+  if ([raw, canonical].some((label) => label !== null && /suplente/i.test(label))) return null
+  return federalHouseOfCargo(canonical ?? raw)
 }
 
 function federalParliamentary(profile: CoverageProfile): boolean {
@@ -242,7 +255,7 @@ function federalParliamentary(profile: CoverageProfile): boolean {
   return historic.some((item) => {
     const row = record(item)
     if (!row || isCandidacyRow(row)) return false
-    return federalHouseOfCargo(text(row?.cargo_canonico) ?? text(row?.cargo)) !== null
+    return federalHouseOfRow(row) !== null
   })
 }
 
@@ -317,7 +330,7 @@ function federalMandateIntervals(profile: CoverageProfile, house: "camara" | "se
   for (const item of Array.isArray(profile.historico) ? profile.historico : []) {
     const row = record(item)
     if (!row || isCandidacyRow(row)) continue
-    if (federalHouseOfCargo(text(row.cargo_canonico) ?? text(row.cargo)) !== house) continue
+    if (federalHouseOfRow(row) !== house) continue
     const start = typeof row.periodo_inicio === "number" ? row.periodo_inicio : null
     const end = typeof row.periodo_fim === "number" ? row.periodo_fim : now
     intervals.push([start, Math.min(end, now)])
