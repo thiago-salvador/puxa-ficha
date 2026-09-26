@@ -159,6 +159,20 @@ export function compareRoster(previous: RosterRecord[], current: RosterRecord[])
   return { added: current.filter((r) => !before.has(key(r))), removed: previous.filter((r) => !after.has(key(r))), changed: current.filter((r) => { const old = before.get(key(r)); return old && JSON.stringify(old) !== JSON.stringify(r) }) }
 }
 
+/** The 23/09/2026 snapshot had 20,061 rows with the majoritarian offices; ~95% of it is the floor. */
+export const ROSTER_MIN_TOTAL = 19000
+
+/**
+ * Fail-closed gate for `--apply`: a truncated package or a parser break must not overwrite the
+ * roster. Returns the reason to refuse, or null when the write may proceed.
+ */
+export function rosterApplyBlock(records: Pick<RosterRecord, "snapshot_em">[], minTotal = ROSTER_MIN_TOTAL): string | null {
+  if (!Number.isFinite(minTotal) || minTotal <= 0) return `piso inválido: ${minTotal}`
+  if (!records.length || !records.every((record) => record.snapshot_em)) return "cobertura não provada: registro sem snapshot_em"
+  if (records.length < minTotal) return `abaixo do piso: ${records.length} linhas, mínimo ${minTotal}`
+  return null
+}
+
 export function rosterQuality(records: RosterRecord[], snapshotAt: string | null, now = new Date()) {
   const expected = ROSTER_UFS.flatMap((uf) => uf === "DF"
     ? ["DF/deputado_federal", "DF/deputado_distrital"]
