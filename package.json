@@ -19,6 +19,7 @@
   },
   "scripts": {
     "monitor:falas": "node --conditions react-server --import tsx scripts/falas-monitoramento.ts",
+    "coletar:checagens": "node --conditions react-server --import tsx scripts/checagens-coletar.ts",
     "monitor:falas:cadastro": "node --conditions react-server --import tsx scripts/falas-monitoramento.ts --roster-only",
     "audit:falas:rodada": "node --conditions react-server --import tsx scripts/falas-auditar-rodada.ts",
     "plan:falas": "node --conditions react-server --import tsx scripts/falas-plano-busca.ts",

@@ -90,6 +90,8 @@ supabase/.branches/
 
 # HTML externo do monitoramento não pode entrar na descoberta de classes do Tailwind.
 /reports/falas-monitoramento/
+# Recibos completos e leads da busca de checagens; o público vai em scripts/data.
+/reports/checagens-coleta/
 
 # graft's local graph cache — regenerable, not committed (run `graft build`).
 /graft/

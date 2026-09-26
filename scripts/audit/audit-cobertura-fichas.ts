@@ -210,20 +210,39 @@ function present(value: unknown): boolean {
   return text(value) !== null || (typeof value === "number" && Number.isFinite(value))
 }
 
+/**
+ * Data de recibo em ISO 8601 com hora e fuso explícito (Z ou offset). Data sem
+ * fuso é lida no fuso local da máquina que roda a matriz e muda de dia conforme
+ * o runner; aqui ela não conta como data.
+ */
+const ISO_WITH_ZONE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:?\d{2})$/
+
 function parseDate(value: unknown): string | null {
   const raw = text(value)
-  return raw && Number.isFinite(Date.parse(raw)) ? raw : null
+  return raw && ISO_WITH_ZONE.test(raw) && Number.isFinite(Date.parse(raw)) ? raw : null
+}
+
+/**
+ * Casa federal de um rótulo de cargo, nas formas masculina, feminina e neutra
+ * ("Deputada Federal", "Deputado(a) Federal", "Senadora", "Senador(a)").
+ * Suplente não é o cargo: "1º Suplente de Senador" fica de fora.
+ */
+function federalHouseOfCargo(cargo: string | null): "camara" | "senado" | null {
+  if (!cargo) return null
+  if (/^Deputad[oa](\(a\))? Federal/.test(cargo)) return "camara"
+  if (/^Senador/.test(cargo)) return "senado"
+  return null
 }
 
 function federalParliamentary(profile: CoverageProfile): boolean {
   const ids = record(profile.ids)
   if (present(ids?.camara) || present(ids?.senado)) return true
+  if (holdsFederalSeatNow(profile, "camara") || holdsFederalSeatNow(profile, "senado")) return true
   const historic = Array.isArray(profile.historico) ? profile.historico : []
   return historic.some((item) => {
     const row = record(item)
     if (!row || isCandidacyRow(row)) return false
-    const cargo = text(row?.cargo_canonico) ?? text(row?.cargo)
-    return cargo === "Deputado Federal" || cargo === "Senador"
+    return federalHouseOfCargo(text(row?.cargo_canonico) ?? text(row?.cargo)) !== null
   })
 }
 
@@ -285,8 +304,7 @@ export const EXPENSE_SERIES_FIRST_YEAR = 2008
 
 /** A pessoa ocupa hoje o cargo federal desta casa, segundo `cargo_atual`. */
 function holdsFederalSeatNow(profile: CoverageProfile, house: "camara" | "senado"): boolean {
-  const current = text(profile.cargo_atual) ?? ""
-  return house === "camara" ? /^Deputad[oa](\(a\))? Federal/.test(current) : /^Senador/.test(current)
+  return federalHouseOfCargo(text(profile.cargo_atual)) === house
 }
 
 /**
@@ -299,8 +317,7 @@ function federalMandateIntervals(profile: CoverageProfile, house: "camara" | "se
   for (const item of Array.isArray(profile.historico) ? profile.historico : []) {
     const row = record(item)
     if (!row || isCandidacyRow(row)) continue
-    const cargo = text(row.cargo_canonico) ?? text(row.cargo)
-    if (cargo !== (house === "camara" ? "Deputado Federal" : "Senador")) continue
+    if (federalHouseOfCargo(text(row.cargo_canonico) ?? text(row.cargo)) !== house) continue
     const start = typeof row.periodo_inicio === "number" ? row.periodo_inicio : null
     const end = typeof row.periodo_fim === "number" ? row.periodo_fim : now
     intervals.push([start, Math.min(end, now)])
@@ -670,11 +687,18 @@ function dailyCheckVerdict(receipt: Receipt, profile: CoverageProfile, family: C
   const detail = record(receipt.daily_check)
   const when = parseDate(receipt.executado_em)
   const result = text(receipt.resultado)
-  if (!detail || detail.contract_version !== 1 || detail.kind !== "tse-daily-candidacy-check" || !when) {
+  const version = detail?.contract_version
+  if (!detail || (version !== 1 && version !== 2) || detail.kind !== "tse-daily-candidacy-check" || !when) {
     return { estado: "erro", motivo: "recibo da auditoria diária fora do contrato", receipt }
   }
   if (Date.parse(when) > Date.now()) return { estado: "erro", motivo: "recibo da auditoria diária com data futura", receipt }
   if (result === "erro") return { estado: "erro", motivo: "auditoria diária não leu a fonte oficial", receipt }
+  // v2 diz se a identidade fechou no pacote oficial; v1 não tinha o campo.
+  const matched = record(detail.identity)?.matched
+  if (version === 2 && typeof matched !== "boolean") {
+    return { estado: "erro", motivo: "recibo da auditoria diária fora do contrato", receipt }
+  }
+  if (matched === false) return { estado: "indeterminado", motivo: "auditoria diária: identidade não fechou no pacote oficial", receipt }
   const revision = record(detail.source_revision)
   if (!revision || !officialTseUrl(revision.url) || !/^[a-f0-9]{64}$/i.test(text(revision.sha256) ?? "")) {
     return { estado: "erro", motivo: "auditoria diária sem revisão oficial com SHA-256", receipt }
@@ -687,6 +711,10 @@ function dailyCheckVerdict(receipt: Receipt, profile: CoverageProfile, family: C
   }
   if ((Date.now() - Date.parse(when)) > DAILY_CHECK_MAX_AGE_DAYS * 86_400_000) {
     return { estado: "desatualizado", motivo: `auditoria diária há mais de ${DAILY_CHECK_MAX_AGE_DAYS} dias`, receipt }
+  }
+  // Só recibo encontrado (ou publicado) fecha célula; indeterminado continua aberto.
+  if (result !== "encontrado" && result !== "publicado") {
+    return { estado: "indeterminado", motivo: `auditoria diária com resultado ${result ?? "ausente"}`, receipt }
   }
   const checks = record(detail.checks) ?? {}
   if (family === "chapa_vice") {
@@ -787,7 +815,14 @@ export type CoverageExceptionReport = {
 
 const OPEN_STATES: readonly CoverageState[] = ["sem_recibo", "indeterminado", "erro", "desatualizado", "frescor_indefinido"]
 
-/** Valida o arquivo de exceções nominais aprovadas pelo dono; erro de formato aborta. */
+/** Prazo máximo de uma exceção: renovar exige nova aprovação datada. */
+const EXCEPTION_MAX_DAYS = 90
+
+/**
+ * Valida o arquivo de exceções nominais aprovadas pelo dono; erro de formato
+ * aborta. Exceção vencida não aborta nem se aplica: a matriz a lista em
+ * `exceptions.sem_celula` para o dono renovar ou remover.
+ */
 export function parseCoverageExceptions(raw: unknown, now = new Date()): CoverageException[] {
   const list = Array.isArray(raw) ? raw : record(raw)?.exceptions
   if (!Array.isArray(list)) throw new Error("--exceptions exige lista ou { exceptions: [] }")
@@ -804,8 +839,15 @@ export function parseCoverageExceptions(raw: unknown, now = new Date()): Coverag
     for (const field of ["motivo", "aprovado_por", "aprovado_em"] as const) {
       if (!text(row[field])) throw new Error(`${where}: ${field} é obrigatório`)
     }
-    if (!parseDate(row.aprovado_em)) throw new Error(`${where}: aprovado_em inválido`)
-    if (!parseDate(row.expira_em)) throw new Error(`${where}: expira_em obrigatório e válido`)
+    const approvedAt = parseDate(row.aprovado_em)
+    const expiresAt = parseDate(row.expira_em)
+    if (!approvedAt) throw new Error(`${where}: aprovado_em inválido (ISO 8601 com fuso)`)
+    if (!expiresAt) throw new Error(`${where}: expira_em obrigatório e válido (ISO 8601 com fuso)`)
+    if (Date.parse(approvedAt) > now.getTime()) throw new Error(`${where}: aprovado_em no futuro`)
+    if (Date.parse(expiresAt) <= Date.parse(approvedAt)) throw new Error(`${where}: expira_em deve ser depois de aprovado_em`)
+    if (Date.parse(expiresAt) > Date.parse(approvedAt) + EXCEPTION_MAX_DAYS * 86_400_000) {
+      throw new Error(`${where}: expira_em passa de ${EXCEPTION_MAX_DAYS} dias após aprovado_em`)
+    }
     const key = `${slug}|${familia}`
     if (seen.has(key)) throw new Error(`${where}: exceção duplicada para ${key}`)
     seen.add(key)
@@ -815,7 +857,7 @@ export function parseCoverageExceptions(raw: unknown, now = new Date()): Coverag
       expira_em: text(row.expira_em)!,
       ...(text(row.referencia) ? { referencia: text(row.referencia)! } : {}),
     }
-  }).filter((exception) => Date.parse(exception.expira_em) > now.getTime())
+  })
 }
 
 function makeCell(profile: CoverageProfile, family: CoverageFamily, joins: CoverageReceiptJoin, profileError?: string): CoverageCell {
@@ -858,6 +900,7 @@ export function buildCoverageMatrix(
   profileErrors: Array<{ slug: string; error: string }> = [],
   joins: CoverageReceiptJoin = {},
   exceptions: CoverageException[] = [],
+  now = new Date(),
 ): CoverageMatrix {
   const errors = new Map(profileErrors.map((item) => [item.slug, item.error]))
   const erroredProfiles = profileErrors.map((item) => ({ slug: item.slug } satisfies CoverageProfile))
@@ -866,7 +909,9 @@ export function buildCoverageMatrix(
   const byKey = new Map(cells.map((cell) => [`${cell.slug}|${cell.familia}`, cell]))
   for (const exception of exceptions) {
     const cell = byKey.get(`${exception.slug}|${exception.familia}`)
-    if (!cell || !cell.aplicavel) {
+    if (Date.parse(exception.expira_em) <= now.getTime()) {
+      exceptionReport.sem_celula.push({ slug: exception.slug, familia: exception.familia, motivo: `exceção expirada em ${exception.expira_em}` })
+    } else if (!cell || !cell.aplicavel) {
       exceptionReport.sem_celula.push({ slug: exception.slug, familia: exception.familia, motivo: "célula aplicável não existe nesta coorte" })
     } else if (cell.estado !== exception.estado) {
       exceptionReport.sem_celula.push({ slug: exception.slug, familia: exception.familia, motivo: `estado atual ${cell.estado} difere do aprovado ${exception.estado}` })
@@ -892,12 +937,29 @@ export function buildCoverageMatrix(
   }
 }
 
+/**
+ * Decisão do gate `sem-recibo`. Em enforce, perfil não lido também reprova:
+ * célula em erro de leitura não prova nada e esconderia ausência de recibo.
+ */
+export function coverageGateFailure(matrix: CoverageMatrix, mode: "warn" | "enforce"): string | null {
+  if (matrix.completed_profiles === 0) return "gate de cobertura sem nenhum perfil público lido"
+  if (mode !== "enforce") return null
+  if (matrix.profile_errors.length > 0) return `gate de cobertura: ${matrix.profile_errors.length} perfil(is) público(s) não lido(s)`
+  const missing = missingReceiptCells(matrix)
+  return missing.length > 0 ? `gate de cobertura: ${missing.length} célula(s) aplicável(is) sem recibo` : null
+}
+
 /** Células aplicáveis ainda abertas e sem exceção nominal aprovada. */
 export function blockingCells(matrix: CoverageMatrix): CoverageCell[] {
   return matrix.cells.filter((cell) => cell.aplicavel && OPEN_STATES.includes(cell.estado) && !cell.excecao)
 }
 
 /**
+ * Nota sobre cota parlamentar com duas casas (mandato na Câmara e no Senado):
+ * a célula é uma só, e um recibo de coleta_log de qualquer das casas já a tira
+ * deste gate (origem coleta_log). Se a outra casa ficou sem recibo, isso aparece
+ * no estado da célula (indeterminado), não aqui.
+ *
  * Gate de CI: família aplicável sem nenhuma linha de coleta_log por candidato
  * (o piso da régua). O selo de frescor do payload público não conta como
  * recibo, e perfil que não respondeu fica fora (é erro de leitura, não prova
@@ -908,7 +970,11 @@ export function missingReceiptCells(matrix: CoverageMatrix): CoverageCell[] {
     (cell.origem_recibo === "nenhum" || cell.origem_recibo === "badge_publico"))
 }
 
-export async function fetchPublicProfiles(baseUrl: string, fetcher: typeof fetch = fetch): Promise<{ profiles: CoverageProfile[]; errors: Array<{ slug: string; error: string }> }> {
+export async function fetchPublicProfiles(
+  baseUrl: string,
+  fetcher: typeof fetch = fetch,
+  sleep: (ms: number) => Promise<void> = (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
+): Promise<{ profiles: CoverageProfile[]; errors: Array<{ slug: string; error: string }> }> {
   const slugResponse = await fetcher(`${baseUrl.replace(/\/$/, "")}/api/candidato-slugs`, { headers: { accept: "application/json" } })
   if (!slugResponse.ok) throw new Error(`/api/candidato-slugs HTTP ${slugResponse.status}`)
   const body = await slugResponse.json() as { slugs?: unknown }
@@ -920,7 +986,14 @@ export async function fetchPublicProfiles(baseUrl: string, fetcher: typeof fetch
   const errors: Array<{ slug: string; error: string }> = []
   for (const slug of body.slugs as string[]) {
     try {
-      const response = await fetcher(`${baseUrl.replace(/\/$/, "")}/api/candidato-profile/${encodeURIComponent(slug)}`, { headers: { accept: "application/json" } })
+      const url = `${baseUrl.replace(/\/$/, "")}/api/candidato-profile/${encodeURIComponent(slug)}`
+      let response = await fetcher(url, { headers: { accept: "application/json" } })
+      // A rota pública limita por IP; 429 é espera, não ausência (mesma
+      // cadência do aplicador de recibos).
+      for (let attempt = 1; response.status === 429 && attempt <= 5; attempt++) {
+        await sleep(5_000 * attempt)
+        response = await fetcher(url, { headers: { accept: "application/json" } })
+      }
       if (!response.ok) throw new Error(`HTTP ${response.status}`)
       const envelope = await response.json() as { data?: unknown; sourceStatus?: unknown }
       if (envelope.sourceStatus !== "live") throw new Error(`perfil não publicado: ${String(envelope.sourceStatus)}`)
@@ -933,7 +1006,7 @@ export async function fetchPublicProfiles(baseUrl: string, fetcher: typeof fetch
     }
     // The public profile route is IP-rate-limited. Mirror the existing audit's
     // serial cadence instead of turning 429 into a false absence.
-    await new Promise((resolve) => setTimeout(resolve, 250))
+    await sleep(250)
   }
   return { profiles, errors }
 }
@@ -973,10 +1046,10 @@ async function main(): Promise<void> {
       joins = adapted.joins
       rejectedReceipts = adapted.rejected
       ignoredPartialReceipts = adapted.ignored_partial_receipts
-    } else if (loaded.length === 1 && rowGroups[0] === null) {
-      joins = loaded[0] as CoverageReceiptJoin
     } else {
-      throw new Error("--receipts-extra exige que cada entrada seja uma lista, rows[] ou receipts[]")
+      // Joins pré-montados não passam pelo adaptador (sem validação de
+      // candidato, escopo e contrato); só linhas de coleta_log entram.
+      throw new Error("--receipts e --receipts-extra exigem lista, rows[] ou receipts[] de coleta_log")
     }
   }
   const exceptions = options.exceptions
@@ -1006,7 +1079,8 @@ async function main(): Promise<void> {
     const slugs = [...new Set(missing.map((cell) => cell.slug))].sort()
     console.log(`GATE_SEM_RECIBO mode=${options.mode} cells=${missing.length} profiles=${slugs.length}`)
     if (slugs.length) console.log(`GATE_SEM_RECIBO_SLUGS ${slugs.join(",")}`)
-    if (missing.length > 0 && options.mode === "enforce") throw new Error(`gate de cobertura: ${missing.length} célula(s) aplicável(is) sem recibo`)
+    const failure = coverageGateFailure(matrix, options.mode)
+    if (failure) throw new Error(failure)
   }
   const blocking = blockingCells(matrix)
   if (options.strict && blocking.length > 0) {

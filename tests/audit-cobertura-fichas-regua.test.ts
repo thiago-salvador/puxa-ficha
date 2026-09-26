@@ -8,7 +8,9 @@ import {
   adaptLatestReceipts,
   blockingCells,
   buildCoverageMatrix,
+  coverageGateFailure,
   DAILY_CHECK_SOURCE,
+  fetchPublicProfiles,
   missingReceiptCells,
   parseCoverageExceptions,
   tseReceiptFamilies,
@@ -56,6 +58,10 @@ function daily(overrides: Record<string, unknown> = {}, checks: Record<string, s
     ...overrides,
   })
 }
+
+const DAY = 86_400_000
+/** Datas relativas à execução: a janela de 90 dias das exceções não pode vencer no calendário. */
+const isoFromNow = (days: number) => new Date(Date.now() + days * DAY).toISOString()
 
 const curated = { perfil_atual: { status: "current", verifiedAt: "2026-09-17T01:36:20.422Z", sourceLabel: "Perfil factual curado" } }
 const chapa = {
@@ -157,6 +163,45 @@ describe("régua: recibo por ficha da auditoria diária", () => {
     assert.equal(one(daily(), "perfil_atual", base(), { candidato_id: "candidate-other" }), "frescor_indefinido")
   })
 
+  it("contrato v2: identidade que não fechou fica indeterminada; v2 sem matched está fora do contrato", () => {
+    const one = (detail: string, extra: Record<string, unknown> = {}) =>
+      cellOf(base(), [row({ fonte: DAILY_CHECK_SOURCE, url: CONSULTA, detalhe: detail, ...extra })], "perfil_atual").estado
+    const v2 = (matched: unknown, extra: Record<string, unknown> = {}) => {
+      const detail = JSON.parse(daily({ contract_version: 2, reasons: [], ...extra })) as { identity: Record<string, unknown> }
+      if (matched !== undefined) detail.identity.matched = matched
+      return JSON.stringify(detail)
+    }
+    assert.equal(one(v2(true)), "publicado")
+    assert.equal(one(v2(false)), "indeterminado")
+    assert.equal(one(v2(undefined)), "erro")
+    assert.equal(one(v2("sim")), "erro")
+    assert.equal(one(daily({ contract_version: 3 })), "erro")
+    // v1 continua aceito enquanto houver recibo antigo em coleta_log_ultima.
+    assert.equal(one(daily()), "publicado")
+  })
+
+  it("só recibo encontrado ou publicado fecha a célula, mesmo com os checks todos ok", () => {
+    const one = (resultado: string) =>
+      cellOf(base(), [row({ fonte: DAILY_CHECK_SOURCE, url: CONSULTA, detalhe: daily(), resultado, volume: ["encontrado", "publicado"].includes(resultado) ? 1 : 0 })], "perfil_atual").estado
+    assert.equal(one("encontrado"), "publicado")
+    assert.equal(one("publicado"), "publicado")
+    assert.equal(one("indeterminado"), "indeterminado")
+    assert.equal(one("vazio_confirmado"), "indeterminado")
+  })
+
+  it("data sem fuso explícito não é data de recibo", () => {
+    const one = (executado_em: string) =>
+      cellOf(base(), [row({ fonte: DAILY_CHECK_SOURCE, url: CONSULTA, detalhe: daily(), executado_em })], "perfil_atual").estado
+    const agora = new Date().toISOString()
+    assert.equal(one(agora), "publicado")
+    assert.equal(one(agora.replace("Z", "+00:00")), "publicado")
+    assert.notEqual(one(agora.slice(0, 10)), "publicado")
+    assert.notEqual(one(agora.slice(0, 19)), "publicado")
+    // Selo curado com data sem fuso também não vale como recibo datado.
+    const semFuso = profile({ ...CORE, chapa_2026: chapa, section_freshness: { perfil_atual: { ...curated.perfil_atual, verifiedAt: "2026-09-17" } } })
+    assert.equal(cellOf(semFuso, [row({ fonte: DAILY_CHECK_SOURCE, url: CONSULTA, detalhe: daily() })], "perfil_atual").estado, "indeterminado")
+  })
+
   it("senador: o recibo diário fecha perfil e não cria chapa aplicável", () => {
     const senator = profile({ ...CORE, cargo_disputado: "Senador", estado: "RJ", section_freshness: curated })
     const detail = daily({}, { chapa_vice: "nao_aplicavel" }, { cargo: "SENADOR", uf: "RJ" })
@@ -197,6 +242,35 @@ describe("régua: aplicabilidade da cota parlamentar", () => {
   })
 })
 
+describe("régua: parlamentar federal pelo cargo atual e pelas formas feminina e neutra", () => {
+  const aplicavel = (subject: CoverageProfile, family: CoverageFamily) =>
+    buildCoverageMatrix([subject]).cells.find((cell) => cell.familia === family)!.aplicavel
+  const mandato = (cargo: string) => ({ cargo, periodo_inicio: 2019, periodo_fim: 2023, tipo_evento: "mandato" })
+
+  it("cargo atual federal sem ID nem histórico abre projetos, votos e cota", () => {
+    for (const cargo of ["Deputada Federal", "Deputado Federal", "Deputado(a) Federal", "Senadora", "Senador", "Senador(a)"]) {
+      const subject = profile({ cargo_atual: cargo })
+      assert.equal(aplicavel(subject, "projetos_lei"), true, cargo)
+      assert.equal(aplicavel(subject, "votos_candidato"), true, cargo)
+      assert.equal(aplicavel(subject, "gastos_parlamentares"), true, cargo)
+    }
+  })
+
+  it("histórico com Deputada Federal ou Senadora conta como mandato federal", () => {
+    for (const cargo of ["Deputada Federal", "Senadora"]) {
+      assert.equal(aplicavel(profile({ historico: [mandato(cargo)] }), "projetos_lei"), true, cargo)
+      assert.equal(aplicavel(profile({ historico: [mandato(cargo)] }), "gastos_parlamentares"), true, cargo)
+    }
+  })
+
+  it("controles negativos: suplente, deputada estadual e distrital não são parlamentar federal", () => {
+    for (const cargo of ["1º Suplente de Senador", "Suplente de Senador", "Deputada Estadual", "Deputada Distrital", "Vereadora"]) {
+      assert.equal(aplicavel(profile({ cargo_atual: cargo }), "projetos_lei"), false, cargo)
+      assert.equal(aplicavel(profile({ historico: [mandato(cargo)] }), "projetos_lei"), false, cargo)
+    }
+  })
+})
+
 describe("régua: cota parlamentar zerada pela fonte oficial", () => {
   const anos = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
   const zero = (overrides: Record<string, unknown> = {}, detail: Record<string, unknown> = {}) => row({
@@ -220,7 +294,7 @@ describe("régua: cota parlamentar zerada pela fonte oficial", () => {
 })
 
 describe("régua: exceções nominais aprovadas", () => {
-  const approved = { slug: "ana-exemplo", familia: "processos", estado: "sem_recibo", motivo: "tribunal sem consulta pública", aprovado_por: "Dono", aprovado_em: "2026-09-25", expira_em: "2099-12-31" }
+  const approved = { slug: "ana-exemplo", familia: "processos", estado: "sem_recibo", motivo: "tribunal sem consulta pública", aprovado_por: "Dono", aprovado_em: isoFromNow(-1), expira_em: isoFromNow(30) }
 
   it("tira do gate só a célula nomeada e no estado aprovado", () => {
     const matrix = buildCoverageMatrix([profile()], [], {}, parseCoverageExceptions({ exceptions: [approved] }))
@@ -243,7 +317,63 @@ describe("régua: exceções nominais aprovadas", () => {
     const { expira_em: _semPrazo, ...semPrazo } = approved
     void _semPrazo
     assert.throws(() => parseCoverageExceptions([semPrazo]), /expira_em obrigatório/)
-    assert.equal(parseCoverageExceptions([{ ...approved, expira_em: "2026-01-01" }], new Date("2026-09-25")).length, 0)
+  })
+
+  it("janela da exceção: aprovada no passado, vence depois da aprovação e em até 90 dias, com fuso", () => {
+    assert.throws(() => parseCoverageExceptions([{ ...approved, aprovado_em: isoFromNow(1), expira_em: isoFromNow(30) }]), /no futuro/)
+    assert.throws(() => parseCoverageExceptions([{ ...approved, aprovado_em: isoFromNow(-5), expira_em: isoFromNow(-6) }]), /depois de aprovado_em/)
+    assert.throws(() => parseCoverageExceptions([{ ...approved, aprovado_em: isoFromNow(-1), expira_em: isoFromNow(90) }]), /90 dias/)
+    assert.throws(() => parseCoverageExceptions([{ ...approved, aprovado_em: isoFromNow(-1).slice(0, 10) }]), /aprovado_em inválido/)
+    assert.throws(() => parseCoverageExceptions([{ ...approved, expira_em: isoFromNow(30).slice(0, 19) }]), /expira_em obrigatório/)
+    // Limite exato de 90 dias ainda vale.
+    const aprovado = isoFromNow(-1)
+    const limite = new Date(Date.parse(aprovado) + 90 * DAY).toISOString()
+    assert.equal(parseCoverageExceptions([{ ...approved, aprovado_em: aprovado, expira_em: limite }]).length, 1)
+  })
+
+  it("exceção vencida não se aplica e aparece em sem_celula para renovar ou remover", () => {
+    const vencida = { ...approved, aprovado_em: isoFromNow(-40), expira_em: isoFromNow(-10) }
+    const parsed = parseCoverageExceptions([vencida])
+    assert.equal(parsed.length, 1)
+    const matrix = buildCoverageMatrix([profile()], [], {}, parsed)
+    assert.equal(matrix.exceptions?.aplicadas.length, 0)
+    assert.match(matrix.exceptions?.sem_celula[0]?.motivo ?? "", /expirada/)
+    assert.equal(blockingCells(matrix).some((item) => item.familia === "processos"), true)
+  })
+})
+
+describe("régua: leitura dos perfis e gate em enforce", () => {
+  const perfil = (slug: string) => ({ ok: true, status: 200, json: async () => ({ sourceStatus: "live", data: { slug } }) })
+  const slugs = (list: string[]) => ({ ok: true, status: 200, json: async () => ({ slugs: list }) })
+  const limitado = { ok: false, status: 429, json: async () => ({}) }
+
+  it("429 é espera com backoff, não ausência", async () => {
+    const waits: number[] = []
+    let calls = 0
+    const fetcher = (async (url: string) => {
+      if (url.endsWith("/api/candidato-slugs")) return slugs(["ana-exemplo"])
+      calls += 1
+      return calls <= 2 ? limitado : perfil("ana-exemplo")
+    }) as unknown as typeof fetch
+    const result = await fetchPublicProfiles("https://example.test", fetcher, async (ms) => { waits.push(ms) })
+    assert.deepEqual(result.errors, [])
+    assert.equal(result.profiles.length, 1)
+    assert.deepEqual(waits, [5_000, 10_000, 250])
+  })
+
+  it("429 persistente vira erro de leitura do perfil, sem perfil inventado", async () => {
+    const fetcher = (async (url: string) => url.endsWith("/api/candidato-slugs") ? slugs(["ana-exemplo"]) : limitado) as unknown as typeof fetch
+    const result = await fetchPublicProfiles("https://example.test", fetcher, async () => {})
+    assert.equal(result.profiles.length, 0)
+    assert.deepEqual(result.errors, [{ slug: "ana-exemplo", error: "HTTP 429" }])
+  })
+
+  it("enforce reprova com qualquer perfil não lido; warn só avisa", () => {
+    const withReceipts = profile({ cargo_disputado: "Senador" })
+    const allReceipts = buildCoverageMatrix([withReceipts], [{ slug: "outro", error: "HTTP 503" }])
+    assert.match(coverageGateFailure(allReceipts, "enforce") ?? "", /1 perfil\(is\) público\(s\) não lido\(s\)/)
+    assert.equal(coverageGateFailure(allReceipts, "warn"), null)
+    assert.match(coverageGateFailure(buildCoverageMatrix([], [{ slug: "outro", error: "HTTP 503" }]), "warn") ?? "", /nenhum perfil/)
   })
 })
 
@@ -251,6 +381,17 @@ describe("régua: gate de cobertura (fixture)", () => {
   const perfis = path.join(ROOT, "tests/fixtures/coverage-gate/perfis.json")
   const recibos = path.join(ROOT, "tests/fixtures/coverage-gate/recibos.json")
   const run = (...args: string[]) => spawnSync(process.execPath, ["--import", "tsx", "scripts/audit/audit-cobertura-fichas.ts", `--input=${perfis}`, `--receipts=${recibos}`, ...args], { cwd: ROOT, encoding: "utf8" })
+
+  it("joins pré-montados não entram: só linhas de coleta_log passam pelo adaptador", () => {
+    const dir = mkdtempSync(path.join(tmpdir(), "pf-gate-joins-"))
+    try {
+      const joins = path.join(dir, "joins.json")
+      writeFileSync(joins, JSON.stringify({ "ficticia-sem-recibo": { perfil_atual: { fonte: "tse", resultado: "encontrado" } } }))
+      const result = spawnSync(process.execPath, ["--import", "tsx", "scripts/audit/audit-cobertura-fichas.ts", `--input=${perfis}`, `--receipts=${joins}`], { cwd: ROOT, encoding: "utf8" })
+      assert.equal(result.status, 1)
+      assert.match(result.stderr, /exigem lista, rows\[\] ou receipts\[\]/)
+    } finally { rmSync(dir, { recursive: true, force: true }) }
+  })
 
   it("candidato público sem recibo reprova em enforce e só avisa em warn", () => {
     const enforce = run("--gate=sem-recibo", "--mode=enforce")
@@ -274,7 +415,7 @@ describe("régua: gate de cobertura (fixture)", () => {
       assert.match(pass.stdout, /GATE_SEM_RECIBO mode=enforce cells=0 profiles=0/)
       const families = ["perfil_atual", "historico_politico", "mudancas_partido", "patrimonio", "financiamento", "processos", "sites_tse"]
       const exceptions = path.join(dir, "excecoes.json")
-      writeFileSync(exceptions, JSON.stringify({ exceptions: families.map((familia) => ({ slug: "ficticia-sem-recibo", familia, estado: "sem_recibo", motivo: "teste", aprovado_por: "Dono", aprovado_em: "2026-09-25", expira_em: "2099-12-31" })) }))
+      writeFileSync(exceptions, JSON.stringify({ exceptions: families.map((familia) => ({ slug: "ficticia-sem-recibo", familia, estado: "sem_recibo", motivo: "teste", aprovado_por: "Dono", aprovado_em: isoFromNow(-1), expira_em: isoFromNow(30) })) }))
       const excepted = run("--gate=sem-recibo", "--mode=enforce", `--exceptions=${exceptions}`)
       assert.equal(excepted.status, 0, excepted.stderr)
     } finally { rmSync(dir, { recursive: true, force: true }) }
