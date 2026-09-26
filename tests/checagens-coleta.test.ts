@@ -191,7 +191,9 @@ describe("coleta nominal de checagens", () => {
     assert.equal(sp.agencias.lupa.leads, 1)
     assert.equal(ce.result, "homonimo")
     assert.equal(ce.leads.length, 0)
-    assert.deepEqual(ce.homonimo, { grupo: ["vera-lucia", "vera-lucia-ce"], descartados: 2, marcadores: ["ceara"] })
+    assert.deepEqual({ ...ce.homonimo, leads_brutos: ce.homonimo?.leads_brutos.map((lead) => lead.titulo) }, {
+      grupo: ["vera-lucia", "vera-lucia-ce"], descartados: 2, marcadores: ["ceara"], leads_brutos: titulos,
+    })
     const entrada = entradaColetaDoRecibo(ce)
     assert.equal(entrada.resultado, "indeterminado")
     assert.equal(entrada.volume, 0)
@@ -199,6 +201,68 @@ describe("coleta nominal de checagens", () => {
     const publico = consolidarCatalogoRecibos(consolidarCatalogoRecibos(null, [montarRecibo(veraCe, okEmTodas({ lupa: 2 }), new Date("2026-09-20T00:00:00Z"))], now), [ce], now)
     assert.equal(publico.receipts.length, 0, "homônimo derruba o recibo público anterior e não publica contagem")
     assert.deepEqual(aplicarRegraHomonimo(ce, veraCe, grupos.get("vera-ce\u0000vera-lucia-ce")), ce, "regra é idempotente")
+  })
+
+  it("homônimos saem do cadastro completo, mesmo buscando só uma das candidaturas", async () => {
+    const veraSp: CandidatoChecagem = { id: "vera-sp", slug: "vera-lucia", nome_urna: "Vera Lúcia", nome_completo: "Vera Lúcia Pereira da Silva Salgado", cargo_disputado: "Governador", estado: "SP" }
+    const veraCe: CandidatoChecagem = { id: "vera-ce", slug: "vera-lucia-ce", nome_urna: "Vera Lúcia", nome_completo: "Vera Lucia da Silva", cargo_disputado: "Governador", estado: "CE" }
+    const fetchText = async (url: string) => {
+      if (url.includes("agencialupa.org/wp-json")) return { status: 200, body: JSON.stringify([{ title: "Na CBN, Vera Lúcia erra sobre mães solo", url: "https://www.agencialupa.org/checagem/1" }, { title: "Vera Lúcia erra sobre dívidas", url: "https://www.agencialupa.org/checagem/2" }]) }
+      if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
+      return { status: 200, body: rss([]) }
+    }
+    const [recorte] = await coletarChecagens({ roster: [veraCe], rosterCompleto: [veraSp, veraCe], concorrencia: 1, sleep: async () => {}, fetchText })
+    assert.equal(recorte.result, "homonimo")
+    assert.equal(recorte.leads.length, 0)
+    assert.equal(consolidarCatalogoRecibos(null, [recorte], now).receipts.length, 0, "catálogo não publica a homônima")
+    await assert.rejects(
+      coletarChecagens({ roster: [veraCe], rosterCompleto: [veraSp], sleep: async () => {}, fetchText }),
+      /Recorte fora do cadastro completo: vera-lucia-ce/,
+    )
+  })
+
+  it("grupo entre cargos não usa estado como marca", () => {
+    const presidente: CandidatoChecagem = { id: "p", slug: "joao-silva", nome_urna: "João Silva", nome_completo: "João Carlos Silva", cargo_disputado: "Presidente", estado: null }
+    const governador: CandidatoChecagem = { id: "g", slug: "joao-silva-ba", nome_urna: "João Silva", nome_completo: "João Pedro Silva", cargo_disputado: "Governador", estado: "BA" }
+    const grupo = [presidente, governador]
+    assert.deepEqual(marcadoresDistintivos(governador, grupo), ["pedro"])
+    assert.deepEqual(marcadoresDistintivos(presidente, grupo), ["carlos"])
+    const recibo = montarRecibo(governador, { ...okEmTodas(), lupa: { status: "ok", itens: 1, leads: [{ agencia: "lupa", titulo: "Na Bahia, João Silva erra sobre segurança", link: "https://www.agencialupa.org/x", data_publicacao: null }] } }, now)
+    assert.equal(aplicarRegraHomonimo(recibo, governador, grupo).result, "homonimo", "estado no título não basta com presidenciável homônimo")
+  })
+
+  it("reimportar recalcula dos leads crus e recupera lead quando o homônimo some", () => {
+    const veraSp: CandidatoChecagem = { id: "vera-sp", slug: "vera-lucia", nome_urna: "Vera Lúcia", nome_completo: "Vera Lúcia Pereira da Silva Salgado", cargo_disputado: "Governador", estado: "SP" }
+    const veraCe: CandidatoChecagem = { id: "vera-ce", slug: "vera-lucia-ce", nome_urna: "Vera Lúcia", nome_completo: "Vera Lucia da Silva", cargo_disputado: "Governador", estado: "CE" }
+    const lead = { agencia: "lupa", titulo: "Vera Lúcia erra sobre dívidas", link: "https://www.agencialupa.org/x", data_publicacao: null }
+    const cru = montarRecibo(veraCe, { ...okEmTodas(), lupa: { status: "ok", itens: 1, leads: [lead] } }, now)
+    const comRegra = aplicarRegraHomonimo(cru, veraCe, [veraSp, veraCe])
+    assert.equal(comRegra.result, "homonimo")
+    const reimportado = aplicarRegraHomonimo(JSON.parse(JSON.stringify(comRegra)), veraCe, [veraSp, veraCe])
+    assert.deepEqual(reimportado, comRegra, "reaplicar não acumula nem perde")
+    const semGrupo = aplicarRegraHomonimo(comRegra, veraCe, undefined)
+    assert.equal(semGrupo.result, "encontrado")
+    assert.deepEqual(semGrupo.leads, [lead])
+    assert.equal(semGrupo.homonimo, undefined)
+    assert.equal(semGrupo.agencias.lupa.leads, 1)
+  })
+
+  it("com dois trabalhadores, nenhum recibo sai depois do limite de taxa", async () => {
+    const concluidos: string[] = []
+    let google = 0
+    await assert.rejects(coletarChecagens({
+      roster: [caiado, { ...caiado, id: "cand-b", slug: "b" }],
+      concorrencia: 2,
+      pararNoBloqueio: true,
+      sleep: async () => {},
+      onRecibo: (recibo) => concluidos.push(recibo.candidate_slug),
+      fetchText: async (url) => {
+        if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
+        google++
+        return google === 3 ? { status: 503, body: "" } : { status: 200, body: rss([]) }
+      },
+    }), BloqueioDeTaxa)
+    assert.deepEqual(concluidos, [], "o trabalhador que não bateu no limite também não fecha recibo")
   })
 
   it("disjuntor: 3 limites seguidos desligam o Google na rodada e o resto vira erro sem pedido", async () => {

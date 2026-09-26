@@ -119,7 +119,13 @@ export interface ReciboChecagem {
   agencias: Record<string, { status: "ok" | "erro"; itens?: number; leads?: number; erro?: string; transporte?: TransporteBusca; falhas?: string[] }>
   escopo: string
   /** Presente quando o nome de urna é compartilhado com outra candidatura do cadastro. */
-  homonimo?: { grupo: string[]; descartados: number; marcadores: string[] }
+  homonimo?: {
+    grupo: string[]
+    descartados: number
+    marcadores: string[]
+    /** Leads antes da regra. A regra sempre recalcula a partir daqui, então reimportar não perde lead. */
+    leads_brutos: LeadChecagem[]
+  }
 }
 
 const UF_NOMES: Readonly<Record<string, string>> = Object.freeze({
@@ -153,7 +159,9 @@ export function gruposDeHomonimos(roster: readonly CandidatoChecagem[]): Map<str
 /**
  * Marcas que, no título, separam esta candidatura das homônimas: token do nome
  * completo que não está no nome de urna nem no nome completo das outras, e o
- * nome do estado quando nenhuma outra disputa pela mesma UF.
+ * nome do estado quando nenhuma outra disputa pela mesma UF. Estado só conta
+ * se o grupo inteiro disputa o mesmo cargo: com um presidenciável no grupo
+ * (estado null), uma matéria sobre ele pode citar qualquer estado.
  */
 export function marcadoresDistintivos(candidato: CandidatoChecagem, grupo: readonly CandidatoChecagem[]): string[] {
   const outros = grupo.filter((membro) => membro.id !== candidato.id || membro.slug !== candidato.slug)
@@ -161,8 +169,9 @@ export function marcadoresDistintivos(candidato: CandidatoChecagem, grupo: reado
   const deOutros = new Set(outros.flatMap((membro) => normalizarNome(membro.nome_completo).split(" ")))
   const marcadores = normalizarNome(candidato.nome_completo).split(" ")
     .filter((token) => token.length >= 4 && !PARTICULAS_NOME.has(token) && !urna.has(token) && !deOutros.has(token))
+  const mesmoCargo = grupo.every((membro) => membro.cargo_disputado === candidato.cargo_disputado)
   const uf = candidato.estado
-  if (uf && UF_NOMES[uf] && !outros.some((membro) => membro.estado === uf)) marcadores.push(normalizarNome(UF_NOMES[uf]))
+  if (mesmoCargo && uf && UF_NOMES[uf] && !outros.some((membro) => membro.estado === uf)) marcadores.push(normalizarNome(UF_NOMES[uf]))
   return [...new Set(marcadores)]
 }
 
@@ -172,23 +181,30 @@ function tituloTemMarcador(titulo: string, marcadores: readonly string[]): boole
 }
 
 /**
- * Aplica a regra de homônimo a um recibo já montado. Pura e idempotente: serve
- * para a coleta e para reimportar recibos antigos sem buscar de novo.
+ * Aplica a regra de homônimo a um recibo já montado, sempre a partir dos leads
+ * crus (`homonimo.leads_brutos`, ou `leads` na primeira aplicação). Pura,
+ * idempotente e sem perda: reimportar com outro cadastro recalcula do zero, e
+ * um recibo que deixa de ter homônimo recupera os leads originais.
  */
 export function aplicarRegraHomonimo(recibo: ReciboChecagem, candidato: CandidatoChecagem, grupo: readonly CandidatoChecagem[] | undefined): ReciboChecagem {
-  if (!grupo || grupo.length < 2) return recibo
-  const marcadores = marcadoresDistintivos(candidato, grupo)
-  const leads = recibo.leads.filter((lead) => tituloTemMarcador(lead.titulo, marcadores))
-  const descartados = recibo.leads.length - leads.length + (recibo.homonimo?.descartados ?? 0)
+  const brutos = recibo.homonimo?.leads_brutos ?? recibo.leads
+  const semHomonimo = !grupo || grupo.length < 2
+  if (semHomonimo && !recibo.homonimo) return recibo
+  const marcadores = semHomonimo ? [] : marcadoresDistintivos(candidato, grupo)
+  const leads = semHomonimo ? brutos : brutos.filter((lead) => tituloTemMarcador(lead.titulo, marcadores))
+  const descartados = brutos.length - leads.length
   const agencias: ReciboChecagem["agencias"] = {}
   for (const [id, estado] of Object.entries(recibo.agencias)) {
     agencias[id] = estado.status === "ok" ? { ...estado, leads: leads.filter((lead) => lead.agencia === id).length } : estado
   }
   const algumaFalhou = Object.values(agencias).some((estado) => estado.status === "erro")
   const result: ResultadoRecibo = leads.length > 0 ? "encontrado" : algumaFalhou ? "erro" : descartados > 0 ? "homonimo" : "vazio_confirmado"
+  const { homonimo: _anterior, ...base } = recibo
+  void _anterior
+  if (semHomonimo) return { ...base, leads, agencias, result }
   return {
-    ...recibo, leads, agencias, result,
-    homonimo: { grupo: grupo.map((membro) => membro.slug).sort(), descartados, marcadores },
+    ...base, leads, agencias, result,
+    homonimo: { grupo: grupo.map((membro) => membro.slug).sort(), descartados, marcadores, leads_brutos: brutos },
   }
 }
 
@@ -418,7 +434,14 @@ export function consolidarCatalogoRecibos(
 }
 
 export interface OpcoesColeta {
+  /** Candidaturas a buscar nesta execução (pode ser recorte por --slugs ou --retomar). */
   roster: readonly CandidatoChecagem[]
+  /**
+   * Cadastro vivo inteiro, sem recorte. Os grupos de homônimos saem daqui:
+   * buscar só uma Vera Lúcia não pode esquecer que existe a outra. Omitido,
+   * vale `roster` (recorte nenhum).
+   */
+  rosterCompleto?: readonly CandidatoChecagem[]
   fetchText: (url: string) => Promise<{ status: number; body: string }>
   now?: () => Date
   /** Pausa entre consultas do mesmo trabalhador, para não martelar a fonte. */
@@ -546,7 +569,11 @@ export async function coletarChecagens(opcoes: OpcoesColeta): Promise<ReciboChec
   const tentativas = Math.max(1, opcoes.tentativas ?? 3)
   const esperaBloqueioMs = Math.max(0, opcoes.esperaBloqueioMs ?? 30_000)
   const disjuntor: DisjuntorGoogle = { bloqueiosSeguidos: 0, esperaGastaMs: 0, aberto: null }
-  const homonimos = gruposDeHomonimos(opcoes.roster)
+  const completo = opcoes.rosterCompleto ?? opcoes.roster
+  const noCompleto = new Set(completo.map((candidato) => `${candidato.id}\u0000${candidato.slug}`))
+  const foraDoCadastro = opcoes.roster.filter((candidato) => !noCompleto.has(`${candidato.id}\u0000${candidato.slug}`))
+  if (foraDoCadastro.length) throw new Error(`Recorte fora do cadastro completo: ${foraDoCadastro.map((candidato) => candidato.slug).join(", ")}`)
+  const homonimos = gruposDeHomonimos(completo)
   const consulta: OpcoesConsulta = {
     fetchText: opcoes.fetchText, tentativas, sleep, pausaMs, esperaBloqueioMs,
     semGoogle: opcoes.semGoogle ?? false,
@@ -584,6 +611,9 @@ export async function coletarChecagens(opcoes: OpcoesColeta): Promise<ReciboChec
         }
         if (!semPedido) await sleep(pausaMs)
       }
+      // Outro trabalhador bateu no limite enquanto este buscava: sem recibo tardio,
+      // para o checkpoint e o resultado final serem o mesmo conjunto.
+      if (abortado) return
       const recibo = aplicarRegraHomonimo(montarRecibo(candidato, estados, now()), candidato, homonimos.get(`${candidato.id}\u0000${candidato.slug}`))
       recibos[indice] = recibo
       opcoes.onRecibo?.(recibo, indice)

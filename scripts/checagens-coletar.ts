@@ -95,9 +95,10 @@ function lerRecibos(arquivo: string): ReciboChecagem[] {
 }
 
 /**
- * Reaplica a regra de homônimo com o cadastro da própria rodada (roster.json
- * ao lado do arquivo, ou `--roster`). Sem cadastro não há como saber quem
- * divide o nome, então a importação é recusada.
+ * Reaplica a regra de homônimo com o cadastro completo da própria rodada
+ * (roster.json ao lado do arquivo, ou `--roster`). A regra recalcula a partir
+ * dos leads crus guardados no recibo, então reimportar não perde lead. Sem
+ * cadastro não há como saber quem divide o nome, e a importação é recusada.
  */
 function reaplicarHomonimos(recibos: ReciboChecagem[], rosterPath: string): ReciboChecagem[] {
   if (!existsSync(rosterPath)) throw new Error(`Cadastro da rodada ausente (${rosterPath}); informe --roster`)
@@ -140,9 +141,11 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
     return registrarRecibosExistentes(resolve(deRecibos), valores.get("catalogo"), flags.has("gravar-log"), rosterDaRodada ? resolve(rosterDaRodada) : undefined, salvar ? resolve(salvar) : undefined)
   }
   const rosterPath = valores.get("roster")
-  let roster = (rosterPath
+  // Cadastro completo: fonte dos grupos de homônimos e do roster.json da rodada.
+  const rosterCompleto = (rosterPath
     ? JSON.parse(readFileSync(resolve(rosterPath), "utf8"))
     : await carregarCandidatos()) as CandidatoChecagem[]
+  let roster = rosterCompleto
   const retomar = valores.get("retomar")
   // Recibos anteriores passam pela regra de homônimo com o cadastro da rodada deles.
   const rosterAnterior = valores.get("roster-anterior")
@@ -161,7 +164,8 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
   }
   const out = resolve(valores.get("out") ?? `reports/checagens-coleta/${inicio.toISOString().slice(0, 10)}`)
   mkdirSync(out, { recursive: true })
-  writeFileSync(resolve(out, "roster.json"), JSON.stringify(roster, null, 2) + "\n")
+  writeFileSync(resolve(out, "roster.json"), JSON.stringify(rosterCompleto, null, 2) + "\n")
+  writeFileSync(resolve(out, "alvos.json"), JSON.stringify(roster.map((candidato) => candidato.slug), null, 2) + "\n")
 
   let concluidos = 0
   const parciais: ReciboChecagem[] = []
@@ -169,6 +173,7 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
   let parouPorBloqueio: string | null = null
   const coletados = await coletarChecagens({
     roster,
+    rosterCompleto,
     fetchText,
     concorrencia: Number(valores.get("concorrencia") ?? 1),
     pausaMs: Number(valores.get("pausa-ms") ?? 1_000),
@@ -199,12 +204,15 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
     const anterior = existsSync(caminho) ? JSON.parse(readFileSync(caminho, "utf8")) as CatalogoRecibosChecagens : null
     writeFileSync(caminho, JSON.stringify(consolidarCatalogoRecibos(anterior, recibos, new Date()), null, 2) + "\n")
   }
+  const resumoPath = resolve(out, "resumo.json")
+  // O resumo sai antes de qualquer falha de gravação: a rodada interrompida também precisa de rastro.
+  writeFileSync(resumoPath, JSON.stringify(resumo, null, 2) + "\n")
   if (flags.has("gravar-log") && parouPorBloqueio) throw new Error("Rodada interrompida por limite de taxa: nada gravado no coleta_log")
   if (flags.has("gravar-log")) {
     resumo.linhas_log = await gravarColetaLog(recibos)
     resumo.gravou_log = true
+    writeFileSync(resumoPath, JSON.stringify(resumo, null, 2) + "\n")
   }
-  writeFileSync(resolve(out, "resumo.json"), JSON.stringify(resumo, null, 2) + "\n")
   console.log(JSON.stringify(resumo))
   // Vermelho quando alguma candidatura ficou sem busca completa, mesmo com lead achado.
   if (parouPorBloqueio) return 3
