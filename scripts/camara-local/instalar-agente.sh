@@ -6,7 +6,8 @@
 # Não carrega o agente, não pede sudo e recusa rodar como root. Carregar é o
 # último passo do runbook: docs/operations/ingest-camara-local.md
 #
-# Uso, a partir de qualquer checkout do repositório:
+# Uso, a partir de um checkout cujo HEAD é a main atual, sem alteração em
+# scripts/camara-local/ (o instalador busca a main e recusa qualquer outra coisa):
 #   bash scripts/camara-local/instalar-agente.sh
 set -euo pipefail
 umask 077
@@ -19,10 +20,24 @@ falhar() { echo "ERRO: $*" >&2; exit 1; }
 
 origem="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 rotulo="br.com.puxaficha.ingest-camara"
+repo_url="https://github.com/thiago-salvador/puxa-ficha.git"
 # O clone principal, e não o worktree de onde o instalador rodou: o agente
 # precisa de um caminho que continue existindo.
 repo="$(dirname "$(git -C "$origem" rev-parse --path-format=absolute --git-common-dir)")"
 git -C "$repo" rev-parse --git-dir >/dev/null 2>&1 || falhar "clone não encontrado a partir de $origem"
+
+# Só instala o que está na main publicada: HEAD igual à main recém-buscada
+# (conferida com ls-remote) e scripts/camara-local/ limpo e idêntico a ela.
+git -C "$repo" fetch --quiet --no-tags "$repo_url" "+refs/heads/main:refs/remotes/origin/main"
+sha_main="$(git -C "$repo" rev-parse --verify "refs/remotes/origin/main^{commit}")"
+[ "$(git ls-remote "$repo_url" refs/heads/main | cut -f1)" = "$sha_main" ] || falhar "main buscada difere do ls-remote"
+head_origem="$(git -C "$origem" rev-parse HEAD)"
+[ "$head_origem" = "$sha_main" ] || falhar "HEAD deste checkout ($head_origem) não é a main atual ($sha_main); atualize e rode de novo"
+[ -z "$(git -C "$origem" status --porcelain --untracked-files=all -- .)" ] || falhar "scripts/camara-local/ tem alteração local; limpe antes de instalar"
+for arquivo in ingest-camara-local.sh "$rotulo.plist.template"; do
+  cmp -s "$origem/$arquivo" <(git -C "$repo" show "$sha_main:scripts/camara-local/$arquivo") ||
+    falhar "$arquivo difere da main $sha_main"
+done
 
 dir_app="$HOME/Library/Application Support/puxa-ficha"
 dir_agentes="$HOME/Library/LaunchAgents"
@@ -59,7 +74,7 @@ plutil -lint "$plist_destino.tmp" >/dev/null || falhar "plist inválido"
 mv "$plist_destino.tmp" "$plist_destino"
 
 cat <<EOF
-Copiado:
+Copiado da main $sha_main:
   script: $script_destino
   plist:  $plist_destino (dia $dia, $hora:$(printf '%02d' "$minuto") no fuso local)
   clone:  $repo

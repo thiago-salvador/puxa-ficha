@@ -3,11 +3,15 @@ name: Ingestão de dados
 # Ingestão em massa das fontes públicas (TSE, Câmara, Senado, Portal da
 # Transparência) para o Supabase. Nunca roda em pull_request: usa o
 # SUPABASE_SERVICE_ROLE_KEY, e secrets não são expostos a PRs de fork.
-# O schedule sempre roda o código da main, mas o workflow_dispatch aceita
-# qualquer branch (`gh workflow run --ref <branch>`), e quem tem push no repo
-# poderia rodar código não revisado com a service role. Por isso todo job que
-# recebe a service role exige `github.ref == 'refs/heads/main'`: disparo de
-# outra ref pula os jobs de ingestão.
+# O schedule sempre roda a main, mas o workflow_dispatch aceita qualquer
+# branch (`gh workflow run --ref <branch>`), e o GitHub usa a definição DESTE
+# arquivo como está naquela branch. Todo job que recebe segredo de produção
+# exige `github.ref == 'refs/heads/main'`. O que isso protege: um disparo com
+# --ref de uma branch que mudou scripts ou dependências, mas não este arquivo,
+# não roda código não revisado com a service role. O que NÃO protege: uma
+# branch que edite este arquivo e apague a condição. Contra isso só um
+# Environment com política de branch restrita à main guardando os segredos,
+# passo manual descrito em docs/operations/ingest-camara-local.md.
 #
 # Cadência: schedule semanal cobre só senado (API REST idempotente, dado que
 # muda toda semana). A Câmara saiu do schedule em 26/09/2026: a API dela
@@ -265,7 +269,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     needs: [ingest-rest, ingest-camara, ingest-tse, ingest-news]
-    if: ${{ !cancelled() }}
+    if: ${{ !cancelled() && github.ref == 'refs/heads/main' }}
     env:
       REVALIDATE_URL: https://puxaficha.com.br/api/revalidate
       REVALIDATE_SECRET: ${{ secrets.PF_REVALIDATE_SECRET }}

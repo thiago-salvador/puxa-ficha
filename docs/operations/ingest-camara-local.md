@@ -34,34 +34,53 @@ requisição não mudam nada, porque a conexão não chega ao TLS.
 - A Câmara saiu do schedule do Actions. `coleta_log_ultima` fica com a
   tentativa mais recente, e um `erro` do Actions gravado depois da coleta local
   esconderia o recibo bom.
-- Todo job do `ingest.yml` que recebe a service role exige
-  `github.ref == 'refs/heads/main'`; disparo de outra branch pula a ingestão.
+- Todo job do `ingest.yml` que recebe segredo de produção (inclusive o
+  `revalidate`) exige `github.ref == 'refs/heads/main'`. Isso impede que um
+  disparo com `--ref` de uma branch que mudou scripts, mas não o YAML, rode
+  código não revisado com a service role. Não impede uma branch que edite o
+  próprio YAML: para isso existe o passo de endurecimento abaixo.
+- O gate `ids-cohort` do `data-quality.yml` sonda a Câmara antes de checar os
+  IDs. Inalcançável, os checks da Câmara saem `error` com o motivo
+  `camara_inalcancavel:`, o relatório ganha `camara_inalcancavel` e o log um
+  `::warning::`; o gate não os conta como falha. Qualquer outro erro, mismatch
+  ou not_found continua reprovando.
+- No registro de frescor (`scripts/data/data-freshness-sources.json`) a Câmara
+  é `manual` / `on_demand`, com `max_age_hours` 216 mantido. Para fonte
+  manual, passar do limiar vira `technical_debt` com afirmações negativas
+  suprimidas, e não mais `stale` bloqueante.
 
 ## O agente local
 
 `scripts/camara-local/ingest-camara-local.sh`, chamado pelo launchd na quarta
 às 06:00 UTC (03:00 em Brasília):
 
-1. busca `origin/main` no clone e fixa o SHA; nunca roda branch de trabalho
-   nem PR;
-2. cria um worktree descartável nesse SHA em `$TMPDIR`;
-3. roda `npm ci --ignore-scripts`: nenhum script de instalação de dependência
+1. busca a `main` pela URL explícita
+   (`https://github.com/thiago-salvador/puxa-ficha.git`), fixa o SHA, confere
+   com `git ls-remote` e avisa no log se o SHA da rodada anterior não for
+   ancestral do atual (main reescrita, force-push); nunca roda branch de
+   trabalho nem PR;
+2. confere a si mesmo: se o launcher em execução diferir de
+   `scripts/camara-local/ingest-camara-local.sh` nesse SHA, para e pede
+   reinstalação;
+3. cria um worktree descartável nesse SHA em `$TMPDIR`;
+4. roda `npm ci --ignore-scripts`: nenhum script de instalação de dependência
    executa. Os quatro pacotes com script (`esbuild`, `@sentry/cli`,
    `unrs-resolver`, `fsevents`) não são necessários para o ingest; o modo
    `--verificar` prova que o grafo inteiro carrega sem eles;
-4. roda `npx tsx scripts/ingest-all.ts camara --skip-camara-validated` com
-   Node 24 (`/opt/homebrew/opt/node@24/bin`), o mesmo modo incremental que o
-   cron usava;
-5. grava os recibos com `execucao = local:<host>:<AAAAMMDDTHHMMSSZ>`
+5. roda `./node_modules/.bin/tsx scripts/ingest-all.ts camara
+   --skip-camara-validated` com Node 24 (`/opt/homebrew/opt/node@24/bin`), o
+   mesmo modo incremental que o cron usava, sem `npx` baixar nada;
+6. grava os recibos com `execucao = local:<host>:<AAAAMMDDTHHMMSSZ>`
    (`PF_COLETA_EXECUCAO`, validada em `scripts/lib/coleta-log.ts`);
-6. revalida o cache público com as mesmas tags do `ingest.yml`, se o arquivo
+7. revalida o cache público com as mesmas tags do `ingest.yml`, se o arquivo
    de credenciais trouxer `PF_REVALIDATE_SECRET`;
-7. grava o log em `~/Library/Logs/puxa-ficha/ingest-camara-<timestamp>.log` e
-   apaga o worktree, com sucesso ou erro.
+8. grava o log em `~/Library/Logs/puxa-ficha/ingest-camara-<timestamp>.log`
+   (diretório sempre em 700) e apaga o worktree, com sucesso ou erro.
 
-Uma trava (`~/Library/Logs/puxa-ficha/.ingest-camara.lock`) impede duas rodadas
-ao mesmo tempo. Se uma rodada morrer por `kill -9`, apague o diretório da trava
-à mão.
+Uma trava com pid (`~/Library/Logs/puxa-ficha/.ingest-camara.lock/pid`) impede
+duas rodadas ao mesmo tempo; trava de processo que já morreu é retomada com
+aviso no log. O último SHA rodado fica em
+`~/Library/Application Support/puxa-ficha/ultimo-sha-main`.
 
 ## Passos manuais do mantenedor
 
@@ -87,8 +106,11 @@ Nenhum destes passos é feito por agente ou CI.
    revalidado no próximo run do Actions ou à mão. Qualquer outra chave faz o
    script parar. O script recusa o arquivo se ele não for do usuário, se for
    link simbólico ou se a permissão não for 600.
-2. **Instalar o agente** a partir de um checkout atualizado da `main`:
-   `bash scripts/camara-local/instalar-agente.sh`. Ele só copia o script para
+2. **Instalar o agente** a partir de um checkout cujo HEAD é a `main` atual,
+   sem alteração em `scripts/camara-local/`:
+   `bash scripts/camara-local/instalar-agente.sh`. Ele busca a `main` pela URL
+   explícita, confere com `ls-remote` e recusa se o HEAD for outro ou se os
+   arquivos diferirem da `main`. Depois só copia o script para
    `~/Library/Application Support/puxa-ficha/` e o plist para
    `~/Library/LaunchAgents/br.com.puxaficha.ingest-camara.plist`, com o horário
    de quarta 06:00 UTC convertido para o fuso da máquina. Recusa root e sudo,
@@ -106,8 +128,40 @@ Nenhum destes passos é feito por agente ou CI.
    semana passa sem coleta e a auditoria de frescor acusa.
 
 O script instalado é uma cópia. Depois de mudar `scripts/camara-local/` na
-`main`, rode o instalador de novo. O código do ingest, esse sim, vem sempre do
-SHA da `main` do momento da rodada.
+`main`, a rodada seguinte para com "difere ... reinstale" até o instalador
+rodar de novo; o launcher nunca roda uma versão diferente da `main`. O código
+do ingest vem sempre do SHA da `main` do momento da rodada.
+
+## Endurecimento recomendado dos segredos (passo manual, ainda não aplicado)
+
+O guard de `github.ref` não protege contra uma branch que edite o
+`ingest.yml`. A proteção real é um Environment com política de branch:
+
+1. Criar um Environment dedicado (por exemplo `ingest-producao`) com
+   "Deployment branches and tags" restrito à `main`. Um dedicado, e não o
+   `Production`: o `Production` é criado pela integração da Vercel e hoje não
+   tem segredo, regra nem política; mexer nele afeta os 86 workflows
+   `apply-*` que o declaram.
+2. Guardar nele `SUPABASE_SERVICE_ROLE_KEY`, `PF_DOADOR_CPF_HASH_SALT` e
+   `PF_REVALIDATE_SECRET`.
+3. Acrescentar `environment: ingest-producao` aos jobs `ingest-rest`,
+   `ingest-camara`, `ingest-tse`, `ingest-news` e `revalidate` (mudança de
+   código, em PR próprio, depois do passo 2).
+4. Só então avaliar remover os segredos do nível de repositório. Impacto
+   medido em 26/09/2026: 14 workflows leem `SUPABASE_SERVICE_ROLE_KEY`; 8 não
+   declaram environment e quebrariam sem o segredo de repositório
+   (`ingest.yml`, `checagens-coleta.yml`, `data-freshness-audit.yml`,
+   `data-quality.yml`, `link-check-fontes.yml`, `processos-coleta-judicial.yml`,
+   `rehash-doador-cpf-v2.yml`, `tse-2026-financas.yml`); os outros 6
+   (`apply-` e `rollback-candidate-roster-integrity-production.yml`,
+   `materializar-doador-recorrente.yml`, `observe-home-updates.yml`,
+   `refresh-destaques-votacoes.yml`, `roster-deputados.yml`) declaram
+   `environment: production`, que hoje não guarda o segredo, e também
+   dependem do segredo de repositório.
+   `PF_DOADOR_CPF_HASH_SALT` é lido por `ingest.yml`, `rehash-doador-cpf-v2.yml`
+   e `tse-2026-financas.yml`; `PF_REVALIDATE_SECRET` por `ingest.yml`,
+   `revalidate-cache.yml` e `tse-2026-financas.yml`. Cada um precisa do
+   `environment:` antes da remoção.
 
 ## Como voltar atrás
 

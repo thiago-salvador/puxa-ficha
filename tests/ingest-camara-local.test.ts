@@ -160,19 +160,26 @@ describe("ingest.yml", () => {
     assert.deepEqual(Object.keys(workflow.on).sort(), ["schedule", "workflow_dispatch"])
   })
 
-  it("todo job com a service role exige a main", () => {
+  it("todo job com segredo de produção exige a main", () => {
     const comServiceRole = Object.entries(workflow.jobs).filter(([, job]) =>
-      JSON.stringify(job.steps ?? []).includes("secrets.SUPABASE_SERVICE_ROLE_KEY"),
+      /secrets\.(SUPABASE_SERVICE_ROLE_KEY|PF_REVALIDATE_SECRET|PF_DOADOR_CPF_HASH_SALT)/.test(JSON.stringify(job)),
     )
-    assert.deepEqual(comServiceRole.map(([nome]) => nome).sort(), ["ingest-camara", "ingest-news", "ingest-rest", "ingest-tse"])
+    assert.deepEqual(comServiceRole.map(([nome]) => nome).sort(), [
+      "ingest-camara",
+      "ingest-news",
+      "ingest-rest",
+      "ingest-tse",
+      "revalidate",
+    ])
     for (const [nome, job] of comServiceRole) {
       assert.match(job.if ?? "", /github\.ref == 'refs\/heads\/main'/, nome)
     }
   })
 
-  it("o cabeçalho não afirma mais que o dispatch só roda a main", () => {
+  it("o cabeçalho diz o que o guard de ref protege e o que não protege", () => {
     assert.doesNotMatch(textoWorkflow, /Tanto workflow_dispatch quanto schedule executam somente o código da main/)
-    assert.match(textoWorkflow, /workflow_dispatch aceita\n# qualquer branch/)
+    assert.match(textoWorkflow, /workflow_dispatch aceita qualquer\n# branch/)
+    assert.match(textoWorkflow, /O que NÃO protege: uma\n# branch que edite este arquivo/)
   })
 
   it("Câmara: runner hospedado, só disparo manual, depois do REST", () => {
@@ -212,13 +219,33 @@ describe("agente local da Câmara", () => {
   const plist = readFileSync("scripts/camara-local/br.com.puxaficha.ingest-camara.plist.template", "utf8")
 
   it("roda a main num worktree destacado, sem scripts de instalação, com Node 24", () => {
-    assert.match(script, /fetch --quiet --no-tags origin "\+refs\/heads\/main:refs\/remotes\/origin\/main"/)
+    assert.match(script, /repo_url="https:\/\/github\.com\/thiago-salvador\/puxa-ficha\.git"/)
+    assert.match(script, /fetch --quiet --no-tags "\$repo_url" "\+refs\/heads\/main:refs\/remotes\/origin\/main"/)
+    assert.match(script, /git ls-remote "\$repo_url" refs\/heads\/main/)
     assert.match(script, /worktree add --quiet --detach "\$base\/repo" "\$sha"/)
     assert.match(script, /npm ci --ignore-scripts/)
     assert.match(script, /v24\.\*/)
-    assert.match(script, /npx tsx scripts\/ingest-all\.ts camara --skip-camara-validated/)
+    assert.match(script, /tsx="\.\/node_modules\/\.bin\/tsx"/)
+    assert.match(script, /"\$tsx" scripts\/ingest-all\.ts camara --skip-camara-validated/)
+    assert.doesNotMatch(script, /\bnpx\b(?! --no-install)/)
     assert.match(script, /PF_COLETA_EXECUCAO="\$execucao"/)
     assert.match(script, /trap limpar EXIT/)
+  })
+
+  it("avisa quando a main foi reescrita e confere a si mesmo contra a main", () => {
+    assert.match(script, /merge-base --is-ancestor "\$sha_anterior" "\$sha"/)
+    assert.match(script, /force-push/)
+    assert.match(script, /cmp -s "\$0" <\(git -C "\$repo" show "\$sha:\$caminho_launcher"\)/)
+    const iCmp = script.indexOf('cmp -s "$0"')
+    // Posições dos comandos, não do cabeçalho que os descreve.
+    assert.ok(iCmp > script.indexOf('remoto="$(git ls-remote'), "autoconferência depois de fixar o SHA")
+    assert.ok(iCmp < script.indexOf("\nnpm ci --ignore-scripts"), "autoconferência antes de instalar e rodar")
+  })
+
+  it("trava com pid e diretório de log sempre 700", () => {
+    assert.match(script, /echo "\$\$" >"\$trava\/pid"/)
+    assert.match(script, /kill -0 "\$pid_anterior"/)
+    assert.match(script, /chmod 700 "\$dir_log" "\$dir_estado"/)
   })
 
   it("exige credenciais em arquivo 600 fora do repo, com allowlist de chaves", () => {
@@ -233,6 +260,14 @@ describe("agente local da Câmara", () => {
     const doWorkflow = JSON.parse(/TAGS_JSON: >-\n\s+(\[.*\])/.exec(textoWorkflow)?.[1] ?? "null")
     assert.ok(Array.isArray(doWorkflow) && doWorkflow.length > 0)
     assert.deepEqual(doScript, doWorkflow)
+  })
+
+  it("instalador só instala o que está na main publicada", () => {
+    assert.match(instalador, /git ls-remote "\$repo_url" refs\/heads\/main/)
+    assert.match(instalador, /\[ "\$head_origem" = "\$sha_main" \] \|\| falhar/)
+    assert.match(instalador, /status --porcelain --untracked-files=all -- \./)
+    assert.match(instalador, /cmp -s "\$origem\/\$arquivo" <\(git -C "\$repo" show "\$sha_main:scripts\/camara-local\/\$arquivo"\)/)
+    assert.ok(instalador.indexOf("cmp -s") < instalador.indexOf("install -m 700"), "confere antes de copiar")
   })
 
   it("instalador só copia: recusa root e sudo, não carrega o agente", () => {
