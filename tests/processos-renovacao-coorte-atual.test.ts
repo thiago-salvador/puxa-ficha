@@ -36,7 +36,7 @@ import {
   selecionarAlvosVencendo,
   type Comunicacao,
 } from "../scripts/curadoria-processos-lote"
-import { validarRevisaoManual } from "../scripts/registrar-revisao-curadoria"
+import { entradaDaRevisao, validarRevisaoManual } from "../scripts/registrar-revisao-curadoria"
 
 const AGORA = Date.parse("2026-09-25T22:00:00Z")
 const DIA = 86_400_000
@@ -516,5 +516,19 @@ describe("revalidação compara só CNJ de URL publicável", () => {
     assert.deepEqual(cnjsPublicaveisDoTexto(`https://comunica.pje.jus.br/consulta?numeroProcesso=${d}`), [d])
     assert.deepEqual(cnjsPublicaveisDoTexto(`https://api-publica.datajud.cnj.jus.br/x?numeroProcesso=${d}`), [])
     assert.deepEqual(cnjsPublicaveisDoTexto(`motivo: numeroProcesso=${d}`), [])
+  })
+})
+
+describe("volume do recibo encontrado", () => {
+  it("conta as fontes publicáveis, não vale 1 fixo", () => {
+    const u1 = "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=50352510220234036100"
+    const u2 = "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00284895720064013400"
+    const revisao = validarRevisaoManual([
+      "--slug=x", "--frente=processos", "--data=2026-09-26", "--resultado=encontrado",
+      "--detalhe=orgaos: TRF1; jurisdicao: nacional; periodo: 2026; termos: nome", "--identidade=id-oficial",
+      "--identidade-url=https://cdn.tse.jus.br/x.zip", "--url=https://cdn.tse.jus.br/x.zip",
+      `--url=${u1}`, `--url=${u2}`, `--evidencia-publicavel=${u1}`, `--evidencia-publicavel=${u2}`, "--dry-run",
+    ])
+    assert.equal(entradaDaRevisao(revisao).volume, 2)
   })
 })
