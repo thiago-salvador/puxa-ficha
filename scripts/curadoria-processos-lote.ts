@@ -1703,6 +1703,16 @@ export async function pesquisarCandidato(
       })
       return true
     }
+    // Ambígua com CPF completo diferente colado a alguma menção: o aplicador
+    // não carrega confirmação editorial para esse CNJ (vai a revisão humana).
+    // A marca acumula entre comunicações do mesmo número.
+    const marcarAmbiguo = (numero: string, item: Comunicacao, registro: Record<string, unknown>): void => {
+      const destinatarios = (item.destinatarios ?? []).map((d) => String(d.nome ?? ""))
+      const divergente = ambiguos.get(numero)?.cpf_divergente === true
+        || cpfsRotuladosDoNome(djen.textosBrutos?.get(item.id) ?? "", nomeConsulta, destinatarios)
+          .some((r) => r.tipo === "completo" && r.digitos !== cpfCandidato.replace(/\D/g, ""))
+      ambiguos.set(numero, divergente ? { ...registro, cpf_divergente: true } : registro)
+    }
     const porCpf = (item: Comunicacao): string | null => djen.textosBrutos
       ? contextoPorCpfNoTexto(djen.textosBrutos.get(item.id) ?? "", nomeConsulta, cpfCandidato, (item.destinatarios ?? []).map((d) => String(d.nome ?? "")))
       : null
@@ -1715,7 +1725,7 @@ export async function pesquisarCandidato(
         encontrados.set(numero, { item, contexto: contextoCpf, polo: null })
         continue
       }
-      ambiguos.set(numero, {
+      marcarAmbiguo(numero, item, {
         numero_cnj: numero,
         tribunal: item.siglaTribunal ?? null,
         motivo: mencionaNomeNoTexto(item, nome)
@@ -1735,7 +1745,7 @@ export async function pesquisarCandidato(
       const cnj = cnjValido(numero)
       // Sem texto bruto (cache sanitizado) o descarte por CPF não rodou: nada vira achado.
       if (contexto && cnj && djen.textosBrutos) encontrados.set(numero, { item, contexto, polo })
-      else ambiguos.set(numero, {
+      else marcarAmbiguo(numero, item, {
         numero_cnj: numero,
         tribunal: item.siglaTribunal ?? null,
         motivo: contexto && cnj
