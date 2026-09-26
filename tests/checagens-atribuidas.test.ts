@@ -31,7 +31,7 @@ const baseCheck = (): AttributedFactCheck => ({
     adjacentTurns: ["Pergunta anterior.", "Resposta seguinte."],
     timecode: "12:34",
   },
-  publisher: "Agência Lupa",
+  publisher: "Lupa",
   assessmentOrigin: "publisher",
   originalLabel: "Falso",
   summary: "A checagem encontrou dados incompatíveis com a afirmação no recorte indicado.",
