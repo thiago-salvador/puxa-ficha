@@ -303,6 +303,23 @@ describe("descarte com parcial do nome invertida", () => {
   })
 })
 
+describe("ambígua com documento divergente colado ao nome é marcada para o aplicador", () => {
+  it("marca quando uma menção tem CPF completo diferente e outra não; não marca sem divergente", async () => {
+    const dest = [{ nome: NOME_UP, polo: "P" }]
+    const marcada = await pesquisar([{ id: 1, texto: `REU: ${NOME_UP}, CPF ${OUTRO}. Intime-se ${NOME_UP}, residente na comarca`, destinatarios: dest }])
+    assert.equal(marcada.classificacao, "bloqueado")
+    assert.equal(marcada.ocorrencias_ambiguas[0]?.cpf_divergente, true)
+    // Outra comunicação do mesmo processo sem divergente não apaga a marca.
+    const acumulada = await pesquisar([
+      { id: 1, texto: `REU: ${NOME_UP}, CPF ${OUTRO}. Intime-se ${NOME_UP}, residente na comarca`, destinatarios: dest },
+      { id: 2, texto: `Intime-se ${NOME_UP}, residente na comarca`, destinatarios: dest },
+    ])
+    assert.equal(acumulada.ocorrencias_ambiguas[0]?.cpf_divergente, true)
+    const limpa = await pesquisar([{ id: 1, texto: `Intime-se ${NOME_UP}, residente na comarca`, destinatarios: dest }])
+    assert.equal(limpa.ocorrencias_ambiguas[0]?.cpf_divergente, undefined)
+  })
+})
+
 describe("invariante 3: nome presente em qualquer forma normalizada, o item nunca some", () => {
   const nomes = Object.entries(RENDERIZACOES)
   const moldes = ["Intime-se {n}.", "Parte: {n}", "{n}, brasileiro", "Vistos. {n} requer."]

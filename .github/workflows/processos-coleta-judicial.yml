@@ -109,7 +109,7 @@ jobs:
                   falhas=$((falhas + 1))
                 else
                   tail -n 1 "$RUNNER_TEMP/aplicar-$modo.log" \
-                    | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const x=JSON.parse(s);console.log(JSON.stringify({inseridos:x.candidatos_inseridos,pulados:x.candidatos_pulados,readback:x.readback.conferidos,divergentes:x.readback.divergentes.length}))})' \
+                    | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const x=JSON.parse(s);const r=(x.revisao_humana||[]).length;if(r){const m=r+" CNJ com confirmação editorial foram para revisão humana; o recibo anterior desses alvos não foi renovado.";console.error("::warning::"+m);if(process.env.GITHUB_STEP_SUMMARY)require("node:fs").appendFileSync(process.env.GITHUB_STEP_SUMMARY,"- Revisão humana: "+m+" Alvos: "+[...new Set(x.revisao_humana.map(i=>i.slug))].join(", ")+"\n")}console.log(JSON.stringify({inseridos:x.candidatos_inseridos,pulados:x.candidatos_pulados,readback:x.readback.conferidos,divergentes:x.readback.divergentes.length,revisao_humana:r}))})' \
                     | sed "s/^/$modo aplicado: /" | tee -a "$RUNNER_TEMP/resumo-coleta.txt"
                 fi
               else

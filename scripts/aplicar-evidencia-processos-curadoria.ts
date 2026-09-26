@@ -24,6 +24,7 @@ import {
   type ProvaIdentidade,
 } from "./registrar-revisao-curadoria"
 import { supabase } from "./lib/supabase"
+import { registrarColetaOuFalhar, type EntradaColeta } from "./lib/coleta-log"
 import { normalizarTextoJudicial } from "./curadoria-processos-lote"
 import { stripAccents } from "../src/lib/strip-accents"
 
@@ -974,11 +975,7 @@ export function cnjsPublicaveisDoTexto(valor: string): string[] {
  * Recibo que só renovaria a data fica de fora.
  */
 export function filtrarMudancas(planos: PlanoRegistro[], existentes: LinhaExistentePreflight[]): PlanoRegistro[] {
-  const ultimo = new Map<string, LinhaExistentePreflight>()
-  for (const linha of existentes) {
-    const anterior = ultimo.get(linha.alvo)
-    if (!anterior || Date.parse(linha.executado_em ?? "") > Date.parse(anterior.executado_em ?? "")) ultimo.set(linha.alvo, linha)
-  }
+  const ultimo = ultimoReciboPorAlvo(existentes)
   return planos.filter((plano) => {
     const linha = ultimo.get(plano.slug)
     if (!linha) return true
@@ -989,6 +986,238 @@ export function filtrarMudancas(planos: PlanoRegistro[], existentes: LinhaExiste
   })
 }
 
+/**
+ * Último recibo de cada alvo. Empate de `executado_em` fica com a linha que
+ * vem depois (as linhas chegam por `id` ascendente).
+ */
+function ultimoReciboPorAlvo(existentes: LinhaExistentePreflight[]): Map<string, LinhaExistentePreflight> {
+  const ultimo = new Map<string, LinhaExistentePreflight>()
+  for (const linha of existentes) {
+    const anterior = ultimo.get(linha.alvo)
+    if (!anterior || Date.parse(linha.executado_em ?? "") >= Date.parse(anterior.executado_em ?? "")) ultimo.set(linha.alvo, linha)
+  }
+  return ultimo
+}
+
+export interface ConfirmacaoEditorial {
+  numero_cnj: string
+  confirmacao: "editorial"
+  decidido_por: string
+  decidido_em: string
+  motivo: string
+}
+
+export interface RevisaoHumana {
+  slug: string
+  numero_cnj: string
+  motivo: string
+}
+
+/** Quem pode registrar confirmação editorial de identidade. */
+export const DECISORES_EDITORIAIS: readonly string[] = ["Thiago Salvador"]
+
+function dataReal(valor: string): boolean {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(valor)) return false
+  const data = new Date(`${valor}T00:00:00Z`)
+  return !Number.isNaN(data.getTime()) && data.toISOString().slice(0, 10) === valor
+}
+
+/**
+ * Lê `confirmacao_editorial: [...]` do detalhe gravado (`revisao_em=...; ...; detalhe=<campos>`).
+ * Devolve `null` quando o campo existe mas não é válido (decisor fora da lista,
+ * data irreal, futura ou posterior à revisão do recibo): quem chama manda o
+ * alvo para revisão humana em vez de perder ou aceitar a confirmação em silêncio.
+ */
+export function confirmacoesEditoriaisDoDetalhe(
+  detalhe: string | null | undefined,
+  hoje: string = new Date().toISOString().slice(0, 10),
+): ConfirmacaoEditorial[] | null {
+  const texto = detalhe ?? ""
+  const interno = texto.split("; detalhe=").slice(1).join("; detalhe=")
+  const campo = /(?:^|; )confirmacao_editorial: (\[.*?\])(?=; [a-z_ ]+: |$)/.exec(interno)
+  if (!campo) return []
+  const revisaoEm = /^revisao_em=(\d{4}-\d{2}-\d{2})(?:;|$)/.exec(texto)?.[1]
+  if (!revisaoEm || !dataReal(revisaoEm)) return null
+  try {
+    const lista = JSON.parse(campo[1]) as unknown
+    if (!Array.isArray(lista)) return null
+    // Lista vazia é revogação explícita: a próxima linha sai sem confirmação.
+    if (lista.length === 0) return []
+    const validas = lista.filter((item): item is ConfirmacaoEditorial => {
+      if (!item || typeof item !== "object") return false
+      const c = item as Record<string, unknown>
+      return typeof c.numero_cnj === "string" && cnjValido(c.numero_cnj)
+        && c.confirmacao === "editorial"
+        && typeof c.decidido_por === "string" && DECISORES_EDITORIAIS.includes(c.decidido_por)
+        && typeof c.decidido_em === "string" && dataReal(c.decidido_em)
+        && c.decidido_em <= hoje && c.decidido_em <= revisaoEm
+        && typeof c.motivo === "string" && c.motivo.trim().length > 0 && !c.motivo.includes(";")
+    })
+    if (validas.length !== lista.length) return null
+    return validas.map(({ numero_cnj, confirmacao, decidido_por, decidido_em, motivo }) => ({ numero_cnj, confirmacao, decidido_por, decidido_em, motivo }))
+  } catch {
+    return null
+  }
+}
+
+const URL_DJEN_POR_NUMERO = "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso="
+
+/** Troca o valor de um campo do detalhe (`chave: valor`), mantendo os demais. */
+function comCampoDoDetalhe(detalhe: string, chave: string, valor: (atual: string) => string): string {
+  return detalhe.split(/; (?=[a-z_ ]+: )/).map((parte) => {
+    const separador = parte.indexOf(": ")
+    return separador >= 0 && parte.slice(0, separador) === chave ? `${chave}: ${valor(parte.slice(separador + 2))}` : parte
+  }).join("; ")
+}
+
+/** Busca que não fecha o acervo: não sustenta carregar uma confirmação. */
+function buscaSemConclusao(plano: PlanoRegistro, candidato: RegistroEvidencia): boolean {
+  const busca = candidato.busca
+  return plano.resultado === "erro"
+    || plano.args.includes("--identidade=nao-confirmada")
+    || busca.conferencia_cpf === "indisponivel_cache_sanitizado"
+    || busca.teto_publico_atingido === true
+    || Number(busca.total_api ?? 0) >= 10_000
+    || busca.completo !== true
+}
+
+/**
+ * Confirmação editorial (decisão humana registrada no recibo) sobrevive à
+ * renovação automática:
+ * - toda confirmação válida do último recibo é regravada na linha nova, provada
+ *   pela coleta ou não, para não se perder quando a coleta deixar de provar;
+ * - CNJ que a coleta nova prova segue como a coleta diz: a confirmação nunca
+ *   rebaixa nem muda resultado ou evidências de um recibo provado;
+ * - CNJ confirmado que a coleta não prova é carregado: entra como evidência
+ *   publicável, sai das ambíguas, e o resultado passa a `encontrado`;
+ * - o alvo vai a revisão humana (nenhuma linha nova) quando a coleta traz
+ *   prova contra a confirmação (homônimo descartado ou documento completo
+ *   diferente colado ao nome), quando a busca não fecha o acervo (erro,
+ *   identidade não confirmada, cache sem texto bruto, teto público, busca
+ *   incompleta), quando a coleta não acha o nome (`vazio_confirmado`) ou
+ *   quando a confirmação gravada é inválida.
+ */
+export function preservarConfirmacaoEditorial(
+  planos: PlanoRegistro[],
+  candidatos: ReadonlyMap<string, RegistroEvidencia>,
+  existentes: LinhaExistentePreflight[],
+  hoje?: string,
+): { planos: PlanoRegistro[]; revisaoHumana: RevisaoHumana[] } {
+  const ultimo = ultimoReciboPorAlvo(existentes)
+  const revisaoHumana: RevisaoHumana[] = []
+  const saida: PlanoRegistro[] = []
+  for (const plano of planos) {
+    const linha = ultimo.get(plano.slug)
+    const confirmacoes = linha ? confirmacoesEditoriaisDoDetalhe(linha.detalhe, hoje) : []
+    if (confirmacoes === null) {
+      revisaoHumana.push({ slug: plano.slug, numero_cnj: "", motivo: "confirmacao_editorial invalida no ultimo recibo" })
+      continue
+    }
+    const candidato = candidatos.get(plano.slug)
+    if (confirmacoes.length === 0 || !candidato) {
+      saida.push(plano)
+      continue
+    }
+    const provados = new Set(candidato.processos.map((p) => String(p.numero_cnj ?? "")))
+    const pendentes = confirmacoes.filter((c) => !provados.has(c.numero_cnj))
+    const descartados = new Set(candidato.homonimos_descartados.map((h) => String(h.numero_cnj ?? "")))
+    const divergentes = new Set((candidato.ocorrencias_ambiguas ?? [])
+      .filter((o) => o.cpf_divergente === true).map((o) => String(o.numero_cnj ?? "")))
+    const semConclusao = buscaSemConclusao(plano, candidato)
+    const bloqueios = pendentes.flatMap((c): RevisaoHumana[] => {
+      if (descartados.has(c.numero_cnj) || divergentes.has(c.numero_cnj)) {
+        return [{ slug: plano.slug, numero_cnj: c.numero_cnj, motivo: "coleta nova traz documento divergente colado ao nome" }]
+      }
+      if (semConclusao) return [{ slug: plano.slug, numero_cnj: c.numero_cnj, motivo: "busca nova sem conclusao sobre o acervo" }]
+      if (plano.resultado === "vazio_confirmado") {
+        return [{ slug: plano.slug, numero_cnj: c.numero_cnj, motivo: "coleta nova nao achou o nome no acervo" }]
+      }
+      return []
+    })
+    if (bloqueios.length > 0) {
+      revisaoHumana.push(...bloqueios)
+      continue
+    }
+    const cnjsPendentes = new Set(pendentes.map((c) => c.numero_cnj))
+    const urls = pendentes.map((c) => `${URL_DJEN_POR_NUMERO}${c.numero_cnj.replace(/\D/g, "")}`)
+    const resultado: ResultadoRegistro = pendentes.length > 0 ? "encontrado" : plano.resultado
+    const args = plano.args.map((arg) => {
+      if (arg.startsWith("--resultado=")) return argumento("resultado", resultado)
+      if (!arg.startsWith("--detalhe=")) return arg
+      const detalhe = comCampoDoDetalhe(arg.slice("--detalhe=".length), "ocorrencias_ambiguas", (atual) => {
+        const lista = JSON.parse(atual) as Array<Record<string, unknown>>
+        return JSON.stringify(lista.filter((o) => !cnjsPendentes.has(String(o.numero_cnj ?? ""))))
+      })
+      // Todas as confirmações válidas, provadas ou não: a próxima rodada precisa delas.
+      return argumento("detalhe", `${detalhe}; confirmacao_editorial: ${JSON.stringify(confirmacoes)}`)
+    })
+    for (const url of urls) {
+      if (!args.includes(argumento("url", url))) args.push(argumento("url", url))
+      if (!args.includes(argumento("evidencia-publicavel", url))) args.push(argumento("evidencia-publicavel", url))
+    }
+    validarRevisaoManual([...args, "--dry-run"])
+    saida.push({ ...plano, resultado, args })
+  }
+  return { planos: saida, revisaoHumana }
+}
+
+/**
+ * Fonte do recibo de controle que marca alvo parado em revisão humana. Fica
+ * fora de `FONTES` e do catálogo de frescor de propósito: não é coleta e não
+ * pode esconder a idade do recibo judicial. A matriz de cobertura a lê pela
+ * família "processos" só enquanto está pendente (`indeterminado`).
+ */
+export const FONTE_REVISAO_HUMANA = "processos-revisao-humana"
+
+export interface DecisaoRevisaoHumana {
+  numero_cnj: string
+  decisao: "mantido" | "retirado"
+}
+
+/**
+ * Fechamento de uma revisão humana: recibo final `nao_aplicavel` na mesma
+ * fonte de controle, que passa a ser o último do alvo e tira a pendência da
+ * matriz. A decisão em si (manter ou retirar o CNJ) vai para o recibo judicial
+ * pelo registrador; este recibo só registra que a revisão fechou e como.
+ */
+export function entradaFechamentoRevisaoHumana(
+  slug: string,
+  decisoes: DecisaoRevisaoHumana[],
+  decididoPor: string,
+  decididoEm: string,
+  hoje: string = new Date().toISOString().slice(0, 10),
+): EntradaColeta {
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error("fechamento: slug invalido")
+  if (decisoes.length === 0) throw new Error("fechamento: ao menos uma decisao por CNJ")
+  for (const d of decisoes) {
+    if (!cnjValido(d.numero_cnj)) throw new Error(`fechamento: CNJ invalido: ${d.numero_cnj}`)
+    if (d.decisao !== "mantido" && d.decisao !== "retirado") throw new Error("fechamento: decisao deve ser mantido ou retirado")
+  }
+  if (new Set(decisoes.map((d) => d.numero_cnj)).size !== decisoes.length) throw new Error("fechamento: CNJ repetido")
+  if (!DECISORES_EDITORIAIS.includes(decididoPor)) throw new Error("fechamento: decisor fora da lista")
+  if (!dataReal(decididoEm) || decididoEm > hoje) throw new Error("fechamento: data de decisao invalida ou futura")
+  return {
+    fonte: FONTE_REVISAO_HUMANA,
+    alvo: slug,
+    resultado: "nao_aplicavel",
+    volume: 0,
+    detalhe: `motivo: revisao humana fechada; decidido_por: ${decididoPor}; decidido_em: ${decididoEm}; itens: ${JSON.stringify(decisoes.map(({ numero_cnj, decisao }) => ({ numero_cnj, decisao })))}`,
+  }
+}
+
+/** Um recibo de controle por alvo em revisão humana (sem CPF; CNJ e motivo). */
+export function entradasRevisaoHumana(revisao: RevisaoHumana[]): EntradaColeta[] {
+  const porAlvo = new Map<string, RevisaoHumana[]>()
+  for (const item of revisao) porAlvo.set(item.slug, [...(porAlvo.get(item.slug) ?? []), item])
+  return [...porAlvo].map(([alvo, itens]) => ({
+    fonte: FONTE_REVISAO_HUMANA,
+    alvo,
+    resultado: "indeterminado",
+    volume: 0,
+    detalhe: `motivo: confirmacao editorial parada em revisao humana; itens: ${JSON.stringify(itens.map(({ numero_cnj, motivo }) => ({ numero_cnj, motivo })))}`,
+  }))
+}
+
 async function linhasExistentesPreflight(slugs: string[]): Promise<LinhaExistentePreflight[]> {
   const linhas: LinhaExistentePreflight[] = []
   for (let inicio = 0; ; inicio += TAMANHO_PAGINA_PREFLIGHT) {
@@ -996,6 +1225,8 @@ async function linhasExistentesPreflight(slugs: string[]): Promise<LinhaExistent
       .from("coleta_log")
       .select("id,alvo,resultado,detalhe,executado_em,execucao,candidato_id,url,volume")
       .eq("fonte", FONTE_CURADORIA)
+      // Só o recibo por candidato daquele alvo: é o que o readback e o site leem.
+      .eq("escopo", "candidato")
       .in("alvo", slugs)
       .order("id", { ascending: true })
       .range(inicio, inicio + TAMANHO_PAGINA_PREFLIGHT - 1)
@@ -1091,18 +1322,31 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
   const opcoes = lerOpcoes(argv)
   const bruto = JSON.parse(readFileSync(opcoes.evidence, "utf8")) as unknown
   const evidencia = validarEvidencia(bruto)
-  const planos = criarPlanos(evidencia)
+  const planosCriados = criarPlanos(evidencia)
+  let planos = planosCriados
 
   // Todos os planos ja foram validados antes desta bifurcacao.
   if (opcoes.somenteMudancas && !evidencia.coorte_atual) throw new Error("--somente-mudancas exige evidencia da coorte atual")
+  // Renovação da coorte atual: a confirmação editorial do último recibo de cada
+  // alvo sobrevive; alvo com prova contra ela vai a revisão humana, sem linha nova.
+  let revisaoHumana: RevisaoHumana[] = []
+  let existentesIniciais: LinhaExistentePreflight[] = []
+  if (evidencia.coorte_atual && (opcoes.apply || opcoes.somenteMudancas)) {
+    existentesIniciais = await linhasExistentesPreflight(planos.map((plano) => plano.slug))
+    const candidatos = new Map(evidencia.lotes.flatMap((lote) => lote.candidatos).map((candidato) => [candidato.slug, candidato]))
+    const preservado = preservarConfirmacaoEditorial(planos, candidatos, existentesIniciais)
+    planos = preservado.planos
+    revisaoHumana = preservado.revisaoHumana
+  }
   if (!opcoes.apply && opcoes.somenteMudancas) {
     // Único dry-run que lê o banco: precisa do último recibo de cada alvo.
-    const mudancas = filtrarMudancas(planos, await linhasExistentesPreflight(planos.map((plano) => plano.slug)))
+    const mudancas = filtrarMudancas(planos, existentesIniciais)
     console.log(JSON.stringify({
       modo: "dry-run-somente-mudancas",
       evidence: opcoes.evidence,
       coorte_atual: evidencia.coorte_atual,
-      candidatos_validados: planos.length,
+      candidatos_validados: planosCriados.length,
+      revisao_humana: revisaoHumana,
       mudancas: mudancas.map((plano) => ({ slug: plano.slug, resultado: plano.resultado, args: [...plano.args, "--dry-run"] })),
     }, null, 2))
     return
@@ -1111,6 +1355,11 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
     const selecionados = planos.slice(0, opcoes.limit ?? planos.length)
     console.log(JSON.stringify({
       modo: "dry-run",
+      // Este modo não lê o banco: os planos saem sem a confirmação editorial do
+      // último recibo e podem divergir do --apply.
+      aviso: evidencia.coorte_atual
+        ? "confirmacao editorial nao avaliada neste modo; use --dry-run --somente-mudancas para ver o plano que o --apply grava"
+        : null,
       evidence: opcoes.evidence,
       coorte_atual: evidencia.coorte_atual ?? null,
       contagem_por_resultado: planos.reduce<Record<string, number>>((acc, plano) => {
@@ -1146,15 +1395,21 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
     for (const plano of preflight.pendentes) {
       await registrarRevisao([...plano.args, "--apply"])
     }
+    // Alvo parado em revisão humana ganha recibo de controle: a matriz vê a
+    // pendência e o recibo judicial anterior fica intacto.
+    for (const entrada of entradasRevisaoHumana(revisaoHumana)) {
+      await registrarColetaOuFalhar(entrada)
+    }
     const readback = await readbackRecibos(opcoes.somenteMudancas ? preflight.pendentes : planos)
     console.log(JSON.stringify({
       modo: "apply",
       backup: backupPath,
-      candidatos_validados: planos.length,
+      candidatos_validados: planosCriados.length,
       candidatos_pulados: preflight.equivalentes.length,
       candidatos_inseridos: preflight.pendentes.length,
       lotes: evidencia.lotes.length,
       readback,
+      revisao_humana: revisaoHumana,
     }))
     if (readback.divergentes.length > 0) process.exitCode = 1
   } finally {

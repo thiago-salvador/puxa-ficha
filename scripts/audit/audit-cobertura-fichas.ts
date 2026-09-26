@@ -182,7 +182,9 @@ const FAMILIES_BY_SOURCE: Record<string, readonly CoverageFamily[]> = {
   "votos_candidato": ["votos_candidato"], "votos": ["votos_candidato"], "votacoes": ["votos_candidato"], "camara-votacoes": ["votos_candidato"], "destaques-votacoes": ["votos_candidato"], "senado-votacoes": ["votos_candidato"],
   "gastos_parlamentares": ["gastos_parlamentares"], "gastos-parlamentares": ["gastos_parlamentares"], "camara-gastos": ["gastos_parlamentares"], "senado-gastos": ["gastos_parlamentares"], "ceaps-senado": ["gastos_parlamentares"], "jarbas": ["gastos_parlamentares"],
   "gastos_executivo": ["gastos_executivo"], "gastos-executivo": ["gastos_executivo"], "transparencia": ["gastos_executivo"],
-  "processos": ["processos"], "processos-curadoria": ["processos"],
+  // Revisão humana pendente da confirmação editorial: recibo `indeterminado`
+  // mais novo que o judicial, então a célula fica pendente até a revisão.
+  "processos": ["processos"], "processos-curadoria": ["processos"], "processos-revisao-humana": ["processos"],
   "sites_tse": ["sites_tse"], "sites-tse": ["sites_tse"], "candidate-sites-tse": ["sites_tse"], "tse-sites": ["sites_tse"],
   "chapa_vice": ["chapa_vice"], "chapa-vice": ["chapa_vice"], "chapa": ["chapa_vice"], "chapas": ["chapa_vice"], "tse-chapas": ["chapa_vice"],
 }
@@ -419,6 +421,8 @@ export function adaptLatestReceipts(rows: LatestReceiptRow[], profiles: Coverage
     if (result === "publicado" && !(typeof row.volume === "number" && row.volume > 0)) { reject("publicado sem volume positivo"); continue }
     if (!["encontrado", "publicado"].includes(result) && typeof row.volume === "number" && row.volume !== 0) { reject("resultado sem volume zero coerente"); continue }
     if (families.length === 0) { ignoredPartialReceipts++; continue }
+    // Revisão humana fechada não é estado da célula: só a pendente (indeterminado) conta.
+    if (fonte === "processos-revisao-humana" && result !== "indeterminado") { ignoredPartialReceipts++; continue }
     const detail = receiptDetail(row.detalhe)
     const incoming: Receipt = {
       resultado: result,

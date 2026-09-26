@@ -182,6 +182,7 @@
     "data:link-check-fontes:revalidar": "tsx scripts/link-check-pontos-atencao.ts --dry-run --fail-on-dead --fail-on-sem-substancia --fail-on-morte-suspeita --gate-somente-publicos",
     "data:link-check-fontes": "tsx scripts/link-check-pontos-atencao.ts --apply",
     "data:curadoria:registrar": "tsx scripts/registrar-revisao-curadoria.ts",
+    "data:curadoria:fechar-revisao": "tsx scripts/fechar-revisao-humana-processos.ts",
     "data:curadoria:processos:lote": "tsx scripts/curadoria-processos-lote.ts",
     "audit:cobertura": "tsx scripts/audit/coverage-report.ts",
     "audit:cobertura-fichas": "node --import tsx scripts/audit/audit-cobertura-fichas.ts",
