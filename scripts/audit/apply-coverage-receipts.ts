@@ -20,8 +20,9 @@
  *
  * `--incluir-abertos` grava também os recibos `erro`/`indeterminado` da mesma
  * entrada (fonte que não respondeu, prova que não fechou), por ficha e só para
- * família aplicável e ainda aberta segundo os recibos atuais; nunca por cima de
- * uma prova vigente nem de uma prova da mesma rodada.
+ * família aplicável. Família com prazo em dias (parlamentar) não recebe recibo
+ * aberto por cima de prova vigente; família sem prazo (histórico) sempre
+ * recebe, e o recibo aberto posterior derruba a prova na régua.
  */
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
@@ -30,6 +31,7 @@ import { publicFamilyRowCount } from "./lib/coverage-source-proof"
 import {
   adaptLatestReceipts,
   buildCoverageMatrix,
+  familyWithoutFreshnessSla,
   receiptFamilies,
   type CoverageFamily,
   type CoverageProfile,
@@ -172,7 +174,10 @@ export function planOpenReceipts(
     if (seen.has(key)) { reject("recibo aberto duplicado para a mesma ficha e fonte"); continue }
     const cell = buildCoverageMatrix([profile], [], currentJoins).cells.find((item) => item.familia === familia)
     if (!cell?.aplicavel) { reject(`${familia} não se aplica à ficha`); continue }
-    if (cell.estado === "publicado" || cell.estado === "vazio_confirmado") { reject(`${familia} já fechada por prova vigente`); continue }
+    // Família com prazo (parlamentar): a prova vigente só cai pelo prazo; uma
+    // rodada sem acesso à fonte não a apaga. Família sem prazo (histórico):
+    // o recibo aberto sempre entra, senão divergência nova ficaria escondida.
+    if (!familyWithoutFreshnessSla(familia) && (cell.estado === "publicado" || cell.estado === "vazio_confirmado")) { reject(`${familia} já fechada por prova vigente dentro do prazo`); continue }
     seen.add(key)
     planned.push({ fonte, escopo: "candidato", alvo, candidato_id: text(profile.id)!, resultado, volume: 0, url: text(row.url), detalhe: JSON.stringify(detail), familia })
   }

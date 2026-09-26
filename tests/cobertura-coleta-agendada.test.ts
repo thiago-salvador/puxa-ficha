@@ -63,9 +63,12 @@ describe("prova parlamentar agendada: falha vira recibo honesto", () => {
 describe("workflow cobertura-coleta-agendada", () => {
   it("agenda histórico semanal e parlamentares duas vezes por semana (SLA de 9 dias)", () => {
     assert.match(workflow, /cron: "23 5 \* \* 0"/)
-    assert.match(workflow, /cron: "43 6 \* \* 1,4"/)
+    assert.match(workflow, /cron: "43 3 \* \* 1,4"/)
     assert.match(workflow, /github\.event\.schedule == '23 5 \* \* 0'/)
-    assert.match(workflow, /github\.event\.schedule == '43 6 \* \* 1,4'/)
+    assert.match(workflow, /github\.event\.schedule == '43 3 \* \* 1,4'/)
+    // 03:43 + 90 min termina antes da coleta judicial das 09:17 no mesmo grupo.
+    assert.match(workflow, /timeout-minutes: 90/)
+    assert.doesNotMatch(workflow, /timeout-minutes: 150/)
   })
 
   it("dry-run por padrão; gravação só com variável no agendamento ou input no disparo", () => {
@@ -74,6 +77,11 @@ describe("workflow cobertura-coleta-agendada", () => {
     assert.equal((workflow.match(/--apply --execucao="gh:\$\{GITHUB_RUN_ID\}:\$\{GITHUB_RUN_ATTEMPT\}:/g) ?? []).length, 2)
     assert.equal((workflow.match(/abertos=\(--incluir-abertos --recibos-atuais=/g) ?? []).length, 2)
     assert.equal((workflow.match(/-f scripts\/audit\/coverage-receipts-snapshot\.sql/g) ?? []).length, 2)
+  })
+
+  it("gravar exige a lista canônica de anos", () => {
+    assert.match(workflow, /Exigir anos canônicos para gravar/)
+    assert.match(workflow, /canonicos="1996,1998,2000,2002,2004,2006,2008,2010,2012,2014,2016,2018,2020,2022,2024,2026"/)
   })
 
   it("mesmo grupo de concorrência do ingest, sem cancelar execução em curso", () => {

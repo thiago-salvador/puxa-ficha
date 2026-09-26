@@ -2,14 +2,24 @@ import assert from "node:assert/strict"
 import { describe, it } from "node:test"
 import { planCoverageReceipts, planOpenReceipts } from "../scripts/audit/apply-coverage-receipts"
 import { adaptLatestReceipts, buildCoverageMatrix, type CoverageProfile } from "../scripts/audit/audit-cobertura-fichas"
-import { parseAnos, selectConsultaCandMembers, sourceFailureReceipts } from "../scripts/audit/coletar-revisao-historico"
+import { mkdtempSync, rmSync, writeFileSync } from "node:fs"
+import { execFileSync } from "node:child_process"
+import { createHash } from "node:crypto"
+import { readFileSync } from "node:fs"
+import { tmpdir } from "node:os"
+import { join } from "node:path"
+import { parseAnos, runHistoricoRevision, selectConsultaCandMembers, sourceFailureReceipts } from "../scripts/audit/coletar-revisao-historico"
 import { validCoverageSourceProof } from "../scripts/audit/lib/coverage-source-proof"
 import {
+  HISTORICO_ANOS_CANONICOS,
   anchorIdentity,
+  anchorMatchesFicha,
+  fichaPessoa,
   belongsToIdentity,
   cargoKey,
   historicoRevisionVerdict,
   partyKey,
+  publicElectionResult,
   tseCandidacyFromCsv,
   type SeedCandidate,
   type SenadoSource,
@@ -45,7 +55,7 @@ function profile(historico: Record<string, unknown>[]): CoverageProfile {
   return { id: "cand-1", slug: "ana-ficticia", cargo_disputado: "Governador", estado: "SP", cargo_atual: null, ids: {}, historico }
 }
 
-const PUBLIC_2022 = { cargo: "Deputado Federal", cargo_canonico: "Deputado Federal", tipo_evento: "candidatura", periodo_inicio: 2022, periodo_fim: 2022, partido: "PCdoB", estado: "SP", proveniencia: "tse" }
+const PUBLIC_2022 = { cargo: "Deputado Federal", cargo_canonico: "Deputado Federal", tipo_evento: "candidatura", periodo_inicio: 2022, periodo_fim: 2022, partido: "PCdoB", estado: "SP", eleito_por: "voto direto", observacoes: "ELEITO POR QP (TSE 2022)", proveniencia: "tse" }
 const PUBLIC_2026 = { cargo: "Governador", cargo_canonico: "Governador", tipo_evento: "candidatura", periodo_inicio: 2026, periodo_fim: 2026, partido: "PCdoB", estado: "SP", proveniencia: "tse" }
 const SOURCE_2026 = () => row({ ANO_ELEICAO: "2026", SQ_CANDIDATO: "250000000099", DS_CARGO: "GOVERNADOR", DS_SIT_TOT_TURNO: "NÃO ELEITO" })
 
@@ -61,7 +71,7 @@ function verdict(historico: Record<string, unknown>[], sourceRows: TseCandidacyR
   return historicoRevisionVerdict({
     profile: profile(historico), candidate, identity,
     sourceRows: [anchor, ...sourceRows].filter((item) => belongsToIdentity(item, identity)),
-    anos: ANOS, tseRevisions: revisions, senado, checkedAt: CHECKED,
+    anos: ANOS, tseRevisions: revisions, senado, checkedAt: CHECKED, anosObrigatorios: ANOS,
   })
 }
 
@@ -86,6 +96,33 @@ describe("revisão do histórico: identidade ancorada no SQ do seed", () => {
     const anchors = new Map([["2026|250000000099", [a]], ["2022|250000000001", [b]]])
     const identity = anchorIdentity({ slug: "x", ids: { tse_sq_candidato: { "2026": "250000000099", "2022": "250000000001" } } }, anchors)
     assert.match(identity.ambiguous ?? "", /CPFs diferentes/)
+  })
+
+  it("até 2008 o SQ repete entre UFs: a âncora é a linha com o nascimento da ficha", () => {
+    const certa = row({ ANO_ELEICAO: "2006", SQ_CANDIDATO: "123", SG_UF: "SP", DS_CARGO: "DEPUTADO ESTADUAL" })
+    const outra = row({ ANO_ELEICAO: "2006", SQ_CANDIDATO: "123", SG_UF: "BA", DS_CARGO: "DEPUTADO ESTADUAL", NR_CPF_CANDIDATO: OUTRO_CPF, NM_CANDIDATO: "OUTRA PESSOA", DT_NASCIMENTO: "09/09/1960" })
+    const candidate: SeedCandidate = { slug: "ana-ficticia", ids: { tse_sq_candidato: { "2006": "123" } } }
+    const ficha = fichaPessoa({ ...profile([]), nome_completo: "Ana Fictícia Exemplo", data_nascimento: "1970-02-01" })
+    const semFicha = anchorIdentity(candidate, new Map([["2006|123", [certa, outra]]]))
+    assert.match(semFicha.ambiguous ?? "", /CPFs diferentes/)
+    const comFicha = anchorIdentity(candidate, new Map([["2006|123", [certa, outra]]]), ficha)
+    assert.equal(comFicha.ambiguous, null)
+    assert.deepEqual(comFicha.cpfs, [CPF])
+  })
+
+  it("âncora única de outra pessoa não certifica o histórico apontado", () => {
+    const errada = row({ ANO_ELEICAO: "2026", SQ_CANDIDATO: "250000000099", DS_CARGO: "GOVERNADOR", NR_CPF_CANDIDATO: OUTRO_CPF, NM_CANDIDATO: "OUTRA PESSOA", DT_NASCIMENTO: "09/09/1960" })
+    const ficha = fichaPessoa({ ...profile([]), nome_completo: "Ana Fictícia Exemplo", data_nascimento: "1970-02-01" })
+    assert.equal(anchorMatchesFicha(errada, ficha, null), false)
+    const identity = anchorIdentity(seed, new Map([["2026|250000000099", [errada]]]), ficha)
+    assert.match(identity.ambiguous ?? "", /não confere com nome e nascimento/)
+    const result = historicoRevisionVerdict({
+      profile: profile([PUBLIC_2026]), candidate: seed, identity, sourceRows: [errada],
+      anos: ANOS, tseRevisions: revisions, senado: null, checkedAt: CHECKED, anosObrigatorios: ANOS,
+    })
+    assert.equal(result.receipt.resultado, "indeterminado")
+    // UF do seed, quando existe, também precisa bater.
+    assert.equal(anchorMatchesFicha(SOURCE_2026(), fichaPessoa({ ...profile([]), nome_completo: NOME, data_nascimento: "1970-02-01" }), "RJ"), false)
   })
 
   it("cargo e partido comparam pela forma canônica", () => {
@@ -138,6 +175,43 @@ describe("revisão do histórico: veredito e prova", () => {
     assert.equal(result.receipt.resultado, "encontrado")
   })
 
+  it("sonda do revisor: candidatura que o TSE mostra eleita e a ficha como não eleita não certifica", () => {
+    const naoEleita = { ...PUBLIC_2022, eleito_por: "", observacoes: "Candidatura: NÃO ELEITO (TSE 2022)" }
+    const result = verdict([naoEleita, PUBLIC_2026], [row({})])
+    assert.equal(result.receipt.resultado, "indeterminado")
+    assert.match(result.review[0]?.motivo ?? "", /TSE mostra eleito/)
+    assert.equal(JSON.parse(result.receipt.detalhe).coverage_proof, undefined)
+    // O inverso: ficha diz eleito, TSE não.
+    const inverso = verdict([PUBLIC_2022, PUBLIC_2026], [row({ DS_SIT_TOT_TURNO: "NÃO ELEITO" })])
+    assert.match(inverso.review[0]?.motivo ?? "", /ficha mostra eleito/)
+    assert.equal(publicElectionResult("Candidatura: SUPLENTE (TSE 2018)"), false)
+    assert.equal(publicElectionResult("sem resultado"), null)
+  })
+
+  it("sonda do revisor: mandato PSDB onde o TSE diz outro partido, ou fim fora do termo, não certifica", () => {
+    const psdb = { ...PUBLIC_2022, tipo_evento: "mandato", periodo_inicio: 2023, periodo_fim: 2027, partido: "PSDB" }
+    const partido = verdict([PUBLIC_2022, psdb, PUBLIC_2026], [row({})])
+    assert.equal(partido.receipt.resultado, "indeterminado")
+    assert.match(partido.review[0]?.motivo ?? "", /partido do mandato/)
+    for (const periodo_fim of [2030, null]) {
+      const fim = verdict([PUBLIC_2022, { ...PUBLIC_2022, tipo_evento: "mandato", periodo_inicio: 2023, periodo_fim }, PUBLIC_2026], [row({})])
+      assert.equal(fim.receipt.resultado, "indeterminado", String(periodo_fim))
+      assert.match(fim.review[0]?.motivo ?? "", /fim do mandato/)
+    }
+  })
+
+  it("escopo de anos fora da lista canônica nunca certifica", () => {
+    const anchor = SOURCE_2026()
+    const identity = identityFor([anchor])
+    const result = historicoRevisionVerdict({
+      profile: profile([PUBLIC_2022, PUBLIC_2026]), candidate: seed, identity, sourceRows: [anchor, row({})],
+      anos: ANOS, tseRevisions: revisions, senado: null, checkedAt: CHECKED,
+    })
+    assert.equal(result.receipt.resultado, "indeterminado")
+    assert.match(result.motivo, /escopo parcial/)
+    assert.deepEqual([...HISTORICO_ANOS_CANONICOS], [1996, 1998, 2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024, 2026])
+  })
+
   it("mandato do Senado casa com o exercício datado e entra na prova", () => {
     const withSenado: SeedCandidate = { ...seed, ids: { ...seed.ids, senado: 1234 } }
     const senado: SenadoSource = {
@@ -169,6 +243,37 @@ describe("revisão do histórico: veredito e prova", () => {
   })
 })
 
+describe("coletor de revisão do histórico: rodada com pacote real", () => {
+  const header = "ANO_ELEICAO;SQ_CANDIDATO;NR_CPF_CANDIDATO;NM_CANDIDATO;DT_NASCIMENTO;DS_CARGO;SG_UF;SG_PARTIDO;DS_SIT_TOT_TURNO"
+  function pacote(dir: string, year: number, linhas: string[]) {
+    const csvPath = join(dir, `consulta_cand_${year}_BRASIL.csv`)
+    writeFileSync(csvPath, Buffer.from([header, ...linhas].join("\n") + "\n", "latin1"))
+    const zipPath = join(dir, `consulta_cand_${year}.zip`)
+    execFileSync("zip", ["-j", "-q", zipPath, csvPath])
+    return { family: "historico_politico", year, path: zipPath, url: `https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_${year}.zip`, sha256: createHash("sha256").update(readFileSync(zipPath)).digest("hex") }
+  }
+  const subject = { ...profile([PUBLIC_2026]), nome_completo: "Ana Fictícia Exemplo", data_nascimento: "1970-02-01" }
+  const filler = (year: number, n: number) => Array.from({ length: n }, (_, i) => `${year};9${i};;OUTRO ${i};01/01/1950;VEREADOR;AC;PT;NÃO ELEITO`)
+
+  it("ano com linhas abaixo do piso vira erro para toda ficha; acima do piso certifica", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "pf-hist-"))
+    try {
+      const anchor = `2026;250000000099;${CPF};${NOME};${NASC};GOVERNADOR;SP;PC do B;NÃO ELEITO`
+      const vazio = pacote(dir, 2024, [])
+      const cheio2026 = pacote(dir, 2026, [anchor, ...filler(2026, 3)])
+      const base = { anos: [2024, 2026], profiles: [subject], seed: [seed], checkedAt: CHECKED, senado: async () => ({ status: "erro" as const, url: "x", motivo: "não usado" }), anosObrigatorios: [2024, 2026] }
+      const curto = await runHistoricoRevision({ ...base, manifest: { assets: [vazio, cheio2026] }, minLinhasPorAno: 2 })
+      assert.equal(curto.receipts[0]?.resultado, "erro")
+      assert.match(JSON.parse(curto.receipts[0]!.detalhe).motivo, /2024: 0 linhas/)
+      const cheio2024 = pacote(dir, 2024, filler(2024, 3))
+      const ok = await runHistoricoRevision({ ...base, manifest: { assets: [cheio2024, cheio2026] }, minLinhasPorAno: 2 })
+      assert.equal(ok.receipts[0]?.resultado, "encontrado", JSON.stringify(ok.review))
+      const parcial = await runHistoricoRevision({ ...base, anosObrigatorios: undefined, manifest: { assets: [cheio2024, cheio2026] }, minLinhasPorAno: 2 })
+      assert.equal(parcial.receipts[0]?.resultado, "indeterminado")
+    } finally { rmSync(dir, { recursive: true, force: true }) }
+  })
+})
+
 describe("coletor de revisão do histórico: CLI puro", () => {
   it("anos exigem pleitos pares sem repetição", () => {
     assert.deepEqual(parseAnos("2026,2022"), [2022, 2026])
@@ -191,13 +296,19 @@ describe("coletor de revisão do histórico: CLI puro", () => {
     assert.equal(open.planned[0]?.resultado, "erro")
   })
 
-  it("recibo aberto não reabre célula fechada por prova vigente", () => {
+  it("histórico não tem prazo: recibo aberto posterior entra e derruba a prova (erro e indeterminado)", () => {
     const historico = [PUBLIC_2022, PUBLIC_2026]
     const subject = profile(historico)
-    const proof = verdict(historico, [row({})]).receipt
+    const proof = { ...verdict(historico, [row({})]).receipt, executado_em: "2026-09-20T10:00:00Z" }
+    assert.equal(cell(subject, [proof]).estado, "publicado")
     const falha = sourceFailureReceipts([subject], "pacote TSE ausente para 1998", ANOS, CHECKED, null)
-    const open = planOpenReceipts(falha, [subject], new Set(["tse-historico"]), [], [{ ...proof, executado_em: "2026-09-20T10:00:00Z" }])
-    assert.equal(open.planned.length, 0)
-    assert.match(open.rejected[0]?.motivo ?? "", /já fechada por prova vigente/)
+    const open = planOpenReceipts(falha, [subject], new Set(["tse-historico"]), [], [proof])
+    assert.equal(open.planned.length, 1)
+    assert.equal(cell(subject, [proof, ...falha]).estado, "erro")
+    const divergente = { ...verdict([{ ...PUBLIC_2022, partido: "PT" }, PUBLIC_2026], [row({})]).receipt, executado_em: CHECKED }
+    assert.equal(divergente.resultado, "indeterminado")
+    const reaberta = cell(subject, [proof, divergente])
+    assert.equal(reaberta.estado, "indeterminado")
+    assert.match(reaberta.motivo, /posterior à prova sem conclusão/)
   })
 })

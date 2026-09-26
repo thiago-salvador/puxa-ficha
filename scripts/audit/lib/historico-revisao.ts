@@ -30,6 +30,15 @@ import { publicFamilyPayloadSha256, publicFamilyRowCount } from "./coverage-sour
 
 export const HISTORICO_FONTE = "tse-historico"
 
+/**
+ * Anos que a revisão precisa ler para certificar. Escopo menor nunca fecha
+ * célula: uma candidatura num ano não lido seria sobra invisível.
+ */
+export const HISTORICO_ANOS_CANONICOS: readonly number[] = [1996, 1998, 2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024, 2026]
+
+/** Eleição em curso: a linha 2026 ainda não tem resultado a comparar. */
+const ELEICAO_EM_CURSO = 2026
+
 export type TseCandidacyRow = {
   year: number
   sq: string
@@ -46,8 +55,11 @@ export type TseCandidacyRow = {
 
 export type SeedCandidate = {
   slug: string
-  ids?: { tse_sq_candidato?: Record<string, string | number>; senado?: number | string | null } | null
+  ids?: { tse_sq_candidato?: Record<string, string | number>; tse_uf_candidatura?: Record<string, string>; senado?: number | string | null } | null
 }
+
+/** Nome e nascimento públicos da ficha, que a linha âncora precisa confirmar. */
+export type FichaPessoa = { nome: string | null; nascimento: string | null }
 
 export type AnchorIdentity = {
   anchors: number
@@ -151,14 +163,37 @@ export function seedAnchors(candidate: SeedCandidate): Array<{ year: number; sq:
 }
 
 /** Liga a ficha à pessoa no pacote oficial a partir dos SQ do seed. */
-export function anchorIdentity(candidate: SeedCandidate, anchorRows: ReadonlyMap<string, readonly TseCandidacyRow[]>): AnchorIdentity {
+export function fichaPessoa(profile: CoverageProfile): FichaPessoa {
+  const iso = /^(\d{4})-(\d{2})-(\d{2})/.exec(text(profile.data_nascimento))
+  return { nome: normalized(profile.nome_completo) || null, nascimento: iso ? `${iso[3]}/${iso[2]}/${iso[1]}` : null }
+}
+
+/**
+ * A linha âncora só vale se for a pessoa da ficha. Até 2008 o SQ_CANDIDATO é
+ * sequencial por UF, então `ano|SQ` sozinho acha gente de outro estado; e um
+ * SQ errado no seed acharia outra pessoa inteira. Nascimento igual confirma;
+ * sem nascimento de um dos lados, só o nome completo igual confirma. UF do
+ * seed, quando existe, também precisa bater.
+ */
+export function anchorMatchesFicha(row: TseCandidacyRow, ficha: FichaPessoa, seedUf: string | null): boolean {
+  if (seedUf && row.uf !== normalized(seedUf)) return false
+  const [nome, nascimento] = (row.nomeNascimento ?? "").split("|")
+  if (ficha.nascimento && nascimento) return ficha.nascimento === nascimento
+  return Boolean(ficha.nome && nome && ficha.nome === nome)
+}
+
+export function anchorIdentity(candidate: SeedCandidate, anchorRows: ReadonlyMap<string, readonly TseCandidacyRow[]>, ficha: FichaPessoa | null = null): AnchorIdentity {
   const anchors = seedAnchors(candidate)
-  const rows = anchors.flatMap(({ year, sq }) => anchorRows.get(`${year}|${sq}`) ?? [])
+  const found = anchors.flatMap(({ year, sq }) => anchorRows.get(`${year}|${sq}`) ?? [])
+  const rows = ficha
+    ? anchors.flatMap(({ year, sq }) => (anchorRows.get(`${year}|${sq}`) ?? []).filter((row) => anchorMatchesFicha(row, ficha, text(candidate.ids?.tse_uf_candidatura?.[String(year)]) || null)))
+    : found
   const cpfs = [...new Set(rows.map((row) => row.cpf).filter((cpf): cpf is string => Boolean(cpf)))].sort()
   const names = [...new Set(rows.map((row) => row.nomeNascimento).filter((key): key is string => Boolean(key)))].sort()
-  const latest = anchors.filter(({ year, sq }) => anchorRows.has(`${year}|${sq}`)).sort((a, b) => b.year - a.year)[0]
+  const latest = anchors.filter(({ year, sq }) => rows.some((row) => row.year === year && row.sq === sq)).sort((a, b) => b.year - a.year)[0]
   let ambiguous: string | null = null
-  if (anchors.length && !rows.length) ambiguous = "SQ do seed ausente no pacote oficial"
+  if (anchors.length && !found.length) ambiguous = "SQ do seed ausente no pacote oficial"
+  else if (anchors.length && !rows.length) ambiguous = "linha do SQ do seed não confere com nome e nascimento da ficha"
   else if (cpfs.length > 1) ambiguous = "SQ do seed apontam para CPFs diferentes"
   else if (!cpfs.length && names.length !== 1) ambiguous = "sem CPF e sem par único nome + nascimento nas âncoras"
   return {
@@ -212,6 +247,22 @@ function record(value: unknown): Record<string, unknown> | null {
   return value && typeof value === "object" && !Array.isArray(value) ? value as Record<string, unknown> : null
 }
 
+/**
+ * Resultado que a linha pública declara. O ingest escreve `<resultado> (TSE
+ * ano)` para eleito e `Candidatura: <resultado> (TSE ano)` para o resto;
+ * null quando a linha não declara resultado legível.
+ */
+export function publicElectionResult(observacoes: unknown): boolean | null {
+  const match = /^(Candidatura:\s*)?(.+?)\s*\(TSE \d{4}\)\s*$/.exec(text(observacoes))
+  if (!match) return null
+  return !match[1] && parseEleitoStatus(match[2] ?? "").eleito
+}
+
+/** Duração do mandato pelo cargo; o fim público aceita o ano de posse do sucessor. */
+function mandateTerm(cargo: string): number {
+  return cargo === "SENADOR" ? 8 : 4
+}
+
 const PRESIDENCIAL = new Set(["PRESIDENTE", "VICE-PRESIDENTE"])
 
 function sameUf(publicUf: string, sourceUf: string, cargo: string): boolean {
@@ -236,8 +287,11 @@ export function historicoRevisionVerdict(input: {
   tseRevisions: readonly HistoricoSourceRevision[]
   senado: SenadoSource | null
   checkedAt: string
+  /** Anos exigidos para certificar; padrão: a lista canônica. */
+  anosObrigatorios?: readonly number[]
 }): HistoricoRevisionResult {
   const { profile, candidate, identity, sourceRows, anos, tseRevisions, senado, checkedAt } = input
+  const anosObrigatorios = input.anosObrigatorios ?? HISTORICO_ANOS_CANONICOS
   const slug = text(profile.slug)
   const candidateId = text(profile.id)
   const publicRows = (Array.isArray(profile.historico) ? profile.historico : []).map(record).filter((row): row is Record<string, unknown> => Boolean(row))
@@ -258,13 +312,13 @@ export function historicoRevisionVerdict(input: {
 
   const needsSenado = Boolean(text(candidate?.ids?.senado)) || publicRows.some((row) => normalized(row.proveniencia) === "SENADO")
   if (needsSenado && senado?.status === "erro") return receipt("erro", `Senado não respondeu: ${senado.motivo}`)
-  if (!candidate || identity.anchors === 0) {
-    review.push({ slug, tipo: "identidade", motivo: "sem SQ do seed que ancore a pessoa no pacote oficial" })
-    return receipt("indeterminado", "identidade sem âncora oficial")
-  }
   if (identity.ambiguous) {
     review.push({ slug, tipo: "identidade", motivo: identity.ambiguous })
     return receipt("indeterminado", `identidade ambígua: ${identity.ambiguous}`)
+  }
+  if (!candidate || identity.anchors === 0) {
+    review.push({ slug, tipo: "identidade", motivo: "sem SQ do seed que ancore a pessoa no pacote oficial" })
+    return receipt("indeterminado", "identidade sem âncora oficial")
   }
 
   const bySource = candidacies(sourceRows.filter((row) => scopeYears.has(row.year) || !scopeYears.size))
@@ -304,6 +358,11 @@ export function historicoRevisionVerdict(input: {
       if (!source) { review.push({ slug, tipo: "linha_sem_registro_oficial", motivo: "candidatura sem registro equivalente no TSE", ...item }); continue }
       const partido = partyKey(row.partido)
       if (!partido || !source.partidos.has(partido)) { review.push({ slug, tipo: "linha_diverge", motivo: "partido difere do registro TSE", ...item }); continue }
+      if (ano < ELEICAO_EM_CURSO) {
+        const declared = publicElectionResult(row.observacoes)
+        if (declared === null) { review.push({ slug, tipo: "linha_diverge", motivo: "candidatura sem resultado eleitoral legível", ...item }); continue }
+        if (declared !== source.eleito) { review.push({ slug, tipo: "linha_diverge", motivo: source.eleito ? "TSE mostra eleito e a ficha não" : "ficha mostra eleito e o TSE não", ...item }); continue }
+      }
       used.add(source.key)
       matched++
       continue
@@ -311,6 +370,11 @@ export function historicoRevisionVerdict(input: {
     // Mandato de proveniência TSE: a fonte que ele cita é a eleição do cargo.
     const election = [...bySource.values()].find((entry) => entry.eleito && !used.has(`mandato:${entry.key}`) && entry.cargo === cargo && sameUf(uf, entry.uf, cargo) && (entry.year === ano - 1 || entry.year === ano))
     if (!election) { review.push({ slug, tipo: "linha_sem_registro_oficial", motivo: "mandato sem eleição equivalente no TSE", ...item }); continue }
+    const partidoMandato = partyKey(row.partido)
+    if (!partidoMandato || !election.partidos.has(partidoMandato)) { review.push({ slug, tipo: "linha_diverge", motivo: "partido do mandato difere da eleição no TSE", ...item }); continue }
+    const fim = numberOrNull(row.periodo_fim)
+    const fimEsperado = election.year + mandateTerm(cargo)
+    if (fim === null || (fim !== fimEsperado && fim !== fimEsperado + 1)) { review.push({ slug, tipo: "linha_diverge", motivo: "fim do mandato difere do termo da eleição no TSE", ...item }); continue }
     used.add(`mandato:${election.key}`)
     matched++
   }
@@ -335,6 +399,8 @@ export function historicoRevisionVerdict(input: {
     revisao: review.length,
   }
   if (review.length) return receipt("indeterminado", "histórico difere das fontes oficiais; itens enviados à revisão", { contagens: counts })
+  const faltando = anosObrigatorios.filter((year) => !scopeYears.has(year))
+  if (faltando.length) return receipt("indeterminado", `escopo parcial: anos ${faltando.join(",")} não lidos; revisão não certifica`, { contagens: counts, escopo_completo: false })
 
   const revisions: HistoricoSourceRevision[] = [...tseRevisions].sort((a, b) => (a.year ?? 0) - (b.year ?? 0) || a.url.localeCompare(b.url))
   if (senado?.status === "ok" && periods.length) revisions.push({ url: senado.url, sha256: senado.sha256 })

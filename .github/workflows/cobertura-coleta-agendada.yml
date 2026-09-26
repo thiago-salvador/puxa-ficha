@@ -12,8 +12,9 @@ name: Coleta agendada de prova de cobertura
 #   do perfil público (fontes camara-* , senado-*, ceaps-senado).
 #
 # Fonte que não respondeu vira recibo `erro` por ficha; prova que não fechou
-# vira `indeterminado`. Nenhuma falha vira vazio, e nenhum recibo aberto
-# reabre célula fechada por prova ainda vigente (o prazo da prova reabre). A API da Câmara costuma
+# vira `indeterminado`. Nenhuma falha vira vazio. No histórico (sem prazo em
+# dias) o recibo aberto sempre entra e derruba a prova anterior; nos
+# parlamentares a prova vigente só cai pelo prazo de 9 dias. A API da Câmara costuma
 # recusar IPs do GitHub Actions: nesse caso as fichas da Câmara recebem `erro`
 # honesto e só fecham numa rodada de outra rede com os mesmos scripts.
 #
@@ -27,7 +28,8 @@ on:
     # Histórico: fonte guiada por revisão oficial, sem SLA em dias; semanal.
     - cron: "23 5 * * 0"
     # Parlamentares: SLA de 9 dias na matriz; segunda e quinta deixam folga.
-    - cron: "43 6 * * 1,4"
+    # 03:43 + 90 min termina antes da coleta judicial (09:17) no mesmo grupo.
+    - cron: "43 3 * * 1,4"
   workflow_dispatch:
     inputs:
       familias:
@@ -109,6 +111,15 @@ jobs:
           set -euo pipefail
           umask 077
           node --import tsx scripts/audit/exportar-perfis-publicos.ts --out="$RUNNER_TEMP/perfis.json" | tee -a "$RUNNER_TEMP/resumo.txt"
+      - name: Exigir anos canônicos para gravar
+        if: env.COBERTURA_GRAVAR == 'true'
+        run: |
+          set -euo pipefail
+          canonicos="1996,1998,2000,2002,2004,2006,2008,2010,2012,2014,2016,2018,2020,2022,2024,2026"
+          if [ "$COBERTURA_ANOS" != "$canonicos" ]; then
+            echo "::error::Gravar exige a lista canônica de anos; recorte só em dry-run." >&2
+            exit 1
+          fi
       - name: Baixar consulta_cand do TSE
         id: tse
         continue-on-error: true
@@ -157,10 +168,10 @@ jobs:
   parlamentares:
     name: Prova parlamentar (Câmara e Senado)
     if: >-
-      (github.event_name == 'schedule' && github.event.schedule == '43 6 * * 1,4') ||
+      (github.event_name == 'schedule' && github.event.schedule == '43 3 * * 1,4') ||
       (github.event_name == 'workflow_dispatch' && inputs.familias != 'historico')
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
