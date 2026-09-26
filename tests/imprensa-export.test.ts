@@ -8,6 +8,7 @@ import {
   serializeImprensaJson,
   serializeImprensaLongCsv,
   IMPRENSA_AVISO,
+  exportHeaders,
 } from "@/lib/imprensa-export"
 
 function dataset(): ImprensaDataset {
@@ -56,9 +57,9 @@ function dataset(): ImprensaDataset {
 test("CSV preserva UTF-8, quebras, separadores e neutraliza fórmulas", () => {
   const csv = serializeImprensaCsv(dataset())
   assert.equal(csv.charCodeAt(0), 0xfeff)
-  assert.ok(csv.startsWith(`\ufeff# ${IMPRENSA_AVISO}\r\n`))
-  assert.match(csv, /"version","generated_at","cargo_filtro","uf_filtro"/)
-  assert.match(csv, /"1","2026-09-22T12:00:00\.000Z","Deputado Federal","SP"/)
+  assert.ok(csv.startsWith(`\ufeff"version","generated_at","cargo_filtro","uf_filtro"`))
+  assert.match(csv, /"version","generated_at","cargo_filtro","uf_filtro".*"aviso"/)
+  assert.match(csv, /"1","2026-09-22T12:00:00\.000Z","Deputado Federal","SP"[\s\S]*"Confira os dados na fonte original antes de publicar\."/)
   assert.match(csv, /"João, Silva\nJúnior"/)
   for (const dangerous of ["=SUM(A1)", "+SUM(A1)", "-SUM(A1)", "@SUM(A1)"]) {
     assert.equal(neutralizeCsvFormula(dangerous), `'${dangerous}`)
@@ -69,14 +70,22 @@ test("CSV preserva UTF-8, quebras, separadores e neutraliza fórmulas", () => {
   assert.match(csv, /sites_quantidade/)
   assert.match(csv, /processos_busca_estado/)
   assert.match(csv, /chapa_estado/)
+  const avisoHeader = exportHeaders("text/csv", "test.csv", dataset()).get("X-Aviso-Dados")
+  assert.ok(avisoHeader)
+  assert.match(avisoHeader, /^[\x00-\x7F]+$/)
+  assert.equal(decodeURIComponent(avisoHeader), IMPRENSA_AVISO)
 })
 
 test("JSON mantém filtros, data e distinção null/zero", () => {
-  const parsed = JSON.parse(serializeImprensaJson(dataset()))
+  const value = dataset()
+  value.rows[0].chapa.snapshotEm = "2026-09-26T00:00:00.000Z"
+  const parsed = JSON.parse(serializeImprensaJson(value))
   assert.deepEqual(parsed.filters, { cargo: "Deputado Federal", uf: "SP" })
   assert.equal(parsed.generatedAt, "2026-09-22T12:00:00.000Z")
   assert.equal(parsed.aviso, IMPRENSA_AVISO)
   assert.equal(parsed.rows[0].processos.quantidade, null)
+  assert.equal(parsed.rows[0].chapa.snapshotEm, "2026-09-26T00:00:00.000Z")
+  assert.match(parsed.rows[0].chapa.snapshotEm, /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/)
   assert.equal("ocorrencias" in parsed.rows[0].sites, false)
   assert.equal("ocorrencias" in parsed.rows[0].processos, false)
   assert.deepEqual(parsed.rows[0].chapa, {
@@ -86,15 +95,15 @@ test("JSON mantém filtros, data e distinção null/zero", () => {
     suplentes: [],
     fonteUrl: null,
     fonteSha256: null,
-    snapshotEm: null,
+    snapshotEm: "2026-09-26T00:00:00.000Z",
   })
 })
 
 test("longos publicam somente ocorrências comprovadas", () => {
   const value = dataset()
-  assert.match(serializeImprensaLongCsv(value, "sites"), /"version","generated_at","cargo_filtro","uf_filtro","slug"/)
-  assert.ok(serializeImprensaLongCsv(value, "sites").startsWith(`\ufeff# ${IMPRENSA_AVISO}\r\n`))
-  assert.match(serializeImprensaLongCsv(value, "sites"), /"1","2026-09-22T12:00:00\.000Z","Deputado Federal","SP","joao-da-silva"/)
+  assert.match(serializeImprensaLongCsv(value, "sites"), /"version","generated_at","cargo_filtro","uf_filtro","slug".*"aviso"/)
+  assert.ok(serializeImprensaLongCsv(value, "sites").startsWith(`\ufeff"version","generated_at"`))
+  assert.match(serializeImprensaLongCsv(value, "sites"), /"1","2026-09-22T12:00:00\.000Z","Deputado Federal","SP","joao-da-silva"[\s\S]*"Confira os dados na fonte original antes de publicar\."/)
   value.rows[0].processos.ocorrencias.push({ numero: "2", tipo: "civil", tribunal: "TJ", urlFonte: "", dataInicio: null, dataDecisao: null })
   assert.equal(buildImprensaLongRows(value, "sites").length, 1)
   assert.equal(buildImprensaLongRows(value, "processos").length, 1)

@@ -109,7 +109,7 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
         </form>
 
         {alertsEnabled && (
-          <section className={styles.notice} aria-labelledby="imprensa-alertas-title">
+          <section id="alertas" className={styles.notice} aria-labelledby="imprensa-alertas-title">
             <h2 id="imprensa-alertas-title" className="text-lg font-semibold text-foreground">Alertas por cargo e UF</h2>
             <div className="mb-4"><p>Escolha o recorte para receber um resumo das mudanças nas fichas publicadas. Os candidatos incluídos podem mudar entre envios. A assinatura exige confirmação por email e pode ser gerenciada ou cancelada a qualquer momento.</p></div>
             <AlertCohortSubscribe initialCargo={filters.cargo ?? undefined} initialUf={filters.uf} senadoEnabled={isSenadoEnabled()} />

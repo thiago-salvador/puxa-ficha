@@ -7,9 +7,8 @@ function read(relativePath: string): string {
   return readFileSync(relativePath, "utf8")
 }
 
-// /imprensa (Mesa de apuração) e /colinha declaram `robots: { index: false }`
-// no próprio metadata (ver docs/imprensa.md: "página é pública por link") e por
-// isso ficam fora do sitemap por design — não é um esquecimento. A colinha
+// A Sala em /imprensa é indexável. A Mesa em /imprensa/mesa e /colinha
+// declaram `robots: { index: false }` e ficam fora do sitemap. A colinha
 // segue no menu e no rodapé porque tem OG/Twitter completos e recursos de
 // compartilhamento (WhatsApp, imagem, impressão), sinal de que é feita para
 // ser descoberta; só o índice de busca que ela dispensa.
@@ -26,25 +25,29 @@ describe("descoberta de /colinha e /deputados/[uf]", () => {
     assert.doesNotMatch(footer, /href: "\/imprensa"/)
   })
 
-  test("imprensa e colinha declaram noindex no próprio metadata", () => {
-    const imprensa = read("src/app/(site)/imprensa/page.tsx")
+  test("Sala é indexável; Mesa, páginas auxiliares e colinha declaram noindex", () => {
+    const sala = read("src/app/(site)/imprensa/page.tsx")
+    const mesa = read("src/app/(site)/imprensa/mesa/page.tsx")
     const atualizacoes = read("src/app/(site)/imprensa/atualizacoes/page.tsx")
     const frescor = read("src/app/(site)/imprensa/frescor/page.tsx")
     const colinha = read("src/app/(site)/colinha/page.tsx")
 
-    for (const source of [imprensa, atualizacoes, frescor, colinha]) {
+    assert.doesNotMatch(sala, /robots:\s*\{\s*index:\s*false/)
+    assert.match(sala, /canonical:\s*["']\/imprensa["']/)
+    for (const source of [mesa, atualizacoes, frescor, colinha]) {
       assert.match(source, /robots:\s*\{\s*index:\s*false,\s*follow:\s*false/)
     }
   })
 
-  test("sitemap inclui /deputados/{uf} para toda UF válida e não inclui imprensa nem colinha", () => {
+  test("sitemap inclui Sala e /deputados/{uf}, sem Mesa ou colinha", () => {
     const sitemap = read("src/app/sitemap.ts")
     const ufs = getEstadoUFs()
 
     assert.ok(ufs.length >= 26, "getEstadoUFs deveria cobrir as 27 unidades federativas")
     assert.match(sitemap, /deputadosUrls[\s\S]*url:\s*`\$\{SITE_ORIGIN\}\/deputados\/\$\{uf\}`/)
     assert.match(sitemap, /\.\.\.deputadosUrls/)
-    assert.doesNotMatch(sitemap, /\/imprensa/)
+    assert.match(sitemap, /url:\s*`\$\{SITE_ORIGIN\}\/imprensa`/)
+    assert.doesNotMatch(sitemap, /\/imprensa\/mesa/)
     assert.doesNotMatch(sitemap, /\/colinha/)
   })
 

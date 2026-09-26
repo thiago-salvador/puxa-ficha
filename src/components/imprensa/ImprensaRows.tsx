@@ -23,7 +23,8 @@ function labelState(state: string): string {
   if (state === "erro") return "Erro na coleta"
   if (state === "desatualizado") return "Desatualizado"
   if (state === "contraditorio") return "Recibo contraditório"
-  if (state === "nao_aplicavel") return "Não se aplica ao Senado"
+  if (state === "nao_aplicavel") return "Não se aplica"
+  if (state === "indeferidos_comprovados") return "Suplentes indeferidos (comprovante do TSE)"
   if (state === "indisponivel") return "Fonte indisponível"
   if (state === "sem_dado") return "Sem dado"
   return "Indisponível"
@@ -57,8 +58,11 @@ export function ImprensaRows({ rows }: { rows: Row[] }) {
   const states = [...new Set(rows.flatMap((row) => [row.sites.estado, row.chapa.estado, row.chapa.suplentesEstado, row.processos.estado, row.processos.buscaEstado]))].sort()
   const summaries = [
     ["Sites", rows.map((row) => row.sites.estado)],
-    ["Chapa", rows.map((row) => row.chapa.estado)],
     ["Processos", rows.map((row) => row.processos.estado)],
+  ] as const
+  const chapaSummaries = [
+    ["Vice (Presidente e Governador)", rows.filter((row) => row.cargo === "Presidente" || row.cargo === "Governador").map((row) => row.chapa.estado)],
+    ["Suplentes (Senador)", rows.filter((row) => row.cargo === "Senador").map((row) => row.chapa.suplentesEstado)],
   ] as const
 
   return <>
@@ -69,6 +73,7 @@ export function ImprensaRows({ rows }: { rows: Row[] }) {
     </div>
     <div className={styles.summaryStates} aria-label="Resumo por estado do dado">
       {summaries.map(([title, values]) => <section key={title}><h3>{title}</h3><ul>{[...new Set(values)].sort().map((state) => <li key={state}><span>{labelState(state)}</span><strong>{values.filter((value) => value === state).length}</strong></li>)}</ul></section>)}
+      {chapaSummaries.map(([title, values]) => <section key={title}><h3>{title}</h3><ul>{[...new Set(values)].sort().map((state) => <li key={state}><span>{labelState(state)}</span><strong>{values.filter((value) => value === state).length}</strong></li>)}</ul></section>)}
     </div>
     <p className={styles.legend}><span data-key="published">■ Publicado</span><span data-key="partial">■ Cobertura parcial</span><span data-key="unknown">■ Sem dado ou em verificação</span></p>
     <p className={styles.count}>{filtered.length} de {rows.length} candidatos · cada estado se refere àquela fonte e campo.</p>
@@ -80,18 +85,18 @@ export function ImprensaRows({ rows }: { rows: Row[] }) {
           <tbody>{filtered.map((row) => <tr key={row.slug}>
             <td><Link className={styles.name} href={row.fichaUrl}>{row.nome}</Link><p className={styles.meta}>{[row.partido, row.cargo, row.uf].filter(Boolean).join(" · ")}</p></td>
             <td><Status state={row.sites.estado}>{row.sites.quantidade == null ? "quantidade não publicada" : `${row.sites.quantidade} URL${row.sites.quantidade === 1 ? "" : "s"}`}</Status>{row.sites.fonteUrl && <a className={`${styles.sourceLink} ${styles.meta}`} href={row.sites.fonteUrl} rel="noreferrer">Arquivo oficial do TSE de {fileDateLabel(row.sites.coletadoEm)}</a>}</td>
-            <td><Status state={row.chapa.estado}>{row.cargo === "Senador" ? row.chapa.suplentes.length ? `Suplentes: ${row.chapa.suplentes.join(", ")}` : row.chapa.suplentesEstado === "vazio_confirmado" ? "Não se aplica ao Senado" : `Suplentes: ${labelState(row.chapa.suplentesEstado)}` : row.chapa.viceNome ? `Vice: ${row.chapa.viceNome}` : "vice não publicado"}</Status>{row.chapa.fonteUrl && <a className={`${styles.sourceLink} ${styles.meta}`} href={row.chapa.fonteUrl} rel="noreferrer">Fonte oficial</a>}{row.chapa.fonteUrl && row.chapa.snapshotEm && <ImprensaCitationButton candidateName={row.nomeOriginal} section="chapa" slug={row.slug} sourceUrl={row.chapa.fonteUrl} collectedAt={dateLabel(row.chapa.snapshotEm)} collectionLabel="Arquivo oficial em" />}</td>
+            <td><Status state={row.chapa.estado}>{row.cargo === "Senador" ? row.chapa.suplentesEstado === "indeferidos_comprovados" ? "Comprovante do TSE registra dois suplentes indeferidos." : row.chapa.suplentes.length ? `Suplentes: ${row.chapa.suplentes.join(", ")}` : `Suplentes: ${labelState(row.chapa.suplentesEstado)}` : row.chapa.viceNome ? `Vice: ${row.chapa.viceNome}` : "vice não publicado"}</Status>{row.chapa.fonteUrl && <a className={`${styles.sourceLink} ${styles.meta}`} href={row.chapa.fonteUrl} rel="noreferrer">Fonte oficial</a>}{row.chapa.fonteUrl && row.chapa.snapshotEm && <ImprensaCitationButton candidateName={row.nomeOriginal} section="chapa" slug={row.slug} sourceUrl={row.chapa.fonteUrl} collectedAt={dateLabel(row.chapa.snapshotEm)} collectionLabel="Arquivo oficial em" publishedLabel={row.chapa.estado === "indeferidos_comprovados" ? labelState(row.chapa.estado) : undefined} />}</td>
             <td><Status state={row.processos.estado}>{row.processos.quantidade == null ? "quantidade não publicada" : `${row.processos.quantidade} registro${row.processos.quantidade === 1 ? "" : "s"}`}{(row.processos.quantidadeOmitida ?? 0) > 0 ? ` · ${row.processos.quantidadeOmitida} sem fonte oficial verificável` : ""}</Status>{(row.processos.estado === "publicado" || row.processos.estado === "cobertura_parcial") && row.processos.buscaEstado !== "encontrado" && <p className={styles.meta}>Busca: {labelState(row.processos.buscaEstado)}</p>}<p className={styles.meta}>Processo não equivale a condenação.</p></td>
-            <td><div className={styles.actions}><Link href={`${row.fichaUrl}?tab=geral`}>Ficha geral</Link><Link href={`${row.fichaUrl}?tab=justica`}>Justiça</Link><a href={`/api/card/${encodeURIComponent(row.slug)}?format=feed`} rel="noreferrer">Card público</a>{row.sites.fonteUrl && row.sites.coletadoEm && <ImprensaCitationButton candidateName={row.nomeOriginal} section="sites" slug={row.slug} sourceUrl={row.sites.fonteUrl} collectedAt={dateLabel(row.sites.coletadoEm)} />}</div><p className={styles.publishability}>{isPublishable(row) ? "publicável agora" : "exige conferência"}</p></td>
+            <td><div className={styles.actions}><Link href={`${row.fichaUrl}?tab=geral`}>Ficha geral</Link><Link href={`${row.fichaUrl}?tab=justica`}>Justiça</Link><a href={`/api/card/${encodeURIComponent(row.slug)}?format=feed&v=2`} rel="noreferrer">Card público</a>{row.sites.fonteUrl && row.sites.coletadoEm && <ImprensaCitationButton candidateName={row.nomeOriginal} section="sites" slug={row.slug} sourceUrl={row.sites.fonteUrl} collectedAt={dateLabel(row.sites.coletadoEm)} />}</div><p className={styles.publishability}>{isPublishable(row) ? "publicável agora" : "exige conferência"}</p></td>
           </tr>)}</tbody>
         </table>
       </div>
       <div className={styles.mobileCards}>{filtered.map((row) => <article className={styles.mobileCard} key={row.slug}>
         <header><Link className={styles.name} href={row.fichaUrl}>{row.nome}</Link><p className={styles.meta}>{[row.partido, row.cargo, row.uf].filter(Boolean).join(" · ")}</p><p className={styles.publishability}>{isPublishable(row) ? "publicável agora" : "exige conferência"}</p></header>
         <Status state={row.sites.estado}>{row.sites.quantidade == null ? "quantidade não publicada" : `${row.sites.quantidade} URL${row.sites.quantidade === 1 ? "" : "s"}`}</Status>
-        <Status state={row.chapa.estado}>{row.cargo === "Senador" ? row.chapa.suplentes.length ? `Suplentes: ${row.chapa.suplentes.join(", ")}` : row.chapa.suplentesEstado === "vazio_confirmado" ? "Não se aplica ao Senado" : `Suplentes: ${labelState(row.chapa.suplentesEstado)}` : row.chapa.viceNome ? `Vice: ${row.chapa.viceNome}` : "vice não publicado"}</Status>
+        <Status state={row.chapa.estado}>{row.cargo === "Senador" ? row.chapa.suplentesEstado === "indeferidos_comprovados" ? "Comprovante do TSE registra dois suplentes indeferidos." : row.chapa.suplentes.length ? `Suplentes: ${row.chapa.suplentes.join(", ")}` : `Suplentes: ${labelState(row.chapa.suplentesEstado)}` : row.chapa.viceNome ? `Vice: ${row.chapa.viceNome}` : "vice não publicado"}</Status>
         <Status state={row.processos.estado}>{row.processos.quantidade == null ? "quantidade não publicada" : `${row.processos.quantidade} registros`}</Status>
-        <div className={styles.actions}><Link href={`${row.fichaUrl}?tab=geral`}>Ficha geral</Link><Link href={`${row.fichaUrl}?tab=justica`}>Justiça</Link><a href={`/api/card/${encodeURIComponent(row.slug)}?format=feed`}>Card público</a>{row.sites.fonteUrl && row.sites.coletadoEm && <ImprensaCitationButton candidateName={row.nomeOriginal} section="sites" slug={row.slug} sourceUrl={row.sites.fonteUrl} collectedAt={dateLabel(row.sites.coletadoEm)} />}</div>
+        <div className={styles.actions}><Link href={`${row.fichaUrl}?tab=geral`}>Ficha geral</Link><Link href={`${row.fichaUrl}?tab=justica`}>Justiça</Link><a href={`/api/card/${encodeURIComponent(row.slug)}?format=feed&v=2`}>Card público</a>{row.chapa.fonteUrl && row.chapa.snapshotEm && <ImprensaCitationButton candidateName={row.nomeOriginal} section="chapa" slug={row.slug} sourceUrl={row.chapa.fonteUrl} collectedAt={dateLabel(row.chapa.snapshotEm)} collectionLabel="Arquivo oficial em" publishedLabel={row.chapa.estado === "indeferidos_comprovados" ? labelState(row.chapa.estado) : undefined} />}{row.sites.fonteUrl && row.sites.coletadoEm && <ImprensaCitationButton candidateName={row.nomeOriginal} section="sites" slug={row.slug} sourceUrl={row.sites.fonteUrl} collectedAt={dateLabel(row.sites.coletadoEm)} />}</div>
       </article>)}</div>
     </> : <p className={styles.notice} role="status">Nenhum candidato corresponde a estes filtros.</p>}
   </>
@@ -99,7 +104,7 @@ export function ImprensaRows({ rows }: { rows: Row[] }) {
 
 function isPublishable(row: Row): boolean {
   return [row.sites.estado].every((state) => state === "publicado" || state === "vazio_confirmado")
-    && [row.chapa.estado].every((state) => state === "publicado" || state === "nao_aplicavel")
-    && (row.cargo !== "Senador" || row.chapa.suplentesEstado === "publicado" || row.chapa.suplentesEstado === "vazio_confirmado")
+    && [row.chapa.estado].every((state) => state === "publicado" || state === "nao_aplicavel" || (row.cargo === "Senador" && state === "indeferidos_comprovados"))
+    && (row.cargo !== "Senador" || row.chapa.suplentesEstado === "publicado" || row.chapa.suplentesEstado === "indeferidos_comprovados")
     && [row.processos.estado].every((state) => state === "publicado" || state === "vazio_confirmado")
 }

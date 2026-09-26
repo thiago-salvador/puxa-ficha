@@ -4,6 +4,7 @@ const IMPRENSA_EXPORT_VERSION = "1"
 const IMPRENSA_EXPORT_MAX_BYTES = 4 * 1024 * 1024
 const IMPRENSA_EXPORT_TTL_SECONDS = 300
 export const IMPRENSA_AVISO = "Confira os dados na fonte original antes de publicar."
+export const IMPRENSA_AVISO_HEADER = encodeURIComponent(IMPRENSA_AVISO)
 
 const MAIN_COLUMNS = [
   "version",
@@ -82,10 +83,10 @@ function escapeCsvCell(value: Cell): string {
 }
 
 export function serializeImprensaCsv(dataset: ImprensaDataset): string {
+  const columns = [...MAIN_COLUMNS, "aviso"]
   const lines = [
-    `# ${IMPRENSA_AVISO}`,
-    MAIN_COLUMNS.map(escapeCsvCell).join(","),
-    ...dataset.rows.map((row) => mainCellsWithMetadata(dataset, row).map(escapeCsvCell).join(",")),
+    columns.map(escapeCsvCell).join(","),
+    ...dataset.rows.map((row) => [...mainCellsWithMetadata(dataset, row), IMPRENSA_AVISO].map(escapeCsvCell).join(",")),
   ]
   return `\ufeff${lines.join("\r\n")}\r\n`
 }
@@ -199,11 +200,10 @@ export function serializeImprensaLongCsv(
   const familyColumns = family === "sites"
     ? ["slug", "ordem", "url", "fonte_url", "fonte_sha256", "coletado_em"]
     : ["slug", "numero", "tipo", "tribunal", "url_fonte", "data_inicio", "data_decisao"]
-  const columns = ["version", "generated_at", "cargo_filtro", "uf_filtro", ...familyColumns]
+  const columns = ["version", "generated_at", "cargo_filtro", "uf_filtro", ...familyColumns, "aviso"]
   const lines = [
-    `# ${IMPRENSA_AVISO}`,
     columns.map(escapeCsvCell).join(","),
-    ...rows.map((row) => [dataset.version, dataset.generatedAt, dataset.filters.cargo, dataset.filters.uf, ...familyColumns.map((column) => (row as unknown as Record<string, Cell>)[column])].map(escapeCsvCell).join(",")),
+    ...rows.map((row) => [dataset.version, dataset.generatedAt, dataset.filters.cargo, dataset.filters.uf, ...familyColumns.map((column) => (row as unknown as Record<string, Cell>)[column]), IMPRENSA_AVISO].map(escapeCsvCell).join(",")),
   ]
   return `\ufeff${lines.join("\r\n")}\r\n`
 }
@@ -222,6 +222,7 @@ export function exportHeaders(
     "X-Imprensa-Dataset-Date": dataset.generatedAt,
     "X-Imprensa-Dataset-TTL": String(IMPRENSA_EXPORT_TTL_SECONDS),
     "X-Imprensa-Filters": JSON.stringify(dataset.filters),
+    "X-Aviso-Dados": IMPRENSA_AVISO_HEADER,
   })
 }
 

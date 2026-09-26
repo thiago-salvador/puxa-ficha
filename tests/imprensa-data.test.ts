@@ -25,6 +25,8 @@ test("fontes paginadas usam ordem estável antes de range", () => {
 })
 
 test("monta coorte, filtros e estados sem transformar ausência em zero", async () => {
+  const originalSenadoFlag = process.env.SENADO_ENABLED
+  process.env.SENADO_ENABLED = "false"
   __setImprensaDataDependenciesForTests({
     loadSlugs: async () => [{ slug: "ana" }, { slug: "bruno" }, { slug: "deputado" }, { slug: "senado" }],
     loadCandidates: async () => [
@@ -114,11 +116,15 @@ test("monta coorte, filtros e estados sem transformar ausência em zero", async 
     assert.equal(unfiltered.rows.find((row) => row.slug === "bruno")?.processos.estado, "desatualizado")
     assert.equal(unfiltered.rows.find((row) => row.slug === "bruno")?.processos.buscaEstado, "desatualizado")
     assert.deepEqual(unfiltered.rows.find((row) => row.slug === "senado")?.chapa.suplentes, ["Suplente Um", "Suplente Dois"])
+    assert.equal(unfiltered.rows.find((row) => row.slug === "senado")?.chapa.suplentesEstado, "publicado")
+    assert.equal(unfiltered.rows.find((row) => row.slug === "senado")?.chapa.estado, "publicado")
     assert.equal(unfiltered.rows.find((row) => row.slug === "deputado")?.processos.estado, "indeterminado")
     assert.equal(unfiltered.rows.find((row) => row.slug === "deputado")?.sites.quantidade, null)
   } finally {
     __setImprensaNowForTests(null)
     __setImprensaDataDependenciesForTests(null)
+    if (originalSenadoFlag === undefined) delete process.env.SENADO_ENABLED
+    else process.env.SENADO_ENABLED = originalSenadoFlag
   }
 })
 
@@ -165,6 +171,54 @@ test("nome formatado para exibição preserva o original do TSE para citação/e
     assert.equal(dataset.rows[0].nome, "Carlos Cley")
     assert.equal(dataset.rows[0].nomeOriginal, "CARLOS CLEY")
   } finally {
+    __setImprensaDataDependenciesForTests(null)
+  }
+})
+
+test("suplentes indeferidos preservam estado explícito, URL HTTPS e snapshot ISO", async () => {
+  const priorSenadoFlag = process.env.SENADO_ENABLED
+  process.env.SENADO_ENABLED = "true"
+  __setImprensaDataDependenciesForTests({
+    loadSlugs: async () => [{ slug: "senador-indeferidos" }, { slug: "senador-http" }, { slug: "senador-data-invalida" }, { slug: "senador-mates-http" }],
+    loadCandidates: async () => [
+      { id: "10", slug: "senador-indeferidos", nome_urna: "SENADOR INDEFERIDOS", cargo_disputado: "Senador", estado: "SP", partido_sigla: "ABC" },
+      { id: "11", slug: "senador-http", nome_urna: "SENADOR HTTP", cargo_disputado: "Senador", estado: "SP", partido_sigla: "ABC" },
+      { id: "12", slug: "senador-data-invalida", nome_urna: "SENADOR DATA INVALIDA", cargo_disputado: "Senador", estado: "SP", partido_sigla: "ABC" },
+      { id: "13", slug: "senador-mates-http", nome_urna: "SENADOR MATES HTTP", cargo_disputado: "Senador", estado: "SP", partido_sigla: "ABC" },
+    ],
+    loadProcesses: async () => [],
+    loadChapas: async () => [],
+    loadSites: async () => null,
+    loadSenadoRunningMates: async (slugs) => {
+      const data: Record<string, SenadoRunningMate[]> = {}
+      if (slugs.includes("senador-mates-http")) data["senador-mates-http"] = [
+        { ordem: 1, nome_urna: "SUPLENTE UM", situacao: null, fonte_url: "http://tse.jus.br/suplente/1", sq_candidato: "1001" },
+        { ordem: 2, nome_urna: "SUPLENTE DOIS", situacao: null, fonte_url: "http://tse.jus.br/suplente/2", sq_candidato: "1002" },
+      ]
+      return { data, absence: {
+        "senador-indeferidos": { fonte_url: "https://tse.jus.br/consulta.zip", fonte_sha256: "a".repeat(64), fonte_data: "26/09/2026", consulted_at: "2026-09-26T14:30:00.000Z" },
+        "senador-http": { fonte_url: "http://tse.jus.br/consulta.zip", fonte_sha256: "a".repeat(64), fonte_data: "26/09/2026", consulted_at: "2026-09-26T14:30:00.000Z" },
+        "senador-data-invalida": { fonte_url: "https://tse.jus.br/consulta.zip", fonte_sha256: "a".repeat(64), fonte_data: "31/02/2026", consulted_at: "2026-13-26T14:30:00.000Z" },
+      }, unavailable: false }
+    },
+  })
+  try {
+    const rows = (await getImprensaDataset({ cargo: null, uf: null })).rows
+    const row = rows.find((item) => item.slug === "senador-indeferidos")!
+    assert.equal(row.chapa.estado, "indeferidos_comprovados")
+    assert.equal(row.chapa.suplentesEstado, "indeferidos_comprovados")
+    assert.equal(row.chapa.fonteUrl, "https://tse.jus.br/consulta.zip")
+    assert.equal(row.chapa.snapshotEm, "2026-09-26T14:30:00.000Z")
+    assert.match(row.chapa.snapshotEm ?? "", /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/)
+    assert.equal(rows.find((item) => item.slug === "senador-http")?.chapa.estado, "indeterminado")
+    assert.equal(rows.find((item) => item.slug === "senador-http")?.chapa.suplentesEstado, "indeterminado")
+    assert.equal(rows.find((item) => item.slug === "senador-http")?.chapa.fonteUrl, null)
+    assert.equal(rows.find((item) => item.slug === "senador-data-invalida")?.chapa.estado, "indeterminado")
+    assert.equal(rows.find((item) => item.slug === "senador-mates-http")?.chapa.estado, "indeterminado")
+    assert.deepEqual(rows.find((item) => item.slug === "senador-mates-http")?.chapa.suplentes, [])
+  } finally {
+    if (priorSenadoFlag === undefined) delete process.env.SENADO_ENABLED
+    else process.env.SENADO_ENABLED = priorSenadoFlag
     __setImprensaDataDependenciesForTests(null)
   }
 })

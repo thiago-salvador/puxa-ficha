@@ -9,9 +9,40 @@ const requireNotice = (text, label) => {
   if (!normalize(text).includes(normalize(notice))) throw new Error(`AVISO_FAIL ${label}: aviso ausente`)
 }
 const fetchOk = async (path) => {
-  const response = await fetch(new URL(path, base))
+  const response = await fetch(new URL(path, base), { signal: AbortSignal.timeout(15_000) })
   if (!response.ok) throw new Error(`${path} respondeu ${response.status}`)
   return response
+}
+const parseCsv = (body) => {
+  const text = body.charCodeAt(0) === 0xfeff ? body.slice(1) : body
+  const rows = []
+  let row = []
+  let cell = ''
+  let quoted = false
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i]
+    if (quoted) {
+      if (char === '"' && text[i + 1] === '"') { cell += '"'; i++ }
+      else if (char === '"') quoted = false
+      else cell += char
+    } else if (char === '"') {
+      quoted = true
+    } else if (char === ',') {
+      row.push(cell)
+      cell = ''
+    } else if (char === '\r' || char === '\n') {
+      if (char === '\r' && text[i + 1] === '\n') i++
+      row.push(cell)
+      rows.push(row)
+      row = []
+      cell = ''
+    } else {
+      cell += char
+    }
+  }
+  if (quoted) throw new Error('AVISO_FAIL CSV: aspas sem fechamento')
+  if (row.length || cell) { row.push(cell); rows.push(row) }
+  return rows
 }
 
 // Superfícies 1 a 4: páginas com conteúdo HTML visível.
@@ -30,7 +61,7 @@ const mainResponse = await fetchOk('/api/imprensa/export?format=json')
 const main = await mainResponse.json()
 if (!Array.isArray(main.rows) || !main.rows[0]?.slug || !main.rows[0]?.nome) throw new Error('AVISO_FAIL: export sem candidato ou nome para conferir card e embed')
 const slug = encodeURIComponent(main.rows[0].slug)
-const cardResponse = await fetchOk(`/api/card/${slug}?format=feed`)
+const cardResponse = await fetchOk(`/api/card/${slug}?format=feed&v=2`)
 const card = Buffer.from(await cardResponse.arrayBuffer())
 let cardText
 try {
@@ -60,10 +91,14 @@ for (const path of exportPaths) {
 }
 for (const path of exportPaths) {
   const response = await fetchOk(`${path}?format=csv&cargo=Governador&uf=SP`)
+  const headerNotice = response.headers.get('x-aviso-dados')
+  if (!headerNotice || decodeURIComponent(headerNotice) !== notice) throw new Error(`AVISO_FAIL CSV ${path}: header HTTP`)
   const body = await response.text()
-  const withoutBom = body.charCodeAt(0) === 0xfeff ? body.slice(1) : body
-  const firstLine = withoutBom.split(/\r?\n/u, 1)[0]
-  if (firstLine !== `# ${notice}`) throw new Error(`AVISO_FAIL CSV ${path}`)
+  const [header, ...rows] = parseCsv(body)
+  if (!header || header.at(-1) !== 'aviso' || header[0] === `# ${notice}`) throw new Error(`AVISO_FAIL CSV ${path}: cabeçalho`)
+  for (const row of rows) {
+    if (row.length !== header.length || row.at(-1) !== notice) throw new Error(`AVISO_FAIL CSV ${path}: linha sem aviso`)
+  }
 }
 
 console.log('AVISO_OK 8/8')

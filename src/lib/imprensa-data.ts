@@ -26,8 +26,8 @@ export interface ImprensaRow {
   partido: string | null
   fichaUrl: string
   chapa: {
-    estado: "publicado" | "sem_dado" | "nao_aplicavel" | "indisponivel"
-    suplentesEstado: "publicado" | "vazio_confirmado" | "indeterminado" | "indisponivel" | "nao_aplicavel"
+    estado: "publicado" | "sem_dado" | "nao_aplicavel" | "indisponivel" | "indeferidos_comprovados" | "indeterminado"
+    suplentesEstado: "publicado" | "indeferidos_comprovados" | "indeterminado" | "indisponivel" | "nao_aplicavel"
     /** Formatado para exibição (title case); ver `viceNomeOriginal` para exportação. */
     viceNome: string | null
     /** Grafia original do TSE, preservada para exportação. */
@@ -141,6 +141,27 @@ function requireHttps(raw: unknown): string | null {
   } catch {
     return null
   }
+}
+
+function asIsoSnapshot(raw: unknown): string | null {
+  if (typeof raw !== "string") return null
+  const value = raw.trim()
+  const brDate = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(value)
+  let candidate = value
+  if (brDate) {
+    const day = Number(brDate[1])
+    const month = Number(brDate[2])
+    const year = Number(brDate[3])
+    const checked = new Date(Date.UTC(year, month - 1, day))
+    if (checked.getUTCFullYear() !== year || checked.getUTCMonth() !== month - 1 || checked.getUTCDate() !== day) return null
+    candidate = `${brDate[3]}-${brDate[2]}-${brDate[1]}T00:00:00.000Z`
+  }
+  const parsed = new Date(candidate)
+  return Number.isNaN(parsed.getTime()) ? null : parsed.toISOString()
+}
+
+function isSha256(value: unknown): value is string {
+  return typeof value === "string" && /^[a-f0-9]{64}$/i.test(value)
 }
 
 function defaultDependencies(): ImprensaDependencies {
@@ -311,7 +332,7 @@ function mapChapa(rows: ChapaRow[]): ImprensaRow["chapa"] {
   const row = rows[0]
   const fonteUrl = requireHttps(row.fonte_url)
   const fonteSha256 = typeof row.fonte_sha256 === "string" && /^[a-f0-9]{64}$/i.test(row.fonte_sha256) ? row.fonte_sha256 : null
-  const snapshotEm = typeof row.snapshot_em === "string" && !Number.isNaN(Date.parse(row.snapshot_em)) ? row.snapshot_em : null
+  const snapshotEm = asIsoSnapshot(row.snapshot_em)
   const viceNomeOriginal = typeof row.vice_nome_urna === "string" && row.vice_nome_urna.trim() ? row.vice_nome_urna.trim() : null
   if (row.identidade_status !== "confirmada" || row.vinculo_titular_status !== "confirmado" || !viceNomeOriginal || !fonteUrl || !fonteSha256 || !snapshotEm) {
     return { estado: "sem_dado", suplentesEstado: "nao_aplicavel", viceNome: null, viceNomeOriginal: null, suplentes: [], fonteUrl: null, fonteSha256: null, snapshotEm: null }
@@ -354,17 +375,35 @@ export async function getImprensaDataset(filters: ImprensaFilters): Promise<Impr
       const mates = result.data[candidate.slug] ?? []
       const absence = result.absence[candidate.slug]
       if (mates.length === 2) {
-        senateChapaBySlug.set(candidate.slug, {
+        const fonteUrl = requireHttps(mates[0].fonte_url)
+        const allSourcesHttps = mates.every((mate) => requireHttps(mate.fonte_url))
+        senateChapaBySlug.set(candidate.slug, fonteUrl && allSourcesHttps ? {
           estado: "publicado", suplentesEstado: "publicado", viceNome: null, viceNomeOriginal: null,
           suplentes: mates.map((mate) => formatDisplayName(mate.nome_urna)),
-          fonteUrl: mates[0].fonte_url, fonteSha256: null, snapshotEm: null,
+          fonteUrl, fonteSha256: null, snapshotEm: null,
+        } : {
+          estado: "indeterminado", suplentesEstado: "indeterminado", viceNome: null, viceNomeOriginal: null,
+          suplentes: [], fonteUrl: null, fonteSha256: null, snapshotEm: null,
         })
       } else if (result.unavailable) {
-        senateChapaBySlug.set(candidate.slug, { estado: "nao_aplicavel", suplentesEstado: "indisponivel", viceNome: null, viceNomeOriginal: null, suplentes: [], fonteUrl: null, fonteSha256: null, snapshotEm: null })
+        senateChapaBySlug.set(candidate.slug, { estado: "indisponivel", suplentesEstado: "indisponivel", viceNome: null, viceNomeOriginal: null, suplentes: [], fonteUrl: null, fonteSha256: null, snapshotEm: null })
       } else if (absence) {
-        senateChapaBySlug.set(candidate.slug, { estado: "nao_aplicavel", suplentesEstado: "vazio_confirmado", viceNome: null, viceNomeOriginal: null, suplentes: [], fonteUrl: absence.fonte_url, fonteSha256: absence.fonte_sha256 ?? null, snapshotEm: absence.fonte_data })
+        const fonteUrl = requireHttps(absence.fonte_url)
+        const fonteSha256 = isSha256(absence.fonte_sha256) ? absence.fonte_sha256 : null
+        const snapshotEm = asIsoSnapshot(absence.consulted_at)
+        const comprovado = Boolean(fonteUrl && fonteSha256 && snapshotEm)
+        senateChapaBySlug.set(candidate.slug, {
+          estado: comprovado ? "indeferidos_comprovados" : "indeterminado",
+          suplentesEstado: comprovado ? "indeferidos_comprovados" : "indeterminado",
+          viceNome: null,
+          viceNomeOriginal: null,
+          suplentes: [],
+          fonteUrl: comprovado ? fonteUrl : null,
+          fonteSha256: comprovado ? fonteSha256 : null,
+          snapshotEm: comprovado ? snapshotEm : null,
+        })
       } else {
-        senateChapaBySlug.set(candidate.slug, { estado: "nao_aplicavel", suplentesEstado: "indeterminado", viceNome: null, viceNomeOriginal: null, suplentes: [], fonteUrl: null, fonteSha256: null, snapshotEm: null })
+        senateChapaBySlug.set(candidate.slug, { estado: "indeterminado", suplentesEstado: "indeterminado", viceNome: null, viceNomeOriginal: null, suplentes: [], fonteUrl: null, fonteSha256: null, snapshotEm: null })
       }
     }
   }

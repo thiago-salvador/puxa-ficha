@@ -8,13 +8,8 @@ export function requireOk(response, label) {
   if (!response.ok) throw new Error(`${label} respondeu ${response.status}`)
 }
 
-export function decodeCsvFirstComment(body) {
-  const withoutBom = body.charCodeAt(0) === 0xfeff ? body.slice(1) : body
-  return withoutBom.split(/\r?\n/u, 1)[0]
-}
-
 export async function getJson(base, path, label = path) {
-  const response = await fetch(new URL(path, base))
+  const response = await fetch(new URL(path, base), { signal: AbortSignal.timeout(15_000) })
   requireOk(response, label)
   return { response, data: await response.json() }
 }

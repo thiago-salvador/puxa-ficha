@@ -1,7 +1,7 @@
 const baseArg = process.argv[2]
 if (!baseArg) throw new Error('Uso: node scripts/imprensa/recompute-numbers.mjs <base-url>')
 const base = new URL(baseArg)
-const response = await fetch(new URL('/api/imprensa/export?format=json', base))
+const response = await fetch(new URL('/api/imprensa/export?format=json', base), { signal: AbortSignal.timeout(15_000) })
 if (!response.ok) throw new Error(`Export respondeu ${response.status}`)
 const data = await response.json()
 if (typeof data.generatedAt !== 'string' || !Array.isArray(data.rows)) throw new Error('Export não cumpre o contrato atual')

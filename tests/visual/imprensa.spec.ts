@@ -117,6 +117,7 @@ test("Sala indexável apresenta os nove blocos, três tarefas e aviso", async ({
   const response = await page.goto("/imprensa")
   expect(response?.status()).toBe(200)
   await expect(page.getByRole("heading", { name: "Sala de imprensa" })).toBeVisible()
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /\/imprensa$/)
   const robots = page.locator('meta[name="robots"]')
   if (await robots.count()) await expect(robots).not.toHaveAttribute("content", /noindex/)
   const headerBox = await page.locator("header").first().boundingBox()
@@ -127,7 +128,7 @@ test("Sala indexável apresenta os nove blocos, três tarefas e aviso", async ({
   }
   await expect(page.getByText("Confira os dados na fonte original antes de publicar.")).toBeVisible()
   await expect(page.getByRole("link", { name: "Achar fonte sobre um candidato" })).toBeVisible()
-  await expect(page.getByRole("link", { name: "Baixar recorte" })).toBeVisible()
+  await expect(page.locator("nav[aria-label=\"Tarefas de imprensa\"] a[href=\"/api/imprensa/export?format=csv\"]")).toBeVisible()
   await expect(page.getByRole("link", { name: /atualizações/i }).first()).toBeVisible()
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 2)
   expect(overflow).toBe(false)

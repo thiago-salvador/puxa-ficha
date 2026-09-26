@@ -1,7 +1,7 @@
 import { requiredBaseUrl, requireOk } from './check-utils.mjs'
 
 const base = requiredBaseUrl('check-sala.mjs')
-const response = await fetch(new URL('/imprensa', base))
+const response = await fetch(new URL('/imprensa', base), { signal: AbortSignal.timeout(15_000) })
 requireOk(response, 'Sala')
 const html = await response.text()
 const ids = ['o-que-e', 'numeros', 'confianca', 'pautas', 'ferramentas', 'kit', 'contato', 'perguntas', 'atualizacoes']
