@@ -271,11 +271,16 @@ const ENTIDADES_HTML: Record<string, string> = {
   shy: "\u00AD", zwj: "\u200D", zwnj: "\u200C",
 }
 
+function codigoValido(n: number): boolean {
+  return Number.isInteger(n) && n >= 0 && n <= 0x10FFFF
+}
+
 /** Entidades HTML ("n.&ordm;&nbsp;", "&Eacute;", "&#201;", "&#x00C9;") viram os caracteres que representam. Uma passada. */
 export function decodificarEntidadesHtml(valor: string): string {
   return String(valor ?? "")
-    .replace(/&#(\d{1,6});/g, (_, n: string) => String.fromCodePoint(Number(n)))
-    .replace(/&#x([0-9a-f]{1,6});/gi, (_, h: string) => String.fromCodePoint(parseInt(h, 16)))
+    // Ponto de código acima de U+10FFFF não existe: a entidade fica crua.
+    .replace(/&#(\d{1,7});/g, (m, n: string) => codigoValido(Number(n)) ? String.fromCodePoint(Number(n)) : m)
+    .replace(/&#x([0-9a-f]{1,6});/gi, (m, h: string) => codigoValido(parseInt(h, 16)) ? String.fromCodePoint(parseInt(h, 16)) : m)
     .replace(/&([a-z])(acute|grave|circ|tilde|cedil|uml|ring);/gi, (_, letra: string) => letra)
     .replace(/&([a-z]+);/gi, (m, nome: string) => ENTIDADES_HTML[nome.toLowerCase()] ?? m)
     .replace(/\u00a0/g, " ")
@@ -1275,7 +1280,7 @@ const PAPEL_NAO_PARTE = /\b(?:ADVOGAD[OA]S?|ADV\b|OAB|PROCURADOR(?:A|ES|AS)?|REP
  * ("AJUIZADA POR X EM FACE DO MUNICÍPIO, DO PREFEITO NOME"): encerram a
  * herança de um papel não-parte anterior.
  */
-const PAPEL_DE_PARTE = /\b(?:EM FACE D[OAE]S?|EM DESFAVOR D[OAE]S?|CONTRA|(?:AJUIZAD|PROPOST|MOVID|INTERPOST|IMPETRAD|OFERECID|ATRAVESSAD)[OA] POR|EXEQTES?|EXECTD[OA]S?|REQTES?|REQD[OA]S?|RECTES?|RECD[OA]S?|APTES?|APD[OA]S?|AGTES?|AGD[OA]S?|IMPTES?|IMPD[OA]S?|EMBTES?|EMBD[OA]S?|RECLTES?|RECLD[OA]S?|AUTOR(?:A|ES|AS)?|REUS?|RE(?=\s*[:(])|REQUERENTES?|REQUERID[OA]S?|EXEQUENTES?|EXECUTAD[OA]S?|IMPETRANTES?|IMPETRAD[OA]S?|RECORRENTES?|RECORRID[OA]S?|APELANTES?|APELAD[OA]S?|AGRAVANTES?|AGRAVAD[OA]S?|EMBARGANTES?|EMBARGAD[OA]S?|RECLAMANTES?|RECLAMAD[OA]S?|INVESTIGAD[OA]S?|DENUNCIAD[OA]S?|ACUSAD[OA]S?|QUERELANTES?|QUERELAD[OA]S?|INTERESSAD[OA]S?|POLO (?:ATIVO|PASSIVO)|PARTES?|DEVEDOR(?:A|ES|AS)?|CREDOR(?:A|ES|AS)?|PACIENTES?|REPRESENTAD[OA]S?)\b|(?:AUTOR|REU|RE|REQUERENTE|REQUERID[OA]|EXEQUENTE|EXECUTAD[OA]|IMPETRANTE|IMPETRAD[OA]|RECORRENTE|RECORRID[OA]|APELANTE|APELAD[OA]|AGRAVANTE|AGRAVAD[OA]|EMBARGANTE|EMBARGAD[OA]|RECLAMANTE|RECLAMAD[OA]|PARTE)(?:\([A-Z,]{1,5}\))?\s*:/g
+const PAPEL_DE_PARTE = /\b(?:EM FACE D[OAE]S?|EM DESFAVOR D[OAE]S?|(?:DENUNCIA|QUEIXA(?:[- ]CRIME)?|AJUIZAD[OA]S?|AJUIZ(?:A|AM|OU|ARAM)|PROPOST[OA]S?|PROP(?:OE|OEM|OS|USERAM)|MOVID[OA]S?|MOV(?:E|EM|EU|ERAM)|OFERECID[OA]S?|OFERE(?:CE|CEM|CEU|CERAM)|INTERPOST[OA]S?|INTERP(?:OE|OEM|OS|USERAM)|IMPETRAD[OA]S?|IMPETR(?:A|AM|OU|ARAM))\s+CONTRA(?!-)|(?:AJUIZAD|PROPOST|MOVID|INTERPOST|IMPETRAD|OFERECID|ATRAVESSAD)[OA] POR|EXEQTES?|EXECTD[OA]S?|REQTES?|REQD[OA]S?|RECTES?|RECD[OA]S?|APTES?|APD[OA]S?|AGTES?|AGD[OA]S?|IMPTES?|IMPD[OA]S?|EMBTES?|EMBD[OA]S?|RECLTES?|RECLD[OA]S?|AUTOR(?:A|ES|AS)?|REUS?|RE(?=\s*[:(])|REQUERENTES?|REQUERID[OA]S?|EXEQUENTES?|EXECUTAD[OA]S?|IMPETRANTES?|IMPETRAD[OA]S?|RECORRENTES?|RECORRID[OA]S?|APELANTES?|APELAD[OA]S?|AGRAVANTES?|AGRAVAD[OA]S?|EMBARGANTES?|EMBARGAD[OA]S?|RECLAMANTES?|RECLAMAD[OA]S?|INVESTIGAD[OA]S?|DENUNCIAD[OA]S?|ACUSAD[OA]S?|QUERELANTES?|QUERELAD[OA]S?|INTERESSAD[OA]S?|POLO (?:ATIVO|PASSIVO)|PARTES?|DEVEDOR(?:A|ES|AS)?|CREDOR(?:A|ES|AS)?|PACIENTES?|REPRESENTAD[OA]S?)\b|(?:AUTOR|REU|RE|REQUERENTE|REQUERID[OA]|EXEQUENTE|EXECUTAD[OA]|IMPETRANTE|IMPETRAD[OA]|RECORRENTE|RECORRID[OA]|APELANTE|APELAD[OA]|AGRAVANTE|AGRAVAD[OA]|EMBARGANTE|EMBARGAD[OA]|RECLAMANTE|RECLAMAD[OA]|PARTE)(?:\([A-Z,]{1,5}\))?\s*:/g
 
 /**
  * Fim de cláusula: ". " fora de abreviação, linha em branco ou cabeçalho de
@@ -1321,8 +1326,12 @@ function mencaoEmPapelNaoParte(t: string, mencao: MencaoDoNome): boolean {
   return new RegExp(PAPEL_NAO_PARTE.source).test(corte >= 0 ? depois.slice(0, corte) : depois)
 }
 
-/** Papel de representação seguido do seu objeto ("ADVOGADO DA PARTE AUTORA"). */
-const PAPEL_COM_OBJETO = /\b(ADVOGAD[OA]S?|ADV|PROCURADOR(?:A|ES|AS)?|DEFENSOR(?:A|ES|AS)?|PATRON[OA]S?|CURADOR(?:A|ES|AS)?|REPRESENTANTE LEGAL)(\s*\([A-Z,]{1,5}\))?(\s+D[OAE]S?(?:\([A-Z,]{1,5}\))?\s+(?:PARTE\s+)?[A-Z]+(?:\([A-Z,]{1,5}\))?)/g
+/**
+ * Papel de representação seguido do seu objeto: até o ":" do rótulo
+ * ("ADVOGADO DO SEGUNDO REU:", "ADVOGADOS DOS RECORRENTES E RECORRIDOS:") ou,
+ * em prosa sem ":", uma palavra ("ADVOGADO DA PARTE AUTORA").
+ */
+const PAPEL_COM_OBJETO = /\b(ADVOGAD[OA]S?|ADV|PROCURADOR(?:A|ES|AS)?|DEFENSOR(?:A|ES|AS)?|PATRON[OA]S?|CURADOR(?:A|ES|AS)?|REPRESENTANTE LEGAL)(\s*\([A-Z,]{1,5}\))?(\s+D[OAE]S?\b[^:;\n]{0,60}:|\s+D[OAE]S?(?:\([A-Z,]{1,5}\))?\s+(?:PARTE\s+)?[A-Z]+(?:\([A-Z,]{1,5}\))?)/g
 
 /** Menções ao nome fora de papel não-parte: só elas podem carregar a prova que atribui o item. */
 export function mencoesLivresDoNome(texto: string, nomeCompleto: string, destinatarios: string[] = []): MencaoDoNome[] {
@@ -1402,7 +1411,8 @@ function parcialDoNome(texto: string, nomeCompleto: string, destinatarios: strin
   const n = normalizar(t)
   const primeiro = escaparRegex(tokens[0])
   const ultimo = escaparRegex(tokens[tokens.length - 1])
-  if (new RegExp(`\\b${primeiro}\\b.{0,40}\\b${ultimo}\\b`).test(n)) return true
+  // Nos dois sentidos: "CARLOS D. SILVA TESTE" e "SILVA TESTE, CARLOS D.".
+  if (new RegExp(`\\b${primeiro}\\b.{0,40}\\b${ultimo}\\b|\\b${ultimo}\\b.{0,40}\\b${primeiro}\\b`).test(n)) return true
   return tokens.slice(0, -1).some((tk, i) => tk.length > 2 && tokens[i + 1].length > 2 && n.includes(`${tk}${tokens[i + 1]}`))
 }
 

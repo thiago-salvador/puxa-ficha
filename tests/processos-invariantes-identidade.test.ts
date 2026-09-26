@@ -6,6 +6,8 @@ import {
   contextoPolitico,
   contextoPorCpfNoTexto,
   cpfCompativelNoTexto,
+  cpfDivergenteNoTexto,
+  decodificarEntidadesHtml,
   mencionaNomeNoTexto,
   normalizarTextoJudicial,
   pesquisarCandidato,
@@ -94,6 +96,9 @@ describe("normalização única", () => {
     const iDatajud = fonte.indexOf("export async function chaveDatajud(")
     const fDatajud = fonte.indexOf("\n}\n", iDatajud)
     const fora = (fonte.slice(0, inicio) + fonte.slice(fim)).replace(fonte.slice(iDatajud, fDatajud), "")
+    // Nenhuma normalização paralela: caixa alta e decomposição de acento só na função única.
+    assert.equal((fora.match(/\.to(?:Locale)?UpperCase\(/g) ?? []).length, 0, "caixa alta fora da normalização única")
+    assert.equal((fora.match(/\.normalize\(/g) ?? []).length, 0, "normalize() fora da normalização única")
     // Nenhuma outra retirada de acento, de tag ou decodificação de entidade.
     assert.equal((fora.match(/stripAccents\(/g) ?? []).length, 0, "stripAccents fora da normalização única")
     assert.equal((corpo.match(/stripAccents\(/g) ?? []).length, 1)
@@ -103,6 +108,22 @@ describe("normalização única", () => {
     // `normalizar` é a mesma base, sem pontuação.
     const normalizar = fonte.slice(fonte.indexOf("function normalizar(valor: unknown): string {"), fonte.indexOf("\n}\n", fonte.indexOf("function normalizar(valor: unknown): string {")))
     assert.match(normalizar, /normalizarTextoJudicial\(valor\)/)
+  })
+
+  it("o aplicador confere a prova com a mesma normalização", () => {
+    const fonte = readFileSync(new URL("../scripts/aplicar-evidencia-processos-curadoria.ts", import.meta.url), "utf8")
+    const i = fonte.indexOf("function normalizarProva(")
+    const corpo = fonte.slice(i, fonte.indexOf("\n}\n", i))
+    assert.match(corpo, /normalizarTextoJudicial\(valor\)/)
+    assert.doesNotMatch(corpo, /stripAccents|UpperCase|normalize\(/)
+  })
+
+  it("entidade numérica fora do Unicode fica crua e não lança erro", () => {
+    for (const e of ["&#xFFFFFF;", "&#x110000;", "&#1114112;", "&#9999999;"]) {
+      assert.equal(decodificarEntidadesHtml(`A${e}B`), `A${e}B`, e)
+      assert.doesNotThrow(() => normalizarTextoJudicial(`REU: ${e} CARLOS`), e)
+    }
+    assert.equal(decodificarEntidadesHtml("&#x10FFFF;").codePointAt(0), 0x10FFFF)
   })
 
   it("todas as renderizações normalizam para o nome", () => {
@@ -184,6 +205,10 @@ describe("invariante 2: papel não-parte perto do nome nunca gera encontrado", (
     // Família "papel DO/DA parte": a palavra de parte é objeto do papel.
     "ADVOGADO DO AUTOR:", "Advogado(s) do reclamante:", "Advogado da parte autora:", "PROCURADOR DO REU:",
     "Defensora da ré:", "ADVOGADOS DOS REQUERIDOS:", "Advogada do(a) exequente:",
+    // Objeto com mais de uma palavra, até o ":" do rótulo.
+    "ADVOGADO DO SEGUNDO REU:", "ADVOGADO DO 1º REU:", "PROCURADOR DO MUNICIPIO REU:", "ADVOGADOS DOS RECORRENTES E RECORRIDOS:",
+    // "CONTRA" fora da forma verbal não apresenta parte.
+    "INTIME-SE A TESTEMUNHA, ENTREGANDO-LHE A CONTRA-FE,", "NOMEIO PERITO, NA ACAO CONTRA O MUNICIPIO,",
   ]
   const recheio = [
     "",
@@ -264,6 +289,17 @@ describe("invariante 2: papel não-parte perto do nome nunca gera encontrado", (
       // O aplicador exige o nome no trecho salvo: todo achado o traz.
       for (const p of r.processos) assert.match(String(p.contexto_identidade), /CARLOS DA SILVA TESTE/, texto)
     }
+  })
+})
+
+describe("descarte com parcial do nome invertida", () => {
+  it("sobra do nome em ordem invertida (\"SILVA TESTE, CARLOS D.\") impede o descarte", () => {
+    for (const sobra of ["SILVA TESTE, CARLOS D.", "TESTE, CARLOS DA S.", "Sr. TESTE, CARLOS"]) {
+      const texto = `REU: ${NOME_UP}, CPF ${OUTRO}. Intime-se ${sobra}, residente na comarca`
+      assert.equal(cpfDivergenteNoTexto(texto, NOME, CPF, [NOME_UP]), false, sobra)
+    }
+    // Controle: sem a sobra, o divergente completo descarta.
+    assert.equal(cpfDivergenteNoTexto(`REU: ${NOME_UP}, CPF ${OUTRO}. Intime-se o reu, residente na comarca`, NOME, CPF, [NOME_UP]), true)
   })
 })
 

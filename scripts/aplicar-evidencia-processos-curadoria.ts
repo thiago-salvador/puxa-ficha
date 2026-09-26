@@ -24,6 +24,7 @@ import {
   type ProvaIdentidade,
 } from "./registrar-revisao-curadoria"
 import { supabase } from "./lib/supabase"
+import { normalizarTextoJudicial } from "./curadoria-processos-lote"
 import { stripAccents } from "../src/lib/strip-accents"
 
 const TOTAL_CANDIDATOS = 185
@@ -180,9 +181,9 @@ function normalizar(valor: string): string {
   return stripAccents(valor).toLowerCase()
 }
 
+/** Mesma normalização do coletor (`normalizarTextoJudicial`), sem pontuação. */
 function normalizarProva(valor: unknown): string {
-  return stripAccents(String(valor ?? ""))
-    .toUpperCase()
+  return normalizarTextoJudicial(valor)
     .replace(/[^A-Z0-9]+/g, " ")
     .replace(/\s+/g, " ")
     .trim()
