@@ -17,10 +17,10 @@
   "total_representacoes": 6,
   "itens": [
     {
-      "caso": "REP 25/2025: recurso contra o Conselho; identidade só pelo CPF (seed sem ids.camara)",
+      "caso": "REP 25/2025: recurso contra o Conselho; identidade pelo ids.camara do seed (156190, conferido na API da Câmara)",
       "id": "camara-rep-2563294-dep-156190",
       "slug": "tse-2026-210002547819",
-      "metodo_identidade": "cpf_tse_camara",
+      "metodo_identidade": "seed_ids_camara",
       "via_alvo": "nome_parlamentar",
       "fase": "recurso_apresentado",
       "data_fase": "2026-05-19",
@@ -31,7 +31,7 @@
       "caso": "REP 8/2023: vários alvos por nome civil; retirada pelo autor",
       "id": "camara-rep-2366795-dep-160575",
       "slug": "tse-2026-70002552490",
-      "metodo_identidade": "cpf_tse_camara",
+      "metodo_identidade": "seed_ids_camara",
       "via_alvo": "nome_civil",
       "fase": "retirada",
       "data_fase": "2023-06-12",
