@@ -501,7 +501,8 @@ describe("classificador puro (#136)", () => {
     // Recibos de sites e situacao TSE (20260924204852 e 20260924205031):
     // --gate PG17 mediu 402 + as mesmas 105 falhas = 507 migrations.
     // Dados no ar de 25/09 (20260925220000/0100/0200): --gate PG17 mediu 407 + 105 = 512.
-    assert.equal(manifesto.aplicadas_esperadas, 407)
+    // Quarentena ampliada de gastos (20260925221042): --gate PG17 mediu 408 + 105 = 513.
+    assert.equal(manifesto.aplicadas_esperadas, 408)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

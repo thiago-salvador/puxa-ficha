@@ -1,0 +1,71 @@
+name: Aplicar quarentena ampliada de gastos parlamentares
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: SHA de 40 caracteres já mergeado em main
+        required: true
+        type: string
+      previous_version:
+        description: Versão no topo do ledger antes desta migration (a anterior em ordem de arquivo)
+        required: true
+        default: '20260925220200'
+        type: string
+      mode:
+        description: Ensaio sem gravação ou aplicação
+        required: true
+        default: dry-run
+        type: choice
+        options:
+          - dry-run
+          - apply
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-db-migrations
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment: production
+    env:
+      PF_EXPECTED_SHA: ${{ inputs.expected_sha }}
+      PF_PREVIOUS_VERSION: ${{ inputs.previous_version }}
+      GITHUB_REF: ${{ github.ref }}
+    steps:
+      - name: Validar SHA, versão anterior e segredo
+        env:
+          DISPATCH_SHA: ${{ github.sha }}
+          PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/main
+          [[ "$PF_EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$PF_PREVIOUS_VERSION" =~ ^[0-9]{14}$ ]]
+          test "$PF_EXPECTED_SHA" = "$DISPATCH_SHA"
+          test -n "${PF_DATABASE_URL:-}"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.expected_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: ./.github/actions/install-postgresql-client-17
+        timeout-minutes: 12
+      - name: Ensaio transacional, sem gravação
+        env:
+          PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: bash scripts/audit/apply-gastos-parlamentares-quarentena-universo-production.sh dry-run
+      - name: Aplicar e conferir em outra sessão
+        if: inputs.mode == 'apply'
+        env:
+          PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: bash scripts/audit/apply-gastos-parlamentares-quarentena-universo-production.sh apply
