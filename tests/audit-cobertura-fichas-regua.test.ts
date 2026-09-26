@@ -263,6 +263,20 @@ describe("régua: parlamentar federal pelo cargo atual e pelas formas feminina e
     }
   })
 
+  it("suplente sem exercício não conta, mesmo com o canônico Senador; suplente que assumiu a cadeira conta", () => {
+    // Caso Clécio Luís: rótulo bruto "Senador (suplente)", canônico "Senador", eleito_por suplencia.
+    const semExercicio = { cargo: "Senador (suplente)", cargo_canonico: "Senador", eleito_por: "suplencia", periodo_inicio: 2011, periodo_fim: 2019, tipo_evento: "mandato" }
+    for (const family of ["projetos_lei", "votos_candidato", "gastos_parlamentares"] as const) {
+      assert.equal(aplicavel(profile({ historico: [semExercicio] }), family), false, family)
+    }
+    assert.equal(aplicavel(profile({ cargo_atual: "Senador (suplente)" }), "projetos_lei"), false)
+    assert.equal(aplicavel(profile({ historico: [{ ...semExercicio, cargo: "Senador", cargo_canonico: "Senador (suplente)" }] }), "projetos_lei"), false)
+    // Suplente que assumiu e exerceu: cargo "Senador" sem rótulo de suplente.
+    const assumiu = { cargo: "Senador", cargo_canonico: "Senador", eleito_por: "suplencia", periodo_inicio: 2013, periodo_fim: 2019, tipo_evento: "mandato" }
+    assert.equal(aplicavel(profile({ historico: [assumiu] }), "projetos_lei"), true)
+    assert.equal(aplicavel(profile({ historico: [assumiu] }), "gastos_parlamentares"), true)
+  })
+
   it("controles negativos: suplente, deputada estadual e distrital não são parlamentar federal", () => {
     for (const cargo of ["1º Suplente de Senador", "Suplente de Senador", "Deputada Estadual", "Deputada Distrital", "Vereadora"]) {
       assert.equal(aplicavel(profile({ cargo_atual: cargo }), "projetos_lei"), false, cargo)
