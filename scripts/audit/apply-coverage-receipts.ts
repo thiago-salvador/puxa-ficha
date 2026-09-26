@@ -21,6 +21,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 import { pathToFileURL } from "node:url"
+import { publicFamilyRowCount } from "./lib/coverage-source-proof"
 import {
   adaptLatestReceipts,
   buildCoverageMatrix,
@@ -72,6 +73,10 @@ export function planCoverageReceipts(rows: LatestReceiptRow[], profiles: Coverag
     const families = receiptFamilies(fonte, row.detalhe, row.url) ?? []
     if (families.length !== 1) { reject("recibo precisa mapear exatamente uma família"); continue }
     const familia = families[0]
+    // Vazio só contra payload sem linha; encontrado só contra payload com linha.
+    const publicRows = publicFamilyRowCount(profile, familia)
+    if (resultado === "vazio_confirmado" && publicRows > 0) { reject(`vazio contra ${publicRows} linha(s) publicada(s) em ${familia}`); continue }
+    if (resultado === "encontrado" && publicRows === 0) { reject(`encontrado sem linha publicada em ${familia}`); continue }
     const key = `${alvo}|${fonte}|${familia}`
     if (seen.has(key)) { reject("recibo duplicado para a mesma ficha, fonte e família"); continue }
     // A régua completa, só com este recibo: o que ele sozinho faz com a célula.
@@ -84,8 +89,10 @@ export function planCoverageReceipts(rows: LatestReceiptRow[], profiles: Coverag
     }
     // Famílias anuais: o detalhe precisa dizer quais eleições a prova cobre,
     // para que recibo de outro ano na mesma fonte não seja lido como substituto.
+    // O detalhe gravado precisa ser JSON de objeto: é ele que a régua relê.
     let detail: Record<string, unknown> | null = null
     try { detail = typeof row.detalhe === "string" ? JSON.parse(row.detalhe) as Record<string, unknown> : row.detalhe as Record<string, unknown> ?? null } catch { detail = null }
+    if (!detail || typeof detail !== "object" || Array.isArray(detail)) { reject("detalhe ausente ou não é JSON de objeto"); continue }
     const revisions = Array.isArray((detail?.coverage_proof as Record<string, unknown> | undefined)?.source_revisions)
       ? (detail!.coverage_proof as Record<string, unknown>).source_revisions as Array<Record<string, unknown>> : []
     const years = [...new Set(revisions.map((revision) => Number(revision?.year)).filter((year) => Number.isInteger(year) && year > 1900))].sort((a, b) => a - b)

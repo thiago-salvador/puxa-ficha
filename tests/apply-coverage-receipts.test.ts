@@ -75,6 +75,39 @@ describe("prova de cobertura por ano sobrevive a recibo mais novo sem prova", ()
   })
 })
 
+describe("prova de cobertura concorda com o payload: vazio só sem linha, publicado só com linha", () => {
+  const cell = (subject: CoverageProfile, rows: Record<string, unknown>[]) =>
+    buildCoverageMatrix([subject], [], adaptLatestReceipts(rows, [subject]).joins).cells.find((item) => item.familia === "patrimonio")!
+
+  it("prova de vazio com linha publicada vira erro na régua e é recusada no aplicador", () => {
+    const subject = profile()
+    const vazio = receipt(subject, { resultado: "vazio_confirmado", volume: 0 })
+    assert.equal(cell(subject, [vazio]).estado, "erro")
+    assert.match(planCoverageReceipts([vazio], [subject], ALLOW).rejected[0]?.motivo ?? "", /vazio contra 1 linha/)
+  })
+
+  it("prova de publicado sem linha no payload vira erro e é recusada; vazio sem linha fecha", () => {
+    const empty = profile({ patrimonio_eleicoes: [], patrimonio: [] })
+    // Prova coerente com o payload vazio (0 linhas públicas casadas).
+    const detail = JSON.parse(receipt(empty).detalhe)
+    Object.assign(detail.coverage_proof, { public_rows: 0, matched_rows: 0, source_rows: 0 })
+    const zeroRows = { detalhe: JSON.stringify(detail) }
+    const encontrado = receipt(empty, zeroRows)
+    assert.equal(cell(empty, [encontrado]).estado, "erro")
+    assert.match(planCoverageReceipts([encontrado], [empty], ALLOW).rejected[0]?.motivo ?? "", /encontrado sem linha/)
+    const vazio = receipt(empty, { ...zeroRows, resultado: "vazio_confirmado", volume: 0 })
+    assert.equal(cell(empty, [vazio]).estado, "vazio_confirmado")
+  })
+
+  it("detalhe que não é JSON de objeto é recusado pelo aplicador", () => {
+    const subject = profile()
+    for (const detalhe of ["patrimonio", "[1,2]", "null"]) {
+      const plan = planCoverageReceipts([receipt(subject, { detalhe })], [subject], ALLOW)
+      assert.equal(plan.planned.length, 0, detalhe)
+    }
+  })
+})
+
 describe("apply-coverage-receipts: plano só com recibos que fecham célula", () => {
   it("aceita prova que confere com o payload público do momento", () => {
     const subject = profile()

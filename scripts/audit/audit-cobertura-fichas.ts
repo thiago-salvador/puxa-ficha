@@ -2,7 +2,7 @@ import { chmod, readFile, writeFile } from "node:fs/promises"
 import path from "node:path"
 import { pathToFileURL } from "node:url"
 import { isHistoricoCandidaturaRow } from "../../src/lib/historico-tipo-evento"
-import { validCoverageSourceProof } from "./lib/coverage-source-proof"
+import { publicFamilyRowCount, validCoverageSourceProof } from "./lib/coverage-source-proof"
 
 /**
  * Etapa 0: matriz somente leitura da cobertura pública por candidato e família.
@@ -58,6 +58,12 @@ export type CoverageCell = {
   verificado_em: string | null
   fonte: string | null
   escopo: string | null
+  /**
+   * De onde veio o recibo lido: linha de coleta_log por candidato, selo de
+   * frescor do payload público (não é prova de coleta), nenhum, ou perfil que
+   * não respondeu. O gate de CI conta tudo que não é coleta_log.
+   */
+  origem_recibo: "coleta_log" | "badge_publico" | "nenhum" | "perfil_indisponivel"
   /** Exceção nominal aprovada pelo dono; a célula continua com o estado real. */
   excecao?: { motivo: string; aprovado_por: string; aprovado_em: string; referencia?: string }
 }
@@ -276,17 +282,19 @@ function federalSources(profile: CoverageProfile): string[] {
 
 /** Primeiro ano da série oficial de cotas parlamentares (CSV anual da Câmara e CEAPS do Senado). */
 export const EXPENSE_SERIES_FIRST_YEAR = 2008
-const TERM_YEARS: Record<"camara" | "senado", number> = { camara: 4, senado: 8 }
+
+/** A pessoa ocupa hoje o cargo federal desta casa, segundo `cargo_atual`. */
+function holdsFederalSeatNow(profile: CoverageProfile, house: "camara" | "senado"): boolean {
+  const current = text(profile.cargo_atual) ?? ""
+  return house === "camara" ? /^Deputad[oa](\(a\))? Federal/.test(current) : /^Senador/.test(current)
+}
 
 /**
- * Casas cuja cota parlamentar se aplica à ficha. Regra escrita: um mandato
- * federal conta só se alcança a série oficial de cotas (2008 em diante). Sem
- * fim registrado, o mandato vale pelo prazo constitucional do cargo (4 anos
- * deputado, 8 senador), salvo quando a pessoa ocupa hoje esse cargo. ID
- * oficial sem nenhuma linha de mandato daquela casa mantém a casa aplicável.
+ * Intervalos de mandato federal da casa no histórico publicado. Linha aberta
+ * (sem fim) é tratada como indo até o ano corrente: sem fim registrado, não há
+ * como afirmar que o mandato terminou antes da série de cotas.
  */
 function federalMandateIntervals(profile: CoverageProfile, house: "camara" | "senado", now = new Date().getUTCFullYear()): Array<[number | null, number]> {
-  const current = text(profile.cargo_atual) ?? ""
   const intervals: Array<[number | null, number]> = []
   for (const item of Array.isArray(profile.historico) ? profile.historico : []) {
     const row = record(item)
@@ -294,21 +302,27 @@ function federalMandateIntervals(profile: CoverageProfile, house: "camara" | "se
     const cargo = text(row.cargo_canonico) ?? text(row.cargo)
     if (cargo !== (house === "camara" ? "Deputado Federal" : "Senador")) continue
     const start = typeof row.periodo_inicio === "number" ? row.periodo_inicio : null
-    const holdsNow = house === "camara" ? /^Deputad[oa]\(?a?\)? Federal/.test(current) : /^Senador/.test(current)
-    const end = typeof row.periodo_fim === "number" ? row.periodo_fim
-      : holdsNow || start === null ? now
-      : start + TERM_YEARS[house]
+    const end = typeof row.periodo_fim === "number" ? row.periodo_fim : now
     intervals.push([start, Math.min(end, now)])
   }
   return intervals
 }
 
+/**
+ * Casas cuja cota parlamentar se aplica à ficha. Regra escrita:
+ * - exercício atual do cargo ou ID oficial da casa: aplica, sempre;
+ * - sem ID e sem exercício atual, só histórico: aplica se algum mandato alcança
+ *   a série oficial de cotas (2008 em diante); mandato todo anterior não se aplica.
+ */
 function expenseSources(profile: CoverageProfile): string[] {
   const ids = record(profile.ids)
   const sources: string[] = []
   for (const house of ["camara", "senado"] as const) {
-    const intervals = federalMandateIntervals(profile, house)
-    if (intervals.length ? intervals.some(([, end]) => end >= EXPENSE_SERIES_FIRST_YEAR) : present(ids?.[house])) sources.push(house)
+    if (holdsFederalSeatNow(profile, house) || present(ids?.[house])) {
+      sources.push(house)
+      continue
+    }
+    if (federalMandateIntervals(profile, house).some(([, end]) => end >= EXPENSE_SERIES_FIRST_YEAR)) sources.push(house)
   }
   return sources
 }
@@ -710,6 +724,16 @@ function provenVerdict(receipt: Receipt | null, profile: CoverageProfile, family
     .sort((a, b) => Date.parse(parseDate(b.executado_em)!) - Date.parse(parseDate(a.executado_em)!))
   const proof = proofs.find((item) => validCoverageSourceProof(profile, family, item))
   if (!proof) return null
+  // O resultado da prova tem de concordar com o payload: vazio com linha
+  // publicada, ou encontrado sem linha publicada, é contradição.
+  const publicRows = publicFamilyRowCount(profile, family)
+  const provedEmpty = text(proof.resultado) === "vazio_confirmado"
+  if (provedEmpty && publicRows !== 0) {
+    return { estado: "erro", motivo: `prova de vazio contra ${publicRows} linha(s) publicada(s)`, receipt: proof }
+  }
+  if (!provedEmpty && publicRows <= 0) {
+    return { estado: "erro", motivo: "prova de publicado sem linha no payload público", receipt: proof }
+  }
   const provedAt = Date.parse(parseDate(proof.executado_em)!)
   const later = Object.values(record(receipt?.__receipts) ?? {}).map(record)
     .filter((item): item is Receipt => Boolean(item) && Date.parse(parseDate(item!.executado_em) ?? "1970-01-01") > provedAt)
@@ -751,7 +775,8 @@ export type CoverageException = {
   motivo: string
   aprovado_por: string
   aprovado_em: string
-  expira_em?: string
+  /** Obrigatório: exceção sem prazo vira dívida permanente escondida. */
+  expira_em: string
   referencia?: string
 }
 
@@ -780,17 +805,17 @@ export function parseCoverageExceptions(raw: unknown, now = new Date()): Coverag
       if (!text(row[field])) throw new Error(`${where}: ${field} é obrigatório`)
     }
     if (!parseDate(row.aprovado_em)) throw new Error(`${where}: aprovado_em inválido`)
-    if (row.expira_em !== undefined && !parseDate(row.expira_em)) throw new Error(`${where}: expira_em inválido`)
+    if (!parseDate(row.expira_em)) throw new Error(`${where}: expira_em obrigatório e válido`)
     const key = `${slug}|${familia}`
     if (seen.has(key)) throw new Error(`${where}: exceção duplicada para ${key}`)
     seen.add(key)
     return {
       slug, familia, estado,
       motivo: text(row.motivo)!, aprovado_por: text(row.aprovado_por)!, aprovado_em: text(row.aprovado_em)!,
-      ...(text(row.expira_em) ? { expira_em: text(row.expira_em)! } : {}),
+      expira_em: text(row.expira_em)!,
       ...(text(row.referencia) ? { referencia: text(row.referencia)! } : {}),
     }
-  }).filter((exception) => !exception.expira_em || Date.parse(exception.expira_em) > now.getTime())
+  }).filter((exception) => Date.parse(exception.expira_em) > now.getTime())
 }
 
 function makeCell(profile: CoverageProfile, family: CoverageFamily, joins: CoverageReceiptJoin, profileError?: string): CoverageCell {
@@ -821,6 +846,10 @@ function makeCell(profile: CoverageProfile, family: CoverageFamily, joins: Cover
     verificado_em: parseDate(receipt?.verifiedAt) ?? parseDate(receipt?.verificado_em) ?? parseDate(receipt?.executado_em) ?? parseDate(receipt?.coletado_em),
     fonte: text(receipt?.sourceLabel) ?? text(receipt?.fonte) ?? text(receipt?.fonte_url),
     escopo: text(receipt?.scope) ?? text(receipt?.escopo),
+    origem_recibo: profileError ? "perfil_indisponivel"
+      : joins[slug]?.[family] ? "coleta_log"
+      : joined ? "badge_publico"
+      : "nenhum",
   }
 }
 
@@ -868,9 +897,15 @@ export function blockingCells(matrix: CoverageMatrix): CoverageCell[] {
   return matrix.cells.filter((cell) => cell.aplicavel && OPEN_STATES.includes(cell.estado) && !cell.excecao)
 }
 
-/** Gate de CI: família aplicável sem nenhum recibo de fonte (o piso da régua). */
+/**
+ * Gate de CI: família aplicável sem nenhuma linha de coleta_log por candidato
+ * (o piso da régua). O selo de frescor do payload público não conta como
+ * recibo, e perfil que não respondeu fica fora (é erro de leitura, não prova
+ * de ausência).
+ */
 export function missingReceiptCells(matrix: CoverageMatrix): CoverageCell[] {
-  return matrix.cells.filter((cell) => cell.aplicavel && cell.estado === "sem_recibo" && !cell.excecao)
+  return matrix.cells.filter((cell) => cell.aplicavel && !cell.excecao &&
+    (cell.origem_recibo === "nenhum" || cell.origem_recibo === "badge_publico"))
 }
 
 export async function fetchPublicProfiles(baseUrl: string, fetcher: typeof fetch = fetch): Promise<{ profiles: CoverageProfile[]; errors: Array<{ slug: string; error: string }> }> {
@@ -968,7 +1003,9 @@ async function main(): Promise<void> {
     const annotation = options.mode === "warn" ? "::warning::" : "::error::"
     for (const cell of missing.slice(0, 50)) console.log(`${annotation}gate de cobertura: ${cell.slug} sem recibo em ${cell.familia}`)
     if (matrix.profile_errors.length) console.log(`::warning::gate de cobertura: ${matrix.profile_errors.length} perfil(is) não lido(s); células ficam em erro, não em sem_recibo`)
-    console.log(`GATE_SEM_RECIBO mode=${options.mode} cells=${missing.length} profiles=${new Set(missing.map((cell) => cell.slug)).size}`)
+    const slugs = [...new Set(missing.map((cell) => cell.slug))].sort()
+    console.log(`GATE_SEM_RECIBO mode=${options.mode} cells=${missing.length} profiles=${slugs.length}`)
+    if (slugs.length) console.log(`GATE_SEM_RECIBO_SLUGS ${slugs.join(",")}`)
     if (missing.length > 0 && options.mode === "enforce") throw new Error(`gate de cobertura: ${missing.length} célula(s) aplicável(is) sem recibo`)
   }
   const blocking = blockingCells(matrix)

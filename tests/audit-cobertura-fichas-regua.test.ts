@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import { spawnSync } from "node:child_process"
-import { mkdtempSync, rmSync, writeFileSync } from "node:fs"
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import path from "node:path"
 import { describe, it } from "node:test"
@@ -169,11 +169,23 @@ describe("régua: aplicabilidade da cota parlamentar", () => {
   const gastos = (subject: CoverageProfile) => buildCoverageMatrix([subject]).cells.find((cell) => cell.familia === "gastos_parlamentares")!
   const mandate = (cargo: string, periodo_inicio: number, periodo_fim: number | null) => ({ tipo_evento: "mandato", cargo, periodo_inicio, periodo_fim })
 
-  it("mandato federal inteiro antes da série de cotas (2008) não se aplica, inclusive sem fim registrado", () => {
-    assert.equal(gastos(profile({ historico: [mandate("Deputado Federal", 2002, null), mandate("Senador", 1995, 2001)] })).aplicavel, false)
+  it("sem ID oficial e sem exercício atual, mandato fechado inteiro antes de 2008 não se aplica", () => {
     assert.equal(gastos(profile({ historico: [mandate("Deputado Federal", 1987, 1991)] })).aplicavel, false)
+    assert.equal(gastos(profile({ historico: [mandate("Deputado Federal", 2003, 2007), mandate("Senador", 1995, 2001)] })).aplicavel, false)
     // projetos seguem aplicáveis: a regra é só da cota.
-    assert.equal(buildCoverageMatrix([profile({ historico: [mandate("Deputado Federal", 2002, null)] })]).cells.find((cell) => cell.familia === "projetos_lei")!.aplicavel, true)
+    assert.equal(buildCoverageMatrix([profile({ historico: [mandate("Deputado Federal", 1987, 1991)] })]).cells.find((cell) => cell.familia === "projetos_lei")!.aplicavel, true)
+  })
+
+  it("linha aberta sem fim é desconhecida e vai até hoje: aplica, sem inventar fim pelo prazo do cargo", () => {
+    assert.equal(gastos(profile({ historico: [mandate("Deputado Federal", 2002, null)] })).aplicavel, true)
+  })
+
+  it("exercício atual ou ID oficial aplicam mesmo com a única linha da casa antiga e fechada", () => {
+    const antigo = [mandate("Deputado Federal", 1995, 1999)]
+    assert.equal(gastos(profile({ cargo_atual: "Deputado Federal", ids: { camara: 12345 }, historico: antigo })).aplicavel, true)
+    assert.equal(gastos(profile({ cargo_atual: "Deputada Federal", historico: antigo })).aplicavel, true)
+    assert.equal(gastos(profile({ ids: { camara: 12345 }, historico: antigo })).aplicavel, true)
+    assert.equal(gastos(profile({ cargo_atual: "Senador(a)", ids: { senado: 5000 }, historico: [mandate("Senador", 1995, 2003)] })).aplicavel, true)
   })
 
   it("controles positivos: mandato na série, cargo atual sem fim e ID oficial sem linha de mandato", () => {
@@ -208,7 +220,7 @@ describe("régua: cota parlamentar zerada pela fonte oficial", () => {
 })
 
 describe("régua: exceções nominais aprovadas", () => {
-  const approved = { slug: "ana-exemplo", familia: "processos", estado: "sem_recibo", motivo: "tribunal sem consulta pública", aprovado_por: "Dono", aprovado_em: "2026-09-25" }
+  const approved = { slug: "ana-exemplo", familia: "processos", estado: "sem_recibo", motivo: "tribunal sem consulta pública", aprovado_por: "Dono", aprovado_em: "2026-09-25", expira_em: "2099-12-31" }
 
   it("tira do gate só a célula nomeada e no estado aprovado", () => {
     const matrix = buildCoverageMatrix([profile()], [], {}, parseCoverageExceptions({ exceptions: [approved] }))
@@ -228,6 +240,9 @@ describe("régua: exceções nominais aprovadas", () => {
     assert.throws(() => parseCoverageExceptions([{ ...approved, aprovado_por: "" }]), /aprovado_por/)
     assert.throws(() => parseCoverageExceptions([{ ...approved, estado: "publicado" }]), /estado aberto/)
     assert.throws(() => parseCoverageExceptions([approved, approved]), /duplicada/)
+    const { expira_em: _semPrazo, ...semPrazo } = approved
+    void _semPrazo
+    assert.throws(() => parseCoverageExceptions([semPrazo]), /expira_em obrigatório/)
     assert.equal(parseCoverageExceptions([{ ...approved, expira_em: "2026-01-01" }], new Date("2026-09-25")).length, 0)
   })
 })
@@ -242,6 +257,7 @@ describe("régua: gate de cobertura (fixture)", () => {
     assert.equal(enforce.status, 1, enforce.stderr)
     assert.match(enforce.stdout, /::error::gate de cobertura: ficticia-sem-recibo sem recibo em perfil_atual/)
     assert.match(enforce.stdout, /GATE_SEM_RECIBO mode=enforce cells=7 profiles=1/)
+    assert.match(enforce.stdout, /GATE_SEM_RECIBO_SLUGS ficticia-sem-recibo\n/)
     assert.doesNotMatch(enforce.stdout, /ficticia-com-recibos sem recibo/)
     const warn = run("--gate=sem-recibo", "--mode=warn")
     assert.equal(warn.status, 0, warn.stderr)
@@ -258,9 +274,27 @@ describe("régua: gate de cobertura (fixture)", () => {
       assert.match(pass.stdout, /GATE_SEM_RECIBO mode=enforce cells=0 profiles=0/)
       const families = ["perfil_atual", "historico_politico", "mudancas_partido", "patrimonio", "financiamento", "processos", "sites_tse"]
       const exceptions = path.join(dir, "excecoes.json")
-      writeFileSync(exceptions, JSON.stringify({ exceptions: families.map((familia) => ({ slug: "ficticia-sem-recibo", familia, estado: "sem_recibo", motivo: "teste", aprovado_por: "Dono", aprovado_em: "2026-09-25" })) }))
+      writeFileSync(exceptions, JSON.stringify({ exceptions: families.map((familia) => ({ slug: "ficticia-sem-recibo", familia, estado: "sem_recibo", motivo: "teste", aprovado_por: "Dono", aprovado_em: "2026-09-25", expira_em: "2099-12-31" })) }))
       const excepted = run("--gate=sem-recibo", "--mode=enforce", `--exceptions=${exceptions}`)
       assert.equal(excepted.status, 0, excepted.stderr)
+    } finally { rmSync(dir, { recursive: true, force: true }) }
+  })
+
+  it("selo de frescor do payload público sem linha em coleta_log não passa no gate", () => {
+    const dir = mkdtempSync(path.join(tmpdir(), "pf-gate-selo-"))
+    try {
+      const selo = { status: "current", verifiedAt: "2026-09-20T10:00:00Z", referenceDate: "2026-09-20T10:00:00Z", sourceLabel: "Selo público", scope: "candidato" }
+      const perfisSelo = path.join(dir, "perfis.json")
+      const families = ["perfil_atual", "historico_politico", "mudancas_partido", "patrimonio", "financiamento", "processos", "sites_tse"]
+      writeFileSync(perfisSelo, JSON.stringify([{ id: "00000000-0000-4000-8000-000000000003", slug: "ficticia-so-selo", cargo_disputado: "Senador", estado: "MG", cargo_atual: null, ids: {}, historico: [],
+        section_freshness: Object.fromEntries(families.map((family) => [family, selo])) }]))
+      const vazio = path.join(dir, "recibos.json")
+      writeFileSync(vazio, JSON.stringify({ rows: [] }))
+      const result = spawnSync(process.execPath, ["--import", "tsx", "scripts/audit/audit-cobertura-fichas.ts", `--input=${perfisSelo}`, `--receipts=${vazio}`, "--gate=sem-recibo", "--mode=enforce", `--out=${path.join(dir, "m.json")}`], { cwd: ROOT, encoding: "utf8" })
+      assert.equal(result.status, 1, result.stdout)
+      assert.match(result.stdout, /GATE_SEM_RECIBO mode=enforce cells=7 profiles=1/)
+      const matrix = JSON.parse(readFileSync(path.join(dir, "m.json"), "utf8")) as { cells: Array<{ familia: string; origem_recibo: string }> }
+      assert.equal(matrix.cells.find((cell) => cell.familia === "patrimonio")?.origem_recibo, "badge_publico")
     } finally { rmSync(dir, { recursive: true, force: true }) }
   })
 
