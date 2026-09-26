@@ -1,0 +1,76 @@
+name: Vigia do CDN do TSE
+
+# cdn.tse.jus.br alterna 200 e 403 ao longo do dia (medição de 26/09/2026), e
+# os jobs que dependem dele (roster de /deputados, finanças e bens 2026,
+# rehash de doadores) ficam vermelhos quando o horário agendado cai numa
+# janela de 403. A cada 2 h este vigia sonda os pacotes de cada job
+# (GET com Range 0-0) e, para o job cujos pacotes responderam 200/206,
+# dispara o workflow em dry-run, salvo se ele já estiver em curso ou tiver
+# terminado com sucesso nas últimas 20 h.
+#
+# Nunca escreve no banco e nunca dispara com apply/aplicar: gravar continua
+# exigindo o caminho de apply existente (agendado com travas, ou dispatch com
+# o sha do plano revisado). CDN fechado não é falha deste job; o resumo diz
+# qual pacote respondeu o quê.
+#
+# Rehash de anos antigos é opcional: repo variable PF_WATCHER_REHASH_ANOS
+# (ex.: 2012,2016) ou o input do disparo manual.
+
+on:
+  schedule:
+    - cron: "17 */2 * * *"
+  workflow_dispatch:
+    inputs:
+      rehash_anos:
+        description: "Anos do rehash de doadores para vigiar (ex.: 2012,2016). Vazio = variável do repo."
+        required: false
+        type: string
+        default: ""
+      simular:
+        description: "Só sondar e decidir, sem disparar nada"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: tse-cdn-watcher
+  cancel-in-progress: false
+
+jobs:
+  vigiar:
+    name: Sondar CDN e disparar dry-runs
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Sondar e disparar
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PF_WATCHER_REHASH_ANOS: ${{ inputs.rehash_anos || vars.PF_WATCHER_REHASH_ANOS }}
+          PF_WATCHER_SIMULAR: ${{ inputs.simular }}
+        run: |
+          set -euo pipefail
+          mkdir -p reports/tse-cdn-watcher
+          args=(--out=reports/tse-cdn-watcher/decisoes.json)
+          if [ "$PF_WATCHER_SIMULAR" = "true" ]; then args+=(--simular); fi
+          node --import tsx scripts/tse-cdn-watcher.ts "${args[@]}"
+      - if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v6.0.0
+        with:
+          name: tse-cdn-watcher-${{ github.run_id }}
+          path: reports/tse-cdn-watcher/decisoes.json
+          if-no-files-found: warn
+          retention-days: 14
