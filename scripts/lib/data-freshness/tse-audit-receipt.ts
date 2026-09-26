@@ -126,6 +126,7 @@ export interface ArtefatosRecibosCandidatura {
     source_url?: unknown
     source_sha256?: unknown
     complementar?: { status?: unknown; url?: unknown; sha256?: unknown; checked_at?: unknown } | null
+    rede_social?: { status?: unknown } | null
   }
   /** `ficha_checks.fichas` de `diff.json`, ou null quando a conferência não rodou. */
   fichas: readonly FichaTseResult[] | null
@@ -171,9 +172,20 @@ export function recibosAuditoriaCandidatura(artefatos: ArtefatosRecibosCandidatu
   if (!artefatos.fichas) {
     return { recibos: [], ignorado: "conferência por ficha ausente do diff.json" }
   }
-  const complementar = source.complementar && texto(source.complementar.status) === "ok"
-    ? revisao(source.complementar.url, source.complementar.sha256, source.complementar.checked_at)
-    : null
+  // Complementar (situação) e redes (sites) são lidos sem derrubar a rodada. Se
+  // um deles falhou, toda ficha viraria indeterminado por falta de fonte, não
+  // por divergência, e apagaria da coleta_log_ultima a última conferência
+  // válida. A falha fica só no recibo global.
+  for (const [nome, recurso] of [["consulta_cand_complementar", source.complementar], ["rede_social_candidato", source.rede_social]] as const) {
+    const status = texto(recurso?.status)
+    if (status !== "ok") {
+      return { recibos: [], ignorado: `${nome} não lido (status ${status ?? "ausente"}); só o recibo global registra a rodada` }
+    }
+  }
+  const complementar = revisao(source.complementar?.url, source.complementar?.sha256, source.complementar?.checked_at)
+  if (!complementar) {
+    return { recibos: [], ignorado: "revisão do consulta_cand_complementar sem URL, SHA-256 ou horário válidos" }
+  }
 
   const recibos = artefatos.fichas.flatMap((ficha): ReciboCandidatura[] => {
     if (!ficha.candidato_id || !ficha.slug || !ficha.cargo || !ficha.uf) return []

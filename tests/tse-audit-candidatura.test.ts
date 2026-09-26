@@ -26,6 +26,7 @@ const source = {
   source_url: TSE_CANDIDACY_URL,
   source_sha256: SHA,
   complementar: { status: "ok", url: TSE_COMPLEMENTAR_URL, sha256: SHA_COMP, checked_at: CHECKED },
+  rede_social: { status: "ok" },
 }
 
 const official: OfficialFichaRow[] = [
@@ -189,9 +190,26 @@ test("SQ sem registro com o mesmo cargo e UF: identidade não fecha e reprova", 
 test("DivulgaCand ao vivo vence o complementar na situação de Gov/Pres", () => {
   const comparison = compare({
     fichas: [ficha({ slug: "fulano-sp", situacao_candidatura: "indeferido" })],
-    situacaoAtual: situacaoAtualDoDivulgaCand(["fulano-sp"], []),
+    situacaoAtual: situacaoAtualDoDivulgaCand([{ profile_slug: "fulano-sp", cargo: "GOVERNADOR", uf: "SP" }], [], fichas),
   })
   assert.equal(comparison.fichas[0].checks.situacao, "ok")
+})
+
+test("DivulgaCand só confirma a situação com inscrição do mesmo cargo e UF; divergência vence", () => {
+  const indeferido = [ficha({ slug: "fulano-sp", situacao_candidatura: "indeferido" })]
+  const situacao = (inscricao: { profile_slug: string; cargo: string; uf: string | null }, divergentes: string[] = []) =>
+    compare({ fichas: indeferido, situacaoAtual: situacaoAtualDoDivulgaCand([inscricao], divergentes, indeferido) }).fichas[0].checks.situacao
+  // Inscrição de vice ou de outra UF não fala da ficha: cai no complementar (DEFERIDO x indeferido).
+  assert.equal(situacao({ profile_slug: "fulano-sp", cargo: "VICE GOVERNADOR", uf: "SP" }), "divergente")
+  assert.equal(situacao({ profile_slug: "fulano-sp", cargo: "GOVERNADOR", uf: "RJ" }), "divergente")
+  assert.equal(situacao({ profile_slug: "fulano-sp", cargo: "GOVERNADOR", uf: "SP" }), "ok")
+  const comparison = compare({ fichas: indeferido, situacaoAtual: situacaoAtualDoDivulgaCand([{ profile_slug: "fulano-sp", cargo: "GOVERNADOR", uf: "SP" }], ["fulano-sp"], indeferido) })
+  assert.equal(comparison.fichas[0].checks.situacao, "divergente")
+  assert.match(comparison.fichas[0].notes.join(" "), /DivulgaCand/)
+  assert.deepEqual(comparison.fichas[0].blocking, ["situacao"])
+  // Presidente: UF da inscrição é normalizada para BR.
+  const presidenta = [fichas[2]]
+  assert.equal(situacaoAtualDoDivulgaCand([{ profile_slug: "presidenta", cargo: "PRESIDENTE", uf: null }], [], presidenta).get("presidenta"), "ok")
 })
 
 test("sites e vice divergentes não reprovam o job, mas deixam o recibo indeterminado", () => {
@@ -232,13 +250,23 @@ test("SHA-256 inválido não monta recibo por candidato", () => {
   }
 })
 
-test("complementar sem SHA válido vira complementar_revision null, sem derrubar o recibo", () => {
-  const comparison = compare({ fichas: fichas.slice(0, 1) })
-  const [recibo] = recibosAuditoriaCandidatura({
-    source: { ...source, complementar: { status: "error" } },
-    fichas: comparison.fichas,
-  }).recibos
-  assert.equal(JSON.parse(recibo.detalhe!).complementar_revision, null)
+test("complementar ou redes sem leitura ok: nenhum recibo por candidato, para não apagar a última conferência válida", () => {
+  const comparison = compare({ fichas: fichas.slice(0, 2) })
+  const casos = [
+    { ...source, complementar: { status: "error" } },
+    { ...source, complementar: { status: "not_collected" } },
+    { ...source, complementar: { status: "ok", url: TSE_COMPLEMENTAR_URL, sha256: "curto", checked_at: CHECKED } },
+    { ...source, rede_social: { status: "error" } },
+    { ...source, rede_social: null },
+  ]
+  for (const caso of casos) {
+    const resultado = recibosAuditoriaCandidatura({ source: caso, fichas: comparison.fichas })
+    assert.deepEqual(resultado.recibos, [], JSON.stringify(caso))
+    assert.match(resultado.ignorado ?? "", /complementar|rede_social/)
+  }
+  // Controle positivo: as duas fontes ok geram recibo com a revisão do complementar.
+  const [recibo] = recibosAuditoriaCandidatura({ source, fichas: comparison.fichas }).recibos
+  assert.equal(JSON.parse(recibo.detalhe!).complementar_revision.sha256, SHA_COMP)
 })
 
 test("detalhe não carrega nome nem texto livre, e a linha usa o candidato_id da ficha", () => {

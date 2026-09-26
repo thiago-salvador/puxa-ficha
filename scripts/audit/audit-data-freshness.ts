@@ -434,7 +434,7 @@ function revisionOf(resource: OfficialResource): Record<string, unknown> {
 /**
  * Recurso auxiliar (complementar, redes) é lido sem derrubar a rodada: se
  * falhar, a conferência por ficha marca a situação como `ausente` ou os sites
- * como `nao_verificado`, e o recibo por candidato vira `indeterminado`.
+ * como `nao_verificado`; os recibos por candidato não são gravados nessa rodada.
  */
 async function auxiliaryResource<T>(
   load: () => Promise<OfficialResource | null> | OfficialResource | null,
@@ -780,10 +780,9 @@ async function main(): Promise<void> {
           publishedSites: readPublishedSites(options.publishedSites),
           situacaoAtual: currentOfficialWithProfiles.length > 0
             ? situacaoAtualDoDivulgaCand(
-                currentOfficialWithProfiles
-                  .map((row) => row.profile_slug)
-                  .filter((slug) => slug !== null && publicSlugs.has(slug)),
+                currentOfficialWithProfiles.filter((row) => row.profile_slug !== null && publicSlugs.has(row.profile_slug)),
                 publicProfileStatusChanges.map((row) => row.slug),
+                published.public_candidacies,
               )
             : undefined,
         })

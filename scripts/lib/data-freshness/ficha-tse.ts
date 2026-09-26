@@ -356,11 +356,23 @@ export function compareFichasTse(input: CompareFichasTseInput): FichaTseComparis
  * divergências de `comparePublicProfileStatuses`.
  */
 export function situacaoAtualDoDivulgaCand(
-  coveredSlugs: Iterable<string | null>,
+  covered: Iterable<{ profile_slug: string | null; cargo: string; uf: string | null }>,
   divergentSlugs: Iterable<string>,
+  fichas: readonly Pick<PublishedFicha, "slug" | "office" | "uf">[],
 ): Map<string, "ok" | "divergente"> {
+  const fichaPorSlug = new Map(fichas.map((ficha) => [ficha.slug, ficha]))
   const result = new Map<string, "ok" | "divergente">()
-  for (const slug of coveredSlugs) if (slug) result.set(slug, "ok")
+  for (const inscricao of covered) {
+    const ficha = inscricao.profile_slug ? fichaPorSlug.get(inscricao.profile_slug) : undefined
+    if (!ficha) continue
+    // A inscrição só confirma a situação da ficha se for do mesmo cargo e UF:
+    // vice ou candidatura em outro estado não falam da ficha publicada.
+    const cargoFicha = fichaCargo(ficha.office)
+    const cargoInscricao = fichaCargo(inscricao.cargo)
+    if (!cargoFicha || cargoFicha !== cargoInscricao) continue
+    if (fichaUf(cargoFicha, ficha.uf) !== fichaUf(cargoInscricao, inscricao.uf)) continue
+    result.set(ficha.slug, "ok")
+  }
   for (const slug of divergentSlugs) result.set(slug, "divergente")
   return result
 }
