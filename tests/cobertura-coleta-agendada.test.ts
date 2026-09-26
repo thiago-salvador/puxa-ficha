@@ -45,12 +45,12 @@ describe("prova parlamentar agendada: falha vira recibo honesto", () => {
   it("o aplicador grava o aberto só para família aplicável e nunca por cima de prova da rodada", () => {
     const [receipt] = openParliamentaryReceipts([failure()], [], "2026-09-26T21:00:00Z")
     const allow = new Set(["camara-proposicoes"])
-    assert.equal(planOpenReceipts([receipt!], [deputada], allow, []).planned.length, 1)
+    assert.equal(planOpenReceipts([receipt!], [deputada], allow, [], []).planned.length, 1)
     const closing = [{ fonte: "camara-proposicoes", escopo: "candidato" as const, alvo: "bia-ficticia", candidato_id: "cand-2", resultado: "encontrado" as const, volume: 1, url: null, detalhe: null, familia: "projetos_lei" as const, estado_projetado: "publicado" as const }]
-    assert.match(planOpenReceipts([receipt!], [deputada], allow, closing).rejected[0]?.motivo ?? "", /já prova/)
+    assert.match(planOpenReceipts([receipt!], [deputada], allow, closing, []).rejected[0]?.motivo ?? "", /já prova/)
     const semMandato = { ...deputada, cargo_atual: null, ids: {} }
-    assert.match(planOpenReceipts([receipt!], [semMandato], allow, []).rejected[0]?.motivo ?? "", /não se aplica/)
-    assert.match(planOpenReceipts([{ ...receipt!, candidato_id: "outro" }], [deputada], allow, []).rejected[0]?.motivo ?? "", /candidato_id/)
+    assert.match(planOpenReceipts([receipt!], [semMandato], allow, [], []).rejected[0]?.motivo ?? "", /não se aplica/)
+    assert.match(planOpenReceipts([{ ...receipt!, candidato_id: "outro" }], [deputada], allow, [], []).rejected[0]?.motivo ?? "", /candidato_id/)
   })
 
   it("ID de votação da Câmara tem o formato proposição-sequência", () => {
@@ -72,7 +72,8 @@ describe("workflow cobertura-coleta-agendada", () => {
     assert.match(workflow, /gravar:\n\s+description: [^\n]+\n\s+required: true\n\s+default: false/)
     assert.match(workflow, /vars\.COBERTURA_COLETA_GRAVAR == 'true'/)
     assert.equal((workflow.match(/--apply --execucao="gh:\$\{GITHUB_RUN_ID\}:\$\{GITHUB_RUN_ATTEMPT\}:/g) ?? []).length, 2)
-    assert.equal((workflow.match(/--incluir-abertos/g) ?? []).length, 2)
+    assert.equal((workflow.match(/abertos=\(--incluir-abertos --recibos-atuais=/g) ?? []).length, 2)
+    assert.equal((workflow.match(/-f scripts\/audit\/coverage-receipts-snapshot\.sql/g) ?? []).length, 2)
   })
 
   it("mesmo grupo de concorrência do ingest, sem cancelar execução em curso", () => {

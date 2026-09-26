@@ -186,8 +186,18 @@ describe("coletor de revisão do histórico: CLI puro", () => {
     const receipts = sourceFailureReceipts([subject], "pacote TSE ausente para 1998", ANOS, CHECKED, null)
     assert.equal(receipts[0]?.resultado, "erro")
     assert.equal(cell(subject, receipts).estado, "erro")
-    const open = planOpenReceipts(receipts, [subject], new Set(["tse-historico"]), [])
+    const open = planOpenReceipts(receipts, [subject], new Set(["tse-historico"]), [], [])
     assert.equal(open.planned.length, 1)
     assert.equal(open.planned[0]?.resultado, "erro")
+  })
+
+  it("recibo aberto não reabre célula fechada por prova vigente", () => {
+    const historico = [PUBLIC_2022, PUBLIC_2026]
+    const subject = profile(historico)
+    const proof = verdict(historico, [row({})]).receipt
+    const falha = sourceFailureReceipts([subject], "pacote TSE ausente para 1998", ANOS, CHECKED, null)
+    const open = planOpenReceipts(falha, [subject], new Set(["tse-historico"]), [], [{ ...proof, executado_em: "2026-09-20T10:00:00Z" }])
+    assert.equal(open.planned.length, 0)
+    assert.match(open.rejected[0]?.motivo ?? "", /já fechada por prova vigente/)
   })
 })

@@ -16,11 +16,12 @@
  *   node --import tsx scripts/audit/apply-coverage-receipts.ts \
  *     --in=/privado/recibos.json --allow-fonte=tse-patrimonio,camara-gastos \
  *     --out-dir=/privado/aplicacao [--profiles=/privado/perfis.json | --base-url=https://puxaficha.com.br] \
- *     [--incluir-abertos] [--apply --execucao=f8:20260925]
+ *     [--incluir-abertos --recibos-atuais=/privado/coleta-log.json] [--apply --execucao=f8:20260925]
  *
  * `--incluir-abertos` grava também os recibos `erro`/`indeterminado` da mesma
  * entrada (fonte que não respondeu, prova que não fechou), por ficha e só para
- * família aplicável; nunca por cima de uma prova da mesma rodada.
+ * família aplicável e ainda aberta segundo os recibos atuais; nunca por cima de
+ * uma prova vigente nem de uma prova da mesma rodada.
  */
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
@@ -138,7 +139,11 @@ export function planOpenReceipts(
   profiles: CoverageProfile[],
   allowedSources: ReadonlySet<string>,
   closing: readonly PlannedReceipt[],
+  currentReceipts: LatestReceiptRow[],
 ): { planned: OpenReceipt[]; rejected: PlanResult["rejected"] } {
+  // Célula fechada por prova ainda vigente não é reaberta por uma rodada que
+  // não conseguiu provar: quem a reabre é o prazo de frescor da própria prova.
+  const currentJoins = adaptLatestReceipts(currentReceipts, profiles).joins
   const bySlug = new Map(profiles.map((profile) => [text(profile.slug) ?? "", profile]))
   const closed = new Set(closing.map((item) => `${item.alvo}|${item.fonte}`))
   const planned: OpenReceipt[] = []
@@ -165,8 +170,9 @@ export function planOpenReceipts(
     const key = `${alvo}|${fonte}`
     if (closed.has(key)) { reject("a rodada já prova esta fonte para a ficha"); continue }
     if (seen.has(key)) { reject("recibo aberto duplicado para a mesma ficha e fonte"); continue }
-    const cell = buildCoverageMatrix([profile], [], {}).cells.find((item) => item.familia === familia)
+    const cell = buildCoverageMatrix([profile], [], currentJoins).cells.find((item) => item.familia === familia)
     if (!cell?.aplicavel) { reject(`${familia} não se aplica à ficha`); continue }
+    if (cell.estado === "publicado" || cell.estado === "vazio_confirmado") { reject(`${familia} já fechada por prova vigente`); continue }
     seen.add(key)
     planned.push({ fonte, escopo: "candidato", alvo, candidato_id: text(profile.id)!, resultado, volume: 0, url: text(row.url), detalhe: JSON.stringify(detail), familia })
   }
@@ -214,7 +220,16 @@ async function main(): Promise<void> {
   const slugs = [...new Set(rows.map((row) => text(row.alvo)).filter((slug): slug is string => Boolean(slug)))]
   const profiles = await loadProfiles(slugs)
   const plan = planCoverageReceipts(rows, profiles, allow)
-  const open = process.argv.includes("--incluir-abertos") ? planOpenReceipts(rows, profiles, allow, plan.planned) : { planned: [], rejected: [] }
+  let open: ReturnType<typeof planOpenReceipts> = { planned: [], rejected: [] }
+  if (process.argv.includes("--incluir-abertos")) {
+    // Sem os recibos atuais não há como saber se a célula está fechada: o
+    // recibo aberto poderia reabrir prova vigente. Exige a leitura.
+    const currentPath = arg("recibos-atuais")
+    if (!currentPath) throw new Error("--incluir-abertos exige --recibos-atuais=<snapshot de coleta_log>")
+    const rawCurrent = JSON.parse(readFileSync(resolve(currentPath), "utf8")) as { rows?: LatestReceiptRow[]; receipts?: LatestReceiptRow[] } | LatestReceiptRow[]
+    const current = Array.isArray(rawCurrent) ? rawCurrent : rawCurrent.rows ?? rawCurrent.receipts ?? []
+    open = planOpenReceipts(rows, profiles, allow, plan.planned, current)
+  }
   mkdirSync(resolve(outDir), { recursive: true, mode: 0o700 })
   const stamp = new Date().toISOString().replace(/[:.]/g, "-")
   const byFamily: Record<string, number> = {}

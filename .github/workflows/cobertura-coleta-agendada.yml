@@ -12,7 +12,8 @@ name: Coleta agendada de prova de cobertura
 #   do perfil público (fontes camara-* , senado-*, ceaps-senado).
 #
 # Fonte que não respondeu vira recibo `erro` por ficha; prova que não fechou
-# vira `indeterminado`. Nenhuma falha vira vazio. A API da Câmara costuma
+# vira `indeterminado`. Nenhuma falha vira vazio, e nenhum recibo aberto
+# reabre célula fechada por prova ainda vigente (o prazo da prova reabre). A API da Câmara costuma
 # recusar IPs do GitHub Actions: nesse caso as fichas da Câmara recebem `erro`
 # honesto e só fecham numa rodada de outra rede com os mesmos scripts.
 #
@@ -87,6 +88,22 @@ jobs:
           for nome in SUPABASE_URL SUPABASE_SERVICE_ROLE_KEY; do
             if [ -z "${!nome:-}" ]; then echo "::error::$nome ausente" >&2; exit 1; fi
           done
+      - uses: ./.github/actions/install-postgresql-client-17
+        timeout-minutes: 12
+      # Recibos atuais por candidato, em transação somente leitura, fora de
+      # reports/ (detalhe antigo pode ter dado pessoal; nunca vira artefato).
+      # O aplicador só grava recibo aberto em célula que não está fechada por
+      # prova vigente; sem esta leitura, grava só as provas.
+      - name: Exportar recibos atuais (somente leitura)
+        continue-on-error: true
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          set -euo pipefail
+          umask 077
+          if [ -z "${SUPABASE_DB_URL:-}" ]; then echo "::warning::SUPABASE_DB_URL ausente; recibos abertos não serão gravados"; exit 0; fi
+          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -Atq \
+            -f scripts/audit/coverage-receipts-snapshot.sql > "$RUNNER_TEMP/recibos-atuais.json"
       - name: Snapshot dos perfis públicos
         run: |
           set -euo pipefail
@@ -119,12 +136,14 @@ jobs:
         run: |
           set -euo pipefail
           umask 077
+          abertos=()
+          if [ -s "$RUNNER_TEMP/recibos-atuais.json" ]; then abertos=(--incluir-abertos --recibos-atuais="$RUNNER_TEMP/recibos-atuais.json"); fi
           modo=()
           if [ "$COBERTURA_GRAVAR" = "true" ]; then modo=(--apply --execucao="gh:${GITHUB_RUN_ID}:${GITHUB_RUN_ATTEMPT}:historico"); fi
           node --import tsx scripts/audit/apply-coverage-receipts.ts \
             --in="$RUNNER_TEMP/historico-recibos.json" --allow-fonte=tse-historico \
             --profiles="$RUNNER_TEMP/perfis.json" --out-dir="$RUNNER_TEMP/aplicacao-historico" \
-            --incluir-abertos "${modo[@]}" | sed 's/^/aplicador: /' | tee -a "$RUNNER_TEMP/resumo.txt"
+            "${abertos[@]}" "${modo[@]}" | sed 's/^/aplicador: /' | tee -a "$RUNNER_TEMP/resumo.txt"
       - name: Publicar resumo sem dados nominais
         if: always()
         run: |
@@ -163,6 +182,20 @@ jobs:
           for nome in SUPABASE_URL SUPABASE_SERVICE_ROLE_KEY; do
             if [ -z "${!nome:-}" ]; then echo "::error::$nome ausente" >&2; exit 1; fi
           done
+      # Recibos atuais por candidato, em transação somente leitura, fora de
+      # reports/ (detalhe antigo pode ter dado pessoal; nunca vira artefato).
+      # O aplicador só grava recibo aberto em célula que não está fechada por
+      # prova vigente; sem esta leitura, grava só as provas.
+      - name: Exportar recibos atuais (somente leitura)
+        continue-on-error: true
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          set -euo pipefail
+          umask 077
+          if [ -z "${SUPABASE_DB_URL:-}" ]; then echo "::warning::SUPABASE_DB_URL ausente; recibos abertos não serão gravados"; exit 0; fi
+          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -Atq \
+            -f scripts/audit/coverage-receipts-snapshot.sql > "$RUNNER_TEMP/recibos-atuais.json"
       - name: Snapshot dos perfis públicos
         run: |
           set -euo pipefail
@@ -206,13 +239,15 @@ jobs:
         run: |
           set -euo pipefail
           umask 077
+          abertos=()
+          if [ -s "$RUNNER_TEMP/recibos-atuais.json" ]; then abertos=(--incluir-abertos --recibos-atuais="$RUNNER_TEMP/recibos-atuais.json"); fi
           modo=()
           if [ "$COBERTURA_GRAVAR" = "true" ]; then modo=(--apply --execucao="gh:${GITHUB_RUN_ID}:${GITHUB_RUN_ATTEMPT}:parlamentares"); fi
           node --import tsx scripts/audit/apply-coverage-receipts.ts \
             --in="$RUNNER_TEMP/parlamentares-recibos.json" \
             --allow-fonte=camara-proposicoes,camara-votacoes,camara-gastos,senado-proposicoes,senado-votacoes,ceaps-senado \
             --profiles="$RUNNER_TEMP/perfis.json" --out-dir="$RUNNER_TEMP/aplicacao-parlamentares" \
-            --incluir-abertos "${modo[@]}" | sed 's/^/aplicador: /' | tee -a "$RUNNER_TEMP/resumo.txt"
+            "${abertos[@]}" "${modo[@]}" | sed 's/^/aplicador: /' | tee -a "$RUNNER_TEMP/resumo.txt"
       - name: Publicar resumo sem dados nominais
         if: always()
         run: |
