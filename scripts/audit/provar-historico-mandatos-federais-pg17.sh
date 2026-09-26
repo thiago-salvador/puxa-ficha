@@ -6,6 +6,16 @@
 # readbacks em ordem, readback reprova postimagem adulterada, rollback recusa
 # migration posterior no ledger, rollback em ordem inversa com readbacks de
 # rollback, e sentinelas intactas.
+#
+# Limite da fixture: em produção, historico_politico tem o trigger
+# sanitize_historico_politico_documents (BEFORE INSERT OR UPDATE OF observacoes,
+# função sanitize_public_document_fields), que mascara sequências com cara de
+# documento em observacoes. Ele não existe aqui. As quatro observações novas da
+# 20260925230000 foram passadas por public.mask_document_like_sequences em
+# produção (somente SELECT, 2026-09-25) e saíram idênticas; por isso a
+# pós-condição e o readback, que comparam o texto exato, valem também com o
+# trigger. O rollback regrava as observações originais, que já passaram pelo
+# trigger quando foram inseridas.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
