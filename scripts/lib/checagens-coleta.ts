@@ -41,11 +41,42 @@ export interface AgenciaChecagem {
    * Google. O Google News fica como segunda via.
    */
   wpSearch?: string
+  /**
+   * Busca do próprio site com HTML renderizado no servidor (`?q=NOME&page=N`),
+   * 12 resultados por página. Primeira via; o Google News é a segunda.
+   */
+  buscaSite?: string
+  /**
+   * Arquivo completo da seção de checagem, lido uma vez por rodada e casado
+   * localmente com cada candidatura. Primeira via; o Google News é a segunda.
+   */
+  arquivo?: ArquivoSecao
 }
 
-export type TransporteBusca = "wp-rest" | "google-news"
+/**
+ * - `falkor`: feed paginado da seção no g1 (10 itens por página, do mais novo
+ *   ao mais antigo, até a página vazia);
+ * - `arc`: consulta `story-feed-query` do Arc Publishing (100 itens por
+ *   página, com o total em `count`).
+ */
+export type ArquivoSecao =
+  | { tipo: "falkor"; url: string; confirmarNaPagina?: boolean }
+  | { tipo: "arc"; url: string; site: string; website: string; secaoRegex: string }
+
+export type TransporteBusca = "wp-rest" | "busca-site" | "arquivo-secao" | "google-news"
 /** Páginas de 100 resultados lidas na busca nativa. */
 export const PAGINAS_WP = 3
+/** Páginas de 12 resultados lidas na busca do site (108 itens, perto do teto do Google News). */
+export const PAGINAS_BUSCA_SITE = 9
+export const ITENS_POR_PAGINA_BUSCA_SITE = 12
+/** Nome que sempre tem checagem: se a sonda não acha nada, o leitor da página quebrou. */
+export const SONDA_BUSCA_SITE = "Lula"
+/** Teto de páginas do arquivo, contra paginação que nunca termina. */
+export const MAX_PAGINAS_ARQUIVO = 2_000
+export const ITENS_POR_PAGINA_ARC = 100
+/** Teto de matérias abertas por rodada para confirmar título com só parte do nome. */
+// Dry-run de 26/09: 118 matérias abertas em 20 candidaturas (~1.200 projetadas em 204).
+export const MAX_PAGINAS_CONFIRMACAO = 3_000
 
 /**
  * Agências já usadas no catálogo e as que o contrato editorial lista. A ordem
@@ -54,9 +85,20 @@ export const PAGINAS_WP = 3
  */
 export const AGENCIAS_CHECAGEM: readonly AgenciaChecagem[] = Object.freeze([
   { id: "lupa", nome: "Lupa", sites: ["agencialupa.org", "piaui.folha.uol.com.br/lupa"], dominios: ["agencialupa.org", "piaui.folha.uol.com.br"], wpSearch: "https://www.agencialupa.org/wp-json/wp/v2/search" },
-  { id: "aos-fatos", nome: "Aos Fatos", sites: ["aosfatos.org"], dominios: ["aosfatos.org"] },
-  { id: "fato-ou-fake", nome: "Fato ou Fake", sites: ["g1.globo.com/fato-ou-fake"], dominios: ["g1.globo.com"] },
-  { id: "estadao-verifica", nome: "Estadão Verifica", sites: ["estadao.com.br/estadao-verifica"], dominios: ["estadao.com.br"] },
+  { id: "aos-fatos", nome: "Aos Fatos", sites: ["aosfatos.org"], dominios: ["aosfatos.org"], buscaSite: "https://www.aosfatos.org/noticias/" },
+  {
+    id: "fato-ou-fake", nome: "Fato ou Fake", sites: ["g1.globo.com/fato-ou-fake"], dominios: ["g1.globo.com"],
+    // Instância do feed da página https://g1.globo.com/fato-ou-fake/ (arquivo desde 2018).
+    // O feed só traz título e resumo: título com parte do nome abre a matéria para confirmar.
+    arquivo: { tipo: "falkor", url: "https://falkor-cda.bastian.globo.com/tenants/g1/instances/9a0574d8-bc61-4d35-9488-7733f754f881/posts/page/", confirmarNaPagina: true },
+  },
+  {
+    id: "estadao-verifica", nome: "Estadão Verifica", sites: ["estadao.com.br/estadao-verifica"], dominios: ["estadao.com.br"],
+    // Mesma consulta que a página https://www.estadao.com.br/estadao-verifica/ faz.
+    arquivo: { tipo: "arc", url: "https://www.estadao.com.br/pf/api/v3/content/fetch/story-feed-query", site: "https://www.estadao.com.br", website: "estadao", secaoRegex: ".*estadao-verifica.*" },
+  },
+  // UOL Confere e AFP Checamos respondem 403 (Akamai) a acesso automatizado,
+  // inclusive em robots.txt, sitemap e RSS: só o Google News chega a elas.
   { id: "uol-confere", nome: "UOL Confere", sites: ["noticias.uol.com.br/confere"], dominios: ["uol.com.br"] },
   { id: "afp-checamos", nome: "AFP Checamos", sites: ["checamos.afp.com"], dominios: ["afp.com"] },
   { id: "comprova", nome: "Comprova", sites: ["projetocomprova.com.br"], dominios: ["projetocomprova.com.br"], wpSearch: "https://projetocomprova.com.br/wp-json/wp/v2/search" },
@@ -86,6 +128,8 @@ export interface ItemBusca {
   fonte: string
   fonte_url: string | null
   data_publicacao: string | null
+  /** Texto da matéria já normalizado (arquivos de seção), para confirmar menção fraca no título. */
+  texto?: string
 }
 
 export interface LeadChecagem {
@@ -214,8 +258,104 @@ export function aplicarRegraHomonimo(recibo: ReciboChecagem, candidato: Candidat
 }
 
 export function descricaoEscopo(): string {
-  const nativas = AGENCIAS_CHECAGEM.filter((a) => a.wpSearch).map((a) => a.nome).join(", ")
-  return `uma consulta por agência (${AGENCIAS_CHECAGEM.map((a) => a.nome).join(", ")}) com o nome de urna; busca nativa WordPress em ${nativas} (até ${PAGINAS_WP * 100} resultados) e Google News RSS nas demais ou como segunda via (teto de ${TETO_ITENS_POR_CONSULTA} itens); sem limite de data; lead exige o nome no título`
+  const nomes = (filtro: (agencia: AgenciaChecagem) => boolean) => AGENCIAS_CHECAGEM.filter(filtro).map((a) => a.nome).join(", ")
+  const soGoogle = nomes((a) => !a.wpSearch && !a.buscaSite && !a.arquivo)
+  return `uma consulta por agência (${AGENCIAS_CHECAGEM.map((a) => a.nome).join(", ")}) com o nome de urna; busca nativa WordPress em ${nomes((a) => Boolean(a.wpSearch))} (até ${PAGINAS_WP * 100} resultados); busca do site em ${nomes((a) => Boolean(a.buscaSite))} (até ${PAGINAS_BUSCA_SITE * ITENS_POR_PAGINA_BUSCA_SITE} resultados); arquivo completo da seção em ${nomes((a) => Boolean(a.arquivo))}, lido uma vez por rodada (título com só parte do nome exige o nome inteiro no texto da matéria); Google News RSS em ${soGoogle} e como segunda via das demais (teto de ${TETO_ITENS_POR_CONSULTA} itens); sem limite de data; lead exige o nome no título`
+}
+
+export function urlBuscaSite(nomeUrna: string, agencia: AgenciaChecagem, pagina: number): string | null {
+  if (!agencia.buscaSite) return null
+  return `${agencia.buscaSite}?q=${encodeURIComponent(nomeUrna.replace(/"/g, "").trim())}&page=${pagina}`
+}
+
+function atributo(tag: string, nome: string): string | null {
+  return tag.match(new RegExp(`\\s${nome}="([^"]*)"`))?.[1] ?? null
+}
+
+/**
+ * Página de resultados da busca do Aos Fatos: cada cartão tem um link
+ * `/noticias/<slug>/` com o título no atributo `title`. `ultimaPagina` vem
+ * dos links de paginação da mesma consulta.
+ */
+export function parseBuscaSite(html: string, base: string): { itens: ItemBusca[]; ultimaPagina: number | null } {
+  const itens: ItemBusca[] = []
+  const vistos = new Set<string>()
+  let ultimaPagina: number | null = null
+  for (const match of html.matchAll(/<a\s[^>]*>/g)) {
+    const href = atributo(match[0], "href")
+    if (!href) continue
+    const pagina = href.match(/[?&](?:amp;)?page=(\d+)/)
+    if (pagina && /[?&]q=/.test(href)) ultimaPagina = Math.max(ultimaPagina ?? 0, Number(pagina[1]))
+    const titulo = atributo(match[0], "title")
+    if (!titulo || !/^\/noticias\/[a-z0-9-]+\/$/.test(href)) continue
+    const link = new URL(href, base).toString()
+    if (vistos.has(link)) continue
+    vistos.add(link)
+    itens.push({ titulo: decodeEntities(titulo), link, fonte: "", fonte_url: link, data_publicacao: null })
+  }
+  return { itens, ultimaPagina }
+}
+
+function dataIso(value: unknown): string | null {
+  if (typeof value !== "string") return null
+  const parsed = new Date(value)
+  return Number.isFinite(parsed.getTime()) ? parsed.toISOString() : null
+}
+
+/** Página do feed Falkor do g1. Lança se não vier `items` em lista. */
+export function parseArquivoFalkor(body: string): { itens: ItemBusca[]; proxima: number | null } {
+  const data = JSON.parse(body) as { items?: unknown; nextPage?: unknown }
+  if (!data || !Array.isArray(data.items)) throw new Error("feed do g1 sem lista de itens")
+  const itens: ItemBusca[] = []
+  for (const row of data.items) {
+    const content = (row as { content?: Record<string, unknown> })?.content
+    const titulo = typeof content?.title === "string" ? content.title.trim() : ""
+    const url = typeof content?.url === "string" ? content.url : ""
+    if (!titulo || !url.startsWith("https://")) continue
+    const resumo = typeof content?.summary === "string" ? content.summary : ""
+    itens.push({ titulo, link: url, fonte: "", fonte_url: url, data_publicacao: dataIso((row as { publication?: unknown }).publication), texto: normalizarNome(`${titulo} ${resumo}`) })
+  }
+  return { itens, proxima: typeof data.nextPage === "number" ? data.nextPage : null }
+}
+
+export function urlArquivoArc(arquivo: Extract<ArquivoSecao, { tipo: "arc" }>, offset: number): string {
+  const body = JSON.stringify({ query: { bool: { must: [
+    { term: { type: "story" } },
+    { term: { "revision.published": 1 } },
+    { nested: { path: "taxonomy.sections", query: { bool: { must: [{ regexp: { "taxonomy.sections._id": arquivo.secaoRegex } }] } } } },
+  ] } } })
+  const query = { body, headlineSearch: "", included_fields: "headlines.basic,canonical_url,display_date", offset: String(offset), query: "", size: ITENS_POR_PAGINA_ARC, sort: "display_date:desc, first_publish_date:desc" }
+  return `${arquivo.url}?query=${encodeURIComponent(JSON.stringify(query))}&_website=${encodeURIComponent(arquivo.website)}`
+}
+
+/** Título, linha fina, descrição e parágrafos de uma história do Arc, sem HTML. */
+function textoArc(row: Record<string, unknown>): string {
+  const partes: string[] = []
+  for (const campo of ["headlines", "subheadlines", "description"]) {
+    const basic = (row[campo] as { basic?: unknown } | undefined)?.basic
+    if (typeof basic === "string") partes.push(basic)
+  }
+  for (const elemento of Array.isArray(row.content_elements) ? row.content_elements as Array<Record<string, unknown>> : []) {
+    if ((elemento?.type === "text" || elemento?.type === "header") && typeof elemento.content === "string") partes.push(elemento.content.replace(/<[^>]+>/g, " "))
+  }
+  return decodeEntities(partes.join(" "))
+}
+
+/** Página do `story-feed-query` do Arc. Lança se faltar `count` ou `content_elements`. */
+export function parseArquivoArc(body: string, site: string): { itens: ItemBusca[]; total: number; lidos: number } {
+  const data = JSON.parse(body) as { count?: unknown; content_elements?: unknown }
+  if (!data || typeof data.count !== "number" || !Array.isArray(data.content_elements)) throw new Error("arquivo Arc sem count ou content_elements")
+  const itens: ItemBusca[] = []
+  for (const row of data.content_elements as Array<Record<string, unknown>>) {
+    const headlines = row?.headlines as { basic?: unknown } | undefined
+    const titulo = typeof headlines?.basic === "string" ? headlines.basic.trim() : ""
+    const caminho = typeof row?.canonical_url === "string" ? row.canonical_url : ""
+    if (!titulo || !caminho) continue
+    const link = new URL(caminho, site).toString()
+    if (!link.startsWith("https://")) continue
+    itens.push({ titulo, link, fonte: "", fonte_url: link, data_publicacao: dataIso(row.display_date), texto: normalizarNome(textoArc(row)) })
+  }
+  return { itens, total: data.count, lidos: data.content_elements.length }
 }
 
 export function urlBuscaNativa(nomeUrna: string, agencia: AgenciaChecagem, pagina: number): string | null {
@@ -254,6 +394,7 @@ function decodeEntities(value: string): string {
     .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
     .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, "\"").replace(/&#39;/g, "'").replace(/&apos;/g, "'")
     .replace(/&#(\d+);/g, (_, code: string) => String.fromCodePoint(Number(code)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, code: string) => String.fromCodePoint(Number.parseInt(code, 16)))
     .replace(/&amp;/g, "&")
     .trim()
 }
@@ -473,6 +614,12 @@ export interface OpcoesColeta {
   limiteBloqueiosSeguidos?: number
   /** Orçamento total de espera por limite de taxa na rodada inteira. */
   orcamentoEsperaMs?: number
+  /** Teto de matérias abertas na rodada para confirmar menção fraca no título (arquivo do g1). */
+  orcamentoPaginasConfirmacao?: number
+  /** Intervalo mínimo entre pedidos ao mesmo host, somado a todos os trabalhadores. 0 desliga. */
+  intervaloHostMs?: number
+  /** Relógio do intervalo por host (testes). */
+  relogio?: () => number
   sleep?: (ms: number) => Promise<void>
   onRecibo?: (recibo: ReciboChecagem, indice: number) => void
 }
@@ -486,6 +633,197 @@ export interface DisjuntorGoogle {
 
 type OpcoesConsulta = Required<Pick<OpcoesColeta, "fetchText" | "tentativas" | "sleep" | "pausaMs" | "esperaBloqueioMs" | "semGoogle" | "pararNoBloqueio" | "limiteBloqueiosSeguidos" | "orcamentoEsperaMs">> & {
   disjuntor: DisjuntorGoogle
+  /** Arquivo de cada agência, lido uma vez por rodada e compartilhado entre trabalhadores. */
+  arquivos: Map<string, Promise<ArquivoLido>>
+  /** Resultado da sonda da busca do site por agência: null quando o leitor funciona. */
+  sondas: Map<string, Promise<string | null>>
+  /** Rodada interrompida: leituras de arquivo em curso param na próxima página. */
+  parada: { abortada: boolean }
+  /** Texto de matérias abertas para confirmar menção, compartilhado entre candidaturas. */
+  paginas: Map<string, Promise<{ texto: string } | { erro: string }>>
+  orcamentoPaginas: { total: number; restantes: number }
+}
+
+type ArquivoLido = { status: "ok"; itens: ItemBusca[] } | { status: "erro"; erro: string }
+
+/**
+ * Intervalo mínimo por host. A vez é reservada de forma síncrona, então
+ * trabalhadores concorrentes nunca pedem ao mesmo host no mesmo instante.
+ */
+export function comIntervaloPorHost(
+  fetchText: OpcoesColeta["fetchText"],
+  intervaloMs: number,
+  sleep: (ms: number) => Promise<void>,
+  relogio: () => number = Date.now,
+): OpcoesColeta["fetchText"] {
+  if (intervaloMs <= 0) return fetchText
+  const proximaVez = new Map<string, number>()
+  return async (url) => {
+    const host = new URL(url).host
+    const agora = relogio()
+    const vez = Math.max(agora, proximaVez.get(host) ?? 0)
+    proximaVez.set(host, vez + intervaloMs)
+    if (vez > agora) await sleep(vez - agora)
+    return fetchText(url)
+  }
+}
+
+/** Um pedido com novas tentativas em erro de rede ou HTTP fora de 2xx; `aceitar` devolve status tratados como resposta. */
+async function pedirComTentativas(url: string, opcoes: OpcoesConsulta, aceitar: (status: number) => boolean = () => false): Promise<{ status: number; body: string } | { erro: string }> {
+  let ultimoErro = "sem resposta"
+  for (let tentativa = 0; tentativa < opcoes.tentativas; tentativa++) {
+    if (tentativa > 0) await opcoes.sleep(opcoes.pausaMs * 4 * tentativa)
+    try {
+      const resposta = await opcoes.fetchText(url)
+      if ((resposta.status >= 200 && resposta.status < 300) || aceitar(resposta.status)) return resposta
+      ultimoErro = `HTTP ${resposta.status}`
+    } catch (error) {
+      ultimoErro = error instanceof Error ? error.message : String(error)
+    }
+  }
+  return { erro: ultimoErro }
+}
+
+async function lerPaginaBuscaSite(nome: string, agencia: AgenciaChecagem, pagina: number, opcoes: OpcoesConsulta): Promise<{ itens: ItemBusca[]; ultimaPagina: number | null; fim: boolean } | { erro: string }> {
+  // Página além da última responde 404; na primeira, 404 é erro.
+  const resposta = await pedirComTentativas(urlBuscaSite(nome, agencia, pagina)!, opcoes, (status) => pagina > 1 && status === 404)
+  if ("erro" in resposta) return resposta
+  if (resposta.status === 404) return { itens: [], ultimaPagina: null, fim: true }
+  return { ...parseBuscaSite(resposta.body, agencia.buscaSite!), fim: false }
+}
+
+async function consultarBuscaSite(candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<EstadoAgencia> {
+  // Página vazia não se distingue de leitor quebrado; a sonda prova que o leitor acha resultado.
+  let sonda = opcoes.sondas.get(agencia.id)
+  if (!sonda) {
+    sonda = lerPaginaBuscaSite(SONDA_BUSCA_SITE, agencia, 1, opcoes).then((lida) =>
+      "erro" in lida ? `sonda: ${lida.erro}` : lida.itens.length === 0 ? `sonda "${SONDA_BUSCA_SITE}" sem resultado: leitor da página quebrado` : null)
+    opcoes.sondas.set(agencia.id, sonda)
+  }
+  const falhaSonda = await sonda
+  if (falhaSonda) {
+    // Falha não fica em cache: a próxima candidatura sonda de novo (erro transitório não derruba a rodada).
+    if (opcoes.sondas.get(agencia.id) === sonda) opcoes.sondas.delete(agencia.id)
+    return { status: "erro", erro: `busca do site: ${falhaSonda}` }
+  }
+  const itens: ItemBusca[] = []
+  for (let pagina = 1; pagina <= PAGINAS_BUSCA_SITE; pagina++) {
+    if (pagina > 1) await opcoes.sleep(opcoes.pausaMs)
+    const lida = await lerPaginaBuscaSite(candidato.nome_urna, agencia, pagina, opcoes)
+    if ("erro" in lida) return { status: "erro", erro: `busca do site: ${lida.erro}` }
+    itens.push(...lida.itens)
+    if (lida.fim || lida.itens.length < ITENS_POR_PAGINA_BUSCA_SITE || !lida.ultimaPagina || pagina >= lida.ultimaPagina) break
+  }
+  return { status: "ok", itens: itens.length, leads: leadsDaResposta(itens, candidato, agencia), transporte: "busca-site" }
+}
+
+async function lerArquivo(arquivo: ArquivoSecao, opcoes: OpcoesConsulta): Promise<ArquivoLido> {
+  const porLink = new Map<string, ItemBusca>()
+  try {
+    if (arquivo.tipo === "falkor") {
+      let pagina: number | null = 1
+      let lidas = 0
+      while (pagina !== null) {
+        if (opcoes.parada.abortada) return { status: "erro", erro: "rodada interrompida" }
+        if (++lidas > MAX_PAGINAS_ARQUIVO) return { status: "erro", erro: `arquivo sem fim depois de ${MAX_PAGINAS_ARQUIVO} páginas` }
+        const resposta = await pedirComTentativas(`${arquivo.url}${pagina}`, opcoes)
+        if ("erro" in resposta) return { status: "erro", erro: `arquivo, página ${pagina}: ${resposta.erro}` }
+        const lida = parseArquivoFalkor(resposta.body)
+        for (const item of lida.itens) porLink.set(item.link, item)
+        // Página vazia é o fim do arquivo.
+        pagina = lida.itens.length === 0 ? null : lida.proxima
+      }
+    } else {
+      let offset = 0
+      let total = Number.POSITIVE_INFINITY
+      for (let lidas = 1; offset < total; lidas++) {
+        if (opcoes.parada.abortada) return { status: "erro", erro: "rodada interrompida" }
+        if (lidas > MAX_PAGINAS_ARQUIVO) return { status: "erro", erro: `arquivo sem fim depois de ${MAX_PAGINAS_ARQUIVO} páginas` }
+        const resposta = await pedirComTentativas(urlArquivoArc(arquivo, offset), opcoes)
+        if ("erro" in resposta) return { status: "erro", erro: `arquivo, offset ${offset}: ${resposta.erro}` }
+        const lida = parseArquivoArc(resposta.body, arquivo.site)
+        total = lida.total
+        for (const item of lida.itens) porLink.set(item.link, item)
+        if (lida.lidos === 0 && offset < total) return { status: "erro", erro: `arquivo parou no offset ${offset} de ${total}` }
+        offset += lida.lidos
+      }
+    }
+  } catch (error) {
+    return { status: "erro", erro: `arquivo: ${error instanceof Error ? error.message : String(error)}` }
+  }
+  if (porLink.size === 0) return { status: "erro", erro: "arquivo vazio: rota mudou" }
+  return { status: "ok", itens: [...porLink.values()] }
+}
+
+/** Nome de urna ou nome completo inteiro, como sequência de palavras, num texto já normalizado. */
+export function textoCitaNomeInteiro(textoNormalizado: string, candidato: CandidatoChecagem): boolean {
+  const alvo = ` ${textoNormalizado} `
+  return [candidato.nome_urna, candidato.nome_completo].some((nome) => {
+    const normalizado = normalizarNome(nome)
+    return normalizado.length > 0 && alvo.includes(` ${normalizado} `)
+  })
+}
+
+/** Texto do corpo da matéria (região `<article>`), normalizado. */
+export function textoDaPagina(html: string): string {
+  const inicio = html.indexOf("<article")
+  const fim = html.lastIndexOf("</article>")
+  const corpo = inicio >= 0 && fim > inicio ? html.slice(inicio, fim) : html
+  return normalizarNome(decodeEntities(corpo.replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, " ")))
+}
+
+async function textoConfirmado(link: string, opcoes: OpcoesConsulta): Promise<{ texto: string } | { erro: string }> {
+  let pagina = opcoes.paginas.get(link)
+  if (!pagina) {
+    if (opcoes.orcamentoPaginas.restantes <= 0) return { erro: `teto de ${opcoes.orcamentoPaginas.total} páginas de confirmação na rodada` }
+    opcoes.orcamentoPaginas.restantes--
+    pagina = pedirComTentativas(link, opcoes).then((resposta) => "erro" in resposta ? resposta : { texto: textoDaPagina(resposta.body) })
+    opcoes.paginas.set(link, pagina)
+  }
+  return pagina
+}
+
+/**
+ * Leads de um arquivo de seção. O arquivo não passou por busca com o nome,
+ * então o critério frouxo de título (`newsTitleMentionsCandidate`) sozinho
+ * aceitaria "Felipe Neto" para "ACM Neto". Título com o nome inteiro vale;
+ * título só com parte do nome exige o nome inteiro no texto da matéria, que
+ * é o que a frase entre aspas garantia na busca do Google.
+ */
+async function leadsDoArquivo(itens: readonly ItemBusca[], candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<{ leads: LeadChecagem[] } | { erro: string }> {
+  const confirmarNaPagina = agencia.arquivo?.tipo === "falkor" && agencia.arquivo.confirmarNaPagina === true
+  const vistos = new Set<string>()
+  const leads: LeadChecagem[] = []
+  for (const item of itens) {
+    const host = hostDe(item.fonte_url)
+    if (!host || !agencia.dominios.some((dominio) => host === dominio || host.endsWith(`.${dominio}`))) continue
+    if (!newsTitleMentionsCandidate(item.titulo, { nome_urna: candidato.nome_urna, nome_completo: candidato.nome_completo })) continue
+    const chave = stripAccents(item.titulo).toLowerCase()
+    if (vistos.has(chave)) continue
+    let confirmado = textoCitaNomeInteiro(normalizarNome(item.titulo), candidato) || (item.texto !== undefined && textoCitaNomeInteiro(item.texto, candidato))
+    if (!confirmado && confirmarNaPagina) {
+      const pagina = await textoConfirmado(item.link, opcoes)
+      if ("erro" in pagina) return { erro: `confirmação de ${item.link}: ${pagina.erro}` }
+      confirmado = textoCitaNomeInteiro(pagina.texto, candidato)
+    }
+    if (!confirmado) continue
+    vistos.add(chave)
+    leads.push({ agencia: agencia.id, titulo: item.titulo, link: item.link, data_publicacao: item.data_publicacao })
+  }
+  return { leads }
+}
+
+async function consultarArquivo(candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<EstadoAgencia> {
+  let lido = opcoes.arquivos.get(agencia.id)
+  if (!lido) {
+    lido = lerArquivo(agencia.arquivo!, opcoes)
+    opcoes.arquivos.set(agencia.id, lido)
+  }
+  const arquivo = await lido
+  if (arquivo.status === "erro") return { status: "erro", erro: `arquivo da seção: ${arquivo.erro}` }
+  const leads = await leadsDoArquivo(arquivo.itens, candidato, agencia, opcoes)
+  if ("erro" in leads) return { status: "erro", erro: `arquivo da seção: ${leads.erro}` }
+  return { status: "ok", itens: arquivo.itens.length, leads: leads.leads, transporte: "arquivo-secao" }
 }
 
 /** Limite de taxa com `pararNoBloqueio`: a rodada para e a candidatura em curso não gera recibo. */
@@ -520,13 +858,22 @@ async function consultarNativa(candidato: CandidatoChecagem, agencia: AgenciaChe
   return { status: "ok", itens: itens.length, leads: leadsDaResposta(itens, candidato, agencia), transporte: "wp-rest" }
 }
 
+function temViaDireta(agencia: AgenciaChecagem): boolean {
+  return Boolean(agencia.wpSearch || agencia.buscaSite || agencia.arquivo)
+}
+
 async function consultarAgencia(candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<EstadoAgencia> {
-  if (!agencia.wpSearch) return consultarGoogle(candidato, agencia, opcoes)
-  const nativa = await consultarNativa(candidato, agencia, opcoes)
-  if (nativa.status === "ok") return nativa
+  if (!temViaDireta(agencia)) return consultarGoogle(candidato, agencia, opcoes)
+  const direta = agencia.wpSearch
+    ? await consultarNativa(candidato, agencia, opcoes)
+    : agencia.buscaSite
+      ? await consultarBuscaSite(candidato, agencia, opcoes)
+      : await consultarArquivo(candidato, agencia, opcoes)
+  if (direta.status === "ok") return direta
   const google = await consultarGoogle(candidato, agencia, opcoes)
-  if (google.status === "ok") return { ...google, falhas: [nativa.erro] }
-  return { status: "erro", erro: `${nativa.erro}; google-news: ${google.erro}` }
+  if (google.status === "ok") return { ...google, falhas: [direta.erro] }
+  // `google.erro` já começa com "google-news:".
+  return { status: "erro", erro: `${direta.erro}; ${google.erro}` }
 }
 
 async function consultarGoogle(
@@ -584,18 +931,25 @@ export async function coletarChecagens(opcoes: OpcoesColeta): Promise<ReciboChec
   const tentativas = Math.max(1, opcoes.tentativas ?? 3)
   const esperaBloqueioMs = Math.max(0, opcoes.esperaBloqueioMs ?? 30_000)
   const disjuntor: DisjuntorGoogle = { bloqueiosSeguidos: 0, esperaGastaMs: 0, aberto: null }
+  const orcamentoPaginas = Math.max(0, opcoes.orcamentoPaginasConfirmacao ?? MAX_PAGINAS_CONFIRMACAO)
   const completo = opcoes.rosterCompleto ?? opcoes.roster
   const noCompleto = new Set(completo.map((candidato) => `${candidato.id}\u0000${candidato.slug}`))
   const foraDoCadastro = opcoes.roster.filter((candidato) => !noCompleto.has(`${candidato.id}\u0000${candidato.slug}`))
   if (foraDoCadastro.length) throw new Error(`Recorte fora do cadastro completo: ${foraDoCadastro.map((candidato) => candidato.slug).join(", ")}`)
   const homonimos = gruposDeHomonimos(completo)
   const consulta: OpcoesConsulta = {
-    fetchText: opcoes.fetchText, tentativas, sleep, pausaMs, esperaBloqueioMs,
+    fetchText: comIntervaloPorHost(opcoes.fetchText, Math.max(0, opcoes.intervaloHostMs ?? 0), sleep, opcoes.relogio),
+    tentativas, sleep, pausaMs, esperaBloqueioMs,
     semGoogle: opcoes.semGoogle ?? false,
     pararNoBloqueio: opcoes.pararNoBloqueio ?? false,
     limiteBloqueiosSeguidos: Math.max(1, opcoes.limiteBloqueiosSeguidos ?? 3),
     orcamentoEsperaMs: Math.max(0, opcoes.orcamentoEsperaMs ?? 10 * 60_000),
     disjuntor,
+    arquivos: new Map(),
+    sondas: new Map(),
+    parada: { abortada: false },
+    paginas: new Map(),
+    orcamentoPaginas: { total: orcamentoPaginas, restantes: orcamentoPaginas },
   }
   const concorrencia = Math.min(4, Math.max(1, opcoes.concorrencia ?? 2))
   const identidades = new Set<string>()
@@ -607,6 +961,10 @@ export async function coletarChecagens(opcoes: OpcoesColeta): Promise<ReciboChec
     identidades.add(chave)
   }
   const recibos: ReciboChecagem[] = new Array(opcoes.roster.length)
+  // Arquivos de seção começam já: correm em paralelo às buscas por candidatura (hosts diferentes).
+  if (opcoes.roster.length > 0) {
+    for (const agencia of AGENCIAS_CHECAGEM) if (agencia.arquivo) consulta.arquivos.set(agencia.id, lerArquivo(agencia.arquivo, consulta))
+  }
   let proximo = 0
   // Abort compartilhado: um trabalhador que bate no limite para os outros também.
   let abortado = false
@@ -617,11 +975,12 @@ export async function coletarChecagens(opcoes: OpcoesColeta): Promise<ReciboChec
       const estados: Record<string, EstadoAgencia> = {}
       for (const agencia of AGENCIAS_CHECAGEM) {
         if (abortado) return
-        const semPedido = !agencia.wpSearch && (consulta.semGoogle || disjuntor.aberto !== null)
+        // Arquivo de seção não pede nada por candidatura; Google desligado ou em disjuntor também não.
+        const semPedido = Boolean(agencia.arquivo) || (!temViaDireta(agencia) && (consulta.semGoogle || disjuntor.aberto !== null))
         try {
           estados[agencia.id] = await consultarAgencia(candidato, agencia, consulta)
         } catch (error) {
-          if (error instanceof BloqueioDeTaxa) abortado = true
+          if (error instanceof BloqueioDeTaxa) abortado = consulta.parada.abortada = true
           throw error
         }
         if (!semPedido) await sleep(pausaMs)

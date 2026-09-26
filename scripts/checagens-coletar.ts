@@ -62,7 +62,11 @@ function opcoes(argv: string[]): { valores: Map<string, string>; flags: Set<stri
 }
 
 async function fetchText(url: string): Promise<{ status: number; body: string }> {
-  const response = await fetch(url, { headers: { "user-agent": USER_AGENT, accept: "application/rss+xml, application/xml;q=0.9" }, signal: AbortSignal.timeout(20_000) })
+  // User-agent identifica a rotina; Accept e Accept-Language são os de qualquer cliente HTTP.
+  const response = await fetch(url, {
+    headers: { "user-agent": USER_AGENT, accept: "text/html,application/xhtml+xml,application/xml;q=0.9,application/json;q=0.9", "accept-language": "pt-BR,pt;q=0.9" },
+    signal: AbortSignal.timeout(30_000),
+  })
   return { status: response.status, body: await response.text() }
 }
 
@@ -137,7 +141,7 @@ async function registrarRecibosExistentes(arquivo: string, catalogoPath: string 
 export async function executarColetaChecagens(argv = process.argv.slice(2)): Promise<number> {
   const { valores, flags } = opcoes(argv)
   if (flags.has("help")) {
-    console.log("Uso: coletar:checagens [--roster ARQUIVO] [--slugs a,b] [--out DIR] [--catalogo ARQUIVO] [--concorrencia N] [--pausa-ms N] [--espera-bloqueio-ms N] [--retomar recibos.json] [--sem-google] [--parar-no-bloqueio] [--gravar-log]")
+    console.log("Uso: coletar:checagens [--roster ARQUIVO] [--slugs a,b] [--out DIR] [--catalogo ARQUIVO] [--concorrencia N] [--pausa-ms N] [--intervalo-host-ms N] [--espera-bloqueio-ms N] [--retomar recibos.json] [--sem-google] [--parar-no-bloqueio] [--gravar-log]")
     return 0
   }
   const inicio = new Date()
@@ -184,6 +188,8 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
     fetchText,
     concorrencia: Number(valores.get("concorrencia") ?? 1),
     pausaMs: Number(valores.get("pausa-ms") ?? 1_000),
+    // Um pedido a cada 2 s por host, somando buscas por candidatura e leitura dos arquivos de seção.
+    intervaloHostMs: Number(valores.get("intervalo-host-ms") ?? 2_000),
     esperaBloqueioMs: Number(valores.get("espera-bloqueio-ms") ?? 30_000),
     semGoogle: flags.has("sem-google"),
     pararNoBloqueio: flags.has("parar-no-bloqueio"),

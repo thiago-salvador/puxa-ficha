@@ -46,11 +46,17 @@ jobs:
   coletar:
     name: Busca nominal nas agências
     runs-on: ubuntu-latest
-    # 204 candidaturas x 7 agências com pausa de 1 s (~25 min). Limite de taxa
-    # do Google abre o disjuntor depois de 3 bloqueios seguidos ou 10 min de
-    # espera somada: as agências só-Google viram `erro` no resto da rodada, e o
-    # coleta_log e o resumo são gravados mesmo assim.
-    timeout-minutes: 90
+    # 204 candidaturas, um pedido a cada 2 s por host. Lupa e Comprova usam a
+    # busca WordPress; Aos Fatos, a busca do site; Fato ou Fake e Estadão
+    # Verifica, o arquivo da seção lido uma vez (~420 e ~65 páginas). UOL
+    # Confere e AFP Checamos respondem 403 a acesso automatizado e dependem do
+    # Google News. Limite de taxa do Google abre o disjuntor depois de 3
+    # bloqueios seguidos ou 10 min de espera somada: essas duas viram `erro` no
+    # resto da rodada, e o coleta_log e o resumo são gravados mesmo assim.
+    # Título do arquivo do g1 com só parte do nome abre a matéria para confirmar
+    # o nome inteiro: 118 matérias em 20 candidaturas no dry-run de 26/09, a
+    # 2 s cada, o que leva a rodada completa para perto de 90 min.
+    timeout-minutes: 150
     steps:
       - name: Vigência da rotina
         id: vigencia
