@@ -63,7 +63,7 @@ test("limiar do catálogo distingue recibo antigo de agenda futura", () => {
 
 test("linha do TSE lê todos os membros de tse-current no catálogo, inclusive a observação", () => {
   const tse = IMPRENSA_FRESHNESS_SOURCES.find((item) => item.id === "tse")
-  assert.deepEqual(tse?.receiptSources, ["tse", "tse-situacao", "tse-cpf", "tse-observacao", "tse-auditoria-snapshot"])
+  assert.deepEqual(tse?.receiptSources, ["tse", "tse-situacao", "tse-cpf", "tse-observacao", "tse-auditoria-snapshot", "tse-auditoria-candidatura"])
   assert.equal(tse?.maxAgeHours, 36)
   for (const id of ["camara", "senado", "transparencia"]) {
     assert.equal(IMPRENSA_FRESHNESS_SOURCES.find((item) => item.id === id)?.receiptSources, undefined)

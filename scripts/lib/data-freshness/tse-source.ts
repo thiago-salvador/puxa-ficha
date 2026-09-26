@@ -10,8 +10,13 @@ import {
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 
+import { parse } from "csv-parse/sync"
+
 import { parseCSV } from "../parse-csv-local"
+import type { LinhaSiteCandidatoTse } from "../candidate-sites-tse"
+import { indexarJulgamentoPorSq, type JulgamentoTse } from "../tse-situacao-julgamento"
 import { stripAccents } from "../../../src/lib/strip-accents"
+import type { OfficialFichaRow } from "./ficha-tse"
 import type { CandidacyRecord, RelevantOffice } from "./types"
 
 export const TSE_CANDIDACY_URL =
@@ -171,6 +176,145 @@ export async function parseOfficialCandidaciesZip(bytes: Uint8Array): Promise<Ca
   } finally {
     rmSync(work, { recursive: true, force: true })
   }
+}
+
+export const TSE_COMPLEMENTAR_URL =
+  "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip"
+export const TSE_REDES_SOCIAIS_URL =
+  "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/rede_social_candidato_2026.zip"
+
+/** Revisão de um recurso oficial lido: de onde, qual conteúdo e quando. */
+export interface OfficialResourceRevision {
+  url: string
+  sha256: string
+  checked_at: string
+}
+
+export interface OfficialResource extends OfficialResourceRevision {
+  bytes: Uint8Array
+}
+
+/** Baixa um ZIP oficial auxiliar (complementar, redes) sem fallback de catálogo. */
+export async function downloadOfficialResource(url: string, fetcher: FetchLike = fetch): Promise<OfficialResource> {
+  const { bytes } = await fetchZip(url, fetcher)
+  return {
+    bytes,
+    url,
+    sha256: createHash("sha256").update(bytes).digest("hex"),
+    checked_at: new Date().toISOString(),
+  }
+}
+
+interface LocalCatalog {
+  fetched_at?: string
+  resources?: Array<{ url?: string; arquivo?: string; sha256?: string }>
+}
+
+/**
+ * Lê de um diretório local os ZIPs oficiais já baixados, com o `catalog.json`
+ * que registrou URL, SHA-256 e horário da coleta. O SHA de cada arquivo é
+ * recalculado e precisa bater com o catálogo. Não é leitura ao vivo: quem
+ * chama marca o modo como `local_official_zip`.
+ */
+export function loadLocalOfficialResources(dir: string): {
+  candidaturas: OfficialResource
+  complementar: OfficialResource | null
+  redes: OfficialResource | null
+} {
+  const catalog = JSON.parse(readFileSync(join(dir, "catalog.json"), "utf8")) as LocalCatalog
+  const checkedAt = catalog.fetched_at
+  if (!checkedAt || !Number.isFinite(Date.parse(checkedAt))) {
+    throw new Error("catalog.json local sem fetched_at válido")
+  }
+  const read = (arquivo: string, required: boolean): OfficialResource | null => {
+    const entry = catalog.resources?.find((resource) => resource.arquivo === arquivo)
+    if (!entry?.url || !entry.sha256) {
+      if (required) throw new Error(`catalog.json local sem ${arquivo}`)
+      return null
+    }
+    const bytes = new Uint8Array(readFileSync(join(dir, arquivo)))
+    const sha256 = createHash("sha256").update(bytes).digest("hex")
+    if (sha256 !== entry.sha256) {
+      throw new Error(`${arquivo}: SHA-256 ${sha256} diverge do catálogo local ${entry.sha256}`)
+    }
+    return { bytes, url: entry.url, sha256, checked_at: checkedAt }
+  }
+  return {
+    candidaturas: read("consulta_cand_2026.zip", true)!,
+    complementar: read("consulta_cand_complementar_2026.zip", false),
+    redes: read("rede_social_candidato_2026.zip", false),
+  }
+}
+
+/** Linhas do CSV `_BRASIL` de um ZIP do TSE (windows-1252, `;`). */
+export function readBrasilCsvRows(bytes: Uint8Array): { header: string[]; rows: Array<Record<string, string>> } {
+  const work = mkdtempSync(join(tmpdir(), "puxaficha-tse-brasil-"))
+  const zipPath = join(work, "pacote.zip")
+  try {
+    writeFileSync(zipPath, bytes)
+    const entries = execFileSync("unzip", ["-Z1", zipPath], { encoding: "utf8" })
+      .split(/\r?\n/)
+      .filter((entry) => /_BRASIL\.csv$/i.test(entry))
+    if (entries.length !== 1) throw new Error(`esperado um CSV _BRASIL no pacote, encontrados ${entries.length}`)
+    const buffer = execFileSync("unzip", ["-p", zipPath, entries[0]], { maxBuffer: 200 * 1024 * 1024 })
+    const rows = parse(new TextDecoder("windows-1252").decode(buffer), {
+      bom: true,
+      columns: true,
+      delimiter: ";",
+      skip_empty_lines: true,
+      trim: true,
+    }) as Array<Record<string, string>>
+    return { header: rows.length > 0 ? Object.keys(rows[0]) : [], rows }
+  } finally {
+    rmSync(work, { recursive: true, force: true })
+  }
+}
+
+const FICHA_ROW_CARGOS = new Set(["PRESIDENTE", "VICE PRESIDENTE", "GOVERNADOR", "VICE GOVERNADOR", "SENADOR"])
+
+/** Registros de 1º turno de Presidente, Governador, Senador e vices, por SQ. */
+export function parseOfficialFichaRows(bytes: Uint8Array): OfficialFichaRow[] {
+  const { rows } = readBrasilCsvRows(bytes)
+  const result: OfficialFichaRow[] = []
+  for (const row of rows) {
+    const cargo = normalized(row.DS_CARGO ?? "")
+    if (!FICHA_ROW_CARGOS.has(cargo) || row.NR_TURNO !== "1" || !row.SQ_CANDIDATO) continue
+    result.push({
+      sq_candidato: row.SQ_CANDIDATO.trim(),
+      cargo,
+      uf: (row.SG_UF ?? "").trim().toUpperCase(),
+      nome_urna: row.NM_URNA_CANDIDATO ?? "",
+      nome_civil: row.NM_CANDIDATO ?? "",
+      partido_sigla: row.SG_PARTIDO ?? "",
+      numero_urna: row.NR_CANDIDATO ?? "",
+      sq_coligacao: row.SQ_COLIGACAO ?? "",
+    })
+  }
+  if (!result.some((row) => row.cargo === "SENADOR")) {
+    throw new Error("consulta_cand sem registros de Senador no primeiro turno")
+  }
+  return result
+}
+
+export function parseJulgamentosZip(bytes: Uint8Array): Map<string, JulgamentoTse> {
+  const { header, rows } = readBrasilCsvRows(bytes)
+  return indexarJulgamentoPorSq(rows, header)
+}
+
+export function parseRedesSociaisZip(bytes: Uint8Array): Map<string, LinhaSiteCandidatoTse[]> {
+  const { header, rows } = readBrasilCsvRows(bytes)
+  for (const column of ["SQ_CANDIDATO", "NR_ORDEM_REDE_SOCIAL", "DS_URL"]) {
+    if (!header.includes(column)) throw new Error(`rede_social_candidato sem a coluna ${column}`)
+  }
+  const bySq = new Map<string, LinhaSiteCandidatoTse[]>()
+  for (const row of rows) {
+    const sq = (row.SQ_CANDIDATO ?? "").trim()
+    if (!sq) continue
+    const list = bySq.get(sq) ?? []
+    list.push(row as unknown as LinhaSiteCandidatoTse)
+    bySq.set(sq, list)
+  }
+  return bySq
 }
 
 export function officialRecordsFromVersionedSnapshot(path: string): CandidacyRecord[] {
