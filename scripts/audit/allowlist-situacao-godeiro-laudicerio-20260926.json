@@ -25,17 +25,10 @@
       "slug": "laudicerio-aguiar",
       "campos": [
         "situacao_candidatura",
-        "ultima_atualizacao"
-      ],
-      "max_registros": 1
-    },
-    {
-      "tabela": "candidatos",
-      "slug": "laudicerio-aguiar",
-      "campos": [
+        "ultima_atualizacao",
         "biografia"
       ],
-      "max_registros": 1
+      "max_registros": 2
     }
   ],
   "referencias": [

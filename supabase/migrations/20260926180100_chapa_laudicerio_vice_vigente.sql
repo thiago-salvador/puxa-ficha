@@ -105,7 +105,7 @@ BEGIN
   WHERE s.migration_version = 'chapa-laudicerio-20260926'
     AND s.tabela = 'chapas_2026'
     AND s.row_id = ch.id
-    AND ch.chave = chave_vigente
+    AND ch.chave = '2026:MT:laudicerio-aguiar-machado:duplicidade:110002554073:110002554503'
     AND to_jsonb(ch) = s.preimage;
 
   GET DIAGNOSTICS quantidade = ROW_COUNT;
