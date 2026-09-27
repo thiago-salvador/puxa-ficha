@@ -1,0 +1,41 @@
+{
+  "versao": "2026-09-26",
+  "_comentario": "Allowlist fechada das migrations 20260926190000 (numero_processo de wilson-grassi-junior volta ao numero unico CNJ) e 20260926190100 (CHECK NOT VALID de numero CNJ em processos, schema puro, sem escrita de dado). A migration de dado aceita somente a preimagem medida em 2026-09-26 e grava recibo em coleta_log com before/after.",
+  "fonte": "e-SAJ TJSP, consulta de 2o grau do numero unificado 2254046-86.2021.8.26.0000 (Habeas Corpus Civel; incidente 50000, Agravo Regimental Civel), e comunicado do Orgao Especial citado em url_fonte, lidos em 2026-09-26.",
+  "motivo": "O numero publicado juntava o sufixo de incidente /50000 do e-SAJ ao numero unico CNJ (25 digitos). O numero unico tem digito verificador valido (86) e a fonte primaria confirma o processo; a linha continua publicada com o numero CNJ, e o incidente segue citado na descricao. O status passa de 'em tramitacao (comunicacao publicada)' a 'arquivado': o e-SAJ mostra o processo arquivado administrativamente e o incidente encerrado.",
+  "coorte": [
+    "wilson-grassi-junior"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "processos",
+      "slug": "wilson-grassi-junior",
+      "campos": [
+        "numero_processo",
+        "status"
+      ],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260926190000",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs"
 import { describe, it } from "node:test"
 
 import {
+  formatarCnj,
   prepararPacoteProcessos,
   type LinhaProcesso,
   tipoProcessual,
@@ -295,5 +296,34 @@ describe("gerar migration de processos da curadoria", () => {
         }),
       /identidade nao confirmada/,
     )
+  })
+
+  it("grava o número CNJ sempre mascarado, mesmo quando a entrada vem com 20 dígitos", () => {
+    assert.equal(formatarCnj("22540468620218260000"), "2254046-86.2021.8.26.0000")
+    assert.equal(formatarCnj("2254046-86.2021.8.26.0000"), "2254046-86.2021.8.26.0000")
+    assert.throws(() => formatarCnj("22540468720218260000"), /CNJ invalido/)
+    assert.throws(() => formatarCnj("2254046-86.2021.8.26.0000/50000"), /CNJ invalido/)
+
+    const cnj = "08640775520258100001"
+    const pacote = prepararPacoteProcessos({
+      itensRevisao: [item({
+        slug: "orleans-brandao",
+        numero_cnj: cnj,
+        fontes_oficiais: [{
+          url: `https://comunicaapi.pje.jus.br/api/v1/comunicacao?numeroProcesso=${cnj}`,
+          titulo: "Comunica PJe",
+        }],
+      })],
+      processosCuradoria: [processo({
+        numero_cnj: cnj,
+        url: `https://comunicaapi.pje.jus.br/api/v1/comunicacao?numeroProcesso=${cnj}`,
+      })],
+      esperadoProcessos: 1,
+      esperadoFichas: 1,
+      timestamp: "20260810122000",
+    })
+    assert.equal(pacote.linhas[0].numero_cnj, "0864077-55.2025.8.10.0001")
+    assert.ok(pacote.migration.includes("'0864077-55.2025.8.10.0001'"))
+    assert.ok(!pacote.migration.includes(`'${cnj}'`), "migration não pode inserir os 20 dígitos crus")
   })
 })

@@ -13,7 +13,7 @@ cd "$ROOT"
 
 IMAGE="postgres:17@sha256:7958605b474b3d264a969cb3a123d6aa00ad1e1fe9da8a69984dabb704d93317"
 V="20260926224500_partido_cargo_paulo_mourao"
-BASE="20260926180200"
+BASE="20260926190100"
 REAL_SCHEMA="scripts/audit/lib/chapas-2026-real-schema.sql"
 RUNNER="scripts/audit/apply-partido-paulo-mourao-production.sh"
 for f in "supabase/migrations/$V.sql" "supabase/rollback/$V.rollback.sql" "supabase/readback/$V.readback.sql" \

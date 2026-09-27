@@ -54,11 +54,11 @@ export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
 # Predecessor: o topo do ledger e da arvore nesta base, gravado por
-# apply-situacao-godeiro-laudicerio-production, que sempre escreve digest.
+# apply-processos-numero-cnj-production, que sempre escreve digest.
 # PROVISORIO: se outras migrations entrarem antes desta, base_version e
 # base_migration passam a apontar para a ultima delas.
-base_version=20260926180200
-base_migration="$ROOT/supabase/migrations/${base_version}_biografia_laudicerio_sem_ausencia_tse.sql"
+base_version=20260926190100
+base_migration="$ROOT/supabase/migrations/${base_version}_processos_numero_cnj_check.sql"
 [[ -f "$base_migration" ]] || { echo "FAIL: predecessor ${base_version} ausente" >&2; exit 2; }
 base_digest="sha256:$(shasum -a 256 "$base_migration" | cut -d' ' -f1)"
 
