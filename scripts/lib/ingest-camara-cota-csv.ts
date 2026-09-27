@@ -28,6 +28,92 @@ export interface CotaParlamentarAggregate {
   categories: Map<string, number>
 }
 
+export interface LegacyCotaRow {
+  id: string
+  ano: number
+  fonte: string | null
+  total_gasto?: number | null
+  despublicado_em?: string | null
+}
+
+function fonteCamaraApiId(fonte: string | null, idCamara?: string | number | null): boolean {
+  const match = fonte?.match(/^https:\/\/dadosabertos\.camara\.leg\.br\/api\/v2\/deputados\/(\d+)\/despesas\/?$/)
+  return Boolean(match && idCamara != null && match[1] === String(idCamara))
+}
+
+function fonteCamaraReconhecida(fonte: string | null, idCamara?: string | number | null): boolean {
+  if (fonte === null || fonte === "Câmara" || fonte === "Camara" || fonte === "Camara CEAP CSV") return true
+  return fonteCamaraApiId(fonte, idCamara)
+}
+
+export function planejarReconciliacaoCotaLegada(input: {
+  legacyRows: readonly LegacyCotaRow[]
+  officialYears: ReadonlySet<number>
+  officialTotals: ReadonlyMap<number, number>
+  scopeComplete: boolean
+  otherHouseApplicable?: boolean
+  idCamara?: string | number | null
+}): { confirmed: LegacyCotaRow[]; absent: LegacyCotaRow[]; duplicates: LegacyCotaRow[]; review: LegacyCotaRow[] } {
+  const confirmed: LegacyCotaRow[] = []
+  const absent: LegacyCotaRow[] = []
+  const duplicates: LegacyCotaRow[] = []
+  const review: LegacyCotaRow[] = []
+  const byYear = new Map<number, LegacyCotaRow[]>()
+  for (const row of input.legacyRows) {
+    if (!fonteCamaraReconhecida(row.fonte, input.idCamara) || row.despublicado_em) continue
+    const group = byYear.get(row.ano) ?? []
+    group.push(row)
+    byYear.set(row.ano, group)
+  }
+  for (const [year, rows] of byYear) {
+    const officialTotal = input.officialTotals.get(year)
+    const confirmedTotal = input.officialYears.has(year) && officialTotal != null
+    const hasPositiveHouseProof = (row: LegacyCotaRow) => !input.otherHouseApplicable || row.fonte !== null
+      || fonteCamaraApiId(row.fonte, input.idCamara)
+    const canonical = rows.filter((row) => row.fonte === "Camara")
+    if (canonical.length > 1) { review.push(...rows); continue }
+    if (canonical.length === 1) {
+      const primary = canonical[0]!
+      const primaryMatches = confirmedTotal && primary.total_gasto != null && Number(primary.total_gasto) === officialTotal
+      for (const row of rows.filter((candidate) => candidate.id !== primary.id)) {
+        if (primaryMatches && confirmedTotal && row.total_gasto != null && Number(row.total_gasto) === officialTotal
+          && hasPositiveHouseProof(row)) duplicates.push(row)
+        else if (input.scopeComplete && (!input.otherHouseApplicable || fonteCamaraApiId(row.fonte, input.idCamara))
+          && (!confirmedTotal || row.total_gasto == null || Number(row.total_gasto) !== officialTotal)) absent.push(row)
+        else review.push(row)
+      }
+      continue
+    }
+    if (rows.length > 1) {
+      const matching = confirmedTotal ? rows.filter((row) => row.total_gasto != null && Number(row.total_gasto) === officialTotal) : []
+      if (matching.length === rows.length && rows.every(hasPositiveHouseProof)) {
+        const [primary, ...extras] = [...matching].sort((a, b) => a.id.localeCompare(b.id))
+        if (primary) confirmed.push(primary)
+        duplicates.push(...extras)
+      } else {
+        for (const row of rows) {
+          if (confirmedTotal && row.total_gasto != null && Number(row.total_gasto) === officialTotal && hasPositiveHouseProof(row)) confirmed.push(row)
+          else if (confirmedTotal && row.total_gasto != null && Number(row.total_gasto) === officialTotal) review.push(row)
+          else if (input.scopeComplete && (!input.otherHouseApplicable || fonteCamaraApiId(row.fonte, input.idCamara))) absent.push(row)
+          else review.push(row)
+        }
+      }
+      continue
+    }
+    const [row] = rows
+    if (!row) continue
+    if (input.officialYears.has(year) && row.total_gasto != null && Number(row.total_gasto) === input.officialTotals.get(year)
+      && hasPositiveHouseProof(row)) confirmed.push(row)
+    else if (input.otherHouseApplicable && row.fonte === null) review.push(row)
+    else if (input.otherHouseApplicable && !fonteCamaraApiId(row.fonte, input.idCamara)) review.push(row)
+    else if (input.officialYears.has(year) && input.scopeComplete) absent.push(row)
+    else if (input.officialYears.has(year)) review.push(row)
+    else if (input.scopeComplete) absent.push(row)
+    else review.push(row)
+  }
+    return { confirmed, absent, duplicates, review }
+}
+
 export function selecionarCandidatosCotaCamara<T extends { slug: string }>(
   candidates: readonly T[],
   options: { targetSlugs?: readonly string[]; cohortPredicate?: (candidate: T) => boolean } = {},
@@ -81,8 +167,8 @@ function sha256(bytes: Buffer): string {
   return createHash("sha256").update(bytes).digest("hex")
 }
 
-function safeDetail(revisions: Array<{ url: string; sha256: string; year: number }>, sourceRows: number, sourceId: string, matchedYears: number[]): string {
-  return JSON.stringify({ contract_version: 2, kind: "camara-cota-csv", source_id: sourceId, source_rows: sourceRows, source_revisions: revisions, identity: "ideCadastro", scope_complete: revisions.length === CAMARA_COTA_CSV_YEARS.length, years: CAMARA_COTA_CSV_YEARS, matched_years: matchedYears })
+function safeDetail(revisions: Array<{ url: string; sha256: string; year: number }>, sourceRows: number, sourceId: string, matchedYears: number[], reconciliation?: { provenance_added: number; unpublished: number; review: number }): string {
+  return JSON.stringify({ contract_version: 2, kind: "camara-cota-csv", source_id: sourceId, source_rows: sourceRows, source_revisions: revisions, identity: "ideCadastro", scope_complete: revisions.length === CAMARA_COTA_CSV_YEARS.length, years: CAMARA_COTA_CSV_YEARS, matched_years: matchedYears, reconciliation })
 }
 
 /** Coleta oficial anual da Câmara; não reproduz julgamentos de suspeita do Jarbas. */
@@ -152,18 +238,61 @@ export async function ingestCamaraCotasCsv(options: { targetSlugs?: string[]; co
       const candidateSourceRows = [...(annualAggregates?.values() ?? [])].reduce((sum, aggregate) => sum + aggregate.rowCount, 0)
       const candidateId = await resolveCandidatoId(candidate.slug)
       if (!candidateId) throw new Error(`candidato_id ausente: ${candidate.slug}`)
+      const legacyQuery = await supabase.from("gastos_parlamentares")
+        .select("id, ano, fonte, total_gasto, despublicado_em, despublicacao_motivo", { count: "exact" })
+        .eq("candidato_id", candidateId)
+        .in("ano", CAMARA_COTA_CSV_YEARS)
+        .is("despublicado_em", null)
+      if (legacyQuery.error) throw new Error(`leitura de despesas legadas falhou (${candidate.slug})`)
+      if (legacyQuery.count == null || legacyQuery.count !== (legacyQuery.data ?? []).length) throw new Error(`leitura de despesas legadas truncada (${candidate.slug})`)
+      const legacyRows = (legacyQuery.data ?? []) as Array<LegacyCotaRow & { total_gasto: number | null; despublicacao_motivo: string | null }>
+      const yearsComplete = sourceRevisions.length === CAMARA_COTA_CSV_YEARS.length
+      const officialTotals = new Map([...(annualAggregates ?? [])].map(([year, aggregate]) => [year, Math.round(aggregate.totalLiquido * 100) / 100]))
+      const reconciliation = planejarReconciliacaoCotaLegada({
+        legacyRows,
+        officialYears: new Set(annualAggregates?.keys() ?? []),
+        officialTotals,
+        scopeComplete: yearsComplete,
+        otherHouseApplicable: candidate.ids.senado != null,
+        idCamara: candidate.ids.camara,
+      })
+      if (reconciliation.review.length) {
+        const reason = candidate.ids.senado != null
+          ? "há ID do Senado e a linha legada pode ser CEAPS"
+          : !yearsComplete
+            ? "a série oficial anual está incompleta"
+            : "total legado diverge do total anual oficial ou não foi confirmado"
+        base.errors.push(`${reconciliation.review.length} linha(s) legada(s) aguardam revisão: ${reason}`)
+      }
       let materialized = 0
       for (const [year, aggregate] of annualAggregates ?? []) {
         const existingQuery = await supabase.from("gastos_parlamentares")
-          .select("id").eq("candidato_id", candidateId).eq("ano", year).eq("fonte", "Camara").limit(2)
+          .select("id, fonte, total_gasto", { count: "exact" }).eq("candidato_id", candidateId).eq("ano", year)
+          .is("despublicado_em", null).limit(100)
         if (existingQuery.error) throw new Error(`leitura gastos_parlamentares falhou (${year})`)
-        const matches = existingQuery.data ?? []
-        if (matches.length > 1) throw new Error(`mais de uma linha Camara para candidato/ano ${year}`)
+        if (existingQuery.count == null || existingQuery.count !== (existingQuery.data ?? []).length) throw new Error(`leitura de despesas anuais truncada (${candidate.slug}:${year})`)
+        const annualRows = existingQuery.data ?? []
+        const matches = annualRows.filter((row) => fonteCamaraReconhecida(row.fonte, candidate.ids.camara))
+        const unknownSources = annualRows.filter((row) => !fonteCamaraReconhecida(row.fonte, candidate.ids.camara))
+        if (unknownSources.length) {
+          base.errors.push(`${candidate.slug}:${year} tem ${unknownSources.length} linha(s) com outra fonte; mantidas em revisão sem bloquear a linha Câmara confirmada`)
+        }
+        const target = matches.find((match) => match.fonte === "Camara") ?? matches.find((match) => reconciliation.confirmed.some((legacy) => legacy.id === match.id)) ?? null
+        if (matches.length > 1 && (!target || matches.some((match) => match.id !== target.id && !reconciliation.duplicates.some((row) => row.id === match.id)))) {
+          base.errors.push(`${candidate.slug}:${year} tem múltiplas linhas Câmara/legadas não deduplicadas com prova e fica em revisão`)
+          continue
+        }
         const categories = [...aggregate.categories].map(([categoria, cents]) => ({
           categoria,
           valor: Math.round(cents * 100) / 100,
         }))
         const total = Math.round(aggregate.totalLiquido * 100) / 100
+        const targetIsLegacy = Boolean(target && target.fonte !== "Camara")
+        const targetLegacyConfirmed = target && reconciliation.confirmed.some((legacy) => legacy.id === target.id)
+        if (targetIsLegacy && !targetLegacyConfirmed) {
+          base.errors.push(`${candidate.slug}:${year} tem gasto legado sem Casa/fonte que não pode ser atribuído com segurança; revisão necessária`)
+          continue
+        }
         const row = {
           candidato_id: candidateId,
           ano: year,
@@ -189,9 +318,9 @@ export async function ingestCamaraCotasCsv(options: { targetSlugs?: string[]; co
         if (emDryRun()) {
           planejarEscrita({
             fonte: "camara-cotas", tabela: "gastos_parlamentares",
-            operacao: matches.length ? "update" : "insert", alvo: candidate.slug,
+            operacao: target ? "update" : "insert", alvo: candidate.slug,
             identidade: `ideCadastro:${candidate.ids.camara}`,
-            chave: matches.length ? { id: matches[0].id } : { candidato_id: candidateId, ano: year, fonte: "Camara" },
+            chave: target ? { id: target.id } : { candidato_id: candidateId, ano: year, fonte: "Camara" },
             valores: row,
           })
         } else {
@@ -200,15 +329,68 @@ export async function ingestCamaraCotasCsv(options: { targetSlugs?: string[]; co
             tabela: "gastos_parlamentares",
             motivo: "Materializar despesas anuais da cota oficial da Câmara com proveniência verificável",
             recorte: `${candidate.slug}:${year}`,
-          }, () => matches.length
-            ? supabase.from("gastos_parlamentares").update(row).eq("id", matches[0].id).select("id")
+          }, () => target
+            ? (() => {
+                let query = supabase.from("gastos_parlamentares").update(row).eq("id", target.id).eq("ano", year).eq("total_gasto", target.total_gasto)
+                query = target.fonte === null ? query.is("fonte", null) : query.eq("fonte", target.fonte)
+                return query.is("despublicado_em", null).select("id, fonte, total_gasto")
+              })()
             : supabase.from("gastos_parlamentares").insert(row).select("id"))
+          const written = write[0] as { id?: string; fonte?: string; total_gasto?: number } | undefined
+          if (target && (write.length !== 1 || written?.id !== target.id || written?.fonte !== "Camara" || Number(written?.total_gasto) !== total)) {
+            throw new Error(`readback gastos_parlamentares divergiu para ${candidate.slug}:${year}`)
+          }
           materialized += write.length
+          const readback = await supabase.from("gastos_parlamentares").select("id, fonte, total_gasto, despublicado_em", { count: "exact" })
+            .eq("candidato_id", candidateId).eq("ano", year).eq("fonte", "Camara").is("despublicado_em", null)
+          if (readback.error || readback.count !== 1 || (readback.data ?? []).length !== 1
+            || readback.data?.[0]?.fonte !== "Camara" || Number(readback.data?.[0]?.total_gasto) !== total
+            || readback.data?.[0]?.despublicado_em != null) {
+            throw new Error(`readback independente gastos_parlamentares divergiu para ${candidate.slug}:${year}`)
+          }
         }
       }
-      base.coleta_resultado = candidateSourceRows ? "encontrado" : "vazio_confirmado"
+      for (const legacy of [...reconciliation.absent, ...reconciliation.duplicates]) {
+        const isDuplicate = reconciliation.duplicates.some((row) => row.id === legacy.id)
+        if (emDryRun()) {
+          planejarEscrita({ fonte: "camara-cotas", tabela: "gastos_parlamentares", operacao: "update", alvo: candidate.slug,
+            identidade: `ideCadastro:${candidate.ids.camara}`, chave: { id: legacy.id, ano: legacy.ano, fonte: legacy.fonte },
+            valores: { despublicado_em: "now()", despublicacao_motivo: isDuplicate ? "camara-cota-csv: duplicata confirmada pelo total anual oficial" : "camara-cota-csv: ausência confirmada em fonte anual completa" } })
+          continue
+        }
+        const explicitApiCasa = fonteCamaraApiId(legacy.fonte, candidate.ids.camara)
+        const status = isDuplicate ? `duplicata de linha confirmada pelo total oficial de ${legacy.ano}` : officialTotals.has(legacy.ano)
+          ? explicitApiCasa
+            ? `URL oficial Câmara para ideCadastro ${candidate.ids.camara} confirma a Casa; total legado diverge do CSV Cota completo de ${legacy.ano}`
+            : `total legado diverge da cota oficial completa de ${legacy.ano}`
+          : explicitApiCasa
+            ? `URL oficial Câmara para ideCadastro ${candidate.ids.camara} confirma a Casa; linha ausente no CSV Cota completo de ${legacy.ano}`
+            : `linha legada ausente no CSV oficial completo de ${legacy.ano}`
+        const reason = `camara-cota-csv: ${status}; mantida para auditoria`
+        let tombstone = supabase.from("gastos_parlamentares").update({ despublicado_em: new Date().toISOString(), despublicacao_motivo: reason })
+          .eq("id", legacy.id).eq("candidato_id", candidateId).eq("ano", legacy.ano)
+        tombstone = legacy.fonte === null ? tombstone.is("fonte", null) : tombstone.eq("fonte", legacy.fonte)
+        tombstone = legacy.total_gasto == null ? tombstone.is("total_gasto", null) : tombstone.eq("total_gasto", legacy.total_gasto)
+        const write = await escreverAuditado({ script: "ingest-camara-cota-csv", tabela: "gastos_parlamentares",
+          motivo: "Despublicar gasto legado ausente em CSV oficial anual completo", recorte: `${candidate.slug}:${legacy.ano}` },
+        () => tombstone.is("despublicado_em", null).select("id, despublicado_em, despublicacao_motivo"))
+        if (write.length !== 1 || write[0]?.id !== legacy.id || !write[0]?.despublicado_em || write[0]?.despublicacao_motivo !== reason) {
+          throw new Error(`readback da despublicação divergiu para ${candidate.slug}:${legacy.ano}`)
+        }
+        const readback = await supabase.from("gastos_parlamentares").select("id, fonte, despublicado_em, despublicacao_motivo")
+          .eq("id", legacy.id).maybeSingle()
+        if (readback.error || readback.data?.despublicacao_motivo !== reason || readback.data?.despublicado_em == null || readback.data?.fonte !== legacy.fonte) {
+          throw new Error(`readback independente da despublicação divergiu para ${candidate.slug}:${legacy.ano}`)
+        }
+        materialized += 1
+      }
+      base.coleta_resultado = base.errors.length ? "indeterminado" : candidateSourceRows ? "encontrado" : "vazio_confirmado"
       base.coleta_volume = candidateSourceRows
-      base.coleta_detalhe = safeDetail(sourceRevisions, candidateSourceRows, String(candidate.ids.camara), [...(annualAggregates?.keys() ?? [])])
+      base.coleta_detalhe = safeDetail(sourceRevisions, candidateSourceRows, String(candidate.ids.camara), [...(annualAggregates?.keys() ?? [])], {
+        provenance_added: reconciliation.confirmed.length,
+        unpublished: reconciliation.absent.length,
+        review: reconciliation.review.length,
+      })
       if (materialized) {
         base.rows_upserted = materialized
         base.tables_updated.push("gastos_parlamentares")

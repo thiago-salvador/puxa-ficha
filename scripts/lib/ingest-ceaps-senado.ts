@@ -21,6 +21,119 @@ const JEV_LOG_DIR = resolve(process.env.HOME ?? "", "Library/Logs/puxa-ficha/jev
 const JEV_SHADOW_PATH = resolve(JEV_LOG_DIR, "ceaps-senado.jsonl")
 const JEV_REVIEW_PATH = resolve(JEV_LOG_DIR, "ceaps-senado-review.jsonl")
 
+export type CeapsLegacyReconciliation = "confirmed" | "absent" | "review"
+
+export function classifyCeapsCandidateScope(years: readonly number[]): "verifiable" | "indeterminate" {
+  return years.length > 0 ? "verifiable" : "indeterminate"
+}
+
+export function isKnownSenateCeapsSource(source: string | null | undefined): boolean {
+  return source === "Senado" || source === "CEAPS/Senado" || source === "Senado CEAPS"
+}
+
+export function isHistoricalSenateCeapsAlias(source: string | null | undefined): boolean {
+  return source === "CEAPS/Senado" || source === "Senado CEAPS"
+}
+
+export function historicalCeapsTotalMatches(source: string | null | undefined, stored: number | null, official: number): boolean {
+  return !isHistoricalSenateCeapsAlias(source) || Number(stored) === official
+}
+
+function categorySignature(value: unknown): string | null {
+  let entries: Array<{ categoria: string; valor: number }> = []
+  if (Array.isArray(value)) {
+    entries = value.flatMap((item) => {
+      if (!item || typeof item !== "object") return []
+      const row = item as Record<string, unknown>
+      const categoria = String(row.categoria ?? "").trim().toUpperCase()
+      const valor = Number(row.valor)
+      return categoria && Number.isFinite(valor) ? [{ categoria, valor }] : []
+    })
+  } else if (value && typeof value === "object") {
+    entries = Object.entries(value as Record<string, unknown>).flatMap(([categoria, rawValue]) => {
+      const valor = Number(rawValue)
+      return categoria.trim() && Number.isFinite(valor) ? [{ categoria: categoria.trim().toUpperCase(), valor }] : []
+    })
+  }
+  if (entries.length === 0) return null
+  const centsByCategory = new Map<string, number>()
+  for (const { categoria, valor } of entries) centsByCategory.set(categoria, (centsByCategory.get(categoria) ?? 0) + Math.round(valor * 100))
+  return JSON.stringify([...centsByCategory].sort(([a], [b]) => a.localeCompare(b)))
+}
+
+export function legacyExpenseCategorySignatureMatches(stored: unknown, official: unknown): boolean {
+  const storedSignature = categorySignature(stored)
+  return storedSignature != null && storedSignature === categorySignature(official)
+}
+
+export function classifyCeapsAnnualRows<T extends { fonte?: string | null }>(rows: readonly T[]): {
+  senateRows: T[]
+  legacyRows: T[]
+  unrelatedRows: T[]
+  ambiguous: boolean
+  insertAlongsideUnrelated: boolean
+  target?: T
+} {
+  const senateRows = rows.filter((row) => isKnownSenateCeapsSource(row.fonte))
+  const legacyRows = rows.filter((row) => row.fonte == null || row.fonte.trim() === "")
+  const unrelatedRows = rows.filter((row) => !isKnownSenateCeapsSource(row.fonte) && row.fonte != null && row.fonte.trim() !== "")
+  const ambiguous = senateRows.length > 1 || legacyRows.length > 1 || (senateRows.length > 0 && legacyRows.length > 0)
+  const target = ambiguous ? undefined : senateRows[0] ?? legacyRows[0]
+  return { senateRows, legacyRows, unrelatedRows, ambiguous, target, insertAlongsideUnrelated: !ambiguous && target == null && unrelatedRows.length > 0 }
+}
+
+export function ceapsProcessingYears(candidateYears: readonly number[], existingRows: readonly { ano: number | null; fonte?: string | null; despublicado_em?: string | null }[]): number[] {
+  const years = new Set(candidateYears)
+  for (const row of existingRows) {
+    if (row.despublicado_em == null && isKnownSenateCeapsSource(row.fonte) && row.ano != null && ANOS.includes(Number(row.ano))) years.add(Number(row.ano))
+  }
+  return [...years].sort((a, b) => a - b)
+}
+
+export function senateNameMatchesHistoricalRoster(sourceName: string, officialId: string, rosterNames: readonly ReadonlyMap<string, string>[]): boolean {
+  const normalizedSource = normalizeForMatch(sourceName)
+  return normalizedSource !== "" && rosterNames.some((names) => normalizeForMatch(names.get(officialId) ?? "") === normalizedSource)
+}
+
+type ExistingSenateExpense = { id: string; ano: number | null; fonte: string; despublicado_em: string | null; total_gasto: number | null }
+
+async function loadPublishedSenateExpenseRows(candidatoId: string): Promise<ExistingSenateExpense[]> {
+  const pageSize = 500
+  const safetyLimit = 5000
+  const rows: ExistingSenateExpense[] = []
+  let expectedCount: number | null = null
+  for (let offset = 0; offset <= safetyLimit; offset += pageSize) {
+    const { data, error: queryError, count } = await supabase.from("gastos_parlamentares")
+      .select("id,ano,fonte,despublicado_em,total_gasto", { count: "exact" })
+      .eq("candidato_id", candidatoId).in("fonte", ["Senado", "CEAPS/Senado", "Senado CEAPS"])
+      .is("despublicado_em", null).order("id", { ascending: true }).range(offset, offset + pageSize - 1)
+    if (queryError) throw new Error(`gastos_parlamentares: falha ao ler proveniências Senado existentes: ${queryError.message}`)
+    if (count == null) throw new Error("gastos_parlamentares: leitura de proveniências Senado sem contagem exata")
+    expectedCount ??= count
+    if (count !== expectedCount) throw new Error("gastos_parlamentares: conjunto de proveniências Senado mudou durante a paginação")
+    const page = (data ?? []) as ExistingSenateExpense[]
+    rows.push(...page)
+    if (rows.length === expectedCount) return rows
+    if (page.length < pageSize) throw new Error("gastos_parlamentares: leitura de proveniências Senado truncada")
+    if (offset >= safetyLimit) throw new Error("gastos_parlamentares: proveniências Senado excedem limite seguro de leitura")
+  }
+  return rows
+}
+
+export function classifyCeapsLegacyRow(input: {
+  sourceRows: number
+  annualCsvComplete: boolean
+  rosterMembershipVerified: boolean
+  noCompetingHouseIdentity: boolean
+  senateProvenanceVerified?: boolean
+}): CeapsLegacyReconciliation {
+  if (!input.annualCsvComplete) return "review"
+  if (input.sourceRows > 0) return "confirmed"
+  if (input.senateProvenanceVerified) return "absent"
+  if (!input.rosterMembershipVerified) return "review"
+  return input.noCompetingHouseIdentity ? "absent" : "review"
+}
+
 interface CeapsCsvRow {
   ANO: string
   MES: string
@@ -75,16 +188,31 @@ async function fetchCeapsSnapshot(ano: number): Promise<CeapsSnapshot> {
   return { ano, url, sha256: createHash("sha256").update(bytes).digest("hex"), rows }
 }
 
-function ceapsCandidateNames(candidato: { nome_completo: string; nome_urna: string }): Set<string> {
-  return new Set([candidato.nome_completo, candidato.nome_urna].map(normalizeForMatch).filter(Boolean))
-}
-
 function senatorNamesForSnapshot(snapshots: CeapsSnapshot[]): Map<string, string> {
   const names = new Map<string, string>()
   for (const snapshot of snapshots) for (const row of snapshot.rows) {
     const normalized = normalizeForMatch(row.SENADOR)
     if (normalized && !names.has(normalized)) names.set(normalized, row.SENADOR)
   }
+  return names
+}
+
+function senateOfficialNamesById(bytes: Buffer): Map<string, string> {
+  const parsed = JSON.parse(bytes.toString("utf8")) as Record<string, unknown>
+  const root = (parsed.ListaParlamentarLegislatura as Record<string, unknown> | undefined) ?? {}
+  const parliamentaryRoot = (root.Parlamentares as Record<string, unknown> | undefined) ?? {}
+  const rawRows = parliamentaryRoot.Parlamentar
+  const rows = Array.isArray(rawRows) ? rawRows : rawRows ? [rawRows] : []
+  const names = new Map<string, string>()
+  for (const raw of rows) {
+    const row = raw && typeof raw === "object" ? raw as Record<string, unknown> : {}
+    const identification = row.IdentificacaoParlamentar && typeof row.IdentificacaoParlamentar === "object" ? row.IdentificacaoParlamentar as Record<string, unknown> : {}
+    const id = String(identification.CodigoParlamentar ?? "")
+    const name = String(identification.NomeParlamentar ?? "").trim()
+    if (!/^\d+$/.test(id) || !name || names.has(id)) throw new Error("roster legislativo Senado contém ID/nome inválido ou duplicado")
+    names.set(id, name)
+  }
+  if (names.size === 0) throw new Error("roster legislativo Senado sem nomes oficiais")
   return names
 }
 
@@ -493,14 +621,19 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
   const snapshots: CeapsSnapshot[] = []
   const falhasFonte = new Map<number, string>()
   const senateRosters = new Map<number, SenadoLegislatureRoster>()
+  const senateRosterNames = new Map<number, ReadonlyMap<string, string>>()
   const senateRosterFailures = new Map<number, string>()
   for (const legislature of [53, 54, 55, 56, 57]) {
     const url = senadoLegislatureRosterUrl(legislature)
     try {
       const response = await fetch(url, { headers: { Accept: "application/json" }, signal: AbortSignal.timeout(30_000) })
       if (!response.ok) throw new Error(`HTTP ${response.status}`)
-      const roster = parseSenadoLegislatureRoster(Buffer.from(await response.arrayBuffer()), legislature)
+      const bytes = Buffer.from(await response.arrayBuffer())
+      const roster = parseSenadoLegislatureRoster(bytes, legislature)
+      const names = senateOfficialNamesById(bytes)
+      if (names.size !== roster.ids.size || [...names.keys()].some((id) => !roster.ids.has(id))) throw new Error("roster legislativo Senado divergiu entre nomes e IDs validados")
       senateRosters.set(legislature, roster)
+      senateRosterNames.set(legislature, names)
     } catch (err) {
       const reason = err instanceof Error ? err.message : String(err)
       senateRosterFailures.set(legislature, reason)
@@ -526,12 +659,11 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
     const result: IngestResult = { source: "ceaps-senado", candidato: cand.slug, tables_updated: [], rows_upserted: 0, errors: [], duration_ms: 0 }
     const start = Date.now()
     const officialId = cand.ids.senado == null ? null : String(cand.ids.senado)
-    const candidateYears = officialId ? ANOS.filter((year) => {
-      const roster = senateRosters.get(senadoExpenseLegislatureForYear(year))
-      return !roster || roster.ids.has(officialId)
-    }) : ANOS
-    const candidateSnapshots = snapshots.filter((snapshot) => candidateYears.includes(snapshot.ano))
+    const unverifiedRosterYears = officialId ? ANOS.filter((year) => !senateRosters.has(senadoExpenseLegislatureForYear(year))) : ANOS
+    const candidateYears = officialId ? ANOS.filter((year) => senateRosters.get(senadoExpenseLegislatureForYear(year))?.ids.has(officialId)) : ANOS
     const candidateFailures = [...falhasFonte.entries()].filter(([year]) => candidateYears.includes(year)).map(([year, message]) => `${year}: ${message}`)
+    let processingYears = [...candidateYears]
+    let candidateSnapshots = snapshots.filter((snapshot) => processingYears.includes(snapshot.ano))
     const excludedYears = ANOS.filter((year) => !candidateYears.includes(year))
     const scopeEvidence = {
       rosters: [53, 54, 55, 56, 57].map((legislature) => {
@@ -541,7 +673,7 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
       scope_years: candidateYears,
       excluded_years: excludedYears,
     }
-    const receiptDetail = (extra: Record<string, unknown> = {}) => JSON.stringify({ source: "Senado CEAPS CSV", scope_years: candidateYears, scope_evidence: scopeEvidence, source_revisions: allSourceRevisions.filter(({ ano }) => candidateYears.includes(ano)), failed_years: candidateFailures, ...extra })
+    const receiptDetail = (extra: Record<string, unknown> = {}) => JSON.stringify({ source: "Senado CEAPS CSV", scope_years: candidateYears, reconciliation_years: processingYears, scope_evidence: scopeEvidence, source_revisions: allSourceRevisions.filter(({ ano }) => processingYears.includes(ano)), failed_years: candidateFailures, ...extra })
     if (officialId === null) {
       result.errors.push("ID Senado ausente; escopo parlamentar não confirmado")
       result.coleta_resultado = "erro"
@@ -563,57 +695,52 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
       results.push(result)
       continue
     }
-    const names = ceapsCandidateNames(cand)
-    const possibleNames = [...names].flatMap((name) => sourceNames.has(name) ? [sourceNames.get(name)!] : [])
-    const matchedNames = [...new Set(possibleNames)]
-    if (matchedNames.length === 0 && cand.ids.senado != null) {
-      try {
-        const officialName = await fetchSenateRosterName(cand.ids.senado)
-        const sourceName = officialName ? sourceNames.get(normalizeForMatch(officialName)) : undefined
-        if (sourceName) matchedNames.push(sourceName)
-      } catch (err) {
-        const message = err instanceof Error ? err.message : String(err)
-        result.errors.push(`Verificação de roster Senado falhou: ${message}`)
-      }
-    }
-    if (matchedNames.length !== 1) {
-      result.errors.push(matchedNames.length === 0 ? "nenhum nome parlamentar exato no CEAPS anual; identidade e zero não confirmados" : "nome parlamentar ambíguo entre aliases CEAPS")
-      result.coleta_resultado = "erro"
-      result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nomes_testados: [...names], motivo: result.errors[0] })
-      result.coleta_url = `${BASE_URL}_2026.csv`
-      result.duration_ms = Date.now() - start
-      results.push(result)
-      continue
-    }
-
-    const sourceName = matchedNames[0]
-    const p = await samePersonByJev(cand, sourceName)
-    appendIdentityShadow(cand, sourceName, p)
-    if (p === null || p >= 0.35 && p <= 0.65) {
-      result.coleta_resultado = p === null ? "erro" : "indeterminado"
-      result.errors.push(p === null ? "Jev indisponível; identidade não confirmada" : `Jev Noul p=${p.toFixed(2)} enviado para revisão humana`)
-      result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_fonte: sourceName, jev_noul: p, revisao: p === null ? null : JEV_REVIEW_PATH })
-      result.coleta_url = `${BASE_URL}_2026.csv`
-      result.duration_ms = Date.now() - start
-      results.push(result)
-      continue
-    }
-    if (p < 0.35) {
-      result.errors.push(`Jev Noul rejeitou identidade nominal (p=${p.toFixed(2)})`)
-      result.coleta_resultado = "erro"
-      result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_fonte: sourceName, jev_noul: p })
-      result.coleta_url = `${BASE_URL}_2026.csv`
-      result.duration_ms = Date.now() - start
-      results.push(result)
-      continue
-    }
-
+    const scopeIndeterminate = classifyCeapsCandidateScope(candidateYears) === "indeterminate"
     const candidatoId = await resolveCandidatoId(cand.slug)
     if (!candidatoId) {
       result.errors.push("Candidato não encontrado no Supabase")
       result.coleta_resultado = "erro"
-      result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_fonte: sourceName, jev_noul: p })
+      result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, motivo: result.errors[0] })
       result.coleta_url = `${BASE_URL}_2026.csv`
+      result.duration_ms = Date.now() - start
+      results.push(result)
+      continue
+    }
+    let existingSenateRows: ExistingSenateExpense[] = []
+    try { existingSenateRows = await loadPublishedSenateExpenseRows(candidatoId) }
+    catch (err) {
+      result.errors.push(`Proveniências Senado existentes não puderam ser lidas integralmente; conciliação fora do roster suspensa: ${err instanceof Error ? err.message : String(err)}`)
+    }
+    processingYears = ceapsProcessingYears(candidateYears, existingSenateRows)
+    candidateSnapshots = snapshots.filter((snapshot) => processingYears.includes(snapshot.ano))
+    const missingReconciliationSnapshots = processingYears.filter((year) => !snapshots.some((snapshot) => snapshot.ano === year))
+      .filter((year) => !candidateYears.includes(year))
+    if (missingReconciliationSnapshots.length > 0) result.errors.push(`CSV CEAPS anual ausente para linhas Senado fora do roster em ${missingReconciliationSnapshots.join(",")}; revisão mantida`)
+    if (scopeIndeterminate) result.errors.push("Roster oficial não confirma período de exercício para este ID; reconciliação fica limitada a proveniências Senado já publicadas e ausência não vira zero confirmado")
+    if (unverifiedRosterYears.length > 0) result.errors.push(`Roster legislativo não confirmou os anos: ${unverifiedRosterYears.join(", ")}`)
+    let officialName: string | null = null
+    try { officialName = await fetchSenateRosterName(officialId) }
+    catch (err) {
+      const message = err instanceof Error ? err.message : String(err)
+      result.errors.push(`Verificação de identidade no roster Senado falhou: ${message}`)
+    }
+    const officialSourceName = officialName ? sourceNames.get(normalizeForMatch(officialName)) : undefined
+    const matchedNames = officialSourceName ? [officialSourceName] : []
+    if (matchedNames.length !== 1) {
+      result.errors.push(matchedNames.length === 0 ? "nome oficial do ID Senado não encontrado exatamente nos CSVs CEAPS; novas atribuições ficam em revisão" : "nome parlamentar ambíguo no CEAPS")
+    }
+
+    const sourceName = matchedNames[0] ?? null
+    let p: number | null = null
+    if (sourceName) {
+      p = await samePersonByJev(cand, sourceName)
+      appendIdentityShadow(cand, sourceName, p)
+    }
+
+    if (!sourceName) {
+      result.coleta_resultado = "indeterminado"
+      result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_oficial: officialName, jev_noul_sombra: p, motivo: result.errors[0] })
+      result.coleta_url = candidateSnapshots.at(-1)?.url ?? `${BASE_URL}_2026.csv`
       result.duration_ms = Date.now() - start
       results.push(result)
       continue
@@ -624,39 +751,109 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
     for (const snapshot of candidateSnapshots) {
       const aggregate = agregarDespesasCeapsCsv(snapshot.rows, sourceName, snapshot.ano)
       sourceRows += aggregate.quantidade
+      const { data: existingRows, error: selectError } = await supabase.from("gastos_parlamentares").select("id,fonte,despublicado_em,total_gasto,detalhamento").eq("candidato_id", candidatoId).eq("ano", snapshot.ano)
+      if (selectError) {
+        result.errors.push(`Falha de leitura gastos ${snapshot.ano}: ${selectError.message}`)
+        continue
+      }
+      const publicRows = (existingRows ?? []).filter((row: { despublicado_em?: string | null }) => row.despublicado_em == null)
+      const annualRows = classifyCeapsAnnualRows(publicRows)
+      const { legacyRows } = annualRows
+      if (annualRows.ambiguous) {
+        result.errors.push(`Linhas CEAPS ambíguas para ${snapshot.ano}; nenhuma reconciliação automática`)
+        continue
+      }
+      const existing = annualRows.target
+      const rosterMemberForYear = senateRosters.get(senadoExpenseLegislatureForYear(snapshot.ano))?.ids.has(officialId) === true
+      const officialNameForYear = senateRosterNames.get(senadoExpenseLegislatureForYear(snapshot.ano))?.get(officialId)
+      const historicalNameVerified = sourceName != null && senateNameMatchesHistoricalRoster(sourceName, officialId, [...senateRosterNames.values()])
+      const sourceIdentityVerified = sourceName != null && (
+        rosterMemberForYear && officialNameForYear != null && normalizeForMatch(officialNameForYear) === normalizeForMatch(sourceName)
+        || !rosterMemberForYear && historicalNameVerified
+      )
+      if (aggregate.dados && !sourceIdentityVerified) {
+        result.errors.push(`Identidade CEAPS ${snapshot.ano} não vinculada ao ID Senado por roster oficial; linha mantida em revisão`)
+        continue
+      }
       if (!aggregate.dados) {
         anosVazios.push(snapshot.ano)
+        const reconciliation = classifyCeapsLegacyRow({
+          sourceRows: aggregate.quantidade,
+          annualCsvComplete: !falhasFonte.has(snapshot.ano) && candidateSnapshots.some((item) => item.ano === snapshot.ano),
+          rosterMembershipVerified: rosterMemberForYear,
+          noCompetingHouseIdentity: cand.ids.camara == null,
+          senateProvenanceVerified: existing != null && isKnownSenateCeapsSource(existing.fonte) && sourceIdentityVerified,
+        })
+        const target = existing as { id: string; fonte?: string | null; total_gasto: number | null } | undefined
+        const canTombstone = reconciliation === "absent" && (target != null && isKnownSenateCeapsSource(target.fonte) || legacyRows.length === 1)
+        if (canTombstone && target) {
+          const row = { despublicado_em: new Date().toISOString(), despublicacao_motivo: `ceaps-senado: CSV oficial completo ${snapshot.ano} sem despesas para o nome oficial vinculado ao ID Senado ${officialId}; fonte anterior=${target.fonte ?? "sem fonte"}; nome=${sourceName}; csv=${snapshot.url}; sha256=${snapshot.sha256}` }
+          if (emDryRun()) {
+            planejarEscrita({ fonte: "ceaps-senado", tabela: "gastos_parlamentares", operacao: "update", alvo: cand.slug, identidade: `id-senado:${officialId};csv-sha256:${snapshot.sha256}`, chave: { id: target.id }, valores: row })
+          } else {
+            let update = supabase.from("gastos_parlamentares").update(row).eq("id", target.id).eq("candidato_id", candidatoId).eq("ano", snapshot.ano).eq("total_gasto", target.total_gasto).is("despublicado_em", null)
+            update = target.fonte == null ? update.is("fonte", null) : update.eq("fonte", target.fonte)
+            const written = await escreverAuditado({ script: "ingest-ceaps-senado", tabela: "gastos_parlamentares", motivo: "Despublicar linha Senado sem ocorrência no CSV CEAPS anual completo", recorte: `${cand.slug}:${snapshot.ano}` }, () => update.select("id,despublicado_em"))
+            if (written.length !== 1 || !written[0]?.despublicado_em) result.errors.push(`Readback de despublicação CEAPS ${snapshot.ano} não confirmou a linha`)
+            const readback = await supabase.from("gastos_parlamentares").select("id,despublicado_em,despublicacao_motivo").eq("id", target.id).single()
+            if (readback.error || readback.data?.despublicado_em == null || !readback.data?.despublicacao_motivo) result.errors.push(`Readback independente de despublicação CEAPS ${snapshot.ano} não confirmou a linha`)
+          }
+        } else if (legacyRows.length === 1 && reconciliation === "review") result.errors.push(`Linha legada CEAPS ${snapshot.ano} mantida para revisão: escopo oficial incompleto`)
         continue
       }
       const { total, porCategoria, destaques } = aggregate.dados
       const detalhamento = detalhamentoCeaps(porCategoria)
       const gastosDestaque = destaques.map((d) => ({ fornecedor: d.fornecedor, tipo: d.tipo, valor: Math.round(d.valor * 100) / 100, data: d.data }))
       assertSemReplacementChar(JSON.stringify({ detalhamento, gastosDestaque }), `ceaps-senado:${cand.slug}:${snapshot.ano}`)
-      const { data: existing, error: selectError } = await supabase.from("gastos_parlamentares").select("id").eq("candidato_id", candidatoId).eq("ano", snapshot.ano).single()
-      if (selectError && !/0 rows|no rows/i.test(selectError.message)) {
-        result.errors.push(`Falha de leitura gastos ${snapshot.ano}: ${selectError.message}`)
+      const row = { candidato_id: candidatoId, ano: snapshot.ano, total_gasto: Math.round(total * 100) / 100, coletado_em: new Date().toISOString(), detalhamento, gastos_destaque: gastosDestaque, fonte: "Senado" }
+      const target = existing as { id: string; fonte?: string | null; total_gasto: number | null } | undefined
+      if (target && target.fonte == null && cand.ids.camara != null) {
+        const exactTotal = Number(target.total_gasto) === row.total_gasto
+        const exactCategories = legacyExpenseCategorySignatureMatches((existing as { detalhamento?: unknown }).detalhamento, detalhamento)
+        if (!exactTotal || !exactCategories) {
+          result.errors.push(`Linha legada de gastos ${snapshot.ano} não tem assinatura anual CEAPS distinta confirmada; revisão com a fonte da Câmara necessária`)
+          continue
+        }
+      }
+      if (target && !historicalCeapsTotalMatches(target.fonte, target.total_gasto, row.total_gasto)) {
+        result.errors.push(`Linha ${target.fonte} ${snapshot.ano} diverge do total anual oficial; revisão necessária`)
         continue
       }
-      const row = { candidato_id: candidatoId, ano: snapshot.ano, total_gasto: Math.round(total * 100) / 100, coletado_em: new Date().toISOString(), detalhamento, gastos_destaque: gastosDestaque, fonte: "Senado" }
+      if (target && target.fonte != null && !isKnownSenateCeapsSource(target.fonte)) {
+        result.errors.push(`Linha de gastos ${snapshot.ano} já pertence a fonte ${target.fonte}; revisão necessária`)
+        continue
+      }
+      if (annualRows.insertAlongsideUnrelated) {
+        result.errors.push(`Linha de gastos ${snapshot.ano} com outra proveniência mantida para revisão; inserção CEAPS oficial segue em linha própria`)
+      }
       if (emDryRun()) {
-        planejarEscrita({ fonte: "ceaps-senado", tabela: "gastos_parlamentares", operacao: existing ? "update" : "insert", alvo: cand.slug, identidade: `id-senado:${cand.ids.senado};jev-noul:${p.toFixed(2)}`, chave: existing ? { id: existing.id } : { candidato_id: candidatoId, ano: snapshot.ano }, valores: row })
+        planejarEscrita({ fonte: "ceaps-senado", tabela: "gastos_parlamentares", operacao: target ? "update" : "insert", alvo: cand.slug, identidade: `id-senado:${cand.ids.senado};jev-noul-shadow:${p === null ? "unavailable" : p.toFixed(2)}`, chave: target ? { id: target.id } : { candidato_id: candidatoId, ano: snapshot.ano }, valores: row })
         result.rows_upserted++
-      } else if (existing) {
-        const written = await escreverAuditado({ script: "ingest-ceaps-senado", tabela: "gastos_parlamentares", motivo: "Materializar despesas anuais do CSV oficial CEAPS do Senado", recorte: `${cand.slug}:${snapshot.ano}` }, () => supabase.from("gastos_parlamentares").update(row).eq("id", existing.id).select("id"))
+      } else if (target) {
+        let update = supabase.from("gastos_parlamentares").update({ ...row, despublicado_em: null, despublicacao_motivo: null }).eq("id", target.id).eq("candidato_id", candidatoId).eq("ano", snapshot.ano).eq("total_gasto", (existing as { total_gasto: number | null }).total_gasto).is("despublicado_em", null)
+        update = target.fonte == null ? update.is("fonte", null) : update.eq("fonte", target.fonte)
+        const written = await escreverAuditado({ script: "ingest-ceaps-senado", tabela: "gastos_parlamentares", motivo: "Materializar despesas anuais do CSV oficial CEAPS do Senado", recorte: `${cand.slug}:${snapshot.ano}` }, () => update.select("id,fonte,ano,despublicado_em"))
+        if (written.length !== 1 || written[0]?.fonte !== "Senado" || written[0]?.despublicado_em != null) result.errors.push(`Readback CEAPS ${snapshot.ano} divergiu da linha escrita`)
         result.rows_upserted += written.length
       } else {
-        const written = await escreverAuditado({ script: "ingest-ceaps-senado", tabela: "gastos_parlamentares", motivo: "Materializar despesas anuais do CSV oficial CEAPS do Senado", recorte: `${cand.slug}:${snapshot.ano}` }, () => supabase.from("gastos_parlamentares").insert(row).select("id"))
+        const written = await escreverAuditado({ script: "ingest-ceaps-senado", tabela: "gastos_parlamentares", motivo: "Materializar despesas anuais do CSV oficial CEAPS do Senado", recorte: `${cand.slug}:${snapshot.ano}` }, () => supabase.from("gastos_parlamentares").insert(row).select("id,fonte,ano,despublicado_em"))
+        if (written.length !== 1 || written[0]?.fonte !== "Senado" || Number(written[0]?.ano) !== snapshot.ano) result.errors.push(`Readback CEAPS ${snapshot.ano} divergiu da linha inserida`)
         result.rows_upserted += written.length
+      }
+      if (!emDryRun()) {
+        const readback = await supabase.from("gastos_parlamentares").select("id,fonte,ano,total_gasto,despublicado_em").eq("candidato_id", candidatoId).eq("ano", snapshot.ano).eq("fonte", "Senado").is("despublicado_em", null).limit(2)
+        if (readback.error || readback.data?.length !== 1 || Number(readback.data[0]?.total_gasto) !== Math.round(total * 100) / 100) result.errors.push(`Readback independente CEAPS ${snapshot.ano} não confirmou chave e total`)
       }
       if (result.rows_upserted > 0 && !result.tables_updated.includes("gastos_parlamentares")) result.tables_updated.push("gastos_parlamentares")
     }
 
-    if (result.errors.length > 0 || candidateFailures.length > 0) result.coleta_resultado = "erro"
+    if (scopeIndeterminate) result.coleta_resultado = "indeterminado"
+    else if (result.errors.length > 0 || candidateFailures.length > 0) result.coleta_resultado = "erro"
     else if (sourceRows > 0) result.coleta_resultado = "encontrado"
     else result.coleta_resultado = "vazio_confirmado"
     result.coleta_volume = sourceRows
     result.coleta_url = candidateSnapshots.at(-1)?.url ?? `${BASE_URL}_2026.csv`
-    result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_fonte: sourceName, jev_noul: p, source_rows: sourceRows, anos_vazios: anosVazios })
+    result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_fonte: sourceName, jev_noul_sombra: p, source_rows: sourceRows, anos_vazios: anosVazios })
     result.duration_ms = Date.now() - start
     results.push(result)
   }

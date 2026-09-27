@@ -706,9 +706,9 @@ async function main(): Promise<void> {
           if (!rosterName) throw new Error("roster Senado não confirmou NomeParlamentar para o ID consultado")
           const identity = await jevIdentityContext(candidate, officialId, roster, readbacks)
           const identityP = jevSamePerson(rosterName, candidate, officialId, destination, identity)
-          if (identityP === null) throw new Error("Jev indisponível; identidade Senado/seed não confirmada")
-          if (identityP >= 0.35 && identityP <= 0.65) throw new Error(`Jev Noul p=${identityP.toFixed(2)} enviado para revisão; sem atribuir dados CEAPS`)
-          if (identityP < 0.35) throw new Error(`Jev Noul rejeitou identidade entre roster Senado e candidato (p=${identityP.toFixed(2)})`)
+          // Jev is a shadow diagnostic. The source join uses the candidate's
+          // official Senado ID, the roster entry for that ID, and an exact
+          // normalized match of that entry's name in each complete CSV.
           const expensePages: Array<Page & { value: unknown }> = []
           const scopeRosters = [53, 54, 55, 56, 57].map((legislature) => {
             const roster = senateRosters.get(legislature)
@@ -774,7 +774,7 @@ async function main(): Promise<void> {
           const revisions = expensePages.map((page) => ({ url: page.url, sha256: page.source_sha256, year: Number(new URL(page.url).pathname.match(/(\d{4})\.csv$/)?.[1]) }))
           if (revisions.some((revision) => !revision.sha256 || !Number.isInteger(revision.year))) throw new Error("CSV CEAPS sem SHA de origem ou ano comprovado")
           const sourceUrl = expensePages.at(-1)!.url
-          addObservation({ house, family: "gastos_parlamentares", officialId, sourceUrl, sourcePath: expenseBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: expensePages.map(stripValue), bundleSha256: expenseBundle.sha256, extra: { years: candidateCeapsYears, scope_evidence: scopeEvidence, source_filter: { field: "SENADOR", value: rosterName, method: "official-roster-id-plus-Jev-Noul" }, jev_noul: identityP, source_revisions: revisions } })
+          addObservation({ house, family: "gastos_parlamentares", officialId, sourceUrl, sourcePath: expenseBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: expensePages.map(stripValue), bundleSha256: expenseBundle.sha256, extra: { years: candidateCeapsYears, scope_evidence: scopeEvidence, source_filter: { field: "SENADOR", value: rosterName, method: "official-roster-id-plus-exact-normalized-name;Jev-shadow" }, jev_noul_shadow: identityP, source_revisions: revisions } })
         } catch (error) {
           pending.push({ house, family: "gastos_parlamentares", official_id: officialId, reason: error instanceof Error ? error.message : String(error), source: `${CEAPS}_{ano}.csv` })
         }
@@ -789,7 +789,7 @@ async function main(): Promise<void> {
   }
 
   const cohortCandidates = publicProfilesPath ? candidates.filter((candidate) => Boolean(candidate.candidato_id)) : candidates
-  const manifest = { schema_version: 1, generated_at: new Date().toISOString(), candidates_path: resolve(candidatesPath), candidates: cohortCandidates, observations, pending, limitations: ["roster atual/histórico não é usado como completude histórica", "CSV CEAPS não fornece ID; a atribuição nominal exige roster oficial do Senado e Jev Noul >= 0,65", "votos Câmara exigem lista local de IDs exatos"] }
+  const manifest = { schema_version: 1, generated_at: new Date().toISOString(), candidates_path: resolve(candidatesPath), candidates: cohortCandidates, observations, pending, limitations: ["roster atual/histórico não é usado como completude histórica", "CSV CEAPS não fornece ID; a atribuição nominal usa ID no roster oficial e nome normalizado exato no CSV, com Jev em sombra", "votos Câmara exigem lista local de IDs exatos"] }
   const manifestPath = join(destination, "parliamentary-family-sources.json")
   writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, { mode: 0o600, flag: "wx" })
   console.log(JSON.stringify({ manifest: manifestPath, observations: observations.length, pending: pending.length, candidates: cohortCandidates.length }))

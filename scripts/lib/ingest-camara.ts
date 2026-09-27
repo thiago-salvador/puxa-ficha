@@ -19,9 +19,11 @@ import { CAMARA_API, resultadoSemAlcance, sondarAlcanceCamara, type AlcanceCamar
 import { namesLookCompatible } from "./name-match"
 import { assertSemReplacementChar } from "./ceaps-csv-encoding"
 import { sanitizePublicTextOrThrow } from "../../src/lib/public-text"
+import { stripAccents } from "../../src/lib/strip-accents"
 import { log, warn, error } from "./logger"
 import { classificarVotacao, type ClassificacaoVotacao } from "./votacao-classificacao"
 import { emDryRun, planejarEscrita } from "./dry-run"
+import { escreverAuditado } from "./escrita-auditada"
 import type { IngestResult } from "./types"
 import { secondarySourceBirthDate } from "./data-nascimento"
 
@@ -665,7 +667,8 @@ export interface PortasDeVotos {
     data: Array<Record<string, unknown>> | null
     error: { message: string } | null
   }>
-  buscarDetalheDaVotacao: (votacaoIdApi: string, onSourceRevision?: (revision: { url: string; sha256: string }) => void) => Promise<{ descricao?: unknown } | null>
+  buscarDetalheDaVotacao: (votacaoIdApi: string, onSourceRevision?: (revision: { url: string; sha256: string }) => void) => Promise<{ id?: unknown; data?: unknown; descricao?: unknown } | null>
+  atualizarDataOficial: (input: { id: string; votacaoIdApi: string; data: string; dataAnterior: string | null; casaAnterior: string | null; fonteAnterior: string | null; proposicaoIdOficial: string | null; proposicaoIdAnterior: string | null }) => Promise<{ atualizada: boolean; error: string | null }>
   buscarVotosDaVotacao: (votacaoIdApi: string, onSourceRevision?: (revision: { url: string; sha256: string }) => void) => Promise<Array<Record<string, unknown>>>
   gravarVoto: (linha: {
     candidato_id: string
@@ -678,8 +681,8 @@ const PORTAS_REAIS: PortasDeVotos = {
   selecionarVotacoesChave: async () => {
     const { data, error } = await supabase
       .from("votacoes_chave")
-      .select("id, titulo, votacao_id_api")
-      .eq("fonte", "camara")
+      .select("id, titulo, casa, fonte, votacao_id_api, data_votacao, proposicao_id")
+      .or("fonte.eq.camara,fonte.eq.Câmara,fonte.is.null")
       .not("votacao_id_api", "is", null)
     return { data: (data as Array<Record<string, unknown>> | null) ?? null, error }
   },
@@ -703,6 +706,35 @@ const PORTAS_REAIS: PortasDeVotos = {
     if (body) onSourceRevision?.({ url, sha256: sha256(body) })
     return resp.dados ?? []
   },
+  atualizarDataOficial: async ({ id, votacaoIdApi, data, dataAnterior, casaAnterior, fonteAnterior, proposicaoIdOficial, proposicaoIdAnterior }) => {
+    const valores: Record<string, string> = { data_votacao: data, casa: "Câmara", fonte: "camara" }
+    if (proposicaoIdOficial !== null) valores.proposicao_id = proposicaoIdOficial
+    const base = supabase.from("votacoes_chave").update(valores)
+      .eq("id", id).eq("votacao_id_api", votacaoIdApi)
+    const casaGuard = casaAnterior === null ? base.is("casa", null) : base.eq("casa", casaAnterior)
+    const fonteGuard = fonteAnterior === null ? casaGuard.is("fonte", null) : casaGuard.eq("fonte", fonteAnterior)
+    let guarded = dataAnterior === null ? fonteGuard.is("data_votacao", null) : fonteGuard.eq("data_votacao", dataAnterior)
+    if (proposicaoIdOficial !== null) guarded = proposicaoIdAnterior === null
+      ? guarded.is("proposicao_id", null)
+      : guarded.eq("proposicao_id", proposicaoIdAnterior)
+    const write = await escreverAuditado({
+      script: "ingest-camara",
+      tabela: "votacoes_chave",
+      motivo: "Sincronizar metadados oficiais da votação Câmara pelo evento exato",
+      recorte: `votacao_id_api:${votacaoIdApi}`,
+    }, () => guarded.select("id, data_votacao, proposicao_id"))
+    if (write.length !== 1 || write[0]?.id !== id || write[0]?.data_votacao !== data
+      || (proposicaoIdOficial !== null && write[0]?.proposicao_id !== proposicaoIdOficial)) {
+      return { atualizada: false, error: "readback dos metadados oficiais não confirmou exatamente a linha" }
+    }
+    const readback = await supabase.from("votacoes_chave").select("id, casa, fonte, votacao_id_api, data_votacao, proposicao_id")
+      .eq("id", id).in("casa", ["Câmara", "Camara"]).eq("fonte", "camara").eq("votacao_id_api", votacaoIdApi).maybeSingle()
+    if (readback.error || readback.data?.data_votacao !== data || readback.data?.casa !== "Câmara" || readback.data?.fonte !== "camara"
+      || (proposicaoIdOficial !== null && readback.data?.proposicao_id !== proposicaoIdOficial)) {
+      return { atualizada: false, error: readback.error?.message ?? "select independente divergiu" }
+    }
+    return { atualizada: true, error: null }
+  },
   gravarVoto: async (linha) => {
     const { error } = await supabase
       .from("votos_candidato")
@@ -714,7 +746,20 @@ const PORTAS_REAIS: PortasDeVotos = {
 let portas: PortasDeVotos = PORTAS_REAIS
 
 export function __usarPortasDeVotosParaTeste(novas: Partial<PortasDeVotos>): void {
-  portas = { ...PORTAS_REAIS, ...novas }
+  const detalheMock = novas.buscarDetalheDaVotacao
+  portas = {
+    ...PORTAS_REAIS,
+    atualizarDataOficial: async () => ({ atualizada: true, error: null }),
+    ...novas,
+    ...(detalheMock ? {
+      buscarDetalheDaVotacao: async (id, onRevision) => {
+        const detail = await detalheMock(id, onRevision)
+        return detail && detail.id === undefined && typeof detail.descricao === "string"
+          ? { ...detail, id, data: typeof detail.data === "string" ? detail.data : "2020-01-01" }
+          : detail
+      },
+    } : {}),
+  }
   __resetCacheVotacoesParaTeste()
 }
 
@@ -737,6 +782,7 @@ interface VotacaoChaveCamara {
   titulo: string
   descricaoOficial: string | null
   classificacao: ClassificacaoVotacao
+  dataVotacao: string | null
 }
 
 /**
@@ -803,10 +849,18 @@ async function carregarVotacoesChaveCamara(): Promise<CarregamentoVotacoes> {
   const avisos: string[] = []
   const sourceRevisions: Array<{ url: string; sha256: string }> = []
   for (const linha of data ?? []) {
+    if (linha.fonte != null && linha.fonte !== "camara" && linha.fonte !== "Câmara") continue
+    if (linha.casa != null && linha.casa !== "Câmara" && linha.casa !== "Camara") {
+      const msg = `votos: votação ${String(linha.votacao_id_api)} tem Casa ${String(linha.casa)}; revisão manual necessária`
+      erros.push(msg)
+      continue
+    }
     const votacaoIdApi = String(linha.votacao_id_api)
     let descricaoOficial: string | null = null
+    let detalheOficial: Record<string, unknown> | null = null
     try {
       const detalhe = await portas.buscarDetalheDaVotacao(votacaoIdApi, (revision) => { sourceRevisions.push(revision) })
+      detalheOficial = detalhe as Record<string, unknown> | null
       const bruto = detalhe?.descricao
       descricaoOficial = typeof bruto === "string" ? bruto : null
     } catch (err) {
@@ -826,6 +880,69 @@ async function carregarVotacoesChaveCamara(): Promise<CarregamentoVotacoes> {
       continue
     }
 
+    const idDetalhe = detalheOficial?.id
+    if (idDetalhe !== votacaoIdApi) {
+      const msg = `votos: detalhe oficial devolveu id ${String(idDetalhe)} para chave ${votacaoIdApi}; evento recusado`
+      warn("camara", `  ${msg}`)
+      erros.push(msg)
+      continue
+    }
+    const idsProposicoes = Array.isArray(detalheOficial?.proposicoesAfetadas)
+      ? detalheOficial.proposicoesAfetadas.map((raw) => {
+          if (!raw || typeof raw !== "object") return null
+          const id = (raw as Record<string, unknown>).id
+          return typeof id === "string" || typeof id === "number" ? String(id) : null
+        }).filter((id): id is string => id !== null)
+      : []
+    const proposicaoAnterior = typeof linha.proposicao_id === "string" || typeof linha.proposicao_id === "number"
+      ? String(linha.proposicao_id)
+      : null
+    let proposicaoOficial: string | null = null
+    if (Array.isArray(detalheOficial?.proposicoesAfetadas) && detalheOficial.proposicoesAfetadas.length === 1 && idsProposicoes.length === 1) {
+      proposicaoOficial = idsProposicoes[0]!
+    } else if (Array.isArray(detalheOficial?.proposicoesAfetadas) && detalheOficial.proposicoesAfetadas.length > 1
+      && (proposicaoAnterior === null || !idsProposicoes.includes(proposicaoAnterior))) {
+      const msg = `votos: votação ${votacaoIdApi} afeta múltiplas proposições e a chave anterior ${String(proposicaoAnterior)} não está na lista oficial; revisão necessária`
+      warn("camara", `  ${msg}`)
+      erros.push(msg)
+      continue
+    }
+    const dataBruta = detalheOficial?.data
+    const parsedDate = typeof dataBruta === "string" && /^\d{4}-\d{2}-\d{2}$/.test(dataBruta)
+      ? new Date(`${dataBruta}T00:00:00.000Z`)
+      : null
+    const dataOficial = parsedDate && parsedDate.toISOString().slice(0, 10) === dataBruta ? dataBruta as string : null
+    if (!dataOficial) {
+      const msg = `votos: votação ${votacaoIdApi} sem data oficial válida no detalhe; data publicada preservada`
+      warn("camara", `  ${msg}`)
+      erros.push(msg)
+    } else if (dataOficial !== (typeof linha.data_votacao === "string" ? linha.data_votacao : null)
+      || (proposicaoOficial !== null && proposicaoOficial !== proposicaoAnterior)
+      || linha.casa == null || linha.fonte == null) {
+      const dataAnterior = typeof linha.data_votacao === "string" ? linha.data_votacao : null
+      if (emDryRun()) {
+        planejarEscrita({
+          fonte: "destaques-votacoes", tabela: "votacoes_chave", operacao: "update", alvo: votacaoIdApi,
+          identidade: `fonte:camara;votacao_id_api:${votacaoIdApi}`,
+          chave: { id: String(linha.id), data_votacao: dataAnterior },
+          valores: { data_votacao: dataOficial, proposicao_id: proposicaoOficial, casa: "Câmara", fonte: "camara" },
+        })
+      } else {
+        const atualizado = await portas.atualizarDataOficial({
+          id: String(linha.id), votacaoIdApi, data: dataOficial, dataAnterior,
+          casaAnterior: typeof linha.casa === "string" ? linha.casa : null,
+          fonteAnterior: typeof linha.fonte === "string" ? linha.fonte : null,
+          proposicaoIdOficial: proposicaoOficial,
+          proposicaoIdAnterior: proposicaoAnterior,
+        })
+        if (atualizado.error || !atualizado.atualizada) {
+          const msg = `votos: data oficial da votação ${votacaoIdApi} não atualizada: ${atualizado.error ?? "preimage/readback divergiu"}`
+          warn("camara", `  ${msg}`)
+          erros.push(msg)
+        }
+      }
+    }
+
     const { classificacao } = classificarVotacao(descricaoOficial)
     if (classificacao === "procedimental") {
       // Recusa deliberada, nao falha: o dataset apontou para uma votacao que a
@@ -842,6 +959,7 @@ async function carregarVotacoesChaveCamara(): Promise<CarregamentoVotacoes> {
       titulo: String(linha.titulo),
       descricaoOficial,
       classificacao,
+      dataVotacao: typeof linha.data_votacao === "string" ? linha.data_votacao.slice(0, 10) : null,
     })
   }
 
@@ -1094,6 +1212,114 @@ interface ProjetosIngestOutcome {
   projetosLei: number
   outrasProposicoes: number
   sourceRevisions: Array<{ url: string; sha256: string }>
+  legacyReconciliation?: { provenanceAdded: number; unpublished: number; review: number }
+}
+
+export type LinhaProjetoLegadaCamara = {
+  id: string
+  candidato_id: string
+  tipo: string | null
+  numero: string | null
+  ano: number | null
+  ementa: string | null
+  fonte: string | null
+  proposicao_id_api: string | null
+  despublicado_em?: string | null
+}
+
+function chaveEmentaProjeto(row: { tipo?: unknown; siglaTipo?: unknown; numero?: unknown; ementa?: unknown }): string | null {
+  const tipo = String(row.tipo ?? row.siglaTipo ?? "").trim().toUpperCase()
+  const numero = String(row.numero ?? "").trim()
+  const ementa = stripAccents(String(row.ementa ?? "")).toLocaleLowerCase("pt-BR").replace(/\s+/g, " ").trim()
+  return tipo && numero && ementa ? `${tipo}\u0000${numero}\u0000ementa:${ementa}` : null
+}
+
+function chaveMaterialProjeto(row: { tipo?: unknown; siglaTipo?: unknown; numero?: unknown; ano?: unknown; ementa?: unknown }): string | null {
+  const tipo = String(row.tipo ?? row.siglaTipo ?? "").trim().toUpperCase()
+  const numero = String(row.numero ?? "").trim()
+  const ano = Number(row.ano)
+  if (!tipo || !numero) return null
+  if (Number.isInteger(ano) && ano >= 1900 && ano <= 2100) return `${tipo}\u0000${numero}\u0000ano:${ano}`
+  return chaveEmentaProjeto(row)
+}
+
+export function planejarReconciliacaoProjetosCamara(input: {
+  legacyRows: readonly LinhaProjetoLegadaCamara[]
+  officialRows: readonly Record<string, unknown>[]
+  sourceComplete: boolean
+  otherHouseExcluded: boolean
+}): { matched: Array<{ legacy: LinhaProjetoLegadaCamara; official: Record<string, unknown> }>; absent: LinhaProjetoLegadaCamara[]; review: LinhaProjetoLegadaCamara[] } {
+  const legacyRows = input.legacyRows.filter((row) =>
+    (row.fonte == null || row.fonte === "Câmara" || row.fonte === "Camara") && row.despublicado_em == null,
+  )
+  const officialByKey = new Map<string, Record<string, unknown>[]>()
+  const officialById = new Map<string, Record<string, unknown>[]>()
+  const legacyByKey = new Map<string, LinhaProjetoLegadaCamara[]>()
+  const review = new Set<LinhaProjetoLegadaCamara>()
+  for (const official of input.officialRows) {
+    const keys = [chaveMaterialProjeto(official), chaveEmentaProjeto(official)].filter((key): key is string => key !== null)
+    for (const key of new Set(keys)) {
+      const rows = officialByKey.get(key) ?? []
+      rows.push(official)
+      officialByKey.set(key, rows)
+    }
+  }
+  for (const legacy of legacyRows.filter((row) => row.proposicao_id_api == null)) {
+    const key = chaveMaterialProjeto(legacy)
+    if (!key) { review.add(legacy); continue }
+    const rows = legacyByKey.get(key) ?? []
+    rows.push(legacy)
+    legacyByKey.set(key, rows)
+  }
+  const matched: Array<{ legacy: LinhaProjetoLegadaCamara; official: Record<string, unknown> }> = []
+  const absent: LinhaProjetoLegadaCamara[] = []
+  const matchedLegacy = new Set<LinhaProjetoLegadaCamara>()
+  const usedOfficial = new Set<string>()
+  for (const official of input.officialRows) {
+    const id = String(official.id ?? "").trim()
+    if (!id) continue
+    const rows = officialById.get(id) ?? []
+    rows.push(official)
+    officialById.set(id, rows)
+  }
+  for (const legacy of legacyRows.filter((row) => row.proposicao_id_api != null)) {
+    const id = String(legacy.proposicao_id_api).trim()
+    const candidates = officialById.get(id) ?? []
+    if (id && candidates.length === 1 && legacyRows.filter((row) => row.proposicao_id_api === legacy.proposicao_id_api).length === 1) {
+      matched.push({ legacy, official: candidates[0]! })
+      matchedLegacy.add(legacy)
+      usedOfficial.add(id)
+    } else review.add(legacy)
+  }
+  for (const [key, oldRows] of legacyByKey) {
+    const officialRows = officialByKey.get(key) ?? []
+    if (oldRows.length !== 1) {
+      oldRows.forEach((row) => review.add(row))
+      continue
+    }
+    if (officialRows.length === 0) {
+      if (input.sourceComplete && input.otherHouseExcluded) absent.push(oldRows[0]!)
+      else review.add(oldRows[0]!)
+      continue
+    }
+    if (officialRows.length !== 1) {
+      oldRows.forEach((row) => review.add(row))
+      continue
+    }
+    const officialId = String(officialRows[0]?.id ?? "")
+    if (!officialId || usedOfficial.has(officialId)) {
+      oldRows.forEach((row) => review.add(row))
+      continue
+    }
+    matched.push({ legacy: oldRows[0]!, official: officialRows[0]! })
+    matchedLegacy.add(oldRows[0]!)
+    usedOfficial.add(officialId)
+  }
+  for (const legacy of legacyRows) {
+    if (matchedLegacy.has(legacy) || review.has(legacy)) continue
+    if (!absent.includes(legacy)) review.add(legacy)
+  }
+  return { matched, absent, review: [...review] }
 }
 
 /**
@@ -1113,7 +1339,8 @@ async function ingestProjetos(
   idCamara: number,
   candidatoId: string,
   slug: string,
-  declaradoNaFonte: number | null
+  declaradoNaFonte: number | null,
+  otherHouseExcluded: boolean
 ): Promise<ProjetosIngestOutcome> {
   const sourceRevisions: Array<{ url: string; sha256: string }> = []
   const proposicoes = await fetchPaginated<Record<string, unknown>>(
@@ -1135,7 +1362,82 @@ async function ingestProjetos(
     falhou: 0,
     readback: null,
     sourceRevisions,
+    legacyReconciliation: { provenanceAdded: 0, unpublished: 0, review: 0 },
     ...contarPorNatureza(proposicoes.map((p) => String(p.siglaTipo ?? ""))),
+  }
+
+  const legacyQuery = await supabase.from("projetos_lei")
+    .select("id, candidato_id, tipo, numero, ano, ementa, fonte, proposicao_id_api, despublicado_em", { count: "exact" })
+    .eq("candidato_id", candidatoId).is("despublicado_em", null)
+    .or("fonte.is.null,fonte.eq.Câmara,fonte.eq.Camara")
+    .range(0, 1000)
+  if (legacyQuery.error) throw new Error(`leitura de projetos legados falhou (${slug})`)
+  if (legacyQuery.count == null || legacyQuery.count !== (legacyQuery.data ?? []).length) {
+    throw new Error(`leitura de projetos legados truncada (${slug})`)
+  }
+  const legacyRows = (legacyQuery.data ?? []) as LinhaProjetoLegadaCamara[]
+  const sourceComplete = declaradoNaFonte != null && declaradoNaFonte === proposicoes.length
+  const reconciliation = planejarReconciliacaoProjetosCamara({
+    legacyRows, officialRows: proposicoes, sourceComplete, otherHouseExcluded,
+  })
+  outcome.legacyReconciliation = {
+    provenanceAdded: reconciliation.matched.length,
+    unpublished: reconciliation.absent.length,
+    review: reconciliation.review.length,
+  }
+  for (const { legacy, official } of reconciliation.matched) {
+    const officialId = String(official.id)
+    if (emDryRun()) {
+      planejarEscrita({ fonte: FONTE_CAMARA_PROPOSICOES, tabela: "projetos_lei", operacao: "update", alvo: slug,
+        identidade: `id-camara:${idCamara}`, chave: { id: legacy.id, tipo: legacy.tipo, numero: legacy.numero, ano: legacy.ano, fonte: legacy.fonte, proposicao_id_api: legacy.proposicao_id_api },
+        valores: { fonte: "Camara", proposicao_id_api: officialId } })
+      continue
+    }
+    let update = supabase.from("projetos_lei").update({ fonte: "Camara", proposicao_id_api: officialId })
+      .eq("id", legacy.id).eq("candidato_id", candidatoId).is("despublicado_em", null)
+    update = legacy.proposicao_id_api == null
+      ? update.is("proposicao_id_api", null)
+      : update.eq("proposicao_id_api", legacy.proposicao_id_api)
+    for (const [column, value] of [["tipo", legacy.tipo], ["numero", legacy.numero], ["ano", legacy.ano], ["ementa", legacy.ementa], ["fonte", legacy.fonte]] as const) {
+      update = value == null ? update.is(column, null) : update.eq(column, value)
+    }
+    const write = await escreverAuditado({ script: "ingest-camara", tabela: "projetos_lei",
+      motivo: "Associar linha legada de proposição à matéria oficial única da Câmara", recorte: `${slug}:${legacy.id}->${officialId}` },
+    () => update.select("id, candidato_id, tipo, numero, ano, ementa, fonte, proposicao_id_api"))
+    const written = write[0] as Record<string, unknown> | undefined
+    if (write.length !== 1 || written?.id !== legacy.id || written?.fonte !== "Camara" || written?.proposicao_id_api !== officialId) {
+      throw new Error(`preimage/readback da promoção de projeto divergiu (${slug}:${legacy.id})`)
+    }
+    const readback = await supabase.from("projetos_lei").select("id, fonte, proposicao_id_api")
+      .eq("id", legacy.id).eq("candidato_id", candidatoId).maybeSingle()
+    if (readback.error || readback.data?.fonte !== "Camara" || readback.data?.proposicao_id_api !== officialId) {
+      throw new Error(`readback independente da promoção divergiu (${slug}:${legacy.id})`)
+    }
+  }
+  for (const legacy of reconciliation.absent) {
+    if (emDryRun()) {
+      planejarEscrita({ fonte: FONTE_CAMARA_PROPOSICOES, tabela: "projetos_lei", operacao: "update", alvo: slug,
+        identidade: `id-camara:${idCamara}`, chave: { id: legacy.id, tipo: legacy.tipo, numero: legacy.numero, ano: legacy.ano },
+        valores: { despublicado_em: "now()", despublicacao_motivo: "camara-proposicoes: ausência em lista oficial completa" } })
+      continue
+    }
+    const reason = `camara-proposicoes: matéria não consta na lista autoral completa do ID Câmara ${idCamara}; mantida para auditoria`
+    let update = supabase.from("projetos_lei").update({ despublicado_em: new Date().toISOString(), despublicacao_motivo: reason })
+      .eq("id", legacy.id).eq("candidato_id", candidatoId).is("despublicado_em", null).is("proposicao_id_api", null)
+    for (const [column, value] of [["tipo", legacy.tipo], ["numero", legacy.numero], ["ano", legacy.ano], ["ementa", legacy.ementa], ["fonte", legacy.fonte]] as const) {
+      update = value == null ? update.is(column, null) : update.eq(column, value)
+    }
+    const write = await escreverAuditado({ script: "ingest-camara", tabela: "projetos_lei",
+      motivo: "Despublicar proposição legada ausente em lista oficial completa da Câmara", recorte: `${slug}:${legacy.id}` },
+    () => update.select("id, despublicado_em, despublicacao_motivo"))
+    if (write.length !== 1 || write[0]?.id !== legacy.id || !write[0]?.despublicado_em || write[0]?.despublicacao_motivo !== reason) {
+      throw new Error(`preimage/readback da despublicação de projeto divergiu (${slug}:${legacy.id})`)
+    }
+    const readback = await supabase.from("projetos_lei").select("id, despublicado_em, despublicacao_motivo")
+      .eq("id", legacy.id).eq("candidato_id", candidatoId).maybeSingle()
+    if (readback.error || readback.data?.despublicado_em == null || readback.data?.despublicacao_motivo !== reason) {
+      throw new Error(`readback independente da despublicação de projeto divergiu (${slug}:${legacy.id})`)
+    }
   }
 
   for (const p of proposicoes) {
@@ -1235,10 +1537,13 @@ async function registrarCardinalidadeProposicoes(
     readback: outcome.readback,
     projeto_lei: outcome.projetosLei,
     outras: outcome.outrasProposicoes,
+    reconciliacao_legado: outcome.legacyReconciliation ?? null,
     source_revisions: outcome.sourceRevisions,
   })
 
-  const resultado = classificarReciboProposicoes(outcome)
+  const resultado = outcome.legacyReconciliation?.review
+    ? "indeterminado"
+    : classificarReciboProposicoes(outcome)
   await registrarColeta({
     fonte: FONTE_CAMARA_PROPOSICOES,
     alvo: slug,
@@ -1253,7 +1558,7 @@ async function registrarCardinalidadeProposicoes(
 
 export type IngestCamaraOptions = {
   targetSlugs?: string[]
-  candidateRows?: readonly { slug: string; nome_completo: string; nome_urna: string; estado?: string; ids: { camara: number | null } }[]
+  candidateRows?: readonly { slug: string; nome_completo: string; nome_urna: string; estado?: string; ids: { camara: number | null; senado?: number | null } }[]
   /** Recoleta somente o acervo autoral, sem perfil, gastos ou votos. */
   onlyProjects?: boolean
   /** Rerun focal de perfil e gastos, preservando votos e projetos já lidos. */
@@ -1411,7 +1716,7 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
 
     if (opts.onlyProjects) {
       const declarado = await fetchDeclaredProposicaoCount(cand.ids.camara!)
-      const projetos = await ingestProjetos(cand.ids.camara!, candidatoId, cand.slug, declarado)
+      const projetos = await ingestProjetos(cand.ids.camara!, candidatoId, cand.slug, declarado, cand.ids.senado === null)
       if (projetos.persistido > 0) result.tables_updated.push("projetos_lei")
       result.rows_upserted = projetos.persistido
       if (projetos.falhou > 0) {
@@ -1571,7 +1876,8 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
           cand.ids.camara!,
           candidatoId,
           cand.slug,
-          declaradoProjetos
+          declaradoProjetos,
+          cand.ids.senado === null,
         )
         if (projetos.persistido > 0) result.tables_updated.push("projetos_lei")
         // Conta o que o banco confirmou, nunca o que o laco tentou.

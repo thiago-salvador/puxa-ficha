@@ -34,6 +34,10 @@ async function rodar(existentes: Array<Record<string, unknown>>): Promise<{ escr
       throw new Error(`Unexpected Senate request: ${url.pathname}`)
     }
     if (url.pathname.endsWith("/votacoes_chave")) return response([])
+    if (url.pathname.endsWith("/projetos_lei")) {
+      if (method !== "GET") throw new Error(`Unexpected projects write in mandate test: ${method}`)
+      return new Response("[]", { headers: { "Content-Type": "application/json", "Content-Range": "0-0/0" } })
+    }
     if (url.pathname.endsWith("/candidatos")) {
       if (method === "PATCH") return response(null)
       if (url.searchParams.get("select")?.includes("verificacao_campos")) return response([{ slug: SLUG, verificacao_campos: null }])

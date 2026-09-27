@@ -5,7 +5,23 @@ import { tmpdir } from "node:os"
 import path from "node:path"
 import test from "node:test"
 
-import { assertExpenseEmptinessCoversMandates, collectParliamentaryFamilyReceipts, mandateYears, openParliamentaryReceipts, projectParliamentaryFamilyApply, verifySenadoLegislatureScope, type ParliamentarySourceObservation } from "../scripts/audit/collect-parliamentary-family-receipts-local"
+import { assertExpenseEmptinessCoversMandates, collectParliamentaryFamilyReceipts, compactPublicHash, mapCompactPublicRows, mandateYears, openParliamentaryReceipts, projectParliamentaryFamilyApply, validateParliamentaryDatabaseReadback, verifySenadoLegislatureScope, type ParliamentarySourceObservation } from "../scripts/audit/collect-parliamentary-family-receipts-local"
+
+test("readback DB valida SHA/totais e IDs compactos só mapeiam UUID único", () => {
+  const database = {
+    schema_version: "parliamentary-db-readback-v1", generated_at: "2026-09-27T00:00:00.000Z", query_sha256: "a".repeat(64),
+    row_totals: { projects: 1, expenses: 0, votes: 0, votacoes_chave: 0 },
+    candidates: [{ candidate_id: "candidate-1", slug: "fixture", projetos_lei: [{ id: "db-project-1", candidato_id: "candidate-1" }], gastos_parlamentares: [], votos_candidato: [], votacoes_chave: [], row_totals: { projetos_lei: 1, gastos_parlamentares: 0, votos_candidato: 0, votacoes_chave: 0 } }],
+  }
+  const bytes = Buffer.from(JSON.stringify(database))
+  const validated = validateParliamentaryDatabaseReadback(bytes, createHash("sha256").update(bytes).digest("hex"))
+  assert.equal(validated.artifact_sha256, createHash("sha256").update(bytes).digest("hex"))
+  assert.throws(() => validateParliamentaryDatabaseReadback(bytes, "b".repeat(64)), /SHA-256/)
+  const publicRow = { id: `pl-1-${compactPublicHash("db-project-1")}` }
+  const mapped = mapCompactPublicRows([publicRow], database.candidates[0]!.projetos_lei, "pl", "candidate-1")
+  assert.equal(mapped.get(publicRow), database.candidates[0]!.projetos_lei[0])
+  assert.throws(() => mapCompactPublicRows([publicRow], [...database.candidates[0]!.projetos_lei, { id: "db-project-1", candidato_id: "candidate-1" }], "pl", "candidate-1"), /mapeia 2 IDs DB/)
+})
 
 function fixture(sourceRows: unknown[], dtoRows: unknown[], total = sourceRows.length, counts?: { global: number; camara: number; senado: number }) {
   const dir = mkdtempSync(path.join(tmpdir(), "pf-parliament-proof-"))
@@ -113,6 +129,8 @@ test("voto Câmara aceita data oficial com desvio único de um dia e registra pr
     assert.equal(result.receipts[0]?.resultado, "encontrado", result.errors.join("; "))
     const proof = JSON.parse(result.receipts[0]!.detalhe).coverage_proof
     assert.deepEqual(proof.vote_date_skews, [{ vote_id_api: "100-1", public_date: "2020-01-01", official_date: "2020-01-02", days: 1, proposition_id: 100 }])
+    const projection = projectParliamentaryFamilyApply([candidate], [observation], result).find((row) => row.fonte === "camara-votacoes")
+    assert.equal(projection?.estado, "safe_write", projection?.motivo ?? "projection missing")
   } finally { rmSync(dir, { recursive: true, force: true }) }
 })
 
@@ -223,6 +241,21 @@ test("Cota CSV reconcilia agregado anual e inclui SHA de cada um dos 19 ZIPs", (
     assert.equal(proof.source_rows, 1)
     assert.equal(proof.source_revisions.length, 19)
     assert.equal(proof.source_revisions[18].url, "https://www.camara.leg.br/cotas/Ano-2026.csv.zip")
+  } finally { rmSync(dir, { recursive: true, force: true }) }
+})
+
+test("projeção atualiza linha legada de Cota só com total oficial exato e escopo completo", () => {
+  const { dir, observation } = cotaFixture()
+  try {
+    const profile = JSON.parse(readFileSync(observation.readback.profile_path, "utf8"))
+    profile.gastos_parlamentares = [{ ano: 2024, total_gasto: 125.5, detalhamento: [{ categoria: "Categoria antiga", valor: 125.5 }] }]
+    writeFileSync(observation.readback.profile_path, JSON.stringify(profile))
+    const target = { slug: "fixture", candidato_id: "candidate-1", ids: { camara: 12345, senado: null } }
+    const current = collectParliamentaryFamilyReceipts([target], [observation])
+    assert.equal(current.receipts.some((receipt) => receipt.familia === "gastos_parlamentares"), false)
+    const projection = projectParliamentaryFamilyApply([target], [observation], current).find((row) => row.fonte === "camara-gastos")
+    assert.equal(projection?.estado, "safe_write", projection?.motivo ?? "projection missing")
+    assert.equal(projection?.projected_public_rows, 1)
   } finally { rmSync(dir, { recursive: true, force: true }) }
 })
 
@@ -382,16 +415,22 @@ test("recibos Câmara e Senado conferem partições distintas do mesmo DTO integ
   const source = path.join(dir, "senado-source.json")
   const raw = path.join(dir, "senado-page.json")
   const profilePath = camara.readback.profile_path
-  const senateRow = { idProposicao: 99, tipo: "PL", numero: "2", ano: 2024, ementa: "Senado", situacao: "Tramitando" }
+  const senateRow = { Materia: { Codigo: 99 }, idProposicao: 99, tipo: "PL", numero: "2", ano: 2024, ementa: "Senado principal", situacao: "Tramitando" }
+  const senateCoauthoredRow = { Materia: { Codigo: 100 }, idProposicao: 100, tipo: "PL", numero: "3", ano: 2024, ementa: "Senado coautoria", situacao: "Tramitando" }
   // The saved DTO rows omit `casa`; paired official sources disambiguate them.
-  const publicRows = [cameraRow, senateRow]
-  writeFileSync(profilePath, JSON.stringify({ id: "candidate-1", slug: "fixture", projetos_lei: publicRows, projetos_lei_total: 2, projetos_lei_camara_total: 1, projetos_lei_senado_total: 1 }))
+  const publicRows = [cameraRow, senateRow, senateCoauthoredRow]
+  writeFileSync(profilePath, JSON.stringify({ id: "candidate-1", slug: "fixture", projetos_lei: publicRows, projetos_lei_total: 3, projetos_lei_camara_total: 1, projetos_lei_senado_total: 2 }))
   writeFileSync(roster, JSON.stringify({ DetalheParlamentar: { IdentificacaoParlamentar: { CodigoParlamentar: "987" } } }))
-  const rawPayload = { MateriasAutoriaParlamentar: { Parlamentar: { Codigo: "987", Autorias: { Autoria: [{ ...senateRow, IndicadorAutorPrincipal: "Sim" }] } } } }
+  const senateRows = [
+    { ...senateRow, IndicadorAutorPrincipal: "Sim" },
+    { ...senateCoauthoredRow, IndicadorAutorPrincipal: "Não" },
+    { ...senateCoauthoredRow, IndicadorAutorPrincipal: "Não" },
+  ]
+  const rawPayload = { MateriasAutoriaParlamentar: { Parlamentar: { Codigo: "987", Autorias: { Autoria: senateRows } } } }
   const rawBytes = Buffer.from(JSON.stringify(rawPayload))
   writeFileSync(raw, rawBytes)
   const url = "https://legis.senado.leg.br/dadosabertos/senador/987/autorias.json"
-  writeFileSync(source, JSON.stringify({ complete: true, total: 1, dados: [{ ...senateRow, IndicadorAutorPrincipal: "Sim", CodigoParlamentar: "987" }], derived_from_pages: [{ page: 1, url, path: raw, bytes: rawBytes.length, sha256: createHash("sha256").update(rawBytes).digest("hex"), complete: true }] }))
+  writeFileSync(source, JSON.stringify({ complete: true, total: 3, dados: senateRows.map((row) => ({ ...row, CodigoParlamentar: "987" })), derived_from_pages: [{ page: 1, url, path: raw, bytes: rawBytes.length, sha256: createHash("sha256").update(rawBytes).digest("hex"), complete: true }] }))
   const senado: ParliamentarySourceObservation = {
     house: "senado", family: "projetos_lei", official_id: 987,
     roster: { roster_url: "https://legis.senado.leg.br/dadosabertos/senador/987", roster_revision: "fixture", roster_path: roster },
@@ -403,6 +442,7 @@ test("recibos Câmara e Senado conferem partições distintas do mesmo DTO integ
     const projectReceipts = result.receipts.filter((receipt) => receipt.familia === "projetos_lei")
     assert.equal(projectReceipts.length, 2, result.errors.join("; "))
     assert.deepEqual(projectReceipts.map((receipt) => JSON.parse(receipt.detalhe).coverage_proof.house_partition.casa).sort(), ["camara", "senado"])
+    assert.equal(JSON.parse(projectReceipts.find((receipt) => receipt.fonte === "senado-proposicoes")!.detalhe).coverage_proof.source_rows, 2)
     assert.equal(JSON.parse(projectReceipts[0]!.detalhe).coverage_proof.public_payload_sha256, JSON.parse(projectReceipts[1]!.detalhe).coverage_proof.public_payload_sha256)
   } finally { rmSync(dir, { recursive: true, force: true }) }
 })
