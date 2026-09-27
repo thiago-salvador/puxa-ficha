@@ -10,6 +10,7 @@ import { downloadToFile, verifyZip } from "./download-to-file"
 import { supabase } from "./supabase"
 import { ativarDryRun, deveAtivarDryRunDoColetor, emDryRun, planejarEscrita } from "./dry-run"
 import { escreverAuditado } from "./escrita-auditada"
+import { decidirChaveOcupada, lerLinhaNaChave } from "./gastos-chave-anual"
 import { log, warn } from "./logger"
 import type { IngestResult } from "./types"
 
@@ -88,6 +89,15 @@ export function autorizarDespublicacoesCota(input: { legacyRows: number; tombsto
 function fonteCamaraApiId(fonte: string | null, idCamara?: string | number | null): boolean {
   const match = fonte?.match(/^https:\/\/dadosabertos\.camara\.leg\.br\/api\/v2\/deputados\/(\d+)\/despesas\/?$/)
   return Boolean(match && idCamara != null && match[1] === String(idCamara))
+}
+
+/**
+ * Rótulo de uma carga antiga da própria cota da Câmara (dados abertos), com
+ * sufixo de onda. É a mesma Casa: só entra na decisão de substituir a linha
+ * que ocupa a chave anual, não na reconciliação de linhas legadas.
+ */
+export function fonteCotaCamaraLegada(fonte: string | null): boolean {
+  return fonte != null && /^Cota Parlamentar\/Camara dadosabertos( \([^)]*\))?$/.test(fonte)
 }
 
 function fonteCamaraReconhecida(fonte: string | null, idCamara?: string | number | null): boolean {
@@ -446,14 +456,43 @@ export async function ingestCamaraCotasCsv(options: { targetSlugs?: string[]; co
             .map(({ categoria, valor }) => ({ descricao: categoria, categoria, valor })),
           fonte: "Camara",
         }
+        // A chave (candidato_id, ano) é única mesmo para linha despublicada:
+        // sem alvo publicado, a linha oficial substitui a ocupante da mesma Casa.
+        const chave = target
+          ? { acao: "inserir" as const }
+          : decidirChaveOcupada(await lerLinhaNaChave(candidateId, year), (fonte) => fonteCamaraReconhecida(fonte, candidate.ids.camara) || fonteCotaCamaraLegada(fonte), { aceitaPublicada: true })
+        if (chave.acao === "revisao") {
+          base.errors.push(`${candidate.slug}:${year} ${chave.motivo}; revisão necessária`)
+          continue
+        }
+        const ocupante = chave.acao === "substituir" ? chave.linha : null
         if (emDryRun()) {
           planejarEscrita({
             fonte: "camara-cotas", tabela: "gastos_parlamentares",
-            operacao: target ? "update" : "insert", alvo: candidate.slug,
+            operacao: target || ocupante ? "update" : "insert", alvo: candidate.slug,
             identidade: `ideCadastro:${candidate.ids.camara}`,
-            chave: target ? { id: target.id } : { candidato_id: candidateId, ano: year, fonte: "Camara" },
+            chave: target ? { id: target.id } : ocupante ? { id: ocupante.id, republicar: true } : { candidato_id: candidateId, ano: year, fonte: "Camara" },
             valores: row,
           })
+        } else if (ocupante) {
+          const write = await escreverAuditado({
+            script: "ingest-camara-cota-csv",
+            tabela: "gastos_parlamentares",
+            motivo: "Substituir a linha da mesma chave anual pelo total oficial da cota da Câmara",
+            recorte: `${candidate.slug}:${year}`,
+          }, () => {
+            let query = supabase.from("gastos_parlamentares").update({ ...row, despublicado_em: null, despublicacao_motivo: null })
+              .eq("id", ocupante.id).eq("candidato_id", candidateId).eq("ano", year)
+            query = ocupante.fonte === null ? query.is("fonte", null) : query.eq("fonte", ocupante.fonte)
+            query = ocupante.total_gasto === null ? query.is("total_gasto", null) : query.eq("total_gasto", ocupante.total_gasto)
+            query = ocupante.despublicado_em === null ? query.is("despublicado_em", null) : query.not("despublicado_em", "is", null)
+            return query.select("id, fonte, total_gasto, despublicado_em")
+          })
+          const written = write[0] as { id?: string; fonte?: string; total_gasto?: number; despublicado_em?: string | null } | undefined
+          if (write.length !== 1 || written?.id !== ocupante.id || written?.fonte !== "Camara" || Number(written?.total_gasto) !== total || written?.despublicado_em != null) {
+            throw new Error(`readback da substituição divergiu para ${candidate.slug}:${year}`)
+          }
+          materialized += 1
         } else {
           const write = await escreverAuditado({
             script: "ingest-camara-cota-csv",

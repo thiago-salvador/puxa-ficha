@@ -10,6 +10,7 @@ import { normalizeForMatch } from "./helpers"
 import { emDryRun, planejarEscrita, ativarDryRun } from "./dry-run"
 import { log, error } from "./logger"
 import { escreverAuditado } from "./escrita-auditada"
+import { decidirChaveOcupada, lerLinhaNaChave } from "./gastos-chave-anual"
 import { parseSenadoLegislatureRoster, senadoExpenseLegislatureForYear, senadoLegislatureRosterUrl, SENADO_EXPENSE_LEGISLATURES, type SenadoLegislatureRoster } from "./senado-legislature-roster"
 import { getExplicitCohort } from "./cohort-context"
 import type { IngestResult } from "./types"
@@ -871,9 +872,22 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
         result.errors.push(`Linha de gastos ${snapshot.ano} com outra proveniência mantida para revisão; inserção CEAPS oficial segue em linha própria`)
       }
       try {
+        const chave = target ? { acao: "inserir" as const } : decidirChaveOcupada(await lerLinhaNaChave(candidatoId, snapshot.ano), isKnownSenateCeapsSource, { aceitaPublicada: false })
+        if (chave.acao === "revisao") {
+          result.errors.push(`CEAPS ${snapshot.ano}: ${chave.motivo}; revisão necessária`)
+          continue
+        }
         if (emDryRun()) {
-          planejarEscrita({ fonte: "ceaps-senado", tabela: "gastos_parlamentares", operacao: target ? "update" : "insert", alvo: cand.slug, identidade: `id-senado:${cand.ids.senado}`, chave: target ? { id: target.id } : { candidato_id: candidatoId, ano: snapshot.ano }, valores: row })
+          planejarEscrita({ fonte: "ceaps-senado", tabela: "gastos_parlamentares", operacao: target || chave.acao === "substituir" ? "update" : "insert", alvo: cand.slug, identidade: `id-senado:${cand.ids.senado}`, chave: target ? { id: target.id } : chave.acao === "substituir" ? { id: chave.linha.id, republicar: true } : { candidato_id: candidatoId, ano: snapshot.ano }, valores: row })
           result.rows_upserted++
+        } else if (chave.acao === "substituir") {
+          const ocupante = chave.linha
+          let update = supabase.from("gastos_parlamentares").update({ ...row, despublicado_em: null, despublicacao_motivo: null }).eq("id", ocupante.id).eq("candidato_id", candidatoId).eq("ano", snapshot.ano).not("despublicado_em", "is", null)
+          update = ocupante.fonte == null ? update.is("fonte", null) : update.eq("fonte", ocupante.fonte)
+          update = ocupante.total_gasto == null ? update.is("total_gasto", null) : update.eq("total_gasto", ocupante.total_gasto)
+          const written = await escreverAuditado({ script: "ingest-ceaps-senado", tabela: "gastos_parlamentares", motivo: "Republicar ano com o total oficial do CSV CEAPS no lugar da linha despublicada da mesma chave", recorte: `${cand.slug}:${snapshot.ano}` }, () => update.select("id,fonte,ano,despublicado_em"))
+          if (written.length !== 1 || written[0]?.fonte !== "Senado" || written[0]?.despublicado_em != null) result.errors.push(`Readback CEAPS ${snapshot.ano} divergiu da linha republicada`)
+          result.rows_upserted += written.length
         } else if (target) {
           let update = supabase.from("gastos_parlamentares").update({ ...row, despublicado_em: null, despublicacao_motivo: null }).eq("id", target.id).eq("candidato_id", candidatoId).eq("ano", snapshot.ano).eq("total_gasto", (existing as { total_gasto: number | null }).total_gasto).is("despublicado_em", null)
           update = target.fonte == null ? update.is("fonte", null) : update.eq("fonte", target.fonte)
