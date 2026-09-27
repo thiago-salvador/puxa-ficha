@@ -16,6 +16,9 @@ import { chmodSync, existsSync, mkdirSync, readFileSync, renameSync, writeFileSy
 import { dirname, resolve } from "node:path"
 import { fileURLToPath, pathToFileURL } from "node:url"
 import { publicFamilyPayloadSha256 } from "./lib/coverage-source-proof"
+import { parseSenadoLegislatureRoster, SENADO_EXPENSE_LEGISLATURES, senadoLegislatureRosterUrl } from "../lib/senado-legislature-roster"
+import { normalizeForMatch } from "../lib/normalize-for-match"
+import { stripAccents } from "../../src/lib/strip-accents"
 
 export const PARLIAMENTARY_FAMILIES = [
   "projetos_lei",
@@ -62,6 +65,16 @@ export interface OfficialFamilyObservation {
   source_path: string
   /** Caminho até a lista de linhas, quando o formato não for autodetectável. */
   rows_path?: readonly string[]
+  source_revisions?: Array<{ url: string; sha256: string; year?: number }>
+  source_kind?: "camara-cota-csv" | "senado-selected-votes"
+  selected_vote_ids?: string[]
+  vote_catalog?: Array<{ vote_id_api: string; url: string; path: string; sha256: string }>
+  source_filter?: { field: string; value: string; method: string }
+  scope_evidence?: {
+    rosters: Array<{ legislature: number; url: string; path: string | null; sha256: string | null; membership: boolean | "unverified"; years: number[]; failure: string | null }>
+    scope_years: number[]
+    excluded_years: number[]
+  }
 }
 
 interface DerivedRawPage {
@@ -70,6 +83,7 @@ interface DerivedRawPage {
   path: string
   bytes: number
   sha256: string
+  source_sha256?: string
   complete: boolean
 }
 
@@ -160,7 +174,7 @@ function validOfficialUrl(url: string, family: ParliamentaryFamily, officialId: 
   try {
     const parsed = new URL(url)
     const hosts = family === "gastos_parlamentares"
-      ? ["dadosabertos.camara.leg.br", "adm.senado.gov.br", "legis.senado.leg.br", "www.senado.leg.br"]
+      ? ["dadosabertos.camara.leg.br", "adm.senado.gov.br", "legis.senado.leg.br", "www.senado.leg.br", "www.camara.leg.br"]
       : ["dadosabertos.camara.leg.br", "legis.senado.leg.br", "www.senado.leg.br", "www.camara.leg.br"]
     return parsed.protocol === "https:" && hosts.includes(parsed.hostname) && (!requireId || parsed.href.includes(officialId))
   } catch {
@@ -198,6 +212,43 @@ function readRawJson(filePath: string): { bytes: Buffer; value: unknown } {
   }
 }
 
+export function verifySenadoLegislatureScope(observation: ParliamentarySourceObservation, officialId: string): Record<string, unknown> | undefined {
+  if (observation.house !== "senado" || observation.family !== "gastos_parlamentares") return undefined
+  const years = [...(observation.years ?? [])].sort((a, b) => a - b)
+  const evidence = observation.source.scope_evidence
+  if (!evidence) return undefined
+  if (!Array.isArray(evidence.rosters) || evidence.rosters.length !== 5 || !Array.isArray(evidence.scope_years) || !Array.isArray(evidence.excluded_years)) throw new Error("provas de rosters legislativos ausentes/incompletas")
+  const allYears = Array.from({ length: 19 }, (_, index) => 2008 + index)
+  const actualYears = [...years].sort((a, b) => a - b)
+  if (JSON.stringify(actualYears) !== JSON.stringify([...evidence.scope_years].sort((a, b) => a - b))) throw new Error("anos do bundle CEAPS divergem da prova de escopo")
+  const expectedExcluded = new Set<number>()
+  const rosterProofs: Array<Record<string, unknown>> = []
+  for (const legislature of [53, 54, 55, 56, 57]) {
+    const entry = evidence.rosters.find((row) => row.legislature === legislature)
+    const expectedUrl = senadoLegislatureRosterUrl(legislature)
+    const legislatureYears = [...SENADO_EXPENSE_LEGISLATURES[legislature]!]
+    if (!entry || entry.url !== expectedUrl || JSON.stringify([...entry.years].sort((a, b) => a - b)) !== JSON.stringify(legislatureYears)) throw new Error(`escopo/URL do roster ${legislature} inválido`)
+    if (entry.membership === "unverified") {
+      if (entry.path !== null || entry.sha256 !== null || !entry.failure) throw new Error(`roster ${legislature} marcado não verificado sem falha`)
+      rosterProofs.push({ legislature, url: expectedUrl, membership: "unverified", years: legislatureYears })
+      continue
+    }
+    if (typeof entry.membership !== "boolean" || !entry.path || !entry.sha256 || !validSha(entry.sha256) || entry.failure !== null) throw new Error(`roster ${legislature} sem prova íntegra`)
+    const payload = readRawJson(entry.path)
+    const actualSha = sha256Bytes(payload.bytes)
+    if (actualSha !== entry.sha256) throw new Error(`SHA do roster ${legislature} diverge`)
+    const roster = parseSenadoLegislatureRoster(payload.bytes, legislature)
+    const actualMembership = roster.ids.has(officialId)
+    if (entry.membership !== actualMembership) throw new Error(`membership diverge do roster ${legislature}`)
+    if (!actualMembership) for (const year of legislatureYears) expectedExcluded.add(year)
+    rosterProofs.push({ legislature, url: expectedUrl, sha256: actualSha, membership: actualMembership ? "present" : "absent", years: legislatureYears })
+  }
+  const expectedYears = allYears.filter((year) => !expectedExcluded.has(year))
+  const actualExcluded = [...evidence.excluded_years].sort((a, b) => a - b)
+  if (JSON.stringify(expectedYears) !== JSON.stringify(actualYears) || JSON.stringify([...expectedExcluded].sort((a, b) => a - b)) !== JSON.stringify(actualExcluded)) throw new Error("escopo CEAPS não corresponde às cinco listas legislativas")
+  return { rosters: rosterProofs, excluded_years: actualExcluded, scope_years: actualYears }
+}
+
 function valueAtPath(value: unknown, path: readonly string[] | undefined): unknown {
   let current = value
   for (const part of path ?? []) {
@@ -219,25 +270,73 @@ function rowContainsOfficialId(value: unknown, officialId: string): boolean {
   if (Array.isArray(value)) return value.some((item) => rowContainsOfficialId(item, officialId))
   const row = object(value)
   if (!row) return false
+  const deputy = object(row.deputado_)
+  if (String(deputy?.id ?? "").trim() === officialId) return true
   if (["idDeputado", "idDeputadoAutor", "idParlamentar", "codSenador", "CodigoParlamentar", "codigoParlamentar", "idSenador"].some((key) => String(row[key] ?? "").trim() === officialId)) return true
   return Object.values(row).some((item) => item && typeof item === "object" && rowContainsOfficialId(item, officialId))
 }
 
+function normalizeOfficialVote(value: string): string {
+  const normalized = value.trim().toLowerCase().replace(/\s+/g, " ")
+  const aliases: Record<string, string> = { sim: "sim", "não": "não", nao: "não", "abstenção": "abstenção", abstencao: "abstenção", "obstrução": "obstrução", obstrucao: "obstrução", ausente: "ausente", "artigo 17": "artigo_17" }
+  const result = aliases[normalized]
+  if (!result) throw new Error(`voto oficial sem valor reconhecido (${normalized || "vazio"})`)
+  return result
+}
+
+function selectSenadoNominalRows(rows: Record<string, unknown>[], officialId: string, ids: string[]): Record<string, unknown>[] {
+  if (ids.length === 0 || ids.some((id) => !/^\d+$/.test(id)) || new Set(ids).size !== ids.length) throw new Error("IDs selecionados de votação Senado inválidos ou duplicados")
+  const selected = new Set(ids)
+  const seen = new Set<string>()
+  const normalized: Record<string, unknown>[] = []
+  for (const row of rows) {
+    const id = String(row.CodigoSessaoVotacao ?? "").trim()
+    if (!selected.has(id)) continue
+    if (seen.has(id)) throw new Error(`CodigoSessaoVotacao duplicado na fonte Senado: ${id}`)
+    seen.add(id)
+    const label = String(row.SiglaDescricaoVoto ?? "").trim()
+    const folded = stripAccents(label).toLowerCase()
+    if (folded === "votou") throw new Error(`Votou não publica polaridade individual: ${id}`)
+    let vote: string | null = null
+    if (folded === "sim") vote = "sim"
+    else if (folded === "nao") vote = "não"
+    else if (folded.startsWith("absten")) vote = "abstenção"
+    else if (folded.startsWith("obstr")) vote = "obstrução"
+    if (vote) normalized.push({ ...row, CodigoParlamentar: officialId, vote_id_api: id, voto: vote })
+  }
+  return normalized
+}
+
 function validRawPageUrl(value: string, observation: ParliamentarySourceObservation, officialId: string): boolean {
-  if (!validOfficialUrl(value, observation.family, officialId, observation.house === "camara" && observation.family !== "votos_candidato")) return false
+  const senateCeaps = observation.house === "senado" && observation.family === "gastos_parlamentares"
+  const camaraCota = observation.house === "camara" && observation.family === "gastos_parlamentares" && observation.source.source_kind === "camara-cota-csv"
+  if (!validOfficialUrl(value, observation.family, officialId, !senateCeaps && !camaraCota && (observation.house === "camara" && observation.family !== "votos_candidato"))) return false
   const url = new URL(value)
   if (observation.house === "camara" && observation.family === "projetos_lei") return url.pathname === "/api/v2/proposicoes" && url.searchParams.get("idDeputadoAutor") === officialId
   if (observation.house === "camara" && observation.family === "gastos_parlamentares") {
+    if (observation.source.source_kind === "camara-cota-csv") return url.hostname === "www.camara.leg.br" && /^\/cotas\/Ano-20\d{2}\.csv\.zip$/.test(url.pathname)
     const year = Number(url.searchParams.get("ano"))
     return url.pathname === `/api/v2/deputados/${officialId}/despesas` && Number.isInteger(year) && year >= 2000 && year <= 2026 && url.searchParams.get("idLegislatura") === (year <= 2022 ? "56" : "57")
   }
-  if (observation.house === "camara") return /^\/api\/v2\/votacoes\/\d+\/votos$/.test(url.pathname)
+  if (observation.house === "camara") return observation.family === "votos_candidato"
+    ? /^\/api\/v2\/votacoes\/\d+-\d+\/votos$/.test(url.pathname)
+    : /^\/api\/v2\/votacoes\/\d+\/votos$/.test(url.pathname)
   if (observation.family === "projetos_lei") return url.pathname === `/dadosabertos/senador/${officialId}/autorias.json`
   if (observation.family === "votos_candidato") return url.pathname === `/dadosabertos/senador/${officialId}/votacoes.json`
-  return /^\/adm-dadosabertos\/api\/v1\/senadores\/despesas_ceaps\/\d{4}$/.test(url.pathname)
+  return /^\/transparencia\/LAI\/verba\/despesa_ceaps_\d{4}\.csv$/.test(url.pathname)
 }
 
 function rawPageRows(value: unknown, observation: ParliamentarySourceObservation, officialId: string): Record<string, unknown>[] {
+  if (observation.house === "camara" && observation.family === "gastos_parlamentares" && observation.source.source_kind === "camara-cota-csv") {
+    const root = object(value)
+    const rows = root?.CotaRows
+    if (!Array.isArray(rows) || root?.complete !== true) throw new Error("bundle anual Cota Câmara sem CotaRows/complete")
+    return rows.map((raw) => {
+      const row = object(raw)
+      if (!row || String(row.ideCadastro ?? "") !== officialId || !Number.isInteger(row.ano) || !Number.isInteger(row.source_rows) || Number(row.source_rows) <= 0 || !Number.isFinite(row.total_gasto) || !Array.isArray(row.categorias)) throw new Error("agregado anual Cota Câmara inválido ou com ID divergente")
+      return row
+    })
+  }
   if (observation.house === "senado" && observation.family !== "gastos_parlamentares") {
     const envelopeName = observation.family === "projetos_lei" ? "MateriasAutoriaParlamentar" : "VotacaoParlamentar"
     const groupName = observation.family === "projetos_lei" ? "Autorias" : "Votacoes"
@@ -255,9 +354,14 @@ function rawPageRows(value: unknown, observation: ParliamentarySourceObservation
     })
   }
   if (observation.house === "senado" && observation.family === "gastos_parlamentares") {
-    const list = Array.isArray(value) ? value : object(value)?.DespesasSenador
-    if (!Array.isArray(list)) throw new Error("página bruta CEAPS sem array anual")
-    return list.filter((row) => rowContainsOfficialId(row, officialId)) as Record<string, unknown>[]
+    const list = object(value)?.CeapsRows
+    const name = observation.source.source_filter?.value
+    if (!Array.isArray(list) || !name || observation.source.source_filter?.field !== "SENADOR") throw new Error("página bruta CEAPS sem CSV anual ou filtro nominal verificado")
+    const normalize = (text: string) => normalizeForMatch(text).replace(/[^A-Z0-9 ]/g, " ").replace(/\s+/g, " ").trim()
+    return list.filter((raw) => {
+      const row = object(raw)
+      return Boolean(row && typeof row.SENADOR === "string" && normalize(row.SENADOR) === normalize(name))
+    }).map((raw) => ({ ...(raw as Record<string, unknown>), CodigoParlamentar: officialId }))
   }
   const rows = rowsFromPayload(value, observation.source.rows_path)
   return observation.house === "camara" && observation.family === "votos_candidato"
@@ -273,10 +377,21 @@ function reconstructFromRawPages(bundle: Record<string, unknown>, observation: P
     if (!page || !Number.isInteger(page.page) || typeof page.url !== "string" || typeof page.path !== "string" || !Number.isInteger(page.bytes) || typeof page.sha256 !== "string" || typeof page.complete !== "boolean") {
       throw new Error("metadado de página bruta incompleto")
     }
-    if (!validSha(page.sha256) || !validRawPageUrl(page.url, observation, officialId)) {
+    const camaraCota = observation.house === "camara" && observation.family === "gastos_parlamentares" && observation.source.source_kind === "camara-cota-csv"
+    const camaraVotes = observation.house === "camara" && observation.family === "votos_candidato"
+    if (!validSha(page.sha256) || !validRawPageUrl(page.url, observation, officialId) || ((observation.house === "senado" && observation.family === "gastos_parlamentares" || camaraCota) && !validSha(String(page.source_sha256 ?? "")))) {
       throw new Error("URL ou SHA inválido em página bruta")
     }
-    if (observation.house === "senado" && observation.family === "gastos_parlamentares" && new URL(page.url).pathname.split("/").at(-1) === "") throw new Error("URL anual CEAPS inválida")
+    if (camaraVotes) {
+      const revision = observation.source.source_revisions?.find((entry) => entry.url === page.url)
+      if (!revision || revision.sha256 !== page.sha256) throw new Error("página nominal de votação ausente/divergente do manifesto SHA")
+    }
+    if (camaraCota && page.source_sha256 !== sha256Bytes(Buffer.from(JSON.stringify(observation.source.source_revisions ?? [])))) throw new Error("manifesto de ZIP Cota Câmara diverge do pacote capturado")
+    if (observation.house === "senado" && observation.family === "gastos_parlamentares") {
+      const year = Number(new URL(page.url).pathname.match(/despesa_ceaps_(\d{4})\.csv$/)?.[1])
+      const revision = observation.source.source_revisions?.find((entry) => entry.url === page.url)
+      if (!Number.isInteger(year) || !revision || revision.year !== year || revision.sha256 !== page.source_sha256) throw new Error("URL, ano ou SHA do CSV CEAPS diverge do manifesto")
+    }
     return page as unknown as DerivedRawPage
   })
   const rows: Record<string, unknown>[] = []
@@ -287,14 +402,32 @@ function reconstructFromRawPages(bundle: Record<string, unknown>, observation: P
     if (raw.length !== page.bytes || sha256Bytes(raw) !== page.sha256) throw new Error(`página bruta ausente ou SHA divergente: ${page.page}`)
     const value = JSON.parse(raw.toString("utf8")) as unknown
     const parsedUrl = new URL(page.url)
-    if (observation.house === "senado" && observation.family === "gastos_parlamentares" && !/^\d{4}$/.test(parsedUrl.pathname.split("/").at(-1) ?? "")) throw new Error("página CEAPS sem ano no endpoint")
+    const camaraCota = observation.house === "camara" && observation.family === "gastos_parlamentares" && observation.source.source_kind === "camara-cota-csv"
+    if (observation.house === "senado" && observation.family === "gastos_parlamentares" && !/despesa_ceaps_\d{4}\.csv$/.test(parsedUrl.pathname)) throw new Error("página CEAPS sem ano no endpoint")
+    if (camaraCota && (page.page !== 1 || !page.complete)) throw new Error("bundle agregado Cota Câmara deve ser uma página completa")
+    if (camaraCota) {
+      const valueParsed = JSON.parse(raw.toString("utf8")) as unknown
+      rows.push(...rawPageRows(valueParsed, observation, officialId))
+      continue
+    }
     const pageParam = parsedUrl.searchParams.get("pagina")
     if (pageParam !== null && Number(pageParam) !== page.page) throw new Error("número de página diverge da URL")
     parsedUrl.searchParams.delete("pagina")
     const groupKey = parsedUrl.href
     groups.set(groupKey, [...(groups.get(groupKey) ?? []), page])
     const pageRows = rawPageRows(value, observation, officialId)
-    rows.push(...pageRows)
+    if (observation.house === "senado" && observation.family === "votos_candidato" && observation.source.source_kind === "senado-selected-votes") {
+      const ids = observation.source.selected_vote_ids
+      const revision = observation.source.source_revisions?.find((entry) => entry.url === page.url)
+      if (!ids || !revision || revision.sha256 !== page.sha256 || page.page !== 1 || !page.complete) throw new Error("captura de votos selecionados Senado sem IDs/revisão SHA/página completa")
+      rows.push(...selectSenadoNominalRows(pageRows, officialId, ids))
+    } else if (observation.house === "camara" && observation.family === "votos_candidato") {
+      const nominalRows = object(value)?.dados
+      if (!Array.isArray(nominalRows) || nominalRows.length === 0 || nominalRows.some((row) => !object(row))) throw new Error("lista nominal oficial de votação vazia/inválida; não prova ausência do candidato")
+      const voteId = parsedUrl.pathname.match(/\/votacoes\/(\d+-\d+)\/votos/)?.[1]
+      if (!voteId) throw new Error("URL da página sem ID de votação Câmara")
+      rows.push(...pageRows.map((row) => ({ ...row, vote_id_api: voteId })))
+    } else rows.push(...pageRows)
 
     if (observation.house === "camara") {
       const pageRoot = object(value)
@@ -312,32 +445,87 @@ function reconstructFromRawPages(bundle: Record<string, unknown>, observation: P
   if (observation.family === "gastos_parlamentares") {
     const expected = observation.years
     if (!Array.isArray(expected) || expected.length === 0 || expected.some((year) => !Number.isInteger(year))) throw new Error("escopo anual de gastos ausente")
-    const actual = metadata.map((page) => {
+    const camaraCota = observation.house === "camara" && observation.source.source_kind === "camara-cota-csv"
+    const actual = camaraCota
+      ? (observation.source.source_revisions ?? []).map((revision) => revision.year)
+      : metadata.map((page) => {
       const url = new URL(page.url)
-      return observation.house === "camara" ? Number(url.searchParams.get("ano")) : Number(url.pathname.split("/").at(-1))
-    })
+      return observation.house === "camara" ? Number(url.searchParams.get("ano")) : Number(url.pathname.match(/despesa_ceaps_(\d{4})\.csv$/)?.[1])
+      })
+    if (camaraCota) {
+      const revisions = observation.source.source_revisions ?? []
+      const exact = expected.length === 19 && expected[0] === 2008 && expected[18] === 2026 && revisions.length === 19 && revisions.every((revision, index) => revision.year === 2008 + index && revision.url === `https://www.camara.leg.br/cotas/Ano-${2008 + index}.csv.zip` && validSha(revision.sha256))
+      if (!exact) throw new Error("escopo Cota Câmara exige os 19 ZIPs de 2008–2026 com URL e SHA individual")
+    }
     if (new Set(actual).size !== expected.length || new Set(expected).size !== expected.length || expected.some((year) => !actual.includes(year))) {
       throw new Error("páginas de gastos não cobrem todos os anos declarados")
     }
+  }
+  if (observation.house === "camara" && observation.family === "votos_candidato") {
+    const catalog = verifyCamaraVoteCatalog(observation)
+    const observedIds = new Set(metadata.map((page) => new URL(page.url).pathname.match(/\/votacoes\/(\d+-\d+)\/votos/)?.[1]).filter((value): value is string => Boolean(value)))
+    if (observedIds.size !== catalog.size || [...catalog.keys()].some((id) => !observedIds.has(id))) throw new Error("listas nominais não cobrem exatamente o catálogo de IDs de votação")
+    const revisions = observation.source.source_revisions ?? []
+    if (revisions.length !== metadata.length + catalog.size) throw new Error("manifesto de votação não inclui cada página nominal e metadado oficial")
   }
   if (bundle.complete !== true || bundle.total !== rows.length) throw new Error("bundle diverge das páginas brutas reconstruídas")
   return rows
 }
 
 function identityFromRow(row: Record<string, unknown>): string | null {
-  for (const field of ["idDeputadoAutor", "idDeputado", "idParlamentar", "codSenador", "CodigoParlamentar", "codigoParlamentar", "idSenador"]) {
+  const deputyId = object(row.deputado_)?.id
+  if (deputyId !== undefined && deputyId !== null && String(deputyId).trim()) return normalizedId(String(deputyId))
+  for (const field of ["ideCadastro", "idDeputadoAutor", "idDeputado", "idParlamentar", "codSenador", "CodigoParlamentar", "codigoParlamentar", "idSenador"]) {
     const raw = row[field]
     if (raw !== undefined && raw !== null && String(raw).trim()) return normalizedId(String(raw))
   }
   return null
 }
 
-function rowKey(row: Record<string, unknown>, family: ParliamentaryFamily): string {
-  const fields = family === "projetos_lei"
-    ? ["id", "idProposicao", "Codigo", "CodigoMateria", "proposicao_id_api"]
-    : family === "votos_candidato"
-      ? ["id", "idVotacao", "CodigoVotacao", "Codigo", "votacao_id_api"]
-      : ["id", "numeroDocumento", "numeroDocumentoFiscal", "id_despesa", "data", "DataDespesa"]
+function publicRowHouse(row: Record<string, unknown>, family: ParliamentaryFamily): ParliamentaryHouse | null {
+  const vote = family === "votos_candidato" ? object(row.votacao) : null
+  const value = family === "votos_candidato" ? vote?.casa : row.casa
+  return value === "camara" || value === "senado" ? value : null
+}
+
+function publicTotalForHouse(
+  profile: Record<string, unknown>,
+  family: ParliamentaryFamily,
+  house: ParliamentaryHouse,
+  visibleRows: number,
+): number {
+  if (family !== "projetos_lei") return visibleRows
+  const camara = profile.projetos_lei_camara_total
+  const senado = profile.projetos_lei_senado_total
+  const global = profile.projetos_lei_total
+  if (![camara, senado, global].every((value) => typeof value === "number" && Number.isSafeInteger(value) && value >= 0)) {
+    throw new Error("contagens integrais por Casa ausentes no DTO público de projetos")
+  }
+  if ((camara as number) + (senado as number) !== global) throw new Error("contagens integrais Câmara/Senado não fecham o total público de projetos")
+  return house === "camara" ? camara as number : senado as number
+}
+
+function rowKey(row: Record<string, unknown>, family: ParliamentaryFamily, house?: ParliamentaryHouse): string {
+  if (family === "votos_candidato") {
+    const voteId = field(row, ["vote_id_api", "votacao_id_api"]) ?? field(object(row.votacao) ?? {}, ["vote_id_api", "votacao_id_api"])
+    if (voteId !== undefined) return `vote:${String(voteId).trim()}`
+  }
+  if (family === "gastos_parlamentares" && (house === "senado" || (house === "camara" && ("ideCadastro" in row || "total_gasto" in row)))) {
+    const year = field(row, ["ano", "ANO", "Ano", "year"])
+    if (year !== undefined) return `year:${String(year).trim()}`
+  }
+  if (family === "projetos_lei") {
+    const material = object(row.Materia) ?? row
+    const type = field(material, ["siglaTipo", "tipo", "Sigla", "sigla"])
+    const number = field(material, ["numero", "Numero", "numeroMateria"])
+    const year = field(material, ["ano", "Ano", "anoMateria"])
+    const text = field(material, ["ementa", "Ementa", "EmentaMateria"])
+    if ([type, number, year, text].some((value) => value === undefined)) throw new Error("projeto sem tupla material completa")
+    return `project:${canonicalJson({ type: String(type).trim(), number: String(number).trim(), year: String(year).trim(), text: String(text).trim() })}`
+  }
+  const fields = family === "votos_candidato"
+    ? ["id", "idVotacao", "CodigoVotacao", "Codigo", "votacao_id_api"]
+    : ["id", "numeroDocumento", "numeroDocumentoFiscal", "id_despesa", "data", "DataDespesa"]
   for (const field of fields) {
     const raw = row[field]
     if (raw !== undefined && raw !== null && String(raw).trim()) return `${field}:${String(raw).trim()}`
@@ -353,29 +541,110 @@ function field(row: Record<string, unknown>, names: readonly string[]): unknown 
   return undefined
 }
 
-function materialRow(row: Record<string, unknown>, family: ParliamentaryFamily): Record<string, unknown> {
+function materialRow(row: Record<string, unknown>, family: ParliamentaryFamily, house?: ParliamentaryHouse): Record<string, unknown> {
   if (family === "projetos_lei") {
-    const id = field(row, ["id", "idProposicao", "Codigo", "CodigoMateria", "proposicao_id_api"])
-    const type = field(row, ["siglaTipo", "tipo", "Sigla", "sigla"]) 
-    const number = field(row, ["numero", "Numero", "numeroMateria"])
-    const year = field(row, ["ano", "Ano", "anoMateria"])
-    const text = field(row, ["ementa", "Ementa", "EmentaMateria"])
-    const statusRaw = field(row, ["situacao", "statusProposicao", "DescricaoSituacao"])
+    const material = object(row.Materia) ?? row
+    const type = field(material, ["siglaTipo", "tipo", "Sigla", "sigla"])
+    const number = field(material, ["numero", "Numero", "numeroMateria"])
+    const year = field(material, ["ano", "Ano", "anoMateria"])
+    const text = field(material, ["ementa", "Ementa", "EmentaMateria"])
+    const statusRaw = field(material, ["situacao", "statusProposicao", "DescricaoSituacao", "Situacao"])
     const status = object(statusRaw)?.descricaoSituacao ?? statusRaw
-    if ([id, type, number, year, text, status].some((value) => value === undefined)) throw new Error("projeto sem campos materiais completos")
-    return { id: String(id), type: String(type), number: String(number), year: String(year), text: String(text), status: String(status) }
+    if ([type, number, year, text].some((value) => value === undefined)) throw new Error("projeto sem campos materiais completos")
+    const normalizedStatus = status === undefined || status === null || status === "" ? null : String(status)
+    return { type: String(type), number: String(number), year: String(year), text: String(text), status: normalizedStatus }
+  }
+  if (family === "gastos_parlamentares" && (house === "senado" || (house === "camara" && ("ideCadastro" in row || "total_gasto" in row)))) {
+    const year = field(row, ["ano", "ANO", "Ano", "year"])
+    const amount = field(row, ["total_gasto", "valorReembolsado", "VALOR_REEMBOLSADO", "valor"])
+    if (year === undefined || amount === undefined) throw new Error("gasto CEAPS sem ano ou total anual")
+    const rawAmount = String(amount).trim()
+    const parsed = typeof amount === "number" ? amount : Number(rawAmount.includes(",") ? rawAmount.replace(/\./g, "").replace(",", ".") : rawAmount)
+    if (!Number.isFinite(parsed)) throw new Error("gasto CEAPS com total anual inválido")
+    const categoriesRaw = house === "camara" ? field(row, ["categorias"]) : undefined
+    const categories = Array.isArray(categoriesRaw)
+      ? categoriesRaw.map((item) => {
+        const category = object(item)
+        if (!category || typeof category.categoria !== "string" || !Number.isFinite(category.valor)) throw new Error("agregado Cota Câmara com categoria inválida")
+        return { categoria: category.categoria, valor: Number(category.valor).toFixed(2) }
+      }).sort((a, b) => a.categoria.localeCompare(b.categoria))
+      : Array.isArray(row.detalhamento)
+        ? (row.detalhamento as unknown[]).map((item) => {
+          const category = object(item)
+          if (!category || typeof category.categoria !== "string" || !Number.isFinite(category.valor)) throw new Error("DTO Cota Câmara com categoria inválida")
+          return { categoria: category.categoria, valor: Number(category.valor).toFixed(2) }
+        }).sort((a, b) => a.categoria.localeCompare(b.categoria))
+        : []
+    return { id: String(year), year: String(year), amount: (Math.round(parsed * 100) / 100).toFixed(2), ...(house === "camara" ? { categories } : {}) }
   }
   if (family === "votos_candidato") {
-    const id = field(row, ["id", "idVotacao", "CodigoVotacao", "Codigo", "votacao_id_api"])
+    const nested = object(row.votacao)
+    const id = field(row, ["vote_id_api", "votacao_id_api"]) ?? field(nested ?? {}, ["vote_id_api", "votacao_id_api"])
     const vote = field(row, ["voto", "Voto", "tipoVoto", "voto_normalizado"])
-    if (id === undefined || vote === undefined) throw new Error("votação sem ID ou voto")
-    return { id: String(id), vote: String(vote) }
+    if (id === undefined || vote === undefined) throw new Error("votação sem ID de votação ou voto")
+    return { id: String(id), vote: normalizeOfficialVote(String(vote)) }
   }
   const id = field(row, ["id", "numeroDocumento", "numeroDocumentoFiscal", "id_despesa"])
   const year = field(row, ["ano", "Ano", "year"])
   const amount = field(row, ["valorLiquido", "valorLiquidoFonte", "valorReembolsado", "ValorDespesa", "valor"])
   if (id === undefined || year === undefined || amount === undefined) throw new Error("gasto sem ID, ano ou valor")
   return { id: String(id), year: String(year), amount: String(amount) }
+}
+
+function aggregateSenadoCeapsRows(rows: Record<string, unknown>[], officialId: string): Record<string, unknown>[] {
+  const years = new Map<number, number>()
+  for (const row of rows) {
+    const year = Number(row.ANO)
+    const raw = String(row.VALOR_REEMBOLSADO ?? "").trim()
+    const amount = Number(raw.includes(",") ? raw.replace(/\./g, "").replace(",", ".") : raw)
+    if (!Number.isInteger(year) || !Number.isFinite(amount) || String(row.CodigoParlamentar ?? "") !== officialId) throw new Error("CSV CEAPS tem ano, valor ou identidade inválidos")
+    years.set(year, (years.get(year) ?? 0) + Math.round(amount * 100))
+  }
+  return [...years.entries()].sort((a, b) => a[0] - b[0]).map(([year, cents]) => ({ CodigoParlamentar: officialId, ano: year, total_gasto: cents / 100 }))
+}
+
+function verifyCamaraVoteCatalog(observation: ParliamentarySourceObservation): Map<string, { date: string; propositions: Set<string> }> {
+  const catalog = observation.source.vote_catalog
+  if (observation.house !== "camara" || observation.family !== "votos_candidato") return new Map()
+  if (!Array.isArray(catalog) || catalog.length === 0) throw new Error("catálogo de IDs de votação Câmara ausente")
+  const result = new Map<string, { date: string; propositions: Set<string> }>()
+  for (const entry of catalog) {
+    if (!/^\d+-\d+$/.test(entry.vote_id_api) || result.has(entry.vote_id_api) || entry.url !== `https://dadosabertos.camara.leg.br/api/v2/votacoes/${entry.vote_id_api}` || !validSha(entry.sha256) || !existsSync(entry.path)) throw new Error("entrada de catálogo de votação Câmara inválida")
+    const raw = readRawJson(entry.path)
+    if (sha256Bytes(raw.bytes) !== entry.sha256) throw new Error(`SHA dos metadados da votação ${entry.vote_id_api} diverge`)
+    const data = object(object(raw.value)?.dados)
+    if (!data || String(data.id) !== entry.vote_id_api || typeof data.data !== "string") throw new Error(`metadados oficiais sem ID/data para votação ${entry.vote_id_api}`)
+    const revision = observation.source.source_revisions?.find((item) => item.url === entry.url)
+    if (!revision || revision.sha256 !== entry.sha256) throw new Error(`metadados da votação ${entry.vote_id_api} ausentes do manifesto SHA`)
+    const props = Array.isArray(data.proposicoesAfetadas) ? data.proposicoesAfetadas.map((rawProp) => object(rawProp)?.id).filter((id): id is string | number => typeof id === "string" || typeof id === "number").map(String) : []
+    result.set(entry.vote_id_api, { date: data.data.slice(0, 10), propositions: new Set(props) })
+  }
+  return result
+}
+
+function attachVoteIdsToPublicRows(rows: Record<string, unknown>[], catalog: Map<string, { date: string; propositions: Set<string> }>): Record<string, unknown>[] {
+  if (catalog.size === 0) return rows
+  return rows.map((row) => {
+    const vote = object(row.votacao)
+    if (!vote) throw new Error("voto DTO sem metadados da votação")
+    const explicit = field(row, ["vote_id_api", "votacao_id_api"]) ?? field(vote, ["vote_id_api", "votacao_id_api"])
+    let id = explicit === undefined ? null : String(explicit)
+    if (id === null) {
+      const date = typeof vote.data_votacao === "string" ? vote.data_votacao.slice(0, 10) : ""
+      const proposition = vote.proposicao_id === undefined || vote.proposicao_id === null ? null : String(vote.proposicao_id)
+      const dateMatches = [...catalog.entries()].filter(([, metadata]) => metadata.date === date)
+      const matches = (proposition === null ? dateMatches : dateMatches.filter(([, metadata]) => metadata.propositions.has(proposition))).map(([voteId]) => voteId)
+      if (matches.length !== 1) throw new Error(`voto público não mapeia univocamente aos IDs oficiais (${matches.length} correspondências)`)
+      id = matches[0]!
+    }
+    if (!catalog.has(id)) throw new Error(`voto público aponta para ID fora do escopo oficial: ${id}`)
+    const metadata = catalog.get(id)!
+    const date = typeof vote.data_votacao === "string" ? vote.data_votacao.slice(0, 10) : ""
+    if (date !== metadata.date) throw new Error(`data do voto público diverge da votação oficial ${id}`)
+    const proposition = vote.proposicao_id === undefined || vote.proposicao_id === null ? null : String(vote.proposicao_id)
+    if (proposition !== null && !metadata.propositions.has(proposition)) throw new Error(`proposição do voto público diverge da votação oficial ${id}`)
+    return { ...row, vote_id_api: id }
+  })
 }
 
 function idsFromRoster(value: unknown): string[] {
@@ -407,11 +676,13 @@ function detailFor(input: {
   identityIds: string[]
   sourceSha256: string
   sourceRows: number
+  houseSubsetSha256: string
+  publicTotalRows: number
   declaredTotal: number | null
   rosterSha256: string
   publicPayloadSha256: string
 }): string {
-  const { candidate, observation, dtoCount, dtoSubsetSha256, identityIds, sourceSha256, sourceRows, declaredTotal, rosterSha256, publicPayloadSha256 } = input
+  const { candidate, observation, dtoCount, dtoSubsetSha256, identityIds, sourceSha256, sourceRows, declaredTotal, rosterSha256, publicPayloadSha256, houseSubsetSha256, publicTotalRows } = input
   return JSON.stringify({
     contrato: "parliamentary-family-receipt-v1",
     casa: observation.house,
@@ -430,17 +701,27 @@ function detailFor(input: {
       version: 1,
       family: observation.family,
       method: "official-source-to-public-readback",
-      source_revisions: [{
-        url: observation.source.source_url,
-        sha256: sourceSha256,
-        revision: observation.roster.roster_revision,
-      }],
+      source_revisions: observation.source.source_revisions?.length
+        ? observation.source.source_revisions
+        : [{ url: observation.source.source_url, sha256: sourceSha256, revision: observation.roster.roster_revision }],
       public_payload_sha256: publicPayloadSha256,
+      ...(observation.house === "camara" && observation.family === "votos_candidato" ? { vote_ids_api: observation.source.vote_catalog?.map((entry) => entry.vote_id_api) ?? [] } : {}),
       source_rows: sourceRows,
       public_rows: dtoCount,
       matched_rows: dtoCount,
-      unmatched_rows: Math.max(0, sourceRows - dtoCount),
+      unmatched_rows: 0,
+      house_partition: {
+        casa: observation.house,
+        public_rows: dtoCount,
+        public_subset_sha256: houseSubsetSha256,
+        public_total_rows: publicTotalRows,
+        source_rows: sourceRows,
+        matched_rows: dtoCount,
+        unmatched_rows: 0,
+      },
       scope_complete: true,
+      scope_evidence: verifySenadoLegislatureScope(observation, normalizedId(observation.official_id)),
+      scope_years: observation.years ?? null,
       declared_total: declaredTotal,
       identity: {
         slug: candidate.slug,
@@ -496,7 +777,8 @@ export function assertExpenseEmptinessCoversMandates(profile: Record<string, unk
 
 function makeReceipt(candidate: ParliamentaryCandidate, observation: ParliamentarySourceObservation, executedAt: string): ParliamentaryReceipt {
   const officialId = normalizedId(observation.official_id)
-  if (!validOfficialUrl(observation.source.source_url, observation.family, officialId)) throw new Error("source_url oficial não contém casa/ID verificável")
+  const sourceIdInUrl = observation.house === "camara" && (observation.source.source_kind === "camara-cota-csv" || observation.family === "votos_candidato") ? false : observation.house === "camara" || observation.family !== "gastos_parlamentares"
+  if (!validOfficialUrl(observation.source.source_url, observation.family, officialId, sourceIdInUrl)) throw new Error("source_url oficial inválida para a família")
   if (!validOfficialUrl(observation.roster.roster_url, observation.family, officialId, false)) throw new Error("roster_url oficial inválido")
   const rosterPayload = readRawJson(observation.roster.roster_path)
   const rosterSha256 = sha256Bytes(rosterPayload.bytes)
@@ -506,17 +788,22 @@ function makeReceipt(candidate: ParliamentaryCandidate, observation: Parliamenta
   const sourceSha256 = sha256Bytes(sourcePayload.bytes)
   const sourceBundle = object(sourcePayload.value)
   if (!sourceBundle) throw new Error("bundle oficial inválido")
-  const sourceRowsData = reconstructFromRawPages(sourceBundle, observation, officialId)
+  const capturedRows = reconstructFromRawPages(sourceBundle, observation, officialId)
+  const camaraVoteCatalog = observation.house === "camara" && observation.family === "votos_candidato" ? verifyCamaraVoteCatalog(observation) : new Map<string, { date: string; propositions: Set<string> }>()
   const bundleRows = rowsFromPayload(sourcePayload.value, observation.source.rows_path)
-  if (canonicalJson(bundleRows) !== canonicalJson(sourceRowsData)) throw new Error("dados do bundle divergem da reconstrução das páginas brutas")
+  if (canonicalJson(bundleRows) !== canonicalJson(capturedRows)) throw new Error("dados do bundle divergem da reconstrução das páginas brutas")
+  const sourceRowsData = observation.house === "senado" && observation.family === "gastos_parlamentares"
+    ? aggregateSenadoCeapsRows(capturedRows, officialId)
+    : capturedRows
   const sourceRows = sourceRowsData.length
   const sourceRoot = object(sourcePayload.value)
   if (sourceRoot?.complete !== true) throw new Error("fonte sem marcador complete=true; paginação não provada")
-  const sourceKeys = normalizedKeys(sourceRowsData.map((row) => rowKey(row, observation.family)))
+  const sourceKeys = normalizedKeys(sourceRowsData.map((row) => rowKey(row, observation.family, observation.house)))
   const sourceIdentities = sourceRowsData.map(identityFromRow).filter((id): id is string => id !== null)
-  if (sourceRows > 0 && sourceIdentities.length !== sourceRows) throw new Error("linhas oficiais sem ID parlamentar por linha")
+  const urlFilteredCamaraProjects = observation.house === "camara" && observation.family === "projetos_lei"
+  if (sourceRows > 0 && sourceIdentities.length !== sourceRows && !urlFilteredCamaraProjects) throw new Error("linhas oficiais sem ID parlamentar por linha")
   if (sourceIdentities.some((id) => id !== officialId)) throw new Error("linhas oficiais misturam IDs parlamentares")
-  const declaredTotal = (() => {
+  const rawDeclaredTotal = (() => {
     const root = sourceRoot
     for (const key of ["total", "totalCount", "count", "quantidade", "totalRegistros"]) {
       const raw = root?.[key]
@@ -525,39 +812,52 @@ function makeReceipt(candidate: ParliamentaryCandidate, observation: Parliamenta
     }
     return null
   })()
-  if (declaredTotal === null) throw new Error("fonte sem total oficial explícito")
-  if (declaredTotal != null && declaredTotal !== sourceRows) throw new Error(`fonte paginada/incompleta: ${sourceRows}/${declaredTotal} linhas`)
+  if (rawDeclaredTotal === null) throw new Error("fonte sem total explícito")
+  const isSenateCeaps = observation.house === "senado" && observation.family === "gastos_parlamentares"
+  if (rawDeclaredTotal !== capturedRows.length) throw new Error(`bundle bruto incompleto: ${capturedRows.length}/${rawDeclaredTotal} linhas`)
+  // CEAPS captures transaction rows but the public DTO stores one aggregate per year.
+  // The raw bundle total is independently checked above; the proof total is annual rows.
+  const declaredTotal = isSenateCeaps ? sourceRows : rawDeclaredTotal
+  if (!isSenateCeaps && declaredTotal !== sourceRows) throw new Error(`fonte paginada/incompleta: ${sourceRows}/${declaredTotal} linhas`)
   if (sourceRows === 0 && declaredTotal !== 0) throw new Error("vazio oficial exige total explícito zero")
   const dtoPayload = readRawJson(observation.readback.dto_path)
   const dtoRows = rowsFromPayload(dtoPayload.value, observation.readback.dto_rows_path)
-  const dtoKeys = normalizedKeys(dtoRows.map((row) => rowKey(row, observation.family)))
-  // Public DTO rows often omit the upstream parliament ID. When an ID is
-  // present, it must match the target; absence is handled by the profile
-  // identity and does not turn a valid readback into an error.
-  const dtoIdentities = dtoRows.map(identityFromRow)
-  const dtoIdentityIds = sortedIds(dtoIdentities.filter((id): id is string => id !== null))
-  if (dtoIdentityIds.some((id) => id !== officialId)) {
-    throw new Error(`readback DTO devolveu ID fora do alvo ${candidate.slug}/${observation.family}`)
-  }
-  if (dtoRows.length > 0 && dtoIdentityIds.length > 1) throw new Error(`DTO sem identidade única para ${candidate.slug}/${observation.family}`)
-  const sourceKeySet = new Set(sourceKeys)
-  const unmatched = dtoKeys.filter((key) => !sourceKeySet.has(key))
-  if (unmatched.length > 0) throw new Error(`DTO contém chaves ausentes na fonte oficial: ${unmatched.slice(0, 3).join(",")}`)
-  if (dtoKeys.length !== sourceKeys.length) {
-    throw new Error(`DTO truncado: ${dtoKeys.length}/${sourceKeys.length} linhas; declared_total=${declaredTotal ?? "?"}`)
-  }
-  const sourceByKey = new Map(sourceRowsData.map((row) => [rowKey(row, observation.family), materialRow(row, observation.family)]))
-  const dtoByKey = new Map(dtoRows.map((row) => [rowKey(row, observation.family), materialRow(row, observation.family)]))
-  for (const key of sourceKeys) {
-    if (canonicalJson(sourceByKey.get(key)) !== canonicalJson(dtoByKey.get(key))) {
-      throw new Error(`conteúdo material da linha diverge entre fonte e DTO: ${key}`)
-    }
-  }
   const profilePayload = readRawJson(observation.readback.profile_path)
   const envelope = object(profilePayload.value)
   const publicProfile = object(envelope?.data) ?? envelope
   if (!publicProfile || publicProfile.slug !== candidate.slug || publicProfile.id !== candidate.candidato_id) {
     throw new Error("perfil público do readback diverge de slug/candidato_id")
+  }
+  const publicDtoHouses = dtoRows.map((row) => publicRowHouse(row, observation.family))
+  if (publicDtoHouses.some((house) => house === null)) throw new Error("DTO público contém linha parlamentar sem casa válida")
+  const rawHouseDtoRows = dtoRows.filter((row) => publicRowHouse(row, observation.family) === observation.house)
+  const houseDtoRows = observation.house === "camara" && observation.family === "votos_candidato"
+    ? attachVoteIdsToPublicRows(rawHouseDtoRows, camaraVoteCatalog)
+    : rawHouseDtoRows
+  const publicTotalRows = publicTotalForHouse(publicProfile, observation.family, observation.house, houseDtoRows.length)
+  if (sourceRows !== publicTotalRows) throw new Error(`total completo da fonte/${observation.house} diverge do total público (${sourceRows}/${publicTotalRows})`)
+  const dtoKeys = normalizedKeys(houseDtoRows.map((row) => rowKey(row, observation.family, observation.house)))
+  // Public DTO rows often omit the upstream parliament ID. When an ID is
+  // present, it must match the target; absence is handled by the profile
+  // identity and does not turn a valid readback into an error.
+  const dtoIdentities = houseDtoRows.map(identityFromRow)
+  const dtoIdentityIds = sortedIds(dtoIdentities.filter((id): id is string => id !== null))
+  if (dtoIdentityIds.some((id) => id !== officialId)) {
+    throw new Error(`readback DTO devolveu ID fora do alvo ${candidate.slug}/${observation.family}`)
+  }
+  if (houseDtoRows.length > 0 && dtoIdentityIds.length > 1) throw new Error(`DTO sem identidade única para ${candidate.slug}/${observation.family}/${observation.house}`)
+  const sourceKeySet = new Set(sourceKeys)
+  const unmatched = dtoKeys.filter((key) => !sourceKeySet.has(key))
+  if (unmatched.length > 0) throw new Error(`DTO contém chaves ausentes na fonte oficial: ${unmatched.slice(0, 3).join(",")}`)
+  if (observation.family !== "projetos_lei" && dtoKeys.length !== sourceKeys.length) {
+    throw new Error(`DTO truncado na partição ${observation.house}: ${dtoKeys.length}/${sourceKeys.length} linhas; declared_total=${declaredTotal ?? "?"}`)
+  }
+  const sourceByKey = new Map(sourceRowsData.map((row) => [rowKey(row, observation.family, observation.house), materialRow(row, observation.family, observation.house)]))
+  const dtoByKey = new Map(houseDtoRows.map((row) => [rowKey(row, observation.family, observation.house), materialRow(row, observation.family, observation.house)]))
+  for (const key of dtoKeys) {
+    if (canonicalJson(sourceByKey.get(key)) !== canonicalJson(dtoByKey.get(key))) {
+      throw new Error(`conteúdo material da linha diverge entre fonte e DTO: ${key}`)
+    }
   }
   const field = observation.family === "projetos_lei" ? "projetos_lei" : observation.family === "votos_candidato" ? "votos" : "gastos_parlamentares"
   const publicRows = publicProfile[field]
@@ -565,9 +865,10 @@ function makeReceipt(candidate: ParliamentaryCandidate, observation: Parliamenta
     throw new Error("linhas do DTO não conferem com o perfil público integral")
   }
   const publicPayloadSha256 = publicFamilyPayloadSha256(publicProfile, observation.family)
-  const dtoSubsetSha256 = sha256(canonicalJson(dtoRows))
-  const dtoCount = dtoRows.length
-  if (dtoCount === 0 && observation.family === "gastos_parlamentares") assertExpenseEmptinessCoversMandates(publicProfile, observation)
+  const dtoSubsetSha256 = sha256(canonicalJson(houseDtoRows))
+  const houseSubsetSha256 = dtoSubsetSha256
+  const dtoCount = houseDtoRows.length
+  if (dtoCount === 0 && observation.family === "gastos_parlamentares" && observation.source.source_kind !== "camara-cota-csv") assertExpenseEmptinessCoversMandates(publicProfile, observation)
   const resultado: ReceiptResult = dtoCount > 0 ? "encontrado" : "vazio_confirmado"
   return {
     fonte: sourceName(observation.house, observation.family),
@@ -579,7 +880,7 @@ function makeReceipt(candidate: ParliamentaryCandidate, observation: Parliamenta
     familia: observation.family,
     url: observation.source.source_url,
     executado_em: executedAt,
-    detalhe: detailFor({ candidate, observation, dtoCount, dtoSubsetSha256, identityIds: dtoIdentityIds, sourceSha256, sourceRows, declaredTotal, rosterSha256, publicPayloadSha256 }),
+    detalhe: detailFor({ candidate, observation, dtoCount, dtoSubsetSha256, identityIds: dtoIdentityIds, sourceSha256, sourceRows, declaredTotal, rosterSha256, publicPayloadSha256, houseSubsetSha256, publicTotalRows }),
   }
 }
 

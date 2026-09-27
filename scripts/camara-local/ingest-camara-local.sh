@@ -170,8 +170,19 @@ SUPABASE_URL="$url_supabase" \
   PF_COLETA_EXECUCAO="$execucao" \
   "$tsx" scripts/ingest-all.ts camara --skip-camara-validated
 rc=$?
-set -e
 echo "ingest camara rc=$rc"
+
+# Os coletores complementares usam o mesmo SHA, cliente auditado, credenciais
+# e identificador de execução. Uma falha na API da Câmara não impede a leitura
+# independente dos CSVs oficiais e do histórico partidário parlamentar.
+SUPABASE_URL="$url_supabase" \
+  SUPABASE_SERVICE_ROLE_KEY="$chave_supabase" \
+  PF_COLETA_EXECUCAO="$execucao" \
+  "$tsx" scripts/ingest-all.ts camara-cotas ceaps-senado partidos-parlamentares
+rc_complementos=$?
+set -e
+echo "ingest complementos rc=$rc_complementos"
+if [ "$rc_complementos" -ne 0 ]; then rc="$rc_complementos"; fi
 
 # Como o job `revalidate` do Actions: revalida mesmo com erro parcial, para
 # publicar o que chegou ao banco; o rc do ingest continua sendo o do script.
@@ -185,5 +196,43 @@ if [ -n "$segredo_revalidacao" ]; then
 else
   echo "revalidate pulado: PF_REVALIDATE_SECRET ausente no arquivo de credenciais"
 fi
+
+# A prova de cobertura é uma segunda leitura: captura a revisão oficial e o
+# DTO público após a revalidação. Só o aplicador auditado grava recibos que a
+# régua aceita; falhas de leitura permanecem erro/indeterminado.
+prova="$dir_log/prova-parlamentar-$carimbo"
+mkdir -m 700 "$prova"
+export SUPABASE_URL="$url_supabase" SUPABASE_SERVICE_ROLE_KEY="$chave_supabase"
+if "$tsx" scripts/audit/exportar-perfis-publicos.ts --out="$prova/perfis.json" &&
+   "$tsx" scripts/audit/exportar-votacoes-chave-camara.ts --out="$prova/camara-votacoes.json" &&
+   "$tsx" scripts/audit/exportar-votacoes-chave-senado.ts --out="$prova/senado-votacoes.json" &&
+   "$tsx" scripts/audit/exportar-recibos-parlamentares.ts --out="$prova/recibos-atuais.json" &&
+   "$tsx" scripts/audit/audit-cobertura-fichas.ts \
+     --input="$prova/perfis.json" --receipts="$prova/recibos-atuais.json" \
+     --out="$prova/matriz.json" &&
+   "$tsx" scripts/audit/select-parliamentary-open-slugs.ts \
+     --matrix="$prova/matriz.json" --out="$prova/slugs-abertos.txt" &&
+   "$tsx" scripts/audit/fetch-parliamentary-family-sources-local.ts \
+     --destino="$prova/fontes" --public-profiles="$prova/perfis.json" \
+     --slugs-file="$prova/slugs-abertos.txt" \
+     --camara-votacoes="$prova/camara-votacoes.json" \
+     --senado-votacoes="$prova/senado-votacoes.json" &&
+   "$tsx" scripts/audit/collect-parliamentary-family-receipts-local.ts \
+     --input="$prova/fontes/parliamentary-family-sources.json" \
+     --out="$prova/recibos-novos.json" --abertos; then
+  set +e
+  "$tsx" scripts/audit/apply-coverage-receipts.ts \
+    --in="$prova/recibos-novos.json" \
+    --allow-fonte=camara-proposicoes,camara-votacoes,camara-gastos,senado-proposicoes,senado-votacoes,ceaps-senado \
+    --profiles="$prova/perfis.json" --out-dir="$prova/aplicacao" \
+    --incluir-abertos --recibos-atuais="$prova/recibos-atuais.json" \
+    --apply --execucao="$execucao:parlamentares"
+  rc_prova=$?
+  set -e
+else
+  rc_prova=1
+fi
+echo "prova parlamentar rc=$rc_prova"
+if [ "$rc_prova" -ne 0 ]; then rc="$rc_prova"; fi
 
 exit "$rc"

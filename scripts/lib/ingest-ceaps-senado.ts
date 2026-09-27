@@ -1,12 +1,165 @@
 import { supabase } from "./supabase"
+import { createHash } from "node:crypto"
+import { appendFileSync, chmodSync, mkdirSync, readFileSync } from "node:fs"
+import { spawnSync } from "node:child_process"
+import { resolve } from "node:path"
 import { assertSemReplacementChar } from "./ceaps-csv-encoding"
+import { decodeCeapsCsv, parseCeapsCsvRecords } from "./ceaps-csv-encoding"
 import { loadCandidatosPublicos, resolveCandidatoId } from "./helpers-db"
-import { fetchJSON } from "./helpers"
-import { log, warn, error } from "./logger"
+import { normalizeForMatch } from "./helpers"
+import { emDryRun, planejarEscrita, ativarDryRun } from "./dry-run"
+import { log, error } from "./logger"
+import { escreverAuditado } from "./escrita-auditada"
+import { parseSenadoLegislatureRoster, senadoExpenseLegislatureForYear, senadoLegislatureRosterUrl, SENADO_EXPENSE_LEGISLATURES, type SenadoLegislatureRoster } from "./senado-legislature-roster"
 import type { IngestResult } from "./types"
 
-const BASE_URL = "https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps"
-const ANOS = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+const BASE_URL = "https://www.senado.leg.br/transparencia/LAI/verba/despesa_ceaps"
+const ANOS = Array.from({ length: 19 }, (_, index) => 2008 + index)
+const JEV_SCRIPT = resolve(process.env.HOME ?? "", ".claude/scripts/jev.py")
+const JEV_QUESTIONS = resolve(process.cwd(), "scripts/data/ceaps-senado-identity-questions.json")
+const JEV_LOG_DIR = resolve(process.env.HOME ?? "", "Library/Logs/puxa-ficha/jev")
+const JEV_SHADOW_PATH = resolve(JEV_LOG_DIR, "ceaps-senado.jsonl")
+const JEV_REVIEW_PATH = resolve(JEV_LOG_DIR, "ceaps-senado-review.jsonl")
+
+interface CeapsCsvRow {
+  ANO: string
+  MES: string
+  SENADOR: string
+  TIPO_DESPESA: string
+  FORNECEDOR: string
+  DATA: string
+  VALOR_REEMBOLSADO: string
+}
+
+interface CeapsSnapshot {
+  ano: number
+  url: string
+  sha256: string
+  rows: CeapsCsvRow[]
+}
+
+export function parseCeapsCsv(buffer: Buffer, expectedYear: number): CeapsCsvRow[] {
+  const { header, rows: records } = parseCeapsCsvRecords(decodeCeapsCsv(buffer))
+  const required = ["ANO", "MES", "SENADOR", "TIPO_DESPESA", "FORNECEDOR", "DATA", "VALOR_REEMBOLSADO"]
+  if (required.some((column) => !header.includes(column))) {
+    throw new Error(`CSV CEAPS ${expectedYear}: esquema incompleto (${header.filter((h) => h !== "CNPJ_CPF").join(",")})`)
+  }
+  const rows: CeapsCsvRow[] = []
+  for (const [index, raw] of records.entries()) {
+    const year = Number(raw.ANO)
+    if (!Number.isInteger(year) || year !== expectedYear) {
+      throw new Error(`CSV CEAPS ${expectedYear}: registro ${index + 1} informa ano inválido`)
+    }
+    if (!raw.SENADOR?.trim() || parseValorOficial(raw.VALOR_REEMBOLSADO) === null) {
+      throw new Error(`CSV CEAPS ${expectedYear}: registro ${index + 1} tem campos obrigatórios inválidos`)
+    }
+    // CNPJ_CPF, documento e detalhamento são deliberadamente descartados.
+    rows.push({
+      ANO: String(year), MES: raw.MES, SENADOR: raw.SENADOR,
+      TIPO_DESPESA: raw.TIPO_DESPESA, FORNECEDOR: raw.FORNECEDOR,
+      DATA: raw.DATA, VALOR_REEMBOLSADO: raw.VALOR_REEMBOLSADO,
+    })
+  }
+  if (rows.length === 0) throw new Error(`CSV CEAPS ${expectedYear}: arquivo sem linhas, cobertura não confirmada`)
+  return rows
+}
+
+async function fetchCeapsSnapshot(ano: number): Promise<CeapsSnapshot> {
+  const url = `${BASE_URL}_${ano}.csv`
+  const response = await fetch(url, { headers: { Accept: "text/csv, application/octet-stream" }, signal: AbortSignal.timeout(60_000) })
+  if (!response.ok) throw new Error(`HTTP ${response.status} para CSV CEAPS ${ano}`)
+  const bytes = Buffer.from(await response.arrayBuffer())
+  const rows = parseCeapsCsv(bytes, ano)
+  return { ano, url, sha256: createHash("sha256").update(bytes).digest("hex"), rows }
+}
+
+function ceapsCandidateNames(candidato: { nome_completo: string; nome_urna: string }): Set<string> {
+  return new Set([candidato.nome_completo, candidato.nome_urna].map(normalizeForMatch).filter(Boolean))
+}
+
+function senatorNamesForSnapshot(snapshots: CeapsSnapshot[]): Map<string, string> {
+  const names = new Map<string, string>()
+  for (const snapshot of snapshots) for (const row of snapshot.rows) {
+    const normalized = normalizeForMatch(row.SENADOR)
+    if (normalized && !names.has(normalized)) names.set(normalized, row.SENADOR)
+  }
+  return names
+}
+
+function senateRosterName(payload: unknown, officialId: string): string | null {
+  if (Array.isArray(payload)) {
+    for (const item of payload) { const found = senateRosterName(item, officialId); if (found) return found }
+    return null
+  }
+  if (!payload || typeof payload !== "object") return null
+  const record = payload as Record<string, unknown>
+  const id = record.CodigoParlamentar ?? record.Codigo ?? record.id
+  const name = record.NomeParlamentar ?? record.Nome
+  if (String(id ?? "") === officialId && typeof name === "string" && name.trim()) return name.trim()
+  for (const value of Object.values(record)) { const found = senateRosterName(value, officialId); if (found) return found }
+  return null
+}
+
+async function fetchSenateRosterName(officialId: number | string): Promise<string | null> {
+  const url = `https://legis.senado.leg.br/dadosabertos/senador/${encodeURIComponent(String(officialId))}.json`
+  const response = await fetch(url, { headers: { Accept: "application/json" }, signal: AbortSignal.timeout(30_000) })
+  if (!response.ok) throw new Error(`HTTP ${response.status} ao verificar roster oficial do Senado`)
+  const payload = await response.json() as unknown
+  return senateRosterName(payload, String(officialId))
+}
+
+async function samePersonByJev(candidate: { slug: string; nome_completo: string; nome_urna: string; ids: { senado?: number | null } }, sourceName: string): Promise<number | null> {
+  const state = {
+    fonte: "CSV oficial CEAPS do Senado",
+    registro: { senador: sourceName },
+    candidato: { slug: candidate.slug, nome_completo: candidate.nome_completo, nome_urna: candidate.nome_urna, id_senado: candidate.ids.senado },
+  }
+  const questions = JSON.parse(readFileSync(JEV_QUESTIONS, "utf8"))
+  const request = spawnSync("python3", [JEV_SCRIPT, "ask"], { input: JSON.stringify({ state, questions }), encoding: "utf8", timeout: 30_000 })
+  if (request.status !== 0) return null
+  try {
+    const output = JSON.parse(request.stdout) as { answers?: { mesma_pessoa?: { noul?: number } } }
+    const p = output.answers?.mesma_pessoa?.noul
+    return typeof p === "number" && Number.isFinite(p) ? p : null
+  } catch { return null }
+}
+
+function appendIdentityShadow(candidate: { slug: string; ids: { senado?: number | null } }, sourceName: string, p: number | null): void {
+  mkdirSync(JEV_LOG_DIR, { recursive: true, mode: 0o700 })
+  const row = JSON.stringify({ fonte: "ceaps-senado", slug: candidate.slug, id_senado: candidate.ids.senado, nome_fonte: sourceName, p_mesma_pessoa: p, consultado_em: new Date().toISOString() })
+  appendFileSync(JEV_SHADOW_PATH, `${row}\n`, { mode: 0o600 })
+  chmodSync(JEV_SHADOW_PATH, 0o600)
+  if (p !== null && p >= 0.35 && p <= 0.65) appendFileSync(JEV_REVIEW_PATH, `${row}\n`, { mode: 0o600 })
+  if (p !== null && p >= 0.35 && p <= 0.65) chmodSync(JEV_REVIEW_PATH, 0o600)
+}
+
+export function agregarDespesasCeapsCsv(rows: CeapsCsvRow[], nomeSenador: string, ano: number): { quantidade: number; dados: DespesasAgregadas | null } {
+  const normalizedName = normalizeForMatch(nomeSenador)
+  const doSenador = rows.filter((row) => normalizeForMatch(row.SENADOR) === normalizedName)
+  const porCategoriaCents: Record<string, number> = {}
+  const destaques: GastoDestaque[] = []
+  let totalCents = 0
+  for (const row of doSenador) {
+    if (Number(row.ANO) !== ano) throw new Error(`registro CEAPS de ano alheio em ${ano}`)
+    const amount = parseValorOficial(row.VALOR_REEMBOLSADO)
+    if (amount === null) throw new Error(`valor CEAPS inválido em ${ano}`)
+    const category = (row.TIPO_DESPESA || "OUTROS").trim().toUpperCase()
+    const cents = Math.round(amount * 100)
+    porCategoriaCents[category] = (porCategoriaCents[category] ?? 0) + cents
+    totalCents += cents
+    if (amount > 0) destaques.push({ fornecedor: row.FORNECEDOR.trim(), tipo: category, valor: amount, data: row.DATA || null })
+  }
+  const porCategoria = Object.fromEntries(Object.entries(porCategoriaCents).map(([key, cents]) => [key, cents / 100]))
+  return {
+    quantidade: doSenador.length,
+    dados: doSenador.length === 0 ? null : {
+      total: totalCents / 100,
+      porCategoria,
+      destaques: destaques.sort((a, b) => b.valor - a.valor).slice(0, 5),
+      anosDescartados: [],
+    },
+  }
+}
 
 export interface DespesaCeapsOficial {
   ano?: number | string
@@ -16,9 +169,6 @@ export interface DespesaCeapsOficial {
   data?: string
   valorReembolsado?: number | string
 }
-
-const despesasPorAno = new Map<number, Promise<DespesaCeapsOficial[]>>()
-const consultaPorAno = new Map<number, string>()
 
 interface Despesa {
   TipoDespesa?: string
@@ -58,6 +208,17 @@ interface DespesasAgregadas {
   destaques: GastoDestaque[]
   /** Anos que a API devolveu sem serem o pedido, e que foram descartados. */
   anosDescartados: string[]
+}
+
+export function selectCeapsSenadoCandidates<T extends { slug: string; ids: { senado?: number | null } }>(
+  candidates: readonly T[],
+  options: { targetSlugs?: readonly string[]; cohortPredicate?: (candidate: T) => boolean } = {},
+): T[] {
+  const target = options.targetSlugs ? new Set(options.targetSlugs) : null
+  const inCohort = options.cohortPredicate ?? (() => true)
+  return candidates.filter((candidate) => inCohort(candidate)
+    && candidate.ids.senado !== null && candidate.ids.senado !== undefined
+    && (!target || target.has(candidate.slug)))
 }
 
 export type ConferenciaDespesas =
@@ -167,7 +328,16 @@ function parseValorOficial(v: number | string | undefined): number | null {
   if (typeof v === "number") return Number.isFinite(v) ? v : null
   if (typeof v !== "string" || v.trim() === "") return null
 
-  const normalized = v.includes(",") ? v.replace(/\./g, "").replace(",", ".") : v
+  const trimmed = v.trim()
+  if (trimmed.includes(",") && !/^-?(?:(?:\d{1,3}(?:\.\d{3})+|\d+)(?:,\d{0,2})?|,\d{1,2})$/.test(trimmed)) return null
+  let normalized = trimmed
+  if (normalized.includes(",")) {
+    normalized = normalized.replace(/\./g, "")
+    if (normalized.startsWith(",")) normalized = `0${normalized}`
+    else if (normalized.startsWith("-,")) normalized = normalized.replace("-,", "-0,")
+    if (normalized.endsWith(",")) normalized += "0"
+    normalized = normalized.replace(",", ".")
+  }
   if (!/^-?\d+(?:\.\d+)?$/.test(normalized.trim())) return null
   const parsed = Number(normalized)
   return Number.isFinite(parsed) ? parsed : null
@@ -314,209 +484,184 @@ interface GastoDestaque {
  * dois e o unico jeito de o relatorio de cobertura parar de contar fonte morta
  * como zero verificado.
  */
-type TentativaDespesas =
-  | { tipo: "ok"; dados: DespesasAgregadas; consultadoEm: string }
-  | { tipo: "vazio" }
-  | { tipo: "erro"; motivo: string }
-
-async function fetchDespesasAno(senadoId: number, ano: number): Promise<TentativaDespesas> {
-  const url = `${BASE_URL}/${ano}`
-
-  let data: DespesaCeapsOficial[]
-  try {
-    let request = despesasPorAno.get(ano)
-    if (!request) {
-      request = fetchJSON<DespesaCeapsOficial[]>(url, { Accept: "application/json" }).then((response) => {
-        consultaPorAno.set(ano, new Date().toISOString())
-        return response
-      })
-      despesasPorAno.set(ano, request)
-    }
-    data = await request
-  } catch (err) {
-    despesasPorAno.delete(ano)
-    consultaPorAno.delete(ano)
-    const motivo = err instanceof Error ? err.message : String(err)
-    warn("ceaps-senado", `  HTTP erro no conjunto anual ${ano}: ${motivo}`)
-    return { tipo: "erro", motivo }
-  }
-
-  const conferencia = agregarDespesasCeapsOficial(data, senadoId, ano)
-  if (!conferencia.ok) {
-    // Retorno recusado pela guarda de identidade tambem nao e vazio: a API
-    // respondeu com dado de outra pessoa ou de outro ano.
-    warn("ceaps-senado", `  id=${senadoId} ano=${ano}: retorno recusado — ${conferencia.motivo}`)
-    return { tipo: "erro", motivo: `retorno recusado: ${conferencia.motivo}` }
-  }
-
-  const dados = conferencia.dados
-  if (!dados) return { tipo: "vazio" }
-
-  if (dados.anosDescartados.length > 0) {
-    warn(
-      "ceaps-senado",
-      `  id=${senadoId} ano=${ano}: a API tambem devolveu ${dados.anosDescartados.join(", ")}, descartado(s) para nao somar ano alheio nesta linha`
-    )
-  }
-
-  const consultadoEm = consultaPorAno.get(ano)
-  if (!consultadoEm) return { tipo: "erro", motivo: `sem horário da consulta CEAPS ${ano}` }
-  return { tipo: "ok", dados, consultadoEm }
-}
-
-export async function ingestCeapsSenado(): Promise<IngestResult[]> {
+export async function ingestCeapsSenado(options: { targetSlugs?: readonly string[] } = {}): Promise<IngestResult[]> {
+  if (process.argv.includes("--dry-run")) ativarDryRun()
   const candidatos = await loadCandidatosPublicos()
+  const senadores = selectCeapsSenadoCandidates(candidatos, { targetSlugs: options.targetSlugs })
+  const snapshots: CeapsSnapshot[] = []
+  const falhasFonte = new Map<number, string>()
+  const senateRosters = new Map<number, SenadoLegislatureRoster>()
+  const senateRosterFailures = new Map<number, string>()
+  for (const legislature of [53, 54, 55, 56, 57]) {
+    const url = senadoLegislatureRosterUrl(legislature)
+    try {
+      const response = await fetch(url, { headers: { Accept: "application/json" }, signal: AbortSignal.timeout(30_000) })
+      if (!response.ok) throw new Error(`HTTP ${response.status}`)
+      const roster = parseSenadoLegislatureRoster(Buffer.from(await response.arrayBuffer()), legislature)
+      senateRosters.set(legislature, roster)
+    } catch (err) {
+      const reason = err instanceof Error ? err.message : String(err)
+      senateRosterFailures.set(legislature, reason)
+      error("ceaps-senado", `Roster legislativo ${legislature} indisponível/incompleto; anos mantidos no escopo`)
+    }
+  }
+  for (const ano of ANOS) {
+    try {
+      const snapshot = await fetchCeapsSnapshot(ano)
+      snapshots.push(snapshot)
+      log("ceaps-senado", `CSV ${ano}: ${snapshot.rows.length} linhas; sha256=${snapshot.sha256}`)
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err)
+      falhasFonte.set(ano, message)
+      error("ceaps-senado", `CSV ${ano}: ${message}`)
+    }
+  }
+  const sourceNames = senatorNamesForSnapshot(snapshots)
+  const allSourceRevisions = snapshots.map(({ ano, url, sha256 }) => ({ ano, url, sha256 }))
   const results: IngestResult[] = []
 
-  // Filtra apenas candidatos com ids.senado
-  const senadores = candidatos.filter((c) => c.ids.senado !== null && c.ids.senado !== undefined)
-  log("ceaps-senado", `${senadores.length} senadores para processar`)
-
   for (const cand of senadores) {
-    const result: IngestResult = {
-      source: "ceaps-senado",
-      candidato: cand.slug,
-      tables_updated: [],
-      rows_upserted: 0,
-      errors: [],
-      duration_ms: 0,
+    const result: IngestResult = { source: "ceaps-senado", candidato: cand.slug, tables_updated: [], rows_upserted: 0, errors: [], duration_ms: 0 }
+    const start = Date.now()
+    const officialId = cand.ids.senado == null ? null : String(cand.ids.senado)
+    const candidateYears = officialId ? ANOS.filter((year) => {
+      const roster = senateRosters.get(senadoExpenseLegislatureForYear(year))
+      return !roster || roster.ids.has(officialId)
+    }) : ANOS
+    const candidateSnapshots = snapshots.filter((snapshot) => candidateYears.includes(snapshot.ano))
+    const candidateFailures = [...falhasFonte.entries()].filter(([year]) => candidateYears.includes(year)).map(([year, message]) => `${year}: ${message}`)
+    const excludedYears = ANOS.filter((year) => !candidateYears.includes(year))
+    const scopeEvidence = {
+      rosters: [53, 54, 55, 56, 57].map((legislature) => {
+        const roster = senateRosters.get(legislature)
+        return { legislature, url: roster?.url ?? senadoLegislatureRosterUrl(legislature), sha256: roster?.sha256 ?? null, membership: officialId && roster ? roster.ids.has(officialId) : "unverified", years: [...SENADO_EXPENSE_LEGISLATURES[legislature]!], failure: senateRosterFailures.get(legislature) ?? null }
+      }),
+      scope_years: candidateYears,
+      excluded_years: excludedYears,
+    }
+    const receiptDetail = (extra: Record<string, unknown> = {}) => JSON.stringify({ source: "Senado CEAPS CSV", scope_years: candidateYears, scope_evidence: scopeEvidence, source_revisions: allSourceRevisions.filter(({ ano }) => candidateYears.includes(ano)), failed_years: candidateFailures, ...extra })
+    if (officialId === null) {
+      result.errors.push("ID Senado ausente; escopo parlamentar não confirmado")
+      result.coleta_resultado = "erro"
+      result.coleta_detalhe = receiptDetail({ motivo: "ID Senado ausente" })
+      result.coleta_url = senadoLegislatureRosterUrl(53)
+      result.duration_ms = Date.now() - start
+      results.push(result)
+      continue
+    }
+    if (candidateFailures.length > 0) {
+      result.errors.push(`Fonte CEAPS indisponível/inválida nos anos do escopo: ${candidateFailures.map((failure) => failure.split(":")[0]).join(",")}`)
+      result.coleta_resultado = "erro"
+      result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, motivo: "falha anual de fonte; nenhuma ausência inferida" })
+      const firstFailedYear = Number(candidateFailures[0]?.split(":")[0])
+      result.coleta_url = Number.isInteger(firstFailedYear) && firstFailedYear >= 2008 && firstFailedYear <= 2026
+        ? `${BASE_URL}_${firstFailedYear}.csv`
+        : candidateSnapshots.at(-1)?.url ?? `${BASE_URL}_2026.csv`
+      result.duration_ms = Date.now() - start
+      results.push(result)
+      continue
+    }
+    const names = ceapsCandidateNames(cand)
+    const possibleNames = [...names].flatMap((name) => sourceNames.has(name) ? [sourceNames.get(name)!] : [])
+    const matchedNames = [...new Set(possibleNames)]
+    if (matchedNames.length === 0 && cand.ids.senado != null) {
+      try {
+        const officialName = await fetchSenateRosterName(cand.ids.senado)
+        const sourceName = officialName ? sourceNames.get(normalizeForMatch(officialName)) : undefined
+        if (sourceName) matchedNames.push(sourceName)
+      } catch (err) {
+        const message = err instanceof Error ? err.message : String(err)
+        result.errors.push(`Verificação de roster Senado falhou: ${message}`)
+      }
+    }
+    if (matchedNames.length !== 1) {
+      result.errors.push(matchedNames.length === 0 ? "nenhum nome parlamentar exato no CEAPS anual; identidade e zero não confirmados" : "nome parlamentar ambíguo entre aliases CEAPS")
+      result.coleta_resultado = "erro"
+      result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nomes_testados: [...names], motivo: result.errors[0] })
+      result.coleta_url = `${BASE_URL}_2026.csv`
+      result.duration_ms = Date.now() - start
+      results.push(result)
+      continue
     }
 
-    const start = Date.now()
-    // Desfecho por ano, para o candidato sair do log dizendo o que aconteceu de
-    // verdade em vez de um zero mudo.
-    const anosComErro: string[] = []
-    const anosVazios: number[] = []
-    log("ceaps-senado", `Processando ${cand.slug} (senado id: ${cand.ids.senado})`)
+    const sourceName = matchedNames[0]
+    const p = await samePersonByJev(cand, sourceName)
+    appendIdentityShadow(cand, sourceName, p)
+    if (p === null || p >= 0.35 && p <= 0.65) {
+      result.coleta_resultado = p === null ? "erro" : "indeterminado"
+      result.errors.push(p === null ? "Jev indisponível; identidade não confirmada" : `Jev Noul p=${p.toFixed(2)} enviado para revisão humana`)
+      result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_fonte: sourceName, jev_noul: p, revisao: p === null ? null : JEV_REVIEW_PATH })
+      result.coleta_url = `${BASE_URL}_2026.csv`
+      result.duration_ms = Date.now() - start
+      results.push(result)
+      continue
+    }
+    if (p < 0.35) {
+      result.errors.push(`Jev Noul rejeitou identidade nominal (p=${p.toFixed(2)})`)
+      result.coleta_resultado = "erro"
+      result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_fonte: sourceName, jev_noul: p })
+      result.coleta_url = `${BASE_URL}_2026.csv`
+      result.duration_ms = Date.now() - start
+      results.push(result)
+      continue
+    }
 
-    try {
-      const candidatoId = await resolveCandidatoId(cand.slug)
-      if (!candidatoId) {
-        result.errors.push("Candidato nao encontrado no Supabase")
-        result.duration_ms = Date.now() - start
-        results.push(result)
+    const candidatoId = await resolveCandidatoId(cand.slug)
+    if (!candidatoId) {
+      result.errors.push("Candidato não encontrado no Supabase")
+      result.coleta_resultado = "erro"
+      result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_fonte: sourceName, jev_noul: p })
+      result.coleta_url = `${BASE_URL}_2026.csv`
+      result.duration_ms = Date.now() - start
+      results.push(result)
+      continue
+    }
+
+    let sourceRows = 0
+    const anosVazios: number[] = []
+    for (const snapshot of candidateSnapshots) {
+      const aggregate = agregarDespesasCeapsCsv(snapshot.rows, sourceName, snapshot.ano)
+      sourceRows += aggregate.quantidade
+      if (!aggregate.dados) {
+        anosVazios.push(snapshot.ano)
         continue
       }
-
-      for (const ano of ANOS) {
-        try {
-          const tentativa = await fetchDespesasAno(cand.ids.senado!, ano)
-
-          if (tentativa.tipo === "erro") {
-            anosComErro.push(`${ano} (${tentativa.motivo})`)
-            continue
-          }
-
-          if (tentativa.tipo === "vazio") {
-            anosVazios.push(ano)
-            log("ceaps-senado", `  ${cand.slug} ${ano}: sem gasto declarado`)
-            continue
-          }
-
-          const { total, porCategoria, destaques } = tentativa.dados
-
-          // O contrato público é uma lista de { categoria, valor }. Um objeto
-          // aqui derruba o DTO inteiro quando ele chama .map().
-          const detalhamento = detalhamentoCeaps(porCategoria)
-
-          // gastos_destaque: array dos top 5
-          const gastosDestaque = destaques.map((d) => ({
-            fornecedor: d.fornecedor,
-            tipo: d.tipo,
-            valor: Math.round(d.valor * 100) / 100,
-            data: d.data,
-          }))
-
-          assertSemReplacementChar(
-            JSON.stringify({ detalhamento, gastosDestaque }),
-            `ceaps-senado:${cand.slug}:${ano}`,
-          )
-
-          // Checa se ja existe (candidato_id + ano)
-          const { data: existing } = await supabase
-            .from("gastos_parlamentares")
-            .select("id")
-            .eq("candidato_id", candidatoId)
-            .eq("ano", ano)
-            .single()
-
-          const row = {
-            candidato_id: candidatoId,
-            ano,
-            total_gasto: Math.round(total * 100) / 100,
-            coletado_em: tentativa.consultadoEm,
-            detalhamento,
-            gastos_destaque: gastosDestaque,
-            fonte: "Senado",
-          }
-
-          if (existing) {
-            const { error: updateErr } = await supabase
-              .from("gastos_parlamentares")
-              .update(row)
-              .eq("id", existing.id)
-            if (updateErr) {
-              result.errors.push(`Erro ao atualizar gastos ${ano}: ${updateErr.message}`)
-            } else {
-              result.rows_upserted++
-              if (!result.tables_updated.includes("gastos_parlamentares")) {
-                result.tables_updated.push("gastos_parlamentares")
-              }
-              log(
-                "ceaps-senado",
-                `  ${cand.slug} ${ano}: atualizado — R$ ${Math.round(total).toLocaleString()} (${Object.keys(porCategoria).length} categorias)`
-              )
-            }
-          } else {
-            const { error: insertErr } = await supabase.from("gastos_parlamentares").insert(row)
-            if (insertErr) {
-              result.errors.push(`Erro ao inserir gastos ${ano}: ${insertErr.message}`)
-            } else {
-              result.rows_upserted++
-              if (!result.tables_updated.includes("gastos_parlamentares")) {
-                result.tables_updated.push("gastos_parlamentares")
-              }
-              log(
-                "ceaps-senado",
-                `  ${cand.slug} ${ano}: inserido — R$ ${Math.round(total).toLocaleString()} (${Object.keys(porCategoria).length} categorias)`
-              )
-            }
-          }
-        } catch (err) {
-          const msg = err instanceof Error ? err.message : String(err)
-          result.errors.push(`Erro no ano ${ano}: ${msg}`)
-          error("ceaps-senado", `  ${cand.slug} ${ano}: ${msg}`)
-        }
+      const { total, porCategoria, destaques } = aggregate.dados
+      const detalhamento = detalhamentoCeaps(porCategoria)
+      const gastosDestaque = destaques.map((d) => ({ fornecedor: d.fornecedor, tipo: d.tipo, valor: Math.round(d.valor * 100) / 100, data: d.data }))
+      assertSemReplacementChar(JSON.stringify({ detalhamento, gastosDestaque }), `ceaps-senado:${cand.slug}:${snapshot.ano}`)
+      const { data: existing, error: selectError } = await supabase.from("gastos_parlamentares").select("id").eq("candidato_id", candidatoId).eq("ano", snapshot.ano).single()
+      if (selectError && !/0 rows|no rows/i.test(selectError.message)) {
+        result.errors.push(`Falha de leitura gastos ${snapshot.ano}: ${selectError.message}`)
+        continue
       }
-    } catch (err) {
-      result.errors.push(err instanceof Error ? err.message : String(err))
+      const row = { candidato_id: candidatoId, ano: snapshot.ano, total_gasto: Math.round(total * 100) / 100, coletado_em: new Date().toISOString(), detalhamento, gastos_destaque: gastosDestaque, fonte: "Senado" }
+      if (emDryRun()) {
+        planejarEscrita({ fonte: "ceaps-senado", tabela: "gastos_parlamentares", operacao: existing ? "update" : "insert", alvo: cand.slug, identidade: `id-senado:${cand.ids.senado};jev-noul:${p.toFixed(2)}`, chave: existing ? { id: existing.id } : { candidato_id: candidatoId, ano: snapshot.ano }, valores: row })
+        result.rows_upserted++
+      } else if (existing) {
+        const written = await escreverAuditado({ script: "ingest-ceaps-senado", tabela: "gastos_parlamentares", motivo: "Materializar despesas anuais do CSV oficial CEAPS do Senado", recorte: `${cand.slug}:${snapshot.ano}` }, () => supabase.from("gastos_parlamentares").update(row).eq("id", existing.id).select("id"))
+        result.rows_upserted += written.length
+      } else {
+        const written = await escreverAuditado({ script: "ingest-ceaps-senado", tabela: "gastos_parlamentares", motivo: "Materializar despesas anuais do CSV oficial CEAPS do Senado", recorte: `${cand.slug}:${snapshot.ano}` }, () => supabase.from("gastos_parlamentares").insert(row).select("id"))
+        result.rows_upserted += written.length
+      }
+      if (result.rows_upserted > 0 && !result.tables_updated.includes("gastos_parlamentares")) result.tables_updated.push("gastos_parlamentares")
     }
 
-    // Sem nada gravado, o desfecho depende de POR QUE nao gravou. Um ano que
-    // nem chegou a ser consultado nao autoriza dizer "verificado e vazio".
-    if (result.rows_upserted === 0 && result.errors.length === 0) {
-      if (anosComErro.length > 0 && anosVazios.length === 0) {
-        result.coleta_resultado = "erro"
-        result.coleta_detalhe =
-          `nenhum ano consultado com sucesso: ${anosComErro.join("; ")}`.slice(0, 500)
-      } else if (anosComErro.length > 0) {
-        // Parte respondeu, parte nao: nao da para afirmar vazio nem erro do alvo.
-        result.coleta_resultado = "indeterminado"
-        result.coleta_detalhe =
-          `sem gasto em ${anosVazios.join(", ")}; falhou em ${anosComErro.join("; ")}`.slice(0, 500)
-      } else if (anosVazios.length > 0) {
-        result.coleta_resultado = "vazio_confirmado"
-        result.coleta_detalhe = `API respondeu sem gasto declarado em ${anosVazios.join(", ")}`
-      }
-    }
-
+    if (result.errors.length > 0 || candidateFailures.length > 0) result.coleta_resultado = "erro"
+    else if (sourceRows > 0) result.coleta_resultado = "encontrado"
+    else result.coleta_resultado = "vazio_confirmado"
+    result.coleta_volume = sourceRows
+    result.coleta_url = candidateSnapshots.at(-1)?.url ?? `${BASE_URL}_2026.csv`
+    result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_fonte: sourceName, jev_noul: p, source_rows: sourceRows, anos_vazios: anosVazios })
     result.duration_ms = Date.now() - start
     results.push(result)
   }
-
   return results
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
+  if (process.argv.includes("--dry-run")) ativarDryRun()
   ingestCeapsSenado().then((r) => console.log(JSON.stringify(r, null, 2)))
 }

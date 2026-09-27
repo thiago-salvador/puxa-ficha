@@ -369,6 +369,12 @@ describe("Projetos de lei contract", () => {
         /projetos_lei_camara_total: ficha\.projetos_lei_camara_total \?\? null/,
         "o DTO público copia a contagem por fonte",
       )
+      assert.match(api, /\.eq\("fonte", "Senado"\)/, "a API conta projetos do Senado por fonte")
+      assert.match(
+        dto,
+        /projetos_lei_senado_total: ficha\.projetos_lei_senado_total \?\? null/,
+        "o DTO público copia a contagem do Senado",
+      )
 
       const readback = readFileSync("scripts/readback-fichas-camara.ts", "utf-8")
       // Pós-backfill real: renan-filho tem exatamente 100 declaradas, então

@@ -5,19 +5,20 @@ import { tmpdir } from "node:os"
 import path from "node:path"
 import test from "node:test"
 
-import { assertExpenseEmptinessCoversMandates, collectParliamentaryFamilyReceipts, mandateYears, type ParliamentarySourceObservation } from "../scripts/audit/collect-parliamentary-family-receipts-local"
+import { assertExpenseEmptinessCoversMandates, collectParliamentaryFamilyReceipts, mandateYears, verifySenadoLegislatureScope, type ParliamentarySourceObservation } from "../scripts/audit/collect-parliamentary-family-receipts-local"
 
-function fixture(sourceRows: unknown[], dtoRows: unknown[], total = sourceRows.length) {
+function fixture(sourceRows: unknown[], dtoRows: unknown[], total = sourceRows.length, counts?: { global: number; camara: number; senado: number }) {
   const dir = mkdtempSync(path.join(tmpdir(), "pf-parliament-proof-"))
   const roster = path.join(dir, "roster.json")
   const source = path.join(dir, "source.json")
   const rawPage = path.join(dir, "pagina-1.json")
   const profile = path.join(dir, "profile.json")
+  const publicRows = (dtoRows as Record<string, unknown>[]).map((row) => ({ ...row, casa: row.casa ?? "camara" }))
   writeFileSync(roster, JSON.stringify({ dados: [{ id: 12345 }] }))
   const rawBytes = Buffer.from(JSON.stringify({ dados: sourceRows, links: [] }))
   writeFileSync(rawPage, rawBytes)
   writeFileSync(source, JSON.stringify({ complete: true, total, dados: sourceRows, derived_from_pages: [{ page: 1, url: "https://dadosabertos.camara.leg.br/api/v2/proposicoes?idDeputadoAutor=12345&pagina=1", path: rawPage, bytes: rawBytes.length, sha256: createHash("sha256").update(rawBytes).digest("hex"), complete: true }] }))
-  writeFileSync(profile, JSON.stringify({ id: "candidate-1", slug: "fixture", projetos_lei: dtoRows }))
+  writeFileSync(profile, JSON.stringify({ id: "candidate-1", slug: "fixture", projetos_lei: publicRows, projetos_lei_total: counts?.global ?? publicRows.length, projetos_lei_camara_total: counts?.camara ?? publicRows.length, projetos_lei_senado_total: counts?.senado ?? 0 }))
   const observation: ParliamentarySourceObservation = {
     house: "camara", family: "projetos_lei", official_id: 12345,
     roster: { roster_url: "https://dadosabertos.camara.leg.br/api/v2/deputados", roster_revision: "fixture", roster_path: roster },
@@ -29,6 +30,178 @@ function fixture(sourceRows: unknown[], dtoRows: unknown[], total = sourceRows.l
 
 const candidate = { slug: "fixture", candidato_id: "candidate-1", ids: { camara: 12345, senado: null } }
 
+function camaraVoteFixture(targetVotes: boolean, emptyNominalList = false) {
+  const dir = mkdtempSync(path.join(tmpdir(), "pf-camara-votes-proof-"))
+  const rosterPath = path.join(dir, "roster.json")
+  const sourcePath = path.join(dir, "source.json")
+  const profilePath = path.join(dir, "profile.json")
+  writeFileSync(rosterPath, JSON.stringify({ dados: [{ id: 12345 }] }))
+  const specifications = [
+    { id: "100-1", date: "2020-01-01", proposition: 100, nominalId: targetVotes ? 12345 : 77777, vote: "Sim" },
+    { id: "200-1", date: "2021-02-02", proposition: 200, nominalId: 77777, vote: "Não" },
+  ]
+  const revisions: Array<{ url: string; sha256: string }> = []
+  const catalog: Array<{ vote_id_api: string; url: string; path: string; sha256: string }> = []
+  const derived: Record<string, unknown>[] = []
+  const bundleRows: Record<string, unknown>[] = []
+  specifications.forEach((spec, index) => {
+    const rows = emptyNominalList ? [] : [{ deputado_: { id: spec.nominalId, nome: "Deputado Teste" }, tipoVoto: spec.vote }]
+    const nominalUrl = `https://dadosabertos.camara.leg.br/api/v2/votacoes/${spec.id}/votos?itens=100&pagina=1`
+    const nominalPath = path.join(dir, `nominal-${index}.json`)
+    const nominalBytes = Buffer.from(JSON.stringify({ dados: rows, links: [] }))
+    writeFileSync(nominalPath, nominalBytes)
+    const nominalSha = createHash("sha256").update(nominalBytes).digest("hex")
+    revisions.push({ url: nominalUrl, sha256: nominalSha })
+    derived.push({ page: 1, url: nominalUrl, path: nominalPath, bytes: nominalBytes.length, sha256: nominalSha, complete: true })
+    if (spec.nominalId === 12345) bundleRows.push({ ...rows[0], vote_id_api: spec.id })
+
+    const metaUrl = `https://dadosabertos.camara.leg.br/api/v2/votacoes/${spec.id}`
+    const metaPath = path.join(dir, `meta-${index}.json`)
+    const metaBytes = Buffer.from(JSON.stringify({ dados: { id: spec.id, data: spec.date, proposicoesAfetadas: [{ id: spec.proposition }] } }))
+    writeFileSync(metaPath, metaBytes)
+    const metaSha = createHash("sha256").update(metaBytes).digest("hex")
+    revisions.push({ url: metaUrl, sha256: metaSha })
+    catalog.push({ vote_id_api: spec.id, url: metaUrl, path: metaPath, sha256: metaSha })
+  })
+  writeFileSync(sourcePath, JSON.stringify({ complete: true, total: bundleRows.length, dados: bundleRows, derived_from_pages: derived }))
+  const publicRows = targetVotes ? [{ id: "public-voto-1", voto: "sim", votacao: { casa: "camara", data_votacao: "2020-01-01T12:00:00Z", proposicao_id: 100 } }] : []
+  writeFileSync(profilePath, JSON.stringify({ id: "candidate-1", slug: "fixture", votos: publicRows }))
+  const observation: ParliamentarySourceObservation = {
+    house: "camara", family: "votos_candidato", official_id: 12345,
+    roster: { roster_url: "https://dadosabertos.camara.leg.br/api/v2/deputados/12345", roster_revision: "fixture", roster_path: rosterPath },
+    source: { source_url: "https://dadosabertos.camara.leg.br/api/v2/votacoes/{votacao_id}/votos", source_path: sourcePath, rows_path: ["dados"], vote_catalog: catalog, source_revisions: revisions },
+    readback: { dto_path: profilePath, dto_rows_path: ["votos"], profile_path: profilePath, dto_revision: "fixture", dto_readback_url: "local://fixture" },
+  }
+  return { dir, observation }
+}
+
+test("votos Câmara reconciliam deputado_.id, ID oficial da votação e voto público", () => {
+  const { dir, observation } = camaraVoteFixture(true)
+  try {
+    const result = collectParliamentaryFamilyReceipts([candidate], [observation])
+    assert.equal(result.receipts.length, 1, result.errors.join("; "))
+    assert.equal(result.receipts[0]?.resultado, "encontrado")
+    const proof = JSON.parse(result.receipts[0]!.detalhe).coverage_proof
+    assert.deepEqual(proof.vote_ids_api, ["100-1", "200-1"])
+    assert.equal(proof.source_revisions.length, 4)
+  } finally { rmSync(dir, { recursive: true, force: true }) }
+})
+
+test("votos Senado restringem a prova aos IDs selecionados e reconciliam polaridade pública", () => {
+  const dir = mkdtempSync(path.join(tmpdir(), "pf-senado-votes-proof-"))
+  const rosterPath = path.join(dir, "roster.json")
+  const sourcePath = path.join(dir, "source.json")
+  const rawPath = path.join(dir, "page.json")
+  const profilePath = path.join(dir, "profile.json")
+  const officialId = "987"
+  const selectedIds = ["1101", "1102"]
+  const url = "https://legis.senado.leg.br/dadosabertos/senador/987/votacoes.json"
+  const rawValue = { VotacaoParlamentar: { Parlamentar: { Codigo: officialId, Votacoes: { Votacao: [
+    { CodigoSessaoVotacao: "1101", SiglaDescricaoVoto: "Sim" },
+    { CodigoSessaoVotacao: "1102", SiglaDescricaoVoto: "Não" },
+    { CodigoSessaoVotacao: "9999", SiglaDescricaoVoto: "Sim" },
+    { CodigoSessaoVotacao: "1103", SiglaDescricaoVoto: "Presente" },
+  ] } } } }
+  const rawBytes = Buffer.from(JSON.stringify(rawValue))
+  const rawSha = createHash("sha256").update(rawBytes).digest("hex")
+  writeFileSync(rosterPath, JSON.stringify({ DetalheParlamentar: { IdentificacaoParlamentar: { CodigoParlamentar: officialId } } }))
+  writeFileSync(rawPath, rawBytes)
+  const rows = [
+    { CodigoSessaoVotacao: "1101", SiglaDescricaoVoto: "Sim", CodigoParlamentar: officialId, vote_id_api: "1101", voto: "sim" },
+    { CodigoSessaoVotacao: "1102", SiglaDescricaoVoto: "Não", CodigoParlamentar: officialId, vote_id_api: "1102", voto: "não" },
+  ]
+  writeFileSync(sourcePath, JSON.stringify({ complete: true, total: rows.length, dados: rows, derived_from_pages: [{ page: 1, url, path: rawPath, bytes: rawBytes.length, sha256: rawSha, complete: true }] }))
+  const dtoRows = [
+    { voto: "sim", votacao: { casa: "senado", votacao_id_api: "1101" } },
+    { voto: "não", votacao: { casa: "senado", votacao_id_api: "1102" } },
+  ]
+  writeFileSync(profilePath, JSON.stringify({ id: "candidate-1", slug: "fixture", votos: dtoRows }))
+  const observation: ParliamentarySourceObservation = {
+    house: "senado", family: "votos_candidato", official_id: officialId,
+    roster: { roster_url: "https://legis.senado.leg.br/dadosabertos/senador/987", roster_revision: "fixture", roster_path: rosterPath },
+    source: { source_url: url, source_path: sourcePath, rows_path: ["dados"], source_kind: "senado-selected-votes", selected_vote_ids: selectedIds, source_revisions: [{ url, sha256: rawSha }] },
+    readback: { dto_path: profilePath, dto_rows_path: ["votos"], profile_path: profilePath, dto_revision: "fixture", dto_readback_url: "local://fixture" },
+  }
+  try {
+    const result = collectParliamentaryFamilyReceipts([{ slug: "fixture", candidato_id: "candidate-1", ids: { camara: null, senado: 987 } }], [observation])
+    assert.equal(result.receipts.length, 1, result.errors.join("; "))
+    assert.equal(result.receipts[0]?.resultado, "encontrado")
+    const proof = JSON.parse(result.receipts[0]!.detalhe).coverage_proof
+    assert.equal(proof.source_rows, 2)
+    assert.deepEqual(proof.source_revisions, [{ url, sha256: rawSha }])
+  } finally { rmSync(dir, { recursive: true, force: true }) }
+})
+
+test("deputado ausente em listas nominais completas é vazio, mas endpoint com lista inteira vazia não prova ausência", () => {
+  const absent = camaraVoteFixture(false)
+  const emptySource = camaraVoteFixture(false, true)
+  try {
+    const result = collectParliamentaryFamilyReceipts([candidate], [absent.observation])
+    assert.equal(result.receipts[0]?.resultado, "vazio_confirmado", result.errors.join("; "))
+    const failure = collectParliamentaryFamilyReceipts([candidate], [emptySource.observation])
+    assert.equal(failure.receipts.length, 0)
+    assert.match(failure.errors.join("; "), /lista nominal oficial de votação vazia/)
+  } finally {
+    rmSync(absent.dir, { recursive: true, force: true })
+    rmSync(emptySource.dir, { recursive: true, force: true })
+  }
+})
+
+function cotaFixture(empty = false, incomplete = false) {
+  const dir = mkdtempSync(path.join(tmpdir(), "pf-camara-cota-proof-"))
+  const rosterPath = path.join(dir, "roster.json")
+  const sourcePath = path.join(dir, "source.json")
+  const pagePath = path.join(dir, "page.json")
+  const profilePath = path.join(dir, "profile.json")
+  writeFileSync(rosterPath, JSON.stringify({ dados: [{ id: 12345 }] }))
+  const revisions = Array.from({ length: incomplete ? 18 : 19 }, (_, index) => ({ year: 2008 + index, url: `https://www.camara.leg.br/cotas/Ano-${2008 + index}.csv.zip`, sha256: (index + 1).toString(16).padStart(64, "0") }))
+  const rows = empty ? [] : [{ ideCadastro: "12345", ano: 2024, source_rows: 2, total_gasto: 125.5, categorias: [{ categoria: "PASSAGENS", valor: 125.5 }] }]
+  const pageValue = { CotaRows: rows, complete: true, total: rows.length, source_revisions: revisions }
+  const pageBytes = Buffer.from(JSON.stringify(pageValue))
+  writeFileSync(pagePath, pageBytes)
+  const pageUrl = revisions[0]!.url
+  const pageSha = createHash("sha256").update(pageBytes).digest("hex")
+  const manifestSha = createHash("sha256").update(JSON.stringify(revisions)).digest("hex")
+  writeFileSync(sourcePath, JSON.stringify({ complete: true, total: rows.length, dados: rows, derived_from_pages: [{ page: 1, url: pageUrl, path: pagePath, bytes: pageBytes.length, sha256: pageSha, source_sha256: manifestSha, complete: true }] }))
+  const publicRows = empty ? [] : [{ ano: 2024, total_gasto: 125.5, casa: "camara", detalhamento: [{ categoria: "PASSAGENS", valor: 125.5 }] }]
+  writeFileSync(profilePath, JSON.stringify({ id: "candidate-1", slug: "fixture", gastos_parlamentares: publicRows, historico: [{ cargo: "Deputado Federal", periodo_inicio: 2019, periodo_fim: 2022 }] }))
+  const observation: ParliamentarySourceObservation = {
+    house: "camara", family: "gastos_parlamentares", official_id: 12345, years: Array.from({ length: 19 }, (_, index) => 2008 + index),
+    roster: { roster_url: "https://dadosabertos.camara.leg.br/api/v2/deputados/12345", roster_revision: "fixture", roster_path: rosterPath },
+    source: { source_url: pageUrl, source_path: sourcePath, rows_path: ["dados"], source_kind: "camara-cota-csv", source_revisions: revisions },
+    readback: { dto_path: profilePath, dto_rows_path: ["gastos_parlamentares"], profile_path: profilePath, dto_revision: "fixture", dto_readback_url: "local://fixture" },
+  }
+  return { dir, observation }
+}
+
+test("Cota CSV reconcilia agregado anual e inclui SHA de cada um dos 19 ZIPs", () => {
+  const { dir, observation } = cotaFixture()
+  try {
+    const result = collectParliamentaryFamilyReceipts([candidate], [observation])
+    assert.equal(result.receipts.length, 1, result.errors.join("; "))
+    assert.equal(result.receipts[0]?.resultado, "encontrado")
+    const proof = JSON.parse(result.receipts[0]!.detalhe).coverage_proof
+    assert.equal(proof.source_rows, 1)
+    assert.equal(proof.source_revisions.length, 19)
+    assert.equal(proof.source_revisions[18].url, "https://www.camara.leg.br/cotas/Ano-2026.csv.zip")
+  } finally { rmSync(dir, { recursive: true, force: true }) }
+})
+
+test("Cota CSV só confirma vazio com os 19 ZIPs e rejeita escopo anual incompleto", () => {
+  const complete = cotaFixture(true)
+  const incomplete = cotaFixture(true, true)
+  try {
+    const empty = collectParliamentaryFamilyReceipts([candidate], [complete.observation])
+    assert.equal(empty.receipts[0]?.resultado, "vazio_confirmado", empty.errors.join("; "))
+    const partial = collectParliamentaryFamilyReceipts([candidate], [incomplete.observation])
+    assert.equal(partial.receipts.length, 0)
+    assert.match(partial.errors.join("; "), /19 ZIPs/)
+  } finally {
+    rmSync(complete.dir, { recursive: true, force: true })
+    rmSync(incomplete.dir, { recursive: true, force: true })
+  }
+})
+
 test("recibo parlamentar exige roster, fonte e DTO com mesmo ID e linhas", () => {
   const row = { id: 12, idDeputadoAutor: 12345, siglaTipo: "PL", numero: 1, ano: 2024, ementa: "Ementa", situacao: "Tramitando" }
   const { dir, observation } = fixture([row], [row])
@@ -38,6 +211,119 @@ test("recibo parlamentar exige roster, fonte e DTO com mesmo ID e linhas", () =>
     assert.equal(result.receipts[0]?.resultado, "encontrado", result.errors.join("; "))
     assert.equal(JSON.parse(result.receipts[0]!.detalhe).coverage_proof.scope_complete, true)
     assert.equal(result.errors.length, 2) // votos e gastos sem observação
+  } finally { rmSync(dir, { recursive: true, force: true }) }
+})
+
+test("proposição da Câmara aceita identidade provada pelo filtro oficial na URL quando a linha omite o autor", () => {
+  const material = { id: 13, siglaTipo: "PL", numero: 2, ano: 2024, ementa: "Ementa sem ID autor na linha" }
+  const { dir, observation } = fixture([material], [{ ...material, situacao: null }])
+  try {
+    const result = collectParliamentaryFamilyReceipts([candidate], [observation])
+    assert.equal(result.receipts.length, 1, result.errors.join("; "))
+    assert.equal(result.receipts[0]?.resultado, "encontrado")
+  } finally { rmSync(dir, { recursive: true, force: true }) }
+})
+
+test("proposição da Câmara rejeita ID de autor conflitante mesmo com filtro de URL exato", () => {
+  const material = { id: 14, idDeputadoAutor: 99999, siglaTipo: "PL", numero: 3, ano: 2024, ementa: "Conflito", situacao: "Tramitando" }
+  const { dir, observation } = fixture([material], [material])
+  try {
+    const result = collectParliamentaryFamilyReceipts([candidate], [observation])
+    assert.equal(result.receipts.length, 0)
+    assert.match(result.errors.join("; "), /IDs parlamentares/)
+  } finally { rmSync(dir, { recursive: true, force: true }) }
+})
+
+test("situação ausente na fonte e null no DTO são equivalentes, mas situações conflitantes falham", () => {
+  const material = { id: 15, siglaTipo: "PL", numero: 4, ano: 2024, ementa: "Status nulo", situacao: null }
+  const { dir, observation } = fixture([{ ...material, situacao: undefined }], [material])
+  try {
+    const result = collectParliamentaryFamilyReceipts([candidate], [observation])
+    assert.equal(result.receipts[0]?.resultado, "encontrado", result.errors.join("; "))
+  } finally { rmSync(dir, { recursive: true, force: true }) }
+
+  const conflicting = fixture([{ ...material, situacao: "Em tramitação" }], [{ ...material, situacao: "Arquivada" }])
+  try {
+    const result = collectParliamentaryFamilyReceipts([candidate], [conflicting.observation])
+    assert.equal(result.receipts.length, 0)
+    assert.match(result.errors.join("; "), /conteúdo material da linha diverge/)
+  } finally { rmSync(conflicting.dir, { recursive: true, force: true }) }
+})
+
+test("projeto com prévia de 25 confere a prévia à fonte e o acervo ao total exato", () => {
+  const rows = Array.from({ length: 30 }, (_, index) => ({ id: index + 1, idDeputadoAutor: 12345, siglaTipo: "PL", numero: index + 1, ano: 2024, ementa: `Ementa ${index + 1}`, situacao: "Tramitando" }))
+  const { dir, observation } = fixture(rows, rows.slice(0, 25), rows.length, { global: 30, camara: 30, senado: 0 })
+  try {
+    const result = collectParliamentaryFamilyReceipts([candidate], [observation])
+    assert.equal(result.receipts[0]?.resultado, "encontrado", result.errors.join("; "))
+    const proof = JSON.parse(result.receipts[0]!.detalhe).coverage_proof
+    assert.equal(proof.source_rows, 30)
+    assert.equal(proof.public_rows, 25)
+    assert.deepEqual(proof.house_partition, {
+      casa: "camara", public_rows: 25, public_subset_sha256: proof.house_partition.public_subset_sha256,
+      public_total_rows: 30, source_rows: 30, matched_rows: 25, unmatched_rows: 0,
+    })
+  } finally { rmSync(dir, { recursive: true, force: true }) }
+})
+
+test("recibos Câmara e Senado conferem partições distintas do mesmo DTO integral", () => {
+  const cameraRow = { id: 12, idDeputadoAutor: 12345, siglaTipo: "PL", numero: 1, ano: 2024, ementa: "Câmara", situacao: "Tramitando" }
+  const { dir, observation: camara } = fixture([cameraRow], [cameraRow])
+  const roster = path.join(dir, "senado-roster.json")
+  const source = path.join(dir, "senado-source.json")
+  const raw = path.join(dir, "senado-page.json")
+  const profilePath = camara.readback.profile_path
+  const senateRow = { idProposicao: 99, tipo: "PL", numero: "2", ano: 2024, ementa: "Senado", situacao: "Tramitando" }
+  const publicRows = [{ ...cameraRow, casa: "camara" }, { ...senateRow, casa: "senado" }]
+  writeFileSync(profilePath, JSON.stringify({ id: "candidate-1", slug: "fixture", projetos_lei: publicRows, projetos_lei_total: 2, projetos_lei_camara_total: 1, projetos_lei_senado_total: 1 }))
+  writeFileSync(roster, JSON.stringify({ DetalheParlamentar: { IdentificacaoParlamentar: { CodigoParlamentar: "987" } } }))
+  const rawPayload = { MateriasAutoriaParlamentar: { Parlamentar: { Codigo: "987", Autorias: { Autoria: [senateRow] } } } }
+  const rawBytes = Buffer.from(JSON.stringify(rawPayload))
+  writeFileSync(raw, rawBytes)
+  const url = "https://legis.senado.leg.br/dadosabertos/senador/987/autorias.json"
+  writeFileSync(source, JSON.stringify({ complete: true, total: 1, dados: [{ ...senateRow, CodigoParlamentar: "987" }], derived_from_pages: [{ page: 1, url, path: raw, bytes: rawBytes.length, sha256: createHash("sha256").update(rawBytes).digest("hex"), complete: true }] }))
+  const senado: ParliamentarySourceObservation = {
+    house: "senado", family: "projetos_lei", official_id: 987,
+    roster: { roster_url: "https://legis.senado.leg.br/dadosabertos/senador/987", roster_revision: "fixture", roster_path: roster },
+    source: { source_url: url, source_path: source, rows_path: ["dados"] },
+    readback: { ...camara.readback, dto_rows_path: ["projetos_lei"] },
+  }
+  try {
+    const result = collectParliamentaryFamilyReceipts([{ slug: "fixture", candidato_id: "candidate-1", ids: { camara: 12345, senado: 987 } }], [camara, senado])
+    const projectReceipts = result.receipts.filter((receipt) => receipt.familia === "projetos_lei")
+    assert.equal(projectReceipts.length, 2, result.errors.join("; "))
+    assert.deepEqual(projectReceipts.map((receipt) => JSON.parse(receipt.detalhe).coverage_proof.house_partition.casa).sort(), ["camara", "senado"])
+    assert.equal(JSON.parse(projectReceipts[0]!.detalhe).coverage_proof.public_payload_sha256, JSON.parse(projectReceipts[1]!.detalhe).coverage_proof.public_payload_sha256)
+  } finally { rmSync(dir, { recursive: true, force: true }) }
+})
+
+test("autoria do Senado reconcilia Materia aninhada pela tupla pública única, sem comparar ID sintético", () => {
+  const dir = mkdtempSync(path.join(tmpdir(), "pf-senado-project-proof-"))
+  const rosterPath = path.join(dir, "roster.json")
+  const sourcePath = path.join(dir, "source.json")
+  const rawPath = path.join(dir, "page.json")
+  const profilePath = path.join(dir, "profile.json")
+  const materia = { Codigo: 9001, Sigla: "PL", Numero: 4, Ano: 2022, Ementa: "Projeto Senado" }
+  const rawRow = { Materia: materia, IndicadorAutorPrincipal: "S" }
+  const rawValue = { MateriasAutoriaParlamentar: { Parlamentar: { Codigo: "987", Autorias: { Autoria: [rawRow] } } } }
+  const rawBytes = Buffer.from(JSON.stringify(rawValue))
+  writeFileSync(rosterPath, JSON.stringify({ DetalheParlamentar: { IdentificacaoParlamentar: { CodigoParlamentar: "987" } } }))
+  writeFileSync(rawPath, rawBytes)
+  const url = "https://legis.senado.leg.br/dadosabertos/senador/987/autorias.json"
+  const bundleRow = { ...rawRow, CodigoParlamentar: "987" }
+  writeFileSync(sourcePath, JSON.stringify({ complete: true, total: 1, dados: [bundleRow], derived_from_pages: [{ page: 1, url, path: rawPath, bytes: rawBytes.length, sha256: createHash("sha256").update(rawBytes).digest("hex"), complete: true }] }))
+  const dtoRow = { id: "synthetic-public-id", tipo: "PL", numero: "4", ano: 2022, ementa: "Projeto Senado", situacao: null, casa: "senado" }
+  writeFileSync(profilePath, JSON.stringify({ id: "candidate-1", slug: "fixture", projetos_lei: [dtoRow], projetos_lei_total: 1, projetos_lei_camara_total: 0, projetos_lei_senado_total: 1 }))
+  const observation: ParliamentarySourceObservation = {
+    house: "senado", family: "projetos_lei", official_id: 987,
+    roster: { roster_url: "https://legis.senado.leg.br/dadosabertos/senador/987.json", roster_revision: "fixture", roster_path: rosterPath },
+    source: { source_url: url, source_path: sourcePath, rows_path: ["dados"] },
+    readback: { dto_path: profilePath, dto_rows_path: ["projetos_lei"], profile_path: profilePath, dto_revision: "fixture", dto_readback_url: "local://fixture" },
+  }
+  try {
+    const result = collectParliamentaryFamilyReceipts([{ slug: "fixture", candidato_id: "candidate-1", ids: { camara: null, senado: 987 } }], [observation])
+    assert.equal(result.receipts.length, 1, result.errors.join("; "))
+    assert.equal(result.receipts[0]?.resultado, "encontrado")
   } finally { rmSync(dir, { recursive: true, force: true }) }
 })
 
@@ -52,7 +338,7 @@ test("roster individual do Senado e DTO sem ID por linha continuam verificáveis
   const rawBytes = Buffer.from(JSON.stringify({ MateriasAutoriaParlamentar: { Parlamentar: { Codigo: "987", Autorias: { Autoria: [row] } } } }))
   writeFileSync(rawPath, rawBytes)
   writeFileSync(source, JSON.stringify({ complete: true, total: 1, dados: [{ ...row, CodigoParlamentar: "987" }], derived_from_pages: [{ page: 1, url: "https://legis.senado.leg.br/dadosabertos/senador/987/autorias.json", path: rawPath, bytes: rawBytes.length, sha256: createHash("sha256").update(rawBytes).digest("hex"), complete: true }] }))
-  writeFileSync(profile, JSON.stringify({ id: "senado-1", slug: "fixture-senado", projetos_lei: [row] }))
+  writeFileSync(profile, JSON.stringify({ id: "senado-1", slug: "fixture-senado", projetos_lei: [{ ...row, casa: "senado" }], projetos_lei_total: 1, projetos_lei_camara_total: 0, projetos_lei_senado_total: 1 }))
   const observation: ParliamentarySourceObservation = {
     house: "senado", family: "projetos_lei", official_id: 987,
     roster: { roster_url: "https://legis.senado.leg.br/dadosabertos/senador/987", roster_revision: "fixture", roster_path: roster },
@@ -62,6 +348,49 @@ test("roster individual do Senado e DTO sem ID por linha continuam verificáveis
   try {
     const result = collectParliamentaryFamilyReceipts([{ slug: "fixture-senado", candidato_id: "senado-1", ids: { senado: 987 } }], [observation])
     assert.equal(result.receipts[0]?.resultado, "encontrado", result.errors.join("; "))
+  } finally { rmSync(dir, { recursive: true, force: true }) }
+})
+
+test("CEAPS CSV prova linhas brutas, agrega por ano e preserva os hashes anuais", () => {
+  const dir = mkdtempSync(path.join(tmpdir(), "pf-ceaps-proof-"))
+  const roster = path.join(dir, "roster.json")
+  const source = path.join(dir, "source.json")
+  const rawPath = path.join(dir, "pagina-1.json")
+  const profile = path.join(dir, "profile.json")
+  const rawRows = [
+    { ANO: "2025", MES: "1", SENADOR: "SENADOR TESTE", TIPO_DESPESA: "PASSAGENS", FORNECEDOR: "Empresa", DATA: "01/01/2025", VALOR_REEMBOLSADO: "100,00" },
+    { ANO: "2025", MES: "2", SENADOR: "SENADOR TESTE", TIPO_DESPESA: "PASSAGENS", FORNECEDOR: "Empresa", DATA: "01/02/2025", VALOR_REEMBOLSADO: "25,50" },
+  ]
+  writeFileSync(roster, JSON.stringify({ DetalheParlamentar: { IdentificacaoParlamentar: { CodigoParlamentar: "987" } } }))
+  const rawBytes = Buffer.from(JSON.stringify({ CeapsRows: rawRows }))
+  writeFileSync(rawPath, rawBytes)
+  const url = "https://www.senado.leg.br/transparencia/LAI/verba/despesa_ceaps_2025.csv"
+  const sourceRevision = { url, sha256: "a".repeat(64), year: 2025 }
+  const annual = { CodigoParlamentar: "987", ano: 2025, total_gasto: 125.5 }
+  const dto = { ano: 2025, total_gasto: 125.5, casa: "senado" }
+  const publicProfile = { id: "senado-1", slug: "fixture-senado-ceaps", gastos_parlamentares: [dto] }
+  writeFileSync(profile, JSON.stringify(publicProfile))
+  writeFileSync(source, JSON.stringify({
+    complete: true, total: rawRows.length, dados: rawRows.map((row) => ({ ...row, CodigoParlamentar: "987" })),
+    derived_from_pages: [{ page: 1, url, path: rawPath, bytes: rawBytes.length, sha256: createHash("sha256").update(rawBytes).digest("hex"), source_sha256: sourceRevision.sha256, complete: true }],
+  }))
+  const observation: ParliamentarySourceObservation = {
+    house: "senado", family: "gastos_parlamentares", official_id: 987,
+    roster: { roster_url: "https://legis.senado.leg.br/dadosabertos/senador/987.json", roster_revision: "fixture", roster_path: roster },
+    source: { source_url: url, source_path: source, rows_path: ["dados"], source_revisions: [sourceRevision], source_filter: { field: "SENADOR", value: "SENADOR TESTE", method: "official-roster-id-plus-Jev-Noul" } },
+    readback: { dto_path: profile, dto_rows_path: ["gastos_parlamentares"], profile_path: profile, dto_revision: "fixture", dto_readback_url: "local://fixture" },
+    years: [2025],
+  }
+  try {
+    const result = collectParliamentaryFamilyReceipts([{ slug: "fixture-senado-ceaps", candidato_id: "senado-1", ids: { senado: 987 } }], [observation])
+    assert.equal(result.receipts.length, 1, result.errors.join("; "))
+    const receipt = result.receipts[0]!
+    assert.equal(receipt.resultado, "encontrado")
+    const proof = JSON.parse(receipt.detalhe).coverage_proof
+    assert.equal(proof.source_rows, 1)
+    assert.equal(proof.declared_total, 1)
+    assert.deepEqual(proof.source_revisions, [sourceRevision])
+    assert.equal(annual.total_gasto, dto.total_gasto)
   } finally { rmSync(dir, { recursive: true, force: true }) }
 })
 
@@ -93,6 +422,41 @@ test("vazio exige total oficial explícito zero e DTO sem linhas", () => {
   try {
     const result = collectParliamentaryFamilyReceipts([candidate], [observation])
     assert.equal(result.receipts[0]?.resultado, "vazio_confirmado")
+  } finally { rmSync(dir, { recursive: true, force: true }) }
+})
+
+test("CEAPS inclui só anos com ID no roster e registra SHA de cada legislatura", () => {
+  const dir = mkdtempSync(path.join(tmpdir(), "pf-senado-scope-"))
+  const legislatures = [53, 54, 55, 56, 57]
+  const windows: Record<number, [string, string]> = { 53: ["2007-02-01", "2011-01-31"], 54: ["2011-02-01", "2015-01-31"], 55: ["2015-02-01", "2019-01-31"], 56: ["2019-02-01", "2023-01-31"], 57: ["2023-02-01", "2027-01-31"] }
+  const rosterEntries = legislatures.map((legislature) => {
+    const targetIsMember = legislature === 57
+    const roster = { ListaParlamentarLegislatura: {
+      Metadados: { DescricaoDataSet: "Retorna a lista de Senadores de uma Legislatura." },
+      Parlamentares: { Parlamentar: [{
+        IdentificacaoParlamentar: { CodigoParlamentar: targetIsMember ? "12345" : "987" },
+        Mandatos: { Mandato: [{ PrimeiraLegislaturaDoMandato: { NumeroLegislatura: String(legislature), DataInicio: windows[legislature]![0], DataFim: windows[legislature]![1] } }] },
+      }] },
+    } }
+    const bytes = Buffer.from(JSON.stringify(roster))
+    const rosterPath = path.join(dir, `legislatura-${legislature}.json`)
+    writeFileSync(rosterPath, bytes)
+    return { legislature, url: `https://legis.senado.leg.br/dadosabertos/senador/lista/legislatura/${legislature}.json`, path: rosterPath, sha256: createHash("sha256").update(bytes).digest("hex"), membership: targetIsMember, years: ({ 53: [2008, 2009, 2010], 54: [2011, 2012, 2013, 2014], 55: [2015, 2016, 2017, 2018], 56: [2019, 2020, 2021, 2022], 57: [2023, 2024, 2025, 2026] } as Record<number, number[]>)[legislature]!, failure: null }
+  })
+  const years = [2023, 2024, 2025, 2026]
+  const excludedYears = Array.from({ length: 15 }, (_, index) => 2008 + index)
+  const observation = {
+    house: "senado", family: "gastos_parlamentares", official_id: 12345, years,
+    source: { source_url: "https://www.senado.leg.br/transparencia/LAI/verba/despesa_ceaps_2026.csv", source_path: path.join(dir, "source.json"), scope_evidence: { rosters: rosterEntries, scope_years: years, excluded_years: excludedYears } },
+  } as unknown as ParliamentarySourceObservation
+  try {
+    const proof = verifySenadoLegislatureScope(observation, "12345")
+    assert.deepEqual(proof?.excluded_years, excludedYears)
+    assert.deepEqual(proof?.scope_years, years)
+    assert.throws(() => verifySenadoLegislatureScope(observation, "987"), /membership diverge|escopo CEAPS/)
+    const tamperedRoster = { ...rosterEntries[2]!, sha256: "0".repeat(64) }
+    const tampered = { ...observation, source: { ...observation.source, scope_evidence: { ...observation.source.scope_evidence!, rosters: rosterEntries.map((entry, index) => index === 2 ? tamperedRoster : entry) } } } as unknown as ParliamentarySourceObservation
+    assert.throws(() => verifySenadoLegislatureScope(tampered, "12345"), /SHA do roster 55 diverge/)
   } finally { rmSync(dir, { recursive: true, force: true }) }
 })
 

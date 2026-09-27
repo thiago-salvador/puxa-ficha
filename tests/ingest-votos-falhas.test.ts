@@ -6,6 +6,7 @@ import {
   ingestVotos,
   parseVoto,
 } from "../scripts/lib/ingest-camara"
+import { __resetarDryRunParaTeste, ativarDryRun, relatorioDryRun } from "../scripts/lib/dry-run"
 
 /**
  * Modos de FALHA do matching de votos.
@@ -36,9 +37,38 @@ function votosCom(idDeputado: number, tipoVoto: string) {
 
 afterEach(() => {
   __restaurarPortasDeVotos()
+  __resetarDryRunParaTeste()
 })
 
 describe("matching de votos: caminho feliz (item 7)", () => {
+  test("dry-run planeja o upsert do voto sem chamar a porta de escrita", async () => {
+    let attemptedDatabaseWrite = false
+    __usarPortasDeVotosParaTeste({
+      selecionarVotacoesChave: async () => ({ data: [VOTACAO_OK], error: null }),
+      buscarDetalheDaVotacao: async (_id, onRevision) => {
+        onRevision?.({ url: "https://example.test/detail", sha256: "b".repeat(64) })
+        return { descricao: DESCRICAO_MERITO }
+      },
+      buscarVotosDaVotacao: async (_id, onRevision) => {
+        onRevision?.({ url: "https://example.test/votes", sha256: "c".repeat(64) })
+        return votosCom(ID_DEPUTADO, "Sim")
+      },
+      gravarVoto: async () => {
+        attemptedDatabaseWrite = true
+        return { error: null }
+      },
+    })
+    ativarDryRun()
+
+    const result = await ingestVotos(ID_DEPUTADO, "cand-1", "cabo-daciolo")
+    const report = relatorioDryRun()
+    assert.equal(attemptedDatabaseWrite, false)
+    assert.equal(result.persistidos, 0)
+    assert.equal(result.planejados, 1)
+    assert.equal(report.porTabela.votos_candidato.upsert, 1)
+    assert.equal(report.bloqueios.length, 0)
+  })
+
   test("normaliza Artigo 17 sem confundir com ausência", () => {
     assert.equal(parseVoto("Artigo 17"), "artigo_17")
     assert.equal(parseVoto("valor futuro da Câmara"), null)

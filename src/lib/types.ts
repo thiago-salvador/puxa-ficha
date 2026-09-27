@@ -238,6 +238,8 @@ export interface VotacaoChave {
   impacto_popular: string;
   /** Fonte nominal da votação, quando a linha foi auditada (camara ou senado). */
   fonte?: string | null;
+  /** Identificador oficial da votação na API da casa, para reconciliação exata. */
+  votacao_id_api?: string | null;
   /** ID da proposição na Câmara ou Senado, usado para link e explicação de fonte. Null quando não disponível. */
   proposicao_id?: string | null;
 }
@@ -747,6 +749,8 @@ export interface FichaCandidato extends Candidato {
    * falhou; ausente = cache antigo.
    */
   projetos_lei_camara_total?: number | null;
+  /** Linhas com `fonte = 'Senado'` no acervo inteiro; `null` indica falha na consulta. */
+  projetos_lei_senado_total?: number | null;
   legislacao_mandato_executivo: LegislacaoMandatoExecutivo[];
   /** Total materializado; `legislacao_mandato_executivo` pode conter apenas a prévia inicial. */
   legislacao_mandato_executivo_total?: number;

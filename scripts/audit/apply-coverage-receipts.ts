@@ -27,12 +27,13 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 import { pathToFileURL } from "node:url"
-import { publicFamilyRowCount } from "./lib/coverage-source-proof"
+import { isHousePartitionFamily, publicFamilyHouseRows, publicFamilyRowCount } from "./lib/coverage-source-proof"
 import {
   adaptLatestReceipts,
   buildCoverageMatrix,
   familyWithoutFreshnessSla,
   receiptFamilies,
+  requiredCoverageHouses,
   type CoverageFamily,
   type CoverageProfile,
   type LatestReceiptRow,
@@ -81,14 +82,74 @@ export function planCoverageReceipts(rows: LatestReceiptRow[], profiles: Coverag
     if (families.length !== 1) { reject("recibo precisa mapear exatamente uma família"); continue }
     const familia = families[0]
     // Vazio só contra payload sem linha; encontrado só contra payload com linha.
+    const multiHouse = isHousePartitionFamily(familia)
     const publicRows = publicFamilyRowCount(profile, familia)
-    if (resultado === "vazio_confirmado" && publicRows > 0) { reject(`vazio contra ${publicRows} linha(s) publicada(s) em ${familia}`); continue }
-    if (resultado === "encontrado" && publicRows === 0) { reject(`encontrado sem linha publicada em ${familia}`); continue }
+    let detail: Record<string, unknown> | null = null
+    try { detail = typeof row.detalhe === "string" ? JSON.parse(row.detalhe) as Record<string, unknown> : row.detalhe as Record<string, unknown> ?? null } catch { detail = null }
+    if (!detail || typeof detail !== "object" || Array.isArray(detail)) { reject("detalhe ausente ou não é JSON de objeto"); continue }
+    let partition: Record<string, unknown> | null = null
+    if (multiHouse) {
+      const proof = detail.coverage_proof as Record<string, unknown> | undefined
+      partition = proof?.house_partition && typeof proof.house_partition === "object" ? proof.house_partition as Record<string, unknown> : null
+      const house = partition?.casa
+      const byHouse = publicFamilyHouseRows(profile, familia)
+      if (!byHouse || (house !== "camara" && house !== "senado") || !Array.isArray(byHouse[house])) {
+        reject("linhas públicas sem partição válida por casa"); continue
+      }
+      const houseRows = byHouse[house]!
+      if (resultado === "vazio_confirmado" && houseRows.length > 0) { reject(`vazio contra ${houseRows.length} linha(s) pública(s) da casa ${house}`); continue }
+      if (resultado === "encontrado" && houseRows.length === 0) { reject(`encontrado sem linha pública da casa ${house}`); continue }
+    } else {
+      if (resultado === "vazio_confirmado" && publicRows > 0) { reject(`vazio contra ${publicRows} linha(s) publicada(s) em ${familia}`); continue }
+      if (resultado === "encontrado" && publicRows === 0) { reject(`encontrado sem linha publicada em ${familia}`); continue }
+    }
     const key = `${alvo}|${fonte}|${familia}`
     if (seen.has(key)) { reject("recibo duplicado para a mesma ficha, fonte e família"); continue }
     // A régua completa, só com este recibo: o que ele sozinho faz com a célula.
     const probe = { ...row, executado_em: new Date(Date.now() - 1000).toISOString() }
-    const joins = adaptLatestReceipts([probe], [profile]).joins
+    let probeRows: LatestReceiptRow[] = [probe]
+    if (multiHouse) {
+      const required = requiredCoverageHouses(profile, familia)
+      const publicPartitions = publicFamilyHouseRows(profile, familia)!
+      if (required.length === 0 || required.some((house) => !publicPartitions[house]) ||
+          Object.entries(publicPartitions).some(([house, houseRows]) => (houseRows?.length ?? 0) > 0 && !required.includes(house as "camara" | "senado"))) {
+        reject("casas requeridas não cobrem toda a partição pública"); continue
+      }
+      const paired: LatestReceiptRow[] = []
+      for (const house of required) {
+        const matches = rows.filter((candidateRow) => {
+          if (text(candidateRow.alvo) !== alvo || text(candidateRow.candidato_id) !== text(profile.id)) return false
+          const candidateSource = text(candidateRow.fonte)
+          if (!candidateSource || !allowedSources.has(candidateSource)) return false
+          const candidateFamilies = receiptFamilies(candidateSource, candidateRow.detalhe, candidateRow.url) ?? []
+          if (candidateFamilies.length !== 1 || candidateFamilies[0] !== familia) return false
+          let candidateDetail: Record<string, unknown> | null = null
+          try { candidateDetail = typeof candidateRow.detalhe === "string" ? JSON.parse(candidateRow.detalhe) : candidateRow.detalhe as Record<string, unknown> } catch { return false }
+          const candidateProof = candidateDetail?.coverage_proof as Record<string, unknown> | undefined
+          const candidatePartition = candidateProof?.house_partition as Record<string, unknown> | undefined
+          const receiptSource = candidateSource.toLocaleLowerCase()
+          const labelHouse = receiptSource.startsWith("camara") ? "camara" : receiptSource.startsWith("senado") || receiptSource === "ceaps-senado" ? "senado" : null
+          return candidatePartition?.casa === house && candidateProof?.identity &&
+            (candidateProof.identity as Record<string, unknown>).house === house && labelHouse === house &&
+            (candidateRow.resultado === "encontrado" || candidateRow.resultado === "vazio_confirmado")
+        })
+        if (matches.length !== 1) { reject(`esperada exatamente uma prova da casa ${house} na mesma rodada`); break }
+        paired.push({ ...matches[0], executado_em: new Date(Date.now() - 1000).toISOString() })
+      }
+      if (paired.length !== required.length) continue
+      const totalPublicPreviewRows = Object.values(publicPartitions).reduce((sum, items) => sum + (items?.length ?? 0), 0)
+      if (totalPublicPreviewRows !== publicRows) { reject("união das partições não coincide com o payload público"); continue }
+      if (familia === "projetos_lei") {
+        const detailRows = paired.map((item) => JSON.parse(String(item.detalhe)) as Record<string, unknown>)
+        const sourceCount = detailRows.reduce((sum, item) => sum + Number((item.coverage_proof as Record<string, unknown>)?.source_rows ?? NaN), 0)
+        if (!Number.isSafeInteger(profile.projetos_lei_total) || sourceCount !== profile.projetos_lei_total) {
+          reject("soma das contagens oficiais por casa não confere com projetos_lei_total")
+          continue
+        }
+      }
+      probeRows = paired
+    }
+    const joins = adaptLatestReceipts(probeRows, [profile]).joins
     const cell = buildCoverageMatrix([profile], [], joins).cells.find((item) => item.familia === familia)
     if (!cell || (cell.estado !== "publicado" && cell.estado !== "vazio_confirmado")) {
       reject(`a régua não fecha ${familia} com este recibo (${cell?.estado ?? "sem célula"})`)
@@ -97,9 +158,6 @@ export function planCoverageReceipts(rows: LatestReceiptRow[], profiles: Coverag
     // Famílias anuais: o detalhe precisa dizer quais eleições a prova cobre,
     // para que recibo de outro ano na mesma fonte não seja lido como substituto.
     // O detalhe gravado precisa ser JSON de objeto: é ele que a régua relê.
-    let detail: Record<string, unknown> | null = null
-    try { detail = typeof row.detalhe === "string" ? JSON.parse(row.detalhe) as Record<string, unknown> : row.detalhe as Record<string, unknown> ?? null } catch { detail = null }
-    if (!detail || typeof detail !== "object" || Array.isArray(detail)) { reject("detalhe ausente ou não é JSON de objeto"); continue }
     const revisions = Array.isArray((detail?.coverage_proof as Record<string, unknown> | undefined)?.source_revisions)
       ? (detail!.coverage_proof as Record<string, unknown>).source_revisions as Array<Record<string, unknown>> : []
     const years = [...new Set(revisions.map((revision) => Number(revision?.year)).filter((year) => Number.isInteger(year) && year > 1900))].sort((a, b) => a - b)

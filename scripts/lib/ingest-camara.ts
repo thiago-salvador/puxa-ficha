@@ -21,6 +21,7 @@ import { assertSemReplacementChar } from "./ceaps-csv-encoding"
 import { sanitizePublicTextOrThrow } from "../../src/lib/public-text"
 import { log, warn, error } from "./logger"
 import { classificarVotacao, type ClassificacaoVotacao } from "./votacao-classificacao"
+import { emDryRun, planejarEscrita } from "./dry-run"
 import type { IngestResult } from "./types"
 import { secondarySourceBirthDate } from "./data-nascimento"
 
@@ -368,8 +369,17 @@ async function ingestPerfil(
   }
   const updates = atualizacoesPerfilCamara(dep, { fotoAtual })
 
-  await supabase.from("candidatos").update(updates).eq("id", candidatoId)
-  log("camara", `  ${slug}: perfil atualizado`)
+  if (emDryRun()) {
+    planejarEscrita({
+      fonte: "camara", tabela: "candidatos", operacao: "update", alvo: slug,
+      identidade: `id:${candidatoId}`, chave: { id: candidatoId }, valores: updates,
+    })
+  } else {
+    const { error: writeError } = await supabase.from("candidatos").update(updates).eq("id", candidatoId)
+    if (writeError) throw new Error(`candidatos.update falhou: ${writeError.message}`)
+  }
+  log("camara", `  ${slug}: perfil ${emDryRun() ? "planejado" : "atualizado"}`)
+  return !emDryRun()
 }
 
 /**
@@ -406,17 +416,25 @@ export function reciboCotaZeroCamara(
   }
 }
 
+interface CamaraGastosWriteOutcome {
+  persistedRows: number
+  plannedRows: number
+  sourceRows: number
+}
+
 async function ingestGastos(
   idCamara: number,
   candidatoId: string,
   slug: string,
   expenseSnapshotDir?: string,
   expenseSnapshotCacheOnly = false,
-): Promise<number> {
+): Promise<CamaraGastosWriteOutcome> {
   // Fetch expenses from 2019 onwards (current + previous legislature)
   // Note: API returns 504 for older years on ex-deputies
   const anos = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
   let totalRows = 0
+  let plannedRows = 0
+  let sourceRows = 0
   const anosVazios: number[] = []
 
   for (const ano of anos) {
@@ -468,6 +486,7 @@ async function ingestGastos(
       anosVazios.push(ano)
       continue
     }
+    sourceRows += despesas.length
 
     const porCategoria: Record<string, number> = {}
     let totalGasto = 0
@@ -586,21 +605,31 @@ async function ingestGastos(
       fonte: "Camara",
     }
 
-    if (existing) {
-      await supabase.from("gastos_parlamentares").update(row).eq("id", existing.id)
+    if (emDryRun()) {
+      planejarEscrita({
+        fonte: "camara-gastos", tabela: "gastos_parlamentares",
+        operacao: existing ? "update" : "insert", alvo: slug,
+        identidade: `id-camara:${idCamara}`,
+        chave: existing ? { id: existing.id } : { candidato_id: candidatoId, ano, fonte: "Camara" },
+        valores: row,
+      })
+      plannedRows++
     } else {
-      await supabase.from("gastos_parlamentares").insert(row)
+      const { error: writeError } = existing
+        ? await supabase.from("gastos_parlamentares").update(row).eq("id", existing.id)
+        : await supabase.from("gastos_parlamentares").insert(row)
+      if (writeError) throw new Error(`gastos_parlamentares ${ano} write falhou: ${writeError.message}`)
+      totalRows++
     }
 
-    totalRows++
-    log("camara", `  ${slug}: gastos ${ano} — R$ ${Math.round(totalGasto).toLocaleString()} (${despesas.length} registros)`)
+    log("camara", `  ${slug}: gastos ${ano} ${emDryRun() ? "planejados" : "atualizados"} — R$ ${Math.round(totalGasto).toLocaleString()} (${despesas.length} registros)`)
     await sleep(300)
   }
 
   const reciboZero = reciboCotaZeroCamara(idCamara, slug, anos, anosVazios)
   if (reciboZero) await registrarColeta(reciboZero)
 
-  return totalRows
+  return { persistedRows: totalRows, plannedRows, sourceRows }
 }
 
 export type VotoCamaraNormalizado =
@@ -636,8 +665,8 @@ export interface PortasDeVotos {
     data: Array<Record<string, unknown>> | null
     error: { message: string } | null
   }>
-  buscarDetalheDaVotacao: (votacaoIdApi: string) => Promise<{ descricao?: unknown } | null>
-  buscarVotosDaVotacao: (votacaoIdApi: string) => Promise<Array<Record<string, unknown>>>
+  buscarDetalheDaVotacao: (votacaoIdApi: string, onSourceRevision?: (revision: { url: string; sha256: string }) => void) => Promise<{ descricao?: unknown } | null>
+  buscarVotosDaVotacao: (votacaoIdApi: string, onSourceRevision?: (revision: { url: string; sha256: string }) => void) => Promise<Array<Record<string, unknown>>>
   gravarVoto: (linha: {
     candidato_id: string
     votacao_id: string
@@ -654,16 +683,24 @@ const PORTAS_REAIS: PortasDeVotos = {
       .not("votacao_id_api", "is", null)
     return { data: (data as Array<Record<string, unknown>> | null) ?? null, error }
   },
-  buscarDetalheDaVotacao: async (votacaoIdApi) => {
+  buscarDetalheDaVotacao: async (votacaoIdApi, onSourceRevision) => {
+    const url = `${API}/votacoes/${votacaoIdApi}`
+    let body = ""
     const detalhe = await camaraFetchJSON<CamaraResponse<Record<string, unknown>>>(
-      `${API}/votacoes/${votacaoIdApi}`
+      url,
+      { onResponseBody: (raw) => { body = raw } },
     )
+    if (body) onSourceRevision?.({ url, sha256: sha256(body) })
     return detalhe.dados ?? null
   },
-  buscarVotosDaVotacao: async (votacaoIdApi) => {
+  buscarVotosDaVotacao: async (votacaoIdApi, onSourceRevision) => {
+    const url = `${API}/votacoes/${votacaoIdApi}/votos`
+    let body = ""
     const resp = await camaraFetchJSON<CamaraResponse<Record<string, unknown>[]>>(
-      `${API}/votacoes/${votacaoIdApi}/votos`
+      url,
+      { onResponseBody: (raw) => { body = raw } },
     )
+    if (body) onSourceRevision?.({ url, sha256: sha256(body) })
     return resp.dados ?? []
   },
   gravarVoto: async (linha) => {
@@ -717,6 +754,7 @@ interface CarregamentoVotacoes {
   avisos: string[]
   /** `true` quando alguma etapa falhou. Estado indeterminado nao vira sucesso. */
   degradado: boolean
+  sourceRevisions: Array<{ url: string; sha256: string }>
 }
 
 /**
@@ -731,7 +769,7 @@ interface CarregamentoVotacoes {
 let cacheVotacoesChave: CarregamentoVotacoes | null = null
 const cacheVotosPorVotacao = new Map<
   string,
-  Map<number, { normalizado: VotoCamaraNormalizado | null; cru: string }>
+  { votos: Map<number, { normalizado: VotoCamaraNormalizado | null; cru: string }>; sourceRevision?: { url: string; sha256: string } }
 >()
 
 export function __resetCacheVotacoesParaTeste(): void {
@@ -758,16 +796,17 @@ async function carregarVotacoesChaveCamara(): Promise<CarregamentoVotacoes> {
     // faria todo candidato seguinte da execucao sair sem voto em silencio.
     const msg = `votos: select de votacoes_chave falhou: ${error.message}`
     warn("camara", `  ${msg}`)
-    return { votacoes: [], erros: [msg], avisos: [], degradado: true }
+    return { votacoes: [], erros: [msg], avisos: [], degradado: true, sourceRevisions: [] }
   }
 
   const carregadas: VotacaoChaveCamara[] = []
   const avisos: string[] = []
+  const sourceRevisions: Array<{ url: string; sha256: string }> = []
   for (const linha of data ?? []) {
     const votacaoIdApi = String(linha.votacao_id_api)
     let descricaoOficial: string | null = null
     try {
-      const detalhe = await portas.buscarDetalheDaVotacao(votacaoIdApi)
+      const detalhe = await portas.buscarDetalheDaVotacao(votacaoIdApi, (revision) => { sourceRevisions.push(revision) })
       const bruto = detalhe?.descricao
       descricaoOficial = typeof bruto === "string" ? bruto : null
     } catch (err) {
@@ -811,6 +850,7 @@ async function carregarVotacoesChaveCamara(): Promise<CarregamentoVotacoes> {
     erros,
     avisos,
     degradado: erros.length > 0,
+    sourceRevisions,
   }
 
   // SÓ carregamento íntegro entra no cache, e a condição é `erros.length === 0`,
@@ -835,6 +875,7 @@ type VotosDaVotacao =
   | {
       ok: true
       votos: Map<number, { normalizado: VotoCamaraNormalizado | null; cru: string }>
+      sourceRevision?: { url: string; sha256: string }
     }
   | { ok: false; motivo: string }
 
@@ -850,11 +891,12 @@ type VotosDaVotacao =
  */
 async function votosDaVotacao(votacaoIdApi: string): Promise<VotosDaVotacao> {
   const cacheado = cacheVotosPorVotacao.get(votacaoIdApi)
-  if (cacheado) return { ok: true, votos: cacheado }
+  if (cacheado) return { ok: true, votos: cacheado.votos, sourceRevision: cacheado.sourceRevision }
 
   let bruto: Array<Record<string, unknown>>
+  let sourceRevision: { url: string; sha256: string } | undefined
   try {
-    bruto = await portas.buscarVotosDaVotacao(votacaoIdApi)
+    bruto = await portas.buscarVotosDaVotacao(votacaoIdApi, (revision) => { sourceRevision = revision })
   } catch (err) {
     return {
       ok: false,
@@ -889,17 +931,54 @@ async function votosDaVotacao(votacaoIdApi: string): Promise<VotosDaVotacao> {
   }
 
   // So sucesso entra no cache.
-  cacheVotosPorVotacao.set(votacaoIdApi, mapa)
-  return { ok: true, votos: mapa }
+  cacheVotosPorVotacao.set(votacaoIdApi, { votos: mapa, sourceRevision })
+  return { ok: true, votos: mapa, sourceRevision }
 }
 
 export interface VotosIngestOutcome {
   /** Linhas que o banco CONFIRMOU. Upsert recusado nao conta. */
   persistidos: number
+  /** Linhas planejadas em dry-run; nunca contam como persistidas. */
+  planejados: number
   /** Toda falha nomeada, para subir em IngestResult.errors. */
   erros: string[]
   /** Recusas de curadoria que devem aparecer no relatório sem falhar o ingest completo. */
   avisos: string[]
+  completo: boolean
+  votacoesConferidas: number
+  sourceRows: number
+  sourceRevisions: Array<{ url: string; sha256: string }>
+}
+
+export function reciboDestaquesVotacoesCamara(
+  slug: string,
+  idCamara: number,
+  outcome: VotosIngestOutcome,
+): EntradaColeta {
+  const resultado = !outcome.completo
+    ? "erro"
+    : outcome.persistidos + outcome.planejados > 0 ? "encontrado" : "vazio_confirmado"
+  const primeiroUrl = outcome.sourceRevisions[0]?.url
+  return {
+    fonte: "destaques-votacoes",
+    escopo: "candidato",
+    alvo: slug,
+    resultado,
+    volume: resultado === "encontrado" ? outcome.persistidos + outcome.planejados : 0,
+    detalhe: JSON.stringify({
+      contract_version: 1,
+      kind: "camara-destaques-votacoes",
+      identity: { house: "camara", source_id: String(idCamara) },
+      votacoes_conferidas: outcome.votacoesConferidas,
+      source_rows: outcome.sourceRows,
+      votos_publicados: outcome.persistidos,
+      votos_planejados: outcome.planejados,
+      fonte_completa: outcome.completo,
+      erros: outcome.erros,
+      source_revisions: outcome.sourceRevisions,
+    }),
+    url: primeiroUrl ?? `${API}/votacoes`,
+  }
 }
 
 /**
@@ -924,21 +1003,26 @@ export async function ingestVotos(
 ): Promise<VotosIngestOutcome> {
   const { votacoes, erros: errosDeCarga, avisos: avisosDeCarga } =
     await carregarVotacoesChaveCamara()
+  const sourceRevisions = [...(cacheVotacoesChave?.sourceRevisions ?? [])]
   const erros = errosDeCarga.map((e) => `${slug}: ${e}`)
   const avisos = avisosDeCarga.map((a) => `${slug}: ${a}`)
 
   if (votacoes.length === 0) {
     log("camara", `  ${slug}: nenhuma votacao-chave da Camara utilizavel, pulando votos`)
-    return { persistidos: 0, erros, avisos }
+    return { persistidos: 0, planejados: 0, erros, avisos, completo: false, votacoesConferidas: 0, sourceRows: 0, sourceRevisions }
   }
 
   let persistidos = 0
+  let planejados = 0
+  let sourceRows = 0
   for (const votacao of votacoes) {
     const resultado = await votosDaVotacao(votacao.votacaoIdApi)
     if (!resultado.ok) {
       erros.push(`${slug}: ${resultado.motivo}`)
       continue
     }
+    sourceRows += resultado.votos.size
+    if (resultado.sourceRevision) sourceRevisions.push(resultado.sourceRevision)
 
     const votoDaFonte = resultado.votos.get(idCamara)
     if (!votoDaFonte) continue
@@ -949,11 +1033,21 @@ export async function ingestVotos(
       continue
     }
 
-    const { error } = await portas.gravarVoto({
+    const row = {
       candidato_id: candidatoId,
       votacao_id: votacao.id,
       voto: votoDaFonte.normalizado,
-    })
+    }
+    if (emDryRun()) {
+      planejarEscrita({
+        fonte: "destaques-votacoes", tabela: "votos_candidato", operacao: "upsert", alvo: slug,
+        identidade: `id-camara:${idCamara}`, chave: { candidato_id: candidatoId, votacao_id: votacao.id },
+        valores: row,
+      })
+      planejados++
+      continue
+    }
+    const { error } = await portas.gravarVoto(row)
 
     // Conta o que o banco confirmou, nao o que a gente tentou. Contar tentativa
     // faz o relatorio dizer que gravou o que foi recusado.
@@ -968,9 +1062,18 @@ export async function ingestVotos(
 
   log(
     "camara",
-    `  ${slug}: ${votacoes.length} votacoes-chave conferidas, ${persistidos} voto(s) confirmado(s)${erros.length ? `, ${erros.length} falha(s)` : ""}${avisos.length ? `, ${avisos.length} aviso(s) de curadoria` : ""}`
+    `  ${slug}: ${votacoes.length} votacoes-chave conferidas, ${persistidos} voto(s) confirmado(s)${planejados ? `, ${planejados} planejado(s)` : ""}${erros.length ? `, ${erros.length} falha(s)` : ""}${avisos.length ? `, ${avisos.length} aviso(s) de curadoria` : ""}`
   )
-  return { persistidos, erros, avisos }
+  return {
+    persistidos,
+    planejados,
+    erros,
+    avisos,
+    completo: erros.length === 0 && votacoes.length > 0 && sourceRevisions.length >= votacoes.length * 2,
+    votacoesConferidas: votacoes.length,
+    sourceRows,
+    sourceRevisions: [...new Map(sourceRevisions.map((item) => [item.url, item])).values()],
+  }
 }
 
 interface ProjetosIngestOutcome {
@@ -980,6 +1083,8 @@ interface ProjetosIngestOutcome {
   tentado: number
   /** Quantas o upsert confirmou sem erro. */
   persistido: number
+  /** Linhas planejadas em dry-run; nunca contam como persistidas. */
+  planejado: number
   /** Quantas o upsert recusou, com a mensagem da primeira falha. */
   falhou: number
   primeiroErro?: string
@@ -988,6 +1093,7 @@ interface ProjetosIngestOutcome {
   /** Recorte do que foi tentado, pela `siglaTipo`. */
   projetosLei: number
   outrasProposicoes: number
+  sourceRevisions: Array<{ url: string; sha256: string }>
 }
 
 /**
@@ -1009,9 +1115,11 @@ async function ingestProjetos(
   slug: string,
   declaradoNaFonte: number | null
 ): Promise<ProjetosIngestOutcome> {
+  const sourceRevisions: Array<{ url: string; sha256: string }> = []
   const proposicoes = await fetchPaginated<Record<string, unknown>>(
     `${API}/proposicoes`,
-    { idDeputadoAutor: String(idCamara), ordem: "DESC", ordenarPor: "id" }
+    { idDeputadoAutor: String(idCamara), ordem: "DESC", ordenarPor: "id" },
+    (capture) => { sourceRevisions.push({ url: capture.url, sha256: sha256(capture.body) }) },
   )
 
   // Vistoria do PR #141: `?? proposicoes.length` convertia "não sei" na
@@ -1023,8 +1131,10 @@ async function ingestProjetos(
     declarado: declaradoNaFonte,
     tentado: 0,
     persistido: 0,
+    planejado: 0,
     falhou: 0,
     readback: null,
+    sourceRevisions,
     ...contarPorNatureza(proposicoes.map((p) => String(p.siglaTipo ?? ""))),
   }
 
@@ -1049,16 +1159,26 @@ async function ingestProjetos(
     }
 
     outcome.tentado++
-    const { error: upsertError } = await supabase
-      .from("projetos_lei")
-      .upsert(row, { onConflict: "candidato_id,fonte,proposicao_id_api" })
-
-    if (upsertError) {
-      outcome.falhou++
-      if (!outcome.primeiroErro) outcome.primeiroErro = upsertError.message
-      warn("camara", `  ${slug}: upsert recusou proposicao ${propId}: ${upsertError.message}`)
+    if (emDryRun()) {
+      planejarEscrita({
+        fonte: FONTE_CAMARA_PROPOSICOES, tabela: "projetos_lei", operacao: "upsert", alvo: slug,
+        identidade: `id-camara:${idCamara}`,
+        chave: { candidato_id: candidatoId, fonte: "Camara", proposicao_id_api: propId },
+        valores: row,
+      })
+      outcome.planejado++
     } else {
-      outcome.persistido++
+      const { error: upsertError } = await supabase
+        .from("projetos_lei")
+        .upsert(row, { onConflict: "candidato_id,fonte,proposicao_id_api" })
+
+      if (upsertError) {
+        outcome.falhou++
+        if (!outcome.primeiroErro) outcome.primeiroErro = upsertError.message
+        warn("camara", `  ${slug}: upsert recusou proposicao ${propId}: ${upsertError.message}`)
+      } else {
+        outcome.persistido++
+      }
     }
 
     if (outcome.tentado % 20 === 0) await sleep(300)
@@ -1077,9 +1197,10 @@ async function ingestProjetos(
     outcome.readback != null && outcome.readback < outcome.persistido
       ? ` / readback ${outcome.readback} ABAIXO do persistido`
       : ""
+  const escritaResumo = emDryRun() ? `${outcome.planejado} planejadas` : `${outcome.persistido} gravadas`
   log(
     "camara",
-    `  ${slug}: ${outcome.persistido}/${outcome.tentado} proposicoes autorais gravadas ` +
+    `  ${slug}: ${escritaResumo}/${outcome.tentado} proposicoes autorais ` +
       `(fonte declarou ${outcome.declarado}; ${outcome.projetosLei} projeto de lei, ` +
       `${outcome.outrasProposicoes} outras; readback ${outcome.readback ?? "?"})${alerta}${divergencia}`
   )
@@ -1101,12 +1222,21 @@ async function registrarCardinalidadeProposicoes(
   idCamara: number,
   outcome: ProjetosIngestOutcome
 ): Promise<void> {
-  const detalhe =
-    `declarado=${outcome.declarado ?? "?"} tentado=${outcome.tentado} ` +
-    `persistido=${outcome.persistido} recusados=${outcome.falhou} ` +
-    `readback=${outcome.readback ?? "?"} ` +
-    `projeto_lei=${outcome.projetosLei} outras=${outcome.outrasProposicoes}`
   const url = `${API}/proposicoes?idDeputadoAutor=${encodeURIComponent(String(idCamara))}&ordem=DESC&ordenarPor=id`
+  const detalhe = JSON.stringify({
+    contract_version: 2,
+    kind: "camara-proposicoes-cardinality",
+    source_id: String(idCamara),
+    declarado: outcome.declarado,
+    tentado: outcome.tentado,
+    persistido: outcome.persistido,
+    planejado: outcome.planejado,
+    recusados: outcome.falhou,
+    readback: outcome.readback,
+    projeto_lei: outcome.projetosLei,
+    outras: outcome.outrasProposicoes,
+    source_revisions: outcome.sourceRevisions,
+  })
 
   const resultado = classificarReciboProposicoes(outcome)
   await registrarColeta({
@@ -1114,8 +1244,8 @@ async function registrarCardinalidadeProposicoes(
     alvo: slug,
     resultado,
     volume: resultado === "encontrado" ? (outcome.declarado ?? 0) : 0,
-    detalhe: resultado === "indeterminado" && outcome.declarado == null
-      ? `cardinalidade nao declarada pela fonte; ${detalhe}`
+    detalhe: outcome.declarado == null
+      ? JSON.stringify({ ...JSON.parse(detalhe), status: "cardinalidade_nao_declarada" })
       : detalhe,
     url,
   })
@@ -1289,7 +1419,7 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
           `projetos_lei: ${projetos.falhou} de ${projetos.tentado} upserts recusados (${projetos.primeiroErro})`,
         )
       }
-      if (projetos.readback != null && projetos.declarado != null && projetos.readback < projetos.declarado) {
+      if (!emDryRun() && projetos.readback != null && projetos.declarado != null && projetos.readback < projetos.declarado) {
         result.errors.push(`projetos_lei truncado: fonte declarou ${projetos.declarado}, banco tem ${projetos.readback}`)
       }
       await registrarCardinalidadeProposicoes(cand.slug, cand.ids.camara!, projetos)
@@ -1384,9 +1514,11 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
     })
 
     let gastosColetados = 0
+    let gastosPersistidos = 0
+    let gastosPlanejados = 0
     const candidatoWork = (async () => {
       if (!gastosOnly) {
-        await ingestPerfil(
+        const perfilPersistido = await ingestPerfil(
           cand.ids.camara!,
           candidatoId,
           cand.slug,
@@ -1394,27 +1526,32 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
           cand.nome_urna,
           cand.estado
         )
-        result.tables_updated.push("candidatos")
-        result.rows_upserted++
+        if (perfilPersistido) {
+          result.tables_updated.push("candidatos")
+          result.rows_upserted++
+        }
         await sleep(300)
       }
 
       if (!skipGastos) {
-        const gastoRows = await ingestGastos(
+        const gastoOutcome = await ingestGastos(
           cand.ids.camara!,
           candidatoId,
           cand.slug,
           opts.expenseSnapshotDir,
           opts.expenseSnapshotCacheOnly,
         )
-        gastosColetados = gastoRows
-        if (gastoRows > 0) result.tables_updated.push("gastos_parlamentares")
-        result.rows_upserted += gastoRows
+        gastosColetados = gastoOutcome.sourceRows
+        gastosPersistidos = gastoOutcome.persistedRows
+        gastosPlanejados = gastoOutcome.plannedRows
+        if (gastoOutcome.persistedRows > 0) result.tables_updated.push("gastos_parlamentares")
+        result.rows_upserted += gastoOutcome.persistedRows
         await sleep(300)
       }
 
       if (!skipVotes) {
         const votos = await ingestVotos(cand.ids.camara!, candidatoId, cand.slug)
+        await registrarColeta(reciboDestaquesVotacoesCamara(cand.slug, cand.ids.camara!, votos))
         if (votos.persistidos > 0) result.tables_updated.push("votos_candidato")
         result.rows_upserted += votos.persistidos
         result.errors.push(...votos.erros)
@@ -1445,7 +1582,7 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
             `projetos_lei: ${projetos.falhou} de ${projetos.tentado} upserts recusados (${projetos.primeiroErro})`
           )
         }
-        if (projetos.readback != null && projetos.declarado != null && projetos.readback < projetos.declarado) {
+        if (!emDryRun() && projetos.readback != null && projetos.declarado != null && projetos.readback < projetos.declarado) {
           result.errors.push(
             `projetos_lei truncado: fonte declarou ${projetos.declarado}, banco tem ${projetos.readback}`
           )
@@ -1475,7 +1612,18 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
     if (profileAndGastosOnly || gastosOnly) {
       result.coleta_volume = gastosColetados
       result.coleta_resultado = result.errors.length > 0 ? "erro" : result.coleta_volume > 0 ? "encontrado" : "vazio_confirmado"
-      result.coleta_detalhe = `escopo=perfil e gastos da Câmara; perfil_url=${API}/deputados/${cand.ids.camara}; gastos_url=${API}/deputados/${cand.ids.camara}/despesas; votos e projetos preservados do acervo existente; linhas_gastos=${result.coleta_volume}`
+      result.coleta_detalhe = JSON.stringify({
+        contract_version: 2,
+        kind: "camara-perfil-e-gastos",
+        identity: { house: "camara", source_id: String(cand.ids.camara) },
+        scope: "perfil e despesas anuais de 2019-2026",
+        perfil_url: `${API}/deputados/${cand.ids.camara}`,
+        gastos_url: `${API}/deputados/${cand.ids.camara}/despesas`,
+        despesas_fonte: gastosColetados,
+        linhas_gastos_persistidas: gastosPersistidos,
+        linhas_gastos_planejadas: gastosPlanejados,
+        dry_run: emDryRun(),
+      })
       result.coleta_url = `${API}/deputados/${cand.ids.camara}`
     }
     log("camara", `  ${cand.slug}: ${result.rows_upserted} rows, ${result.errors.length} errors, ${result.duration_ms}ms`)

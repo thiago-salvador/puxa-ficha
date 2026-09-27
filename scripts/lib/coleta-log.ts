@@ -99,6 +99,8 @@ export const FONTES: Readonly<Record<string, EscopoColeta>> = Object.freeze({
   tcu: "candidato",
   filiacao: "candidato",
   "ceaps-senado": "candidato",
+  "camara-cotas": "candidato",
+  "partidos-parlamentares": "candidato",
   "gastos-executivo": "candidato",
   jarbas: "candidato",
   wikipedia: "candidato",
