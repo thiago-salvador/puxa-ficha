@@ -50,6 +50,7 @@ import { dirname, resolve } from "node:path"
 import type { CandidatoConfig } from "./lib/types"
 import { namesLookCompatible } from "./lib/name-match"
 import { normalizeForMatch } from "./lib/normalize-for-match"
+import { sondarAlcanceCamara, type AlcanceCamara } from "./lib/camara-alcance"
 
 export { namesLookCompatible } from "./lib/name-match"
 
@@ -97,6 +98,12 @@ export interface ReportShape {
     skipped: number
   }
   summary: Record<CheckStatus, number>
+  /**
+   * Preenchido quando o pré-voo não alcançou a API da Câmara (bloqueio dos
+   * runners do GitHub desde 26/09/2026). Os checks da Câmara ficam `error` com
+   * o motivo `camara_inalcancavel:`, e o gate não os conta como falha.
+   */
+  camara_inalcancavel: { motivo: string; checks: number } | null
   results: CheckResult[]
 }
 
@@ -648,8 +655,43 @@ export function parseCliArgs(argv: string[]): CliOptions {
  * isso, qualquer erro residual reprova, enquanto checks skipped continuam
  * informativos e nao sao confundidos com falha de fonte.
  */
-export function shouldFailGate(summary: Partial<Record<CheckStatus, number>>): boolean {
-  return (summary.mismatch ?? 0) > 0 || (summary.not_found ?? 0) > 0 || (summary.error ?? 0) > 0
+export function shouldFailGate(
+  summary: Partial<Record<CheckStatus, number>>,
+  errosCamaraInalcancavel = 0,
+): boolean {
+  // Exceção única, desde 26/09/2026: a API da Câmara recusa conexão dos
+  // runners do GitHub. Esses erros vêm do pré-voo, com motivo nomeado no
+  // relatório e aviso no log do job, e não provam nada sobre os IDs. Qualquer
+  // outro erro, mismatch ou not_found continua reprovando.
+  const errosQueReprovam = (summary.error ?? 0) - errosCamaraInalcancavel
+  return (summary.mismatch ?? 0) > 0 || (summary.not_found ?? 0) > 0 || errosQueReprovam > 0
+}
+
+export const MOTIVO_CAMARA_INALCANCAVEL = "camara_inalcancavel:"
+
+/** Check da Câmara não tentado porque o pré-voo não alcançou a API. */
+export function checkCamaraInalcancavel(
+  slug: string,
+  id: number,
+  seed: CheckResult["seed"],
+  motivo: string,
+): CheckResult {
+  return {
+    slug,
+    source: "camara",
+    id,
+    status: "error",
+    seed,
+    remote: null,
+    reasons: [`${MOTIVO_CAMARA_INALCANCAVEL}${motivo}`],
+    error: motivo,
+  }
+}
+
+export function contarCamaraInalcancavel(results: readonly CheckResult[]): number {
+  return results.filter(
+    (r) => r.source === "camara" && r.status === "error" && r.reasons.some((x) => x.startsWith(MOTIVO_CAMARA_INALCANCAVEL)),
+  ).length
 }
 
 function loadSeed(): CandidatoConfig[] {
@@ -780,6 +822,12 @@ async function runCli() {
     circuitCooldownMs: opts.circuitCooldownMs,
   })
 
+  let alcanceCamara: AlcanceCamara = { ok: true }
+  if ((opts.only === null || opts.only === "camara") && items.some((c) => c.ids?.camara != null)) {
+    alcanceCamara = await sondarAlcanceCamara()
+    if (!alcanceCamara.ok) logStderr(`camara: API inalcancavel no pre-voo (${alcanceCamara.motivo}); checks da Camara nao tentados`, opts.json)
+  }
+
   for (const c of items) {
     const seedShape: CheckResult["seed"] = {
       nome_completo: c.nome_completo,
@@ -788,7 +836,9 @@ async function runCli() {
     }
     if ((opts.only === null || opts.only === "camara") && c.ids?.camara != null) {
       camaraCount++
-      const r = await checkOne(c.slug, "camara", c.ids.camara, seedShape, opts, client)
+      const r = alcanceCamara.ok
+        ? await checkOne(c.slug, "camara", c.ids.camara, seedShape, opts, client)
+        : checkCamaraInalcancavel(c.slug, c.ids.camara, seedShape, alcanceCamara.motivo)
       results.push(r)
     }
     if ((opts.only === null || opts.only === "senado") && c.ids?.senado != null) {
@@ -816,6 +866,7 @@ async function runCli() {
     cohort_size: seed.length,
     checks: { camara: camaraCount, senado: senadoCount, skipped: skippedCount },
     summary,
+    camara_inalcancavel: alcanceCamara.ok ? null : { motivo: alcanceCamara.motivo, checks: contarCamaraInalcancavel(results) },
     results,
   }
 
@@ -832,7 +883,16 @@ async function runCli() {
     console.log(formatHuman(results, summary))
   }
 
-  if (opts.failOnMismatch && shouldFailGate(summary)) process.exit(1)
+  if (report.camara_inalcancavel) {
+    // Anotação do Actions: o job pode sair verde, mas não em silêncio.
+    const aviso =
+      `::warning title=Câmara inalcançável::${report.camara_inalcancavel.checks} check(s) de ID da Câmara ` +
+      `não verificados: ${report.camara_inalcancavel.motivo}`
+    if (opts.json) console.error(aviso)
+    else console.log(aviso)
+  }
+
+  if (opts.failOnMismatch && shouldFailGate(summary, contarCamaraInalcancavel(results))) process.exit(1)
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
