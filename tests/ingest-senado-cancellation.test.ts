@@ -31,6 +31,7 @@ test(`Senado: recibo e cancelamento com orçamento ${candidateTimeoutMs}ms`, asy
       if (url.pathname.endsWith("/autorias.json")) return response({ MateriasAutoriaParlamentar: { Parlamentar: { Codigo: "635", Autorias: { Autoria: [1, 2, 3].map(n => ({ IndicadorAutorPrincipal: "Sim", Materia: { Codigo: String(n), Sigla: "PL", Numero: String(n), Ano: 2020, Ementa: "Teste" } })) } } } })
       throw new Error(`Unexpected Senate request: ${url.pathname}`)
     }
+    if (url.pathname.endsWith("/candidaturas_fase_2026_publico")) return new Response(JSON.stringify({ code: "PGRST205", message: "Could not find the table candidaturas_fase_2026_publico in the schema cache" }), { status: 404 })
     if (url.pathname.endsWith("/candidatos_publico")) return response([{ slug: "ricardo-ferraco" }])
     if (url.pathname.endsWith("/votacoes_chave")) return response([])
     if (url.pathname.endsWith("/candidatos")) {

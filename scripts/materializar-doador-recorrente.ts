@@ -95,12 +95,14 @@ async function carregarEntrada() {
   )
   const candidatosPublicos = await lerPaginado<CandidatoPublicoRef>((from, to) =>
     supabase
+      // coorte-atualizacao: isento (materializa sobre dado já coletado; recortar mudaria o agregado de quem segue na disputa)
       .from("candidatos_publico")
       .select("id, slug, nome_completo, data_nascimento")
       .order("id")
       .range(from, to),
   )
   const todos = await lerPaginado<{ nome_completo: string | null }>((from, to) =>
+    // coorte-atualizacao: isento (nomes para detectar homônimo de doador)
     supabase.from("candidatos").select("nome_completo").order("id").range(from, to),
   )
   return { financiamentos, candidatosPublicos, nomesDeCandidatos: todos.map((c) => c.nome_completo) }

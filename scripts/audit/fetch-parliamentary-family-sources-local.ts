@@ -571,6 +571,7 @@ export function familySource(house: House, family: Family, officialId: string): 
 
 async function main(): Promise<void> {
   const destinationArg = option("destino")
+  // coorte-atualizacao: isento (recorte pelo perfis.json, que exportar-perfis-publicos já filtra pela coorte)
   const candidatesPath = option("candidatos") ?? "data/candidatos.json"
   if (!destinationArg) throw new Error("uso: --destino=<pasta privada> [--candidatos=data/candidatos.json] --public-profiles=<snapshot-privado.json> [--slugs-file=<lista-privada.txt>] [--anos-ceaps=2008,2026] [--camara-votacoes=arquivo.json] [--senado-votacoes=arquivo.json]")
   const destination = privateDestination(destinationArg)

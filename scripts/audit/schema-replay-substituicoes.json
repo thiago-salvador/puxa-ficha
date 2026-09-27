@@ -1,6 +1,7 @@
 {
   "_comentario": "Separacao aditiva das migrations mistas ja aplicadas. Os arquivos de origem permanecem imutaveis como historico de curadoria; o substituto puro de schema reproduz apenas a DDL. O replay de schema exclui uma origem somente se o hash continuar igual e o substituto existir e for schema puro.",
-  "schema_dump_sha256": "0326d95942bb7e48534fbb597fa9451281dd1e7dd698ca42bb0b0a2529919aac",
+  "schema_dump_sha256": "6e4c5529e7b4c61ed999b175377449074115d9075cc932f8d06fc0d9cc8b2efb",
+  "_comentario_pr531": "20260927050000 cria a fase eleitoral depois de 20260927040200. --schema-gate PG17 mediu 126 aplicadas, 403 puladas, zero falhas em 529 migrations; hash 6e4c5529e7b4c61ed999b175377449074115d9075cc932f8d06fc0d9cc8b2efb.",
   "_comentario_20260927040000": "Despublicacao em projetos_lei (colunas, politica publica, indice parcial, CHECK do snapshot): --schema-gate PG17 mediu 125 aplicadas, 403 puladas e zero falhas em 528 migrations; hash 0326d95942bb7e48534fbb597fa9451281dd1e7dd698ca42bb0b0a2529919aac.",
   "_comentario_20260927030200": "CHECK de data de nascimento sentinela em candidatos (DDL pura) depois de duas migrations somente de dados: --schema-gate PG17 mediu 124 aplicadas, 401 puladas e zero falhas em 525 migrations; hash eed309f35eff7889947a07d4ab2d71e988c0399595baa0f551f8fc8b870092a0.",
   "_comentario_20260926190100": "CHECK de numero CNJ em processos e a funcao processo_numero_cnj_valido: --schema-gate PG17 mediu 123 aplicadas, 397 puladas e zero falhas em 520 migrations; o dump mudou para 7fc51c84eabc8e22bd2dd1130cdf735eafc8df37bd57ba7e30e0b48bdcbb0fc1.",

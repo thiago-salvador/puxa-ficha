@@ -57,7 +57,7 @@ async function perfilGravado(
   process.env.SUPABASE_SERVICE_ROLE_KEY = "test-only"
   __resetSupabaseParaTeste()
   let patch: Record<string, unknown> = {}
-  const response = (data: unknown) => new Response(JSON.stringify(data), { headers: { "Content-Type": "application/json" } })
+  const response = (data: unknown, status = 200) => new Response(JSON.stringify(data), { status, headers: { "Content-Type": "application/json" } })
   globalThis.fetch = async (input, init) => {
     const url = new URL(String(input))
     const method = init?.method ?? "GET"
@@ -71,6 +71,7 @@ async function perfilGravado(
       if (url.pathname.endsWith("/9999/autorias.json")) return response({})
       throw new Error(`Unexpected Senate request: ${url.pathname}`)
     }
+    if (url.pathname.endsWith("/candidaturas_fase_2026_publico")) return response({ code: "PGRST205", message: "Could not find the table candidaturas_fase_2026_publico in the schema cache" }, 404)
     if (url.pathname.endsWith("/votacoes_chave")) return response([])
     if (url.pathname.endsWith("/projetos_lei")) {
       if (method !== "GET") throw new Error(`Unexpected projects write in Senate profile test: ${method}`)

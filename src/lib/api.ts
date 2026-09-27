@@ -12,7 +12,7 @@ import { unstableCacheWithSingleFlight } from "./cache-single-flight"
 import { normalizeVotoFromApi } from "@/lib/quiz-scoring"
 import { SIGLAS_PROJETO_LEI } from "@/lib/proposicao-natureza"
 import type { QuizAlignmentDataset, QuizCandidatoData, QuizContradicaoVoto, QuizPosicaoDeclarada } from "@/lib/quiz-types"
-import type { Candidato, Chapa2026, FichaCandidato, CandidatoComparavel, IndicadorEstadual, IndicadorEstadualRanking, DataResource, LegislacaoMandatoExecutivo, MudancaPartido, PatrimonioAusenciaOficial, ProjetoLei, SancoesVerificacao, TCUVerificacao, TransparenciaFamiliaPublica, TransparenciaFamiliaVerificacao } from "./types"
+import type { Candidato, Chapa2026, FaseEleitoral2026, FichaCandidato, CandidatoComparavel, IndicadorEstadual, IndicadorEstadualRanking, DataResource, LegislacaoMandatoExecutivo, MudancaPartido, PatrimonioAusenciaOficial, ProjetoLei, SancoesVerificacao, TCUVerificacao, TransparenciaFamiliaPublica, TransparenciaFamiliaVerificacao } from "./types"
 import { buildGlobalSearchIndexItems, GLOBAL_SEARCH_CANDIDATE_COLUMNS, mergeVotacaoTagsByCandidatoId, type GlobalSearchCandidateRow, type GlobalSearchIndexItem, type VotacaoSearchRow } from "@/lib/global-search"
 import {
   countPartySwitches,
@@ -958,6 +958,40 @@ async function fetchChapa2026(
 }
 
 /**
+ * Fase eleitoral 2026 da ficha (coorte de atualização pós-turno). Sem linha na
+ * view = em disputa, nota nenhuma. View ausente (banco antes da migration
+ * 20260927050000) degrada para `null`, como a de chapas; outro erro propaga.
+ */
+async function fetchFaseEleitoral2026(
+  candidatoId: string,
+  cacheMode: "no-store" | undefined,
+): Promise<FaseEleitoral2026 | null> {
+  const client = createServerSupabaseClient(cacheMode ? { cacheMode } : undefined)
+  const { data, error } = await withSupabaseRetry(
+    `candidaturas_fase_2026_publico(${candidatoId})`,
+    async (signal) =>
+      client
+        .from("candidaturas_fase_2026_publico")
+        .select("fase_eleitoral, fase_turno, atualizacao_encerrada_em")
+        .eq("candidato_id", candidatoId)
+        .abortSignal(signal)
+        .maybeSingle(),
+  )
+  if (isMissingFaseEleitoralViewError(error)) return null
+  if (error) throw new Error(`candidaturas_fase_2026_publico: ${error.message ?? error.code ?? "erro"}`)
+  return (data as FaseEleitoral2026 | null) ?? null
+}
+
+export function isMissingFaseEleitoralViewError(
+  error: { code?: string; message?: string } | null | undefined,
+): boolean {
+  if (!error) return false
+  if (error.code === "42P01" || error.code === "PGRST205") return true
+  const message = error.message?.toLowerCase() ?? ""
+  return message.includes("candidaturas_fase_2026_publico") && (message.includes("does not exist") || message.includes("could not find"))
+}
+
+/**
  * Lê em `coleta_log_ultima` a última tentativa de coleta de sanções para o
  * slug. É o que permite à ficha separar o zero provado ("consultamos CEIS,
  * CNEP e CEAF e veio vazio") do zero presumido ("nunca fomos lá").
@@ -1852,7 +1886,10 @@ async function getCandidatoBySlugFromRelationResource(
       ultimoPartidoHistorico,
     }),
   ).sort((a, b) => rankMudancaPartido(b) - rankMudancaPartido(a))
-  const chapa2026 = await fetchChapa2026(id, cacheMode)
+  const [chapa2026, faseEleitoral2026] = await Promise.all([
+    fetchChapa2026(id, cacheMode),
+    fetchFaseEleitoral2026(id, cacheMode),
+  ])
 
   const pontosPublicos = shouldUseServiceRole
     ? (pontos.data ?? [])
@@ -1909,6 +1946,7 @@ async function getCandidatoBySlugFromRelationResource(
     // jsonb bruto: parte das fichas guarda o crédito como string escalar.
     foto_credito: normalizeFotoCredito(candidato.foto_credito),
     chapa_2026: chapa2026,
+    fase_eleitoral_2026: faseEleitoral2026,
     site_campanha: resolveCampaignSite(candidato),
     historico: historicoConfiavel,
     mudancas_partido: mudancasRaw,

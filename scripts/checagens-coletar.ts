@@ -21,7 +21,8 @@ import { dirname, resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 import { createClient } from "@supabase/supabase-js"
 
-import { carregarCandidatos } from "./falas-monitoramento"
+import { carregarCandidatos, carregarCoorteAtualizacaoPublica } from "./falas-monitoramento"
+import { filtrarCoorteAtualizacao } from "./lib/coorte-atualizacao"
 import { EXECUCAO, montarLinhas } from "./lib/coleta-log"
 import {
   coletarChecagens,
@@ -152,7 +153,8 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
   const rosterCompleto = (rosterPath
     ? JSON.parse(readFileSync(resolve(rosterPath), "utf8"))
     : await carregarCandidatos()) as CandidatoChecagem[]
-  let roster = rosterCompleto
+  // coorte-atualizacao: aplica (alvos da coleta; o cadastro completo segue para os homônimos)
+  let roster = filtrarCoorteAtualizacao(rosterCompleto, await carregarCoorteAtualizacaoPublica(), "checagens")
   const retomar = valores.get("retomar")
   // Recibos anteriores passam pela regra de homônimo com o cadastro da rodada deles.
   const rosterAnterior = valores.get("roster-anterior")

@@ -552,7 +552,10 @@ export const MEDICAO_REPLAY = Object.freeze({
   // 124 -> 125: 20260927040000 adiciona a despublicacao em projetos_lei.
   // --schema-gate PG17 mediu 125 aplicadas, 403 puladas, zero falhas; hash
   // 0326d95942bb7e48534fbb597fa9451281dd1e7dd698ca42bb0b0a2529919aac.
-  schemaReplayTamanho: 125,
+  // 125 -> 126: 20260927050000 cria a fase eleitoral com RLS e view pública.
+  // --schema-gate PG17: 126 aplicadas, 403 puladas, zero falhas; hash
+  // 6e4c5529e7b4c61ed999b175377449074115d9075cc932f8d06fc0d9cc8b2efb.
+  schemaReplayTamanho: 126,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.
