@@ -3,6 +3,7 @@ import Link from "next/link"
 import { getImprensaDatasetCached } from "@/lib/imprensa-cache"
 import { normalizeImprensaFilters } from "@/lib/imprensa-data"
 import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
+import { IMPRENSA_UFS } from "@/lib/imprensa-uf-pack"
 import { isSenadoEnabled } from "@/lib/senado-feature"
 import styles from "./imprensa.module.css"
 
@@ -74,7 +75,7 @@ export default async function ImprensaSala() {
           {summary ? <>
             <p className="mt-2">{Object.values(summary.cargos).reduce((sum, n) => sum + n, 0)} candidatos · {summary.ufs} UFs com registros · coleta {generatedAt ? new Date(generatedAt).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short", timeZone: "UTC" }) + " UTC" : "sem data"}</p>
             <div className={styles.statsGrid}>
-              <CountCard title="Candidatos por cargo" values={summary.cargos} />
+              <CountCard title="Candidatos por cargo" values={summary.cargos} labels="cargo" />
               <CountCard title="Processos por estado do dado" values={summary.processos} />
               <CountCard title="Sites por estado do dado" values={summary.sites} />
               <CountCard title="Vice (Presidente e Governador)" values={summary.vice} />
@@ -95,6 +96,14 @@ export default async function ImprensaSala() {
           <div className="mt-3 flex flex-wrap gap-4"><Link className="underline" href="/imprensa/mesa?cargo=Presidente">Presidência</Link><Link className="underline" href="/imprensa/mesa?cargo=Governador">Governos estaduais</Link>{senateEnabled ? <Link className="underline" href="/imprensa/mesa?cargo=Senador">Senado</Link> : null}</div>
         </section>
 
+        <section id="pacotes-uf" className={styles.salaSection} aria-labelledby="pacotes-uf-title">
+          <h2 id="pacotes-uf-title" className={styles.salaTitle}>Pacotes por UF</h2>
+          <p className="mt-3">Abra um recorte estadual com candidatos por cargo, fichas, chapas, mudanças verificadas e lacunas.</p>
+          <nav className={styles.ufLinks} aria-label="Pacotes de imprensa por UF">
+            {IMPRENSA_UFS.map((uf) => <Link key={uf} href={`/imprensa/uf/${uf.toLowerCase()}`}>{uf}</Link>)}
+          </nav>
+        </section>
+
         <section id="ferramentas" className={styles.salaSection} aria-labelledby="ferramentas-title">
           <h2 id="ferramentas-title" className={styles.salaTitle}>Ferramentas</h2>
           <ul className="mt-3 grid gap-2 sm:grid-cols-2">
@@ -106,7 +115,7 @@ export default async function ImprensaSala() {
           </ul>
         </section>
 
-        <section id="kit" className={styles.salaSection} aria-labelledby="kit-title"><h2 id="kit-title" className={styles.salaTitle}>Kit de imprensa</h2><p className="mt-3">Logo, screenshots, textos e PDF: em preparação.</p></section>
+        <section id="kit" className={styles.salaSection} aria-labelledby="kit-title"><h2 id="kit-title" className={styles.salaTitle}>Kit de imprensa</h2><p className="mt-3">Textos, capturas da Sala, PDF e respostas para perguntas frequentes. Bio, foto e logo em SVG estão em preparação.</p><Link className="mt-3 inline-block underline" href="/imprensa/kit">Abrir kit de imprensa</Link></section>
         <section id="contato" className={styles.salaSection} aria-labelledby="contato-title"><h2 id="contato-title" className={styles.salaTitle}>Contato</h2><p className="mt-3">Para dúvidas e correções: <a className="underline" href="mailto:contato@puxaficha.com.br">contato@puxaficha.com.br</a>.</p></section>
         <section id="perguntas" className={styles.salaSection} aria-labelledby="perguntas-title"><h2 id="perguntas-title" className={styles.salaTitle}>Perguntas frequentes</h2><p className="mt-3">Quem faz e quem financia o projeto? Consulte as informações em <Link className="underline" href="/sobre">Sobre</Link>.</p></section>
         <section id="atualizacoes" className={styles.salaSection} aria-labelledby="atualizacoes-title"><h2 id="atualizacoes-title" className={styles.salaTitle}>Atualizações e frescor</h2><p className="mt-3"><Link className="underline" href="/imprensa/atualizacoes">Atualizações verificadas</Link> · <Link className="underline" href="/imprensa/frescor">Frescor das fontes</Link></p></section>
@@ -127,6 +136,6 @@ function labelState(state: string): string {
   return labels[state] ?? "Exige conferência"
 }
 
-function CountCard({ title, values }: { title: string; values: Record<string, number> }) {
-  return <div className={styles.countCard}><h3>{title}</h3><ul>{Object.entries(values).map(([label, value]) => <li key={label} className="flex justify-between gap-4"><span>{labelState(label)}</span><strong>{value}</strong></li>)}</ul></div>
+function CountCard({ title, values, labels = "state" }: { title: string; values: Record<string, number>; labels?: "cargo" | "state" }) {
+  return <div className={styles.countCard}><h3>{title}</h3><ul>{Object.entries(values).map(([label, value]) => <li key={label} className="flex justify-between gap-4"><span>{labels === "cargo" ? label : labelState(label)}</span><strong>{value}</strong></li>)}</ul></div>
 }

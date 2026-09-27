@@ -50,6 +50,9 @@
 .salaSection p, .salaSection li { font-size: 15px; line-height: 1.65; }
 .salaSection a { color: inherit; font-weight: 700; text-decoration: underline; text-decoration-color: #888; text-underline-offset: 3px; }
 .salaSection a:focus-visible { outline: 3px solid #f4b400; outline-offset: 3px; }
+.ufLinks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.ufLinks a { border: 1px solid #111; font-size: 12px; font-weight: 800; min-width: 42px; padding: 10px 8px; text-align: center; text-decoration: none; }
+.ufLinks a:hover { background: #111; color: #fff; }
 .statsGrid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); margin-top: 18px; }
 .countCard { background: #ffffff; border: 1px solid var(--rule); padding: 18px; }
 .countCard h3 { font-size: 12px; font-weight: 800; letter-spacing: .05em; line-height: 1.4; text-transform: uppercase; }
