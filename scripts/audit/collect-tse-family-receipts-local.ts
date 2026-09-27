@@ -53,6 +53,39 @@ export type MaterializedReadback = {
   core_fields?: string[]
   source_years?: number[]
 }
+type AuditedAction = { tipo: string; slug: string; antes?: Record<string, unknown>; depois?: Record<string, unknown>; linha?: Record<string, unknown> }
+
+/** Apply only the domain writes in the audited 2026 finance plan to a public snapshot.
+ * This is deliberately conservative: a missing or ambiguous public row leaves
+ * the snapshot unchanged, so the projected receipt cannot close by assumption.
+ */
+export function projectAuditedFinanceReadback(profile: CoverageProfile, actions: readonly AuditedAction[]): { profile: CoverageProfile; applied: string[] } {
+  let projected: CoverageProfile = { ...profile }
+  const applied: string[] = []
+  for (const action of actions) {
+    if (action.slug !== profile.slug) continue
+    if (action.tipo === "atualizar_financiamento" && action.depois) {
+      const rows = Array.isArray(projected.financiamento) ? projected.financiamento as Record<string, unknown>[] : []
+      const current = rows.filter((row) => Number(row.ano_eleicao) === 2026)
+      if (current.length !== 1 || (action.antes?.total_arrecadado !== undefined && Number(current[0]?.total_arrecadado) !== Number(action.antes.total_arrecadado))) continue
+      projected = { ...projected, financiamento: rows.map((row) => row === current[0] ? { ...row, ...action.depois } : row) }
+      applied.push(action.tipo)
+    } else if (action.tipo === "inserir_financiamento" && action.linha) {
+      const rows = Array.isArray(projected.financiamento) ? projected.financiamento as Record<string, unknown>[] : []
+      if (rows.some((row) => Number(row.ano_eleicao) === 2026)) continue
+      const series = Array.isArray(projected.financiamento_eleicoes) ? projected.financiamento_eleicoes as Record<string, unknown>[] : []
+      projected = { ...projected, financiamento: [...rows, action.linha], financiamento_eleicoes: [{ ano: 2026, estado: "publicado", fonte_url: null, verificado_em: null }, ...series.filter((row) => Number(row.ano) !== 2026)] }
+      applied.push(action.tipo)
+    } else if (action.tipo === "inserir_patrimonio" && action.linha) {
+      const rows = Array.isArray(projected.patrimonio) ? projected.patrimonio as Record<string, unknown>[] : []
+      if (rows.some((row) => Number(row.ano_eleicao) === 2026)) continue
+      const series = Array.isArray(projected.patrimonio_eleicoes) ? projected.patrimonio_eleicoes as Record<string, unknown>[] : []
+      projected = { ...projected, patrimonio: [...rows, action.linha], patrimonio_eleicoes: [{ ano: 2026, estado: "publicado", fonte_url: null, verificado_em: null }, ...series.filter((row) => Number(row.ano) !== 2026)] }
+      applied.push(action.tipo)
+    }
+  }
+  return { profile: projected, applied }
+}
 type Manifest = { assets: SourceAsset[] }
 
 async function sha256File(path: string): Promise<string> {
@@ -414,6 +447,10 @@ async function main(): Promise<void> {
   const publicProfilesPath = arg("public-profiles", false)
   if (materializedPath && publicProfilesPath) throw new Error("use somente um de --materialized e --public-profiles")
   const readback = publicProfilesPath ? readbackFromPublicProfiles(publicProfilesPath, candidates) : parseReadback(materializedPath)
+  const writerPlanPath = arg("writer-plan", false)
+  const writerActions = writerPlanPath
+    ? (JSON.parse(readFileSync(writerPlanPath, "utf8")) as { acoes?: AuditedAction[] }).acoes ?? []
+    : []
   const rowsByAsset = new Map<string, Row[]>()
   const parsedZip = new Map<string, Row[]>()
   const wantedSq = new Set(candidates.flatMap((candidate) => Object.values(candidate.ids?.tse_sq_candidato ?? {})))
@@ -441,6 +478,7 @@ async function main(): Promise<void> {
   }
   const receipts: Record<string, unknown>[] = []
   const diagnostics: Array<{ slug: string; family: TseFamily; reason: string }> = []
+  const applyProjection: Array<{ slug: string; family: TseFamily; writer_actions: string[]; post_write_readback_matches: boolean; reason: string }> = []
   for (const candidate of candidates) {
     if (!candidate.slug) continue
     for (const family of TSE_FAMILIES) {
@@ -449,9 +487,22 @@ async function main(): Promise<void> {
       const built = buildReceipt({ candidate, family, assets: familyAssets, sourceRowsByAsset: rowsByAsset, officialUf, readback: readback.get(`${candidate.slug}|${family}`), checkedAt })
       receipts.push(built.receipt)
       if (built.reason !== "ok") diagnostics.push({ slug: candidate.slug, family, reason: built.reason })
+      if (writerPlanPath && (family === "patrimonio" || family === "financiamento")) {
+        const current = readback.get(`${candidate.slug}|${family}`)
+        const familyActions = writerActions.filter((action) => family === "patrimonio"
+          ? action.tipo === "inserir_patrimonio" || action.tipo === "apagar_ausencia_patrimonio"
+          : action.tipo === "inserir_financiamento" || action.tipo === "atualizar_financiamento" || action.tipo === "apagar_verificacao")
+        const simulated = current ? projectAuditedFinanceReadback(current.public_profile, familyActions) : null
+        const after = simulated && current ? buildReceipt({ candidate, family, assets: familyAssets, sourceRowsByAsset: rowsByAsset, officialUf,
+          readback: { ...current, public_profile: simulated.profile }, checkedAt }) : null
+        applyProjection.push({ slug: candidate.slug, family, writer_actions: simulated?.applied ?? [],
+          post_write_readback_matches: after?.reason === "ok", reason: after?.reason ?? "snapshot_missing" })
+      }
     }
   }
-  const output = { schema_version: 1, generated_at: checkedAt, source: "TSE Dados Abertos", receipts, diagnostics, contract: { identity: "SQ_CANDIDATO+UF+ANO_ELEICAO", raw_rows_emitted: false, source_revision_is_array: true, materialized_readback_digest: "sha256(stable(canonical selected fields))" } }
+  const output = { schema_version: 1, generated_at: checkedAt, source: "TSE Dados Abertos", receipts, diagnostics,
+    ...(writerPlanPath ? { apply_projection: applyProjection } : {}),
+    contract: { identity: "SQ_CANDIDATO+UF+ANO_ELEICAO", raw_rows_emitted: false, source_revision_is_array: true, materialized_readback_digest: "sha256(stable(canonical selected fields))" } }
   mkdirSync(dirname(outPath), { recursive: true })
   const temporary = `${outPath}.${process.pid}.tmp`
   writeFileSync(temporary, `${JSON.stringify(output, null, 2)}\n`, { mode: 0o600, flag: "wx" })

@@ -1,4 +1,7 @@
 import assert from "node:assert/strict"
+import { mkdtempSync, mkdirSync, rmSync, writeFileSync } from "node:fs"
+import { tmpdir } from "node:os"
+import { join } from "node:path"
 import test from "node:test"
 import { withExplicitCohort } from "../scripts/lib/cohort-context"
 
@@ -9,7 +12,9 @@ import {
   historicalUrl,
   officialPackages2026,
   parseCliOptions,
+  projectedClosure,
   selectCandidateCohort,
+  summarizeOpenCells,
 } from "../scripts/tse-local/ingest-tse-local"
 import type { DivulgaCandidateSummary } from "../scripts/tse-local/divulga-candidate"
 
@@ -39,6 +44,43 @@ test("adds only verified previous SQ links and leaves conflicting curated SQ unt
   assert.equal((conflict.candidates[0]?.ids as { tse_sq_candidato: Record<string, string> }).tse_sq_candidato["2018"], "99999")
   assert.equal((conflict.candidates[0]?.ids as { tse_divulga_prior_uf: Record<string, string> }).tse_divulga_prior_uf["2018"], undefined)
   assert.equal(enrichSeedWithDivulga(seed, [{ ...summary, sqCandidato: "12345" }]).candidates[0], seed[0])
+})
+
+test("apply projection counts only post-write matches and preserves annual confirmed zero", () => {
+  const root = mkdtempSync(join(tmpdir(), "tse-projection-"))
+  try {
+    const planDir = join(root, "plan")
+    mkdirSync(planDir)
+    writeFileSync(join(planDir, "plano-1.json"), JSON.stringify({ planned: [{ alvo: "history", familia: "historico_politico", fonte: "tse-historico" }] }))
+    const cells = join(root, "cells.jsonl")
+    writeFileSync(cells, ["history|historico_politico", "wealth|patrimonio", "finance|financiamento", "risk|financiamento", "party|mudancas_partido"].map((key) => {
+      const [slug, familia] = key.split("|")
+      return JSON.stringify({ slug, familia })
+    }).join("\n"))
+    const family = join(root, "family.json")
+    const history = join(root, "history.json")
+    const party = join(root, "party.json")
+    const projection = join(root, "projection.json")
+    writeFileSync(family, JSON.stringify({ diagnostics: [{ slug: "wealth", family: "patrimonio", reason: "official_row_missing_or_identity_mismatch" }] }))
+    writeFileSync(history, JSON.stringify({ receipts: [] }))
+    writeFileSync(party, JSON.stringify({ receipts: [{ alvo: "party", fonte: "tse-partido-candidatura", resultado: "indeterminado", detalhe: JSON.stringify({ motivo: "transições públicas não derivam da sequência oficial de partidos por candidatura" }) }] }))
+    writeFileSync(projection, JSON.stringify({ apply_projection: [
+      { slug: "finance", family: "financiamento", writer_actions: ["atualizar_financiamento"], post_write_readback_matches: true, reason: "ok" },
+      { slug: "risk", family: "financiamento", writer_actions: ["atualizar_financiamento"], post_write_readback_matches: true, reason: "ok" },
+    ] }))
+    const official = [{ slug: "wealth", status: "ok", bens: [], totalDeBens: 0, source: "https://divulgacandcontas.tse.jus.br/fixture" }] as unknown as DivulgaCandidateSummary[]
+    const profiles = [{ slug: "wealth", patrimonio: [], patrimonio_eleicoes: [{ ano: 2026, estado: "vazio_confirmado", fonte_url: "https://cdn.tse.jus.br/fixture" }] }]
+    const result = projectedClosure(summarizeOpenCells(cells, null), [planDir], projection, family, history, official, profiles, new Set(["risk"]), party)
+    assert.equal(result.closed_now, 1)
+    assert.equal(result.projected_after_safe_write, 1)
+    assert.equal(result.by_source["tse-patrimonio"]?.scope_vazio_confirmado_2026, 1)
+    assert.equal(result.by_source["tse-financiamento"]?.identity_review, 1)
+    assert.equal(result.by_source["tse-partido-candidatura"]?.scope_rule_review, 1)
+    assert.equal(result.cells.find((row) => row.slug === "finance")?.post_write_readback_matches, true)
+    assert.equal(result.cells.find((row) => row.slug === "history")?.writer_status, "no_audited_domain_writer")
+  } finally {
+    rmSync(root, { recursive: true, force: true })
+  }
 })
 
 test("CLI defaults to dry-run so scheduled runs can measure sources without a profile snapshot", () => {

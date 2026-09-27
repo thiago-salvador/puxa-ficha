@@ -1,0 +1,1687 @@
+{
+  "schemaVersion": 1,
+  "geradoEm": "2026-09-27",
+  "escopo": "Propostas de SQ 2026 para os 21 perfis sem chave curada na etapa 2. Revisão do owner; nenhuma promoção ao seed.",
+  "summary": {
+    "total": 21,
+    "porClasseAnterior": {
+      "revisao_identidade": 13,
+      "proxima_possivel_urna": 5,
+      "nao_localizado_pelos_matchers": 1,
+      "sem entrada": 2
+    },
+    "faixaRevisao": [
+      {
+        "slug": "ataides-oliveira",
+        "p": 0.63
+      },
+      {
+        "slug": "augusto-cury",
+        "p": 0.58
+      },
+      {
+        "slug": "camila-falcao",
+        "p": 0.65
+      },
+      {
+        "slug": "gabriel-azevedo",
+        "p": 0.48
+      },
+      {
+        "slug": "ricardo-cappelli",
+        "p": 0.64
+      }
+    ],
+    "acima065": 16,
+    "pAbaixo035": 0
+  },
+  "sources": {
+    "divulgaCandContas": {
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/#/home",
+      "eleicao": "Eleição Geral Federal 2026",
+      "ultimaAtualizacaoVisivel": "27/09/2026 04:59",
+      "metodo": "lista headful filtrada por nome, UF e cargo; lista oficial consultada para os 21 registros",
+      "candidateListsBase": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/"
+    },
+    "consultaCand2026": {
+      "arquivo": "codex/corrigir-532-final/assets/2026-perfil_atual-consulta_cand_2026-0c99ac82ed45.zip",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+      "sha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+      "camposExtraidos": [
+        "SQ_CANDIDATO",
+        "NM_CANDIDATO",
+        "NM_URNA_CANDIDATO",
+        "SG_UF",
+        "DS_CARGO",
+        "SG_PARTIDO",
+        "NR_CANDIDATO",
+        "DT_NASCIMENTO",
+        "DS_SITUACAO_CANDIDATURA"
+      ]
+    },
+    "profileSnapshot": {
+      "arquivo": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+      "sha256": "9143f8014ee7a868644634b8aff36a350dfde41c0ef3f7aee606033839f72683",
+      "dataNascimentoNota": "Os valores batem com o registro TSE 2026 e sua origem na ficha não foi demonstrada como independente; o classificador exige uma fonte anterior ao pleito para usar nascimento como chave."
+    },
+    "identityStage": {
+      "arquivo": "data/identidade-etapa2-2026.json",
+      "sha256": "8b816fbaa2b4c56b715141eb22bb00e434ddff9df67f9a7ea60b30d136bbd859",
+      "sourceSnapshot": "TSE de 01/09/2026 19:31:05; janela de pedidos termina em 15/08"
+    }
+  },
+  "jev": {
+    "modelo": "jev-1.13.0",
+    "questions": 42,
+    "perguntasComCriteria": 21,
+    "perguntasSemCriteria": 21,
+    "lintComCriteria": {
+      "questions": 21,
+      "findings": 0
+    },
+    "promptSelection": "Variante com criteria escolhida: p alto = sim, pergunta positiva, critérios explicam nome, contexto e limite da data circular; o linter aprovou sem achados. Sem golden rotulado, a comparação serve apenas para sensibilidade, não para acurácia.",
+    "comCriteriaPChanges": 21,
+    "tokenUsage": {
+      "input_tokens": 19339,
+      "output_tokens": 1236
+    },
+    "faixaRevisao": "p entre 0.35 e 0.65, inclusivo; enviar ao owner para revisão humana."
+  },
+  "policy": {
+    "cpf": "nenhum campo CPF/Título foi extraído do ZIP; não armazenar ou registrar esses identificadores",
+    "seedPromotion": "proibida nesta proposta; apenas revisão do owner",
+    "safeWriterOnly": true
+  },
+  "codeEvidence": [
+    "scripts/lib/identidade-etapa2-classificador.ts:L188-L200 (nascimento independente deve ser anterior ao pleito)",
+    "scripts/lib/identidade-etapa2-classificador.ts:L331-L383 (nome civil/subconjunto sem chave independente continua revisão)",
+    "scripts/lib/identidade-etapa2.ts:L116-L128 (só match_fresco pode expor chave)",
+    "scripts/lib/identidade-etapa2.ts:L257-L290 (gate falha fechado)"
+  ],
+  "propostas": [
+    {
+      "slug": "andre-luis",
+      "classeAnterior": "revisao_identidade",
+      "motivoAnterior": "nome civil da ficha é subconjunto do nome TSE + cargo + UF; identidade não confirmada por chave independente",
+      "proposta": {
+        "sqCandidato": "100002544076",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "André Luís Caetano dos Santos",
+        "nomeUrna": "André Luís",
+        "dataNascimento": "1984-09-24",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "MA",
+        "cargo": "Governador",
+        "partido": "MISSÃO",
+        "historicoAnos": [
+          {
+            "ano": 2026,
+            "cargo": "Candidato a Governador",
+            "uf": "MA",
+            "partido": "MISSAO"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "100002544076",
+        "nomeCivil": "ANDRÉ LUÍS CAETANO DOS SANTOS",
+        "nomeUrna": "ANDRÉ LUIS",
+        "dataNascimento": "24/09/1984",
+        "uf": "MA",
+        "cargo": "GOVERNADOR",
+        "partido": "MISSÃO",
+        "numero": "14",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "MA",
+        "cargo": "GOVERNADOR",
+        "termo": "ANDRÉ LUÍS CAETANO DOS SANTOS",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORDESTE/MA/20322002026",
+        "linhaVisivel": "ANDRÉ LUIS - ANDRÉ LUÍS CAETANO DOS SANTOS - MISSÃO Concorrendo 14",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.77,
+        "pSemCriteria": 0.67,
+        "delta": 0.1,
+        "promptComCriteria": "mesma_pessoa_andre-luis_com_criterios",
+        "disposicao": "proposta_owner_review_acima_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORDESTE/MA/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "ataides-oliveira",
+      "classeAnterior": "revisao_identidade",
+      "motivoAnterior": "nome civil 1:1 + cargo + UF, mas nome de urna diverge; identidade não confirmada por critério completo (falta nome de urna)",
+      "proposta": {
+        "sqCandidato": "270002548412",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Ataídes de Oliveira",
+        "nomeUrna": "Ataides Oliveira",
+        "dataNascimento": "1959-12-18",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "TO",
+        "cargo": "Governador",
+        "partido": "NOVO",
+        "historicoAnos": [
+          {
+            "ano": 2010,
+            "cargo": "1º SUPLENTE SENADOR",
+            "uf": "TO",
+            "partido": "PSDB"
+          },
+          {
+            "ano": 2014,
+            "cargo": "Governador",
+            "uf": "TO",
+            "partido": "PROS"
+          },
+          {
+            "ano": 2018,
+            "cargo": "Senador",
+            "uf": "TO",
+            "partido": "PSDB"
+          },
+          {
+            "ano": 2022,
+            "cargo": "Senador",
+            "uf": "TO",
+            "partido": "PROS"
+          },
+          {
+            "ano": 2026,
+            "cargo": "Governador",
+            "uf": "TO",
+            "partido": "NOVO"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "270002548412",
+        "nomeCivil": "ATAIDES DE OLIVEIRA",
+        "nomeUrna": "ATAIDES DE OLIVEIRA",
+        "dataNascimento": "18/12/1959",
+        "uf": "TO",
+        "cargo": "GOVERNADOR",
+        "partido": "NOVO",
+        "numero": "30",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "TO",
+        "cargo": "GOVERNADOR",
+        "termo": "ATAIDES DE OLIVEIRA",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORTE/TO/20322002026",
+        "linhaVisivel": "ATAIDES DE OLIVEIRA - ATAIDES DE OLIVEIRA - NOVO Concorrendo 30",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.63,
+        "pSemCriteria": 0.51,
+        "delta": 0.12,
+        "promptComCriteria": "mesma_pessoa_ataides-oliveira_com_criterios",
+        "disposicao": "revisao_humana_intervalo_0.35_a_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORTE/TO/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "augusto-cury",
+      "classeAnterior": "revisao_identidade",
+      "motivoAnterior": "nome civil 1:1 + cargo + UF, mas nome de urna diverge; identidade não confirmada por critério completo (falta nome de urna)",
+      "proposta": {
+        "sqCandidato": "280002551547",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Augusto Jorge Cury",
+        "nomeUrna": "Augusto Cury",
+        "dataNascimento": "1958-10-02",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "BR",
+        "cargo": "Presidente",
+        "partido": "AVANTE",
+        "historicoAnos": [
+          {
+            "ano": 2026,
+            "cargo": "Presidente",
+            "uf": "BR",
+            "partido": "AVANTE"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "280002551547",
+        "nomeCivil": "AUGUSTO JORGE CURY",
+        "nomeUrna": "ESCRITOR AUGUSTO CURY",
+        "dataNascimento": "02/10/1958",
+        "uf": "BR",
+        "cargo": "PRESIDENTE",
+        "partido": "AVANTE",
+        "numero": "70",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "BR",
+        "cargo": "PRESIDENTE",
+        "termo": "AUGUSTO JORGE CURY",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/BR/BR/20322002026",
+        "linhaVisivel": "ESCRITOR AUGUSTO CURY - AUGUSTO JORGE CURY - BRASIL DOS NOSSOS SONHOS Concorrendo 70",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.58,
+        "pSemCriteria": 0.44,
+        "delta": 0.14,
+        "promptComCriteria": "mesma_pessoa_augusto-cury_com_criterios",
+        "disposicao": "revisao_humana_intervalo_0.35_a_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/BR/BR/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "camila-falcao",
+      "classeAnterior": "revisao_identidade",
+      "motivoAnterior": "nome civil da ficha é subconjunto do nome TSE + cargo + UF; identidade não confirmada por chave independente",
+      "proposta": {
+        "sqCandidato": "170002537320",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Maria Camila da Silva Falcão",
+        "nomeUrna": "Camila Falcão",
+        "dataNascimento": "1989-06-07",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "PE",
+        "cargo": "Governador",
+        "partido": "UP",
+        "historicoAnos": [
+          {
+            "ano": 2026,
+            "cargo": "Candidata a Governadora de Pernambuco",
+            "uf": "PE",
+            "partido": "UP"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "170002537320",
+        "nomeCivil": "MARIA CAMILA DA SILVA FALCÃO",
+        "nomeUrna": "PROFESSORA CAMILA",
+        "dataNascimento": "07/06/1989",
+        "uf": "PE",
+        "cargo": "GOVERNADOR",
+        "partido": "UP",
+        "numero": "80",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "PE",
+        "cargo": "GOVERNADOR",
+        "termo": "MARIA CAMILA DA SILVA FALCÃO",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORDESTE/PE/20322002026",
+        "linhaVisivel": "PROFESSORA CAMILA - MARIA CAMILA DA SILVA FALCÃO - UP Concorrendo 80",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.65,
+        "pSemCriteria": 0.41,
+        "delta": 0.24,
+        "promptComCriteria": "mesma_pessoa_camila-falcao_com_criterios",
+        "disposicao": "revisao_humana_intervalo_0.35_a_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORDESTE/PE/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "cleitinho",
+      "classeAnterior": "revisao_identidade",
+      "motivoAnterior": "nome civil 1:1 + cargo + UF, mas nome de urna diverge; identidade não confirmada por critério completo (falta nome de urna)",
+      "proposta": {
+        "sqCandidato": "130002552296",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Cleiton Gontijo de Azevedo",
+        "nomeUrna": "Cleitinho",
+        "dataNascimento": "1982-04-15",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "MG",
+        "cargo": "Governador",
+        "partido": "REPUBLICANOS",
+        "historicoAnos": [
+          {
+            "ano": 2022,
+            "cargo": "Senador",
+            "uf": "MG",
+            "partido": "PSC"
+          },
+          {
+            "ano": 2026,
+            "cargo": "Governador",
+            "uf": "MG",
+            "partido": "REPUBLICANOS"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "130002552296",
+        "nomeCivil": "CLEITON GONTIJO DE AZEVEDO",
+        "nomeUrna": "CLEITINHO AZEVEDO",
+        "dataNascimento": "15/04/1982",
+        "uf": "MG",
+        "cargo": "GOVERNADOR",
+        "partido": "REPUBLICANOS",
+        "numero": "10",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "MG",
+        "cargo": "GOVERNADOR",
+        "termo": "CLEITON GONTIJO DE AZEVEDO",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/SUDESTE/MG/20322002026",
+        "linhaVisivel": "CLEITINHO AZEVEDO - CLEITON GONTIJO DE AZEVEDO - MINAS É DO POVO Concorrendo 10",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.66,
+        "pSemCriteria": 0.5,
+        "delta": 0.16,
+        "promptComCriteria": "mesma_pessoa_cleitinho_com_criterios",
+        "disposicao": "proposta_owner_review_acima_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/SUDESTE/MG/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "dr-helton-monteiro",
+      "classeAnterior": "revisao_identidade",
+      "motivoAnterior": "nome civil 1:1 + cargo + UF, mas nome de urna diverge; identidade não confirmada por critério completo (falta nome de urna)",
+      "proposta": {
+        "sqCandidato": "260002547415",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "José Helton Silva Monteiro",
+        "nomeUrna": "Dr. Helton Monteiro",
+        "dataNascimento": "1976-02-18",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "SE",
+        "cargo": "Governador",
+        "partido": "PSOL",
+        "historicoAnos": [
+          {
+            "ano": 2026,
+            "cargo": "Governador",
+            "uf": "SE",
+            "partido": "PSOL"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "260002547415",
+        "nomeCivil": "JOSE HELTON SILVA MONTEIRO",
+        "nomeUrna": "DR. HELTON",
+        "dataNascimento": "18/02/1976",
+        "uf": "SE",
+        "cargo": "GOVERNADOR",
+        "partido": "PSOL",
+        "numero": "50",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "SE",
+        "cargo": "GOVERNADOR",
+        "termo": "JOSE HELTON SILVA MONTEIRO",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORDESTE/SE/20322002026",
+        "linhaVisivel": "DR. HELTON - JOSE HELTON SILVA MONTEIRO - FEDERAÇÃO PSOL REDE(50-PSOL/18-REDE) Concorrendo 50",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.71,
+        "pSemCriteria": 0.56,
+        "delta": 0.15,
+        "promptComCriteria": "mesma_pessoa_dr-helton-monteiro_com_criterios",
+        "disposicao": "proposta_owner_review_acima_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORDESTE/SE/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "gabriel-azevedo",
+      "classeAnterior": "revisao_identidade",
+      "motivoAnterior": "nome civil 1:1 + cargo + UF, mas nome de urna diverge; identidade não confirmada por critério completo (falta nome de urna)",
+      "proposta": {
+        "sqCandidato": "130002549557",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Gabriel Sousa Marques de Azevedo",
+        "nomeUrna": "Gabriel Azevedo",
+        "dataNascimento": "1989-02-16",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "MG",
+        "cargo": "Governador",
+        "partido": "MDB",
+        "historicoAnos": [
+          {
+            "ano": 2020,
+            "cargo": "Vereador",
+            "uf": "MG",
+            "partido": "PATRIOTA"
+          },
+          {
+            "ano": 2024,
+            "cargo": "Prefeito",
+            "uf": "MG",
+            "partido": "MDB"
+          },
+          {
+            "ano": 2026,
+            "cargo": "Governador",
+            "uf": "MG",
+            "partido": "MDB"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "130002549557",
+        "nomeCivil": "GABRIEL SOUSA MARQUES DE AZEVEDO",
+        "nomeUrna": "GABRIEL",
+        "dataNascimento": "12/03/1986",
+        "uf": "MG",
+        "cargo": "GOVERNADOR",
+        "partido": "MDB",
+        "numero": "15",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "MG",
+        "cargo": "GOVERNADOR",
+        "termo": "GABRIEL SOUSA MARQUES DE AZEVEDO",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/SUDESTE/MG/20322002026",
+        "linhaVisivel": "GABRIEL - GABRIEL SOUSA MARQUES DE AZEVEDO - MDB Concorrendo 15",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.48,
+        "pSemCriteria": 0.28,
+        "delta": 0.2,
+        "promptComCriteria": "mesma_pessoa_gabriel-azevedo_com_criterios",
+        "disposicao": "revisao_humana_intervalo_0.35_a_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/SUDESTE/MG/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "gisvaldo-oliveira",
+      "classeAnterior": "revisao_identidade",
+      "motivoAnterior": "nome civil 1:1 + cargo + UF, mas nome de urna diverge; identidade não confirmada por critério completo (falta nome de urna)",
+      "proposta": {
+        "sqCandidato": "180002549970",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Gisvaldo Oliveira da Silva",
+        "nomeUrna": "Gisvaldo Oliveira",
+        "dataNascimento": "1978-06-10",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "PI",
+        "cargo": "Governador",
+        "partido": "PSOL",
+        "historicoAnos": [
+          {
+            "ano": 2026,
+            "cargo": "Candidato a Governador do Piauí",
+            "uf": "PI",
+            "partido": "PSOL"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "180002549970",
+        "nomeCivil": "GISVALDO OLIVEIRA DA SILVA",
+        "nomeUrna": "PROFESSOR GISVALDO",
+        "dataNascimento": "10/06/1978",
+        "uf": "PI",
+        "cargo": "GOVERNADOR",
+        "partido": "PSOL",
+        "numero": "50",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "PI",
+        "cargo": "GOVERNADOR",
+        "termo": "GISVALDO OLIVEIRA DA SILVA",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORDESTE/PI/20322002026",
+        "linhaVisivel": "PROFESSOR GISVALDO - GISVALDO OLIVEIRA DA SILVA - FEDERAÇÃO PSOL REDE(50-PSOL/18-REDE) Concorrendo 50",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.7,
+        "pSemCriteria": 0.54,
+        "delta": 0.16,
+        "promptComCriteria": "mesma_pessoa_gisvaldo-oliveira_com_criterios",
+        "disposicao": "proposta_owner_review_acima_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORDESTE/PI/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "joao-henrique-catan",
+      "classeAnterior": "revisao_identidade",
+      "motivoAnterior": "nome civil da ficha é subconjunto do nome TSE + cargo + UF; identidade não confirmada por chave independente",
+      "proposta": {
+        "sqCandidato": "120002552191",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "João Henrique Miranda Soares Catan",
+        "nomeUrna": "Joao Henrique Catan",
+        "dataNascimento": "1988-04-19",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "MS",
+        "cargo": "Governador",
+        "partido": "NOVO",
+        "historicoAnos": [
+          {
+            "ano": 2016,
+            "cargo": "Vereador",
+            "uf": "MS",
+            "partido": "PSDB"
+          },
+          {
+            "ano": 2018,
+            "cargo": "Deputado Estadual",
+            "uf": "MS",
+            "partido": "PR"
+          },
+          {
+            "ano": 2020,
+            "cargo": "Prefeito",
+            "uf": "MS",
+            "partido": "PL"
+          },
+          {
+            "ano": 2026,
+            "cargo": "Governador",
+            "uf": "MS",
+            "partido": "NOVO"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "120002552191",
+        "nomeCivil": "JOÃO HENRIQUE MIRANDA SOARES CATAN",
+        "nomeUrna": "JOÃO HENRIQUE CATAN",
+        "dataNascimento": "19/04/1988",
+        "uf": "MS",
+        "cargo": "GOVERNADOR",
+        "partido": "NOVO",
+        "numero": "30",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "MS",
+        "cargo": "GOVERNADOR",
+        "termo": "JOÃO HENRIQUE MIRANDA SOARES CATAN",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/CENTRO%20OESTE/MS/20322002026",
+        "linhaVisivel": "JOÃO HENRIQUE CATAN - JOÃO HENRIQUE MIRANDA SOARES CATAN - NOVO Concorrendo 30",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.84,
+        "pSemCriteria": 0.7,
+        "delta": 0.14,
+        "promptComCriteria": "mesma_pessoa_joao-henrique-catan_com_criterios",
+        "disposicao": "proposta_owner_review_acima_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/CENTRO%20OESTE/MS/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "lais-chaud",
+      "classeAnterior": "revisao_identidade",
+      "motivoAnterior": "nome civil da ficha é subconjunto do nome TSE + cargo + UF; identidade não confirmada por chave independente",
+      "proposta": {
+        "sqCandidato": "240002550544",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Laís Paganelli Chaud",
+        "nomeUrna": "Laís Chaud",
+        "dataNascimento": "1995-03-27",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "SC",
+        "cargo": "Governador",
+        "partido": "UP",
+        "historicoAnos": [
+          {
+            "ano": 2026,
+            "cargo": "Candidata ao Governo de Santa Catarina",
+            "uf": "SC",
+            "partido": "UP"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "240002550544",
+        "nomeCivil": "LAÍS PAGANELLI CHAUD",
+        "nomeUrna": "LAÍS CHAUD",
+        "dataNascimento": "27/03/1995",
+        "uf": "SC",
+        "cargo": "GOVERNADOR",
+        "partido": "UP",
+        "numero": "80",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "SC",
+        "cargo": "GOVERNADOR",
+        "termo": "LAÍS PAGANELLI CHAUD",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/SUL/SC/20322002026",
+        "linhaVisivel": "LAÍS CHAUD - LAÍS PAGANELLI CHAUD - UP Concorrendo 80",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.87,
+        "pSemCriteria": 0.82,
+        "delta": 0.05,
+        "promptComCriteria": "mesma_pessoa_lais-chaud_com_criterios",
+        "disposicao": "proposta_owner_review_acima_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/SUL/SC/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "natasha-slhessarenko",
+      "classeAnterior": "revisao_identidade",
+      "motivoAnterior": "nome civil da ficha é subconjunto do nome TSE + cargo + UF; identidade não confirmada por chave independente",
+      "proposta": {
+        "sqCandidato": "110002544985",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Natasha Slhessarenko Fraife Barreto",
+        "nomeUrna": "Natasha Slhessarenko",
+        "dataNascimento": "1967-11-23",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "MT",
+        "cargo": "Governador",
+        "partido": "PSD",
+        "historicoAnos": [
+          {
+            "ano": 2026,
+            "cargo": "Governador",
+            "uf": "MT",
+            "partido": "PSD"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "110002544985",
+        "nomeCivil": "NATASHA SLHESSARENKO FRAIFE BARRETO",
+        "nomeUrna": "DOUTORA NATASHA",
+        "dataNascimento": "23/11/1967",
+        "uf": "MT",
+        "cargo": "GOVERNADOR",
+        "partido": "PSD",
+        "numero": "55",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "MT",
+        "cargo": "GOVERNADOR",
+        "termo": "NATASHA SLHESSARENKO FRAIFE BARRETO",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/CENTRO%20OESTE/MT/20322002026",
+        "linhaVisivel": "DOUTORA NATASHA - NATASHA SLHESSARENKO FRAIFE BARRETO - MATO GROSSO PARA TODOS Concorrendo 55",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.75,
+        "pSemCriteria": 0.52,
+        "delta": 0.23,
+        "promptComCriteria": "mesma_pessoa_natasha-slhessarenko_com_criterios",
+        "disposicao": "proposta_owner_review_acima_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/CENTRO%20OESTE/MT/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "pazolini",
+      "classeAnterior": "revisao_identidade",
+      "motivoAnterior": "nome civil da ficha é subconjunto do nome TSE + cargo + UF; identidade não confirmada por chave independente",
+      "proposta": {
+        "sqCandidato": "80002552682",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Lorenzo Silva de Pazolini",
+        "nomeUrna": "Pazolini",
+        "dataNascimento": "1982-05-20",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "ES",
+        "cargo": "Governador",
+        "partido": "REPUBLICANOS",
+        "historicoAnos": [
+          {
+            "ano": 2026,
+            "cargo": "Governador",
+            "uf": "ES",
+            "partido": "REPUBLICANOS"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "80002552682",
+        "nomeCivil": "LORENZO SILVA DE PAZOLINI",
+        "nomeUrna": "LORENZO PAZOLINI",
+        "dataNascimento": "20/05/1982",
+        "uf": "ES",
+        "cargo": "GOVERNADOR",
+        "partido": "REPUBLICANOS",
+        "numero": "10",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "ES",
+        "cargo": "GOVERNADOR",
+        "termo": "LORENZO SILVA DE PAZOLINI",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/SUDESTE/ES/20322002026",
+        "linhaVisivel": "LORENZO PAZOLINI - LORENZO SILVA DE PAZOLINI - PAZ PRA VIVER UM NOVO TEMPO Concorrendo 10",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.73,
+        "pSemCriteria": 0.58,
+        "delta": 0.15,
+        "promptComCriteria": "mesma_pessoa_pazolini_com_criterios",
+        "disposicao": "proposta_owner_review_acima_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/SUDESTE/ES/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "witer-naves",
+      "classeAnterior": "revisao_identidade",
+      "motivoAnterior": "nome civil 1:1 + cargo + UF, mas nome de urna diverge; identidade não confirmada por critério completo (falta nome de urna)",
+      "proposta": {
+        "sqCandidato": "270002539187",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Witer Fonseca Naves",
+        "nomeUrna": "Witer Naves",
+        "dataNascimento": "1971-07-11",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "TO",
+        "cargo": "Governador",
+        "partido": "PSOL",
+        "historicoAnos": [
+          {
+            "ano": 2026,
+            "cargo": "Governador",
+            "uf": "TO",
+            "partido": "PSOL"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "270002539187",
+        "nomeCivil": "WITER FONSECA NAVES",
+        "nomeUrna": "PROF WITER NAVES",
+        "dataNascimento": "11/07/1971",
+        "uf": "TO",
+        "cargo": "GOVERNADOR",
+        "partido": "PSOL",
+        "numero": "50",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "TO",
+        "cargo": "GOVERNADOR",
+        "termo": "WITER FONSECA NAVES",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORTE/TO/20322002026",
+        "linhaVisivel": "PROF WITER NAVES - WITER FONSECA NAVES - FEDERAÇÃO PSOL REDE(50-PSOL/18-REDE) Concorrendo 50",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.68,
+        "pSemCriteria": 0.6,
+        "delta": 0.08,
+        "promptComCriteria": "mesma_pessoa_witer-naves_com_criterios",
+        "disposicao": "proposta_owner_review_acima_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORTE/TO/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "adailton-furia",
+      "classeAnterior": "proxima_possivel_urna",
+      "motivoAnterior": "só nome de urna casa; nome civil diverge (possível homônimo ou registro com outro nome civil)",
+      "proposta": {
+        "sqCandidato": "220002536806",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Adailton Antunes Ferreira",
+        "nomeUrna": "Adailton Furia",
+        "dataNascimento": "1986-09-24",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "RO",
+        "cargo": "Governador",
+        "partido": "PSD",
+        "historicoAnos": [
+          {
+            "ano": 2008,
+            "cargo": "Vereador",
+            "uf": "RO",
+            "partido": "PSDB"
+          },
+          {
+            "ano": 2014,
+            "cargo": "Deputado Estadual",
+            "uf": "RO",
+            "partido": "PRB"
+          },
+          {
+            "ano": 2016,
+            "cargo": "Prefeito",
+            "uf": "RO",
+            "partido": "PRB"
+          },
+          {
+            "ano": 2020,
+            "cargo": "Prefeito",
+            "uf": "RO",
+            "partido": "PSD"
+          },
+          {
+            "ano": 2026,
+            "cargo": "Governador",
+            "uf": "RO",
+            "partido": "PSD"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "220002536806",
+        "nomeCivil": "ADAILTON ANTUNES FERREIRA",
+        "nomeUrna": "ADAILTON FURIA",
+        "dataNascimento": "24/09/1986",
+        "uf": "RO",
+        "cargo": "GOVERNADOR",
+        "partido": "PSD",
+        "numero": "55",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "RO",
+        "cargo": "GOVERNADOR",
+        "termo": "ADAILTON ANTUNES FERREIRA",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORTE/RO/20322002026",
+        "linhaVisivel": "ADAILTON FURIA - ADAILTON ANTUNES FERREIRA - GENTE QUE GOSTA DE GENTE Concorrendo 55",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.89,
+        "pSemCriteria": 0.81,
+        "delta": 0.08,
+        "promptComCriteria": "mesma_pessoa_adailton-furia_com_criterios",
+        "disposicao": "proposta_owner_review_acima_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORTE/RO/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "lucien-rezende",
+      "classeAnterior": "proxima_possivel_urna",
+      "motivoAnterior": "só nome de urna casa; nome civil diverge (possível homônimo ou registro com outro nome civil)",
+      "proposta": {
+        "sqCandidato": "120002532257",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Lucien Roberto Garcia de Rezende",
+        "nomeUrna": "Lucien Rezende",
+        "dataNascimento": "1964-02-08",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "MS",
+        "cargo": "Governador",
+        "partido": "PSOL",
+        "historicoAnos": [
+          {
+            "ano": 2008,
+            "cargo": "Vereador",
+            "uf": "MS",
+            "partido": "PSOL"
+          },
+          {
+            "ano": 2012,
+            "cargo": "Vice-Prefeito",
+            "uf": "MS",
+            "partido": "PSOL"
+          },
+          {
+            "ano": 2014,
+            "cargo": "Senador",
+            "uf": "MS",
+            "partido": "PSOL"
+          },
+          {
+            "ano": 2018,
+            "cargo": "Deputado Federal",
+            "uf": "MS",
+            "partido": "PSOL"
+          },
+          {
+            "ano": 2026,
+            "cargo": "Governador",
+            "uf": "MS",
+            "partido": "PSOL"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "120002532257",
+        "nomeCivil": "LUCIEN ROBERTO GARCIA DE REZENDE",
+        "nomeUrna": "LUCIEN REZENDE",
+        "dataNascimento": "08/02/1964",
+        "uf": "MS",
+        "cargo": "GOVERNADOR",
+        "partido": "PSOL",
+        "numero": "50",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "MS",
+        "cargo": "GOVERNADOR",
+        "termo": "LUCIEN ROBERTO GARCIA DE REZENDE",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/CENTRO%20OESTE/MS/20322002026",
+        "linhaVisivel": "LUCIEN REZENDE - LUCIEN ROBERTO GARCIA DE REZENDE - FEDERAÇÃO PSOL REDE(50-PSOL/18-REDE) Concorrendo 50",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.84,
+        "pSemCriteria": 0.69,
+        "delta": 0.15,
+        "promptComCriteria": "mesma_pessoa_lucien-rezende_com_criterios",
+        "disposicao": "proposta_owner_review_acima_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/CENTRO%20OESTE/MS/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "mailza-assis",
+      "classeAnterior": "proxima_possivel_urna",
+      "motivoAnterior": "só nome de urna casa; nome civil diverge (possível homônimo ou registro com outro nome civil)",
+      "proposta": {
+        "sqCandidato": "10002544107",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Mailza Assis Cameli",
+        "nomeUrna": "Mailza Assis",
+        "dataNascimento": "1976-12-10",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "AC",
+        "cargo": "Governador",
+        "partido": "PP",
+        "historicoAnos": [
+          {
+            "ano": 2014,
+            "cargo": "1o Suplente Senador",
+            "uf": "AC",
+            "partido": "PSDB"
+          },
+          {
+            "ano": 2026,
+            "cargo": "GOVERNADOR",
+            "uf": "AC",
+            "partido": "PP"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "10002544107",
+        "nomeCivil": "MAILZA ASSIS CAMELI",
+        "nomeUrna": "MAILZA ASSIS",
+        "dataNascimento": "10/12/1976",
+        "uf": "AC",
+        "cargo": "GOVERNADOR",
+        "partido": "PP",
+        "numero": "11",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "AC",
+        "cargo": "GOVERNADOR",
+        "termo": "MAILZA ASSIS CAMELI",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORTE/AC/20322002026",
+        "linhaVisivel": "MAILZA ASSIS - MAILZA ASSIS CAMELI - AVANÇA ACRE Concorrendo 11",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.77,
+        "pSemCriteria": 0.78,
+        "delta": -0.01,
+        "promptComCriteria": "mesma_pessoa_mailza-assis_com_criterios",
+        "disposicao": "proposta_owner_review_acima_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORTE/AC/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "mauricio-coelho",
+      "classeAnterior": "proxima_possivel_urna",
+      "motivoAnterior": "só nome de urna casa; nome civil diverge (possível homônimo ou registro com outro nome civil)",
+      "proposta": {
+        "sqCandidato": "110002553058",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Mauricio Coelho de Souza Junior",
+        "nomeUrna": "Mauricio Coelho",
+        "dataNascimento": "1994-04-18",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "MT",
+        "cargo": "Governador",
+        "partido": "MOBILIZA",
+        "historicoAnos": [
+          {
+            "ano": 2026,
+            "cargo": "Governador",
+            "uf": "MT",
+            "partido": "MOBILIZA"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "110002553058",
+        "nomeCivil": "MAURICIO COELHO DE SOUZA JUNIOR",
+        "nomeUrna": "MAURICIO COELHO",
+        "dataNascimento": "18/04/1994",
+        "uf": "MT",
+        "cargo": "GOVERNADOR",
+        "partido": "MOBILIZA",
+        "numero": "33",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "MT",
+        "cargo": "GOVERNADOR",
+        "termo": "MAURICIO COELHO DE SOUZA JUNIOR",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/CENTRO%20OESTE/MT/20322002026",
+        "linhaVisivel": "MAURICIO COELHO - MAURICIO COELHO DE SOUZA JUNIOR - MOBILIZA Concorrendo 33",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.86,
+        "pSemCriteria": 0.75,
+        "delta": 0.11,
+        "promptComCriteria": "mesma_pessoa_mauricio-coelho_com_criterios",
+        "disposicao": "proposta_owner_review_acima_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/CENTRO%20OESTE/MT/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "orleans-brandao",
+      "classeAnterior": "proxima_possivel_urna",
+      "motivoAnterior": "só nome de urna casa; nome civil diverge (possível homônimo ou registro com outro nome civil)",
+      "proposta": {
+        "sqCandidato": "100002543869",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Carlos Orleans Braide Brandão",
+        "nomeUrna": "Orleans Brandao",
+        "dataNascimento": "1994-12-08",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "MA",
+        "cargo": "Governador",
+        "partido": "MDB",
+        "historicoAnos": [
+          {
+            "ano": 2026,
+            "cargo": "Governador",
+            "uf": "MA",
+            "partido": "MDB"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "100002543869",
+        "nomeCivil": "CARLOS ORLEANS BRAIDE BRANDÃO",
+        "nomeUrna": "ORLEANS BRANDÃO",
+        "dataNascimento": "08/12/1994",
+        "uf": "MA",
+        "cargo": "GOVERNADOR",
+        "partido": "MDB",
+        "numero": "15",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "MA",
+        "cargo": "GOVERNADOR",
+        "termo": "CARLOS ORLEANS BRAIDE BRANDÃO",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORDESTE/MA/20322002026",
+        "linhaVisivel": "ORLEANS BRANDÃO - CARLOS ORLEANS BRAIDE BRANDÃO - AVANÇO POR TODO MARANHÃO Concorrendo 15",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.82,
+        "pSemCriteria": 0.71,
+        "delta": 0.11,
+        "promptComCriteria": "mesma_pessoa_orleans-brandao_com_criterios",
+        "disposicao": "proposta_owner_review_acima_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORDESTE/MA/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "classeAnterior": "nao_localizado_pelos_matchers",
+      "motivoAnterior": "nenhum registro 2026 compatível por nome civil, urna, cargo ou UF no snapshot de 08/08 (janela de registro aberta até 15/08)",
+      "proposta": {
+        "sqCandidato": "70002551557",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Ricardo Garcia Cappelli",
+        "nomeUrna": "Ricardo Cappelli",
+        "dataNascimento": "1972-02-11",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "DF",
+        "cargo": "Governador",
+        "partido": "PSB",
+        "historicoAnos": [
+          {
+            "ano": 2026,
+            "cargo": "Governador",
+            "uf": "DF",
+            "partido": "PSB"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "70002551557",
+        "nomeCivil": "RICARDO GARCIA CAPPELLI",
+        "nomeUrna": "CAPPELLI",
+        "dataNascimento": "11/02/1972",
+        "uf": "DF",
+        "cargo": "GOVERNADOR",
+        "partido": "PSB",
+        "numero": "40",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "DF",
+        "cargo": "GOVERNADOR",
+        "termo": "RICARDO GARCIA CAPPELLI",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/CENTRO%20OESTE/DF/20322002026",
+        "linhaVisivel": "CAPPELLI - RICARDO GARCIA CAPPELLI - PSB Concorrendo 40",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.64,
+        "pSemCriteria": 0.5,
+        "delta": 0.14,
+        "promptComCriteria": "mesma_pessoa_ricardo-cappelli_com_criterios",
+        "disposicao": "revisao_humana_intervalo_0.35_a_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/CENTRO%20OESTE/DF/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "cadu-xavier",
+      "classeAnterior": "sem entrada",
+      "motivoAnterior": "sem entrada no registro de etapa 2",
+      "proposta": {
+        "sqCandidato": "200002534001",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Carlos Eduardo Xavier",
+        "nomeUrna": "Cadu de Lula",
+        "dataNascimento": "1978-06-14",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "RN",
+        "cargo": "Governador",
+        "partido": "PT",
+        "historicoAnos": [
+          {
+            "ano": 2026,
+            "cargo": "Governador",
+            "uf": "RN",
+            "partido": "PT"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "200002534001",
+        "nomeCivil": "CARLOS EDUARDO XAVIER",
+        "nomeUrna": "CADU DE LULA",
+        "dataNascimento": "14/06/1978",
+        "uf": "RN",
+        "cargo": "GOVERNADOR",
+        "partido": "PT",
+        "numero": "13",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "RN",
+        "cargo": "GOVERNADOR",
+        "termo": "CARLOS EDUARDO XAVIER",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORDESTE/RN/20322002026",
+        "linhaVisivel": "CADU DE LULA - CARLOS EDUARDO XAVIER - TIME QUE CUIDA Concorrendo 13",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.85,
+        "pSemCriteria": 0.9,
+        "delta": -0.05,
+        "promptComCriteria": "mesma_pessoa_cadu-xavier_com_criterios",
+        "disposicao": "proposta_owner_review_acima_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORDESTE/RN/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    },
+    {
+      "slug": "renato-gomes",
+      "classeAnterior": "sem entrada",
+      "motivoAnterior": "sem entrada no registro de etapa 2",
+      "proposta": {
+        "sqCandidato": "120002549681",
+        "decisao": "proposta_para_revisao_do_owner_sem_promocao_no_seed"
+      },
+      "perfil": {
+        "nomeCivil": "Renato Wanderley Gomes",
+        "nomeUrna": "Renato Gomes",
+        "dataNascimento": "1986-02-19",
+        "dataNascimentoProveniencia": "snapshot do perfil de 27/09; o valor também consta do registro TSE 2026, portanto não é chave de identidade independente",
+        "uf": "MS",
+        "cargo": "Governador",
+        "partido": "DC",
+        "historicoAnos": [
+          {
+            "ano": 2026,
+            "cargo": "Governador",
+            "uf": "MS",
+            "partido": "DC"
+          }
+        ]
+      },
+      "candidatoOficial": {
+        "sq": "120002549681",
+        "nomeCivil": "RENATO WANDERLEY GOMES",
+        "nomeUrna": "ECONOMISTA RENATO GOMES",
+        "dataNascimento": "19/02/1986",
+        "uf": "MS",
+        "cargo": "GOVERNADOR",
+        "partido": "DC",
+        "numero": "27",
+        "status": "#NE",
+        "ano": "2026",
+        "fonte": "consulta_cand_2026.zip (TSE)"
+      },
+      "consultaHeadful": {
+        "uf": "MS",
+        "cargo": "GOVERNADOR",
+        "termo": "RENATO WANDERLEY GOMES",
+        "rota": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/CENTRO%20OESTE/MS/20322002026",
+        "linhaVisivel": "ECONOMISTA RENATO GOMES - RENATO WANDERLEY GOMES - DC Concorrendo 27",
+        "observacao": "consulta nominal na lista atual do DivulgaCandContas em Chrome; o SQ da rota de detalhe foi conferido quando a navegação forneceu o identificador"
+      },
+      "Jev": {
+        "model": "jev-1.13.0",
+        "tipo": "Noul same person?",
+        "pMesmaPessoa": 0.66,
+        "pSemCriteria": 0.52,
+        "delta": 0.14,
+        "promptComCriteria": "mesma_pessoa_renato-gomes_com_criterios",
+        "disposicao": "proposta_owner_review_acima_0.65",
+        "goldenRotulado": false
+      },
+      "evidence": {
+        "profileSource": "fechamento-26-09/dry-run-coletores-27-09/perfis.json",
+        "identityStageSource": "data/identidade-etapa2-2026.json",
+        "seedSource": "data/candidatos.json",
+        "officialZipSha256": "0c99ac82ed450940aa1d6dbacb6842b4a90912645ed8ecb3d411aff1a75c46b5",
+        "headfulListUrl": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/CENTRO%20OESTE/MS/20322002026",
+        "code": [
+          "scripts/lib/identidade-etapa2-classificador.ts:L188-L200",
+          "scripts/lib/identidade-etapa2-classificador.ts:L331-L383",
+          "scripts/lib/identidade-etapa2.ts:L116-L128",
+          "scripts/lib/identidade-etapa2.ts:L257-L290"
+        ]
+      }
+    }
+  ]
+}

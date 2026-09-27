@@ -225,7 +225,7 @@ function writePrivate(path: string, value: unknown): void {
   chmodSync(path, 0o600)
 }
 
-function summarizeOpenCells(path: string | null, cohortSlugs: ReadonlySet<string> | null) {
+export function summarizeOpenCells(path: string | null, cohortSlugs: ReadonlySet<string> | null) {
   if (!path) return { supplied: false, rows: null, in_cohort: null, by_state: {} as Record<string, number>, cells: [] as Array<{ slug: string; family: string | null }> }
   let rows = 0
   const byState: Record<string, number> = {}
@@ -246,7 +246,9 @@ function summarizeOpenCells(path: string | null, cohortSlugs: ReadonlySet<string
   return { supplied: true, rows, in_cohort: uniqueCells.length, by_state: byState, cells: uniqueCells }
 }
 
-function projectedClosure(openCells: ReturnType<typeof summarizeOpenCells>, directories: readonly string[]) {
+export function projectedClosure(openCells: ReturnType<typeof summarizeOpenCells>, directories: readonly string[], projectionPath: string | null,
+  familyReceiptsPath: string, historyReceiptsPath: string, divulgaSummaries: readonly DivulgaCandidateSummary[] | null,
+  profiles: readonly CandidateProfile[] = [], identityRiskSlugs: ReadonlySet<string> = new Set(), partyReceiptsPath?: string) {
   const planned: Array<{ alvo?: string; familia?: string; fonte?: string }> = []
   for (const directory of directories) {
     if (!existsSync(directory)) continue
@@ -256,14 +258,61 @@ function projectedClosure(openCells: ReturnType<typeof summarizeOpenCells>, dire
     const parsed = JSON.parse(readFileSync(join(directory, latest), "utf8")) as { planned?: typeof planned }
     planned.push(...(parsed.planned ?? []))
   }
-  if (!openCells.supplied) return { measured: false, projected_closed: null, projected_open: null, by_source: {} as Record<string, number> }
-  const bySource: Record<string, number> = {}
-  const closed = openCells.cells.filter((cell) => planned.some((row) => row.alvo === cell.slug && (!cell.family || row.familia === cell.family)))
-  for (const cell of openCells.cells) {
-    const source = planned.find((row) => row.alvo === cell.slug && (!cell.family || row.familia === cell.family))?.fonte
-    if (source) bySource[source] = (bySource[source] ?? 0) + 1
+  if (!openCells.supplied) return { measured: false, closed_now: null, projected_after_safe_write: null, by_source: {} }
+  const read = (path: string): { receipts?: Array<{ alvo?: string; fonte?: string; detalhe?: string; resultado?: string }>; diagnostics?: Array<{ slug: string; family: string; reason: string }>; apply_projection?: Array<{ slug: string; family: string; writer_actions: string[]; post_write_readback_matches: boolean; reason: string }> } =>
+    existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : {}
+  const family = read(familyReceiptsPath)
+  const history = read(historyReceiptsPath)
+  const party = partyReceiptsPath ? read(partyReceiptsPath) : { receipts: [] }
+  const projection = projectionPath ? read(projectionPath) : {}
+  const diagnostic = new Map((family.diagnostics ?? []).map((row) => [`${row.slug}|${row.family}`, row.reason]))
+  const simulated = new Map((projection.apply_projection ?? []).map((row) => [`${row.slug}|${row.family}`, row]))
+  const official2026 = new Map((divulgaSummaries ?? []).map((row) => [row.slug, row]))
+  const profileBySlug = new Map(profiles.filter((row): row is CandidateProfile & { slug: string } => typeof row.slug === "string").map((row) => [row.slug, row]))
+  const results = openCells.cells.map((cell) => {
+    const source = cell.family === "patrimonio" ? "tse-patrimonio" : cell.family === "financiamento" ? "tse-financiamento" : cell.family === "historico_politico" ? "tse-historico" : cell.family === "mudancas_partido" ? "tse-partido-candidatura" : "sem-fonte"
+    const now = planned.some((row) => row.alvo === cell.slug && row.familia === cell.family)
+    const counterfactual = simulated.get(`${cell.slug}|${cell.family}`)
+    const after = !now && !identityRiskSlugs.has(cell.slug) && Boolean(counterfactual?.writer_actions.length && counterfactual.post_write_readback_matches)
+    const sourceReceipt = [...(history.receipts ?? []), ...(party.receipts ?? [])]
+      .find((row) => row.alvo === cell.slug && row.fonte === source)
+    let sourceReason = sourceReceipt?.resultado ?? "sem_recibo"
+    if (cell.family === "mudancas_partido" && sourceReceipt?.detalhe) {
+      try {
+        const detail = JSON.parse(sourceReceipt.detalhe) as { motivo?: string }
+        sourceReason = detail.motivo ?? sourceReason
+      } catch { /* resultado do recibo continua disponível */ }
+    }
+    const reason = diagnostic.get(`${cell.slug}|${cell.family}`) ?? sourceReason
+    const candidate = official2026.get(cell.slug)
+    const profile = profileBySlug.get(cell.slug)
+    const annual = Array.isArray(profile?.patrimonio_eleicoes) ? profile.patrimonio_eleicoes as Array<{ ano?: number; estado?: string; fonte_url?: string }> : []
+    const published = Array.isArray(profile?.patrimonio) ? profile.patrimonio as Array<{ ano_eleicao?: number }> : []
+    const empty2026 = cell.family === "patrimonio" && diagnostic.get(`${cell.slug}|${cell.family}`) === "official_row_missing_or_identity_mismatch" &&
+      candidate?.status === "ok" && Array.isArray(candidate.bens) && candidate.bens.length === 0 && candidate.totalDeBens === 0 &&
+      !published.some((row) => row.ano_eleicao === 2026) && annual.some((row) => row.ano === 2026 && row.estado === "vazio_confirmado" && /^https:\/\//.test(row.fonte_url ?? ""))
+    const category = now ? "closed_now" : empty2026 ? "scope_vazio_confirmado_2026"
+      : cell.family === "patrimonio" && reason === "source_manifest_incomplete" ? "scope_outside_supported_series"
+        : identityRiskSlugs.has(cell.slug) || /identity|uf_|sq_|ambig|curated/i.test(reason) ? "identity_review"
+          : after ? "projected_after_safe_write"
+        : cell.family === "mudancas_partido" ? "scope_rule_review"
+          : /materialized_readback|indeterminado/i.test(reason) ? "stale_not_projected" : "unresolved"
+    return { slug: cell.slug, family: cell.family, fonte: source, category, reason: counterfactual?.reason ?? reason,
+      writer_actions: counterfactual?.writer_actions ?? [],
+      writer_status: counterfactual ? counterfactual.writer_actions.length ? "simulated_action" : "no_planned_action"
+        : cell.family === "historico_politico" || cell.family === "mudancas_partido" ? "no_audited_domain_writer" : "projection_unavailable",
+      post_write_readback_matches: counterfactual?.post_write_readback_matches ?? null,
+      ...(empty2026 ? { proof_url: candidate.source } : {}) }
+  })
+  const bySource: Record<string, Record<string, number>> = {}
+  for (const result of results) {
+    const source = bySource[result.fonte] ?? {}
+    source[result.category] = (source[result.category] ?? 0) + 1
+    bySource[result.fonte] = source
   }
-  return { measured: true, projected_closed: closed.length, projected_open: Math.max(0, openCells.in_cohort! - closed.length), by_source: bySource }
+  return { measured: true, closed_now: results.filter((row) => row.category === "closed_now").length,
+    projected_after_safe_write: results.filter((row) => row.category === "projected_after_safe_write").length,
+    by_source: bySource, cells: results }
 }
 
 function privateDirectory(path: string): string {
@@ -549,7 +598,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
   const historyCoverageOut = join(outDir, "coverage-plan-historico")
   const historyCoverage = historico.ok && cohort && existsSync(receiptPath)
     ? runScript("scripts/audit/apply-coverage-receipts.ts", [
-      `--in=${receiptPath}`, `--out-dir=${historyCoverageOut}`, "--allow-fonte=tse-historico", `--profiles=${cohortProfilesPath}`,
+      `--in=${receiptPath}`, `--out-dir=${historyCoverageOut}`, "--allow-fonte=tse-historico,tse-partido-candidatura", `--profiles=${cohortProfilesPath}`,
     ])
     : { ok: false, code: null, reason: "recibos históricos não calculados" }
 
@@ -570,6 +619,40 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     const financeArgs = [`--out=${financeOut}`]
     finance = runScript("scripts/tse-2026-financas.ts", financeArgs, financeEnv)
   }
+  const projectionOut = join(outDir, "recibos-familias-projecao.json")
+  const financePlanPath = join(financeOut, "plano-privado.json")
+  const projectionStep = generic.ok && finance.ok && existsSync(financePlanPath) && cohort
+    ? runScript("scripts/audit/collect-tse-family-receipts-local.ts", [
+      `--manifest=${freshManifestPath}`, `--out=${projectionOut}`, `--candidates=${enrichedCandidatesPath}`,
+      `--public-profiles=${cohortProfilesPath}`, `--writer-plan=${financePlanPath}`,
+    ]) : { ok: false, code: null, reason: "plano auditado ou snapshot ausente; projeção não calculada" }
+  const identityRiskSlugs = new Set<string>(historico.ok && existsSync(reviewPath)
+    ? ((JSON.parse(readFileSync(reviewPath, "utf8")) as { itens?: Array<{ slug?: string; tipo?: string }> }).itens ?? [])
+      .filter((item) => item.tipo === "identidade" && typeof item.slug === "string").map((item) => item.slug!) : [])
+  for (const candidate of cohort?.candidates ?? []) {
+    const ids = candidate.ids && typeof candidate.ids === "object" ? candidate.ids as Record<string, unknown> : {}
+    const sqs = ids.tse_sq_candidato && typeof ids.tse_sq_candidato === "object" ? ids.tse_sq_candidato as Record<string, unknown> : {}
+    if (!sqs["2026"] && typeof candidate.slug === "string") identityRiskSlugs.add(candidate.slug)
+  }
+  if (generic.ok && existsSync(genericReceiptsPath)) {
+    const diagnostics = (JSON.parse(readFileSync(genericReceiptsPath, "utf8")) as { diagnostics?: Array<{ slug: string; reason: string }> }).diagnostics ?? []
+    for (const diagnostic of diagnostics) {
+      if (diagnostic.reason === "uf_identity_missing") identityRiskSlugs.add(diagnostic.slug)
+    }
+  }
+  if (finance.ok && existsSync(financePlanPath)) {
+    const reviews = (JSON.parse(readFileSync(financePlanPath, "utf8")) as {
+      revisao?: Array<{ slug: string; familia: string; motivo: string }>
+    }).revisao ?? []
+    for (const review of reviews) {
+      if (review.familia === "patrimonio" && review.motivo === "patrimonio_divergente") {
+        identityRiskSlugs.add(review.slug)
+      }
+    }
+  }
+  const auditedActions = finance.ok && existsSync(financePlanPath)
+    ? (JSON.parse(readFileSync(financePlanPath, "utf8")) as { acoes?: Array<{ slug: string }> }).acoes ?? [] : []
+  const identityRiskActions = auditedActions.filter((action) => identityRiskSlugs.has(action.slug)).length
 
   const liveApply: Record<string, StepResult> = {}
   if (isLiveMode(options.mode)) {
@@ -580,7 +663,8 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     const planShaMatches = Boolean(financePlanSha && financePlanSha === options.expectedPlanSha?.toLowerCase())
     const allHistoryFresh = HISTORICAL_YEARS.every((year) => freshAssets.some((asset) => asset.family === "historico_politico" && asset.year === year))
     const gates = [allHistoryFresh, requiredLiveAssets, errors.length === 0, assets.every((asset) => !asset.reused_cache),
-      Boolean(cohort?.profiles.length), profileExport.ok, historico.ok, generic.ok, coverage.ok, historyCoverage.ok, finance.ok, planShaMatches]
+      Boolean(cohort?.profiles.length), profileExport.ok, historico.ok, generic.ok, coverage.ok, historyCoverage.ok, finance.ok, projectionStep.ok,
+      identityRiskActions === 0, planShaMatches]
     if (gates.some((passed) => !passed)) {
       liveApply.preflight = { ok: false, code: null, reason: "--live recusado: requer ativos CDN frescos completos, coorte, recibos, planos válidos e SHA financeiro revisado coincidente" }
     } else {
@@ -591,7 +675,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
       ])
       if (liveApply.familias.ok) {
         liveApply.historico = runScript("scripts/audit/apply-coverage-receipts.ts", [
-          `--in=${receiptPath}`, `--out-dir=${historyCoverageOut}`, "--allow-fonte=tse-historico", `--profiles=${cohortProfilesPath}`,
+          `--in=${receiptPath}`, `--out-dir=${historyCoverageOut}`, "--allow-fonte=tse-historico,tse-partido-candidatura", `--profiles=${cohortProfilesPath}`,
           "--apply", `--execucao=${executionId}-historico`,
         ])
       } else liveApply.historico = { ok: false, code: null, reason: "bloqueado porque apply das famílias falhou" }
@@ -627,11 +711,15 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
       coverage_dry_run: stepSummary(coverage),
       history_coverage_dry_run: stepSummary(historyCoverage),
       finance_planner: stepSummary(finance),
+      apply_projection: stepSummary(projectionStep),
+      identity_risk_actions_blocked: identityRiskActions,
+      identity_risk_profiles: identityRiskSlugs.size,
       family_receipts: stepSummary(generic),
       live_apply: Object.fromEntries(Object.entries(liveApply).map(([name, result]) => [name, stepSummary(result)])),
     },
     historical_scope_complete: HISTORICAL_YEARS.every((year) => options.historicalYears.includes(year)),
-    projected_open_cell_closure: projectedClosure(openCells, [coverageOut, historyCoverageOut]),
+    projected_open_cell_closure: projectedClosure(openCells, [coverageOut, historyCoverageOut], projectionStep.ok ? projectionOut : null,
+      applyFamilyReceiptsPath, receiptPath, divulgaSummaries, cohort?.profiles ?? [], identityRiskSlugs),
     assets_reused_from_verified_cache: assets.filter((asset) => asset.reused_cache).map(({ family, year, sha256 }) => ({ family, year, sha256 })),
     artifacts: { manifest: manifestPath, acquisition_failure_receipts: acquisitionFailureReceiptsPath, historico: receiptPath, review: reviewPath, family_receipts: genericReceiptsPath, apply_family_receipts: applyFamilyReceiptsPath, coverage_plan: coverageOut, history_coverage_plan: historyCoverageOut, ...(divulgaFallback.artifact ? { divulga_fallback: divulgaFallback.artifact } : {}), ...(divulgaFinancing ? { divulga_financing: divulgaFinancingPath } : {}) },
   }

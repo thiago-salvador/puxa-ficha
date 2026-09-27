@@ -42,11 +42,14 @@ import {
   belongsToIdentity,
   fichaPessoa,
   historicoRevisionVerdict,
+  partidoPorCandidaturaReceipt,
+  PARTIDO_CANDIDATURA_FONTE,
   seedAnchors,
   tseCandidacyFromCsv,
   type HistoricoReceipt,
   type HistoricoReviewItem,
   type HistoricoSourceRevision,
+  type PartidoCandidaturaReceipt,
   type SeedCandidate,
   type SenadoSource,
   type TseCandidacyRow,
@@ -167,7 +170,15 @@ function summarize(receipts: readonly HistoricoReceipt[], review: readonly Histo
   return { recibos: receipts.length, por_resultado: porResultado, itens_revisao: review.length, revisao_por_tipo: porRevisao }
 }
 
-export type HistoricoRevisionRun = { receipts: HistoricoReceipt[]; review: HistoricoReviewItem[] }
+export type HistoricoRevisionRun = { receipts: HistoricoReceipt[]; partyReceipts: PartidoCandidaturaReceipt[]; review: HistoricoReviewItem[] }
+
+function sourceFailurePartyReceipts(profiles: readonly CoverageProfile[], motivo: string, checkedAt: string, url: string | null): PartidoCandidaturaReceipt[] {
+  return profiles.filter((profile) => typeof profile.slug === "string" && typeof profile.id === "string").map((profile) => ({
+    fonte: PARTIDO_CANDIDATURA_FONTE, escopo: "candidato", alvo: profile.slug as string, candidato_id: profile.id as string,
+    resultado: "erro", volume: 0, url, executado_em: checkedAt,
+    detalhe: JSON.stringify({ contract_version: 1, kind: "partido-por-candidatura", family: "mudancas_partido", scope: "partido_em_cada_candidatura", motivo }),
+  }))
+}
 
 /**
  * Rodada completa, sem escrita: `anosObrigatorios` é o escopo exigido para
@@ -190,7 +201,8 @@ export async function runHistoricoRevision(options: {
   const { anos, profiles, seed, manifest, checkedAt } = options
   const piso = (year: number) => options.minLinhasPorAno ?? pisoLinhasDoAno(year)
   if (options.falhaFonte || !manifest) {
-    return { receipts: sourceFailureReceipts(profiles, `pacote TSE não lido: ${options.falhaFonte ?? "manifesto ausente"}`, anos, checkedAt, null), review: [] }
+    const motivo = `pacote TSE não lido: ${options.falhaFonte ?? "manifesto ausente"}`
+    return { receipts: sourceFailureReceipts(profiles, motivo, anos, checkedAt, null), partyReceipts: sourceFailurePartyReceipts(profiles, motivo, checkedAt, null), review: [] }
   }
   const assets = (manifest.assets ?? []).filter((asset) => asset.family === "historico_politico" && anos.includes(asset.year))
   const byYear = new Map<number, ManifestAsset>()
@@ -203,7 +215,8 @@ export async function runHistoricoRevision(options: {
   const missing = anos.filter((year) => !byYear.has(year))
   if (missing.length) {
     const reasons = (manifest.pending ?? []).filter((item) => item.family === "historico_politico" && missing.includes(Number(item.year))).map((item) => `${item.year}: ${item.reason ?? "?"}`)
-    return { receipts: sourceFailureReceipts(profiles, `pacote TSE ausente para ${missing.join(",")}${reasons.length ? ` (${reasons.join("; ").slice(0, 300)})` : ""}`, anos, checkedAt, null), review: [] }
+    const motivo = `pacote TSE ausente para ${missing.join(",")}${reasons.length ? ` (${reasons.join("; ").slice(0, 300)})` : ""}`
+    return { receipts: sourceFailureReceipts(profiles, motivo, anos, checkedAt, null), partyReceipts: sourceFailurePartyReceipts(profiles, motivo, checkedAt, null), review: [] }
   }
   const seedBySlug = new Map(seed.map((candidate) => [candidate.slug, candidate]))
   const wantedAnchors = new Set<string>()
@@ -220,7 +233,8 @@ export async function runHistoricoRevision(options: {
     if (lidas < piso(asset.year)) curtos.push(`${asset.year}: ${lidas} linhas, piso ${piso(asset.year)}`)
   }
   if (curtos.length) {
-    return { receipts: sourceFailureReceipts(profiles, `pacote TSE abaixo do piso de candidaturas (${curtos.join("; ")})`, anos, checkedAt, null), review: [] }
+    const motivo = `pacote TSE abaixo do piso de candidaturas (${curtos.join("; ")})`
+    return { receipts: sourceFailureReceipts(profiles, motivo, anos, checkedAt, null), partyReceipts: sourceFailurePartyReceipts(profiles, motivo, checkedAt, null), review: [] }
   }
   const identities = new Map(profiles.map((profile) => {
     const candidate = seedBySlug.get(String(profile.slug)) ?? null
@@ -269,6 +283,7 @@ export async function runHistoricoRevision(options: {
 
   const tseRevisions: HistoricoSourceRevision[] = [...byYear.values()].map((asset) => ({ year: asset.year, url: asset.url, sha256: asset.sha256.toLowerCase() }))
   const receipts: HistoricoReceipt[] = []
+  const partyReceipts: PartidoCandidaturaReceipt[] = []
   const review: HistoricoReviewItem[] = []
   for (const profile of profiles) {
     if (typeof profile.slug !== "string" || typeof profile.id !== "string") continue
@@ -291,15 +306,21 @@ export async function runHistoricoRevision(options: {
       if (proof?.identity && typeof proof.identity === "object") (proof.identity as Record<string, unknown>).key = "CPF ancorado no SQ do seed"
       result.receipt.detalhe = JSON.stringify(detail)
     }
+    partyReceipts.push(partidoPorCandidaturaReceipt({
+      profile, candidate, identity: identities.get(profile.slug)!, sourceRows: sourceRows.get(profile.slug) ?? [],
+      anos, tseRevisions, checkedAt, anosObrigatorios: options.anosObrigatorios ?? HISTORICO_ANOS_CANONICOS,
+      identityBlocked: options.identityMode === "official-only" && nameOnlyCandidates.has(profile.slug),
+    }))
     receipts.push(result.receipt)
     review.push(...result.review)
   }
-  return { receipts, review }
+  return { receipts, partyReceipts, review }
 }
 
 async function main(): Promise<void> {
   const anos = parseAnos(option("anos"))
   const out = option("out")
+  const partyOut = option("party-out")
   const revisaoPath = option("revisao")
   const profilesPath = option("public-profiles")
   if (!out || !revisaoPath || !profilesPath) throw new Error("uso: --anos= --public-profiles= --out= --revisao= (--manifest= | --falha-fonte=)")
@@ -312,14 +333,15 @@ async function main(): Promise<void> {
   const senadoMode = option("senado") ?? "live"
   const identityMode = option("identity-mode") ?? "default"
   if (identityMode !== "default" && identityMode !== "official-only") throw new Error("--identity-mode inválido")
-  const { receipts, review } = await runHistoricoRevision({
+  const { receipts, partyReceipts, review } = await runHistoricoRevision({
     anos, profiles, manifest, checkedAt, falhaFonte: option("falha-fonte"), identityMode,
     seed: JSON.parse(readFileSync(resolve(option("candidatos") ?? "data/candidatos.json"), "utf8")) as SeedCandidate[],
     senado: async (codigo) => senadoMode === "off"
       ? { status: "erro", url: `${SENADO_API}/senador/${codigo}/mandatos.json`, motivo: "consulta ao Senado desligada nesta rodada" }
       : fetchSenado(codigo),
   })
-  writePrivate(out, { schema_version: 1, generated_at: checkedAt, fonte: HISTORICO_FONTE, anos, receipts })
+  writePrivate(out, { schema_version: 1, generated_at: checkedAt, fonte: HISTORICO_FONTE, anos, receipts: [...receipts, ...partyReceipts] })
+  if (partyOut) writePrivate(partyOut, { schema_version: 1, generated_at: checkedAt, fonte: PARTIDO_CANDIDATURA_FONTE, anos, receipts: partyReceipts })
   writePrivate(revisaoPath, { schema_version: 1, generated_at: checkedAt, itens: review })
   console.log(JSON.stringify(summarize(receipts, review)))
 }

@@ -36,6 +36,7 @@ const PROFILE_FIELDS = [
 
 const FAMILY_FIELD: Partial<Record<CoverageFamily, string>> = {
   historico_politico: "historico",
+  mudancas_partido: "mudancas_partido",
   patrimonio: "patrimonio_eleicoes",
   financiamento: "financiamento_eleicoes",
   projetos_lei: "projetos_lei",
@@ -92,7 +93,7 @@ function officialHost(family: CoverageFamily, url: string): boolean {
     if (family === "historico_politico") {
       return ["dadosabertos.tse.jus.br", "cdn.tse.jus.br", "www.tse.jus.br", "legis.senado.leg.br"].includes(parsed.hostname)
     }
-    if (["perfil_atual", "patrimonio", "financiamento"].includes(family)) {
+    if (["perfil_atual", "patrimonio", "financiamento", "mudancas_partido"].includes(family)) {
       return ["dadosabertos.tse.jus.br", "cdn.tse.jus.br", "www.tse.jus.br"].includes(parsed.hostname)
     }
     if (["projetos_lei", "votos_candidato", "gastos_parlamentares"].includes(family)) {
@@ -111,11 +112,26 @@ export function validCoverageSourceProof(
   receipt: Record<string, unknown>,
 ): boolean {
   const proof = object(receipt.coverage_proof)
-  if (!proof || proof.family !== family || proof.method !== "official-source-to-public-readback" || proof.scope_complete !== true) return false
+  if (!proof || proof.family !== family || proof.scope_complete !== true) return false
   const identity = object(proof.identity)
   if (!identity || identity.slug !== profile.slug || identity.candidate_id !== (profile.id ?? profile.candidato_id ?? profile.candidate_id)) return false
   if (typeof identity.source_id !== "string" || !identity.source_id.trim()) return false
   if (proof.public_payload_sha256 !== publicFamilyPayloadSha256(profile, family)) return false
+  if (proof.method === "official-party-by-candidacy-scope") {
+    if (family !== "mudancas_partido" || proof.scope !== "partido_em_cada_candidatura" || !isNonnegativeInteger(proof.source_candidacies) || proof.source_candidacies < 1) return false
+    if (!isNonnegativeInteger(proof.derived_transitions) || !isNonnegativeInteger(proof.public_transitions) || proof.derived_transitions !== proof.public_transitions) return false
+    const years = proof.scope_years
+    const required = [1996, 1998, 2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024, 2026]
+    if (!Array.isArray(years) || years.length !== required.length || years.some((year, index) => year !== required[index])) return false
+    const revisions = proof.source_revisions
+    if (!Array.isArray(revisions) || revisions.length !== required.length || revisions.some((revision, index) => {
+      const row = object(revision)
+      return !row || row.year !== required[index] || typeof row.url !== "string" || !officialHost(family, row.url) || !isSha256(row.sha256)
+    })) return false
+    if (proof.public_rows !== publicFamilyRowCount(profile, family)) return false
+    return typeof receipt.url === "string" && revisions.some((revision) => object(revision)?.url === receipt.url)
+  }
+  if (proof.method !== "official-source-to-public-readback") return false
   if (!isNonnegativeInteger(proof.source_rows) || !isNonnegativeInteger(proof.public_rows) || !isNonnegativeInteger(proof.matched_rows) || !isNonnegativeInteger(proof.unmatched_rows)) return false
   const actualRows = publicFamilyRowCount(profile, family)
   if (actualRows < 0 || proof.public_rows !== actualRows || proof.matched_rows !== actualRows || proof.unmatched_rows !== 0 || (proof.source_rows as number) < actualRows) return false

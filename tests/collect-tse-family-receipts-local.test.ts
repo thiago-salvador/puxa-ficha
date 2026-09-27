@@ -3,7 +3,7 @@ import { mkdtempSync, rmSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import test from "node:test"
-import { buildReceipt, money, readbackFromPublicProfiles, safeSourceRow, selectCsvMembers } from "../scripts/audit/collect-tse-family-receipts-local"
+import { buildReceipt, money, projectAuditedFinanceReadback, readbackFromPublicProfiles, safeSourceRow, selectCsvMembers } from "../scripts/audit/collect-tse-family-receipts-local"
 
 const candidate = {
   slug: "fixture-candidate",
@@ -47,6 +47,18 @@ test("TSE family receipt is found only with matching public readback digest", ()
   assert.equal(detail.coverage_proof.scope_complete, true)
   assert.deepEqual(detail.coverage_proof.source_revisions, [{ year: 2022, url: asset.url, sha256: asset.sha256 }])
   assert.match(detail.coverage_proof.public_payload_sha256, /^[a-f0-9]{64}$/)
+})
+
+test("apply projection changes only a unique 2026 row with matching preimage", () => {
+  const profile = { slug: "fixture-candidate", financiamento: [{ ano_eleicao: 2026, total_arrecadado: 10 }, { ano_eleicao: 2022, total_arrecadado: 5 }] }
+  const action = { tipo: "atualizar_financiamento", slug: profile.slug, antes: { total_arrecadado: 10 }, depois: { total_arrecadado: 20 } }
+  const projected = projectAuditedFinanceReadback(profile, [action])
+  assert.deepEqual(projected.applied, ["atualizar_financiamento"])
+  assert.equal((projected.profile.financiamento as Array<{ total_arrecadado: number }>)[0]?.total_arrecadado, 20)
+  assert.equal(profile.financiamento[0]?.total_arrecadado, 10)
+  assert.equal((projected.profile.financiamento as Array<{ total_arrecadado: number }>)[1]?.total_arrecadado, 5)
+  assert.deepEqual(projectAuditedFinanceReadback(profile, [{ ...action, antes: { total_arrecadado: 11 } }]).applied, [])
+  assert.deepEqual(projectAuditedFinanceReadback({ ...profile, financiamento: [...profile.financiamento, { ano_eleicao: 2026, total_arrecadado: 1 }] }, [action]).applied, [])
 })
 
 test("bem oficial positivo não confirma ano público marcado vazio", () => {
