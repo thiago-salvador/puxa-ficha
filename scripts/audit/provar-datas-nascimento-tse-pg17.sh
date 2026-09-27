@@ -9,7 +9,7 @@
 # despublicada sai da busca, receita republicada volta.
 #
 # Prova: readbacks reprovam o pré-estado; migrations reprovam preimagem
-# adulterada (data, SQ, nome, biografia, valor, SQ do homônimo, linha já
+# adulterada (data, SQ, nome, biografia, naturalidade, valor, SQ do homônimo, linha já
 # despublicada, data da ficha de mauricio); forward e readbacks em ordem; o
 # CHECK recusa 1900-01-01 e aceita 1º de janeiro real; o CHECK falha se ainda
 # houver sentinela; readback reprova postimagem adulterada; rollback recusa
@@ -200,6 +200,9 @@ q -q -c "UPDATE public.candidatos SET nome_completo='Hildon de Lima Chaves' WHER
 q -q -c "UPDATE public.candidatos SET biografia=biografia||' ' WHERE slug='silvio-mendes'"
 falha_esperada "migration de datas aceitou biografia diferente da preimagem" "supabase/migrations/$V.sql"
 q -q -c "UPDATE public.candidatos SET biografia=rtrim(biografia) WHERE slug='silvio-mendes'"
+q -q -c "UPDATE public.candidatos SET naturalidade='Vassouras (RJ)' WHERE slug='dr-daniel'"
+falha_esperada "migration de datas aceitou naturalidade diferente da preimagem" "supabase/migrations/$V.sql"
+q -q -c "UPDATE public.candidatos SET naturalidade='Vassouras/RJ' WHERE slug='dr-daniel'"
 
 # Adulterações de M2.
 q -q -c "UPDATE public.patrimonio SET valor_total=29000.01 WHERE id='f65e7932-574f-4377-a27c-334458471b64'"
@@ -237,6 +240,9 @@ datas="$(q -Atq -c "SELECT string_agg(slug||':'||data_nascimento, ',' ORDER BY s
 [[ "$datas" == "dr-daniel:1986-08-25,gabriel-azevedo:1986-03-12,hildon-chaves:1968-05-25,silvio-mendes:1949-08-31,tse-2026-20002553726:1949-07-08" ]] || { echo "FAIL: datas inesperadas: $datas" >&2; exit 1; }
 bio="$(q -Atq -c "SELECT biografia FROM public.candidatos WHERE slug='silvio-mendes'")"
 [[ "$bio" == "Silvio Mendes de Oliveira Filho (UNIAO) e pre-candidato(a) ao governo de PI. Com ensino superior completo." ]] || { echo "FAIL: biografia inesperada: $bio" >&2; exit 1; }
+nat="$(q -Atq -c "SELECT naturalidade FROM public.candidatos WHERE slug='dr-daniel'")"
+[[ "$nat" == "Açailândia/MA" ]] || { echo "FAIL: naturalidade de dr-daniel inesperada: $nat" >&2; exit 1; }
+[[ "$(q -Atq -c "SELECT count(*) FROM public.candidatos WHERE naturalidade='Vassouras/RJ'")" == "0" ]] || { echo "FAIL: Vassouras/RJ sobrou" >&2; exit 1; }
 recibo="$(q -Atq -c "SELECT detalhe FROM public.coleta_log WHERE execucao='migration:20260926233000'")"
 [[ "$recibo" != *cpf* ]] || { echo "FAIL: recibo de datas carrega a linha inteira" >&2; exit 1; }
 [[ "$(busca_homonimo)" == "0" ]] || { echo "FAIL: busca por doador ainda indexa o homônimo" >&2; exit 1; }
@@ -255,6 +261,10 @@ q -q -c "UPDATE public.candidatos SET data_nascimento='1979-02-16' WHERE slug='s
 q -q -c "UPDATE public.candidatos SET data_nascimento='1986-08-26' WHERE slug='dr-daniel'"
 falha_esperada "readback de datas aceitou data adulterada" "supabase/readback/$V.readback.sql"
 q -q -c "UPDATE public.candidatos SET data_nascimento='1986-08-25' WHERE slug='dr-daniel'"
+q -q < "supabase/readback/$V.readback.sql"
+q -q -c "UPDATE public.candidatos SET naturalidade='MA' WHERE slug='dr-daniel'"
+falha_esperada "readback de datas aceitou naturalidade adulterada" "supabase/readback/$V.readback.sql"
+q -q -c "UPDATE public.candidatos SET naturalidade='Açailândia/MA' WHERE slug='dr-daniel'"
 q -q < "supabase/readback/$V.readback.sql"
 q -q -c "UPDATE public.financiamento SET despublicado_em=NULL WHERE id='aacde5cd-aafa-466e-9ad4-cb095c75e5b6'"
 falha_esperada "readback do homônimo aceitou receita republicada" "supabase/readback/$V2.readback.sql"

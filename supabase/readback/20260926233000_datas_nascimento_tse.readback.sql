@@ -15,7 +15,7 @@ BEGIN
   END IF;
 
   FOR linha IN SELECT value FROM jsonb_array_elements(r->'linhas') LOOP
-    IF (SELECT jsonb_build_object('data_nascimento', to_jsonb(c)->'data_nascimento', 'biografia', to_jsonb(c)->'biografia')
+    IF (SELECT jsonb_build_object('data_nascimento', to_jsonb(c)->'data_nascimento', 'biografia', to_jsonb(c)->'biografia', 'naturalidade', to_jsonb(c)->'naturalidade')
           FROM public.candidatos c WHERE c.id = (linha->>'id')::uuid)
          IS DISTINCT FROM linha->'after' THEN
       RAISE EXCEPTION 'nascimento-tse-20260926 readback: postimagem divergiu em %', linha->>'slug';
@@ -36,6 +36,10 @@ BEGIN
 
   IF (SELECT md5(biografia) FROM public.candidatos WHERE slug = 'silvio-mendes') IS DISTINCT FROM '9166d6ad078f6e5d688c6e52641e8cbe' THEN
     RAISE EXCEPTION 'nascimento-tse-20260926 readback: biografia de silvio-mendes nao confere';
+  END IF;
+
+  IF (SELECT naturalidade FROM public.candidatos WHERE slug = 'dr-daniel') IS DISTINCT FROM 'Açailândia/MA' THEN
+    RAISE EXCEPTION 'nascimento-tse-20260926 readback: naturalidade de dr-daniel nao confere com o TSE';
   END IF;
 
   IF (SELECT count(*) FROM public.identidade_timeline_quarentena_snapshot

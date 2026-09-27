@@ -13,7 +13,7 @@ BEGIN
   SELECT detalhe::jsonb INTO b FROM public.coleta_log WHERE execucao = 'rollback:20260926233000';
 
   FOR linha IN SELECT value FROM jsonb_array_elements(r->'linhas') LOOP
-    IF (SELECT jsonb_build_object('data_nascimento', to_jsonb(c)->'data_nascimento', 'biografia', to_jsonb(c)->'biografia')
+    IF (SELECT jsonb_build_object('data_nascimento', to_jsonb(c)->'data_nascimento', 'biografia', to_jsonb(c)->'biografia', 'naturalidade', to_jsonb(c)->'naturalidade')
           FROM public.candidatos c WHERE c.id = (linha->>'id')::uuid)
          IS DISTINCT FROM linha->'before'
        OR (SELECT x->'linha' FROM jsonb_array_elements(b->'linhas') x WHERE x->>'id' = linha->>'id')

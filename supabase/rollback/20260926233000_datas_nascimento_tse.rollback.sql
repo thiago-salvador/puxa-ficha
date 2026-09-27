@@ -1,5 +1,5 @@
--- Preservador: devolve data_nascimento das cinco fichas e a biografia de
--- silvio-mendes à preimagem gravada no snapshot `nascimento-tse-20260926`, com
+-- Preservador: devolve data_nascimento das cinco fichas, a biografia de
+-- silvio-mendes e a naturalidade de dr-daniel à preimagem gravada no snapshot `nascimento-tse-20260926`, com
 -- CAS da postimagem do recibo `migration:20260926233000`.
 BEGIN;
 SET LOCAL TIME ZONE 'UTC';
@@ -26,7 +26,7 @@ BEGIN
   END IF;
 
   FOR linha IN SELECT value FROM jsonb_array_elements(r->'linhas') LOOP
-    IF (SELECT jsonb_build_object('data_nascimento', to_jsonb(c)->'data_nascimento', 'biografia', to_jsonb(c)->'biografia')
+    IF (SELECT jsonb_build_object('data_nascimento', to_jsonb(c)->'data_nascimento', 'biografia', to_jsonb(c)->'biografia', 'naturalidade', to_jsonb(c)->'naturalidade')
           FROM public.candidatos c WHERE c.id = (linha->>'id')::uuid)
          IS DISTINCT FROM linha->'after' THEN
       RAISE EXCEPTION 'nascimento-tse-20260926 rollback: % nao esta na postimagem', linha->>'slug';
@@ -35,7 +35,8 @@ BEGIN
     antes := linha->'before';
     UPDATE public.candidatos c
     SET data_nascimento = (antes->>'data_nascimento')::date,
-        biografia = antes->>'biografia'
+        biografia = antes->>'biografia',
+        naturalidade = antes->>'naturalidade'
     WHERE c.id = (linha->>'id')::uuid;
     GET DIAGNOSTICS afetadas = ROW_COUNT;
     IF afetadas <> 1 THEN
@@ -60,12 +61,12 @@ BEGIN
 
   INSERT INTO public.coleta_log (fonte,escopo,alvo,resultado,volume,detalhe,url,execucao,natureza)
   SELECT 'tse-consulta-cand','global',
-         'candidatos.data_nascimento,candidatos.biografia',
+         'candidatos.data_nascimento,candidatos.biografia,candidatos.naturalidade',
          'encontrado', 5,
          jsonb_build_object(
-           'resumo','Rollback da migration 20260926233000: data de nascimento das cinco fichas e biografia de silvio-mendes voltam ao estado anterior.',
+           'resumo','Rollback da migration 20260926233000: data de nascimento das cinco fichas, biografia de silvio-mendes e naturalidade de dr-daniel voltam ao estado anterior.',
            'linhas', (SELECT jsonb_agg(jsonb_build_object('id', c.id, 'slug', c.slug,
-                        'linha', jsonb_build_object('data_nascimento', to_jsonb(c)->'data_nascimento', 'biografia', to_jsonb(c)->'biografia'))
+                        'linha', jsonb_build_object('data_nascimento', to_jsonb(c)->'data_nascimento', 'biografia', to_jsonb(c)->'biografia', 'naturalidade', to_jsonb(c)->'naturalidade'))
                         ORDER BY c.slug)
                       FROM public.candidatos c
                       WHERE c.id IN (SELECT (value->>'id')::uuid FROM jsonb_array_elements(r->'linhas')))
