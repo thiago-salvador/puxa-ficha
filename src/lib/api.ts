@@ -2489,7 +2489,7 @@ async function getCandidatosComparaveisResourceUncached(
       await Promise.all([
         fetchMudancasPartidoRowsPaged(supabase, comparadorIds),
         fetchGastoTotalsByCandidatoIds(supabase, comparadorIds, new Map(baseRows.map((row) => [row.id, row.slug]))),
-        fetchPatrimonioSeriesByCandidatoIds(supabase, comparadorIds),
+        fetchPatrimonioSeriesByCandidatoIds(supabase, comparadorIds, { comBens: true }),
         fetchCargoAtualByCandidatoIds(supabase, comparadorIds),
         fetchLegislativeHistoryFlagsByCandidatoIds(supabase, comparadorIds),
         fetchProcessosVerificacoesBatch(baseRows.map((row) => ({ id: row.id, slug: row.slug }))),
