@@ -18,7 +18,7 @@ const AFP_ARTICLE = fixture("afp-checamos-artigo.html")
 describe("fontes diretas UOL Confere e AFP Checamos", () => {
   it("decodifica entidades em uma passagem e remove scripts de caixa variada", () => {
     const pagina = UOL.replace(/(<h3\b[^>]*class=["'][^"']*thumb-title[^"']*["'][^>]*>)[\s\S]*?(<\/h3>)/i,
-      "$1Teste &amp;#39; seguro <SCRIPT>conteúdo injetado</SCRIPT >$2")
+      "$1Teste &amp;#39; seguro <SCRIPT>conteúdo injetado</SCRIPT\t\n bar>$2")
     assert.notEqual(pagina, UOL)
     const titulo = parseArquivoUol(pagina).itens.find((item) => item.titulo.startsWith("Teste"))?.titulo
     assert.equal(titulo, "Teste &#39; seguro")

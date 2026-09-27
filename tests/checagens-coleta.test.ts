@@ -691,7 +691,7 @@ describe("coleta nominal de checagens", () => {
   })
 
   it("remove script e style com caixa variada e espaço no fechamento", () => {
-    const trechos = trechosDeHtml("<p>Ronaldo Caiado</p><SCRIPT>Nome de outra pessoa</SCRIPT ><StYlE>falso</StYlE ><p>Checagem</p>")
+    const trechos = trechosDeHtml("<p>Ronaldo Caiado</p><SCRIPT>Nome de outra pessoa</SCRIPT\t\n bar><StYlE>falso</StYlE ><p>Checagem</p>")
     assert.ok(trechos.some((trecho) => trecho.includes("ronaldo caiado")))
     assert.ok(trechos.every((trecho) => !trecho.includes("outra pessoa") && !trecho.includes("falso")))
   })

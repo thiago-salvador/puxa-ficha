@@ -1,5 +1,6 @@
 /** Parsers das buscas nativas UOL Confere e AFP Checamos. */
 
+import { load } from "cheerio"
 import type { ItemBusca } from "./checagens-coleta"
 
 export const UOL_CONFERE_ARQUIVO_URL = "https://noticias.uol.com.br/confere/"
@@ -20,8 +21,10 @@ function decodificarHtml(valor: string): string {
 }
 
 function textoHtml(valor: string): string {
-  return decodificarHtml(valor.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, " ").replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, " ").replace(/<[^>]+>/g, " "))
-    .replace(/\s+/g, " ").trim()
+  const $ = load(valor, {}, false)
+  $("script, style").remove()
+  $("*").each((_, elemento) => { $(elemento).before(" "); $(elemento).after(" ") })
+  return $.root().text().replace(/\s+/g, " ").trim()
 }
 
 function conteudoTag(html: string, nome: string, desde = 0, corresponde: (abertura: string) => boolean = () => true): string | null {

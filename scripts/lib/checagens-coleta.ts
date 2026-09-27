@@ -16,6 +16,7 @@
  * Módulo puro: sem rede, fs ou Supabase. O runner injeta `fetchText`.
  */
 
+import { load } from "cheerio"
 import { stripAccents } from "../../src/lib/strip-accents"
 import { isValidGoogleNewsRss } from "../../src/lib/news/google-news"
 import { newsTitleMentionsCandidate } from "../../src/lib/news/name-match"
@@ -948,11 +949,12 @@ export function textoDaPagina(html: string): string[] | null {
 
 /** Fragmento HTML em trechos normalizados, um por bloco: nome não casa atravessando parágrafos. */
 export function trechosDeHtml(fragmento: string): string[] {
-  const texto = fragmento
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, " ").replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, " ")
-    .replace(/<\/?(?:p|h[1-6]|li|ul|ol|div|br|figcaption|figure|blockquote|section|article|header|footer|table|tr|td|th)\b[^>]*>/gi, "\u0001")
-    .replace(/<[^>]+>/g, " ")
-  return decodeEntities(texto).split("\u0001").map((trecho) => normalizarNome(trecho)).filter(Boolean)
+  const $ = load(fragmento, {}, false)
+  $("script, style").remove()
+  $("*").each((_, elemento) => { $(elemento).before(" "); $(elemento).after(" ") })
+  $("p, h1, h2, h3, h4, h5, h6, li, ul, ol, div, br, figcaption, figure, blockquote, section, article, header, footer, table, tr, td, th")
+    .each((_, elemento) => { $(elemento).before("\u0001"); $(elemento).after("\u0001") })
+  return $.root().text().split("\u0001").map((trecho) => normalizarNome(trecho)).filter(Boolean)
 }
 
 /** Corpo de matéria do Aos Fatos: o `div` de classe `prose` até o fechamento correspondente. Sem ele, null. */
