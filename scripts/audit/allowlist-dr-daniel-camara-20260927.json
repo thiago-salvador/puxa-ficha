@@ -1,0 +1,61 @@
+{
+  "versao": "2026-09-27",
+  "_comentario": "Allowlist fechada das migrations 20260927010000 (colunas de despublicacao, politica publica, indice e snapshot em projetos_lei; DDL sem escrita de conteudo) e 20260927010100 (100 proposicoes do deputado federal 220614 despublicadas em dr-daniel e verificacao_campos projetos-de-lei e votacoes-chave como nao_aplicavel). A curadoria aceita somente a preimagem medida em 2026-09-26 e grava snapshot de preimagem e recibo em coleta_log.",
+  "fonte": "Camara Dados Abertos, lida em 2026-09-26: /api/v2/deputados/220614 (Daniel Ricardo Soranz Pinto, RJ, nascido em Vassouras em 16/02/1979) e /api/v2/proposicoes?idDeputadoAutor=220614 (235 proposicoes; os 100 proposicao_id_api da ficha estao todos nela). TSE consulta_cand 2012 a 2026: Daniel Barbosa Santos, PA, nascido em 25/08/1986.",
+  "motivo": "A ficha dr-daniel publicava 100 proposicoes de 2023 a 2025 de um deputado federal homonimo, trazidas por um vinculo antigo com o id 220614 da Camara. projetos_lei nao tinha mecanismo de despublicacao.",
+  "coorte": [
+    "dr-daniel"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "projetos_lei",
+      "slug": "dr-daniel",
+      "campos": [
+        "despublicado_em",
+        "despublicacao_motivo"
+      ],
+      "max_registros": 100
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "dr-daniel",
+      "campos": [
+        "verificacao_campos"
+      ],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "dr-daniel-camara-20260927",
+      "campos": [
+        "migration_version",
+        "tabela",
+        "row_id",
+        "candidato_id",
+        "preimage",
+        "postimage",
+        "registrado_em"
+      ]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260927010100",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
+    }
+  ]
+}

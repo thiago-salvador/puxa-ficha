@@ -1632,9 +1632,9 @@ export const FIXES: CandidateFix[] = [
     },
     deleteFinanciamentoYears: [2020, 2022],
   },
-  // Auditoria 2026-04-12 (fechamento): slug amarra Daniel Barbosa Santos / PA em `data/candidatos.json`
-  // (TSE 2018/2020/2022 + Câmara 220614). O bloqueio por “homônimo” da planilha `ainda-pendentes-3-casos`
-  // não se aplica a este registro canônico.
+  // Daniel Barbosa Santos / PA (TSE 2012 a 2026, nascido em 25/08/1986 em Açailândia/MA).
+  // O deputado federal 220614 da Câmara é outra pessoa (Daniel Ricardo Soranz Pinto, RJ,
+  // nascido em Vassouras em 16/02/1979): esta ficha não tem id da Câmara.
   {
     slug: "dr-daniel",
     source:
