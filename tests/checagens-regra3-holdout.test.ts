@@ -4,8 +4,8 @@ import { leadPermitidoRegra3 } from "../scripts/lib/checagens-coleta"
 
 /**
  * Holdout rotulado antes de executar a regra nova. Títulos literais de
- * evidencias-privadas/ficha-completa/frentes/F6/rodada-2026-09-26-reconstruido/recibos.json.
- * Não é o conjunto de ajuste das sete decisões do dono e três variantes de Paes.
+ * recibos brutos da coleta de 26/09/2026 (fora do repositório).
+ * Não é o conjunto de ajuste das decisões editoriais já tomadas.
  *
  * Publicar: o boato, tal como o título o descreve, atribuiu ao candidato uma
  * fala, ação, propriedade, aparição ou vínculo direto com o caso checado.
