@@ -71,6 +71,16 @@ describe("gerar migration de processos da curadoria", () => {
       "INTERDIÇÃO / CURATELA",
     ]) assert.throws(pacote(classe), /direito de familia ou segredo de justica/, classe)
     assert.throws(pacote("PROCEDIMENTO COMUM CÍVEL", { motivo: "Tramita na 6ª Vara de Família da Comarca." }), /segredo de justica/)
+    for (const orgao of [
+      "Vara da Família",
+      "Varas de Família",
+      "Vara das Famílias",
+      "Vara de Família e Sucessões",
+      "Vara da Família e das Sucessões",
+    ]) {
+      assert.throws(pacote("PROCEDIMENTO COMUM CÍVEL", { motivo: `Tramita na 2ª ${orgao} da Comarca.` }), /segredo de justica/, orgao)
+      assert.throws(pacote(`PROCEDIMENTO COMUM CÍVEL - ${orgao}`), /segredo de justica/, orgao)
+    }
     assert.throws(pacote("PROCEDIMENTO COMUM CÍVEL", { familia_processual: "direito de família" }), /segredo de justica/)
     assert.doesNotThrow(pacote("PROCEDIMENTO COMUM CÍVEL", { motivo: "Contrato com a Empresa Baiana de Alimentos e a Guarda Municipal." }))
   })

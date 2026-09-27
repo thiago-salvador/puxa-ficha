@@ -137,8 +137,8 @@ function fonteOficialPorProcesso(
  * desse ramo e descrição que cite vara de família ou segredo de justiça.
  */
 const RE_FAMILIA_CLASSE =
-  /vara de familia|direito de familia|uniao estavel|divorcio|separacao judicial|\balimentos\b|\bguarda\b|filiacao|paternidade|interdicao|curatela|segredo de justica/
-const RE_FAMILIA_DESCRICAO = /vara de familia|segredo de justica/
+  /\bvaras? d(?:e|a|as) familias?\b|direito de familia|uniao estavel|divorcio|separacao judicial|\balimentos\b|\bguarda\b|filiacao|paternidade|interdicao|curatela|segredo de justica/
+const RE_FAMILIA_DESCRICAO = /\bvaras? d(?:e|a|as) familias?\b|segredo de justica/
 
 export function processoDeFamiliaOuSegredo(classe: string, familia: string, descricao: string): boolean {
   return RE_FAMILIA_CLASSE.test(normalizar(`${classe} ${familia}`)) || RE_FAMILIA_DESCRICAO.test(normalizar(descricao))

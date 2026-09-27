@@ -207,6 +207,9 @@ describe("ponte PCE → senador → candidato", () => {
     assert.equal(temPapelDeAlvo("em face dos Senadores Fictício Alfa, Fictício Gama e Fictício Delta, com fundamento", "Fictício Gama"), true)
     assert.equal(temPapelDeAlvo("em face dos Senadores Fictício Alfa e Fictício Gama e da Senadora Fictícia Beta com fundamento", "Fictícia Beta"), true)
     assert.equal(temPapelDeAlvo("contra as Senadoras Fictícia Beta e Fictícia Épsilon", "Fictícia Epsilon"), true)
+    // ponto encerra a lista de representados
+    assert.equal(temPapelDeAlvo("em face dos Senadores Fictício Alfa e Fictício Gama. Solicita-se apuração", "Fictício Gama"), true)
+    assert.equal(temPapelDeAlvo("em face dos Senadores Fictício Alfa e Fictício Gama. Requer o Senador Fictício Delta", "Fictício Delta"), false)
     // plural sem o nome, ou com o nome só como pedaço de outro item
     assert.equal(temPapelDeAlvo("em face dos Senadores Fictício Gama e Fictício Delta, com fundamento", "Fictício Alfa"), false)
     assert.equal(temPapelDeAlvo("em face dos Senadores Fictício Alfa Neto e Fictício Gama", "Fictício Alfa"), false)
@@ -290,22 +293,31 @@ describe("ponte PCE → senador → candidato", () => {
     }), /não identifica/)
   })
 
-  it("recusa trecho de identidade que cita mais de um nome do roster", async () => {
-    const ementa = "Representação em face do Senador Fictício Alfa contra o Senador Fictício Beta"
-    const fila = filaComEmenta(await filaFixture(), ementa)
-    const item = fila.itens[0]!
-    const dataset = JSON.parse(readFileSync(resolve(process.cwd(), "scripts/data/representacoes-conselho-etica.json"), "utf8"))
-    assert.throws(() => aprovarPceSenado({
-      fila,
-      itemId: item.id,
-      revisao: { ...revisaoAlfa(item.id), trecho_ementa: ementa },
-      processoAtual: processoComEmenta(ementa),
-      roster: fila.roster,
-      seed,
-      dataset,
-      fichaPublica: true,
-      agora: new Date("2026-09-24T12:00:00Z"),
-    }), /mais de um|múltipl|nomes/i)
+  it("aceita mais de um senador no trecho só quando cada um é alvo explícito", async () => {
+    const aprovar = async (ementa: string, trecho: string) => {
+      const fila = filaComEmenta(await filaFixture(), ementa)
+      const item = fila.itens[0]!
+      const dataset = JSON.parse(readFileSync(resolve(process.cwd(), "scripts/data/representacoes-conselho-etica.json"), "utf8"))
+      return aprovarPceSenado({
+        fila,
+        itemId: item.id,
+        revisao: { ...revisaoAlfa(item.id), trecho_ementa: trecho },
+        processoAtual: processoComEmenta(ementa),
+        roster: fila.roster,
+        seed,
+        dataset,
+        fichaPublica: true,
+        agora: new Date("2026-09-24T12:00:00Z"),
+      })
+    }
+    // papel singular e lista plural no mesmo trecho: os dois senadores são alvos
+    const misto = "Representação em face do Senador Fictício Alfa; em face dos Senadores Fictício Beta e Fictício Gama"
+    assert.equal((await aprovar(misto, misto)).item.candidate_slug, "senador-ficticio-alfa")
+    const doisSingulares = "Representação em face do Senador Fictício Alfa contra o Senador Fictício Beta"
+    assert.equal((await aprovar(doisSingulares, doisSingulares)).item.candidate_slug, "senador-ficticio-alfa")
+    // o outro senador aparece só como autor: recusa
+    const autor = "Representação do Senador Fictício Beta em face do Senador Fictício Alfa"
+    await assert.rejects(aprovar(autor, autor), /mais de um|múltipl|nomes/i)
   })
 
   it("recusa nome do senador sem papel explícito de representado no trecho", async () => {

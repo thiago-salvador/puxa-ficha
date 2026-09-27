@@ -66,10 +66,10 @@ const papeisDeAlvoPlural = [["EM", "FACE", "DOS"], ["EM", "FACE", "DAS"], ["CONT
 const tratamentosPlural = new Set(["SENADORES", "SENADORAS"])
 const artigosDaLista = new Set(["DO", "DA", "DOS", "DAS"])
 // Palavra que encerra a lista de representados ("..., com fundamento", "por quebra de decoro").
-const fimDaLista = new Set(["COM", "POR", "PELO", "PELA", "PELOS", "PELAS", "PARA", "QUE", "EM", "NOS", "NO", "NA", "NAS", "AO", "AOS", "CONFORME", "TENDO"])
+const fimDaLista = new Set([".", "COM", "POR", "PELO", "PELA", "PELOS", "PELAS", "PARA", "QUE", "EM", "NOS", "NO", "NA", "NAS", "AO", "AOS", "CONFORME", "TENDO"])
 
 function tokensComVirgula(value: string): string[] {
-  return stripAccents(value).toLocaleUpperCase("pt-BR").replace(/[,;]/g, " , ").replace(/[^A-Z0-9,]+/g, " ").trim().split(/\s+/).filter(Boolean)
+  return stripAccents(value).toLocaleUpperCase("pt-BR").replace(/[,;]/g, " , ").replace(/\./g, " . ").replace(/[^A-Z0-9,.]+/g, " ").trim().split(/\s+/).filter(Boolean)
 }
 
 /**
@@ -195,10 +195,10 @@ export function aprovarPceSenado(options: {
     const names = [entry.nome, entry.nome_completo].map(compact).filter(Boolean)
     return names.some((name) => evidencePadded.includes(` ${name} `))
   })
-  // Mais de um senador no trecho só vale quando todos são itens da lista plural de representados.
-  const alvosPlural = alvosDaListaPlural(revisao.trecho_ementa)
-  const todosNaLista = rosterMentions.every((entry) => [entry.nome, entry.nome_completo].filter(Boolean).some((name) => alvosPlural.includes(compact(name))))
-  if (rosterMentions.length > 1 && !todosNaLista) throw new Error("trecho de identidade menciona mais de um senador do roster oficial")
+  // Mais de um senador no trecho só vale quando cada um é alvo explícito: item da
+  // lista plural de representados ou nome depois de papel singular.
+  const todosAlvos = rosterMentions.every((entry) => [entry.nome, entry.nome_completo].filter(Boolean).some((name) => temPapelDeAlvo(revisao.trecho_ementa, name)))
+  if (rosterMentions.length > 1 && !todosAlvos) throw new Error("trecho de identidade menciona mais de um senador do roster oficial")
   const senatorNames = [senator.nome, senator.nome_completo].filter(Boolean)
   const alvoExplicito = senatorNames.some((name) => temPapelDeAlvo(revisao.trecho_ementa, name))
   if (!alvoExplicito) throw new Error("trecho não identifica o senador escolhido como representado após 'em face do/da' ou 'contra o/a'")
