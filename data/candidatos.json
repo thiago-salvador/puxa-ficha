@@ -1671,7 +1671,7 @@
     "estado": "PB",
     "ids": {
       "camara": 178912,
-      "senado": 1757,
+      "senado": null,
       "tse_sq_candidato": {
         "2018": "150000612364",
         "2022": "150001621388"
@@ -2923,10 +2923,7 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {
-        "2012": "110000010928",
-        "2020": "110000951550"
-      }
+      "tse_sq_candidato": {}
     }
   },
   {

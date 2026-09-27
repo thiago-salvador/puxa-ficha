@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Aplica um conjunto de migrations da fase eleitoral 2026 (coorte de
 # atualização pós-turno), descrito por um manifesto em supabase/fase-eleitoral/:
-#   schema   20260927030000  tabela candidaturas_fase_2026 e view pública (DDL)
+#   schema   20260927050000  tabela candidaturas_fase_2026 e view pública (DDL)
 #   turno-1  migration de resultado do 1º turno, gerada por resultados-tse-fase.ts
 #   turno-2  migration de resultado do 2º turno, idem
 # com predecessor, hash, lock, ledger e readback fechados para o projeto de

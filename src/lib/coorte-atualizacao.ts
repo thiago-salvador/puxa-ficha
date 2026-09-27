@@ -75,13 +75,19 @@ export function rotuloAtualizacaoEncerrada(iso: string): string {
 }
 
 /**
- * Nota neutra da ficha pública. Sem juízo editorial: só a data e o fato
- * oficial (eleito ou fora da disputa). Devolve null para ficha na coorte.
+ * Nota da ficha pública. Só afirma eleição quando há resultado oficial;
+ * sem resultado individual do Senado, mostra apenas a data de encerramento.
+ * Devolve null para ficha na coorte.
  */
 export function notaAtualizacaoEncerrada(candidatura: CandidaturaFase): string | null {
   if (naCoorteAtualizacao(candidatura)) return null
   const data = formatarDataBr(String(candidatura.atualizacao_encerrada_em))
   if (!data) return null
+  // Senators without a successfully read official result leave the update
+  // cohort without an individual result claim. Keep their public note neutral.
+  if (candidatura.cargo_disputado === "Senador" && candidatura.fase_eleitoral === "fora_da_disputa") {
+    return `Dados atualizados até ${data}.`
+  }
   if (candidatura.fase_eleitoral === "eleito") {
     if (candidatura.cargo_disputado === "Senador") return `Dados atualizados até ${data}; eleito(a).`
     const turno = candidatura.fase_turno === 2 ? "segundo" : "primeiro"

@@ -1,8 +1,8 @@
 {
   "conjunto": "schema",
-  "base_version": "20260927020000",
-  "base_name": "partido_cargo_paulo_mourao_refazer",
+  "base_version": "20260927040200",
+  "base_name": "pedro_cunha_lima_senado_homonimo",
   "migrations": [
-    { "version": "20260927030000", "name": "candidaturas_fase_2026_schema" }
+    { "version": "20260927050000", "name": "candidaturas_fase_2026_schema" }
   ]
 }

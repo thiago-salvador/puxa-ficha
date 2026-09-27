@@ -960,7 +960,7 @@ async function fetchChapa2026(
 /**
  * Fase eleitoral 2026 da ficha (coorte de atualização pós-turno). Sem linha na
  * view = em disputa, nota nenhuma. View ausente (banco antes da migration
- * 20260927030000) degrada para `null`, como a de chapas; outro erro propaga.
+ * 20260927050000) degrada para `null`, como a de chapas; outro erro propaga.
  */
 async function fetchFaseEleitoral2026(
   candidatoId: string,
@@ -1613,6 +1613,7 @@ async function getCandidatoBySlugFromRelationResource(
           .from("projetos_lei")
           .select(PROJETOS_LEI_COLUNAS, { count: "exact" })
           .eq("candidato_id", id)
+          .is("despublicado_em", null)
           .order("ano", { ascending: false })
           .order("numero", { ascending: false })
           .limit(25)
@@ -1628,6 +1629,7 @@ async function getCandidatoBySlugFromRelationResource(
           .from("projetos_lei")
           .select("id", { count: "exact", head: true })
           .eq("candidato_id", id)
+          .is("despublicado_em", null)
           .in("tipo", [...SIGLAS_PROJETO_LEI])
           .abortSignal(signal)
       ),
@@ -1639,6 +1641,7 @@ async function getCandidatoBySlugFromRelationResource(
           .from("projetos_lei")
           .select("id", { count: "exact", head: true })
           .eq("candidato_id", id)
+          .is("despublicado_em", null)
           .eq("destaque", true)
           .abortSignal(signal)
       ),
@@ -1652,6 +1655,7 @@ async function getCandidatoBySlugFromRelationResource(
           .from("projetos_lei")
           .select("id", { count: "exact", head: true })
           .eq("candidato_id", id)
+          .is("despublicado_em", null)
           .eq("fonte", "Camara")
           .abortSignal(signal)
       ),
@@ -2131,6 +2135,7 @@ export async function getProjetosLeiBySlugResource(
       .from("projetos_lei")
       .select(PROJETOS_LEI_COLUNAS, { count: "exact" })
       .eq("candidato_id", candidate.data!.id)
+      .is("despublicado_em", null)
       .order("ano", { ascending: false })
       .order("numero", { ascending: false })
       .order("id", { ascending: true })
@@ -3054,12 +3059,14 @@ async function getQuizAlignmentDatasetResourceUncached(
           .from("projetos_lei")
           .select("id", { count: "exact", head: true })
           .in("candidato_id", candidatoIds)
+          .is("despublicado_em", null)
           .not("tema", "is", null)
           .abortSignal(pageSignal),
         (from, to, pageSignal) => supabase
           .from("projetos_lei")
           .select("candidato_id,tema,url_inteiro_teor")
           .in("candidato_id", candidatoIds)
+          .is("despublicado_em", null)
           .not("tema", "is", null)
           .order("id", { ascending: true })
           .range(from, to)

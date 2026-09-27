@@ -4,7 +4,7 @@ import { after, NextResponse } from "next/server"
 import { revalidateTag } from "next/cache"
 import { createServiceRoleSupabaseClient } from "@/lib/supabase"
 import { secretsMatch } from "@/lib/crypto-utils"
-import { carregarCoorteAtualizacao, filtrarCoorteAtualizacao, type CoorteAtualizacao } from "../../../../../scripts/lib/coorte-atualizacao"
+import { carregarCoorteAtualizacao, filtrarCoorteAtualizacao, type CoorteAtualizacao } from "@/lib/coorte-atualizacao-loader"
 import { resolveChainOrigin, validarOrigemEncadeamento } from "@/lib/cron-chain-origin"
 import {
   defaultNewsRefreshDeps,

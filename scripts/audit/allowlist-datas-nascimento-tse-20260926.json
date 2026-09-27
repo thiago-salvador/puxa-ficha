@@ -1,0 +1,137 @@
+{
+  "versao": "2026-09-26",
+  "_comentario": "Allowlist fechada das migrations 20260927030000 (data de nascimento de cinco fichas igualada ao TSE consulta_cand e biografia de silvio-mendes sem a oracao com ano e UF errados), 20260927030100 (patrimonio e financiamento de 2012 e 2020 do homonimo despublicados em mauricio-coelho) e 20260927030200 (CHECK de data de nascimento sentinela, DDL sem escrita de conteudo). As duas de dado aceitam somente a preimagem medida em 2026-09-26 e gravam snapshot de preimagem e recibo em coleta_log.",
+  "fonte": "TSE Dados Abertos consulta_cand 2002 a 2026 e bem_candidato 2012 e 2020 (https://cdn.tse.jus.br/estatistica/sead/odsele/), lidos em 2026-09-26: mesma pessoa por CPF, titulo, nome civil e UF em todas as inscricoes de cada ficha.",
+  "motivo": "Cinco fichas publicavam (ou guardavam) data de nascimento diferente da registrada no TSE para a mesma pessoa, inclusive uma data so com ano (1968-01-01) e a sentinela 1900-01-01 da API do Senado. A ficha mauricio-coelho publicava bens e receitas de 2012 e 2020 de um homonimo nascido em 1974, puxados por ancoras de SQ do seed. A naturalidade de dr-daniel (Vassouras/RJ) vinha do cadastro na Camara do deputado homonimo 220614 e contradiz o TSE (Acailandia, MA).",
+  "coorte": [
+    "dr-daniel",
+    "gabriel-azevedo",
+    "hildon-chaves",
+    "mauricio-coelho",
+    "silvio-mendes",
+    "tse-2026-20002553726"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "dr-daniel",
+      "campos": [
+        "data_nascimento",
+        "naturalidade"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "gabriel-azevedo",
+      "campos": [
+        "data_nascimento"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "hildon-chaves",
+      "campos": [
+        "data_nascimento"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "silvio-mendes",
+      "campos": [
+        "data_nascimento",
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "tse-2026-20002553726",
+      "campos": [
+        "data_nascimento"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "mauricio-coelho",
+      "campos": [
+        "despublicado_em",
+        "despublicacao_motivo"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "financiamento",
+      "slug": "mauricio-coelho",
+      "campos": [
+        "despublicado_em",
+        "despublicacao_motivo"
+      ],
+      "max_registros": 2
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "nascimento-tse-20260926",
+      "campos": [
+        "migration_version",
+        "tabela",
+        "row_id",
+        "candidato_id",
+        "preimage",
+        "postimage",
+        "registrado_em"
+      ]
+    },
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "mauricio-homonimo-20260926",
+      "campos": [
+        "migration_version",
+        "tabela",
+        "row_id",
+        "candidato_id",
+        "preimage",
+        "postimage",
+        "registrado_em"
+      ]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260927030000",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260927030100",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
+    }
+  ]
+}

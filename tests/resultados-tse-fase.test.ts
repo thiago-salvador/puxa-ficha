@@ -204,7 +204,7 @@ describe("resultados TSE: plano", () => {
     ])
     assert.equal(plano.sem_resultado.filter((p) => p.cargo === "Senador").length, 2)
     assert.equal(plano.pendentes.some((p) => p.cargo === "Senador"), false)
-    const generated = gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927030000", name: "candidaturas_fase_2026_schema" } })
+    const generated = gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927050000", name: "candidaturas_fase_2026_schema" } })
     assert.match(generated.migration, /escrita esperada=7/)
   })
 
@@ -216,7 +216,7 @@ describe("resultados TSE: plano", () => {
     assert.deepEqual([fallback?.fase_depois, fallback?.sq, fallback?.fonte, fallback?.situacao_tse], ["fora_da_disputa", "250099999999", null, null])
     assert.deepEqual(plano.sem_resultado.map((p) => [p.slug, p.motivo]), [["sen-eleito", "SQ ausente do resultado oficial"]])
     assert.deepEqual(plano.pendentes, [])
-    const generated = gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927030000", name: "candidaturas_fase_2026_schema" } })
+    const generated = gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927050000", name: "candidaturas_fase_2026_schema" } })
     assert.match(generated.migration, /'sen-eleito', '250099999999', '250099999999', 'Senador', 'em_disputa', 'fora_da_disputa'[\s\S]*NULL, NULL, NULL/)
   })
 
@@ -227,7 +227,7 @@ describe("resultados TSE: plano", () => {
     const fallback = plano.mudancas.find((m) => m.slug === "sen-eleito")
     assert.deepEqual([fallback?.fase_depois, fallback?.sq, fallback?.sq_antes, fallback?.fonte, fallback?.situacao_tse], ["fora_da_disputa", null, " ", null, null])
     assert.equal(plano.sem_resultado[0]?.motivo, "ficha sem sq_candidato_2026")
-    const generated = gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927030000", name: "candidaturas_fase_2026_schema" } })
+    const generated = gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927050000", name: "candidaturas_fase_2026_schema" } })
     assert.match(generated.migration, /'sen-eleito', NULL, ' ', 'Senador', 'em_disputa', 'fora_da_disputa'[\s\S]*NULL, NULL, NULL/)
     assert.match(generated.readback, /IS DISTINCT FROM linha->'after'/)
     assert.match(generated.rollbackReadback, /IS DISTINCT FROM linha->'before'/)
@@ -254,7 +254,7 @@ describe("resultados TSE: plano", () => {
     assert.equal(plano.status, "parcial")
     assert.deepEqual(plano.pendentes, [{ slug: "gov-2t-a", cargo: "Governador", abrangencia: "SP", motivo: "SQ ausente do resultado oficial" }])
     assert.equal(plano.mudancas.some((m) => m.slug === "gov-2t-b"), true)
-    const generated = gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927030000", name: "candidaturas_fase_2026_schema" } })
+    const generated = gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927050000", name: "candidaturas_fase_2026_schema" } })
     assert.match(generated.migration, /escrita esperada=6/)
     assert.doesNotMatch(generated.migration, /gov-2t-a/)
   })
@@ -262,7 +262,7 @@ describe("resultados TSE: plano", () => {
 
 describe("migration de resultado gerada", () => {
   const plano = () => montarPlano({ turno: 1, eleicoes: ELEICOES, coorte: coorte(), leituras: leiturasOk(), agora: new Date("2026-10-05T12:00:00Z") })
-  const predecessor = { version: "20260927030000", name: "candidaturas_fase_2026_schema" }
+  const predecessor = { version: "20260927050000", name: "candidaturas_fase_2026_schema" }
 
   it("aceita apenas as mudanças resolvidas de um plano parcial", () => {
     const p = plano()
@@ -289,7 +289,7 @@ describe("migration de resultado gerada", () => {
     assert.equal((a.migration.match(/^BEGIN;$/gm) ?? []).length, 1)
     assert.equal((a.migration.match(/^COMMIT;$/gm) ?? []).length, 1)
     assert.match(a.rollback, /IS DISTINCT FROM '20261005120000'/)
-    assert.deepEqual(a.manifesto, { conjunto: "turno-1", base_version: "20260927030000", base_name: "candidaturas_fase_2026_schema",
+    assert.deepEqual(a.manifesto, { conjunto: "turno-1", base_version: "20260927050000", base_name: "candidaturas_fase_2026_schema",
       migrations: [{ version: "20261005120000", name: "fase_eleitoral_turno_1" }], plano_sha256: a.manifesto.plano_sha256 })
     assert.deepEqual((a.allowlist.referencias as Array<{ ref: string }>).map((r) => r.ref), ["fase-turno-1-20261005120000", "migration:20261005120000"])
     assert.deepEqual(a.recorte, { nome: "fase-eleitoral-turno-1-20261005", desde: "20261005120000", ate: "20261005120000",

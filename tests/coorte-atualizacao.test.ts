@@ -46,6 +46,8 @@ describe("predicado da coorte de atualização", () => {
       "Dados atualizados até 05/10/2026; a candidatura não segue na disputa.")
     assert.equal(notaAtualizacaoEncerrada({ cargo_disputado: "Senador", fase_eleitoral: "eleito", fase_turno: 1, atualizacao_encerrada_em: "2026-10-05" }),
       "Dados atualizados até 05/10/2026; eleito(a).")
+    assert.equal(notaAtualizacaoEncerrada({ cargo_disputado: "Senador", fase_eleitoral: "fora_da_disputa", fase_turno: 1, atualizacao_encerrada_em: "2026-10-05" }),
+      "Dados atualizados até 05/10/2026.")
     assert.equal(notaAtualizacaoEncerrada({ cargo_disputado: "Governador", fase_eleitoral: "segundo_turno", fase_turno: 1, atualizacao_encerrada_em: null }), null)
     assert.equal(rotuloAtualizacaoEncerrada("2026-10-05"), "atualização encerrada em 05/10")
   })
@@ -65,12 +67,12 @@ describe("predicado da coorte de atualização", () => {
 
 describe("schema de fase e readbacks", () => {
   it("RLS limita anon às fichas publicadas", () => {
-    const sql = readFileSync("supabase/migrations/20260927030000_candidaturas_fase_2026_schema.sql", "utf8")
+    const sql = readFileSync("supabase/migrations/20260927050000_candidaturas_fase_2026_schema.sql", "utf8")
     assert.match(sql, /CREATE POLICY candidaturas_fase_2026_public_read[\s\S]*?USING \(public\.is_public_candidate\(candidato_id\)\)/)
   })
 
   it("readback do rollback fixa UTC", () => {
-    const sql = readFileSync("supabase/readback/20260927030000_candidaturas_fase_2026_schema.rollback.readback.sql", "utf8")
+    const sql = readFileSync("supabase/readback/20260927050000_candidaturas_fase_2026_schema.rollback.readback.sql", "utf8")
     assert.match(sql, /^BEGIN READ ONLY;\s*SET LOCAL TIME ZONE 'UTC';/)
   })
 })

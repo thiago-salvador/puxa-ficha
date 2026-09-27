@@ -18,13 +18,24 @@ const recibo = (resultado: string, pares = 3): Resposta => ({
 })
 
 /** Cliente falso: cada tabela devolve uma resposta fixa, qualquer que seja o filtro. */
-function clienteFalso(respostas: Record<string, Resposta>) {
+function clienteFalso(respostas: Record<string, Resposta>, filtros: string[] = []) {
   return {
     from(tabela: string) {
       const resposta = respostas[tabela] ?? { data: [], error: null }
       const builder: Record<string, unknown> = {}
       for (const metodo of ["select", "eq", "in", "abortSignal", "maybeSingle"]) builder[metodo] = () => builder
-      builder.then = (ok: (r: Resposta) => unknown, erro?: (e: unknown) => unknown) => Promise.resolve(resposta).then(ok, erro)
+      let filtrarDespublicados = false
+      builder.is = (coluna: string, valor: unknown) => {
+        filtros.push(`${tabela}.${coluna}=${valor}`)
+        if (coluna === "despublicado_em" && valor === null) filtrarDespublicados = true
+        return builder
+      }
+      builder.then = (ok: (r: Resposta) => unknown, erro?: (e: unknown) => unknown) => Promise.resolve({
+        ...resposta,
+        data: filtrarDespublicados && Array.isArray(resposta.data)
+          ? resposta.data.filter((linha: { despublicado_em?: string | null }) => linha.despublicado_em == null)
+          : resposta.data,
+      }).then(ok, erro)
       return builder
     },
   } as never
@@ -51,12 +62,25 @@ test("view ok com vínculo e recibo falhando: o vínculo aparece", async () => {
   const estado = await getCompromissoEvidenciasEstado(entrada, {
     criarCliente: () => clienteFalso({
       compromisso_evidencia_publica: { data: [linhaView], error: null },
-      projetos_lei: { data: [{ id: "pl1", tipo: "PL", numero: "1", ano: 2020, ementa: "Amplia o SUS.", url_inteiro_teor: null }], error: null },
+      projetos_lei: { data: [{ id: "pl1", tipo: "PL", numero: "1", ano: 2020, ementa: "Amplia o SUS.", url_inteiro_teor: null, despublicado_em: null }], error: null },
       coleta_log_ultima: FALHA,
     }),
   })
   assert.equal(estado.estado, "com_vinculos")
   assert.equal(estado.estado === "com_vinculos" && estado.itens[0].texto, "Amplia o SUS.")
+})
+
+test("evidência ligada a projeto despublicado não exibe o item", async () => {
+  const filtros: string[] = []
+  const estado = await getCompromissoEvidenciasEstado(entrada, {
+    criarCliente: () => clienteFalso({
+      compromisso_evidencia_publica: { data: [linhaView], error: null },
+      projetos_lei: { data: [{ id: "pl1", tipo: "PL", numero: "1", ano: 2020, ementa: "Projeto de outra pessoa.", url_inteiro_teor: null, despublicado_em: "2026-09-27T00:00:00Z" }], error: null },
+      coleta_log_ultima: recibo("encontrado"),
+    }, filtros),
+  })
+  assert.ok(filtros.includes("projetos_lei.despublicado_em=null"))
+  assert.equal(estado.estado, "vinculos_sem_exibicao")
 })
 
 test("as duas leituras ok: estado vem do recibo", async () => {

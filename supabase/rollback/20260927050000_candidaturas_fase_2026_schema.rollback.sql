@@ -6,7 +6,7 @@ SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:production-db-migratio
 LOCK TABLE supabase_migrations.schema_migrations IN SHARE ROW EXCLUSIVE MODE;
 DO $rollback$
 BEGIN
-  IF (SELECT max(version) FROM supabase_migrations.schema_migrations) IS DISTINCT FROM '20260927030000' THEN
+  IF (SELECT max(version) FROM supabase_migrations.schema_migrations) IS DISTINCT FROM '20260927050000' THEN
     RAISE EXCEPTION 'fase-2026 rollback: ledger divergiu (rollback só vale com esta migration no topo)';
   END IF;
   IF EXISTS (SELECT 1 FROM public.candidaturas_fase_2026) THEN
@@ -16,5 +16,5 @@ END
 $rollback$;
 DROP VIEW public.candidaturas_fase_2026_publico;
 DROP TABLE public.candidaturas_fase_2026;
-DELETE FROM supabase_migrations.schema_migrations WHERE version = '20260927030000';
+DELETE FROM supabase_migrations.schema_migrations WHERE version = '20260927050000';
 COMMIT;

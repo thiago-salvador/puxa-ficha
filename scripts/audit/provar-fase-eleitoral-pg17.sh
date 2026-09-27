@@ -7,7 +7,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 cd "$ROOT"
 
 IMAGE="postgres:17@sha256:7958605b474b3d264a969cb3a123d6aa00ad1e1fe9da8a69984dabb704d93317"
-V="20260927030000_candidaturas_fase_2026_schema"
+V="20260927050000_candidaturas_fase_2026_schema"
 VERSION="${V%%_*}"
 for f in \
   "supabase/migrations/$V.sql" \
