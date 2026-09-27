@@ -25,9 +25,12 @@ function bearer(req: NextRequest): string | null {
 /**
  * GET /api/internal/revalidate-public-cache
  *
- * Cron da Vercel (a cada 15 min) que marca as tags publicas do Data Cache como
- * stale. Cobre escrita que nao passa pelo ingest.yml: migration, SQL no painel,
- * MCP. Sem isso a ficha publica pode ficar ate 1h velha.
+ * Cron da Vercel (a cada 12 h, 09:17 e 21:17 UTC) que marca as tags publicas do
+ * Data Cache como stale. Cobre escrita que nao passa pelo ingest.yml: migration,
+ * SQL no painel, MCP. O frescor aceito para a ficha publica e de ate 12 h, o
+ * mesmo valor do TTL em APP_DATA_REVALIDATE_SECONDS (src/lib/api.ts). Ate
+ * 27/09/2026 rodava a cada 15 min e cada rodada reescrevia o cache das fichas
+ * visitadas depois dela (ISR Writes).
  *
  * `"max"` e nao `{ expire: 0 }`, e a diferenca importa aqui:
  *
