@@ -10,6 +10,12 @@
 --     em Açailândia/MA em 25/08/1986.
 --   /api/v2/proposicoes?idDeputadoAutor=220614: 235 proposições; os 100
 --     proposicao_id_api da ficha estão todos nessa lista (100/100).
+--   /api/v2/proposicoes/{id}/autores: 99 das 100 proposições têm autores; a
+--     2360372 (PROC 150/2023) retorna lista vazia. Ela também aparece na lista
+--     filtrada por idDeputadoAutor=220614 e foi anexada pelo ingest via esse
+--     vínculo incorreto, portanto permanece no conjunto fechado a despublicar.
+--     Evidência consultada em 2026-09-27:
+--     /api/v2/proposicoes/2360372 e /api/v2/proposicoes/2360372/autores.
 -- Outras famílias da Câmara na ficha: votos_candidato 0 linhas; nenhuma
 -- proposição em destaque; gastos_parlamentares 2023, 2024 e 2025 já
 -- despublicados; historico_politico sem mandato federal.

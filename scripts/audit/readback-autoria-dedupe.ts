@@ -119,6 +119,7 @@ async function main() {
         .from("projetos_lei")
         .select(COLUNAS)
         .eq("candidato_id", candidato.id)
+        .is("despublicado_em", null)
         .order("ano", { ascending: false })
         .order("numero", { ascending: false })
         .range(offset, offset + PAGINA - 1)

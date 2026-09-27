@@ -153,7 +153,7 @@ export async function coletarSnapshot(): Promise<SnapshotEvidencias> {
     }
     projetos.push(...await paginar<SnapshotProjeto>((de, ate) => db.from("projetos_lei")
       .select("id,candidato_id,tipo,numero,ano,ementa,tema,situacao,url_inteiro_teor")
-      .in("candidato_id", lote).order("id").range(de, ate)))
+      .in("candidato_id", lote).is("despublicado_em", null).order("id").range(de, ate)))
     posicoesBrutas.push(...await paginar<SnapshotPosicao>((de, ate) => db.from("posicoes_declaradas")
       .select("id,candidato_id,tema,posicao,descricao,fonte,url_fonte")
       .in("candidato_id", lote).eq("verificado", true).eq("gerado_por", "curadoria").order("id").range(de, ate)))
