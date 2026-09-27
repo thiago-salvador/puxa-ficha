@@ -421,7 +421,14 @@ function gerarReadback(linhas: LinhaProcesso[], timestamp: string, marcador: str
 -- Um unico bloco DO sem tabela temporaria: roda em transacao somente leitura.
 DO $readback$
 DECLARE resultado record;
+  ledger integer;
 BEGIN
+  SELECT count(*) INTO ledger
+    FROM supabase_migrations.schema_migrations
+   WHERE version = '${timestamp}';
+  IF ledger <> 1 THEN
+    RAISE EXCEPTION 'readback ${timestamp}: ledger=% (esperado 1)', ledger;
+  END IF;
 WITH expected_base(
   slug, tipo, tribunal, numero_cnj, descricao, status, fonte, url_fonte,
   expected_candidate_id, expected_nome_completo, expected_nome_urna, expected_slug_pos_split

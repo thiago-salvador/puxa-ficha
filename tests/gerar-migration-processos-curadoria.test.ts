@@ -104,6 +104,7 @@ describe("gerar migration de processos da curadoria", () => {
     assert.equal(pacote.migration.match(/current_setting\('pf\.replay', true\) = 'true'/g)?.length, 2)
     assert.match(pacote.readback, /resultado\.expected_rows <> 1 OR resultado\.expected_candidates <> 1/)
     assert.match(pacote.readback, /readback 20260927060000/)
+    assert.match(pacote.readback, /WHERE version = '20260927060000';\n  IF ledger <> 1 THEN/)
     assert.equal(pacote.allowlist.recorte, "processos-curadoria-djen-20260927")
     assert.throws(() => prepararPacoteProcessos({
       itensRevisao: [item()],
