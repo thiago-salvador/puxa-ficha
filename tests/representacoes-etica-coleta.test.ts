@@ -206,7 +206,15 @@ describe("monitor de mudanças publicado", () => {
   it("encaminha vínculo ausente para revisão sem afirmar que o processo acabou", () => {
     const dataset = JSON.parse(readFileSync("scripts/data/representacoes-conselho-etica.json", "utf8"))
     const fila = montarFilaDeMudancas(dataset, { itens: [] }, "2026-09-24T12:00:00.000Z")
-    assert.equal(fila.alertas.length, dataset.itens.length)
+    // O monitor cobre só a Câmara; itens do Senado ficam fora desta fila.
+    const camara = dataset.itens.filter((item: { casa: string }) => item.casa === "camara")
+    assert.ok(camara.length > 0)
+    assert.equal(fila.alertas.length, camara.length)
+    const ids = (itens: Array<{ id: string }>) => [...new Set(itens.map((item) => item.id))].sort()
+    assert.deepEqual(ids(fila.alertas), ids(camara))
+    const senado = dataset.itens.filter((item: { casa: string }) => item.casa === "senado")
+    assert.ok(senado.length > 0)
+    assert.ok(senado.every((item: { id: string }) => !fila.alertas.some((alerta) => alerta.id === item.id)))
     assert.ok(fila.alertas.every((alerta) => alerta.estado === "revisar_vinculo" && alerta.atual === null))
   })
 })

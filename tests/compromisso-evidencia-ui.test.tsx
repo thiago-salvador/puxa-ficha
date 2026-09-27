@@ -215,8 +215,10 @@ describe("contrato da leitura no servidor", () => {
     assert.match(fonte, /\.eq\("fonte", FONTE_RECIBO_PROMESSA\)/u)
     assert.doesNotMatch(fonte, /catch \{\s*return \[\]/u, "erro de leitura não pode virar lista vazia")
   })
-  it("posição só aparece com texto de curadoria", () => {
-    assert.match(fonte, /gerado_por !== "curadoria"\) continue/u)
+  it("posição automática só aparece verificada e com selo", () => {
+    assert.match(fonte, /const curadoria = posicao\.gerado_por === "curadoria"/u)
+    assert.match(fonte, /if \(!curadoria && posicao\.verificado !== true\) continue/u)
+    assert.match(fonte, /curadoria \? \{\} : \{ fonteEmConfirmacao: true \}/u)
   })
 })
 
