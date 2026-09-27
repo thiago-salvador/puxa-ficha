@@ -54,6 +54,27 @@ describe("gerar migration de processos da curadoria", () => {
     assert.equal(tipoProcessual("AÇÃO POPULAR", "ato de gestão"), "civil")
   })
 
+  it("recusa processo de família ou em segredo de justiça", () => {
+    const pacote = (classe: string, overrides: Record<string, unknown> = {}) => () => prepararPacoteProcessos({
+      itensRevisao: [item(overrides)],
+      processosCuradoria: [processo({ classe })],
+      esperadoProcessos: 1,
+      esperadoFichas: 1,
+      timestamp: "20260927060000",
+    })
+    for (const classe of [
+      "Reconhecimento e Extinção de União Estável",
+      "DIVÓRCIO LITIGIOSO",
+      "AÇÃO DE ALIMENTOS",
+      "GUARDA",
+      "INVESTIGAÇÃO DE PATERNIDADE",
+      "INTERDIÇÃO / CURATELA",
+    ]) assert.throws(pacote(classe), /direito de familia ou segredo de justica/, classe)
+    assert.throws(pacote("PROCEDIMENTO COMUM CÍVEL", { motivo: "Tramita na 6ª Vara de Família da Comarca." }), /segredo de justica/)
+    assert.throws(pacote("PROCEDIMENTO COMUM CÍVEL", { familia_processual: "direito de família" }), /segredo de justica/)
+    assert.doesNotThrow(pacote("PROCEDIMENTO COMUM CÍVEL", { motivo: "Contrato com a Empresa Baiana de Alimentos e a Guarda Municipal." }))
+  })
+
   it("lote novo usa marcador próprio em fonte, contagens, rollback e readback", () => {
     const pacote = prepararPacoteProcessos({
       itensRevisao: [item()],

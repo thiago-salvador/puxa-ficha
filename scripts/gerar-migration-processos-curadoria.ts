@@ -131,6 +131,19 @@ function fonteOficialPorProcesso(
   })
 }
 
+/**
+ * Direito de família corre em segredo de justiça (CPC art. 189, II) e não tem
+ * interesse público: o lote recusa, fail-closed, classe ou família processual
+ * desse ramo e descrição que cite vara de família ou segredo de justiça.
+ */
+const RE_FAMILIA_CLASSE =
+  /vara de familia|direito de familia|uniao estavel|divorcio|separacao judicial|\balimentos\b|\bguarda\b|filiacao|paternidade|interdicao|curatela|segredo de justica/
+const RE_FAMILIA_DESCRICAO = /vara de familia|segredo de justica/
+
+export function processoDeFamiliaOuSegredo(classe: string, familia: string, descricao: string): boolean {
+  return RE_FAMILIA_CLASSE.test(normalizar(`${classe} ${familia}`)) || RE_FAMILIA_DESCRICAO.test(normalizar(descricao))
+}
+
 export function tipoProcessual(
   classe: string,
   familia: string,
@@ -532,6 +545,9 @@ export function prepararPacoteProcessos(entrada: EntradaPacote) {
     if (!primeiraFonteHttps) throw new Error(`${item.numero_cnj}: fonte oficial ausente`)
     const processo = curadoriaPorCnj.get(item.numero_cnj)
     if (!processo) throw new Error(`${item.numero_cnj}: processo ausente na evidencia DJEN`)
+    if (processoDeFamiliaOuSegredo(processo.classe, item.familia_processual ?? "", item.motivo ?? "")) {
+      throw new Error(`${item.numero_cnj}: direito de familia ou segredo de justica; fora da publicacao`)
+    }
     urlComunicaPjePorCnj(processo.url, item.numero_cnj)
     const fonte = fonteOficialPorProcesso(item.fontes_oficiais, item.numero_cnj) ?? primeiraFonteHttps
     let urlFonte = fonte.url

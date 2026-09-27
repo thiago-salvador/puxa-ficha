@@ -1,0 +1,83 @@
+{
+  "_comentario": "Autoriza somente a troca de valor_total, bens, sq_candidato e fonte da linha de patrimonio 2026 de quatro fichas pela lista oficial do pacote bem_candidato_2026 (SHA-256 ca1262aad03e129a8489cb0514b1e1be6705391961cb18c00bbc90280a7efae0) e quatro recibos append-only.",
+  "recorte": "patrimonio-2026-pacote-tse-20260927",
+  "migration": "20260927060100_patrimonio_2026_pacote_tse.sql",
+  "fonte": "Pacote oficial bem_candidato_2026 do TSE (https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2026.zip), SHA-256 ca1262aad03e129a8489cb0514b1e1be6705391961cb18c00bbc90280a7efae0.",
+  "coorte": [
+    "ataides-oliveira",
+    "augusto-cury",
+    "laurez-moreira",
+    "leonardo-avalanche"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "patrimonio",
+      "slug": "ataides-oliveira",
+      "ano": 2026,
+      "campos": [
+        "valor_total",
+        "bens",
+        "sq_candidato",
+        "fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "augusto-cury",
+      "ano": 2026,
+      "campos": [
+        "valor_total",
+        "bens",
+        "sq_candidato",
+        "fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "laurez-moreira",
+      "ano": 2026,
+      "campos": [
+        "valor_total",
+        "bens",
+        "sq_candidato",
+        "fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "leonardo-avalanche",
+      "ano": 2026,
+      "campos": [
+        "valor_total",
+        "bens",
+        "sq_candidato",
+        "fonte"
+      ],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260927060100",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao"
+      ],
+      "max_registros": 4
+    }
+  ]
+}
