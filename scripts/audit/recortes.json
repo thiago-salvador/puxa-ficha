@@ -711,6 +711,13 @@
       "ate": "20260926190100",
       "allowlist": "scripts/audit/allowlist-processos-numero-cnj-20260926.json",
       "divida": null
+    },
+    {
+      "nome": "datas-nascimento-tse-20260926",
+      "desde": "20260926233000",
+      "ate": "20260926233200",
+      "allowlist": "scripts/audit/allowlist-datas-nascimento-tse-20260926.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

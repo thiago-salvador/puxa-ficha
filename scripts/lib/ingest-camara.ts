@@ -22,6 +22,7 @@ import { sanitizePublicTextOrThrow } from "../../src/lib/public-text"
 import { log, warn, error } from "./logger"
 import { classificarVotacao, type ClassificacaoVotacao } from "./votacao-classificacao"
 import type { IngestResult } from "./types"
+import { secondarySourceBirthDate } from "./data-nascimento"
 
 const API = CAMARA_API
 
@@ -319,7 +320,8 @@ async function ingestPerfil(
   if (dep.municipioNascimento && dep.ufNascimento) {
     updates.naturalidade = `${dep.municipioNascimento}/${dep.ufNascimento}`
   }
-  if (dep.dataNascimento) updates.data_nascimento = dep.dataNascimento
+  const nascimento = secondarySourceBirthDate(dep.dataNascimento)
+  if (nascimento) updates.data_nascimento = nascimento
 
   await supabase.from("candidatos").update(updates).eq("id", candidatoId)
   log("camara", `  ${slug}: perfil atualizado`)

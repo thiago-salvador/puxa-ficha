@@ -2923,10 +2923,7 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {
-        "2012": "110000010928",
-        "2020": "110000951550"
-      }
+      "tse_sq_candidato": {}
     }
   },
   {
