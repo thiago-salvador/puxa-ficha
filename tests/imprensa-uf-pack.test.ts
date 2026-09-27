@@ -10,17 +10,21 @@ test("pacotes cobrem exatamente as 27 UFs e normalizam códigos em minúsculas",
   assert.ok(!isImprensaUf("XX"))
 })
 
-test("lacunas preservam revisão de vínculo e estados não conclusivos", () => {
+test("lacunas apontam estados não conclusivos e processos com fonte oficial em confirmação", () => {
   const row = {
     cargo: "Governador",
-    chapa: { estado: "vinculo_em_revisao", suplentesEstado: "nao_aplicavel" },
+    chapa: { estado: "sem_dado", suplentesEstado: "nao_aplicavel" },
     sites: { estado: "sem_dado" },
     processos: { estado: "indeterminado" },
   } as Parameters<typeof rowGaps>[0]
-  assert.deepEqual(rowGaps(row), ["vínculo do vice em revisão", "sites sem dado publicado", "processos: Indeterminado"])
-  assert.equal(chapaSummary(row), "Vínculo do vice em revisão")
+  assert.deepEqual(rowGaps(row), ["composição da chapa sem dado confirmado", "sites sem dado publicado", "processos: Indeterminado"])
+  assert.equal(chapaSummary(row), "Vice sem dado confirmado")
   assert.equal(chapaSummary({ ...row, chapa: { ...row.chapa, estado: "estado_novo" } } as unknown as Parameters<typeof chapaSummary>[0]), "Composição da chapa exige conferência")
-  assert.deepEqual(rowGaps({ ...row, processos: { ...row.processos, estado: "cobertura_parcial" } }), ["vínculo do vice em revisão", "sites sem dado publicado", "processos: Cobertura parcial"])
+  assert.deepEqual(rowGaps({ ...row, processos: { ...row.processos, estado: "cobertura_parcial" } }), ["composição da chapa sem dado confirmado", "sites sem dado publicado", "processos: Cobertura parcial"])
+  assert.deepEqual(
+    rowGaps({ ...row, processos: { ...row.processos, estado: "publicado", quantidadeEmConfirmacao: 2 } }),
+    ["composição da chapa sem dado confirmado", "sites sem dado publicado", "processos: 2 com fonte oficial em confirmação"],
+  )
 })
 
 test("rótulos de estado, nome da UF e plural de atualizações são legíveis", () => {

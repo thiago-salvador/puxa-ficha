@@ -4,6 +4,14 @@ import { readFile } from "node:fs/promises"
 const base = process.argv[2] ?? "http://127.0.0.1:3118"
 const siteSnapshot = JSON.parse(await readFile(new URL("../src/data/candidate-sites-tse-2026.json", import.meta.url), "utf8"))
 
+async function readHtml(path) {
+  const response = await fetch(new URL(path, base), { cache: "no-store", signal: AbortSignal.timeout(30_000) })
+  assert.equal(response.status, 200, `${path}: HTTP ${response.status}`)
+  return response.text()
+}
+
+const fold = (value) => String(value ?? "").normalize("NFC").toLocaleLowerCase("pt-BR")
+
 async function read(path) {
   const response = await fetch(new URL(path, base), {
     cache: "no-store",
@@ -24,7 +32,16 @@ const publicSlugs = [...new Set(publicCohort.slugs)].sort()
 const exportedSlugs = [...new Set(main.rows.map((row) => row.slug))].sort()
 assert.deepEqual(exportedSlugs, publicSlugs, "coorte do export difere da rota pública canônica")
 const selected = []
-for (const row of main.rows.filter((item) => item.chapa.estado === "publicado").slice(0, 10)) selected.push(row)
+for (const row of main.rows.filter((item) => item.chapa.estado === "publicado" && item.cargo !== "Senador").slice(0, 8)) selected.push(row)
+for (const row of main.rows.filter((item) => item.chapa.suplentesEstado === "publicado" && item.cargo === "Senador").slice(0, 3)) selected.push(row)
+// Garante na amostra fichas com processos que levam o selo "Fonte oficial em
+// confirmação" (regra L1): a Mesa precisa contar essas linhas como a ficha conta.
+for (const row of [
+  ...main.rows.filter((item) => (item.processos.quantidadeEmConfirmacao ?? 0) > 0).slice(0, 4),
+  ...main.rows.filter((item) => item.processos.estado === "cobertura_parcial").slice(0, 2),
+]) {
+  if (!selected.some((item) => item.slug === row.slug)) selected.push(row)
+}
 for (const row of main.rows.filter((item) => item.sites.estado === "publicado")) {
   if (selected.length >= 20) break
   if (!selected.some((item) => item.slug === row.slug)) selected.push(row)
@@ -39,6 +56,8 @@ let sitePublished = 0
 let chapaPublished = 0
 let processPublished = 0
 let processPartial = 0
+let processWithSeal = 0
+let senatePublished = 0
 for (const row of selected) {
   const profileResponse = await read(`/api/candidato-profile/${encodeURIComponent(row.slug)}`)
   assert.equal(profileResponse.sourceStatus, "live", `${row.slug}: ficha degradada`)
@@ -60,7 +79,7 @@ for (const row of selected) {
     assert.match(row.sites.fonteSha256 ?? "", /^[a-f0-9]{64}$/i)
     const longSites = siteLong.rows.filter((item) => item.slug === row.slug)
     assert.equal(longSites.length, row.sites.quantidade)
-    assert.deepEqual(longSites.map((item) => [item.ordem, item.url]), siteSnapshot.candidates[row.slug]?.sites.map((item) => [item.order, new URL(item.url).toString()]), `${row.slug}: URLs do pacote versionado`)
+    assert.deepEqual(longSites.map((item) => [item.ordem, item.url]), siteSnapshot.candidates[row.slug]?.sites.filter((item) => item.url).map((item) => [item.order, new URL(item.url).toString()]), `${row.slug}: URLs do pacote versionado`)
   } else if (row.sites.estado === "vazio_confirmado") {
     assert.equal(row.sites.quantidade, 0, `${row.slug}: vazio confirmado`)
     assert.equal(profile.sites_candidato?.resultado, "vazio_confirmado")
@@ -69,36 +88,66 @@ for (const row of selected) {
     assert.equal(row.sites.quantidade, null, `${row.slug}: sem dado sites`)
   }
 
-  if (row.chapa.estado === "publicado") {
+  if (row.cargo === "Senador") {
+    // Suplentes não vêm na API da ficha; a página os recebe de
+    // loadSenadoRunningMates (SenadoRunningMates.tsx). A ficha mostra a grafia
+    // do TSE e o export a formatada, então a comparação ignora caixa.
+    assert.equal(row.chapa.viceNome, null, `${row.slug}: senador sem vice`)
+    if (row.chapa.suplentesEstado === "publicado") {
+      senatePublished += 1
+      assert.equal(row.chapa.suplentes.length, 2, `${row.slug}: dois suplentes`)
+      assert.match(row.chapa.fonteUrl ?? "", /^https:\/\//, `${row.slug}: fonte suplentes`)
+      const html = fold(await readHtml(`/candidato/${encodeURIComponent(row.slug)}`))
+      for (const name of row.chapa.suplentes) assert.ok(html.includes(fold(name)), `${row.slug}: suplente ${name} não aparece na ficha`)
+    } else {
+      assert.deepEqual(row.chapa.suplentes, [], `${row.slug}: suplentes sem estado publicado`)
+    }
+  } else if (row.chapa.estado === "publicado") {
     chapaPublished += 1
+    // A ficha formata o nome para exibição; o export usa a mesma grafia em
+    // viceNome e preserva a do TSE em viceNomeOriginal.
     assert.equal(row.chapa.viceNome, profile.chapa_2026?.vice_nome_urna, `${row.slug}: vice`)
+    assert.ok(row.chapa.viceNomeOriginal, `${row.slug}: vice original`)
     assert.equal(row.chapa.fonteUrl, profile.chapa_2026?.fonte_url, `${row.slug}: fonte chapa`)
     assert.equal(row.chapa.fonteSha256, profile.chapa_2026?.fonte_sha256, `${row.slug}: SHA chapa`)
-    assert.equal(row.chapa.snapshotEm, profile.chapa_2026?.snapshot_em, `${row.slug}: snapshot chapa`)
+    // O export normaliza a data para ISO com "Z"; a ficha devolve o texto do
+    // banco ("+00:00"). O que precisa bater é o instante.
+    assert.equal(Date.parse(row.chapa.snapshotEm ?? ""), Date.parse(profile.chapa_2026?.snapshot_em ?? ""), `${row.slug}: snapshot chapa`)
+    assert.match(row.chapa.snapshotEm ?? "", /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/, `${row.slug}: snapshot ISO`)
     assert.match(row.chapa.fonteUrl ?? "", /^https:\/\//)
     assert.match(row.chapa.fonteSha256 ?? "", /^[a-f0-9]{64}$/i)
   } else {
     assert.equal(row.chapa.viceNome, null, `${row.slug}: sem dado vice`)
   }
 
+  // Regra L1: a ficha exibe linhas "oficial" e "em_confirmacao" (selo); só as
+  // linhas sem fonte publicável ficam fora e entram em processos_omitidos.
   const profileProcesses = profile.processos ?? []
   const longProcesses = processLong.rows.filter((item) => item.slug === row.slug)
   for (const item of longProcesses) {
     const url = new URL(item.url_fonte)
-    assert.equal(url.protocol, "https:")
-    assert.match(url.hostname, /(?:^|\.)jus\.br$/)
-    assert.ok(profileProcesses.some((record) => record.url_fonte === item.url_fonte), `${row.slug}: processo não está na ficha`)
+    assert.ok(item.fonte_nivel === "oficial" || item.fonte_nivel === "em_confirmacao", `${row.slug}: fonte_nivel`)
+    if (item.fonte_nivel === "oficial") {
+      assert.equal(url.protocol, "https:")
+      assert.match(url.hostname, /(?:^|\.)jus\.br$/)
+    }
+    assert.ok(
+      profileProcesses.some((record) => record.url_fonte === item.url_fonte && (record.fonte_nivel ?? "oficial") === item.fonte_nivel),
+      `${row.slug}: processo não está na ficha com o mesmo nível de fonte`,
+    )
   }
-  if (row.processos.estado === "publicado") {
-    processPublished += 1
-    assert.equal(row.processos.quantidade, profileProcesses.length, `${row.slug}: processos`)
+  const profileSeal = profileProcesses.filter((record) => record.fonte_nivel === "em_confirmacao").length
+  if (row.processos.estado === "publicado" || row.processos.estado === "cobertura_parcial") {
+    if (row.processos.estado === "publicado") processPublished += 1
+    else processPartial += 1
+    if (profileSeal > 0) processWithSeal += 1
+    assert.equal(row.processos.quantidade ?? 0, profileProcesses.length, `${row.slug}: processos exibidos`)
     assert.equal(longProcesses.length, profileProcesses.length, `${row.slug}: longo processos`)
-  } else if (row.processos.estado === "cobertura_parcial") {
-    processPartial += 1
-    assert.equal(row.processos.quantidade, null, `${row.slug}: parcial sem número`)
-    assert.ok(longProcesses.length < profileProcesses.length, `${row.slug}: cobertura parcial`)
+    assert.equal(row.processos.quantidadeEmConfirmacao ?? 0, profileSeal, `${row.slug}: processos com selo`)
+    assert.equal(row.processos.quantidadeOmitida ?? 0, profile.processos_omitidos_sem_fonte_oficial ?? 0, `${row.slug}: processos omitidos`)
+    if (row.processos.estado === "cobertura_parcial") assert.ok((row.processos.quantidadeOmitida ?? 0) > 0, `${row.slug}: cobertura parcial sem omitidos`)
   } else {
-    assert.equal(row.processos.quantidade, null, `${row.slug}: sem dado processos`)
+    assert.equal(profileProcesses.length, 0, `${row.slug}: ficha exibe processos que o export não conta`)
   }
 }
 assert.ok(sitePublished > 0, "amostra sem sites publicados")
@@ -112,6 +161,8 @@ console.log(JSON.stringify({
   chapaPublished,
   processPublished,
   processPartial,
+  processWithSeal,
+  senatePublished,
   siteLongRows: siteLong.rows.length,
   processLongRows: processLong.rows.length,
 }))

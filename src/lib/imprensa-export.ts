@@ -33,6 +33,9 @@ const MAIN_COLUMNS = [
   "processos_quantidade_omitida",
   "chapa_suplentes_estado",
   "chapa_suplentes",
+  "chapa_vice_nome_original",
+  "processos_quantidade_em_confirmacao",
+  "nome_urna_original",
 ] as const
 
 export type ImprensaExportKind = "csv" | "json"
@@ -42,8 +45,9 @@ type Cell = string | number | null
 function mainCells(row: ImprensaRow): Cell[] {
   return [
     row.slug,
-    // Como citar / exports preservam a grafia original do TSE (jornalistas citam a fonte).
-    row.nomeOriginal,
+    // Mesma grafia de exibição da ficha; a do TSE segue em nome_urna_original
+    // (o botão "Como citar" também usa a grafia do TSE).
+    row.nome,
     row.cargo,
     row.uf,
     row.partido,
@@ -54,7 +58,9 @@ function mainCells(row: ImprensaRow): Cell[] {
     row.sites?.fonteSha256 ?? null,
     row.sites?.coletadoEm ?? null,
     row.chapa.estado,
-    row.chapa.viceNomeOriginal,
+    // Mesma grafia de exibição da ficha (chapa_2026.vice_nome_urna); a grafia do
+    // TSE segue em chapa_vice_nome_original.
+    row.chapa.viceNome,
     row.chapa.fonteUrl,
     row.chapa.fonteSha256,
     row.chapa.snapshotEm,
@@ -64,6 +70,9 @@ function mainCells(row: ImprensaRow): Cell[] {
     row.processos?.quantidadeOmitida ?? 0,
     row.chapa.suplentesEstado,
     row.chapa.suplentes.join("; ") || null,
+    row.chapa.viceNomeOriginal,
+    row.processos?.quantidadeEmConfirmacao ?? 0,
+    row.nomeOriginal,
   ]
 }
 
@@ -99,8 +108,9 @@ export function serializeImprensaJson(dataset: ImprensaDataset): string {
     filters: dataset.filters,
     rows: dataset.rows.map((row) => ({
       slug: row.slug,
-      // Como citar / exports preservam a grafia original do TSE (jornalistas citam a fonte).
-      nome: row.nomeOriginal,
+      // Mesma grafia de exibição da ficha; a do TSE segue em nomeOriginal.
+      nome: row.nome,
+      nomeOriginal: row.nomeOriginal,
       cargo: row.cargo,
       uf: row.uf,
       partido: row.partido,
@@ -112,19 +122,16 @@ export function serializeImprensaJson(dataset: ImprensaDataset): string {
         fonteSha256: row.sites.fonteSha256,
         coletadoEm: row.sites.coletadoEm,
       },
-      chapa: { estado: row.chapa.estado, suplentesEstado: row.chapa.suplentesEstado, viceNome: row.chapa.viceNomeOriginal, suplentes: row.chapa.suplentes, fonteUrl: row.chapa.fonteUrl, fonteSha256: row.chapa.fonteSha256, snapshotEm: row.chapa.snapshotEm },
+      chapa: { estado: row.chapa.estado, suplentesEstado: row.chapa.suplentesEstado, viceNome: row.chapa.viceNome, viceNomeOriginal: row.chapa.viceNomeOriginal, suplentes: row.chapa.suplentes, fonteUrl: row.chapa.fonteUrl, fonteSha256: row.chapa.fonteSha256, snapshotEm: row.chapa.snapshotEm },
       processos: {
         estado: row.processos.estado,
         buscaEstado: row.processos.buscaEstado,
         quantidade: row.processos.quantidade,
         quantidadeOmitida: row.processos.quantidadeOmitida,
+        quantidadeEmConfirmacao: row.processos.quantidadeEmConfirmacao ?? 0,
       },
     })),
   })
-}
-
-function isHttps(url: unknown): url is string {
-  return typeof url === "string" && /^https:\/\//i.test(url)
 }
 
 export interface ImprensaLongSiteRow {
@@ -142,8 +149,18 @@ export interface ImprensaLongProcessoRow {
   tipo: string | null
   tribunal: string | null
   url_fonte: string
+  /** "oficial" ou "em_confirmacao" (selo "Fonte em confirmação" na ficha). */
+  fonte_nivel: string
   data_inicio: string | null
   data_decisao: string | null
+}
+
+function hasPublishableSourceUrl(occurrence: ImprensaRow["processos"]["ocorrencias"][number]): boolean {
+  const url = occurrence.urlFonte
+  if (typeof url !== "string") return false
+  // Fonte judicial específica é sempre HTTPS; a página do selo segue a mesma
+  // regra de link da ficha (urlPublicaDoProcesso aceita http e https).
+  return occurrence.fonteNivel === "em_confirmacao" ? /^https?:\/\//i.test(url) : /^https:\/\//i.test(url)
 }
 
 export function buildImprensaLongRows(
@@ -163,15 +180,19 @@ export function buildImprensaLongRows(
     )
   }
 
+  // As ocorrências já passaram pela regra da ficha (nivelFonteProcesso): cada
+  // linha pública da ficha aparece aqui, inclusive as que levam o selo. O filtro
+  // abaixo só repete, como defesa, o formato de URL que cada nível exige.
   return dataset.rows.flatMap((row) =>
     (row.processos?.ocorrencias ?? [])
-      .filter((occurrence) => isHttps(occurrence.urlFonte))
+      .filter(hasPublishableSourceUrl)
       .map((occurrence) => ({
         slug: row.slug,
         numero: occurrence.numero ?? null,
         tipo: occurrence.tipo ?? null,
         tribunal: occurrence.tribunal ?? null,
         url_fonte: occurrence.urlFonte,
+        fonte_nivel: occurrence.fonteNivel,
         data_inicio: occurrence.dataInicio ?? null,
         data_decisao: occurrence.dataDecisao ?? null,
       })),
@@ -199,7 +220,7 @@ export function serializeImprensaLongCsv(
   const rows = buildImprensaLongRows(dataset, family)
   const familyColumns = family === "sites"
     ? ["slug", "ordem", "url", "fonte_url", "fonte_sha256", "coletado_em"]
-    : ["slug", "numero", "tipo", "tribunal", "url_fonte", "data_inicio", "data_decisao"]
+    : ["slug", "numero", "tipo", "tribunal", "url_fonte", "fonte_nivel", "data_inicio", "data_decisao"]
   const columns = ["version", "generated_at", "cargo_filtro", "uf_filtro", ...familyColumns, "aviso"]
   const lines = [
     columns.map(escapeCsvCell).join(","),

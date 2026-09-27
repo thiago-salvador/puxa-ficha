@@ -11,7 +11,9 @@ import { formatDisplayName } from "@/lib/display-name"
 
 type Props = { params: Promise<{ uf: string }> }
 
-export const revalidate = 300
+// Mesmo frescor da ficha pública e do dataset em cache (12 h, decisão de custo
+// de 27/09/2026); a tag da ficha invalida a página quando o pipeline escreve.
+export const revalidate = 43200
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { uf: rawUf } = await params

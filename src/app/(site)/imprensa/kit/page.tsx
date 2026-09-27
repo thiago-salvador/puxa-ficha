@@ -18,7 +18,6 @@ export const metadata: Metadata = {
 const notice = "Confira os dados na fonte original antes de publicar."
 const optionalAssets = [
   { href: "/imprensa/bio.txt", label: "Baixar bio" },
-  { href: "/imprensa/foto.jpg", label: "Baixar foto" },
   { href: "/imprensa/logo.svg", label: "Baixar logo SVG (fundo claro)" },
   { href: "/imprensa/logo-branco.svg", label: "Baixar logo SVG (fundo escuro)" },
 ].filter(({ href }) => existsSync(join(process.cwd(), "public", href.slice(1))))

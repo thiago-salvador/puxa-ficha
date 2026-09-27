@@ -48,7 +48,7 @@ function dataset(): ImprensaDataset {
         estado: "cobertura_parcial",
         buscaEstado: "contraditorio",
         quantidade: null,
-        ocorrencias: [{ numero: "1", tipo: "civil", tribunal: "TJ", urlFonte: "https://tribunal.example/processo/1", dataInicio: "2020-01-01", dataDecisao: null }],
+        ocorrencias: [{ numero: "1", tipo: "civil", tribunal: "TJ", urlFonte: "https://tribunal.example/processo/1", fonteNivel: "oficial", dataInicio: "2020-01-01", dataDecisao: null }],
       },
     }],
   }
@@ -92,21 +92,27 @@ test("JSON mantém filtros, data e distinção null/zero", () => {
     estado: "sem_dado",
     suplentesEstado: "nao_aplicavel",
     viceNome: null,
+    viceNomeOriginal: null,
     suplentes: [],
     fonteUrl: null,
     fonteSha256: null,
     snapshotEm: "2026-09-26T00:00:00.000Z",
   })
+  assert.equal(parsed.rows[0].processos.quantidadeEmConfirmacao, 0)
 })
 
-test("longos publicam somente ocorrências comprovadas", () => {
+test("longos publicam as linhas da ficha, com o nível da fonte, e barram URL fora do formato", () => {
   const value = dataset()
   assert.match(serializeImprensaLongCsv(value, "sites"), /"version","generated_at","cargo_filtro","uf_filtro","slug".*"aviso"/)
   assert.ok(serializeImprensaLongCsv(value, "sites").startsWith(`\ufeff"version","generated_at"`))
   assert.match(serializeImprensaLongCsv(value, "sites"), /"1","2026-09-22T12:00:00\.000Z","Deputado Federal","SP","joao-da-silva"[\s\S]*"Confira os dados na fonte original antes de publicar\."/)
-  value.rows[0].processos.ocorrencias.push({ numero: "2", tipo: "civil", tribunal: "TJ", urlFonte: "", dataInicio: null, dataDecisao: null })
+  value.rows[0].processos.ocorrencias.push({ numero: "2", tipo: "civil", tribunal: "TJ", urlFonte: "", fonteNivel: "oficial", dataInicio: null, dataDecisao: null })
   assert.equal(buildImprensaLongRows(value, "sites").length, 1)
   assert.equal(buildImprensaLongRows(value, "processos").length, 1)
-  value.rows[0].processos.ocorrencias.push({ numero: "3", tipo: "civil", tribunal: "TJ", urlFonte: "http://tribunal.example/processo/3", dataInicio: null, dataDecisao: null })
+  value.rows[0].processos.ocorrencias.push({ numero: "3", tipo: "civil", tribunal: "TJ", urlFonte: "http://tribunal.example/processo/3", fonteNivel: "oficial", dataInicio: null, dataDecisao: null })
   assert.equal(buildImprensaLongRows(value, "processos").length, 1)
+  value.rows[0].processos.ocorrencias.push({ numero: "4", tipo: "civil", tribunal: "TJ", urlFonte: "https://jornal.example/materia-sobre-o-processo", fonteNivel: "em_confirmacao", dataInicio: null, dataDecisao: null })
+  const longRows = buildImprensaLongRows(value, "processos") as Array<{ numero: string | null; fonte_nivel: string }>
+  assert.deepEqual(longRows.map((row) => [row.numero, row.fonte_nivel]), [["1", "oficial"], ["4", "em_confirmacao"]])
+  assert.match(serializeImprensaLongCsv(value, "processos"), /"url_fonte","fonte_nivel","data_inicio"/)
 })

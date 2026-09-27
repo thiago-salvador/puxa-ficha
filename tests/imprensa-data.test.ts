@@ -95,9 +95,15 @@ test("monta coorte, filtros e estados sem transformar ausência em zero", async 
     })
     assert.equal(dataset.rows[0].processos.estado, "cobertura_parcial")
     assert.equal(dataset.rows[0].processos.buscaEstado, "contraditorio")
-    assert.equal(dataset.rows[0].processos.quantidade, 1)
-    assert.equal(dataset.rows[0].processos.quantidadeOmitida, 2)
-    assert.equal(dataset.rows[0].processos.ocorrencias.length, 1)
+    // Regra L1 da ficha (nivelFonteProcesso): URL judicial com o CNJ é oficial,
+    // página específica de imprensa entra com o selo, portal genérico fica fora.
+    assert.equal(dataset.rows[0].processos.quantidade, 2)
+    assert.equal(dataset.rows[0].processos.quantidadeOmitida, 1)
+    assert.equal(dataset.rows[0].processos.quantidadeEmConfirmacao, 1)
+    assert.deepEqual(dataset.rows[0].processos.ocorrencias.map((item) => [item.numero, item.fonteNivel, item.urlFonte]), [
+      ["4004910-65.2025.8.26.0506", "oficial", "https://pje.tre-sp.jus.br/consulta/processo?numeroProcesso=40049106520258260506"],
+      ["2", "em_confirmacao", "https://jornal.example/noticia-processo"],
+    ])
     assert.deepEqual(dataset.availableCargos, ["Deputado Federal", "Governador"])
     assert.deepEqual(dataset.availableUfs, ["MG", "RJ", "SP"])
 
@@ -223,29 +229,27 @@ test("suplentes indeferidos preservam estado explícito, URL HTTPS e snapshot IS
   }
 })
 
-test("vínculo de vice em perfil oficial fica em revisão e não publica nome nem fonte", async () => {
-  const privateViceName = "NOME PRIVADO DO VICE"
+test("vínculo novo_perfil_oficial publica o vice como a ficha pública", async () => {
+  const viceName = "VICE DO PERFIL OFICIAL"
   __setImprensaDataDependenciesForTests({
-    loadSlugs: async () => [{ slug: "governador-vinculo-em-revisao" }],
-    loadCandidates: async () => [{ id: "20", slug: "governador-vinculo-em-revisao", nome_urna: "GOVERNADOR", cargo_disputado: "Governador", estado: "SP", partido_sigla: "ABC" }],
+    loadSlugs: async () => [{ slug: "governador-perfil-oficial" }],
+    loadCandidates: async () => [{ id: "20", slug: "governador-perfil-oficial", nome_urna: "GOVERNADOR", cargo_disputado: "Governador", estado: "SP", partido_sigla: "ABC" }],
     loadProcesses: async () => [],
-    loadChapas: async () => [{ titular_candidato_id: "20", vice_nome_urna: privateViceName, identidade_status: "confirmada", vinculo_titular_status: "novo_perfil_oficial", fonte_url: "https://tse.jus.br/chapa", fonte_sha256: "a".repeat(64), snapshot_em: "2026-09-26T12:00:00.000Z" }],
+    loadChapas: async () => [{ titular_candidato_id: "20", vice_nome_urna: viceName, identidade_status: "confirmada", vinculo_titular_status: "novo_perfil_oficial", fonte_url: "https://tse.jus.br/chapa", fonte_sha256: "a".repeat(64), snapshot_em: "2026-09-26T12:00:00.000Z" }],
     loadSites: async () => null,
   })
   try {
     const row = (await getImprensaDataset({ cargo: null, uf: null })).rows[0]
-    assert.equal(row.chapa.estado, "vinculo_em_revisao")
-    assert.equal(row.chapa.viceNome, null)
-    assert.equal(row.chapa.viceNomeOriginal, null)
-    assert.equal(row.chapa.fonteUrl, null)
-    assert.equal(JSON.stringify(row.chapa).includes(privateViceName), false)
+    assert.equal(row.chapa.estado, "publicado")
+    assert.equal(row.chapa.viceNome, "Vice do Perfil Oficial")
+    assert.equal(row.chapa.viceNomeOriginal, viceName)
+    assert.equal(row.chapa.fonteUrl, "https://tse.jus.br/chapa")
 
     const component = readFileSync(new URL("../src/components/imprensa/ImprensaRows.tsx", import.meta.url), "utf8")
     const css = readFileSync(new URL("../src/app/(site)/imprensa/imprensa.module.css", import.meta.url), "utf8")
-    assert.match(component, /state === "vinculo_em_revisao"\) return "Vínculo do vice em revisão"/)
-    assert.match(component, /row\.chapa\.estado === "vinculo_em_revisao"\) return false/)
+    assert.doesNotMatch(component, /vinculo_em_revisao/)
+    assert.doesNotMatch(css, /vinculo_em_revisao/)
     assert.match(component, /return "Exige conferência"/)
-    assert.match(css, /\.status\[data-state="vinculo_em_revisao"\]/)
   } finally {
     __setImprensaDataDependenciesForTests(null)
   }

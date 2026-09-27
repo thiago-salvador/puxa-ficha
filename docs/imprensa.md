@@ -10,33 +10,32 @@ A cobertura inclui candidaturas a Presidente e Governador. Senador aparece quand
 
 - `version`, `generatedAt`, `aviso`, `filters`, `rows`.
 - `filters`: `cargo` e `uf`, com `null` quando não há filtro.
-- Cada item de `rows`: `slug`, `nome`, `cargo`, `uf`, `partido`, `fichaUrl`, `sites`, `chapa` e `processos`.
+- Cada item de `rows`: `slug`, `nome` (mesma grafia da ficha), `nomeOriginal` (grafia do TSE), `cargo`, `uf`, `partido`, `fichaUrl`, `sites`, `chapa` e `processos`.
 - `sites`: `estado`, `quantidade`, `fonteUrl`, `fonteSha256` e `coletadoEm`.
-- `chapa`: `estado`, `suplentesEstado`, `viceNome`, `suplentes`, `fonteUrl`, `fonteSha256` e `snapshotEm`.
-- `processos`: `estado`, `buscaEstado`, `quantidade` e `quantidadeOmitida`.
+- `chapa`: `estado`, `suplentesEstado`, `viceNome` (mesma grafia da ficha), `viceNomeOriginal` (grafia do TSE), `suplentes`, `fonteUrl`, `fonteSha256` e `snapshotEm`.
+- `processos`: `estado`, `buscaEstado`, `quantidade`, `quantidadeOmitida` e `quantidadeEmConfirmacao`.
 
-O CSV equivalente preserva as colunas `version`, `generated_at`, `cargo_filtro`, `uf_filtro`, `slug`, `nome_urna`, `cargo_disputado`, `uf`, `partido_sigla`, `ficha_url`, `sites_estado`, `sites_quantidade`, `sites_fonte_url`, `sites_fonte_sha256`, `sites_coletado_em`, `chapa_estado`, `chapa_vice_nome`, `chapa_fonte_url`, `chapa_fonte_sha256`, `chapa_snapshot_em`, `processos_estado`, `processos_busca_estado`, `processos_quantidade` e `processos_quantidade_omitida`. As colunas `chapa_suplentes_estado`, `chapa_suplentes` e `aviso` vêm ao final. O aviso também é enviado no header HTTP `X-Aviso-Dados` em percent-encoding. O cabeçalho sempre ocupa a primeira linha. Os CSVs mantêm BOM UTF-8, escape de células e neutralização de fórmulas.
+O CSV equivalente preserva as colunas `version`, `generated_at`, `cargo_filtro`, `uf_filtro`, `slug`, `nome_urna`, `cargo_disputado`, `uf`, `partido_sigla`, `ficha_url`, `sites_estado`, `sites_quantidade`, `sites_fonte_url`, `sites_fonte_sha256`, `sites_coletado_em`, `chapa_estado`, `chapa_vice_nome`, `chapa_fonte_url`, `chapa_fonte_sha256`, `chapa_snapshot_em`, `processos_estado`, `processos_busca_estado`, `processos_quantidade` e `processos_quantidade_omitida`. As colunas `chapa_suplentes_estado`, `chapa_suplentes`, `chapa_vice_nome_original`, `processos_quantidade_em_confirmacao`, `nome_urna_original` e `aviso` vêm ao final. `nome_urna` e `chapa_vice_nome` usam a mesma grafia da ficha. O aviso também é enviado no header HTTP `X-Aviso-Dados` em percent-encoding. O cabeçalho sempre ocupa a primeira linha. Os CSVs mantêm BOM UTF-8, escape de células e neutralização de fórmulas.
 
-Os exports longos estão em `/api/imprensa/export/sites` e `/api/imprensa/export/processos`. O JSON de cada rota contém `version`, `generatedAt`, `aviso`, `filters`, `family` e `rows`. O CSV contém metadados (`version`, `generated_at`, `cargo_filtro`, `uf_filtro`) seguidos pelas colunas da respectiva família. As duas rotas aceitam `format=csv|json` e mantêm os mesmos filtros. Os exports incluem `X-Robots-Tag: noindex, nofollow`.
+Os exports longos estão em `/api/imprensa/export/sites` e `/api/imprensa/export/processos`. O JSON de cada rota contém `version`, `generatedAt`, `aviso`, `filters`, `family` e `rows`. O CSV contém metadados (`version`, `generated_at`, `cargo_filtro`, `uf_filtro`) seguidos pelas colunas da respectiva família. O arquivo longo de processos traz `fonte_nivel` em cada linha: `oficial` (fonte judicial específica) ou `em_confirmacao` (a ficha mostra a linha com o selo "Fonte oficial em confirmação"). As duas rotas aceitam `format=csv|json` e mantêm os mesmos filtros. Os exports incluem `X-Robots-Tag: noindex, nofollow`.
 
 ## Estados e contagens
 
 - `publicado`: valor ligado à identidade pública e acompanhado da prova exigida para a família.
 - `vazio_confirmado`: nos sites, ausência documentada em `verified_empty_profiles` do snapshot oficial; não é usado para suplentes.
-- `cobertura_parcial`: nos processos, existem ocorrências publicadas sem URL judicial específica; o arquivo longo conserva ocorrências com fonte válida, e a quantidade principal fica nula.
+- `cobertura_parcial`: nos processos, parte das linhas não tem fonte publicável e fica fora da ficha e do export; a quantidade principal conta só as linhas exibidas na ficha (nula quando nenhuma é exibida), e `quantidadeOmitida` conta as de fora. Linhas com o selo "Fonte oficial em confirmação" são exibidas na ficha e contadas em `quantidade` e em `quantidadeEmConfirmacao`, com a mesma regra de `nivelFonteProcesso`.
 - `sem_dado`: não há prova suficiente para afirmar um valor ou uma ausência.
 - `null`: quantidade não comprovada. Não deve ser convertido em zero.
 - `indisponivel`: a consulta ou a fonte não permitiu obter o dado naquele momento.
 - `nao_aplicavel`: em `suplentesEstado`, indica que suplentes não se aplicam a candidaturas fora do Senado. Para senadores, `chapa.estado` e `suplentesEstado` usam o mesmo estado dos suplentes.
 - `indeferidos_comprovados`: comprovante do TSE registra dois suplentes indeferidos; isso não significa que suplentes não se aplicam ao Senado. A fonte HTTPS, o hash e o snapshot ISO acompanham o estado.
 - `indeterminado`: não há prova suficiente sobre os suplentes.
-- `vinculo_em_revisao`: o vínculo do vice com a candidatura está em revisão. O nome e a fonte da chapa não são publicados, e o caso exige conferência.
 
 Os enums podem ganhar valores novos. Consumidores devem tratar qualquer valor desconhecido como **exige conferência**, sem convertê-lo em ausência, zero ou publicação.
 
 Valores atuais por campo:
 
-- `chapa.estado`: `publicado`, `sem_dado`, `indisponivel`, `indeferidos_comprovados`, `indeterminado`, `vinculo_em_revisao`.
+- `chapa.estado`: `publicado`, `sem_dado`, `indisponivel`, `indeferidos_comprovados`, `indeterminado`. O vice é publicado quando a identidade está confirmada e o vínculo do titular é oficial (`confirmado` ou `novo_perfil_oficial`), a mesma condição em que a ficha mostra o vice.
 - `chapa.suplentesEstado`: `publicado`, `indeferidos_comprovados`, `indeterminado`, `indisponivel`, `nao_aplicavel`.
 - `sites.estado`: `publicado`, `vazio_confirmado`, `sem_dado`.
 - `processos.estado`: `publicado`, `cobertura_parcial`, `vazio_confirmado`, `indeterminado`, `nao_buscado`, `erro`, `desatualizado`, `sem_dado`.

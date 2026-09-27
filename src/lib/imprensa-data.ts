@@ -3,7 +3,7 @@ import "server-only"
 import { getCandidatoSlugStaticParams } from "@/lib/api"
 import { getCandidateSitesTseBySlug } from "@/lib/candidate-sites-data"
 import { getCitableCandidateSites } from "@/lib/candidate-sites-proof"
-import { urlFonteJudicialEspecifica } from "@/lib/djen-consulta-url"
+import { nivelFonteProcesso, urlFonteJudicialEspecifica, urlPublicaDoProcesso, type FonteProcessoNivel } from "@/lib/djen-consulta-url"
 import { createServerSupabaseClient, createServiceRoleSupabaseClient } from "@/lib/supabase"
 import { shouldExposeCargo } from "@/lib/senado-feature"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
@@ -26,7 +26,7 @@ export interface ImprensaRow {
   partido: string | null
   fichaUrl: string
   chapa: {
-    estado: "publicado" | "sem_dado" | "indisponivel" | "indeferidos_comprovados" | "indeterminado" | "vinculo_em_revisao"
+    estado: "publicado" | "sem_dado" | "indisponivel" | "indeferidos_comprovados" | "indeterminado"
     suplentesEstado: "publicado" | "indeferidos_comprovados" | "indeterminado" | "indisponivel" | "nao_aplicavel"
     /** Formatado para exibição (title case); ver `viceNomeOriginal` para exportação. */
     viceNome: string | null
@@ -50,11 +50,14 @@ export interface ImprensaRow {
     buscaEstado: "encontrado" | "vazio_confirmado" | "indeterminado" | "nao_buscado" | "erro" | "desatualizado" | "contraditorio"
     quantidade: number | null
     quantidadeOmitida?: number
+    /** Linhas públicas com o selo "Fonte em confirmação", a mesma regra da ficha. */
+    quantidadeEmConfirmacao?: number
     ocorrencias: {
       numero: string | null
       tipo: string
       tribunal: string
       urlFonte: string
+      fonteNivel: FonteProcessoNivel
       dataInicio: string | null
       dataDecisao: string | null
     }[]
@@ -305,26 +308,43 @@ function processSearchState(receipt: ProcessoReceiptRow | null, hasRows: boolean
   return result
 }
 
+/**
+ * Mesma regra da ficha pública (`nivelFonteProcesso`, usada por api.ts e
+ * public-profile-dto.ts): linha com fonte judicial específica é "oficial";
+ * linha com página específica ainda sem a fonte do tribunal aparece com o selo
+ * "Fonte em confirmação"; só a linha sem fonte publicável fica fora e entra na
+ * contagem de omitidas.
+ */
 function mapProcesses(rows: ProcessoRow[], receipt: ProcessoReceiptRow | null): ImprensaRow["processos"] {
-  const comprovadas = rows
-    .map((item) => ({
-      numero: item.numero_processo ?? null,
+  const ocorrencias: ImprensaRow["processos"]["ocorrencias"] = []
+  for (const item of rows) {
+    const numeroProcesso = item.numero_processo ?? null
+    const fonteNivel = nivelFonteProcesso({ id: item.id ?? null, numero_processo: numeroProcesso, url_fonte: item.url_fonte ?? null })
+    if (!fonteNivel) continue
+    const urlFonte = fonteNivel === "oficial"
+      ? urlFonteJudicialEspecifica(item.url_fonte, numeroProcesso)
+      : urlPublicaDoProcesso({ numero_processo: numeroProcesso, url_fonte: item.url_fonte ?? null, fonte_nivel: fonteNivel })
+    if (!urlFonte) continue
+    ocorrencias.push({
+      numero: numeroProcesso,
       tipo: item.tipo ?? "desconhecido",
       tribunal: item.tribunal ?? "",
-      urlFonte: urlFonteJudicialEspecifica(item.url_fonte, item.numero_processo),
+      urlFonte,
+      fonteNivel,
       dataInicio: item.data_inicio ?? null,
       dataDecisao: item.data_decisao ?? null,
-    }))
-  const ocorrencias = comprovadas.filter((item): item is ImprensaRow["processos"]["ocorrencias"][number] => Boolean(item.urlFonte))
+    })
+  }
   const quantidadeOmitida = rows.length - ocorrencias.length
+  const quantidadeEmConfirmacao = ocorrencias.filter((item) => item.fonteNivel === "em_confirmacao").length
   const buscaEstado = processSearchState(receipt, rows.length > 0)
   if (!rows.length) {
     const estado = receipt?.resultado === "encontrado" || buscaEstado === "encontrado" || buscaEstado === "contraditorio" ? "indeterminado" : buscaEstado
-    return { estado, buscaEstado, quantidade: estado === "vazio_confirmado" ? 0 : null, quantidadeOmitida: 0, ocorrencias: [] }
+    return { estado, buscaEstado, quantidade: estado === "vazio_confirmado" ? 0 : null, quantidadeOmitida: 0, quantidadeEmConfirmacao: 0, ocorrencias: [] }
   }
-  if (!ocorrencias.length) return { estado: "cobertura_parcial", buscaEstado, quantidade: null, quantidadeOmitida, ocorrencias }
-  if (quantidadeOmitida > 0) return { estado: "cobertura_parcial", buscaEstado, quantidade: ocorrencias.length, quantidadeOmitida, ocorrencias }
-  return { estado: "publicado", buscaEstado, quantidade: ocorrencias.length, quantidadeOmitida, ocorrencias }
+  if (!ocorrencias.length) return { estado: "cobertura_parcial", buscaEstado, quantidade: null, quantidadeOmitida, quantidadeEmConfirmacao, ocorrencias }
+  if (quantidadeOmitida > 0) return { estado: "cobertura_parcial", buscaEstado, quantidade: ocorrencias.length, quantidadeOmitida, quantidadeEmConfirmacao, ocorrencias }
+  return { estado: "publicado", buscaEstado, quantidade: ocorrencias.length, quantidadeOmitida, quantidadeEmConfirmacao, ocorrencias }
 }
 
 function mapChapa(rows: ChapaRow[]): ImprensaRow["chapa"] {
@@ -334,10 +354,10 @@ function mapChapa(rows: ChapaRow[]): ImprensaRow["chapa"] {
   const fonteSha256 = typeof row.fonte_sha256 === "string" && /^[a-f0-9]{64}$/i.test(row.fonte_sha256) ? row.fonte_sha256 : null
   const snapshotEm = asIsoSnapshot(row.snapshot_em)
   const viceNomeOriginal = typeof row.vice_nome_urna === "string" && row.vice_nome_urna.trim() ? row.vice_nome_urna.trim() : null
-  if (row.vinculo_titular_status === "novo_perfil_oficial") {
-    return { estado: "vinculo_em_revisao", suplentesEstado: "nao_aplicavel", viceNome: null, viceNomeOriginal: null, suplentes: [], fonteUrl: null, fonteSha256: null, snapshotEm: null }
-  }
-  if (row.identidade_status !== "confirmada" || row.vinculo_titular_status !== "confirmado" || !viceNomeOriginal || !fonteUrl || !fonteSha256 || !snapshotEm) {
+  // "novo_perfil_oficial" também é vínculo oficial com o titular ligado (ver o
+  // CHECK de chapas_2026); a ficha pública mostra o vice nos dois casos.
+  const vinculoOficial = row.vinculo_titular_status === "confirmado" || row.vinculo_titular_status === "novo_perfil_oficial"
+  if (row.identidade_status !== "confirmada" || !vinculoOficial || !viceNomeOriginal || !fonteUrl || !fonteSha256 || !snapshotEm) {
     return { estado: "sem_dado", suplentesEstado: "nao_aplicavel", viceNome: null, viceNomeOriginal: null, suplentes: [], fonteUrl: null, fonteSha256: null, snapshotEm: null }
   }
   return { estado: "publicado", suplentesEstado: "nao_aplicavel", viceNome: formatDisplayName(viceNomeOriginal), viceNomeOriginal, suplentes: [], fonteUrl, fonteSha256, snapshotEm }

@@ -13,7 +13,6 @@ const STATE_LABELS: Record<string, string> = {
   indeterminado: "Indeterminado", nao_buscado: "Não buscado", erro: "Erro na coleta", desatualizado: "Desatualizado",
   contraditorio: "Recibo contraditório", nao_aplicavel: "Não se aplica", indisponivel: "Fonte indisponível",
   sem_dado: "Sem dado", indeferidos_comprovados: "Suplentes indeferidos (comprovante do TSE)",
-  vinculo_em_revisao: "Vínculo do vice em revisão",
 }
 
 export function labelState(state: string): string {
@@ -42,8 +41,7 @@ export function rowGaps(row: ImprensaPageDataset["rows"][number]): string[] {
   const gaps: string[] = []
   if (row.chapa.estado === "sem_dado") gaps.push("composição da chapa sem dado confirmado")
   if (row.chapa.estado === "indeterminado" || row.chapa.estado === "indisponivel") gaps.push("composição da chapa exige conferência")
-  if (row.chapa.estado === "vinculo_em_revisao") gaps.push("vínculo do vice em revisão")
-  if (!["publicado", "sem_dado", "indeterminado", "indisponivel", "vinculo_em_revisao", "indeferidos_comprovados"].includes(row.chapa.estado)) gaps.push("estado da chapa exige conferência")
+  if (!["publicado", "sem_dado", "indeterminado", "indisponivel", "indeferidos_comprovados"].includes(row.chapa.estado)) gaps.push("estado da chapa exige conferência")
   if (row.cargo === "Senador" && !["publicado", "indeferidos_comprovados"].includes(row.chapa.suplentesEstado)) gaps.push("suplentes exigem conferência")
   if (row.sites.estado === "sem_dado") gaps.push("sites sem dado publicado")
   if (!["publicado", "vazio_confirmado", "sem_dado"].includes(row.sites.estado)) gaps.push("estado dos sites exige conferência")
@@ -52,6 +50,8 @@ export function rowGaps(row: ImprensaPageDataset["rows"][number]): string[] {
       ? `processos: ${labelState(row.processos.estado)}`
       : "estado dos processos exige conferência",
   )
+  const selo = row.processos.quantidadeEmConfirmacao ?? 0
+  if (selo > 0) gaps.push(`processos: ${selo} com fonte oficial em confirmação`)
   return gaps
 }
 
@@ -62,7 +62,6 @@ export function chapaSummary(row: ImprensaPageDataset["rows"][number]): string {
     return "Suplentes: exige conferência"
   }
   if (row.chapa.estado === "publicado" && row.chapa.viceNome) return `Vice: ${row.chapa.viceNome}`
-  if (row.chapa.estado === "vinculo_em_revisao") return "Vínculo do vice em revisão"
   if (row.chapa.estado === "sem_dado") return "Vice sem dado confirmado"
   return "Composição da chapa exige conferência"
 }

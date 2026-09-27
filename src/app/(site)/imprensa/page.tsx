@@ -3,7 +3,7 @@ import Link from "next/link"
 import { getImprensaDatasetCached } from "@/lib/imprensa-cache"
 import { normalizeImprensaFilters } from "@/lib/imprensa-data"
 import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
-import { IMPRENSA_UFS } from "@/lib/imprensa-uf-pack"
+import { IMPRENSA_UFS, labelState } from "@/lib/imprensa-uf-pack"
 import { isSenadoEnabled } from "@/lib/senado-feature"
 import styles from "./imprensa.module.css"
 
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 const aviso = "Confira os dados na fonte original antes de publicar."
 
-function counts(rows: Array<{ cargo: string; uf: string | null; sites: { estado: string }; chapa: { estado: string; suplentesEstado: string }; processos: { estado: string } }>) {
+function counts(rows: Array<{ cargo: string; uf: string | null; sites: { estado: string }; chapa: { estado: string; suplentesEstado: string }; processos: { estado: string; quantidadeEmConfirmacao?: number } }>) {
   const by = (subset: typeof rows, pick: (row: (typeof rows)[number]) => string) => Object.fromEntries(
     [...new Set(subset.map(pick))].sort().map((key) => [key, subset.filter((row) => pick(row) === key).length]),
   )
@@ -27,6 +27,7 @@ function counts(rows: Array<{ cargo: string; uf: string | null; sites: { estado:
     cargos: by(rows, (row) => row.cargo),
     ufs: new Set(rows.map((row) => row.uf).filter(Boolean)).size,
     processos: by(rows, (row) => row.processos.estado),
+    processosComSelo: rows.filter((row) => (row.processos.quantidadeEmConfirmacao ?? 0) > 0).length,
     sites: by(rows, (row) => row.sites.estado),
     vice: by(viceRows, (row) => row.chapa.estado),
     suplentes: by(senateRows, (row) => row.chapa.suplentesEstado),
@@ -71,9 +72,9 @@ export default async function ImprensaSala() {
         </section>
 
         <section id="numeros" className={styles.salaSection} aria-labelledby="numeros-title">
-          <h2 id="numeros-title" className={styles.salaTitle}>Números ao vivo</h2>
+          <h2 id="numeros-title" className={styles.salaTitle}>Números da base</h2>
           {summary ? <>
-            <p className="mt-2">{Object.values(summary.cargos).reduce((sum, n) => sum + n, 0)} candidatos · {summary.ufs} UFs com registros · coleta {generatedAt ? new Date(generatedAt).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short", timeZone: "UTC" }) + " UTC" : "sem data"}</p>
+            <p className="mt-2">{Object.values(summary.cargos).reduce((sum, n) => sum + n, 0)} candidatos · {summary.ufs} UFs com registros · consulta em {generatedAt ? new Date(generatedAt).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short", timeZone: "UTC" }) + " UTC" : "sem data"}</p>
             <div className={styles.statsGrid}>
               <CountCard title="Candidatos por cargo" values={summary.cargos} labels="cargo" />
               <CountCard title="Processos por estado do dado" values={summary.processos} />
@@ -81,6 +82,7 @@ export default async function ImprensaSala() {
               <CountCard title="Vice (Presidente e Governador)" values={summary.vice} />
               {Object.keys(summary.suplentes).length > 0 && <CountCard title="Suplentes (Senador)" values={summary.suplentes} />}
             </div>
+            {summary.processosComSelo > 0 && <p className="mt-3">{summary.processosComSelo} candidato{summary.processosComSelo === 1 ? " tem" : "s têm"} processo com fonte oficial em confirmação: o registro aparece na ficha com esse aviso e ainda falta localizar a página do próprio tribunal.</p>}
           </> : <p role="status" className="mt-3">Contagens temporariamente indisponíveis. Uma falha de consulta não representa zero.</p>}
         </section>
 
@@ -123,17 +125,6 @@ export default async function ImprensaSala() {
       </div>
     </main>
   )
-}
-
-function labelState(state: string): string {
-  const labels: Record<string, string> = {
-    publicado: "Publicado", vazio_confirmado: "Buscado, nada encontrado", cobertura_parcial: "Cobertura parcial",
-    indeterminado: "Indeterminado", nao_buscado: "Não buscado", erro: "Erro na coleta", desatualizado: "Desatualizado",
-    contraditorio: "Recibo contraditório", nao_aplicavel: "Não se aplica", indisponivel: "Fonte indisponível",
-    sem_dado: "Sem dado", indeferidos_comprovados: "Suplentes indeferidos (comprovante do TSE)",
-    vinculo_em_revisao: "Vínculo do vice em revisão",
-  }
-  return labels[state] ?? "Exige conferência"
 }
 
 function CountCard({ title, values, labels = "state" }: { title: string; values: Record<string, number>; labels?: "cargo" | "state" }) {
