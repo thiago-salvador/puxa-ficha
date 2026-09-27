@@ -149,9 +149,18 @@ async function countPublicNews(client: SupabaseClient, candidato: NewsCandidate 
     if (error || count === null) throw new Error("Falha ao contar notícias")
     return count
   }
-  const { data, error } = await base().range(0, 4_999)
-  if (error) throw new Error("Falha ao contar notícias")
-  return splitNewsByDenylist(data ?? [], candidato.slug).permitidos.length
+  // O PostgREST devolve no máximo 1.000 linhas por resposta: lê em faixas até
+  // cobrir a janela, para o total não travar em 1.000 numa ficha grande.
+  const FAIXA = 1_000
+  let permitidos = 0
+  for (let inicio = 0; inicio < 5_000; inicio += FAIXA) {
+    const { data, error } = await base().order("id", { ascending: true }).range(inicio, inicio + FAIXA - 1)
+    if (error) throw new Error("Falha ao contar notícias")
+    const linhas = data ?? []
+    permitidos += splitNewsByDenylist(linhas, candidato.slug).permitidos.length
+    if (linhas.length < FAIXA) break
+  }
+  return permitidos
 }
 
 export type PublicNewsPageResource =
