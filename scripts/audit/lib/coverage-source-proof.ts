@@ -87,7 +87,12 @@ function officialHost(family: CoverageFamily, url: string): boolean {
   try {
     const parsed = new URL(url)
     if (parsed.protocol !== "https:") return false
-    if (["perfil_atual", "historico_politico", "patrimonio", "financiamento"].includes(family)) {
+    // Histórico: mandato de senador tem como fonte o exercício datado no Senado
+    // (senador/{id}/mandatos.json); candidatura e eleição seguem no TSE.
+    if (family === "historico_politico") {
+      return ["dadosabertos.tse.jus.br", "cdn.tse.jus.br", "www.tse.jus.br", "legis.senado.leg.br"].includes(parsed.hostname)
+    }
+    if (["perfil_atual", "patrimonio", "financiamento"].includes(family)) {
       return ["dadosabertos.tse.jus.br", "cdn.tse.jus.br", "www.tse.jus.br"].includes(parsed.hostname)
     }
     if (["projetos_lei", "votos_candidato", "gastos_parlamentares"].includes(family)) {
