@@ -29,7 +29,7 @@ const holdout: ReadonlyArray<{ slug: string; titulo: string; publicar: boolean }
   { slug: "eduardo-paes", titulo: "Vídeo não mostra apoio do Comando Vermelho a Eduardo Paes", publicar: true },
   { slug: "romeu-zema", titulo: "É falso que Zema aceitou zerar o ICMS dos combustíveis em MG", publicar: true },
   { slug: "tarcisio-gov-sp", titulo: "Decoração natalina na Praça da Sé não é iniciativa da gestão Tarcísio de Freitas", publicar: true },
-  { slug: "lula", titulo: "Não é filho de Lula homem que agride mulher em vídeo viral", publicar: false },
+  { slug: "lula", titulo: "É falso que filho de Lula comprou a Azul Linhas Aéreas", publicar: false },
   { slug: "haddad-gov-sp", titulo: "É falso que Jayme Monjardim gravou vídeo criticando Fernando Haddad", publicar: false },
   { slug: "haddad-gov-sp", titulo: "É falso que advogado que apoia Haddad defenda agressor de Bolsonaro", publicar: false },
   { slug: "eduardo-paes", titulo: "Ancelmo Gois não é autor de texto que liga máfia carioca a Eduardo Paes", publicar: true },
@@ -48,7 +48,7 @@ const holdout: ReadonlyArray<{ slug: string; titulo: string; publicar: boolean }
 ]
 
 it("regra 3: holdout de 32 títulos reais não publica associação incidental", () => {
-  assert.ok(holdout.length >= 30)
+  assert.equal(holdout.length, 32)
   const falsosPublicados = holdout.filter((item) => !item.publicar && leadPermitidoRegra3(item.titulo, item.slug))
   const revisao = holdout.filter((item) => !leadPermitidoRegra3(item.titulo, item.slug))
   const publicados = holdout.filter((item) => leadPermitidoRegra3(item.titulo, item.slug))
