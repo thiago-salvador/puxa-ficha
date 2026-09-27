@@ -21,6 +21,11 @@ interface SubscriptionItem {
   cargo_disputado: string
 }
 
+interface CohortSubscriptionItem {
+  cargo: string
+  uf: string | null
+}
+
 interface LoadState {
   emailMasked: string
   canalEmail: boolean
@@ -44,6 +49,8 @@ export function AlertsManageClient() {
   const [error, setError] = useState<string | null>(null)
   const [subscriber, setSubscriber] = useState<LoadState | null>(null)
   const [subscriptions, setSubscriptions] = useState<SubscriptionItem[]>([])
+  const [cohortSubscriptions, setCohortSubscriptions] = useState<CohortSubscriptionItem[]>([])
+  const [cohortSubscriptionsUnavailable, setCohortSubscriptionsUnavailable] = useState(false)
 
   const syncSubscriptions = useCallback((items: SubscriptionItem[]) => {
     setSubscriptions(items)
@@ -62,6 +69,8 @@ export function AlertsManageClient() {
           error?: string
           subscriber?: LoadState
           subscriptions?: SubscriptionItem[]
+          cohortSubscriptions?: CohortSubscriptionItem[]
+          cohortSubscriptionsUnavailable?: boolean
         }
       | null
 
@@ -70,6 +79,8 @@ export function AlertsManageClient() {
       setHasSession(false)
       setSubscriber(null)
       syncSubscriptions([])
+      setCohortSubscriptions([])
+      setCohortSubscriptionsUnavailable(false)
       setLoading(false)
       return
     }
@@ -79,6 +90,8 @@ export function AlertsManageClient() {
       setHasSession(false)
       setSubscriber(null)
       syncSubscriptions([])
+      setCohortSubscriptions([])
+      setCohortSubscriptionsUnavailable(false)
       setLoading(false)
       return
     }
@@ -91,6 +104,8 @@ export function AlertsManageClient() {
     setHasSession(true)
     setSubscriber(data.subscriber)
     syncSubscriptions(data.subscriptions ?? [])
+    setCohortSubscriptions(data.cohortSubscriptions ?? [])
+    setCohortSubscriptionsUnavailable(Boolean(data.cohortSubscriptionsUnavailable))
     setLoading(false)
   }, [syncSubscriptions])
 
@@ -128,6 +143,8 @@ export function AlertsManageClient() {
     setHasSession(false)
     setSubscriber(null)
     setSubscriptions([])
+    setCohortSubscriptions([])
+    setCohortSubscriptionsUnavailable(false)
   }
 
   async function handleForgetBrowser() {
@@ -222,6 +239,8 @@ export function AlertsManageClient() {
       }
 
       syncSubscriptions([])
+      setCohortSubscriptions([])
+      setCohortSubscriptionsUnavailable(false)
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Não foi possível cancelar todos os alertas agora.")
     } finally {
@@ -279,7 +298,7 @@ export function AlertsManageClient() {
             <Button type="button" variant="outline" size="lg" onClick={() => { void handleForgetBrowser() }}>
               Esquecer este navegador
             </Button>
-            <Button type="button" variant="outline" size="lg" onClick={() => { void handleCancelAll() }} disabled={cancellingAll || subscriptions.length === 0}>
+            <Button type="button" variant="outline" size="lg" onClick={() => { void handleCancelAll() }} disabled={cancellingAll || (subscriptions.length === 0 && cohortSubscriptions.length === 0 && !cohortSubscriptionsUnavailable)}>
               {cancellingAll ? <LoaderCircle className="size-4 animate-spin" /> : <Mail className="size-4" />}
               Cancelar todos os alertas
             </Button>
@@ -298,7 +317,30 @@ export function AlertsManageClient() {
           </Alert>
         )}
 
+        {cohortSubscriptionsUnavailable && (
+          <Alert className="mt-5">
+            <TriangleAlert className="size-4" />
+            <AlertTitle>Recortes temporariamente indisponíveis</AlertTitle>
+            <AlertDescription>Suas assinaturas por candidato continuam disponíveis. A lista de recortes pode estar incompleta.</AlertDescription>
+          </Alert>
+        )}
+
         <div className="mt-6 grid gap-3">
+          {cohortSubscriptions.length > 0 && (
+            <div className="rounded-[18px] border border-border/60 bg-background/70 p-4">
+              <p className="text-[length:var(--text-body)] font-semibold text-foreground">Recortes acompanhados</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {cohortSubscriptions.map((item) => (
+                  <span key={`${item.cargo}:${item.uf ?? ""}`} className="rounded-full border border-border/60 px-3 py-1 text-[length:var(--text-caption)] font-semibold text-muted-foreground">
+                    {formatCargoDisputadoPublicLabel(item.cargo)}{item.uf ? ` · ${item.uf}` : " · todos os estados"}
+                  </span>
+                ))}
+              </div>
+              <p className="mt-2 text-[length:var(--text-caption)] text-muted-foreground">
+                O conjunto de candidatos é atualizado a cada digest para acompanhar a coorte pública vigente.
+              </p>
+            </div>
+          )}
           {subscriptions.length > 0 ? (
             subscriptions.map((item) => (
               <div

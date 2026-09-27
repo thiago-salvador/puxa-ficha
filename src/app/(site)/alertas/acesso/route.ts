@@ -6,8 +6,16 @@ import {
   findSubscriberByManageToken,
 } from "@/lib/alerts"
 import { logAlertsApiExit } from "@/lib/alerts-log"
+import {
+  ALERT_COHORT_UFS,
+  resolveAlertCohort,
+} from "@/lib/alerts-cohort"
 import { setAlertManageTokenCookie } from "@/lib/alerts-session"
-import { normalizeCandidateSlug, normalizeOpaqueToken } from "@/lib/alerts-shared"
+import {
+  normalizeCandidateSlug,
+  normalizeOpaqueToken,
+  parseAlertCohortAccessParam,
+} from "@/lib/alerts-shared"
 import { createDistributedIpRateLimiter } from "@/lib/request-rate-limit"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
@@ -57,6 +65,7 @@ export function createAlertsAcessoHandler(deps: AlertsAcessoDeps = defaultAcesso
     const manageToken = normalizeOpaqueToken(req.nextUrl.searchParams.get("manage") ?? "")
     const verifyToken = normalizeOpaqueToken(req.nextUrl.searchParams.get("verify") ?? "")
     const followSlug = normalizeCandidateSlug(req.nextUrl.searchParams.get("follow") ?? "")
+    const cohortParam = parseAlertCohortAccessParam(req.nextUrl.searchParams.get("cohort"))
     const hashRaw = req.nextUrl.searchParams.get("hash") ?? ""
     const hash = hashRaw === "deletar-dados" || hashRaw === "cancelar-tudo" ? hashRaw : null
 
@@ -128,6 +137,36 @@ export function createAlertsAcessoHandler(deps: AlertsAcessoDeps = defaultAcesso
         }
       } catch {
         deps.logAlertsApiExit("alertas-acesso", 302, "follow_pendente_falhou")
+      }
+    }
+
+    if (cohortParam.length > 0) {
+      try {
+        const resolved = resolveAlertCohort({
+          cohort: [],
+          subscriptions: cohortParam,
+          allowedUfs: ALERT_COHORT_UFS,
+          senadoEnabled: process.env.SENADO_ENABLED?.trim().toLowerCase() === "true",
+        })
+        if (resolved.invalidSubscriptions.length === 0 && resolved.validSubscriptions.length === cohortParam.length) {
+          const supabase = deps.createAlertsServiceRoleClient()
+          const { error } = await supabase.from("alert_cohort_subscriptions").upsert(
+            resolved.validSubscriptions.map((subscription) => ({
+              subscriber_id: subscriber.id,
+              cargo: subscription.cargo,
+              uf: subscription.uf,
+            })),
+            { onConflict: "subscriber_id,cargo,uf", ignoreDuplicates: true },
+          ).abortSignal(supabaseQueryTimeoutSignal())
+          deps.logAlertsApiExit(
+            "alertas-acesso",
+            302,
+            error ? "cohort_pendente_falhou" : "cohort_pendente_aplicado",
+            { cohortSubscriptionCount: resolved.validSubscriptions.length },
+          )
+        }
+      } catch {
+        deps.logAlertsApiExit("alertas-acesso", 302, "cohort_pendente_falhou")
       }
     }
 

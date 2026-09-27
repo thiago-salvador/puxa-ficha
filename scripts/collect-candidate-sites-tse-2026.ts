@@ -10,6 +10,7 @@ import { execFileSync } from "node:child_process"
 import { createHash } from "node:crypto"
 import { readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
+import { fileURLToPath } from "node:url"
 import { parse } from "csv-parse/sync"
 import {
   buildCandidateSitesTseDataset,
@@ -53,14 +54,38 @@ function assertFileSha256(path: string, expectedSha256: string): void {
   }
 }
 
+/**
+ * Valida o roster curado usado no modo de coorte atual.
+ *
+ * Esse modo precisa ser identificável por SQ, porque o nome do candidato não
+ * distingue homônimos, candidaturas históricas e mudanças no pacote do TSE.
+ */
+export function validateDeclaredSqRoster(profiles: PerfilSitesTse[]): void {
+  const seenSlugs = new Set<string>()
+  const seenSqs = new Set<string>()
+  for (const [index, profile] of profiles.entries()) {
+    const slug = profile.slug?.trim()
+    const sq = profile.ids?.tse_sq_candidato?.["2026"]?.trim()
+    if (!slug) throw new Error(`roster[${index}]: slug obrigatório`)
+    if (seenSlugs.has(slug)) throw new Error(`roster: slug duplicado ${slug}`)
+    seenSlugs.add(slug)
+    if (!sq) throw new Error(`roster[${index}] ${slug}: SQ 2026 obrigatório`)
+    if (seenSqs.has(sq)) throw new Error(`roster: SQ 2026 duplicado ${sq}`)
+    seenSqs.add(sq)
+  }
+}
+
 function main(): void {
   const sourceDir = resolve(argument("source-dir") ?? "output/sites-candidato-tse-2026")
   const outputPath = resolve(
     argument("output") ?? "src/data/candidate-sites-tse-2026.json",
   )
+  const profilesInput = argument("profiles-input")
   const profiles = JSON.parse(
-    readFileSync(resolve("data/candidatos.json"), "utf8"),
+    readFileSync(resolve(profilesInput ?? "data/candidatos.json"), "utf8"),
   ) as PerfilSitesTse[]
+  if (!Array.isArray(profiles)) throw new Error("profiles-input: esperado um array de perfis")
+  if (profilesInput) validateDeclaredSqRoster(profiles)
   const receipt = JSON.parse(
     readFileSync(resolve(sourceDir, "catalog.json"), "utf8"),
   ) as ReciboSitesTse
@@ -93,4 +118,6 @@ function main(): void {
   console.log(JSON.stringify({ output: outputPath, readback: "ok", ...readback.counts }, null, 2))
 }
 
-main()
+if (process.argv[1] && resolve(process.argv[1]) === resolve(fileURLToPath(import.meta.url))) {
+  main()
+}

@@ -4,6 +4,7 @@ import { REMOTE_IMAGE_HOSTS } from "./src/lib/remote-image-hosts"
 import { getEmbedNoindexHeaderValue } from "./src/lib/preview-indexing"
 import ondaPRedirects from "./src/data/redirects-onda-p.json"
 import { visualFixtureBuildConfig } from "./src/lib/visual-fixture-build"
+import { buildContentSecurityPolicy } from "./src/lib/content-security-policy"
 
 const isDevelopment = process.env.NODE_ENV !== "production"
 const apexHost = "puxaficha.com.br"
@@ -46,14 +47,26 @@ const sharedSecurityHeaders = [
       ]),
 ]
 
+// CSP estática, sem nonce: é o que deixa as páginas saírem da CDN em vez de
+// renderizar a cada request (ver src/lib/content-security-policy.ts). O
+// middleware só aplica a mesma política às respostas que ele próprio gera.
+function contentSecurityPolicyHeader(frameAncestors: "'none'" | "*") {
+  return {
+    key: "Content-Security-Policy",
+    value: buildContentSecurityPolicy({ frameAncestors, applyProductionHttpsHeaders }),
+  }
+}
+
 const securityHeaders = [
   { key: "X-Frame-Options", value: "DENY" },
+  contentSecurityPolicyHeader("'none'"),
   ...sharedSecurityHeaders,
 ]
 
-/** Iframe em sites terceiros: sem XFO; CSP dinamico no middleware com frame-ancestors *. */
+/** Iframe em sites terceiros: sem XFO; CSP com frame-ancestors *. */
 const embedFramingHeaders = [
   { key: "X-Robots-Tag", value: getEmbedNoindexHeaderValue() },
+  contentSecurityPolicyHeader("*"),
   ...sharedSecurityHeaders,
 ]
 

@@ -1,6 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { AlertCohortSubscribe } from "@/components/alerts/AlertCohortSubscribe"
 import { ImprensaCitationButton } from "@/components/ImprensaCitationButton"
+import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
+import { isSenadoEnabled } from "@/lib/senado-feature"
 import {
   normalizeImprensaFilters,
   type ImprensaFilters,
@@ -24,6 +27,11 @@ function labelState(state: string): string {
   if (state === "publicado") return "Publicado"
   if (state === "vazio_confirmado") return "Vazio confirmado"
   if (state === "cobertura_parcial") return "Cobertura parcial"
+  if (state === "indeterminado") return "Indeterminado"
+  if (state === "nao_buscado") return "Não buscado"
+  if (state === "erro") return "Erro na coleta"
+  if (state === "desatualizado") return "Desatualizado"
+  if (state === "contraditorio") return "Recibo contraditório"
   if (state === "sem_dado") return "Sem dado"
   return "Indisponível"
 }
@@ -55,6 +63,7 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
   if (filters.uf) query.set("uf", filters.uf)
   const queryString = query.toString()
   const exportSuffix = queryString ? `&${queryString}` : ""
+  const alertsEnabled = isAlertsEmailFeatureEnabled()
 
   return (
     <div className={styles.shell}>
@@ -69,7 +78,7 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
         </div>
       </section>
 
-      <main className={styles.content}>
+      <div className={styles.content}>
         <section className={styles.intro} aria-labelledby="mesa-intro">
           <p id="mesa-intro" className={styles.introText}>
             Use cargo e UF para reduzir a coorte. Sites declarados no TSE, composição de chapa e processos
@@ -78,6 +87,8 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
           <nav className={styles.utilityLinks} aria-label="Recursos da Mesa">
             <Link href="/metodologia">Metodologia e fontes</Link>
             <Link href="/embed">Criar embed</Link>
+            <Link href="/imprensa/atualizacoes">Atualizações verificadas</Link>
+            <Link href="/imprensa/frescor">Frescor das fontes</Link>
             <Link href="#dicionario">Dicionário de campos</Link>
             <a href={`/api/imprensa/export?format=csv${exportSuffix}`} download>
               Baixar CSV
@@ -108,6 +119,15 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
             <Link className={styles.reset} href="/imprensa">Limpar</Link>
           </div>
         </form>
+
+        {alertsEnabled && (
+          <section className={styles.notice} aria-labelledby="imprensa-alertas-title">
+            <h2 id="imprensa-alertas-title" className="text-lg font-semibold text-foreground">Alertas por cargo e UF</h2>
+            <div className="mb-4"><p>Escolha o recorte para receber um resumo das mudanças nas fichas publicadas. Os candidatos incluídos podem mudar entre envios. A assinatura exige confirmação por email e pode ser gerenciada ou cancelada a qualquer momento.</p></div>
+            <AlertCohortSubscribe initialCargo={filters.cargo ?? undefined} initialUf={filters.uf} senadoEnabled={isSenadoEnabled()} />
+            <div className="mt-3"><p><Link className={styles.sourceLink} href="/alertas/gerenciar">Gerenciar alertas</Link></p></div>
+          </section>
+        )}
 
         <div className={styles.datasetHeader}>
           <h2 className={styles.datasetTitle}>Candidatos no recorte</h2>
@@ -158,15 +178,17 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
                       </div>
                       {row.chapa.fonteUrl && <a className={`${styles.sourceLink} ${styles.meta}`} href={row.chapa.fonteUrl} rel="noreferrer">Fonte do snapshot</a>}
                       {row.chapa.fonteUrl && row.chapa.snapshotEm && (
-                        <ImprensaCitationButton candidateName={row.nome} section="chapa" slug={row.slug} sourceUrl={row.chapa.fonteUrl} collectedAt={dateLabel(row.chapa.snapshotEm)} collectionLabel="Snapshot oficial em" />
+                        <ImprensaCitationButton candidateName={row.nomeOriginal} section="chapa" slug={row.slug} sourceUrl={row.chapa.fonteUrl} collectedAt={dateLabel(row.chapa.snapshotEm)} collectionLabel="Snapshot oficial em" />
                       )}
                     </td>
                     <td>
                       <div className={styles.status} data-state={row.processos.estado}>
                         <strong>{labelState(row.processos.estado)}</strong>
                         <em>{row.processos.quantidade == null ? "quantidade não publicada" : `${row.processos.quantidade} registro${row.processos.quantidade === 1 ? "" : "s"}`}</em>
+                        {(row.processos.quantidadeOmitida ?? 0) > 0 && <em>{row.processos.quantidadeOmitida} sem fonte oficial verificável</em>}
+                        {(row.processos.estado === "publicado" || row.processos.estado === "cobertura_parcial") && row.processos.buscaEstado !== "encontrado" && <em data-search-state={row.processos.buscaEstado}>Busca: {labelState(row.processos.buscaEstado)}</em>}
                       </div>
-                      <p className={styles.meta}>Registros publicados na ficha; processo não equivale a condenação.</p>
+                      <p className={styles.meta}>Estado da busca e registros com fonte oficial; processo não equivale a condenação.</p>
                     </td>
                     <td>
                       <div className={styles.actions}>
@@ -174,7 +196,7 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
                         <Link href={`${row.fichaUrl}?tab=justica`}>Justiça</Link>
                         <a href={`/api/card/${encodeURIComponent(row.slug)}?format=feed`} rel="noreferrer">Card público</a>
                         {row.sites.fonteUrl && row.sites.coletadoEm && (
-                          <ImprensaCitationButton candidateName={row.nome} section="sites" slug={row.slug} sourceUrl={row.sites.fonteUrl} collectedAt={dateLabel(row.sites.coletadoEm)} />
+                          <ImprensaCitationButton candidateName={row.nomeOriginal} section="sites" slug={row.slug} sourceUrl={row.sites.fonteUrl} collectedAt={dateLabel(row.sites.coletadoEm)} />
                         )}
                       </div>
                     </td>
@@ -188,7 +210,7 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
         <section id="dicionario" className={styles.footnote} aria-labelledby="dicionario-title">
           <h2 id="dicionario-title" className="mb-2 font-semibold text-foreground">Dicionário e limites</h2>
           <p>
-            sites_estado descreve URLs públicas vinculadas no snapshot oficial do TSE, sem afirmar que são todos os sites da pessoa. processos_estado descreve registros publicados na ficha; uma ocorrência sem URL verificável torna a cobertura parcial. sem_dado significa ausência de prova suficiente, não inexistência. A data exibida é a coleta da família factual quando disponível, e não a data do acontecimento. O código é Apache 2.0; as condições de reutilização dos dados seguem suas fontes.
+            sites_estado descreve URLs públicas vinculadas no snapshot oficial do TSE, sem afirmar que são todos os sites da pessoa. processos_estado descreve as linhas da ficha; processos_busca_estado descreve o recibo da busca nominal. Registros com fonte oficial verificável permanecem contados; ocorrências sem fonte oficial são omitidas e tornam a cobertura parcial. Recibo de vazio com linhas publicadas aparece como contraditório. A ausência de recibo é não buscado; indeterminado, desatualizado e erro não confirmam ausência. O código é Apache 2.0; as condições de reutilização dos dados seguem suas fontes.
           </p>
           <dl className="mt-4 grid gap-x-6 gap-y-3 sm:grid-cols-2">
             <div><dt className="font-semibold text-foreground">slug, nome_urna, cargo_disputado, uf, partido_sigla</dt><dd>Identificação pública da coorte. Unidade: texto. Fonte: candidatos_publico e ficha. Cobertura: coorte publicada; não é lista de todos os candidatos.</dd></div>
@@ -197,7 +219,7 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
             <div><dt className="font-semibold text-foreground">sites_fonte_url, sites_fonte_sha256, sites_coletado_em</dt><dd>Fonte, hash e coleta do pacote TSE. Unidade: URL, hash e data ISO. Cobertura: snapshot identificado; não afirma totalidade dos sites.</dd></div>
             <div><dt className="font-semibold text-foreground">chapa_estado, chapa_vice_nome</dt><dd>Estado e vice da chapa do titular. Unidade: estado e texto. Só publica quando identidade, vínculo, URL HTTPS e SHA estão confirmados; sem_dado não escolhe um vice arbitrariamente.</dd></div>
             <div><dt className="font-semibold text-foreground">chapa_fonte_url, chapa_fonte_sha256, chapa_snapshot_em</dt><dd>Fonte, SHA-256 e data do snapshot oficial da composição. A data identifica o snapshot preservado e não data quando a chapa começou.</dd></div>
-            <div><dt className="font-semibold text-foreground">processos_estado, processos_quantidade</dt><dd>Estado e quantidade de registros publicados na ficha. Unidade: estado e contagem. URL ausente em ocorrência produz cobertura parcial; processo não equivale a condenação.</dd></div>
+            <div><dt className="font-semibold text-foreground">processos_estado, processos_busca_estado, processos_quantidade, processos_quantidade_omitida</dt><dd>Estado dos registros, estado da busca, quantidade de registros com fonte oficial verificável e quantidade omitida por falta de fonte oficial. Vazio confirmado publica zero; não buscado, indeterminado, desatualizado e erro preservam a incerteza. Processo não equivale a condenação.</dd></div>
             <div><dt className="font-semibold text-foreground">version, generated_at, filtros cargo/UF</dt><dd>Metadados do conjunto e do recorte exportado. Unidade: versão, data ISO e texto. A data é geração/coleta, não data do fato.</dd></div>
           </dl>
           <p className="mt-4">
@@ -206,7 +228,7 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
           <p className="mt-2">Ao reutilizar um recorte, credite Puxa Ficha e a fonte específica exibida na linha. O <Link className={styles.sourceLink} href="/embed">embed</Link> e o card público são recursos de apresentação, não novas fontes factuais.</p>
           {dataset?.generatedAt && <p className="mt-2">Conjunto gerado em {dateLabel(dataset.generatedAt)}{dataset.version ? ` · versão ${dataset.version}` : ""}.</p>}
         </section>
-      </main>
+      </div>
     </div>
   )
 }

@@ -2,7 +2,36 @@
 SET default_transaction_read_only = on;
 SET statement_timeout = '60s';
 
-WITH candidacies AS (
+-- Coorte de atualização (scripts/lib/coorte-atualizacao.ts): candidaturas com
+-- atualização encerrada depois do turno saem da comparação com o TSE, nos dois
+-- lados. A view de fase pode ainda não existir (banco antes da migration de
+-- schema); nesse caso a fonte vira uma relação vazia e nada muda.
+SELECT to_regclass('public.candidaturas_fase_2026_publico') IS NOT NULL AS pf_tem_fase \gset
+\if :pf_tem_fase
+\set pf_fase_sql 'SELECT candidato_id, slug, atualizacao_encerrada_em FROM public.candidaturas_fase_2026_publico WHERE atualizacao_encerrada_em IS NOT NULL'
+\else
+\set pf_fase_sql 'SELECT NULL::uuid AS candidato_id, NULL::text AS slug, NULL::date AS atualizacao_encerrada_em WHERE false'
+\endif
+
+WITH encerradas AS (
+  -- coorte-atualizacao: aplica (lista congelada; audit-data-freshness recorta os dois lados)
+  SELECT jsonb_build_object(
+    'candidato_id', f.candidato_id,
+    'slug', f.slug,
+    'atualizacao_encerrada_em', f.atualizacao_encerrada_em,
+    'sq_candidatos', (
+      SELECT jsonb_agg(DISTINCT sq) FROM (
+        -- coorte-atualizacao: isento (SQ da própria candidatura encerrada)
+        SELECT base.sq_candidato_2026 AS sq FROM public.candidatos base
+        WHERE base.id = f.candidato_id AND base.sq_candidato_2026 IS NOT NULL
+        UNION
+        SELECT ch.vice_sq_candidato FROM public.chapas_2026 ch
+        WHERE ch.titular_candidato_id = f.candidato_id AND ch.vice_sq_candidato IS NOT NULL
+      ) sqs
+    )
+  ) AS item
+  FROM (:pf_fase_sql) AS f
+), candidacies AS (
   SELECT jsonb_build_object(
     'sq_candidato', COALESCE(ch.titular_sq_candidato, ''),
     'cargo', CASE ch.cargo_titular WHEN 'Presidente' THEN 'PRESIDENTE' ELSE 'GOVERNADOR' END,
@@ -17,6 +46,7 @@ WITH candidacies AS (
     'perfil_slug', titular.slug
   ) AS record
   FROM public.chapas_2026 ch
+  -- coorte-atualizacao: isento (snapshot preserva dados publicados; audit-data-freshness recorta antes de comparar)
   LEFT JOIN public.candidatos titular ON titular.id = ch.titular_candidato_id
 
   UNION ALL
@@ -34,6 +64,7 @@ WITH candidacies AS (
     'perfil_slug', vice.slug
   ) AS record
   FROM public.chapas_2026 ch
+  -- coorte-atualizacao: isento (snapshot preserva dados publicados; audit-data-freshness recorta antes de comparar)
   LEFT JOIN public.candidatos vice ON vice.id = ch.vice_candidato_id
 ), collection_rows AS (
   SELECT
@@ -150,8 +181,45 @@ WITH candidacies AS (
     'cor_raca', c.cor_raca,
     'verificacao_campos', c.verificacao_campos
   ) AS profile
+  -- coorte-atualizacao: isento (snapshot preserva dados publicados; audit-data-freshness recorta antes de comparar)
   FROM public.candidatos_publico c
   WHERE c.cargo_disputado IN ('Presidente', 'Governador')
+), public_candidacies AS (
+  -- Uma linha por ficha pública de Presidente, Governador e Senador, com a
+  -- identidade TSE 2026 da ficha. Alimenta a conferência por ficha contra
+  -- consulta_cand, complementar e redes sociais, inclusive do Senado, que não
+  -- tem chapa em chapas_2026. O gate de admissão acima continua Gov/Pres.
+  SELECT jsonb_build_object(
+    'candidato_id', c.id,
+    'slug', c.slug,
+    'office', c.cargo_disputado,
+    'uf', c.estado,
+    'nome_urna', c.nome_urna,
+    'nome_completo', c.nome_completo,
+    'partido_sigla', c.partido_sigla,
+    'situacao_candidatura', c.situacao_candidatura,
+    'numero_urna', c.numero_urna,
+    'sq_candidato', base.sq_candidato_2026,
+    -- nome_urna da ficha é nome de exibição editorial; o nome de urna do
+    -- registro TSE publicado vive no roster 2026, chaveado pelo mesmo SQ.
+    'registro_nome_urna', (
+      SELECT min(r.nome_urna) FROM public.candidatos_roster_2026_publico r
+      WHERE r.ano = 2026 AND r.sq_candidato = base.sq_candidato_2026
+    ),
+    -- Vice da candidatura publicada: só chapas da própria inscrição (mesmo
+    -- SQ). Uma ficha com duas inscrições oficiais (caso de laudicerio-aguiar,
+    -- uma indeferida) não herda o vice da outra coligação.
+    'vice_sq_candidatos', COALESCE((
+      SELECT jsonb_agg(DISTINCT ch.vice_sq_candidato)
+      FROM public.chapas_2026 ch
+      WHERE ch.titular_candidato_id = c.id AND ch.vice_sq_candidato IS NOT NULL
+        AND ch.titular_sq_candidato IS NOT DISTINCT FROM base.sq_candidato_2026
+    ), '[]'::jsonb)
+  ) AS item
+  -- coorte-atualizacao: isento (snapshot preserva dados publicados; audit-data-freshness recorta antes de comparar)
+  FROM public.candidatos_publico c
+  JOIN public.candidatos base ON base.id = c.id
+  WHERE c.cargo_disputado IN ('Presidente', 'Governador', 'Senador')
 )
 SELECT jsonb_build_object(
   'generated_at', now(),
@@ -160,5 +228,7 @@ SELECT jsonb_build_object(
   -- mesmo titular duas vezes quando o TSE publica duas combinações de vice.
   'records', COALESCE((SELECT jsonb_agg(DISTINCT record) FROM candidacies), '[]'::jsonb),
   'public_profiles', COALESCE((SELECT jsonb_agg(profile) FROM public_profiles), '[]'::jsonb),
-  'collection_evidence', COALESCE((SELECT jsonb_agg(item) FROM evidence), '[]'::jsonb)
+  'public_candidacies', COALESCE((SELECT jsonb_agg(item) FROM public_candidacies), '[]'::jsonb),
+  'collection_evidence', COALESCE((SELECT jsonb_agg(item) FROM evidence), '[]'::jsonb),
+  'atualizacao_encerrada', COALESCE((SELECT jsonb_agg(item) FROM encerradas), '[]'::jsonb)
 );

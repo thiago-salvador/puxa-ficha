@@ -81,6 +81,44 @@ export function isCandidateBlocked(status: string): boolean {
   return /indeferid|cassad|renunci|cancelad|substitu/i.test(stripAccents(status))
 }
 
+/** Data curta pt-BR do snapshot, ou null quando ausente/inválida. Nunca a string literal "sem snapshot". */
+export function formatSnapshotDate(value: string | null): string | null {
+  if (!value) return null
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) return null
+  return new Intl.DateTimeFormat("pt-BR", { dateStyle: "short" }).format(date)
+}
+
+export interface SnapshotStatus {
+  message: string
+  showPartialWarning: boolean
+}
+
+/**
+ * Decide a frase do snapshot e se o aviso de cobertura parcial aparece.
+ * Nunca produz frase quebrada nem aviso falso enquanto a consulta ainda não terminou.
+ */
+export function describeSnapshotStatus(input: {
+  hasUf: boolean
+  checked: boolean
+  formattedDate: string | null
+  unavailable: boolean
+}): SnapshotStatus {
+  if (!input.hasUf) {
+    return { message: "Escolha um estado para conferir o snapshot da fonte oficial.", showPartialWarning: false }
+  }
+  if (!input.checked) {
+    return { message: "Consultando o snapshot mais recente da fonte oficial…", showPartialWarning: false }
+  }
+  if (input.formattedDate) {
+    return { message: `Situação consultada no snapshot de ${input.formattedDate}.`, showPartialWarning: input.unavailable }
+  }
+  return {
+    message: "Não foi possível confirmar a data do snapshot.",
+    showPartialWarning: true,
+  }
+}
+
 function matchesSlot(candidate: ColinhaCandidate, slot: SlotId, uf: string): boolean {
   if (candidate.ano !== 2026 || !SQ_PATTERN.test(candidate.sq_candidato)) return false
   const cargo = candidate.cargo.toLowerCase()

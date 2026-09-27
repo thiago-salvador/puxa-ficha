@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs"
 import { resolve } from "node:path"
+import { pathToFileURL } from "node:url"
 
 const PAGE_SIZE = 1000
 const DOCUMENT_LIKE_SEQUENCE_RE =
@@ -56,42 +57,62 @@ export function countDocumentLikeSequences(value: unknown): number {
   return 0
 }
 
-async function fetchPage(
+const MAX_ATTEMPTS = 5
+
+/**
+ * Página por chave (`id > último id`, ordenado), não por OFFSET.
+ *
+ * Com OFFSET e sem ORDER BY, a página 137 de `projetos_lei` (~139 mil linhas)
+ * custava ~2,6 s no papel anon, cujo statement_timeout é 3 s; no runner isso
+ * virou HTTP 500 (run 36010547921). OFFSET sem ordem também não garante que
+ * toda linha seja lida uma vez. A chave mantém cada página em tempo constante.
+ */
+export function buildPageUrl(url: string, table: string, columns: string, afterId: string | null): URL {
+  const endpoint = new URL(`${url}/rest/v1/${table}`)
+  const selected = columns.split(",").map((column) => column.trim()).filter(Boolean)
+  endpoint.searchParams.set("select", ["id", ...selected.filter((column) => column !== "id")].join(","))
+  endpoint.searchParams.set("order", "id.asc")
+  endpoint.searchParams.set("limit", String(PAGE_SIZE))
+  if (afterId !== null) endpoint.searchParams.set("id", `gt.${afterId}`)
+  return endpoint
+}
+
+export async function fetchPage(
   url: string,
   key: string,
   table: string,
   columns: string,
-  offset: number
+  afterId: string | null,
+  fetcher: typeof fetch = fetch,
+  sleep: (ms: number) => Promise<void> = (ms) => new Promise((resolvePromise) => setTimeout(resolvePromise, ms))
 ): Promise<Record<string, unknown>[]> {
-  const endpoint = new URL(`${url}/rest/v1/${table}`)
-  endpoint.searchParams.set("select", columns)
-  endpoint.searchParams.set("offset", String(offset))
-  endpoint.searchParams.set("limit", String(PAGE_SIZE))
+  const endpoint = buildPageUrl(url, table, columns, afterId)
 
   let response: Response | null = null
   let lastError: unknown = null
-  for (let attempt = 1; attempt <= 3; attempt += 1) {
+  let lastBody = ""
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
+    response = null
     try {
-      response = await fetch(endpoint, {
+      response = await fetcher(endpoint, {
         headers: { apikey: key, Authorization: `Bearer ${key}` },
         cache: "no-store",
       })
       if (response.ok || response.status < 500) break
+      lastBody = (await response.text()).slice(0, 300)
     } catch (error) {
       lastError = error
     }
-    if (attempt < 3) {
-      await new Promise((resolvePromise) => setTimeout(resolvePromise, attempt * 250))
-    }
+    if (attempt < MAX_ATTEMPTS) await sleep(500 * 2 ** (attempt - 1))
   }
 
   if (!response) {
     throw new Error(
-      `${table}: request failed after 3 attempts${lastError instanceof Error ? `: ${lastError.message}` : ""}`
+      `${table}: request failed after ${MAX_ATTEMPTS} attempts${lastError instanceof Error ? `: ${lastError.message}` : ""}`
     )
   }
   if (!response.ok) {
-    throw new Error(`${table}: HTTP ${response.status}`)
+    throw new Error(`${table}: HTTP ${response.status}${lastBody ? ` ${lastBody}` : ""}`)
   }
   return (await response.json()) as Record<string, unknown>[]
 }
@@ -105,14 +126,22 @@ async function main(): Promise<void> {
     let tableRows = 0
     let tableFindings = 0
 
-    for (let offset = 0; ; offset += PAGE_SIZE) {
-      const rows = await fetchPage(url, key, target.table, target.columns, offset)
+    let afterId: string | null = null
+    for (;;) {
+      const rows = await fetchPage(url, key, target.table, target.columns, afterId)
       tableRows += rows.length
+      // O id é chave técnica, não texto publicado: fica fora da varredura.
       tableFindings += rows.reduce(
-        (total, row) => total + countDocumentLikeSequences(row),
+        (total, row) => total + countDocumentLikeSequences({ ...row, id: undefined }),
         0
       )
       if (rows.length < PAGE_SIZE) break
+      const lastId = rows[rows.length - 1]?.id
+      if (typeof lastId !== "string" && typeof lastId !== "number") {
+        throw new Error(`${target.table}: página sem id para continuar a leitura`)
+      }
+      if (String(lastId) === afterId) throw new Error(`${target.table}: paginação não avançou`)
+      afterId = String(lastId)
     }
 
     totalRows += tableRows
@@ -129,7 +158,7 @@ async function main(): Promise<void> {
   console.log("audit:public-document-exposure:gate PASSED")
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   main().catch((error) => {
     console.error(
       "audit:public-document-exposure:gate FAILED:",

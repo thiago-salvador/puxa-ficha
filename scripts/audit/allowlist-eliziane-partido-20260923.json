@@ -1,0 +1,27 @@
+{
+  "versao": "2026-09-23",
+  "fonte": "TSE consulta_cand_2026.zip, gerado em 23/09/2026 12:30:09; SQ_CANDIDATO 100002541459, MA/SENADOR, urna 133, NR_PARTIDO 13, SG_PARTIDO PT. SHA256 dda125bc927941e4273fe60ccc9755cb1e05bc198d63ba8848178cc6d1b51a6c.",
+  "motivo": "A ficha publicada conserva PSD em partido_sigla e partido_atual; o TSE de 2026 e o snapshot anterior candidatos_roster_2026 identificam PT. Corrigir apenas esses dois campos para a mesma candidatura.",
+  "coorte": ["tse-2026-100002541459"],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "tse-2026-100002541459",
+      "campos": ["partido_sigla", "partido_atual"],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "20260923175946",
+      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260923175946",
+      "campos": ["fonte", "escopo", "alvo", "candidato_id", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    }
+  ]
+}

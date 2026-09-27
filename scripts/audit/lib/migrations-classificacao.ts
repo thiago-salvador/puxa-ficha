@@ -193,6 +193,51 @@ export function temGuardDeAusencia(corpo: string): boolean {
 }
 
 /**
+ * Guard do harness de replay descartável. Exige o teste executável da flag,
+ * RETURN no mesmo IF e que o bloco venha antes do primeiro acesso a candidatos.
+ * Comentários são removidos, mas literais são preservados para validar os
+ * valores exatos de current_setting.
+ */
+export function temGuardDeReplayDescartavel(sql: string): boolean {
+  const corpo = stripComentariosPreservandoLiterais(sql)
+  const guard = /\bIF\s+current_setting\s*\(\s*'pf\.replay'\s*,\s*true\s*\)\s*=\s*'true'\s+THEN\s+(?:RAISE\s+NOTICE\s+'(?:[^']|'')*'\s*;\s*)?RETURN\s*;\s*END\s+IF\s*;/gi
+  const acessoCandidatos = /\b(?:FROM|JOIN|UPDATE|INTO\s+\w+\s+FROM)\s+(?:public\.)?candidatos\b/gi
+  const primeiroAcesso = acessoCandidatos.exec(corpo)?.index ?? Number.POSITIVE_INFINITY
+  for (const m of corpo.matchAll(guard)) {
+    if (m.index! < primeiroAcesso) return true
+  }
+  return false
+}
+
+function stripComentariosPreservandoLiterais(sql: string): string {
+  let resultado = ""
+  let literal = false
+  for (let i = 0; i < sql.length; i++) {
+    const atual = sql[i]
+    if (atual === "'" && literal && sql[i + 1] === "'") {
+      resultado += "''"
+      i++
+    } else if (atual === "'") {
+      literal = !literal
+      resultado += atual
+    } else if (!literal && atual === "-" && sql[i + 1] === "-") {
+      while (i < sql.length && sql[i] !== "\n") i++
+      resultado += "\n"
+    } else if (!literal && atual === "/" && sql[i + 1] === "*") {
+      i += 2
+      let profundidade = 1
+      while (i < sql.length && profundidade > 0) {
+        if (sql[i] === "/" && sql[i + 1] === "*") { profundidade++; i++ }
+        else if (sql[i] === "*" && sql[i + 1] === "/") { profundidade--; i++ }
+        i++
+      }
+      resultado += " "
+    } else resultado += atual
+  }
+  return resultado
+}
+
+/**
  * Palavras que o regex de DML captura mas que não são tabela.
  *
  * `DO UPDATE SET` de um `ON CONFLICT` casa como `UPDATE set`, e é o caso que
@@ -282,7 +327,7 @@ export function classificarMigration(arquivo: string, sql: string): Classificaca
   // "posso replayar isto num banco vazio", e quem quebra é o dado.
   const classe: ClasseMigration = tabelasDeConteudo.length > 0 ? "curadoria" : "schema"
 
-  const temGuard = temGuardDeAusencia(corpo)
+  const temGuard = temGuardDeAusencia(corpo) || temGuardDeReplayDescartavel(sql)
   const temRaiseException = RE_RAISE_EXCEPTION.test(corpo)
   const leCandidatos = RE_LE_CANDIDATOS.test(corpo) || /\bINTO\s+\w+\s*\n?\s*FROM\s+(?:public\.)?candidatos\b/i.test(corpo)
   const temDdlPersistente = RE_DDL_PERSISTENTE.test(corpo)
@@ -492,7 +537,25 @@ export const MEDICAO_REPLAY = Object.freeze({
   // 119 -> 120: assinaturas por recorte após numero_urna. --schema-gate PG17
   // mediu 120 aplicadas, 380 puladas, zero falhas; hash
   // 86205cf1b7110a461b925b59b2669f09e43b1f30bf01fd593a902430a969c2fa.
-  schemaReplayTamanho: 120,
+  // 120 -> 121: 20260924120000 troca a lista de situações da RPC do histórico
+  // verificado pelo domínio de situacao_candidatura (DDL pura). --schema-gate
+  // PG17 mediu 121 aplicadas, 383 puladas, zero falhas; hash
+  // 830241ffa7174576e53b01533a775d46d3dd2f93802cb884bf4c873c9c104cd0.
+  // 122 -> 123: 20260926190100 cria processo_numero_cnj_valido e a CHECK NOT
+  // VALID de numero CNJ em processos (DDL pura). --schema-gate PG17 mediu 123
+  // aplicadas, 397 puladas, zero falhas; hash
+  // 7fc51c84eabc8e22bd2dd1130cdf735eafc8df37bd57ba7e30e0b48bdcbb0fc1.
+  // 123 -> 124: 20260927030200 adiciona o CHECK de data de nascimento sentinela
+  // em candidatos (DDL pura). --schema-gate PG17 mediu 124 aplicadas, 401
+  // puladas, zero falhas; hash
+  // eed309f35eff7889947a07d4ab2d71e988c0399595baa0f551f8fc8b870092a0.
+  // 124 -> 125: 20260927040000 adiciona a despublicacao em projetos_lei.
+  // --schema-gate PG17 mediu 125 aplicadas, 403 puladas, zero falhas; hash
+  // 0326d95942bb7e48534fbb597fa9451281dd1e7dd698ca42bb0b0a2529919aac.
+  // 125 -> 126: 20260927050000 cria a fase eleitoral com RLS e view pública.
+  // --schema-gate PG17: 126 aplicadas, 403 puladas, zero falhas; hash
+  // 6e4c5529e7b4c61ed999b175377449074115d9075cc932f8d06fc0d9cc8b2efb.
+  schemaReplayTamanho: 126,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

@@ -40,6 +40,15 @@ const { aggregatePollWeeks } = require("../src/lib/poll-weeks") as typeof import
 const { fixturePoll } = require("./fixtures/poll-series") as typeof import("./fixtures/poll-series")
 
 const pesquisasLula = listarPesquisasPresidenciaisPorSlug("lula")
+const principaisLula = pesquisasLula.filter((pesquisa) => (pesquisa.grupo ?? "recente") === "recente")
+
+// Grade de cartões da rodada mais recente, sem os blocos recolhidos que vêm depois dela.
+function gradePrincipal(html: string) {
+  const inicio = html.indexOf("data-pf-pesquisas-principais")
+  assert.ok(inicio >= 0)
+  const fim = html.indexOf("data-pf-pesquisas-bloco=", inicio)
+  return html.slice(inicio, fim === -1 ? undefined : fim)
+}
 
 function firstLula() {
   const pesquisa = pesquisasLula[0]
@@ -107,21 +116,22 @@ describe("experiência v2 de pesquisas presidenciais", () => {
   it("lista as fontes revisadas na aba Pesquisas", () => {
     const html = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={pesquisasLula} />)
     const current = firstLula()
-    const datafolha = pesquisasLula.find((pesquisa) => pesquisa.sourceId === "datafolha-folha-globo-nacional-2026")
+    const datafolha = principaisLula.find((pesquisa) => pesquisa.instituto.value === "Datafolha")
     assert.ok(datafolha)
 
-    assert.equal((html.match(/data-pf-pesquisa-card=/g) ?? []).length, pesquisasLula.length)
+    assert.equal((html.match(/data-pf-pesquisa-card=/g) ?? []).length, principaisLula.length)
     assert.ok(html.includes(current.instituto.value!))
     assert.ok(html.includes(percent(current.resultado.valuePercent)))
     assert.ok(html.includes(datafolha.instituto.value!))
     assert.ok(html.includes(percent(datafolha.resultado.valuePercent)))
     assert.match(html, /percentuais do total de entrevistados/)
-    assert.match(html, /cenário sem Pablo Marçal/)
     assert.match(html, /1º turno/)
     assert.match(html, /Ver divulgação pública/)
     assert.match(html, /fotografia do período/)
-    assert.doesNotMatch(html, /AtlasIntel|Ipsos-Ipec|2º turno/)
-    assert.doesNotMatch(html.toLowerCase(), /média|ranking|empate|lidera/)
+    // Segundo turno e rodadas antigas só aparecem nos blocos recolhidos, fora da grade.
+    assert.doesNotMatch(gradePrincipal(html), /Ipsos-Ipec|2º turno/)
+    // Visible copy only: source URLs may carry a headline slug.
+    assert.doesNotMatch(html.replace(/<[^>]+>/g, " ").toLowerCase(), /média|ranking|empate|lidera/)
   })
 
   it("aceita uma, duas ou três fontes sem reservar espaço vazio", () => {
@@ -246,12 +256,15 @@ describe("experiência v2 de pesquisas presidenciais", () => {
     const tab = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={pesquisas} />)
 
     assert.match(hero, /Quaest/)
-    assert.match(hero, /42%/)
-    assert.match(overview, /42%/)
-    assert.equal((tab.match(/data-pf-pesquisa-card=/g) ?? []).length, pesquisas.length)
-    assert.match(tab, /quaest-sp-revisao-20260910/)
+    assert.match(hero, /44%/)
+    assert.match(overview, /44%/)
+    assert.equal(
+      (tab.match(/data-pf-pesquisa-card=/g) ?? []).length,
+      pesquisas.filter((pesquisa) => pesquisa.grupo === "recente").length,
+    )
+    assert.match(tab, /quaest-sp-02456-2026-revisao-20260924/)
     assert.match(tab, /datafolha-tarcisio-lidera-disputa/)
-    assert.equal(pesquisas[0]?.registration.code.value, "SP-00959/2026")
+    assert.equal(pesquisas[0]?.registration.code.value, "SP-02456/2026")
   })
 })
 

@@ -26,7 +26,9 @@ const MAIN_COLUMNS = [
   "chapa_fonte_sha256",
   "chapa_snapshot_em",
   "processos_estado",
+  "processos_busca_estado",
   "processos_quantidade",
+  "processos_quantidade_omitida",
 ] as const
 
 export type ImprensaExportKind = "csv" | "json"
@@ -36,7 +38,8 @@ type Cell = string | number | null
 function mainCells(row: ImprensaRow): Cell[] {
   return [
     row.slug,
-    row.nome,
+    // Como citar / exports preservam a grafia original do TSE (jornalistas citam a fonte).
+    row.nomeOriginal,
     row.cargo,
     row.uf,
     row.partido,
@@ -47,12 +50,14 @@ function mainCells(row: ImprensaRow): Cell[] {
     row.sites?.fonteSha256 ?? null,
     row.sites?.coletadoEm ?? null,
     row.chapa.estado,
-    row.chapa.viceNome,
+    row.chapa.viceNomeOriginal,
     row.chapa.fonteUrl,
     row.chapa.fonteSha256,
     row.chapa.snapshotEm,
     row.processos?.estado ?? null,
+    row.processos?.buscaEstado ?? null,
     row.processos?.quantidade ?? null,
+    row.processos?.quantidadeOmitida ?? 0,
   ]
 }
 
@@ -86,7 +91,8 @@ export function serializeImprensaJson(dataset: ImprensaDataset): string {
     filters: dataset.filters,
     rows: dataset.rows.map((row) => ({
       slug: row.slug,
-      nome: row.nome,
+      // Como citar / exports preservam a grafia original do TSE (jornalistas citam a fonte).
+      nome: row.nomeOriginal,
       cargo: row.cargo,
       uf: row.uf,
       partido: row.partido,
@@ -98,10 +104,12 @@ export function serializeImprensaJson(dataset: ImprensaDataset): string {
         fonteSha256: row.sites.fonteSha256,
         coletadoEm: row.sites.coletadoEm,
       },
-      chapa: row.chapa,
+      chapa: { estado: row.chapa.estado, viceNome: row.chapa.viceNomeOriginal, fonteUrl: row.chapa.fonteUrl, fonteSha256: row.chapa.fonteSha256, snapshotEm: row.chapa.snapshotEm },
       processos: {
         estado: row.processos.estado,
+        buscaEstado: row.processos.buscaEstado,
         quantidade: row.processos.quantidade,
+        quantidadeOmitida: row.processos.quantidadeOmitida,
       },
     })),
   })

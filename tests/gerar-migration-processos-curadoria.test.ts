@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs"
 import { describe, it } from "node:test"
 
 import {
+  formatarCnj,
   prepararPacoteProcessos,
   type LinhaProcesso,
   tipoProcessual,
@@ -51,6 +52,68 @@ describe("gerar migration de processos da curadoria", () => {
     assert.equal(tipoProcessual("AÇÃO CIVIL DE IMPROBIDADE ADMINISTRATIVA", "outro"), "improbidade")
     assert.equal(tipoProcessual("CUMPRIMENTO DE SENTENÇA", "propaganda eleitoral irregular"), "eleitoral")
     assert.equal(tipoProcessual("AÇÃO POPULAR", "ato de gestão"), "civil")
+  })
+
+  it("recusa processo de família ou em segredo de justiça", () => {
+    const pacote = (classe: string, overrides: Record<string, unknown> = {}) => () => prepararPacoteProcessos({
+      itensRevisao: [item(overrides)],
+      processosCuradoria: [processo({ classe })],
+      esperadoProcessos: 1,
+      esperadoFichas: 1,
+      timestamp: "20260927060000",
+    })
+    for (const classe of [
+      "Reconhecimento e Extinção de União Estável",
+      "DIVÓRCIO LITIGIOSO",
+      "AÇÃO DE ALIMENTOS",
+      "GUARDA",
+      "INVESTIGAÇÃO DE PATERNIDADE",
+      "INTERDIÇÃO / CURATELA",
+    ]) assert.throws(pacote(classe), /direito de familia ou segredo de justica/, classe)
+    assert.throws(pacote("PROCEDIMENTO COMUM CÍVEL", { motivo: "Tramita na 6ª Vara de Família da Comarca." }), /segredo de justica/)
+    for (const orgao of [
+      "Vara da Família",
+      "Varas de Família",
+      "Vara das Famílias",
+      "Vara de Família e Sucessões",
+      "Vara da Família e das Sucessões",
+    ]) {
+      assert.throws(pacote("PROCEDIMENTO COMUM CÍVEL", { motivo: `Tramita na 2ª ${orgao} da Comarca.` }), /segredo de justica/, orgao)
+      assert.throws(pacote(`PROCEDIMENTO COMUM CÍVEL - ${orgao}`), /segredo de justica/, orgao)
+    }
+    assert.throws(pacote("PROCEDIMENTO COMUM CÍVEL", { familia_processual: "direito de família" }), /segredo de justica/)
+    assert.doesNotThrow(pacote("PROCEDIMENTO COMUM CÍVEL", { motivo: "Contrato com a Empresa Baiana de Alimentos e a Guarda Municipal." }))
+  })
+
+  it("lote novo usa marcador próprio em fonte, contagens, rollback e readback", () => {
+    const pacote = prepararPacoteProcessos({
+      itensRevisao: [item()],
+      processosCuradoria: [processo()],
+      esperadoProcessos: 1,
+      esperadoFichas: 1,
+      timestamp: "20260927060000",
+      aprovadoEditorialmente: true,
+      marcador: "curadoria-djen-20260927",
+    })
+    for (const sql of [pacote.migration, pacote.rollback, pacote.readback]) {
+      assert.match(sql, /LIKE 'curadoria-djen-20260927: %'/)
+      assert.doesNotMatch(sql, /curadoria-djen-20260805/)
+    }
+    assert.match(pacote.migration, /'curadoria-djen-20260927: Comunica PJe'/)
+    // Guards de coorte vazia e de replay descartável nos dois blocos de checagem.
+    assert.equal(pacote.migration.match(/current_setting\('pf\.replay', true\) = 'true'/g)?.length, 2)
+    assert.match(pacote.readback, /resultado\.expected_rows <> 1 OR resultado\.expected_candidates <> 1/)
+    assert.match(pacote.readback, /readback 20260927060000/)
+    assert.match(pacote.readback, /WHERE version = '20260927060000';\n  IF ledger <> 1 THEN/)
+    assert.equal(pacote.allowlist.recorte, "processos-curadoria-djen-20260927")
+    assert.throws(() => prepararPacoteProcessos({
+      itensRevisao: [item()],
+      processosCuradoria: [processo()],
+      esperadoProcessos: 1,
+      esperadoFichas: 1,
+      timestamp: "20260927060000",
+      marcador: "outro-marcador",
+    }), /marcador invalido/)
   })
 
   it("gera migration e rollback pareados com preflight, dedupe e contagem exata", () => {
@@ -295,5 +358,34 @@ describe("gerar migration de processos da curadoria", () => {
         }),
       /identidade nao confirmada/,
     )
+  })
+
+  it("grava o número CNJ sempre mascarado, mesmo quando a entrada vem com 20 dígitos", () => {
+    assert.equal(formatarCnj("22540468620218260000"), "2254046-86.2021.8.26.0000")
+    assert.equal(formatarCnj("2254046-86.2021.8.26.0000"), "2254046-86.2021.8.26.0000")
+    assert.throws(() => formatarCnj("22540468720218260000"), /CNJ invalido/)
+    assert.throws(() => formatarCnj("2254046-86.2021.8.26.0000/50000"), /CNJ invalido/)
+
+    const cnj = "08640775520258100001"
+    const pacote = prepararPacoteProcessos({
+      itensRevisao: [item({
+        slug: "orleans-brandao",
+        numero_cnj: cnj,
+        fontes_oficiais: [{
+          url: `https://comunicaapi.pje.jus.br/api/v1/comunicacao?numeroProcesso=${cnj}`,
+          titulo: "Comunica PJe",
+        }],
+      })],
+      processosCuradoria: [processo({
+        numero_cnj: cnj,
+        url: `https://comunicaapi.pje.jus.br/api/v1/comunicacao?numeroProcesso=${cnj}`,
+      })],
+      esperadoProcessos: 1,
+      esperadoFichas: 1,
+      timestamp: "20260810122000",
+    })
+    assert.equal(pacote.linhas[0].numero_cnj, "0864077-55.2025.8.10.0001")
+    assert.ok(pacote.migration.includes("'0864077-55.2025.8.10.0001'"))
+    assert.ok(!pacote.migration.includes(`'${cnj}'`), "migration não pode inserir os 20 dígitos crus")
   })
 })

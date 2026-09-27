@@ -25,7 +25,7 @@ describe("next security headers", () => {
     assert.deepEqual(puxaFichaNextConfig.allowedDevOrigins, ["127.0.0.1"])
   })
 
-  it("aplica headers de iframe por path no embed e deixa CSP dinamico para o middleware", async () => {
+  it("aplica headers de iframe por path no embed e a CSP estática no next.config", async () => {
     assert.ok(puxaFichaNextConfig.headers)
     const rules = (await puxaFichaNextConfig.headers()) as HeaderRule[]
     const embedRule = rules.find((rule) => rule.source === "/embed/:path+")
@@ -34,11 +34,14 @@ describe("next security headers", () => {
     assert.ok(embedRule)
     assert.ok(globalRule)
 
-    assert.equal(headerValue(embedRule, "Content-Security-Policy"), null)
+    // CSP sem nonce desde 2026-09-25: sai daqui, não do middleware, para as
+    // páginas poderem ser servidas da CDN.
+    assert.match(headerValue(embedRule, "Content-Security-Policy") ?? "", /frame-ancestors \*/)
     assert.equal(headerValue(embedRule, "X-Frame-Options"), null)
     assert.equal(headerValue(embedRule, "X-Robots-Tag"), "noindex, nofollow")
 
-    assert.equal(headerValue(globalRule, "Content-Security-Policy"), null)
+    assert.match(headerValue(globalRule, "Content-Security-Policy") ?? "", /frame-ancestors 'none'/)
+    assert.doesNotMatch(headerValue(globalRule, "Content-Security-Policy") ?? "", /'nonce-|'strict-dynamic'/)
     assert.equal(headerValue(globalRule, "X-Frame-Options"), "DENY")
 
     assert.equal(

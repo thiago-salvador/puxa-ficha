@@ -252,6 +252,19 @@ describe("filterGlobalSearchPalette", () => {
     assert.deepEqual(groupNumericSearchCandidates(items).map((group) => group.label), ["RJ · Senador", "SP · Governador"])
   })
 
+  it("mantém o grupo presidencial na frente mesmo quando a UF do outro grupo vem antes na ordem alfabética", () => {
+    // BA precede BR na ordenação alfabética, então esse caso reproduz o bug relatado:
+    // "13" listava "BA · Governador" (Jerônimo) antes de "BR · Presidente" (Lula).
+    const items: GlobalSearchIndexItem[] = [
+      { href: "/candidato/jeronimo", title: "Jerônimo", subtitle: "", searchText: "", numero_urna: "13", estado: "BA", cargo_disputado: "Governador" },
+      { href: "/candidato/lula", title: "Lula", subtitle: "", searchText: "", numero_urna: "13", estado: "BR", cargo_disputado: "Presidente" },
+    ]
+    assert.deepEqual(
+      groupNumericSearchCandidates(items).map((group) => group.label),
+      ["BR · Presidente", "BA · Governador"],
+    )
+  })
+
   it("returns truncated candidates when query empty", () => {
     const many = Array.from({ length: 40 }, (_, i) => ({
       href: `/candidato/x${i}`,

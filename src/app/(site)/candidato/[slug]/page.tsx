@@ -9,9 +9,11 @@ import { truncateOnWordBoundary } from "@/lib/text-truncate"
 import { CandidatoFichaView } from "./CandidatoFichaView"
 
 // Bloco 7 do review 2026-04-24: a rota preserva cache nos recursos da ficha,
-// mas a página em si precisa ser dinâmica porque o RootLayout lê `headers()`
-// para CSP nonce. Pre-render on demand aqui dispara DYNAMIC_SERVER_USAGE em
-// produção; o cache de dados segue em src/lib/api.ts via unstable_cache.
+// e a página em si segue dinâmica. O RootLayout não lê mais `headers()` (nonce
+// removido em 2026-09-25), mas `getCandidatoBySlugResource` ainda lê `headers()`
+// no bypass de release-verify em Preview; tirar o `force-dynamic` antes de
+// isolar esse bypass repetiria o 500 de 2026-08-03 fora de produção. O cache
+// de dados segue em src/lib/api.ts via unstable_cache.
 // `searchParams.tab` deixou de ser lido no servidor (o que tornava a rota
 // dinâmica em Next 15); agora a aba inicial vinda de `?tab=` é resolvida
 // no client por `CandidatoProfile`.

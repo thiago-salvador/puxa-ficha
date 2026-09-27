@@ -1,7 +1,9 @@
 import { supabase } from "./supabase"
 import { loadCandidatosPublicos } from "./helpers-db"
+import { aplicarCoorteAtualizacao } from "./coorte-atualizacao"
 import { sleep } from "./helpers"
 import { log, warn } from "./logger"
+import { emDryRun, planejarEscrita } from "./dry-run"
 import type { CandidatoConfig, IngestResult } from "./types"
 import { motivoRecusaDeFonte } from "../../src/lib/public-attention-point"
 import { namesLookCompatible } from "./name-match"
@@ -350,6 +352,19 @@ async function upsertPontoAtencao(
     return false
   }
 
+  if (emDryRun()) {
+    planejarEscrita({
+      fonte: "tcu",
+      tabela: "pontos_atencao",
+      operacao: existente ? "update" : "insert",
+      alvo: candidatoId,
+      identidade: "cpf:conferido",
+      chave: existente ? { id: existente.id } : { candidato_id: candidatoId, titulo },
+      valores: { gravidade: row.gravidade, verificado: row.verificado, fontes: row.fontes.length },
+    })
+    return true
+  }
+
   let error
   if (existente) {
     if (row.descricao !== descricao) {
@@ -377,7 +392,10 @@ export type IngestTCUOptions = {
 export async function ingestTCU(options: IngestTCUOptions = {}): Promise<IngestResult[]> {
   const selectedSlugs = options.targetSlugs ? new Set(options.targetSlugs) : null
   const fetchImpl = options.fetchImpl ?? fetch
-  const candidatos = (options.candidateRows ? [...options.candidateRows] : await loadCandidatosPublicos())
+  const roster = options.candidateRows
+    ? await aplicarCoorteAtualizacao([...options.candidateRows], "tcu-injetados")
+    : await loadCandidatosPublicos()
+  const candidatos = roster
     .filter((cand) => !selectedSlugs || selectedSlugs.has(cand.slug))
   const results: IngestResult[] = []
 
@@ -449,13 +467,22 @@ export async function ingestTCU(options: IngestTCUOptions = {}): Promise<IngestR
       const tcuInabilitado = inabilitados.length > 0
       const tcuContasIrregulares = cadirreg.length > 0
 
-      const { error: updateErr } = await supabase
-        .from("candidatos")
-        .update({
-          tcu_inabilitado: tcuInabilitado,
-          tcu_contas_irregulares: tcuContasIrregulares,
+      const flagsTCU = {
+        tcu_inabilitado: tcuInabilitado,
+        tcu_contas_irregulares: tcuContasIrregulares,
+      }
+      let updateErr: { message: string } | null = null
+      if (emDryRun()) {
+        planejarEscrita({
+          fonte: "tcu", tabela: "candidatos", operacao: "update", alvo: cand.slug,
+          identidade: "cpf:conferido", chave: { id: candidatoId }, valores: flagsTCU,
         })
-        .eq("id", candidatoId)
+      } else {
+        ;({ error: updateErr } = await supabase
+          .from("candidatos")
+          .update(flagsTCU)
+          .eq("id", candidatoId))
+      }
 
       if (updateErr) {
         result.errors.push(`Erro ao atualizar candidatos: ${updateErr.message}`)

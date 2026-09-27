@@ -320,7 +320,7 @@ export default async function UfHubPage({
               </div>
             }
           >
-            <ComparadorPanel candidatos={comparaveis} />
+            <ComparadorPanel candidatos={comparaveis} referenceNow={new Date().toISOString()} />
           </Suspense>
         </>
       )}

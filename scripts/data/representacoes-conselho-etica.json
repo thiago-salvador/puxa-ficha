@@ -1,0 +1,2118 @@
+{
+  "policy": "pf-representacoes-etica-v1",
+  "itens": [
+    {
+      "id": "camara-rep-2364435-dep-204472",
+      "candidate_slug": "tse-2026-110002552693",
+      "casa": "camara",
+      "deputado_id": 204472,
+      "proposicao": {
+        "id": 2364435,
+        "sigla": "REP",
+        "numero": 4,
+        "ano": 2023
+      },
+      "fase": "arquivada",
+      "ultimo_andamento_em": "2023-12-05",
+      "verificado_em": "2026-09-24",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2364435",
+      "identidade": {
+        "metodo": "cpf_tse_camara",
+        "conferida_em": "2026-09-24"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-24"
+      }
+    },
+    {
+      "id": "camara-rep-2366795-dep-160575",
+      "candidate_slug": "tse-2026-70002552490",
+      "casa": "camara",
+      "deputado_id": 160575,
+      "proposicao": {
+        "id": 2366795,
+        "sigla": "REP",
+        "numero": 8,
+        "ano": 2023
+      },
+      "fase": "retirada",
+      "ultimo_andamento_em": "2023-06-12",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2366795",
+      "identidade": {
+        "metodo": "seed_ids_camara",
+        "conferida_em": "2026-09-27"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27"
+      }
+    },
+    {
+      "id": "camara-rep-2368405-dep-160575",
+      "candidate_slug": "tse-2026-70002552490",
+      "casa": "camara",
+      "deputado_id": 160575,
+      "proposicao": {
+        "id": 2368405,
+        "sigla": "REP",
+        "numero": 12,
+        "ano": 2023
+      },
+      "fase": "arquivada",
+      "ultimo_andamento_em": "2023-12-14",
+      "verificado_em": "2026-09-24",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2368405",
+      "identidade": {
+        "metodo": "cpf_tse_camara",
+        "conferida_em": "2026-09-24"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-24"
+      }
+    },
+    {
+      "id": "camara-rep-2376378-dep-220633",
+      "candidate_slug": "tse-2026-250002532794",
+      "casa": "camara",
+      "deputado_id": 220633,
+      "proposicao": {
+        "id": 2376378,
+        "sigla": "REP",
+        "numero": 20,
+        "ano": 2023
+      },
+      "fase": "arquivada",
+      "ultimo_andamento_em": "2024-02-06",
+      "verificado_em": "2026-09-24",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2376378",
+      "identidade": {
+        "metodo": "cpf_tse_camara",
+        "conferida_em": "2026-09-24"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-24"
+      }
+    },
+    {
+      "id": "camara-rep-2376389-dep-220552",
+      "candidate_slug": "luciano-zucco",
+      "casa": "camara",
+      "deputado_id": 220552,
+      "proposicao": {
+        "id": 2376389,
+        "sigla": "REP",
+        "numero": 21,
+        "ano": 2023
+      },
+      "fase": "arquivada",
+      "ultimo_andamento_em": "2024-02-06",
+      "verificado_em": "2026-09-24",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2376389",
+      "identidade": {
+        "metodo": "seed_ids_camara",
+        "conferida_em": "2026-09-24"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-24"
+      }
+    },
+    {
+      "id": "camara-rep-2410507-dep-220633",
+      "candidate_slug": "tse-2026-250002532794",
+      "casa": "camara",
+      "deputado_id": 220633,
+      "proposicao": {
+        "id": 2410507,
+        "sigla": "REP",
+        "numero": 23,
+        "ano": 2023
+      },
+      "fase": "arquivada",
+      "ultimo_andamento_em": "2024-07-08",
+      "verificado_em": "2026-09-24",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2410507",
+      "identidade": {
+        "metodo": "cpf_tse_camara",
+        "conferida_em": "2026-09-24"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-24"
+      }
+    },
+    {
+      "id": "camara-rep-2545934-dep-220568",
+      "candidate_slug": "tse-2026-90002543556",
+      "casa": "camara",
+      "deputado_id": 220568,
+      "proposicao": {
+        "id": 2545934,
+        "sigla": "REP",
+        "numero": 6,
+        "ano": 2025
+      },
+      "fase": "arquivamento_aprovado_conselho",
+      "ultimo_andamento_em": "2025-11-05",
+      "verificado_em": "2026-09-24",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2545934",
+      "identidade": {
+        "metodo": "cpf_tse_camara",
+        "conferida_em": "2026-09-24"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-24"
+      }
+    },
+    {
+      "id": "camara-rep-2545992-dep-178908",
+      "candidate_slug": "delegado-eder-mauro",
+      "casa": "camara",
+      "deputado_id": 178908,
+      "proposicao": {
+        "id": 2545992,
+        "sigla": "REP",
+        "numero": 11,
+        "ano": 2025
+      },
+      "fase": "arquivamento_aprovado_conselho",
+      "ultimo_andamento_em": "2026-03-18",
+      "verificado_em": "2026-09-24",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2545992",
+      "identidade": {
+        "metodo": "seed_ids_camara",
+        "conferida_em": "2026-09-24"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-24"
+      }
+    },
+    {
+      "id": "camara-rep-2546018-dep-204472",
+      "candidate_slug": "tse-2026-110002552693",
+      "casa": "camara",
+      "deputado_id": 204472,
+      "proposicao": {
+        "id": 2546018,
+        "sigla": "REP",
+        "numero": 18,
+        "ano": 2025
+      },
+      "fase": "arquivamento_aprovado_conselho",
+      "ultimo_andamento_em": "2026-03-19",
+      "verificado_em": "2026-09-24",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2546018",
+      "identidade": {
+        "metodo": "cpf_tse_camara",
+        "conferida_em": "2026-09-24"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-24"
+      }
+    },
+    {
+      "id": "camara-rep-2563294-dep-156190",
+      "candidate_slug": "tse-2026-210002547819",
+      "casa": "camara",
+      "deputado_id": 156190,
+      "proposicao": {
+        "id": 2563294,
+        "sigla": "REP",
+        "numero": 25,
+        "ano": 2025
+      },
+      "fase": "procedente_conselho_recurso_pendente",
+      "ultimo_andamento_em": "2026-05-19",
+      "verificado_em": "2026-09-23",
+      "url_oficial": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2563294",
+      "identidade": {
+        "metodo": "cpf_tse_camara",
+        "conferida_em": "2026-09-23"
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-23"
+      }
+    },
+    {
+      "id": "senado-pce-7868616-sen-5894",
+      "candidate_slug": "flavio-bolsonaro",
+      "casa": "senado",
+      "senador_id": 5894,
+      "processo": {
+        "id": 7868616,
+        "sigla": "PCE",
+        "numero": 1,
+        "ano": 2020
+      },
+      "situacao_oficial": {
+        "sigla": "DEFERD",
+        "descricao": "DEFERIDA"
+      },
+      "ultimo_andamento_em": "2024-07-09",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/7868616?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/7868616?v=1",
+          "trecho_sha256": "618fc2a546f8c323a79704e8d6ecb4658bb1665e86f88f802225c1f461889c80",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "DEFERD",
+        "situacao_descricao": "DEFERIDA"
+      }
+    },
+    {
+      "id": "senado-pce-7980184-sen-4531",
+      "candidate_slug": "jayme-campos",
+      "casa": "senado",
+      "senador_id": 4531,
+      "processo": {
+        "id": 7980184,
+        "sigla": "PCE",
+        "numero": 3,
+        "ano": 2020
+      },
+      "situacao_oficial": {
+        "sigla": "INDEFD",
+        "descricao": "INDEFERIDA"
+      },
+      "ultimo_andamento_em": "2023-06-19",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/7980184?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/7980184?v=1",
+          "trecho_sha256": "5f2dc07deed4d28e4418e2e03146f57d671e592887315eb78682153b96c657a1",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "INDEFD",
+        "situacao_descricao": "INDEFERIDA",
+        "ficha_nao_publicavel": {
+          "permitido": true,
+          "opcao": "--permitir-ficha-nao-publicavel",
+          "fonte": "candidatos_publico",
+          "conferida_em": "2026-09-27"
+        }
+      }
+    },
+    {
+      "id": "senado-pce-7993144-sen-470",
+      "candidate_slug": "tse-2026-230002550794",
+      "casa": "senado",
+      "senador_id": 470,
+      "processo": {
+        "id": 7993144,
+        "sigla": "PCE",
+        "numero": 7,
+        "ano": 2020
+      },
+      "situacao_oficial": {
+        "sigla": "DEFERD",
+        "descricao": "DEFERIDA"
+      },
+      "ultimo_andamento_em": "2023-06-15",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/7993144?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/7993144?v=1",
+          "trecho_sha256": "1846465c91fb5eaaa5c5edcf872d676b48a6828d71fcd91206e15fe7a8c84929",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "DEFERD",
+        "situacao_descricao": "DEFERIDA"
+      }
+    },
+    {
+      "id": "senado-pce-8109512-sen-5959",
+      "candidate_slug": "tse-2026-200002534448",
+      "casa": "senado",
+      "senador_id": 5959,
+      "processo": {
+        "id": 8109512,
+        "sigla": "PCE",
+        "numero": 7,
+        "ano": 2021
+      },
+      "situacao_oficial": {
+        "sigla": "DEFERD",
+        "descricao": "DEFERIDA"
+      },
+      "ultimo_andamento_em": "2024-07-09",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8109512?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8109512?v=1",
+          "trecho_sha256": "1d0088d4dbeb370ccbc8df599a2fccce063dc78948af34ebfd2a9c0cc1f7e830",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "DEFERD",
+        "situacao_descricao": "DEFERIDA"
+      }
+    },
+    {
+      "id": "senado-pce-8109557-sen-5959",
+      "candidate_slug": "tse-2026-200002534448",
+      "casa": "senado",
+      "senador_id": 5959,
+      "processo": {
+        "id": 8109557,
+        "sigla": "PCE",
+        "numero": 8,
+        "ano": 2021
+      },
+      "situacao_oficial": {
+        "sigla": "DEFERD",
+        "descricao": "DEFERIDA"
+      },
+      "ultimo_andamento_em": "2023-06-15",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8109557?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8109557?v=1",
+          "trecho_sha256": "1d0088d4dbeb370ccbc8df599a2fccce063dc78948af34ebfd2a9c0cc1f7e830",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "DEFERD",
+        "situacao_descricao": "DEFERIDA"
+      }
+    },
+    {
+      "id": "senado-pce-8109732-sen-5012",
+      "candidate_slug": "tse-2026-30002549909",
+      "casa": "senado",
+      "senador_id": 5012,
+      "processo": {
+        "id": 8109732,
+        "sigla": "PCE",
+        "numero": 9,
+        "ano": 2021
+      },
+      "situacao_oficial": {
+        "sigla": "DEFERD",
+        "descricao": "DEFERIDA"
+      },
+      "ultimo_andamento_em": "2023-06-15",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8109732?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8109732?v=1",
+          "trecho_sha256": "16e0e932a79e16a99ca59b413728aaacfe86b4e7b6263e5f8b86bbdd2befb01e",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "DEFERD",
+        "situacao_descricao": "DEFERIDA"
+      }
+    },
+    {
+      "id": "senado-pce-8203714-sen-5012",
+      "candidate_slug": "tse-2026-30002549909",
+      "casa": "senado",
+      "senador_id": 5012,
+      "processo": {
+        "id": 8203714,
+        "sigla": "PCE",
+        "numero": 1,
+        "ano": 2022
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2023-03-30",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8203714?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8203714?v=1",
+          "trecho_sha256": "16e0e932a79e16a99ca59b413728aaacfe86b4e7b6263e5f8b86bbdd2befb01e",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      }
+    },
+    {
+      "id": "senado-pce-8206435-sen-5525",
+      "candidate_slug": "omar-aziz",
+      "casa": "senado",
+      "senador_id": 5525,
+      "processo": {
+        "id": 8206435,
+        "sigla": "PCE",
+        "numero": 2,
+        "ano": 2022
+      },
+      "situacao_oficial": {
+        "sigla": "INDEFD",
+        "descricao": "INDEFERIDA"
+      },
+      "ultimo_andamento_em": "2024-07-12",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8206435?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8206435?v=1",
+          "trecho_sha256": "7ea2975ee1fdbbd490093c2b1b87e135c164966545e37838874f75fa206e9723",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "INDEFD",
+        "situacao_descricao": "INDEFERIDA"
+      }
+    },
+    {
+      "id": "senado-pce-8241789-sen-5012",
+      "candidate_slug": "tse-2026-30002549909",
+      "casa": "senado",
+      "senador_id": 5012,
+      "processo": {
+        "id": 8241789,
+        "sigla": "PCE",
+        "numero": 3,
+        "ano": 2022
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2023-03-30",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8241789?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8241789?v=1",
+          "trecho_sha256": "16e0e932a79e16a99ca59b413728aaacfe86b4e7b6263e5f8b86bbdd2befb01e",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      }
+    },
+    {
+      "id": "senado-pce-8287834-sen-5732",
+      "candidate_slug": "rodrigo-pacheco",
+      "casa": "senado",
+      "senador_id": 5732,
+      "processo": {
+        "id": 8287834,
+        "sigla": "PCE",
+        "numero": 4,
+        "ano": 2022
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2023-03-30",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8287834?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8287834?v=1",
+          "trecho_sha256": "1d7efb22ffc630562a9b59cc61c43080a1c2951013eab7732d290c34c9f38ee2",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR",
+        "ficha_nao_publicavel": {
+          "permitido": true,
+          "opcao": "--permitir-ficha-nao-publicavel",
+          "fonte": "candidatos_publico",
+          "conferida_em": "2026-09-27"
+        }
+      }
+    },
+    {
+      "id": "senado-pce-8287840-sen-5942",
+      "candidate_slug": "tse-2026-80002538202",
+      "casa": "senado",
+      "senador_id": 5942,
+      "processo": {
+        "id": 8287840,
+        "sigla": "PCE",
+        "numero": 5,
+        "ano": 2022
+      },
+      "situacao_oficial": {
+        "sigla": "INDEFD",
+        "descricao": "INDEFERIDA"
+      },
+      "ultimo_andamento_em": "2024-07-12",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8287840?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8287840?v=1",
+          "trecho_sha256": "3e7857c465ff86b0578e5c71f5cb7f764482f670a040ffca44440a54971ddc24",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "INDEFD",
+        "situacao_descricao": "INDEFERIDA"
+      }
+    },
+    {
+      "id": "senado-pce-8288491-sen-5942",
+      "candidate_slug": "tse-2026-80002538202",
+      "casa": "senado",
+      "senador_id": 5942,
+      "processo": {
+        "id": 8288491,
+        "sigla": "PCE",
+        "numero": 6,
+        "ano": 2022
+      },
+      "situacao_oficial": {
+        "sigla": "INDEFD",
+        "descricao": "INDEFERIDA"
+      },
+      "ultimo_andamento_em": "2024-07-12",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8288491?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8288491?v=1",
+          "trecho_sha256": "3e7857c465ff86b0578e5c71f5cb7f764482f670a040ffca44440a54971ddc24",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "INDEFD",
+        "situacao_descricao": "INDEFERIDA"
+      }
+    },
+    {
+      "id": "senado-pce-8307793-sen-5732",
+      "candidate_slug": "rodrigo-pacheco",
+      "casa": "senado",
+      "senador_id": 5732,
+      "processo": {
+        "id": 8307793,
+        "sigla": "PCE",
+        "numero": 7,
+        "ano": 2022
+      },
+      "situacao_oficial": {
+        "sigla": "INDEFD",
+        "descricao": "INDEFERIDA"
+      },
+      "ultimo_andamento_em": "2024-07-12",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8307793?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8307793?v=1",
+          "trecho_sha256": "94d99fc838b7202d63b37c1a7c2685abad03c781bbcac19f7453814e9c81bef7",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "INDEFD",
+        "situacao_descricao": "INDEFERIDA",
+        "ficha_nao_publicavel": {
+          "permitido": true,
+          "opcao": "--permitir-ficha-nao-publicavel",
+          "fonte": "candidatos_publico",
+          "conferida_em": "2026-09-27"
+        }
+      }
+    },
+    {
+      "id": "senado-pce-8358578-sen-5012",
+      "candidate_slug": "tse-2026-30002549909",
+      "casa": "senado",
+      "senador_id": 5012,
+      "processo": {
+        "id": 8358578,
+        "sigla": "PCE",
+        "numero": 1,
+        "ano": 2023
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2023-03-30",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8358578?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8358578?v=1",
+          "trecho_sha256": "702b1988a77bffbcc5e8d0a121e6b339c81babfc5edc27ff79bd1d9cb16e9152",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      }
+    },
+    {
+      "id": "senado-pce-8363590-sen-5012",
+      "candidate_slug": "tse-2026-30002549909",
+      "casa": "senado",
+      "senador_id": 5012,
+      "processo": {
+        "id": 8363590,
+        "sigla": "PCE",
+        "numero": 2,
+        "ano": 2023
+      },
+      "situacao_oficial": {
+        "sigla": "DEFERD",
+        "descricao": "DEFERIDA"
+      },
+      "ultimo_andamento_em": "2024-07-09",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8363590?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8363590?v=1",
+          "trecho_sha256": "702b1988a77bffbcc5e8d0a121e6b339c81babfc5edc27ff79bd1d9cb16e9152",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "DEFERD",
+        "situacao_descricao": "DEFERIDA"
+      }
+    },
+    {
+      "id": "senado-pce-8363716-sen-5942",
+      "candidate_slug": "tse-2026-80002538202",
+      "casa": "senado",
+      "senador_id": 5942,
+      "processo": {
+        "id": 8363716,
+        "sigla": "PCE",
+        "numero": 3,
+        "ano": 2023
+      },
+      "situacao_oficial": {
+        "sigla": "DEFERD",
+        "descricao": "DEFERIDA"
+      },
+      "ultimo_andamento_em": "2024-07-09",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8363716?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8363716?v=1",
+          "trecho_sha256": "f77133cf71e121dc0c1e2a6efce11dd766c38fcc9b54a3c986af0f5a3bd5fe85",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "DEFERD",
+        "situacao_descricao": "DEFERIDA"
+      }
+    },
+    {
+      "id": "senado-pce-8372502-sen-5012",
+      "candidate_slug": "tse-2026-30002549909",
+      "casa": "senado",
+      "senador_id": 5012,
+      "processo": {
+        "id": 8372502,
+        "sigla": "PCE",
+        "numero": 5,
+        "ano": 2023
+      },
+      "situacao_oficial": {
+        "sigla": "DEFERD",
+        "descricao": "DEFERIDA"
+      },
+      "ultimo_andamento_em": "2024-07-09",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8372502?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8372502?v=1",
+          "trecho_sha256": "702b1988a77bffbcc5e8d0a121e6b339c81babfc5edc27ff79bd1d9cb16e9152",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "DEFERD",
+        "situacao_descricao": "DEFERIDA"
+      }
+    },
+    {
+      "id": "senado-pce-8394270-sen-5894",
+      "candidate_slug": "flavio-bolsonaro",
+      "casa": "senado",
+      "senador_id": 5894,
+      "processo": {
+        "id": 8394270,
+        "sigla": "PCE",
+        "numero": 7,
+        "ano": 2023
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2023-03-22",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8394270?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8394270?v=1",
+          "trecho_sha256": "d8b4c7635d2b1609f31ade29ab25d565f887db985c6274c751e1e582b5778df1",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      }
+    },
+    {
+      "id": "senado-pce-8415555-sen-5942",
+      "candidate_slug": "tse-2026-80002538202",
+      "casa": "senado",
+      "senador_id": 5942,
+      "processo": {
+        "id": 8415555,
+        "sigla": "PCE",
+        "numero": 8,
+        "ano": 2023
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2023-04-17",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8415555?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8415555?v=1",
+          "trecho_sha256": "f77133cf71e121dc0c1e2a6efce11dd766c38fcc9b54a3c986af0f5a3bd5fe85",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      }
+    },
+    {
+      "id": "senado-pce-8415673-sen-470",
+      "candidate_slug": "tse-2026-230002550794",
+      "casa": "senado",
+      "senador_id": 470,
+      "processo": {
+        "id": 8415673,
+        "sigla": "PCE",
+        "numero": 9,
+        "ano": 2023
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2023-04-17",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8415673?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8415673?v=1",
+          "trecho_sha256": "b76800534a8837b38bcdd645d2a7dc206dd1544a1d0cf128e0e7e75c441d9b57",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      }
+    },
+    {
+      "id": "senado-pce-8457720-sen-631",
+      "candidate_slug": "magno-malta",
+      "casa": "senado",
+      "senador_id": 631,
+      "processo": {
+        "id": 8457720,
+        "sigla": "PCE",
+        "numero": 10,
+        "ano": 2023
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2023-05-24",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8457720?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8457720?v=1",
+          "trecho_sha256": "896e1acc3f662346f97914cf70c9c46ad3049568401a76e0eb0ca83b6513e4a0",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR",
+        "ficha_nao_publicavel": {
+          "permitido": true,
+          "opcao": "--permitir-ficha-nao-publicavel",
+          "fonte": "candidatos_publico",
+          "conferida_em": "2026-09-27"
+        }
+      }
+    },
+    {
+      "id": "senado-pce-8457800-sen-631",
+      "candidate_slug": "magno-malta",
+      "casa": "senado",
+      "senador_id": 631,
+      "processo": {
+        "id": 8457800,
+        "sigla": "PCE",
+        "numero": 11,
+        "ano": 2023
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2023-05-24",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8457800?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8457800?v=1",
+          "trecho_sha256": "896e1acc3f662346f97914cf70c9c46ad3049568401a76e0eb0ca83b6513e4a0",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR",
+        "ficha_nao_publicavel": {
+          "permitido": true,
+          "opcao": "--permitir-ficha-nao-publicavel",
+          "fonte": "candidatos_publico",
+          "conferida_em": "2026-09-27"
+        }
+      }
+    },
+    {
+      "id": "senado-pce-8475918-sen-5942",
+      "candidate_slug": "tse-2026-80002538202",
+      "casa": "senado",
+      "senador_id": 5942,
+      "processo": {
+        "id": 8475918,
+        "sigla": "PCE",
+        "numero": 12,
+        "ano": 2023
+      },
+      "situacao_oficial": {
+        "sigla": "DEFERD",
+        "descricao": "DEFERIDA"
+      },
+      "ultimo_andamento_em": "2024-07-09",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8475918?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8475918?v=1",
+          "trecho_sha256": "d252baad5086e911e9c68b9d75c85062aeb70633d739312f0b5643b966f9b71d",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "DEFERD",
+        "situacao_descricao": "DEFERIDA"
+      }
+    },
+    {
+      "id": "senado-pce-8480241-sen-5942",
+      "candidate_slug": "tse-2026-80002538202",
+      "casa": "senado",
+      "senador_id": 5942,
+      "processo": {
+        "id": 8480241,
+        "sigla": "PCE",
+        "numero": 13,
+        "ano": 2023
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2023-06-22",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8480241?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8480241?v=1",
+          "trecho_sha256": "d252baad5086e911e9c68b9d75c85062aeb70633d739312f0b5643b966f9b71d",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      }
+    },
+    {
+      "id": "senado-pce-8481550-sen-5672",
+      "candidate_slug": "alan-rick",
+      "casa": "senado",
+      "senador_id": 5672,
+      "processo": {
+        "id": 8481550,
+        "sigla": "PCE",
+        "numero": 14,
+        "ano": 2023
+      },
+      "situacao_oficial": {
+        "sigla": "INDEFD",
+        "descricao": "INDEFERIDA"
+      },
+      "ultimo_andamento_em": "2024-07-12",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8481550?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8481550?v=1",
+          "trecho_sha256": "26584a5192139308e0714c0836e86a2d19cbd625eeaf701f3dec2754d92dbb57",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "INDEFD",
+        "situacao_descricao": "INDEFERIDA"
+      }
+    },
+    {
+      "id": "senado-pce-8495164-sen-5672",
+      "candidate_slug": "alan-rick",
+      "casa": "senado",
+      "senador_id": 5672,
+      "processo": {
+        "id": 8495164,
+        "sigla": "PCE",
+        "numero": 15,
+        "ano": 2023
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2023-07-12",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8495164?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8495164?v=1",
+          "trecho_sha256": "26584a5192139308e0714c0836e86a2d19cbd625eeaf701f3dec2754d92dbb57",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      }
+    },
+    {
+      "id": "senado-pce-8496977-sen-5672",
+      "candidate_slug": "alan-rick",
+      "casa": "senado",
+      "senador_id": 5672,
+      "processo": {
+        "id": 8496977,
+        "sigla": "PCE",
+        "numero": 16,
+        "ano": 2023
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2023-07-18",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8496977?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8496977?v=1",
+          "trecho_sha256": "26584a5192139308e0714c0836e86a2d19cbd625eeaf701f3dec2754d92dbb57",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      }
+    },
+    {
+      "id": "senado-pce-8523769-sen-5942",
+      "candidate_slug": "tse-2026-80002538202",
+      "casa": "senado",
+      "senador_id": 5942,
+      "processo": {
+        "id": 8523769,
+        "sigla": "PCE",
+        "numero": 17,
+        "ano": 2023
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2023-08-24",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8523769?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8523769?v=1",
+          "trecho_sha256": "39638139e7fe6546513d2aaca583604095cd6e30e3d6fd674da920cb9887b4bf",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      }
+    },
+    {
+      "id": "senado-pce-8689778-sen-5942",
+      "candidate_slug": "tse-2026-80002538202",
+      "casa": "senado",
+      "senador_id": 5942,
+      "processo": {
+        "id": 8689778,
+        "sigla": "PCE",
+        "numero": 1,
+        "ano": 2024
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2024-06-27",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8689778?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8689778?v=1",
+          "trecho_sha256": "d252baad5086e911e9c68b9d75c85062aeb70633d739312f0b5643b966f9b71d",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      }
+    },
+    {
+      "id": "senado-pce-8705912-sen-5008",
+      "candidate_slug": "tse-2026-170002547773",
+      "casa": "senado",
+      "senador_id": 5008,
+      "processo": {
+        "id": 8705912,
+        "sigla": "PCE",
+        "numero": 2,
+        "ano": 2024
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2024-08-09",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8705912?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8705912?v=1",
+          "trecho_sha256": "25cbf38e9d9f0b729ca8fdbb58bb4f1105e8d0999e09c7e45a4e5b1e38ce1647",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      }
+    },
+    {
+      "id": "senado-pce-8721989-sen-5942",
+      "candidate_slug": "tse-2026-80002538202",
+      "casa": "senado",
+      "senador_id": 5942,
+      "processo": {
+        "id": 8721989,
+        "sigla": "PCE",
+        "numero": 3,
+        "ano": 2024
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2024-09-05",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8721989?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8721989?v=1",
+          "trecho_sha256": "39638139e7fe6546513d2aaca583604095cd6e30e3d6fd674da920cb9887b4bf",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      }
+    },
+    {
+      "id": "senado-pce-8804954-sen-5502",
+      "candidate_slug": "tse-2026-40002537344",
+      "casa": "senado",
+      "senador_id": 5502,
+      "processo": {
+        "id": 8804954,
+        "sigla": "PCE",
+        "numero": 1,
+        "ano": 2025
+      },
+      "situacao_oficial": {
+        "sigla": "AGIND",
+        "descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      },
+      "ultimo_andamento_em": "2025-05-30",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8804954?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8804954?v=1",
+          "trecho_sha256": "7afce6b6a5844066d01663b6d440adc89d527c4ec824197ee1a8f6d3accb237d",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "AGIND",
+        "situacao_descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      }
+    },
+    {
+      "id": "senado-pce-8807655-sen-5502",
+      "candidate_slug": "tse-2026-40002537344",
+      "casa": "senado",
+      "senador_id": 5502,
+      "processo": {
+        "id": 8807655,
+        "sigla": "PCE",
+        "numero": 2,
+        "ano": 2025
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2025-03-26",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8807655?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8807655?v=1",
+          "trecho_sha256": "7afce6b6a5844066d01663b6d440adc89d527c4ec824197ee1a8f6d3accb237d",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      }
+    },
+    {
+      "id": "senado-pce-8810683-sen-4994",
+      "candidate_slug": "eduardo-braga",
+      "casa": "senado",
+      "senador_id": 4994,
+      "processo": {
+        "id": 8810683,
+        "sigla": "PCE",
+        "numero": 3,
+        "ano": 2025
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2025-04-02",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8810683?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8810683?v=1",
+          "trecho_sha256": "91c1d5848e0081d72e7b340dead815ccb98e6f9ea852032e6aaceccd61cb34ff",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      }
+    },
+    {
+      "id": "senado-pce-8839998-sen-5422",
+      "candidate_slug": "marcos-rogerio",
+      "casa": "senado",
+      "senador_id": 5422,
+      "processo": {
+        "id": 8839998,
+        "sigla": "PCE",
+        "numero": 4,
+        "ano": 2025
+      },
+      "situacao_oficial": {
+        "sigla": "AGIND",
+        "descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      },
+      "ultimo_andamento_em": "2025-05-28",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8839998?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8839998?v=1",
+          "trecho_sha256": "c8c6fb4af709a7a8537ffb15e2e82854fb106c81e1715b7f210a9f58530080df",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "AGIND",
+        "situacao_descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      }
+    },
+    {
+      "id": "senado-pce-8841425-sen-5502",
+      "candidate_slug": "tse-2026-40002537344",
+      "casa": "senado",
+      "senador_id": 5502,
+      "processo": {
+        "id": 8841425,
+        "sigla": "PCE",
+        "numero": 5,
+        "ano": 2025
+      },
+      "situacao_oficial": {
+        "sigla": "AGIND",
+        "descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      },
+      "ultimo_andamento_em": "2025-05-29",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8841425?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8841425?v=1",
+          "trecho_sha256": "98754e51ac14f9986392625a1abd1d669fbdf829d662c7e369e3f3658d9ca117",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "AGIND",
+        "situacao_descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      }
+    },
+    {
+      "id": "senado-pce-8841431-sen-5422",
+      "candidate_slug": "marcos-rogerio",
+      "casa": "senado",
+      "senador_id": 5422,
+      "processo": {
+        "id": 8841431,
+        "sigla": "PCE",
+        "numero": 6,
+        "ano": 2025
+      },
+      "situacao_oficial": {
+        "sigla": "AGIND",
+        "descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      },
+      "ultimo_andamento_em": "2025-05-29",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8841431?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8841431?v=1",
+          "trecho_sha256": "cfad9cb8e64d221363e848288546e8c1f822a0322d1c653acad866fdbe32eae3",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "AGIND",
+        "situacao_descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      }
+    },
+    {
+      "id": "senado-pce-8984840-sen-5942",
+      "candidate_slug": "tse-2026-80002538202",
+      "casa": "senado",
+      "senador_id": 5942,
+      "processo": {
+        "id": 8984840,
+        "sigla": "PCE",
+        "numero": 1,
+        "ano": 2026
+      },
+      "situacao_oficial": {
+        "sigla": "AGIND",
+        "descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      },
+      "ultimo_andamento_em": "2026-01-08",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8984840?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8984840?v=1",
+          "trecho_sha256": "39638139e7fe6546513d2aaca583604095cd6e30e3d6fd674da920cb9887b4bf",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "AGIND",
+        "situacao_descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      }
+    },
+    {
+      "id": "senado-pce-9026424-sen-5988",
+      "candidate_slug": "tse-2026-120002547434",
+      "casa": "senado",
+      "senador_id": 5988,
+      "processo": {
+        "id": 9026424,
+        "sigla": "PCE",
+        "numero": 5,
+        "ano": 2026
+      },
+      "situacao_oficial": {
+        "sigla": "AGIND",
+        "descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      },
+      "ultimo_andamento_em": "2026-04-01",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/9026424?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/9026424?v=1",
+          "trecho_sha256": "3d2b0ae0a2e70733ba4b0e57c92a3b65ffe7234c7182c026edfb984c10a86d24",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "AGIND",
+        "situacao_descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      }
+    },
+    {
+      "id": "senado-pce-9047691-sen-5894",
+      "candidate_slug": "flavio-bolsonaro",
+      "casa": "senado",
+      "senador_id": 5894,
+      "processo": {
+        "id": 9047691,
+        "sigla": "PCE",
+        "numero": 6,
+        "ano": 2026
+      },
+      "situacao_oficial": {
+        "sigla": "AGIND",
+        "descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      },
+      "ultimo_andamento_em": "2026-05-14",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/9047691?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/9047691?v=1",
+          "trecho_sha256": "618fc2a546f8c323a79704e8d6ecb4658bb1665e86f88f802225c1f461889c80",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "AGIND",
+        "situacao_descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      }
+    },
+    {
+      "id": "senado-pce-9048033-sen-5894",
+      "candidate_slug": "flavio-bolsonaro",
+      "casa": "senado",
+      "senador_id": 5894,
+      "processo": {
+        "id": 9048033,
+        "sigla": "PCE",
+        "numero": 7,
+        "ano": 2026
+      },
+      "situacao_oficial": {
+        "sigla": "AGIND",
+        "descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      },
+      "ultimo_andamento_em": "2026-05-14",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/9048033?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/9048033?v=1",
+          "trecho_sha256": "618fc2a546f8c323a79704e8d6ecb4658bb1665e86f88f802225c1f461889c80",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "AGIND",
+        "situacao_descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      }
+    },
+    {
+      "id": "senado-pce-9048100-sen-739",
+      "candidate_slug": "tse-2026-180002540446",
+      "casa": "senado",
+      "senador_id": 739,
+      "processo": {
+        "id": 9048100,
+        "sigla": "PCE",
+        "numero": 8,
+        "ano": 2026
+      },
+      "situacao_oficial": {
+        "sigla": "AGIND",
+        "descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      },
+      "ultimo_andamento_em": "2026-05-14",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/9048100?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/9048100?v=1",
+          "trecho_sha256": "a8bf79fd454f7a9ef8d88f4a492dd4aba7081cbd2b72d4ee7a23314c1d47e35f",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "AGIND",
+        "situacao_descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      }
+    },
+    {
+      "id": "senado-pce-9068606-sen-739",
+      "candidate_slug": "tse-2026-180002540446",
+      "casa": "senado",
+      "senador_id": 739,
+      "processo": {
+        "id": 9068606,
+        "sigla": "PCE",
+        "numero": 10,
+        "ano": 2026
+      },
+      "situacao_oficial": {
+        "sigla": "AGIND",
+        "descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      },
+      "ultimo_andamento_em": "2026-06-18",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/9068606?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/9068606?v=1",
+          "trecho_sha256": "a8bf79fd454f7a9ef8d88f4a492dd4aba7081cbd2b72d4ee7a23314c1d47e35f",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "AGIND",
+        "situacao_descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      }
+    },
+    {
+      "id": "senado-pce-9089944-sen-5894",
+      "candidate_slug": "flavio-bolsonaro",
+      "casa": "senado",
+      "senador_id": 5894,
+      "processo": {
+        "id": 9089944,
+        "sigla": "PCE",
+        "numero": 11,
+        "ano": 2026
+      },
+      "situacao_oficial": {
+        "sigla": "AGIND",
+        "descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      },
+      "ultimo_andamento_em": "2026-08-03",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/9089944?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/9089944?v=1",
+          "trecho_sha256": "618fc2a546f8c323a79704e8d6ecb4658bb1665e86f88f802225c1f461889c80",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "AGIND",
+        "situacao_descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      }
+    },
+    {
+      "id": "senado-pce-9089952-sen-581",
+      "candidate_slug": "tse-2026-50002536317",
+      "casa": "senado",
+      "senador_id": 581,
+      "processo": {
+        "id": 9089952,
+        "sigla": "PCE",
+        "numero": 12,
+        "ano": 2026
+      },
+      "situacao_oficial": {
+        "sigla": "AGIND",
+        "descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      },
+      "ultimo_andamento_em": "2026-08-03",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/9089952?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/9089952?v=1",
+          "trecho_sha256": "b6ec376f5bb4b266edf8c1c046a3dad295202ac6b31c7e197e31c2ec6990ad56",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "AGIND",
+        "situacao_descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      }
+    },
+    {
+      "id": "senado-pce-9091854-sen-739",
+      "candidate_slug": "tse-2026-180002540446",
+      "casa": "senado",
+      "senador_id": 739,
+      "processo": {
+        "id": 9091854,
+        "sigla": "PCE",
+        "numero": 13,
+        "ano": 2026
+      },
+      "situacao_oficial": {
+        "sigla": "AGIND",
+        "descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      },
+      "ultimo_andamento_em": "2026-08-10",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/9091854?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/9091854?v=1",
+          "trecho_sha256": "a8bf79fd454f7a9ef8d88f4a492dd4aba7081cbd2b72d4ee7a23314c1d47e35f",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "AGIND",
+        "situacao_descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      }
+    },
+    {
+      "id": "senado-pce-9105102-sen-5894",
+      "candidate_slug": "flavio-bolsonaro",
+      "casa": "senado",
+      "senador_id": 5894,
+      "processo": {
+        "id": 9105102,
+        "sigla": "PCE",
+        "numero": 14,
+        "ano": 2026
+      },
+      "situacao_oficial": {
+        "sigla": "AGIND",
+        "descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      },
+      "ultimo_andamento_em": "2026-09-03",
+      "verificado_em": "2026-09-27",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/9105102?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-27",
+        "alvo": {
+          "metodo": "ementa",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/9105102?v=1",
+          "trecho_sha256": "618fc2a546f8c323a79704e8d6ecb4658bb1665e86f88f802225c1f461889c80",
+          "conferida_em": "2026-09-27"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-27",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "AGIND",
+        "situacao_descricao": "AGUARDANDO DESIGNAÇÃO MEMBROS COMISSÃO"
+      }
+    }
+  ]
+}

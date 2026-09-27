@@ -193,10 +193,10 @@ describe("runner de enriquecimento Senado", () => {
     const federal = readSenadoFederalReceiptManifest(fixture("manifesto-acervo-federal.json"), manifest.identity_key)
     const enrichedManifest = attachSenadoCuratedArtifacts(manifest, undefined, undefined, undefined, undefined, federal)
     const enrichment = materializeSenadoEnrichmentConfig(candidate, enrichedManifest, patch)
-    const plans = planSenadoEnrichmentSources(enrichment, ["camara", "senado", "ceaps-senado", "jarbas"])
+    const plans = planSenadoEnrichmentSources(enrichment, ["camara", "senado", "ceaps-senado", "camara-cotas"])
     assert.deepEqual(plans.map((plan) => plan.collector), ["curated-federal-receipt", "curated-federal-receipt", "curated-federal-receipt", "curated-federal-receipt"])
     const registered: IngestResult[][] = []
-    const result = await runSenadoEnrichment(enrichment, { requestedSources: ["camara", "senado", "ceaps-senado", "jarbas"], database: fakeClient([]), registerResults: async (rows) => { registered.push(rows) } })
+    const result = await runSenadoEnrichment(enrichment, { requestedSources: ["camara", "senado", "ceaps-senado", "camara-cotas"], database: fakeClient([]), registerResults: async (rows) => { registered.push(rows) } })
     assert.equal(result.status, "error")
     assert.equal(result.exit_code, 1)
     assert.deepEqual(result.results.map((row) => row.coleta_resultado), ["erro", "erro", "erro", "erro"])
@@ -204,7 +204,7 @@ describe("runner de enriquecimento Senado", () => {
     assert.equal(registered.length, 4)
     assert.equal(new Set(registered.flat().map((row) => row.source)).size, 4)
 
-    const registrationFailure = await runSenadoEnrichment(enrichment, { requestedSources: ["camara", "senado", "ceaps-senado", "jarbas"], database: fakeClient([]), registerResults: async () => { throw new Error("insert recusado") } })
+    const registrationFailure = await runSenadoEnrichment(enrichment, { requestedSources: ["camara", "senado", "ceaps-senado", "camara-cotas"], database: fakeClient([]), registerResults: async () => { throw new Error("insert recusado") } })
     assert.equal(registrationFailure.status, "error")
     assert.equal(registrationFailure.results.length, 4)
     assert.ok(registrationFailure.results.every((row) => row.errors.some((error) => /insert recusado/.test(error))))
@@ -212,7 +212,7 @@ describe("runner de enriquecimento Senado", () => {
     const previousDryRun = process.env.PF_DRY_RUN
     process.env.PF_DRY_RUN = "1"
     try {
-      const dryRun = await runSenadoEnrichment(enrichment, { requestedSources: ["camara", "senado", "ceaps-senado", "jarbas"], database: fakeClient([]), registerResults: async () => {} })
+      const dryRun = await runSenadoEnrichment(enrichment, { requestedSources: ["camara", "senado", "ceaps-senado", "camara-cotas"], database: fakeClient([]), registerResults: async () => {} })
       assert.equal(dryRun.status, "success")
       assert.equal(dryRun.exit_code, 0)
     } finally {
@@ -221,7 +221,7 @@ describe("runner de enriquecimento Senado", () => {
     }
 
     const persistedManifest = { ...enrichedManifest, curated_federal_receipts: enrichedManifest.curated_federal_receipts?.map((receipt) => ({ ...receipt, readback: { ...receipt.readback, persisted: true } })) }
-    const persisted = await runSenadoEnrichment(materializeSenadoEnrichmentConfig(candidate, persistedManifest, patch), { requestedSources: ["camara", "senado", "ceaps-senado", "jarbas"], registerResults: async () => {}, readbackResults: async () => true })
+    const persisted = await runSenadoEnrichment(materializeSenadoEnrichmentConfig(candidate, persistedManifest, patch), { requestedSources: ["camara", "senado", "ceaps-senado", "camara-cotas"], registerResults: async () => {}, readbackResults: async () => true })
     assert.equal(persisted.status, "success")
     assert.deepEqual(persisted.results.map((row) => row.coleta_resultado), ["nao_aplicavel", "nao_aplicavel", "nao_aplicavel", "nao_aplicavel"])
   })

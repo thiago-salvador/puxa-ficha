@@ -11,7 +11,11 @@ import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { formacaoPublicaDe } from "@/lib/formacao-display"
 import { formatCargoDisputadoPublicLabel, formatDestaquesLabel } from "@/lib/ui-labels"
 import { processosOverviewDisplay } from "@/lib/processos-display"
-import { patrimonioMaisRecenteSemEscolhaArbitraria } from "@/lib/patrimonio-contexto"
+import {
+  estadoValorPatrimonio,
+  patrimonioMaisRecenteSemEscolhaArbitraria,
+  patrimonioValorEstadoLabel,
+} from "@/lib/patrimonio-contexto"
 
 function MetaLine({ ficha }: { ficha: FichaCandidato }) {
   const parts = [
@@ -63,7 +67,10 @@ function buildPatrimonioEmbedSub(
   latestPatrimonio: FichaCandidato["patrimonio"][number] | null,
   eleicoesSemDado: PatrimonioEleicaoPublico[],
 ): string | undefined {
-  if (latestPatrimonio) return `Ano ${latestPatrimonio.ano_eleicao}`
+  if (latestPatrimonio) {
+    const rotulo = patrimonioValorEstadoLabel(estadoValorPatrimonio(latestPatrimonio))
+    return rotulo ? `${rotulo} (${latestPatrimonio.ano_eleicao})` : `Ano ${latestPatrimonio.ano_eleicao}`
+  }
   const maisRecente = eleicoesSemDado[0]
   if (!maisRecente) return undefined
   return maisRecente.estado === "vazio_confirmado"
@@ -85,6 +92,8 @@ export function EmbedWidget({ ficha }: { ficha: FichaCandidato }) {
     ficha.total_processos,
     ficha.processos_criminais,
     ficha.processos_verificacao,
+    new Date(),
+    ficha.processos_omitidos_sem_fonte_oficial ?? 0,
   )
   const mudancasPartido = ficha.mudancas_partido ?? []
   const fichaUrl = `${SITE_ORIGIN}/candidato/${ficha.slug}`
@@ -114,7 +123,9 @@ export function EmbedWidget({ ficha }: { ficha: FichaCandidato }) {
       <div className="px-4 py-1">
         <StatRow
           label="Patrimônio declarado"
-          value={latestPatrimonio
+          value={latestPatrimonio && estadoValorPatrimonio(latestPatrimonio) === "valor_nao_informado"
+            ? "—"
+            : latestPatrimonio
             ? <FormattedNumber value={latestPatrimonio.valor_total} />
             : latestPatrimonioContexto.quantidade > 1
               ? `${latestPatrimonioContexto.quantidade} declarações`

@@ -5,6 +5,7 @@ import { readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 
 import { listarAlvosMonitoramento } from "../lib/pesquisas-monitoramento"
+import { COORTE_ATUALIZACAO_COMPLETA, estaNaCoorteAtualizacao, type CoorteAtualizacao } from "../lib/coorte-atualizacao"
 import { resolverIdentidadeRevisada } from "../lib/pesquisas-monitoramento-identidades-revisadas"
 import type { AlvoMonitoramento } from "../lib/pesquisas-monitoramento-adapters"
 import type { ObservacaoPesqele } from "../lib/pesquisas-monitoramento-pesqele"
@@ -146,7 +147,7 @@ export type ExecutionAlert = {
   message: string
 }
 
-const CURATION_REASON = /^(?:approved_new_evidence|extraction_incomplete|identity_unresolved|evidence_stale|source_metadata_conflict|metadata_incomplete|metadado ausente \(.+\)|pesquisa sem prova de cenário e publicação completos)$/
+const CURATION_REASON = /^(?:approved_new_evidence|extraction_incomplete|identity_unresolved|evidence_stale|source_metadata_conflict|metadata_incomplete|closed_candidate_change|closed_candidate_in_new_poll|metadado ausente \(.+\)|pesquisa sem prova de cenário e publicação completos)$/
 
 // Razões que significam "não consegui olhar", e não "olhei e não mudou".
 // Vive aqui para o piso de cobertura e o filtro de recibos em cli.ts nunca
@@ -420,11 +421,12 @@ interface CandidateScenarioValue {
   value: number
 }
 
-function candidateValues(contract: ContratoPesquisaAgendada): Map<string, CandidateScenarioValue> {
+function candidateValues(contract: ContratoPesquisaAgendada, coorte: CoorteAtualizacao, somenteCoorte = true): Map<string, CandidateScenarioValue> {
   const values = new Map<string, CandidateScenarioValue>()
   for (const scenario of contract.cenarios ?? []) {
     for (const result of scenario.resultados ?? []) {
-      if (isNonEmptyString(result.candidate_slug) && Number.isFinite(result.value_percent)) {
+      // coorte-atualizacao: aplica (diff de pesquisa só compara candidatos ainda em atualização)
+      if (isNonEmptyString(result.candidate_slug) && (!somenteCoorte || estaNaCoorteAtualizacao(coorte, { slug: result.candidate_slug })) && Number.isFinite(result.value_percent)) {
         const key = `${scenario.id}\u0000${result.candidate_slug}`
         values.set(key, {
           scenario_id: scenario.id,
@@ -439,9 +441,24 @@ function candidateValues(contract: ContratoPesquisaAgendada): Map<string, Candid
   return values
 }
 
-function candidateDiff(before: ContratoPesquisaAgendada, after: ContratoPesquisaAgendada): OperacaoCatalogoAgendada["candidate_diff"] {
-  const previous = candidateValues(before)
-  const proposed = candidateValues(after)
+function temCandidatoEncerrado(contract: ContratoPesquisaAgendada, coorte: CoorteAtualizacao): boolean {
+  return candidateValues(contract, coorte, false).size !== candidateValues(contract, coorte).size
+}
+
+function alteraCandidatoEncerrado(before: ContratoPesquisaAgendada, after: ContratoPesquisaAgendada, coorte: CoorteAtualizacao): boolean {
+  const valores = (contract: ContratoPesquisaAgendada) => new Map(
+    [...candidateValues(contract, coorte, false)]
+      .filter(([, value]) => !estaNaCoorteAtualizacao(coorte, { slug: value.candidate_slug }))
+      .map(([key, value]) => [key, value.value]),
+  )
+  const previous = valores(before)
+  const proposed = valores(after)
+  return [...new Set([...previous.keys(), ...proposed.keys()])].some((key) => previous.get(key) !== proposed.get(key))
+}
+
+function candidateDiff(before: ContratoPesquisaAgendada, after: ContratoPesquisaAgendada, coorte: CoorteAtualizacao): OperacaoCatalogoAgendada["candidate_diff"] {
+  const previous = candidateValues(before, coorte)
+  const proposed = candidateValues(after, coorte)
   const keys = [...new Set([...previous.keys(), ...proposed.keys()])].sort()
   return keys
     .filter((key) => previous.get(key)?.value !== proposed.get(key)?.value)
@@ -568,6 +585,7 @@ interface EntradaConsolidacaoAgendada {
   generatedAt?: string
   discovery?: { status: "partial" | "not_assessed" | "source_failure"; alerts: string[] }
   executionAlerts?: ExecutionAlert[]
+  coorteAtualizacao?: CoorteAtualizacao
 }
 
 function publicarCampo<T>(field: StatusValue<T>): StatusValue<T> {
@@ -655,6 +673,7 @@ export function consolidarPropostasAgendadas(input: EntradaConsolidacaoAgendada)
 }
 
 function consolidarLoteAgendado(input: EntradaConsolidacaoAgendada): ResultadoConsolidacaoAgendada {
+  const coorteAtualizacao = input.coorteAtualizacao ?? COORTE_ATUALIZACAO_COMPLETA
   input = { ...input, matrix: incorporarDescobertasColetadas(input) }
   const alerts: string[] = []
   const globalAlerts = alerts
@@ -745,7 +764,8 @@ function consolidarLoteAgendado(input: EntradaConsolidacaoAgendada): ResultadoCo
       if (!manifest || !contract || findPollMatches(input.catalogs, pollId).length) { globalAlerts.push(`${item.id}: inventário base ausente ou ambíguo`); continue }
       try {
         const proposed = prepararPesquisaNova(input.catalogs, contract, pollId)
-        operations.push({ kind: "insert", file: contract.office === "Presidente" ? CATALOGOS_PERMITIDOS[0] : CATALOGOS_PERMITIDOS[1], poll_id: pollId, geography_code: contract.geography.code, source_id: contract.source_id, registration_id: contract.registration.code.value, proposed, candidate_diff: candidateDiff({ ...proposed, cenarios: [] }, proposed) })
+        if (temCandidatoEncerrado(proposed, coorteAtualizacao)) { blockPoll(item, "closed_candidate_in_new_poll"); continue }
+        operations.push({ kind: "insert", file: contract.office === "Presidente" ? CATALOGOS_PERMITIDOS[0] : CATALOGOS_PERMITIDOS[1], poll_id: pollId, geography_code: contract.geography.code, source_id: contract.source_id, registration_id: contract.registration.code.value, proposed, candidate_diff: candidateDiff({ ...proposed, cenarios: [] }, proposed, coorteAtualizacao) })
       } catch (error) { globalAlerts.push(`${item.id}: ${error instanceof Error ? error.message : String(error)}`) }
       continue
     }
@@ -755,6 +775,10 @@ function consolidarLoteAgendado(input: EntradaConsolidacaoAgendada): ResultadoCo
       continue
     }
     if (stable(contractComparable(baseline.poll)) === stable(contractComparable(item.normalized_contract))) continue
+    if (alteraCandidatoEncerrado(baseline.poll, item.normalized_contract, coorteAtualizacao)) {
+      blockPoll(item, "closed_candidate_change")
+      continue
+    }
     operations.push({
       file: baseline.file,
       poll_id: pollId,
@@ -762,7 +786,7 @@ function consolidarLoteAgendado(input: EntradaConsolidacaoAgendada): ResultadoCo
       source_id: item.normalized_contract.source_id,
       registration_id: item.normalized_contract.registration.code.value,
       proposed: item.normalized_contract,
-      candidate_diff: candidateDiff(baseline.poll, item.normalized_contract),
+      candidate_diff: candidateDiff(baseline.poll, item.normalized_contract, coorteAtualizacao),
     })
   }
 
@@ -988,6 +1012,7 @@ export function aplicarOperacoesAgendadas(
   baseDir = process.cwd(),
   options: {
     publish?: boolean
+    coorteAtualizacao?: CoorteAtualizacao
     attestation?: { status: unknown; proposal: unknown; diff: DocumentoDiffAgendado }
   } = {},
 ): string[] {
@@ -997,6 +1022,18 @@ export function aplicarOperacoesAgendadas(
     if (stable(options.attestation.diff.operations) !== stable(operations)) throw new Error("atestado não corresponde às operações")
   }
   const catalogs = carregarCatalogosAgendados(baseDir)
+  {
+    const coorte = options.coorteAtualizacao ?? COORTE_ATUALIZACAO_COMPLETA
+    for (const operation of operations) {
+      if (findPollMatches(catalogs, operation.poll_id).length > 1) throw new Error(`poll_id ambíguo em múltiplos datasets: ${operation.poll_id}`)
+      const current = findPoll(catalogs, operation.poll_id)
+      if (operation.kind === "insert") {
+        if (temCandidatoEncerrado(operation.proposed, coorte)) throw new Error(`publicação contém candidatura encerrada: ${operation.poll_id}`)
+      } else if (!current || alteraCandidatoEncerrado(current.poll, operation.proposed, coorte)) {
+        throw new Error(`operação desatualizada para candidatura encerrada: ${operation.poll_id}`)
+      }
+    }
+  }
   const touched = new Set<string>()
   const expectedReadback = new Map<string, ContratoPesquisaAgendada>()
   for (const operation of operations) {

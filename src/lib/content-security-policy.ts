@@ -1,7 +1,7 @@
-import { REMOTE_IMAGE_HOSTS } from "@/lib/remote-image-hosts"
+// Import relativo: este módulo também é lido pelo next.config.ts, fora do alias `@/`.
+import { REMOTE_IMAGE_HOSTS } from "./remote-image-hosts"
 
 interface ContentSecurityPolicyOptions {
-  nonce?: string
   frameAncestors: "'none'" | "*"
   isDevelopment?: boolean
   applyProductionHttpsHeaders?: boolean
@@ -32,7 +32,6 @@ function hostnameFromUrl(value: string | null | undefined): string | null {
 }
 
 export function buildContentSecurityPolicy({
-  nonce,
   frameAncestors,
   isDevelopment = process.env.NODE_ENV !== "production",
   applyProductionHttpsHeaders = false,
@@ -42,12 +41,17 @@ export function buildContentSecurityPolicy({
   const supabaseHost = hostnameFromUrl(env.NEXT_PUBLIC_SUPABASE_URL || env.SUPABASE_URL)
   const sentryOrigin = originFromUrl(env.NEXT_PUBLIC_SENTRY_DSN || env.SENTRY_DSN)
 
-  const scriptSources = ["'self'"]
-  if (nonce) {
-    scriptSources.push(`'nonce-${nonce}'`, "'strict-dynamic'")
-  }
+  // Sem nonce desde 2026-09-25. O nonce por request obrigava o RootLayout a ler
+  // `headers()`, o que tornava TODA página dinâmica: 408 mil execuções de função
+  // contra 608 hits de cache em 3 dias de produção.
+  // Com política estática as páginas voltam para a CDN. O App Router injeta
+  // scripts inline (payload RSC) em cada HTML, e SRI só cobre arquivo externo,
+  // então `'unsafe-inline'` é o preço de servir página estática. O resto da
+  // política (object-src, base-uri, form-action, frame-ancestors, allowlists)
+  // continua estrito, e o beacon da Cloudflare entra por host explícito.
+  const scriptSources = ["'self'", "'unsafe-inline'", "https://static.cloudflareinsights.com"]
   if (isDevelopment) {
-    scriptSources.push("'unsafe-inline'", "'unsafe-eval'", "https://va.vercel-scripts.com")
+    scriptSources.push("'unsafe-eval'", "https://va.vercel-scripts.com")
   }
 
   const connectSources = [

@@ -266,6 +266,20 @@ describe("defeito 2: judicial não pode dizer que a busca não foi feita", () =>
     }
   })
 
+  test("vazio judicial antigo, futuro ou sem escopo não afirma ausência atual", () => {
+    const now = new Date("2026-09-24T12:00:00Z")
+    const base = { resultado: "vazio_confirmado" as const, escopo: "consulta nominal DJEN" }
+    const recente = getProcessosEmptyState({ ...base, executado_em: "2026-09-23T12:00:00Z" }, now)
+    assert.equal(recente.title, "Nenhum processo confirmado no escopo consultado")
+    const antigo = getProcessosEmptyState({ ...base, executado_em: "2026-08-23T12:00:00Z" }, now)
+    assert.equal(antigo.title, "Busca judicial desatualizada")
+    assert.match(antigo.description, /não comprova a situação atual/)
+    const futuro = getProcessosEmptyState({ ...base, executado_em: "2026-09-25T12:00:00Z" }, now)
+    assert.equal(futuro.title, "Estado da busca judicial indeterminado")
+    const semEscopo = getProcessosEmptyState({ resultado: "vazio_confirmado", executado_em: "2026-09-23T12:00:00Z" }, now)
+    assert.equal(semEscopo.title, "Estado da busca judicial indeterminado")
+  })
+
   test("ficha sem tentativa registrada continua dizendo que não houve tentativa", () => {
     const estado = getProcessosEmptyState(null)
     assert.equal(estado.title, "Processos judiciais ainda não verificados")
@@ -279,15 +293,15 @@ describe("defeito 2: judicial não pode dizer que a busca não foi feita", () =>
   })
 
   test("card do overview troca a legenda falsa por identidade não confirmada", () => {
-    // O overview só precisa do desfecho: a assinatura é
-    // `Pick<ProcessosVerificacao, "resultado">` e a data não entra na legenda.
-    // Quem carrega data é o estado vazio, testado acima.
+    // Desfechos incertos exigem só o resultado; zero também exige data e escopo.
     assert.deepEqual(processosOverviewDisplay(0, 0, { resultado: "indeterminado" }), {
       value: "—",
       sub: "identidade não confirmada",
     })
     assert.deepEqual(processosOverviewDisplay(0, 0, null), { value: "—", sub: "não verificado" })
-    assert.deepEqual(processosOverviewDisplay(0, 0, { resultado: "vazio_confirmado" }), {
+    assert.deepEqual(processosOverviewDisplay(0, 0, {
+      resultado: "vazio_confirmado", executado_em: "2026-09-23T00:00:00Z", escopo: "candidato",
+    }, new Date("2026-09-24T00:00:00Z")), {
       value: 0,
       sub: "escopo verificado",
     })

@@ -8,6 +8,7 @@ import {
 } from "@/lib/api"
 import { SITE_ORIGIN } from "@/lib/metadata"
 import { verifiedViceStatus } from "@/lib/vice-official-status"
+import { notaAtualizacaoEncerrada } from "@/lib/coorte-atualizacao"
 import type { CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
 import { SectionDivider } from "@/components/SectionHeader"
 import { Footer } from "@/components/Footer"
@@ -47,10 +48,27 @@ import {
 } from "@/lib/pesquisas-eleitorais"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { getProgramaGovernoManifesto } from "@/lib/programa-governo-server"
-import { getCompromissoEvidenciasPublicas } from "@/lib/compromisso-evidencia-server"
+import { getCompromissoEvidenciasEstado } from "@/lib/compromisso-evidencia-server"
+import { normalizarProgramaGovernoEstado } from "@/lib/programa-governo"
+import { programaGovernoPendencia } from "@/lib/programa-governo-pendencia"
 import { loadSenadoRunningMates } from "@/lib/senado-running-mates"
+import { listarPesquisasSenadoPorSlug } from "@/lib/senado-polls"
+import { isSenadoEnabled } from "@/lib/senado-feature"
 
 const getFicha = (slug: string) => getCandidatoBySlugResource(slug)
+
+/**
+ * A aba de pesquisas do Senado é complementar: catálogo inválido esconde a aba
+ * (como a página da UF mostra "indisponível") em vez de derrubar a ficha.
+ */
+function pesquisasSenadoSemDerrubarFicha(slug: string, uf: string) {
+  try {
+    return listarPesquisasSenadoPorSlug(slug, uf)
+  } catch (error) {
+    console.error(`[pesquisas-senado] catálogo indisponível para ${slug}:`, error)
+    return []
+  }
+}
 
 export interface CandidatoFichaViewProps {
   slug: string
@@ -90,16 +108,20 @@ export async function CandidatoFichaView({
     notFound()
   }
 
+  // Senado usa o mesmo catálogo e os mesmos filtros da página /uf/[uf]/senado.
+  const senadoComPesquisas = ficha.cargo_disputado === "Senador" && isSenadoEnabled()
   const pesquisasEnabled =
-    (ficha.cargo_disputado === "Presidente" || ficha.cargo_disputado === "Governador") &&
+    (ficha.cargo_disputado === "Presidente" || ficha.cargo_disputado === "Governador" || senadoComPesquisas) &&
     seoSubpath !== "timeline"
   const pesquisas = !pesquisasEnabled
     ? []
     : ficha.cargo_disputado === "Presidente"
       ? listarPesquisasPresidenciaisPorSlug(slug)
-      : ficha.estado
-        ? listarPesquisasGovernadorPorSlug(slug, ficha.estado)
-        : []
+      : !ficha.estado
+        ? []
+        : senadoComPesquisas
+          ? pesquisasSenadoSemDerrubarFicha(slug, ficha.estado)
+          : listarPesquisasGovernadorPorSlug(slug, ficha.estado)
   // Presidente é disputa nacional (anel único); qualquer outra disputa navega
   // dentro da própria UF. Sem estado na ficha, degrada para o anel do cargo.
   const navEstado =
@@ -114,13 +136,24 @@ export async function CandidatoFichaView({
       : Promise.resolve(null),
     getCandidatoNavResource(ficha.cargo_disputado, navEstado),
   ])
-  // Evidências só existem para programa aprovado; falha de leitura vira lista vazia.
+  // Evidências só existem para programa aprovado; sem documento oficial vira
+  // estado explícito, e falha de leitura vira `erro_leitura`, nunca lista vazia.
   const compromissoEvidencias = programaGoverno?.estado === "aprovado"
-    ? await getCompromissoEvidenciasPublicas(
-        ficha.id,
-        `2026:${programaGoverno.fonte.cargo}:${programaGoverno.fonte.uf}:${programaGoverno.fonte.sqCandidato}`,
-      )
-    : undefined
+    ? await getCompromissoEvidenciasEstado({
+        candidatoId: ficha.id,
+        slug: ficha.slug,
+        programaChave: `2026:${programaGoverno.fonte.cargo}:${programaGoverno.fonte.uf}:${programaGoverno.fonte.sqCandidato}`,
+      })
+    : programaGoverno && normalizarProgramaGovernoEstado(programaGoverno.estado) === "sem_documento_oficial"
+      ? { estado: "sem_documento_oficial" as const }
+      : undefined
+  // Sem registro de programa: estado explícito em vez de cartão ausente. Só
+  // quando o programa foi de fato procurado (a rota da linha do tempo não procura).
+  const programaPendente = programaGovernoPendencia({
+    slug: ficha.slug,
+    cargoDisputado: ficha.cargo_disputado,
+    semRegistro: programaGoverno === null && seoSubpath !== "timeline",
+  })
   const runningMates =
     ficha.cargo_disputado === "Senador" && ficha.estado
       ? await loadSenadoRunningMates([ficha.slug], ficha.estado)
@@ -175,6 +208,11 @@ export async function CandidatoFichaView({
   const situacaoCandidaturaLabel = ficha.situacao_candidatura
     ? sanitizePtBrText(ficha.situacao_candidatura)
     : ""
+  // Coorte de atualização: ficha que saiu da disputa continua no ar, congelada,
+  // com a data da última atualização. Sem fase gravada, nenhuma nota.
+  const notaAtualizacao = ficha.fase_eleitoral_2026
+    ? notaAtualizacaoEncerrada({ cargo_disputado: ficha.cargo_disputado, ...ficha.fase_eleitoral_2026 })
+    : null
   const heroMetaParts = [
     cargoAtualLabel || null,
     ficha.naturalidade,
@@ -386,6 +424,14 @@ export async function CandidatoFichaView({
                 Situação: {situacaoCandidaturaLabel}
               </span>
             )}
+            {notaAtualizacao && (
+              <p
+                data-pf-update-closed={ficha.fase_eleitoral_2026?.atualizacao_encerrada_em ?? undefined}
+                className="mt-1.5 w-fit max-w-full rounded-md border border-border bg-secondary px-2.5 py-1 text-[length:var(--text-eyebrow)] font-semibold text-secondary-foreground"
+              >
+                {notaAtualizacao}
+              </p>
+            )}
 
             <div className="mt-1.5 flex min-w-0 flex-col gap-3 sm:mt-2 lg:flex-row lg:flex-wrap lg:items-end lg:gap-5">
               <h1
@@ -395,7 +441,9 @@ export async function CandidatoFichaView({
               >
                 {ficha.nome_urna}
               </h1>
-              {pesquisasEnabled && <PesquisasPresidenciaisHero pesquisas={pesquisas} />}
+              {/* No Senado, primeiro voto, segundo voto e o agregado dos dois são medidas
+                  distintas; o destaque sem rótulo do cenário ficaria ambíguo. */}
+              {pesquisasEnabled && !senadoComPesquisas && <PesquisasPresidenciaisHero pesquisas={pesquisas} />}
             </div>
 
             {ficha.chapa_2026 && (
@@ -481,6 +529,7 @@ export async function CandidatoFichaView({
         pesquisas={pesquisas}
         programaGoverno={programaGoverno}
         compromissoEvidencias={compromissoEvidencias}
+        programaPendente={programaPendente}
         senadoRunningMates={runningMates}
       />
 

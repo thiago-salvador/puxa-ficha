@@ -100,6 +100,8 @@ export const FONTES_POR_COLUNA: Readonly<Record<string, readonly string[]>> = Ob
   bio: ["wikipedia"],
   redes: ["wikipedia", "instagram"],
   dados: ["tse-situacao", "wikidata"],
+  // Número de urna vem do snapshot oficial TSE 2026, não de um ingest recorrente.
+  numero_urna: [],
   // `historico_politico` tem quatro escritores recorrentes, não dois:
   // ingest-tse-historico, ingest-wikidata-politico, ingest-senado e
   // enrich-wiki-historico.

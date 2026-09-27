@@ -21,6 +21,9 @@ q <<'SQL'
 CREATE ROLE anon;
 CREATE ROLE authenticated;
 CREATE ROLE service_role;
+-- Supabase concede ALL a service_role por default em novas tabelas public.
+ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA public
+  GRANT ALL ON TABLES TO service_role;
 CREATE SCHEMA supabase_migrations;
 CREATE TABLE supabase_migrations.schema_migrations (version text PRIMARY KEY);
 CREATE TABLE public.alert_subscribers (id uuid PRIMARY KEY);

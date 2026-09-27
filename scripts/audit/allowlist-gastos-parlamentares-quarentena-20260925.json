@@ -1,0 +1,16 @@
+{
+  "_comentario": "Recorte fechado por 57 UUIDs e CAS de slug, ano, total e fonte na migration 20260925163543. O recibo QA/evidencias/2026-09-25-gastos-quarentena/preflight.json tem SHA-256 8423cc0273af0e7720374759d6ed81eec7775ae697b73239b5e3180bd9bfc5d7. O workflow aplica schema e curadoria na mesma transacao e exige 57 linhas em 40 fichas no readback.",
+  "recorte": "gastos-parlamentares-quarentena-20260925",
+  "migration": "20260925163543_quarentena_gastos_parlamentares_57_linhas.sql",
+  "fonte": "Camara e Senado oficiais ao vivo em 2026-09-25T17:34:46.074Z; resposta arquivada e SHA no recibo de preflight",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "gastos_parlamentares",
+      "ref": "gastos-129",
+      "campos": ["despublicado_em", "despublicacao_motivo"]
+    }
+  ]
+}

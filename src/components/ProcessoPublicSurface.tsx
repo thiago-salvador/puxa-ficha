@@ -19,7 +19,7 @@ function ProcessoPublicSurface({
   children,
   ...rest
 }: {
-  processo: Pick<Processo, "numero_processo" | "url_fonte">
+  processo: Pick<Processo, "numero_processo" | "url_fonte" | "fonte_nivel">
   className?: string
   style?: CSSProperties
   children: ReactNode

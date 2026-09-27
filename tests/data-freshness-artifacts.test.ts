@@ -230,7 +230,10 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
         records,
         public_profiles: publicProfiles,
         collection_evidence: collectionEvidence.map((evidence) =>
-          evidence.source_id === "camara-proposicoes"
+          // Fonte agendada vencida. Era o membro camara-proposicoes até a
+          // Câmara virar `manual` em 26/09/2026; senado é a fonte agendada
+          // semanal que sobrou (tse-current é avaliada pelo snapshot oficial).
+          evidence.source_id === "senado"
             ? { ...evidence, checked_at: "2020-01-01T00:00:00.000Z" }
             : evidence,
         ),
@@ -260,7 +263,7 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
     assert.equal(scheduledStrictDiff.status, "review_required");
     assert.equal(
       scheduledStrictDiff.freshness.find(
-        (item: { source_id: string }) => item.source_id === "camara",
+        (item: { source_id: string }) => item.source_id === "senado",
       )?.status,
       "stale",
     );

@@ -21,6 +21,11 @@ import {
 import { formatPartyTransitionLabel } from "@/lib/party-switches"
 import { getCurrentPublicYear } from "@/lib/public-date"
 import { formatBRL } from "@/lib/utils"
+import {
+  estadoValorPatrimonio,
+  patrimonioValorEstadoLabel,
+  variacaoPatrimonialPct,
+} from "@/lib/patrimonio-contexto"
 
 export { getCurrentPublicYear } from "@/lib/public-date"
 
@@ -225,17 +230,24 @@ export function buildTimelineEvents(ficha: FichaCandidato): TimelineEvent[] {
     const p = patSorted[i]
     const prev = i > 0 ? patSorted[i - 1] : null
     let extra: string | undefined
-    if (prev && prev.valor_total > 0) {
-      const pct = Math.round(((p.valor_total - prev.valor_total) / prev.valor_total) * 100)
+    const variacao = prev ? variacaoPatrimonialPct(prev, p) : null
+    if (prev && variacao !== null) {
+      const pct = Math.round(variacao)
       extra = `Variação vs. ${prev.ano_eleicao}: ${pct >= 0 ? "+" : ""}${pct}%`
     }
+    const estadoValor = estadoValorPatrimonio(p)
+    const rotuloValor = patrimonioValorEstadoLabel(estadoValor)
     events.push({
       id: `patrimonio-${p.id}`,
       type: "patrimonio",
       label: `Patrimônio ${p.ano_eleicao}`,
       description: extra,
-      value: p.valor_total,
-      value_formatted: formatBRL(p.valor_total),
+      value: estadoValor === "valor_nao_informado" ? undefined : p.valor_total,
+      value_formatted: estadoValor === "valor_nao_informado"
+        ? (rotuloValor ?? undefined)
+        : rotuloValor
+          ? `${formatBRL(p.valor_total)} · ${rotuloValor}`
+          : formatBRL(p.valor_total),
       year_start: p.ano_eleicao,
       tab_link: "dinheiro",
     })

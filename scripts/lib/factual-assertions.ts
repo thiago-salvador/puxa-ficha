@@ -258,7 +258,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["presidenciaveis", "alto-trafego"],
     expected: {
-      nome_completo: "SAMARA MARTINS DA SILVA",
+      nome_completo: "Samara Martins da Silva Feitosa",
       nome_urna: "Samara Martins",
       partido_atual: "Unidade Popular",
       partido_sigla: "UP",
@@ -287,7 +287,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores-prioritarios", "alto-trafego"],
     expected: {
-      nome_completo: "Nikolas Ferreira Oliveira",
+      nome_completo: "NIKOLAS FERREIRA DE OLIVEIRA",
       nome_urna: "Nikolas Ferreira",
       partido_atual: "Partido Liberal",
       partido_sigla: "PL",
@@ -302,7 +302,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores-prioritarios", "alto-trafego"],
     expected: {
-      nome_completo: "Rodrigo Pacheco Amaral",
+      nome_completo: "RODRIGO OTAVIO SOARES PACHECO",
       nome_urna: "Rodrigo Pacheco",
       partido_atual: "Partido Social Democratico",
       partido_sigla: "PSD",
@@ -515,7 +515,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Alan Rick Pereira da Silva",
+      nome_completo: "Alan Rick Miranda",
       nome_urna: "Alan Rick",
       partido_atual: "Republicanos",
       partido_sigla: "REPUBLICANOS",
@@ -548,7 +548,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Mailza Gomes Assis",
+      nome_completo: "Mailza Assis Cameli",
       nome_urna: "Mailza Assis",
       partido_atual: "Progressistas",
       partido_sigla: "PP",
@@ -579,7 +579,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Joao Henrique Caldas",
+      nome_completo: "João Henrique Holanda Caldas",
       nome_urna: "JHC",
       partido_atual: "Partido da Social Democracia Brasileira",
       partido_sigla: "PSDB",
@@ -595,7 +595,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Renan Calheiros Filho",
+      nome_completo: "José Renan Vasconcelos Calheiros Filho",
       nome_urna: "Renan Filho",
       partido_atual: "MDB",
       partido_sigla: "MDB",
@@ -628,7 +628,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Eduardo Braga Granata",
+      nome_completo: "CARLOS EDUARDO DE SOUZA BRAGA",
       nome_urna: "Eduardo Braga",
       partido_atual: "MDB",
       partido_sigla: "MDB",
@@ -644,7 +644,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Maria do Carmo Seffair",
+      nome_completo: "Maria do Carmo Seffair Lins de Albuquerque",
       nome_urna: "Maria do Carmo",
       partido_atual: "Partido Liberal",
       partido_sigla: "PL",
@@ -658,7 +658,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Omar Jose Abdel Aziz",
+      nome_completo: "Omar Jose Abdelaziz",
       nome_urna: "Omar Aziz",
       partido_atual: "PSD",
       partido_sigla: "PSD",
@@ -704,7 +704,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Jose Antonio D Almeida Furlan",
+      nome_completo: "Antonio Paulo de Oliveira Furlan",
       nome_urna: "Dr. Furlan",
       partido_atual: "Partido Social Democratico",
       partido_sigla: "PSD",
@@ -719,7 +719,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Joao Alberto Rodrigues Capiberibe",
+      nome_completo: "JOAO ALBERTO RODRIGUES CAPIBERIBE",
       nome_urna: "Joao Capiberibe",
       partido_atual: "PSB",
       partido_sigla: "PSB",
@@ -749,7 +749,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "João Inácio Ribeiro Roma Neto",
+      nome_completo: "JOÃO INÁCIO RIBEIRO ROMA NETO",
       nome_urna: "Joao Roma",
       partido_atual: "PL",
       partido_sigla: "PL",
@@ -780,7 +780,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Ronaldo Mansur",
+      nome_completo: "Ronaldo Mansur Santos Silva",
       nome_urna: "Ronaldo Mansur",
       partido_atual: "Partido Socialismo e Liberdade",
       partido_sigla: "PSOL",
@@ -795,7 +795,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Wagner Sousa Gomes",
+      nome_completo: "WAGNER SOUSA GOMES",
       nome_urna: "Capitão Wagner",
       partido_atual: "Uniao Brasil",
       partido_sigla: "UNIAO",
@@ -842,7 +842,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Celina Leao Rocha de Siqueira Campos",
+      nome_completo: "Celina Leão Hizim Ferreira",
       nome_urna: "Celina Leao",
       partido_atual: "Progressistas",
       partido_sigla: "PP",
@@ -858,7 +858,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Leandro Grass Peixoto",
+      nome_completo: "Leandro Antônio Grass Peixoto",
       nome_urna: "Leandro Grass",
       partido_atual: "Partido dos Trabalhadores",
       partido_sigla: "PT",
@@ -872,7 +872,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Paula Francinete Belmonte da Silva",
+      nome_completo: "Paula Moreno Paro Belmonte",
       nome_urna: "Paula Belmonte",
       partido_atual: "Partido da Social Democracia Brasileira",
       partido_sigla: "PSDB",
@@ -887,7 +887,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Ricardo Ribeiro Cappelli",
+      nome_completo: "Ricardo Garcia Cappelli",
       nome_urna: "Ricardo Cappelli",
       partido_atual: "Partido Socialista Brasileiro",
       partido_sigla: "PSB",
@@ -915,7 +915,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "mirrored",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Josias da Vitoria",
+      nome_completo: "JOSIAS MARIO DA VITORIA",
       nome_urna: "Da Vitoria",
       partido_atual: "PP",
       partido_sigla: "PP",
@@ -960,7 +960,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Lorenzo Pazolini",
+      nome_completo: "Lorenzo Silva de Pazolini",
       nome_urna: "Pazolini",
       partido_atual: "Republicanos",
       partido_sigla: "REPUBLICANOS",
@@ -989,7 +989,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "mirrored",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Sergio Vidigal",
+      nome_completo: "ANTONIO SERGIO ALVES VIDIGAL",
       nome_urna: "Sergio Vidigal",
       partido_atual: "PDT",
       partido_sigla: "PDT",
@@ -1004,7 +1004,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Adriana Accorsi de Queiroz",
+      nome_completo: "ADRIANA SAUTHIER ACCORSI",
       nome_urna: "Adriana Accorsi",
       partido_atual: "PT",
       partido_sigla: "PT",
@@ -1020,7 +1020,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Daniel Goulart Vilela",
+      nome_completo: "Daniel Elias Carvalho Vilela",
       nome_urna: "Daniel Vilela",
       partido_atual: "Movimento Democratico Brasileiro",
       partido_sigla: "MDB",
@@ -1065,7 +1065,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Wilder Gomes de Morais",
+      nome_completo: "Wilder Pedro de Morais",
       nome_urna: "Wilder Morais",
       partido_atual: "PL",
       partido_sigla: "PL",
@@ -1081,7 +1081,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Eduardo Costa Braide",
+      nome_completo: "Eduardo Salim Braide",
       nome_urna: "Eduardo Braide",
       partido_atual: "Partido Social Democratico",
       partido_sigla: "PSD",
@@ -1096,7 +1096,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Enilton Rodrigues",
+      nome_completo: "ENILTON SILVA RODRIGUES",
       nome_urna: "Enilton Rodrigues",
       partido_atual: "Partido Socialismo e Liberdade",
       partido_sigla: "PSOL",
@@ -1128,7 +1128,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Lahesio Rodrigues Bonfim",
+      nome_completo: "LAHESIO RODRIGUES DO BONFIM",
       nome_urna: "Lahesio Bonfim",
       cargo_disputado: "Senador",
       estado: "MA",
@@ -1142,7 +1142,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Carlos Orleans Brandão Junior",
+      nome_completo: "Carlos Orleans Braide Brandão",
       nome_urna: "Orleans Brandao",
       partido_atual: "Movimento Democratico Brasileiro",
       partido_sigla: "MDB",
@@ -1187,7 +1187,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Mateus Simões",
+      nome_completo: "Mateus Simões de Almeida",
       nome_urna: "Mateus Simões",
       partido_atual: "Partido Social Democratico",
       partido_sigla: "PSD",
@@ -1218,7 +1218,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Fabio Trad",
+      nome_completo: "Fábio Ricardo Trad",
       nome_urna: "Fabio Trad",
       partido_atual: "Partido dos Trabalhadores",
       partido_sigla: "PT",
@@ -1233,7 +1233,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Joao Henrique Catan",
+      nome_completo: "João Henrique Miranda Soares Catan",
       nome_urna: "Joao Henrique Catan",
       partido_atual: "Partido Novo",
       partido_sigla: "NOVO",
@@ -1248,7 +1248,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Lucien Miranda de Rezende",
+      nome_completo: "Lucien Roberto Garcia de Rezende",
       nome_urna: "Lucien Rezende",
       partido_atual: "Partido Socialismo e Liberdade",
       partido_sigla: "PSOL",
@@ -1264,7 +1264,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Janaina Riva",
+      nome_completo: "JANAINA GREYCE RIVA FAGUNDES",
       nome_urna: "Janaina Riva",
       partido_atual: "Movimento Democratico Brasileiro",
       partido_sigla: "MDB",
@@ -1279,7 +1279,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Natasha Slhessarenko",
+      nome_completo: "Natasha Slhessarenko Fraife Barreto",
       nome_urna: "Natasha Slhessarenko",
       partido_atual: "Partido Social Democratico",
       partido_sigla: "PSD",
@@ -1294,7 +1294,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Otaviano Pivetta",
+      nome_completo: "Otaviano Olavo Pivetta",
       nome_urna: "Otaviano Pivetta",
       partido_atual: "Republicanos",
       partido_sigla: "REPUBLICANOS",
@@ -1309,7 +1309,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Wellington Fagundes",
+      nome_completo: "Wellington Antônio Fagundes",
       nome_urna: "Wellington Fagundes",
       partido_atual: "PL",
       partido_sigla: "PL",
@@ -1325,7 +1325,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Jose Beto Faro Pereira",
+      nome_completo: "JOSÉ ROBERTO OLIVEIRA FARO",
       nome_urna: "Beto Faro",
       partido_atual: "Partido dos Trabalhadores",
       partido_sigla: "PT",
@@ -1342,7 +1342,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Eder Braga Mauro",
+      nome_completo: "EDER MAURO CARDOSO BARRA",
       nome_urna: "Delegado Eder Mauro",
       partido_atual: "Partido Liberal",
       partido_sigla: "PL",
@@ -1431,7 +1431,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Lucas Ribeiro",
+      nome_completo: "Lucas Ribeiro Novais de Araújo",
       nome_urna: "Lucas Ribeiro",
       partido_atual: "Progressistas",
       partido_sigla: "PP",
@@ -1448,7 +1448,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Pedro Cunha Lima",
+      nome_completo: "PEDRO OLIVEIRA CUNHA LIMA",
       nome_urna: "Pedro Cunha Lima",
       partido_atual: "Partido Social Democratico",
       partido_sigla: "PSD",
@@ -1464,7 +1464,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Anderson Ferreira de Alencar",
+      nome_completo: "Anderson Ferreira Rodrigues",
       nome_urna: "Anderson Ferreira",
       partido_atual: "Partido Liberal",
       partido_sigla: "PL",
@@ -1494,7 +1494,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Ivan Moraes Filho",
+      nome_completo: "Ivan Vasconcellos de Moraes Filho",
       nome_urna: "Ivan Moraes",
       partido_atual: "Partido Socialismo e Liberdade",
       partido_sigla: "PSOL",
@@ -1510,7 +1510,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Joel Rodrigues de Castro",
+      nome_completo: "Joel Rodrigues da Silva",
       nome_urna: "Joel Rodrigues",
       partido_atual: "Progressistas",
       partido_sigla: "PP",
@@ -1571,7 +1571,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Alexandre Curi",
+      nome_completo: "ALEXANDRE MARANHAO KHURY",
       nome_urna: "Alexandre Curi",
       partido_atual: "Republicanos",
       partido_sigla: "REPUBLICANOS",
@@ -1603,7 +1603,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Paulo Martins",
+      nome_completo: "PAULO EDUARDO LIMA MARTINS",
       nome_urna: "Paulo Martins",
       partido_atual: "Partido Novo",
       partido_sigla: "NOVO",
@@ -1735,7 +1735,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Alysson Leandro Barbate Bezerra",
+      nome_completo: "Allyson Leandro Bezerra Silva",
       nome_urna: "Alysson Bezerra",
       partido_atual: "Uniao Brasil",
       partido_sigla: "UNIAO",
@@ -1765,7 +1765,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Adailton de Souza Fúria",
+      nome_completo: "Adailton Antunes Ferreira",
       nome_urna: "Adailton Furia",
       partido_atual: "Partido Social Democratico",
       partido_sigla: "PSD",
@@ -1780,7 +1780,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "José Confúcio Aires Moura",
+      nome_completo: "CONFÚCIO AIRES MOURA",
       nome_urna: "Confúcio Moura",
       partido_atual: "MDB",
       partido_sigla: "MDB",
@@ -1797,7 +1797,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Fernando Máximo de Oliveira",
+      nome_completo: "FERNANDO RODRIGUES MÁXIMO",
       nome_urna: "Dr. Fernando Máximo",
       partido_atual: "Partido Liberal",
       partido_sigla: "PL",
@@ -1889,7 +1889,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Soldado Sampaio",
+      nome_completo: "Francisco dos Santos Sampaio",
       nome_urna: "Soldado Sampaio",
       partido_atual: "Republicanos",
       partido_sigla: "REPUBLICANOS",
@@ -1906,7 +1906,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Maria Teresa Saenz Surita Guimarães",
+      nome_completo: "MARIA TERESA SAENZ SURITA GUIMARÃES",
       nome_urna: "Teresa Surita",
       partido_atual: "Movimento Democratico Brasileiro",
       partido_sigla: "MDB",
@@ -1951,7 +1951,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Gabriel Souza",
+      nome_completo: "Gabriel Vieira de Souza",
       nome_urna: "Gabriel Souza",
       partido_atual: "Movimento Democratico Brasileiro",
       partido_sigla: "MDB",
@@ -1967,7 +1967,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Juliana Daudt Brizola",
+      nome_completo: "Juliana Brizola",
       nome_urna: "Juliana Brizola",
       partido_atual: "Partido Democratico Trabalhista",
       partido_sigla: "PDT",
@@ -1997,7 +1997,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Marcelo Maranata",
+      nome_completo: "Marcelo Maranata Soares Reinaldo",
       nome_urna: "Marcelo Maranata",
       cargo_atual: "Prefeito de Guaiba",
       cargo_disputado: "Governador",
@@ -2010,7 +2010,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Decio Nery de Lima",
+      nome_completo: "DECIO NERY DE LIMA",
       nome_urna: "Decio Lima",
       partido_atual: "Partido dos Trabalhadores",
       partido_sigla: "PT",
@@ -2099,7 +2099,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Thiago Rezende de Oliveira",
+      nome_completo: "JOSE THIAGO ALVES DE CARVALHO",
       nome_urna: "Thiago de Joaldo",
       partido_atual: "Republicanos",
       partido_sigla: "REPUBLICANOS",
@@ -2130,7 +2130,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "mirrored",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Andre Luis do Prado",
+      nome_completo: "ANDRE LUIS DO PRADO",
       nome_urna: "Andre do Prado",
       partido_atual: "Partido Liberal",
       partido_sigla: "PL",
@@ -2178,7 +2178,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Guilherme Muraro Derrite",
+      nome_completo: "GUILHERME MURARO DERRITE",
       nome_urna: "Guilherme Derrite",
       partido_atual: "PP",
       partido_sigla: "PP",
@@ -2226,7 +2226,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
     confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Ataídes de Oliveira Leite",
+      nome_completo: "Ataídes de Oliveira",
       nome_urna: "Ataides Oliveira",
       cargo_disputado: "Governador",
       estado: "TO",

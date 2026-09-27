@@ -620,6 +620,146 @@
       "ate": "20260923001140",
       "allowlist": "scripts/audit/allowlist-link-check-48-claims-20260922.json",
       "divida": null
+    },
+    {
+      "nome": "eliziane-partido-20260923",
+      "desde": "20260923175946",
+      "ate": "20260923175946",
+      "allowlist": "scripts/audit/allowlist-eliziane-partido-20260923.json",
+      "divida": null
+    },
+    {
+      "nome": "eliziane-mudancas-partido-20260923",
+      "desde": "20260923233000",
+      "ate": "20260923233000",
+      "allowlist": "scripts/audit/allowlist-eliziane-mudancas-partido-20260923.json",
+      "divida": null
+    },
+    {
+      "nome": "senado-exercicio-reaberto-20260924",
+      "desde": "20260924003000",
+      "ate": "20260924003000",
+      "allowlist": "scripts/audit/allowlist-senado-exercicio-reaberto-20260924.json",
+      "divida": null
+    },
+    {
+      "nome": "verified-history-situacao-dominio-20260924",
+      "desde": "20260924120000",
+      "ate": "20260924120000",
+      "allowlist": "scripts/audit/allowlist-verified-history-situacao-dominio-20260924.json",
+      "divida": null
+    },
+    {
+      "nome": "issue-483-arruda-20260924",
+      "desde": "20260924180000",
+      "ate": "20260924180000",
+      "allowlist": "scripts/audit/allowlist-issue-483-arruda-20260924.json",
+      "divida": null
+    },
+    {
+      "nome": "sites-tse-2026-receipts-20260924",
+      "desde": "20260924204852",
+      "ate": "20260924204852",
+      "allowlist": "scripts/audit/allowlist-sites-tse-2026-receipts-20260924.json",
+      "divida": null
+    },
+    {
+      "nome": "situacao-tse-2026-receipts-20260924",
+      "desde": "20260924205031",
+      "ate": "20260924205031",
+      "allowlist": "scripts/audit/allowlist-situacao-tse-2026-receipts-20260924.json",
+      "divida": null
+    },
+    {
+      "nome": "gastos-parlamentares-quarentena-20260925",
+      "desde": "20260925163543",
+      "ate": "20260925163543",
+      "allowlist": "scripts/audit/allowlist-gastos-parlamentares-quarentena-20260925.json",
+      "divida": null
+    },
+    {
+      "nome": "dados-no-ar-senado-claims-20260925",
+      "desde": "20260925220000",
+      "ate": "20260925220200",
+      "allowlist": "scripts/audit/allowlist-dados-no-ar-senado-claims-20260925.json",
+      "divida": null
+    },
+    {
+      "nome": "gastos-parlamentares-quarentena-universo-20260925",
+      "desde": "20260925221042",
+      "ate": "20260925221042",
+      "allowlist": "scripts/audit/allowlist-gastos-parlamentares-quarentena-universo-20260925.json",
+      "divida": null
+    },
+    {
+      "nome": "historico-mandatos-federais-20260925",
+      "desde": "20260925230000",
+      "ate": "20260925230100",
+      "allowlist": "scripts/audit/allowlist-historico-mandatos-federais-20260925.json",
+      "divida": null
+    },
+    {
+      "nome": "situacao-godeiro-laudicerio-20260926",
+      "desde": "20260926180000",
+      "ate": "20260926180200",
+      "allowlist": "scripts/audit/allowlist-situacao-godeiro-laudicerio-20260926.json",
+      "divida": null
+    },
+    {
+      "nome": "processos-numero-cnj-20260926",
+      "desde": "20260926190000",
+      "ate": "20260926190100",
+      "allowlist": "scripts/audit/allowlist-processos-numero-cnj-20260926.json",
+      "divida": null
+    },
+    {
+      "nome": "datas-nascimento-tse-20260926",
+      "desde": "20260927030000",
+      "ate": "20260927030200",
+      "allowlist": "scripts/audit/allowlist-datas-nascimento-tse-20260926.json",
+      "divida": null
+    },
+    {
+      "nome": "partido-paulo-mourao-20260926",
+      "desde": "20260926224500",
+      "ate": "20260926224500",
+      "allowlist": "scripts/audit/allowlist-partido-paulo-mourao-20260926.json",
+      "divida": null
+    },
+    {
+      "nome": "dr-daniel-camara-20260927",
+      "desde": "20260927040000",
+      "ate": "20260927040100",
+      "allowlist": "scripts/audit/allowlist-dr-daniel-camara-20260927.json",
+      "divida": null
+    },
+    {
+      "nome": "pedro-cunha-lima-20260927",
+      "desde": "20260927040200",
+      "ate": "20260927040200",
+      "allowlist": "scripts/audit/allowlist-pedro-cunha-lima-20260927.json",
+      "divida": null
+    },
+    {
+      "nome": "processos-curadoria-djen-20260927",
+      "desde": "20260927060000",
+      "ate": "20260927060000",
+      "allowlist": "scripts/audit/allowlist-processos-curadoria-djen-20260927.json",
+      "divida": null
+    },
+    {
+      "nome": "patrimonio-2026-pacote-tse-20260927",
+      "desde": "20260927060100",
+      "ate": "20260927060100",
+      "allowlist": "scripts/audit/allowlist-patrimonio-2026-pacote-tse-20260927.json",
+      "divida": null
+    },
+    {
+      "nome": "partido-paulo-mourao-20260927",
+      "desde": "20260927020000",
+      "ate": "20260927020000",
+      "allowlist": "scripts/audit/allowlist-partido-paulo-mourao-20260927.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

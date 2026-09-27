@@ -1,0 +1,493 @@
+import assert from "node:assert/strict"
+import { mkdtempSync, readFileSync, rmSync, writeFileSync, statSync } from "node:fs"
+import { describe, it } from "node:test"
+import { tmpdir } from "node:os"
+import path from "node:path"
+import { spawnSync } from "node:child_process"
+import {
+  adaptLatestReceipts,
+  buildCoverageMatrix,
+  fetchPublicProfiles,
+  type CoverageProfile,
+} from "../scripts/audit/audit-cobertura-fichas"
+import { publicFamilyHouseRows, publicFamilyPayloadSha256, publicHouseSubsetSha256 } from "../scripts/audit/lib/coverage-source-proof"
+
+function profile(overrides: Partial<CoverageProfile> = {}): CoverageProfile {
+  return {
+    id: "candidate-1",
+    slug: "ana-exemplo",
+    nome_completo: "Ana Exemplo",
+    cargo_disputado: "Deputado Federal",
+    cargo_atual: null,
+    ids: { camara: 12345, senado: null },
+    section_freshness: {},
+    ...overrides,
+  }
+}
+
+describe("matriz de cobertura das fichas", () => {
+  it("repete erro transitório ao ler perfil público antes de invalidar o snapshot", async () => {
+    let attempts = 0
+    const pauses: number[] = []
+    const fetcher = async (url: string | URL | Request) => {
+      if (String(url).endsWith("/api/candidato-slugs")) return Response.json({ slugs: ["ana-exemplo"] })
+      attempts++
+      if (attempts === 1) return new Response(null, { status: 503 })
+      if (attempts === 2) throw new TypeError("fetch failed")
+      return Response.json({ sourceStatus: "live", data: profile() })
+    }
+    const result = await fetchPublicProfiles("https://example.test", fetcher as typeof fetch, async (ms) => { pauses.push(ms) })
+    assert.equal(attempts, 3)
+    assert.deepEqual(pauses, [5_000, 10_000, 250])
+    assert.equal(result.profiles.length, 1)
+    assert.deepEqual(result.errors, [])
+  })
+
+  it("não publica processo só porque o recibo disse encontrado", () => {
+    const matrix = buildCoverageMatrix([profile({ processos: [] })], [], {
+      "ana-exemplo": { processos: { resultado: "encontrado", executado_em: new Date().toISOString(), fonte: "processos-curadoria" } },
+    })
+    assert.equal(matrix.cells.find((item) => item.familia === "processos")?.estado, "indeterminado")
+  })
+
+  it("mantém achado antigo sem linha publicada como indeterminado", () => {
+    const matrix = buildCoverageMatrix([profile({ processos: [] })], [], {
+      "ana-exemplo": { processos: { resultado: "encontrado", executado_em: "2026-08-06T10:00:00.000Z", fonte: "processos-curadoria" } },
+    })
+    assert.equal(matrix.cells.find((item) => item.familia === "processos")?.estado, "indeterminado")
+  })
+
+  it("marca contradição entre vazio confirmado e linha publicada como erro", () => {
+    const matrix = buildCoverageMatrix([profile({ processos: [{ id: 1 }] })], [], {
+      "ana-exemplo": { processos: { resultado: "vazio_confirmado", executado_em: new Date().toISOString(), fonte: "tribunais", escopo: "consulta nominal" } },
+    })
+    assert.equal(matrix.cells.find((item) => item.familia === "processos")?.estado, "erro")
+  })
+
+  it("não certifica frescor de família guiada por revisão da fonte sem comparar a revisão", () => {
+    const matrix = buildCoverageMatrix([profile({ patrimonio_eleicoes: [{ id: 1 }] })], [], {
+      "ana-exemplo": { patrimonio: { resultado: "encontrado", executado_em: new Date().toISOString(), fonte: "TSE" } },
+    })
+    assert.equal(matrix.cells.find((item) => item.familia === "patrimonio")?.estado, "frescor_indefinido")
+  })
+
+  it("fecha revisão histórica só com hash do DTO público, fonte oficial e identidade coerentes", () => {
+    const candidate = profile({ historico: [{ tipo_evento: "candidatura", cargo: "Deputado Federal", periodo_inicio: 2026 }] })
+    const url = "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip"
+    const proof = {
+      family: "historico_politico",
+      method: "official-source-to-public-readback",
+      source_revisions: [{ year: 2026, url, sha256: "a".repeat(64) }],
+      public_payload_sha256: publicFamilyPayloadSha256(candidate, "historico_politico"),
+      source_rows: 1, public_rows: 1, matched_rows: 1, unmatched_rows: 0,
+      scope_complete: true,
+      identity: { slug: "ana-exemplo", candidate_id: "candidate-1", source_id: "12345" },
+    }
+    const row = {
+      fonte: "tse-historico", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1",
+      resultado: "encontrado", volume: 1, executado_em: new Date().toISOString(), url,
+      detalhe: JSON.stringify({ coverage_proof: proof }),
+    }
+    const state = (subject: CoverageProfile, receipt = row) =>
+      buildCoverageMatrix([subject], [], adaptLatestReceipts([receipt], [subject]).joins)
+        .cells.find((cell) => cell.familia === "historico_politico")?.estado
+    assert.equal(state(candidate), "publicado")
+    assert.equal(state({ ...candidate, historico: [...(candidate.historico as object[]), { id: 2 }] }), "frescor_indefinido")
+    assert.equal(state(candidate, { ...row, detalhe: JSON.stringify({ coverage_proof: { ...proof, source_revisions: [{ url: "https://example.com/zip", sha256: "a".repeat(64) }] } }) }), "frescor_indefinido")
+    assert.equal(state(candidate, { ...row, detalhe: JSON.stringify({ coverage_proof: { ...proof, identity: { ...proof.identity, candidate_id: "wrong" } } }) }), "frescor_indefinido")
+  })
+
+  it("só fecha família parlamentar quando a fonte por casa reconcilia o DTO", () => {
+    const candidate = profile({ projetos_lei: [{ id: 12, casa: "camara" }], projetos_lei_total: 1, projetos_lei_camara_total: 1, projetos_lei_senado_total: 0 })
+    const partition = publicFamilyHouseRows(candidate, "projetos_lei")
+    assert.ok(partition)
+    const url = "https://dadosabertos.camara.leg.br/api/v2/deputados/12345/proposicoes"
+    const proof = {
+      family: "projetos_lei", method: "official-source-to-public-readback",
+      source_revisions: [{ url, sha256: "b".repeat(64) }],
+      public_payload_sha256: publicFamilyPayloadSha256(candidate, "projetos_lei"),
+      source_rows: 1, public_rows: 1, matched_rows: 1, unmatched_rows: 0, scope_complete: true,
+      identity: { slug: "ana-exemplo", candidate_id: "candidate-1", source_id: "12345", house: "camara", roster_url: "https://dadosabertos.camara.leg.br/api/v2/deputados", roster_sha256: "c".repeat(64) },
+      house_partition: { casa: "camara", public_rows: 1, public_subset_sha256: publicHouseSubsetSha256(partition.camara ?? []), public_total_rows: 1, source_rows: 1, matched_rows: 1, unmatched_rows: 0 },
+    }
+    const row = {
+      fonte: "camara-proposicoes", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1",
+      resultado: "encontrado", volume: 1, executado_em: new Date().toISOString(), url,
+      detalhe: JSON.stringify({ coverage_proof: proof }),
+    }
+    const state = (subject: CoverageProfile, receipt = row) =>
+      buildCoverageMatrix([subject], [], adaptLatestReceipts([receipt], [subject]).joins)
+        .cells.find((cell) => cell.familia === "projetos_lei")?.estado
+    assert.equal(state(candidate), "publicado")
+    assert.equal(state(candidate, { ...row, detalhe: JSON.stringify({ coverage_proof: { ...proof, public_rows: 2 } }) }), "indeterminado")
+  })
+
+  it("aplica o SLA de nove dias aos recibos de votação das duas casas", () => {
+    const executed = new Date(Date.now() - 10 * 86_400_000).toISOString()
+    for (const [house, source] of [["camara", "camara-votacoes"], ["senado", "senado-votacoes"]] as const) {
+      const candidate = profile({ ids: { camara: house === "camara" ? 12345 : null, senado: house === "senado" ? 12345 : null }, votos: [{ id: 1 }] })
+      const row = { fonte: source, escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", resultado: "encontrado", volume: 1, executado_em: executed, url: "https://example.test/votacoes", detalhe: "{}" }
+      const matrix = buildCoverageMatrix([candidate], [], adaptLatestReceipts([row], [candidate]).joins)
+      assert.equal(matrix.cells.find((cell) => cell.familia === "votos_candidato")?.estado, "desatualizado", source)
+    }
+  })
+
+  it("não trata badge histórico sem data como recibo nem encobre verificação datada", () => {
+    const materialized = profile({
+      historico: [{ cargo: "Deputado Federal", tipo_evento: "mandato" }],
+      section_freshness: { historico_politico: { status: "historical", verifiedAt: null, sourceLabel: "Histórico político" } },
+      trajetoria_verificacao: { resultado: "indeterminado", executado_em: "2026-09-15T10:00:00Z", fonte: "destaques-trajetoria", escopo: "candidato" },
+    })
+    const verified = buildCoverageMatrix([materialized]).cells.find((cell) => cell.familia === "historico_politico")
+    assert.equal(verified?.estado, "indeterminado")
+    const withoutVerification = buildCoverageMatrix([{ ...materialized, trajetoria_verificacao: null }]).cells.find((cell) => cell.familia === "historico_politico")
+    assert.equal(withoutVerification?.estado, "sem_recibo")
+  })
+
+  it("fecha sites somente quando recibo e snapshot usam a mesma revisão oficial", () => {
+    const fetchedAt = "2026-09-24T16:56:50.458Z"
+    const materialized = profile({ sites_candidato: {
+      resultado: "publicado", coletado_em: fetchedAt,
+      fonte_url: "https://www.tse.jus.br/fonte-oficial",
+      fonte_sha256: "a".repeat(64), sites: [{ ordem: 1, url: "https://exemplo.org" }],
+    } })
+    const receipt = {
+      fonte: "sites_tse", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1",
+      resultado: "encontrado", volume: 1, executado_em: "2026-09-24T17:00:00.000Z",
+      url: "https://www.tse.jus.br/fonte-oficial",
+      detalhe: JSON.stringify({ resource_sha256: "a".repeat(64), escopo: "candidato" }),
+    }
+    const matching = adaptLatestReceipts([receipt], [materialized]).joins
+    assert.equal(buildCoverageMatrix([materialized], [], matching).cells.find((cell) => cell.familia === "sites_tse")?.estado, "publicado")
+    const conflicting = adaptLatestReceipts([{ ...receipt, detalhe: JSON.stringify({ resource_sha256: "b".repeat(64), escopo: "candidato" }) }], [materialized]).joins
+    assert.equal(buildCoverageMatrix([materialized], [], conflicting).cells.find((cell) => cell.familia === "sites_tse")?.estado, "frescor_indefinido")
+  })
+
+  it("fecha chapa só quando revisão oficial, vínculo e ordem temporal conferem", () => {
+    const materialized = profile({
+      cargo_disputado: "Governador",
+      chapa_2026: {
+        titular_candidato_id: "candidate-1",
+        identidade_status: "confirmada",
+        vinculo_titular_status: "confirmado",
+        fonte_url: "https://www.tse.jus.br/chapas.zip",
+        fonte_sha256: "a".repeat(64),
+        snapshot_em: "2026-09-24T16:00:00Z",
+      },
+    })
+    const receipt = {
+      fonte: "chapa_vice", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1",
+      resultado: "encontrado", volume: 1, executado_em: "2026-09-24T17:00:00Z",
+      url: "https://www.tse.jus.br/chapas.zip",
+      detalhe: JSON.stringify({ resource_sha256: "a".repeat(64), escopo: "candidato" }),
+    }
+    const state = (row: typeof receipt, candidate = materialized) =>
+      buildCoverageMatrix([candidate], [], adaptLatestReceipts([row], [candidate]).joins)
+        .cells.find((cell) => cell.familia === "chapa_vice")?.estado
+    assert.equal(state(receipt), "publicado")
+    assert.equal(state({ ...receipt, detalhe: JSON.stringify({ resource_sha256: "b".repeat(64), escopo: "candidato" }) }), "frescor_indefinido")
+    assert.equal(state({ ...receipt, url: "https://www.tse.jus.br/outra.zip" }), "frescor_indefinido")
+    assert.equal(state({ ...receipt, executado_em: "2026-09-24T15:00:00Z" }), "frescor_indefinido")
+    assert.equal(state(receipt, { ...materialized, chapa_2026: { ...(materialized.chapa_2026 as Record<string, unknown>), titular_candidato_id: "candidate-2" } }), "frescor_indefinido")
+  })
+
+  it("conta recibo parcial de situação sem fechar perfil_atual", () => {
+    const row = {
+      fonte: "tse-situacao", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1",
+      resultado: "encontrado", volume: 1, executado_em: "2026-09-24T17:22:25.641Z",
+    }
+    const adapted = adaptLatestReceipts([row], [profile()])
+    assert.equal(adapted.ignored_partial_receipts, 1)
+    assert.equal(adapted.rejected.length, 0)
+    assert.equal(buildCoverageMatrix([profile()], [], adapted.joins).cells.find((cell) => cell.familia === "perfil_atual")?.estado, "sem_recibo")
+    const invalid = adaptLatestReceipts([{ ...row, candidato_id: "outro" }], [profile()])
+    assert.equal(invalid.ignored_partial_receipts, 0)
+    assert.equal(invalid.rejected.length, 1)
+  })
+
+  it("mantém família aplicável como sem_recibo quando há dados, mas não há prova de fonte", () => {
+    const matrix = buildCoverageMatrix([profile({ biografia: "Texto presente", projetos_lei: [{ id: 1 }] })])
+    const cell = matrix.cells.find((item) => item.familia === "projetos_lei")
+    assert.equal(cell?.aplicavel, true)
+    assert.equal(cell?.estado, "sem_recibo")
+    assert.match(cell?.motivo ?? "", /sem recibo/)
+  })
+
+  it("aceita vazio confirmado somente quando o recibo fecha a busca", () => {
+    const matrix = buildCoverageMatrix([profile()], [], { "ana-exemplo": { processos: {
+        resultado: "vazio_confirmado",
+        executado_em: "2026-09-20T10:00:00.000Z",
+        fonte: "tribunais",
+        escopo: "consulta nominal nos tribunais oficiais",
+      } } })
+    const cell = matrix.cells.find((item) => item.familia === "processos")
+    assert.equal(cell?.estado, "vazio_confirmado")
+    assert.equal(cell?.verificado_em, "2026-09-20T10:00:00.000Z")
+  })
+
+  it("revisão humana da confirmação editorial: pendente marca a célula, fechada é ignorada", () => {
+    const judicial = {
+      fonte: "processos-curadoria", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1",
+      resultado: "encontrado", volume: 2, executado_em: "2026-09-20T18:28:08.000Z",
+    }
+    const pendente = {
+      fonte: "processos-revisao-humana", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1",
+      resultado: "indeterminado", volume: 0, executado_em: "2026-09-21T09:30:00.000Z",
+    }
+    const fechada = { ...pendente, resultado: "nao_aplicavel", executado_em: "2026-09-22T12:00:00.000Z" }
+    const estado = (rows: Array<Record<string, unknown>>) => {
+      const adapted = adaptLatestReceipts(rows as never, [profile()])
+      return { adapted, cell: buildCoverageMatrix([profile()], [], adapted.joins).cells.find((item) => item.familia === "processos") }
+    }
+    const soJudicial = estado([judicial])
+    assert.equal(estado([judicial, pendente]).cell?.estado, "indeterminado")
+    const depois = estado([judicial, fechada])
+    assert.equal(depois.adapted.ignored_partial_receipts, 1)
+    assert.equal(depois.adapted.rejected.length, 0)
+    assert.equal(depois.cell?.estado, soJudicial.cell?.estado)
+    assert.equal(depois.cell?.verificado_em, soJudicial.cell?.verificado_em)
+  })
+
+  it("não aceita recibo vazio sem data e escopo", () => {
+    const matrix = buildCoverageMatrix([profile()], [], { "ana-exemplo": { processos: {
+      resultado: "vazio_confirmado",
+      fonte: "tribunais",
+    } } })
+    assert.equal(matrix.cells.find((item) => item.familia === "processos")?.estado, "erro")
+    const future = buildCoverageMatrix([profile()], [], { "ana-exemplo": { processos: {
+      resultado: "vazio_confirmado",
+      executado_em: "2099-01-01T00:00:00Z",
+      fonte: "tribunais",
+      escopo: "consulta nominal nos tribunais oficiais",
+    } } })
+    assert.equal(future.cells.find((item) => item.familia === "processos")?.estado, "erro")
+  })
+
+  it("rebaixa recibo vazio fora do prazo para desatualizado", () => {
+    const matrix = buildCoverageMatrix([profile()], [], { "ana-exemplo": { processos: {
+      resultado: "vazio_confirmado",
+      executado_em: "2025-01-01T10:00:00.000Z",
+      fonte: "tribunais",
+      escopo: "consulta nominal nos tribunais oficiais",
+    } } })
+    assert.equal(matrix.cells.find((item) => item.familia === "processos")?.estado, "desatualizado")
+  })
+
+  it("reconhece cargo legislativo como não aplicável a gastos executivos", () => {
+    const matrix = buildCoverageMatrix([profile({ cargo_disputado: "Senador", cargo_atual: "Senador" })])
+    const cell = matrix.cells.find((item) => item.familia === "gastos_executivo")
+    assert.equal(cell?.aplicavel, false)
+    assert.equal(cell?.estado, "nao_aplicavel")
+  })
+
+  it("não aceita not_applicable de fonte quando regra local considera a família aplicável", () => {
+    const matrix = buildCoverageMatrix([profile({
+      section_freshness: { projetos_lei: { status: "not_applicable", verifiedAt: new Date().toISOString(), sourceLabel: "API legislativa" } },
+    })])
+    const cell = matrix.cells.find((item) => item.familia === "projetos_lei")
+    assert.equal(cell?.aplicavel, true)
+    assert.equal(cell?.estado, "indeterminado")
+  })
+
+  it("marca família parlamentar como não aplicável pela regra de escopo quando não há mandato federal", () => {
+    const matrix = buildCoverageMatrix([profile({
+      slug: "governadora-exemplo",
+      cargo_disputado: "Governador",
+      ids: { camara: null, senado: null },
+      historico: [],
+    })])
+    for (const family of ["projetos_lei", "votos_candidato", "gastos_parlamentares"] as const) {
+      const cell = matrix.cells.find((item) => item.familia === family)
+      assert.equal(cell?.aplicavel, false)
+      assert.equal(cell?.estado, "nao_aplicavel")
+    }
+  })
+
+  it("candidatura federal sem mandato não cria aplicabilidade parlamentar", () => {
+    const matrix = buildCoverageMatrix([profile({
+      ids: { camara: null, senado: null },
+      historico: [{ tipo_evento: "candidatura", cargo: "Senador", periodo_inicio: 2022, periodo_fim: 2022 }],
+      section_freshness: { projetos_lei: { status: "not_applicable", verifiedAt: "2026-09-14T10:00:00Z", sourceLabel: "Câmara e Senado" } },
+    })])
+    for (const family of ["projetos_lei", "votos_candidato", "gastos_parlamentares"] as const) {
+      const cell = matrix.cells.find((item) => item.familia === family)
+      assert.equal(cell?.aplicavel, false)
+      assert.equal(cell?.estado, "nao_aplicavel")
+    }
+  })
+
+  it("mandato federal mantém aplicabilidade apesar de badge not_applicable", () => {
+    const matrix = buildCoverageMatrix([profile({
+      ids: { camara: null, senado: null },
+      historico: [{ tipo_evento: "mandato", cargo: "Senador", periodo_inicio: 2020, periodo_fim: 2024 }],
+      section_freshness: { projetos_lei: { status: "not_applicable", verifiedAt: "2026-09-14T10:00:00Z", sourceLabel: "Câmara e Senado" } },
+    })])
+    const cell = matrix.cells.find((item) => item.familia === "projetos_lei")
+    assert.equal(cell?.aplicavel, true)
+    assert.equal(cell?.estado, "indeterminado")
+  })
+
+  it("não transforma erro de leitura do perfil em vazio", () => {
+    const matrix = buildCoverageMatrix([], [{ slug: "perfil-inacessivel", error: "HTTP 503" }])
+    assert.equal(matrix.profile_errors.length, 1)
+    assert.equal(matrix.cells.length, 12)
+    assert.ok(matrix.cells.every((cell) => cell.estado === "erro"))
+    assert.equal(matrix.completed_profiles, 0)
+  })
+
+  it("só adapta TSE quando candidato_id, slug, fonte e escopo conferem", () => {
+    const result = adaptLatestReceipts([
+      { fonte: "tse-current", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-23T10:00:00Z", resultado: "encontrado", volume: 1 },
+      { fonte: "tse-historico", escopo: "global", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-23T10:00:00Z", resultado: "encontrado", volume: 1 },
+      { fonte: "tse-current", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-other", executado_em: "2026-09-23T10:00:00Z", resultado: "encontrado", volume: 1 },
+    ], [profile()])
+    assert.ok(result.joins["ana-exemplo"]?.perfil_atual)
+    assert.equal(result.joins["ana-exemplo"]?.historico_politico, undefined)
+    assert.equal(result.rejected.length, 2)
+  })
+
+  it("une recibos das 12 famílias somente por fonte, slug, candidato e escopo", () => {
+    const now = "2026-09-23T10:00:00Z"
+    const sources = [
+      "tse-current", "tse-historico", "filiacao", "patrimonio", "financiamento", "camara-proposicoes",
+      "destaques-votacoes", "ceaps-senado", "gastos-executivo", "processos-curadoria", "sites-tse", "chapa",
+    ]
+    const rows = sources.map((fonte) => ({
+      fonte,
+      escopo: "candidato",
+      alvo: "ana-exemplo",
+      candidato_id: "candidate-1",
+      executado_em: now,
+      resultado: "encontrado",
+      volume: 1,
+    }))
+    const result = adaptLatestReceipts(rows, [profile({ cargo_atual: "Governador", cargo_disputado: "Governador" })])
+    assert.equal(result.rejected.length, 0)
+    assert.deepEqual(Object.keys(result.joins["ana-exemplo"] ?? {}).sort(), [
+      "chapa_vice", "financiamento", "gastos_executivo", "gastos_parlamentares", "historico_politico",
+      "mudancas_partido", "patrimonio", "perfil_atual", "processos", "projetos_lei", "sites_tse", "votos_candidato",
+    ])
+  })
+
+  it("não usa recorte oficial not_applicable como prova de inaplicabilidade local", () => {
+    const matrix = buildCoverageMatrix([profile({
+      section_freshness: {
+        projetos_lei: {
+          status: "not_applicable",
+          verifiedAt: "2026-09-20T10:00:00Z",
+          sourceLabel: "Câmara e Senado",
+          scope: "série anual parcial",
+        },
+      },
+    })])
+    const cell = matrix.cells.find((item) => item.familia === "projetos_lei")
+    assert.equal(cell?.aplicavel, true)
+    assert.equal(cell?.estado, "indeterminado")
+  })
+
+  it("não fecha família parlamentar com uma fonte quando o perfil exige dois órgãos", () => {
+    const result = adaptLatestReceipts([
+      { fonte: "camara-proposicoes", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-23T10:00:00Z", resultado: "encontrado", volume: 1 },
+      { fonte: "senado-proposicoes", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-23T11:00:00Z", resultado: "erro", volume: 0 },
+    ], [profile({ ids: { camara: 12345, senado: 67890 } })])
+    const matrix = buildCoverageMatrix([profile({ ids: { camara: 12345, senado: 67890 }, projetos_lei: [{ id: 1 }] })], [], result.joins)
+    assert.equal(matrix.cells.find((item) => item.familia === "projetos_lei")?.estado, "erro")
+  })
+
+  it("mantém erro mais novo da mesma fonte sobre achado antigo", () => {
+    const result = adaptLatestReceipts([
+      { fonte: "camara-proposicoes", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-20T10:00:00Z", resultado: "encontrado", volume: 1 },
+      { fonte: "camara-proposicoes", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-23T10:00:00Z", resultado: "erro", volume: 0 },
+    ], [profile()])
+    const matrix = buildCoverageMatrix([profile({ projetos_lei: [{ id: 1 }] })], [], result.joins)
+    assert.equal(matrix.cells.find((item) => item.familia === "projetos_lei")?.estado, "erro")
+  })
+
+  it("não fecha projetos com recibo genérico da Câmara", () => {
+    const result = adaptLatestReceipts([
+      { fonte: "camara", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-23T10:00:00Z", resultado: "encontrado", volume: 1 },
+    ], [profile()])
+    const matrix = buildCoverageMatrix([profile({ projetos_lei: [{ id: 1 }] })], [], result.joins)
+    assert.equal(result.rejected.length, 1)
+    assert.equal(matrix.cells.find((item) => item.familia === "projetos_lei")?.estado, "sem_recibo")
+  })
+
+  it("não chama projeto publicado só com contagem declarada e array no DTO", () => {
+    const result = adaptLatestReceipts([
+      { fonte: "camara-proposicoes", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-23T10:00:00Z", resultado: "encontrado", volume: 1 },
+    ], [profile()])
+    const matrix = buildCoverageMatrix([profile({ projetos_lei: [{ id: 1 }] })], [], result.joins)
+    assert.equal(matrix.cells.find((item) => item.familia === "projetos_lei")?.estado, "indeterminado")
+  })
+
+  it("Câmara vazia e Senado com dados não provam contradição sem partição por órgão", () => {
+    const candidate = profile({ ids: { camara: 12345, senado: 67890 }, projetos_lei: [{ id: 1 }] })
+    const result = adaptLatestReceipts([
+      { fonte: "camara-proposicoes", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-23T10:00:00Z", resultado: "vazio_confirmado", volume: 0 },
+      { fonte: "senado-proposicoes", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-23T10:00:00Z", resultado: "encontrado", volume: 1 },
+    ], [candidate])
+    const matrix = buildCoverageMatrix([candidate], [], result.joins)
+    assert.equal(matrix.cells.find((item) => item.familia === "projetos_lei")?.estado, "indeterminado")
+  })
+
+  it("fixture de candidato novo sem recibo reprova o strict com exit 1 e saída privada", () => {
+    const dir = mkdtempSync(path.join(tmpdir(), "puxa-ficha-matrix-"))
+    const input = path.join(dir, "candidate-new.json")
+    const output = path.join(dir, "matrix.json")
+    writeFileSync(input, JSON.stringify([profile({ id: "candidate-new", slug: "candidato-novo" })]))
+    const result = spawnSync(process.execPath, ["--import", "tsx", "scripts/audit/audit-cobertura-fichas.ts", "--strict", `--input=${input}`, `--out=${output}`], {
+      cwd: path.resolve(import.meta.dirname, ".."),
+      encoding: "utf8",
+    })
+    try {
+      assert.equal(result.status, 1)
+      assert.match(`${result.stdout}\n${result.stderr}`, /células aplicáveis sem fechamento/)
+      assert.equal(statSync(output).mode & 0o777, 0o600)
+      const readback = JSON.parse(readFileSync(output, "utf8")) as { requested_profiles: number; cells: unknown[] }
+      assert.equal(readback.requested_profiles, 1)
+      assert.equal(readback.cells.length, 12)
+    } finally {
+      rmSync(dir, { recursive: true, force: true })
+    }
+  })
+
+  it("projeção estrita junta recibos locais adicionais antes de decidir estado", () => {
+    const dir = mkdtempSync(path.join(tmpdir(), "puxa-ficha-matrix-extra-"))
+    const candidate = profile({ historico: [{ tipo_evento: "candidatura", cargo: "Deputado Federal", periodo_inicio: 2026 }] })
+    const input = path.join(dir, "input.json")
+    const original = path.join(dir, "original.json")
+    const additional = path.join(dir, "additional.json")
+    const output = path.join(dir, "out.json")
+    const url = "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip"
+    writeFileSync(input, JSON.stringify([candidate]))
+    writeFileSync(original, JSON.stringify([{ fonte: "tse-historico", escopo: "candidato", alvo: candidate.slug, candidato_id: candidate.id, resultado: "indeterminado", volume: 0, executado_em: "2026-01-01T00:00:00Z" }]))
+    writeFileSync(additional, JSON.stringify({ receipts: [{
+      fonte: "tse-historico", escopo: "candidato", alvo: candidate.slug, candidato_id: candidate.id,
+      resultado: "encontrado", volume: 1, executado_em: new Date().toISOString(), url,
+      detalhe: JSON.stringify({ coverage_proof: {
+        family: "historico_politico", method: "official-source-to-public-readback",
+        source_revisions: [{ year: 2026, url, sha256: "a".repeat(64) }],
+        public_payload_sha256: publicFamilyPayloadSha256(candidate, "historico_politico"),
+        source_rows: 1, public_rows: 1, matched_rows: 1, unmatched_rows: 0, scope_complete: true,
+        identity: { slug: candidate.slug, candidate_id: candidate.id, source_id: "12345" },
+      } }),
+    }] }))
+    const result = spawnSync(process.execPath, ["--import", "tsx", "scripts/audit/audit-cobertura-fichas.ts", "--strict", `--input=${input}`, `--receipts=${original}`, `--receipts-extra=${additional}`, `--out=${output}`], { cwd: path.resolve(import.meta.dirname, ".."), encoding: "utf8" })
+    try {
+      assert.equal(result.status, 1) // outras famílias ainda abertas
+      const matrix = JSON.parse(readFileSync(output, "utf8")) as { cells: Array<{ familia: string; estado: string }> }
+      assert.equal(matrix.cells.find((cell) => cell.familia === "historico_politico")?.estado, "publicado")
+    } finally { rmSync(dir, { recursive: true, force: true }) }
+  })
+
+  it("não publica recibo TSE antigo e não permite escopo amplo fechar a célula", () => {
+    const result = adaptLatestReceipts([
+      { fonte: "tse-current", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2020-01-01T10:00:00Z", resultado: "encontrado", volume: 1 },
+      { fonte: "tse-historico", escopo: "global", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-23T10:00:00Z", resultado: "encontrado", volume: 1 },
+    ], [profile({ partido_sigla: "ABC", situacao_candidatura: "deferido", foto_url: "https://example.test/foto", biografia: "Bio", naturalidade: "SP", data_nascimento: "1980-01-01", formacao: "Direito", profissao_declarada: "Advogada", genero: "F", estado_civil: "Solteira", cor_raca: "branca", historico: [{ cargo: "Deputado Federal" }] })])
+    const matrix = buildCoverageMatrix([profile({ partido_sigla: "ABC", situacao_candidatura: "deferido", foto_url: "https://example.test/foto", biografia: "Bio", naturalidade: "SP", data_nascimento: "1980-01-01", formacao: "Direito", profissao_declarada: "Advogada", genero: "F", estado_civil: "Solteira", cor_raca: "branca", historico: [{ cargo: "Deputado Federal" }] })], [], result.joins)
+    assert.equal(matrix.cells.find((item) => item.familia === "perfil_atual")?.estado, "frescor_indefinido")
+    assert.equal(matrix.cells.find((item) => item.familia === "historico_politico")?.estado, "sem_recibo")
+    assert.equal(result.rejected.length, 1)
+  })
+})

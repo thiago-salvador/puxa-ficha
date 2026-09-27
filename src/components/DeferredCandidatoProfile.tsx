@@ -3,13 +3,16 @@ import type { CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
 import type { PesquisaEleitoralDoCandidato } from "@/lib/pesquisas-eleitorais"
 import { hasWideManualOverlappingSegmentedMandates } from "@/lib/historico-dedupe"
 import { countPartySwitches, hasSameYearPartyReversal } from "@/lib/party-switches"
+import { nivelFonteProcesso } from "@/lib/djen-consulta-url"
+import { estadoValorPatrimonio } from "@/lib/patrimonio-contexto"
 import {
   prepareHistoricoPoliticoPublicDisplayList,
 } from "@/lib/trajetoria-public-display"
 import { DeferredCandidatoProfileClient } from "@/components/DeferredCandidatoProfileClient"
 import type { ProgramaGovernoManifestoPublico } from "@/lib/programa-governo"
 import type { SenadoRunningMatesPayload } from "@/components/SenadoRunningMates"
-import type { CompromissoEvidenciaPublica } from "@/lib/compromisso-evidencia"
+import type { EstadoEvidenciasPrograma } from "@/lib/compromisso-evidencia"
+import type { ProgramaGovernoPendencia } from "@/lib/programa-governo-pendencia"
 
 export function DeferredCandidatoProfile({
   ficha,
@@ -18,6 +21,7 @@ export function DeferredCandidatoProfile({
   pesquisas = [],
   programaGoverno = null,
   compromissoEvidencias,
+  programaPendente = null,
   senadoRunningMates = null,
 }: {
   ficha: FichaCandidato
@@ -25,7 +29,8 @@ export function DeferredCandidatoProfile({
   pesquisasEnabled?: boolean
   pesquisas?: PesquisaEleitoralDoCandidato[]
   programaGoverno?: ProgramaGovernoManifestoPublico | null
-  compromissoEvidencias?: CompromissoEvidenciaPublica[]
+  compromissoEvidencias?: EstadoEvidenciasPrograma
+  programaPendente?: ProgramaGovernoPendencia | null
   senadoRunningMates?: SenadoRunningMatesPayload | null
 }) {
   const historico = ficha.historico ?? []
@@ -64,11 +69,16 @@ export function DeferredCandidatoProfile({
         pesquisas={pesquisas}
         programaGoverno={programaGoverno}
         compromissoEvidencias={compromissoEvidencias}
+        programaPendente={programaPendente}
         senadoRunningMates={senadoRunningMates}
         overview={{
-          processos: ficha.total_processos ?? 0,
+          processos: (ficha.processos ?? []).filter((row) => Boolean(nivelFonteProcesso(row))).length,
+          processosOmitidos: ficha.processos_omitidos_sem_fonte_oficial ?? 0,
           processosVerificacao: ficha.processos_verificacao,
-          patrimonio: patrimonioMaisRecente?.valor_total ?? null,
+          patrimonio:
+            patrimonioMaisRecente && estadoValorPatrimonio(patrimonioMaisRecente) !== "valor_nao_informado"
+              ? patrimonioMaisRecente.valor_total
+              : null,
           mudancas:
             mudancas.length > 0 || ficha.trajetoria_verificacao?.resultado === "vazio_confirmado"
               ? ficha.total_mudancas_partido

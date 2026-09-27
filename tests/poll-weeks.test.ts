@@ -97,15 +97,51 @@ test("missing results keep their denominator and zero is a real observation", ()
   assert.equal(missing.count, 0)
 })
 
-test("different scenarios, candidate lists, electorates and unknown metadata remain separate", () => {
+test("candidate lists and free-text electorates join the weekly series; base and turn stay separate", () => {
   const a = survey("2026-09-08", "A")
   const variants = Array.from({ length: 5 }, (_, index) => survey("2026-09-10", `B${index}`))
-  variants[0].scenario.comparabilityKey += "|validos"
+  variants[0].scenario.comparabilityKey = "2026|Presidente|BR|1|estimulado|teste-abc|votos_validos"
   variants[1].scenario.resultados.pop()
-  variants[2].sample.population.value = "Votos válidos"
+  variants[2].sample.population.value = "Eleitores de 16 anos ou mais em 60 municípios"
   variants[3].sample.population.status = "indeterminado"
   variants[4].scenario.turn = 2
-  for (const variant of variants) assert.equal(groupWeeklyPollSeries([a, variant]).length, 2)
+  variants[4].scenario.comparabilityKey = "2026|Presidente|BR|2|estimulado|teste-abc|total_amostra"
+  assert.equal(groupWeeklyPollSeries([a, variants[0]]).length, 2)
+  assert.equal(groupWeeklyPollSeries([a, variants[4]]).length, 2)
+  for (const variant of variants.slice(1, 4)) assert.equal(groupWeeklyPollSeries([a, variant]).length, 1)
+})
+
+test("published spellings of the total-sample base join the same series", () => {
+  const a = survey("2026-09-08", "A")
+  const b = survey("2026-09-09", "B")
+  const c = survey("2026-09-10", "C")
+  b.scenario.comparabilityKey = "2026|Presidente|BR|1|estimulada|outra-lista|total_entrevistados"
+  c.scenario.comparabilityKey = "2026|Presidente|BR|1|estimulado|lista-c|total"
+  assert.equal(groupWeeklyPollSeries([a, b, c]).length, 1)
+})
+
+test("institutes with different candidate lists average each candidate over the surveys that list them", () => {
+  const a = survey("2026-09-08", "A", [30, 40, 10])
+  const b = survey("2026-09-09", "B", [34, 36])
+  b.registration.code.value = "BR-00002/2026"
+  a.registration.code.value = "BR-00001/2026"
+  const [series] = groupWeeklyPollSeries([a, b])
+  const week = series.weeks.at(-1)!
+  const byCandidate = Object.fromEntries(week.results.map(item => [item.result.candidateSlug, { value: item.value, count: item.count, total: item.total }]))
+  assert.deepEqual(byCandidate["candidate-0"], { value: 32, count: 2, total: 2 })
+  assert.deepEqual(byCandidate["candidate-1"], { value: 38, count: 2, total: 2 })
+  assert.deepEqual(byCandidate["candidate-2"], { value: 10, count: 1, total: 2 })
+})
+
+test("a survey with several stimulated scenarios counts once, with its most complete list", () => {
+  const full = survey("2026-09-08", "A", [30, 40, 10])
+  const reduced = survey("2026-09-08", "A", [35, 45])
+  full.registration.code.value = reduced.registration.code.value = "BR-00003/2026"
+  full.scenario.id = "com-c"; reduced.scenario.id = "sem-c"
+  reduced.id = full.id
+  const [week] = aggregatePollWeeks([reduced, full])
+  assert.equal(week.polls.length, 1)
+  assert.equal(week.polls[0].scenario.id, "com-c")
 })
 
 test("unknown or malformed mode isolates the poll by its own key", () => {
@@ -115,30 +151,65 @@ test("unknown or malformed mode isolates the poll by its own key", () => {
   assert.equal(groupWeeklyPollSeries([a, malformed]).length, 2)
 })
 
-test("Senado agrupa proveniências distintas e separa pergunta ou base incompatível", () => {
+test("Senado faz média entre institutos da mesma medida e separa voto ou base diferente", () => {
   const first = survey("2026-09-08", "A")
   first.office = "Senador"
   first.geography = { type: "estadual", label: "São Paulo", code: "SP" }
   first.scenario.geography = "São Paulo"
-  first.scenario.comparabilityKey = "2026|Senador|SP|1|primeiro-voto|lista-2026|eleitores"
+  first.scenario.comparabilityKey = "2026|Senador|SP|1|primeiro-voto|lista-a|total_amostra"
   first.scenario.question.value = "Em quem você votaria para senador?"
 
-  const comparable = structuredClone(first)
-  comparable.id = "B-2026-09-08"
-  comparable.instituto.value = "B"
-  comparable.provenance.resultUrl = "https://example.org/pesquisa/outra-fonte"
-  comparable.scenario.question.value = "  Em quem voce votaria para senador?  "
-  assert.equal(groupWeeklyPollSeries([first, comparable]).length, 1)
+  const otherInstitute = structuredClone(first)
+  otherInstitute.id = "B-2026-09-10"
+  otherInstitute.instituto.value = "B"
+  otherInstitute.registration.code.value = "SP-00002/2026"
+  otherInstitute.provenance.resultUrl = "https://example.org/pesquisa/outra-fonte"
+  otherInstitute.scenario.comparabilityKey = "2026|Senador|SP|1|primeiro-voto|lista-b|total_amostra"
+  otherInstitute.scenario.question.value = "E se a eleição fosse hoje, qual seria o seu primeiro voto para senador?"
+  otherInstitute.method.value = "Entrevistas telefônicas"
+  const [series] = groupWeeklyPollSeries([first, otherInstitute])
+  assert.equal(groupWeeklyPollSeries([first, otherInstitute]).length, 1)
+  assert.equal(series.weeks.length, 1)
+  assert.deepEqual(series.weeks[0].institutes, ["A", "B"])
 
-  const differentQuestion = structuredClone(comparable)
-  differentQuestion.id = "C-2026-09-08"
-  differentQuestion.scenario.question.value = "Em quem você votaria como primeira escolha para senador?"
-  assert.equal(groupWeeklyPollSeries([first, differentQuestion]).length, 2)
+  const secondVote = structuredClone(otherInstitute)
+  secondVote.id = "C-2026-09-10"
+  secondVote.scenario.comparabilityKey = "2026|Senador|SP|1|segundo-voto|lista-b|total_amostra"
+  assert.equal(groupWeeklyPollSeries([first, secondVote]).length, 2)
 
-  const differentDenominator = structuredClone(comparable)
-  differentDenominator.id = "D-2026-09-08"
-  differentDenominator.sample.population.value = "Votos válidos"
-  assert.equal(groupWeeklyPollSeries([first, differentDenominator]).length, 2)
+  const validVotes = structuredClone(otherInstitute)
+  validVotes.id = "D-2026-09-10"
+  validVotes.scenario.comparabilityKey = "2026|Senador|SP|1|primeiro-voto|lista-b|votos_validos"
+  assert.equal(groupWeeklyPollSeries([first, validVotes]).length, 2)
+
+  const mentions = structuredClone(otherInstitute)
+  mentions.id = "F-2026-09-10"
+  mentions.scenario.comparabilityKey = "2026|Senador|SP|1|agregado|lista-b|total_mencoes"
+  const mentionsA = structuredClone(first)
+  mentionsA.scenario.comparabilityKey = "2026|Senador|SP|1|agregado|lista-a|total_mencoes"
+  assert.equal(groupWeeklyPollSeries([mentionsA, mentions]).length, 1, "menções reduzidas a 100% fazem média entre si")
+  mentionsA.scenario.labelRaw = "rótulo de uma rodada, com Fulano"
+  assert.equal(groupWeeklyPollSeries([mentionsA, mentions])[0].label,
+    "Intenção de voto estimulada para o Senado, primeiro e segundo voto somados e reduzidos a 100%; percentuais do total de menções",
+    "rótulo da série sai de medida e base, não da nota de uma rodada")
+  assert.equal(groupWeeklyPollSeries([first])[0].label, "Intenção de voto estimulada para o Senado, primeiro voto; percentuais do total de entrevistados")
+  const aggregateRespondents = structuredClone(mentions)
+  aggregateRespondents.id = "G-2026-09-10"
+  aggregateRespondents.scenario.comparabilityKey = "2026|Senador|SP|1|agregado|lista-b|total_amostra"
+  assert.equal(groupWeeklyPollSeries([mentionsA, aggregateRespondents]).length, 2, "menções nunca se misturam com total de entrevistados")
+  const governorMentions = structuredClone(first)
+  governorMentions.office = "Governador"
+  governorMentions.scenario.comparabilityKey = "2026|Governador|SP|1|estimulada|lista|total_mencoes"
+  const governor = structuredClone(governorMentions)
+  governor.id = "H-2026-09-10"
+  governor.instituto.value = "H"
+  governor.scenario.comparabilityKey = "2026|Governador|SP|1|estimulada|lista|total_amostra"
+  assert.equal(groupWeeklyPollSeries([governorMentions, governor]).length, 2, "base de menções só existe no Senado")
+
+  const unknownBase = structuredClone(otherInstitute)
+  unknownBase.id = "E-2026-09-10"
+  unknownBase.scenario.comparabilityKey = "2026|Senador|SP|1|primeiro-voto|lista-b|eleitores"
+  assert.equal(groupWeeklyPollSeries([first, unknownBase]).length, 2)
 })
 
 test("unapproved/old surveys are excluded and undated surveys do not join dated weeks", () => {

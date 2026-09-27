@@ -5,12 +5,26 @@ import {
   urlConsultaDjenDeFonte,
   urlConsultaDjenPorCnj,
   urlFonteEPortalJudiciario,
+  urlFonteJudicialEspecifica,
   urlPublicaDoProcesso,
 } from "../src/lib/djen-consulta-url"
 
 const CNJ = "1039971-32.2024.8.26.0002"
 const DIGITOS = "10399713220248260002"
 const PORTAL = `https://comunica.pje.jus.br/consulta?numeroProcesso=${DIGITOS}`
+
+describe("fonte judicial específica para contagem pública", () => {
+  it("aceita CNJ válido e exato no DJEN", () => {
+    assert.equal(urlFonteJudicialEspecifica(PORTAL, CNJ), PORTAL)
+  })
+
+  it("rejeita consulta genérica, CNJ divergente e página institucional", () => {
+    assert.equal(urlFonteJudicialEspecifica("https://comunica.pje.jus.br/consulta", CNJ), null)
+    assert.equal(urlFonteJudicialEspecifica("https://www.tjsp.jus.br/Processos", CNJ), null)
+    assert.equal(urlFonteJudicialEspecifica("https://www.tjsp.jus.br/?utm_source=x", CNJ), null)
+    assert.equal(urlFonteJudicialEspecifica(PORTAL, "0000000-00.2020.0.00.0000"), null)
+  })
+})
 
 describe("urlConsultaDjenPorCnj", () => {
   it("monta o portal humano a partir da máscara CNJ", () => {

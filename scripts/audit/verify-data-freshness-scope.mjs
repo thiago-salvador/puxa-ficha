@@ -54,6 +54,7 @@ const allowed = [
   /^scripts\/audit\/schema-replay-substituicoes\.json$/,
   /^scripts\/data\/(data-freshness-sources|tse-dependent-monitors)\.json$/,
   /^scripts\/lib\/data-freshness\/(candidaturas|divulgacand-current|recommendations|registry|tse-dependent-monitors|tse-source|types)\.ts$/,
+  /^scripts\/data\/data-freshness-sources\.json$/,
   /^scripts\/lib\/destaques-votacoes-provenance\.ts$/,
   /^tests\/data-freshness-(alerts|artifacts|candidaturas|fail-closed|golden|registry|workflow)\.test\.ts$/,
   /^tests\/destaques-votacoes-provenance\.test\.ts$/,

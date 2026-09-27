@@ -25,6 +25,20 @@ function readStoredFollowedCandidateSlugs(): string[] {
   }
 }
 
+/**
+ * A lista de fichas seguidas só é gravada depois que `/api/alerts/me` confirma
+ * uma sessão (verificação, gestão ou botão Seguir) e só é apagada no logout.
+ * A chave presente, mesmo com `[]`, é o sinal de que vale consultar a sessão.
+ */
+export function hasStoredAlertSessionHint(): boolean {
+  if (!hasLocalStorage()) return false
+  try {
+    return window.localStorage.getItem(ALERT_FOLLOWED_CANDIDATES_STORAGE_KEY) !== null
+  } catch {
+    return false
+  }
+}
+
 export function writeStoredFollowedCandidateSlugs(slugs: string[]): void {
   if (!hasLocalStorage()) return
   const nextValue = Array.from(new Set(slugs)).sort((a, b) => a.localeCompare(b, "pt-BR"))

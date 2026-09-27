@@ -15,7 +15,7 @@
 }
 
 .hero::after {
-  background: linear-gradient(135deg, transparent 0 68%, rgba(255, 206, 89, .92) 68% 72%, transparent 72%);
+  background: linear-gradient(135deg, transparent 0 68%, white 68% 72%, transparent 72%);
   content: "";
   inset: 0;
   pointer-events: none;
@@ -23,7 +23,7 @@
 }
 
 .eyebrow {
-  color: #ffce59;
+  color: white;
   font: 700 11px/1.2 var(--font-inter), sans-serif;
   letter-spacing: .13em;
   text-transform: uppercase;

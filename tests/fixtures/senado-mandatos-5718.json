@@ -1,0 +1,93 @@
+{
+  "MandatoParlamentar": {
+    "noNamespaceSchemaLocation": "https://legis.senado.leg.br/dadosabertos/dados/MandatoParlamentarv5.xsd",
+    "Metadados": {
+      "Versao": "23/09/2026 21:05:58",
+      "VersaoServico": "5",
+      "DataVersaoServico": "2021-09-09",
+      "DescricaoDataSet": "Retorna a relação dos Mandatos do Senador informado no parâmetro."
+    },
+    "Parlamentar": {
+      "Codigo": "5718",
+      "Nome": "Eliziane Gama",
+      "Mandatos": {
+        "Mandato": [
+          {
+            "CodigoMandato": "542",
+            "UfParlamentar": "MA",
+            "PrimeiraLegislaturaDoMandato": {
+              "NumeroLegislatura": "56",
+              "DataInicio": "2019-02-01",
+              "DataFim": "2023-01-31"
+            },
+            "SegundaLegislaturaDoMandato": {
+              "NumeroLegislatura": "57",
+              "DataInicio": "2023-02-01",
+              "DataFim": "2027-01-31"
+            },
+            "DescricaoParticipacao": "Titular",
+            "Suplentes": {
+              "Suplente": [
+                {
+                  "DescricaoParticipacao": "1º Suplente",
+                  "CodigoParlamentar": "674",
+                  "NomeParlamentar": "Pedro Fernandes"
+                },
+                {
+                  "DescricaoParticipacao": "2º Suplente",
+                  "CodigoParlamentar": "4979",
+                  "NomeParlamentar": "Bene Camacho"
+                }
+              ]
+            },
+            "Exercicios": {
+              "Exercicio": [
+                {
+                  "CodigoExercicio": "3069",
+                  "DataInicio": "2024-10-17"
+                },
+                {
+                  "CodigoExercicio": "2900",
+                  "DataInicio": "2019-02-01",
+                  "DataFim": "2024-07-16",
+                  "SiglaCausaAfastamento": "AFO",
+                  "DescricaoCausaAfastamento": "Afastamento do exercício"
+                }
+              ]
+            },
+            "Partidos": {
+              "Partido": [
+                {
+                  "CodigoPartido": "557",
+                  "Sigla": "PSD",
+                  "Nome": "Partido Social Democrático",
+                  "DataFiliacao": "2023-01-31"
+                },
+                {
+                  "CodigoPartido": "41",
+                  "Sigla": "CIDADANIA",
+                  "Nome": "CIDADANIA",
+                  "DataFiliacao": "2016-04-04",
+                  "DataDesfiliacao": "2023-01-30"
+                }
+              ]
+            }
+          },
+          {
+            "UfParlamentar": "MA",
+            "PrimeiraLegislaturaDoMandato": {
+              "NumeroLegislatura": "56",
+              "DataInicio": "2019-02-01",
+              "DataFim": "2023-01-31"
+            },
+            "SegundaLegislaturaDoMandato": {
+              "NumeroLegislatura": "57",
+              "DataInicio": "2023-02-01",
+              "DataFim": "2027-01-31"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

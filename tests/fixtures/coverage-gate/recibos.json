@@ -1,0 +1,11 @@
+{
+  "rows": [
+    { "fonte": "tse-current", "escopo": "candidato", "alvo": "ficticia-com-recibos", "candidato_id": "00000000-0000-4000-8000-000000000001", "executado_em": "2026-09-20T10:00:00Z", "resultado": "indeterminado", "volume": 0 },
+    { "fonte": "tse-historico", "escopo": "candidato", "alvo": "ficticia-com-recibos", "candidato_id": "00000000-0000-4000-8000-000000000001", "executado_em": "2026-09-20T10:00:00Z", "resultado": "indeterminado", "volume": 0 },
+    { "fonte": "filiacao", "escopo": "candidato", "alvo": "ficticia-com-recibos", "candidato_id": "00000000-0000-4000-8000-000000000001", "executado_em": "2026-09-20T10:00:00Z", "resultado": "indeterminado", "volume": 0 },
+    { "fonte": "tse-patrimonio", "escopo": "candidato", "alvo": "ficticia-com-recibos", "candidato_id": "00000000-0000-4000-8000-000000000001", "executado_em": "2026-09-20T10:00:00Z", "resultado": "indeterminado", "volume": 0 },
+    { "fonte": "tse-financiamento", "escopo": "candidato", "alvo": "ficticia-com-recibos", "candidato_id": "00000000-0000-4000-8000-000000000001", "executado_em": "2026-09-20T10:00:00Z", "resultado": "indeterminado", "volume": 0 },
+    { "fonte": "processos-curadoria", "escopo": "candidato", "alvo": "ficticia-com-recibos", "candidato_id": "00000000-0000-4000-8000-000000000001", "executado_em": "2026-09-20T10:00:00Z", "resultado": "indeterminado", "volume": 0 },
+    { "fonte": "sites-tse", "escopo": "candidato", "alvo": "ficticia-com-recibos", "candidato_id": "00000000-0000-4000-8000-000000000001", "executado_em": "2026-09-20T10:00:00Z", "resultado": "indeterminado", "volume": 0 }
+  ]
+}

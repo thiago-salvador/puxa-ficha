@@ -1,8 +1,8 @@
 {
-  "version": 4,
-  "baseline_date": "2026-09-18",
-  "scope": "Remedida para o conjunto publicado de 514 fichas, depois da entrada da coorte do Senado 2026. Esta baseline ACEITA divida conhecida; ela nao comprova que a divida foi resolvida. A baseline anterior (v3, 12/09) media 208 fichas e por isso reprovava por tamanho de conjunto, nao por queda de qualidade: a regressao 'perfis publicos 514!=208' ancorava todas as outras. Pendencias que esta baseline registra e NAO resolve, cada uma com acompanhamento proprio: (1) financiamento da coorte do Senado, 48 missing e 255 partial, toda a divida nas 310 fichas novas; (2) posicoes em 10 governadores ja publicados (david-almeida, gabriel-souza, geraldo-carvalho, mateus-simoes, otaviano-pivetta, valmir-de-francisquinho, acm-neto, alvaro-dias-rn, luis-cesar-bueno, raquel-lyra), todos com o mesmo par 'posicoes partial->missing' e 'revisar zero->partial': padrao comum de regressao, causa ainda nao confirmada; (3) leonardo-avalanche, unica queda fora desse padrao, 100->88, com programa na->missing e posicoes na->partial; (4) 292 das 514 fichas servem URL publica com slug de maquina 'tse-2026-<SQ>', todas na coorte nova; impacto em busca e compartilhamento nao medido, sem prioridade atribuida. Saidas do conjunto desde 12/09, todas por decisao registrada: jeremias-cosmo e jose-estevao (indeferidos, 14/09), carlos-jararaca (substituido, migration 20260916140000) e gustavo-henrique (indeferido terminal, migration 20260918120100). 208 - 4 = 204 comparaveis, mais 310 novas = 514.",
-  "public_profiles": 514,
+  "version": 5,
+  "baseline_date": "2026-09-26",
+  "scope": "Remedida para o conjunto publicado de 514 fichas, depois da entrada da coorte do Senado 2026. Esta baseline ACEITA divida conhecida; ela nao comprova que a divida foi resolvida. A baseline anterior (v3, 12/09) media 208 fichas e por isso reprovava por tamanho de conjunto, nao por queda de qualidade: a regressao 'perfis publicos 514!=208' ancorava todas as outras. Pendencias que esta baseline registra e NAO resolve, cada uma com acompanhamento proprio: (1) financiamento da coorte do Senado, 48 missing e 255 partial, toda a divida nas 310 fichas novas; (2) posicoes em 10 governadores ja publicados (david-almeida, gabriel-souza, geraldo-carvalho, mateus-simoes, otaviano-pivetta, valmir-de-francisquinho, acm-neto, alvaro-dias-rn, luis-cesar-bueno, raquel-lyra), todos com o mesmo par 'posicoes partial->missing' e 'revisar zero->partial': padrao comum de regressao, causa ainda nao confirmada; (3) leonardo-avalanche, unica queda fora desse padrao, 100->88, com programa na->missing e posicoes na->partial; (4) 292 das 514 fichas servem URL publica com slug de maquina 'tse-2026-<SQ>', todas na coorte nova; impacto em busca e compartilhamento nao medido, sem prioridade atribuida. Saidas do conjunto desde 12/09, todas por decisao registrada: jeremias-cosmo e jose-estevao (indeferidos, 14/09), carlos-jararaca (substituido, migration 20260916140000) e gustavo-henrique (indeferido terminal, migration 20260918120100). 208 - 4 = 204 comparaveis, mais 310 novas = 514. Atualizacao de 25/09: policial-edjane (Governador SP) saiu do conjunto publicado em 21/09 por indeferimento terminal (#411, status removido, publicavel false), 514 - 1 = 513; as demais contagens desta baseline ficam como estavam, porque a regressao medida em 24/09 foi so o tamanho do conjunto. Atualizacao de 26/09: tse-2026-190002554290 (Senador RJ) saiu do conjunto publicado em 25/09 por indeferimento terminal (Indeferido e inapto no DivulgaCandContas; migration 20260925220000, status removido, publicavel false), 513 - 1 = 512; a ficha que saiu so tinha foto_origem partial. Tres secoes sobem o teto de partial, todas por transicao de na ou missing para partial com dado novo, nenhuma por perda (comparacao celula a celula entre a matriz de 24/09, run 36010547921, e a de 26/09, run 36274356653): destaques 159->169, porque 9 fichas ganharam projetos na ingestao da Camara de 26/09 (projetos na->ok, destaques na->partial: tem projetos, ainda sem curadoria de destaque; tse-2026-100002542867, tse-2026-110002552693, tse-2026-160002547661, tse-2026-210002533584, tse-2026-210002543863, tse-2026-230002549845, tse-2026-240002541931, tse-2026-270002548231, tse-2026-60002542476) e jose-roberto-arruda passou de missing a partial; evolucao 100->101, porque ben-mendes e breno-barcelar ganharam o primeiro ano de bens (bens na->ok, evolucao na->partial: um ano so) e hertz-dias passou de partial a ok; votos 27->28, porque decio-lima passou de n/a a 5/7 votacoes-chave registradas. Destaque partial e divida editorial (curadoria), nao dado a coletar. Transicoes que melhoraram no mesmo intervalo: jose-roberto-arruda votos missing->na; joel-rodrigues destaques e votos missing->zero (projetos missing->zero). Remedicao v5 (26/09): todos os tetos passam ao valor medido na run 36274356653, sem folga, porque os tetos herdados de 18/09 estavam muito acima do real e deixavam passar regressao (partial 952 contra 700 medidos, e 952 era menor que a soma das secoes, 964; missing 236 contra 168; perfis abaixo de 90 194 contra 99; indice minimo 63 contra 74; financiamento 255 partial e 48 missing contra 0; redes 23 missing contra 14). total_missing e total_partial agora sao exatamente a soma das secoes; secao ausente dos mapas tem teto 0 (financiamento e gastos partial, por exemplo); min_score 74 e piso; numero_urna entra na lista de secoes obrigatorias, como no relatorio. Da lista de pendencias de 18/09, a (1) fechou: financiamento mede 0 missing e 0 partial em 26/09; as demais nao foram remedidas aqui.",
+  "public_profiles": 512,
   "sections": [
     "alertas",
     "bens",
@@ -20,6 +20,7 @@
     "gastos",
     "legexec",
     "noticias",
+    "numero_urna",
     "partidos",
     "patrimonio",
     "posicoes",
@@ -31,30 +32,28 @@
     "sancoes",
     "votos"
   ],
-  "total_missing": 236,
-  "total_partial": 952,
+  "total_missing": 168,
+  "total_partial": 700,
   "missing_by_section": {
-    "gastos": 6,
+    "gastos": 2,
     "legexec": 22,
-    "posicoes": 116,
-    "votos": 11,
-    "redes": 23,
-    "projetos": 3,
-    "destaques": 3,
+    "posicoes": 115,
+    "votos": 9,
+    "projetos": 1,
+    "destaques": 1,
     "programa": 4,
-    "financiamento": 48
+    "redes": 14
   },
   "partial_by_section": {
-    "destaques": 159,
-    "revisar": 34,
+    "destaques": 169,
+    "revisar": 33,
     "posicoes": 87,
-    "votos": 27,
-    "financiamento": 255,
-    "evolucao": 100,
-    "projetos": 34,
+    "votos": 28,
+    "evolucao": 101,
+    "projetos": 28,
     "legexec": 30,
-    "foto_origem": 226
+    "foto_origem": 224
   },
-  "min_score": 63,
-  "profiles_below_90": 194
+  "min_score": 74,
+  "profiles_below_90": 99
 }

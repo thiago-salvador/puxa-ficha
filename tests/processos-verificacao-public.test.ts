@@ -40,4 +40,6 @@ test("não publica URL fora da allowlist nem parâmetro CPF e redige valor em de
 test("recusa linha de outra fonte ou timestamp inválido", () => {
   assert.equal(projectProcessosVerificacaoRow({ fonte: "sancoes", resultado: "encontrado", executado_em: "2026-09-15T00:00:00Z" }), null)
   assert.equal(projectProcessosVerificacaoRow({ fonte: "processos-curadoria", resultado: "encontrado", executado_em: "invalid" }), null)
+  assert.equal(projectProcessosVerificacaoRow({ fonte: "processos-curadoria", resultado: "vazio_confirmado", executado_em: "2099-01-01T00:00:00Z", escopo: "DJEN" }), null)
+  assert.equal(projectProcessosVerificacaoRow({ fonte: "processos-curadoria", resultado: "vazio_confirmado", executado_em: "2026-09-15T00:00:00Z" }), null)
 })

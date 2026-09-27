@@ -25,7 +25,13 @@ import { sanitizePublicText } from "@/lib/public-text"
 import { buildFinancingComposition } from "@/lib/financiamento-display"
 import { formatarStatusSigilo, groupGastosExecutivoPorOrgao, rotuloFonteGastosExecutivo, rotuloUnidadeGestora, type GastoExecutivoOrgaoResumo, type SigiloStatus } from "@/lib/gastos-executivo-display"
 import type { SuggestAction } from "./candidato-profile-section-types"
-import { patrimonioContextoLabel, patrimonioPorAnoSemAmbiguidade } from "@/lib/patrimonio-contexto"
+import {
+  estadoValorPatrimonio,
+  patrimonioContextoLabel,
+  patrimonioPorAnoSemAmbiguidade,
+  patrimonioTemValorComparavel,
+  patrimonioValorEstadoLabel,
+} from "@/lib/patrimonio-contexto"
 
 const GASTOS_ESTRUTURA_GOVERNO_ANCHOR_ID = "gastos-estrutura-governo"
 
@@ -393,6 +399,14 @@ function PatrimonioEleicaoSemDadoRow({
  * O desenho é o mesmo do cabeçalho dos cards de financiamento: rótulo do pleito
  * à esquerda, valor em destaque à direita.
  */
+/** Total do cartão: zero degenerado ganha rótulo em vez de "R$ 0". */
+function formatPatrimonioTotal(patrimonio: Patrimonio): string {
+  const estado = estadoValorPatrimonio(patrimonio)
+  if (estado === "valor_nao_informado") return patrimonioValorEstadoLabel(estado) ?? "Valor não informado"
+  const rotulo = patrimonioValorEstadoLabel(estado)
+  return rotulo ? `${formatBRL(patrimonio.valor_total)} · ${rotulo}` : formatBRL(patrimonio.valor_total)
+}
+
 function PatrimonioValorCard({ patrimonio }: { patrimonio: Patrimonio }) {
   return (
     <div
@@ -411,7 +425,7 @@ function PatrimonioValorCard({ patrimonio }: { patrimonio: Patrimonio }) {
         </p>
       </div>
       <span className="shrink-0 text-[24px] font-bold tabular-nums tracking-tight text-foreground sm:text-right sm:text-[length:var(--text-heading)]">
-        {formatBRL(patrimonio.valor_total)}
+        {formatPatrimonioTotal(patrimonio)}
       </span>
     </div>
   )
@@ -716,6 +730,8 @@ export function MoneyTabSection({
     (eleicao) => eleicao.estado !== "publicado" || eleicao.contextos?.some((contexto) => contexto.estado === "vazio_confirmado"),
   )
   const patrimonioSerieAnual = patrimonioPorAnoSemAmbiguidade(patrimonio)
+  // Gráfico só com valores comparáveis; a contagem vem depois do filtro.
+  const patrimonioSerieComparavel = patrimonioSerieAnual.filter((item) => patrimonioTemValorComparavel(item))
   const patrimonioContagemPorAno = patrimonio.reduce((acc, row) => {
     acc.set(row.ano_eleicao, (acc.get(row.ano_eleicao) ?? 0) + 1)
     return acc
@@ -747,7 +763,10 @@ export function MoneyTabSection({
           <div className="mt-4">
             <DataFreshnessNotice info={freshness?.patrimonio} />
           </div>
-          <PatrimonioEvolucaoAlerta patrimonio={patrimonioSerieAnual} className="mt-4" />
+          <PatrimonioEvolucaoAlerta
+            patrimonio={patrimonioSerieComparavel}
+            className="mt-4"
+          />
           {patrimonioAnosComMultiplasDeclaracoes.length > 0 && (
             <NoticePanel
               data-pf-patrimonio-contextos-separados={patrimonioAnosComMultiplasDeclaracoes.join(",")}
@@ -757,10 +776,10 @@ export function MoneyTabSection({
               description={`O gráfico não combina candidaturas distintas em ${patrimonioAnosComMultiplasDeclaracoes.join(", ")}. Esses anos estão detalhados separadamente nos cartões abaixo.`}
             />
           )}
-          {patrimonioSerieAnual.length > 1 && (
+          {patrimonioSerieComparavel.length > 1 && (
             <div className="mt-6">
               <PatrimonioChart
-                data={patrimonioSerieAnual.map((item) => ({
+                data={patrimonioSerieComparavel.map((item) => ({
                   id: item.id,
                   ano: item.ano_eleicao,
                   valor: item.valor_total,
@@ -791,7 +810,7 @@ export function MoneyTabSection({
                   ) : (
                     <ExpandableCard
                       title={patrimonioContextoLabel(item)}
-                      valor={formatBRL(item.valor_total)}
+                      valor={formatPatrimonioTotal(item)}
                       defaultOpen={
                         index === 0 ||
                         expandAllForAudit ||
@@ -813,7 +832,9 @@ export function MoneyTabSection({
                               </p>
                             </div>
                             <span className="ml-3 shrink-0 text-[length:var(--text-body)] font-bold tabular-nums text-foreground">
-                              {formatBRL(bem.valor)}
+                              {bem.valor === 0 && estadoValorPatrimonio(item) === "valor_nao_informado"
+                                ? "Valor não informado"
+                                : formatBRL(bem.valor)}
                             </span>
                           </div>
                         ))}
@@ -1016,7 +1037,7 @@ export function MoneyTabSection({
         financiamentoEleicoesSemDado.length === 0 &&
         patrimonio.length > 0 && <EmptyState {...getFinanciamentoEmptyState()} />}
 
-      {(gastos.length > 0 || freshness?.gastos_parlamentares?.status === "not_applicable") && (
+      {(gastos.length > 0 || freshness?.gastos_parlamentares?.status === "not_applicable" || freshness?.gastos_parlamentares?.status === "stale") && (
         <div>
           <SectionLabel>Gastos parlamentares</SectionLabel>
           <SectionTitle>Uso da cota parlamentar (<GlossaryTerm term="CEAP" />)</SectionTitle>
@@ -1042,6 +1063,11 @@ export function MoneyTabSection({
                 }
               >
                 <div className="space-y-4">
+                  {gasto.ano === 2026 && gasto.coletado_em && (
+                    <p data-pf-money-consultado-em={gasto.coletado_em} className="text-[length:var(--text-caption)] text-muted-foreground">
+                      Consulta à fonte oficial em {formatDate(gasto.coletado_em)}. O total de 2026 pode mudar.
+                    </p>
+                  )}
                   {(gasto.detalhamento ?? []).length > 0 && (
                     <HorizontalBars
                       items={(gasto.detalhamento ?? []).map((item) => ({

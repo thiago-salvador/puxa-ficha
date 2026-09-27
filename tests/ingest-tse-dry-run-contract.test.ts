@@ -433,6 +433,19 @@ test("patrimônio reconcilia legado somente quando há um contexto e conteúdo i
     valorTotal: 100,
     bens,
   }), { action: "update_legacy", id: "legacy-1", expectedTotal: 100, expectedBens: [{ valor: 100, descricao: "Conta", tipo: "Aplicação" }] })
+  const reordered = [bens[0], { tipo: "Veículo", descricao: "Carro", valor: 200 }]
+  assert.equal(decidePatrimonioLegacyReconciliation({
+    contextCount: 1,
+    legacyRows: [{ id: "legacy-2", valor_total: 300, bens: [...reordered].reverse() }],
+    valorTotal: 300,
+    bens: reordered,
+  }).action, "update_legacy")
+  assert.equal(decidePatrimonioLegacyReconciliation({
+    contextCount: 1,
+    legacyRows: [{ id: "legacy-2", valor_total: 300, bens: [bens[0], bens[0]] }],
+    valorTotal: 300,
+    bens: reordered,
+  }).action, "block")
   assert.match(decidePatrimonioLegacyReconciliation({
     contextCount: 2,
     legacyRows: [{ id: "legacy-1", valor_total: 100, bens }],

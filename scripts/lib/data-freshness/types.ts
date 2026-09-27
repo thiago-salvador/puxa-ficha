@@ -20,6 +20,16 @@ export interface FreshnessSource {
   evidence_ref: string
   stale_policy: "show_with_warning" | "suppress_negative_claims" | "review_required"
   negative_claims_allowed_when_stale: false
+  /**
+   * Erro em parte dos alvos da execução mais recente de uma fonte scheduled.
+   * Ausente: qualquer erro vira source_error. "technical_debt": o erro parcial
+   * até partial_error_max_ratio dos alvos fica visível como dívida sem
+   * bloquear; acima do teto ou em todos os alvos continua source_error, e
+   * evidência além de max_age_hours continua stale.
+   */
+  partial_error_policy?: "technical_debt"
+  /** Fração máxima de alvos com erro tolerada pela política (0 < teto < 1). */
+  partial_error_max_ratio?: number
 }
 
 export type RelevantOffice =

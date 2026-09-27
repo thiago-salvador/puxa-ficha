@@ -1,6 +1,7 @@
 import { supabase } from "./supabase"
 import { loadCandidatos } from "./helpers"
 import { getExplicitCohort } from "./cohort-context"
+import { aplicarCoorteAtualizacao } from "./coorte-atualizacao"
 import type { CandidatoConfig } from "./types"
 
 export async function resolveCandidatoId(slug: string): Promise<string | null> {
@@ -19,6 +20,7 @@ export async function resolveCandidatoId(slug: string): Promise<string | null> {
  * (`data/candidatos.json`) continua cobrindo os dois mundos.
  */
 export async function slugsPublicos(): Promise<Set<string>> {
+  // coorte-atualizacao: isento (conjunto do que está no ar; loadCandidatosPublicos aplica o predicado)
   const { data, error } = await supabase.from("candidatos_publico").select("slug")
   if (error) throw new Error(`candidatos_publico: ${error.message}`)
   return new Set((data ?? []).map((linha) => linha.slug as string))
@@ -29,12 +31,18 @@ export async function slugsPublicos(): Promise<Set<string>> {
  * função a `loadCandidatos()` em ingest/enrich: o seed inclui registros
  * fora do ar (ex.: presidenciais arquivados com gêmeo ativo), que não devem
  * receber coleta.
+ *
+ * Também aplica a coorte de atualização (scripts/lib/coorte-atualizacao.ts):
+ * ficha com atualização encerrada depois do turno continua no ar, mas não
+ * recebe mais coleta. Vale inclusive para a coorte explícita.
  */
 export async function loadCandidatosPublicos(): Promise<CandidatoConfig[]> {
   const explicit = getExplicitCohort()
-  if (explicit) return [...explicit]
+  // coorte-atualizacao: aplica
+  if (explicit) return aplicarCoorteAtualizacao([...explicit], "coorte-explicita")
   const publicos = await slugsPublicos()
-  return loadCandidatos().filter((candidato) => publicos.has(candidato.slug))
+  // coorte-atualizacao: aplica
+  return aplicarCoorteAtualizacao(loadCandidatos().filter((candidato) => publicos.has(candidato.slug)), "ingest")
 }
 
 /**
@@ -45,6 +53,7 @@ export async function loadVerificacaoCampos(
   slugs: string[]
 ): Promise<Map<string, Record<string, unknown> | null>> {
   if (slugs.length === 0) return new Map()
+  // coorte-atualizacao: isento (lookup de metadado por slugs já selecionados pela rotina ativa)
   const { data, error } = await supabase
     .from("candidatos")
     .select("slug, verificacao_campos")
@@ -92,6 +101,7 @@ export async function loadCandidatosCohortNaoPublica(
   }
   const sqs = [...new Set(selection.sqs.map((sq) => String(sq).trim()).filter(Boolean))]
   if (sqs.length !== selection.sqs.length) throw new Error("coorte inválida: SQ vazio ou duplicado")
+  // coorte-atualizacao: aplica (candidatura com atualização encerrada reprova a seleção abaixo)
   const query = supabase
     .from("candidatos")
     .select("id,slug,nome_completo,nome_urna,cargo_disputado,estado,publicavel,sq_candidato_2026,situacao_candidatura")
@@ -105,11 +115,16 @@ export async function loadCandidatosCohortNaoPublica(
   if (loaded.size !== sqs.length || rows.length !== sqs.length) {
     throw new Error(`coorte não pública incompleta ou ambígua: esperados ${sqs.length}, recebidos ${rows.length}`)
   }
+  // coorte-atualizacao: isento (verifica exposição pública só dos SQs explicitamente pedidos)
   const publicQuery = supabase.from("candidatos_publico").select("slug").in("slug", rows.map((row) => row.slug))
   const { data: publicRows, error: publicError } = await publicQuery
   if (publicError) throw new Error(`coorte pública: ${publicError.message}`)
   if ((publicRows ?? []).length > 0) throw new Error("coorte inválida: SQ já exposto em candidatos_publico")
   const terminal = new Set(["CANCELADO", "FALECIDO", "INDEFERIDO", "RENÚNCIA", "RENUNCIA", "PEDIDO NÃO CONHECIDO", "PEDIDO NAO CONHECIDO"])
+  const naCoorte = await aplicarCoorteAtualizacao(rows, "coorte-nao-publica")
+  if (naCoorte.length !== rows.length) {
+    throw new Error("coorte inválida: seleção inclui candidatura com atualização encerrada após o turno")
+  }
   for (const row of rows) {
     if (row.cargo_disputado !== "Senador" || !row.estado || !/^[A-Z]{2}$/.test(row.estado) || (selection.ufs?.length && !selection.ufs.includes(row.estado))) {
       throw new Error(`coorte inválida: cargo/UF divergente para ${row.sq_candidato_2026 ?? row.slug}`)

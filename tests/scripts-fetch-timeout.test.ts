@@ -17,7 +17,8 @@ const SCRIPTS = fileURLToPath(new URL("../scripts/", import.meta.url))
  * fora de propósito: rodam com alguém olhando, e quem está olhando dá Ctrl-C.
  */
 const COLETORES_DE_PIPELINE = [
-  "lib/ingest-jarbas.ts",
+  "lib/ingest-ceaps-senado.ts",
+  "lib/ingest-partidos-parlamentares.ts",
   "lib/ingest-capag.ts",
   "lib/enrich-instagram.ts",
   "lib/programas-governo-extracao.ts",

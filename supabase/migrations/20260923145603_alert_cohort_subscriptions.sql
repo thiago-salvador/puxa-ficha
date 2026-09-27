@@ -21,7 +21,8 @@ CREATE INDEX alert_cohort_subscriptions_subscriber
   ON public.alert_cohort_subscriptions (subscriber_id, created_at DESC);
 
 ALTER TABLE public.alert_cohort_subscriptions ENABLE ROW LEVEL SECURITY;
-REVOKE ALL ON public.alert_cohort_subscriptions FROM anon, authenticated;
+-- Default privileges on public tables can include UPDATE for service_role.
+REVOKE ALL ON public.alert_cohort_subscriptions FROM PUBLIC, anon, authenticated, service_role;
 GRANT SELECT, INSERT, DELETE ON public.alert_cohort_subscriptions TO service_role;
 
 -- O lock no assinante serializa inserções concorrentes para o mesmo limite.

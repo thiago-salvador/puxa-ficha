@@ -89,7 +89,11 @@ test("inventario preserva a cobertura base e reconcilia todos os alvos do catál
     .filter((file) => /^nominal-.*-manifesto\.json$/.test(file))
     .flatMap((file) => (JSON.parse(readFileSync(evidenceDir + file, "utf8")) as { source_id: string }[])
       .map((row) => row.source_id)))
-  assert.equal(publishedSources.length, 32 + nominalSources.size)
+  // Manually audited single-round reviews are not monitor targets and stay out of the adapter inventory.
+  const manualReviews = new Set(["scripts/data/pesquisas-eleitorais-fontes.json", "scripts/data/pesquisas-governadores-fontes.json"]
+    .flatMap((path) => (JSON.parse(readFileSync(path, "utf8")) as { sources: { id: string; review?: { reviewer?: string } }[] }).sources)
+    .filter((source) => source.review?.reviewer === "revisão manual auditada").map((source) => source.id))
+  assert.equal(publishedSources.filter((id) => !manualReviews.has(id)).length, 32 + nominalSources.size)
   for (const sourceId of [
     ...adapterSources,
     ...nominalSources,

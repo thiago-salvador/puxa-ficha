@@ -21,14 +21,17 @@ import {
   resolveCargoDisputadoProveniencia,
 } from "@/lib/candidatura-proveniencia"
 import { anosDePleitoDisputado } from "@/lib/pleitos-disputados"
+import { gastoParlamentarEmRevisao } from "@/lib/gastos-parlamentares-em-revisao"
 import { buildFinanciamentoEleicoes } from "@/lib/financiamento-eleicoes"
 import { publicDoadorRecorrente } from "@/lib/doador-recorrente-publico"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
+import { nivelFonteProcesso } from "@/lib/djen-consulta-url"
 import { pareceNomeDeInstituicao } from "@/lib/formacao-display"
 import { sanitizePublicText } from "@/lib/public-text"
 import { formatProcessSummaryLabel } from "@/lib/ui-labels"
 import { prepareHistoricoPoliticoPublicDisplayList } from "@/lib/trajetoria-public-display"
 import { normalizeFotoCredito } from "@/lib/foto-credito"
+import { nextPublicNewsCursor } from "@/lib/news/news-cursor"
 import {
   maskDocumentLikeSequences,
   sanitizeFontePublica,
@@ -145,7 +148,8 @@ export function humanizarDetalheAusenciaPatrimonio(detalhe: string | null | unde
   if (!detalhe) return detalhe ?? null
   if (/ST[_\s]?DECLARAR[_\s]?BENS\s*[=:]\s*S\b/i.test(detalhe)) return detalhe
   const declaracaoNegativa = /ST[_\s]?DECLARAR[_\s]?BENS\s*[=:]\s*N\b/i.test(detalhe)
-  const identidade = /SQ[_\s]?CANDIDATO/i.test(detalhe)
+  // Duas redações de identidade nos recibos: "SQ_CANDIDATO" e "este sequencial".
+  const identidade = /SQ[_\s]?CANDIDATO|\bsequencial\b/i.test(detalhe)
   const semBem = /(?:não|nao|sem|nenhum)[^.;,]*(?:bem(?:es)?|bens|patrim[oô]nio)/i.test(detalhe)
   if (!declaracaoNegativa || !identidade || !semBem) return detalhe
   return "Nenhum registro de bens foi localizado para esta candidatura no arquivo oficial consultado. Isso não comprova ausência de patrimônio nem de declaração."
@@ -356,6 +360,7 @@ function publicVoto(row: VotoCandidato, index: number) {
           descricao: maskDocumentLikeSequences(row.votacao.descricao),
           data_votacao: row.votacao.data_votacao,
           casa: row.votacao.casa,
+          votacao_id_api: row.votacao.votacao_id_api ?? null,
           tema: row.votacao.tema,
           impacto_popular: row.votacao.impacto_popular,
           proposicao_id: row.votacao.proposicao_id ?? null,
@@ -377,6 +382,7 @@ function publicProcesso(row: Processo, index: number) {
     gravidade: row.gravidade,
     fonte: row.fonte ?? null,
     url_fonte: row.url_fonte ?? null,
+    fonte_nivel: row.fonte_nivel ?? null,
   }
 }
 
@@ -403,6 +409,7 @@ function publicPontoAtencao(row: PontoAtencao, index: number) {
 function publicProjetoLei(row: ProjetoLei, index: number) {
   return {
     id: compactPublicId("pl", row.id, index),
+    casa: casaParlamentarDaFonte(row.fonte),
     tipo: row.tipo,
     numero: row.numero,
     ano: row.ano,
@@ -414,6 +421,14 @@ function publicProjetoLei(row: ProjetoLei, index: number) {
     destaque_motivo: maskNullableText(row.destaque_motivo),
     coverage_id: row.coverage_id ?? null,
   }
+}
+
+function casaParlamentarDaFonte(fonte: string | null | undefined): "camara" | "senado" | null {
+  if (typeof fonte !== "string") return null
+  const normalized = fonte.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase()
+  if (/\bsenado\b/.test(normalized)) return "senado"
+  if (/\bcamara\b/.test(normalized)) return "camara"
+  return null
 }
 
 function publicLegislacaoMetadata(metadata: Record<string, unknown> | null | undefined) {
@@ -451,7 +466,7 @@ function publicLegislacaoMandatoExecutivo(row: LegislacaoMandatoExecutivo, index
  * `vlrDocumento`, nem por documento menos glosa, e o banco é sempre maior. Direção sistemática
  * assim é base de agregação diferente, e não sabemos qual é a certa.
  *
- * São 165 linhas em 22 fichas. Mostrar número sobre dinheiro público que não bate com a fonte
+ * Mostrar número sobre dinheiro público que não bate com a fonte
  * que a própria ficha cita é pior do que não mostrar: a regra do projeto proíbe exibir valor
  * sem fonte rastreável, e não proíbe omitir a seção. Nenhuma linha foi apagada do banco.
  *
@@ -460,11 +475,71 @@ function publicLegislacaoMandatoExecutivo(row: LegislacaoMandatoExecutivo, index
  * de glosa), o hash do snapshot anual e um controle positivo que reproduza o
  * resultado ao centavo.
  */
-function linhaCamaraComSnapshotValidado(detalhamento: unknown): boolean {
+function linhaCamaraComSnapshotValidado(detalhamento: unknown, expectedRowYear?: number, rowTotal?: number): boolean {
   if (!detalhamento || typeof detalhamento !== "object" || Array.isArray(detalhamento)) return false
   const provenance = (detalhamento as Record<string, unknown>).proveniencia
   if (!provenance || typeof provenance !== "object" || Array.isArray(provenance)) return false
   const p = provenance as Record<string, unknown>
+  if (p.tipo === "camara-cota-csv") {
+    const revisions = p.source_revisions
+    const years = p.years
+    const provenanceYear = p.ano
+    const sourceRows = p.source_rows
+    const id = p.id_camara
+    const identity = p.identity_field
+    const rowRevision = Array.isArray(revisions)
+      ? revisions.find((revision) => revision && typeof revision === "object" && (revision as Record<string, unknown>).year === provenanceYear)
+      : undefined
+    const revision = rowRevision && typeof rowRevision === "object" ? rowRevision as Record<string, unknown> : null
+    const url = revision && typeof revision.url === "string" ? revision.url : ""
+    const hash = revision && typeof revision.sha256 === "string" ? revision.sha256 : ""
+    const expectedYears = Array.from({ length: 2026 - 2008 + 1 }, (_, index) => 2008 + index)
+    const exactYears = Array.isArray(years) && years.length === expectedYears.length &&
+      years.every((year, index) => year === expectedYears[index])
+    const exactRevisions = Array.isArray(revisions) && revisions.length === expectedYears.length &&
+      revisions.every((item, index) => {
+        if (!item || typeof item !== "object" || Array.isArray(item)) return false
+        const annual = item as Record<string, unknown>
+        return annual.year === expectedYears[index] &&
+          annual.url === `https://www.camara.leg.br/cotas/Ano-${expectedYears[index]}.csv.zip` &&
+          typeof annual.sha256 === "string" && /^[0-9a-f]{64}$/i.test(annual.sha256)
+      })
+    // O arquivo do ano corrente pode ser parcial sem invalidar os anos fechados.
+    // A declaração de cobertura precisa particionar a série de revisões, sem
+    // deixar ano sem estado ou marcar um ano simultaneamente completo e parcial.
+    // O ano parcial também é exibível: é o total oficial do arquivo na data da
+    // consulta, e a ficha já rotula 2026 com essa data e o aviso de que muda.
+    // Só 2026 pode ser parcial: é o único ano que a ficha rotula como
+    // consulta datada. Declaração presente precisa ser coerente, mesmo com
+    // `scope_complete: true`.
+    const completeYears = p.complete_years
+    const partialYears = p.partial_years
+    const coverageDeclared = completeYears !== undefined || partialYears !== undefined
+    const declaredCoverage = Array.isArray(completeYears) && Array.isArray(partialYears) &&
+      partialYears.every((year) => year === 2026) &&
+      [...completeYears, ...partialYears].length === expectedYears.length &&
+      [...completeYears, ...partialYears].every((year) => Number.isInteger(year) && expectedYears.includes(year as number)) &&
+      new Set([...completeYears, ...partialYears]).size === expectedYears.length &&
+      (completeYears.includes(provenanceYear) || partialYears.includes(provenanceYear)) &&
+      p.scope_complete === (partialYears.length === 0)
+    const categories = (detalhamento as Record<string, unknown>).categorias
+    const categoryTotal = Array.isArray(categories) ? categories.reduce((sum, item) => {
+      if (!item || typeof item !== "object" || Array.isArray(item)) return Number.NaN
+      const value = (item as Record<string, unknown>).valor
+      return typeof value === "number" && Number.isFinite(value) ? sum + Math.round(value * 100) : Number.NaN
+    }, 0) : Number.NaN
+    // Ano com líquido zero ou negativo no CSV é só estorno lançado depois do
+    // mandato; exibir como "gasto do ano" confundiria. A linha fica no banco.
+    return (coverageDeclared ? declaredCoverage : p.scope_complete === true) && exactYears && exactRevisions &&
+      Number.isInteger(expectedRowYear) && expectedRowYear === provenanceYear &&
+      Number(expectedRowYear) >= 2008 && Number(expectedRowYear) <= 2026 &&
+      Number.isFinite(rowTotal) && Number(rowTotal) > 0 && categoryTotal === Math.round(Number(rowTotal) * 100) &&
+      Number.isInteger(sourceRows) && Number(sourceRows) > 0 &&
+      Number.isInteger(id) && Number(id) > 0 && identity === "ideCadastro" &&
+      Boolean(revision) && revision?.year === provenanceYear &&
+      url === `https://www.camara.leg.br/cotas/Ano-${provenanceYear}.csv.zip` &&
+      /^[0-9a-f]{64}$/i.test(hash)
+  }
   const url = typeof p.fonte_url === "string" ? p.fonte_url : ""
   const hash = typeof p.consulta_snapshot_sha256 === "string" ? p.consulta_snapshot_sha256 : ""
   const id = p.id_camara
@@ -479,12 +554,14 @@ function linhaCamaraComSnapshotValidado(detalhamento: unknown): boolean {
 export function gastoParlamentarExibivel(
   fonte: string | null | undefined,
   detalhamento?: unknown,
+  rowYear?: number,
+  rowTotal?: number,
 ): boolean {
   const f = (fonte ?? "").toLowerCase()
   // O coletor individual da Transparência é materializado para auditoria e
   // recibos, mas suas famílias (cartões, viagens e contratos) não são cota
   // parlamentar e não podem aparecer como total financeiro parlamentar.
-  if (f.includes("camara") || f.includes("câmara")) return linhaCamaraComSnapshotValidado(detalhamento)
+  if (f.includes("camara") || f.includes("câmara")) return linhaCamaraComSnapshotValidado(detalhamento, rowYear, rowTotal)
   return !f.includes("portal da transparência")
 }
 
@@ -500,8 +577,10 @@ function publicGastosParlamentares(row: FichaCandidato["gastos_parlamentares"][n
 
   return {
     id: compactPublicId("gasto", row.id, index),
+    casa: casaParlamentarDaFonte(row.fonte),
     ano: row.ano,
     total_gasto: row.total_gasto,
+    coletado_em: row.coletado_em ?? null,
     detalhamento: detalhamento.map((item) => ({
       categoria: typeof item.categoria === "string" ? item.categoria : "",
       valor: typeof item.valor === "number" ? item.valor : Number(item.valor) || 0,
@@ -691,6 +770,15 @@ function publicSocialLinks(value: Record<string, unknown> | null | undefined) {
 
 export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
   const cargoProveniencia = resolveCargoDisputadoProveniencia(ficha)
+  const gastosParlamentaresPublicos = (ficha.gastos_parlamentares ?? []).filter((row) =>
+    !gastoParlamentarEmRevisao(ficha.slug, row.ano),
+  )
+  const processosBrutos = ficha.processos ?? []
+  const processosPublicos = processosBrutos.flatMap((row) => {
+    const fonte_nivel = nivelFonteProcesso(row)
+    return fonte_nivel ? [{ ...row, fonte_nivel }] : []
+  })
+  const processosOmitidos = (ficha.processos_omitidos_sem_fonte_oficial ?? 0) + processosBrutos.length - processosPublicos.length
 
   return {
     id: ficha.id,
@@ -757,7 +845,8 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
     doadores_recorrentes:
       ficha.doadores_recorrentes == null ? null : ficha.doadores_recorrentes.map(publicDoadorRecorrente),
     votos: (ficha.votos ?? []).map(publicVoto),
-    processos: (ficha.processos ?? []).map(publicProcesso),
+    processos: processosPublicos.map(publicProcesso),
+    processos_omitidos_sem_fonte_oficial: processosOmitidos,
     pontos_atencao: (ficha.pontos_atencao ?? []).map(publicPontoAtencao),
     projetos_lei: (ficha.projetos_lei ?? []).map(publicProjetoLei),
     projetos_lei_total: ficha.projetos_lei_total ?? (ficha.projetos_lei ?? []).length,
@@ -773,6 +862,7 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
     // Linhas de fonte Câmara (rodada 4): a assinatura do corte se verifica
     // contra ESTA dimensão, nunca contra o total global.
     projetos_lei_camara_total: ficha.projetos_lei_camara_total ?? null,
+    projetos_lei_senado_total: ficha.projetos_lei_senado_total ?? null,
     legislacao_mandato_executivo: (ficha.legislacao_mandato_executivo ?? []).map(
       publicLegislacaoMandatoExecutivo
     ),
@@ -781,16 +871,19 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
       (ficha.legislacao_mandato_executivo ?? []).length,
     legislacao_mandato_executivo_truncados:
       ficha.legislacao_mandato_executivo_truncados ?? false,
-    gastos_parlamentares: (ficha.gastos_parlamentares ?? [])
-      .filter((row) => gastoParlamentarExibivel(row.fonte, row.detalhamento))
+    gastos_parlamentares: gastosParlamentaresPublicos
+      .filter((row) => gastoParlamentarExibivel(row.fonte, row.detalhamento, row.ano, row.total_gasto))
       .map(publicGastosParlamentares),
-    transparencia: publicTransparencia(ficha.gastos_parlamentares ?? [], ficha.transparencia ?? []),
+    transparencia: publicTransparencia(gastosParlamentaresPublicos, ficha.transparencia ?? []),
     gastos_executivo: (ficha.gastos_executivo ?? []).map(publicGastosExecutivo),
     sancoes_administrativas: (ficha.sancoes_administrativas ?? []).map(publicSancao),
     noticias: (ficha.noticias ?? []).map(publicNoticia),
+    // A prévia sai com IDs compactos, então a continuação vem pronta daqui,
+    // montada com o ID real da última notícia exibida.
+    noticias_cursor: nextPublicNewsCursor(ficha.noticias ?? []),
     indicadores_estaduais: (ficha.indicadores_estaduais ?? []).map(publicIndicador),
-    total_processos: ficha.total_processos,
-    processos_criminais: (ficha.processos ?? []).filter(
+    total_processos: processosPublicos.length,
+    processos_criminais: processosPublicos.filter(
       processoPodeContarComoCriminal,
     ).length,
     total_mudancas_partido: ficha.total_mudancas_partido,

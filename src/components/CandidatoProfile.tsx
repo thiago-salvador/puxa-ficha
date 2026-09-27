@@ -1,6 +1,6 @@
 "use client"
 
-// cspell:words atribuidas
+// cspell:words atribuidas representacoes etica variacao
 
 import { memo, useCallback, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react"
 import dynamic from "next/dynamic"
@@ -10,7 +10,8 @@ import type {
   ProgramaGovernoApiResponse,
   ProgramaGovernoManifestoPublico,
 } from "@/lib/programa-governo"
-import { teveMandatoNoCongresso, type CompromissoEvidenciaPublica } from "@/lib/compromisso-evidencia"
+import { teveMandatoNoCongresso, type EstadoEvidenciasPrograma } from "@/lib/compromisso-evidencia"
+import type { ProgramaGovernoPendencia } from "@/lib/programa-governo-pendencia"
 import {
   descreverEstadoDaFonte,
   montarDestaquesDaFicha,
@@ -18,7 +19,13 @@ import {
 } from "@/lib/destaques-ficha"
 import { classifyAttentionPoints } from "@/lib/attention-points"
 import { resolvePatrimonioEleicoes } from "@/lib/public-profile-dto"
-import { patrimonioMaisRecenteSemEscolhaArbitraria, patrimonioPorAnoSemAmbiguidade } from "@/lib/patrimonio-contexto"
+import {
+  estadoValorPatrimonio,
+  patrimonioMaisRecenteSemEscolhaArbitraria,
+  patrimonioPorAnoSemAmbiguidade,
+  patrimonioValorEstadoLabel,
+  variacaoPatrimonialPct,
+} from "@/lib/patrimonio-contexto"
 import {
   groupProcessosForDisplay,
   isProcessStatusNeutral,
@@ -28,6 +35,7 @@ import {
   processoPodeContarComoCriminal,
   processoTemporalLabel,
   processStatusRepeatsDescription,
+  processosBuscaAvisoComLinhas,
   processosOverviewDisplay,
   urlPublicaDoProcesso,
 } from "@/lib/processos-display"
@@ -54,6 +62,9 @@ import {
 } from "./EmptyState"
 import type { CandidatoProfileNavTabId, CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
 import { getApprovedAttributedFactChecks } from "@/lib/checagens-atribuidas"
+import { getReciboChecagens } from "@/lib/buscas-recibos"
+import { getRepresentacoesEticaAprovadas } from "@/lib/representacoes-etica"
+import { RepresentacoesEticaCategoria } from "./RepresentacoesEticaCategoria"
 import {
   CANDIDATO_PROFILE_NAV_TAB_IDS,
   normalizeCandidatoProfileNavTab,
@@ -82,6 +93,7 @@ import {
 } from "./PesquisasPresidenciaisSection"
 import {
   ProgramaGovernoOverview,
+  ProgramaGovernoPendente,
   ProgramaGovernoTab,
   type ProgramaGovernoLoadState,
   useProgramaGovernoDocuments,
@@ -323,6 +335,7 @@ export function CandidatoProfile({
   pesquisas = [],
   programaGoverno = null,
   compromissoEvidencias,
+  programaPendente = null,
   senadoRunningMates = null,
   initialLegislationSubtab,
   initialLegislationPage,
@@ -334,7 +347,8 @@ export function CandidatoProfile({
   pesquisas?: PesquisaEleitoralDoCandidato[]
   programaGoverno?: ProgramaGovernoManifestoPublico | null
   /** Evidências públicas ligadas aos temas do programa; ausente não mostra a seção. */
-  compromissoEvidencias?: CompromissoEvidenciaPublica[]
+  compromissoEvidencias?: EstadoEvidenciasPrograma
+  programaPendente?: ProgramaGovernoPendencia | null
   /** Suplentes carregados no servidor; só existe em ficha de Senador. */
   senadoRunningMates?: SenadoRunningMatesPayload | null
   /** Apenas para render determinístico de cada subaba no auditor de release. */
@@ -354,10 +368,15 @@ export function CandidatoProfile({
   const financiamento = ficha.financiamento ?? []
   const financiamentoEleicoes = ficha.financiamento_eleicoes ?? null
   const processos = ficha.processos ?? []
+  const processosBuscaAviso = processos.length > 0
+    ? processosBuscaAvisoComLinhas(ficha.processos_verificacao, new Date(), ficha.processos_omitidos_sem_fonte_oficial ?? 0)
+    : null
   const processosOverview = processosOverviewDisplay(
     ficha.total_processos,
     processos.filter(processoPodeContarComoCriminal).length,
     ficha.processos_verificacao,
+    new Date(),
+    ficha.processos_omitidos_sem_fonte_oficial ?? 0,
   )
   const sancoes = ficha.sancoes_administrativas ?? []
   const votos = ficha.votos ?? []
@@ -468,11 +487,21 @@ export function CandidatoProfile({
           uf: ficha.estado,
         })
       : []
-  const checagensEnabled = attributedChecks.length > 0
+  // A aba também abre com recibo de busca sem checagem publicada: o leitor vê
+  // que a busca foi feita. Sem recibo, a aba some e nada afirma ausência.
+  const checagensReceipt =
+    ficha.cargo_disputado === "Presidente" || ficha.cargo_disputado === "Governador"
+      ? getReciboChecagens({ candidate_id: ficha.id, candidate_slug: ficha.slug })
+      : null
+  const checagensEnabled = attributedChecks.length > 0 || checagensReceipt !== null
+  const representacoesEtica = getRepresentacoesEticaAprovadas(ficha.slug)
 
   const tabDefsById: Record<CandidatoProfileNavTabId, { label: string; dataCount: number }> = {
     geral: { label: fixedCopy.generalOverview, dataCount: 0 },
-    pesquisas: { label: "Pesquisas", dataCount: pesquisas.length },
+    pesquisas: {
+      label: "Pesquisas",
+      dataCount: pesquisas.filter((pesquisa) => (pesquisa.grupo ?? "recente") === "recente").length,
+    },
     programa: { label: "Programa", dataCount: 0 },
     media: { label: "Mídia", dataCount: ficha.noticias?.length ?? 0 },
     checagens: { label: "Checagens", dataCount: attributedChecks.length },
@@ -485,7 +514,7 @@ export function CandidatoProfile({
         (ficha.transparencia?.length ?? 0) +
         gastosExecutivo.length,
     },
-    justica: { label: "Justiça", dataCount: processos.length + sancoes.length },
+    justica: { label: "Justiça", dataCount: processos.length + sancoes.length + representacoesEtica.length },
     votos: { label: "Votos", dataCount: votos.length },
     trajetoria: { label: "Trajetória", dataCount: profileTrajetoriaTabBadgeCount(historico, mudancas) },
     legislacao: {
@@ -676,18 +705,22 @@ export function CandidatoProfile({
   const latestPatrimonio = latestPatrimonioContexto.patrimonio
   const patrimonioSerieAnual = patrimonioPorAnoSemAmbiguidade(patrimonio)
 
+  // Sem base positiva e informada não há porcentagem: 0 -> X não é "↓ 0%".
   const patrimonioVariacao =
     latestPatrimonio && patrimonioSerieAnual.length >= 2
       ? (() => {
           const sorted = [...patrimonioSerieAnual].sort((a, b) => b.ano_eleicao - a.ano_eleicao)
           const latest = sorted[0]
           const prev = sorted[1]
-          const pct = prev.valor_total > 0
-            ? ((latest.valor_total - prev.valor_total) / prev.valor_total) * 100
-            : 0
+          const pct = variacaoPatrimonialPct(prev, latest)
+          if (pct === null) return null
           return { pct: Math.round(pct), from: prev.ano_eleicao, to: latest.ano_eleicao }
         })()
       : null
+  const latestPatrimonioEstado = latestPatrimonio ? estadoValorPatrimonio(latestPatrimonio) : null
+  const latestPatrimonioEstadoLabel = latestPatrimonioEstado
+    ? patrimonioValorEstadoLabel(latestPatrimonioEstado)
+    : null
 
   const totalGastos =
     gastos.length > 0
@@ -742,7 +775,9 @@ export function CandidatoProfile({
               sub={processosOverview.sub}
             />
             <StatCard
-              value={latestPatrimonio
+              value={latestPatrimonio && latestPatrimonioEstado === "valor_nao_informado"
+                ? "—"
+                : latestPatrimonio
                 ? <FormattedNumber value={latestPatrimonio.valor_total} kind="currency" />
                 : latestPatrimonioContexto.quantidade > 1
                   ? `${latestPatrimonioContexto.quantidade} declarações`
@@ -750,10 +785,13 @@ export function CandidatoProfile({
               label="Patrimônio"
               icon={Landmark}
               dataValueAttr="data-pf-overview-patrimonio"
-              dataRawValue={latestPatrimonio?.valor_total ?? null}
+              dataRawValue={latestPatrimonioEstado === "valor_nao_informado" ? null : latestPatrimonio?.valor_total ?? null}
+              sub={latestPatrimonio && latestPatrimonioEstadoLabel
+                ? `${latestPatrimonioEstadoLabel} (${latestPatrimonio.ano_eleicao})`
+                : undefined}
               trend={patrimonioVariacao ? {
                 value: `${Math.abs(patrimonioVariacao.pct)}% (${patrimonioVariacao.from}-${patrimonioVariacao.to})`,
-                positive: patrimonioVariacao.pct > 0 ? undefined : false,
+                positive: patrimonioVariacao.pct < 0 ? false : undefined,
               } : undefined}
             />
             <StatCard
@@ -873,10 +911,12 @@ export function CandidatoProfile({
                         evidencias={compromissoEvidencias}
                         teveMandatoNoCongresso={teveMandatoNoCongresso(ficha.historico ?? [])}
                       />
+                    ) : programaPendente ? (
+                      <ProgramaGovernoPendente pendencia={programaPendente} />
                     ) : undefined
                   }
                   factChecksCard={
-                    checagensEnabled ? (
+                    attributedChecks.length > 0 ? (
                       <AttributedFactChecksOverview
                         checks={attributedChecks}
                         onOpenTab={() => navigateToTab("checagens")}
@@ -915,6 +955,7 @@ export function CandidatoProfile({
                 candidateSlug={ficha.slug}
                 office={ficha.cargo_disputado}
                 uf={ficha.estado}
+                searchReceipt={checagensReceipt}
               />
             )}
 
@@ -941,7 +982,7 @@ export function CandidatoProfile({
             {/* MÍDIA TAB */}
             {activeTab === "media" && (
               (ficha.noticias && ficha.noticias.length > 0) || new URLSearchParams(locationSearch).has("noticia") ? (
-                <NewsSection key={ficha.slug} noticias={ficha.noticias ?? []} candidateSlug={ficha.slug} selectedNewsId={new URLSearchParams(locationSearch).get("noticia")} />
+                <NewsSection key={ficha.slug} noticias={ficha.noticias ?? []} nextCursor={ficha.noticias_cursor ?? null} candidateSlug={ficha.slug} selectedNewsId={new URLSearchParams(locationSearch).get("noticia")} />
               ) : (
                 <div data-pf-media-empty>
                   <SectionLabel>Mídia</SectionLabel>
@@ -996,8 +1037,9 @@ export function CandidatoProfile({
                 {/* Sem "(0)": zero aqui é ausência de verificação, não contagem apurada. */}
                 <SectionLabel>{processos.length > 0 ? `Processos judiciais (${processos.length})` : "Processos judiciais"}</SectionLabel>
                 <SectionTitle>{fixedCopy.justiceSituation}</SectionTitle>
+                {processosBuscaAviso && <NoticePanel className="mt-4" tone="caution" {...processosBuscaAviso} />}
                 {processos.length === 0 && (
-                  <EmptyState {...getProcessosEmptyState(ficha.processos_verificacao)} />
+                  <EmptyState {...getProcessosEmptyState(ficha.processos_verificacao, new Date(), ficha.processos_omitidos_sem_fonte_oficial ?? 0)} />
                 )}
                 {/* Group by type */}
                 {(["procedural", "criminal", "improbidade", "eleitoral", "civil", "historico"] as const).map((tipo) => {
@@ -1053,6 +1095,11 @@ export function CandidatoProfile({
                                   {formatProcessStatusLabel(independentStatuses[0])}
                                 </MetaBadge>
                               )}
+                              {processGroup.some((item) => item.fonte_nivel === "em_confirmacao") && (
+                                <MetaBadge tone="caution" data-pf-processo-fonte-em-confirmacao>
+                                  Fonte oficial em confirmação
+                                </MetaBadge>
+                              )}
                               {(() => {
                                 const temporal = processoTemporalLabel(p)
                                 return temporal ? (
@@ -1088,6 +1135,9 @@ export function CandidatoProfile({
                     </div>
                   )
                 })}
+                {/* Processos disciplinares (Conselho de Ética): categoria própria da
+                    aba, fora de "Processos judiciais (N)" e do card de processos. */}
+                <RepresentacoesEticaCategoria representacoes={representacoesEtica} />
                 {/* Sanções administrativas: bloco com proveniência do zero.
                     Só a coleta com desfecho vazio_confirmado autoriza dizer
                     "nada encontrado"; sem verificação o bloco fica neutro. */}

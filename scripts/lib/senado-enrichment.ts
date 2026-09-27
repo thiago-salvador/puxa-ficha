@@ -129,7 +129,7 @@ export interface SenadoCuratedProfileFieldsManifest {
 export type SenadoFederalReceiptResult = "sem_achado_no_escopo" | "nao_aplicavel" | "indeterminado"
 
 export interface SenadoFederalReceipt {
-  source: "camara" | "senado" | "ceaps-senado" | "jarbas"
+  source: "camara" | "senado" | "ceaps-senado" | "camara-cotas" | "jarbas"
   source_ids: string[]
   resultado: SenadoFederalReceiptResult
   checked_at: string
@@ -264,7 +264,7 @@ const CURATED_MEDIA_SOURCE = "curated-media"
 const DEFAULT_SOURCES = [
   "tse-situacao", "tse", "tse-historico", "transparencia", "tcu", "sancoes",
   "filiacao", "wikipedia", "wiki-historico", "wikidata", "wikidata-politico",
-  "instagram", "google-news", "curated-profile", "curated-media", "curated-networks", "camara", "senado", "ceaps-senado", "jarbas",
+  "instagram", "google-news", "curated-profile", "curated-media", "curated-networks", "camara", "senado", "ceaps-senado", "camara-cotas", "partidos-parlamentares",
 ] as const
 
 const clean = (value: unknown): string => String(value ?? "").trim()
@@ -381,7 +381,7 @@ export function readSenadoFederalReceiptManifest(path: string, expected?: Pick<S
   if (expected && (identity.sq_candidato !== expected.sq_candidato || identity.uf !== expected.uf)) throw new Error("manifesto de recibos federais diverge da identidade Senado")
   const sources = new Set<string>()
   for (const receipt of parsed.receipts) {
-    if (!receipt || sources.has(receipt.source) || !["camara", "senado", "ceaps-senado", "jarbas"].includes(receipt.source) || !["sem_achado_no_escopo", "nao_aplicavel", "indeterminado"].includes(receipt.resultado) || !receipt.checked_at || !Number.isFinite(Date.parse(receipt.checked_at)) || !Array.isArray(receipt.source_ids) || receipt.source_ids.length === 0 || new Set(receipt.source_ids).size !== receipt.source_ids.length || !Array.isArray(receipt.urls) || receipt.urls.length !== receipt.source_ids.length || !clean(receipt.escopo) || !clean(receipt.detalhe) || !receipt.readback || !Array.isArray(receipt.readback.registry_source_ids) || !Array.isArray(receipt.readback.identity_search_terms) || receipt.readback.registry_source_ids.some((id) => !receipt.source_ids.includes(id))) throw new Error(`recibo federal inválido no manifesto: ${target}`)
+    if (!receipt || sources.has(receipt.source) || !["camara", "senado", "ceaps-senado", "camara-cotas", "jarbas"].includes(receipt.source) || !["sem_achado_no_escopo", "nao_aplicavel", "indeterminado"].includes(receipt.resultado) || !receipt.checked_at || !Number.isFinite(Date.parse(receipt.checked_at)) || !Array.isArray(receipt.source_ids) || receipt.source_ids.length === 0 || new Set(receipt.source_ids).size !== receipt.source_ids.length || !Array.isArray(receipt.urls) || receipt.urls.length !== receipt.source_ids.length || !clean(receipt.escopo) || !clean(receipt.detalhe) || !receipt.readback || !Array.isArray(receipt.readback.registry_source_ids) || !Array.isArray(receipt.readback.identity_search_terms) || receipt.readback.registry_source_ids.some((id) => !receipt.source_ids.includes(id))) throw new Error(`recibo federal inválido no manifesto: ${target}`)
     for (const url of receipt.urls) assertHttps(url, `recibo federal ${receipt.source}`)
     sources.add(receipt.source)
   }
@@ -742,7 +742,7 @@ export function planSenadoEnrichmentSources(
     if (source === "senado" && !config.ids.senado) { plans.push(blockedPlan(source, "ID Senado ausente; aplicabilidade do acervo parlamentar permanece indeterminada", planSourceIds, manifest)); continue }
     if (source === "camara" && !config.ids.camara) { plans.push(blockedPlan(source, "ID Câmara ausente; aplicabilidade do acervo parlamentar permanece indeterminada", planSourceIds, manifest)); continue }
     if (source === "ceaps-senado" && !config.ids.senado) { plans.push(blockedPlan(source, "ID Senado ausente; CEAPS não pode ser consultado com identidade determinística", planSourceIds, manifest)); continue }
-    if (source === "jarbas" && !config.ids.camara) { plans.push(blockedPlan(source, "ID Câmara ausente; Jarbas não pode ser consultado com identidade determinística", planSourceIds, manifest)); continue }
+    if (source === "camara-cotas" && !config.ids.camara) { plans.push(blockedPlan(source, "ID Câmara ausente; cota oficial não pode ser vinculada por ID", planSourceIds, manifest)); continue }
     if ((source === "wikipedia" || source === "wiki-historico") && !config.wikipedia_title) {
       plans.push(blockedPlan(source, "título Wikipedia não foi verificado no manifesto/override; ausência de ID não prova ausência de fonte", planSourceIds, manifest)); continue
     }

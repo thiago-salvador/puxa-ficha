@@ -8,6 +8,7 @@ import {
   BRAZIL_UFS,
   sanitizeVices,
   collectDirectCandidaciesMissingFromCdn,
+  fetchJsonWithRetry,
   DIVULGACAND_BASE,
   ELECTION_ID_2026,
   type DivulgaCandReceipt,
@@ -140,6 +141,7 @@ function directFixture() {
 async function collectFixture(fixture: ReturnType<typeof directFixture>, cdn: CandidacyRecord[] = []) {
   return collectDirectCandidaciesMissingFromCdn(
     cdn, fixture.current, fixture.listReceipts, fixture.receipts, fixture.fakeFetch,
+    undefined, async () => {}, // sem `now` explícito; backoff mockado para o teste não dormir de verdade.
   );
 }
 
@@ -275,17 +277,18 @@ test("situacaoVice fora do vocabulário conhecido (nem 1, 3 ou 12) continua recu
   await assert.rejects(collectFixture(fixture), /DivulgaCand/);
 });
 
-test("falha HTTP preserva recibo e não retorna admissão parcial", async () => {
+test("falha HTTP preserva recibo, não retorna admissão parcial, e guarda excerto sanitizado do erro", async () => {
   const fixture = directFixture();
   const originalFetch = fixture.fakeFetch;
   fixture.fakeFetch = async (input) => String(input).endsWith("270002554376")
-    ? new Response("PRIVATE_MARKER", { status: 404 })
+    ? new Response("Candidatura não localizada\n\n  espaço  extra", { status: 404 })
     : originalFetch(input);
   await assert.rejects(collectFixture(fixture), /HTTP 404/);
   assert.equal(fixture.receipts.length, 2);
   assert.equal(fixture.receipts[0].http_status, 200);
+  assert.equal(fixture.receipts[0].error_excerpt, null);
   assert.equal(fixture.receipts[1].http_status, 404);
-  assert.doesNotMatch(JSON.stringify(fixture.receipts), /PRIVATE_MARKER/);
+  assert.equal(fixture.receipts[1].error_excerpt, "Candidatura não localizada espaço extra");
 });
 
 test("erro de parse não vaza o corpo privado para a mensagem de auditoria", async () => {
@@ -431,4 +434,98 @@ test("detalhe rejeita identidade divergente e flags ausentes sem retornar PII", 
     { isCandidatoInapto: undefined }, { st_SUBSTITUIDO: undefined }]) {
     assert.throws(() => sanitizeCandidateDetail({ ...fixture.titular, ...patch }, fixture.current[0]), /identidade ou flags/);
   }
+});
+
+// Regressão run 36024469024 (24/09/2026): um detalhe de candidatura (JHC/AL)
+// respondeu HTTP 400 transitório — a mesma URL tinha respondido 200 oito
+// minutos antes e no dia anterior. `fetchJsonWithRetry` só retenta 400 nos
+// endpoints de candidatura (lista e detalhe); em qualquer outra rota 400
+// continua definitivo. `noDelay` evita esperar o backoff real nos testes.
+const CANDIDACY_DETAIL_URL = `${DIVULGACAND_BASE}/buscar/2026/AL/${ELECTION_ID_2026}/candidato/20002553350`;
+const noDelay = async () => {};
+
+test("400 transitório num endpoint de candidatura é retentado e sucede com 2 tentativas registradas", async () => {
+  let calls = 0;
+  const fakeFetch = async () => {
+    calls++;
+    if (calls === 1) return new Response("Bad Request", { status: 400 });
+    return new Response(JSON.stringify({ ok: true }), { status: 200 });
+  };
+  const receipts: DivulgaCandReceipt[] = [];
+  const result = await fetchJsonWithRetry(CANDIDACY_DETAIL_URL, fakeFetch, 3, receipts, noDelay);
+  assert.deepEqual(result, { ok: true });
+  assert.equal(calls, 2);
+  assert.equal(receipts.length, 2);
+  assert.equal(receipts[0].http_status, 400);
+  assert.equal(receipts[1].http_status, 200);
+});
+
+test("400 persistente num endpoint de candidatura esgota as 3 tentativas com excerto sanitizado do corpo no erro", async () => {
+  const fakeFetch = async () => new Response("Akamai bloqueou   a requisição\n", { status: 400 });
+  const receipts: DivulgaCandReceipt[] = [];
+  await assert.rejects(
+    fetchJsonWithRetry(CANDIDACY_DETAIL_URL, fakeFetch, 3, receipts, noDelay),
+    (error: Error) => {
+      assert.match(error.message, /HTTP 400/);
+      assert.match(error.message, /Akamai bloqueou a requisição/);
+      return true;
+    },
+  );
+  assert.equal(receipts.length, 3);
+  assert.ok(receipts.every((receipt) =>
+    receipt.http_status === 400 && receipt.error_excerpt === "Akamai bloqueou a requisição"));
+});
+
+test("400 fora de endpoint de candidatura não é retentado", async () => {
+  let calls = 0;
+  const fakeFetch = async () => { calls++; return new Response("Bad Request", { status: 400 }); };
+  const receipts: DivulgaCandReceipt[] = [];
+  const nonCandidacyUrl = "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/outra-rota/2026";
+  await assert.rejects(fetchJsonWithRetry(nonCandidacyUrl, fakeFetch, 3, receipts, noDelay), /HTTP 400/);
+  assert.equal(calls, 1);
+  assert.equal(receipts.length, 1);
+});
+
+test("403 e 5xx continuam sendo retentados como antes", async () => {
+  for (const status of [403, 500, 502, 503, 504]) {
+    let calls = 0;
+    const fakeFetch = async () => {
+      calls++;
+      if (calls < 3) return new Response("erro temporário", { status });
+      return new Response(JSON.stringify({ ok: status }), { status: 200 });
+    };
+    const receipts: DivulgaCandReceipt[] = [];
+    const result = await fetchJsonWithRetry(CANDIDACY_DETAIL_URL, fakeFetch, 3, receipts, noDelay);
+    assert.deepEqual(result, { ok: status });
+    assert.equal(calls, 3);
+    assert.equal(receipts.length, 3);
+  }
+});
+
+test("duas SQs falhando na mesma coleta produzem um único erro citando as duas, com status registrado em todos os recibos", async () => {
+  const scopes = [...BRAZIL_UFS, "BR"];
+  const failingScopes = new Set(["AL", "BA"]);
+  const idFor = (scope: string) => String(scopes.indexOf(scope) + 1);
+  const receipts: DivulgaCandReceipt[] = [];
+  const fakeFetch = async (input: string | URL | Request) => {
+    const url = String(input);
+    const scope = scopes.find((uf) => url.includes(`/2026/${uf}/`))!;
+    const common = { id: idFor(scope), nomeUrna: "TESTE", descricaoSituacao: "Deferido", partido: { sigla: "TESTE" } };
+    if (url.includes("/listar/")) return new Response(JSON.stringify([common]));
+    if (failingScopes.has(scope)) return new Response("indisponível", { status: 404 });
+    return new Response(JSON.stringify({ ...common, ufCandidatura: scope,
+      eleicao: { id: ELECTION_ID_2026, ano: 2026 }, cargo: { codigo: scope === "BR" ? 1 : 3 },
+      isCandidatoInapto: false, st_SUBSTITUIDO: false,
+    }));
+  };
+  await assert.rejects(collectCurrentOfficialCandidacies(fakeFetch, receipts), (error: Error) => {
+    assert.match(error.message, /DivulgaCand detalhe falhou para 2 candidatura/);
+    assert.ok(error.message.includes(`SQ ${idFor("AL")}:`));
+    assert.ok(error.message.includes(`SQ ${idFor("BA")}:`));
+    assert.match(error.message, /HTTP 404/);
+    return true;
+  });
+  assert.equal(receipts.length, 56);
+  assert.ok(receipts.every((receipt) => receipt.http_status !== null));
+  assert.equal(receipts.filter((receipt) => receipt.http_status === 404).length, 2);
 });

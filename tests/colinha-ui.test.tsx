@@ -46,3 +46,32 @@ test("resultados mantêm ficha publicada fora do botão de seleção", () => {
   assert.match(builder, /Candidatura não encontrada neste snapshot/)
   assert.match(builder, /Escolha indisponível:/)
 })
+
+test("patrimônio usa o formatador monetário compartilhado do site, não toLocaleString cru", () => {
+  assert.match(builder, /import \{ formatBRL \} from "@\/lib\/utils"/)
+  assert.match(builder, /Patrimônio: \$\{formatBRL\(candidate\.resumo\.patrimonio\)\}/)
+  assert.doesNotMatch(builder, /patrimonio\.toLocaleString/)
+})
+
+test("botão de escolha tem nome acessível com o cargo, mantendo o texto visível genérico", () => {
+  assert.match(builder, /aria-label=\{`Escolher candidato para \$\{SLOT_LABELS\[slot\]\}`\}/)
+  assert.match(builder, />Escolher candidato<\/button>/)
+})
+
+test("grid dos seis slots responde à largura real do container, não só do viewport, para não espremer o card selecionado em telas médias", () => {
+  // A query de container tem que mirar um ANCESTRAL, nunca o próprio elemento
+  // (um elemento não pode se medir a si mesmo em container queries), então
+  // @container fica no wrapper e @xl:grid-cols-2 no grid, nunca juntos no mesmo nó.
+  assert.match(builder, /<div className="@container">/)
+  assert.match(builder, /mt-7 grid gap-3 @xl:grid-cols-2/)
+  assert.doesNotMatch(builder, /@container mt-7 grid gap-3 @xl:grid-cols-2/)
+  assert.doesNotMatch(builder, /grid gap-3 sm:grid-cols-2/)
+})
+
+test("estado do snapshot vem de describeSnapshotStatus, nunca de uma frase montada na hora com o valor bruto", () => {
+  assert.match(builder, /import \{[\s\S]{0,600}describeSnapshotStatus[\s\S]{0,600}\} from "@\/lib\/colinha"/)
+  assert.match(builder, /\{snapshotCopy\.message\} Confira novamente antes de votar\./)
+  assert.match(builder, /\{snapshotCopy\.showPartialWarning &&/)
+  assert.doesNotMatch(builder, /Situação consultada no snapshot de \{formatDate\(snapshot\)\}/)
+  assert.doesNotMatch(builder, /\(unavailable \|\| !snapshot\)/)
+})

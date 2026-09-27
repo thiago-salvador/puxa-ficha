@@ -133,7 +133,7 @@ export default async function SenadoUfPage({ params }: { params: Promise<{ uf: s
             <h2 className="mt-1 font-heading uppercase leading-[0.95] text-foreground" style={{ fontSize: "clamp(28px, 5vw, 48px)" }}>Lado a lado</h2>
             <SlashDivider className="mt-6 mb-8 sm:mt-8 sm:mb-10" />
           </section>
-          <Suspense fallback={<p className="mx-auto max-w-7xl px-5 py-10 text-center text-muted-foreground md:px-12">Carregando comparador...</p>}><ComparadorPanel candidatos={comparaveis} /></Suspense>
+          <Suspense fallback={<p className="mx-auto max-w-7xl px-5 py-10 text-center text-muted-foreground md:px-12">Carregando comparador...</p>}><ComparadorPanel candidatos={comparaveis} referenceNow={new Date().toISOString()} /></Suspense>
         </>
       )}
       <section className="mx-auto max-w-7xl px-5 py-12 md:px-12"><Link href={`/uf/${uf}`} className="font-semibold text-foreground underline">Ver candidatos a governador em {nome}</Link></section>

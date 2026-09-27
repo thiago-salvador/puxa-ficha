@@ -25,9 +25,8 @@ function read(relativePath: string): string {
 }
 
 describe("production CSP contract", () => {
-  it("removes unsafe-inline from production scripts and keeps allowlists explicit", () => {
+  it("serve CSP estática, sem nonce, com o resto das allowlists explícito", () => {
     const csp = buildContentSecurityPolicy({
-      nonce: "nonce-test",
       frameAncestors: "'none'",
       isDevelopment: false,
       applyProductionHttpsHeaders: true,
@@ -42,10 +41,17 @@ describe("production CSP contract", () => {
     const connectSrc = csp.match(/connect-src ([^;]+)/)?.[1] ?? ""
     const imgSrc = csp.match(/img-src ([^;]+)/)?.[1] ?? ""
 
-    assert.match(scriptSrc, /'nonce-nonce-test'/)
-    assert.match(scriptSrc, /'strict-dynamic'/)
-    assert.doesNotMatch(scriptSrc, /'unsafe-inline'/)
-    assert.doesNotMatch(scriptSrc, /\shttps:\s?/)
+    // Nonce exige render por request; o App Router injeta script inline em todo
+    // HTML, então página estática precisa de 'unsafe-inline'. Com nonce ou
+    // 'strict-dynamic' presentes o navegador ignoraria o 'unsafe-inline' e
+    // bloquearia o payload RSC (incidente vigiado em tests/visual/main-routes).
+    assert.doesNotMatch(scriptSrc, /'nonce-|'strict-dynamic'|'unsafe-eval'/)
+    assert.match(scriptSrc, /'unsafe-inline'/)
+    assert.match(scriptSrc, /https:\/\/static\.cloudflareinsights\.com/)
+    assert.doesNotMatch(scriptSrc, /(^|\s)https:(\s|$)/)
+    assert.match(csp, /object-src 'none'/)
+    assert.match(csp, /base-uri 'self'/)
+    assert.match(csp, /frame-ancestors 'none'/)
 
     assert.match(connectSrc, /https:\/\/project\.supabase\.co/)
     assert.match(connectSrc, /wss:\/\/project\.supabase\.co/)
@@ -60,12 +66,30 @@ describe("production CSP contract", () => {
     assert.doesNotMatch(imgSrc, /(^|\s)https:(\s|$)/)
   })
 
+  it("aplica a CSP pelo next.config, com frame-ancestors * só no widget de embed", () => {
+    const nextConfig = read("next.config.ts")
+    assert.match(nextConfig, /const securityHeaders = \[[^\]]*contentSecurityPolicyHeader\("'none'"\)/)
+    assert.match(nextConfig, /const embedFramingHeaders = \[[^\]]*contentSecurityPolicyHeader\("\*"\)/)
+  })
+
+  it("não lê o request nos layouts: é o que deixa as páginas saírem da CDN", () => {
+    for (const file of [
+      "src/app/layout.tsx",
+      "src/app/(site)/layout.tsx",
+      "src/components/CloudflareWebAnalytics.tsx",
+      "src/components/CloudflareWebAnalyticsBeacon.tsx",
+    ]) {
+      assert.doesNotMatch(read(file), /from "next\/headers"|\bheaders\(\)|\bcookies\(\)/, file)
+    }
+  })
+
   it("carrega o beacon da Cloudflare só em produção e não o Analytics da Vercel", () => {
     const component = read("src/components/CloudflareWebAnalytics.tsx")
+    const beacon = read("src/components/CloudflareWebAnalyticsBeacon.tsx")
     const layout = read("src/app/(site)/layout.tsx")
 
     assert.match(component, /VERCEL_ENV !== "production"/)
-    assert.match(component, /static\.cloudflareinsights\.com\/beacon\.min\.js/)
+    assert.match(beacon, /static\.cloudflareinsights\.com\/beacon\.min\.js/)
     assert.match(layout, /CloudflareWebAnalytics/)
     assert.doesNotMatch(layout, /@vercel\/analytics/)
   })

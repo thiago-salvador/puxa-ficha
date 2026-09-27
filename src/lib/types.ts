@@ -238,6 +238,8 @@ export interface VotacaoChave {
   impacto_popular: string;
   /** Fonte nominal da votação, quando a linha foi auditada (camara ou senado). */
   fonte?: string | null;
+  /** Identificador oficial da votação na API da casa, para reconciliação exata. */
+  votacao_id_api?: string | null;
   /** ID da proposição na Câmara ou Senado, usado para link e explicação de fonte. Null quando não disponível. */
   proposicao_id?: string | null;
 }
@@ -268,6 +270,8 @@ export interface Processo {
   gravidade: 'alta' | 'media' | 'baixa' | null;
   fonte?: string | null;
   url_fonte?: string | null;
+  /** Calculado na leitura pública: "oficial" ou "em_confirmacao" (selo na ficha). */
+  fonte_nivel?: import("@/lib/djen-consulta-url").FonteProcessoNivel | null;
 }
 
 // --- Pontos de Atenção ---
@@ -370,6 +374,8 @@ export interface GastoParlamentar {
   candidato_id: string;
   ano: number;
   total_gasto: number;
+  /** Momento da consulta à fonte oficial que produziu o total anual. */
+  coletado_em?: string | null;
   detalhamento: GastoCategoria[];
   gastos_destaque: GastoDestaque[];
   /** Rótulo da origem da linha. Decide se ela pode ser exibida: ver `gastoParlamentarExibivel`. */
@@ -692,8 +698,16 @@ export interface Chapa2026 {
   snapshot_em: string;
 }
 
+/** Fase eleitoral 2026 (view candidaturas_fase_2026_publico). Sem linha = em disputa. */
+export interface FaseEleitoral2026 {
+  fase_eleitoral: "em_disputa" | "segundo_turno" | "eleito" | "nao_eleito" | "fora_da_disputa";
+  fase_turno: 1 | 2;
+  atualizacao_encerrada_em: string | null;
+}
+
 export interface FichaCandidato extends Candidato {
   chapa_2026?: Chapa2026 | null;
+  fase_eleitoral_2026?: FaseEleitoral2026 | null;
   historico: HistoricoPolitico[];
   mudancas_partido: MudancaPartido[];
   patrimonio: Patrimonio[];
@@ -715,6 +729,8 @@ export interface FichaCandidato extends Candidato {
   doadores_recorrentes?: import("@/lib/doador-recorrente-publico").DoadorRecorrentePublico[] | null;
   votos: VotoCandidato[];
   processos: Processo[];
+  /** Linhas judiciais omitidas do público por falta de URL com CNJ oficial exato. */
+  processos_omitidos_sem_fonte_oficial?: number;
   pontos_atencao: PontoAtencao[];
   projetos_lei: ProjetoLei[];
   /** Total materializado; `projetos_lei` pode conter apenas a prévia inicial. */
@@ -743,6 +759,8 @@ export interface FichaCandidato extends Candidato {
    * falhou; ausente = cache antigo.
    */
   projetos_lei_camara_total?: number | null;
+  /** Linhas com `fonte = 'Senado'` no acervo inteiro; `null` indica falha na consulta. */
+  projetos_lei_senado_total?: number | null;
   legislacao_mandato_executivo: LegislacaoMandatoExecutivo[];
   /** Total materializado; `legislacao_mandato_executivo` pode conter apenas a prévia inicial. */
   legislacao_mandato_executivo_total?: number;
@@ -775,6 +793,12 @@ export interface FichaCandidato extends Candidato {
   /** Auditoria do recorte editorial de votações-chave na aba Destaques. */
   votacoes_verificacao?: SancoesVerificacao | null;
   noticias: NoticiaCandidato[];
+  /**
+   * Cursor da página seguinte à prévia de notícias, derivado na serialização
+   * pública (os IDs da prévia saem compactados). Null quando a prévia já
+   * cobre a janela inteira.
+   */
+  noticias_cursor?: string | null;
   indicadores_estaduais?: IndicadorEstadual[];
 
   // Contadores
@@ -806,6 +830,7 @@ export interface CandidatoComparavel {
   formacao: string | null;
   formacao_instituicao?: string | null;
   total_processos: number;
+  processos_omitidos_sem_fonte_oficial?: number;
   processos_verificacao?: ProcessosVerificacao | null;
   mudancas_partido: number;
   alertas_graves: number;

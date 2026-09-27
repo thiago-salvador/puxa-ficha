@@ -14,6 +14,7 @@ import {
   resumir,
   stripComentarios,
   temGuardDeAusencia,
+  temGuardDeReplayDescartavel,
 } from "../scripts/audit/lib/migrations-classificacao"
 import {
   carregarManifestoSchema,
@@ -103,6 +104,52 @@ describe("classificador puro (#136)", () => {
       preverReplay({ classe: "curadoria", temGuard: true, temRaiseException: true, leCandidatos: true }),
       "replicavel"
     )
+  })
+
+  test("guard pf.replay executável antes do CAS torna a migration replicável", () => {
+    const sql = `DO $migration$ BEGIN
+      IF current_setting('pf.replay', true) = 'true' THEN
+        RAISE NOTICE 'coleta ignorada no replay';
+        RETURN;
+      END IF;
+      IF (SELECT count(*) FROM public.candidatos) <> 513 THEN
+        RAISE EXCEPTION 'coorte divergente';
+      END IF;
+      UPDATE public.candidatos SET status = 'candidato';
+    END $migration$;`
+    assert.equal(temGuardDeReplayDescartavel(sql), true)
+    const c = classificarMigration("x.sql", sql)
+    assert.equal(c.temGuard, true)
+    assert.equal(c.replay, "replicavel")
+  })
+
+  test("guard pf.replay em comentário ou depois do acesso não protege replay", () => {
+    const comentado = `DO $migration$ BEGIN
+      -- IF current_setting('pf.replay', true) = 'true' THEN RETURN; END IF;
+      SELECT count(*) FROM public.candidatos;
+      RAISE EXCEPTION 'coorte divergente';
+      UPDATE public.candidatos SET status = 'candidato';
+    END $migration$;`
+    const tardio = `DO $migration$ BEGIN
+      SELECT count(*) FROM public.candidatos;
+      IF current_setting('pf.replay', true) = 'true' THEN RETURN; END IF;
+      RAISE EXCEPTION 'coorte divergente';
+      UPDATE public.candidatos SET status = 'candidato';
+    END $migration$;`
+    const retornoCondicional = `DO $migration$ BEGIN
+      IF current_setting('pf.replay', true) = 'true' THEN
+        IF false THEN RETURN; END IF;
+      END IF;
+      SELECT count(*) FROM public.candidatos;
+      RAISE EXCEPTION 'coorte divergente';
+      UPDATE public.candidatos SET status = 'candidato';
+    END $migration$;`
+    assert.equal(temGuardDeReplayDescartavel(comentado), false)
+    assert.equal(temGuardDeReplayDescartavel(tardio), false)
+    assert.equal(temGuardDeReplayDescartavel(retornoCondicional), false)
+    assert.equal(classificarMigration("x.sql", comentado).replay, "quebra_sem_guard")
+    assert.equal(classificarMigration("x.sql", tardio).replay, "quebra_sem_guard")
+    assert.equal(classificarMigration("x.sql", retornoCondicional).replay, "quebra_sem_guard")
   })
 
   test("preverReplay: schema nunca depende de linha", () => {
@@ -447,7 +494,24 @@ describe("classificador puro (#136)", () => {
     // apenas na coorte totalmente ausente do replay sintetico. Medido em PG17:
     // 391 da base + roster, analytics, numero_urna e assinaturas por recorte:
     // --gate PG17 mediu 395 aplicadas + 105 falhas históricas = 500 migrations.
-    assert.equal(manifesto.aplicadas_esperadas, 395)
+    // Eliziane (20260923175946): --gate PG17 mediu 396 + 105 = 501.
+    // Exercicio reaberto no Senado (20260924003000): --gate PG17 mediu 398 + 105 = 503.
+    // Situacoes da RPC do historico verificado (20260924120000): --gate PG17 mediu 399 + 105 = 504.
+    // Issue #483, jose-roberto-arruda Indeferido (20260924180000): --gate PG17 mediu 400 + 105 = 505.
+    // Recibos de sites e situacao TSE (20260924204852 e 20260924205031):
+    // --gate PG17 mediu 402 + as mesmas 105 falhas = 507 migrations.
+    // Dados no ar de 25/09 (20260925220000/0100/0200): --gate PG17 mediu 407 + 105 = 512.
+    // Quarentena ampliada de gastos (20260925221042): --gate PG17 mediu 408 + 105 = 513.
+    // Historico federal e nome civil (20260925230000/0100), depois do #505: --gate PG17 mediu 410 + 105 = 515.
+    // Situacao de Godeiro e Laudicerio, chapa vigente e biografia (20260926180000/0100/0200): --gate PG17 mediu 413 + 105 = 518.
+    // Numero CNJ de wilson-grassi-junior e CHECK de numero CNJ (20260926190000/0100): --gate PG17 mediu 415 + 105 = 520.
+    // Partido e cargo_atual de tse-2026-270002544629 (20260926224500), depois do #520: --gate PG17 mediu 416 + 105 = 521.
+    // Nova correcao de partido e cargo_atual de tse-2026-270002544629 (20260927020000): --gate PG17 mediu 417 + 105 = 522.
+    // Datas de nascimento, homonimo de mauricio-coelho e CHECK de sentinela (20260927030000/0100/0200): --gate PG17 mediu 420 + 105 = 525.
+    // Despublicacao em projetos_lei e curadorias de dr-daniel e pedro-cunha-lima (20260927040000/0100/0200): --gate PG17 mediu 423 + 105 = 528.
+    // Schema da fase eleitoral (20260927050000): --gate PG17 mediu 424 + 105 = 529.
+    // Processos da curadoria e patrimonio 2026 pelo pacote TSE (20260927060000/0100): --gate PG17 mediu 426 + 105 = 531.
+    assert.equal(manifesto.aplicadas_esperadas, 426)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

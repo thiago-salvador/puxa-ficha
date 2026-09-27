@@ -258,6 +258,7 @@ export default async function CompararPage({
       >
         <ComparadorPanel
           candidatos={candidatos}
+          referenceNow={new Date().toISOString()}
           initialSelectedSlugs={initialSelectedSlugs}
           initialEixo={initialEixo}
         />

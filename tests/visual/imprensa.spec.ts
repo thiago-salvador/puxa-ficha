@@ -8,10 +8,10 @@ test("Mesa preserva recorte, export e proveniência em tela", async ({ page, req
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/)
   await expect(page.getByLabel("Cargo", { exact: true })).toHaveValue("Governador")
   await expect(page.getByLabel("UF", { exact: true })).toHaveValue("SP")
+  await page.screenshot({ path: testInfo.outputPath("imprensa-primeira-tela.png") })
   await page.getByLabel("Cargo", { exact: true }).focus()
   await page.keyboard.press("Tab")
   await expect(page.getByLabel("UF", { exact: true })).toBeFocused()
-  await page.screenshot({ path: testInfo.outputPath("imprensa-primeira-tela.png") })
 
   const rows = page.locator("tbody tr")
   const count = await rows.count()
@@ -62,4 +62,35 @@ test("recorte nacional mostra evidência e ficha sem exigir UF", async ({ page, 
   expect(exported.rows.some((row: { sites: { estado: string }; chapa: { estado: string } }) => row.sites.estado === "publicado" || row.chapa.estado === "publicado")).toBe(true)
   await expect(page.locator("tbody tr")).toHaveCount(exported.rows.length)
   await expect(page.locator("tbody tr").first().getByRole("link", { name: "Ficha geral" })).toHaveAttribute("href", /\/candidato\//)
+})
+
+test("páginas de mudanças e frescor mantêm escopo, navegação e layout", async ({ page }, testInfo) => {
+  for (const [path, title, filename] of [
+    ["/imprensa/atualizacoes", "Atualizações verificadas", "imprensa-atualizacoes.png"],
+    ["/imprensa/frescor", "Frescor das fontes", "imprensa-frescor.png"],
+  ]) {
+    const response = await page.goto(path)
+    expect(response?.status()).toBe(200)
+    await expect(page.getByRole("heading", { name: title, exact: true })).toBeVisible()
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/)
+    await expect(page.getByRole("link", { name: "Voltar à Mesa de apuração" })).toHaveAttribute("href", "/imprensa")
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 2)
+    expect(overflow).toBe(false)
+    await page.screenshot({ path: testInfo.outputPath(filename), fullPage: true })
+  }
+})
+
+test("formulário de alertas usa o recorte da Mesa quando a flag está ativa", async ({ page }, testInfo) => {
+  test.skip(process.env.NEXT_PUBLIC_ALERTS_EMAIL_ENABLED !== "true", "Alertas por email desativados neste preview")
+  await page.goto("/imprensa?cargo=Governador&uf=SP")
+  const alerts = page.getByRole("region", { name: "Alertas por cargo e UF" })
+  await expect(alerts.getByRole("combobox", { name: "Cargo" })).toHaveValue("Governador")
+  await expect(alerts.getByRole("combobox", { name: "UF" })).toHaveValue("SP")
+  await expect(alerts.getByRole("textbox", { name: "Email" })).toBeVisible()
+  await expect(alerts.getByRole("button", { name: "Receber atualizações deste recorte" })).toBeEnabled()
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 2)
+  expect(overflow).toBe(false)
+  await alerts.screenshot({ path: testInfo.outputPath("imprensa-alertas.png") })
+  await page.goto("/imprensa?cargo=Governador&uf=XX")
+  await expect(page.getByRole("region", { name: "Alertas por cargo e UF" }).getByRole("combobox", { name: "UF" })).toHaveValue("")
 })

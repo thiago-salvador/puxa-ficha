@@ -33,7 +33,7 @@ for (const mode of ["curadoria", "sem geografia", "exceção malformada", "ausen
       writeFileSync(resolve(root, "discovery.json"), JSON.stringify(discovery))
       writeFileSync(resolve(input, "proposal.json"), mode === "artefato inválido" ? "{" : JSON.stringify(proposal))
       if (mode !== "ausente") writeFileSync(resolve(input, "source-html", `${poll.id}.html.txt`), html)
-      const run = spawnSync(process.execPath, ["--conditions", "react-server", "--import", "tsx", "scripts/pesquisas-atualizacao-agendada/cli.ts", "consolidate", "--input", input, "--out", resolve(root, "out"), "--matrix", resolve(root, "matrix.json"), "--discovery", resolve(root, "discovery.json")], { cwd: process.cwd(), encoding: "utf8" })
+      const run = spawnSync(process.execPath, ["--conditions", "react-server", "--import", "tsx", "--import", resolve("tests/helpers/pesquisas-coorte-vazia.cjs"), "scripts/pesquisas-atualizacao-agendada/cli.ts", "consolidate", "--input", input, "--out", resolve(root, "out"), "--matrix", resolve(root, "matrix.json"), "--discovery", resolve(root, "discovery.json")], { cwd: process.cwd(), encoding: "utf8", env: { ...process.env, SUPABASE_URL: "https://coorte.test", SUPABASE_SERVICE_ROLE_KEY: "test-key" } })
       assert.equal(run.status, ["curadoria", "sem geografia"].includes(mode) ? 0 : 1, run.stderr || run.stdout)
       if (mode === "artefato inválido") return
       const result = JSON.parse(readFileSync(resolve(root, "out/status.json"), "utf8"))

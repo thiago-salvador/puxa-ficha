@@ -8,9 +8,13 @@ import type { IngestResult } from "./types"
 import { stripAccents } from "../../src/lib/strip-accents"
 import { curateSenadoEmenta } from "./senado-ementa-curation"
 import { deriveSenadoMandatoEvidence } from "./senado-mandato-evidence"
+import { secondarySourceBirthDate } from "./data-nascimento"
+import { escreverAuditado } from "./escrita-auditada"
+import { getExplicitCohort } from "./cohort-context"
+import { ativarDryRun } from "./dry-run"
 
 const API = "https://legis.senado.leg.br/dadosabertos"
-const HEADERS = { Accept: "application/json" }
+const HEADERS = { Accept: "application/json", "User-Agent": "PuxaFicha/1.0 (+https://puxaficha.com.br)" }
 // Run 34339017360: 528 autorias de Ferraco exigiram 124s no fluxo sequencial.
 // Margem limitada para esse acervo, mantendo cancelamento e override por run.
 const SENADO_CANDIDATE_TIMEOUT_MS = 3 * 60 * 1000
@@ -19,10 +23,16 @@ const SENADO_CANCEL_SETTLE_MS = 5_000
 interface CandidateContext {
   signal: AbortSignal
   confirmed: (table: string) => void
+  unpublishBudget: { count: number }
 }
 
 function defaultContext(): CandidateContext {
-  return { signal: new AbortController().signal, confirmed: () => {} }
+  return { signal: new AbortController().signal, confirmed: () => {}, unpublishBudget: { count: 0 } }
+}
+
+export function withinSenadoUnpublishCaps(candidateUnpublishes: number, runUnpublishes: number, candidateLegacyRows: number): boolean {
+  return candidateUnpublishes <= 5 && runUnpublishes < 100
+    && candidateUnpublishes <= Math.floor(candidateLegacyRows * 0.1)
 }
 
 async function persist(
@@ -81,6 +91,51 @@ async function withTimeout<T>(operation: (signal: AbortSignal) => Promise<T>, ti
   }
 }
 
+/** O Senado tem 81 cadeiras; lista oficial com menos códigos que isto é tratada como parcial. */
+export const SENADORES_EM_EXERCICIO_MINIMO = 70
+
+/**
+ * Códigos dos senadores em exercício hoje, pela lista oficial do Senado.
+ *
+ * `CodigoPublicoNaLegAtual` do detalhe não serve para isso: o Senado preenche
+ * o campo também para ex-senadores e suplentes que já exerceram, e o ingest
+ * marcava como "Senador(a)" quem tinha saído do cargo anos antes (Gleisi
+ * Hoffmann, Benedita da Silva, Marcelo Crivella, entre outros, em 25/09/2026).
+ *
+ * `null` quando a lista não pôde ser lida ou veio com menos códigos que o piso
+ * de plausibilidade: o chamador não mexe em `cargo_atual` nem no partido nessa
+ * execução, em vez de adivinhar.
+ */
+export async function carregarSenadoresEmExercicio(): Promise<Set<string> | null> {
+  try {
+    const json = await fetchJSON<Record<string, unknown>>(`${API}/senador/lista/atual.json`, HEADERS, 2)
+    const parlamentares = ensureArray(
+      dig(json, "ListaParlamentarEmExercicio", "Parlamentares", "Parlamentar") as unknown[] | undefined,
+    )
+    const codigos = new Set(
+      parlamentares
+        .map((p) => dig(p, "IdentificacaoParlamentar", "CodigoParlamentar"))
+        .filter((codigo) => codigo != null && String(codigo).trim() !== "")
+        .map((codigo) => String(codigo).trim()),
+    )
+    // O Senado tem 81 cadeiras. Lista parcial (resposta truncada, paginação,
+    // manutenção) faria o ingest limpar o cargo de senador em exercício; abaixo
+    // do piso, a lista não decide nada.
+    if (codigos.size < SENADORES_EM_EXERCICIO_MINIMO) {
+      warn(
+        "senado",
+        `lista de senadores em exercício com ${codigos.size} código(s), abaixo do piso de ${SENADORES_EM_EXERCICIO_MINIMO}; cargo_atual não será alterado nesta execução`,
+      )
+      return null
+    }
+    return codigos
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err)
+    warn("senado", `lista de senadores em exercício indisponível (${msg}); cargo_atual não será alterado nesta execução`)
+    return null
+  }
+}
+
 async function ingestPerfil(
   codigo: number,
   candidatoId: string,
@@ -89,6 +144,7 @@ async function ingestPerfil(
   expectedNomeUrna: string,
   candidateEstado?: string,
   context: CandidateContext = defaultContext(),
+  emExercicio: Set<string> | null = null,
 ) {
   const json = await fetchJSON<Record<string, unknown>>(`${API}/senador/${codigo}.json`, HEADERS, undefined, undefined, { signal: context.signal })
   const parlamentar = dig(json, "DetalheParlamentar", "Parlamentar") as Record<string, unknown> | undefined
@@ -124,26 +180,44 @@ async function ingestPerfil(
     ultima_atualizacao: new Date().toISOString(),
   }
 
+  const { data: current, error: currentError } = await supabase
+    .from("candidatos")
+    .select("foto_url, sq_candidato_2026, cargo_atual")
+    .eq("id", candidatoId)
+    .abortSignal(context.signal)
+    .single()
+  if (currentError) throw new Error(`candidatos: ${currentError.message}`)
+  // Issue #472: a 2026 TSE registration is the authority for party, birth
+  // date and birthplace (the cohort ingest writes naturalidade from the TSE
+  // complement and cites it in the biography). The Senado profile lags party
+  // switches (it still listed PSD for a PT candidate), so it only fills
+  // fields TSE does not publish.
+  const registroTse = Boolean(current?.sq_candidato_2026)
+
   if (ident) {
-    const hasCurrentSenateSeat = Boolean(ident.CodigoPublicoNaLegAtual)
+    // true/false só com a lista oficial em mãos; null = não decidir.
+    const hasCurrentSenateSeat = emExercicio ? emExercicio.has(String(codigo)) : null
 
     // Only set photo if candidate doesn't already have one (Wikipedia photos preferred)
-    if (ident.UrlFotoParlamentar) {
-      const { data: current } = await supabase.from("candidatos").select("foto_url").eq("id", candidatoId).abortSignal(context.signal).single()
-      if (!current?.foto_url) updates.foto_url = ident.UrlFotoParlamentar as string
-    }
+    if (ident.UrlFotoParlamentar && !current?.foto_url) updates.foto_url = ident.UrlFotoParlamentar as string
     // The Senado detail endpoint reflects the parliamentary profile there. For ex-senators it
     // should not override current-party curation outside the current legislature.
-    if (hasCurrentSenateSeat && ident.SiglaPartidoParlamentar) {
+    if (!registroTse && hasCurrentSenateSeat === true && ident.SiglaPartidoParlamentar) {
       updates.partido_sigla = ident.SiglaPartidoParlamentar
       updates.partido_atual = ident.SiglaPartidoParlamentar
     }
-    if (hasCurrentSenateSeat) updates.cargo_atual = "Senador(a)"
+    if (hasCurrentSenateSeat === true) updates.cargo_atual = "Senador(a)"
+    // Fora da lista em exercício: limpa só o rótulo que este ingest gravou.
+    // Outro cargo curado (governador, deputado) fica como está.
+    else if (hasCurrentSenateSeat === false && current?.cargo_atual === "Senador(a)") updates.cargo_atual = null
   }
 
   if (dadosBasicos) {
-    if (dadosBasicos.DataNascimento) updates.data_nascimento = dadosBasicos.DataNascimento
-    if (dadosBasicos.Naturalidade && dadosBasicos.UfNaturalidade) {
+    // A API devolve 1900-01-01 para parlamentar sem data cadastrada: sentinela
+    // e data só com ano nunca viram nascimento na ficha.
+    const nascimento = registroTse ? null : secondarySourceBirthDate(dadosBasicos.DataNascimento)
+    if (nascimento) updates.data_nascimento = nascimento
+    if (!registroTse && dadosBasicos.Naturalidade && dadosBasicos.UfNaturalidade) {
       updates.naturalidade = `${dadosBasicos.Naturalidade}/${dadosBasicos.UfNaturalidade}`
     }
   }
@@ -424,16 +498,156 @@ interface AutoriasOutcome {
   primeiroErro?: string
 }
 
+export interface LegacySenadoProjectRow {
+  id: string
+  proposicao_id_api: string | null
+  fonte: string | null
+  despublicado_em?: string | null
+  tipo?: string | null
+  numero?: string | null
+  ano?: number | null
+  ementa?: string | null
+}
+
+export interface SenadoProjectIdentity {
+  id: string
+  tipo: string
+  numero: string
+  ano: number | null
+  ementa: string
+}
+
+function normalizeProjectTupleValue(value: string | null | undefined): string {
+  return String(value ?? "").trim().replace(/\s+/g, " ").toLocaleUpperCase("pt-BR")
+}
+
+export function planejarReconciliacaoAutoriaLegada<T extends LegacySenadoProjectRow>(input: {
+  legacyRows: readonly T[]
+  officialRows: readonly SenadoProjectIdentity[]
+  sourceComplete: boolean
+  noCompetingHouseIdentity?: boolean
+  senateProvenanceVerified?: boolean
+}): { confirmed: Array<{ legacy: T; official: SenadoProjectIdentity }>; absent: T[]; review: T[] } {
+  const confirmed: Array<{ legacy: T; official: SenadoProjectIdentity }> = []
+  const absent: T[] = []
+  const review: T[] = []
+  for (const row of input.legacyRows) {
+    if (row.fonte != null || row.despublicado_em) continue
+    if (!input.sourceComplete) { review.push(row); continue }
+    const idMatch = row.proposicao_id_api
+      ? input.officialRows.find((official) => official.id === row.proposicao_id_api)
+      : undefined
+    if (idMatch) { confirmed.push({ legacy: row, official: idMatch }); continue }
+    {
+      const tipo = normalizeProjectTupleValue(row.tipo)
+      const numero = normalizeProjectTupleValue(row.numero)
+      const tupleMatches = tipo && numero ? input.officialRows.filter((official) =>
+        normalizeProjectTupleValue(official.tipo) === tipo
+        && normalizeProjectTupleValue(official.numero) === numero
+        && (row.ano == null
+          ? normalizeProjectTupleValue(row.ementa) !== "" && normalizeProjectTupleValue(official.ementa) === normalizeProjectTupleValue(row.ementa)
+          : official.ano === row.ano),
+      ) : []
+      // A tuple is not a cross-house identity key: a former deputy can have
+      // the same PL number/year in both houses. Only use it when the roster
+      // explicitly rules out a Câmara identity; otherwise require the official
+      // Senado CodigoMateria above or leave the legacy row for review.
+      if (tupleMatches.length > 0 && !input.noCompetingHouseIdentity) { review.push(row); continue }
+      if (tupleMatches.length === 1) { confirmed.push({ legacy: row, official: tupleMatches[0]! }); continue }
+      if (tupleMatches.length > 1) { review.push(row); continue }
+    }
+    if (!row.proposicao_id_api && (!row.tipo || !row.numero || row.ano == null && !row.ementa)) review.push(row)
+    else if (input.senateProvenanceVerified) absent.push(row)
+    else review.push(row)
+  }
+  return { confirmed, absent, review }
+}
+
+export const SENADO_AUTORIA_CHUNK_SIZE = 75
+
+export function isSenadoPrincipalAutoria(value: unknown): boolean {
+  return String(value ?? "").trim().toLocaleLowerCase("pt-BR") === "sim"
+}
+
+export function isCompleteSenadoAutoriaList(code: number, parliamentarian: Record<string, unknown> | undefined, autorias: readonly unknown[]): boolean {
+  return String(parliamentarian?.Codigo ?? parliamentarian?.CodigoParlamentar ?? "") === String(code) && autorias.length > 0
+}
+
+export async function persistSenadoAutoriaChunks<T extends { proposicao_id_api: string }>(input: {
+  rows: readonly T[]
+  chunkSize: number
+  apply: (chunk: readonly T[]) => Promise<void>
+  readback: (matterIds: readonly string[]) => Promise<readonly string[]>
+  signal?: AbortSignal
+}): Promise<{ confirmedIds: string[]; unresolvedIds: string[]; errors: string[] }> {
+  if (!Number.isInteger(input.chunkSize) || input.chunkSize < 1) throw new Error("tamanho de lote Senado inválido")
+  const confirmedIds: string[] = []
+  const unresolvedIds: string[] = []
+  const errors: string[] = []
+  for (let offset = 0; offset < input.rows.length; offset += input.chunkSize) {
+    input.signal?.throwIfAborted()
+    const chunk = input.rows.slice(offset, offset + input.chunkSize)
+    const ids = chunk.map((row) => row.proposicao_id_api)
+    let applyError: string | null = null
+    try { await input.apply(chunk) }
+    catch (err) {
+      if (input.signal?.aborted) throw err
+      applyError = err instanceof Error ? err.message : String(err)
+    }
+    input.signal?.throwIfAborted()
+    let persistedIds: readonly string[] = []
+    let readbackError: string | null = null
+    try { persistedIds = await input.readback(ids) }
+    catch (err) {
+      if (input.signal?.aborted) throw err
+      readbackError = err instanceof Error ? err.message : String(err)
+    }
+    input.signal?.throwIfAborted()
+    const persisted = new Set(persistedIds)
+    const confirmed = applyError || readbackError ? [] : ids.filter((id) => persisted.has(id))
+    const unresolved = ids.filter((id) => !confirmed.includes(id))
+    confirmedIds.push(...confirmed)
+    unresolvedIds.push(...unresolved)
+    if (applyError || readbackError || unresolved.length > 0) {
+      errors.push(`lote ${offset / input.chunkSize + 1}: ${applyError ?? readbackError ?? `readback ausente para ${unresolved.join(",")}`}`)
+    }
+  }
+  return { confirmedIds, unresolvedIds, errors }
+}
+
 async function ingestAutorias(
   codigo: number,
   candidatoId: string,
   slug: string,
   context: CandidateContext = defaultContext(),
+  noCompetingHouseIdentity = false,
 ): Promise<AutoriasOutcome> {
   const json = await fetchJSON<Record<string, unknown>>(`${API}/senador/${codigo}/autorias.json`, HEADERS, undefined, undefined, { signal: context.signal })
   const autorias = ensureArray(
     dig(json, "MateriasAutoriaParlamentar", "Parlamentar", "Autorias", "Autoria") as Record<string, unknown>[]
   )
+  const parliamentarian = dig(json, "MateriasAutoriaParlamentar", "Parlamentar") as Record<string, unknown> | undefined
+  const sourceComplete = Array.isArray(dig(json, "MateriasAutoriaParlamentar", "Parlamentar", "Autorias", "Autoria"))
+    && isCompleteSenadoAutoriaList(codigo, parliamentarian, autorias)
+    && autorias.every((item) => {
+      const materia = item?.Materia as Record<string, unknown> | undefined
+      return materia != null && /^\d+$/.test(String(materia.Codigo || materia.CodigoMateria || ""))
+    })
+  const sourceMatterById = new Map(autorias.flatMap((item) => {
+    const materia = item.Materia as Record<string, unknown> | undefined
+    const id = String(materia?.Codigo || materia?.CodigoMateria || "")
+    return materia && /^\d+$/.test(id) ? [[id, item] as const] : []
+  }))
+  const officialRows: SenadoProjectIdentity[] = [...sourceMatterById.entries()].map(([id, item]) => {
+    const materia = item.Materia as Record<string, unknown>
+    return {
+      id,
+      tipo: String(materia.Sigla || materia.SiglaSubtipoMateria || materia.DescricaoSubtipoMateria || ""),
+      numero: String(materia.Numero || materia.NumeroMateria || ""),
+      ano: Number(materia.Ano || materia.AnoMateria) || null,
+      ementa: curateSenadoEmenta(id, String(materia.Ementa || materia.EmentaMateria || item.DescricaoTextoMateria || "")),
+    }
+  })
 
   // Issue #138: aqui existia `autorias.slice(0, 100)`, o mesmo teto silencioso do
   // ingest da Camara. O endpoint `/autorias.json` devolve o acervo inteiro numa
@@ -442,70 +656,188 @@ async function ingestAutorias(
   let count = 0
   let recusados = 0
   let primeiroErro: string | undefined
-  for (const a of autorias) {
+  const materiasPersistidas = new Set<string>()
+
+  // Preserve curatorially unpublished Senate rows. An upsert with a null
+  // tombstone would otherwise silently republish them on the next collection.
+  const unpublished = await supabase.from("projetos_lei")
+    .select("proposicao_id_api").eq("candidato_id", candidatoId).eq("fonte", "Senado").not("despublicado_em", "is", null)
+  if (unpublished.error) throw new Error(`projetos_lei: falha ao preservar proposições previamente despublicadas: ${unpublished.error.message}`)
+  for (const row of unpublished.data ?? []) if (row.proposicao_id_api != null) materiasPersistidas.add(String(row.proposicao_id_api))
+
+  // Reconcilia apenas legado sem fonte, a partir do payload explicitamente
+  // completo e vinculado ao mesmo CodigoParlamentar. Falha/shape parcial deixa
+  // tudo em revisão; a lista oficial ausente nunca vira inferência silenciosa.
+  const legacyRows: LegacySenadoProjectRow[] = []
+  const legacyPageSize = 500
+  const legacySafetyLimit = 5000
+  for (let offset = 0; offset <= legacySafetyLimit; offset += legacyPageSize) {
     context.signal.throwIfAborted()
+    const legacyQuery = await supabase.from("projetos_lei")
+      .select("id,proposicao_id_api,fonte,despublicado_em,tipo,numero,ano,ementa")
+      .eq("candidato_id", candidatoId).is("fonte", null).is("despublicado_em", null)
+      .order("id", { ascending: true }).range(offset, offset + legacyPageSize - 1)
+    if (legacyQuery.error) throw new Error(`projetos_lei: falha ao ler legado sem fonte: ${legacyQuery.error.message}`)
+    const page = (legacyQuery.data ?? []) as LegacySenadoProjectRow[]
+    legacyRows.push(...page)
+    if (page.length < legacyPageSize) break
+    if (offset >= legacySafetyLimit) throw new Error("projetos_lei: legado sem fonte excede limite seguro de leitura completa; nenhuma reconciliação inferida")
+  }
+  const reconciliation = planejarReconciliacaoAutoriaLegada({ legacyRows, officialRows, sourceComplete, noCompetingHouseIdentity })
+  if (reconciliation.review.length > 0) warn("senado", `  ${slug}: ${reconciliation.review.length} linha(s) legada(s) sem ID/fonte completa em revisão`)
+  context.signal.throwIfAborted()
+  const confirmedIds = reconciliation.confirmed.map(({ official }) => official.id)
+  const existingSenateQuery = confirmedIds.length > 0
+    ? await supabase.from("projetos_lei").select("id,proposicao_id_api").eq("candidato_id", candidatoId).eq("fonte", "Senado").in("proposicao_id_api", confirmedIds).limit(confirmedIds.length + 1)
+    : { data: [], error: null }
+  if (existingSenateQuery.error) throw new Error(`projetos_lei: falha ao verificar chaves Senate existentes: ${existingSenateQuery.error.message}`)
+  const existingSenateIds = new Set((existingSenateQuery.data ?? []).map((row: { proposicao_id_api: string | null }) => row.proposicao_id_api).filter((id): id is string => id != null))
+  const duplicateLegacyCount = reconciliation.confirmed.filter(({ official }) => existingSenateIds.has(official.id)).length
+  const allowDuplicateCleanup = withinSenadoUnpublishCaps(duplicateLegacyCount, context.unpublishBudget.count, legacyRows.length)
+  if (duplicateLegacyCount > 0 && !allowDuplicateCleanup) {
+    recusados += duplicateLegacyCount
+    primeiroErro ??= `limite de tombstones para duplicatas excedido; ${duplicateLegacyCount} linha(s) mantida(s) para revisão`
+  }
+  for (const { legacy, official } of [
+    ...reconciliation.confirmed,
+    ...reconciliation.absent.map((legacy) => ({ legacy, official: null })),
+  ]) {
+    context.signal.throwIfAborted()
+    const confirmedMatter = official ? sourceMatterById.get(official.id) : undefined
+    const materia = confirmedMatter?.Materia as Record<string, unknown> | undefined
+    const duplicateOfficialRow = materia != null && official != null && existingSenateIds.has(official.id)
+    if (duplicateOfficialRow && !allowDuplicateCleanup) continue
+    const willSetSource = materia != null && !duplicateOfficialRow
+    const patch: Record<string, unknown> = willSetSource ? {
+      fonte: "Senado",
+      tipo: String(materia.Sigla || materia.SiglaSubtipoMateria || materia.DescricaoSubtipoMateria || ""),
+      numero: String(materia.Numero || materia.NumeroMateria || ""),
+      ano: Number(materia.Ano || materia.AnoMateria) || null,
+      ementa: curateSenadoEmenta(legacy.proposicao_id_api!, String(materia.Ementa || materia.EmentaMateria || confirmedMatter?.DescricaoTextoMateria || "")),
+      proposicao_id_api: official!.id,
+      despublicado_em: null,
+      despublicacao_motivo: null,
+    } : {
+      despublicado_em: new Date().toISOString(),
+      despublicacao_motivo: duplicateOfficialRow
+        ? `senado-autorias: legado duplicado; a proposição ${official!.id} já tem linha Senado com fonte oficial. Linha preservada, apenas despublicada.`
+        : `senado-autorias: lista completa do endpoint oficial ${API}/senador/${codigo}/autorias.json não contém a tupla ${legacy.tipo ?? ""}/${legacy.numero ?? ""}/${legacy.ano ?? "sem-ano"}; não excluir linha`,
+    }
+    if (!sourceComplete && !duplicateOfficialRow) continue
+    let legacyUpdate = supabase.from("projetos_lei").update(patch).eq("id", legacy.id).eq("candidato_id", candidatoId).is("fonte", null).is("despublicado_em", null)
+    legacyUpdate = legacy.proposicao_id_api == null ? legacyUpdate.is("proposicao_id_api", null) : legacyUpdate.eq("proposicao_id_api", legacy.proposicao_id_api)
+    legacyUpdate = legacy.tipo == null ? legacyUpdate.is("tipo", null) : legacyUpdate.eq("tipo", legacy.tipo)
+    legacyUpdate = legacy.numero == null ? legacyUpdate.is("numero", null) : legacyUpdate.eq("numero", legacy.numero)
+    legacyUpdate = legacy.ano == null ? legacyUpdate.is("ano", null) : legacyUpdate.eq("ano", legacy.ano)
+    legacyUpdate = legacy.ementa == null ? legacyUpdate.is("ementa", null) : legacyUpdate.eq("ementa", legacy.ementa)
+    let outcome: Array<{ id: string; fonte?: string | null; proposicao_id_api?: string | null; despublicado_em?: string | null }>
+    try {
+      outcome = await escreverAuditado(
+        { script: "ingest-senado", tabela: "projetos_lei", motivo: materia ? "Atribuir fonte oficial à proposição legada confirmada pelo Senado" : "Despublicar proposição legada ausente na lista completa do Senado", recorte: `${slug}:${legacy.proposicao_id_api ?? `${legacy.tipo}/${legacy.numero}/${legacy.ano ?? "sem-ano"}`}` },
+        () => legacyUpdate.select("id,fonte,proposicao_id_api,despublicado_em"),
+      )
+    } catch (err) {
+      if (context.signal.aborted) throw new Error(`${context.signal.reason instanceof Error ? context.signal.reason.message : String(context.signal.reason)}; projetos_lei: reconciliação legada em voo sem confirmação, conferir no banco`)
+      throw err
+    }
+    if (outcome.length !== 1 || (willSetSource && outcome[0]?.fonte !== "Senado") || (!willSetSource && !outcome[0]?.despublicado_em)) {
+      throw new Error(`projetos_lei: readback da reconciliação legada divergiu para ${legacy.id}`)
+    }
+    if (willSetSource) {
+      const readback = await supabase.from("projetos_lei").select("id,candidato_id,fonte,proposicao_id_api,tipo,numero,ano,ementa,despublicado_em").eq("id", legacy.id).single()
+      if (readback.error || readback.data?.fonte !== "Senado" || String(readback.data?.proposicao_id_api) !== official!.id || readback.data?.tipo !== official!.tipo || readback.data?.numero !== official!.numero || readback.data?.ano !== official!.ano || readback.data?.ementa !== official!.ementa || readback.data?.despublicado_em != null) throw new Error(`projetos_lei: readback independente da reconciliação divergente para ${legacy.id}`)
+      materiasPersistidas.add(official!.id)
+      count++
+      context.confirmed("projetos_lei")
+    } else {
+      const readback = await supabase.from("projetos_lei").select("id,despublicado_em,despublicacao_motivo").eq("id", legacy.id).single()
+      if (readback.error || readback.data?.despublicado_em == null) throw new Error(`projetos_lei: readback independente da despublicação divergente para ${legacy.id}`)
+      if (duplicateOfficialRow && official) materiasPersistidas.add(official.id)
+      context.confirmed("projetos_lei")
+      if (duplicateOfficialRow) context.unpublishBudget.count++
+    }
+  }
+  const rowsByMatterId = new Map<string, {
+    candidato_id: string
+    tipo: string
+    numero: string
+    ano: number | null
+    ementa: string
+    fonte: "Senado"
+    proposicao_id_api: string
+    despublicado_em: null
+    despublicacao_motivo: null
+  }>()
+  for (const a of autorias) {
+    if (!isSenadoPrincipalAutoria(a.IndicadorAutorPrincipal)) continue
     const materia = a.Materia as Record<string, unknown> | undefined
-    if (!materia) continue
-
-    // Senado Dados Abertos retorna o flag IndicadorAutorPrincipal com tres formas observadas:
-    // - "Sim" (autor principal)
-    // - "Não" (com til, autor subsidiario - forma canonica desde a virada Unicode)
-    // - "Nao" (sem til, forma legada que aparece em algumas respostas antigas)
-    // O filtro precisa ser robusto a diacriticos para nao deixar co-autorias entrarem como
-    // autoria principal e poluir projetos_lei (regressao 2026-04-29 do cleanup Flavio Bolsonaro).
-    // Estrategia: aceitar somente o positivo "Sim" (case-insensitive); qualquer outro valor
-    // (vazio, "Nao", "Não", ou ausente) e tratado como subsidiario e descartado.
-    const indicadorPrincipalRaw = String(a.IndicadorAutorPrincipal ?? "").trim()
-    const indicadorPrincipalNormalized = stripAccents(indicadorPrincipalRaw)
-      .toLowerCase()
-    if (indicadorPrincipalNormalized !== "sim") continue
-
-    // Map correct field names from Senado API with fallback to legacy names
+    if (!materia) { recusados++; primeiroErro ??= "autoria sem bloco Materia"; continue }
     const materiaId = String(materia.Codigo || materia.CodigoMateria || "")
+    if (!/^\d+$/.test(materiaId)) { recusados++; primeiroErro ??= "autoria sem ID oficial da matéria; revisão necessária"; continue }
+    // A ficha e o total publicado preservam apenas autoria principal.
+    // A API pode repetir a mesma matéria; a chave oficial evita duplicação.
+    if (materiasPersistidas.has(materiaId) || rowsByMatterId.has(materiaId)) continue
     const sigla = String(materia.Sigla || materia.SiglaSubtipoMateria || materia.DescricaoSubtipoMateria || "")
     const numero = String(materia.Numero || materia.NumeroMateria || "")
     const ano = Number(materia.Ano || materia.AnoMateria) || null
-    const ementa = curateSenadoEmenta(
-      materiaId,
-      String(materia.Ementa || materia.EmentaMateria || a.DescricaoTextoMateria || ""),
-    )
-
-    // Guard: skip empty rows where all key fields are missing
-    if (!sigla && !numero && !ano && !ementa) {
-      continue
-    }
-
-    const row = {
-      candidato_id: candidatoId,
-      tipo: sigla,
-      numero,
-      ano,
-      ementa,
-      fonte: "Senado",
-      proposicao_id_api: materiaId,
-    }
-
-    // Contar tentativa como sucesso escondia escrita perdida (issue #138).
-    const { error: upsertError } = await supabase
-      .from("projetos_lei")
-      .upsert(row, { onConflict: "candidato_id,fonte,proposicao_id_api" })
-      .abortSignal(context.signal)
-    if (upsertError) {
-      if (context.signal.aborted) throw new Error(`${context.signal.reason.message}; projetos_lei: escrita em voo sem confirmação, conferir no banco`)
-      recusados++
-      if (!primeiroErro) primeiroErro = upsertError.message
-      warn("senado", `  ${slug}: upsert recusou materia ${materiaId}: ${upsertError.message}`)
-      continue
-    }
-    context.confirmed("projetos_lei")
-    count++
-    context.signal.throwIfAborted()
+    const ementa = curateSenadoEmenta(materiaId, String(materia.Ementa || materia.EmentaMateria || a.DescricaoTextoMateria || ""))
+    if (!sigla && !numero && !ano && !ementa) { recusados++; primeiroErro ??= `matéria ${materiaId} sem conteúdo exibível`; continue }
+    rowsByMatterId.set(materiaId, {
+      candidato_id: candidatoId, tipo: sigla, numero, ano, ementa, fonte: "Senado",
+      proposicao_id_api: materiaId, despublicado_em: null, despublicacao_motivo: null,
+    })
   }
+  const sourceRows = [...rowsByMatterId.values()]
+  const batchResult = await persistSenadoAutoriaChunks({
+    rows: sourceRows,
+    chunkSize: SENADO_AUTORIA_CHUNK_SIZE,
+    signal: context.signal,
+    apply: async (chunk) => {
+      context.signal.throwIfAborted()
+      const ids = chunk.map((row) => row.proposicao_id_api)
+      try {
+        const written = await escreverAuditado(
+          { script: "ingest-senado", tabela: "projetos_lei", motivo: `Coletar lote de ${chunk.length} proposições do endpoint oficial do Senado`, recorte: `${slug}:${ids[0]}-${ids.at(-1)}` },
+          // A duplicate may have been tombstoned after the preflight SELECT.
+          // Ignore conflicts so an existing row is never republished by MERGE.
+          () => supabase.from("projetos_lei").upsert([...chunk], { onConflict: "candidato_id,fonte,proposicao_id_api", ignoreDuplicates: true })
+            .select("id,candidato_id,fonte,proposicao_id_api,despublicado_em").abortSignal(context.signal),
+        )
+        if (written.length > chunk.length) throw new Error(`resposta da escrita informou ${written.length}/${chunk.length} linhas`)
+      } catch (err) {
+        if (context.signal.aborted) throw new Error(`${context.signal.reason instanceof Error ? context.signal.reason.message : String(context.signal.reason)}; projetos_lei: lote em voo sem confirmação, conferir no banco`)
+        throw err
+      }
+    },
+    readback: async (matterIds) => {
+      context.signal.throwIfAborted()
+      const { data, error: readError } = await supabase.from("projetos_lei")
+        .select("candidato_id,tipo,numero,ano,ementa,fonte,proposicao_id_api,despublicado_em")
+        .eq("candidato_id", candidatoId).eq("fonte", "Senado").is("despublicado_em", null).in("proposicao_id_api", [...matterIds])
+        .abortSignal(context.signal)
+      if (readError) throw new Error(`readback independente do lote falhou: ${readError.message}`)
+      const expected = new Map(sourceRows.filter((row) => matterIds.includes(row.proposicao_id_api)).map((row) => [row.proposicao_id_api, row]))
+      return (data ?? []).flatMap((row) => {
+        const source = expected.get(String(row.proposicao_id_api))
+        return source && row.candidato_id === source.candidato_id && row.tipo === source.tipo && row.numero === source.numero
+          && row.ano === source.ano && row.ementa === source.ementa && row.fonte === "Senado" && row.despublicado_em == null
+          ? [String(row.proposicao_id_api)] : []
+      })
+    },
+  })
+  count = batchResult.confirmedIds.length
+  recusados += batchResult.unresolvedIds.length
+  if (!primeiroErro && batchResult.errors.length > 0) primeiroErro = batchResult.errors[0]
+  for (const id of batchResult.confirmedIds) {
+    materiasPersistidas.add(id)
+    context.confirmed("projetos_lei")
+  }
+  if (batchResult.errors.length > 0) warn("senado", `  ${slug}: ${batchResult.errors.join("; ")}`)
 
   const alerta = recusados > 0 ? ` / ${recusados} RECUSADAS (${primeiroErro})` : ""
   log(
     "senado",
-    `  ${slug}: ${count} autorias principais gravadas de ${autorias.length} autorias declaradas${alerta}`
+    `  ${slug}: ${count} proposições de autoria gravadas de ${autorias.length} autorias declaradas${alerta}`
   )
   return { persistidas: count, recusadas: recusados, primeiroErro }
 }
@@ -521,12 +853,15 @@ export type IngestSenadoOptions = {
 export async function ingestSenado(options?: IngestSenadoOptions | string[]): Promise<IngestResult[]> {
   const opts: IngestSenadoOptions = Array.isArray(options) ? { targetSlugs: options } : (options ?? {})
   const selectedSlugs = opts.targetSlugs != null ? new Set(opts.targetSlugs) : null
+  const cohort = getExplicitCohort()
   const candidateTimeoutMs = opts.candidateTimeoutMs ?? SENADO_CANDIDATE_TIMEOUT_MS
   const candidatos = (await loadCandidatosPublicos()).filter((cand) =>
-    selectedSlugs ? selectedSlugs.has(cand.slug) : true
+    (!selectedSlugs || selectedSlugs.has(cand.slug)) && (!cohort || cohort.some((item) => item.slug === cand.slug))
   )
   const verificacaoPorSlug = await loadVerificacaoCampos(candidatos.map((cand) => cand.slug))
   const results: IngestResult[] = []
+  const unpublishBudget = { count: 0 }
+  const emExercicio = candidatos.some((cand) => cand.ids.senado) ? await carregarSenadoresEmExercicio() : null
 
   for (const cand of candidatos) {
     if (!cand.ids.senado) continue
@@ -566,6 +901,7 @@ export async function ingestSenado(options?: IngestSenadoOptions | string[]): Pr
         async (signal) => {
           const context: CandidateContext = {
             signal,
+            unpublishBudget,
             confirmed: (table) => {
               if (finalized) return
               if (!result.tables_updated.includes(table)) result.tables_updated.push(table)
@@ -580,6 +916,7 @@ export async function ingestSenado(options?: IngestSenadoOptions | string[]): Pr
             cand.nome_urna,
             cand.estado,
             context,
+            emExercicio,
           )
           await sleep(500, signal)
 
@@ -595,6 +932,9 @@ export async function ingestSenado(options?: IngestSenadoOptions | string[]): Pr
           result.errors.push(...votos.erros)
           await sleep(500, signal)
 
+          // `ids.camara: null` also means the correct ID may be unknown. No
+          // independent proof of no competing Câmara identity is available in
+          // this seed, so tuple-only legacy matches remain in review.
           const autorias = await ingestAutorias(cand.ids.senado!, candidatoId, cand.slug, context)
           signal.throwIfAborted()
           // Vistoria do PR #141: recusa que fica só no log de texto é escrita
@@ -625,6 +965,7 @@ export async function ingestSenado(options?: IngestSenadoOptions | string[]): Pr
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
+  if (!process.argv.includes("--apply")) ativarDryRun()
   const targetSlugs = process.argv
     .slice(2)
     .flatMap((value, index, args) => {

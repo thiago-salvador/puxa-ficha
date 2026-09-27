@@ -1,0 +1,58 @@
+name: Checagens nas agências (diagnóstico manual)
+
+# A coleta semanal completa roda no Mac: docs/operations/checagens-local.md.
+# O runner hospedado recebe HTTP 403 do UOL Confere e da AFP; não grava
+# em coleta_log nem altera o catálogo público.
+on:
+  workflow_dispatch:
+    inputs:
+      slugs:
+        description: Slugs separados por vírgula. Vazio = cadastro inteiro.
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checagens-coleta-dry-run
+  cancel-in-progress: false
+
+jobs:
+  coletar:
+    name: Diagnóstico nominal nas agências
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - run: npm ci --ignore-scripts
+
+      - name: Testes do coletor
+        run: node --import tsx --test tests/checagens-coleta.test.ts tests/checagens-fontes-diretas.test.ts
+
+      - name: Diagnóstico sem Google, somente leitura
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY || secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          CHECAGENS_SLUGS: ${{ inputs.slugs }}
+        run: |
+          args=(--out reports/checagens-coleta/run --sem-google --concorrencia 3 --pausa-ms 0)
+          if [ -n "$CHECAGENS_SLUGS" ]; then args+=(--slugs "$CHECAGENS_SLUGS"); fi
+          npm run coletar:checagens -- "${args[@]}"
+
+      - name: Guardar recibos e leads diagnósticos
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: checagens-coleta-${{ github.run_id }}
+          path: reports/checagens-coleta/run/
+          if-no-files-found: warn
+          retention-days: 30

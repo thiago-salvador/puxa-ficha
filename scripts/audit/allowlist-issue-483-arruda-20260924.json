@@ -1,0 +1,52 @@
+{
+  "versao": "2026-09-24",
+  "fonte": "DivulgaCandContas, detalhe da candidatura SQ 70002552586 (DF, Governador, PSD), https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/DF/20322002026/candidato/70002552586, lido pela coleta da auditoria em 2026-09-24T17:44:09.088Z e ao vivo por navegador em 2026-09-24T17:52:22.222Z: descricaoSituacao \"Indeferido\", isCandidatoInapto false, descricaoSituacaoCandidato \"Consta da urna\", descricaoTotalizacao \"Concorrendo\", dataUltimaAtualizacao \"2026-09-24 14:12\", st_SUBSTITUIDO false. SHA-256 do corpo (8811 bytes) 9ae72fa81d11087e1999d469f15c4defd149b436c3c8977df080ba60c5b60f65, igual nas duas leituras. Issue #483, auditoria run 36036234785.",
+  "motivo": "A candidatura estava publicada como 'indeferido com recurso' e o TSE passou a da-la como Indeferido, sem mencao a recurso, ainda apta e concorrendo. A ficha permanece no ar: so situacao_candidatura e ultima_atualizacao mudam; status ('candidato') e publicavel (true) ficam intactos porque indeferimento sem inaptidao nao e terminal.",
+  "coorte": [
+    "jose-roberto-arruda"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "jose-roberto-arruda",
+      "campos": [
+        "situacao_candidatura",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "issue-483-arruda-indeferido",
+      "campos": [
+        "migration_version",
+        "tabela",
+        "row_id",
+        "candidato_id",
+        "preimage",
+        "postimage",
+        "registrado_em"
+      ]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260924180000",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
+    }
+  ]
+}

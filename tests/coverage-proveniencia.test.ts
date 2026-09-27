@@ -31,7 +31,7 @@ import {
   type ColetaPorFonte
 } from "../scripts/audit/lib/coverage-model"
 import type { UltimaColeta } from "../scripts/audit/lib/coleta-proveniencia"
-import { removerBlocoDeAusencias, removerBlocoDeColeta } from "../scripts/audit/lib/snapshot-fetch"
+import { removerBlocoDeAusencias, removerBlocoDeColeta, removerBlocoDeNumeroUrna } from "../scripts/audit/lib/snapshot-fetch"
 import { lerSnapshot } from "../scripts/audit/coverage-report"
 
 /** Candidato mínimo: tudo vazio, que é o cenário em que a procedência importa. */
@@ -103,6 +103,24 @@ test("registro atual de 2026 entra no contrato de patrimônio sem inventar finan
   assert.equal(celulas.patrimonio.state, "missing")
   assert.equal(celulas.financiamento.state, "na")
   assert.equal(celulas.financiamento.text, "pleito em curso")
+})
+
+test("numero de urna distingue schema ausente, preenchido e lacuna", () => {
+  const atual = { temSqAtualNoBanco: true }
+  assert.equal(calcularCelulas(candidato(atual)).numero_urna.state, "partial")
+  assert.equal(calcularCelulas(candidato({ ...atual, numeroUrnaSchema: "present", numeroUrna: "13" })).numero_urna.state, "ok")
+  assert.equal(calcularCelulas(candidato({ ...atual, numeroUrnaSchema: "present", numeroUrna: null })).numero_urna.state, "missing")
+})
+
+test("motivos terminais documentados não viram gap corrigível", () => {
+  const cell = calcularCelulas(candidato({ temSqAtualNoBanco: true, numeroUrnaSchema: "present", numeroUrna: null, numeroUrnaAusenciaRazao: "indeferimento" })).numero_urna
+  assert.equal(cell.state, "na")
+  assert.match(cell.tip ?? "", /não é gap corrigível/)
+})
+
+test("perfil sem SQ de 2026 não recebe gap de número de urna", () => {
+  const cell = calcularCelulas(candidato({ numeroUrnaSchema: "present", numeroUrna: null, temSqAtualNoBanco: false, temSqNoSeed: false })).numero_urna
+  assert.equal(cell.state, "na")
 })
 
 test("votações são medidas contra a interseção real com o mandato", () => {
@@ -812,6 +830,13 @@ test("snapshot sem a chave de ausências oficiais degrada para lista vazia", () 
   const [comLista, semLista] = lerSnapshot(caminho)
   assert.deepEqual(comLista.patrimonioAusenciasOficiais, [2018])
   assert.deepEqual(semLista.patrimonioAusenciasOficiais, [])
+})
+
+test("snapshot sem bloco de numero_urna é explicitamente removível", () => {
+  const sql = readFileSync(join(process.cwd(), "scripts/audit", "coverage-snapshot.sql"), "utf8")
+  const stripped = removerBlocoDeNumeroUrna(sql)
+  assert.doesNotMatch(stripped, /'numeroUrna'|c\.numero_urna/)
+  assert.match(sql, /@numero-urna-opcional-inicio/)
 })
 
 /**

@@ -8,7 +8,8 @@ import { processosOverviewDisplay } from "@/lib/processos-display"
 import { formatCompact } from "@/lib/utils"
 import type { ProgramaGovernoManifestoPublico } from "@/lib/programa-governo"
 import type { SenadoRunningMatesPayload } from "@/components/SenadoRunningMates"
-import type { CompromissoEvidenciaPublica } from "@/lib/compromisso-evidencia"
+import type { EstadoEvidenciasPrograma } from "@/lib/compromisso-evidencia"
+import type { ProgramaGovernoPendencia } from "@/lib/programa-governo-pendencia"
 
 type CandidatoProfileProps = {
   ficha: FichaCandidato
@@ -16,13 +17,15 @@ type CandidatoProfileProps = {
   pesquisasEnabled?: boolean
   pesquisas?: PesquisaEleitoralDoCandidato[]
   programaGoverno?: ProgramaGovernoManifestoPublico | null
-  compromissoEvidencias?: CompromissoEvidenciaPublica[]
+  compromissoEvidencias?: EstadoEvidenciasPrograma
+  programaPendente?: ProgramaGovernoPendencia | null
   senadoRunningMates?: SenadoRunningMatesPayload | null
 }
 
 type ProfileComponent = ComponentType<CandidatoProfileProps>
 type DeferredProfileOverview = {
   processos: number
+  processosOmitidos?: number
   processosVerificacao?: FichaCandidato["processos_verificacao"]
   patrimonio: number | null
   mudancas: number | null
@@ -73,6 +76,8 @@ function CandidatoProfileSkeleton({ overview }: { overview: DeferredProfileOverv
     overview.processos,
     null,
     overview.processosVerificacao,
+    new Date(),
+    overview.processosOmitidos ?? 0,
   )
   return (
     <section className="mx-auto max-w-7xl px-5 py-8 md:px-12 lg:py-12" aria-busy="true" aria-labelledby="candidate-profile-loading-title">
@@ -172,6 +177,7 @@ export function DeferredCandidatoProfileClient({
   pesquisas = [],
   programaGoverno = null,
   compromissoEvidencias,
+  programaPendente = null,
   senadoRunningMates = null,
 }: {
   slug: string
@@ -180,7 +186,8 @@ export function DeferredCandidatoProfileClient({
   pesquisasEnabled?: boolean
   pesquisas?: PesquisaEleitoralDoCandidato[]
   programaGoverno?: ProgramaGovernoManifestoPublico | null
-  compromissoEvidencias?: CompromissoEvidenciaPublica[]
+  compromissoEvidencias?: EstadoEvidenciasPrograma
+  programaPendente?: ProgramaGovernoPendencia | null
   senadoRunningMates?: SenadoRunningMatesPayload | null
 }) {
   const shouldLoad = useDeferredBelowFoldLoad()
@@ -222,6 +229,7 @@ export function DeferredCandidatoProfileClient({
       pesquisas={pesquisas}
       programaGoverno={programaGoverno}
       compromissoEvidencias={compromissoEvidencias}
+      programaPendente={programaPendente}
       senadoRunningMates={senadoRunningMates}
     />
   ) : (

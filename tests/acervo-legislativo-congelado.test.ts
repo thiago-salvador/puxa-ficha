@@ -69,10 +69,22 @@ test("CLI recusa force ou timeout sem slugs explícitos", () => {
   )
 })
 
+test("CLI exige --apply explícito para escrita dos coletores parlamentares e --dry-run prevalece", () => {
+  assert.equal(parseIngestCliOptions(["partidos-parlamentares"], {}).apply, false)
+  for (const source of ["camara", "senado", "ceaps-senado", "camara-cotas", "partidos-parlamentares"]) {
+    assert.equal(parseIngestCliOptions([source], {}).dryRun, true)
+    assert.equal(parseIngestCliOptions([source, "--apply"], {}).dryRun, false)
+  }
+  assert.equal(parseIngestCliOptions(["partidos-parlamentares", "--apply"], {}).apply, true)
+  assert.equal(parseIngestCliOptions(["partidos-parlamentares", "--apply", "--dry-run"], {}).apply, false)
+})
+
 test("workflow revalida cache após falha parcial sem esconder o job vermelho", async () => {
   const workflow = await import("node:fs/promises").then((fs) =>
     fs.readFile(new URL("../.github/workflows/ingest.yml", import.meta.url), "utf8")
   )
-  assert.match(workflow, /if: \$\{\{ !cancelled\(\) \}\}/)
+  // Desde 26/09/2026 o revalidate também exige a main (usa PF_REVALIDATE_SECRET);
+  // o !cancelled() continua, para revalidar depois de falha parcial.
+  assert.match(workflow, /if: \$\{\{ !cancelled\(\) && github\.ref == 'refs\/heads\/main' \}\}/)
   assert.doesNotMatch(workflow, /!contains\(needs\.\*\.result, 'failure'\)/)
 })

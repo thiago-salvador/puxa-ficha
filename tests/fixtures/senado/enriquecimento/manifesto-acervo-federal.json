@@ -86,23 +86,23 @@
       }
     },
     {
-      "source": "jarbas",
+      "source": "camara-cotas",
       "source_ids": [
-        "jarbas-registro-sintetico-a",
-        "jarbas-registro-sintetico-b"
+        "camara-cotas-registro-sintetico-a",
+        "camara-cotas-registro-sintetico-b"
       ],
       "resultado": "nao_aplicavel",
       "checked_at": "2026-09-14T12:00:00Z",
       "urls": [
-        "https://example.org/acervo/jarbas/a",
-        "https://example.org/acervo/jarbas/b"
+        "https://www.camara.leg.br/cotas/Ano-2026.csv.zip",
+        "https://www.camara.leg.br/cotas/Ano-2025.csv.zip"
       ],
-      "escopo": "registro nominal sintético do acervo jarbas",
+      "escopo": "registro nominal sintético das cotas oficiais da Câmara",
       "detalhe": "Fixture: nenhuma ocorrência nominal nas buscas sintéticas.",
       "readback": {
         "registry_source_ids": [
-          "jarbas-registro-sintetico-a",
-          "jarbas-registro-sintetico-b"
+          "camara-cotas-registro-sintetico-a",
+          "camara-cotas-registro-sintetico-b"
         ],
         "identity_search_terms": [
           "PESSOA SINTETICA DE TESTE",

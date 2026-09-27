@@ -32,9 +32,13 @@ export interface MethodologySource {
  *    `.github/workflows/`. Estado em 2026-07-29:
  *      - Google News: diaria, via cron `0 8 * * *` de `/api/news/refresh` em
  *        `vercel.json`.
- *      - Camara e Senado: semanal, via `schedule: 0 6 * * 3` em
+ *      - Senado: semanal, via `schedule: 0 6 * * 3` em
  *        `.github/workflows/ingest.yml` (adicionado 2026-07-29). Se o cron
  *        sair ou mudar de cadencia, este rotulo muda no MESMO commit.
+ *      - Camara: saiu desse schedule em 2026-09-26 (a API recusa conexao dos
+ *        runners do GitHub). A coleta semanal passou para um agente launchd
+ *        local, que nao e cron de producao verificavel pelo repo, entao o
+ *        rotulo voltou a "sob demanda" ate existir cadencia verificavel.
  *      - Todo o resto roda por lote manual, que e exatamente o que
  *        "sob demanda" descreve.
  */
@@ -54,10 +58,14 @@ export const METHODOLOGY_SOURCES: readonly MethodologySource[] = [
       "Certidões criminais",
     ],
     sourceKind: "base_oficial",
-    // Sem automação: lote manual via workflow_dispatch (verificado 2026-07-25).
+    // Lote manual via workflow_dispatch (verificado 2026-07-25). Desde
+    // 2026-09-25 só o financiamento parcial e os bens de 2026 têm cron
+    // (`.github/workflows/tse-2026-financas.yml`, diário); o resto do TSE
+    // segue sob demanda, então o rótulo da fonte inteira não muda.
     updateFrequency: "sob demanda",
     curationType: "automático",
-    curationNote: "CSVs do TSE baixados e processados em lote, quando há atualização na base de origem.",
+    curationNote:
+      "CSVs do TSE baixados e processados em lote, quando há atualização na base de origem. Financiamento e bens da eleição de 2026 são reconferidos todo dia contra o pacote oficial.",
   },
   {
     id: "tse-historico",
@@ -88,8 +96,8 @@ export const METHODOLOGY_SOURCES: readonly MethodologySource[] = [
       "Frentes parlamentares",
     ],
     sourceKind: "base_oficial",
-    // Automação real: schedule semanal (0 6 * * 3) em .github/workflows/ingest.yml.
-    updateFrequency: "semanal",
+    // Fora do schedule do ingest.yml desde 26/09/2026; ver o cabeçalho deste arquivo.
+    updateFrequency: "sob demanda",
     curationType: "automático",
   },
   {

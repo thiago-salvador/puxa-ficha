@@ -7,6 +7,7 @@ import { log } from "./logger"
 import { supabase } from "./supabase"
 import type { IngestResult } from "./types"
 import { stripAccents } from "../../src/lib/strip-accents"
+import { aplicarCoorteAtualizacao } from "./coorte-atualizacao"
 
 const API = process.env.PF_TRANSPARENCIA_API_BASE ?? "https://api.portaldatransparencia.gov.br/api-de-dados"
 const DEFAULT_CACHE_DIR = resolve(process.env.PF_TRANSPARENCIA_CACHE_DIR ?? ".transparencia-cache")
@@ -286,8 +287,10 @@ export type IngestTransparenciaOptions = TransparenciaFetchOptions & {
 
 export async function ingestTransparencia(options: IngestTransparenciaOptions = {}): Promise<IngestResult[]> {
   const selected = options.targetSlugs ? new Set(options.targetSlugs) : null
-  const candidatos = (options.candidateRows ? [...options.candidateRows] : (await supabase.from("candidatos").select("slug, nome_completo, nome_urna").eq("publicavel", true).limit(1000)).data ?? [])
+  // coorte-atualizacao: aplica
+  const lidos = (options.candidateRows ? [...options.candidateRows] : (await supabase.from("candidatos").select("slug, nome_completo, nome_urna").eq("publicavel", true).limit(1000)).data ?? [])
     .filter((cand) => !selected || selected.has(cand.slug))
+  const candidatos = await aplicarCoorteAtualizacao(lidos, "transparencia")
   const results: IngestResult[] = []
   for (const cand of candidatos) {
     const result: IngestResult = {

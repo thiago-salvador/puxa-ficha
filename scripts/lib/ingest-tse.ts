@@ -34,7 +34,7 @@ import {
   resolveLegacyReceiptSqIdentity,
 } from "./financiamento-receita-legacy-row"
 import { financiamentoReceitaDedupKey } from "./financiamento-receita-dedup"
-import { downloadToFile } from "./download-to-file"
+import { downloadToFile, verifyZip } from "./download-to-file"
 import { observeVerifiedCandidateChange } from "./verified-candidate-changes"
 import { resolveEffectiveElectionContext } from "./tse-effective-election-year"
 import { assertTseContextSchemaReady, pendingContextMigrationError } from "./tse-context-schema"
@@ -165,6 +165,9 @@ async function downloadFile(url: string, dest: string): Promise<boolean> {
     onStart: (source) => log("tse", `  Baixando: ${source}`),
     onHttpError: (status, source) => warn("tse", `  HTTP ${status} para ${source}`),
     onError: (err) => warn("tse", `  Falha no download: ${err}`),
+    verify: dest.toLowerCase().endsWith(".zip") ? verifyZip : undefined,
+    onRetry: ({ attempt, delayMs, reason, resumeFrom }) =>
+      warn("tse", `  Tentativa ${attempt} falhou (${reason}); nova tentativa em ${Math.round(delayMs / 1000)} s, retomando de ${resumeFrom} bytes`),
   })
 }
 
@@ -397,6 +400,14 @@ function stableJson(value: unknown): string {
   return JSON.stringify(value) ?? "undefined"
 }
 
+function sameAssetMultiset(left: unknown, right: unknown): boolean {
+  if (!Array.isArray(left) || !Array.isArray(right) || left.length !== right.length) return false
+  const sorted = (items: unknown[]) => items.map(stableJson).sort()
+  const before = sorted(left)
+  const after = sorted(right)
+  return before.every((item, index) => item === after[index])
+}
+
 export function decidePatrimonioLegacyReconciliation(input: {
   contextCount: number
   legacyRows: LegacyPatrimonioRow[]
@@ -412,7 +423,7 @@ export function decidePatrimonioLegacyReconciliation(input: {
   }
   const legacy = input.legacyRows[0]
   const legacyTotal = Number(legacy.valor_total)
-  if (!Number.isFinite(legacyTotal) || legacyTotal !== input.valorTotal || stableJson(legacy.bens) !== stableJson(input.bens)) {
+  if (!Number.isFinite(legacyTotal) || legacyTotal !== input.valorTotal || !sameAssetMultiset(legacy.bens, input.bens)) {
     return { action: "block", reason: "legado sem SQ diverge do total ou dos itens do contexto nominal" }
   }
   return { action: "update_legacy", id: legacy.id, expectedTotal: legacyTotal, expectedBens: legacy.bens }
@@ -1298,7 +1309,7 @@ async function processFinanciamento(
   extractDir: string,
   sqMap: Map<string, SqCandidateIdentity>,
   slugAllowlist: Set<string> | null,
-  options: Pick<IngestTseOptions, "dryRun" | "onPlannedRow">,
+  options: Pick<IngestTseOptions, "dryRun" | "onPlannedRow" | "planStorageRows">,
   sourceUrl: string,
   confirmOfficialAbsence: boolean,
 ): Promise<IngestResult[]> {
@@ -1511,10 +1522,18 @@ async function processFinanciamento(
       options.onPlannedRow?.({
         table: "financiamento",
         slug,
-        row: {
-          ...row,
-          maiores_doadores: sanitizeMaioresDoadoresForPublic(row.maiores_doadores),
-        },
+        row: options.planStorageRows
+          ? {
+              ...row,
+              // Lista completa, sem o corte dos 10 maiores, para quem precisa
+              // casar doador por nome (rehash de cpf_hash). Nunca vai a log.
+              doadores_completos: normalizeMaioresDoadoresForStorage(data.doadores, Number.MAX_SAFE_INTEGER),
+              receitas: data.doadores.length,
+            }
+          : {
+              ...row,
+              maiores_doadores: sanitizeMaioresDoadoresForPublic(row.maiores_doadores),
+            },
       })
     } else {
       const { error: staleVerificationError } = await supabase
@@ -1731,7 +1750,7 @@ function logResolverStats(ano: number, resolver: TSEResolver) {
   }
 }
 
-interface PlannedTseRow {
+export interface PlannedTseRow {
   table:
     | "patrimonio"
     | "patrimonio_ausencia_oficial"
@@ -1756,6 +1775,12 @@ export type IngestTseOptions = {
   dryRun?: boolean
   /** Recebe cada linha normalizada quando `dryRun` está ativo. */
   onPlannedRow?: (entry: PlannedTseRow) => void
+  /**
+   * Em `dryRun`, entrega a linha de financiamento como seria gravada (com
+   * `cnpj`/`cpf_hash`) e a lista completa de doadores. Só para escritores
+   * auditados que aplicam a linha por conta própria; o CLI nunca liga isto.
+   */
+  planStorageRows?: boolean
   /** Coorte explícita não publicada, consumida pelo mesmo fluxo TSE após onboarding. */
   cohort?: ExplicitCohortSelection
 }
@@ -1763,6 +1788,7 @@ export type IngestTseOptions = {
 async function loadCandidatosParaTse(cohort?: ExplicitCohortSelection): Promise<CandidatoConfig[]> {
   if (!cohort) return loadCandidatosPublicos()
   const rows = await loadCandidatosCohortNaoPublica(cohort)
+  // coorte-atualizacao: isento (mapa do seed para a coorte explícita já filtrada)
   const seedBySlug = new Map(loadCandidatos().map((candidate) => [candidate.slug, candidate]))
   return rows.map((row): CandidatoConfig => {
     const seed = seedBySlug.get(row.slug)

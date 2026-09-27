@@ -76,6 +76,68 @@ export function urlFonteEPortalJudiciario(valor: string | null | undefined): boo
   }
 }
 
+function cnjComDigitoValido(raw: unknown): string | null {
+  if (typeof raw !== "string") return null
+  if (!/^\d{20}$/.test(raw) && !/^\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}$/.test(raw)) return null
+  const digits = cnjSomenteDigitos(raw)
+  const check = 98 - Number(BigInt(`${digits.slice(0, 7)}${digits.slice(9)}00`) % BigInt(97))
+  return Number(digits.slice(7, 9)) === check ? digits : null
+}
+
+const STF_PORTAL_HOST = "portal.stf.jus.br"
+const STF_LISTAR_PROCESSOS = "/processos/listarProcessos.asp"
+
+/**
+ * Processo do STF identificado por classe e número (ex.: "HC 201965"), sem CNJ na
+ * própria linha. Só vale a consulta oficial do portal com a mesma classe e o mesmo
+ * número na URL; notícia, raiz do portal e outro host continuam fora.
+ */
+function urlStfPorClasseENumero(raw: string, numeroProcesso: unknown): string | null {
+  if (typeof numeroProcesso !== "string") return null
+  const match = /^([A-Za-z]{1,6})\s*(\d{1,7})$/.exec(numeroProcesso.trim())
+  if (!match) return null
+  try {
+    const url = new URL(raw.trim())
+    if (url.protocol !== "https:" || url.hostname.toLowerCase() !== STF_PORTAL_HOST) return null
+    if (url.username || url.password || url.hash) return null
+    if (url.pathname !== STF_LISTAR_PROCESSOS) return null
+    if (url.searchParams.get("classe")?.toUpperCase() !== match[1].toUpperCase()) return null
+    if (url.searchParams.get("numeroProcesso") !== match[2]) return null
+    return url.toString()
+  } catch {
+    return null
+  }
+}
+
+/** Só a URL que contém o CNJ exato sustenta a linha de forma automática. */
+export function urlFonteJudicialEspecifica(raw: unknown, numeroProcesso: unknown): string | null {
+  if (typeof raw !== "string" || !raw.trim()) return null
+  const stf = urlStfPorClasseENumero(raw, numeroProcesso)
+  if (stf) return stf
+  const cnj = cnjComDigitoValido(numeroProcesso)
+  if (!cnj) return null
+  try {
+    const url = new URL(raw.trim())
+    if (url.protocol !== "https:" || !url.hostname.toLowerCase().endsWith(".jus.br")) return null
+    if (url.username || url.password || url.hash) return null
+    if (url.hostname === DJEN_CONSULTA_HOST || url.hostname === DJEN_API_HOST) {
+      try {
+        urlConsultaDjenDeFonte(url.toString(), String(numeroProcesso))
+        return url.toString()
+      } catch {
+        return null
+      }
+    }
+    if (url.pathname === "/") return null
+    const location = decodeURIComponent(`${url.pathname}${url.search}`)
+    const exactDigits = new RegExp(`(?:^|\\D)${cnj}(?:$|\\D)`)
+    if (!location.includes(String(numeroProcesso)) && !exactDigits.test(location)) return null
+    return url.toString()
+  } catch {
+    return null
+  }
+}
+
 function urlEhPlanilhaOuJson(valor: string): boolean {
   try {
     const url = new URL(valor)
@@ -101,15 +163,59 @@ function urlFrontPublicavel(valor: string): string | null {
   }
 }
 
+export type FonteProcessoNivel = "oficial" | "em_confirmacao"
+
+/**
+ * Linhas que não entram nem com o selo: identidade não confirmada ou histórico
+ * de homônimo. Cada id aqui precisa de motivo registrado na curadoria.
+ */
+const PROCESSOS_FORA_DO_SELO = new Set<string>([
+  "ba7781b9-c002-4a43-9797-7a06dfc9bf1a", // homônimo já registrado nesta ficha
+  "7f300862-39ed-49fd-9bbb-9decee7e6b13", // partes intimadas no DJEN não incluem a candidata
+  "6d93a421-403d-401d-a6ad-a50b03970b81", // lista paginada de comunicados; não identifica o processo
+])
+
+/**
+ * "oficial": fonte judicial específica prova o processo.
+ * "em_confirmacao": há página específica (imprensa ou portal oficial genérico),
+ * mas a fonte judicial do próprio processo ainda não foi localizada; a ficha
+ * mostra a linha com selo em vez de escondê-la.
+ * null: sem fonte específica publicável; a linha fica fora e entra na contagem
+ * de omitidos.
+ */
+export function nivelFonteProcesso(
+  processo: { id?: string | null; numero_processo: string | null; url_fonte?: string | null },
+): FonteProcessoNivel | null {
+  if (urlFonteJudicialEspecifica(processo.url_fonte, processo.numero_processo)) return "oficial"
+  if (processo.id && PROCESSOS_FORA_DO_SELO.has(processo.id)) return null
+  const fonte = processo.url_fonte?.trim()
+  if (!fonte || !urlFrontPublicavel(fonte)) return null
+  try {
+    const url = new URL(fonte)
+    if (url.username || url.password) return null
+    // Página específica: com query (id do documento) ou com um segmento longo
+    // (slug de matéria, acórdão). Raiz e portal genérico ("/Processos",
+    // "/cpopg/open.do") não ligam a linha a nada.
+    const segmentos = url.pathname.split("/").filter(Boolean)
+    if (!url.search && !segmentos.some((segmento) => segmento.length >= 12)) return null
+  } catch {
+    return null
+  }
+  return "em_confirmacao"
+}
+
 /**
  * Destino clicável do processo no front: portal humano do DJEN ou artigo.
  * Nunca devolve a API JSON, planilha ou arquivo de dados.
  */
 export function urlPublicaDoProcesso(
-  processo: Pick<{ numero_processo: string | null; url_fonte?: string | null }, "numero_processo" | "url_fonte">,
+  processo: { numero_processo: string | null; url_fonte?: string | null; fonte_nivel?: FonteProcessoNivel | null },
 ): string | null {
   const fonte = processo.url_fonte?.trim() || ""
   const numero = processo.numero_processo?.trim() || ""
+
+  // Em confirmação, o link é a própria fonte registrada, não uma busca vazia no DJEN.
+  if (processo.fonte_nivel === "em_confirmacao") return fonte ? urlFrontPublicavel(fonte) : null
 
   if (numero) {
     if (fonte) {

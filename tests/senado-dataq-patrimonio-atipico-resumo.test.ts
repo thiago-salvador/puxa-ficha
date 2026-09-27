@@ -136,6 +136,7 @@ describe("DTO de lista: patrimonio_atipico calculado no servidor", () => {
           comparadorRow(SEM_ANTERIOR.id, 5_000_000),
         ])
       }
+      if (url.includes("/rest/v1/processos")) return okJson([])
       if (url.includes("/rest/v1/patrimonio")) {
         patrimonioUrls.push(url)
         return okJson(PATRIMONIO_ROWS)
@@ -171,6 +172,7 @@ describe("DTO de lista: patrimonio_atipico calculado no servidor", () => {
       const url = String(input instanceof Request ? input.url : input)
       if (url.includes("/rest/v1/candidatos_publico")) return okJson([CEM_VEZES])
       if (url.includes("/rest/v1/v_comparador")) return okJson([comparadorRow(CEM_VEZES.id, 100_000)])
+      if (url.includes("/rest/v1/processos")) return okJson([])
       return failResponse()
     }) as typeof fetch
 

@@ -1,0 +1,32 @@
+{
+  "versao": "2026-09-23",
+  "fonte": "Senado Federal, filiações do parlamentar 5718 (JSON SHA256 19dac162d11871d8d09310fd66f777c9f54f327464454de6ab4e3d80c83c1342); Câmara dos Deputados, histórico do deputado 178883 (JSON SHA256 65e16fe1ec79c38f163a8a3fa69db711261a972ba4f3a8437c7a9824cdcfe3bd); TSE, renomeação do PPS para Cidadania em 19/09/2019; TSE consulta_cand_2026 (SQ 100002541459, PT).",
+  "motivo": "A ficha mostra PT sem nenhuma linha em mudancas_partido. Inserir as quatro trocas verificadas em fonte oficial: PPS>REDE (2015), REDE>PPS (2016), CIDADANIA>PSD (2023) e PSD>PT (observada no registro de 2026, sem data oficial). A renomeação PPS>Cidadania (TSE, 19/09/2019) não é troca de filiação e não vira linha. Os quatro itens que o trigger gera em candidate_changes são removidos na mesma transação, com o conteúdo no recibo, porque o digest de alertas os trataria como novidade.",
+  "coorte": ["tse-2026-100002541459"],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [
+    {
+      "tabela": "mudancas_partido",
+      "slug": "tse-2026-100002541459",
+      "campos": ["id", "candidato_id", "partido_anterior", "partido_novo", "ano", "data_mudanca", "contexto", "created_at"],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "candidate_changes",
+      "ref": "b8e8b3d1-1e2e-482f-b0dd-dbf927c5c681",
+      "campos": ["id"]
+    },
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "20260923233000",
+      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260923233000",
+      "campos": ["fonte", "escopo", "alvo", "candidato_id", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    }
+  ]
+}

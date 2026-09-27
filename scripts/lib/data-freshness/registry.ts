@@ -202,7 +202,24 @@ export function evaluateSourceFreshness(
     stale_source_ids: staleIds,
   })
 
-  if (evidence.source_error && source.refresh_mode === "scheduled") {
+  // Erro em poucos alvos, com os demais coletados na mesma execução. Só vale
+  // para fonte que declara a política e o teto; falha total ou acima do teto
+  // (bloqueio no meio da execução, por exemplo) segue como source_error.
+  const errorCount = evidence.error_count ?? 0
+  const totalCount = evidence.total_count ?? 0
+  const maxRatio = source.partial_error_max_ratio
+  const partialError =
+    source.refresh_mode === "scheduled" &&
+    source.partial_error_policy === "technical_debt" &&
+    typeof maxRatio === "number" &&
+    maxRatio > 0 &&
+    maxRatio < 1 &&
+    Boolean(evidence.source_error) &&
+    errorCount > 0 &&
+    totalCount > errorCount &&
+    errorCount / totalCount <= maxRatio &&
+    validCheckedAt(evidence.checked_at) !== null
+  if (evidence.source_error && source.refresh_mode === "scheduled" && !partialError) {
     return result("source_error", null, false)
   }
   if (evidence.review_required) {
@@ -211,6 +228,11 @@ export function evaluateSourceFreshness(
   const invalidCheckedAt = evidence.checked_at != null && validCheckedAt(evidence.checked_at) === null
   if (strict && source.refresh_mode === "scheduled" && staleIds.length > 0 && !invalidCheckedAt) {
     return result("stale", ageHoursForResult(evidence.checked_at), false)
+  }
+  if (partialError) {
+    const ageHours = ageHoursForResult(evidence.checked_at)
+    const stale = ageHours === null || (source.max_age_hours !== null && ageHours > source.max_age_hours)
+    return result(stale ? "stale" : "technical_debt", ageHours, false)
   }
   if (evidence.source_error || (evidence.debt_count ?? 0) > 0) {
     return result("technical_debt", ageHoursForResult(evidence.checked_at), false)

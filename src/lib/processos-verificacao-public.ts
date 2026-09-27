@@ -57,6 +57,8 @@ export function projectProcessosVerificacaoRow(
   if (row.fonte !== "processos-curadoria") return null
   if (typeof row.resultado !== "string" || !RESULTADOS.has(row.resultado)) return null
   if (typeof row.executado_em !== "string" || !row.executado_em.trim() || !Number.isFinite(Date.parse(row.executado_em))) return null
+  if (Date.parse(row.executado_em) > Date.now()) return null
+  if (row.resultado === "vazio_confirmado" && (typeof row.escopo !== "string" || !row.escopo.trim())) return null
 
   const sourceUrls = [...new Set([
     ...(typeof row.url === "string" ? row.url.split(" | ") : []),

@@ -12,7 +12,7 @@ id = "generic-api-key"
   condition = "AND"
   regexTarget = "secret"
   regexes = ['''^f47edf88957444dc83600ce372955b50$''']
-  paths = ['''^src/components/CloudflareWebAnalytics\.tsx$''']
+  paths = ['''^src/components/CloudflareWebAnalyticsBeacon\.tsx$''']
 
   [[rules.allowlists]]
   description = "Hostname público sinalizado pelo detector genérico"
@@ -128,11 +128,25 @@ id = "generic-api-key"
 
 
   [[rules.allowlists]]
+  description = "SHA-256 das páginas públicas da API da Câmara no recibo da quarentena de gastos: hash de conferência, não credencial. Só o par api_sha256 com hex minúsculo (o scan por diretório às vezes corta o match antes dos 64), só neste arquivo"
+  condition = "AND"
+  regexTarget = "match"
+  regexes = ['''^api_sha256":"[0-9a-f]{32,64}"?$''']
+  paths = ['''^QA/evidencias/2026-09-25-gastos-quarentena-universo/preflight\.json$''']
+
+  [[rules.allowlists]]
   description = "Identificadores públicos exatos do PDF Serasa vinculado pela Lupa, removidos do catálogo mas presentes no histórico deste lote"
   condition = "AND"
   regexTarget = "secret"
   regexes = ['''^7b5eb707-8c49-4c21-b8fc-f0edeb96bfa9$''', '''^b212bb18f00a40869a6cd42f77cbeefc$''']
   paths = ['''^scripts/data/checagens-atribuidas\.json$''']
+
+  [[rules.allowlists]]
+  description = "Identificador público do beacon Boomerang nos HTMLs de busca da AFP"
+  condition = "AND"
+  regexTarget = "secret"
+  regexes = ['^TCFMN-W6JA8-RN9YK-FKCM3-YZFPS$']
+  paths = ['^tests/fixtures/checagens-coleta/afp-checamos-search-caiado\.html$', '^tests/fixtures/checagens-coleta/afp-checamos-search-zero\.html$']
 
 [[rules]]
 id = "sumologic-access-token"
@@ -152,4 +166,4 @@ id = "grafana-api-key"
   condition = "AND"
   regexTarget = "secret"
   regexes = ['''^eyJrIjoiMDI0OTAyYzEtMzAyNS00ZGUxLWE5NGUtOWIxYTBlZTA1ZjBiIiwidCI6ImViMDkwNDIwLTQ0NGMtNDNmNy05MWYyLTRiOGRhNmJmZThlMSJ9$''', '''^eyJrIjoiMGVjMzIwZWQtM2IzZS00NmE0LTkwNjUtZjI1YjMyNTVhZGY0IiwidCI6IjI2ZjczODk3LWM4YWMtNGIxZS05NzhmLWVhNGMwNzc0MzRiZiJ9$''', '''^eyJrIjoiMDc0ZWFjYTgtYjA1OS00YzBmLWJkNTctZmVjODM2YzlmYzBjIiwidCI6ImViMDkwNDIwLTQ0NGMtNDNmNy05MWYyLTRiOGRhNmJmZThlMSJ9$''', '''^eyJrIjoiNWI5NWI0ODEtYmZiYy00Mjg3LTkzNWUtY2UyYjIwMDE1YWI2IiwidCI6IjNlYzkyOTY5LTVhNTEtNGYxOC04YWM5LWVmOThmYmFmYTk3OCJ9$''']
-  paths = ['''^scripts/data/checagens-atribuidas\.json$''']
+  paths = ['''^scripts/data/checagens-atribuidas\.json$''', '''^tests/fixtures/checagens-coleta/aos-fatos-materia\.html$''']

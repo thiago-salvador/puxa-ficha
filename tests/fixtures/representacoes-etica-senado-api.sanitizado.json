@@ -1,0 +1,118 @@
+{
+  "aviso": "Snapshot de contrato sintético, com nomes e IDs substituídos; não reproduz uma PCE real.",
+  "processos": [
+    {
+      "id": 901001,
+      "identificacao": "PCE 1/2026",
+      "dataApresentacao": "2026-04-01",
+      "ementa": "Requer a abertura de procedimento disciplinar em face do Senador Fictício Alfa.",
+      "situacaoAtual": "Aguardando indicação",
+      "dataSituacaoAtual": "2026-04-03",
+      "tramitando": "S"
+    },
+    {
+      "id": 901002,
+      "identificacao": "PCE 2/2026",
+      "dataApresentacao": "2026-04-10",
+      "ementa": "Requer a abertura de procedimento disciplinar em face da Senadora Fictícia Beta.",
+      "situacaoAtual": "Em exame",
+      "dataSituacaoAtual": "2026-04-12",
+      "tramitando": "S"
+    }
+  ],
+  "detalhes": {
+    "901001": {
+      "id": 901001,
+      "identificacao": "PCE 1/2026",
+      "sigla": "PCE",
+      "numero": "1",
+      "ano": 2026,
+      "conteudo": {
+        "ementa": "Requer a abertura de procedimento disciplinar em face do Senador Fictício Alfa."
+      },
+      "documento": {
+        "id": 990001,
+        "siglaTipo": "REQ",
+        "tipo": "Documento de apresentação",
+        "data": "2026-04-01",
+        "dataApresentacao": "2026-04-01",
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento/ficticio-a",
+        "autoria": [
+          { "autor": "Fictício Beta", "codigoParlamentar": "88002" }
+        ]
+      },
+      "situacaoAtual": "Aguardando indicação",
+      "siglaSituacaoAtual": "AGIND",
+      "dataSituacaoAtual": "2026-04-03",
+      "autuacoes": [
+        {
+          "numero": 1,
+          "situacoes": [
+            { "sigla": "AGDESP", "descricao": "Aguardando despacho", "inicio": "2026-04-02", "fim": "2026-04-03", "colegiado": { "sigla": "CEDP" } },
+            { "sigla": "AGIND", "descricao": "Aguardando indicação", "inicio": "2026-04-03", "fim": null, "colegiado": { "sigla": "CEDP" } }
+          ],
+          "informesLegislativos": []
+        }
+      ]
+    },
+    "901002": {
+      "id": 901002,
+      "identificacao": "PCE 2/2026",
+      "sigla": "PCE",
+      "numero": "2",
+      "ano": 2026,
+      "conteudo": {
+        "ementa": "Requer a abertura de procedimento disciplinar em face da Senadora Fictícia Beta."
+      },
+      "situacaoAtual": "Em exame",
+      "siglaSituacaoAtual": "EXAME",
+      "dataSituacaoAtual": "2026-04-12",
+      "autuacoes": [
+        {
+          "numero": 1,
+          "situacoes": [
+            { "sigla": "EXAME", "descricao": "Em exame", "inicio": "2026-04-12", "fim": null, "colegiado": { "sigla": "CEDP" } }
+          ],
+          "informesLegislativos": []
+        }
+      ]
+    }
+  },
+  "documentos": {
+    "901001": [
+      {
+        "id": 990001,
+        "siglaTipo": "REQ",
+        "identificacao": "REQUERIMENTO SINTÉTICO",
+        "descricao": "Documento de apresentação",
+        "dataDocumento": "2026-04-01",
+        "urlDocumento": "https://legis.senado.leg.br/sdleg-getter/documento/ficticio-a"
+      }
+    ],
+    "901002": []
+  },
+  "roster": {
+    "ListaParlamentarLegislatura": {
+      "Parlamentares": {
+        "Parlamentar": [
+          {
+            "IdentificacaoParlamentar": {
+              "CodigoParlamentar": "88001",
+              "NomeParlamentar": "Fictício Alfa",
+              "NomeCompletoParlamentar": "Fictício Alfa",
+              "UfParlamentar": "AA"
+            }
+          },
+          {
+            "IdentificacaoParlamentar": {
+              "CodigoParlamentar": "88002",
+              "NomeParlamentar": "Fictício Beta",
+              "NomeCompletoParlamentar": "Fictício Beta",
+              "UfParlamentar": "BB"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
