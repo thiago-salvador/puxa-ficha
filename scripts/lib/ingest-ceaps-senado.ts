@@ -4,7 +4,7 @@ import { appendFileSync, chmodSync, mkdirSync, readFileSync } from "node:fs"
 import { spawnSync } from "node:child_process"
 import { resolve } from "node:path"
 import { assertSemReplacementChar } from "./ceaps-csv-encoding"
-import { decodeCeapsCsv, parseCeapsCsvRecords } from "./ceaps-csv-encoding"
+import { decodeCeapsCsv, normalizeCeapsCsvAmount, parseCeapsCsvRecords } from "./ceaps-csv-encoding"
 import { loadCandidatosPublicos, resolveCandidatoId } from "./helpers-db"
 import { normalizeForMatch } from "./helpers"
 import { emDryRun, planejarEscrita, ativarDryRun } from "./dry-run"
@@ -50,14 +50,16 @@ export function parseCeapsCsv(buffer: Buffer, expectedYear: number): CeapsCsvRow
     if (!Number.isInteger(year) || year !== expectedYear) {
       throw new Error(`CSV CEAPS ${expectedYear}: registro ${index + 1} informa ano inválido`)
     }
-    if (!raw.SENADOR?.trim() || parseValorOficial(raw.VALOR_REEMBOLSADO) === null) {
+    // O SHA-256 da fonte permanece sobre os bytes originais no snapshot.
+    const amount = normalizeCeapsCsvAmount(raw.VALOR_REEMBOLSADO)
+    if (!raw.SENADOR?.trim() || parseValorOficial(amount) === null) {
       throw new Error(`CSV CEAPS ${expectedYear}: registro ${index + 1} tem campos obrigatórios inválidos`)
     }
     // CNPJ_CPF, documento e detalhamento são deliberadamente descartados.
     rows.push({
       ANO: String(year), MES: raw.MES, SENADOR: raw.SENADOR,
       TIPO_DESPESA: raw.TIPO_DESPESA, FORNECEDOR: raw.FORNECEDOR,
-      DATA: raw.DATA, VALOR_REEMBOLSADO: raw.VALOR_REEMBOLSADO,
+      DATA: raw.DATA, VALOR_REEMBOLSADO: amount,
     })
   }
   if (rows.length === 0) throw new Error(`CSV CEAPS ${expectedYear}: arquivo sem linhas, cobertura não confirmada`)

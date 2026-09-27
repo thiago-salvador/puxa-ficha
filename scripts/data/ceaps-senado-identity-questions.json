@@ -1,10 +1,10 @@
 {
   "mesma_pessoa": {
     "type": "noul",
-    "instructions": "O `registro.senador` do CSV CEAPS identifica a mesma pessoa que o candidato parlamentar em `candidato`?",
+    "instructions": "O `registro.senador` do CSV CEAPS identifica a mesma pessoa que o candidato parlamentar em `candidato`? Use o nome completo, UF, anos de mandato e partido quando esses campos estiverem presentes em `candidato`; campos ausentes são desconhecidos, não evidência de divergência. O contexto vem do perfil público relido e do cadastro oficial do Senado, sem CPF.",
     "criteria": {
-      "true": "Mesmo parlamentar. Considere acentos, abreviações de nome parlamentar e nome de urna, usando o id oficial do Senado apenas como contexto, sem presumir que nomes parecidos são iguais.",
-      "false": "Pessoas diferentes ou evidência insuficiente. Semelhança parcial, homônimo ou falta de contexto não confirma identidade."
+      "true": "Mesmo parlamentar. Considere acentos e abreviações, verificando coerência entre nome, UF, partido e período de mandato. O id oficial confirma a identidade do registro no Senado, mas não confirma sozinho a equivalência com o candidato.",
+      "false": "Pessoas diferentes ou evidência insuficiente. Semelhança parcial, homônimo, incompatibilidade de UF/período ou falta de contexto não confirma identidade."
     }
   }
 }

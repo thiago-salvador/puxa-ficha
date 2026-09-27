@@ -21,7 +21,7 @@ import { pathToFileURL } from "node:url"
 import { spawnSync } from "node:child_process"
 import { execFileSync } from "node:child_process"
 import { aggregateCamaraCotaCsv, CAMARA_COTA_CSV_URL } from "../lib/ingest-camara-cota-csv"
-import { decodeCeapsCsv, parseCeapsCsvRecords } from "../lib/ceaps-csv-encoding"
+import { decodeCeapsCsv, normalizeCeapsCsvAmount, parseCeapsCsvRecords } from "../lib/ceaps-csv-encoding"
 import { normalizeForMatch } from "../lib/normalize-for-match"
 import { stripAccents } from "../../src/lib/strip-accents"
 import { parseSenadoLegislatureRoster, senadoExpenseLegislatureForYear, senadoLegislatureRosterUrl, SENADO_EXPENSE_LEGISLATURES } from "../lib/senado-legislature-roster"
@@ -34,6 +34,13 @@ type Page = { page: number; url: string; path: string; bytes: number; sha256: st
 type Pending = { house: House; family: Family; official_id?: string; reason: string; source?: string }
 type Readback = { dto_path: string; dto_rows_path: string[]; profile_path: string; dto_revision: string; dto_readback_url: string }
 type ReadbackIndex = Record<string, Readback>
+type JevIdentityContext = {
+  nome_completo?: string
+  uf?: string
+  partido?: string
+  mandato_anos?: string[]
+  fontes: { perfil_url_local?: string; profile_sha256?: string; roster_url?: string; roster_sha256?: string; mandatos_url?: string; mandatos_sha256?: string; mandatos_error?: string }
+}
 
 const CAMARA = "https://dadosabertos.camara.leg.br/api/v2"
 const SENADO = "https://legis.senado.leg.br/dadosabertos"
@@ -306,17 +313,18 @@ async function capturePage(destination: string, relative: string, page: number, 
 
 type CeapsSafeRow = { ANO: string; MES: string; SENADOR: string; TIPO_DESPESA: string; FORNECEDOR: string; DATA: string; VALOR_REEMBOLSADO: string }
 
-function parseCeapsRows(bytes: Buffer, year: number): CeapsSafeRow[] {
+export function parseCeapsRows(bytes: Buffer, year: number): CeapsSafeRow[] {
   const { header, rows } = parseCeapsCsvRecords(decodeCeapsCsv(bytes))
   const required = ["ANO", "MES", "SENADOR", "TIPO_DESPESA", "FORNECEDOR", "DATA", "VALOR_REEMBOLSADO"]
   if (required.some((column) => !header.includes(column))) throw new Error(`CSV CEAPS ${year}: esquema ausente`)
   if (rows.length === 0) throw new Error(`CSV CEAPS ${year}: sem linhas; escopo não comprovado`)
   return rows.map((row, index) => {
-    if (Number(row.ANO) !== year || !row.SENADOR?.trim() || parseCsvMoney(row.VALOR_REEMBOLSADO) === null) {
+    const amount = normalizeCeapsCsvAmount(row.VALOR_REEMBOLSADO)
+    if (Number(row.ANO) !== year || !row.SENADOR?.trim() || parseCsvMoney(amount) === null) {
       throw new Error(`CSV CEAPS ${year}: registro ${index + 1} inválido; nenhum vazio confirmado`)
     }
     // The untouched source is hashed in memory; private captures contain only these non-document columns.
-    return { ANO: row.ANO, MES: row.MES, SENADOR: row.SENADOR, TIPO_DESPESA: row.TIPO_DESPESA, FORNECEDOR: row.FORNECEDOR, DATA: row.DATA, VALOR_REEMBOLSADO: row.VALOR_REEMBOLSADO }
+    return { ANO: row.ANO, MES: row.MES, SENADOR: row.SENADOR, TIPO_DESPESA: row.TIPO_DESPESA, FORNECEDOR: row.FORNECEDOR, DATA: row.DATA, VALOR_REEMBOLSADO: amount }
   })
 }
 
@@ -362,12 +370,97 @@ function senatorNameFromRoster(value: unknown, officialId: string): string | nul
   return null
 }
 
+function senateRecordFromRoster(value: unknown, officialId: string): Record<string, unknown> | null {
+  if (Array.isArray(value)) {
+    for (const entry of value) { const found = senateRecordFromRoster(entry, officialId); if (found) return found }
+    return null
+  }
+  const record = value && typeof value === "object" ? value as Record<string, unknown> : null
+  if (!record) return null
+  if (String(record.CodigoParlamentar ?? "") === officialId) return record
+  for (const child of Object.values(record)) { const found = senateRecordFromRoster(child, officialId); if (found) return found }
+  return null
+}
+
+function parseSenateMandateYears(value: unknown): { years: string[]; uf?: string } {
+  const top = value && typeof value === "object" ? value as Record<string, unknown> : {}
+  const root = top.MandatoParlamentar && typeof top.MandatoParlamentar === "object" ? top.MandatoParlamentar as Record<string, unknown> : {}
+  const parliamentarian = root.Parlamentar && typeof root.Parlamentar === "object" ? root.Parlamentar as Record<string, unknown> : {}
+  const mandateContainer = parliamentarian.Mandatos && typeof parliamentarian.Mandatos === "object" ? parliamentarian.Mandatos as Record<string, unknown> : {}
+  const raw = mandateContainer.Mandato
+  const mandates = Array.isArray(raw) ? raw : raw && typeof raw === "object" ? [raw] : []
+  const periods = mandates.flatMap((entry) => {
+    const mandate = entry && typeof entry === "object" ? entry as Record<string, unknown> : {}
+    return [mandate.PrimeiraLegislaturaDoMandato, mandate.SegundaLegislaturaDoMandato].flatMap((legislature) => {
+      const term = legislature && typeof legislature === "object" ? legislature as Record<string, unknown> : {}
+      const start = typeof term.DataInicio === "string" ? term.DataInicio.slice(0, 4) : ""
+      const end = typeof term.DataFim === "string" ? term.DataFim.slice(0, 4) : ""
+      return /^\d{4}$/.test(start) && /^\d{4}$/.test(end) ? [`${start}-${end}`] : []
+    })
+  })
+  const uf = typeof mandates[0]?.UfParlamentar === "string" && mandates[0].UfParlamentar.trim() ? mandates[0].UfParlamentar.trim() : undefined
+  return { years: [...new Set(periods)], ...(uf ? { uf } : {}) }
+}
+
+async function jevIdentityContext(
+  candidate: Candidate,
+  officialId: string,
+  roster: Page & { value: unknown },
+  readbacks: ReadbackIndex,
+): Promise<JevIdentityContext> {
+  const profileReadback = Object.entries(readbacks).find(([key]) => key.startsWith(`senado:${officialId}:`))?.[1]
+  let profile: Record<string, unknown> = {}
+  const fontes: JevIdentityContext["fontes"] = { roster_url: roster.url, roster_sha256: roster.sha256 }
+  let mandatoAnos: string[] | undefined
+  if (profileReadback) {
+    const bytes = readFileSync(profileReadback.profile_path)
+    const parsed = JSON.parse(bytes.toString("utf8")) as unknown
+    if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) profile = parsed as Record<string, unknown>
+    fontes.perfil_url_local = profileReadback.dto_readback_url
+    fontes.profile_sha256 = sha256(bytes)
+  }
+  let mandatoUf: string | undefined
+  try {
+    const mandatosUrl = `${SENADO}/senador/${officialId}/mandatos.json`
+    const response = await fetch(officialUrl(mandatosUrl), { headers: { Accept: "application/json" }, signal: AbortSignal.timeout(30_000) })
+    const bytes = Buffer.from(await response.arrayBuffer())
+    if (!response.ok) throw new Error(`HTTP ${response.status}`)
+    const mandates = parseSenateMandateYears(JSON.parse(bytes.toString("utf8")) as unknown)
+    fontes.mandatos_url = mandatosUrl
+    fontes.mandatos_sha256 = sha256(bytes)
+    if (mandates.years.length) mandatoAnos = mandates.years
+    mandatoUf = mandates.uf
+  } catch (error) {
+    fontes.mandatos_error = error instanceof Error ? error.message : String(error)
+  }
+  const official = senateRecordFromRoster(roster.value, officialId)
+  const chooseText = (...values: unknown[]): string | undefined => values.find((value): value is string => typeof value === "string" && value.trim().length > 0)?.trim()
+  const identity = {
+    nome_completo: chooseText(profile.nome_completo, official?.NomeCompletoParlamentar, candidate.nome_completo),
+    uf: chooseText(profile.estado, profile.uf, official?.UfParlamentar, mandatoUf),
+    partido: chooseText(profile.partido_sigla, profile.partido_atual, official?.SiglaPartidoParlamentar),
+    mandato_anos: mandatoAnos,
+    fontes,
+  }
+  return Object.fromEntries(Object.entries(identity).filter(([, value]) => value !== undefined)) as JevIdentityContext
+}
+
 function normalizedName(value: string): string {
   return normalizeForMatch(value).replace(/[^A-Z0-9 ]/g, " ").replace(/\s+/g, " ").trim()
 }
 
-function jevSamePerson(rosterName: string, candidate: Candidate, officialId: string, destination: string): number | null {
-  const state = { registro: { senador: rosterName }, candidato: { slug: candidate.slug, nome_completo: candidate.nome_completo ?? "", id_senado: officialId } }
+function jevSamePerson(rosterName: string, candidate: Candidate, officialId: string, destination: string, identity: JevIdentityContext): number | null {
+  const state = {
+    registro: { senador: rosterName },
+    candidato: {
+      slug: candidate.slug,
+      nome_completo: identity.nome_completo ?? candidate.nome_completo ?? "",
+      id_senado: officialId,
+      ...(identity.uf ? { uf: identity.uf } : {}),
+      ...(identity.partido ? { partido: identity.partido } : {}),
+      ...(identity.mandato_anos ? { mandato_anos: identity.mandato_anos } : {}),
+    },
+  }
   const questions = JSON.parse(readFileSync("scripts/data/ceaps-senado-identity-questions.json", "utf8")) as Record<string, unknown>
   const result = spawnSync("python3", [resolve(process.env.HOME ?? "", ".claude/scripts/jev.py"), "ask"], { input: JSON.stringify({ state, questions }), encoding: "utf8", timeout: 30_000 })
   if (result.status !== 0) return null
@@ -375,7 +468,7 @@ function jevSamePerson(rosterName: string, candidate: Candidate, officialId: str
     const parsed = JSON.parse(result.stdout) as { answers?: { mesma_pessoa?: { noul?: number } } }
     const p = parsed.answers?.mesma_pessoa?.noul
     if (typeof p !== "number" || !Number.isFinite(p)) return null
-    const line = `${JSON.stringify({ routine: "ceaps-senado-coverage", slug: candidate.slug, official_id: officialId, roster_name: rosterName, p_same_person: p, checked_at: new Date().toISOString() })}\n`
+    const line = `${JSON.stringify({ routine: "ceaps-senado-coverage", slug: candidate.slug, official_id: officialId, roster_name: rosterName, identity_context: state.candidato, identity_context_sources: identity.fontes, p_same_person: p, checked_at: new Date().toISOString() })}\n`
     appendFileSync(join(destination, "jev-shadow.jsonl"), line, { mode: 0o600 })
     chmodSync(join(destination, "jev-shadow.jsonl"), 0o600)
     if (p >= 0.35 && p <= 0.65) {
@@ -431,7 +524,7 @@ function rowContainsId(row: unknown, officialId: string): boolean {
   return false
 }
 
-function filterBundlePages(pages: Array<Page & { value: unknown }>, officialId: string): Array<Page & { value: unknown }> {
+export function filterBundlePages(pages: Array<Page & { value: unknown }>, officialId: string): Array<Page & { value: unknown }> {
   return pages.map((page) => {
     if (Array.isArray(page.value)) return { ...page, value: page.value.filter((row) => rowContainsId(row, officialId)) }
     const value = page.value && typeof page.value === "object" ? { ...(page.value as Record<string, unknown>) } : page.value
@@ -445,7 +538,7 @@ function filterBundlePages(pages: Array<Page & { value: unknown }>, officialId: 
   })
 }
 
-function familySource(house: House, family: Family, officialId: string): string {
+export function familySource(house: House, family: Family, officialId: string): string {
   if (house === "camara") {
     if (family === "projetos_lei") return `${CAMARA}/proposicoes?idDeputadoAutor=${officialId}`
     if (family === "votos_candidato") return `${CAMARA}/votacoes/{votacao_id}/votos`
@@ -538,7 +631,7 @@ async function main(): Promise<void> {
         const expensesBundle = writeBundle(destination, `familias/${house}/${officialId}/gastos_parlamentares`, csvPages)
         addObservation({ house, family: "gastos_parlamentares", officialId, sourceUrl: CAMARA_COTA_CSV_URL(cotaYears[0]!), sourcePath: expensesBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: csvPages.map(stripValue), bundleSha256: expensesBundle.sha256, extra: { years: cotaYears, source_revisions: revisions, source_kind: "camara-cota-csv" } })
         if (camaraVoteIds.length === 0) {
-          pending.push({ house, family: "votos_candidato", official_id: officialId, reason: "IDs exatos de votações-chave da Câmara não foram fornecidos; endpoint por deputado é deliberadamente recusado pelo ingest existente", source: familySource(house, "votos_candidato", officialId) })
+          pending.push({ house, family: "votos_candidato", official_id: officialId, reason: "IDs exatos de votações-chave da Câmara não foram fornecidos", source: familySource(house, "votos_candidato", officialId) })
         } else {
           const pages: Array<Page & { value: unknown }> = []
           const voteCatalog: Array<{ vote_id_api: string; url: string; path: string; sha256: string }> = []
@@ -547,16 +640,18 @@ async function main(): Promise<void> {
             const collection = await capturePaginated(destination, `familias/${house}/${officialId}/votos_candidato/${voteId}`, base, {}) as Array<Page & { value: unknown }>
             if (collection.length === 0 || collection.some((page) => {
               const rows = (page.value as Record<string, unknown>)?.dados
-              return !Array.isArray(rows) || rows.length === 0
+              return !Array.isArray(rows)
             })) throw new Error(`lista nominal oficial vazia/inválida para votação ${voteId}`)
-            pages.push(...collection)
+            // A lista nominal é a fonte da presença/ausência. Uma lista completa
+            // sem a linha do deputado prova que ele não aparece naquela votação.
+            pages.push(...filterBundlePages(collection, officialId))
             const metaUrl = `${CAMARA}/votacoes/${voteId}`
             const meta = await capturePage(destination, `familias/${house}/${officialId}/votos_candidato/${voteId}-metadata`, 1, metaUrl)
             const metaDados = (meta.value as Record<string, unknown>)?.dados as Record<string, unknown> | undefined
             if (!metaDados || String(metaDados.id) !== voteId || typeof metaDados.data !== "string") throw new Error(`metadados oficiais inválidos para votação ${voteId}`)
             voteCatalog.push({ vote_id_api: voteId, url: metaUrl, path: meta.path, sha256: meta.sha256 })
           }
-          const filteredPages = filterBundlePages(pages, officialId)
+          const filteredPages = pages
           const bundle = writeBundle(destination, `familias/${house}/${officialId}/votos_candidato`, filteredPages)
           const sourceRevisions = [
             ...filteredPages.map((page) => ({ url: page.url, sha256: page.sha256 })),
@@ -584,7 +679,8 @@ async function main(): Promise<void> {
         try {
           const rosterName = senatorNameFromRoster(roster.value, officialId)
           if (!rosterName) throw new Error("roster Senado não confirmou NomeParlamentar para o ID consultado")
-          const identityP = jevSamePerson(rosterName, candidate, officialId, destination)
+          const identity = await jevIdentityContext(candidate, officialId, roster, readbacks)
+          const identityP = jevSamePerson(rosterName, candidate, officialId, destination, identity)
           if (identityP === null) throw new Error("Jev indisponível; identidade Senado/seed não confirmada")
           if (identityP >= 0.35 && identityP <= 0.65) throw new Error(`Jev Noul p=${identityP.toFixed(2)} enviado para revisão; sem atribuir dados CEAPS`)
           if (identityP < 0.35) throw new Error(`Jev Noul rejeitou identidade entre roster Senado e candidato (p=${identityP.toFixed(2)})`)
@@ -607,6 +703,18 @@ async function main(): Promise<void> {
           })
           const excludedYears = ceapsYears.filter((year) => !candidateCeapsYears.includes(year))
           const scopeEvidence = { rosters: scopeRosters, scope_years: candidateCeapsYears, excluded_years: excludedYears }
+          if (candidateCeapsYears.length === 0) {
+            pending.push({
+              house,
+              family: "gastos_parlamentares",
+              official_id: officialId,
+              reason: ceapsYears.length
+                ? `escopo CEAPS indeterminado: ID ausente nos rosters para todos os anos solicitados (${excludedYears.join(",")})`
+                : "escopo CEAPS indeterminado: nenhum ano válido solicitado",
+              source: ceapsYears.length ? `${CEAPS}_${ceapsYears[0]}.csv` : `${CEAPS}_{ano}.csv`,
+            })
+            continue
+          }
           for (const year of candidateCeapsYears) {
             const priorFailure = ceapsFailuresByYear.get(year)
             if (priorFailure) throw new Error(priorFailure)
@@ -626,6 +734,16 @@ async function main(): Promise<void> {
             const matching = data.CeapsRows.filter((row) => normalizedName(row.SENADOR) === normalizedName(rosterName))
               .map((row) => ({ ...row, CodigoParlamentar: officialId }))
             expensePages.push({ ...page, value: { CeapsRows: matching }, rows: matching.length })
+          }
+          if (expensePages.length === 0) {
+            pending.push({
+              house,
+              family: "gastos_parlamentares",
+              official_id: officialId,
+              reason: `escopo CEAPS indeterminado: nenhum CSV capturado para os anos elegíveis (${candidateCeapsYears.join(",")})`,
+              source: candidateCeapsYears.length ? `${CEAPS}_${candidateCeapsYears[0]}.csv` : `${CEAPS}_{ano}.csv`,
+            })
+            continue
           }
           const expenseBundle = writeBundle(destination, `familias/${house}/${officialId}/gastos_parlamentares`, expensePages)
           const revisions = expensePages.map((page) => ({ url: page.url, sha256: page.source_sha256, year: Number(new URL(page.url).pathname.match(/(\d{4})\.csv$/)?.[1]) }))

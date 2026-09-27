@@ -43,6 +43,11 @@ export function decodeCeapsCsv(buffer: Buffer): string {
   return texto
 }
 
+/** Rejoins the Senate CSV's exact wrapped thousands-group amount shape. */
+export function normalizeCeapsCsvAmount(value: string): string {
+  return value.trim().replace(/^(-?\d{1,3})\r\n(\d{3},\d{2})$/, "$1.$2")
+}
+
 /** Parses the Senate's semicolon CSV while tolerating literal quotes inside unquoted fields. */
 export function parseCeapsCsvRecords(text: string): { header: string[]; rows: Record<string, string>[] } {
   const source = text.replace(/^\uFEFF/, "")
@@ -84,10 +89,11 @@ export function parseCeapsCsvRecords(text: string): { header: string[]; rows: Re
   const nameIndex = header.indexOf("SENADOR")
   const yearIndex = header.indexOf("ANO")
   const monthIndex = header.indexOf("MES")
-  const optionalBlankColumns = ["CNPJ_CPF", "DOCUMENTO", "DETALHAMENTO"].map((column) => header.indexOf(column)).filter((index) => index >= 0)
+  const optionalBlankColumns = ["CNPJ_CPF", "DOCUMENTO", "DATA", "DETALHAMENTO"].map((column) => header.indexOf(column)).filter((index) => index >= 0)
   const plausibleMoney = (value: string) => /^-?(?:(?:\d{1,3}(?:\.\d{3})+|\d+)(?:,\d{0,2})?|,\d{1,2})$/.test(value.trim())
   const plausibleDate = (value: string) => /^\d{1,2}\/\d{1,2}\/\d{4}$/.test(value.trim())
-  for (const original of records.slice(2)) {
+  const plausibleDocument = (value: string) => !plausibleDate(value)
+  for (const [recordIndex, original] of records.slice(2).entries()) {
     let values = original
     if (values.length === header.length - 1) {
       const candidates = optionalBlankColumns.flatMap((index) => {
@@ -100,9 +106,15 @@ export function parseCeapsCsvRecords(text: string): { header: string[]; rows: Re
         const identityPositionPlausible = optionalColumn === "CNPJ_CPF"
           ? !/^\d{11,14}$/.test(normalizedIdentity)
           : /^\d{11,14}$/.test(normalizedIdentity)
-        return identityPositionPlausible && /^\d{4}$/.test(trial[yearIndex] ?? "") && Number.isInteger(month) && month >= 1 && month <= 12 && Boolean(trial[nameIndex]?.trim()) && plausibleDate(trial[dateIndex] ?? "") && plausibleMoney(trial[amountIndex] ?? "") ? [{ index, values: trial }] : []
+        const datePositionPlausible = index === dateIndex
+          ? !(trial[dateIndex] ?? "").trim()
+          : plausibleDate(trial[dateIndex] ?? "")
+        const documentPositionPlausible = index === dateIndex
+          ? plausibleDocument(trial[header.indexOf("DOCUMENTO")] ?? "")
+          : true
+        return identityPositionPlausible && /^\d{4}$/.test(trial[yearIndex] ?? "") && Number.isInteger(month) && month >= 1 && month <= 12 && Boolean(trial[nameIndex]?.trim()) && datePositionPlausible && documentPositionPlausible && plausibleMoney(trial[amountIndex] ?? "") ? [{ index, values: trial }] : []
       })
-      if (candidates.length !== 1) throw new Error(`CSV CEAPS com coluna opcional ausente ambígua (${values.length}/${header.length})`)
+      if (candidates.length !== 1) throw new Error(`CSV CEAPS com coluna opcional ausente ambígua no registro ${recordIndex + 1} (${values.length}/${header.length}; candidatos: ${candidates.map(({ index }) => header[index]).join(",") || "nenhum"})`)
       values = candidates[0]!.values
     }
     if (values.length !== header.length) throw new Error(`CSV CEAPS com quantidade de colunas inválida (${values.length}/${header.length})`)

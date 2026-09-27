@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import test from "node:test"
-import { camaraLegislatureForYear, filterCandidatesBySlugs, parseSenadoVoteIds, parseSlugList } from "../scripts/audit/fetch-parliamentary-family-sources-local"
+import { camaraLegislatureForYear, familySource, filterBundlePages, filterCandidatesBySlugs, parseSenadoVoteIds, parseSlugList } from "../scripts/audit/fetch-parliamentary-family-sources-local"
 
 test("lista privada seleciona candidatos e falha em slug desconhecido", () => {
   const candidates = [{ slug: "ana-silva" }, { slug: "bia-souza" }]
@@ -20,4 +20,22 @@ test("IDs exatos das votações Senado exigem array numérico sem duplicatas", (
   assert.throws(() => parseSenadoVoteIds("[]"), /array não vazio/)
   assert.throws(() => parseSenadoVoteIds('["123", "123"]'), /duplicado/)
   assert.throws(() => parseSenadoVoteIds('["123", "abc"]'), /inválido/)
+})
+
+test("votos nominais Câmara preservam ausência como lista completa sem linha sintética", () => {
+  const empty = filterBundlePages([{
+    page: 1, url: "https://dadosabertos.camara.leg.br/api/v2/votacoes/123-4/votos?itens=100&pagina=1",
+    path: "/tmp/votos.json", bytes: 2, sha256: "a".repeat(64), rows: 0, complete: true,
+    value: { dados: [], links: [] },
+  }], "456")
+  assert.deepEqual((empty[0]?.value as { dados: unknown[] }).dados, [])
+  assert.equal(empty[0]?.complete, true)
+  assert.match(familySource("camara", "votos_candidato", "456"), /\/votacoes\/\{votacao_id\}\/votos$/)
+
+  const present = filterBundlePages([{
+    page: 1, url: "https://dadosabertos.camara.leg.br/api/v2/votacoes/123-4/votos?itens=100&pagina=1",
+    path: "/tmp/votos.json", bytes: 20, sha256: "b".repeat(64), rows: 1, complete: true,
+    value: { dados: [{ deputado_: { id: 456 }, voto: "Sim" }], links: [] },
+  }], "456")
+  assert.deepEqual((present[0]?.value as { dados: Array<Record<string, unknown>> }).dados, [{ deputado_: { id: 456 }, voto: "Sim", vote_id_api: "123-4" }])
 })
