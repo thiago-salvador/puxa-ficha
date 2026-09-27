@@ -1095,6 +1095,11 @@ export function CandidatoProfile({
                                   {formatProcessStatusLabel(independentStatuses[0])}
                                 </MetaBadge>
                               )}
+                              {processGroup.some((item) => item.fonte_nivel === "em_confirmacao") && (
+                                <MetaBadge tone="caution" data-pf-processo-fonte-em-confirmacao>
+                                  Fonte oficial em confirmação
+                                </MetaBadge>
+                              )}
                               {(() => {
                                 const temporal = processoTemporalLabel(p)
                                 return temporal ? (

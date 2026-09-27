@@ -30,7 +30,7 @@ import { buildPatrimonioEleicoes, publicTransparencia } from "@/lib/public-profi
 import { buildFinanciamentoEleicoes, type FinanciamentoVerificacaoPublica } from "@/lib/financiamento-eleicoes"
 import { ensureCurrentCandidacyInHistory, normalizeHistoricoPoliticoForDisplay } from "@/lib/historico-dedupe"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
-import { urlFonteJudicialEspecifica } from "@/lib/djen-consulta-url"
+import { nivelFonteProcesso, urlFonteJudicialEspecifica } from "@/lib/djen-consulta-url"
 import { normalizeFinanciamentoForDisplay, normalizePatrimonioForDisplay } from "@/lib/person-level-dedupe"
 import { sanitizeFinanciamentoForPublic, sanitizeMaioresDoadoresForPublic } from "@/lib/financiamento-public"
 import {
@@ -73,7 +73,7 @@ export { mergeSourceMessages, mergeSourceStatuses } from "@/lib/data-resource"
 export { parseFederalAcervoReceiptDetail, projectFederalAcervoReceipts } from "@/lib/federal-acervo-receipts"
 
 /** Único ponto de bump para invalidar todas as superfícies públicas em cache. */
-export const CURRENT_DATA_WAVE = "judicial-source-20260924"
+export const CURRENT_DATA_WAVE = "judicial-selo-20260927"
 
 const supabaseUrl = getAppSupabaseUrl()
 const USE_MOCK = !supabaseUrl || supabaseUrl.includes("placeholder")
@@ -1879,9 +1879,10 @@ async function getCandidatoBySlugFromRelationResource(
     financiamentoVerificacoes,
   )
   const processosBrutos = processos.data ?? []
-  const processosPublicos = processosBrutos.filter((row) =>
-    Boolean(urlFonteJudicialEspecifica(row.url_fonte, row.numero_processo)),
-  )
+  const processosPublicos = processosBrutos.flatMap((row) => {
+    const fonte_nivel = nivelFonteProcesso(row)
+    return fonte_nivel ? [{ ...row, fonte_nivel }] : []
+  })
   const gastosParlamentaresPublicos = (gastos.data ?? []).filter((row) =>
     !gastoParlamentarEmRevisao(candidato.slug, row.ano),
   )

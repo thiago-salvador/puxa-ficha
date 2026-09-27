@@ -270,6 +270,8 @@ export interface Processo {
   gravidade: 'alta' | 'media' | 'baixa' | null;
   fonte?: string | null;
   url_fonte?: string | null;
+  /** Calculado na leitura pública: "oficial" ou "em_confirmacao" (selo na ficha). */
+  fonte_nivel?: import("@/lib/djen-consulta-url").FonteProcessoNivel | null;
 }
 
 // --- Pontos de Atenção ---
