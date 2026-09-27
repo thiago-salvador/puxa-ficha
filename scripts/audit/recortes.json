@@ -713,6 +713,13 @@
       "divida": null
     },
     {
+      "nome": "datas-nascimento-tse-20260926",
+      "desde": "20260927030000",
+      "ate": "20260927030200",
+      "allowlist": "scripts/audit/allowlist-datas-nascimento-tse-20260926.json",
+      "divida": null
+    },
+    {
       "nome": "partido-paulo-mourao-20260926",
       "desde": "20260926224500",
       "ate": "20260926224500",
@@ -721,9 +728,23 @@
     },
     {
       "nome": "dr-daniel-camara-20260927",
-      "desde": "20260927010000",
-      "ate": "20260927010100",
+      "desde": "20260927040000",
+      "ate": "20260927040100",
       "allowlist": "scripts/audit/allowlist-dr-daniel-camara-20260927.json",
+      "divida": null
+    },
+    {
+      "nome": "pedro-cunha-lima-20260927",
+      "desde": "20260927040200",
+      "ate": "20260927040200",
+      "allowlist": "scripts/audit/allowlist-pedro-cunha-lima-20260927.json",
+      "divida": null
+    },
+    {
+      "nome": "partido-paulo-mourao-20260927",
+      "desde": "20260927020000",
+      "ate": "20260927020000",
+      "allowlist": "scripts/audit/allowlist-partido-paulo-mourao-20260927.json",
       "divida": null
     }
   ],

@@ -8,7 +8,7 @@ LOCK TABLE public.projetos_lei IN SHARE ROW EXCLUSIVE MODE;
 LOCK TABLE public.identidade_timeline_quarentena_snapshot IN SHARE ROW EXCLUSIVE MODE;
 DO $rollback$
 BEGIN
-  IF (SELECT max(version) FROM supabase_migrations.schema_migrations) IS DISTINCT FROM '20260927010000' THEN
+  IF (SELECT max(version) FROM supabase_migrations.schema_migrations) IS DISTINCT FROM '20260927040000' THEN
     RAISE EXCEPTION 'projetos-lei-despublicacao rollback: ledger divergiu (rollback so vale com esta migration no topo)';
   END IF;
   IF EXISTS (SELECT 1 FROM public.projetos_lei WHERE despublicado_em IS NOT NULL OR despublicacao_motivo IS NOT NULL) THEN
@@ -37,5 +37,5 @@ ALTER POLICY "Leitura pública" ON public.projetos_lei
 ALTER TABLE public.projetos_lei
   DROP COLUMN despublicado_em,
   DROP COLUMN despublicacao_motivo;
-DELETE FROM supabase_migrations.schema_migrations WHERE version = '20260927010000';
+DELETE FROM supabase_migrations.schema_migrations WHERE version = '20260927040000';
 COMMIT;

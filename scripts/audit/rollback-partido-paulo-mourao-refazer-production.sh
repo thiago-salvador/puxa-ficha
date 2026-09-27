@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
-# Reverte, em ordem inversa, as migrations 20260927040200 (proposicoes do
-# senador 1757 em pedro-cunha-lima), 20260927040100 (proposicoes do
-# deputado 220614 em dr-daniel) e 20260927040000 (despublicacao em projetos_lei)
-# que estiverem no topo do ledger, numa transacao so, com os rollbacks
-# versionados e os readbacks de rollback. Molde de
-# rollback-situacao-godeiro-laudicerio-production.sh.
+# Reverte a migration 20260927020000 (partido e cargo_atual de
+# tse-2026-270002544629, Paulo Mourao, Senador TO) quando ela estiver no topo do
+# ledger, numa transacao so, com o rollback versionado e o readback de rollback.
+# Molde de rollback-partido-paulo-mourao-production.sh.
 #
-#   scripts/audit/rollback-projetos-lei-despublicacao-production.sh dry-run   # ensaio, nao grava
-#   scripts/audit/rollback-projetos-lei-despublicacao-production.sh apply     # grava
+#   scripts/audit/rollback-partido-paulo-mourao-refazer-production.sh dry-run   # ensaio, nao grava
+#   scripts/audit/rollback-partido-paulo-mourao-refazer-production.sh apply     # grava
 set -euo pipefail
 case $- in *x*) set +x ;; esac
 
@@ -51,9 +49,9 @@ pf_configure_libpq_from_url
 export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
-base_version=20260927030200
-versions=(20260927040000 20260927040100 20260927040200)
-names=(projetos_lei_despublicacao_schema dr_daniel_projetos_camara_homonimo pedro_cunha_lima_senado_homonimo)
+base_version=20260926224500
+versions=(20260927020000)
+names=(partido_cargo_paulo_mourao_refazer)
 
 digests=()
 for i in "${!versions[@]}"; do
@@ -131,19 +129,19 @@ print("BEGIN;")
 print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:production-db-migrations', 0));")
 triplas = [resto[i:i + 3] for i in range(0, len(resto), 3)]
 for n, (version, name, digest) in enumerate(triplas):
-    print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(version)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(version)} AND idempotency_key={lit(digest)}) <> 1 THEN RAISE EXCEPTION 'rollback dr-daniel-camara: ledger divergiu sob lock em {version}'; END IF; END $ledger$;")
+    print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(version)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(version)} AND idempotency_key={lit(digest)}) <> 1 THEN RAISE EXCEPTION 'rollback partido-mourao-refazer: ledger divergiu sob lock em {version}'; END IF; END $ledger$;")
     b = corpo(f"{root}/supabase/rollback/{version}_{name}.rollback.sql", True)
     print(b, end="" if b.endswith("\n") else "\n")
     rb = corpo(f"{root}/supabase/readback/{version}_{name}.rollback.readback.sql", False)
     print(rb, end="" if rb.endswith("\n") else "\n")
-    print(f"DO $ledger$ BEGIN IF EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'rollback dr-daniel-camara: {version} continua no ledger'; END IF; END $ledger$;")
+    print(f"DO $ledger$ BEGIN IF EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'rollback partido-mourao-refazer: {version} continua no ledger'; END IF; END $ledger$;")
 
-print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(base)} THEN RAISE EXCEPTION 'rollback dr-daniel-camara: topo final nao e o predecessor {base}'; END IF; END $ledger$;" if len(triplas) and triplas[-1][0] == "20260927040000" else "")
+print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(base)} THEN RAISE EXCEPTION 'rollback partido-mourao-refazer: topo final nao e o predecessor {base}'; END IF; END $ledger$;" if len(triplas) and triplas[-1][0] == "20260927020000" else "")
 print(fecho + ";")
 PY
 
 if [[ "$modo" == "dry-run" ]]; then
-  echo "PASS: dry-run do rollback dr-daniel-camara rodou rollbacks e readbacks e desfez tudo"
+  echo "PASS: dry-run do rollback partido-mourao-refazer rodou rollbacks e readbacks e desfez tudo"
 else
-  echo "PASS: rollback dr-daniel-camara concluido"
+  echo "PASS: rollback partido-mourao-refazer concluido"
 fi

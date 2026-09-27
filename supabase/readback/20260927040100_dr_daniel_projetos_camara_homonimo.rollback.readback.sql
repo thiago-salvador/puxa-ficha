@@ -1,8 +1,8 @@
 BEGIN READ ONLY;
 DO $readback$
 BEGIN
-  IF (SELECT count(*) FROM public.coleta_log WHERE execucao = 'rollback:20260927010100') <> 1
-     OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version = '20260927010100')
+  IF (SELECT count(*) FROM public.coleta_log WHERE execucao = 'rollback:20260927040100') <> 1
+     OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version = '20260927040100')
      OR EXISTS (SELECT 1 FROM public.identidade_timeline_quarentena_snapshot WHERE migration_version = 'dr-daniel-camara-20260927') THEN
     RAISE EXCEPTION 'dr-daniel-camara-20260927 rollback readback: recibo, ledger ou snapshot divergiram';
   END IF;

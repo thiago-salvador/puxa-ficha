@@ -7,7 +7,7 @@ import { FIXES } from "../scripts/apply-current-factual-fixes"
 // dr-daniel é Daniel Barbosa Santos (PA), sem mandato na Câmara dos Deputados.
 // O deputado federal 220614 é outra pessoa (Daniel Ricardo Soranz Pinto, RJ). O
 // vínculo com esse id trouxe naturalidade, data de nascimento e 100 proposições
-// do homônimo para a ficha (migration 20260927010100). Os ingests da Câmara e do
+// do homônimo para a ficha (migration 20260927040100). Os ingests da Câmara e do
 // Senado só leem ids do seed, então o seed é a trava.
 
 type SeedCandidate = { slug: string; ids?: { camara?: number | null; senado?: number | null } }

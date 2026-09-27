@@ -11,7 +11,7 @@ BEGIN
      OR EXISTS (SELECT 1 FROM pg_constraint
                 WHERE conname = 'identidade_timeline_quarentena_snapshot_tabela_check'
                   AND pg_get_constraintdef(oid) LIKE '%projetos_lei%')
-     OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version = '20260927010000') THEN
+     OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version = '20260927040000') THEN
     RAISE EXCEPTION 'projetos-lei-despublicacao rollback readback: schema ou ledger nao voltaram';
   END IF;
 END

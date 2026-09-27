@@ -129,7 +129,7 @@ BEGIN
     RAISE EXCEPTION 'dr-daniel-camara-20260927: escrita em candidatos esperada=1 atual=%', quantidade;
   END IF;
 
-  -- @write tabela=coleta_log ref=migration:20260927010100 campos=fonte,escopo,alvo,resultado,volume,detalhe,url,execucao,natureza
+  -- @write tabela=coleta_log ref=migration:20260927040100 campos=fonte,escopo,alvo,resultado,volume,detalhe,url,execucao,natureza
   INSERT INTO public.coleta_log (fonte,escopo,alvo,resultado,volume,detalhe,url,execucao,natureza)
   SELECT 'camara-identidade-homonima','global',
          'projetos_lei.despublicado_em,projetos_lei.despublicacao_motivo,candidatos.verificacao_campos',
@@ -145,8 +145,8 @@ BEGIN
              'after', jsonb_build_object('projetos-de-lei', pl_depois, 'votacoes-chave', vc_depois))
          )::text,
          'https://dadosabertos.camara.leg.br/api/v2/proposicoes?idDeputadoAutor=220614',
-         'migration:20260927010100','escrita'
-  WHERE NOT EXISTS (SELECT 1 FROM public.coleta_log WHERE execucao = 'migration:20260927010100');
+         'migration:20260927040100','escrita'
+  WHERE NOT EXISTS (SELECT 1 FROM public.coleta_log WHERE execucao = 'migration:20260927040100');
 
   IF (SELECT count(*) FROM public.projetos_lei p
        WHERE p.candidato_id = ficha AND p.despublicado_em IS NOT NULL AND p.despublicacao_motivo = motivo) <> 100

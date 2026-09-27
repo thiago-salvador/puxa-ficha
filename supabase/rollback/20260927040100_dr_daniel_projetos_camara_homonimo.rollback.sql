@@ -10,12 +10,12 @@ LOCK TABLE public.candidatos IN SHARE ROW EXCLUSIVE MODE;
 DO $rollback$
 DECLARE s record; atual jsonb; alvo jsonb; afetadas integer; total integer := 0;
 BEGIN
-  IF (SELECT max(version) FROM supabase_migrations.schema_migrations) IS DISTINCT FROM '20260927010100' THEN
+  IF (SELECT max(version) FROM supabase_migrations.schema_migrations) IS DISTINCT FROM '20260927040100' THEN
     RAISE EXCEPTION 'dr-daniel-camara-20260927 rollback: ledger divergiu (rollback so vale com esta migration no topo)';
   END IF;
 
-  IF (SELECT count(*) FROM public.coleta_log WHERE execucao = 'migration:20260927010100') <> 1
-     OR EXISTS (SELECT 1 FROM public.coleta_log WHERE execucao = 'rollback:20260927010100') THEN
+  IF (SELECT count(*) FROM public.coleta_log WHERE execucao = 'migration:20260927040100') <> 1
+     OR EXISTS (SELECT 1 FROM public.coleta_log WHERE execucao = 'rollback:20260927040100') THEN
     RAISE EXCEPTION 'dr-daniel-camara-20260927 rollback: recibo invalido ou rollback repetido';
   END IF;
 
@@ -62,11 +62,11 @@ BEGIN
   VALUES ('camara-identidade-homonima','global',
           'projetos_lei.despublicado_em,projetos_lei.despublicacao_motivo,candidatos.verificacao_campos',
           'encontrado', 101,
-          jsonb_build_object('resumo','Rollback da migration 20260927010100: as 100 proposicoes de dr-daniel voltam a ser publicadas e verificacao_campos volta ao estado anterior.')::text,
+          jsonb_build_object('resumo','Rollback da migration 20260927040100: as 100 proposicoes de dr-daniel voltam a ser publicadas e verificacao_campos volta ao estado anterior.')::text,
           'https://dadosabertos.camara.leg.br/api/v2/proposicoes?idDeputadoAutor=220614',
-          'rollback:20260927010100','escrita');
+          'rollback:20260927040100','escrita');
 
-  DELETE FROM supabase_migrations.schema_migrations WHERE version = '20260927010100';
+  DELETE FROM supabase_migrations.schema_migrations WHERE version = '20260927040100';
 END
 $rollback$;
 COMMIT;

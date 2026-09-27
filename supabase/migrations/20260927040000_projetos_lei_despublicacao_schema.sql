@@ -14,7 +14,7 @@
 -- 'projetos_lei', para que a curadoria grave a preimagem das linhas que
 -- despublicar.
 --
--- Schema só. A curadoria que usa as colunas é a 20260927010100.
+-- Schema só. A curadoria que usa as colunas é a 20260927040100.
 --
 -- NÃO aplicar por `supabase db push` nem por automação: produção só recebe
 -- esta migration pelo workflow apply-projetos-lei-despublicacao-production.

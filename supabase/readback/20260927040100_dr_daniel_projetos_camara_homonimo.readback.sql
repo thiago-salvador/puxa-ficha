@@ -3,9 +3,9 @@ SET LOCAL TIME ZONE 'UTC';
 DO $readback$
 DECLARE s record; atual jsonb;
 BEGIN
-  IF (SELECT count(*) FROM public.coleta_log WHERE execucao = 'migration:20260927010100') <> 1
+  IF (SELECT count(*) FROM public.coleta_log WHERE execucao = 'migration:20260927040100') <> 1
      OR NOT EXISTS (SELECT 1 FROM public.coleta_log
-       WHERE execucao = 'migration:20260927010100' AND volume = 101 AND resultado = 'encontrado') THEN
+       WHERE execucao = 'migration:20260927040100' AND volume = 101 AND resultado = 'encontrado') THEN
     RAISE EXCEPTION 'dr-daniel-camara-20260927 readback: recibo ausente ou invalido';
   END IF;
 
