@@ -105,7 +105,7 @@ describe("comunicação processual sem mérito inferido", () => {
     const fonte = readFileSync("src/lib/api.ts", "utf8")
     assert.match(
       fonte,
-      /const processosPublicos = processosBrutos\.filter\([\s\S]*?urlFonteJudicialEspecifica\(row\.url_fonte, row\.numero_processo\)[\s\S]*?processos_criminais: processosPublicos\.filter\(processoPodeContarComoCriminal\)\.length/,
+      /const processosPublicos = processosBrutos\.flatMap\([\s\S]*?nivelFonteProcesso\(row\)[\s\S]*?processos_criminais: processosPublicos\.filter\(processoPodeContarComoCriminal\)\.length/,
     )
     assert.doesNotMatch(
       fonte,
