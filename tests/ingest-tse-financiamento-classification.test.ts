@@ -1,6 +1,6 @@
 import test from "node:test"
 import assert from "node:assert/strict"
-import { classifyFinanciamentoOrigem } from "../scripts/lib/ingest-tse"
+import { cargoFinanciamentoOficial, categoriaFinanciamentoExibida, classifyFinanciamentoOrigem } from "../scripts/lib/ingest-tse"
 import { normalizeFinanciamentoReceitaRow } from "../scripts/lib/financiamento-receita-legacy-row"
 import { financiamentoReceitaDedupKey } from "../scripts/lib/financiamento-receita-dedup"
 
@@ -14,6 +14,20 @@ test("preserva categorias de fundo dos layouts atuais", () => {
   assert.equal(classifyFinanciamentoOrigem("Fundo Partidário"), "fundo_partidario")
   assert.equal(classifyFinanciamentoOrigem("Fundo Especial de Financiamento de Campanha"), "fundo_eleitoral")
   assert.equal(classifyFinanciamentoOrigem("FEFC"), "fundo_eleitoral")
+})
+
+test("mapeia a origem oficial para as quatro categorias exibidas na ficha", () => {
+  assert.equal(categoriaFinanciamentoExibida("FUNDO PARTIDÁRIO", "Recursos de partido político"), "fundo_partidario")
+  assert.equal(categoriaFinanciamentoExibida("FUNDO ESPECIAL", "FEFC"), "fundo_eleitoral")
+  assert.equal(categoriaFinanciamentoExibida("Recursos próprios", "Pessoas físicas"), "outros_recursos")
+  assert.equal(categoriaFinanciamentoExibida("", ""), "nao_informado_pelo_tse")
+  assert.equal(categoriaFinanciamentoExibida("#NULO", "#NULO"), "nao_informado_pelo_tse")
+})
+
+test("usa o cargo observado no pacote oficial antes do cargo curado", () => {
+  assert.equal(cargoFinanciamentoOficial({ cargo: "Governador", historicalIdentity: { cargo: "Deputado Federal" } }), "Governador")
+  assert.equal(cargoFinanciamentoOficial({ cargo: " ", historicalIdentity: { cargo: "Deputado Federal" } }), "Deputado Federal")
+  assert.equal(cargoFinanciamentoOficial({}), null)
 })
 
 test("preserva DS_FONTE_RECEITA e classifica a fonte oficial antes da origem", () => {

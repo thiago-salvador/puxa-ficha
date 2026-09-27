@@ -18,6 +18,7 @@ export type CoverageSourceProof = {
   matched_rows: number
   unmatched_rows: number
   scope_complete: boolean
+  scope?: "tse-candidacies" | "display-series"
   identity: {
     slug: string
     candidate_id: string
@@ -133,8 +134,18 @@ export function validCoverageSourceProof(
   }
   if (proof.method !== "official-source-to-public-readback") return false
   if (!isNonnegativeInteger(proof.source_rows) || !isNonnegativeInteger(proof.public_rows) || !isNonnegativeInteger(proof.matched_rows) || !isNonnegativeInteger(proof.unmatched_rows)) return false
-  const actualRows = publicFamilyRowCount(profile, family)
-  if (actualRows < 0 || proof.public_rows !== actualRows || proof.matched_rows !== actualRows || proof.unmatched_rows !== 0 || (proof.source_rows as number) < actualRows) return false
+  const actualRows = family === "historico_politico" && proof.scope === "tse-candidacies"
+    ? (Array.isArray(profile.historico) ? profile.historico : []).filter((row) => {
+        const item = object(row)
+        return String(item?.proveniencia ?? "").trim().toUpperCase() === "TSE" && String(item?.tipo_evento ?? "").trim().toUpperCase() === "CANDIDATURA"
+      }).length
+    : publicFamilyRowCount(profile, family)
+  // A série de bens/contas também publica anos sem linha bruta de bem/receita.
+  // A igualdade dos campos exibidos já foi conferida antes de emitir o recibo.
+  const displaySeries = (family === "patrimonio" || family === "financiamento") && proof.scope === "display-series"
+  const rawCountMustCoverPublicRows = !displaySeries
+  if (actualRows < 0 || proof.public_rows !== actualRows || proof.matched_rows !== actualRows || proof.unmatched_rows !== 0 ||
+    (rawCountMustCoverPublicRows && (proof.source_rows as number) < actualRows)) return false
   const revisions = proof.source_revisions
   if (!Array.isArray(revisions) || !revisions.length || revisions.some((revision) => {
     const row = object(revision)

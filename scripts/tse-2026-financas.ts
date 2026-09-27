@@ -108,14 +108,24 @@ export async function carregarPublicos(): Promise<FichaPublica[]> {
   return rows
 }
 
-export async function carregarEstado2026(): Promise<EstadoProducao> {
+export async function carregarEstado2026(permitirSchemaAnterior = false): Promise<EstadoProducao> {
   const ano = (q: ConsultaPaginavel) => q.eq("ano_eleicao", ANO_FINANCAS_2026).order("id")
-  const [financiamento, verificacoes, patrimonio, ausencias] = await Promise.all([
-    selecionarTudo<EstadoProducao["financiamento"][number]>(
+  const financiamentoPromise = selecionarTudo<EstadoProducao["financiamento"][number]>(
+    "financiamento",
+    "id, candidato_id, ano_eleicao, sq_candidato, uf_candidatura, cargo_candidatura, total_arrecadado, total_fundo_partidario, total_fundo_eleitoral, total_pessoa_fisica, total_recursos_proprios, categorias_origem, maiores_doadores, fonte, despublicado_em",
+    ano,
+  ).catch(async (error: unknown) => {
+    const message = error instanceof Error ? error.message : String(error)
+    if (!permitirSchemaAnterior || !/categorias_origem.*does not exist/i.test(message)) throw error
+    const rows = await selecionarTudo<Omit<EstadoProducao["financiamento"][number], "categorias_origem">>(
       "financiamento",
       "id, candidato_id, ano_eleicao, sq_candidato, uf_candidatura, cargo_candidatura, total_arrecadado, total_fundo_partidario, total_fundo_eleitoral, total_pessoa_fisica, total_recursos_proprios, maiores_doadores, fonte, despublicado_em",
       ano,
-    ),
+    )
+    return rows.map((row) => ({ ...row, categorias_origem: null }))
+  })
+  const [financiamento, verificacoes, patrimonio, ausencias] = await Promise.all([
+    financiamentoPromise,
     selecionarTudo<EstadoProducao["verificacoes"][number]>(
       "financiamento_verificacoes",
       "id, candidato_id, ano_eleicao, sq_candidato, uf_candidatura, resultado, verificado_em",
@@ -154,7 +164,7 @@ export function shaDoPlano(plano: PlanoFinancas2026): string {
   return createHash("sha256").update(stableJson(plano.acoes)).digest("hex")
 }
 
-async function planejar(): Promise<{ plano: PlanoFinancas2026; estado: EstadoProducao; publicos: FichaPublica[] }> {
+async function planejar(permitirSchemaAnterior = false): Promise<{ plano: PlanoFinancas2026; estado: EstadoProducao; publicos: FichaPublica[] }> {
   const publicos = await carregarPublicos()
   const planejadas: PlannedTseRow[] = []
   // O ingest canônico em dry-run não grava; `planStorageRows` devolve a linha
@@ -166,7 +176,7 @@ async function planejar(): Promise<{ plano: PlanoFinancas2026; estado: EstadoPro
   })
   const erroDeAno = resultados.find((r) => r.candidato === `financiamento-${ANO_FINANCAS_2026}` && r.errors.length > 0)
   if (erroDeAno) throw new Error(`pacote TSE ${ANO_FINANCAS_2026} indisponível ou inválido: ${erroDeAno.errors.join("; ")}`)
-  const estado = await carregarEstado2026()
+  const estado = await carregarEstado2026(permitirSchemaAnterior)
   const urlReceitas = financiamentoReceitasZipUrls(ANO_FINANCAS_2026).at(-1)!
   const hashes = await hashesDoManifesto(urlReceitas)
   const plano = planejarFinancas2026({
@@ -237,14 +247,27 @@ async function aplicarAcao(acao: AcaoEscrita): Promise<Conflito | null> {
   if (acao.tipo === "atualizar_financiamento") {
     const linhas = await escreverAuditado(
       ctx("financiamento", "atualiza receita parcial 2026 com o pacote TSE do dia (linha de máquina, CAS)"),
-      () =>
-        supabase.from("financiamento").update(acao.depois)
+      () => {
+        const base = supabase.from("financiamento").update(acao.depois)
           .eq("id", acao.id)
+          .eq("candidato_id", acao.antes.candidato_id as string)
+          .eq("ano_eleicao", acao.antes.ano_eleicao as number)
           .eq("fonte", "TSE")
           .is("despublicado_em", null)
-          .eq("total_arrecadado", acao.antes.total_arrecadado as number)
-          .eq("maiores_doadores", JSON.stringify(acao.antes.maiores_doadores))
-          .select("id"),
+        const comSq = acao.antes.sq_candidato == null ? base.is("sq_candidato", null) : base.eq("sq_candidato", acao.antes.sq_candidato as string)
+        const comUf = acao.antes.uf_candidatura == null ? comSq.is("uf_candidatura", null) : comSq.eq("uf_candidatura", acao.antes.uf_candidatura as string)
+        const comCargo = acao.antes.cargo_candidatura == null ? comUf.is("cargo_candidatura", null) : comUf.eq("cargo_candidatura", acao.antes.cargo_candidatura as string)
+        const comSubtotais = ["total_arrecadado", "total_fundo_partidario", "total_fundo_eleitoral", "total_pessoa_fisica", "total_recursos_proprios"]
+          .reduce((query, coluna) => {
+            const valor = acao.antes[coluna]
+            return valor == null ? query.is(coluna, null) : query.eq(coluna, valor as number)
+          }, comCargo)
+        const comDoadores = comSubtotais.eq("maiores_doadores", JSON.stringify(acao.antes.maiores_doadores))
+        const guarded = acao.antes.categorias_origem == null
+          ? comDoadores.is("categorias_origem", null)
+          : comDoadores.eq("categorias_origem", JSON.stringify(acao.antes.categorias_origem))
+        return guarded.select("id")
+      },
     )
     return linhas.length === 1 ? null : conflito("linha mudou desde o plano (CAS)")
   }
@@ -278,16 +301,42 @@ async function aplicarAcao(acao: AcaoEscrita): Promise<Conflito | null> {
  * usar. Prova, antes de gravar, que o filtro casa exatamente a linha do plano
  * (inclusive a igualdade jsonb de `maiores_doadores`).
  */
-export async function sondarCas(plano: PlanoFinancas2026): Promise<{ ok: number; falhas: string[] }> {
+export async function sondarCas(plano: PlanoFinancas2026, permitirSchemaAnterior = false): Promise<{ ok: number; falhas: string[] }> {
   let ok = 0
   const falhas: string[] = []
   for (const acao of plano.acoes) {
     let q: PromiseLike<RespostaSelect> | null = null
+    let qSemCategorias: PromiseLike<RespostaSelect> | null = null
     if (acao.tipo === "atualizar_financiamento") {
-      q = supabase.from("financiamento").select("id").eq("id", acao.id).eq("fonte", "TSE")
-        .is("despublicado_em", null)
-        .eq("total_arrecadado", acao.antes.total_arrecadado as number)
+      const base = supabase.from("financiamento").select("id").eq("id", acao.id)
+        .eq("candidato_id", acao.antes.candidato_id as string).eq("ano_eleicao", acao.antes.ano_eleicao as number)
+        .eq("fonte", "TSE").is("despublicado_em", null)
+      const comSq = acao.antes.sq_candidato == null ? base.is("sq_candidato", null) : base.eq("sq_candidato", acao.antes.sq_candidato as string)
+      const comUf = acao.antes.uf_candidatura == null ? comSq.is("uf_candidatura", null) : comSq.eq("uf_candidatura", acao.antes.uf_candidatura as string)
+      const comCargo = acao.antes.cargo_candidatura == null ? comUf.is("cargo_candidatura", null) : comUf.eq("cargo_candidatura", acao.antes.cargo_candidatura as string)
+      const comSubtotais = ["total_arrecadado", "total_fundo_partidario", "total_fundo_eleitoral", "total_pessoa_fisica", "total_recursos_proprios"]
+        .reduce((query, coluna) => {
+          const valor = acao.antes[coluna]
+          return valor == null ? query.is(coluna, null) : query.eq(coluna, valor as number)
+        }, comCargo)
+      const comDoadores = comSubtotais.eq("maiores_doadores", JSON.stringify(acao.antes.maiores_doadores))
+      // PostgREST builders mutate while chaining filters; build the fallback
+      // independently so adding the category predicate below cannot leak into it.
+      const baseSemCategorias = supabase.from("financiamento").select("id").eq("id", acao.id)
+        .eq("candidato_id", acao.antes.candidato_id as string).eq("ano_eleicao", acao.antes.ano_eleicao as number)
+        .eq("fonte", "TSE").is("despublicado_em", null)
+      const sqSemCategorias = acao.antes.sq_candidato == null ? baseSemCategorias.is("sq_candidato", null) : baseSemCategorias.eq("sq_candidato", acao.antes.sq_candidato as string)
+      const ufSemCategorias = acao.antes.uf_candidatura == null ? sqSemCategorias.is("uf_candidatura", null) : sqSemCategorias.eq("uf_candidatura", acao.antes.uf_candidatura as string)
+      const cargoSemCategorias = acao.antes.cargo_candidatura == null ? ufSemCategorias.is("cargo_candidatura", null) : ufSemCategorias.eq("cargo_candidatura", acao.antes.cargo_candidatura as string)
+      qSemCategorias = ["total_arrecadado", "total_fundo_partidario", "total_fundo_eleitoral", "total_pessoa_fisica", "total_recursos_proprios"]
+        .reduce((query, coluna) => {
+          const valor = acao.antes[coluna]
+          return valor == null ? query.is(coluna, null) : query.eq(coluna, valor as number)
+        }, cargoSemCategorias)
         .eq("maiores_doadores", JSON.stringify(acao.antes.maiores_doadores))
+      q = acao.antes.categorias_origem == null
+        ? comDoadores.is("categorias_origem", null)
+        : comDoadores.eq("categorias_origem", JSON.stringify(acao.antes.categorias_origem))
     } else if (acao.tipo === "apagar_verificacao") {
       const base = supabase.from("financiamento_verificacoes").select("id").eq("id", acao.id).eq("resultado", acao.antes.resultado)
       q = acao.antes.verificado_em ? base.eq("verificado_em", acao.antes.verificado_em) : base.is("verificado_em", null)
@@ -296,7 +345,12 @@ export async function sondarCas(plano: PlanoFinancas2026): Promise<{ ok: number;
       q = acao.antes.verificado_em ? base.eq("verificado_em", acao.antes.verificado_em) : base.is("verificado_em", null)
     }
     if (!q) continue
-    const { data, error } = await q
+    let { data, error } = await q
+    if (error && permitirSchemaAnterior && qSemCategorias && /categorias_origem.*does not exist/i.test(error.message)) {
+      // Before the idempotent migration, the column is structurally absent.
+      // Prove the rest of the preimage now; the later post-migration CAS requires NULL.
+      ;({ data, error } = await qSemCategorias)
+    }
     if (error) falhas.push(`${acao.slug} ${acao.tipo}: ${error.message}`)
     else if ((data ?? []).length !== 1) falhas.push(`${acao.slug} ${acao.tipo}: predicado casou ${(data ?? []).length} linha(s)`)
     else ok++
@@ -378,11 +432,10 @@ export function decidirPortao(
   falhasDeTravas: string[],
   falhasDeCas: string[],
 ): { aplicar: true } | { aplicar: false; codigo: number; motivo: string } {
-  if (opts.agendado) {
-    if (falhasDeTravas.length > 0) {
-      return { aplicar: false, codigo: 2, motivo: `travas reprovaram: ${falhasDeTravas.join("; ")}` }
-    }
-  } else if (opts.expectedPlanSha !== sha) {
+  if (falhasDeTravas.length > 0) {
+    return { aplicar: false, codigo: 2, motivo: `travas reprovaram: ${falhasDeTravas.join("; ")}` }
+  }
+  if (!opts.agendado && opts.expectedPlanSha !== sha) {
     return { aplicar: false, codigo: 3, motivo: `plano_sha256 ${sha} difere do revisado (${opts.expectedPlanSha ?? "ausente"})` }
   }
   if (falhasDeCas.length > 0) {
@@ -405,7 +458,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
 async function executar(opts: OpcoesCli): Promise<number> {
   exigirChaveV2(process.env.PF_DOADOR_CPF_HASH_SALT)
 
-  const { plano, estado, publicos } = await planejar()
+  const { plano, estado, publicos } = await planejar(!opts.aplicar)
   const sha = shaDoPlano(plano)
   const publico = planoPublico(plano)
   console.log(JSON.stringify({ modo: opts.aplicar ? "apply" : "dry-run", plano_sha256: sha, resumo: publico.resumo }, null, 2))
@@ -416,11 +469,11 @@ async function executar(opts: OpcoesCli): Promise<number> {
     const backup = salvar(opts.out, "backup-preimagem.json", backupDoPlano(plano, estado))
     console.error(`plano: ${plan}\nresumo: ${resumo}\nbackup: ${backup}`)
   }
-  const sonda = await sondarCas(plano)
+  const sonda = await sondarCas(plano, !opts.aplicar)
   console.log(JSON.stringify({ sonda_cas: { ok: sonda.ok, falhas: sonda.falhas.length, exemplos: sonda.falhas.slice(0, 5) } }))
   if (!opts.aplicar) return sonda.falhas.length > 0 ? 5 : 0
 
-  const portao = decidirPortao(opts, sha, opts.agendado ? travasDoPlano(plano, estado) : [], sonda.falhas)
+  const portao = decidirPortao(opts, sha, travasDoPlano(plano, estado), sonda.falhas)
   if (!portao.aplicar) {
     console.error(`${portao.motivo}; nada gravado`)
     await gravarRecibosDeFalha(portao.motivo, publicos)
@@ -428,14 +481,17 @@ async function executar(opts: OpcoesCli): Promise<number> {
   }
 
   const conflitos: Conflito[] = []
-  for (const acao of plano.acoes) {
-    try {
-      const c = await aplicarAcao(acao)
-      if (c) conflitos.push(c)
-    } catch (err) {
-      // Uma ação que lança não pode derrubar as seguintes nem os recibos: a
-      // trilha de erro dela já foi gravada por escreverAuditado.
-      conflitos.push({ slug: acao.slug, tipo: acao.tipo, motivo: `exceção: ${mensagemDe(err)}` })
+  const tamanhoLote = 25
+  for (let offset = 0; offset < plano.acoes.length; offset += tamanhoLote) {
+    for (const acao of plano.acoes.slice(offset, offset + tamanhoLote)) {
+      try {
+        const c = await aplicarAcao(acao)
+        if (c) conflitos.push(c)
+      } catch (err) {
+        // Uma ação que lança não pode derrubar as seguintes nem os recibos: a
+        // trilha de erro dela já foi gravada por escreverAuditado.
+        conflitos.push({ slug: acao.slug, tipo: acao.tipo, motivo: `exceção: ${mensagemDe(err)}` })
+      }
     }
   }
   const recibos = await gravarRecibos(plano, conflitos)

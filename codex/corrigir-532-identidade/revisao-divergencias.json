@@ -82,6 +82,7 @@
   "perfis": [
     {
       "slug": "adailton-furia",
+      "jevSamePersonReview": {"p":0.73,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "sem_sq_2026"
       ],
@@ -158,6 +159,7 @@
     },
     {
       "slug": "alexandre-kalil",
+      "jevSamePersonReview": {"p":0.31,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"review: sparse identity evidence"},
       "fontesRisco": [
         "patrimonio_divergente"
       ],
@@ -176,6 +178,7 @@
     },
     {
       "slug": "alvaro-dias-rn",
+      "jevSamePersonReview": {"p":0.31,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -252,6 +255,7 @@
     },
     {
       "slug": "andre-luis",
+      "jevSamePersonReview": {"p":0.4,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade",
         "sem_sq_2026"
@@ -329,6 +333,7 @@
     },
     {
       "slug": "aroldo-felix",
+      "jevSamePersonReview": {"p":0.32,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"review: sparse identity evidence"},
       "fontesRisco": [
         "patrimonio_divergente"
       ],
@@ -347,6 +352,7 @@
     },
     {
       "slug": "ataides-oliveira",
+      "jevSamePersonReview": {"p":0.78,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "patrimonio_divergente",
         "sem_sq_2026"
@@ -428,6 +434,7 @@
     },
     {
       "slug": "augusto-cury",
+      "jevSamePersonReview": {"p":0.42,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade",
         "patrimonio_divergente",
@@ -510,6 +517,7 @@
     },
     {
       "slug": "cabo-daciolo",
+      "jevSamePersonReview": {"p":0.33,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -641,6 +649,7 @@
     },
     {
       "slug": "cadu-xavier",
+      "jevSamePersonReview": {"p":0.54,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade",
         "sem_sq_2026"
@@ -718,6 +727,7 @@
     },
     {
       "slug": "camila-falcao",
+      "jevSamePersonReview": {"p":0.56,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade",
         "sem_sq_2026"
@@ -795,6 +805,7 @@
     },
     {
       "slug": "cicero-lucena",
+      "jevSamePersonReview": {"p":0.3,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"review: sparse identity evidence"},
       "fontesRisco": [
         "patrimonio_divergente"
       ],
@@ -813,6 +824,7 @@
     },
     {
       "slug": "clecio-luis",
+      "jevSamePersonReview": {"p":0.25,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -863,6 +875,7 @@
     },
     {
       "slug": "cleitinho",
+      "jevSamePersonReview": {"p":0.73,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "sem_sq_2026"
       ],
@@ -921,6 +934,7 @@
     },
     {
       "slug": "daniel-vilela",
+      "jevSamePersonReview": {"p":0.25,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -966,6 +980,7 @@
     },
     {
       "slug": "decio-lima",
+      "jevSamePersonReview": {"p":0.25,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -1011,6 +1026,7 @@
     },
     {
       "slug": "dr-daniel",
+      "jevSamePersonReview": {"p":0.37,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -1228,6 +1244,7 @@
     },
     {
       "slug": "dr-furlan",
+      "jevSamePersonReview": {"p":0.31,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -1329,6 +1346,7 @@
     },
     {
       "slug": "dr-helton-monteiro",
+      "jevSamePersonReview": {"p":0.54,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade",
         "sem_sq_2026"
@@ -1406,6 +1424,7 @@
     },
     {
       "slug": "eduardo-paes",
+      "jevSamePersonReview": {"p":0.3,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -1456,6 +1475,7 @@
     },
     {
       "slug": "fabio-mitidieri",
+      "jevSamePersonReview": {"p":0.38,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -2122,6 +2142,7 @@
     },
     {
       "slug": "felipe-camarao",
+      "jevSamePersonReview": {"p":0.35,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review: sparse identity evidence"},
       "fontesRisco": [
         "patrimonio_divergente"
       ],
@@ -2140,6 +2161,7 @@
     },
     {
       "slug": "flavio-bolsonaro",
+      "jevSamePersonReview": {"p":0.32,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -2188,6 +2210,7 @@
     },
     {
       "slug": "flavio-roscoe",
+      "jevSamePersonReview": {"p":0.34,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"review: sparse identity evidence"},
       "fontesRisco": [
         "patrimonio_divergente"
       ],
@@ -2206,6 +2229,7 @@
     },
     {
       "slug": "gabriel-azevedo",
+      "jevSamePersonReview": {"p":0.34,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "historico_identidade",
         "sem_sq_2026"
@@ -2389,6 +2413,7 @@
     },
     {
       "slug": "gelson-merisio",
+      "jevSamePersonReview": {"p":0.26,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -2437,6 +2462,7 @@
     },
     {
       "slug": "gisvaldo-oliveira",
+      "jevSamePersonReview": {"p":0.51,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade",
         "sem_sq_2026"
@@ -2514,6 +2540,7 @@
     },
     {
       "slug": "hildon-chaves",
+      "jevSamePersonReview": {"p":0.27,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -2625,6 +2652,7 @@
     },
     {
       "slug": "ivan-moraes",
+      "jevSamePersonReview": {"p":0.31,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"review: sparse identity evidence"},
       "fontesRisco": [
         "patrimonio_divergente"
       ],
@@ -2643,6 +2671,7 @@
     },
     {
       "slug": "joao-henrique-catan",
+      "jevSamePersonReview": {"p":0.72,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "patrimonio_divergente",
         "sem_sq_2026"
@@ -2718,6 +2747,7 @@
     },
     {
       "slug": "jorginho-mello",
+      "jevSamePersonReview": {"p":0.28,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -2788,6 +2818,7 @@
     },
     {
       "slug": "jose-roberto-arruda",
+      "jevSamePersonReview": {"p":0.26,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -2835,6 +2866,7 @@
     },
     {
       "slug": "juliana-brizola",
+      "jevSamePersonReview": {"p":0.27,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -2884,6 +2916,7 @@
     },
     {
       "slug": "lahesio-bonfim",
+      "jevSamePersonReview": {"p":0.36,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -2966,6 +2999,7 @@
     },
     {
       "slug": "lais-chaud",
+      "jevSamePersonReview": {"p":0.54,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade",
         "sem_sq_2026"
@@ -3043,6 +3077,7 @@
     },
     {
       "slug": "laurez-moreira",
+      "jevSamePersonReview": {"p":0.32,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"review: sparse identity evidence"},
       "fontesRisco": [
         "patrimonio_divergente"
       ],
@@ -3061,6 +3096,7 @@
     },
     {
       "slug": "leonardo-avalanche",
+      "jevSamePersonReview": {"p":0.32,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"review: sparse identity evidence"},
       "fontesRisco": [
         "patrimonio_divergente"
       ],
@@ -3079,6 +3115,7 @@
     },
     {
       "slug": "lourdes-melo",
+      "jevSamePersonReview": {"p":0.28,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -3132,6 +3169,7 @@
     },
     {
       "slug": "luan-monteiro",
+      "jevSamePersonReview": {"p":0.37,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -3233,6 +3271,7 @@
     },
     {
       "slug": "lucien-rezende",
+      "jevSamePersonReview": {"p":0.71,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "sem_sq_2026"
       ],
@@ -3309,6 +3348,7 @@
     },
     {
       "slug": "luiz-franca",
+      "jevSamePersonReview": {"p":0.36,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review: sparse identity evidence"},
       "fontesRisco": [
         "patrimonio_divergente"
       ],
@@ -3327,6 +3367,7 @@
     },
     {
       "slug": "mailza-assis",
+      "jevSamePersonReview": {"p":0.54,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade",
         "sem_sq_2026"
@@ -3410,6 +3451,7 @@
     },
     {
       "slug": "marcelo-brigadeiro",
+      "jevSamePersonReview": {"p":0.32,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"review: sparse identity evidence"},
       "fontesRisco": [
         "patrimonio_divergente"
       ],
@@ -3428,6 +3470,7 @@
     },
     {
       "slug": "mauricio-coelho",
+      "jevSamePersonReview": {"p":0.3,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "historico_identidade",
         "patrimonio_divergente",
@@ -3573,6 +3616,7 @@
     },
     {
       "slug": "natasha-slhessarenko",
+      "jevSamePersonReview": {"p":0.52,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade",
         "patrimonio_divergente",
@@ -3655,6 +3699,7 @@
     },
     {
       "slug": "orleans-brandao",
+      "jevSamePersonReview": {"p":0.55,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade",
         "sem_sq_2026"
@@ -3732,6 +3777,7 @@
     },
     {
       "slug": "pazolini",
+      "jevSamePersonReview": {"p":0.67,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "sem_sq_2026"
       ],
@@ -3784,6 +3830,7 @@
     },
     {
       "slug": "ravenna-castro",
+      "jevSamePersonReview": {"p":0.32,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"review: sparse identity evidence"},
       "fontesRisco": [
         "patrimonio_divergente"
       ],
@@ -3802,6 +3849,7 @@
     },
     {
       "slug": "renato-gomes",
+      "jevSamePersonReview": {"p":0.57,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade",
         "sem_sq_2026"
@@ -3879,6 +3927,7 @@
     },
     {
       "slug": "ricardo-cappelli",
+      "jevSamePersonReview": {"p":0.59,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade",
         "sem_sq_2026"
@@ -3956,6 +4005,7 @@
     },
     {
       "slug": "rico-pinheiro",
+      "jevSamePersonReview": {"p":0.24,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -4057,6 +4107,7 @@
     },
     {
       "slug": "roberto-rocha",
+      "jevSamePersonReview": {"p":0.29,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"review: sparse identity evidence"},
       "fontesRisco": [
         "patrimonio_divergente"
       ],
@@ -4075,6 +4126,7 @@
     },
     {
       "slug": "sandro-alex",
+      "jevSamePersonReview": {"p":0.25,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -4122,6 +4174,7 @@
     },
     {
       "slug": "tiao-bocalom",
+      "jevSamePersonReview": {"p":0.24,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -4174,6 +4227,7 @@
     },
     {
       "slug": "tse-2026-100002550418",
+      "jevSamePersonReview": {"p":0.27,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -4217,6 +4271,7 @@
     },
     {
       "slug": "tse-2026-10002535804",
+      "jevSamePersonReview": {"p":0.41,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -4317,6 +4372,7 @@
     },
     {
       "slug": "tse-2026-110002544986",
+      "jevSamePersonReview": {"p":0.46,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -4387,6 +4443,7 @@
     },
     {
       "slug": "tse-2026-110002551966",
+      "jevSamePersonReview": {"p":0.37,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -4475,6 +4532,7 @@
     },
     {
       "slug": "tse-2026-110002552693",
+      "jevSamePersonReview": {"p":0.46,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -4569,6 +4627,7 @@
     },
     {
       "slug": "tse-2026-130002550560",
+      "jevSamePersonReview": {"p":0.33,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -4612,6 +4671,7 @@
     },
     {
       "slug": "tse-2026-130002552186",
+      "jevSamePersonReview": {"p":0.32,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -4655,6 +4715,7 @@
     },
     {
       "slug": "tse-2026-130002552302",
+      "jevSamePersonReview": {"p":0.34,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -4698,6 +4759,7 @@
     },
     {
       "slug": "tse-2026-150002544909",
+      "jevSamePersonReview": {"p":0.34,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -4741,6 +4803,7 @@
     },
     {
       "slug": "tse-2026-150002552607",
+      "jevSamePersonReview": {"p":0.4,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -4811,6 +4874,7 @@
     },
     {
       "slug": "tse-2026-170002547771",
+      "jevSamePersonReview": {"p":0.34,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -4854,6 +4918,7 @@
     },
     {
       "slug": "tse-2026-170002549655",
+      "jevSamePersonReview": {"p":0.25,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -4897,6 +4962,7 @@
     },
     {
       "slug": "tse-2026-190002543961",
+      "jevSamePersonReview": {"p":0.33,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"review: sparse identity evidence"},
       "fontesRisco": [
         "patrimonio_divergente"
       ],
@@ -4915,6 +4981,7 @@
     },
     {
       "slug": "tse-2026-190002545553",
+      "jevSamePersonReview": {"p":0.28,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -4958,6 +5025,7 @@
     },
     {
       "slug": "tse-2026-190002550182",
+      "jevSamePersonReview": {"p":0.27,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -5001,6 +5069,7 @@
     },
     {
       "slug": "tse-2026-190002550184",
+      "jevSamePersonReview": {"p":0.28,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -5044,6 +5113,7 @@
     },
     {
       "slug": "tse-2026-20002540197",
+      "jevSamePersonReview": {"p":0.32,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -5126,6 +5196,7 @@
     },
     {
       "slug": "tse-2026-20002553726",
+      "jevSamePersonReview": {"p":0.18,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -5187,6 +5258,7 @@
     },
     {
       "slug": "tse-2026-230002533586",
+      "jevSamePersonReview": {"p":0.29,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -5317,6 +5389,7 @@
     },
     {
       "slug": "tse-2026-230002534806",
+      "jevSamePersonReview": {"p":0.32,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -5405,6 +5478,7 @@
     },
     {
       "slug": "tse-2026-230002553636",
+      "jevSamePersonReview": {"p":0.43,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -5493,6 +5567,7 @@
     },
     {
       "slug": "tse-2026-240002535770",
+      "jevSamePersonReview": {"p":0.32,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -5536,6 +5611,7 @@
     },
     {
       "slug": "tse-2026-240002537632",
+      "jevSamePersonReview": {"p":0.32,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -5579,6 +5655,7 @@
     },
     {
       "slug": "tse-2026-240002548632",
+      "jevSamePersonReview": {"p":0.33,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -5622,6 +5699,7 @@
     },
     {
       "slug": "tse-2026-250002541362",
+      "jevSamePersonReview": {"p":0.32,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -5665,6 +5743,7 @@
     },
     {
       "slug": "tse-2026-250002552369",
+      "jevSamePersonReview": {"p":0.34,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -5708,6 +5787,7 @@
     },
     {
       "slug": "tse-2026-250002553252",
+      "jevSamePersonReview": {"p":0.39,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -5778,6 +5858,7 @@
     },
     {
       "slug": "tse-2026-260002545677",
+      "jevSamePersonReview": {"p":0.33,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -5884,6 +5965,7 @@
     },
     {
       "slug": "tse-2026-270002546333",
+      "jevSamePersonReview": {"p":0.37,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -5984,6 +6066,7 @@
     },
     {
       "slug": "tse-2026-30002530069",
+      "jevSamePersonReview": {"p":0.37,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -6108,6 +6191,7 @@
     },
     {
       "slug": "tse-2026-50002536577",
+      "jevSamePersonReview": {"p":0.33,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -6151,6 +6235,7 @@
     },
     {
       "slug": "tse-2026-60002542479",
+      "jevSamePersonReview": {"p":0.4,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade"
       ],
@@ -6233,6 +6318,7 @@
     },
     {
       "slug": "tse-2026-90002540998",
+      "jevSamePersonReview": {"p":0.34,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -6276,6 +6362,7 @@
     },
     {
       "slug": "tse-2026-90002543215",
+      "jevSamePersonReview": {"p":0.34,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"likely different person"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -6319,6 +6406,7 @@
     },
     {
       "slug": "valmir-de-francisquinho",
+      "jevSamePersonReview": {"p":0.35,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "identity_review"
       ],
@@ -6367,6 +6455,7 @@
     },
     {
       "slug": "wellington-fagundes",
+      "jevSamePersonReview": {"p":0.38,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade",
         "patrimonio_divergente"
@@ -6460,6 +6549,7 @@
     },
     {
       "slug": "wilder-morais",
+      "jevSamePersonReview": {"p":0.31,"bucket":"<0.35 likely different","artifact":"identity-jev-review.json","disposition":"review: sparse identity evidence"},
       "fontesRisco": [
         "patrimonio_divergente"
       ],
@@ -6478,6 +6568,7 @@
     },
     {
       "slug": "witer-naves",
+      "jevSamePersonReview": {"p":0.53,"bucket":"0.35-<0.85 review","artifact":"identity-jev-review.json","disposition":"review"},
       "fontesRisco": [
         "historico_identidade",
         "sem_sq_2026"
