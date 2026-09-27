@@ -54,6 +54,36 @@ describe("gerar migration de processos da curadoria", () => {
     assert.equal(tipoProcessual("AÇÃO POPULAR", "ato de gestão"), "civil")
   })
 
+  it("lote novo usa marcador próprio em fonte, contagens, rollback e readback", () => {
+    const pacote = prepararPacoteProcessos({
+      itensRevisao: [item()],
+      processosCuradoria: [processo()],
+      esperadoProcessos: 1,
+      esperadoFichas: 1,
+      timestamp: "20260927060000",
+      aprovadoEditorialmente: true,
+      marcador: "curadoria-djen-20260927",
+    })
+    for (const sql of [pacote.migration, pacote.rollback, pacote.readback]) {
+      assert.match(sql, /LIKE 'curadoria-djen-20260927: %'/)
+      assert.doesNotMatch(sql, /curadoria-djen-20260805/)
+    }
+    assert.match(pacote.migration, /'curadoria-djen-20260927: Comunica PJe'/)
+    // Guards de coorte vazia e de replay descartável nos dois blocos de checagem.
+    assert.equal(pacote.migration.match(/current_setting\('pf\.replay', true\) = 'true'/g)?.length, 2)
+    assert.match(pacote.readback, /resultado\.expected_rows <> 1 OR resultado\.expected_candidates <> 1/)
+    assert.match(pacote.readback, /readback 20260927060000/)
+    assert.equal(pacote.allowlist.recorte, "processos-curadoria-djen-20260927")
+    assert.throws(() => prepararPacoteProcessos({
+      itensRevisao: [item()],
+      processosCuradoria: [processo()],
+      esperadoProcessos: 1,
+      esperadoFichas: 1,
+      timestamp: "20260927060000",
+      marcador: "outro-marcador",
+    }), /marcador invalido/)
+  })
+
   it("gera migration e rollback pareados com preflight, dedupe e contagem exata", () => {
     const pacote = prepararPacoteProcessos({
       itensRevisao: [item()],

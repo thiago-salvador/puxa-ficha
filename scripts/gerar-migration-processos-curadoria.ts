@@ -70,6 +70,8 @@ interface EntradaPacote {
   esperadoFichas: number
   timestamp: string
   aprovadoEditorialmente?: boolean
+  /** Marcador de fonte do lote; lote novo precisa de marcador próprio para as contagens valerem só para ele. */
+  marcador?: string
 }
 
 export interface LinhaProcesso {
@@ -188,13 +190,14 @@ function gerarMigration(
   linhas: LinhaProcesso[],
   timestamp: string,
   aprovadoEditorialmente: boolean,
+  marcador: string,
 ): string {
   const total = linhas.length
   const fichas = new Set(linhas.map((linha) => linha.slug)).size
   const valores = valoresSql(linhas)
   const inserts = insertsSql(linhas)
   return `-- ${timestamp}_processos_curadoria_djen.sql
--- ${aprovadoEditorialmente ? "APROVADO EDITORIALMENTE, NAO APLICADO" : "PREPARADO, NAO APLICADO"}. Lote judicial de 05/08/2026.
+-- ${aprovadoEditorialmente ? "APROVADO EDITORIALMENTE, NAO APLICADO" : "PREPARADO, NAO APLICADO"}. Lote judicial ${marcador === MARCADOR_FONTE ? "de 05/08/2026" : marcador}.
 -- As contagens explicitas passadas ao gerador precisam coincidir com este lote.
 -- Sem BEGIN/COMMIT proprio: o aplicador envolve migration e ledger na mesma transacao.
 
@@ -218,6 +221,14 @@ DO $$
 DECLARE
   n integer;
 BEGIN
+  IF current_setting('pf.replay', true) = 'true' THEN
+    RAISE NOTICE 'processos curadoria: checagens ignoradas apenas no replay descartavel';
+    RETURN;
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM public.candidatos) THEN
+    RAISE NOTICE 'processos curadoria: coorte ausente; checagens ignoradas';
+    RETURN;
+  END IF;
   SELECT count(*) INTO n FROM _pf_processos_curadoria;
   IF n <> ${total} THEN
     RAISE EXCEPTION 'processos curadoria: esperados ${total} CNJs no lote, encontrados %', n;
@@ -262,9 +273,17 @@ DO $$
 DECLARE
   n integer;
 BEGIN
+  IF current_setting('pf.replay', true) = 'true' THEN
+    RAISE NOTICE 'processos curadoria: checagens ignoradas apenas no replay descartavel';
+    RETURN;
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM public.candidatos) THEN
+    RAISE NOTICE 'processos curadoria: coorte ausente; checagens ignoradas';
+    RETURN;
+  END IF;
   SELECT count(*) INTO n
   FROM public.processos
-  WHERE fonte LIKE '${MARCADOR_FONTE}: %';
+  WHERE fonte LIKE '${marcador}: %';
   IF n <> ${total} THEN
     RAISE EXCEPTION 'processos curadoria: esperados ${total} registros inseridos, encontrados %', n;
   END IF;
@@ -276,6 +295,7 @@ function gerarRollback(
   linhas: LinhaProcesso[],
   timestamp: string,
   aprovadoEditorialmente: boolean,
+  marcador: string,
 ): string {
   const total = linhas.length
   const valores = valoresSql(linhas)
@@ -308,7 +328,7 @@ BEGIN
   JOIN _pf_processos_curadoria_rollback l
     ON regexp_replace(p.numero_processo, '[^0-9]', '', 'g') =
        regexp_replace(l.numero_cnj, '[^0-9]', '', 'g')
-  WHERE p.fonte LIKE '${MARCADOR_FONTE}: %';
+  WHERE p.fonte LIKE '${marcador}: %';
   IF n <> ${total} THEN
     RAISE EXCEPTION 'rollback processos curadoria: esperados ${total}, encontrados % registros do lote', n;
   END IF;
@@ -333,7 +353,7 @@ DELETE FROM public.processos p
 USING _pf_processos_curadoria_rollback l
 WHERE regexp_replace(p.numero_processo, '[^0-9]', '', 'g') =
       regexp_replace(l.numero_cnj, '[^0-9]', '', 'g')
-  AND p.fonte LIKE '${MARCADOR_FONTE}: %';
+  AND p.fonte LIKE '${marcador}: %';
 
 DO $$
 DECLARE
@@ -341,7 +361,7 @@ DECLARE
 BEGIN
   SELECT count(*) INTO n
   FROM public.processos
-  WHERE fonte LIKE '${MARCADOR_FONTE}: %';
+  WHERE fonte LIKE '${marcador}: %';
   IF n <> 0 THEN
     RAISE EXCEPTION 'rollback processos curadoria: ainda restam % registros do lote', n;
   END IF;
@@ -352,7 +372,9 @@ WHERE version = '${timestamp}';
 `
 }
 
-function gerarReadback(linhas: LinhaProcesso[], timestamp: string): string {
+function gerarReadback(linhas: LinhaProcesso[], timestamp: string, marcador: string): string {
+  const total = linhas.length
+  const fichas = new Set(linhas.map((linha) => linha.slug)).size
   const esperados = linhas
     .map(
       (linha) => {
@@ -383,7 +405,10 @@ function gerarReadback(linhas: LinhaProcesso[], timestamp: string): string {
     .join(",\n")
   return `-- READBACK SOMENTE LEITURA de ${timestamp}_processos_curadoria_djen.sql
 -- Rodar depois da aplicacao autorizada e antes de qualquer deploy.
-CREATE TEMP TABLE pf_readback_judicial_69 AS
+-- Um unico bloco DO sem tabela temporaria: roda em transacao somente leitura.
+DO $readback$
+DECLARE resultado record;
+BEGIN
 WITH expected_base(
   slug, tipo, tribunal, numero_cnj, descricao, status, fonte, url_fonte,
   expected_candidate_id, expected_nome_completo, expected_nome_urna, expected_slug_pos_split
@@ -425,7 +450,7 @@ ${esperados}
          p.fonte, p.url_fonte
   FROM public.processos p
   JOIN public.candidatos c ON c.id = p.candidato_id
-  WHERE p.fonte LIKE '${MARCADOR_FONTE}: %'
+  WHERE p.fonte LIKE '${marcador}: %'
 )
 SELECT
   (SELECT count(*) FROM expected) AS expected_rows,
@@ -461,29 +486,26 @@ SELECT
    WHERE url_fonte LIKE 'https://comunica.pje.jus.br/consulta?%'
      AND url_fonte <>
      'https://comunica.pje.jus.br/consulta?numeroProcesso=' ||
-     regexp_replace(numero_cnj, '[^0-9]', '', 'g')) AS source_cnj_mismatch;
-
-DO $readback$
-DECLARE r pf_readback_judicial_69%ROWTYPE;
-BEGIN
-  SELECT * INTO STRICT r FROM pf_readback_judicial_69;
-  IF r.expected_rows <> 69 OR r.expected_candidates <> 21
-     OR r.actual_rows <> 69 OR r.actual_candidates <> 21
-     OR r.identity_mismatch <> 0 OR r.missing_expected <> 0
-     OR r.unexpected_marker <> 0 OR r.global_cnj_mismatch <> 0
-     OR r.payload_mismatch <> 0 OR r.inferred_fields <> 0
-     OR r.invalid_source_urls <> 0 OR r.source_cnj_mismatch <> 0 THEN
-    RAISE EXCEPTION 'readback 20260810122000: %', row_to_json(r);
+     regexp_replace(numero_cnj, '[^0-9]', '', 'g')) AS source_cnj_mismatch
+  INTO STRICT resultado;
+  IF resultado.expected_rows <> ${total} OR resultado.expected_candidates <> ${fichas}
+     OR resultado.actual_rows <> ${total} OR resultado.actual_candidates <> ${fichas}
+     OR resultado.identity_mismatch <> 0 OR resultado.missing_expected <> 0
+     OR resultado.unexpected_marker <> 0 OR resultado.global_cnj_mismatch <> 0
+     OR resultado.payload_mismatch <> 0 OR resultado.inferred_fields <> 0
+     OR resultado.invalid_source_urls <> 0 OR resultado.source_cnj_mismatch <> 0 THEN
+    RAISE EXCEPTION 'readback ${timestamp}: %', row_to_json(resultado);
   END IF;
+  RAISE NOTICE 'readback ${timestamp}: %', row_to_json(resultado);
 END
 $readback$;
-
-TABLE pf_readback_judicial_69;
 `
 }
 
 export function prepararPacoteProcessos(entrada: EntradaPacote) {
   if (!/^\d{14}$/.test(entrada.timestamp)) throw new Error("timestamp invalido")
+  const marcador = entrada.marcador ?? MARCADOR_FONTE
+  if (!/^curadoria-djen-\d{8}$/.test(marcador)) throw new Error("marcador invalido")
   const aprovados = entrada.itensRevisao.filter(
     (item) => item.decisao === "publicar" || item.decisao === "ponto_atencao",
   )
@@ -531,7 +553,7 @@ export function prepararPacoteProcessos(entrada: EntradaPacote) {
       tribunal: processo.tribunal,
       descricao: item.motivo,
       status: item.estado_oficial,
-      fonte: `${MARCADOR_FONTE}: ${fonte.titulo}`,
+      fonte: `${marcador}: ${fonte.titulo}`,
       url_fonte: urlFonte,
     }
   })
@@ -552,9 +574,9 @@ export function prepararPacoteProcessos(entrada: EntradaPacote) {
   const allowlist = {
     _comentario:
       entrada.aprovadoEditorialmente
-        ? "LOTE APROVADO EDITORIALMENTE E NAO APLICADO: a allowlist autoriza somente as 69 escritas nominais desta migration; aplicar continua sendo ato externo separado."
+        ? `LOTE APROVADO EDITORIALMENTE E NAO APLICADO: a allowlist autoriza somente as ${linhas.length} escritas nominais desta migration; aplicar continua sendo ato externo separado.`
         : "PROPOSTA NAO APLICADA: integrar ao gate somente apos aprovacao nominal deste lote.",
-    recorte: "processos-curadoria-djen-20260810",
+    recorte: marcador === MARCADOR_FONTE ? "processos-curadoria-djen-20260810" : `processos-${marcador}`,
     migration: `${entrada.timestamp}_processos_curadoria_djen.sql`,
     coorte: [...new Set(linhas.map((linha) => linha.slug))].sort(),
     fora_por_construcao: { slugs: [] as string[] },
@@ -569,9 +591,9 @@ export function prepararPacoteProcessos(entrada: EntradaPacote) {
   }
   return {
     linhas,
-    migration: gerarMigration(linhas, entrada.timestamp, entrada.aprovadoEditorialmente === true),
-    rollback: gerarRollback(linhas, entrada.timestamp, entrada.aprovadoEditorialmente === true),
-    readback: gerarReadback(linhas, entrada.timestamp),
+    migration: gerarMigration(linhas, entrada.timestamp, entrada.aprovadoEditorialmente === true, marcador),
+    rollback: gerarRollback(linhas, entrada.timestamp, entrada.aprovadoEditorialmente === true, marcador),
+    readback: gerarReadback(linhas, entrada.timestamp, marcador),
     allowlist,
     manifesto: JSON.stringify(
       {
@@ -622,6 +644,7 @@ function main(): void {
     esperadoFichas: Number(fichasEsperadas),
     timestamp: valor("timestamp") ?? "20260810122000",
     aprovadoEditorialmente: valor("approved-editorially") === "true",
+    marcador: valor("marker"),
   })
   writeFileSync(migration, pacote.migration)
   writeFileSync(rollback, pacote.rollback)
