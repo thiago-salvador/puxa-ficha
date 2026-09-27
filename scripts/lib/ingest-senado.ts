@@ -8,6 +8,7 @@ import type { IngestResult } from "./types"
 import { stripAccents } from "../../src/lib/strip-accents"
 import { curateSenadoEmenta } from "./senado-ementa-curation"
 import { deriveSenadoMandatoEvidence } from "./senado-mandato-evidence"
+import { secondarySourceBirthDate } from "./data-nascimento"
 
 const API = "https://legis.senado.leg.br/dadosabertos"
 const HEADERS = { Accept: "application/json" }
@@ -203,7 +204,10 @@ async function ingestPerfil(
   }
 
   if (dadosBasicos) {
-    if (!registroTse && dadosBasicos.DataNascimento) updates.data_nascimento = dadosBasicos.DataNascimento
+    // A API devolve 1900-01-01 para parlamentar sem data cadastrada: sentinela
+    // e data só com ano nunca viram nascimento na ficha.
+    const nascimento = registroTse ? null : secondarySourceBirthDate(dadosBasicos.DataNascimento)
+    if (nascimento) updates.data_nascimento = nascimento
     if (!registroTse && dadosBasicos.Naturalidade && dadosBasicos.UfNaturalidade) {
       updates.naturalidade = `${dadosBasicos.Naturalidade}/${dadosBasicos.UfNaturalidade}`
     }

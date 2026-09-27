@@ -75,4 +75,11 @@ describe("atualizacoesPerfilCamara (regressão de tse-2026-270002544629)", () =>
     assert.equal(updates.cargo_atual, "Deputado(a) Federal")
     assert.equal(updates.foto_url, exDeputado74192.ultimoStatus.urlFoto)
   })
+
+  it("fonte secundária não grava data sentinela nem 1º de janeiro", () => {
+    for (const dataNascimento of ["1900-01-01", "1968-01-01"]) {
+      const updates = atualizacoesPerfilCamara({ ...exDeputado74192, dataNascimento }, { agora: setembro2026 })
+      assert.equal("data_nascimento" in updates, false)
+    }
+  })
 })

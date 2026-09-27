@@ -932,8 +932,12 @@ export const FIXES: CandidateFix[] = [
   },
   {
     slug: "mauricio-coelho",
+    // As âncoras TSE de 2012 e 2020 (SQ 110000010928 e 110000951550) são de um
+    // homônimo, vereador em Pontal do Araguaia nascido em 1974. Nascimento,
+    // naturalidade, formação, foto e biografia desta ficha vêm do registro de
+    // 2026 (SQ 110002553058) e não são reescritos por esta curadoria.
     source:
-      "HiperNotícias, 2026-05-10, 'Conheça os 11 pré-candidatos ao governo de Mato Grosso' (https://www.hnt.com.br/politica/conheca-os-11-pre-candidatos-ao-governo-de-mato-grosso/551783) + TSE Dados Abertos, consulta_cand_2012, Mauricio Coelho Ribeiro da Silva / Mauricio Coelho, vereador em Pontal do Araguaia (MT), SQ_CANDIDATO 110000010928, nascimento em Aragarças/GO (https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2012.zip) + TSE Dados Abertos, consulta_cand_2020, Mauricio Coelho Ribeiro da Silva / Maurício Coelho, vereador em Pontal do Araguaia (MT), SQ_CANDIDATO 110000951550, data de nascimento confirmada (https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2020.zip) + TSE DivulgaCandContas 2020, candidatura 110000951550 em Pontal do Araguaia (MT), foto pública e naturalidade GO-ARAGARÇAS (https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2020/90700/2030402020/candidato/110000951550)",
+      "HiperNotícias, 2026-05-10, 'Conheça os 11 pré-candidatos ao governo de Mato Grosso' (https://www.hnt.com.br/politica/conheca-os-11-pre-candidatos-ao-governo-de-mato-grosso/551783)",
     candidateUpdate: {
       partido_sigla: "MOBILIZA",
       partido_atual: "Mobiliza",
@@ -941,14 +945,6 @@ export const FIXES: CandidateFix[] = [
       estado: "MT",
       situacao_candidatura: "incerto",
       status: "pre-candidato",
-      data_nascimento: "1974-10-05",
-      naturalidade: "Aragarças/GO",
-      formacao:
-        "Ciências Econômicas pela Universidade Federal de Ouro Preto (UFOP)",
-      profissao_declarada: "Empresário e comunicador",
-      foto_url: "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2030402020/110000951550/90700",
-      biografia:
-        "Maurício Coelho Ribeiro da Silva é empresário, presidente do Instituto Brasil Cooperado e comunicador. Em maio de 2026, foi listado como pré-candidato ao governo de Mato Grosso pelo Mobiliza, em cenário anterior às convenções partidárias e ao registro oficial de candidatura.",
     },
     ensureCurrentPartyTimeline: true,
   },
@@ -1632,9 +1628,9 @@ export const FIXES: CandidateFix[] = [
     },
     deleteFinanciamentoYears: [2020, 2022],
   },
-  // Auditoria 2026-04-12 (fechamento): slug amarra Daniel Barbosa Santos / PA em `data/candidatos.json`
-  // (TSE 2018/2020/2022 + Câmara 220614). O bloqueio por “homônimo” da planilha `ainda-pendentes-3-casos`
-  // não se aplica a este registro canônico.
+  // Daniel Barbosa Santos / PA (TSE 2012 a 2026, nascido em 25/08/1986 em Açailândia/MA).
+  // O deputado federal 220614 da Câmara é outra pessoa (Daniel Ricardo Soranz Pinto, RJ,
+  // nascido em Vassouras em 16/02/1979): esta ficha não tem id da Câmara.
   {
     slug: "dr-daniel",
     source:

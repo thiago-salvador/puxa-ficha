@@ -4,6 +4,7 @@ import { fetchJSON, sleep } from "./helpers"
 import { log, warn } from "./logger"
 import { finalizarColeta, registrarErroColeta } from "./coleta-resultado"
 import type { IngestResult } from "./types"
+import { secondarySourceBirthDate } from "./data-nascimento"
 
 const SPARQL_ENDPOINT = "https://query.wikidata.org/sparql"
 const HEADERS = {
@@ -316,10 +317,11 @@ export async function ingestWikidata(
         }
 
       // Data de nascimento (so se nao tiver)
-        if (binding.nascimento?.value && !dbCand?.data_nascimento) {
-        // Wikidata retorna ISO 8601: "+1970-01-01T00:00:00Z"
-        const rawDate = binding.nascimento.value.replace(/^\+/, "").split("T")[0]
-          updates.data_nascimento = rawDate
+        // Wikidata retorna ISO 8601 ("+1970-01-01T00:00:00Z"); com precisão de
+        // ano vem 1º de janeiro, que não é data de nascimento.
+        const nascimentoWikidata = secondarySourceBirthDate(binding.nascimento?.value)
+        if (nascimentoWikidata && !dbCand?.data_nascimento) {
+          updates.data_nascimento = nascimentoWikidata
         }
 
       // Profissao declarada (so se nao tiver)
