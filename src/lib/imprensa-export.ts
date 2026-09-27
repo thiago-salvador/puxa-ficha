@@ -4,7 +4,7 @@ const IMPRENSA_EXPORT_VERSION = "1"
 const IMPRENSA_EXPORT_MAX_BYTES = 4 * 1024 * 1024
 const IMPRENSA_EXPORT_TTL_SECONDS = 300
 export const IMPRENSA_AVISO = "Confira os dados na fonte original antes de publicar."
-export const IMPRENSA_AVISO_HEADER = encodeURIComponent(IMPRENSA_AVISO)
+const IMPRENSA_AVISO_HEADER = encodeURIComponent(IMPRENSA_AVISO)
 
 const MAIN_COLUMNS = [
   "version",
