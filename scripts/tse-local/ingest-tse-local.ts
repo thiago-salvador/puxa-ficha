@@ -10,6 +10,8 @@ import { financiamentoReceitasZipUrls } from "../lib/tse-financiamento-receitas-
 import { getExplicitCohort } from "../lib/cohort-context"
 import { withVisibleTseChrome } from "./chrome-fetch"
 import { collectDivulgaCandidateFallback, type DivulgaCandidateSummary, type SeedCandidateIdentity } from "./divulga-candidate"
+import { collectDivulgaFinancingForClient, type DivulgaFinancingResult } from "./divulga-financing"
+import { officialCandidateUfMap } from "./official-uf"
 
 const TSE_CDN = "https://cdn.tse.jus.br/estatistica/sead/odsele"
 export const HISTORICAL_YEARS = Array.from({ length: 16 }, (_, index) => 1996 + index * 2)
@@ -29,6 +31,44 @@ export type CliOptions = {
 
 export type CandidateProfile = { slug?: unknown; id?: unknown; [key: string]: unknown }
 export type SeedCandidate = { slug?: unknown; [key: string]: unknown }
+
+export function candidateUfForDivulga(candidate: SeedCandidate): string {
+  if (candidate.cargo_disputado === "Presidente") return "BR"
+  return typeof candidate.estado === "string" ? candidate.estado.toUpperCase() : ""
+}
+
+/** Extend curated SQ anchors only with links returned by that candidate's verified 2026 detail. */
+export function enrichSeedWithDivulga(candidates: readonly SeedCandidate[], summaries: readonly DivulgaCandidateSummary[]) {
+  const bySlug = new Map(summaries.filter((row) => row.status === "ok").map((row) => [row.slug, row]))
+  const conflicts: Array<{ slug: string; year: number }> = []
+  const enriched = candidates.map((candidate) => {
+    const slug = typeof candidate.slug === "string" ? candidate.slug : ""
+    const summary = bySlug.get(slug)
+    const oldIds = candidate.ids && typeof candidate.ids === "object" ? candidate.ids as Record<string, unknown> : {}
+    const oldSq = oldIds.tse_sq_candidato && typeof oldIds.tse_sq_candidato === "object"
+      ? oldIds.tse_sq_candidato as Record<string, string> : {}
+    if (!summary || oldSq["2026"] !== summary.sqCandidato) return candidate
+    const sqByYear = { ...oldSq }
+    const oldUf = oldIds.tse_uf_candidatura && typeof oldIds.tse_uf_candidatura === "object"
+      ? oldIds.tse_uf_candidatura as Record<string, string> : {}
+    const ufByYear = { ...oldUf }
+    const priorVerifiedUf: Record<string, string> = {}
+    for (const prior of summary.eleicoesAnteriores ?? []) {
+      if (!Number.isInteger(prior.year) || prior.year! < 1996 || prior.year! > 2026 ||
+          !prior.sqCandidato || !/^\d{5,20}$/.test(prior.sqCandidato)) continue
+      const year = String(prior.year)
+      if (sqByYear[year] && sqByYear[year] !== prior.sqCandidato) {
+        conflicts.push({ slug, year: prior.year! })
+        continue
+      }
+      sqByYear[year] = prior.sqCandidato
+      if (prior.uf && !ufByYear[year]) ufByYear[year] = prior.uf
+      if (prior.uf && /^[A-Z]{2}$/.test(prior.uf) && ufByYear[year] === prior.uf) priorVerifiedUf[year] = prior.uf
+    }
+    return { ...candidate, ids: { ...oldIds, tse_sq_candidato: sqByYear, tse_uf_candidatura: ufByYear, tse_divulga_prior_uf: priorVerifiedUf } }
+  })
+  return { candidates: enriched, conflicts }
+}
 export type CandidateCohort = { profiles: CandidateProfile[]; candidates: SeedCandidate[]; requestedSlugs: string[] | null }
 
 export type Asset = {
@@ -97,6 +137,15 @@ export function officialPackages2026(): Array<{ family: Asset["family"]; year: 2
 export function historicalUrl(year: number): string {
   if (!HISTORICAL_YEARS.includes(year)) throw new Error(`ano eleitoral fora do escopo: ${year}`)
   return `${TSE_CDN}/consulta_cand/consulta_cand_${year}.zip`
+}
+
+export function historicalFamilyPackages(year: number): Array<{ family: Asset["family"]; year: number; url: string }> {
+  if (!HISTORICAL_YEARS.includes(year)) throw new Error(`ano eleitoral fora do escopo: ${year}`)
+  if (year === 2026) return []
+  return [
+    ...(year >= 2006 ? [{ family: "patrimonio" as const, year, url: `${TSE_CDN}/bem_candidato/bem_candidato_${year}.zip` }] : []),
+    ...(year >= 2002 ? [{ family: "financiamento" as const, year, url: financiamentoReceitasZipUrls(year).at(-1)! }] : []),
+  ]
 }
 
 /** The sole cohort selector used by all local source/review steps. */
@@ -266,7 +315,7 @@ async function downloadAssets(
   historicalYears: readonly number[],
   options: CliOptions,
   divulgaCandidates: readonly SeedCandidateIdentity[],
-): Promise<{ manifestPath: string; assets: Asset[]; errors: Array<{ source: string; year: number; reason: string }>; divulgaSummaries: DivulgaCandidateSummary[] | null }> {
+): Promise<{ manifestPath: string; assets: Asset[]; errors: Array<{ source: string; year: number; reason: string }>; divulgaSummaries: DivulgaCandidateSummary[] | null; divulgaFinancing: Array<{ slug: string; receipt: DivulgaFinancingResult }> | null; officialUfOverrides: Array<{ slug: string; from: string; to: string }> }> {
   const downloadsDir = join(outDir, "downloads")
   mkdirSync(downloadsDir, { recursive: true, mode: 0o700 })
   chmodSync(downloadsDir, 0o700)
@@ -281,11 +330,14 @@ async function downloadAssets(
   for (const year of historicalYears) {
     if (year === 2026) continue
     requests.set(historicalUrl(year), { family: "historico_politico", year })
+    for (const item of historicalFamilyPackages(year)) requests.set(item.url, item)
   }
 
   const downloaded = new Map<string, { path: string; sha256: string; bytes: number; reused_cache?: true }>()
   const errors: Array<{ source: string; year: number; reason: string }> = []
   let divulgaSummaries: DivulgaCandidateSummary[] | null = null
+  let divulgaFinancing: Array<{ slug: string; receipt: DivulgaFinancingResult }> | null = null
+  const officialUfOverrides: Array<{ slug: string; from: string; to: string }> = []
   try {
     await withVisibleTseChrome(async (client) => {
       for (const [url, info] of requests) {
@@ -306,8 +358,25 @@ async function downloadAssets(
           }
         }
       }
-      if (!downloaded.has(officialPackages2026()[0]!.url) || downloaded.get(officialPackages2026()[0]!.url)?.reused_cache) {
-        divulgaSummaries = await collectDivulgaCandidateFallback(divulgaCandidates, async (run) => run(client))
+      const currentZip = downloaded.get(officialPackages2026()[0]!.url)
+      const ufBySq = currentZip ? await officialCandidateUfMap(currentZip.path) : new Map<string, string | null>()
+      const routedCandidates = divulgaCandidates.map((candidate) => {
+        const officialUf = ufBySq.get(candidate.sqCandidato)
+        if (!officialUf || officialUf === candidate.uf) return candidate
+        officialUfOverrides.push({ slug: candidate.slug, from: candidate.uf, to: officialUf })
+        return { ...candidate, uf: officialUf }
+      })
+      divulgaSummaries = await collectDivulgaCandidateFallback(routedCandidates, async (run) => run(client))
+      divulgaFinancing = []
+      for (const summary of divulgaSummaries) {
+        if (summary.status !== "ok" || !summary.electionId) continue
+        const receipt = await collectDivulgaFinancingForClient(client, {
+          uf: summary.uf, sqCandidato: summary.sqCandidato,
+          cargoCodigo: summary.cargoCodigo ?? null,
+          partidoNumero: summary.partidoNumero ?? null,
+          numeroCandidato: summary.numeroCandidato ?? null,
+        }, summary.electionId)
+        divulgaFinancing.push({ slug: summary.slug, receipt })
       }
     })
   } catch (error) {
@@ -320,6 +389,25 @@ async function downloadAssets(
         if (info.cacheName) cacheZip(fallback.path, join(cacheDir, info.cacheName))
       } else errors.push({ source: info.family, year: info.year, reason: `${safeDownloadFailure(reason)} (${basename(new URL(url).pathname)})` })
     }
+  }
+
+  const retryRequests = [...requests].filter(([url]) => !downloaded.has(url) || downloaded.get(url)?.reused_cache)
+  if (retryRequests.length) {
+    try {
+      await withVisibleTseChrome(async (client) => {
+        for (const [url, info] of retryRequests) {
+          const destination = join(downloadsDir, `${info.year}-${info.family}-${basename(new URL(url).pathname)}`)
+          try {
+            const receipt = await client.downloadZip(url, destination)
+            downloaded.set(url, { path: destination, ...receipt })
+            if (info.cacheName) cacheZip(destination, join(cacheDir, info.cacheName))
+            for (let index = errors.length - 1; index >= 0; index -= 1) {
+              if (errors[index]?.source === info.family && errors[index]?.year === info.year) errors.splice(index, 1)
+            }
+          } catch { /* Preserve the first failure and its verified cache, if any. */ }
+        }
+      })
+    } catch { /* The original, item-specific acquisition failures remain in the report. */ }
   }
 
   const assets: Asset[] = []
@@ -341,7 +429,7 @@ async function downloadAssets(
   const pending = errors.map((error) => ({ family: error.source, year: error.year, reason: error.reason }))
   const manifestPath = join(outDir, "tse-local-assets.json")
   writePrivate(manifestPath, { schema_version: 1, generated_at: new Date().toISOString(), assets, pending })
-  return { manifestPath, assets, errors, divulgaSummaries }
+  return { manifestPath, assets, errors, divulgaSummaries, divulgaFinancing, officialUfOverrides }
 }
 
 export async function main(argv = process.argv.slice(2)): Promise<number> {
@@ -369,16 +457,19 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
   const divulgaCandidates = cohort ? cohort.candidates.flatMap((candidate) => {
     const ids = candidate.ids as { tse_sq_candidato?: Record<string, unknown> } | undefined
     const sq = ids?.tse_sq_candidato?.["2026"]
-    const uf = typeof candidate.estado === "string" ? candidate.estado.toUpperCase() : ""
+    const uf = candidateUfForDivulga(candidate)
     return typeof candidate.slug === "string" && typeof sq === "string"
       ? [{ slug: candidate.slug, uf, sqCandidato: sq }]
       : []
   }) : []
-  const { manifestPath, assets, errors, divulgaSummaries } = await downloadAssets(outDir, options.historicalYears, options, divulgaCandidates)
+  const { manifestPath, assets, errors, divulgaSummaries, divulgaFinancing, officialUfOverrides } = await downloadAssets(outDir, options.historicalYears, options, divulgaCandidates)
   const freshAssets = assets.filter((asset) => !asset.reused_cache)
   const freshManifestPath = join(outDir, "tse-local-assets-fresh.json")
   const requestedFamilies = new Set(officialPackages2026().map((asset) => `${asset.family}:${asset.year}`))
-  for (const year of options.historicalYears) requestedFamilies.add(`historico_politico:${year}`)
+  for (const year of options.historicalYears) {
+    requestedFamilies.add(`historico_politico:${year}`)
+    for (const item of historicalFamilyPackages(year)) requestedFamilies.add(`${item.family}:${item.year}`)
+  }
   const freshKeys = new Set(freshAssets.map((asset) => `${asset.family}:${asset.year}`))
   const freshPending = [...requestedFamilies].filter((key) => !freshKeys.has(key)).map((key) => {
     const [family, year] = key.split(":")
@@ -396,8 +487,9 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     const reason = reused ? "cache verificado reutilizado; revisão atual do CDN não confirmada" : acquisitionError?.reason ?? "pacote oficial indisponível"
     const source = family === "patrimonio" ? "tse-patrimonio" : family === "financiamento" ? "tse-financiamento" : family === "historico_politico" ? "tse-historico" : "tse"
     const url = family === "perfil_atual" ? officialPackages2026()[0]!.url
-      : family === "patrimonio" ? officialPackages2026()[1]!.url
-        : family === "financiamento" ? officialPackages2026()[2]!.url : historicalUrl(year)
+      : family === "historico_politico" ? historicalUrl(year)
+        : year === 2026 ? officialPackages2026().find((item) => item.family === family)!.url
+          : historicalFamilyPackages(year).find((item) => item.family === family)?.url ?? ""
     return cohort.profiles.map((profile) => ({
       fonte: source, escopo: "candidato", alvo: String(profile.slug), candidato_id: String(profile.id),
       resultado: "erro", volume: 0, url, executado_em: new Date().toISOString(),
@@ -414,6 +506,11 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     divulgaFallback = { attempted: true, ok: divulgaSummaries.filter((row) => row.status === "ok").length,
       erro: divulgaSummaries.filter((row) => row.status === "erro").length, artifact: divulgaFallbackPath }
   }
+  const divulgaFinancingPath = join(outDir, "divulga-financing-2026.json")
+  if (divulgaFinancing) writePrivate(divulgaFinancingPath, divulgaFinancing)
+  const enrichedCandidatesPath = join(outDir, "coorte-candidatos-sq-oficial.json")
+  const enriched = enrichSeedWithDivulga(cohort?.candidates ?? [], divulgaSummaries ?? [])
+  if (cohort) writePrivate(enrichedCandidatesPath, enriched.candidates)
   const receiptPath = join(outDir, "historico-recibos.json")
   const reviewPath = join(outDir, "historico-revisao.json")
   const financeManifestPath = join(outDir, "financas-assets.json")
@@ -422,7 +519,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
 
   const years = options.historicalYears.join(",")
   const historico = cohort ? runScript("scripts/audit/coletar-revisao-historico.ts", [
-    `--anos=${years}`, `--public-profiles=${cohortProfilesPath}`, `--candidatos=${cohortCandidatesPath}`,
+    `--anos=${years}`, `--public-profiles=${cohortProfilesPath}`, `--candidatos=${enrichedCandidatesPath}`,
     `--manifest=${freshManifestPath}`, `--out=${receiptPath}`, `--revisao=${reviewPath}`, "--identity-mode=official-only",
   ]) : { ok: false, code: null, reason: "snapshot de perfis ausente; recibos históricos não calculados" }
 
@@ -433,7 +530,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
 
   const genericReceiptsPath = join(outDir, "recibos-familias-tse.json")
   const generic = cohort ? runScript("scripts/audit/collect-tse-family-receipts-local.ts", [
-    `--manifest=${freshManifestPath}`, `--out=${genericReceiptsPath}`, `--candidates=${cohortCandidatesPath}`,
+    `--manifest=${freshManifestPath}`, `--out=${genericReceiptsPath}`, `--candidates=${enrichedCandidatesPath}`,
     `--public-profiles=${cohortProfilesPath}`,
   ]) : { ok: false, code: null, reason: "snapshot de perfis ausente; recibos de família não calculados" }
   const applyFamilyReceiptsPath = join(outDir, "recibos-familias-aplicaveis.json")
@@ -518,9 +615,12 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     },
     sources: {
       consulta_cand: { requested: options.historicalYears.length, fresh_certifiable: freshAssets.filter((asset) => asset.family === "historico_politico").length, verified_cache_potential: assets.filter((asset) => asset.family === "historico_politico" && asset.reused_cache).length, errors: errors.filter((item) => item.source === "historico_politico" || item.source === "perfil_atual") },
-      bem_candidato_2026: { fresh_certifiable: freshAssets.some((asset) => asset.family === "patrimonio"), verified_cache_potential: assets.some((asset) => asset.family === "patrimonio" && asset.reused_cache), errors: errors.filter((item) => item.source === "patrimonio") },
-      financiamento_2026: { fresh_certifiable: freshAssets.some((asset) => asset.family === "financiamento"), verified_cache_potential: assets.some((asset) => asset.family === "financiamento" && asset.reused_cache), errors: errors.filter((item) => item.source === "financiamento") },
-      divulga_fallback_2026: divulgaFallback,
+      bem_candidato_2026: { fresh_certifiable: freshAssets.some((asset) => asset.family === "patrimonio" && asset.year === 2026), verified_cache_potential: assets.some((asset) => asset.family === "patrimonio" && asset.year === 2026 && asset.reused_cache), errors: errors.filter((item) => item.source === "patrimonio" && item.year === 2026) },
+      financiamento_2026: { fresh_certifiable: freshAssets.some((asset) => asset.family === "financiamento" && asset.year === 2026), verified_cache_potential: assets.some((asset) => asset.family === "financiamento" && asset.year === 2026 && asset.reused_cache), errors: errors.filter((item) => item.source === "financiamento" && item.year === 2026) },
+      patrimonio_historico: { requested: options.historicalYears.flatMap(historicalFamilyPackages).filter((item) => item.family === "patrimonio").length, fresh_certifiable: freshAssets.filter((asset) => asset.family === "patrimonio" && asset.year !== 2026).length },
+      financiamento_historico: { requested: options.historicalYears.flatMap(historicalFamilyPackages).filter((item) => item.family === "financiamento").length, fresh_certifiable: freshAssets.filter((asset) => asset.family === "financiamento" && asset.year !== 2026).length },
+      divulga_fallback_2026: { ...divulgaFallback, official_sq_conflicts: enriched.conflicts, official_uf_overrides: officialUfOverrides },
+      divulga_financing_2026: { attempted: divulgaFinancing !== null, encontrado: divulgaFinancing?.filter((row) => row.receipt.resultado === "encontrado").length ?? 0, vazio_confirmado: divulgaFinancing?.filter((row) => row.receipt.resultado === "vazio_confirmado").length ?? 0, erro: divulgaFinancing?.filter((row) => row.receipt.resultado === "erro").length ?? 0, indeterminado: divulgaFinancing?.filter((row) => row.receipt.resultado === "indeterminado").length ?? 0 },
     },
     steps: {
       history_review_receipts: { ...stepSummary(historico), identity_mode: "official-only", jev_name_linking: "withheld" },
@@ -533,7 +633,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     historical_scope_complete: HISTORICAL_YEARS.every((year) => options.historicalYears.includes(year)),
     projected_open_cell_closure: projectedClosure(openCells, [coverageOut, historyCoverageOut]),
     assets_reused_from_verified_cache: assets.filter((asset) => asset.reused_cache).map(({ family, year, sha256 }) => ({ family, year, sha256 })),
-    artifacts: { manifest: manifestPath, acquisition_failure_receipts: acquisitionFailureReceiptsPath, historico: receiptPath, review: reviewPath, family_receipts: genericReceiptsPath, apply_family_receipts: applyFamilyReceiptsPath, coverage_plan: coverageOut, history_coverage_plan: historyCoverageOut, ...(divulgaFallback.artifact ? { divulga_fallback: divulgaFallback.artifact } : {}) },
+    artifacts: { manifest: manifestPath, acquisition_failure_receipts: acquisitionFailureReceiptsPath, historico: receiptPath, review: reviewPath, family_receipts: genericReceiptsPath, apply_family_receipts: applyFamilyReceiptsPath, coverage_plan: coverageOut, history_coverage_plan: historyCoverageOut, ...(divulgaFallback.artifact ? { divulga_fallback: divulgaFallback.artifact } : {}), ...(divulgaFinancing ? { divulga_financing: divulgaFinancingPath } : {}) },
   }
   const reportPath = join(outDir, "relatorio.json")
   writePrivate(reportPath, report)

@@ -15,12 +15,11 @@
  */
 import { createHash } from "node:crypto"
 import { execFileSync, spawn } from "node:child_process"
-import { createReadStream, createWriteStream, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync, renameSync } from "node:fs"
-import { tmpdir } from "node:os"
+import { createReadStream, existsSync, mkdirSync, readFileSync, writeFileSync, renameSync } from "node:fs"
 import { basename, dirname, resolve } from "node:path"
 import { pipeline } from "node:stream/promises"
 import { fileURLToPath } from "node:url"
-import { parseCSV } from "../lib/parse-csv-local"
+import { parse } from "csv-parse"
 import { stripAccents } from "../../src/lib/strip-accents"
 import { publicFamilyPayloadSha256, publicFamilyRowCount } from "./lib/coverage-source-proof"
 import type { CoverageProfile } from "./audit-cobertura-fichas"
@@ -42,7 +41,7 @@ type Candidate = {
   slug: string
   id?: string
   candidato_id?: string
-  ids?: { tse_sq_candidato?: Record<string, string>; tse_uf_candidatura?: Record<string, string> }
+  ids?: { tse_sq_candidato?: Record<string, string>; tse_uf_candidatura?: Record<string, string>; tse_divulga_prior_uf?: Record<string, string> }
 }
 export type SourceAsset = { family: TseFamily; year: number; path: string; url: string; sha256: string }
 export type MaterializedReadback = {
@@ -109,24 +108,46 @@ function csvMembers(zipPath: string, family: TseFamily): string[] {
 async function readRows(zipPath: string, family: TseFamily, wantedSq: ReadonlySet<string>): Promise<Row[]> {
   const members = csvMembers(zipPath, family)
   if (members.length === 0) throw new Error(`ZIP ${basename(zipPath)} sem CSV compatível com ${family}`)
-  const work = mkdtempSync(resolve(tmpdir(), "pf-tse-family-"))
   const rows: Row[] = []
-  try {
-    for (const member of members) {
-      const path = resolve(work, basename(member))
-      const child = spawn("unzip", ["-p", zipPath, member], { stdio: ["ignore", "pipe", "pipe"] })
-      const exit = new Promise<number>((accept, reject) => {
-        child.once("error", reject)
-        child.once("close", (code) => accept(code ?? 1))
-      })
-      const stderr: Buffer[] = []
-      child.stderr.on("data", (chunk: Buffer) => { if (stderr.reduce((n, part) => n + part.length, 0) < 4096) stderr.push(chunk) })
-      await pipeline(child.stdout, createWriteStream(path, { mode: 0o600 }))
-      if (await exit !== 0) throw new Error(`unzip falhou para ${basename(zipPath)}: ${Buffer.concat(stderr).toString("utf8").slice(0, 400)}`)
-      await parseCSV(path, (row) => { if (wantedSq.has(rowSq(row))) rows.push(row) })
+  for (const member of members) {
+    const child = spawn("unzip", ["-p", zipPath, member], { stdio: ["ignore", "pipe", "ignore"] })
+    const exit = new Promise<number>((accept, reject) => {
+      child.once("error", reject)
+      child.once("close", (code) => accept(code ?? 1))
+    })
+    child.stdout.setEncoding("latin1")
+    const parser = parse({ delimiter: ";", columns: true, skip_empty_lines: true, relax_column_count: true, relax_quotes: true, cast: (value: string) => value.trim() })
+    const parsed = pipeline(child.stdout, parser)
+    try {
+      for await (const value of parser) {
+        const row = value as Row
+        if (wantedSq.has(rowSq(row))) rows.push(safeSourceRow(row))
+      }
+      await parsed
+      if (await exit !== 0) throw new Error(`unzip falhou para ${basename(zipPath)}`)
+    } catch (error) {
+      child.kill()
+      await parsed.catch(() => undefined)
+      await exit.catch(() => undefined)
+      throw error
     }
-  } finally { rmSync(work, { recursive: true, force: true }) }
+  }
   return rows
+}
+
+const SAFE_SOURCE_FIELDS = new Set([
+  "SQ_CANDIDATO", "SQ_CANDIDATO_2026", "SEQUENCIAL_CANDIDATO", "Sequencial Candidato",
+  "SG_UF", "SG_UF_CANDIDATURA", "UF", "SG_UE_SUPERIOR", "UNIDADE_ELEITORAL_CANDIDATO", "SG_UE",
+  "ANO_ELEICAO", "ANO", "ANO_CANDIDATURA", "DS_CARGO", "SG_PARTIDO", "NR_CANDIDATO", "NM_URNA_CANDIDATO",
+  "DS_SITUACAO_CANDIDATURA", "CD_SITUACAO_CANDIDATURA", "DT_ELEICAO", "NR_TURNO",
+  "VR_BEM_CANDIDATO", "VR_BEM", "VALOR_BEM", "DS_TIPO_BEM_CANDIDATO", "TP_BEM_CANDIDATO", "DS_BEM_CANDIDATO", "DS_BEM",
+  "VR_RECEITA", "VALOR_RECEITA", "DS_FONTE_RECEITA", "DS_ORIGEM_RECEITA", "DS_TIPO_RECEITA",
+  "NM_DOADOR_ORIGINARIO", "NM_DOADOR", "DS_TIPO_DOADOR", "TP_DOADOR",
+  "Valor receita", "Fonte recurso", "Tipo receita", "Nome do doador", "NO_DOADOR", "TP_RECURSO",
+])
+
+export function safeSourceRow(row: Row): Row {
+  return Object.fromEntries(Object.entries(row).filter(([field]) => SAFE_SOURCE_FIELDS.has(field)))
 }
 
 function rowSq(row: Row): string { return text(row.SQ_CANDIDATO || row.SQ_CANDIDATO_2026 || row.SEQUENCIAL_CANDIDATO || row["Sequencial Candidato"]) }
@@ -149,12 +170,16 @@ function identityRows(rows: readonly Row[], candidate: Candidate, year: number, 
   const sq = text(candidate.ids?.tse_sq_candidato?.[String(year)])
   const seedUf = text(candidate.ids?.tse_uf_candidatura?.[String(year)]).toUpperCase()
   const observedUf = sq ? officialUf?.get(`${year}|${sq}`) : undefined
-  if (observedUf === null) return []
+  const verifiedPriorUf = text(candidate.ids?.tse_divulga_prior_uf?.[String(year)]).toUpperCase()
+  if (observedUf === null && (!verifiedPriorUf || verifiedPriorUf !== seedUf)) return []
   if (seedUf && observedUf && seedUf !== observedUf) return []
   const uf = seedUf || observedUf || ""
   if (!sq) return []
   if (!uf) return []
-  return rows.filter((row) => rowSq(row) === sq && rowYear(row, year) === year && rowUf(row) === uf)
+  const matched = rows.filter((row) => rowSq(row) === sq && rowYear(row, year) === year && rowUf(row) === uf)
+  if (observedUf !== null) return matched
+  const signatures = new Set(matched.map((row) => [row.SG_UE, row.NR_CANDIDATO, row.DS_CARGO, row.SG_PARTIDO].join("|")))
+  return matched.every((row) => row.NR_CANDIDATO && row.DS_CARGO && row.SG_PARTIDO) && signatures.size === 1 ? matched : []
 }
 
 function normalized(value: unknown): string {
@@ -212,11 +237,11 @@ function compareFinanciamento(profile: CoverageProfile, rows: readonly Row[]): b
     const year = rowYear(row, 0)
     if (!year) return false
     const item = byYear.get(year) ?? { total: 0, categorias: {}, doadores: [] }
-    const value = money(row.VR_RECEITA || row.VALOR_RECEITA)
+    const value = money(row.VR_RECEITA || row.VALOR_RECEITA || row["Valor receita"])
     item.total += value
-    const category = normalized(row.DS_FONTE_RECEITA || row.DS_ORIGEM_RECEITA || row.DS_TIPO_RECEITA) || "OUTROS"
+    const category = normalized(row.DS_FONTE_RECEITA || row.DS_ORIGEM_RECEITA || row.DS_TIPO_RECEITA || row["Fonte recurso"] || row["Tipo receita"]) || "OUTROS"
     item.categorias[category] = (item.categorias[category] ?? 0) + value
-    item.doadores.push({ nome: normalized(row.NM_DOADOR_ORIGINARIO || row.NM_DOADOR), valor: value, tipo: normalized(row.DS_TIPO_DOADOR || row.TP_DOADOR) })
+    item.doadores.push({ nome: normalized(row.NM_DOADOR_ORIGINARIO || row.NM_DOADOR || row["Nome do doador"] || row.NO_DOADOR), valor: value, tipo: normalized(row.DS_TIPO_DOADOR || row.TP_DOADOR || row.TP_RECURSO) })
     byYear.set(year, item)
   }
   if (byYear.size === 0 || raw.length !== byYear.size || series.length !== byYear.size) return false
@@ -331,7 +356,8 @@ export function buildReceipt(input: {
     const sq = text(candidate.ids?.tse_sq_candidato?.[String(asset.year)])
     const seedUf = text(candidate.ids?.tse_uf_candidatura?.[String(asset.year)]).toUpperCase()
     const observedUf = sq ? officialUf?.get(`${asset.year}|${sq}`) : undefined
-    return !sq || observedUf === null || (!seedUf && !observedUf) || Boolean(seedUf && observedUf && seedUf !== observedUf)
+    const verifiedPriorUf = text(candidate.ids?.tse_divulga_prior_uf?.[String(asset.year)]).toUpperCase()
+    return !sq || (observedUf === null && (!verifiedPriorUf || verifiedPriorUf !== seedUf)) || (!seedUf && !observedUf) || Boolean(seedUf && observedUf && seedUf !== observedUf)
   })
   const knownYears = Object.keys(candidate.ids?.tse_sq_candidato ?? {}).map(Number).filter(Number.isInteger)
   const requiredYears = family === "perfil_atual" ? knownYears.slice().sort((a, b) => b - a).slice(0, 1) : knownYears

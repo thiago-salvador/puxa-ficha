@@ -1,12 +1,33 @@
 import assert from "node:assert/strict"
 import { test } from "node:test"
 
-import { collectDivulgaCandidateFallback, derivePartyChanges, type SeedCandidateIdentity } from "../scripts/tse-local/divulga-candidate"
+import { candidateUrl, collectDivulgaCandidateFallback, derivePartyChanges, type SeedCandidateIdentity } from "../scripts/tse-local/divulga-candidate"
+import { candidateUfForDivulga } from "../scripts/tse-local/ingest-tse-local"
 import type { TseChromeClient } from "../scripts/tse-local/chrome-fetch"
 
 const identity: SeedCandidateIdentity = { slug: "candidata-teste", uf: "SP", sqCandidato: "250002554080" }
 const electionId = "20322002026"
 const ordinarias = [{ id: electionId, ano: 2026 }, { id: "2040602026", ano: 2024 }]
+
+test("routes presidential candidates through BR, including seed state RJ or blank", () => {
+  assert.equal(candidateUfForDivulga({ cargo_disputado: "Presidente", estado: "RJ" }), "BR")
+  assert.equal(candidateUfForDivulga({ cargo_disputado: "Presidente", estado: "" }), "BR")
+  assert.equal(candidateUfForDivulga({ cargo_disputado: "Governador", estado: "to" }), "TO")
+  const president: SeedCandidateIdentity = { slug: "flavio-bolsonaro", uf: "BR", sqCandidato: "280002551544" }
+  assert.equal(candidateUrl(president, electionId), "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/BR/20322002026/candidato/280002551544")
+  assert.match(candidateUrl({ ...identity, uf: "TO" }, electionId), /\/buscar\/2026\/TO\/20322002026\/candidato\/250002554080$/)
+})
+
+test("accepts BR as a valid request UF for presidential candidates", async () => {
+  const seen: string[] = []
+  const president: SeedCandidateIdentity = { slug: "flavio-bolsonaro", uf: "BR", sqCandidato: "280002551544" }
+  const detail = { id: president.sqCandidato, ufCandidatura: "BR", eleicao: { id: electionId, ano: 2026 } }
+  const [result] = await collectDivulgaCandidateFallback([president], fakeWithClient(
+    [ordinarias, detail], seen, { opened: 0 },
+  ))
+  assert.equal(result?.status, "ok")
+  assert.equal(seen[1], candidateUrl(president, electionId))
+})
 
 function fakeWithClient(payloads: unknown[], seen: string[], contexts: { opened: number }) {
   return async <T>(run: (client: TseChromeClient) => Promise<T>): Promise<T> => {
@@ -108,6 +129,25 @@ test("whitelists requested public fields and excludes CPF and voter title from r
   assert.equal(serialized.includes("000.000.000-00"), false)
   assert.equal(serialized.includes("000000000000"), false)
   assert.match(result[0]?.sha256_payload ?? "", /^[a-f0-9]{64}$/)
+})
+
+test("reads the current DivulgaCand previous election keys without treating a city code as UF", async () => {
+  const detail = {
+    id: identity.sqCandidato, ufCandidatura: "SP", eleicao: { id: electionId, ano: 2026 },
+    numero: 133, partido: { numero: 13 }, cargo: { codigo: 5 },
+    eleicoesAnteriores: [
+      { nrAno: 2018, id: "190000614721", idEleicao: "2022802018", sgUe: "RJ", cargo: "Senador", partido: "PSL" },
+      { nrAno: 2016, id: "190000011736", idEleicao: "2", sgUe: "60011", cargo: "Prefeito", partido: "PSC" },
+    ],
+  }
+  const [result] = await collectDivulgaCandidateFallback([identity], fakeWithClient(
+    [ordinarias, detail], [], { opened: 0 },
+  ))
+  assert.deepEqual(result?.eleicoesAnteriores?.map(({ year, sqCandidato, uf }) => ({ year, sqCandidato, uf })), [
+    { year: 2018, sqCandidato: "190000614721", uf: "RJ" },
+    { year: 2016, sqCandidato: "190000011736", uf: null },
+  ])
+  assert.deepEqual([result?.numeroCandidato, result?.partidoNumero, result?.cargoCodigo], [133, 13, 5])
 })
 
 test("derives party changes at candidacy granularity without guessing missing or conflicting years", () => {

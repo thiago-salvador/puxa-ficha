@@ -176,6 +176,7 @@ export async function withVisibleTseChrome<T>(
           throw new Error("Diretório de destino precisa ser privado e sem links simbólicos")
         }
         const partial = `${destination}.part`
+        const fullPartial = `${partial}.full`
         const requestUrl = url.toString()
         let rangeStart = 0
         let expectedTotal: number | null = null
@@ -226,6 +227,44 @@ export async function withVisibleTseChrome<T>(
                 await sleep(Math.max(minIntervalMs, retryDelay(response, retryDelayMs, attempt)))
                 continue
               }
+              if (status === 200) {
+                page.off("download", onDownload)
+                if (rangeStart !== 0 || existsSync(partial)) {
+                  await currentDownload?.cancel().catch(() => {})
+                  throw new Error("Resposta ZIP completa inesperada após início de trechos")
+                }
+                const headers = response.headers()
+                const contentType = (headers["content-type"] ?? "").split(";", 1)[0]!.trim().toLowerCase()
+                const declaredBytes = Number(headers["content-length"])
+                if (!new Set(["application/zip", "application/x-zip-compressed", "application/octet-stream"]).has(contentType) ||
+                    !Number.isSafeInteger(declaredBytes) || declaredBytes < 22 || declaredBytes > MAX_ZIP_BYTES) {
+                  await currentDownload?.cancel().catch(() => {})
+                  throw new Error("Cabeçalhos do ZIP completo inválidos ou acima do limite local")
+                }
+                const download = currentDownload ?? await withTimeout(downloadEvent, Math.min(timeoutMs, 10_000), "Tempo esgotado ao aguardar download ZIP completo").catch(() => undefined)
+                if (!download) throw new Error("Resposta ZIP completa não iniciou download")
+                const stream = await download.createReadStream()
+                if (!stream) throw new Error("Chrome não disponibilizou o fluxo do ZIP completo")
+                let receivedBytes = 0
+                const bounded = async function* () {
+                  for await (const part of stream) {
+                    const chunk = Buffer.from(part as Uint8Array)
+                    receivedBytes += chunk.length
+                    if (receivedBytes > MAX_ZIP_BYTES || receivedBytes > declaredBytes) throw new Error("ZIP completo excede limite ou Content-Length")
+                    yield chunk
+                  }
+                }
+                try {
+                  await pipeline(bounded(), createWriteStream(partial, { flags: "wx", mode: 0o600 }))
+                } catch {
+                  throw new Error("Fluxo do ZIP completo foi interrompido ou excedeu o limite local")
+                }
+                if (receivedBytes !== declaredBytes) throw new Error("Tamanho do ZIP completo diverge de Content-Length")
+                const receipt = await checkZip(partial)
+                if (receipt.bytes !== declaredBytes) throw new Error("Tamanho verificado do ZIP diverge de Content-Length")
+                renameSync(partial, destination)
+                return receipt
+              }
               if (status !== 206) {
                 page.off("download", onDownload)
                 await currentDownload?.cancel().catch(() => {})
@@ -248,13 +287,44 @@ export async function withVisibleTseChrome<T>(
               if (!download) throw new Error("Resposta Range oficial não iniciou download")
               const stream = await download.createReadStream()
               if (!stream) throw new Error("Chrome não disponibilizou o fluxo do trecho ZIP")
+              const iterator = stream[Symbol.asyncIterator]()
+              const first = await iterator.next()
+              const firstChunk = first.done ? Buffer.alloc(0) : Buffer.from(first.value as Uint8Array)
+              const streamParts = async function* () {
+                if (firstChunk.length) yield firstChunk
+                while (true) {
+                  const next = await iterator.next()
+                  if (next.done) return
+                  yield Buffer.from(next.value as Uint8Array)
+                }
+              }
+              if (rangeStart > 0 && firstChunk.subarray(0, 4).equals(Buffer.from([0x50, 0x4b, 0x03, 0x04]))) {
+                let fullBytes = 0
+                const boundedFull = async function* () {
+                  for await (const chunk of streamParts()) {
+                    fullBytes += chunk.length
+                    if (fullBytes > MAX_ZIP_BYTES || fullBytes > total) throw new Error("ZIP completo excede limite ou tamanho oficial")
+                    yield chunk
+                  }
+                }
+                try {
+                  await pipeline(boundedFull(), createWriteStream(fullPartial, { flags: "wx", mode: 0o600 }))
+                } catch {
+                  throw new Error("Fluxo do ZIP completo foi interrompido ou excedeu o limite local")
+                }
+                if (fullBytes !== total) throw new Error("Tamanho do ZIP completo diverge do total oficial")
+                const receipt = await checkZip(fullPartial)
+                if (receipt.bytes !== total) throw new Error("Tamanho verificado do ZIP diverge do total oficial")
+                renameSync(fullPartial, destination)
+                rmSync(partial, { force: true })
+                return receipt
+              }
               const offset = rangeStart
               let chunkBytes = 0
               const measured = async function* () {
-                for await (const part of stream) {
-                  const chunk = Buffer.from(part as Uint8Array)
+                for await (const chunk of streamParts()) {
                   chunkBytes += chunk.length
-                  if (chunkBytes > MAX_ZIP_CHUNK_BYTES) throw new Error("Trecho ZIP excede limite local")
+                  if (chunkBytes > end - start + 1) throw new Error("Trecho ZIP excede Content-Range")
                   yield chunk
                 }
               }
@@ -282,6 +352,7 @@ export async function withVisibleTseChrome<T>(
           return receipt
         } catch (error) {
           rmSync(partial, { force: true })
+          rmSync(fullPartial, { force: true })
           if (error instanceof Error && /ZIP|Content-Range|integridade|assinatura|limite/.test(error.message)) throw error
           throw new Error("Falha ao baixar ou verificar ZIP oficial")
         } finally {

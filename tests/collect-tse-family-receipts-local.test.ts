@@ -3,7 +3,7 @@ import { mkdtempSync, rmSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import test from "node:test"
-import { buildReceipt, money, readbackFromPublicProfiles, selectCsvMembers } from "../scripts/audit/collect-tse-family-receipts-local"
+import { buildReceipt, money, readbackFromPublicProfiles, safeSourceRow, selectCsvMembers } from "../scripts/audit/collect-tse-family-receipts-local"
 
 const candidate = {
   slug: "fixture-candidate",
@@ -19,6 +19,11 @@ test("normaliza valores monetários sem perder decimais", () => {
   assert.equal(money("1.234,56"), 1234.56)
   assert.equal(money(0), 0)
   assert.equal(Number.isNaN(money("#NULO#")), true)
+})
+
+test("o recorte de linha oficial descarta identificadores pessoais antes de retê-la", () => {
+  const safe = safeSourceRow({ SQ_CANDIDATO: "12345", SG_UF: "SP", VR_RECEITA: "100", NR_CPF_CANDIDATO: "11122233344", NR_TITULO_ELEITORAL_CANDIDATO: "123456789012" })
+  assert.deepEqual(safe, { SQ_CANDIDATO: "12345", SG_UF: "SP", VR_RECEITA: "100" })
 })
 
 test("financiamento seleciona a base nacional sem duplicar UF nem doador originário", () => {
@@ -90,6 +95,18 @@ test("UF oficial ambígua bloqueia recibo mesmo com UF no seed", () => {
   const profile = { id: candidate.id, slug: candidate.slug, patrimonio: [{ ano_eleicao: 2022, valor_total: 100, bens: [{ tipo: "IMOVEL", descricao: "", valor: 100 }] }], patrimonio_eleicoes: [{ ano: 2022, estado: "publicado" }] }
   const { receipt } = buildReceipt({ candidate, family: "patrimonio", assets: [asset], sourceRowsByAsset: new Map([[`${asset.family}|${asset.year}|${asset.path}`, rows]]), officialUf: new Map([["2022|SQ-1", null]]), checkedAt: "2026-09-25T00:00:00.000Z", readback: { slug: candidate.slug, candidato_id: candidate.id, family: "patrimonio", public_profile: profile } })
   assert.equal(receipt.resultado, "indeterminado")
+})
+
+test("UF de candidatura anterior no detalhe oficial resolve SQ antigo só com identidade única na UF", () => {
+  const anchored = { ...candidate, ids: { ...candidate.ids, tse_divulga_prior_uf: { "2022": "SP" } } }
+  const profile = { id: candidate.id, slug: candidate.slug, patrimonio: [{ ano_eleicao: 2022, valor_total: 100, bens: [{ tipo: "IMOVEL", descricao: "", valor: 100 }] }], patrimonio_eleicoes: [{ ano: 2022, estado: "publicado" }] }
+  const row = { ...rows[0]!, SG_UE: "SP", NR_CANDIDATO: "123", DS_CARGO: "SENADOR", SG_PARTIDO: "X" }
+  const input = { candidate: anchored, family: "patrimonio" as const, assets: [asset], officialUf: new Map([["2022|SQ-1", null]]), checkedAt: "2026-09-25T00:00:00.000Z", readback: { slug: candidate.slug, candidato_id: candidate.id, family: "patrimonio" as const, public_profile: profile } }
+  const unique = buildReceipt({ ...input, sourceRowsByAsset: new Map([[`${asset.family}|${asset.year}|${asset.path}`, [row]]]) })
+  assert.equal(unique.receipt.resultado, "encontrado")
+  const duplicate = buildReceipt({ ...input, sourceRowsByAsset: new Map([[`${asset.family}|${asset.year}|${asset.path}`, [row, { ...row, NR_CANDIDATO: "456" }]]]) })
+  assert.equal(duplicate.receipt.resultado, "indeterminado")
+  assert.equal(JSON.parse(String(duplicate.receipt.detalhe)).identity_contract.matched_rows, 0)
 })
 
 test("perfil_atual cannot close without all core fields", () => {

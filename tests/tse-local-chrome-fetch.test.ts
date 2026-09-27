@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import { createHash } from "node:crypto"
-import { mkdtempSync, readFileSync, rmSync, chmodSync, writeFileSync } from "node:fs"
+import { mkdtempSync, readFileSync, rmSync, chmodSync, writeFileSync, existsSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import { execFileSync } from "node:child_process"
@@ -25,6 +25,7 @@ class FakeResponse {
 class FakeDownload {
   constructor(private readonly bytes: Buffer, private readonly failStream = false) {}
   async failure() { return null }
+  async cancel() {}
   async createReadStream() {
     if (!this.failStream) return Readable.from([this.bytes])
     const firstHalf = this.bytes.subarray(0, Math.max(1, Math.floor(this.bytes.length / 2)))
@@ -36,6 +37,7 @@ class FakePage {
   readonly listeners = new Map<string, Set<Listener>>()
   readonly responses: FakeResponse[] = []
   readonly rangeHeaders: string[] = []
+  readonly fullDownloadStarts = new Set<number>()
   downloadBytes: Buffer | null = null
   failNextStream = false
   private routeHandler: ((route: FakeRoute) => Promise<void>) | null = null
@@ -69,7 +71,9 @@ class FakePage {
       })
       for (const listener of this.listeners.get("response") ?? []) listener(response)
       if (response.status() < 400) {
-        const event = new FakeDownload(chunk, this.failNextStream)
+        const fullDownload = response.status() === 200 || this.fullDownloadStarts.has(start)
+        this.fullDownloadStarts.delete(start)
+        const event = new FakeDownload(fullDownload ? this.downloadBytes : chunk, this.failNextStream)
         this.failNextStream = false
         for (const listener of this.listeners.get("download") ?? []) listener(event)
       }
@@ -153,6 +157,74 @@ test("downloadZip streams to a private file and returns byte count and SHA-256",
       `bytes=4194304-${zip.length - 1}`,
     ])
     assert.deepEqual(sleeps, [1, 2, 1])
+  } finally { rmSync(root, { recursive: true, force: true }) }
+})
+
+test("downloadZip accepts a bounded full 200 response when the CDN ignores Range", async () => {
+  const root = privateTemp()
+  try {
+    const zip = chunkedZip(root)
+    const page = new FakePage()
+    page.downloadBytes = zip
+    page.responses.push(new FakeResponse(200, "", "https://cdn.tse.jus.br/consulta_cand_2024.zip", "application/zip", {
+      "content-length": String(zip.length),
+    }))
+    const destination = join(root, "full-response.zip")
+    const receipt = await withVisibleTseChrome((client) => client.downloadZip(
+      "https://cdn.tse.jus.br/consulta_cand_2024.zip", destination,
+    ), { launch: fakeLauncher(page).launch, minIntervalMs: 0 })
+    assert.deepEqual(receipt, { bytes: zip.length, sha256: createHash("sha256").update(zip).digest("hex") })
+    assert.deepEqual(readFileSync(destination), zip)
+    assert.deepEqual(page.rangeHeaders, ["bytes=0-4194303"])
+  } finally { rmSync(root, { recursive: true, force: true }) }
+})
+
+test("downloadZip verifies and accepts the complete archive emitted for a later 206 range", async () => {
+  const root = privateTemp()
+  try {
+    const zip = chunkedZip(root)
+    const page = new FakePage()
+    page.downloadBytes = zip
+    page.fullDownloadStarts.add(4 * 1024 * 1024)
+    const target = "https://cdn.tse.jus.br/consulta_cand_2024.zip"
+    page.responses.push(
+      new FakeResponse(206, "", target, "application/zip", {
+        "content-range": `bytes 0-${4 * 1024 * 1024 - 1}/${zip.length}`,
+        "content-length": String(4 * 1024 * 1024),
+      }),
+      new FakeResponse(206, "", target, "application/zip", {
+        "content-range": `bytes ${4 * 1024 * 1024}-${zip.length - 1}/${zip.length}`,
+        "content-length": String(zip.length - 4 * 1024 * 1024),
+      }),
+    )
+    const destination = join(root, "mismatched-range-body.zip")
+    const receipt = await withVisibleTseChrome((client) => client.downloadZip(target, destination), {
+      launch: fakeLauncher(page).launch, minIntervalMs: 0,
+    })
+    assert.deepEqual(receipt, { bytes: zip.length, sha256: createHash("sha256").update(zip).digest("hex") })
+    assert.deepEqual(readFileSync(destination), zip)
+    assert.deepEqual(page.rangeHeaders, ["bytes=0-4194303", `bytes=4194304-${zip.length - 1}`])
+  } finally { rmSync(root, { recursive: true, force: true }) }
+})
+
+test("rejects full 200 ZIP responses with invalid type or declared size and removes partials", async () => {
+  const root = privateTemp()
+  try {
+    const zip = chunkedZip(root)
+    for (const [name, type, length] of [
+      ["bad-type", "text/html", String(zip.length)],
+      ["bad-length", "application/zip", String(zip.length + 1)],
+    ]) {
+      const page = new FakePage()
+      page.downloadBytes = zip
+      page.responses.push(new FakeResponse(200, "", "https://cdn.tse.jus.br/consulta_cand_2024.zip", type, { "content-length": length }))
+      const destination = join(root, `${name}.zip`)
+      await assert.rejects(withVisibleTseChrome((client) => client.downloadZip(
+        "https://cdn.tse.jus.br/consulta_cand_2024.zip", destination,
+      ), { launch: fakeLauncher(page).launch, minIntervalMs: 0 }), /Cabeçalhos|Content-Length/)
+      assert.equal(existsSync(join(root, `${name}.zip.part`)), false)
+      assert.equal(page.listeners.get("download")?.size ?? 0, 0)
+    }
   } finally { rmSync(root, { recursive: true, force: true }) }
 })
 

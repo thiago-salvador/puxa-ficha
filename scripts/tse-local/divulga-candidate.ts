@@ -4,7 +4,7 @@ import { withVisibleTseChrome, type TseChromeClient } from "./chrome-fetch"
 
 const DIVULGACAND_ROOT = "https://divulgacandcontas.tse.jus.br/divulga/rest/v1"
 const ORDINARIAS_URL = `${DIVULGACAND_ROOT}/eleicao/ordinarias`
-const UF_PATTERN = /^(?:AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO)$/
+const UF_PATTERN = /^(?:AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO|BR)$/
 
 export type SeedCandidateIdentity = {
   slug: string
@@ -40,12 +40,16 @@ export type DivulgaCandidateSummary = {
   ano: 2026
   uf: string
   sqCandidato: string
+  electionId?: string
   source: string
   sha256_payload: string | null
   motivo?: "identidade_seed_invalida" | "eleicoes_ordinarias_indisponiveis" | "eleicao_2026_nao_resolvida" | "detalhe_divergente" | "consulta_falhou"
   bens?: DivulgaAsset[] | null
   totalDeBens?: number | null
   gastoCampanha1T?: number | null
+  numeroCandidato?: number | null
+  partidoNumero?: number | null
+  cargoCodigo?: number | null
   eleicoesAnteriores?: PreviousElection[] | null
   mudancasPartido?: PartyChange[] | null
   numeroProcessoPrestContas?: string | null
@@ -103,7 +107,7 @@ function electionIdFrom(payload: unknown): string | null {
   return found.size === 1 ? [...found][0]! : null
 }
 
-function candidateUrl(identity: SeedCandidateIdentity, electionId: string): string {
+export function candidateUrl(identity: SeedCandidateIdentity, electionId: string): string {
   return `${DIVULGACAND_ROOT}/candidatura/buscar/2026/${identity.uf}/${electionId}/candidato/${identity.sqCandidato}`
 }
 
@@ -128,9 +132,9 @@ function sanitizePreviousElections(value: unknown): PreviousElection[] | null {
   if (!Array.isArray(value)) return null
   return value.map((item) => {
     const record = asRecord(item) ?? {}
-    const year = finiteNumber(first(record, "year", "ano"))
-    const uf = textField(first(record, "UF", "uf"))?.toUpperCase() ?? null
-    const sq = first(record, "SQ", "sqCandidato", "sq_CANDIDATO")
+    const year = finiteNumber(first(record, "nrAno", "year", "ano"))
+    const uf = textField(first(record, "sgUe", "UF", "uf"))?.toUpperCase() ?? null
+    const sq = first(record, "id", "SQ", "sqCandidato", "sq_CANDIDATO")
     return {
       year: year === null ? null : Math.trunc(year),
       cargo: textField(first(record, "cargo", "nomeCargo")),
@@ -186,14 +190,19 @@ function summarize(identity: SeedCandidateIdentity, electionId: string, source: 
   const bensValue = record.bens
   const bens = bensValue === undefined || bensValue === null ? null : sanitizeBens(bensValue)
   const previous = sanitizePreviousElections(record.eleicoesAnteriores)
+  const party = asRecord(record.partido)
+  const office = asRecord(record.cargo)
   return {
     status: "ok", slug: identity.slug, ano: 2026, uf: identity.uf,
-    sqCandidato: identity.sqCandidato, source,
+    sqCandidato: identity.sqCandidato, electionId, source,
     // getJson exposes parsed JSON only; this hashes its canonical serialization, not wire bytes.
     sha256_payload: createHash("sha256").update(JSON.stringify(payload)).digest("hex"),
     bens,
     totalDeBens: finiteNumber(record.totalDeBens),
     gastoCampanha1T: finiteNumber(record.gastoCampanha1T),
+    numeroCandidato: finiteNumber(record.numero),
+    partidoNumero: finiteNumber(party?.numero),
+    cargoCodigo: finiteNumber(office?.codigo),
     eleicoesAnteriores: previous,
     mudancasPartido: derivePartyChanges(previous),
     numeroProcessoPrestContas: textField(record.numeroProcessoPrestContas),

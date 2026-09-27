@@ -4,11 +4,42 @@ import { withExplicitCohort } from "../scripts/lib/cohort-context"
 
 import {
   HISTORICAL_YEARS,
+  enrichSeedWithDivulga,
+  historicalFamilyPackages,
   historicalUrl,
   officialPackages2026,
   parseCliOptions,
   selectCandidateCohort,
 } from "../scripts/tse-local/ingest-tse-local"
+import type { DivulgaCandidateSummary } from "../scripts/tse-local/divulga-candidate"
+
+test("adds only verified previous SQ links and leaves conflicting curated SQ untouched", () => {
+  const seed = [{ slug: "president", cargo_disputado: "Presidente", estado: "RJ", ids: {
+    tse_sq_candidato: { "2026": "280002551544", "2018": "190000614721" },
+  } }]
+  const summary = {
+    status: "ok", slug: "president", ano: 2026, uf: "BR", sqCandidato: "280002551544",
+    source: "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/BR/20322002026/candidato/280002551544",
+    sha256_payload: "a".repeat(64), eleicoesAnteriores: [
+      { year: 2018, sqCandidato: "190000614721", uf: "RJ", cargo: "Senador", partido: "PSL", situacaoTotalizacao: null },
+      { year: 2016, sqCandidato: "190000011736", uf: null, cargo: "Prefeito", partido: "PSC", situacaoTotalizacao: null },
+      { year: 2014, sqCandidato: "190000000095", uf: "RJ", cargo: "Deputado", partido: "PP", situacaoTotalizacao: null },
+    ],
+  } as DivulgaCandidateSummary
+  const result = enrichSeedWithDivulga(seed, [summary])
+  const ids = result.candidates[0]?.ids as { tse_sq_candidato: Record<string, string>; tse_uf_candidatura: Record<string, string>; tse_divulga_prior_uf: Record<string, string> }
+  assert.equal(ids.tse_sq_candidato["2016"], "190000011736")
+  assert.equal(ids.tse_uf_candidatura["2014"], "RJ")
+  assert.equal(ids.tse_sq_candidato["2018"], "190000614721")
+  assert.equal(ids.tse_divulga_prior_uf["2018"], "RJ")
+  assert.equal(ids.tse_divulga_prior_uf["2016"], undefined)
+  assert.deepEqual(result.conflicts, [])
+  const conflict = enrichSeedWithDivulga([{ ...seed[0], ids: { tse_sq_candidato: { "2026": "280002551544", "2018": "99999" } } }], [summary])
+  assert.deepEqual(conflict.conflicts, [{ slug: "president", year: 2018 }])
+  assert.equal((conflict.candidates[0]?.ids as { tse_sq_candidato: Record<string, string> }).tse_sq_candidato["2018"], "99999")
+  assert.equal((conflict.candidates[0]?.ids as { tse_divulga_prior_uf: Record<string, string> }).tse_divulga_prior_uf["2018"], undefined)
+  assert.equal(enrichSeedWithDivulga(seed, [{ ...summary, sqCandidato: "12345" }]).candidates[0], seed[0])
+})
 
 test("CLI defaults to dry-run so scheduled runs can measure sources without a profile snapshot", () => {
   const options = parseCliOptions(["--profiles=/tmp/perfis.json"], "/workspace")
@@ -37,6 +68,13 @@ test("official source plan covers biennial canonical history and the three 2026 
   assert.match(historicalUrl(1996), /\/consulta_cand\/consulta_cand_1996\.zip$/)
   assert.match(historicalUrl(2026), /\/consulta_cand\/consulta_cand_2026\.zip$/)
   assert.throws(() => historicalUrl(1994), /fora do escopo/)
+  assert.deepEqual(historicalFamilyPackages(2000), [])
+  assert.deepEqual(historicalFamilyPackages(2002).map((item) => item.family), ["financiamento"])
+  assert.match(historicalFamilyPackages(2002)[0]!.url, /\/prestacao_contas\/prestacao_contas_2002\.zip$/)
+  assert.deepEqual(historicalFamilyPackages(2006).map((item) => item.family), ["patrimonio", "financiamento"])
+  assert.match(historicalFamilyPackages(2012).find((item) => item.family === "financiamento")!.url, /\/prestacao_final_2012\.zip$/)
+  assert.deepEqual(historicalFamilyPackages(2026), [])
+  assert.throws(() => historicalFamilyPackages(1994), /fora do escopo/)
   assert.deepEqual(officialPackages2026().map((item) => item.cacheName), [
     "consulta_cand_2026.zip",
     "bem_candidato_2026.zip",

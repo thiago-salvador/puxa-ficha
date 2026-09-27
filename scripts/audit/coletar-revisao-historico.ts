@@ -38,6 +38,7 @@ import {
   HISTORICO_ANOS_CANONICOS,
   HISTORICO_FONTE,
   anchorIdentity,
+  anchorMatchesFicha,
   belongsToIdentity,
   fichaPessoa,
   historicoRevisionVerdict,
@@ -227,10 +228,22 @@ export async function runHistoricoRevision(options: {
   }))
   const byCpf = new Map<string, string[]>()
   const byName = new Map<string, string[]>()
+  const byOfficialSq = new Map<string, Array<{ slug: string; ficha: ReturnType<typeof fichaPessoa>; uf: string | null }>>()
   for (const [slug, identity] of identities) {
     if (identity.ambiguous || !identity.anchors) continue
     for (const cpf of identity.cpfs) byCpf.set(cpf, [...(byCpf.get(cpf) ?? []), slug])
     for (const key of identity.nomeNascimento) byName.set(key, [...(byName.get(key) ?? []), slug])
+    const candidate = seedBySlug.get(slug)
+    const person = profiles.find((profile) => profile.slug === slug)
+    if (!candidate || !person) continue
+    for (const anchor of seedAnchors(candidate)) {
+      const key = `${anchor.year}|${anchor.sq}`
+      const seedUf = candidate.ids?.tse_uf_candidatura?.[String(anchor.year)] ?? null
+      const ficha = fichaPessoa(person)
+      if ((anchorRows.get(key) ?? []).some((row) => anchorMatchesFicha(row, ficha, seedUf))) {
+        byOfficialSq.set(key, [...(byOfficialSq.get(key) ?? []), { slug, ficha, uf: seedUf }])
+      }
+    }
   }
 
   // Passo 2: toda candidatura ligada à identidade ancorada, em todos os anos.
@@ -238,13 +251,18 @@ export async function runHistoricoRevision(options: {
   const nameOnlyCandidates = new Set<string>()
   for (const asset of byYear.values()) {
     await readZip(asset, (row) => {
+      const direct = (byOfficialSq.get(`${row.year}|${row.sq}`) ?? [])
+        .filter((item) => anchorMatchesFicha(row, item.ficha, item.uf))
+        .map((item) => item.slug)
       const nameCandidates = !row.cpf && row.nomeNascimento ? byName.get(row.nomeNascimento) : undefined
       if (options.identityMode === "official-only") {
-        for (const slug of nameCandidates ?? []) nameOnlyCandidates.add(slug)
+        for (const slug of nameCandidates ?? []) if (!direct.includes(slug)) nameOnlyCandidates.add(slug)
       }
-      const slugs = row.cpf ? byCpf.get(row.cpf) : options.identityMode === "official-only" ? undefined : nameCandidates
-      for (const slug of slugs ?? []) {
-        if (belongsToIdentity(row, identities.get(slug)!)) sourceRows.set(slug, [...(sourceRows.get(slug) ?? []), row])
+      const identityMatches = row.cpf ? byCpf.get(row.cpf) : options.identityMode === "official-only" ? undefined : nameCandidates
+      for (const slug of new Set([...direct, ...(identityMatches ?? [])])) {
+        if (direct.includes(slug) || belongsToIdentity(row, identities.get(slug)!)) {
+          sourceRows.set(slug, [...(sourceRows.get(slug) ?? []), row])
+        }
       }
     })
   }

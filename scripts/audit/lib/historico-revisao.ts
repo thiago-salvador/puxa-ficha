@@ -421,6 +421,11 @@ export function historicoRevisionVerdict(input: {
   if (senado?.status === "ok" && periods.length) revisions.push({ url: senado.url, sha256: senado.sha256 })
   const sourceRowsCount = counts.candidaturas_oficiais + [...bySource.values()].filter((entry) => entry.eleito && !entry.omitida).length + periods.length
   const publicCount = publicFamilyRowCount(profile, "historico_politico")
+  if (sourceRowsCount < publicCount) {
+    return receipt("indeterminado", "linhas públicas excedem registros oficiais comprovados", {
+      contagens: counts, source_rows: sourceRowsCount, public_rows: publicCount,
+    })
+  }
   const resultado = publicCount === 0 ? "vazio_confirmado" : "encontrado"
   return receipt(resultado, resultado === "encontrado" ? "toda linha pública casa com a fonte oficial" : "fonte oficial e ficha sem linha", {
     contagens: counts,

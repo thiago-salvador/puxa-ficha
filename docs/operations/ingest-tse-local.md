@@ -20,15 +20,24 @@ O runner exige Node 24 em `/opt/homebrew/opt/node@24/bin`. Downloads TSE são
 mantidos no worktree durante a rodada por `PF_KEEP_TSE_DOWNLOADS=1`; o worktree
 é removido no encerramento.
 
-O coletor usa Chrome visível com um contexto para os ZIPs oficiais
-`consulta_cand_<ano>`, `bem_candidato_2026` e receitas de prestação de contas
-2026. O manifesto privado registra URL e SHA-256 de cada ZIP. A revisão de
+O coletor usa Chrome visível para os ZIPs oficiais
+`consulta_cand_<ano>` (1996–2026), `bem_candidato_<ano>` (2006–2026) e receitas
+de prestação de contas (2002–2026, com os nomes oficiais próprios de cada
+período). O manifesto privado registra URL e SHA-256 de cada ZIP. A revisão de
 histórico usa as candidaturas oficiais e só certifica identidade vinculada por
-identificador oficial; vínculos apenas nominais ficam em revisão. Se faltar o
-ZIP de candidaturas 2026, a leitura alternativa consulta
+identificador oficial; vínculos apenas nominais ficam em revisão. A leitura
+complementar por candidato consulta
 `/divulga/rest/v1/eleicao/ordinarias` e
 `/divulga/rest/v1/candidatura/buscar/2026/<UF>/<idEleicao>/candidato/<SQ>`.
-Esse JSON é guardado em artefato privado com campos permitidos; sem readback
+Para Presidente, `<UF>` é `BR`; para outros cargos, a UF é conferida no ZIP
+oficial de 2026. O detalhe também fornece SQs de candidaturas anteriores.
+Para SQs antigos repetidos entre UFs, a UF precisa constar no histórico desse
+detalhe e as linhas do ZIP devem identificar uma única candidatura na UF.
+Os CSVs são lidos em fluxo; CPF e título não passam para os recibos derivados.
+Quando a conta está disponível, o coletor consulta
+`/divulga/rest/v1/prestador/consulta/<idEleicao>/2026/<UF>/<cargo>/<partido>/<numero>/<SQ>`
+e pagina `/divulga/rest/v1/prestador/consulta/receitas/<idEleicao>/<idPrestador>/<idUltimaEntrega>/lista?pagina=N`.
+Os resultados são guardados em artefatos privados com campos permitidos; sem readback
 compatível e escritor auditado, ele não fecha células nem é aplicado ao banco.
 Falhas de leitura ficam como erro, nunca como vazio confirmado.
 

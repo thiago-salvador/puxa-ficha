@@ -318,6 +318,29 @@ describe("coletor de revisão do histórico: rodada com pacote real", () => {
       assert.match(result.review[0]?.motivo ?? "", /vínculo nominal/)
     } finally { rmSync(dir, { recursive: true, force: true }) }
   })
+
+  it("modo official-only usa SQ anterior ligado pelo detalhe oficial, mesmo com CPF mascarado", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "pf-hist-linked-sq-"))
+    try {
+      const masked = `2024;240000000099;-4;${NOME};${NASC};GOVERNADOR;SP;PC do B;NÃO ELEITO`
+      const sameSqAnotherPerson = "2024;240000000099;-4;OUTRA PESSOA;01/01/1980;GOVERNADOR;RJ;PT;NÃO ELEITO"
+      const anchor = `2026;250000000099;${CPF};${NOME};${NASC};GOVERNADOR;SP;PC do B;NÃO ELEITO`
+      const assets = [pacote(dir, 2024, [masked, sameSqAnotherPerson, ...filler(2024, 3)]), pacote(dir, 2026, [anchor, ...filler(2026, 3)])]
+      const linkedSeed: SeedCandidate = { ...seed, ids: { tse_sq_candidato: { "2024": "240000000099", "2026": "250000000099" }, tse_uf_candidatura: { "2024": "SP" } } }
+      const linkedProfile = { ...subject, historico: [
+        { ...PUBLIC_2026, periodo_inicio: 2024, periodo_fim: 2024, observacoes: "NÃO ELEITO (TSE 2024)" },
+        PUBLIC_2026,
+      ] }
+      const result = await runHistoricoRevision({
+        anos: [2024, 2026], profiles: [linkedProfile], seed: [linkedSeed], checkedAt: CHECKED,
+        senado: async () => ({ status: "erro", url: "x", motivo: "não usado" }),
+        anosObrigatorios: [2024, 2026], manifest: { assets }, minLinhasPorAno: 2,
+        identityMode: "official-only",
+      })
+      assert.equal(result.receipts[0]?.resultado, "encontrado", JSON.stringify(result.review))
+      assert.equal(result.review.some((item) => /vínculo nominal/.test(item.motivo)), false)
+    } finally { rmSync(dir, { recursive: true, force: true }) }
+  })
 })
 
 describe("coletor de revisão do histórico: CLI puro", () => {
