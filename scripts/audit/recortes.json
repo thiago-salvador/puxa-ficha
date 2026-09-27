@@ -711,6 +711,13 @@
       "ate": "20260926190100",
       "allowlist": "scripts/audit/allowlist-processos-numero-cnj-20260926.json",
       "divida": null
+    },
+    {
+      "nome": "partido-paulo-mourao-20260926",
+      "desde": "20260926224500",
+      "ate": "20260926224500",
+      "allowlist": "scripts/audit/allowlist-partido-paulo-mourao-20260926.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

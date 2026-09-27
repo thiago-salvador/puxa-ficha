@@ -258,6 +258,33 @@ function asMessage(err: unknown): string {
   return err instanceof Error ? err.message : String(err)
 }
 
+/**
+ * Legislatura da Câmara em curso na data. A legislatura N começa em 1º de
+ * fevereiro de 1991 + 4 * (N - 49) e termina em 31 de janeiro quatro anos
+ * depois, então janeiro ainda pertence à legislatura do ano anterior.
+ */
+export function legislaturaCamaraVigente(agora: Date = new Date()): number {
+  const ano = agora.getUTCMonth() === 0 ? agora.getUTCFullYear() - 1 : agora.getUTCFullYear()
+  return 49 + Math.floor((ano - 1991) / 4)
+}
+
+/**
+ * `ultimoStatus` da API da Câmara descreve o último mandato do deputado na
+ * Casa, com a situação daquele mandato: um ex-deputado da legislatura 51
+ * volta com situacao "Exercício" e o partido de 1999-2003. Só conta como
+ * mandato atual quando a situação é exercício E a legislatura é a vigente;
+ * sem `idLegislatura`, não há como provar que o status é atual.
+ */
+export function mandatoCamaraVigente(
+  status: Record<string, unknown> | undefined,
+  agora: Date = new Date(),
+): boolean {
+  if (!status) return false
+  const emExercicio = String(status.situacao || "").toLowerCase().includes("exerc")
+  const legislatura = Number(status.idLegislatura)
+  return emExercicio && Number.isInteger(legislatura) && legislatura === legislaturaCamaraVigente(agora)
+}
+
 async function ingestPerfil(
   idCamara: number,
   candidatoId: string,
@@ -296,8 +323,7 @@ async function ingestPerfil(
   }
 
   if (status) {
-    const situacaoAtual = String(status.situacao || "").toLowerCase()
-    const isDeputyInExercise = situacaoAtual.includes("exerc")
+    const isDeputyInExercise = mandatoCamaraVigente(status)
 
     // Only set photo if candidate doesn't already have one (Wikipedia photos preferred)
     if (status.urlFoto) {
