@@ -60,7 +60,7 @@ export function processosBuscaAvisoComLinhas(
   }
   if (omittedCount > 0) return {
     title: "Cobertura judicial parcial",
-    description: `${omittedCount} registro(s) ficaram fora da contagem por falta de URL judicial com CNJ exato. ${published}`,
+    description: `${omittedCount} registro(s) ficaram fora da ficha por não trazerem fonte específica publicável. ${published}`,
   }
   const checkedAt = verificacao.executado_em ? Date.parse(verificacao.executado_em) : Number.NaN
   if (!verificacao.escopo?.trim() || !Number.isFinite(checkedAt) || checkedAt > now.getTime()) return {
@@ -256,9 +256,22 @@ export function processosListaCount(
   return processosOverviewDisplay(total, undefined, verificacao, now, omittedCount).value
 }
 
+function hostOrgaoPublico(valor: string | null | undefined): boolean {
+  try {
+    const host = new URL(valor ?? "").hostname.toLowerCase()
+    return [".gov.br", ".mp.br", ".leg.br"].some((sufixo) => host.endsWith(sufixo))
+  } catch {
+    return false
+  }
+}
+
 export function processoFonteLabel(
-  processo: Pick<import("@/lib/types").Processo, "status" | "url_fonte">,
+  processo: Pick<import("@/lib/types").Processo, "status" | "url_fonte" | "fonte_nivel">,
 ): string {
+  if (processo.fonte_nivel === "em_confirmacao") {
+    if (urlFonteEPortalJudiciario(processo.url_fonte)) return "Página do tribunal"
+    return hostOrgaoPublico(processo.url_fonte) ? "Página oficial" : "Fonte jornalística"
+  }
   if (urlFonteEPortalJudiciario(processo.url_fonte)) return "Fonte oficial"
   if (isTerminalProcessStatus(processo.status)) return "Fonte jornalística"
   return "Fonte oficial"

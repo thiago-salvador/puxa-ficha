@@ -344,17 +344,33 @@ function fixtureProfile(): FichaCandidato {
   }
 }
 
-it("omite linha judicial sem página oficial da lista e da contagem pública", () => {
+it("mostra com selo a linha com matéria específica e sem página judicial do processo", () => {
   const ficha = fixtureProfile()
   ficha.processos = [
     ...ficha.processos!,
-    { ...ficha.processos![0], id: "proc-sem-fonte", url_fonte: "https://noticias.example/processo" },
+    { ...ficha.processos![0], id: "proc-sem-fonte", url_fonte: "https://noticias.example/2026/08/tribunal-mantem-condenacao" },
+  ]
+  ficha.total_processos = 2
+  const dto = toPublicCandidatoProfileDto(ficha)
+  assert.equal(dto.processos.length, 2)
+  assert.equal(dto.total_processos, 2)
+  assert.equal(dto.processos_omitidos_sem_fonte_oficial, 0)
+  assert.equal(dto.processos[0].url_fonte, "https://comunica.pje.jus.br/consulta?numeroProcesso=40049106520258260506")
+  assert.equal(dto.processos[0].fonte_nivel, "oficial")
+  assert.equal(dto.processos[1].fonte_nivel, "em_confirmacao")
+})
+
+it("omite da lista e da contagem a linha cujo link é raiz de site", () => {
+  const ficha = fixtureProfile()
+  ficha.processos = [
+    ...ficha.processos!,
+    { ...ficha.processos![0], id: "proc-raiz", url_fonte: "https://noticias.example" },
   ]
   ficha.total_processos = 2
   const dto = toPublicCandidatoProfileDto(ficha)
   assert.equal(dto.processos.length, 1)
   assert.equal(dto.total_processos, 1)
-  assert.equal(dto.processos[0].url_fonte, "https://comunica.pje.jus.br/consulta?numeroProcesso=40049106520258260506")
+  assert.equal(dto.processos_omitidos_sem_fonte_oficial, 1)
 })
 
 it("DTO preserva a contagem omitida para impedir zero falso", () => {

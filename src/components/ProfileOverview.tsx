@@ -613,6 +613,11 @@ function ProcessesTeaser({
                   {formatProcessStatusLabel(independentStatuses[0])}
                 </span>
               )}
+              {processGroup.some((item) => item.fonte_nivel === "em_confirmacao") && (
+                <MetaBadge tone="caution" data-pf-processo-fonte-em-confirmacao>
+                  Fonte oficial em confirmação
+                </MetaBadge>
+              )}
             </div>
             <p className="mt-1 text-[length:var(--text-caption)] font-medium leading-snug text-foreground">
               {formatProcessSummaryLabel(p.descricao) || formatProcessTypeLabel(p.tipo)}

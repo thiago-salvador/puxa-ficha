@@ -25,7 +25,7 @@ import { gastoParlamentarEmRevisao } from "@/lib/gastos-parlamentares-em-revisao
 import { buildFinanciamentoEleicoes } from "@/lib/financiamento-eleicoes"
 import { publicDoadorRecorrente } from "@/lib/doador-recorrente-publico"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
-import { urlFonteJudicialEspecifica } from "@/lib/djen-consulta-url"
+import { nivelFonteProcesso } from "@/lib/djen-consulta-url"
 import { pareceNomeDeInstituicao } from "@/lib/formacao-display"
 import { sanitizePublicText } from "@/lib/public-text"
 import { formatProcessSummaryLabel } from "@/lib/ui-labels"
@@ -382,6 +382,7 @@ function publicProcesso(row: Processo, index: number) {
     gravidade: row.gravidade,
     fonte: row.fonte ?? null,
     url_fonte: row.url_fonte ?? null,
+    fonte_nivel: row.fonte_nivel ?? null,
   }
 }
 
@@ -773,9 +774,10 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
     !gastoParlamentarEmRevisao(ficha.slug, row.ano),
   )
   const processosBrutos = ficha.processos ?? []
-  const processosPublicos = processosBrutos.filter((row) =>
-    Boolean(urlFonteJudicialEspecifica(row.url_fonte, row.numero_processo)),
-  )
+  const processosPublicos = processosBrutos.flatMap((row) => {
+    const fonte_nivel = nivelFonteProcesso(row)
+    return fonte_nivel ? [{ ...row, fonte_nivel }] : []
+  })
   const processosOmitidos = (ficha.processos_omitidos_sem_fonte_oficial ?? 0) + processosBrutos.length - processosPublicos.length
 
   return {
