@@ -32,4 +32,10 @@ describe("ingest TCU fail-closed", () => {
     assert.match(source, /if \(gravado\)/)
     assert.match(source, /sem link publico de processo do TCU/)
   })
+
+  it("em dry-run planeja flags e pontos em vez de escrever", () => {
+    assert.match(source, /import \{ emDryRun, planejarEscrita \} from "\.\/dry-run"/)
+    assert.match(source, /tabela: "candidatos", operacao: "update"/)
+    assert.match(source, /tabela: "pontos_atencao",\s+operacao: existente \? "update" : "insert"/)
+  })
 })

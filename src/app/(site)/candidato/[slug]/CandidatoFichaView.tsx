@@ -52,8 +52,23 @@ import { getCompromissoEvidenciasEstado } from "@/lib/compromisso-evidencia-serv
 import { normalizarProgramaGovernoEstado } from "@/lib/programa-governo"
 import { programaGovernoPendencia } from "@/lib/programa-governo-pendencia"
 import { loadSenadoRunningMates } from "@/lib/senado-running-mates"
+import { listarPesquisasSenadoPorSlug } from "@/lib/senado-polls"
+import { isSenadoEnabled } from "@/lib/senado-feature"
 
 const getFicha = (slug: string) => getCandidatoBySlugResource(slug)
+
+/**
+ * A aba de pesquisas do Senado é complementar: catálogo inválido esconde a aba
+ * (como a página da UF mostra "indisponível") em vez de derrubar a ficha.
+ */
+function pesquisasSenadoSemDerrubarFicha(slug: string, uf: string) {
+  try {
+    return listarPesquisasSenadoPorSlug(slug, uf)
+  } catch (error) {
+    console.error(`[pesquisas-senado] catálogo indisponível para ${slug}:`, error)
+    return []
+  }
+}
 
 export interface CandidatoFichaViewProps {
   slug: string
@@ -93,16 +108,20 @@ export async function CandidatoFichaView({
     notFound()
   }
 
+  // Senado usa o mesmo catálogo e os mesmos filtros da página /uf/[uf]/senado.
+  const senadoComPesquisas = ficha.cargo_disputado === "Senador" && isSenadoEnabled()
   const pesquisasEnabled =
-    (ficha.cargo_disputado === "Presidente" || ficha.cargo_disputado === "Governador") &&
+    (ficha.cargo_disputado === "Presidente" || ficha.cargo_disputado === "Governador" || senadoComPesquisas) &&
     seoSubpath !== "timeline"
   const pesquisas = !pesquisasEnabled
     ? []
     : ficha.cargo_disputado === "Presidente"
       ? listarPesquisasPresidenciaisPorSlug(slug)
-      : ficha.estado
-        ? listarPesquisasGovernadorPorSlug(slug, ficha.estado)
-        : []
+      : !ficha.estado
+        ? []
+        : senadoComPesquisas
+          ? pesquisasSenadoSemDerrubarFicha(slug, ficha.estado)
+          : listarPesquisasGovernadorPorSlug(slug, ficha.estado)
   // Presidente é disputa nacional (anel único); qualquer outra disputa navega
   // dentro da própria UF. Sem estado na ficha, degrada para o anel do cargo.
   const navEstado =
@@ -422,7 +441,9 @@ export async function CandidatoFichaView({
               >
                 {ficha.nome_urna}
               </h1>
-              {pesquisasEnabled && <PesquisasPresidenciaisHero pesquisas={pesquisas} />}
+              {/* No Senado, primeiro voto, segundo voto e o agregado dos dois são medidas
+                  distintas; o destaque sem rótulo do cenário ficaria ambíguo. */}
+              {pesquisasEnabled && !senadoComPesquisas && <PesquisasPresidenciaisHero pesquisas={pesquisas} />}
             </div>
 
             {ficha.chapa_2026 && (
