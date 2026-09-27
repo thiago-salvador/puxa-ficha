@@ -362,6 +362,44 @@ describe("catálogo de checagens e recibos versionados", () => {
     }
   })
 
+  it("aplica o critério editorial de atribuição nos leads de Lula e Eduardo Paes", () => {
+    // Títulos conferidos nos recibos brutos da rodada reconstruída de 26/09.
+    // O catálogo público agrega leads por ficha; a contagem fixa as quatro exclusões.
+    const decisoes = [
+      {
+        slug: "lula",
+        leadsAntes: 552,
+        naoPublicar: [
+          "Posts fazem sátira com fato de personagem do filme ‘Truque de Mestre 2’ se chamar Lula",
+          "Supla não falava de Lula ao dizer que não tem problema ‘roubar com amor’",
+          "Vídeo de abordagem da PM a torcedores do Sport não tem relação com Lula",
+        ],
+        manter: [
+          "Vídeo de mulher rasgando papel atrás de Trump não tem relação com Lula",
+          "Jornais não ocultaram tatuagem de Lula em caso de CAC que matou a família",
+          "Juiz que morreu em SE não investigava fraude do INSS e nem citou irmão de Lula no caso",
+        ],
+      },
+      {
+        slug: "eduardo-paes",
+        leadsAntes: 43,
+        naoPublicar: [
+          "Jovem que chamou passeio na Rocinha de ‘safári’ não é sobrinha de Eduardo Paes",
+        ],
+        manter: [],
+      },
+    ]
+    assert.equal(decisoes.reduce((total, decisao) => total + decisao.naoPublicar.length, 0), 4)
+    for (const decisao of decisoes) {
+      const receipt = committedReceipts.receipts.find((item) => item.candidate_slug === decisao.slug)
+      assert.ok(receipt, `${decisao.slug} mantém recibo encontrado`)
+      assert.equal(receipt.result, "encontrado")
+      assert.equal(receipt.leads, decisao.leadsAntes - decisao.naoPublicar.length, `${decisao.slug}: exclusões editoriais não devem voltar`)
+      assert.ok(receipt.leads >= decisao.manter.length, `${decisao.slug}: os leads preservados continuam na contagem`)
+      assert.equal(new Set([...decisao.naoPublicar, ...decisao.manter]).size, decisao.naoPublicar.length + decisao.manter.length)
+    }
+  })
+
   it("exclui homônimo senador e parente mesmo quando o título contém o nome de urna", () => {
     // Títulos conferidos no recibo bruto da rodada 2026-09-26-final.
     const exclusoesPorHomônimoOuParentesco: Record<string, string[]> = {
