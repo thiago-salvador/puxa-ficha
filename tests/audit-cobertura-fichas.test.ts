@@ -7,6 +7,7 @@ import { spawnSync } from "node:child_process"
 import {
   adaptLatestReceipts,
   buildCoverageMatrix,
+  fetchPublicProfiles,
   type CoverageProfile,
 } from "../scripts/audit/audit-cobertura-fichas"
 import { publicFamilyHouseRows, publicFamilyPayloadSha256, publicHouseSubsetSha256 } from "../scripts/audit/lib/coverage-source-proof"
@@ -25,6 +26,23 @@ function profile(overrides: Partial<CoverageProfile> = {}): CoverageProfile {
 }
 
 describe("matriz de cobertura das fichas", () => {
+  it("repete erro transitório ao ler perfil público antes de invalidar o snapshot", async () => {
+    let attempts = 0
+    const pauses: number[] = []
+    const fetcher = async (url: string | URL | Request) => {
+      if (String(url).endsWith("/api/candidato-slugs")) return Response.json({ slugs: ["ana-exemplo"] })
+      attempts++
+      if (attempts === 1) return new Response(null, { status: 503 })
+      if (attempts === 2) throw new TypeError("fetch failed")
+      return Response.json({ sourceStatus: "live", data: profile() })
+    }
+    const result = await fetchPublicProfiles("https://example.test", fetcher as typeof fetch, async (ms) => { pauses.push(ms) })
+    assert.equal(attempts, 3)
+    assert.deepEqual(pauses, [5_000, 10_000, 250])
+    assert.equal(result.profiles.length, 1)
+    assert.deepEqual(result.errors, [])
+  })
+
   it("não publica processo só porque o recibo disse encontrado", () => {
     const matrix = buildCoverageMatrix([profile({ processos: [] })], [], {
       "ana-exemplo": { processos: { resultado: "encontrado", executado_em: new Date().toISOString(), fonte: "processos-curadoria" } },
@@ -102,6 +120,16 @@ describe("matriz de cobertura das fichas", () => {
         .cells.find((cell) => cell.familia === "projetos_lei")?.estado
     assert.equal(state(candidate), "publicado")
     assert.equal(state(candidate, { ...row, detalhe: JSON.stringify({ coverage_proof: { ...proof, public_rows: 2 } }) }), "indeterminado")
+  })
+
+  it("aplica o SLA de nove dias aos recibos de votação das duas casas", () => {
+    const executed = new Date(Date.now() - 10 * 86_400_000).toISOString()
+    for (const [house, source] of [["camara", "camara-votacoes"], ["senado", "senado-votacoes"]] as const) {
+      const candidate = profile({ ids: { camara: house === "camara" ? 12345 : null, senado: house === "senado" ? 12345 : null }, votos: [{ id: 1 }] })
+      const row = { fonte: source, escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", resultado: "encontrado", volume: 1, executado_em: executed, url: "https://example.test/votacoes", detalhe: "{}" }
+      const matrix = buildCoverageMatrix([candidate], [], adaptLatestReceipts([row], [candidate]).joins)
+      assert.equal(matrix.cells.find((cell) => cell.familia === "votos_candidato")?.estado, "desatualizado", source)
+    }
   })
 
   it("não trata badge histórico sem data como recibo nem encobre verificação datada", () => {

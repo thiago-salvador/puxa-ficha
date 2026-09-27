@@ -63,7 +63,7 @@ describe("renovação de recibos judiciais antes do SLA", () => {
     { id: "f", slug: "foxtrot" },
   ]
 
-  it("reabre recibos conclusivos dentro da margem e todo erro, nunca indeterminado ou sem recibo", () => {
+  it("reabre conclusivos e indeterminados antigos dentro da margem, além de todo erro", () => {
     const recibos = [
       recibo("a", "alpha", "vazio_confirmado", 10),
       recibo("b", "beta", "encontrado", 50),
@@ -71,8 +71,8 @@ describe("renovação de recibos judiciais antes do SLA", () => {
       recibo("d", "delta", "indeterminado", 40),
       recibo("e", "echo", "erro", 40),
     ]
-    assert.deepEqual(selecionarAlvosVencendo(candidatos, recibos, 5, AGORA), ["alpha", "beta", "echo"])
-    assert.deepEqual(selecionarAlvosVencendo(candidatos, recibos, 0, AGORA), ["beta", "echo"])
+    assert.deepEqual(selecionarAlvosVencendo(candidatos, recibos, 5, AGORA), ["alpha", "beta", "delta", "echo"])
+    assert.deepEqual(selecionarAlvosVencendo(candidatos, recibos, 0, AGORA), ["beta", "delta", "echo"])
     // erro recente também volta: falha de fonte nunca vira estado final.
     assert.deepEqual(selecionarAlvosVencendo(candidatos, [recibo("f", "foxtrot", "erro", 0.1)], 5, AGORA), ["foxtrot"])
   })
