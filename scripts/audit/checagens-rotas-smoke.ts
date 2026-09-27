@@ -21,16 +21,24 @@ const sondas: Array<{ id: string; url: string; valido: (body: string) => boolean
 ]
 
 async function main() {
+  const erros: string[] = []
   for (const sonda of sondas) {
-    const response = await fetch(sonda.url, {
-      headers: { "user-agent": "node", accept: "text/html,application/xhtml+xml,application/xml;q=0.9,application/json;q=0.9", "accept-language": "pt-BR,pt;q=0.9" },
-      signal: AbortSignal.timeout(30_000),
-    })
-    if (!response.ok) throw new Error(`${sonda.id}: HTTP ${response.status}`)
-    const body = await response.text()
-    if (!sonda.valido(body)) throw new Error(`${sonda.id}: resposta sem itens reconhecíveis`)
-    console.log(`${sonda.id}: ok HTTP ${response.status}`)
+    try {
+      const response = await fetch(sonda.url, {
+        headers: { "user-agent": "node", accept: "text/html,application/xhtml+xml,application/xml;q=0.9,application/json;q=0.9", "accept-language": "pt-BR,pt;q=0.9" },
+        signal: AbortSignal.timeout(30_000),
+      })
+      if (!response.ok) throw new Error(`HTTP ${response.status}`)
+      const body = await response.text()
+      if (!sonda.valido(body)) throw new Error("resposta sem itens reconhecíveis")
+      console.log(`${sonda.id}: ok HTTP ${response.status}`)
+    } catch (error) {
+      const motivo = error instanceof Error ? error.message : String(error)
+      erros.push(`${sonda.id}: ${motivo}`)
+      console.error(`${sonda.id}: erro ${motivo}`)
+    }
   }
+  if (erros.length) throw new Error(`${erros.length} rota(s) diretas indisponíveis no runner: ${erros.join("; ")}`)
 }
 
 main().catch((error: unknown) => { console.error(error); process.exitCode = 1 })
