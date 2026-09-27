@@ -289,6 +289,26 @@ function rowsOf(value: unknown): unknown[] {
   return []
 }
 
+/**
+ * The Senado individual authorship endpoint returns the senator's complete
+ * authorship list in one response. It does not expose the Câmara-style
+ * `pagina`/`itens` protocol; adding those parameters returns the same complete
+ * payload. Validate the envelope and parliamentarian ID before treating that
+ * single response as a complete source.
+ */
+export function senateAuthorshipRows(value: unknown, officialId: string): unknown[] {
+  const root = value && typeof value === "object" && !Array.isArray(value) ? value as Record<string, unknown> : {}
+  const parliamentarian = (root.MateriasAutoriaParlamentar as Record<string, unknown> | undefined)?.Parlamentar as Record<string, unknown> | undefined
+  if (String(parliamentarian?.Codigo ?? "").trim() !== officialId) {
+    throw new Error("endpoint de autorias do Senado sem confirmação do CodigoParlamentar consultado")
+  }
+  const authorship = (parliamentarian?.Autorias as Record<string, unknown> | undefined)?.Autoria
+  if (!Array.isArray(authorship) || authorship.some((row) => !row || typeof row !== "object" || Array.isArray(row))) {
+    throw new Error("endpoint de autorias do Senado sem lista completa Autorias.Autoria explícita")
+  }
+  return authorship.map((row) => ({ ...(row as Record<string, unknown>), CodigoParlamentar: officialId }))
+}
+
 function hasNext(value: unknown, rowCount: number): boolean {
   if (Array.isArray(value)) return false
   if (value && typeof value === "object" && ("MateriasAutoriaParlamentar" in value || "VotacaoParlamentar" in value)) return false
@@ -663,7 +683,12 @@ async function main(): Promise<void> {
         for (const [family, url] of [["projetos_lei", `${SENADO}/senador/${officialId}/autorias.json`], ["votos_candidato", `${SENADO}/senador/${officialId}/votacoes.json`]] as const) {
           try {
             const page = await capturePage(destination, `familias/${house}/${officialId}/${family}`, 1, url)
-            if (family === "votos_candidato" && senadoVoteIds) {
+            if (family === "projetos_lei") {
+              const authorships = senateAuthorshipRows(page.value, officialId)
+              const completePage = { ...page, rows: authorships.length, complete: true, value: { dados: authorships } }
+              const bundle = writeBundle(destination, `familias/${house}/${officialId}/${family}`, [completePage])
+              addObservation({ house, family, officialId, sourceUrl: url, sourcePath: bundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: [stripValue(page)], bundleSha256: bundle.sha256, extra: { source_kind: "senado-complete-authorship-single-response", source_revisions: [{ url: page.url, sha256: page.sha256 }] } })
+            } else if (family === "votos_candidato" && senadoVoteIds) {
               const selected = selectSenadoVoteRows(page.value, officialId, senadoVoteIds)
               const filtered = { ...page, value: { dados: selected }, rows: selected.length, complete: true }
               const bundle = writeBundle(destination, `familias/${house}/${officialId}/${family}`, [filtered])

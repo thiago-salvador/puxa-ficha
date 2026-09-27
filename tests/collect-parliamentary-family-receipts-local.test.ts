@@ -5,7 +5,7 @@ import { tmpdir } from "node:os"
 import path from "node:path"
 import test from "node:test"
 
-import { assertExpenseEmptinessCoversMandates, collectParliamentaryFamilyReceipts, mandateYears, openParliamentaryReceipts, verifySenadoLegislatureScope, type ParliamentarySourceObservation } from "../scripts/audit/collect-parliamentary-family-receipts-local"
+import { assertExpenseEmptinessCoversMandates, collectParliamentaryFamilyReceipts, mandateYears, openParliamentaryReceipts, projectParliamentaryFamilyApply, verifySenadoLegislatureScope, type ParliamentarySourceObservation } from "../scripts/audit/collect-parliamentary-family-receipts-local"
 
 function fixture(sourceRows: unknown[], dtoRows: unknown[], total = sourceRows.length, counts?: { global: number; camara: number; senado: number }) {
   const dir = mkdtempSync(path.join(tmpdir(), "pf-parliament-proof-"))
@@ -29,6 +29,20 @@ function fixture(sourceRows: unknown[], dtoRows: unknown[], total = sourceRows.l
 }
 
 const candidate = { slug: "fixture", candidato_id: "candidate-1", ids: { camara: 12345, senado: null } }
+
+test("projeção fecha dado publicado obsoleto só no readback simulado", () => {
+  const official = { id: 17, siglaTipo: "PL", numero: 7, ano: 2024, ementa: "Texto oficial" }
+  const { dir, observation } = fixture([official], [], 1, { global: 0, camara: 0, senado: 0 })
+  try {
+    const before = collectParliamentaryFamilyReceipts([candidate], [observation])
+    assert.equal(before.receipts.length, 0)
+    const projection = projectParliamentaryFamilyApply([candidate], [observation], before).find((row) => row.fonte === "camara-proposicoes")
+    assert.equal(projection?.estado, "safe_write", projection?.motivo ?? "projection missing")
+    assert.equal(projection.resultado_projetado, "encontrado")
+    assert.equal(projection.source_rows, 1)
+    assert.equal(collectParliamentaryFamilyReceipts([candidate], [observation]).receipts.length, 0)
+  } finally { rmSync(dir, { recursive: true, force: true }) }
+})
 const capturedDtoShapes = JSON.parse(readFileSync(path.join(__dirname, "fixtures/parliamentary-public-dto-shapes.json"), "utf8")) as {
   projeto_senado_sem_casa: Record<string, unknown>
   gasto_camara_sem_casa: Record<string, unknown>
@@ -373,11 +387,11 @@ test("recibos Câmara e Senado conferem partições distintas do mesmo DTO integ
   const publicRows = [cameraRow, senateRow]
   writeFileSync(profilePath, JSON.stringify({ id: "candidate-1", slug: "fixture", projetos_lei: publicRows, projetos_lei_total: 2, projetos_lei_camara_total: 1, projetos_lei_senado_total: 1 }))
   writeFileSync(roster, JSON.stringify({ DetalheParlamentar: { IdentificacaoParlamentar: { CodigoParlamentar: "987" } } }))
-  const rawPayload = { MateriasAutoriaParlamentar: { Parlamentar: { Codigo: "987", Autorias: { Autoria: [senateRow] } } } }
+  const rawPayload = { MateriasAutoriaParlamentar: { Parlamentar: { Codigo: "987", Autorias: { Autoria: [{ ...senateRow, IndicadorAutorPrincipal: "Sim" }] } } } }
   const rawBytes = Buffer.from(JSON.stringify(rawPayload))
   writeFileSync(raw, rawBytes)
   const url = "https://legis.senado.leg.br/dadosabertos/senador/987/autorias.json"
-  writeFileSync(source, JSON.stringify({ complete: true, total: 1, dados: [{ ...senateRow, CodigoParlamentar: "987" }], derived_from_pages: [{ page: 1, url, path: raw, bytes: rawBytes.length, sha256: createHash("sha256").update(rawBytes).digest("hex"), complete: true }] }))
+  writeFileSync(source, JSON.stringify({ complete: true, total: 1, dados: [{ ...senateRow, IndicadorAutorPrincipal: "Sim", CodigoParlamentar: "987" }], derived_from_pages: [{ page: 1, url, path: raw, bytes: rawBytes.length, sha256: createHash("sha256").update(rawBytes).digest("hex"), complete: true }] }))
   const senado: ParliamentarySourceObservation = {
     house: "senado", family: "projetos_lei", official_id: 987,
     roster: { roster_url: "https://legis.senado.leg.br/dadosabertos/senador/987", roster_revision: "fixture", roster_path: roster },
@@ -413,7 +427,7 @@ test("autoria do Senado reconcilia Materia aninhada pela tupla pública única, 
   const profilePath = path.join(dir, "profile.json")
   const capturedProject = capturedDtoShapes.projeto_senado_sem_casa
   const materia = { Codigo: 9001, Sigla: capturedProject.tipo, Numero: capturedProject.numero, Ano: capturedProject.ano, Ementa: capturedProject.ementa }
-  const rawRow = { Materia: materia, IndicadorAutorPrincipal: "S" }
+  const rawRow = { Materia: materia, IndicadorAutorPrincipal: "Sim" }
   const rawValue = { MateriasAutoriaParlamentar: { Parlamentar: { Codigo: "987", Autorias: { Autoria: [rawRow] } } } }
   const rawBytes = Buffer.from(JSON.stringify(rawValue))
   writeFileSync(rosterPath, JSON.stringify({ DetalheParlamentar: { IdentificacaoParlamentar: { CodigoParlamentar: "987" } } }))
@@ -444,9 +458,9 @@ test("roster individual do Senado e DTO sem ID por linha continuam verificáveis
   const row = { idProposicao: 12, tipo: "PL", numero: "1", ano: 2024, ementa: "Ementa", situacao: "Tramitando" }
   writeFileSync(roster, JSON.stringify({ DetalheParlamentar: { IdentificacaoParlamentar: { CodigoParlamentar: "987" } } }))
   const rawPath = path.join(dir, "pagina-1.json")
-  const rawBytes = Buffer.from(JSON.stringify({ MateriasAutoriaParlamentar: { Parlamentar: { Codigo: "987", Autorias: { Autoria: [row] } } } }))
+  const rawBytes = Buffer.from(JSON.stringify({ MateriasAutoriaParlamentar: { Parlamentar: { Codigo: "987", Autorias: { Autoria: [{ ...row, IndicadorAutorPrincipal: "Sim" }] } } } }))
   writeFileSync(rawPath, rawBytes)
-  writeFileSync(source, JSON.stringify({ complete: true, total: 1, dados: [{ ...row, CodigoParlamentar: "987" }], derived_from_pages: [{ page: 1, url: "https://legis.senado.leg.br/dadosabertos/senador/987/autorias.json", path: rawPath, bytes: rawBytes.length, sha256: createHash("sha256").update(rawBytes).digest("hex"), complete: true }] }))
+  writeFileSync(source, JSON.stringify({ complete: true, total: 1, dados: [{ ...row, IndicadorAutorPrincipal: "Sim", CodigoParlamentar: "987" }], derived_from_pages: [{ page: 1, url: "https://legis.senado.leg.br/dadosabertos/senador/987/autorias.json", path: rawPath, bytes: rawBytes.length, sha256: createHash("sha256").update(rawBytes).digest("hex"), complete: true }] }))
   // Captured public Senate DTO rows omit `casa`; the source observation and
   // exact material match supply the house attribution for this row.
   writeFileSync(profile, JSON.stringify({ id: "senado-1", slug: "fixture-senado", projetos_lei: [row], projetos_lei_total: 1, projetos_lei_camara_total: 0, projetos_lei_senado_total: 1 }))

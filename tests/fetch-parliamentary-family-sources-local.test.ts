@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import test from "node:test"
-import { camaraLegislatureForYear, familySource, filterBundlePages, filterCandidatesBySlugs, parseSenadoVoteIds, parseSlugList } from "../scripts/audit/fetch-parliamentary-family-sources-local"
+import { camaraLegislatureForYear, familySource, filterBundlePages, filterCandidatesBySlugs, parseSenadoVoteIds, parseSlugList, senateAuthorshipRows } from "../scripts/audit/fetch-parliamentary-family-sources-local"
 
 test("lista privada seleciona candidatos e falha em slug desconhecido", () => {
   const candidates = [{ slug: "ana-silva" }, { slug: "bia-souza" }]
@@ -20,6 +20,20 @@ test("IDs exatos das votações Senado exigem array numérico sem duplicatas", (
   assert.throws(() => parseSenadoVoteIds("[]"), /array não vazio/)
   assert.throws(() => parseSenadoVoteIds('["123", "123"]'), /duplicado/)
   assert.throws(() => parseSenadoVoteIds('["123", "abc"]'), /inválido/)
+})
+
+test("autorías do Senado preservam a lista integral em uma resposta e validam envelope e parlamentar", () => {
+  const sourceRows = Array.from({ length: 313 }, (_, index) => ({
+    IndicadorAutorPrincipal: index % 2 === 0 ? "Sim" : "Não",
+    Materia: { Codigo: String(index + 1), Ano: 2020 },
+  }))
+  const payload = { MateriasAutoriaParlamentar: { Parlamentar: { Codigo: "4529", Autorias: { Autoria: sourceRows } } } }
+  const rows = senateAuthorshipRows(payload, "4529")
+  assert.equal(rows.length, 313)
+  assert.equal((rows.at(-1) as Record<string, unknown>).CodigoParlamentar, "4529")
+  assert.equal((rows.at(-1) as Record<string, unknown>).Materia && ((rows.at(-1) as { Materia: { Codigo: string } }).Materia.Codigo), "313")
+  assert.throws(() => senateAuthorshipRows(payload, "1234"), /CodigoParlamentar consultado/)
+  assert.throws(() => senateAuthorshipRows({ MateriasAutoriaParlamentar: { Parlamentar: { Codigo: "4529", Autorias: { Autoria: null } } } }, "4529"), /lista completa/)
 })
 
 test("votos nominais Câmara preservam ausência como lista completa sem linha sintética", () => {

@@ -66,7 +66,7 @@ export interface OfficialFamilyObservation {
   /** Caminho até a lista de linhas, quando o formato não for autodetectável. */
   rows_path?: readonly string[]
   source_revisions?: Array<{ url: string; sha256: string; year?: number }>
-  source_kind?: "camara-cota-csv" | "senado-selected-votes"
+  source_kind?: "camara-cota-csv" | "senado-selected-votes" | "senado-complete-authorship-single-response"
   selected_vote_ids?: string[]
   vote_catalog?: Array<{ vote_id_api: string; url: string; path: string; sha256: string }>
   source_filter?: { field: string; value: string; method: string }
@@ -119,6 +119,20 @@ export interface ParliamentaryReceiptRun {
   errors: string[]
   /** As mesmas falhas de `errors`, estruturadas para virar recibo honesto. */
   failures: ParliamentaryFailure[]
+  /** Hypothetical readback after the audited writers run; never a persisted receipt. */
+  apply_projection?: ParliamentaryApplyProjection[]
+}
+
+export interface ParliamentaryApplyProjection {
+  fonte: ParliamentaryReceipt["fonte"]
+  alvo: string
+  estado: "closed_now" | "safe_write" | "review" | "unresolved"
+  resultado_projetado: "encontrado" | "vazio_confirmado" | null
+  source_rows: number | null
+  projected_public_rows: number | null
+  source_url: string | null
+  source_sha256: string | null
+  motivo: string
 }
 
 export interface ParliamentaryFailure {
@@ -715,6 +729,14 @@ function aggregateSenadoCeapsRows(rows: Record<string, unknown>[], officialId: s
   return [...years.entries()].sort((a, b) => a[0] - b[0]).map(([year, cents]) => ({ CodigoParlamentar: officialId, ano: year, total_gasto: cents / 100 }))
 }
 
+function writerRows(rows: Record<string, unknown>[], house: ParliamentaryHouse, family: ParliamentaryFamily, officialId: string): Record<string, unknown>[] {
+  if (house === "senado" && family === "gastos_parlamentares") return aggregateSenadoCeapsRows(rows, officialId)
+  // ingest-senado.ts writes only principal authorship. The endpoint's total
+  // includes coauthors, so retain its raw count separately from writer count.
+  if (house === "senado" && family === "projetos_lei") return rows.filter((row) => stripAccents(String(row.IndicadorAutorPrincipal ?? "")).toLowerCase() === "sim")
+  return rows
+}
+
 function verifyCamaraVoteCatalog(observation: ParliamentarySourceObservation): Map<string, { date: string; propositions: Set<string> }> {
   const catalog = observation.source.vote_catalog
   if (observation.house !== "camara" || observation.family !== "votos_candidato") return new Map()
@@ -902,7 +924,7 @@ export function assertExpenseEmptinessCoversMandates(profile: Record<string, unk
   if (inWindow.length > 0) throw new Error(`zero despesa em ano de mandato ativo (${inWindow.join(",")}) exige revisão da identidade ou da fonte`)
 }
 
-function makeReceipt(candidate: ParliamentaryCandidate, observation: ParliamentarySourceObservation, executedAt: string, familyObservations: readonly ParliamentarySourceObservation[] = [observation], sourceRowsCache: Map<string, Record<string, unknown>[] | null> = new Map()): ParliamentaryReceipt {
+function makeReceipt(candidate: ParliamentaryCandidate, observation: ParliamentarySourceObservation, executedAt: string, familyObservations: readonly ParliamentarySourceObservation[] = [observation], sourceRowsCache: Map<string, Record<string, unknown>[] | null> = new Map(), projectedReadback?: { profile: Record<string, unknown>; rows: Record<string, unknown>[] }): ParliamentaryReceipt {
   const officialId = normalizedId(observation.official_id)
   const sourceIdInUrl = observation.house === "camara" && (observation.source.source_kind === "camara-cota-csv" || observation.family === "votos_candidato") ? false : observation.house === "camara" || observation.family !== "gastos_parlamentares"
   if (!validOfficialUrl(observation.source.source_url, observation.family, officialId, sourceIdInUrl)) throw new Error("source_url oficial inválida para a família")
@@ -919,9 +941,7 @@ function makeReceipt(candidate: ParliamentaryCandidate, observation: Parliamenta
   const camaraVoteCatalog = observation.house === "camara" && observation.family === "votos_candidato" ? verifyCamaraVoteCatalog(observation) : new Map<string, { date: string; propositions: Set<string> }>()
   const bundleRows = rowsFromPayload(sourcePayload.value, observation.source.rows_path)
   if (canonicalJson(bundleRows) !== canonicalJson(capturedRows)) throw new Error("dados do bundle divergem da reconstrução das páginas brutas")
-  const sourceRowsData = observation.house === "senado" && observation.family === "gastos_parlamentares"
-    ? aggregateSenadoCeapsRows(capturedRows, officialId)
-    : capturedRows
+  const sourceRowsData = writerRows(capturedRows, observation.house, observation.family, officialId)
   const currentSourceCacheKey = `${observation.house}:${officialId}:${observation.family}`
   sourceRowsCache.set(currentSourceCacheKey, sourceRowsData)
   const sourceRowsByHouse = new Map<ParliamentaryHouse, Record<string, unknown>[]>()
@@ -949,9 +969,7 @@ function makeReceipt(candidate: ParliamentaryCandidate, observation: Parliamenta
       const root = object(bundleRaw.value)
       if (typeof root?.total !== "number" && typeof root?.total !== "string") { sourceRowsCache.set(cacheKey, null); continue }
       if (Number(root.total) !== reconstructed.length) { sourceRowsCache.set(cacheKey, null); continue }
-      const verifiedRows = familyObservation.house === "senado" && familyObservation.family === "gastos_parlamentares"
-        ? aggregateSenadoCeapsRows(reconstructed, houseId)
-        : reconstructed
+      const verifiedRows = writerRows(reconstructed, familyObservation.house, familyObservation.family, houseId)
       sourceRowsCache.set(cacheKey, verifiedRows)
       sourceRowsByHouse.set(familyObservation.house, verifiedRows)
     } catch { sourceRowsCache.set(cacheKey, null) /* missing/invalid counterpart cannot disambiguate a row */ }
@@ -1006,13 +1024,14 @@ function makeReceipt(candidate: ParliamentaryCandidate, observation: Parliamenta
   if (rawDeclaredTotal !== capturedRows.length) throw new Error(`bundle bruto incompleto: ${capturedRows.length}/${rawDeclaredTotal} linhas`)
   // CEAPS captures transaction rows but the public DTO stores one aggregate per year.
   // The raw bundle total is independently checked above; the proof total is annual rows.
-  const declaredTotal = isSenateCeaps ? sourceRows : rawDeclaredTotal
-  if (!isSenateCeaps && declaredTotal !== sourceRows) throw new Error(`fonte paginada/incompleta: ${sourceRows}/${declaredTotal} linhas`)
+  const writerSubset = isSenateCeaps || (observation.house === "senado" && observation.family === "projetos_lei")
+  const declaredTotal = writerSubset ? sourceRows : rawDeclaredTotal
+  if (!writerSubset && declaredTotal !== sourceRows) throw new Error(`fonte paginada/incompleta: ${sourceRows}/${declaredTotal} linhas`)
   if (sourceRows === 0 && declaredTotal !== 0) throw new Error("vazio oficial exige total explícito zero")
-  const dtoPayload = readRawJson(observation.readback.dto_path)
-  const dtoRows = rowsFromPayload(dtoPayload.value, observation.readback.dto_rows_path)
-  const profilePayload = readRawJson(observation.readback.profile_path)
-  const envelope = object(profilePayload.value)
+  const dtoPayload = projectedReadback ? null : readRawJson(observation.readback.dto_path)
+  const dtoRows = projectedReadback?.rows ?? rowsFromPayload(dtoPayload?.value, observation.readback.dto_rows_path)
+  const profilePayload = projectedReadback ? null : readRawJson(observation.readback.profile_path)
+  const envelope = projectedReadback?.profile ?? object(profilePayload?.value)
   const publicProfile = object(envelope?.data) ?? envelope
   if (!publicProfile || publicProfile.slug !== candidate.slug || publicProfile.id !== candidate.candidato_id) {
     throw new Error("perfil público do readback diverge de slug/candidato_id")
@@ -1080,6 +1099,115 @@ function makeReceipt(candidate: ParliamentaryCandidate, observation: Parliamenta
     executado_em: executedAt,
     detalhe: detailFor({ candidate, observation, dtoCount, dtoSubsetSha256, identityIds: dtoIdentityIds, sourceSha256, sourceRows, declaredTotal, rosterSha256, publicPayloadSha256, houseSubsetSha256, publicTotalRows, rowAttribution, unassignedPublicRows: unresolvedHouseRows, voteDateSkews: houseDtoRows.flatMap((row) => Number(row.vote_date_skew_days) === 1 ? [{ vote_id_api: String(row.vote_id_api), public_date: String(row.public_vote_date), official_date: String(row.official_vote_date), days: 1 as const, proposition_id: object(row.votacao)?.proposicao_id ?? null }] : []) }),
   }
+}
+
+/**
+ * Simulates the values the audited writers place in the public families. The
+ * original DTO is never changed. A projection is accepted only if the same
+ * source/readback contract accepts the simulated post-write profile.
+ */
+export function projectParliamentaryFamilyApply(
+  candidates: readonly ParliamentaryCandidate[],
+  observations: readonly ParliamentarySourceObservation[],
+  current: ParliamentaryReceiptRun,
+): ParliamentaryApplyProjection[] {
+  const closed = new Set(current.receipts.map((receipt) => `${receipt.alvo}|${receipt.fonte}`))
+  const byKey = new Map(observations.map((item) => [`${item.house}:${normalizedId(item.official_id)}:${item.family}`, item]))
+  const projections: ParliamentaryApplyProjection[] = []
+  for (const candidate of candidates) for (const house of ["camara", "senado"] as const) {
+    const candidateId = candidate.ids[house]
+    if (candidateId == null || String(candidateId).trim() === "") continue
+    for (const family of PARLIAMENTARY_FAMILIES) {
+      const fonte = sourceName(house, family)
+      const base = { fonte, alvo: candidate.slug }
+      const observation = byKey.get(`${house}:${normalizedId(candidateId)}:${family}`)
+      if (!observation) {
+        projections.push({ ...base, estado: "unresolved", resultado_projetado: null, source_rows: null, projected_public_rows: null, source_url: null, source_sha256: null, motivo: "captura oficial atribuída ausente" })
+        continue
+      }
+      const sourceBytes = readFileSync(observation.source.source_path)
+      const evidence = { source_url: observation.source.source_url, source_sha256: sha256Bytes(sourceBytes) }
+      if (closed.has(`${candidate.slug}|${fonte}`)) {
+        projections.push({ ...base, ...evidence, estado: "closed_now", resultado_projetado: current.receipts.find((receipt) => receipt.alvo === candidate.slug && receipt.fonte === fonte)!.resultado as "encontrado" | "vazio_confirmado", source_rows: null, projected_public_rows: null, motivo: "readback observado já fecha" })
+        continue
+      }
+      let sourceRows: number | null = null
+      try {
+        const officialId = normalizedId(candidateId)
+        const roster = readRawJson(observation.roster.roster_path)
+        if (!idsFromRoster(roster.value).includes(officialId)) throw new Error("ID ausente no roster oficial")
+        const bundle = object(JSON.parse(sourceBytes.toString("utf8")))
+        if (!bundle || bundle.complete !== true) throw new Error("captura oficial incompleta")
+        const captured = reconstructFromRawPages(bundle, observation, officialId)
+        if (canonicalJson(rowsFromPayload(bundle, observation.source.rows_path)) !== canonicalJson(captured) || Number(bundle.total) !== captured.length) throw new Error("páginas brutas não fecham total da captura")
+        const rows = writerRows(captured, house, family, officialId)
+        sourceRows = rows.length
+        const profilePayload = readRawJson(observation.readback.profile_path)
+        const envelope = object(profilePayload.value)
+        const profile = object(envelope?.data) ?? envelope
+        if (!profile || profile.slug !== candidate.slug || profile.id !== candidate.candidato_id) throw new Error("identidade do snapshot público diverge")
+        const dto = rowsFromPayload(readRawJson(observation.readback.dto_path).value, observation.readback.dto_rows_path)
+        const voteCatalog = house === "camara" && family === "votos_candidato" ? verifyCamaraVoteCatalog(observation) : null
+        const otherHouse = house === "camara" ? "senado" : "camara"
+        const kept: Record<string, unknown>[] = []
+        for (const row of dto) {
+          const rowHouse = publicRowHouse(row, family)
+          if (rowHouse === otherHouse) { kept.push(row); continue }
+          if (rowHouse === null && house === "senado" && family === "gastos_parlamentares" && rows.some((official) => rowKey(official, family, house) === rowKey(row, family, house)) && candidate.ids[otherHouse] == null) {
+            // The Senado annual writer selects candidate/year regardless of
+            // fonte and updates that row. Câmara explicitly filters fonte=
+            // Camara, so a Casa-less row there would survive an insertion.
+            continue
+          }
+          if (rowHouse === null) {
+            // A writer upsert does not remove or identify a pre-existing row
+            // without Casa. Such rows require row-level review before apply.
+            throw new Error(`linha pública sem Casa/proveniência: ${rowKey(row, family, house)}`)
+          }
+          if (rowHouse === house && !rows.some((official) => {
+            try {
+              const comparable = voteCatalog ? attachVoteIdsToPublicRows([row], voteCatalog)[0]! : row
+              return rowKey(official, family, house) === rowKey(comparable, family, house)
+            } catch { return false }
+          })) throw new Error(`linha pública fora da fonte filtrada; revisar despublicação: ${rowKey(row, family, house)}`)
+        }
+        const written = rows.map((row) => {
+          if (family === "projetos_lei") {
+            const material = object(row.Materia) ?? row
+            const status = object(material.statusProposicao)?.descricaoSituacao ?? field(material, ["situacao", "DescricaoSituacao", "Situacao"])
+            return { casa: house, tipo: field(material, ["siglaTipo", "Sigla", "tipo"]), numero: String(field(material, ["numero", "Numero"]) ?? ""), ano: Number(field(material, ["ano", "Ano"])), ementa: field(material, ["ementa", "Ementa", "EmentaMateria"]) ?? "", situacao: house === "camara" ? status ?? null : null }
+          }
+          if (family === "gastos_parlamentares") {
+            const aggregate = materialRow(row, family, house)
+            return { casa: house, ano: Number(aggregate.year), total_gasto: Number(aggregate.amount), detalhamento: house === "camara" ? (row.categorias ?? []) : [] }
+          }
+          if (house === "camara") return { ...row, casa: house, voto: field(row, ["tipoVoto", "voto", "Voto"]), votacao: { casa: house, votacao_id_api: field(row, ["vote_id_api", "votacao_id_api"]) } }
+          return { ...row, casa: house, voto: field(row, ["voto", "Voto", "SiglaDescricaoVoto", "tipoVoto"]), votacao: { casa: house, proposicao_id: field(object(row.Materia) ?? {}, ["Codigo"]), data_votacao: field(object(row.SessaoPlenaria) ?? {}, ["DataSessao"]) } }
+        })
+        // The public projects endpoint exposes a 25-row preview, ordered by
+        // year and number; its full count is a separate database count.
+        const projectedRows = family === "projetos_lei"
+          ? [...kept, ...written].sort((a, b) => Number(b.ano) - Number(a.ano) || String(b.numero).localeCompare(String(a.numero))).slice(0, 25)
+          : [...kept, ...written]
+        const fieldName = family === "votos_candidato" ? "votos" : family
+        const projectedProfile = { ...profile, [fieldName]: projectedRows }
+        if (family === "projetos_lei") {
+          const otherCount = profile[otherHouse === "camara" ? "projetos_lei_camara_total" : "projetos_lei_senado_total"]
+          if (candidate.ids[otherHouse] != null && (typeof otherCount !== "number" || otherCount > kept.length)) throw new Error("prévia da outra Casa não basta para simular as 25 linhas")
+          projectedProfile[house === "camara" ? "projetos_lei_camara_total" : "projetos_lei_senado_total"] = written.length
+          projectedProfile.projetos_lei_total = written.length + (typeof otherCount === "number" ? otherCount : 0)
+        }
+        const peers = observations.filter((item) => item.family === family && candidate.ids[item.house] != null && normalizedId(candidate.ids[item.house] as number | string) === normalizedId(item.official_id))
+        const proof = makeReceipt(candidate, observation, current.generated_at, peers, new Map(), { profile: projectedProfile, rows: projectedRows })
+        projections.push({ ...base, ...evidence, estado: "safe_write", resultado_projetado: proof.resultado as "encontrado" | "vazio_confirmado", source_rows: sourceRows, projected_public_rows: projectedRows.length, motivo: "escrita auditada simulada e readback pós-escrita reconciliado" })
+      } catch (error) {
+        const reason = error instanceof Error ? error.message : String(error)
+        const review = /sem Casa|despublicação|identidade|ID ausente|misturam IDs|sem tupla legal/i.test(reason)
+        projections.push({ ...base, ...evidence, estado: review ? "review" : "unresolved", resultado_projetado: null, source_rows: sourceRows, projected_public_rows: null, motivo: reason })
+      }
+    }
+  }
+  return projections
 }
 
 /**
@@ -1204,6 +1332,9 @@ async function runCli(): Promise<void> {
   if (!input || !output) throw new Error("uso: --input=<manifest.json> --out=<arquivo-privado.json>")
   const { candidates, observations, pending } = loadLocalParliamentaryReceiptInputs(resolve(input))
   const result = collectParliamentaryFamilyReceipts(candidates, observations)
+  if (process.argv.includes("--apply-projection")) {
+    result.apply_projection = projectParliamentaryFamilyApply(candidates, observations, result)
+  }
   // --abertos grava junto os recibos `erro`/`indeterminado` das falhas; sem a
   // flag a saída continua só com as provas, como antes.
   const abertos = process.argv.includes("--abertos") ? openParliamentaryReceipts(result.failures, pending, result.generated_at) : []
