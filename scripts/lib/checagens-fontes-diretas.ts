@@ -7,13 +7,20 @@ export const AFP_CHECAMOS_BUSCA_URL = "https://checamos.afp.com/fact-checking-se
 const AFP_RESULTADOS_POR_PAGINA = 20
 
 function decodificarHtml(valor: string): string {
-  return valor.replace(/&amp;/g, "&").replace(/&quot;/g, "\"").replace(/&#39;|&apos;/g, "'").replace(/&nbsp;/g, " ")
-    .replace(/&#(\d+);/g, (_, n: string) => String.fromCodePoint(Number(n)))
-    .replace(/&#x([\da-f]+);/gi, (_, n: string) => String.fromCodePoint(Number.parseInt(n, 16)))
+  return valor.replace(/&(?:amp|quot|apos|nbsp|#39|#\d+|#x[\da-f]+);/gi, (entidade) => {
+    const codigo = entidade.toLowerCase()
+    if (codigo === "&amp;") return "&"
+    if (codigo === "&quot;") return "\""
+    if (codigo === "&apos;" || codigo === "&#39;") return "'"
+    if (codigo === "&nbsp;") return " "
+    const numero = codigo.startsWith("&#x") ? Number.parseInt(codigo.slice(3, -1), 16) : Number(codigo.slice(2, -1))
+    return Number.isInteger(numero) && numero >= 0 && numero <= 0x10ffff && !(numero >= 0xd800 && numero <= 0xdfff)
+      ? String.fromCodePoint(numero) : entidade
+  })
 }
 
 function textoHtml(valor: string): string {
-  return decodificarHtml(valor.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<style[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " "))
+  return decodificarHtml(valor.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, " ").replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, " ").replace(/<[^>]+>/g, " "))
     .replace(/\s+/g, " ").trim()
 }
 

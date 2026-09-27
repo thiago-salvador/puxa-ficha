@@ -30,6 +30,7 @@ import {
   parseBuscaSite,
   parseItensBusca,
   trechosAosFatos,
+  trechosDeHtml,
   trechosWpJson,
   textoCitaNomeInteiro,
   textoDaPagina,
@@ -687,6 +688,12 @@ describe("coleta nominal de checagens", () => {
     assert.equal(textoDaPagina("<html><body><main>Ronaldo Caiado</main></body></html>"), null, "sem article principal não confirma")
     const aninhado = textoDaPagina('<article class="relacionada">Ronaldo Caiado</article><article itemprop="articleBody">Início <article>vídeo</article> fim</article><article>Ronaldo Caiado</article>')
     assert.deepEqual(aninhado, ["inicio", "video", "fim"], "só o article principal, com os aninhados, um trecho por bloco")
+  })
+
+  it("remove script e style com caixa variada e espaço no fechamento", () => {
+    const trechos = trechosDeHtml("<p>Ronaldo Caiado</p><SCRIPT>Nome de outra pessoa</SCRIPT ><StYlE>falso</StYlE ><p>Checagem</p>")
+    assert.ok(trechos.some((trecho) => trecho.includes("ronaldo caiado")))
+    assert.ok(trechos.every((trecho) => !trecho.includes("outra pessoa") && !trecho.includes("falso")))
   })
 
   it("feed do g1: fim real é página curta sem nextPage; paginação estranha lança", () => {

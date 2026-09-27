@@ -949,7 +949,7 @@ export function textoDaPagina(html: string): string[] | null {
 /** Fragmento HTML em trechos normalizados, um por bloco: nome não casa atravessando parágrafos. */
 export function trechosDeHtml(fragmento: string): string[] {
   const texto = fragmento
-    .replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<style[\s\S]*?<\/style>/g, " ")
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, " ").replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, " ")
     .replace(/<\/?(?:p|h[1-6]|li|ul|ol|div|br|figcaption|figure|blockquote|section|article|header|footer|table|tr|td|th)\b[^>]*>/gi, "\u0001")
     .replace(/<[^>]+>/g, " ")
   return decodeEntities(texto).split("\u0001").map((trecho) => normalizarNome(trecho)).filter(Boolean)
