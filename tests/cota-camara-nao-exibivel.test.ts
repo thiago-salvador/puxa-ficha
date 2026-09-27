@@ -72,6 +72,40 @@ describe("cota parlamentar: o que pode ir ao ar", () => {
     assert.equal(gastoParlamentarExibivel("Cota Parlamentar/Camara dadosabertos", { ...valid, proveniencia: { ...valid.proveniencia, fonte_url: "https://example.test/despesas" } }), false)
   })
 
+  test("libera CSV oficial apenas com escopo anual completo, hash e totais coerentes", () => {
+    const years = Array.from({ length: 19 }, (_, index) => index + 2008)
+    const revisions = years.map((year) => ({
+      year,
+      url: `https://www.camara.leg.br/cotas/Ano-${year}.csv.zip`,
+      sha256: `${year}`.padStart(64, "a"),
+    }))
+    const valid = {
+      categorias: [{ categoria: "PASSAGENS", valor: 100 }],
+      proveniencia: {
+        tipo: "camara-cota-csv",
+        identity_field: "ideCadastro",
+        id_camara: 123,
+        ano: 2024,
+        source_rows: 2,
+        source_revisions: revisions,
+        scope_complete: true,
+        years,
+      },
+    }
+    assert.equal(gastoParlamentarExibivel("Camara", valid, 2024, 100), true)
+    assert.equal(gastoParlamentarExibivel("Camara", valid, 2023, 100), false)
+    assert.equal(gastoParlamentarExibivel("Camara", valid, 2024, 101), false)
+    const badRevision = revisions.map((revision, index) => index === 4 ? { ...revision, sha256: "bad" } : revision)
+    assert.equal(gastoParlamentarExibivel("Camara", {
+      ...valid,
+      proveniencia: { ...valid.proveniencia, source_revisions: badRevision },
+    }, 2024, 100), false)
+    assert.equal(gastoParlamentarExibivel("Camara", {
+      ...valid,
+      proveniencia: { ...valid.proveniencia, scope_complete: false },
+    }, 2024, 100), false)
+  })
+
   test("linha sem fonte declarada continua exibível, porque o bloqueio é nominal", () => {
     // O bloqueio é sobre a Câmara, não sobre ausência de rótulo. Linha sem fonte é outro
     // problema, de proveniência, e não deve ser silenciada por este filtro.

@@ -30,7 +30,7 @@ const API_PREDICADO = /\b(filtrarCoorteAtualizacao|aplicarCoorteAtualizacao|carr
 const MARCADOR = /coorte-atualizacao:\s*(aplica|isento\s*\(([^)]*)\))/
 // Menção ao nome da tabela que não é leitura: telemetria, mensagem de erro,
 // comparação de nome, lookup unitário por helper.
-const NAO_SELECAO = /tables_updated|\.includes\(|new Error\(|[=!]==\s*["']candidatos|readOne\(|readMany\(|readByFilters\(|assertPreflightNotTruncated|fonte_arquivo:|uso: |information_schema/
+const NAO_SELECAO = /tables_updated|tabela:\s*["'`]candidatos|\.includes\(|new Error\(|[=!]==\s*["']candidatos|readOne\(|readMany\(|readByFilters\(|assertPreflightNotTruncated|fonte_arquivo:|uso: |information_schema/
 const API_SELECAO_ISENTA: Record<string, Array<{ motivo: string; assinatura: RegExp }>> = {
   "src/app/api/alerts/me/route.ts": [{ assinatura: /\.select\("id, slug, nome_urna, partido_sigla, cargo_disputado"\)[\s\S]*?\.in\("id", candidateIds\)/, motivo: "lê metadados das fichas já vinculadas às assinaturas do usuário" }],
   "src/app/api/alerts/send-digest/route.ts": [
@@ -350,6 +350,11 @@ describe("coorte de atualização: guarda das rotinas", () => {
       "await supabase.from(\"candidatos\").update({ visto: true })",
     ].join("\n")
     assert.equal(sitiosDeSelecao("scripts/exemplo.ts", texto).length, 1)
+  })
+
+  it("não classifica o plano de um write dry-run como seleção de candidatos", () => {
+    const texto = `planejarEscrita({ fonte: "camara", tabela: "candidatos", operacao: "update", alvo: slug })`
+    assert.deepEqual(sitiosDeSelecao("scripts/lib/ingest-camara.ts", texto), [])
   })
 
   it("um single de outra consulta não dispensa o select em lote", () => {

@@ -68,13 +68,21 @@ requisição não mudam nada, porque a conexão não chega ao TLS.
    `unrs-resolver`, `fsevents`) não são necessários para o ingest; o modo
    `--verificar` prova que o grafo inteiro carrega sem eles;
 5. roda `./node_modules/.bin/tsx scripts/ingest-all.ts camara
-   --skip-camara-validated` com Node 24 (`/opt/homebrew/opt/node@24/bin`), o
-   mesmo modo incremental que o cron usava, sem `npx` baixar nada;
+   --skip-camara-validated` e, na mesma revisão fixada, roda
+   `camara-cotas ceaps-senado partidos-parlamentares` com Node 24
+   (`/opt/homebrew/opt/node@24/bin`), sem `npx` baixar nada; falha da
+   primeira chamada não impede a segunda;
 6. grava os recibos com `execucao = local:<host>:<AAAAMMDDTHHMMSSZ>`
    (`PF_COLETA_EXECUCAO`, validada em `scripts/lib/coleta-log.ts`);
 7. revalida o cache público com as mesmas tags do `ingest.yml`, se o arquivo
    de credenciais trouxer `PF_REVALIDATE_SECRET`;
-8. grava o log em `~/Library/Logs/puxa-ficha/ingest-camara-<timestamp>.log`
+8. relê os perfis públicos e as votações-chave, calcula a matriz atual e captura
+   as fontes parlamentares oficiais apenas dos slugs com células legislativas
+   abertas; monta recibos de cobertura e aplica somente os que passam pela
+   régua via `scripts/audit/apply-coverage-receipts.ts`, com readback e
+   backup privados em `~/Library/Logs/puxa-ficha/prova-parlamentar-<timestamp>/`.
+   Falha de leitura não vira vazio;
+9. grava o log em `~/Library/Logs/puxa-ficha/ingest-camara-<timestamp>.log`
    (diretório sempre em 700) e apaga o worktree, com sucesso ou erro.
 
 Uma trava com pid (`~/Library/Logs/puxa-ficha/.ingest-camara.lock/pid`) impede
@@ -118,7 +126,8 @@ Nenhum destes passos é feito por agente ou CI.
 3. **Verificar sem escrever no banco:**
    `bash ~/Library/Application\ Support/puxa-ficha/ingest-camara-local.sh <clone> --verificar`
    deve terminar com `VERIFICACAO_OK` no log.
-4. **Carregar o agente:**
+4. **Carregar o agente:** se uma versão anterior já estiver carregada,
+   `launchctl bootout gui/$(id -u)/br.com.puxaficha.ingest-camara`; depois,
    `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/br.com.puxaficha.ingest-camara.plist`.
 5. **Primeira rodada assistida (opcional):**
    `launchctl kickstart gui/$(id -u)/br.com.puxaficha.ingest-camara` e
@@ -131,6 +140,17 @@ O script instalado é uma cópia. Depois de mudar `scripts/camara-local/` na
 `main`, a rodada seguinte para com "difere ... reinstale" até o instalador
 rodar de novo; o launcher nunca roda uma versão diferente da `main`. O código
 do ingest vem sempre do SHA da `main` do momento da rodada.
+
+O ingest legislativo do Senado permanece no schedule do Actions. O run
+`36192874836` de 25/09/2026 leu a API do Senado a partir do runner hospedado;
+o CEAPS em CSV e o histórico partidário parlamentar são executados pelo agente
+local até existir prova específica desses endpoints em um run do Actions.
+
+O recibo `partidos-parlamentares` declara apenas o componente `parlamentar`.
+Para fechar `mudancas_partido`, a prova de cobertura exige também o componente
+`candidatura` de um coletor TSE separado, ambos com `candidate_slug`, escopo
+completo e URL/SHA-256 de cada revisão oficial. A régua compara as duas fontes
+com o mesmo readback público; um componente isolado permanece aberto.
 
 ## Endurecimento recomendado dos segredos (passo manual, ainda não aplicado)
 

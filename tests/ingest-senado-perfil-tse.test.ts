@@ -73,6 +73,10 @@ async function perfilGravado(
     }
     if (url.pathname.endsWith("/candidaturas_fase_2026_publico")) return response({ code: "PGRST205", message: "Could not find the table candidaturas_fase_2026_publico in the schema cache" }, 404)
     if (url.pathname.endsWith("/votacoes_chave")) return response([])
+    if (url.pathname.endsWith("/projetos_lei")) {
+      if (method !== "GET") throw new Error(`Unexpected projects write in Senate profile test: ${method}`)
+      return new Response("[]", { headers: { "Content-Type": "application/json", "Content-Range": "0-0/0" } })
+    }
     if (url.pathname.endsWith("/candidatos")) {
       if (method === "PATCH") {
         patch = JSON.parse(String(init?.body ?? "{}")) as Record<string, unknown>

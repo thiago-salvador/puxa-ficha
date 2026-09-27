@@ -9,7 +9,7 @@ import {
   buildCoverageMatrix,
   type CoverageProfile,
 } from "../scripts/audit/audit-cobertura-fichas"
-import { publicFamilyPayloadSha256 } from "../scripts/audit/lib/coverage-source-proof"
+import { publicFamilyHouseRows, publicFamilyPayloadSha256, publicHouseSubsetSha256 } from "../scripts/audit/lib/coverage-source-proof"
 
 function profile(overrides: Partial<CoverageProfile> = {}): CoverageProfile {
   return {
@@ -80,7 +80,9 @@ describe("matriz de cobertura das fichas", () => {
   })
 
   it("só fecha família parlamentar quando a fonte por casa reconcilia o DTO", () => {
-    const candidate = profile({ projetos_lei: [{ id: 12 }] })
+    const candidate = profile({ projetos_lei: [{ id: 12, casa: "camara" }], projetos_lei_total: 1, projetos_lei_camara_total: 1, projetos_lei_senado_total: 0 })
+    const partition = publicFamilyHouseRows(candidate, "projetos_lei")
+    assert.ok(partition)
     const url = "https://dadosabertos.camara.leg.br/api/v2/deputados/12345/proposicoes"
     const proof = {
       family: "projetos_lei", method: "official-source-to-public-readback",
@@ -88,6 +90,7 @@ describe("matriz de cobertura das fichas", () => {
       public_payload_sha256: publicFamilyPayloadSha256(candidate, "projetos_lei"),
       source_rows: 1, public_rows: 1, matched_rows: 1, unmatched_rows: 0, scope_complete: true,
       identity: { slug: "ana-exemplo", candidate_id: "candidate-1", source_id: "12345", house: "camara", roster_url: "https://dadosabertos.camara.leg.br/api/v2/deputados", roster_sha256: "c".repeat(64) },
+      house_partition: { casa: "camara", public_rows: 1, public_subset_sha256: publicHouseSubsetSha256(partition.camara ?? []), public_total_rows: 1, source_rows: 1, matched_rows: 1, unmatched_rows: 0 },
     }
     const row = {
       fonte: "camara-proposicoes", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1",
