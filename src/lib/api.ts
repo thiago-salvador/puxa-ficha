@@ -82,7 +82,11 @@ const IS_DEV = process.env.NODE_ENV === "development"
 const SUPABASE_REQUIRED_MESSAGE =
   "Configure SUPABASE_URL (sem placeholder) e SUPABASE_ANON_KEY em .env.local. O site não exibe dados mock."
 const CANDIDATO_PUBLIC_RELATION = "candidatos_publico"
-const APP_DATA_REVALIDATE_SECONDS = 3600
+// 12 h: o frescor aceito para a ficha pública (decisão de 27/09/2026). Escrita
+// pelo pipeline invalida na hora via /api/revalidate; o resto espera o TTL ou o
+// cron de 12 h em /api/internal/revalidate-public-cache. Mudança no formato de um
+// payload em cache continua exigindo bump da chave, agora com janela de 12 h.
+const APP_DATA_REVALIDATE_SECONDS = 43200
 // The cohort flag is part of every public cache identity. This prevents a
 // Senate-enabled local cache from surviving a closed-flag render.
 const SENADO_CACHE_VARIANT = isSenadoEnabled() ? "senado-on" : "senado-off"

@@ -12,11 +12,11 @@ function job(name: string, nextName?: string): string {
   return workflow.slice(start, end)
 }
 
-test("workflow publica por padrão no cron e permite diagnóstico manual", () => {
+test("workflow roda só à mão e publica por padrão", () => {
   assert.match(workflow, /^\s*workflow_dispatch:/m)
-  assert.match(workflow, /publish:\n[\s\S]*?type: boolean\n\s+default: true[\s\S]*?^  schedule:/m)
-  assert.equal((workflow.match(/^  schedule:/gm) ?? []).length, 1)
-  assert.match(workflow, /cron:\s*"17 10 \* \* \*"/)
+  assert.match(workflow, /publish:\n[\s\S]*?type: boolean\n\s+default: true/)
+  assert.equal((workflow.match(/^  schedule:/gm) ?? []).length, 0)
+  assert.doesNotMatch(workflow, /^\s+- cron:/m)
   assert.match(workflow, /github\.event_name == 'schedule' \|\| inputs\.publish == true/)
   assert.match(workflow, /concurrency:\n\s+group:\s*pesquisas-monitoramento-/)
   assert.match(workflow, /cancel-in-progress:\s*false/)
