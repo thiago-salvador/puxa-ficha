@@ -31,6 +31,7 @@ import { sanitizePublicText } from "@/lib/public-text"
 import { formatProcessSummaryLabel } from "@/lib/ui-labels"
 import { prepareHistoricoPoliticoPublicDisplayList } from "@/lib/trajetoria-public-display"
 import { normalizeFotoCredito } from "@/lib/foto-credito"
+import { nextPublicNewsCursor } from "@/lib/news/news-cursor"
 import {
   maskDocumentLikeSequences,
   sanitizeFontePublica,
@@ -855,6 +856,9 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
     gastos_executivo: (ficha.gastos_executivo ?? []).map(publicGastosExecutivo),
     sancoes_administrativas: (ficha.sancoes_administrativas ?? []).map(publicSancao),
     noticias: (ficha.noticias ?? []).map(publicNoticia),
+    // A prévia sai com IDs compactos, então a continuação vem pronta daqui,
+    // montada com o ID real da última notícia exibida.
+    noticias_cursor: nextPublicNewsCursor(ficha.noticias ?? []),
     indicadores_estaduais: (ficha.indicadores_estaduais ?? []).map(publicIndicador),
     total_processos: processosPublicos.length,
     processos_criminais: processosPublicos.filter(

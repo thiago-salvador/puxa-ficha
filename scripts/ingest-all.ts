@@ -140,7 +140,12 @@ export const INGEST_TASKS: IngestTask[] = [
     failureLabel: "Wiki Historico",
     run: enrichWikiHistorico,
   },
-  { source: "tcu", heading: "--- TCU (Inabilitados + CADIRREG) ---", failureLabel: "TCU", run: ingestTCU },
+  {
+    source: "tcu",
+    heading: "--- TCU (Inabilitados + CADIRREG) ---",
+    failureLabel: "TCU",
+    run: () => ingestTCU({ targetSlugs: cli.targetSlugs }),
+  },
   {
     source: "sancoes",
     fonteColeta: "transparencia-sanctions",

@@ -6,6 +6,7 @@ import liveRoster from "../QA/evidencias/2026-09-22-checagens-atribuidas/inventa
 import {
   parseAttributedFactCheck,
   selectApprovedAttributedFactChecks,
+  selectPublishableAttributedFactChecks,
   validateAttributedFactCheckDataset,
   type AttributedFactCheck,
   type CandidateRosterIdentity,
@@ -260,4 +261,35 @@ test("falha fechado quando o vínculo troca candidato, identidade ou aprovação
   }
   invalidApproval.relatedChecks[0].review.approved = false
   assert.equal(parseAttributedFactCheck(invalidApproval), null)
+})
+
+test("registro inválido cai sozinho sem esvaziar as demais checagens publicadas", () => {
+  const valid = baseCheck()
+  const otherValid = { ...baseCheck(), id: "lupa-lula-002" }
+  const invalid = { ...baseCheck(), id: "lupa-lula-003", event: { ...baseCheck().event, contextReviewed: false } }
+  const identity = { candidate_id: "cand-lula", candidate_slug: "lula", office: "Presidente" as const, uf: null }
+  assert.ok(validateAttributedFactCheckDataset([valid, invalid, otherValid]).length > 0)
+  assert.deepEqual(
+    selectPublishableAttributedFactChecks([valid, invalid, otherValid], identity).map((record) => record.id).sort(),
+    ["lupa-lula-001", "lupa-lula-002"],
+  )
+})
+
+test("IDs duplicados e vínculos para registro removido também saem do recorte publicado", () => {
+  const first = baseCheck()
+  const duplicated = { ...baseCheck(), id: "lupa-lula-002" }
+  const duplicatedAgain = { ...baseCheck(), id: "lupa-lula-002" }
+  const linked = { ...baseCheck(), id: "lupa-lula-003" }
+  linked.relatedChecks = [{
+    checkId: "lupa-lula-002",
+    relationship: "same_occurrence",
+    rationale: "As duas avaliações tratam da mesma fala e foram revisadas juntas.",
+    review: linked.review,
+  }]
+  const identity = { candidate_id: "cand-lula", candidate_slug: "lula", office: "Presidente" as const, uf: null }
+  assert.deepEqual(
+    selectPublishableAttributedFactChecks([first, duplicated, duplicatedAgain, linked], identity).map((record) => record.id),
+    ["lupa-lula-001"],
+  )
+  assert.deepEqual(selectPublishableAttributedFactChecks("não é lista", identity), [])
 })
