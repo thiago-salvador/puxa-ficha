@@ -45,11 +45,9 @@ test("--retomar recusa recibos internos sem a política atual", (t) => {
   const temp = mkdtempSync(join(tmpdir(), "checagens-policy-v1-"))
   t.after(() => rmSync(temp, { recursive: true, force: true }))
   const recibos = join(temp, "recibos.json")
-  const roster = join(temp, "roster.json")
   writeFileSync(recibos, JSON.stringify({ schema_version: "checagens-recibos-v1", receipts: [reciboAntigo] }))
-  writeFileSync(roster, "[]\n")
 
-  const resultado = executarNoDiretorio(temp, ["--roster", roster, "--retomar", recibos, "--out", join(temp, "out")])
+  const resultado = executarNoDiretorio(temp, ["--retomar", recibos, "--out", join(temp, "out")])
 
   assert.equal(resultado.status, 2)
   assert.match(resultado.stderr, /Política de recibos incompatível/)

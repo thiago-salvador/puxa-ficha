@@ -162,18 +162,19 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
     const salvar = valores.get("salvar-recibos")
     return registrarRecibosExistentes(resolve(deRecibos), valores.get("catalogo"), flags.has("gravar-log"), rosterDaRodada ? resolve(rosterDaRodada) : undefined, salvar ? resolve(salvar) : undefined)
   }
+  const retomar = valores.get("retomar")
+  // Política e cadastro da rodada anterior são validados antes de qualquer
+  // leitura do Supabase; recibo incompatível não depende da rede para falhar.
+  const rosterAnterior = valores.get("roster-anterior")
+  const anteriores = retomar
+    ? reaplicarHomonimos(lerRecibos(resolve(retomar)), rosterAnterior ? resolve(rosterAnterior) : resolve(dirname(resolve(retomar)), "roster.json"))
+    : []
   const rosterPath = valores.get("roster")
   // Cadastro completo: fonte dos grupos de homônimos e do roster.json da rodada.
   const rosterCompleto = (rosterPath
     ? JSON.parse(readFileSync(resolve(rosterPath), "utf8"))
     : await carregarCandidatos()) as CandidatoChecagem[]
   let roster = rosterCompleto
-  const retomar = valores.get("retomar")
-  // Recibos anteriores passam pela regra de homônimo com o cadastro da rodada deles.
-  const rosterAnterior = valores.get("roster-anterior")
-  const anteriores = retomar
-    ? reaplicarHomonimos(lerRecibos(resolve(retomar)), rosterAnterior ? resolve(rosterAnterior) : resolve(dirname(resolve(retomar)), "roster.json"))
-    : []
   if (retomar) {
     roster = candidaturasParaRetomada(roster, anteriores)
   }
