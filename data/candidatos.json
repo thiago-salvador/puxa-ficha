@@ -7496,7 +7496,7 @@
     "cargo_disputado": "Senador",
     "estado": "RR",
     "ids": {
-      "camara": null,
+      "camara": 204444,
       "senado": null,
       "tse_sq_candidato": {
         "2026": "230002534806"
