@@ -81,7 +81,12 @@ const ARC_PAGINA = (() => {
 
 /** Piso de fixture: as páginas reais recortadas têm 3 itens recentes. */
 const PISOS_TESTE = { "fato-ou-fake": { itens: 1, maisAntigoAte: "2030-12-31" }, "estadao-verifica": { itens: 1, maisAntigoAte: "2030-12-31" } }
-const coletar = (opcoes: Parameters<typeof coletarChecagens>[0]) => coletarChecagens({ pisos: PISOS_TESTE, ...opcoes })
+const coletar = (opcoes: Parameters<typeof coletarChecagens>[0]) => coletarChecagens({
+  pisos: PISOS_TESTE, julgarIdentidade: async () => 0.9, ...opcoes,
+  fetchText: (url) => url.includes("/wp-json/wp/v2/search") && new URL(url).searchParams.get("search") === "Lula"
+    ? Promise.resolve({ status: 200, body: '[{"title":"Lula erra em discurso","url":"https://www.agencialupa.org/checagem/lula"}]' })
+    : opcoes.fetchText(url),
+})
 
 /** Vias diretas vazias mas válidas: sonda do Aos Fatos acha resultado, arquivos têm itens. */
 function rotaDireta(url: string): { status: number; body: string } | null {
@@ -217,9 +222,9 @@ describe("coleta nominal de checagens", () => {
     assert.equal(recibo.result, "encontrado")
     assert.deepEqual(recibo.leads.map((lead) => lead.link), ["https://www.agencialupa.org/checagem/2026/04/07/caiado"])
     assert.equal(recibo.agencias.lupa.transporte, "wp-rest")
-    assert.equal(recibo.agencias.comprova.transporte, "google-news")
-    assert.match(recibo.agencias.comprova.falhas?.[0] ?? "", /busca nativa: HTTP 403/)
-    assert.equal(recibo.agencias["aos-fatos"].transporte, "google-news")
+    assert.equal(recibo.agencias.comprova.status, "erro", "RSS vazio não fecha busca WordPress que falhou")
+    assert.match(recibo.agencias.comprova.erro ?? "", /busca nativa: HTTP 403/)
+    assert.equal(recibo.agencias["aos-fatos"].status, "erro", "sonda sem prova não confirma vazio")
     assert.ok(pedidos.some((url) => url.startsWith("https://news.google.com/")))
     await assert.rejects(
       coletar({ roster: [{ ...caiado, cargo_disputado: "Senador" as never }], fetchText: async () => ({ status: 200, body: rss([]) }), sleep: async () => {} }),
@@ -277,7 +282,7 @@ describe("coleta nominal de checagens", () => {
       fetchText: async (url) => {
         if (url.includes("agencialupa.org/wp-json")) return { status: 200, body: JSON.stringify(titulos.map((title, index) => ({ title, url: `https://www.agencialupa.org/checagem/${index}` }))) }
         if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
-        return { status: 200, body: rss([]) }
+        return rotaDireta(url) ?? { status: 200, body: rss([]) }
       },
     })
     const [sp, ce] = recibos
@@ -506,7 +511,7 @@ describe("coleta nominal de checagens", () => {
     assert.equal(rc.agencias["afp-checamos"].transporte, "afp-busca")
   })
 
-  it("arquivo quebrado ou sonda sem resultado: cai para o Google com a falha registrada, e sem Google vira erro", async () => {
+  it("arquivo quebrado ou sonda sem resultado não confirma vazio com RSS vazio", async () => {
     const fetchText = async (url: string) => {
       if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
       if (url.startsWith("https://www.aosfatos.org/")) return { status: 200, body: AOS_VAZIA }
@@ -514,10 +519,9 @@ describe("coleta nominal de checagens", () => {
       return rotaDireta(url) ?? { status: 200, body: rss([]) }
     }
     const [comGoogle] = await coletar({ roster: [caiado], sleep: async () => {}, fetchText })
-    assert.equal(comGoogle.result, "vazio_confirmado")
-    assert.equal(comGoogle.agencias["fato-ou-fake"].transporte, "google-news")
-    assert.match(comGoogle.agencias["fato-ou-fake"].falhas?.[0] ?? "", /arquivo da seção: arquivo, página 2: HTTP 500/)
-    assert.match(comGoogle.agencias["aos-fatos"].falhas?.[0] ?? "", /sonda "Lula" sem resultado/)
+    assert.equal(comGoogle.result, "erro")
+    assert.match(comGoogle.agencias["fato-ou-fake"].erro ?? "", /arquivo da seção: arquivo, página 2: HTTP 500/)
+    assert.match(comGoogle.agencias["aos-fatos"].erro ?? "", /sonda "Lula" sem resultado/)
     const [semGoogle] = await coletar({ roster: [caiado], semGoogle: true, sleep: async () => {}, fetchText })
     assert.equal(semGoogle.result, "erro", "arquivo incompleto nunca confirma ausência")
     assert.match(semGoogle.agencias["fato-ou-fake"].erro ?? "", /página 2: HTTP 500; google-news: via desligada/)
@@ -589,7 +593,8 @@ describe("coleta nominal de checagens", () => {
         return falhaUolAfp(url) ?? rotaDireta(url) ?? { status: 200, body: rss([]) }
       },
     })
-    assert.deepEqual(recibo.leads.map((lead) => lead.link), ["https://www.estadao.com.br/estadao-verifica/corpo/"], "só a história com o nome inteiro dentro de um parágrafo")
+    assert.deepEqual(recibo.leads.map((lead) => lead.link), [], "primeiro nome isolado no título não autoriza publicação")
+    assert.deepEqual(recibo.mesa?.map((lead) => lead.link), ["https://www.estadao.com.br/estadao-verifica/corpo/"], "só a história com o nome inteiro dentro de um parágrafo vai à Mesa")
     assert.equal(nomeColadoEmOutraPessoa("Governador Caiado erra sobre segurança", caiado), false, "cargo antes do nome não é outra pessoa")
     const braide: CandidatoChecagem = { ...caiado, nome_urna: "Eduardo Braide", nome_completo: "Eduardo Salim Braide" }
     assert.equal(nomeColadoEmOutraPessoa("São Luís: Braide erra ao falar sobre poluição em praias", braide), false, "pontuação separa: título real do dry-run de 26/09")
@@ -659,7 +664,7 @@ describe("coleta nominal de checagens", () => {
     assert.equal(consolidarCatalogoRecibos(null, [recibo], now).receipts.length, 0)
   })
 
-  it("regra 3 mantém associações atribuídas e barra passagem, inclusive variantes", () => {
+  it("regra 3: sete decisões editoriais e três variantes adicionais de Paes", () => {
     for (const titulo of [
       "Vídeo de mulher rasgando papel atrás de Trump não tem relação com Lula",
       "Jornais não ocultaram tatuagem de Lula em caso de CAC que matou a família",
@@ -674,7 +679,14 @@ describe("coleta nominal de checagens", () => {
       "Não é sobrinha de Eduardo Paes mulher que zombou de tour na Rocinha",
       "Jovem que chamou passeio na Rocinha de ‘safári’ não é sobrinha de Eduardo Paes",
       "Influenciadora que chamou passeio na Rocinha de “safári” não é sobrinha de Eduardo Paes",
+      "Mulher que zomba de ‘safári’ na Rocinha ‘para conhecer pobre’ não é sobrinha de Paes",
     ]) assert.equal(leadPermitidoRegra3(titulo, "eduardo-paes"), false, titulo)
+    assert.equal(leadPermitidoRegra3("Homem atacado ‘com ovos’ em vídeo não é João Campos, prefeito de Recife", "joao-campos"), true)
+    for (const titulo of [
+      "Não é primo de Tarcísio homem preso com dinheiro falso",
+      "Não tem parentesco com Tarcísio mulher que publicou vídeo",
+      "Sem parentesco com Tarcísio, autor do áudio usou o mesmo sobrenome",
+    ]) assert.equal(leadPermitidoRegra3(titulo, "tarcisio-gov-sp"), false, titulo)
   })
 
   it("texto da matéria do g1 (HTML real) fica restrito ao <article> e o Arc traz os parágrafos", () => {
@@ -849,13 +861,12 @@ describe("coleta nominal de checagens", () => {
         return falhaUolAfp(url) ?? rotaDireta(url) ?? { status: 200, body: rss([]) }
       },
     })
-    assert.equal(soPendente.result, "nao_confirmado", "sem lead confirmado e com título parcial pendente, não afirma ausência")
-    assert.equal(entradaColetaDoRecibo(soPendente).resultado, "indeterminado")
+    assert.equal(soPendente.result, "erro", "agência que falhou com RSS vazio impede afirmar ausência")
+    assert.equal(entradaColetaDoRecibo(soPendente).resultado, "erro")
     assert.match(entradaColetaDoRecibo(soPendente).detalhe ?? "", /afp-checamos=0\/1\(google-news pendentes 1\)/)
-    const anterior = consolidarCatalogoRecibos(null, [montarRecibo(ieri, okEmTodas({ lupa: 1 }), new Date("2026-09-20T00:00:00Z"))], now)
-    assert.equal(consolidarCatalogoRecibos(anterior, [soPendente], now).receipts.length, 0, "nao_confirmado tira o recibo do catálogo público")
-    assert.equal(resumirColeta([soPendente]).nao_confirmado, 1)
-    assert.equal(aplicarRegraHomonimo(soPendente, ieri, [ieri, { ...ieri, id: "outro", slug: "ieri-braga-2" }]).result, "nao_confirmado", "regra de homônimo preserva o pendente")
+    assert.equal(consolidarCatalogoRecibos(null, [soPendente], now).receipts.length, 0, "erro não entra no catálogo público")
+    assert.equal(resumirColeta([soPendente]).erro, 1)
+    assert.equal(aplicarRegraHomonimo(soPendente, ieri, [ieri, { ...ieri, id: "outro", slug: "ieri-braga-2" }]).result, "erro", "regra de homônimo preserva o erro")
   })
 
   it("disjuntor por agência: via direta bloqueada para de cair no Google depois de 3 falhas seguidas", async () => {
@@ -870,8 +881,8 @@ describe("coleta nominal de checagens", () => {
         return rotaDireta(url) ?? { status: 200, body: rss([]) }
       },
     })
-    assert.equal(googleAos.length, 2, "duas quedas para o Google; na terceira falha o disjuntor abre")
-    assert.deepEqual(recibos.map((recibo) => recibo.agencias["aos-fatos"].status), ["ok", "ok", "erro", "erro"])
+    assert.equal(googleAos.length, 0, "sonda sem resposta não é substituída por RSS")
+    assert.deepEqual(recibos.map((recibo) => recibo.agencias["aos-fatos"].status), ["erro", "erro", "erro", "erro"])
     assert.match(recibos[3].agencias["aos-fatos"].erro ?? "", /via direta com disjuntor aberto após 3 falhas seguidas \(busca do site: sonda: HTTP 403\)/)
     assert.equal(recibos[3].agencias["uol-confere"].status, "ok", "UOL segue pela rota direta")
   })

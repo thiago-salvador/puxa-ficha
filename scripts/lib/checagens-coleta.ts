@@ -21,6 +21,7 @@ import { stripAccents } from "../../src/lib/strip-accents"
 import { isValidGoogleNewsRss } from "../../src/lib/news/google-news"
 import { newsTitleMentionsCandidate } from "../../src/lib/news/name-match"
 import type { EntradaColeta } from "./coleta-log"
+import { decidirPublicacaoChecagem } from "../checagens-jev/decisao"
 import { parseArquivoUol, parseBuscaAfp, trechosAfp, trechosUol, urlArquivoUol, urlBuscaAfp, urlProximaUol } from "./checagens-fontes-diretas"
 
 export const FONTE_CHECAGENS_AGENCIAS = "checagens-agencias"
@@ -76,13 +77,14 @@ export interface PisoArquivo {
 }
 
 export type TransporteBusca = "wp-rest" | "busca-site" | "arquivo-secao" | "afp-busca" | "uol-arquivo" | "google-news"
-/** Páginas de 100 resultados lidas na busca nativa. */
+/** Limite operacional: atingir o teto sem prova do fim marca a agência como parcial. */
 export const PAGINAS_WP = 3
-/** Páginas de 12 resultados lidas na busca do site (108 itens, perto do teto do Google News). */
+/** Limite operacional: a próxima página visível no teto marca a agência como parcial. */
 export const PAGINAS_BUSCA_SITE = 9
 export const ITENS_POR_PAGINA_BUSCA_SITE = 12
 /** Nome que sempre tem checagem: se a sonda não acha nada, o leitor da página quebrou. */
 export const SONDA_BUSCA_SITE = "Lula"
+export const SONDA_BUSCA_WP = "Lula"
 /** Teto de páginas do arquivo, contra paginação que nunca termina. */
 export const MAX_PAGINAS_ARQUIVO = 2_000
 export const ITENS_POR_PAGINA_ARC = 100
@@ -183,8 +185,13 @@ export interface LeadChecagem {
   trecho_confirmacao?: string
 }
 
+export interface LeadMesaChecagem extends LeadChecagem {
+  motivo: "regra3" | "identidade_jev"
+  noul_identidade: number | null
+}
+
 export type EstadoAgencia =
-  | { status: "ok"; itens: number; leads: LeadChecagem[]; transporte?: TransporteBusca; falhas?: string[]; desde?: string; pendentes?: number; descartados?: number }
+  | { status: "ok"; itens: number; leads: LeadChecagem[]; mesa?: LeadMesaChecagem[]; transporte?: TransporteBusca; falhas?: string[]; desde?: string; pendentes?: number; descartados?: number }
   | { status: "erro"; erro: string }
 
 /**
@@ -210,6 +217,8 @@ export interface ReciboChecagem {
   searched_at: string
   result: ResultadoRecibo
   leads: LeadChecagem[]
+  /** Tabela privada de revisão: candidatos a lead sem decisão publicável. */
+  mesa?: LeadMesaChecagem[]
   /** `desde`: data (AAAA-MM-DD) do item mais antigo do arquivo de seção; antes dela a busca não cobre. */
   /** `pendentes`: títulos com só parte do nome sem corpo para conferir; `descartados`: parte do nome que o corpo não confirmou ou colada a outra pessoa. */
   agencias: Record<string, { status: "ok" | "erro"; itens?: number; leads?: number; erro?: string; transporte?: TransporteBusca; falhas?: string[]; desde?: string; pendentes?: number; descartados?: number }>
@@ -562,6 +571,7 @@ export function leadsDaResposta(itens: readonly ItemBusca[], candidato: Candidat
 export function montarRecibo(candidato: CandidatoChecagem, estados: Record<string, EstadoAgencia>, searchedAt: Date): ReciboChecagem {
   const agencias: ReciboChecagem["agencias"] = {}
   const leads: LeadChecagem[] = []
+  const mesa: LeadMesaChecagem[] = []
   let erro = false
   let pendentes = false
   let descartados = false
@@ -588,6 +598,7 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
     if ((estado.descartados ?? 0) > 0) descartados = true
     if (estado.pendentes) pendentes = true
     leads.push(...estado.leads)
+    mesa.push(...(estado.mesa ?? []))
   }
   return {
     schema_version: SCHEMA_RECIBOS_CHECAGENS,
@@ -602,6 +613,7 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
     // Título parcial sem corpo para conferir impede afirmar ausência.
     result: leads.length > 0 ? "encontrado" : erro ? "erro" : pendentes || descartados ? "nao_confirmado" : "vazio_confirmado",
     leads,
+    ...(mesa.length ? { mesa } : {}),
     agencias,
     escopo: descricaoEscopo(),
   }
@@ -723,7 +735,9 @@ export interface OpcoesColeta {
    * vale `roster` (recorte nenhum).
    */
   rosterCompleto?: readonly CandidatoChecagem[]
-  fetchText: (url: string) => Promise<{ status: number; body: string }>
+  fetchText: (url: string) => Promise<{ status: number; body: string; headers?: Record<string, string> }>
+  /** Probabilidade Jev da identidade; sem sinal ou falha, o lead vai à Mesa. */
+  julgarIdentidade?: (item: ItemBusca, candidato: CandidatoChecagem) => Promise<number | null>
   now?: () => Date
   /** Pausa entre consultas do mesmo trabalhador, para não martelar a fonte. */
   pausaMs?: number
@@ -759,6 +773,7 @@ export interface DisjuntorGoogle {
 }
 
 type OpcoesConsulta = Required<Pick<OpcoesColeta, "fetchText" | "tentativas" | "sleep" | "pausaMs" | "esperaBloqueioMs" | "semGoogle" | "pararNoBloqueio" | "limiteBloqueiosSeguidos" | "orcamentoEsperaMs">> & {
+  julgarIdentidade?: OpcoesColeta["julgarIdentidade"]
   disjuntor: DisjuntorGoogle
   /** Arquivo de cada agência, lido uma vez por rodada e compartilhado entre trabalhadores. */
   arquivos: Map<string, Promise<ArquivoLido>>
@@ -802,7 +817,7 @@ export function comIntervaloPorHost(
 async function pedirComTentativas(url: string, opcoes: OpcoesConsulta, aceitar: (status: number) => boolean = () => false): Promise<{ status: number; body: string } | { erro: string }> {
   let ultimoErro = "sem resposta"
   for (let tentativa = 0; tentativa < opcoes.tentativas; tentativa++) {
-    if (tentativa > 0) await opcoes.sleep(opcoes.pausaMs * 4 * tentativa)
+    if (tentativa > 0) await opcoes.sleep(Math.max(100, opcoes.pausaMs) * 4 * tentativa)
     try {
       const resposta = await opcoes.fetchText(url)
       if ((resposta.status >= 200 && resposta.status < 300) || aceitar(resposta.status)) return resposta
@@ -841,17 +856,19 @@ async function consultarBuscaSite(candidato: CandidatoChecagem, agencia: Agencia
     return { status: "erro", erro: `busca do site: ${falhaSonda}` }
   }
   const itens: ItemBusca[] = []
+  let fechou = false
   for (let pagina = 1; pagina <= PAGINAS_BUSCA_SITE; pagina++) {
     if (pagina > 1) await opcoes.sleep(opcoes.pausaMs)
     const lida = await lerPaginaBuscaSite(candidato.nome_urna, agencia, pagina, opcoes)
     if ("erro" in lida) return { status: "erro", erro: `busca do site: ${lida.erro}` }
-    if (lida.fim) break
+    if (lida.fim) { fechou = true; break }
     // Página além da última responde 404: 200 sem cartões depois da primeira é bloqueio ou template quebrado.
-    if (pagina > 1 && lida.itens.length === 0) return { status: "erro", erro: `busca do site: página ${pagina} sem cartões (fim real responde 404)` }
+    if (pagina > 1 && lida.itens.length === 0) return { status: "erro", erro: `busca do site: parcial, página ${pagina} sem cartões (fim real responde 404)` }
     itens.push(...lida.itens)
     // Página curta só encerra sem link para a seguinte; página cheia segue até o teto.
-    if (lida.itens.length < ITENS_POR_PAGINA_BUSCA_SITE && (lida.ultimaPagina === null || lida.ultimaPagina <= pagina)) break
+    if (lida.itens.length < ITENS_POR_PAGINA_BUSCA_SITE && (lida.ultimaPagina === null || lida.ultimaPagina <= pagina)) { fechou = true; break }
   }
+  if (!fechou) return { status: "erro", erro: `busca do site: parcial após ${PAGINAS_BUSCA_SITE} páginas; fim não comprovado` }
   if (itens.length === 0) {
     // Zero cartões pode ser bloqueio ou template quebrado no meio da rodada: sonda de novo antes de aceitar o vazio.
     const agora = await sondarBuscaSite(agencia, opcoes)
@@ -983,18 +1000,37 @@ function trechoComNomeInteiro(trechos: readonly string[], candidato: CandidatoCh
   return trechos.find((trecho) => textoCitaNomeInteiro(trecho, candidato)) ?? null
 }
 
-/** Decisões editoriais explícitas: o boato não atribuiu nada a esta pessoa. */
+/**
+ * Regra 3: em título que desfaz uma associação, só passa se o próprio boato
+ * atribuiu ao candidato fala, ato, propriedade, aparição ou vínculo direto ao
+ * caso. Ação de terceiro e parentesco negado são incertos e vão à Mesa. Este
+ * filtro é conservador; texto não resolvido nunca entra na contagem pública.
+ */
 export function leadPermitidoRegra3(titulo: string, slug: string): boolean {
   const texto = normalizarNome(titulo)
-  if (slug === "lula") {
-    return ![
-      "posts fazem satira com fato de personagem do filme truque de mestre 2 se chamar lula",
-      "supla nao falava de lula ao dizer que nao tem problema roubar com amor",
-      "video de abordagem da pm a torcedores do sport nao tem relacao com lula",
-    ].includes(texto)
-  }
-  if (slug === "eduardo-paes") return !(/\bsobrinha\b/.test(texto) && /\bpaes\b/.test(texto) && /\b(rocinha|safari)\b/.test(texto))
-  return true
+  const nome = normalizarNome(slug.replace(/-gov-[a-z]{2}$|-pres-[a-z]{2}$/, "").replace(/-/g, " "))
+  // Sobrenome isolado pode ser outra pessoa da família; sem nome inteiro, Mesa.
+  const x = nome.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+  const tem = (padrao: string) => new RegExp(padrao).test(texto)
+  const parentesco = "(?:filh[oa]|sobrinh[oa]|irma[oa]|pai|mae|net[oa]|av[oa]|ti[oa]|prim[oa]|espos[oa]|marido|mulher|genro|nora|cunhad[oa]|entead[oa]|parente)"
+  if (tem(`\\bnao e ${parentesco} de (?:[a-z]+ )?${x}\\b`)) return false
+  if (tem(`\\b(?:nao tem|sem) parentesco com (?:[a-z]+ )?${x}\\b`)) return false
+  const desmente = /\bnao\b|\be falso que\b|\bsatira\b|\bsem parentesco\b/.test(texto)
+  if (!desmente) return true
+  // O sujeito da alegação é o candidato, mesmo quando a conclusão a nega.
+  if (tem(`\\b${x}\\s+nao\\s+(?:disse|falou|afirmou|e|tem|fez|falava)\\b`)) return true
+  if (tem(`\\b(?:e falso que|nao e verdade que|post dizendo que) (?:[a-z]+ )?${x}\\b`)) return true
+  if (tem(`\\b(?:video|foto|imagem|post) nao mostra ${x}\\b`)) return true
+  if (tem(`\\bnao e ${x}\\b`)) return true
+  if (tem(`\\bnao e de (?:[a-z]+ )?${x}\\b`)) return true
+  if (tem(`\\b(?:vice de|liga [a-z ]{1,80} a|apoio [a-z ]{1,80} a) ${x}\\b`)) return true
+  if (tem(`\\bnao e iniciativa da gestao ${x}\\b`)) return true
+  if (tem(`\\b(?:tatuagem|assinatura|documento) de ${x}\\b.*\\bcaso\\b`)) return true
+  if (tem(`\\b(?:filh[oa]|sobrinh[oa]|irma[oa]|pai|mae) de ${x} no caso\\b`)) return true
+  // O título explicita que o vídeo foi atribuído ao candidato por associação
+  // com outra figura na cena; sem essa ligação textual a rota é Mesa.
+  if (tem(`\\b(?:video|foto) de [a-z ]{1,100} atras de [a-z ]{1,100} nao tem relacao com ${x}\\b`)) return true
+  return false
 }
 
 /** Conectivos de nome. "Neto", "Filho" e "Junior" ficam de fora: são parte do nome ("ACM Neto"). */
@@ -1074,8 +1110,9 @@ export async function confirmarCandidatos(
   candidato: CandidatoChecagem,
   agencia: AgenciaChecagem,
   opcoes: OpcoesConsulta,
-): Promise<{ leads: LeadChecagem[]; pendentes: number; descartados: number }> {
+): Promise<{ leads: LeadChecagem[]; mesa: LeadMesaChecagem[]; pendentes: number; descartados: number }> {
   const leads: LeadChecagem[] = []
+  const mesa: LeadMesaChecagem[] = []
   const titulos = new Set<string>()
   let pendentes = 0
   let descartados = 0
@@ -1110,17 +1147,25 @@ export async function confirmarCandidatos(
       descartados++
       continue
     }
-    if (!leadPermitidoRegra3(item.titulo, candidato.slug)) {
-      descartados++
-      continue
-    }
     if (titulos.has(chaveTitulo(item.titulo))) continue
     titulos.add(chaveTitulo(item.titulo))
-    leads.push({ agencia: agencia.id, titulo: item.titulo, link: item.link, data_publicacao: item.data_publicacao,
+    const lead: LeadChecagem = { agencia: agencia.id, titulo: item.titulo, link: item.link, data_publicacao: item.data_publicacao,
       ...(confirmadoPor ? { confirmado_por: confirmadoPor, trecho_confirmacao: trechoConfirmacao?.slice(0, 500) } : {}),
-    })
+    }
+    const regra3 = leadPermitidoRegra3(item.titulo, candidato.slug) ? "permitido" : "revisao"
+    let noulIdentidade: number | null = null
+    if (regra3 === "permitido" && opcoes.julgarIdentidade) {
+      try { noulIdentidade = await opcoes.julgarIdentidade(item, candidato) }
+      catch { noulIdentidade = null }
+    }
+    const decisao = decidirPublicacaoChecagem({ nomeConfirmadoPelaRegra: confirmado, noulIdentidade, regra3 })
+    if (decisao === "publicar") leads.push(lead)
+    else {
+      pendentes++
+      mesa.push({ ...lead, motivo: regra3 === "revisao" ? "regra3" : "identidade_jev", noul_identidade: noulIdentidade })
+    }
   }
-  return { leads, pendentes, descartados }
+  return { leads, mesa, pendentes, descartados }
 }
 
 /** Estado `ok` de uma rota depois da confirmação; falha de corpo deixa só o item pendente. */
@@ -1129,6 +1174,7 @@ async function estadoConfirmado(itens: readonly ItemBusca[], total: number, cand
   void prefixo
   return {
     status: "ok", itens: total, leads: confirmacao.leads, transporte,
+    ...(confirmacao.mesa.length ? { mesa: confirmacao.mesa } : {}),
     ...(desde ? { desde } : {}),
     ...(confirmacao.pendentes ? { pendentes: confirmacao.pendentes } : {}),
     ...(confirmacao.descartados ? { descartados: confirmacao.descartados } : {}),
@@ -1188,27 +1234,57 @@ export class BloqueioDeTaxa extends Error {
 }
 
 async function consultarNativa(candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<EstadoAgencia> {
+  let sonda = opcoes.sondas.get(agencia.id)
+  if (!sonda) {
+    sonda = pedirComTentativas(urlBuscaNativa(SONDA_BUSCA_WP, agencia, 1)!, opcoes).then((resposta) => {
+      if ("erro" in resposta) return `sonda: ${resposta.erro}`
+      try { return parseBuscaNativa(resposta.body).length > 0 ? null : `sonda "${SONDA_BUSCA_WP}" sem resultado` }
+      catch (error) { return `sonda ilegível: ${error instanceof Error ? error.message : String(error)}` }
+    })
+    opcoes.sondas.set(agencia.id, sonda)
+  }
+  const falhaSonda = await sonda
+  if (falhaSonda) {
+    if (opcoes.sondas.get(agencia.id) === sonda) opcoes.sondas.delete(agencia.id)
+    return { status: "erro", erro: `busca nativa: ${falhaSonda}` }
+  }
   const itens: ItemBusca[] = []
+  let totalPaginas: number | null = null
+  let fechou = false
   for (let pagina = 1; pagina <= PAGINAS_WP; pagina++) {
     let ultimoErro = "sem resposta"
     let lidos: ItemBusca[] | null = null
+    let fimPor400 = false
     for (let tentativa = 0; tentativa < opcoes.tentativas && !lidos; tentativa++) {
-      if (tentativa > 0) await opcoes.sleep(opcoes.pausaMs * 4 * tentativa)
+      if (tentativa > 0) await opcoes.sleep(Math.max(100, opcoes.pausaMs) * 4 * tentativa)
       try {
         const resposta = await opcoes.fetchText(urlBuscaNativa(candidato.nome_urna, agencia, pagina)!)
         // WordPress responde 400 ao pedir página além da última.
-        if (pagina > 1 && resposta.status === 400) { lidos = []; break }
+        if (pagina > 1 && resposta.status === 400) { lidos = []; fimPor400 = true; break }
         if (resposta.status < 200 || resposta.status >= 300) { ultimoErro = `HTTP ${resposta.status}`; continue }
         lidos = parseBuscaNativa(resposta.body)
+        const cabecalho = resposta.headers?.["x-wp-totalpages"] ?? resposta.headers?.["X-WP-TotalPages"]
+        if (cabecalho !== undefined) {
+          const total = Number(cabecalho)
+          if (!Number.isSafeInteger(total) || total < 0) return { status: "erro", erro: "busca nativa: X-WP-TotalPages inválido" }
+          totalPaginas = total
+        }
       } catch (error) {
         ultimoErro = error instanceof Error ? error.message : String(error)
       }
     }
     if (!lidos) return { status: "erro", erro: `busca nativa: ${ultimoErro}` }
+    if (fimPor400) {
+      if (totalPaginas !== null && pagina <= totalPaginas) return { status: "erro", erro: `busca nativa: parcial, página ${pagina} ausente antes do total ${totalPaginas}` }
+      fechou = true
+      break
+    }
     itens.push(...lidos)
-    if (lidos.length < 100) break
+    if (totalPaginas !== null && pagina >= totalPaginas) { fechou = true; break }
+    if (lidos.length < 100 && (totalPaginas === null || pagina >= totalPaginas)) { fechou = true; break }
     await opcoes.sleep(opcoes.pausaMs)
   }
+  if (!fechou) return { status: "erro", erro: `busca nativa: parcial após ${PAGINAS_WP} páginas; total ${totalPaginas ?? "desconhecido"}` }
   return estadoConfirmado(itens, itens.length, candidato, agencia, opcoes, "wp-rest", "busca nativa")
 }
 
@@ -1255,8 +1331,11 @@ async function consultarAgencia(candidato: CandidatoChecagem, agencia: AgenciaCh
     disjuntor.aberto = `via direta com disjuntor aberto após ${disjuntor.falhasSeguidas} falhas seguidas (${direta.erro.slice(0, 120)})`
     return { status: "erro", erro: disjuntor.aberto }
   }
+  // Busca sem prova de fim não é substituída por um RSS com teto de resultados.
+  if (/sonda|parcial/.test(direta.erro)) return direta
   const google = await consultarGoogle(candidato, agencia, opcoes)
-  if (google.status === "ok") return { ...google, falhas: [direta.erro] }
+  if (google.status === "ok" && (google.leads.length > 0 || (google.pendentes ?? 0) > 0 || (google.descartados ?? 0) > 0)) return { ...google, falhas: [direta.erro] }
+  if (google.status === "ok") return { status: "erro", erro: `${direta.erro}; google-news sem lead não fecha busca direta` }
   // `google.erro` já começa com "google-news:".
   return { status: "erro", erro: `${direta.erro}; ${google.erro}` }
 }
@@ -1274,7 +1353,7 @@ async function consultarGoogle(
     if (disjuntor.aberto) return { status: "erro", erro: `google-news: ${disjuntor.aberto}` }
     if (tentativa > 0) {
       // Limite de taxa pede espera longa, descontada do orçamento da rodada; erro comum, pausa curta.
-      const espera = bloqueado ? opcoes.esperaBloqueioMs * tentativa : opcoes.pausaMs * 4 * tentativa
+      const espera = bloqueado ? Math.max(400, opcoes.esperaBloqueioMs) * tentativa : Math.max(100, opcoes.pausaMs) * 4 * tentativa
       if (bloqueado && disjuntor.esperaGastaMs + espera > opcoes.orcamentoEsperaMs) {
         disjuntor.aberto = `orçamento de espera por limite de taxa esgotado (${Math.round(opcoes.orcamentoEsperaMs / 1000)} s)`
         return { status: "erro", erro: `google-news: ${disjuntor.aberto}` }
@@ -1324,6 +1403,7 @@ export async function coletarChecagens(opcoes: OpcoesColeta): Promise<ReciboChec
   const homonimos = gruposDeHomonimos(completo)
   const consulta: OpcoesConsulta = {
     fetchText: comIntervaloPorHost(opcoes.fetchText, Math.max(0, opcoes.intervaloHostMs ?? 0), sleep, opcoes.relogio),
+    julgarIdentidade: opcoes.julgarIdentidade,
     tentativas, sleep, pausaMs, esperaBloqueioMs,
     semGoogle: opcoes.semGoogle ?? false,
     pararNoBloqueio: opcoes.pararNoBloqueio ?? false,

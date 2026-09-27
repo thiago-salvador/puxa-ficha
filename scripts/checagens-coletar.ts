@@ -70,13 +70,13 @@ function opcoes(argv: string[]): { valores: Map<string, string>; flags: Set<stri
   return { valores, flags }
 }
 
-async function fetchText(url: string): Promise<{ status: number; body: string }> {
+async function fetchText(url: string): Promise<{ status: number; body: string; headers: Record<string, string> }> {
   // Identifica o runtime de forma fiel; alguns arquivos bloqueiam user-agents de crawler.
   const response = await fetch(url, {
     headers: { "user-agent": USER_AGENT, accept: "text/html,application/xhtml+xml,application/xml;q=0.9,application/json;q=0.9", "accept-language": "pt-BR,pt;q=0.9" },
     signal: AbortSignal.timeout(30_000),
   })
-  return { status: response.status, body: await response.text() }
+  return { status: response.status, body: await response.text(), headers: Object.fromEntries(response.headers) }
 }
 
 async function gravarColetaLog(recibos: readonly ReciboChecagem[]): Promise<number> {
@@ -231,6 +231,12 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
   const resumo = { ...resumirColeta(recibos), inicio: inicio.toISOString(), fim: new Date().toISOString(), execucao: EXECUCAO, gravou_log: false, linhas_log: 0,
     refeitos: coletados.length, pendentes_de_busca: roster.length - coletados.length, parou_por_bloqueio: parouPorBloqueio }
   writeFileSync(resolve(out, "recibos.json"), JSON.stringify({ schema_version: "checagens-recibos-v1", execucao: EXECUCAO, receipts: recibos }, null, 2) + "\n")
+  writeFileSync(resolve(out, "mesa-revisao.json"), JSON.stringify({
+    schema_version: "checagens-mesa-v1", execucao: EXECUCAO,
+    leads: recibos.flatMap((recibo) => (recibo.mesa ?? []).map((lead) => ({
+      candidate_id: recibo.candidate_id, candidate_slug: recibo.candidate_slug, ...lead,
+    }))),
+  }, null, 2) + "\n")
 
   if (catalogoPath) {
     const caminho = resolve(catalogoPath)

@@ -105,10 +105,8 @@ while IFS= read -r linha || [ -n "$linha" ]; do
 done <"$credenciais"
 [ -n "$url_supabase" ] && [ -n "$chave_publica" ] && [ -n "$chave_servico" ] || falhar "faltam credenciais obrigatórias"
 
-host="$(scutil --get LocalHostName 2>/dev/null || hostname -s)"
-host="$(printf '%s' "$host" | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9-' '-' | sed -E 's/^-+//; s/-+$//' | cut -c1-63)"
-[ -n "$host" ] || host="mac"
-execucao="local:$host:$carimbo"
+run_id="$(uuidgen | tr '[:upper:]' '[:lower:]')"
+execucao="local:$run_id:$carimbo"
 saida="$dir_estado/checagens/$carimbo-${sha:0:12}"
 mkdir -p "$saida"
 chmod 700 "$dir_estado/checagens" "$saida"

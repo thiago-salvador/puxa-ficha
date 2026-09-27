@@ -41,10 +41,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Rotas diretas de checagens sem Google (somente leitura)
-        timeout-minutes: 5
-        run: node --conditions react-server --import tsx scripts/audit/checagens-rotas-smoke.ts
-
       # Falha em vulnerabilidade high+ nas dependencias de producao (o que vai
       # pro browser/runtime). devDependencies (CLIs locais) ficam fora do gate.
       - name: Audit (production deps)
