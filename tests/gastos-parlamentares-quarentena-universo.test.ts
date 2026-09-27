@@ -33,6 +33,9 @@ describe("quarentena ampliada de gastos parlamentares", () => {
 
   it("lista atual é subconjunto da preimage histórica da migration", () => {
     const pre = preimage()
+    // Validação oficial de 27/09: ficam 4 pares do universo e 1 da revisão anterior.
+    assert.equal(lista.length, 4)
+    assert.equal(GASTOS_PARLAMENTARES_EM_REVISAO.length, 1)
     assert.equal(pre.length, receipt.resumo.quarentena)
     assert.equal(linhasQuarentena.length, receipt.resumo.quarentena)
     const key = (x: { slug: string; ano: number; cents: number }) => `${x.slug}:${x.ano}:${x.cents}`

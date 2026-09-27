@@ -508,9 +508,14 @@ function linhaCamaraComSnapshotValidado(detalhamento: unknown, expectedRowYear?:
     // deixar ano sem estado ou marcar um ano simultaneamente completo e parcial.
     // O ano parcial também é exibível: é o total oficial do arquivo na data da
     // consulta, e a ficha já rotula 2026 com essa data e o aviso de que muda.
+    // Só 2026 pode ser parcial: é o único ano que a ficha rotula como
+    // consulta datada. Declaração presente precisa ser coerente, mesmo com
+    // `scope_complete: true`.
     const completeYears = p.complete_years
     const partialYears = p.partial_years
+    const coverageDeclared = completeYears !== undefined || partialYears !== undefined
     const declaredCoverage = Array.isArray(completeYears) && Array.isArray(partialYears) &&
+      partialYears.every((year) => year === 2026) &&
       [...completeYears, ...partialYears].length === expectedYears.length &&
       [...completeYears, ...partialYears].every((year) => Number.isInteger(year) && expectedYears.includes(year as number)) &&
       new Set([...completeYears, ...partialYears]).size === expectedYears.length &&
@@ -524,7 +529,7 @@ function linhaCamaraComSnapshotValidado(detalhamento: unknown, expectedRowYear?:
     }, 0) : Number.NaN
     // Ano com líquido zero ou negativo no CSV é só estorno lançado depois do
     // mandato; exibir como "gasto do ano" confundiria. A linha fica no banco.
-    return (p.scope_complete === true || declaredCoverage) && exactYears && exactRevisions &&
+    return (coverageDeclared ? declaredCoverage : p.scope_complete === true) && exactYears && exactRevisions &&
       Number.isInteger(expectedRowYear) && expectedRowYear === provenanceYear &&
       Number(expectedRowYear) >= 2008 && Number(expectedRowYear) <= 2026 &&
       Number.isFinite(rowTotal) && Number(rowTotal) > 0 && categoryTotal === Math.round(Number(rowTotal) * 100) &&

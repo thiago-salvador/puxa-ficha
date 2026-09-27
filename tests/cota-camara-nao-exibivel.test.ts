@@ -130,6 +130,14 @@ describe("cota parlamentar: o que pode ir ao ar", () => {
     assert.equal(gastoParlamentarExibivel("Camara", estorno, 2024, -30), false)
     assert.equal(gastoParlamentarExibivel("Camara", {
       ...partialCurrentYear,
+      proveniencia: { ...partialCurrentYear.proveniencia, complete_years: years.filter((year) => year !== 2015), partial_years: [2015] },
+    }, 2024, 100), false)
+    assert.equal(gastoParlamentarExibivel("Camara", {
+      ...partialCurrentYear,
+      proveniencia: { ...partialCurrentYear.proveniencia, scope_complete: true },
+    }, 2024, 100), false)
+    assert.equal(gastoParlamentarExibivel("Camara", {
+      ...partialCurrentYear,
       proveniencia: { ...partialCurrentYear.proveniencia, complete_years: years.filter((year) => year !== 2024 && year !== 2026) },
     }, 2024, 100), false)
   })
