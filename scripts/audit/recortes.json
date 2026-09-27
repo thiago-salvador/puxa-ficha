@@ -741,6 +741,20 @@
       "divida": null
     },
     {
+      "nome": "processos-curadoria-djen-20260927",
+      "desde": "20260927060000",
+      "ate": "20260927060000",
+      "allowlist": "scripts/audit/allowlist-processos-curadoria-djen-20260927.json",
+      "divida": null
+    },
+    {
+      "nome": "patrimonio-2026-pacote-tse-20260927",
+      "desde": "20260927060100",
+      "ate": "20260927060100",
+      "allowlist": "scripts/audit/allowlist-patrimonio-2026-pacote-tse-20260927.json",
+      "divida": null
+    },
+    {
       "nome": "partido-paulo-mourao-20260927",
       "desde": "20260927020000",
       "ate": "20260927020000",
