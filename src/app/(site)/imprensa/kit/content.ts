@@ -32,7 +32,7 @@ export const questions: KitQuestion[] = [
   },
   {
     question: "Quem financia o projeto?",
-    answer: "Por isso o Puxa Ficha se financia por apoio coletivo, numa campanha aberta no APOIA.se, onde qualquer pessoa vê quanto foi arrecadado, quantas pessoas apoiam e para que serve cada faixa de valor.",
+    answer: "O Puxa Ficha se financia por apoio coletivo, numa campanha aberta no APOIA.se, onde qualquer pessoa vê quanto foi arrecadado, quantas pessoas apoiam e para que serve cada faixa de valor.",
     sourceHref: "/sobre",
     sourceLabel: "Sobre",
   },
