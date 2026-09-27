@@ -15,6 +15,7 @@ import { FONTE_CAMARA_PROPOSICOES, registrarColeta, type EntradaColeta } from ".
 import { loadCandidatosPublicos, loadVerificacaoCampos, resolveCandidatoId } from "./helpers-db"
 import { deveProcessarAcervoLegislativo, reciboAcervoCongelado } from "./acervo-legislativo-congelado"
 import { fetchJSON, sleep } from "./helpers"
+import { CAMARA_API, resultadoSemAlcance, sondarAlcanceCamara, type AlcanceCamara } from "./camara-alcance"
 import { namesLookCompatible } from "./name-match"
 import { assertSemReplacementChar } from "./ceaps-csv-encoding"
 import { sanitizePublicTextOrThrow } from "../../src/lib/public-text"
@@ -22,7 +23,7 @@ import { log, warn, error } from "./logger"
 import { classificarVotacao, type ClassificacaoVotacao } from "./votacao-classificacao"
 import type { IngestResult } from "./types"
 
-const API = "https://dadosabertos.camara.leg.br/api/v2"
+const API = CAMARA_API
 
 /** Camara public API is often slow; 15s default caused frequent AbortError under load. */
 const CAMARA_FETCH_RETRIES = 5
@@ -1185,6 +1186,15 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
   const verificacaoPorSlug = await loadVerificacaoCampos(candidatos.map((cand) => cand.slug))
   const results: IngestResult[] = []
 
+  // Pre-voo de alcance (camara-alcance.ts): origem que recusa conexao vira um
+  // erro por ficha em ~1 min, em vez de ~100 s por ficha ate o teto do job.
+  // O modo so-cache nao usa rede e nao sonda.
+  let alcance: AlcanceCamara = { ok: true }
+  if (!opts.expenseSnapshotCacheOnly && candidatos.some((cand) => cand.ids.camara)) {
+    alcance = await sondarAlcanceCamara()
+    if (!alcance.ok) error("camara", `API inalcancavel, nenhuma ficha sera tentada: ${alcance.motivo}`)
+  }
+
   for (const cand of candidatos) {
     if (!cand.ids.camara) continue
     const start = Date.now()
@@ -1204,6 +1214,11 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
       result.duration_ms = Date.now() - start
       log("camara", `  ${cand.slug}: ${result.skip_reason}`)
       results.push(result)
+      continue
+    }
+
+    if (!alcance.ok) {
+      results.push(resultadoSemAlcance(cand.slug, alcance.motivo))
       continue
     }
 

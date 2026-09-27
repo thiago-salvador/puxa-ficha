@@ -704,6 +704,13 @@
       "ate": "20260926180200",
       "allowlist": "scripts/audit/allowlist-situacao-godeiro-laudicerio-20260926.json",
       "divida": null
+    },
+    {
+      "nome": "processos-numero-cnj-20260926",
+      "desde": "20260926190000",
+      "ate": "20260926190100",
+      "allowlist": "scripts/audit/allowlist-processos-numero-cnj-20260926.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

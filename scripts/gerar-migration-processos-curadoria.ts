@@ -100,6 +100,17 @@ export function cnjValido(valor: string): boolean {
   return verificador === esperado
 }
 
+/**
+ * Forma mascarada NNNNNNN-DD.AAAA.J.TR.OOOO, a única que a CHECK
+ * processos_numero_processo_cnj_check (20260926190100) aceita em
+ * processos.numero_processo. Entrada inválida é erro, nunca texto cru.
+ */
+export function formatarCnj(valor: string): string {
+  if (!cnjValido(valor)) throw new Error(`CNJ invalido: ${valor}`)
+  const d = valor.replace(/\D/g, "")
+  return `${d.slice(0, 7)}-${d.slice(7, 9)}.${d.slice(9, 13)}.${d.slice(13, 14)}.${d.slice(14, 16)}.${d.slice(16, 20)}`
+}
+
 export function urlComunicaPjePorCnj(valor: string, numeroCnj: string): string {
   return urlConsultaDjenDeFonte(valor, numeroCnj)
 }
@@ -515,7 +526,7 @@ export function prepararPacoteProcessos(entrada: EntradaPacote) {
     }
     return {
       slug: item.slug,
-      numero_cnj: item.numero_cnj,
+      numero_cnj: formatarCnj(item.numero_cnj),
       tipo: tipoProcessual(processo.classe, item.familia_processual ?? ""),
       tribunal: processo.tribunal,
       descricao: item.motivo,

@@ -12,6 +12,27 @@ import {
 import type { FreshnessSource } from "../scripts/lib/data-freshness/types"
 import { DESTAQUES_EXPECTED_PAIRS } from "../scripts/lib/destaques-votacoes-provenance"
 
+/**
+ * Fixture de família agendada com três membros. Até 26/09/2026 era a própria
+ * entrada `camara` do registro; desde então a Câmara é `manual` (a coleta
+ * semanal saiu do Actions), e estes testes continuam exercitando a regra de
+ * família agendada com a mesma forma de dados.
+ */
+function familiaCamaraAgendada(): FreshnessSource {
+  const camara = loadFreshnessRegistry().find((item) => item.source_id === "camara")
+  assert.ok(camara)
+  return { ...camara, refresh_mode: "scheduled", cadence: "weekly" }
+}
+
+test("registro: Câmara é sob demanda desde 26/09/2026 e mantém o limiar de 216 h", () => {
+  const camara = loadFreshnessRegistry().find((item) => item.source_id === "camara")
+  assert.ok(camara)
+  assert.equal(camara.refresh_mode, "manual")
+  assert.equal(camara.cadence, "on_demand")
+  assert.equal(camara.max_age_hours, 216)
+  assert.equal(camara.stale_policy, "suppress_negative_claims")
+})
+
 function destaquesEvidence(checkedAt: string) {
   return {
     source_id: "destaques-votacoes",
@@ -71,7 +92,7 @@ test("SLA distingue fresh, stale, source_error e review_required", () => {
 })
 
 test("família usa a evidência mais recente e registra aliases ausentes como dívida", () => {
-  const source = loadFreshnessRegistry().find((item) => item.source_id === "camara")
+  const source = familiaCamaraAgendada()
   assert.ok(source)
   const newest = aggregateSourceEvidence(source, [
     { source_id: "camara", checked_at: "2026-08-27T11:00:00.000Z" },
@@ -115,7 +136,7 @@ test("estoque resolvido não conserva erro de execução antigo e não altera co
 })
 
 test("modo strict avalia cada membro, expõe a data mais antiga e não mascara membro vencido", () => {
-  const source = loadFreshnessRegistry().find((item) => item.source_id === "camara")
+  const source = familiaCamaraAgendada()
   assert.ok(source)
   const now = new Date("2026-08-27T12:00:00.000Z")
   const result = evaluateSourceFreshnessStrict(source, [
@@ -133,7 +154,7 @@ test("modo strict avalia cada membro, expõe a data mais antiga e não mascara m
 })
 
 test("modo operacional preserva o agregado mais recente, enquanto strict evita fresh com membro vencido", () => {
-  const source = loadFreshnessRegistry().find((item) => item.source_id === "camara")
+  const source = familiaCamaraAgendada()
   assert.ok(source)
   const evidence = aggregateSourceEvidence(source, [
     { source_id: "camara", checked_at: "2026-08-27T11:00:00.000Z" },
@@ -146,7 +167,7 @@ test("modo operacional preserva o agregado mais recente, enquanto strict evita f
 })
 
 test("strict reprova membro requerido sem data ou com data inválida", () => {
-  const source = loadFreshnessRegistry().find((item) => item.source_id === "camara")
+  const source = familiaCamaraAgendada()
   assert.ok(source)
   const now = new Date("2026-08-27T12:00:00.000Z")
   const result = evaluateSourceFreshnessStrict(source, [
@@ -161,7 +182,7 @@ test("strict reprova membro requerido sem data ou com data inválida", () => {
 })
 
 test("strict bloqueia família scheduled quando falta um membro requerido", () => {
-  const source = loadFreshnessRegistry().find((item) => item.source_id === "camara")
+  const source = familiaCamaraAgendada()
   assert.ok(source)
   const now = new Date("2026-08-27T12:00:00.000Z")
   const result = evaluateSourceFreshnessStrict(source, [
@@ -175,7 +196,7 @@ test("strict bloqueia família scheduled quando falta um membro requerido", () =
 })
 
 test("strict aceita apenas os pares do universo vigente, nunca contagens vizinhas", () => {
-  const source = loadFreshnessRegistry().find((item) => item.source_id === "camara")
+  const source = familiaCamaraAgendada()
   assert.ok(source)
   const now = new Date("2026-09-09T12:00:00.000Z")
   for (const pairCount of [DESTAQUES_EXPECTED_PAIRS - 1, DESTAQUES_EXPECTED_PAIRS, DESTAQUES_EXPECTED_PAIRS + 1, 152, 154]) {
@@ -189,7 +210,7 @@ test("strict aceita apenas os pares do universo vigente, nunca contagens vizinha
 })
 
 test("strict rejeita destaques-votacoes sem proveniência completa e dupla leitura", () => {
-  const source = loadFreshnessRegistry().find((item) => item.source_id === "camara")
+  const source = familiaCamaraAgendada()
   assert.ok(source)
   const now = new Date("2026-08-27T12:00:00.000Z")
   const result = evaluateSourceFreshnessStrict(source, [
@@ -220,7 +241,7 @@ test("strict preserva technical_debt para membro manual vencido sem alterar o op
 
 test("indeterminado e erro manual viram dívida; erro agendado continua bloqueando", () => {
   const registry = loadFreshnessRegistry()
-  const scheduled = registry.find((item) => item.source_id === "camara")
+  const scheduled = familiaCamaraAgendada()
   const manual = registry.find((item) => item.source_id === "filiacao")
   assert.ok(scheduled)
   assert.ok(manual)
@@ -287,7 +308,7 @@ test("política de erro parcial só existe em fonte scheduled", () => {
 test("google-news: erro parcial vira dívida visível; falha total e atraso continuam bloqueando", () => {
   const registry = loadFreshnessRegistry()
   const news = registry.find((item) => item.source_id === "google-news")
-  const camara = registry.find((item) => item.source_id === "camara")
+  const camara = familiaCamaraAgendada()
   assert.ok(news)
   assert.ok(camara)
   const now = new Date("2026-09-24T15:53:00.000Z")
