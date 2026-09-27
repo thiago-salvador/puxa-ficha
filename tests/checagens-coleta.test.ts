@@ -7,12 +7,16 @@ import committedReceipts from "../scripts/data/checagens-recibos.json"
 import {
   AGENCIAS_CHECAGEM,
   BloqueioDeTaxa,
+  candidatosDaResposta,
+  candidaturasParaRetomada,
   aplicarRegraHomonimo,
   gruposDeHomonimos,
   marcadoresDistintivos,
   coletarChecagens,
   comIntervaloPorHost,
   conferirPiso,
+  contextoNomeVizinho,
+  leadPermitidoRegra3,
   nomeColadoEmOutraPessoa,
   consolidarCatalogoRecibos,
   descricaoEscopo,
@@ -43,7 +47,7 @@ import { selecionarReciboChecagens } from "../src/lib/buscas-recibos"
 
 const caiado: CandidatoChecagem = { id: "cand-caiado", slug: "ronaldo-caiado", nome_urna: "Ronaldo Caiado", nome_completo: "Ronaldo Ramos Caiado", cargo_disputado: "Presidente", estado: null }
 const now = new Date("2026-09-25T12:00:00Z")
-const SO_GOOGLE = AGENCIAS_CHECAGEM.filter((agencia) => !agencia.wpSearch && !agencia.buscaSite && !agencia.arquivo).map((agencia) => agencia.id)
+const SO_GOOGLE = AGENCIAS_CHECAGEM.filter((agencia) => !agencia.wpSearch && !agencia.buscaSite && !agencia.arquivo && !agencia.fonteDireta).map((agencia) => agencia.id)
 
 function rss(items: Array<{ title: string; source: string; sourceUrl: string; pubDate?: string }>): string {
   const body = items.map((item) => `<item><title>${item.title} - ${item.source}</title><link>https://news.google.com/rss/articles/${encodeURIComponent(item.title)}</link>` +
@@ -84,7 +88,20 @@ function rotaDireta(url: string): { status: number; body: string } | null {
   if (url.startsWith("https://www.aosfatos.org/noticias/")) return { status: 200, body: url.includes("q=Lula") ? AOS_P1 : AOS_VAZIA }
   if (url.startsWith("https://falkor-cda.bastian.globo.com/")) return { status: 200, body: url.endsWith("/page/1") ? FALKOR_P1 : FALKOR_FIM }
   if (url.startsWith("https://www.estadao.com.br/pf/api/")) return { status: 200, body: ARC_PAGINA }
+  if (url === "https://noticias.uol.com.br/confere/") {
+    const request = JSON.stringify({ hasNext: false, busca: { params: { size: 12, tags: [{ id: 78333 }], repository: "mix2" } } })
+    return { status: 200, body: `<html><head><title>UOL Confere - UOL Notícias</title></head><body><a href="https://noticias.uol.com.br/confere/ultimas-noticias/2026/09/25/sem-nome.ghtm"><h3 class="thumb-title">Checagem sem nome</h3><time>25 de setembro de 2026</time></a><button class="btn-more" data-request='${request}'></button></body></html>` }
+  }
+  if (url.startsWith("https://checamos.afp.com/fact-checking-search-results")) {
+    const nome = new URL(url).searchParams.get("search_api_fulltext") ?? ""
+    return { status: 200, body: `<html><head><title>Search | Checamos</title></head><body><input name="search_api_fulltext" value="${nome}"/><p>Resultado 0</p></body></html>` }
+  }
   return null
+}
+
+function falhaUolAfp(url: string): { status: number; body: string } | null {
+  return url.startsWith("https://noticias.uol.com.br/confere/") || url.startsWith("https://checamos.afp.com/fact-checking-search-results")
+    ? { status: 403, body: "Access Denied" } : null
 }
 
 function okEmTodas(leads: Record<string, number> = {}): Record<string, EstadoAgencia> {
@@ -134,13 +151,34 @@ describe("coleta nominal de checagens", () => {
     assert.equal(montarRecibo(caiado, faltando, now).result, "erro")
   })
 
+  it("item descartado deixa a busca indeterminada, mas nenhum título candidato confirma vazio", () => {
+    const descartado = montarRecibo(caiado, { ...okEmTodas(), lupa: { status: "ok", itens: 1, leads: [], descartados: 1 } }, now)
+    assert.equal(descartado.result, "nao_confirmado")
+    assert.equal(consolidarCatalogoRecibos(null, [descartado], now).receipts.length, 0)
+    assert.equal(entradaColetaDoRecibo(descartado).resultado, "indeterminado")
+    assert.equal(montarRecibo(caiado, okEmTodas(), now).result, "vazio_confirmado")
+    const outro = { ...caiado, id: "outro", slug: "outro" }
+    assert.equal(aplicarRegraHomonimo(descartado, caiado, [caiado, outro]).result, "nao_confirmado")
+  })
+
+  it("catálogo v1 curado permanece até substituição v2; recibo interno antigo é rejeitado", () => {
+    const anterior = { ...consolidarCatalogoRecibos(null, [montarRecibo(caiado, okEmTodas({ lupa: 1 }), now)], now), policy: "pf-checagens-v1" as const }
+    const outro = { ...caiado, id: "outro", slug: "outro" }
+    const novo = montarRecibo(outro, okEmTodas(), new Date("2026-09-26T00:00:00Z"))
+    const consolidado = consolidarCatalogoRecibos(anterior, [novo], new Date("2026-09-26T01:00:00Z"))
+    assert.equal(consolidado.receipts.length, 2)
+    assert.equal(consolidado.receipts.find((item) => item.candidate_slug === "ronaldo-caiado")?.leads, 1)
+    assert.equal(consolidado.receipts.find((item) => item.candidate_slug === "outro")?.policy, "pf-checagens-v2")
+    assert.throws(() => consolidarCatalogoRecibos(null, [{ ...novo, policy: "pf-checagens-v1" }], now), /refaça a busca/)
+  })
+
   it("gera linha de coleta_log coerente com a constraint de volume", () => {
     for (const recibo of [montarRecibo(caiado, okEmTodas(), now), montarRecibo(caiado, okEmTodas({ lupa: 2 }), now)]) {
       const entrada = entradaColetaDoRecibo(recibo)
       assert.equal(entrada.fonte, "checagens-agencias")
       assert.equal(entrada.escopo, "candidato")
       assert.deepEqual(normalizarEntrada(entrada), { resultado: entrada.resultado, volume: entrada.volume })
-      assert.match(entrada.detalhe ?? "", /pf-checagens-v1; leads\/itens por agência: lupa=/)
+      assert.match(entrada.detalhe ?? "", /pf-checagens-v2; leads\/itens por agência: lupa=/)
     }
   })
 
@@ -150,7 +188,7 @@ describe("coleta nominal de checagens", () => {
     const erro = montarRecibo({ ...caiado, id: "cand-b", slug: "b" }, { ...okEmTodas(), lupa: { status: "erro", erro: "HTTP 503" } }, now)
     const catalogo = consolidarCatalogoRecibos(consolidarCatalogoRecibos(null, [novo, erro], now), [antigo], now)
     assert.equal(catalogo.receipts.length, 1)
-    assert.deepEqual(catalogo.receipts[0], { candidate_id: "cand-caiado", candidate_slug: "ronaldo-caiado", searched_at: novo.searched_at, result: "vazio_confirmado", leads: 0, agencias: AGENCIAS_CHECAGEM.map((agencia) => agencia.nome) })
+    assert.deepEqual(catalogo.receipts[0], { policy: "pf-checagens-v2", candidate_id: "cand-caiado", candidate_slug: "ronaldo-caiado", searched_at: novo.searched_at, result: "vazio_confirmado", leads: 0, agencias: AGENCIAS_CHECAGEM.map((agencia) => agencia.nome) })
     const parcial = montarRecibo({ ...caiado, id: "cand-c", slug: "c" }, { ...okEmTodas({ lupa: 1 }), comprova: { status: "erro", erro: "HTTP 503" } }, now)
     const publico = consolidarCatalogoRecibos(null, [parcial], now).receipts[0]
     assert.equal(publico.agencias.includes("Comprova"), false, "agência que falhou não aparece como consultada")
@@ -213,11 +251,11 @@ describe("coleta nominal de checagens", () => {
       onRecibo: (recibo) => concluidos.push(recibo.candidate_slug),
       fetchText: async (url) => {
         if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
-        const direta = rotaDireta(url)
+        const direta = falhaUolAfp(url) ?? rotaDireta(url)
         if (direta) return direta
         google++
-        // Só UOL Confere e AFP Checamos vão ao Google: a segunda candidatura bate no limite.
-        return google > SO_GOOGLE.length ? { status: 429, body: "" } : { status: 200, body: rss([]) }
+        // O fallback das duas rotas diretas bate no limite na segunda candidatura.
+        return google > 2 ? { status: 429, body: "" } : { status: 200, body: rss([]) }
       },
     }), (error: unknown) => error instanceof BloqueioDeTaxa && error.candidateSlug === "b")
     assert.deepEqual(concluidos, ["ronaldo-caiado"])
@@ -334,7 +372,7 @@ describe("coleta nominal de checagens", () => {
       onRecibo: (recibo) => concluidos.push(recibo.candidate_slug),
       fetchText: async (url) => {
         if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
-        const direta = rotaDireta(url)
+        const direta = falhaUolAfp(url) ?? rotaDireta(url)
         if (direta) return direta
         google++
         return google === 3 ? { status: 503, body: "" } : { status: 200, body: rss([]) }
@@ -351,7 +389,7 @@ describe("coleta nominal de checagens", () => {
       sleep: async () => {},
       fetchText: async (url) => {
         if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
-        const direta = rotaDireta(url)
+        const direta = falhaUolAfp(url) ?? rotaDireta(url)
         if (direta) return direta
         google++
         return { status: 503, body: "" }
@@ -375,7 +413,7 @@ describe("coleta nominal de checagens", () => {
       sleep: async () => {},
       fetchText: async (url) => {
         if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
-        const direta = rotaDireta(url)
+        const direta = falhaUolAfp(url) ?? rotaDireta(url)
         if (direta) return direta
         google++
         return { status: 429, body: "" }
@@ -386,9 +424,10 @@ describe("coleta nominal de checagens", () => {
     assert.ok(google <= 4, `pedidos ao Google: ${google}`)
   })
 
-  it("vias sem Google: só UOL Confere e AFP Checamos ficam dependentes do Google News", () => {
-    assert.deepEqual(SO_GOOGLE, ["uol-confere", "afp-checamos"])
-    assert.match(descricaoEscopo(), /Google News RSS em UOL Confere, AFP Checamos e como segunda via das demais/)
+  it("todas as agências têm via sem Google e fallback segue explícito", () => {
+    assert.deepEqual(SO_GOOGLE, [])
+    assert.match(descricaoEscopo(), /UOL Confere/)
+    assert.match(descricaoEscopo(), /AFP Checamos/)
     assert.match(descricaoEscopo(), /busca do site em Aos Fatos \(até 108 resultados\); arquivo completo da seção em Fato ou Fake, Estadão Verifica/)
     const aos = AGENCIAS_CHECAGEM.find((agencia) => agencia.id === "aos-fatos")!
     assert.equal(urlBuscaSite("Ronaldo \"Caiado\" ", aos, 2), "https://www.aosfatos.org/noticias/?q=Ronaldo%20Caiado&page=2")
@@ -428,7 +467,7 @@ describe("coleta nominal de checagens", () => {
     assert.throws(() => parseArquivoArc("{\"items\":[]}", "https://www.estadao.com.br"), /sem count/)
   })
 
-  it("vias diretas: lead do Aos Fatos, arquivo lido uma vez por rodada e Google só para UOL e AFP", async () => {
+  it("vias diretas: lead do Aos Fatos e arquivos lidos uma vez por rodada, sem Google", async () => {
     const zema: CandidatoChecagem = { id: "cand-zema", slug: "romeu-zema", nome_urna: "Romeu Zema", nome_completo: "Romeu Zema Neto", cargo_disputado: "Presidente", estado: null }
     const pedidos: string[] = []
     const recibos = await coletar({
@@ -461,8 +500,9 @@ describe("coleta nominal de checagens", () => {
     assert.equal(pedidos.filter((url) => url.startsWith("https://www.estadao.com.br/")).length, 1)
     assert.equal(pedidos.filter((url) => url.includes("q=Lula")).length, 2, "sonda da rodada + nova sonda antes de aceitar o vazio de Caiado")
     const google = pedidos.filter((url) => url.startsWith("https://news.google.com/"))
-    assert.equal(google.length, 2 * SO_GOOGLE.length)
-    assert.ok(google.every((url) => /noticias\.uol|checamos\.afp/.test(decodeURIComponent(url))))
+    assert.equal(google.length, 0)
+    assert.equal(rc.agencias["uol-confere"].transporte, "uol-arquivo")
+    assert.equal(rc.agencias["afp-checamos"].transporte, "afp-busca")
   })
 
   it("arquivo quebrado ou sonda sem resultado: cai para o Google com a falha registrada, e sem Google vira erro", async () => {
@@ -514,7 +554,7 @@ describe("coleta nominal de checagens", () => {
         if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
         if (url.startsWith("https://falkor-cda.")) return { status: 200, body: pagina }
         if (url.startsWith(g1)) { abertas.push(url); return { status: 200, body: fixture("g1-materia.html") } }
-        return rotaDireta(url) ?? { status: 200, body: rss([]) }
+        return falhaUolAfp(url) ?? rotaDireta(url) ?? { status: 200, body: rss([]) }
       },
     })
     assert.deepEqual(recibo.leads.filter((lead) => lead.agencia === "fato-ou-fake").map((lead) => lead.link), [`${g1}/noticia/a.ghtml`, `${g1}/video/d.ghtml`],
@@ -524,7 +564,8 @@ describe("coleta nominal de checagens", () => {
       roster: [acm], orcamentoPaginasConfirmacao: 0, semGoogle: true, sleep: async () => {},
       fetchText: async (url) => url.startsWith("https://falkor-cda.") ? { status: 200, body: pagina } : url.includes("/wp-json/") ? { status: 200, body: "[]" } : rotaDireta(url) ?? { status: 200, body: rss([]) },
     })
-    assert.match(semOrcamento.agencias["fato-ou-fake"].erro ?? "", /teto de 0 páginas de confirmação/, "sem poder confirmar, a agência não responde por ausência")
+    assert.equal(semOrcamento.agencias["fato-ou-fake"].status, "ok", "teto de corpo não derruba a busca da agência")
+    assert.ok((semOrcamento.agencias["fato-ou-fake"].pendentes ?? 0) > 0, "o item sem corpo fica pendente")
   })
 
   it("nome não casa pela emenda entre título e resumo nem entre blocos do corpo", async () => {
@@ -544,7 +585,7 @@ describe("coleta nominal de checagens", () => {
         if (url.startsWith("https://falkor-cda.")) return { status: 200, body: falkor }
         if (url.startsWith("https://www.estadao.com.br/pf/api/")) return { status: 200, body: arc }
         if (url.startsWith("https://g1.globo.com/")) return { status: 200, body: '<article itemprop="articleBody"><p>Vídeo mostra Ciro</p><p>Gomes de Sá em outro ato.</p></article>' }
-        return rotaDireta(url) ?? { status: 200, body: rss([]) }
+        return falhaUolAfp(url) ?? rotaDireta(url) ?? { status: 200, body: rss([]) }
       },
     })
     assert.deepEqual(recibo.leads.map((lead) => lead.link), ["https://www.estadao.com.br/estadao-verifica/corpo/"], "só a história com o nome inteiro dentro de um parágrafo")
@@ -555,6 +596,84 @@ describe("coleta nominal de checagens", () => {
     assert.equal(nomeColadoEmOutraPessoa("Foto de Eduardo Leite em show", { ...caiado, nome_urna: "Gal Leite", nome_completo: "Gualdina Maria Menezes Leite" }), true)
     assert.equal(nomeColadoEmOutraPessoa("É #FAKE que Felipe Neto foi preso", { ...caiado, nome_urna: "ACM Neto", nome_completo: "Antônio Carlos Peixoto de Magalhães Neto" }), true)
     assert.equal(nomeColadoEmOutraPessoa("Fala de Ciro Gomes na TV", { ...ciro, nome_urna: "Ciro Nogueira", nome_completo: "Ciro Nogueira Lima Filho" }), true)
+  })
+
+  it("nome vizinho separa outra pessoa de título que precisa do corpo", () => {
+    const zema = { ...caiado, nome_urna: "Romeu Zema", nome_completo: "Romeu Zema Neto" }
+    assert.equal(contextoNomeVizinho("Governo Zema reviu o valor", zema), "livre")
+    assert.equal(contextoNomeVizinho("Gestão Zema reviu o valor", zema), "livre")
+    const flavio = { ...caiado, nome_urna: "Flávio Bolsonaro", nome_completo: "Flávio Nantes Bolsonaro" }
+    assert.equal(contextoNomeVizinho("Flávio e Eduardo Bolsonaro aparecem na imagem", flavio), "incerto")
+    assert.equal(contextoNomeVizinho("Não Flávio em Maceió", flavio), "livre")
+    assert.equal(contextoNomeVizinho("Felipe Neto divulga vídeo", { ...caiado, nome_urna: "ACM Neto", nome_completo: "Antônio Carlos Peixoto de Magalhães Neto" }), "outra_pessoa")
+    assert.equal(contextoNomeVizinho("Ciro Gomes explica o dado", { ...caiado, nome_urna: "Ciro Nogueira", nome_completo: "Ciro Nogueira Lima Filho" }), "outra_pessoa")
+    assert.equal(contextoNomeVizinho("Alexandre de Moraes decidiu", { ...caiado, nome_urna: "Alexandre Kalil", nome_completo: "Alexandre Kalil" }), "outra_pessoa")
+    assert.equal(contextoNomeVizinho("Luís Roberto Barroso decidiu", { ...caiado, nome_urna: "André Luís", nome_completo: "André Luís Pereira" }), "outra_pessoa")
+    assert.equal(contextoNomeVizinho("Tarcísio de Freitas declarou", { ...caiado, nome_urna: "Tarcísio de Freitas", nome_completo: "Tarcísio Gomes de Freitas" }), "livre")
+  })
+
+  it("falha HTTP no corpo deixa só o item pendente e preserva o lead confirmado", async () => {
+    const [recibo] = await coletar({
+      roster: [caiado], semGoogle: true, tentativas: 1, sleep: async () => {},
+      fetchText: async (url) => {
+        if (url.includes("/wp-json/wp/v2/posts/500")) return { status: 500, body: "indisponível" }
+        if (url.includes("agencialupa.org/wp-json/wp/v2/search")) return { status: 200, body: JSON.stringify([
+          { title: "Ronaldo Caiado erra sobre segurança", url: "https://www.agencialupa.org/checagem/caiado", _links: { self: [{ href: "https://www.agencialupa.org/wp-json/wp/v2/posts/1" }] } },
+          { title: "Caiado erra sobre saúde", url: "https://www.agencialupa.org/checagem/saude", _links: { self: [{ href: "https://www.agencialupa.org/wp-json/wp/v2/posts/500" }] } },
+        ]) }
+        if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
+        return rotaDireta(url) ?? { status: 200, body: rss([]) }
+      },
+    })
+    assert.equal(recibo.agencias.lupa.status, "ok")
+    assert.equal(recibo.agencias.lupa.pendentes, 1)
+    assert.equal(recibo.agencias.lupa.leads, 1)
+    assert.equal(recibo.result, "encontrado")
+  })
+
+  it("Cadu de Lula não abre matérias sobre Lula sem Cadu ou seu nome civil no título", () => {
+    const cadu = { ...caiado, id: "cand-cadu", slug: "cadu-xavier", nome_urna: "Cadu de Lula", nome_completo: "Carlos Eduardo Xavier" }
+    const agencia = AGENCIAS_CHECAGEM.find((item) => item.id === "lupa")!
+    const item = (titulo: string) => ({ titulo, link: "https://www.agencialupa.org/checagem/x", fonte: "Lupa", fonte_url: "https://www.agencialupa.org/checagem/x", data_publicacao: null })
+    assert.deepEqual(candidatosDaResposta([item("Lula erra em fala sobre economia")], cadu, agencia), [])
+    assert.equal(candidatosDaResposta([item("Cadu de Lula erra em fala sobre economia")], cadu, agencia).length, 1)
+    assert.equal(candidatosDaResposta([item("Carlos Eduardo Xavier erra em fala sobre economia")], cadu, agencia).length, 1)
+  })
+
+  it("Governo Tarcísio sem nome inteiro no corpo não vira vazio confirmado", async () => {
+    const tarcisio = { ...caiado, slug: "tarcisio-gov-sp", nome_urna: "Tarcísio de Freitas", nome_completo: "Tarcísio Gomes de Freitas" }
+    const [recibo] = await coletar({
+      roster: [tarcisio], sleep: async () => {},
+      fetchText: async (url) => {
+        if (url.includes("agencialupa.org/wp-json/wp/v2/posts/7")) return { status: 200, body: JSON.stringify({ content: { rendered: "<p>O governo estadual negou a criação da taxa.</p>" } }) }
+        if (url.includes("agencialupa.org/wp-json/wp/v2/search")) return { status: 200, body: JSON.stringify([
+          { title: "Governo Tarcísio não criou taxa", url: "https://www.agencialupa.org/checagem/taxa", _links: { self: [{ href: "https://www.agencialupa.org/wp-json/wp/v2/posts/7" }] } },
+        ]) }
+        if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
+        return rotaDireta(url) ?? { status: 200, body: rss([]) }
+      },
+    })
+    assert.equal(recibo.agencias.lupa.descartados, 1)
+    assert.equal(recibo.result, "nao_confirmado")
+    assert.equal(consolidarCatalogoRecibos(null, [recibo], now).receipts.length, 0)
+  })
+
+  it("regra 3 mantém associações atribuídas e barra passagem, inclusive variantes", () => {
+    for (const titulo of [
+      "Vídeo de mulher rasgando papel atrás de Trump não tem relação com Lula",
+      "Jornais não ocultaram tatuagem de Lula em caso de CAC que matou a família",
+      "Juiz que morreu em SE não investigava fraude do INSS e nem citou irmão de Lula no caso",
+    ]) assert.equal(leadPermitidoRegra3(titulo, "lula"), true, titulo)
+    for (const titulo of [
+      "Posts fazem sátira com fato de personagem do filme ‘Truque de Mestre 2’ se chamar Lula",
+      "Supla não falava de Lula ao dizer que não tem problema ‘roubar com amor’",
+      "Vídeo de abordagem da PM a torcedores do Sport não tem relação com Lula",
+    ]) assert.equal(leadPermitidoRegra3(titulo, "lula"), false, titulo)
+    for (const titulo of [
+      "Não é sobrinha de Eduardo Paes mulher que zombou de tour na Rocinha",
+      "Jovem que chamou passeio na Rocinha de ‘safári’ não é sobrinha de Eduardo Paes",
+      "Influenciadora que chamou passeio na Rocinha de “safári” não é sobrinha de Eduardo Paes",
+    ]) assert.equal(leadPermitidoRegra3(titulo, "eduardo-paes"), false, titulo)
   })
 
   it("texto da matéria do g1 (HTML real) fica restrito ao <article> e o Arc traz os parágrafos", () => {
@@ -705,7 +824,7 @@ describe("coleta nominal de checagens", () => {
           googleTitulos.push(url)
           return { status: 200, body: rss([{ title: "Braga mente sobre obras", source: "UOL", sourceUrl: "https://noticias.uol.com.br" }]) }
         }
-        return rotaDireta(url) ?? { status: 200, body: rss([]) }
+        return falhaUolAfp(url) ?? rotaDireta(url) ?? { status: 200, body: rss([]) }
       },
     })
     assert.deepEqual(recibo.leads.filter((lead) => lead.agencia === "lupa").map((lead) => lead.link), ["https://www.agencialupa.org/checagem/1", "https://www.agencialupa.org/checagem/4"],
@@ -720,7 +839,7 @@ describe("coleta nominal de checagens", () => {
       fetchText: async (url) => {
         if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
         if (url.startsWith("https://news.google.com/") && decodeURIComponent(url).includes("checamos.afp.com")) return { status: 200, body: rss([{ title: "Braga mente sobre obras", source: "AFP", sourceUrl: "https://checamos.afp.com" }]) }
-        return rotaDireta(url) ?? { status: 200, body: rss([]) }
+        return falhaUolAfp(url) ?? rotaDireta(url) ?? { status: 200, body: rss([]) }
       },
     })
     assert.equal(soPendente.result, "nao_confirmado", "sem lead confirmado e com título parcial pendente, não afirma ausência")
@@ -747,7 +866,7 @@ describe("coleta nominal de checagens", () => {
     assert.equal(googleAos.length, 2, "duas quedas para o Google; na terceira falha o disjuntor abre")
     assert.deepEqual(recibos.map((recibo) => recibo.agencias["aos-fatos"].status), ["ok", "ok", "erro", "erro"])
     assert.match(recibos[3].agencias["aos-fatos"].erro ?? "", /via direta com disjuntor aberto após 3 falhas seguidas \(busca do site: sonda: HTTP 403\)/)
-    assert.equal(recibos[3].agencias["uol-confere"].status, "ok", "UOL e AFP continuam no Google")
+    assert.equal(recibos[3].agencias["uol-confere"].status, "ok", "UOL segue pela rota direta")
   })
 
   it("recibo e catálogo registram desde quando o arquivo de seção cobre", async () => {
@@ -756,7 +875,7 @@ describe("coleta nominal de checagens", () => {
     assert.equal(recibo.agencias["estadao-verifica"].desde, "2019-08-06")
     assert.match(entradaColetaDoRecibo(recibo).detalhe ?? "", /fato-ou-fake=0\/10\(arquivo-secao desde 2026-09-02\)/)
     const publico = consolidarCatalogoRecibos(null, [recibo], now).receipts[0]
-    assert.deepEqual(publico.janelas, { "Fato ou Fake": "2026-09-02", "Estadão Verifica": "2019-08-06" })
+    assert.deepEqual(publico.janelas, { "Fato ou Fake": "2026-09-02", "Estadão Verifica": "2019-08-06", "UOL Confere": "2026-09-25" })
     assert.match(descricaoEscopo(), /arquivos de seção só a partir do item mais antigo lido/)
   })
 
@@ -779,6 +898,14 @@ describe("coleta nominal de checagens", () => {
     const b = montarRecibo({ ...caiado, id: "cand-b", slug: "b" }, okEmTodas(), now)
     const refeito = montarRecibo(caiado, okEmTodas({ lupa: 1 }), now)
     assert.deepEqual(mesclarRecibos([a, b], [refeito]).map((recibo) => recibo.result), ["encontrado", "vazio_confirmado"])
+  })
+
+  it("retomada inclui candidatura sem recibo e a que teve erro", () => {
+    const b = { ...caiado, id: "cand-b", slug: "b" }
+    const c = { ...caiado, id: "cand-c", slug: "c" }
+    const completo = montarRecibo(caiado, okEmTodas(), now)
+    const erro = montarRecibo(b, { ...okEmTodas(), lupa: { status: "erro", erro: "HTTP 500" } }, now)
+    assert.deepEqual(candidaturasParaRetomada([caiado, b, c], [completo, erro]).map((item) => item.slug), ["b", "c"])
   })
 })
 

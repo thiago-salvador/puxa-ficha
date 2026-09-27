@@ -102,6 +102,7 @@ jobs:
           CHECAGENS_GRAVAR: ${{ github.event_name == 'schedule' || inputs.gravar == true }}
         run: |
           args=(--out reports/checagens-coleta/run --catalogo scripts/data/checagens-recibos.json)
+          args+=(--concorrencia 3)
           if [ "$CHECAGENS_GRAVAR" = "true" ]; then args+=(--gravar-log); fi
           if [ -n "$CHECAGENS_SLUGS" ]; then args+=(--slugs "$CHECAGENS_SLUGS"); fi
           npm run coletar:checagens -- "${args[@]}"

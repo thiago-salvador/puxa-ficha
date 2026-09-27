@@ -1,5 +1,5 @@
 /**
- * Coleta nominal de checagens (política pf-checagens-v1).
+ * Coleta nominal de checagens (política pf-checagens-v2).
  *
  * O acervo de checagens atribuídas nasceu de pacotes de leads por veículo, sem
  * recibo por candidato. Por isso uma ficha sem aba "Checagens" não dizia se a
@@ -20,10 +20,11 @@ import { stripAccents } from "../../src/lib/strip-accents"
 import { isValidGoogleNewsRss } from "../../src/lib/news/google-news"
 import { newsTitleMentionsCandidate } from "../../src/lib/news/name-match"
 import type { EntradaColeta } from "./coleta-log"
+import { parseArquivoUol, parseBuscaAfp, trechosAfp, trechosUol, urlArquivoUol, urlBuscaAfp, urlProximaUol } from "./checagens-fontes-diretas"
 
 export const FONTE_CHECAGENS_AGENCIAS = "checagens-agencias"
 export const SCHEMA_RECIBOS_CHECAGENS = "checagens-recibos-v1" as const
-export const POLITICA_CHECAGENS = "pf-checagens-v1"
+export const POLITICA_CHECAGENS = "pf-checagens-v2"
 /** O Google News devolve no máximo 100 itens por consulta. */
 export const TETO_ITENS_POR_CONSULTA = 100
 
@@ -51,6 +52,7 @@ export interface AgenciaChecagem {
    * localmente com cada candidatura. Primeira via; o Google News é a segunda.
    */
   arquivo?: ArquivoSecao
+  fonteDireta?: "uol-arquivo" | "afp-busca"
 }
 
 /**
@@ -72,7 +74,7 @@ export interface PisoArquivo {
   maisAntigoAte: string
 }
 
-export type TransporteBusca = "wp-rest" | "busca-site" | "arquivo-secao" | "google-news"
+export type TransporteBusca = "wp-rest" | "busca-site" | "arquivo-secao" | "afp-busca" | "uol-arquivo" | "google-news"
 /** Páginas de 100 resultados lidas na busca nativa. */
 export const PAGINAS_WP = 3
 /** Páginas de 12 resultados lidas na busca do site (108 itens, perto do teto do Google News). */
@@ -118,10 +120,8 @@ export const AGENCIAS_CHECAGEM: readonly AgenciaChecagem[] = Object.freeze([
       secaoRegex: ".*estadao-verifica.*", piso: { itens: 6_000, maisAntigoAte: "2019-12-31" },
     },
   },
-  // UOL Confere e AFP Checamos respondem 403 (Akamai) a acesso automatizado,
-  // inclusive em robots.txt, sitemap e RSS: só o Google News chega a elas.
-  { id: "uol-confere", nome: "UOL Confere", sites: ["noticias.uol.com.br/confere"], dominios: ["uol.com.br"] },
-  { id: "afp-checamos", nome: "AFP Checamos", sites: ["checamos.afp.com"], dominios: ["afp.com"] },
+  { id: "uol-confere", nome: "UOL Confere", sites: ["noticias.uol.com.br/confere"], dominios: ["uol.com.br"], fonteDireta: "uol-arquivo" },
+  { id: "afp-checamos", nome: "AFP Checamos", sites: ["checamos.afp.com"], dominios: ["afp.com"], fonteDireta: "afp-busca" },
   { id: "comprova", nome: "Comprova", sites: ["projetocomprova.com.br"], dominios: ["projetocomprova.com.br"], wpSearch: "https://projetocomprova.com.br/wp-json/wp/v2/search" },
 ])
 
@@ -169,7 +169,7 @@ export interface ItemBusca {
  */
 export interface CorpoItem {
   url: string
-  formato: "wp-json" | "html-prose" | "html-article"
+  formato: "wp-json" | "html-prose" | "html-article" | "html-uol" | "html-afp"
 }
 
 export interface LeadChecagem {
@@ -177,6 +177,9 @@ export interface LeadChecagem {
   titulo: string
   link: string
   data_publicacao: string | null
+  /** Evidência local para a avaliação editorial em sombra; ausente quando o título bastou. */
+  confirmado_por?: "corpo" | "resumo"
+  trecho_confirmacao?: string
 }
 
 export type EstadoAgencia =
@@ -197,6 +200,7 @@ export type ResultadoRecibo = "encontrado" | "vazio_confirmado" | "erro" | "homo
 
 export interface ReciboChecagem {
   schema_version: typeof SCHEMA_RECIBOS_CHECAGENS
+  policy: string
   candidate_id: string
   candidate_slug: string
   candidate_name: string
@@ -295,7 +299,8 @@ export function aplicarRegraHomonimo(recibo: ReciboChecagem, candidato: Candidat
   }
   const algumaFalhou = Object.values(agencias).some((estado) => estado.status === "erro")
   const pendentes = Object.values(agencias).some((estado) => estado.status === "ok" && (estado.pendentes ?? 0) > 0)
-  const result: ResultadoRecibo = leads.length > 0 ? "encontrado" : algumaFalhou ? "erro" : pendentes ? "nao_confirmado" : descartados > 0 ? "homonimo" : "vazio_confirmado"
+  const descartadosNaConfirmacao = Object.values(agencias).some((estado) => estado.status === "ok" && (estado.descartados ?? 0) > 0)
+  const result: ResultadoRecibo = leads.length > 0 ? "encontrado" : algumaFalhou ? "erro" : pendentes || descartadosNaConfirmacao ? "nao_confirmado" : descartados > 0 ? "homonimo" : "vazio_confirmado"
   const { homonimo: _anterior, ...base } = recibo
   void _anterior
   if (semHomonimo) return { ...base, leads, agencias, result }
@@ -307,8 +312,8 @@ export function aplicarRegraHomonimo(recibo: ReciboChecagem, candidato: Candidat
 
 export function descricaoEscopo(): string {
   const nomes = (filtro: (agencia: AgenciaChecagem) => boolean) => AGENCIAS_CHECAGEM.filter(filtro).map((a) => a.nome).join(", ")
-  const soGoogle = nomes((a) => !a.wpSearch && !a.buscaSite && !a.arquivo)
-  return `uma consulta por agência (${AGENCIAS_CHECAGEM.map((a) => a.nome).join(", ")}) com o nome de urna; busca nativa WordPress em ${nomes((a) => Boolean(a.wpSearch))} (até ${PAGINAS_WP * 100} resultados); busca do site em ${nomes((a) => Boolean(a.buscaSite))} (até ${PAGINAS_BUSCA_SITE * ITENS_POR_PAGINA_BUSCA_SITE} resultados); arquivo completo da seção em ${nomes((a) => Boolean(a.arquivo))}, lido uma vez por rodada; Google News RSS em ${soGoogle} e como segunda via das demais (teto de ${TETO_ITENS_POR_CONSULTA} itens); buscas sem limite de data, arquivos de seção só a partir do item mais antigo lido (campo desde do recibo); lead exige o nome completo no título, ou parte dele no título e o nome completo no corpo (no resumo, para vídeo), sem parte colada a outro nome próprio; na rota sem corpo (Google News) o título parcial fica pendente e o recibo sem lead confirmado não entra no catálogo público`
+  const soGoogle = nomes((a) => !a.wpSearch && !a.buscaSite && !a.arquivo && !a.fonteDireta)
+  return `uma consulta por agência (${AGENCIAS_CHECAGEM.map((a) => a.nome).join(", ")}) com o nome de urna; busca nativa WordPress em ${nomes((a) => Boolean(a.wpSearch))} (até ${PAGINAS_WP * 100} resultados); busca do site em ${nomes((a) => Boolean(a.buscaSite))} (até ${PAGINAS_BUSCA_SITE * ITENS_POR_PAGINA_BUSCA_SITE} resultados); arquivo completo da seção em ${nomes((a) => Boolean(a.arquivo))}, lido uma vez por rodada; arquivo do UOL Confere e busca nativa da AFP Checamos sem Google; Google News RSS em ${soGoogle || "nenhuma agência"} como segunda via quando a rota direta falha (teto de ${TETO_ITENS_POR_CONSULTA} itens); buscas sem limite de data, arquivos de seção só a partir do item mais antigo lido (campo desde do recibo); lead exige o nome completo no título, ou parte dele no título e o nome completo no corpo (no resumo, para vídeo), sem parte colada a outro nome próprio; na rota sem corpo (Google News) o título parcial fica pendente e o recibo sem lead confirmado não entra no catálogo público`
 }
 
 export function urlBuscaSite(nomeUrna: string, agencia: AgenciaChecagem, pagina: number): string | null {
@@ -530,6 +535,9 @@ export function candidatosDaResposta(itens: readonly ItemBusca[], candidato: Can
     if (!host || !agencia.dominios.some((dominio) => host === dominio || host.endsWith(`.${dominio}`))) continue
     const titulo = tituloSemVeiculo(item.titulo, item.fonte)
     if (!newsTitleMentionsCandidate(titulo, { nome_urna: candidato.nome_urna, nome_completo: candidato.nome_completo })) continue
+    // "Cadu de Lula" é o nome de urna de Carlos Eduardo Xavier. "Lula" sozinho
+    // nomeia outra pessoa e abriria milhares de matérias sem relação com ele.
+    if (candidato.slug === "cadu-xavier" && !/\b(?:cadu|xavier|carlos eduardo)\b/.test(normalizarNome(titulo))) continue
     // Duplicata por link aqui; por título só entre os confirmados (títulos iguais podem ser matérias diferentes).
     if (vistos.has(item.link)) continue
     vistos.add(item.link)
@@ -555,6 +563,7 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
   const leads: LeadChecagem[] = []
   let erro = false
   let pendentes = false
+  let descartados = false
   for (const agencia of AGENCIAS_CHECAGEM) {
     const estado = estados[agencia.id]
     if (!estado) {
@@ -575,11 +584,13 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
       ...(estado.pendentes ? { pendentes: estado.pendentes } : {}),
       ...(estado.descartados ? { descartados: estado.descartados } : {}),
     }
+    if ((estado.descartados ?? 0) > 0) descartados = true
     if (estado.pendentes) pendentes = true
     leads.push(...estado.leads)
   }
   return {
     schema_version: SCHEMA_RECIBOS_CHECAGENS,
+    policy: POLITICA_CHECAGENS,
     candidate_id: candidato.id,
     candidate_slug: candidato.slug,
     candidate_name: candidato.nome_urna,
@@ -588,7 +599,7 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
     searched_at: searchedAt.toISOString(),
     // Lead achado vale mesmo com outra agência em erro; ausência só com todas respondendo.
     // Título parcial sem corpo para conferir impede afirmar ausência.
-    result: leads.length > 0 ? "encontrado" : erro ? "erro" : pendentes ? "nao_confirmado" : "vazio_confirmado",
+    result: leads.length > 0 ? "encontrado" : erro ? "erro" : pendentes || descartados ? "nao_confirmado" : "vazio_confirmado",
     leads,
     agencias,
     escopo: descricaoEscopo(),
@@ -617,6 +628,8 @@ export function entradaColetaDoRecibo(recibo: ReciboChecagem): EntradaColeta {
 
 /** Forma pública, versionada no repositório e lida pelo site no build. */
 export interface ReciboChecagemPublico {
+  /** Ausente nos recibos v1 curados pelo #530; novas buscas registram v2. */
+  policy?: string
   candidate_id: string
   candidate_slug: string
   searched_at: string
@@ -630,7 +643,7 @@ export interface ReciboChecagemPublico {
 
 export interface CatalogoRecibosChecagens {
   schema_version: typeof SCHEMA_RECIBOS_CHECAGENS
-  policy: typeof POLITICA_CHECAGENS
+  policy: "pf-checagens-v1" | typeof POLITICA_CHECAGENS
   agencias: string[]
   escopo: string
   updated_at: string
@@ -668,6 +681,7 @@ export function consolidarCatalogoRecibos(
     if (!homonimos.has(chave)) porChave.set(chave, recibo)
   }
   for (const recibo of recibos) {
+    if (recibo.policy !== POLITICA_CHECAGENS) throw new Error(`Recibo de ${recibo.candidate_slug} usa política ${recibo.policy ?? "ausente"}; refaça a busca com ${POLITICA_CHECAGENS}`)
     if (recibo.result === "erro") continue
     const chave = `${recibo.candidate_id}\u0000${recibo.candidate_slug}`
     if (homonimos.has(chave) && !recibo.homonimo) continue
@@ -679,6 +693,7 @@ export function consolidarCatalogoRecibos(
       continue
     }
     porChave.set(chave, {
+      policy: POLITICA_CHECAGENS,
       candidate_id: recibo.candidate_id,
       candidate_slug: recibo.candidate_slug,
       searched_at: recibo.searched_at,
@@ -962,36 +977,63 @@ export function trechosWpJson(body: string): string[] | null {
 }
 
 /** Nome inteiro em algum trecho, casado trecho a trecho. */
-function trechosCitamNomeInteiro(trechos: readonly string[], candidato: CandidatoChecagem): boolean {
-  return trechos.some((trecho) => textoCitaNomeInteiro(trecho, candidato))
+function trechoComNomeInteiro(trechos: readonly string[], candidato: CandidatoChecagem): string | null {
+  return trechos.find((trecho) => textoCitaNomeInteiro(trecho, candidato)) ?? null
+}
+
+/** Decisões editoriais explícitas: o boato não atribuiu nada a esta pessoa. */
+export function leadPermitidoRegra3(titulo: string, slug: string): boolean {
+  const texto = normalizarNome(titulo)
+  if (slug === "lula") {
+    return ![
+      "posts fazem satira com fato de personagem do filme truque de mestre 2 se chamar lula",
+      "supla nao falava de lula ao dizer que nao tem problema roubar com amor",
+      "video de abordagem da pm a torcedores do sport nao tem relacao com lula",
+    ].includes(texto)
+  }
+  if (slug === "eduardo-paes") return !(/\bsobrinha\b/.test(texto) && /\bpaes\b/.test(texto) && /\b(rocinha|safari)\b/.test(texto))
+  return true
 }
 
 /** Conectivos de nome. "Neto", "Filho" e "Junior" ficam de fora: são parte do nome ("ACM Neto"). */
 const CONECTIVOS_NOME = new Set(["de", "da", "do", "das", "dos", "e", "di", "del", "van", "von", "la", "le"])
 
-const CARGOS_ANTES_DO_NOME = new Set(["governador", "governadora", "presidente", "senador", "senadora", "deputado", "deputada", "prefeito", "prefeita", "ministro", "ministra", "vice", "ex", "candidato", "candidata", "pre", "general", "coronel", "pastor", "pastora"])
+const CARGOS_ANTES_DO_NOME = new Set(["governador", "governadora", "presidente", "senador", "senadora", "deputado", "deputada", "prefeito", "prefeita", "ministro", "ministra", "vice", "ex", "candidato", "candidata", "pre", "general", "coronel", "pastor", "pastora", "governo", "gestao", "campanha", "candidatura", "chapa", "partido", "gabinete", "equipe", "aliados", "base", "prefeitura", "secretaria", "senado", "camara", "assembleia", "estado", "municipio", "video", "foto", "post", "texto", "fala", "audio", "imagem", "nao"])
 
 /**
- * Parte do nome do candidato colada a outro nome próprio: "Felipe Neto" para
- * ACM Neto, "Ciro Gomes" para Ciro Nogueira. Vizinho em maiúscula que não é
- * parte do nome da candidatura, partícula ou cargo indica outra pessoa.
+ * Só descarta quando a parte do nome forma outro nome próprio reconhecível.
+ * Se o título também contém outra parte do nome da candidatura, o contexto é
+ * ambíguo e a confirmação segue para o corpo da matéria.
  */
-export function nomeColadoEmOutraPessoa(texto: string, candidato: CandidatoChecagem): boolean {
+export function contextoNomeVizinho(texto: string, candidato: CandidatoChecagem): "outra_pessoa" | "incerto" | "livre" {
   const doNome = new Set([candidato.nome_urna, candidato.nome_completo].flatMap((nome) => normalizarNome(nome).split(" ")).filter((token) => token && !CONECTIVOS_NOME.has(token)))
   const palavras = [...texto.matchAll(/[\p{L}\p{N}]+/gu)].map((match) => ({ texto: match[0], inicio: match.index, fim: match.index + match[0].length }))
   // Colado é só vizinho separado por espaço: "São Luís: Braide" tem pontuação no meio e não é outra pessoa.
   const coladas = (a: { fim: number }, b: { inicio: number }) => /^\s+$/.test(texto.slice(a.fim, b.inicio))
-  return palavras.some((palavra, indice) => {
-    if (!doNome.has(normalizarNome(palavra.texto))) return false
-    const anterior = palavras[indice - 1]
-    const seguinte = palavras[indice + 1]
-    const vizinhos = [anterior && coladas(anterior, palavra) ? anterior : null, seguinte && coladas(palavra, seguinte) ? seguinte : null]
-    return vizinhos.some((vizinho) => {
-      if (!vizinho || !/^\p{Lu}/u.test(vizinho.texto)) return false
-      const normalizado = normalizarNome(vizinho.texto)
-      return !doNome.has(normalizado) && !CONECTIVOS_NOME.has(normalizado) && !CARGOS_ANTES_DO_NOME.has(normalizado)
-    })
-  })
+  let incerto = false
+  let outraPessoa = false
+  for (const [indice, palavra] of palavras.entries()) {
+    const token = normalizarNome(palavra.texto)
+    if (!doNome.has(token)) continue
+    for (const direcao of [-1, 1] as const) {
+      let atual = indice
+      let vizinho = indice + direcao
+      let conjuncao = false
+      while (vizinho >= 0 && vizinho < palavras.length && coladas(direcao < 0 ? palavras[vizinho] : palavras[atual], direcao < 0 ? palavras[atual] : palavras[vizinho])) {
+        const normalizado = normalizarNome(palavras[vizinho].texto)
+        if (CONECTIVOS_NOME.has(normalizado)) { conjuncao ||= normalizado === "e"; atual = vizinho; vizinho += direcao; continue }
+        if (!/^\p{Lu}/u.test(palavras[vizinho].texto) || CARGOS_ANTES_DO_NOME.has(normalizado) || doNome.has(normalizado)) break
+        if (conjuncao) incerto = true
+        else outraPessoa = true
+        break
+      }
+    }
+  }
+  return incerto ? "incerto" : outraPessoa ? "outra_pessoa" : "livre"
+}
+
+export function nomeColadoEmOutraPessoa(texto: string, candidato: CandidatoChecagem): boolean {
+  return contextoNomeVizinho(texto, candidato) === "outra_pessoa"
 }
 
 async function lerCorpo(corpo: CorpoItem, opcoes: OpcoesConsulta): Promise<{ trechos: string[] } | { erro: string }> {
@@ -1002,7 +1044,11 @@ async function lerCorpo(corpo: CorpoItem, opcoes: OpcoesConsulta): Promise<{ tre
     lido = pedirComTentativas(corpo.url, opcoes).then((resposta) => {
       if ("erro" in resposta) return resposta
       try {
-        const trechos = corpo.formato === "wp-json" ? trechosWpJson(resposta.body) : corpo.formato === "html-prose" ? trechosAosFatos(resposta.body) : textoDaPagina(resposta.body)
+        const trechos = corpo.formato === "wp-json" ? trechosWpJson(resposta.body)
+          : corpo.formato === "html-prose" ? trechosAosFatos(resposta.body)
+          : corpo.formato === "html-uol" ? trechosUol(resposta.body)
+          : corpo.formato === "html-afp" ? trechosAfp(resposta.body)
+          : textoDaPagina(resposta.body)
         return trechos === null ? { erro: `corpo não encontrado (${corpo.formato})` } : { trechos }
       } catch (error) {
         return { erro: `corpo ilegível (${corpo.formato}): ${error instanceof Error ? error.message : String(error)}` }
@@ -1026,13 +1072,15 @@ export async function confirmarCandidatos(
   candidato: CandidatoChecagem,
   agencia: AgenciaChecagem,
   opcoes: OpcoesConsulta,
-): Promise<{ leads: LeadChecagem[]; pendentes: number; descartados: number } | { erro: string }> {
+): Promise<{ leads: LeadChecagem[]; pendentes: number; descartados: number }> {
   const leads: LeadChecagem[] = []
   const titulos = new Set<string>()
   let pendentes = 0
   let descartados = 0
   for (const item of candidatos) {
     let confirmado = textoCitaNomeInteiro(normalizarNome(item.titulo), candidato)
+    let confirmadoPor: LeadChecagem["confirmado_por"]
+    let trechoConfirmacao: string | null = null
     if (!confirmado) {
       if (nomeColadoEmOutraPessoa(item.titulo, candidato)) {
         descartados++
@@ -1040,12 +1088,17 @@ export async function confirmarCandidatos(
       }
       if (item.semCorpo) {
         confirmado = Boolean(item.resumo) && textoCitaNomeInteiro(normalizarNome(item.resumo), candidato) && !nomeColadoEmOutraPessoa(item.resumo!, candidato)
+        if (confirmado) { confirmadoPor = "resumo"; trechoConfirmacao = item.resumo ?? null }
       } else if (item.trechos) {
-        confirmado = trechosCitamNomeInteiro(item.trechos, candidato)
+        trechoConfirmacao = trechoComNomeInteiro(item.trechos, candidato)
+        confirmado = trechoConfirmacao !== null
+        if (confirmado) confirmadoPor = "corpo"
       } else if (item.corpo) {
         const corpo = await lerCorpo(item.corpo, opcoes)
-        if ("erro" in corpo) return { erro: `confirmação de ${item.link}: ${corpo.erro}` }
-        confirmado = trechosCitamNomeInteiro(corpo.trechos, candidato)
+        if ("erro" in corpo) { pendentes++; continue }
+        trechoConfirmacao = trechoComNomeInteiro(corpo.trechos, candidato)
+        confirmado = trechoConfirmacao !== null
+        if (confirmado) confirmadoPor = "corpo"
       } else {
         pendentes++
         continue
@@ -1055,17 +1108,23 @@ export async function confirmarCandidatos(
       descartados++
       continue
     }
+    if (!leadPermitidoRegra3(item.titulo, candidato.slug)) {
+      descartados++
+      continue
+    }
     if (titulos.has(chaveTitulo(item.titulo))) continue
     titulos.add(chaveTitulo(item.titulo))
-    leads.push({ agencia: agencia.id, titulo: item.titulo, link: item.link, data_publicacao: item.data_publicacao })
+    leads.push({ agencia: agencia.id, titulo: item.titulo, link: item.link, data_publicacao: item.data_publicacao,
+      ...(confirmadoPor ? { confirmado_por: confirmadoPor, trecho_confirmacao: trechoConfirmacao?.slice(0, 500) } : {}),
+    })
   }
   return { leads, pendentes, descartados }
 }
 
-/** Estado `ok` de uma rota depois da confirmação; erro de confirmação vira erro da rota. */
+/** Estado `ok` de uma rota depois da confirmação; falha de corpo deixa só o item pendente. */
 async function estadoConfirmado(itens: readonly ItemBusca[], total: number, candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta, transporte: TransporteBusca, prefixo: string, desde?: string): Promise<EstadoAgencia> {
   const confirmacao = await confirmarCandidatos(candidatosDaResposta(itens, candidato, agencia), candidato, agencia, opcoes)
-  if ("erro" in confirmacao) return { status: "erro", erro: `${prefixo}: ${confirmacao.erro}` }
+  void prefixo
   return {
     status: "ok", itens: total, leads: confirmacao.leads, transporte,
     ...(desde ? { desde } : {}),
@@ -1083,6 +1142,40 @@ async function consultarArquivo(candidato: CandidatoChecagem, agencia: AgenciaCh
   const arquivo = await lido
   if (arquivo.status === "erro") return { status: "erro", erro: `arquivo da seção: ${arquivo.erro}` }
   return estadoConfirmado(arquivo.itens, arquivo.itens.length, candidato, agencia, opcoes, "arquivo-secao", "arquivo da seção", arquivo.desde)
+}
+
+async function lerArquivoUol(opcoes: OpcoesConsulta): Promise<ArquivoLido> {
+  const porLink = new Map<string, ItemBusca>()
+  const cursores = new Set<string>()
+  let url = urlArquivoUol()
+  for (let pagina = 1; pagina <= MAX_PAGINAS_ARQUIVO; pagina++) {
+    if (opcoes.parada.abortada) return { status: "erro", erro: "rodada interrompida" }
+    const resposta = await pedirComTentativas(url, opcoes)
+    if ("erro" in resposta) return { status: "erro", erro: `arquivo UOL página ${pagina}: ${resposta.erro}` }
+    let lida: ReturnType<typeof parseArquivoUol>
+    try { lida = parseArquivoUol(resposta.body) }
+    catch (error) { return { status: "erro", erro: `arquivo UOL página ${pagina}: ${error instanceof Error ? error.message : String(error)}` } }
+    for (const item of lida.itens) porLink.set(item.link, item)
+    if (!lida.hasNext) {
+      const itens = [...porLink.values()]
+      if (itens.length === 0) return { status: "erro", erro: "arquivo UOL sem matérias Confere" }
+      const desde = itens.map((item) => item.data_publicacao).filter((data): data is string => Boolean(data)).sort()[0]
+      if (!desde) return { status: "erro", erro: "arquivo UOL sem data para delimitar cobertura" }
+      return { status: "ok", itens, desde }
+    }
+    if (!lida.cursor || cursores.has(lida.cursor)) return { status: "erro", erro: `arquivo UOL cursor repetido na página ${pagina}` }
+    cursores.add(lida.cursor)
+    url = urlProximaUol(lida.request)
+  }
+  return { status: "erro", erro: `arquivo UOL excedeu ${MAX_PAGINAS_ARQUIVO} páginas` }
+}
+
+async function consultarUol(candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<EstadoAgencia> {
+  let lido = opcoes.arquivos.get(agencia.id)
+  if (!lido) { lido = lerArquivoUol(opcoes); opcoes.arquivos.set(agencia.id, lido) }
+  const arquivo = await lido
+  if (arquivo.status === "erro") return { status: "erro", erro: arquivo.erro }
+  return estadoConfirmado(arquivo.itens, arquivo.itens.length, candidato, agencia, opcoes, "uol-arquivo", "arquivo UOL", arquivo.desde)
 }
 
 /** Limite de taxa com `pararNoBloqueio`: a rodada para e a candidatura em curso não gera recibo. */
@@ -1118,7 +1211,23 @@ async function consultarNativa(candidato: CandidatoChecagem, agencia: AgenciaChe
 }
 
 function temViaDireta(agencia: AgenciaChecagem): boolean {
-  return Boolean(agencia.wpSearch || agencia.buscaSite || agencia.arquivo)
+  return Boolean(agencia.wpSearch || agencia.buscaSite || agencia.arquivo || agencia.fonteDireta)
+}
+
+async function consultarAfp(candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<EstadoAgencia> {
+  const itens: ItemBusca[] = []
+  let pagina = 0
+  for (let lidas = 0; lidas < MAX_PAGINAS_ARQUIVO; lidas++) {
+    const resposta = await pedirComTentativas(urlBuscaAfp(candidato.nome_urna, pagina), opcoes)
+    if ("erro" in resposta) return { status: "erro", erro: `busca AFP página ${pagina}: ${resposta.erro}` }
+    let parsed: ReturnType<typeof parseBuscaAfp>
+    try { parsed = parseBuscaAfp(resposta.body, candidato.nome_urna, pagina) }
+    catch (error) { return { status: "erro", erro: `busca AFP página ${pagina}: ${error instanceof Error ? error.message : String(error)}` } }
+    itens.push(...parsed.itens)
+    if (parsed.proxima === null) return estadoConfirmado(itens, parsed.total, candidato, agencia, opcoes, "afp-busca", "busca AFP")
+    pagina = parsed.proxima
+  }
+  return { status: "erro", erro: `busca AFP excedeu ${MAX_PAGINAS_ARQUIVO} páginas` }
 }
 
 async function consultarAgencia(candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<EstadoAgencia> {
@@ -1131,7 +1240,11 @@ async function consultarAgencia(candidato: CandidatoChecagem, agencia: AgenciaCh
     ? await consultarNativa(candidato, agencia, opcoes)
     : agencia.buscaSite
       ? await consultarBuscaSite(candidato, agencia, opcoes)
-      : await consultarArquivo(candidato, agencia, opcoes)
+      : agencia.arquivo
+        ? await consultarArquivo(candidato, agencia, opcoes)
+        : agencia.fonteDireta === "afp-busca"
+          ? await consultarAfp(candidato, agencia, opcoes)
+          : await consultarUol(candidato, agencia, opcoes)
   if (direta.status === "ok") {
     disjuntor.falhasSeguidas = 0
     return direta
@@ -1235,7 +1348,10 @@ export async function coletarChecagens(opcoes: OpcoesColeta): Promise<ReciboChec
   const recibos: ReciboChecagem[] = new Array(opcoes.roster.length)
   // Arquivos de seção começam já: correm em paralelo às buscas por candidatura (hosts diferentes).
   if (opcoes.roster.length > 0) {
-    for (const agencia of AGENCIAS_CHECAGEM) if (agencia.arquivo) consulta.arquivos.set(agencia.id, lerArquivo(agencia, consulta))
+    for (const agencia of AGENCIAS_CHECAGEM) {
+      if (agencia.arquivo) consulta.arquivos.set(agencia.id, lerArquivo(agencia, consulta))
+      if (agencia.fonteDireta === "uol-arquivo") consulta.arquivos.set(agencia.id, lerArquivoUol(consulta))
+    }
   }
   let proximo = 0
   // Abort compartilhado: um trabalhador que bate no limite para os outros também.
@@ -1248,7 +1364,7 @@ export async function coletarChecagens(opcoes: OpcoesColeta): Promise<ReciboChec
       for (const agencia of AGENCIAS_CHECAGEM) {
         if (abortado) return
         // Arquivo de seção não pede nada por candidatura; Google desligado ou em disjuntor também não.
-        const semPedido = Boolean(agencia.arquivo) || (!temViaDireta(agencia) && (consulta.semGoogle || disjuntor.aberto !== null))
+        const semPedido = Boolean(agencia.arquivo || agencia.fonteDireta === "uol-arquivo") || (!temViaDireta(agencia) && (consulta.semGoogle || disjuntor.aberto !== null))
         try {
           estados[agencia.id] = await consultarAgencia(candidato, agencia, consulta)
         } catch (error) {
@@ -1304,6 +1420,15 @@ export function resumirColeta(recibos: readonly ReciboChecagem[]): ResumoColeta 
 /** Recibo que precisa ser refeito: erro geral ou alguma agência sem resposta. */
 export function reciboIncompleto(recibo: ReciboChecagem): boolean {
   return recibo.result === "erro" || Object.values(recibo.agencias).some((estado) => estado.status === "erro")
+}
+
+/** Retoma também candidaturas sem recibo, por exemplo após interrupção da rodada. */
+export function candidaturasParaRetomada(roster: readonly CandidatoChecagem[], anteriores: readonly ReciboChecagem[]): CandidatoChecagem[] {
+  const porChave = new Map(anteriores.map((recibo) => [`${recibo.candidate_id}\u0000${recibo.candidate_slug}`, recibo]))
+  return roster.filter((candidato) => {
+    const anterior = porChave.get(`${candidato.id}\u0000${candidato.slug}`)
+    return !anterior || reciboIncompleto(anterior)
+  })
 }
 
 /**
