@@ -506,7 +506,9 @@ describe("classificador puro (#136)", () => {
     // Situacao de Godeiro e Laudicerio, chapa vigente e biografia (20260926180000/0100/0200): --gate PG17 mediu 413 + 105 = 518.
     // Numero CNJ de wilson-grassi-junior e CHECK de numero CNJ (20260926190000/0100): --gate PG17 mediu 415 + 105 = 520.
     // Partido e cargo_atual de tse-2026-270002544629 (20260926224500), depois do #520: --gate PG17 mediu 416 + 105 = 521.
-    assert.equal(manifesto.aplicadas_esperadas, 416)
+    // Nova correcao de partido e cargo_atual de tse-2026-270002544629 (20260927020000): --gate PG17 mediu 417 + 105 = 522.
+    // Datas de nascimento, homonimo de mauricio-coelho e CHECK de sentinela (20260927030000/0100/0200): --gate PG17 mediu 420 + 105 = 525.
+    assert.equal(manifesto.aplicadas_esperadas, 420)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
