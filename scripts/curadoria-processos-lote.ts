@@ -2116,13 +2116,18 @@ async function main(): Promise<void> {
             return [numero, lote]
           }))
       const slugs = [...lotes.values()].flatMap((lote) => lote.map((c) => c.slug))
+      // coorte-atualizacao: aplica
       const { data, error } = await supabase.from("candidatos")
         .select("id,slug,nome_completo,nome_urna,cargo_disputado,cargo_atual,estado,partido_sigla,biografia,sq_candidato_2026")
         .in("slug", slugs)
       if (error) throw new Error(error.message)
-      const candidatosBanco = data as CandidatoBanco[]
+      const candidatosBanco = filtrarCoorteAtualizacao(
+        (data ?? []) as CandidatoBanco[],
+        await carregarCoorteAtualizacao(),
+        "processos",
+      )
       const banco = new Map(candidatosBanco.map((c) => [c.slug, c]))
-      // coorte-atualizacao: isento (mapa do seed para os slugs já selecionados pelo lote)
+      // coorte-atualizacao: isento (seed fornece identidade só às linhas filtradas do lote)
       const seeds = new Map((JSON.parse(readFileSync(resolve("data/candidatos.json"), "utf8")) as SeedCandidato[]).map((c) => [c.slug, c]))
       const identidadesTse = await carregarIdentidadesTse(candidatosBanco, seeds, cache)
       const inventario = await fetchJson<InventarioTribunais[]>(`${DJEN}/api/v1/comunicacao/tribunal`)

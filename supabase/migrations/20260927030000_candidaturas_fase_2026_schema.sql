@@ -22,14 +22,14 @@ BEGIN;
 
 CREATE TABLE IF NOT EXISTS public.candidaturas_fase_2026 (
   candidato_id uuid PRIMARY KEY REFERENCES public.candidatos(id) ON DELETE RESTRICT,
-  sq_candidato_2026 text NOT NULL CHECK (sq_candidato_2026 ~ '^[0-9]+$'),
+  sq_candidato_2026 text CHECK (sq_candidato_2026 ~ '^[0-9]+$'),
   cargo_disputado text NOT NULL CHECK (cargo_disputado IN ('Presidente', 'Governador', 'Senador')),
   fase_eleitoral text NOT NULL CHECK (fase_eleitoral IN ('em_disputa', 'segundo_turno', 'eleito', 'nao_eleito', 'fora_da_disputa')),
   fase_turno smallint NOT NULL CHECK (fase_turno IN (1, 2)),
   atualizacao_encerrada_em date,
-  situacao_tse text NOT NULL CHECK (length(situacao_tse) BETWEEN 1 AND 200),
-  fonte_url text NOT NULL CHECK (fonte_url ~ '^https://resultados\.tse\.jus\.br/oficial/'),
-  fonte_sha256 text NOT NULL CHECK (fonte_sha256 ~ '^[0-9a-f]{64}$'),
+  situacao_tse text CHECK (length(situacao_tse) BETWEEN 1 AND 200),
+  fonte_url text CHECK (fonte_url ~ '^https://resultados\.tse\.jus\.br/oficial/'),
+  fonte_sha256 text CHECK (fonte_sha256 ~ '^[0-9a-f]{64}$'),
   migration_version text NOT NULL CHECK (migration_version ~ '^[0-9]{14}$'),
   registrado_em timestamptz NOT NULL DEFAULT now(),
   CONSTRAINT candidaturas_fase_2026_em_disputa_sem_encerramento
@@ -41,7 +41,14 @@ CREATE TABLE IF NOT EXISTS public.candidaturas_fase_2026 (
   CONSTRAINT candidaturas_fase_2026_segundo_turno_executivo
     CHECK (fase_eleitoral <> 'segundo_turno' OR (fase_turno = 1 AND cargo_disputado IN ('Presidente', 'Governador'))),
   CONSTRAINT candidaturas_fase_2026_senado_primeiro_turno
-    CHECK (cargo_disputado <> 'Senador' OR fase_turno = 1)
+    CHECK (cargo_disputado <> 'Senador' OR fase_turno = 1),
+  CONSTRAINT candidaturas_fase_2026_fonte_ou_senado_sem_resultado
+    CHECK (
+      (sq_candidato_2026 IS NOT NULL AND situacao_tse IS NOT NULL
+       AND fonte_url IS NOT NULL AND fonte_sha256 IS NOT NULL)
+      OR (cargo_disputado = 'Senador' AND fase_eleitoral = 'fora_da_disputa'
+          AND situacao_tse IS NULL AND fonte_url IS NULL AND fonte_sha256 IS NULL)
+    )
 );
 
 COMMENT ON TABLE public.candidaturas_fase_2026 IS
@@ -57,7 +64,7 @@ GRANT SELECT (candidato_id, cargo_disputado, fase_eleitoral, fase_turno, atualiz
   ON TABLE public.candidaturas_fase_2026 TO anon, authenticated;
 DROP POLICY IF EXISTS candidaturas_fase_2026_public_read ON public.candidaturas_fase_2026;
 CREATE POLICY candidaturas_fase_2026_public_read ON public.candidaturas_fase_2026
-  FOR SELECT TO anon, authenticated USING (true);
+  FOR SELECT TO anon, authenticated USING (public.is_public_candidate(candidato_id));
 
 -- Só fichas no ar (a junção com candidatos_publico já aplica publicavel e
 -- status). É a fonte do predicado para coletores que só têm a chave anon.

@@ -16,11 +16,11 @@
  *             totalizadas), cand[] com sqcand, n, nm, e ("s" eleito),
  *             st ("Eleito", "2º turno", "Não eleito"...) e dvt ("Válido"...).
  *
- * Regra que não cede: leitura parcial nunca marca ninguém. Arquivo que não
+ * Regra que não cede: leitura parcial não marca candidatura executiva afetada. Arquivo que não
  * veio (403, timeout, JSON inválido), que não é oficial, que não fechou a
  * totalização, que não bate com eleição/cargo/UF/turno esperados ou que falha
- * na checagem de sanidade não produz mudança nenhuma: todas as candidaturas
- * daquele arquivo vão para `pendentes` e continuam na coorte de atualização.
+ * na checagem de sanidade não produz alegação individual: as candidaturas
+ * executivas afetadas vão para `pendentes`; senadores saem sem alegação de resultado.
  */
 import { createHash } from "node:crypto"
 import { stripAccents } from "../../src/lib/strip-accents"
@@ -110,8 +110,9 @@ export function descobrirEleicoes(config: unknown, esperado: { ciclo: string; tu
       if (cargos.has(CODIGO_CARGO_TSE.Governador) || cargos.has(CODIGO_CARGO_TSE.Senador)) estadual.push(cd)
     }
   }
-  const unico = (lista: string[], nome: string): string => {
+  const unico = (lista: string[], nome: string, permitirAusente = false): string => {
     const set = [...new Set(lista)]
+    if (permitirAusente && set.length === 0) return ""
     if (set.length !== 1) throw new Error(`ele-c.json: esperada 1 eleição ${nome} em ${esperado.dataIso} turno ${esperado.turno}, achadas ${set.length}`)
     return set[0]
   }
@@ -119,8 +120,8 @@ export function descobrirEleicoes(config: unknown, esperado: { ciclo: string; tu
     ciclo: esperado.ciclo,
     turno: esperado.turno,
     data: esperado.dataIso,
-    federal: unico(federal, "federal (Presidente)"),
-    estadual: unico(estadual, "estadual (Governador/Senador)"),
+    federal: unico(federal, "federal (Presidente)", esperado.turno === 2),
+    estadual: unico(estadual, "estadual (Governador/Senador)", esperado.turno === 2),
   }
 }
 
@@ -291,18 +292,28 @@ export interface CandidaturaCoorte {
   atualizacao_encerrada_em: string | null
 }
 
+/** Lista apenas eleições com candidaturas elegíveis na fase já aplicada. */
+export function arquivosNecessariosDoTurno(eleicoes: EleicoesDoTurno, coorte: CandidaturaCoorte[]): ArquivoAlvo[] {
+  return arquivosDoTurno(eleicoes, candidaturasDoTurno(eleicoes.turno, coorte).map((c) => ({
+    cargo: c.cargo_disputado as CargoResultado,
+    uf: c.estado,
+  })))
+}
+
 export interface MudancaFase {
   id: string
   slug: string
-  sq: string
+  sq: string | null
+  /** SQ bruto da ficha usado apenas para validar a preimagem no apply. */
+  sq_antes: string | null
   cargo: CargoResultado
   abrangencia: string
   fase_antes: string
   fase_depois: FaseEleitoral
   turno: TurnoEleitoral
   encerra_atualizacao: boolean
-  fonte: string
-  situacao_tse: string
+  fonte: string | null
+  situacao_tse: string | null
 }
 
 export interface PendenciaFase {
@@ -321,6 +332,7 @@ export interface PlanoFase {
   fontes: Array<{ chave: string; url: string; ok: boolean; sha256?: string; gerado_tse?: string; motivo?: string }>
   mudancas: MudancaFase[]
   pendentes: PendenciaFase[]
+  sem_resultado: PendenciaFase[]
   resumo: Record<string, number>
 }
 
@@ -350,6 +362,24 @@ export function montarPlano(input: {
   const porChave = new Map(input.leituras.map((l) => [l.alvo.chave, l]))
   const mudancas: MudancaFase[] = []
   const pendentes: PendenciaFase[] = []
+  const semResultado: PendenciaFase[] = []
+  const semResultadoSenador = (c: CandidaturaCoorte, abrangencia: string, motivo: string) => {
+    semResultado.push({ slug: c.slug, cargo: "Senador", abrangencia, motivo })
+    mudancas.push({
+      id: c.id,
+      slug: c.slug,
+      sq: /^\d+$/.test(String(c.sq_candidato_2026 ?? "").trim()) ? String(c.sq_candidato_2026).trim() : null,
+      sq_antes: c.sq_candidato_2026,
+      cargo: "Senador",
+      abrangencia,
+      fase_antes: c.fase_eleitoral,
+      fase_depois: "fora_da_disputa",
+      turno: 1,
+      encerra_atualizacao: true,
+      fonte: null,
+      situacao_tse: null,
+    })
+  }
   for (const c of candidaturasDoTurno(input.turno, input.coorte)) {
     const cargo = c.cargo_disputado as CargoResultado
     const abrangencia = cargo === "Presidente" ? "BR" : String(c.estado ?? "").toUpperCase()
@@ -359,18 +389,39 @@ export function montarPlano(input: {
       pendente("senador com fase segundo_turno é inconsistente")
       continue
     }
-    if (!leitura) { pendente("arquivo do TSE não lido"); continue }
-    if (!leitura.ok) { pendente(`arquivo recusado: ${leitura.motivo}`); continue }
+    if (!leitura) {
+      if (input.turno === 1 && cargo === "Senador") semResultadoSenador(c, abrangencia, "arquivo do TSE não lido")
+      else pendente("arquivo do TSE não lido")
+      continue
+    }
+    if (!leitura.ok) {
+      if (input.turno === 1 && cargo === "Senador") semResultadoSenador(c, abrangencia, `arquivo recusado: ${leitura.motivo}`)
+      else pendente(`arquivo recusado: ${leitura.motivo}`)
+      continue
+    }
     const sq = String(c.sq_candidato_2026 ?? "").trim()
-    if (!/^\d+$/.test(sq)) { pendente("ficha sem sq_candidato_2026"); continue }
+    if (!/^\d+$/.test(sq)) {
+      if (input.turno === 1 && cargo === "Senador") semResultadoSenador(c, abrangencia, "ficha sem sq_candidato_2026")
+      else pendente("ficha sem sq_candidato_2026")
+      continue
+    }
     const linha = leitura.candidatos.find((x) => x.sq === sq)
-    if (!linha) { pendente("SQ ausente do resultado oficial"); continue }
+    if (!linha) {
+      if (input.turno === 1 && cargo === "Senador") semResultadoSenador(c, abrangencia, "SQ ausente do resultado oficial")
+      else pendente("SQ ausente do resultado oficial")
+      continue
+    }
     const fase = classificarCandidato(linha, input.turno)
-    if (!fase) { pendente(`situação TSE não reconhecida: ${linha.situacao}/${linha.destinacao}`); continue }
+    if (!fase) {
+      if (input.turno === 1 && cargo === "Senador") semResultadoSenador(c, abrangencia, `situação TSE não reconhecida: ${linha.situacao}/${linha.destinacao}`)
+      else pendente(`situação TSE não reconhecida: ${linha.situacao}/${linha.destinacao}`)
+      continue
+    }
     mudancas.push({
       id: c.id,
       slug: c.slug,
       sq,
+      sq_antes: c.sq_candidato_2026,
       cargo,
       abrangencia,
       fase_antes: c.fase_eleitoral,
@@ -383,6 +434,7 @@ export function montarPlano(input: {
   }
   mudancas.sort((a, b) => a.slug.localeCompare(b.slug))
   pendentes.sort((a, b) => a.slug.localeCompare(b.slug))
+  semResultado.sort((a, b) => a.slug.localeCompare(b.slug))
   const fontes = input.leituras.map((l) => l.ok
     ? { chave: l.alvo.chave, url: l.alvo.url, ok: true, sha256: l.sha256, gerado_tse: l.geradoEm }
     : { chave: l.alvo.chave, url: l.alvo.url, ok: false, sha256: l.sha256, motivo: l.motivo })
@@ -396,10 +448,11 @@ export function montarPlano(input: {
     turno: input.turno,
     eleicoes: input.eleicoes,
     gerado_em: input.agora.toISOString(),
-    status: pendentes.length === 0 && fontes.every((f) => f.ok) ? "completo" : "parcial",
+    status: pendentes.length === 0 ? "completo" : "parcial",
     fontes,
     mudancas,
     pendentes,
+    sem_resultado: semResultado,
     resumo,
   }
 }

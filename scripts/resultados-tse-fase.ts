@@ -27,13 +27,12 @@ import { gerarArquivosFase } from "./lib/fase-eleitoral-migration"
 import {
   CICLO_2026,
   TSE_CONFIG_ELEICOES_URL,
-  arquivosDoTurno,
+  arquivosNecessariosDoTurno,
   descobrirEleicoes,
   lerArquivoResultado,
   montarPlano,
   type ArquivoAlvo,
   type CandidaturaCoorte,
-  type CargoResultado,
   type EleicoesDoTurno,
   type LeituraArquivo,
   type PlanoFase,
@@ -156,7 +155,13 @@ function resumoMarkdown(plano: PlanoFase): string {
   ]
   const recusados = plano.fontes.filter((f) => !f.ok)
   if (recusados.length) {
-    linhas.push("", "Arquivos recusados (ninguém destes arquivos é marcado):", ...recusados.map((f) => `- ${f.chave}: ${f.motivo}`))
+    linhas.push("", "Arquivos recusados (candidaturas executivas afetadas ficam pendentes; senadores saem sem alegação individual):", ...recusados.map((f) => `- ${f.chave}: ${f.motivo}`))
+  }
+  if (plano.pendentes.length) {
+    linhas.push("", "Candidaturas pendentes (permanecem na coorte):", ...plano.pendentes.map((p) => `- ${p.slug} (${p.cargo}): ${p.motivo}`))
+  }
+  if (plano.sem_resultado.length) {
+    linhas.push("", "Senadores encerrados sem alegação individual do TSE:", ...plano.sem_resultado.map((p) => `- ${p.slug}: ${p.motivo}`))
   }
   return `${linhas.join("\n")}\n`
 }
@@ -167,9 +172,7 @@ async function comandoPlano(args: string[]): Promise<number> {
   const eleicoes = await eleicoesDoTurno(args, turno)
   const coorteArquivo = opcao(args, "coorte")
   const coorte = coorteArquivo ? JSON.parse(readFileSync(resolve(coorteArquivo), "utf8")) as CandidaturaCoorte[] : await lerCoorteDoBanco()
-  const alvos = arquivosDoTurno(eleicoes, coorte
-    .filter((c) => c.cargo_disputado === "Presidente" || c.cargo_disputado === "Governador" || c.cargo_disputado === "Senador")
-    .map((c) => ({ cargo: c.cargo_disputado as CargoResultado, uf: c.estado })))
+  const alvos = arquivosNecessariosDoTurno(eleicoes, coorte)
   const leituras = await lerArquivos(alvos, turno, opcao(args, "arquivos"))
   const plano = montarPlano({ turno, eleicoes, coorte, leituras, agora: new Date() })
   mkdirSync(out, { recursive: true })

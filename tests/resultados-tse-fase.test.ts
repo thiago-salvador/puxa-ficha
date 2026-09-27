@@ -3,6 +3,7 @@ import { describe, it } from "node:test"
 
 import {
   arquivosDoTurno,
+  arquivosNecessariosDoTurno,
   candidaturasDoTurno,
   checarSanidade,
   classificarCandidato,
@@ -106,6 +107,27 @@ describe("resultados TSE: descoberta e URL", () => {
     const alvos = arquivosDoTurno({ ...ELEICOES, turno: 2, federal: "701", estadual: "703" }, [{ cargo: "Senador", uf: "SP" }, { cargo: "Governador", uf: "SP" }])
     assert.deepEqual(alvos.map((a) => a.chave), ["Governador:SP"])
   })
+
+  it("turno 2 descobre eleição só estadual quando não há segundo turno presidencial", () => {
+    const semPresidente = config()
+    semPresidente.pl[1].e = semPresidente.pl[1].e.filter((e) => e.cd !== "701")
+    assert.deepEqual(descobrirEleicoes(semPresidente, { ciclo: "ele2026", turno: 2, dataIso: "2026-10-25" }),
+      { ciclo: "ele2026", turno: 2, data: "2026-10-25", federal: "", estadual: "703" })
+    semPresidente.pl[1].e = semPresidente.pl[1].e.filter((e) => e.cd !== "703")
+    assert.deepEqual(descobrirEleicoes(semPresidente, { ciclo: "ele2026", turno: 2, dataIso: "2026-10-25" }),
+      { ciclo: "ele2026", turno: 2, data: "2026-10-25", federal: "", estadual: "" })
+  })
+
+  it("lista arquivos de 2º turno somente para cargos e estados ainda em segundo_turno", () => {
+    const candidatos = coorte().map((c) => {
+      if (c.slug === "gov-2t-a") return { ...c, estado: "SP", fase_eleitoral: "segundo_turno" }
+      if (c.slug === "gov-2t-b") return { ...c, estado: "RJ", fase_eleitoral: "segundo_turno" }
+      if (c.slug === "pres-eleito") return { ...c, fase_eleitoral: "segundo_turno" }
+      return { ...c, fase_eleitoral: "nao_eleito", atualizacao_encerrada_em: "2026-10-05" }
+    })
+    const alvos = arquivosNecessariosDoTurno({ ...ELEICOES, turno: 2, federal: "701", estadual: "703" }, candidatos)
+    assert.deepEqual(alvos.map((a) => [a.chave, a.eleicao]), [["Governador:RJ", "703"], ["Governador:SP", "703"], ["Presidente:BR", "701"]])
+  })
 })
 
 describe("resultados TSE: leitura fail-closed", () => {
@@ -172,31 +194,69 @@ describe("resultados TSE: plano", () => {
     })
   })
 
-  it("403 num arquivo não marca ninguém daquele arquivo e deixa o plano parcial", () => {
+  it("403 apenas no Senado ainda gera saídas sem claim e mantém plano aplicável", () => {
     const leituras = leiturasOk()
     leituras[0] = { ok: false, alvo: senadoSP, motivo: "HTTP 403" }
     const plano = montarPlano({ turno: 1, eleicoes: ELEICOES, coorte: coorte(), leituras, agora: new Date() })
-    assert.equal(plano.status, "parcial")
-    assert.equal(plano.mudancas.some((m) => m.cargo === "Senador"), false)
-    assert.deepEqual(plano.pendentes.filter((p) => p.cargo === "Senador").map((p) => p.motivo), ["arquivo recusado: HTTP 403", "arquivo recusado: HTTP 403"])
+    assert.equal(plano.status, "completo")
+    assert.deepEqual(plano.mudancas.filter((m) => m.cargo === "Senador").map((m) => [m.fase_depois, m.fonte, m.situacao_tse]), [
+      ["fora_da_disputa", null, null], ["fora_da_disputa", null, null],
+    ])
+    assert.equal(plano.sem_resultado.filter((p) => p.cargo === "Senador").length, 2)
+    assert.equal(plano.pendentes.some((p) => p.cargo === "Senador"), false)
+    const generated = gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927030000", name: "candidaturas_fase_2026_schema" } })
+    assert.match(generated.migration, /escrita esperada=7/)
   })
 
-  it("SQ ausente do resultado fica pendente, nunca marcado", () => {
+  it("senador sem SQ deixa a coorte como fora da disputa sem claim individual", () => {
     const c = coorte()
     c[0] = { ...c[0], sq_candidato_2026: "250099999999" }
     const plano = montarPlano({ turno: 1, eleicoes: ELEICOES, coorte: c, leituras: leiturasOk(), agora: new Date() })
-    assert.deepEqual(plano.pendentes.map((p) => [p.slug, p.motivo]), [["sen-eleito", "SQ ausente do resultado oficial"]])
+    const fallback = plano.mudancas.find((m) => m.slug === "sen-eleito")
+    assert.deepEqual([fallback?.fase_depois, fallback?.sq, fallback?.fonte, fallback?.situacao_tse], ["fora_da_disputa", "250099999999", null, null])
+    assert.deepEqual(plano.sem_resultado.map((p) => [p.slug, p.motivo]), [["sen-eleito", "SQ ausente do resultado oficial"]])
+    assert.deepEqual(plano.pendentes, [])
+    const generated = gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927030000", name: "candidaturas_fase_2026_schema" } })
+    assert.match(generated.migration, /'sen-eleito', '250099999999', '250099999999', 'Senador', 'em_disputa', 'fora_da_disputa'[\s\S]*NULL, NULL, NULL/)
+  })
+
+  it("senador com SQ inválido sai mesmo quando o arquivo não contém a candidatura", () => {
+    const c = coorte()
+    c[0] = { ...c[0], sq_candidato_2026: " " }
+    const plano = montarPlano({ turno: 1, eleicoes: ELEICOES, coorte: c, leituras: leiturasOk(), agora: new Date() })
+    const fallback = plano.mudancas.find((m) => m.slug === "sen-eleito")
+    assert.deepEqual([fallback?.fase_depois, fallback?.sq, fallback?.sq_antes, fallback?.fonte, fallback?.situacao_tse], ["fora_da_disputa", null, " ", null, null])
+    assert.equal(plano.sem_resultado[0]?.motivo, "ficha sem sq_candidato_2026")
+    const generated = gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927030000", name: "candidaturas_fase_2026_schema" } })
+    assert.match(generated.migration, /'sen-eleito', NULL, ' ', 'Senador', 'em_disputa', 'fora_da_disputa'[\s\S]*NULL, NULL, NULL/)
+    assert.match(generated.readback, /IS DISTINCT FROM linha->'after'/)
+    assert.match(generated.rollbackReadback, /IS DISTINCT FROM linha->'before'/)
   })
 
   it("2º turno só resolve quem foi para o 2º turno e encerra os dois finalistas", () => {
     const c = coorte().map((x) => x.slug.startsWith("gov-2t") ? { ...x, fase_eleitoral: "segundo_turno" } : { ...x, fase_eleitoral: "nao_eleito", atualizacao_encerrada_em: "2026-10-05" })
     assert.deepEqual(candidaturasDoTurno(2, c).map((x) => x.slug), ["gov-2t-a", "gov-2t-b"])
-    const gov2 = { ...governoSP, eleicao: "703", url: urlResultado("ele2026", "703", "SP", "Governador") }
+    const eleicoes2 = { ...ELEICOES, turno: 2 as const, federal: "701", estadual: "703" }
+    const alvos = arquivosNecessariosDoTurno(eleicoes2, c)
+    assert.deepEqual(alvos.map((a) => a.chave), ["Governador:SP"])
+    const gov2 = alvos[0]
     const corpo = JSON.parse(arquivo(gov2, [{ sqcand: "250000000003", e: "s", st: "Eleito" }, { sqcand: "250000000004", e: "n", st: "Não eleito" }]))
     corpo.t = "2"
-    const plano = montarPlano({ turno: 2, eleicoes: { ...ELEICOES, turno: 2, federal: "701", estadual: "703" }, coorte: c,
+    const plano = montarPlano({ turno: 2, eleicoes: eleicoes2, coorte: c,
       leituras: [lerArquivoResultado(gov2, 2, JSON.stringify(corpo))], agora: new Date() })
     assert.deepEqual(plano.mudancas.map((m) => [m.slug, m.fase_depois, m.encerra_atualizacao]), [["gov-2t-a", "eleito", true], ["gov-2t-b", "nao_eleito", true]])
+  })
+
+  it("pendência executiva fica na coorte, sem bloquear mudanças resolvidas", () => {
+    const c = coorte()
+    c[2] = { ...c[2], sq_candidato_2026: "999999999999" }
+    const plano = montarPlano({ turno: 1, eleicoes: ELEICOES, coorte: c, leituras: leiturasOk(), agora: new Date() })
+    assert.equal(plano.status, "parcial")
+    assert.deepEqual(plano.pendentes, [{ slug: "gov-2t-a", cargo: "Governador", abrangencia: "SP", motivo: "SQ ausente do resultado oficial" }])
+    assert.equal(plano.mudancas.some((m) => m.slug === "gov-2t-b"), true)
+    const generated = gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927030000", name: "candidaturas_fase_2026_schema" } })
+    assert.match(generated.migration, /escrita esperada=6/)
+    assert.doesNotMatch(generated.migration, /gov-2t-a/)
   })
 })
 
@@ -204,11 +264,13 @@ describe("migration de resultado gerada", () => {
   const plano = () => montarPlano({ turno: 1, eleicoes: ELEICOES, coorte: coorte(), leituras: leiturasOk(), agora: new Date("2026-10-05T12:00:00Z") })
   const predecessor = { version: "20260927030000", name: "candidaturas_fase_2026_schema" }
 
-  it("recusa plano parcial sem exceção", () => {
+  it("aceita apenas as mudanças resolvidas de um plano parcial", () => {
     const p = plano()
     p.status = "parcial"
-    assert.throws(() => gerarArquivosFase({ plano: p, version: "20261005120000", predecessor }), /plano parcial/)
-    assert.throws(() => gerarArquivosFase({ plano: p, version: "20261005120000", predecessor, aceitarParcial: true } as unknown as Parameters<typeof gerarArquivosFase>[0]), /plano parcial/)
+    p.pendentes = [{ slug: "pres-nao-resolvido", cargo: "Presidente", abrangencia: "BR", motivo: "SQ ausente do resultado oficial" }]
+    const generated = gerarArquivosFase({ plano: p, version: "20261005120000", predecessor })
+    assert.match(generated.migration, /Pendências do plano \(1\) não são tocadas/)
+    assert.doesNotMatch(generated.migration, /pres-nao-resolvido/)
   })
 
   it("recusa versão anterior ao predecessor", () => {

@@ -1,4 +1,5 @@
 BEGIN READ ONLY;
+SET LOCAL TIME ZONE 'UTC';
 DO $readback$
 BEGIN
   IF to_regclass('public.candidaturas_fase_2026') IS NULL THEN
@@ -14,11 +15,20 @@ BEGIN
        WHERE conrelid = 'public.candidaturas_fase_2026'::regclass AND contype = 'c'
          AND conname IN ('candidaturas_fase_2026_em_disputa_sem_encerramento','candidaturas_fase_2026_fora_encerra',
                          'candidaturas_fase_2026_eleito_encerra','candidaturas_fase_2026_segundo_turno_executivo',
-                         'candidaturas_fase_2026_senado_primeiro_turno')) <> 5 THEN
+                         'candidaturas_fase_2026_senado_primeiro_turno',
+                         'candidaturas_fase_2026_fonte_ou_senado_sem_resultado')) <> 6 THEN
     RAISE EXCEPTION 'fase-2026 readback: CHECK de consistência ausente';
   END IF;
   IF NOT (SELECT relrowsecurity AND relforcerowsecurity FROM pg_class WHERE oid = 'public.candidaturas_fase_2026'::regclass) THEN
     RAISE EXCEPTION 'fase-2026 readback: RLS desligada';
+  END IF;
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policy
+    WHERE polrelid = 'public.candidaturas_fase_2026'::regclass
+      AND polname = 'candidaturas_fase_2026_public_read'
+      AND position('is_public_candidate' IN pg_get_expr(polqual, polrelid)) > 0
+  ) THEN
+    RAISE EXCEPTION 'fase-2026 readback: policy de ficha publicada ausente';
   END IF;
   IF has_column_privilege('anon', 'public.candidaturas_fase_2026', 'fonte_url', 'SELECT')
      OR has_table_privilege('anon', 'public.candidaturas_fase_2026', 'INSERT')

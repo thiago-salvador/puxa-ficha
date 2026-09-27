@@ -53,6 +53,7 @@ export async function loadVerificacaoCampos(
   slugs: string[]
 ): Promise<Map<string, Record<string, unknown> | null>> {
   if (slugs.length === 0) return new Map()
+  // coorte-atualizacao: isento (lookup de metadado por slugs já selecionados pela rotina ativa)
   const { data, error } = await supabase
     .from("candidatos")
     .select("slug, verificacao_campos")
@@ -114,6 +115,7 @@ export async function loadCandidatosCohortNaoPublica(
   if (loaded.size !== sqs.length || rows.length !== sqs.length) {
     throw new Error(`coorte não pública incompleta ou ambígua: esperados ${sqs.length}, recebidos ${rows.length}`)
   }
+  // coorte-atualizacao: isento (verifica exposição pública só dos SQs explicitamente pedidos)
   const publicQuery = supabase.from("candidatos_publico").select("slug").in("slug", rows.map((row) => row.slug))
   const { data: publicRows, error: publicError } = await publicQuery
   if (publicError) throw new Error(`coorte pública: ${publicError.message}`)

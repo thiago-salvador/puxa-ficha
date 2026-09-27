@@ -36,6 +36,10 @@ function lit(value: string): string {
   return `'${value.replace(/'/g, "''")}'`
 }
 
+function litNullable(value: string | null): string {
+  return value === null ? "NULL" : lit(value)
+}
+
 function assertVersion(version: string, rotulo: string): void {
   if (!/^\d{14}$/.test(version)) throw new Error(`${rotulo} inválida: ${version}`)
 }
@@ -45,8 +49,12 @@ const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
 function validarMudanca(m: MudancaFase): void {
   if (!UUID.test(m.id)) throw new Error(`id inválido em ${m.slug}`)
   if (!/^[a-z0-9-]+$/.test(m.slug)) throw new Error(`slug inválido: ${m.slug}`)
-  if (!/^\d+$/.test(m.sq)) throw new Error(`SQ inválido em ${m.slug}`)
-  if (!/^https:\/\/resultados\.tse\.jus\.br\/oficial\//.test(m.fonte)) throw new Error(`fonte fora do TSE em ${m.slug}`)
+  const semAlegacao = m.fase_depois === "fora_da_disputa" && m.cargo === "Senador" && m.turno === 1
+    && m.fonte === null && m.situacao_tse === null
+  if (m.sq !== null && !/^\d+$/.test(m.sq)) throw new Error(`SQ inválido em ${m.slug}`)
+  if (!semAlegacao && m.sq_antes === null) throw new Error(`SQ ausente na preimagem de ${m.slug}`)
+  if (!semAlegacao && (!m.sq || !m.fonte || !m.situacao_tse)) throw new Error(`resultado incompleto em ${m.slug}`)
+  if (m.fonte !== null && !/^https:\/\/resultados\.tse\.jus\.br\/oficial\//.test(m.fonte)) throw new Error(`fonte fora do TSE em ${m.slug}`)
 }
 
 export function sha256Json(value: unknown): string {
@@ -62,14 +70,14 @@ export function gerarArquivosFase(input: {
   assertVersion(version, "versão")
   assertVersion(input.predecessor.version, "predecessor")
   if (version <= input.predecessor.version) throw new Error("versão precisa ser posterior ao predecessor")
-  if (plano.status !== "completo" || plano.pendentes.length > 0 || plano.fontes.some((f) => !f.ok)) {
-    throw new Error(`plano parcial: ${plano.pendentes.length} pendência(s); aguarde a leitura oficial completa do TSE`)
-  }
   if (plano.mudancas.length === 0) throw new Error("plano sem mudanças: nada a gravar")
   const fontesOk = new Map(plano.fontes.filter((f) => f.ok && f.sha256).map((f) => [f.url, f.sha256 as string]))
   for (const m of plano.mudancas) {
     validarMudanca(m)
-    if (!fontesOk.has(m.fonte)) throw new Error(`mudança de ${m.slug} aponta para fonte não lida`)
+    if (m.fonte !== null && !fontesOk.has(m.fonte)) throw new Error(`mudança de ${m.slug} aponta para fonte não lida`)
+    if (m.fonte === null && !(m.cargo === "Senador" && m.fase_depois === "fora_da_disputa" && m.situacao_tse === null)) {
+      throw new Error(`mudança de ${m.slug} sem resultado individual não é fallback permitido`)
+    }
     if (m.turno !== plano.turno) throw new Error(`mudança de ${m.slug} com turno divergente`)
     const esperadoAntes = plano.turno === 1 ? "em_disputa" : "segundo_turno"
     if (m.fase_antes !== esperadoAntes) throw new Error(`mudança de ${m.slug} com fase anterior ${m.fase_antes}`)
@@ -80,18 +88,19 @@ export function gerarArquivosFase(input: {
   const ref = `fase-turno-${turno}-${version}`
   const planoSha = sha256Json(plano)
   const tabela = `pf_fase_plano_${version}`
-  const primeiraFonte = plano.mudancas[0].fonte
+  const primeiraFonte = plano.mudancas.find((m) => m.fonte)?.fonte ?? null
   const valores = plano.mudancas.map((m) => `    (${[
-    `${lit(m.id)}::uuid`, lit(m.slug), lit(m.sq), lit(m.cargo), lit(m.fase_antes), lit(m.fase_depois),
-    String(m.turno), m.encerra_atualizacao ? "true" : "false", lit(m.situacao_tse.slice(0, 200)), lit(m.fonte), lit(fontesOk.get(m.fonte) as string),
+    `${lit(m.id)}::uuid`, lit(m.slug), litNullable(m.sq), litNullable(m.sq_antes), lit(m.cargo), lit(m.fase_antes), lit(m.fase_depois),
+    String(m.turno), m.encerra_atualizacao ? "true" : "false", litNullable(m.situacao_tse?.slice(0, 200) ?? null),
+    litNullable(m.fonte), litNullable(m.fonte ? fontesOk.get(m.fonte) ?? null : null),
   ].join(", ")})`).join(",\n")
   const contagem = Object.entries(plano.resumo).map(([k, v]) => `${k}=${v}`).join(", ")
   const fontesComentario = plano.fontes.filter((f) => f.ok).map((f) => `--   ${f.url}\n--     sha256 ${f.sha256} (gerado pelo TSE em ${f.gerado_tse ?? "?"})`).join("\n")
 
   const planoTemp = `  CREATE TEMP TABLE ${tabela} (
-    candidato_id uuid PRIMARY KEY, slug text NOT NULL, sq text NOT NULL, cargo text NOT NULL,
+    candidato_id uuid PRIMARY KEY, slug text NOT NULL, sq text, sq_antes text, cargo text NOT NULL,
     fase_antes text NOT NULL, fase_depois text NOT NULL, turno smallint NOT NULL, encerra boolean NOT NULL,
-    situacao_tse text NOT NULL, fonte_url text NOT NULL, fonte_sha256 text NOT NULL
+    situacao_tse text, fonte_url text, fonte_sha256 text
   ) ON COMMIT DROP;
   INSERT INTO ${tabela} VALUES
 ${valores};`
@@ -135,7 +144,7 @@ ${planoTemp}
   -- Preimagem: cada candidatura existe, está no ar, com o SQ e o cargo do plano.
   IF (SELECT count(*) FROM ${tabela} p
        JOIN public.candidatos c ON c.id = p.candidato_id
-      WHERE c.slug = p.slug AND c.sq_candidato_2026 = p.sq AND c.cargo_disputado = p.cargo
+      WHERE c.slug = p.slug AND c.sq_candidato_2026 IS NOT DISTINCT FROM p.sq_antes AND c.cargo_disputado = p.cargo
         AND c.publicavel IS TRUE AND c.status <> 'removido') <> ${n} THEN
     RAISE EXCEPTION '${ref}: preimagem de candidatos divergiu';
   END IF;
@@ -187,7 +196,7 @@ ${turno === 1 ? "  ON CONFLICT (candidato_id) DO NOTHING;" : `  ON CONFLICT (can
              'before', (SELECT a.antes FROM ${tabela}_antes a WHERE a.candidato_id = p.candidato_id),
              'after', to_jsonb(f)) ORDER BY p.slug)
          )::text,
-         ${lit(primeiraFonte)},
+         ${litNullable(primeiraFonte)},
          'migration:${version}', 'escrita'
   FROM ${tabela} p
   JOIN public.candidaturas_fase_2026 f ON f.candidato_id = p.candidato_id;

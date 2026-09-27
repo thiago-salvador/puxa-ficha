@@ -1,4 +1,5 @@
 BEGIN READ ONLY;
+SET LOCAL TIME ZONE 'UTC';
 DO $readback$
 BEGIN
   IF to_regclass('public.candidaturas_fase_2026') IS NOT NULL OR to_regclass('public.candidaturas_fase_2026_publico') IS NOT NULL THEN

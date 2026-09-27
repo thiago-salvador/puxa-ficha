@@ -547,7 +547,8 @@ export const MEDICAO_REPLAY = Object.freeze({
   // 7fc51c84eabc8e22bd2dd1130cdf735eafc8df37bd57ba7e30e0b48bdcbb0fc1.
   // 123 -> 124 apos integrar 20260927020000 e incluir 20260927030000_candidaturas_fase_2026_schema.
   // Schema-gate PG17 mediu 124 aplicadas, 399 puladas, zero falhas; hash
-  // c6dc8f606f699f385a5dadce54d46efb8e1c8a197f49a7161e34f401c077796e.
+  // Hash remensurado no PG17 apos o ajuste de RLS e fallback do Senado:
+  // 2c16e53377c6363bf4592ca01a85c642099625e6727db615127a42efe151c8ef.
   schemaReplayTamanho: 124,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que

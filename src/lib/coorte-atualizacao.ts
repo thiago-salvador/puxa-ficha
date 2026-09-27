@@ -28,7 +28,7 @@ export const DATAS_TURNOS_2026: Readonly<Record<TurnoEleitoral, string>> = {
 export interface CandidaturaFase {
   cargo_disputado: string | null
   fase_eleitoral?: string | null
-  fase_eleitoral_turno?: number | null
+  fase_turno?: number | null
   atualizacao_encerrada_em?: string | null
 }
 
@@ -83,7 +83,8 @@ export function notaAtualizacaoEncerrada(candidatura: CandidaturaFase): string |
   const data = formatarDataBr(String(candidatura.atualizacao_encerrada_em))
   if (!data) return null
   if (candidatura.fase_eleitoral === "eleito") {
-    const turno = candidatura.fase_eleitoral_turno === 2 ? "segundo" : "primeiro"
+    if (candidatura.cargo_disputado === "Senador") return `Dados atualizados até ${data}; eleito(a).`
+    const turno = candidatura.fase_turno === 2 ? "segundo" : "primeiro"
     return `Dados atualizados até ${data}; eleito(a) no ${turno} turno.`
   }
   return `Dados atualizados até ${data}; a candidatura não segue na disputa.`

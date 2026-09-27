@@ -46,7 +46,7 @@ WITH encerradas AS (
     'perfil_slug', titular.slug
   ) AS record
   FROM public.chapas_2026 ch
-  -- coorte-atualizacao: aplica (recorte por atualizacao_encerrada em audit-data-freshness.ts)
+  -- coorte-atualizacao: isento (snapshot preserva dados publicados; audit-data-freshness recorta antes de comparar)
   LEFT JOIN public.candidatos titular ON titular.id = ch.titular_candidato_id
 
   UNION ALL
@@ -64,7 +64,7 @@ WITH encerradas AS (
     'perfil_slug', vice.slug
   ) AS record
   FROM public.chapas_2026 ch
-  -- coorte-atualizacao: aplica (recorte por atualizacao_encerrada em audit-data-freshness.ts)
+  -- coorte-atualizacao: isento (snapshot preserva dados publicados; audit-data-freshness recorta antes de comparar)
   LEFT JOIN public.candidatos vice ON vice.id = ch.vice_candidato_id
 ), collection_rows AS (
   SELECT
@@ -181,7 +181,7 @@ WITH encerradas AS (
     'cor_raca', c.cor_raca,
     'verificacao_campos', c.verificacao_campos
   ) AS profile
-  -- coorte-atualizacao: aplica (recorte por atualizacao_encerrada em audit-data-freshness.ts)
+  -- coorte-atualizacao: isento (snapshot preserva dados publicados; audit-data-freshness recorta antes de comparar)
   FROM public.candidatos_publico c
   WHERE c.cargo_disputado IN ('Presidente', 'Governador')
 ), public_candidacies AS (
@@ -216,7 +216,7 @@ WITH encerradas AS (
         AND ch.titular_sq_candidato IS NOT DISTINCT FROM base.sq_candidato_2026
     ), '[]'::jsonb)
   ) AS item
-  -- coorte-atualizacao: aplica (recorte por atualizacao_encerrada em audit-data-freshness.ts)
+  -- coorte-atualizacao: isento (snapshot preserva dados publicados; audit-data-freshness recorta antes de comparar)
   FROM public.candidatos_publico c
   JOIN public.candidatos base ON base.id = c.id
   WHERE c.cargo_disputado IN ('Presidente', 'Governador', 'Senador')

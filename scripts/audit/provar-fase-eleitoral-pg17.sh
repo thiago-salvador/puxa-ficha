@@ -41,6 +41,12 @@ CREATE TABLE supabase_migrations.schema_migrations(version text PRIMARY KEY, ide
 CREATE TABLE public.candidatos(id uuid PRIMARY KEY, slug text NOT NULL UNIQUE, publicavel boolean NOT NULL DEFAULT false);
 CREATE VIEW public.candidatos_publico AS
   SELECT id, slug FROM public.candidatos WHERE publicavel;
+CREATE FUNCTION public.is_public_candidate(target_candidate_id uuid)
+RETURNS boolean LANGUAGE sql STABLE SECURITY DEFINER SET search_path = public AS $$
+  SELECT EXISTS (SELECT 1 FROM public.candidatos
+                 WHERE id = target_candidate_id AND publicavel)
+$$;
+GRANT EXECUTE ON FUNCTION public.is_public_candidate(uuid) TO PUBLIC;
 DO $$ BEGIN
   IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'anon') THEN CREATE ROLE anon NOLOGIN; END IF;
   IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'authenticated') THEN CREATE ROLE authenticated NOLOGIN; END IF;
@@ -57,11 +63,48 @@ q -q < "supabase/readback/$V.readback.sql"
 # A table with a recorded result cannot be structurally dropped by this rollback.
 q -q <<'SQL'
 INSERT INTO public.candidatos(id, slug, publicavel) VALUES ('00000000-0000-4000-8000-000000000001', 'fase-pg17-fixture', true);
+INSERT INTO public.candidatos(id, slug, publicavel) VALUES ('00000000-0000-4000-8000-000000000002', 'fase-oculta-pg17-fixture', false);
+INSERT INTO public.candidatos(id, slug, publicavel) VALUES
+  ('00000000-0000-4000-8000-000000000003', 'fase-eleita-segundo-turno', true),
+  ('00000000-0000-4000-8000-000000000004', 'fase-senador-eleito', true);
 INSERT INTO public.candidaturas_fase_2026(candidato_id, sq_candidato_2026, cargo_disputado,
   fase_eleitoral, fase_turno, situacao_tse, fonte_url, fonte_sha256, migration_version)
 VALUES ('00000000-0000-4000-8000-000000000001', '123456789012', 'Governador', 'segundo_turno', 1,
   'Fixture PG17', 'https://resultados.tse.jus.br/oficial/fixture.json', repeat('a', 64), '20260927010001');
+INSERT INTO public.candidaturas_fase_2026(candidato_id, cargo_disputado, fase_eleitoral,
+  fase_turno, atualizacao_encerrada_em, migration_version)
+VALUES ('00000000-0000-4000-8000-000000000002', 'Senador', 'fora_da_disputa', 1,
+  '2026-10-05', '20260927010001');
+INSERT INTO public.candidaturas_fase_2026(candidato_id, sq_candidato_2026, cargo_disputado,
+  fase_eleitoral, fase_turno, atualizacao_encerrada_em, situacao_tse, fonte_url, fonte_sha256, migration_version)
+VALUES
+  ('00000000-0000-4000-8000-000000000003', '123456789013', 'Governador',
+   'eleito', 2, '2026-10-26', 'Eleito', 'https://resultados.tse.jus.br/oficial/fixture.json',
+   repeat('b', 64), '20260927010001'),
+  ('00000000-0000-4000-8000-000000000004', '123456789014', 'Senador',
+   'eleito', 1, '2026-10-05', 'Eleito', 'https://resultados.tse.jus.br/oficial/fixture.json',
+   repeat('c', 64), '20260927010001');
 SQL
+[[ "$(q -qtAc "SET ROLE anon; SELECT count(*) FROM public.candidaturas_fase_2026")" == "3" ]] || {
+  echo "FAIL: anon leu ficha não publicada ou perdeu ficha publicada" >&2
+  exit 1
+}
+for caso in \
+  "fase-eleita-segundo-turno|Dados atualizados até 26/10/2026; eleito(a) no segundo turno." \
+  "fase-senador-eleito|Dados atualizados até 05/10/2026; eleito(a)."; do
+  IFS='|' read -r slug esperado <<< "$caso"
+  linha="$(q -qtAc "SELECT row_to_json(f)::text FROM public.candidaturas_fase_2026_publico f WHERE slug = '$slug'")"
+  [[ -n "$linha" ]] || { echo "FAIL: linha da view ausente para $slug" >&2; exit 1; }
+  printf '%s' "$linha" | /opt/homebrew/opt/node@24/bin/node --import tsx --input-type=module -e '
+      import { notaAtualizacaoEncerrada } from "./src/lib/coorte-atualizacao.ts";
+      import { readFileSync } from "node:fs";
+      const nota = notaAtualizacaoEncerrada(JSON.parse(readFileSync(0, "utf8")));
+      if (nota !== process.argv[1]) {
+        console.error("FAIL: nota divergiu da linha real da view:", nota);
+        process.exit(1);
+      }
+    ' "$esperado"
+done
 falha_esperada "rollback permitiu apagar fase eleitoral com dado" "supabase/rollback/$V.rollback.sql"
 q -q -c 'DELETE FROM public.candidaturas_fase_2026; DELETE FROM public.candidatos;'
 
