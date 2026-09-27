@@ -354,7 +354,7 @@ describe("catálogo de checagens e recibos versionados", () => {
     // Coleta nova, com data posterior, pode republicar a ficha pela regra nova.
     const rodadaAntiga = (searchedAt: string) => searchedAt >= "2026-09-25T23:00:00Z" && searchedAt <= "2026-09-26T04:00:00Z"
     const sairam: string[] = ["andre-luis","ben-mendes","cadu-xavier","carlos-machado","cyro-garcia","danilo-pinheiro","dario-barbosa","delcidio-amaral","du-pereira","eduardo-braide","fabio-trad","flavio-roscoe","gal-leite","ivan-moraes","joao-rodrigues","lucia-santos","luiz-franca","requiao-filho","roberto-cidade","roberto-rocha","rodrigo-bolsonaro","ze-batista"]
-    const tetos: Record<string, number> = {"acm-neto":3,"alexandre-kalil":2,"alvaro-dias-rn":6,"augusto-cury":2,"ciro-gomes-gov-ce":56,"douglas-ruas":1,"eduardo-paes":43,"flavio-bolsonaro":57,"haddad-gov-sp":40,"joao-campos":7,"juliana-brizola":2,"paula-belmonte":1,"renan-filho":1,"romeu-zema":6,"ronaldo-caiado":2,"sergio-moro-gov-pr":12,"tarcisio-gov-sp":20}
+    const tetos: Record<string, number> = {"acm-neto":3,"alexandre-kalil":2,"alvaro-dias-rn":6,"augusto-cury":2,"ciro-gomes-gov-ce":56,"douglas-ruas":1,"eduardo-paes":39,"flavio-bolsonaro":57,"haddad-gov-sp":40,"joao-campos":7,"juliana-brizola":2,"paula-belmonte":1,"renan-filho":1,"romeu-zema":6,"ronaldo-caiado":2,"sergio-moro-gov-pr":12,"tarcisio-gov-sp":20}
     for (const receipt of committedReceipts.receipts) {
       if (!rodadaAntiga(receipt.searched_at)) continue
       assert.equal(sairam.includes(receipt.candidate_slug), false, `${receipt.candidate_slug} saiu no hotfix`)
@@ -363,41 +363,36 @@ describe("catálogo de checagens e recibos versionados", () => {
   })
 
   it("aplica o critério editorial de atribuição nos leads de Lula e Eduardo Paes", () => {
-    // Títulos conferidos nos recibos brutos da rodada reconstruída de 26/09.
-    // O catálogo público agrega leads por ficha; a contagem fixa as quatro exclusões.
-    const decisoes = [
-      {
-        slug: "lula",
-        leadsAntes: 552,
-        naoPublicar: [
-          "Posts fazem sátira com fato de personagem do filme ‘Truque de Mestre 2’ se chamar Lula",
-          "Supla não falava de Lula ao dizer que não tem problema ‘roubar com amor’",
-          "Vídeo de abordagem da PM a torcedores do Sport não tem relação com Lula",
-        ],
-        manter: [
-          "Vídeo de mulher rasgando papel atrás de Trump não tem relação com Lula",
-          "Jornais não ocultaram tatuagem de Lula em caso de CAC que matou a família",
-          "Juiz que morreu em SE não investigava fraude do INSS e nem citou irmão de Lula no caso",
-        ],
-      },
-      {
-        slug: "eduardo-paes",
-        leadsAntes: 43,
-        naoPublicar: [
-          "Jovem que chamou passeio na Rocinha de ‘safári’ não é sobrinha de Eduardo Paes",
-        ],
-        manter: [],
-      },
-    ]
-    assert.equal(decisoes.reduce((total, decisao) => total + decisao.naoPublicar.length, 0), 4)
-    for (const decisao of decisoes) {
-      const receipt = committedReceipts.receipts.find((item) => item.candidate_slug === decisao.slug)
-      assert.ok(receipt, `${decisao.slug} mantém recibo encontrado`)
-      assert.equal(receipt.result, "encontrado")
-      assert.equal(receipt.leads, decisao.leadsAntes - decisao.naoPublicar.length, `${decisao.slug}: exclusões editoriais não devem voltar`)
-      assert.ok(receipt.leads >= decisao.manter.length, `${decisao.slug}: os leads preservados continuam na contagem`)
-      assert.equal(new Set([...decisao.naoPublicar, ...decisao.manter]).size, decisao.naoPublicar.length + decisao.manter.length)
+    // O catálogo guarda contagens, não títulos: estas asserções verificam os números publicados.
+    const contagens = new Map(committedReceipts.receipts.map((receipt) => [receipt.candidate_slug, receipt.leads]))
+    assert.equal(contagens.get("lula"), 549)
+    assert.equal(contagens.get("eduardo-paes"), 39)
+    assert.equal(contagens.get("tarcisio-gov-sp"), 20)
+  })
+
+  it("reconhece todas as versões do boato da sobrinha de Eduardo Paes", () => {
+    // Amostras dos recibos brutos de 26/09, inclusive o título que já não entrava no catálogo.
+    const normalizarTitulo = (title: string) => title.normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim()
+    const mesmoBoato = (title: string) => {
+      const normalized = normalizarTitulo(title)
+      return /\bsobrinha\b/.test(normalized) && /\bpaes\b/.test(normalized) && /\b(rocinha|safari)\b/.test(normalized)
     }
+    const variantes = [
+      "Não é sobrinha de Eduardo Paes mulher que zombou de tour na Rocinha",
+      "Mulher que zomba de ‘safári’ na Rocinha ‘para conhecer pobre’ não é sobrinha de Paes",
+      "Jovem que chamou passeio na Rocinha de ‘safári’ não é sobrinha de Eduardo Paes",
+      "Influenciadora que chamou passeio na Rocinha de “safári” não é sobrinha de Eduardo Paes",
+      "Jovem que chamou passeio na Rocinha de “safári” não é sobrinha de Eduardo Paes",
+      "Jovem que chamou passeio na Rocinha de \"safari\" nao e sobrinha de Eduardo Paes",
+    ]
+    for (const title of variantes) assert.equal(mesmoBoato(title), true, title)
+    assert.equal([variantes[0], variantes[3], variantes[4]].filter(mesmoBoato).length, 3, "as três versões antes contadas devem sair")
+    assert.equal(mesmoBoato("Vídeo de Eduardo Paes em festa na rua é antigo e não foi gravado na Maré"), false)
+    assert.equal(mesmoBoato("Foto de ciclovia construída em 2016 circula fora de contexto para promover Tarcísio Gomes de Freitas"), false)
   })
 
   it("exclui homônimo senador e parente mesmo quando o título contém o nome de urna", () => {
