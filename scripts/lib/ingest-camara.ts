@@ -1192,6 +1192,7 @@ async function countProjetosLeiForCandidato(
     .from("projetos_lei")
     .select("*", { count: "exact", head: true })
     .eq("candidato_id", candidatoId)
+    .is("despublicado_em", null)
   if (fonte) query = query.eq("fonte", fonte)
   const { count, error } = await query
   if (error) {
