@@ -507,7 +507,8 @@ describe("classificador puro (#136)", () => {
     // Numero CNJ de wilson-grassi-junior e CHECK de numero CNJ (20260926190000/0100): --gate PG17 mediu 415 + 105 = 520.
     // Partido e cargo_atual de tse-2026-270002544629 (20260926224500), depois do #520: --gate PG17 mediu 416 + 105 = 521.
     // Nova correcao de partido e cargo_atual de tse-2026-270002544629 (20260927020000): --gate PG17 mediu 417 + 105 = 522.
-    assert.equal(manifesto.aplicadas_esperadas, 417)
+    // Schema da fase eleitoral (20260927030000): --gate PG17 mediu 418 + 105 = 523.
+    assert.equal(manifesto.aplicadas_esperadas, 418)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

@@ -21,6 +21,7 @@ import { fileURLToPath, pathToFileURL } from "node:url"
 import { ensureSupabaseClient } from "./lib/supabase"
 import { carregarProgramasComResumo } from "./promessa-evidencia-programas"
 import type { CatalogoFalas } from "../src/lib/falas-candidatos"
+import { aplicarCoorteAtualizacao } from "./lib/coorte-atualizacao"
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 export const SNAPSHOT_PATH = path.join(ROOT, "reports/promessa-evidencia/snapshot.json")
@@ -130,7 +131,11 @@ export async function coletarSnapshot(): Promise<SnapshotEvidencias> {
     if (error) throw new Error(error.message)
     candidatosBrutos.push(...(data ?? []))
   }
-  const publicos = candidatosBrutos.filter((c) => c.publicavel === true && c.status !== "removido")
+  // coorte-atualizacao: aplica
+  const publicos = await aplicarCoorteAtualizacao(
+    candidatosBrutos.filter((c) => c.publicavel === true && c.status !== "removido"),
+    "promessa",
+  )
   const ids = publicos.map((c) => c.id)
 
   const historico: Array<{ candidato_id: string; cargo_canonico: string | null; tipo_evento: string | null }> = []

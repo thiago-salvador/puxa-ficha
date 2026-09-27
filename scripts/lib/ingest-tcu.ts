@@ -1,5 +1,6 @@
 import { supabase } from "./supabase"
 import { loadCandidatosPublicos } from "./helpers-db"
+import { aplicarCoorteAtualizacao } from "./coorte-atualizacao"
 import { sleep } from "./helpers"
 import { log, warn } from "./logger"
 import type { CandidatoConfig, IngestResult } from "./types"
@@ -377,7 +378,10 @@ export type IngestTCUOptions = {
 export async function ingestTCU(options: IngestTCUOptions = {}): Promise<IngestResult[]> {
   const selectedSlugs = options.targetSlugs ? new Set(options.targetSlugs) : null
   const fetchImpl = options.fetchImpl ?? fetch
-  const candidatos = (options.candidateRows ? [...options.candidateRows] : await loadCandidatosPublicos())
+  const roster = options.candidateRows
+    ? await aplicarCoorteAtualizacao([...options.candidateRows], "tcu-injetados")
+    : await loadCandidatosPublicos()
+  const candidatos = roster
     .filter((cand) => !selectedSlugs || selectedSlugs.has(cand.slug))
   const results: IngestResult[] = []
 

@@ -35,6 +35,7 @@ from (
     -- @numero-urna-opcional-fim
     'temSqAtualNoBanco', exists (
       select 1
+      -- coorte-atualizacao: isento (completude do que está no ar, não frescor)
       from candidatos c_raw
       where c_raw.id = c.id
         and nullif(btrim(c_raw.sq_candidato_2026), '') is not null
@@ -259,5 +260,6 @@ from (
         where pa.candidato_id = c.id and pa.visivel and pa.gerado_por = 'ia' and pa.verificado = false
       ) itens), '[]'::jsonb)
   ) as linha
+  -- coorte-atualizacao: isento (completude do que está no ar, não frescor)
   from candidatos_publico c
 ) t;

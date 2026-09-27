@@ -58,7 +58,7 @@ test("separa recibo vencido, erro, indeterminado, encontrado e vazio confirmado"
     row({ candidate_id: "id-4", slug: "incerto", receipt_candidate_id: "id-4", receipt_slug: "incerto", receipt_result: "bloqueado" }),
     row({ candidate_id: "id-5", slug: "achado", receipt_candidate_id: "id-5", receipt_slug: "achado", receipt_result: "encontrado", receipt_volume: 1 }),
   ], { now })
-  assert.deepEqual(report.summary, { sem_recibo: 0, stale: 1, erro: 1, indeterminado: 1, encontrado: 1, vazio_confirmado: 1 })
+  assert.deepEqual(report.summary, { sem_recibo: 0, stale: 1, erro: 1, indeterminado: 1, encontrado: 1, vazio_confirmado: 1, atualizacao_encerrada: 0 })
   assert.equal(report.ok, true)
 })
 

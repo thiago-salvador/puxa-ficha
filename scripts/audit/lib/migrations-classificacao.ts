@@ -545,7 +545,10 @@ export const MEDICAO_REPLAY = Object.freeze({
   // VALID de numero CNJ em processos (DDL pura). --schema-gate PG17 mediu 123
   // aplicadas, 397 puladas, zero falhas; hash
   // 7fc51c84eabc8e22bd2dd1130cdf735eafc8df37bd57ba7e30e0b48bdcbb0fc1.
-  schemaReplayTamanho: 123,
+  // 123 -> 124 apos integrar 20260927020000 e incluir 20260927030000_candidaturas_fase_2026_schema.
+  // Schema-gate PG17 mediu 124 aplicadas, 399 puladas, zero falhas; hash
+  // c6dc8f606f699f385a5dadce54d46efb8e1c8a197f49a7161e34f401c077796e.
+  schemaReplayTamanho: 124,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

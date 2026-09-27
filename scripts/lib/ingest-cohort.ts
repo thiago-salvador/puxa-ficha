@@ -134,6 +134,7 @@ export interface SenadoPublicCohortConfig {
   schema_version: "senado-public-cohort-config-v1"
   generated_at: string
   source: {
+    // coorte-atualizacao: isento (nome da relação no recibo da coorte explícita)
     relation: "candidatos_publico"
     expected_count: number
     endpoint: "local-supabase"

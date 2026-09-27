@@ -25,6 +25,11 @@ async function bancoFake(
     const offset = Number(url.searchParams.get("offset") ?? 0)
     chamadas.push({ method: req.method!, path: url.pathname, select: url.searchParams.get("select"), offset })
     res.setHeader("content-type", "application/json")
+    if (url.pathname === "/rest/v1/candidaturas_fase_2026_publico") {
+      res.statusCode = 404
+      res.end(JSON.stringify({ code: "PGRST205", message: "Could not find the table candidaturas_fase_2026_publico in the schema cache" }))
+      return
+    }
     if (url.pathname === "/rest/v1/candidatos") {
       // Lookup nominal do coletor. Sem CPF, a coleta fecha em `erro` antes de
       // qualquer consulta externa, o que mantém o teste sem rede.
@@ -67,8 +72,8 @@ test("carrega públicos fora do seed, pagina além de 1000 e não vaza outros ca
     const coorte = await loadCandidatosPublicosMinimos({ client: db.client, escopo: null })
     assert.equal(coorte.length, 1001)
     assert.deepEqual(coorte[1000], { slug: "publico-1000", nome_completo: "Pessoa 1000" })
-    assert.equal(db.chamadas.at(-1)?.offset, 1001)
-    assert.ok(db.chamadas.every((c) => c.select === "slug,nome_completo" && c.method === "GET"))
+    assert.equal(db.chamadas.filter((c) => c.path === "/rest/v1/candidatos_publico").at(-1)?.offset, 1001)
+    assert.ok(db.chamadas.filter((c) => c.path === "/rest/v1/candidatos_publico").every((c) => c.select === "slug,nome_completo" && c.method === "GET"))
     assert.doesNotThrow(() => exigirCoortePublicaMinima(coorte))
     assert.ok(Object.isFrozen(coorte) && Object.isFrozen(coorte[0]))
   } finally { await db.close() }
@@ -151,7 +156,7 @@ test("runner e coletor reutilizam a mesma coorte para PF_INGEST_SLUGS fora do se
     assert.equal(leiturasDaCoorte.length, 2, "uma leitura paginada, sem recarregar coorte no coletor")
     const lookups = db.chamadas.filter((c) => c.path === "/rest/v1/candidatos")
     assert.equal(lookups.length, 1, "o coletor consulta só o candidato da coorte recebida")
-    assert.equal(db.chamadas.length, leiturasDaCoorte.length + lookups.length)
+    assert.equal(db.chamadas.length, leiturasDaCoorte.length + lookups.length + 1, "uma leitura da view de fase tolera schema pré-migration")
     assert.ok(db.chamadas.every((c) => c.method === "GET"))
   } finally { await db.close() }
 })

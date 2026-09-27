@@ -1,0 +1,119 @@
+name: "Resultado TSE e coorte de atualização (plano)"
+
+# Lê o resultado oficial do TSE (resultados.tse.jus.br) depois de cada turno e
+# monta o plano de fase eleitoral por candidatura. NUNCA grava no banco:
+#   plano  (padrão e agendado) só lê e publica o plano como artefato;
+#   gerar  transforma um plano completo na migration de resultado auditada e a
+#          publica como artefato, para entrar por PR e pelo workflow
+#          apply-fase-eleitoral-production (conjunto turno-1 ou turno-2).
+# Leitura parcial (403, timeout, arquivo sem totalização final) não marca
+# ninguém. Runbook: docs/operations/coorte-atualizacao-pos-turno.md.
+
+on:
+  schedule:
+    # 1º turno em 04/10/2026, 2º turno em 25/10/2026. Só plano (somente leitura).
+    - cron: "0 12 5,6 10 *"
+    - cron: "0 12 26,27 10 *"
+  workflow_dispatch:
+    inputs:
+      turno:
+        description: "Turno do resultado"
+        required: true
+        type: choice
+        options:
+          - "1"
+          - "2"
+      modo:
+        description: "plano só lê; gerar monta a migration como artefato (nada é gravado no banco)"
+        required: true
+        default: plano
+        type: choice
+        options:
+          - plano
+          - gerar
+      eleicao_federal:
+        description: "Código da eleição federal (Presidente). Vazio: descobre no ele-c.json do TSE"
+        required: false
+        default: ""
+      eleicao_estadual:
+        description: "Código da eleição estadual (Governador/Senador). Vazio: descobre no ele-c.json do TSE"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: resultados-tse-fase-eleitoral
+  cancel-in-progress: false
+
+jobs:
+  plano:
+    name: Plano de fase eleitoral (somente leitura)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Resolver turno
+        id: turno
+        env:
+          INPUT_TURNO: ${{ github.event.inputs.turno }}
+          EVENTO: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          if [ "$EVENTO" = "schedule" ]; then
+            dia="$(date -u +%d)"
+            if [ "$dia" -ge 20 ]; then turno=2; else turno=1; fi
+          else
+            turno="$INPUT_TURNO"
+          fi
+          case "$turno" in 1|2) ;; *) echo "turno inválido: $turno" >&2; exit 1 ;; esac
+          echo "turno=$turno" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - run: npm ci --ignore-scripts
+
+      - name: Plano (lê TSE e fichas no ar; não grava)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          PF_TURNO: ${{ steps.turno.outputs.turno }}
+          PF_ELEICAO_FEDERAL: ${{ github.event.inputs.eleicao_federal }}
+          PF_ELEICAO_ESTADUAL: ${{ github.event.inputs.eleicao_estadual }}
+        run: |
+          set -euo pipefail
+          args=(plano --turno="$PF_TURNO" --out=reports/resultados-tse)
+          if [ -n "${PF_ELEICAO_FEDERAL:-}" ] || [ -n "${PF_ELEICAO_ESTADUAL:-}" ]; then
+            args+=(--eleicao-federal="$PF_ELEICAO_FEDERAL" --eleicao-estadual="$PF_ELEICAO_ESTADUAL")
+          fi
+          npm run resultados:tse -- "${args[@]}"
+
+      - name: Gerar migration de resultado (artefato; não grava)
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.modo == 'gerar' }}
+        env:
+          PF_TURNO: ${{ steps.turno.outputs.turno }}
+        run: |
+          set -euo pipefail
+          versao="$(date -u +%Y%m%d%H%M%S)"
+          args=(gerar --plano="reports/resultados-tse/plano-turno-${PF_TURNO}.json" --versao="$versao")
+          npm run resultados:tse -- "${args[@]}"
+          mkdir -p reports/resultados-tse/gerado
+          git add -N supabase scripts/audit
+          git diff > "reports/resultados-tse/gerado/fase-eleitoral-turno-${PF_TURNO}-${versao}.patch"
+          echo "Patch em reports/resultados-tse/gerado: aplicar com git apply num branch, seguir o runbook." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Publicar plano
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: resultados-tse-turno-${{ steps.turno.outputs.turno }}-${{ github.run_id }}
+          path: reports/resultados-tse
+          if-no-files-found: warn
+          retention-days: 30

@@ -35,6 +35,7 @@ import {
   type FichaPublica,
   type PlanoFinancas2026,
 } from "./lib/tse-2026-financas-plano"
+import { aplicarCoorteAtualizacao } from "./lib/coorte-atualizacao"
 
 const SCRIPT = "tse-2026-financas"
 const URL_BENS = `https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_${ANO_FINANCAS_2026}.zip`
@@ -81,9 +82,10 @@ async function selecionarTudo<T>(
 }
 
 export async function carregarPublicos(): Promise<FichaPublica[]> {
+  // coorte-atualizacao: aplica
   const rows = await selecionarTudo<FichaPublica>("candidatos_publico", "id, slug", (q) => q.order("slug"))
   if (rows.length === 0) throw new Error("candidatos_publico vazio: nada a planejar")
-  return rows
+  return aplicarCoorteAtualizacao(rows, "tse-2026-financas")
 }
 
 export async function carregarEstado2026(): Promise<EstadoProducao> {

@@ -618,6 +618,7 @@ function parseArgs(args: string[]): CliOptions {
 export async function runPublicProfileCompletenessAudit(options: CliOptions) {
   const rawSlugs: unknown = options.slug
     ? [options.slug]
+    // coorte-atualizacao: isento (contrato de completude do que está no ar, não frescor)
     : ((await fetchJson(`${options.baseUrl}/api/candidato-slugs`)) as { slugs?: unknown }).slugs
   if (!Array.isArray(rawSlugs) || rawSlugs.some((slug) => typeof slug !== "string")) {
     throw new Error("/api/candidato-slugs não retornou uma lista válida")
@@ -634,6 +635,7 @@ export async function runPublicProfileCompletenessAudit(options: CliOptions) {
   const review: ProfileReviewNotice[] = []
   const fetchErrors: Array<{ slug: string; error: string }> = []
   const seedSlugs = new Set(
+    // coorte-atualizacao: isento (nomes do seed para o contrato de completude)
     (JSON.parse(readFileSync(path.resolve("data/candidatos.json"), "utf8")) as Array<{ slug: string }>).map(
       (candidate) => candidate.slug,
     ),

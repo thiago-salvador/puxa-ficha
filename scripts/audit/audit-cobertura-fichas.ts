@@ -3,6 +3,7 @@ import path from "node:path"
 import { pathToFileURL } from "node:url"
 import { isHistoricoCandidaturaRow } from "../../src/lib/historico-tipo-evento"
 import { publicFamilyRowCount, validCoverageSourceProof } from "./lib/coverage-source-proof"
+import { rotuloAtualizacaoEncerrada } from "../../src/lib/coorte-atualizacao"
 
 /**
  * Etapa 0: matriz somente leitura da cobertura pública por candidato e família.
@@ -37,6 +38,11 @@ export type CoverageState =
   | "erro"
   | "desatualizado"
   | "frescor_indefinido"
+  /**
+   * Coorte de atualização: a candidatura saiu da disputa depois do turno e a
+   * coleta foi encerrada. Célula congelada, não aberta nem vencida.
+   */
+  | "atualizacao_encerrada"
 
 export type CoverageProfile = Record<string, unknown> & {
   id?: string
@@ -64,6 +70,8 @@ export type CoverageCell = {
    * não respondeu. O gate de CI conta tudo que não é coleta_log.
    */
   origem_recibo: "coleta_log" | "badge_publico" | "nenhum" | "perfil_indisponivel"
+  /** Data (AAAA-MM-DD) em que a coleta desta ficha foi encerrada, se foi. */
+  atualizacao_encerrada_em?: string
   /** Exceção nominal aprovada pelo dono; a célula continua com o estado real. */
   excecao?: { motivo: string; aprovado_por: string; aprovado_em: string; referencia?: string }
 }
@@ -117,7 +125,7 @@ export type ReceiptAdapterResult = {
 
 const STATES: readonly CoverageState[] = [
   "publicado", "vazio_confirmado", "nao_aplicavel", "indeterminado",
-  "sem_recibo", "erro", "desatualizado", "frescor_indefinido",
+  "sem_recibo", "erro", "desatualizado", "frescor_indefinido", "atualizacao_encerrada",
 ]
 
 /** Recibo por ficha da auditoria diária do TSE (`data-freshness-audit.yml`). */
@@ -902,7 +910,7 @@ export function parseCoverageExceptions(raw: unknown, now = new Date()): Coverag
   })
 }
 
-function makeCell(profile: CoverageProfile, family: CoverageFamily, joins: CoverageReceiptJoin, profileError?: string): CoverageCell {
+function makeCell(profile: CoverageProfile, family: CoverageFamily, joins: CoverageReceiptJoin, profileError?: string, encerradaEm?: string): CoverageCell {
   const slug = text(profile.slug) ?? "<sem-slug>"
   // A failed profile read cannot establish either the data or the rule of
   // applicability. Keep every family as an errored, applicable cell instead
@@ -914,9 +922,15 @@ function makeCell(profile: CoverageProfile, family: CoverageFamily, joins: Cover
       : profileError
       ? { estado: "erro" }
       : verdictFor(joined, profile, family)
-  const state = verdict.estado
+  // Ficha congelada: estado aberto (sem recibo, vencido, indefinido) vira
+  // `atualizacao_encerrada`. Estado provado (publicado, vazio confirmado,
+  // não aplicável) continua como está.
+  const congelada = Boolean(encerradaEm) && applicableCell && OPEN_STATES.includes(verdict.estado)
+  const state: CoverageState = congelada ? "atualizacao_encerrada" : verdict.estado
   const receipt = verdict.receipt ?? joined
-  const explicitReason = !applicableCell
+  const explicitReason = congelada
+    ? rotuloAtualizacaoEncerrada(encerradaEm!)
+    : !applicableCell
     ? "regra escrita: família não se aplica ao cargo ou ao histórico federal do candidato"
     : profileError
       ? `perfil não respondeu: ${profileError}`
@@ -934,6 +948,7 @@ function makeCell(profile: CoverageProfile, family: CoverageFamily, joins: Cover
       : joins[slug]?.[family] ? "coleta_log"
       : joined ? "badge_publico"
       : "nenhum",
+    ...(encerradaEm ? { atualizacao_encerrada_em: encerradaEm } : {}),
   }
 }
 
@@ -943,10 +958,12 @@ export function buildCoverageMatrix(
   joins: CoverageReceiptJoin = {},
   exceptions: CoverageException[] = [],
   now = new Date(),
+  /** Coorte de atualização: slug -> data em que a coleta foi encerrada. */
+  encerradas: ReadonlyMap<string, string> = new Map(),
 ): CoverageMatrix {
   const errors = new Map(profileErrors.map((item) => [item.slug, item.error]))
   const erroredProfiles = profileErrors.map((item) => ({ slug: item.slug } satisfies CoverageProfile))
-  const cells = [...profiles, ...erroredProfiles].flatMap((profile) => COVERAGE_FAMILIES.map((family) => makeCell(profile, family, joins, errors.get(text(profile.slug) ?? ""))))
+  const cells = [...profiles, ...erroredProfiles].flatMap((profile) => COVERAGE_FAMILIES.map((family) => makeCell(profile, family, joins, errors.get(text(profile.slug) ?? ""), encerradas.get(text(profile.slug) ?? ""))))
   const exceptionReport: CoverageExceptionReport = { aplicadas: [], sem_celula: [] }
   const byKey = new Map(cells.map((cell) => [`${cell.slug}|${cell.familia}`, cell]))
   for (const exception of exceptions) {
@@ -980,6 +997,28 @@ export function buildCoverageMatrix(
 }
 
 /**
+ * Coorte de atualização lida dos snapshots de recibo: a chave
+ * `atualizacao_encerrada` traz { slug, atualizacao_encerrada_em } das fichas
+ * cuja coleta foi encerrada depois do turno. Snapshot antigo (sem a chave)
+ * devolve mapa vazio: tudo se comporta como antes.
+ */
+export function lerEncerradasDoSnapshot(snapshots: readonly unknown[]): Map<string, string> {
+  const out = new Map<string, string>()
+  for (const raw of snapshots) {
+    const lista = record(raw)?.atualizacao_encerrada
+    if (lista === undefined || lista === null) continue
+    if (!Array.isArray(lista)) throw new Error("snapshot de recibos: atualizacao_encerrada não é lista")
+    for (const item of lista) {
+      const slug = text(record(item)?.slug)
+      const data = text(record(item)?.atualizacao_encerrada_em)
+      if (!slug || !data || !/^\d{4}-\d{2}-\d{2}/.test(data)) throw new Error("snapshot de recibos: item de atualizacao_encerrada inválido")
+      out.set(slug, data.slice(0, 10))
+    }
+  }
+  return out
+}
+
+/**
  * Decisão do gate `sem-recibo`. Em enforce, perfil não lido também reprova:
  * célula em erro de leitura não prova nada e esconderia ausência de recibo.
  */
@@ -1008,7 +1047,7 @@ export function blockingCells(matrix: CoverageMatrix): CoverageCell[] {
  * de ausência).
  */
 export function missingReceiptCells(matrix: CoverageMatrix): CoverageCell[] {
-  return matrix.cells.filter((cell) => cell.aplicavel && !cell.excecao &&
+  return matrix.cells.filter((cell) => cell.aplicavel && !cell.excecao && cell.estado !== "atualizacao_encerrada" &&
     (cell.origem_recibo === "nenhum" || cell.origem_recibo === "badge_publico"))
 }
 
@@ -1017,6 +1056,7 @@ export async function fetchPublicProfiles(
   fetcher: typeof fetch = fetch,
   sleep: (ms: number) => Promise<void> = (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
 ): Promise<{ profiles: CoverageProfile[]; errors: Array<{ slug: string; error: string }> }> {
+  // coorte-atualizacao: isento (a matriz lista toda ficha no ar; a congelada vira atualizacao_encerrada via lerEncerradasDoSnapshot)
   const slugResponse = await fetcher(`${baseUrl.replace(/\/$/, "")}/api/candidato-slugs`, { headers: { accept: "application/json" } })
   if (!slugResponse.ok) throw new Error(`/api/candidato-slugs HTTP ${slugResponse.status}`)
   const body = await slugResponse.json() as { slugs?: unknown }
@@ -1076,9 +1116,12 @@ async function main(): Promise<void> {
   let joins: CoverageReceiptJoin = {}
   let rejectedReceipts: ReceiptAdapterResult["rejected"] = []
   let ignoredPartialReceipts = 0
+  let encerradas: ReadonlyMap<string, string> = new Map()
   const receiptPaths = [options.receipts, ...options.receiptsExtra].filter((item): item is string => Boolean(item))
   if (receiptPaths.length) {
     const loaded = await Promise.all(receiptPaths.map(async (file) => JSON.parse(await readFile(path.resolve(file), "utf8")) as unknown))
+    // coverage-receipts-snapshot.sql publica a coorte de atualização junto dos recibos.
+    encerradas = lerEncerradasDoSnapshot(loaded)
     const rowGroups = loaded.map((raw) => Array.isArray(raw)
       ? raw as LatestReceiptRow[]
       : Array.isArray(record(raw)?.rows) ? record(raw)?.rows as LatestReceiptRow[]
@@ -1097,7 +1140,7 @@ async function main(): Promise<void> {
   const exceptions = options.exceptions
     ? parseCoverageExceptions(JSON.parse(await readFile(path.resolve(options.exceptions), "utf8")) as unknown)
     : []
-  const matrix = buildCoverageMatrix(fetched.profiles, fetched.errors, joins, exceptions)
+  const matrix = buildCoverageMatrix(fetched.profiles, fetched.errors, joins, exceptions, new Date(), encerradas)
   if (options.out) {
     const outputPath = path.resolve(options.out)
     await writeFile(outputPath, `${JSON.stringify(matrix, null, 2)}\n`, { encoding: "utf8", mode: 0o600 })

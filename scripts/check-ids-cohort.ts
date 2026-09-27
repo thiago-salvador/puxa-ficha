@@ -695,6 +695,7 @@ export function contarCamaraInalcancavel(results: readonly CheckResult[]): numbe
 }
 
 function loadSeed(): CandidatoConfig[] {
+  // coorte-atualizacao: isento (identidade dos ids do seed, não atualização)
   const path = resolve(process.cwd(), "data/candidatos.json")
   return JSON.parse(readFileSync(path, "utf-8"))
 }
