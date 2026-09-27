@@ -348,6 +348,19 @@ describe("catálogo de checagens e recibos versionados", () => {
     assert.equal((publicDataset as Array<{ publisher: string }>).some((record) => record.publisher === "Agência Lupa"), false)
   })
 
+  it("recibos da rodada de 25-26/09 com lead de outra pessoa não voltam ao catálogo", () => {
+    // Hotfix: lead só vale com o nome completo no título; recibo sem nenhum saiu (não virou vazio).
+    // Coleta nova, com data posterior, pode republicar a ficha pela regra nova.
+    const rodadaAntiga = (searchedAt: string) => searchedAt >= "2026-09-25T23:00:00Z" && searchedAt <= "2026-09-26T04:00:00Z"
+    const sairam: string[] = ["andre-luis","ben-mendes","cadu-xavier","carlos-machado","cyro-garcia","danilo-pinheiro","dario-barbosa","delcidio-amaral","du-pereira","eduardo-braide","fabio-trad","flavio-roscoe","gal-leite","ivan-moraes","joao-rodrigues","lucia-santos","luiz-franca","requiao-filho","roberto-cidade","roberto-rocha","rodrigo-bolsonaro","ze-batista"]
+    const tetos: Record<string, number> = {"acm-neto":3,"alexandre-kalil":2,"alvaro-dias-rn":6,"augusto-cury":2,"ciro-gomes-gov-ce":56,"douglas-ruas":1,"eduardo-paes":43,"flavio-bolsonaro":57,"haddad-gov-sp":40,"joao-campos":7,"juliana-brizola":2,"paula-belmonte":1,"renan-filho":1,"romeu-zema":6,"ronaldo-caiado":2,"sergio-moro-gov-pr":12,"tarcisio-gov-sp":20}
+    for (const receipt of committedReceipts.receipts) {
+      if (!rodadaAntiga(receipt.searched_at)) continue
+      assert.equal(sairam.includes(receipt.candidate_slug), false, `${receipt.candidate_slug} saiu no hotfix`)
+      if (receipt.candidate_slug in tetos) assert.ok(receipt.leads <= tetos[receipt.candidate_slug], `${receipt.candidate_slug} só com leads de nome completo`)
+    }
+  })
+
   it("recibos publicados não carregam erro e têm volume coerente", () => {
     assert.equal(committedReceipts.schema_version, "checagens-recibos-v1")
     const ids = new Set<string>()
