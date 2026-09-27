@@ -173,7 +173,11 @@ function searchReceiptText(receipt: ReciboChecagensVisivel, publishedChecks: num
   const missing = receipt.naoResponderam.length === 0
     ? ""
     : ` (${listarEmProsa(receipt.naoResponderam)} ${receipt.naoResponderam.length === 1 ? "não respondeu" : "não responderam"} nesta busca)`
-  const when = `Busca feita em ${formatarDataBusca(receipt.searchedAt)} em ${listarEmProsa(receipt.agencias)}${missing}`
+  // Arquivo de seção só cobre a partir do item mais antigo lido: a frase diz desde quando.
+  const windows = receipt.janelas.length === 0
+    ? ""
+    : `; ${listarEmProsa(receipt.janelas.map((janela) => `${janela.agencia} a partir de ${janela.desde.split("-").reverse().join("/")}`))}`
+  const when = `Busca feita em ${formatarDataBusca(receipt.searchedAt)} em ${listarEmProsa(receipt.agencias)}${missing}${windows}`
   if (publishedChecks > 0) return `${when}.`
   if (receipt.result === "vazio_confirmado") return `${when}: nenhuma checagem com o nome desta candidatura no título.`
   const matches = receipt.leads === 1 ? "1 matéria cita" : `${receipt.leads} matérias citam`
