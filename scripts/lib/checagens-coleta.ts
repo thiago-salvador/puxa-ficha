@@ -149,10 +149,15 @@ export interface ItemBusca {
   fonte: string
   fonte_url: string | null
   data_publicacao: string | null
-  /** Texto da matéria já normalizado (arquivos de seção), para confirmar menção fraca no título. */
-  texto?: string
-  /** Vídeo: a página não tem corpo de matéria, o texto é só título e resumo. */
+  /**
+   * Trechos do corpo já normalizados, um por bloco (linha fina, descrição,
+   * parágrafo), para confirmar menção fraca no título. Casados um a um: juntar
+   * os blocos casa nome pela emenda ("não mostra Ciro" + "Gomes de Sá").
+   */
+  trechos?: string[]
+  /** Vídeo: a página não tem corpo de matéria; o único texto além do título é este resumo (caixa original). */
   semCorpo?: boolean
+  resumo?: string
 }
 
 export interface LeadChecagem {
@@ -348,9 +353,10 @@ export function parseArquivoFalkor(body: string): { itens: ItemBusca[]; brutos: 
     if (!titulo || !url.startsWith("https://")) continue
     const resumo = typeof content?.summary === "string" ? content.summary : ""
     const video = (row as { type?: unknown }).type === "video"
+    // Matéria confirma pelo corpo (página aberta); o resumo só vale para vídeo, que não tem corpo.
     itens.push({
-      titulo, link: url, fonte: "", fonte_url: url, data_publicacao: dataIso((row as { publication?: unknown }).publication), texto: normalizarNome(`${titulo} ${resumo}`),
-      ...(video ? { semCorpo: true } : {}),
+      titulo, link: url, fonte: "", fonte_url: url, data_publicacao: dataIso((row as { publication?: unknown }).publication),
+      ...(video ? { semCorpo: true, resumo } : {}),
     })
   }
   return { itens, brutos, proxima }
@@ -366,17 +372,17 @@ export function urlArquivoArc(arquivo: Extract<ArquivoSecao, { tipo: "arc" }>, o
   return `${arquivo.url}?query=${encodeURIComponent(JSON.stringify(query))}&_website=${encodeURIComponent(arquivo.website)}`
 }
 
-/** Título, linha fina, descrição e parágrafos de uma história do Arc, sem HTML. */
-function textoArc(row: Record<string, unknown>): string {
+/** Linha fina, descrição e parágrafos de uma história do Arc, um trecho normalizado por bloco. */
+function trechosArc(row: Record<string, unknown>): string[] {
   const partes: string[] = []
-  for (const campo of ["headlines", "subheadlines", "description"]) {
+  for (const campo of ["subheadlines", "description"]) {
     const basic = (row[campo] as { basic?: unknown } | undefined)?.basic
     if (typeof basic === "string") partes.push(basic)
   }
   for (const elemento of Array.isArray(row.content_elements) ? row.content_elements as Array<Record<string, unknown>> : []) {
     if ((elemento?.type === "text" || elemento?.type === "header") && typeof elemento.content === "string") partes.push(elemento.content.replace(/<[^>]+>/g, " "))
   }
-  return decodeEntities(partes.join(" "))
+  return partes.map((parte) => normalizarNome(decodeEntities(parte))).filter(Boolean)
 }
 
 function temCorpoArc(row: Record<string, unknown>): boolean {
@@ -397,7 +403,7 @@ export function parseArquivoArc(body: string, site: string): { itens: ItemBusca[
     const link = new URL(caminho, site).toString()
     if (!link.startsWith("https://")) continue
     if (temCorpoArc(row)) comCorpo++
-    itens.push({ titulo, link, fonte: "", fonte_url: link, data_publicacao: dataIso(row.display_date), texto: normalizarNome(textoArc(row)) })
+    itens.push({ titulo, link, fonte: "", fonte_url: link, data_publicacao: dataIso(row.display_date), trechos: trechosArc(row) })
   }
   return { itens, total: data.count, lidos: data.content_elements.length, comCorpo }
 }
@@ -699,7 +705,7 @@ type OpcoesConsulta = Required<Pick<OpcoesColeta, "fetchText" | "tentativas" | "
   /** Rodada interrompida: leituras de arquivo em curso param na próxima página. */
   parada: { abortada: boolean }
   /** Texto de matérias abertas para confirmar menção, compartilhado entre candidaturas. */
-  paginas: Map<string, Promise<{ texto: string } | { erro: string }>>
+  paginas: Map<string, Promise<{ trechos: string[] } | { erro: string }>>
   orcamentoPaginas: { total: number; restantes: number }
   /** Disjuntor da via direta por agência: aberto, a agência vira erro sem pedir nada nem cair no Google. */
   disjuntoresDiretos: Map<string, { falhasSeguidas: number; aberto: string | null }>
@@ -777,9 +783,12 @@ async function consultarBuscaSite(candidato: CandidatoChecagem, agencia: Agencia
     if (pagina > 1) await opcoes.sleep(opcoes.pausaMs)
     const lida = await lerPaginaBuscaSite(candidato.nome_urna, agencia, pagina, opcoes)
     if ("erro" in lida) return { status: "erro", erro: `busca do site: ${lida.erro}` }
+    if (lida.fim) break
+    // Página além da última responde 404: 200 sem cartões depois da primeira é bloqueio ou template quebrado.
+    if (pagina > 1 && lida.itens.length === 0) return { status: "erro", erro: `busca do site: página ${pagina} sem cartões (fim real responde 404)` }
     itens.push(...lida.itens)
-    // Fim só por 404 ou página com menos cartões que o normal; links de paginação não decidem.
-    if (lida.fim || lida.itens.length < ITENS_POR_PAGINA_BUSCA_SITE) break
+    // Página curta só encerra sem link para a seguinte; página cheia segue até o teto.
+    if (lida.itens.length < ITENS_POR_PAGINA_BUSCA_SITE && (lida.ultimaPagina === null || lida.ultimaPagina <= pagina)) break
   }
   if (itens.length === 0) {
     // Zero cartões pode ser bloqueio ou template quebrado no meio da rodada: sonda de novo antes de aceitar o vazio.
@@ -805,7 +814,9 @@ async function lerArquivo(agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Pro
         const lida = parseArquivoFalkor(resposta.body)
         brutos += lida.brutos
         for (const item of lida.itens) porLink.set(item.link, item)
-        if (lida.proxima !== null && lida.proxima <= pagina) return { status: "erro", erro: `arquivo, página ${pagina}: nextPage ${lida.proxima} não avança` }
+        if (lida.proxima !== null && lida.proxima !== pagina + 1) return { status: "erro", erro: `arquivo, página ${pagina}: nextPage ${lida.proxima} não é a seguinte` }
+        // Toda página antes da última vem cheia; página curta que aponta para outra é recorte.
+        if (lida.proxima !== null && lida.brutos !== ITENS_POR_PAGINA_FALKOR) return { status: "erro", erro: `arquivo, página ${pagina}: ${lida.brutos} itens antes do fim` }
         // Fim: página curta ou vazia sem nextPage (o parser recusa página cheia sem o campo).
         pagina = lida.proxima
       }
@@ -854,11 +865,12 @@ export function textoCitaNomeInteiro(textoNormalizado: string, candidato: Candid
 }
 
 /**
- * Texto do corpo principal da matéria (`<article itemprop="articleBody">` até
- * o fechamento correspondente, com os `<article>` aninhados dentro), normalizado.
- * Sem esse article, devolve null: chamadas relacionadas e menus não confirmam.
+ * Corpo principal da matéria (`<article itemprop="articleBody">` até o
+ * fechamento correspondente, com os `<article>` aninhados dentro), em trechos
+ * normalizados, um por bloco. Sem esse article, devolve null: chamadas
+ * relacionadas e menus não confirmam.
  */
-export function textoDaPagina(html: string): string | null {
+export function textoDaPagina(html: string): string[] | null {
   const abertura = /<article\b[^>]*\bitemprop="articleBody"[^>]*>/.exec(html)
   if (!abertura) return null
   const marcas = /<article\b[^>]*>|<\/article>/g
@@ -870,19 +882,51 @@ export function textoDaPagina(html: string): string | null {
     if (profundidade === 0) { fim = marca.index; break }
   }
   if (fim < 0) return null
-  const corpo = html.slice(abertura.index, fim)
-  return normalizarNome(decodeEntities(corpo.replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, " ")))
+  const corpo = html.slice(abertura.index + abertura[0].length, fim)
+    .replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<style[\s\S]*?<\/style>/g, " ")
+    // Fronteira de bloco vira separador: nome não casa atravessando parágrafos.
+    .replace(/<\/?(?:p|h[1-6]|li|ul|ol|div|br|figcaption|figure|blockquote|section|article|header|footer|table|tr|td|th)\b[^>]*>/gi, "\u0001")
+    .replace(/<[^>]+>/g, " ")
+  return decodeEntities(corpo).split("\u0001").map((trecho) => normalizarNome(trecho)).filter(Boolean)
 }
 
-async function textoConfirmado(link: string, opcoes: OpcoesConsulta): Promise<{ texto: string } | { erro: string }> {
+/** Nome inteiro em algum trecho, casado trecho a trecho. */
+function trechosCitamNomeInteiro(trechos: readonly string[], candidato: CandidatoChecagem): boolean {
+  return trechos.some((trecho) => textoCitaNomeInteiro(trecho, candidato))
+}
+
+/** Conectivos de nome. "Neto", "Filho" e "Junior" ficam de fora: são parte do nome ("ACM Neto"). */
+const CONECTIVOS_NOME = new Set(["de", "da", "do", "das", "dos", "e", "di", "del", "van", "von", "la", "le"])
+
+const CARGOS_ANTES_DO_NOME = new Set(["governador", "governadora", "presidente", "senador", "senadora", "deputado", "deputada", "prefeito", "prefeita", "ministro", "ministra", "vice", "ex", "candidato", "candidata", "pre", "general", "coronel", "pastor", "pastora"])
+
+/**
+ * Parte do nome do candidato colada a outro nome próprio: "Felipe Neto" para
+ * ACM Neto, "Ciro Gomes" para Ciro Nogueira. Vizinho em maiúscula que não é
+ * parte do nome da candidatura, partícula ou cargo indica outra pessoa.
+ */
+export function nomeColadoEmOutraPessoa(texto: string, candidato: CandidatoChecagem): boolean {
+  const doNome = new Set([candidato.nome_urna, candidato.nome_completo].flatMap((nome) => normalizarNome(nome).split(" ")).filter((token) => token && !CONECTIVOS_NOME.has(token)))
+  const palavras = [...texto.matchAll(/[\p{L}\p{N}]+/gu)].map((match) => match[0])
+  return palavras.some((palavra, indice) => {
+    if (!doNome.has(normalizarNome(palavra))) return false
+    return [palavras[indice - 1], palavras[indice + 1]].some((vizinho) => {
+      if (!vizinho || !/^\p{Lu}/u.test(vizinho)) return false
+      const normalizado = normalizarNome(vizinho)
+      return !doNome.has(normalizado) && !CONECTIVOS_NOME.has(normalizado) && !CARGOS_ANTES_DO_NOME.has(normalizado)
+    })
+  })
+}
+
+async function textoConfirmado(link: string, opcoes: OpcoesConsulta): Promise<{ trechos: string[] } | { erro: string }> {
   let pagina = opcoes.paginas.get(link)
   if (!pagina) {
     if (opcoes.orcamentoPaginas.restantes <= 0) return { erro: `teto de ${opcoes.orcamentoPaginas.total} páginas de confirmação na rodada` }
     opcoes.orcamentoPaginas.restantes--
     pagina = pedirComTentativas(link, opcoes).then((resposta) => {
       if ("erro" in resposta) return resposta
-      const texto = textoDaPagina(resposta.body)
-      return texto === null ? { erro: "matéria sem <article itemprop=\"articleBody\">" } : { texto }
+      const trechos = textoDaPagina(resposta.body)
+      return trechos === null ? { erro: "matéria sem <article itemprop=\"articleBody\">" } : { trechos }
     })
     opcoes.paginas.set(link, pagina)
   }
@@ -906,12 +950,19 @@ async function leadsDoArquivo(itens: readonly ItemBusca[], candidato: CandidatoC
     if (!newsTitleMentionsCandidate(item.titulo, { nome_urna: candidato.nome_urna, nome_completo: candidato.nome_completo })) continue
     const chave = stripAccents(item.titulo).toLowerCase()
     if (vistos.has(chave)) continue
-    let confirmado = textoCitaNomeInteiro(normalizarNome(item.titulo), candidato) || (item.texto !== undefined && textoCitaNomeInteiro(item.texto, candidato))
-    // Vídeo não tem corpo para abrir: sem o nome inteiro no título ou no resumo, não vira lead.
-    if (!confirmado && confirmarNaPagina && !item.semCorpo) {
-      const pagina = await textoConfirmado(item.link, opcoes)
-      if ("erro" in pagina) return { erro: `confirmação de ${item.link}: ${pagina.erro}` }
-      confirmado = textoCitaNomeInteiro(pagina.texto, candidato)
+    let confirmado = textoCitaNomeInteiro(normalizarNome(item.titulo), candidato)
+    // Título com só parte do nome, colada a outro nome próprio, é sobre outra pessoa ("Felipe Neto" para ACM Neto).
+    if (!confirmado && !nomeColadoEmOutraPessoa(item.titulo, candidato)) {
+      if (item.semCorpo) {
+        // Vídeo não tem corpo: o resumo confirma se trouxer o nome inteiro e nenhuma parte dele colada a outra pessoa.
+        confirmado = Boolean(item.resumo) && textoCitaNomeInteiro(normalizarNome(item.resumo), candidato) && !nomeColadoEmOutraPessoa(item.resumo!, candidato)
+      } else if (item.trechos) {
+        confirmado = trechosCitamNomeInteiro(item.trechos, candidato)
+      } else if (confirmarNaPagina) {
+        const pagina = await textoConfirmado(item.link, opcoes)
+        if ("erro" in pagina) return { erro: `confirmação de ${item.link}: ${pagina.erro}` }
+        confirmado = trechosCitamNomeInteiro(pagina.trechos, candidato)
+      }
     }
     if (!confirmado) continue
     vistos.add(chave)

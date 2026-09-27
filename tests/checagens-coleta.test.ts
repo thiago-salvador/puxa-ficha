@@ -13,6 +13,7 @@ import {
   coletarChecagens,
   comIntervaloPorHost,
   conferirPiso,
+  nomeColadoEmOutraPessoa,
   consolidarCatalogoRecibos,
   descricaoEscopo,
   entradaColetaDoRecibo,
@@ -54,6 +55,15 @@ const AOS_P2 = fixture("aos-fatos-busca-zema-p2.html")
 const AOS_VAZIA = fixture("aos-fatos-busca-vazia.html")
 const FALKOR_PAGINA = fixture("g1-falkor-pagina.json")
 const FALKOR_FIM = fixture("g1-falkor-fim.json")
+/** Página 1 como o feed entrega: 10 itens e nextPage 2. Os itens reais da fixture, com URL única por posição. */
+function paginaFalkor(itens = 10, nextPage: number | undefined = 2): string {
+  const base = JSON.parse(FALKOR_PAGINA) as { items: Array<{ content: Record<string, unknown> }> }
+  return JSON.stringify({ ...base, nextPage, items: Array.from({ length: itens }, (_, indice) => {
+    const real = base.items[indice % base.items.length]
+    return { ...real, content: { ...real.content, url: `${String(real.content.url).replace(/\.ghtml$/, "")}-${indice}.ghtml` } }
+  }) })
+}
+const FALKOR_P1 = paginaFalkor()
 const ARC_PAGINA = (() => {
   const pagina = JSON.parse(fixture("estadao-arc-pagina.json")) as { count: number; content_elements: unknown[] }
   // Arquivo de uma página só: o total passa a ser o que a página traz.
@@ -67,7 +77,7 @@ const coletar = (opcoes: Parameters<typeof coletarChecagens>[0]) => coletarCheca
 /** Vias diretas vazias mas válidas: sonda do Aos Fatos acha resultado, arquivos têm itens. */
 function rotaDireta(url: string): { status: number; body: string } | null {
   if (url.startsWith("https://www.aosfatos.org/noticias/")) return { status: 200, body: url.includes("q=Lula") ? AOS_P1 : AOS_VAZIA }
-  if (url.startsWith("https://falkor-cda.bastian.globo.com/")) return { status: 200, body: url.endsWith("/page/1") ? FALKOR_PAGINA : FALKOR_FIM }
+  if (url.startsWith("https://falkor-cda.bastian.globo.com/")) return { status: 200, body: url.endsWith("/page/1") ? FALKOR_P1 : FALKOR_FIM }
   if (url.startsWith("https://www.estadao.com.br/pf/api/")) return { status: 200, body: ARC_PAGINA }
   return null
 }
@@ -437,7 +447,7 @@ describe("coleta nominal de checagens", () => {
     assert.equal(rz.agencias["aos-fatos"].transporte, "busca-site")
     assert.equal(rz.agencias["aos-fatos"].itens, 14, "12 da primeira página + 2 da última")
     assert.equal(rz.agencias["fato-ou-fake"].transporte, "arquivo-secao")
-    assert.equal(rz.agencias["fato-ou-fake"].itens, 3)
+    assert.equal(rz.agencias["fato-ou-fake"].itens, 10)
     assert.equal(rz.agencias["estadao-verifica"].transporte, "arquivo-secao")
     assert.equal(rc.result, "vazio_confirmado", "as 7 responderam e nenhum título cita Caiado")
     assert.equal(pedidos.filter((url) => url.startsWith("https://falkor-cda.")).length, 2, "arquivo do g1 lido uma vez: página 1 e página vazia")
@@ -452,17 +462,17 @@ describe("coleta nominal de checagens", () => {
     const fetchText = async (url: string) => {
       if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
       if (url.startsWith("https://www.aosfatos.org/")) return { status: 200, body: AOS_VAZIA }
-      if (url.startsWith("https://falkor-cda.")) return url.endsWith("/page/1") ? { status: 200, body: FALKOR_PAGINA } : { status: 500, body: "" }
+      if (url.startsWith("https://falkor-cda.")) return url.endsWith("/page/1") ? { status: 200, body: FALKOR_P1 } : { status: 500, body: "" }
       return rotaDireta(url) ?? { status: 200, body: rss([]) }
     }
     const [comGoogle] = await coletar({ roster: [caiado], sleep: async () => {}, fetchText })
     assert.equal(comGoogle.result, "vazio_confirmado")
     assert.equal(comGoogle.agencias["fato-ou-fake"].transporte, "google-news")
-    assert.match(comGoogle.agencias["fato-ou-fake"].falhas?.[0] ?? "", /arquivo da seção: arquivo, página 5: HTTP 500/)
+    assert.match(comGoogle.agencias["fato-ou-fake"].falhas?.[0] ?? "", /arquivo da seção: arquivo, página 2: HTTP 500/)
     assert.match(comGoogle.agencias["aos-fatos"].falhas?.[0] ?? "", /sonda "Lula" sem resultado/)
     const [semGoogle] = await coletar({ roster: [caiado], semGoogle: true, sleep: async () => {}, fetchText })
     assert.equal(semGoogle.result, "erro", "arquivo incompleto nunca confirma ausência")
-    assert.match(semGoogle.agencias["fato-ou-fake"].erro ?? "", /página 5: HTTP 500; google-news: via desligada/)
+    assert.match(semGoogle.agencias["fato-ou-fake"].erro ?? "", /página 2: HTTP 500; google-news: via desligada/)
     assert.equal(semGoogle.agencias["estadao-verifica"].status, "ok")
     const sondas: string[] = []
     await coletar({ roster: [caiado, { ...caiado, id: "cand-b", slug: "b" }], concorrencia: 1, sleep: async () => {}, fetchText: async (url) => {
@@ -472,52 +482,81 @@ describe("coleta nominal de checagens", () => {
     assert.equal(sondas.length, 2, "sonda que falhou é refeita na candidatura seguinte")
   })
 
-  it("arquivo: token solto no título só vira lead com o nome inteiro no texto da matéria", async () => {
+  it("arquivo: token solto no título só vira lead com o nome inteiro, sem colar em outra pessoa", async () => {
     const acm: CandidatoChecagem = { id: "cand-acm", slug: "acm-neto", nome_urna: "ACM Neto", nome_completo: "Antônio Carlos Peixoto de Magalhães Neto", cargo_disputado: "Governador", estado: "BA" }
     const base = JSON.parse(FALKOR_PAGINA) as { items: Array<{ content: Record<string, unknown> }> }
-    const item = (indice: number, title: string, summary: string, url: string) => ({ ...base.items[indice], content: { ...base.items[indice].content, title, summary, url } })
-    const pagina = JSON.stringify({ ...base, items: [
-      // Títulos reais do arquivo que o casador frouxo aceitava para ACM Neto no dry-run de 26/09.
-      item(0, "É #FAKE que Felipe Neto superfaturou purificadores de água doados para o RS", "Influenciador não desviou doações.", "https://g1.globo.com/fato-ou-fake/noticia/2024/05/10/felipe-neto.ghtml"),
-      item(1, "ACM Neto erra ao falar de segurança", "", "https://g1.globo.com/fato-ou-fake/noticia/2026/09/01/acm.ghtml"),
-      item(2, "Neto de ex-governador divulga vídeo antigo", "Post atribuído a ACM Neto usa gravação de 2018.", "https://g1.globo.com/fato-ou-fake/noticia/2026/08/01/resumo.ghtml"),
+    const item = (indice: number, title: string, summary: string, url: string, type = "materia") => {
+      const real = base.items[indice % base.items.length]
+      return { ...real, type, content: { ...real.content, title, summary, url } }
+    }
+    const g1 = "https://g1.globo.com/fato-ou-fake"
+    // Última página (curta, sem nextPage). Os dois "Felipe Neto" são títulos reais do dry-run de 26/09.
+    const pagina = JSON.stringify({ ...base, nextPage: undefined, items: [
+      item(0, "ACM Neto erra ao falar de segurança", "", `${g1}/noticia/a.ghtml`),
+      item(1, "Neto de ex-governador divulga vídeo antigo", "Post atribuído a ACM Neto usa gravação de 2018.", `${g1}/noticia/b.ghtml`),
+      item(2, "É #FAKE que Felipe Neto superfaturou purificadores de água doados para o RS", "Post cita ACM Neto.", `${g1}/noticia/c.ghtml`),
+      item(0, "Vídeo de Neto em comício é de 2018", "Gravação mostra ACM Neto em ato de 2018.", `${g1}/video/d.ghtml`, "video"),
+      item(1, "É #FAKE que Felipe Neto foi preso", "Felipe Neto foi preso? Não; ele já criticou ACM Neto.", `${g1}/video/e.ghtml`, "video"),
+      item(2, "Neto aparece em vídeo antigo", "Felipe Neto já criticou ACM Neto.", `${g1}/video/f.ghtml`, "video"),
     ] })
-    const video = { ...item(0, "É #FAKE que Felipe Neto atue para criar conceito de 'idade fluida'", "Vídeo manipulado circula nas redes.", "https://g1.globo.com/fato-ou-fake/video/felipe-neto-8742574.ghtml"), type: "video" }
-    const paginaComVideo = JSON.stringify({ ...JSON.parse(pagina), items: [...(JSON.parse(pagina) as { items: unknown[] }).items, video] })
     const abertas: string[] = []
     const [recibo] = await coletar({
       roster: [acm],
       sleep: async () => {},
       fetchText: async (url) => {
         if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
-        if (url.startsWith("https://falkor-cda.")) return { status: 200, body: url.endsWith("/page/1") ? paginaComVideo : FALKOR_FIM }
-        if (url.startsWith("https://g1.globo.com/fato-ou-fake/")) { abertas.push(url); return { status: 200, body: fixture("g1-materia.html") } }
+        if (url.startsWith("https://falkor-cda.")) return { status: 200, body: pagina }
+        if (url.startsWith(g1)) { abertas.push(url); return { status: 200, body: fixture("g1-materia.html") } }
         return rotaDireta(url) ?? { status: 200, body: rss([]) }
       },
     })
-    assert.deepEqual(recibo.leads.filter((lead) => lead.agencia === "fato-ou-fake").map((lead) => lead.link), [
-      "https://g1.globo.com/fato-ou-fake/noticia/2026/09/01/acm.ghtml",
-      "https://g1.globo.com/fato-ou-fake/noticia/2026/08/01/resumo.ghtml",
-    ], "nome inteiro no título ou no resumo vale; Felipe Neto não")
-    assert.deepEqual(abertas, ["https://g1.globo.com/fato-ou-fake/noticia/2024/05/10/felipe-neto.ghtml"], "só o título fraco sem nome no resumo abre a matéria; vídeo não abre")
+    assert.deepEqual(recibo.leads.filter((lead) => lead.agencia === "fato-ou-fake").map((lead) => lead.link), [`${g1}/noticia/a.ghtml`, `${g1}/video/d.ghtml`],
+      "nome inteiro no título, ou no resumo de vídeo sem Felipe Neto no título nem no resumo")
+    assert.deepEqual(abertas, [`${g1}/noticia/b.ghtml`], "matéria não usa o resumo: abre a página; título colado em outra pessoa e vídeo não abrem")
     const [semOrcamento] = await coletar({
       roster: [acm], orcamentoPaginasConfirmacao: 0, semGoogle: true, sleep: async () => {},
-      fetchText: async (url) => url.startsWith("https://falkor-cda.") ? { status: 200, body: url.endsWith("/page/1") ? pagina : FALKOR_FIM } : url.includes("/wp-json/") ? { status: 200, body: "[]" } : rotaDireta(url) ?? { status: 200, body: rss([]) },
+      fetchText: async (url) => url.startsWith("https://falkor-cda.") ? { status: 200, body: pagina } : url.includes("/wp-json/") ? { status: 200, body: "[]" } : rotaDireta(url) ?? { status: 200, body: rss([]) },
     })
     assert.match(semOrcamento.agencias["fato-ou-fake"].erro ?? "", /teto de 0 páginas de confirmação/, "sem poder confirmar, a agência não responde por ausência")
   })
 
+  it("nome não casa pela emenda entre título e resumo nem entre blocos do corpo", async () => {
+    const ciro: CandidatoChecagem = { id: "cand-ciro", slug: "ciro-gomes", nome_urna: "Ciro Gomes", nome_completo: "Ciro Ferreira Gomes", cargo_disputado: "Governador", estado: "CE" }
+    const base = JSON.parse(FALKOR_PAGINA) as { items: Array<{ content: Record<string, unknown> }> }
+    const falkor = JSON.stringify({ ...base, nextPage: undefined, items: [{ ...base.items[0], type: "materia", content: { ...base.items[0].content, title: "Vídeo não mostra Ciro", summary: "Gomes de Sá discursa em ato", url: "https://g1.globo.com/fato-ou-fake/noticia/emenda.ghtml" } }] })
+    const arcBase = JSON.parse(ARC_PAGINA) as { content_elements: Array<Record<string, unknown>> }
+    const historia = (titulo: string, sub: string, corpo: string, caminho: string) => ({ ...arcBase.content_elements[0], headlines: { basic: titulo }, subheadlines: { basic: sub }, canonical_url: caminho, content_elements: [{ type: "text", content: corpo }] })
+    const arc = JSON.stringify({ ...arcBase, count: 2, content_elements: [
+      historia("Post não mostra Ciro", "Gomes de Sá discursa em ato", "<p>Vídeo antigo.</p>", "/estadao-verifica/emenda/"),
+      historia("Post não mostra Ciro", "Montagem circula nas redes", "Ciro Gomes não esteve no ato.", "/estadao-verifica/corpo/"),
+    ] })
+    const [recibo] = await coletar({
+      roster: [ciro], sleep: async () => {},
+      fetchText: async (url) => {
+        if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
+        if (url.startsWith("https://falkor-cda.")) return { status: 200, body: falkor }
+        if (url.startsWith("https://www.estadao.com.br/pf/api/")) return { status: 200, body: arc }
+        if (url.startsWith("https://g1.globo.com/")) return { status: 200, body: '<article itemprop="articleBody"><p>Vídeo mostra Ciro</p><p>Gomes de Sá em outro ato.</p></article>' }
+        return rotaDireta(url) ?? { status: 200, body: rss([]) }
+      },
+    })
+    assert.deepEqual(recibo.leads.map((lead) => lead.link), ["https://www.estadao.com.br/estadao-verifica/corpo/"], "só a história com o nome inteiro dentro de um parágrafo")
+    assert.equal(nomeColadoEmOutraPessoa("Governador Caiado erra sobre segurança", caiado), false, "cargo antes do nome não é outra pessoa")
+    assert.equal(nomeColadoEmOutraPessoa("É #FAKE que Felipe Neto foi preso", { ...caiado, nome_urna: "ACM Neto", nome_completo: "Antônio Carlos Peixoto de Magalhães Neto" }), true)
+    assert.equal(nomeColadoEmOutraPessoa("Fala de Ciro Gomes na TV", { ...ciro, nome_urna: "Ciro Nogueira", nome_completo: "Ciro Nogueira Lima Filho" }), true)
+  })
+
   it("texto da matéria do g1 (HTML real) fica restrito ao <article> e o Arc traz os parágrafos", () => {
-    const texto = textoDaPagina(fixture("g1-materia.html"))!
-    assert.match(texto, /e fake que codigo fonte de urnas eletronicas/)
-    assert.equal(textoCitaNomeInteiro(texto, caiado), false, "menu e 'mais lidas' fora do <article> não confirmam menção")
+    const trechos = textoDaPagina(fixture("g1-materia.html"))!
+    assert.ok(trechos.some((trecho) => /e fake que codigo fonte de urnas eletronicas/.test(trecho)))
+    assert.equal(trechos.some((trecho) => textoCitaNomeInteiro(trecho, caiado)), false, "menu e 'mais lidas' fora do <article> não confirmam menção")
     assert.equal(textoCitaNomeInteiro("governador ronaldo caiado disse", caiado), true)
     assert.equal(textoCitaNomeInteiro("caiado disse", caiado), false)
     const arc = parseArquivoArc(fixture("estadao-arc-pagina.json"), "https://www.estadao.com.br")
-    assert.ok((arc.itens[0].texto ?? "").length > arc.itens[0].titulo.length * 3, "corpo do Arc entra no texto de confirmação")
+    assert.ok((arc.itens[0].trechos ?? []).length > 3, "parágrafos do Arc entram como trechos de confirmação")
     assert.equal(textoDaPagina("<html><body><main>Ronaldo Caiado</main></body></html>"), null, "sem article principal não confirma")
     const aninhado = textoDaPagina('<article class="relacionada">Ronaldo Caiado</article><article itemprop="articleBody">Início <article>vídeo</article> fim</article><article>Ronaldo Caiado</article>')
-    assert.equal(aninhado, "inicio video fim", "só o article principal, com os aninhados")
+    assert.deepEqual(aninhado, ["inicio", "video", "fim"], "só o article principal, com os aninhados, um trecho por bloco")
   })
 
   it("feed do g1: fim real é página curta sem nextPage; paginação estranha lança", () => {
@@ -533,7 +572,7 @@ describe("coleta nominal de checagens", () => {
   })
 
   it("arquivo lido pela metade nunca vira vazio_confirmado: piso de produção, data antiga e itens descartados", async () => {
-    const semGoogle = async (pisos?: Record<string, { itens: number; maisAntigoAte: string }>, falkor: (url: string) => string = (url) => url.endsWith("/page/1") ? FALKOR_PAGINA : FALKOR_FIM) => {
+    const semGoogle = async (pisos?: Record<string, { itens: number; maisAntigoAte: string }>, falkor: (url: string) => string = (url) => url.endsWith("/page/1") ? FALKOR_P1 : FALKOR_FIM) => {
       const [recibo] = await coletarChecagens({
         roster: [caiado], semGoogle: true, sleep: async () => {}, ...(pisos ? { pisos } : {}),
         fetchText: async (url) => {
@@ -546,13 +585,17 @@ describe("coleta nominal de checagens", () => {
     }
     const producao = await semGoogle()
     assert.equal(producao.result, "erro")
-    assert.match(producao.agencias["fato-ou-fake"].erro ?? "", /3 itens, abaixo do piso de 4000: leitura parcial/)
+    assert.match(producao.agencias["fato-ou-fake"].erro ?? "", /10 itens, abaixo do piso de 4000: leitura parcial/)
     assert.match(producao.agencias["estadao-verifica"].erro ?? "", /abaixo do piso de 6000/)
     const recente = await semGoogle({ ...PISOS_TESTE, "fato-ou-fake": { itens: 1, maisAntigoAte: "2018-12-31" } })
     assert.match(recente.agencias["fato-ou-fake"].erro ?? "", /item mais antigo 2026-09-\d\d, depois de 2018-12-31/)
     // Página do meio sem itens e sem nextPage: o fim chega cedo e o piso pega.
-    const truncado = await semGoogle({ ...PISOS_TESTE, "fato-ou-fake": { itens: 4, maisAntigoAte: "2030-12-31" } })
-    assert.match(truncado.agencias["fato-ou-fake"].erro ?? "", /abaixo do piso de 4/)
+    const truncado = await semGoogle({ ...PISOS_TESTE, "fato-ou-fake": { itens: 11, maisAntigoAte: "2030-12-31" } })
+    assert.match(truncado.agencias["fato-ou-fake"].erro ?? "", /abaixo do piso de 11/)
+    const salto = await semGoogle(PISOS_TESTE, (url) => url.endsWith("/page/1") ? paginaFalkor(10, 3) : FALKOR_FIM)
+    assert.match(salto.agencias["fato-ou-fake"].erro ?? "", /página 1: nextPage 3 não é a seguinte/)
+    const curtaNoMeio = await semGoogle(PISOS_TESTE, (url) => url.endsWith("/page/1") ? paginaFalkor(9, 2) : FALKOR_FIM)
+    assert.match(curtaNoMeio.agencias["fato-ou-fake"].erro ?? "", /página 1: 9 itens antes do fim/)
     const cheiaSemProxima = await semGoogle(PISOS_TESTE, () => {
       const base = JSON.parse(FALKOR_PAGINA) as { items: unknown[] }
       return JSON.stringify({ items: Array.from({ length: 10 }, (_, indice) => base.items[indice % 3]) })
@@ -599,6 +642,24 @@ describe("coleta nominal de checagens", () => {
     assert.equal(sondas.length, 2, "sonda inicial em cache + nova sonda antes de aceitar o vazio")
   })
 
+  it("Aos Fatos cortado no meio não vira ausência; página curta com link para a seguinte continua", async () => {
+    const zema: CandidatoChecagem = { id: "cand-zema", slug: "romeu-zema", nome_urna: "Romeu Zema", nome_completo: "Romeu Zema Neto", cargo_disputado: "Presidente", estado: null }
+    const rodar = (pagina: (numero: number) => string) => coletar({
+      roster: [zema], semGoogle: true, sleep: async () => {},
+      fetchText: async (url) => {
+        if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
+        if (url.startsWith("https://www.aosfatos.org/") && url.includes("q=Romeu%20Zema")) return { status: 200, body: pagina(Number(new URL(url).searchParams.get("page"))) }
+        return rotaDireta(url) ?? { status: 200, body: rss([]) }
+      },
+    })
+    const [cortado] = await rodar((numero) => numero <= 2 ? AOS_P1 : AOS_VAZIA)
+    assert.equal(cortado.result, "erro")
+    assert.match(cortado.agencias["aos-fatos"].erro ?? "", /página 3 sem cartões \(fim real responde 404\)/)
+    const comLink = AOS_P2.replace(/href="\/noticias\/\?q=Zema&amp;page=2"/, 'href="/noticias/?q=Zema&amp;page=2"><a href="/noticias/?q=Zema&amp;page=3"')
+    const [continua] = await rodar((numero) => numero === 1 ? AOS_P1 : numero === 2 ? comLink : AOS_P2)
+    assert.equal(continua.agencias["aos-fatos"].itens, 16, "página 2 curta com link para a 3 não encerra")
+  })
+
   it("disjuntor por agência: via direta bloqueada para de cair no Google depois de 3 falhas seguidas", async () => {
     const googleAos: string[] = []
     const roster = ["a", "b", "c", "d"].map((slug) => ({ ...caiado, id: `cand-${slug}`, slug }))
@@ -621,7 +682,7 @@ describe("coleta nominal de checagens", () => {
     const [recibo] = await coletar({ roster: [caiado], sleep: async () => {}, fetchText: async (url) => url.includes("/wp-json/") ? { status: 200, body: "[]" } : rotaDireta(url) ?? { status: 200, body: rss([]) } })
     assert.equal(recibo.agencias["fato-ou-fake"].desde, "2026-09-02")
     assert.equal(recibo.agencias["estadao-verifica"].desde, "2019-08-06")
-    assert.match(entradaColetaDoRecibo(recibo).detalhe ?? "", /fato-ou-fake=0\/3\(arquivo-secao desde 2026-09-02\)/)
+    assert.match(entradaColetaDoRecibo(recibo).detalhe ?? "", /fato-ou-fake=0\/10\(arquivo-secao desde 2026-09-02\)/)
     const publico = consolidarCatalogoRecibos(null, [recibo], now).receipts[0]
     assert.deepEqual(publico.janelas, { "Fato ou Fake": "2026-09-02", "Estadão Verifica": "2019-08-06" })
     assert.match(descricaoEscopo(), /arquivos de seção só a partir do item mais antigo lido/)
