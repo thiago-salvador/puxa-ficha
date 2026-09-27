@@ -285,6 +285,46 @@ export function mandatoCamaraVigente(
   return emExercicio && Number.isInteger(legislatura) && legislatura === legislaturaCamaraVigente(agora)
 }
 
+/**
+ * Colunas de `candidatos` que o perfil da Câmara atualiza, sem rede nem banco.
+ * Partido e cargo_atual só entram quando `ultimoStatus` é um mandato em
+ * exercício na legislatura vigente (mandatoCamaraVigente): um ex-deputado
+ * volta da API com o status do último mandato na Casa, e esse status não pode
+ * sobrescrever o partido de hoje.
+ */
+export function atualizacoesPerfilCamara(
+  dep: Record<string, unknown>,
+  opcoes: { agora?: Date; fotoAtual?: string | null } = {},
+): Record<string, unknown> {
+  const agora = opcoes.agora ?? new Date()
+  const status = dep.ultimoStatus as Record<string, unknown> | undefined
+  const updates: Record<string, unknown> = {
+    ultima_atualizacao: agora.toISOString(),
+  }
+
+  if (status) {
+    const isDeputyInExercise = mandatoCamaraVigente(status, agora)
+
+    if (status.urlFoto && !opcoes.fotoAtual) updates.foto_url = status.urlFoto
+    // The Camara profile reflects the deputy's last mandate there. For ex-deputies it is
+    // frequently stale and must not override current-party curation.
+    if (isDeputyInExercise && status.siglaPartido) {
+      updates.partido_sigla = status.siglaPartido
+      updates.partido_atual = status.siglaPartido
+    }
+
+    if (isDeputyInExercise) {
+      updates.cargo_atual = "Deputado(a) Federal"
+    }
+  }
+  if (dep.escolaridade) updates.formacao = dep.escolaridade
+  if (dep.municipioNascimento && dep.ufNascimento) {
+    updates.naturalidade = `${dep.municipioNascimento}/${dep.ufNascimento}`
+  }
+  if (dep.dataNascimento) updates.data_nascimento = dep.dataNascimento
+  return updates
+}
+
 async function ingestPerfil(
   idCamara: number,
   candidatoId: string,
@@ -318,34 +358,13 @@ async function ingestPerfil(
     )
   }
 
-  const updates: Record<string, unknown> = {
-    ultima_atualizacao: new Date().toISOString(),
+  // Only set photo if candidate doesn't already have one (Wikipedia photos preferred)
+  let fotoAtual: string | null = null
+  if (status?.urlFoto) {
+    const { data: current } = await supabase.from("candidatos").select("foto_url").eq("id", candidatoId).single()
+    fotoAtual = current?.foto_url ?? null
   }
-
-  if (status) {
-    const isDeputyInExercise = mandatoCamaraVigente(status)
-
-    // Only set photo if candidate doesn't already have one (Wikipedia photos preferred)
-    if (status.urlFoto) {
-      const { data: current } = await supabase.from("candidatos").select("foto_url").eq("id", candidatoId).single()
-      if (!current?.foto_url) updates.foto_url = status.urlFoto
-    }
-    // The Camara profile reflects the deputy's last mandate there. For ex-deputies it is
-    // frequently stale and must not override current-party curation.
-    if (isDeputyInExercise && status.siglaPartido) {
-      updates.partido_sigla = status.siglaPartido
-      updates.partido_atual = status.siglaPartido
-    }
-
-    if (isDeputyInExercise) {
-      updates.cargo_atual = "Deputado(a) Federal"
-    }
-  }
-  if (dep.escolaridade) updates.formacao = dep.escolaridade
-  if (dep.municipioNascimento && dep.ufNascimento) {
-    updates.naturalidade = `${dep.municipioNascimento}/${dep.ufNascimento}`
-  }
-  if (dep.dataNascimento) updates.data_nascimento = dep.dataNascimento
+  const updates = atualizacoesPerfilCamara(dep, { fotoAtual })
 
   await supabase.from("candidatos").update(updates).eq("id", candidatoId)
   log("camara", `  ${slug}: perfil atualizado`)
