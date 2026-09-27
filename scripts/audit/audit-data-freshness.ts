@@ -60,6 +60,11 @@ import {
   type PublishedFicha,
 } from "../lib/data-freshness/ficha-tse";
 import type { CandidacyRecord } from "../lib/data-freshness/types";
+import {
+  lerCandidaturasEncerradas,
+  semEncerradasPorSlug,
+  semEncerradasPorSq,
+} from "../lib/data-freshness/coorte-atualizacao";
 import type { LinhaSiteCandidatoTse } from "../lib/candidate-sites-tse";
 import type { JulgamentoTse } from "../lib/tse-situacao-julgamento";
 import type { CandidateSitesTseDataset } from "../../src/lib/types";
@@ -73,6 +78,8 @@ interface PublishedSnapshot {
   collection_evidence?: SourceEvidence[];
   /** Fichas públicas de Presidente, Governador e Senador com identidade TSE. */
   public_candidacies?: PublishedFicha[];
+  /** Coorte de atualização: fichas congeladas depois do turno (fora da comparação). */
+  atualizacao_encerrada?: unknown;
 }
 
 interface ActiveProfileCrosswalkSnapshot {
@@ -491,6 +498,16 @@ async function main(): Promise<void> {
   mkdirSync(options.out, { recursive: true });
   const generatedAt = options.now.toISOString();
   const published = readPublished(options.published);
+  // Coorte de atualização: candidatura com atualização encerrada depois do
+  // turno sai da comparação nos dois lados (publicado aqui, oficial antes de
+  // compareCandidacies). A ficha continua no ar, congelada.
+  const recorteCoorte = lerCandidaturasEncerradas(published.atualizacao_encerrada);
+  published.records = semEncerradasPorSq(published.records, recorteCoorte);
+  if (published.public_profiles) published.public_profiles = semEncerradasPorSlug(published.public_profiles, recorteCoorte);
+  if (published.public_candidacies) published.public_candidacies = semEncerradasPorSlug(published.public_candidacies, recorteCoorte);
+  if (recorteCoorte.itens.length > 0) {
+    console.log(`[coorte-atualizacao] data-freshness: ${recorteCoorte.itens.length} ficha(s) com atualização encerrada fora da comparação`);
+  }
   const registry = loadFreshnessRegistry();
   const monitoredRegistry = registry.filter(
     (entry) => entry.refresh_mode !== "disabled",
@@ -741,6 +758,8 @@ async function main(): Promise<void> {
     return;
   }
 
+  official = semEncerradasPorSq(official, recorteCoorte);
+  currentOfficial = semEncerradasPorSq(currentOfficial, recorteCoorte);
   const comparison = compareCandidacies(
     official,
     published.records,
@@ -774,6 +793,7 @@ async function main(): Promise<void> {
     (profile) => !profile.ready,
   );
   const publicSlugs = new Set(publicProfiles.map((profile) => profile.slug));
+  // coorte-atualizacao: isento (nomes do seed para conferir identidade das fichas já recortadas)
   const seedNames = readSeedNames(resolve("data/candidatos.json"));
   const publishedSites = readPublishedSites(options.publishedSites);
   if (fichaSources) source = { ...source, published_sites: publishedSites.status };

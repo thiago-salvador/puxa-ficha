@@ -5,6 +5,7 @@ import { join } from "node:path"
 import test from "node:test"
 
 import { loadCandidatosPublicos } from "../scripts/lib/helpers-db"
+import { COORTE_ATUALIZACAO_COMPLETA, coorteAtualizacaoDe } from "../scripts/lib/coorte-atualizacao"
 import { loadCandidatos } from "../scripts/lib/helpers"
 import {
   bootstrapCohort,
@@ -391,8 +392,21 @@ test("loader público usa coorte somente dentro do contexto e isola execuções"
     observed.push((await loadCandidatosPublicos()).map((candidate) => candidate.slug))
     await withExplicitCohort(inner, async () => observed.push((await loadCandidatosPublicos()).map((candidate) => candidate.slug)))
     observed.push((await loadCandidatosPublicos()).map((candidate) => candidate.slug))
-  })
+  }, COORTE_ATUALIZACAO_COMPLETA)
   assert.deepEqual(observed, [[outer[0].slug], [inner[0].slug], [outer[0].slug]])
+})
+
+test("loader público aplica coorte de atualização injetada", async () => {
+  const selected = candidatoConfigsFromSelection(selectionFor())
+  const encerrada = coorteAtualizacaoDe([{
+    candidato_id: "id-encerrado",
+    slug: selected[0].slug,
+    fase_eleitoral: "eleito",
+    fase_turno: 1,
+    atualizacao_encerrada_em: "2026-10-05",
+  }])
+  const observed = await withExplicitCohort(selected, loadCandidatosPublicos, encerrada)
+  assert.deepEqual(observed, [])
 })
 
 test("config pública coincide com a contagem declarada, contém cada SQ uma vez e permite seleção nominal", () => {
@@ -443,7 +457,7 @@ test("validador da config pública recusa diferença de identidade e aceita inte
 
 test("runner do coletor TSE recebe a coorte explícita pelo contexto", async () => {
   const selected = selectionFor()
-  const seen = await runCohortWithContext(selected, async () => (await loadCandidatosPublicos()).map((candidate) => candidate.ids.tse_sq_candidato["2026"]))
+  const seen = await runCohortWithContext(selected, async () => (await loadCandidatosPublicos()).map((candidate) => candidate.ids.tse_sq_candidato["2026"]), [], COORTE_ATUALIZACAO_COMPLETA)
   assert.deepEqual(seen, [titular.sq_candidato])
 })
 
@@ -475,6 +489,7 @@ test("runner de fontes usa o registry uma vez por fonte dentro de uma coorte de 
     },
   })
   const result = await runCohortSources(selected, ["tse-situacao", "senado"], {
+    coorteAtualizacao: COORTE_ATUALIZACAO_COMPLETA,
     taskRegistry: [task("tse-situacao"), task("senado")],
     registerResults: async (items) => { registered.push(...items) },
   })

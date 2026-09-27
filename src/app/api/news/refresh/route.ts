@@ -4,6 +4,7 @@ import { after, NextResponse } from "next/server"
 import { revalidateTag } from "next/cache"
 import { createServiceRoleSupabaseClient } from "@/lib/supabase"
 import { secretsMatch } from "@/lib/crypto-utils"
+import { carregarCoorteAtualizacao, filtrarCoorteAtualizacao, type CoorteAtualizacao } from "@/lib/coorte-atualizacao-loader"
 import { resolveChainOrigin, validarOrigemEncadeamento } from "@/lib/cron-chain-origin"
 import {
   defaultNewsRefreshDeps,
@@ -80,6 +81,7 @@ interface NewsRefreshHandlerDeps {
   fetchCandidatoPage: (args: { cursor: number; limit: number }) => Promise<{
     candidatos: NewsCandidato[]
     total: number
+    consumidos?: number
   }>
   refreshNews: (candidatos: NewsCandidato[]) => Promise<NewsRefreshSummary>
   /**
@@ -144,8 +146,12 @@ async function defaultFetchCandidatoPage(args: { cursor: number; limit: number }
   }
 
   return {
-    candidatos: (data ?? []) as NewsCandidato[],
+    candidatos: filtrarPaginaNews(
+      (data ?? []) as NewsCandidato[],
+      await carregarCoorteAtualizacao(supabase),
+    ),
     total: count ?? 0,
+    consumidos: data?.length ?? 0,
   }
 }
 
@@ -159,6 +165,10 @@ function defaultRefreshNews(candidatos: NewsCandidato[]): Promise<NewsRefreshSum
     return { error: error?.message ?? null }
   }
   return refreshCandidatosNews(candidatos, defaultNewsRefreshDeps(upsertNoticias))
+}
+
+function filtrarPaginaNews(candidatos: NewsCandidato[], coorte: CoorteAtualizacao): NewsCandidato[] {
+  return filtrarCoorteAtualizacao(candidatos, coorte, "news/refresh")
 }
 
 /**
@@ -430,7 +440,7 @@ export function createNewsRefreshHandler(deps: NewsRefreshHandlerDeps = defaultD
       })
       if (!leaseRenewed) throw new Error("batch_lease_lost")
 
-      let page: { candidatos: NewsCandidato[]; total: number }
+      let page: { candidatos: NewsCandidato[]; total: number; consumidos?: number }
       try {
         page = await deps.fetchCandidatoPage({ cursor: cursorAtual, limit })
       } catch (error) {
@@ -445,7 +455,15 @@ export function createNewsRefreshHandler(deps: NewsRefreshHandlerDeps = defaultD
       }
 
       total = page.total
-      if (page.candidatos.length === 0) break
+      const consumidos = page.consumidos ?? page.candidatos.length
+      if (page.candidatos.length === 0) {
+        if (consumidos <= 0) break
+        cursorAtual += consumidos
+        if (cursorAtual >= total) break
+        if (deps.now() - inicio >= deps.invocationBudgetMs) break
+        await deps.sleep(PAGE_PAUSE_MS)
+        continue
+      }
 
       const pagina = await deps.refreshNews(page.candidatos)
       summary.processed += pagina.processed
@@ -485,7 +503,7 @@ export function createNewsRefreshHandler(deps: NewsRefreshHandlerDeps = defaultD
       }
 
       paginas += 1
-      cursorAtual += page.candidatos.length
+      cursorAtual += consumidos
       if (cursorAtual >= total) break
       if (deps.now() - inicio >= deps.invocationBudgetMs) break
       await deps.sleep(PAGE_PAUSE_MS)

@@ -276,6 +276,7 @@ async function main(): Promise<void> {
     ),
   ])
 
+  // coorte-atualizacao: isento (reverifica votos históricos de 35 slugs curados com cardinalidade fixa; não coleta dado de campanha)
   const candidateRows = JSON.parse(readFileSync(join(RAIZ, "data", "candidatos.json"), "utf8")) as CandidateFileRow[]
   const candidateBySlug = new Map(candidateRows.map((candidate) => [candidate.slug, candidate]))
 

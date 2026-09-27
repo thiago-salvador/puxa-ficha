@@ -229,6 +229,7 @@ export async function createTSEResolver(
     sqToCandidato.set(sq, candidato)
   }
 
+  // coorte-atualizacao: isento (lookup de CPF limitado aos slugs explícitos do seed em resolução)
   const { data, error } = await supabase
     .from("candidatos")
     .select("slug, cpf")

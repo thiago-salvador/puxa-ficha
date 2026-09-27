@@ -13,6 +13,7 @@ import {
 import { contarPorNatureza } from "@/lib/proposicao-natureza"
 import { FONTE_CAMARA_PROPOSICOES, registrarColeta, type EntradaColeta } from "./coleta-log"
 import { loadCandidatosPublicos, loadVerificacaoCampos, resolveCandidatoId } from "./helpers-db"
+import { aplicarCoorteAtualizacao } from "./coorte-atualizacao"
 import { deveProcessarAcervoLegislativo, reciboAcervoCongelado } from "./acervo-legislativo-congelado"
 import { fetchJSON, sleep } from "./helpers"
 import { CAMARA_API, resultadoSemAlcance, sondarAlcanceCamara, type AlcanceCamara } from "./camara-alcance"
@@ -1228,7 +1229,10 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
     )
   }
 
-  const candidatos = (opts.candidateRows ? [...opts.candidateRows] : await loadCandidatosPublicos()).filter((cand) =>
+  const roster = opts.candidateRows
+    ? await aplicarCoorteAtualizacao([...opts.candidateRows], "camara-injetados")
+    : await loadCandidatosPublicos()
+  const candidatos = roster.filter((cand) =>
     selectedSlugs ? selectedSlugs.has(cand.slug) : true
   )
   const verificacaoPorSlug = await loadVerificacaoCampos(candidatos.map((cand) => cand.slug))
