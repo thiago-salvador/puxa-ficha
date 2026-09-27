@@ -1,0 +1,55 @@
+{
+  "versao": "2026-09-27",
+  "_comentario": "Allowlist fechada da migration 20260927020000, que refaz a correcao da 20260926224500 em tse-2026-270002544629 (partido e cargo_atual). Aceita somente a preimagem medida em 2026-09-27, com o ultima_atualizacao exato da regravacao, e grava snapshot de preimagem e recibo em coleta_log.",
+  "fonte": "Pacote consulta_cand do TSE (consulta_cand_2026_TO.csv), revisoes de 24/09/2026 e 25/09/2026: SQ 270002544629, SG_PARTIDO PT, NR_CANDIDATO 133. API de dados abertos da Camara, deputado 74192: ultimoStatus da legislatura 51 (1999-2003).",
+  "motivo": "Uma coleta local da Camara iniciada antes da trava de legislatura regravou PSDB e cargo_atual Deputado(a) Federal em 2026-09-27T01:53:46Z, 18 s depois do apply da 20260926224500, a partir do ultimoStatus da legislatura 51 (situacao Exercicio).",
+  "coorte": [
+    "tse-2026-270002544629"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "tse-2026-270002544629",
+      "campos": [
+        "partido_sigla",
+        "partido_atual",
+        "cargo_atual",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "partido-mourao-20260927",
+      "campos": [
+        "migration_version",
+        "tabela",
+        "row_id",
+        "candidato_id",
+        "preimage",
+        "postimage",
+        "registrado_em"
+      ]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260927020000",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
+    }
+  ]
+}
