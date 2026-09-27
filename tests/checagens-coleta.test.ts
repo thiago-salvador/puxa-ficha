@@ -25,6 +25,8 @@ import {
   parseBuscaNativa,
   parseBuscaSite,
   parseItensBusca,
+  trechosAosFatos,
+  trechosWpJson,
   textoCitaNomeInteiro,
   textoDaPagina,
   reciboIncompleto,
@@ -53,6 +55,7 @@ const fixture = (nome: string) => readFileSync(new URL(`./fixtures/checagens-col
 const AOS_P1 = fixture("aos-fatos-busca-zema-p1.html")
 const AOS_P2 = fixture("aos-fatos-busca-zema-p2.html")
 const AOS_VAZIA = fixture("aos-fatos-busca-vazia.html")
+const AOS_MATERIA = fixture("aos-fatos-materia.html")
 const FALKOR_PAGINA = fixture("g1-falkor-pagina.json")
 const FALKOR_FIM = fixture("g1-falkor-fim.json")
 /** Página 1 como o feed entrega: 10 itens e nextPage 2. Os itens reais da fixture, com URL única por posição. */
@@ -76,6 +79,7 @@ const coletar = (opcoes: Parameters<typeof coletarChecagens>[0]) => coletarCheca
 
 /** Vias diretas vazias mas válidas: sonda do Aos Fatos acha resultado, arquivos têm itens. */
 function rotaDireta(url: string): { status: number; body: string } | null {
+  if (url.startsWith("https://www.aosfatos.org/noticias/") && !url.includes("?q=")) return { status: 200, body: AOS_MATERIA }
   if (url.startsWith("https://www.aosfatos.org/noticias/")) return { status: 200, body: url.includes("q=Lula") ? AOS_P1 : AOS_VAZIA }
   if (url.startsWith("https://falkor-cda.bastian.globo.com/")) return { status: 200, body: url.endsWith("/page/1") ? FALKOR_P1 : FALKOR_FIM }
   if (url.startsWith("https://www.estadao.com.br/pf/api/")) return { status: 200, body: ARC_PAGINA }
@@ -161,7 +165,8 @@ describe("coleta nominal de checagens", () => {
       sleep: async () => {},
       fetchText: async (url) => {
         pedidos.push(url)
-        if (url.includes("agencialupa.org/wp-json")) return { status: 200, body: JSON.stringify([{ title: "Caiado erra sobre fome e Ideb", url: "https://www.agencialupa.org/checagem/2026/04/07/caiado" }]) }
+        if (url.includes("agencialupa.org/wp-json/wp/v2/posts/7")) return { status: 200, body: JSON.stringify({ content: { rendered: "<p>O governador Ronaldo Caiado disse que a fome caiu.</p>" } }) }
+        if (url.includes("agencialupa.org/wp-json")) return { status: 200, body: JSON.stringify([{ title: "Caiado erra sobre fome e Ideb", url: "https://www.agencialupa.org/checagem/2026/04/07/caiado", _links: { self: [{ href: "https://www.agencialupa.org/wp-json/wp/v2/posts/7" }] } }]) }
         if (url.includes("projetocomprova.com.br/wp-json")) return { status: 403, body: "Access Denied" }
         if (primeiroGoogle) { primeiroGoogle = false; return { status: 503, body: "" } }
         return { status: 200, body: rss([]) }
@@ -399,7 +404,8 @@ describe("coleta nominal de checagens", () => {
     const p1 = parseBuscaSite(AOS_P1, "https://www.aosfatos.org/noticias/")
     assert.equal(p1.itens.length, 12)
     assert.equal(p1.ultimaPagina, 2)
-    assert.deepEqual(p1.itens[0], { titulo: "Checamos em tempo real o debate presidencial da Band", link: "https://www.aosfatos.org/noticias/checamos-debate-presidencial-band/", fonte: "", fonte_url: "https://www.aosfatos.org/noticias/checamos-debate-presidencial-band/", data_publicacao: null })
+    const link = "https://www.aosfatos.org/noticias/checamos-debate-presidencial-band/"
+    assert.deepEqual(p1.itens[0], { titulo: "Checamos em tempo real o debate presidencial da Band", link, fonte: "", fonte_url: link, data_publicacao: null, corpo: { url: link, formato: "html-prose" } })
     assert.ok(p1.itens.some((item) => item.titulo.startsWith("No Roda Viva, Zema usa desinformação")))
     assert.equal(parseBuscaSite(AOS_P2, "https://www.aosfatos.org/noticias/").itens.length, 2)
     assert.deepEqual(parseBuscaSite(AOS_VAZIA, "https://www.aosfatos.org/noticias/"), { itens: [], ultimaPagina: null })
@@ -542,6 +548,10 @@ describe("coleta nominal de checagens", () => {
     })
     assert.deepEqual(recibo.leads.map((lead) => lead.link), ["https://www.estadao.com.br/estadao-verifica/corpo/"], "só a história com o nome inteiro dentro de um parágrafo")
     assert.equal(nomeColadoEmOutraPessoa("Governador Caiado erra sobre segurança", caiado), false, "cargo antes do nome não é outra pessoa")
+    const braide: CandidatoChecagem = { ...caiado, nome_urna: "Eduardo Braide", nome_completo: "Eduardo Salim Braide" }
+    assert.equal(nomeColadoEmOutraPessoa("São Luís: Braide erra ao falar sobre poluição em praias", braide), false, "pontuação separa: título real do dry-run de 26/09")
+    assert.equal(nomeColadoEmOutraPessoa("Erros e acertos de Doria, Leite e Virgílio", { ...caiado, nome_urna: "Gal Leite", nome_completo: "Gualdina Maria Menezes Leite" }), false)
+    assert.equal(nomeColadoEmOutraPessoa("Foto de Eduardo Leite em show", { ...caiado, nome_urna: "Gal Leite", nome_completo: "Gualdina Maria Menezes Leite" }), true)
     assert.equal(nomeColadoEmOutraPessoa("É #FAKE que Felipe Neto foi preso", { ...caiado, nome_urna: "ACM Neto", nome_completo: "Antônio Carlos Peixoto de Magalhães Neto" }), true)
     assert.equal(nomeColadoEmOutraPessoa("Fala de Ciro Gomes na TV", { ...ciro, nome_urna: "Ciro Nogueira", nome_completo: "Ciro Nogueira Lima Filho" }), true)
   })
@@ -627,6 +637,7 @@ describe("coleta nominal de checagens", () => {
     const fetchText = async (url: string) => {
       if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
       if (url.startsWith("https://www.aosfatos.org/")) {
+        if (!url.includes("?q=")) return { status: 200, body: AOS_MATERIA }
         if (url.includes("q=Lula")) { sondas.push(url); return { status: 200, body: sondaQuebrada ? AOS_VAZIA : AOS_P1 } }
         if (url.includes("q=Ronaldo%20Caiado")) { sondaQuebrada = true; return { status: 200, body: AOS_VAZIA } }
         // Página 1 cheia sem links de paginação: continua; página 2 curta encerra.
@@ -649,6 +660,7 @@ describe("coleta nominal de checagens", () => {
       fetchText: async (url) => {
         if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
         if (url.startsWith("https://www.aosfatos.org/") && url.includes("q=Romeu%20Zema")) return { status: 200, body: pagina(Number(new URL(url).searchParams.get("page"))) }
+        if (url.startsWith("https://www.aosfatos.org/noticias/") && !url.includes("?q=")) return { status: 200, body: AOS_MATERIA }
         return rotaDireta(url) ?? { status: 200, body: rss([]) }
       },
     })
@@ -658,6 +670,65 @@ describe("coleta nominal de checagens", () => {
     const comLink = AOS_P2.replace(/href="\/noticias\/\?q=Zema&amp;page=2"/, 'href="/noticias/?q=Zema&amp;page=2"><a href="/noticias/?q=Zema&amp;page=3"')
     const [continua] = await rodar((numero) => numero === 1 ? AOS_P1 : numero === 2 ? comLink : AOS_P2)
     assert.equal(continua.agencias["aos-fatos"].itens, 16, "página 2 curta com link para a 3 não encerra")
+  })
+
+  it("regra de nome completo vale em todas as rotas: corpo WordPress e Aos Fatos (reais), homônimo colado e Google pendente", async () => {
+    const lupaPost = fixture("lupa-post.json")
+    assert.ok(trechosWpJson(lupaPost)!.some((trecho) => textoCitaNomeInteiro(trecho, caiado)), "corpo real da Lupa cita Ronaldo Caiado")
+    assert.equal(trechosWpJson(JSON.stringify({ title: "sem content" })), null)
+    const zema: CandidatoChecagem = { id: "cand-zema", slug: "romeu-zema", nome_urna: "Romeu Zema", nome_completo: "Romeu Zema Neto", cargo_disputado: "Presidente", estado: null }
+    assert.ok(trechosAosFatos(AOS_MATERIA)!.some((trecho) => textoCitaNomeInteiro(trecho, zema)), "corpo real do Aos Fatos cita Romeu Zema")
+    assert.equal(trechosAosFatos(AOS_P1), null, "página de busca não tem corpo de matéria")
+
+    const ieri: CandidatoChecagem = { id: "cand-ieri", slug: "ieri-braga", nome_urna: "Ieri Braga", nome_completo: "Ieri Braga da Silva", cargo_disputado: "Governador", estado: "RR" }
+    const post = (id: number, title: string) => ({ title, url: `https://www.agencialupa.org/checagem/${id}`, _links: { self: [{ href: `https://www.agencialupa.org/wp-json/wp/v2/posts/${id}` }] } })
+    const corpos: Record<string, string> = {
+      "1": "<p>Ieri Braga disse em sabatina que a dívida caiu.</p>",
+      "3": "<p>O candidato Braga afirmou</p><p>Ieri em outro trecho.</p>",
+    }
+    const abertos: string[] = []
+    const googleTitulos: string[] = []
+    const [recibo] = await coletar({
+      roster: [ieri], sleep: async () => {},
+      fetchText: async (url) => {
+        const post_ = url.match(/agencialupa\.org\/wp-json\/wp\/v2\/posts\/(\d+)/)
+        if (post_) { abertos.push(post_[1]); return { status: 200, body: JSON.stringify({ content: { rendered: corpos[post_[1]] ?? "<p>Sem nome.</p>" } }) } }
+        if (url.includes("agencialupa.org/wp-json")) return { status: 200, body: JSON.stringify([
+          post(1, "Braga erra sobre dívida de Roraima"),
+          post(2, "É falso que Braga Netto gravou áudio"),
+          post(3, "Braga exagera dado de segurança"),
+          post(4, "Ieri Braga erra sobre saúde"),
+        ]) }
+        if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
+        if (url.startsWith("https://news.google.com/") && decodeURIComponent(url).includes("noticias.uol.com.br")) {
+          googleTitulos.push(url)
+          return { status: 200, body: rss([{ title: "Braga mente sobre obras", source: "UOL", sourceUrl: "https://noticias.uol.com.br" }]) }
+        }
+        return rotaDireta(url) ?? { status: 200, body: rss([]) }
+      },
+    })
+    assert.deepEqual(recibo.leads.filter((lead) => lead.agencia === "lupa").map((lead) => lead.link), ["https://www.agencialupa.org/checagem/1", "https://www.agencialupa.org/checagem/4"],
+      "título com o nome completo, ou parcial com o nome completo num parágrafo do corpo")
+    assert.deepEqual(abertos.sort(), ["1", "3"], "Braga Netto (colado a outro nome) não abre corpo; título completo também não")
+    assert.equal(recibo.agencias.lupa.descartados, 2, "Braga Netto e o corpo que só junta Braga + Ieri entre parágrafos")
+    assert.equal(recibo.agencias["uol-confere"].pendentes, 1, "Google sem corpo: título parcial fica pendente")
+    assert.equal(recibo.result, "encontrado")
+
+    const [soPendente] = await coletar({
+      roster: [ieri], sleep: async () => {},
+      fetchText: async (url) => {
+        if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
+        if (url.startsWith("https://news.google.com/") && decodeURIComponent(url).includes("checamos.afp.com")) return { status: 200, body: rss([{ title: "Braga mente sobre obras", source: "AFP", sourceUrl: "https://checamos.afp.com" }]) }
+        return rotaDireta(url) ?? { status: 200, body: rss([]) }
+      },
+    })
+    assert.equal(soPendente.result, "nao_confirmado", "sem lead confirmado e com título parcial pendente, não afirma ausência")
+    assert.equal(entradaColetaDoRecibo(soPendente).resultado, "indeterminado")
+    assert.match(entradaColetaDoRecibo(soPendente).detalhe ?? "", /afp-checamos=0\/1\(google-news pendentes 1\)/)
+    const anterior = consolidarCatalogoRecibos(null, [montarRecibo(ieri, okEmTodas({ lupa: 1 }), new Date("2026-09-20T00:00:00Z"))], now)
+    assert.equal(consolidarCatalogoRecibos(anterior, [soPendente], now).receipts.length, 0, "nao_confirmado tira o recibo do catálogo público")
+    assert.equal(resumirColeta([soPendente]).nao_confirmado, 1)
+    assert.equal(aplicarRegraHomonimo(soPendente, ieri, [ieri, { ...ieri, id: "outro", slug: "ieri-braga-2" }]).result, "nao_confirmado", "regra de homônimo preserva o pendente")
   })
 
   it("disjuntor por agência: via direta bloqueada para de cair no Google depois de 3 falhas seguidas", async () => {

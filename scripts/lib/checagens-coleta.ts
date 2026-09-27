@@ -60,7 +60,7 @@ export interface AgenciaChecagem {
  *   página, com o total em `count`).
  */
 export type ArquivoSecao =
-  | { tipo: "falkor"; url: string; piso: PisoArquivo; confirmarNaPagina?: boolean }
+  | { tipo: "falkor"; url: string; piso: PisoArquivo }
   | { tipo: "arc"; url: string; site: string; website: string; secaoRegex: string; piso: PisoArquivo }
 
 /**
@@ -106,7 +106,7 @@ export const AGENCIAS_CHECAGEM: readonly AgenciaChecagem[] = Object.freeze([
     // O feed só traz título e resumo: título com parte do nome abre a matéria para confirmar.
     arquivo: {
       tipo: "falkor", url: "https://falkor-cda.bastian.globo.com/tenants/g1/instances/9a0574d8-bc61-4d35-9488-7733f754f881/posts/page/",
-      piso: { itens: 4_000, maisAntigoAte: "2018-12-31" }, confirmarNaPagina: true,
+      piso: { itens: 4_000, maisAntigoAte: "2018-12-31" },
     },
   },
   {
@@ -158,6 +158,18 @@ export interface ItemBusca {
   /** Vídeo: a página não tem corpo de matéria; o único texto além do título é este resumo (caixa original). */
   semCorpo?: boolean
   resumo?: string
+  /** Onde ler o corpo para confirmar título com só parte do nome. Sem isto e sem trechos, o lead fica pendente. */
+  corpo?: CorpoItem
+}
+
+/**
+ * - `wp-json`: objeto REST do WordPress (`_links.self` da busca) com `content` e `excerpt`;
+ * - `html-prose`: página do Aos Fatos, corpo no `div.prose`;
+ * - `html-article`: página do g1, corpo no `<article itemprop="articleBody">`.
+ */
+export interface CorpoItem {
+  url: string
+  formato: "wp-json" | "html-prose" | "html-article"
 }
 
 export interface LeadChecagem {
@@ -168,7 +180,7 @@ export interface LeadChecagem {
 }
 
 export type EstadoAgencia =
-  | { status: "ok"; itens: number; leads: LeadChecagem[]; transporte?: TransporteBusca; falhas?: string[]; desde?: string }
+  | { status: "ok"; itens: number; leads: LeadChecagem[]; transporte?: TransporteBusca; falhas?: string[]; desde?: string; pendentes?: number; descartados?: number }
   | { status: "erro"; erro: string }
 
 /**
@@ -176,7 +188,12 @@ export type EstadoAgencia =
  * mas outra candidatura usa o mesmo nome e nenhum título trouxe marca que
  * separe as duas. Não é ausência nem achado; não entra no catálogo público.
  */
-export type ResultadoRecibo = "encontrado" | "vazio_confirmado" | "erro" | "homonimo"
+/**
+ * `nao_confirmado`: todas responderam, nenhum lead confirmado pelo nome
+ * completo, mas houve título com só parte do nome numa rota sem corpo para
+ * conferir (Google News). Não é ausência nem achado; fica fora do catálogo.
+ */
+export type ResultadoRecibo = "encontrado" | "vazio_confirmado" | "erro" | "homonimo" | "nao_confirmado"
 
 export interface ReciboChecagem {
   schema_version: typeof SCHEMA_RECIBOS_CHECAGENS
@@ -189,7 +206,8 @@ export interface ReciboChecagem {
   result: ResultadoRecibo
   leads: LeadChecagem[]
   /** `desde`: data (AAAA-MM-DD) do item mais antigo do arquivo de seção; antes dela a busca não cobre. */
-  agencias: Record<string, { status: "ok" | "erro"; itens?: number; leads?: number; erro?: string; transporte?: TransporteBusca; falhas?: string[]; desde?: string }>
+  /** `pendentes`: títulos com só parte do nome sem corpo para conferir; `descartados`: parte do nome que o corpo não confirmou ou colada a outra pessoa. */
+  agencias: Record<string, { status: "ok" | "erro"; itens?: number; leads?: number; erro?: string; transporte?: TransporteBusca; falhas?: string[]; desde?: string; pendentes?: number; descartados?: number }>
   escopo: string
   /** Presente quando o nome de urna é compartilhado com outra candidatura do cadastro. */
   homonimo?: {
@@ -276,7 +294,8 @@ export function aplicarRegraHomonimo(recibo: ReciboChecagem, candidato: Candidat
     agencias[id] = estado.status === "ok" ? { ...estado, leads: leads.filter((lead) => lead.agencia === id).length } : estado
   }
   const algumaFalhou = Object.values(agencias).some((estado) => estado.status === "erro")
-  const result: ResultadoRecibo = leads.length > 0 ? "encontrado" : algumaFalhou ? "erro" : descartados > 0 ? "homonimo" : "vazio_confirmado"
+  const pendentes = Object.values(agencias).some((estado) => estado.status === "ok" && (estado.pendentes ?? 0) > 0)
+  const result: ResultadoRecibo = leads.length > 0 ? "encontrado" : algumaFalhou ? "erro" : pendentes ? "nao_confirmado" : descartados > 0 ? "homonimo" : "vazio_confirmado"
   const { homonimo: _anterior, ...base } = recibo
   void _anterior
   if (semHomonimo) return { ...base, leads, agencias, result }
@@ -289,7 +308,7 @@ export function aplicarRegraHomonimo(recibo: ReciboChecagem, candidato: Candidat
 export function descricaoEscopo(): string {
   const nomes = (filtro: (agencia: AgenciaChecagem) => boolean) => AGENCIAS_CHECAGEM.filter(filtro).map((a) => a.nome).join(", ")
   const soGoogle = nomes((a) => !a.wpSearch && !a.buscaSite && !a.arquivo)
-  return `uma consulta por agência (${AGENCIAS_CHECAGEM.map((a) => a.nome).join(", ")}) com o nome de urna; busca nativa WordPress em ${nomes((a) => Boolean(a.wpSearch))} (até ${PAGINAS_WP * 100} resultados); busca do site em ${nomes((a) => Boolean(a.buscaSite))} (até ${PAGINAS_BUSCA_SITE * ITENS_POR_PAGINA_BUSCA_SITE} resultados); arquivo completo da seção em ${nomes((a) => Boolean(a.arquivo))}, lido uma vez por rodada (título com só parte do nome exige o nome inteiro no texto da matéria); Google News RSS em ${soGoogle} e como segunda via das demais (teto de ${TETO_ITENS_POR_CONSULTA} itens); buscas sem limite de data, arquivos de seção só a partir do item mais antigo lido (campo desde do recibo); lead exige o nome no título`
+  return `uma consulta por agência (${AGENCIAS_CHECAGEM.map((a) => a.nome).join(", ")}) com o nome de urna; busca nativa WordPress em ${nomes((a) => Boolean(a.wpSearch))} (até ${PAGINAS_WP * 100} resultados); busca do site em ${nomes((a) => Boolean(a.buscaSite))} (até ${PAGINAS_BUSCA_SITE * ITENS_POR_PAGINA_BUSCA_SITE} resultados); arquivo completo da seção em ${nomes((a) => Boolean(a.arquivo))}, lido uma vez por rodada; Google News RSS em ${soGoogle} e como segunda via das demais (teto de ${TETO_ITENS_POR_CONSULTA} itens); buscas sem limite de data, arquivos de seção só a partir do item mais antigo lido (campo desde do recibo); lead exige o nome completo no título, ou parte dele no título e o nome completo no corpo (no resumo, para vídeo), sem parte colada a outro nome próprio; na rota sem corpo (Google News) o título parcial fica pendente e o recibo sem lead confirmado não entra no catálogo público`
 }
 
 export function urlBuscaSite(nomeUrna: string, agencia: AgenciaChecagem, pagina: number): string | null {
@@ -320,7 +339,7 @@ export function parseBuscaSite(html: string, base: string): { itens: ItemBusca[]
     const link = new URL(href, base).toString()
     if (vistos.has(link)) continue
     vistos.add(link)
-    itens.push({ titulo: decodeEntities(titulo), link, fonte: "", fonte_url: link, data_publicacao: null })
+    itens.push({ titulo: decodeEntities(titulo), link, fonte: "", fonte_url: link, data_publicacao: null, corpo: { url: link, formato: "html-prose" } })
   }
   return { itens, ultimaPagina }
 }
@@ -356,7 +375,7 @@ export function parseArquivoFalkor(body: string): { itens: ItemBusca[]; brutos: 
     // Matéria confirma pelo corpo (página aberta); o resumo só vale para vídeo, que não tem corpo.
     itens.push({
       titulo, link: url, fonte: "", fonte_url: url, data_publicacao: dataIso((row as { publication?: unknown }).publication),
-      ...(video ? { semCorpo: true, resumo } : {}),
+      ...(video ? { semCorpo: true, resumo } : { corpo: { url, formato: "html-article" as const } }),
     })
   }
   return { itens, brutos, proxima }
@@ -424,7 +443,11 @@ export function parseBuscaNativa(body: string): ItemBusca[] {
     const titulo = typeof record.title === "string" ? decodeEntities(record.title) : null
     const url = typeof record.url === "string" ? record.url : null
     if (!titulo || !url || !url.startsWith("https://")) continue
-    itens.push({ titulo, link: url, fonte: "", fonte_url: url, data_publicacao: null })
+    const self = (record._links as { self?: Array<{ href?: unknown }> } | undefined)?.self?.[0]?.href
+    const corpo = typeof self === "string" && self.startsWith("https://") && hostDe(self) === hostDe(url)
+      ? { corpo: { url: `${self}${self.includes("?") ? "&" : "?"}_fields=content,excerpt`, formato: "wp-json" as const } }
+      : {}
+    itens.push({ titulo, link: url, fonte: "", fonte_url: url, data_publicacao: null, ...corpo })
   }
   return itens
 }
@@ -493,26 +516,45 @@ export function tituloSemVeiculo(titulo: string, fonte: string): string {
  * (`newsTitleMentionsCandidate`), frouxo na direção de manter o lead: a
  * revisão editorial é quem descarta.
  */
-export function leadsDaResposta(itens: readonly ItemBusca[], candidato: CandidatoChecagem, agencia: AgenciaChecagem): LeadChecagem[] {
+/**
+ * Candidatos a lead: item do domínio da agência cujo título cita o candidato
+ * pelo critério frouxo das notícias (`newsTitleMentionsCandidate`), sem
+ * duplicar, com o sufixo de veículo do Google tirado do título. Ainda não é
+ * lead: `confirmarCandidatos` exige o nome completo.
+ */
+export function candidatosDaResposta(itens: readonly ItemBusca[], candidato: CandidatoChecagem, agencia: AgenciaChecagem): ItemBusca[] {
   const vistos = new Set<string>()
-  const leads: LeadChecagem[] = []
+  const candidatos: ItemBusca[] = []
   for (const item of itens) {
     const host = hostDe(item.fonte_url)
     if (!host || !agencia.dominios.some((dominio) => host === dominio || host.endsWith(`.${dominio}`))) continue
     const titulo = tituloSemVeiculo(item.titulo, item.fonte)
     if (!newsTitleMentionsCandidate(titulo, { nome_urna: candidato.nome_urna, nome_completo: candidato.nome_completo })) continue
-    const chave = stripAccents(titulo).toLowerCase()
-    if (vistos.has(chave)) continue
-    vistos.add(chave)
-    leads.push({ agencia: agencia.id, titulo, link: item.link, data_publicacao: item.data_publicacao })
+    // Duplicata por link aqui; por título só entre os confirmados (títulos iguais podem ser matérias diferentes).
+    if (vistos.has(item.link)) continue
+    vistos.add(item.link)
+    candidatos.push({ ...item, titulo })
   }
-  return leads
+  return candidatos
+}
+
+function chaveTitulo(titulo: string): string {
+  return stripAccents(titulo).toLowerCase()
+}
+
+/** Leads pelo critério frouxo, antes da confirmação por nome completo, sem título repetido. */
+export function leadsDaResposta(itens: readonly ItemBusca[], candidato: CandidatoChecagem, agencia: AgenciaChecagem): LeadChecagem[] {
+  const vistos = new Set<string>()
+  return candidatosDaResposta(itens, candidato, agencia)
+    .filter((item) => !vistos.has(chaveTitulo(item.titulo)) && Boolean(vistos.add(chaveTitulo(item.titulo))))
+    .map((item) => ({ agencia: agencia.id, titulo: item.titulo, link: item.link, data_publicacao: item.data_publicacao }))
 }
 
 export function montarRecibo(candidato: CandidatoChecagem, estados: Record<string, EstadoAgencia>, searchedAt: Date): ReciboChecagem {
   const agencias: ReciboChecagem["agencias"] = {}
   const leads: LeadChecagem[] = []
   let erro = false
+  let pendentes = false
   for (const agencia of AGENCIAS_CHECAGEM) {
     const estado = estados[agencia.id]
     if (!estado) {
@@ -530,7 +572,10 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
       ...(estado.transporte ? { transporte: estado.transporte } : {}),
       ...(estado.falhas?.length ? { falhas: estado.falhas.map((falha) => falha.slice(0, 200)) } : {}),
       ...(estado.desde ? { desde: estado.desde } : {}),
+      ...(estado.pendentes ? { pendentes: estado.pendentes } : {}),
+      ...(estado.descartados ? { descartados: estado.descartados } : {}),
     }
+    if (estado.pendentes) pendentes = true
     leads.push(...estado.leads)
   }
   return {
@@ -542,7 +587,8 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
     uf: candidato.estado,
     searched_at: searchedAt.toISOString(),
     // Lead achado vale mesmo com outra agência em erro; ausência só com todas respondendo.
-    result: leads.length > 0 ? "encontrado" : erro ? "erro" : "vazio_confirmado",
+    // Título parcial sem corpo para conferir impede afirmar ausência.
+    result: leads.length > 0 ? "encontrado" : erro ? "erro" : pendentes ? "nao_confirmado" : "vazio_confirmado",
     leads,
     agencias,
     escopo: descricaoEscopo(),
@@ -553,7 +599,7 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
 export function entradaColetaDoRecibo(recibo: ReciboChecagem): EntradaColeta {
   const porAgencia = AGENCIAS_CHECAGEM.map((agencia) => {
     const estado = recibo.agencias[agencia.id]
-    return estado?.status === "ok" ? `${agencia.id}=${estado.leads ?? 0}/${estado.itens ?? 0}(${estado.transporte ?? "?"}${estado.desde ? ` desde ${estado.desde}` : ""})` : `${agencia.id}=erro(${estado?.erro ?? "não consultada"})`
+    return estado?.status === "ok" ? `${agencia.id}=${estado.leads ?? 0}/${estado.itens ?? 0}(${estado.transporte ?? "?"}${estado.desde ? ` desde ${estado.desde}` : ""}${estado.pendentes ? ` pendentes ${estado.pendentes}` : ""}${estado.descartados ? ` descartados ${estado.descartados}` : ""})` : `${agencia.id}=erro(${estado?.erro ?? "não consultada"})`
   }).join(" ")
   const homonimo = recibo.homonimo
     ? `; homônimo de ${recibo.homonimo.grupo.join(", ")}: ${recibo.homonimo.descartados} lead(s) sem marca distintiva no título`
@@ -562,8 +608,8 @@ export function entradaColetaDoRecibo(recibo: ReciboChecagem): EntradaColeta {
     fonte: FONTE_CHECAGENS_AGENCIAS,
     alvo: recibo.candidate_slug,
     escopo: "candidato",
-    // Homônimo não prova achado nem ausência: fica indeterminado no log.
-    resultado: recibo.result === "homonimo" ? "indeterminado" : recibo.result,
+    // Homônimo e título parcial sem confirmação não provam achado nem ausência: indeterminado no log.
+    resultado: recibo.result === "homonimo" || recibo.result === "nao_confirmado" ? "indeterminado" : recibo.result,
     volume: recibo.result === "encontrado" || recibo.result === "erro" ? recibo.leads.length : 0,
     detalhe: `${POLITICA_CHECAGENS}; leads/itens por agência: ${porAgencia}${homonimo}; ${recibo.escopo}`.slice(0, 1000),
   }
@@ -628,7 +674,7 @@ export function consolidarCatalogoRecibos(
     const atual = porChave.get(chave)
     if (atual && atual.searched_at > recibo.searched_at) continue
     // Homônimo mais recente derruba o recibo público anterior: a contagem não é atribuível.
-    if (recibo.result === "homonimo") {
+    if (recibo.result === "homonimo" || recibo.result === "nao_confirmado") {
       porChave.delete(chave)
       continue
     }
@@ -795,7 +841,7 @@ async function consultarBuscaSite(candidato: CandidatoChecagem, agencia: Agencia
     const agora = await sondarBuscaSite(agencia, opcoes)
     if (agora) return { status: "erro", erro: `busca do site: vazio não confirmado, ${agora}` }
   }
-  return { status: "ok", itens: itens.length, leads: leadsDaResposta(itens, candidato, agencia), transporte: "busca-site" }
+  return estadoConfirmado(itens, itens.length, candidato, agencia, opcoes, "busca-site", "busca do site")
 }
 
 async function lerArquivo(agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<ArquivoLido> {
@@ -882,12 +928,37 @@ export function textoDaPagina(html: string): string[] | null {
     if (profundidade === 0) { fim = marca.index; break }
   }
   if (fim < 0) return null
-  const corpo = html.slice(abertura.index + abertura[0].length, fim)
+  return trechosDeHtml(html.slice(abertura.index + abertura[0].length, fim))
+}
+
+/** Fragmento HTML em trechos normalizados, um por bloco: nome não casa atravessando parágrafos. */
+export function trechosDeHtml(fragmento: string): string[] {
+  const texto = fragmento
     .replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<style[\s\S]*?<\/style>/g, " ")
-    // Fronteira de bloco vira separador: nome não casa atravessando parágrafos.
     .replace(/<\/?(?:p|h[1-6]|li|ul|ol|div|br|figcaption|figure|blockquote|section|article|header|footer|table|tr|td|th)\b[^>]*>/gi, "\u0001")
     .replace(/<[^>]+>/g, " ")
-  return decodeEntities(corpo).split("\u0001").map((trecho) => normalizarNome(trecho)).filter(Boolean)
+  return decodeEntities(texto).split("\u0001").map((trecho) => normalizarNome(trecho)).filter(Boolean)
+}
+
+/** Corpo de matéria do Aos Fatos: o `div` de classe `prose` até o fechamento correspondente. Sem ele, null. */
+export function trechosAosFatos(html: string): string[] | null {
+  const abertura = /<div\b[^>]*\bclass="(?:[^"]*\s)?prose(?:\s[^"]*)?"[^>]*>/.exec(html)
+  if (!abertura) return null
+  const marcas = /<div\b[^>]*>|<\/div>/g
+  marcas.lastIndex = abertura.index + abertura[0].length
+  let profundidade = 1
+  for (let marca = marcas.exec(html); marca; marca = marcas.exec(html)) {
+    profundidade += marca[0].startsWith("</") ? -1 : 1
+    if (profundidade === 0) return trechosDeHtml(html.slice(abertura.index + abertura[0].length, marca.index))
+  }
+  return null
+}
+
+/** Objeto REST do WordPress com `content.rendered` (e `excerpt.rendered`). Sem conteúdo, null. */
+export function trechosWpJson(body: string): string[] | null {
+  const data = JSON.parse(body) as { content?: { rendered?: unknown }; excerpt?: { rendered?: unknown } }
+  if (typeof data?.content?.rendered !== "string") return null
+  return [...(typeof data.excerpt?.rendered === "string" ? trechosDeHtml(data.excerpt.rendered) : []), ...trechosDeHtml(data.content.rendered)]
 }
 
 /** Nome inteiro em algum trecho, casado trecho a trecho. */
@@ -907,68 +978,100 @@ const CARGOS_ANTES_DO_NOME = new Set(["governador", "governadora", "presidente",
  */
 export function nomeColadoEmOutraPessoa(texto: string, candidato: CandidatoChecagem): boolean {
   const doNome = new Set([candidato.nome_urna, candidato.nome_completo].flatMap((nome) => normalizarNome(nome).split(" ")).filter((token) => token && !CONECTIVOS_NOME.has(token)))
-  const palavras = [...texto.matchAll(/[\p{L}\p{N}]+/gu)].map((match) => match[0])
+  const palavras = [...texto.matchAll(/[\p{L}\p{N}]+/gu)].map((match) => ({ texto: match[0], inicio: match.index, fim: match.index + match[0].length }))
+  // Colado é só vizinho separado por espaço: "São Luís: Braide" tem pontuação no meio e não é outra pessoa.
+  const coladas = (a: { fim: number }, b: { inicio: number }) => /^\s+$/.test(texto.slice(a.fim, b.inicio))
   return palavras.some((palavra, indice) => {
-    if (!doNome.has(normalizarNome(palavra))) return false
-    return [palavras[indice - 1], palavras[indice + 1]].some((vizinho) => {
-      if (!vizinho || !/^\p{Lu}/u.test(vizinho)) return false
-      const normalizado = normalizarNome(vizinho)
+    if (!doNome.has(normalizarNome(palavra.texto))) return false
+    const anterior = palavras[indice - 1]
+    const seguinte = palavras[indice + 1]
+    const vizinhos = [anterior && coladas(anterior, palavra) ? anterior : null, seguinte && coladas(palavra, seguinte) ? seguinte : null]
+    return vizinhos.some((vizinho) => {
+      if (!vizinho || !/^\p{Lu}/u.test(vizinho.texto)) return false
+      const normalizado = normalizarNome(vizinho.texto)
       return !doNome.has(normalizado) && !CONECTIVOS_NOME.has(normalizado) && !CARGOS_ANTES_DO_NOME.has(normalizado)
     })
   })
 }
 
-async function textoConfirmado(link: string, opcoes: OpcoesConsulta): Promise<{ trechos: string[] } | { erro: string }> {
-  let pagina = opcoes.paginas.get(link)
-  if (!pagina) {
+async function lerCorpo(corpo: CorpoItem, opcoes: OpcoesConsulta): Promise<{ trechos: string[] } | { erro: string }> {
+  let lido = opcoes.paginas.get(corpo.url)
+  if (!lido) {
     if (opcoes.orcamentoPaginas.restantes <= 0) return { erro: `teto de ${opcoes.orcamentoPaginas.total} páginas de confirmação na rodada` }
     opcoes.orcamentoPaginas.restantes--
-    pagina = pedirComTentativas(link, opcoes).then((resposta) => {
+    lido = pedirComTentativas(corpo.url, opcoes).then((resposta) => {
       if ("erro" in resposta) return resposta
-      const trechos = textoDaPagina(resposta.body)
-      return trechos === null ? { erro: "matéria sem <article itemprop=\"articleBody\">" } : { trechos }
+      try {
+        const trechos = corpo.formato === "wp-json" ? trechosWpJson(resposta.body) : corpo.formato === "html-prose" ? trechosAosFatos(resposta.body) : textoDaPagina(resposta.body)
+        return trechos === null ? { erro: `corpo não encontrado (${corpo.formato})` } : { trechos }
+      } catch (error) {
+        return { erro: `corpo ilegível (${corpo.formato}): ${error instanceof Error ? error.message : String(error)}` }
+      }
     })
-    opcoes.paginas.set(link, pagina)
+    opcoes.paginas.set(corpo.url, lido)
   }
-  return pagina
+  return lido
 }
 
 /**
- * Leads de um arquivo de seção. O arquivo não passou por busca com o nome,
- * então o critério frouxo de título (`newsTitleMentionsCandidate`) sozinho
- * aceitaria "Felipe Neto" para "ACM Neto". Título com o nome inteiro vale;
- * título só com parte do nome exige o nome inteiro no texto da matéria, que
- * é o que a frase entre aspas garantia na busca do Google.
+ * Confirmação por nome completo, igual em todas as rotas. Título com o nome
+ * de urna ou o nome completo inteiro vale. Título com só parte do nome:
+ * colada a outro nome próprio ("Felipe Neto" para ACM Neto) é descartado;
+ * senão exige o nome inteiro no corpo, trecho a trecho (no resumo, para
+ * vídeo, também sem parte colada a outra pessoa). Rota sem corpo (Google
+ * News) deixa o candidato pendente: não vira lead nem permite afirmar ausência.
  */
-async function leadsDoArquivo(itens: readonly ItemBusca[], candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<{ leads: LeadChecagem[] } | { erro: string }> {
-  const confirmarNaPagina = agencia.arquivo?.tipo === "falkor" && agencia.arquivo.confirmarNaPagina === true
-  const vistos = new Set<string>()
+export async function confirmarCandidatos(
+  candidatos: readonly ItemBusca[],
+  candidato: CandidatoChecagem,
+  agencia: AgenciaChecagem,
+  opcoes: OpcoesConsulta,
+): Promise<{ leads: LeadChecagem[]; pendentes: number; descartados: number } | { erro: string }> {
   const leads: LeadChecagem[] = []
-  for (const item of itens) {
-    const host = hostDe(item.fonte_url)
-    if (!host || !agencia.dominios.some((dominio) => host === dominio || host.endsWith(`.${dominio}`))) continue
-    if (!newsTitleMentionsCandidate(item.titulo, { nome_urna: candidato.nome_urna, nome_completo: candidato.nome_completo })) continue
-    const chave = stripAccents(item.titulo).toLowerCase()
-    if (vistos.has(chave)) continue
+  const titulos = new Set<string>()
+  let pendentes = 0
+  let descartados = 0
+  for (const item of candidatos) {
     let confirmado = textoCitaNomeInteiro(normalizarNome(item.titulo), candidato)
-    // Título com só parte do nome, colada a outro nome próprio, é sobre outra pessoa ("Felipe Neto" para ACM Neto).
-    if (!confirmado && !nomeColadoEmOutraPessoa(item.titulo, candidato)) {
+    if (!confirmado) {
+      if (nomeColadoEmOutraPessoa(item.titulo, candidato)) {
+        descartados++
+        continue
+      }
       if (item.semCorpo) {
-        // Vídeo não tem corpo: o resumo confirma se trouxer o nome inteiro e nenhuma parte dele colada a outra pessoa.
         confirmado = Boolean(item.resumo) && textoCitaNomeInteiro(normalizarNome(item.resumo), candidato) && !nomeColadoEmOutraPessoa(item.resumo!, candidato)
       } else if (item.trechos) {
         confirmado = trechosCitamNomeInteiro(item.trechos, candidato)
-      } else if (confirmarNaPagina) {
-        const pagina = await textoConfirmado(item.link, opcoes)
-        if ("erro" in pagina) return { erro: `confirmação de ${item.link}: ${pagina.erro}` }
-        confirmado = trechosCitamNomeInteiro(pagina.trechos, candidato)
+      } else if (item.corpo) {
+        const corpo = await lerCorpo(item.corpo, opcoes)
+        if ("erro" in corpo) return { erro: `confirmação de ${item.link}: ${corpo.erro}` }
+        confirmado = trechosCitamNomeInteiro(corpo.trechos, candidato)
+      } else {
+        pendentes++
+        continue
       }
     }
-    if (!confirmado) continue
-    vistos.add(chave)
+    if (!confirmado) {
+      descartados++
+      continue
+    }
+    if (titulos.has(chaveTitulo(item.titulo))) continue
+    titulos.add(chaveTitulo(item.titulo))
     leads.push({ agencia: agencia.id, titulo: item.titulo, link: item.link, data_publicacao: item.data_publicacao })
   }
-  return { leads }
+  return { leads, pendentes, descartados }
+}
+
+/** Estado `ok` de uma rota depois da confirmação; erro de confirmação vira erro da rota. */
+async function estadoConfirmado(itens: readonly ItemBusca[], total: number, candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta, transporte: TransporteBusca, prefixo: string, desde?: string): Promise<EstadoAgencia> {
+  const confirmacao = await confirmarCandidatos(candidatosDaResposta(itens, candidato, agencia), candidato, agencia, opcoes)
+  if ("erro" in confirmacao) return { status: "erro", erro: `${prefixo}: ${confirmacao.erro}` }
+  return {
+    status: "ok", itens: total, leads: confirmacao.leads, transporte,
+    ...(desde ? { desde } : {}),
+    ...(confirmacao.pendentes ? { pendentes: confirmacao.pendentes } : {}),
+    ...(confirmacao.descartados ? { descartados: confirmacao.descartados } : {}),
+  }
 }
 
 async function consultarArquivo(candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<EstadoAgencia> {
@@ -979,9 +1082,7 @@ async function consultarArquivo(candidato: CandidatoChecagem, agencia: AgenciaCh
   }
   const arquivo = await lido
   if (arquivo.status === "erro") return { status: "erro", erro: `arquivo da seção: ${arquivo.erro}` }
-  const leads = await leadsDoArquivo(arquivo.itens, candidato, agencia, opcoes)
-  if ("erro" in leads) return { status: "erro", erro: `arquivo da seção: ${leads.erro}` }
-  return { status: "ok", itens: arquivo.itens.length, leads: leads.leads, transporte: "arquivo-secao", desde: arquivo.desde }
+  return estadoConfirmado(arquivo.itens, arquivo.itens.length, candidato, agencia, opcoes, "arquivo-secao", "arquivo da seção", arquivo.desde)
 }
 
 /** Limite de taxa com `pararNoBloqueio`: a rodada para e a candidatura em curso não gera recibo. */
@@ -1013,7 +1114,7 @@ async function consultarNativa(candidato: CandidatoChecagem, agencia: AgenciaChe
     if (lidos.length < 100) break
     await opcoes.sleep(opcoes.pausaMs)
   }
-  return { status: "ok", itens: itens.length, leads: leadsDaResposta(itens, candidato, agencia), transporte: "wp-rest" }
+  return estadoConfirmado(itens, itens.length, candidato, agencia, opcoes, "wp-rest", "busca nativa")
 }
 
 function temViaDireta(agencia: AgenciaChecagem): boolean {
@@ -1084,7 +1185,7 @@ async function consultarGoogle(
         continue
       }
       const itens = parseItensBusca(resposta.body)
-      return { status: "ok", itens: itens.length, leads: leadsDaResposta(itens, candidato, agencia), transporte: "google-news" }
+      return estadoConfirmado(itens, itens.length, candidato, agencia, opcoes, "google-news", "google-news")
     } catch (error) {
       if (error instanceof BloqueioDeTaxa) throw error
       ultimoErro = error instanceof Error ? error.message : String(error)
@@ -1173,6 +1274,7 @@ export interface ResumoColeta {
   encontrado: number
   vazio_confirmado: number
   homonimo: number
+  nao_confirmado: number
   erro: number
   encontrado_parcial: number
   leads: number
@@ -1191,6 +1293,7 @@ export function resumirColeta(recibos: readonly ReciboChecagem[]): ResumoColeta 
     encontrado: recibos.filter((recibo) => recibo.result === "encontrado").length,
     vazio_confirmado: recibos.filter((recibo) => recibo.result === "vazio_confirmado").length,
     homonimo: recibos.filter((recibo) => recibo.result === "homonimo").length,
+    nao_confirmado: recibos.filter((recibo) => recibo.result === "nao_confirmado").length,
     erro: recibos.filter((recibo) => recibo.result === "erro").length,
     encontrado_parcial: recibos.filter((recibo) => recibo.result === "encontrado" && Object.values(recibo.agencias).some((estado) => estado.status === "erro")).length,
     leads: recibos.reduce((total, recibo) => total + recibo.leads.length, 0),
