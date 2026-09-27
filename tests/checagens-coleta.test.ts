@@ -25,6 +25,7 @@ import {
   type EstadoAgencia,
 } from "../scripts/lib/checagens-coleta"
 import { normalizarEntrada } from "../scripts/lib/coleta-log"
+import { selecionarReciboChecagens } from "../src/lib/buscas-recibos"
 
 const caiado: CandidatoChecagem = { id: "cand-caiado", slug: "ronaldo-caiado", nome_urna: "Ronaldo Caiado", nome_completo: "Ronaldo Ramos Caiado", cargo_disputado: "Presidente", estado: null }
 const now = new Date("2026-09-25T12:00:00Z")
@@ -346,6 +347,103 @@ describe("catálogo de checagens e recibos versionados", () => {
     }
     for (const [host, publishers] of nomes) assert.equal(publishers.size, 1, host)
     assert.equal((publicDataset as Array<{ publisher: string }>).some((record) => record.publisher === "Agência Lupa"), false)
+  })
+
+  it("recibos da rodada de 25-26/09 com lead de outra pessoa não voltam ao catálogo", () => {
+    // Hotfix: lead só vale com o nome completo no título; recibo sem nenhum saiu (não virou vazio).
+    // Coleta nova, com data posterior, pode republicar a ficha pela regra nova.
+    const rodadaAntiga = (searchedAt: string) => searchedAt >= "2026-09-25T23:00:00Z" && searchedAt <= "2026-09-26T04:00:00Z"
+    const sairam: string[] = ["andre-luis","ben-mendes","cadu-xavier","carlos-machado","cyro-garcia","danilo-pinheiro","dario-barbosa","delcidio-amaral","du-pereira","eduardo-braide","fabio-trad","flavio-roscoe","gal-leite","ivan-moraes","joao-rodrigues","lucia-santos","luiz-franca","requiao-filho","roberto-cidade","roberto-rocha","rodrigo-bolsonaro","ze-batista"]
+    const tetos: Record<string, number> = {"acm-neto":3,"alexandre-kalil":2,"alvaro-dias-rn":6,"augusto-cury":2,"ciro-gomes-gov-ce":56,"douglas-ruas":1,"eduardo-paes":39,"flavio-bolsonaro":57,"haddad-gov-sp":40,"joao-campos":7,"juliana-brizola":2,"paula-belmonte":1,"renan-filho":1,"romeu-zema":6,"ronaldo-caiado":2,"sergio-moro-gov-pr":12,"tarcisio-gov-sp":20}
+    for (const receipt of committedReceipts.receipts) {
+      if (!rodadaAntiga(receipt.searched_at)) continue
+      assert.equal(sairam.includes(receipt.candidate_slug), false, `${receipt.candidate_slug} saiu no hotfix`)
+      if (receipt.candidate_slug in tetos) assert.ok(receipt.leads <= tetos[receipt.candidate_slug], `${receipt.candidate_slug} só com leads de nome completo`)
+    }
+  })
+
+  it("aplica o critério editorial de atribuição nos leads de Lula e Eduardo Paes", () => {
+    // O catálogo guarda contagens, não títulos: estas asserções verificam os números publicados.
+    const contagens = new Map(committedReceipts.receipts.map((receipt) => [receipt.candidate_slug, receipt.leads]))
+    assert.equal(contagens.get("lula"), 549)
+    assert.equal(contagens.get("eduardo-paes"), 39)
+    assert.equal(contagens.get("tarcisio-gov-sp"), 20)
+  })
+
+  it("reconhece todas as versões do boato da sobrinha de Eduardo Paes", () => {
+    // Amostras dos recibos brutos de 26/09, inclusive o título que já não entrava no catálogo.
+    const normalizarTitulo = (title: string) => title.normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim()
+    const mesmoBoato = (title: string) => {
+      const normalized = normalizarTitulo(title)
+      return /\bsobrinha\b/.test(normalized) && /\bpaes\b/.test(normalized) && /\b(rocinha|safari)\b/.test(normalized)
+    }
+    const variantes = [
+      "Não é sobrinha de Eduardo Paes mulher que zombou de tour na Rocinha",
+      "Mulher que zomba de ‘safári’ na Rocinha ‘para conhecer pobre’ não é sobrinha de Paes",
+      "Jovem que chamou passeio na Rocinha de ‘safári’ não é sobrinha de Eduardo Paes",
+      "Influenciadora que chamou passeio na Rocinha de “safári” não é sobrinha de Eduardo Paes",
+      "Jovem que chamou passeio na Rocinha de “safári” não é sobrinha de Eduardo Paes",
+      "Jovem que chamou passeio na Rocinha de \"safari\" nao e sobrinha de Eduardo Paes",
+    ]
+    for (const title of variantes) assert.equal(mesmoBoato(title), true, title)
+    assert.equal([variantes[0], variantes[3], variantes[4]].filter(mesmoBoato).length, 3, "as três versões antes contadas devem sair")
+    assert.equal(mesmoBoato("Vídeo de Eduardo Paes em festa na rua é antigo e não foi gravado na Maré"), false)
+    assert.equal(mesmoBoato("Foto de ciclovia construída em 2016 circula fora de contexto para promover Tarcísio Gomes de Freitas"), false)
+  })
+
+  it("exclui homônimo senador e parente mesmo quando o título contém o nome de urna", () => {
+    // Títulos conferidos no recibo bruto da rodada 2026-09-26-final.
+    const exclusoesPorHomônimoOuParentesco: Record<string, string[]> = {
+      "alvaro-dias-rn": [
+        "Sabatina Folha, UOL e SBT: Alvaro Dias erra sobre verbas de campanha e indenizatória",
+        "Alvaro Dias erra ao dizer que Folha deu manchete sobre sua popularidade como governador do PR",
+        "Alvaro Dias: governo descumpriu acordo com senadores na reforma trabalhista. Será?",
+        "Alvaro Dias gasta R$ 365 mil do Senado, mas nega recebimento de verba",
+        "Alvaro Dias: total de analfabetos supera toda população argentina. Será?",
+      ],
+      garotinho: [
+        "Clarissa Garotinho erra dados sobre arrecadação do Rio e bloqueio de bens de Paes",
+      ],
+    }
+    const titulosBrutos: Record<string, string[]> = {
+      "alvaro-dias-rn": [
+        "Natal: Álvaro Dias exagera sobre isolamento social durante pandemia",
+        ...exclusoesPorHomônimoOuParentesco["alvaro-dias-rn"],
+      ],
+      garotinho: [
+        ...exclusoesPorHomônimoOuParentesco.garotinho,
+        "Laços com Cabral e prisão de Fernandinho Beira-Mar: os erros de Garotinho no RJTV",
+        "Garotinho prega ‘compromisso com a verdade’, mas erra ao falar de seu governo",
+        "Crivella disse que Garotinho ‘é pobre’. Será? Nós fomos conferir",
+      ],
+    }
+    const excluirNomeDeUrnaComoSobrenomeCompartilhado = (slug: string, title: string): boolean =>
+      slug === "garotinho" && /^\p{Lu}[\p{L}'’-]+ Garotinho\b/u.test(title)
+    assert.equal(excluirNomeDeUrnaComoSobrenomeCompartilhado("garotinho", exclusoesPorHomônimoOuParentesco.garotinho[0]), true)
+    assert.equal(excluirNomeDeUrnaComoSobrenomeCompartilhado("garotinho", "Garotinho prega ‘compromisso com a verdade’"), false)
+    const filtrados = Object.fromEntries(Object.entries(titulosBrutos).map(([slug, titles]) => {
+      const exclusoes = new Set(exclusoesPorHomônimoOuParentesco[slug] ?? [])
+      return [slug, titles.filter((title) => !exclusoes.has(title) && !excluirNomeDeUrnaComoSobrenomeCompartilhado(slug, title))]
+    }))
+    assert.deepEqual(filtrados["alvaro-dias-rn"], ["Natal: Álvaro Dias exagera sobre isolamento social durante pandemia"])
+    assert.deepEqual(filtrados.garotinho, titulosBrutos.garotinho.slice(1), "Clarissa Garotinho é descartada pela regra de sobrenome compartilhado")
+
+    const contagens = new Map(committedReceipts.receipts.map((receipt) => [receipt.candidate_slug, receipt.leads]))
+    assert.equal(filtrados["alvaro-dias-rn"].length, contagens.get("alvaro-dias-rn"), "somente o lead de Natal pertence ao candidato do RN")
+    assert.equal(filtrados.garotinho.length, contagens.get("garotinho"), "o nome de urna Garotinho não atribui a checagem da filha")
+  })
+
+  it("Samuel Costa sem recibo não é exibido como nenhuma checagem", () => {
+    const target = committedReceipts.receipts.find((receipt) => receipt.candidate_slug === "samuel-costa")
+    assert.equal(target, undefined, "perfil Lupa sem checagem e identidade confirmada não deve ter recibo público")
+    assert.equal(selecionarReciboChecagens(committedReceipts, {
+      candidate_id: "f4e5e4bd-7934-4d04-8534-9a60fac53edd",
+      candidate_slug: "samuel-costa",
+    }), null, "sem recibo, a ficha permanece no estado não coletado")
   })
 
   it("recibos publicados não carregam erro e têm volume coerente", () => {
