@@ -32,9 +32,13 @@ export interface MethodologySource {
  *    `.github/workflows/`. Estado em 2026-07-29:
  *      - Google News: diaria, via cron `0 8 * * *` de `/api/news/refresh` em
  *        `vercel.json`.
- *      - Camara e Senado: semanal, via `schedule: 0 6 * * 3` em
+ *      - Senado: semanal, via `schedule: 0 6 * * 3` em
  *        `.github/workflows/ingest.yml` (adicionado 2026-07-29). Se o cron
  *        sair ou mudar de cadencia, este rotulo muda no MESMO commit.
+ *      - Camara: saiu desse schedule em 2026-09-26 (a API recusa conexao dos
+ *        runners do GitHub). A coleta semanal passou para um agente launchd
+ *        local, que nao e cron de producao verificavel pelo repo, entao o
+ *        rotulo voltou a "sob demanda" ate existir cadencia verificavel.
  *      - Todo o resto roda por lote manual, que e exatamente o que
  *        "sob demanda" descreve.
  */
@@ -92,8 +96,8 @@ export const METHODOLOGY_SOURCES: readonly MethodologySource[] = [
       "Frentes parlamentares",
     ],
     sourceKind: "base_oficial",
-    // Automação real: schedule semanal (0 6 * * 3) em .github/workflows/ingest.yml.
-    updateFrequency: "semanal",
+    // Fora do schedule do ingest.yml desde 26/09/2026; ver o cabeçalho deste arquivo.
+    updateFrequency: "sob demanda",
     curationType: "automático",
   },
   {

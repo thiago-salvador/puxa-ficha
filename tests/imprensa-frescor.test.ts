@@ -52,7 +52,7 @@ test("ausência de recibo não vira zero nem agenda futura", () => {
 test("limiar do catálogo distingue recibo antigo de agenda futura", () => {
   const camara = IMPRENSA_FRESHNESS_SOURCES.find((item) => item.id === "camara")
   assert.equal(camara?.maxAgeHours, 216)
-  assert.equal(camara?.cadence, "weekly")
+  assert.equal(camara?.cadence, "on_demand")
   const current = { ...source, maxAgeHours: 36 }
   const atLimit = buildImprensaFreshnessSource(current, [receipt()], "2026-09-23T22:00:00.000Z")
   assert.equal(atLimit.status, "sem_agenda")

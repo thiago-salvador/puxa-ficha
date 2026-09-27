@@ -2,7 +2,9 @@ import assert from "node:assert/strict"
 import test from "node:test"
 
 import {
+  checkCamaraInalcancavel,
   classifyMatch,
+  contarCamaraInalcancavel,
   extractCamaraIdentity,
   extractSenadoIdentity,
   namesLookCompatible,
@@ -717,4 +719,27 @@ test("shouldFailGate: somente ok e skipped nao reprovam", () => {
   assert.equal(shouldFailGate({ ok: 50 }), false)
   assert.equal(shouldFailGate({ skipped: 3 }), false)
   assert.equal(shouldFailGate({ ok: 50, skipped: 3 }), false)
+})
+
+// Desde 26/09/2026 a API da Câmara recusa conexão dos runners do GitHub. O
+// gate aceita esses erros, e só esses, porque vêm do pré-voo com motivo
+// nomeado; o relatório e o aviso ::warning:: impedem que passe em silêncio.
+test("shouldFailGate: erro de Câmara inalcançável não reprova, qualquer outro sim", () => {
+  const seed = { nome_completo: "Fulano de Tal", nome_urna: "Fulano", estado: "SP" }
+  const inalcancaveis = [
+    checkCamaraInalcancavel("a", 1, seed, "fetch failed (UND_ERR_CONNECT_TIMEOUT)"),
+    checkCamaraInalcancavel("b", 2, seed, "fetch failed (UND_ERR_CONNECT_TIMEOUT)"),
+  ]
+  const outroErro = { ...inalcancaveis[0], slug: "c", reasons: ["fetch_error:ECONNRESET"] }
+  const doSenado = { ...inalcancaveis[0], slug: "d", source: "senado" as const }
+
+  assert.equal(inalcancaveis[0].status, "error")
+  assert.deepEqual(inalcancaveis[0].reasons, ["camara_inalcancavel:fetch failed (UND_ERR_CONNECT_TIMEOUT)"])
+  assert.equal(contarCamaraInalcancavel(inalcancaveis), 2)
+  assert.equal(contarCamaraInalcancavel([...inalcancaveis, outroErro, doSenado]), 2)
+
+  assert.equal(shouldFailGate({ ok: 40, error: 2 }, 2), false)
+  assert.equal(shouldFailGate({ ok: 40, error: 3 }, 2), true)
+  assert.equal(shouldFailGate({ ok: 40, error: 2, mismatch: 1 }, 2), true)
+  assert.equal(shouldFailGate({ ok: 40, error: 2, not_found: 1 }, 2), true)
 })
