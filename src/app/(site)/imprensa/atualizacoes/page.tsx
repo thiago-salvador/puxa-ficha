@@ -10,7 +10,6 @@ import { formatDisplayName } from "@/lib/display-name"
 export const metadata: Metadata = {
   title: "Atualizações verificadas | Puxa Ficha",
   description: "Alterações observadas em fontes oficiais e verificadas para candidatos publicados.",
-  robots: { index: false, follow: false },
   alternates: { canonical: "/imprensa/atualizacoes" },
 }
 export const dynamic = "force-dynamic"

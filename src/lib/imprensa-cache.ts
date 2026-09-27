@@ -43,7 +43,7 @@ function toPageDataset(dataset: ImprensaDataset): ImprensaPageDataset {
 const getCachedImprensaDataset = unstableCacheWithSingleFlight(
   async (cargo: string | null, uf: string | null): Promise<ImprensaPageDataset> =>
     toPageDataset(await getImprensaDataset({ cargo, uf })),
-  ["imprensa-dataset-v4", SENADO_CACHE_VARIANT],
+  ["imprensa-dataset-v5", SENADO_CACHE_VARIANT],
   { revalidate: IMPRENSA_DATASET_REVALIDATE_SECONDS, tags: [IMPRENSA_DATASET_TAG] },
 )
 

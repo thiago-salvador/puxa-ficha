@@ -30,7 +30,7 @@ import { buildPatrimonioEleicoes, publicTransparencia } from "@/lib/public-profi
 import { buildFinanciamentoEleicoes, type FinanciamentoVerificacaoPublica } from "@/lib/financiamento-eleicoes"
 import { ensureCurrentCandidacyInHistory, normalizeHistoricoPoliticoForDisplay } from "@/lib/historico-dedupe"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
-import { nivelFonteProcesso, urlFonteJudicialEspecifica } from "@/lib/djen-consulta-url"
+import { nivelFonteProcesso } from "@/lib/djen-consulta-url"
 import { normalizeFinanciamentoForDisplay, normalizePatrimonioForDisplay } from "@/lib/person-level-dedupe"
 import { sanitizeFinanciamentoForPublic, sanitizeMaioresDoadoresForPublic } from "@/lib/financiamento-public"
 import {
@@ -2234,7 +2234,7 @@ export interface CandidatoResumo {
   pontos_atencao: number
 }
 
-async function fetchOfficialProcessCountsByCandidateIds(
+async function fetchPublicProcessCountsByCandidateIds(
   supabase: ReturnType<typeof createServerSupabaseClient>,
   candidateIds: string[],
 ): Promise<Map<string, number>> {
@@ -2243,7 +2243,7 @@ async function fetchOfficialProcessCountsByCandidateIds(
     const batch = candidateIds.slice(offset, offset + 80)
     for (let page = 0; ; page += 1) {
       const { data, error } = await withSupabaseRetry(
-        "processos(resumo-fonte-oficial)",
+        "processos(resumo-fonte-publica)",
         async (signal) => supabase.from("processos")
           .select("id,candidato_id,numero_processo,url_fonte")
           .in("candidato_id", batch)
@@ -2257,7 +2257,8 @@ async function fetchOfficialProcessCountsByCandidateIds(
         throw new DegradedDataError("A consulta das fontes judiciais falhou; a contagem não pode ser cacheada como zero.")
       }
       for (const row of data) {
-        if (!urlFonteJudicialEspecifica(row.url_fonte, row.numero_processo)) continue
+        // Mesma regra da ficha (processosPublicos): oficial ou com selo "Fonte em confirmação".
+        if (!nivelFonteProcesso(row)) continue
         counts.set(row.candidato_id, (counts.get(row.candidato_id) ?? 0) + 1)
       }
       if (data.length < 1000) break
@@ -2324,7 +2325,7 @@ async function getCandidatosComResumoResourceUncached(
   let officialProcessCounts = new Map<string, number>()
   let officialProcessCountsError = false
   try {
-    officialProcessCounts = await fetchOfficialProcessCountsByCandidateIds(
+    officialProcessCounts = await fetchPublicProcessCountsByCandidateIds(
       supabase,
       candidatos.map((candidate) => candidate.id),
     )
@@ -2494,7 +2495,7 @@ async function getCandidatosComparaveisResourceUncached(
         fetchCargoAtualByCandidatoIds(supabase, comparadorIds),
         fetchLegislativeHistoryFlagsByCandidatoIds(supabase, comparadorIds),
         fetchProcessosVerificacoesBatch(baseRows.map((row) => ({ id: row.id, slug: row.slug }))),
-        fetchOfficialProcessCountsByCandidateIds(supabase, comparadorIds),
+        fetchPublicProcessCountsByCandidateIds(supabase, comparadorIds),
       ])
     patrimonioPorId = patrimonioMap
     processosVerificacoes = processosMap

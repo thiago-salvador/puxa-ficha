@@ -88,6 +88,7 @@ test("monta coorte, filtros e estados sem transformar ausência em zero", async 
       suplentesEstado: "nao_aplicavel",
       viceNome: "Vice Ana",
       viceNomeOriginal: "Vice Ana",
+      viceSituacao: null,
       suplentes: [],
       fonteUrl: "https://divulgacandcontas.tse.jus.br/candidatura/1",
       fonteSha256: "a".repeat(64),

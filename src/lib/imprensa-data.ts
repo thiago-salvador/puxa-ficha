@@ -9,6 +9,8 @@ import { shouldExposeCargo } from "@/lib/senado-feature"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 import { formatDisplayName } from "@/lib/display-name"
 import { loadSenadoRunningMates } from "@/lib/senado-running-mates"
+import { verifiedViceStatus } from "@/lib/vice-official-status"
+import type { Chapa2026 } from "@/lib/types"
 
 export interface ImprensaFilters {
   cargo: string | null
@@ -32,6 +34,8 @@ export interface ImprensaRow {
     viceNome: string | null
     /** Grafia original do TSE, preservada para exportação. */
     viceNomeOriginal: string | null
+    /** Mesma situação oficial que a ficha mostra ao lado do vice (hoje só "Inapto no TSE"). */
+    viceSituacao?: { label: string; source_url: string; checked_at: string } | null
     suplentes: string[]
     fonteUrl: string | null
     fonteSha256: string | null
@@ -100,7 +104,7 @@ type ProcessoReceiptRow = {
   executado_em?: string | null
 }
 
-type ChapaRow = {
+type ChapaRow = Partial<Pick<Chapa2026, "uf" | "titular_sq_candidato" | "vice_sq_candidato" | "vice_partido_sigla" | "vice_situacao_divulgacand">> & {
   titular_candidato_id: string
   vice_nome_urna?: string | null
   identidade_status?: string | null
@@ -237,7 +241,7 @@ function defaultDependencies(): ImprensaDependencies {
         for (let offset = 0; ; offset += PAGE_SIZE) {
           const result = await client
             .from("chapas_2026_publico")
-            .select("titular_candidato_id,vice_nome_urna,identidade_status,vinculo_titular_status,fonte_url,fonte_sha256,snapshot_em")
+            .select("titular_candidato_id,uf,vice_nome_urna,vice_partido_sigla,identidade_status,vinculo_titular_status,fonte_url,fonte_sha256,snapshot_em,titular_sq_candidato,vice_sq_candidato,vice_situacao_divulgacand")
             .in("titular_candidato_id", ids)
             .order("titular_candidato_id", { ascending: true })
             .range(offset, offset + PAGE_SIZE - 1)
@@ -360,7 +364,8 @@ function mapChapa(rows: ChapaRow[]): ImprensaRow["chapa"] {
   if (row.identidade_status !== "confirmada" || !vinculoOficial || !viceNomeOriginal || !fonteUrl || !fonteSha256 || !snapshotEm) {
     return { estado: "sem_dado", suplentesEstado: "nao_aplicavel", viceNome: null, viceNomeOriginal: null, suplentes: [], fonteUrl: null, fonteSha256: null, snapshotEm: null }
   }
-  return { estado: "publicado", suplentesEstado: "nao_aplicavel", viceNome: formatDisplayName(viceNomeOriginal), viceNomeOriginal, suplentes: [], fonteUrl, fonteSha256, snapshotEm }
+  const viceSituacao = verifiedViceStatus({ ...row, vice_nome_urna: viceNomeOriginal } as Parameters<typeof verifiedViceStatus>[0])
+  return { estado: "publicado", suplentesEstado: "nao_aplicavel", viceNome: formatDisplayName(viceNomeOriginal), viceNomeOriginal, viceSituacao, suplentes: [], fonteUrl, fonteSha256, snapshotEm }
 }
 
 export async function getImprensaDataset(filters: ImprensaFilters): Promise<ImprensaDataset> {

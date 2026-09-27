@@ -52,7 +52,9 @@ function chapaDescription(row: Row): string {
     if (row.chapa.suplentes.length) return `Suplentes: ${row.chapa.suplentes.join(", ")}`
     return `Suplentes: ${labelState(row.chapa.suplentesEstado)}`
   }
-  return row.chapa.viceNome ? `Vice: ${row.chapa.viceNome}` : "Vice não publicado"
+  if (!row.chapa.viceNome) return "Vice não publicado"
+  // Mesma situação oficial que a ficha mostra ao lado do vice.
+  return row.chapa.viceSituacao ? `Vice: ${row.chapa.viceNome} (${row.chapa.viceSituacao.label})` : `Vice: ${row.chapa.viceNome}`
 }
 
 /**

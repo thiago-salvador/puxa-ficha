@@ -9,7 +9,6 @@ import { getImprensaFreshnessDataset } from "@/lib/imprensa-frescor-server"
 export const metadata: Metadata = {
   title: "Frescor das fontes | Puxa Ficha",
   description: "Últimas coletas públicas demonstráveis e limites de atualização das fontes do Puxa Ficha.",
-  robots: { index: false, follow: false },
 }
 export const dynamic = "force-dynamic"
 

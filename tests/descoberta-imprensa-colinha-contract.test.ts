@@ -7,7 +7,8 @@ function read(relativePath: string): string {
   return readFileSync(relativePath, "utf8")
 }
 
-// A Sala em /imprensa é indexável. A Mesa em /imprensa/mesa e /colinha
+// A Sala em /imprensa, /imprensa/atualizacoes e /imprensa/frescor são indexáveis.
+// A Mesa em /imprensa/mesa e /colinha
 // declaram `robots: { index: false }` e ficam fora do sitemap. A colinha
 // segue no menu e no rodapé porque tem OG/Twitter completos e recursos de
 // compartilhamento (WhatsApp, imagem, impressão), sinal de que é feita para
@@ -25,7 +26,7 @@ describe("descoberta de /colinha e /deputados/[uf]", () => {
     assert.doesNotMatch(footer, /href: "\/imprensa"/)
   })
 
-  test("Sala é indexável; Mesa, páginas auxiliares e colinha declaram noindex", () => {
+  test("Sala, atualizações e frescor são indexáveis; Mesa e colinha declaram noindex", () => {
     const sala = read("src/app/(site)/imprensa/page.tsx")
     const mesa = read("src/app/(site)/imprensa/mesa/page.tsx")
     const atualizacoes = read("src/app/(site)/imprensa/atualizacoes/page.tsx")
@@ -34,7 +35,10 @@ describe("descoberta de /colinha e /deputados/[uf]", () => {
 
     assert.doesNotMatch(sala, /robots:\s*\{\s*index:\s*false/)
     assert.match(sala, /canonical:\s*["']\/imprensa["']/)
-    for (const source of [mesa, atualizacoes, frescor, colinha]) {
+    for (const source of [atualizacoes, frescor]) {
+      assert.doesNotMatch(source, /robots:\s*\{\s*index:\s*false/)
+    }
+    for (const source of [mesa, colinha]) {
       assert.match(source, /robots:\s*\{\s*index:\s*false,\s*follow:\s*false/)
     }
   })
@@ -47,6 +51,8 @@ describe("descoberta de /colinha e /deputados/[uf]", () => {
     assert.match(sitemap, /deputadosUrls[\s\S]*url:\s*`\$\{SITE_ORIGIN\}\/deputados\/\$\{uf\}`/)
     assert.match(sitemap, /\.\.\.deputadosUrls/)
     assert.match(sitemap, /url:\s*`\$\{SITE_ORIGIN\}\/imprensa`/)
+    assert.match(sitemap, /url:\s*`\$\{SITE_ORIGIN\}\/imprensa\/atualizacoes`/)
+    assert.match(sitemap, /url:\s*`\$\{SITE_ORIGIN\}\/imprensa\/frescor`/)
     assert.doesNotMatch(sitemap, /\/imprensa\/mesa/)
     assert.doesNotMatch(sitemap, /\/colinha/)
   })

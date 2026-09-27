@@ -1,6 +1,6 @@
 import type { ImprensaDataset, ImprensaRow } from "@/lib/imprensa-data"
 
-const IMPRENSA_EXPORT_VERSION = "1"
+const IMPRENSA_EXPORT_VERSION = "2"
 const IMPRENSA_EXPORT_MAX_BYTES = 4 * 1024 * 1024
 const IMPRENSA_EXPORT_TTL_SECONDS = 300
 export const IMPRENSA_AVISO = "Confira os dados na fonte original antes de publicar."
@@ -36,6 +36,8 @@ const MAIN_COLUMNS = [
   "chapa_vice_nome_original",
   "processos_quantidade_em_confirmacao",
   "nome_urna_original",
+  "chapa_vice_situacao",
+  "chapa_vice_situacao_fonte_url",
 ] as const
 
 export type ImprensaExportKind = "csv" | "json"
@@ -73,6 +75,8 @@ function mainCells(row: ImprensaRow): Cell[] {
     row.chapa.viceNomeOriginal,
     row.processos?.quantidadeEmConfirmacao ?? 0,
     row.nomeOriginal,
+    row.chapa.viceSituacao?.label ?? null,
+    row.chapa.viceSituacao?.source_url ?? null,
   ]
 }
 
@@ -122,7 +126,7 @@ export function serializeImprensaJson(dataset: ImprensaDataset): string {
         fonteSha256: row.sites.fonteSha256,
         coletadoEm: row.sites.coletadoEm,
       },
-      chapa: { estado: row.chapa.estado, suplentesEstado: row.chapa.suplentesEstado, viceNome: row.chapa.viceNome, viceNomeOriginal: row.chapa.viceNomeOriginal, suplentes: row.chapa.suplentes, fonteUrl: row.chapa.fonteUrl, fonteSha256: row.chapa.fonteSha256, snapshotEm: row.chapa.snapshotEm },
+      chapa: { estado: row.chapa.estado, suplentesEstado: row.chapa.suplentesEstado, viceNome: row.chapa.viceNome, viceNomeOriginal: row.chapa.viceNomeOriginal, viceSituacao: row.chapa.viceSituacao ?? null, suplentes: row.chapa.suplentes, fonteUrl: row.chapa.fonteUrl, fonteSha256: row.chapa.fonteSha256, snapshotEm: row.chapa.snapshotEm },
       processos: {
         estado: row.processos.estado,
         buscaEstado: row.processos.buscaEstado,

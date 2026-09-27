@@ -93,6 +93,7 @@ test("JSON mantém filtros, data e distinção null/zero", () => {
     suplentesEstado: "nao_aplicavel",
     viceNome: null,
     viceNomeOriginal: null,
+    viceSituacao: null,
     suplentes: [],
     fonteUrl: null,
     fonteSha256: null,
@@ -115,4 +116,14 @@ test("longos publicam as linhas da ficha, com o nível da fonte, e barram URL fo
   const longRows = buildImprensaLongRows(value, "processos") as Array<{ numero: string | null; fonte_nivel: string }>
   assert.deepEqual(longRows.map((row) => [row.numero, row.fonte_nivel]), [["1", "oficial"], ["4", "em_confirmacao"]])
   assert.match(serializeImprensaLongCsv(value, "processos"), /"url_fonte","fonte_nivel","data_inicio"/)
+})
+
+test("CSV e JSON levam a situação oficial do vice que a ficha mostra", () => {
+  const value = dataset()
+  const situacao = { label: "Inapto no TSE", source_url: "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SP/20322002026/candidato/1", checked_at: "2026-09-20T00:00:00.000Z" }
+  value.rows[0].chapa.viceSituacao = situacao
+  const csv = serializeImprensaCsv(value)
+  assert.match(csv, /"chapa_vice_situacao","chapa_vice_situacao_fonte_url"/)
+  assert.match(csv, /"Inapto no TSE","https:\/\/divulgacandcontas\.tse\.jus\.br\//)
+  assert.deepEqual(JSON.parse(serializeImprensaJson(value)).rows[0].chapa.viceSituacao, situacao)
 })
