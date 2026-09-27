@@ -64,7 +64,11 @@ async function porIds<T extends { id: string }>(db: Cliente, tabela: string, col
   if (ids.length === 0) return new Map()
   const { data, error } = await withSupabaseRetry(
     `${tabela}(compromisso_evidencia)`,
-    async (signal) => db.from(tabela).select(colunas).in("id", ids).abortSignal(signal),
+    async (signal) => {
+      let query = db.from(tabela).select(colunas).in("id", ids)
+      if (tabela === "projetos_lei") query = query.is("despublicado_em", null)
+      return query.abortSignal(signal)
+    },
   )
   if (error) throw error
   return new Map(((data ?? []) as unknown as T[]).map((linha) => [linha.id, linha]))

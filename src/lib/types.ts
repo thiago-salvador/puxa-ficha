@@ -694,8 +694,16 @@ export interface Chapa2026 {
   snapshot_em: string;
 }
 
+/** Fase eleitoral 2026 (view candidaturas_fase_2026_publico). Sem linha = em disputa. */
+export interface FaseEleitoral2026 {
+  fase_eleitoral: "em_disputa" | "segundo_turno" | "eleito" | "nao_eleito" | "fora_da_disputa";
+  fase_turno: 1 | 2;
+  atualizacao_encerrada_em: string | null;
+}
+
 export interface FichaCandidato extends Candidato {
   chapa_2026?: Chapa2026 | null;
+  fase_eleitoral_2026?: FaseEleitoral2026 | null;
   historico: HistoricoPolitico[];
   mudancas_partido: MudancaPartido[];
   patrimonio: Patrimonio[];

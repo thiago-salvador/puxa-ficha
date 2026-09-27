@@ -49,6 +49,7 @@ type Achado = { tabela: string; campo: string; slug: string; amostra: string }
 
 async function main(): Promise<void> {
   const { data: publicados, error: erroPublicados } = await supabase
+    // coorte-atualizacao: isento (integridade do texto público; ficha congelada continua no ar)
     .from("candidatos_publico")
     .select("id, slug")
 

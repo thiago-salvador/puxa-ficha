@@ -10,4 +10,4 @@ Scope: 91 identity-risk profiles from `revisao-divergencias.json`. The Jev state
 - 14 profiles had no identity state and only a patrimonial divergence. Their returned p values are retained, but their disposition remains review because the available evidence cannot identify a person.
 - The 21 SQ 2026 proposals remain in `propostas.json`; no profile was written based on Jev.
 
-Per-profile p, bucket and disposition are in `identity-jev-review.json` and are linked from every profile in `revisao-divergencias.json`. Raw CPF-free state, questions and outputs are archived outside the repository at `/Users/thiagosalvador/Documents/Apps/Puxa Ficha/evidencias-privadas/ficha-completa/codex/jev-identity-532/`.
+Per-profile p, bucket and disposition are in `identity-jev-review.json` and are linked from every profile in `revisao-divergencias.json`. Raw CPF-free state, questions and outputs are archived outside the repository.

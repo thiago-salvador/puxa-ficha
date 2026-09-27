@@ -29,6 +29,7 @@ export function loadCandidatos(): CandidatoConfig[] {
   const explicit = getExplicitCohort()
   if (explicit) return [...explicit]
 
+  // coorte-atualizacao: isento (loader cru do seed; rotinas de coleta usam loadCandidatosPublicos)
   const path = resolve(process.cwd(), "data/candidatos.json")
   const todos: CandidatoConfig[] = JSON.parse(readFileSync(path, "utf-8"))
 
@@ -39,6 +40,7 @@ export function loadCandidatos(): CandidatoConfig[] {
   const desconhecidos = [...escopo].filter((s) => !conhecidos.has(s))
   if (desconhecidos.length > 0) {
     throw new Error(
+      // coorte-atualizacao: isento (mensagem de erro)
       `PF_INGEST_SLUGS cita slug que não existe em data/candidatos.json: ${desconhecidos.join(", ")}`,
     )
   }

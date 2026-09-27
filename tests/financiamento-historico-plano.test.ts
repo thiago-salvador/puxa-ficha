@@ -95,5 +95,5 @@ test("executor exige prova explícita de fonte completa e fatia planos grandes d
   const withoutProof={plano_sha256:"",acoes:[{...action,source_complete:false}]}
   const sha=createHash("sha256").update(JSON.stringify(withoutProof.acoes)).digest("hex")
   withoutProof.plano_sha256=sha
-  assert.throws(()=>dryRunHistoricalFinance(withoutProof,sha),/class-a, contexto, contrato de display, serie ou proveniencia/)
+  assert.throws(()=>dryRunHistoricalFinance(withoutProof as unknown as Parameters<typeof dryRunHistoricalFinance>[0],sha),/class-a, contexto, contrato de display, serie ou proveniencia/)
 })

@@ -21,7 +21,7 @@ const PERFIL_SENADO = {
       },
       DadosBasicosParlamentar: {
         NomeCompletoParlamentar: "Senadora Fixture da Silva",
-        DataNascimento: "1970-01-01",
+        DataNascimento: "1970-03-14",
         Naturalidade: "Cidade Fixture",
         UfNaturalidade: "MA",
       },
@@ -57,7 +57,7 @@ async function perfilGravado(
   process.env.SUPABASE_SERVICE_ROLE_KEY = "test-only"
   __resetSupabaseParaTeste()
   let patch: Record<string, unknown> = {}
-  const response = (data: unknown) => new Response(JSON.stringify(data), { headers: { "Content-Type": "application/json" } })
+  const response = (data: unknown, status = 200) => new Response(JSON.stringify(data), { status, headers: { "Content-Type": "application/json" } })
   globalThis.fetch = async (input, init) => {
     const url = new URL(String(input))
     const method = init?.method ?? "GET"
@@ -71,6 +71,7 @@ async function perfilGravado(
       if (url.pathname.endsWith("/9999/autorias.json")) return response({})
       throw new Error(`Unexpected Senate request: ${url.pathname}`)
     }
+    if (url.pathname.endsWith("/candidaturas_fase_2026_publico")) return response({ code: "PGRST205", message: "Could not find the table candidaturas_fase_2026_publico in the schema cache" }, 404)
     if (url.pathname.endsWith("/votacoes_chave")) return response([])
     if (url.pathname.endsWith("/candidatos")) {
       if (method === "PATCH") {
@@ -122,7 +123,7 @@ test("Senado: sem registro TSE 2026, perfil do Senado mantém o comportamento an
   assert.deepEqual(errors, [])
   assert.equal(patch.partido_sigla, "PSD")
   assert.equal(patch.partido_atual, "PSD")
-  assert.equal(patch.data_nascimento, "1970-01-01")
+  assert.equal(patch.data_nascimento, "1970-03-14")
   assert.equal(patch.foto_url, "https://example.test/senado-fixture.jpg")
   assert.equal(patch.cargo_atual, "Senador(a)")
   assert.equal(patch.naturalidade, "Cidade Fixture/MA")
@@ -131,6 +132,22 @@ test("Senado: sem registro TSE 2026, perfil do Senado mantém o comportamento an
 // O Senado preenche CodigoPublicoNaLegAtual também para ex-senadores e
 // suplentes que já exerceram. Quem decide "senador hoje" é a lista oficial em
 // exercício; o fixture tem o código preenchido nos três casos abaixo.
+test("Senado: sentinela 1900-01-01 e data só com ano do perfil do Senado não viram data de nascimento", async () => {
+  const basicos = PERFIL_SENADO.DetalheParlamentar.Parlamentar.DadosBasicosParlamentar
+  const original = basicos.DataNascimento
+  try {
+    for (const placeholder of ["1900-01-01", "1970-01-01"]) {
+      basicos.DataNascimento = placeholder
+      const { patch, errors } = await perfilGravado({ foto_url: null, sq_candidato_2026: null })
+      assert.deepEqual(errors, [])
+      assert.equal("data_nascimento" in patch, false, placeholder)
+      assert.equal(patch.naturalidade, "Cidade Fixture/MA")
+    }
+  } finally {
+    basicos.DataNascimento = original
+  }
+})
+
 test("Senado: fora da lista em exercício, 'Senador(a)' gravado antes é limpo e o partido não muda", async () => {
   const { patch, errors } = await perfilGravado(
     { foto_url: null, sq_candidato_2026: null, cargo_atual: "Senador(a)" },

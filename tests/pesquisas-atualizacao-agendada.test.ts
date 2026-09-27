@@ -38,6 +38,7 @@ const {
   validarDocumentoDiffAgendado,
 } = require("../scripts/pesquisas-atualizacao-agendada/model") as typeof import("../scripts/pesquisas-atualizacao-agendada/model")
 const { listarAlvosMonitoramento } = require("../scripts/lib/pesquisas-monitoramento") as typeof import("../scripts/lib/pesquisas-monitoramento")
+const { coorteAtualizacaoDe } = require("../scripts/lib/coorte-atualizacao") as typeof import("../scripts/lib/coorte-atualizacao")
 
 const catalogosPermitidosTipados: CatalogosPermitidosExportType = CATALOGOS_PERMITIDOS
 const executarPromocaoTipado: ExecutarPromocaoAgendadaExportType = executarPromocaoAgendada
@@ -312,6 +313,27 @@ test("diff por candidato preserva o cenário quando o mesmo slug aparece mais de
   assert.doesNotMatch(result.summary, /cenário cenario-2.*40 -> 43/)
 })
 
+test("pesquisa não publica valor alterado de candidatura encerrada", () => {
+  const proposed = normalizedFromBaseline()
+  proposed.cenarios[0].resultados[0].value_percent += 3
+  const result = consolidarPropostasAgendadas({
+    matrix,
+    documents: [{ key: matrix[0].key, proposal: proposalDocument(validItem(proposed)) }],
+    catalogs,
+    generatedAt: "2026-08-26T12:00:00.000Z",
+    coorteAtualizacao: coorteAtualizacaoDe([{
+      candidato_id: "candidato-teste",
+      slug: "candidata-a",
+      fase_eleitoral: "nao_eleito",
+      fase_turno: 1,
+      atualizacao_encerrada_em: "2026-10-04",
+    }]),
+  })
+  assert.equal(result.diff.operations.length, 0)
+  assert.ok(result.poll_alerts.some((alert) => alert.reason === "closed_candidate_change"))
+  assert.match(result.summary, /closed_candidate_change/)
+})
+
 for (const fixture of fixtureCases.filter((entry) => entry.mode === "blocked")) {
   test(`${fixture.case_id} bloqueia toda promoção e aparece no resumo`, () => {
     const item: ItemPropostaAgendada = {
@@ -413,6 +435,29 @@ test("aplicação altera somente catálogo allowlisted e preserva metadados de r
     assert.equal(poll.publishable_by_default, baseline.publishable_by_default, "preferência da fonte permanece compatível com o scorecard; o dado continua indeterminado")
     assert.equal(poll.contratante?.value, baseline.contratante?.value)
     assert.equal(poll.provenance.route_class, baseline.provenance.route_class)
+  } finally {
+    rmSync(temp, { recursive: true, force: true })
+  }
+})
+
+test("apply revalida a coorte atual antes de escrever valores de candidatura", () => {
+  const proposed = normalizedFromBaseline()
+  proposed.cenarios[0].resultados[0].value_percent += 1
+  const result = consolidate(validItem(proposed))
+  const temp = mkdtempSync(resolve(tmpdir(), "pesquisas-refresh-coorte-"))
+  try {
+    writeCatalogs(temp)
+    assert.throws(() => aplicarOperacoesAgendadas(result.diff.operations, temp, {
+      coorteAtualizacao: coorteAtualizacaoDe([{
+        candidato_id: "candidato-teste",
+        slug: "candidata-a",
+        fase_eleitoral: "nao_eleito",
+        fase_turno: 1,
+        atualizacao_encerrada_em: "2026-10-04",
+      }]),
+    }), /operação desatualizada para candidatura encerrada/)
+    const after = JSON.parse(readFileSync(resolve(temp, catalogosPermitidosTipados[0]), "utf8")) as typeof catalogs.presidente
+    assert.equal(after.pesquisas[0].cenarios[0].resultados[0].value_percent, 40)
   } finally {
     rmSync(temp, { recursive: true, force: true })
   }

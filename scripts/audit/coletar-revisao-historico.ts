@@ -335,6 +335,7 @@ async function main(): Promise<void> {
   if (identityMode !== "default" && identityMode !== "official-only") throw new Error("--identity-mode inválido")
   const { receipts, partyReceipts, review } = await runHistoricoRevision({
     anos, profiles, manifest, checkedAt, falhaFonte: option("falha-fonte"), identityMode,
+    // coorte-atualizacao: isento (recorte pelo perfis.json, que exportar-perfis-publicos já filtra pela coorte)
     seed: JSON.parse(readFileSync(resolve(option("candidatos") ?? "data/candidatos.json"), "utf8")) as SeedCandidate[],
     senado: async (codigo) => senadoMode === "off"
       ? { status: "erro", url: `${SENADO_API}/senador/${codigo}/mandatos.json`, motivo: "consulta ao Senado desligada nesta rodada" }

@@ -24,6 +24,7 @@ import {
 } from "./tse-situacao-julgamento"
 import { registrarColeta, type EntradaColeta } from "./coleta-log"
 import { observeVerifiedCandidateChange } from "./verified-candidate-changes"
+import { isoBirthDate, isSentinelBirthDate } from "./data-nascimento"
 
 const DATA_DIR = resolve(process.cwd(), "data/tse-situacao")
 const AUDIT_PATH = resolve(process.cwd(), "scripts/tse-situacao-audit.json")
@@ -267,8 +268,10 @@ export function shouldSkipLowerPriorityInSameYear(
  *   reason mas NAO apaga o CPF antigo (guard fail-safe preservado).
  * - situacao_candidatura: so reescrita quando info.ano === pleitoCorrente.
  *   Anos historicos nao tocam o campo (convencao editorial da coorte 2026).
- * - demograficos (naturalidade, data_nascimento, etc): fill-only, so escreve
+ * - demograficos (naturalidade, genero, formacao etc): fill-only, so escreve
  *   quando DB esta null naquele campo.
+ * - data_nascimento: fill-only, exceto a linha do pleito corrente casada por
+ *   SQ (`sq-preloaded`), que corrige data divergente. Sentinela nunca entra.
  *
  * Preserva todos os guards do ingest anterior e ainda corrige o blast radius
  * de situacao_candidatura que bloqueava o Caminho 3 (apply real amplo).
@@ -357,9 +360,19 @@ export function buildIngestPayload(
   // que tenha cidade + UF juntos (Wikidata P19, Wikipedia infobox, etc).
   // Deliberadamente nao ha fallback de uf_nascimento aqui.
 
-  // Only fill if DB field is null (never overwrite curated data).
-  if (!before?.data_nascimento && info.data_nascimento) {
-    payload.data_nascimento = info.data_nascimento
+  // data_nascimento: o cadastro do pleito corrente, casado pelo SQ da própria
+  // inscrição, é a fonte da data (issue #472). Ele corrige data divergente que
+  // outra fonte tenha gravado antes (curadoria, Wikidata só com ano, sentinela
+  // 1900-01-01 do Senado). Linha de ano histórico ou casada por outro degrau
+  // só preenche campo vazio: âncora antiga pode ser de homônimo.
+  const nascimentoTse = isoBirthDate(info.data_nascimento)
+  const nascimentoAtual = isoBirthDate(before?.data_nascimento ?? null)
+  if (nascimentoTse && !isSentinelBirthDate(nascimentoTse)) {
+    if (!before?.data_nascimento) {
+      payload.data_nascimento = nascimentoTse
+    } else if (nascimentoAtual !== nascimentoTse && info.ano === pleitoCorrente && info.match_method === "sq-preloaded") {
+      payload.data_nascimento = nascimentoTse
+    }
   }
   if (!before?.genero && info.genero) {
     payload.genero = info.genero

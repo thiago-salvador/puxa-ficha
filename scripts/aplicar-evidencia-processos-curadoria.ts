@@ -953,6 +953,7 @@ export function exigirVazioSemLinhasPublicadas(planos: PlanoRegistro[], slugsCom
 }
 
 async function slugsComLinhasPublicadas(slugs: string[]): Promise<Set<string>> {
+  // coorte-atualizacao: isento (preflight mapeia ids apenas dos slugs presentes no plano explícito)
   const { data: candidatos, error } = await supabase.from("candidatos").select("id,slug").in("slug", slugs)
   if (error) throw new Error(`preflight: nao foi possivel ler candidatos: ${error.message}`)
   const slugPorId = new Map((candidatos ?? []).map((linha) => [String(linha.id), String(linha.slug)]))
@@ -1242,6 +1243,7 @@ async function executarPreflightRemoto(
   evidencia: EvidenciaFinal,
 ): Promise<ResultadoPreflight & { existentes: LinhaExistentePreflight[] }> {
   const slugs = planos.map((plano) => plano.slug)
+  // coorte-atualizacao: isento (valida publicação apenas dos slugs do plano explícito)
   const { data, error } = await supabase.from("candidatos_publico").select("slug").in("slug", slugs)
   if (error) throw new Error(`preflight: nao foi possivel validar candidatos_publico: ${error.message}`)
   const slugsPublicos = (data ?? []).map((linha) => texto(linha.slug, "preflight.candidatos_publico.slug"))

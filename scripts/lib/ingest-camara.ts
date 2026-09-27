@@ -13,6 +13,7 @@ import {
 import { contarPorNatureza } from "@/lib/proposicao-natureza"
 import { FONTE_CAMARA_PROPOSICOES, registrarColeta, type EntradaColeta } from "./coleta-log"
 import { loadCandidatosPublicos, loadVerificacaoCampos, resolveCandidatoId } from "./helpers-db"
+import { aplicarCoorteAtualizacao } from "./coorte-atualizacao"
 import { deveProcessarAcervoLegislativo, reciboAcervoCongelado } from "./acervo-legislativo-congelado"
 import { fetchJSON, sleep } from "./helpers"
 import { CAMARA_API, resultadoSemAlcance, sondarAlcanceCamara, type AlcanceCamara } from "./camara-alcance"
@@ -22,6 +23,7 @@ import { sanitizePublicTextOrThrow } from "../../src/lib/public-text"
 import { log, warn, error } from "./logger"
 import { classificarVotacao, type ClassificacaoVotacao } from "./votacao-classificacao"
 import type { IngestResult } from "./types"
+import { secondarySourceBirthDate } from "./data-nascimento"
 
 const API = CAMARA_API
 
@@ -321,7 +323,8 @@ export function atualizacoesPerfilCamara(
   if (dep.municipioNascimento && dep.ufNascimento) {
     updates.naturalidade = `${dep.municipioNascimento}/${dep.ufNascimento}`
   }
-  if (dep.dataNascimento) updates.data_nascimento = dep.dataNascimento
+  const nascimento = secondarySourceBirthDate(dep.dataNascimento)
+  if (nascimento) updates.data_nascimento = nascimento
   return updates
 }
 
@@ -1190,6 +1193,7 @@ async function countProjetosLeiForCandidato(
     .from("projetos_lei")
     .select("*", { count: "exact", head: true })
     .eq("candidato_id", candidatoId)
+    .is("despublicado_em", null)
   if (fonte) query = query.eq("fonte", fonte)
   const { count, error } = await query
   if (error) {
@@ -1225,7 +1229,10 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
     )
   }
 
-  const candidatos = (opts.candidateRows ? [...opts.candidateRows] : await loadCandidatosPublicos()).filter((cand) =>
+  const roster = opts.candidateRows
+    ? await aplicarCoorteAtualizacao([...opts.candidateRows], "camara-injetados")
+    : await loadCandidatosPublicos()
+  const candidatos = roster.filter((cand) =>
     selectedSlugs ? selectedSlugs.has(cand.slug) : true
   )
   const verificacaoPorSlug = await loadVerificacaoCampos(candidatos.map((cand) => cand.slug))

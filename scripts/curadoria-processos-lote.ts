@@ -31,6 +31,7 @@ import { normalizarCpfTse } from "./lib/cpf"
 import { parseCSV } from "./lib/parse-csv-local"
 import { supabase } from "./lib/supabase"
 import { stripAccents } from "../src/lib/strip-accents"
+import { carregarCoorteAtualizacao, filtrarCoorteAtualizacao } from "./lib/coorte-atualizacao"
 
 const DJEN = "https://comunicaapi.pje.jus.br"
 const DATAJUD = "https://api-publica.datajud.cnj.jus.br"
@@ -593,6 +594,7 @@ async function lerCoorteAtualParaDryRun(
   margemDias = 4,
   cargo: string | null = null,
 ): Promise<CoorteAtualPreflight> {
+  // coorte-atualizacao: aplica (recorte abaixo, depois do teto de paginação)
   const { data, error } = await supabase.from("candidatos")
     .select("id,slug,nome_completo,nome_urna,cargo_disputado,cargo_atual,estado,partido_sigla,biografia,sq_candidato_2026")
     .eq("publicavel", true).neq("status", "removido").order("slug").limit(1000)
@@ -600,7 +602,11 @@ async function lerCoorteAtualParaDryRun(
   const coorte = (data ?? []) as CandidatoBanco[]
   if (coorte.length === 0) throw new Error("preflight candidatos: coorte publica vazia")
   assertPreflightNotTruncated(coorte.length, 1000, "candidatos")
-  const candidatos = cargo ? coorte.filter((c) => c.cargo_disputado === cargo) : coorte
+  const candidatos = filtrarCoorteAtualizacao(
+    cargo ? coorte.filter((c) => c.cargo_disputado === cargo) : coorte,
+    await carregarCoorteAtualizacao(),
+    "processos",
+  )
   const { data: recibosData, error: recibosError } = await supabase.from("coleta_log_ultima")
     .select("candidato_id,alvo,resultado,executado_em,escopo,fonte")
     .eq("fonte", "processos-curadoria").eq("escopo", "candidato")
@@ -2110,12 +2116,18 @@ async function main(): Promise<void> {
             return [numero, lote]
           }))
       const slugs = [...lotes.values()].flatMap((lote) => lote.map((c) => c.slug))
+      // coorte-atualizacao: aplica
       const { data, error } = await supabase.from("candidatos")
         .select("id,slug,nome_completo,nome_urna,cargo_disputado,cargo_atual,estado,partido_sigla,biografia,sq_candidato_2026")
         .in("slug", slugs)
       if (error) throw new Error(error.message)
-      const candidatosBanco = data as CandidatoBanco[]
+      const candidatosBanco = filtrarCoorteAtualizacao(
+        (data ?? []) as CandidatoBanco[],
+        await carregarCoorteAtualizacao(),
+        "processos",
+      )
       const banco = new Map(candidatosBanco.map((c) => [c.slug, c]))
+      // coorte-atualizacao: isento (seed fornece identidade só às linhas filtradas do lote)
       const seeds = new Map((JSON.parse(readFileSync(resolve("data/candidatos.json"), "utf8")) as SeedCandidato[]).map((c) => [c.slug, c]))
       const identidadesTse = await carregarIdentidadesTse(candidatosBanco, seeds, cache)
       const inventario = await fetchJson<InventarioTribunais[]>(`${DJEN}/api/v1/comunicacao/tribunal`)
