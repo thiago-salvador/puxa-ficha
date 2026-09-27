@@ -5,16 +5,32 @@ import { createClient } from "@supabase/supabase-js"
 import { SOURCES, consolidarFalas, descobrirLinks, extrairArtigo, sha256, type CandidatoFalas, type EvidenciaArtigo } from "./lib/falas-monitoramento"
 import type { CatalogoFalas } from "../src/lib/falas-candidatos"
 import { medirCobertura } from "./lib/falas-cobertura"
+import { carregarCoorteAtualizacao, filtrarCoorteAtualizacao, type CoorteAtualizacao } from "./lib/coorte-atualizacao"
 
-export async function carregarCandidatos(): Promise<CandidatoFalas[]> {
+function clientePublico() {
   for (const file of [".env.local", ".env"]) if (existsSync(file)) process.loadEnvFile(file)
   const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL
   const key = process.env.SUPABASE_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   if (!url || !key) throw new Error("Configuração pública do Supabase ausente")
   // Public view and public key only. This collector has no database write path.
-  const client = createClient(url, key, { auth: { persistSession: false } })
+  return createClient(url, key, { auth: { persistSession: false } })
+}
+
+/** Coorte de atualização lida pela view pública, com a mesma chave anon. */
+export async function carregarCoorteAtualizacaoPublica(): Promise<CoorteAtualizacao> {
+  return carregarCoorteAtualizacao(clientePublico())
+}
+
+/**
+ * Cadastro público completo de Presidente e Governador. É a fonte dos grupos
+ * de homônimos das checagens, então NÃO recorta a coorte de atualização: quem
+ * decide os alvos da coleta é `filtrarCoorteAtualizacao` no chamador.
+ */
+export async function carregarCandidatos(): Promise<CandidatoFalas[]> {
+  const client = clientePublico()
   const roster: CandidatoFalas[] = []
   for (let page = 0; page < 20; page++) {
+    // coorte-atualizacao: isento (cadastro completo para homônimos; os alvos passam por filtrarCoorteAtualizacao)
     const result = await client.from("candidatos_publico")
       .select("id,slug,nome_urna,nome_completo,cargo_disputado,estado")
       .in("cargo_disputado", ["Presidente", "Governador"]).order("id")
@@ -122,7 +138,8 @@ async function main() {
   mkdirSync(resolve(output, "evidence"), { recursive: true })
   try {
     const { criarClienteHttpMonitoramento } = await import("./lib/pesquisas-monitoramento-rede")
-    const roster = await carregarCandidatos()
+    // coorte-atualizacao: aplica (falas só monitora candidaturas ainda em atualização)
+    const roster = filtrarCoorteAtualizacao(await carregarCandidatos(), await carregarCoorteAtualizacaoPublica(), "falas")
     writeFileSync(resolve(output, "roster.json"), JSON.stringify(roster, null, 2) + "\n")
     if (rosterOnly) {
       console.log(JSON.stringify({ status: "roster_refreshed", candidates: roster.length, output: resolve(output, "roster.json") }))

@@ -227,6 +227,7 @@
     "audit:destaques:tse-8:provar": "bash scripts/audit/provar-migration-destaques-trajetoria-tse-8.sh",
     "audit:votacoes:senado:provar": "bash scripts/audit/provar-votacoes-senado-exatas.sh",
     "pesquisas:importar": "node --conditions react-server --import tsx scripts/pesquisas-importar-manual.ts",
+    "resultados:tse": "node --import tsx scripts/resultados-tse-fase.ts",
     "pesquisas:economia:preflight": "node --import tsx scripts/pesquisas-atualizacao-agendada/preflight.ts",
     "pesquisas:economia:scan": "node --import tsx scripts/pesquisas-atualizacao-agendada/incremental.ts scan",
     "pesquisas:economia:receipt": "node --import tsx scripts/pesquisas-atualizacao-agendada/incremental.ts acknowledge",

@@ -28,6 +28,7 @@ from (
     'verificacao_campos', c.verificacao_campos,
     'ultima_atualizacao', c.ultima_atualizacao
   ) as linha
+  -- coorte-atualizacao: isento (validade de afirmação pública; ficha congelada no ar também precisa estar correta)
   from candidatos c
   -- So o que o leitor ve. Ficha nao publicavel pode ter afirmacao velha sem
   -- mentir para ninguem; publicada, a mesma afirmacao vira promessa ao publico.

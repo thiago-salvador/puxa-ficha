@@ -8,6 +8,7 @@ import {
 } from "@/lib/api"
 import { SITE_ORIGIN } from "@/lib/metadata"
 import { verifiedViceStatus } from "@/lib/vice-official-status"
+import { notaAtualizacaoEncerrada } from "@/lib/coorte-atualizacao"
 import type { CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
 import { SectionDivider } from "@/components/SectionHeader"
 import { Footer } from "@/components/Footer"
@@ -188,6 +189,11 @@ export async function CandidatoFichaView({
   const situacaoCandidaturaLabel = ficha.situacao_candidatura
     ? sanitizePtBrText(ficha.situacao_candidatura)
     : ""
+  // Coorte de atualização: ficha que saiu da disputa continua no ar, congelada,
+  // com a data da última atualização. Sem fase gravada, nenhuma nota.
+  const notaAtualizacao = ficha.fase_eleitoral_2026
+    ? notaAtualizacaoEncerrada({ cargo_disputado: ficha.cargo_disputado, ...ficha.fase_eleitoral_2026 })
+    : null
   const heroMetaParts = [
     cargoAtualLabel || null,
     ficha.naturalidade,
@@ -398,6 +404,14 @@ export async function CandidatoFichaView({
               >
                 Situação: {situacaoCandidaturaLabel}
               </span>
+            )}
+            {notaAtualizacao && (
+              <p
+                data-pf-update-closed={ficha.fase_eleitoral_2026?.atualizacao_encerrada_em ?? undefined}
+                className="mt-1.5 w-fit max-w-full rounded-md border border-border bg-secondary px-2.5 py-1 text-[length:var(--text-eyebrow)] font-semibold text-secondary-foreground"
+              >
+                {notaAtualizacao}
+              </p>
             )}
 
             <div className="mt-1.5 flex min-w-0 flex-col gap-3 sm:mt-2 lg:flex-row lg:flex-wrap lg:items-end lg:gap-5">

@@ -208,6 +208,7 @@ async function carregarCandidatoIds(): Promise<Map<string, string>> {
 
   const mapa = new Map<string, string>()
   try {
+    // coorte-atualizacao: isento (mapa slug para id da telemetria)
     const { data, error } = await supabase.from("candidatos").select("id, slug")
     if (error) throw new Error(error.message)
     for (const row of (data ?? []) as { id: string; slug: string }[]) {

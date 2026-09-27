@@ -115,7 +115,11 @@ jobs:
         run: |
           set -euo pipefail
           umask 077
-          node --import tsx scripts/audit/exportar-perfis-publicos.ts --out="$RUNNER_TEMP/perfis.json" | tee -a "$RUNNER_TEMP/resumo.txt"
+          # Coorte de atualização: com o snapshot de recibos, fichas congeladas
+          # depois do turno ficam fora de perfis.json e de toda a coleta.
+          coorte=()
+          if [ -s "$RUNNER_TEMP/recibos-atuais.json" ]; then coorte=(--recibos="$RUNNER_TEMP/recibos-atuais.json"); fi
+          node --import tsx scripts/audit/exportar-perfis-publicos.ts --out="$RUNNER_TEMP/perfis.json" "${coorte[@]}" | tee -a "$RUNNER_TEMP/resumo.txt"
       - name: Exigir anos canônicos para gravar
         if: env.COBERTURA_GRAVAR == 'true'
         run: |
@@ -222,7 +226,11 @@ jobs:
         run: |
           set -euo pipefail
           umask 077
-          node --import tsx scripts/audit/exportar-perfis-publicos.ts --out="$RUNNER_TEMP/perfis.json" | tee -a "$RUNNER_TEMP/resumo.txt"
+          # Coorte de atualização: com o snapshot de recibos, fichas congeladas
+          # depois do turno ficam fora de perfis.json e de toda a coleta.
+          coorte=()
+          if [ -s "$RUNNER_TEMP/recibos-atuais.json" ]; then coorte=(--recibos="$RUNNER_TEMP/recibos-atuais.json"); fi
+          node --import tsx scripts/audit/exportar-perfis-publicos.ts --out="$RUNNER_TEMP/perfis.json" "${coorte[@]}" | tee -a "$RUNNER_TEMP/resumo.txt"
       # IDs exatos das votações-chave da Câmara, em transação somente leitura.
       # Sem eles, votos da Câmara ficam `indeterminado` (o endpoint por
       # deputado é recusado de propósito pelo ingest).

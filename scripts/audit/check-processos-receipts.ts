@@ -1,5 +1,7 @@
 import { readFileSync } from "node:fs"
 
+import { naCoorteAtualizacao } from "../../src/lib/coorte-atualizacao"
+
 export const PROCESSOS_RECEIPT_SOURCE = "processos-curadoria"
 export const PROCESSOS_RECEIPT_SCOPE = "candidato"
 export const DEFAULT_MAX_AGE_DAYS = 14
@@ -15,6 +17,8 @@ export type CoverageSnapshotRow = {
   receipt_result?: string | null
   receipt_volume?: number | null
   has_receipt?: boolean | null
+  /** Coorte de atualização: data em que a coleta da ficha foi encerrada. */
+  atualizacao_encerrada_em?: string | null
 }
 
 export type ProcessosReceiptState =
@@ -24,6 +28,7 @@ export type ProcessosReceiptState =
   | "indeterminado"
   | "encontrado"
   | "vazio_confirmado"
+  | "atualizacao_encerrada"
 
 export type ProcessosReceiptReport = {
   ok: boolean
@@ -46,6 +51,7 @@ const STATES: readonly ProcessosReceiptState[] = [
   "indeterminado",
   "encontrado",
   "vazio_confirmado",
+  "atualizacao_encerrada",
 ]
 
 function blankSummary(): Record<ProcessosReceiptState, number> {
@@ -73,10 +79,25 @@ function rowShape(value: unknown): CoverageSnapshotRow | null {
     receipt_result: stringOrNull(row.receipt_result),
     receipt_volume: typeof row.receipt_volume === "number" ? row.receipt_volume : null,
     has_receipt: typeof row.has_receipt === "boolean" ? row.has_receipt : null,
+    atualizacao_encerrada_em: stringOrNull(row.atualizacao_encerrada_em),
   }
 }
 
+/**
+ * Ficha congelada pela coorte de atualização: sem recibo ou recibo vencido
+ * viram `atualizacao_encerrada` (congelado), não pendência. Recibo inválido
+ * continua inválido: congelar não esconde erro de dado.
+ */
 function receiptState(row: CoverageSnapshotRow, now: Date, maxAgeDays: number): { state: ProcessosReceiptState; invalid: boolean } {
+  const result = receiptStateBase(row, now, maxAgeDays)
+  if (!naCoorteAtualizacao({ atualizacao_encerrada_em: row.atualizacao_encerrada_em ?? null })
+      && !result.invalid && (result.state === "sem_recibo" || result.state === "stale")) {
+    return { state: "atualizacao_encerrada", invalid: false }
+  }
+  return result
+}
+
+function receiptStateBase(row: CoverageSnapshotRow, now: Date, maxAgeDays: number): { state: ProcessosReceiptState; invalid: boolean } {
   const hasAnyReceiptField = row.has_receipt === true
     || (row.receipt_candidate_id !== null && row.receipt_candidate_id !== undefined)
     || (row.receipt_slug !== null && row.receipt_slug !== undefined)
