@@ -771,6 +771,13 @@ export function partyWritesAllowed(apply: boolean, dryRun: boolean): boolean {
   return apply && !dryRun
 }
 
+export function assertPartyInsertCardinality(written: number, planned: number): number {
+  if (written !== planned) {
+    throw new Error(`mudancas_partido: ${written} linhas gravadas para ${planned} planejadas`)
+  }
+  return written
+}
+
 /** Run-shaped API for integrations; output is read-only receipts for each selected candidate. */
 export async function executarColetaHistoricoPartidarioParlamentar(
   candidates: readonly CandidatoConfig[],
@@ -992,10 +999,7 @@ export async function ingestPartidosParlamentares(options: OpcoesColetaPartidosP
               },
               () => supabase.from("mudancas_partido").insert(pendingRows).select("id"),
             )
-            if (inserted.length !== pendingRows.length) {
-              throw new Error(`mudancas_partido: ${inserted.length} linhas gravadas para ${pendingRows.length} planejadas`)
-            }
-            result.rows_upserted = inserted.length
+            result.rows_upserted = assertPartyInsertCardinality(inserted.length, pendingRows.length)
             if (inserted.length) result.tables_updated.push("mudancas_partido")
           }
         }

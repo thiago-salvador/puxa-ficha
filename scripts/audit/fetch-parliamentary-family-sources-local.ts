@@ -398,6 +398,23 @@ export function capturePageIsComplete(value: unknown, rowCount: number, page: nu
         if (Number.isInteger(lastPage) && lastPage > 0) return currentPage === lastPage
       } catch { return false }
     }
+    const onlySelf = links.length > 0 && links.every((link) => link.rel === "self")
+    if (onlySelf) {
+      const parsedUrl = new URL(requestUrl)
+      const currentPage = Number(parsedUrl.searchParams.get("pagina") ?? page)
+      const pageSize = Number(parsedUrl.searchParams.get("itens") ?? 100)
+      if (!Number.isSafeInteger(currentPage) || currentPage < 1 || !Number.isSafeInteger(pageSize) || pageSize < 1 || rowCount >= pageSize) return false
+      const nestedMeta = root.paginacao && typeof root.paginacao === "object" ? root.paginacao as Record<string, unknown> : {}
+      const declaredValues = [root.totalRegistros, root.total, root.totalRecords, nestedMeta.totalRegistros, nestedMeta.total]
+        .filter((raw) => raw !== undefined && raw !== null)
+      if (rowCount === 0 && declaredValues.length === 0) return false
+      if (declaredValues.length === 0) return true
+      const declared = declaredValues.map((raw) => typeof raw === "string" && /^\d+$/.test(raw.trim()) ? Number(raw) : raw)
+      if (declared.some((raw) => typeof raw !== "number" || !Number.isSafeInteger(raw) || raw < 0) || new Set(declared).size !== 1) return false
+      const total = declared[0] as number
+      return (currentPage - 1) * pageSize + rowCount === total && currentPage * pageSize >= total
+    }
+    if (links.length > 0) return false
   }
   const nestedMeta = root.paginacao && typeof root.paginacao === "object" ? root.paginacao as Record<string, unknown> : {}
   const declared = [root.totalRegistros, root.total, root.totalRecords, nestedMeta.totalRegistros, nestedMeta.total]

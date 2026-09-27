@@ -6,6 +6,7 @@ import path from "node:path"
 import test from "node:test"
 
 import { assertExpenseEmptinessCoversMandates, collectParliamentaryFamilyReceipts, compactPublicHash, mapCompactPublicRows, mandateYears, openParliamentaryReceipts, projectParliamentaryFamilyApply, validateParliamentaryDatabaseReadback, verifySenadoLegislatureScope, type ParliamentarySourceObservation } from "../scripts/audit/collect-parliamentary-family-receipts-local"
+import { capturePageIsComplete } from "../scripts/audit/fetch-parliamentary-family-sources-local"
 
 test("readback DB valida SHA/totais e IDs compactos só mapeiam UUID único", () => {
   const database = {
@@ -109,6 +110,45 @@ function camaraVoteFixture(targetVotes: boolean, emptyNominalList = false, targe
   }
   return { dir, observation }
 }
+
+test("lista nominal Câmara curta com apenas self é completa, mas página cheia ou total divergente falha fechada", () => {
+  // Payload real consultado em 2026-09-27: https://dadosabertos.camara.leg.br/api/v2/votacoes/2611313-31/votos
+  // Mantém um registro não vazio e data/tipo de voto; remove toda identidade do parlamentar.
+  const url = "https://dadosabertos.camara.leg.br/api/v2/votacoes/2611313-31/votos?itens=100&pagina=1"
+  const payload = JSON.parse(readFileSync(path.join(__dirname, "fixtures/camara-votos-self-only-trimmed.json"), "utf8")) as { dados: unknown[]; links: unknown[] }
+  assert.equal(payload.dados.length, 1)
+  assert.equal(capturePageIsComplete(payload, payload.dados.length, 1, url), true)
+  assert.equal(capturePageIsComplete({ ...payload, dados: Array.from({ length: 100 }, () => ({})) }, 100, 1, url), false)
+  assert.equal(capturePageIsComplete({ ...payload, total: 2 }, 1, 1, url), false)
+  assert.equal(capturePageIsComplete({ ...payload, total: "unknown" }, 1, 1, url), false)
+  assert.equal(capturePageIsComplete({ ...payload, dados: [] }, 0, 1, url), false)
+  assert.equal(capturePageIsComplete({ ...payload, links: [{ rel: "self" }, { rel: "unknown" }] }, 1, 1, url), false)
+})
+
+test("recibo de votos Câmara confere paginação pelo total bruto antes de filtrar deputado", () => {
+  const { dir, observation } = camaraVoteFixture(true)
+  try {
+    const source = JSON.parse(readFileSync(observation.source.source_path, "utf8")) as {
+      derived_from_pages: Array<{ path: string; url: string; bytes: number; sha256: string; complete: boolean }>
+    }
+    const page = source.derived_from_pages[0]!
+    const original = JSON.parse(readFileSync(page.path, "utf8")) as { dados: Array<Record<string, unknown>> }
+    const otherVote = { deputado_: { id: 77777, nome: "Outro deputado" }, tipoVoto: "Não" }
+    const bytes = Buffer.from(JSON.stringify({ dados: [original.dados[0], ...Array.from({ length: 99 }, () => otherVote)], links: [{ rel: "self" }] }))
+    writeFileSync(page.path, bytes)
+    page.bytes = bytes.length
+    page.sha256 = createHash("sha256").update(bytes).digest("hex")
+    page.complete = true
+    writeFileSync(observation.source.source_path, JSON.stringify(source))
+    const revision = observation.source.source_revisions?.find((item) => item.url === page.url)
+    assert.ok(revision)
+    revision.sha256 = page.sha256
+
+    const result = collectParliamentaryFamilyReceipts([candidate], [observation])
+    assert.equal(result.receipts.length, 0)
+    assert.match(result.errors.join("; "), /marcador de exaustão diverge da resposta bruta/)
+  } finally { rmSync(dir, { recursive: true, force: true }) }
+})
 
 test("votos Câmara reconciliam deputado_.id, ID oficial da votação e voto público", () => {
   const { dir, observation } = camaraVoteFixture(true)

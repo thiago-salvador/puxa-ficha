@@ -1,7 +1,15 @@
 import assert from "node:assert/strict"
+import { readFileSync } from "node:fs"
 import test from "node:test"
 import { agregarDespesasCeapsCsv, ceapsNamesForSenator, ceapsReceiptOutcome, classifyCeapsLegacyRow, fetchCeapsSnapshot, parseCeapsCsv, withinCeapsUnpublishCaps } from "../scripts/lib/ingest-ceaps-senado"
 import { parseCeapsRows } from "../scripts/audit/fetch-parliamentary-family-sources-local"
+
+test("CEAPS: score de identidade sombra fica só no arquivo privado", () => {
+  const source = readFileSync(new URL("../scripts/lib/ingest-ceaps-senado.ts", import.meta.url), "utf8")
+  assert.match(source, /appendIdentityShadow\(cand, sourceName, p\)/)
+  assert.match(source, /p_mesma_pessoa: p/)
+  assert.doesNotMatch(source, /avaliacao_identidade_sombra|jev-noul-shadow/)
+})
 
 const HEADER = '"ULTIMA ATUALIZACAO";"26/09/2026 02:02"\r\n"ANO";"MES";"SENADOR";"TIPO_DESPESA";"CNPJ_CPF";"FORNECEDOR";"DOCUMENTO";"DATA";"DETALHAMENTO";"VALOR_REEMBOLSADO";"COD_DOCUMENTO"\r\n'
 

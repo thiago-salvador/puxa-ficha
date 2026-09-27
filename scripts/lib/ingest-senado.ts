@@ -525,7 +525,7 @@ export function planejarReconciliacaoAutoriaLegada<T extends LegacySenadoProject
   legacyRows: readonly T[]
   officialRows: readonly SenadoProjectIdentity[]
   sourceComplete: boolean
-  noCompetingHouseIdentity: boolean
+  noCompetingHouseIdentity?: boolean
   senateProvenanceVerified?: boolean
 }): { confirmed: Array<{ legacy: T; official: SenadoProjectIdentity }>; absent: T[]; review: T[] } {
   const confirmed: Array<{ legacy: T; official: SenadoProjectIdentity }> = []
@@ -548,6 +548,11 @@ export function planejarReconciliacaoAutoriaLegada<T extends LegacySenadoProject
           ? normalizeProjectTupleValue(row.ementa) !== "" && normalizeProjectTupleValue(official.ementa) === normalizeProjectTupleValue(row.ementa)
           : official.ano === row.ano),
       ) : []
+      // A tuple is not a cross-house identity key: a former deputy can have
+      // the same PL number/year in both houses. Only use it when the roster
+      // explicitly rules out a Câmara identity; otherwise require the official
+      // Senado CodigoMateria above or leave the legacy row for review.
+      if (tupleMatches.length > 0 && !input.noCompetingHouseIdentity) { review.push(row); continue }
       if (tupleMatches.length === 1) { confirmed.push({ legacy: row, official: tupleMatches[0]! }); continue }
       if (tupleMatches.length > 1) { review.push(row); continue }
     }
@@ -927,7 +932,10 @@ export async function ingestSenado(options?: IngestSenadoOptions | string[]): Pr
           result.errors.push(...votos.erros)
           await sleep(500, signal)
 
-          const autorias = await ingestAutorias(cand.ids.senado!, candidatoId, cand.slug, context, false)
+          // `ids.camara: null` also means the correct ID may be unknown. No
+          // independent proof of no competing Câmara identity is available in
+          // this seed, so tuple-only legacy matches remain in review.
+          const autorias = await ingestAutorias(cand.ids.senado!, candidatoId, cand.slug, context)
           signal.throwIfAborted()
           // Vistoria do PR #141: recusa que fica só no log de texto é escrita
           // perdida com trilha estruturada dizendo sucesso. Vai para errors.

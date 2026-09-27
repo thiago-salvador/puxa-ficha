@@ -19,6 +19,7 @@ import { publicFamilyPayloadSha256 } from "./lib/coverage-source-proof"
 import { parseSenadoLegislatureRoster, SENADO_EXPENSE_LEGISLATURES, senadoLegislatureRosterUrl } from "../lib/senado-legislature-roster"
 import { normalizeForMatch } from "../lib/normalize-for-match"
 import { stripAccents } from "../../src/lib/strip-accents"
+import { capturePageIsComplete } from "./fetch-parliamentary-family-sources-local"
 
 export const PARLIAMENTARY_FAMILIES = [
   "projetos_lei",
@@ -583,11 +584,15 @@ function reconstructFromRawPages(bundle: Record<string, unknown>, observation: P
     } else rows.push(...pageRows)
 
     if (observation.house === "camara") {
-      const pageRoot = object(value)
-      const hasNext = Array.isArray(pageRoot?.links)
-        ? (pageRoot!.links as unknown[]).some((link) => object(link)?.rel === "next")
-        : pageRows.length >= 100
-      if (page.complete === hasNext) throw new Error("marcador de exaustão diverge da resposta bruta")
+      const links = object(value)?.links
+      const rawRows = object(value)?.dados
+      const pageItemCount = Array.isArray(rawRows) ? rawRows.length : pageRows.length
+      const expectedComplete = Array.isArray(links) && links.length > 0
+        ? capturePageIsComplete(value, pageItemCount, page.page, page.url)
+        : pageItemCount < 100
+      if (page.complete !== expectedComplete) {
+        throw new Error("marcador de exaustão diverge da resposta bruta")
+      }
     } else if (!page.complete) throw new Error("página Senado/CEAPS sem marcador de exaustão")
   }
   for (const group of groups.values()) {

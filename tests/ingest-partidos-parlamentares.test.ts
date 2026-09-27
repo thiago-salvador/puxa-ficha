@@ -14,6 +14,7 @@ import {
   jevShadowEnv,
   JEV_SCRIPT_SHA256_PIN_PARTIDOS,
   partyWritesAllowed,
+  assertPartyInsertCardinality,
   mesmaJanelaMudancaPartidaria,
   normalizePartyForTimeline,
   RENOMEACOES_PARTIDARIAS_OFICIAIS,
@@ -201,6 +202,11 @@ test("party history writes require explicit apply and a non-dry-run context", ()
   assert.equal(partyWritesAllowed(false, false), false)
   assert.equal(partyWritesAllowed(true, true), false)
   assert.equal(partyWritesAllowed(true, false), true)
+})
+
+test("party insert cardinality accepts full writes and rejects partial writes", () => {
+  assert.equal(assertPartyInsertCardinality(3, 3), 3)
+  assert.throws(() => assertPartyInsertCardinality(2, 3), /2 linhas gravadas para 3 planejadas/)
 })
 
 test("party identity shadow pins the helper and passes only TypeSafe key and PATH", () => {

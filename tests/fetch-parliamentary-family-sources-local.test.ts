@@ -68,9 +68,12 @@ test("official fetch retries with User-Agent, checks content length, and Cota 20
   assert.throws(() => validateCotaYearRowCount(new Map(), 2025), /contagem anual de linhas parlamentares inválida/)
 })
 
-test("fetch-to-completeness requires declared total or a consistent last link", () => {
+test("fetch-to-completeness accepts self-only short pages and otherwise requires exhaustion proof", () => {
   const short200 = { dados: Array.from({ length: 3 }, (_, i) => ({ id: i + 1 })), links: [{ rel: "self", href: "?pagina=1" }] }
-  assert.equal(capturePageIsComplete(short200, 3, 1, "https://example.invalid/api?itens=100&pagina=1"), false)
+  assert.equal(capturePageIsComplete(short200, 3, 1, "https://example.invalid/api?itens=100&pagina=1"), true)
+  assert.equal(capturePageIsComplete({ ...short200, total: 3 }, 3, 1, "https://example.invalid/api?itens=100&pagina=1"), true)
+  assert.equal(capturePageIsComplete({ ...short200, total: 4 }, 3, 1, "https://example.invalid/api?itens=100&pagina=1"), false)
+  assert.equal(capturePageIsComplete({ ...short200, dados: Array.from({ length: 100 }) }, 100, 1, "https://example.invalid/api?itens=100&pagina=1"), false)
   const endsHere = { dados: [{ id: 1 }], links: [
     { rel: "self", href: "https://example.invalid/api?itens=100&pagina=2" },
     { rel: "last", href: "https://example.invalid/api?itens=100&pagina=2" },

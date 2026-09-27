@@ -103,7 +103,49 @@ test("proposições do Senado reconciliam legado só com ID oficial e lista comp
   assert.equal(partial.absent.length, 0)
   assert.deepEqual(partial.review.map((row) => row.id), legacyRows.map((row) => row.id))
   const competingHouse = planejarReconciliacaoAutoriaLegada({ legacyRows, officialRows, sourceComplete: true, noCompetingHouseIdentity: false })
-  assert.deepEqual(competingHouse.confirmed.map(({ legacy }) => legacy.id), ["confirmed-id", "confirmed-tuple"])
+  assert.deepEqual(competingHouse.confirmed.map(({ legacy }) => legacy.id), ["confirmed-id"])
   assert.equal(competingHouse.absent.length, 0)
-  assert.deepEqual(competingHouse.review.map((row) => row.id), ["absent", "unknown", "ambiguous"])
+  assert.deepEqual(competingHouse.review.map((row) => row.id), ["confirmed-tuple", "absent", "unknown", "ambiguous"])
+})
+
+test("match tipo/número/ano não identifica legado quando pode haver identidade concorrente da Câmara", () => {
+  const legacyRows = [
+    { id: "same-tuple", proposicao_id_api: null, fonte: null, tipo: "PL", numero: "1234", ano: 2019, ementa: "Ementa antiga" },
+    { id: "same-official-id", proposicao_id_api: "42", fonte: null, tipo: "PL", numero: "1234", ano: 2019 },
+  ]
+  const officialRows = [
+    { id: "42", tipo: "PL", numero: "1234", ano: 2019, ementa: "Ementa oficial" },
+  ]
+
+  const competingHouse = planejarReconciliacaoAutoriaLegada({
+    legacyRows,
+    officialRows,
+    sourceComplete: true,
+    noCompetingHouseIdentity: false,
+  })
+  assert.deepEqual(competingHouse.confirmed.map(({ legacy }) => legacy.id), ["same-official-id"])
+  assert.deepEqual(competingHouse.review.map(({ id }) => id), ["same-tuple"])
+
+  const noKnownCompetingHouse = planejarReconciliacaoAutoriaLegada({
+    legacyRows: [legacyRows[0]!],
+    officialRows,
+    sourceComplete: true,
+    noCompetingHouseIdentity: true,
+  })
+  assert.deepEqual(noKnownCompetingHouse.confirmed.map(({ legacy }) => legacy.id), ["same-tuple"])
+})
+
+test("ID Câmara null ou desconhecido não libera reconciliação por tupla sem prova independente", () => {
+  const legacy = { id: "unknown-house", proposicao_id_api: null, fonte: null, tipo: "PL", numero: "1234", ano: 2019 }
+  const officialRows = [{ id: "42", tipo: "PL", numero: "1234", ano: 2019, ementa: "Ementa oficial" }]
+
+  // The seed uses null both for no known ID and for a potentially unknown ID.
+  // With no positive proof supplied, the planner must default to review.
+  const result = planejarReconciliacaoAutoriaLegada({
+    legacyRows: [legacy],
+    officialRows,
+    sourceComplete: true,
+  })
+  assert.deepEqual(result.confirmed, [])
+  assert.deepEqual(result.review.map(({ id }) => id), ["unknown-house"])
 })

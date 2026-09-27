@@ -779,7 +779,7 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
 
     if (!sourceName) {
       result.coleta_resultado = "indeterminado"
-      result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_oficial: officialName, avaliacao_identidade_sombra: p, motivo: result.errors[0] })
+      result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_oficial: officialName, motivo: result.errors[0] })
       result.coleta_url = candidateSnapshots.at(-1)?.url ?? `${BASE_URL}_2026.csv`
       result.duration_ms = Date.now() - start
       results.push(result)
@@ -872,7 +872,7 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
       }
       try {
         if (emDryRun()) {
-          planejarEscrita({ fonte: "ceaps-senado", tabela: "gastos_parlamentares", operacao: target ? "update" : "insert", alvo: cand.slug, identidade: `id-senado:${cand.ids.senado};jev-noul-shadow:${p === null ? "unavailable" : p.toFixed(2)}`, chave: target ? { id: target.id } : { candidato_id: candidatoId, ano: snapshot.ano }, valores: row })
+          planejarEscrita({ fonte: "ceaps-senado", tabela: "gastos_parlamentares", operacao: target ? "update" : "insert", alvo: cand.slug, identidade: `id-senado:${cand.ids.senado}`, chave: target ? { id: target.id } : { candidato_id: candidatoId, ano: snapshot.ano }, valores: row })
           result.rows_upserted++
         } else if (target) {
           let update = supabase.from("gastos_parlamentares").update({ ...row, despublicado_em: null, despublicacao_motivo: null }).eq("id", target.id).eq("candidato_id", candidatoId).eq("ano", snapshot.ano).eq("total_gasto", (existing as { total_gasto: number | null }).total_gasto).is("despublicado_em", null)
@@ -928,7 +928,7 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
     })
     result.coleta_volume = sourceRows
     result.coleta_url = candidateSnapshots.at(-1)?.url ?? `${BASE_URL}_2026.csv`
-    result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_fonte: sourceName, avaliacao_identidade_sombra: p, source_rows: sourceRows, anos_vazios: anosVazios })
+    result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_fonte: sourceName, source_rows: sourceRows, anos_vazios: anosVazios })
     result.duration_ms = Date.now() - start
     results.push(result)
   }
