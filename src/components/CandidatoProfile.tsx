@@ -498,7 +498,10 @@ export function CandidatoProfile({
 
   const tabDefsById: Record<CandidatoProfileNavTabId, { label: string; dataCount: number }> = {
     geral: { label: fixedCopy.generalOverview, dataCount: 0 },
-    pesquisas: { label: "Pesquisas", dataCount: pesquisas.length },
+    pesquisas: {
+      label: "Pesquisas",
+      dataCount: pesquisas.filter((pesquisa) => (pesquisa.grupo ?? "recente") === "recente").length,
+    },
     programa: { label: "Programa", dataCount: 0 },
     media: { label: "Mídia", dataCount: ficha.noticias?.length ?? 0 },
     checagens: { label: "Checagens", dataCount: attributedChecks.length },
@@ -979,7 +982,7 @@ export function CandidatoProfile({
             {/* MÍDIA TAB */}
             {activeTab === "media" && (
               (ficha.noticias && ficha.noticias.length > 0) || new URLSearchParams(locationSearch).has("noticia") ? (
-                <NewsSection key={ficha.slug} noticias={ficha.noticias ?? []} candidateSlug={ficha.slug} selectedNewsId={new URLSearchParams(locationSearch).get("noticia")} />
+                <NewsSection key={ficha.slug} noticias={ficha.noticias ?? []} nextCursor={ficha.noticias_cursor ?? null} candidateSlug={ficha.slug} selectedNewsId={new URLSearchParams(locationSearch).get("noticia")} />
               ) : (
                 <div data-pf-media-empty>
                   <SectionLabel>Mídia</SectionLabel>

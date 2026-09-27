@@ -20,8 +20,8 @@ import {
   withCurrentRegistryPartyRow,
 } from "@/lib/party-switches"
 import { newsTitleMentionsCandidate } from "@/lib/news/name-match"
-import { splitNewsByDenylist } from "@/lib/news/denylist"
-import { newsRetentionCutoffIso } from "@/lib/operational-retention"
+import { PUBLIC_NEWS_FETCH_LIMIT, publicNewsWindowQuery, toPublicNewsItems } from "@/lib/news/public-page"
+import { derivarTCUVerificacao } from "@/lib/tcu-verificacao"
 import { fetchGastoTotalsByCandidatoIds, fetchCargoAtualByCandidatoIds, fetchLegislacaoMandatoExecutivoRowsPaged, fetchLegislativeHistoryFlagsByCandidatoIds, fetchMudancasPartidoRowsPaged, fetchPatrimonioSeriesByCandidatoIds, LEGISLACAO_MANDATO_EXECUTIVO_PROFILE_PREVIEW_LIMIT, LEGISLACAO_MANDATO_EXECUTIVO_PUBLIC_SELECT } from "@/lib/fetch-gastos-votos-in-batch"
 import { applyLegislacaoMandatoExecutivoCachePolicy } from "@/lib/legislacao-mandato-executivo-cache"
 import { sortVotosForPublicDisplay } from "@/lib/votos-candidato-aggregate"
@@ -1276,61 +1276,14 @@ async function fetchTCUVerificacao(slug: string): Promise<TCUVerificacao | null>
     const resultado = row.resultado as TCUVerificacao["resultado"]
     if (!COLETA_RESULTADOS_VALIDOS.has(resultado)) return null
     if (typeof row.executado_em !== "string" || !row.executado_em) return null
-    const volume = typeof row.volume === "number" && Number.isFinite(row.volume) && row.volume >= 0
-      ? Math.trunc(row.volume)
-      : null
-    const estado: TCUVerificacao["estado"] =
-      resultado === "encontrado" && volume !== null && volume > 0
-        ? "encontrado_em_revisao"
-        : resultado === "vazio_confirmado"
-          ? "vazio_verificado"
-          : "pendente"
-    const safeTcuUrl = (value: unknown) => {
-      if (typeof value !== "string" || !value) return null
-      try {
-        const parsed = new URL(value as string)
-        return parsed.protocol === "https:" && parsed.hostname === "certidoes.apps.tcu.gov.br" && !parsed.search && !parsed.hash
-          ? parsed.toString()
-          : null
-      } catch {
-        return null
-      }
-    }
-    const consultaUrls = [
-      ["responsaveis_inabilitados", "https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-inabilitados", "inabilitados_itens"] as const,
-      ["responsaveis_contas_irregulares", "https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-contas-irregulares", "cadirreg_itens"] as const,
-    ]
-    const detalheFonte = typeof row.detalhe === "string" ? row.detalhe : ""
-    const fontes = consultaUrls.flatMap(([cadastro, consultaUrl, volumeKey]) => {
-      if (!detalheFonte.includes(consultaUrl)) return []
-      const volumeMatch = detalheFonte.match(new RegExp(`${volumeKey}=(\\d+)`))
-      const fonteVolume = volumeMatch ? Number(volumeMatch[1]) : null
-      return [{
-        cadastro,
-        url: consultaUrl,
-        resultado: fonteVolume === null ? "pendente" as const : fonteVolume > 0 ? "encontrado" as const : "vazio_confirmado" as const,
-        volume: fonteVolume,
-      }]
-    })
-    const url = estado === "encontrado_em_revisao"
-      ? fontes.find((fonte) => fonte.resultado === "encontrado")?.url ?? null
-      : fontes[0]?.url ?? safeTcuUrl(row.url)
-    const detalhe = estado === "encontrado_em_revisao"
-      ? `Consulta TCU encontrou ${volume} registro${volume === 1 ? "" : "s"}; revisão editorial pendente.`
-      : estado === "vazio_verificado"
-        ? "Consultas oficiais TCU retornaram zero registros no escopo verificado."
-        : "Consulta TCU inconclusiva; o resultado não deve ser interpretado como ausência."
-    return {
-      fonte: "tcu",
+    return derivarTCUVerificacao({
       resultado,
-      estado,
       executado_em: row.executado_em,
-      volume,
-      detalhe,
-      url,
-      escopo: typeof row.escopo === "string" ? row.escopo : null,
-      fontes,
-    }
+      volume: row.volume,
+      url: row.url,
+      detalhe: row.detalhe,
+      escopo: row.escopo,
+    })
   } catch {
     return null
   }
@@ -1716,17 +1669,10 @@ async function getCandidatoBySlugFromRelationResource(
           .order("data_inicio", { ascending: false })
           .abortSignal(signal)
       ),
+      // Mesma janela, ordem e colunas das paginas de "Ver mais noticias"; a
+      // margem de leitura deixa a denylist retirar itens sem encolher a previa.
       withSupabaseRetry(`noticias_candidato(${slug})`, async (signal) =>
-        supabase
-          .from("noticias_candidato")
-          .select("*")
-          .eq("candidato_id", id)
-          .not("data_publicacao", "is", null)
-          .gte("data_publicacao", newsRetentionCutoffIso())
-          .order("data_publicacao", { ascending: false })
-          // Busca margem para que a denylist editorial possa retirar itens sem
-          // reduzir artificialmente a previa publica de 20 noticias.
-          .limit(40)
+        publicNewsWindowQuery(supabase, id, null, PUBLIC_NEWS_FETCH_LIMIT, signal)
           .abortSignal(signal)
       ),
       candidato.cargo_disputado === "Governador" && candidato.estado
@@ -2010,12 +1956,7 @@ async function getCandidatoBySlugFromRelationResource(
     // mas as linhas ja gravadas continuam no banco: 3.984 de 17.498 (22,77%)
     // sem nenhum token do nome no titulo. Em vez de apagar dado, marcamos o que
     // e cobertura do pleito para a UI dizer isso ao leitor.
-    noticias: splitNewsByDenylist(noticias.data ?? [], candidato.slug).permitidos
-      .slice(0, 20)
-      .map((noticia) => ({
-        ...noticia,
-        contexto_do_pleito: !newsTitleMentionsCandidate(noticia.titulo, candidato),
-      })),
+    noticias: toPublicNewsItems((noticias.data ?? []) as unknown as FichaCandidato["noticias"], candidato),
     indicadores_estaduais: indicadores.data ?? [],
     total_processos: processosPublicos.length,
     processos_criminais: processosPublicos.filter(processoPodeContarComoCriminal).length,

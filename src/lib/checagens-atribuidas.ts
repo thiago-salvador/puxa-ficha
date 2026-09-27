@@ -362,7 +362,30 @@ export function selectApprovedAttributedFactChecks(
     .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt) || a.id.localeCompare(b.id))
 }
 
+/**
+ * Cards publishable from a dataset that may contain invalid rows. The release
+ * gate still fails on any issue, but at runtime one bad row only removes
+ * itself (and cards that relate to it) instead of emptying every profile.
+ */
+export function selectPublishableAttributedFactChecks(
+  records: unknown,
+  identity: CandidateCheckIdentity,
+): AttributedFactCheck[] {
+  if (!Array.isArray(records)) return []
+  const issues = validateAttributedFactCheckDataset(records)
+  if (issues.some((issue) => issue.index < 0)) return []
+  const rejectedIndexes = new Set(issues.map((issue) => issue.index))
+  const duplicatedIds = new Set(issues.filter((issue) => issue.reason === "duplicate_id").map((issue) => issue.id))
+  const kept = records.filter((raw, index) => {
+    if (rejectedIndexes.has(index)) return false
+    const id = isRecord(raw) && nonEmptyString(raw.id) ? raw.id : null
+    return id === null || !duplicatedIds.has(id)
+  })
+  const keptIds = new Set(kept.map(parseAttributedFactCheck).flatMap((record) => record ? [record.id] : []))
+  return selectApprovedAttributedFactChecks(kept, identity)
+    .filter((record) => (record.relatedChecks ?? []).every((relation) => keptIds.has(relation.checkId)))
+}
+
 export function getApprovedAttributedFactChecks(identity: CandidateCheckIdentity): AttributedFactCheck[] {
-  if (validateAttributedFactCheckDataset(rawChecks).length > 0) return []
-  return selectApprovedAttributedFactChecks(rawChecks, identity)
+  return selectPublishableAttributedFactChecks(rawChecks, identity)
 }

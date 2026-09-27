@@ -3,10 +3,11 @@
 import { useState } from "react"
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
 
-// cspell:ignore cenario periodo
+// cspell:ignore cenario periodo espontanea espontaneo secundario secundarios
 
 import type {
   EstadoPesquisa,
+  GrupoPesquisaDoCandidato,
   PesquisaEleitoralDoCandidato,
 } from "@/lib/pesquisas-eleitorais"
 import { NoticePanel } from "./NoticePanel"
@@ -69,6 +70,28 @@ function pesquisaKey(pesquisa: PesquisaEleitoralDoCandidato): string {
   return `${pesquisa.id}:${pesquisa.cenario.id}:${pesquisa.resultado.candidateSlug}`
 }
 
+function doGrupo(
+  pesquisas: PesquisaEleitoralDoCandidato[],
+  grupo: GrupoPesquisaDoCandidato,
+): PesquisaEleitoralDoCandidato[] {
+  return pesquisas.filter((pesquisa) => (pesquisa.grupo ?? "recente") === grupo)
+}
+
+// O Senado tem turno único; o selo "1º turno" sugeriria uma segunda votação.
+function turnoLabel(pesquisa: PesquisaEleitoralDoCandidato): string {
+  return pesquisa.office === "Senador" ? "Turno único" : `${pesquisa.cenario.turn}º turno`
+}
+
+function modalidadeLabel(pesquisa: PesquisaEleitoralDoCandidato): string | null {
+  const modo = (pesquisa.cenario.comparabilityKey.split("|")[4] ?? "")
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+  if (modo === "estimulado" || modo === "estimulada") return "estimulada"
+  if (modo === "espontaneo" || modo === "espontanea") return "espontânea"
+  return null
+}
+
 function EmptyResearchState({ className = "" }: { className?: string }) {
   return (
     <NoticePanel
@@ -110,7 +133,7 @@ function PesquisaDetalhada({ pesquisa }: { pesquisa: PesquisaEleitoralDoCandidat
           </p>
         </div>
         <span className="shrink-0 rounded-full bg-secondary px-2.5 py-1 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
-          {pesquisa.cenario.turn}º turno
+          {turnoLabel(pesquisa)}
         </span>
       </div>
 
@@ -154,7 +177,7 @@ function PesquisaDetalhada({ pesquisa }: { pesquisa: PesquisaEleitoralDoCandidat
 }
 
 export function PesquisasPresidenciaisHero({ pesquisas }: PesquisasProps) {
-  const primeiroTurno = pesquisas.filter(
+  const primeiroTurno = doGrupo(pesquisas, "recente").filter(
     (pesquisa) => pesquisa.cenario.turn === 1 && resultadoPublicado(pesquisa),
   )
   // listarRodadasRecentesDoCandidato entrega as pesquisas em publicationDate
@@ -197,9 +220,10 @@ export function PesquisasPresidenciaisHero({ pesquisas }: PesquisasProps) {
 }
 
 export function PesquisasPresidenciaisOverview({
-  pesquisas,
+  pesquisas: todas,
   onOpenTab,
 }: PesquisasProps & { onOpenTab: () => void }) {
+  const pesquisas = doGrupo(todas, "recente")
   const [activeIndex, setActiveIndex] = useState(0)
   const pesquisa = pesquisas[activeIndex % Math.max(pesquisas.length, 1)]
   const hasMultiple = pesquisas.length > 1
@@ -257,7 +281,7 @@ export function PesquisasPresidenciaisOverview({
               </p>
             </div>
             <span className="shrink-0 rounded-full bg-secondary px-2.5 py-1 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
-              {pesquisa.cenario.turn}º turno
+              {turnoLabel(pesquisa)}
             </span>
           </div>
 
@@ -338,7 +362,135 @@ export function PesquisasPresidenciaisOverview({
   )
 }
 
-export function PesquisasPresidenciaisTab({ pesquisas }: PesquisasProps) {
+function RegistroPesquisa({ pesquisa }: { pesquisa: PesquisaEleitoralDoCandidato }) {
+  const { code, url } = pesquisa.registration
+  const codigo = code.status === "publicado" ? code.value : null
+  const link = url.status === "publicado" ? url.value : null
+  if (!codigo && !link) return <>não informado</>
+  if (!link) return <>{codigo}</>
+  return (
+    <a
+      href={link}
+      target="_blank"
+      rel="noreferrer"
+      className="font-semibold text-foreground underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
+      aria-label={`Registro ${codigo ?? "da pesquisa"} no TSE (abre em nova aba)`}
+    >
+      {codigo ?? "Registro no TSE"}
+    </a>
+  )
+}
+
+function PesquisaLinha({
+  pesquisa,
+  mostrarModalidade,
+}: {
+  pesquisa: PesquisaEleitoralDoCandidato
+  mostrarModalidade: boolean
+}) {
+  const instituto = pesquisa.instituto.value ?? "Instituto não informado"
+  const modalidade = mostrarModalidade ? modalidadeLabel(pesquisa) : null
+  const descricao = [pesquisa.cenario.labelRaw, turnoLabel(pesquisa), modalidade && `pergunta ${modalidade}`]
+    .filter(Boolean)
+    .join(" · ")
+
+  return (
+    <li
+      data-pf-pesquisa-linha=""
+      data-pf-pesquisa-source={pesquisa.sourceId}
+      className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] gap-x-4 gap-y-1 border-t border-border/60 py-3 first:border-t-0"
+    >
+      <div className="min-w-0">
+        <p className="break-words text-[length:var(--text-body-sm)] font-bold text-foreground">{instituto}</p>
+        <p data-pf-pesquisa-cenario="" className="mt-0.5 break-words text-[length:var(--text-caption)] font-semibold leading-snug text-foreground">
+          {descricao}
+        </p>
+        <p className="mt-1 text-[length:var(--text-caption)] leading-relaxed text-muted-foreground">
+          Campo: <span data-pf-pesquisa-periodo="">{formatarPeriodo(pesquisa)}</span> · Divulgada em{" "}
+          {formatarDataIso(pesquisa.publicationDate.value)} · Registro: <RegistroPesquisa pesquisa={pesquisa} /> ·{" "}
+          <a
+            href={pesquisa.provenance.resultUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="font-semibold text-foreground underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
+            aria-label={`Ver divulgação pública de ${instituto} (abre em nova aba)`}
+          >
+            Fonte
+          </a>
+        </p>
+      </div>
+      <p
+        data-pf-pesquisa-resultado=""
+        className={
+          resultadoPublicado(pesquisa)
+            ? "self-center font-heading text-[length:var(--text-heading-lg)] leading-none tabular-nums text-foreground"
+            : "self-center text-right text-[length:var(--text-caption)] font-bold leading-snug text-foreground"
+        }
+      >
+        {resultadoLabel(pesquisa)}
+      </p>
+    </li>
+  )
+}
+
+const BLOCOS_SECUNDARIOS: {
+  grupo: Exclude<GrupoPesquisaDoCandidato, "recente">
+  titulo: string
+  descricao: string
+}[] = [
+  {
+    grupo: "anterior",
+    titulo: "Rodadas anteriores",
+    descricao:
+      "Rodadas mais antigas, com o mesmo tipo de pergunta dos cartões acima. Cada resultado vale só para o período de campo indicado.",
+  },
+  {
+    grupo: "segundo_turno",
+    titulo: "Cenários de segundo turno",
+    descricao:
+      "Simulações de segundo turno publicadas pelos institutos, mostradas à parte do primeiro turno. Cada resultado pertence ao confronto descrito na linha.",
+  },
+  {
+    grupo: "espontanea",
+    titulo: "Pergunta espontânea",
+    descricao:
+      "Respostas dadas sem lista de nomes, mostradas à parte da pergunta estimulada. Os percentuais não se comparam com os cartões acima.",
+  },
+]
+
+function BlocoSecundario({
+  grupo,
+  titulo,
+  descricao,
+  pesquisas,
+}: (typeof BLOCOS_SECUNDARIOS)[number] & { pesquisas: PesquisaEleitoralDoCandidato[] }) {
+  if (pesquisas.length === 0) return null
+  return (
+    <details
+      data-pf-pesquisas-bloco={grupo}
+      className="group mt-4 min-w-0 rounded-[18px] border border-border/70 bg-card px-5 py-2 sm:px-6"
+    >
+      <summary className="flex min-h-11 cursor-pointer items-center justify-between gap-3 text-[length:var(--text-body-sm)] font-bold text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2">
+        <span>
+          {titulo} ({pesquisas.length})
+        </span>
+        <ChevronRight className="size-4 shrink-0 transition-transform group-open:rotate-90" aria-hidden="true" />
+      </summary>
+      <p className="mt-1 max-w-3xl text-[length:var(--text-caption)] font-medium leading-relaxed text-muted-foreground">
+        {descricao}
+      </p>
+      <ul className="mt-2 pb-2">
+        {pesquisas.map((pesquisa) => (
+          <PesquisaLinha key={pesquisaKey(pesquisa)} pesquisa={pesquisa} mostrarModalidade={grupo !== "anterior"} />
+        ))}
+      </ul>
+    </details>
+  )
+}
+
+export function PesquisasPresidenciaisTab({ pesquisas: todas }: PesquisasProps) {
+  const pesquisas = doGrupo(todas, "recente")
+  const senado = todas.some((pesquisa) => pesquisa.office === "Senador")
   return (
     <section data-pf-pesquisas-tab="" aria-labelledby="pesquisas-tab-title">
       <SectionLabel>Eleições 2026</SectionLabel>
@@ -348,17 +500,22 @@ export function PesquisasPresidenciaisTab({ pesquisas }: PesquisasProps) {
       <p className="mt-3 max-w-3xl text-[length:var(--text-body-sm)] font-medium leading-relaxed text-muted-foreground">
         Resultados das pesquisas verificadas. Cada número pertence ao cenário
         descrito pela própria pesquisa.
+        {senado && " No Senado, cada eleitor tem dois votos e não há segundo turno."}
       </p>
 
       {pesquisas.length === 0 ? (
         <EmptyResearchState className="mt-6" />
       ) : (
-        <div className="mt-6 grid min-w-0 grid-cols-1 gap-4 lg:grid-cols-2">
+        <div data-pf-pesquisas-principais="" className="mt-6 grid min-w-0 grid-cols-1 gap-4 lg:grid-cols-2">
           {pesquisas.map((pesquisa) => (
             <PesquisaDetalhada key={pesquisaKey(pesquisa)} pesquisa={pesquisa} />
           ))}
         </div>
       )}
+
+      {BLOCOS_SECUNDARIOS.map((bloco) => (
+        <BlocoSecundario key={bloco.grupo} {...bloco} pesquisas={doGrupo(todas, bloco.grupo)} />
+      ))}
 
       <p className="mt-5 max-w-3xl text-[length:var(--text-caption)] font-medium leading-relaxed text-muted-foreground">
         Esta é uma fotografia do período em que as entrevistas foram realizadas, não uma previsão
