@@ -19,6 +19,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js"
 
 import { naCoorteAtualizacao } from "../../src/lib/coorte-atualizacao"
+import { getInjectedCoorteAtualizacao } from "./cohort-context"
 
 export { naCoorteAtualizacao }
 
@@ -132,5 +133,6 @@ export async function aplicarCoorteAtualizacao<T extends { slug?: string | null;
   rotina: string,
   client?: ClienteLeitura,
 ): Promise<T[]> {
-  return filtrarCoorteAtualizacao(linhas, await carregarCoorteAtualizacao(client), rotina)
+  const injetada = getInjectedCoorteAtualizacao()
+  return filtrarCoorteAtualizacao(linhas, injetada ?? await carregarCoorteAtualizacao(client), rotina)
 }

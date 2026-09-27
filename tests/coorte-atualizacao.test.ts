@@ -9,6 +9,7 @@ import {
   rotuloAtualizacaoEncerrada,
 } from "../src/lib/coorte-atualizacao"
 import {
+  aplicarCoorteAtualizacao,
   carregarCoorteAtualizacao,
   coorteAtualizacaoDe,
   filtrarCoorteAtualizacao,
@@ -107,6 +108,16 @@ describe("carregador da coorte", () => {
     const coorte = await carregarCoorteAtualizacao(client)
     assert.deepEqual(consultas, ["candidaturas_fase_2026_publico"])
     assert.deepEqual(filtrarCoorteAtualizacao([{ slug: "sen-eleito" }, { slug: "gov" }, { id: "id-1" }], coorte, "teste"), [{ slug: "gov" }])
+  })
+
+  it("sem coorte injetada, o filtro consulta a view e preserva fail-closed", async () => {
+    const fechado = { candidato_id: "id-1", slug: "sen-eleito", fase_eleitoral: "eleito", fase_turno: 1, atualizacao_encerrada_em: "2026-10-05" }
+    const { client, consultas } = clienteFake({ data: [fechado] })
+    assert.deepEqual(await aplicarCoorteAtualizacao([{ slug: "sen-eleito" }, { slug: "gov" }], "teste", client), [{ slug: "gov" }])
+    assert.deepEqual(consultas, ["candidaturas_fase_2026_publico"])
+
+    const falha = clienteFake({ error: { code: "57014", message: "statement timeout" } })
+    await assert.rejects(aplicarCoorteAtualizacao([{ slug: "gov" }], "teste", falha.client), /leitura de candidaturas_fase_2026_publico falhou/)
   })
 })
 
