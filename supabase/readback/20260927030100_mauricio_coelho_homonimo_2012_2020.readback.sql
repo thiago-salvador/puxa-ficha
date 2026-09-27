@@ -3,13 +3,13 @@ SET LOCAL TIME ZONE 'UTC';
 DO $readback$
 DECLARE r jsonb; linha jsonb; atual jsonb;
 BEGIN
-  IF (SELECT count(*) FROM public.coleta_log WHERE execucao = 'migration:20260926233100') <> 1
+  IF (SELECT count(*) FROM public.coleta_log WHERE execucao = 'migration:20260927030100') <> 1
      OR NOT EXISTS (SELECT 1 FROM public.coleta_log
-       WHERE execucao = 'migration:20260926233100' AND volume = 4 AND resultado = 'encontrado') THEN
+       WHERE execucao = 'migration:20260927030100' AND volume = 4 AND resultado = 'encontrado') THEN
     RAISE EXCEPTION 'mauricio-homonimo-20260926 readback: recibo ausente ou invalido';
   END IF;
 
-  SELECT detalhe::jsonb INTO r FROM public.coleta_log WHERE execucao = 'migration:20260926233100';
+  SELECT detalhe::jsonb INTO r FROM public.coleta_log WHERE execucao = 'migration:20260927030100';
   IF jsonb_array_length(r->'linhas') <> 4 THEN
     RAISE EXCEPTION 'mauricio-homonimo-20260926 readback: recibo sem as quatro linhas';
   END IF;

@@ -545,8 +545,8 @@ export const MEDICAO_REPLAY = Object.freeze({
   // VALID de numero CNJ em processos (DDL pura). --schema-gate PG17 mediu 123
   // aplicadas, 397 puladas, zero falhas; hash
   // 7fc51c84eabc8e22bd2dd1130cdf735eafc8df37bd57ba7e30e0b48bdcbb0fc1.
-  // 123 -> 124: 20260926233200 adiciona o CHECK de data de nascimento sentinela
-  // em candidatos (DDL pura). --schema-gate PG17 mediu 124 aplicadas, 399
+  // 123 -> 124: 20260927030200 adiciona o CHECK de data de nascimento sentinela
+  // em candidatos (DDL pura). --schema-gate PG17 mediu 124 aplicadas, 401
   // puladas, zero falhas; hash
   // eed309f35eff7889947a07d4ab2d71e988c0399595baa0f551f8fc8b870092a0.
   schemaReplayTamanho: 124,

@@ -1,6 +1,6 @@
 -- Barreira no banco contra data de nascimento sentinela. A API do Senado
 -- devolve 1900-01-01 para parlamentar sem data cadastrada, e esse valor chegou
--- a uma ficha pública (corrigida pela 20260926233000). A data mais antiga
+-- a uma ficha pública (corrigida pela 20260927030000). A data mais antiga
 -- publicada é de 1934; nenhum candidato vivo nasceu antes de 1910.
 --
 -- Data só com ano (1º de janeiro) não entra aqui: o TSE registra candidato

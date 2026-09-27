@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Prova em PostgreSQL 17 descartável as migrations 20260926233000 (data de
+# Prova em PostgreSQL 17 descartável as migrations 20260927030000 (data de
 # nascimento de cinco fichas pelo TSE e biografia de silvio-mendes),
-# 20260926233100 (patrimônio e financiamento 2012/2020 do homônimo em
-# mauricio-coelho) e 20260926233200 (CHECK de data sentinela), sobre o schema
+# 20260927030100 (patrimônio e financiamento 2012/2020 do homônimo em
+# mauricio-coelho) e 20260927030200 (CHECK de data sentinela), sobre o schema
 # real de candidatos, patrimonio e coleta_log (scripts/audit/lib/chapas-2026-real-schema.sql,
 # com os CHECK de produção). financiamento e financiamento_doador_search são
 # mínimos, com uma trigger que reproduz o contrato da de produção: receita
@@ -21,10 +21,10 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 cd "$ROOT"
 
 IMAGE="postgres:17@sha256:7958605b474b3d264a969cb3a123d6aa00ad1e1fe9da8a69984dabb704d93317"
-V="20260926233000_datas_nascimento_tse"
-V2="20260926233100_mauricio_coelho_homonimo_2012_2020"
-V3="20260926233200_data_nascimento_sem_sentinela_check"
-BASE="20260926190100"
+V="20260927030000_datas_nascimento_tse"
+V2="20260927030100_mauricio_coelho_homonimo_2012_2020"
+V3="20260927030200_data_nascimento_sem_sentinela_check"
+BASE="20260927020000"
 REAL_SCHEMA="scripts/audit/lib/chapas-2026-real-schema.sql"
 for f in "supabase/migrations/$V.sql" "supabase/migrations/$V2.sql" "supabase/migrations/$V3.sql" "$REAL_SCHEMA"; do
   [[ -f "$f" ]] || { echo "FAIL: artefato ausente: $f" >&2; exit 2; }
@@ -162,7 +162,7 @@ sentinelas_antes="$(digest_sentinelas)"
 # aplicadas: a consulta devolve idempotency_key vazio no fim da linha.
 ledger_runner() {
   local cols="coalesce(max(version),'')"
-  for v in $BASE 20260926233000 20260926233100 20260926233200; do
+  for v in $BASE 20260927030000 20260927030100 20260927030200; do
     cols+=" || '|' || count(*) filter (where version='$v') || '|' || coalesce(max(idempotency_key) filter (where version='$v'),'')"
   done
   q -Atq -F '|' -c "select $cols from supabase_migrations.schema_migrations"
@@ -172,7 +172,7 @@ trecho_leitura="$(awk '/^# read -a descarta campos vazios/{f=1} /^if \[\[ "\$apl
 grep -q "^base_version=$BASE$" scripts/audit/apply-datas-nascimento-tse-production.sh || { echo "FAIL: predecessor do runner não é $BASE" >&2; exit 1; }
 programa_leitura="$(mktemp)"
 {
-  printf '%s\n' 'set -euo pipefail' 'versions=(20260926233000 20260926233100 20260926233200)' 'digests=(sha256:d0 sha256:d1 sha256:d2)'
+  printf '%s\n' 'set -euo pipefail' 'versions=(20260927030000 20260927030100 20260927030200)' 'digests=(sha256:d0 sha256:d1 sha256:d2)'
   printf 'estado=%q\n' "$(ledger_runner)"
   printf '%s\n' "$trecho_leitura"
   # shellcheck disable=SC2016 # expansão acontece no programa gerado, não aqui
@@ -223,13 +223,13 @@ q -q -c "UPDATE public.candidatos SET data_nascimento='1994-04-18' WHERE slug='m
 [[ "$(digest_tudo)" == "$tudo_antes" ]] || { echo "FAIL: fixture mudou antes do forward" >&2; exit 1; }
 
 q -q < "supabase/migrations/$V.sql"
-q -q -c "INSERT INTO supabase_migrations.schema_migrations(version, idempotency_key) VALUES ('20260926233000', 'sha256:fixture')"
+q -q -c "INSERT INTO supabase_migrations.schema_migrations(version, idempotency_key) VALUES ('20260927030000', 'sha256:fixture')"
 q -q < "supabase/readback/$V.readback.sql"
 q -q < "supabase/migrations/$V2.sql"
-q -q -c "INSERT INTO supabase_migrations.schema_migrations(version, idempotency_key) VALUES ('20260926233100', 'sha256:fixture')"
+q -q -c "INSERT INTO supabase_migrations.schema_migrations(version, idempotency_key) VALUES ('20260927030100', 'sha256:fixture')"
 q -q < "supabase/readback/$V2.readback.sql"
 q -q < "supabase/migrations/$V3.sql"
-q -q -c "INSERT INTO supabase_migrations.schema_migrations(version, idempotency_key) VALUES ('20260926233200', 'sha256:fixture')"
+q -q -c "INSERT INTO supabase_migrations.schema_migrations(version, idempotency_key) VALUES ('20260927030200', 'sha256:fixture')"
 q -q < "supabase/readback/$V3.readback.sql"
 # Mesma sequência de rodar_readbacks do runner: as três, depois do conjunto inteiro.
 q -q < "supabase/readback/$V.readback.sql"
@@ -243,7 +243,7 @@ bio="$(q -Atq -c "SELECT biografia FROM public.candidatos WHERE slug='silvio-men
 nat="$(q -Atq -c "SELECT naturalidade FROM public.candidatos WHERE slug='dr-daniel'")"
 [[ "$nat" == "Açailândia/MA" ]] || { echo "FAIL: naturalidade de dr-daniel inesperada: $nat" >&2; exit 1; }
 [[ "$(q -Atq -c "SELECT count(*) FROM public.candidatos WHERE naturalidade='Vassouras/RJ'")" == "0" ]] || { echo "FAIL: Vassouras/RJ sobrou" >&2; exit 1; }
-recibo="$(q -Atq -c "SELECT detalhe FROM public.coleta_log WHERE execucao='migration:20260926233000'")"
+recibo="$(q -Atq -c "SELECT detalhe FROM public.coleta_log WHERE execucao='migration:20260927030000'")"
 [[ "$recibo" != *cpf* ]] || { echo "FAIL: recibo de datas carrega a linha inteira" >&2; exit 1; }
 [[ "$(busca_homonimo)" == "0" ]] || { echo "FAIL: busca por doador ainda indexa o homônimo" >&2; exit 1; }
 publicados="$(q -Atq -c "SELECT (SELECT count(*) FROM public.patrimonio WHERE candidato_id='c7a28e0e-06d0-412b-98ee-b79a7a4354f9' AND despublicado_em IS NULL)||':'||(SELECT count(*) FROM public.financiamento WHERE candidato_id='c7a28e0e-06d0-412b-98ee-b79a7a4354f9' AND despublicado_em IS NULL)")"

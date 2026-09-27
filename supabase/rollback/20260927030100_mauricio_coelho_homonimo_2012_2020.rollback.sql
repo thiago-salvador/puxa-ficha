@@ -1,5 +1,5 @@
 -- Preservador: devolve as quatro linhas de patrimonio e financiamento de
--- mauricio-coelho à preimagem integral do recibo `migration:20260926233100`,
+-- mauricio-coelho à preimagem integral do recibo `migration:20260927030100`,
 -- com CAS da postimagem. A trigger de busca por doador reindexa as receitas.
 BEGIN;
 SET LOCAL TIME ZONE 'UTC';
@@ -10,18 +10,18 @@ LOCK TABLE public.financiamento IN SHARE ROW EXCLUSIVE MODE;
 DO $rollback$
 DECLARE r jsonb; linha jsonb; atual jsonb; afetadas integer;
 BEGIN
-  IF (SELECT max(version) FROM supabase_migrations.schema_migrations) IS DISTINCT FROM '20260926233100' THEN
+  IF (SELECT max(version) FROM supabase_migrations.schema_migrations) IS DISTINCT FROM '20260927030100' THEN
     RAISE EXCEPTION 'mauricio-homonimo-20260926 rollback: ledger divergiu (rollback so vale com esta migration no topo)';
   END IF;
 
-  IF (SELECT count(*) FROM public.coleta_log WHERE execucao = 'migration:20260926233100') <> 1
+  IF (SELECT count(*) FROM public.coleta_log WHERE execucao = 'migration:20260927030100') <> 1
      OR NOT EXISTS (SELECT 1 FROM public.coleta_log
-       WHERE execucao = 'migration:20260926233100' AND volume = 4 AND resultado = 'encontrado')
-     OR EXISTS (SELECT 1 FROM public.coleta_log WHERE execucao = 'rollback:20260926233100') THEN
+       WHERE execucao = 'migration:20260927030100' AND volume = 4 AND resultado = 'encontrado')
+     OR EXISTS (SELECT 1 FROM public.coleta_log WHERE execucao = 'rollback:20260927030100') THEN
     RAISE EXCEPTION 'mauricio-homonimo-20260926 rollback: recibo invalido ou rollback repetido';
   END IF;
 
-  SELECT detalhe::jsonb INTO r FROM public.coleta_log WHERE execucao = 'migration:20260926233100';
+  SELECT detalhe::jsonb INTO r FROM public.coleta_log WHERE execucao = 'migration:20260927030100';
   IF jsonb_array_length(r->'linhas') <> 4 THEN
     RAISE EXCEPTION 'mauricio-homonimo-20260926 rollback: recibo sem as quatro linhas';
   END IF;
@@ -71,7 +71,7 @@ BEGIN
          'patrimonio.despublicado_em,patrimonio.despublicacao_motivo,financiamento.despublicado_em,financiamento.despublicacao_motivo',
          'encontrado', 4,
          jsonb_build_object(
-           'resumo','Rollback da migration 20260926233100: patrimonio e financiamento de 2012 e 2020 de mauricio-coelho voltam a ser publicados.',
+           'resumo','Rollback da migration 20260927030100: patrimonio e financiamento de 2012 e 2020 de mauricio-coelho voltam a ser publicados.',
            'linhas', (SELECT jsonb_agg(x ORDER BY x->>'id') FROM (
                SELECT jsonb_build_object('tabela','patrimonio','id', p.id, 'linha', to_jsonb(p)) x
                FROM public.patrimonio p
@@ -82,9 +82,9 @@ BEGIN
                WHERE f.id IN ('7ead02ce-acfd-417d-b482-a0e92f56b801','aacde5cd-aafa-466e-9ad4-cb095c75e5b6')) t)
          )::text,
          'https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2020.zip',
-         'rollback:20260926233100','escrita';
+         'rollback:20260927030100','escrita';
 
-  DELETE FROM supabase_migrations.schema_migrations WHERE version = '20260926233100';
+  DELETE FROM supabase_migrations.schema_migrations WHERE version = '20260927030100';
 END
 $rollback$;
 COMMIT;

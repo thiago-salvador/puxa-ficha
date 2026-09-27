@@ -3,14 +3,14 @@ SET LOCAL TIME ZONE 'UTC';
 DO $readback$
 DECLARE r jsonb; b jsonb; linha jsonb; atual jsonb;
 BEGIN
-  IF (SELECT count(*) FROM public.coleta_log WHERE execucao = 'migration:20260926233100') <> 1
-     OR (SELECT count(*) FROM public.coleta_log WHERE execucao = 'rollback:20260926233100') <> 1
-     OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version = '20260926233100') THEN
+  IF (SELECT count(*) FROM public.coleta_log WHERE execucao = 'migration:20260927030100') <> 1
+     OR (SELECT count(*) FROM public.coleta_log WHERE execucao = 'rollback:20260927030100') <> 1
+     OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version = '20260927030100') THEN
     RAISE EXCEPTION 'mauricio-homonimo-20260926 rollback readback: recibos ou ledger divergiram';
   END IF;
 
-  SELECT detalhe::jsonb INTO r FROM public.coleta_log WHERE execucao = 'migration:20260926233100';
-  SELECT detalhe::jsonb INTO b FROM public.coleta_log WHERE execucao = 'rollback:20260926233100';
+  SELECT detalhe::jsonb INTO r FROM public.coleta_log WHERE execucao = 'migration:20260927030100';
+  SELECT detalhe::jsonb INTO b FROM public.coleta_log WHERE execucao = 'rollback:20260927030100';
 
   FOR linha IN SELECT value FROM jsonb_array_elements(r->'linhas') LOOP
     IF linha->>'tabela' = 'patrimonio' THEN

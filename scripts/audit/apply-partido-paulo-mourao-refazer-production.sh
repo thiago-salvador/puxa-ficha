@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
-# Aplica, em ordem de arquivo, as migrations de 26/09/2026:
-#   20260927030000  data de nascimento de cinco fichas igualada ao TSE consulta_cand
-#   20260927030100  patrimonio e financiamento 2012/2020 do homonimo despublicados em mauricio-coelho
-#   20260927030200  CHECK de data de nascimento sentinela (anterior a 1910) em candidatos
+# Aplica a migration de dado de 27/09/2026:
+#   20260927020000  refaz partido (PT) e cargo_atual de tse-2026-270002544629
 # com predecessor, hash, lock, ledger e readback fechados para o projeto de
-# producao do Puxa Ficha. Molde de apply-situacao-godeiro-laudicerio-production.sh.
+# producao do Puxa Ficha. Molde de apply-partido-paulo-mourao-production.sh.
 #
 # Ordem obrigatoria de .coderabbit.yaml para script que escreve em producao:
 # dry-run, apply, readback e recibo. Os dois modos geram a MESMA transacao; o
 # dry-run fecha em ROLLBACK e o apply em COMMIT.
 #
-#   scripts/audit/apply-datas-nascimento-tse-production.sh dry-run   # ensaio, nao grava
-#   scripts/audit/apply-datas-nascimento-tse-production.sh apply     # grava
+#   scripts/audit/apply-partido-paulo-mourao-refazer-production.sh dry-run   # ensaio, nao grava
+#   scripts/audit/apply-partido-paulo-mourao-refazer-production.sh apply     # grava
 set -euo pipefail
 case $- in *x*) set +x ;; esac
 
@@ -56,14 +54,16 @@ export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
 # Predecessor: o topo do ledger e da arvore nesta base, gravado por
-# apply-partido-paulo-mourao-refazer-production, que sempre escreve digest.
-base_version=20260927020000
-base_migration="$ROOT/supabase/migrations/${base_version}_partido_cargo_paulo_mourao_refazer.sql"
+# apply-partido-paulo-mourao-production, que sempre escreve digest.
+# PROVISORIO: se outras migrations entrarem antes desta, base_version e
+# base_migration passam a apontar para a ultima delas.
+base_version=20260926224500
+base_migration="$ROOT/supabase/migrations/${base_version}_partido_cargo_paulo_mourao.sql"
 [[ -f "$base_migration" ]] || { echo "FAIL: predecessor ${base_version} ausente" >&2; exit 2; }
 base_digest="sha256:$(shasum -a 256 "$base_migration" | cut -d' ' -f1)"
 
-versions=(20260927030000 20260927030100 20260927030200)
-names=(datas_nascimento_tse mauricio_coelho_homonimo_2012_2020 data_nascimento_sem_sentinela_check)
+versions=(20260927020000)
+names=(partido_cargo_paulo_mourao_refazer)
 
 digests=()
 for i in "${!versions[@]}"; do
@@ -122,7 +122,7 @@ done
 if [[ "$aplicadas" == "${#versions[@]}" ]]; then
   [[ "$topo" == "${versions[${#versions[@]}-1]}" ]] || { echo "FAIL: o conjunto esta no ledger mas o topo e $topo" >&2; exit 1; }
   rodar_readbacks
-  echo "PASS: conjunto nascimento-tse ja aplicado, ledger e readbacks conferem"
+  echo "PASS: conjunto partido-mourao-refazer ja aplicado, ledger e readbacks conferem"
   exit 0
 fi
 
@@ -184,7 +184,7 @@ for i in range(0, len(resto), 5):
     readback = pathlib.Path(readback_path).read_bytes()
     created_by = "Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions:" + sha
 
-    print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(previous)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(previous)} AND idempotency_key={lit(previous_digest)}) <> 1 OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'nascimento-tse: ledger divergiu sob lock antes de {version}'; END IF; END $ledger$;")
+    print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(previous)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(previous)} AND idempotency_key={lit(previous_digest)}) <> 1 OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'partido-mourao-refazer: ledger divergiu sob lock antes de {version}'; END IF; END $ledger$;")
     print(body, end="" if body.endswith("\n") else "\n")
     print("INSERT INTO supabase_migrations.schema_migrations (version, statements, name, created_by, idempotency_key, rollback) VALUES (")
     print(f"  {lit(version)}, ARRAY[convert_from(decode({lit(b64(raw))}, 'base64'), 'UTF8')], {lit(name)}, {lit(created_by)}, {lit(digest)}, ARRAY[convert_from(decode({lit(b64(rollback))}, 'base64'), 'UTF8')]);")
@@ -196,7 +196,7 @@ for i in range(0, len(resto), 5):
     corpo = re.sub(r"(?im)^\s*BEGIN READ ONLY;\s*$", "", corpo)
     corpo = re.sub(r"(?im)^\s*COMMIT;\s*$", "", corpo)
     print(corpo, end="" if corpo.endswith("\n") else "\n")
-    print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(version)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(version)} AND idempotency_key={lit(digest)}) <> 1 THEN RAISE EXCEPTION 'nascimento-tse: ledger final divergiu em {version}'; END IF; END $ledger$;")
+    print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(version)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(version)} AND idempotency_key={lit(digest)}) <> 1 THEN RAISE EXCEPTION 'partido-mourao-refazer: ledger final divergiu em {version}'; END IF; END $ledger$;")
 
 print(fecho + ";")
 PYGEN
@@ -205,7 +205,7 @@ PYGEN
 if [[ "$modo" == "dry-run" ]]; then
   gerar_sql ROLLBACK "${args[@]}" | \
     PGOPTIONS='-c statement_timeout=300000 -c lock_timeout=5000' psql -X -v ON_ERROR_STOP=1 -f -
-  echo "PASS: dry-run do conjunto nascimento-tse rodou migrations, ledger e readbacks e desfez tudo"
+  echo "PASS: dry-run do conjunto partido-mourao-refazer rodou migrations, ledger e readbacks e desfez tudo"
   exit 0
 fi
 
@@ -213,10 +213,10 @@ fi
 # estado atual do banco e os mesmos artefatos, e so grava se o ensaio passar.
 gerar_sql ROLLBACK "${args[@]}" | \
   PGOPTIONS='-c statement_timeout=300000 -c lock_timeout=5000' psql -X -v ON_ERROR_STOP=1 -f -
-echo "PASS: ensaio pre-apply do conjunto nascimento-tse conferido; gravando"
+echo "PASS: ensaio pre-apply do conjunto partido-mourao-refazer conferido; gravando"
 
 gerar_sql COMMIT "${args[@]}" | \
   PGOPTIONS='-c statement_timeout=300000 -c lock_timeout=5000' psql -X -v ON_ERROR_STOP=1 -f -
 
 rodar_readbacks
-echo "PASS: conjunto nascimento-tse aplicado, ledger e readbacks concluidos"
+echo "PASS: conjunto partido-mourao-refazer aplicado, ledger e readbacks concluidos"

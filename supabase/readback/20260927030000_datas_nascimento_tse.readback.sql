@@ -3,13 +3,13 @@ SET LOCAL TIME ZONE 'UTC';
 DO $readback$
 DECLARE r jsonb; linha jsonb;
 BEGIN
-  IF (SELECT count(*) FROM public.coleta_log WHERE execucao = 'migration:20260926233000') <> 1
+  IF (SELECT count(*) FROM public.coleta_log WHERE execucao = 'migration:20260927030000') <> 1
      OR NOT EXISTS (SELECT 1 FROM public.coleta_log
-       WHERE execucao = 'migration:20260926233000' AND volume = 5 AND resultado = 'encontrado') THEN
+       WHERE execucao = 'migration:20260927030000' AND volume = 5 AND resultado = 'encontrado') THEN
     RAISE EXCEPTION 'nascimento-tse-20260926 readback: recibo ausente ou invalido';
   END IF;
 
-  SELECT detalhe::jsonb INTO r FROM public.coleta_log WHERE execucao = 'migration:20260926233000';
+  SELECT detalhe::jsonb INTO r FROM public.coleta_log WHERE execucao = 'migration:20260927030000';
   IF jsonb_array_length(r->'linhas') <> 5 THEN
     RAISE EXCEPTION 'nascimento-tse-20260926 readback: recibo sem as cinco fichas';
   END IF;

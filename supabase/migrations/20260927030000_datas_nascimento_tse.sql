@@ -149,7 +149,7 @@ BEGIN
     RAISE EXCEPTION 'nascimento-tse-20260926: escrita esperada=5 atual=%', quantidade;
   END IF;
 
-  -- @write tabela=coleta_log ref=migration:20260926233000 campos=fonte,escopo,alvo,resultado,volume,detalhe,url,execucao,natureza
+  -- @write tabela=coleta_log ref=migration:20260927030000 campos=fonte,escopo,alvo,resultado,volume,detalhe,url,execucao,natureza
   INSERT INTO public.coleta_log (fonte,escopo,alvo,resultado,volume,detalhe,url,execucao,natureza)
   SELECT 'tse-consulta-cand','global',
          'candidatos.data_nascimento,candidatos.biografia,candidatos.naturalidade',
@@ -164,12 +164,12 @@ BEGIN
              ORDER BY u.slug)
          )::text,
          'https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip',
-         'migration:20260926233000','escrita'
+         'migration:20260927030000','escrita'
   FROM public.candidatos c
   JOIN _pf_nascimento_tse_20260926 u ON u.id = c.id
   JOIN public.identidade_timeline_quarentena_snapshot s
     ON s.migration_version = 'nascimento-tse-20260926' AND s.tabela = 'candidatos' AND s.row_id = c.id
-  HAVING NOT EXISTS (SELECT 1 FROM public.coleta_log WHERE execucao = 'migration:20260926233000');
+  HAVING NOT EXISTS (SELECT 1 FROM public.coleta_log WHERE execucao = 'migration:20260927030000');
 
   IF (SELECT count(*) FROM public.candidatos c
        JOIN _pf_nascimento_tse_20260926 u ON u.id = c.id

@@ -150,7 +150,7 @@ BEGIN
     RAISE EXCEPTION 'mauricio-homonimo-20260926: escrita esperada=4 atual=%', total;
   END IF;
 
-  -- @write tabela=coleta_log ref=migration:20260926233100 campos=fonte,escopo,alvo,resultado,volume,detalhe,url,execucao,natureza
+  -- @write tabela=coleta_log ref=migration:20260927030100 campos=fonte,escopo,alvo,resultado,volume,detalhe,url,execucao,natureza
   INSERT INTO public.coleta_log (fonte,escopo,alvo,resultado,volume,detalhe,url,execucao,natureza)
   SELECT 'tse-identidade-homonima','global',
          'patrimonio.despublicado_em,patrimonio.despublicacao_motivo,financiamento.despublicado_em,financiamento.despublicacao_motivo',
@@ -169,8 +169,8 @@ BEGIN
              WHERE s.migration_version = 'mauricio-homonimo-20260926')
          )::text,
          'https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2020.zip',
-         'migration:20260926233100','escrita'
-  WHERE NOT EXISTS (SELECT 1 FROM public.coleta_log WHERE execucao = 'migration:20260926233100');
+         'migration:20260927030100','escrita'
+  WHERE NOT EXISTS (SELECT 1 FROM public.coleta_log WHERE execucao = 'migration:20260927030100');
 
   IF (SELECT count(*) FROM public.patrimonio p
        JOIN _pf_mauricio_homonimo_20260926 u ON u.id = p.id

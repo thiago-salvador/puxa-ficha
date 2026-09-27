@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
-# Reverte, em ordem inversa, as migrations 20260927030200 (CHECK de data de
-# nascimento sentinela), 20260927030100 (homonimo de mauricio-coelho) e
-# 20260927030000 (datas de nascimento pelo TSE) que estiverem no topo do ledger,
-# numa transacao so, com os rollbacks versionados e os readbacks de rollback.
+# Reverte a migration 20260926224500 (partido e cargo_atual de
+# tse-2026-270002544629, Paulo Mourao, Senador TO) quando ela estiver no topo do
+# ledger, numa transacao so, com o rollback versionado e o readback de rollback.
 # Molde de rollback-situacao-godeiro-laudicerio-production.sh.
 #
-#   scripts/audit/rollback-datas-nascimento-tse-production.sh dry-run   # ensaio, nao grava
-#   scripts/audit/rollback-datas-nascimento-tse-production.sh apply     # grava
+#   scripts/audit/rollback-partido-paulo-mourao-production.sh dry-run   # ensaio, nao grava
+#   scripts/audit/rollback-partido-paulo-mourao-production.sh apply     # grava
 set -euo pipefail
 case $- in *x*) set +x ;; esac
 
@@ -50,9 +49,9 @@ pf_configure_libpq_from_url
 export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
-base_version=20260927020000
-versions=(20260927030000 20260927030100 20260927030200)
-names=(datas_nascimento_tse mauricio_coelho_homonimo_2012_2020 data_nascimento_sem_sentinela_check)
+base_version=20260926190100
+versions=(20260926224500)
+names=(partido_cargo_paulo_mourao)
 
 digests=()
 for i in "${!versions[@]}"; do
@@ -130,19 +129,19 @@ print("BEGIN;")
 print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:production-db-migrations', 0));")
 triplas = [resto[i:i + 3] for i in range(0, len(resto), 3)]
 for n, (version, name, digest) in enumerate(triplas):
-    print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(version)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(version)} AND idempotency_key={lit(digest)}) <> 1 THEN RAISE EXCEPTION 'rollback nascimento-tse: ledger divergiu sob lock em {version}'; END IF; END $ledger$;")
+    print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(version)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(version)} AND idempotency_key={lit(digest)}) <> 1 THEN RAISE EXCEPTION 'rollback partido-mourao: ledger divergiu sob lock em {version}'; END IF; END $ledger$;")
     b = corpo(f"{root}/supabase/rollback/{version}_{name}.rollback.sql", True)
     print(b, end="" if b.endswith("\n") else "\n")
     rb = corpo(f"{root}/supabase/readback/{version}_{name}.rollback.readback.sql", False)
     print(rb, end="" if rb.endswith("\n") else "\n")
-    print(f"DO $ledger$ BEGIN IF EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'rollback nascimento-tse: {version} continua no ledger'; END IF; END $ledger$;")
+    print(f"DO $ledger$ BEGIN IF EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'rollback partido-mourao: {version} continua no ledger'; END IF; END $ledger$;")
 
-print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(base)} THEN RAISE EXCEPTION 'rollback nascimento-tse: topo final nao e o predecessor {base}'; END IF; END $ledger$;" if len(triplas) and triplas[-1][0] == "20260927030000" else "")
+print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(base)} THEN RAISE EXCEPTION 'rollback partido-mourao: topo final nao e o predecessor {base}'; END IF; END $ledger$;" if len(triplas) and triplas[-1][0] == "20260926224500" else "")
 print(fecho + ";")
 PY
 
 if [[ "$modo" == "dry-run" ]]; then
-  echo "PASS: dry-run do rollback nascimento-tse rodou rollbacks e readbacks e desfez tudo"
+  echo "PASS: dry-run do rollback partido-mourao rodou rollbacks e readbacks e desfez tudo"
 else
-  echo "PASS: rollback nascimento-tse concluido"
+  echo "PASS: rollback partido-mourao concluido"
 fi
