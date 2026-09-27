@@ -23,11 +23,9 @@ on:
   deployment_status:
   # cron-watchdog: skipped-ok-com-gate-desligado
   # Enquanto SERIAL_MERGE_QUEUE_ENABLED não for "true", todos os jobs são
-  # pulados e a execução agendada conclui "skipped". O watchdog de crons lê
-  # este marcador e trata a pulada declarada como estado esperado, em vez de
-  # abrir issue todo dia. Com a fila ativa, a execução volta a exigir sucesso.
-  schedule:
-    - cron: "*/5 * * * *"
+  # pulados. Por isso o workflow fica sem agenda: o cron de 5 min só gerava
+  # execuções puladas. Ao ligar a fila, recolocar `schedule` com
+  # `- cron: "*/5 * * * *"`; o marcador acima continua valendo para o watchdog.
   workflow_dispatch:
     inputs:
       mode:

@@ -1788,6 +1788,7 @@ export type IngestTseOptions = {
 async function loadCandidatosParaTse(cohort?: ExplicitCohortSelection): Promise<CandidatoConfig[]> {
   if (!cohort) return loadCandidatosPublicos()
   const rows = await loadCandidatosCohortNaoPublica(cohort)
+  // coorte-atualizacao: isento (mapa do seed para a coorte explícita já filtrada)
   const seedBySlug = new Map(loadCandidatos().map((candidate) => [candidate.slug, candidate]))
   return rows.map((row): CandidatoConfig => {
     const seed = seedBySlug.get(row.slug)

@@ -4,8 +4,10 @@ import { readFileSync } from "node:fs"
 import { resolve } from "node:path"
 import {
   ErroValidacaoPesquisasEleitorais,
+  listarPesquisasDoCandidato,
   parsePesquisasEleitoraisJson,
   type CatalogoPesquisasEleitorais,
+  type PesquisaEleitoralDoCandidato,
 } from "@/lib/pesquisas-eleitorais"
 import type { StatePollScenario } from "@/lib/state-polls"
 import { getEstadoNome, getEstadoUFs } from "@/lib/br-uf"
@@ -135,12 +137,38 @@ function loadCatalogs(): Map<string, CatalogoPesquisasEleitorais> {
   return catalogs
 }
 
+type SenadoPoll = CatalogoPesquisasEleitorais["pesquisas"][number]
+type SenadoScenario = SenadoPoll["cenarios"][number]
+
 /**
- * Returns only source-approved, provenance-complete, comparable Senate scenarios. Like the
- * governor pages, a round reviewed one by one (state "publicado") needs no standing preference
- * for its institute. The TSE registration must be published; method and population follow the
- * governor rule (shown when the publication states them, never required, never inferred).
+ * Source-approved, provenance-complete Senate round. Like the governor pages, a round reviewed
+ * one by one (state "publicado") needs no standing preference for its institute. The TSE
+ * registration must be published; method and population follow the governor rule (shown when
+ * the publication states them, never required, never inferred).
  */
+function pesquisaSenadoPublicavel(poll: SenadoPoll, catalog: CatalogoPesquisasEleitorais, uf: string): boolean {
+  return poll.sourceStatus === "aprovado" &&
+    (catalog.preferredSourceIds.includes(poll.sourceId) || poll.state === "publicado") &&
+    poll.electionYear === 2026 &&
+    poll.office === "Senador" &&
+    poll.geography.code === uf &&
+    poll.provenance.resultUrl.length > 0 &&
+    poll.registration.code.status === "publicado" &&
+    Boolean(poll.registration.code.value) &&
+    poll.registration.url.status === "publicado" &&
+    Boolean(poll.registration.url.value)
+}
+
+/**
+ * The measure (first vote, second vote or both) defines the question; its literal wording is
+ * shown when published, as on governor pages, and is not a publication requirement.
+ */
+function cenarioSenadoPublicavel(scenario: SenadoScenario): boolean {
+  const measure = scenario.comparabilityKey.split("|")[4]
+  return scenario.turn === 1 && SENADO_POLL_MEASURES.includes(measure as SenadoPollMeasure)
+}
+
+/** Returns only source-approved, provenance-complete, comparable Senate scenarios. */
 export function selecionarSenadoPolls(
   catalog: CatalogoPesquisasEleitorais | undefined,
   uf: string,
@@ -149,27 +177,30 @@ export function selecionarSenadoPolls(
   if (!catalog || !SENADO_UFS.includes(normalizedUf)) return []
   validateSenadoCatalog(catalog, normalizedUf)
   return catalog.pesquisas.flatMap(({ cenarios, ...poll }) => {
-    if (
-      poll.sourceStatus !== "aprovado" ||
-      (!catalog.preferredSourceIds.includes(poll.sourceId) && poll.state !== "publicado") ||
-      poll.electionYear !== 2026 ||
-      poll.office !== "Senador" ||
-      poll.geography.code !== normalizedUf ||
-      poll.provenance.resultUrl.length === 0 ||
-      poll.registration.code.status !== "publicado" ||
-      !poll.registration.code.value ||
-      poll.registration.url.status !== "publicado" ||
-      !poll.registration.url.value
-    ) return []
-    return cenarios
-      .filter((scenario) => {
-        const measure = scenario.comparabilityKey.split("|")[4]
-        // The measure (first vote, second vote or both) defines the question; its literal wording is
-        // shown when published, as on governor pages, and is not a publication requirement.
-        return scenario.turn === 1 && SENADO_POLL_MEASURES.includes(measure as SenadoPollMeasure)
-      })
-      .map((scenario) => ({ ...poll, scenario }))
+    if (!pesquisaSenadoPublicavel({ ...poll, cenarios }, catalog, normalizedUf)) return []
+    return cenarios.filter(cenarioSenadoPublicavel).map((scenario) => ({ ...poll, scenario }))
   }).sort((a, b) => (b.publicationDate.value ?? "").localeCompare(a.publicationDate.value ?? "") || a.id.localeCompare(b.id))
+}
+
+/**
+ * Candidate profile view of the same rounds the UF Senate page publishes (the page also drops
+ * rounds not in state "publicado"): latest round per institute first, older rounds separately.
+ * Only exact reviewed aliases link a result to the profile.
+ */
+export function listarPesquisasSenadoPorSlug(
+  candidateSlug: string,
+  uf: string,
+  catalog: CatalogoPesquisasEleitorais | undefined = loadCatalogs().get(uf.toUpperCase()),
+): PesquisaEleitoralDoCandidato[] {
+  const normalizedUf = uf.toUpperCase()
+  if (!catalog || !SENADO_UFS.includes(normalizedUf)) return []
+  validateSenadoCatalog(catalog, normalizedUf)
+  const publicaveis = {
+    ...catalog,
+    pesquisas: catalog.pesquisas.filter((poll) =>
+      poll.state === "publicado" && pesquisaSenadoPublicavel(poll, catalog, normalizedUf)),
+  }
+  return listarPesquisasDoCandidato(publicaveis, candidateSlug, cenarioSenadoPublicavel)
 }
 
 export function carregarPesquisasSenado(): Map<string, CatalogoPesquisasEleitorais> {

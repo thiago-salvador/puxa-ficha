@@ -318,8 +318,8 @@ test("downloadToFile retoma por Range amarrado ao ETag depois de timeout no corp
     assert.equal(ok, true)
     assert.equal(readFileSync(dest, "utf8"), inteiro)
     assert.deepEqual(resumes, [10])
-    assert.deepEqual(requests[0], { "Accept-Encoding": "identity" })
-    assert.deepEqual(requests[1], { "Accept-Encoding": "identity", Range: "bytes=10-", "If-Range": '"v1"' })
+    assert.deepEqual(requests[0], { "Accept-Encoding": "identity", "User-Agent": "PuxaFicha-Coletores/1.0" })
+    assert.deepEqual(requests[1], { "Accept-Encoding": "identity", "User-Agent": "PuxaFicha-Coletores/1.0", Range: "bytes=10-", "If-Range": '"v1"' })
     assertNoPartials(dir)
   } finally {
     rmSync(dir, { recursive: true, force: true })

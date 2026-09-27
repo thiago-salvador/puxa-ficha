@@ -2,7 +2,8 @@ import { chmod, readFile, writeFile } from "node:fs/promises"
 import path from "node:path"
 import { pathToFileURL } from "node:url"
 import { isHistoricoCandidaturaRow } from "../../src/lib/historico-tipo-evento"
-import { publicFamilyRowCount, validCoverageSourceProof } from "./lib/coverage-source-proof"
+import { isHousePartitionFamily, publicFamilyRowCount, validCoverageSourceProof } from "./lib/coverage-source-proof"
+import { rotuloAtualizacaoEncerrada } from "../../src/lib/coorte-atualizacao"
 
 /**
  * Etapa 0: matriz somente leitura da cobertura pública por candidato e família.
@@ -37,6 +38,11 @@ export type CoverageState =
   | "erro"
   | "desatualizado"
   | "frescor_indefinido"
+  /**
+   * Coorte de atualização: a candidatura saiu da disputa depois do turno e a
+   * coleta foi encerrada. Célula congelada, não aberta nem vencida.
+   */
+  | "atualizacao_encerrada"
 
 export type CoverageProfile = Record<string, unknown> & {
   id?: string
@@ -64,6 +70,8 @@ export type CoverageCell = {
    * não respondeu. O gate de CI conta tudo que não é coleta_log.
    */
   origem_recibo: "coleta_log" | "badge_publico" | "nenhum" | "perfil_indisponivel"
+  /** Data (AAAA-MM-DD) em que a coleta desta ficha foi encerrada, se foi. */
+  atualizacao_encerrada_em?: string
   /** Exceção nominal aprovada pelo dono; a célula continua com o estado real. */
   excecao?: { motivo: string; aprovado_por: string; aprovado_em: string; referencia?: string }
 }
@@ -117,7 +125,7 @@ export type ReceiptAdapterResult = {
 
 const STATES: readonly CoverageState[] = [
   "publicado", "vazio_confirmado", "nao_aplicavel", "indeterminado",
-  "sem_recibo", "erro", "desatualizado", "frescor_indefinido",
+  "sem_recibo", "erro", "desatualizado", "frescor_indefinido", "atualizacao_encerrada",
 ]
 
 /** Recibo por ficha da auditoria diária do TSE (`data-freshness-audit.yml`). */
@@ -176,11 +184,12 @@ const FAMILIES_BY_SOURCE: Record<string, readonly CoverageFamily[]> = {
   [DAILY_CHECK_SOURCE]: ["perfil_atual", "chapa_vice"],
   "historico_politico": ["historico_politico"], "tse-historico": ["historico_politico"], "tse-history": ["historico_politico"],
   "mudancas_partido": ["mudancas_partido"], "filiacao": ["mudancas_partido"], "tse-filiacao": ["mudancas_partido"],
+  "partidos-parlamentares": ["mudancas_partido"],
   "patrimonio": ["patrimonio"], "tse-patrimonio": ["patrimonio"], "bem-candidato-tse-2018": ["patrimonio"], "destaques-patrimonio": ["patrimonio"],
   "financiamento": ["financiamento"], "tse-financiamento": ["financiamento"], "financiamento-tse": ["financiamento"], "financiamento-verificacoes": ["financiamento"],
   "projetos_lei": ["projetos_lei"], "projetos-lei": ["projetos_lei"], "camara-proposicoes": ["projetos_lei"], "senado-proposicoes": ["projetos_lei"], "camara-dadosabertos-v2": ["projetos_lei"],
   "votos_candidato": ["votos_candidato"], "votos": ["votos_candidato"], "votacoes": ["votos_candidato"], "camara-votacoes": ["votos_candidato"], "destaques-votacoes": ["votos_candidato"], "senado-votacoes": ["votos_candidato"],
-  "gastos_parlamentares": ["gastos_parlamentares"], "gastos-parlamentares": ["gastos_parlamentares"], "camara-gastos": ["gastos_parlamentares"], "senado-gastos": ["gastos_parlamentares"], "ceaps-senado": ["gastos_parlamentares"], "jarbas": ["gastos_parlamentares"],
+  "gastos_parlamentares": ["gastos_parlamentares"], "gastos-parlamentares": ["gastos_parlamentares"], "camara-gastos": ["gastos_parlamentares"], "camara-cotas": ["gastos_parlamentares"], "senado-gastos": ["gastos_parlamentares"], "ceaps-senado": ["gastos_parlamentares"], "jarbas": ["gastos_parlamentares"],
   "gastos_executivo": ["gastos_executivo"], "gastos-executivo": ["gastos_executivo"], "transparencia": ["gastos_executivo"],
   // Revisão humana pendente da confirmação editorial: recibo `indeterminado`
   // mais novo que o judicial, então a célula fica pendente até a revisão.
@@ -386,6 +395,11 @@ function requiredSources(profile: CoverageProfile, family: CoverageFamily): stri
   return family === "gastos_parlamentares" ? expenseSources(profile) : federalSources(profile)
 }
 
+/** Federal house partitions required by the coverage matrix for this candidate/family. */
+export function requiredCoverageHouses(profile: CoverageProfile, family: CoverageFamily): Array<"camara" | "senado"> {
+  return requiredSources(profile, family).filter((source): source is "camara" | "senado" => source === "camara" || source === "senado")
+}
+
 /**
  * Adapta uma exportação somente leitura de `coleta_log_ultima`.
  *
@@ -505,6 +519,22 @@ const FRESHNESS_DAYS: Record<CoverageFamily, number | null> = {
   gastos_executivo: 90, processos: 14, sites_tse: null, chapa_vice: null,
 }
 
+/**
+ * Família guiada por revisão oficial, sem prazo em dias: a prova só cai por
+ * payload alterado ou por coleta posterior sem conclusão. Coletor agendado
+ * dessas famílias grava toda rodada, inclusive o recibo aberto.
+ */
+export function familyWithoutFreshnessSla(family: CoverageFamily): boolean {
+  return FRESHNESS_DAYS[family] === null
+}
+
+/**
+ * Prazo da prova nas famílias guiadas por revisão que têm coletor agendado.
+ * Sem ele, cron parado deixaria a prova valendo para sempre. Histórico roda
+ * semanal; 21 dias toleram duas rodadas perdidas.
+ */
+const PROOF_MAX_AGE_DAYS: Partial<Record<CoverageFamily, number>> = { historico_politico: 21 }
+
 function hasMaterializedData(profile: CoverageProfile, family: CoverageFamily): boolean {
   if (family === "perfil_atual") return CORE_FIELDS.every((field) => text(profile[field]) !== null)
   if (family === "processos") return Array.isArray(profile.processos) && profile.processos.length > 0
@@ -589,8 +619,14 @@ function stateFromSingleReceipt(receipt: Receipt | null, profile: CoverageProfil
   // A found receipt without published evidence has no concluded public state,
   // even when the search itself is old. An empty receipt with published data is
   // contradictory and must be reviewed.
-  if ((effectiveResult === "encontrado" || effectiveResult === "publicado") && !hasMaterializedData(profile, family)) return "indeterminado"
-  if (effectiveResult === "vazio_confirmado" && hasMaterializedDataInReceiptScope(profile, family, receipt)) {
+  const partition = isHousePartitionFamily(family) ? record(record(receipt.coverage_proof)?.house_partition) : null
+  const partitionRows = partition && Number.isSafeInteger(partition.public_rows) ? Number(partition.public_rows) : null
+  const hasCoverageProof = Boolean(record(receipt.coverage_proof))
+  if (isHousePartitionFamily(family) && hasCoverageProof && !validCoverageSourceProof(profile, family, receipt)) return "indeterminado"
+  if ((effectiveResult === "encontrado" || effectiveResult === "publicado") &&
+      (isHousePartitionFamily(family) ? partitionRows === 0 : !hasMaterializedData(profile, family))) return "indeterminado"
+  if (effectiveResult === "vazio_confirmado" &&
+      (isHousePartitionFamily(family) ? (partitionRows ?? 0) > 0 : hasMaterializedDataInReceiptScope(profile, family, receipt))) {
     // Os dados parlamentares podem vir da outra casa; sem partição por fonte
     // não há prova de contradição no recibo vazio desta casa.
     return ["projetos_lei", "votos_candidato", "gastos_parlamentares"].includes(family) ? "indeterminado" : "erro"
@@ -658,9 +694,19 @@ function stateFromReceipt(receipt: Receipt | null, profile: CoverageProfile, fam
   if (sourceStates.includes("indeterminado")) return "indeterminado"
   if (sourceStates.includes("desatualizado")) return "desatualizado"
   if (sourceStates.includes("frescor_indefinido")) return "frescor_indefinido"
+  const houseZeroContracts = family === "gastos_parlamentares" && sourceReceipts.every((item) => validExpenseZero(profile, family, item as Receipt))
+  if (isHousePartitionFamily(family) && !houseZeroContracts) {
+    const partitions = sourceReceipts.map((item) => record(record(item?.coverage_proof)?.house_partition))
+    if (partitions.some((item) => !item)) return "indeterminado"
+    const previewRows = partitions.reduce((sum, item) => sum + Number(item?.public_rows ?? -1), 0)
+    const fullRows = partitions.reduce((sum, item) => sum + Number(item?.public_total_rows ?? -1), 0)
+    if (previewRows !== publicFamilyRowCount(profile, family)) return "indeterminado"
+    if (family === "projetos_lei" && (!Number.isSafeInteger(profile.projetos_lei_total) || fullRows !== profile.projetos_lei_total)) return "indeterminado"
+    if (family !== "projetos_lei" && fullRows !== previewRows) return "indeterminado"
+  }
   // Duas casas podem ter resultados diferentes. Sem uma prova que atribua
   // cada linha pública à casa/ID correspondente, a união ainda é inconclusiva.
-  if (sourceStates.includes("vazio_confirmado") && sourceStates.includes("publicado")) return "indeterminado"
+  if (sourceStates.includes("vazio_confirmado") && sourceStates.includes("publicado")) return "publicado"
   if (sourceStates.every((state) => state === "vazio_confirmado")) return "vazio_confirmado"
   if (sourceStates.every((state) => state === "publicado")) return "publicado"
   return "indeterminado"
@@ -780,10 +826,19 @@ function provenVerdict(receipt: Receipt | null, profile: CoverageProfile, family
     return { estado: "erro", motivo: "prova de publicado sem linha no payload público", receipt: proof }
   }
   const provedAt = Date.parse(parseDate(proof.executado_em)!)
+  const maxAge = PROOF_MAX_AGE_DAYS[family]
+  if (maxAge !== undefined && Date.now() - provedAt > maxAge * 86_400_000) {
+    return { estado: "desatualizado", motivo: `prova de revisão com mais de ${maxAge} dias`, receipt: proof }
+  }
   const later = Object.values(record(receipt?.__receipts) ?? {}).map(record)
     .filter((item): item is Receipt => Boolean(item) && Date.parse(parseDate(item!.executado_em) ?? "1970-01-01") > provedAt)
   if (later.some((item) => text(item.resultado) === "erro")) {
     return { estado: "erro", motivo: "erro de coleta posterior à prova de cobertura", receipt: later.find((item) => text(item.resultado) === "erro") }
+  }
+  // Revisão posterior que não concluiu também derruba a prova: sem prazo em
+  // dias, é a única forma de uma divergência nova aparecer na célula.
+  if (later.some((item) => text(item.resultado) === "indeterminado")) {
+    return { estado: "indeterminado", motivo: "coleta posterior à prova sem conclusão", receipt: later.find((item) => text(item.resultado) === "indeterminado") }
   }
   const contradiction = later.find((item) => text(item.resultado) === "vazio_confirmado" && hasMaterializedDataInReceiptScope(profile, family, item))
   if (contradiction) return { estado: "erro", motivo: "vazio posterior à prova contradiz ano publicado", receipt: contradiction }
@@ -877,7 +932,7 @@ export function parseCoverageExceptions(raw: unknown, now = new Date()): Coverag
   })
 }
 
-function makeCell(profile: CoverageProfile, family: CoverageFamily, joins: CoverageReceiptJoin, profileError?: string): CoverageCell {
+function makeCell(profile: CoverageProfile, family: CoverageFamily, joins: CoverageReceiptJoin, profileError?: string, encerradaEm?: string): CoverageCell {
   const slug = text(profile.slug) ?? "<sem-slug>"
   // A failed profile read cannot establish either the data or the rule of
   // applicability. Keep every family as an errored, applicable cell instead
@@ -889,9 +944,15 @@ function makeCell(profile: CoverageProfile, family: CoverageFamily, joins: Cover
       : profileError
       ? { estado: "erro" }
       : verdictFor(joined, profile, family)
-  const state = verdict.estado
+  // Ficha congelada: estado aberto (sem recibo, vencido, indefinido) vira
+  // `atualizacao_encerrada`. Estado provado (publicado, vazio confirmado,
+  // não aplicável) continua como está.
+  const congelada = Boolean(encerradaEm) && applicableCell && OPEN_STATES.includes(verdict.estado)
+  const state: CoverageState = congelada ? "atualizacao_encerrada" : verdict.estado
   const receipt = verdict.receipt ?? joined
-  const explicitReason = !applicableCell
+  const explicitReason = congelada
+    ? rotuloAtualizacaoEncerrada(encerradaEm!)
+    : !applicableCell
     ? "regra escrita: família não se aplica ao cargo ou ao histórico federal do candidato"
     : profileError
       ? `perfil não respondeu: ${profileError}`
@@ -909,6 +970,7 @@ function makeCell(profile: CoverageProfile, family: CoverageFamily, joins: Cover
       : joins[slug]?.[family] ? "coleta_log"
       : joined ? "badge_publico"
       : "nenhum",
+    ...(encerradaEm ? { atualizacao_encerrada_em: encerradaEm } : {}),
   }
 }
 
@@ -918,10 +980,12 @@ export function buildCoverageMatrix(
   joins: CoverageReceiptJoin = {},
   exceptions: CoverageException[] = [],
   now = new Date(),
+  /** Coorte de atualização: slug -> data em que a coleta foi encerrada. */
+  encerradas: ReadonlyMap<string, string> = new Map(),
 ): CoverageMatrix {
   const errors = new Map(profileErrors.map((item) => [item.slug, item.error]))
   const erroredProfiles = profileErrors.map((item) => ({ slug: item.slug } satisfies CoverageProfile))
-  const cells = [...profiles, ...erroredProfiles].flatMap((profile) => COVERAGE_FAMILIES.map((family) => makeCell(profile, family, joins, errors.get(text(profile.slug) ?? ""))))
+  const cells = [...profiles, ...erroredProfiles].flatMap((profile) => COVERAGE_FAMILIES.map((family) => makeCell(profile, family, joins, errors.get(text(profile.slug) ?? ""), encerradas.get(text(profile.slug) ?? ""))))
   const exceptionReport: CoverageExceptionReport = { aplicadas: [], sem_celula: [] }
   const byKey = new Map(cells.map((cell) => [`${cell.slug}|${cell.familia}`, cell]))
   for (const exception of exceptions) {
@@ -955,6 +1019,28 @@ export function buildCoverageMatrix(
 }
 
 /**
+ * Coorte de atualização lida dos snapshots de recibo: a chave
+ * `atualizacao_encerrada` traz { slug, atualizacao_encerrada_em } das fichas
+ * cuja coleta foi encerrada depois do turno. Snapshot antigo (sem a chave)
+ * devolve mapa vazio: tudo se comporta como antes.
+ */
+export function lerEncerradasDoSnapshot(snapshots: readonly unknown[]): Map<string, string> {
+  const out = new Map<string, string>()
+  for (const raw of snapshots) {
+    const lista = record(raw)?.atualizacao_encerrada
+    if (lista === undefined || lista === null) continue
+    if (!Array.isArray(lista)) throw new Error("snapshot de recibos: atualizacao_encerrada não é lista")
+    for (const item of lista) {
+      const slug = text(record(item)?.slug)
+      const data = text(record(item)?.atualizacao_encerrada_em)
+      if (!slug || !data || !/^\d{4}-\d{2}-\d{2}/.test(data)) throw new Error("snapshot de recibos: item de atualizacao_encerrada inválido")
+      out.set(slug, data.slice(0, 10))
+    }
+  }
+  return out
+}
+
+/**
  * Decisão do gate `sem-recibo`. Em enforce, perfil não lido também reprova:
  * célula em erro de leitura não prova nada e esconderia ausência de recibo.
  */
@@ -983,7 +1069,7 @@ export function blockingCells(matrix: CoverageMatrix): CoverageCell[] {
  * de ausência).
  */
 export function missingReceiptCells(matrix: CoverageMatrix): CoverageCell[] {
-  return matrix.cells.filter((cell) => cell.aplicavel && !cell.excecao &&
+  return matrix.cells.filter((cell) => cell.aplicavel && !cell.excecao && cell.estado !== "atualizacao_encerrada" &&
     (cell.origem_recibo === "nenhum" || cell.origem_recibo === "badge_publico"))
 }
 
@@ -992,6 +1078,7 @@ export async function fetchPublicProfiles(
   fetcher: typeof fetch = fetch,
   sleep: (ms: number) => Promise<void> = (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
 ): Promise<{ profiles: CoverageProfile[]; errors: Array<{ slug: string; error: string }> }> {
+  // coorte-atualizacao: isento (a matriz lista toda ficha no ar; a congelada vira atualizacao_encerrada via lerEncerradasDoSnapshot)
   const slugResponse = await fetcher(`${baseUrl.replace(/\/$/, "")}/api/candidato-slugs`, { headers: { accept: "application/json" } })
   if (!slugResponse.ok) throw new Error(`/api/candidato-slugs HTTP ${slugResponse.status}`)
   const body = await slugResponse.json() as { slugs?: unknown }
@@ -1004,13 +1091,19 @@ export async function fetchPublicProfiles(
   for (const slug of body.slugs as string[]) {
     try {
       const url = `${baseUrl.replace(/\/$/, "")}/api/candidato-profile/${encodeURIComponent(slug)}`
-      let response = await fetcher(url, { headers: { accept: "application/json" } })
-      // A rota pública limita por IP; 429 é espera, não ausência (mesma
-      // cadência do aplicador de recibos).
-      for (let attempt = 1; response.status === 429 && attempt <= 5; attempt++) {
+      let response: Response | undefined
+      // A rota pública pode limitar por IP ou falhar temporariamente. Uma só
+      // ficha inacessível invalida o snapshot inteiro dos coletores.
+      for (let attempt = 1; attempt <= 6; attempt++) {
+        try {
+          response = await fetcher(url, { headers: { accept: "application/json" } })
+          if (![429, 500, 502, 503, 504].includes(response.status) || attempt === 6) break
+        } catch (error) {
+          if (attempt === 6) throw error
+        }
         await sleep(5_000 * attempt)
-        response = await fetcher(url, { headers: { accept: "application/json" } })
       }
+      if (!response) throw new Error("perfil sem resposta")
       if (!response.ok) throw new Error(`HTTP ${response.status}`)
       const envelope = await response.json() as { data?: unknown; sourceStatus?: unknown }
       if (envelope.sourceStatus !== "live") throw new Error(`perfil não publicado: ${String(envelope.sourceStatus)}`)
@@ -1051,9 +1144,12 @@ async function main(): Promise<void> {
   let joins: CoverageReceiptJoin = {}
   let rejectedReceipts: ReceiptAdapterResult["rejected"] = []
   let ignoredPartialReceipts = 0
+  let encerradas: ReadonlyMap<string, string> = new Map()
   const receiptPaths = [options.receipts, ...options.receiptsExtra].filter((item): item is string => Boolean(item))
   if (receiptPaths.length) {
     const loaded = await Promise.all(receiptPaths.map(async (file) => JSON.parse(await readFile(path.resolve(file), "utf8")) as unknown))
+    // coverage-receipts-snapshot.sql publica a coorte de atualização junto dos recibos.
+    encerradas = lerEncerradasDoSnapshot(loaded)
     const rowGroups = loaded.map((raw) => Array.isArray(raw)
       ? raw as LatestReceiptRow[]
       : Array.isArray(record(raw)?.rows) ? record(raw)?.rows as LatestReceiptRow[]
@@ -1072,7 +1168,7 @@ async function main(): Promise<void> {
   const exceptions = options.exceptions
     ? parseCoverageExceptions(JSON.parse(await readFile(path.resolve(options.exceptions), "utf8")) as unknown)
     : []
-  const matrix = buildCoverageMatrix(fetched.profiles, fetched.errors, joins, exceptions)
+  const matrix = buildCoverageMatrix(fetched.profiles, fetched.errors, joins, exceptions, new Date(), encerradas)
   if (options.out) {
     const outputPath = path.resolve(options.out)
     await writeFile(outputPath, `${JSON.stringify(matrix, null, 2)}\n`, { encoding: "utf8", mode: 0o600 })

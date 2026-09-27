@@ -69,6 +69,11 @@ export function ativarDryRun(): void {
   ativadoNoProcesso = true
 }
 
+/** Câmara collectors default to read-only unless --apply or an option explicitly enables writes. */
+export function deveAtivarDryRunDoColetor(options: { apply?: boolean; dryRun?: boolean }, argv: readonly string[] = process.argv): boolean {
+  return options.dryRun === true || argv.includes("--dry-run") || !(options.apply ?? argv.includes("--apply"))
+}
+
 /** O modo está ativo? Lê o env a cada chamada, para não depender da ordem de import. */
 export function emDryRun(): boolean {
   return ativadoNoProcesso || process.env[ENV_DRY_RUN] === "1"

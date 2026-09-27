@@ -16,6 +16,7 @@ import { createHash } from "node:crypto"
 import { existsSync, readFileSync, writeFileSync } from "node:fs"
 import { pathToFileURL } from "node:url"
 import { BRAZIL_STATES } from "../src/data/brazil-states"
+import { carregarCoorteAtualizacao, COORTE_ATUALIZACAO_COMPLETA, estaNaCoorteAtualizacao, type CoorteAtualizacao } from "./lib/coorte-atualizacao"
 
 type Json = Record<string, unknown>
 
@@ -370,7 +371,7 @@ export function montarRodada(rodada: RodadaColetada, aliases: DecisoesAlias, cat
   return { poll, source, aliases: newAliases }
 }
 
-export function importarRodadas(rodadas: RodadaColetada[], aliases: DecisoesAlias, reviewedAt: string, catalogos: Catalogos) {
+export function importarRodadas(rodadas: RodadaColetada[], aliases: DecisoesAlias, reviewedAt: string, catalogos: Catalogos, coorteAtualizacao: CoorteAtualizacao = COORTE_ATUALIZACAO_COMPLETA) {
   const problems: string[] = []
   const planned: string[] = []
   const skipped: string[] = []
@@ -382,6 +383,11 @@ export function importarRodadas(rodadas: RodadaColetada[], aliases: DecisoesAlia
     const dataset = datasetDe(catalogos, rodada)
     const polls = dataset.pesquisas as Json[]
     const built = montarRodada(rodada, aliases, catalogos, reviewedAt)
+    // coorte-atualizacao: aplica (round manual não pode gravar resultado de candidatura encerrada)
+    const encerradas = built.poll.cenarios.flatMap((scenario) => (scenario.resultados as Json[])
+      .filter((result) => typeof result.candidate_slug === "string" && !estaNaCoorteAtualizacao(coorteAtualizacao, { slug: result.candidate_slug as string }))
+      .map((result) => String(result.candidate_slug)))
+    if (encerradas.length) { problems.push(`${built.poll.id}: candidatura(s) fora da coorte: ${[...new Set(encerradas)].join(", ")}`); continue }
     const sameRegistration = rodada.registration && polls.some((poll) => {
       const known = registrationParts(((poll.registration as Json).code as Json).value as string | null)
       const mine = registrationParts(rodada.registration)
@@ -434,7 +440,7 @@ export function registrarAusenciasSenado(ausencias: AusenciaChecada[], catalogos
   return { problems, recorded }
 }
 
-function main() {
+async function main(): Promise<void> {
   const args = process.argv.slice(2)
   const values = (flag: string) => args.flatMap((arg, index) => (arg === flag ? [args[index + 1]] : []))
   const inputs = values("--input")
@@ -453,7 +459,8 @@ function main() {
     }
   }
   const reviewedAt = values("--reviewed-at")[0] ?? new Date().toISOString().replace(/\.\d+Z$/, "Z")
-  const { catalogos, ...result } = importarRodadas(rodadas, aliases, reviewedAt, carregarCatalogos())
+  const coorteAtualizacao = args.includes("--write") ? await carregarCoorteAtualizacao() : COORTE_ATUALIZACAO_COMPLETA
+  const { catalogos, ...result } = importarRodadas(rodadas, aliases, reviewedAt, carregarCatalogos(), coorteAtualizacao)
   const ausencias = values("--ausencias").flatMap((path) => JSON.parse(readFileSync(path, "utf8")) as AusenciaChecada[])
   const absence = registrarAusenciasSenado(ausencias, catalogos)
   console.log(JSON.stringify({ ...result, ausencias: absence }, null, 2))
@@ -465,4 +472,6 @@ function main() {
   }
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main()
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((error) => { console.error(error instanceof Error ? error.message : String(error)); process.exitCode = 1 })
+}

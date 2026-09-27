@@ -14,7 +14,8 @@ import { enrichInstagram } from "./lib/enrich-instagram"
 import { ingestGoogleNews } from "./lib/ingest-google-news"
 import { enrichWikiHistorico } from "./lib/enrich-wiki-historico"
 import { ingestWikidataPolitico } from "./lib/ingest-wikidata-politico"
-import { ingestJarbas } from "./lib/ingest-jarbas"
+import { ingestCamaraCotasCsv } from "./lib/ingest-jarbas"
+import { ingestPartidosParlamentares } from "./lib/ingest-partidos-parlamentares"
 import { ingestSiconfi } from "./lib/ingest-siconfi"
 import { ingestCapag } from "./lib/ingest-capag"
 import { ingestAtlasViolencia } from "./lib/ingest-atlas-violencia"
@@ -32,11 +33,14 @@ import {
 import type { IngestResult } from "./lib/types"
 import { fileURLToPath } from "node:url"
 import { resolve } from "node:path"
+import { writeFileSync } from "node:fs"
+import { ativarDryRun, emDryRun, relatorioDryRun } from "./lib/dry-run"
 
 const VALID_SOURCES = [
   // Ordem correta: tse-situacao primeiro (CPF), depois APIs federais, depois enriquecimento
   "tse-situacao", "camara", "senado", "tse", "transparencia",
-  "tcu", "sancoes", "tse-historico", "filiacao", "ceaps-senado", "jarbas",
+  "tcu", "sancoes", "tse-historico", "filiacao", "ceaps-senado", "camara-cotas",
+  "partidos-parlamentares",
   "wikipedia", "wiki-historico", "wikidata", "wikidata-politico", "instagram",
   "siconfi", "capag", "atlas-violencia", "ibge", "ideb", "ipea",
   "google-news",
@@ -136,7 +140,12 @@ export const INGEST_TASKS: IngestTask[] = [
     failureLabel: "Wiki Historico",
     run: enrichWikiHistorico,
   },
-  { source: "tcu", heading: "--- TCU (Inabilitados + CADIRREG) ---", failureLabel: "TCU", run: ingestTCU },
+  {
+    source: "tcu",
+    heading: "--- TCU (Inabilitados + CADIRREG) ---",
+    failureLabel: "TCU",
+    run: () => ingestTCU({ targetSlugs: cli.targetSlugs }),
+  },
   {
     source: "sancoes",
     fonteColeta: "transparencia-sanctions",
@@ -163,7 +172,13 @@ export const INGEST_TASKS: IngestTask[] = [
     source: "ceaps-senado",
     heading: "--- CEAPS Senado ---",
     failureLabel: "CEAPS Senado",
-    run: ingestCeapsSenado,
+    run: () => ingestCeapsSenado({ targetSlugs: cli.targetSlugs }),
+  },
+  {
+    source: "partidos-parlamentares",
+    heading: "--- Histórico partidário parlamentar oficial ---",
+    failureLabel: "Histórico partidário parlamentar",
+    run: () => ingestPartidosParlamentares({ targetSlugs: cli.targetSlugs, apply: cli.apply }),
   },
   { source: "wikidata", heading: "--- Wikidata ---", failureLabel: "Wikidata", run: ingestWikidata },
   {
@@ -179,10 +194,10 @@ export const INGEST_TASKS: IngestTask[] = [
     run: enrichInstagram,
   },
   {
-    source: "jarbas",
-    heading: "--- Jarbas / Serenata de Amor ---",
-    failureLabel: "Jarbas",
-    run: ingestJarbas,
+    source: "camara-cotas",
+    heading: "--- Cota parlamentar oficial da Câmara (CSV) ---",
+    failureLabel: "Cota parlamentar da Câmara",
+    run: () => ingestCamaraCotasCsv({ targetSlugs: cli.targetSlugs }),
   },
   { source: "siconfi", heading: "--- SICONFI (gestao fiscal) ---", failureLabel: "SICONFI", run: ingestSiconfi },
   { source: "capag", heading: "--- CAPAG (rating fiscal) ---", failureLabel: "CAPAG", run: ingestCapag },
@@ -274,6 +289,7 @@ function shouldShowHistoricoReminder(selectedSources: Set<IngestSource>): boolea
 }
 
 async function main() {
+  if (cli.dryRun) ativarDryRun()
   log("pipeline", `Iniciando ingestao: ${sources.join(", ")}`)
   const start = Date.now()
   const allResults: IngestResult[] = []
@@ -321,6 +337,18 @@ async function main() {
   // decide e so o codigo de saida.
   const tolerancia = avaliarToleranciaPorFonte(allResults, erroMaxFracao)
   const reprovadas = tolerancia.filter((t) => t.reprovada)
+
+  if (emDryRun()) {
+    const relatorio = relatorioDryRun()
+    const resumo = {
+      porResultado: relatorio.porResultado,
+      bloqueios: relatorio.bloqueios.length,
+      recibos: relatorio.resultados.map(({ fonte, alvo, resultado }) => ({ fonte, alvo, resultado })),
+    }
+    const caminho = process.env.PF_DRY_RUN_REPORT_PATH
+    if (caminho) writeFileSync(caminho, JSON.stringify(resumo) + "\n", { mode: 0o600 })
+    log("pipeline", `DRY_RUN porResultado=${JSON.stringify(resumo.porResultado)} bloqueios=${resumo.bloqueios}`)
+  }
 
   if (tolerancia.some((t) => t.comErro > 0)) {
     log("pipeline", ``)

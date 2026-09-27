@@ -21,6 +21,7 @@ import { fileURLToPath, pathToFileURL } from "node:url"
 import { ensureSupabaseClient } from "./lib/supabase"
 import { carregarProgramasComResumo } from "./promessa-evidencia-programas"
 import type { CatalogoFalas } from "../src/lib/falas-candidatos"
+import { aplicarCoorteAtualizacao, carregarCoorteAtualizacao, filtrarCoorteAtualizacao } from "./lib/coorte-atualizacao"
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 export const SNAPSHOT_PATH = path.join(ROOT, "reports/promessa-evidencia/snapshot.json")
@@ -125,12 +126,18 @@ export async function coletarSnapshot(): Promise<SnapshotEvidencias> {
   const slugs = programas.map((programa) => programa.slug)
 
   const candidatosBrutos: Array<{ id: string; slug: string; publicavel: boolean; status: string | null }> = []
+  const coorte = await carregarCoorteAtualizacao()
   for (const lote of lotes(slugs)) {
+    // coorte-atualizacao: aplica
     const { data, error } = await db.from("candidatos").select("id,slug,publicavel,status").in("slug", lote)
     if (error) throw new Error(error.message)
-    candidatosBrutos.push(...(data ?? []))
+    candidatosBrutos.push(...filtrarCoorteAtualizacao(data ?? [], coorte, "promessa"))
   }
-  const publicos = candidatosBrutos.filter((c) => c.publicavel === true && c.status !== "removido")
+  // coorte-atualizacao: aplica
+  const publicos = await aplicarCoorteAtualizacao(
+    candidatosBrutos.filter((c) => c.publicavel === true && c.status !== "removido"),
+    "promessa",
+  )
   const ids = publicos.map((c) => c.id)
 
   const historico: Array<{ candidato_id: string; cargo_canonico: string | null; tipo_evento: string | null }> = []
@@ -153,7 +160,7 @@ export async function coletarSnapshot(): Promise<SnapshotEvidencias> {
     }
     projetos.push(...await paginar<SnapshotProjeto>((de, ate) => db.from("projetos_lei")
       .select("id,candidato_id,tipo,numero,ano,ementa,tema,situacao,url_inteiro_teor")
-      .in("candidato_id", lote).order("id").range(de, ate)))
+      .in("candidato_id", lote).is("despublicado_em", null).order("id").range(de, ate)))
     posicoesBrutas.push(...await paginar<SnapshotPosicao>((de, ate) => db.from("posicoes_declaradas")
       .select("id,candidato_id,tema,posicao,descricao,fonte,url_fonte")
       .in("candidato_id", lote).eq("verificado", true).eq("gerado_por", "curadoria").order("id").range(de, ate)))

@@ -6,6 +6,7 @@ import type { LegislacaoMandatoExecutivo, MudancaPartido } from "@/lib/types"
 import { legislativeHistoryFlagsFromRows } from "@/lib/legislative-history"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 import { gastoParlamentarEmRevisao } from "@/lib/gastos-parlamentares-em-revisao"
+import { gastoParlamentarExibivel } from "@/lib/public-profile-dto"
 
 /** PostgREST / Supabase default max rows per request. */
 const PAGE_SIZE = 1000
@@ -30,7 +31,14 @@ const CANDIDATO_ID_CHUNK = 100
 export const LEGISLACAO_MANDATO_EXECUTIVO_PUBLIC_SELECT =
   "id,candidato_id,tipo_relacao,tipo_norma,numero,ano,data_norma,ementa,signatario,autoridade_papel,fonte_primaria_url,metadata" as const
 
-type GastoRow = { candidato_id: string; ano: number; total_gasto: number | string | null }
+type GastoRow = {
+  candidato_id: string
+  ano: number
+  total_gasto: number | string | null
+  fonte?: string | null
+  proveniencia?: unknown
+  categorias?: unknown
+}
 type CargoAtualRow = { id: string; cargo_atual: string | null }
 type HistoricoLegislativoRow = {
   candidato_id: string
@@ -67,7 +75,7 @@ export async function fetchGastoTotalsByCandidatoIds(
     while (true) {
       const { data, error } = await supabase
         .from("gastos_parlamentares")
-        .select("candidato_id,ano,total_gasto")
+        .select("candidato_id,ano,total_gasto,fonte,proveniencia:detalhamento->proveniencia,categorias:detalhamento->categorias")
         .abortSignal(supabaseQueryTimeoutSignal())
         .in("candidato_id", idChunk)
         .range(from, from + PAGE_SIZE - 1)
@@ -77,8 +85,16 @@ export async function fetchGastoTotalsByCandidatoIds(
       }
 
       const rows = (data ?? []) as GastoRow[]
+      // Mesma regra da ficha: o total do ranking não pode somar linha que a
+      // ficha esconde, nem a linha legada e a oficial do mesmo ano.
       all.push(...rows.filter((row) =>
-        !gastoParlamentarEmRevisao(slugsByCandidatoId.get(row.candidato_id) ?? "", row.ano),
+        !gastoParlamentarEmRevisao(slugsByCandidatoId.get(row.candidato_id) ?? "", row.ano) &&
+        gastoParlamentarExibivel(
+          row.fonte,
+          row.proveniencia == null ? null : { proveniencia: row.proveniencia, categorias: row.categorias },
+          row.ano,
+          row.total_gasto == null ? undefined : Number(row.total_gasto),
+        ),
       ))
       if (rows.length < PAGE_SIZE) break
       from += PAGE_SIZE

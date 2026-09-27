@@ -2,6 +2,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { dirname, resolve } from "node:path"
 
 import { getExplicitCohort, withExplicitCohort } from "./cohort-context"
+import type { CoorteAtualizacao } from "./coorte-atualizacao"
 import { planejarEscrita } from "./dry-run"
 import type { CandidatoConfig, IngestResult } from "./types"
 import type { SenadoRosterManifest, SenadoRosterPerson, TSEComplementRow, TSESnapshotRow } from "./tse-roster"
@@ -134,6 +135,7 @@ export interface SenadoPublicCohortConfig {
   schema_version: "senado-public-cohort-config-v1"
   generated_at: string
   source: {
+    // coorte-atualizacao: isento (nome da relação no recibo da coorte explícita)
     relation: "candidatos_publico"
     expected_count: number
     endpoint: "local-supabase"
@@ -243,10 +245,10 @@ export function writeCohortPromotionArtifact(path: string, selection: ValidatedC
 export { withExplicitCohort }
 
 /** Executa um coletor existente com a seleção convertida ao contrato comum. */
-export function runCohortWithContext<T>(selection: ValidatedCohortSelection, collector: () => T, seed?: readonly CandidatoConfig[]): T
-export function runCohortWithContext<T>(selection: ValidatedCohortSelection, collector: () => Promise<T>, seed?: readonly CandidatoConfig[]): Promise<T>
-export function runCohortWithContext<T>(selection: ValidatedCohortSelection, collector: () => T | Promise<T>, seed: readonly CandidatoConfig[] = []): T | Promise<T> {
-  return withExplicitCohort(buildCohortPromotionConfig(selection, seed), collector)
+export function runCohortWithContext<T>(selection: ValidatedCohortSelection, collector: () => T, seed?: readonly CandidatoConfig[], coorteAtualizacao?: CoorteAtualizacao): T
+export function runCohortWithContext<T>(selection: ValidatedCohortSelection, collector: () => Promise<T>, seed?: readonly CandidatoConfig[], coorteAtualizacao?: CoorteAtualizacao): Promise<T>
+export function runCohortWithContext<T>(selection: ValidatedCohortSelection, collector: () => T | Promise<T>, seed: readonly CandidatoConfig[] = [], coorteAtualizacao?: CoorteAtualizacao): T | Promise<T> {
+  return withExplicitCohort(buildCohortPromotionConfig(selection, seed), collector, coorteAtualizacao)
 }
 
 /**
@@ -257,7 +259,8 @@ export function runCohortWithContext<T>(selection: ValidatedCohortSelection, col
 export const SENADO_COHORT_SOURCES = Object.freeze([
   "tse-situacao", "tse", "tse-historico", "transparencia", "tcu", "sancoes",
   "filiacao", "wikipedia", "wiki-historico", "wikidata", "wikidata-politico",
-  "instagram", "google-news", "camara", "senado", "ceaps-senado", "jarbas",
+  "instagram", "google-news", "camara", "senado", "ceaps-senado",
+  "camara-cotas", "partidos-parlamentares",
 ] as const)
 
 export type SenadoCohortSource = (typeof SENADO_COHORT_SOURCES)[number]
@@ -301,6 +304,7 @@ export async function resolveCohortSourceTasks(sources: readonly string[]): Prom
 
 export interface CohortSourceRunOptions {
   seed?: readonly CandidatoConfig[]
+  coorteAtualizacao?: CoorteAtualizacao
   taskRegistry?: readonly IngestTask[]
   registerResults?: (results: IngestResult[]) => Promise<void>
   /** Compatibilidade de --collect-tse: o restante do registry mantém suas opções. */
@@ -369,7 +373,7 @@ export async function runCohortSources(
         failures.push(`${task.source}: resultado contém erro`)
       }
     }
-  }, options.seed ?? [])
+  }, options.seed ?? [], options.coorteAtualizacao)
 
   const hasIndeterminate = results.some((result) => result.coleta_resultado === "indeterminado")
   const status = failures.length > 0 ? "error" : hasIndeterminate ? "partial" : "success"

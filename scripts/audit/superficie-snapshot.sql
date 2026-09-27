@@ -143,6 +143,7 @@ from (
       where textos.texto is not null
     )
   ) as linha
+  -- coorte-atualizacao: isento (superfície pública; ficha congelada continua no ar)
   from candidatos c
   -- R1-R7 usam apenas as fichas públicas; R8-R10 também nomeiam o backlog das
   -- candidaturas ainda não públicas, sem convertê-lo em falha permanente.

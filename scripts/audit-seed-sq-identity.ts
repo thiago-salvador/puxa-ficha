@@ -40,6 +40,7 @@ import { pipeline } from "node:stream/promises"
 import { stripAccents } from "../src/lib/strip-accents"
 
 const CACHE_DIR = resolve(process.cwd(), ".tse-audit-cache")
+// coorte-atualizacao: isento (identidade do seed contra o TSE, não atualização)
 const SEED_PATH = resolve(process.cwd(), "data/candidatos.json")
 
 interface SeedEntry {

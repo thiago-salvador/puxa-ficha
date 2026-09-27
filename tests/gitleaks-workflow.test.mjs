@@ -198,8 +198,8 @@ test("allowlists require exact public values and exact paths", () => {
 
   assert.doesNotMatch(config, /^\[allowlist\]$/m)
   assert.doesNotMatch(config, /regexTarget\s*=\s*"line"/)
-  assert.equal((config.match(/condition\s*=\s*"AND"/g) ?? []).length, 11)
-  assert.equal((config.match(/regexTarget\s*=\s*"secret"/g) ?? []).length, 10)
+  assert.equal((config.match(/condition\s*=\s*"AND"/g) ?? []).length, 12)
+  assert.equal((config.match(/regexTarget\s*=\s*"secret"/g) ?? []).length, 11)
   // Única exceção por padrão: o par api_sha256 com hex, alvo "match", num único recibo.
   assert.equal((config.match(/regexTarget\s*=\s*"match"/g) ?? []).length, 1)
   assert.match(
@@ -234,6 +234,14 @@ test("controlled fixture survives every former allowlist bypass and stays redact
     },
     {
       path: "tests/gitleaks-workflow.test.mjs",
+      contents: `api_key=${secret}\n`,
+    },
+    {
+      path: "tests/fixtures/checagens-coleta/afp-checamos-search-caiado.html",
+      contents: `BOOMR_API_key=${secret}\n`,
+    },
+    {
+      path: "tests/fixtures/checagens-coleta/aos-fatos-materia.html",
       contents: `api_key=${secret}\n`,
     },
   ]

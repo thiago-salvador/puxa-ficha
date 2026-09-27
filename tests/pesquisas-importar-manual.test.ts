@@ -5,6 +5,7 @@ import { tmpdir } from "node:os"
 import { join } from "node:path"
 import { describe, it } from "node:test"
 import { baseCenarioSenado, carregarCatalogos, importarRodadas, registrarAusenciasSenado, type RodadaColetada } from "../scripts/pesquisas-importar-manual"
+import { coorteAtualizacaoDe } from "../scripts/lib/coorte-atualizacao"
 
 const require = createRequire(import.meta.url)
 const serverOnlyPath = require.resolve("server-only")
@@ -43,6 +44,19 @@ describe("importação manual auditada de pesquisas", () => {
     assert.equal(resultados.find((entry) => entry.rawLabel === "Lula")?.candidateSlug, "lula")
     assert.equal(resultados.find((entry) => entry.rawLabel === "Não sabem")?.matchStatus, "not_candidate")
     assert.equal(poll.cenarios[0].labelRaw, "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados")
+  })
+
+  it("bloqueia importação manual que inclui candidatura encerrada", () => {
+    const result = importarRodadas([rodada()], aliases, "2026-09-24T12:00:00Z", carregarCatalogos(), coorteAtualizacaoDe([{
+      candidato_id: "candidato-lula",
+      slug: "lula",
+      fase_eleitoral: "nao_eleito",
+      fase_turno: 1,
+      atualizacao_encerrada_em: "2026-10-04",
+    }]))
+    assert.equal(result.planned.length, 0)
+    assert.ok(result.problems.some((problem) => problem.includes("fora da coorte: lula")))
+    assert.ok(!(result.catalogos.pres.pesquisas as Array<{ id: string }>).some((poll) => poll.id === "instituto-exemplo-br-99999-2026"))
   })
 
   it("aceita governador e reaproveita o dataset da UF", () => {

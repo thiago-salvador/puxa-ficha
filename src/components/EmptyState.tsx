@@ -121,7 +121,7 @@ export function getProcessosEmptyState(verificacao?: ProcessosVerificacao | null
 
   if (omittedCount > 0) return {
     title: "Cobertura judicial parcial",
-    description: `${omittedCount} registro(s) ficaram fora da ficha por não trazerem URL judicial com CNJ exato. Isso não confirma ausência de processos.`,
+    description: `${omittedCount} registro(s) ficaram fora da ficha por não trazerem fonte específica publicável. Isso não confirma ausência de processos.`,
     type: "neutral" as const,
   }
 

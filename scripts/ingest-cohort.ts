@@ -87,6 +87,7 @@ async function main(): Promise<void> {
     const endpoint = assertLocalSupabaseEndpoint(applySupabase)
     const client = createClient(endpoint, loadServiceKey())
     const artifact = readSenadoPublicCohortConfig(publicCohortConfigPath)
+    // coorte-atualizacao: isento (valida identidade da coorte explícita; a coleta passa por loadCandidatosPublicos, que aplica o predicado)
     const { data: publicRows, error: publicError } = await client.from("candidatos_publico")
       .select("id,slug")
       .eq("cargo_disputado", "Senador")
@@ -94,6 +95,7 @@ async function main(): Promise<void> {
       .limit(1000)
     if (publicError) throw new Error(`configuração pública: candidatos_publico: ${publicError.message}`)
     const expectedCount = artifact.source.expected_count
+    // coorte-atualizacao: isento (valida identidade da coorte explícita; a coleta passa por loadCandidatosPublicos, que aplica o predicado)
     const { data: canonicalRows, error: canonicalError } = await client.from("candidatos")
       .select("id,slug,nome_completo,nome_urna,cargo_disputado,estado,sq_candidato_2026")
       .eq("cargo_disputado", "Senador")
@@ -138,6 +140,7 @@ async function main(): Promise<void> {
     if (target !== localRoot && !target.startsWith(`${localRoot}/`)) throw new Error(`apply-local só aceita destino dentro de ${localRoot}`)
     const adapter = createLocalCohortUpsertAdapter(target)
     const result = await bootstrapCohort({ selection, dryRun: false, adapters: [adapter] })
+    // coorte-atualizacao: isento (lookup no seed dos SQs pedidos; a coleta passa por loadCandidatosPublicos)
     const seed = loadCandidatos()
     const promotion = promotionArtifact ? writeCohortPromotionArtifact(promotionArtifact, selection, seed) : undefined
     console.log(JSON.stringify({ manifest: manifestPath, mode: "local-json", selection: { sqs: selection.sqs, ufs: selection.ufs }, inserts: adapter.inserts, updates: adapter.updates, ...(promotion ? { promotion_artifact: promotion } : {}), ...result }, null, 2))
@@ -151,6 +154,7 @@ async function main(): Promise<void> {
     process.env.SUPABASE_URL = endpoint
     const adapter = createSupabaseCohortUpsertAdapter(client)
     const result = await bootstrapCohort({ selection, dryRun: false, adapters: [adapter] })
+    // coorte-atualizacao: isento (lookup no seed dos SQs pedidos; a coleta passa por loadCandidatosPublicos)
     const seed = loadCandidatos()
     const promotion = promotionArtifact ? writeCohortPromotionArtifact(promotionArtifact, selection, seed) : undefined
     const output: Record<string, unknown> = { manifest: manifestPath, mode: "supabase-localhost", endpoint, selection: { sqs: selection.sqs, ufs: selection.ufs }, ...(promotion ? { promotion_artifact: promotion } : {}), ...result }

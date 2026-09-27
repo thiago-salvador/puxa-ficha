@@ -149,6 +149,7 @@ import { pathToFileURL } from "node:url"
 import { supabase } from "./lib/supabase"
 import { escreverAuditado } from "./lib/escrita-auditada"
 import { log as baseLog, warn as baseWarn, error as baseError } from "./lib/logger"
+import { carregarCoorteAtualizacao, estaNaCoorteAtualizacao, filtrarCoorteAtualizacao } from "./lib/coorte-atualizacao"
 import { fonteUrlApontaParaDocumento } from "../src/lib/public-attention-point"
 import {
   analisarSubstancia,
@@ -1107,6 +1108,7 @@ async function estadoNoBanco(): Promise<EstadoDeFontes> {
  */
 async function idsDosSlugs(slugs: readonly string[]): Promise<Set<string>> {
   if (slugs.length === 0) return new Set()
+  // coorte-atualizacao: isento (resolve a identidade de slugs explícitos para validação por linha)
   const { data, error: err } = await supabase.from("candidatos").select("id, slug").in("slug", slugs)
   if (err) throw new Error(`candidatos por slug: ${err.message}`)
   const linhas = (data ?? []) as Array<{ id: string; slug: string }>
@@ -1123,7 +1125,9 @@ async function idsDosSlugs(slugs: readonly string[]): Promise<Set<string>> {
 async function idsDeCandidatosPublicos(): Promise<Set<string>> {
   const pageSize = 1000
   const ids = new Set<string>()
+  const coorte = await carregarCoorteAtualizacao()
   for (let from = 0; ; from += pageSize) {
+    // coorte-atualizacao: aplica
     const { data, error: err } = await supabase
       .from("candidatos_publico")
       .select("id")
@@ -1132,7 +1136,8 @@ async function idsDeCandidatosPublicos(): Promise<Set<string>> {
 
     if (err) throw new Error(`candidatos_publico: ${err.message}`)
     const pagina = (data ?? []) as Array<{ id: string }>
-    for (const linha of pagina) ids.add(linha.id)
+    const elegiveis = filtrarCoorteAtualizacao(data ?? [], coorte, "link-check") as Array<{ id: string }>
+    for (const linha of elegiveis) ids.add(linha.id)
     if (pagina.length < pageSize) break
   }
   return ids
@@ -1182,6 +1187,9 @@ async function main() {
     intervaloConfirmacaoMs,
     async fetchRows() {
       const publicos = await idsDeCandidatosPublicos()
+      // Coorte de atualização: ficha congelada depois do turno não entra na
+      // checagem de links (nem conta para o gate).
+      const coorte = await carregarCoorteAtualizacao()
       // Modo revalidação: trata os slugs pedidos como se já fossem públicos, para
       // que o critério de falha do gate caia sobre eles ANTES de entrarem na
       // coorte. Ver `idsDosSlugs` para o porquê.
@@ -1198,7 +1206,7 @@ async function main() {
         if (err) throw new Error(err.message)
         const pagina = (data ?? []) as PontoAtencaoLinkRow[]
         todas.push(
-          ...pagina.map((row) => ({
+          ...pagina.filter((row) => !row.candidato_id || estaNaCoorteAtualizacao(coorte, { id: row.candidato_id })).map((row) => ({
             ...row,
             publico:
               row.candidato_id !== null &&

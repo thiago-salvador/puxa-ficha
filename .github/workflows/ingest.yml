@@ -134,7 +134,7 @@ jobs:
             exit 0
           fi
           # shellcheck disable=SC2086 # SAFE é lista validada acima.
-          npx tsx scripts/ingest-all.ts $SAFE
+          npx tsx scripts/ingest-all.ts $SAFE --apply
 
   ingest-camara:
     name: Câmara dos Deputados
@@ -189,7 +189,7 @@ jobs:
             FLAGS="--skip-camara-validated"
           fi
           # shellcheck disable=SC2086 # FLAGS é vazia ou uma flag fixa.
-          npx tsx scripts/ingest-all.ts camara $FLAGS
+          npx tsx scripts/ingest-all.ts camara $FLAGS --apply
 
   ingest-tse:
     name: TSE CSV (${{ matrix.shard }})

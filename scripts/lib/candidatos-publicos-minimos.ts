@@ -1,5 +1,6 @@
 import type { SupabaseClient } from "@supabase/supabase-js"
 import { supabase } from "./supabase"
+import { carregarCoorteAtualizacao, filtrarCoorteAtualizacao, type CoorteAtualizacao } from "./coorte-atualizacao"
 
 export interface CandidatoPublicoMinimo {
   readonly slug: string
@@ -26,6 +27,8 @@ interface Opcoes {
   signal?: AbortSignal
   /** null lê a coorte inteira; omitido respeita PF_INGEST_SLUGS. */
   escopo?: string | null
+  /** Coorte de atualização já lida; omitida, é lida pelo mesmo client. */
+  coorteAtualizacao?: CoorteAtualizacao
 }
 
 /** Coorte pública atual, sem depender do seed ou de metadados eleitorais. */
@@ -46,6 +49,7 @@ export async function loadCandidatosPublicosMinimos(
   // servidor não pode encerrar a leitura cedo. Página vazia encerra a consulta.
   for (let offset = 0; ; ) {
     signal.throwIfAborted()
+    // coorte-atualizacao: aplica (filtro depois da paginação, abaixo)
     const { data, error } = await client
       .from("candidatos_publico")
       .select("slug,nome_completo")
@@ -75,8 +79,13 @@ export async function loadCandidatosPublicosMinimos(
     throw new Error("PF_INGEST_SLUGS cita slug ausente da coorte candidatos_publico")
   }
   const recorte = slugs ? new Set(slugs) : null
+  const coorteAtualizacao = opcoes.coorteAtualizacao ?? await carregarCoorteAtualizacao(opcoes.client)
   const selecionados = Object.freeze(
-    candidatos.filter((candidato) => !recorte || recorte.has(candidato.slug)),
+    filtrarCoorteAtualizacao(
+      candidatos.filter((candidato) => !recorte || recorte.has(candidato.slug)),
+      coorteAtualizacao,
+      "sancoes-transparencia",
+    ),
   ) as CoortePublicaMinima
   coortesCarregadas.add(selecionados)
   return selecionados

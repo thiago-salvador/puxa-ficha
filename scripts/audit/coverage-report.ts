@@ -215,6 +215,7 @@ function idsOficiaisNoSeed(): Map<
   { temSq: boolean; temCamara: boolean; temSenado: boolean }
 > {
   const seed: CandidatoConfig[] = JSON.parse(
+    // coorte-atualizacao: isento (completude do que está no ar, não frescor)
     readFileSync(join(RAIZ, "data", "candidatos.json"), "utf8")
   )
   return new Map(

@@ -17,6 +17,12 @@ type Catalog = { resources?: Resource[]; metadata_modified?: string }
 type Asset = { family: Family; year: number; path: string; url: string; sha256: string; bytes: number; catalog_url: string; catalog_revision: string | null; reused_cache?: boolean }
 type Pending = { family: Family; year: number; catalog_url: string; reason: string }
 
+export function assertCompleteAssets(assets: readonly Asset[], pending: readonly Pending[]): void {
+  if (assets.length === 0 || pending.length > 0) {
+    throw new Error(`pacotes oficiais incompletos: ${assets.length} asset(s), ${pending.length} pendente(s)`)
+  }
+}
+
 const CATALOG_BASE = "https://dadosabertos.tse.jus.br/api/3/action/package_show?id="
 const MAX_BYTES = 2_000_000_000
 
@@ -208,6 +214,7 @@ async function main(): Promise<void> {
   const manifestPath = join(out, "tse-family-assets.json")
   writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, { mode: 0o600, flag: "wx" })
   console.log(JSON.stringify({ manifest: manifestPath, resources: new Set(assets.map((asset) => asset.path)).size, assets: assets.length, pending: pending.length, years }))
+  assertCompleteAssets(assets, pending)
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

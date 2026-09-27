@@ -9,8 +9,22 @@
 SET default_transaction_read_only = on;
 SET statement_timeout = '120s';
 
+-- Coorte de atualização: fichas congeladas depois do turno viram
+-- `atualizacao_encerrada` na matriz (audit-cobertura-fichas.ts), não célula
+-- aberta. Antes da migration de schema a view não existe e a lista sai vazia.
+SELECT to_regclass('public.candidaturas_fase_2026_publico') IS NOT NULL AS pf_tem_fase \gset
+\if :pf_tem_fase
+\set pf_fase_sql 'SELECT slug, atualizacao_encerrada_em FROM public.candidaturas_fase_2026_publico WHERE atualizacao_encerrada_em IS NOT NULL'
+\else
+\set pf_fase_sql 'SELECT NULL::text AS slug, NULL::date AS atualizacao_encerrada_em WHERE false'
+\endif
+
 SELECT jsonb_build_object(
   'generated_at', now(),
+  'atualizacao_encerrada', (
+    SELECT COALESCE(jsonb_agg(jsonb_build_object('slug', f.slug, 'atualizacao_encerrada_em', f.atualizacao_encerrada_em) ORDER BY f.slug), '[]'::jsonb)
+    FROM (:pf_fase_sql) AS f
+  ),
   'rows', COALESCE(jsonb_agg(jsonb_build_object(
     'fonte', log.fonte,
     'escopo', log.escopo,

@@ -18,6 +18,8 @@ export type CompromissoEvidenciaPublica = {
   texto: string
   data: string | null
   url: string | null
+  /** Posição verificada que veio de coleta automática, não de curadoria: exibida com selo. */
+  fonteEmConfirmacao?: boolean
 }
 
 /**

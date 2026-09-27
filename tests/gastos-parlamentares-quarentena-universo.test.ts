@@ -31,26 +31,31 @@ describe("quarentena ampliada de gastos parlamentares", () => {
   const lista = GASTOS_PARLAMENTARES_EM_REVISAO_UNIVERSO.map(([slug, ano, cents]) => ({ slug, ano, cents }))
   const linhasQuarentena = receipt.linhas.filter((linha) => linha.quarentena)
 
-  it("lista do app, preimage da migration e recibo têm as mesmas linhas", () => {
+  it("lista atual é subconjunto da preimage histórica da migration", () => {
     const pre = preimage()
+    // Validação oficial de 27/09: ficam 4 pares do universo e 1 da revisão anterior.
+    assert.equal(lista.length, 4)
+    assert.equal(GASTOS_PARLAMENTARES_EM_REVISAO.length, 1)
     assert.equal(pre.length, receipt.resumo.quarentena)
-    assert.equal(lista.length, receipt.resumo.quarentena)
     assert.equal(linhasQuarentena.length, receipt.resumo.quarentena)
     const key = (x: { slug: string; ano: number; cents: number }) => `${x.slug}:${x.ano}:${x.cents}`
-    assert.deepEqual(new Set(pre.map(key)), new Set(lista.map(key)))
+    const historicas = new Set(pre.map(key))
+    for (const linha of lista) assert.ok(historicas.has(key(linha)), `linha sem preimage: ${key(linha)}`)
     assert.deepEqual(new Set(pre.map((p) => `${p.id}:${key(p)}:${p.fonte}`)), new Set(linhasQuarentena.map((l) => `${l.id}:${key({ ...l, cents: l.db_cents })}:${l.fonte}`)))
-    assert.equal(new Set(lista.map(({ slug }) => slug)).size, receipt.resumo.quarentena_fichas)
     assert.equal(new Set(lista.map(({ slug, ano }) => `${slug}:${ano}`)).size, lista.length)
   })
 
-  it("não repete linha da quarentena anterior e o app esconde as duas", () => {
+  it("não repete linha da quarentena anterior e esconde só as pendentes", () => {
     const anteriores = new Set(GASTOS_PARLAMENTARES_EM_REVISAO.map(([slug, ano]) => `${slug}:${ano}`))
     for (const { slug, ano } of lista) {
       assert.equal(anteriores.has(`${slug}:${ano}`), false, `${slug}:${ano} já estava na quarentena anterior`)
       assert.equal(gastoParlamentarEmRevisao(slug, ano), true)
       assert.ok(anosGastosParlamentaresEmRevisao(slug).includes(ano))
     }
-    assert.equal(gastoParlamentarEmRevisao("alan-rick", 2023), true)
+    const atuais = new Set(lista.map(({ slug, ano }) => `${slug}:${ano}`))
+    for (const { slug, ano } of preimage()) {
+      if (!atuais.has(`${slug}:${ano}`)) assert.equal(gastoParlamentarEmRevisao(slug, ano), false)
+    }
   })
 
   it("migration amarra o recibo por SHA-256 e só escreve os campos da quarentena", () => {

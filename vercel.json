@@ -1,5 +1,6 @@
 {
   "regions": ["gru1"],
+  "ignoreCommand": "if [ \"$VERCEL_ENV\" = \"production\" ]; then exit 1; fi; exit 0",
   "crons": [
     {
       "path": "/api/alerts/send-digest",
@@ -23,7 +24,7 @@
     },
     {
       "path": "/api/internal/revalidate-public-cache",
-      "schedule": "*/15 * * * *"
+      "schedule": "17 9,21 * * *"
     }
   ]
 }
