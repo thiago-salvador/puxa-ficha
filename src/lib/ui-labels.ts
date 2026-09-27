@@ -227,6 +227,7 @@ export const compromissoEvidenciaCopy = {
   processadoEm: (data: string) => `Última comparação em ${data}.`,
   semCongresso: "Sem mandato no Congresso: não há voto nominal para comparar.",
   fonte: "Ver fonte",
+  fonteEmConfirmacao: "Fonte em confirmação",
   relacao: {
     relacionada: "Trata do tema",
     sustenta: "Na mesma direção",
