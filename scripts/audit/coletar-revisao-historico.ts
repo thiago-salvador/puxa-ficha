@@ -21,8 +21,8 @@
  *     [--senado=live|off] [--checked-at=<ISO>]
  *
  * Só certifica com a lista canônica de anos (HISTORICO_ANOS_CANONICOS) e com
- * cada pacote acima do piso MIN_LINHAS_POR_ANO; fora disso, `indeterminado`
- * ou `erro`.
+ * cada pacote acima do piso do ciclo (`pisoLinhasDoAno`); fora disso,
+ * `indeterminado` ou `erro`.
  */
 import { createHash } from "node:crypto"
 import { execFileSync, spawn } from "node:child_process"
@@ -53,11 +53,14 @@ const SENADO_API = "https://legis.senado.leg.br/dadosabertos"
 const OFFICIAL_ZIP = /^https:\/\/cdn\.tse\.jus\.br\/.+\/consulta_cand_(\d{4})\.zip$/i
 
 /**
- * Piso de candidaturas por pacote anual. O menor pleito lido (geral de 2002)
- * tem 18 mil linhas; municipais passam de 400 mil. Pacote abaixo disso é
+ * Piso de candidaturas por pacote anual, por ciclo. Medido nos pacotes
+ * nacionais de 2002 a 2026: gerais entre 18 mil (2002) e 29 mil (2022);
+ * municipais entre 382 mil (2008) e 559 mil (2020). Pacote abaixo do piso é
  * truncado ou trocado, e ano sem linha nenhuma não prova ausência.
  */
-export const MIN_LINHAS_POR_ANO = 5_000
+export function pisoLinhasDoAno(year: number): number {
+  return year % 4 === 2 ? 12_000 : 300_000
+}
 
 type ManifestAsset = { family: string; year: number; path: string; url: string; sha256: string }
 
@@ -176,10 +179,11 @@ export async function runHistoricoRevision(options: {
   checkedAt: string
   senado: (codigo: string) => Promise<SenadoSource>
   anosObrigatorios?: readonly number[]
+  /** Só para teste com pacote sintético; em produção vale `pisoLinhasDoAno`. */
   minLinhasPorAno?: number
 }): Promise<HistoricoRevisionRun> {
   const { anos, profiles, seed, manifest, checkedAt } = options
-  const minLinhas = options.minLinhasPorAno ?? MIN_LINHAS_POR_ANO
+  const piso = (year: number) => options.minLinhasPorAno ?? pisoLinhasDoAno(year)
   if (options.falhaFonte || !manifest) {
     return { receipts: sourceFailureReceipts(profiles, `pacote TSE não lido: ${options.falhaFonte ?? "manifesto ausente"}`, anos, checkedAt, null), review: [] }
   }
@@ -208,10 +212,10 @@ export async function runHistoricoRevision(options: {
       const key = `${row.year}|${row.sq}`
       if (wantedAnchors.has(key)) anchorRows.set(key, [...(anchorRows.get(key) ?? []), row])
     })
-    if (lidas < minLinhas) curtos.push(`${asset.year}: ${lidas} linhas`)
+    if (lidas < piso(asset.year)) curtos.push(`${asset.year}: ${lidas} linhas, piso ${piso(asset.year)}`)
   }
   if (curtos.length) {
-    return { receipts: sourceFailureReceipts(profiles, `pacote TSE abaixo do piso de ${minLinhas} candidaturas (${curtos.join("; ")})`, anos, checkedAt, null), review: [] }
+    return { receipts: sourceFailureReceipts(profiles, `pacote TSE abaixo do piso de candidaturas (${curtos.join("; ")})`, anos, checkedAt, null), review: [] }
   }
   const identities = new Map(profiles.map((profile) => {
     const candidate = seedBySlug.get(String(profile.slug)) ?? null

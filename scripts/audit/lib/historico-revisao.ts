@@ -67,6 +67,8 @@ export type AnchorIdentity = {
   cpfs: string[]
   nomeNascimento: string[]
   ambiguous: string | null
+  /** Anos do seed cujo SQ existe no pacote mas nenhuma linha é a pessoa da ficha. */
+  anchorsDescartadas?: number[]
 }
 
 export type HistoricoSourceRevision = { url: string; sha256: string; year?: number }
@@ -188,6 +190,11 @@ export function anchorIdentity(candidate: SeedCandidate, anchorRows: ReadonlyMap
   const rows = ficha
     ? anchors.flatMap(({ year, sq }) => (anchorRows.get(`${year}|${sq}`) ?? []).filter((row) => anchorMatchesFicha(row, ficha, text(candidate.ids?.tse_uf_candidatura?.[String(year)]) || null)))
     : found
+  // SQ repetido entre UFs deixa a linha certa e descarta as outras: normal.
+  // Ano do seed em que nenhuma linha é a pessoa é SQ errado no seed: revisão.
+  const anchorsDescartadas = anchors
+    .filter(({ year, sq }) => (anchorRows.get(`${year}|${sq}`) ?? []).length > 0 && !rows.some((row) => row.year === year && row.sq === sq))
+    .map(({ year }) => year).sort((a, b) => a - b)
   const cpfs = [...new Set(rows.map((row) => row.cpf).filter((cpf): cpf is string => Boolean(cpf)))].sort()
   const names = [...new Set(rows.map((row) => row.nomeNascimento).filter((key): key is string => Boolean(key)))].sort()
   const latest = anchors.filter(({ year, sq }) => rows.some((row) => row.year === year && row.sq === sq)).sort((a, b) => b.year - a.year)[0]
@@ -196,12 +203,16 @@ export function anchorIdentity(candidate: SeedCandidate, anchorRows: ReadonlyMap
   else if (anchors.length && !rows.length) ambiguous = "linha do SQ do seed não confere com nome e nascimento da ficha"
   else if (cpfs.length > 1) ambiguous = "SQ do seed apontam para CPFs diferentes"
   else if (!cpfs.length && names.length !== 1) ambiguous = "sem CPF e sem par único nome + nascimento nas âncoras"
+  // Âncora só em ano de CPF mascarado (2024): nome + nascimento não alcançam
+  // as linhas dos outros anos, que trazem CPF, e a sobra ficaria invisível.
+  else if (!cpfs.length) ambiguous = "âncoras sem CPF (ano com CPF mascarado); outros anos não podem ser ligados"
   return {
     anchors: new Set(rows.map((row) => `${row.year}|${row.sq}`)).size,
     anchorSource: latest ? `tse-sq:${latest.year}:${latest.sq}` : null,
     cpfs,
     nomeNascimento: names,
     ambiguous,
+    anchorsDescartadas,
   }
 }
 
@@ -252,10 +263,10 @@ function record(value: unknown): Record<string, unknown> | null {
  * ano)` para eleito e `Candidatura: <resultado> (TSE ano)` para o resto;
  * null quando a linha não declara resultado legível.
  */
-export function publicElectionResult(observacoes: unknown): boolean | null {
-  const match = /^(Candidatura:\s*)?(.+?)\s*\(TSE \d{4}\)\s*$/.exec(text(observacoes))
+export function publicElectionResult(observacoes: unknown): { eleito: boolean; ano: number } | null {
+  const match = /^(Candidatura:\s*)?(.+?)\s*\(TSE (\d{4})\)\s*$/.exec(text(observacoes))
   if (!match) return null
-  return !match[1] && parseEleitoStatus(match[2] ?? "").eleito
+  return { eleito: !match[1] && parseEleitoStatus(match[2] ?? "").eleito, ano: Number(match[3]) }
 }
 
 /** Duração do mandato pelo cargo; o fim público aceita o ano de posse do sucessor. */
@@ -320,6 +331,9 @@ export function historicoRevisionVerdict(input: {
     review.push({ slug, tipo: "identidade", motivo: "sem SQ do seed que ancore a pessoa no pacote oficial" })
     return receipt("indeterminado", "identidade sem âncora oficial")
   }
+  for (const year of identity.anchorsDescartadas ?? []) {
+    review.push({ slug, tipo: "identidade", motivo: "SQ do seed aponta para outra pessoa neste ano (nascimento ou nome não confere)", ano: year })
+  }
 
   const bySource = candidacies(sourceRows.filter((row) => scopeYears.has(row.year) || !scopeYears.size))
   const used = new Set<string>()
@@ -361,7 +375,8 @@ export function historicoRevisionVerdict(input: {
       if (ano < ELEICAO_EM_CURSO) {
         const declared = publicElectionResult(row.observacoes)
         if (declared === null) { review.push({ slug, tipo: "linha_diverge", motivo: "candidatura sem resultado eleitoral legível", ...item }); continue }
-        if (declared !== source.eleito) { review.push({ slug, tipo: "linha_diverge", motivo: source.eleito ? "TSE mostra eleito e a ficha não" : "ficha mostra eleito e o TSE não", ...item }); continue }
+        if (declared.ano !== ano) { review.push({ slug, tipo: "linha_diverge", motivo: "ano do resultado TSE difere do início da linha", ...item }); continue }
+        if (declared.eleito !== source.eleito) { review.push({ slug, tipo: "linha_diverge", motivo: source.eleito ? "TSE mostra eleito e a ficha não" : "ficha mostra eleito e o TSE não", ...item }); continue }
       }
       used.add(source.key)
       matched++

@@ -8,7 +8,7 @@ import { createHash } from "node:crypto"
 import { readFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
-import { parseAnos, runHistoricoRevision, selectConsultaCandMembers, sourceFailureReceipts } from "../scripts/audit/coletar-revisao-historico"
+import { parseAnos, pisoLinhasDoAno, runHistoricoRevision, selectConsultaCandMembers, sourceFailureReceipts } from "../scripts/audit/coletar-revisao-historico"
 import { validCoverageSourceProof } from "../scripts/audit/lib/coverage-source-proof"
 import {
   HISTORICO_ANOS_CANONICOS,
@@ -31,7 +31,9 @@ const CPF = "12345678909"
 const OUTRO_CPF = "98765432100"
 const NOME = "ANA FICTICIA EXEMPLO"
 const NASC = "01/02/1970"
-const CHECKED = "2026-09-26T21:00:00Z"
+// Datas relativas: a prova de histórico vence em 21 dias na régua.
+const CHECKED = new Date(Date.now() - 60_000).toISOString()
+const daysAgo = (days: number) => new Date(Date.now() - days * 86_400_000).toISOString()
 const ANOS = [2018, 2022, 2024, 2026]
 const revisions = ANOS.map((year) => ({ year, url: `https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_${year}.zip`, sha256: String(year % 10).repeat(64) }))
 
@@ -125,6 +127,29 @@ describe("revisão do histórico: identidade ancorada no SQ do seed", () => {
     assert.equal(anchorMatchesFicha(SOURCE_2026(), fichaPessoa({ ...profile([]), nome_completo: NOME, data_nascimento: "1970-02-01" }), "RJ"), false)
   })
 
+  it("âncora extra do seed que aponta para outra pessoa vira item de revisão, não some", () => {
+    const certa = SOURCE_2026()
+    const errada = row({ ANO_ELEICAO: "2020", SQ_CANDIDATO: "777", DS_CARGO: "VEREADOR", NR_CPF_CANDIDATO: OUTRO_CPF, NM_CANDIDATO: "OUTRA PESSOA", DT_NASCIMENTO: "09/09/1960" })
+    const candidate: SeedCandidate = { slug: "ana-ficticia", ids: { tse_sq_candidato: { "2026": "250000000099", "2020": "777" } } }
+    const ficha = fichaPessoa({ ...profile([]), nome_completo: NOME, data_nascimento: "1970-02-01" })
+    const identity = anchorIdentity(candidate, new Map([["2026|250000000099", [certa]], ["2020|777", [errada]]]), ficha)
+    assert.equal(identity.ambiguous, null)
+    assert.deepEqual(identity.anchorsDescartadas, [2020])
+    const result = historicoRevisionVerdict({
+      profile: profile([PUBLIC_2026]), candidate, identity, sourceRows: [certa],
+      anos: ANOS, tseRevisions: revisions, senado: null, checkedAt: CHECKED, anosObrigatorios: ANOS,
+    })
+    assert.equal(result.receipt.resultado, "indeterminado")
+    assert.equal(result.review[0]?.tipo, "identidade")
+    assert.equal(result.review[0]?.ano, 2020)
+  })
+
+  it("âncora só em ano de CPF mascarado não liga os outros anos: identidade em revisão", () => {
+    const so2024 = row({ ANO_ELEICAO: "2024", SQ_CANDIDATO: "240000000001", NR_CPF_CANDIDATO: "-4", DS_CARGO: "PREFEITO" })
+    const identity = anchorIdentity({ slug: "x", ids: { tse_sq_candidato: { "2024": "240000000001" } } }, new Map([["2024|240000000001", [so2024]]]))
+    assert.match(identity.ambiguous ?? "", /CPF mascarado/)
+  })
+
   it("cargo e partido comparam pela forma canônica", () => {
     assert.equal(cargoKey("DEPUTADO FEDERAL"), cargoKey("Deputado Federal"))
     assert.equal(cargoKey("1º SUPLENTE"), cargoKey("1o Suplente Senador"))
@@ -184,8 +209,11 @@ describe("revisão do histórico: veredito e prova", () => {
     // O inverso: ficha diz eleito, TSE não.
     const inverso = verdict([PUBLIC_2022, PUBLIC_2026], [row({ DS_SIT_TOT_TURNO: "NÃO ELEITO" })])
     assert.match(inverso.review[0]?.motivo ?? "", /ficha mostra eleito/)
-    assert.equal(publicElectionResult("Candidatura: SUPLENTE (TSE 2018)"), false)
+    assert.deepEqual(publicElectionResult("Candidatura: SUPLENTE (TSE 2018)"), { eleito: false, ano: 2018 })
     assert.equal(publicElectionResult("sem resultado"), null)
+    // Ano do resultado precisa ser o início da linha.
+    const anoTrocado = verdict([{ ...PUBLIC_2022, observacoes: "ELEITO POR QP (TSE 2018)" }, PUBLIC_2026], [row({})])
+    assert.match(anoTrocado.review[0]?.motivo ?? "", /ano do resultado TSE difere/)
   })
 
   it("sonda do revisor: mandato PSDB onde o TSE diz outro partido, ou fim fora do termo, não certifica", () => {
@@ -275,6 +303,13 @@ describe("coletor de revisão do histórico: rodada com pacote real", () => {
 })
 
 describe("coletor de revisão do histórico: CLI puro", () => {
+  it("piso de candidaturas por ciclo: geral 12 mil, municipal 300 mil", () => {
+    assert.equal(pisoLinhasDoAno(2022), 12_000)
+    assert.equal(pisoLinhasDoAno(1998), 12_000)
+    assert.equal(pisoLinhasDoAno(2024), 300_000)
+    assert.equal(pisoLinhasDoAno(1996), 300_000)
+  })
+
   it("anos exigem pleitos pares sem repetição", () => {
     assert.deepEqual(parseAnos("2026,2022"), [2022, 2026])
     assert.throws(() => parseAnos("2023"), /anos eleitorais/)
@@ -299,7 +334,7 @@ describe("coletor de revisão do histórico: CLI puro", () => {
   it("histórico não tem prazo: recibo aberto posterior entra e derruba a prova (erro e indeterminado)", () => {
     const historico = [PUBLIC_2022, PUBLIC_2026]
     const subject = profile(historico)
-    const proof = { ...verdict(historico, [row({})]).receipt, executado_em: "2026-09-20T10:00:00Z" }
+    const proof = { ...verdict(historico, [row({})]).receipt, executado_em: daysAgo(6) }
     assert.equal(cell(subject, [proof]).estado, "publicado")
     const falha = sourceFailureReceipts([subject], "pacote TSE ausente para 1998", ANOS, CHECKED, null)
     const open = planOpenReceipts(falha, [subject], new Set(["tse-historico"]), [], [proof])
@@ -310,5 +345,15 @@ describe("coletor de revisão do histórico: CLI puro", () => {
     const reaberta = cell(subject, [proof, divergente])
     assert.equal(reaberta.estado, "indeterminado")
     assert.match(reaberta.motivo, /posterior à prova sem conclusão/)
+  })
+
+  it("prova de histórico vence em 21 dias: cron parado não deixa a célula fechada para sempre", () => {
+    const historico = [PUBLIC_2022, PUBLIC_2026]
+    const subject = profile(historico)
+    const receipt = verdict(historico, [row({})]).receipt
+    assert.equal(cell(subject, [{ ...receipt, executado_em: daysAgo(20) }]).estado, "publicado")
+    const velha = cell(subject, [{ ...receipt, executado_em: daysAgo(22) }])
+    assert.equal(velha.estado, "desatualizado")
+    assert.match(velha.motivo, /mais de 21 dias/)
   })
 })

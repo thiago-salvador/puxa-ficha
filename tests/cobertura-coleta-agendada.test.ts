@@ -79,6 +79,12 @@ describe("workflow cobertura-coleta-agendada", () => {
     assert.equal((workflow.match(/-f scripts\/audit\/coverage-receipts-snapshot\.sql/g) ?? []).length, 2)
   })
 
+  it("em escrita, sem snapshot dos recibos atuais o job falha em vez de gravar só as provas", () => {
+    assert.equal((workflow.match(/continue-on-error: \$\{\{ env\.COBERTURA_GRAVAR != 'true' \}\}/g) ?? []).length, 2)
+    assert.equal((workflow.match(/gravar exige o snapshot dos recibos atuais/g) ?? []).length, 2)
+    assert.equal((workflow.match(/snapshot dos recibos atuais ausente; nada gravado/g) ?? []).length, 2)
+  })
+
   it("gravar exige a lista canônica de anos", () => {
     assert.match(workflow, /Exigir anos canônicos para gravar/)
     assert.match(workflow, /canonicos="1996,1998,2000,2002,2004,2006,2008,2010,2012,2014,2016,2018,2020,2022,2024,2026"/)

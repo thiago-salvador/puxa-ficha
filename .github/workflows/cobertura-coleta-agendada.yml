@@ -97,13 +97,18 @@ jobs:
       # O aplicador só grava recibo aberto em célula que não está fechada por
       # prova vigente; sem esta leitura, grava só as provas.
       - name: Exportar recibos atuais (somente leitura)
-        continue-on-error: true
+        # Em escrita, sem este snapshot os recibos abertos não entrariam e a
+        # prova antiga ficaria no ar: o job falha. Em dry-run só avisa.
+        continue-on-error: ${{ env.COBERTURA_GRAVAR != 'true' }}
         env:
           SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
         run: |
           set -euo pipefail
           umask 077
-          if [ -z "${SUPABASE_DB_URL:-}" ]; then echo "::warning::SUPABASE_DB_URL ausente; recibos abertos não serão gravados"; exit 0; fi
+          if [ -z "${SUPABASE_DB_URL:-}" ]; then
+            if [ "$COBERTURA_GRAVAR" = "true" ]; then echo "::error::SUPABASE_DB_URL ausente; gravar exige o snapshot dos recibos atuais" >&2; exit 1; fi
+            echo "::warning::SUPABASE_DB_URL ausente; dry-run sem recibos abertos"; exit 0
+          fi
           psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -Atq \
             -f scripts/audit/coverage-receipts-snapshot.sql > "$RUNNER_TEMP/recibos-atuais.json"
       - name: Snapshot dos perfis públicos
@@ -148,7 +153,8 @@ jobs:
           set -euo pipefail
           umask 077
           abertos=()
-          if [ -s "$RUNNER_TEMP/recibos-atuais.json" ]; then abertos=(--incluir-abertos --recibos-atuais="$RUNNER_TEMP/recibos-atuais.json"); fi
+          if [ -s "$RUNNER_TEMP/recibos-atuais.json" ]; then abertos=(--incluir-abertos --recibos-atuais="$RUNNER_TEMP/recibos-atuais.json")
+          elif [ "$COBERTURA_GRAVAR" = "true" ]; then echo "::error::snapshot dos recibos atuais ausente; nada gravado" >&2; exit 1; fi
           modo=()
           if [ "$COBERTURA_GRAVAR" = "true" ]; then modo=(--apply --execucao="gh:${GITHUB_RUN_ID}:${GITHUB_RUN_ATTEMPT}:historico"); fi
           node --import tsx scripts/audit/apply-coverage-receipts.ts \
@@ -198,13 +204,18 @@ jobs:
       # O aplicador só grava recibo aberto em célula que não está fechada por
       # prova vigente; sem esta leitura, grava só as provas.
       - name: Exportar recibos atuais (somente leitura)
-        continue-on-error: true
+        # Em escrita, sem este snapshot os recibos abertos não entrariam e a
+        # prova antiga ficaria no ar: o job falha. Em dry-run só avisa.
+        continue-on-error: ${{ env.COBERTURA_GRAVAR != 'true' }}
         env:
           SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
         run: |
           set -euo pipefail
           umask 077
-          if [ -z "${SUPABASE_DB_URL:-}" ]; then echo "::warning::SUPABASE_DB_URL ausente; recibos abertos não serão gravados"; exit 0; fi
+          if [ -z "${SUPABASE_DB_URL:-}" ]; then
+            if [ "$COBERTURA_GRAVAR" = "true" ]; then echo "::error::SUPABASE_DB_URL ausente; gravar exige o snapshot dos recibos atuais" >&2; exit 1; fi
+            echo "::warning::SUPABASE_DB_URL ausente; dry-run sem recibos abertos"; exit 0
+          fi
           psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -Atq \
             -f scripts/audit/coverage-receipts-snapshot.sql > "$RUNNER_TEMP/recibos-atuais.json"
       - name: Snapshot dos perfis públicos
@@ -251,7 +262,8 @@ jobs:
           set -euo pipefail
           umask 077
           abertos=()
-          if [ -s "$RUNNER_TEMP/recibos-atuais.json" ]; then abertos=(--incluir-abertos --recibos-atuais="$RUNNER_TEMP/recibos-atuais.json"); fi
+          if [ -s "$RUNNER_TEMP/recibos-atuais.json" ]; then abertos=(--incluir-abertos --recibos-atuais="$RUNNER_TEMP/recibos-atuais.json")
+          elif [ "$COBERTURA_GRAVAR" = "true" ]; then echo "::error::snapshot dos recibos atuais ausente; nada gravado" >&2; exit 1; fi
           modo=()
           if [ "$COBERTURA_GRAVAR" = "true" ]; then modo=(--apply --execucao="gh:${GITHUB_RUN_ID}:${GITHUB_RUN_ATTEMPT}:parlamentares"); fi
           node --import tsx scripts/audit/apply-coverage-receipts.ts \
