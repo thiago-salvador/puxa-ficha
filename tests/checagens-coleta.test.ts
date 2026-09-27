@@ -664,7 +664,7 @@ describe("coleta nominal de checagens", () => {
     assert.equal(consolidarCatalogoRecibos(null, [recibo], now).receipts.length, 0)
   })
 
-  it("regra 3: sete decisões editoriais e três variantes adicionais de Paes", () => {
+  it("regra 3: nove decisões editoriais e três variantes adicionais de Paes", () => {
     for (const titulo of [
       "Vídeo de mulher rasgando papel atrás de Trump não tem relação com Lula",
       "Jornais não ocultaram tatuagem de Lula em caso de CAC que matou a família",
@@ -674,6 +674,8 @@ describe("coleta nominal de checagens", () => {
       "Posts fazem sátira com fato de personagem do filme ‘Truque de Mestre 2’ se chamar Lula",
       "Supla não falava de Lula ao dizer que não tem problema ‘roubar com amor’",
       "Vídeo de abordagem da PM a torcedores do Sport não tem relação com Lula",
+      "Não é filho de Lula homem que agride mulher em vídeo viral",
+      "Apoiador que tirou foto com Bolsonaro em Garanhuns não é tio de Lula, ao contrário do que afirma post",
     ]) assert.equal(leadPermitidoRegra3(titulo, "lula"), false, titulo)
     for (const titulo of [
       "Não é sobrinha de Eduardo Paes mulher que zombou de tour na Rocinha",
@@ -955,7 +957,7 @@ describe("catálogo de checagens e recibos versionados", () => {
   it("aplica o critério editorial de atribuição nos leads de Lula e Eduardo Paes", () => {
     // O catálogo guarda contagens, não títulos: estas asserções verificam os números publicados.
     const contagens = new Map(committedReceipts.receipts.map((receipt) => [receipt.candidate_slug, receipt.leads]))
-    assert.equal(contagens.get("lula"), 549)
+    assert.equal(contagens.get("lula"), 547)
     assert.equal(contagens.get("eduardo-paes"), 39)
     assert.equal(contagens.get("tarcisio-gov-sp"), 20)
   })
