@@ -1,6 +1,9 @@
+import { existsSync } from "node:fs"
+import { join } from "node:path"
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
+import { Footer } from "@/components/Footer"
 import { pressTexts, questions, serviceLine } from "./content"
 import styles from "./kit.module.css"
 
@@ -13,10 +16,16 @@ export const metadata: Metadata = {
 }
 
 const notice = "Confira os dados na fonte original antes de publicar."
+const optionalAssets = [
+  { href: "/imprensa/bio.txt", label: "Baixar bio" },
+  { href: "/imprensa/foto.jpg", label: "Baixar foto" },
+  { href: "/imprensa/logo.svg", label: "Baixar logo SVG" },
+].filter(({ href }) => existsSync(join(process.cwd(), "public", href.slice(1))))
 
 export default function ImprensaKit() {
   return (
-    <main className={styles.shell}>
+    <>
+      <main className={styles.shell}>
       <header className={styles.hero}>
         <div className={styles.wrap}>
           <Link className={styles.back} href="/imprensa">← Sala de imprensa</Link>
@@ -32,7 +41,7 @@ export default function ImprensaKit() {
           <a href="#apresentacao">Apresentação</a>
           <a href="#textos">Textos prontos</a>
           <a href="#imagens">Imagens e PDF</a>
-          <a href="#perguntas">Perguntas difíceis</a>
+          <a href="#perguntas">Perguntas frequentes</a>
         </nav>
 
         <section className={styles.section} id="apresentacao" aria-labelledby="apresentacao-title">
@@ -65,38 +74,40 @@ export default function ImprensaKit() {
           <p className={styles.intro}>Capturas da Sala e uma versão em PDF de uma página, gerada a partir da própria Sala. A página ao vivo pode mostrar dados mais recentes.</p>
           <div className={styles.assetGrid}>
             <a className={styles.asset} href="/imprensa/sala-desktop.png" download>
-              <Image src="/imprensa/sala-desktop.png" width={1440} height={1100} alt="Prévia da Sala de imprensa no desktop" loading="eager" unoptimized />
+              <Image src="/imprensa/sala-desktop.png" width={1440} height={2613} sizes="(max-width: 800px) 100vw, 60vw" alt="Prévia da Sala de imprensa no desktop" loading="lazy" />
               <span>Baixar captura desktop <b>PNG ↗</b></span>
             </a>
             <a className={styles.asset} href="/imprensa/sala-celular.png" download>
-              <Image src="/imprensa/sala-celular.png" width={375} height={1400} alt="Prévia da Sala de imprensa no celular" loading="eager" unoptimized />
+              <Image src="/imprensa/sala-celular.png" width={375} height={2711} sizes="(max-width: 800px) 100vw, 35vw" alt="Prévia da Sala de imprensa no celular" loading="lazy" />
               <span>Baixar captura celular <b>PNG ↗</b></span>
             </a>
             <a className={styles.pdfAsset} href="/imprensa/sala-de-imprensa.pdf" download>
               <strong>PDF</strong><span>Sala de imprensa<br />Uma página para consulta e referência</span><b>Baixar ↗</b>
             </a>
           </div>
-          <div className={styles.pending} aria-label="Materiais em preparação">
-            <h3>Em preparação</h3>
-            <p>Espaços reservados para a bio aprovada, a foto e o logo em SVG. Esses três arquivos ainda não integram o kit.</p>
-            <div className={styles.pendingSlots}><span>Bio</span><span>Foto</span><span>Logo SVG</span></div>
-          </div>
+          {optionalAssets.length > 0 ? (
+            <nav className={styles.optionalAssets} aria-label="Materiais de imprensa">
+              {optionalAssets.map(({ href, label }) => <a key={href} href={href} download>{label} ↗</a>)}
+            </nav>
+          ) : null}
         </section>
 
         <section className={styles.section} id="perguntas" aria-labelledby="perguntas-title">
           <p className={styles.sectionNumber}>04 / Contexto</p>
-          <h2 id="perguntas-title">Perguntas frequentes e difíceis</h2>
+          <h2 id="perguntas-title">Perguntas frequentes</h2>
           <div className={styles.faq}>
-            {questions.map(({ question, answer }) => (
+            {questions.map(({ question, answer, sourceHref, sourceLabel }) => (
               <details key={question}>
                 <summary>{question}</summary>
-                <p>{answer}</p>
+                <p>{answer}{sourceHref && sourceLabel ? <> <Link href={sourceHref}>{sourceLabel}</Link>.</> : null}</p>
               </details>
             ))}
           </div>
           <p className={styles.sourceNote}>Dúvidas ou correções: <a href="mailto:contato@puxaficha.com.br">contato@puxaficha.com.br</a>. Para apurar candidaturas, abra a <Link href="/imprensa/mesa">Mesa de apuração</Link>. Consulte também a <Link href="/privacidade">Política de privacidade</Link>.</p>
         </section>
       </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   )
 }

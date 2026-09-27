@@ -11,11 +11,13 @@ export const pressTexts = [
   },
   {
     label: "250 palavras",
-    text: "O Puxa Ficha reúne informações sobre candidaturas. A Sala de imprensa concentra caminhos para encontrar fichas, aplicar filtros, baixar recortes e localizar as fontes associadas aos dados. O material foi pensado como ponto de partida para apuração: cada número depende de um recorte, de uma data e do estado da cobertura. A plataforma não recomenda voto nem transforma um registro isolado em conclusão sobre uma pessoa.\n\nA Mesa de apuração permite consultar candidaturas por cargo e unidade da federação. Os arquivos para download preservam estados distintos para informação publicada, resultado vazio após busca, dado ausente, fonte indisponível e cobertura parcial. Esses estados não devem ser somados como se fossem equivalentes. Quando um vínculo de chapa estiver em revisão, o nome do vice não é publicado. Com o Senado habilitado, suplentes aparecem em campo separado.\n\nOs registros de processos exigem cuidado adicional. A presença de um processo não equivale a condenação, e os detalhes precisam ser conferidos no documento oficial. O mesmo vale para alterações observadas em dados de candidatura: o recorte mostra o que foi registrado e a fonte, sem explicar por si só o motivo da mudança.\n\nA Sala indica caminhos para correção e para consultar a metodologia e as informações sobre o projeto. Se um dado não estiver disponível, o material deve dizer isso de forma explícita. Use as fichas, os estados e os arquivos para formular perguntas verificáveis. Antes de publicar qualquer informação, confira o dado na fonte original e registre o recorte e a data consultados.",
+    text: "O Puxa Ficha reúne informações sobre candidaturas. A Sala de imprensa concentra caminhos para encontrar fichas, aplicar filtros, baixar recortes e localizar as fontes associadas aos dados. O material foi pensado como ponto de partida para apuração: cada número depende de um recorte, de uma data e do estado da cobertura. A plataforma não recomenda voto nem transforma um registro isolado em conclusão sobre uma pessoa.\n\nA Mesa de apuração permite consultar candidaturas por cargo e unidade da federação. Os arquivos para download preservam estados distintos para informação publicada, resultado vazio após busca, dado ausente, fonte indisponível e cobertura parcial. Esses estados não devem ser somados como se fossem equivalentes. Quando um vínculo de chapa estiver em revisão, o nome do vice não é publicado. Para o Senado, os suplentes aparecem em campo separado.\n\nOs registros de processos exigem cuidado adicional. A presença de um processo não equivale a condenação, e os detalhes precisam ser conferidos no documento oficial. O mesmo vale para alterações observadas em dados de candidatura: o recorte mostra o que foi registrado e a fonte, sem explicar por si só o motivo da mudança.\n\nA Sala indica caminhos para correção e para consultar a metodologia e as informações sobre o projeto. Se um dado não estiver disponível, o material deve dizer isso de forma explícita. Use as fichas, os estados e os arquivos para formular perguntas verificáveis. Antes de publicar qualquer informação, confira o dado na fonte original e registre o recorte e a data consultados.",
   },
 ] as const
 
-export const questions = [
+type KitQuestion = { question: string; answer: string; sourceHref?: string; sourceLabel?: string }
+
+export const questions: KitQuestion[] = [
   {
     question: "O que é o Puxa Ficha?",
     answer: "Uma plataforma de consulta de informações públicas sobre candidaturas. A Sala reúne fichas, fontes, recortes e estados de cobertura para apoiar a apuração.",
@@ -30,7 +32,9 @@ export const questions = [
   },
   {
     question: "Quem financia o projeto?",
-    answer: "As informações publicadas pelo projeto sobre financiamento e apoiadores estão na página Sobre. Confira ali a descrição e a data de conferência antes de citar valores ou nomes.",
+    answer: "Por isso o Puxa Ficha se financia por apoio coletivo, numa campanha aberta no APOIA.se, onde qualquer pessoa vê quanto foi arrecadado, quantas pessoas apoiam e para que serve cada faixa de valor.",
+    sourceHref: "/sobre",
+    sourceLabel: "Sobre",
   },
   {
     question: "Existe uma perspectiva editorial?",
@@ -38,7 +42,9 @@ export const questions = [
   },
   {
     question: "Há uso de inteligência artificial?",
-    answer: "Este kit não afirma como cada etapa da coleta foi executada. Para uma alegação sobre o método, consulte a documentação e peça esclarecimento pelo canal de contato. A conferência na fonte original continua necessária.",
+    answer: "Pontos gerados por IA como alerta só entram na página pública após checagem editorial registrada no sistema.",
+    sourceHref: "/sobre",
+    sourceLabel: "Sobre",
   },
   {
     question: "Como comunicar um erro?",

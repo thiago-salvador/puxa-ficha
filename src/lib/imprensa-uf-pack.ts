@@ -1,4 +1,5 @@
 import type { ImprensaPageDataset } from "@/lib/imprensa-cache"
+import { getEstadoNome } from "@/lib/br-uf"
 
 export const IMPRENSA_UFS = [
   "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG",
@@ -6,6 +7,26 @@ export const IMPRENSA_UFS = [
 ] as const
 
 export type ImprensaUf = (typeof IMPRENSA_UFS)[number]
+
+const STATE_LABELS: Record<string, string> = {
+  publicado: "Publicado", vazio_confirmado: "Buscado, nada encontrado", cobertura_parcial: "Cobertura parcial",
+  indeterminado: "Indeterminado", nao_buscado: "Não buscado", erro: "Erro na coleta", desatualizado: "Desatualizado",
+  contraditorio: "Recibo contraditório", nao_aplicavel: "Não se aplica", indisponivel: "Fonte indisponível",
+  sem_dado: "Sem dado", indeferidos_comprovados: "Suplentes indeferidos (comprovante do TSE)",
+  vinculo_em_revisao: "Vínculo do vice em revisão",
+}
+
+export function labelState(state: string): string {
+  return STATE_LABELS[state] ?? "Exige conferência"
+}
+
+export function verifiedUpdatesLabel(count: number): string {
+  return `${count} registro${count === 1 ? "" : "s"} verificado${count === 1 ? "" : "s"}`
+}
+
+export function getImprensaUfName(uf: ImprensaUf): string {
+  return getEstadoNome(uf.toLowerCase()) ?? uf
+}
 
 export function isImprensaUf(value: string): value is ImprensaUf {
   return (IMPRENSA_UFS as readonly string[]).includes(value.toUpperCase())
@@ -28,7 +49,7 @@ export function rowGaps(row: ImprensaPageDataset["rows"][number]): string[] {
   if (!["publicado", "vazio_confirmado", "sem_dado"].includes(row.sites.estado)) gaps.push("estado dos sites exige conferência")
   if (!["publicado", "vazio_confirmado"].includes(row.processos.estado)) gaps.push(
     ["cobertura_parcial", "indeterminado", "nao_buscado", "erro", "desatualizado", "sem_dado"].includes(row.processos.estado)
-      ? `processos: ${row.processos.estado.replaceAll("_", " ")}`
+      ? `processos: ${labelState(row.processos.estado)}`
       : "estado dos processos exige conferência",
   )
   return gaps

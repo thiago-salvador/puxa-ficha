@@ -19,7 +19,7 @@ try {
     if (response?.status() !== 200) throw new Error(`Sala HTTP ${response?.status()} em ${viewport.name}`)
     await page.locator('h1').getByText('Sala de imprensa').waitFor()
     await page.evaluate(() => document.fonts.ready)
-    await page.addStyleTag({ content: 'nextjs-portal { display: none !important; }' })
+    await page.addStyleTag({ content: 'nextjs-portal, #numeros, header:has(.menu-btn) { display: none !important; }' })
     await page.screenshot({ path: resolve(output, `sala-${viewport.name}.png`), fullPage: true, animations: 'disabled' })
     if (viewport.name === 'desktop') {
       await page.emulateMedia({ media: 'screen' })

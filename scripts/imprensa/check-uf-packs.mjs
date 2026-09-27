@@ -7,17 +7,32 @@ const failures = []
 for (const uf of ufs) {
   try {
     const pageResponse = await fetch(`${baseUrl}/imprensa/uf/${uf.toLowerCase()}`, { signal: AbortSignal.timeout(20_000) })
-    const exportResponse = await fetch(`${baseUrl}/api/imprensa/export?format=json&uf=${uf}`, { signal: AbortSignal.timeout(20_000) })
     if (!pageResponse.ok) throw new Error(`página HTTP ${pageResponse.status}`)
-    if (!exportResponse.ok) throw new Error(`export HTTP ${exportResponse.status}`)
     const html = await pageResponse.text()
-    const payload = await exportResponse.json()
-    if (!Array.isArray(payload.rows) || payload.filters?.uf !== uf) throw new Error("export inválido ou filtro UF divergente")
     const $ = load(html)
     const totalText = $("p").toArray().map((node) => $(node).text().trim()).find((text) => text.startsWith("Total no recorte:"))
     const renderedTotal = totalText && /^Total no recorte:\s*(\d+)/.exec(totalText)?.[1]
     if (renderedTotal === undefined) throw new Error("total do pacote não encontrado no HTML")
-    if (Number(renderedTotal) !== payload.rows.length) throw new Error(`total divergente: pacote=${renderedTotal}, export=${payload.rows.length}`)
+    const generatedAt = $("time[data-generated-at]").attr("data-generated-at")
+    if (!generatedAt || Number.isNaN(Date.parse(generatedAt))) throw new Error("generatedAt ausente ou inválido no snapshot do pacote")
+    if (!Number.isInteger(Number(renderedTotal))) throw new Error(`total do pacote inválido: ${renderedTotal}`)
+    const candidates = $("[data-uf-candidate]").toArray()
+    if (Number(renderedTotal) !== candidates.length) throw new Error(`total divergente no mesmo snapshot: cabeçalho=${renderedTotal}, fichas=${candidates.length}`)
+    const slugs = new Set(candidates.map((node) => $(node).attr("data-uf-candidate")))
+    if (slugs.size !== candidates.length || slugs.has(undefined)) throw new Error("fichas duplicadas ou sem slug no pacote")
+    const counts = new Map()
+    for (const node of candidates) {
+      const cargo = $(node).attr("data-cargo")
+      if (!cargo) throw new Error("ficha sem cargo no pacote")
+      counts.set(cargo, (counts.get(cargo) ?? 0) + 1)
+    }
+    const displayedCounts = $("[data-uf-cargo-count]").toArray()
+    if (displayedCounts.length !== counts.size) throw new Error("quantidade de cargos divergente no mesmo snapshot")
+    for (const node of displayedCounts) {
+      const cargo = $(node).attr("data-uf-cargo-count")
+      const total = Number($(node).attr("data-total"))
+      if (!cargo || !Number.isInteger(total) || counts.get(cargo) !== total) throw new Error(`contagem por cargo divergente no mesmo snapshot: ${cargo ?? "sem cargo"}`)
+    }
   } catch (error) {
     failures.push(`${uf}: ${error instanceof Error ? error.message : String(error)}`)
   }

@@ -1,38 +1,52 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { notFound } from "next/navigation"
+import { notFound, permanentRedirect } from "next/navigation"
 import { Footer } from "@/components/Footer"
 import { NoticePanel } from "@/components/NoticePanel"
-import { getImprensaDataset } from "@/lib/imprensa-data"
-import { IMPRENSA_UFS, chapaSummary, countRowsByCargo, isImprensaUf, rowGaps } from "@/lib/imprensa-uf-pack"
+import { getImprensaDatasetCached } from "@/lib/imprensa-cache"
+import { IMPRENSA_UFS, chapaSummary, countRowsByCargo, getImprensaUfName, isImprensaUf, rowGaps, verifiedUpdatesLabel } from "@/lib/imprensa-uf-pack"
 import { getImprensaUfUpdates } from "@/lib/imprensa-uf-updates"
 import { formatUpdateValue } from "@/lib/verified-candidate-updates"
 import { formatDisplayName } from "@/lib/display-name"
 
-export const metadata: Metadata = {
-  title: "Candidatos por estado | Puxa Ficha",
-  description: "Recorte estadual de candidatos, fichas públicas, composição de chapa, atualizações verificadas e limites de cobertura.",
-  robots: { index: false, follow: false },
-}
+type Props = { params: Promise<{ uf: string }> }
 
-export const dynamic = "force-dynamic"
+export const revalidate = 300
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { uf: rawUf } = await params
+  const uf = rawUf.toUpperCase()
+  if (!isImprensaUf(uf)) return { robots: { index: false, follow: false } }
+  if (rawUf !== rawUf.toLowerCase()) permanentRedirect(`/imprensa/uf/${rawUf.toLowerCase()}`)
+  const name = getImprensaUfName(uf as (typeof IMPRENSA_UFS)[number])
+  const canonical = `/imprensa/uf/${uf.toLowerCase()}`
+  return {
+    title: `${name} (${uf}) | Candidatos | Puxa Ficha`,
+    description: `Candidatos publicados em ${name}, fichas públicas, composição de chapa, atualizações verificadas e limites de cobertura.`,
+    alternates: { canonical },
+  }
+}
 
 function fieldLabel(field: string): string {
   return field === "patrimonio" ? "Patrimônio" : field === "situacao" ? "Situação da candidatura" : "Partido"
 }
 
 function formatDetectedAt(value: string): string {
-  return new Intl.DateTimeFormat("pt-BR", { dateStyle: "medium", timeZone: "America/Sao_Paulo" }).format(new Date(value))
+  const parts = new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23", timeZone: "America/Sao_Paulo" }).formatToParts(new Date(value))
+  const part = (type: Intl.DateTimeFormatPartTypes) => parts.find((item) => item.type === type)?.value ?? ""
+  return `${part("day")}/${part("month")} às ${part("hour")}:${part("minute")}`
 }
 
-export default async function ImprensaUfPage({ params }: { params: Promise<{ uf: string }> }) {
+export default async function ImprensaUfPage({ params }: Props) {
   const { uf: rawUf } = await params
   const uf = rawUf.toUpperCase()
   if (!isImprensaUf(uf)) notFound()
+  if (rawUf !== rawUf.toLowerCase()) permanentRedirect(`/imprensa/uf/${rawUf.toLowerCase()}`)
+  const stateName = getImprensaUfName(uf as (typeof IMPRENSA_UFS)[number])
 
-  let dataset: Awaited<ReturnType<typeof getImprensaDataset>> | null = null
+  let dataset: Awaited<ReturnType<typeof getImprensaDatasetCached>> | null = null
   try {
-    dataset = await getImprensaDataset({ cargo: null, uf })
+    dataset = await getImprensaDatasetCached({ cargo: null, uf })
   } catch {
     // A indisponibilidade da fonte é exibida separadamente de um recorte com zero linhas.
   }
@@ -47,7 +61,7 @@ export default async function ImprensaUfPage({ params }: { params: Promise<{ uf:
         <div className="mx-auto max-w-7xl">
           <Link href="/imprensa" className="inline-flex min-h-11 items-center font-semibold underline underline-offset-4">Sala de imprensa</Link>
           <p className="mt-8 text-sm font-bold uppercase tracking-[0.12em] text-white/70">Pacote por estado</p>
-          <h1 className="mt-2 text-4xl font-extrabold tracking-tight md:text-6xl">{uf}</h1>
+          <h1 className="mt-2 text-4xl font-extrabold tracking-tight md:text-6xl">{stateName} ({uf})</h1>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-white/80">Candidatos publicados neste recorte, com links para as fichas e indicação dos dados disponíveis e das lacunas.</p>
           <p role="note" className="mt-6 max-w-3xl border-l-4 border-amber-500 bg-amber-50 p-3 font-semibold text-amber-950">Confira os dados na fonte original antes de publicar.</p>
         </div>
@@ -64,8 +78,8 @@ export default async function ImprensaUfPage({ params }: { params: Promise<{ uf:
           <>
             <section aria-labelledby="totais-title" className="max-w-4xl">
               <h2 id="totais-title" className="text-2xl font-bold text-foreground">Candidatos por cargo</h2>
-              <p className="mt-2 text-muted-foreground">Total no recorte: <strong className="text-foreground">{rows.length}</strong> · export atualizado em <time data-generated-at={dataset.generatedAt} dateTime={dataset.generatedAt}>{formatDetectedAt(dataset.generatedAt)}</time>.</p>
-              {counts.length ? <ul className="mt-4 flex flex-wrap gap-3">{counts.map(({ cargo, total }) => <li key={cargo} className="rounded-xl border border-border bg-card px-4 py-3"><strong>{cargo}</strong>: {total}</li>)}</ul> : <p className="mt-4">Nenhum candidato publicado neste recorte.</p>}
+              <p className="mt-2 text-muted-foreground">Total no recorte: <strong className="text-foreground">{rows.length}</strong> · Dados consultados em <time data-generated-at={dataset.generatedAt} dateTime={dataset.generatedAt}>{formatDetectedAt(dataset.generatedAt)}</time>.</p>
+              {counts.length ? <ul className="mt-4 flex flex-wrap gap-3">{counts.map(({ cargo, total }) => <li key={cargo} data-uf-cargo-count={cargo} data-total={total} className="rounded-xl border border-border bg-card px-4 py-3"><strong>{cargo}</strong>: {total}</li>)}</ul> : <p className="mt-4">Nenhum candidato publicado neste recorte.</p>}
             </section>
 
             <section aria-labelledby="candidatos-title" className="mt-12">
@@ -74,7 +88,7 @@ export default async function ImprensaUfPage({ params }: { params: Promise<{ uf:
                 <ul className="mt-5 grid gap-4 md:grid-cols-2">
                   {rows.map((row) => {
                     const gaps = rowGaps(row)
-                    return <li key={row.slug} className="rounded-2xl border border-border bg-card p-5">
+                    return <li key={row.slug} data-uf-candidate={row.slug} data-cargo={row.cargo} className="rounded-2xl border border-border bg-card p-5">
                       <p className="text-xs font-bold uppercase tracking-[0.1em] text-muted-foreground">{row.cargo} · {row.partido ?? "partido sem dado"}</p>
                       <h3 className="mt-2 text-xl font-bold text-foreground"><Link href={row.fichaUrl} className="underline underline-offset-4">{row.nome}</Link></h3>
                       <p className="mt-3 text-sm text-foreground">{chapaSummary(row)}</p>
@@ -95,7 +109,7 @@ export default async function ImprensaUfPage({ params }: { params: Promise<{ uf:
             <p className="mt-4 text-muted-foreground">Nenhuma mudança verificada foi encontrada neste recorte.</p>
           ) : (
             <>
-              <p className="mt-2 text-muted-foreground">{updates.total === null ? "Registros encontrados; total indisponível." : `${updates.total} registro(s) verificado(s).`}{updates.total !== null && updates.total > updates.updates.length ? " Exibindo os 20 mais recentes." : ""}</p>
+              <p className="mt-2 text-muted-foreground">{updates.total === null ? `Exibindo ${verifiedUpdatesLabel(updates.updates.length)}; total indisponível.` : `${verifiedUpdatesLabel(updates.total)}.`}{updates.total !== null && updates.total > updates.updates.length ? ` Exibindo os ${updates.updates.length} mais recentes.` : ""}</p>
               <ul className="mt-5 grid max-w-4xl gap-4">
                 {updates.updates.map((update) => <li key={update.id} className="rounded-xl border border-border bg-card p-5">
                   <div className="flex flex-wrap justify-between gap-2"><strong>{formatDisplayName(update.candidate_name)}</strong><time dateTime={update.detected_at} className="text-sm text-muted-foreground">Detectada em {formatDetectedAt(update.detected_at)}</time></div>
