@@ -8,28 +8,32 @@ import {
   toPublicCandidatoProfileDto,
 } from "../src/lib/public-profile-dto"
 import type { FichaCandidato } from "../src/lib/types"
-import { GASTOS_PARLAMENTARES_EM_REVISAO, anosGastosParlamentaresEmRevisao, gastoParlamentarEmRevisao } from "../src/lib/gastos-parlamentares-em-revisao"
+import { GASTOS_PARLAMENTARES_EM_REVISAO, GASTOS_PARLAMENTARES_EM_REVISAO_UNIVERSO, anosGastosParlamentaresEmRevisao, gastoParlamentarEmRevisao } from "../src/lib/gastos-parlamentares-em-revisao"
 
-it("quarentena de gastos cobre 57 anos em 40 fichas sem duplicatas", () => {
-  const keys = GASTOS_PARLAMENTARES_EM_REVISAO.map(([slug, ano]) => `${slug}:${ano}`)
-  assert.equal(keys.length, 57)
-  assert.equal(new Set(keys).size, 57)
-  assert.equal(new Set(GASTOS_PARLAMENTARES_EM_REVISAO.map(([slug]) => slug)).size, 40)
-  assert.equal(gastoParlamentarEmRevisao("alan-rick", 2023), true)
+it("quarentena de gastos mantém apenas pares únicos por ficha e ano", () => {
+  const entries = [...GASTOS_PARLAMENTARES_EM_REVISAO, ...GASTOS_PARLAMENTARES_EM_REVISAO_UNIVERSO]
+  const keys = entries.map(([slug, ano]) => `${slug}:${ano}`)
+  assert.equal(new Set(keys).size, keys.length)
+  for (const [slug, ano] of entries) {
+    assert.equal(gastoParlamentarEmRevisao(slug, ano), true)
+    assert.ok(anosGastosParlamentaresEmRevisao(slug).includes(ano))
+  }
   assert.equal(gastoParlamentarEmRevisao("alan-rick", 2022), false)
-  assert.deepEqual(anosGastosParlamentaresEmRevisao("alan-rick"), [2023, 2026])
 })
 
-it("DTO público omite somente o ano em revisão, inclusive após recálculo local", () => {
+it("DTO público omite só o par que continua em revisão", () => {
+  const pendente = [...GASTOS_PARLAMENTARES_EM_REVISAO, ...GASTOS_PARLAMENTARES_EM_REVISAO_UNIVERSO][0]
+  const [slug, ano] = pendente ?? ["alan-rick", 2023]
+  const outroAno = Number(ano) === 2022 ? 2021 : 2022
   const ficha = fixtureProfile()
-  ficha.slug = "alan-rick"
+  ficha.slug = slug
   const base = ficha.gastos_parlamentares[0]
   ficha.gastos_parlamentares = [
-    { ...base, id: "gasto-2023", ano: 2023, total_gasto: 433257.75, fonte: "Senado" },
-    { ...base, id: "gasto-2022", ano: 2022, total_gasto: 10, fonte: "Senado" },
+    { ...base, id: "gasto-em-revisao", ano, total_gasto: 10, fonte: "Senado" },
+    { ...base, id: "gasto-fora-da-revisao", ano: outroAno, total_gasto: 10, fonte: "Senado" },
   ]
   const dto = toPublicCandidatoProfileDto(ficha)
-  assert.deepEqual(dto.gastos_parlamentares.map((row) => row.ano), [2022])
+  assert.deepEqual(dto.gastos_parlamentares.map((row) => row.ano), pendente ? [outroAno] : [ano, outroAno])
 })
 
 it("DTO público carrega a data de corte do gasto anual de 2026", () => {

@@ -465,7 +465,7 @@ function publicLegislacaoMandatoExecutivo(row: LegislacaoMandatoExecutivo, index
  * `vlrDocumento`, nem por documento menos glosa, e o banco é sempre maior. Direção sistemática
  * assim é base de agregação diferente, e não sabemos qual é a certa.
  *
- * São 165 linhas em 22 fichas. Mostrar número sobre dinheiro público que não bate com a fonte
+ * Mostrar número sobre dinheiro público que não bate com a fonte
  * que a própria ficha cita é pior do que não mostrar: a regra do projeto proíbe exibir valor
  * sem fonte rastreável, e não proíbe omitir a seção. Nenhuma linha foi apagada do banco.
  *
@@ -503,16 +503,31 @@ function linhaCamaraComSnapshotValidado(detalhamento: unknown, expectedRowYear?:
           annual.url === `https://www.camara.leg.br/cotas/Ano-${expectedYears[index]}.csv.zip` &&
           typeof annual.sha256 === "string" && /^[0-9a-f]{64}$/i.test(annual.sha256)
       })
+    // O arquivo do ano corrente pode ser parcial sem invalidar os anos fechados.
+    // A declaração de cobertura precisa particionar a série de revisões, sem
+    // deixar ano sem estado ou marcar um ano simultaneamente completo e parcial.
+    // O ano parcial também é exibível: é o total oficial do arquivo na data da
+    // consulta, e a ficha já rotula 2026 com essa data e o aviso de que muda.
+    const completeYears = p.complete_years
+    const partialYears = p.partial_years
+    const declaredCoverage = Array.isArray(completeYears) && Array.isArray(partialYears) &&
+      [...completeYears, ...partialYears].length === expectedYears.length &&
+      [...completeYears, ...partialYears].every((year) => Number.isInteger(year) && expectedYears.includes(year as number)) &&
+      new Set([...completeYears, ...partialYears]).size === expectedYears.length &&
+      (completeYears.includes(provenanceYear) || partialYears.includes(provenanceYear)) &&
+      p.scope_complete === (partialYears.length === 0)
     const categories = (detalhamento as Record<string, unknown>).categorias
     const categoryTotal = Array.isArray(categories) ? categories.reduce((sum, item) => {
       if (!item || typeof item !== "object" || Array.isArray(item)) return Number.NaN
       const value = (item as Record<string, unknown>).valor
       return typeof value === "number" && Number.isFinite(value) ? sum + Math.round(value * 100) : Number.NaN
     }, 0) : Number.NaN
-    return p.scope_complete === true && exactYears && exactRevisions &&
+    // Ano com líquido zero ou negativo no CSV é só estorno lançado depois do
+    // mandato; exibir como "gasto do ano" confundiria. A linha fica no banco.
+    return (p.scope_complete === true || declaredCoverage) && exactYears && exactRevisions &&
       Number.isInteger(expectedRowYear) && expectedRowYear === provenanceYear &&
       Number(expectedRowYear) >= 2008 && Number(expectedRowYear) <= 2026 &&
-      Number.isFinite(rowTotal) && categoryTotal === Math.round(Number(rowTotal) * 100) &&
+      Number.isFinite(rowTotal) && Number(rowTotal) > 0 && categoryTotal === Math.round(Number(rowTotal) * 100) &&
       Number.isInteger(sourceRows) && Number(sourceRows) > 0 &&
       Number.isInteger(id) && Number(id) > 0 && identity === "ideCadastro" &&
       Boolean(revision) && revision?.year === provenanceYear &&
