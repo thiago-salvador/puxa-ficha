@@ -125,8 +125,9 @@ describe("resolverExecucao", () => {
     assert.equal(resolverExecucao({ githubRunId: "42", execucaoAgendada: "local:mac:20260930T060000Z" }, 7), "gh:42")
   })
 
-  it("aceita a execução do agente local no formato local:<host>:<timestamp UTC>", () => {
-    assert.equal(resolverExecucao({ execucaoAgendada: "local:mac-estudio:20260930T060000Z" }, 7), "local:mac-estudio:20260930T060000Z")
+  it("aceita a execução do agente local com identificador aleatório", () => {
+    assert.equal(resolverExecucao({ execucaoAgendada: "local:ab12cd34ef56ab78:20260930T060000Z" }, 7), "local:ab12cd34ef56ab78:20260930T060000Z")
+    assert.throws(() => resolverExecucao({ execucaoAgendada: "local:mac-estudio:20260930T060000Z" }, 7), /PF_COLETA_EXECUCAO fora do formato/)
   })
 
   it("recusa formato inventado antes de qualquer escrita", () => {
@@ -190,7 +191,7 @@ describe("ingest.yml", () => {
     assert.match(camara.if ?? "", /contains\(github\.event\.inputs\.sources, 'camara'\)/)
     assert.doesNotMatch(camara.if ?? "", /schedule/)
     const run = camara.steps?.find((s) => s.name === "Ingestão Câmara")?.run ?? ""
-    assert.match(run, /npx tsx scripts\/ingest-all\.ts camara \$FLAGS/)
+    assert.match(run, /npx tsx scripts\/ingest-all\.ts camara \$FLAGS --apply/)
   })
 
   it("REST: schedule cai em senado e camara só é validada", () => {
@@ -198,6 +199,7 @@ describe("ingest.yml", () => {
     assert.equal(passo?.env?.RAW_SOURCES, "${{ github.event.inputs.sources || 'senado' }}")
     assert.match(passo?.run ?? "", /^\s*camara\) ;;$/m)
     assert.doesNotMatch(passo?.run ?? "", /skip-camara-validated/)
+    assert.match(passo?.run ?? "", /npx tsx scripts\/ingest-all\.ts \$SAFE --apply/)
   })
 
   it("revalidação espera a Câmara", () => {
@@ -226,9 +228,17 @@ describe("agente local da Câmara", () => {
     assert.match(script, /npm ci --ignore-scripts/)
     assert.match(script, /v24\.\*/)
     assert.match(script, /tsx="\.\/node_modules\/\.bin\/tsx"/)
-    assert.match(script, /"\$tsx" scripts\/ingest-all\.ts camara --skip-camara-validated/)
+    assert.match(script, /"\$tsx" scripts\/ingest-all\.ts camara --skip-camara-validated --apply/)
+    assert.match(script, /"\$tsx" scripts\/ingest-all\.ts camara-cotas ceaps-senado partidos-parlamentares --apply/)
+    assert.match(script, /scripts\/audit\/exportar-perfis-publicos\.ts/)
+    assert.match(script, /scripts\/audit\/fetch-parliamentary-family-sources-local\.ts/)
+    assert.match(script, /scripts\/audit\/collect-parliamentary-family-receipts-local\.ts/)
+    assert.match(script, /scripts\/audit\/apply-coverage-receipts\.ts/)
+    assert.match(script, /--incluir-abertos --recibos-atuais/)
     assert.doesNotMatch(script, /\bnpx\b(?! --no-install)/)
     assert.match(script, /PF_COLETA_EXECUCAO="\$execucao"/)
+    assert.match(script, /run_id="\$\(uuidgen/)
+    assert.doesNotMatch(script, /scutil --get LocalHostName|hostname -s/)
     assert.match(script, /trap limpar EXIT/)
   })
 

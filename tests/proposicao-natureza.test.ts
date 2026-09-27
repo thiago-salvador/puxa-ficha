@@ -129,9 +129,9 @@ describe("cardinalidade declarada pela Camara (#138)", () => {
     assert.equal(parseDeclaredCountFromLinks(links, 1), 2089)
   })
 
-  test("sem link last, o total e o que veio na pagina unica", () => {
-    assert.equal(parseDeclaredCountFromLinks([{ rel: "self", href: "x" }], 7), 7)
-    assert.equal(parseDeclaredCountFromLinks(undefined, 0), 0)
+  test("sem link last, a cardinalidade fica desconhecida mesmo com dados", () => {
+    assert.equal(parseDeclaredCountFromLinks([{ rel: "self", href: "x" }], 7), null)
+    assert.equal(parseDeclaredCountFromLinks(undefined, 0), null)
   })
 
   test("link last sem pagina utilizavel devolve null", () => {

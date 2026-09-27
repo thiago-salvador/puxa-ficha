@@ -259,7 +259,8 @@ export function runCohortWithContext<T>(selection: ValidatedCohortSelection, col
 export const SENADO_COHORT_SOURCES = Object.freeze([
   "tse-situacao", "tse", "tse-historico", "transparencia", "tcu", "sancoes",
   "filiacao", "wikipedia", "wiki-historico", "wikidata", "wikidata-politico",
-  "instagram", "google-news", "camara", "senado", "ceaps-senado", "jarbas",
+  "instagram", "google-news", "camara", "senado", "ceaps-senado",
+  "camara-cotas", "partidos-parlamentares",
 ] as const)
 
 export type SenadoCohortSource = (typeof SENADO_COHORT_SOURCES)[number]

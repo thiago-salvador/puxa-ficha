@@ -140,6 +140,20 @@
     "negative_claims_allowed_when_stale": false
   },
   {
+    "source_id": "partidos-parlamentares",
+    "label": "Histórico partidário parlamentar oficial",
+    "authority_url": "https://dadosabertos.camara.leg.br/api/v2",
+    "methodology_source_ids": [],
+    "collection_source_ids": ["partidos-parlamentares"],
+    "cadence": "weekly",
+    "max_age_hours": 1080,
+    "refresh_mode": "manual",
+    "evidence_type": "coleta_log",
+    "evidence_ref": "coleta_log_ultima:partidos-parlamentares",
+    "stale_policy": "suppress_negative_claims",
+    "negative_claims_allowed_when_stale": false
+  },
+  {
     "source_id": "ceaps-senado",
     "label": "Senado: CEAPS",
     "authority_url": "https://www12.senado.leg.br/transparencia/dados-abertos-transparencia/dados-abertos-ceaps",
@@ -222,6 +236,20 @@
     "refresh_mode": "manual",
     "evidence_type": "coleta_log",
     "evidence_ref": "coleta_log_ultima:representacoes-etica",
+    "stale_policy": "suppress_negative_claims",
+    "negative_claims_allowed_when_stale": false
+  },
+  {
+    "source_id": "camara-cotas",
+    "label": "Câmara: cota parlamentar oficial em CSV",
+    "authority_url": "https://www.camara.leg.br/cotas/Ano-2026.csv.zip",
+    "methodology_source_ids": [],
+    "collection_source_ids": ["camara-cotas"],
+    "cadence": "weekly",
+    "max_age_hours": 1080,
+    "refresh_mode": "manual",
+    "evidence_type": "coleta_log",
+    "evidence_ref": "coleta_log_ultima:camara-cotas",
     "stale_policy": "suppress_negative_claims",
     "negative_claims_allowed_when_stale": false
   },

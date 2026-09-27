@@ -248,7 +248,7 @@
     "estado": "MG",
     "ids": {
       "camara": 74646,
-      "senado": null,
+      "senado": 391,
       "tse_sq_candidato": {
         "2010": "130000000952",
         "2014": "280000000085",

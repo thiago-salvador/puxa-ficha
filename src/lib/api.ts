@@ -1546,7 +1546,7 @@ async function getCandidatoBySlugFromRelationResource(
     }
   }
 
-  const [historico, mudancas, patrimonio, financiamento, votos, processos, pontos, projetos, projetosLeiNaturezaCount, projetosLeiDestaquesCount, projetosLeiCamaraCount, legislacaoExecutivo, gastos, gastosExecutivo, sancoes, noticias, indicadores, sancoesVerificacao, processosVerificacao, filiacaoVerificacao, tcuVerificacao, trajetoriaVerificacao, patrimonioVerificacao, votacoesVerificacao, projetosVerificacao, gastosParlamentaresVerificacao, federalAcervoReceipts, transparenciaVerificacao, gastosExecutivoVerificacao] =
+  const [historico, mudancas, patrimonio, financiamento, votos, processos, pontos, projetos, projetosLeiNaturezaCount, projetosLeiDestaquesCount, projetosLeiCamaraCount, projetosLeiSenadoCount, legislacaoExecutivo, gastos, gastosExecutivo, sancoes, noticias, indicadores, sancoesVerificacao, processosVerificacao, filiacaoVerificacao, tcuVerificacao, trajetoriaVerificacao, patrimonioVerificacao, votacoesVerificacao, projetosVerificacao, gastosParlamentaresVerificacao, federalAcervoReceipts, transparenciaVerificacao, gastosExecutivoVerificacao] =
     await Promise.all([
       // `despublicado_em` filtra candidatura atribuida por homonimo (migration
       // 20260726160000). O CPF divergente no cadastro desliga o casamento por
@@ -1657,6 +1657,15 @@ async function getCandidatoBySlugFromRelationResource(
           .eq("candidato_id", id)
           .is("despublicado_em", null)
           .eq("fonte", "Camara")
+          .abortSignal(signal)
+      ),
+      withSupabaseRetry(`projetos_lei_senado(${slug})`, async (signal) =>
+        supabase
+          .from("projetos_lei")
+          .select("id", { count: "exact", head: true })
+          .eq("candidato_id", id)
+          .is("despublicado_em", null)
+          .eq("fonte", "Senado")
           .abortSignal(signal)
       ),
       // Previa do inventario do Executivo. O inventario completo saiu do caminho
@@ -1973,6 +1982,9 @@ async function getCandidatoBySlugFromRelationResource(
     projetos_lei_camara_total: projetosLeiCamaraCount.error
       ? null
       : (projetosLeiCamaraCount.count ?? null),
+    projetos_lei_senado_total: projetosLeiSenadoCount.error
+      ? null
+      : (projetosLeiSenadoCount.count ?? null),
     legislacao_mandato_executivo: legislacaoExecutivoOrdenado,
     legislacao_mandato_executivo_total:
       legislacaoExecutivo.count ?? legislacaoExecutivoOrdenado.length,

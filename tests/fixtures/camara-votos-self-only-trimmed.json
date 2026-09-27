@@ -1,0 +1,14 @@
+{
+  "dados": [
+    {
+      "tipoVoto": "Sim",
+      "dataRegistroVoto": "2026-09-03T17:28:19"
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2611313-31/votos"
+    }
+  ]
+}

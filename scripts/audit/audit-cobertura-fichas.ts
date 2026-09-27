@@ -2,7 +2,7 @@ import { chmod, readFile, writeFile } from "node:fs/promises"
 import path from "node:path"
 import { pathToFileURL } from "node:url"
 import { isHistoricoCandidaturaRow } from "../../src/lib/historico-tipo-evento"
-import { publicFamilyRowCount, validCoverageSourceProof } from "./lib/coverage-source-proof"
+import { isHousePartitionFamily, publicFamilyRowCount, validCoverageSourceProof } from "./lib/coverage-source-proof"
 import { rotuloAtualizacaoEncerrada } from "../../src/lib/coorte-atualizacao"
 
 /**
@@ -184,11 +184,12 @@ const FAMILIES_BY_SOURCE: Record<string, readonly CoverageFamily[]> = {
   [DAILY_CHECK_SOURCE]: ["perfil_atual", "chapa_vice"],
   "historico_politico": ["historico_politico"], "tse-historico": ["historico_politico"], "tse-history": ["historico_politico"],
   "mudancas_partido": ["mudancas_partido"], "filiacao": ["mudancas_partido"], "tse-filiacao": ["mudancas_partido"],
+  "partidos-parlamentares": ["mudancas_partido"],
   "patrimonio": ["patrimonio"], "tse-patrimonio": ["patrimonio"], "bem-candidato-tse-2018": ["patrimonio"], "destaques-patrimonio": ["patrimonio"],
   "financiamento": ["financiamento"], "tse-financiamento": ["financiamento"], "financiamento-tse": ["financiamento"], "financiamento-verificacoes": ["financiamento"],
   "projetos_lei": ["projetos_lei"], "projetos-lei": ["projetos_lei"], "camara-proposicoes": ["projetos_lei"], "senado-proposicoes": ["projetos_lei"], "camara-dadosabertos-v2": ["projetos_lei"],
   "votos_candidato": ["votos_candidato"], "votos": ["votos_candidato"], "votacoes": ["votos_candidato"], "camara-votacoes": ["votos_candidato"], "destaques-votacoes": ["votos_candidato"], "senado-votacoes": ["votos_candidato"],
-  "gastos_parlamentares": ["gastos_parlamentares"], "gastos-parlamentares": ["gastos_parlamentares"], "camara-gastos": ["gastos_parlamentares"], "senado-gastos": ["gastos_parlamentares"], "ceaps-senado": ["gastos_parlamentares"], "jarbas": ["gastos_parlamentares"],
+  "gastos_parlamentares": ["gastos_parlamentares"], "gastos-parlamentares": ["gastos_parlamentares"], "camara-gastos": ["gastos_parlamentares"], "camara-cotas": ["gastos_parlamentares"], "senado-gastos": ["gastos_parlamentares"], "ceaps-senado": ["gastos_parlamentares"], "jarbas": ["gastos_parlamentares"],
   "gastos_executivo": ["gastos_executivo"], "gastos-executivo": ["gastos_executivo"], "transparencia": ["gastos_executivo"],
   // Revisão humana pendente da confirmação editorial: recibo `indeterminado`
   // mais novo que o judicial, então a célula fica pendente até a revisão.
@@ -392,6 +393,11 @@ function validExpenseZero(profile: CoverageProfile, family: CoverageFamily, rece
 function requiredSources(profile: CoverageProfile, family: CoverageFamily): string[] {
   if (!["projetos_lei", "votos_candidato", "gastos_parlamentares"].includes(family)) return []
   return family === "gastos_parlamentares" ? expenseSources(profile) : federalSources(profile)
+}
+
+/** Federal house partitions required by the coverage matrix for this candidate/family. */
+export function requiredCoverageHouses(profile: CoverageProfile, family: CoverageFamily): Array<"camara" | "senado"> {
+  return requiredSources(profile, family).filter((source): source is "camara" | "senado" => source === "camara" || source === "senado")
 }
 
 /**
@@ -613,8 +619,14 @@ function stateFromSingleReceipt(receipt: Receipt | null, profile: CoverageProfil
   // A found receipt without published evidence has no concluded public state,
   // even when the search itself is old. An empty receipt with published data is
   // contradictory and must be reviewed.
-  if ((effectiveResult === "encontrado" || effectiveResult === "publicado") && !hasMaterializedData(profile, family)) return "indeterminado"
-  if (effectiveResult === "vazio_confirmado" && hasMaterializedDataInReceiptScope(profile, family, receipt)) {
+  const partition = isHousePartitionFamily(family) ? record(record(receipt.coverage_proof)?.house_partition) : null
+  const partitionRows = partition && Number.isSafeInteger(partition.public_rows) ? Number(partition.public_rows) : null
+  const hasCoverageProof = Boolean(record(receipt.coverage_proof))
+  if (isHousePartitionFamily(family) && hasCoverageProof && !validCoverageSourceProof(profile, family, receipt)) return "indeterminado"
+  if ((effectiveResult === "encontrado" || effectiveResult === "publicado") &&
+      (isHousePartitionFamily(family) ? partitionRows === 0 : !hasMaterializedData(profile, family))) return "indeterminado"
+  if (effectiveResult === "vazio_confirmado" &&
+      (isHousePartitionFamily(family) ? (partitionRows ?? 0) > 0 : hasMaterializedDataInReceiptScope(profile, family, receipt))) {
     // Os dados parlamentares podem vir da outra casa; sem partição por fonte
     // não há prova de contradição no recibo vazio desta casa.
     return ["projetos_lei", "votos_candidato", "gastos_parlamentares"].includes(family) ? "indeterminado" : "erro"
@@ -682,9 +694,19 @@ function stateFromReceipt(receipt: Receipt | null, profile: CoverageProfile, fam
   if (sourceStates.includes("indeterminado")) return "indeterminado"
   if (sourceStates.includes("desatualizado")) return "desatualizado"
   if (sourceStates.includes("frescor_indefinido")) return "frescor_indefinido"
+  const houseZeroContracts = family === "gastos_parlamentares" && sourceReceipts.every((item) => validExpenseZero(profile, family, item as Receipt))
+  if (isHousePartitionFamily(family) && !houseZeroContracts) {
+    const partitions = sourceReceipts.map((item) => record(record(item?.coverage_proof)?.house_partition))
+    if (partitions.some((item) => !item)) return "indeterminado"
+    const previewRows = partitions.reduce((sum, item) => sum + Number(item?.public_rows ?? -1), 0)
+    const fullRows = partitions.reduce((sum, item) => sum + Number(item?.public_total_rows ?? -1), 0)
+    if (previewRows !== publicFamilyRowCount(profile, family)) return "indeterminado"
+    if (family === "projetos_lei" && (!Number.isSafeInteger(profile.projetos_lei_total) || fullRows !== profile.projetos_lei_total)) return "indeterminado"
+    if (family !== "projetos_lei" && fullRows !== previewRows) return "indeterminado"
+  }
   // Duas casas podem ter resultados diferentes. Sem uma prova que atribua
   // cada linha pública à casa/ID correspondente, a união ainda é inconclusiva.
-  if (sourceStates.includes("vazio_confirmado") && sourceStates.includes("publicado")) return "indeterminado"
+  if (sourceStates.includes("vazio_confirmado") && sourceStates.includes("publicado")) return "publicado"
   if (sourceStates.every((state) => state === "vazio_confirmado")) return "vazio_confirmado"
   if (sourceStates.every((state) => state === "publicado")) return "publicado"
   return "indeterminado"

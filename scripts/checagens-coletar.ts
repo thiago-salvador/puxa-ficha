@@ -16,7 +16,7 @@
  * que foi possível: a rotina agendada precisa aparecer vermelha nesse caso.
  */
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
+import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs"
 import { dirname, resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 import { createClient } from "@supabase/supabase-js"
@@ -26,20 +26,28 @@ import { filtrarCoorteAtualizacao } from "./lib/coorte-atualizacao"
 import { EXECUCAO, montarLinhas } from "./lib/coleta-log"
 import {
   coletarChecagens,
+  candidaturasParaRetomada,
   consolidarCatalogoRecibos,
   entradaColetaDoRecibo,
+  POLITICA_CHECAGENS,
   BloqueioDeTaxa,
   aplicarRegraHomonimo,
   gruposDeHomonimos,
   mesclarRecibos,
-  reciboIncompleto,
   resumirColeta,
   type CandidatoChecagem,
   type CatalogoRecibosChecagens,
   type ReciboChecagem,
 } from "./lib/checagens-coleta"
 
-const USER_AGENT = "Mozilla/5.0 (compatible; PuxaFichaChecagens/1.0; +https://puxaficha.com.br/metodologia)"
+// Os arquivos de UOL e AFP respondem ao identificador real do cliente Node.
+const USER_AGENT = "node"
+
+function gravarJsonAtomico(caminho: string, valor: unknown): void {
+  const temporario = `${caminho}.${process.pid}.tmp`
+  writeFileSync(temporario, JSON.stringify(valor, null, 2) + "\n")
+  renameSync(temporario, caminho)
+}
 
 function opcoes(argv: string[]): { valores: Map<string, string>; flags: Set<string> } {
   const valores = new Map<string, string>()
@@ -62,9 +70,13 @@ function opcoes(argv: string[]): { valores: Map<string, string>; flags: Set<stri
   return { valores, flags }
 }
 
-async function fetchText(url: string): Promise<{ status: number; body: string }> {
-  const response = await fetch(url, { headers: { "user-agent": USER_AGENT, accept: "application/rss+xml, application/xml;q=0.9" }, signal: AbortSignal.timeout(20_000) })
-  return { status: response.status, body: await response.text() }
+async function fetchText(url: string): Promise<{ status: number; body: string; headers: Record<string, string> }> {
+  // Identifica o runtime de forma fiel; alguns arquivos bloqueiam user-agents de crawler.
+  const response = await fetch(url, {
+    headers: { "user-agent": USER_AGENT, accept: "text/html,application/xhtml+xml,application/xml;q=0.9,application/json;q=0.9", "accept-language": "pt-BR,pt;q=0.9" },
+    signal: AbortSignal.timeout(30_000),
+  })
+  return { status: response.status, body: await response.text(), headers: Object.fromEntries(response.headers) }
 }
 
 async function gravarColetaLog(recibos: readonly ReciboChecagem[]): Promise<number> {
@@ -91,6 +103,9 @@ function lerRecibos(arquivo: string): ReciboChecagem[] {
   if (bruto.schema_version !== "checagens-recibos-v1" || !Array.isArray(bruto.receipts)) throw new Error("Arquivo de recibos inválido")
   if (bruto.receipts.some((recibo) => recibo.schema_version !== "checagens-recibos-v1" || !recibo.candidate_id || !recibo.candidate_slug || !recibo.searched_at)) {
     throw new Error("Recibo sem identidade ou data")
+  }
+  if (bruto.receipts.some((recibo) => recibo.policy !== POLITICA_CHECAGENS)) {
+    throw new Error(`Política de recibos incompatível; esperado ${POLITICA_CHECAGENS}. Gere uma nova coleta antes de usar --de-recibos ou --retomar`)
   }
   return bruto.receipts
 }
@@ -138,7 +153,7 @@ async function registrarRecibosExistentes(arquivo: string, catalogoPath: string 
 export async function executarColetaChecagens(argv = process.argv.slice(2)): Promise<number> {
   const { valores, flags } = opcoes(argv)
   if (flags.has("help")) {
-    console.log("Uso: coletar:checagens [--roster ARQUIVO] [--slugs a,b] [--out DIR] [--catalogo ARQUIVO] [--concorrencia N] [--pausa-ms N] [--espera-bloqueio-ms N] [--retomar recibos.json] [--sem-google] [--parar-no-bloqueio] [--gravar-log]")
+    console.log("Uso: coletar:checagens [--roster ARQUIVO] [--slugs a,b] [--out DIR] [--catalogo ARQUIVO] [--concorrencia N] [--pausa-ms N] [--intervalo-host-ms N] [--espera-bloqueio-ms N] [--retomar recibos.json] [--sem-google] [--parar-no-bloqueio] [--gravar-log]")
     return 0
   }
   const inicio = new Date()
@@ -148,6 +163,13 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
     const salvar = valores.get("salvar-recibos")
     return registrarRecibosExistentes(resolve(deRecibos), valores.get("catalogo"), flags.has("gravar-log"), rosterDaRodada ? resolve(rosterDaRodada) : undefined, salvar ? resolve(salvar) : undefined)
   }
+  const retomar = valores.get("retomar")
+  // Política e cadastro da rodada anterior são validados antes de qualquer
+  // leitura do Supabase; recibo incompatível não depende da rede para falhar.
+  const rosterAnterior = valores.get("roster-anterior")
+  const anteriores = retomar
+    ? reaplicarHomonimos(lerRecibos(resolve(retomar)), rosterAnterior ? resolve(rosterAnterior) : resolve(dirname(resolve(retomar)), "roster.json"))
+    : []
   const rosterPath = valores.get("roster")
   // Cadastro completo: fonte dos grupos de homônimos e do roster.json da rodada.
   const rosterCompleto = (rosterPath
@@ -155,15 +177,8 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
     : await carregarCandidatos()) as CandidatoChecagem[]
   // coorte-atualizacao: aplica (alvos da coleta; o cadastro completo segue para os homônimos)
   let roster = filtrarCoorteAtualizacao(rosterCompleto, await carregarCoorteAtualizacaoPublica(), "checagens")
-  const retomar = valores.get("retomar")
-  // Recibos anteriores passam pela regra de homônimo com o cadastro da rodada deles.
-  const rosterAnterior = valores.get("roster-anterior")
-  const anteriores = retomar
-    ? reaplicarHomonimos(lerRecibos(resolve(retomar)), rosterAnterior ? resolve(rosterAnterior) : resolve(dirname(resolve(retomar)), "roster.json"))
-    : []
   if (retomar) {
-    const comErro = new Set(anteriores.filter(reciboIncompleto).map((recibo) => recibo.candidate_slug))
-    roster = roster.filter((candidato) => comErro.has(candidato.slug))
+    roster = candidaturasParaRetomada(roster, anteriores)
   }
   const slugs = valores.get("slugs")?.split(",").map((slug) => slug.trim()).filter(Boolean)
   if (slugs?.length) {
@@ -179,6 +194,8 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
   let concluidos = 0
   const parciais: ReciboChecagem[] = []
   const parcialPath = resolve(out, "recibos.parcial.json")
+  const catalogoPath = valores.get("catalogo")
+  const homonimos = chavesHomonimos(rosterCompleto)
   let parouPorBloqueio: string | null = null
   const coletados = await coletarChecagens({
     roster,
@@ -186,6 +203,8 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
     fetchText,
     concorrencia: Number(valores.get("concorrencia") ?? 1),
     pausaMs: Number(valores.get("pausa-ms") ?? 1_000),
+    // Um pedido a cada 2 s por host, somando buscas por candidatura e leitura dos arquivos de seção.
+    intervaloHostMs: Number(valores.get("intervalo-host-ms") ?? 2_000),
     esperaBloqueioMs: Number(valores.get("espera-bloqueio-ms") ?? 30_000),
     semGoogle: flags.has("sem-google"),
     pararNoBloqueio: flags.has("parar-no-bloqueio"),
@@ -194,6 +213,12 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
       // Checkpoint: uma interrupção não apaga as buscas já feitas.
       parciais.push(recibo)
       writeFileSync(parcialPath, JSON.stringify({ schema_version: "checagens-recibos-v1", execucao: EXECUCAO, receipts: retomar ? mesclarRecibos(anteriores, parciais) : parciais }) + "\n")
+      if (catalogoPath) {
+        const caminho = resolve(catalogoPath)
+        const anterior = existsSync(caminho) ? JSON.parse(readFileSync(caminho, "utf8")) as CatalogoRecibosChecagens : null
+        const acumulados = retomar ? mesclarRecibos(anteriores, parciais) : parciais
+        gravarJsonAtomico(caminho, consolidarCatalogoRecibos(anterior, acumulados, new Date(), homonimos))
+      }
       if (concluidos % 20 === 0 || recibo.result === "erro") console.error(`[checagens] ${concluidos}/${roster.length} ${recibo.candidate_slug}: ${recibo.result}`)
     },
   }).catch((error: unknown) => {
@@ -206,12 +231,17 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
   const resumo = { ...resumirColeta(recibos), inicio: inicio.toISOString(), fim: new Date().toISOString(), execucao: EXECUCAO, gravou_log: false, linhas_log: 0,
     refeitos: coletados.length, pendentes_de_busca: roster.length - coletados.length, parou_por_bloqueio: parouPorBloqueio }
   writeFileSync(resolve(out, "recibos.json"), JSON.stringify({ schema_version: "checagens-recibos-v1", execucao: EXECUCAO, receipts: recibos }, null, 2) + "\n")
+  writeFileSync(resolve(out, "mesa-revisao.json"), JSON.stringify({
+    schema_version: "checagens-mesa-v1", execucao: EXECUCAO,
+    leads: recibos.flatMap((recibo) => (recibo.mesa ?? []).map((lead) => ({
+      candidate_id: recibo.candidate_id, candidate_slug: recibo.candidate_slug, ...lead,
+    }))),
+  }, null, 2) + "\n")
 
-  const catalogoPath = valores.get("catalogo")
   if (catalogoPath) {
     const caminho = resolve(catalogoPath)
     const anterior = existsSync(caminho) ? JSON.parse(readFileSync(caminho, "utf8")) as CatalogoRecibosChecagens : null
-    writeFileSync(caminho, JSON.stringify(consolidarCatalogoRecibos(anterior, recibos, new Date(), chavesHomonimos(rosterCompleto)), null, 2) + "\n")
+    gravarJsonAtomico(caminho, consolidarCatalogoRecibos(anterior, recibos, new Date(), homonimos))
   }
   const resumoPath = resolve(out, "resumo.json")
   // O resumo sai antes de qualquer falha de gravação: a rodada interrompida também precisa de rastro.

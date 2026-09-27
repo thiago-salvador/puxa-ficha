@@ -35,6 +35,10 @@ async function rodar(existentes: Array<Record<string, unknown>>): Promise<{ escr
     }
     if (url.pathname.endsWith("/candidaturas_fase_2026_publico")) return response({ code: "PGRST205", message: "Could not find the table candidaturas_fase_2026_publico in the schema cache" }, 404)
     if (url.pathname.endsWith("/votacoes_chave")) return response([])
+    if (url.pathname.endsWith("/projetos_lei")) {
+      if (method !== "GET") throw new Error(`Unexpected projects write in mandate test: ${method}`)
+      return new Response("[]", { headers: { "Content-Type": "application/json", "Content-Range": "0-0/0" } })
+    }
     if (url.pathname.endsWith("/candidatos")) {
       if (method === "PATCH") return response(null)
       if (url.searchParams.get("select")?.includes("verificacao_campos")) return response([{ slug: SLUG, verificacao_campos: null }])
