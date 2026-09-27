@@ -1,4 +1,5 @@
 /** Sonda de leitura das cinco vias diretas no runner de PR, sem banco e sem Google. */
+import { existsSync, readFileSync } from "node:fs"
 import { AGENCIAS_CHECAGEM, parseArquivoArc, parseArquivoFalkor, parseBuscaSite, urlArquivoArc, urlBuscaSite } from "../lib/checagens-coleta"
 import { parseArquivoUol, parseBuscaAfp } from "../lib/checagens-fontes-diretas"
 
@@ -20,8 +21,21 @@ const sondas: Array<{ id: string; url: string; valido: (body: string) => boolean
   { id: "afp-checamos", url: "https://checamos.afp.com/fact-checking-search-results?search_api_fulltext=Lula", valido: (body) => parseBuscaAfp(body, "Lula").itens.length > 0 },
 ]
 
+function fallbackLocalConfigurado(): boolean {
+  const workflow = readFileSync(".github/workflows/checagens-coleta.yml", "utf8")
+  const launcher = "scripts/checagens-local/coletar-local.sh"
+  return existsSync(launcher)
+    && existsSync("scripts/checagens-local/instalar-agente.sh")
+    && existsSync("docs/operations/checagens-local.md")
+    && workflow.includes("workflow_dispatch:")
+    && !workflow.includes("schedule:")
+    && !workflow.includes("SUPABASE_SERVICE_ROLE_KEY")
+    && readFileSync(launcher, "utf8").includes("--sem-google")
+}
+
 async function main() {
   const erros: string[] = []
+  const fallback = !process.argv.includes("--exigir-todas") && fallbackLocalConfigurado()
   for (const sonda of sondas) {
     try {
       const response = await fetch(sonda.url, {
@@ -34,6 +48,10 @@ async function main() {
       console.log(`${sonda.id}: ok HTTP ${response.status}`)
     } catch (error) {
       const motivo = error instanceof Error ? error.message : String(error)
+      if ((sonda.id === "uol-confere" || sonda.id === "afp-checamos") && motivo === "HTTP 403" && fallback) {
+        console.log(`${sonda.id}: HTTP 403 no runner; coleta agendada no agente local`)
+        continue
+      }
       erros.push(`${sonda.id}: ${motivo}`)
       console.error(`${sonda.id}: erro ${motivo}`)
     }

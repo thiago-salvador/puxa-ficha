@@ -130,5 +130,8 @@ test("workflows do TSE: dry-run fora do grupo de escrita e retentativa configura
     }
   }
   assert.match(ler("roster-deputados.yml"), /scripts\/baixar-pacote-tse\.ts/)
-  assert.match(ler("checagens-coleta.yml"), /'ingest-pipeline' \|\| 'checagens-coleta-dry-run'/)
+  const checagens = ler("checagens-coleta.yml")
+  assert.match(checagens, /group: checagens-coleta-dry-run/)
+  assert.match(checagens, /--sem-google/)
+  assert.doesNotMatch(checagens, /schedule:|SUPABASE_SERVICE_ROLE_KEY|--gravar-log|--catalogo/)
 })
