@@ -1,7 +1,8 @@
 name: Coleta judicial por candidato
 
 # Renova os recibos judiciais (processos-curadoria) antes do SLA de 14 dias
-# exibido no site e busca candidatos públicos ainda sem recibo. Grava apenas
+# exibido no site, reconsulta indeterminados antigos e busca candidatos públicos
+# ainda sem recibo. Grava apenas
 # recibos em coleta_log pelo aplicador auditado; nunca grava em processos.
 # Falha da coleta vira recibo `erro` por alvo, nunca silêncio.
 # Evidência nominal fica só no runner: o log e o resumo públicos têm contagens.
