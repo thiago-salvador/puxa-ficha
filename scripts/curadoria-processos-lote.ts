@@ -435,9 +435,10 @@ function ultimoReciboValidoPorCandidato(
 /**
  * Renovação antes do SLA: reabre fichas cujo último recibo é conclusivo
  * (`encontrado` ou `vazio_confirmado`) com idade de pelo menos `SLA - margem`
- * dias, e toda ficha cujo último recibo é `erro`, em qualquer idade.
- * `indeterminado` e `bloqueado` continuam fora:
- * reconsultar o mesmo nome sem fonte nova repetiria a mesma ambiguidade.
+ * dias, toda ficha cujo último recibo é `erro`, e `indeterminado` que já
+ * alcançou a mesma janela de renovação. A nova busca não transforma
+ * ambiguidade em vazio: só uma prova conclusiva ou revisão humana fecha.
+ * `bloqueado` continua fora da renovação automática.
  */
 export function selecionarAlvosVencendo(
   candidatos: CandidatoCoorteAtual[],
@@ -452,7 +453,7 @@ export function selecionarAlvosVencendo(
     if (recibo === undefined) return false
     // Falha de fonte não é estado final: a próxima execução sempre tenta de novo.
     if (recibo.resultado === "erro") return true
-    return RESULTADOS_CONCLUSIVOS.has(recibo.resultado as string)
+    return (RESULTADOS_CONCLUSIVOS.has(recibo.resultado as string) || recibo.resultado === "indeterminado")
       && Date.parse(recibo.executado_em as string) <= limite
   }).map((c) => c.slug).sort()
 }

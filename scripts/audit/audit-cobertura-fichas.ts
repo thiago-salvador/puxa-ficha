@@ -1069,13 +1069,19 @@ export async function fetchPublicProfiles(
   for (const slug of body.slugs as string[]) {
     try {
       const url = `${baseUrl.replace(/\/$/, "")}/api/candidato-profile/${encodeURIComponent(slug)}`
-      let response = await fetcher(url, { headers: { accept: "application/json" } })
-      // A rota pública limita por IP; 429 é espera, não ausência (mesma
-      // cadência do aplicador de recibos).
-      for (let attempt = 1; response.status === 429 && attempt <= 5; attempt++) {
+      let response: Response | undefined
+      // A rota pública pode limitar por IP ou falhar temporariamente. Uma só
+      // ficha inacessível invalida o snapshot inteiro dos coletores.
+      for (let attempt = 1; attempt <= 6; attempt++) {
+        try {
+          response = await fetcher(url, { headers: { accept: "application/json" } })
+          if (![429, 500, 502, 503, 504].includes(response.status) || attempt === 6) break
+        } catch (error) {
+          if (attempt === 6) throw error
+        }
         await sleep(5_000 * attempt)
-        response = await fetcher(url, { headers: { accept: "application/json" } })
       }
+      if (!response) throw new Error("perfil sem resposta")
       if (!response.ok) throw new Error(`HTTP ${response.status}`)
       const envelope = await response.json() as { data?: unknown; sourceStatus?: unknown }
       if (envelope.sourceStatus !== "live") throw new Error(`perfil não publicado: ${String(envelope.sourceStatus)}`)
