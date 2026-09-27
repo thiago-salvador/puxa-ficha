@@ -48,6 +48,7 @@ export interface FinanciamentoExistente {
   total_fundo_eleitoral: number | string | null
   total_pessoa_fisica: number | string | null
   total_recursos_proprios: number | string | null
+  categorias_origem: unknown
   maiores_doadores: unknown
   fonte: string | null
   despublicado_em: string | null
@@ -97,6 +98,7 @@ export const CAMPOS_FINANCIAMENTO_ATUALIZAVEIS = [
   "total_fundo_eleitoral",
   "total_pessoa_fisica",
   "total_recursos_proprios",
+  "categorias_origem",
   "maiores_doadores",
 ] as const
 
@@ -341,9 +343,16 @@ export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
           if (Object.keys(depois).length === 0) {
             resumo.financiamento.inalterado++
           } else {
-            // CAS precisa do valor atual dos dois campos que o update confere.
-            antes.total_arrecadado = existente.total_arrecadado
-            antes.maiores_doadores = existente.maiores_doadores
+            // CAS carrega o preimage completo dos campos exibidos que o update confere.
+            antes.candidato_id = existente.candidato_id
+            antes.ano_eleicao = existente.ano_eleicao
+            antes.sq_candidato = existente.sq_candidato
+            antes.uf_candidatura = existente.uf_candidatura
+            antes.cargo_candidatura = existente.cargo_candidatura
+            for (const campo of [
+              "total_arrecadado", "total_fundo_partidario", "total_fundo_eleitoral",
+              "total_pessoa_fisica", "total_recursos_proprios", "categorias_origem", "maiores_doadores",
+            ]) antes[campo] = (existente as unknown as Record<string, unknown>)[campo] ?? null
             acoes.push({ tipo: "atualizar_financiamento", slug: ficha.slug, id: existente.id, antes, depois })
             resumo.financiamento.atualizar++
           }
@@ -557,9 +566,17 @@ export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
 export function travasDoPlano(
   plano: PlanoFinancas2026,
   estado: EstadoProducao,
-  limites: { maxQuedaRelativa: number } = { maxQuedaRelativa: 0.2 },
+  limites: { maxQuedaRelativa: number; maxAffectedRatio?: number; maxActions?: number } = { maxQuedaRelativa: 0.2 },
 ): string[] {
   const falhas: string[] = []
+  const fichasAfetadas = new Set(plano.acoes.map((acao) => acao.slug)).size
+  const fichasPublicas = plano.resumo.fichas_publicas
+  const maxActions = limites.maxActions ?? 500
+  const maxAffectedRatio = limites.maxAffectedRatio ?? 0.5
+  if (plano.acoes.length > maxActions) falhas.push(`plano excede o limite de ${maxActions} ações: ${plano.acoes.length}`)
+  if (fichasPublicas >= 20 && fichasAfetadas > fichasPublicas * maxAffectedRatio) {
+    falhas.push(`plano altera ${fichasAfetadas}/${fichasPublicas} fichas, acima do limite de ${Math.round(maxAffectedRatio * 100)}%`)
+  }
   for (const acao of plano.acoes) {
     if (acao.tipo !== "atualizar_financiamento") continue
     const antes = num(acao.antes.total_arrecadado)

@@ -13,7 +13,8 @@
  * recibo `tse-financiamento` e um `tse-patrimonio`.
  */
 import { createHash } from "node:crypto"
-import { chmodSync, mkdirSync, writeFileSync } from "node:fs"
+import { createReadStream } from "node:fs"
+import { chmodSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 
@@ -36,15 +37,39 @@ import {
   type PlanoFinancas2026,
 } from "./lib/tse-2026-financas-plano"
 import { aplicarCoorteAtualizacao } from "./lib/coorte-atualizacao"
+import { assertOutsideRepository } from "./audit/lib/private-output"
 
 const SCRIPT = "tse-2026-financas"
 const URL_BENS = `https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_${ANO_FINANCAS_2026}.zip`
+
+type AssetManifest = { assets?: Array<{ family?: string; year?: number; path?: string; url?: string; sha256?: string }> }
+
+/** The local Chrome collector supplies source-bound file hashes for receipts. */
+export async function hashesDoManifesto(urlReceitas: string): Promise<{ sha256_receitas?: string; sha256_bens?: string }> {
+  const path = process.env.PF_TSE_2026_ASSET_MANIFEST
+  if (!path) return {}
+  const manifest = JSON.parse(readFileSync(resolve(path), "utf8")) as AssetManifest
+  const hash = async (family: string, url: string): Promise<string> => {
+    const matches = (manifest.assets ?? []).filter((asset) => asset.family === family && asset.year === ANO_FINANCAS_2026 && asset.url === url)
+    if (matches.length !== 1 || !matches[0]?.path || !/^[a-f0-9]{64}$/i.test(matches[0].sha256 ?? "")) {
+      throw new Error(`manifesto TSE: ${family}/2026 sem arquivo e SHA únicos da URL oficial`)
+    }
+    const digest = createHash("sha256")
+    for await (const chunk of createReadStream(resolve(matches[0].path))) digest.update(chunk as Buffer)
+    const actual = digest.digest("hex")
+    if (actual !== matches[0].sha256!.toLowerCase()) throw new Error(`manifesto TSE: SHA divergente para ${family}/2026`)
+    return actual
+  }
+  return { sha256_receitas: await hash("financiamento", urlReceitas), sha256_bens: await hash("patrimonio", URL_BENS) }
+}
 
 export interface OpcoesCli {
   aplicar: boolean
   agendado: boolean
   out: string | null
   expectedPlanSha: string | null
+  backfillCategorias: boolean
+  backfillDryRun: string | null
 }
 
 export function lerArgs(argv: string[]): OpcoesCli {
@@ -54,6 +79,8 @@ export function lerArgs(argv: string[]): OpcoesCli {
     agendado: argv.includes("--agendado"),
     out: valor("out"),
     expectedPlanSha: valor("expected-plan-sha"),
+    backfillCategorias: argv.includes("--backfill-categorias"),
+    backfillDryRun: valor("backfill-dry-run"),
   }
 }
 
@@ -85,17 +112,40 @@ export async function carregarPublicos(): Promise<FichaPublica[]> {
   // coorte-atualizacao: aplica
   const rows = await selecionarTudo<FichaPublica>("candidatos_publico", "id, slug", (q) => q.order("slug"))
   if (rows.length === 0) throw new Error("candidatos_publico vazio: nada a planejar")
-  return aplicarCoorteAtualizacao(rows, "tse-2026-financas")
+  const current = await aplicarCoorteAtualizacao(rows, "tse-2026-financas")
+  const cohortPath = process.env.PF_TSE_COHORT_PROFILES
+  if (!cohortPath) return current
+  const snapshot = JSON.parse(readFileSync(assertOutsideRepository(cohortPath, "PF_TSE_COHORT_PROFILES"), "utf8")) as FichaPublica[]
+  return restrictPublicosToCohort(current, snapshot)
 }
 
-export async function carregarEstado2026(): Promise<EstadoProducao> {
+export function restrictPublicosToCohort(current: readonly FichaPublica[], snapshot: readonly FichaPublica[]): FichaPublica[] {
+  if (!Array.isArray(snapshot) || snapshot.length === 0) throw new Error("coorte privada ausente ou vazia")
+  const allowed = new Map(snapshot.map((item) => [item.slug, item.id]))
+  if (allowed.size !== snapshot.length) throw new Error("coorte privada contém slug duplicado")
+  const selected = current.filter((item) => allowed.get(item.slug) === item.id)
+  if (selected.length !== snapshot.length) throw new Error("coorte privada diverge da leitura pública atual")
+  return selected
+}
+
+export async function carregarEstado2026(permitirSchemaAnterior = false): Promise<EstadoProducao> {
   const ano = (q: ConsultaPaginavel) => q.eq("ano_eleicao", ANO_FINANCAS_2026).order("id")
-  const [financiamento, verificacoes, patrimonio, ausencias] = await Promise.all([
-    selecionarTudo<EstadoProducao["financiamento"][number]>(
+  const financiamentoPromise = selecionarTudo<EstadoProducao["financiamento"][number]>(
+    "financiamento",
+    "id, candidato_id, ano_eleicao, sq_candidato, uf_candidatura, cargo_candidatura, total_arrecadado, total_fundo_partidario, total_fundo_eleitoral, total_pessoa_fisica, total_recursos_proprios, categorias_origem, maiores_doadores, fonte, despublicado_em",
+    ano,
+  ).catch(async (error: unknown) => {
+    const message = error instanceof Error ? error.message : String(error)
+    if (!permitirSchemaAnterior || !/categorias_origem.*does not exist/i.test(message)) throw error
+    const rows = await selecionarTudo<Omit<EstadoProducao["financiamento"][number], "categorias_origem">>(
       "financiamento",
       "id, candidato_id, ano_eleicao, sq_candidato, uf_candidatura, cargo_candidatura, total_arrecadado, total_fundo_partidario, total_fundo_eleitoral, total_pessoa_fisica, total_recursos_proprios, maiores_doadores, fonte, despublicado_em",
       ano,
-    ),
+    )
+    return rows.map((row) => ({ ...row, categorias_origem: null }))
+  })
+  const [financiamento, verificacoes, patrimonio, ausencias] = await Promise.all([
+    financiamentoPromise,
     selecionarTudo<EstadoProducao["verificacoes"][number]>(
       "financiamento_verificacoes",
       "id, candidato_id, ano_eleicao, sq_candidato, uf_candidatura, resultado, verificado_em",
@@ -134,7 +184,7 @@ export function shaDoPlano(plano: PlanoFinancas2026): string {
   return createHash("sha256").update(stableJson(plano.acoes)).digest("hex")
 }
 
-async function planejar(): Promise<{ plano: PlanoFinancas2026; estado: EstadoProducao; publicos: FichaPublica[] }> {
+async function planejar(permitirSchemaAnterior = false): Promise<{ plano: PlanoFinancas2026; estado: EstadoProducao; publicos: FichaPublica[] }> {
   const publicos = await carregarPublicos()
   const planejadas: PlannedTseRow[] = []
   // O ingest canônico em dry-run não grava; `planStorageRows` devolve a linha
@@ -146,20 +196,22 @@ async function planejar(): Promise<{ plano: PlanoFinancas2026; estado: EstadoPro
   })
   const erroDeAno = resultados.find((r) => r.candidato === `financiamento-${ANO_FINANCAS_2026}` && r.errors.length > 0)
   if (erroDeAno) throw new Error(`pacote TSE ${ANO_FINANCAS_2026} indisponível ou inválido: ${erroDeAno.errors.join("; ")}`)
-  const estado = await carregarEstado2026()
+  const estado = await carregarEstado2026(permitirSchemaAnterior)
   const urlReceitas = financiamentoReceitasZipUrls(ANO_FINANCAS_2026).at(-1)!
+  const hashes = await hashesDoManifesto(urlReceitas)
   const plano = planejarFinancas2026({
     publicos,
     planejadas,
     estado,
-    pacote: { url_receitas: urlReceitas, url_bens: URL_BENS },
+    pacote: { url_receitas: urlReceitas, url_bens: URL_BENS, ...hashes },
   })
   return { plano, estado, publicos }
 }
 
 function salvar(dir: string, nome: string, conteudo: unknown): string {
-  mkdirSync(dir, { recursive: true, mode: 0o700 })
-  const path = resolve(dir, nome)
+  const privateDir = assertOutsideRepository(dir, "--out")
+  mkdirSync(privateDir, { recursive: true, mode: 0o700 })
+  const path = resolve(privateDir, nome)
   writeFileSync(path, JSON.stringify(conteudo, null, 2) + "\n", { mode: 0o600 })
   chmodSync(path, 0o600)
   return path
@@ -216,14 +268,27 @@ async function aplicarAcao(acao: AcaoEscrita): Promise<Conflito | null> {
   if (acao.tipo === "atualizar_financiamento") {
     const linhas = await escreverAuditado(
       ctx("financiamento", "atualiza receita parcial 2026 com o pacote TSE do dia (linha de máquina, CAS)"),
-      () =>
-        supabase.from("financiamento").update(acao.depois)
+      () => {
+        const base = supabase.from("financiamento").update(acao.depois)
           .eq("id", acao.id)
+          .eq("candidato_id", acao.antes.candidato_id as string)
+          .eq("ano_eleicao", acao.antes.ano_eleicao as number)
           .eq("fonte", "TSE")
           .is("despublicado_em", null)
-          .eq("total_arrecadado", acao.antes.total_arrecadado as number)
-          .eq("maiores_doadores", JSON.stringify(acao.antes.maiores_doadores))
-          .select("id"),
+        const comSq = acao.antes.sq_candidato == null ? base.is("sq_candidato", null) : base.eq("sq_candidato", acao.antes.sq_candidato as string)
+        const comUf = acao.antes.uf_candidatura == null ? comSq.is("uf_candidatura", null) : comSq.eq("uf_candidatura", acao.antes.uf_candidatura as string)
+        const comCargo = acao.antes.cargo_candidatura == null ? comUf.is("cargo_candidatura", null) : comUf.eq("cargo_candidatura", acao.antes.cargo_candidatura as string)
+        const comSubtotais = ["total_arrecadado", "total_fundo_partidario", "total_fundo_eleitoral", "total_pessoa_fisica", "total_recursos_proprios"]
+          .reduce((query, coluna) => {
+            const valor = acao.antes[coluna]
+            return valor == null ? query.is(coluna, null) : query.eq(coluna, valor as number)
+          }, comCargo)
+        const comDoadores = comSubtotais.eq("maiores_doadores", JSON.stringify(acao.antes.maiores_doadores))
+        const guarded = acao.antes.categorias_origem == null
+          ? comDoadores.is("categorias_origem", null)
+          : comDoadores.eq("categorias_origem", JSON.stringify(acao.antes.categorias_origem))
+        return guarded.select("id")
+      },
     )
     return linhas.length === 1 ? null : conflito("linha mudou desde o plano (CAS)")
   }
@@ -257,16 +322,42 @@ async function aplicarAcao(acao: AcaoEscrita): Promise<Conflito | null> {
  * usar. Prova, antes de gravar, que o filtro casa exatamente a linha do plano
  * (inclusive a igualdade jsonb de `maiores_doadores`).
  */
-export async function sondarCas(plano: PlanoFinancas2026): Promise<{ ok: number; falhas: string[] }> {
+export async function sondarCas(plano: PlanoFinancas2026, permitirSchemaAnterior = false): Promise<{ ok: number; falhas: string[] }> {
   let ok = 0
   const falhas: string[] = []
   for (const acao of plano.acoes) {
     let q: PromiseLike<RespostaSelect> | null = null
+    let qSemCategorias: PromiseLike<RespostaSelect> | null = null
     if (acao.tipo === "atualizar_financiamento") {
-      q = supabase.from("financiamento").select("id").eq("id", acao.id).eq("fonte", "TSE")
-        .is("despublicado_em", null)
-        .eq("total_arrecadado", acao.antes.total_arrecadado as number)
+      const base = supabase.from("financiamento").select("id").eq("id", acao.id)
+        .eq("candidato_id", acao.antes.candidato_id as string).eq("ano_eleicao", acao.antes.ano_eleicao as number)
+        .eq("fonte", "TSE").is("despublicado_em", null)
+      const comSq = acao.antes.sq_candidato == null ? base.is("sq_candidato", null) : base.eq("sq_candidato", acao.antes.sq_candidato as string)
+      const comUf = acao.antes.uf_candidatura == null ? comSq.is("uf_candidatura", null) : comSq.eq("uf_candidatura", acao.antes.uf_candidatura as string)
+      const comCargo = acao.antes.cargo_candidatura == null ? comUf.is("cargo_candidatura", null) : comUf.eq("cargo_candidatura", acao.antes.cargo_candidatura as string)
+      const comSubtotais = ["total_arrecadado", "total_fundo_partidario", "total_fundo_eleitoral", "total_pessoa_fisica", "total_recursos_proprios"]
+        .reduce((query, coluna) => {
+          const valor = acao.antes[coluna]
+          return valor == null ? query.is(coluna, null) : query.eq(coluna, valor as number)
+        }, comCargo)
+      const comDoadores = comSubtotais.eq("maiores_doadores", JSON.stringify(acao.antes.maiores_doadores))
+      // PostgREST builders mutate while chaining filters; build the fallback
+      // independently so adding the category predicate below cannot leak into it.
+      const baseSemCategorias = supabase.from("financiamento").select("id").eq("id", acao.id)
+        .eq("candidato_id", acao.antes.candidato_id as string).eq("ano_eleicao", acao.antes.ano_eleicao as number)
+        .eq("fonte", "TSE").is("despublicado_em", null)
+      const sqSemCategorias = acao.antes.sq_candidato == null ? baseSemCategorias.is("sq_candidato", null) : baseSemCategorias.eq("sq_candidato", acao.antes.sq_candidato as string)
+      const ufSemCategorias = acao.antes.uf_candidatura == null ? sqSemCategorias.is("uf_candidatura", null) : sqSemCategorias.eq("uf_candidatura", acao.antes.uf_candidatura as string)
+      const cargoSemCategorias = acao.antes.cargo_candidatura == null ? ufSemCategorias.is("cargo_candidatura", null) : ufSemCategorias.eq("cargo_candidatura", acao.antes.cargo_candidatura as string)
+      qSemCategorias = ["total_arrecadado", "total_fundo_partidario", "total_fundo_eleitoral", "total_pessoa_fisica", "total_recursos_proprios"]
+        .reduce((query, coluna) => {
+          const valor = acao.antes[coluna]
+          return valor == null ? query.is(coluna, null) : query.eq(coluna, valor as number)
+        }, cargoSemCategorias)
         .eq("maiores_doadores", JSON.stringify(acao.antes.maiores_doadores))
+      q = acao.antes.categorias_origem == null
+        ? comDoadores.is("categorias_origem", null)
+        : comDoadores.eq("categorias_origem", JSON.stringify(acao.antes.categorias_origem))
     } else if (acao.tipo === "apagar_verificacao") {
       const base = supabase.from("financiamento_verificacoes").select("id").eq("id", acao.id).eq("resultado", acao.antes.resultado)
       q = acao.antes.verificado_em ? base.eq("verificado_em", acao.antes.verificado_em) : base.is("verificado_em", null)
@@ -275,7 +366,12 @@ export async function sondarCas(plano: PlanoFinancas2026): Promise<{ ok: number;
       q = acao.antes.verificado_em ? base.eq("verificado_em", acao.antes.verificado_em) : base.is("verificado_em", null)
     }
     if (!q) continue
-    const { data, error } = await q
+    let { data, error } = await q
+    if (error && permitirSchemaAnterior && qSemCategorias && /categorias_origem.*does not exist/i.test(error.message)) {
+      // Before the idempotent migration, the column is structurally absent.
+      // Prove the rest of the preimage now; the later post-migration CAS requires NULL.
+      ;({ data, error } = await qSemCategorias)
+    }
     if (error) falhas.push(`${acao.slug} ${acao.tipo}: ${error.message}`)
     else if ((data ?? []).length !== 1) falhas.push(`${acao.slug} ${acao.tipo}: predicado casou ${(data ?? []).length} linha(s)`)
     else ok++
@@ -357,11 +453,13 @@ export function decidirPortao(
   falhasDeTravas: string[],
   falhasDeCas: string[],
 ): { aplicar: true } | { aplicar: false; codigo: number; motivo: string } {
-  if (opts.agendado) {
-    if (falhasDeTravas.length > 0) {
-      return { aplicar: false, codigo: 2, motivo: `travas reprovaram: ${falhasDeTravas.join("; ")}` }
-    }
-  } else if (opts.expectedPlanSha !== sha) {
+  if (falhasDeTravas.length > 0) {
+    return { aplicar: false, codigo: 2, motivo: `travas reprovaram: ${falhasDeTravas.join("; ")}` }
+  }
+  if (opts.backfillCategorias && (opts.agendado || !/^[a-f0-9]{64}$/i.test(opts.expectedPlanSha ?? "") || !opts.backfillDryRun)) {
+    return { aplicar: false, codigo: 3, motivo: "backfill exige SHA revisado, recibo de dry-run e modo manual" }
+  }
+  if (!opts.agendado && opts.expectedPlanSha !== sha) {
     return { aplicar: false, codigo: 3, motivo: `plano_sha256 ${sha} difere do revisado (${opts.expectedPlanSha ?? "ausente"})` }
   }
   if (falhasDeCas.length > 0) {
@@ -384,7 +482,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
 async function executar(opts: OpcoesCli): Promise<number> {
   exigirChaveV2(process.env.PF_DOADOR_CPF_HASH_SALT)
 
-  const { plano, estado, publicos } = await planejar()
+  const { plano, estado, publicos } = await planejar(!opts.aplicar)
   const sha = shaDoPlano(plano)
   const publico = planoPublico(plano)
   console.log(JSON.stringify({ modo: opts.aplicar ? "apply" : "dry-run", plano_sha256: sha, resumo: publico.resumo }, null, 2))
@@ -395,11 +493,25 @@ async function executar(opts: OpcoesCli): Promise<number> {
     const backup = salvar(opts.out, "backup-preimagem.json", backupDoPlano(plano, estado))
     console.error(`plano: ${plan}\nresumo: ${resumo}\nbackup: ${backup}`)
   }
-  const sonda = await sondarCas(plano)
+  const sonda = await sondarCas(plano, !opts.aplicar)
   console.log(JSON.stringify({ sonda_cas: { ok: sonda.ok, falhas: sonda.falhas.length, exemplos: sonda.falhas.slice(0, 5) } }))
+  if (!opts.aplicar && opts.out && sonda.falhas.length === 0) salvar(opts.out, "dry-run-verificado.json", { plano_sha256: sha, verified: true, mode: "dry-run" })
   if (!opts.aplicar) return sonda.falhas.length > 0 ? 5 : 0
 
-  const portao = decidirPortao(opts, sha, opts.agendado ? travasDoPlano(plano, estado) : [], sonda.falhas)
+  const backfillProof = opts.backfillCategorias && opts.backfillDryRun ? (() => {
+    try {
+      const path = assertOutsideRepository(opts.backfillDryRun!, "--backfill-dry-run")
+      const proof = JSON.parse(readFileSync(path, "utf8")) as { plano_sha256?: string; verified?: boolean; mode?: string }
+      return proof.verified === true && proof.mode === "dry-run" && proof.plano_sha256 === sha
+    } catch { return false }
+  })() : !opts.backfillCategorias
+  const limits = opts.backfillCategorias && backfillProof
+    ? { maxQuedaRelativa: 0.2, maxAffectedRatio: 0.95, maxActions: 1000 }
+    : undefined
+  const portao = decidirPortao(opts, sha, [
+    ...travasDoPlano(plano, estado, limits),
+    ...(!backfillProof ? ["dry-run revisado não corresponde ao plano atual"] : []),
+  ], sonda.falhas)
   if (!portao.aplicar) {
     console.error(`${portao.motivo}; nada gravado`)
     await gravarRecibosDeFalha(portao.motivo, publicos)
@@ -407,14 +519,17 @@ async function executar(opts: OpcoesCli): Promise<number> {
   }
 
   const conflitos: Conflito[] = []
-  for (const acao of plano.acoes) {
-    try {
-      const c = await aplicarAcao(acao)
-      if (c) conflitos.push(c)
-    } catch (err) {
-      // Uma ação que lança não pode derrubar as seguintes nem os recibos: a
-      // trilha de erro dela já foi gravada por escreverAuditado.
-      conflitos.push({ slug: acao.slug, tipo: acao.tipo, motivo: `exceção: ${mensagemDe(err)}` })
+  const tamanhoLote = 25
+  for (let offset = 0; offset < plano.acoes.length; offset += tamanhoLote) {
+    for (const acao of plano.acoes.slice(offset, offset + tamanhoLote)) {
+      try {
+        const c = await aplicarAcao(acao)
+        if (c) conflitos.push(c)
+      } catch (err) {
+        // Uma ação que lança não pode derrubar as seguintes nem os recibos: a
+        // trilha de erro dela já foi gravada por escreverAuditado.
+        conflitos.push({ slug: acao.slug, tipo: acao.tipo, motivo: `exceção: ${mensagemDe(err)}` })
+      }
     }
   }
   const recibos = await gravarRecibos(plano, conflitos)

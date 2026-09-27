@@ -29,6 +29,7 @@ function fin(slug: string, id: string, extra: Record<string, unknown> = {}): Pla
       total_fundo_eleitoral: 1000,
       total_pessoa_fisica: 0,
       total_recursos_proprios: 0,
+      categorias_origem: { fundo_eleitoral: 1000, fundo_partidario: 0, outros_recursos: 0, nao_informado_pelo_tse: 0 },
       maiores_doadores: [{ nome: "PARTIDO X", valor: 1000, tipo: "fundo_eleitoral" }],
       fonte: "TSE",
       doadores_completos: [],
@@ -51,6 +52,7 @@ function existente(id: string, candidato: string, extra: Record<string, unknown>
     total_fundo_eleitoral: 500,
     total_pessoa_fisica: 0,
     total_recursos_proprios: 0,
+    categorias_origem: { fundo_eleitoral: 500, fundo_partidario: 0, outros_recursos: 0, nao_informado_pelo_tse: 0 },
     maiores_doadores: [{ nome: "PARTIDO X", valor: 500, tipo: "fundo_eleitoral" }],
     fonte: "TSE",
     despublicado_em: null,
@@ -100,8 +102,14 @@ describe("plano de finanças TSE 2026", () => {
     const upd = plano.acoes[0]!
     assert.ok(upd.tipo === "atualizar_financiamento")
     assert.equal(upd.depois.total_arrecadado, 1000)
+    assert.deepEqual(upd.depois.categorias_origem, { fundo_eleitoral: 1000, fundo_partidario: 0, outros_recursos: 0, nao_informado_pelo_tse: 0 })
+    assert.deepEqual(upd.antes.categorias_origem, { fundo_eleitoral: 500, fundo_partidario: 0, outros_recursos: 0, nao_informado_pelo_tse: 0 })
     assert.ok(!("despublicado_em" in upd.depois), "update nunca mexe em despublicação")
     assert.equal(upd.antes.total_arrecadado, "500.00", "CAS leva o valor atual")
+    assert.equal(upd.antes.total_fundo_partidario, 0)
+    assert.equal(upd.antes.total_fundo_eleitoral, 500)
+    assert.equal(upd.antes.total_pessoa_fisica, 0)
+    assert.equal(upd.antes.total_recursos_proprios, 0)
     assert.equal(plano.resumo.financiamento.preservado_curadoria, 1)
   })
 
@@ -109,6 +117,7 @@ describe("plano de finanças TSE 2026", () => {
     const estado = vazio()
     estado.financiamento.push(existente("f1", "c1", {
       sq_candidato: "sq-a", total_arrecadado: "1000.00", total_fundo_eleitoral: "1000.00",
+      categorias_origem: { fundo_eleitoral: 1000, fundo_partidario: 0, outros_recursos: 0, nao_informado_pelo_tse: 0 },
       maiores_doadores: [{ tipo: "fundo_eleitoral", valor: 1000, nome: "PARTIDO X" }],
     }))
     const plano = planejarFinancas2026({ publicos: [{ id: "c1", slug: "a" }], planejadas: [fin("a", "c1")], estado, pacote: PACOTE })
@@ -200,9 +209,9 @@ describe("plano de finanças TSE 2026: casos de revisão", () => {
 describe("coletor TSE 2026: portão e argumentos", () => {
   it("lerArgs reconhece apply, agendado, out e sha", () => {
     assert.deepEqual(lerArgs(["--apply", "--agendado", "--out=x", "--expected-plan-sha=abc"]), {
-      aplicar: true, agendado: true, out: "x", expectedPlanSha: "abc",
+      aplicar: true, agendado: true, out: "x", expectedPlanSha: "abc", backfillCategorias: false, backfillDryRun: null,
     })
-    assert.deepEqual(lerArgs([]), { aplicar: false, agendado: false, out: null, expectedPlanSha: null })
+    assert.deepEqual(lerArgs([]), { aplicar: false, agendado: false, out: null, expectedPlanSha: null, backfillCategorias: false, backfillDryRun: null })
   })
 
   it("agendado não exige sha, mas respeita travas e sonda de CAS", () => {
@@ -217,6 +226,24 @@ describe("coletor TSE 2026: portão e argumentos", () => {
     assert.equal((decidirPortao(lerArgs(["--apply", "--expected-plan-sha=t"]), "s", [], []) as { codigo: number }).codigo, 3)
     assert.deepEqual(decidirPortao(lerArgs(["--apply", "--expected-plan-sha=s"]), "s", [], []), { aplicar: true })
     assert.equal((decidirPortao(lerArgs(["--apply", "--expected-plan-sha=s"]), "s", [], ["x"]) as { codigo: number }).codigo, 5)
+    assert.equal((decidirPortao(lerArgs(["--apply", "--expected-plan-sha=s"]), "s", ["limite de proporção"], []) as { codigo: number }).codigo, 2)
+  })
+
+  it("backfill de categorias exige modo manual, SHA revisado e recibo de dry-run", () => {
+    const sha = "a".repeat(64)
+    assert.equal((decidirPortao(lerArgs(["--apply", "--agendado", "--backfill-categorias"]), sha, [], []) as { codigo: number }).codigo, 3)
+    assert.equal((decidirPortao(lerArgs(["--apply", "--backfill-categorias", `--expected-plan-sha=${sha}`]), sha, [], []) as { codigo: number }).codigo, 3)
+    assert.deepEqual(decidirPortao(lerArgs(["--apply", "--backfill-categorias", `--expected-plan-sha=${sha}`, "--backfill-dry-run=/tmp/verified.json"]), sha, [], []), { aplicar: true })
+  })
+
+  it("limita volume absoluto e proporção da coorte antes de qualquer apply", () => {
+    const plano = planejarFinancas2026({ publicos: [{ id: "c1", slug: "a" }], planejadas: [fin("a", "c1")], estado: vazio(), pacote: PACOTE })
+    const acao = plano.acoes[0]!
+    const volume = { ...plano, acoes: Array.from({ length: 501 }, () => acao) }
+    assert.ok(travasDoPlano(volume, vazio()).some((falha) => falha.includes("500 ações")))
+    const proporcao = { ...plano, acoes: Array.from({ length: 11 }, (_, index) => ({ ...acao, slug: `ficha-${index}` })), resumo: { ...plano.resumo, fichas_publicas: 20 } }
+    assert.ok(travasDoPlano(proporcao, vazio()).some((falha) => falha.includes("50%")))
+    assert.equal(travasDoPlano(proporcao, vazio(), { maxQuedaRelativa: 0.2, maxAffectedRatio: 0.95, maxActions: 1000 }).some((falha) => falha.includes("95%")), false)
   })
 
   it("rodada que não aplica deixa recibo de erro nas duas fontes por ficha", () => {
@@ -231,6 +258,15 @@ describe("coletor TSE 2026: contrato de escrita", () => {
   const src = readFileSync("scripts/tse-2026-financas.ts", "utf8")
   it("toda escrita de domínio passa por escreverAuditado com CAS", () => {
     assert.match(src, /\.eq\("maiores_doadores", JSON\.stringify\(acao\.antes\.maiores_doadores\)\)/)
+    assert.match(src, /\.eq\("categorias_origem", JSON\.stringify\(acao\.antes\.categorias_origem\)\)/)
+    assert.match(src, /\.is\("categorias_origem", null\)/)
+    assert.match(src, /const comSubtotais = \["total_arrecadado", "total_fundo_partidario", "total_fundo_eleitoral", "total_pessoa_fisica", "total_recursos_proprios"\]/)
+    assert.match(src, /valor == null \? query\.is\(coluna, null\) : query\.eq\(coluna, valor as number\)/)
+    assert.match(src, /\.eq\("candidato_id", acao\.antes\.candidato_id as string\)/)
+    assert.match(src, /\.eq\("ano_eleicao", acao\.antes\.ano_eleicao as number\)/)
+    assert.match(src, /\.eq\("sq_candidato", acao\.antes\.sq_candidato as string\)/)
+    assert.match(src, /\.eq\("uf_candidatura", acao\.antes\.uf_candidatura as string\)/)
+    assert.match(src, /qSemCategorias = \["total_arrecadado"/)
     assert.match(src, /\.is\("despublicado_em", null\)/)
     assert.match(src, /exigirChaveV2\(process\.env\.PF_DOADOR_CPF_HASH_SALT\)/)
   })

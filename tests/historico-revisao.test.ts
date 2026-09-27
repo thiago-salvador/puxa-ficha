@@ -1,7 +1,7 @@
 import assert from "node:assert/strict"
 import { describe, it } from "node:test"
 import { planCoverageReceipts, planOpenReceipts } from "../scripts/audit/apply-coverage-receipts"
-import { adaptLatestReceipts, buildCoverageMatrix, type CoverageProfile } from "../scripts/audit/audit-cobertura-fichas"
+import { adaptLatestReceipts, buildCoverageMatrix, receiptFamilies, type CoverageProfile } from "../scripts/audit/audit-cobertura-fichas"
 import { mkdtempSync, rmSync, writeFileSync } from "node:fs"
 import { execFileSync } from "node:child_process"
 import { createHash } from "node:crypto"
@@ -20,6 +20,7 @@ import {
   historicoRevisionVerdict,
   partyKey,
   publicElectionResult,
+  partidoPorCandidaturaReceipt,
   tseCandidacyFromCsv,
   type SeedCandidate,
   type SenadoSource,
@@ -77,8 +78,8 @@ function verdict(historico: Record<string, unknown>[], sourceRows: TseCandidacyR
   })
 }
 
-function cell(subject: CoverageProfile, rows: Record<string, unknown>[]) {
-  return buildCoverageMatrix([subject], [], adaptLatestReceipts(rows, [subject]).joins).cells.find((item) => item.familia === "historico_politico")!
+function cell(subject: CoverageProfile, rows: Record<string, unknown>[], family = "historico_politico") {
+  return buildCoverageMatrix([subject], [], adaptLatestReceipts(rows, [subject]).joins).cells.find((item) => item.familia === family)!
 }
 
 describe("revisão do histórico: identidade ancorada no SQ do seed", () => {
@@ -194,6 +195,51 @@ describe("revisão do histórico: veredito e prova", () => {
     assert.equal(result.review[0]?.tipo, "linha_diverge")
   })
 
+  it("recibo partidário fecha vazio no escopo por candidatura e não declara filiação datada", () => {
+    const years = [...HISTORICO_ANOS_CANONICOS]
+    const sourceRevisions = years.map((year) => ({ year, url: `https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_${year}.zip`, sha256: String(year % 10).repeat(64) }))
+    const subject = { ...profile([]), mudancas_partido: [] }
+    const sources = [SOURCE_2026(), row({})]
+    const receipt = partidoPorCandidaturaReceipt({
+      profile: subject, candidate: seed, identity: identityFor([SOURCE_2026()]), sourceRows: sources,
+      anos: years, anosObrigatorios: years, tseRevisions: sourceRevisions, checkedAt: CHECKED,
+    })
+    const detail = JSON.parse(receipt.detalhe)
+    assert.equal(receipt.fonte, "tse-partido-candidatura")
+    assert.equal(receipt.resultado, "vazio_confirmado")
+    assert.equal(detail.scope, "partido_em_cada_candidatura")
+    assert.equal(detail.datas_de_filiacao_estabelecidas, false)
+    assert.equal(detail.coverage_proof.method, "official-party-by-candidacy-scope")
+    assert.equal(validCoverageSourceProof(subject, "mudancas_partido", { ...receipt, coverage_proof: detail.coverage_proof }), true)
+    assert.deepEqual(receiptFamilies(receipt.fonte, receipt.detalhe, receipt.url), ["mudancas_partido"])
+    assert.equal(cell(subject, [receipt], "mudancas_partido").estado, "vazio_confirmado")
+    assert.equal(planCoverageReceipts([receipt], [subject], new Set([receipt.fonte])).planned[0]?.familia, "mudancas_partido")
+  })
+
+  it("recibo partidário fecha só transições deriváveis das siglas oficiais por candidatura", () => {
+    const years = [...HISTORICO_ANOS_CANONICOS]
+    const sourceRevisions = years.map((year) => ({ year, url: `https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_${year}.zip`, sha256: String(year % 10).repeat(64) }))
+    const sourceRows = [
+      row({ ANO_ELEICAO: "2022", SG_PARTIDO: "PC do B" }),
+      SOURCE_2026(),
+    ]
+    const identity = identityFor([SOURCE_2026()])
+    const subject = { ...profile([]), mudancas_partido: [] as Record<string, unknown>[] }
+    const semTransicao = partidoPorCandidaturaReceipt({ profile: subject, candidate: seed, identity, sourceRows, anos: years, anosObrigatorios: years, tseRevisions: sourceRevisions, checkedAt: CHECKED })
+    assert.equal(semTransicao.resultado, "vazio_confirmado")
+    subject.mudancas_partido = [{ partido_anterior: "PCdoB", partido_novo: "MDB", ano: 2026 }]
+    const naoDerivavel = partidoPorCandidaturaReceipt({ profile: subject, candidate: seed, identity, sourceRows, anos: years, anosObrigatorios: years, tseRevisions: sourceRevisions, checkedAt: CHECKED })
+    assert.equal(naoDerivavel.resultado, "indeterminado")
+    assert.match(JSON.parse(naoDerivavel.detalhe).motivo, /transições públicas não derivam/)
+    sourceRows[1] = row({ ANO_ELEICAO: "2026", SQ_CANDIDATO: "250000000099", DS_CARGO: "GOVERNADOR", SG_PARTIDO: "MDB" })
+    const derivavel = partidoPorCandidaturaReceipt({ profile: subject, candidate: seed, identity, sourceRows, anos: years, anosObrigatorios: years, tseRevisions: sourceRevisions, checkedAt: CHECKED })
+    const detail = JSON.parse(derivavel.detalhe)
+    assert.equal(derivavel.resultado, "encontrado")
+    assert.equal(detail.coverage_proof.derived_transitions, 1)
+    assert.equal(detail.coverage_proof.public_transitions, 1)
+    assert.equal(validCoverageSourceProof(subject, "mudancas_partido", { ...derivavel, coverage_proof: detail.coverage_proof }), true)
+  })
+
   it("mandato TSE casa com a eleição do ano anterior", () => {
     const mandato = { ...PUBLIC_2022, tipo_evento: "mandato", periodo_inicio: 2023, periodo_fim: 2027 }
     const result = verdict([PUBLIC_2022, mandato, PUBLIC_2026], [row({})])
@@ -292,12 +338,57 @@ describe("coletor de revisão do histórico: rodada com pacote real", () => {
       const base = { anos: [2024, 2026], profiles: [subject], seed: [seed], checkedAt: CHECKED, senado: async () => ({ status: "erro" as const, url: "x", motivo: "não usado" }), anosObrigatorios: [2024, 2026] }
       const curto = await runHistoricoRevision({ ...base, manifest: { assets: [vazio, cheio2026] }, minLinhasPorAno: 2 })
       assert.equal(curto.receipts[0]?.resultado, "erro")
+      assert.equal(curto.partyReceipts[0]?.resultado, "erro")
       assert.match(JSON.parse(curto.receipts[0]!.detalhe).motivo, /2024: 0 linhas/)
       const cheio2024 = pacote(dir, 2024, filler(2024, 3))
       const ok = await runHistoricoRevision({ ...base, manifest: { assets: [cheio2024, cheio2026] }, minLinhasPorAno: 2 })
       assert.equal(ok.receipts[0]?.resultado, "encontrado", JSON.stringify(ok.review))
+      assert.equal(ok.partyReceipts[0]?.fonte, "tse-partido-candidatura")
       const parcial = await runHistoricoRevision({ ...base, anosObrigatorios: undefined, manifest: { assets: [cheio2024, cheio2026] }, minLinhasPorAno: 2 })
       assert.equal(parcial.receipts[0]?.resultado, "indeterminado")
+      assert.equal(parcial.partyReceipts[0]?.resultado, "indeterminado")
+    } finally { rmSync(dir, { recursive: true, force: true }) }
+  })
+
+  it("modo official-only retém linha com CPF mascarado para revisão de identidade", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "pf-hist-official-"))
+    try {
+      const masked = `2024;240000000099;-4;${NOME};${NASC};GOVERNADOR;SP;PC do B;NÃO ELEITO`
+      const anchor = `2026;250000000099;${CPF};${NOME};${NASC};GOVERNADOR;SP;PC do B;NÃO ELEITO`
+      const assets = [pacote(dir, 2024, [masked, ...filler(2024, 3)]), pacote(dir, 2026, [anchor, ...filler(2026, 3)])]
+      const result = await runHistoricoRevision({
+        anos: [2024, 2026], profiles: [subject], seed: [seed], checkedAt: CHECKED,
+        senado: async () => ({ status: "erro", url: "x", motivo: "não usado" }),
+        anosObrigatorios: [2024, 2026], manifest: { assets }, minLinhasPorAno: 2,
+        identityMode: "official-only",
+      })
+      assert.equal(result.receipts[0]?.resultado, "indeterminado")
+      assert.equal(result.receipts[0]?.volume, 0)
+      assert.equal(result.partyReceipts[0]?.resultado, "indeterminado")
+      assert.match(result.review[0]?.motivo ?? "", /vínculo nominal/)
+    } finally { rmSync(dir, { recursive: true, force: true }) }
+  })
+
+  it("modo official-only usa SQ anterior ligado pelo detalhe oficial, mesmo com CPF mascarado", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "pf-hist-linked-sq-"))
+    try {
+      const masked = `2024;240000000099;-4;${NOME};${NASC};GOVERNADOR;SP;PC do B;NÃO ELEITO`
+      const sameSqAnotherPerson = "2024;240000000099;-4;OUTRA PESSOA;01/01/1980;GOVERNADOR;RJ;PT;NÃO ELEITO"
+      const anchor = `2026;250000000099;${CPF};${NOME};${NASC};GOVERNADOR;SP;PC do B;NÃO ELEITO`
+      const assets = [pacote(dir, 2024, [masked, sameSqAnotherPerson, ...filler(2024, 3)]), pacote(dir, 2026, [anchor, ...filler(2026, 3)])]
+      const linkedSeed: SeedCandidate = { ...seed, ids: { tse_sq_candidato: { "2024": "240000000099", "2026": "250000000099" }, tse_uf_candidatura: { "2024": "SP" } } }
+      const linkedProfile = { ...subject, historico: [
+        { ...PUBLIC_2026, periodo_inicio: 2024, periodo_fim: 2024, observacoes: "NÃO ELEITO (TSE 2024)" },
+        PUBLIC_2026,
+      ] }
+      const result = await runHistoricoRevision({
+        anos: [2024, 2026], profiles: [linkedProfile], seed: [linkedSeed], checkedAt: CHECKED,
+        senado: async () => ({ status: "erro", url: "x", motivo: "não usado" }),
+        anosObrigatorios: [2024, 2026], manifest: { assets }, minLinhasPorAno: 2,
+        identityMode: "official-only",
+      })
+      assert.equal(result.receipts[0]?.resultado, "encontrado", JSON.stringify(result.review))
+      assert.equal(result.review.some((item) => /vínculo nominal/.test(item.motivo)), false)
     } finally { rmSync(dir, { recursive: true, force: true }) }
   })
 })
