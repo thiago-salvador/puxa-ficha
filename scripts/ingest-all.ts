@@ -173,7 +173,7 @@ export const INGEST_TASKS: IngestTask[] = [
     source: "partidos-parlamentares",
     heading: "--- Histórico partidário parlamentar oficial ---",
     failureLabel: "Histórico partidário parlamentar",
-    run: () => ingestPartidosParlamentares({ targetSlugs: cli.targetSlugs }),
+    run: () => ingestPartidosParlamentares({ targetSlugs: cli.targetSlugs, apply: cli.apply }),
   },
   { source: "wikidata", heading: "--- Wikidata ---", failureLabel: "Wikidata", run: ingestWikidata },
   {

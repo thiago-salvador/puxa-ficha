@@ -11,7 +11,7 @@
  * vazio por falta de uma consulta.
  */
 
-import { createHash } from "node:crypto"
+import { createHash, randomUUID } from "node:crypto"
 import { chmodSync, existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs"
 import { dirname, resolve } from "node:path"
 import { fileURLToPath, pathToFileURL } from "node:url"
@@ -69,7 +69,7 @@ export interface OfficialFamilyObservation {
   source_kind?: "camara-cota-csv" | "senado-selected-votes" | "senado-complete-authorship-single-response"
   selected_vote_ids?: string[]
   vote_catalog?: Array<{ vote_id_api: string; url: string; path: string; sha256: string }>
-  source_filter?: { field: string; value: string; method: string }
+  source_filter?: { field: string; value?: string; values?: string[]; method: string }
   scope_evidence?: {
     rosters: Array<{ legislature: number; url: string; path: string | null; sha256: string | null; membership: boolean | "unverified"; years: number[]; failure: string | null }>
     scope_years: number[]
@@ -96,6 +96,8 @@ export interface ParliamentarySourceObservation {
   readback: ParliamentaryReadback
   /** Anos declarados antes da captura de gastos, para detectar ano omitido. */
   years?: readonly number[]
+  /** Completeness of each official annual Cota archive; current year is partial. */
+  year_completeness?: Record<number, { complete: boolean; use_for_absence: boolean }>
 }
 
 export interface ParliamentaryReceipt {
@@ -110,10 +112,13 @@ export interface ParliamentaryReceipt {
   /** Campo auxiliar para consumidores locais; não é coluna de coleta_log. */
   familia: ParliamentaryFamily
   executado_em: string
+  /** Identificador aleatório compartilhado por todas as provas desta rodada local. */
+  execucao: string
 }
 
 export interface ParliamentaryReceiptRun {
   generated_at: string
+  run_id: string
   receipts: ParliamentaryReceipt[]
   unresolved_without_id: Array<{ slug: string; familia: ParliamentaryFamily; motivo: string }>
   errors: string[]
@@ -501,12 +506,14 @@ function rawPageRows(value: unknown, observation: ParliamentarySourceObservation
   }
   if (observation.house === "senado" && observation.family === "gastos_parlamentares") {
     const list = object(value)?.CeapsRows
-    const name = observation.source.source_filter?.value
-    if (!Array.isArray(list) || !name || observation.source.source_filter?.field !== "SENADOR") throw new Error("página bruta CEAPS sem CSV anual ou filtro nominal verificado")
+    const filter = observation.source.source_filter
+    const names = filter?.values ?? (filter?.value ? [filter.value] : [])
+    if (!Array.isArray(list) || names.length === 0 || names.some((name) => typeof name !== "string" || !name.trim()) || filter?.field !== "SENADOR") throw new Error("página bruta CEAPS sem CSV anual ou filtro nominal verificado")
     const normalize = (text: string) => normalizeForMatch(text).replace(/[^A-Z0-9 ]/g, " ").replace(/\s+/g, " ").trim()
+    const knownNames = new Set(names.map(normalize))
     return list.filter((raw) => {
       const row = object(raw)
-      return Boolean(row && typeof row.SENADOR === "string" && normalize(row.SENADOR) === normalize(name))
+      return Boolean(row && typeof row.SENADOR === "string" && knownNames.has(normalize(row.SENADOR)))
     }).map((raw) => ({ ...(raw as Record<string, unknown>), CodigoParlamentar: officialId }))
   }
   const rows = rowsFromPayload(value, observation.source.rows_path)
@@ -1028,6 +1035,9 @@ function detailFor(input: {
       scope_complete: true,
       scope_evidence: verifySenadoLegislatureScope(observation, normalizedId(observation.official_id)),
       scope_years: observation.years ?? null,
+      ...(observation.source.source_kind === "camara-cota-csv" ? {
+        year_completeness: observation.year_completeness ?? Object.fromEntries((observation.years ?? []).map((year) => [year, { complete: year < 2026, use_for_absence: year < 2026 }])),
+      } : {}),
       declared_total: declaredTotal,
       identity: {
         slug: candidate.slug,
@@ -1081,7 +1091,7 @@ export function assertExpenseEmptinessCoversMandates(profile: Record<string, unk
   if (inWindow.length > 0) throw new Error(`zero despesa em ano de mandato ativo (${inWindow.join(",")}) exige revisão da identidade ou da fonte`)
 }
 
-function makeReceipt(candidate: ParliamentaryCandidate, observation: ParliamentarySourceObservation, executedAt: string, familyObservations: readonly ParliamentarySourceObservation[] = [observation], sourceRowsCache: Map<string, Record<string, unknown>[] | null> = new Map(), projectedReadback?: { profile: Record<string, unknown>; rows: Record<string, unknown>[] }, writerRefreshedProjectKeys: ReadonlySet<string> = new Set()): ParliamentaryReceipt {
+function makeReceipt(candidate: ParliamentaryCandidate, observation: ParliamentarySourceObservation, executedAt: string, familyObservations: readonly ParliamentarySourceObservation[] = [observation], sourceRowsCache: Map<string, Record<string, unknown>[] | null> = new Map(), projectedReadback?: { profile: Record<string, unknown>; rows: Record<string, unknown>[] }, writerRefreshedProjectKeys: ReadonlySet<string> = new Set()): Omit<ParliamentaryReceipt, "execucao"> {
   const officialId = normalizedId(observation.official_id)
   const sourceIdInUrl = observation.house === "camara" && (observation.source.source_kind === "camara-cota-csv" || observation.family === "votos_candidato") ? false : observation.house === "camara" || observation.family !== "gastos_parlamentares"
   if (!validOfficialUrl(observation.source.source_url, observation.family, officialId, sourceIdInUrl)) throw new Error("source_url oficial inválida para a família")
@@ -1243,7 +1253,11 @@ function makeReceipt(candidate: ParliamentaryCandidate, observation: Parliamenta
   const dtoSubsetSha256 = sha256(canonicalJson(houseDtoRows))
   const houseSubsetSha256 = dtoSubsetSha256
   const dtoCount = houseDtoRows.length
-  if (dtoCount === 0 && observation.family === "gastos_parlamentares" && observation.source.source_kind !== "camara-cota-csv") assertExpenseEmptinessCoversMandates(publicProfile, observation)
+  if (dtoCount === 0 && observation.family === "gastos_parlamentares") {
+    if (observation.source.source_kind === "camara-cota-csv") {
+      if (mandateYears(publicProfile, "camara").includes(2026)) throw new Error("Cota 2026 parcial não prova ausência durante mandato em 2026")
+    } else assertExpenseEmptinessCoversMandates(publicProfile, observation)
+  }
   const resultado: ReceiptResult = dtoCount > 0 ? "encontrado" : "vazio_confirmado"
   return {
     fonte: sourceName(observation.house, observation.family),
@@ -1394,7 +1408,7 @@ export function projectParliamentaryFamilyApply(
             const officialAmount = officialYear ? Number(materialRow(officialYear, family, house).amount) : null
             const exactTotal = officialAmount !== null && Number.isFinite(storedAmount) && Math.round(storedAmount * 100) === Math.round(officialAmount * 100)
               const sourceName = stripAccents(String(dbRow.fonte ?? "")).trim().toLocaleLowerCase("pt-BR")
-              const cotaFull = house === "camara" && observation.source.source_kind === "camara-cota-csv" && observation.years?.length === 19 && observation.years.every((year, index) => year === 2008 + index) && observation.source.source_revisions?.length === 19 && observation.source.source_revisions.every((revision, index) => revision.year === 2008 + index && validSha(revision.sha256))
+              const cotaFull = year <= 2025 && observation.year_completeness?.[year]?.use_for_absence !== false && house === "camara" && observation.source.source_kind === "camara-cota-csv" && observation.years?.length === 19 && observation.years.every((value, index) => value === 2008 + index) && observation.source.source_revisions?.length === 19 && observation.source.source_revisions.every((revision, index) => revision.year === 2008 + index && validSha(revision.sha256))
             if (house === "camara" && observation.source.source_kind === "camara-cota-csv") {
               const canonicalCamara = sourceName === "camara"
               if (canonicalCamara) {
@@ -1402,18 +1416,18 @@ export function projectParliamentaryFamilyApply(
                 continue
               }
               const explicitCamaraApi = candidate.ids.camara != null && sourceName === `https://dadosabertos.camara.leg.br/api/v2/deputados/${normalizedId(candidate.ids.camara)}/despesas`
-              const recognizedLegacy = dbRow.fonte == null || sourceName === "camara ceap csv" || explicitCamaraApi
-              if (recognizedLegacy && exactTotal && (explicitCamaraApi || sourceName === "camara ceap csv" || candidate.ids.senado == null)) continue
-              if (recognizedLegacy && cotaFull && (explicitCamaraApi || candidate.ids.senado == null)) continue
+              const recognizedLegacy = sourceName === "camara ceap csv" || explicitCamaraApi
+              if (recognizedLegacy && exactTotal) continue
+              if (recognizedLegacy && cotaFull) continue
               throw new Error(`linha legada Cota sem total exato/escopo de despublicação seguro: ${rowKey(row, family, house)}`)
             }
-            if (house === "senado" && (sourceName === "senado" || sourceName === "ceaps/senado" || sourceName === "senado ceaps" || dbRow.fonte == null)) {
+            if (house === "senado" && (sourceName === "senado" || sourceName === "ceaps/senado" || sourceName === "senado ceaps")) {
               if (officialYear && (sourceName === "senado" || exactTotal)) continue
               const ceapsRevision = observation.source.source_revisions?.find((revision) => revision.year === year)
               const scope = object(observation.source.scope_evidence)
               const scopeYears = Array.isArray(scope?.scope_years) ? scope.scope_years : []
               const rosterProof = Array.isArray(scope?.rosters) ? scope.rosters.map(object).find((roster) => Array.isArray(roster?.years) && roster.years.includes(year)) : undefined
-              const absenceComplete = !officialYear && dbRow.fonte == null && candidate.ids.camara == null && scopeYears.includes(year) && !!ceapsRevision && validSha(ceapsRevision.sha256) && !!rosterProof && rosterProof.membership === true && rosterProof.failure == null && validSha(String(rosterProof.sha256 ?? ""))
+              const absenceComplete = !officialYear && scopeYears.includes(year) && !!ceapsRevision && validSha(ceapsRevision.sha256) && !!rosterProof && rosterProof.membership === true && rosterProof.failure == null && validSha(String(rosterProof.sha256 ?? ""))
               if (absenceComplete) continue
               throw new Error(`linha CEAPS legada sem total anual/escopo seguro: ${rowKey(row, family, house)}`)
             }
@@ -1424,32 +1438,6 @@ export function projectParliamentaryFamilyApply(
             return (dbRow?.proposicao_id_api != null && sourceId === String(dbRow.proposicao_id_api)) || sourceProjectIdentityMatchesDto(official, row)
           })) {
             if (house === "senado" && dbRow?.fonte == null && candidate.ids.camara != null) throw new Error(`writer Senado não reconcilia legacy sem fonte quando há ID Câmara concorrente: ${rowKey(row, family, house)}`)
-            continue
-          }
-          if (rowHouse === null && house === "camara" && family === "gastos_parlamentares" && observation.source.source_kind === "camara-cota-csv") {
-            // The Câmara writer can reconcile a legacy annual row only when
-            // the candidate has no Senado ID and the official annual total
-            // matches exactly. A complete 19-ZIP scope proves an absent year;
-            // a partial scope or ambiguous attribution remains review.
-            if (candidate.ids.senado != null) throw new Error(`linha legada de gastos sem Casa ambígua entre Câmara/Senado: ${rowKey(row, family, house)}`)
-            const year = Number(row.ano)
-            const amount = Number(row.total_gasto)
-            const officialYear = rows.find((official) => Number(official.ano) === year)
-            if (officialYear) {
-              if (Number(officialYear.total_gasto) !== amount) throw new Error(`linha legada de gastos não confere com total Cota oficial: ${rowKey(row, family, house)}`)
-              continue
-            }
-            const expectedYears = observation.years
-            const revisions = observation.source.source_revisions ?? []
-            const scopeComplete = Array.isArray(expectedYears) && expectedYears.length === 19 && expectedYears[0] === 2008 && expectedYears[18] === 2026 &&
-              revisions.length === 19 && revisions.every((revision, index) => revision.year === 2008 + index && validSha(revision.sha256))
-            if (scopeComplete && year >= 2008 && year <= 2026) continue
-            throw new Error(`linha legada de gastos ausente sem escopo Cota completo: ${rowKey(row, family, house)}`)
-          }
-          if (rowHouse === null && house === "senado" && family === "gastos_parlamentares" && rows.some((official) => rowKey(official, family, house) === rowKey(row, family, house)) && candidate.ids[otherHouse] == null) {
-            // The Senado annual writer selects candidate/year regardless of
-            // fonte and updates that row. Câmara explicitly filters fonte=
-            // Camara, so a Casa-less row there would survive an insertion.
             continue
           }
           if (rowHouse === null) {
@@ -1604,6 +1592,7 @@ export function collectParliamentaryFamilyReceipts(
   observations: readonly ParliamentarySourceObservation[],
   generatedAt = new Date().toISOString(),
 ): ParliamentaryReceiptRun {
+  const runId = `capture:${randomUUID()}`
   const receipts: ParliamentaryReceipt[] = []
   const unresolved_without_id: ParliamentaryReceiptRun["unresolved_without_id"] = []
   const errors: string[] = []
@@ -1631,7 +1620,7 @@ export function collectParliamentaryFamilyReceipts(
         }
         try {
           const familyObservations = observations.filter((item) => item.family === family && candidate.ids[item.house] != null && String(candidate.ids[item.house]).trim() !== "" && normalizedId(item.official_id) === normalizedId(candidate.ids[item.house] as number | string))
-          receipts.push(makeReceipt(candidate, observation, generatedAt, familyObservations, sourceRowsCache))
+          receipts.push({ ...makeReceipt(candidate, observation, generatedAt, familyObservations, sourceRowsCache), execucao: runId })
         } catch (error) {
           const motivo = error instanceof Error ? error.message : String(error)
           errors.push(`${candidate.slug}/${family}/${house}/${id}: ${motivo}`)
@@ -1640,7 +1629,7 @@ export function collectParliamentaryFamilyReceipts(
       }
     }
   }
-  return { generated_at: generatedAt, receipts, unresolved_without_id, errors, failures }
+  return { generated_at: generatedAt, run_id: runId, receipts, unresolved_without_id, errors, failures }
 }
 
 /** Falha de rede, HTTP ou bloqueio: a casa não respondeu. Outro motivo é lacuna de prova. */
@@ -1657,6 +1646,7 @@ export function openParliamentaryReceipts(
   failures: readonly ParliamentaryFailure[],
   pending: readonly ParliamentaryPending[],
   generatedAt: string,
+  runId = `capture:${randomUUID()}`,
 ): ParliamentaryReceipt[] {
   const receipts: ParliamentaryReceipt[] = []
   const seen = new Set<string>()
@@ -1672,7 +1662,7 @@ export function openParliamentaryReceipts(
       ? pendencia.source.replace(/\{ano\}/g, "2008")
       : failure.source_url ?? officialPendingUrl(failure)
     receipts.push({
-      fonte, escopo: "candidato", alvo: failure.slug, candidato_id: failure.candidato_id,
+      fonte, escopo: "candidato", alvo: failure.slug, candidato_id: failure.candidato_id, execucao: runId,
       resultado, volume: 0, familia: failure.familia,
       url: sourceUrl ?? "",
       executado_em: generatedAt,
@@ -1732,7 +1722,7 @@ async function runCli(): Promise<void> {
   }
   // --abertos grava junto os recibos `erro`/`indeterminado` das falhas; sem a
   // flag a saída continua só com as provas, como antes.
-  const abertos = process.argv.includes("--abertos") ? openParliamentaryReceipts(result.failures, pending, result.generated_at) : []
+  const abertos = process.argv.includes("--abertos") ? openParliamentaryReceipts(result.failures, pending, result.generated_at, result.run_id) : []
   writePrivateAtomic(output, { ...result, receipts: [...result.receipts, ...abertos] })
   process.stdout.write(JSON.stringify({
     status: result.errors.length === 0 ? "ok" : "partial",

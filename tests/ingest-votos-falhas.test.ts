@@ -3,6 +3,7 @@ import assert from "node:assert/strict"
 import {
   __restaurarPortasDeVotos,
   __usarPortasDeVotosParaTeste,
+  carregarVotacoesChaveCamara,
   ingestVotos,
   parseVoto,
 } from "../scripts/lib/ingest-camara"
@@ -85,6 +86,7 @@ describe("matching de votos: caminho feliz (item 7)", () => {
     const result = await ingestVotos(ID_DEPUTADO, "cand-1", "cabo-daciolo")
     assert.equal(result.erros.length, 0)
     assert.deepEqual(updates, [{ id: "vk-1", votacaoIdApi: "2123843-93", data: "2020-01-01", dataAnterior: "2019-12-31", casaAnterior: "Câmara", fonteAnterior: "camara", proposicaoIdOficial: null, proposicaoIdAnterior: "2123843" }])
+    assert.equal((await carregarVotacoesChaveCamara()).votacoes[0]?.dataVotacao, "2020-01-01")
   })
 
   test("reconcilia data e proposição afetada pelo detalhe do evento 2357053-47", async () => {

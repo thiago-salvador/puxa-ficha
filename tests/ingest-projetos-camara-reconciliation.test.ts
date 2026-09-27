@@ -40,12 +40,12 @@ describe("reconciliação de projetos legados da Câmara", () => {
     assert.deepEqual(result.review.map((row) => row.id), ["legacy-1"])
   })
 
-  it("só despublica uma matéria sem correspondência quando fonte completa e Casa concorrente excluída", () => {
+  it("exige fonte positiva da Câmara antes de despublicar ausência em lista completa", () => {
     const absent = planejarReconciliacaoProjetosCamara({ legacyRows: [base], officialRows: [], sourceComplete: true, otherHouseExcluded: true })
     assert.deepEqual(absent.absent.map((row) => row.id), ["legacy-1"])
-    const crossHouse = planejarReconciliacaoProjetosCamara({ legacyRows: [base], officialRows: [], sourceComplete: true, otherHouseExcluded: false })
-    assert.deepEqual(crossHouse.absent, [])
-    assert.deepEqual(crossHouse.review.map((row) => row.id), ["legacy-1"])
+    const withoutProvenance = planejarReconciliacaoProjetosCamara({ legacyRows: [{ ...base, fonte: null }], officialRows: [], sourceComplete: true, otherHouseExcluded: true })
+    assert.deepEqual(withoutProvenance.absent, [])
+    assert.deepEqual(withoutProvenance.review.map((row) => row.id), ["legacy-1"])
   })
 
   it("usa ID oficial exato quando legado já tem proposicao_id_api sem fonte", () => {

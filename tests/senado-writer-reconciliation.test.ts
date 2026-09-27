@@ -58,7 +58,7 @@ test("CEAPS mantém linha legada em revisão quando o CSV anual ou roster não c
   assert.equal(classifyCeapsLegacyRow({ sourceRows: 0, annualCsvComplete: true, rosterMembershipVerified: false, noCompetingHouseIdentity: true }), "review")
   assert.equal(classifyCeapsLegacyRow({ sourceRows: 0, annualCsvComplete: true, rosterMembershipVerified: true, noCompetingHouseIdentity: false }), "review")
   assert.equal(classifyCeapsLegacyRow({ sourceRows: 4, annualCsvComplete: true, rosterMembershipVerified: true, noCompetingHouseIdentity: false }), "confirmed")
-  assert.equal(classifyCeapsLegacyRow({ sourceRows: 0, annualCsvComplete: true, rosterMembershipVerified: true, noCompetingHouseIdentity: true }), "absent")
+  assert.equal(classifyCeapsLegacyRow({ sourceRows: 0, annualCsvComplete: true, rosterMembershipVerified: true, noCompetingHouseIdentity: true }), "review")
   assert.equal(classifyCeapsLegacyRow({ sourceRows: 4, annualCsvComplete: true, rosterMembershipVerified: true, noCompetingHouseIdentity: true }), "confirmed")
 })
 
@@ -96,14 +96,14 @@ test("proposições do Senado reconciliam legado só com ID oficial e lista comp
   ]
   const complete = planejarReconciliacaoAutoriaLegada({ legacyRows, officialRows, sourceComplete: true, noCompetingHouseIdentity: true })
   assert.deepEqual(complete.confirmed.map(({ legacy }) => legacy.id), ["confirmed-id", "confirmed-tuple"])
-  assert.deepEqual(complete.absent.map((row) => row.id), ["absent"])
-  assert.deepEqual(complete.review.map((row) => row.id), ["unknown", "ambiguous"])
+  assert.deepEqual(complete.absent, [])
+  assert.deepEqual(complete.review.map((row) => row.id), ["absent", "unknown", "ambiguous"])
 
   const partial = planejarReconciliacaoAutoriaLegada({ legacyRows, officialRows, sourceComplete: false, noCompetingHouseIdentity: true })
   assert.equal(partial.absent.length, 0)
   assert.deepEqual(partial.review.map((row) => row.id), legacyRows.map((row) => row.id))
   const competingHouse = planejarReconciliacaoAutoriaLegada({ legacyRows, officialRows, sourceComplete: true, noCompetingHouseIdentity: false })
-  assert.deepEqual(competingHouse.confirmed.map(({ legacy }) => legacy.id), ["confirmed-id"])
+  assert.deepEqual(competingHouse.confirmed.map(({ legacy }) => legacy.id), ["confirmed-id", "confirmed-tuple"])
   assert.equal(competingHouse.absent.length, 0)
-  assert.deepEqual(competingHouse.review.map((row) => row.id), ["confirmed-tuple", "absent", "unknown", "ambiguous"])
+  assert.deepEqual(competingHouse.review.map((row) => row.id), ["absent", "unknown", "ambiguous"])
 })

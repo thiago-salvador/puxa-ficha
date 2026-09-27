@@ -4,10 +4,12 @@ import { spawnSync } from "node:child_process"
 import { resolve } from "node:path"
 import type { CandidatoConfig, IngestResult } from "./types"
 import { stripAccents } from "../../src/lib/strip-accents"
+import { aplicarCoorteAtualizacao } from "./coorte-atualizacao"
 
 export const FONTE_MUDANCAS_PARTIDO_PARLAMENTAR = "partidos-parlamentares"
 export const CAMARA_HISTORICO_URL = "https://dadosabertos.camara.leg.br/api/v2/deputados"
 export const SENADO_DADOS_ABERTOS_URL = "https://legis.senado.leg.br/dadosabertos"
+export const JEV_SCRIPT_SHA256_PIN_PARTIDOS = "ae19a9a053c970b8bd82cbf47ce102b454b1168d35c089edf738e9bf367fd46d"
 
 export type CasaParlamentar = "camara" | "senado"
 export type ResultadoFonteParlamentar = "ok" | "vazio_confirmado" | "erro" | "indisponivel" | "indeterminado"
@@ -18,6 +20,17 @@ export interface MudancaPartidoParlamentar {
   data_inicio: string
   data_fim: string | null
 }
+
+/** TSE-documented party name changes and merger aliases. */
+export const RENOMEACOES_PARTIDARIAS_OFICIAIS = [
+  { de: "PFL", para: "DEM", a_partir_de: 2007, fonte: "https://www.tse.jus.br/partidos/partidos-registrados-no-tse" },
+  { de: "PMDB", para: "MDB", a_partir_de: 2018, fonte: "https://www.tse.jus.br/comunicacao/noticias/2018/Maio/aprovada-mudanca-do-nome-do-partido-do-movimento-democratico-brasileiro-pmdb" },
+  { de: "PR", para: "PL", a_partir_de: 2019, fonte: "https://www.tse.jus.br/comunicacao/noticias/2019/Maio/aprovada-alteracao-do-nome-do-partido-da-republica-pr-para-partido-liberal-pl" },
+  { de: "PPS", para: "CIDADANIA", a_partir_de: 2019, fonte: "https://www.tse.jus.br/comunicacao/noticias/2019/Setembro/plenario-aprova-mudanca-do-nome-do-pps-para-cidadania" },
+  { de: "PRB", para: "REPUBLICANOS", a_partir_de: 2019, fonte: "https://www.tse.jus.br/partidos/partidos-registrados-no-tse/republicanos" },
+  { de: "DEM", para: "UNIAO", a_partir_de: 2022, fonte: "https://www.tse.jus.br/comunicacao/noticias/2022/Fevereiro/tse-aprova-registro-do-partido-uniao-brasil" },
+  { de: "PSL", para: "UNIAO", a_partir_de: 2022, fonte: "https://www.tse.jus.br/comunicacao/noticias/2022/Fevereiro/tse-aprova-registro-do-partido-uniao-brasil" },
+] as const
 
 /**
  * Receipt component intentionally identifies itself as parliamentary. A later
@@ -94,8 +107,36 @@ export interface IdentidadeParlamentarDescoberta {
   uf: string | null
   url: string | null
   sha256: string | null
-  jev_noul: number | null
   status: "id_oficial" | "revisar" | "sem_match" | "falha_jev" | "diretorio_incompleto"
+}
+
+export function identidadePorNomeComScore(score: number | null): {
+  id_oficial: null
+  status: "revisar"
+  score_sombra: number | null
+  prova_sem_id: null
+} {
+  return { id_oficial: null, status: "revisar", score_sombra: score, prova_sem_id: null }
+}
+
+export function jevScriptMatchesPinnedHash(bytes: Buffer): boolean {
+  return createHash("sha256").update(bytes).digest("hex") === JEV_SCRIPT_SHA256_PIN_PARTIDOS
+}
+
+export function jevShadowEnv(source: Readonly<Record<string, string | undefined>>): Record<string, string> {
+  const env: Record<string, string> = {}
+  if (typeof source.TYPESAFE_API_KEY === "string") env.TYPESAFE_API_KEY = source.TYPESAFE_API_KEY
+  if (typeof source.PATH === "string") env.PATH = source.PATH
+  return env
+}
+
+export function mesmaJanelaMudancaPartidaria(
+  existing: { partido_anterior?: unknown; partido_novo?: unknown; ano?: unknown },
+  proposed: { partido_anterior: string; partido_novo: string; ano: number },
+): boolean {
+  return Number(existing.ano) === proposed.ano
+    && normalizePartyForTimeline(String(existing.partido_anterior ?? ""), proposed.ano) === normalizePartyForTimeline(proposed.partido_anterior, proposed.ano)
+    && normalizePartyForTimeline(String(existing.partido_novo ?? ""), proposed.ano) === normalizePartyForTimeline(proposed.partido_novo, proposed.ano)
 }
 
 export interface ResultadoDescobertaParlamentar {
@@ -106,8 +147,8 @@ export interface ResultadoDescobertaParlamentar {
   erros: string[]
 }
 
-const PRIMEIRA_LEGISLATURA_COBERTA = 1
 const JEV_SCRIPT = resolve(process.env.HOME ?? "", ".claude/scripts/jev.py")
+const PRIMEIRA_LEGISLATURA_COBERTA = 1
 const JEV_QUESTIONS = resolve(process.cwd(), "scripts/data/partidos-parlamentares-identity-questions.json")
 const JEV_PRIVATE_DIR = resolve(process.env.HOME ?? "", "Library/Logs/puxa-ficha/jev")
 const JEV_SHADOW_PATH = resolve(JEV_PRIVATE_DIR, "partidos-parlamentares-shadow.jsonl")
@@ -119,6 +160,14 @@ let directoryPromise: Promise<DiretorioParlamentar> | null = null
 
 function normalizeName(value: string): string {
   return stripAccents(value).toUpperCase().replace(/[^A-Z0-9]+/g, " ").trim().replace(/\s+/g, " ")
+}
+
+export function normalizePartyForTimeline(party: string, year: number): string {
+  let normalized = normalizeName(party)
+  for (const rename of RENOMEACOES_PARTIDARIAS_OFICIAIS) {
+    if (year >= rename.a_partir_de && normalized === rename.de) normalized = rename.para
+  }
+  return normalized
 }
 
 function recordAsObject(value: unknown): Record<string, unknown> | null {
@@ -365,6 +414,11 @@ interface MatchJevResult {
 
 async function askSamePersonByJev(candidate: CandidatoConfig, record: RegistroDiretorioParlamentar, aliases: string[], recordLegislatures: number[]): Promise<MatchJevResult> {
   const { readFileSync } = await import("node:fs")
+  let scriptBytes: Buffer
+  try { scriptBytes = readFileSync(JEV_SCRIPT) } catch (error) {
+    return { p: null, error: error instanceof Error ? `jev helper unavailable: ${error.message}` : "jev helper unavailable" }
+  }
+  if (!jevScriptMatchesPinnedHash(scriptBytes)) return { p: null, error: "jev helper sha256 mismatch; shadow skipped" }
   const jevQuestions = JSON.parse(readFileSync(JEV_QUESTIONS, "utf8")) as Record<string, unknown>
   const state = {
     candidato: {
@@ -386,6 +440,7 @@ async function askSamePersonByJev(candidate: CandidatoConfig, record: RegistroDi
     input: JSON.stringify({ state, questions: jevQuestions }),
     encoding: "utf8",
     timeout: 30_000,
+    env: jevShadowEnv({ TYPESAFE_API_KEY: process.env.TYPESAFE_API_KEY, PATH: process.env.PATH }) as NodeJS.ProcessEnv,
   })
   if (request.status !== 0) return { p: null, error: request.stderr.trim() || `jev ask exit ${request.status ?? "signal"}` }
   try {
@@ -417,7 +472,7 @@ function recordIdentityShadow(input: {
   }
 }
 
-/** Name matching is candidate generation only; every proposed link needs a Jev Noul shadow result. */
+/** Name matching only generates human review items. It never establishes identity or absence. */
 export async function discoverParliamentaryIdsByName(
   candidates: readonly CandidatoConfig[],
   options: { targetSlugs?: readonly string[]; directory?: DiretorioParlamentar } = {},
@@ -441,7 +496,7 @@ export async function discoverParliamentaryIdsByName(
       const houseManifestSha = hashDirectoryManifest(houseFiles)
       const manifestUrl = houseFiles[0]?.url ?? (house === "camara" ? CAMARA_HISTORICO_URL : `${SENADO_DADOS_ABERTOS_URL}/senador/lista/legislatura/1.json`)
       if (!directory.completo || !houseFiles.length) {
-        ids[house] = { slug: candidate.slug, casa: house, id_oficial: null, api_id: null, ideCadastro: null, nome_oficial: null, uf: null, url: manifestUrl, sha256: houseManifestSha, jev_noul: null, status: "diretorio_incompleto" }
+        ids[house] = { slug: candidate.slug, casa: house, id_oficial: null, api_id: null, ideCadastro: null, nome_oficial: null, uf: null, url: manifestUrl, sha256: houseManifestSha, status: "diretorio_incompleto" }
         bySlug.set(candidate.slug, ids)
         continue
       }
@@ -456,8 +511,7 @@ export async function discoverParliamentaryIdsByName(
         grouped.set(record.id, existing)
       }
 
-      const accepted: Array<{ record: RegistroDiretorioParlamentar; p: number }> = []
-      let unresolved = false
+      let reviewCount = 0
       for (const entry of grouped.values()) {
         const aliases = [...entry.names].sort()
         const jev = await askSamePersonByJev(candidate, entry.record, aliases, [...entry.legislatures].sort((a, b) => a - b))
@@ -473,29 +527,15 @@ export async function discoverParliamentaryIdsByName(
           sha256: sourceFile.sha256,
           error: jev.error,
         })
-        if (jev.p === null || (jev.p >= IDENTITY_REVIEW_RANGE.minimo && jev.p <= IDENTITY_REVIEW_RANGE.maximo)) unresolved = true
-        else if (jev.p > IDENTITY_REVIEW_RANGE.maximo) accepted.push({ record: entry.record, p: jev.p })
+        // A name-derived candidate always requires a human decision, regardless
+        // of the shadow score. Keep every match in the private review queue.
+        appendFileSync(JEV_REVIEW_PATH, `${JSON.stringify({ slug: candidate.slug, casa: house, id_candidato: entry.record.id, nomes: aliases, resultado_sombra: jev.p, url: sourceFile.url, sha256: sourceFile.sha256, consultado_em: new Date().toISOString() })}\n`, { mode: 0o600 })
+        chmodSync(JEV_REVIEW_PATH, 0o600)
+        if (identidadePorNomeComScore(jev.p).status === "revisar") reviewCount += 1
       }
 
-      if (accepted.length === 1 && !unresolved) {
-        const { record, p } = accepted[0]
-        const sourceFile = houseFiles.find((file) => file.url.includes(`idLegislatura=${record.legislatura}`) || file.url.endsWith(`/${record.legislatura}.json`)) ?? houseFiles[0]
-        ids[house] = {
-          slug: candidate.slug, casa: house, id_oficial: record.id, api_id: record.id, ideCadastro: null,
-          nome_oficial: record.nomes[0] ?? null, uf: record.uf, url: sourceFile.url, sha256: sourceFile.sha256,
-          jev_noul: p, status: "id_oficial",
-        }
-      } else if (accepted.length > 1 || unresolved) {
-        ids[house] = { slug: candidate.slug, casa: house, id_oficial: null, api_id: null, ideCadastro: null, nome_oficial: null, uf: null, url: manifestUrl, sha256: houseManifestSha, jev_noul: null, status: grouped.size ? "revisar" : "falha_jev" }
-      } else {
-        ids[house] = { slug: candidate.slug, casa: house, id_oficial: null, api_id: null, ideCadastro: null, nome_oficial: null, uf: null, url: manifestUrl, sha256: houseManifestSha, jev_noul: grouped.size ? 0 : null, status: "sem_match" }
-        noIdProofs[house] = {
-          verificado: true,
-          detalhe: `Roster oficial integral das legislaturas ${PRIMEIRA_LEGISLATURA_COBERTA}-57 consultado; nomes completos e de urna conferidos; nenhuma identidade parlamentar confirmada; manifesto SHA-256 ${houseManifestSha}`,
-          url: manifestUrl,
-          sha256: houseFiles[0].sha256,
-        }
-      }
+      ids[house] = { slug: candidate.slug, casa: house, id_oficial: null, api_id: null, ideCadastro: null, nome_oficial: null, uf: null, url: manifestUrl, sha256: houseManifestSha, status: reviewCount ? "revisar" : "sem_match" }
+      // A name-only miss cannot prove that the person never served in this house.
       bySlug.set(candidate.slug, ids)
       provaSemIdPorSlug.set(candidate.slug, noIdProofs)
     }
@@ -640,8 +680,7 @@ async function fetchSource(
 
 /**
  * Reads only by verified official numeric IDs. Name matching is intentionally
- * absent; callers must route any future name-derived identity through Jev Noul
- * shadow and the human review band before supplying an official ID here.
+ * absent; name-derived matches remain indeterminate pending human review.
  */
 export async function coletarHistoricoPartidarioParlamentar(
   candidate: CandidatoConfig,
@@ -724,7 +763,12 @@ export async function coletarHistoricoPartidarioParlamentar(
 
 export interface OpcoesColetaPartidosParlamentares {
   targetSlugs?: readonly string[]
+  apply?: boolean
   cohortPredicate?: (candidate: CandidatoConfig) => boolean
+}
+
+export function partyWritesAllowed(apply: boolean, dryRun: boolean): boolean {
+  return apply && !dryRun
 }
 
 /** Run-shaped API for integrations; output is read-only receipts for each selected candidate. */
@@ -804,10 +848,14 @@ export function transitionsFromSources(receipt: ReciboPartidoParlamentar): Trans
   const ambiguidades: TransicoesPartidarias["ambiguidades"] = []
   for (const source of receipt.fontes) {
     if (source.id_oficial === null || !source.url || !source.sha256 || source.resultado === "erro" || source.resultado === "indisponivel") continue
+    // Câmara's `/historico` dataHora timestamps describe status snapshots,
+    // not party-filiation dates. Keep their source observations in the receipt,
+    // but never derive dated party transitions from them.
+    if (source.casa === "camara") continue
     const partiesByDate = new Map<string, Set<string>>()
     for (const observation of source.mudancas) {
       const parties = partiesByDate.get(observation.data_inicio) ?? new Set<string>()
-      parties.add(observation.partido.trim().toUpperCase())
+      parties.add(normalizePartyForTimeline(observation.partido, Number(observation.data_inicio.slice(0, 4))))
       partiesByDate.set(observation.data_inicio, parties)
     }
     const conflictingDates = [...partiesByDate.entries()].filter(([, parties]) => parties.size > 1)
@@ -817,7 +865,7 @@ export function transitionsFromSources(receipt: ReciboPartidoParlamentar): Trans
     }
     let previousParty: string | null = null
     for (const observation of source.mudancas) {
-      const party = observation.partido.trim().toUpperCase()
+      const party = normalizePartyForTimeline(observation.partido, Number(observation.data_inicio.slice(0, 4)))
       const date = observation.data_inicio
       if (previousParty !== null && previousParty !== party) {
         transitions.push({
@@ -843,11 +891,13 @@ export async function ingestPartidosParlamentares(options: OpcoesColetaPartidosP
     import("./helpers-db"), import("./supabase"), import("./dry-run"), import("./escrita-auditada"),
   ])
   const targets = options.targetSlugs?.length ? new Set(options.targetSlugs) : null
-  const candidates = selecionarCandidatosPartidarios(await loadCandidatosPublicos(), (candidate) =>
+  // Always apply the explicit update cohort boundary in production.
+  const cohortCandidates = await aplicarCoorteAtualizacao(await loadCandidatosPublicos(), "partidos-parlamentares")
+  const candidates = selecionarCandidatosPartidarios(cohortCandidates, (candidate) =>
     (!targets || targets.has(candidate.slug)) && (!options.cohortPredicate || options.cohortPredicate(candidate)),
   )
-  // One complete official roster sweep per process; name-derived IDs remain
-  // shadow-only unless Jev Noul is above the acceptance threshold.
+  // One complete official roster sweep per process; name-derived IDs never
+  // become official IDs without a reviewed, independently supplied identity.
   const discovery = await discoverParliamentaryIdsByName(candidates, { targetSlugs: options.targetSlugs })
   const results: IngestResult[] = []
   for (const candidate of candidates) {
@@ -906,7 +956,7 @@ export async function ingestPartidosParlamentares(options: OpcoesColetaPartidosP
 
         const pendingRows: Array<Record<string, unknown>> = []
         for (const change of transitions) {
-          const collision = (existingRows ?? []).find((row) => row.ano === change.ano && row.partido_novo === change.partido_novo)
+        const collision = (existingRows ?? []).find((row) => mesmaJanelaMudancaPartidaria(row, change))
           if (collision) continue
           pendingRows.push({
             candidato_id: candidateId,
@@ -919,7 +969,7 @@ export async function ingestPartidosParlamentares(options: OpcoesColetaPartidosP
         }
 
         if (pendingRows.length) {
-          if (emDryRun()) {
+          if (!partyWritesAllowed(options.apply === true, emDryRun())) {
             for (const row of pendingRows) {
               planejarEscrita({
                 fonte: FONTE_MUDANCAS_PARTIDO_PARLAMENTAR,
@@ -942,6 +992,9 @@ export async function ingestPartidosParlamentares(options: OpcoesColetaPartidosP
               },
               () => supabase.from("mudancas_partido").insert(pendingRows).select("id"),
             )
+            if (inserted.length !== pendingRows.length) {
+              throw new Error(`mudancas_partido: ${inserted.length} linhas gravadas para ${pendingRows.length} planejadas`)
+            }
             result.rows_upserted = inserted.length
             if (inserted.length) result.tables_updated.push("mudancas_partido")
           }

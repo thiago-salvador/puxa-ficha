@@ -114,6 +114,8 @@ test("votos Câmara reconciliam deputado_.id, ID oficial da votação e voto pú
   const { dir, observation } = camaraVoteFixture(true)
   try {
     const result = collectParliamentaryFamilyReceipts([candidate], [observation])
+    assert.ok(result.run_id)
+    assert.equal(result.receipts[0]?.execucao, result.run_id)
     assert.equal(result.receipts.length, 1, result.errors.join("; "))
     assert.equal(result.receipts[0]?.resultado, "encontrado")
     const proof = JSON.parse(result.receipts[0]!.detalhe).coverage_proof
@@ -244,7 +246,7 @@ test("Cota CSV reconcilia agregado anual e inclui SHA de cada um dos 19 ZIPs", (
   } finally { rmSync(dir, { recursive: true, force: true }) }
 })
 
-test("projeção atualiza linha legada de Cota só com total oficial exato e escopo completo", () => {
+test("projeção mantém linha legada de Cota sem Casa ou fonte em revisão apesar do total exato", () => {
   const { dir, observation } = cotaFixture()
   try {
     const profile = JSON.parse(readFileSync(observation.readback.profile_path, "utf8"))
@@ -254,8 +256,8 @@ test("projeção atualiza linha legada de Cota só com total oficial exato e esc
     const current = collectParliamentaryFamilyReceipts([target], [observation])
     assert.equal(current.receipts.some((receipt) => receipt.familia === "gastos_parlamentares"), false)
     const projection = projectParliamentaryFamilyApply([target], [observation], current).find((row) => row.fonte === "camara-gastos")
-    assert.equal(projection?.estado, "safe_write", projection?.motivo ?? "projection missing")
-    assert.equal(projection?.projected_public_rows, 1)
+    assert.equal(projection?.estado, "review", projection?.motivo ?? "projection missing")
+    assert.match(projection?.motivo ?? "", /sem Casa|proveniência/)
   } finally { rmSync(dir, { recursive: true, force: true }) }
 })
 
@@ -272,6 +274,18 @@ test("Cota CSV só confirma vazio com os 19 ZIPs e rejeita escopo anual incomple
     rmSync(complete.dir, { recursive: true, force: true })
     rmSync(incomplete.dir, { recursive: true, force: true })
   }
+})
+
+test("Cota 2026 parcial não confirma ausência para mandato em 2026", () => {
+  const { dir, observation } = cotaFixture(true)
+  try {
+    const profile = JSON.parse(readFileSync(observation.readback.profile_path, "utf8"))
+    profile.historico = [{ cargo: "Deputado Federal", periodo_inicio: 2026, periodo_fim: 2026 }]
+    writeFileSync(observation.readback.profile_path, JSON.stringify(profile))
+    const result = collectParliamentaryFamilyReceipts([{ slug: "fixture", candidato_id: "candidate-1", ids: { camara: 12345 } }], [observation])
+    assert.equal(result.receipts.length, 0)
+    assert.match(result.errors.join("; "), /2026 parcial/)
+  } finally { rmSync(dir, { recursive: true, force: true }) }
 })
 
 test("recibo parlamentar exige roster, fonte e DTO com mesmo ID e linhas", () => {
@@ -523,15 +537,15 @@ test("fixtures capturadas preservam os campos de Casa reais sem identidade pesso
   assert.equal("cpf" in capturedDtoShapes.voto_senado_casa_aninhada, false)
 })
 
-test("CEAPS CSV prova linhas brutas, agrega por ano e preserva os hashes anuais", () => {
+test("CEAPS CSV usa grafias oficiais históricas, agrega por ano e preserva os hashes anuais", () => {
   const dir = mkdtempSync(path.join(tmpdir(), "pf-ceaps-proof-"))
   const roster = path.join(dir, "roster.json")
   const source = path.join(dir, "source.json")
   const rawPath = path.join(dir, "pagina-1.json")
   const profile = path.join(dir, "profile.json")
   const rawRows = [
-    { ANO: "2025", MES: "1", SENADOR: "SENADOR TESTE", TIPO_DESPESA: "PASSAGENS", FORNECEDOR: "Empresa", DATA: "01/01/2025", VALOR_REEMBOLSADO: "100,00" },
-    { ANO: "2025", MES: "2", SENADOR: "SENADOR TESTE", TIPO_DESPESA: "PASSAGENS", FORNECEDOR: "Empresa", DATA: "01/02/2025", VALOR_REEMBOLSADO: "25,50" },
+    { ANO: "2025", MES: "1", SENADOR: "SENADOR HISTÓRICO", TIPO_DESPESA: "PASSAGENS", FORNECEDOR: "Empresa", DATA: "01/01/2025", VALOR_REEMBOLSADO: "100,00" },
+    { ANO: "2025", MES: "2", SENADOR: "SENADOR HISTÓRICO", TIPO_DESPESA: "PASSAGENS", FORNECEDOR: "Empresa", DATA: "01/02/2025", VALOR_REEMBOLSADO: "25,50" },
   ]
   writeFileSync(roster, JSON.stringify({ DetalheParlamentar: { IdentificacaoParlamentar: { CodigoParlamentar: "987" } } }))
   const rawBytes = Buffer.from(JSON.stringify({ CeapsRows: rawRows }))
@@ -551,7 +565,7 @@ test("CEAPS CSV prova linhas brutas, agrega por ano e preserva os hashes anuais"
   const observation: ParliamentarySourceObservation = {
     house: "senado", family: "gastos_parlamentares", official_id: 987,
     roster: { roster_url: "https://legis.senado.leg.br/dadosabertos/senador/987.json", roster_revision: "fixture", roster_path: roster },
-    source: { source_url: url, source_path: source, rows_path: ["dados"], source_revisions: [sourceRevision], source_filter: { field: "SENADOR", value: "SENADOR TESTE", method: "official-roster-id-plus-Jev-Noul" } },
+    source: { source_url: url, source_path: source, rows_path: ["dados"], source_revisions: [sourceRevision], source_filter: { field: "SENADOR", values: ["SENADOR TESTE", "SENADOR HISTÓRICO"], method: "official-roster-id-plus-exact-normalized-name-history" } },
     readback: { dto_path: profile, dto_rows_path: ["gastos_parlamentares"], profile_path: profile, dto_revision: "fixture", dto_readback_url: "local://fixture" },
     years: [2025],
   }

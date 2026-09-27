@@ -23,9 +23,9 @@ import { sanitizePublicTextOrThrow } from "../../src/lib/public-text"
 import { stripAccents } from "../../src/lib/strip-accents"
 import { log, warn, error } from "./logger"
 import { classificarVotacao, type ClassificacaoVotacao } from "./votacao-classificacao"
-import { emDryRun, planejarEscrita } from "./dry-run"
+import { ativarDryRun, deveAtivarDryRunDoColetor, emDryRun, planejarEscrita } from "./dry-run"
 import { escreverAuditado } from "./escrita-auditada"
-import type { IngestResult } from "./types"
+import type { CandidatoConfig, IngestResult } from "./types"
 import { secondarySourceBirthDate } from "./data-nascimento"
 
 const API = CAMARA_API
@@ -43,7 +43,7 @@ interface CamaraResponse<T> {
 }
 
 function camaraFetchJSON<T>(url: string, options: Parameters<typeof fetchJSON<T>>[4] = {}): Promise<T> {
-  return fetchJSON<T>(url, undefined, CAMARA_FETCH_RETRIES, CAMARA_FETCH_TIMEOUT_MS, options)
+  return fetchJSON<T>(url, { Accept: "application/json", "User-Agent": "PuxaFicha-Coletores/1.0" }, CAMARA_FETCH_RETRIES, CAMARA_FETCH_TIMEOUT_MS, options)
 }
 
 type CamaraPageCapture = { page: number; url: string; body: string }
@@ -80,27 +80,48 @@ async function fetchPaginated<T>(
   params: Record<string, string> = {},
   onPage?: (capture: CamaraPageCapture) => void | Promise<void>,
 ): Promise<T[]> {
+  return coletarPaginasCamara(baseUrl, params, async (url) => {
+    let body = ""
+    const json = await camaraFetchJSON<CamaraResponse<T[]>>(url, { onResponseBody: (raw) => { body = raw } })
+    return { json, body }
+  }, onPage)
+}
+
+export async function coletarPaginasCamara<T>(
+  baseUrl: string,
+  params: Record<string, string>,
+  fetchPage: (url: string) => Promise<{ json: CamaraResponse<T[]>; body?: string }>,
+  onPage?: (capture: CamaraPageCapture) => void | Promise<void>,
+  wait: (ms: number) => Promise<void> = sleep,
+): Promise<T[]> {
   const all: T[] = []
   let page = 1
-
+  let lastPage: number | null = null
   while (true) {
     const searchParams = new URLSearchParams({ ...params, itens: "100", pagina: String(page) })
     const url = `${baseUrl}?${searchParams}`
-    let body = ""
-    const json = await camaraFetchJSON<CamaraResponse<T[]>>(url, {
-      onResponseBody: (raw) => {
-        body = raw
-      },
-    })
+    const { json, body = "" } = await fetchPage(url)
     await onPage?.({ page, url, body })
     const dados = requireCamaraArray(json, url)
-    if (dados.length === 0) break
+    const declaredLast = parseLastPageFromLinks(json.links)
+    if (declaredLast == null) throw new Error(`Paginação Câmara sem rel=last válido (${url})`)
+    if (lastPage !== null && lastPage !== declaredLast) throw new Error(`Paginação Câmara mudou de total durante a coleta (${url})`)
+    lastPage = declaredLast
+    if (page > declaredLast) throw new Error(`Paginação Câmara excedeu última página declarada (${url})`)
+    if (dados.length === 0) {
+      if (page !== 1 || declaredLast !== 1) throw new Error(`Página vazia antes do fim declarado pela Câmara (${url})`)
+      const confirm = await fetchPage(url)
+      if (!Array.isArray(confirm.json.dados) || confirm.json.dados.length !== 0 || parseLastPageFromLinks(confirm.json.links) !== 1) {
+        throw new Error(`Resposta vazia Câmara não corroborada por segunda chamada (${url})`)
+      }
+      break
+    }
     all.push(...dados)
-    if (dados.length < 100) break
+    if (page === declaredLast) break
+    if (dados.length < 100) throw new Error(`Página curta antes da última página declarada pela Câmara (${url})`)
     page++
-    await sleep(1000)
+    await wait(1000)
   }
-
   return all
 }
 
@@ -225,19 +246,20 @@ export function parseDeclaredCountFromLinks(
   links: { rel: string; href: string }[] | undefined,
   itensNaPrimeiraPagina: number
 ): number | null {
+  if (!Number.isFinite(itensNaPrimeiraPagina) || itensNaPrimeiraPagina < 0) return null
+  return parseLastPageFromLinks(links)
+}
+
+function parseLastPageFromLinks(links: { rel: string; href: string }[] | undefined): number | null {
   const last = (links ?? []).find((l) => l.rel === "last")
-  if (!last?.href) {
-    // Sem `last`, a consulta cabe numa pagina so: o total e o que veio nela.
-    return Number.isFinite(itensNaPrimeiraPagina) && itensNaPrimeiraPagina >= 0
-      ? itensNaPrimeiraPagina
-      : null
-  }
-  const pagina = new URL(last.href, API).searchParams.get("pagina")
+  if (!last?.href) return null
+  let pagina: string | null
+  try { pagina = new URL(last.href, API).searchParams.get("pagina") } catch { return null }
   // `Number(null)` e 0, e devolver 0 aqui inventaria "a fonte declarou zero" a
   // partir de um link malformado. Sem o parametro, a resposta e "nao sei".
   if (pagina == null || pagina.trim() === "") return null
   const total = Number(pagina)
-  return Number.isInteger(total) && total >= 0 ? total : null
+  return Number.isInteger(total) && total >= 1 ? total : null
 }
 
 async function fetchDeclaredProposicaoCount(idCamara: number): Promise<number | null> {
@@ -832,7 +854,7 @@ export function __resetCacheVotacoesParaTeste(): void {
  * (procurar pela proposicao) e exatamente o que produziu as 6 linhas defeituosas
  * de 10/08/2026. Melhor a ficha nao mostrar nada do que mostrar o voto errado.
  */
-async function carregarVotacoesChaveCamara(): Promise<CarregamentoVotacoes> {
+export async function carregarVotacoesChaveCamara(): Promise<CarregamentoVotacoes> {
   if (cacheVotacoesChave) return cacheVotacoesChave
 
   const erros: string[] = []
@@ -913,6 +935,7 @@ async function carregarVotacoesChaveCamara(): Promise<CarregamentoVotacoes> {
       ? new Date(`${dataBruta}T00:00:00.000Z`)
       : null
     const dataOficial = parsedDate && parsedDate.toISOString().slice(0, 10) === dataBruta ? dataBruta as string : null
+    let dataEmMemoria = typeof linha.data_votacao === "string" ? linha.data_votacao : null
     if (!dataOficial) {
       const msg = `votos: votação ${votacaoIdApi} sem data oficial válida no detalhe; data publicada preservada`
       warn("camara", `  ${msg}`)
@@ -940,8 +963,11 @@ async function carregarVotacoesChaveCamara(): Promise<CarregamentoVotacoes> {
           const msg = `votos: data oficial da votação ${votacaoIdApi} não atualizada: ${atualizado.error ?? "preimage/readback divergiu"}`
           warn("camara", `  ${msg}`)
           erros.push(msg)
+        } else {
+          dataEmMemoria = dataOficial
         }
       }
+      if (emDryRun()) dataEmMemoria = dataOficial
     }
 
     const { classificacao } = classificarVotacao(descricaoOficial)
@@ -960,7 +986,7 @@ async function carregarVotacoesChaveCamara(): Promise<CarregamentoVotacoes> {
       titulo: String(linha.titulo),
       descricaoOficial,
       classificacao,
-      dataVotacao: typeof linha.data_votacao === "string" ? linha.data_votacao.slice(0, 10) : null,
+      dataVotacao: dataEmMemoria?.slice(0, 10) ?? null,
     })
   }
 
@@ -1299,7 +1325,7 @@ export function planejarReconciliacaoProjetosCamara(input: {
       continue
     }
     if (officialRows.length === 0) {
-      if (input.sourceComplete && input.otherHouseExcluded) absent.push(oldRows[0]!)
+      if (input.sourceComplete && (oldRows[0]!.fonte === "Câmara" || oldRows[0]!.fonte === "Camara")) absent.push(oldRows[0]!)
       else review.add(oldRows[0]!)
       continue
     }
@@ -1558,8 +1584,11 @@ async function registrarCardinalidadeProposicoes(
 }
 
 export type IngestCamaraOptions = {
+  apply?: boolean
+  dryRun?: boolean
   targetSlugs?: string[]
-  candidateRows?: readonly { slug: string; nome_completo: string; nome_urna: string; estado?: string; ids: { camara: number | null; senado?: number | null } }[]
+  cohortPredicate?: (candidate: Awaited<ReturnType<typeof loadCandidatosPublicos>>[number]) => boolean
+  candidateRows?: readonly CandidatoConfig[]
   /** Recoleta somente o acervo autoral, sem perfil, gastos ou votos. */
   onlyProjects?: boolean
   /** Rerun focal de perfil e gastos, preservando votos e projetos já lidos. */
@@ -1649,6 +1678,7 @@ async function hasGastosRecentComplete(candidatoId: string): Promise<boolean> {
 
 export async function ingestCamara(options?: IngestCamaraOptions | string[]): Promise<IngestResult[]> {
   const opts: IngestCamaraOptions = Array.isArray(options) ? { targetSlugs: options } : (options ?? {})
+  if (deveAtivarDryRunDoColetor(opts)) ativarDryRun()
   const selectedSlugs = opts.targetSlugs != null ? new Set(opts.targetSlugs) : null
   const profileAndGastosOnly = Boolean(opts.onlyProfileAndGastos)
   const skipValidated = Boolean(opts.skipValidated ?? opts.skipIfCamaraVotesComplete ?? profileAndGastosOnly)
@@ -1664,11 +1694,12 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
     )
   }
 
+  // coorte-atualizacao: aplica (consulta e filtra candidatos pelo predicado antes da coleta)
   const roster = opts.candidateRows
     ? await aplicarCoorteAtualizacao([...opts.candidateRows], "camara-injetados")
-    : await loadCandidatosPublicos()
+    : await aplicarCoorteAtualizacao(await loadCandidatosPublicos(), "camara")
   const candidatos = roster.filter((cand) =>
-    selectedSlugs ? selectedSlugs.has(cand.slug) : true
+    (selectedSlugs ? selectedSlugs.has(cand.slug) : true) && (!opts.cohortPredicate || opts.cohortPredicate(cand))
   )
   const verificacaoPorSlug = await loadVerificacaoCampos(candidatos.map((cand) => cand.slug))
   const results: IngestResult[] = []

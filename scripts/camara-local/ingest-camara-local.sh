@@ -16,7 +16,7 @@
 #   5. roda `./node_modules/.bin/tsx scripts/ingest-all.ts camara
 #      --skip-camara-validated` com Node 24, com as credenciais lidas de um
 #      arquivo fora do repo (chmod 600);
-#   6. marca os recibos de `coleta_log` com `local:<host>:<timestamp UTC>`;
+#   6. marca os recibos de `coleta_log` com `local:<random hex>:<timestamp UTC>`;
 #   7. revalida o cache público, se o arquivo trouxer PF_REVALIDATE_SECRET;
 #   8. grava o log em ~/Library/Logs/puxa-ficha/ e apaga o worktree.
 #
@@ -158,17 +158,16 @@ while IFS= read -r linha || [ -n "$linha" ]; do
 done <"$credenciais"
 [ -n "$url_supabase" ] && [ -n "$chave_supabase" ] || falhar "SUPABASE_URL e SUPABASE_SERVICE_ROLE_KEY são obrigatórias"
 
-host="$(scutil --get LocalHostName 2>/dev/null || hostname -s)"
-host="$(printf '%s' "$host" | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9-' '-' | sed -E 's/^-+//; s/-+$//' | cut -c1-63)"
-[ -n "$host" ] || host="mac"
-execucao="local:$host:$carimbo"
+run_id="$(uuidgen | tr -d '-' | tr '[:upper:]' '[:lower:]' | cut -c1-16)"
+[[ "$run_id" =~ ^[a-f0-9]{16}$ ]] || falhar "identificador aleatório de execução inválido"
+execucao="local:$run_id:$carimbo"
 echo "execucao=$execucao"
 
 set +e
 SUPABASE_URL="$url_supabase" \
   SUPABASE_SERVICE_ROLE_KEY="$chave_supabase" \
   PF_COLETA_EXECUCAO="$execucao" \
-  "$tsx" scripts/ingest-all.ts camara --skip-camara-validated
+  "$tsx" scripts/ingest-all.ts camara --skip-camara-validated --apply
 rc=$?
 echo "ingest camara rc=$rc"
 
@@ -178,7 +177,7 @@ echo "ingest camara rc=$rc"
 SUPABASE_URL="$url_supabase" \
   SUPABASE_SERVICE_ROLE_KEY="$chave_supabase" \
   PF_COLETA_EXECUCAO="$execucao" \
-  "$tsx" scripts/ingest-all.ts camara-cotas ceaps-senado partidos-parlamentares
+  "$tsx" scripts/ingest-all.ts camara-cotas ceaps-senado partidos-parlamentares --apply
 rc_complementos=$?
 set -e
 echo "ingest complementos rc=$rc_complementos"

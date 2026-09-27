@@ -109,6 +109,8 @@ export function planCoverageReceipts(rows: LatestReceiptRow[], profiles: Coverag
     const probe = { ...row, executado_em: new Date(Date.now() - 1000).toISOString() }
     let probeRows: LatestReceiptRow[] = [probe]
     if (multiHouse) {
+      const roundId = text(row.execucao)
+      if (!roundId) { reject("prova por casa sem identificador da rodada"); continue }
       const required = requiredCoverageHouses(profile, familia)
       const publicPartitions = publicFamilyHouseRows(profile, familia)!
       if (required.length === 0 || required.some((house) => !publicPartitions[house]) ||
@@ -118,7 +120,7 @@ export function planCoverageReceipts(rows: LatestReceiptRow[], profiles: Coverag
       const paired: LatestReceiptRow[] = []
       for (const house of required) {
         const matches = rows.filter((candidateRow) => {
-          if (text(candidateRow.alvo) !== alvo || text(candidateRow.candidato_id) !== text(profile.id)) return false
+          if (text(candidateRow.alvo) !== alvo || text(candidateRow.candidato_id) !== text(profile.id) || text(candidateRow.execucao) !== roundId) return false
           const candidateSource = text(candidateRow.fonte)
           if (!candidateSource || !allowedSources.has(candidateSource)) return false
           const candidateFamilies = receiptFamilies(candidateSource, candidateRow.detalhe, candidateRow.url) ?? []

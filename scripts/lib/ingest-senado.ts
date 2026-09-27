@@ -10,9 +10,11 @@ import { curateSenadoEmenta } from "./senado-ementa-curation"
 import { deriveSenadoMandatoEvidence } from "./senado-mandato-evidence"
 import { secondarySourceBirthDate } from "./data-nascimento"
 import { escreverAuditado } from "./escrita-auditada"
+import { getExplicitCohort } from "./cohort-context"
+import { ativarDryRun } from "./dry-run"
 
 const API = "https://legis.senado.leg.br/dadosabertos"
-const HEADERS = { Accept: "application/json" }
+const HEADERS = { Accept: "application/json", "User-Agent": "PuxaFicha/1.0 (+https://puxaficha.com.br)" }
 // Run 34339017360: 528 autorias de Ferraco exigiram 124s no fluxo sequencial.
 // Margem limitada para esse acervo, mantendo cancelamento e override por run.
 const SENADO_CANDIDATE_TIMEOUT_MS = 3 * 60 * 1000
@@ -21,10 +23,16 @@ const SENADO_CANCEL_SETTLE_MS = 5_000
 interface CandidateContext {
   signal: AbortSignal
   confirmed: (table: string) => void
+  unpublishBudget: { count: number }
 }
 
 function defaultContext(): CandidateContext {
-  return { signal: new AbortController().signal, confirmed: () => {} }
+  return { signal: new AbortController().signal, confirmed: () => {}, unpublishBudget: { count: 0 } }
+}
+
+export function withinSenadoUnpublishCaps(candidateUnpublishes: number, runUnpublishes: number, candidateLegacyRows: number): boolean {
+  return candidateUnpublishes <= 5 && runUnpublishes < 100
+    && candidateUnpublishes <= Math.floor(candidateLegacyRows * 0.1)
 }
 
 async function persist(
@@ -518,6 +526,7 @@ export function planejarReconciliacaoAutoriaLegada<T extends LegacySenadoProject
   officialRows: readonly SenadoProjectIdentity[]
   sourceComplete: boolean
   noCompetingHouseIdentity: boolean
+  senateProvenanceVerified?: boolean
 }): { confirmed: Array<{ legacy: T; official: SenadoProjectIdentity }>; absent: T[]; review: T[] } {
   const confirmed: Array<{ legacy: T; official: SenadoProjectIdentity }> = []
   const absent: T[] = []
@@ -529,7 +538,7 @@ export function planejarReconciliacaoAutoriaLegada<T extends LegacySenadoProject
       ? input.officialRows.find((official) => official.id === row.proposicao_id_api)
       : undefined
     if (idMatch) { confirmed.push({ legacy: row, official: idMatch }); continue }
-    if (input.noCompetingHouseIdentity) {
+    {
       const tipo = normalizeProjectTupleValue(row.tipo)
       const numero = normalizeProjectTupleValue(row.numero)
       const tupleMatches = tipo && numero ? input.officialRows.filter((official) =>
@@ -543,13 +552,21 @@ export function planejarReconciliacaoAutoriaLegada<T extends LegacySenadoProject
       if (tupleMatches.length > 1) { review.push(row); continue }
     }
     if (!row.proposicao_id_api && (!row.tipo || !row.numero || row.ano == null && !row.ementa)) review.push(row)
-    else if (input.noCompetingHouseIdentity) absent.push(row)
+    else if (input.senateProvenanceVerified) absent.push(row)
     else review.push(row)
   }
   return { confirmed, absent, review }
 }
 
 export const SENADO_AUTORIA_CHUNK_SIZE = 75
+
+export function isSenadoPrincipalAutoria(value: unknown): boolean {
+  return String(value ?? "").trim().toLocaleLowerCase("pt-BR") === "sim"
+}
+
+export function isCompleteSenadoAutoriaList(code: number, parliamentarian: Record<string, unknown> | undefined, autorias: readonly unknown[]): boolean {
+  return String(parliamentarian?.Codigo ?? parliamentarian?.CodigoParlamentar ?? "") === String(code) && autorias.length > 0
+}
 
 export async function persistSenadoAutoriaChunks<T extends { proposicao_id_api: string }>(input: {
   rows: readonly T[]
@@ -605,8 +622,8 @@ async function ingestAutorias(
     dig(json, "MateriasAutoriaParlamentar", "Parlamentar", "Autorias", "Autoria") as Record<string, unknown>[]
   )
   const parliamentarian = dig(json, "MateriasAutoriaParlamentar", "Parlamentar") as Record<string, unknown> | undefined
-  const sourceComplete = String(parliamentarian?.Codigo ?? parliamentarian?.CodigoParlamentar ?? "") === String(codigo)
-    && Array.isArray(dig(json, "MateriasAutoriaParlamentar", "Parlamentar", "Autorias", "Autoria"))
+  const sourceComplete = Array.isArray(dig(json, "MateriasAutoriaParlamentar", "Parlamentar", "Autorias", "Autoria"))
+    && isCompleteSenadoAutoriaList(codigo, parliamentarian, autorias)
     && autorias.every((item) => {
       const materia = item?.Materia as Record<string, unknown> | undefined
       return materia != null && /^\d+$/.test(String(materia.Codigo || materia.CodigoMateria || ""))
@@ -636,6 +653,13 @@ async function ingestAutorias(
   let primeiroErro: string | undefined
   const materiasPersistidas = new Set<string>()
 
+  // Preserve curatorially unpublished Senate rows. An upsert with a null
+  // tombstone would otherwise silently republish them on the next collection.
+  const unpublished = await supabase.from("projetos_lei")
+    .select("proposicao_id_api").eq("candidato_id", candidatoId).eq("fonte", "Senado").not("despublicado_em", "is", null)
+  if (unpublished.error) throw new Error(`projetos_lei: falha ao preservar proposições previamente despublicadas: ${unpublished.error.message}`)
+  for (const row of unpublished.data ?? []) if (row.proposicao_id_api != null) materiasPersistidas.add(String(row.proposicao_id_api))
+
   // Reconcilia apenas legado sem fonte, a partir do payload explicitamente
   // completo e vinculado ao mesmo CodigoParlamentar. Falha/shape parcial deixa
   // tudo em revisão; a lista oficial ausente nunca vira inferência silenciosa.
@@ -663,6 +687,12 @@ async function ingestAutorias(
     : { data: [], error: null }
   if (existingSenateQuery.error) throw new Error(`projetos_lei: falha ao verificar chaves Senate existentes: ${existingSenateQuery.error.message}`)
   const existingSenateIds = new Set((existingSenateQuery.data ?? []).map((row: { proposicao_id_api: string | null }) => row.proposicao_id_api).filter((id): id is string => id != null))
+  const duplicateLegacyCount = reconciliation.confirmed.filter(({ official }) => existingSenateIds.has(official.id)).length
+  const allowDuplicateCleanup = withinSenadoUnpublishCaps(duplicateLegacyCount, context.unpublishBudget.count, legacyRows.length)
+  if (duplicateLegacyCount > 0 && !allowDuplicateCleanup) {
+    recusados += duplicateLegacyCount
+    primeiroErro ??= `limite de tombstones para duplicatas excedido; ${duplicateLegacyCount} linha(s) mantida(s) para revisão`
+  }
   for (const { legacy, official } of [
     ...reconciliation.confirmed,
     ...reconciliation.absent.map((legacy) => ({ legacy, official: null })),
@@ -671,6 +701,7 @@ async function ingestAutorias(
     const confirmedMatter = official ? sourceMatterById.get(official.id) : undefined
     const materia = confirmedMatter?.Materia as Record<string, unknown> | undefined
     const duplicateOfficialRow = materia != null && official != null && existingSenateIds.has(official.id)
+    if (duplicateOfficialRow && !allowDuplicateCleanup) continue
     const willSetSource = materia != null && !duplicateOfficialRow
     const patch: Record<string, unknown> = willSetSource ? {
       fonte: "Senado",
@@ -716,7 +747,9 @@ async function ingestAutorias(
     } else {
       const readback = await supabase.from("projetos_lei").select("id,despublicado_em,despublicacao_motivo").eq("id", legacy.id).single()
       if (readback.error || readback.data?.despublicado_em == null) throw new Error(`projetos_lei: readback independente da despublicação divergente para ${legacy.id}`)
+      if (duplicateOfficialRow && official) materiasPersistidas.add(official.id)
       context.confirmed("projetos_lei")
+      if (duplicateOfficialRow) context.unpublishBudget.count++
     }
   }
   const rowsByMatterId = new Map<string, {
@@ -731,13 +764,13 @@ async function ingestAutorias(
     despublicacao_motivo: null
   }>()
   for (const a of autorias) {
+    if (!isSenadoPrincipalAutoria(a.IndicadorAutorPrincipal)) continue
     const materia = a.Materia as Record<string, unknown> | undefined
     if (!materia) { recusados++; primeiroErro ??= "autoria sem bloco Materia"; continue }
     const materiaId = String(materia.Codigo || materia.CodigoMateria || "")
     if (!/^\d+$/.test(materiaId)) { recusados++; primeiroErro ??= "autoria sem ID oficial da matéria; revisão necessária"; continue }
-    // A ficha rotula a coleção como "Proposições de autoria", portanto inclui
-    // autoria principal e coautoria. A API pode repetir a mesma matéria; a chave
-    // oficial evita duplicar o total exibido.
+    // A ficha e o total publicado preservam apenas autoria principal.
+    // A API pode repetir a mesma matéria; a chave oficial evita duplicação.
     if (materiasPersistidas.has(materiaId) || rowsByMatterId.has(materiaId)) continue
     const sigla = String(materia.Sigla || materia.SiglaSubtipoMateria || materia.DescricaoSubtipoMateria || "")
     const numero = String(materia.Numero || materia.NumeroMateria || "")
@@ -760,10 +793,12 @@ async function ingestAutorias(
       try {
         const written = await escreverAuditado(
           { script: "ingest-senado", tabela: "projetos_lei", motivo: `Coletar lote de ${chunk.length} proposições do endpoint oficial do Senado`, recorte: `${slug}:${ids[0]}-${ids.at(-1)}` },
-          () => supabase.from("projetos_lei").upsert([...chunk], { onConflict: "candidato_id,fonte,proposicao_id_api" })
+          // A duplicate may have been tombstoned after the preflight SELECT.
+          // Ignore conflicts so an existing row is never republished by MERGE.
+          () => supabase.from("projetos_lei").upsert([...chunk], { onConflict: "candidato_id,fonte,proposicao_id_api", ignoreDuplicates: true })
             .select("id,candidato_id,fonte,proposicao_id_api,despublicado_em").abortSignal(context.signal),
         )
-        if (written.length !== chunk.length) throw new Error(`resposta da escrita informou ${written.length}/${chunk.length} linhas`)
+        if (written.length > chunk.length) throw new Error(`resposta da escrita informou ${written.length}/${chunk.length} linhas`)
       } catch (err) {
         if (context.signal.aborted) throw new Error(`${context.signal.reason instanceof Error ? context.signal.reason.message : String(context.signal.reason)}; projetos_lei: lote em voo sem confirmação, conferir no banco`)
         throw err
@@ -813,12 +848,14 @@ export type IngestSenadoOptions = {
 export async function ingestSenado(options?: IngestSenadoOptions | string[]): Promise<IngestResult[]> {
   const opts: IngestSenadoOptions = Array.isArray(options) ? { targetSlugs: options } : (options ?? {})
   const selectedSlugs = opts.targetSlugs != null ? new Set(opts.targetSlugs) : null
+  const cohort = getExplicitCohort()
   const candidateTimeoutMs = opts.candidateTimeoutMs ?? SENADO_CANDIDATE_TIMEOUT_MS
   const candidatos = (await loadCandidatosPublicos()).filter((cand) =>
-    selectedSlugs ? selectedSlugs.has(cand.slug) : true
+    (!selectedSlugs || selectedSlugs.has(cand.slug)) && (!cohort || cohort.some((item) => item.slug === cand.slug))
   )
   const verificacaoPorSlug = await loadVerificacaoCampos(candidatos.map((cand) => cand.slug))
   const results: IngestResult[] = []
+  const unpublishBudget = { count: 0 }
   const emExercicio = candidatos.some((cand) => cand.ids.senado) ? await carregarSenadoresEmExercicio() : null
 
   for (const cand of candidatos) {
@@ -859,6 +896,7 @@ export async function ingestSenado(options?: IngestSenadoOptions | string[]): Pr
         async (signal) => {
           const context: CandidateContext = {
             signal,
+            unpublishBudget,
             confirmed: (table) => {
               if (finalized) return
               if (!result.tables_updated.includes(table)) result.tables_updated.push(table)
@@ -889,7 +927,7 @@ export async function ingestSenado(options?: IngestSenadoOptions | string[]): Pr
           result.errors.push(...votos.erros)
           await sleep(500, signal)
 
-          const autorias = await ingestAutorias(cand.ids.senado!, candidatoId, cand.slug, context, cand.ids.camara == null)
+          const autorias = await ingestAutorias(cand.ids.senado!, candidatoId, cand.slug, context, false)
           signal.throwIfAborted()
           // Vistoria do PR #141: recusa que fica só no log de texto é escrita
           // perdida com trilha estruturada dizendo sucesso. Vai para errors.
@@ -919,6 +957,7 @@ export async function ingestSenado(options?: IngestSenadoOptions | string[]): Pr
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
+  if (!process.argv.includes("--apply")) ativarDryRun()
   const targetSlugs = process.argv
     .slice(2)
     .flatMap((value, index, args) => {

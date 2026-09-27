@@ -46,14 +46,86 @@ const CAMARA = "https://dadosabertos.camara.leg.br/api/v2"
 const SENADO = "https://legis.senado.leg.br/dadosabertos"
 const CEAPS = "https://www.senado.leg.br/transparencia/LAI/verba/despesa_ceaps"
 const MAX_BYTES = 200_000_000
+const OFFICIAL_USER_AGENT = "PuxaFicha-Coletores/1.0"
+export const JEV_SCRIPT_SHA256_PIN = "ae19a9a053c970b8bd82cbf47ce102b454b1168d35c089edf738e9bf367fd46d"
 let cacheRoot: string | null = null
-const camaraCotaCache = new Map<number, { digest: string; parsed: Map<string, ReturnType<typeof aggregateCamaraCotaCsv> extends Map<string, infer T> ? T : never> }>()
+const camaraCotaCache = new Map<number, { digest: string; parsed: Map<string, ReturnType<typeof aggregateCamaraCotaCsv> extends Map<string, infer T> ? T : never>; sourceRows: number }>()
+const camaraCotaFailures = new Map<number, string>()
+
+export async function fetchOfficialWithRetry(
+  input: string,
+  init: RequestInit,
+  fetcher: typeof fetch = fetch,
+  pause: (ms: number) => Promise<void> = (ms) => new Promise((resolveDelay) => setTimeout(resolveDelay, ms)),
+): Promise<Response> {
+  const headers = new Headers(init.headers)
+  headers.set("User-Agent", OFFICIAL_USER_AGENT)
+  let lastError: unknown
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    try {
+      const response = await fetcher(input, { ...init, headers })
+      if (response.ok || (response.status < 500 && response.status !== 429)) return response
+      lastError = new Error(`HTTP ${response.status}: ${input}`)
+    } catch (error) {
+      lastError = error
+    }
+    if (attempt < 2) await pause(150 * 2 ** attempt)
+  }
+  throw lastError instanceof Error ? lastError : new Error(String(lastError ?? "fetch falhou"))
+}
+
+export function validateContentLength(declared: string | null, actualBytes: number, url: string): void {
+  if (declared !== null && (!/^\d+$/.test(declared) || Number(declared) !== actualBytes)) {
+    throw new Error(`${url}: Content-Length divergente (${declared} declarado, ${actualBytes} recebido)`)
+  }
+}
+
+export function cotaYearCompleteness(year: number): { complete: boolean; use_for_absence: boolean } {
+  return { complete: year < 2026, use_for_absence: year < 2026 }
+}
+
+export function validateCotaYearRowCount(rows: ReadonlyMap<string, { rowCount: number }>, year: number): number {
+  const total = [...rows.values()].reduce((sum, row) => sum + row.rowCount, 0)
+  if (!Number.isSafeInteger(total) || total <= 0) throw new Error(`Cota Câmara ${year}: contagem anual de linhas parlamentares inválida (${total})`)
+  return total
+}
+
+export async function loadCachedCotaYear<T>(
+  year: number,
+  successful: Map<number, T>,
+  failures: Map<number, string>,
+  loader: () => Promise<T>,
+): Promise<T> {
+  const cached = successful.get(year)
+  if (cached !== undefined) return cached
+  const priorFailure = failures.get(year)
+  if (priorFailure) throw new Error(`ZIP Cota ${year} já falhou nesta execução: ${priorFailure}`)
+  try {
+    const result = await loader()
+    successful.set(year, result)
+    return result
+  } catch (error) {
+    failures.set(year, error instanceof Error ? error.message : String(error))
+    throw error
+  }
+}
 
 function option(name: string): string | null {
   return process.argv.find((arg) => arg.startsWith(`--${name}=`))?.slice(name.length + 3) ?? null
 }
 
 function sha256(bytes: Buffer): string { return createHash("sha256").update(bytes).digest("hex") }
+
+export function pinnedJevScriptMatches(bytes: Buffer): boolean {
+  return sha256(bytes) === JEV_SCRIPT_SHA256_PIN
+}
+
+export function jevAllowlistedEnv(source: Readonly<Record<string, string | undefined>>): Record<string, string> {
+  const allowed: Record<string, string> = {}
+  if (typeof source.TYPESAFE_API_KEY === "string") allowed.TYPESAFE_API_KEY = source.TYPESAFE_API_KEY
+  if (typeof source.PATH === "string") allowed.PATH = source.PATH
+  return allowed
+}
 
 function id(value: unknown): string | null {
   const normalized = String(value ?? "").trim()
@@ -231,9 +303,10 @@ function readbackFromPublicProfiles(path: string, destination: string, candidate
 
 async function fetchRaw(url: string): Promise<{ bytes: Buffer; contentType: string }> {
   const parsed = officialUrl(url)
-  const response = await fetch(parsed, { signal: AbortSignal.timeout(120_000), headers: { Accept: "application/json" } })
+  const response = await fetchOfficialWithRetry(parsed.href, { signal: AbortSignal.timeout(120_000), headers: { Accept: "application/json" } })
   const contentType = response.headers.get("content-type") ?? ""
   const bytes = Buffer.from(await response.arrayBuffer())
+  validateContentLength(response.headers.get("content-length"), bytes.length, url)
   if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`)
   if (bytes.length > MAX_BYTES) throw new Error(`${url}: resposta excede ${MAX_BYTES} bytes`)
   if (!/json/i.test(contentType)) throw new Error(`${url}: formato não JSON (${contentType || "sem content-type"}); XML/CSV permanece unresolved`)
@@ -242,9 +315,10 @@ async function fetchRaw(url: string): Promise<{ bytes: Buffer; contentType: stri
 }
 
 async function fetchZip(url: string): Promise<Buffer> {
-  const response = await fetch(officialUrl(url), { signal: AbortSignal.timeout(45_000) })
+  const response = await fetchOfficialWithRetry(officialUrl(url).href, { signal: AbortSignal.timeout(45_000), headers: { Accept: "application/zip, application/octet-stream" } })
   if (!response.ok) throw new Error(`HTTP ${response.status}: ${url}`)
   const bytes = Buffer.from(await response.arrayBuffer())
+  validateContentLength(response.headers.get("content-length"), bytes.length, url)
   if (!bytes.length || bytes.length > MAX_BYTES) throw new Error(`ZIP vazio ou acima do limite: ${url}`)
   return bytes
 }
@@ -309,13 +383,32 @@ export function senateAuthorshipRows(value: unknown, officialId: string): unknow
   return authorship.map((row) => ({ ...(row as Record<string, unknown>), CodigoParlamentar: officialId }))
 }
 
-function hasNext(value: unknown, rowCount: number): boolean {
-  if (Array.isArray(value)) return false
-  if (value && typeof value === "object" && ("MateriasAutoriaParlamentar" in value || "VotacaoParlamentar" in value)) return false
-  if (value && typeof value === "object" && Array.isArray((value as { links?: unknown[] }).links)) {
-    return (value as { links: Array<{ rel?: string }> }).links.some((link) => link.rel === "next")
+export function capturePageIsComplete(value: unknown, rowCount: number, page: number, requestUrl: string): boolean {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false
+  const root = value as Record<string, unknown>
+  if ("MateriasAutoriaParlamentar" in root || "VotacaoParlamentar" in root) return false
+  const links = Array.isArray(root.links) ? root.links as Array<{ rel?: unknown; href?: unknown }> : null
+  if (links) {
+    if (links.some((link) => link.rel === "next")) return false
+    const last = links.find((link) => link.rel === "last" && typeof link.href === "string")
+    if (last && typeof last.href === "string") {
+      try {
+        const lastPage = Number(new URL(last.href, requestUrl).searchParams.get("pagina"))
+        const currentPage = Number(new URL(requestUrl).searchParams.get("pagina") ?? page)
+        if (Number.isInteger(lastPage) && lastPage > 0) return currentPage === lastPage
+      } catch { return false }
+    }
   }
-  return rowCount >= 100
+  const nestedMeta = root.paginacao && typeof root.paginacao === "object" ? root.paginacao as Record<string, unknown> : {}
+  const declared = [root.totalRegistros, root.total, root.totalRecords, nestedMeta.totalRegistros, nestedMeta.total]
+    .map(Number).find((value) => Number.isSafeInteger(value) && value >= 0)
+  if (declared === undefined) return false
+  const parsedUrl = new URL(requestUrl)
+  const currentPage = Number(parsedUrl.searchParams.get("pagina") ?? page)
+  const pageSize = Number(parsedUrl.searchParams.get("itens") ?? 100)
+  return Number.isSafeInteger(currentPage) && currentPage > 0 && Number.isSafeInteger(pageSize) && pageSize > 0
+    && currentPage * pageSize >= declared
+    && (currentPage - 1) * pageSize + rowCount === declared
 }
 
 async function capturePage(destination: string, relative: string, page: number, url: string): Promise<Page & { value: unknown }> {
@@ -328,7 +421,7 @@ async function capturePage(destination: string, relative: string, page: number, 
   writeFileSync(path, result.bytes, { mode: 0o600, flag: "wx" })
   const value = JSON.parse(result.bytes.toString("utf8")) as unknown
   const rows = rowsOf(value).length
-  return { page, url, path, bytes: result.bytes.length, sha256: sha256(result.bytes), rows, complete: !hasNext(value, rows), value }
+  return { page, url, path, bytes: result.bytes.length, sha256: sha256(result.bytes), rows, complete: capturePageIsComplete(value, rows, page, url), value }
 }
 
 type CeapsSafeRow = { ANO: string; MES: string; SENADOR: string; TIPO_DESPESA: string; FORNECEDOR: string; DATA: string; VALOR_REEMBOLSADO: string }
@@ -365,8 +458,9 @@ function parseCsvMoney(value: string | undefined): number | null {
 
 async function captureCeapsCsv(destination: string, year: number): Promise<Page & { value: unknown }> {
   const url = `${CEAPS}_${year}.csv`
-  const response = await fetch(officialUrl(url), { signal: AbortSignal.timeout(120_000), headers: { Accept: "text/csv, application/octet-stream" } })
+  const response = await fetchOfficialWithRetry(officialUrl(url).href, { signal: AbortSignal.timeout(120_000), headers: { Accept: "text/csv, application/octet-stream" } })
   const sourceBytes = Buffer.from(await response.arrayBuffer())
+  validateContentLength(response.headers.get("content-length"), sourceBytes.length, url)
   if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`)
   if (sourceBytes.length > MAX_BYTES) throw new Error(`${url}: resposta excede ${MAX_BYTES} bytes`)
   const sourceSha256 = sha256(sourceBytes)
@@ -378,28 +472,38 @@ async function captureCeapsCsv(destination: string, year: number): Promise<Page 
   return { page: 1, url, path, bytes: sanitizedBytes.length, sha256: sha256(sanitizedBytes), source_sha256: sourceSha256, rows: rows.length, complete: true, value: { CeapsRows: rows } }
 }
 
-function senatorNameFromRoster(value: unknown, officialId: string): string | null {
-  if (Array.isArray(value)) {
-    for (const entry of value) { const found = senatorNameFromRoster(entry, officialId); if (found) return found }
-    return null
-  }
-  const record = value && typeof value === "object" ? value as Record<string, unknown> : null
-  if (!record) return null
-  if (String(record.CodigoParlamentar ?? "") === officialId && typeof record.NomeParlamentar === "string" && record.NomeParlamentar.trim()) return record.NomeParlamentar.trim()
-  for (const child of Object.values(record)) { const found = senatorNameFromRoster(child, officialId); if (found) return found }
-  return null
+function objectRecord(value: unknown): Record<string, unknown> | null {
+  return value && typeof value === "object" && !Array.isArray(value) ? value as Record<string, unknown> : null
 }
 
-function senateRecordFromRoster(value: unknown, officialId: string): Record<string, unknown> | null {
-  if (Array.isArray(value)) {
-    for (const entry of value) { const found = senateRecordFromRoster(entry, officialId); if (found) return found }
-    return null
+function senatorIdentificationFromRoster(value: unknown, officialId: string): Record<string, unknown> | null {
+  const identification = objectRecord(objectRecord(objectRecord(objectRecord(value)?.DetalheParlamentar)?.Parlamentar)?.IdentificacaoParlamentar)
+  return identification && String(identification.CodigoParlamentar ?? "") === officialId ? identification : null
+}
+
+export function senatorNameFromRoster(value: unknown, officialId: string): string | null {
+  const name = senatorIdentificationFromRoster(value, officialId)?.NomeParlamentar
+  return typeof name === "string" && name.trim() ? name.trim() : null
+}
+
+export function senatorNamesFromLegislatureRoster(value: unknown, officialId: string): string[] {
+  const root = objectRecord(objectRecord(value)?.ListaParlamentarLegislatura)
+  const parliamentarians = objectRecord(root?.Parlamentares)?.Parlamentar
+  if (!Array.isArray(parliamentarians)) return []
+  const names = new Set<string>()
+  for (const raw of parliamentarians) {
+    const identification = objectRecord(objectRecord(raw)?.IdentificacaoParlamentar)
+    if (String(identification?.CodigoParlamentar ?? "") !== officialId) continue
+    for (const field of ["NomeParlamentar", "NomeCompletoParlamentar"]) {
+      const name = identification?.[field]
+      if (typeof name === "string" && name.trim()) names.add(name.trim())
+    }
   }
-  const record = value && typeof value === "object" ? value as Record<string, unknown> : null
-  if (!record) return null
-  if (String(record.CodigoParlamentar ?? "") === officialId) return record
-  for (const child of Object.values(record)) { const found = senateRecordFromRoster(child, officialId); if (found) return found }
-  return null
+  return [...names].sort()
+}
+
+export function senateRecordFromRoster(value: unknown, officialId: string): Record<string, unknown> | null {
+  return senatorIdentificationFromRoster(value, officialId)
 }
 
 function parseSenateMandateYears(value: unknown): { years: string[]; uf?: string } {
@@ -482,15 +586,27 @@ function jevSamePerson(rosterName: string, candidate: Candidate, officialId: str
     },
   }
   const questions = JSON.parse(readFileSync("scripts/data/ceaps-senado-identity-questions.json", "utf8")) as Record<string, unknown>
-  const result = spawnSync("python3", [resolve(process.env.HOME ?? "", ".claude/scripts/jev.py"), "ask"], { input: JSON.stringify({ state, questions }), encoding: "utf8", timeout: 30_000 })
+  const jevScript = resolve(process.env.HOME ?? "", ".claude/scripts/jev.py")
+  const shadowPath = join(destination, "jev-shadow.jsonl")
+  const actualScriptSha = existsSync(jevScript) ? sha256(readFileSync(jevScript)) : null
+  if (actualScriptSha !== JEV_SCRIPT_SHA256_PIN) {
+    const row = `${JSON.stringify({ routine: "ceaps-senado-coverage", slug: candidate.slug, official_id: officialId, status: "shadow_skipped_script_sha_mismatch", expected_sha256: JEV_SCRIPT_SHA256_PIN, actual_sha256: actualScriptSha, checked_at: new Date().toISOString() })}\n`
+    appendFileSync(shadowPath, row, { mode: 0o600 })
+    chmodSync(shadowPath, 0o600)
+    return null
+  }
+  const result = spawnSync("python3", [jevScript, "ask"], {
+    input: JSON.stringify({ state, questions }), encoding: "utf8", timeout: 30_000,
+    env: jevAllowlistedEnv({ TYPESAFE_API_KEY: process.env.TYPESAFE_API_KEY, PATH: process.env.PATH }) as NodeJS.ProcessEnv,
+  })
   if (result.status !== 0) return null
   try {
     const parsed = JSON.parse(result.stdout) as { answers?: { mesma_pessoa?: { noul?: number } } }
     const p = parsed.answers?.mesma_pessoa?.noul
     if (typeof p !== "number" || !Number.isFinite(p)) return null
     const line = `${JSON.stringify({ routine: "ceaps-senado-coverage", slug: candidate.slug, official_id: officialId, roster_name: rosterName, identity_context: state.candidato, identity_context_sources: identity.fontes, p_same_person: p, checked_at: new Date().toISOString() })}\n`
-    appendFileSync(join(destination, "jev-shadow.jsonl"), line, { mode: 0o600 })
-    chmodSync(join(destination, "jev-shadow.jsonl"), 0o600)
+    appendFileSync(shadowPath, line, { mode: 0o600 })
+    chmodSync(shadowPath, 0o600)
     if (p >= 0.35 && p <= 0.65) {
       appendFileSync(join(destination, "jev-review.jsonl"), line, { mode: 0o600 })
       chmodSync(join(destination, "jev-review.jsonl"), 0o600)
@@ -502,10 +618,12 @@ function jevSamePerson(rosterName: string, candidate: Candidate, officialId: str
 async function capturePaginated(destination: string, relative: string, baseUrl: string, params: Record<string, string>): Promise<Page[]> {
   const pages: Page[] = []
   for (let page = 1; ; page++) {
+    if (page > 100) throw new Error(`${baseUrl}: excedeu 100 páginas sem declarar um fim consistente`)
     const query = new URLSearchParams({ ...params, itens: "100", pagina: String(page) })
     const captured = await capturePage(destination, relative, page, `${baseUrl}?${query}`)
     pages.push(captured)
     if (captured.complete) return pages
+    if (captured.rows === 0) throw new Error(`${baseUrl}: página vazia sem total declarado ou link final consistente`)
   }
 }
 
@@ -593,14 +711,22 @@ async function main(): Promise<void> {
   const pending: Pending[] = []
   const ceapsByYear = new Map<number, Page & { value: unknown }>()
   const ceapsFailuresByYear = new Map<number, string>()
-  const senateRosters = new Map<number, { page: Page & { value: unknown }; ids: ReadonlySet<string> }>()
+  const senateRosters = new Map<number, { page: Page & { value: unknown }; ids: ReadonlySet<string>; namesById: ReadonlyMap<string, string[]> }>()
   const senateRosterFailures = new Map<number, string>()
   if (candidates.some((candidate) => id(candidate.ids?.senado))) {
     for (const legislature of [53, 54, 55, 56, 57]) {
       try {
         const page = await capturePage(destination, `rosters/senado/legislatura-${legislature}`, 1, senadoLegislatureRosterUrl(legislature))
         const roster = parseSenadoLegislatureRoster(Buffer.from(JSON.stringify(page.value)), legislature)
-        senateRosters.set(legislature, { page, ids: roster.ids })
+        const rows = objectRecord(objectRecord(page.value)?.ListaParlamentarLegislatura)
+        const parliamentarians = objectRecord(rows?.Parlamentares)?.Parlamentar
+        const namesById = new Map<string, string[]>()
+        if (Array.isArray(parliamentarians)) for (const raw of parliamentarians) {
+          const identification = objectRecord(objectRecord(raw)?.IdentificacaoParlamentar)
+          const senatorId = String(identification?.CodigoParlamentar ?? "")
+          if (/^\d+$/.test(senatorId)) namesById.set(senatorId, senatorNamesFromLegislatureRoster(page.value, senatorId))
+        }
+        senateRosters.set(legislature, { page, ids: roster.ids, namesById })
       } catch (error) {
         senateRosterFailures.set(legislature, error instanceof Error ? error.message : String(error))
       }
@@ -631,26 +757,28 @@ async function main(): Promise<void> {
         const projectsBundle = writeBundle(destination, `familias/${house}/${officialId}/projetos_lei`, projects as Array<Page & { value: unknown }>)
         addObservation({ house, family: "projetos_lei", officialId, sourceUrl: familySource(house, "projetos_lei", officialId), sourcePath: projectsBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: (projects as Array<Page & { value: unknown }>).map(stripValue), bundleSha256: projectsBundle.sha256 })
 
-        const revisions: Array<{ url: string; sha256: string; year: number }> = []
+        const revisions: Array<{ url: string; sha256: string; year: number; source_rows: number }> = []
         const aggregates: Record<string, unknown>[] = []
         const cotaYears = Array.from({ length: 19 }, (_, index) => 2008 + index)
         for (const year of cotaYears) {
           const url = CAMARA_COTA_CSV_URL(year)
           let annual = camaraCotaCache.get(year)
           if (!annual) {
-            const zip = await fetchZip(url)
-            const digest = sha256(zip)
-            const parsed = aggregateCamaraCotaCsv(unzipCsv(zip).toString("utf8"), year)
-            annual = { digest, parsed }
-            camaraCotaCache.set(year, annual)
+            annual = await loadCachedCotaYear(year, camaraCotaCache, camaraCotaFailures, async () => {
+              const zip = await fetchZip(url)
+              const digest = sha256(zip)
+              const parsed = aggregateCamaraCotaCsv(unzipCsv(zip).toString("utf8"), year)
+              const sourceRows = validateCotaYearRowCount(parsed, year)
+              return { digest, parsed, sourceRows }
+            })
           }
-          revisions.push({ url, sha256: annual.digest, year })
+          revisions.push({ url, sha256: annual.digest, year, source_rows: annual.sourceRows })
           const aggregate = annual.parsed.get(officialId)
-          if (aggregate) aggregates.push({ ideCadastro: officialId, ano: year, source_rows: aggregate.rowCount, total_gasto: aggregate.totalLiquido, categorias: [...aggregate.categories].map(([categoria, valor]) => ({ categoria, valor })) })
+          if (aggregate) aggregates.push({ ideCadastro: officialId, ano: year, ...cotaYearCompleteness(year), source_rows: aggregate.rowCount, total_gasto: aggregate.totalLiquido, categorias: [...aggregate.categories].map(([categoria, valor]) => ({ categoria, valor })) })
         }
         const csvPages = await writeCotaAggregatePages(destination, officialId, aggregates, revisions)
         const expensesBundle = writeBundle(destination, `familias/${house}/${officialId}/gastos_parlamentares`, csvPages)
-        addObservation({ house, family: "gastos_parlamentares", officialId, sourceUrl: CAMARA_COTA_CSV_URL(cotaYears[0]!), sourcePath: expensesBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: csvPages.map(stripValue), bundleSha256: expensesBundle.sha256, extra: { years: cotaYears, source_revisions: revisions, source_kind: "camara-cota-csv" } })
+        addObservation({ house, family: "gastos_parlamentares", officialId, sourceUrl: CAMARA_COTA_CSV_URL(cotaYears[0]!), sourcePath: expensesBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: csvPages.map(stripValue), bundleSha256: expensesBundle.sha256, extra: { years: cotaYears, year_completeness: Object.fromEntries(cotaYears.map((year) => [year, cotaYearCompleteness(year)])), source_revisions: revisions, source_kind: "camara-cota-csv" } })
         if (camaraVoteIds.length === 0) {
           pending.push({ house, family: "votos_candidato", official_id: officialId, reason: "IDs exatos de votações-chave da Câmara não foram fornecidos", source: familySource(house, "votos_candidato", officialId) })
         } else {
@@ -705,8 +833,9 @@ async function main(): Promise<void> {
         try {
           const rosterName = senatorNameFromRoster(roster.value, officialId)
           if (!rosterName) throw new Error("roster Senado não confirmou NomeParlamentar para o ID consultado")
+          const historicalSenatorNames = new Set<string>([rosterName])
           const identity = await jevIdentityContext(candidate, officialId, roster, readbacks)
-          const identityP = jevSamePerson(rosterName, candidate, officialId, destination, identity)
+          jevSamePerson(rosterName, candidate, officialId, destination, identity)
           // Jev is a shadow diagnostic. The source join uses the candidate's
           // official Senado ID, the roster entry for that ID, and an exact
           // normalized match of that entry's name in each complete CSV.
@@ -725,7 +854,9 @@ async function main(): Promise<void> {
           })
           const candidateCeapsYears = ceapsYears.filter((year) => {
             const roster = senateRosters.get(senadoExpenseLegislatureForYear(year))
-            return !roster || roster.ids.has(officialId)
+            const eligible = !roster || roster.ids.has(officialId)
+            if (eligible) for (const name of roster?.namesById.get(officialId) ?? []) historicalSenatorNames.add(name)
+            return eligible
           })
           const excludedYears = ceapsYears.filter((year) => !candidateCeapsYears.includes(year))
           const scopeEvidence = { rosters: scopeRosters, scope_years: candidateCeapsYears, excluded_years: excludedYears }
@@ -757,7 +888,8 @@ async function main(): Promise<void> {
             }
             const data = page.value as { CeapsRows?: CeapsSafeRow[] }
             if (!Array.isArray(data.CeapsRows)) throw new Error(`CSV CEAPS ${year} sem linhas sanitizadas`)
-            const matching = data.CeapsRows.filter((row) => normalizedName(row.SENADOR) === normalizedName(rosterName))
+            const historicalNamesNormalized = new Set([...historicalSenatorNames].map(normalizedName))
+            const matching = data.CeapsRows.filter((row) => historicalNamesNormalized.has(normalizedName(row.SENADOR)))
               .map((row) => ({ ...row, CodigoParlamentar: officialId }))
             expensePages.push({ ...page, value: { CeapsRows: matching }, rows: matching.length })
           }
@@ -775,7 +907,7 @@ async function main(): Promise<void> {
           const revisions = expensePages.map((page) => ({ url: page.url, sha256: page.source_sha256, year: Number(new URL(page.url).pathname.match(/(\d{4})\.csv$/)?.[1]) }))
           if (revisions.some((revision) => !revision.sha256 || !Number.isInteger(revision.year))) throw new Error("CSV CEAPS sem SHA de origem ou ano comprovado")
           const sourceUrl = expensePages.at(-1)!.url
-          addObservation({ house, family: "gastos_parlamentares", officialId, sourceUrl, sourcePath: expenseBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: expensePages.map(stripValue), bundleSha256: expenseBundle.sha256, extra: { years: candidateCeapsYears, scope_evidence: scopeEvidence, source_filter: { field: "SENADOR", value: rosterName, method: "official-roster-id-plus-exact-normalized-name;Jev-shadow" }, jev_noul_shadow: identityP, source_revisions: revisions } })
+          addObservation({ house, family: "gastos_parlamentares", officialId, sourceUrl, sourcePath: expenseBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: expensePages.map(stripValue), bundleSha256: expenseBundle.sha256, extra: { years: candidateCeapsYears, scope_evidence: scopeEvidence, source_filter: { field: "SENADOR", values: [...historicalSenatorNames].sort(), method: "official-roster-id-plus-exact-normalized-name-history" }, source_revisions: revisions } })
         } catch (error) {
           pending.push({ house, family: "gastos_parlamentares", official_id: officialId, reason: error instanceof Error ? error.message : String(error), source: `${CEAPS}_{ano}.csv` })
         }

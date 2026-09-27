@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import test from "node:test"
-import { agregarDespesasCeapsCsv, parseCeapsCsv } from "../scripts/lib/ingest-ceaps-senado"
+import { agregarDespesasCeapsCsv, ceapsNamesForSenator, ceapsReceiptOutcome, classifyCeapsLegacyRow, fetchCeapsSnapshot, parseCeapsCsv, withinCeapsUnpublishCaps } from "../scripts/lib/ingest-ceaps-senado"
 import { parseCeapsRows } from "../scripts/audit/fetch-parliamentary-family-sources-local"
 
 const HEADER = '"ULTIMA ATUALIZACAO";"26/09/2026 02:02"\r\n"ANO";"MES";"SENADOR";"TIPO_DESPESA";"CNPJ_CPF";"FORNECEDOR";"DOCUMENTO";"DATA";"DETALHAMENTO";"VALOR_REEMBOLSADO";"COD_DOCUMENTO"\r\n'
@@ -97,4 +97,37 @@ test("CEAPS CSV: agrega somente o nome e o ano pedidos sem expor CNPJ", () => {
   assert.equal(aggregate.dados?.total, 1234.56)
   assert.deepEqual(aggregate.dados?.porCategoria, { PASSAGENS: 1234.56 })
   assert.equal(JSON.stringify(aggregate).includes("12345678000199"), false)
+})
+
+test("CEAPS: null na outra Casa não autoriza tombstone de linha legada", () => {
+  assert.equal(classifyCeapsLegacyRow({ sourceRows: 0, annualCsvComplete: true, rosterMembershipVerified: true, noCompetingHouseIdentity: true }), "review")
+})
+
+test("CEAPS: tombstone considera somente proveniência Senado positiva e aliases históricos", () => {
+  assert.equal(classifyCeapsLegacyRow({ sourceRows: 0, annualCsvComplete: true, rosterMembershipVerified: false, noCompetingHouseIdentity: true, senateProvenanceVerified: true }), "absent")
+  assert.deepEqual(ceapsNamesForSenator("17", [new Map([["17", "Nome Atual"]]), new Map([["17", "Nome Anterior"]])]), ["Nome Atual", "Nome Anterior"])
+})
+
+test("CEAPS fetch: resposta 200 vazia ou Content-Length truncado nunca comprova cobertura", async () => {
+  const originalFetch = globalThis.fetch
+  try {
+    globalThis.fetch = async () => new Response("", { status: 200, headers: { "content-type": "text/csv" } })
+    await assert.rejects(fetchCeapsSnapshot(2026), /sem cabeçalho|sem linhas|sem registros/i)
+    globalThis.fetch = async () => new Response(`${HEADER}2026;1;ANA;PASSAGENS;;FORNECEDOR;DOC;20/01/2026;;10,00;42\r\n`, { status: 200, headers: { "content-length": "999999", "content-type": "text/csv" } })
+    await assert.rejects(fetchCeapsSnapshot(2026), /Content-Length divergente/)
+  } finally {
+    globalThis.fetch = originalFetch
+  }
+})
+
+test("CEAPS: tombstones falham fechados por teto de lote e razão", () => {
+  assert.equal(withinCeapsUnpublishCaps({ candidateUnpublishes: 1, runUnpublishes: 0, candidateScopeYears: 19 }), true)
+  assert.equal(withinCeapsUnpublishCaps({ candidateUnpublishes: 2, runUnpublishes: 0, candidateScopeYears: 19 }), false)
+  assert.equal(withinCeapsUnpublishCaps({ candidateUnpublishes: 1, runUnpublishes: 100, candidateScopeYears: 19 }), false)
+  assert.equal(withinCeapsUnpublishCaps({ candidateUnpublishes: 1, runUnpublishes: 0, candidateScopeYears: 5 }), false)
+})
+
+test("CEAPS: receipt mantém achado confirmado quando uma escrita posterior falha", () => {
+  assert.equal(ceapsReceiptOutcome({ scopeIndeterminate: false, hasErrors: true, sourceRows: 4, rowsUpserted: 2 }), "encontrado")
+  assert.equal(ceapsReceiptOutcome({ scopeIndeterminate: false, hasErrors: true, sourceRows: 0, rowsUpserted: 0 }), "erro")
 })

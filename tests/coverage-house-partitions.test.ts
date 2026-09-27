@@ -52,6 +52,7 @@ function receipt(subject: CoverageProfile, house: "camara" | "senado", options: 
   return {
     fonte: house === "camara" ? "camara-proposicoes" : "senado-proposicoes",
     escopo: "candidato", alvo: subject.slug, candidato_id: subject.id,
+    execucao: "round-1",
     resultado: publicRows.length ? "encontrado" : "vazio_confirmado", volume: publicRows.length,
     url: dataUrl, executado_em: new Date(Date.now() - 1000).toISOString(),
     detalhe: JSON.stringify({ family: "projetos_lei", coverage_proof: proof }),
@@ -83,6 +84,14 @@ test("a lone house receipt cannot close the family even when its own partition i
   assert.match(plan.rejected[0]?.motivo ?? "", /casa senado/)
   const matrix = buildCoverageMatrix([subject], [], adaptLatestReceipts([lone], [subject]).joins)
   assert.equal(matrix.cells.find((cell) => cell.familia === "projetos_lei")?.estado, "indeterminado")
+})
+
+test("house receipts from different rounds cannot be paired for apply", () => {
+  const subject = profile([{ id: 1, casa: "camara" }, { id: 2, casa: "senado" }], { camara: 1, senado: 1 })
+  const incoming = [receipt(subject, "camara"), { ...receipt(subject, "senado"), execucao: "round-2" }]
+  const plan = planCoverageReceipts(incoming, [subject], ALLOW)
+  assert.equal(plan.planned.length, 0)
+  assert.match(plan.rejected.map((row) => row.motivo).join(" "), /mesma rodada/)
 })
 
 test("house subset hash, source count, and total project count must all reconcile", () => {

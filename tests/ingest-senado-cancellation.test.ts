@@ -48,6 +48,9 @@ test(`Senado: recibo e cancelamento com orçamento ${candidateTimeoutMs}ms`, asy
         const ids = matterId ? [matterId] : inFilter
         return response(ids.flatMap((id) => storedProjects.has(id) ? [storedProjects.get(id)!] : []))
       }
+      if (init?.method === "POST") {
+        assert.match(new Headers(init.headers).get("Prefer") ?? "", /resolution=ignore-duplicates/)
+      }
       writes++
       if (writes === 1) {
         try { await delay(4500, undefined, { signal: init?.signal ?? undefined }) }

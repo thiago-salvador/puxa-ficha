@@ -1,6 +1,6 @@
 import { supabase } from "./supabase"
 import { createHash } from "node:crypto"
-import { appendFileSync, chmodSync, mkdirSync, readFileSync } from "node:fs"
+import { appendFileSync, chmodSync, existsSync, mkdirSync, readFileSync } from "node:fs"
 import { spawnSync } from "node:child_process"
 import { resolve } from "node:path"
 import { assertSemReplacementChar } from "./ceaps-csv-encoding"
@@ -11,11 +11,13 @@ import { emDryRun, planejarEscrita, ativarDryRun } from "./dry-run"
 import { log, error } from "./logger"
 import { escreverAuditado } from "./escrita-auditada"
 import { parseSenadoLegislatureRoster, senadoExpenseLegislatureForYear, senadoLegislatureRosterUrl, SENADO_EXPENSE_LEGISLATURES, type SenadoLegislatureRoster } from "./senado-legislature-roster"
+import { getExplicitCohort } from "./cohort-context"
 import type { IngestResult } from "./types"
 
 const BASE_URL = "https://www.senado.leg.br/transparencia/LAI/verba/despesa_ceaps"
 const ANOS = Array.from({ length: 19 }, (_, index) => 2008 + index)
 const JEV_SCRIPT = resolve(process.env.HOME ?? "", ".claude/scripts/jev.py")
+const JEV_SCRIPT_SHA256_PIN = "ae19a9a053c970b8bd82cbf47ce102b454b1168d35c089edf738e9bf367fd46d"
 const JEV_QUESTIONS = resolve(process.cwd(), "scripts/data/ceaps-senado-identity-questions.json")
 const JEV_LOG_DIR = resolve(process.env.HOME ?? "", "Library/Logs/puxa-ficha/jev")
 const JEV_SHADOW_PATH = resolve(JEV_LOG_DIR, "ceaps-senado.jsonl")
@@ -131,7 +133,24 @@ export function classifyCeapsLegacyRow(input: {
   if (input.sourceRows > 0) return "confirmed"
   if (input.senateProvenanceVerified) return "absent"
   if (!input.rosterMembershipVerified) return "review"
-  return input.noCompetingHouseIdentity ? "absent" : "review"
+  // A null Câmara ID is not evidence that a legacy row belongs to the Senate.
+  // Only a row with positive Senate provenance may be tombstoned on a miss.
+  return "review"
+}
+
+export function ceapsNamesForSenator(officialId: string, rosterNames: readonly ReadonlyMap<string, string>[]): string[] {
+  return [...new Set(rosterNames.map((names) => names.get(officialId)?.trim()).filter((name): name is string => Boolean(name)))]
+}
+
+export function withinCeapsUnpublishCaps(input: { candidateUnpublishes: number; runUnpublishes: number; candidateScopeYears: number }): boolean {
+  return input.candidateUnpublishes <= 1 && input.runUnpublishes < 100
+    && input.candidateUnpublishes <= Math.floor(input.candidateScopeYears * 0.1)
+}
+
+export function ceapsReceiptOutcome(input: { scopeIndeterminate: boolean; hasErrors: boolean; sourceRows: number; rowsUpserted: number }): "indeterminado" | "erro" | "encontrado" | "vazio_confirmado" {
+  if (input.scopeIndeterminate) return "indeterminado"
+  if (input.hasErrors) return input.rowsUpserted > 0 && input.sourceRows > 0 ? "encontrado" : "erro"
+  return input.sourceRows > 0 ? "encontrado" : "vazio_confirmado"
 }
 
 interface CeapsCsvRow {
@@ -179,13 +198,24 @@ export function parseCeapsCsv(buffer: Buffer, expectedYear: number): CeapsCsvRow
   return rows
 }
 
-async function fetchCeapsSnapshot(ano: number): Promise<CeapsSnapshot> {
+export async function fetchCeapsSnapshot(ano: number): Promise<CeapsSnapshot> {
   const url = `${BASE_URL}_${ano}.csv`
-  const response = await fetch(url, { headers: { Accept: "text/csv, application/octet-stream" }, signal: AbortSignal.timeout(60_000) })
-  if (!response.ok) throw new Error(`HTTP ${response.status} para CSV CEAPS ${ano}`)
-  const bytes = Buffer.from(await response.arrayBuffer())
-  const rows = parseCeapsCsv(bytes, ano)
-  return { ano, url, sha256: createHash("sha256").update(bytes).digest("hex"), rows }
+  let lastError: unknown
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const response = await fetch(url, { headers: { Accept: "text/csv, application/octet-stream", "User-Agent": "PuxaFicha/1.0 (+https://puxaficha.com.br)" }, signal: AbortSignal.timeout(60_000) })
+      if (!response.ok) throw new Error(`HTTP ${response.status} para CSV CEAPS ${ano}`)
+      const bytes = Buffer.from(await response.arrayBuffer())
+      const declaredLength = Number(response.headers.get("content-length"))
+      if (response.headers.get("content-encoding") == null && Number.isFinite(declaredLength) && declaredLength > 0 && declaredLength !== bytes.length) throw new Error(`CSV CEAPS ${ano}: Content-Length divergente (${bytes.length}/${declaredLength})`)
+      const rows = parseCeapsCsv(bytes, ano)
+      return { ano, url, sha256: createHash("sha256").update(bytes).digest("hex"), rows }
+    } catch (err) {
+      lastError = err
+      if (attempt < 2) await new Promise((resolve) => setTimeout(resolve, attempt === 0 ? 500 : 1500))
+    }
+  }
+  throw lastError instanceof Error ? lastError : new Error(`falha ao obter CSV CEAPS ${ano}`)
 }
 
 function senatorNamesForSnapshot(snapshots: CeapsSnapshot[]): Map<string, string> {
@@ -245,7 +275,16 @@ async function samePersonByJev(candidate: { slug: string; nome_completo: string;
     candidato: { slug: candidate.slug, nome_completo: candidate.nome_completo, nome_urna: candidate.nome_urna, id_senado: candidate.ids.senado },
   }
   const questions = JSON.parse(readFileSync(JEV_QUESTIONS, "utf8"))
-  const request = spawnSync("python3", [JEV_SCRIPT, "ask"], { input: JSON.stringify({ state, questions }), encoding: "utf8", timeout: 30_000 })
+  const scriptSha = existsSync(JEV_SCRIPT) ? createHash("sha256").update(readFileSync(JEV_SCRIPT)).digest("hex") : null
+  if (scriptSha !== JEV_SCRIPT_SHA256_PIN) {
+    appendFileSync(JEV_SHADOW_PATH, `${JSON.stringify({ fonte: "ceaps-senado", slug: candidate.slug, id_senado: candidate.ids.senado, status: "shadow_skipped_script_sha_mismatch", expected_sha256: JEV_SCRIPT_SHA256_PIN, actual_sha256: scriptSha, consultado_em: new Date().toISOString() })}\n`, { mode: 0o600 })
+    return null
+  }
+  const allowlistedEnv = {
+    ...(process.env.TYPESAFE_API_KEY ? { TYPESAFE_API_KEY: process.env.TYPESAFE_API_KEY } : {}),
+    ...(process.env.PATH ? { PATH: process.env.PATH } : {}),
+  } as NodeJS.ProcessEnv
+  const request = spawnSync("python3", [JEV_SCRIPT, "ask"], { input: JSON.stringify({ state, questions }), encoding: "utf8", timeout: 30_000, env: allowlistedEnv })
   if (request.status !== 0) return null
   try {
     const output = JSON.parse(request.stdout) as { answers?: { mesma_pessoa?: { noul?: number } } }
@@ -615,9 +654,9 @@ interface GastoDestaque {
  * como zero verificado.
  */
 export async function ingestCeapsSenado(options: { targetSlugs?: readonly string[] } = {}): Promise<IngestResult[]> {
-  if (process.argv.includes("--dry-run")) ativarDryRun()
   const candidatos = await loadCandidatosPublicos()
-  const senadores = selectCeapsSenadoCandidates(candidatos, { targetSlugs: options.targetSlugs })
+  const cohort = getExplicitCohort()
+  const senadores = selectCeapsSenadoCandidates(candidatos, { targetSlugs: options.targetSlugs, cohortPredicate: (candidate) => !cohort || cohort.some((item) => item.slug === candidate.slug) })
   const snapshots: CeapsSnapshot[] = []
   const falhasFonte = new Map<number, string>()
   const senateRosters = new Map<number, SenadoLegislatureRoster>()
@@ -654,6 +693,7 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
   const sourceNames = senatorNamesForSnapshot(snapshots)
   const allSourceRevisions = snapshots.map(({ ano, url, sha256 }) => ({ ano, url, sha256 }))
   const results: IngestResult[] = []
+  let runUnpublishCount = 0
 
   for (const cand of senadores) {
     const result: IngestResult = { source: "ceaps-senado", candidato: cand.slug, tables_updated: [], rows_upserted: 0, errors: [], duration_ms: 0 }
@@ -739,7 +779,7 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
 
     if (!sourceName) {
       result.coleta_resultado = "indeterminado"
-      result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_oficial: officialName, jev_noul_sombra: p, motivo: result.errors[0] })
+      result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_oficial: officialName, avaliacao_identidade_sombra: p, motivo: result.errors[0] })
       result.coleta_url = candidateSnapshots.at(-1)?.url ?? `${BASE_URL}_2026.csv`
       result.duration_ms = Date.now() - start
       results.push(result)
@@ -748,8 +788,17 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
 
     let sourceRows = 0
     const anosVazios: number[] = []
+    const pendingTombstones: Array<{ snapshot: CeapsSnapshot; target: ExistingSenateExpense; row: { despublicado_em: string; despublicacao_motivo: string } }> = []
     for (const snapshot of candidateSnapshots) {
-      const aggregate = agregarDespesasCeapsCsv(snapshot.rows, sourceName, snapshot.ano)
+      const historicalNames = [...new Map([...ceapsNamesForSenator(officialId, [...senateRosterNames.values()]), sourceName].map((name) => [normalizeForMatch(name), name])).values()]
+      const aggregateByNames = historicalNames.map((name) => agregarDespesasCeapsCsv(snapshot.rows, name, snapshot.ano))
+      const aggregate = aggregateByNames.reduce((combined, item) => {
+        if (!item.dados) return combined
+        if (!combined.dados) return { quantidade: item.quantidade, dados: item.dados }
+        const porCategoria = { ...combined.dados.porCategoria }
+        for (const [category, value] of Object.entries(item.dados.porCategoria)) porCategoria[category] = (porCategoria[category] ?? 0) + value
+        return { quantidade: combined.quantidade + item.quantidade, dados: { total: combined.dados.total + item.dados.total, porCategoria, destaques: [...combined.dados.destaques, ...item.dados.destaques].sort((a, b) => b.valor - a.valor).slice(0, 5), anosDescartados: [] } }
+      }, { quantidade: 0, dados: null as DespesasAgregadas | null })
       sourceRows += aggregate.quantidade
       const { data: existingRows, error: selectError } = await supabase.from("gastos_parlamentares").select("id,fonte,despublicado_em,total_gasto,detalhamento").eq("candidato_id", candidatoId).eq("ano", snapshot.ano)
       if (selectError) {
@@ -781,23 +830,18 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
           sourceRows: aggregate.quantidade,
           annualCsvComplete: !falhasFonte.has(snapshot.ano) && candidateSnapshots.some((item) => item.ano === snapshot.ano),
           rosterMembershipVerified: rosterMemberForYear,
-          noCompetingHouseIdentity: cand.ids.camara == null,
+          noCompetingHouseIdentity: false,
           senateProvenanceVerified: existing != null && isKnownSenateCeapsSource(existing.fonte) && sourceIdentityVerified,
         })
         const target = existing as { id: string; fonte?: string | null; total_gasto: number | null } | undefined
-        const canTombstone = reconciliation === "absent" && (target != null && isKnownSenateCeapsSource(target.fonte) || legacyRows.length === 1)
+        const canTombstone = reconciliation === "absent" && target != null && isKnownSenateCeapsSource(target.fonte)
         if (canTombstone && target) {
-          const row = { despublicado_em: new Date().toISOString(), despublicacao_motivo: `ceaps-senado: CSV oficial completo ${snapshot.ano} sem despesas para o nome oficial vinculado ao ID Senado ${officialId}; fonte anterior=${target.fonte ?? "sem fonte"}; nome=${sourceName}; csv=${snapshot.url}; sha256=${snapshot.sha256}` }
-          if (emDryRun()) {
-            planejarEscrita({ fonte: "ceaps-senado", tabela: "gastos_parlamentares", operacao: "update", alvo: cand.slug, identidade: `id-senado:${officialId};csv-sha256:${snapshot.sha256}`, chave: { id: target.id }, valores: row })
-          } else {
-            let update = supabase.from("gastos_parlamentares").update(row).eq("id", target.id).eq("candidato_id", candidatoId).eq("ano", snapshot.ano).eq("total_gasto", target.total_gasto).is("despublicado_em", null)
-            update = target.fonte == null ? update.is("fonte", null) : update.eq("fonte", target.fonte)
-            const written = await escreverAuditado({ script: "ingest-ceaps-senado", tabela: "gastos_parlamentares", motivo: "Despublicar linha Senado sem ocorrência no CSV CEAPS anual completo", recorte: `${cand.slug}:${snapshot.ano}` }, () => update.select("id,despublicado_em"))
-            if (written.length !== 1 || !written[0]?.despublicado_em) result.errors.push(`Readback de despublicação CEAPS ${snapshot.ano} não confirmou a linha`)
-            const readback = await supabase.from("gastos_parlamentares").select("id,despublicado_em,despublicacao_motivo").eq("id", target.id).single()
-            if (readback.error || readback.data?.despublicado_em == null || !readback.data?.despublicacao_motivo) result.errors.push(`Readback independente de despublicação CEAPS ${snapshot.ano} não confirmou a linha`)
+          if (!withinCeapsUnpublishCaps({ candidateUnpublishes: pendingTombstones.length + 1, runUnpublishes: runUnpublishCount, candidateScopeYears: processingYears.length })) {
+            result.errors.push(`Tombstone CEAPS ${snapshot.ano} excedeu limite de lote/razão; mantido para revisão`)
+            continue
           }
+          const row = { despublicado_em: new Date().toISOString(), despublicacao_motivo: `ceaps-senado: CSV oficial completo ${snapshot.ano} sem despesas para o nome oficial vinculado ao ID Senado ${officialId}; fonte anterior=${target.fonte ?? "sem fonte"}; nome=${sourceName}; csv=${snapshot.url}; sha256=${snapshot.sha256}` }
+          pendingTombstones.push({ snapshot, target: target as ExistingSenateExpense, row })
         } else if (legacyRows.length === 1 && reconciliation === "review") result.errors.push(`Linha legada CEAPS ${snapshot.ano} mantida para revisão: escopo oficial incompleto`)
         continue
       }
@@ -826,34 +870,65 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
       if (annualRows.insertAlongsideUnrelated) {
         result.errors.push(`Linha de gastos ${snapshot.ano} com outra proveniência mantida para revisão; inserção CEAPS oficial segue em linha própria`)
       }
-      if (emDryRun()) {
-        planejarEscrita({ fonte: "ceaps-senado", tabela: "gastos_parlamentares", operacao: target ? "update" : "insert", alvo: cand.slug, identidade: `id-senado:${cand.ids.senado};jev-noul-shadow:${p === null ? "unavailable" : p.toFixed(2)}`, chave: target ? { id: target.id } : { candidato_id: candidatoId, ano: snapshot.ano }, valores: row })
-        result.rows_upserted++
-      } else if (target) {
-        let update = supabase.from("gastos_parlamentares").update({ ...row, despublicado_em: null, despublicacao_motivo: null }).eq("id", target.id).eq("candidato_id", candidatoId).eq("ano", snapshot.ano).eq("total_gasto", (existing as { total_gasto: number | null }).total_gasto).is("despublicado_em", null)
-        update = target.fonte == null ? update.is("fonte", null) : update.eq("fonte", target.fonte)
-        const written = await escreverAuditado({ script: "ingest-ceaps-senado", tabela: "gastos_parlamentares", motivo: "Materializar despesas anuais do CSV oficial CEAPS do Senado", recorte: `${cand.slug}:${snapshot.ano}` }, () => update.select("id,fonte,ano,despublicado_em"))
-        if (written.length !== 1 || written[0]?.fonte !== "Senado" || written[0]?.despublicado_em != null) result.errors.push(`Readback CEAPS ${snapshot.ano} divergiu da linha escrita`)
-        result.rows_upserted += written.length
-      } else {
-        const written = await escreverAuditado({ script: "ingest-ceaps-senado", tabela: "gastos_parlamentares", motivo: "Materializar despesas anuais do CSV oficial CEAPS do Senado", recorte: `${cand.slug}:${snapshot.ano}` }, () => supabase.from("gastos_parlamentares").insert(row).select("id,fonte,ano,despublicado_em"))
-        if (written.length !== 1 || written[0]?.fonte !== "Senado" || Number(written[0]?.ano) !== snapshot.ano) result.errors.push(`Readback CEAPS ${snapshot.ano} divergiu da linha inserida`)
-        result.rows_upserted += written.length
-      }
-      if (!emDryRun()) {
-        const readback = await supabase.from("gastos_parlamentares").select("id,fonte,ano,total_gasto,despublicado_em").eq("candidato_id", candidatoId).eq("ano", snapshot.ano).eq("fonte", "Senado").is("despublicado_em", null).limit(2)
-        if (readback.error || readback.data?.length !== 1 || Number(readback.data[0]?.total_gasto) !== Math.round(total * 100) / 100) result.errors.push(`Readback independente CEAPS ${snapshot.ano} não confirmou chave e total`)
+      try {
+        if (emDryRun()) {
+          planejarEscrita({ fonte: "ceaps-senado", tabela: "gastos_parlamentares", operacao: target ? "update" : "insert", alvo: cand.slug, identidade: `id-senado:${cand.ids.senado};jev-noul-shadow:${p === null ? "unavailable" : p.toFixed(2)}`, chave: target ? { id: target.id } : { candidato_id: candidatoId, ano: snapshot.ano }, valores: row })
+          result.rows_upserted++
+        } else if (target) {
+          let update = supabase.from("gastos_parlamentares").update({ ...row, despublicado_em: null, despublicacao_motivo: null }).eq("id", target.id).eq("candidato_id", candidatoId).eq("ano", snapshot.ano).eq("total_gasto", (existing as { total_gasto: number | null }).total_gasto).is("despublicado_em", null)
+          update = target.fonte == null ? update.is("fonte", null) : update.eq("fonte", target.fonte)
+          const written = await escreverAuditado({ script: "ingest-ceaps-senado", tabela: "gastos_parlamentares", motivo: "Materializar despesas anuais do CSV oficial CEAPS do Senado", recorte: `${cand.slug}:${snapshot.ano}` }, () => update.select("id,fonte,ano,despublicado_em"))
+          if (written.length !== 1 || written[0]?.fonte !== "Senado" || written[0]?.despublicado_em != null) result.errors.push(`Readback CEAPS ${snapshot.ano} divergiu da linha escrita`)
+          result.rows_upserted += written.length
+        } else {
+          const written = await escreverAuditado({ script: "ingest-ceaps-senado", tabela: "gastos_parlamentares", motivo: "Materializar despesas anuais do CSV oficial CEAPS do Senado", recorte: `${cand.slug}:${snapshot.ano}` }, () => supabase.from("gastos_parlamentares").insert(row).select("id,fonte,ano,despublicado_em"))
+          if (written.length !== 1 || written[0]?.fonte !== "Senado" || Number(written[0]?.ano) !== snapshot.ano) result.errors.push(`Readback CEAPS ${snapshot.ano} divergiu da linha inserida`)
+          result.rows_upserted += written.length
+        }
+        if (!emDryRun()) {
+          const readback = await supabase.from("gastos_parlamentares").select("id,fonte,ano,total_gasto,despublicado_em").eq("candidato_id", candidatoId).eq("ano", snapshot.ano).eq("fonte", "Senado").is("despublicado_em", null).limit(2)
+          if (readback.error || readback.data?.length !== 1 || Number(readback.data[0]?.total_gasto) !== Math.round(total * 100) / 100) result.errors.push(`Readback independente CEAPS ${snapshot.ano} não confirmou chave e total`)
+        }
+      } catch (err) {
+        result.errors.push(`Falha ao persistir/readback CEAPS ${snapshot.ano}: ${err instanceof Error ? err.message : String(err)}`)
+        continue
       }
       if (result.rows_upserted > 0 && !result.tables_updated.includes("gastos_parlamentares")) result.tables_updated.push("gastos_parlamentares")
     }
 
-    if (scopeIndeterminate) result.coleta_resultado = "indeterminado"
-    else if (result.errors.length > 0 || candidateFailures.length > 0) result.coleta_resultado = "erro"
-    else if (sourceRows > 0) result.coleta_resultado = "encontrado"
-    else result.coleta_resultado = "vazio_confirmado"
+    if (pendingTombstones.length > 0) {
+      if (result.errors.length > 0) result.errors.push(`${pendingTombstones.length} tombstone(s) CEAPS suspenso(s): outra escrita/readback do candidato falhou`)
+      else {
+        for (const { snapshot, target, row } of pendingTombstones) {
+          try {
+            if (emDryRun()) {
+              planejarEscrita({ fonte: "ceaps-senado", tabela: "gastos_parlamentares", operacao: "update", alvo: cand.slug, identidade: `id-senado:${officialId};csv-sha256:${snapshot.sha256}`, chave: { id: target.id }, valores: row })
+            } else {
+              let update = supabase.from("gastos_parlamentares").update(row).eq("id", target.id).eq("candidato_id", candidatoId).eq("ano", snapshot.ano).eq("total_gasto", target.total_gasto).is("despublicado_em", null)
+              update = target.fonte == null ? update.is("fonte", null) : update.eq("fonte", target.fonte)
+              const written = await escreverAuditado({ script: "ingest-ceaps-senado", tabela: "gastos_parlamentares", motivo: "Despublicar linha Senado sem ocorrência no CSV CEAPS anual completo", recorte: `${cand.slug}:${snapshot.ano}` }, () => update.select("id,despublicado_em"))
+              if (written.length !== 1 || !written[0]?.despublicado_em) throw new Error(`Readback de despublicação não confirmou a linha`)
+              const readback = await supabase.from("gastos_parlamentares").select("id,despublicado_em,despublicacao_motivo").eq("id", target.id).single()
+              if (readback.error || readback.data?.despublicado_em == null || !readback.data?.despublicacao_motivo) throw new Error("readback independente não confirmou a linha")
+            }
+          } catch (err) {
+            result.errors.push(`Despublicação CEAPS ${snapshot.ano} sem confirmação: ${err instanceof Error ? err.message : String(err)}`)
+            break
+          }
+          runUnpublishCount++
+        }
+      }
+    }
+
+    result.coleta_resultado = ceapsReceiptOutcome({
+      scopeIndeterminate,
+      hasErrors: result.errors.length > 0 || candidateFailures.length > 0,
+      sourceRows,
+      rowsUpserted: result.rows_upserted,
+    })
     result.coleta_volume = sourceRows
     result.coleta_url = candidateSnapshots.at(-1)?.url ?? `${BASE_URL}_2026.csv`
-    result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_fonte: sourceName, jev_noul_sombra: p, source_rows: sourceRows, anos_vazios: anosVazios })
+    result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_fonte: sourceName, avaliacao_identidade_sombra: p, source_rows: sourceRows, anos_vazios: anosVazios })
     result.duration_ms = Date.now() - start
     results.push(result)
   }
@@ -861,6 +936,6 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  if (process.argv.includes("--dry-run")) ativarDryRun()
+  if (!process.argv.includes("--apply")) ativarDryRun()
   ingestCeapsSenado().then((r) => console.log(JSON.stringify(r, null, 2)))
 }

@@ -9,6 +9,14 @@ import {
   parseHistoricoPartidarioCamara,
   parseSenadoLegislatureRange,
   parseSenadoLegislatureRoster,
+  identidadePorNomeComScore,
+  jevScriptMatchesPinnedHash,
+  jevShadowEnv,
+  JEV_SCRIPT_SHA256_PIN_PARTIDOS,
+  partyWritesAllowed,
+  mesmaJanelaMudancaPartidaria,
+  normalizePartyForTimeline,
+  RENOMEACOES_PARTIDARIAS_OFICIAIS,
   selecionarCandidatosPartidarios,
   transitionsFromSources,
 } from "../scripts/lib/ingest-partidos-parlamentares"
@@ -87,7 +95,7 @@ test("Câmara snapshots duplicate same-day same-party rows; conflicting parties 
   const body = JSON.stringify({ dados: [
     { id: 123, siglaPartido: "DEM", dataHora: "2023-02-01T00:00", idLegislatura: 54 },
     { id: 123, siglaPartido: "DEM", dataHora: "2023-02-01T00:00", idLegislatura: 53 },
-    { id: 123, siglaPartido: "PFL", dataHora: "2023-02-01T00:00", idLegislatura: 52 },
+    { id: 123, siglaPartido: "PT", dataHora: "2023-02-01T00:00", idLegislatura: 52 },
   ] })
   const receipt = await coletarHistoricoPartidarioParlamentar(candidate({ ids: { camara: 123, senado: null, tse_sq_candidato: {} } }), {
     fetcher: async () => ({ status: 200, body }),
@@ -95,7 +103,17 @@ test("Câmara snapshots duplicate same-day same-party rows; conflicting parties 
   assert.equal(receipt.fontes[0].mudancas.length, 2)
   const resolved = transitionsFromSources(receipt)
   assert.deepEqual(resolved.transicoes, [])
-  assert.deepEqual(resolved.ambiguidades, [{ casa: "camara", data: "2023-02-01", partidos: ["DEM", "PFL"] }])
+  assert.deepEqual(resolved.ambiguidades, [])
+})
+
+test("Câmara status event timestamps never become party affiliation dates", async () => {
+  const body = JSON.stringify({ dados: [
+    { id: 123, siglaPartido: "PT", dataHora: "2022-01-01T00:00", idLegislatura: 56 },
+    { id: 123, siglaPartido: "PL", dataHora: "2023-02-01T00:00", idLegislatura: 57 },
+  ] })
+  const receipt = await coletarHistoricoPartidarioParlamentar(candidate(), { fetcher: async () => ({ status: 200, body }) })
+  assert.equal(receipt.fontes[0].mudancas.length, 2)
+  assert.deepEqual(transitionsFromSources(receipt).transicoes, [])
 })
 
 test("no local ID is indeterminate until a separate official no-ID proof is supplied", async () => {
@@ -177,4 +195,43 @@ test("candidate selection applies the optional cohort predicate once", () => {
   const candidates = [candidate(), candidate({ slug: "candidato-b" })]
   assert.deepEqual(selecionarCandidatosPartidarios(candidates, (row) => row.slug === "candidato-b").map((row) => row.slug), ["candidato-b"])
   assert.equal(selecionarCandidatosPartidarios(candidates).length, 2)
+})
+
+test("party history writes require explicit apply and a non-dry-run context", () => {
+  assert.equal(partyWritesAllowed(false, false), false)
+  assert.equal(partyWritesAllowed(true, true), false)
+  assert.equal(partyWritesAllowed(true, false), true)
+})
+
+test("party identity shadow pins the helper and passes only TypeSafe key and PATH", () => {
+  assert.match(JEV_SCRIPT_SHA256_PIN_PARTIDOS, /^[a-f0-9]{64}$/)
+  assert.equal(jevScriptMatchesPinnedHash(Buffer.from("different helper")), false)
+  assert.deepEqual(jevShadowEnv({ TYPESAFE_API_KEY: "fake-test-key", PATH: "/bin", SUPABASE_SERVICE_ROLE_KEY: "must-not-pass" }), {
+    TYPESAFE_API_KEY: "fake-test-key", PATH: "/bin",
+  })
+})
+
+test("Jev name scores never establish parliamentary identity or verified absence", () => {
+  for (const score of [0.99, 0.01, null]) {
+    assert.deepEqual(identidadePorNomeComScore(score), {
+      id_oficial: null, status: "revisar", score_sombra: score, prova_sem_id: null,
+    })
+  }
+})
+
+test("official party aliases normalize before transition detection and cite TSE sources", () => {
+  assert.equal(normalizePartyForTimeline("PMDB", 2018), "MDB")
+  assert.equal(normalizePartyForTimeline("PR", 2020), "PL")
+  assert.equal(normalizePartyForTimeline("PPS", 2020), "CIDADANIA")
+  assert.equal(normalizePartyForTimeline("PRB", 2020), "REPUBLICANOS")
+  assert.equal(normalizePartyForTimeline("DEM", 2023), "UNIAO")
+  assert.equal(normalizePartyForTimeline("PSL", 2023), "UNIAO")
+  assert.ok(RENOMEACOES_PARTIDARIAS_OFICIAIS.every((rename) => rename.fonte.startsWith("https://www.tse.jus.br/")))
+})
+
+test("party duplicate key includes predecessor and same-year change window", () => {
+  const proposed = { partido_anterior: "MDB", partido_novo: "PT", ano: 2022 }
+  assert.equal(mesmaJanelaMudancaPartidaria({ partido_anterior: "PMDB", partido_novo: "PT", ano: 2022 }, proposed), true)
+  assert.equal(mesmaJanelaMudancaPartidaria({ partido_anterior: "PSDB", partido_novo: "PT", ano: 2022 }, proposed), false)
+  assert.equal(mesmaJanelaMudancaPartidaria({ partido_anterior: "MDB", partido_novo: "PT", ano: 2021 }, proposed), false)
 })

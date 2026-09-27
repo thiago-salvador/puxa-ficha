@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import test from "node:test"
-import { camaraLegislatureForYear, familySource, filterBundlePages, filterCandidatesBySlugs, parseSenadoVoteIds, parseSlugList, senateAuthorshipRows } from "../scripts/audit/fetch-parliamentary-family-sources-local"
+import { camaraLegislatureForYear, capturePageIsComplete, cotaYearCompleteness, familySource, fetchOfficialWithRetry, filterBundlePages, filterCandidatesBySlugs, jevAllowlistedEnv, JEV_SCRIPT_SHA256_PIN, loadCachedCotaYear, pinnedJevScriptMatches, parseSenadoVoteIds, parseSlugList, senateAuthorshipRows, senateRecordFromRoster, senatorNameFromRoster, senatorNamesFromLegislatureRoster, validateContentLength, validateCotaYearRowCount } from "../scripts/audit/fetch-parliamentary-family-sources-local"
 
 test("lista privada seleciona candidatos e falha em slug desconhecido", () => {
   const candidates = [{ slug: "ana-silva" }, { slug: "bia-souza" }]
@@ -34,6 +34,68 @@ test("autorías do Senado preservam a lista integral em uma resposta e validam e
   assert.equal((rows.at(-1) as Record<string, unknown>).Materia && ((rows.at(-1) as { Materia: { Codigo: string } }).Materia.Codigo), "313")
   assert.throws(() => senateAuthorshipRows(payload, "1234"), /CodigoParlamentar consultado/)
   assert.throws(() => senateAuthorshipRows({ MateriasAutoriaParlamentar: { Parlamentar: { Codigo: "4529", Autorias: { Autoria: null } } } }, "4529"), /lista completa/)
+})
+
+test("identidade do roster Senado é limitada ao registro do ID consultado", () => {
+  const value = {
+    DetalheParlamentar: { Parlamentar: { IdentificacaoParlamentar: { CodigoParlamentar: "4529", NomeParlamentar: "Nome Oficial" } } },
+    unrelated: { CodigoParlamentar: "4529", NomeParlamentar: "Nome Indevido" },
+  }
+  assert.equal(senatorNameFromRoster(value, "4529"), "Nome Oficial")
+  assert.equal(senatorNameFromRoster(value, "9999"), null)
+  assert.equal(senateRecordFromRoster(value, "9999"), null)
+  const historical = { ListaParlamentarLegislatura: { Parlamentares: { Parlamentar: [
+    { IdentificacaoParlamentar: { CodigoParlamentar: "4529", NomeParlamentar: "Nome Antigo" } },
+    { IdentificacaoParlamentar: { CodigoParlamentar: "8", NomeParlamentar: "Outro" } },
+  ] } }, unrelated: { IdentificacaoParlamentar: { CodigoParlamentar: "4529", NomeParlamentar: "Falso" } } }
+  assert.deepEqual(senatorNamesFromLegislatureRoster(historical, "4529"), ["Nome Antigo"])
+})
+
+test("official fetch retries with User-Agent, checks content length, and Cota 2026 remains partial", async () => {
+  let attempts = 0
+  const response = await fetchOfficialWithRetry("https://example.invalid/data", {}, async (_input, init) => {
+    attempts += 1
+    assert.equal(new Headers(init?.headers).get("user-agent"), "PuxaFicha-Coletores/1.0")
+    return attempts === 1 ? new Response("busy", { status: 503 }) : new Response("ok", { status: 200 })
+  }, async () => {})
+  assert.equal(response.status, 200)
+  assert.equal(attempts, 2)
+  assert.throws(() => validateContentLength("99", 3, "https://example.invalid/file"), /Content-Length divergente/)
+  assert.doesNotThrow(() => validateContentLength("3", 3, "https://example.invalid/file"))
+  assert.deepEqual(cotaYearCompleteness(2025), { complete: true, use_for_absence: true })
+  assert.deepEqual(cotaYearCompleteness(2026), { complete: false, use_for_absence: false })
+  assert.equal(validateCotaYearRowCount(new Map([ ["123", { rowCount: 2 }], ["456", { rowCount: 3 }] ]), 2025), 5)
+  assert.throws(() => validateCotaYearRowCount(new Map(), 2025), /contagem anual de linhas parlamentares inválida/)
+})
+
+test("fetch-to-completeness requires declared total or a consistent last link", () => {
+  const short200 = { dados: Array.from({ length: 3 }, (_, i) => ({ id: i + 1 })), links: [{ rel: "self", href: "?pagina=1" }] }
+  assert.equal(capturePageIsComplete(short200, 3, 1, "https://example.invalid/api?itens=100&pagina=1"), false)
+  const endsHere = { dados: [{ id: 1 }], links: [
+    { rel: "self", href: "https://example.invalid/api?itens=100&pagina=2" },
+    { rel: "last", href: "https://example.invalid/api?itens=100&pagina=2" },
+  ] }
+  assert.equal(capturePageIsComplete(endsHere, 1, 2, "https://example.invalid/api?itens=100&pagina=2"), true)
+  assert.equal(capturePageIsComplete({ dados: Array.from({ length: 50 }) , totalRegistros: 150 }, 50, 2, "https://example.invalid/api?itens=100&pagina=2"), true)
+  assert.equal(capturePageIsComplete({ dados: Array.from({ length: 50 }), totalRegistros: 151 }, 50, 2, "https://example.invalid/api?itens=100&pagina=2"), false)
+})
+
+test("Cota ZIP failure is memoized for the remainder of the run", async () => {
+  const successful = new Map<number, string>()
+  const failures = new Map<number, string>()
+  let attempts = 0
+  const loader = async () => { attempts += 1; throw new Error("temporary source failure") }
+  await assert.rejects(loadCachedCotaYear(2025, successful, failures, loader), /temporary source failure/)
+  await assert.rejects(loadCachedCotaYear(2025, successful, failures, loader), /já falhou nesta execução/)
+  assert.equal(attempts, 1)
+})
+
+test("Jev spawn environment is allowlisted and helper hash pin is explicit", () => {
+  assert.deepEqual(jevAllowlistedEnv({ TYPESAFE_API_KEY: "fake-test-key", PATH: "/bin", SUPABASE_SERVICE_ROLE_KEY: "must-not-pass" }), {
+    TYPESAFE_API_KEY: "fake-test-key", PATH: "/bin",
+  })
+  assert.match(JEV_SCRIPT_SHA256_PIN, /^[a-f0-9]{64}$/)
+  assert.equal(pinnedJevScriptMatches(Buffer.from("not-the-pinned-helper")), false)
 })
 
 test("votos nominais Câmara preservam ausência como lista completa sem linha sintética", () => {

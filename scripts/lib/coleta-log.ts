@@ -166,12 +166,12 @@ export function escopoDaFonte(fonte: string): EscopoColeta {
 }
 
 /**
- * Formato aceito em `PF_COLETA_EXECUCAO`: `local:<host>:<timestamp UTC>`, como
- * `local:mac-estudio:20260930T060000Z`. Quem define é o agente agendado de
+ * Formato aceito em `PF_COLETA_EXECUCAO`: `local:<random hex>:<timestamp UTC>`, como
+ * `local:ab12cd34ef56ab78:20260930T060000Z`. Quem define é o agente agendado de
  * scripts/camara-local/, para que as rodadas semanais da Câmara fora do
- * GitHub se distingam no `coleta_log` por máquina e horário, não por pid.
+ * GitHub se distingam no `coleta_log` sem registrar o nome da máquina.
  */
-const EXECUCAO_LOCAL_AGENDADA = /^local:[a-z0-9][a-z0-9-]{0,62}:\d{8}T\d{6}Z$/
+const EXECUCAO_LOCAL_AGENDADA = /^local:[a-f0-9]{16}:\d{8}T\d{6}Z$/
 
 /**
  * Identificador da execução, para agrupar tudo que uma rodada tentou.
@@ -189,7 +189,7 @@ export function resolverExecucao(
   const agendada = entrada.execucaoAgendada
   if (agendada !== undefined && agendada !== "") {
     if (!EXECUCAO_LOCAL_AGENDADA.test(agendada)) {
-      throw new Error(`PF_COLETA_EXECUCAO fora do formato local:<host>:<AAAAMMDDTHHMMSSZ>: ${agendada}`)
+      throw new Error("PF_COLETA_EXECUCAO fora do formato local:<random hex>:<AAAAMMDDTHHMMSSZ>")
     }
     return agendada
   }
