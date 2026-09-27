@@ -7,9 +7,10 @@ import { spawnSync } from "node:child_process"
 import {
   adaptLatestReceipts,
   buildCoverageMatrix,
+  fetchPublicProfiles,
   type CoverageProfile,
 } from "../scripts/audit/audit-cobertura-fichas"
-import { publicFamilyPayloadSha256 } from "../scripts/audit/lib/coverage-source-proof"
+import { publicFamilyHouseRows, publicFamilyPayloadSha256, publicHouseSubsetSha256 } from "../scripts/audit/lib/coverage-source-proof"
 
 function profile(overrides: Partial<CoverageProfile> = {}): CoverageProfile {
   return {
@@ -25,6 +26,23 @@ function profile(overrides: Partial<CoverageProfile> = {}): CoverageProfile {
 }
 
 describe("matriz de cobertura das fichas", () => {
+  it("repete erro transitório ao ler perfil público antes de invalidar o snapshot", async () => {
+    let attempts = 0
+    const pauses: number[] = []
+    const fetcher = async (url: string | URL | Request) => {
+      if (String(url).endsWith("/api/candidato-slugs")) return Response.json({ slugs: ["ana-exemplo"] })
+      attempts++
+      if (attempts === 1) return new Response(null, { status: 503 })
+      if (attempts === 2) throw new TypeError("fetch failed")
+      return Response.json({ sourceStatus: "live", data: profile() })
+    }
+    const result = await fetchPublicProfiles("https://example.test", fetcher as typeof fetch, async (ms) => { pauses.push(ms) })
+    assert.equal(attempts, 3)
+    assert.deepEqual(pauses, [5_000, 10_000, 250])
+    assert.equal(result.profiles.length, 1)
+    assert.deepEqual(result.errors, [])
+  })
+
   it("não publica processo só porque o recibo disse encontrado", () => {
     const matrix = buildCoverageMatrix([profile({ processos: [] })], [], {
       "ana-exemplo": { processos: { resultado: "encontrado", executado_em: new Date().toISOString(), fonte: "processos-curadoria" } },
@@ -80,7 +98,9 @@ describe("matriz de cobertura das fichas", () => {
   })
 
   it("só fecha família parlamentar quando a fonte por casa reconcilia o DTO", () => {
-    const candidate = profile({ projetos_lei: [{ id: 12 }] })
+    const candidate = profile({ projetos_lei: [{ id: 12, casa: "camara" }], projetos_lei_total: 1, projetos_lei_camara_total: 1, projetos_lei_senado_total: 0 })
+    const partition = publicFamilyHouseRows(candidate, "projetos_lei")
+    assert.ok(partition)
     const url = "https://dadosabertos.camara.leg.br/api/v2/deputados/12345/proposicoes"
     const proof = {
       family: "projetos_lei", method: "official-source-to-public-readback",
@@ -88,6 +108,7 @@ describe("matriz de cobertura das fichas", () => {
       public_payload_sha256: publicFamilyPayloadSha256(candidate, "projetos_lei"),
       source_rows: 1, public_rows: 1, matched_rows: 1, unmatched_rows: 0, scope_complete: true,
       identity: { slug: "ana-exemplo", candidate_id: "candidate-1", source_id: "12345", house: "camara", roster_url: "https://dadosabertos.camara.leg.br/api/v2/deputados", roster_sha256: "c".repeat(64) },
+      house_partition: { casa: "camara", public_rows: 1, public_subset_sha256: publicHouseSubsetSha256(partition.camara ?? []), public_total_rows: 1, source_rows: 1, matched_rows: 1, unmatched_rows: 0 },
     }
     const row = {
       fonte: "camara-proposicoes", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1",
@@ -99,6 +120,16 @@ describe("matriz de cobertura das fichas", () => {
         .cells.find((cell) => cell.familia === "projetos_lei")?.estado
     assert.equal(state(candidate), "publicado")
     assert.equal(state(candidate, { ...row, detalhe: JSON.stringify({ coverage_proof: { ...proof, public_rows: 2 } }) }), "indeterminado")
+  })
+
+  it("aplica o SLA de nove dias aos recibos de votação das duas casas", () => {
+    const executed = new Date(Date.now() - 10 * 86_400_000).toISOString()
+    for (const [house, source] of [["camara", "camara-votacoes"], ["senado", "senado-votacoes"]] as const) {
+      const candidate = profile({ ids: { camara: house === "camara" ? 12345 : null, senado: house === "senado" ? 12345 : null }, votos: [{ id: 1 }] })
+      const row = { fonte: source, escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", resultado: "encontrado", volume: 1, executado_em: executed, url: "https://example.test/votacoes", detalhe: "{}" }
+      const matrix = buildCoverageMatrix([candidate], [], adaptLatestReceipts([row], [candidate]).joins)
+      assert.equal(matrix.cells.find((cell) => cell.familia === "votos_candidato")?.estado, "desatualizado", source)
+    }
   })
 
   it("não trata badge histórico sem data como recibo nem encobre verificação datada", () => {

@@ -43,6 +43,31 @@ it("DTO público carrega a data de corte do gasto anual de 2026", () => {
   assert.equal(toPublicCandidatoProfileDto(ficha).gastos_parlamentares[0].coletado_em, "2026-09-25T16:32:18.386Z")
 })
 
+it("atribui a Casa de projetos e gastos somente pelo rótulo oficial da fonte", () => {
+  const ficha = fixtureProfile()
+  ficha.projetos_lei[0].fonte = "Câmara"
+  ficha.gastos_parlamentares[0].fonte = "Senado CEAPS"
+  const dto = toPublicCandidatoProfileDto(ficha)
+  assert.equal(dto.projetos_lei[0].casa, "camara")
+  assert.equal(dto.gastos_parlamentares[0].casa, "senado")
+  assert.equal("fonte" in dto.projetos_lei[0], false)
+
+  ficha.projetos_lei[0].fonte = "origem interna desconhecida"
+  ficha.gastos_parlamentares[0].fonte = "SICONFI"
+  const unknown = toPublicCandidatoProfileDto(ficha)
+  assert.equal(unknown.projetos_lei[0].casa, null)
+  assert.equal(unknown.gastos_parlamentares[0].casa, null)
+})
+
+it("DTO público expõe total exato por casa para acervos de projetos", () => {
+  const ficha = fixtureProfile()
+  ficha.projetos_lei_camara_total = 12
+  ficha.projetos_lei_senado_total = 34
+  const dto = toPublicCandidatoProfileDto(ficha)
+  assert.equal(dto.projetos_lei_camara_total, 12)
+  assert.equal(dto.projetos_lei_senado_total, 34)
+})
+
 function fixtureProfile(): FichaCandidato {
   return {
     id: "cand-1",
@@ -151,6 +176,7 @@ function fixtureProfile(): FichaCandidato {
           descricao: "Descrição pública",
           data_votacao: "2020-01-01",
           casa: "Câmara",
+          votacao_id_api: "123-45",
           tema: "Tema",
           impacto_popular: "Impacto",
           proposicao_id: "123",
@@ -514,6 +540,11 @@ describe("public profile DTO", () => {
     assert.equal(dto.pontos_atencao[0].descricao, "")
     assert.equal(dto.gastos_parlamentares[0].gastos_destaque[0].descricao, "")
     assert.deepEqual(findForbiddenPublicProfileKeys(dto), [])
+  })
+
+  it("expõe o ID oficial da votação na metadata pública", () => {
+    const dto = toPublicCandidatoProfileDto(fixtureProfile())
+    assert.equal(dto.votos[0].votacao?.votacao_id_api, "123-45")
   })
 
   it("normaliza detalhamento legado em objeto sem derrubar a ficha", () => {

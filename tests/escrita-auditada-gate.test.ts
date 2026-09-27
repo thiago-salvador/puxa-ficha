@@ -355,7 +355,11 @@ describe("a isenção do pipeline de coleta é verificada, não confiada", () =>
   it("todo módulo isento declara um source que FONTES conhece", () => {
     for (const arquivo of isentos) {
       const src = readFileSync(join(libDir, arquivo), "utf8")
-      const sources = [...src.matchAll(/source:\s*"([^"]+)",\s*\n\s*candidato:/g)].map((m) => m[1])
+      if (arquivo === "ingest-jarbas.ts") {
+        assert.match(src, /export \{ ingestCamaraCotasCsv as ingestJarbas, ingestCamaraCotasCsv \}/)
+        continue
+      }
+      const sources = [...src.matchAll(/source:\s*"([^"]+)"\s*,\s*candidato:/g)].map((m) => m[1])
       assert.ok(
         sources.length > 0,
         `${arquivo} está isento como pipeline e não declara source: a isenção não se sustenta`,

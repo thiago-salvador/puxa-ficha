@@ -248,7 +248,7 @@
     "estado": "MG",
     "ids": {
       "camara": 74646,
-      "senado": null,
+      "senado": 391,
       "tse_sq_candidato": {
         "2010": "130000000952",
         "2014": "280000000085",
@@ -789,7 +789,7 @@
     "cargo_disputado": "Governador",
     "estado": "RJ",
     "ids": {
-      "camara": null,
+      "camara": 74683,
       "senado": null,
       "tse_sq_candidato": {
         "2002": "1749",
@@ -1774,7 +1774,7 @@
     "cargo_disputado": "Governador",
     "estado": "RN",
     "ids": {
-      "camara": null,
+      "camara": 74036,
       "senado": null,
       "tse_sq_candidato": {
         "2020": "200001194163",
@@ -2031,7 +2031,7 @@
     "cargo_disputado": "Senador",
     "estado": "AM",
     "ids": {
-      "camara": null,
+      "camara": 133917,
       "senado": 4994,
       "tse_sq_candidato": {
         "2010": "40000000291",

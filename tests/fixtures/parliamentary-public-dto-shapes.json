@@ -1,0 +1,40 @@
+{
+  "projeto_senado_sem_casa": {
+    "id": "pl-1-1r125jk",
+    "tipo": "REQ",
+    "numero": "72",
+    "ano": 2026,
+    "ementa": "[texto removido para fixture sem dados pessoais]",
+    "tema": null,
+    "situacao": null,
+    "url_inteiro_teor": null,
+    "destaque": false,
+    "destaque_motivo": null,
+    "coverage_id": null
+  },
+  "gasto_camara_sem_casa": {
+    "id": "gasto-1-91ftue",
+    "ano": 2019,
+    "total_gasto": 19739.01,
+    "coletado_em": null,
+    "detalhamento": [],
+    "gastos_destaque": []
+  },
+  "voto_senado_casa_aninhada": {
+    "id": "voto-1-ditdj2",
+    "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+    "voto": "não",
+    "contradicao": false,
+    "contradicao_descricao": null,
+    "votacao": {
+      "id": "votacao-1-9fzxhw",
+      "titulo": "[texto removido]",
+      "descricao": "[texto removido]",
+      "data_votacao": "2023-11-08",
+      "casa": "Senado",
+      "tema": "economia",
+      "impacto_popular": "[texto removido]",
+      "proposicao_id": "158930"
+    }
+  }
+}

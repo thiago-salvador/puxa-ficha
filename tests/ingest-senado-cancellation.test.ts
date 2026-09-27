@@ -11,7 +11,7 @@ test("Senado mantém orçamento limitado com margem para o acervo de 124s observ
   assert.match(source, /SENADO_CANDIDATE_TIMEOUT_MS = 3 \* 60 \* 1000/)
 })
 
-for (const candidateTimeoutMs of [1800, 3000]) {
+for (const candidateTimeoutMs of [5000, 8000]) {
 test(`Senado: recibo e cancelamento com orçamento ${candidateTimeoutMs}ms`, async () => {
   const previousFetch = globalThis.fetch
   const previousUrl = process.env.SUPABASE_URL
@@ -21,13 +21,14 @@ test(`Senado: recibo e cancelamento com orçamento ${candidateTimeoutMs}ms`, asy
   __resetSupabaseParaTeste()
   let writes = 0
   let aborted = false
+  const storedProjects = new Map<string, Record<string, unknown>>()
   const response = (data: unknown) => new Response(JSON.stringify(data), { headers: { "Content-Type": "application/json" } })
   globalThis.fetch = async (input, init) => {
     const url = new URL(String(input))
     if (url.hostname === "legis.senado.leg.br") {
       if (url.pathname.endsWith("/635.json")) return response({ DetalheParlamentar: { Parlamentar: { IdentificacaoParlamentar: { NomeParlamentar: "Ricardo Ferraco", UfParlamentar: "ES" } } } })
       if (url.pathname.endsWith("/mandatos.json")) return response({})
-      if (url.pathname.endsWith("/autorias.json")) return response({ MateriasAutoriaParlamentar: { Parlamentar: { Autorias: { Autoria: [1, 2, 3].map(n => ({ IndicadorAutorPrincipal: "Sim", Materia: { Codigo: String(n), Sigla: "PL", Numero: String(n), Ano: 2020, Ementa: "Teste" } })) } } } })
+      if (url.pathname.endsWith("/autorias.json")) return response({ MateriasAutoriaParlamentar: { Parlamentar: { Codigo: "635", Autorias: { Autoria: [1, 2, 3].map(n => ({ IndicadorAutorPrincipal: "Sim", Materia: { Codigo: String(n), Sigla: "PL", Numero: String(n), Ano: 2020, Ementa: "Teste" } })) } } } })
       throw new Error(`Unexpected Senate request: ${url.pathname}`)
     }
     if (url.pathname.endsWith("/candidaturas_fase_2026_publico")) return new Response(JSON.stringify({ code: "PGRST205", message: "Could not find the table candidaturas_fase_2026_publico in the schema cache" }), { status: 404 })
@@ -38,13 +39,32 @@ test(`Senado: recibo e cancelamento com orçamento ${candidateTimeoutMs}ms`, asy
       if (url.searchParams.get("select")?.includes("verificacao_campos")) return response([{ slug: "ricardo-ferraco", verificacao_campos: null }])
       return response({ id: "candidate-test" })
     }
+    if (url.pathname.endsWith("/coleta_log")) return response(init?.method === "POST" ? null : [{ id: "audit-log" }])
     if (url.pathname.endsWith("/projetos_lei")) {
+      if (init?.method !== "POST" && init?.method !== "PATCH") {
+        const matterFilter = url.searchParams.get("proposicao_id_api")
+        const matterId = matterFilter?.startsWith("eq.") ? matterFilter.slice(3) : null
+        const inFilter = matterFilter?.startsWith("in.(") ? matterFilter.slice(4, -1).split(",") : []
+        const ids = matterId ? [matterId] : inFilter
+        return response(ids.flatMap((id) => storedProjects.has(id) ? [storedProjects.get(id)!] : []))
+      }
+      if (init?.method === "POST") {
+        assert.match(new Headers(init.headers).get("Prefer") ?? "", /resolution=ignore-duplicates/)
+      }
       writes++
-      if (writes === 2) {
-        try { await delay(900, undefined, { signal: init?.signal ?? undefined }) }
+      if (writes === 1) {
+        try { await delay(4500, undefined, { signal: init?.signal ?? undefined }) }
         catch (error) { aborted = true; throw error }
       }
-      return response(null)
+      const body = JSON.parse(String(init?.body ?? "{}")) as Record<string, unknown> | Array<Record<string, unknown>>
+      const batch = Array.isArray(body) ? body : [body]
+      const persisted = batch.map((row) => {
+        const matterId = String(row.proposicao_id_api ?? "")
+        const item = { id: `project-${matterId}`, ...row }
+        storedProjects.set(matterId, item)
+        return item
+      })
+      return response(persisted)
     }
     throw new Error(`Unexpected database request: ${url.pathname}`)
   }
@@ -52,18 +72,19 @@ test(`Senado: recibo e cancelamento com orçamento ${candidateTimeoutMs}ms`, asy
     const [receipt] = await ingestSenado({ targetSlugs: ["ricardo-ferraco"], forceFrozen: true, candidateTimeoutMs })
     const snapshot = JSON.stringify(receipt)
     await delay(1000)
-    if (candidateTimeoutMs === 1800) {
+    if (candidateTimeoutMs === 5000) {
       assert.equal(aborted, true, "deadline must abort the in-flight write")
-      assert.equal(writes, 2, "third write must never start after timeout")
-      assert.equal(receipt.rows_upserted, 2, "profile + one confirmed authorship must remain in the partial receipt")
-      assert.match(receipt.errors.join(" "), /excedeu 1800ms/)
+      assert.equal(writes, 1, "later chunks must not start after timeout")
+      assert.equal(receipt.rows_upserted, 1, "only the profile stays confirmed when the in-flight chunk is unresolved")
+      assert.match(receipt.errors.join(" "), /excedeu 5000ms/)
     } else {
       assert.equal(aborted, false, "bounded extra budget permits the same workload to finish")
-      assert.equal(writes, 3)
+      assert.equal(writes, 1)
       assert.equal(receipt.rows_upserted, 4)
       assert.deepEqual(receipt.errors, [])
     }
-    assert.ok(receipt.tables_updated.includes("projetos_lei"))
+    if (candidateTimeoutMs === 5000) assert.equal(receipt.tables_updated.includes("projetos_lei"), false)
+    else assert.ok(receipt.tables_updated.includes("projetos_lei"))
     assert.equal(JSON.stringify(receipt), snapshot, "returned receipt must not mutate after timeout")
   } finally {
     globalThis.fetch = previousFetch

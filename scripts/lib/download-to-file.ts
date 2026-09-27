@@ -194,7 +194,7 @@ export async function downloadToFile(
     const offset = validator ? partialSize(partial) : 0
     if (offset === 0) rmSync(partial, { force: true })
     const signal = AbortSignal.timeout(Math.max(1, Math.min(timeoutMs, deadlineAt - now())))
-    const headers: Record<string, string> = { "Accept-Encoding": "identity" }
+    const headers: Record<string, string> = { "Accept-Encoding": "identity", "User-Agent": "PuxaFicha-Coletores/1.0" }
     if (offset > 0 && validator) Object.assign(headers, { Range: `bytes=${offset}-`, "If-Range": validator })
     const init: RequestInit = { signal, headers }
 

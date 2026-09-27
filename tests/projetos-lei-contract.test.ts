@@ -4,20 +4,34 @@ import { aggregatePlCountsByQuizEixo, mapProjetoTemaToQuizEixo } from "@/lib/qui
 import { existsSync, readFileSync } from "fs"
 
 function extractProjectIngestRow(content: string): string {
-  const projectUpsertIndex = content.indexOf('.from("projetos_lei")')
-  assert.notStrictEqual(projectUpsertIndex, -1, "ingest deve escrever em projetos_lei")
+  // Senate builds one project row inside rowsByMatterId.set rather than a
+  // `const row` immediately before persistence. Anchor to that producer symbol
+  // so earlier vote/profile row declarations cannot be mistaken for projects.
+  const senateProjectSet = content.indexOf("rowsByMatterId.set(materiaId,")
+  if (senateProjectSet !== -1) {
+    const braceStart = content.indexOf("{", senateProjectSet)
+    assert.notStrictEqual(braceStart, -1, "ingest Senado deve montar objeto da proposição em rowsByMatterId")
+    return extractObjectLiteral(content, braceStart)
+  }
 
-  const rowStart = content.lastIndexOf("const row = {", projectUpsertIndex)
+  const projectUpsertCall = content.indexOf(".upsert(row,")
+  assert.notStrictEqual(projectUpsertCall, -1, "ingest Câmara deve enviar row por upsert")
+  const projectTableIndex = content.lastIndexOf('.from("projetos_lei")', projectUpsertCall)
+  assert.notStrictEqual(projectTableIndex, -1, "ingest deve escrever em projetos_lei")
+  const rowStart = content.lastIndexOf("const row = {", projectTableIndex)
   assert.notStrictEqual(rowStart, -1, "ingest deve montar objeto row antes do upsert de projetos_lei")
-
   const braceStart = content.indexOf("{", rowStart)
+  return extractObjectLiteral(content, braceStart, rowStart)
+}
+
+function extractObjectLiteral(content: string, braceStart: number, prefixStart = braceStart): string {
   let depth = 0
   for (let index = braceStart; index < content.length; index++) {
     const char = content[index]
     if (char === "{") depth++
     if (char === "}") depth--
     if (depth === 0) {
-      return content.slice(rowStart, index + 1)
+      return content.slice(prefixStart, index + 1)
     }
   }
 
@@ -368,6 +382,12 @@ describe("Projetos de lei contract", () => {
         dto,
         /projetos_lei_camara_total: ficha\.projetos_lei_camara_total \?\? null/,
         "o DTO público copia a contagem por fonte",
+      )
+      assert.match(api, /\.eq\("fonte", "Senado"\)/, "a API conta projetos do Senado por fonte")
+      assert.match(
+        dto,
+        /projetos_lei_senado_total: ficha\.projetos_lei_senado_total \?\? null/,
+        "o DTO público copia a contagem do Senado",
       )
 
       const readback = readFileSync("scripts/readback-fichas-camara.ts", "utf-8")

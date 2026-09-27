@@ -3,9 +3,11 @@ import assert from "node:assert/strict"
 import {
   __restaurarPortasDeVotos,
   __usarPortasDeVotosParaTeste,
+  carregarVotacoesChaveCamara,
   ingestVotos,
   parseVoto,
 } from "../scripts/lib/ingest-camara"
+import { __resetarDryRunParaTeste, ativarDryRun, relatorioDryRun } from "../scripts/lib/dry-run"
 
 /**
  * Modos de FALHA do matching de votos.
@@ -24,6 +26,10 @@ const VOTACAO_OK = {
   id: "vk-1",
   titulo: "Vaquejada e práticas desportivas com animais (2º turno)",
   votacao_id_api: "2123843-93",
+  casa: "Câmara",
+  fonte: "camara",
+  data_votacao: "2020-01-01",
+  proposicao_id: "2123843",
 }
 const DESCRICAO_MERITO =
   "Aprovada, em segundo turno, a Proposta de Emenda à Constituição n° 304, de 2017. Sim: 373; não: 50; abstenção: 6; Total: 429."
@@ -36,9 +42,120 @@ function votosCom(idDeputado: number, tipoVoto: string) {
 
 afterEach(() => {
   __restaurarPortasDeVotos()
+  __resetarDryRunParaTeste()
 })
 
 describe("matching de votos: caminho feliz (item 7)", () => {
+  test("dry-run planeja o upsert do voto sem chamar a porta de escrita", async () => {
+    let attemptedDatabaseWrite = false
+    __usarPortasDeVotosParaTeste({
+      selecionarVotacoesChave: async () => ({ data: [VOTACAO_OK], error: null }),
+      buscarDetalheDaVotacao: async (_id, onRevision) => {
+        onRevision?.({ url: "https://example.test/detail", sha256: "b".repeat(64) })
+        return { descricao: DESCRICAO_MERITO }
+      },
+      buscarVotosDaVotacao: async (_id, onRevision) => {
+        onRevision?.({ url: "https://example.test/votes", sha256: "c".repeat(64) })
+        return votosCom(ID_DEPUTADO, "Sim")
+      },
+      gravarVoto: async () => {
+        attemptedDatabaseWrite = true
+        return { error: null }
+      },
+    })
+    ativarDryRun()
+
+    const result = await ingestVotos(ID_DEPUTADO, "cand-1", "cabo-daciolo")
+    const report = relatorioDryRun()
+    assert.equal(attemptedDatabaseWrite, false)
+    assert.equal(result.persistidos, 0)
+    assert.equal(result.planejados, 1)
+    assert.equal(report.porTabela.votos_candidato.upsert, 1)
+    assert.equal(report.bloqueios.length, 0)
+  })
+
+  test("sincroniza a data oficial somente quando o ID de evento coincide", async () => {
+    const updates: unknown[] = []
+    __usarPortasDeVotosParaTeste({
+      selecionarVotacoesChave: async () => ({ data: [{ ...VOTACAO_OK, data_votacao: "2019-12-31" }], error: null }),
+      buscarDetalheDaVotacao: async () => ({ id: "2123843-93", data: "2020-01-01", descricao: DESCRICAO_MERITO }),
+      atualizarDataOficial: async (input) => { updates.push(input); return { atualizada: true, error: null } },
+      buscarVotosDaVotacao: async () => votosCom(ID_DEPUTADO, "Sim"),
+      gravarVoto: async () => ({ error: null }),
+    })
+    const result = await ingestVotos(ID_DEPUTADO, "cand-1", "cabo-daciolo")
+    assert.equal(result.erros.length, 0)
+    assert.deepEqual(updates, [{ id: "vk-1", votacaoIdApi: "2123843-93", data: "2020-01-01", dataAnterior: "2019-12-31", casaAnterior: "Câmara", fonteAnterior: "camara", proposicaoIdOficial: null, proposicaoIdAnterior: "2123843" }])
+    assert.equal((await carregarVotacoesChaveCamara()).votacoes[0]?.dataVotacao, "2020-01-01")
+  })
+
+  test("reconcilia data e proposição afetada pelo detalhe do evento 2357053-47", async () => {
+    const updates: unknown[] = []
+    __usarPortasDeVotosParaTeste({
+      selecionarVotacoesChave: async () => ({ data: [{ ...VOTACAO_OK, votacao_id_api: "2357053-47", proposicao_id: "2362699", data_votacao: "2023-05-23" }], error: null }),
+      buscarDetalheDaVotacao: async () => ({
+        id: "2357053-47", data: "2023-05-23", descricao: DESCRICAO_MERITO,
+        proposicoesAfetadas: [{ id: 2357053 }],
+      }),
+      atualizarDataOficial: async (input) => { updates.push(input); return { atualizada: true, error: null } },
+      buscarVotosDaVotacao: async () => votosCom(ID_DEPUTADO, "Sim"),
+      gravarVoto: async () => ({ error: null }),
+    })
+    const result = await ingestVotos(ID_DEPUTADO, "cand-1", "cabo-daciolo")
+    assert.equal(result.erros.length, 0)
+    assert.deepEqual(updates, [{
+      id: "vk-1", votacaoIdApi: "2357053-47", data: "2023-05-23", dataAnterior: "2023-05-23",
+      casaAnterior: "Câmara", fonteAnterior: "camara", proposicaoIdOficial: "2357053", proposicaoIdAnterior: "2362699",
+    }])
+  })
+
+  test("preserva proposição anterior em evento multi-proposição somente se ela estiver na lista oficial", async () => {
+    let updateAttempted = false
+    let votesAttempted = false
+    __usarPortasDeVotosParaTeste({
+      selecionarVotacoesChave: async () => ({ data: [{ ...VOTACAO_OK, proposicao_id: "3" }], error: null }),
+      buscarDetalheDaVotacao: async () => ({
+        id: VOTACAO_OK.votacao_id_api, data: VOTACAO_OK.data_votacao, descricao: DESCRICAO_MERITO,
+        proposicoesAfetadas: [{ id: 1 }, { id: 2 }],
+      }),
+      atualizarDataOficial: async () => { updateAttempted = true; return { atualizada: true, error: null } },
+      buscarVotosDaVotacao: async () => { votesAttempted = true; return votosCom(ID_DEPUTADO, "Sim") },
+      gravarVoto: async () => ({ error: null }),
+    })
+    const result = await ingestVotos(ID_DEPUTADO, "cand-1", "cabo-daciolo")
+    assert.equal(updateAttempted, false)
+    assert.equal(votesAttempted, false)
+    assert.match(result.erros[0]!, /múltiplas proposições/)
+  })
+
+  test("aceita evento multi-proposição quando o ID persistido está entre os IDs oficiais", async () => {
+    let votesAttempted = false
+    __usarPortasDeVotosParaTeste({
+      selecionarVotacoesChave: async () => ({ data: [{ ...VOTACAO_OK, proposicao_id: "2" }], error: null }),
+      buscarDetalheDaVotacao: async () => ({
+        id: VOTACAO_OK.votacao_id_api, data: VOTACAO_OK.data_votacao, descricao: DESCRICAO_MERITO,
+        proposicoesAfetadas: [{ id: 1 }, { id: 2 }],
+      }),
+      buscarVotosDaVotacao: async () => { votesAttempted = true; return votosCom(ID_DEPUTADO, "Sim") },
+      gravarVoto: async () => ({ error: null }),
+    })
+    const result = await ingestVotos(ID_DEPUTADO, "cand-1", "cabo-daciolo")
+    assert.equal(votesAttempted, true)
+    assert.equal(result.erros.length, 0)
+  })
+
+  test("recusa a data quando o detalhe devolve outro evento", async () => {
+    let attemptedUpdate = false
+    __usarPortasDeVotosParaTeste({
+      selecionarVotacoesChave: async () => ({ data: [VOTACAO_OK], error: null }),
+      buscarDetalheDaVotacao: async () => ({ id: "outro-evento", data: "2020-01-01", descricao: DESCRICAO_MERITO }),
+      atualizarDataOficial: async () => { attemptedUpdate = true; return { atualizada: true, error: null } },
+    })
+    const result = await ingestVotos(ID_DEPUTADO, "cand-1", "cabo-daciolo")
+    assert.equal(attemptedUpdate, false)
+    assert.match(result.erros[0]!, /devolveu id outro-evento/)
+  })
+
   test("normaliza Artigo 17 sem confundir com ausência", () => {
     assert.equal(parseVoto("Artigo 17"), "artigo_17")
     assert.equal(parseVoto("valor futuro da Câmara"), null)
