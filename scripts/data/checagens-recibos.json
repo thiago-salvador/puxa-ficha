@@ -82,7 +82,7 @@
       "candidate_slug": "alvaro-dias-rn",
       "searched_at": "2026-09-25T23:43:20.983Z",
       "result": "encontrado",
-      "leads": 6,
+      "leads": 1,
       "agencias": [
         "Lupa",
         "Comprova"
@@ -356,7 +356,7 @@
       "candidate_slug": "garotinho",
       "searched_at": "2026-09-25T23:34:01.264Z",
       "result": "encontrado",
-      "leads": 4,
+      "leads": 3,
       "agencias": [
         "Lupa",
         "Comprova"
@@ -976,17 +976,6 @@
         "Estadão Verifica",
         "UOL Confere",
         "AFP Checamos",
-        "Comprova"
-      ]
-    },
-    {
-      "candidate_id": "f4e5e4bd-7934-4d04-8534-9a60fac53edd",
-      "candidate_slug": "samuel-costa",
-      "searched_at": "2026-09-25T23:48:12.413Z",
-      "result": "encontrado",
-      "leads": 1,
-      "agencias": [
-        "Lupa",
         "Comprova"
       ]
     },

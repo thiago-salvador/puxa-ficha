@@ -25,6 +25,7 @@ import {
   type EstadoAgencia,
 } from "../scripts/lib/checagens-coleta"
 import { normalizarEntrada } from "../scripts/lib/coleta-log"
+import { selecionarReciboChecagens } from "../src/lib/buscas-recibos"
 
 const caiado: CandidatoChecagem = { id: "cand-caiado", slug: "ronaldo-caiado", nome_urna: "Ronaldo Caiado", nome_completo: "Ronaldo Ramos Caiado", cargo_disputado: "Presidente", estado: null }
 const now = new Date("2026-09-25T12:00:00Z")
@@ -359,6 +360,57 @@ describe("catálogo de checagens e recibos versionados", () => {
       assert.equal(sairam.includes(receipt.candidate_slug), false, `${receipt.candidate_slug} saiu no hotfix`)
       if (receipt.candidate_slug in tetos) assert.ok(receipt.leads <= tetos[receipt.candidate_slug], `${receipt.candidate_slug} só com leads de nome completo`)
     }
+  })
+
+  it("exclui homônimo senador e parente mesmo quando o título contém o nome de urna", () => {
+    // Títulos conferidos no recibo bruto da rodada 2026-09-26-final.
+    const exclusoesPorHomônimoOuParentesco: Record<string, string[]> = {
+      "alvaro-dias-rn": [
+        "Sabatina Folha, UOL e SBT: Alvaro Dias erra sobre verbas de campanha e indenizatória",
+        "Alvaro Dias erra ao dizer que Folha deu manchete sobre sua popularidade como governador do PR",
+        "Alvaro Dias: governo descumpriu acordo com senadores na reforma trabalhista. Será?",
+        "Alvaro Dias gasta R$ 365 mil do Senado, mas nega recebimento de verba",
+        "Alvaro Dias: total de analfabetos supera toda população argentina. Será?",
+      ],
+      garotinho: [
+        "Clarissa Garotinho erra dados sobre arrecadação do Rio e bloqueio de bens de Paes",
+      ],
+    }
+    const titulosBrutos: Record<string, string[]> = {
+      "alvaro-dias-rn": [
+        "Natal: Álvaro Dias exagera sobre isolamento social durante pandemia",
+        ...exclusoesPorHomônimoOuParentesco["alvaro-dias-rn"],
+      ],
+      garotinho: [
+        ...exclusoesPorHomônimoOuParentesco.garotinho,
+        "Laços com Cabral e prisão de Fernandinho Beira-Mar: os erros de Garotinho no RJTV",
+        "Garotinho prega ‘compromisso com a verdade’, mas erra ao falar de seu governo",
+        "Crivella disse que Garotinho ‘é pobre’. Será? Nós fomos conferir",
+      ],
+    }
+    const excluirNomeDeUrnaComoSobrenomeCompartilhado = (slug: string, title: string): boolean =>
+      slug === "garotinho" && /^\p{Lu}[\p{L}'’-]+ Garotinho\b/u.test(title)
+    assert.equal(excluirNomeDeUrnaComoSobrenomeCompartilhado("garotinho", exclusoesPorHomônimoOuParentesco.garotinho[0]), true)
+    assert.equal(excluirNomeDeUrnaComoSobrenomeCompartilhado("garotinho", "Garotinho prega ‘compromisso com a verdade’"), false)
+    const filtrados = Object.fromEntries(Object.entries(titulosBrutos).map(([slug, titles]) => {
+      const exclusoes = new Set(exclusoesPorHomônimoOuParentesco[slug] ?? [])
+      return [slug, titles.filter((title) => !exclusoes.has(title) && !excluirNomeDeUrnaComoSobrenomeCompartilhado(slug, title))]
+    }))
+    assert.deepEqual(filtrados["alvaro-dias-rn"], ["Natal: Álvaro Dias exagera sobre isolamento social durante pandemia"])
+    assert.deepEqual(filtrados.garotinho, titulosBrutos.garotinho.slice(1), "Clarissa Garotinho é descartada pela regra de sobrenome compartilhado")
+
+    const contagens = new Map(committedReceipts.receipts.map((receipt) => [receipt.candidate_slug, receipt.leads]))
+    assert.equal(filtrados["alvaro-dias-rn"].length, contagens.get("alvaro-dias-rn"), "somente o lead de Natal pertence ao candidato do RN")
+    assert.equal(filtrados.garotinho.length, contagens.get("garotinho"), "o nome de urna Garotinho não atribui a checagem da filha")
+  })
+
+  it("Samuel Costa sem recibo não é exibido como nenhuma checagem", () => {
+    const target = committedReceipts.receipts.find((receipt) => receipt.candidate_slug === "samuel-costa")
+    assert.equal(target, undefined, "perfil Lupa sem checagem e identidade confirmada não deve ter recibo público")
+    assert.equal(selecionarReciboChecagens(committedReceipts, {
+      candidate_id: "f4e5e4bd-7934-4d04-8534-9a60fac53edd",
+      candidate_slug: "samuel-costa",
+    }), null, "sem recibo, a ficha permanece no estado não coletado")
   })
 
   it("recibos publicados não carregam erro e têm volume coerente", () => {
