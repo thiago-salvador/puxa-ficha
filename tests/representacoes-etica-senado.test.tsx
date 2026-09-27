@@ -199,6 +199,22 @@ describe("ponte PCE → senador → candidato", () => {
     assert.equal(temPapelDeAlvo("em face do Ilustre Senador Fictício Alfa", "Fictício Alfa"), false)
   })
 
+  it("aceita lista plural de representados só com o nome inteiro como item da lista", () => {
+    // singular continua valendo
+    assert.equal(temPapelDeAlvo("em face do Senador Fictício Alfa, com fundamento", "Fictício Alfa"), true)
+    // plural com o nome na lista, inclusive no meio e depois de "e da Senadora"
+    assert.equal(temPapelDeAlvo("em face dos Senadores Fictício Alfa e Fictício Gama, com fundamento", "Fictício Gama"), true)
+    assert.equal(temPapelDeAlvo("em face dos Senadores Fictício Alfa, Fictício Gama e Fictício Delta, com fundamento", "Fictício Gama"), true)
+    assert.equal(temPapelDeAlvo("em face dos Senadores Fictício Alfa e Fictício Gama e da Senadora Fictícia Beta com fundamento", "Fictícia Beta"), true)
+    assert.equal(temPapelDeAlvo("contra as Senadoras Fictícia Beta e Fictícia Épsilon", "Fictícia Epsilon"), true)
+    // plural sem o nome, ou com o nome só como pedaço de outro item
+    assert.equal(temPapelDeAlvo("em face dos Senadores Fictício Gama e Fictício Delta, com fundamento", "Fictício Alfa"), false)
+    assert.equal(temPapelDeAlvo("em face dos Senadores Fictício Alfa Neto e Fictício Gama", "Fictício Alfa"), false)
+    // nome só como autor: fora da lista de representados
+    assert.equal(temPapelDeAlvo("Requer o Senador Fictício Alfa a abertura de procedimento em face dos Senadores Fictício Gama e Fictício Delta", "Fictício Alfa"), false)
+    assert.equal(temPapelDeAlvo("em face dos Senadores Fictício Gama e Fictício Delta, com fundamento em denúncia do Senador Fictício Alfa", "Fictício Alfa"), false)
+  })
+
   it("recusa autoria confundida com alvo, nome incompatível e link de candidato por rótulo", async () => {
     const fila = await filaFixture()
     const item = fila.itens[0]!

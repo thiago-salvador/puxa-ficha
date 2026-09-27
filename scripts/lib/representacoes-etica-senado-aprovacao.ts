@@ -62,11 +62,54 @@ function tratamentoFormal(tokens: readonly string[]): boolean {
   return true
 }
 
-/** Confere nome oficial depois de papel explícito e até três tokens de tratamento formal. */
+const papeisDeAlvoPlural = [["EM", "FACE", "DOS"], ["EM", "FACE", "DAS"], ["CONTRA", "OS"], ["CONTRA", "AS"]] as const
+const tratamentosPlural = new Set(["SENADORES", "SENADORAS"])
+const artigosDaLista = new Set(["DO", "DA", "DOS", "DAS"])
+// Palavra que encerra a lista de representados ("..., com fundamento", "por quebra de decoro").
+const fimDaLista = new Set(["COM", "POR", "PELO", "PELA", "PELOS", "PELAS", "PARA", "QUE", "EM", "NOS", "NO", "NA", "NAS", "AO", "AOS", "CONFORME", "TENDO"])
+
+function tokensComVirgula(value: string): string[] {
+  return stripAccents(value).toLocaleUpperCase("pt-BR").replace(/[,;]/g, " , ").replace(/[^A-Z0-9,]+/g, " ").trim().split(/\s+/).filter(Boolean)
+}
+
+/**
+ * Nomes da lista depois de "em face dos/das" ou "contra os/as". A lista vai até
+ * a primeira palavra de fim ("com fundamento"); os itens são separados por
+ * vírgula ou "e", e cada item perde artigo e tratamento ("e da Senadora X").
+ */
+function alvosDaListaPlural(trecho: string): string[] {
+  const tokens = tokensComVirgula(trecho)
+  const alvos: string[] = []
+  for (const papel of papeisDeAlvoPlural) {
+    for (let index = 0; index < tokens.length; index += 1) {
+      if (!papel.every((token, offset) => tokens[index + offset] === token)) continue
+      let fim = index + papel.length
+      while (fim < tokens.length && !fimDaLista.has(tokens[fim]!)) fim += 1
+      const itens: string[][] = [[]]
+      for (const token of tokens.slice(index + papel.length, fim)) {
+        if (token === "," || token === "E") itens.push([])
+        else itens[itens.length - 1]!.push(token)
+      }
+      for (const item of itens) {
+        let inicio = 0
+        if (artigosDaLista.has(item[inicio] ?? "") && (tratamentosPlural.has(item[inicio + 1] ?? "") || tratamentosSimples.has(item[inicio + 1] ?? ""))) inicio += 1
+        while (inicio < item.length && (tratamentosPlural.has(item[inicio]!) || tratamentosSimples.has(item[inicio]!))) inicio += 1
+        if (inicio < item.length) alvos.push(item.slice(inicio).join(" "))
+      }
+    }
+  }
+  return alvos
+}
+
+/**
+ * Confere nome oficial depois de papel explícito e até três tokens de tratamento
+ * formal, ou como item inteiro de uma lista plural de representados.
+ */
 export function temPapelDeAlvo(trecho: string, nomeOficial: string): boolean {
   const tokens = compact(trecho).split(" ").filter(Boolean)
   const nome = compact(nomeOficial).split(" ").filter(Boolean)
   if (nome.length === 0) return false
+  if (alvosDaListaPlural(trecho).includes(nome.join(" "))) return true
   return papeisDeAlvo.some((papel) => tokens.some((_, index) => {
     if (!papel.every((token, offset) => tokens[index + offset] === token)) return false
     const inicio = index + papel.length
@@ -152,9 +195,12 @@ export function aprovarPceSenado(options: {
     const names = [entry.nome, entry.nome_completo].map(compact).filter(Boolean)
     return names.some((name) => evidencePadded.includes(` ${name} `))
   })
-  if (rosterMentions.length > 1) throw new Error("trecho de identidade menciona mais de um senador do roster oficial")
+  // Mais de um senador no trecho só vale quando todos são itens da lista plural de representados.
+  const alvosPlural = alvosDaListaPlural(revisao.trecho_ementa)
+  const todosNaLista = rosterMentions.every((entry) => [entry.nome, entry.nome_completo].filter(Boolean).some((name) => alvosPlural.includes(compact(name))))
+  if (rosterMentions.length > 1 && !todosNaLista) throw new Error("trecho de identidade menciona mais de um senador do roster oficial")
   const senatorNames = [senator.nome, senator.nome_completo].filter(Boolean)
-  const alvoExplicito = senatorNames.some((name) => temPapelDeAlvo(evidence, name))
+  const alvoExplicito = senatorNames.some((name) => temPapelDeAlvo(revisao.trecho_ementa, name))
   if (!alvoExplicito) throw new Error("trecho não identifica o senador escolhido como representado após 'em face do/da' ou 'contra o/a'")
 
   const candidates = options.seed.filter((candidate) => candidate.ids?.senado === revisao.senador_id)
