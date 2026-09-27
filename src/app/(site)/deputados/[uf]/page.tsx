@@ -8,7 +8,7 @@ import { buildTwitterMetadata } from "@/lib/metadata"
 import { getEstadoNome, getEstadoUFs } from "@/lib/br-uf"
 import { getDeputadosRoster, type DeputadoCargo } from "@/lib/deputados-roster"
 
-export const revalidate = 3600
+export const revalidate = 43200
 
 export function generateStaticParams() {
   return getEstadoUFs().map((uf) => ({ uf }))

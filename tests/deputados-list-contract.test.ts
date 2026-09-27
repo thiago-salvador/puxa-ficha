@@ -13,7 +13,7 @@ test("rota de deputados expõe UF, abas, paginação e metadata por UF", () => {
   assert.match(route, /deputado_federal/)
   assert.match(route, /deputado_estadual|deputado_distrital/)
   assert.match(route, /searchParams/)
-  assert.match(route, /revalidate = 3600/)
+  assert.match(route, /revalidate = 43200/)
   assert.match(route, /opengraph-image/)
 })
 

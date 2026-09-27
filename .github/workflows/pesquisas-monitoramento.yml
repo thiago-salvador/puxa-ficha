@@ -24,8 +24,9 @@ on:
         required: true
         type: boolean
         default: true
-  schedule:
-    - cron: "17 10 * * *"
+  # Sem agenda desde 27/09/2026: o cron diário falhava bloqueado nas fontes
+  # (robots do TSE, Folha recusando IPs do GitHub) e as pesquisas entram pela
+  # importação manual (scripts/pesquisas-importar-manual.ts). Rodar à mão.
 
 permissions:
   contents: read

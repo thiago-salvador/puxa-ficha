@@ -438,7 +438,7 @@ probe_cron_freshness() {
   while IFS=$'\t' read -r name age; do
     [[ -z "$name" ]] && continue
     limit_hours="$max_hours"
-    [[ "$name" == "revalidate-public-cache" ]] && limit_hours=1
+    [[ "$name" == "revalidate-public-cache" ]] && limit_hours=13
     if [[ "$age" == "null" ]]; then
       if [[ "$name" == "news-refresh-recover" || "$name" == "published-consistency" || "$name" == "revalidate-public-cache" ]]; then
         ANOMALIES=$((ANOMALIES + 1))

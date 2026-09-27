@@ -37,7 +37,7 @@ describe("cron GET /api/internal/revalidate-public-cache", () => {
     }
     const entry = vercel.crons.find((cron) => cron.path === "/api/internal/revalidate-public-cache")
     assert.ok(entry, "faltou o cron /api/internal/revalidate-public-cache em vercel.json")
-    assert.equal(entry.schedule, "*/15 * * * *")
+    assert.equal(entry.schedule, "17 9,21 * * *")
   })
 
   it("Settings documenta o cron de 15 minutos", () => {

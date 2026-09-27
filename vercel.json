@@ -24,7 +24,7 @@
     },
     {
       "path": "/api/internal/revalidate-public-cache",
-      "schedule": "*/15 * * * *"
+      "schedule": "17 9,21 * * *"
     }
   ]
 }
