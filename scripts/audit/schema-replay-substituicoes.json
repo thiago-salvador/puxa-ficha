@@ -1,6 +1,8 @@
 {
   "_comentario": "Separacao aditiva das migrations mistas ja aplicadas. Os arquivos de origem permanecem imutaveis como historico de curadoria; o substituto puro de schema reproduz apenas a DDL. O replay de schema exclui uma origem somente se o hash continuar igual e o substituto existir e for schema puro.",
-  "schema_dump_sha256": "723838642b85db170cd91d2cda6be15a3b018a372d6570d1b11dc542ca326f40",
+  "schema_dump_sha256": "eed309f35eff7889947a07d4ab2d71e988c0399595baa0f551f8fc8b870092a0",
+  "_comentario_20260927030200": "CHECK de data de nascimento sentinela em candidatos (DDL pura) depois de duas migrations somente de dados: --schema-gate PG17 mediu 124 aplicadas, 401 puladas e zero falhas em 525 migrations; hash eed309f35eff7889947a07d4ab2d71e988c0399595baa0f551f8fc8b870092a0.",
+  "_comentario_20260926190100": "CHECK de numero CNJ em processos e a funcao processo_numero_cnj_valido: --schema-gate PG17 mediu 123 aplicadas, 397 puladas e zero falhas em 520 migrations; o dump mudou para 7fc51c84eabc8e22bd2dd1130cdf735eafc8df37bd57ba7e30e0b48bdcbb0fc1.",
   "_comentario_20260925221042": "Quarentena ampliada de gastos e migration somente de dados: --schema-gate PG17 mediu 122 aplicadas, 391 puladas e zero falhas em 513 migrations; hash de schema inalterado 723838642b85db170cd91d2cda6be15a3b018a372d6570d1b11dc542ca326f40.",
   "_comentario_20260925163543": "Quarentena dos 57 gastos em schema e curadoria separados: --schema-gate PG17 mediu 122 aplicadas, 387 puladas e zero falhas em 509 migrations. Novas colunas despublicado_em, despublicacao_motivo e coletado_em e policy de leitura mudaram o dump para 723838642b85db170cd91d2cda6be15a3b018a372d6570d1b11dc542ca326f40.",
   "_comentario_20260924205031": "Sites e situacao TSE sao migrations somente de dados: --schema-gate PG17 mediu 121 aplicadas, 386 puladas e zero falhas em 507 migrations; hash de schema inalterado 830241ffa7174576e53b01533a775d46d3dd2f93802cb884bf4c873c9c104cd0.",

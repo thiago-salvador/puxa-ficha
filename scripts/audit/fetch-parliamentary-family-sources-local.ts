@@ -77,7 +77,13 @@ function readVoteIds(path: string | null): string[] {
   if (!path) return []
   const value = JSON.parse(readFileSync(path, "utf8")) as unknown
   const rows = Array.isArray(value) ? value : (value && typeof value === "object" && Array.isArray((value as { votacoes?: unknown[] }).votacoes) ? (value as { votacoes: unknown[] }).votacoes : [])
-  return [...new Set(rows.map((row) => typeof row === "string" ? row : (row && typeof row === "object" ? (row as Record<string, unknown>).votacao_id_api ?? (row as Record<string, unknown>).id : null)).map(id).filter((value): value is string => value !== null))]
+  return [...new Set(rows.map((row) => typeof row === "string" ? row : (row && typeof row === "object" ? (row as Record<string, unknown>).votacao_id_api ?? (row as Record<string, unknown>).id : null)).map(voteId).filter((value): value is string => value !== null))]
+}
+
+/** ID de votação da Câmara na API v2: `<idProposicao>-<sequência>` (ex.: 2270800-135). */
+export function voteId(value: unknown): string | null {
+  const normalized = String(value ?? "").trim()
+  return /^\d+-\d+$/.test(normalized) ? normalized : null
 }
 
 function readReadbacks(path: string | null): ReadbackIndex {

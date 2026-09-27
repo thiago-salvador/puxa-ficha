@@ -6,6 +6,7 @@ import { isAllowedImageSource } from "@/lib/remote-image-hosts"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { fixedCopy, formatCargoDisputadoPublicLabel, formatVoteBadgeLabel } from "@/lib/ui-labels"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
+import { estadoValorPatrimonio } from "@/lib/patrimonio-contexto"
 
 // ── Dimensions ────────────────────────────────────────────
 export type CardFormat = "feed" | "story"
@@ -147,7 +148,8 @@ export function extractCardData(
     cargo: formatCargoDisputadoPublicLabel(ficha.cargo_disputado),
     estado: ficha.estado,
     photoDataUri,
-    patrimonio: latest ? fmtCompact(latest.valor_total) : "N/D",
+    // Zero que é ausência de valor (anexo, lista sem valores) não vira "R$ 0".
+    patrimonio: latest && estadoValorPatrimonio(latest) !== "valor_nao_informado" ? fmtCompact(latest.valor_total) : "N/D",
     patrimonioAno: latest ? String(latest.ano_eleicao) : null,
     processos: ficha.total_processos ?? 0,
     processosCriminais: ficha.processos_criminais ?? 0,

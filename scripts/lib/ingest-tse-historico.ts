@@ -20,6 +20,7 @@ import { sanitizePublicText } from "@/lib/public-text"
 import { canonicalizeEstadoForStorage } from "@/lib/br-uf"
 import { downloadToFile } from "./download-to-file"
 import { resolveEffectiveElectionContext } from "./tse-effective-election-year"
+import { parseEleitoStatus, shouldOmitFromHistoricoDescricao } from "./tse-historico-regras"
 
 const DATA_DIR = resolve(process.cwd(), "data/tse-historico")
 // Eleicoes gerais (federais/estaduais): anos pares divisíveis por 4 (exceto 2000s)
@@ -59,30 +60,6 @@ function normalizePartySigla(value: string): string {
   return canonical?.sigla ?? value.trim().toUpperCase()
 }
 
-function parseEleitoStatus(dsSitTotTurno: string): { eleito: boolean; descricao: string } {
-  const upper = (dsSitTotTurno || "").trim().toUpperCase()
-  // "NÃO ELEITO" contains "ELEITO" — must check negatives first
-  const naoEleitoTerms = ["NAO ELEITO", "NÃO ELEITO", "NULO", "#NULO#", "INDEFERIDO", "RENÚNCIA", "RENUNCIA", "CASSADO", "FALECIDO", "2º TURNO", "2O TURNO", "SUPLENTE"]
-  if (!upper || naoEleitoTerms.some((t) => upper.includes(t))) {
-    return { eleito: false, descricao: dsSitTotTurno.trim() || "Resultado não informado" }
-  }
-  const eleitoTerms = ["ELEITO", "ELEITO POR QP", "ELEITO POR MEDIA", "MEDIA"]
-  const isEleito = eleitoTerms.some((t) => upper.includes(t))
-  return { eleito: isEleito, descricao: dsSitTotTurno.trim() || "Resultado não informado" }
-}
-
-/** Não persistir em historico (decisão editorial): sem pleito válido ou registro cassado/falecido. */
-function shouldOmitFromHistoricoDescricao(descricao: string): boolean {
-  const u = descricao.toUpperCase()
-  return (
-    u.includes("INDEFERIDO") ||
-    u.includes("#NULO#") ||
-    u.includes("RENÚNCIA") ||
-    u.includes("RENUNCIA") ||
-    u.includes("CASSADO") ||
-    u.includes("FALECIDO")
-  )
-}
 
 /** Higiene do texto público, sem inferir um resultado eleitoral ausente. */
 export function buildTseHistoricoObservacoes(resultado: string, ano: number, eleito: boolean): string {

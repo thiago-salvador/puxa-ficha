@@ -147,7 +147,8 @@ export function humanizarDetalheAusenciaPatrimonio(detalhe: string | null | unde
   if (!detalhe) return detalhe ?? null
   if (/ST[_\s]?DECLARAR[_\s]?BENS\s*[=:]\s*S\b/i.test(detalhe)) return detalhe
   const declaracaoNegativa = /ST[_\s]?DECLARAR[_\s]?BENS\s*[=:]\s*N\b/i.test(detalhe)
-  const identidade = /SQ[_\s]?CANDIDATO/i.test(detalhe)
+  // Duas redações de identidade nos recibos: "SQ_CANDIDATO" e "este sequencial".
+  const identidade = /SQ[_\s]?CANDIDATO|\bsequencial\b/i.test(detalhe)
   const semBem = /(?:não|nao|sem|nenhum)[^.;,]*(?:bem(?:es)?|bens|patrim[oô]nio)/i.test(detalhe)
   if (!declaracaoNegativa || !identidade || !semBem) return detalhe
   return "Nenhum registro de bens foi localizado para esta candidatura no arquivo oficial consultado. Isso não comprova ausência de patrimônio nem de declaração."

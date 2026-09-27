@@ -4,6 +4,7 @@ import { fetchJSON, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
 import { finalizarColeta, registrarErroColeta } from "./coleta-resultado"
 import type { IngestResult } from "./types"
+import { isYearOnlyBirthDate, secondarySourceBirthDate } from "./data-nascimento"
 import { extrairPerfilSocial, type RedeSocialComPerfil } from "../../src/lib/social-profile-url"
 
 const args = process.argv.slice(2)
@@ -383,10 +384,6 @@ function parseWikiBirthDate(rawValue: string | null): string | null {
   return null
 }
 
-function isYearOnlyBirthDate(value: string | null): boolean {
-  return Boolean(value && /^\d{4}-01-01$/.test(value))
-}
-
 function isInvalidStructuredText(value: unknown): boolean {
   if (typeof value !== "string") return false
   const normalized = value.trim()
@@ -474,8 +471,9 @@ function mergeFallbackUpdates(
 
   const mergedState = { ...existing, ...pendingUpdates }
   if (fb.foto_url && !mergedState.foto_url) pendingUpdates.foto_url = fb.foto_url
-  if (fb.data_nascimento && (!mergedState.data_nascimento || isYearOnlyBirthDate(String(mergedState.data_nascimento)))) {
-    pendingUpdates.data_nascimento = fb.data_nascimento
+  const fbNascimento = secondarySourceBirthDate(fb.data_nascimento)
+  if (fbNascimento && (!mergedState.data_nascimento || isYearOnlyBirthDate(String(mergedState.data_nascimento)))) {
+    pendingUpdates.data_nascimento = fbNascimento
   }
   if (fb.naturalidade && (!mergedState.naturalidade || isInvalidStructuredText(mergedState.naturalidade))) {
     pendingUpdates.naturalidade = fb.naturalidade
@@ -544,7 +542,8 @@ async function applyFallback(slug: string, candidatoId: string, existing: Record
   const updates: Record<string, unknown> = {}
 
   if (fb.foto_url && !existing.foto_url) updates.foto_url = fb.foto_url
-  if (fb.data_nascimento && !existing.data_nascimento) updates.data_nascimento = fb.data_nascimento
+  const fbNascimento = secondarySourceBirthDate(fb.data_nascimento)
+  if (fbNascimento && !existing.data_nascimento) updates.data_nascimento = fbNascimento
   if (fb.naturalidade && !existing.naturalidade) updates.naturalidade = fb.naturalidade
   if (fb.formacao_instituicao && !existing.formacao_instituicao) {
     updates.formacao_instituicao = fb.formacao_instituicao
@@ -712,7 +711,8 @@ export async function enrichWikipedia(overrides: Partial<EnrichWikipediaDependen
           await deps.wait(300)
         }
 
-        const dataNascimento = pickBestBirthDate(wd.dataNascimento, wikiStructured.dataNascimento)
+        // Só ano (1º de janeiro) ou sentinela não vira nascimento na ficha.
+        const dataNascimento = secondarySourceBirthDate(pickBestBirthDate(wd.dataNascimento, wikiStructured.dataNascimento))
         const naturalidade = wd.naturalidade ?? wikiStructured.naturalidade
         const educacao = wd.formacao ?? wikiStructured.formacao
         if (!existing.data_nascimento && dataNascimento) {

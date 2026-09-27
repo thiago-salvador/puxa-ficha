@@ -15,14 +15,16 @@ import { FONTE_CAMARA_PROPOSICOES, registrarColeta, type EntradaColeta } from ".
 import { loadCandidatosPublicos, loadVerificacaoCampos, resolveCandidatoId } from "./helpers-db"
 import { deveProcessarAcervoLegislativo, reciboAcervoCongelado } from "./acervo-legislativo-congelado"
 import { fetchJSON, sleep } from "./helpers"
+import { CAMARA_API, resultadoSemAlcance, sondarAlcanceCamara, type AlcanceCamara } from "./camara-alcance"
 import { namesLookCompatible } from "./name-match"
 import { assertSemReplacementChar } from "./ceaps-csv-encoding"
 import { sanitizePublicTextOrThrow } from "../../src/lib/public-text"
 import { log, warn, error } from "./logger"
 import { classificarVotacao, type ClassificacaoVotacao } from "./votacao-classificacao"
 import type { IngestResult } from "./types"
+import { secondarySourceBirthDate } from "./data-nascimento"
 
-const API = "https://dadosabertos.camara.leg.br/api/v2"
+const API = CAMARA_API
 
 /** Camara public API is often slow; 15s default caused frequent AbortError under load. */
 const CAMARA_FETCH_RETRIES = 5
@@ -257,6 +259,74 @@ function asMessage(err: unknown): string {
   return err instanceof Error ? err.message : String(err)
 }
 
+/**
+ * Legislatura da Câmara em curso na data. A legislatura N começa em 1º de
+ * fevereiro de 1991 + 4 * (N - 49) e termina em 31 de janeiro quatro anos
+ * depois, então janeiro ainda pertence à legislatura do ano anterior.
+ */
+export function legislaturaCamaraVigente(agora: Date = new Date()): number {
+  const ano = agora.getUTCMonth() === 0 ? agora.getUTCFullYear() - 1 : agora.getUTCFullYear()
+  return 49 + Math.floor((ano - 1991) / 4)
+}
+
+/**
+ * `ultimoStatus` da API da Câmara descreve o último mandato do deputado na
+ * Casa, com a situação daquele mandato: um ex-deputado da legislatura 51
+ * volta com situacao "Exercício" e o partido de 1999-2003. Só conta como
+ * mandato atual quando a situação é exercício E a legislatura é a vigente;
+ * sem `idLegislatura`, não há como provar que o status é atual.
+ */
+export function mandatoCamaraVigente(
+  status: Record<string, unknown> | undefined,
+  agora: Date = new Date(),
+): boolean {
+  if (!status) return false
+  const emExercicio = String(status.situacao || "").toLowerCase().includes("exerc")
+  const legislatura = Number(status.idLegislatura)
+  return emExercicio && Number.isInteger(legislatura) && legislatura === legislaturaCamaraVigente(agora)
+}
+
+/**
+ * Colunas de `candidatos` que o perfil da Câmara atualiza, sem rede nem banco.
+ * Partido e cargo_atual só entram quando `ultimoStatus` é um mandato em
+ * exercício na legislatura vigente (mandatoCamaraVigente): um ex-deputado
+ * volta da API com o status do último mandato na Casa, e esse status não pode
+ * sobrescrever o partido de hoje.
+ */
+export function atualizacoesPerfilCamara(
+  dep: Record<string, unknown>,
+  opcoes: { agora?: Date; fotoAtual?: string | null } = {},
+): Record<string, unknown> {
+  const agora = opcoes.agora ?? new Date()
+  const status = dep.ultimoStatus as Record<string, unknown> | undefined
+  const updates: Record<string, unknown> = {
+    ultima_atualizacao: agora.toISOString(),
+  }
+
+  if (status) {
+    const isDeputyInExercise = mandatoCamaraVigente(status, agora)
+
+    if (status.urlFoto && !opcoes.fotoAtual) updates.foto_url = status.urlFoto
+    // The Camara profile reflects the deputy's last mandate there. For ex-deputies it is
+    // frequently stale and must not override current-party curation.
+    if (isDeputyInExercise && status.siglaPartido) {
+      updates.partido_sigla = status.siglaPartido
+      updates.partido_atual = status.siglaPartido
+    }
+
+    if (isDeputyInExercise) {
+      updates.cargo_atual = "Deputado(a) Federal"
+    }
+  }
+  if (dep.escolaridade) updates.formacao = dep.escolaridade
+  if (dep.municipioNascimento && dep.ufNascimento) {
+    updates.naturalidade = `${dep.municipioNascimento}/${dep.ufNascimento}`
+  }
+  const nascimento = secondarySourceBirthDate(dep.dataNascimento)
+  if (nascimento) updates.data_nascimento = nascimento
+  return updates
+}
+
 async function ingestPerfil(
   idCamara: number,
   candidatoId: string,
@@ -290,35 +360,13 @@ async function ingestPerfil(
     )
   }
 
-  const updates: Record<string, unknown> = {
-    ultima_atualizacao: new Date().toISOString(),
+  // Only set photo if candidate doesn't already have one (Wikipedia photos preferred)
+  let fotoAtual: string | null = null
+  if (status?.urlFoto) {
+    const { data: current } = await supabase.from("candidatos").select("foto_url").eq("id", candidatoId).single()
+    fotoAtual = current?.foto_url ?? null
   }
-
-  if (status) {
-    const situacaoAtual = String(status.situacao || "").toLowerCase()
-    const isDeputyInExercise = situacaoAtual.includes("exerc")
-
-    // Only set photo if candidate doesn't already have one (Wikipedia photos preferred)
-    if (status.urlFoto) {
-      const { data: current } = await supabase.from("candidatos").select("foto_url").eq("id", candidatoId).single()
-      if (!current?.foto_url) updates.foto_url = status.urlFoto
-    }
-    // The Camara profile reflects the deputy's last mandate there. For ex-deputies it is
-    // frequently stale and must not override current-party curation.
-    if (isDeputyInExercise && status.siglaPartido) {
-      updates.partido_sigla = status.siglaPartido
-      updates.partido_atual = status.siglaPartido
-    }
-
-    if (isDeputyInExercise) {
-      updates.cargo_atual = "Deputado(a) Federal"
-    }
-  }
-  if (dep.escolaridade) updates.formacao = dep.escolaridade
-  if (dep.municipioNascimento && dep.ufNascimento) {
-    updates.naturalidade = `${dep.municipioNascimento}/${dep.ufNascimento}`
-  }
-  if (dep.dataNascimento) updates.data_nascimento = dep.dataNascimento
+  const updates = atualizacoesPerfilCamara(dep, { fotoAtual })
 
   await supabase.from("candidatos").update(updates).eq("id", candidatoId)
   log("camara", `  ${slug}: perfil atualizado`)
@@ -1185,6 +1233,15 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
   const verificacaoPorSlug = await loadVerificacaoCampos(candidatos.map((cand) => cand.slug))
   const results: IngestResult[] = []
 
+  // Pre-voo de alcance (camara-alcance.ts): origem que recusa conexao vira um
+  // erro por ficha em ~1 min, em vez de ~100 s por ficha ate o teto do job.
+  // O modo so-cache nao usa rede e nao sonda.
+  let alcance: AlcanceCamara = { ok: true }
+  if (!opts.expenseSnapshotCacheOnly && candidatos.some((cand) => cand.ids.camara)) {
+    alcance = await sondarAlcanceCamara()
+    if (!alcance.ok) error("camara", `API inalcancavel, nenhuma ficha sera tentada: ${alcance.motivo}`)
+  }
+
   for (const cand of candidatos) {
     if (!cand.ids.camara) continue
     const start = Date.now()
@@ -1204,6 +1261,11 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
       result.duration_ms = Date.now() - start
       log("camara", `  ${cand.slug}: ${result.skip_reason}`)
       results.push(result)
+      continue
+    }
+
+    if (!alcance.ok) {
+      results.push(resultadoSemAlcance(cand.slug, alcance.motivo))
       continue
     }
 

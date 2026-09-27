@@ -164,15 +164,41 @@ export function escopoDaFonte(fonte: string): EscopoColeta {
 }
 
 /**
+ * Formato aceito em `PF_COLETA_EXECUCAO`: `local:<host>:<timestamp UTC>`, como
+ * `local:mac-estudio:20260930T060000Z`. Quem define é o agente agendado de
+ * scripts/camara-local/, para que as rodadas semanais da Câmara fora do
+ * GitHub se distingam no `coleta_log` por máquina e horário, não por pid.
+ */
+const EXECUCAO_LOCAL_AGENDADA = /^local:[a-z0-9][a-z0-9-]{0,62}:\d{8}T\d{6}Z$/
+
+/**
  * Identificador da execução, para agrupar tudo que uma rodada tentou.
  *
- * `GITHUB_RUN_ID` no CI. Fora dele, `local:<pid>`, que basta para separar duas
- * rodadas na mesma máquina. Resolvido uma vez por processo de propósito: o valor
- * precisa ser o mesmo em todas as linhas da mesma rodada.
+ * `GITHUB_RUN_ID` no CI. Fora dele, `PF_COLETA_EXECUCAO` quando o agente
+ * agendado o define, e `local:<pid>` no resto, que basta para separar duas
+ * rodadas na mesma máquina. Valor fora do formato derruba o processo antes de
+ * qualquer escrita: recibo com execução inventada não se agrupa com nada.
  */
-export const EXECUCAO: string = process.env.GITHUB_RUN_ID
-  ? `gh:${process.env.GITHUB_RUN_ID}`
-  : `local:${process.pid}`
+export function resolverExecucao(
+  entrada: { githubRunId?: string; execucaoAgendada?: string },
+  pid: number,
+): string {
+  if (entrada.githubRunId) return `gh:${entrada.githubRunId}`
+  const agendada = entrada.execucaoAgendada
+  if (agendada !== undefined && agendada !== "") {
+    if (!EXECUCAO_LOCAL_AGENDADA.test(agendada)) {
+      throw new Error(`PF_COLETA_EXECUCAO fora do formato local:<host>:<AAAAMMDDTHHMMSSZ>: ${agendada}`)
+    }
+    return agendada
+  }
+  return `local:${pid}`
+}
+
+/** Resolvido uma vez por processo: o valor precisa ser o mesmo em todas as linhas da rodada. */
+export const EXECUCAO: string = resolverExecucao(
+  { githubRunId: process.env.GITHUB_RUN_ID, execucaoAgendada: process.env.PF_COLETA_EXECUCAO },
+  process.pid,
+)
 
 /** Cache slug -> id, para não repetir 194 selects por ingest. */
 let cacheCandidatoIds: Map<string, string> | null = null

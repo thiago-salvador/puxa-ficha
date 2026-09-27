@@ -176,10 +176,26 @@ async function tentarFetchJSON<T>(
     }
     // `fetch failed` do undici: erro de rede sem status, que e exatamente o que
     // a escada de espera existe para atravessar.
-    return { ok: false, erro: err instanceof Error ? err : new Error(String(err)), retentavel: true }
+    return { ok: false, erro: comCausaDeRede(err), retentavel: true }
   } finally {
     clearTimeout(timer)
   }
+}
+
+/**
+ * `fetch failed` nu esconde o motivo em `err.cause.code`. Em 26/09/2026 o
+ * ingest da Camara passou 90 min gravando "fetch failed" em 50 de 50 fichas, e
+ * so o diagnostico no runner mostrou `UND_ERR_CONNECT_TIMEOUT`: o SYN para a
+ * porta 443 nunca voltava. O codigo entra na mensagem, que e o que chega ao
+ * `coleta_log` e ao log do job; a mensagem continua comecando por
+ * `fetch failed`, que e o que os classificadores existentes procuram.
+ */
+export function comCausaDeRede(err: unknown): Error {
+  if (!(err instanceof Error)) return new Error(String(err))
+  const causa = (err as Error & { cause?: { code?: unknown } }).cause
+  const codigo = causa && typeof causa.code === "string" ? causa.code : null
+  if (!codigo || err.message.includes(codigo)) return err
+  return new Error(`${err.message} (${codigo})`, { cause: err })
 }
 
 export async function fetchJSON<T>(

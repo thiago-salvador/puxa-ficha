@@ -505,6 +505,22 @@ const FRESHNESS_DAYS: Record<CoverageFamily, number | null> = {
   gastos_executivo: 90, processos: 14, sites_tse: null, chapa_vice: null,
 }
 
+/**
+ * Família guiada por revisão oficial, sem prazo em dias: a prova só cai por
+ * payload alterado ou por coleta posterior sem conclusão. Coletor agendado
+ * dessas famílias grava toda rodada, inclusive o recibo aberto.
+ */
+export function familyWithoutFreshnessSla(family: CoverageFamily): boolean {
+  return FRESHNESS_DAYS[family] === null
+}
+
+/**
+ * Prazo da prova nas famílias guiadas por revisão que têm coletor agendado.
+ * Sem ele, cron parado deixaria a prova valendo para sempre. Histórico roda
+ * semanal; 21 dias toleram duas rodadas perdidas.
+ */
+const PROOF_MAX_AGE_DAYS: Partial<Record<CoverageFamily, number>> = { historico_politico: 21 }
+
 function hasMaterializedData(profile: CoverageProfile, family: CoverageFamily): boolean {
   if (family === "perfil_atual") return CORE_FIELDS.every((field) => text(profile[field]) !== null)
   if (family === "processos") return Array.isArray(profile.processos) && profile.processos.length > 0
@@ -780,10 +796,19 @@ function provenVerdict(receipt: Receipt | null, profile: CoverageProfile, family
     return { estado: "erro", motivo: "prova de publicado sem linha no payload público", receipt: proof }
   }
   const provedAt = Date.parse(parseDate(proof.executado_em)!)
+  const maxAge = PROOF_MAX_AGE_DAYS[family]
+  if (maxAge !== undefined && Date.now() - provedAt > maxAge * 86_400_000) {
+    return { estado: "desatualizado", motivo: `prova de revisão com mais de ${maxAge} dias`, receipt: proof }
+  }
   const later = Object.values(record(receipt?.__receipts) ?? {}).map(record)
     .filter((item): item is Receipt => Boolean(item) && Date.parse(parseDate(item!.executado_em) ?? "1970-01-01") > provedAt)
   if (later.some((item) => text(item.resultado) === "erro")) {
     return { estado: "erro", motivo: "erro de coleta posterior à prova de cobertura", receipt: later.find((item) => text(item.resultado) === "erro") }
+  }
+  // Revisão posterior que não concluiu também derruba a prova: sem prazo em
+  // dias, é a única forma de uma divergência nova aparecer na célula.
+  if (later.some((item) => text(item.resultado) === "indeterminado")) {
+    return { estado: "indeterminado", motivo: "coleta posterior à prova sem conclusão", receipt: later.find((item) => text(item.resultado) === "indeterminado") }
   }
   const contradiction = later.find((item) => text(item.resultado) === "vazio_confirmado" && hasMaterializedDataInReceiptScope(profile, family, item))
   if (contradiction) return { estado: "erro", motivo: "vazio posterior à prova contradiz ano publicado", receipt: contradiction }
