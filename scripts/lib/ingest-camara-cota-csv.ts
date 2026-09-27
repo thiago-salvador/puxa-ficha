@@ -91,6 +91,15 @@ function fonteCamaraApiId(fonte: string | null, idCamara?: string | number | nul
   return Boolean(match && idCamara != null && match[1] === String(idCamara))
 }
 
+/**
+ * Rótulo de uma carga antiga da própria cota da Câmara (dados abertos), com
+ * sufixo de onda. É a mesma Casa: só entra na decisão de substituir a linha
+ * que ocupa a chave anual, não na reconciliação de linhas legadas.
+ */
+export function fonteCotaCamaraLegada(fonte: string | null): boolean {
+  return fonte != null && /^Cota Parlamentar\/Camara dadosabertos( \([^)]*\))?$/.test(fonte)
+}
+
 function fonteCamaraReconhecida(fonte: string | null, idCamara?: string | number | null): boolean {
   if (fonte === "Câmara" || fonte === "Camara" || fonte === "Camara CEAP CSV") return true
   return fonteCamaraApiId(fonte, idCamara)
@@ -451,7 +460,7 @@ export async function ingestCamaraCotasCsv(options: { targetSlugs?: string[]; co
         // sem alvo publicado, a linha oficial substitui a ocupante da mesma Casa.
         const chave = target
           ? { acao: "inserir" as const }
-          : decidirChaveOcupada(await lerLinhaNaChave(candidateId, year), (fonte) => fonteCamaraReconhecida(fonte, candidate.ids.camara), { aceitaPublicada: true })
+          : decidirChaveOcupada(await lerLinhaNaChave(candidateId, year), (fonte) => fonteCamaraReconhecida(fonte, candidate.ids.camara) || fonteCotaCamaraLegada(fonte), { aceitaPublicada: true })
         if (chave.acao === "revisao") {
           base.errors.push(`${candidate.slug}:${year} ${chave.motivo}; revisão necessária`)
           continue

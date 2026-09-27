@@ -24,3 +24,11 @@ test("linha publicada só é substituída quando o coletor aceita", () => {
   assert.equal(decidirChaveOcupada(publicada, senado, { aceitaPublicada: false }).acao, "revisao")
   assert.equal(decidirChaveOcupada(publicada, senado, { aceitaPublicada: true }).acao, "substituir")
 })
+
+test("carga antiga da cota da Câmara conta como a mesma Casa só pelo rótulo exato", async () => {
+  const { fonteCotaCamaraLegada } = await import("../scripts/lib/ingest-camara-cota-csv")
+  assert.equal(fonteCotaCamaraLegada("Cota Parlamentar/Camara dadosabertos (onda-p-20260814)"), true)
+  assert.equal(fonteCotaCamaraLegada("Cota Parlamentar/Camara dadosabertos"), true)
+  assert.equal(fonteCotaCamaraLegada("Cota Parlamentar/Senado"), false)
+  assert.equal(fonteCotaCamaraLegada(null), false)
+})
