@@ -300,6 +300,24 @@ describe("coletor de revisão do histórico: rodada com pacote real", () => {
       assert.equal(parcial.receipts[0]?.resultado, "indeterminado")
     } finally { rmSync(dir, { recursive: true, force: true }) }
   })
+
+  it("modo official-only retém linha com CPF mascarado para revisão de identidade", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "pf-hist-official-"))
+    try {
+      const masked = `2024;240000000099;-4;${NOME};${NASC};GOVERNADOR;SP;PC do B;NÃO ELEITO`
+      const anchor = `2026;250000000099;${CPF};${NOME};${NASC};GOVERNADOR;SP;PC do B;NÃO ELEITO`
+      const assets = [pacote(dir, 2024, [masked, ...filler(2024, 3)]), pacote(dir, 2026, [anchor, ...filler(2026, 3)])]
+      const result = await runHistoricoRevision({
+        anos: [2024, 2026], profiles: [subject], seed: [seed], checkedAt: CHECKED,
+        senado: async () => ({ status: "erro", url: "x", motivo: "não usado" }),
+        anosObrigatorios: [2024, 2026], manifest: { assets }, minLinhasPorAno: 2,
+        identityMode: "official-only",
+      })
+      assert.equal(result.receipts[0]?.resultado, "indeterminado")
+      assert.equal(result.receipts[0]?.volume, 0)
+      assert.match(result.review[0]?.motivo ?? "", /vínculo nominal/)
+    } finally { rmSync(dir, { recursive: true, force: true }) }
+  })
 })
 
 describe("coletor de revisão do histórico: CLI puro", () => {

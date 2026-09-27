@@ -13,7 +13,8 @@
  * recibo `tse-financiamento` e um `tse-patrimonio`.
  */
 import { createHash } from "node:crypto"
-import { chmodSync, mkdirSync, writeFileSync } from "node:fs"
+import { createReadStream } from "node:fs"
+import { chmodSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 
@@ -38,6 +39,27 @@ import {
 
 const SCRIPT = "tse-2026-financas"
 const URL_BENS = `https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_${ANO_FINANCAS_2026}.zip`
+
+type AssetManifest = { assets?: Array<{ family?: string; year?: number; path?: string; url?: string; sha256?: string }> }
+
+/** The local Chrome collector supplies source-bound file hashes for receipts. */
+export async function hashesDoManifesto(urlReceitas: string): Promise<{ sha256_receitas?: string; sha256_bens?: string }> {
+  const path = process.env.PF_TSE_2026_ASSET_MANIFEST
+  if (!path) return {}
+  const manifest = JSON.parse(readFileSync(resolve(path), "utf8")) as AssetManifest
+  const hash = async (family: string, url: string): Promise<string> => {
+    const matches = (manifest.assets ?? []).filter((asset) => asset.family === family && asset.year === ANO_FINANCAS_2026 && asset.url === url)
+    if (matches.length !== 1 || !matches[0]?.path || !/^[a-f0-9]{64}$/i.test(matches[0].sha256 ?? "")) {
+      throw new Error(`manifesto TSE: ${family}/2026 sem arquivo e SHA únicos da URL oficial`)
+    }
+    const digest = createHash("sha256")
+    for await (const chunk of createReadStream(resolve(matches[0].path))) digest.update(chunk as Buffer)
+    const actual = digest.digest("hex")
+    if (actual !== matches[0].sha256!.toLowerCase()) throw new Error(`manifesto TSE: SHA divergente para ${family}/2026`)
+    return actual
+  }
+  return { sha256_receitas: await hash("financiamento", urlReceitas), sha256_bens: await hash("patrimonio", URL_BENS) }
+}
 
 export interface OpcoesCli {
   aplicar: boolean
@@ -146,11 +168,12 @@ async function planejar(): Promise<{ plano: PlanoFinancas2026; estado: EstadoPro
   if (erroDeAno) throw new Error(`pacote TSE ${ANO_FINANCAS_2026} indisponível ou inválido: ${erroDeAno.errors.join("; ")}`)
   const estado = await carregarEstado2026()
   const urlReceitas = financiamentoReceitasZipUrls(ANO_FINANCAS_2026).at(-1)!
+  const hashes = await hashesDoManifesto(urlReceitas)
   const plano = planejarFinancas2026({
     publicos,
     planejadas,
     estado,
-    pacote: { url_receitas: urlReceitas, url_bens: URL_BENS },
+    pacote: { url_receitas: urlReceitas, url_bens: URL_BENS, ...hashes },
   })
   return { plano, estado, publicos }
 }

@@ -119,6 +119,8 @@ segura.
 | `PF_JARBAS_TIMEOUT_MS` | Timeout das consultas à API Jarbas de reembolsos da Câmara | Opcional; ausente usa o timeout padrão de fetch dos scripts de ingestão. | Operador local ou workflow |
 | `PF_LOCAL_KEY_FILE` | Arquivo de env com chaves do Supabase local para `scripts/enrich-senado.ts` e `scripts/apply-financiamento-nao-aplicavel.ts` | Opcional; `--key-file` vence. Ausente, os scripts usam o ambiente já carregado. Em `enrich-senado.ts`, caminho inexistente aborta. | Operador local |
 | `PF_KEEP_TSE_DOWNLOADS` | Retenção do download TSE | Opcional; somente `1` preserva o arquivo temporário. | Operador local ou workflow |
+| `PF_TSE_2026_ASSET_MANIFEST` | Manifesto privado do coletor local TSE com URL e SHA dos ZIPs de finanças 2026 | Opcional no planner comum; quando definido, cada arquivo é rehashado antes de incluir SHA no recibo. | Coletor local TSE |
+| `TSE_LOCAL_MODE`, `TSE_LOCAL_EXPECTED_PLAN_SHA` | Modo do launchd local TSE e SHA do plano financeiro revisado | `dry-run` por padrão; `live` exige SHA hexadecimal de 64 caracteres e preflight completo antes de qualquer escrita. | Operador local |
 | `PF_MANUAL_REVIEW_PERIODO_FIM_CSV_PATH` | Saída de revisão manual | Opcional; ausência usa o caminho padrão do script. | Operador local |
 | `PF_AUDIT_RAIZ`, `PF_AUDIT_REPORT_MAX_AGE_MS`, `PF_AUDIT_GENERATED_AT` | Raiz, frescor e relógio de auditorias | Opcionais. Os dois primeiros ajustam o runner; o terceiro existe só na spec visual para relógio determinístico. | Auditoria local ou teste |
 | `PF_EXPECTED_DEPLOY_SHA`, `PF_EXPECTED_SHA` | SHA esperado nos readbacks e applies | Obrigatórias somente para os scripts que as leem; ausência aborta o gate correspondente. | Operador ou workflow |

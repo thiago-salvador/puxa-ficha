@@ -1,0 +1,120 @@
+#!/usr/bin/env bash
+# Coleta local do TSE a partir da main publicada, sob demanda ou via launchd.
+# Uso: ingest-tse-local.sh <clone> [--verificar]
+set -euo pipefail
+umask 077
+
+falhar() { echo "ERRO: $*" >&2; exit 1; }
+avisar() { echo "AVISO: $*" >&2; }
+[ "$(id -u)" -ne 0 ] || falhar "não rode como root"
+repo="${1:-}"
+modo_verificacao="${2:-}"
+[ -n "$repo" ] || falhar "uso: ingest-tse-local.sh <caminho do clone> [--verificar]"
+[ -z "$modo_verificacao" ] || [ "$modo_verificacao" = "--verificar" ] || falhar "opção desconhecida: $modo_verificacao"
+
+repo_url="https://github.com/thiago-salvador/puxa-ficha.git"
+caminho_launcher="scripts/tse-local/ingest-tse-local.sh"
+credenciais="$HOME/.config/puxa-ficha/ingest-tse.env"
+dir_log="$HOME/Library/Logs/puxa-ficha"
+dir_estado="$HOME/Library/Application Support/puxa-ficha"
+node_bin="/opt/homebrew/opt/node@24/bin"
+carimbo="$(date -u +%Y%m%dT%H%M%SZ)"
+mkdir -p "$dir_log" "$dir_estado"
+chmod 700 "$dir_log" "$dir_estado"
+log="$dir_log/ingest-tse-$carimbo.log"
+echo "Log: $log"
+exec >>"$log" 2>&1
+echo "== $(date -u +%Y-%m-%dT%H:%M:%SZ) inicio pid=$$"
+
+trava="$dir_log/.ingest-tse.lock"
+if ! mkdir "$trava" 2>/dev/null; then
+  pid_anterior="$(cat "$trava/pid" 2>/dev/null || true)"
+  if [[ "$pid_anterior" =~ ^[0-9]+$ ]] && kill -0 "$pid_anterior" 2>/dev/null; then falhar "outra rodada em curso (pid $pid_anterior)"; fi
+  avisar "trava órfã (pid '${pid_anterior:-?}' não está vivo); retomando"
+  rm -rf "$trava"
+  mkdir "$trava" || falhar "não consegui retomar a trava $trava"
+fi
+echo "$$" >"$trava/pid"
+base=""
+limpar() {
+  local rc=$?
+  if [ -n "$base" ]; then
+    git -C "$repo" worktree remove --force "$base/repo" >/dev/null 2>&1 || true
+    rm -rf "$base"
+    git -C "$repo" worktree prune >/dev/null 2>&1 || true
+  fi
+  if [ "$(cat "$trava/pid" 2>/dev/null || true)" = "$$" ]; then rm -rf "$trava"; fi
+  echo "== $(date -u +%Y-%m-%dT%H:%M:%SZ) fim rc=$rc"
+}
+trap limpar EXIT
+
+export PATH="$node_bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin"
+versao_node="$(node -v 2>/dev/null || true)"
+case "$versao_node" in v24.*) ;; *) falhar "Node 24 esperado em $node_bin, achei '${versao_node:-nenhum}'" ;; esac
+git -C "$repo" rev-parse --git-dir >/dev/null 2>&1 || falhar "não é um clone git: $repo"
+git -C "$repo" fetch --quiet --no-tags "$repo_url" "+refs/heads/main:refs/remotes/origin/main"
+sha="$(git -C "$repo" rev-parse --verify "refs/remotes/origin/main^{commit}")"
+[[ "$sha" =~ ^[0-9a-f]{40}$ ]] || falhar "SHA inválido para a main: $sha"
+remoto="$(git -C "$repo" ls-remote "$repo_url" refs/heads/main | cut -f1)"
+[ "$remoto" = "$sha" ] || falhar "SHA buscado ($sha) difere do ls-remote ($remoto)"
+echo "main fixada em $sha (conferida com ls-remote)"
+
+arquivo_sha="$dir_estado/ingest-tse-ultimo-sha-main"
+sha_anterior="$(cat "$arquivo_sha" 2>/dev/null || true)"
+if [[ "$sha_anterior" =~ ^[0-9a-f]{40}$ ]] && [ "$sha_anterior" != "$sha" ] && ! git -C "$repo" merge-base --is-ancestor "$sha_anterior" "$sha" 2>/dev/null; then
+  avisar "SHA anterior $sha_anterior não é ancestral de $sha: a main pode ter sido reescrita"
+fi
+echo "$sha" >"$arquivo_sha"
+git -C "$repo" cat-file -e "$sha:$caminho_launcher" 2>/dev/null || falhar "a main $sha não contém $caminho_launcher"
+cmp -s "$0" <(git -C "$repo" show "$sha:$caminho_launcher") || falhar "este launcher difere de $caminho_launcher na main $sha; reinstale pelo instalador"
+echo "launcher confere com a main"
+
+base="$(mktemp -d "${TMPDIR:-/tmp}/pf-tse.XXXXXX")"
+git -C "$repo" worktree add --quiet --detach "$base/repo" "$sha"
+cd "$base/repo"
+[ "$(git rev-parse HEAD)" = "$sha" ] || falhar "worktree fora do SHA fixado"
+npm ci --ignore-scripts --no-audit --no-fund --loglevel=error
+
+if [ "$modo_verificacao" = "--verificar" ]; then
+  [ -x ./node_modules/.bin/tsx ] || falhar "tsx não instalado"
+  echo "VERIFICACAO_OK sha=$sha node=$versao_node"
+  exit 0
+fi
+
+[ -f "$credenciais" ] || falhar "arquivo de credenciais ausente: $credenciais"
+[ ! -L "$credenciais" ] || falhar "arquivo de credenciais não pode ser link simbólico"
+[ "$(stat -f %u "$credenciais")" = "$(id -u)" ] || falhar "arquivo de credenciais precisa ser deste usuário"
+[ "$(stat -f %Lp "$credenciais")" = "600" ] || falhar "arquivo de credenciais precisa de chmod 600"
+url_supabase=""; chave_supabase=""; salt=""; modo_config=""; sha_plano_config=""
+while IFS= read -r linha || [ -n "$linha" ]; do
+  case "$linha" in ""|"#"*) continue ;; esac
+  nome="${linha%%=*}"; valor="${linha#*=}"
+  case "$nome" in
+    SUPABASE_URL) url_supabase="$valor" ;;
+    SUPABASE_SERVICE_ROLE_KEY) chave_supabase="$valor" ;;
+    PF_DOADOR_CPF_HASH_SALT) salt="$valor" ;;
+    TSE_LOCAL_MODE) modo_config="$valor" ;;
+    TSE_LOCAL_EXPECTED_PLAN_SHA) sha_plano_config="$valor" ;;
+    *) falhar "chave não permitida no arquivo de credenciais: $nome" ;;
+  esac
+done <"$credenciais"
+[ -n "$url_supabase" ] && [ -n "$chave_supabase" ] && [ -n "$salt" ] ||
+  falhar "SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY e PF_DOADOR_CPF_HASH_SALT são obrigatórias"
+local_mode="${TSE_LOCAL_MODE:-${modo_config:-dry-run}}"
+case "$local_mode" in dry-run|live) ;; *) falhar "TSE_LOCAL_MODE aceita somente dry-run ou live" ;; esac
+echo "modo TSE=$local_mode"
+expected_plan_sha="${TSE_LOCAL_EXPECTED_PLAN_SHA:-$sha_plano_config}"
+if [ -n "$expected_plan_sha" ] && [[ ! "$expected_plan_sha" =~ ^[a-fA-F0-9]{64}$ ]]; then
+  falhar "TSE_LOCAL_EXPECTED_PLAN_SHA precisa ser um SHA-256 hexadecimal de 64 caracteres"
+fi
+
+if [ "$local_mode" = "live" ]; then
+  [ -n "$expected_plan_sha" ] || falhar "TSE_LOCAL_EXPECTED_PLAN_SHA é obrigatório no modo live"
+  env SUPABASE_URL="$url_supabase" SUPABASE_SERVICE_ROLE_KEY="$chave_supabase" \
+    PF_DOADOR_CPF_HASH_SALT="$salt" PF_KEEP_TSE_DOWNLOADS=1 \
+    npm run ingest:tse:local -- --live "--expected-plan-sha=$expected_plan_sha"
+else
+  env SUPABASE_URL="$url_supabase" SUPABASE_SERVICE_ROLE_KEY="$chave_supabase" \
+    PF_DOADOR_CPF_HASH_SALT="$salt" PF_KEEP_TSE_DOWNLOADS=1 \
+    npm run ingest:tse:local -- --dry-run
+fi

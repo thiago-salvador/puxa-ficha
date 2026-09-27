@@ -18,11 +18,13 @@
  *     --manifest=/privado/tse/tse-family-assets.json --anos=1996,1998,...,2026 \
  *     --public-profiles=/privado/perfis.json --out=/privado/historico-recibos.json \
  *     --revisao=/privado/historico-revisao.json [--candidatos=data/candidatos.json] \
- *     [--senado=live|off] [--checked-at=<ISO>]
+ *     [--senado=live|off] [--checked-at=<ISO>] [--identity-mode=official-only]
  *
  * Só certifica com a lista canônica de anos (HISTORICO_ANOS_CANONICOS) e com
  * cada pacote acima do piso do ciclo (`pisoLinhasDoAno`); fora disso,
  * `indeterminado` ou `erro`.
+ * `official-only` retém para revisão as linhas sem CPF que só poderiam ser
+ * associadas por nome e nascimento; o recibo não certifica essa identidade.
  */
 import { createHash } from "node:crypto"
 import { execFileSync, spawn } from "node:child_process"
@@ -179,6 +181,8 @@ export async function runHistoricoRevision(options: {
   checkedAt: string
   senado: (codigo: string) => Promise<SenadoSource>
   anosObrigatorios?: readonly number[]
+  /** Local collector: never certify a cross-election identity by name alone. */
+  identityMode?: "default" | "official-only"
   /** Só para teste com pacote sintético; em produção vale `pisoLinhasDoAno`. */
   minLinhasPorAno?: number
 }): Promise<HistoricoRevisionRun> {
@@ -231,9 +235,14 @@ export async function runHistoricoRevision(options: {
 
   // Passo 2: toda candidatura ligada à identidade ancorada, em todos os anos.
   const sourceRows = new Map<string, TseCandidacyRow[]>()
+  const nameOnlyCandidates = new Set<string>()
   for (const asset of byYear.values()) {
     await readZip(asset, (row) => {
-      const slugs = row.cpf ? byCpf.get(row.cpf) : row.nomeNascimento ? byName.get(row.nomeNascimento) : undefined
+      const nameCandidates = !row.cpf && row.nomeNascimento ? byName.get(row.nomeNascimento) : undefined
+      if (options.identityMode === "official-only") {
+        for (const slug of nameCandidates ?? []) nameOnlyCandidates.add(slug)
+      }
+      const slugs = row.cpf ? byCpf.get(row.cpf) : options.identityMode === "official-only" ? undefined : nameCandidates
       for (const slug of slugs ?? []) {
         if (belongsToIdentity(row, identities.get(slug)!)) sourceRows.set(slug, [...(sourceRows.get(slug) ?? []), row])
       }
@@ -252,6 +261,18 @@ export async function runHistoricoRevision(options: {
       profile, candidate, identity: identities.get(profile.slug)!, sourceRows: sourceRows.get(profile.slug) ?? [],
       anos, tseRevisions, senado, checkedAt, anosObrigatorios: options.anosObrigatorios ?? HISTORICO_ANOS_CANONICOS,
     })
+    if (options.identityMode === "official-only" && nameOnlyCandidates.has(profile.slug)) {
+      const motivo = "linha oficial sem CPF requer vínculo nominal; revisão de identidade pendente"
+      result.receipt.resultado = "indeterminado"
+      result.receipt.volume = 0
+      result.receipt.detalhe = JSON.stringify({ contract_version: 1, kind: "historico-revisao", family: "historico_politico", motivo, source_revisions: tseRevisions })
+      result.review.push({ slug: profile.slug, tipo: "identidade", motivo })
+    } else if (options.identityMode === "official-only") {
+      const detail = JSON.parse(result.receipt.detalhe) as Record<string, unknown>
+      const proof = detail.coverage_proof as Record<string, unknown> | undefined
+      if (proof?.identity && typeof proof.identity === "object") (proof.identity as Record<string, unknown>).key = "CPF ancorado no SQ do seed"
+      result.receipt.detalhe = JSON.stringify(detail)
+    }
     receipts.push(result.receipt)
     review.push(...result.review)
   }
@@ -271,8 +292,10 @@ async function main(): Promise<void> {
   const manifestPath = option("manifest")
   const manifest = manifestPath && existsSync(resolve(manifestPath)) ? JSON.parse(readFileSync(resolve(manifestPath), "utf8")) : null
   const senadoMode = option("senado") ?? "live"
+  const identityMode = option("identity-mode") ?? "default"
+  if (identityMode !== "default" && identityMode !== "official-only") throw new Error("--identity-mode inválido")
   const { receipts, review } = await runHistoricoRevision({
-    anos, profiles, manifest, checkedAt, falhaFonte: option("falha-fonte"),
+    anos, profiles, manifest, checkedAt, falhaFonte: option("falha-fonte"), identityMode,
     seed: JSON.parse(readFileSync(resolve(option("candidatos") ?? "data/candidatos.json"), "utf8")) as SeedCandidate[],
     senado: async (codigo) => senadoMode === "off"
       ? { status: "erro", url: `${SENADO_API}/senador/${codigo}/mandatos.json`, motivo: "consulta ao Senado desligada nesta rodada" }
