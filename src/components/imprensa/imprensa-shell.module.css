@@ -1,0 +1,136 @@
+/*
+  Peças comuns da seção /imprensa: barra da seção, selo de data, fatos,
+  legenda dos estados do dado, rodapé de confiança e caixa de citação.
+  Mesmos valores da Sala (sala.module.css). O site não tem tema escuro.
+  Páginas que precisarem das cores de estado podem aplicar `.tokens` num
+  elemento e usar as variáveis --state-*.
+*/
+
+.tokens {
+  --ink: #111111;
+  --muted: #555555;
+  --rule: #d9d7d0;
+  --focus: #f4b400;
+  --state-publicado: #276749;
+  --state-nada-consta: #1f3a5f;
+  --state-parcial: #9a6700;
+  --state-sem-confirmacao: #666666;
+}
+
+.tokens a:focus-visible,
+.tokens button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.num { font-variant-numeric: tabular-nums; }
+
+/* Barra da seção. Fica logo abaixo do cabeçalho fixo do site (64px). */
+.subnav {
+  background: #ffffff;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  position: sticky;
+  top: 64px;
+  z-index: 30;
+}
+.subnavInner {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 20px;
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: 0 20px;
+}
+.subnavScroll {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+}
+.subnavList { display: flex; gap: 4px; white-space: nowrap; }
+.subnavLink {
+  align-items: center;
+  border-bottom: 3px solid transparent;
+  color: var(--muted);
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  min-height: 48px;
+  padding: 0 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.subnavLink:hover { color: var(--ink); }
+.subnavLink[aria-current="page"] { border-bottom-color: var(--ink); color: var(--ink); }
+.stamp {
+  color: var(--muted);
+  flex-shrink: 0;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+
+/* Fatos */
+.factsScope { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; font-weight: 700; letter-spacing: .08em; margin-bottom: 12px; text-transform: uppercase; }
+.factsGrid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.factCard { background: #ffffff; border: 1px solid var(--rule); border-radius: 6px; display: flex; flex-direction: column; padding: 20px 22px; }
+.factValue { font: 400 clamp(2.4rem, 5vw, 3.4rem)/1 var(--font-anton), sans-serif; font-variant-numeric: tabular-nums; }
+.factLabel { color: var(--ink); font-size: 15px; font-weight: 800; line-height: 1.35; margin-top: 8px; }
+.factDetail { color: #333333; font-size: 14px; font-variant-numeric: tabular-nums; line-height: 1.5; margin-top: 8px; }
+.factCaveat { border-top: 1px solid var(--rule); color: var(--muted); font-size: 13px; line-height: 1.5; margin-top: 12px; padding-top: 10px; }
+.factLink { align-self: flex-start; color: var(--ink); font-size: 13px; font-weight: 800; margin-top: auto; padding-top: 14px; text-decoration: underline; text-decoration-color: #888888; text-underline-offset: 3px; }
+.factsEmpty { color: var(--muted); font-size: 14px; line-height: 1.5; }
+
+/* Legenda dos quatro estados */
+.legend { display: flex; flex-wrap: wrap; font-size: 13px; gap: 8px 18px; }
+.legendItem { align-items: center; display: inline-flex; gap: 8px; }
+.legendList { display: grid; gap: 10px; }
+.legendList .legendItem { align-items: flex-start; }
+.legendList p { color: var(--muted); font-size: 13px; line-height: 1.5; margin-top: 2px; }
+.legendLabel { color: var(--ink); font-weight: 700; }
+.stateMark { border: 2px solid currentColor; border-radius: 999px; display: inline-block; flex-shrink: 0; height: 12px; margin-top: 2px; width: 12px; }
+.stateMark[data-bucket="publicado"] { background: currentColor; color: var(--state-publicado); }
+.stateMark[data-bucket="nada_consta"] { background: transparent; color: var(--state-nada-consta); }
+.stateMark[data-bucket="parcial"] { background: linear-gradient(90deg, currentColor 50%, transparent 50%); color: var(--state-parcial); }
+.stateMark[data-bucket="sem_confirmacao"] { border-style: dashed; color: var(--state-sem-confirmacao); }
+.stateText[data-bucket="publicado"] { color: var(--state-publicado); }
+.stateText[data-bucket="nada_consta"] { color: var(--state-nada-consta); }
+.stateText[data-bucket="parcial"] { color: var(--state-parcial); }
+.stateText[data-bucket="sem_confirmacao"] { color: var(--state-sem-confirmacao); }
+
+/* Rodapé de confiança */
+.trust { border-top: 1px solid var(--rule); color: var(--ink); margin: 0 auto; max-width: 1240px; padding: 32px 20px 40px; }
+.trustTitle { font: 400 1.6rem/1 var(--font-anton), sans-serif; text-transform: uppercase; }
+.trustGrid { display: grid; gap: 14px 28px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); margin-top: 18px; }
+.trustGrid h3 { font-size: 14px; font-weight: 800; }
+.trustGrid p { color: var(--muted); font-size: 14px; line-height: 1.55; margin-top: 4px; }
+.trustContact { color: #333333; font-size: 14px; line-height: 1.6; margin-top: 20px; }
+.email { color: var(--ink); font-weight: 800; user-select: all; }
+.trustLinks { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 12px; }
+.trustLinks a { align-items: center; color: var(--ink); display: inline-flex; font-size: 14px; font-weight: 800; min-height: 44px; text-decoration: underline; text-decoration-color: #888888; text-underline-offset: 3px; }
+
+/* Caixa de citação */
+.cite { background: #ffffff; border: 1px solid var(--rule); border-radius: 6px; padding: 16px 18px; }
+.citeLabel { color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.citeText { color: var(--ink); font-size: 14px; line-height: 1.55; margin-top: 8px; overflow-wrap: anywhere; user-select: all; }
+.citeActions { align-items: center; display: flex; flex-wrap: wrap; gap: 10px 14px; margin-top: 12px; }
+.citeButton { background: var(--ink); border: 1.5px solid var(--ink); border-radius: 999px; color: #ffffff; cursor: pointer; font-size: 12px; font-weight: 800; letter-spacing: .06em; min-height: 44px; padding: 0 18px; text-transform: uppercase; }
+.citeButton:hover { background: #ffffff; color: var(--ink); }
+.citeStatus { color: var(--muted); font-size: 13px; }
+
+@media (max-width: 700px) {
+  .subnavInner { gap: 0; padding: 0 16px; }
+  .stamp { order: -1; padding-top: 8px; width: 100%; }
+  .subnavLink { padding: 0 8px; }
+  .factCard { padding: 18px; }
+  .trust { padding: 28px 16px 36px; }
+}
+
+/* Com a barra da seção fixa sob o cabeçalho, uma âncora não pode parar embaixo dela. */
+:global(html):has(.subnav) :global([id]) { scroll-margin-top: 128px; }

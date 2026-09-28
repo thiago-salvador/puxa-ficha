@@ -3,14 +3,15 @@
 import { Search } from "lucide-react"
 import { useGlobalSearch } from "@/components/GlobalSearchProvider"
 
-// A Mesa filtra só por cargo e UF. Busca por nome, partido ou UF usa a busca
-// rápida do site, que já indexa esses campos das fichas publicadas.
+// Quem vai entrevistar alguém chega com um nome. A busca rápida do site já
+// indexa nome, partido e UF das fichas publicadas e leva direto à ficha.
 export function SalaSearchTrigger({ className }: { className?: string }) {
   const { openSearch } = useGlobalSearch()
   return (
-    <button type="button" className={className} onClick={() => openSearch("toolbar")} aria-label="Buscar candidato, partido ou UF na busca rápida">
-      <Search aria-hidden="true" className="size-4 shrink-0" />
-      <span>Buscar candidato, partido ou UF</span>
+    <button type="button" className={className} onClick={() => openSearch("toolbar")} aria-label="Buscar candidato pelo nome na busca rápida">
+      <Search aria-hidden="true" className="size-5 shrink-0" />
+      <span>Buscar candidato pelo nome</span>
+      <span aria-hidden="true" data-search-cta="">Buscar</span>
     </button>
   )
 }
