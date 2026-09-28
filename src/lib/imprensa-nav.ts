@@ -34,6 +34,7 @@ export const MESA_ORDEM = {
   patrimonio: "patrimonio",
   gasto: "gasto",
   processos: "processos",
+  sancoes: "sancoes",
 } as const
 
 /** Valores de `?com=` na Mesa. Cada filtro vale para um campo só. */

@@ -34,6 +34,7 @@ export function TrustFooter({ homonimos }: { homonimos?: number | null }) {
           <p>O código é aberto, sob a licença Apache 2.0. As correções são públicas.</p>
         </div>
       </div>
+      <p className={styles.trustContact}>Confira os dados na fonte original antes de publicar.</p>
       <p className={styles.trustContact}>
         Para apontar um erro ou falar com a equipe: <span className={styles.email}>contato@puxaficha.com.br</span>
       </p>

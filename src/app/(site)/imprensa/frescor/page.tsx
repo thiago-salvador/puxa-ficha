@@ -1,146 +1,167 @@
+// cspell:words homonimos correcoes
 import type { Metadata } from "next"
 import Link from "next/link"
-import {
-  type FreshnessStatus,
-  type ImprensaFreshnessSource,
-} from "@/lib/imprensa-frescor"
-import { getImprensaFreshnessDataset } from "@/lib/imprensa-frescor-server"
+import { Footer } from "@/components/Footer"
+import { DataStateLegend } from "@/components/imprensa/DataStateLegend"
+import { ImprensaSubnav } from "@/components/imprensa/ImprensaSubnav"
+import { TrustFooter } from "@/components/imprensa/TrustFooter"
+import { MethodSection } from "@/components/imprensa/method/MethodSection"
+import { SourcesTable } from "@/components/imprensa/method/SourcesTable"
+import { StateBoard } from "@/components/imprensa/method/StateBoard"
+import styles from "@/components/imprensa/method/method.module.css"
+import { getImprensaDatasetCached, type ImprensaPageDataset } from "@/lib/imprensa-cache"
+import { computeImprensaFacts } from "@/lib/imprensa-facts"
+import { computeMethodStateBoard } from "@/lib/imprensa-frescor"
+import { getImprensaMethodFreshness, type ImprensaMethodFreshness } from "@/lib/imprensa-frescor-server"
+import { imprensaHref } from "@/lib/imprensa-nav"
 
 export const metadata: Metadata = {
-  title: "Frescor das fontes | Puxa Ficha",
-  description: "Últimas coletas públicas demonstráveis e limites de atualização das fontes do Puxa Ficha.",
+  title: "Como coletamos | Puxa Ficha",
+  description: "De onde vem cada dado das fichas, quando foi a última coleta de cada fonte e como tratamos homônimos e correções.",
+  alternates: { canonical: "/imprensa/frescor" },
 }
+// A tabela lê a última coleta de cada fonte a cada visita.
 export const dynamic = "force-dynamic"
 
-const STATUS_LABELS: Record<FreshnessStatus, string> = {
-  sem_agenda: "Coleta registrada, sem agenda demonstrada",
-  limiar_excedido: "Último sucesso além do limiar de frescor",
-  erro_na_fonte: "Erro na tentativa mais recente entre alvos",
-  sem_prova: "Sem coleta bem-sucedida demonstrada",
-}
+const REPO_URL = "https://github.com/thiago-salvador/puxa-ficha"
+const NUMBER = new Intl.NumberFormat("pt-BR")
 
-function formatDate(value: string | null): string {
-  if (!value) return "Não demonstrado"
-  const date = new Date(value)
-  return Number.isNaN(date.valueOf()) ? "Data inválida" : date.toLocaleString("pt-BR", { dateStyle: "medium", timeStyle: "short", timeZone: "America/Sao_Paulo" })
-}
-
-function statusClass(status: FreshnessStatus): string {
-  if (status === "sem_agenda") return "border-amber-200 bg-amber-50 text-amber-950"
-  if (status === "limiar_excedido") return "border-orange-200 bg-orange-50 text-orange-950"
-  if (status === "erro_na_fonte") return "border-red-200 bg-red-50 text-red-900"
-  return "border-neutral-200 bg-neutral-50 text-neutral-800"
-}
-
-function cadenceLabel(cadence: string): string {
-  if (cadence === "daily") return "Diária"
-  if (cadence === "weekly") return "Semanal"
-  if (cadence === "on_demand") return "Sob demanda"
-  return "Não demonstrada"
-}
-
-function SourceCard({ item }: { item: ImprensaFreshnessSource }) {
-  return (
-    <article className="rounded-xl border border-border bg-card p-5 shadow-sm">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">Fonte</p>
-          <h2 className="mt-1 text-[length:var(--text-heading-sm)] font-semibold text-foreground">{item.source.label}</h2>
-        </div>
-        <span className={`inline-flex w-fit rounded-full border px-3 py-1 text-[length:var(--text-caption)] font-bold ${statusClass(item.status)}`}>
-          {STATUS_LABELS[item.status]}
-        </span>
-      </div>
-
-      <dl className="mt-5 grid gap-4 text-[length:var(--text-body-sm)] sm:grid-cols-2">
-        <div>
-          <dt className="font-semibold text-foreground">Última tentativa</dt>
-          <dd className="mt-1 text-muted-foreground">{formatDate(item.ultimaColetaTentada)} · entre os alvos registrados</dd>
-        </div>
-        <div>
-          <dt className="font-semibold text-foreground">Resultado dessa tentativa</dt>
-          <dd className="mt-1 text-muted-foreground">{item.resultadoDaColeta ?? "Não demonstrado"}</dd>
-        </div>
-        <div>
-          <dt className="font-semibold text-foreground">Última coleta bem-sucedida</dt>
-          <dd className="mt-1 text-muted-foreground">{formatDate(item.ultimaColetaBemSucedida)} · entre os alvos registrados</dd>
-        </div>
-        <div>
-          <dt className="font-semibold text-foreground">Verificação do campo</dt>
-          <dd className="mt-1 text-muted-foreground">{formatDate(item.verificacaoDoCampo)}</dd>
-        </div>
-        <div>
-          <dt className="font-semibold text-foreground">Atualização da ficha</dt>
-          <dd className="mt-1 text-muted-foreground">{formatDate(item.atualizacaoDaFicha)}</dd>
-        </div>
-        <div>
-          <dt className="font-semibold text-foreground">Próxima coleta</dt>
-          <dd className="mt-1 text-muted-foreground">{formatDate(item.proximaColetaDemonstrada)}</dd>
-        </div>
-        <div>
-          <dt className="font-semibold text-foreground">Periodicidade no catálogo</dt>
-          <dd className="mt-1 text-muted-foreground">{cadenceLabel(item.source.cadence)}</dd>
-        </div>
-        <div>
-          <dt className="font-semibold text-foreground">Limiar de frescor do catálogo</dt>
-          <dd className="mt-1 text-muted-foreground">{item.source.maxAgeHours === null ? "Não definido" : `${item.source.maxAgeHours} horas`}</dd>
-        </div>
-      </dl>
-
-      <p className="mt-5 text-[length:var(--text-body-sm)] leading-relaxed text-muted-foreground">
-        A linha de coleta confirma uma tentativa da fonte. Ela não confirma, sozinha, a verificação de um campo nem a atualização da ficha.
-      </p>
-      <a className="mt-3 inline-block text-[length:var(--text-caption)] font-semibold text-foreground underline underline-offset-4" href={item.source.authorityUrl} rel="noreferrer">
-        Abrir fonte oficial
-      </a>
-    </article>
-  )
-}
-
-export default async function ImprensaFrescorPage() {
-  let dataset: Awaited<ReturnType<typeof getImprensaFreshnessDataset>> | null = null
-  let error: string | null = null
+async function loadFreshness(): Promise<ImprensaMethodFreshness | null> {
   try {
-    dataset = await getImprensaFreshnessDataset()
+    return await getImprensaMethodFreshness()
   } catch {
-    error = "Não foi possível consultar os recibos de coleta agora."
+    return null
   }
+}
+
+async function loadDataset(): Promise<ImprensaPageDataset | null> {
+  try {
+    return await getImprensaDatasetCached({ cargo: null, uf: null })
+  } catch {
+    return null
+  }
+}
+
+export default async function ImprensaComoColetamosPage() {
+  const [freshness, dataset] = await Promise.all([loadFreshness(), loadDataset()])
+  const facts = dataset ? computeImprensaFacts(dataset.rows) : null
+  const board = dataset ? computeMethodStateBoard(dataset.rows) : null
+  const homonimos = facts ? facts.processos.indeterminado : null
+  const counts = freshness
+    ? {
+        emDia: freshness.rows.filter((row) => row.situacao === "em_dia").length,
+        atrasada: freshness.rows.filter((row) => row.situacao === "atrasada").length,
+        semRegistro: freshness.rows.filter((row) => row.situacao === "sem_registro").length,
+      }
+    : null
 
   return (
-    <div className="min-h-screen bg-background">
-      <p role="note" className="mx-auto max-w-5xl px-5 pt-6 font-semibold text-amber-900 md:px-8">Confira os dados na fonte original antes de publicar.</p>
-      <section className="border-b border-border bg-black text-white">
-        <div className="mx-auto max-w-5xl px-5 py-16 md:px-8 md:py-20">
-          <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-neutral-400">Mesa de apuração</p>
-          <h1 className="mt-2 font-heading text-[clamp(40px,8vw,76px)] uppercase leading-[0.88]">Frescor das fontes</h1>
-          <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-neutral-300">
-            O painel mostra a última coleta bem-sucedida que pode ser demonstrada no recibo operacional e preserva os limites entre coleta, verificação do campo e atualização da ficha.
+    <div className={styles.page}>
+      <ImprensaSubnav current="frescor" generatedAt={dataset?.generatedAt ?? null} />
+      <header className={styles.hero}>
+        <div className={styles.heroInner}>
+          <p className={styles.eyebrow}>Imprensa · Método</p>
+          <h1 className={styles.heroTitle}>Como coletamos</h1>
+          <p className={styles.heroCopy}>
+            De onde vem cada dado das fichas, quando cada fonte foi lida pela última vez e o que fazemos quando um nome aparece sem confirmação.
           </p>
-        </div>
-      </section>
-
-      <div className="mx-auto max-w-5xl px-5 py-10 md:px-8 md:py-14">
-        <div className="mb-8 flex flex-wrap gap-4 text-[length:var(--text-body-sm)]">
-          <Link className="font-semibold text-foreground underline underline-offset-4" href="/imprensa/mesa">Voltar à Mesa de apuração</Link>
-          <Link className="font-semibold text-foreground underline underline-offset-4" href="/metodologia">Metodologia e fontes</Link>
-        </div>
-
-        {error ? (
-          <section className="rounded-xl border border-red-200 bg-red-50 p-5 text-red-900" role="alert">
-            <h2 className="font-semibold">Frescor indisponível</h2>
-            <p className="mt-2 text-[length:var(--text-body-sm)]">{error} A falha não é convertida em ausência de coleta.</p>
-          </section>
-        ) : (
-          <>
-            <div className="grid gap-4 md:grid-cols-2">
-              {dataset?.sources.map((item) => <SourceCard key={item.source.id} item={item} />)}
-            </div>
-            <p className="mt-8 border-t border-border pt-5 text-[length:var(--text-body-sm)] leading-relaxed text-muted-foreground">
-              Atualizado em {formatDate(dataset?.generatedAt ?? null)}. O limiar vem do catálogo interno de frescor. “Além do limiar” significa que até o sucesso mais recente entre os alvos registrados ficou antigo; um sucesso recente não comprova que todos os alvos estejam em dia. Sem horário nominal de execução comprovado, a próxima coleta permanece sem data.
+          {counts ? (
+            <p className={styles.heroFacts}>
+              <span><strong>{counts.emDia}</strong> de {freshness?.rows.length} fontes em dia</span>
+              <span><strong>{counts.atrasada}</strong> {counts.atrasada === 1 ? "atrasada" : "atrasadas"}</span>
+              {counts.semRegistro > 0 ? <span><strong>{counts.semRegistro}</strong> sem registro de coleta</span> : null}
             </p>
-          </>
-        )}
-      </div>
+          ) : null}
+        </div>
+      </header>
+
+      <main className={styles.content}>
+        <MethodSection id="fontes" num="01" title="Fontes e última coleta">
+          <p className={styles.lead}>
+            Cada linha é uma fonte oficial usada nas fichas. A data é a da última coleta que terminou sem erro. A fonte está em dia quando essa coleta cabe no prazo previsto para ela, e atrasada quando passou dele.
+          </p>
+          <div className="mt-6">
+            {freshness ? (
+              <SourcesTable rows={freshness.rows} />
+            ) : (
+              <p className={styles.alert} role="alert">
+                <strong>Não foi possível consultar as coletas agora.</strong>
+                Isso não quer dizer que as fontes estejam sem coleta. Tente de novo em alguns minutos.
+              </p>
+            )}
+          </div>
+          <p className={styles.note}>
+            Não registramos, por fonte, quando a ficha foi atualizada depois da coleta. A data mostra quando a fonte foi lida, não quando cada ficha mudou.
+          </p>
+        </MethodSection>
+
+        <MethodSection id="estados" num="02" title="Os quatro estados do dado">
+          <p className={styles.lead}>
+            Cada dado da ficha está em um de quatro estados. A mesma palavra e a mesma cor aparecem em toda a seção de imprensa.
+          </p>
+          <div className="mt-5">
+            <DataStateLegend detailed />
+          </div>
+          {board && dataset ? (
+            <>
+              <p className={`${styles.lead} mt-6`}>
+                Hoje, entre <span className={styles.num}>{NUMBER.format(dataset.rows.length)}</span> fichas publicadas:
+              </p>
+              <StateBoard rows={board} total={dataset.rows.length} />
+            </>
+          ) : (
+            <p className={styles.note}>A contagem por estado está indisponível agora. Uma falha de consulta não equivale a zero.</p>
+          )}
+        </MethodSection>
+
+        <MethodSection id="homonimos" num="03" title="Homônimos">
+          {homonimos !== null ? (
+            <div className={styles.figureRow}>
+              <span className={styles.figure}>{NUMBER.format(homonimos)}</span>
+              <span className={styles.figureLabel}>
+                {homonimos === 1
+                  ? "candidato teve um nome igual encontrado na busca de processos, sem confirmação de que é a mesma pessoa."
+                  : "candidatos tiveram um nome igual encontrado na busca de processos, sem confirmação de que é a mesma pessoa."}
+              </span>
+            </div>
+          ) : null}
+          <p className={styles.lead}>
+            A busca de processos procura pelo nome do candidato. Nome igual não basta: um processo só é publicado quando um segundo dado oficial confirma que é a mesma pessoa.
+          </p>
+          <p className={styles.lead}>
+            Sem essa confirmação, o processo fica fora da ficha, e a ficha avisa que a busca não conseguiu ligar o registro à pessoa com segurança. Isso não quer dizer que o candidato não tenha processos.
+          </p>
+        </MethodSection>
+
+        <MethodSection id="tse" num="04" title="Arquivos do TSE e SHA-256">
+          <p className={styles.lead}>
+            Os arquivos que baixamos do TSE ficam guardados com o hash SHA-256 de cada um. O hash é uma sequência de letras e números que muda se o arquivo mudar em um único byte. Com ele, dá para baixar o mesmo arquivo do TSE e conferir se é o que usamos.
+          </p>
+          <p className={styles.lead}>
+            O endereço do arquivo e o hash aparecem nas exportações da{" "}
+            <Link className={styles.link} href={imprensaHref("/imprensa/mesa")}>Mesa</Link>, nas colunas de fonte de sites e de chapas.
+          </p>
+        </MethodSection>
+
+        <MethodSection id="correcoes" num="05" title="Correções">
+          <ol className={styles.steps}>
+            <li>Escreva para <span className={styles.email}>contato@puxaficha.com.br</span> com o nome do candidato, o dado que parece errado e, se tiver, o documento oficial que mostra o valor certo.</li>
+            <li>Conferimos o dado na fonte oficial. Se a ficha estiver errada, ela é corrigida.</li>
+            <li>
+              As mudanças no código e nas regras ficam públicas no{" "}
+              <a className={styles.link} href={REPO_URL} target="_blank" rel="noreferrer">repositório do projeto no GitHub<span className="sr-only"> (abre em nova aba)</span></a>
+              , onde também dá para abrir uma issue.
+            </li>
+          </ol>
+          <p className={styles.note}>
+            Mudanças de situação, patrimônio ou partido detectadas nas fontes oficiais ficam em{" "}
+            <Link className={styles.link} href={imprensaHref("/imprensa/atualizacoes")}>O que mudou</Link>.
+          </p>
+        </MethodSection>
+      </main>
+
+      <TrustFooter homonimos={homonimos} />
+      <Footer />
     </div>
   )
 }

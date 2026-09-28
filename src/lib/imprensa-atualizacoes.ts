@@ -7,15 +7,18 @@ import {
   type VerifiedCandidateUpdate,
 } from "@/lib/verified-candidate-updates"
 
-const IMPRENSA_ATUALIZACOES_PAGE_SIZE = 20
+/**
+ * Teto de linhas lidas de uma vez. A página filtra por UF, cargo e tipo em
+ * memória, sobre a lista que já veio do cache de dados (revalidate 300), para
+ * não abrir uma consulta por combinação de filtros.
+ */
+const IMPRENSA_ATUALIZACOES_MAX_ROWS = 1000
 
-export interface ImprensaAtualizacoesPage {
+export interface ImprensaAtualizacoes {
   status: "available" | "unavailable"
   updates: VerifiedCandidateUpdate[]
-  page: number
-  pageSize: number
+  /** Total no banco; maior que `updates.length` quando o teto cortou a lista. */
   total: number | null
-  hasNext: boolean
 }
 
 type UpdatesQueryResult = {
@@ -24,32 +27,19 @@ type UpdatesQueryResult = {
   count: number | null
 }
 
-type UpdatesQuery = (from: number, to: number, slugs: string[]) => Promise<UpdatesQueryResult>
+type UpdatesQuery = (limit: number, slugs: string[]) => Promise<UpdatesQueryResult>
 type LoadSlugs = typeof getCandidatoSlugStaticParams
 
-function normalizePage(page: number): number {
-  return Number.isInteger(page) && page > 0 ? page : 1
-}
+const UNAVAILABLE: ImprensaAtualizacoes = { status: "unavailable", updates: [], total: null }
 
-function unavailable(page: number): ImprensaAtualizacoesPage {
-  return {
-    status: "unavailable",
-    updates: [],
-    page,
-    pageSize: IMPRENSA_ATUALIZACOES_PAGE_SIZE,
-    total: null,
-    hasNext: false,
-  }
-}
-
-async function queryUpdates(from: number, to: number, slugs: string[]): Promise<UpdatesQueryResult> {
+async function queryUpdates(limit: number, slugs: string[]): Promise<UpdatesQueryResult> {
   const result = await createServerSupabaseClient({ revalidate: 300 })
     .from("verified_candidate_updates_public")
     .select("id,candidate_slug,candidate_name,field,year,before_value,after_value,source_url,detected_at", { count: "exact" })
     .in("candidate_slug", slugs)
     .order("detected_at", { ascending: false })
     .order("id", { ascending: false })
-    .range(from, to)
+    .range(0, limit - 1)
     .abortSignal(AbortSignal.timeout(5000))
   return { data: result.data as unknown[] | null, error: result.error, count: result.count }
 }
@@ -58,30 +48,23 @@ export function createImprensaAtualizacoesLoader(
   query: UpdatesQuery = queryUpdates,
   loadSlugs: LoadSlugs = getCandidatoSlugStaticParams,
 ) {
-  return async function load(pageInput: number): Promise<ImprensaAtualizacoesPage> {
-    const page = normalizePage(pageInput)
-    const from = (page - 1) * IMPRENSA_ATUALIZACOES_PAGE_SIZE
-    const to = from + IMPRENSA_ATUALIZACOES_PAGE_SIZE - 1
+  return async function load(): Promise<ImprensaAtualizacoes> {
     try {
       const slugs = [...new Set((await loadSlugs()).map((row) => row.slug).filter(Boolean))]
-      if (slugs.length === 0) return unavailable(page)
-      const result = await query(from, to, slugs)
+      if (slugs.length === 0) return UNAVAILABLE
+      const result = await query(IMPRENSA_ATUALIZACOES_MAX_ROWS, slugs)
       if (result.error || !Array.isArray(result.data) || !result.data.every(isVerifiedCandidateUpdate)) {
-        return unavailable(page)
+        return UNAVAILABLE
       }
-      const total = typeof result.count === "number" ? result.count : null
       return {
         status: "available",
         updates: result.data,
-        page,
-        pageSize: IMPRENSA_ATUALIZACOES_PAGE_SIZE,
-        total,
-        hasNext: total === null ? result.data.length === IMPRENSA_ATUALIZACOES_PAGE_SIZE : from + result.data.length < total,
+        total: typeof result.count === "number" ? result.count : null,
       }
     } catch {
-      return unavailable(page)
+      return UNAVAILABLE
     }
   }
 }
 
-export const getImprensaAtualizacoesPage = createImprensaAtualizacoesLoader()
+export const getImprensaAtualizacoes = createImprensaAtualizacoesLoader()

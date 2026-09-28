@@ -131,3 +131,6 @@
   .factCard { padding: 18px; }
   .trust { padding: 28px 16px 36px; }
 }
+
+/* Com a barra da seção fixa sob o cabeçalho, uma âncora não pode parar embaixo dela. */
+:global(html):has(.subnav) :global([id]) { scroll-margin-top: 128px; }
