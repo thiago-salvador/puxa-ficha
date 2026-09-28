@@ -30,7 +30,7 @@ import { StateIndicators } from "@/components/StateIndicators"
 import { StateRankingCards } from "@/components/StateRankingCards"
 import { formatCompact } from "@/lib/utils"
 import { buildTwitterMetadata } from "@/lib/metadata"
-import { getCanonicalStateRedirectPath, getStatePagePresentation } from "@/lib/state-page-presentation"
+import { getStatePagePresentation } from "@/lib/state-page-presentation"
 import { ShareButtons } from "@/components/ShareButtons"
 import { StateIndicatorComparison } from "@/components/StateIndicatorComparison"
 import { StatePrograms } from "@/components/StatePrograms"
@@ -83,13 +83,13 @@ export async function generateMetadata({
 
 export default async function UfHubPage({
   params,
-  searchParams,
 }: {
   params: Promise<{ uf: string }>
-  searchParams: Promise<Record<string, string | string[] | undefined>>
 }) {
   const { uf } = await params
-  if (uf !== uf.toLowerCase()) permanentRedirect(getCanonicalStateRedirectPath(uf, await searchParams))
+  // O middleware já manda /uf/BA para /uf/ba com a query. Este fallback não
+  // pode ler a query string: a rota é ISR e isso derruba o render com 500.
+  if (uf !== uf.toLowerCase()) permanentRedirect(`/uf/${uf.toLowerCase()}`)
   const nome = getEstadoNome(uf)
   if (!nome) notFound()
   const presentation = getStatePagePresentation(uf)!
@@ -241,7 +241,7 @@ export default async function UfHubPage({
                 className="mt-1 font-heading uppercase leading-[0.95] text-foreground"
                 style={{ fontSize: "clamp(28px, 5vw, 48px)" }}
               >
-                Candidatos em {nome}
+                Candidatos {presentation.inState}
               </h2>
             </div>
             <SlashDivider className="mt-6 mb-8 sm:mt-8 sm:mb-10" />
@@ -276,7 +276,7 @@ export default async function UfHubPage({
 
       <div className="mx-auto max-w-7xl space-y-12 px-5 py-12 md:px-12">
         <SlashDivider />
-        <StatePrograms scopeTitle={`Governo de ${nome}`} programs={programsResource.data} runningMates={runningMates} unavailable={programsResource.unavailable || resumosResource.sourceStatus !== "live"} context={indicadores.filter(row => row.indicador === "homicidios_100k" && row.valor != null).sort((a, b) => b.ano - a.ano).slice(0, 1).map(row => ({ themeId: "seguranca", label: STATE_INDICATOR_CONFIG.homicidios_100k.label, value: STATE_INDICATOR_CONFIG.homicidios_100k.format(row.valor!), year: String(row.ano), source: row.fonte }))} />
+        <StatePrograms scopeTitle={`Governo ${presentation.ofState}`} programs={programsResource.data} runningMates={runningMates} unavailable={programsResource.unavailable || resumosResource.sourceStatus !== "live"} context={indicadores.filter(row => row.indicador === "homicidios_100k" && row.valor != null).sort((a, b) => b.ano - a.ano).slice(0, 1).map(row => ({ themeId: "seguranca", label: STATE_INDICATOR_CONFIG.homicidios_100k.label, value: STATE_INDICATOR_CONFIG.homicidios_100k.format(row.valor!), year: String(row.ano), source: row.fonte }))} />
         <SlashDivider />
         <StatePolls polls={pollsResource.data} candidates={candidatos.map(({ slug, nome_urna, foto_url }) => ({ slug, nome_urna, foto_url }))} unavailable={pollsResource.unavailable} />
         <SlashDivider />
@@ -348,7 +348,7 @@ export default async function UfHubPage({
       <section className="mx-auto max-w-7xl px-5 pt-8 pb-16 md:px-12 sm:pt-12 sm:pb-20 lg:pb-24">
         <div className="max-w-3xl">
           <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
-            Hub do estado reúne contexto territorial e candidatos a governador mapeados em {nome}
+            Hub do estado reúne contexto territorial e candidatos a governador mapeados {presentation.inState}{" "}
             para consulta rápida e comparação.
           </p>
           <p className="mt-3 text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">

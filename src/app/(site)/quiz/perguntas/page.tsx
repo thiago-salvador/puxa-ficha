@@ -19,7 +19,7 @@ export default function QuizPerguntasPage() {
   return (
     <div className="min-h-screen bg-background pt-16">
       <header className="border-b border-border px-4 py-4">
-        <Link href="/quiz" className="text-sm font-medium text-muted-foreground hover:text-foreground">
+        <Link href="/quiz" className="inline-flex min-h-6 items-center text-sm font-medium text-muted-foreground hover:text-foreground">
           Voltar à introdução
         </Link>
       </header>
