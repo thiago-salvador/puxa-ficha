@@ -124,6 +124,15 @@ describe("decisões da Mesa e da validação sobre leads em revisão", () => {
     assert.equal(consolidarCatalogoRecibos(null, [comPendente], agora).receipts.length, 0)
   })
 
+  it("homônimo com matéria descartada e uma agência fora não vira ausência", () => {
+    const todas = Object.fromEntries(AGENCIAS_CHECAGEM.map((agencia) => [agencia.id, { status: "ok" as const, itens: 1, leads: 0 }])) as ReciboChecagem["agencias"]
+    const homonimo = {
+      ...recibo([], { ...todas, "aos-fatos": { status: "erro", erro: "disjuntor" } }), mesa: undefined, result: "erro" as const,
+      homonimo: { grupo: [SLUG, "fulano-de-tal-rj"], descartados: 1, marcadores: [], leads_brutos: [] },
+    }
+    assert.equal(consolidarCatalogoRecibos(null, [homonimo], new Date("2026-09-28T20:00:00Z")).receipts.length, 0)
+  })
+
   it("recusa arquivo malformado, de outra política ou com decisão repetida", () => {
     assert.throws(() => validarDecisoesChecagens({ schema_version: "x", policy: POLITICA_CHECAGENS, decisoes: [] }), /inválido/)
     assert.throws(() => validarDecisoesChecagens({ schema_version: SCHEMA_DECISOES_CHECAGENS, policy: "pf-checagens-v1", decisoes: [] }), /política/)

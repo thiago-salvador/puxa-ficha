@@ -690,6 +690,8 @@ export const MAX_AGENCIAS_SEM_RESPOSTA_NA_AUSENCIA = 1
 
 function ausenciaComUmaAgenciaSemResposta(recibo: ReciboChecagem): boolean {
   if (recibo.leads.length > 0 || recibo.mesa?.length) return false
+  // Homônimo com matéria descartada não é ausência, com ou sem agência fora.
+  if ((recibo.homonimo?.descartados ?? 0) > 0) return false
   const semResposta = AGENCIAS_CHECAGEM.filter((agencia) => recibo.agencias[agencia.id]?.status !== "ok").length
   const pendente = Object.values(recibo.agencias).some((estado) => estado.status === "ok" && (estado.pendentes ?? 0) > 0)
   return semResposta > 0 && semResposta <= MAX_AGENCIAS_SEM_RESPOSTA_NA_AUSENCIA && !pendente

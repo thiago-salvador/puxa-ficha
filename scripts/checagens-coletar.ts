@@ -144,8 +144,9 @@ async function registrarRecibosExistentes(arquivo: string, catalogoPath: string 
   const decididos = decisoesPath ? aplicarDecisoesMesa(comHomonimo, validarDecisoesChecagens(JSON.parse(readFileSync(decisoesPath, "utf8")))) : null
   const recibos = decididos?.recibos ?? comHomonimo
   const homonimos = chavesHomonimos(JSON.parse(readFileSync(cadastro, "utf8")) as CandidatoChecagem[])
-  // Guarda exatamente o que foi importado, com a regra aplicada: é a proveniência do catálogo.
-  if (salvarPath) writeFileSync(salvarPath, JSON.stringify({ schema_version: "checagens-recibos-v1", origem: arquivo, execucao: EXECUCAO, receipts: recibos }, null, 2) + "\n")
+  // Guarda o que foi importado, com a regra de homônimo e antes das decisões: o catálogo é
+  // função deste arquivo e do arquivo de decisões, e reimportar com as mesmas decisões o reproduz.
+  if (salvarPath) writeFileSync(salvarPath, JSON.stringify({ schema_version: "checagens-recibos-v1", origem: arquivo, execucao: EXECUCAO, receipts: comHomonimo }, null, 2) + "\n")
   if (catalogoPath) {
     const caminho = resolve(catalogoPath)
     const anterior = existsSync(caminho) ? JSON.parse(readFileSync(caminho, "utf8")) as CatalogoRecibosChecagens : null

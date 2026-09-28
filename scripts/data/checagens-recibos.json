@@ -11,7 +11,7 @@
     "Comprova"
   ],
   "escopo": "uma consulta por agência (Lupa, Aos Fatos, Fato ou Fake, Estadão Verifica, UOL Confere, AFP Checamos, Comprova) com o nome de urna; busca nativa WordPress em Lupa, Comprova (até 300 resultados); busca do site em Aos Fatos (até 108 resultados); arquivo completo da seção em Fato ou Fake, Estadão Verifica, lido uma vez por rodada; arquivo do UOL Confere e busca nativa da AFP Checamos sem Google; Google News RSS em nenhuma agência como segunda via quando a rota direta falha (teto de 100 itens); buscas sem limite de data, arquivos de seção só a partir do item mais antigo lido (campo desde do recibo); lead exige o nome completo no título, ou parte dele no título e o nome completo no corpo (no resumo, para vídeo), sem parte colada a outro nome próprio; na rota sem corpo (Google News) o título parcial fica pendente e o recibo sem lead confirmado não entra no catálogo público",
-  "updated_at": "2026-09-28T20:00:33.913Z",
+  "updated_at": "2026-09-28T20:08:44.117Z",
   "receipts": [
     {
       "policy": "pf-checagens-v2",
