@@ -58,7 +58,8 @@
 .countCard h3 { font-size: 12px; font-weight: 800; letter-spacing: .05em; line-height: 1.4; text-transform: uppercase; }
 .countCard ul { display: grid; gap: 7px; margin-top: 12px; }
 .countCard li { display: flex; font-size: 13px; gap: 12px; justify-content: space-between; line-height: 1.4; }
-.countCard strong { font-variant-numeric: tabular-nums; }
+.countCard li span { min-width: 0; }
+.countCard strong { flex-shrink: 0; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 .hero {
   background: var(--ink);
