@@ -3,7 +3,7 @@ import Link from "next/link"
 import { getImprensaDatasetCached } from "@/lib/imprensa-cache"
 import { normalizeImprensaFilters } from "@/lib/imprensa-data"
 import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
-import { IMPRENSA_UFS, labelState } from "@/lib/imprensa-uf-pack"
+import { IMPRENSA_UFS, labelProcessState, labelState } from "@/lib/imprensa-uf-pack"
 import { isSenadoEnabled } from "@/lib/senado-feature"
 import styles from "./imprensa.module.css"
 
@@ -77,11 +77,12 @@ export default async function ImprensaSala() {
             <p className="mt-2">{Object.values(summary.cargos).reduce((sum, n) => sum + n, 0)} candidatos · {summary.ufs} UFs com registros · consulta em {generatedAt ? new Date(generatedAt).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short", timeZone: "UTC" }) + " UTC" : "sem data"}</p>
             <div className={styles.statsGrid}>
               <CountCard title="Candidatos por cargo" values={summary.cargos} labels="cargo" />
-              <CountCard title="Processos por estado do dado" values={summary.processos} />
+              <CountCard title="Processos por estado do dado" values={summary.processos} labels="processos" />
               <CountCard title="Sites por estado do dado" values={summary.sites} />
               <CountCard title="Vice (Presidente e Governador)" values={summary.vice} />
               {Object.keys(summary.suplentes).length > 0 && <CountCard title="Suplentes (Senador)" values={summary.suplentes} />}
             </div>
+            <p className="mt-3">Os candidatos foram buscados pelo nome no Diário de Justiça Eletrônico Nacional. Quando o nome aparece sem um segundo dado oficial que confirme a pessoa, o processo não é publicado, para não atribuir a alguém o processo de um homônimo.</p>
             {summary.processosComSelo > 0 && <p className="mt-3">{summary.processosComSelo} candidato{summary.processosComSelo === 1 ? " tem" : "s têm"} processo com fonte oficial em confirmação: o registro aparece na ficha com esse aviso e ainda falta localizar a página do próprio tribunal.</p>}
           </> : <p role="status" className="mt-3">Contagens temporariamente indisponíveis. Uma falha de consulta não representa zero.</p>}
         </section>
@@ -127,6 +128,6 @@ export default async function ImprensaSala() {
   )
 }
 
-function CountCard({ title, values, labels = "state" }: { title: string; values: Record<string, number>; labels?: "cargo" | "state" }) {
-  return <div className={styles.countCard}><h3>{title}</h3><ul>{Object.entries(values).map(([label, value]) => <li key={label} className="flex justify-between gap-4"><span>{labels === "cargo" ? label : labelState(label)}</span><strong>{value}</strong></li>)}</ul></div>
+function CountCard({ title, values, labels = "state" }: { title: string; values: Record<string, number>; labels?: "cargo" | "state" | "processos" }) {
+  return <div className={styles.countCard}><h3>{title}</h3><ul>{Object.entries(values).map(([label, value]) => <li key={label} className="flex justify-between gap-4"><span>{labels === "cargo" ? label : labels === "processos" ? labelProcessState(label) : labelState(label)}</span><strong>{value}</strong></li>)}</ul></div>
 }

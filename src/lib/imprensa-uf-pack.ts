@@ -19,6 +19,16 @@ export function labelState(state: string): string {
   return STATE_LABELS[state] ?? "Exige conferência"
 }
 
+/**
+ * Processos: todos os candidatos têm recibo da busca nominal no DJEN. "indeterminado"
+ * quer dizer que o nome apareceu sem um segundo dado oficial que confirme a pessoa.
+ */
+export const PROCESSOS_INDETERMINADO_LABEL = "Buscado, identidade não confirmada"
+
+export function labelProcessState(state: string): string {
+  return state === "indeterminado" ? PROCESSOS_INDETERMINADO_LABEL : labelState(state)
+}
+
 export function verifiedUpdatesLabel(count: number): string {
   return `${count} registro${count === 1 ? "" : "s"} verificado${count === 1 ? "" : "s"}`
 }
@@ -47,7 +57,7 @@ export function rowGaps(row: ImprensaPageDataset["rows"][number]): string[] {
   if (!["publicado", "vazio_confirmado", "sem_dado"].includes(row.sites.estado)) gaps.push("estado dos sites exige conferência")
   if (!["publicado", "vazio_confirmado"].includes(row.processos.estado)) gaps.push(
     ["cobertura_parcial", "indeterminado", "nao_buscado", "erro", "desatualizado", "sem_dado"].includes(row.processos.estado)
-      ? `processos: ${labelState(row.processos.estado)}`
+      ? `processos: ${labelProcessState(row.processos.estado)}`
       : "estado dos processos exige conferência",
   )
   const selo = row.processos.quantidadeEmConfirmacao ?? 0

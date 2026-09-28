@@ -17,7 +17,7 @@ test("lacunas apontam estados não conclusivos e processos com fonte oficial em 
     sites: { estado: "sem_dado" },
     processos: { estado: "indeterminado" },
   } as Parameters<typeof rowGaps>[0]
-  assert.deepEqual(rowGaps(row), ["composição da chapa sem dado confirmado", "sites sem dado publicado", "processos: Indeterminado"])
+  assert.deepEqual(rowGaps(row), ["composição da chapa sem dado confirmado", "sites sem dado publicado", "processos: Buscado, identidade não confirmada"])
   assert.equal(chapaSummary(row), "Vice sem dado confirmado")
   assert.equal(chapaSummary({ ...row, chapa: { ...row.chapa, estado: "estado_novo" } } as unknown as Parameters<typeof chapaSummary>[0]), "Composição da chapa exige conferência")
   assert.deepEqual(rowGaps({ ...row, processos: { ...row.processos, estado: "cobertura_parcial" } }), ["composição da chapa sem dado confirmado", "sites sem dado publicado", "processos: Cobertura parcial"])

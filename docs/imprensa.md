@@ -53,6 +53,7 @@ Valores atuais por campo:
 - `sites.estado`: `publicado`, `vazio_confirmado`, `sem_dado`.
 - `processos.estado`: `publicado`, `cobertura_parcial`, `vazio_confirmado`, `indeterminado`, `nao_buscado`, `erro`, `desatualizado`, `sem_dado`.
 - `processos.buscaEstado`: `encontrado`, `vazio_confirmado`, `indeterminado`, `nao_buscado`, `erro`, `desatualizado`, `contraditorio`.
+- Em processos, `indeterminado` quer dizer que o candidato foi buscado pelo nome no DJEN e o nome apareceu sem um segundo dado oficial que confirme a pessoa; a Sala e a Mesa mostram "Buscado, identidade não confirmada" e o processo não é publicado.
 
 As contagens de destaque são recalculadas do JSON do export e devem ser lidas junto de `generatedAt`, que identifica a geração usada. Uma contagem zero só é válida dentro do escopo e estado declarados. A Sala não fixa números de métricas no código.
 

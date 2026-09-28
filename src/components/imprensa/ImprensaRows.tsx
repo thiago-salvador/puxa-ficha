@@ -5,6 +5,7 @@ import type { ReactNode } from "react"
 import Link from "next/link"
 import { ImprensaCitationButton } from "@/components/ImprensaCitationButton"
 import type { ImprensaRow } from "@/lib/imprensa-data"
+import { PROCESSOS_INDETERMINADO_LABEL } from "@/lib/imprensa-uf-pack"
 import styles from "@/app/(site)/imprensa/imprensa.module.css"
 
 // cspell:ignore ocorrencias publishability
@@ -43,8 +44,12 @@ function fileDateLabel(value: string | null | undefined): string {
   return Number.isNaN(parsed.valueOf()) ? "data não disponível" : parsed.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", timeZone: "UTC" })
 }
 
-function Status({ state, children }: { state: string; children: ReactNode }) {
-  return <div className={styles.status} data-state={state}><strong>{labelState(state)}</strong><em>{children}</em></div>
+function labelProcessState(state: string): string {
+  return state === "indeterminado" ? PROCESSOS_INDETERMINADO_LABEL : labelState(state)
+}
+
+function Status({ state, children, label = labelState }: { state: string; children: ReactNode; label?: (state: string) => string }) {
+  return <div className={styles.status} data-state={state}><strong>{label(state)}</strong><em>{children}</em></div>
 }
 
 function chapaDescription(row: Row): string {
@@ -100,7 +105,7 @@ export function ImprensaRows({ rows }: { rows: Row[] }) {
       <label>Ordenar<select value={sort} onChange={(event) => setSort(event.target.value)}><option value="asc">Nome A a Z</option><option value="desc">Nome Z a A</option></select></label>
     </div>
     <div className={styles.summaryStates} aria-label="Resumo por estado do dado">
-      {summaries.map(([title, values]) => <section key={title}><h3>{title}</h3><ul>{[...new Set(values)].sort().map((state) => <li key={state}><span>{labelState(state)}</span><strong>{values.filter((value) => value === state).length}</strong></li>)}</ul></section>)}
+      {summaries.map(([title, values]) => <section key={title}><h3>{title}</h3><ul>{[...new Set(values)].sort().map((state) => <li key={state}><span>{title === "Processos" ? labelProcessState(state) : labelState(state)}</span><strong>{values.filter((value) => value === state).length}</strong></li>)}</ul></section>)}
       {chapaSummaries.map(([title, values]) => <section key={title}><h3>{title}</h3><ul>{[...new Set(values)].sort().map((state) => <li key={state}><span>{labelState(state)}</span><strong>{values.filter((value) => value === state).length}</strong></li>)}</ul></section>)}
     </div>
     <p className={styles.legend}><span data-key="published">■ Publicado</span><span data-key="partial">■ Cobertura parcial</span><span data-key="unknown">■ Sem dado ou em verificação</span></p>
@@ -114,7 +119,7 @@ export function ImprensaRows({ rows }: { rows: Row[] }) {
             <td><Link className={styles.name} href={row.fichaUrl}>{row.nome}</Link><p className={styles.meta}>{[row.partido, row.cargo, row.uf].filter(Boolean).join(" · ")}</p></td>
             <td><Status state={row.sites.estado}>{row.sites.quantidade == null ? "quantidade não publicada" : `${row.sites.quantidade} URL${row.sites.quantidade === 1 ? "" : "s"}`}</Status>{row.sites.fonteUrl && <a className={`${styles.sourceLink} ${styles.meta}`} href={row.sites.fonteUrl} rel="noreferrer">Arquivo oficial do TSE de {fileDateLabel(row.sites.coletadoEm)}</a>}</td>
             <td><Status state={row.chapa.estado}>{chapaDescription(row)}</Status>{row.chapa.fonteUrl && <a className={`${styles.sourceLink} ${styles.meta}`} href={row.chapa.fonteUrl} rel="noreferrer">Fonte oficial</a>}{row.chapa.fonteUrl && row.chapa.snapshotEm && <ImprensaCitationButton candidateName={row.nomeOriginal} section="chapa" slug={row.slug} sourceUrl={row.chapa.fonteUrl} collectedAt={dateLabel(row.chapa.snapshotEm)} collectionLabel="Arquivo oficial em" publishedLabel={row.chapa.estado === "indeferidos_comprovados" ? labelState(row.chapa.estado) : undefined} />}</td>
-            <td><Status state={row.processos.estado}>{processosDescription(row)}</Status>{(row.processos.estado === "publicado" || row.processos.estado === "cobertura_parcial") && row.processos.buscaEstado !== "encontrado" && <p className={styles.meta}>Busca: {labelState(row.processos.buscaEstado)}</p>}<p className={styles.meta}>Processo não equivale a condenação.</p></td>
+            <td><Status state={row.processos.estado} label={labelProcessState}>{processosDescription(row)}</Status>{(row.processos.estado === "publicado" || row.processos.estado === "cobertura_parcial") && row.processos.buscaEstado !== "encontrado" && <p className={styles.meta}>Busca: {labelProcessState(row.processos.buscaEstado)}</p>}<p className={styles.meta}>Processo não equivale a condenação.</p></td>
             <td><div className={styles.actions}><Link href={`${row.fichaUrl}?tab=geral`}>Ficha geral</Link><Link href={`${row.fichaUrl}?tab=justica`}>Justiça</Link><a href={`/api/card/${encodeURIComponent(row.slug)}?format=feed&v=2`} rel="noreferrer">Card público</a>{row.sites.fonteUrl && row.sites.coletadoEm && <ImprensaCitationButton candidateName={row.nomeOriginal} section="sites" slug={row.slug} sourceUrl={row.sites.fonteUrl} collectedAt={dateLabel(row.sites.coletadoEm)} />}</div><p className={styles.publishability}>{isPublishable(row) ? "publicável agora" : "exige conferência"}</p></td>
           </tr>)}</tbody>
         </table>
@@ -123,7 +128,7 @@ export function ImprensaRows({ rows }: { rows: Row[] }) {
         <header><Link className={styles.name} href={row.fichaUrl}>{row.nome}</Link><p className={styles.meta}>{[row.partido, row.cargo, row.uf].filter(Boolean).join(" · ")}</p><p className={styles.publishability}>{isPublishable(row) ? "publicável agora" : "exige conferência"}</p></header>
         <Status state={row.sites.estado}>{row.sites.quantidade == null ? "quantidade não publicada" : `${row.sites.quantidade} URL${row.sites.quantidade === 1 ? "" : "s"}`}</Status>
         <Status state={row.chapa.estado}>{chapaDescription(row)}</Status>
-        <Status state={row.processos.estado}>{processosDescription(row)}</Status>
+        <Status state={row.processos.estado} label={labelProcessState}>{processosDescription(row)}</Status>
         <div className={styles.actions}><Link href={`${row.fichaUrl}?tab=geral`}>Ficha geral</Link><Link href={`${row.fichaUrl}?tab=justica`}>Justiça</Link><a href={`/api/card/${encodeURIComponent(row.slug)}?format=feed&v=2`}>Card público</a>{row.chapa.fonteUrl && row.chapa.snapshotEm && <ImprensaCitationButton candidateName={row.nomeOriginal} section="chapa" slug={row.slug} sourceUrl={row.chapa.fonteUrl} collectedAt={dateLabel(row.chapa.snapshotEm)} collectionLabel="Arquivo oficial em" publishedLabel={row.chapa.estado === "indeferidos_comprovados" ? labelState(row.chapa.estado) : undefined} />}{row.sites.fonteUrl && row.sites.coletadoEm && <ImprensaCitationButton candidateName={row.nomeOriginal} section="sites" slug={row.slug} sourceUrl={row.sites.fonteUrl} collectedAt={dateLabel(row.sites.coletadoEm)} />}</div>
       </article>)}</div>
     </> : <p className={styles.notice} role="status">Nenhum candidato corresponde a estes filtros.</p>}
