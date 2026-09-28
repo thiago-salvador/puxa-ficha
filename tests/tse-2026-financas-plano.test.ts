@@ -11,7 +11,7 @@ import {
   type EstadoProducao,
   type PlannedRow,
 } from "../scripts/lib/tse-2026-financas-plano"
-import { decidirPortao, lerArgs, linhasDeReciboDeFalha } from "../scripts/tse-2026-financas"
+import { decidirPortao, lerArgs, linhasDeReciboDeFalha, planoPublico } from "../scripts/tse-2026-financas"
 
 const PACOTE = { url_receitas: "https://tse/receitas.zip", url_bens: "https://tse/bens.zip" }
 const vazio = (): EstadoProducao => ({ financiamento: [], verificacoes: [], patrimonio: [], ausencias: [] })
@@ -26,7 +26,23 @@ describe("partição de ações por risco de identidade", () => {
       ],
       recibos: [],
       revisao: [],
-      resumo: {} as never,
+      resumo: {
+        fichas_publicas: 2,
+        financiamento: {
+          fichas_com_linha_apos_plano: 1, inserir: 1, atualizar: 0, inalterado: 0,
+          preservado_curadoria: 0, verificacoes_vencidas_apagadas: 1, fichas_vazio_confirmado: 0,
+          fichas_erro: 0, aguardando_backfill_categorias: 0,
+        },
+        patrimonio: {
+          fichas_com_linha_apos_plano: 0, inserir: 0, inalterado: 0, divergente_revisao: 0,
+          ausencias_desmentidas_apagadas: 0, fichas_vazio_confirmado: 0, fichas_erro: 0,
+        },
+        recibos: { financiamento: 0, patrimonio: 0 },
+      },
+      resumo_por_perfil: {
+        risco: { financiamento: { fichas_com_linha_apos_plano: 1, inserir: 1, verificacoes_vencidas_apagadas: 1 }, patrimonio: {} },
+        seguro: { financiamento: {}, patrimonio: {} },
+      },
     }
 
     const resultado = partitionarAcoesPorRiscoDeIdentidade(plano, ["risco"])
@@ -38,7 +54,12 @@ describe("partição de ações por risco de identidade", () => {
       { slug: "risco", familia: "financiamento", motivo: "identidade_em_revisao" },
     ])
     assert.equal(plano.acoes.length, 3, "helper preserva o plano original")
+    assert.equal(resultado.plano.resumo.financiamento.inserir, 0)
+    assert.equal(resultado.plano.resumo.financiamento.fichas_com_linha_apos_plano, 0)
+    assert.throws(() => partitionarAcoesPorRiscoDeIdentidade({ ...plano, resumo_por_perfil: {} }, ["risco"]),
+      (error: unknown) => error instanceof Error && error.message === "plano sem resumo do perfil em risco: risco")
   })
+
 })
 
 function fin(slug: string, id: string, extra: Record<string, unknown> = {}): PlannedRow {
@@ -64,6 +85,66 @@ function fin(slug: string, id: string, extra: Record<string, unknown> = {}): Pla
     },
   }
 }
+
+function planoComPerfilEmRisco() {
+  const plano = planejarFinancas2026({
+    publicos: [{ id: "c1", slug: "risco" }, { id: "c2", slug: "seguro" }],
+    planejadas: [fin("risco", "c1"), fin("seguro", "c2")],
+    estado: vazio(),
+    pacote: PACOTE,
+  })
+  return partitionarAcoesPorRiscoDeIdentidade(plano, ["risco"]).plano
+}
+
+describe("partição de recibos por risco de identidade", () => {
+  it("marca recibo financeiro arriscado como indeterminado", () => {
+    const recibo = planoComPerfilEmRisco().recibos.find((item) => item.alvo === "risco" && item.fonte === "tse-financiamento")
+    assert.equal(recibo?.resultado, "indeterminado")
+  })
+
+  it("não declara volume nem causa durante a revisão de identidade", () => {
+    const recibo = planoComPerfilEmRisco().recibos.find((item) => item.alvo === "risco" && item.fonte === "tse-financiamento")
+    assert.equal(recibo?.volume, null)
+    assert.equal(JSON.parse(recibo?.detalhe ?? "{}").motivo, "identidade_em_revisao")
+  })
+
+  it("recalcula resumo das ações adiadas", () => {
+    const plano = planoComPerfilEmRisco()
+    assert.equal(plano.resumo.recibos.financiamento, 2)
+    assert.equal(plano.resumo.financiamento.inserir, 1)
+    assert.equal(plano.resumo.financiamento.fichas_com_linha_apos_plano, 1)
+  })
+
+  it("recalcula o agrupamento público pelo novo resultado", () => {
+    const agrupado = planoPublico(planoComPerfilEmRisco()).recibos_por_resultado
+    assert.equal(agrupado["tse-financiamento:indeterminado"], 1)
+    assert.equal(agrupado["tse-financiamento:encontrado"], 1)
+  })
+
+  it("remove do resumo as contagens de perfil inalterado e curado em revisão", () => {
+    const estado = vazio()
+    estado.financiamento = [
+      existente("f1", "c1", { sq_candidato: "sq-risco", fonte: "curadoria" }),
+      existente("f2", "c2", {
+        sq_candidato: "sq-seguro", total_arrecadado: "1000.00", total_fundo_eleitoral: 1000,
+        categorias_origem: { fundo_eleitoral: 1000, fundo_partidario: 0, outros_recursos: 0, nao_informado_pelo_tse: 0 },
+        maiores_doadores: [{ nome: "PARTIDO X", valor: 1000, tipo: "fundo_eleitoral" }],
+      }),
+    ]
+    const plano = planejarFinancas2026({
+      publicos: [{ id: "c1", slug: "risco" }, { id: "c2", slug: "seguro" }],
+      planejadas: [fin("risco", "c1"), fin("seguro", "c2")],
+      estado,
+      pacote: PACOTE,
+    })
+
+    assert.equal(plano.resumo.financiamento.preservado_curadoria, 1)
+    assert.equal(plano.resumo.financiamento.inalterado, 1)
+    const particionado = partitionarAcoesPorRiscoDeIdentidade(plano, ["risco"]).plano
+    assert.equal(particionado.resumo.financiamento.preservado_curadoria, 0)
+    assert.equal(particionado.resumo.financiamento.inalterado, 1)
+  })
+})
 
 function existente(id: string, candidato: string, extra: Record<string, unknown> = {}) {
   return {
@@ -303,6 +384,34 @@ describe("coletor TSE 2026: portão e argumentos", () => {
     const proporcao = { ...plano, acoes: Array.from({ length: 11 }, (_, index) => ({ ...acao, slug: `ficha-${index}` })), resumo: { ...plano.resumo, fichas_publicas: 20 } }
     assert.ok(travasDoPlano(proporcao, vazio()).some((falha) => falha.includes("50%")))
     assert.equal(travasDoPlano(proporcao, vazio(), { maxQuedaRelativa: 0.2, maxAffectedRatio: 0.95, maxActions: 1000 }).some((falha) => falha.includes("95%")), false)
+  })
+
+  it("exclui perfis com identidade em revisão do denominador de cobertura", () => {
+    const publicos = Array.from({ length: 10 }, (_, index) => ({ id: `c${index}`, slug: `p${index}` }))
+    const planejadas = publicos.map((item) => fin(item.slug, item.id))
+    const estado = vazio()
+    estado.financiamento = publicos.map((item, index) => existente(`f${index}`, item.id, { sq_candidato: `sq-${item.slug}` }))
+    const plano = planejarFinancas2026({ publicos, planejadas, estado, pacote: PACOTE })
+    const particionado = partitionarAcoesPorRiscoDeIdentidade(plano, ["p8", "p9"]).plano
+    for (const recibo of particionado.recibos.filter((item) => ["p8", "p9"].includes(item.alvo) && item.fonte === "tse-financiamento")) {
+      recibo.resultado = "indeterminado"
+      recibo.volume = null
+      recibo.detalhe = JSON.stringify({ motivo: "identidade_em_revisao" })
+    }
+
+    assert.deepEqual(travasDoPlano(particionado, estado), [])
+  })
+
+  it("não conta receitas encontradas de perfis sem linha financeira publicada", () => {
+    const publicos = Array.from({ length: 12 }, (_, index) => ({ id: `c${index}`, slug: `p${index}` }))
+    const planejadas = [...Array.from({ length: 7 }, (_, index) => fin(`p${index}`, `c${index}`)),
+      fin("p8", "c8"), fin("p9", "c9"), fin("p10", "c10"), fin("p11", "c11")]
+    const estado = vazio()
+    estado.financiamento = publicos.slice(0, 10).map((item, index) => existente(`f${index}`, item.id, { sq_candidato: `sq-${item.slug}` }))
+    const plano = planejarFinancas2026({ publicos, planejadas, estado, pacote: PACOTE })
+    const particionado = partitionarAcoesPorRiscoDeIdentidade(plano, ["p8", "p9"]).plano
+
+    assert.ok(travasDoPlano(particionado, estado).some((falha) => falha.includes("regressão do pacote")))
   })
 
   it("rodada que não aplica deixa recibo de erro nas duas fontes por ficha", () => {

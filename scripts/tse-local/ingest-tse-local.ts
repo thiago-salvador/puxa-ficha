@@ -16,6 +16,7 @@ import { collectDivulgaFinancingForClient, type DivulgaFinancingResult } from ".
 import { officialCandidateUfMap } from "./official-uf"
 import { minimalChildEnv } from "../lib/minimal-child-env"
 import { partitionarAcoesPorRiscoDeIdentidade, stableJson, type PlanoFinancas2026 } from "../lib/tse-2026-financas-plano"
+import { planoPublico } from "../tse-2026-financas"
 import { parseIdentityReviewed } from "../audit/lib/historico-revisao"
 
 const TSE_CDN = "https://cdn.tse.jus.br/estatistica/sead/odsele"
@@ -471,8 +472,6 @@ export async function runReviewedLive(
     chmodSync(copy, 0o400)
     pinnedBytes.set(file.name, copiedBytes)
   }
-  const projection = join(pinnedDir, "recibos-familias-projecao.json")
-  const history = join(pinnedDir, "historico-recibos.json")
   const plan = join(pinnedDir, "plano-privado.json")
   const reviewedPlan = JSON.parse(pinnedBytes.get("plano-privado.json")!.toString("utf8")) as { plano_sha256?: string; acoes?: Array<{ slug?: unknown }>; revisao?: Array<{ slug: string; familia: string; motivo: string }>; identity_risk_slugs?: unknown }
   const planSha = createHash("sha256").update(stableJson(reviewedPlan.acoes)).digest("hex")
@@ -518,6 +517,15 @@ export async function runReviewedLive(
     reviewedPlan,
   )
   if (stableJson([...recomputedRiskSlugs].sort()) !== stableJson([...pinnedRiskSlugs].sort())) throw new Error("coorte de risco de identidade do plano diverge dos artefatos fixados")
+  const applicableReceipts = (name: "recibos-familias-projecao.json" | "historico-recibos.json", output: string): string => {
+    const input = JSON.parse(pinnedBytes.get(name)!.toString("utf8")) as { receipts?: Array<{ alvo?: string }> }
+    if (!Array.isArray(input.receipts)) throw new Error(`recibos revisados inválidos: ${name}`)
+    const path = join(out, output)
+    writePrivate(path, { ...input, receipts: input.receipts.filter((receipt) => !recomputedRiskSlugs.has(receipt.alvo ?? "")) })
+    return path
+  }
+  const projection = applicableReceipts("recibos-familias-projecao.json", "recibos-familias-projecao-aplicaveis.json")
+  const history = applicableReceipts("historico-recibos.json", "historico-recibos-aplicaveis.json")
   const sources = report.sources
   const steps = report.steps
   if ((report.identity_reviewed_sha256 ?? null) !== (options.expectedIdentitySha?.toLowerCase() ?? null)) throw new Error("SHA-256 da identidade revisada diverge do relatório")
@@ -580,7 +588,7 @@ export async function runReviewedLive(
   ])
   if (!historyApply.ok) throw new Error(`cobertura histórica falhou: ${historyApply.reason ?? historyApply.code}`)
   writePrivate(join(out, "relatorio.json"), { mode: "live", reviewed_run_dir: reviewed,
-    reviewed_shas: { plan: options.expectedPlanFileSha, family: options.expectedFamilySha, projection: options.expectedProjectionSha, history: options.expectedHistorySha, cohort: options.expectedCohortSha },
+    reviewed_shas: { plan: options.expectedPlanFileSha, family: options.expectedFamilySha, projection: options.expectedProjectionSha, history: options.expectedHistorySha, cohort: options.expectedCohortSha, identity: options.expectedIdentitySha },
     steps: { finance: stepSummary(finance), readback: stepSummary(exported), family: stepSummary(familyApply), history: stepSummary(historyApply) } })
   return 0
 }
@@ -888,8 +896,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     const summaryPath = join(financeOut, "plano-resumo.json")
     if (existsSync(summaryPath)) {
       const summary = JSON.parse(readFileSync(summaryPath, "utf8")) as Record<string, unknown>
-      writeFileSync(summaryPath, `${JSON.stringify({ ...summary, plano_sha256: planoFinal.plano_sha256,
-        acoes: planoFinal.acoes.map((acao) => ({ tipo: acao.tipo, slug: acao.slug })), revisao: planoFinal.revisao,
+      writeFileSync(summaryPath, `${JSON.stringify({ ...summary, ...planoPublico(planoFinal), plano_sha256: planoFinal.plano_sha256,
         identity_risk_actions_deferred: identityRiskActionsDeferred, identity_risk_actions_blocked: 0 }, null, 2)}\n`, { mode: 0o600 })
     }
     const verifiedPath = join(financeOut, "dry-run-verificado.json")

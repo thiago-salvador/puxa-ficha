@@ -31,7 +31,10 @@ de prestação de contas (2002–2026, com os nomes oficiais próprios de cada
 período). O manifesto privado registra URL e SHA-256 de cada ZIP. A revisão de
 histórico usa as candidaturas oficiais e certifica identidade por identificador
 oficial ou por vínculo nominal revisado e listado em arquivo privado. Nesse caso,
-nome e nascimento precisam coincidir com a âncora. Linhas nominais não cobertas
+nome e nascimento precisam coincidir com a âncora; UF e cargo também são
+conferidos para cada vínculo revisado. Um vínculo não remove a revisão de uma
+âncora descartada do seed em 2026. Em outros anos, essa revisão só sai quando o
+SQ do vínculo é o próprio SQ do seed naquele ano. Linhas nominais não cobertas
 permanecem em revisão. A leitura
 complementar por candidato consulta
 `/divulga/rest/v1/eleicao/ordinarias` e
@@ -99,6 +102,8 @@ diretório dessa rodada e só então defina `TSE_LOCAL_MODE=live`. O runner conf
 os digests e os gates do relatório antes de qualquer escrita de domínio. Ações
 financeiras de perfis com identidade em revisão saem de `acoes` e entram em
 `revisao` com motivo `identidade_em_revisao` antes do cálculo de `plano_sha256`.
+Seus recibos financeiros passam a `indeterminado`, sem alegação de volume. A
+projeção e o histórico desses perfis não geram recibos de cobertura nessa rodada.
 O relatório distingue ações adiadas de ações de risco ainda no plano, que devem
 ser zero. No live, o gate fixa a revisão histórica, os candidatos da coorte e os
 diagnósticos de família pelos SHAs incluídos no relatório, recompõe a coorte de

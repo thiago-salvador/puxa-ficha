@@ -269,6 +269,7 @@ export async function runHistoricoRevision(options: {
   const acceptedNominalRows = new Map<string, Set<string>>()
   const linkByKey = new Map((options.identityReviewed?.vinculos ?? []).map((link) => [`${link.slug}|${link.ano}|${link.sq_candidato}`, link]))
   const seenReviewedLinks = new Set<string>()
+  const acceptedReviewedLinkKeys = new Set<string>()
   const rejectedLinkReasons = new Map<string, string>()
   for (const asset of byYear.values()) {
     await readZip(asset, (row) => {
@@ -281,7 +282,7 @@ export async function runHistoricoRevision(options: {
         const key = `${link.slug}|${link.ano}|${link.sq_candidato}`
         seenReviewedLinks.add(key)
         const identity = identities.get(link.slug)
-        if (!identity || !profiles.some((profile) => profile.slug === link.slug)) rejectedLinkReasons.set(key, "perfil_sem_identidade_ancorada")
+        if (!identity || identity.ambiguous || identity.anchors <= 0 || !profiles.some((profile) => profile.slug === link.slug)) rejectedLinkReasons.set(key, "perfil_sem_identidade_ancorada")
         else if (row.cpf) rejectedLinkReasons.set(key, "linha_oficial_com_CPF")
         else if (row.uf.trim().toUpperCase() !== link.uf.trim().toUpperCase()) rejectedLinkReasons.set(key, "uf_nao_confere")
         else if (row.cargo !== cargoKey(link.cargo)) rejectedLinkReasons.set(key, "cargo_nao_confere")
@@ -292,6 +293,12 @@ export async function runHistoricoRevision(options: {
         for (const [slug, identity] of identities) {
           if (!identity.ambiguous && identity.anchors > 0 && belongsToIdentity(row, identity)) {
             const rowKey = `${row.year}|${row.sq}|${row.uf}|${row.cargo}`
+            if (direct.includes(slug)) {
+              // SQ direto do seed já identifica esta linha; CPF mascarado não
+              // transforma a própria âncora oficial em vínculo nominal pendente.
+              sourceRows.set(slug, [...(sourceRows.get(slug) ?? []), row])
+              continue
+            }
             nominalRows.set(slug, new Set([...(nominalRows.get(slug) ?? []), rowKey]))
             const linkKey = `${slug}|${row.year}|${row.sq}`
             const link = linkByKey.get(linkKey)
@@ -299,6 +306,7 @@ export async function runHistoricoRevision(options: {
               acceptedNominalRows.set(slug, new Set([...(acceptedNominalRows.get(slug) ?? []), rowKey]))
               seenReviewedLinks.add(linkKey)
               rejectedLinkReasons.delete(linkKey)
+              acceptedReviewedLinkKeys.add(linkKey)
               sourceRows.set(slug, [...(sourceRows.get(slug) ?? []), row])
             }
           }
@@ -316,9 +324,9 @@ export async function runHistoricoRevision(options: {
   for (const link of options.identityReviewed?.vinculos ?? []) {
     const key = `${link.slug}|${link.ano}|${link.sq_candidato}`
     if (!seenReviewedLinks.has(key)) rejectedLinkReasons.set(key, "linha_ausente_no_pacote_oficial")
-    else if (!rejectedLinkReasons.has(key)) seenReviewedLinks.add(key)
+    else if (!rejectedLinkReasons.has(key) && !acceptedReviewedLinkKeys.has(key)) rejectedLinkReasons.set(key, "vinculo_nominal_nao_utilizado")
   }
-  const acceptedLinks = (options.identityReviewed?.vinculos ?? []).filter((link) => !rejectedLinkReasons.has(`${link.slug}|${link.ano}|${link.sq_candidato}`)).length
+  const acceptedLinks = acceptedReviewedLinkKeys.size
   const rejectedReasons: Record<string, number> = {}
   for (const reason of rejectedLinkReasons.values()) rejectedReasons[reason] = (rejectedReasons[reason] ?? 0) + 1
   const identityReviewed = { used: Boolean(options.identityReviewed), accepted: acceptedLinks, rejected: rejectedLinkReasons.size, rejected_reasons: rejectedReasons }
@@ -329,6 +337,7 @@ export async function runHistoricoRevision(options: {
   const review: HistoricoReviewItem[] = []
   for (const profile of profiles) {
     if (typeof profile.slug !== "string" || typeof profile.id !== "string") continue
+    const profileSlug = profile.slug
     const candidate = seedBySlug.get(profile.slug) ?? null
     const codigo = String(candidate?.ids?.senado ?? "").trim()
     const senado = /^\d+$/.test(codigo) ? await options.senado(codigo) : null
@@ -336,9 +345,13 @@ export async function runHistoricoRevision(options: {
     const coveredNominal = acceptedNominalRows.get(profile.slug) ?? new Set<string>()
     const identityPending = options.identityMode === "official-only" && [...requiredNominal].some((key) => !coveredNominal.has(key))
     const identity = identities.get(profile.slug)!
+    const seedSqByYear = new Map(seedAnchors(candidate ?? { slug: profile.slug }).map(({ year, sq }) => [year, sq]))
     const clearedAnchorYears = new Set((identity.anchorsDescartadas ?? []).filter((year) => {
-      const yearRows = [...requiredNominal].filter((key) => key.startsWith(`${year}|`))
-      return yearRows.length > 0 && yearRows.every((key) => coveredNominal.has(key))
+      if (year === 2026) return false
+      const seedSq = seedSqByYear.get(year)
+      return Boolean(seedSq && [...(acceptedNominalRows.get(profileSlug) ?? [])].some((key) => key.startsWith(`${year}|${seedSq}|`)) &&
+        (options.identityReviewed?.vinculos ?? []).some((link) => link.slug === profileSlug && link.ano === year && link.sq_candidato === seedSq &&
+          !rejectedLinkReasons.has(`${link.slug}|${link.ano}|${link.sq_candidato}`)))
     }))
     const identityForVerdict = clearedAnchorYears.size
       ? { ...identity, anchorsDescartadas: (identity.anchorsDescartadas ?? []).filter((year) => !clearedAnchorYears.has(year)) }
