@@ -348,13 +348,24 @@ $readback$;
   return { migration, rollback, readback, counts: { processos: total, candidatos } }
 }
 
+/** O cache passa pelas mesmas regras da busca ao vivo: total inteiro, sem truncamento, comunicações válidas. */
+export function validarCacheDjen(numero: string, salvo: unknown): ComunicacaoDjen[] {
+  const digits = digitos(numero)
+  const cache = salvo as { numero?: unknown; count?: unknown; items?: unknown }
+  if (!cache || cache.numero !== digits || !Array.isArray(cache.items) || !Number.isInteger(cache.count)
+    || (cache.count as number) > 20_000 || cache.items.length !== cache.count) {
+    throw new Error(`${numero}: cache DJEN invalido ou truncado`)
+  }
+  const items = cache.items as ComunicacaoDjen[]
+  resumoComunicacoes(numero, items)
+  return items
+}
+
 async function buscarComunicacoes(numero: string, cacheDir: string): Promise<ComunicacaoDjen[]> {
   const digits = digitos(numero)
   const cachePath = resolve(cacheDir, `${digits}.json`)
   if (existsSync(cachePath)) {
-    const salvo = JSON.parse(readFileSync(cachePath, "utf8")) as { numero: string; items: ComunicacaoDjen[] }
-    if (salvo.numero !== digits || !Array.isArray(salvo.items)) throw new Error(`${numero}: cache DJEN invalido`)
-    return salvo.items
+    return validarCacheDjen(numero, JSON.parse(readFileSync(cachePath, "utf8")))
   }
   const items: ComunicacaoDjen[] = []
   let count = -1

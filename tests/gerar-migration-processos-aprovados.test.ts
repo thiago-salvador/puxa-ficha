@@ -7,6 +7,7 @@ import {
   detalheRecibo,
   gerarSql,
   urlsConsultadasDjen,
+  validarCacheDjen,
   prepararLinhas,
   resumoComunicacoes,
   validarAprovados,
@@ -135,5 +136,17 @@ describe("texto público e URLs consultadas", () => {
   it("publica a classe em caixa alta do português, sem minúscula acentuada", () => {
     const linha = prepararLinhas([{ ...aprovado, classe: "PROCEDIMENTO COMUM CíVEL" }], comunicacoes, "curadoria-djen-20260928")[0]
     assert.match(linha.descricao, /nas classes PROCEDIMENTO COMUM CÍVEL,/)
+  })
+})
+
+describe("cache do DJEN", () => {
+  const numero = "7000047-10.2021.8.22.0007"
+  const itens = comunicacoes.get("70000471020218220007") ?? []
+
+  it("aceita cache íntegro e recusa truncado, sem total ou de outro processo", () => {
+    assert.equal(validarCacheDjen(numero, { numero: "70000471020218220007", count: itens.length, items: itens }).length, itens.length)
+    assert.throws(() => validarCacheDjen(numero, { numero: "70000471020218220007", count: itens.length + 1, items: itens }), /truncado/)
+    assert.throws(() => validarCacheDjen(numero, { numero: "70000471020218220007", items: itens }), /truncado/)
+    assert.throws(() => validarCacheDjen(numero, { numero: "00000000000000000000", count: itens.length, items: itens }), /truncado/)
   })
 })
