@@ -1,7 +1,10 @@
 import assert from "node:assert/strict"
 import { describe, it } from "node:test"
 
+import { cnjsPublicaveisDoTexto } from "../scripts/aplicar-evidencia-processos-curadoria"
+import { projectProcessosVerificacaoRow } from "../src/lib/processos-verificacao-public"
 import {
+  detalheRecibo,
   gerarSql,
   prepararLinhas,
   resumoComunicacoes,
@@ -20,7 +23,7 @@ const aprovado: Aprovado = {
   polo: "A",
   papel: "parte_ativa",
   tipo: "civil",
-  decisao_mesa: "aprovado",
+  decisao_ref: "aprovado",
 }
 const evidencia: ProcessoEvidencia = {
   slug: aprovado.slug,
@@ -80,5 +83,38 @@ describe("gerador de lote aprovado com DJEN por número", () => {
     assert.match(rollback, /DELETE FROM public\.coleta_log/)
     assert.match(readback, /public\.coleta_log_ultima/)
     assert.match(readback, /CNJs ausentes ou duplicados/)
+  })
+})
+
+describe("recibo de busca do lote aprovado", () => {
+  const apis = [
+    "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=70000471020218220007",
+    "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00000436920108100118",
+  ]
+
+  it("segue o formato canônico que a renovação lê", () => {
+    const detalhe = detalheRecibo(2, apis)
+    assert.match(detalhe, /^revisao_em=\d{4}-\d{2}-\d{2}; identidade=id-oficial; identidade_urls=https:\/\/cdn\.tse\.jus\.br\/[^;]+; urls_consultadas=[^;]+; detalhe=2 processo\(s\)/)
+    assert.deepEqual(cnjsPublicaveisDoTexto(detalhe.split("; detalhe=")[0]), ["00000436920108100118", "70000471020218220007"])
+  })
+
+  it("mantém URL e detalhe visíveis na projeção pública", () => {
+    const projetado = projectProcessosVerificacaoRow({
+      fonte: "processos-curadoria", escopo: "candidato", resultado: "encontrado",
+      executado_em: "2026-09-28T03:00:00Z", url: [...apis].sort()[0], detalhe: detalheRecibo(2, apis),
+    } as Parameters<typeof projectProcessosVerificacaoRow>[0])
+    assert.ok(projetado)
+    assert.equal(projetado.url, [...apis].sort()[0])
+    for (const url of apis) assert.ok((projetado.source_urls ?? []).includes(url), url)
+  })
+
+  it("liga os recibos da migration aos CNJ do lote e confere fonte no pós-check", () => {
+    const linhas = prepararLinhas([aprovado], comunicacoes, "curadoria-djen-20260928")
+    const { migration, readback } = gerarSql(linhas, "curadoria-djen-20260928")
+    assert.match(migration, /AS r\(slug, candidato_id, volume, url, detalhe\)/)
+    assert.match(migration, /p\.candidato_id = l\.candidato_id AND p\.fonte = l\.fonte/)
+    assert.match(migration, /comunicaapi\.pje\.jus\.br\/api\/v1\/comunicacao\?itensPorPagina=100&numeroProcesso=70000471020218220007/)
+    assert.match(readback, /AND p\.fonte = e\.fonte/)
+    assert.match(readback, /l\.detalhe = e\.detalhe/)
   })
 })

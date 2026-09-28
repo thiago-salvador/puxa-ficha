@@ -21,7 +21,7 @@ source "$ROOT/scripts/audit/lib/configure-libpq-from-url.sh"
   exit 2
 }
 
-database_ref="$(node <<'NODE'
+database_ref="$(node 2>/dev/null <<'NODE'
 const raw = process.env.PF_DATABASE_URL ?? ""
 let url
 try { url = new URL(raw) } catch { process.exit(2) }

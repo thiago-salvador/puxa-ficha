@@ -15,6 +15,9 @@ const FONTE_LOG = "processos-curadoria"
 const ESCOPO_LOG = "candidato"
 const RESULTADO_LOG = "encontrado"
 const VERSAO = "20260928010000"
+const DJEN_API = "https://comunicaapi.pje.jus.br/api/v1/comunicacao"
+const TSE_CONSULTA_CAND = "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip"
+const DATA_REVISAO = "2026-09-28"
 const NOME = "processos_l13_senado"
 
 export interface Aprovado {
@@ -27,7 +30,7 @@ export interface Aprovado {
   polo: "A" | "P" | null
   papel: string
   tipo: string
-  decisao_mesa: string
+  decisao_ref: string
 }
 
 export interface ProcessoEvidencia {
@@ -56,6 +59,7 @@ interface Linha {
   descricao: string
   fonte: string
   url: string
+  urlApi: string
 }
 
 const digitos = (numero: string) => numero.replace(/\D/g, "")
@@ -88,7 +92,7 @@ export function validarAprovados(
   for (const item of aprovados) {
     if (!cnjValido(item.numero_cnj)) throw new Error(`${item.numero_cnj}: CNJ invalido`)
     if (!/^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$/i.test(item.candidato_id)) throw new Error(`${item.numero_cnj}: candidato_id invalido`)
-    if (!item.slug || !item.decisao_mesa || !item.tribunal || !item.classe || !item.orgao) throw new Error(`${item.numero_cnj}: aprovacao incompleta`)
+    if (!item.slug || !item.decisao_ref || !item.tribunal || !item.classe || !item.orgao) throw new Error(`${item.numero_cnj}: aprovacao incompleta`)
     const chave = `${item.slug}:${digitos(item.numero_cnj)}`
     if (vistos.has(chave)) throw new Error(`${item.numero_cnj}: par slug/CNJ duplicado`)
     vistos.add(chave)
@@ -141,6 +145,7 @@ export function prepararLinhas(
       descricao,
       fonte: `${marcador}: Comunicações processuais oficiais do DJEN/CNJ - processo ${numero}`,
       url: `https://comunica.pje.jus.br/consulta?numeroProcesso=${digitos(numero)}`,
+      urlApi: `${DJEN_API}?itensPorPagina=100&numeroProcesso=${digitos(numero)}`,
     }
   })
 }
@@ -149,10 +154,27 @@ function dadosSql(linhas: Linha[]) {
   return linhas.map((x) => `    (${[x.slug, x.candidatoId, x.tipo, x.tribunal, x.numero, x.descricao, STATUS, x.fonte, x.url].map(sql).join(", ")})`).join(",\n")
 }
 
+/**
+ * Mesmo formato do recibo canônico da curadoria (revisao_em=...; urls_consultadas=...;
+ * detalhe=...): a rotina de renovação lê os CNJ publicados a partir de urls_consultadas.
+ */
+export function detalheRecibo(volume: number, urlsApi: string[]): string {
+  return [
+    `revisao_em=${DATA_REVISAO}`,
+    "identidade=id-oficial",
+    `identidade_urls=${TSE_CONSULTA_CAND}`,
+    `urls_consultadas=${[...urlsApi].sort().join(",")}`,
+    `detalhe=${volume} processo(s) com número CNJ, contexto oficial de identidade e parte na ação; revisão editorial em 28/09/2026`,
+  ].join("; ")
+}
+
 function recibosSql(linhas: Linha[]) {
   const porSlug = new Map<string, Linha[]>()
   for (const linha of linhas) porSlug.set(linha.slug, [...(porSlug.get(linha.slug) ?? []), linha])
-  return [...porSlug.values()].map((xs) => `    (${sql(xs[0].slug)}, ${sql(xs[0].candidatoId)}::uuid, ${xs.length}, ${sql(xs[0].url)})`).join(",\n")
+  return [...porSlug.values()].map((xs) => {
+    const apis = xs.map((x) => x.urlApi).sort()
+    return `    (${sql(xs[0].slug)}, ${sql(xs[0].candidatoId)}::uuid, ${xs.length}, ${sql(apis[0])}, ${sql(detalheRecibo(xs.length, apis))})`
+  }).join(",\n")
 }
 
 export function gerarSql(linhas: Linha[], marcador: string) {
@@ -213,11 +235,11 @@ ${inserts}
 INSERT INTO public.coleta_log
   (fonte, escopo, alvo, candidato_id, resultado, volume, detalhe, url, execucao, natureza)
 SELECT ${sql(FONTE_LOG)}, ${sql(ESCOPO_LOG)}, r.slug, r.candidato_id, ${sql(RESULTADO_LOG)}, r.volume,
-       r.volume || ' processo(s) com número CNJ, contexto oficial de identidade e parte na ação; revisão editorial em 28/09/2026',
+       r.detalhe,
        r.url, ${sql(`migration:${VERSAO}`)}, 'coleta'
 FROM (VALUES
 ${recibos}
-) AS r(slug, candidato_id, volume, url)
+) AS r(slug, candidato_id, volume, url, detalhe)
 JOIN public.candidatos c ON c.slug = r.slug AND c.id = r.candidato_id
 WHERE current_setting('pf.replay', true) IS DISTINCT FROM 'true'
   AND NOT EXISTS (SELECT 1 FROM public.coleta_log x
@@ -228,7 +250,7 @@ DECLARE n integer;
 BEGIN
   IF current_setting('pf.replay', true) = 'true' OR NOT EXISTS (SELECT 1 FROM public.candidatos) THEN RETURN; END IF;
   SELECT count(*) INTO n FROM _pf_processos_curadoria l
-  WHERE (SELECT count(*) FROM public.processos p WHERE p.candidato_id = l.candidato_id
+  WHERE (SELECT count(*) FROM public.processos p WHERE p.candidato_id = l.candidato_id AND p.fonte = l.fonte
     AND regexp_replace(p.numero_processo, '[^0-9]', '', 'g') = regexp_replace(l.numero_cnj, '[^0-9]', '', 'g')) <> 1;
   IF n <> 0 THEN RAISE EXCEPTION 'processos: % CNJs ausentes ou duplicados', n; END IF;
   SELECT count(*) INTO n FROM public.coleta_log WHERE execucao = ${sql(`migration:${VERSAO}`)}
@@ -253,15 +275,15 @@ BEGIN
   SELECT count(*) INTO n FROM public.coleta_log q
   WHERE q.execucao = ${sql(`migration:${VERSAO}`)} AND q.fonte = ${sql(FONTE_LOG)} AND q.escopo = ${sql(ESCOPO_LOG)};
   IF n <> ${candidatos} THEN RAISE EXCEPTION 'rollback processos: esperados ${candidatos} recibos, encontrados %', n; END IF;
-  SELECT count(*) INTO n FROM public.coleta_log q LEFT JOIN
-    (SELECT slug, candidato_id, count(*)::integer AS volume FROM _pf_processos_curadoria_rollback GROUP BY slug, candidato_id) e
+  WITH e(slug, candidato_id, volume, url, detalhe) AS (VALUES
+${recibos}
+  ) SELECT count(*) INTO n FROM public.coleta_log q LEFT JOIN e
     ON e.slug = q.alvo AND e.candidato_id = q.candidato_id
   WHERE q.execucao = ${sql(`migration:${VERSAO}`)} AND q.fonte = ${sql(FONTE_LOG)} AND q.escopo = ${sql(ESCOPO_LOG)}
     AND (e.slug IS NULL OR q.resultado IS DISTINCT FROM ${sql(RESULTADO_LOG)}
       OR q.volume IS DISTINCT FROM e.volume
-      OR q.detalhe IS DISTINCT FROM e.volume || ' processo(s) com número CNJ, contexto oficial de identidade e parte na ação; revisão editorial em 28/09/2026'
-      OR NOT EXISTS (SELECT 1 FROM _pf_processos_curadoria_rollback l
-        WHERE l.slug = q.alvo AND l.candidato_id = q.candidato_id AND l.url_fonte = q.url));
+      OR q.detalhe IS DISTINCT FROM e.detalhe
+      OR q.url IS DISTINCT FROM e.url);
   IF n <> 0 THEN RAISE EXCEPTION 'rollback processos: % recibos divergentes; preservar revisao posterior', n; END IF;
 END $$;
 
@@ -295,19 +317,19 @@ DECLARE n integer;
 BEGIN
   SELECT count(*) INTO n FROM supabase_migrations.schema_migrations WHERE version = ${sql(VERSAO)};
   IF n <> 1 THEN RAISE EXCEPTION 'readback processos: ledger=%', n; END IF;
-  WITH expected(slug, candidato_id, numero_cnj) AS (VALUES
-${linhas.map((x) => `    (${sql(x.slug)}, ${sql(x.candidatoId)}::uuid, ${sql(x.numero)})`).join(",\n")}
+  WITH expected(slug, candidato_id, numero_cnj, fonte) AS (VALUES
+${linhas.map((x) => `    (${sql(x.slug)}, ${sql(x.candidatoId)}::uuid, ${sql(x.numero)}, ${sql(x.fonte)})`).join(",\n")}
   ) SELECT count(*) INTO n FROM expected e WHERE
     (SELECT count(*) FROM public.candidatos c JOIN public.processos p ON p.candidato_id = c.id
-      WHERE c.id = e.candidato_id AND c.slug = e.slug
+      WHERE c.id = e.candidato_id AND c.slug = e.slug AND p.fonte = e.fonte
         AND regexp_replace(p.numero_processo, '[^0-9]', '', 'g') = regexp_replace(e.numero_cnj, '[^0-9]', '', 'g')) <> 1;
   IF n <> 0 THEN RAISE EXCEPTION 'readback processos: % CNJs ausentes ou duplicados (esperados ${total})', n; END IF;
-  WITH expected(slug, candidato_id, volume, url) AS (VALUES
+  WITH expected(slug, candidato_id, volume, url, detalhe) AS (VALUES
 ${recibos}
   ) SELECT count(*) INTO n FROM expected e JOIN public.coleta_log_ultima l
     ON l.fonte = ${sql(FONTE_LOG)} AND l.escopo = ${sql(ESCOPO_LOG)} AND l.alvo = e.slug
    AND l.candidato_id = e.candidato_id AND l.resultado = ${sql(RESULTADO_LOG)}
-   AND l.volume = e.volume AND l.url = e.url AND l.execucao = ${sql(`migration:${VERSAO}`)};
+   AND l.volume = e.volume AND l.url = e.url AND l.detalhe = e.detalhe AND l.execucao = ${sql(`migration:${VERSAO}`)};
   IF n <> ${candidatos} THEN RAISE EXCEPTION 'readback processos: recibos atuais=% (esperados ${candidatos})', n; END IF;
   RAISE NOTICE 'readback processos: ${total} CNJs e ${candidatos} recibos atuais conferidos';
 END
