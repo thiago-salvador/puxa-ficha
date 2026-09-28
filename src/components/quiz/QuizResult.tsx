@@ -87,6 +87,10 @@ export function QuizResult({ datasetResource }: QuizResultProps) {
           documentais comparáveis por candidato: votos públicos e posições documentadas sobre a mesma pergunta.
           Projetos, partido e financiamento são contexto e não entram no cálculo.
         </p>
+        <p className="text-sm text-muted-foreground">
+          A cobertura de cada candidato diz quantas das suas respostas têm evidência dele, não quanto ele concorda com você.
+          Sem evidência comparável significa que não há dado para comparar, não que a nota é zero.
+        </p>
         <p className="text-xs text-muted-foreground">
           <Link
             href="/quiz/metodologia#feedback-espectro"
