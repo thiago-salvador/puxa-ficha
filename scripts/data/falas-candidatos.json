@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-09-28T09:04:23.605Z",
+  "updated_at": "2026-09-28T09:22:23.610Z",
   "quotes": [
     {
       "id": "0062071cf16d56755c81a47dfee662753a257af90407e7def28c6de4fdcba08e",
@@ -651,6 +651,32 @@
         "fetched_url": "https://portalarauto.com.br/02-09-2026/candidatos-do-pstu-a-presidencia-e-ao-governo-do-estado-cumprem-agenda-em-santa-cruz/",
         "method": "codex_source_review",
         "source_format": "web_text"
+      }
+    },
+    {
+      "id": "183d9e6141f7559e8c3b0b87c65d9056c2e82dbe79898953e18db0b9ad8cedf6",
+      "candidate_id": "d5ece407-2e2a-4e76-91a9-c2b7db826430",
+      "candidate_slug": "ronaldo-mansur",
+      "candidate_name": "Ronaldo Mansur",
+      "office": "Governador",
+      "uf": "BA",
+      "quote_text": "Nós vamos diminuir a fila da regulação, dando transparência. Além disso, vamos fazer concurso público. O último concurso público que tivemos foi em 2008. Ou seja, há 18 anos atrás foi o último concurso que tivemos na área da saúde. Vamos acabar com a ‘pejotização’ na área da saúde. A saúde vai ser uma das nossas prioridades de governo",
+      "context": "“Nós vamos diminuir a fila da regulação, dando transparência. Além disso, vamos fazer concurso público. O último concurso público que tivemos foi em 2008. Ou seja, há 18 anos atrás foi o último concurso que tivemos na área da saúde. Vamos acabar com a ‘pejotização’ na área da saúde. A saúde vai ser uma das nossas prioridades de governo”, afirmou.",
+      "event_context": "Entrevista ao vivo no telejornal Bahia Meio Dia, na sede da Rede Bahia, antes da participação de Ronaldo Mansur, nesta quarta-feira (16).. nesta quarta-feira (16)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-16",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ba/bahia/eleicoes/2026/noticia/2026/09/16/agenda-de-campanha-de-ronaldo-mansur.ghtml",
+      "article_title": "Ronaldo Mansur destaca propostas para realizar concurso público na BA | G1",
+      "article_published_at": "2026-09-16T18:09:08.578-03:00",
+      "observed_at": "2026-09-28T09:22:23.610Z",
+      "source_sha256": "a06d65e3d93d480b68240c8ec09ca839411eae9424a6d4de4ac852d2deb4b332",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao governo da Bahia Ronaldo Mansur (PSOL) destacou, nesta quarta-feira (16), propostas para a área da saúde antes de participar de uma entrevista ao vivo no Bahia Meio Dia, na sede da Rede Bahia, em Salvador.",
+        "date_excerpt": "nesta quarta-feira (16)",
+        "fetched_url": "https://g1.globo.com/ba/bahia/eleicoes/2026/noticia/2026/09/16/agenda-de-campanha-de-ronaldo-mansur.ghtml",
+        "method": "codex_source_review"
       }
     },
     {
@@ -1625,6 +1651,32 @@
       }
     },
     {
+      "id": "353d567d4a03e897ceda9932ec08c0bb774313728d6e9835a520e78b67811684",
+      "candidate_id": "4b079fd2-53ac-4b37-b735-3216d0817607",
+      "candidate_slug": "gisvaldo-oliveira",
+      "candidate_name": "Gisvaldo Oliveira",
+      "office": "Governador",
+      "uf": "PI",
+      "quote_text": "Eu quero agradecer a você, piauiense, que esteve acompanhando mais este debate. E dizer que você tem uma oportunidade histórica de promover, com o seu voto, uma verdadeira e efetiva mudança. Não apenas na forma de administrar o estado, mas no jeito de fazer política.",
+      "context": "\"Eu quero agradecer a você, piauiense, que esteve acompanhando mais este debate. E dizer que você tem uma oportunidade histórica de promover, com o seu voto, uma verdadeira e efetiva mudança. Não apenas na forma de administrar o estado, mas no jeito de fazer política. O nosso partido, o PSOL, é o partido que nós estamos dizendo e reafirmando todos os dias. É o partido de todas as lutas. O partido que está nas ruas, nas mobilizações e no parlamento, defendendo a garantia dos seus direitos. Nós temos atualmente, no nosso estado, de um lado, um governo petista em aliança com setores da direita tradicional e fisiológica, que tem promovido um verdadeiro desmonte dos serviços públicos do nosso estado; que tem adotado uma política de privatizações; que tem ocasionado a piora na prestação de todos os serviços públicos do nosso estado; que não gosta de servidor público e que tem tratado o servidor público com tirania. E, do outro lado, temos um candidato representante da oposição de direita, que representa o bolsonarismo, que está acostumado à política do balcão de negócios, à política do conchavo e da troca de favores. Inclusive, faz parte de um partido que tem origem na Arena, legenda que deu sustentação à ditadura militar no Brasil. Portanto, a alternativa real, verdadeira, de esquerda, e que efetivamente tem condições de fazer com que o estado do Piauí se torne um governo garantidor de direitos, é o PSOL. Então, eu quero aqui, mais uma vez, agradecer a você e pedir, em nível nacional, o voto para o presidente Lula. Nós não podemos permitir que a política de ódio volte para o nosso país. E aqui, no estado, para este professor, o professor Gisvaldo. É Lula lá, 13, e Gisvaldo aqui, para mudar o Piauí.\"",
+      "event_context": "Debate entre candidatos ao Governo do Piauí, com considerações finais de Gisvaldo Oliveira. nesta quarta-feira (16)",
+      "event_type": "debate",
+      "occurred_on": "2026-09-16",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/pi/piaui/eleicoes/2026/noticia/2026/09/16/debate-candidatos-governo.ghtml",
+      "article_title": "Água, saúde e empregos dominam debate entre candidatos ao Governo do Piauí",
+      "article_published_at": "2026-09-16T15:43:42.503-03:00",
+      "observed_at": "2026-09-28T09:11:29.154Z",
+      "source_sha256": "aa732293731667d63cea4a0d2536168dafaa8321a41989d69ddf070091710483",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Estiveram presentes o governador e candidato à reeleição Rafael Fonteles (PT), Joel Rodrigues (PP), Dra. Lúcia Santos (PSDB), Gisvaldo Oliveira (PSOL-Rede) e Elizeu Aguiar (Novo).",
+        "date_excerpt": "nesta quarta-feira (16)",
+        "fetched_url": "https://g1.globo.com/pi/piaui/eleicoes/2026/noticia/2026/09/16/debate-candidatos-governo.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "372802938b800a06130ddfe67e116baea7802c2b2af399ba30c586b949acb0c6",
       "candidate_id": "b6e8c205-a2b7-4a26-9b65-e7a3b3b2f601",
       "candidate_slug": "orleans-brandao",
@@ -1959,6 +2011,32 @@
             "source_format": "web_text"
           }
         ]
+      }
+    },
+    {
+      "id": "4509c328adb3da45687796bd9da60d67cdeaaa8d84b88f781415c2be5304d2a0",
+      "candidate_id": "9f8bdf27-8e4e-4f67-ae08-1519fc941412",
+      "candidate_slug": "lucien-rezende",
+      "candidate_name": "Lucien Rezende",
+      "office": "Governador",
+      "uf": "MS",
+      "quote_text": "Vamos pensar diferente. Vamos votar em candidatura que apresenta um projeto mais próximo do seu perfil, porque hoje o que tem ai só atende o rico. Queremos fazer um governo mais organizado, um governo que atenda a nossa redação.",
+      "context": "“Eu quero falar com você sul-mato-grossense o que a sua vida mudou nesses 20 anos com o último governo que ai está, com esse mesmo grupo político? Vamos pensar diferente. Vamos votar em candidatura que apresenta um projeto mais próximo do seu perfil, porque hoje o que tem ai só atende o rico. Queremos fazer um governo mais organizado, um governo que atenda a nossa redação. O candidato do PT veio aqui e teve vergonha de pedir voto para o presidente Lula. Nós vamos pedir, e eu peço. Vote Lucien Rezende 50, vote para os nossos estaduais e federais 50, vote para o nosso candidato a senador Beto do Movimento, que luta pela agricultura familiar e não tem bens apreendidos pela Justiça. Vote no presidente Lula, que defende a nossa democracia, que defende a nossa soberania e que já fez tanto pelo nosso país. Pela agricultura familiar, pelo minha casa minha vida, pelo luz para todos. É muito trabalho feito. Pedimos voto para reeleição do presidente Lula e sem dúvida nenhuma para Lucien Rezende 50”.",
+      "event_context": "Entrevista com candidato ao governo de Mato Grosso do Sul durante campanha, no MSTV 1ª edição. nesta sexta-feira (18)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-18",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ms/mato-grosso-do-sul/eleicoes/2026/noticia/2026/09/18/lucien-rezende-entrevista-governo-ms.ghtml",
+      "article_title": "Lucien Rezende (PSOL) promete regionalizar saúde, equiparar salários de professores e mais 20 delegacias para mulheres",
+      "article_published_at": "2026-09-18T13:42:43.358-03:00",
+      "observed_at": "2026-09-28T09:11:29.154Z",
+      "source_sha256": "0b506feeb01a48c973a5abd55c1199fcbe8b50cc51fa3a8d8fbe144f3e5bb87b",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato Lucien Rezende (PSOL) foi entrevistado nesta sexta-feira (18) no MSTV 1ª edição.",
+        "date_excerpt": "nesta sexta-feira (18)",
+        "fetched_url": "https://g1.globo.com/ms/mato-grosso-do-sul/eleicoes/2026/noticia/2026/09/18/lucien-rezende-entrevista-governo-ms.ghtml",
+        "method": "codex_source_review"
       }
     },
     {
