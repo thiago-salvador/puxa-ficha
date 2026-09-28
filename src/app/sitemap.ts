@@ -84,6 +84,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     },
     {
+      url: `${SITE_ORIGIN}/imprensa/presidencia`,
+      changeFrequency: "weekly",
+      priority: 0.55,
+    },
+    {
       url: `${SITE_ORIGIN}/imprensa/kit`,
       changeFrequency: "monthly",
       priority: 0.4,
