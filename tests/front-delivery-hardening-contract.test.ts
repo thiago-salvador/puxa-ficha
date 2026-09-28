@@ -4,7 +4,10 @@ import { test } from "node:test"
 
 test("UF route permanently redirects uppercase paths to the lowercase canonical URL", () => {
   const source = readFileSync("src/app/(site)/uf/[uf]/page.tsx", "utf8")
-  assert.match(source, /permanentRedirect\(getCanonicalStateRedirectPath\(uf, await searchParams\)\)/)
+  assert.match(source, /permanentRedirect\(`\/uf\/\$\{uf\.toLowerCase\(\)\}`\)/)
+  // A rota é ISR: ler searchParams no render sob demanda de /uf/BA deu 500 em
+  // produção (DYNAMIC_SERVER_USAGE). A query é preservada pelo 308 do middleware.
+  assert.doesNotMatch(source, /searchParams/)
 })
 
 test("sitemap does not manufacture request-time lastmod for static URLs", () => {
