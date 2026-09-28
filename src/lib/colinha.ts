@@ -13,6 +13,23 @@ export const SLOT_LABELS: Record<SlotId, string> = {
   p: "Presidente",
 }
 
+/** Dígitos por cargo na urna, conforme o Manual do Eleitor do TSE (24/09/2026). */
+export const SLOT_DIGITS: Record<SlotId, number> = {
+  df: 4,
+  de: 5,
+  s1: 3,
+  s2: 3,
+  g: 2,
+  p: 2,
+}
+
+export const VOTING_GUIDE_SOURCE_URL =
+  "https://www.tse.jus.br/comunicacao/noticias/2026/Setembro/manual-do-eleitor-veja-como-se-preparar-para-a-votacao"
+
+export function formatSlotDigits(slot: SlotId): string {
+  return `${SLOT_DIGITS[slot]} dígitos`
+}
+
 const UFS = new Set([
   "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG",
   "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO",
