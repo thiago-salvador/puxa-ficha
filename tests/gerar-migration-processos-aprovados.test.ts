@@ -116,5 +116,7 @@ describe("recibo de busca do lote aprovado", () => {
     assert.match(migration, /comunicaapi\.pje\.jus\.br\/api\/v1\/comunicacao\?itensPorPagina=100&numeroProcesso=70000471020218220007/)
     assert.match(readback, /AND p\.fonte = e\.fonte/)
     assert.match(readback, /l\.detalhe = e\.detalhe/)
+    const { rollback } = gerarSql(linhas, "curadoria-djen-20260928")
+    assert.match(rollback, /DELETE FROM public\.coleta_log q USING \(VALUES[\s\S]*?AND q\.detalhe = e\.detalhe AND q\.url = e\.url;/)
   })
 })

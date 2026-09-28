@@ -287,12 +287,14 @@ ${recibos}
   IF n <> 0 THEN RAISE EXCEPTION 'rollback processos: % recibos divergentes; preservar revisao posterior', n; END IF;
 END $$;
 
-DELETE FROM public.coleta_log q USING
-  (SELECT slug, candidato_id, count(*)::integer AS volume FROM _pf_processos_curadoria_rollback GROUP BY slug, candidato_id) e
+DELETE FROM public.coleta_log q USING (VALUES
+${recibos}
+) AS e(slug, candidato_id, volume, url, detalhe)
 WHERE q.execucao = ${sql(`migration:${VERSAO}`)}
   AND q.fonte = ${sql(FONTE_LOG)} AND q.escopo = ${sql(ESCOPO_LOG)}
   AND q.alvo = e.slug AND q.candidato_id = e.candidato_id
-  AND q.resultado = ${sql(RESULTADO_LOG)} AND q.volume = e.volume;
+  AND q.resultado = ${sql(RESULTADO_LOG)} AND q.volume = e.volume
+  AND q.detalhe = e.detalhe AND q.url = e.url;
 DELETE FROM public.processos p USING _pf_processos_curadoria_rollback l
 WHERE p.candidato_id = l.candidato_id
   AND regexp_replace(p.numero_processo, '[^0-9]', '', 'g') = regexp_replace(l.numero_cnj, '[^0-9]', '', 'g')
