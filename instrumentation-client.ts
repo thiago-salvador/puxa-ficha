@@ -1,4 +1,5 @@
 import * as Sentry from "@sentry/nextjs"
+import { SENTRY_CLIENT_DENY_URLS, SENTRY_CLIENT_IGNORE_ERRORS } from "@/lib/sentry-client-filters"
 import { ambienteSentry, sentryHabilitadoNesteAmbiente } from "@/lib/sentry-env"
 import { redactSensitiveUrl, scrubSentryEvent } from "@/lib/sentry-scrub"
 
@@ -17,6 +18,8 @@ if (dsn && sentryHabilitadoNesteAmbiente()) {
     integrations: (defaults) => defaults.filter((integration) => integration.name !== "BrowserTracing"),
     tracesSampleRate: 0,
     environment: ambienteSentry(),
+    ignoreErrors: SENTRY_CLIENT_IGNORE_ERRORS,
+    denyUrls: SENTRY_CLIENT_DENY_URLS,
     sendDefaultPii: false,
     beforeSend(event) {
       return scrubSentryEvent(event)
