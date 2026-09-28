@@ -89,6 +89,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.4,
     },
     {
+      url: `${SITE_ORIGIN}/dados-abertos`,
+      changeFrequency: "daily",
+      priority: 0.4,
+    },
+    {
       url: `${SITE_ORIGIN}/imprensa/atualizacoes`,
       changeFrequency: "daily",
       priority: 0.4,

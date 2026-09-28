@@ -115,6 +115,8 @@ export default async function ImprensaSala() {
             <li><Link className="underline" href="/embed">Embed</Link> · <Link className="underline" href="/imprensa/mesa#linhas">Card público nas fichas</Link></li>
             <li><Link className="underline" href="/comparar">Comparador</Link> · <Link className="underline" href={alertsEnabled ? "/imprensa/mesa#alertas" : "/imprensa/atualizacoes"}>Alertas por cargo e UF</Link></li>
             <li><Link className="underline" href="/imprensa/mesa#linhas">Como citar</Link></li>
+            <li>Cota parlamentar por ano: <a className="underline" href="/api/imprensa/export/gastos?format=csv">CSV</a> · <a className="underline" href="/api/imprensa/export/gastos?format=json">JSON</a></li>
+            <li><Link className="underline" href="/dados-abertos">Cadastro de candidatos em dados abertos</Link></li>
           </ul>
         </section>
 
