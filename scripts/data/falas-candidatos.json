@@ -3,6 +3,32 @@
   "updated_at": "2026-09-28T09:04:23.605Z",
   "quotes": [
     {
+      "id": "0062071cf16d56755c81a47dfee662753a257af90407e7def28c6de4fdcba08e",
+      "candidate_id": "36ec7b14-9da3-4324-820d-6318ce535d01",
+      "candidate_slug": "requiao-filho",
+      "candidate_name": "Requiao Filho",
+      "office": "Governador",
+      "uf": "PR",
+      "quote_text": "Não vou nem perguntar o partido, vou perguntar se tem capacidade de estar à frente da secretaria",
+      "context": "Sobre o espaço que o PT terá no Paraná caso Requião Filho seja eleito, o candidato afirmou que terá espaço nas secretarias estaduais quem tiver “capacidade técnica e de gestão”: “Não vou nem perguntar o partido, vou perguntar se tem capacidade de estar à frente da secretaria”, disse.",
+      "event_context": "Entrevista ao vivo no telejornal Meio-Dia Paraná, na RPC, durante campanha ao Governo do Paraná. As falas foram feitas em entrevista ao vivo no telejornal Meio-Dia Paraná, na RPC, afiliada da TV Globo, nesta quarta-feira (16).",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-16",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/09/16/requiao-filho-entrevista-rpc.ghtml",
+      "article_title": "Requião Filho defende auditoria na Copel e fim das escolas cívico-militares no Paraná  | G1",
+      "article_published_at": "2026-09-16T13:57:32.532-03:00",
+      "observed_at": "2026-09-28T09:04:23.605Z",
+      "source_sha256": "1086bb653d7387f5c091578e2c052197f5ab960cd43c884382c0a4e2ad2c72de",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Requião Filho",
+        "date_excerpt": "As falas foram feitas em entrevista ao vivo no telejornal Meio-Dia Paraná, na RPC, afiliada da TV Globo, nesta quarta-feira (16).",
+        "fetched_url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/09/16/requiao-filho-entrevista-rpc.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "00c8f1873899039478dd4a8f3e86452d4e3e3c020b05a042d133191ce8a6b32b",
       "candidate_id": "d62ecbf0-98ab-41f9-8684-f3c7bd46251a",
       "candidate_slug": "jorginho-mello",
@@ -405,34 +431,6 @@
         "date_excerpt": "O candidato à Presidência Renan Santos (Missão) afirmou nesta sexta-feira (11) que a eleição de 2026 é a campanha mais estranha que vê em muito tempo.",
         "fetched_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/09/11/renan-santos-sabatina-uol-folha.ghtml",
         "method": "codex_source_review"
-      }
-    },
-    {
-      "id": "1084d052d97c4006b4a243f044a9d0487d865815bcbd499ea24ac93460580153",
-      "candidate_id": "00b971a6-5f12-4fa3-961f-5806abfd6fb0",
-      "candidate_slug": "sandro-alex",
-      "candidate_name": "Sandro Alex",
-      "office": "Governador",
-      "uf": "PR",
-      "quote_text": "Então essa já é minha proposta. Nós estamos estudando junto à Alep [Assembleia Legislativa do Paraná] para que o governo possa conectar o homem do campo, a propriedade, no trifásico",
-      "context": "“É com investimentos que nós vamos garantir [as melhorias no serviço da Copel]. Nós entregamos, por exemplo, 25 mil quilômetros de trifásico da Copel, nós investimos nesta ampliação de uma energia segura. Só que o homem do campo não conseguiu se conectar ainda neste trifásico [...], eles têm dificuldade de fazer a conexão da sua propriedade até a porteira, o trifásico tá na porteira. Então essa já é minha proposta. Nós estamos estudando junto à Alep [Assembleia Legislativa do Paraná] para que o governo possa conectar o homem do campo, a propriedade, no trifásico”, disse.",
-      "event_context": "Sandro Alex promete melhorias na Copel, privatizada no governo Ratinho Junior, e diz que planeja grande projeto para contenção de enchentes | G1",
-      "event_type": "entrevista",
-      "occurred_on": "2026-09-15",
-      "publisher": "G1",
-      "article_url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/09/15/sandro-alex-entrevista-rpc.ghtml",
-      "article_title": "Sandro Alex promete melhorias na Copel, privatizada no governo Ratinho Junior, e diz que planeja grande projeto para contenção de enchentes | G1",
-      "article_published_at": "2026-09-15T13:14:57.987-03:00",
-      "observed_at": "2026-09-28T09:04:23.605Z",
-      "source_sha256": "de1a216ad5ddcd24bd55c12b59a84a957043143dad61eaaa1a65c41db024cb26",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "Sandro Alex",
-        "date_excerpt": "2026-09-15",
-        "fetched_url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/09/15/sandro-alex-entrevista-rpc.ghtml",
-        "method": "root_approved_original_review",
-        "source_format": "web_text",
-        "evidence_path": "reports/falas-monitoramento/rodada-20260928/evidence-b/originais-b/sandro-alex.html"
       }
     },
     {
@@ -2016,34 +2014,6 @@
       }
     },
     {
-      "id": "4be15ea597ff48b9e3a8ebcc1aa00bfb19d85bd13fdb6aee89c73141f7442259",
-      "candidate_id": "968f8c87-8d8b-4248-9cee-4aee7929f4d9",
-      "candidate_slug": "saulo-arcangeli",
-      "candidate_name": "Saulo Arcangeli",
-      "office": "Governador",
-      "uf": "MA",
-      "quote_text": "O PSTU vai governar através dos conselhos populares. Nós sabemos que, desde a Constituição de 1988, foram criados conselhos, mas são conselhos consultivos. No governo do PSTU, os conselhos vão funcionar e vão ser conselhos deliberativos, que vão discutir o orçamento do estado.",
-      "context": "“O PSTU vai governar através dos conselhos populares. Nós sabemos que, desde a Constituição de 1988, foram criados conselhos, mas são conselhos consultivos. No governo do PSTU, os conselhos vão funcionar e vão ser conselhos deliberativos, que vão discutir o orçamento do estado. [...] A gente vai escolher esses conselhos nos locais de trabalho, nos locais de moradia. É onde as pessoas sentem a realidade, onde tem problema do saneamento, onde não tem saúde, onde não tem uma escola próxima, onde não tem creche. O orçamento vai para a Assembleia Legislativa e aí os deputados vão estar lá com a proposta da população. Não é a proposta do governador Saulo Arcangeli, vai estar com a proposta da população”, afirmou.",
-      "event_context": "Saulo Arcangeli promete criar conselhos populares e estatizar a saúde | G1",
-      "event_type": "entrevista",
-      "occurred_on": "2026-09-15",
-      "publisher": "G1",
-      "article_url": "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/09/15/saulo-arcangeli-promete-criar-conselhos-populares-estatizar-a-saude-e-implantar-tarifa-zero-no-transporte-publico.ghtml",
-      "article_title": "Saulo Arcangeli promete criar conselhos populares e estatizar a saúde | G1",
-      "article_published_at": "2026-09-15T14:35:26.063-03:00",
-      "observed_at": "2026-09-28T09:04:23.605Z",
-      "source_sha256": "697caa50cfbb3fbaf83db18b547b2aa29cc11a2985e4ceba38bc65b11fcf93f8",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "Saulo Arcangeli",
-        "date_excerpt": "2026-09-15",
-        "fetched_url": "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/09/15/saulo-arcangeli-promete-criar-conselhos-populares-estatizar-a-saude-e-implantar-tarifa-zero-no-transporte-publico.ghtml",
-        "method": "root_approved_original_review",
-        "source_format": "web_text",
-        "evidence_path": "reports/falas-monitoramento/rodada-20260928/evidence-b/originais-b/saulo-arcangeli.html"
-      }
-    },
-    {
       "id": "4c163859eee5e523c7e939c0738b099efd457cb28ca306e20b365559ded974ee",
       "candidate_id": "9f2c557f-7c5a-459b-b0f5-faa6d561a4ce",
       "candidate_slug": "dr-furlan",
@@ -3379,6 +3349,32 @@
             "source_format": "web_text"
           }
         ]
+      }
+    },
+    {
+      "id": "732f23a1507abd9ce82ea623628e8c08d94ccbb133964b36e179ac8371a4307d",
+      "candidate_id": "968f8c87-8d8b-4248-9cee-4aee7929f4d9",
+      "candidate_slug": "saulo-arcangeli",
+      "candidate_name": "Saulo Arcangeli",
+      "office": "Governador",
+      "uf": "MA",
+      "quote_text": "O PSTU vai governar através dos conselhos populares. Nós sabemos que, desde a Constituição de 1988, foram criados conselhos, mas são conselhos consultivos. No governo do PSTU, os conselhos vão funcionar e vão ser conselhos deliberativos, que vão discutir o orçamento do estado.",
+      "context": "“O PSTU vai governar através dos conselhos populares. Nós sabemos que, desde a Constituição de 1988, foram criados conselhos, mas são conselhos consultivos. No governo do PSTU, os conselhos vão funcionar e vão ser conselhos deliberativos, que vão discutir o orçamento do estado. [...] A gente vai escolher esses conselhos nos locais de trabalho, nos locais de moradia. É onde as pessoas sentem a realidade, onde tem problema do saneamento, onde não tem saúde, onde não tem uma escola próxima, onde não tem creche. O orçamento vai para a Assembleia Legislativa e aí os deputados vão estar lá com a proposta da população. Não é a proposta do governador Saulo Arcangeli, vai estar com a proposta da população”, afirmou.",
+      "event_context": "Entrevista ao JMTV 1ª Edição durante campanha ao Governo do Maranhão. nesta terça-feira (15)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-15",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/09/15/saulo-arcangeli-promete-criar-conselhos-populares-estatizar-a-saude-e-implantar-tarifa-zero-no-transporte-publico.ghtml",
+      "article_title": "Saulo Arcangeli promete criar conselhos populares e estatizar a saúde | G1",
+      "article_published_at": "2026-09-15T14:35:26.063-03:00",
+      "observed_at": "2026-09-28T09:04:23.605Z",
+      "source_sha256": "697caa50cfbb3fbaf83db18b547b2aa29cc11a2985e4ceba38bc65b11fcf93f8",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Saulo Arcangeli",
+        "date_excerpt": "nesta terça-feira (15)",
+        "fetched_url": "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/09/15/saulo-arcangeli-promete-criar-conselhos-populares-estatizar-a-saude-e-implantar-tarifa-zero-no-transporte-publico.ghtml",
+        "method": "codex_source_review"
       }
     },
     {
@@ -5772,6 +5768,32 @@
       }
     },
     {
+      "id": "c73bd28903fdf5808e5e3a1154f7b2bb2377848e3076389ffd9393d8be9ca0e0",
+      "candidate_id": "00b971a6-5f12-4fa3-961f-5806abfd6fb0",
+      "candidate_slug": "sandro-alex",
+      "candidate_name": "Sandro Alex",
+      "office": "Governador",
+      "uf": "PR",
+      "quote_text": "Então essa já é minha proposta. Nós estamos estudando junto à Alep [Assembleia Legislativa do Paraná] para que o governo possa conectar o homem do campo, a propriedade, no trifásico",
+      "context": "“É com investimentos que nós vamos garantir [as melhorias no serviço da Copel]. Nós entregamos, por exemplo, 25 mil quilômetros de trifásico da Copel, nós investimos nesta ampliação de uma energia segura. Só que o homem do campo não conseguiu se conectar ainda neste trifásico [...], eles têm dificuldade de fazer a conexão da sua propriedade até a porteira, o trifásico tá na porteira. Então essa já é minha proposta. Nós estamos estudando junto à Alep [Assembleia Legislativa do Paraná] para que o governo possa conectar o homem do campo, a propriedade, no trifásico”, disse.",
+      "event_context": "Entrevista ao vivo no telejornal Meio-Dia Paraná, na RPC, durante campanha ao Governo do Paraná. As falas foram feitas em entrevista ao vivo no telejornal Meio-Dia Paraná, na RPC, afiliada da TV Globo, nesta terça-feira (15).",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-15",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/09/15/sandro-alex-entrevista-rpc.ghtml",
+      "article_title": "Sandro Alex promete melhorias na Copel, privatizada no governo Ratinho Junior, e diz que planeja grande projeto para contenção de enchentes | G1",
+      "article_published_at": "2026-09-15T13:14:57.987-03:00",
+      "observed_at": "2026-09-28T09:04:23.605Z",
+      "source_sha256": "de1a216ad5ddcd24bd55c12b59a84a957043143dad61eaaa1a65c41db024cb26",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Sandro Alex",
+        "date_excerpt": "As falas foram feitas em entrevista ao vivo no telejornal Meio-Dia Paraná, na RPC, afiliada da TV Globo, nesta terça-feira (15).",
+        "fetched_url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/09/15/sandro-alex-entrevista-rpc.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "c745bece020a9321fd8ecd4bf99c4fd42935a0779bba75182546db29d4983ee4",
       "candidate_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
       "candidate_slug": "renan-filho",
@@ -6951,34 +6973,6 @@
         "audio_sha256": "1868b2bdd0ba09eaa3238679c745f3c3abad7dea1742d225ffb9842d440b571a",
         "speaker_context": "O episódio e sua descrição identificam Marcos Reátegui como candidato ao governo. No quadro em 41:18, ele responde à pergunta de André Silva sobre juventude, trabalho e qualificação.",
         "reviewed_context": true
-      }
-    },
-    {
-      "id": "ed880a9f4de61508e9d5c5f7c11cae2eaafab667ee3a5f285f0d4bc64db5551f",
-      "candidate_id": "36ec7b14-9da3-4324-820d-6318ce535d01",
-      "candidate_slug": "requiao-filho",
-      "candidate_name": "Requiao Filho",
-      "office": "Governador",
-      "uf": "PR",
-      "quote_text": "Não vou nem perguntar o partido, vou perguntar se tem capacidade de estar à frente da secretaria",
-      "context": "Sobre o espaço que o PT terá no Paraná caso Requião Filho seja eleito, o candidato afirmou que terá espaço nas secretarias estaduais quem tiver “capacidade técnica e de gestão”: “Não vou nem perguntar o partido, vou perguntar se tem capacidade de estar à frente da secretaria”, disse.",
-      "event_context": "Requião Filho defende auditoria na Copel e fim das escolas cívico-militares no Paraná  | G1",
-      "event_type": "entrevista",
-      "occurred_on": "2026-09-16",
-      "publisher": "G1",
-      "article_url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/09/16/requiao-filho-entrevista-rpc.ghtml",
-      "article_title": "Requião Filho defende auditoria na Copel e fim das escolas cívico-militares no Paraná  | G1",
-      "article_published_at": "2026-09-16T13:57:32.532-03:00",
-      "observed_at": "2026-09-28T09:04:23.605Z",
-      "source_sha256": "1086bb653d7387f5c091578e2c052197f5ab960cd43c884382c0a4e2ad2c72de",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "Requião Filho",
-        "date_excerpt": "2026-09-16",
-        "fetched_url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/09/16/requiao-filho-entrevista-rpc.ghtml",
-        "method": "root_approved_original_review",
-        "source_format": "web_text",
-        "evidence_path": "reports/falas-monitoramento/rodada-20260928/evidence-b/originais-b/requiao-filho.html"
       }
     },
     {
