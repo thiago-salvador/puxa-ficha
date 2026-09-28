@@ -114,6 +114,13 @@ describe("home hero UF count", () => {
     assert.equal(getHomeHeroUfCount(resumos, "live", { SENADO_ENABLED: "false" }), 2)
   })
 
+  it("matches cargos regardless of case and spacing, keeping the Senado flag", () => {
+    const resumos = [comUf("GOVERNADOR", "PE"), comUf(" senador ", "AM"), comUf("VICE-GOVERNADOR", "RJ")]
+    assert.equal(getHomeHeroUfCount(resumos, "live", { SENADO_ENABLED: "true" }), 2)
+    assert.equal(getHomeHeroUfCount(resumos, "live", { SENADO_ENABLED: "false" }), 1)
+    assert.equal(getHomeHeroMetrics(resumos, "live", { SENADO_ENABLED: "false" }).totalCandidatos, 1)
+  })
+
   it("returns null instead of zero when a degraded source brings nothing", () => {
     assert.equal(getHomeHeroUfCount([], "degraded"), null)
     assert.equal(getHomeHeroUfCount([], "live"), 0)

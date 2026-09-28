@@ -95,7 +95,7 @@ export function ImprensaRows({ rows }: { rows: Row[] }) {
     </div>
     <p className={styles.legend}><span data-key="published">■ Publicado</span><span data-key="partial">■ Cobertura parcial</span><span data-key="unknown">■ Sem dado ou em verificação</span></p>
     <p className={styles.count}>{filtered.length} de {rows.length} candidatos · cada estado se refere àquela fonte e campo.</p>
-    {filtered.length ? <div id="linhas" className="scroll-mt-24">
+    <div id="linhas" className="scroll-mt-24">{filtered.length ? <>
       <div className={styles.tableWrap}>
         <table className={styles.table}>
           <caption className="sr-only">Candidatos e estados de fontes da Mesa de apuração</caption>
@@ -116,7 +116,7 @@ export function ImprensaRows({ rows }: { rows: Row[] }) {
         <Status state={row.processos.estado} label={labelProcessState}>{processosDescription(row)}</Status>
         <div className={styles.actions}><Link href={`${row.fichaUrl}?tab=geral`}>Ficha geral</Link><Link href={`${row.fichaUrl}?tab=justica`}>Justiça</Link><a href={`/api/card/${encodeURIComponent(row.slug)}?format=feed&v=2`}>Card público</a>{row.chapa.fonteUrl && row.chapa.snapshotEm && <ImprensaCitationButton candidateName={row.nomeOriginal} section="chapa" slug={row.slug} sourceUrl={row.chapa.fonteUrl} collectedAt={dateLabel(row.chapa.snapshotEm)} collectionLabel="Arquivo oficial em" publishedLabel={row.chapa.estado === "indeferidos_comprovados" ? labelState(row.chapa.estado) : undefined} />}{row.sites.fonteUrl && row.sites.coletadoEm && <ImprensaCitationButton candidateName={row.nomeOriginal} section="sites" slug={row.slug} sourceUrl={row.sites.fonteUrl} collectedAt={dateLabel(row.sites.coletadoEm)} />}</div>
       </article>)}</div>
-    </div> : <p className={styles.notice} role="status">Nenhum candidato corresponde a estes filtros.</p>}
+    </> : <p className={styles.notice} role="status">Nenhum candidato corresponde a estes filtros.</p>}</div>
   </>
 }
 

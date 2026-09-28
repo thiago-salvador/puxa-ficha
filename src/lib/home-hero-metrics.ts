@@ -2,7 +2,16 @@ import { shouldExposeCargo } from "@/lib/senado-feature"
 import type { DataSourceStatus } from "@/lib/types"
 
 // Titulares apenas: vices ficam fora. Senador entra só com SENADO_ENABLED ligada.
-const HERO_CARGOS = new Set(["Presidente", "Governador", "Senador"])
+// A chave ignora caixa e espaços: o TSE devolve cargo em CAIXA ALTA.
+const HERO_CARGOS = new Map([
+  ["presidente", "Presidente"],
+  ["governador", "Governador"],
+  ["senador", "Senador"],
+])
+
+function heroCargo(cargo: string): string | undefined {
+  return HERO_CARGOS.get(cargo.trim().toLocaleLowerCase("pt-BR"))
+}
 
 type HeroResumo = {
   patrimonio: number | null
@@ -41,11 +50,10 @@ function recorteHero(
   resumos: HeroResumo[],
   env: Record<string, string | undefined>
 ): HeroResumo[] {
-  return resumos.filter(
-    (resumo) =>
-      HERO_CARGOS.has(resumo.candidato.cargo_disputado) &&
-      shouldExposeCargo(resumo.candidato.cargo_disputado, env)
-  )
+  return resumos.filter((resumo) => {
+    const cargo = heroCargo(resumo.candidato.cargo_disputado)
+    return cargo !== undefined && shouldExposeCargo(cargo, env)
+  })
 }
 
 export function getHomeHeroMetrics(

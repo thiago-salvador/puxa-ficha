@@ -130,12 +130,12 @@ export default async function ImprensaSala() {
           <SectionHead num="01" id="numeros-title">Retrato da base</SectionHead>
           <div className={styles.statGrid}>
             <div className={`${styles.card} ${styles.statCard}`}>
-              {base.total !== null ? <p className={styles.statValue}>{base.total}</p> : <p role="status" className={styles.statUnavailable}>Contagem indisponível</p>}
+              {base.total === null ? <p role="status" className={styles.statUnavailable}>Contagem indisponível</p> : base.total === 0 ? <p role="status" className={styles.statUnavailable}>Nenhuma candidatura publicada neste recorte agora</p> : <p className={styles.statValue}>{base.total}</p>}
               <p className={styles.statLabel}>Candidaturas mapeadas</p>
-              <p className={styles.statScope}>{escopoBase}{base.total === null ? " Uma falha de consulta não representa zero." : ""}</p>
+              <p className={styles.statScope}>{escopoBase}{base.total === null ? " Uma falha de consulta não representa zero." : base.total === 0 ? " A ausência de linhas publicadas não significa ausência de candidaturas." : ""}</p>
             </div>
             <div className={`${styles.card} ${styles.statCard}`}>
-              {base.ufs !== null ? <p className={styles.statValue}>{base.ufs}</p> : <p role="status" className={styles.statUnavailable}>Contagem indisponível</p>}
+              {base.ufs === null ? <p role="status" className={styles.statUnavailable}>Contagem indisponível</p> : base.ufs === 0 ? <p role="status" className={styles.statUnavailable}>Nenhuma UF com candidatura publicada agora</p> : <p className={styles.statValue}>{base.ufs}</p>}
               <p className={styles.statLabel}>UFs</p>
               <p className={styles.statScope}>Unidades da federação com candidaturas estaduais nesse mesmo recorte.</p>
             </div>
