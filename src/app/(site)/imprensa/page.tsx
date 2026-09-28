@@ -55,7 +55,7 @@ export default async function ImprensaSala() {
     : { href: imprensaHref("/imprensa/atualizacoes"), title: "Mudanças verificadas", text: "Registro público do que mudou nas fontes oficiais." }
 
   return (
-    <main className={styles.shell}>
+    <div className={styles.shell}>
       <ImprensaSubnav current="sala" generatedAt={dataset?.generatedAt ?? null} />
 
       <header className={styles.hero}>
@@ -188,7 +188,7 @@ export default async function ImprensaSala() {
           </p>
         </div>
       </section>
-    </main>
+    </div>
   )
 }
 

@@ -105,7 +105,7 @@ export default async function ImprensaAtualizacoesPage({
         </div>
       </header>
 
-      <main className={styles.content}>
+      <div className={styles.content}>
         <MethodSection id="mudancas" num="01" title="Mudanças detectadas">
           {resource.status === "unavailable" ? (
             <p className={styles.alert} role="alert">
@@ -171,7 +171,7 @@ export default async function ImprensaAtualizacoesPage({
             </p>
           </MethodSection>
         ) : null}
-      </main>
+      </div>
 
       <TrustFooter homonimos={homonimos} />
       <Footer />

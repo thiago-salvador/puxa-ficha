@@ -65,7 +65,7 @@ export default async function ImprensaKit() {
 
   return (
     <>
-      <main className={styles.shell}>
+      <div className={styles.shell}>
         <ImprensaSubnav current="kit" generatedAt={dataset?.generatedAt ?? null} />
         <header className={styles.hero}>
           <div className={styles.wrap}>
@@ -157,7 +157,7 @@ export default async function ImprensaKit() {
         </div>
 
         <TrustFooter homonimos={numbers?.homonimos ?? null} />
-      </main>
+      </div>
       <Footer />
     </>
   )

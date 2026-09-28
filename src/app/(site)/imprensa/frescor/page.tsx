@@ -75,7 +75,7 @@ export default async function ImprensaComoColetamosPage() {
         </div>
       </header>
 
-      <main className={styles.content}>
+      <div className={styles.content}>
         <MethodSection id="fontes" num="01" title="Fontes e última coleta">
           <p className={styles.lead}>
             Cada linha é uma fonte oficial usada nas fichas. A data é a da última coleta que terminou sem erro. A fonte está em dia quando essa coleta cabe no prazo previsto para ela, e atrasada quando passou dele.
@@ -158,7 +158,7 @@ export default async function ImprensaComoColetamosPage() {
             <Link className={styles.link} href={imprensaHref("/imprensa/atualizacoes")}>O que mudou</Link>.
           </p>
         </MethodSection>
-      </main>
+      </div>
 
       <TrustFooter homonimos={homonimos} />
       <Footer />
