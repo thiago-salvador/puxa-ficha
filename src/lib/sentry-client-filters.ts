@@ -15,8 +15,9 @@ export const SENTRY_CLIENT_IGNORE_ERRORS: RegExp[] = [
   /^undefined is not an object \(evaluating '[\w$]+\["@context"\]\.toLowerCase'\)$/,
   // Executor injetado (`executors/200.js`), fora do bundle do site.
   /^Cannot read properties of undefined \(reading 'M_ID'\)$/,
-  // Rede do usuário caiu no meio do fetch (Safari e Firefox).
-  /^Load failed$/,
+  // Rede do usuário caiu no meio do fetch (Safari e Firefox). O SDK acrescenta
+  // o host à mensagem do Safari quando o fetch passa pelo wrapper dele.
+  /^Load failed(?: \([^)]+\))?$/,
   /^network error$/,
   // Crawler de link seguro de e-mail rejeitando com objeto.
   /^Non-Error promise rejection captured with value: Object Not Found Matching Id:\d+, MethodName:\w+, ParamCount:\d+$/,

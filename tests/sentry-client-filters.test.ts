@@ -37,6 +37,7 @@ test("ruído real de terceiros é descartado", () => {
     ["TypeError", `undefined is not an object (evaluating 'r["@context"].toLowerCase')`],
     ["TypeError", "Cannot read properties of undefined (reading 'M_ID')"],
     ["TypeError", "Load failed"],
+    ["TypeError", "Load failed (puxaficha.com.br)"],
     ["TypeError", "network error"],
     [
       "UnhandledRejection",
