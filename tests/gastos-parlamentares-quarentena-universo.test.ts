@@ -33,9 +33,11 @@ describe("quarentena ampliada de gastos parlamentares", () => {
 
   it("lista atual é subconjunto da preimage histórica da migration", () => {
     const pre = preimage()
-    // Validação oficial de 27/09: ficam 4 pares do universo e 1 da revisão anterior.
+    // Validação oficial de 27/09: ficam 4 pares do universo. O último par da
+    // revisão anterior (2026 do CEAPS) saiu em 28/09 após apply com readback.
     assert.equal(lista.length, 4)
-    assert.equal(GASTOS_PARLAMENTARES_EM_REVISAO.length, 1)
+    assert.equal(GASTOS_PARLAMENTARES_EM_REVISAO.length, 0)
+    assert.equal(gastoParlamentarEmRevisao("tse-2026-100002537338", 2026), false)
     assert.equal(pre.length, receipt.resumo.quarentena)
     assert.equal(linhasQuarentena.length, receipt.resumo.quarentena)
     const key = (x: { slug: string; ano: number; cents: number }) => `${x.slug}:${x.ano}:${x.cents}`

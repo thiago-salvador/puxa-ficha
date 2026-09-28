@@ -1675,6 +1675,235 @@
         }
       },
       "consulted_at": "2026-09-25T12:12:00Z"
+    },
+    {
+      "id": "nexus-btg-pactual-br-07557-2026-revisao-20260928",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Nexus/BTG Pactual",
+        "commissioner": "Banco BTG Pactual",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "noticias.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-25",
+          "end": "2026-09-27"
+        },
+        "published_at": "2026-09-28",
+        "sample_size": 2000,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-07557/2026",
+        "result_url": "https://noticias.uol.com.br/eleicoes/2026/09/28/btgnexus-pesquisa-presidencial.ghtm",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-07557/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-28T12:18:53Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "12eb09d970477926e2f4581e5e77914b8b6b211063140a550debe620a990e094",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/28/btgnexus-pesquisa-presidencial.ghtm",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/nexus-btg-pactual-presidente-setembro-2026-3/"
+          ],
+          "note": "Método de entrevista não publicado nas capturas consultadas; campo, margem e confiança identificados."
+        },
+        "result_access": {
+          "pass": false,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/28/btgnexus-pesquisa-presidencial.ghtm",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/nexus-btg-pactual-presidente-setembro-2026-3/"
+          ],
+          "note": "A publicação informa candidatos abaixo de 1% sem percentuais exatos e não quantifica Outros na espontânea. Valores ausentes não foram inferidos."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/28/btgnexus-pesquisa-presidencial.ghtm",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/nexus-btg-pactual-presidente-setembro-2026-3/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/28/btgnexus-pesquisa-presidencial.ghtm",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/nexus-btg-pactual-presidente-setembro-2026-3/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-28T12:18:53Z"
+    },
+    {
+      "id": "palver-br-00860-2026-revisao-20260928",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Palver",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "noticias.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-15",
+          "end": "2026-09-18"
+        },
+        "published_at": "2026-09-21",
+        "sample_size": 5000,
+        "method": "internet",
+        "margin_of_error_pp": 2.8,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-00860/2026",
+        "result_url": "https://noticias.uol.com.br/eleicoes/2026/09/21/palver-pesquisa-presidencial-setembro.ghtm",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-00860/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-28T12:18:53Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "89fb702afb1d6520a1393bcd3d2f9b1351d6d501e5c714c2d264f167e85b7ac3",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/21/palver-pesquisa-presidencial-setembro.ghtm"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/21/palver-pesquisa-presidencial-setembro.ghtm"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/21/palver-pesquisa-presidencial-setembro.ghtm"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/21/palver-pesquisa-presidencial-setembro.ghtm"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-28T12:18:53Z"
+    },
+    {
+      "id": "palver-br-09587-2026-revisao-20260928",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Palver",
+        "commissioner": "Palver",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-20",
+          "end": "2026-09-23"
+        },
+        "published_at": "2026-09-24",
+        "sample_size": 5000,
+        "method": "survey quantitativo online por questionário estruturado",
+        "margin_of_error_pp": 2.5,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-09587/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/palver-presidente-setembro-2026-2/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-09587/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-28T12:18:53Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "3ce56c66ff1efdceb11cec77d1f1a820ab5549786507a5a23893ce3c7fd97548",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/palver-presidente-setembro-2026-2/",
+            "https://www.palver.com.br/api/surveys/voting-intention-2026-september-w4/press-release"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/palver-presidente-setembro-2026-2/",
+            "https://www.palver.com.br/api/surveys/voting-intention-2026-september-w4/press-release"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/palver-presidente-setembro-2026-2/",
+            "https://www.palver.com.br/api/surveys/voting-intention-2026-september-w4/press-release"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/palver-presidente-setembro-2026-2/",
+            "https://www.palver.com.br/api/surveys/voting-intention-2026-september-w4/press-release"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-28T12:18:53Z"
     }
   ],
   "media_fallback_policy": {

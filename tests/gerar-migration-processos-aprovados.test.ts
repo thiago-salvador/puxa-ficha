@@ -1,0 +1,152 @@
+import assert from "node:assert/strict"
+import { describe, it } from "node:test"
+
+import { cnjsPublicaveisDoTexto } from "../scripts/aplicar-evidencia-processos-curadoria"
+import { projectProcessosVerificacaoRow } from "../src/lib/processos-verificacao-public"
+import {
+  detalheRecibo,
+  gerarSql,
+  urlsConsultadasDjen,
+  validarCacheDjen,
+  prepararLinhas,
+  resumoComunicacoes,
+  validarAprovados,
+  type Aprovado,
+  type ProcessoEvidencia,
+} from "../scripts/gerar-migration-processos-aprovados"
+
+const aprovado: Aprovado = {
+  slug: "candidata",
+  candidato_id: "11111111-1111-4111-8111-111111111111",
+  numero_cnj: "7000047-10.2021.8.22.0007",
+  tribunal: "TJXX",
+  classe: "PROCEDIMENTO COMUM CÍVEL",
+  orgao: "1ª Vara Cível",
+  polo: "A",
+  papel: "parte_ativa",
+  tipo: "civil",
+  decisao_ref: "aprovado",
+}
+const evidencia: ProcessoEvidencia = {
+  slug: aprovado.slug,
+  numero_cnj: aprovado.numero_cnj,
+  tribunal: aprovado.tribunal,
+  classe: aprovado.classe,
+  orgao: aprovado.orgao,
+  polo: aprovado.polo,
+}
+const comunicacoes = new Map([["70000471020218220007", [
+  { numero_processo: "70000471020218220007", tipoComunicacao: "Intimação", data_disponibilizacao: "2026-06-01" },
+  { numero_processo: "70000471020218220007", tipoComunicacao: "Lista de distribuição", data_disponibilizacao: "2025-02-03" },
+]]])
+
+describe("gerador de lote aprovado com DJEN por número", () => {
+  it("recusa contagem divergente, CNJ inválido, duplicidade e identidade não provada", () => {
+    assert.throws(() => validarAprovados([aprovado], [evidencia], 83, 28), /processos aprovados/)
+    assert.throws(() => validarAprovados([aprovado], [evidencia], 1, 28), /candidatos aprovados/)
+    assert.throws(() => validarAprovados([{ ...aprovado, numero_cnj: "7000047-11.2021.8.22.0007" }], [evidencia], 1, 1), /CNJ invalido/)
+    assert.throws(() => validarAprovados([aprovado, aprovado], [evidencia], 2, 1), /duplicado/)
+    assert.throws(() => validarAprovados([aprovado], [], 1, 1), /evidencia de reexame/)
+  })
+
+  it("bloqueia família ou sigilo também quando o órgão consta só no DJEN", () => {
+    const familia = { ...aprovado, classe: "AÇÃO DE ALIMENTOS" }
+    assert.throws(() => validarAprovados([familia], [{ ...evidencia, classe: familia.classe }], 1, 1), /familia ou segredo/)
+    assert.throws(() => resumoComunicacoes(aprovado.numero_cnj, [{
+      numero_processo: "70000471020218220007",
+      data_disponibilizacao: "2026-06-01",
+      tipoComunicacao: "Intimação",
+      nomeOrgao: "Vara de Família",
+    }]), /familia ou segredo/)
+  })
+
+  it("descreve os polos ativo e passivo, inclusive pelo papel editorial quando o polo é nulo", () => {
+    const ativo = prepararLinhas(validarAprovados([aprovado], [evidencia], 1, 1), comunicacoes, "curadoria-djen-20260928")[0]
+    assert.match(ativo.descricao, /polo ativo/)
+    assert.match(ativo.descricao, /Intimação e Lista de distribuição/)
+    assert.match(ativo.descricao, /entre 2025-02-03 e 2026-06-01/)
+    const passivo = { ...aprovado, polo: null, papel: "parte_passiva" }
+    const linha = prepararLinhas(validarAprovados([passivo], [{ ...evidencia, polo: null }], 1, 1), comunicacoes, "curadoria-djen-20260928")[0]
+    assert.match(linha.descricao, /polo passivo/)
+    assert.throws(() => validarAprovados([{ ...passivo, papel: "testemunha" }], [{ ...evidencia, polo: null }], 1, 1), /polo ausente/)
+  })
+
+  it("usa URL humana do próprio CNJ e SQL idempotente com recibos separados", () => {
+    const linha = prepararLinhas([aprovado], comunicacoes, "curadoria-djen-20260928")[0]
+    assert.equal(linha.url, "https://comunica.pje.jus.br/consulta?numeroProcesso=70000471020218220007")
+    const { migration, rollback, readback, counts } = gerarSql([linha], "curadoria-djen-20260928")
+    assert.deepEqual(counts, { processos: 1, candidatos: 1 })
+    assert.match(migration, /NOT EXISTS \(\s*SELECT 1 FROM public\.processos/)
+    assert.match(migration, /c\.id = l\.candidato_id AND c\.slug = l\.slug/)
+    assert.match(migration, /INSERT INTO public\.coleta_log/)
+    assert.match(migration, /'encontrado'/)
+    assert.doesNotMatch(migration, /\b(?:BEGIN|COMMIT);/)
+    assert.match(rollback, /p\.fonte = l\.fonte/)
+    assert.match(rollback, /DELETE FROM public\.coleta_log/)
+    assert.match(readback, /public\.coleta_log_ultima/)
+    assert.match(readback, /CNJs ausentes ou duplicados/)
+  })
+})
+
+describe("recibo de busca do lote aprovado", () => {
+  const apis = [
+    "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=70000471020218220007",
+    "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00000436920108100118",
+  ]
+
+  it("segue o formato canônico que a renovação lê", () => {
+    const detalhe = detalheRecibo(2, apis)
+    assert.match(detalhe, /^revisao_em=\d{4}-\d{2}-\d{2}; identidade=id-oficial; identidade_urls=https:\/\/cdn\.tse\.jus\.br\/[^;]+; urls_consultadas=[^;]+; detalhe=2 processo\(s\)/)
+    assert.deepEqual(cnjsPublicaveisDoTexto(detalhe.split("; detalhe=")[0]), ["00000436920108100118", "70000471020218220007"])
+  })
+
+  it("mantém URL e detalhe visíveis na projeção pública", () => {
+    const projetado = projectProcessosVerificacaoRow({
+      fonte: "processos-curadoria", escopo: "candidato", resultado: "encontrado",
+      executado_em: "2026-09-28T03:00:00Z", url: [...apis].sort()[0], detalhe: detalheRecibo(2, apis),
+    } as Parameters<typeof projectProcessosVerificacaoRow>[0])
+    assert.ok(projetado)
+    assert.equal(projetado.url, [...apis].sort()[0])
+    for (const url of apis) assert.ok((projetado.source_urls ?? []).includes(url), url)
+  })
+
+  it("liga os recibos da migration aos CNJ do lote e confere fonte no pós-check", () => {
+    const linhas = prepararLinhas([aprovado], comunicacoes, "curadoria-djen-20260928")
+    const { migration, readback } = gerarSql(linhas, "curadoria-djen-20260928")
+    assert.match(migration, /AS r\(slug, candidato_id, volume, url, detalhe\)/)
+    assert.match(migration, /p\.candidato_id = l\.candidato_id AND p\.fonte = l\.fonte/)
+    assert.match(migration, /comunicaapi\.pje\.jus\.br\/api\/v1\/comunicacao\?itensPorPagina=1000&numeroProcesso=70000471020218220007&pagina=1/)
+    assert.match(readback, /AND p\.fonte = e\.fonte/)
+    assert.match(readback, /l\.detalhe = e\.detalhe/)
+    const { rollback } = gerarSql(linhas, "curadoria-djen-20260928")
+    assert.match(rollback, /DELETE FROM public\.coleta_log q USING \(VALUES[\s\S]*?AND q\.detalhe = e\.detalhe AND q\.url = e\.url;/)
+  })
+})
+
+describe("texto público e URLs consultadas", () => {
+  it("registra todas as páginas consultadas do DJEN", () => {
+    assert.deepEqual(urlsConsultadasDjen("70000471020218220007", 0), ["https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&numeroProcesso=70000471020218220007&pagina=1"])
+    const tres = urlsConsultadasDjen("70000471020218220007", 2001)
+    assert.equal(tres.length, 3)
+    assert.match(tres[2], /pagina=3$/)
+    assert.throws(() => urlsConsultadasDjen("70000471020218220007", 20_001), /limite paginavel/)
+    assert.deepEqual(cnjsPublicaveisDoTexto(`urls_consultadas=${tres.join(",")}`), ["70000471020218220007"])
+  })
+
+  it("publica a classe em caixa alta do português, sem minúscula acentuada", () => {
+    const linha = prepararLinhas([{ ...aprovado, classe: "PROCEDIMENTO COMUM CíVEL" }], comunicacoes, "curadoria-djen-20260928")[0]
+    assert.match(linha.descricao, /nas classes PROCEDIMENTO COMUM CÍVEL,/)
+  })
+})
+
+describe("cache do DJEN", () => {
+  const numero = "7000047-10.2021.8.22.0007"
+  const itens = comunicacoes.get("70000471020218220007") ?? []
+
+  it("aceita cache íntegro e recusa truncado, sem total ou de outro processo", () => {
+    assert.equal(validarCacheDjen(numero, { numero: "70000471020218220007", count: itens.length, items: itens }).length, itens.length)
+    assert.throws(() => validarCacheDjen(numero, { numero: "70000471020218220007", count: itens.length + 1, items: itens }), /truncado/)
+    assert.throws(() => validarCacheDjen(numero, { numero: "70000471020218220007", items: itens }), /truncado/)
+    assert.throws(() => validarCacheDjen(numero, { numero: "00000000000000000000", count: itens.length, items: itens }), /truncado/)
+  })
+})

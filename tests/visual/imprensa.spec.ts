@@ -112,7 +112,7 @@ test("formulário de alertas usa o recorte da Mesa quando a flag está ativa", a
   await expect(page.getByRole("region", { name: "Alertas por cargo e UF" }).getByRole("combobox", { name: "UF" })).toHaveValue("")
 })
 
-test("Sala indexável apresenta os nove blocos, três tarefas e aviso", async ({ page }, testInfo) => {
+test("Sala indexável apresenta os nove blocos, as tarefas do herói, exportação e aviso", async ({ page }, testInfo) => {
   if (testInfo.project.name === "mobile") await page.setViewportSize({ width: 375, height: 812 })
   const response = await page.goto("/imprensa")
   expect(response?.status()).toBe(200)
@@ -127,8 +127,9 @@ test("Sala indexável apresenta os nove blocos, três tarefas e aviso", async ({
     await expect(page.locator(`#${id}`)).toBeAttached()
   }
   await expect(page.getByText("Confira os dados na fonte original antes de publicar.")).toBeVisible()
-  await expect(page.getByRole("link", { name: "Achar fonte sobre um candidato" })).toBeVisible()
-  await expect(page.locator("nav[aria-label=\"Tarefas de imprensa\"] a[href=\"/api/imprensa/export?format=csv\"]")).toBeVisible()
+  await expect(page.getByRole("link", { name: "Achar fonte de um candidato" })).toBeVisible()
+  await expect(page.getByRole("link", { name: "Abrir Mesa de apuração" })).toBeVisible()
+  await expect(page.locator("nav[aria-label=\"Exportar e citar\"] a[href=\"/api/imprensa/export?format=csv\"]")).toBeVisible()
   await expect(page.getByRole("link", { name: /atualizações/i }).first()).toBeVisible()
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 2)
   expect(overflow).toBe(false)
