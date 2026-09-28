@@ -54,6 +54,68 @@ describe("gerar migration de processos da curadoria", () => {
     assert.equal(tipoProcessual("AÇÃO POPULAR", "ato de gestão"), "civil")
   })
 
+  it("recusa processo de família ou em segredo de justiça", () => {
+    const pacote = (classe: string, overrides: Record<string, unknown> = {}) => () => prepararPacoteProcessos({
+      itensRevisao: [item(overrides)],
+      processosCuradoria: [processo({ classe })],
+      esperadoProcessos: 1,
+      esperadoFichas: 1,
+      timestamp: "20260927060000",
+    })
+    for (const classe of [
+      "Reconhecimento e Extinção de União Estável",
+      "DIVÓRCIO LITIGIOSO",
+      "AÇÃO DE ALIMENTOS",
+      "GUARDA",
+      "INVESTIGAÇÃO DE PATERNIDADE",
+      "INTERDIÇÃO / CURATELA",
+    ]) assert.throws(pacote(classe), /direito de familia ou segredo de justica/, classe)
+    assert.throws(pacote("PROCEDIMENTO COMUM CÍVEL", { motivo: "Tramita na 6ª Vara de Família da Comarca." }), /segredo de justica/)
+    for (const orgao of [
+      "Vara da Família",
+      "Varas de Família",
+      "Vara das Famílias",
+      "Vara de Família e Sucessões",
+      "Vara da Família e das Sucessões",
+    ]) {
+      assert.throws(pacote("PROCEDIMENTO COMUM CÍVEL", { motivo: `Tramita na 2ª ${orgao} da Comarca.` }), /segredo de justica/, orgao)
+      assert.throws(pacote(`PROCEDIMENTO COMUM CÍVEL - ${orgao}`), /segredo de justica/, orgao)
+    }
+    assert.throws(pacote("PROCEDIMENTO COMUM CÍVEL", { familia_processual: "direito de família" }), /segredo de justica/)
+    assert.doesNotThrow(pacote("PROCEDIMENTO COMUM CÍVEL", { motivo: "Contrato com a Empresa Baiana de Alimentos e a Guarda Municipal." }))
+  })
+
+  it("lote novo usa marcador próprio em fonte, contagens, rollback e readback", () => {
+    const pacote = prepararPacoteProcessos({
+      itensRevisao: [item()],
+      processosCuradoria: [processo()],
+      esperadoProcessos: 1,
+      esperadoFichas: 1,
+      timestamp: "20260927060000",
+      aprovadoEditorialmente: true,
+      marcador: "curadoria-djen-20260927",
+    })
+    for (const sql of [pacote.migration, pacote.rollback, pacote.readback]) {
+      assert.match(sql, /LIKE 'curadoria-djen-20260927: %'/)
+      assert.doesNotMatch(sql, /curadoria-djen-20260805/)
+    }
+    assert.match(pacote.migration, /'curadoria-djen-20260927: Comunica PJe'/)
+    // Guards de coorte vazia e de replay descartável nos dois blocos de checagem.
+    assert.equal(pacote.migration.match(/current_setting\('pf\.replay', true\) = 'true'/g)?.length, 2)
+    assert.match(pacote.readback, /resultado\.expected_rows <> 1 OR resultado\.expected_candidates <> 1/)
+    assert.match(pacote.readback, /readback 20260927060000/)
+    assert.match(pacote.readback, /WHERE version = '20260927060000';\n  IF ledger <> 1 THEN/)
+    assert.equal(pacote.allowlist.recorte, "processos-curadoria-djen-20260927")
+    assert.throws(() => prepararPacoteProcessos({
+      itensRevisao: [item()],
+      processosCuradoria: [processo()],
+      esperadoProcessos: 1,
+      esperadoFichas: 1,
+      timestamp: "20260927060000",
+      marcador: "outro-marcador",
+    }), /marcador invalido/)
+  })
+
   it("gera migration e rollback pareados com preflight, dedupe e contagem exata", () => {
     const pacote = prepararPacoteProcessos({
       itensRevisao: [item()],

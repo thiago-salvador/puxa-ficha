@@ -197,7 +197,10 @@ test("downloadToFile aborta enquanto a escrita ainda está pendente", async () =
       fetcher: async () => new Response(new ReadableStream({
         start(controller) {
           controller.enqueue(payload)
-          controller.close()
+        },
+        async pull(controller) {
+          await new Promise((resolve) => setTimeout(resolve, 100))
+          try { controller.close() } catch { /* O timeout já cancelou o stream. */ }
         },
       })),
     })

@@ -46,6 +46,14 @@ const NOT_DIRECT_QUERY_ALLOWLIST: ReadonlyArray<{ label: string; motivo: string 
       "ficha passou a usar uma previa que e query direta com .abortSignal(signal), e este " +
       "call site serve apenas /api/candidato-profile/[slug]/legislacao-executivo, fora do render.",
   },
+  {
+    label: "`noticias_candidato(${slug})`",
+    motivo:
+      "O builder vem de publicNewsWindowQuery (src/lib/news/public-page.ts), compartilhado com " +
+      "a rota de \"Ver mais noticias\" para que previa e paginas usem a mesma janela, ordem e " +
+      "colunas. O helper recebe o signal por argumento e o encadeia na query; o call site " +
+      "ainda chama .abortSignal(signal) no builder devolvido.",
+  },
 ]
 
 interface CallSite {

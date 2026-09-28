@@ -10,7 +10,6 @@ import { formatDisplayName } from "@/lib/display-name"
 export const metadata: Metadata = {
   title: "Atualizações verificadas | Puxa Ficha",
   description: "Alterações observadas em fontes oficiais e verificadas para candidatos publicados.",
-  robots: { index: false, follow: false },
   alternates: { canonical: "/imprensa/atualizacoes" },
 }
 export const dynamic = "force-dynamic"
@@ -36,6 +35,7 @@ export default async function ImprensaAtualizacoesPage({
 
   return (
     <div className="min-h-screen bg-background">
+      <p role="note" className="mx-auto max-w-7xl px-5 pt-6 font-semibold text-amber-900 md:px-12">Confira os dados na fonte original antes de publicar.</p>
       <section className="bg-black px-5 pb-12 pt-28 text-white sm:pb-16 sm:pt-32 md:px-12 lg:pb-20 lg:pt-40">
         <div className="mx-auto max-w-7xl">
           <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-white/70">Mesa de apuração</p>
@@ -48,7 +48,7 @@ export default async function ImprensaAtualizacoesPage({
 
       <div className="pt-8 sm:pt-12"><SectionDivider /></div>
       <div className="mx-auto max-w-7xl px-5 py-8 sm:py-12 md:px-12 lg:py-16">
-        <Link href="/imprensa" className="mb-8 inline-flex min-h-11 items-center font-semibold text-foreground underline underline-offset-4">Voltar à Mesa de apuração</Link>
+        <Link href="/imprensa/mesa" className="mb-8 inline-flex min-h-11 items-center font-semibold text-foreground underline underline-offset-4">Voltar à Mesa de apuração</Link>
         <div className="max-w-3xl">
           <SectionLabel>Fonte e detecção</SectionLabel>
           <SectionTitle>Registro público de mudanças</SectionTitle>

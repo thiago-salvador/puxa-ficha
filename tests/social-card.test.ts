@@ -217,11 +217,13 @@ describe("buildSocialCardJsx", () => {
     assert.match(feedHtml, /Visão geral da ficha pública/)
     assert.match(feedHtml, /Votações Chave/)
     assert.match(feedHtml, /Sem votos públicos/)
+    assert.match(feedHtml, /Confira os dados na fonte original antes de publicar\./)
     assert.doesNotMatch(feedHtml, /Visao geral da ficha publica/)
     assert.doesNotMatch(feedHtml, /Votações-chave/)
 
     assert.match(storyHtml, /Visão geral da ficha pública/)
     assert.match(storyHtml, /Mesmo recorte público exibido na ficha do Puxa Ficha/)
+    assert.match(storyHtml, /Confira os dados na fonte original antes de publicar\./)
     assert.doesNotMatch(storyHtml, /Mesmo recorte publico exibido na ficha do Puxa Ficha/)
   })
 

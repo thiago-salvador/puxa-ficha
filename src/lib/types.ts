@@ -270,6 +270,8 @@ export interface Processo {
   gravidade: 'alta' | 'media' | 'baixa' | null;
   fonte?: string | null;
   url_fonte?: string | null;
+  /** Calculado na leitura pública: "oficial" ou "em_confirmacao" (selo na ficha). */
+  fonte_nivel?: import("@/lib/djen-consulta-url").FonteProcessoNivel | null;
 }
 
 // --- Pontos de Atenção ---
@@ -791,6 +793,12 @@ export interface FichaCandidato extends Candidato {
   /** Auditoria do recorte editorial de votações-chave na aba Destaques. */
   votacoes_verificacao?: SancoesVerificacao | null;
   noticias: NoticiaCandidato[];
+  /**
+   * Cursor da página seguinte à prévia de notícias, derivado na serialização
+   * pública (os IDs da prévia saem compactados). Null quando a prévia já
+   * cobre a janela inteira.
+   */
+  noticias_cursor?: string | null;
   indicadores_estaduais?: IndicadorEstadual[];
 
   // Contadores

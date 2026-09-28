@@ -41,6 +41,12 @@ function receipt() {
 test("histórico partidário só fecha com fontes parlamentar e de candidatura verificadas", () => {
   const complete = receipt()
   assert.equal(validCoverageSourceProof(profile, "mudancas_partido", complete), true)
+  const senate = receipt()
+  const senateRevision = { ...parliamentary, url: "https://legis.senado.leg.br/dadosabertos/senador/123/mandatos.json" }
+  senate.url = senateRevision.url
+  senate.coverage_proof.source_revisions[0] = senateRevision
+  senate.coverage_proof.components[0].source_revisions = [senateRevision]
+  assert.equal(validCoverageSourceProof(profile, "mudancas_partido", senate), true)
   assert.equal(validCoverageSourceProof(profile, "mudancas_partido", { ...complete, coverage_proof: { ...complete.coverage_proof, components: complete.coverage_proof.components.slice(0, 1) } }), false)
   const wrongHost = receipt()
   wrongHost.coverage_proof.components[1].source_revisions = [parliamentary]

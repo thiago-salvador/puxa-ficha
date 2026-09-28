@@ -93,15 +93,15 @@ export function createCardGetHandler(deps: CardRouteDeps = defaultCardRouteDeps)
         const cardData = deps.extractCardData(resource.data, photoDataUri)
         const img = await deps.buildSocialCard(cardData, format)
 
-        const body = img.body
         const headers = new Headers(img.headers)
         headers.set(
           "Cache-Control",
           "public, max-age=3600, s-maxage=86400, stale-while-revalidate=3600",
         )
         headers.set("X-Robots-Tag", "noindex")
-
-        return new Response(body, { status: 200, headers })
+        headers.set("X-Imprensa-Aviso", "Confira os dados na fonte original antes de publicar.")
+        headers.set("Content-Type", "image/png")
+        return new Response(img.body, { status: 200, headers })
       },
     )
   }

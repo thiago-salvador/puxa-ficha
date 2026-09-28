@@ -288,7 +288,7 @@ describe("watchdog dry-run com curl mockado", () => {
     assert.match(output, /anomalias_detectadas=1/)
   })
 
-  it("denuncia recibo ausente e cache sem execução dentro de uma hora", () => {
+  it("denuncia recibo ausente e cache sem execução dentro de 13 horas", () => {
     const run = runWatchdog({
       httpCode: "200", body: JSON.stringify({ ok: true, total: 6, results: [] }),
       freshnessBody: JSON.stringify({ ok: true, checks: [
@@ -296,14 +296,14 @@ describe("watchdog dry-run com curl mockado", () => {
         { name: "news-refresh-recover", age_hours: 4 },
         { name: "send-digest", age_hours: 20 },
         { name: "published-consistency", age_hours: null },
-        { name: "revalidate-public-cache", age_hours: 2 },
+        { name: "revalidate-public-cache", age_hours: 14 },
       ] }),
     })
     fixtures.push(run.fixture)
     const output = `${run.stdout}\n${run.stderr}`
     assert.match(output, /vercel-cron-published-consistency/)
     assert.match(output, /recibo de execução ausente/)
-    assert.match(output, /último rastro há 2h \(limite 1h\)/)
+    assert.match(output, /último rastro há 14h \(limite 13h\)/)
     assert.match(output, /anomalias_detectadas=2/)
   })
 
@@ -400,8 +400,9 @@ describe("watchdog dry-run com curl mockado", () => {
           conteudo.includes("cron-watchdog: skipped-ok-com-gate-desligado")
         )
       })
+    // Zero é válido: a fila serial, única com o marcador, fica sem agenda
+    // enquanto o gate está desligado (27/09/2026).
     assert.equal(toleradas.length, comMarcador.length)
-    assert.ok(comMarcador.length > 0, "nenhum workflow declara o marcador")
     assert.match(output, /ação: criar issue/)
   })
 

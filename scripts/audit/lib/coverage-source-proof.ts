@@ -52,7 +52,6 @@ const FAMILY_FIELD: Partial<Record<CoverageFamily, string>> = {
   projetos_lei: "projetos_lei",
   votos_candidato: "votos",
   gastos_parlamentares: "gastos_parlamentares",
-  mudancas_partido: "mudancas_partido",
 }
 
 function object(value: unknown): Record<string, unknown> | null {
@@ -155,7 +154,7 @@ function officialHost(family: CoverageFamily, url: string): boolean {
     if (family === "historico_politico") {
       return ["dadosabertos.tse.jus.br", "cdn.tse.jus.br", "www.tse.jus.br", "legis.senado.leg.br"].includes(parsed.hostname)
     }
-    if (["perfil_atual", "patrimonio", "financiamento", "mudancas_partido"].includes(family)) {
+    if (["perfil_atual", "patrimonio", "financiamento"].includes(family)) {
       return ["dadosabertos.tse.jus.br", "cdn.tse.jus.br", "www.tse.jus.br"].includes(parsed.hostname)
     }
     if (["projetos_lei", "votos_candidato", "gastos_parlamentares"].includes(family)) {

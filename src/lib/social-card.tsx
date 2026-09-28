@@ -80,6 +80,15 @@ const MUTED_SOFT = "#a3a3a3"
 const CRITICAL = "#b91c1c"
 const FONT_SANS = "PF Inter"
 const FONT_HEADING = "PF Anton"
+const CARD_NOTICE = "Confira os dados na fonte original antes de publicar."
+
+function CardNotice() {
+  return (
+    <div style={{ display: "flex", alignItems: "center", background: "#fff7ed", border: "1px solid #111111", padding: "12px 16px", color: "#7c2d12", fontFamily: FONT_SANS, fontSize: 18, fontWeight: 700, lineHeight: 1.2 }}>
+      {CARD_NOTICE}
+    </div>
+  )
+}
 
 let socialCardFontsPromise: Promise<{
   sansRegular: ArrayBuffer
@@ -844,6 +853,7 @@ export function buildSocialCardJsx(data: CardData, format: CardFormat) {
             2026
           </div>
         </div>
+        <CardNotice />
       </div>
     )
   }
@@ -1126,6 +1136,7 @@ export function buildSocialCardJsx(data: CardData, format: CardFormat) {
           2026
         </div>
       </div>
+      <CardNotice />
     </div>
   )
 }

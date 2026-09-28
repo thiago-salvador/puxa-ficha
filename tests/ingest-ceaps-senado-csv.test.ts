@@ -1,7 +1,7 @@
 import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
 import test from "node:test"
-import { agregarDespesasCeapsCsv, ceapsNamesForSenator, ceapsReceiptOutcome, classifyCeapsLegacyRow, fetchCeapsSnapshot, parseCeapsCsv, withinCeapsUnpublishCaps } from "../scripts/lib/ingest-ceaps-senado"
+import { agregarDespesasCeapsCsv, CEAPS_ALIAS_JEV_MIN_P, ceapsNamesForSenator, ceapsUniqueAliasName, ceapsReceiptOutcome, classifyCeapsLegacyRow, fetchCeapsSnapshot, parseCeapsCsv, withinCeapsUnpublishCaps } from "../scripts/lib/ingest-ceaps-senado"
 import { parseCeapsRows } from "../scripts/audit/fetch-parliamentary-family-sources-local"
 
 test("CEAPS: score de identidade sombra fica só no arquivo privado", () => {
@@ -138,4 +138,41 @@ test("CEAPS: tombstones falham fechados por teto de lote e razão", () => {
 test("CEAPS: receipt mantém achado confirmado quando uma escrita posterior falha", () => {
   assert.equal(ceapsReceiptOutcome({ scopeIndeterminate: false, hasErrors: true, sourceRows: 4, rowsUpserted: 2 }), "encontrado")
   assert.equal(ceapsReceiptOutcome({ scopeIndeterminate: false, hasErrors: true, sourceRows: 0, rowsUpserted: 0 }), "erro")
+})
+
+test("CEAPS alias: nome de urna único prefixado pelo NomeParlamentar é aceito", () => {
+  assert.equal(ceapsUniqueAliasName({
+    officialName: "Weverton",
+    nomeCompleto: "WEVERTON ROCHA MARQUES DE SOUSA",
+    yearNames: ["WEVERTON ROCHA", "ANA SENADORA", "OUTRO NOME"],
+    otherOfficialNames: ["Ana Senadora", "Outro Nome"],
+  }), "WEVERTON ROCHA")
+})
+
+test("CEAPS alias: dois nomes compatíveis ou outro parlamentar com o mesmo prefixo ficam em revisão", () => {
+  assert.equal(ceapsUniqueAliasName({
+    officialName: "Weverton",
+    nomeCompleto: "WEVERTON ROCHA MARQUES DE SOUSA",
+    yearNames: ["WEVERTON ROCHA", "WEVERTON MARQUES"],
+    otherOfficialNames: [],
+  }), null)
+  assert.equal(ceapsUniqueAliasName({
+    officialName: "Weverton",
+    nomeCompleto: "WEVERTON ROCHA MARQUES DE SOUSA",
+    yearNames: ["WEVERTON ROCHA"],
+    otherOfficialNames: ["Weverton"],
+  }), null)
+})
+
+test("CEAPS alias: nome que não começa pelo NomeParlamentar ou foge da ordem do nome completo é recusado", () => {
+  assert.equal(ceapsUniqueAliasName({ officialName: "Weverton", nomeCompleto: "WEVERTON ROCHA MARQUES DE SOUSA", yearNames: ["ROCHA WEVERTON"], otherOfficialNames: [] }), null)
+  assert.equal(ceapsUniqueAliasName({ officialName: "Weverton", nomeCompleto: "WEVERTON ROCHA MARQUES DE SOUSA", yearNames: ["WEVERTON SOUSA ROCHA"], otherOfficialNames: [] }), null)
+  assert.equal(ceapsUniqueAliasName({ officialName: "Weverton", nomeCompleto: "WEVERTON ROCHA MARQUES DE SOUSA", yearNames: ["WEVERTON"], otherOfficialNames: [] }), null)
+})
+
+test("CEAPS alias: coletor exige Jev mesma_pessoa >= 0,8 além da regra de código", () => {
+  const source = readFileSync(new URL("../scripts/lib/ingest-ceaps-senado.ts", import.meta.url), "utf8")
+  assert.equal(CEAPS_ALIAS_JEV_MIN_P, 0.8)
+  assert.match(source, /const aliasConfirmed = aliasMatch && p !== null && p >= CEAPS_ALIAS_JEV_MIN_P/)
+  assert.match(source, /if \(aliasMatch && !aliasConfirmed\) \{[\s\S]{0,200}sourceName = null/)
 })

@@ -1,234 +1,135 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { AlertCohortSubscribe } from "@/components/alerts/AlertCohortSubscribe"
-import { ImprensaCitationButton } from "@/components/ImprensaCitationButton"
+import { getImprensaDatasetCached } from "@/lib/imprensa-cache"
+import { normalizeImprensaFilters } from "@/lib/imprensa-data"
 import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
+import { IMPRENSA_UFS, labelProcessState, labelState } from "@/lib/imprensa-uf-pack"
 import { isSenadoEnabled } from "@/lib/senado-feature"
-import {
-  normalizeImprensaFilters,
-  type ImprensaFilters,
-} from "@/lib/imprensa-data"
-import { getImprensaDatasetCached, type ImprensaPageDataset } from "@/lib/imprensa-cache"
 import styles from "./imprensa.module.css"
 
+// cspell:ignore numeros confianca
+
 export const metadata: Metadata = {
-  title: "Mesa de apuração | Puxa Ficha",
-  description: "Recortes públicos de candidatos e fatos com fontes para apoiar apurações jornalísticas.",
-  robots: { index: false, follow: false },
+  title: "Imprensa | Puxa Ficha",
+  description: "Informações, fontes, recortes e ferramentas públicas do Puxa Ficha para apuração jornalística.",
+  alternates: { canonical: "/imprensa" },
 }
 
-type SearchParams = { cargo?: string | string[]; uf?: string | string[] }
+const aviso = "Confira os dados na fonte original antes de publicar."
 
-function first(value: string | string[] | undefined): string | undefined {
-  return Array.isArray(value) ? value[0] : value
-}
-
-function labelState(state: string): string {
-  if (state === "publicado") return "Publicado"
-  if (state === "vazio_confirmado") return "Vazio confirmado"
-  if (state === "cobertura_parcial") return "Cobertura parcial"
-  if (state === "indeterminado") return "Indeterminado"
-  if (state === "nao_buscado") return "Não buscado"
-  if (state === "erro") return "Erro na coleta"
-  if (state === "desatualizado") return "Desatualizado"
-  if (state === "contraditorio") return "Recibo contraditório"
-  if (state === "sem_dado") return "Sem dado"
-  return "Indisponível"
-}
-
-function dateLabel(value: string | null | undefined): string {
-  if (!value) return "data não disponível"
-  const parsed = new Date(value)
-  return Number.isNaN(parsed.valueOf()) ? value : parsed.toLocaleDateString("pt-BR")
-}
-
-export default async function ImprensaPage({ searchParams }: { searchParams: Promise<SearchParams> }) {
-  const params = await searchParams
-  const rawFilters = { cargo: first(params.cargo), uf: first(params.uf) }
-  const filters: ImprensaFilters = normalizeImprensaFilters(rawFilters)
-  let dataset: ImprensaPageDataset | null = null
-  let sourceError: string | null = null
-  try {
-    dataset = await getImprensaDatasetCached(filters)
-  } catch {
-    sourceError = "A consulta pública está indisponível no momento."
+function counts(rows: Array<{ cargo: string; uf: string | null; sites: { estado: string }; chapa: { estado: string; suplentesEstado: string }; processos: { estado: string; quantidadeEmConfirmacao?: number } }>) {
+  const by = (subset: typeof rows, pick: (row: (typeof rows)[number]) => string) => Object.fromEntries(
+    [...new Set(subset.map(pick))].sort().map((key) => [key, subset.filter((row) => pick(row) === key).length]),
+  )
+  const viceRows = rows.filter((row) => row.cargo === "Presidente" || row.cargo === "Governador")
+  const senateRows = rows.filter((row) => row.cargo === "Senador")
+  return {
+    cargos: by(rows, (row) => row.cargo),
+    ufs: new Set(rows.map((row) => row.uf).filter(Boolean)).size,
+    processos: by(rows, (row) => row.processos.estado),
+    processosComSelo: rows.filter((row) => (row.processos.quantidadeEmConfirmacao ?? 0) > 0).length,
+    sites: by(rows, (row) => row.sites.estado),
+    vice: by(viceRows, (row) => row.chapa.estado),
+    suplentes: by(senateRows, (row) => row.chapa.suplentesEstado),
   }
-  const rows = dataset?.rows ?? []
-  const cargos = [...(dataset?.availableCargos ?? [])]
-  const ufs = [...(dataset?.availableUfs ?? [])]
-  if (filters.cargo && !cargos.includes(filters.cargo)) cargos.unshift(filters.cargo)
-  if (filters.uf && !ufs.includes(filters.uf)) ufs.unshift(filters.uf)
-  const query = new URLSearchParams()
-  if (filters.cargo) query.set("cargo", filters.cargo)
-  if (filters.uf) query.set("uf", filters.uf)
-  const queryString = query.toString()
-  const exportSuffix = queryString ? `&${queryString}` : ""
+}
+
+export default async function ImprensaSala() {
   const alertsEnabled = isAlertsEmailFeatureEnabled()
+  const senateEnabled = isSenadoEnabled()
+  let summary: ReturnType<typeof counts> | null = null
+  let generatedAt: string | null = null
+  try {
+    const dataset = await getImprensaDatasetCached(normalizeImprensaFilters({}))
+    summary = counts(dataset.rows)
+    generatedAt = dataset.generatedAt
+  } catch {
+    // Uma falha de consulta não deve parecer uma contagem igual a zero.
+  }
 
   return (
-    <div className={styles.shell}>
-      <section className={styles.hero}>
+    <main className={styles.shell}>
+      <header className={styles.hero}>
         <div className={styles.heroInner}>
-          <p className={styles.eyebrow}>Puxa Ficha · acesso direto</p>
-          <h1 className={styles.heroTitle}>Mesa de apuração</h1>
-          <p className={styles.heroCopy}>
-            Um recorte público para conferir candidatos, fontes e alcance dos dados publicados nas fichas.
-            Se você chegou por um link compartilhado, os filtros abaixo preservam exatamente esse recorte.
-          </p>
+          <p className={styles.eyebrow}>Puxa Ficha · imprensa</p>
+          <h1 className={styles.heroTitle}>Sala de imprensa</h1>
+          <p className={styles.heroCopy}>Fontes, recortes e ferramentas públicas para consultar informações sobre candidaturas e conferir cada dado na origem.</p>
+          <p role="note" className={styles.salaNotice}>{aviso}</p>
         </div>
-      </section>
+      </header>
 
       <div className={styles.content}>
-        <section className={styles.intro} aria-labelledby="mesa-intro">
-          <p id="mesa-intro" className={styles.introText}>
-            Use cargo e UF para reduzir a coorte. Sites declarados no TSE, composição de chapa e processos
-            publicados na ficha têm estados de cobertura separados: uma ausência de prova não é tratada como zero.
-          </p>
-          <nav className={styles.utilityLinks} aria-label="Recursos da Mesa">
-            <Link href="/metodologia">Metodologia e fontes</Link>
-            <Link href="/embed">Criar embed</Link>
-            <Link href="/imprensa/atualizacoes">Atualizações verificadas</Link>
-            <Link href="/imprensa/frescor">Frescor das fontes</Link>
-            <Link href="#dicionario">Dicionário de campos</Link>
-            <a href={`/api/imprensa/export?format=csv${exportSuffix}`} download>
-              Baixar CSV
-            </a>
-            <a href={`/api/imprensa/export?format=json${exportSuffix}`} download>
-              Baixar JSON
-            </a>
+      <nav aria-label="Tarefas de imprensa" className={styles.taskLinks}>
+        <Link href="/imprensa/mesa">Achar fonte sobre um candidato</Link>
+        <a href="/api/imprensa/export?format=csv">Baixar recorte</a>
+        <Link href={alertsEnabled ? "/imprensa/mesa#alertas" : "/imprensa/atualizacoes"}>Receber atualizações</Link>
+      </nav>
+
+      <div className={styles.salaSections}>
+        <section id="o-que-e" className={styles.salaSection} aria-labelledby="o-que-e-title">
+          <h2 id="o-que-e-title" className={styles.salaTitle}>O que é e o que não é</h2>
+          <p className="mt-3 max-w-3xl leading-7">O Puxa Ficha reúne informações públicas de candidaturas e suas fontes. Não recomenda voto. Um processo listado não equivale a condenação. Falta de dado não significa zero.</p>
+        </section>
+
+        <section id="numeros" className={styles.salaSection} aria-labelledby="numeros-title">
+          <h2 id="numeros-title" className={styles.salaTitle}>Números da base</h2>
+          {summary ? <>
+            <p className="mt-2">{Object.values(summary.cargos).reduce((sum, n) => sum + n, 0)} candidatos · {summary.ufs} UFs com registros · consulta em {generatedAt ? new Date(generatedAt).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short", timeZone: "UTC" }) + " UTC" : "sem data"}</p>
+            <div className={styles.statsGrid}>
+              <CountCard title="Candidatos por cargo" values={summary.cargos} labels="cargo" />
+              <CountCard title="Processos por estado do dado" values={summary.processos} labels="processos" />
+              <CountCard title="Sites por estado do dado" values={summary.sites} />
+              <CountCard title="Vice (Presidente e Governador)" values={summary.vice} />
+              {Object.keys(summary.suplentes).length > 0 && <CountCard title="Suplentes (Senador)" values={summary.suplentes} />}
+            </div>
+            <p className="mt-3">Os candidatos foram buscados pelo nome no Diário de Justiça Eletrônico Nacional. Quando o nome aparece sem um segundo dado oficial que confirme a pessoa, o processo não é publicado, para não atribuir a alguém o processo de um homônimo.</p>
+            {summary.processosComSelo > 0 && <p className="mt-3">{summary.processosComSelo} candidato{summary.processosComSelo === 1 ? " tem" : "s têm"} processo com fonte oficial em confirmação: o registro aparece na ficha com esse aviso e ainda falta localizar a página do próprio tribunal.</p>}
+          </> : <p role="status" className="mt-3">Contagens temporariamente indisponíveis. Uma falha de consulta não representa zero.</p>}
+        </section>
+
+        <section id="confianca" className={styles.salaSection} aria-labelledby="confianca-title">
+          <h2 id="confianca-title" className={styles.salaTitle}>Fontes e confiança</h2>
+          <p className="mt-3 leading-7">Consulte as fontes oficiais e o SHA-256 dos arquivos do TSE na Mesa. Cada grupo de dados informa seu estado e a data disponível. O código do projeto usa Apache-2.0; correções podem ser acompanhadas por issue ou pull request.</p>
+          <Link className="mt-3 inline-block underline" href="/imprensa/mesa#dicionario">Ver estados e dicionário de campos</Link>
+        </section>
+
+        <section id="pautas" className={styles.salaSection} aria-labelledby="pautas-title">
+          <h2 id="pautas-title" className={styles.salaTitle}>Recortes para apuração</h2>
+          <p className="mt-3">Abra a Mesa e aplique os filtros. Os links não antecipam achados.</p>
+          <div className="mt-3 flex flex-wrap gap-4"><Link className="underline" href="/imprensa/mesa?cargo=Presidente">Presidência</Link><Link className="underline" href="/imprensa/mesa?cargo=Governador">Governos estaduais</Link>{senateEnabled ? <Link className="underline" href="/imprensa/mesa?cargo=Senador">Senado</Link> : null}</div>
+        </section>
+
+        <section id="pacotes-uf" className={styles.salaSection} aria-labelledby="pacotes-uf-title">
+          <h2 id="pacotes-uf-title" className={styles.salaTitle}>Pacotes por UF</h2>
+          <p className="mt-3">Abra um recorte estadual com candidatos por cargo, fichas, chapas, mudanças verificadas e lacunas.</p>
+          <nav className={styles.ufLinks} aria-label="Pacotes de imprensa por UF">
+            {IMPRENSA_UFS.map((uf) => <Link key={uf} href={`/imprensa/uf/${uf.toLowerCase()}`}>{uf}</Link>)}
           </nav>
         </section>
 
-        <form className={styles.filters} action="/imprensa" method="get" aria-label="Filtrar coorte pública">
-          <div className={styles.field}>
-            <label htmlFor="imprensa-cargo">Cargo</label>
-            <select id="imprensa-cargo" name="cargo" defaultValue={filters.cargo ?? ""}>
-              <option value="">Todos os cargos</option>
-              {cargos.map((cargo) => <option key={cargo} value={cargo}>{cargo}</option>)}
-            </select>
-          </div>
-          <div className={styles.field}>
-            <label htmlFor="imprensa-uf">UF</label>
-            <select id="imprensa-uf" name="uf" defaultValue={filters.uf ?? ""}>
-              <option value="">Todas as UFs</option>
-              {ufs.map((uf) => <option key={uf} value={uf}>{uf}</option>)}
-            </select>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <button className={styles.submit} type="submit">Aplicar recorte</button>
-            <Link className={styles.reset} href="/imprensa">Limpar</Link>
-          </div>
-        </form>
-
-        {alertsEnabled && (
-          <section className={styles.notice} aria-labelledby="imprensa-alertas-title">
-            <h2 id="imprensa-alertas-title" className="text-lg font-semibold text-foreground">Alertas por cargo e UF</h2>
-            <div className="mb-4"><p>Escolha o recorte para receber um resumo das mudanças nas fichas publicadas. Os candidatos incluídos podem mudar entre envios. A assinatura exige confirmação por email e pode ser gerenciada ou cancelada a qualquer momento.</p></div>
-            <AlertCohortSubscribe initialCargo={filters.cargo ?? undefined} initialUf={filters.uf} senadoEnabled={isSenadoEnabled()} />
-            <div className="mt-3"><p><Link className={styles.sourceLink} href="/alertas/gerenciar">Gerenciar alertas</Link></p></div>
-          </section>
-        )}
-
-        <div className={styles.datasetHeader}>
-          <h2 className={styles.datasetTitle}>Candidatos no recorte</h2>
-          <p className={styles.count}>{sourceError ? "contagem indisponível" : `${rows.length} ${rows.length === 1 ? "linha" : "linhas"} públicas`}</p>
-        </div>
-
-        {sourceError ? (
-          <section className={`${styles.notice} ${styles.noticeError}`} role="alert">
-            <h3>Não foi possível consultar a fonte</h3>
-            <p>{sourceError} Tente novamente mais tarde. Uma falha de consulta não é uma lista vazia.</p>
-          </section>
-        ) : rows.length === 0 ? (
-          <section className={styles.notice} role="status">
-            <h3>Nenhuma linha neste recorte</h3>
-            <p>Revise cargo e UF ou limpe os filtros. A ausência de linhas não significa ausência de candidatos no universo eleitoral.</p>
-          </section>
-        ) : (
-          <div className={styles.tableWrap}>
-            <table className={styles.table}>
-              <caption className="sr-only">Candidatos e famílias factuais da Mesa de apuração</caption>
-              <thead>
-                <tr>
-                  <th scope="col">Candidato</th>
-                  <th scope="col">Sites declarados</th>
-                  <th scope="col">Chapa</th>
-                  <th scope="col">Processos na ficha</th>
-                  <th scope="col">Ficha e citação</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rows.map((row) => (
-                  <tr key={row.slug}>
-                    <td>
-                      <Link className={styles.name} href={row.fichaUrl}>{row.nome}</Link>
-                      <p className={styles.meta}>{[row.partido, row.cargo, row.uf].filter(Boolean).join(" · ")}</p>
-                    </td>
-                    <td>
-                      <div className={styles.status} data-state={row.sites.estado}>
-                        <strong>{labelState(row.sites.estado)}</strong>
-                        <em>{row.sites.quantidade == null ? "quantidade não publicada" : `${row.sites.quantidade} URL${row.sites.quantidade === 1 ? "" : "s"}`}</em>
-                      </div>
-                      {row.sites.fonteUrl && <a className={`${styles.sourceLink} ${styles.meta}`} href={row.sites.fonteUrl} rel="noreferrer">Fonte do snapshot</a>}
-                    </td>
-                    <td>
-                      <div className={styles.status} data-state={row.chapa.estado}>
-                        <strong>{labelState(row.chapa.estado)}</strong>
-                        <em>{row.chapa.viceNome ? `Vice: ${row.chapa.viceNome}` : "vice não publicado"}</em>
-                      </div>
-                      {row.chapa.fonteUrl && <a className={`${styles.sourceLink} ${styles.meta}`} href={row.chapa.fonteUrl} rel="noreferrer">Fonte do snapshot</a>}
-                      {row.chapa.fonteUrl && row.chapa.snapshotEm && (
-                        <ImprensaCitationButton candidateName={row.nomeOriginal} section="chapa" slug={row.slug} sourceUrl={row.chapa.fonteUrl} collectedAt={dateLabel(row.chapa.snapshotEm)} collectionLabel="Snapshot oficial em" />
-                      )}
-                    </td>
-                    <td>
-                      <div className={styles.status} data-state={row.processos.estado}>
-                        <strong>{labelState(row.processos.estado)}</strong>
-                        <em>{row.processos.quantidade == null ? "quantidade não publicada" : `${row.processos.quantidade} registro${row.processos.quantidade === 1 ? "" : "s"}`}</em>
-                        {(row.processos.quantidadeOmitida ?? 0) > 0 && <em>{row.processos.quantidadeOmitida} sem fonte oficial verificável</em>}
-                        {(row.processos.estado === "publicado" || row.processos.estado === "cobertura_parcial") && row.processos.buscaEstado !== "encontrado" && <em data-search-state={row.processos.buscaEstado}>Busca: {labelState(row.processos.buscaEstado)}</em>}
-                      </div>
-                      <p className={styles.meta}>Estado da busca e registros com fonte oficial; processo não equivale a condenação.</p>
-                    </td>
-                    <td>
-                      <div className={styles.actions}>
-                        <Link href={`${row.fichaUrl}?tab=geral`}>Ficha geral</Link>
-                        <Link href={`${row.fichaUrl}?tab=justica`}>Justiça</Link>
-                        <a href={`/api/card/${encodeURIComponent(row.slug)}?format=feed`} rel="noreferrer">Card público</a>
-                        {row.sites.fonteUrl && row.sites.coletadoEm && (
-                          <ImprensaCitationButton candidateName={row.nomeOriginal} section="sites" slug={row.slug} sourceUrl={row.sites.fonteUrl} collectedAt={dateLabel(row.sites.coletadoEm)} />
-                        )}
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
-
-        <section id="dicionario" className={styles.footnote} aria-labelledby="dicionario-title">
-          <h2 id="dicionario-title" className="mb-2 font-semibold text-foreground">Dicionário e limites</h2>
-          <p>
-            sites_estado descreve URLs públicas vinculadas no snapshot oficial do TSE, sem afirmar que são todos os sites da pessoa. processos_estado descreve as linhas da ficha; processos_busca_estado descreve o recibo da busca nominal. Registros com fonte oficial verificável permanecem contados; ocorrências sem fonte oficial são omitidas e tornam a cobertura parcial. Recibo de vazio com linhas publicadas aparece como contraditório. A ausência de recibo é não buscado; indeterminado, desatualizado e erro não confirmam ausência. O código é Apache 2.0; as condições de reutilização dos dados seguem suas fontes.
-          </p>
-          <dl className="mt-4 grid gap-x-6 gap-y-3 sm:grid-cols-2">
-            <div><dt className="font-semibold text-foreground">slug, nome_urna, cargo_disputado, uf, partido_sigla</dt><dd>Identificação pública da coorte. Unidade: texto. Fonte: candidatos_publico e ficha. Cobertura: coorte publicada; não é lista de todos os candidatos.</dd></div>
-            <div><dt className="font-semibold text-foreground">ficha_url</dt><dd>URL pública permanente da ficha. Unidade: URL. Fonte: Puxa Ficha. Data: geração do conjunto.</dd></div>
-            <div><dt className="font-semibold text-foreground">sites_estado, sites_quantidade</dt><dd>Estado e quantidade de URLs publicáveis declaradas no snapshot TSE. Unidade: estado e contagem. Zero só vale em vazio confirmado; sem_dado não é zero.</dd></div>
-            <div><dt className="font-semibold text-foreground">sites_fonte_url, sites_fonte_sha256, sites_coletado_em</dt><dd>Fonte, hash e coleta do pacote TSE. Unidade: URL, hash e data ISO. Cobertura: snapshot identificado; não afirma totalidade dos sites.</dd></div>
-            <div><dt className="font-semibold text-foreground">chapa_estado, chapa_vice_nome</dt><dd>Estado e vice da chapa do titular. Unidade: estado e texto. Só publica quando identidade, vínculo, URL HTTPS e SHA estão confirmados; sem_dado não escolhe um vice arbitrariamente.</dd></div>
-            <div><dt className="font-semibold text-foreground">chapa_fonte_url, chapa_fonte_sha256, chapa_snapshot_em</dt><dd>Fonte, SHA-256 e data do snapshot oficial da composição. A data identifica o snapshot preservado e não data quando a chapa começou.</dd></div>
-            <div><dt className="font-semibold text-foreground">processos_estado, processos_busca_estado, processos_quantidade, processos_quantidade_omitida</dt><dd>Estado dos registros, estado da busca, quantidade de registros com fonte oficial verificável e quantidade omitida por falta de fonte oficial. Vazio confirmado publica zero; não buscado, indeterminado, desatualizado e erro preservam a incerteza. Processo não equivale a condenação.</dd></div>
-            <div><dt className="font-semibold text-foreground">version, generated_at, filtros cargo/UF</dt><dd>Metadados do conjunto e do recorte exportado. Unidade: versão, data ISO e texto. A data é geração/coleta, não data do fato.</dd></div>
-          </dl>
-          <p className="mt-4">
-            Ocorrências repetidas ficam nos arquivos longos: <a className={styles.sourceLink} href={`/api/imprensa/export/sites?format=csv${exportSuffix}`}>sites CSV</a>, <a className={styles.sourceLink} href={`/api/imprensa/export/sites?format=json${exportSuffix}`}>sites JSON</a>, <a className={styles.sourceLink} href={`/api/imprensa/export/processos?format=csv${exportSuffix}`}>processos CSV</a> e <a className={styles.sourceLink} href={`/api/imprensa/export/processos?format=json${exportSuffix}`}>processos JSON</a>. Os dados do TSE recebem crédito conforme a licença Creative Commons Atribuição; isso não altera a licença Apache 2.0 do código.
-          </p>
-          <p className="mt-2">Ao reutilizar um recorte, credite Puxa Ficha e a fonte específica exibida na linha. O <Link className={styles.sourceLink} href="/embed">embed</Link> e o card público são recursos de apresentação, não novas fontes factuais.</p>
-          {dataset?.generatedAt && <p className="mt-2">Conjunto gerado em {dateLabel(dataset.generatedAt)}{dataset.version ? ` · versão ${dataset.version}` : ""}.</p>}
+        <section id="ferramentas" className={styles.salaSection} aria-labelledby="ferramentas-title">
+          <h2 id="ferramentas-title" className={styles.salaTitle}>Ferramentas</h2>
+          <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+            <li><Link className="underline" href="/imprensa/mesa">Mesa de apuração</Link></li>
+            <li><a className="underline" href="/api/imprensa/export?format=csv">Baixar CSV</a> · <a className="underline" href="/api/imprensa/export?format=json">Baixar JSON</a></li>
+            <li><Link className="underline" href="/embed">Embed</Link> · <Link className="underline" href="/imprensa/mesa#linhas">Card público nas fichas</Link></li>
+            <li><Link className="underline" href="/comparar">Comparador</Link> · <Link className="underline" href={alertsEnabled ? "/imprensa/mesa#alertas" : "/imprensa/atualizacoes"}>Alertas por cargo e UF</Link></li>
+            <li><Link className="underline" href="/imprensa/mesa#linhas">Como citar</Link></li>
+            <li>Cota parlamentar por ano: <a className="underline" href="/api/imprensa/export/gastos?format=csv">CSV</a> · <a className="underline" href="/api/imprensa/export/gastos?format=json">JSON</a></li>
+            <li><Link className="underline" href="/dados-abertos">Cadastro de candidatos em dados abertos</Link></li>
+          </ul>
         </section>
+
+        <section id="kit" className={styles.salaSection} aria-labelledby="kit-title"><h2 id="kit-title" className={styles.salaTitle}>Kit de imprensa</h2><p className="mt-3">Textos, capturas da Sala, PDF e respostas para perguntas frequentes.</p><Link className="mt-3 inline-block underline" href="/imprensa/kit">Abrir kit de imprensa</Link></section>
+        <section id="contato" className={styles.salaSection} aria-labelledby="contato-title"><h2 id="contato-title" className={styles.salaTitle}>Contato</h2><p className="mt-3">Para dúvidas e correções: <a className="underline" href="mailto:contato@puxaficha.com.br">contato@puxaficha.com.br</a>.</p></section>
+        <section id="perguntas" className={styles.salaSection} aria-labelledby="perguntas-title"><h2 id="perguntas-title" className={styles.salaTitle}>Perguntas frequentes</h2><p className="mt-3">Quem faz e quem financia o projeto? Consulte as informações em <Link className="underline" href="/sobre">Sobre</Link>.</p></section>
+        <section id="atualizacoes" className={styles.salaSection} aria-labelledby="atualizacoes-title"><h2 id="atualizacoes-title" className={styles.salaTitle}>Atualizações e frescor</h2><p className="mt-3"><Link className="underline" href="/imprensa/atualizacoes">Atualizações verificadas</Link> · <Link className="underline" href="/imprensa/frescor">Frescor das fontes</Link></p></section>
       </div>
-    </div>
+      </div>
+    </main>
   )
+}
+
+function CountCard({ title, values, labels = "state" }: { title: string; values: Record<string, number>; labels?: "cargo" | "state" | "processos" }) {
+  return <div className={styles.countCard}><h3>{title}</h3><ul>{Object.entries(values).map(([label, value]) => <li key={label} className="flex justify-between gap-4"><span>{labels === "cargo" ? label : labels === "processos" ? labelProcessState(label) : labelState(label)}</span><strong>{value}</strong></li>)}</ul></div>
 }

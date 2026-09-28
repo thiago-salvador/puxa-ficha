@@ -104,6 +104,42 @@ describe("cota parlamentar: o que pode ir ao ar", () => {
       ...valid,
       proveniencia: { ...valid.proveniencia, scope_complete: false },
     }, 2024, 100), false)
+
+    const partialCurrentYear = {
+      ...valid,
+      proveniencia: {
+        ...valid.proveniencia,
+        scope_complete: false,
+        complete_years: years.filter((year) => year !== 2026),
+        partial_years: [2026],
+      },
+    }
+    assert.equal(gastoParlamentarExibivel("Camara", partialCurrentYear, 2024, 100), true)
+    assert.equal(gastoParlamentarExibivel("Camara", {
+      ...partialCurrentYear,
+      proveniencia: { ...partialCurrentYear.proveniencia, ano: 2026 },
+    }, 2026, 100), true)
+    assert.equal(gastoParlamentarExibivel("Camara", {
+      ...partialCurrentYear,
+      proveniencia: { ...partialCurrentYear.proveniencia, ano: 2026 },
+    }, 2025, 100), false)
+    const estorno = {
+      ...partialCurrentYear,
+      categorias: [{ categoria: "Estorno", valor: -30 }],
+    }
+    assert.equal(gastoParlamentarExibivel("Camara", estorno, 2024, -30), false)
+    assert.equal(gastoParlamentarExibivel("Camara", {
+      ...partialCurrentYear,
+      proveniencia: { ...partialCurrentYear.proveniencia, complete_years: years.filter((year) => year !== 2015), partial_years: [2015] },
+    }, 2024, 100), false)
+    assert.equal(gastoParlamentarExibivel("Camara", {
+      ...partialCurrentYear,
+      proveniencia: { ...partialCurrentYear.proveniencia, scope_complete: true },
+    }, 2024, 100), false)
+    assert.equal(gastoParlamentarExibivel("Camara", {
+      ...partialCurrentYear,
+      proveniencia: { ...partialCurrentYear.proveniencia, complete_years: years.filter((year) => year !== 2024 && year !== 2026) },
+    }, 2024, 100), false)
   })
 
   test("linha sem fonte declarada continua exibível, porque o bloqueio é nominal", () => {

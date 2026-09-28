@@ -99,6 +99,12 @@ export const puxaFichaNextConfig: NextConfig = {
         destination: "/alertas/gerenciar",
         permanent: true,
       },
+      ...["cargo", "uf"].map((key) => ({
+        source: "/imprensa",
+        has: [{ type: "query" as const, key }],
+        destination: "/imprensa/mesa",
+        permanent: true,
+      })),
       ...ondaPRedirects,
       {
         source: "/governadores/:uf([a-z]{2})",

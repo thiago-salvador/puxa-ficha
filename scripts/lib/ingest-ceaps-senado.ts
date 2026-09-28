@@ -10,6 +10,7 @@ import { normalizeForMatch } from "./helpers"
 import { emDryRun, planejarEscrita, ativarDryRun } from "./dry-run"
 import { log, error } from "./logger"
 import { escreverAuditado } from "./escrita-auditada"
+import { decidirChaveOcupada, lerLinhaNaChave } from "./gastos-chave-anual"
 import { parseSenadoLegislatureRoster, senadoExpenseLegislatureForYear, senadoLegislatureRosterUrl, SENADO_EXPENSE_LEGISLATURES, type SenadoLegislatureRoster } from "./senado-legislature-roster"
 import { getExplicitCohort } from "./cohort-context"
 import type { IngestResult } from "./types"
@@ -95,6 +96,55 @@ export function ceapsProcessingYears(candidateYears: readonly number[], existing
 export function senateNameMatchesHistoricalRoster(sourceName: string, officialId: string, rosterNames: readonly ReadonlyMap<string, string>[]): boolean {
   const normalizedSource = normalizeForMatch(sourceName)
   return normalizedSource !== "" && rosterNames.some((names) => normalizeForMatch(names.get(officialId) ?? "") === normalizedSource)
+}
+
+/** Limite mínimo do Jev `mesma_pessoa` para aceitar um alias CEAPS (a regra de código também precisa aceitar). */
+export const CEAPS_ALIAS_JEV_MIN_P = 0.8
+
+function nameTokens(name: string): string[] {
+  return normalizeForMatch(name).split(" ").filter(Boolean)
+}
+
+function startsWithTokens(tokens: readonly string[], prefix: readonly string[]): boolean {
+  return prefix.length > 0 && prefix.length <= tokens.length && prefix.every((token, index) => tokens[index] === token)
+}
+
+function tokensInOrder(tokens: readonly string[], container: readonly string[]): boolean {
+  let cursor = 0
+  for (const token of container) if (cursor < tokens.length && tokens[cursor] === token) cursor++
+  return cursor === tokens.length
+}
+
+/**
+ * Alias único de um parlamentar no CSV CEAPS de um ano. Um nome do CSV só vale
+ * quando começa pelos tokens do NomeParlamentar oficial, tem todos os tokens
+ * contidos, em ordem, no nome completo do cadastro, é o único nome do ano com
+ * essa forma e nenhum outro parlamentar do roster do ano disputa esse nome.
+ * Qualquer ambiguidade devolve null e o par fica em revisão.
+ */
+export function ceapsUniqueAliasName(input: {
+  officialName: string
+  nomeCompleto: string
+  yearNames: readonly string[]
+  otherOfficialNames: readonly string[]
+}): string | null {
+  const official = nameTokens(input.officialName)
+  const full = nameTokens(input.nomeCompleto)
+  if (official.length === 0 || full.length === 0) return null
+  const candidates = new Map<string, string>()
+  for (const name of input.yearNames) {
+    const tokens = nameTokens(name)
+    if (tokens.length <= official.length || !startsWithTokens(tokens, official) || !tokensInOrder(tokens, full)) continue
+    candidates.set(tokens.join(" "), name)
+  }
+  if (candidates.size !== 1) return null
+  const [[normalizedAlias, alias]] = [...candidates]
+  const aliasTokens = normalizedAlias.split(" ")
+  const contested = input.otherOfficialNames.some((other) => {
+    const otherTokens = nameTokens(other)
+    return otherTokens.length > 0 && startsWithTokens(aliasTokens, otherTokens)
+  })
+  return contested ? null : alias
 }
 
 type ExistingSenateExpense = { id: string; ano: number | null; fonte: string; despublicado_em: string | null; total_gasto: number | null }
@@ -268,11 +318,11 @@ async function fetchSenateRosterName(officialId: number | string): Promise<strin
   return senateRosterName(payload, String(officialId))
 }
 
-async function samePersonByJev(candidate: { slug: string; nome_completo: string; nome_urna: string; ids: { senado?: number | null } }, sourceName: string): Promise<number | null> {
+async function samePersonByJev(candidate: { slug: string; nome_completo: string; nome_urna: string; ids: { senado?: number | null } }, sourceName: string, extraCandidateContext: Record<string, unknown> = {}): Promise<number | null> {
   const state = {
     fonte: "CSV oficial CEAPS do Senado",
     registro: { senador: sourceName },
-    candidato: { slug: candidate.slug, nome_completo: candidate.nome_completo, nome_urna: candidate.nome_urna, id_senado: candidate.ids.senado },
+    candidato: { slug: candidate.slug, nome_completo: candidate.nome_completo, nome_urna: candidate.nome_urna, id_senado: candidate.ids.senado, ...extraCandidateContext },
   }
   const questions = JSON.parse(readFileSync(JEV_QUESTIONS, "utf8"))
   const scriptSha = existsSync(JEV_SCRIPT) ? createHash("sha256").update(readFileSync(JEV_SCRIPT)).digest("hex") : null
@@ -765,16 +815,41 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
       result.errors.push(`Verificação de identidade no roster Senado falhou: ${message}`)
     }
     const officialSourceName = officialName ? sourceNames.get(normalizeForMatch(officialName)) : undefined
-    const matchedNames = officialSourceName ? [officialSourceName] : []
+    // Alias único (NomeParlamentar curto, CSV com o nome de urna): só quando o
+    // nome exato não aparece em nenhum CSV, ano a ano e dentro do roster.
+    const aliasByYear = new Map<number, string>()
+    if (!officialSourceName && officialName) {
+      for (const snapshot of candidateSnapshots) {
+        const legislature = senadoExpenseLegislatureForYear(snapshot.ano)
+        const rosterNames = senateRosterNames.get(legislature)
+        if (!rosterNames || senateRosters.get(legislature)?.ids.has(officialId) !== true) continue
+        const alias = ceapsUniqueAliasName({
+          officialName,
+          nomeCompleto: cand.nome_completo,
+          yearNames: [...new Set(snapshot.rows.map((row) => row.SENADOR))],
+          otherOfficialNames: [...rosterNames].filter(([id]) => id !== officialId).map(([, name]) => name),
+        })
+        if (alias) aliasByYear.set(snapshot.ano, alias)
+      }
+    }
+    const aliasNames = [...new Map([...aliasByYear.values()].map((name) => [normalizeForMatch(name), name])).values()]
+    const matchedNames = officialSourceName ? [officialSourceName] : aliasNames
+    const aliasMatch = !officialSourceName && aliasNames.length === 1
     if (matchedNames.length !== 1) {
       result.errors.push(matchedNames.length === 0 ? "nome oficial do ID Senado não encontrado exatamente nos CSVs CEAPS; novas atribuições ficam em revisão" : "nome parlamentar ambíguo no CEAPS")
     }
 
-    const sourceName = matchedNames[0] ?? null
+    let sourceName = matchedNames.length === 1 ? matchedNames[0]! : null
     let p: number | null = null
     if (sourceName) {
-      p = await samePersonByJev(cand, sourceName)
+      p = await samePersonByJev(cand, sourceName, aliasMatch ? { nome_parlamentar_senado: officialName, uf: cand.estado ?? null, anos_mandato_senado: candidateYears } : {})
       appendIdentityShadow(cand, sourceName, p)
+    }
+    // Alias exige a regra de código E o Jev mesma_pessoa; sem os dois, fica em revisão.
+    const aliasConfirmed = aliasMatch && p !== null && p >= CEAPS_ALIAS_JEV_MIN_P
+    if (aliasMatch && !aliasConfirmed) {
+      result.errors.push(`alias CEAPS sem confirmação Jev mesma_pessoa (p=${p ?? "indisponível"}); novas atribuições ficam em revisão`)
+      sourceName = null
     }
 
     if (!sourceName) {
@@ -819,6 +894,7 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
       const sourceIdentityVerified = sourceName != null && (
         rosterMemberForYear && officialNameForYear != null && normalizeForMatch(officialNameForYear) === normalizeForMatch(sourceName)
         || !rosterMemberForYear && historicalNameVerified
+        || aliasConfirmed && rosterMemberForYear && normalizeForMatch(aliasByYear.get(snapshot.ano) ?? "") === normalizeForMatch(sourceName)
       )
       if (aggregate.dados && !sourceIdentityVerified) {
         result.errors.push(`Identidade CEAPS ${snapshot.ano} não vinculada ao ID Senado por roster oficial; linha mantida em revisão`)
@@ -871,9 +947,22 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
         result.errors.push(`Linha de gastos ${snapshot.ano} com outra proveniência mantida para revisão; inserção CEAPS oficial segue em linha própria`)
       }
       try {
+        const chave = target ? { acao: "inserir" as const } : decidirChaveOcupada(await lerLinhaNaChave(candidatoId, snapshot.ano), isKnownSenateCeapsSource, { aceitaPublicada: false })
+        if (chave.acao === "revisao") {
+          result.errors.push(`CEAPS ${snapshot.ano}: ${chave.motivo}; revisão necessária`)
+          continue
+        }
         if (emDryRun()) {
-          planejarEscrita({ fonte: "ceaps-senado", tabela: "gastos_parlamentares", operacao: target ? "update" : "insert", alvo: cand.slug, identidade: `id-senado:${cand.ids.senado}`, chave: target ? { id: target.id } : { candidato_id: candidatoId, ano: snapshot.ano }, valores: row })
+          planejarEscrita({ fonte: "ceaps-senado", tabela: "gastos_parlamentares", operacao: target || chave.acao === "substituir" ? "update" : "insert", alvo: cand.slug, identidade: `id-senado:${cand.ids.senado}`, chave: target ? { id: target.id } : chave.acao === "substituir" ? { id: chave.linha.id, republicar: true } : { candidato_id: candidatoId, ano: snapshot.ano }, valores: row })
           result.rows_upserted++
+        } else if (chave.acao === "substituir") {
+          const ocupante = chave.linha
+          let update = supabase.from("gastos_parlamentares").update({ ...row, despublicado_em: null, despublicacao_motivo: null }).eq("id", ocupante.id).eq("candidato_id", candidatoId).eq("ano", snapshot.ano).not("despublicado_em", "is", null)
+          update = ocupante.fonte == null ? update.is("fonte", null) : update.eq("fonte", ocupante.fonte)
+          update = ocupante.total_gasto == null ? update.is("total_gasto", null) : update.eq("total_gasto", ocupante.total_gasto)
+          const written = await escreverAuditado({ script: "ingest-ceaps-senado", tabela: "gastos_parlamentares", motivo: "Republicar ano com o total oficial do CSV CEAPS no lugar da linha despublicada da mesma chave", recorte: `${cand.slug}:${snapshot.ano}` }, () => update.select("id,fonte,ano,despublicado_em"))
+          if (written.length !== 1 || written[0]?.fonte !== "Senado" || written[0]?.despublicado_em != null) result.errors.push(`Readback CEAPS ${snapshot.ano} divergiu da linha republicada`)
+          result.rows_upserted += written.length
         } else if (target) {
           let update = supabase.from("gastos_parlamentares").update({ ...row, despublicado_em: null, despublicacao_motivo: null }).eq("id", target.id).eq("candidato_id", candidatoId).eq("ano", snapshot.ano).eq("total_gasto", (existing as { total_gasto: number | null }).total_gasto).is("despublicado_em", null)
           update = target.fonte == null ? update.is("fonte", null) : update.eq("fonte", target.fonte)
@@ -928,7 +1017,7 @@ export async function ingestCeapsSenado(options: { targetSlugs?: readonly string
     })
     result.coleta_volume = sourceRows
     result.coleta_url = candidateSnapshots.at(-1)?.url ?? `${BASE_URL}_2026.csv`
-    result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_fonte: sourceName, source_rows: sourceRows, anos_vazios: anosVazios })
+    result.coleta_detalhe = receiptDetail({ id_senado: cand.ids.senado, nome_fonte: sourceName, source_rows: sourceRows, anos_vazios: anosVazios, ...(aliasConfirmed ? { alias_de_nome_parlamentar: officialName, anos_alias: [...aliasByYear.keys()] } : {}) })
     result.duration_ms = Date.now() - start
     results.push(result)
   }

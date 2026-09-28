@@ -510,8 +510,9 @@ describe("classificador puro (#136)", () => {
     // Datas de nascimento, homonimo de mauricio-coelho e CHECK de sentinela (20260927030000/0100/0200): --gate PG17 mediu 420 + 105 = 525.
     // Despublicacao em projetos_lei e curadorias de dr-daniel e pedro-cunha-lima (20260927040000/0100/0200): --gate PG17 mediu 423 + 105 = 528.
     // Schema da fase eleitoral (20260927050000): --gate PG17 mediu 424 + 105 = 529.
-    // Categorias de financiamento na view pública (20260927095346) após a fase eleitoral.
-    assert.equal(manifesto.aplicadas_esperadas, 426)
+    // Processos da curadoria e patrimonio 2026 pelo pacote TSE (20260927060000/0100): --gate PG17 mediu 426 + 105 = 531.
+    // Categorias de financiamento e hash de bens (20260927095346/47): --gate PG17 mediu 428 + 105 = 533.
+    assert.equal(manifesto.aplicadas_esperadas, 428)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
