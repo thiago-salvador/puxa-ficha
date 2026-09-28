@@ -72,13 +72,13 @@ export function QuizResultCard({ candidato, score }: QuizResultCardProps) {
         <div className="flex flex-wrap gap-3">
           <Link
             href={`/comparar?c1=${encodeURIComponent(candidato.slug)}`}
-            className="inline-block text-sm font-medium text-foreground underline-offset-4 hover:underline"
+            className="inline-flex min-h-11 items-center text-sm font-medium text-foreground underline-offset-4 hover:underline"
           >
             Comparar
           </Link>
           <Link
             href={fichaHref}
-            className="inline-block text-sm font-medium text-foreground underline-offset-4 hover:underline"
+            className="inline-flex min-h-11 items-center text-sm font-medium text-foreground underline-offset-4 hover:underline"
           >
             Ver ficha pública
           </Link>
@@ -86,7 +86,7 @@ export function QuizResultCard({ candidato, score }: QuizResultCardProps) {
             <button
               type="button"
               onClick={() => setOpen((o) => !o)}
-              className="text-sm font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+              className="inline-flex min-h-11 items-center text-sm font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
             >
               {open ? "Ocultar detalhes" : "Ver detalhes"}
             </button>

@@ -16,3 +16,11 @@ test("resultado do quiz separa cobertura de compatibilidade e não sugere nota d
   assert.match(result, /ordem alfabética/)
   assert.match(result, /não que a nota é zero/)
 })
+
+test("alvos de toque do resultado do quiz e da busca da colinha têm ao menos 24 px e foco visível", () => {
+  const builder = readFileSync(new URL("src/components/ColinhaBuilder.tsx", root), "utf8")
+  assert.match(card, /inline-flex min-h-11 items-center text-sm font-medium text-foreground/)
+  assert.match(result, /inline-flex min-h-6 items-center/)
+  assert.match(builder, /focus-within:ring-2 focus-within:ring-foreground\/30/)
+  assert.match(builder, /min-h-11 min-w-0 flex-1 self-stretch/)
+})

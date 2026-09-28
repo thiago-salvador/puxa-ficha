@@ -68,7 +68,7 @@ export function SenadoRunningMates({
                           <span className="block font-semibold">{mate.nome_urna}</span>
                           <span className="block text-muted-foreground">Suplente {mate.ordem}{mate.situacao ? ` · ${mate.situacao}` : ""}</span>
                         </span>
-                        <a href={mate.fonte_url} target="_blank" rel="noopener noreferrer" className="shrink-0 font-semibold text-foreground underline">
+                        <a href={mate.fonte_url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-6 shrink-0 items-center font-semibold text-foreground underline">
                           Fonte
                         </a>
                       </li>
