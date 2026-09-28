@@ -95,7 +95,7 @@ test("monta coorte, respeita SENADO_ENABLED e preserva null em vez de zero", asy
 test("coorte publicável vazia falha fechado", async () => {
   __setDadosAbertosDependenciesForTests({ loadSlugs: async () => [] })
   try {
-    await assert.rejects(() => getDadosAbertosDataset({ cargo: null, uf: null }), /coorte pública vazia/)
+    await assert.rejects(() => getDadosAbertosDataset({ cargo: null, uf: null }), /cadastro público vazio/)
   } finally {
     __setDadosAbertosDependenciesForTests(null)
   }

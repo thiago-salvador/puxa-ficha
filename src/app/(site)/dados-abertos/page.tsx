@@ -50,8 +50,8 @@ export default async function DadosAbertosPage({ searchParams }: { searchParams:
           <h1 className={styles.heroTitle}>Baixe o cadastro público</h1>
           <p className={styles.heroCopy}>
             O mesmo cadastro que alimenta as fichas do site, em CSV ou JSON: identidade, cargo, situação de
-            candidatura, partido e fontes declaradas. Sem cadastro, sem chave de API — é o dado que já é público,
-            só que num arquivo só.
+            candidatura, partido e fontes declaradas. Sem cadastro e sem chave de API: é o dado que já é público,
+            reunido num arquivo só.
           </p>
         </div>
       </section>
@@ -88,9 +88,9 @@ export default async function DadosAbertosPage({ searchParams }: { searchParams:
         <section className={styles.dictionary} aria-labelledby="dicionario-title">
           <h2 id="dicionario-title">Dicionário de campos</h2>
           <p>
-            Uma linha por candidatura publicada. Situação é o texto de <code>situacao_candidatura</code> no domínio
-            fechado do site (ex.: &quot;deferido&quot;, &quot;indeferido com recurso&quot;); ausência de valor não
-            afirma ausência de julgamento. Fontes lista as origens públicas já usadas para montar a ficha — não é a
+            Uma linha por candidatura publicada. Situação é o texto de <code>situacao_candidatura</code> no registro
+            da candidatura (ex.: &quot;deferido&quot;, &quot;indeferido com recurso&quot;); ausência de valor não
+            afirma ausência de julgamento. Fontes lista as origens públicas já usadas para montar a ficha, não a
             lista completa de tudo que existe sobre a pessoa.
           </p>
           <dl>
@@ -104,7 +104,7 @@ export default async function DadosAbertosPage({ searchParams }: { searchParams:
             </div>
             <div>
               <dt>situacao_candidatura</dt>
-              <dd>Julgamento do registro no domínio fechado do site; vazio não é zero.</dd>
+              <dd>Julgamento do registro da candidatura; vazio não é zero.</dd>
             </div>
             <div>
               <dt>numero_urna</dt>
@@ -128,12 +128,15 @@ export default async function DadosAbertosPage({ searchParams }: { searchParams:
         <section className={styles.license}>
           <p>
             O código do Puxa Ficha é Apache 2.0. Os dados vêm de fontes públicas oficiais (TSE e afins); a
-            reutilização segue os termos de cada fonte — dado do TSE, por exemplo, é atribuído sob Creative Commons
+            reutilização segue os termos de cada fonte. O dado do TSE, por exemplo, é atribuído sob Creative Commons
             Atribuição. Ao reusar este conjunto, credite o Puxa Ficha e a fonte específica de cada campo.
           </p>
           <p>
             Este conjunto cobre identidade e situação da candidatura. Para sites declarados, composição de chapa e
             processos com prova de fonte por candidato, veja a <Link href="/imprensa">Mesa de apuração</Link>.
+          </p>
+          <p>
+            Encontrou um problema ou quer esclarecer o uso dos dados? Escreva para contato@puxaficha.com.br.
           </p>
         </section>
       </main>

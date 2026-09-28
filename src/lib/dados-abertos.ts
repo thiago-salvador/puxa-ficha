@@ -6,12 +6,12 @@ import { createServerSupabaseClient } from "@/lib/supabase"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 /**
- * Coorte pública, formato "dados abertos".
+ * Cadastro público, formato "dados abertos".
  *
  * Distinto de `imprensa-data.ts`: a Mesa de apuração recorta sites, chapa e
  * processos para investigação jornalística e é `noindex` de propósito. Este
- * módulo expõe o roster público essencial — identidade, cargo, situação,
- * fonte e última atualização —, uma linha por candidato publicado, para
+ * módulo expõe o roster público essencial (identidade, cargo, situação,
+ * fonte e última atualização), uma linha por candidato publicado, para
  * reuso geral (pesquisa, jornalismo de dados, outras ferramentas cívicas).
  * Mesma view (`candidatos_publico`), mesma regra de exposição
  * (`shouldExposeCargo`/`SENADO_ENABLED`), colunas diferentes.
@@ -123,10 +123,10 @@ export async function getDadosAbertosDataset(filters: DadosAbertosFilters): Prom
   const deps = testDependencies ?? defaultDependencies()
   const requested = await deps.loadSlugs()
   const slugs = [...new Set(requested.map((item) => item.slug).filter(Boolean))]
-  if (!slugs.length) throw new Error("coorte pública vazia")
+  if (!slugs.length) throw new Error("cadastro público vazio")
   const candidates = await deps.loadCandidates(slugs)
   const bySlug = new Map(candidates.map((candidate) => [candidate.slug, candidate]))
-  if (slugs.some((slug) => !bySlug.has(slug))) throw new Error("candidatos_publico: coorte incompleta")
+  if (slugs.some((slug) => !bySlug.has(slug))) throw new Error("candidatos_publico: cadastro incompleto")
   const exposed = candidates.filter((candidate) => shouldExposeCargo(candidate.cargo_disputado))
   const availableCargos = [
     ...new Set(exposed.map((candidate) => candidate.cargo_disputado).filter((value): value is string => Boolean(value))),
@@ -134,17 +134,12 @@ export async function getDadosAbertosDataset(filters: DadosAbertosFilters): Prom
   const availableUfs = [
     ...new Set(exposed.map((candidate) => candidate.estado?.toUpperCase()).filter((value): value is string => Boolean(value))),
   ].sort()
-  const selected = exposed.filter(
-    (candidate) =>
-      (!filters.cargo || candidate.cargo_disputado === filters.cargo) &&
-      (!filters.uf || candidate.estado?.toUpperCase() === filters.uf),
-  )
-  const rows: DadosAbertosRow[] = selected.map((candidate) => ({
+  const rows: DadosAbertosRow[] = exposed.map((candidate) => ({
     slug: candidate.slug,
     nomeUrna: candidate.nome_urna ?? "",
     nomeCompleto: candidate.nome_completo ?? "",
     cargo: candidate.cargo_disputado ?? "",
-    uf: candidate.estado ?? null,
+    uf: candidate.estado?.toUpperCase() ?? null,
     partido: candidate.partido_sigla ?? null,
     situacao: candidate.situacao_candidatura ?? null,
     numeroUrna: candidate.numero_urna ?? null,
@@ -152,5 +147,28 @@ export async function getDadosAbertosDataset(filters: DadosAbertosFilters): Prom
     ultimaAtualizacao: candidate.ultima_atualizacao ?? null,
     fontes: Array.isArray(candidate.fonte_dados) ? candidate.fonte_dados : [],
   }))
-  return { version: "1", generatedAt: new Date().toISOString(), filters, availableCargos, availableUfs, rows }
+  const full: DadosAbertosDataset = {
+    version: "1",
+    generatedAt: new Date().toISOString(),
+    filters: { cargo: null, uf: null },
+    availableCargos,
+    availableUfs,
+    rows,
+  }
+  return filterDadosAbertosDataset(full, filters)
+}
+
+/**
+ * Recorte em memória sobre o cadastro inteiro. O cache guarda uma única
+ * entrada (sem filtro) e cada combinação de cargo/UF é derivada daqui, para
+ * que filtros arbitrários na URL não criem novas entradas no Data Cache.
+ */
+export function filterDadosAbertosDataset(
+  full: DadosAbertosDataset,
+  filters: DadosAbertosFilters,
+): DadosAbertosDataset {
+  const rows = full.rows.filter(
+    (row) => (!filters.cargo || row.cargo === filters.cargo) && (!filters.uf || row.uf?.toUpperCase() === filters.uf),
+  )
+  return { ...full, filters, rows }
 }

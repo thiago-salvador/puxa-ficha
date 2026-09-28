@@ -1,4 +1,5 @@
-import { getDadosAbertosDataset, normalizeDadosAbertosFilters } from "@/lib/dados-abertos"
+import { normalizeDadosAbertosFilters } from "@/lib/dados-abertos"
+import { getDadosAbertosDatasetCached } from "@/lib/dados-abertos-cache"
 import { assertExportSize, exportHeaders, serializeDadosAbertosCsv, serializeDadosAbertosJson } from "@/lib/dados-abertos-export"
 
 export const dynamic = "force-dynamic"
@@ -9,7 +10,7 @@ function queryFilters(request: Request) {
 }
 
 async function loadDataset(request: Request) {
-  return getDadosAbertosDataset(queryFilters(request))
+  return getDadosAbertosDatasetCached(queryFilters(request))
 }
 
 export async function GET(request: Request) {
