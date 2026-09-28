@@ -23,3 +23,14 @@ test("quadro de estados rola no celular e por isso aceita foco de teclado com r√
   assert.match(html, /<div[^>]*aria-label="Candidatos por estado do dado"[^>]*>/)
   assert.match(html, /<div[^>]*tabindex="0"[^>]*>/i)
 })
+
+test("o foco de teclado no quadro de estados tem contorno vis√≠vel no CSS real", async () => {
+  const { readFileSync } = await import("node:fs")
+  const css = readFileSync(new URL("../src/components/imprensa/method/method.module.css", import.meta.url), "utf8")
+  const rule = [...css.matchAll(/([^{}]+)\{([^{}]*)\}/g)].find(([, selectors]) =>
+    selectors.split(",").some((selector) => selector.trim() === ".board:focus-visible"),
+  )
+  assert.ok(rule, "falta a regra .board:focus-visible")
+  assert.match(rule[2], /outline:\s*3px solid var\(--focus\)/)
+  assert.match(rule[2], /outline-offset:\s*3px/)
+})
