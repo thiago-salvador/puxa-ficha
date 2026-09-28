@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import { createHash } from "node:crypto"
-import { mkdtempSync, readdirSync, readFileSync, rmSync } from "node:fs"
+import { mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import { test } from "node:test"
@@ -52,5 +52,25 @@ test("patrimony write rejection leaves an interrupted receipt with restore check
     assert.equal(receipt.status, "interrompido")
     assert.equal(receipt.attempted, 1)
     assert.equal(receipt.restore_attempt, "preimage_intact")
+  } finally { rmSync(root, { recursive: true, force: true }) }
+})
+
+test("patrimony EEXIST interrupted receipt preserves the original write error", async () => {
+  const root = mkdtempSync(join(tmpdir(), "pf-patrimonio-eexist-"))
+  try {
+    const action = { tipo: "substituir_patrimonio" as const, match_mode: "insert" as const,
+      slug: "candidate", candidato_id: "00000000-0000-4000-8000-000000000001", ano_eleicao: 2022,
+      antes_publico: [], antes_sha256: hashPatrimonioPreimage([]),
+      depois: { ano_eleicao: 2022, bens: [], valor_total: 1 }, serie: {},
+      fonte_url: "https://cdn.tse.jus.br/bem_candidato_2022.zip", pacote_sha256: "a".repeat(64), pacote_bytes: 1,
+      sq_candidato: "123", uf_candidatura: "SP", source_complete: true }
+    const plan = { acoes: [action] }
+    const stable = (v: unknown): string => Array.isArray(v) ? `[${v.map(stable).join(",")}]` : v && typeof v === "object"
+      ? `{${Object.entries(v).sort(([a], [b]) => a.localeCompare(b)).map(([k, x]) => `${JSON.stringify(k)}:${stable(x)}`).join(",")}}` : JSON.stringify(v) ?? "null"
+    const expectedPlanSha = createHash("sha256").update(stable(plan)).digest("hex")
+    writeFileSync(join(root, "receipt-patrimonio-batch-0-fixed-interrupted.json"), "already exists")
+    const query = { select() { return this }, eq() { return this }, then(resolve: (value: unknown) => void) { resolve({ data: [], error: null }) } }
+    await assert.rejects(() => applyPatrimonioWritersAuditadas(plan, { apply: true, expectedPlanSha, evidenceDir: root,
+      runId: "fixed", client: { from: () => query } as never, auditWrite: (async () => { throw new Error("original write rejected") }) as never }), /original write rejected/)
   } finally { rmSync(root, { recursive: true, force: true }) }
 })

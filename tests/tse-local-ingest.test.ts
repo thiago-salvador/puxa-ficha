@@ -107,6 +107,7 @@ test("live mode requires a reviewed SHA and rejects ambiguous mode flags", () =>
   const pinned = ["--live", `--expected-plan-sha=${"b".repeat(64)}`,
     `--expected-plan-file-sha=${"e".repeat(64)}`, `--expected-report-sha=${"f".repeat(64)}`,
     `--expected-family-sha=${"c".repeat(64)}`, `--expected-history-sha=${"d".repeat(64)}`,
+    `--expected-cohort-sha=${"1".repeat(64)}`, `--expected-projection-sha=${"2".repeat(64)}`,
     "--reviewed-run-dir=/tmp/reviewed", "--recibos=/tmp/recibos.json"]
   assert.equal(parseCliOptions(pinned).mode, "live")
   const options = parseCliOptions(["--profiles=/tmp/perfis.json", ...pinned])
@@ -114,6 +115,8 @@ test("live mode requires a reviewed SHA and rejects ambiguous mode flags", () =>
   assert.equal(options.expectedPlanSha, "b".repeat(64))
   assert.equal(options.expectedFamilySha, "c".repeat(64))
   assert.equal(options.expectedHistorySha, "d".repeat(64))
+  assert.equal(options.expectedCohortSha, "1".repeat(64))
+  assert.equal(options.expectedProjectionSha, "2".repeat(64))
   assert.equal(options.recibos, "/tmp/recibos.json")
 })
 

@@ -174,20 +174,6 @@ export function partidoPorCandidaturaReceipt(input: {
     motivo,
     datas_de_filiacao_estabelecidas: false,
     ressalva: "Confirma a legenda declarada em cada candidatura no TSE; não infere datas de filiação ou mudança entre eleições. Filiação datada permanece com Câmara/Senado (PR #533).",
-    coverage_proof: {
-      family: "mudancas_partido",
-      method: "official-party-by-candidacy-scope",
-      scope: "partido_em_cada_candidatura",
-      source_revisions: orderedRevisions,
-      public_payload_sha256: publicFamilyPayloadSha256(profile, "mudancas_partido"),
-      public_rows: publicRows,
-      source_candidacies: candidaturas.length,
-      derived_transitions: derivedTransitions.length,
-      public_transitions: publicEdges.length,
-      scope_years: requiredYears,
-      scope_complete: resultado === "encontrado" || resultado === "vazio_confirmado",
-      identity: { slug, candidate_id: profileId, source_id: "SQ do seed verificado contra a pessoa da ficha" },
-    },
   }
   return {
     fonte: PARTIDO_CANDIDATURA_FONTE,

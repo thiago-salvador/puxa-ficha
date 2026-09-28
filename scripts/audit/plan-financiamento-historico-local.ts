@@ -22,7 +22,10 @@ async function main():Promise<void>{
   if(!Array.isArray(verifications)||verifications.some(v=>!v||typeof v.candidato_id!=="string"||!Number.isInteger(v.ano_eleicao)))throw new Error("snapshot de financiamento_verificacoes inválido")
   const manifest=readJson<{assets:unknown[];pending?:unknown[]}>(manifestPath)
   if(manifest.pending?.length)throw new Error("manifesto oficial incompleto")
-  const assets=await manifestAssets(manifest as never)
+  const allAssets=await manifestAssets(manifest as never)
+  const requestedYears=new Set((process.argv.find(x=>x.startsWith("--years="))?.slice(8)??allAssets.map(a=>a.year).join(",")).split(",").map(Number))
+  if(!requestedYears.size||[...requestedYears].some(year=>!Number.isInteger(year)||year<1996||year>2026||year%2!==0))throw new Error("--years inválido")
+  const assets=allAssets.filter(asset=>requestedYears.has(asset.year))
   const candidates=readJson<FinanceCandidate[]>(candidatesPath), profiles=readJson<FinanceProfile[]>(profilesPath)
   const classification=readJson<{cells:Array<{slug:string;family:string;category:string}>}>(classificationPath)
   const identityRisk=new Set(classification.cells.filter(c=>c.category==="identity_review").map(c=>c.slug))
@@ -52,7 +55,7 @@ async function main():Promise<void>{
   }
   const relevantAssets=assets.filter(a=>["financiamento","historico_politico","perfil_atual"].includes(a.family))
   const expectedKeys=[...new Set(candidates.filter(c=>safeSlugs.has(c.slug)).flatMap(c=>
-    Object.entries(c.ids?.tse_sq_candidato??{}).filter(([year,sq])=>Boolean(sq)&&Number(year)<2026)
+    Object.entries(c.ids?.tse_sq_candidato??{}).filter(([year,sq])=>Boolean(sq)&&Number(year)<2026&&requestedYears.has(Number(year)))
       .flatMap(([year])=>[`financiamento|${year}`,`historico_politico|${year}`])))]
   const sourceComplete=(manifest.pending?.length??0)===0&&sourceAssetsComplete(expectedKeys,
     relevantAssets.map(a=>`${a.family}|${a.year}`),

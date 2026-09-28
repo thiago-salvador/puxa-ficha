@@ -15,7 +15,8 @@
 import { createHash } from "node:crypto"
 import { createReadStream } from "node:fs"
 import { chmodSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
-import { resolve } from "node:path"
+import { homedir } from "node:os"
+import { join, resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 
 import { supabase } from "./lib/supabase"
@@ -186,6 +187,32 @@ export function planoPublico(plano: PlanoFinancas2026) {
 export function shaDoPlano(plano: PlanoFinancas2026): string {
   // Recibos ficam fora: o detalhe tem data e contagem, não decide escrita de domínio.
   return createHash("sha256").update(stableJson(plano.acoes)).digest("hex")
+}
+
+export function readReviewedPlan(path: string, expectedFileSha: string): PlanoFinancas2026 & { plano_sha256: string; generated_at: string } {
+  const file = assertOutsideRepository(path, "--reviewed-plan")
+  const bytes = readFileSync(file)
+  if (createHash("sha256").update(bytes).digest("hex") !== expectedFileSha.toLowerCase()) throw new Error("SHA-256 do plano revisado diverge")
+  const reviewed = JSON.parse(bytes.toString("utf8")) as PlanoFinancas2026 & { plano_sha256: string; generated_at: string }
+  if (!Array.isArray(reviewed.acoes) || !Array.isArray(reviewed.recibos) || !Array.isArray(reviewed.revisao)
+    || reviewed.plano_sha256 !== shaDoPlano(reviewed)) throw new Error("plano revisado inválido")
+  const generatedAt = typeof reviewed.generated_at === "string" ? Date.parse(reviewed.generated_at) : NaN
+  if (!Number.isFinite(generatedAt) || generatedAt > Date.now() || Date.now() - generatedAt > 24 * 60 * 60 * 1000) {
+    throw new Error("plano revisado expirado: generated_at deve ter menos de 24 h")
+  }
+  return reviewed
+}
+
+export function consumeReviewedPlan(planSha: string, directory = join(homedir(), "Library", "Application Support", "puxa-ficha", "tse-2026-financas", "consumed-plans")): void {
+  if (!/^[a-f0-9]{64}$/i.test(planSha)) throw new Error("SHA do plano revisado inválido")
+  const dir = assertOutsideRepository(directory, "consumed-plans")
+  mkdirSync(dir, { recursive: true, mode: 0o700 })
+  try {
+    writeFileSync(join(dir, `${planSha.toLowerCase()}.json`), `${JSON.stringify({ plan_sha256: planSha.toLowerCase(), consumed_at: new Date().toISOString() })}\n`, { flag: "wx", mode: 0o600 })
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "EEXIST") throw new Error("plano revisado já consumido; configure novo SHA")
+    throw error
+  }
 }
 
 async function planejar(permitirSchemaAnterior = false, agendado = false): Promise<{ plano: PlanoFinancas2026; estado: EstadoProducao; publicos: FichaPublica[] }> {
@@ -474,7 +501,7 @@ export function decidirPortao(
 
 export async function main(argv = process.argv.slice(2)): Promise<number> {
   const opts = lerArgs(argv)
-  if (!opts.aplicar) return executar(opts)
+  if (!opts.aplicar || opts.reviewedPlan) return executar(opts)
   try {
     return await executar(opts)
   } catch (err) {
@@ -490,14 +517,7 @@ async function executar(opts: OpcoesCli): Promise<number> {
     throw new Error("plano revisado exige --apply manual e SHA-256 do arquivo")
   }
   const { plano, estado, publicos } = opts.reviewedPlan ? await (async () => {
-    const path = assertOutsideRepository(opts.reviewedPlan!, "--reviewed-plan")
-    const bytes = readFileSync(path)
-    if (createHash("sha256").update(bytes).digest("hex") !== opts.expectedPlanFileSha!.toLowerCase()) {
-      throw new Error("SHA-256 do plano revisado diverge")
-    }
-    const reviewed = JSON.parse(bytes.toString("utf8")) as PlanoFinancas2026 & { plano_sha256?: string }
-    if (!Array.isArray(reviewed.acoes) || !Array.isArray(reviewed.recibos) || !Array.isArray(reviewed.revisao)
-      || reviewed.plano_sha256 !== shaDoPlano(reviewed)) throw new Error("plano revisado inválido")
+    const reviewed = readReviewedPlan(opts.reviewedPlan!, opts.expectedPlanFileSha!)
     const [estado, publicos] = await Promise.all([carregarEstado2026(), carregarPublicos()])
     return { plano: reviewed, estado, publicos }
   })() : await planejar(!opts.aplicar, opts.agendado)
@@ -506,7 +526,7 @@ async function executar(opts: OpcoesCli): Promise<number> {
   console.log(JSON.stringify({ modo: opts.aplicar ? "apply" : "dry-run", plano_sha256: sha, resumo: publico.resumo }, null, 2))
 
   if (opts.out) {
-    const plan = salvar(opts.out, "plano-privado.json", { plano_sha256: sha, ...plano })
+    const plan = salvar(opts.out, "plano-privado.json", { plano_sha256: sha, generated_at: new Date().toISOString(), ...plano })
     const resumo = salvar(opts.out, "plano-resumo.json", { plano_sha256: sha, ...publico })
     const backup = salvar(opts.out, "backup-preimagem.json", backupDoPlano(plano, estado))
     console.error(`plano: ${plan}\nresumo: ${resumo}\nbackup: ${backup}`)
@@ -530,6 +550,7 @@ async function executar(opts: OpcoesCli): Promise<number> {
     ...travasDoPlano(plano, estado, limits),
     ...(!backfillProof ? ["dry-run revisado não corresponde ao plano atual"] : []),
   ], sonda.falhas)
+  if (opts.reviewedPlan) consumeReviewedPlan(sha)
   if (!portao.aplicar) {
     console.error(`${portao.motivo}; nada gravado`)
     await gravarRecibosDeFalha(portao.motivo, publicos)

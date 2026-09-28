@@ -35,3 +35,12 @@ test("public ingest report uses neutral linking terminology", () => {
   assert.doesNotMatch(orchestrator, /jev_name_linking/)
   assert.match(orchestrator, /vinculo_por_nome_revisado/)
 })
+
+test("launcher consumes new pinned hashes and falls back after a consumed live plan", () => {
+  const launcher = source("scripts/tse-local/ingest-tse-local.sh")
+  assert.match(launcher, /TSE_LOCAL_EXPECTED_COHORT_SHA/)
+  assert.match(launcher, /TSE_LOCAL_EXPECTED_PROJECTION_SHA/)
+  assert.match(launcher, /consumed-plans\/\$expected_plan_sha_lower\.json/)
+  assert.match(launcher, /tr 'A-F' 'a-f'/)
+  assert.match(launcher, /local_mode="dry-run"/)
+})

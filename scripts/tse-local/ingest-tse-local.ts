@@ -32,6 +32,8 @@ export type CliOptions = {
   expectedPlanSha: string | null
   expectedFamilySha: string | null
   expectedHistorySha: string | null
+  expectedCohortSha: string | null
+  expectedProjectionSha: string | null
   expectedPlanFileSha: string | null
   expectedReportSha: string | null
   reviewedRunDir: string | null
@@ -103,7 +105,7 @@ function argument(argv: readonly string[], name: string): string | null {
 
 export function parseCliOptions(argv: readonly string[], cwd = process.cwd()): CliOptions {
   const switches = new Set(["--live", "--dry-run"])
-  const valueOptions = new Set(["profiles", "candidates", "years", "slugs", "open-cells", "out-dir", "expected-plan-sha", "expected-plan-file-sha", "expected-report-sha", "expected-family-sha", "expected-history-sha", "reviewed-run-dir", "recibos", "verified-cache-manifest"])
+  const valueOptions = new Set(["profiles", "candidates", "years", "slugs", "open-cells", "out-dir", "expected-plan-sha", "expected-plan-file-sha", "expected-report-sha", "expected-family-sha", "expected-history-sha", "expected-cohort-sha", "expected-projection-sha", "reviewed-run-dir", "recibos", "verified-cache-manifest"])
   for (const item of argv) {
     if (switches.has(item)) continue
     const name = item.startsWith("--") ? item.slice(2).split("=", 1)[0] : ""
@@ -121,6 +123,8 @@ export function parseCliOptions(argv: readonly string[], cwd = process.cwd()): C
     || !/^[a-f0-9]{64}$/i.test(argument(argv, "expected-history-sha") ?? "")
     || !/^[a-f0-9]{64}$/i.test(argument(argv, "expected-plan-file-sha") ?? "")
     || !/^[a-f0-9]{64}$/i.test(argument(argv, "expected-report-sha") ?? "")
+    || !/^[a-f0-9]{64}$/i.test(argument(argv, "expected-cohort-sha") ?? "")
+    || !/^[a-f0-9]{64}$/i.test(argument(argv, "expected-projection-sha") ?? "")
     || !argument(argv, "reviewed-run-dir")
     || !argument(argv, "recibos"))) {
     throw new Error("--live exige diretório revisado, SHAs de plano e recibos de família e histórico, e --recibos")
@@ -148,6 +152,8 @@ export function parseCliOptions(argv: readonly string[], cwd = process.cwd()): C
     expectedPlanSha,
     expectedFamilySha: argument(argv, "expected-family-sha"),
     expectedHistorySha: argument(argv, "expected-history-sha"),
+    expectedCohortSha: argument(argv, "expected-cohort-sha"),
+    expectedProjectionSha: argument(argv, "expected-projection-sha"),
     expectedPlanFileSha: argument(argv, "expected-plan-file-sha"),
     expectedReportSha: argument(argv, "expected-report-sha"),
     reviewedRunDir: argument(argv, "reviewed-run-dir") ? resolve(argument(argv, "reviewed-run-dir")!) : null,
@@ -405,42 +411,60 @@ function safeDownloadFailure(error: unknown): string {
 export async function runReviewedLive(
   options: CliOptions,
   runner: (script: string, args: string[], env?: NodeJS.ProcessEnv) => StepResult = runScript,
+  consumedDir = join(homedir(), "Library", "Application Support", "puxa-ficha", "tse-local", "consumed-plans"),
 ): Promise<number> {
   if (!options.recibos || !options.reviewedRunDir || !options.expectedPlanSha || !options.expectedPlanFileSha || !options.expectedReportSha
-    || !options.expectedFamilySha || !options.expectedHistorySha) throw new Error("live sem artefatos e SHAs revisados")
+    || !options.expectedFamilySha || !options.expectedHistorySha || !options.expectedCohortSha || !options.expectedProjectionSha) throw new Error("live sem artefatos e SHAs revisados")
   const reviewed = assertOutsideRepository(options.reviewedRunDir, "--reviewed-run-dir")
   if (lstatSync(reviewed).isSymbolicLink()) throw new Error("diretório revisado não pode ser link simbólico")
-  const family = join(reviewed, "recibos-familias-aplicaveis.json")
-  const history = join(reviewed, "historico-recibos.json")
-  const plan = join(reviewed, "financas", "plano-privado.json")
-  const reportPath = join(reviewed, "relatorio.json")
+  const out = privateDirectory(options.outDir)
+  const pinnedDir = join(out, "pinned")
+  mkdirSync(pinnedDir, { recursive: true, mode: 0o700 })
   const pinned = [
-    { path: family, expected: options.expectedFamilySha, label: "família" },
-    { path: history, expected: options.expectedHistorySha, label: "histórico" },
-    { path: plan, expected: options.expectedPlanFileSha, label: "plano" },
-    { path: reportPath, expected: options.expectedReportSha, label: "relatório" },
+    { source: join(reviewed, "recibos-familias-aplicaveis.json"), name: "recibos-familias-aplicaveis.json", expected: options.expectedFamilySha, label: "família" },
+    { source: join(reviewed, "historico-recibos.json"), name: "historico-recibos.json", expected: options.expectedHistorySha, label: "histórico" },
+    { source: join(reviewed, "recibos-familias-projecao.json"), name: "recibos-familias-projecao.json", expected: options.expectedProjectionSha, label: "projeção" },
+    { source: join(reviewed, "financas", "plano-privado.json"), name: "plano-privado.json", expected: options.expectedPlanFileSha, label: "plano" },
+    { source: join(reviewed, "relatorio.json"), name: "relatorio.json", expected: options.expectedReportSha, label: "relatório" },
+    { source: join(reviewed, "coorte-perfis.json"), name: "coorte-perfis.json", expected: options.expectedCohortSha, label: "coorte" },
   ]
+  const pinnedBytes = new Map<string, Buffer>()
   for (const file of pinned) {
-    assertOutsideRepository(file.path, file.label)
-    if (!existsSync(file.path) || lstatSync(file.path).isSymbolicLink() || await sha256File(file.path) !== file.expected.toLowerCase()) {
+    assertOutsideRepository(file.source, file.label)
+    if (!existsSync(file.source) || lstatSync(file.source).isSymbolicLink()) {
       throw new Error(`SHA-256 do arquivo revisado de ${file.label} diverge`)
     }
+    const bytes = readFileSync(file.source)
+    const copy = join(pinnedDir, file.name)
+    writeFileSync(copy, bytes, { flag: "wx", mode: 0o600 })
+    const copiedBytes = readFileSync(copy)
+    if (createHash("sha256").update(copiedBytes).digest("hex") !== file.expected.toLowerCase()) throw new Error(`SHA-256 do arquivo revisado de ${file.label} diverge`)
+    JSON.parse(copiedBytes.toString("utf8"))
+    chmodSync(copy, 0o400)
+    pinnedBytes.set(file.name, copiedBytes)
   }
-  const reviewedPlan = JSON.parse(readFileSync(plan, "utf8")) as { plano_sha256?: string; acoes?: unknown[] }
+  const projection = join(pinnedDir, "recibos-familias-projecao.json")
+  const history = join(pinnedDir, "historico-recibos.json")
+  const plan = join(pinnedDir, "plano-privado.json")
+  const reviewedPlan = JSON.parse(pinnedBytes.get("plano-privado.json")!.toString("utf8")) as { plano_sha256?: string; acoes?: unknown[] }
   const planSha = createHash("sha256").update(stableJson(reviewedPlan.acoes)).digest("hex")
   if (!Array.isArray(reviewedPlan.acoes) || reviewedPlan.plano_sha256 !== planSha || planSha !== options.expectedPlanSha.toLowerCase()) {
     throw new Error("SHA-256 semântico do plano revisado diverge")
   }
-  const reviewedProfiles = JSON.parse(readFileSync(join(reviewed, "coorte-perfis.json"), "utf8")) as CandidateProfile[]
+  const reviewedProfiles = JSON.parse(pinnedBytes.get("coorte-perfis.json")!.toString("utf8")) as CandidateProfile[]
   if (!Array.isArray(reviewedProfiles) || !reviewedProfiles.length) throw new Error("coorte revisada ausente")
-  const report = JSON.parse(readFileSync(reportPath, "utf8")) as {
-    mode?: string; historical_scope_complete?: boolean; cohort?: { selected?: number };
+  const report = JSON.parse(pinnedBytes.get("relatorio.json")!.toString("utf8")) as {
+    mode?: string; generated_at?: string; historical_scope_complete?: boolean; cohort?: { selected?: number };
     assets_reused_from_verified_cache?: unknown[];
     sources?: Record<string, { requested?: number; fresh_certifiable?: number | boolean; errors?: unknown[] }>;
     steps?: Record<string, { ok?: boolean } | number>;
   }
   const sources = report.sources
   const steps = report.steps
+  const generatedAt = typeof report.generated_at === "string" ? Date.parse(report.generated_at) : NaN
+  if (!Number.isFinite(generatedAt) || generatedAt > Date.now() || Date.now() - generatedAt > 24 * 60 * 60 * 1000) {
+    throw new Error("dry-run revisado expirado: generated_at deve ter menos de 24 h")
+  }
   const requiredSteps = ["history_review_receipts", "coverage_dry_run", "history_coverage_dry_run",
     "finance_planner", "apply_projection", "family_receipts"]
   if (report.mode !== "dry-run" || report.historical_scope_complete !== true
@@ -458,7 +482,13 @@ export async function runReviewedLive(
   const eligible = filterPostRoundProfiles(reviewedProfiles, postRound)
   if (eligible.length !== reviewedProfiles.length) throw new Error("coorte revisada inclui perfil pós-turno")
 
-  const out = privateDirectory(options.outDir)
+  const markerDir = privateDirectory(consumedDir)
+  try {
+    writeFileSync(join(markerDir, `${planSha}.json`), `${JSON.stringify({ plan_sha256: planSha, consumed_at: new Date().toISOString() })}\n`, { flag: "wx", mode: 0o600 })
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "EEXIST") throw new Error("plano revisado já consumido; configure um novo plan SHA")
+    throw error
+  }
   const financeOut = join(out, "financas")
   const finance = runner("scripts/tse-2026-financas.ts", [
     `--out=${financeOut}`, "--apply", `--expected-plan-sha=${planSha}`,
@@ -478,7 +508,7 @@ export async function runReviewedLive(
   writePrivate(currentCohort, expectedIds.map((id) => currentById.get(id)))
   const executionId = createExecutionId()
   const familyApply = runner("scripts/audit/apply-coverage-receipts.ts", [
-    `--in=${family}`, `--out-dir=${join(out, "coverage-plan")}`,
+    `--in=${projection}`, `--out-dir=${join(out, "coverage-plan")}`,
     "--allow-fonte=tse,tse-patrimonio,tse-financiamento", `--profiles=${currentCohort}`,
     "--apply", `--execucao=${executionId}-familias`,
   ])
@@ -490,7 +520,7 @@ export async function runReviewedLive(
   ])
   if (!historyApply.ok) throw new Error(`cobertura histórica falhou: ${historyApply.reason ?? historyApply.code}`)
   writePrivate(join(out, "relatorio.json"), { mode: "live", reviewed_run_dir: reviewed,
-    reviewed_shas: { plan: options.expectedPlanFileSha, family: options.expectedFamilySha, history: options.expectedHistorySha },
+    reviewed_shas: { plan: options.expectedPlanFileSha, family: options.expectedFamilySha, projection: options.expectedProjectionSha, history: options.expectedHistorySha, cohort: options.expectedCohortSha },
     steps: { finance: stepSummary(finance), readback: stepSummary(exported), family: stepSummary(familyApply), history: stepSummary(historyApply) } })
   return 0
 }
@@ -805,6 +835,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
 
   const report = {
     mode: options.mode,
+    generated_at: new Date().toISOString(),
     years: options.historicalYears,
     cohort: {
       selected: cohort?.profiles.length ?? null,
@@ -836,7 +867,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     projected_open_cell_closure: projectedClosure(openCells, [coverageOut, historyCoverageOut], projectionStep.ok ? projectionOut : null,
       applyFamilyReceiptsPath, receiptPath, divulgaSummaries, cohort?.profiles ?? [], identityRiskSlugs),
     assets_reused_from_verified_cache: assets.filter((asset) => asset.reused_cache).map(({ family, year, sha256 }) => ({ family, year, sha256 })),
-    artifacts: { manifest: manifestPath, acquisition_failure_receipts: acquisitionFailureReceiptsPath, historico: receiptPath, review: reviewPath, family_receipts: genericReceiptsPath, apply_family_receipts: applyFamilyReceiptsPath, coverage_plan: coverageOut, history_coverage_plan: historyCoverageOut, ...(divulgaFallback.artifact ? { divulga_fallback: divulgaFallback.artifact } : {}), ...(divulgaFinancing ? { divulga_financing: divulgaFinancingPath } : {}) },
+    artifacts: { manifest: manifestPath, acquisition_failure_receipts: acquisitionFailureReceiptsPath, historico: receiptPath, review: reviewPath, cohort_profiles: cohortProfilesPath, family_receipts: genericReceiptsPath, apply_family_receipts: applyFamilyReceiptsPath, projection_receipts: projectionOut, coverage_plan: coverageOut, history_coverage_plan: historyCoverageOut, ...(divulgaFallback.artifact ? { divulga_fallback: divulgaFallback.artifact } : {}), ...(divulgaFinancing ? { divulga_financing: divulgaFinancingPath } : {}) },
   }
   const reportPath = join(outDir, "relatorio.json")
   writePrivate(reportPath, report)

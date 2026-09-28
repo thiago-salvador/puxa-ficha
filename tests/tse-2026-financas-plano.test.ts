@@ -74,6 +74,18 @@ describe("plano de finanças TSE 2026", () => {
     assert.equal(plano.resumo.financiamento.aguardando_backfill_categorias, 20)
     assert.deepEqual(travasDoPlano(plano, estado), [])
   })
+  it("revisão manual não conta preenchimento exclusivo de categorias NULL no limite de 50%", () => {
+    const publicos = Array.from({ length: 20 }, (_, index) => ({ id: `c${index}`, slug: `p${index}` }))
+    const planejadas = publicos.map((item) => fin(item.slug, item.id))
+    const estado = vazio()
+    estado.financiamento = publicos.map((item) => existente(`f${item.id}`, item.id, {
+      sq_candidato: `sq-${item.slug}`, total_arrecadado: 1000, total_fundo_eleitoral: 1000,
+      categorias_origem: null, maiores_doadores: planejadas.find((row) => row.slug === item.slug)!.row.maiores_doadores,
+    }))
+    const plano = planejarFinancas2026({ publicos, planejadas, estado, pacote: PACOTE })
+    assert.equal(plano.acoes.filter((acao) => acao.tipo === "atualizar_financiamento").length, 20)
+    assert.deepEqual(travasDoPlano(plano, estado), [])
+  })
   it("insere receita nova e apaga a ausência vencida antes do insert", () => {
     const estado = vazio()
     estado.verificacoes.push({

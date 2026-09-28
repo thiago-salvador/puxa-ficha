@@ -1,7 +1,7 @@
 import test from "node:test"
 import assert from "node:assert/strict"
 import { createHash } from "node:crypto"
-import { mkdtempSync, readFileSync, existsSync, statSync, readdirSync } from "node:fs"
+import { mkdtempSync, readFileSync, existsSync, statSync, readdirSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import { aggregateOfficialFinance, planHistoricalFinance, safeFinanceSlugsFromCells, type FinanceAsset, type FinanceCandidate, type FinanceProfile, type FinanceSourceRow } from "../scripts/lib/financiamento-historico-plano"
@@ -67,6 +67,17 @@ test("finance write rejected by verification trigger persists interrupted receip
   assert.equal(interrupted.status,"interrompido")
   assert.equal(interrupted.attempted,1)
   assert.equal(interrupted.restore_attempt,"preimage_intact")
+})
+
+test("finance EEXIST interrupted receipt preserves the original write error",async()=>{
+  const action=build([receipt],{...profile,financiamento:[]}).acoes[0]!
+  const plan={plano_sha256:"",acoes:[action]}
+  plan.plano_sha256=createHash("sha256").update(JSON.stringify(plan.acoes)).digest("hex")
+  const evidenceDir=mkdtempSync(join(tmpdir(),"pf-finance-eexist-"))
+  writeFileSync(join(evidenceDir,"receipt-financiamento-batch-0-fixed-interrupted.json"),"already exists")
+  const query={select(){return this},eq(){return this},then(resolve:(value:unknown)=>void){resolve({data:[],error:null})}}
+  await assert.rejects(()=>applyHistoricalFinanceAudited(plan,{apply:true,expectedPlanSha:plan.plano_sha256,evidenceDir,runId:"fixed",
+    client:{from:()=>query} as never,auditWrite:(async()=>{throw new Error("original write rejected")}) as never}),/original write rejected/)
 })
 
 test("backup financeiro preserva o JSON cru dos doadores em arquivo 0600",async()=>{

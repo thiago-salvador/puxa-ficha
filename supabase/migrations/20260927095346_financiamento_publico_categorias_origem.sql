@@ -10,10 +10,10 @@ ALTER TABLE public.financiamento
 -- Server-computed CAS tokens keep private donor JSON and category JSON out of URLs.
 ALTER TABLE public.financiamento
   ADD COLUMN IF NOT EXISTS maiores_doadores_hash text
-  GENERATED ALWAYS AS (md5(COALESCE(maiores_doadores::text, 'null'))) STORED;
+  GENERATED ALWAYS AS (md5(COALESCE(maiores_doadores::text, 'sql-null:'))) STORED;
 ALTER TABLE public.financiamento
   ADD COLUMN IF NOT EXISTS categorias_origem_hash text
-  GENERATED ALWAYS AS (md5(COALESCE(categorias_origem::text, 'null'))) STORED;
+  GENERATED ALWAYS AS (md5(COALESCE(categorias_origem::text, 'sql-null:'))) STORED;
 
 CREATE OR REPLACE VIEW public.financiamento_publico AS
 SELECT

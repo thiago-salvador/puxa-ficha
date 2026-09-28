@@ -489,7 +489,9 @@ async function main(): Promise<void> {
   const riskSlugs = Array.isArray(classification.risk_slugs)
     ? classification.risk_slugs
     : [...new Set(classification.cells.filter((cell) => cell.category === "identity_review").map((cell) => cell.slug))]
-  const relevantAssets = manifest.assets.filter((asset) => asset.family === "patrimonio" || asset.family === "historico_politico")
+  const requestedYears = new Set((argument("years") ?? manifest.assets.map((asset) => asset.year).join(",")).split(",").map(Number))
+  if (!requestedYears.size || [...requestedYears].some((year) => !Number.isInteger(year) || year < 1996 || year > 2026 || year % 2 !== 0)) throw new Error("--years inválido")
+  const relevantAssets = manifest.assets.filter((asset) => requestedYears.has(asset.year) && (asset.family === "patrimonio" || asset.family === "historico_politico"))
   const patrimonyAssets = relevantAssets.filter((asset) => asset.family === "patrimonio")
   const assetsByKey = new Map<string, Asset>()
   for (const asset of relevantAssets) {
@@ -589,7 +591,7 @@ async function main(): Promise<void> {
   }
   const expectedKeys = [...new Set(candidates.filter((candidate) => eligibleSlugs.has(candidate.slug))
     .flatMap((candidate) => Object.entries(candidate.ids?.tse_sq_candidato ?? {})
-      .filter(([year, sq]) => Boolean(normalized(sq)) && Number(year) >= 2006 && Number(year) <= 2026 && Number(year) % 2 === 0)
+      .filter(([year, sq]) => Boolean(normalized(sq)) && Number(year) >= 2006 && Number(year) <= 2026 && Number(year) % 2 === 0 && requestedYears.has(Number(year)))
       .flatMap(([year]) => [`patrimonio|${year}`, `historico_politico|${year}`])))]
   const result = buildPatrimonioWriterPlan({
     sourceComplete: sourceAssetsComplete(expectedKeys, [...assetsByKey.keys()], [...rowsByAsset.keys(), ...readHistoryKeys]),

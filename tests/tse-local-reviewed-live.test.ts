@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import { createHash } from "node:crypto"
-import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs"
+import { existsSync, mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import { test } from "node:test"
@@ -18,13 +18,16 @@ test("dry-run artifacts pass the live gate without regeneration; tampering fails
     writeFileSync(join(reviewed, "coorte-perfis.json"), JSON.stringify(profiles))
     const family = join(reviewed, "recibos-familias-aplicaveis.json")
     const history = join(reviewed, "historico-recibos.json")
+    const projection = join(reviewed, "recibos-familias-projecao.json")
+    const cohort = join(reviewed, "coorte-perfis.json")
     const plan = join(reviewed, "financas", "plano-privado.json")
     const report = join(reviewed, "relatorio.json")
     const receipts = join(root, "post-round.json")
     writeFileSync(family, JSON.stringify({ receipts: [] }))
     writeFileSync(history, JSON.stringify({ receipts: [] }))
+    writeFileSync(projection, JSON.stringify({ receipts: [{ fonte: "tse-financiamento", public_payload_sha256: "post-write" }] }))
     writeFileSync(plan, JSON.stringify({ plano_sha256: createHash("sha256").update("[]").digest("hex"), acoes: [], revisao: [], recibos: [], resumo: {} }))
-    writeFileSync(report, JSON.stringify({ mode: "dry-run", historical_scope_complete: true, assets_reused_from_verified_cache: [],
+    writeFileSync(report, JSON.stringify({ generated_at: new Date().toISOString(), mode: "dry-run", historical_scope_complete: true, assets_reused_from_verified_cache: [],
       sources: { consulta_cand: { requested: 16, fresh_certifiable: 16, errors: [] },
         bem_candidato_2026: { fresh_certifiable: true, errors: [] },
         financiamento_2026: { fresh_certifiable: true, errors: [] } },
@@ -37,25 +40,35 @@ test("dry-run artifacts pass the live gate without regeneration; tampering fails
       "--live", `--reviewed-run-dir=${reviewed}`, `--out-dir=${live}`, `--recibos=${receipts}`,
       `--expected-plan-sha=${JSON.parse(readFileSync(plan, "utf8")).plano_sha256}`,
       `--expected-plan-file-sha=${sha(plan)}`, `--expected-family-sha=${sha(family)}`, `--expected-history-sha=${sha(history)}`,
-      `--expected-report-sha=${sha(report)}`,
+      `--expected-report-sha=${sha(report)}`, `--expected-cohort-sha=${sha(cohort)}`, `--expected-projection-sha=${sha(projection)}`,
     ])
     const calls: string[] = []
+    const consumed = join(root, "consumed")
     const runner = (script: string, args: string[]) => {
       calls.push(`${script} ${args.join(" ")}`)
+      if (script.endsWith("tse-2026-financas.ts")) assert.equal(existsSync(join(consumed, `${options.expectedPlanSha}.json`)), true)
       if (script.endsWith("exportar-perfis-publicos.ts")) {
         writeFileSync(args.find((arg) => arg.startsWith("--out="))!.slice(6), JSON.stringify(profiles))
       }
       return { ok: true, code: 0 }
     }
-    assert.equal(await runReviewedLive(options, runner), 0)
+    assert.equal(await runReviewedLive(options, runner, consumed), 0)
     assert.equal(calls.filter((call) => call.includes("tse-2026-financas.ts")).length, 1)
+    assert.ok(calls.find((call) => call.includes("tse-2026-financas.ts"))?.includes(join(live, "pinned")))
+    assert.match(calls.find((call) => call.includes("apply-coverage-receipts.ts")) ?? "", /--in=.*\/pinned\/recibos-familias-projecao\.json/)
+    assert.match(calls.find((call) => call.includes("apply-coverage-receipts.ts")) ?? "", /--profiles=.*\/coorte-pos-escrita\.json/)
+    assert.equal(sha(join(live, "pinned", "coorte-perfis.json")), sha(cohort))
+    await assert.rejects(() => runReviewedLive({ ...options, outDir: join(root, "replay") }, runner, consumed), /consumido|aplicado/)
     writeFileSync(report, JSON.stringify({ mode: "dry-run", historical_scope_complete: false }))
-    await assert.rejects(() => runReviewedLive({ ...options, outDir: join(root, "invalid-report") }, runner), /SHA-256.*relatório|gate do dry-run/)
+    await assert.rejects(() => runReviewedLive({ ...options, outDir: join(root, "invalid-report") }, runner, consumed), /SHA-256.*relatório|gate do dry-run/)
     assert.equal(calls.filter((call) => call.includes("tse-2026-financas.ts")).length, 1)
     assert.ok(calls.findIndex((call) => call.includes("tse-2026-financas.ts")) < calls.findIndex((call) => call.includes("apply-coverage-receipts.ts")))
     assert.equal(calls.some((call) => call.includes("collect-tse-family-receipts-local.ts") || call.includes("coletar-revisao-historico.ts")), false)
     writeFileSync(family, JSON.stringify({ receipts: [{ altered: true }] }))
-    await assert.rejects(() => runReviewedLive({ ...options, outDir: join(root, "tampered") }, runner), /SHA-256.*família/)
+    await assert.rejects(() => runReviewedLive({ ...options, outDir: join(root, "tampered") }, runner, consumed), /SHA-256.*família/)
     assert.equal(calls.filter((call) => call.includes("tse-2026-financas.ts")).length, 1)
+    writeFileSync(family, JSON.stringify({ receipts: [] }))
+    writeFileSync(report, JSON.stringify({ ...JSON.parse(readFileSync(report, "utf8")), generated_at: new Date(Date.now() - 25 * 3600_000).toISOString() }))
+    await assert.rejects(() => runReviewedLive({ ...options, outDir: join(root, "old"), expectedReportSha: sha(report) }, runner, consumed), /24 h|expirado/)
   } finally { rmSync(root, { recursive: true, force: true }) }
 })

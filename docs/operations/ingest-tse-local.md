@@ -12,8 +12,10 @@ O launchd roda `scripts/tse-local/ingest-tse-local.sh` toda quinta-feira às
 4. exige `TSE_LOCAL_RECIBOS` para recortar a coorte pós-turno em toda rodada.
    Por padrão, invoca `npm run ingest:tse:local -- --dry-run --recibos=<snapshot>`.
    O live usa os arquivos da rodada revisada, fixados pelos SHAs abaixo; ele
-   não baixa nem recompõe os recibos e o plano. Depois da escrita auditada,
-   exporta novamente os perfis públicos e só então calcula a cobertura;
+   não baixa nem recompõe os recibos e o plano. O relatório revisado expira
+   após 24 horas e cada SHA de plano só pode ser consumido uma vez. Depois da
+   escrita auditada, exporta novamente os perfis públicos e aplica a projeção
+   de cobertura fixada contra o readback;
 5. guarda logs em `~/Library/Logs/puxa-ficha/` e remove o worktree ao terminar.
 
 O runner exige Node 24 em `/opt/homebrew/opt/node@24/bin`. Downloads TSE são
@@ -68,19 +70,22 @@ TSE_LOCAL_RECIBOS=/caminho/privado/recibos-atuais.json
 # TSE_LOCAL_EXPECTED_REPORT_SHA=...
 # TSE_LOCAL_EXPECTED_FAMILY_SHA=...
 # TSE_LOCAL_EXPECTED_HISTORY_SHA=...
+# TSE_LOCAL_EXPECTED_COHORT_SHA=...
+# TSE_LOCAL_EXPECTED_PROJECTION_SHA=...
 ```
 
 Mantenha o arquivo privado (`chmod 600 ~/.config/puxa-ficha/ingest-tse.env`)
 e o diretório `~/.config/puxa-ficha` em modo 700. O modo padrão é `dry-run`.
 O arquivo `TSE_LOCAL_RECIBOS` é obrigatório também no dry-run. Revise o
-`relatorio.json`, `financas/plano-privado.json`, `recibos-familias-aplicaveis.json`
-e `historico-recibos.json` da mesma rodada. O plano privado contém
+`relatorio.json`, `financas/plano-privado.json`, `recibos-familias-aplicaveis.json`,
+`recibos-familias-projecao.json`, `coorte-perfis.json` e `historico-recibos.json` da mesma rodada. O plano privado contém
 `plano_sha256`: copie esse valor para `TSE_LOCAL_EXPECTED_PLAN_SHA`. Calcule o
 SHA-256 dos bytes de cada arquivo com `shasum -a 256` e preencha, na ordem,
 `TSE_LOCAL_EXPECTED_PLAN_FILE_SHA`, `TSE_LOCAL_EXPECTED_REPORT_SHA`,
-`TSE_LOCAL_EXPECTED_FAMILY_SHA` e `TSE_LOCAL_EXPECTED_HISTORY_SHA`. Aponte `TSE_LOCAL_REVIEWED_RUN_DIR` para o
+`TSE_LOCAL_EXPECTED_FAMILY_SHA`, `TSE_LOCAL_EXPECTED_HISTORY_SHA`,
+`TSE_LOCAL_EXPECTED_COHORT_SHA` e `TSE_LOCAL_EXPECTED_PROJECTION_SHA`. Aponte `TSE_LOCAL_REVIEWED_RUN_DIR` para o
 diretório dessa rodada e só então defina `TSE_LOCAL_MODE=live`. O runner confere
-os cinco digests e os gates do relatório antes de qualquer escrita. O writer relê o estado para CAS,
+os sete digests e os gates do relatório antes de qualquer escrita de domínio. O writer relê o estado para CAS,
 aplica o plano revisado, faz readback e a cobertura usa o snapshot público
 pós-escrita. A gravação live requer autorização explícita para escrever no
 banco de produção. Credenciais ficam no ambiente do subshell, fora dos

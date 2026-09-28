@@ -86,7 +86,7 @@ fi
 [ "$(stat -f %u "$credenciais")" = "$(id -u)" ] || falhar "arquivo de credenciais precisa ser deste usuário"
 [ "$(stat -f %Lp "$credenciais")" = "600" ] || falhar "arquivo de credenciais precisa de chmod 600"
 url_supabase=""; chave_supabase=""; salt=""; modo_config=""; sha_plano_config=""
-sha_arquivo_plano=""; sha_relatorio=""; sha_familia=""; sha_historico=""; dir_revisado=""; recibos_pos_turno=""
+sha_arquivo_plano=""; sha_relatorio=""; sha_familia=""; sha_historico=""; sha_coorte=""; sha_projecao=""; dir_revisado=""; recibos_pos_turno=""
 while IFS= read -r linha || [ -n "$linha" ]; do
   case "$linha" in ""|"#"*) continue ;; esac
   nome="${linha%%=*}"; valor="${linha#*=}"
@@ -100,6 +100,8 @@ while IFS= read -r linha || [ -n "$linha" ]; do
     TSE_LOCAL_EXPECTED_REPORT_SHA) sha_relatorio="$valor" ;;
     TSE_LOCAL_EXPECTED_FAMILY_SHA) sha_familia="$valor" ;;
     TSE_LOCAL_EXPECTED_HISTORY_SHA) sha_historico="$valor" ;;
+    TSE_LOCAL_EXPECTED_COHORT_SHA) sha_coorte="$valor" ;;
+    TSE_LOCAL_EXPECTED_PROJECTION_SHA) sha_projecao="$valor" ;;
     TSE_LOCAL_REVIEWED_RUN_DIR) dir_revisado="$valor" ;;
     TSE_LOCAL_RECIBOS) recibos_pos_turno="$valor" ;;
     *) falhar "chave não permitida no arquivo de credenciais: $nome" ;;
@@ -109,15 +111,20 @@ done <"$credenciais"
   falhar "SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY e PF_DOADOR_CPF_HASH_SALT são obrigatórias"
 local_mode="${TSE_LOCAL_MODE:-${modo_config:-dry-run}}"
 case "$local_mode" in dry-run|live) ;; *) falhar "TSE_LOCAL_MODE aceita somente dry-run ou live" ;; esac
-echo "modo TSE=$local_mode"
 expected_plan_sha="${TSE_LOCAL_EXPECTED_PLAN_SHA:-$sha_plano_config}"
 if [ -n "$expected_plan_sha" ] && [[ ! "$expected_plan_sha" =~ ^[a-fA-F0-9]{64}$ ]]; then
   falhar "TSE_LOCAL_EXPECTED_PLAN_SHA precisa ser um SHA-256 hexadecimal de 64 caracteres"
 fi
 [ -n "$recibos_pos_turno" ] && [ -f "$recibos_pos_turno" ] || falhar "TSE_LOCAL_RECIBOS precisa apontar ao snapshot pós-turno"
-for hash in "$sha_arquivo_plano" "$sha_relatorio" "$sha_familia" "$sha_historico"; do
+for hash in "$sha_arquivo_plano" "$sha_relatorio" "$sha_familia" "$sha_historico" "$sha_coorte" "$sha_projecao"; do
   if [ -n "$hash" ] && [[ ! "$hash" =~ ^[a-fA-F0-9]{64}$ ]]; then falhar "SHA-256 revisado inválido"; fi
 done
+expected_plan_sha_lower="$(printf '%s' "$expected_plan_sha" | tr 'A-F' 'a-f')"
+if [ "$local_mode" = "live" ] && [ -n "$expected_plan_sha" ] && [ -f "$dir_estado/tse-local/consumed-plans/$expected_plan_sha_lower.json" ]; then
+  avisar "plano revisado já consumido; próxima rodada em dry-run até configurar novo SHA"
+  local_mode="dry-run"
+fi
+echo "modo TSE=$local_mode"
 
 (
 export SUPABASE_URL="$url_supabase"
@@ -126,12 +133,12 @@ export PF_DOADOR_CPF_HASH_SALT="$salt"
 export PF_KEEP_TSE_DOWNLOADS=1
 if [ "$local_mode" = "live" ]; then
   [ -n "$expected_plan_sha" ] || falhar "TSE_LOCAL_EXPECTED_PLAN_SHA é obrigatório no modo live"
-  [ -n "$sha_arquivo_plano" ] && [ -n "$sha_relatorio" ] && [ -n "$sha_familia" ] && [ -n "$sha_historico" ] && [ -d "$dir_revisado" ] ||
-    falhar "live exige diretório revisado e SHAs do relatório, plano e dois recibos"
+  [ -n "$sha_arquivo_plano" ] && [ -n "$sha_relatorio" ] && [ -n "$sha_familia" ] && [ -n "$sha_historico" ] && [ -n "$sha_coorte" ] && [ -n "$sha_projecao" ] && [ -d "$dir_revisado" ] ||
+    falhar "live exige diretório revisado e SHAs do relatório, plano, coorte, projeção e recibos"
   npm run ingest:tse:local -- --live "--recibos=$recibos_pos_turno" \
     "--reviewed-run-dir=$dir_revisado" "--expected-plan-sha=$expected_plan_sha" \
     "--expected-plan-file-sha=$sha_arquivo_plano" "--expected-report-sha=$sha_relatorio" "--expected-family-sha=$sha_familia" \
-    "--expected-history-sha=$sha_historico"
+    "--expected-history-sha=$sha_historico" "--expected-cohort-sha=$sha_coorte" "--expected-projection-sha=$sha_projecao"
 else
   npm run ingest:tse:local -- --dry-run "--recibos=$recibos_pos_turno"
 fi

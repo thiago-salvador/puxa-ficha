@@ -178,10 +178,10 @@ export async function applyPatrimonioWritersAuditadas(plan: Plan, options: Apply
             .eq("candidato_id", action.candidato_id).eq("ano_eleicao", action.ano_eleicao)
           if (!after.error && stable(after.data ?? []) === stable(current ?? [])) restoreAttempt = "preimage_intact"
         } catch { /* The receipt records that readback could not confirm restoration. */ }
-        persist(resolve(root, `receipt-${filePrefix}-interrupted.json`), {
+        try { persist(resolve(root, `receipt-${filePrefix}-interrupted.json`), {
           ...receipt, status: "interrompido", failure: writeError instanceof Error ? writeError.message : "write failed",
           restore_attempt: restoreAttempt,
-        })
+        }) } catch { /* Preserve the original writer error if the receipt already exists. */ }
         throw writeError
       }
       if (write.length !== 1) {

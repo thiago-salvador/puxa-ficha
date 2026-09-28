@@ -209,8 +209,8 @@ describe("revisão do histórico: veredito e prova", () => {
     assert.equal(receipt.resultado, "vazio_confirmado")
     assert.equal(detail.scope, "partido_em_cada_candidatura")
     assert.equal(detail.datas_de_filiacao_estabelecidas, false)
-    assert.equal(detail.coverage_proof.method, "official-party-by-candidacy-scope")
-    assert.equal(validCoverageSourceProof(subject, "mudancas_partido", { ...receipt, coverage_proof: detail.coverage_proof }), false)
+    assert.equal(detail.coverage_proof, undefined)
+    assert.equal(validCoverageSourceProof(subject, "mudancas_partido", receipt), false)
     assert.deepEqual(receiptFamilies(receipt.fonte, receipt.detalhe, receipt.url), ["mudancas_partido"])
     assert.notEqual(cell(subject, [receipt], "mudancas_partido").estado, "vazio_confirmado")
     assert.equal(planCoverageReceipts([receipt], [subject], new Set([receipt.fonte])).planned.length, 0)
@@ -235,9 +235,8 @@ describe("revisão do histórico: veredito e prova", () => {
     const derivavel = partidoPorCandidaturaReceipt({ profile: subject, candidate: seed, identity, sourceRows, anos: years, anosObrigatorios: years, tseRevisions: sourceRevisions, checkedAt: CHECKED })
     const detail = JSON.parse(derivavel.detalhe)
     assert.equal(derivavel.resultado, "encontrado")
-    assert.equal(detail.coverage_proof.derived_transitions, 1)
-    assert.equal(detail.coverage_proof.public_transitions, 1)
-    assert.equal(validCoverageSourceProof(subject, "mudancas_partido", { ...derivavel, coverage_proof: detail.coverage_proof }), false)
+    assert.equal(detail.coverage_proof, undefined)
+    assert.equal(validCoverageSourceProof(subject, "mudancas_partido", derivavel), false)
   })
 
   it("mandato TSE casa com a eleição do ano anterior", () => {

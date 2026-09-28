@@ -583,7 +583,9 @@ export function travasDoPlano(
   limites: { maxQuedaRelativa: number; maxAffectedRatio?: number; maxActions?: number } = { maxQuedaRelativa: 0.2 },
 ): string[] {
   const falhas: string[] = []
-  const fichasAfetadas = new Set(plano.acoes.map((acao) => acao.slug)).size
+  const fichasAfetadas = new Set(plano.acoes.filter((acao) => !(acao.tipo === "atualizar_financiamento"
+    && Object.keys(acao.depois).length === 1 && "categorias_origem" in acao.depois
+    && acao.antes.categorias_origem == null && acao.depois.categorias_origem != null)).map((acao) => acao.slug)).size
   const fichasPublicas = plano.resumo.fichas_publicas
   const maxActions = limites.maxActions ?? 500
   const maxAffectedRatio = limites.maxAffectedRatio ?? 0.5
