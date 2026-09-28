@@ -21,7 +21,7 @@ export function QuizResultCard({ candidato, score }: QuizResultCardProps) {
   const voteSummary =
     score.votos_comparados === 0
       ? "Sem voto público comparável neste quiz"
-      : `${score.concordancias_voto_count} coincidência(s) e ${score.divergencias_voto_count} divergência(s) em ${score.votos_comparados} votação(ões)`
+      : `${score.concordancias_voto_count} coincidência(s) e ${score.divergencias_voto_count} divergência(s) em ${score.votos_comparados} de ${score.votacoes_mapeadas_total} votações de referência do quiz`
 
   return (
     <article className={`flex gap-4 rounded-xl border bg-card p-4 ${isEstimated ? "border-dashed border-border/80" : "border-border"}`}>
@@ -54,19 +54,16 @@ export function QuizResultCard({ candidato, score }: QuizResultCardProps) {
           </div>
           <span
             className="rounded-full border border-border px-2 py-1 text-xs font-medium text-muted-foreground"
-            aria-label={`Cobertura: ${score.perguntas_comparadas} perguntas comparáveis`}
+            title="Cobertura mede quantas das suas respostas têm evidência deste candidato. Não é nota de compatibilidade."
           >
-            {score.perguntas_comparadas === 0 ? "Sem evidência comparável" : `${score.perguntas_comparadas} ${score.perguntas_comparadas === 1 ? "pergunta comparável" : "perguntas comparáveis"}`}
+            {score.perguntas_comparadas === 0 ? "Sem evidência comparável" : `Cobertura: ${score.perguntas_comparadas} de ${score.perguntas_respondidas} perguntas`}
           </span>
         </div>
         <QuizWeightStrip explanation={score.explanation} />
         <p className="text-xs text-muted-foreground">
-          {voteSummary}. Referências nominais disponíveis: {score.votacoes_mapeadas_total}.
+          {voteSummary}.
         </p>
         <p className="text-xs leading-relaxed text-muted-foreground">{score.explanation.resumo}</p>
-        <p className="text-xs text-muted-foreground">
-          Há evidência para {score.perguntas_comparadas} de {score.perguntas_respondidas} perguntas em que você indicou uma posição.
-        </p>
         {score.posicoes_comparadas > 0 && (
           <p className="text-xs text-muted-foreground">
             Inclui posições documentadas em {score.posicoes_comparadas} pergunta(s).
@@ -75,13 +72,13 @@ export function QuizResultCard({ candidato, score }: QuizResultCardProps) {
         <div className="flex flex-wrap gap-3">
           <Link
             href={`/comparar?c1=${encodeURIComponent(candidato.slug)}`}
-            className="inline-block text-sm font-medium text-foreground underline-offset-4 hover:underline"
+            className="inline-flex min-h-11 items-center text-sm font-medium text-foreground underline-offset-4 hover:underline"
           >
             Comparar
           </Link>
           <Link
             href={fichaHref}
-            className="inline-block text-sm font-medium text-foreground underline-offset-4 hover:underline"
+            className="inline-flex min-h-11 items-center text-sm font-medium text-foreground underline-offset-4 hover:underline"
           >
             Ver ficha pública
           </Link>
@@ -89,7 +86,7 @@ export function QuizResultCard({ candidato, score }: QuizResultCardProps) {
             <button
               type="button"
               onClick={() => setOpen((o) => !o)}
-              className="text-sm font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+              className="inline-flex min-h-11 items-center text-sm font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
             >
               {open ? "Ocultar detalhes" : "Ver detalhes"}
             </button>

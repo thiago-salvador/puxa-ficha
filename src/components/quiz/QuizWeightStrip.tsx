@@ -14,11 +14,13 @@ export function QuizWeightStrip({ explanation }: QuizWeightStripProps) {
     ...(p > 0 ? [{ key: "p", label: "Posições", pct: p, className: "bg-foreground/35" }] : []),
   ].filter((s) => s.pct > 0)
 
-  if (segments.length === 0) return null
+  // Uma fonte só vira "Votos 100%", que se lê como nota de compatibilidade.
+  // A faixa só aparece quando a comparação mistura votos e posições.
+  if (segments.length < 2) return null
 
   return (
     <div className="space-y-2" aria-label="Evidências usadas na comparação">
-      <p className="text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-wide text-muted-foreground">Composição das evidências</p>
+      <p className="text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-wide text-muted-foreground">Base da comparação (não é nota)</p>
       <div className="flex h-2 w-full overflow-hidden rounded-full bg-muted" aria-hidden="true">
         {segments.map((s) => (
           <div

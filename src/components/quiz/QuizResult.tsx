@@ -70,7 +70,7 @@ export function QuizResult({ datasetResource }: QuizResultProps) {
             ? "Este link usa uma versão anterior do quiz. As perguntas foram revisadas; refaça o quiz para comparar suas respostas atuais."
             : "Nenhum resultado válido no link. Faça o quiz para ver a comparação."}
         </p>
-        <Link href={refazerHref} className="font-medium text-foreground underline-offset-4 hover:underline">
+        <Link href={refazerHref} className="inline-flex min-h-6 items-center font-medium text-foreground underline-offset-4 hover:underline">
           Ir para o quiz
         </Link>
       </div>
@@ -87,10 +87,14 @@ export function QuizResult({ datasetResource }: QuizResultProps) {
           documentais comparáveis por candidato: votos públicos e posições documentadas sobre a mesma pergunta.
           Projetos, partido e financiamento são contexto e não entram no cálculo.
         </p>
+        <p className="text-sm text-muted-foreground">
+          A cobertura de cada candidato diz quantas das suas respostas têm evidência dele, não quanto ele concorda com você.
+          Sem evidência comparável significa que não há dado para comparar, não que a nota é zero.
+        </p>
         <p className="text-xs text-muted-foreground">
           <Link
             href="/quiz/metodologia#feedback-espectro"
-            className="font-medium text-foreground underline-offset-4 hover:underline"
+            className="inline-flex min-h-6 items-center font-medium text-foreground underline-offset-4 hover:underline"
           >
             Como a comparação é calculada?
           </Link>
@@ -111,13 +115,13 @@ export function QuizResult({ datasetResource }: QuizResultProps) {
         })}
       </ul>
       <div className="flex flex-wrap gap-4 border-t border-border pt-6 text-sm">
-        <Link href={refazerHref} className="font-medium text-foreground underline-offset-4 hover:underline">
+        <Link href={refazerHref} className="inline-flex min-h-6 items-center font-medium text-foreground underline-offset-4 hover:underline">
           Refazer o quiz
         </Link>
-        <Link href="/quiz" className="text-muted-foreground underline-offset-4 hover:underline">
+        <Link href="/quiz" className="inline-flex min-h-6 items-center text-muted-foreground underline-offset-4 hover:underline">
           Voltar à introdução
         </Link>
-        <Link href="/quiz/metodologia" className="text-muted-foreground underline-offset-4 hover:underline">
+        <Link href="/quiz/metodologia" className="inline-flex min-h-6 items-center text-muted-foreground underline-offset-4 hover:underline">
           Metodologia do quiz
         </Link>
       </div>
