@@ -297,6 +297,28 @@ describe("middleware route protection", () => {
     }
   })
 
+  it("redireciona sigla de UF em caixa alta ou mista com 308 e preserva a query", async () => {
+    const cases = [
+      ["http://localhost/uf/BA", "http://localhost/uf/ba"],
+      ["http://localhost/uf/Ba?partido=PT&busca=S%C3%A3o", "http://localhost/uf/ba?partido=PT&busca=S%C3%A3o"],
+      ["http://localhost/uf/SP/opengraph-image", "http://localhost/uf/sp/opengraph-image"],
+    ] as const
+    for (const [url, location] of cases) {
+      const response = await middleware(request(url))
+      assert.equal(response.status, 308, url)
+      assert.equal(response.headers.get("location"), location, url)
+    }
+
+    const canonical = await middleware(request("http://localhost/uf/ba"))
+    assert.equal(canonical.headers.get("x-middleware-next"), "1")
+
+    // Nome por extenso não é sigla: a página não o resolve e respondia 500.
+    for (const url of ["http://localhost/uf/XX", "http://localhost/uf/Zz/senado", "http://localhost/uf/bahia", "http://localhost/uf/Bahia", "http://localhost/uf/b%C3%A1"]) {
+      const response = await middleware(request(url))
+      assert.equal(response.status, 404, url)
+    }
+  })
+
   it("keeps candidato routes fail-open only when the internal slug list is unavailable", async () => {
     globalThis.fetch = async () => new Response("unavailable", { status: 503 })
 

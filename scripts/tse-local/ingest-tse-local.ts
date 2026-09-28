@@ -15,7 +15,9 @@ import { collectDivulgaCandidateFallback, type DivulgaCandidateSummary, type See
 import { collectDivulgaFinancingForClient, type DivulgaFinancingResult } from "./divulga-financing"
 import { officialCandidateUfMap } from "./official-uf"
 import { minimalChildEnv } from "../lib/minimal-child-env"
-import { stableJson } from "../lib/tse-2026-financas-plano"
+import { partitionarAcoesPorRiscoDeIdentidade, stableJson, type PlanoFinancas2026 } from "../lib/tse-2026-financas-plano"
+import { planoPublico } from "../tse-2026-financas"
+import { parseIdentityReviewed } from "../audit/lib/historico-revisao"
 
 const TSE_CDN = "https://cdn.tse.jus.br/estatistica/sead/odsele"
 export const HISTORICAL_YEARS = Array.from({ length: 16 }, (_, index) => 1996 + index * 2)
@@ -34,15 +36,34 @@ export type CliOptions = {
   expectedHistorySha: string | null
   expectedCohortSha: string | null
   expectedProjectionSha: string | null
+  expectedIdentitySha: string | null
   expectedPlanFileSha: string | null
   expectedReportSha: string | null
   reviewedRunDir: string | null
   recibos: string | null
   verifiedCacheManifest: string | null
+  identityReviewed: string | null
 }
 
 export type CandidateProfile = { slug?: unknown; id?: unknown; [key: string]: unknown }
 export type SeedCandidate = { slug?: unknown; [key: string]: unknown }
+
+export function identityRiskSlugsFromArtifacts(
+  historyReview: { itens?: Array<{ slug?: string; tipo?: string }> },
+  candidates: readonly SeedCandidate[],
+  familyReceipts: { diagnostics?: Array<{ slug: string; reason: string }> },
+  financePlan: { revisao?: Array<{ slug: string; familia: string; motivo: string }> },
+): Set<string> {
+  const risk = new Set((historyReview.itens ?? []).filter((item) => item.tipo === "identidade" && typeof item.slug === "string").map((item) => item.slug!))
+  for (const candidate of candidates) {
+    const ids = candidate.ids && typeof candidate.ids === "object" ? candidate.ids as Record<string, unknown> : {}
+    const sqs = ids.tse_sq_candidato && typeof ids.tse_sq_candidato === "object" ? ids.tse_sq_candidato as Record<string, unknown> : {}
+    if (!sqs["2026"] && typeof candidate.slug === "string") risk.add(candidate.slug)
+  }
+  for (const diagnostic of familyReceipts.diagnostics ?? []) if (diagnostic.reason === "uf_identity_missing") risk.add(diagnostic.slug)
+  for (const review of financePlan.revisao ?? []) if (review.familia === "patrimonio" && review.motivo === "patrimonio_divergente") risk.add(review.slug)
+  return risk
+}
 
 export function candidateUfForDivulga(candidate: SeedCandidate): string {
   if (candidate.cargo_disputado === "Presidente") return "BR"
@@ -105,7 +126,7 @@ function argument(argv: readonly string[], name: string): string | null {
 
 export function parseCliOptions(argv: readonly string[], cwd = process.cwd()): CliOptions {
   const switches = new Set(["--live", "--dry-run"])
-  const valueOptions = new Set(["profiles", "candidates", "years", "slugs", "open-cells", "out-dir", "expected-plan-sha", "expected-plan-file-sha", "expected-report-sha", "expected-family-sha", "expected-history-sha", "expected-cohort-sha", "expected-projection-sha", "reviewed-run-dir", "recibos", "verified-cache-manifest"])
+  const valueOptions = new Set(["profiles", "candidates", "years", "slugs", "open-cells", "out-dir", "expected-plan-sha", "expected-plan-file-sha", "expected-report-sha", "expected-family-sha", "expected-history-sha", "expected-cohort-sha", "expected-projection-sha", "expected-identity-sha", "identity-reviewed", "reviewed-run-dir", "recibos", "verified-cache-manifest"])
   for (const item of argv) {
     if (switches.has(item)) continue
     const name = item.startsWith("--") ? item.slice(2).split("=", 1)[0] : ""
@@ -129,6 +150,10 @@ export function parseCliOptions(argv: readonly string[], cwd = process.cwd()): C
     || !argument(argv, "recibos"))) {
     throw new Error("--live exige diretório revisado, SHAs de plano e recibos de família e histórico, e --recibos")
   }
+  const identityReviewed = argument(argv, "identity-reviewed") ?? process.env.TSE_LOCAL_IDENTITY_REVIEWED ?? null
+  const expectedIdentitySha = argument(argv, "expected-identity-sha") ?? process.env.TSE_LOCAL_EXPECTED_IDENTITY_SHA ?? null
+  if (live && Boolean(identityReviewed) !== Boolean(expectedIdentitySha)) throw new Error("live exige --identity-reviewed e --expected-identity-sha juntos")
+  if (expectedIdentitySha && !/^[a-f0-9]{64}$/i.test(expectedIdentitySha)) throw new Error("--expected-identity-sha inválido")
   const rawSlugs = argument(argv, "slugs")
   const slugs = rawSlugs ? [...new Set(rawSlugs.split(",").map((slug) => slug.trim()).filter(Boolean))] : null
   if (rawSlugs && (!slugs?.length || slugs.some((slug) => !/^[a-z0-9][a-z0-9-]{0,119}$/i.test(slug)))) {
@@ -154,11 +179,13 @@ export function parseCliOptions(argv: readonly string[], cwd = process.cwd()): C
     expectedHistorySha: argument(argv, "expected-history-sha"),
     expectedCohortSha: argument(argv, "expected-cohort-sha"),
     expectedProjectionSha: argument(argv, "expected-projection-sha"),
+    expectedIdentitySha,
     expectedPlanFileSha: argument(argv, "expected-plan-file-sha"),
     expectedReportSha: argument(argv, "expected-report-sha"),
     reviewedRunDir: argument(argv, "reviewed-run-dir") ? resolve(argument(argv, "reviewed-run-dir")!) : null,
     recibos: recibos ? resolve(recibos) : null,
     verifiedCacheManifest: argument(argv, "verified-cache-manifest") ? resolve(argument(argv, "verified-cache-manifest")!) : null,
+    identityReviewed: identityReviewed ? resolve(identityReviewed) : null,
   }
 }
 
@@ -259,6 +286,14 @@ function writePrivate(path: string, value: unknown): void {
   mkdirSync(dirname(path), { recursive: true, mode: 0o700 })
   writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`, { mode: 0o600, flag: "wx" })
   chmodSync(path, 0o600)
+}
+
+export function writeFilteredReceiptArtifact(inputPath: string, outputPath: string, riskSlugs: ReadonlySet<string>): string {
+  if (resolve(inputPath) === resolve(outputPath)) throw new Error("cópia de recibos filtrados precisa de caminho separado")
+  const input = JSON.parse(readFileSync(inputPath, "utf8")) as { receipts?: Array<Record<string, unknown>>; [key: string]: unknown }
+  if (!Array.isArray(input.receipts)) throw new Error("recibos revisados inválidos")
+  writePrivate(outputPath, { ...input, receipts: input.receipts.filter((receipt) => !riskSlugs.has(String(receipt.alvo ?? ""))) })
+  return outputPath
 }
 
 export function summarizeOpenCells(path: string | null, cohortSlugs: ReadonlySet<string> | null) {
@@ -427,6 +462,7 @@ export async function runReviewedLive(
     { source: join(reviewed, "financas", "plano-privado.json"), name: "plano-privado.json", expected: options.expectedPlanFileSha, label: "plano" },
     { source: join(reviewed, "relatorio.json"), name: "relatorio.json", expected: options.expectedReportSha, label: "relatório" },
     { source: join(reviewed, "coorte-perfis.json"), name: "coorte-perfis.json", expected: options.expectedCohortSha, label: "coorte" },
+    ...(options.identityReviewed && options.expectedIdentitySha ? [{ source: options.identityReviewed, name: "identidade-revisada.json", expected: options.expectedIdentitySha, label: "identidade" }] : []),
   ]
   const pinnedBytes = new Map<string, Buffer>()
   for (const file of pinned) {
@@ -439,18 +475,32 @@ export async function runReviewedLive(
     writeFileSync(copy, bytes, { flag: "wx", mode: 0o600 })
     const copiedBytes = readFileSync(copy)
     if (createHash("sha256").update(copiedBytes).digest("hex") !== file.expected.toLowerCase()) throw new Error(`SHA-256 do arquivo revisado de ${file.label} diverge`)
-    JSON.parse(copiedBytes.toString("utf8"))
+    if (file.name === "identidade-revisada.json") parseIdentityReviewed(copiedBytes)
+    else JSON.parse(copiedBytes.toString("utf8"))
     chmodSync(copy, 0o400)
     pinnedBytes.set(file.name, copiedBytes)
   }
-  const projection = join(pinnedDir, "recibos-familias-projecao.json")
-  const history = join(pinnedDir, "historico-recibos.json")
   const plan = join(pinnedDir, "plano-privado.json")
-  const reviewedPlan = JSON.parse(pinnedBytes.get("plano-privado.json")!.toString("utf8")) as { plano_sha256?: string; acoes?: unknown[] }
+  const reviewedPlan = JSON.parse(pinnedBytes.get("plano-privado.json")!.toString("utf8")) as { plano_sha256?: string; acoes?: Array<{ slug?: unknown }>; recibos?: Array<{ alvo?: unknown; resultado?: unknown; detalhe?: unknown }>; resumo_por_perfil?: unknown; revisao?: Array<{ slug: string; familia: string; motivo: string }>; identity_risk_slugs?: unknown }
   const planSha = createHash("sha256").update(stableJson(reviewedPlan.acoes)).digest("hex")
   if (!Array.isArray(reviewedPlan.acoes) || reviewedPlan.plano_sha256 !== planSha || planSha !== options.expectedPlanSha.toLowerCase()) {
     throw new Error("SHA-256 semântico do plano revisado diverge")
   }
+  if (!Array.isArray(reviewedPlan.identity_risk_slugs) || reviewedPlan.identity_risk_slugs.some((slug) => typeof slug !== "string")) throw new Error("plano revisado sem coorte de risco de identidade")
+  const pinnedRiskSlugs = new Set(reviewedPlan.identity_risk_slugs as string[])
+  if (!reviewedPlan.resumo_por_perfil || typeof reviewedPlan.resumo_por_perfil !== "object" || Array.isArray(reviewedPlan.resumo_por_perfil)) throw new Error("plano revisado sem resumo por perfil")
+  if (!Array.isArray(reviewedPlan.recibos)) throw new Error("plano revisado sem recibos")
+  for (const receipt of reviewedPlan.recibos) {
+    if (typeof receipt.alvo !== "string" || !pinnedRiskSlugs.has(receipt.alvo)) continue
+    if (receipt.resultado !== "indeterminado") throw new Error("plano revisado contém recibo não marcado para revisão de perfil em risco")
+    let detail: unknown
+    try { detail = typeof receipt.detalhe === "string" ? JSON.parse(receipt.detalhe) : receipt.detalhe } catch { detail = null }
+    const motivo = detail && typeof detail === "object" ? (detail as Record<string, unknown>).motivo : null
+    const reviewMarked = reviewedPlan.revisao?.some((item) => item.slug === receipt.alvo)
+    if (!reviewMarked && motivo !== "identidade_em_revisao") throw new Error("plano revisado contém recibo de risco sem detalhe de revisão")
+  }
+  const pinnedBlockedActions = reviewedPlan.acoes.filter((action) => pinnedRiskSlugs.has(action.slug as string)).length
+  if (pinnedBlockedActions !== 0) throw new Error("gate de identidade: plano revisado contém ação de perfil em revisão")
   const reviewedProfiles = JSON.parse(pinnedBytes.get("coorte-perfis.json")!.toString("utf8")) as CandidateProfile[]
   if (!Array.isArray(reviewedProfiles) || !reviewedProfiles.length) throw new Error("coorte revisada ausente")
   const report = JSON.parse(pinnedBytes.get("relatorio.json")!.toString("utf8")) as {
@@ -458,9 +508,46 @@ export async function runReviewedLive(
     assets_reused_from_verified_cache?: unknown[];
     sources?: Record<string, { requested?: number; fresh_certifiable?: number | boolean; errors?: unknown[] }>;
     steps?: Record<string, { ok?: boolean } | number>;
+    identity_reviewed_sha256?: string | null;
+    identity_risk_source_shas?: { history_review?: string; candidates?: string; family_receipts?: string };
   }
+  const sourceSpecs = [
+    { name: "historico-revisao.json", expected: report.identity_risk_source_shas?.history_review },
+    { name: "coorte-candidatos.json", expected: report.identity_risk_source_shas?.candidates },
+    { name: "recibos-familias-tse.json", expected: report.identity_risk_source_shas?.family_receipts },
+  ]
+  const sourceBytes = new Map<string, Buffer>()
+  for (const source of sourceSpecs) {
+    if (!/^[a-f0-9]{64}$/i.test(source.expected ?? "")) throw new Error(`SHA-256 de fonte de risco de identidade ausente: ${source.name}`)
+    const path = join(reviewed, source.name)
+    if (!existsSync(path) || lstatSync(path).isSymbolicLink()) throw new Error(`fonte de risco de identidade ausente: ${source.name}`)
+    const bytes = readFileSync(path)
+    const copy = join(pinnedDir, source.name)
+    writeFileSync(copy, bytes, { flag: "wx", mode: 0o600 })
+    const copiedBytes = readFileSync(copy)
+    if (createHash("sha256").update(copiedBytes).digest("hex") !== source.expected!.toLowerCase()) throw new Error(`SHA-256 de fonte de risco de identidade diverge: ${source.name}`)
+    chmodSync(copy, 0o400)
+    sourceBytes.set(source.name, copiedBytes)
+  }
+  const recomputedRiskSlugs = identityRiskSlugsFromArtifacts(
+    JSON.parse(sourceBytes.get("historico-revisao.json")!.toString("utf8")),
+    JSON.parse(sourceBytes.get("coorte-candidatos.json")!.toString("utf8")),
+    JSON.parse(sourceBytes.get("recibos-familias-tse.json")!.toString("utf8")),
+    reviewedPlan,
+  )
+  if (stableJson([...recomputedRiskSlugs].sort()) !== stableJson([...pinnedRiskSlugs].sort())) throw new Error("coorte de risco de identidade do plano diverge dos artefatos fixados")
+  const applicableReceipts = (name: "recibos-familias-projecao.json" | "historico-recibos.json", output: string): string => {
+    const input = JSON.parse(pinnedBytes.get(name)!.toString("utf8")) as { receipts?: Array<{ alvo?: string }> }
+    if (!Array.isArray(input.receipts)) throw new Error(`recibos revisados inválidos: ${name}`)
+    const path = join(out, output)
+    writePrivate(path, { ...input, receipts: input.receipts.filter((receipt) => !recomputedRiskSlugs.has(receipt.alvo ?? "")) })
+    return path
+  }
+  const projection = applicableReceipts("recibos-familias-projecao.json", "recibos-familias-projecao-aplicaveis.json")
+  const history = applicableReceipts("historico-recibos.json", "historico-recibos-aplicaveis.json")
   const sources = report.sources
   const steps = report.steps
+  if ((report.identity_reviewed_sha256 ?? null) !== (options.expectedIdentitySha?.toLowerCase() ?? null)) throw new Error("SHA-256 da identidade revisada diverge do relatório")
   const generatedAt = typeof report.generated_at === "string" ? Date.parse(report.generated_at) : NaN
   if (!Number.isFinite(generatedAt) || generatedAt > Date.now() || Date.now() - generatedAt > 24 * 60 * 60 * 1000) {
     throw new Error("dry-run revisado expirado: generated_at deve ter menos de 24 h")
@@ -507,20 +594,24 @@ export async function runReviewedLive(
   const currentCohort = join(out, "coorte-pos-escrita.json")
   writePrivate(currentCohort, expectedIds.map((id) => currentById.get(id)))
   const executionId = createExecutionId()
+  const eligibleProjection = join(out, "recibos-familias-projecao-elegiveis.json")
+  writeFilteredReceiptArtifact(projection, eligibleProjection, pinnedRiskSlugs)
   const familyApply = runner("scripts/audit/apply-coverage-receipts.ts", [
-    `--in=${projection}`, `--out-dir=${join(out, "coverage-plan")}`,
+    `--in=${eligibleProjection}`, `--out-dir=${join(out, "coverage-plan")}`,
     "--allow-fonte=tse,tse-patrimonio,tse-financiamento", `--profiles=${currentCohort}`,
     "--apply", `--execucao=${executionId}-familias`,
   ])
   if (!familyApply.ok) throw new Error(`cobertura de família falhou: ${familyApply.reason ?? familyApply.code}`)
+  const eligibleHistory = join(out, "historico-recibos-elegiveis.json")
+  writeFilteredReceiptArtifact(history, eligibleHistory, pinnedRiskSlugs)
   const historyApply = runner("scripts/audit/apply-coverage-receipts.ts", [
-    `--in=${history}`, `--out-dir=${join(out, "coverage-plan-historico")}`,
+    `--in=${eligibleHistory}`, `--out-dir=${join(out, "coverage-plan-historico")}`,
     "--allow-fonte=tse-historico,tse-partido-candidatura", `--profiles=${currentCohort}`,
     "--apply", `--execucao=${executionId}-historico`,
   ])
   if (!historyApply.ok) throw new Error(`cobertura histórica falhou: ${historyApply.reason ?? historyApply.code}`)
   writePrivate(join(out, "relatorio.json"), { mode: "live", reviewed_run_dir: reviewed,
-    reviewed_shas: { plan: options.expectedPlanFileSha, family: options.expectedFamilySha, projection: options.expectedProjectionSha, history: options.expectedHistorySha, cohort: options.expectedCohortSha },
+    reviewed_shas: { plan: options.expectedPlanFileSha, family: options.expectedFamilySha, projection: options.expectedProjectionSha, history: options.expectedHistorySha, cohort: options.expectedCohortSha, identity: options.expectedIdentitySha },
     steps: { finance: stepSummary(finance), readback: stepSummary(exported), family: stepSummary(familyApply), history: stepSummary(historyApply) } })
   return 0
 }
@@ -662,6 +753,17 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
   if (!options.recibos) throw new Error("--recibos=<snapshot pós-turno> é obrigatório para toda rodada")
   if (isLiveMode(options.mode)) return runReviewedLive(options)
   const outDir = privateDirectory(options.outDir)
+  let identityReviewedPath: string | null = null
+  let identityReviewedSha: string | null = null
+  if (options.identityReviewed) {
+    assertOutsideRepository(options.identityReviewed, "--identity-reviewed")
+    if (lstatSync(options.identityReviewed).isSymbolicLink()) throw new Error("--identity-reviewed não pode ser link simbólico")
+    const bytes = readFileSync(options.identityReviewed)
+    parseIdentityReviewed(bytes)
+    identityReviewedPath = join(outDir, "identidade-revisada.json")
+    writeFileSync(identityReviewedPath, bytes, { flag: "wx", mode: 0o600 })
+    identityReviewedSha = createHash("sha256").update(bytes).digest("hex")
+  }
   const candidatesInput = JSON.parse(readFileSync(options.candidates, "utf8")) as SeedCandidate[]
   if (!Array.isArray(candidatesInput)) throw new Error("candidates deve ser uma lista JSON")
   const profilesPath = options.profiles ?? join(outDir, "perfis-publicos.json")
@@ -751,6 +853,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
   const historico = cohort ? runScript("scripts/audit/coletar-revisao-historico.ts", [
     `--anos=${years}`, `--public-profiles=${cohortProfilesPath}`, `--candidatos=${enrichedCandidatesPath}`,
     `--manifest=${freshManifestPath}`, `--out=${receiptPath}`, `--revisao=${reviewPath}`, "--identity-mode=official-only",
+    ...(identityReviewedPath ? [`--identity-reviewed=${identityReviewedPath}`] : []),
   ]) : { ok: false, code: null, reason: "snapshot de perfis ausente; recibos históricos não calculados" }
 
   const financeOut = join(outDir, "financas")
@@ -765,20 +868,6 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     const allFamilyReceipts = JSON.parse(readFileSync(genericReceiptsPath, "utf8")) as { receipts?: Array<Record<string, unknown>> }
     writePrivate(applyFamilyReceiptsPath, { receipts: (allFamilyReceipts.receipts ?? []).filter((receipt) => receipt.fonte !== "tse-historico") })
   }
-
-  const coverageOut = join(outDir, "coverage-plan")
-  const coverage = generic.ok && cohort && existsSync(applyFamilyReceiptsPath)
-    ? runScript("scripts/audit/apply-coverage-receipts.ts", [
-      `--in=${applyFamilyReceiptsPath}`, `--out-dir=${coverageOut}`,
-      "--allow-fonte=tse,tse-patrimonio,tse-financiamento", `--profiles=${cohortProfilesPath}`,
-    ])
-    : { ok: false, code: null, reason: "recibos locais ausentes; plano de cobertura não calculado" }
-  const historyCoverageOut = join(outDir, "coverage-plan-historico")
-  const historyCoverage = historico.ok && cohort && existsSync(receiptPath)
-    ? runScript("scripts/audit/apply-coverage-receipts.ts", [
-      `--in=${receiptPath}`, `--out-dir=${historyCoverageOut}`, "--allow-fonte=tse-historico,tse-partido-candidatura", `--profiles=${cohortProfilesPath}`,
-    ])
-    : { ok: false, code: null, reason: "recibos históricos não calculados" }
 
   let finance: { ok: boolean; code: number | null; reason?: string }
   const financeEnv: NodeJS.ProcessEnv = {
@@ -798,43 +887,71 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     const financeArgs = [`--out=${financeOut}`]
     finance = runScript("scripts/tse-2026-financas.ts", financeArgs, financeEnv)
   }
-  const projectionOut = join(outDir, "recibos-familias-projecao.json")
   const financePlanPath = join(financeOut, "plano-privado.json")
+  const identityRiskSlugs = identityRiskSlugsFromArtifacts(
+    historico.ok && existsSync(reviewPath) ? JSON.parse(readFileSync(reviewPath, "utf8")) : {},
+    cohort?.candidates ?? [],
+    generic.ok && existsSync(genericReceiptsPath) ? JSON.parse(readFileSync(genericReceiptsPath, "utf8")) : {},
+    finance.ok && existsSync(financePlanPath) ? JSON.parse(readFileSync(financePlanPath, "utf8")) : {},
+  )
+  const historyCoverageReceiptsPath = join(outDir, "historico-recibos-elegiveis.json")
+  const eligibleFamilyReceiptsPath = join(outDir, "recibos-familias-aplicaveis-elegiveis.json")
+  if (existsSync(applyFamilyReceiptsPath)) writeFilteredReceiptArtifact(applyFamilyReceiptsPath, eligibleFamilyReceiptsPath, identityRiskSlugs)
+  if (historico.ok && existsSync(receiptPath)) writeFilteredReceiptArtifact(receiptPath, historyCoverageReceiptsPath, identityRiskSlugs)
+  const coverageOut = join(outDir, "coverage-plan")
+  const coverage = generic.ok && cohort && existsSync(eligibleFamilyReceiptsPath)
+    ? runScript("scripts/audit/apply-coverage-receipts.ts", [
+      `--in=${eligibleFamilyReceiptsPath}`, `--out-dir=${coverageOut}`,
+      "--allow-fonte=tse,tse-patrimonio,tse-financiamento", `--profiles=${cohortProfilesPath}`,
+    ])
+    : { ok: false, code: null, reason: "recibos locais ausentes; plano de cobertura não calculado" }
+  const historyCoverageOut = join(outDir, "coverage-plan-historico")
+  const historyCoverage = historico.ok && cohort && existsSync(historyCoverageReceiptsPath)
+    ? runScript("scripts/audit/apply-coverage-receipts.ts", [
+      `--in=${historyCoverageReceiptsPath}`, `--out-dir=${historyCoverageOut}`, "--allow-fonte=tse-historico,tse-partido-candidatura", `--profiles=${cohortProfilesPath}`,
+    ])
+    : { ok: false, code: null, reason: "recibos históricos não calculados" }
+  let identityRiskActionsDeferred = 0
+  if (finance.ok && existsSync(financePlanPath)) {
+    const original = JSON.parse(readFileSync(financePlanPath, "utf8")) as PlanoFinancas2026 & { plano_sha256: string; generated_at: string }
+    const partitioned = partitionarAcoesPorRiscoDeIdentidade(original, identityRiskSlugs)
+    identityRiskActionsDeferred = partitioned.deferred
+    const planoFinal = { ...partitioned.plano, identity_risk_slugs: [...identityRiskSlugs].sort(),
+      plano_sha256: createHash("sha256").update(stableJson(partitioned.plano.acoes)).digest("hex") }
+    writeFileSync(financePlanPath, `${JSON.stringify(planoFinal, null, 2)}\n`, { mode: 0o600 })
+    const summaryPath = join(financeOut, "plano-resumo.json")
+    if (existsSync(summaryPath)) {
+      const summary = JSON.parse(readFileSync(summaryPath, "utf8")) as Record<string, unknown>
+      writeFileSync(summaryPath, `${JSON.stringify({ ...summary, ...planoPublico(planoFinal), plano_sha256: planoFinal.plano_sha256,
+        identity_risk_actions_deferred: identityRiskActionsDeferred, identity_risk_actions_blocked: 0 }, null, 2)}\n`, { mode: 0o600 })
+    }
+    const verifiedPath = join(financeOut, "dry-run-verificado.json")
+    if (existsSync(verifiedPath)) {
+      const verified = JSON.parse(readFileSync(verifiedPath, "utf8")) as Record<string, unknown>
+      writeFileSync(verifiedPath, `${JSON.stringify({ ...verified, plano_sha256: planoFinal.plano_sha256 }, null, 2)}\n`, { mode: 0o600 })
+    }
+  }
+  const projectionOut = join(outDir, "recibos-familias-projecao.json")
   const projectionStep = generic.ok && finance.ok && existsSync(financePlanPath) && cohort
     ? runScript("scripts/audit/collect-tse-family-receipts-local.ts", [
       `--manifest=${freshManifestPath}`, `--out=${projectionOut}`, `--candidates=${enrichedCandidatesPath}`,
       `--public-profiles=${cohortProfilesPath}`, `--writer-plan=${financePlanPath}`,
     ]) : { ok: false, code: null, reason: "plano auditado ou snapshot ausente; projeção não calculada" }
-  const identityRiskSlugs = new Set<string>(historico.ok && existsSync(reviewPath)
-    ? ((JSON.parse(readFileSync(reviewPath, "utf8")) as { itens?: Array<{ slug?: string; tipo?: string }> }).itens ?? [])
-      .filter((item) => item.tipo === "identidade" && typeof item.slug === "string").map((item) => item.slug!) : [])
-  for (const candidate of cohort?.candidates ?? []) {
-    const ids = candidate.ids && typeof candidate.ids === "object" ? candidate.ids as Record<string, unknown> : {}
-    const sqs = ids.tse_sq_candidato && typeof ids.tse_sq_candidato === "object" ? ids.tse_sq_candidato as Record<string, unknown> : {}
-    if (!sqs["2026"] && typeof candidate.slug === "string") identityRiskSlugs.add(candidate.slug)
-  }
-  if (generic.ok && existsSync(genericReceiptsPath)) {
-    const diagnostics = (JSON.parse(readFileSync(genericReceiptsPath, "utf8")) as { diagnostics?: Array<{ slug: string; reason: string }> }).diagnostics ?? []
-    for (const diagnostic of diagnostics) {
-      if (diagnostic.reason === "uf_identity_missing") identityRiskSlugs.add(diagnostic.slug)
-    }
-  }
-  if (finance.ok && existsSync(financePlanPath)) {
-    const reviews = (JSON.parse(readFileSync(financePlanPath, "utf8")) as {
-      revisao?: Array<{ slug: string; familia: string; motivo: string }>
-    }).revisao ?? []
-    for (const review of reviews) {
-      if (review.familia === "patrimonio" && review.motivo === "patrimonio_divergente") {
-        identityRiskSlugs.add(review.slug)
-      }
-    }
-  }
   const auditedActions = finance.ok && existsSync(financePlanPath)
     ? (JSON.parse(readFileSync(financePlanPath, "utf8")) as { acoes?: Array<{ slug: string }> }).acoes ?? [] : []
   const identityRiskActions = auditedActions.filter((action) => identityRiskSlugs.has(action.slug)).length
+  const historySummary = historico.ok && historico.stdout
+    ? JSON.parse(historico.stdout.trim().split("\n").at(-1)!) as { vinculo_por_nome_revisado?: { used: boolean; accepted: number; rejected: number; rejected_reasons: Record<string, number> } }
+    : null
 
   const report = {
     mode: options.mode,
+    identity_reviewed_sha256: identityReviewedSha,
+    identity_risk_source_shas: {
+      history_review: existsSync(reviewPath) ? createHash("sha256").update(readFileSync(reviewPath)).digest("hex") : null,
+      candidates: existsSync(cohortCandidatesPath) ? createHash("sha256").update(readFileSync(cohortCandidatesPath)).digest("hex") : null,
+      family_receipts: existsSync(genericReceiptsPath) ? createHash("sha256").update(readFileSync(genericReceiptsPath)).digest("hex") : null,
+    },
     generated_at: new Date().toISOString(),
     years: options.historicalYears,
     cohort: {
@@ -854,12 +971,15 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
       divulga_financing_2026: { attempted: divulgaFinancing !== null, encontrado: divulgaFinancing?.filter((row) => row.receipt.resultado === "encontrado").length ?? 0, vazio_confirmado: divulgaFinancing?.filter((row) => row.receipt.resultado === "vazio_confirmado").length ?? 0, erro: divulgaFinancing?.filter((row) => row.receipt.resultado === "erro").length ?? 0, indeterminado: divulgaFinancing?.filter((row) => row.receipt.resultado === "indeterminado").length ?? 0 },
     },
     steps: {
-      history_review_receipts: { ...stepSummary(historico), identity_mode: "official-only", vinculo_por_nome_revisado: false },
+      history_review_receipts: { ...stepSummary(historico), identity_mode: "official-only", vinculo_por_nome_revisado: Boolean(options.identityReviewed),
+        accepted: historySummary?.vinculo_por_nome_revisado?.accepted ?? 0, rejected: historySummary?.vinculo_por_nome_revisado?.rejected ?? 0,
+        rejected_reasons: historySummary?.vinculo_por_nome_revisado?.rejected_reasons ?? {} },
       coverage_dry_run: stepSummary(coverage),
       history_coverage_dry_run: stepSummary(historyCoverage),
       finance_planner: stepSummary(finance),
       apply_projection: stepSummary(projectionStep),
       identity_risk_actions_blocked: identityRiskActions,
+      identity_risk_actions_deferred: identityRiskActionsDeferred,
       identity_risk_profiles: identityRiskSlugs.size,
       family_receipts: stepSummary(generic),
     },

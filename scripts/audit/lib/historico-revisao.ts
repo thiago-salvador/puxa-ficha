@@ -74,6 +74,35 @@ export type AnchorIdentity = {
 
 export type HistoricoSourceRevision = { url: string; sha256: string; year?: number }
 
+export type IdentityReviewedLink = { slug: string; ano: number; sq_candidato: string; uf: string; cargo: string; jev_p: number; regra: string }
+export type IdentityReviewedFile = { schema_version: 1; kind: "identidade-revisada-tse"; vinculos: IdentityReviewedLink[] }
+
+/** Validates the private human-reviewed identity file without coercion. */
+export function parseIdentityReviewed(value: Uint8Array | string): IdentityReviewedFile {
+  const fail = (): never => { throw new Error("arquivo de vínculos nominais revisados inválido") }
+  let parsed: unknown
+  try { parsed = JSON.parse(typeof value === "string" ? value : new TextDecoder().decode(value)) } catch { return fail() }
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return fail()
+  const root = parsed as Record<string, unknown>
+  if (Object.keys(root).sort().join(",") !== "kind,schema_version,vinculos" || root.schema_version !== 1 || root.kind !== "identidade-revisada-tse" || !Array.isArray(root.vinculos)) return fail()
+  const seen = new Set<string>()
+  const vinculos = root.vinculos.map((entry): IdentityReviewedLink => {
+    if (!entry || typeof entry !== "object" || Array.isArray(entry)) return fail()
+    const row = entry as Record<string, unknown>
+    if (Object.keys(row).sort().join(",") !== "ano,cargo,jev_p,regra,slug,sq_candidato,uf") return fail()
+    if (typeof row.slug !== "string" || !row.slug.trim() || !Number.isInteger(row.ano) || typeof row.sq_candidato !== "string" || !row.sq_candidato.trim()
+      || typeof row.uf !== "string" || !row.uf.trim() || typeof row.cargo !== "string" || !row.cargo.trim()
+      || typeof row.jev_p !== "number" || !Number.isFinite(row.jev_p) || row.jev_p < 0 || row.jev_p > 1
+      || typeof row.regra !== "string" || !row.regra.trim()) return fail()
+    const link = row as unknown as IdentityReviewedLink
+    const key = `${link.slug}|${link.ano}|${link.sq_candidato}`
+    if (seen.has(key)) return fail()
+    seen.add(key)
+    return link
+  })
+  return { schema_version: 1, kind: "identidade-revisada-tse", vinculos }
+}
+
 export type SenadoSource =
   | { status: "ok"; url: string; sha256: string; mandatos: Record<string, unknown>[] }
   | { status: "erro"; url: string; motivo: string }
