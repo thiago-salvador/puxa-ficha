@@ -4,6 +4,7 @@ import { describe, it } from "node:test"
 
 import {
   mesmosBens,
+  partitionarAcoesPorRiscoDeIdentidade,
   planejarFinancas2026,
   semReceitaReal,
   travasDoPlano,
@@ -14,6 +15,31 @@ import { decidirPortao, lerArgs, linhasDeReciboDeFalha } from "../scripts/tse-20
 
 const PACOTE = { url_receitas: "https://tse/receitas.zip", url_bens: "https://tse/bens.zip" }
 const vazio = (): EstadoProducao => ({ financiamento: [], verificacoes: [], patrimonio: [], ausencias: [] })
+
+describe("partição de ações por risco de identidade", () => {
+  it("move ações de perfis em risco para revisão e mantém apenas ações seguras", () => {
+    const plano = {
+      acoes: [
+        { tipo: "inserir_financiamento" as const, slug: "risco", linha: {} },
+        { tipo: "inserir_patrimonio" as const, slug: "seguro", linha: {} },
+        { tipo: "apagar_verificacao" as const, slug: "risco", id: "v1", antes: {} as never },
+      ],
+      recibos: [],
+      revisao: [],
+      resumo: {} as never,
+    }
+
+    const resultado = partitionarAcoesPorRiscoDeIdentidade(plano, ["risco"])
+
+    assert.equal(resultado.deferred, 2)
+    assert.deepEqual(resultado.plano.acoes.map((acao) => acao.slug), ["seguro"])
+    assert.deepEqual(resultado.plano.revisao.map(({ slug, familia, motivo }) => ({ slug, familia, motivo })), [
+      { slug: "risco", familia: "financiamento", motivo: "identidade_em_revisao" },
+      { slug: "risco", familia: "financiamento", motivo: "identidade_em_revisao" },
+    ])
+    assert.equal(plano.acoes.length, 3, "helper preserva o plano original")
+  })
+})
 
 function fin(slug: string, id: string, extra: Record<string, unknown> = {}): PlannedRow {
   return {

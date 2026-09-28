@@ -21,6 +21,7 @@ import {
   partyKey,
   publicElectionResult,
   partidoPorCandidaturaReceipt,
+  parseIdentityReviewed,
   tseCandidacyFromCsv,
   type SeedCandidate,
   type SenadoSource,
@@ -385,9 +386,72 @@ describe("coletor de revisão do histórico: rodada com pacote real", () => {
         senado: async () => ({ status: "erro", url: "x", motivo: "não usado" }),
         anosObrigatorios: [2024, 2026], manifest: { assets }, minLinhasPorAno: 2,
         identityMode: "official-only",
+        identityReviewed: parseIdentityReviewed(JSON.stringify({ schema_version: 1, kind: "identidade-revisada-tse", vinculos: [{ slug: "ana-ficticia", ano: 2024, sq_candidato: "240000000099", uf: "SP", cargo: "GOVERNADOR", jev_p: 0.98, regra: "nascimento_igual_ancora_2026" }] })),
       })
       assert.equal(result.receipts[0]?.resultado, "encontrado", JSON.stringify(result.review))
       assert.equal(result.review.some((item) => /vínculo nominal/.test(item.motivo)), false)
+    } finally { rmSync(dir, { recursive: true, force: true }) }
+  })
+
+  it("vínculos revisados exigem nome e nascimento, rejeitam ausência e mantêm revisão com cobertura parcial", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "pf-hist-reviewed-link-"))
+    try {
+      const nominal2022 = `2022;220000000099;-4;${NOME};${NASC};GOVERNADOR;SP;PC do B;NÃO ELEITO`
+      const nominal2024 = `2024;240000000099;-4;${NOME};${NASC};GOVERNADOR;SP;PC do B;NÃO ELEITO`
+      const anchor = `2026;250000000099;${CPF};${NOME};${NASC};GOVERNADOR;SP;PC do B;NÃO ELEITO`
+      const assets = [pacote(dir, 2022, [nominal2022, ...filler(2022, 3)]), pacote(dir, 2024, [nominal2024, ...filler(2024, 3)]), pacote(dir, 2026, [anchor, ...filler(2026, 3)])]
+      const subjectHistory = [
+        { ...PUBLIC_2026, periodo_inicio: 2022, periodo_fim: 2022, observacoes: "NÃO ELEITO (TSE 2022)" },
+        { ...PUBLIC_2026, periodo_inicio: 2024, periodo_fim: 2024, observacoes: "NÃO ELEITO (TSE 2024)" }, PUBLIC_2026,
+      ]
+      const base = { anos: [2022, 2024, 2026], profiles: [{ ...subject, historico: subjectHistory }], seed: [seed], checkedAt: CHECKED,
+        senado: async () => ({ status: "erro" as const, url: "x", motivo: "não usado" }), anosObrigatorios: [2022, 2024, 2026], manifest: { assets }, minLinhasPorAno: 2, identityMode: "official-only" as const }
+      const link = (ano: number, sq_candidato: string) => ({ slug: "ana-ficticia", ano, sq_candidato, uf: "SP", cargo: "GOVERNADOR", jev_p: 0.98, regra: "nascimento_igual_ancora_2026" })
+      const file = (vinculos: ReturnType<typeof link>[]) => parseIdentityReviewed(JSON.stringify({ schema_version: 1, kind: "identidade-revisada-tse", vinculos }))
+      const accepted = await runHistoricoRevision({ ...base, identityReviewed: file([link(2022, "220000000099"), link(2024, "240000000099")]) })
+      assert.equal(accepted.receipts[0]?.resultado, "encontrado", JSON.stringify(accepted.review))
+      assert.deepEqual(accepted.identityReviewed, { used: true, accepted: 2, rejected: 0, rejected_reasons: {} })
+      assert.equal(JSON.parse(accepted.receipts[0]!.detalhe).identity_reviewed_nominal_links.method, "official-plus-reviewed-nominal-link")
+
+      const discardedSeedDir = mkdtempSync(join(tmpdir(), "pf-hist-reviewed-discarded-seed-sq-"))
+      const noNominal2022 = pacote(discardedSeedDir, 2022, filler(2022, 3))
+      const wrongSeedSq = `2024;240000000777;-4;OUTRA PESSOA;${NASC.replace("1970", "1980")};GOVERNADOR;RJ;PT;NÃO ELEITO`
+      const discardedSeedPackage = pacote(discardedSeedDir, 2024, [nominal2024, wrongSeedSq, ...filler(2024, 3)])
+      const oldYearSeed: SeedCandidate = { ...seed, ids: { tse_sq_candidato: { "2024": "240000000777", "2026": "250000000099" } } }
+      const oldYearProfile = { ...subject, historico: [
+        { ...PUBLIC_2026, periodo_inicio: 2024, periodo_fim: 2024, observacoes: "NÃO ELEITO (TSE 2024)" }, PUBLIC_2026,
+      ] }
+      const reviewedOldYear = await runHistoricoRevision({ ...base, profiles: [oldYearProfile], seed: [oldYearSeed],
+        manifest: { assets: [noNominal2022, discardedSeedPackage, assets[2]!] }, identityReviewed: file([link(2024, "240000000099")]) })
+      assert.equal(reviewedOldYear.receipts[0]?.resultado, "encontrado", JSON.stringify(reviewedOldYear.review))
+      assert.equal(reviewedOldYear.review.some((item) => /SQ do seed aponta para outra pessoa/.test(item.motivo)), false)
+      rmSync(discardedSeedDir, { recursive: true, force: true })
+
+      const partial = await runHistoricoRevision({ ...base, identityReviewed: file([link(2024, "240000000099")]) })
+      assert.ok(partial.review.some((item) => item.tipo === "identidade" && /vínculo nominal/.test(item.motivo)))
+
+      const collisionDir = mkdtempSync(join(tmpdir(), "pf-hist-reviewed-sq-collision-"))
+      const sameSqDifferentUf = pacote(collisionDir, 2024, [
+        nominal2024,
+        `2024;240000000099;-4;${NOME};${NASC};GOVERNADOR;RJ;PT;NÃO ELEITO`,
+        ...filler(2024, 3),
+      ])
+      const collision = await runHistoricoRevision({ ...base, manifest: { assets: [assets[0]!, sameSqDifferentUf, assets[2]!] },
+        identityReviewed: file([link(2022, "220000000099"), link(2024, "240000000099")]) })
+      assert.ok(collision.review.some((item) => item.tipo === "identidade" && /vínculo nominal/.test(item.motivo)))
+      rmSync(collisionDir, { recursive: true, force: true })
+
+      const wrongDir = mkdtempSync(join(tmpdir(), "pf-hist-reviewed-wrong-birth-"))
+      const wrongBirth = pacote(wrongDir, 2024, [`2024;240000000099;-4;${NOME};${NASC.replace("1970", "1980")};GOVERNADOR;SP;PT;NÃO ELEITO`, ...filler(2024, 3)])
+      const wrong = await runHistoricoRevision({ ...base, manifest: { assets: [assets[0]!, wrongBirth, assets[2]!] }, identityReviewed: file([link(2024, "240000000099")]) })
+      assert.equal(wrong.identityReviewed.rejected, 1)
+      assert.equal(wrong.identityReviewed.rejected_reasons.nome_ou_nascimento_nao_confere, 1)
+
+      const absent = await runHistoricoRevision({ ...base, identityReviewed: file([link(2018, "180000000099")]) })
+      assert.equal(absent.identityReviewed.rejected_reasons.linha_ausente_no_pacote_oficial, 1)
+      assert.throws(() => parseIdentityReviewed(JSON.stringify({ schema_version: 1, kind: "identidade-revisada-tse", extra: true, vinculos: [] })))
+      assert.throws(() => file([link(2024, "dup"), link(2024, "dup")]))
+      rmSync(wrongDir, { recursive: true, force: true })
     } finally { rmSync(dir, { recursive: true, force: true }) }
   })
 })

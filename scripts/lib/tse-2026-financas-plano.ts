@@ -127,6 +127,7 @@ export type ItemRevisao = {
     | "patrimonio_divergente"
     | "bens_sumiram_do_pacote"
     | "sem_identidade_2026"
+    | "identidade_em_revisao"
     | "verificacao_outra_identidade"
   detalhe: string
 }
@@ -145,6 +146,36 @@ export interface PlanoFinancas2026 {
   recibos: ReciboPlanejado[]
   revisao: ItemRevisao[]
   resumo: ResumoPlano
+}
+
+/**
+ * Retira do plano aplicável toda ação de perfil sob revisão de identidade.
+ * O chamador deve executar esta partição antes de calcular o SHA revisado.
+ */
+export function partitionarAcoesPorRiscoDeIdentidade(
+  plano: PlanoFinancas2026,
+  slugsEmRisco: ReadonlySet<string> | readonly string[],
+): { plano: PlanoFinancas2026; deferred: number } {
+  const slugs = slugsEmRisco instanceof Set ? slugsEmRisco : new Set(slugsEmRisco)
+  const deferredActions = plano.acoes.filter((acao) => slugs.has(acao.slug))
+  if (deferredActions.length === 0) return { plano, deferred: 0 }
+
+  const revisao = deferredActions.map((acao): ItemRevisao => ({
+    slug: acao.slug,
+    familia: acao.tipo === "inserir_patrimonio" || acao.tipo === "apagar_ausencia_patrimonio"
+      ? "patrimonio"
+      : "financiamento",
+    motivo: "identidade_em_revisao",
+    detalhe: "ação adiada enquanto a identidade do perfil está em revisão",
+  }))
+  return {
+    plano: {
+      ...plano,
+      acoes: plano.acoes.filter((acao) => !slugs.has(acao.slug)),
+      revisao: [...plano.revisao, ...revisao],
+    },
+    deferred: deferredActions.length,
+  }
 }
 
 export interface ResumoPlano {

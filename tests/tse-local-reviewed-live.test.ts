@@ -5,6 +5,7 @@ import { tmpdir } from "node:os"
 import { join } from "node:path"
 import { test } from "node:test"
 import { parseCliOptions, runReviewedLive } from "../scripts/tse-local/ingest-tse-local"
+import { stableJson } from "../scripts/lib/tse-2026-financas-plano"
 
 const sha = (path: string) => createHash("sha256").update(readFileSync(path)).digest("hex")
 
@@ -22,12 +23,19 @@ test("dry-run artifacts pass the live gate without regeneration; tampering fails
     const cohort = join(reviewed, "coorte-perfis.json")
     const plan = join(reviewed, "financas", "plano-privado.json")
     const report = join(reviewed, "relatorio.json")
+    const historyReview = join(reviewed, "historico-revisao.json")
+    const candidates = join(reviewed, "coorte-candidatos.json")
+    const familyReceipts = join(reviewed, "recibos-familias-tse.json")
     const receipts = join(root, "post-round.json")
     writeFileSync(family, JSON.stringify({ receipts: [] }))
     writeFileSync(history, JSON.stringify({ receipts: [] }))
     writeFileSync(projection, JSON.stringify({ receipts: [{ fonte: "tse-financiamento", public_payload_sha256: "post-write" }] }))
-    writeFileSync(plan, JSON.stringify({ plano_sha256: createHash("sha256").update("[]").digest("hex"), acoes: [], revisao: [], recibos: [], resumo: {} }))
+    writeFileSync(historyReview, JSON.stringify({ itens: [{ slug: "candidate", tipo: "identidade" }] }))
+    writeFileSync(candidates, JSON.stringify([{ slug: "candidate", ids: { tse_sq_candidato: { "2026": "260000000001" } } }]))
+    writeFileSync(familyReceipts, JSON.stringify({ diagnostics: [] }))
+    writeFileSync(plan, JSON.stringify({ plano_sha256: createHash("sha256").update("[]").digest("hex"), acoes: [], revisao: [], recibos: [], resumo: {}, identity_risk_slugs: ["candidate"] }))
     writeFileSync(report, JSON.stringify({ generated_at: new Date().toISOString(), mode: "dry-run", historical_scope_complete: true, assets_reused_from_verified_cache: [],
+      identity_risk_source_shas: { history_review: sha(historyReview), candidates: sha(candidates), family_receipts: sha(familyReceipts) },
       sources: { consulta_cand: { requested: 16, fresh_certifiable: 16, errors: [] },
         bem_candidato_2026: { fresh_certifiable: true, errors: [] },
         financiamento_2026: { fresh_certifiable: true, errors: [] } },
@@ -54,6 +62,24 @@ test("dry-run artifacts pass the live gate without regeneration; tampering fails
     }
     assert.equal(await runReviewedLive(options, runner, consumed), 0)
     assert.equal(calls.filter((call) => call.includes("tse-2026-financas.ts")).length, 1)
+    const identity = join(root, "identity-reviewed.json")
+    const originalReportBytes = readFileSync(report)
+    writeFileSync(identity, JSON.stringify({ schema_version: 1, kind: "identidade-revisada-tse", vinculos: [] }))
+    writeFileSync(report, JSON.stringify({ ...JSON.parse(readFileSync(report, "utf8")), identity_reviewed_sha256: sha(identity) }))
+    const identityOptions = { ...options, outDir: join(root, "identity-tampered"), expectedReportSha: sha(report),
+      identityReviewed: identity, expectedIdentitySha: sha(identity) }
+    writeFileSync(identity, JSON.stringify({ schema_version: 1, kind: "identidade-revisada-tse", vinculos: [], altered: true }))
+    await assert.rejects(() => runReviewedLive(identityOptions, runner, consumed), /SHA-256.*identidade/)
+    writeFileSync(report, originalReportBytes)
+    const injected = [{ slug: "candidate", tipo: "inserir_patrimonio" }]
+    writeFileSync(plan, JSON.stringify({ ...JSON.parse(readFileSync(plan, "utf8")), acoes: injected,
+      plano_sha256: createHash("sha256").update(stableJson(injected)).digest("hex") }))
+    await assert.rejects(() => runReviewedLive({ ...options, outDir: join(root, "risk-injected"),
+      expectedPlanSha: createHash("sha256").update(stableJson(injected)).digest("hex"), expectedPlanFileSha: sha(plan) }, runner, consumed), /gate de identidade/)
+    writeFileSync(plan, JSON.stringify({ ...JSON.parse(readFileSync(plan, "utf8")), identity_risk_slugs: [] }))
+    await assert.rejects(() => runReviewedLive({ ...options, outDir: join(root, "risk-omitted"),
+      expectedPlanSha: createHash("sha256").update(stableJson(injected)).digest("hex"), expectedPlanFileSha: sha(plan) }, runner, consumed), /coorte de risco de identidade|gate de identidade/)
+    writeFileSync(plan, JSON.stringify({ plano_sha256: createHash("sha256").update("[]").digest("hex"), acoes: [], revisao: [], recibos: [], resumo: {}, identity_risk_slugs: ["candidate"] }))
     assert.ok(calls.find((call) => call.includes("tse-2026-financas.ts"))?.includes(join(live, "pinned")))
     assert.match(calls.find((call) => call.includes("apply-coverage-receipts.ts")) ?? "", /--in=.*\/pinned\/recibos-familias-projecao\.json/)
     assert.match(calls.find((call) => call.includes("apply-coverage-receipts.ts")) ?? "", /--profiles=.*\/coorte-pos-escrita\.json/)
@@ -68,7 +94,7 @@ test("dry-run artifacts pass the live gate without regeneration; tampering fails
     await assert.rejects(() => runReviewedLive({ ...options, outDir: join(root, "tampered") }, runner, consumed), /SHA-256.*família/)
     assert.equal(calls.filter((call) => call.includes("tse-2026-financas.ts")).length, 1)
     writeFileSync(family, JSON.stringify({ receipts: [] }))
-    writeFileSync(report, JSON.stringify({ ...JSON.parse(readFileSync(report, "utf8")), generated_at: new Date(Date.now() - 25 * 3600_000).toISOString() }))
+    writeFileSync(report, JSON.stringify({ ...JSON.parse(originalReportBytes.toString("utf8")), generated_at: new Date(Date.now() - 25 * 3600_000).toISOString() }))
     await assert.rejects(() => runReviewedLive({ ...options, outDir: join(root, "old"), expectedReportSha: sha(report) }, runner, consumed), /24 h|expirado/)
   } finally { rmSync(root, { recursive: true, force: true }) }
 })

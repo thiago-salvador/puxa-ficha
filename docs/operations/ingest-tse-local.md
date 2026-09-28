@@ -21,13 +21,18 @@ O launchd roda `scripts/tse-local/ingest-tse-local.sh` toda quinta-feira às
 O runner exige Node 24 em `/opt/homebrew/opt/node@24/bin`. Downloads TSE são
 mantidos no worktree durante a rodada por `PF_KEEP_TSE_DOWNLOADS=1`; o worktree
 é removido no encerramento.
+O launchd não consegue ler clones sob `~/Documents` por causa da privacidade do macOS.
+Configure o agente com um clone fora dessa pasta, por exemplo
+`~/Library/Application Support/puxa-ficha/repo`, como no agente da Câmara.
 
 O coletor usa Chrome visível para os ZIPs oficiais
 `consulta_cand_<ano>` (1996–2026), `bem_candidato_<ano>` (2006–2026) e receitas
 de prestação de contas (2002–2026, com os nomes oficiais próprios de cada
 período). O manifesto privado registra URL e SHA-256 de cada ZIP. A revisão de
-histórico usa as candidaturas oficiais e só certifica identidade vinculada por
-identificador oficial; vínculos apenas nominais ficam em revisão. A leitura
+histórico usa as candidaturas oficiais e certifica identidade por identificador
+oficial ou por vínculo nominal revisado e listado em arquivo privado. Nesse caso,
+nome e nascimento precisam coincidir com a âncora. Linhas nominais não cobertas
+permanecem em revisão. A leitura
 complementar por candidato consulta
 `/divulga/rest/v1/eleicao/ordinarias` e
 `/divulga/rest/v1/candidatura/buscar/2026/<UF>/<idEleicao>/candidato/<SQ>`.
@@ -63,6 +68,8 @@ PF_DOADOR_CPF_HASH_SALT=...
 TSE_LOCAL_MODE=dry-run
 # Snapshot privado atual de coleta_log com encerramentos pós-turno; obrigatório em ambos os modos.
 TSE_LOCAL_RECIBOS=/caminho/privado/recibos-atuais.json
+# Opcional: vínculos nominais revisados, fora do repositório.
+# TSE_LOCAL_IDENTITY_REVIEWED=/caminho/privado/identidade-revisada.json
 # Somente para live: diretório de saída do dry-run revisado e SHAs hexadecimais.
 # TSE_LOCAL_REVIEWED_RUN_DIR=/caminho/privado/rodada-revisada
 # TSE_LOCAL_EXPECTED_PLAN_SHA=...
@@ -72,6 +79,7 @@ TSE_LOCAL_RECIBOS=/caminho/privado/recibos-atuais.json
 # TSE_LOCAL_EXPECTED_HISTORY_SHA=...
 # TSE_LOCAL_EXPECTED_COHORT_SHA=...
 # TSE_LOCAL_EXPECTED_PROJECTION_SHA=...
+# TSE_LOCAL_EXPECTED_IDENTITY_SHA=...  # obrigatório no live se houver arquivo de identidade
 ```
 
 Mantenha o arquivo privado (`chmod 600 ~/.config/puxa-ficha/ingest-tse.env`)
@@ -83,9 +91,18 @@ O arquivo `TSE_LOCAL_RECIBOS` é obrigatório também no dry-run. Revise o
 SHA-256 dos bytes de cada arquivo com `shasum -a 256` e preencha, na ordem,
 `TSE_LOCAL_EXPECTED_PLAN_FILE_SHA`, `TSE_LOCAL_EXPECTED_REPORT_SHA`,
 `TSE_LOCAL_EXPECTED_FAMILY_SHA`, `TSE_LOCAL_EXPECTED_HISTORY_SHA`,
-`TSE_LOCAL_EXPECTED_COHORT_SHA` e `TSE_LOCAL_EXPECTED_PROJECTION_SHA`. Aponte `TSE_LOCAL_REVIEWED_RUN_DIR` para o
+`TSE_LOCAL_EXPECTED_COHORT_SHA` e `TSE_LOCAL_EXPECTED_PROJECTION_SHA`. Se usou
+`TSE_LOCAL_IDENTITY_REVIEWED`, calcule também seu SHA em
+`TSE_LOCAL_EXPECTED_IDENTITY_SHA`. O live fixa os mesmos bytes em `pinned/`.
+Aponte `TSE_LOCAL_REVIEWED_RUN_DIR` para o
 diretório dessa rodada e só então defina `TSE_LOCAL_MODE=live`. O runner confere
-os sete digests e os gates do relatório antes de qualquer escrita de domínio. O writer relê o estado para CAS,
+os digests e os gates do relatório antes de qualquer escrita de domínio. Ações
+financeiras de perfis com identidade em revisão saem de `acoes` e entram em
+`revisao` com motivo `identidade_em_revisao` antes do cálculo de `plano_sha256`.
+O relatório distingue ações adiadas de ações de risco ainda no plano, que devem
+ser zero. No live, o gate fixa a revisão histórica, os candidatos da coorte e os
+diagnósticos de família pelos SHAs incluídos no relatório, recompõe a coorte de
+risco e confere cada ação do plano. O writer relê o estado para CAS,
 aplica o plano revisado, faz readback e a cobertura usa o snapshot público
 pós-escrita. A gravação live requer autorização explícita para escrever no
 banco de produção. Credenciais ficam no ambiente do subshell, fora dos
