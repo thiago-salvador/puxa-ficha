@@ -6,6 +6,7 @@ import { projectProcessosVerificacaoRow } from "../src/lib/processos-verificacao
 import {
   detalheRecibo,
   gerarSql,
+  urlsConsultadasDjen,
   prepararLinhas,
   resumoComunicacoes,
   validarAprovados,
@@ -113,10 +114,26 @@ describe("recibo de busca do lote aprovado", () => {
     const { migration, readback } = gerarSql(linhas, "curadoria-djen-20260928")
     assert.match(migration, /AS r\(slug, candidato_id, volume, url, detalhe\)/)
     assert.match(migration, /p\.candidato_id = l\.candidato_id AND p\.fonte = l\.fonte/)
-    assert.match(migration, /comunicaapi\.pje\.jus\.br\/api\/v1\/comunicacao\?itensPorPagina=100&numeroProcesso=70000471020218220007/)
+    assert.match(migration, /comunicaapi\.pje\.jus\.br\/api\/v1\/comunicacao\?itensPorPagina=1000&numeroProcesso=70000471020218220007&pagina=1/)
     assert.match(readback, /AND p\.fonte = e\.fonte/)
     assert.match(readback, /l\.detalhe = e\.detalhe/)
     const { rollback } = gerarSql(linhas, "curadoria-djen-20260928")
     assert.match(rollback, /DELETE FROM public\.coleta_log q USING \(VALUES[\s\S]*?AND q\.detalhe = e\.detalhe AND q\.url = e\.url;/)
+  })
+})
+
+describe("texto público e URLs consultadas", () => {
+  it("registra todas as páginas consultadas do DJEN", () => {
+    assert.deepEqual(urlsConsultadasDjen("70000471020218220007", 0), ["https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&numeroProcesso=70000471020218220007&pagina=1"])
+    const tres = urlsConsultadasDjen("70000471020218220007", 2001)
+    assert.equal(tres.length, 3)
+    assert.match(tres[2], /pagina=3$/)
+    assert.throws(() => urlsConsultadasDjen("70000471020218220007", 20_001), /limite paginavel/)
+    assert.deepEqual(cnjsPublicaveisDoTexto(`urls_consultadas=${tres.join(",")}`), ["70000471020218220007"])
+  })
+
+  it("publica a classe em caixa alta do português, sem minúscula acentuada", () => {
+    const linha = prepararLinhas([{ ...aprovado, classe: "PROCEDIMENTO COMUM CíVEL" }], comunicacoes, "curadoria-djen-20260928")[0]
+    assert.match(linha.descricao, /nas classes PROCEDIMENTO COMUM CÍVEL,/)
   })
 })

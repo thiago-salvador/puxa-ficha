@@ -59,7 +59,7 @@ interface Linha {
   descricao: string
   fonte: string
   url: string
-  urlApi: string
+  urlsApi: string[]
 }
 
 const digitos = (numero: string) => numero.replace(/\D/g, "")
@@ -125,6 +125,13 @@ export function resumoComunicacoes(numero: string, comunicacoes: ComunicacaoDjen
   return { tipos: [...tipos].sort((a, b) => a.localeCompare(b, "pt-BR")), primeira: ordenadas[0], ultima: ordenadas.at(-1)! }
 }
 
+/** URLs paginadas exatamente como buscarComunicacoes consulta o DJEN (1000 por página). */
+export function urlsConsultadasDjen(digits: string, total: number): string[] {
+  const paginas = Math.max(1, Math.ceil(total / 1000))
+  if (paginas > 20) throw new Error(`${digits}: DJEN excede limite paginavel`)
+  return Array.from({ length: paginas }, (_, i) => `${DJEN_API}?itensPorPagina=1000&numeroProcesso=${digits}&pagina=${i + 1}`)
+}
+
 export function prepararLinhas(
   aprovados: Aprovado[],
   comunicacoes: Map<string, ComunicacaoDjen[]>,
@@ -135,7 +142,8 @@ export function prepararLinhas(
     const numero = formatarCnj(item.numero_cnj)
     const periodo = resumoComunicacoes(numero, comunicacoes.get(digitos(numero)) ?? [])
     const polo = poloDoItem(item)
-    const descricao = `O DJEN registra comunicação processual oficial no processo ${numero}, nas classes ${item.classe}, perante ${item.orgao} (${item.tribunal}). O candidato consta no polo ${polo}. As comunicações ${periodo.tipos.join(" e ")} foram disponibilizadas entre ${periodo.primeira} e ${periodo.ultima}. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.`
+    const classe = item.classe.normalize("NFC").toLocaleUpperCase("pt-BR")
+    const descricao = `O DJEN registra comunicação processual oficial no processo ${numero}, nas classes ${classe}, perante ${item.orgao} (${item.tribunal}). O candidato consta no polo ${polo}. As comunicações ${periodo.tipos.join(" e ")} foram disponibilizadas entre ${periodo.primeira} e ${periodo.ultima}. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.`
     return {
       slug: item.slug,
       candidatoId: item.candidato_id,
@@ -145,7 +153,7 @@ export function prepararLinhas(
       descricao,
       fonte: `${marcador}: Comunicações processuais oficiais do DJEN/CNJ - processo ${numero}`,
       url: `https://comunica.pje.jus.br/consulta?numeroProcesso=${digitos(numero)}`,
-      urlApi: `${DJEN_API}?itensPorPagina=100&numeroProcesso=${digitos(numero)}`,
+      urlsApi: urlsConsultadasDjen(digitos(numero), (comunicacoes.get(digitos(numero)) ?? []).length),
     }
   })
 }
@@ -172,7 +180,7 @@ function recibosSql(linhas: Linha[]) {
   const porSlug = new Map<string, Linha[]>()
   for (const linha of linhas) porSlug.set(linha.slug, [...(porSlug.get(linha.slug) ?? []), linha])
   return [...porSlug.values()].map((xs) => {
-    const apis = xs.map((x) => x.urlApi).sort()
+    const apis = xs.flatMap((x) => x.urlsApi).sort()
     return `    (${sql(xs[0].slug)}, ${sql(xs[0].candidatoId)}::uuid, ${xs.length}, ${sql(apis[0])}, ${sql(detalheRecibo(xs.length, apis))})`
   }).join(",\n")
 }
@@ -351,7 +359,7 @@ async function buscarComunicacoes(numero: string, cacheDir: string): Promise<Com
   const items: ComunicacaoDjen[] = []
   let count = -1
   for (let pagina = 1; pagina <= 20; pagina += 1) {
-    const url = `https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&numeroProcesso=${digits}&pagina=${pagina}`
+    const url = urlsConsultadasDjen(digits, pagina * 1000)[pagina - 1]
     const response = await fetch(url, { signal: AbortSignal.timeout(30_000) })
     if (!response.ok) throw new Error(`${numero}: DJEN HTTP ${response.status}`)
     const data = await response.json() as { count?: number; items?: ComunicacaoDjen[] }
