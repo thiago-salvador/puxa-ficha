@@ -48,8 +48,8 @@ function SocialCardModalContent({
   const [retryKey, setRetryKey] = useState(0)
   const [previewKey] = useState(() => Date.now())
 
-  const cardPath = `/api/card/${slug}?format=${format}`
-  const cardPreviewSrc = `${cardPath}&v=${previewKey}-${retryKey}`
+  const cardPath = `/api/card/${slug}?format=${format}&v=2`
+  const cardPreviewSrc = `${cardPath}&preview=${previewKey}-${retryKey}`
   const cardShareUrl = new URL(cardPath, shareUrl).toString()
   const imgLoaded = imageStatus.src === cardPreviewSrc && imageStatus.loaded
   const imgError = imageStatus.src === cardPreviewSrc && imageStatus.error

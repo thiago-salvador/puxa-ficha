@@ -423,7 +423,7 @@ function publicProjetoLei(row: ProjetoLei, index: number) {
   }
 }
 
-function casaParlamentarDaFonte(fonte: string | null | undefined): "camara" | "senado" | null {
+export function casaParlamentarDaFonte(fonte: string | null | undefined): "camara" | "senado" | null {
   if (typeof fonte !== "string") return null
   const normalized = fonte.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase()
   if (/\bsenado\b/.test(normalized)) return "senado"
@@ -563,6 +563,28 @@ export function gastoParlamentarExibivel(
   // parlamentar e não podem aparecer como total financeiro parlamentar.
   if (f.includes("camara") || f.includes("câmara")) return linhaCamaraComSnapshotValidado(detalhamento, rowYear, rowTotal)
   return !f.includes("portal da transparência")
+}
+
+/**
+ * URL oficial que sustenta uma linha de gasto já aprovada por
+ * `gastoParlamentarExibivel`: o arquivo anual da cota da Câmara ou a consulta
+ * por deputado gravada na proveniência. Linha sem proveniência gravada (hoje as
+ * do Senado) devolve null: a ficha também não cita fonte por linha, e inventar
+ * um endereço seria publicar proveniência que o dado não carrega.
+ */
+export function fonteUrlGastoParlamentar(detalhamento: unknown, rowYear?: number): string | null {
+  if (!detalhamento || typeof detalhamento !== "object" || Array.isArray(detalhamento)) return null
+  const provenance = (detalhamento as Record<string, unknown>).proveniencia
+  if (!provenance || typeof provenance !== "object" || Array.isArray(provenance)) return null
+  const p = provenance as Record<string, unknown>
+  if (p.tipo === "camara-cota-csv") {
+    const revisions = Array.isArray(p.source_revisions) ? p.source_revisions : []
+    const revision = revisions.find((item) => item && typeof item === "object" && (item as Record<string, unknown>).year === rowYear)
+    const url = revision && typeof (revision as Record<string, unknown>).url === "string" ? (revision as Record<string, unknown>).url as string : ""
+    return url === `https://www.camara.leg.br/cotas/Ano-${rowYear}.csv.zip` ? url : null
+  }
+  const url = typeof p.fonte_url === "string" ? p.fonte_url : ""
+  return /^https:\/\/dadosabertos\.camara\.leg\.br\/api\/v2\/deputados\/\d+\/despesas$/.test(url) ? url : null
 }
 
 function publicGastosParlamentares(row: FichaCandidato["gastos_parlamentares"][number], index: number) {

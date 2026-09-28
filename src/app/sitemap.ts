@@ -3,6 +3,7 @@ import { rankingDefinitions } from "@/data/ranking-definitions"
 import { getCandidatosResource, getEstadoUFs } from "@/lib/api"
 import { parseMetadataDate, SITE_ORIGIN } from "@/lib/metadata"
 import { isSenadoEnabled } from "@/lib/senado-feature"
+import { IMPRENSA_UFS } from "@/lib/imprensa-uf-pack"
 
 // A flag de publicação pode mudar sem regenerar o artefato. O sitemap precisa
 // avaliar a coorte no request para não servir URLs do Senado depois do OFF.
@@ -56,6 +57,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: "weekly" as const,
     priority: 0.5,
   }))
+  const imprensaUfUrls = IMPRENSA_UFS.map((uf) => ({
+    url: `${SITE_ORIGIN}/imprensa/uf/${uf.toLowerCase()}`,
+    changeFrequency: "weekly" as const,
+    priority: 0.55,
+  }))
   const senadoUrls = isSenadoEnabled()
     ? [
         {
@@ -72,6 +78,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     : []
 
   return [
+    {
+      url: `${SITE_ORIGIN}/imprensa`,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${SITE_ORIGIN}/imprensa/kit`,
+      changeFrequency: "monthly",
+      priority: 0.4,
+    },
+    {
+      url: `${SITE_ORIGIN}/dados-abertos`,
+      changeFrequency: "daily",
+      priority: 0.4,
+    },
+    {
+      url: `${SITE_ORIGIN}/imprensa/atualizacoes`,
+      changeFrequency: "daily",
+      priority: 0.4,
+    },
+    {
+      url: `${SITE_ORIGIN}/imprensa/frescor`,
+      changeFrequency: "daily",
+      priority: 0.3,
+    },
+    ...imprensaUfUrls,
     {
       url: SITE_ORIGIN,
       changeFrequency: "daily",

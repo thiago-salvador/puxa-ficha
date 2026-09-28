@@ -31,6 +31,7 @@ test("ausência confirmada cita o arquivo e o hash do comprovante validado", asy
     complemento_url: proof.complement_url,
     complemento_sha256: proof.complement_sha256,
     fonte_data: "15/09/2026",
+    consulted_at: proof.consulted_at,
   })
 })
 

@@ -1,0 +1,145 @@
+.shell {
+  --ink: #111111;
+  --paper: #f7f6f2;
+  --rule: #d9d7d0;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+.hero {
+  background: var(--ink);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.eyebrow {
+  color: #7fd4a8;
+  font: 700 11px/1.2 var(--font-inter), sans-serif;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.heroInner,
+.content {
+  margin: 0 auto;
+  max-width: 1080px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.heroInner {
+  padding-bottom: 56px;
+  padding-top: 88px;
+}
+
+.heroTitle {
+  font: 400 clamp(2.5rem, 7vw, 5rem)/.9 var(--font-anton), sans-serif;
+  letter-spacing: -.03em;
+  margin: 10px 0 0;
+  max-width: 820px;
+  text-transform: uppercase;
+}
+
+.heroCopy {
+  color: #d8d8d8;
+  font-size: 16px;
+  line-height: 1.55;
+  margin: 20px 0 0;
+  max-width: 640px;
+}
+
+.content {
+  padding-bottom: 72px;
+  padding-top: 40px;
+}
+
+.utilityLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 24px;
+}
+
+.utilityLinks a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #aaa;
+  text-underline-offset: 3px;
+}
+
+.downloadRow {
+  background: #fff;
+  border: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+  padding: 20px;
+}
+
+.downloadButton {
+  background: var(--ink);
+  border-radius: 4px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  padding: 12px 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.downloadButton:focus-visible {
+  outline: 3px solid #7fd4a8;
+  outline-offset: 2px;
+}
+
+.meta {
+  color: #666;
+  font-size: 13px;
+}
+
+.dictionary {
+  border-top: 1px solid var(--rule);
+  color: #444;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 48px;
+  padding-top: 24px;
+}
+
+.dictionary dl {
+  display: grid;
+  gap: 12px 24px;
+  margin-top: 16px;
+}
+
+@media (min-width: 640px) {
+  .dictionary dl { grid-template-columns: 1fr 1fr; }
+}
+
+.dictionary dt {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.license {
+  background: #fff;
+  border: 1px solid var(--rule);
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 28px;
+  padding: 20px;
+}
+
+@media (max-width: 700px) {
+  .heroInner { padding-bottom: 40px; padding-top: 64px; }
+  .content { padding-bottom: 48px; padding-top: 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shell *, .shell *::before, .shell *::after { transition-duration: .01ms !important; }
+}
