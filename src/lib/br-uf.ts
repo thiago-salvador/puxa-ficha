@@ -72,6 +72,55 @@ export function getEstadoNome(uf: string): string | null {
   return isBrUf(normalized) ? UF_NAMES[normalized] : null
 }
 
+/**
+ * Artigo que o nome de cada estado leva ("da Bahia", "do Rio de Janeiro",
+ * "de São Paulo"). Tabela explícita: não há regra derivável do nome, e
+ * Mato Grosso e Mato Grosso do Sul seguem o uso oficial sem artigo.
+ */
+const UF_ARTIGOS: Record<BrUf, "o" | "a" | null> = {
+  ac: "o",
+  al: null,
+  am: "o",
+  ap: "o",
+  ba: "a",
+  ce: "o",
+  df: "o",
+  es: "o",
+  go: null,
+  ma: "o",
+  mg: null,
+  ms: null,
+  mt: null,
+  pa: "o",
+  pb: "a",
+  pe: null,
+  pi: "o",
+  pr: "o",
+  rj: "o",
+  rn: "o",
+  ro: null,
+  rr: null,
+  rs: "o",
+  sc: null,
+  se: null,
+  sp: null,
+  to: "o",
+}
+
+const CONTRACOES = {
+  de: { o: "do", a: "da" },
+  em: { o: "no", a: "na" },
+} as const
+
+/** Nome do estado com a preposição contraída: "da Bahia", "no Rio de Janeiro". */
+export function getEstadoComPreposicao(uf: string, preposicao: "de" | "em"): string | null {
+  const normalized = normalizeBrUfToken(uf)
+  if (!isBrUf(normalized)) return null
+  const artigo = UF_ARTIGOS[normalized]
+  const forma = artigo ? CONTRACOES[preposicao][artigo] : preposicao
+  return `${forma} ${UF_NAMES[normalized]}`
+}
+
 export function getEstadoUFs(): BrUf[] {
   return [...UF_ORDER]
 }

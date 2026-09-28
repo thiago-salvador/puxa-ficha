@@ -1,8 +1,10 @@
+// cspell:words Preposicao
 import { Suspense, lazy } from "react"
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { notFound, permanentRedirect } from "next/navigation"
+import { getEstadoComPreposicao } from "@/lib/br-uf"
 import { ArrowLeft } from "lucide-react"
 import { CandidatoGrid } from "@/components/CandidatoGrid"
 import { buildCandidatoGridMaps } from "@/lib/candidato-grid-maps"
@@ -37,14 +39,15 @@ export async function generateMetadata({ params }: { params: Promise<{ uf: strin
   const { uf } = await params
   const nome = getEstadoNome(uf)
   if (!nome || !isSenadoEnabled()) return {}
+  const noEstado = getEstadoComPreposicao(uf, "em")
   const canonical = `/uf/${uf.toLowerCase()}/senado`
-  const title = `Eleições 2026: Senado em ${nome} (${uf.toUpperCase()}) | Puxa Ficha`
-  const description = `Candidaturas ao Senado em ${nome}: duas vagas, dois votos e sem segundo turno, com fontes e limites de cobertura.`
+  const title = `Eleições 2026: Senado ${noEstado} (${uf.toUpperCase()}) | Puxa Ficha`
+  const description = `Candidaturas ao Senado ${noEstado}: duas vagas, dois votos e sem segundo turno, com fontes e limites de cobertura.`
   return {
     title,
     description,
     alternates: { canonical },
-    openGraph: { title, description, url: buildAbsoluteUrl(canonical), images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: `Senado em ${nome}` }] },
+    openGraph: { title, description, url: buildAbsoluteUrl(canonical), images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: `Senado ${noEstado}` }] },
     twitter: buildTwitterMetadata({ title, description, image: "/opengraph-image" }),
   }
 }
@@ -72,12 +75,13 @@ export default async function SenadoUfPage({ params }: { params: Promise<{ uf: s
       .then(() => ({ data: loadSenadoPolls(uf), unavailable: false }))
       .catch(() => ({ data: [], unavailable: true })),
   ])
-  const title = `Senado em ${nome}`
+  const noEstado = getEstadoComPreposicao(uf, "em")
+  const title = `Senado ${noEstado}`
   const canonical = `/uf/${uf}/senado`
 
   return (
     <div className="min-h-screen bg-background">
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "CollectionPage", name: title, url: buildAbsoluteUrl(canonical), description: `Candidaturas ao Senado em ${nome}.` }} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "CollectionPage", name: title, url: buildAbsoluteUrl(canonical), description: `Candidaturas ao Senado ${noEstado}.` }} />
       <section className="relative overflow-hidden bg-black">
         <div className="absolute inset-0 opacity-30" aria-hidden="true"><Image src="/images/governadores-hero.webp" alt="" fill sizes="100vw" className="object-cover grayscale" /></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/50" />
@@ -98,7 +102,7 @@ export default async function SenadoUfPage({ params }: { params: Promise<{ uf: s
       </section>
       <section id="candidatos" className="mx-auto max-w-7xl scroll-mt-24 px-5 pt-12 md:px-12 lg:pt-20">
         <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em]">Senado · {uf.toUpperCase()}</p>
-        <h2 className="mt-1 font-heading uppercase leading-[0.95] text-foreground" style={{ fontSize: "clamp(28px, 5vw, 48px)" }}>Candidatos em {nome}</h2>
+        <h2 className="mt-1 font-heading uppercase leading-[0.95] text-foreground" style={{ fontSize: "clamp(28px, 5vw, 48px)" }}>Candidatos {noEstado}</h2>
         <SlashDivider className="mt-6 mb-8 sm:mt-8 sm:mb-10" />
       </section>
       {candidatos.length > 0 ? (
@@ -136,7 +140,7 @@ export default async function SenadoUfPage({ params }: { params: Promise<{ uf: s
           <Suspense fallback={<p className="mx-auto max-w-7xl px-5 py-10 text-center text-muted-foreground md:px-12">Carregando comparador...</p>}><ComparadorPanel candidatos={comparaveis} referenceNow={new Date().toISOString()} /></Suspense>
         </>
       )}
-      <section className="mx-auto max-w-7xl px-5 py-12 md:px-12"><Link href={`/uf/${uf}`} className="font-semibold text-foreground underline">Ver candidatos a governador em {nome}</Link></section>
+      <section className="mx-auto max-w-7xl px-5 py-12 md:px-12"><Link href={`/uf/${uf}`} className="font-semibold text-foreground underline">Ver candidatos a governador {noEstado}</Link></section>
       <Footer />
     </div>
   )
