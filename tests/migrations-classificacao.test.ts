@@ -511,7 +511,8 @@ describe("classificador puro (#136)", () => {
     // Despublicacao em projetos_lei e curadorias de dr-daniel e pedro-cunha-lima (20260927040000/0100/0200): --gate PG17 mediu 423 + 105 = 528.
     // Schema da fase eleitoral (20260927050000): --gate PG17 mediu 424 + 105 = 529.
     // Processos da curadoria e patrimonio 2026 pelo pacote TSE (20260927060000/0100): --gate PG17 mediu 426 + 105 = 531.
-    assert.equal(manifesto.aplicadas_esperadas, 426)
+    // A nova migration adiciona curadoria de dados; confirmar a linha pelo gate PG17.
+    assert.equal(manifesto.aplicadas_esperadas, 427)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
@@ -571,6 +572,21 @@ describe("classificador puro (#136)", () => {
       "o hash do pg_dump exige imagem Postgres presa a digest"
     )
     assert.match(workflow, /pull_request/, "o gate tem que rodar em PR")
+  })
+
+  test("processos do Senado permanecem curadoria guardada sem schema", () => {
+    const migration = readFileSync(
+      join("supabase", "migrations", "20260928010000_processos_l13_senado.sql"),
+      "utf8"
+    )
+    const classificacao = classificarMigration("20260928010000_processos_l13_senado.sql", migration)
+    assert.equal(classificacao.classe, "curadoria")
+    assert.equal(classificacao.replay, "replicavel")
+    assert.equal(classificacao.temGuard, true)
+    assert.equal(
+      TODAS_COM_REPLAY_SCHEMA.find((item) => item.arquivo === "20260928010000_processos_l13_senado.sql")?.replaySchema,
+      false,
+    )
   })
 
   test("o delta do comparar é canônico: lado e conteúdo exatos (rodada 3)", () => {
