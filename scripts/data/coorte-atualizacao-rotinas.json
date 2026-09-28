@@ -34,6 +34,7 @@
     "gitleaks.yml": "varredura de segredos",
     "ledger-guard.yml": "confere ledger de migrations contra o repositório",
     "production-deployment-check.yml": "confere o deploy de produção",
+    "deploy-vigia.yml": "redispara deploy e smoke de produção quando o merge não gerou nenhum",
     "rehash-doador-cpf-v2.yml": "rehash de hash de CPF de doadores; manutenção de chave, não coleta",
     "replay-migrations.yml": "replay descartável de migrations em PG17",
     "revalidate-cache.yml": "revalida cache do site; não coleta dado",
