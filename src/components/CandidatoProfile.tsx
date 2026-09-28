@@ -22,9 +22,8 @@ import { resolvePatrimonioEleicoes } from "@/lib/public-profile-dto"
 import {
   estadoValorPatrimonio,
   patrimonioMaisRecenteSemEscolhaArbitraria,
-  patrimonioPorAnoSemAmbiguidade,
   patrimonioValorEstadoLabel,
-  variacaoPatrimonialPct,
+  variacaoPatrimonialDaFicha,
 } from "@/lib/patrimonio-contexto"
 import {
   groupProcessosForDisplay,
@@ -703,20 +702,16 @@ export function CandidatoProfile({
 
   const latestPatrimonioContexto = patrimonioMaisRecenteSemEscolhaArbitraria(patrimonio)
   const latestPatrimonio = latestPatrimonioContexto.patrimonio
-  const patrimonioSerieAnual = patrimonioPorAnoSemAmbiguidade(patrimonio)
-
   // Sem base positiva e informada não há porcentagem: 0 -> X não é "↓ 0%".
-  const patrimonioVariacao =
-    latestPatrimonio && patrimonioSerieAnual.length >= 2
-      ? (() => {
-          const sorted = [...patrimonioSerieAnual].sort((a, b) => b.ano_eleicao - a.ano_eleicao)
-          const latest = sorted[0]
-          const prev = sorted[1]
-          const pct = variacaoPatrimonialPct(prev, latest)
-          if (pct === null) return null
-          return { pct: Math.round(pct), from: prev.ano_eleicao, to: latest.ano_eleicao }
-        })()
-      : null
+  // Mesma regra do export de imprensa (variacaoPatrimonialDaFicha).
+  const patrimonioVariacaoDaFicha = variacaoPatrimonialDaFicha(patrimonio)
+  const patrimonioVariacao = patrimonioVariacaoDaFicha
+    ? {
+        pct: patrimonioVariacaoDaFicha.pct,
+        from: patrimonioVariacaoDaFicha.anterior.ano_eleicao,
+        to: patrimonioVariacaoDaFicha.atual.ano_eleicao,
+      }
+    : null
   const latestPatrimonioEstado = latestPatrimonio ? estadoValorPatrimonio(latestPatrimonio) : null
   const latestPatrimonioEstadoLabel = latestPatrimonioEstado
     ? patrimonioValorEstadoLabel(latestPatrimonioEstado)

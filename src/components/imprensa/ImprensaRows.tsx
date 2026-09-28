@@ -9,9 +9,10 @@ import styles from "@/app/(site)/imprensa/imprensa.module.css"
 
 // cspell:ignore ocorrencias publishability
 
-type Row = Omit<ImprensaRow, "sites" | "processos"> & {
+type Row = Omit<ImprensaRow, "sites" | "processos" | "gastos"> & {
   sites: Omit<ImprensaRow["sites"], "ocorrencias">
   processos: Omit<ImprensaRow["processos"], "ocorrencias">
+  gastos: Omit<ImprensaRow["gastos"], "anos">
 }
 
 function labelState(state: string): string {

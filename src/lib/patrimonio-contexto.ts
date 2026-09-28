@@ -127,6 +127,26 @@ export function patrimonioMaisRecenteSemEscolhaArbitraria(rows: readonly Patrimo
   }
 }
 
+/**
+ * Comparação entre as duas últimas declarações que a ficha mostra no card de
+ * patrimônio: só quando a declaração mais recente é única e a série anual sem
+ * ambiguidade tem uma base comparável. Fonte única para a ficha e o export de
+ * imprensa.
+ */
+export function variacaoPatrimonialDaFicha(rows: readonly Patrimonio[]): {
+  pct: number
+  anterior: Patrimonio
+  atual: Patrimonio
+} | null {
+  if (!patrimonioMaisRecenteSemEscolhaArbitraria(rows).patrimonio) return null
+  const serie = patrimonioPorAnoSemAmbiguidade(rows)
+  if (serie.length < 2) return null
+  const sorted = [...serie].sort((a, b) => b.ano_eleicao - a.ano_eleicao)
+  const pct = variacaoPatrimonialPct(sorted[1], sorted[0])
+  if (pct === null) return null
+  return { pct: Math.round(pct), anterior: sorted[1], atual: sorted[0] }
+}
+
 export function patrimonioContextoLabel(row: Pick<Patrimonio, "ano_eleicao" | "cargo_candidatura" | "tipo_eleicao">): string {
   const cargo = row.cargo_candidatura?.trim()
   const tipo = row.tipo_eleicao?.toLocaleLowerCase("pt-BR").replace(/^eleição\s+/, "")

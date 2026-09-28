@@ -50,6 +50,19 @@ function dataset(): ImprensaDataset {
         quantidade: null,
         ocorrencias: [{ numero: "1", tipo: "civil", tribunal: "TJ", urlFonte: "https://tribunal.example/processo/1", fonteNivel: "oficial", dataInicio: "2020-01-01", dataDecisao: null }],
       },
+      patrimonio: { estado: "publicado", ano: 2026, total: 0, valorEstado: "sem_bens_declarados", anoAnterior: null, totalAnterior: null, variacaoPct: null, fonteUrl: "https://dadosabertos.tse.jus.br/dataset/candidatos-2026" },
+      gastos: {
+        estado: "publicado",
+        ultimoAno: 2025,
+        ultimoAnoTotal: 1234.5,
+        anosEmRevisao: [2024],
+        anos: [
+          { ano: 2025, casa: "camara", total: 1234.5, fonteUrl: "https://www.camara.leg.br/cotas/Ano-2025.csv.zip" },
+          { ano: 2023, casa: "senado", total: 99, fonteUrl: null },
+        ],
+      },
+      tcu: { estado: "nao_verificado", registros: null, consultadoEm: null, fonteUrl: null },
+      sancoes: { estado: "vazio-confirmado", quantidade: 0, consultadoEm: "2026-09-20T10:00:00.000Z", fonteUrl: "https://api.portaldatransparencia.gov.br/api-de-dados/ceis" },
     }],
   }
 }
@@ -126,4 +139,63 @@ test("CSV e JSON levam a situação oficial do vice que a ficha mostra", () => {
   assert.match(csv, /"chapa_vice_situacao","chapa_vice_situacao_fonte_url"/)
   assert.match(csv, /"Inapto no TSE","https:\/\/divulgacandcontas\.tse\.jus\.br\//)
   assert.deepEqual(JSON.parse(serializeImprensaJson(value)).rows[0].chapa.viceSituacao, situacao)
+})
+
+function parseCsv(text: string): string[][] {
+  const rows: string[][] = [[]]
+  let cell = ""
+  let quoted = false
+  for (let index = 0; index < text.length; index += 1) {
+    const char = text[index]
+    if (quoted) {
+      if (char === '"' && text[index + 1] === '"') { cell += '"'; index += 1 }
+      else if (char === '"') quoted = false
+      else cell += char
+    } else if (char === '"') quoted = true
+    else if (char === ",") { rows.at(-1)!.push(cell); cell = "" }
+    else if (char === "\r" && text[index + 1] === "\n") { rows.at(-1)!.push(cell); cell = ""; rows.push([]); index += 1 }
+    else cell += char
+  }
+  if (rows.at(-1)!.length === 0 && cell === "") rows.pop()
+  return rows
+}
+
+test("famílias da ficha: zero declarado, verificado e não verificado não se confundem", () => {
+  const csv = serializeImprensaCsv(dataset())
+  const [columns, cells] = parseCsv(csv.replace(/^\ufeff/, ""))
+  const value = (column: string) => cells[columns.indexOf(column)]
+  // Colunas novas ficam no fim, antes só do aviso.
+  assert.deepEqual(columns.slice(-21, -1), [
+    "patrimonio_estado", "patrimonio_ano", "patrimonio_total", "patrimonio_valor_estado", "patrimonio_ano_anterior",
+    "patrimonio_total_anterior", "patrimonio_variacao_pct", "patrimonio_fonte_url", "gastos_estado", "gastos_ultimo_ano",
+    "gastos_ultimo_ano_total", "gastos_anos_em_revisao", "tcu_estado", "tcu_registros", "tcu_consultado_em", "tcu_fonte_url",
+    "sancoes_estado", "sancoes_quantidade", "sancoes_consultado_em", "sancoes_fonte_url",
+  ])
+  assert.equal(value("patrimonio_total"), "0")
+  assert.equal(value("patrimonio_valor_estado"), "sem_bens_declarados")
+  assert.equal(value("patrimonio_variacao_pct"), "")
+  assert.equal(value("gastos_ultimo_ano_total"), "1234.5")
+  assert.equal(value("gastos_anos_em_revisao"), "2024")
+  assert.equal(value("tcu_estado"), "nao_verificado")
+  assert.equal(value("tcu_registros"), "")
+  assert.equal(value("sancoes_quantidade"), "0")
+
+  const json = JSON.parse(serializeImprensaJson(dataset()))
+  assert.equal(json.version, "2")
+  assert.equal(json.rows[0].tcu.registros, null)
+  assert.equal(json.rows[0].sancoes.quantidade, 0)
+  assert.equal(json.rows[0].gastos.anos, undefined, "linhas anuais só no export longo")
+})
+
+test("export longo de gastos: uma linha por ano e casa, com fonte ou null", () => {
+  const rows = buildImprensaLongRows(dataset(), "gastos")
+  assert.deepEqual(rows, [
+    { slug: "joao-da-silva", ano: 2025, casa: "camara", total: 1234.5, fonte_url: "https://www.camara.leg.br/cotas/Ano-2025.csv.zip" },
+    { slug: "joao-da-silva", ano: 2023, casa: "senado", total: 99, fonte_url: null },
+  ])
+  const csv = serializeImprensaLongCsv(dataset(), "gastos")
+  const lines = csv.replace(/^\ufeff/, "").trim().split("\r\n")
+  assert.equal(lines[0], '"version","generated_at","cargo_filtro","uf_filtro","slug","ano","casa","total","fonte_url","aviso"')
+  assert.equal(lines.length, 3)
+  assert.ok(lines[2].includes('"senado","99",,'), "fonte ausente é célula vazia, não texto inventado")
 })

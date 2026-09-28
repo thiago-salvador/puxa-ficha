@@ -13,9 +13,10 @@ const IMPRENSA_DATASET_TAG = "public-candidato-ficha"
 // A flag do Senado faz parte da identidade de todo cache público (ver api.ts).
 const SENADO_CACHE_VARIANT = isSenadoEnabled() ? "senado-on" : "senado-off"
 
-export type ImprensaPageRow = Omit<ImprensaRow, "sites" | "processos"> & {
+export type ImprensaPageRow = Omit<ImprensaRow, "sites" | "processos" | "gastos"> & {
   sites: Omit<ImprensaRow["sites"], "ocorrencias">
   processos: Omit<ImprensaRow["processos"], "ocorrencias">
+  gastos: Omit<ImprensaRow["gastos"], "anos">
 }
 
 export type ImprensaPageDataset = Omit<ImprensaDataset, "rows"> & {
@@ -25,12 +26,14 @@ export type ImprensaPageDataset = Omit<ImprensaDataset, "rows"> & {
 function toPageDataset(dataset: ImprensaDataset): ImprensaPageDataset {
   return {
     ...dataset,
-    rows: dataset.rows.map(({ sites, processos, ...row }) => {
+    rows: dataset.rows.map(({ sites, processos, gastos, ...row }) => {
       const { ocorrencias: sitesOccurrences, ...sitesSummary } = sites
       const { ocorrencias: processOccurrences, ...processesSummary } = processos
+      const { anos: gastosAnos, ...gastosSummary } = gastos
       void sitesOccurrences
       void processOccurrences
-      return { ...row, sites: sitesSummary, processos: processesSummary }
+      void gastosAnos
+      return { ...row, sites: sitesSummary, processos: processesSummary, gastos: gastosSummary }
     }),
   }
 }
@@ -43,7 +46,7 @@ function toPageDataset(dataset: ImprensaDataset): ImprensaPageDataset {
 const getCachedImprensaDataset = unstableCacheWithSingleFlight(
   async (cargo: string | null, uf: string | null): Promise<ImprensaPageDataset> =>
     toPageDataset(await getImprensaDataset({ cargo, uf })),
-  ["imprensa-dataset-v5", SENADO_CACHE_VARIANT],
+  ["imprensa-dataset-v6", SENADO_CACHE_VARIANT],
   { revalidate: IMPRENSA_DATASET_REVALIDATE_SECONDS, tags: [IMPRENSA_DATASET_TAG] },
 )
 

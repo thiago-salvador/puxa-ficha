@@ -1,6 +1,19 @@
 import "server-only"
 
-import { getCandidatoSlugStaticParams } from "@/lib/api"
+import { getCandidatoSlugStaticParams, projectColetaVerificacaoRow, projectTCUVerificacaoRow, type ColetaVerificacaoRow } from "@/lib/api"
+import { getCanonicalPerson } from "@/lib/canonical-person-map"
+import { fonteDadosAbertosPatrimonioTse } from "@/lib/evolucao-patrimonial"
+import { anosGastosParlamentaresEmRevisao, gastoParlamentarEmRevisao } from "@/lib/gastos-parlamentares-em-revisao"
+import {
+  estadoValorPatrimonio,
+  parseValorPatrimonio,
+  patrimonioMaisRecenteSemEscolhaArbitraria,
+  variacaoPatrimonialDaFicha,
+  type PatrimonioValorEstado,
+} from "@/lib/patrimonio-contexto"
+import { normalizePatrimonioForDisplay } from "@/lib/person-level-dedupe"
+import { casaParlamentarDaFonte, fonteUrlGastoParlamentar, gastoParlamentarExibivel } from "@/lib/public-profile-dto"
+import { resolverEstadoSancoes, type EstadoSancoes } from "@/lib/sancoes-verificacao"
 import { getCandidateSitesTseBySlug } from "@/lib/candidate-sites-data"
 import { getCitableCandidateSites } from "@/lib/candidate-sites-proof"
 import { nivelFonteProcesso, urlFonteJudicialEspecifica, urlPublicaDoProcesso, type FonteProcessoNivel } from "@/lib/djen-consulta-url"
@@ -10,7 +23,7 @@ import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 import { formatDisplayName } from "@/lib/display-name"
 import { loadSenadoRunningMates } from "@/lib/senado-running-mates"
 import { verifiedViceStatus } from "@/lib/vice-official-status"
-import type { Chapa2026 } from "@/lib/types"
+import type { Chapa2026, Patrimonio, TCUVerificacao } from "@/lib/types"
 
 export interface ImprensaFilters {
   cargo: string | null
@@ -66,6 +79,43 @@ export interface ImprensaRow {
       dataDecisao: string | null
     }[]
   }
+  /**
+   * Card "Patrimônio" da ficha: declaração mais recente única, com a mesma
+   * leitura de valor (zero declarado x valor não informado) e a mesma
+   * variação entre as duas últimas declarações comparáveis.
+   */
+  patrimonio: {
+    estado: "publicado" | "valor_nao_informado" | "multiplas_declaracoes" | "sem_dado"
+    ano: number | null
+    total: number | null
+    valorEstado: PatrimonioValorEstado | null
+    anoAnterior: number | null
+    totalAnterior: number | null
+    variacaoPct: number | null
+    fonteUrl: string | null
+  }
+  /** Linhas de cota parlamentar que a ficha exibe, já sem os anos em revisão. */
+  gastos: {
+    estado: "publicado" | "sem_dado"
+    ultimoAno: number | null
+    ultimoAnoTotal: number | null
+    anosEmRevisao: number[]
+    anos: { ano: number; casa: "camara" | "senado" | null; total: number; fonteUrl: string | null }[]
+  }
+  /** Recibo da consulta TCU como a ficha mostra; sem recibo é "nao_verificado". */
+  tcu: {
+    estado: TCUVerificacao["estado"] | "nao_verificado"
+    registros: number | null
+    consultadoEm: string | null
+    fonteUrl: string | null
+  }
+  /** Bloco "Sanções administrativas" (CEIS, CNEP, CEAF) da ficha. */
+  sancoes: {
+    estado: EstadoSancoes
+    quantidade: number | null
+    consultadoEm: string | null
+    fonteUrl: string | null
+  }
 }
 
 export interface ImprensaDataset {
@@ -114,6 +164,20 @@ type ChapaRow = Partial<Pick<Chapa2026, "uf" | "titular_sq_candidato" | "vice_sq
   snapshot_em?: string | null
 }
 
+type PatrimonioRow = Patrimonio & { despublicado_em?: string | null }
+
+type GastoRow = {
+  candidato_id: string
+  ano: number
+  total_gasto: number | string | null
+  fonte: string | null
+  detalhamento: unknown
+}
+
+type SancaoRow = { candidato_id: string; id?: string }
+
+type ColetaReceiptRow = ColetaVerificacaoRow & { alvo?: string | null }
+
 type ImprensaDependencies = {
   loadSlugs: typeof getCandidatoSlugStaticParams
   loadCandidates: (slugs: string[]) => Promise<CandidateRow[]>
@@ -122,6 +186,10 @@ type ImprensaDependencies = {
   loadChapas: (candidateIds: string[]) => Promise<ChapaRow[]>
   loadSenadoRunningMates: typeof loadSenadoRunningMates
   loadSites: typeof getCandidateSitesTseBySlug
+  loadPatrimonio: (candidateIds: string[]) => Promise<PatrimonioRow[]>
+  loadGastos: (candidateIds: string[]) => Promise<GastoRow[]>
+  loadSancoes: (candidateIds: string[]) => Promise<SancaoRow[]>
+  loadColetaReceipts: (fonte: "tcu" | "transparencia-sanctions", slugs: string[]) => Promise<ColetaReceiptRow[]>
 }
 
 const PAGE_SIZE = 500
@@ -255,7 +323,65 @@ function defaultDependencies(): ImprensaDependencies {
       return rows
     },
     loadSites: getCandidateSitesTseBySlug,
+    // Mesmas tabelas, cliente e filtros de getCandidatoBySlugResource
+    // (src/lib/api.ts), lidos em lote por candidato_id.
+    loadPatrimonio: (candidateIds) => loadByCandidateIds<PatrimonioRow>(
+      "patrimonio",
+      "id,candidato_id,ano_eleicao,valor_total,bens,ano_arquivo,sq_candidato,uf_candidatura,cargo_candidatura,data_eleicao,tipo_eleicao",
+      candidateIds,
+      { onlyPublished: true },
+    ),
+    loadGastos: (candidateIds) => loadByCandidateIds<GastoRow>(
+      "gastos_parlamentares",
+      "id,candidato_id,ano,total_gasto,fonte,detalhamento",
+      candidateIds,
+    ),
+    loadSancoes: (candidateIds) => loadByCandidateIds<SancaoRow>("sancoes_administrativas", "id,candidato_id", candidateIds),
+    loadColetaReceipts: async (fonte, slugs) => {
+      if (!slugs.length) return []
+      const client = createServiceRoleSupabaseClient({ cacheMode: "no-store" })
+      const rows: ColetaReceiptRow[] = []
+      for (let start = 0; start < slugs.length; start += PROCESS_BATCH_SIZE) {
+        const result = await client
+          .from("coleta_log_ultima")
+          .select("candidato_id,alvo,fonte,resultado,executado_em,volume,detalhe,url,escopo")
+          .eq("fonte", fonte)
+          .eq("escopo", "candidato")
+          .in("alvo", slugs.slice(start, start + PROCESS_BATCH_SIZE))
+          .abortSignal(supabaseQueryTimeoutSignal())
+        if (result.error) throw new Error(`coleta_log_ultima(${fonte}): ${result.error.message}`)
+        if (!Array.isArray(result.data)) throw new Error(`coleta_log_ultima(${fonte}): resposta inválida`)
+        rows.push(...(result.data as ColetaReceiptRow[]))
+      }
+      return rows
+    },
   }
+}
+
+async function loadByCandidateIds<T>(
+  table: string,
+  columns: string,
+  candidateIds: string[],
+  options: { onlyPublished?: boolean } = {},
+): Promise<T[]> {
+  const client = createServerSupabaseClient({ cacheMode: "no-store" })
+  const rows: T[] = []
+  for (let start = 0; start < candidateIds.length; start += PROCESS_BATCH_SIZE) {
+    const ids = candidateIds.slice(start, start + PROCESS_BATCH_SIZE)
+    for (let offset = 0; ; offset += PAGE_SIZE) {
+      const base = client.from(table).select(columns).in("candidato_id", ids)
+      const result = await (options.onlyPublished ? base.is("despublicado_em", null) : base)
+        .order("candidato_id", { ascending: true })
+        .order("id", { ascending: true })
+        .range(offset, offset + PAGE_SIZE - 1)
+        .abortSignal(supabaseQueryTimeoutSignal())
+      if (result.error) throw new Error(`${table}: ${result.error.message}`)
+      if (!Array.isArray(result.data)) throw new Error(`${table}: resposta inválida`)
+      rows.push(...(result.data as unknown as T[]))
+      if (result.data.length < PAGE_SIZE) break
+    }
+  }
+  return rows
 }
 
 let testDependencies: ImprensaDependencies | null = null
@@ -271,7 +397,18 @@ export function __setImprensaDataDependenciesForTests(
   const defaults = defaultDependencies()
   // Existing focused fixtures predate the receipt projection. A fixture that
   // does not provide receipts explicitly represents "nao_buscado".
-  testDependencies = { ...defaults, loadProcessReceipts: async () => [], loadSenadoRunningMates: async () => ({ data: {}, absence: {}, unavailable: false }), ...dependencies }
+  // The same applies to the ficha families added later: a fixture that does
+  // not provide them represents "sem_dado" / "nao_verificado", never a DB call.
+  testDependencies = {
+    ...defaults,
+    loadProcessReceipts: async () => [],
+    loadSenadoRunningMates: async () => ({ data: {}, absence: {}, unavailable: false }),
+    loadPatrimonio: async () => [],
+    loadGastos: async () => [],
+    loadSancoes: async () => [],
+    loadColetaReceipts: async () => [],
+    ...dependencies,
+  }
 }
 
 let testNow: (() => Date) | null = null
@@ -368,6 +505,94 @@ function mapChapa(rows: ChapaRow[]): ImprensaRow["chapa"] {
   return { estado: "publicado", suplentesEstado: "nao_aplicavel", viceNome: formatDisplayName(viceNomeOriginal), viceNomeOriginal, viceSituacao, suplentes: [], fonteUrl, fonteSha256, snapshotEm }
 }
 
+/**
+ * Card "Patrimônio" da ficha (CandidatoProfile): a declaração mais recente só
+ * vale quando é única no ano; zero que é ausência de valor sai sem número; a
+ * variação é a de `variacaoPatrimonialDaFicha`, a mesma função da ficha.
+ */
+export function mapPatrimonio(rows: readonly Patrimonio[]): ImprensaRow["patrimonio"] {
+  const vazio: ImprensaRow["patrimonio"] = {
+    estado: "sem_dado", ano: null, total: null, valorEstado: null, anoAnterior: null, totalAnterior: null, variacaoPct: null, fonteUrl: null,
+  }
+  const contexto = patrimonioMaisRecenteSemEscolhaArbitraria(rows)
+  if (contexto.ano === null) return vazio
+  const atual = contexto.patrimonio
+  if (!atual) return { ...vazio, estado: "multiplas_declaracoes", ano: contexto.ano, fonteUrl: fonteDadosAbertosPatrimonioTse(contexto.ano) }
+  const valorEstado = estadoValorPatrimonio(atual)
+  const variacao = variacaoPatrimonialDaFicha(rows)
+  return {
+    estado: valorEstado === "valor_nao_informado" ? "valor_nao_informado" : "publicado",
+    ano: atual.ano_eleicao,
+    total: valorEstado === "valor_nao_informado" ? null : parseValorPatrimonio(atual.valor_total),
+    valorEstado,
+    anoAnterior: variacao?.anterior.ano_eleicao ?? null,
+    totalAnterior: variacao ? parseValorPatrimonio(variacao.anterior.valor_total) : null,
+    variacaoPct: variacao?.pct ?? null,
+    fonteUrl: fonteDadosAbertosPatrimonioTse(atual.ano_eleicao),
+  }
+}
+
+/**
+ * Mesmos dois filtros que a ficha aplica antes de exibir a cota: ano em
+ * revisão fica fora (api.ts) e só entra a linha que `gastoParlamentarExibivel`
+ * aprova (public-profile-dto.ts). Sem linha exibível o total é null, nunca 0.
+ */
+export function mapGastos(slug: string, rows: readonly GastoRow[]): ImprensaRow["gastos"] {
+  const anos = rows
+    .filter((row) => !gastoParlamentarEmRevisao(slug, row.ano))
+    .filter((row) => gastoParlamentarExibivel(row.fonte, row.detalhamento, row.ano, row.total_gasto as number))
+    .map((row) => ({
+      ano: row.ano,
+      casa: casaParlamentarDaFonte(row.fonte),
+      total: Number(row.total_gasto),
+      fonteUrl: fonteUrlGastoParlamentar(row.detalhamento, row.ano),
+    }))
+    .sort((a, b) => b.ano - a.ano)
+  const anosEmRevisao = anosGastosParlamentaresEmRevisao(slug)
+  if (!anos.length) return { estado: "sem_dado", ultimoAno: null, ultimoAnoTotal: null, anosEmRevisao, anos }
+  const ultimoAno = anos[0].ano
+  const ultimoAnoTotal = anos.filter((item) => item.ano === ultimoAno).reduce((sum, item) => sum + item.total, 0)
+  return { estado: "publicado", ultimoAno, ultimoAnoTotal, anosEmRevisao, anos }
+}
+
+/** Recibo `tcu` projetado por `projectTCUVerificacaoRow`, o mesmo da ficha. */
+export function mapTCU(verificacao: TCUVerificacao | null): ImprensaRow["tcu"] {
+  if (!verificacao) return { estado: "nao_verificado", registros: null, consultadoEm: null, fonteUrl: null }
+  const registros = verificacao.estado === "vazio_verificado"
+    ? 0
+    : verificacao.estado === "encontrado_em_revisao"
+      ? (verificacao.fontes ?? []).reduce((sum, fonte) => sum + (fonte.resultado === "encontrado" && fonte.volume !== null ? fonte.volume : 0), 0)
+      : null
+  return { estado: verificacao.estado, registros, consultadoEm: verificacao.executado_em, fonteUrl: verificacao.url }
+}
+
+/**
+ * Bloco de sanções da ficha: `resolverEstadoSancoes` decide o estado; só com
+ * registros ou vazio confirmado há número. Sem verificação, null.
+ */
+export function mapSancoes(
+  quantidade: number,
+  verificacao: ReturnType<typeof projectColetaVerificacaoRow>,
+): ImprensaRow["sancoes"] {
+  const estado = resolverEstadoSancoes(quantidade, verificacao)
+  return {
+    estado,
+    quantidade: estado === "nao-verificado" ? null : quantidade,
+    consultadoEm: verificacao?.executado_em ?? null,
+    fonteUrl: verificacao?.url ?? null,
+  }
+}
+
+/** A ficha lê o recibo com `.maybeSingle()`: mais de uma linha vira null. */
+function singleReceiptBySlug(rows: readonly ColetaReceiptRow[]): Map<string, ColetaReceiptRow | null> {
+  const bySlug = new Map<string, ColetaReceiptRow | null>()
+  for (const row of rows) {
+    if (typeof row.alvo !== "string") continue
+    bySlug.set(row.alvo, bySlug.has(row.alvo) ? null : row)
+  }
+  return bySlug
+}
+
 export async function getImprensaDataset(filters: ImprensaFilters): Promise<ImprensaDataset> {
   const deps = testDependencies ?? defaultDependencies()
   const requested = await deps.loadSlugs()
@@ -383,6 +608,42 @@ export async function getImprensaDataset(filters: ImprensaFilters): Promise<Impr
   const processes = await deps.loadProcesses(selected.map((candidate) => candidate.id))
   const processReceipts = await deps.loadProcessReceipts(selected.map((candidate) => candidate.id), selected.map((candidate) => candidate.slug))
   const chapas = await deps.loadChapas(selected.map((candidate) => candidate.id))
+  // Patrimônio é lido por pessoa, como na ficha: slugs do mesmo mapa canônico
+  // somam as declarações de todos os ids ligados (getCanonicalPerson).
+  const personIdsBySlug = new Map<string, string[]>()
+  const canonicalSlugs = [...new Set(selected.flatMap((candidate) => {
+    const canonical = getCanonicalPerson(candidate.slug)
+    return canonical.slugs.length > 1 ? canonical.slugs : []
+  }))]
+  const canonicalIdBySlug = new Map(candidates.map((candidate) => [candidate.slug, candidate.id]))
+  const missingCanonical = canonicalSlugs.filter((slug) => !canonicalIdBySlug.has(slug))
+  if (missingCanonical.length) {
+    try {
+      for (const row of await deps.loadCandidates(missingCanonical)) canonicalIdBySlug.set(row.slug, row.id)
+    } catch {
+      // A ficha também cai para o id da própria candidatura quando a busca falha.
+    }
+  }
+  for (const candidate of selected) {
+    const canonical = getCanonicalPerson(candidate.slug)
+    const related = canonical.slugs.length > 1
+      ? canonical.slugs.map((slug) => canonicalIdBySlug.get(slug)).filter((value): value is string => Boolean(value))
+      : []
+    personIdsBySlug.set(candidate.slug, related.length ? related : [candidate.id])
+  }
+  const patrimonioRows = await deps.loadPatrimonio([...new Set([...personIdsBySlug.values()].flat())])
+  const gastosRows = await deps.loadGastos(selected.map((candidate) => candidate.id))
+  const sancoesRows = await deps.loadSancoes(selected.map((candidate) => candidate.id))
+  const tcuReceipts = singleReceiptBySlug(await deps.loadColetaReceipts("tcu", selected.map((candidate) => candidate.slug)))
+  const sancoesReceipts = singleReceiptBySlug(await deps.loadColetaReceipts("transparencia-sanctions", selected.map((candidate) => candidate.slug)))
+  const groupBy = <T extends { candidato_id: string }>(items: readonly T[]) => {
+    const grouped = new Map<string, T[]>()
+    for (const item of items) grouped.set(item.candidato_id, [...(grouped.get(item.candidato_id) ?? []), item])
+    return grouped
+  }
+  const patrimonioByCandidate = groupBy(patrimonioRows.filter((row) => row.despublicado_em == null))
+  const gastosByCandidate = groupBy(gastosRows)
+  const sancoesByCandidate = groupBy(sancoesRows)
   const senateByUf = new Map<string, CandidateRow[]>()
   for (const candidate of selected.filter((item) => item.cargo_disputado === "Senador" && item.estado)) {
     const uf = candidate.estado!.toUpperCase()
@@ -457,6 +718,18 @@ export async function getImprensaDataset(filters: ImprensaFilters): Promise<Impr
     chapa: senateChapaBySlug.get(candidate.slug) ?? mapChapa(chapaByCandidate.get(candidate.id) ?? []),
     sites: mapSites(await deps.loadSites(candidate.slug)),
     processos: mapProcesses(processByCandidate.get(candidate.id) ?? [], receiptBySlug.get(candidate.slug) ?? null),
+    patrimonio: mapPatrimonio(normalizePatrimonioForDisplay(
+      (personIdsBySlug.get(candidate.slug) ?? [candidate.id]).flatMap((id) => patrimonioByCandidate.get(id) ?? []),
+    )),
+    gastos: mapGastos(candidate.slug, gastosByCandidate.get(candidate.id) ?? []),
+    tcu: mapTCU((() => {
+      const receipt = tcuReceipts.get(candidate.slug)
+      return receipt ? projectTCUVerificacaoRow(receipt) : null
+    })()),
+    sancoes: mapSancoes(sancoesByCandidate.get(candidate.id)?.length ?? 0, (() => {
+      const receipt = sancoesReceipts.get(candidate.slug)
+      return receipt ? projectColetaVerificacaoRow(receipt, "transparencia-sanctions") : null
+    })()),
   })))
   return { version: "1", generatedAt: new Date().toISOString(), filters, availableCargos, availableUfs, rows }
 }

@@ -38,10 +38,30 @@ const MAIN_COLUMNS = [
   "nome_urna_original",
   "chapa_vice_situacao",
   "chapa_vice_situacao_fonte_url",
+  "patrimonio_estado",
+  "patrimonio_ano",
+  "patrimonio_total",
+  "patrimonio_valor_estado",
+  "patrimonio_ano_anterior",
+  "patrimonio_total_anterior",
+  "patrimonio_variacao_pct",
+  "patrimonio_fonte_url",
+  "gastos_estado",
+  "gastos_ultimo_ano",
+  "gastos_ultimo_ano_total",
+  "gastos_anos_em_revisao",
+  "tcu_estado",
+  "tcu_registros",
+  "tcu_consultado_em",
+  "tcu_fonte_url",
+  "sancoes_estado",
+  "sancoes_quantidade",
+  "sancoes_consultado_em",
+  "sancoes_fonte_url",
 ] as const
 
 export type ImprensaExportKind = "csv" | "json"
-export type ImprensaLongFamily = "sites" | "processos"
+export type ImprensaLongFamily = "sites" | "processos" | "gastos"
 
 type Cell = string | number | null
 function mainCells(row: ImprensaRow): Cell[] {
@@ -77,6 +97,28 @@ function mainCells(row: ImprensaRow): Cell[] {
     row.nomeOriginal,
     row.chapa.viceSituacao?.label ?? null,
     row.chapa.viceSituacao?.source_url ?? null,
+    // Famílias da ficha acrescentadas em 27/09/2026. Sem dado é célula vazia
+    // com o estado ao lado, nunca zero.
+    row.patrimonio?.estado ?? "sem_dado",
+    row.patrimonio?.ano ?? null,
+    row.patrimonio?.total ?? null,
+    row.patrimonio?.valorEstado ?? null,
+    row.patrimonio?.anoAnterior ?? null,
+    row.patrimonio?.totalAnterior ?? null,
+    row.patrimonio?.variacaoPct ?? null,
+    row.patrimonio?.fonteUrl ?? null,
+    row.gastos?.estado ?? "sem_dado",
+    row.gastos?.ultimoAno ?? null,
+    row.gastos?.ultimoAnoTotal ?? null,
+    row.gastos?.anosEmRevisao.join("; ") || null,
+    row.tcu?.estado ?? "nao_verificado",
+    row.tcu?.registros ?? null,
+    row.tcu?.consultadoEm ?? null,
+    row.tcu?.fonteUrl ?? null,
+    row.sancoes?.estado ?? "nao-verificado",
+    row.sancoes?.quantidade ?? null,
+    row.sancoes?.consultadoEm ?? null,
+    row.sancoes?.fonteUrl ?? null,
   ]
 }
 
@@ -134,6 +176,12 @@ export function serializeImprensaJson(dataset: ImprensaDataset): string {
         quantidadeOmitida: row.processos.quantidadeOmitida,
         quantidadeEmConfirmacao: row.processos.quantidadeEmConfirmacao ?? 0,
       },
+      patrimonio: row.patrimonio ?? null,
+      gastos: row.gastos
+        ? { estado: row.gastos.estado, ultimoAno: row.gastos.ultimoAno, ultimoAnoTotal: row.gastos.ultimoAnoTotal, anosEmRevisao: row.gastos.anosEmRevisao }
+        : null,
+      tcu: row.tcu ?? null,
+      sancoes: row.sancoes ?? null,
     })),
   })
 }
@@ -159,6 +207,15 @@ export interface ImprensaLongProcessoRow {
   data_decisao: string | null
 }
 
+export interface ImprensaLongGastoRow {
+  slug: string
+  ano: number
+  /** "camara", "senado" ou null quando a fonte não identifica a casa. */
+  casa: string | null
+  total: number
+  fonte_url: string | null
+}
+
 function hasPublishableSourceUrl(occurrence: ImprensaRow["processos"]["ocorrencias"][number]): boolean {
   const url = occurrence.urlFonte
   if (typeof url !== "string") return false
@@ -170,7 +227,19 @@ function hasPublishableSourceUrl(occurrence: ImprensaRow["processos"]["ocorrenci
 export function buildImprensaLongRows(
   dataset: ImprensaDataset,
   family: ImprensaLongFamily,
-): Array<ImprensaLongSiteRow | ImprensaLongProcessoRow> {
+): Array<ImprensaLongSiteRow | ImprensaLongProcessoRow | ImprensaLongGastoRow> {
+  if (family === "gastos") {
+    // Uma linha por ficha, ano e casa: as mesmas linhas que a ficha exibe.
+    return dataset.rows.flatMap((row) =>
+      (row.gastos?.anos ?? []).map((item) => ({
+        slug: row.slug,
+        ano: item.ano,
+        casa: item.casa,
+        total: item.total,
+        fonte_url: item.fonteUrl,
+      })),
+    )
+  }
   if (family === "sites") {
     return dataset.rows.flatMap((row) =>
       (row.sites?.ocorrencias ?? []).map((occurrence) => ({
@@ -224,7 +293,9 @@ export function serializeImprensaLongCsv(
   const rows = buildImprensaLongRows(dataset, family)
   const familyColumns = family === "sites"
     ? ["slug", "ordem", "url", "fonte_url", "fonte_sha256", "coletado_em"]
-    : ["slug", "numero", "tipo", "tribunal", "url_fonte", "fonte_nivel", "data_inicio", "data_decisao"]
+    : family === "gastos"
+      ? ["slug", "ano", "casa", "total", "fonte_url"]
+      : ["slug", "numero", "tipo", "tribunal", "url_fonte", "fonte_nivel", "data_inicio", "data_decisao"]
   const columns = ["version", "generated_at", "cargo_filtro", "uf_filtro", ...familyColumns, "aviso"]
   const lines = [
     columns.map(escapeCsvCell).join(","),

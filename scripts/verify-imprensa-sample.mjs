@@ -21,11 +21,12 @@ async function read(path) {
   return response.json()
 }
 
-const [main, publicCohort, siteLong, processLong] = await Promise.all([
+const [main, publicCohort, siteLong, processLong, gastosLong] = await Promise.all([
   read("/api/imprensa/export?format=json"),
   read("/api/candidato-slugs"),
   read("/api/imprensa/export/sites?format=json"),
   read("/api/imprensa/export/processos?format=json"),
+  read("/api/imprensa/export/gastos?format=json"),
 ])
 
 const publicSlugs = [...new Set(publicCohort.slugs)].sort()
@@ -42,6 +43,19 @@ for (const row of [
 ]) {
   if (!selected.some((item) => item.slug === row.slug)) selected.push(row)
 }
+// Garante na amostra cada família da ficha com dado publicado: variação de
+// patrimônio, cota parlamentar, recibo TCU e sanções com registro ou vazio.
+for (const row of [
+  ...main.rows.filter((item) => item.patrimonio.variacaoPct !== null).slice(0, 2),
+  ...main.rows.filter((item) => item.patrimonio.estado === "valor_nao_informado" || item.patrimonio.estado === "multiplas_declaracoes").slice(0, 1),
+  ...main.rows.filter((item) => item.gastos.estado === "publicado").slice(0, 3),
+  ...main.rows.filter((item) => item.tcu.estado === "encontrado_em_revisao").slice(0, 1),
+  ...main.rows.filter((item) => item.tcu.estado === "vazio_verificado").slice(0, 1),
+  ...main.rows.filter((item) => item.sancoes.estado === "com-registros").slice(0, 2),
+  ...main.rows.filter((item) => item.sancoes.estado === "vazio-confirmado").slice(0, 1),
+]) {
+  if (!selected.some((item) => item.slug === row.slug)) selected.push(row)
+}
 for (const row of main.rows.filter((item) => item.sites.estado === "publicado")) {
   if (selected.length >= 20) break
   if (!selected.some((item) => item.slug === row.slug)) selected.push(row)
@@ -50,7 +64,7 @@ for (const row of main.rows) {
   if (selected.length >= 20) break
   if (!selected.some((item) => item.slug === row.slug)) selected.push(row)
 }
-assert.equal(selected.length, 20, "amostra com menos de 20 candidatos")
+assert.ok(selected.length >= 20, "amostra com menos de 20 candidatos")
 
 let sitePublished = 0
 let chapaPublished = 0
@@ -58,6 +72,7 @@ let processPublished = 0
 let processPartial = 0
 let processWithSeal = 0
 let senatePublished = 0
+const families = { patrimonio: 0, patrimonioVariacao: 0, patrimonioSemValor: 0, gastos: 0, gastosLongRows: 0, tcuVerificado: 0, tcuNaoVerificado: 0, sancoesComRegistros: 0, sancoesVazio: 0, sancoesNaoVerificado: 0 }
 for (const row of selected) {
   const profileResponse = await read(`/api/candidato-profile/${encodeURIComponent(row.slug)}`)
   assert.equal(profileResponse.sourceStatus, "live", `${row.slug}: ficha degradada`)
@@ -149,9 +164,102 @@ for (const row of selected) {
   } else {
     assert.equal(profileProcesses.length, 0, `${row.slug}: ficha exibe processos que o export não conta`)
   }
+
+  // Patrimônio: o card da ficha usa a declaração mais recente só quando ela é
+  // única no ano. O número conferido é o do HTML (data-pf-overview-raw) e o
+  // cálculo da variação é refeito aqui sobre as linhas da API.
+  const declaracoes = profile.patrimonio ?? []
+  const anoMaisRecente = declaracoes.length ? Math.max(...declaracoes.map((item) => item.ano_eleicao)) : null
+  const doAno = declaracoes.filter((item) => item.ano_eleicao === anoMaisRecente)
+  assert.equal(row.patrimonio.ano, anoMaisRecente, `${row.slug}: ano do patrimônio`)
+  if (anoMaisRecente === null) {
+    assert.equal(row.patrimonio.estado, "sem_dado", `${row.slug}: patrimônio sem dado`)
+    assert.equal(row.patrimonio.total, null, `${row.slug}: patrimônio sem dado não é zero`)
+  } else if (doAno.length > 1) {
+    assert.equal(row.patrimonio.estado, "multiplas_declaracoes", `${row.slug}: patrimônio com várias declarações`)
+    assert.equal(row.patrimonio.total, null)
+  } else {
+    families.patrimonio += 1
+    const html = await readHtml(`/candidato/${encodeURIComponent(row.slug)}`)
+    const card = /data-pf-overview-patrimonio="[^"]*"((?:\s+[\w-]+="[^"]*")*)/.exec(html)
+    assert.ok(card, `${row.slug}: card de patrimônio ausente no HTML`)
+    const raw = /data-pf-overview-raw="([^"]*)"/.exec(card[1])?.[1] ?? null
+    if (row.patrimonio.estado === "valor_nao_informado") {
+      families.patrimonioSemValor += 1
+      assert.equal(row.patrimonio.total, null, `${row.slug}: valor não informado não vira número`)
+      assert.equal(raw, null, `${row.slug}: ficha mostra número onde o export não mostra`)
+    } else {
+      assert.equal(row.patrimonio.total, Number(doAno[0].valor_total), `${row.slug}: total do patrimônio`)
+      assert.equal(Number(raw), row.patrimonio.total, `${row.slug}: total do card na ficha`)
+    }
+    assert.equal(row.patrimonio.fonteUrl, `https://dadosabertos.tse.jus.br/dataset/candidatos-${anoMaisRecente}`, `${row.slug}: fonte patrimônio`)
+    if (row.patrimonio.variacaoPct !== null) {
+      families.patrimonioVariacao += 1
+      const anteriores = declaracoes.filter((item) => item.ano_eleicao === row.patrimonio.anoAnterior)
+      assert.equal(anteriores.length, 1, `${row.slug}: base da variação ambígua`)
+      assert.equal(row.patrimonio.totalAnterior, Number(anteriores[0].valor_total), `${row.slug}: total anterior`)
+      assert.equal(row.patrimonio.variacaoPct, Math.round(((row.patrimonio.total - row.patrimonio.totalAnterior) / row.patrimonio.totalAnterior) * 100), `${row.slug}: variação`)
+      // A tendência do card é renderizada no cliente (DeferredCandidatoProfile); o
+      // HTML do servidor não a traz. A conta acima usa os mesmos dados da API da ficha.
+    } else {
+      assert.equal(row.patrimonio.anoAnterior, null)
+      assert.equal(row.patrimonio.totalAnterior, null)
+    }
+  }
+
+  // Cota parlamentar: as linhas da API da ficha já passaram pelos filtros de
+  // revisão e de fonte exibível; o export longo precisa trazer exatamente elas.
+  const gastosFicha = (profile.gastos_parlamentares ?? []).map((item) => [item.ano, item.casa, Number(item.total_gasto)]).sort((a, b) => b[0] - a[0])
+  const gastosExport = gastosLong.rows.filter((item) => item.slug === row.slug).map((item) => [item.ano, item.casa, item.total]).sort((a, b) => b[0] - a[0])
+  assert.deepEqual(gastosExport, gastosFicha, `${row.slug}: linhas de gastos`)
+  families.gastosLongRows += gastosExport.length
+  if (gastosFicha.length) {
+    families.gastos += 1
+    const ultimoAno = gastosFicha[0][0]
+    assert.equal(row.gastos.estado, "publicado", `${row.slug}: estado gastos`)
+    assert.equal(row.gastos.ultimoAno, ultimoAno, `${row.slug}: último ano de gastos`)
+    assert.equal(row.gastos.ultimoAnoTotal, gastosFicha.filter((item) => item[0] === ultimoAno).reduce((sum, item) => sum + item[2], 0), `${row.slug}: total do último ano`)
+  } else {
+    assert.equal(row.gastos.estado, "sem_dado", `${row.slug}: gastos sem dado`)
+    assert.equal(row.gastos.ultimoAnoTotal, null, `${row.slug}: gastos sem dado não é zero`)
+  }
+  for (const item of gastosLong.rows.filter((entry) => entry.slug === row.slug && entry.fonte_url !== null)) {
+    assert.match(item.fonte_url, /^https:\/\/(www\.camara\.leg\.br\/cotas\/Ano-\d{4}\.csv\.zip|dadosabertos\.camara\.leg\.br\/api\/v2\/deputados\/\d+\/despesas)$/, `${row.slug}: fonte gastos`)
+  }
+
+  // TCU: o bloco da ficha só existe com recibo; sem recibo o export diz
+  // "nao_verificado" e não publica contagem.
+  const tcu = profile.tcu_verificacao ?? null
+  if (tcu) {
+    families.tcuVerificado += 1
+    assert.equal(row.tcu.estado, tcu.estado, `${row.slug}: estado TCU`)
+    assert.equal(row.tcu.consultadoEm, tcu.executado_em, `${row.slug}: data TCU`)
+    assert.equal(row.tcu.fonteUrl, tcu.url, `${row.slug}: fonte TCU`)
+    if (tcu.estado === "vazio_verificado") assert.equal(row.tcu.registros, 0)
+    if (tcu.estado === "pendente") assert.equal(row.tcu.registros, null)
+  } else {
+    families.tcuNaoVerificado += 1
+    assert.deepEqual(row.tcu, { estado: "nao_verificado", registros: null, consultadoEm: null, fonteUrl: null }, `${row.slug}: TCU sem recibo`)
+  }
+
+  // Sanções: mesma regra do bloco da ficha (resolverEstadoSancoes).
+  const sancoesFicha = profile.sancoes_administrativas ?? []
+  const sancoesVerificacao = profile.sancoes_verificacao ?? null
+  const estadoSancoes = sancoesFicha.length > 0
+    ? "com-registros"
+    : sancoesVerificacao?.resultado === "vazio_confirmado" && sancoesVerificacao.executado_em ? "vazio-confirmado" : "nao-verificado"
+  assert.equal(row.sancoes.estado, estadoSancoes, `${row.slug}: estado sanções`)
+  assert.equal(row.sancoes.quantidade, estadoSancoes === "nao-verificado" ? null : sancoesFicha.length, `${row.slug}: quantidade sanções`)
+  assert.equal(row.sancoes.consultadoEm, sancoesVerificacao?.executado_em ?? null, `${row.slug}: data sanções`)
+  assert.equal(row.sancoes.fonteUrl, sancoesVerificacao?.url ?? null, `${row.slug}: fonte sanções`)
+  if (estadoSancoes === "com-registros") families.sancoesComRegistros += 1
+  else if (estadoSancoes === "vazio-confirmado") families.sancoesVazio += 1
+  else families.sancoesNaoVerificado += 1
 }
 assert.ok(sitePublished > 0, "amostra sem sites publicados")
 assert.ok(chapaPublished > 0, "amostra sem chapas publicadas")
+assert.ok(families.patrimonio > 0, "amostra sem patrimônio publicado")
+assert.ok(families.gastos > 0, "amostra sem gastos publicados")
 
 console.log(JSON.stringify({
   result: "PASS",
@@ -165,4 +273,6 @@ console.log(JSON.stringify({
   senatePublished,
   siteLongRows: siteLong.rows.length,
   processLongRows: processLong.rows.length,
+  gastosLongRowsTotal: gastosLong.rows.length,
+  ...families,
 }))
