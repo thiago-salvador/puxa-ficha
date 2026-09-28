@@ -1,7 +1,33 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-09-26T08:53:06.221Z",
+  "updated_at": "2026-09-28T09:22:23.610Z",
   "quotes": [
+    {
+      "id": "0062071cf16d56755c81a47dfee662753a257af90407e7def28c6de4fdcba08e",
+      "candidate_id": "36ec7b14-9da3-4324-820d-6318ce535d01",
+      "candidate_slug": "requiao-filho",
+      "candidate_name": "Requiao Filho",
+      "office": "Governador",
+      "uf": "PR",
+      "quote_text": "Não vou nem perguntar o partido, vou perguntar se tem capacidade de estar à frente da secretaria",
+      "context": "Sobre o espaço que o PT terá no Paraná caso Requião Filho seja eleito, o candidato afirmou que terá espaço nas secretarias estaduais quem tiver “capacidade técnica e de gestão”: “Não vou nem perguntar o partido, vou perguntar se tem capacidade de estar à frente da secretaria”, disse.",
+      "event_context": "Entrevista ao vivo no telejornal Meio-Dia Paraná, na RPC, durante campanha ao Governo do Paraná. As falas foram feitas em entrevista ao vivo no telejornal Meio-Dia Paraná, na RPC, afiliada da TV Globo, nesta quarta-feira (16).",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-16",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/09/16/requiao-filho-entrevista-rpc.ghtml",
+      "article_title": "Requião Filho defende auditoria na Copel e fim das escolas cívico-militares no Paraná  | G1",
+      "article_published_at": "2026-09-16T13:57:32.532-03:00",
+      "observed_at": "2026-09-28T09:04:23.605Z",
+      "source_sha256": "1086bb653d7387f5c091578e2c052197f5ab960cd43c884382c0a4e2ad2c72de",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Requião Filho",
+        "date_excerpt": "As falas foram feitas em entrevista ao vivo no telejornal Meio-Dia Paraná, na RPC, afiliada da TV Globo, nesta quarta-feira (16).",
+        "fetched_url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/09/16/requiao-filho-entrevista-rpc.ghtml",
+        "method": "codex_source_review"
+      }
+    },
     {
       "id": "00c8f1873899039478dd4a8f3e86452d4e3e3c020b05a042d133191ce8a6b32b",
       "candidate_id": "d62ecbf0-98ab-41f9-8684-f3c7bd46251a",
@@ -625,6 +651,32 @@
         "fetched_url": "https://portalarauto.com.br/02-09-2026/candidatos-do-pstu-a-presidencia-e-ao-governo-do-estado-cumprem-agenda-em-santa-cruz/",
         "method": "codex_source_review",
         "source_format": "web_text"
+      }
+    },
+    {
+      "id": "183d9e6141f7559e8c3b0b87c65d9056c2e82dbe79898953e18db0b9ad8cedf6",
+      "candidate_id": "d5ece407-2e2a-4e76-91a9-c2b7db826430",
+      "candidate_slug": "ronaldo-mansur",
+      "candidate_name": "Ronaldo Mansur",
+      "office": "Governador",
+      "uf": "BA",
+      "quote_text": "Nós vamos diminuir a fila da regulação, dando transparência. Além disso, vamos fazer concurso público. O último concurso público que tivemos foi em 2008. Ou seja, há 18 anos atrás foi o último concurso que tivemos na área da saúde. Vamos acabar com a ‘pejotização’ na área da saúde. A saúde vai ser uma das nossas prioridades de governo",
+      "context": "“Nós vamos diminuir a fila da regulação, dando transparência. Além disso, vamos fazer concurso público. O último concurso público que tivemos foi em 2008. Ou seja, há 18 anos atrás foi o último concurso que tivemos na área da saúde. Vamos acabar com a ‘pejotização’ na área da saúde. A saúde vai ser uma das nossas prioridades de governo”, afirmou.",
+      "event_context": "Entrevista ao vivo no telejornal Bahia Meio Dia, na sede da Rede Bahia, antes da participação de Ronaldo Mansur, nesta quarta-feira (16).. nesta quarta-feira (16)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-16",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ba/bahia/eleicoes/2026/noticia/2026/09/16/agenda-de-campanha-de-ronaldo-mansur.ghtml",
+      "article_title": "Ronaldo Mansur destaca propostas para realizar concurso público na BA | G1",
+      "article_published_at": "2026-09-16T18:09:08.578-03:00",
+      "observed_at": "2026-09-28T09:22:23.610Z",
+      "source_sha256": "a06d65e3d93d480b68240c8ec09ca839411eae9424a6d4de4ac852d2deb4b332",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao governo da Bahia Ronaldo Mansur (PSOL) destacou, nesta quarta-feira (16), propostas para a área da saúde antes de participar de uma entrevista ao vivo no Bahia Meio Dia, na sede da Rede Bahia, em Salvador.",
+        "date_excerpt": "nesta quarta-feira (16)",
+        "fetched_url": "https://g1.globo.com/ba/bahia/eleicoes/2026/noticia/2026/09/16/agenda-de-campanha-de-ronaldo-mansur.ghtml",
+        "method": "codex_source_review"
       }
     },
     {
@@ -1599,6 +1651,32 @@
       }
     },
     {
+      "id": "353d567d4a03e897ceda9932ec08c0bb774313728d6e9835a520e78b67811684",
+      "candidate_id": "4b079fd2-53ac-4b37-b735-3216d0817607",
+      "candidate_slug": "gisvaldo-oliveira",
+      "candidate_name": "Gisvaldo Oliveira",
+      "office": "Governador",
+      "uf": "PI",
+      "quote_text": "Eu quero agradecer a você, piauiense, que esteve acompanhando mais este debate. E dizer que você tem uma oportunidade histórica de promover, com o seu voto, uma verdadeira e efetiva mudança. Não apenas na forma de administrar o estado, mas no jeito de fazer política.",
+      "context": "\"Eu quero agradecer a você, piauiense, que esteve acompanhando mais este debate. E dizer que você tem uma oportunidade histórica de promover, com o seu voto, uma verdadeira e efetiva mudança. Não apenas na forma de administrar o estado, mas no jeito de fazer política. O nosso partido, o PSOL, é o partido que nós estamos dizendo e reafirmando todos os dias. É o partido de todas as lutas. O partido que está nas ruas, nas mobilizações e no parlamento, defendendo a garantia dos seus direitos. Nós temos atualmente, no nosso estado, de um lado, um governo petista em aliança com setores da direita tradicional e fisiológica, que tem promovido um verdadeiro desmonte dos serviços públicos do nosso estado; que tem adotado uma política de privatizações; que tem ocasionado a piora na prestação de todos os serviços públicos do nosso estado; que não gosta de servidor público e que tem tratado o servidor público com tirania. E, do outro lado, temos um candidato representante da oposição de direita, que representa o bolsonarismo, que está acostumado à política do balcão de negócios, à política do conchavo e da troca de favores. Inclusive, faz parte de um partido que tem origem na Arena, legenda que deu sustentação à ditadura militar no Brasil. Portanto, a alternativa real, verdadeira, de esquerda, e que efetivamente tem condições de fazer com que o estado do Piauí se torne um governo garantidor de direitos, é o PSOL. Então, eu quero aqui, mais uma vez, agradecer a você e pedir, em nível nacional, o voto para o presidente Lula. Nós não podemos permitir que a política de ódio volte para o nosso país. E aqui, no estado, para este professor, o professor Gisvaldo. É Lula lá, 13, e Gisvaldo aqui, para mudar o Piauí.\"",
+      "event_context": "Debate entre candidatos ao Governo do Piauí, com considerações finais de Gisvaldo Oliveira. nesta quarta-feira (16)",
+      "event_type": "debate",
+      "occurred_on": "2026-09-16",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/pi/piaui/eleicoes/2026/noticia/2026/09/16/debate-candidatos-governo.ghtml",
+      "article_title": "Água, saúde e empregos dominam debate entre candidatos ao Governo do Piauí",
+      "article_published_at": "2026-09-16T15:43:42.503-03:00",
+      "observed_at": "2026-09-28T09:11:29.154Z",
+      "source_sha256": "aa732293731667d63cea4a0d2536168dafaa8321a41989d69ddf070091710483",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Estiveram presentes o governador e candidato à reeleição Rafael Fonteles (PT), Joel Rodrigues (PP), Dra. Lúcia Santos (PSDB), Gisvaldo Oliveira (PSOL-Rede) e Elizeu Aguiar (Novo).",
+        "date_excerpt": "nesta quarta-feira (16)",
+        "fetched_url": "https://g1.globo.com/pi/piaui/eleicoes/2026/noticia/2026/09/16/debate-candidatos-governo.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "372802938b800a06130ddfe67e116baea7802c2b2af399ba30c586b949acb0c6",
       "candidate_id": "b6e8c205-a2b7-4a26-9b65-e7a3b3b2f601",
       "candidate_slug": "orleans-brandao",
@@ -1933,6 +2011,32 @@
             "source_format": "web_text"
           }
         ]
+      }
+    },
+    {
+      "id": "4509c328adb3da45687796bd9da60d67cdeaaa8d84b88f781415c2be5304d2a0",
+      "candidate_id": "9f8bdf27-8e4e-4f67-ae08-1519fc941412",
+      "candidate_slug": "lucien-rezende",
+      "candidate_name": "Lucien Rezende",
+      "office": "Governador",
+      "uf": "MS",
+      "quote_text": "Vamos pensar diferente. Vamos votar em candidatura que apresenta um projeto mais próximo do seu perfil, porque hoje o que tem ai só atende o rico. Queremos fazer um governo mais organizado, um governo que atenda a nossa redação.",
+      "context": "“Eu quero falar com você sul-mato-grossense o que a sua vida mudou nesses 20 anos com o último governo que ai está, com esse mesmo grupo político? Vamos pensar diferente. Vamos votar em candidatura que apresenta um projeto mais próximo do seu perfil, porque hoje o que tem ai só atende o rico. Queremos fazer um governo mais organizado, um governo que atenda a nossa redação. O candidato do PT veio aqui e teve vergonha de pedir voto para o presidente Lula. Nós vamos pedir, e eu peço. Vote Lucien Rezende 50, vote para os nossos estaduais e federais 50, vote para o nosso candidato a senador Beto do Movimento, que luta pela agricultura familiar e não tem bens apreendidos pela Justiça. Vote no presidente Lula, que defende a nossa democracia, que defende a nossa soberania e que já fez tanto pelo nosso país. Pela agricultura familiar, pelo minha casa minha vida, pelo luz para todos. É muito trabalho feito. Pedimos voto para reeleição do presidente Lula e sem dúvida nenhuma para Lucien Rezende 50”.",
+      "event_context": "Entrevista com candidato ao governo de Mato Grosso do Sul durante campanha, no MSTV 1ª edição. nesta sexta-feira (18)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-18",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ms/mato-grosso-do-sul/eleicoes/2026/noticia/2026/09/18/lucien-rezende-entrevista-governo-ms.ghtml",
+      "article_title": "Lucien Rezende (PSOL) promete regionalizar saúde, equiparar salários de professores e mais 20 delegacias para mulheres",
+      "article_published_at": "2026-09-18T13:42:43.358-03:00",
+      "observed_at": "2026-09-28T09:11:29.154Z",
+      "source_sha256": "0b506feeb01a48c973a5abd55c1199fcbe8b50cc51fa3a8d8fbe144f3e5bb87b",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato Lucien Rezende (PSOL) foi entrevistado nesta sexta-feira (18) no MSTV 1ª edição.",
+        "date_excerpt": "nesta sexta-feira (18)",
+        "fetched_url": "https://g1.globo.com/ms/mato-grosso-do-sul/eleicoes/2026/noticia/2026/09/18/lucien-rezende-entrevista-governo-ms.ghtml",
+        "method": "codex_source_review"
       }
     },
     {
@@ -3323,6 +3427,32 @@
             "source_format": "web_text"
           }
         ]
+      }
+    },
+    {
+      "id": "732f23a1507abd9ce82ea623628e8c08d94ccbb133964b36e179ac8371a4307d",
+      "candidate_id": "968f8c87-8d8b-4248-9cee-4aee7929f4d9",
+      "candidate_slug": "saulo-arcangeli",
+      "candidate_name": "Saulo Arcangeli",
+      "office": "Governador",
+      "uf": "MA",
+      "quote_text": "O PSTU vai governar através dos conselhos populares. Nós sabemos que, desde a Constituição de 1988, foram criados conselhos, mas são conselhos consultivos. No governo do PSTU, os conselhos vão funcionar e vão ser conselhos deliberativos, que vão discutir o orçamento do estado.",
+      "context": "“O PSTU vai governar através dos conselhos populares. Nós sabemos que, desde a Constituição de 1988, foram criados conselhos, mas são conselhos consultivos. No governo do PSTU, os conselhos vão funcionar e vão ser conselhos deliberativos, que vão discutir o orçamento do estado. [...] A gente vai escolher esses conselhos nos locais de trabalho, nos locais de moradia. É onde as pessoas sentem a realidade, onde tem problema do saneamento, onde não tem saúde, onde não tem uma escola próxima, onde não tem creche. O orçamento vai para a Assembleia Legislativa e aí os deputados vão estar lá com a proposta da população. Não é a proposta do governador Saulo Arcangeli, vai estar com a proposta da população”, afirmou.",
+      "event_context": "Entrevista ao JMTV 1ª Edição durante campanha ao Governo do Maranhão. nesta terça-feira (15)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-15",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/09/15/saulo-arcangeli-promete-criar-conselhos-populares-estatizar-a-saude-e-implantar-tarifa-zero-no-transporte-publico.ghtml",
+      "article_title": "Saulo Arcangeli promete criar conselhos populares e estatizar a saúde | G1",
+      "article_published_at": "2026-09-15T14:35:26.063-03:00",
+      "observed_at": "2026-09-28T09:04:23.605Z",
+      "source_sha256": "697caa50cfbb3fbaf83db18b547b2aa29cc11a2985e4ceba38bc65b11fcf93f8",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Saulo Arcangeli",
+        "date_excerpt": "nesta terça-feira (15)",
+        "fetched_url": "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/09/15/saulo-arcangeli-promete-criar-conselhos-populares-estatizar-a-saude-e-implantar-tarifa-zero-no-transporte-publico.ghtml",
+        "method": "codex_source_review"
       }
     },
     {
@@ -4761,6 +4891,32 @@
       }
     },
     {
+      "id": "a0510ff341252eb9bc0a3e9f37268781e8a8c8a5839eee6ae10e287e7ef91db8",
+      "candidate_id": "89dc7944-ed0a-4a1f-8ad5-fdd3edd9347a",
+      "candidate_slug": "tiao-bocalom",
+      "candidate_name": "Tiao Bocalom",
+      "office": "Governador",
+      "uf": "AC",
+      "quote_text": "Eu não busco apoio em troca de secretaria. Eu busco apoio em troca de um projeto que precisa dar certo. Qual é o projeto que precisa dar certo? Que o nosso povo saia dessa pobreza",
+      "context": "“Eu não busco apoio em troca de secretaria. Eu busco apoio em troca de um projeto que precisa dar certo. Qual é o projeto que precisa dar certo? Que o nosso povo saia dessa pobreza”, salientou.",
+      "event_context": "Sabatina da CBN Amazônia Rio Branco. Candidato Tião Bocalom (PSDB) foi sabatinado nesta quinta (24) pela CBN Amazônia Rio Branco.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-24",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/24/entrevista-tiao-bocalom-cbn-rio-branco.ghtml",
+      "article_title": "'Derrubar o que for necessário', diz Bocalom sobre relação entre conservação ambiental e produção no AC",
+      "article_published_at": "2026-09-24T13:38:34.004-03:00",
+      "observed_at": "2026-09-26T08:53:06.221Z",
+      "source_sha256": "1033451d5cbca6faed1f30b89ff8cf2c6eb1d145262429db41e8f6b854589d16",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Candidato Tião Bocalom (PSDB) foi sabatinado nesta quinta (24) pela CBN Amazônia Rio Branco.",
+        "date_excerpt": "Candidato Tião Bocalom (PSDB) foi sabatinado nesta quinta (24) pela CBN Amazônia Rio Branco.",
+        "fetched_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/24/entrevista-tiao-bocalom-cbn-rio-branco.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "a27fa7fa35217ff82bd66b9b54f157634107b561033e674e853fa86b8c343c20",
       "candidate_id": "3824c464-5087-471c-b7ba-1f8d59f3c070",
       "candidate_slug": "guilherme-fonseca",
@@ -5686,6 +5842,32 @@
         "identity_excerpt": "Candidato do PCB ao governo de Minas, Túlio Lopes",
         "date_excerpt": "Os candidatos ao governo de Minas Gerais aproveitaram as manifestações do 7 de Setembro, nesta segunda-feira (7/9)",
         "fetched_url": "https://www.em.com.br/politica/2026/09/amp/7495460-candidatos-ao-governo-de-minas-usam-7-de-setembro-para-fazer-campanha.html",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "c73bd28903fdf5808e5e3a1154f7b2bb2377848e3076389ffd9393d8be9ca0e0",
+      "candidate_id": "00b971a6-5f12-4fa3-961f-5806abfd6fb0",
+      "candidate_slug": "sandro-alex",
+      "candidate_name": "Sandro Alex",
+      "office": "Governador",
+      "uf": "PR",
+      "quote_text": "Então essa já é minha proposta. Nós estamos estudando junto à Alep [Assembleia Legislativa do Paraná] para que o governo possa conectar o homem do campo, a propriedade, no trifásico",
+      "context": "“É com investimentos que nós vamos garantir [as melhorias no serviço da Copel]. Nós entregamos, por exemplo, 25 mil quilômetros de trifásico da Copel, nós investimos nesta ampliação de uma energia segura. Só que o homem do campo não conseguiu se conectar ainda neste trifásico [...], eles têm dificuldade de fazer a conexão da sua propriedade até a porteira, o trifásico tá na porteira. Então essa já é minha proposta. Nós estamos estudando junto à Alep [Assembleia Legislativa do Paraná] para que o governo possa conectar o homem do campo, a propriedade, no trifásico”, disse.",
+      "event_context": "Entrevista ao vivo no telejornal Meio-Dia Paraná, na RPC, durante campanha ao Governo do Paraná. As falas foram feitas em entrevista ao vivo no telejornal Meio-Dia Paraná, na RPC, afiliada da TV Globo, nesta terça-feira (15).",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-15",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/09/15/sandro-alex-entrevista-rpc.ghtml",
+      "article_title": "Sandro Alex promete melhorias na Copel, privatizada no governo Ratinho Junior, e diz que planeja grande projeto para contenção de enchentes | G1",
+      "article_published_at": "2026-09-15T13:14:57.987-03:00",
+      "observed_at": "2026-09-28T09:04:23.605Z",
+      "source_sha256": "de1a216ad5ddcd24bd55c12b59a84a957043143dad61eaaa1a65c41db024cb26",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Sandro Alex",
+        "date_excerpt": "As falas foram feitas em entrevista ao vivo no telejornal Meio-Dia Paraná, na RPC, afiliada da TV Globo, nesta terça-feira (15).",
+        "fetched_url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/09/15/sandro-alex-entrevista-rpc.ghtml",
         "method": "codex_source_review"
       }
     },
@@ -7051,6 +7233,39 @@
       }
     },
     {
+      "id": "f6d1150a3a388737ce9a7d68815b0d78e15a3e2b4b2f1749f15d23dc01c9d122",
+      "candidate_id": "6f0ad3bd-c9a2-4b7f-b672-8fbe87bc61cc",
+      "candidate_slug": "luciana-amorim",
+      "candidate_name": "Luciana Amorim",
+      "office": "Governador",
+      "uf": "GO",
+      "quote_text": "A proposta para o transporte público de Goiás é a reestatização e tarifa zero, principalmente isso, porque a gente entende que o nosso transporte público é usado para dar dinheiro para o setor privado",
+      "context": "\"A proposta para o transporte público de Goiás é a reestatização e tarifa zero, principalmente isso, porque a gente entende que o nosso transporte público é usado para dar dinheiro para o setor privado\", disse.",
+      "event_context": "Declaração em campanha durante panfletagem no Centro de Goiânia para apresentar propostas de campanha.. Candidatos ao governo de Goiás cumpriram agendas de campanha nesta quinta-feira (17). Os postulantes realizaram panfletagens, debates, sabatinas e reuniões em diferentes municípios.",
+      "event_type": "declaracao",
+      "occurred_on": "2026-09-17",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/go/goias/eleicoes/2026/noticia/2026/09/17/veja-como-foi-a-agenda-dos-candidatos-ao-governo-de-goias-nesta-quinta-feira-17.ghtml",
+      "article_title": "Veja como foi a agenda dos candidatos ao governo de Goiás nesta quinta-feira (17)",
+      "article_published_at": "2026-09-17T21:43:08.217-03:00",
+      "observed_at": "2026-09-28T08:43:41.815Z",
+      "source_sha256": "51b04eaef1c920e5e493d302552efd0398c7ded6d327d16c8be5be19410028d1",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "A candidata ao Governo de Goiás pela Unidade Popular (UP), Luciana Amorim, realizou panfletagem no Centro de Goiânia para apresentar suas propostas de campanha.",
+        "identity_excerpt": "A candidata ao Governo de Goiás pela Unidade Popular (UP), Luciana Amorim, realizou panfletagem no Centro de Goiânia para apresentar suas propostas de campanha.",
+        "date_excerpt": "Candidatos ao governo de Goiás cumpriram agendas de campanha nesta quinta-feira (17). Os postulantes realizaram panfletagens, debates, sabatinas e reuniões em diferentes municípios.",
+        "fetched_url": "https://g1.globo.com/go/goias/eleicoes/2026/noticia/2026/09/17/veja-como-foi-a-agenda-dos-candidatos-ao-governo-de-goias-nesta-quinta-feira-17.ghtml",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://g1.globo.com/go/goias/eleicoes/2026/noticia/2026/09/17/veja-como-foi-a-agenda-dos-candidatos-ao-governo-de-goias-nesta-quinta-feira-17.ghtml",
+          "datePublished": "2026-09-17T21:43:08.217-03:00",
+          "dateModified": "2026-09-17T21:55:26.702-03:00"
+        }
+      },
+      "article_modified_at": "2026-09-17T21:55:26.702-03:00"
+    },
+    {
       "id": "f72150184a5e267955e20d42f7c0bc2267738ce3c635eb68fe11221b80a477b7",
       "candidate_id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
       "candidate_slug": "efraim-filho",
@@ -7245,32 +7460,6 @@
         "identity_excerpt": "O candidato Carlos Cley, do PSTU, abriu nesta quarta-feira, 16, a nova rodada de entrevistas do Sistema Diário de Comunicação, desta vez com os candidatos ao Governo do Amapá nas Eleições 2026.",
         "date_excerpt": "O candidato Carlos Cley, do PSTU, abriu nesta quarta-feira, 16, a nova rodada de entrevistas do Sistema Diário de Comunicação, desta vez com os candidatos ao Governo do Amapá nas Eleições 2026.",
         "fetched_url": "https://www.diariodoamapa.com.br/cadernos/politica/carlos-cley-defende-participacao-popular-no-orcamento-e-estatizacao-de-servicos-publicos/",
-        "method": "codex_source_review"
-      }
-    },
-    {
-      "id": "a0510ff341252eb9bc0a3e9f37268781e8a8c8a5839eee6ae10e287e7ef91db8",
-      "candidate_id": "89dc7944-ed0a-4a1f-8ad5-fdd3edd9347a",
-      "candidate_slug": "tiao-bocalom",
-      "candidate_name": "Tiao Bocalom",
-      "office": "Governador",
-      "uf": "AC",
-      "quote_text": "Eu não busco apoio em troca de secretaria. Eu busco apoio em troca de um projeto que precisa dar certo. Qual é o projeto que precisa dar certo? Que o nosso povo saia dessa pobreza",
-      "context": "“Eu não busco apoio em troca de secretaria. Eu busco apoio em troca de um projeto que precisa dar certo. Qual é o projeto que precisa dar certo? Que o nosso povo saia dessa pobreza”, salientou.",
-      "event_context": "Sabatina da CBN Amazônia Rio Branco. Candidato Tião Bocalom (PSDB) foi sabatinado nesta quinta (24) pela CBN Amazônia Rio Branco.",
-      "event_type": "sabatina",
-      "occurred_on": "2026-09-24",
-      "publisher": "g1",
-      "article_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/24/entrevista-tiao-bocalom-cbn-rio-branco.ghtml",
-      "article_title": "'Derrubar o que for necessário', diz Bocalom sobre relação entre conservação ambiental e produção no AC",
-      "article_published_at": "2026-09-24T13:38:34.004-03:00",
-      "observed_at": "2026-09-26T08:53:06.221Z",
-      "source_sha256": "1033451d5cbca6faed1f30b89ff8cf2c6eb1d145262429db41e8f6b854589d16",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "Candidato Tião Bocalom (PSDB) foi sabatinado nesta quinta (24) pela CBN Amazônia Rio Branco.",
-        "date_excerpt": "Candidato Tião Bocalom (PSDB) foi sabatinado nesta quinta (24) pela CBN Amazônia Rio Branco.",
-        "fetched_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/24/entrevista-tiao-bocalom-cbn-rio-branco.ghtml",
         "method": "codex_source_review"
       }
     }

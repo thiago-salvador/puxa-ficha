@@ -43,8 +43,8 @@ pf_configure_libpq_from_url
 export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
-base_version=20260927060100
-base_migration="$ROOT/supabase/migrations/${base_version}_patrimonio_2026_pacote_tse.sql"
+base_version=20260927095347
+base_migration="$ROOT/supabase/migrations/${base_version}_patrimonio_cas_hash.sql"
 version=20260928010000
 name=processos_l13_senado
 migration="$ROOT/supabase/migrations/${version}_${name}.sql"

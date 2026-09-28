@@ -1560,7 +1560,7 @@ async function getCandidatoBySlugFromRelationResource(
       withSupabaseRetry(`patrimonio(${slug})`, async (signal) =>
         supabase
           .from("patrimonio")
-          .select("*")
+          .select("id,candidato_id,ano_eleicao,valor_total,bens,fonte,created_at,despublicacao_motivo,despublicado_em,ano_arquivo,sq_candidato,uf_candidatura,cargo_candidatura,data_eleicao,tipo_eleicao")
           .in("candidato_id", personLevelIds)
           .is("despublicado_em", null)
           .order("ano_eleicao", { ascending: false })

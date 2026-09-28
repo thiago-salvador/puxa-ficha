@@ -18,6 +18,7 @@ export type CoverageSourceProof = {
   matched_rows: number
   unmatched_rows: number
   scope_complete: boolean
+  scope?: "tse-candidacies" | "display-series"
   identity: {
     slug: string
     candidate_id: string
@@ -45,12 +46,12 @@ const PROFILE_FIELDS = [
 
 const FAMILY_FIELD: Partial<Record<CoverageFamily, string>> = {
   historico_politico: "historico",
+  mudancas_partido: "mudancas_partido",
   patrimonio: "patrimonio_eleicoes",
   financiamento: "financiamento_eleicoes",
   projetos_lei: "projetos_lei",
   votos_candidato: "votos",
   gastos_parlamentares: "gastos_parlamentares",
-  mudancas_partido: "mudancas_partido",
 }
 
 function object(value: unknown): Record<string, unknown> | null {
@@ -175,13 +176,22 @@ export function validCoverageSourceProof(
   receipt: Record<string, unknown>,
 ): boolean {
   const proof = object(receipt.coverage_proof)
-  if (!proof || proof.family !== family || proof.method !== "official-source-to-public-readback" || proof.scope_complete !== true) return false
+  if (!proof || proof.family !== family || proof.scope_complete !== true) return false
   const identity = object(proof.identity)
   if (!identity || identity.slug !== profile.slug || identity.candidate_id !== (profile.id ?? profile.candidato_id ?? profile.candidate_id)) return false
   if (typeof identity.source_id !== "string" || !identity.source_id.trim()) return false
   if (proof.public_payload_sha256 !== publicFamilyPayloadSha256(profile, family)) return false
+  if (proof.method !== "official-source-to-public-readback") return false
   if (!isNonnegativeInteger(proof.source_rows) || !isNonnegativeInteger(proof.public_rows) || !isNonnegativeInteger(proof.matched_rows) || !isNonnegativeInteger(proof.unmatched_rows)) return false
-  const actualRows = publicFamilyRowCount(profile, family)
+  const actualRows = family === "historico_politico" && proof.scope === "tse-candidacies"
+    ? (Array.isArray(profile.historico) ? profile.historico : []).filter((row) => {
+        const item = object(row)
+        return String(item?.proveniencia ?? "").trim().toUpperCase() === "TSE" && String(item?.tipo_evento ?? "").trim().toUpperCase() === "CANDIDATURA"
+      }).length
+    : publicFamilyRowCount(profile, family)
+  // A série de bens/contas também publica anos sem linha bruta de bem/receita.
+  // A igualdade dos campos exibidos já foi conferida antes de emitir o recibo.
+  const displaySeries = (family === "patrimonio" || family === "financiamento") && proof.scope === "display-series"
   if (actualRows < 0) return false
   const revisions = proof.source_revisions
   if (!Array.isArray(revisions) || !revisions.length || revisions.some((revision) => {
@@ -215,7 +225,8 @@ export function validCoverageSourceProof(
     const source = typeof receipt.fonte === "string" ? receipt.fonte.toLocaleLowerCase() : ""
     const sourceHouse = source.startsWith("camara") ? "camara" : source.startsWith("senado") || source === "ceaps-senado" ? "senado" : null
     if (sourceHouse !== house) return false
-  } else if (proof.public_rows !== actualRows || proof.matched_rows !== actualRows || proof.unmatched_rows !== 0 || (proof.source_rows as number) < actualRows) {
+  } else if (proof.public_rows !== actualRows || proof.matched_rows !== actualRows || proof.unmatched_rows !== 0 ||
+      (!displaySeries && (proof.source_rows as number) < actualRows)) {
     return false
   }
   if (family === "mudancas_partido") {

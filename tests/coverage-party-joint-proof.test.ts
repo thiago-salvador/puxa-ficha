@@ -41,8 +41,32 @@ function receipt() {
 test("histórico partidário só fecha com fontes parlamentar e de candidatura verificadas", () => {
   const complete = receipt()
   assert.equal(validCoverageSourceProof(profile, "mudancas_partido", complete), true)
+  const senate = receipt()
+  const senateRevision = { ...parliamentary, url: "https://legis.senado.leg.br/dadosabertos/senador/123/mandatos.json" }
+  senate.url = senateRevision.url
+  senate.coverage_proof.source_revisions[0] = senateRevision
+  senate.coverage_proof.components[0].source_revisions = [senateRevision]
+  assert.equal(validCoverageSourceProof(profile, "mudancas_partido", senate), true)
   assert.equal(validCoverageSourceProof(profile, "mudancas_partido", { ...complete, coverage_proof: { ...complete.coverage_proof, components: complete.coverage_proof.components.slice(0, 1) } }), false)
   const wrongHost = receipt()
   wrongHost.coverage_proof.components[1].source_revisions = [parliamentary]
   assert.equal(validCoverageSourceProof(profile, "mudancas_partido", wrongHost), false)
+})
+
+test("escopo de candidaturas isolado não substitui a prova parlamentar", () => {
+  const scoped = receipt()
+  const years = Array.from({ length: 16 }, (_, index) => 1996 + index * 2)
+  const revisions = years.map((year) => ({ ...candidacy, year }))
+  const proof = {
+    ...scoped.coverage_proof,
+    method: "official-party-by-candidacy-scope",
+    scope: "partido_em_cada_candidatura",
+    source_revisions: revisions,
+    source_candidacies: 16,
+    derived_transitions: 1,
+    public_transitions: 1,
+    scope_years: years,
+    components: undefined,
+  }
+  assert.equal(validCoverageSourceProof(profile, "mudancas_partido", { ...scoped, url: candidacy.url, coverage_proof: proof }), false)
 })

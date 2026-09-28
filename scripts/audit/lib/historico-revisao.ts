@@ -29,6 +29,7 @@ import type { CoverageProfile } from "../audit-cobertura-fichas"
 import { publicFamilyPayloadSha256, publicFamilyRowCount } from "./coverage-source-proof"
 
 export const HISTORICO_FONTE = "tse-historico"
+export const PARTIDO_CANDIDATURA_FONTE = "tse-partido-candidatura"
 
 /**
  * Anos que a revisão precisa ler para certificar. Escopo menor nunca fecha
@@ -97,6 +98,94 @@ export type HistoricoReceipt = {
   url: string | null
   detalhe: string
   executado_em: string
+}
+
+export type PartidoCandidaturaReceipt = Omit<HistoricoReceipt, "fonte"> & { fonte: typeof PARTIDO_CANDIDATURA_FONTE }
+
+/**
+ * Recibo da legenda observada em cada candidatura oficial. Exige que os pares
+ * das transições públicas sejam deriváveis da sequência de candidaturas. Este
+ * escopo não certifica anos/datas de filiação nem valida quando ocorreu a troca.
+ */
+export function partidoPorCandidaturaReceipt(input: {
+  profile: CoverageProfile
+  candidate: SeedCandidate | null
+  identity: AnchorIdentity
+  sourceRows: readonly TseCandidacyRow[]
+  anos: readonly number[]
+  tseRevisions: readonly HistoricoSourceRevision[]
+  checkedAt: string
+  anosObrigatorios?: readonly number[]
+  identityBlocked?: boolean
+}): PartidoCandidaturaReceipt {
+  const { profile, candidate, identity, sourceRows, anos, tseRevisions, checkedAt } = input
+  const requiredYears = [...(input.anosObrigatorios ?? HISTORICO_ANOS_CANONICOS)].sort((a, b) => a - b)
+  const consultedYears = [...new Set(anos)].sort((a, b) => a - b)
+  const revisionYears = [...new Set(tseRevisions.map((revision) => revision.year).filter((year): year is number => Number.isInteger(year)))].sort((a, b) => a - b)
+  const orderedRevisions = [...tseRevisions].sort((a, b) => (a.year ?? 0) - (b.year ?? 0))
+  const candidaturas = sourceRows.filter((row) => consultedYears.includes(row.year))
+  const hasCompleteScope = requiredYears.length === consultedYears.length && requiredYears.every((year, index) => year === consultedYears[index]) &&
+    requiredYears.length === revisionYears.length && requiredYears.every((year, index) => year === revisionYears[index])
+  const partiesByYear = new Map<number, Set<string>>()
+  for (const row of candidaturas) {
+    if (!row.partido) continue
+    const parties = partiesByYear.get(row.year) ?? new Set<string>()
+    parties.add(row.partido)
+    partiesByYear.set(row.year, parties)
+  }
+  const annualParties = [...partiesByYear.entries()].sort(([a], [b]) => a - b)
+  const ambiguousYear = annualParties.find(([, parties]) => parties.size !== 1)?.[0] ?? null
+  const derivedTransitions: string[] = []
+  if (ambiguousYear === null) {
+    const sequence = annualParties.map(([year, parties]) => ({ year, party: [...parties][0] }))
+    for (let index = 1; index < sequence.length; index++) {
+      if (sequence[index - 1].party !== sequence[index].party) derivedTransitions.push(`${sequence[index - 1].party}>${sequence[index].party}`)
+    }
+  }
+  const publicTransitions = (Array.isArray(profile.mudancas_partido) ? profile.mudancas_partido : [])
+    .map(record).filter((row): row is Record<string, unknown> => Boolean(row))
+  const publicEdges = publicTransitions.map((row) => {
+    const from = partyKey(row.partido_anterior)
+    const to = partyKey(row.partido_novo)
+    return from && to ? `${from}>${to}` : ""
+  }).sort()
+  const sortedDerivedTransitions = [...derivedTransitions].sort()
+  const transitionsMatch = publicEdges.length === sortedDerivedTransitions.length && publicEdges.every((edge, index) => edge !== "" && edge === sortedDerivedTransitions[index])
+  const publicRows = Array.isArray(profile.mudancas_partido) ? profile.mudancas_partido.length : 0
+  let motivo = "partidos e transições públicas derivados da legenda em cada candidatura; filiação datada fora deste escopo"
+  let resultado: PartidoCandidaturaReceipt["resultado"] = publicRows === 0 ? "vazio_confirmado" : "encontrado"
+  if (!hasCompleteScope) { resultado = "indeterminado"; motivo = "escopo anual incompleto para partido por candidatura" }
+  else if (!candidate || !identity.anchors || identity.ambiguous || input.identityBlocked) {
+    resultado = "indeterminado"
+    motivo = identity.ambiguous || (input.identityBlocked ? "identidade requer revisão; vínculo nominal não certifica partido por candidatura" : "identidade sem âncora oficial")
+  } else if (!candidaturas.length) { resultado = "indeterminado"; motivo = "nenhuma candidatura ligada à identidade no escopo oficial" }
+  else if (candidaturas.some((row) => !row.partido)) { resultado = "indeterminado"; motivo = "candidatura oficial sem sigla partidária legível" }
+  else if (ambiguousYear !== null) { resultado = "indeterminado"; motivo = `mais de uma sigla oficial no ano ${ambiguousYear}; transições não deriváveis` }
+  else if (!transitionsMatch) { resultado = "indeterminado"; motivo = "transições públicas não derivam da sequência oficial de partidos por candidatura" }
+  const profileId = text(profile.id) ?? ""
+  const slug = text(profile.slug) ?? ""
+  const url = orderedRevisions.find((revision) => revision.year === Math.max(...requiredYears))?.url ?? orderedRevisions.at(-1)?.url ?? null
+  const detail: Record<string, unknown> = {
+    contract_version: 1,
+    kind: "partido-por-candidatura",
+    family: "mudancas_partido",
+    scope: "partido_em_cada_candidatura",
+    method: "official-consulta-cand-party-by-candidacy",
+    motivo,
+    datas_de_filiacao_estabelecidas: false,
+    ressalva: "Confirma a legenda declarada em cada candidatura no TSE; não infere datas de filiação ou mudança entre eleições. Filiação datada permanece com Câmara/Senado (PR #533).",
+  }
+  return {
+    fonte: PARTIDO_CANDIDATURA_FONTE,
+    escopo: "candidato",
+    alvo: slug,
+    candidato_id: profileId,
+    resultado,
+    volume: resultado === "encontrado" ? publicRows : 0,
+    url,
+    detalhe: JSON.stringify(detail),
+    executado_em: checkedAt,
+  }
 }
 
 export type HistoricoRevisionResult = { receipt: HistoricoReceipt; review: HistoricoReviewItem[]; motivo: string }
@@ -421,6 +510,11 @@ export function historicoRevisionVerdict(input: {
   if (senado?.status === "ok" && periods.length) revisions.push({ url: senado.url, sha256: senado.sha256 })
   const sourceRowsCount = counts.candidaturas_oficiais + [...bySource.values()].filter((entry) => entry.eleito && !entry.omitida).length + periods.length
   const publicCount = publicFamilyRowCount(profile, "historico_politico")
+  if (sourceRowsCount < publicCount) {
+    return receipt("indeterminado", "linhas públicas excedem registros oficiais comprovados", {
+      contagens: counts, source_rows: sourceRowsCount, public_rows: publicCount,
+    })
+  }
   const resultado = publicCount === 0 ? "vazio_confirmado" : "encontrado"
   return receipt(resultado, resultado === "encontrado" ? "toda linha pública casa com a fonte oficial" : "fonte oficial e ficha sem linha", {
     contagens: counts,
