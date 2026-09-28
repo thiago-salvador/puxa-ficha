@@ -250,7 +250,10 @@ test("vínculo novo_perfil_oficial publica o vice como a ficha pública", async 
     const css = readFileSync(new URL("../src/app/(site)/imprensa/imprensa.module.css", import.meta.url), "utf8")
     assert.doesNotMatch(component, /vinculo_em_revisao/)
     assert.doesNotMatch(css, /vinculo_em_revisao/)
-    assert.match(component, /return "Exige conferência"/)
+    // Rótulo único: a Mesa usa o labelState de imprensa-uf-pack, cujo fallback é "Exige conferência".
+    assert.match(component, /import \{ labelState[^}]*\} from "@\/lib\/imprensa-uf-pack"/)
+    const pack = readFileSync(new URL("../src/lib/imprensa-uf-pack.ts", import.meta.url), "utf8")
+    assert.match(pack, /\?\? "Exige conferência"/)
   } finally {
     __setImprensaDataDependenciesForTests(null)
   }

@@ -5,7 +5,7 @@ import type { ReactNode } from "react"
 import Link from "next/link"
 import { ImprensaCitationButton } from "@/components/ImprensaCitationButton"
 import type { ImprensaRow } from "@/lib/imprensa-data"
-import { PROCESSOS_INDETERMINADO_LABEL } from "@/lib/imprensa-uf-pack"
+import { labelState, PROCESSOS_INDETERMINADO_LABEL } from "@/lib/imprensa-uf-pack"
 import styles from "@/app/(site)/imprensa/imprensa.module.css"
 
 // cspell:ignore ocorrencias publishability
@@ -16,26 +16,11 @@ type Row = Omit<ImprensaRow, "sites" | "processos" | "gastos"> & {
   gastos: Omit<ImprensaRow["gastos"], "anos">
 }
 
-function labelState(state: string): string {
-  if (state === "publicado") return "Publicado"
-  if (state === "vazio_confirmado") return "Buscado, nada encontrado"
-  if (state === "cobertura_parcial") return "Cobertura parcial"
-  if (state === "indeterminado") return "Indeterminado"
-  if (state === "nao_buscado") return "Não buscado"
-  if (state === "erro") return "Erro na coleta"
-  if (state === "desatualizado") return "Desatualizado"
-  if (state === "contraditorio") return "Recibo contraditório"
-  if (state === "nao_aplicavel") return "Não se aplica"
-  if (state === "indeferidos_comprovados") return "Suplentes indeferidos (comprovante do TSE)"
-  if (state === "indisponivel") return "Fonte indisponível"
-  if (state === "sem_dado") return "Sem dado"
-  return "Exige conferência"
-}
 
 function dateLabel(value: string | null | undefined): string {
   if (!value) return "data não disponível"
   const parsed = new Date(value)
-  return Number.isNaN(parsed.valueOf()) ? value : parsed.toLocaleDateString("pt-BR")
+  return Number.isNaN(parsed.valueOf()) ? value : parsed.toLocaleDateString("pt-BR", { timeZone: "UTC" })
 }
 
 function fileDateLabel(value: string | null | undefined): string {

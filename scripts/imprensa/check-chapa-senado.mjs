@@ -1,6 +1,6 @@
 import { getJson, requiredBaseUrl } from './check-utils.mjs'
 
-if (process.env.SENADO_ENABLED !== 'true') {
+if (process.env.SENADO_ENABLED?.trim().toLowerCase() !== 'true') {
   throw new Error('CHAPA_SENADO_FAIL SENADO_ENABLED precisa estar true antes de executar')
 }
 const base = requiredBaseUrl('check-chapa-senado.mjs')

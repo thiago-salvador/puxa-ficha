@@ -665,7 +665,9 @@ export async function getImprensaDataset(filters: ImprensaFilters): Promise<Impr
       const absence = result.absence[candidate.slug]
       if (mates.length === 2) {
         const fonteUrl = requireHttps(mates[0].fonte_url)
-        const allSourcesHttps = mates.every((mate) => requireHttps(mate.fonte_url))
+        // Ordem 1 e 2 distintas e nome não vazio, como selectSenadoRunningMates exige.
+        const ordensOk = new Set(mates.map((mate) => mate.ordem)).size === 2 && mates.every((mate) => mate.ordem === 1 || mate.ordem === 2)
+        const allSourcesHttps = ordensOk && mates.every((mate) => requireHttps(mate.fonte_url) && Boolean(mate.nome_urna?.trim()))
         senateChapaBySlug.set(candidate.slug, fonteUrl && allSourcesHttps ? {
           estado: "publicado", suplentesEstado: "publicado", viceNome: null, viceNomeOriginal: null,
           suplentes: mates.map((mate) => formatDisplayName(mate.nome_urna)),

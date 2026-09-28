@@ -5,8 +5,10 @@ const base = process.argv[2]
 if (!base) throw new Error('Uso: node scripts/imprensa/check-public-diff.mjs <base-ref>')
 const git = (args) => execFileSync('git', args, { encoding: 'utf8', maxBuffer: 32 * 1024 * 1024 })
 git(['rev-parse', '--verify', `${base}^{commit}`])
-const changed = new Set(git(['diff', '--name-only', base, '--']).split('\n').filter(Boolean))
-const diff = git(['diff', '--no-ext-diff', '--unified=0', base, '--'])
+// --no-renames: um arquivo movido para caminho público aparece como adição com o conteúdo inteiro.
+// --diff-filter=d: remover um arquivo privado não é problema.
+const changed = new Set(git(['diff', '--no-renames', '--diff-filter=d', '--name-only', base, '--']).split('\n').filter(Boolean))
+const diff = git(['diff', '--no-ext-diff', '--no-renames', '--unified=0', base, '--'])
 const addedLines = diff.split('\n').filter((line) => line.startsWith('+') && !line.startsWith('+++')).map((line) => line.slice(1))
 const untracked = git(['ls-files', '--others', '--exclude-standard']).split('\n').filter(Boolean)
 for (const file of untracked) {
