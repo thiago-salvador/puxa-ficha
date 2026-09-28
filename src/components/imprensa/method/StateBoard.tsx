@@ -8,7 +8,12 @@ const NUMBER = new Intl.NumberFormat("pt-BR")
 /** Quantos candidatos estão em cada um dos quatro estados, por tipo de dado. */
 export function StateBoard({ rows, total }: { rows: readonly MethodStateBoardRow[]; total: number }) {
   return (
-    <div className={`${styles.tableWrap} ${styles.board} ${shell.tokens}`}>
+    <div
+      className={`${styles.tableWrap} ${styles.board} ${shell.tokens}`}
+      role="region"
+      aria-label="Candidatos por estado do dado"
+      tabIndex={0}
+    >
       <table className={styles.table}>
         <caption className="sr-only">Candidatos por estado do dado, entre {NUMBER.format(total)} fichas publicadas</caption>
         <thead>

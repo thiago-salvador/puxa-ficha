@@ -20,7 +20,8 @@
 .page button:focus-visible,
 .page select:focus-visible,
 .page input:focus-visible,
-.page summary:focus-visible {
+.page summary:focus-visible,
+.board:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
