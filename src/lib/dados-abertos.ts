@@ -4,6 +4,7 @@ import { getCandidatoSlugStaticParams } from "@/lib/api"
 import { shouldExposeCargo } from "@/lib/senado-feature"
 import { createServerSupabaseClient } from "@/lib/supabase"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
+import { stripAccents } from "@/lib/strip-accents"
 
 /**
  * Cadastro público, formato "dados abertos".
@@ -163,12 +164,17 @@ export async function getDadosAbertosDataset(filters: DadosAbertosFilters): Prom
  * entrada (sem filtro) e cada combinação de cargo/UF é derivada daqui, para
  * que filtros arbitrários na URL não criem novas entradas no Data Cache.
  */
+// Cargo comparado sem diferença de maiúscula ou acento ("GOVERNADOR" = "Governador").
+function normalizeCargo(value: string | null | undefined): string {
+  return stripAccents(value ?? "").trim().toLocaleLowerCase("pt-BR")
+}
+
 export function filterDadosAbertosDataset(
   full: DadosAbertosDataset,
   filters: DadosAbertosFilters,
 ): DadosAbertosDataset {
   const rows = full.rows.filter(
-    (row) => (!filters.cargo || row.cargo === filters.cargo) && (!filters.uf || row.uf?.toUpperCase() === filters.uf),
+    (row) => (!filters.cargo || normalizeCargo(row.cargo) === normalizeCargo(filters.cargo)) && (!filters.uf || row.uf?.toUpperCase() === filters.uf),
   )
   return { ...full, filters, rows }
 }

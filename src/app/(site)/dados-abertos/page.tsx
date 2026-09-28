@@ -133,7 +133,7 @@ export default async function DadosAbertosPage({ searchParams }: { searchParams:
           </p>
           <p>
             Este conjunto cobre identidade e situação da candidatura. Para sites declarados, composição de chapa e
-            processos com prova de fonte por candidato, veja a <Link href="/imprensa">Mesa de apuração</Link>.
+            processos com prova de fonte por candidato, veja a <Link href="/imprensa/mesa">Mesa de apuração</Link>.
           </p>
           <p>
             Encontrou um problema ou quer esclarecer o uso dos dados? Escreva para contato@puxaficha.com.br.

@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 import { readFile } from "node:fs/promises";
+import { lookup } from "node:dns/promises";
+import { isIP } from "node:net";
 import { parse } from "csv-parse/sync";
 
 const PRIVATE_HOST = /^(?:localhost|.*\.localhost|.*\.local|.*\.internal|0\.0\.0\.0|127\.\d+\.\d+\.\d+|10\.\d+\.\d+\.\d+|192\.168\.\d+\.\d+|172\.(?:1[6-9]|2\d|3[01])\.\d+\.\d+|169\.254\.\d+\.\d+|\[?::1\]?|\[?f[cd][0-9a-f]{2}:.*|\[?fe80:.*)$/i;
@@ -10,11 +12,22 @@ function assertPublicUrl(url) {
   if (url.username || url.password || PRIVATE_HOST.test(url.hostname)) throw new ValidationError("URL aponta para destino não público");
 }
 
+// Recusa nome que resolve para endereço privado (inclui IPv6 mapeado em IPv4).
+async function assertPublicAddress(url) {
+  const host = url.hostname.replace(/^\[|\]$/g, "");
+  const addresses = isIP(host) ? [{ address: host }] : await lookup(host, { all: true });
+  for (const { address } of addresses) {
+    const plain = address.replace(/^::ffff:/i, "");
+    if (PRIVATE_HOST.test(plain) || PRIVATE_HOST.test(`[${plain}]`)) throw new ValidationError("URL resolve para destino não público");
+  }
+}
+
 // Segue redirecionamentos um a um, validando cada destino antes do GET.
 async function fetchPublicUrl(start) {
   let current = start;
   for (let hop = 0; hop <= 5; hop += 1) {
     assertPublicUrl(current);
+    await assertPublicAddress(current);
     const response = await fetch(current, { method: "GET", signal: AbortSignal.timeout(15_000), redirect: "manual" });
     const location = response.headers.get("location");
     if (response.status >= 300 && response.status < 400 && location) {

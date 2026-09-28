@@ -13,7 +13,7 @@ import {
 
 function dataset(): ImprensaDataset {
   return {
-    version: "1",
+    version: "2",
     generatedAt: "2026-09-22T12:00:00.000Z",
     filters: { cargo: "Deputado Federal", uf: "SP" },
     availableCargos: ["Deputado Federal"],
@@ -72,7 +72,7 @@ test("CSV preserva UTF-8, quebras, separadores e neutraliza fórmulas", () => {
   assert.equal(csv.charCodeAt(0), 0xfeff)
   assert.ok(csv.startsWith(`\ufeff"version","generated_at","cargo_filtro","uf_filtro"`))
   assert.match(csv, /"version","generated_at","cargo_filtro","uf_filtro".*"aviso"/)
-  assert.match(csv, /"1","2026-09-22T12:00:00\.000Z","Deputado Federal","SP"[\s\S]*"Confira os dados na fonte original antes de publicar\."/)
+  assert.match(csv, /"2","2026-09-22T12:00:00\.000Z","Deputado Federal","SP"[\s\S]*"Confira os dados na fonte original antes de publicar\."/)
   assert.match(csv, /"João, Silva\nJúnior"/)
   for (const dangerous of ["=SUM(A1)", "+SUM(A1)", "-SUM(A1)", "@SUM(A1)"]) {
     assert.equal(neutralizeCsvFormula(dangerous), `'${dangerous}`)
@@ -119,7 +119,7 @@ test("longos publicam as linhas da ficha, com o nível da fonte, e barram URL fo
   const value = dataset()
   assert.match(serializeImprensaLongCsv(value, "sites"), /"version","generated_at","cargo_filtro","uf_filtro","slug".*"aviso"/)
   assert.ok(serializeImprensaLongCsv(value, "sites").startsWith(`\ufeff"version","generated_at"`))
-  assert.match(serializeImprensaLongCsv(value, "sites"), /"1","2026-09-22T12:00:00\.000Z","Deputado Federal","SP","joao-da-silva"[\s\S]*"Confira os dados na fonte original antes de publicar\."/)
+  assert.match(serializeImprensaLongCsv(value, "sites"), /"2","2026-09-22T12:00:00\.000Z","Deputado Federal","SP","joao-da-silva"[\s\S]*"Confira os dados na fonte original antes de publicar\."/)
   value.rows[0].processos.ocorrencias.push({ numero: "2", tipo: "civil", tribunal: "TJ", urlFonte: "", fonteNivel: "oficial", dataInicio: null, dataDecisao: null })
   assert.equal(buildImprensaLongRows(value, "sites").length, 1)
   assert.equal(buildImprensaLongRows(value, "processos").length, 1)

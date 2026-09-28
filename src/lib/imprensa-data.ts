@@ -119,7 +119,7 @@ export interface ImprensaRow {
 }
 
 export interface ImprensaDataset {
-  version: "1"
+  version: "2"
   generatedAt: string
   filters: ImprensaFilters
   availableCargos: string[]
@@ -733,5 +733,5 @@ export async function getImprensaDataset(filters: ImprensaFilters): Promise<Impr
       return receipt ? projectColetaVerificacaoRow(receipt, "transparencia-sanctions") : null
     })()),
   })))
-  return { version: "1", generatedAt: new Date().toISOString(), filters, availableCargos, availableUfs, rows }
+  return { version: "2", generatedAt: new Date().toISOString(), filters, availableCargos, availableUfs, rows }
 }
