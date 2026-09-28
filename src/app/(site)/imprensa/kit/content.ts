@@ -15,6 +15,9 @@ export const pressTexts = [
   },
 ] as const
 
+/** Texto aprovado pelo fundador; o kit não publica foto. Mesmo texto de public/imprensa/bio.txt. */
+export const founderBio = "Thiago Salvador é diretor de Operações e IA na Zaaz, empresa de creator economy com sede em Seattle, e vive em São Paulo. Criou o Puxa Ficha para reunir em um só lugar o que as fontes oficiais dizem sobre cada candidato."
+
 type KitQuestion = { question: string; answer: string; sourceHref?: string; sourceLabel?: string }
 
 export const questions: KitQuestion[] = [

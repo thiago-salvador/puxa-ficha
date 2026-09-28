@@ -4,7 +4,7 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { Footer } from "@/components/Footer"
-import { pressTexts, questions, serviceLine } from "./content"
+import { founderBio, pressTexts, questions, serviceLine } from "./content"
 import styles from "./kit.module.css"
 
 // cspell:ignore apresentacao
@@ -65,6 +65,10 @@ export default function ImprensaKit() {
                 {text.split("\n\n").map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               </article>
             ))}
+            <article className={styles.textCard}>
+              <h3>Quem faz</h3>
+              <p>{founderBio}</p>
+            </article>
           </div>
         </section>
 
