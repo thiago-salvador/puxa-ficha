@@ -288,6 +288,14 @@ function writePrivate(path: string, value: unknown): void {
   chmodSync(path, 0o600)
 }
 
+export function writeFilteredReceiptArtifact(inputPath: string, outputPath: string, riskSlugs: ReadonlySet<string>): string {
+  if (resolve(inputPath) === resolve(outputPath)) throw new Error("cópia de recibos filtrados precisa de caminho separado")
+  const input = JSON.parse(readFileSync(inputPath, "utf8")) as { receipts?: Array<Record<string, unknown>>; [key: string]: unknown }
+  if (!Array.isArray(input.receipts)) throw new Error("recibos revisados inválidos")
+  writePrivate(outputPath, { ...input, receipts: input.receipts.filter((receipt) => !riskSlugs.has(String(receipt.alvo ?? ""))) })
+  return outputPath
+}
+
 export function summarizeOpenCells(path: string | null, cohortSlugs: ReadonlySet<string> | null) {
   if (!path) return { supplied: false, rows: null, in_cohort: null, by_state: {} as Record<string, number>, cells: [] as Array<{ slug: string; family: string | null }> }
   let rows = 0
@@ -473,13 +481,24 @@ export async function runReviewedLive(
     pinnedBytes.set(file.name, copiedBytes)
   }
   const plan = join(pinnedDir, "plano-privado.json")
-  const reviewedPlan = JSON.parse(pinnedBytes.get("plano-privado.json")!.toString("utf8")) as { plano_sha256?: string; acoes?: Array<{ slug?: unknown }>; revisao?: Array<{ slug: string; familia: string; motivo: string }>; identity_risk_slugs?: unknown }
+  const reviewedPlan = JSON.parse(pinnedBytes.get("plano-privado.json")!.toString("utf8")) as { plano_sha256?: string; acoes?: Array<{ slug?: unknown }>; recibos?: Array<{ alvo?: unknown; resultado?: unknown; detalhe?: unknown }>; resumo_por_perfil?: unknown; revisao?: Array<{ slug: string; familia: string; motivo: string }>; identity_risk_slugs?: unknown }
   const planSha = createHash("sha256").update(stableJson(reviewedPlan.acoes)).digest("hex")
   if (!Array.isArray(reviewedPlan.acoes) || reviewedPlan.plano_sha256 !== planSha || planSha !== options.expectedPlanSha.toLowerCase()) {
     throw new Error("SHA-256 semântico do plano revisado diverge")
   }
   if (!Array.isArray(reviewedPlan.identity_risk_slugs) || reviewedPlan.identity_risk_slugs.some((slug) => typeof slug !== "string")) throw new Error("plano revisado sem coorte de risco de identidade")
   const pinnedRiskSlugs = new Set(reviewedPlan.identity_risk_slugs as string[])
+  if (!reviewedPlan.resumo_por_perfil || typeof reviewedPlan.resumo_por_perfil !== "object" || Array.isArray(reviewedPlan.resumo_por_perfil)) throw new Error("plano revisado sem resumo por perfil")
+  if (!Array.isArray(reviewedPlan.recibos)) throw new Error("plano revisado sem recibos")
+  for (const receipt of reviewedPlan.recibos) {
+    if (typeof receipt.alvo !== "string" || !pinnedRiskSlugs.has(receipt.alvo)) continue
+    if (receipt.resultado !== "indeterminado") throw new Error("plano revisado contém recibo não marcado para revisão de perfil em risco")
+    let detail: unknown
+    try { detail = typeof receipt.detalhe === "string" ? JSON.parse(receipt.detalhe) : receipt.detalhe } catch { detail = null }
+    const motivo = detail && typeof detail === "object" ? (detail as Record<string, unknown>).motivo : null
+    const reviewMarked = reviewedPlan.revisao?.some((item) => item.slug === receipt.alvo)
+    if (!reviewMarked && motivo !== "identidade_em_revisao") throw new Error("plano revisado contém recibo de risco sem detalhe de revisão")
+  }
   const pinnedBlockedActions = reviewedPlan.acoes.filter((action) => pinnedRiskSlugs.has(action.slug as string)).length
   if (pinnedBlockedActions !== 0) throw new Error("gate de identidade: plano revisado contém ação de perfil em revisão")
   const reviewedProfiles = JSON.parse(pinnedBytes.get("coorte-perfis.json")!.toString("utf8")) as CandidateProfile[]
@@ -575,14 +594,18 @@ export async function runReviewedLive(
   const currentCohort = join(out, "coorte-pos-escrita.json")
   writePrivate(currentCohort, expectedIds.map((id) => currentById.get(id)))
   const executionId = createExecutionId()
+  const eligibleProjection = join(out, "recibos-familias-projecao-elegiveis.json")
+  writeFilteredReceiptArtifact(projection, eligibleProjection, pinnedRiskSlugs)
   const familyApply = runner("scripts/audit/apply-coverage-receipts.ts", [
-    `--in=${projection}`, `--out-dir=${join(out, "coverage-plan")}`,
+    `--in=${eligibleProjection}`, `--out-dir=${join(out, "coverage-plan")}`,
     "--allow-fonte=tse,tse-patrimonio,tse-financiamento", `--profiles=${currentCohort}`,
     "--apply", `--execucao=${executionId}-familias`,
   ])
   if (!familyApply.ok) throw new Error(`cobertura de família falhou: ${familyApply.reason ?? familyApply.code}`)
+  const eligibleHistory = join(out, "historico-recibos-elegiveis.json")
+  writeFilteredReceiptArtifact(history, eligibleHistory, pinnedRiskSlugs)
   const historyApply = runner("scripts/audit/apply-coverage-receipts.ts", [
-    `--in=${history}`, `--out-dir=${join(out, "coverage-plan-historico")}`,
+    `--in=${eligibleHistory}`, `--out-dir=${join(out, "coverage-plan-historico")}`,
     "--allow-fonte=tse-historico,tse-partido-candidatura", `--profiles=${currentCohort}`,
     "--apply", `--execucao=${executionId}-historico`,
   ])
@@ -846,20 +869,6 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     writePrivate(applyFamilyReceiptsPath, { receipts: (allFamilyReceipts.receipts ?? []).filter((receipt) => receipt.fonte !== "tse-historico") })
   }
 
-  const coverageOut = join(outDir, "coverage-plan")
-  const coverage = generic.ok && cohort && existsSync(applyFamilyReceiptsPath)
-    ? runScript("scripts/audit/apply-coverage-receipts.ts", [
-      `--in=${applyFamilyReceiptsPath}`, `--out-dir=${coverageOut}`,
-      "--allow-fonte=tse,tse-patrimonio,tse-financiamento", `--profiles=${cohortProfilesPath}`,
-    ])
-    : { ok: false, code: null, reason: "recibos locais ausentes; plano de cobertura não calculado" }
-  const historyCoverageOut = join(outDir, "coverage-plan-historico")
-  const historyCoverage = historico.ok && cohort && existsSync(receiptPath)
-    ? runScript("scripts/audit/apply-coverage-receipts.ts", [
-      `--in=${receiptPath}`, `--out-dir=${historyCoverageOut}`, "--allow-fonte=tse-historico,tse-partido-candidatura", `--profiles=${cohortProfilesPath}`,
-    ])
-    : { ok: false, code: null, reason: "recibos históricos não calculados" }
-
   let finance: { ok: boolean; code: number | null; reason?: string }
   const financeEnv: NodeJS.ProcessEnv = {
     ...(process.env.PATH ? { PATH: process.env.PATH } : {}),
@@ -885,6 +894,23 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     generic.ok && existsSync(genericReceiptsPath) ? JSON.parse(readFileSync(genericReceiptsPath, "utf8")) : {},
     finance.ok && existsSync(financePlanPath) ? JSON.parse(readFileSync(financePlanPath, "utf8")) : {},
   )
+  const historyCoverageReceiptsPath = join(outDir, "historico-recibos-elegiveis.json")
+  const eligibleFamilyReceiptsPath = join(outDir, "recibos-familias-aplicaveis-elegiveis.json")
+  if (existsSync(applyFamilyReceiptsPath)) writeFilteredReceiptArtifact(applyFamilyReceiptsPath, eligibleFamilyReceiptsPath, identityRiskSlugs)
+  if (historico.ok && existsSync(receiptPath)) writeFilteredReceiptArtifact(receiptPath, historyCoverageReceiptsPath, identityRiskSlugs)
+  const coverageOut = join(outDir, "coverage-plan")
+  const coverage = generic.ok && cohort && existsSync(eligibleFamilyReceiptsPath)
+    ? runScript("scripts/audit/apply-coverage-receipts.ts", [
+      `--in=${eligibleFamilyReceiptsPath}`, `--out-dir=${coverageOut}`,
+      "--allow-fonte=tse,tse-patrimonio,tse-financiamento", `--profiles=${cohortProfilesPath}`,
+    ])
+    : { ok: false, code: null, reason: "recibos locais ausentes; plano de cobertura não calculado" }
+  const historyCoverageOut = join(outDir, "coverage-plan-historico")
+  const historyCoverage = historico.ok && cohort && existsSync(historyCoverageReceiptsPath)
+    ? runScript("scripts/audit/apply-coverage-receipts.ts", [
+      `--in=${historyCoverageReceiptsPath}`, `--out-dir=${historyCoverageOut}`, "--allow-fonte=tse-historico,tse-partido-candidatura", `--profiles=${cohortProfilesPath}`,
+    ])
+    : { ok: false, code: null, reason: "recibos históricos não calculados" }
   let identityRiskActionsDeferred = 0
   if (finance.ok && existsSync(financePlanPath)) {
     const original = JSON.parse(readFileSync(financePlanPath, "utf8")) as PlanoFinancas2026 & { plano_sha256: string; generated_at: string }

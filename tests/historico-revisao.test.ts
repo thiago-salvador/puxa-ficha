@@ -412,6 +412,10 @@ describe("coletor de revisão do histórico: rodada com pacote real", () => {
       assert.equal(accepted.receipts[0]?.resultado, "encontrado", JSON.stringify(accepted.review))
       assert.deepEqual(accepted.identityReviewed, { used: true, accepted: 2, rejected: 0, rejected_reasons: {} })
       assert.equal(JSON.parse(accepted.receipts[0]!.detalhe).identity_reviewed_nominal_links.method, "official-plus-reviewed-nominal-link")
+      const reviewedSeed = { ...seed, ids: { tse_sq_candidato: { "2024": "240000000099", "2026": "250000000099" } } }
+      const reviewedSeedSq = await runHistoricoRevision({ ...base, seed: [reviewedSeed], identityReviewed: file([link(2024, "240000000099")]) })
+      assert.deepEqual(reviewedSeedSq.identityReviewed, { used: true, accepted: 1, rejected: 0, rejected_reasons: {} })
+      assert.equal(reviewedSeedSq.review.some((item) => item.tipo === "identidade" && item.ano === 2024), false)
 
       const discardedSeedDir = mkdtempSync(join(tmpdir(), "pf-hist-reviewed-discarded-seed-sq-"))
       const noNominal2022 = pacote(discardedSeedDir, 2022, filler(2022, 3))
@@ -441,7 +445,8 @@ describe("coletor de revisão do histórico: rodada com pacote real", () => {
 
         const directMaskedWithUnusedLink = await runHistoricoRevision({ ...base, anos: [2024, 2026], anosObrigatorios: [2024, 2026], profiles: [directMaskedProfile], seed: [directMaskedSeed],
           manifest: { assets: [assets[0]!, directMasked2024, assets[2]!] }, identityReviewed: file([link(2024, "240000000099")]) })
-        assert.deepEqual(directMaskedWithUnusedLink.identityReviewed, { used: true, accepted: 0, rejected: 1, rejected_reasons: { vinculo_nominal_nao_utilizado: 1 } })
+        assert.deepEqual(directMaskedWithUnusedLink.identityReviewed, { used: true, accepted: 1, rejected: 0, rejected_reasons: {} })
+        assert.equal(directMaskedWithUnusedLink.review.some((item) => item.tipo === "identidade" && item.ano === 2024), false)
       } finally { rmSync(directMaskedDir, { recursive: true, force: true }) }
 
       const anchor2024 = `2024;240000000099;${CPF};${NOME};${NASC};GOVERNADOR;SP;PC do B;NÃO ELEITO`
@@ -469,6 +474,24 @@ describe("coletor de revisão do histórico: rodada com pacote real", () => {
         identityReviewed: file([link(2022, "220000000099"), link(2024, "240000000099")]) })
       assert.ok(collision.review.some((item) => item.tipo === "identidade" && /vínculo nominal/.test(item.motivo)))
       rmSync(collisionDir, { recursive: true, force: true })
+
+      const pre2008Dir = mkdtempSync(join(tmpdir(), "pf-hist-reviewed-pre2008-sq-"))
+      try {
+        const acceptedUf = `2006;060000000099;-4;${NOME};${NASC};GOVERNADOR;SP;PC do B;NÃO ELEITO`
+        const laterWrongUf = `2006;060000000099;-4;${NOME};${NASC};GOVERNADOR;RJ;PC do B;NÃO ELEITO`
+        const pre2008Assets = [
+          pacote(pre2008Dir, 2006, [acceptedUf, laterWrongUf, ...filler(2006, 3)]),
+          pacote(pre2008Dir, 2026, [anchor, ...filler(2026, 3)]),
+        ]
+        const pre2008Profile = { ...subject, historico: [
+          { ...PUBLIC_2026, periodo_inicio: 2006, periodo_fim: 2006, observacoes: "NÃO ELEITO (TSE 2006)" }, PUBLIC_2026,
+        ] }
+        const pre2008 = await runHistoricoRevision({ ...base, anos: [2006, 2026], anosObrigatorios: [2006, 2026],
+          profiles: [pre2008Profile], manifest: { assets: pre2008Assets },
+          identityReviewed: file([link(2006, "060000000099")]) })
+        assert.deepEqual(pre2008.identityReviewed, { used: true, accepted: 1, rejected: 0, rejected_reasons: {} })
+        assert.equal(pre2008.identityReviewed.accepted + pre2008.identityReviewed.rejected, 1)
+      } finally { rmSync(pre2008Dir, { recursive: true, force: true }) }
 
       const wrongDir = mkdtempSync(join(tmpdir(), "pf-hist-reviewed-wrong-birth-"))
       const wrongBirth = pacote(wrongDir, 2024, [`2024;240000000099;-4;${NOME};${NASC.replace("1970", "1980")};GOVERNADOR;SP;PT;NÃO ELEITO`, ...filler(2024, 3)])

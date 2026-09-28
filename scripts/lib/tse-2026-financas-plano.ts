@@ -151,6 +151,7 @@ export interface PlanoFinancas2026 {
     financiamento: Partial<ResumoPlano["financiamento"]>
     patrimonio: Partial<ResumoPlano["patrimonio"]>
   }>
+  identity_risk_slugs?: string[]
 }
 
 /**
@@ -183,7 +184,7 @@ export function partitionarAcoesPorRiscoDeIdentidade(
     ? {
         ...recibo,
         resultado: "indeterminado" as const,
-        volume: null,
+        volume: 0,
         detalhe: detalheRecibo({ motivo: "identidade_em_revisao" }),
       }
     : recibo)
@@ -701,6 +702,9 @@ export function travasDoPlano(
       && r.detalhe.includes("identidade_em_revisao"),
   ).map((r) => r.candidato_id))
   const publicadosElegiveis = new Set([...publicados2026].filter((id) => !idsIdentidadeEmRevisao.has(id)))
+  if (publicados2026.size > 0 && publicadosElegiveis.size < publicados2026.size * 0.5) {
+    falhas.push("denominador elegível de cobertura abaixo de 50% dos perfis publicados em 2026")
+  }
   const comReceitaNoPacote = new Set(plano.recibos.filter(
     (r) => r.fonte === FONTE_RECIBO_FINANCIAMENTO && r.resultado === "encontrado" && publicadosElegiveis.has(r.candidato_id),
   ).map((r) => r.candidato_id))

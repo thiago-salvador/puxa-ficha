@@ -11,7 +11,7 @@ import {
   type EstadoProducao,
   type PlannedRow,
 } from "../scripts/lib/tse-2026-financas-plano"
-import { decidirPortao, lerArgs, linhasDeReciboDeFalha, planoPublico } from "../scripts/tse-2026-financas"
+import { decidirPortao, lerArgs, linhasDeReciboAplicaveis, linhasDeReciboDeFalha, planoPublico } from "../scripts/tse-2026-financas"
 
 const PACOTE = { url_receitas: "https://tse/receitas.zip", url_bens: "https://tse/bens.zip" }
 const vazio = (): EstadoProducao => ({ financiamento: [], verificacoes: [], patrimonio: [], ausencias: [] })
@@ -102,9 +102,18 @@ describe("partição de recibos por risco de identidade", () => {
     assert.equal(recibo?.resultado, "indeterminado")
   })
 
-  it("não declara volume nem causa durante a revisão de identidade", () => {
+  it("não grava recibo de perfil em risco e preserva o recibo seguro", () => {
+    const original = planejarFinancas2026({ publicos: [{ id: "c1", slug: "risk" }, { id: "c2", slug: "safe" }],
+      planejadas: [fin("risk", "c1"), fin("safe", "c2")], estado: vazio(), pacote: PACOTE })
+    const partitioned = { ...partitionarAcoesPorRiscoDeIdentidade(original, ["risk"]).plano, identity_risk_slugs: ["risk"] }
+    const written = linhasDeReciboAplicaveis(partitioned, [])
+    assert.ok(written.length > 0)
+    assert.ok(written.every((row) => row.alvo === "safe"))
+  })
+
+  it("mantém volume inteiro obrigatório no recibo privado em revisão", () => {
     const recibo = planoComPerfilEmRisco().recibos.find((item) => item.alvo === "risco" && item.fonte === "tse-financiamento")
-    assert.equal(recibo?.volume, null)
+    assert.equal(recibo?.volume, 0)
     assert.equal(JSON.parse(recibo?.detalhe ?? "{}").motivo, "identidade_em_revisao")
   })
 
@@ -402,6 +411,17 @@ describe("coletor TSE 2026: portão e argumentos", () => {
     assert.deepEqual(travasDoPlano(particionado, estado), [])
   })
 
+  it("fecha a trava se risco reduzir o denominador elegível abaixo de 50%", () => {
+    const publicos = Array.from({ length: 10 }, (_, index) => ({ id: `c${index}`, slug: `p${index}` }))
+    const planejadas = publicos.map((item) => fin(item.slug, item.id))
+    const estado = vazio()
+    estado.financiamento = publicos.map((item, index) => existente(`f${index}`, item.id, { sq_candidato: `sq-${item.slug}` }))
+    const original = planejarFinancas2026({ publicos, planejadas, estado, pacote: PACOTE })
+    const riskSlugs = publicos.slice(4).map((item) => item.slug)
+    const partitioned = partitionarAcoesPorRiscoDeIdentidade(original, riskSlugs).plano
+    assert.ok(travasDoPlano(partitioned, estado).some((failure) => failure.includes("abaixo de 50%")))
+  })
+
   it("não conta receitas encontradas de perfis sem linha financeira publicada", () => {
     const publicos = Array.from({ length: 12 }, (_, index) => ({ id: `c${index}`, slug: `p${index}` }))
     const planejadas = [...Array.from({ length: 7 }, (_, index) => fin(`p${index}`, `c${index}`)),
@@ -419,6 +439,8 @@ describe("coletor TSE 2026: portão e argumentos", () => {
     assert.equal(linhas.length, 4)
     assert.deepEqual([...new Set(linhas.map((l) => l.fonte))].sort(), ["tse-financiamento", "tse-patrimonio"])
     assert.ok(linhas.every((l) => l.resultado === "erro" && l.volume === 0 && l.detalhe.includes("pacote indisponível")))
+    assert.deepEqual(linhasDeReciboDeFalha([{ id: "c1", slug: "risk" }, { id: "c2", slug: "safe" }], "abortada", new Set(["risk"]))
+      .map((row) => row.alvo), ["safe", "safe"])
   })
 })
 

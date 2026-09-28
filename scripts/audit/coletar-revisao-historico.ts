@@ -287,7 +287,10 @@ export async function runHistoricoRevision(options: {
         else if (row.uf.trim().toUpperCase() !== link.uf.trim().toUpperCase()) rejectedLinkReasons.set(key, "uf_nao_confere")
         else if (row.cargo !== cargoKey(link.cargo)) rejectedLinkReasons.set(key, "cargo_nao_confere")
         else if (!belongsToIdentity(row, identity)) rejectedLinkReasons.set(key, "nome_ou_nascimento_nao_confere")
-        else rejectedLinkReasons.delete(key)
+        else {
+          rejectedLinkReasons.delete(key)
+          if (direct.includes(link.slug)) acceptedReviewedLinkKeys.add(key)
+        }
       }
       if (options.identityMode === "official-only" && !row.cpf) {
         for (const [slug, identity] of identities) {
@@ -321,6 +324,7 @@ export async function runHistoricoRevision(options: {
     })
   }
 
+  for (const key of acceptedReviewedLinkKeys) rejectedLinkReasons.delete(key)
   for (const link of options.identityReviewed?.vinculos ?? []) {
     const key = `${link.slug}|${link.ano}|${link.sq_candidato}`
     if (!seenReviewedLinks.has(key)) rejectedLinkReasons.set(key, "linha_ausente_no_pacote_oficial")

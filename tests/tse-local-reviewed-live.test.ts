@@ -39,7 +39,7 @@ test("dry-run artifacts pass the live gate without regeneration; tampering fails
     writeFileSync(familyReceipts, JSON.stringify({ diagnostics: [] }))
     const identityBytes = JSON.stringify({ schema_version: 1, kind: "identidade-revisada-tse", vinculos: [] })
     writeFileSync(identity, identityBytes)
-    writeFileSync(plan, JSON.stringify({ plano_sha256: createHash("sha256").update("[]").digest("hex"), acoes: [], revisao: [], recibos: [], resumo: {}, identity_risk_slugs: ["candidate"] }))
+    writeFileSync(plan, JSON.stringify({ plano_sha256: createHash("sha256").update("[]").digest("hex"), acoes: [], revisao: [], recibos: [{ alvo: "candidate", resultado: "indeterminado", detalhe: JSON.stringify({ motivo: "identidade_em_revisao" }) }], resumo: {}, resumo_por_perfil: {}, identity_risk_slugs: ["candidate"] }))
     writeFileSync(report, JSON.stringify({ generated_at: new Date().toISOString(), mode: "dry-run", historical_scope_complete: true, assets_reused_from_verified_cache: [], identity_reviewed_sha256: sha(identity),
       identity_risk_source_shas: { history_review: sha(historyReview), candidates: sha(candidates), family_receipts: sha(familyReceipts) },
       sources: { consulta_cand: { requested: 16, fresh_certifiable: 16, errors: [] },
@@ -75,6 +75,7 @@ test("dry-run artifacts pass the live gate without regeneration; tampering fails
     assert.equal(await runReviewedLive(options, runner, consumed), 0)
     assert.equal(calls.filter((call) => call.includes("tse-2026-financas.ts")).length, 1)
     assert.deepEqual(appliedReceipts.map((item) => item.alvos), [["safe"], ["safe"]])
+    assert.ok(appliedReceipts.every((item) => !item.alvos.includes("candidate")))
     assert.equal(JSON.parse(readFileSync(join(live, "relatorio.json"), "utf8")).reviewed_shas.identity, sha(identity))
     const dryRunRisk = [...identityRiskSlugsFromArtifacts(
       JSON.parse(readFileSync(historyReview, "utf8")),
@@ -90,6 +91,20 @@ test("dry-run artifacts pass the live gate without regeneration; tampering fails
     )].sort()
     assert.deepEqual(liveRisk, dryRunRisk)
     assert.deepEqual(liveRisk, JSON.parse(readFileSync(plan, "utf8")).identity_risk_slugs)
+    const planBeforeLegacyCase = readFileSync(plan)
+    const legacy = JSON.parse(planBeforeLegacyCase.toString("utf8"))
+    delete legacy.resumo_por_perfil
+    writeFileSync(plan, JSON.stringify(legacy))
+    await assert.rejects(() => runReviewedLive({ ...options, outDir: join(root, "legacy-plan"), expectedPlanFileSha: sha(plan) }, runner, join(root, "legacy-consumed")), /plano revisado sem resumo por perfil/)
+    writeFileSync(plan, planBeforeLegacyCase)
+    const certifying = { ...JSON.parse(planBeforeLegacyCase.toString("utf8")), recibos: [{ alvo: "candidate", resultado: "encontrado" }] }
+    writeFileSync(plan, JSON.stringify(certifying))
+    await assert.rejects(() => runReviewedLive({ ...options, outDir: join(root, "risk-certifying-receipt"), expectedPlanFileSha: sha(plan) }, runner, consumed), /não marcado para revisão/)
+    writeFileSync(plan, planBeforeLegacyCase)
+    const unmarked = { ...JSON.parse(planBeforeLegacyCase.toString("utf8")), recibos: [{ alvo: "candidate", resultado: "erro", detalhe: "{}" }] }
+    writeFileSync(plan, JSON.stringify(unmarked))
+    await assert.rejects(() => runReviewedLive({ ...options, outDir: join(root, "risk-unmarked-receipt"), expectedPlanFileSha: sha(plan) }, runner, consumed), /não marcado para revisão/)
+    writeFileSync(plan, planBeforeLegacyCase)
     const originalReportBytes = readFileSync(report)
     const identityOptions = { ...options, outDir: join(root, "identity-tampered") }
     writeFileSync(identity, JSON.stringify({ schema_version: 1, kind: "identidade-revisada-tse", vinculos: [], altered: true }))
@@ -105,9 +120,9 @@ test("dry-run artifacts pass the live gate without regeneration; tampering fails
     await assert.rejects(() => runReviewedLive({ ...options, outDir: join(root, "risk-omitted"),
       expectedPlanSha: createHash("sha256").update(stableJson(injected)).digest("hex"), expectedPlanFileSha: sha(plan) }, runner, consumed),
     (error: unknown) => error instanceof Error && error.message === "coorte de risco de identidade do plano diverge dos artefatos fixados")
-    writeFileSync(plan, JSON.stringify({ plano_sha256: createHash("sha256").update("[]").digest("hex"), acoes: [], revisao: [], recibos: [], resumo: {}, identity_risk_slugs: ["candidate"] }))
+    writeFileSync(plan, planBeforeLegacyCase)
     assert.ok(calls.find((call) => call.includes("tse-2026-financas.ts"))?.includes(join(live, "pinned")))
-    assert.equal(appliedReceipts[0]?.source, join(realpathSync(live), "recibos-familias-projecao-aplicaveis.json"))
+    assert.equal(appliedReceipts[0]?.source, join(realpathSync(live), "recibos-familias-projecao-elegiveis.json"))
     assert.match(calls.find((call) => call.includes("apply-coverage-receipts.ts")) ?? "", /--profiles=.*\/coorte-pos-escrita\.json/)
     assert.equal(sha(join(live, "pinned", "coorte-perfis.json")), sha(cohort))
     await assert.rejects(() => runReviewedLive({ ...options, outDir: join(root, "replay") }, runner, consumed), /consumido|aplicado/)
