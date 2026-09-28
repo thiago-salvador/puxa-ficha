@@ -75,3 +75,15 @@ test("estado do snapshot vem de describeSnapshotStatus, nunca de uma frase monta
   assert.doesNotMatch(builder, /Situação consultada no snapshot de \{formatDate\(snapshot\)\}/)
   assert.doesNotMatch(builder, /\(unavailable \|\| !snapshot\)/)
 })
+
+test("guia de votação segue o Manual do Eleitor do TSE: ordem, dígitos e dois senadores distintos, em texto e na impressão", async () => {
+  const { SLOT_DIGITS, SLOT_ORDER, VOTING_GUIDE_SOURCE_URL } = await import("../src/lib/colinha")
+  assert.deepEqual([...SLOT_ORDER], ["df", "de", "s1", "s2", "g", "p"])
+  assert.deepEqual(SLOT_DIGITS, { df: 4, de: 5, s1: 3, s2: 3, g: 2, p: 2 })
+  assert.match(VOTING_GUIDE_SOURCE_URL, /^https:\/\/www\.tse\.jus\.br\//)
+  assert.match(builder, /<ol[^>]*>\{SLOT_ORDER\.map/)
+  assert.match(builder, /não é a tela da urna/)
+  assert.match(builder, /dois votos para senador precisam ser em candidatos diferentes/)
+  assert.match(builder, /colinha-print-choice[\s\S]*formatSlotDigits\(slot\)/)
+  assert.match(builder, /segundo senador \(outro candidato\)/)
+})
