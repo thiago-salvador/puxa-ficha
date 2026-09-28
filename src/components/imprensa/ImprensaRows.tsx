@@ -3,8 +3,9 @@
 // cspell:words variacao Revisao
 import { Fragment, useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
+import { useSearchParams } from "next/navigation"
 import { imprensaDataBucket, type ImprensaDataBucket } from "@/lib/imprensa-facts"
-import type { MesaCom } from "@/lib/imprensa-nav"
+import { MESA_PARAM, type MesaCom } from "@/lib/imprensa-nav"
 import { labelState, labelProcessState } from "@/lib/imprensa-uf-pack"
 import styles from "@/app/(site)/imprensa/imprensa.module.css"
 import shell from "./imprensa-shell.module.css"
@@ -19,10 +20,15 @@ import {
   MESA_FILTERS,
   MESA_SORTS,
   mesaSearchWith,
+  mesaUrlKey,
+  parseMesaCom,
+  parseMesaSort,
   patrimonioGapText,
   sortMesaRows,
+  syncMesaUrlState,
   type MesaRow,
   type MesaSort,
+  type MesaUrlState,
 } from "./mesa/mesa-model"
 
 interface Cell {
@@ -173,6 +179,9 @@ function candidateMeta(row: MesaRow): string {
  * Tabela da Mesa. Ordena por um campo numérico oficial escolhido pela pessoa,
  * filtra por um campo só e abre cada linha com fontes, citação e atalhos.
  * Ordem e filtro ficam na URL (?ordem=, ?com=) para o recorte ser compartilhado.
+ * A URL também manda: um link para outra `ordem` ou `com` (inclusive de volta à
+ * de abertura, depois de a pessoa mudar o filtro) refaz o estado e rola até a
+ * lista, sem depender de remontar o componente.
  */
 export function ImprensaRows({
   rows,
@@ -187,16 +196,37 @@ export function ImprensaRows({
   initialCom?: MesaCom | null
   scrollOnMount?: boolean
 }) {
+  // Fora do roteador (testes, render isolado) não há searchParams: vale o que a página mandou.
+  const searchParams = useSearchParams()
+  const urlSort = searchParams ? parseMesaSort(searchParams.get(MESA_PARAM.ordem)) : initialSort
+  const urlCom = searchParams ? parseMesaCom(searchParams.get(MESA_PARAM.com)) : initialCom
   const [query, setQuery] = useState("")
-  const [sort, setSort] = useState<MesaSort>(initialSort)
-  const [com, setCom] = useState<MesaCom | null>(initialCom)
+  const [view, setView] = useState<MesaUrlState>(() => ({ sort: urlSort, com: urlCom, urlKey: mesaUrlKey(urlSort, urlCom) }))
+  const [scrollRequest, setScrollRequest] = useState(scrollOnMount ? 1 : 0)
   const [open, setOpen] = useState<ReadonlySet<string>>(() => new Set())
   const firstSync = useRef(true)
+  const { sort, com } = view
+
+  // Estado derivado da URL durante o render (padrão da documentação do React
+  // para ajustar estado quando uma entrada muda), sem efeito intermediário.
+  const synced = syncMesaUrlState(view, { sort: urlSort, com: urlCom })
+  if (synced) {
+    setView(synced.state)
+    if (synced.scroll) setScrollRequest((count) => count + 1)
+  }
+
+  function setSort(next: MesaSort) {
+    setView((current) => ({ ...current, sort: next }))
+  }
+
+  function setCom(next: MesaCom | null) {
+    setView((current) => ({ ...current, com: next }))
+  }
 
   useEffect(() => {
-    if (!scrollOnMount) return
+    if (scrollRequest === 0) return
     document.getElementById("candidatos")?.scrollIntoView({ block: "start" })
-  }, [scrollOnMount])
+  }, [scrollRequest])
 
   useEffect(() => {
     if (firstSync.current) {

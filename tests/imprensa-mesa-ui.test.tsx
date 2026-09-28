@@ -92,6 +92,18 @@ describe("Mesa: filtros de um campo só", () => {
     assert.equal(rows.filter((row) => model.matchesMesaCom(row, "variacao-100")).length, 2)
   })
 
+  it("processo sem nenhum registro publicável fica fora do filtro e do card", () => {
+    const rows = [
+      ...mesaSample(),
+      mesaRow({ slug: "eva", nome: "Eva", processos: { estado: "cobertura_parcial", buscaEstado: "encontrado", quantidade: null, quantidadeOmitida: 3 } }),
+      mesaRow({ slug: "fabio", nome: "Fabio", processos: { estado: "publicado", buscaEstado: "encontrado", quantidade: 0 } }),
+    ]
+    const [card] = buildImprensaFactCards(computeImprensaFacts(rows), ["processos"])
+    const filtrados = rows.filter((row) => model.matchesMesaCom(row, "processo")).map((row) => row.slug)
+    assert.deepEqual(filtrados, ["ana"])
+    assert.equal(card.value, filtrados.length)
+  })
+
   it("rejeita valores desconhecidos na URL", () => {
     assert.equal(model.parseMesaCom("tudo"), null)
     assert.equal(model.parseMesaCom("sancao"), "sancao")
@@ -103,6 +115,28 @@ describe("Mesa: filtros de um campo só", () => {
     assert.equal(model.mesaSearchWith("?cargo=Governador&uf=BA", "variacao", "processo"), "?cargo=Governador&uf=BA&ordem=variacao&com=processo")
     assert.equal(model.mesaSearchWith("?uf=BA&ordem=gasto&com=cota", "padrao", null), "?uf=BA")
     assert.equal(model.mesaSearchWith("", "padrao", null), "")
+  })
+})
+
+describe("Mesa: URL e estado da tabela", () => {
+  const start = { sort: "padrao" as const, com: "processo" as const, urlKey: model.mesaUrlKey("padrao", "processo") }
+
+  it("volta a filtrar quando um link leva de novo à URL de abertura", () => {
+    // Abriu em ?com=processo e clicou em "Todos": o estado muda antes da URL.
+    const afterChip = { ...start, com: null }
+    assert.equal(model.syncMesaUrlState(afterChip, { sort: "padrao", com: "processo" }), null)
+    // A tabela grava a URL sem ?com: só absorve a chave, sem rolar.
+    const written = model.syncMesaUrlState(afterChip, { sort: "padrao", com: null })
+    assert.deepEqual(written, { state: { sort: "padrao", com: null, urlKey: "padrao|" }, scroll: false })
+    // O card "Ver quem tem processo" leva de novo a ?com=processo: filtra e rola.
+    const back = model.syncMesaUrlState(written!.state, { sort: "padrao", com: "processo" })
+    assert.deepEqual(back, { state: { sort: "padrao", com: "processo", urlKey: "padrao|processo" }, scroll: true })
+  })
+
+  it("segue um link para outra ordenação e ignora URL sem mudança", () => {
+    assert.equal(model.syncMesaUrlState(start, { sort: "padrao", com: "processo" }), null)
+    const next = model.syncMesaUrlState(start, { sort: "variacao", com: null })
+    assert.deepEqual(next, { state: { sort: "variacao", com: null, urlKey: "variacao|" }, scroll: true })
   })
 })
 

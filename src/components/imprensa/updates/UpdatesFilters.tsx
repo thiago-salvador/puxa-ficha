@@ -5,11 +5,13 @@ import styles from "./updates.module.css"
 
 /**
  * Filtros por UF, cargo e tipo de mudança. Formulário GET: funciona sem
- * JavaScript e o resultado fica no link, que dá para copiar e mandar.
+ * JavaScript e o resultado fica no link, que dá para copiar e mandar. Sem o
+ * cargo e a UF de cada mudança (`recorteDisponivel` false), só o tipo aparece.
  */
-export function UpdatesFilters({ query, facets }: { query: UpdatesQuery; facets: UpdatesFacets }) {
+export function UpdatesFilters({ query, facets, recorteDisponivel = true }: { query: UpdatesQuery; facets: UpdatesFacets; recorteDisponivel?: boolean }) {
   return (
     <form className={styles.filters} method="get" action="/imprensa/atualizacoes" aria-label="Filtrar mudanças">
+      {recorteDisponivel ? <>
       <div className={styles.field}>
         <label htmlFor="atualizacoes-uf">Estado</label>
         <select id="atualizacoes-uf" name="uf" defaultValue={query.uf ?? ""}>
@@ -30,6 +32,7 @@ export function UpdatesFilters({ query, facets }: { query: UpdatesQuery; facets:
           ))}
         </select>
       </div>
+      </> : null}
       <div className={styles.field}>
         <label htmlFor="atualizacoes-tipo">Tipo de mudança</label>
         <select id="atualizacoes-tipo" name="tipo" defaultValue={query.tipo ?? ""}>

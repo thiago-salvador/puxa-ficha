@@ -110,6 +110,47 @@ export function computeUpdatesFacets(rows: readonly UpdateRow[], filters: Filter
   }
 }
 
+export interface UpdatesView {
+  /** Filtros aplicados de fato. Sem o dataset, UF e cargo ficam null. */
+  query: UpdatesQuery
+  /** false quando o dataset da imprensa falhou: cargo e UF de cada mudança são desconhecidos. */
+  recorteDisponivel: boolean
+  /** A URL pediu UF ou cargo, mas o recorte não pôde ser aplicado. */
+  recorteIgnorado: boolean
+  rows: UpdateRow[]
+  filtered: UpdateRow[]
+  facets: UpdatesFacets
+}
+
+/**
+ * Monta a lista de O que mudou. `candidates` null quer dizer que o dataset da
+ * imprensa não carregou: uma falha de consulta não é zero, então UF e cargo não
+ * filtram nem contam (nada de "0 de N" nem de facetas zeradas). A lista sai
+ * inteira, só com o nome, e o filtro por tipo continua valendo.
+ */
+export function buildUpdatesView(
+  params: RawParams,
+  updates: readonly VerifiedCandidateUpdate[],
+  candidates: readonly UpdateCandidate[] | null,
+  cargos: readonly string[],
+): UpdatesView {
+  const recorteDisponivel = candidates !== null
+  const parsed = parseUpdatesQuery(params, cargos)
+  const query = recorteDisponivel ? parsed : { ...parsed, uf: null, cargo: null }
+  const recorteIgnorado = !recorteDisponivel && Boolean(parsed.uf || first(params.cargo)?.trim())
+  const rows = joinUpdates(updates, candidates ?? [])
+  const filtered = filterUpdates(rows, query)
+  const facets = computeUpdatesFacets(rows, query, recorteDisponivel ? cargos : [])
+  return {
+    query,
+    recorteDisponivel,
+    recorteIgnorado,
+    rows,
+    filtered,
+    facets: recorteDisponivel ? facets : { ...facets, uf: [], cargo: [] },
+  }
+}
+
 /** Data de detecção mais recente, ou null sem linhas. */
 export function latestDetection(rows: readonly UpdateRow[]): string | null {
   let latest: string | null = null

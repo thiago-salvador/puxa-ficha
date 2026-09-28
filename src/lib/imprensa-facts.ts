@@ -22,7 +22,7 @@ export interface ImprensaFacts {
     acima10Milhoes: number
   }
   processos: {
-    /** Estado publicado ou cobertura parcial. */
+    /** Estado publicado ou cobertura parcial com ao menos um registro publicável (`temProcessoPublicado`). */
     candidatosComProcesso: number
     publicado: number
     coberturaParcial: number
@@ -51,6 +51,32 @@ const CARGO_ORDER = ["Presidente", "Governador", "Senador"]
 function cargoRank(cargo: string): number {
   const index = CARGO_ORDER.indexOf(cargo)
   return index === -1 ? CARGO_ORDER.length : index
+}
+
+const CARGO_LIST_LABEL: Record<string, string> = {
+  Presidente: "presidente",
+  Governador: "governador",
+  Senador: "Senado",
+}
+
+/**
+ * Cargos cobertos, em texto corrido ("presidente, governador e Senado"), só com
+ * os cargos que existem nas linhas. Vazio quando nenhum cargo conhecido aparece.
+ */
+export function formatImprensaCargoList(cargos: readonly string[]): string {
+  const items = CARGO_ORDER.filter((cargo) => cargos.includes(cargo)).map((cargo) => CARGO_LIST_LABEL[cargo])
+  if (items.length <= 1) return items.join("")
+  return `${items.slice(0, -1).join(", ")} e ${items[items.length - 1]}`
+}
+
+/**
+ * Candidato com processo publicado na ficha: estado publicado ou cobertura
+ * parcial e ao menos um registro com fonte publicável. Quando todas as
+ * ocorrências saem da conta por falta de fonte, a quantidade vem null ou zero e
+ * a linha não conta. Card de fatos e filtro da Mesa usam esta mesma regra.
+ */
+export function temProcessoPublicado(processos: ImprensaPageRow["processos"]): boolean {
+  return (processos.estado === "publicado" || processos.estado === "cobertura_parcial") && (processos.quantidade ?? 0) > 0
 }
 
 function isNumber(value: number | null | undefined): value is number {
@@ -84,7 +110,7 @@ export function computeImprensaFacts(rows: readonly ImprensaFactsRow[]): Imprens
     }
 
     const { processos } = row
-    if (processos.estado === "publicado" || processos.estado === "cobertura_parcial") {
+    if (temProcessoPublicado(processos)) {
       facts.processos.candidatosComProcesso += 1
       if (processos.estado === "publicado") facts.processos.publicado += 1
       else facts.processos.coberturaParcial += 1
@@ -187,7 +213,7 @@ function cardFor(id: ImprensaFactCardId, facts: ImprensaFacts): ImprensaFactCard
       return {
         id,
         value: processos.candidatosComProcesso,
-        label: plural(processos.candidatosComProcesso, "candidato com processo e link do tribunal", "candidatos com processo e link do tribunal"),
+        label: plural(processos.candidatosComProcesso, "candidato com processo publicado na ficha", "candidatos com processo publicado na ficha"),
         detail: `${processos.registros} ${plural(processos.registros, "registro", "registros")} na ficha; ${processos.emConfirmacao} com fonte oficial em confirmação.`,
         caveat: IMPRENSA_FACT_CAVEATS.processos,
         cta: "Ver quem tem processo",

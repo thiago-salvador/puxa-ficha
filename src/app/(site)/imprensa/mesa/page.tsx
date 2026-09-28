@@ -170,7 +170,6 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
               </div>
             ) : (
               <ImprensaRows
-                key={`${initialSort}|${initialCom ?? ""}`}
                 rows={rows}
                 generatedAt={generatedAt}
                 initialSort={initialSort}

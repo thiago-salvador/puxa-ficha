@@ -1,4 +1,5 @@
 import type { ImprensaPageRow } from "@/lib/imprensa-cache"
+import { formatImprensaCargoList } from "@/lib/imprensa-facts"
 import { IMPRENSA_UFS, type ImprensaUf } from "@/lib/imprensa-uf-pack"
 import { formatUpdateValue, type VerifiedCandidateUpdate } from "@/lib/verified-candidate-updates"
 
@@ -9,26 +10,12 @@ import { formatUpdateValue, type VerifiedCandidateUpdate } from "@/lib/verified-
 
 type SalaRow = Pick<ImprensaPageRow, "cargo" | "uf">
 
-const CARGO_PROMISE_LABEL: Record<string, string> = {
-  Presidente: "presidente",
-  Governador: "governador",
-  Senador: "Senado",
-}
-const CARGO_PROMISE_ORDER = ["Presidente", "Governador", "Senador"]
-
-function joinPt(items: readonly string[]): string {
-  if (items.length <= 1) return items.join("")
-  return `${items.slice(0, -1).join(", ")} e ${items[items.length - 1]}`
-}
-
 /**
  * Frase de promessa do hero. `total` null quer dizer que a contagem falhou: a
  * frase sai sem número, nunca com zero.
  */
 export function buildSalaPromise(total: number | null, cargos: readonly string[]): string {
-  const cargoList = joinPt(
-    CARGO_PROMISE_ORDER.filter((cargo) => cargos.includes(cargo)).map((cargo) => CARGO_PROMISE_LABEL[cargo]),
-  )
+  const cargoList = formatImprensaCargoList(cargos)
   const alvo = cargoList ? ` a ${cargoList}` : ""
   const quem = total === null || total === 0
     ? `os candidatos${alvo}`

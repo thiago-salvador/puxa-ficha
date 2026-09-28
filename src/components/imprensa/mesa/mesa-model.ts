@@ -1,5 +1,5 @@
 import type { ImprensaPageRow } from "@/lib/imprensa-cache"
-import { imprensaDataBucket, type ImprensaDataBucket } from "@/lib/imprensa-facts"
+import { imprensaDataBucket, temProcessoPublicado, type ImprensaDataBucket } from "@/lib/imprensa-facts"
 import { MESA_COM, MESA_ORDEM, MESA_PARAM, type MesaCom } from "@/lib/imprensa-nav"
 
 /**
@@ -110,7 +110,7 @@ export function parseMesaCom(value: string | null | undefined): MesaCom | null {
 export function matchesMesaCom(row: MesaRow, com: MesaCom): boolean {
   switch (com) {
     case "processo":
-      return row.processos.estado === "publicado" || row.processos.estado === "cobertura_parcial"
+      return temProcessoPublicado(row.processos)
     case "variacao-100":
       return row.patrimonio.estado === "publicado" && (finite(row.patrimonio.variacaoPct) ?? 0) > 100
     case "sancao":
@@ -127,6 +127,36 @@ export function matchesMesaCom(row: MesaRow, com: MesaCom): boolean {
 export function matchesMesaName(row: MesaRow, query: string): boolean {
   const needle = query.trim().toLocaleLowerCase("pt-BR")
   return !needle || `${row.nome} ${row.nomeOriginal}`.toLocaleLowerCase("pt-BR").includes(needle)
+}
+
+/** Ordenação e filtro da tabela, com a chave da URL que o estado já absorveu. */
+export interface MesaUrlState {
+  sort: MesaSort
+  com: MesaCom | null
+  /** Última combinação de `ordem` e `com` lida da URL. */
+  urlKey: string
+}
+
+export function mesaUrlKey(sort: MesaSort, com: MesaCom | null): string {
+  return `${sort}|${com ?? ""}`
+}
+
+/**
+ * Reconcilia a tabela com a URL. A tabela grava ordenação e filtro na URL com
+ * `history.replaceState`; um link (card de fatos, atalho) pode depois levar a
+ * outra `ordem` ou `com`, inclusive de volta à que a página abriu. Quando a
+ * chave da URL muda e difere do estado, o estado passa a seguir a URL e a
+ * tabela rola até a lista. Quando a URL só alcançou o estado (a própria
+ * tabela escreveu), nada muda. Devolve null quando não há o que fazer.
+ */
+export function syncMesaUrlState(
+  state: MesaUrlState,
+  url: { sort: MesaSort; com: MesaCom | null },
+): { state: MesaUrlState; scroll: boolean } | null {
+  const urlKey = mesaUrlKey(url.sort, url.com)
+  if (urlKey === state.urlKey) return null
+  const external = url.sort !== state.sort || url.com !== state.com
+  return { state: { sort: url.sort, com: url.com, urlKey }, scroll: external }
 }
 
 /**

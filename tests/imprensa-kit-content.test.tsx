@@ -33,8 +33,11 @@ function row(overrides: Partial<Row> = {}): Row {
 }
 
 // 1.234 candidatos: 1.000 com patrimônio publicado, 37 com processo publicado, 11 homônimos.
+// Os três cargos aparecem: 10 a presidente, 20 ao Senado e o resto a governador.
 const rows: Row[] = [
-  ...Array.from({ length: 1000 }, () => row()),
+  ...Array.from({ length: 10 }, () => row({ cargo: "Presidente" })),
+  ...Array.from({ length: 20 }, () => row({ cargo: "Senador" })),
+  ...Array.from({ length: 970 }, () => row()),
   ...Array.from({ length: 37 }, () => row({ patrimonio: { estado: "sem_dado", ano: null, total: null, valorEstado: null, anoAnterior: null, totalAnterior: null, variacaoPct: null, fonteUrl: null }, processos: { estado: "publicado", buscaEstado: "encontrado", quantidade: 2 } })),
   ...Array.from({ length: 11 }, () => row({ patrimonio: { estado: "sem_dado", ano: null, total: null, valorEstado: null, anoAnterior: null, totalAnterior: null, variacaoPct: null, fonteUrl: null }, processos: { estado: "indeterminado", buscaEstado: "indeterminado", quantidade: 0 } })),
   ...Array.from({ length: 186 }, () => row({ patrimonio: { estado: "sem_dado", ano: null, total: null, valorEstado: null, anoAnterior: null, totalAnterior: null, variacaoPct: null, fonteUrl: null } })),
@@ -59,14 +62,14 @@ function allStrings(): string[] {
 
 describe("kit de imprensa: números calculados", () => {
   it("tira cada número das linhas do dataset e a data do generatedAt", () => {
-    assert.deepEqual(numbers, { total: 1234, patrimonios: 1000, comProcesso: 37, homonimos: 11, data: "28/09/2026" })
+    assert.deepEqual(numbers, { total: 1234, patrimonios: 1000, comProcesso: 37, homonimos: 11, cargos: "presidente, governador e Senado", data: "28/09/2026" })
   })
 
   it("insere os números nos textos, na frase e na FAQ de homônimos", () => {
     const [t50, t100, t250] = content.kitPressTexts(numbers)
     assert.match(content.kitOneLine(numbers), /sobre os 1\.234 candidatos a presidente, governador e Senado/)
     assert.match(t50.paragraphs.join(" "), /1\.234 candidatos/)
-    assert.match(t100.paragraphs.join(" "), /patrimônio ao TSE de 1\.000 candidatos e processos com link do tribunal de 37\./)
+    assert.match(t100.paragraphs.join(" "), /patrimônio ao TSE de 1\.000 candidatos e processos publicados na ficha de 37\./)
     const long = t250.paragraphs.join(" ")
     assert.match(long, /Nos dados de 28\/09\/2026/)
     assert.match(long, /37 candidatos têm processo publicado/)
@@ -76,10 +79,29 @@ describe("kit de imprensa: números calculados", () => {
   })
 
   it("usa o singular quando o número é 1", () => {
-    const one = content.kitNumbers(computeImprensaFacts([row({ processos: { estado: "publicado", buscaEstado: "encontrado", quantidade: 1 } })]), generatedAt)
+    const one = content.kitNumbers(computeImprensaFacts([row({ cargo: "Presidente", processos: { estado: "publicado", buscaEstado: "encontrado", quantidade: 1 } })]), generatedAt)
     const long = content.kitPressTexts(one)[2].paragraphs.join(" ")
     assert.match(long, /1 candidato tem processo publicado/)
-    assert.match(content.kitOneLine(one), /sobre 1 candidato a presidente/)
+    assert.match(content.kitOneLine(one), /sobre 1 candidato a presidente em 2026/)
+  })
+
+  it("enumera só os cargos que estão no dataset", () => {
+    // Senado desligado: o dataset não tem senadores e o total não os inclui.
+    const semSenado = content.kitNumbers(computeImprensaFacts(rows.filter((item) => item.cargo !== "Senador")), generatedAt)
+    assert.equal(semSenado?.cargos, "presidente e governador")
+    const texts = [content.kitOneLine(semSenado), ...content.kitPressTexts(semSenado).flatMap((text) => text.paragraphs)]
+    assert.match(texts[0], /sobre os 1\.214 candidatos a presidente e governador em 2026/)
+    for (const text of texts) assert.doesNotMatch(text, /governador e Senado/, text)
+    const t250 = content.kitPressTexts(semSenado)[2].paragraphs.join(" ")
+    assert.match(t250, /sobre os 1\.214 candidatos a presidente e governador nas eleições de 2026/)
+  })
+
+  it("não promete link do tribunal para todo processo publicado", () => {
+    for (const n of [numbers, null]) {
+      for (const text of [content.kitOneLine(n), ...content.kitPressTexts(n).flatMap((item) => item.paragraphs)]) {
+        assert.doesNotMatch(text, /link do tribunal/, text)
+      }
+    }
   })
 
   it("sem dataset, não mostra zero no lugar do número", () => {
@@ -87,6 +109,8 @@ describe("kit de imprensa: números calculados", () => {
     assert.equal(content.kitNumbers(computeImprensaFacts([]), generatedAt), null)
     const texts = [content.kitOneLine(null), ...content.kitPressTexts(null).flatMap((text) => text.paragraphs), ...content.kitQuestions(null).map((q) => q.answer)]
     for (const text of texts) assert.doesNotMatch(text.replace(/2026/g, ""), /\d/, text)
+    // Sem dataset, a frase não afirma quais cargos estão cobertos.
+    for (const text of texts) assert.doesNotMatch(text, /a presidente|governador/, text)
   })
 })
 

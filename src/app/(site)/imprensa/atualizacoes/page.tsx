@@ -11,12 +11,9 @@ import { UpdateItem } from "@/components/imprensa/updates/UpdateItem"
 import { UpdatesFilters } from "@/components/imprensa/updates/UpdatesFilters"
 import list from "@/components/imprensa/updates/updates.module.css"
 import {
-  computeUpdatesFacets,
-  filterUpdates,
+  buildUpdatesView,
   formatDayMonth,
-  joinUpdates,
   latestDetection,
-  parseUpdatesQuery,
   UPDATES_PAGE_SIZE,
   updatesHref,
 } from "@/components/imprensa/updates/updates-view"
@@ -65,14 +62,13 @@ export default async function ImprensaAtualizacoesPage({
     getLatestSituacaoCheck(),
   ])
 
-  const candidates = dataset?.rows.map(({ slug, nome, cargo, uf }) => ({ slug, nome, cargo, uf })) ?? []
-  const cargos = [...new Set(candidates.map((candidate) => candidate.cargo))]
+  // Sem dataset, candidates fica null: cargo e UF de cada mudança são
+  // desconhecidos, e a view não filtra nem conta por eles.
+  const candidates = dataset ? dataset.rows.map(({ slug, nome, cargo, uf }) => ({ slug, nome, cargo, uf })) : null
+  const cargos = [...new Set((candidates ?? []).map((candidate) => candidate.cargo))]
     .sort((a, b) => (CARGO_ORDER.indexOf(a) + 1 || 99) - (CARGO_ORDER.indexOf(b) + 1 || 99) || a.localeCompare(b, "pt-BR"))
-  const query = parseUpdatesQuery(params, cargos)
+  const { query, recorteDisponivel, recorteIgnorado, rows, filtered, facets } = buildUpdatesView(params, resource.updates, candidates, cargos)
   const recorte = { uf: query.uf, cargo: query.cargo }
-  const rows = joinUpdates(resource.updates, candidates)
-  const filtered = filterUpdates(rows, query)
-  const facets = computeUpdatesFacets(rows, query, cargos)
   const pageCount = Math.max(1, Math.ceil(filtered.length / UPDATES_PAGE_SIZE))
   const page = Math.min(query.page, pageCount)
   const visible = filtered.slice((page - 1) * UPDATES_PAGE_SIZE, page * UPDATES_PAGE_SIZE)
@@ -118,7 +114,13 @@ export default async function ImprensaAtualizacoesPage({
             </p>
           ) : (
             <>
-              <UpdatesFilters query={query} facets={facets} />
+              {recorteDisponivel ? null : (
+                <p className={styles.alert} role="status">
+                  <strong>Não foi possível carregar agora o cargo e o estado de cada mudança.</strong>
+                  {recorteIgnorado ? " O filtro por estado e cargo não foi aplicado." : ""} A lista mostra todas as mudanças registradas, só com o nome. Uma falha de consulta não quer dizer que o recorte não teve mudança.
+                </p>
+              )}
+              <UpdatesFilters query={query} facets={facets} recorteDisponivel={recorteDisponivel} />
               <p className={list.resultLine}>
                 {hasFilter
                   ? `${NUMBER.format(filtered.length)} de ${plural(rows.length, "mudança registrada", "mudanças registradas")}`

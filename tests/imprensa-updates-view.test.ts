@@ -1,6 +1,7 @@
 import assert from "node:assert/strict"
 import test from "node:test"
 import {
+  buildUpdatesView,
   computeUpdatesFacets,
   filterUpdates,
   formatDayMonth,
@@ -77,4 +78,35 @@ test("última detecção sai dos dados e some sem linhas", () => {
 test("link leva UF e cargo pelo recorte da seção, mais tipo e página", () => {
   assert.equal(updatesHref({ uf: "SP", cargo: "Governador", tipo: "situacao" }, 2), "/imprensa/atualizacoes?cargo=Governador&uf=SP&tipo=situacao&page=2")
   assert.equal(updatesHref({ uf: null, cargo: null, tipo: null }), "/imprensa/atualizacoes")
+})
+
+test("com o dataset disponível, a view aplica UF e cargo como antes", () => {
+  const view = buildUpdatesView({ uf: "SP" }, updates, candidates, cargos)
+  assert.equal(view.recorteDisponivel, true)
+  assert.equal(view.recorteIgnorado, false)
+  assert.equal(view.query.uf, "SP")
+  assert.deepEqual(view.filtered.map((row) => row.id), ["1"])
+  assert.equal(view.facets.uf.length, 27)
+})
+
+test("sem o dataset, UF e cargo não filtram nem viram zero; tipo continua valendo", () => {
+  const view = buildUpdatesView({ uf: "SP", cargo: "Governador", tipo: "situacao" }, updates, null, [])
+  assert.equal(view.recorteDisponivel, false)
+  assert.equal(view.recorteIgnorado, true)
+  assert.deepEqual(view.query, { uf: null, cargo: null, tipo: "situacao", page: 1 })
+  // Todas as mudanças de situação aparecem, só com o nome; nada de "0 de N".
+  assert.deepEqual(view.filtered.map((row) => row.id), ["1", "3", "4"])
+  assert.equal(view.rows.length, updates.length)
+  assert.ok(view.rows.every((row) => row.cargo === null && row.uf === null))
+  assert.deepEqual(view.rows.map((row) => row.nome), ["Ana de Souza", "Ana de Souza", "Ana de Souza", "Jose Fora"])
+  // Sem facetas de UF e cargo: uma contagem de falha nunca aparece como (0).
+  assert.deepEqual(view.facets.uf, [])
+  assert.deepEqual(view.facets.cargo, [])
+  assert.deepEqual(view.facets.tipo.map((item) => [item.value, item.count]), [["situacao", 3], ["patrimonio", 1], ["partido", 0]])
+})
+
+test("sem o dataset e sem UF ou cargo na URL, não avisa filtro ignorado", () => {
+  const view = buildUpdatesView({ tipo: "patrimonio" }, updates, null, [])
+  assert.equal(view.recorteIgnorado, false)
+  assert.deepEqual(view.filtered.map((row) => row.id), ["2"])
 })

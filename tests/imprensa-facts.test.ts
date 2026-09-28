@@ -4,10 +4,12 @@ import { describe, it } from "node:test"
 import {
   buildImprensaFactCards,
   computeImprensaFacts,
+  formatImprensaCargoList,
   IMPRENSA_DATA_BUCKETS,
   IMPRENSA_FACT_CARD_ORDER,
   imprensaDataBucket,
   imprensaDataBucketLabel,
+  temProcessoPublicado,
   type ImprensaFactsRow,
 } from "../src/lib/imprensa-facts"
 
@@ -87,10 +89,10 @@ describe("computeImprensaFacts", () => {
     assert.deepEqual(facts.patrimonio, { publicado: 4, comVariacao: 3, variacaoAcima100: 1, acima10Milhoes: 2 })
   })
 
-  it("soma processos só de publicado e cobertura parcial; sem quantidade não soma", () => {
+  it("soma processos só de publicado e cobertura parcial com registro; sem quantidade não conta", () => {
     assert.deepEqual(facts.processos, {
-      candidatosComProcesso: 3,
-      publicado: 2,
+      candidatosComProcesso: 2,
+      publicado: 1,
       coberturaParcial: 1,
       registros: 5,
       emConfirmacao: 1,
@@ -114,6 +116,32 @@ describe("computeImprensaFacts", () => {
     assert.equal(empty.total, 0)
     assert.deepEqual(empty.porCargo, [])
     assert.equal(empty.processos.registros, 0)
+  })
+})
+
+describe("processo publicado na ficha", () => {
+  it("não conta como com processo quem teve todas as ocorrências fora da conta por falta de fonte", () => {
+    const semFonte = row({ processos: { estado: "cobertura_parcial", buscaEstado: "encontrado", quantidade: null, quantidadeOmitida: 2 } })
+    const zerado = row({ processos: { estado: "publicado", buscaEstado: "encontrado", quantidade: 0 } })
+    const comProcesso = row({ processos: { estado: "cobertura_parcial", buscaEstado: "encontrado", quantidade: 2, quantidadeEmConfirmacao: 2 } })
+    assert.equal(temProcessoPublicado(semFonte.processos), false)
+    assert.equal(temProcessoPublicado(zerado.processos), false)
+    assert.equal(temProcessoPublicado(comProcesso.processos), true)
+    const facts = computeImprensaFacts([semFonte, zerado, comProcesso])
+    assert.equal(facts.processos.candidatosComProcesso, 1)
+    assert.equal(facts.processos.registros, 2)
+    const [card] = buildImprensaFactCards(facts, ["processos"])
+    assert.equal(card.value, 1)
+    assert.equal(card.label, "candidato com processo publicado na ficha")
+    assert.equal(card.detail, "2 registros na ficha; 2 com fonte oficial em confirmação.")
+    assert.doesNotMatch(card.label, /link do tribunal/)
+  })
+
+  it("lista só os cargos presentes, na ordem presidente, governador e Senado", () => {
+    assert.equal(formatImprensaCargoList(["Senador", "Governador", "Presidente"]), "presidente, governador e Senado")
+    assert.equal(formatImprensaCargoList(["Governador", "Presidente"]), "presidente e governador")
+    assert.equal(formatImprensaCargoList(["Governador"]), "governador")
+    assert.equal(formatImprensaCargoList([]), "")
   })
 })
 
