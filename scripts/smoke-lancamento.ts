@@ -246,7 +246,8 @@ async function checkHome(context: BrowserContext): Promise<string[]> {
 
 async function checkUf(context: BrowserContext, uf: string): Promise<string[]> {
   return withPage(context, `/uf/${uf.toLowerCase()}`, async (page) => {
-    const heading = page.getByRole("heading", { name: /^Candidatos em /i })
+    // O título usa a preposição do estado: "em Alagoas", "no Acre", "na Bahia".
+    const heading = page.getByRole("heading", { name: /^Candidatos (em|no|na|nos|nas) /i })
     await heading.waitFor({ state: "visible" })
     const gridSection = heading.locator("xpath=ancestor::section[1]/following-sibling::section[1]")
     const paths = await waitForCandidatePaths(gridSection, 1)
