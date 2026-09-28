@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-09-28T08:43:41.815Z",
+  "updated_at": "2026-09-28T09:04:23.605Z",
   "quotes": [
     {
       "id": "00c8f1873899039478dd4a8f3e86452d4e3e3c020b05a042d133191ce8a6b32b",
@@ -405,6 +405,34 @@
         "date_excerpt": "O candidato à Presidência Renan Santos (Missão) afirmou nesta sexta-feira (11) que a eleição de 2026 é a campanha mais estranha que vê em muito tempo.",
         "fetched_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/09/11/renan-santos-sabatina-uol-folha.ghtml",
         "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "1084d052d97c4006b4a243f044a9d0487d865815bcbd499ea24ac93460580153",
+      "candidate_id": "00b971a6-5f12-4fa3-961f-5806abfd6fb0",
+      "candidate_slug": "sandro-alex",
+      "candidate_name": "Sandro Alex",
+      "office": "Governador",
+      "uf": "PR",
+      "quote_text": "Então essa já é minha proposta. Nós estamos estudando junto à Alep [Assembleia Legislativa do Paraná] para que o governo possa conectar o homem do campo, a propriedade, no trifásico",
+      "context": "“É com investimentos que nós vamos garantir [as melhorias no serviço da Copel]. Nós entregamos, por exemplo, 25 mil quilômetros de trifásico da Copel, nós investimos nesta ampliação de uma energia segura. Só que o homem do campo não conseguiu se conectar ainda neste trifásico [...], eles têm dificuldade de fazer a conexão da sua propriedade até a porteira, o trifásico tá na porteira. Então essa já é minha proposta. Nós estamos estudando junto à Alep [Assembleia Legislativa do Paraná] para que o governo possa conectar o homem do campo, a propriedade, no trifásico”, disse.",
+      "event_context": "Sandro Alex promete melhorias na Copel, privatizada no governo Ratinho Junior, e diz que planeja grande projeto para contenção de enchentes | G1",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-15",
+      "publisher": "G1",
+      "article_url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/09/15/sandro-alex-entrevista-rpc.ghtml",
+      "article_title": "Sandro Alex promete melhorias na Copel, privatizada no governo Ratinho Junior, e diz que planeja grande projeto para contenção de enchentes | G1",
+      "article_published_at": "2026-09-15T13:14:57.987-03:00",
+      "observed_at": "2026-09-28T09:04:23.605Z",
+      "source_sha256": "de1a216ad5ddcd24bd55c12b59a84a957043143dad61eaaa1a65c41db024cb26",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Sandro Alex",
+        "date_excerpt": "2026-09-15",
+        "fetched_url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/09/15/sandro-alex-entrevista-rpc.ghtml",
+        "method": "root_approved_original_review",
+        "source_format": "web_text",
+        "evidence_path": "reports/falas-monitoramento/rodada-20260928/evidence-b/originais-b/sandro-alex.html"
       }
     },
     {
@@ -1985,6 +2013,34 @@
         "date_excerpt": "A candidata à Presidência pela Unidade Popular (UP), Samara Martins, defendeu a soberania nacional e o fim das privatizações durante debate promovido pelo Metrópoles em parceria com o canal Inteligência Ltda, na noite desta sexta-feira (18/9).",
         "fetched_url": "https://www.metropoles.com/brasil/samara-martins-defende-soberania-no-debate-metropoles-inteligencia-ltda",
         "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "4be15ea597ff48b9e3a8ebcc1aa00bfb19d85bd13fdb6aee89c73141f7442259",
+      "candidate_id": "968f8c87-8d8b-4248-9cee-4aee7929f4d9",
+      "candidate_slug": "saulo-arcangeli",
+      "candidate_name": "Saulo Arcangeli",
+      "office": "Governador",
+      "uf": "MA",
+      "quote_text": "O PSTU vai governar através dos conselhos populares. Nós sabemos que, desde a Constituição de 1988, foram criados conselhos, mas são conselhos consultivos. No governo do PSTU, os conselhos vão funcionar e vão ser conselhos deliberativos, que vão discutir o orçamento do estado.",
+      "context": "“O PSTU vai governar através dos conselhos populares. Nós sabemos que, desde a Constituição de 1988, foram criados conselhos, mas são conselhos consultivos. No governo do PSTU, os conselhos vão funcionar e vão ser conselhos deliberativos, que vão discutir o orçamento do estado. [...] A gente vai escolher esses conselhos nos locais de trabalho, nos locais de moradia. É onde as pessoas sentem a realidade, onde tem problema do saneamento, onde não tem saúde, onde não tem uma escola próxima, onde não tem creche. O orçamento vai para a Assembleia Legislativa e aí os deputados vão estar lá com a proposta da população. Não é a proposta do governador Saulo Arcangeli, vai estar com a proposta da população”, afirmou.",
+      "event_context": "Saulo Arcangeli promete criar conselhos populares e estatizar a saúde | G1",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-15",
+      "publisher": "G1",
+      "article_url": "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/09/15/saulo-arcangeli-promete-criar-conselhos-populares-estatizar-a-saude-e-implantar-tarifa-zero-no-transporte-publico.ghtml",
+      "article_title": "Saulo Arcangeli promete criar conselhos populares e estatizar a saúde | G1",
+      "article_published_at": "2026-09-15T14:35:26.063-03:00",
+      "observed_at": "2026-09-28T09:04:23.605Z",
+      "source_sha256": "697caa50cfbb3fbaf83db18b547b2aa29cc11a2985e4ceba38bc65b11fcf93f8",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Saulo Arcangeli",
+        "date_excerpt": "2026-09-15",
+        "fetched_url": "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/09/15/saulo-arcangeli-promete-criar-conselhos-populares-estatizar-a-saude-e-implantar-tarifa-zero-no-transporte-publico.ghtml",
+        "method": "root_approved_original_review",
+        "source_format": "web_text",
+        "evidence_path": "reports/falas-monitoramento/rodada-20260928/evidence-b/originais-b/saulo-arcangeli.html"
       }
     },
     {
@@ -4761,6 +4817,32 @@
       }
     },
     {
+      "id": "a0510ff341252eb9bc0a3e9f37268781e8a8c8a5839eee6ae10e287e7ef91db8",
+      "candidate_id": "89dc7944-ed0a-4a1f-8ad5-fdd3edd9347a",
+      "candidate_slug": "tiao-bocalom",
+      "candidate_name": "Tiao Bocalom",
+      "office": "Governador",
+      "uf": "AC",
+      "quote_text": "Eu não busco apoio em troca de secretaria. Eu busco apoio em troca de um projeto que precisa dar certo. Qual é o projeto que precisa dar certo? Que o nosso povo saia dessa pobreza",
+      "context": "“Eu não busco apoio em troca de secretaria. Eu busco apoio em troca de um projeto que precisa dar certo. Qual é o projeto que precisa dar certo? Que o nosso povo saia dessa pobreza”, salientou.",
+      "event_context": "Sabatina da CBN Amazônia Rio Branco. Candidato Tião Bocalom (PSDB) foi sabatinado nesta quinta (24) pela CBN Amazônia Rio Branco.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-24",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/24/entrevista-tiao-bocalom-cbn-rio-branco.ghtml",
+      "article_title": "'Derrubar o que for necessário', diz Bocalom sobre relação entre conservação ambiental e produção no AC",
+      "article_published_at": "2026-09-24T13:38:34.004-03:00",
+      "observed_at": "2026-09-26T08:53:06.221Z",
+      "source_sha256": "1033451d5cbca6faed1f30b89ff8cf2c6eb1d145262429db41e8f6b854589d16",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Candidato Tião Bocalom (PSDB) foi sabatinado nesta quinta (24) pela CBN Amazônia Rio Branco.",
+        "date_excerpt": "Candidato Tião Bocalom (PSDB) foi sabatinado nesta quinta (24) pela CBN Amazônia Rio Branco.",
+        "fetched_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/24/entrevista-tiao-bocalom-cbn-rio-branco.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "a27fa7fa35217ff82bd66b9b54f157634107b561033e674e853fa86b8c343c20",
       "candidate_id": "3824c464-5087-471c-b7ba-1f8d59f3c070",
       "candidate_slug": "guilherme-fonseca",
@@ -6872,6 +6954,34 @@
       }
     },
     {
+      "id": "ed880a9f4de61508e9d5c5f7c11cae2eaafab667ee3a5f285f0d4bc64db5551f",
+      "candidate_id": "36ec7b14-9da3-4324-820d-6318ce535d01",
+      "candidate_slug": "requiao-filho",
+      "candidate_name": "Requiao Filho",
+      "office": "Governador",
+      "uf": "PR",
+      "quote_text": "Não vou nem perguntar o partido, vou perguntar se tem capacidade de estar à frente da secretaria",
+      "context": "Sobre o espaço que o PT terá no Paraná caso Requião Filho seja eleito, o candidato afirmou que terá espaço nas secretarias estaduais quem tiver “capacidade técnica e de gestão”: “Não vou nem perguntar o partido, vou perguntar se tem capacidade de estar à frente da secretaria”, disse.",
+      "event_context": "Requião Filho defende auditoria na Copel e fim das escolas cívico-militares no Paraná  | G1",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-16",
+      "publisher": "G1",
+      "article_url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/09/16/requiao-filho-entrevista-rpc.ghtml",
+      "article_title": "Requião Filho defende auditoria na Copel e fim das escolas cívico-militares no Paraná  | G1",
+      "article_published_at": "2026-09-16T13:57:32.532-03:00",
+      "observed_at": "2026-09-28T09:04:23.605Z",
+      "source_sha256": "1086bb653d7387f5c091578e2c052197f5ab960cd43c884382c0a4e2ad2c72de",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Requião Filho",
+        "date_excerpt": "2026-09-16",
+        "fetched_url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/09/16/requiao-filho-entrevista-rpc.ghtml",
+        "method": "root_approved_original_review",
+        "source_format": "web_text",
+        "evidence_path": "reports/falas-monitoramento/rodada-20260928/evidence-b/originais-b/requiao-filho.html"
+      }
+    },
+    {
       "id": "edd216c85aa2e8f5659c34349e2f49b14ae76e213a3186b5756e07dcef0df202",
       "candidate_id": "4b079fd2-53ac-4b37-b735-3216d0817607",
       "candidate_slug": "gisvaldo-oliveira",
@@ -7049,6 +7159,39 @@
         "method": "codex_source_review",
         "source_format": "web_text"
       }
+    },
+    {
+      "id": "f6d1150a3a388737ce9a7d68815b0d78e15a3e2b4b2f1749f15d23dc01c9d122",
+      "candidate_id": "6f0ad3bd-c9a2-4b7f-b672-8fbe87bc61cc",
+      "candidate_slug": "luciana-amorim",
+      "candidate_name": "Luciana Amorim",
+      "office": "Governador",
+      "uf": "GO",
+      "quote_text": "A proposta para o transporte público de Goiás é a reestatização e tarifa zero, principalmente isso, porque a gente entende que o nosso transporte público é usado para dar dinheiro para o setor privado",
+      "context": "\"A proposta para o transporte público de Goiás é a reestatização e tarifa zero, principalmente isso, porque a gente entende que o nosso transporte público é usado para dar dinheiro para o setor privado\", disse.",
+      "event_context": "Declaração em campanha durante panfletagem no Centro de Goiânia para apresentar propostas de campanha.. Candidatos ao governo de Goiás cumpriram agendas de campanha nesta quinta-feira (17). Os postulantes realizaram panfletagens, debates, sabatinas e reuniões em diferentes municípios.",
+      "event_type": "declaracao",
+      "occurred_on": "2026-09-17",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/go/goias/eleicoes/2026/noticia/2026/09/17/veja-como-foi-a-agenda-dos-candidatos-ao-governo-de-goias-nesta-quinta-feira-17.ghtml",
+      "article_title": "Veja como foi a agenda dos candidatos ao governo de Goiás nesta quinta-feira (17)",
+      "article_published_at": "2026-09-17T21:43:08.217-03:00",
+      "observed_at": "2026-09-28T08:43:41.815Z",
+      "source_sha256": "51b04eaef1c920e5e493d302552efd0398c7ded6d327d16c8be5be19410028d1",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "A candidata ao Governo de Goiás pela Unidade Popular (UP), Luciana Amorim, realizou panfletagem no Centro de Goiânia para apresentar suas propostas de campanha.",
+        "identity_excerpt": "A candidata ao Governo de Goiás pela Unidade Popular (UP), Luciana Amorim, realizou panfletagem no Centro de Goiânia para apresentar suas propostas de campanha.",
+        "date_excerpt": "Candidatos ao governo de Goiás cumpriram agendas de campanha nesta quinta-feira (17). Os postulantes realizaram panfletagens, debates, sabatinas e reuniões em diferentes municípios.",
+        "fetched_url": "https://g1.globo.com/go/goias/eleicoes/2026/noticia/2026/09/17/veja-como-foi-a-agenda-dos-candidatos-ao-governo-de-goias-nesta-quinta-feira-17.ghtml",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://g1.globo.com/go/goias/eleicoes/2026/noticia/2026/09/17/veja-como-foi-a-agenda-dos-candidatos-ao-governo-de-goias-nesta-quinta-feira-17.ghtml",
+          "datePublished": "2026-09-17T21:43:08.217-03:00",
+          "dateModified": "2026-09-17T21:55:26.702-03:00"
+        }
+      },
+      "article_modified_at": "2026-09-17T21:55:26.702-03:00"
     },
     {
       "id": "f72150184a5e267955e20d42f7c0bc2267738ce3c635eb68fe11221b80a477b7",
@@ -7247,65 +7390,6 @@
         "fetched_url": "https://www.diariodoamapa.com.br/cadernos/politica/carlos-cley-defende-participacao-popular-no-orcamento-e-estatizacao-de-servicos-publicos/",
         "method": "codex_source_review"
       }
-    },
-    {
-      "id": "a0510ff341252eb9bc0a3e9f37268781e8a8c8a5839eee6ae10e287e7ef91db8",
-      "candidate_id": "89dc7944-ed0a-4a1f-8ad5-fdd3edd9347a",
-      "candidate_slug": "tiao-bocalom",
-      "candidate_name": "Tiao Bocalom",
-      "office": "Governador",
-      "uf": "AC",
-      "quote_text": "Eu não busco apoio em troca de secretaria. Eu busco apoio em troca de um projeto que precisa dar certo. Qual é o projeto que precisa dar certo? Que o nosso povo saia dessa pobreza",
-      "context": "“Eu não busco apoio em troca de secretaria. Eu busco apoio em troca de um projeto que precisa dar certo. Qual é o projeto que precisa dar certo? Que o nosso povo saia dessa pobreza”, salientou.",
-      "event_context": "Sabatina da CBN Amazônia Rio Branco. Candidato Tião Bocalom (PSDB) foi sabatinado nesta quinta (24) pela CBN Amazônia Rio Branco.",
-      "event_type": "sabatina",
-      "occurred_on": "2026-09-24",
-      "publisher": "g1",
-      "article_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/24/entrevista-tiao-bocalom-cbn-rio-branco.ghtml",
-      "article_title": "'Derrubar o que for necessário', diz Bocalom sobre relação entre conservação ambiental e produção no AC",
-      "article_published_at": "2026-09-24T13:38:34.004-03:00",
-      "observed_at": "2026-09-26T08:53:06.221Z",
-      "source_sha256": "1033451d5cbca6faed1f30b89ff8cf2c6eb1d145262429db41e8f6b854589d16",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "identity_excerpt": "Candidato Tião Bocalom (PSDB) foi sabatinado nesta quinta (24) pela CBN Amazônia Rio Branco.",
-        "date_excerpt": "Candidato Tião Bocalom (PSDB) foi sabatinado nesta quinta (24) pela CBN Amazônia Rio Branco.",
-        "fetched_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/24/entrevista-tiao-bocalom-cbn-rio-branco.ghtml",
-        "method": "codex_source_review"
-      }
-    },
-    {
-      "id": "f6d1150a3a388737ce9a7d68815b0d78e15a3e2b4b2f1749f15d23dc01c9d122",
-      "candidate_id": "6f0ad3bd-c9a2-4b7f-b672-8fbe87bc61cc",
-      "candidate_slug": "luciana-amorim",
-      "candidate_name": "Luciana Amorim",
-      "office": "Governador",
-      "uf": "GO",
-      "quote_text": "A proposta para o transporte público de Goiás é a reestatização e tarifa zero, principalmente isso, porque a gente entende que o nosso transporte público é usado para dar dinheiro para o setor privado",
-      "context": "\"A proposta para o transporte público de Goiás é a reestatização e tarifa zero, principalmente isso, porque a gente entende que o nosso transporte público é usado para dar dinheiro para o setor privado\", disse.",
-      "event_context": "Declaração em campanha durante panfletagem no Centro de Goiânia para apresentar propostas de campanha.. Candidatos ao governo de Goiás cumpriram agendas de campanha nesta quinta-feira (17). Os postulantes realizaram panfletagens, debates, sabatinas e reuniões em diferentes municípios.",
-      "event_type": "declaracao",
-      "occurred_on": "2026-09-17",
-      "publisher": "g1",
-      "article_url": "https://g1.globo.com/go/goias/eleicoes/2026/noticia/2026/09/17/veja-como-foi-a-agenda-dos-candidatos-ao-governo-de-goias-nesta-quinta-feira-17.ghtml",
-      "article_title": "Veja como foi a agenda dos candidatos ao governo de Goiás nesta quinta-feira (17)",
-      "article_published_at": "2026-09-17T21:43:08.217-03:00",
-      "observed_at": "2026-09-28T08:43:41.815Z",
-      "source_sha256": "51b04eaef1c920e5e493d302552efd0398c7ded6d327d16c8be5be19410028d1",
-      "attribution": "source_context_review",
-      "review_evidence": {
-        "declaration_context_excerpt": "A candidata ao Governo de Goiás pela Unidade Popular (UP), Luciana Amorim, realizou panfletagem no Centro de Goiânia para apresentar suas propostas de campanha.",
-        "identity_excerpt": "A candidata ao Governo de Goiás pela Unidade Popular (UP), Luciana Amorim, realizou panfletagem no Centro de Goiânia para apresentar suas propostas de campanha.",
-        "date_excerpt": "Candidatos ao governo de Goiás cumpriram agendas de campanha nesta quinta-feira (17). Os postulantes realizaram panfletagens, debates, sabatinas e reuniões em diferentes municípios.",
-        "fetched_url": "https://g1.globo.com/go/goias/eleicoes/2026/noticia/2026/09/17/veja-como-foi-a-agenda-dos-candidatos-ao-governo-de-goias-nesta-quinta-feira-17.ghtml",
-        "method": "codex_source_review",
-        "article_metadata": {
-          "url": "https://g1.globo.com/go/goias/eleicoes/2026/noticia/2026/09/17/veja-como-foi-a-agenda-dos-candidatos-ao-governo-de-goias-nesta-quinta-feira-17.ghtml",
-          "datePublished": "2026-09-17T21:43:08.217-03:00",
-          "dateModified": "2026-09-17T21:55:26.702-03:00"
-        }
-      },
-      "article_modified_at": "2026-09-17T21:55:26.702-03:00"
     }
   ]
 }
