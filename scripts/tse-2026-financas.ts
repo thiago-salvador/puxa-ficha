@@ -410,9 +410,10 @@ export async function sondarCas(plano: PlanoFinancas2026, permitirSchemaAnterior
   return { ok, falhas }
 }
 
-async function gravarRecibos(plano: PlanoFinancas2026, conflitos: Conflito[]): Promise<number> {
+export function linhasDeReciboAplicaveis(plano: PlanoFinancas2026, conflitos: Conflito[]) {
   const comConflito = new Set(conflitos.map((c) => c.slug))
-  const linhas = plano.recibos.map((r) => {
+  const riskSlugs = new Set(plano.identity_risk_slugs ?? [])
+  return plano.recibos.filter((r) => !riskSlugs.has(r.alvo)).map((r) => {
     const conflitou = comConflito.has(r.alvo) && r.resultado !== "erro"
     return {
       fonte: r.fonte,
@@ -427,6 +428,10 @@ async function gravarRecibos(plano: PlanoFinancas2026, conflitos: Conflito[]): P
       duracao_ms: null,
     }
   })
+}
+
+async function gravarRecibos(plano: PlanoFinancas2026, conflitos: Conflito[]): Promise<number> {
+  const linhas = linhasDeReciboAplicaveis(plano, conflitos)
   for (let i = 0; i < linhas.length; i += 200) {
     const { error } = await supabase.from("coleta_log").insert(linhas.slice(i, i + 200))
     if (error) throw new Error(`coleta_log: ${error.message}`)
@@ -445,9 +450,9 @@ function mensagemDe(err: unknown): string {
  * esta tentativa não tivesse existido. Nunca lança: o erro original é o que
  * o chamador precisa ver.
  */
-export function linhasDeReciboDeFalha(publicos: FichaPublica[], motivo: string) {
+export function linhasDeReciboDeFalha(publicos: FichaPublica[], motivo: string, identityRiskSlugs: ReadonlySet<string> = new Set()) {
   const detalhe = JSON.stringify({ escopo: "candidato", ano: ANO_FINANCAS_2026, motivo: motivo.slice(0, 300) })
-  return publicos.flatMap((p) =>
+  return publicos.filter((p) => !identityRiskSlugs.has(p.slug)).flatMap((p) =>
     [FONTE_RECIBO_FINANCIAMENTO, FONTE_RECIBO_PATRIMONIO].map((fonte) => ({
       fonte,
       escopo: "candidato",
@@ -463,10 +468,10 @@ export function linhasDeReciboDeFalha(publicos: FichaPublica[], motivo: string) 
   )
 }
 
-async function gravarRecibosDeFalha(motivo: string, publicos: FichaPublica[] | null): Promise<void> {
+async function gravarRecibosDeFalha(motivo: string, publicos: FichaPublica[] | null, identityRiskSlugs: ReadonlySet<string> = new Set()): Promise<void> {
   try {
     const lista = publicos ?? (await carregarPublicos())
-    const linhas = linhasDeReciboDeFalha(lista, motivo)
+    const linhas = linhasDeReciboDeFalha(lista, motivo, identityRiskSlugs)
     for (let i = 0; i < linhas.length; i += 200) {
       const { error } = await supabase.from("coleta_log").insert(linhas.slice(i, i + 200))
       if (error) throw new Error(error.message)
@@ -553,7 +558,7 @@ async function executar(opts: OpcoesCli): Promise<number> {
   if (opts.reviewedPlan) consumeReviewedPlan(sha)
   if (!portao.aplicar) {
     console.error(`${portao.motivo}; nada gravado`)
-    await gravarRecibosDeFalha(portao.motivo, publicos)
+    await gravarRecibosDeFalha(portao.motivo, publicos, new Set(plano.identity_risk_slugs ?? []))
     return portao.codigo
   }
 
