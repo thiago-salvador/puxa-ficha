@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-09-26T08:53:06.221Z",
+  "updated_at": "2026-09-28T08:43:41.815Z",
   "quotes": [
     {
       "id": "00c8f1873899039478dd4a8f3e86452d4e3e3c020b05a042d133191ce8a6b32b",
@@ -7273,6 +7273,39 @@
         "fetched_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/24/entrevista-tiao-bocalom-cbn-rio-branco.ghtml",
         "method": "codex_source_review"
       }
+    },
+    {
+      "id": "f6d1150a3a388737ce9a7d68815b0d78e15a3e2b4b2f1749f15d23dc01c9d122",
+      "candidate_id": "6f0ad3bd-c9a2-4b7f-b672-8fbe87bc61cc",
+      "candidate_slug": "luciana-amorim",
+      "candidate_name": "Luciana Amorim",
+      "office": "Governador",
+      "uf": "GO",
+      "quote_text": "A proposta para o transporte público de Goiás é a reestatização e tarifa zero, principalmente isso, porque a gente entende que o nosso transporte público é usado para dar dinheiro para o setor privado",
+      "context": "\"A proposta para o transporte público de Goiás é a reestatização e tarifa zero, principalmente isso, porque a gente entende que o nosso transporte público é usado para dar dinheiro para o setor privado\", disse.",
+      "event_context": "Declaração em campanha durante panfletagem no Centro de Goiânia para apresentar propostas de campanha.. Candidatos ao governo de Goiás cumpriram agendas de campanha nesta quinta-feira (17). Os postulantes realizaram panfletagens, debates, sabatinas e reuniões em diferentes municípios.",
+      "event_type": "declaracao",
+      "occurred_on": "2026-09-17",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/go/goias/eleicoes/2026/noticia/2026/09/17/veja-como-foi-a-agenda-dos-candidatos-ao-governo-de-goias-nesta-quinta-feira-17.ghtml",
+      "article_title": "Veja como foi a agenda dos candidatos ao governo de Goiás nesta quinta-feira (17)",
+      "article_published_at": "2026-09-17T21:43:08.217-03:00",
+      "observed_at": "2026-09-28T08:43:41.815Z",
+      "source_sha256": "51b04eaef1c920e5e493d302552efd0398c7ded6d327d16c8be5be19410028d1",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "A candidata ao Governo de Goiás pela Unidade Popular (UP), Luciana Amorim, realizou panfletagem no Centro de Goiânia para apresentar suas propostas de campanha.",
+        "identity_excerpt": "A candidata ao Governo de Goiás pela Unidade Popular (UP), Luciana Amorim, realizou panfletagem no Centro de Goiânia para apresentar suas propostas de campanha.",
+        "date_excerpt": "Candidatos ao governo de Goiás cumpriram agendas de campanha nesta quinta-feira (17). Os postulantes realizaram panfletagens, debates, sabatinas e reuniões em diferentes municípios.",
+        "fetched_url": "https://g1.globo.com/go/goias/eleicoes/2026/noticia/2026/09/17/veja-como-foi-a-agenda-dos-candidatos-ao-governo-de-goias-nesta-quinta-feira-17.ghtml",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://g1.globo.com/go/goias/eleicoes/2026/noticia/2026/09/17/veja-como-foi-a-agenda-dos-candidatos-ao-governo-de-goias-nesta-quinta-feira-17.ghtml",
+          "datePublished": "2026-09-17T21:43:08.217-03:00",
+          "dateModified": "2026-09-17T21:55:26.702-03:00"
+        }
+      },
+      "article_modified_at": "2026-09-17T21:55:26.702-03:00"
     }
   ]
 }
