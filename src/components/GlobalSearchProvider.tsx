@@ -32,6 +32,7 @@ import {
   type GlobalSearchIndexItem,
 } from "@/lib/global-search"
 import { segmentTextByQueryTokens } from "@/lib/global-search-highlight"
+import { atalhoDaBuscaGlobal } from "@/lib/global-search-shortcut"
 import {
   exploreCandidatesExcludingHrefs,
   hydrateRecentCandidatesFromIndex,
@@ -351,8 +352,8 @@ export function GlobalSearchProvider({
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      const key = event.key.toLowerCase()
-      if ((event.metaKey || event.ctrlKey) && key === "k") {
+      const atalho = atalhoDaBuscaGlobal(event, () => isTextInput(event.target))
+      if (atalho === "alternar") {
         event.preventDefault()
         setOpen((current) => {
           if (!current) {
@@ -363,7 +364,7 @@ export function GlobalSearchProvider({
         return
       }
 
-      if (event.key === "/" && !isTextInput(event.target)) {
+      if (atalho === "abrir") {
         event.preventDefault()
         void loadSearchCandidates()
         setOpen(true)

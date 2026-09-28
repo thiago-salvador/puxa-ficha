@@ -23,16 +23,19 @@
  *
  * ESCOPO, e ele é deliberado: a exigência vale só no servidor e no edge.
  *
- * O NAVEGADOR FICA DE FORA desta correção, inclusive rodando local. No bundle
- * do cliente o Next só inlina `NEXT_PUBLIC_*`, então `process.env.VERCEL` é
+ * O NAVEGADOR FICA DE FORA desta exigência. No bundle do cliente o Next só
+ * inlina `NEXT_PUBLIC_*` (e `NODE_ENV`), então `process.env.VERCEL` é
  * `undefined` lá e exigir a flag silenciaria erro de cliente em PRODUÇÃO, que
- * é o oposto do que se quer. Consequência aceita: um `next build && next start`
- * local ainda pode mandar erro de navegador rotulado `production`, via
- * `NEXT_PUBLIC_VERCEL_ENV` ausente caindo em `NODE_ENV`. Não foi o vetor da 1E
- * (o evento dela é `Backend`, do hook de instrumentação) e fechar esse caso
- * exigiria uma variável `NEXT_PUBLIC_` só para isso. Se um dia aparecer issue
- * de navegador com `server_name` de máquina local, é este parágrafo que vira
- * a próxima tarefa.
+ * é o oposto do que se quer.
+ *
+ * No navegador o corte local é por `NODE_ENV === "development"`: o Next inlina
+ * esse valor no bundle, e `development` ali só sai de `next dev`. Nunca usar
+ * `VERCEL` no cliente, pelo motivo acima. Consequência aceita: um
+ * `next build && next start` local ainda pode mandar erro de navegador
+ * rotulado `production`, via `NEXT_PUBLIC_VERCEL_ENV` ausente caindo em
+ * `NODE_ENV`. Fechar esse caso exigiria uma variável `NEXT_PUBLIC_` só para
+ * isso. Se um dia aparecer issue de navegador com `server_name` de máquina
+ * local, é este parágrafo que vira a próxima tarefa.
  */
 function rodandoNaVercel(): boolean {
   return process.env.VERCEL === "1"
@@ -44,6 +47,7 @@ function noServidor(): boolean {
 
 export function sentryHabilitadoNesteAmbiente(): boolean {
   if (noServidor() && !rodandoNaVercel()) return false
+  if (!noServidor() && process.env.NODE_ENV === "development") return false
 
   const ambiente = process.env.NEXT_PUBLIC_VERCEL_ENV ?? process.env.VERCEL_ENV
   if (ambiente !== "preview") return true
