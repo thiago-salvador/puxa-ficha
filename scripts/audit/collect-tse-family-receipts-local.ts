@@ -17,6 +17,7 @@ import { createHash } from "node:crypto"
 import { execFileSync, spawn } from "node:child_process"
 import { createReadStream, existsSync, mkdirSync, readFileSync, writeFileSync, renameSync } from "node:fs"
 import { basename, dirname, resolve } from "node:path"
+import { minimalChildEnv } from "../lib/minimal-child-env"
 import { pipeline } from "node:stream/promises"
 import { fileURLToPath } from "node:url"
 import { parse } from "csv-parse"
@@ -227,7 +228,7 @@ export function selectCsvMembers(listing: string, family: TseFamily): string[] {
 }
 
 function csvMembers(zipPath: string, family: TseFamily): string[] {
-  const listing = execFileSync("unzip", ["-Z1", zipPath], { encoding: "utf8", maxBuffer: 8 * 1024 * 1024 })
+  const listing = execFileSync("unzip", ["-Z1", zipPath], { encoding: "utf8", maxBuffer: 8 * 1024 * 1024, env: minimalChildEnv() })
   return selectCsvMembers(listing, family)
 }
 
@@ -236,7 +237,7 @@ export async function readRows(zipPath: string, family: TseFamily, wantedSq: Rea
   if (members.length === 0) throw new Error(`ZIP ${basename(zipPath)} sem CSV compatível com ${family}`)
   const rows: Row[] = []
   for (const member of members) {
-    const child = spawn("unzip", ["-p", zipPath, member], { stdio: ["ignore", "pipe", "ignore"] })
+    const child = spawn("unzip", ["-p", zipPath, member], { stdio: ["ignore", "pipe", "ignore"], env: minimalChildEnv() })
     const exit = new Promise<number>((accept, reject) => {
       child.once("error", reject)
       child.once("close", (code) => accept(code ?? 1))

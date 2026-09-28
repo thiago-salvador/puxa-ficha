@@ -1,10 +1,10 @@
 /** Hash-pinned historical finance apply path. Defaults to dry-run. */
-import { createHash } from "node:crypto"
+import { createHash, randomUUID } from "node:crypto"
 import { chmodSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { dirname, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { supabase } from "../lib/supabase"
-import { escreverAuditado } from "../lib/escrita-auditada"
+import { escreverAuditado as escreverAuditadoReal } from "../lib/escrita-auditada"
 import { sanitizeMaioresDoadoresForPublic } from "../../src/lib/financiamento-public"
 import { FINANCE_DISPLAY_FIELDS, hashFinancePreimage, type FinanceAction } from "../lib/financiamento-historico-plano"
 import { assertOutsideRepository } from "./lib/private-output"
@@ -15,7 +15,7 @@ type Query=PromiseLike<Result>&{select(columns?:string):Query;eq(column:string,v
 type Client={from(table:string):Query}
 type AuditedFinanceAction=FinanceAction&{source_complete?:boolean}
 type Plan={plano_sha256:string;acoes:AuditedFinanceAction[];source_revisions?:Array<{family:string;year:number;url:string;sha256:string}>}
-type Options={apply:boolean;expectedPlanSha:string;evidenceDir:string;batchIndex?:number;client?:Client}
+type Options={apply:boolean;expectedPlanSha:string;evidenceDir:string;batchIndex?:number;client?:Client;runId?:string;auditWrite?:typeof escreverAuditadoReal}
 const SCRIPT="apply-financiamento-historico-local"
 const BATCH=25
 const MAX_ACTIONS_PER_RUN=50
@@ -24,7 +24,7 @@ const stable=(v:unknown):string=>Array.isArray(v)?`[${v.map(stable).join(",")}]`
 const digest=(v:string)=>createHash("sha256").update(v).digest("hex")
 export const projection=(row:Row)=>Object.fromEntries(FINANCE_DISPLAY_FIELDS.map(field=>[field,field==="maiores_doadores"?sanitizeMaioresDoadoresForPublic(row[field]):row[field]??null]))
 const same=(a:unknown,b:unknown)=>stable(a)===stable(b)
-function persist(path:string,value:unknown):void{const target=assertOutsideRepository(path,"evidence");mkdirSync(dirname(target),{recursive:true,mode:0o700});writeFileSync(target,`${JSON.stringify(value,null,2)}\n`,{mode:0o600});chmodSync(target,0o600)}
+function persist(path:string,value:unknown):void{const target=assertOutsideRepository(path,"evidence");mkdirSync(dirname(target),{recursive:true,mode:0o700});writeFileSync(target,`${JSON.stringify(value,null,2)}\n`,{mode:0o600,flag:"wx"});chmodSync(target,0o600)}
 
 export function mergeStoredDonorIdentifiers(next:unknown,stored:unknown):unknown {
   const publicDonors=sanitizeMaioresDoadoresForPublic(next)
@@ -97,8 +97,12 @@ export async function applyHistoricalFinanceAudited(plan:Plan,options:Options){
   const checked=dryRunHistoricalFinance(plan,options.expectedPlanSha)
   if(!options.apply)return checked
   const batchIndex=options.batchIndex??0
+  const runId=options.runId??randomUUID()
+  if(!/^[a-zA-Z0-9-]+$/.test(runId))throw new Error("run id inválido")
+  const filePrefix=`financiamento-batch-${batchIndex}-${runId}`
   const actions=selectHistoricalFinanceBatch(plan.acoes,batchIndex)
   const client=options.client??(supabase as unknown as Client)
+  const escreverAuditado=options.auditWrite??escreverAuditadoReal
   const root=assertOutsideRepository(options.evidenceDir,"--evidence-dir")
   const receipt:{plan_sha256:string;batches:number;batch_index:number;total_actions:number;remaining_actions:number;attempted:number;written:string[];readback:string[];review:Array<{slug:string;ano_eleicao:number;reason:string}>}={plan_sha256:checked.plan_sha256,batches:Math.ceil(actions.length/BATCH),batch_index:batchIndex,total_actions:plan.acoes.length,remaining_actions:Math.max(0,plan.acoes.length-(batchIndex+1)*MAX_ACTIONS_PER_RUN),attempted:0,written:[],readback:[],review:[]}
   for(let offset=0;offset<actions.length;offset+=BATCH){
@@ -108,13 +112,13 @@ export async function applyHistoricalFinanceAudited(plan:Plan,options:Options){
     for(const action of batch){
       let preimage:Result
       try{preimage=await client.from("financiamento").select("*").eq("candidato_id",action.candidato_id).eq("ano_eleicao",action.ano_eleicao)}
-      catch(error){persist(resolve(root,"receipt-financiamento-historico-interrupted.json"),receipt);throw error}
+      catch(error){persist(resolve(root,`receipt-${filePrefix}-interrupted.json`),{...receipt,status:"interrompido"});throw error}
       const{data,error}=preimage
-      if(error){persist(resolve(root,"receipt-financiamento-historico-interrupted.json"),receipt);throw new Error(`preimage read failed: ${error.message}`)}
+      if(error){persist(resolve(root,`receipt-${filePrefix}-interrupted.json`),{...receipt,status:"interrompido"});throw new Error(`preimage read failed: ${error.message}`)}
       const rows=data??[];observedByAction.set(action,rows)
       backup.push(...rows)
     }
-    persist(resolve(root,`backup-preimagem-financiamento-${String(offset/BATCH+1).padStart(3,"0")}.json`),{plan_sha256:checked.plan_sha256,batch:offset/BATCH+1,rows:backup})
+    persist(resolve(root,`backup-preimagem-${filePrefix}-${String(offset/BATCH+1).padStart(3,"0")}.json`),{plan_sha256:checked.plan_sha256,batch:offset/BATCH+1,rows:backup})
     for(const action of batch){
       receipt.attempted++
       const rows=observedByAction.get(action)??[]
@@ -131,7 +135,9 @@ export async function applyHistoricalFinanceAudited(plan:Plan,options:Options){
       try{mergedDonors=mergeStoredDonorIdentifiers(action.depois.maiores_doadores,rows[0]?.maiores_doadores)}
       catch{receipt.review.push({slug:action.slug,ano_eleicao:action.ano_eleicao,reason:"ambiguous_stored_donor_identity"});continue}
       const payload:Row={...action.depois,maiores_doadores:mergedDonors,candidato_id:action.candidato_id,ano_eleicao:action.ano_eleicao,sq_candidato:action.sq_candidato,uf_candidatura:action.uf_candidatura,fonte:"TSE"}
-      const response=await escreverAuditado({script:SCRIPT,tabela:"financiamento",motivo:`Financiamento TSE ${action.ano_eleicao}; SHA-256 ${action.pacote_sha256}; class-a CAS`,recorte:`${action.slug}/${action.ano_eleicao}/${action.sq_candidato}/${action.uf_candidatura}`},()=>{
+      let response:Row[]
+      try{
+      response=await escreverAuditado({script:SCRIPT,tabela:"financiamento",motivo:`Financiamento TSE ${action.ano_eleicao}; SHA-256 ${action.pacote_sha256}; class-a CAS`,recorte:`${action.slug}/${action.ano_eleicao}/${action.sq_candidato}/${action.uf_candidatura}`},()=>{
         if(action.antes_publico.length===0)return client.from("financiamento").insert(payload).select("*")
         const before=rows[0]!
         let q=client.from("financiamento").update(payload).eq("id",action.row_id).eq("candidato_id",action.candidato_id).eq("ano_eleicao",action.ano_eleicao).eq("sq_candidato",action.sq_candidato).eq("uf_candidatura",action.uf_candidatura).eq("fonte","TSE").is("despublicado_em",null)
@@ -140,6 +146,16 @@ export async function applyHistoricalFinanceAudited(plan:Plan,options:Options){
         q=before.maiores_doadores==null?q.is("maiores_doadores",null):q.eq("maiores_doadores",JSON.stringify(before.maiores_doadores))
         return q.select("*")
       })
+      }catch(writeError){
+        let restoreAttempt="unconfirmed"
+        try{
+          const after=await client.from("financiamento").select("*").eq("candidato_id",action.candidato_id).eq("ano_eleicao",action.ano_eleicao)
+          if(!after.error&&stable(after.data??[])===stable(rows))restoreAttempt="preimage_intact"
+        }catch{ /* The receipt records that readback could not confirm restoration. */ }
+        persist(resolve(root,`receipt-${filePrefix}-interrupted.json`),{...receipt,status:"interrompido",
+          failure:writeError instanceof Error?writeError.message:"write failed",restore_attempt:restoreAttempt})
+        throw writeError
+      }
       if(response.length!==1||typeof response[0]?.id!=="string"){receipt.review.push({slug:action.slug,ano_eleicao:action.ano_eleicao,reason:"cas_write_not_singleton"});continue}
       const id=response[0]!.id as string;receipt.written.push(`${action.slug}/${action.ano_eleicao}`)
       let readbackResult:Result
@@ -155,15 +171,16 @@ export async function applyHistoricalFinanceAudited(plan:Plan,options:Options){
           receipt.written=receipt.written.filter((key)=>key!==`${action.slug}/${action.ano_eleicao}`)
           receipt.review.push({slug:action.slug,ano_eleicao:action.ano_eleicao,reason:"readback_failed_restored"})
         }catch{receipt.review.push({slug:action.slug,ano_eleicao:action.ano_eleicao,reason:"readback_failed_restore_unconfirmed"})}
-        persist(resolve(root,"receipt-financiamento-historico-interrupted.json"),receipt)
+        persist(resolve(root,`receipt-${filePrefix}-interrupted.json`),{...receipt,status:"interrompido",
+          restore_attempt:receipt.review.at(-1)?.reason==="readback_failed_restored"?"confirmed":"unconfirmed"})
         throw new Error(`readback failed: ${readError.message}`)
       }
       if((readback??[]).length!==1||!same(projection(readback![0]!),projection(action.depois as Row))||readback![0]!.sq_candidato!==action.sq_candidato||readback![0]!.uf_candidatura!==action.uf_candidatura||readback![0]!.fonte!=="TSE"||readback![0]!.despublicado_em!=null){receipt.review.push({slug:action.slug,ano_eleicao:action.ano_eleicao,reason:"display_readback_mismatch"});continue}
       receipt.readback.push(`${action.slug}/${action.ano_eleicao}`)
     }
-    persist(resolve(root,`receipt-financiamento-${String(offset/BATCH+1).padStart(3,"0")}.json`),receipt)
+    persist(resolve(root,`receipt-${filePrefix}-${String(offset/BATCH+1).padStart(3,"0")}.json`),receipt)
   }
-  persist(resolve(root,"receipt-financiamento-historico-final.json"),receipt)
+  persist(resolve(root,`receipt-${filePrefix}-final.json`),receipt)
   return receipt
 }
 

@@ -52,3 +52,21 @@ test("histórico partidário só fecha com fontes parlamentar e de candidatura v
   wrongHost.coverage_proof.components[1].source_revisions = [parliamentary]
   assert.equal(validCoverageSourceProof(profile, "mudancas_partido", wrongHost), false)
 })
+
+test("escopo de candidaturas isolado não substitui a prova parlamentar", () => {
+  const scoped = receipt()
+  const years = Array.from({ length: 16 }, (_, index) => 1996 + index * 2)
+  const revisions = years.map((year) => ({ ...candidacy, year }))
+  const proof = {
+    ...scoped.coverage_proof,
+    method: "official-party-by-candidacy-scope",
+    scope: "partido_em_cada_candidatura",
+    source_revisions: revisions,
+    source_candidacies: 16,
+    derived_transitions: 1,
+    public_transitions: 1,
+    scope_years: years,
+    components: undefined,
+  }
+  assert.equal(validCoverageSourceProof(profile, "mudancas_partido", { ...scoped, url: candidacy.url, coverage_proof: proof }), false)
+})

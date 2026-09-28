@@ -50,6 +50,8 @@ export interface FinanciamentoExistente {
   total_recursos_proprios: number | string | null
   categorias_origem: unknown
   maiores_doadores: unknown
+  categorias_origem_hash?: string | null
+  maiores_doadores_hash?: string | null
   fonte: string | null
   despublicado_em: string | null
 }
@@ -156,6 +158,7 @@ export interface ResumoPlano {
     verificacoes_vencidas_apagadas: number
     fichas_vazio_confirmado: number
     fichas_erro: number
+    aguardando_backfill_categorias: number
   }
   patrimonio: {
     fichas_com_linha_apos_plano: number
@@ -231,6 +234,7 @@ export interface EntradaPlano {
   planejadas: PlannedRow[]
   estado: EstadoProducao
   pacote: { url_receitas: string; url_bens: string; sha256_receitas?: string; sha256_bens?: string }
+  agendado?: boolean
 }
 
 export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
@@ -239,6 +243,7 @@ export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
   const acoes: AcaoEscrita[] = []
   const recibos: ReciboPlanejado[] = []
   const revisao: ItemRevisao[] = []
+  const aguardandoBackfill = new Set<string>()
 
   const doAno = <T extends { ano_eleicao: number; candidato_id: string }>(rows: T[]) =>
     rows.filter((r) => Number(r.ano_eleicao) === ANO_FINANCAS_2026 && publicos.some((p) => p.id === r.candidato_id))
@@ -268,6 +273,7 @@ export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
       verificacoes_vencidas_apagadas: 0,
       fichas_vazio_confirmado: 0,
       fichas_erro: 0,
+      aguardando_backfill_categorias: 0,
     },
     patrimonio: {
       fichas_com_linha_apos_plano: 0,
@@ -340,6 +346,11 @@ export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
               depois[campo] = novo
             }
           }
+          if (entrada.agendado && Object.keys(depois).length === 1 && "categorias_origem" in depois
+            && existente.categorias_origem == null && depois.categorias_origem != null) {
+            aguardandoBackfill.add(ficha.slug)
+            continue
+          }
           if (Object.keys(depois).length === 0) {
             resumo.financiamento.inalterado++
           } else {
@@ -353,6 +364,8 @@ export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
               "total_arrecadado", "total_fundo_partidario", "total_fundo_eleitoral",
               "total_pessoa_fisica", "total_recursos_proprios", "categorias_origem", "maiores_doadores",
             ]) antes[campo] = (existente as unknown as Record<string, unknown>)[campo] ?? null
+            antes.categorias_origem_hash = existente.categorias_origem_hash ?? null
+            antes.maiores_doadores_hash = existente.maiores_doadores_hash ?? null
             acoes.push({ tipo: "atualizar_financiamento", slug: ficha.slug, id: existente.id, antes, depois })
             resumo.financiamento.atualizar++
           }
@@ -555,6 +568,7 @@ export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
   }
   acoes.sort((a, b) => ordem[a.tipo] - ordem[b.tipo] || a.slug.localeCompare(b.slug))
   resumo.recibos.financiamento = recibos.filter((r) => r.fonte === FONTE_RECIBO_FINANCIAMENTO).length
+  resumo.financiamento.aguardando_backfill_categorias = aguardandoBackfill.size
   resumo.recibos.patrimonio = recibos.filter((r) => r.fonte === FONTE_RECIBO_PATRIMONIO).length
   return { acoes, recibos, revisao, resumo }
 }

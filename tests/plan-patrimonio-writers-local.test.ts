@@ -216,8 +216,8 @@ test("uses the canonical TSE legacy marker normalization for patrimônio text", 
   assert.equal(((result.acoes[0]!.depois as { bens: Array<{ descricao: string }> }).bens[0]!).descricao, "Imóvel - residencial")
 })
 
-test("patrimônio com valor vazio ou linha truncada fica em revisão", () => {
-  for (const bad of [{ ...source, VR_BEM_CANDIDATO: "" }, { ...source, __truncated_row: "1" }]) {
+test("patrimônio com valor vazio, sentinela negativa ou linha truncada fica em revisão", () => {
+  for (const bad of [{ ...source, VR_BEM_CANDIDATO: "" }, { ...source, VR_BEM_CANDIDATO: "-1" }, { ...source, __truncated_row: "1" }]) {
     const result = buildPatrimonioWriterPlan(fixture({ rowsByAsset: new Map([["patrimonio|2022", [bad]]]) }))
     assert.equal(result.acoes.length, 0)
     assert.ok(result.revisao.some((row) => row.motivo === "official_asset_row_truncated_or_amount_missing"))

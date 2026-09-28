@@ -17,6 +17,8 @@ import { basename, dirname, resolve } from "node:path"
 import { once } from "node:events"
 import { fileURLToPath } from "node:url"
 import { parse } from "csv-parse"
+import { minimalChildEnv } from "../lib/minimal-child-env"
+import { sourceAssetsComplete } from "./lib/source-completeness"
 import iconv from "iconv-lite"
 import { canonicalCargo } from "../../src/lib/cargo-utils"
 import { stripAccents } from "../../src/lib/strip-accents"
@@ -103,14 +105,14 @@ function normalized(value: unknown): string {
 }
 
 function cents(value: unknown): number | null {
-  if (typeof value === "number" && Number.isFinite(value)) return Math.round(value * 100)
+  if (typeof value === "number" && Number.isFinite(value) && value >= 0) return Math.round(value * 100)
   if (typeof value !== "string") return null
   const raw = value.trim()
   if (!raw) return null
   const normalizedValue = raw.replace(/\./g, "").replace(",", ".")
   if (!/^-?\d+(?:\.\d{1,2})?$/.test(normalizedValue)) return null
   const parsed = Number(normalizedValue)
-  return Number.isFinite(parsed) ? Math.round(parsed * 100) : null
+  return Number.isFinite(parsed) && parsed >= 0 ? Math.round(parsed * 100) : null
 }
 
 function money(value: unknown): number | null {
@@ -129,7 +131,7 @@ function profileRows(value: unknown): PublicProfile[] {
 }
 
 function csvMembers(asset: Asset, requiredUfs?: ReadonlySet<string>): string[] {
-  const result = spawnSync("unzip", ["-Z1", asset.path], { encoding: "utf8", maxBuffer: 16 * 1024 * 1024 })
+  const result = spawnSync("unzip", ["-Z1", asset.path], { encoding: "utf8", maxBuffer: 16 * 1024 * 1024, env: minimalChildEnv() })
   if (result.status !== 0) throw new Error(`não foi possível listar ZIP TSE de ${asset.year}`)
   const prefix = asset.family === "patrimonio" ? "bem_candidato" : "consulta_cand"
   const expected = new RegExp(`^${prefix}_${asset.year}(?:_([A-Z]{2}|BR|BRASIL))?\\.csv$`, "i")
@@ -160,7 +162,7 @@ function csvMembers(asset: Asset, requiredUfs?: ReadonlySet<string>): string[] {
 }
 
 async function readCsvMember(asset: Asset, member: string, keep: (row: Record<string, string>) => boolean): Promise<SourceRow[]> {
-  const child = spawn("unzip", ["-p", asset.path, member], { stdio: ["ignore", "pipe", "ignore"] })
+  const child = spawn("unzip", ["-p", asset.path, member], { stdio: ["ignore", "pipe", "ignore"], env: minimalChildEnv() })
   let invalidRows = 0
   const parser = parse({
     columns: true,
@@ -530,6 +532,7 @@ async function main(): Promise<void> {
   const rowsByAsset = new Map<string, readonly SourceRow[]>()
   const historyByContext = new Map<string, readonly SourceRow[]>()
   const historicalAssets = relevantAssets.filter((item) => item.family === "historico_politico" && patrimonyAssets.some((p) => p.year === item.year))
+  const readHistoryKeys = new Set<string>()
   const officialUfs = new Map<string, Set<string>>()
   for (const asset of historicalAssets) {
     const wantedSq = wantedSqByYear.get(asset.year) ?? new Set<string>()
@@ -541,6 +544,7 @@ async function main(): Promise<void> {
     // The national CSV is the authoritative cross-UF lookup for unresolved
     // SQ/year contexts; known UFs additionally use only their matching shards.
     const rows = await sourceRows(asset, (row) => wantedSq.has(normalized(row.SQ_CANDIDATO)), missingUfExists ? new Set<string>() : knownUfs)
+    readHistoryKeys.add(`${asset.family}|${asset.year}`)
     for (const row of rows) {
       const sq = normalized(row.SQ_CANDIDATO)
       const uf = normalized(row.SG_UF).toUpperCase()
@@ -583,9 +587,12 @@ async function main(): Promise<void> {
     const rows = await sourceRows(asset, (row) => wanted.has(contextKey(asset.year, normalized(row.SQ_CANDIDATO), normalized(row.SG_UF).toUpperCase())), ufs)
     rowsByAsset.set(`${asset.family}|${asset.year}`, rows)
   }
+  const expectedKeys = [...new Set(candidates.filter((candidate) => eligibleSlugs.has(candidate.slug))
+    .flatMap((candidate) => Object.entries(candidate.ids?.tse_sq_candidato ?? {})
+      .filter(([year, sq]) => Boolean(normalized(sq)) && Number(year) >= 2006 && Number(year) <= 2026 && Number(year) % 2 === 0)
+      .flatMap(([year]) => [`patrimonio|${year}`, `historico_politico|${year}`])))]
   const result = buildPatrimonioWriterPlan({
-    sourceComplete: patrimonyAssets.every((asset) => rowsByAsset.has(`${asset.family}|${asset.year}`))
-      && historicalAssets.every((asset) => assetsByKey.has(`${asset.family}|${asset.year}`)),
+    sourceComplete: sourceAssetsComplete(expectedKeys, [...assetsByKey.keys()], [...rowsByAsset.keys(), ...readHistoryKeys]),
     candidates: effectiveCandidates, profiles, cells: classification.cells, riskSlugs,
     assets: patrimonyAssets, checkedAt, rowsByAsset, historyByContext,
   })

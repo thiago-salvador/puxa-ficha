@@ -90,6 +90,7 @@ export function planHistoricalFinance(input: {
   sourceComplete?: boolean;
   assets: readonly FinanceAsset[]; candidates: readonly FinanceCandidate[]; profiles: readonly FinanceProfile[];
   sourceRowsByAsset: ReadonlyMap<string, readonly FinanceSourceRow[]>; safeSlugs: ReadonlySet<string>;
+  verifications?: readonly { candidato_id: string; ano_eleicao: number; sq_candidato: string | null; uf_candidatura: string | null }[];
 }): { acoes: FinanceAction[]; review: FinanceReview[]; summary: Record<string,number> } {
   const candidateBySlug=new Map(input.candidates.map(c=>[c.slug,c]))
   const actions:FinanceAction[]=[]; const review:FinanceReview[]=[]
@@ -119,6 +120,10 @@ export function planHistoricalFinance(input: {
       const identityUf=candidate.ids?.tse_uf_candidatura?.[String(year)]?.toUpperCase()
       const uf=identityUf && ufs.includes(identityUf) ? identityUf : ufs.length===1 ? ufs[0] : ""
       if(!uf){review.push({slug:profile.slug,ano_eleicao:year,motivo:"uf_oficial_ausente_ou_ambiguo"});continue}
+      if(input.verifications?.some(v=>v.candidato_id===profile.id&&Number(v.ano_eleicao)===year
+        &&v.sq_candidato===sq&&v.uf_candidatura===uf)){
+        review.push({slug:profile.slug,ano_eleicao:year,motivo:"verificacao_existente_mesmo_contexto"});continue
+      }
       const officialContexts=contextRows.filter(row=>ufOf(row)===uf)
       const cargos=[...new Set(officialContexts.map(cargoOf).filter((c):c is string=>Boolean(c)))]
       if(cargos.length!==1){review.push({slug:profile.slug,ano_eleicao:year,motivo:"cargo_oficial_ausente_ou_ambiguo"});continue}

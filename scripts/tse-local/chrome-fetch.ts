@@ -5,6 +5,7 @@ import { pipeline } from "node:stream/promises"
 import { execFile } from "node:child_process"
 import { promisify } from "node:util"
 import { chromium, type Browser, type BrowserContext, type Download, type Page, type Response } from "playwright"
+import { chromeChildEnv, minimalChildEnv } from "../lib/minimal-child-env"
 
 const execFileAsync = promisify(execFile)
 const MAX_JSON_BYTES = 25 * 1024 * 1024
@@ -83,7 +84,7 @@ async function checkZip(path: string): Promise<DownloadReceipt> {
   // unzip validates the central directory, compressed members, and CRCs without
   // loading a package in Node memory. Quiet mode prevents filenames/payloads in logs.
   try {
-    await execFileAsync("unzip", ["-tqq", path], { timeout: 15 * 60_000, maxBuffer: 64 * 1024 })
+    await execFileAsync("unzip", ["-tqq", path], { timeout: 15 * 60_000, maxBuffer: 64 * 1024, env: minimalChildEnv() })
   } catch {
     throw new Error("ZIP baixado falhou na verificação de integridade")
   }
@@ -109,7 +110,7 @@ export async function withVisibleTseChrome<T>(
   run: (client: TseChromeClient) => Promise<T>,
   options: VisibleTseChromeOptions = {},
 ): Promise<T> {
-  const launch = options.launch ?? (() => chromium.launch({ channel: "chrome", headless: false }))
+  const launch = options.launch ?? (() => chromium.launch({ channel: "chrome", headless: false, env: chromeChildEnv() }))
   const browser = await launch()
   let context: FetchContext | undefined
   try {

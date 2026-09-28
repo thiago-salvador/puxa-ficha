@@ -181,20 +181,6 @@ export function validCoverageSourceProof(
   if (!identity || identity.slug !== profile.slug || identity.candidate_id !== (profile.id ?? profile.candidato_id ?? profile.candidate_id)) return false
   if (typeof identity.source_id !== "string" || !identity.source_id.trim()) return false
   if (proof.public_payload_sha256 !== publicFamilyPayloadSha256(profile, family)) return false
-  if (proof.method === "official-party-by-candidacy-scope") {
-    if (family !== "mudancas_partido" || proof.scope !== "partido_em_cada_candidatura" || !isNonnegativeInteger(proof.source_candidacies) || proof.source_candidacies < 1) return false
-    if (!isNonnegativeInteger(proof.derived_transitions) || !isNonnegativeInteger(proof.public_transitions) || proof.derived_transitions !== proof.public_transitions) return false
-    const years = proof.scope_years
-    const required = [1996, 1998, 2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024, 2026]
-    if (!Array.isArray(years) || years.length !== required.length || years.some((year, index) => year !== required[index])) return false
-    const revisions = proof.source_revisions
-    if (!Array.isArray(revisions) || revisions.length !== required.length || revisions.some((revision, index) => {
-      const row = object(revision)
-      return !row || row.year !== required[index] || typeof row.url !== "string" || !officialHost(family, row.url) || !isSha256(row.sha256)
-    })) return false
-    if (proof.public_rows !== publicFamilyRowCount(profile, family)) return false
-    return typeof receipt.url === "string" && revisions.some((revision) => object(revision)?.url === receipt.url)
-  }
   if (proof.method !== "official-source-to-public-readback") return false
   if (!isNonnegativeInteger(proof.source_rows) || !isNonnegativeInteger(proof.public_rows) || !isNonnegativeInteger(proof.matched_rows) || !isNonnegativeInteger(proof.unmatched_rows)) return false
   const actualRows = family === "historico_politico" && proof.scope === "tse-candidacies"

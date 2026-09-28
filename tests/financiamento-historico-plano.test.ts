@@ -1,7 +1,7 @@
 import test from "node:test"
 import assert from "node:assert/strict"
 import { createHash } from "node:crypto"
-import { mkdtempSync, readFileSync, existsSync, statSync } from "node:fs"
+import { mkdtempSync, readFileSync, existsSync, statSync, readdirSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import { aggregateOfficialFinance, planHistoricalFinance, safeFinanceSlugsFromCells, type FinanceAsset, type FinanceCandidate, type FinanceProfile, type FinanceSourceRow } from "../scripts/lib/financiamento-historico-plano"
@@ -33,6 +33,14 @@ test("agrega todos os campos exibidos para ano histórico e emite preimagem",()=
   assert.equal(JSON.stringify(a).includes("cpf"),false)
 })
 
+test("verificação de ausência no mesmo contexto impede ação que o trigger recusaria",()=>{
+  const planned=planHistoricalFinance({sourceComplete:true,assets:[asset,context],candidates,profiles:[profile],
+    sourceRowsByAsset:new Map([[`${context.family}|${context.year}|${context.path}`,[officialContext]],[`${asset.family}|${asset.year}|${asset.path}`,[receipt]]]),
+    safeSlugs:new Set(["candidato"]),verifications:[{candidato_id:profile.id,ano_eleicao:2024,sq_candidato:"123",uf_candidatura:"SP"}]})
+  assert.equal(planned.acoes.length,0)
+  assert.ok(planned.review.some(item=>item.motivo==="verificacao_existente_mesmo_contexto"))
+})
+
 test("consulta de preimagem que lança preserva recibo privado de interrupção",async()=>{
   const action=build().acoes[0]!
   const plan={plano_sha256:"",acoes:[action]}
@@ -41,9 +49,24 @@ test("consulta de preimagem que lança preserva recibo privado de interrupção"
   const query={select(){return this},eq(){return this},then(_resolve:unknown,reject:(error:Error)=>void){reject(new Error("preimage threw"))}}
   const client={from(){return query}}
   await assert.rejects(applyHistoricalFinanceAudited(plan,{apply:true,expectedPlanSha:plan.plano_sha256,evidenceDir,client:client as never}),/preimage threw/)
-  const receiptPath=join(evidenceDir,"receipt-financiamento-historico-interrupted.json")
+  const receiptPath=join(evidenceDir,readdirSync(evidenceDir).find(name=>name.endsWith("-interrupted.json"))!)
   assert.equal(existsSync(receiptPath),true)
   assert.equal(JSON.parse(readFileSync(receiptPath,"utf8")).written.length,0)
+})
+
+test("finance write rejected by verification trigger persists interrupted receipt",async()=>{
+  const action=build([receipt],{...profile,financiamento:[]}).acoes[0]!
+  const plan={plano_sha256:"",acoes:[action]}
+  plan.plano_sha256=createHash("sha256").update(JSON.stringify(plan.acoes)).digest("hex")
+  const evidenceDir=mkdtempSync(join(tmpdir(),"pf-finance-write-error-"))
+  const query={select(){return this},eq(){return this},then(resolve:(value:unknown)=>void){resolve({data:[],error:null})}}
+  await assert.rejects(()=>applyHistoricalFinanceAudited(plan,{apply:true,expectedPlanSha:plan.plano_sha256,evidenceDir,
+    client:{from:()=>query} as never,auditWrite:(async()=>{throw new Error("financiamento_publicado_recusa_verificacao_trigger")}) as never}),/recusa_verificacao/)
+  const name=readdirSync(evidenceDir).find(file=>file.endsWith("-interrupted.json"))!
+  const interrupted=JSON.parse(readFileSync(join(evidenceDir,name),"utf8"))
+  assert.equal(interrupted.status,"interrompido")
+  assert.equal(interrupted.attempted,1)
+  assert.equal(interrupted.restore_attempt,"preimage_intact")
 })
 
 test("backup financeiro preserva o JSON cru dos doadores em arquivo 0600",async()=>{
@@ -58,7 +81,7 @@ test("backup financeiro preserva o JSON cru dos doadores em arquivo 0600",async(
   const receipt=await applyHistoricalFinanceAudited(plan,{apply:true,expectedPlanSha:plan.plano_sha256,evidenceDir,client:client as never})
   assert.ok("written" in receipt)
   assert.equal(receipt.written.length,0)
-  const backupPath=join(evidenceDir,"backup-preimagem-financiamento-001.json")
+  const backupPath=join(evidenceDir,readdirSync(evidenceDir).find(name=>name.startsWith("backup-preimagem-financiamento-"))!)
   const backup=JSON.parse(readFileSync(backupPath,"utf8"))
   assert.equal(backup.rows[0].maiores_doadores[0].cpf_hash,"a".repeat(64))
   assert.equal(statSync(backupPath).mode&0o777,0o600)

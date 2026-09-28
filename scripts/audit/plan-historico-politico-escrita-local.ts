@@ -16,6 +16,8 @@ import { stripAccents } from "../../src/lib/strip-accents"
 import { resolveCanonicalParty } from "../lib/party-canonical"
 import { parseEleitoStatus, shouldOmitFromHistoricoDescricao } from "../lib/tse-historico-regras"
 import { assertOutsideRepository } from "./lib/private-output"
+import { minimalChildEnv } from "../lib/minimal-child-env"
+import { sourceAssetsComplete } from "./lib/source-completeness"
 
 export const HISTORICO_DISPLAY_FIELDS = [
   "cargo", "cargo_canonico", "tipo_evento", "periodo_inicio", "periodo_fim",
@@ -249,7 +251,7 @@ function arg(args: string[], name: string): string {
 function readJson<T>(path: string): T { return JSON.parse(readFileSync(path, "utf8")) as T }
 async function parseSourceRows(zipPath: string, year: number, wanted: ReadonlySet<string>): Promise<SourceRow[]> {
   let listing: string
-  try { listing = execFileSync("unzip", ["-Z1", zipPath], { encoding: "utf8", maxBuffer: 8 * 1024 * 1024 }) }
+  try { listing = execFileSync("unzip", ["-Z1", zipPath], { encoding: "utf8", maxBuffer: 8 * 1024 * 1024, env: minimalChildEnv() }) }
   catch { throw new Error(`não foi possível listar CSVs do pacote TSE de ${year}`) }
   const csvs = listing.split(/\r?\n/).filter((name) => /(?:^|\/)consulta_cand(?:_complementar)?_[^/]+\.csv$/i.test(name))
   const brasil = csvs.filter((name) => /(?:_|-)BRASIL\.csv$/i.test(name))
@@ -257,7 +259,7 @@ async function parseSourceRows(zipPath: string, year: number, wanted: ReadonlySe
   if (!members.length) throw new Error(`pacote ${year} sem consulta_cand CSV`)
   const rows: SourceRow[] = []
   for (const member of members) {
-    const child = spawn("unzip", ["-p", zipPath, member], { stdio: ["ignore", "pipe", "ignore"] })
+    const child = spawn("unzip", ["-p", zipPath, member], { stdio: ["ignore", "pipe", "ignore"], env: minimalChildEnv() })
     const parser = parse({ bom: true, columns: true, delimiter: ";", skip_empty_lines: true, relax_column_count: true, relax_quotes: true, encoding: "latin1", cast: (value: string) => value.trim() })
     child.stdout.pipe(parser)
     const completed = new Promise<void>((resolvePromise, rejectPromise) => {
@@ -280,6 +282,21 @@ async function parseSourceRows(zipPath: string, year: number, wanted: ReadonlySe
     }
   }
   return rows
+}
+
+export function validateIdentityReviewCoverage(
+  cells: readonly Cell[],
+  reviewed: unknown,
+): Set<string> {
+  if (!Array.isArray(reviewed) || reviewed.some((item) => !item || typeof item.slug !== "string" || !item.slug)) {
+    throw new Error("revisão de identidade incompleta")
+  }
+  const reviewedSlugs = reviewed.map((item: { slug: string }) => item.slug)
+  const riskSlugs = new Set<string>(reviewedSlugs)
+  if (riskSlugs.size !== reviewedSlugs.length) throw new Error("revisão de identidade duplicada")
+  const plannedRisk = new Set(cells.filter((cell) => cell.family === "historico_politico" && cell.category === "identity_review").map((cell) => cell.slug))
+  if ([...plannedRisk].some((slug) => !riskSlugs.has(slug))) throw new Error("revisão de identidade incompleta para a coorte planejada")
+  return riskSlugs
 }
 
 export async function main(args = process.argv.slice(2)): Promise<void> {
@@ -307,9 +324,7 @@ export async function main(args = process.argv.slice(2)): Promise<void> {
   const reviewFile = readJson<{ itens: ReviewItem[] }>(reviewPath)
   if (!Array.isArray(reviewFile.itens)) throw new Error("arquivo de revisão sem itens[]")
   const identityReview = readJson<{ perfis: Array<{ slug: string }> }>(identityReviewPath)
-  if (!Array.isArray(identityReview.perfis) || identityReview.perfis.length !== 91) throw new Error("revisão de identidade incompleta")
-  const riskSlugs = new Set(identityReview.perfis.map((item) => item.slug))
-  if (riskSlugs.size !== identityReview.perfis.length) throw new Error("revisão de identidade duplicada")
+  const riskSlugs = validateIdentityReviewCoverage(classification.cells, identityReview.perfis)
   const wanted = new Set<string>()
   for (const cell of classification.cells.filter((item) => item.family === "historico_politico" && item.category === "stale_not_projected")) {
     const ids = candidates.find((candidate) => candidate.slug === cell.slug)?.ids?.tse_sq_candidato ?? {}
@@ -321,7 +336,12 @@ export async function main(args = process.argv.slice(2)): Promise<void> {
     const asset = hashChecked.find((item) => item.year === year)
     if (asset) rowsByYear.set(year, await parseSourceRows(asset.path, year, wanted))
   }
-  const plan = buildHistoryPlan({ sourceComplete: hashChecked.length === assets.length && years.every((year) => rowsByYear.has(year)), riskSlugs, candidates, profiles, cells: classification.cells, reviewItems: reviewFile.itens, assets: hashChecked, rowsByYear })
+  const targetSlugs = new Set(classification.cells.filter((cell) => cell.family === "historico_politico" && cell.category !== "closed_now").map((cell) => cell.slug))
+  const expectedKeys = [...new Set(candidates.filter((candidate) => targetSlugs.has(candidate.slug))
+    .flatMap((candidate) => Object.keys(candidate.ids?.tse_sq_candidato ?? {}).map((year) => `historico_politico|${year}`)))]
+  const plan = buildHistoryPlan({ sourceComplete: sourceAssetsComplete(expectedKeys,
+    hashChecked.map((asset) => `${asset.family}|${asset.year}`), [...rowsByYear.keys()].map((year) => `historico_politico|${year}`)),
+    riskSlugs, candidates, profiles, cells: classification.cells, reviewItems: reviewFile.itens, assets: hashChecked, rowsByYear })
   mkdirSync(dirname(outputPath), { recursive: true })
   const temporary = `${outputPath}.${process.pid}.tmp`
   const combinedShape = { schema_version: plan.schema_version, mode: plan.mode, source: plan.source, acoes: plan.actions, review: plan.review, review_evidence: plan.review_evidence, summary: plan.summary }

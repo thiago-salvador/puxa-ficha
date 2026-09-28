@@ -15,6 +15,7 @@ import {
   historicalUrl,
   officialPackages2026,
   parseCliOptions,
+  main,
   projectedClosure,
   selectCandidateCohort,
   summarizeOpenCells,
@@ -103,7 +104,10 @@ test("live mode requires a reviewed SHA and rejects ambiguous mode flags", () =>
   assert.throws(() => parseCliOptions(["--profiles=/tmp/perfis.json", "--live", "--dry-run", `--expected-plan-sha=${"a".repeat(64)}`]), /use --live ou --dry-run/)
   assert.throws(() => parseCliOptions(["--profiles=/tmp/perfis.json", "--apply"]), /opção TSE local desconhecida/)
   assert.throws(() => parseCliOptions(["--live", `--expected-plan-sha=${"b".repeat(64)}`]), /recibos de família e histórico/)
-  const pinned = ["--live", `--expected-plan-sha=${"b".repeat(64)}`, `--expected-family-sha=${"c".repeat(64)}`, `--expected-history-sha=${"d".repeat(64)}`, "--recibos=/tmp/recibos.json"]
+  const pinned = ["--live", `--expected-plan-sha=${"b".repeat(64)}`,
+    `--expected-plan-file-sha=${"e".repeat(64)}`, `--expected-report-sha=${"f".repeat(64)}`,
+    `--expected-family-sha=${"c".repeat(64)}`, `--expected-history-sha=${"d".repeat(64)}`,
+    "--reviewed-run-dir=/tmp/reviewed", "--recibos=/tmp/recibos.json"]
   assert.equal(parseCliOptions(pinned).mode, "live")
   const options = parseCliOptions(["--profiles=/tmp/perfis.json", ...pinned])
   assert.equal(options.mode, "live")
@@ -111,6 +115,10 @@ test("live mode requires a reviewed SHA and rejects ambiguous mode flags", () =>
   assert.equal(options.expectedFamilySha, "c".repeat(64))
   assert.equal(options.expectedHistorySha, "d".repeat(64))
   assert.equal(options.recibos, "/tmp/recibos.json")
+})
+
+test("dry-run fails closed before acquisition without post-round receipts", async () => {
+  await assert.rejects(() => main(["--dry-run", "--out-dir=/tmp/never-created-local-tse-test"]), /recibos=.*obrigatório/)
 })
 
 test("official source plan covers biennial canonical history and the three 2026 ZIPs", () => {

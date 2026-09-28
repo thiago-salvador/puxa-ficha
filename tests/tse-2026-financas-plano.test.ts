@@ -61,6 +61,19 @@ function existente(id: string, candidato: string, extra: Record<string, unknown>
 }
 
 describe("plano de finanças TSE 2026", () => {
+  it("agendado registra categorias NULL pendentes de backfill sem atualizar nem exceder 50%", () => {
+    const publicos = Array.from({ length: 20 }, (_, index) => ({ id: `c${index}`, slug: `p${index}` }))
+    const planejadas = publicos.map((item) => fin(item.slug, item.id))
+    const estado = vazio()
+    estado.financiamento = publicos.map((item) => existente(`f${item.id}`, item.id, {
+      sq_candidato: `sq-${item.slug}`, total_arrecadado: 1000, total_fundo_eleitoral: 1000,
+      categorias_origem: null, maiores_doadores: planejadas.find((row) => row.slug === item.slug)!.row.maiores_doadores,
+    }))
+    const plano = planejarFinancas2026({ publicos, planejadas, estado, pacote: PACOTE, agendado: true })
+    assert.equal(plano.acoes.filter((acao) => acao.tipo === "atualizar_financiamento").length, 0)
+    assert.equal(plano.resumo.financiamento.aguardando_backfill_categorias, 20)
+    assert.deepEqual(travasDoPlano(plano, estado), [])
+  })
   it("insere receita nova e apaga a ausência vencida antes do insert", () => {
     const estado = vazio()
     estado.verificacoes.push({
@@ -207,11 +220,19 @@ describe("plano de finanças TSE 2026: casos de revisão", () => {
 })
 
 describe("coletor TSE 2026: portão e argumentos", () => {
+  it("CAS de JSON usa hashes do banco sem serializar doadores ou categorias na URL", () => {
+    const src = readFileSync(new URL("../scripts/tse-2026-financas.ts", import.meta.url), "utf8")
+    const migration = readFileSync(new URL("../supabase/migrations/20260927095346_financiamento_publico_categorias_origem.sql", import.meta.url), "utf8")
+    assert.match(src, /\.eq\("maiores_doadores_hash", acao\.antes\.maiores_doadores_hash\)/)
+    assert.match(src, /\.eq\("categorias_origem_hash", acao\.antes\.categorias_origem_hash\)/)
+    assert.doesNotMatch(src, /\.eq\("(?:maiores_doadores|categorias_origem)", JSON\.stringify/)
+    assert.match(migration, /GENERATED ALWAYS AS \(md5\(COALESCE\(maiores_doadores::text/)
+  })
   it("lerArgs reconhece apply, agendado, out e sha", () => {
     assert.deepEqual(lerArgs(["--apply", "--agendado", "--out=x", "--expected-plan-sha=abc"]), {
-      aplicar: true, agendado: true, out: "x", expectedPlanSha: "abc", backfillCategorias: false, backfillDryRun: null,
+      aplicar: true, agendado: true, out: "x", expectedPlanSha: "abc", backfillCategorias: false, backfillDryRun: null, reviewedPlan: null, expectedPlanFileSha: null,
     })
-    assert.deepEqual(lerArgs([]), { aplicar: false, agendado: false, out: null, expectedPlanSha: null, backfillCategorias: false, backfillDryRun: null })
+    assert.deepEqual(lerArgs([]), { aplicar: false, agendado: false, out: null, expectedPlanSha: null, backfillCategorias: false, backfillDryRun: null, reviewedPlan: null, expectedPlanFileSha: null })
   })
 
   it("agendado não exige sha, mas respeita travas e sonda de CAS", () => {
@@ -257,9 +278,8 @@ describe("coletor TSE 2026: portão e argumentos", () => {
 describe("coletor TSE 2026: contrato de escrita", () => {
   const src = readFileSync("scripts/tse-2026-financas.ts", "utf8")
   it("toda escrita de domínio passa por escreverAuditado com CAS", () => {
-    assert.match(src, /\.eq\("maiores_doadores", JSON\.stringify\(acao\.antes\.maiores_doadores\)\)/)
-    assert.match(src, /\.eq\("categorias_origem", JSON\.stringify\(acao\.antes\.categorias_origem\)\)/)
-    assert.match(src, /\.is\("categorias_origem", null\)/)
+    assert.match(src, /\.eq\("maiores_doadores_hash", acao\.antes\.maiores_doadores_hash\)/)
+    assert.match(src, /\.eq\("categorias_origem_hash", acao\.antes\.categorias_origem_hash\)/)
     assert.match(src, /const comSubtotais = \["total_arrecadado", "total_fundo_partidario", "total_fundo_eleitoral", "total_pessoa_fisica", "total_recursos_proprios"\]/)
     assert.match(src, /valor == null \? query\.is\(coluna, null\) : query\.eq\(coluna, valor as number\)/)
     assert.match(src, /\.eq\("candidato_id", acao\.antes\.candidato_id as string\)/)

@@ -5,6 +5,7 @@ import { manifestAssets, readRows } from "./collect-tse-family-receipts-local"
 import { planHistoricalFinance, safeFinanceSlugsFromCells, type FinanceCandidate, type FinanceProfile } from "../lib/financiamento-historico-plano"
 import { maskDocumentLikeSequences } from "../../src/lib/observacao-publica"
 import { assertOutsideRepository } from "./lib/private-output"
+import { sourceAssetsComplete } from "./lib/source-completeness"
 
 function arg(name:string):string { const prefix=`--${name}=`;const value=process.argv.find(x=>x.startsWith(prefix))?.slice(prefix.length);if(!value)throw new Error(`argumento obrigatório: ${prefix}<arquivo>`);return resolve(value) }
 function readJson<T>(path:string):T{return JSON.parse(readFileSync(path,"utf8")) as T}
@@ -16,6 +17,9 @@ function maskDonorNames(rows:Array<Record<string,string>>):Array<Record<string,s
 
 async function main():Promise<void>{
   const manifestPath=arg("manifest"), candidatesPath=arg("candidates"), profilesPath=arg("profiles"), classificationPath=arg("classification"), out=arg("out")
+  const verificationsPath=assertOutsideRepository(arg("verifications"),"--verifications")
+  const verifications=readJson<Array<{candidato_id:string;ano_eleicao:number;sq_candidato:string|null;uf_candidatura:string|null}>>(verificationsPath)
+  if(!Array.isArray(verifications)||verifications.some(v=>!v||typeof v.candidato_id!=="string"||!Number.isInteger(v.ano_eleicao)))throw new Error("snapshot de financiamento_verificacoes inválido")
   const manifest=readJson<{assets:unknown[];pending?:unknown[]}>(manifestPath)
   if(manifest.pending?.length)throw new Error("manifesto oficial incompleto")
   const assets=await manifestAssets(manifest as never)
@@ -47,8 +51,13 @@ async function main():Promise<void>{
     if(cachePath){save(resolve(cachePath),{source_revisions:expectedRevisions,rows:Object.fromEntries(sourceRowsByAsset)})}
   }
   const relevantAssets=assets.filter(a=>["financiamento","historico_politico","perfil_atual"].includes(a.family))
-  const sourceComplete=relevantAssets.length>0&&(manifest.pending?.length??0)===0&&relevantAssets.every(a=>sourceRowsByAsset.has(`${a.family}|${a.year}|${a.path}`))
-  const planned=planHistoricalFinance({sourceComplete,assets,candidates,profiles,sourceRowsByAsset,safeSlugs})
+  const expectedKeys=[...new Set(candidates.filter(c=>safeSlugs.has(c.slug)).flatMap(c=>
+    Object.entries(c.ids?.tse_sq_candidato??{}).filter(([year,sq])=>Boolean(sq)&&Number(year)<2026)
+      .flatMap(([year])=>[`financiamento|${year}`,`historico_politico|${year}`])))]
+  const sourceComplete=(manifest.pending?.length??0)===0&&sourceAssetsComplete(expectedKeys,
+    relevantAssets.map(a=>`${a.family}|${a.year}`),
+    relevantAssets.filter(a=>sourceRowsByAsset.has(`${a.family}|${a.year}|${a.path}`)).map(a=>`${a.family}|${a.year}`))
+  const planned=planHistoricalFinance({sourceComplete,assets,candidates,profiles,sourceRowsByAsset,safeSlugs,verifications})
   const revisions=assets.filter(a=>["financiamento","historico_politico","perfil_atual"].includes(a.family)).map(({family,year,url,sha256})=>({family,year,url,sha256}))
   const plan={schema_version:1,family:"financiamento_historico",generated_at:new Date().toISOString(),allowlist:{classification_file:classificationPath,classification_sha256:createHash("sha256").update(readFileSync(classificationPath)).digest("hex"),class:"stale_not_projected",profiles:safeSlugs.size,identity_risk_excluded:identityRisk.size},source_revisions:revisions,...planned}
   const planSha=createHash("sha256").update(JSON.stringify(planned.acoes)).digest("hex")

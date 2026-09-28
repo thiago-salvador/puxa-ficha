@@ -127,8 +127,14 @@ function getGovernorUFs(candidatos: CandidatoConfig[], slugAllowlist?: Set<strin
   ]
 }
 
+const MARCADORES_TSE_NULOS = new Set(["#NULO", "#NULO#", "#NE", "#NE#", "-1", "NULO", "NULL", "N/A", "NAO INFORMADO", "NAO INFORMADA"])
+
+function isTseNullMarker(value: string): boolean {
+  return MARCADORES_TSE_NULOS.has(stripAccents(value.trim()).toUpperCase())
+}
+
 function parseBRL(value: string, context: string): number {
-  if (!value || value === "#NULO#" || value === "#NE#" || value === "-1") return 0
+  if (!value || isTseNullMarker(value)) return 0
   const parsed = parseFloat(value.replace(/\./g, "").replace(",", "."))
   if (Number.isNaN(parsed)) {
     warn("tse", `  Valor monetario invalido em ${context}: "${value}"`)
@@ -165,13 +171,11 @@ export type FinanciamentoCategoriaExibida =
   | "outros_recursos"
   | "nao_informado_pelo_tse"
 
-const MARCADORES_ORIGEM_AUSENTE = new Set(["#NULO", "NULO", "NULL", "N/A", "NAO INFORMADO", "NAO INFORMADA"])
-
 /** Mapeia a origem oficial para as quatro categorias que a ficha exibe. */
 export function categoriaFinanciamentoExibida(fonte: string | null | undefined, origem: string | null | undefined): FinanciamentoCategoriaExibida {
   const declaracoes = [fonte, origem]
     .map((value) => value?.trim() ?? "")
-    .filter((value) => value && !MARCADORES_ORIGEM_AUSENTE.has(stripAccents(value).toUpperCase()))
+    .filter((value) => value && !isTseNullMarker(value))
   if (declaracoes.length === 0) return "nao_informado_pelo_tse"
   const tipo = classifyFinanciamentoOrigem(declaracoes.join(" — "))
   if (tipo === "fundo_eleitoral" || tipo === "fundo_partidario") return tipo

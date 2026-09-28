@@ -9,11 +9,11 @@ O launchd roda `scripts/tse-local/ingest-tse-local.sh` toda quinta-feira às
    `git ls-remote` e avisa se o SHA da rodada anterior não for ancestral;
 2. confere que sua própria cópia é idêntica à da `main` fixada;
 3. cria um worktree descartável nesse SHA e roda `npm ci --ignore-scripts`;
-4. invoca `npm run ingest:tse:local -- --dry-run` por padrão. launchd fica em
-   dry-run até o mantenedor configurar explicitamente `TSE_LOCAL_MODE=live` e
-   um SHA-256 de plano revisado em `TSE_LOCAL_EXPECTED_PLAN_SHA`. O modo live
-   exporta os perfis públicos quando `--profiles` não é informado e grava no
-   banco de produção;
+4. exige `TSE_LOCAL_RECIBOS` para recortar a coorte pós-turno em toda rodada.
+   Por padrão, invoca `npm run ingest:tse:local -- --dry-run --recibos=<snapshot>`.
+   O live usa os arquivos da rodada revisada, fixados pelos SHAs abaixo; ele
+   não baixa nem recompõe os recibos e o plano. Depois da escrita auditada,
+   exporta novamente os perfis públicos e só então calcula a cobertura;
 5. guarda logs em `~/Library/Logs/puxa-ficha/` e remove o worktree ao terminar.
 
 O runner exige Node 24 em `/opt/homebrew/opt/node@24/bin`. Downloads TSE são
@@ -59,17 +59,32 @@ SUPABASE_URL=...
 SUPABASE_SERVICE_ROLE_KEY=...
 PF_DOADOR_CPF_HASH_SALT=...
 TSE_LOCAL_MODE=dry-run
-# Somente para live: SHA-256 hexadecimal (64 caracteres) do plano revisado.
+# Snapshot privado atual de coleta_log com encerramentos pós-turno; obrigatório em ambos os modos.
+TSE_LOCAL_RECIBOS=/caminho/privado/recibos-atuais.json
+# Somente para live: diretório de saída do dry-run revisado e SHAs hexadecimais.
+# TSE_LOCAL_REVIEWED_RUN_DIR=/caminho/privado/rodada-revisada
 # TSE_LOCAL_EXPECTED_PLAN_SHA=...
+# TSE_LOCAL_EXPECTED_PLAN_FILE_SHA=...
+# TSE_LOCAL_EXPECTED_REPORT_SHA=...
+# TSE_LOCAL_EXPECTED_FAMILY_SHA=...
+# TSE_LOCAL_EXPECTED_HISTORY_SHA=...
 ```
 
 Mantenha o arquivo privado (`chmod 600 ~/.config/puxa-ficha/ingest-tse.env`)
 e o diretório `~/.config/puxa-ficha` em modo 700. O modo padrão é `dry-run`.
-Para ativar live, configure `TSE_LOCAL_MODE=live` e o SHA-256 de 64 caracteres
-do plano revisado em `TSE_LOCAL_EXPECTED_PLAN_SHA`. Sem os dois valores válidos,
-o launcher para antes do comando; o SHA não é impresso nos logs. A gravação live
-requer autorização explícita para escrever no banco de produção. Não passe
-credenciais como argumentos nem as imprima no terminal ou nos logs.
+O arquivo `TSE_LOCAL_RECIBOS` é obrigatório também no dry-run. Revise o
+`relatorio.json`, `financas/plano-privado.json`, `recibos-familias-aplicaveis.json`
+e `historico-recibos.json` da mesma rodada. O plano privado contém
+`plano_sha256`: copie esse valor para `TSE_LOCAL_EXPECTED_PLAN_SHA`. Calcule o
+SHA-256 dos bytes de cada arquivo com `shasum -a 256` e preencha, na ordem,
+`TSE_LOCAL_EXPECTED_PLAN_FILE_SHA`, `TSE_LOCAL_EXPECTED_REPORT_SHA`,
+`TSE_LOCAL_EXPECTED_FAMILY_SHA` e `TSE_LOCAL_EXPECTED_HISTORY_SHA`. Aponte `TSE_LOCAL_REVIEWED_RUN_DIR` para o
+diretório dessa rodada e só então defina `TSE_LOCAL_MODE=live`. O runner confere
+os cinco digests e os gates do relatório antes de qualquer escrita. O writer relê o estado para CAS,
+aplica o plano revisado, faz readback e a cobertura usa o snapshot público
+pós-escrita. A gravação live requer autorização explícita para escrever no
+banco de produção. Credenciais ficam no ambiente do subshell, fora dos
+argumentos e logs.
 
 Verifique a instalação e o carregamento das dependências sem executar a coleta:
 
@@ -86,7 +101,7 @@ launchctl bootstrap gui/$(id -u) \
 ```
 
 Uma execução manual pode ser iniciada pelo launcher instalado. Sem
-`TSE_LOCAL_MODE=live` e o SHA de plano válido, ela continua em `dry-run`:
+`TSE_LOCAL_MODE=live` e os SHAs revisados, ela continua em `dry-run`:
 
 ```bash
 bash "$HOME/Library/Application Support/puxa-ficha/ingest-tse-local.sh" \

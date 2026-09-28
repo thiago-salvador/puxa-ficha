@@ -3,12 +3,12 @@
  * Defaults to dry-run. Apply is deliberately explicit and only usable with a
  * hash-pinned private plan, a private evidence directory, and expected digest.
  */
-import { createHash } from "node:crypto"
+import { createHash, randomUUID } from "node:crypto"
 import { chmodSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { supabase } from "../lib/supabase"
-import { escreverAuditado } from "../lib/escrita-auditada"
+import { escreverAuditado as escreverAuditadoReal } from "../lib/escrita-auditada"
 import { hashPatrimonioPreimage, publicPatrimonioRow } from "./plan-patrimonio-writers-local"
 import { assertOutsideRepository } from "./lib/private-output"
 
@@ -41,7 +41,7 @@ type Query = PromiseLike<QueryResult> & {
   delete(): Query
 }
 type Client = { from(table: string): Query }
-type ApplyOptions = { apply: boolean; expectedPlanSha: string; evidenceDir: string; client?: Client }
+type ApplyOptions = { apply: boolean; expectedPlanSha: string; evidenceDir: string; client?: Client; runId?: string; auditWrite?: typeof escreverAuditadoReal }
 
 const SCRIPT = "apply-patrimonio-writers-local"
 const BATCH_SIZE = 25
@@ -57,7 +57,7 @@ const digest = (text: string) => createHash("sha256").update(text).digest("hex")
 function persist(path: string, value: unknown): void {
   const target = assertOutsideRepository(path, "evidence")
   mkdirSync(resolve(target, ".."), { recursive: true, mode: 0o700 })
-  writeFileSync(target, `${JSON.stringify(value, null, 2)}\n`, { mode: 0o600 })
+  writeFileSync(target, `${JSON.stringify(value, null, 2)}\n`, { mode: 0o600, flag: "wx" })
   chmodSync(target, 0o600)
 }
 function compareDisplay(actual: Record<string, unknown>, expected: Record<string, unknown>): boolean {
@@ -109,9 +109,13 @@ export async function applyPatrimonioWritersAuditadas(plan: Plan, options: Apply
   if (!options.expectedPlanSha || options.expectedPlanSha !== planSha) throw new Error("hash esperado diverge do plano")
   if (!options.apply) return dryRunPatrimonioWriters(plan, options.expectedPlanSha)
   const batchIndex = options.batchIndex ?? 0
+  const runId = options.runId ?? randomUUID()
+  if (!/^[a-zA-Z0-9-]+$/.test(runId)) throw new Error("run id inválido")
+  const filePrefix = `patrimonio-batch-${batchIndex}-${runId}`
   const actions = selectPatrimonioActionBatch(plan.acoes, batchIndex)
   const root = assertOutsideRepository(options.evidenceDir, "--evidence-dir")
   const client = options.client ?? (supabase as unknown as Client)
+  const escreverAuditado = options.auditWrite ?? escreverAuditadoReal
   const receipt: { plan_sha256: string; batches: number; batch_index: number; total_actions: number; remaining_actions: number; attempted: number; written: string[]; readback: string[]; review: Array<{ slug: string; ano_eleicao: number; reason: string }> } = {
     plan_sha256: planSha, batches: Math.ceil(actions.length / BATCH_SIZE), batch_index: batchIndex, total_actions: plan.acoes.length,
     remaining_actions: Math.max(0, plan.acoes.length - (batchIndex + 1) * MAX_ACTIONS_PER_RUN), attempted: 0, written: [], readback: [], review: [],
@@ -123,10 +127,10 @@ export async function applyPatrimonioWritersAuditadas(plan: Plan, options: Apply
     for (const action of batch) {
       const { data, error } = await client.from("patrimonio").select("*")
         .eq("candidato_id", action.candidato_id).eq("ano_eleicao", action.ano_eleicao)
-      if (error) { persist(resolve(root, "receipt-patrimonio-interrupted.json"), receipt); throw new Error(`pre-image read failed: ${error.message}`) }
+    if (error) { persist(resolve(root, `receipt-${filePrefix}-interrupted.json`), { ...receipt, status: "interrompido" }); throw new Error(`pre-image read failed: ${error.message}`) }
       backup.push(...(data ?? []))
     }
-    persist(resolve(root, `backup-preimagem-patrimonio-${String(offset / BATCH_SIZE + 1).padStart(3, "0")}.json`), {
+    persist(resolve(root, `backup-preimagem-${filePrefix}-${String(offset / BATCH_SIZE + 1).padStart(3, "0")}.json`), {
       plan_sha256: planSha, batch: offset / BATCH_SIZE + 1, rows: backup,
     })
 
@@ -140,7 +144,7 @@ export async function applyPatrimonioWritersAuditadas(plan: Plan, options: Apply
         currentQuery = currentQuery.eq("sq_candidato", action.sq_candidato).eq("uf_candidatura", action.uf_candidatura)
       }
       const { data: current, error } = await currentQuery
-      if (error) { persist(resolve(root, "receipt-patrimonio-interrupted.json"), receipt); throw new Error(`CAS read failed: ${error.message}`) }
+      if (error) { persist(resolve(root, `receipt-${filePrefix}-interrupted.json`), { ...receipt, status: "interrompido" }); throw new Error(`CAS read failed: ${error.message}`) }
       const rows = (current ?? []).map(publicPatrimonioRow)
       if (hashPatrimonioPreimage(rows) !== action.antes_sha256) {
         receipt.review.push({ slug: action.slug, ano_eleicao: action.ano_eleicao, reason: "preimage_digest_changed" })
@@ -151,7 +155,9 @@ export async function applyPatrimonioWritersAuditadas(plan: Plan, options: Apply
         continue
       }
       const patch = { ...action.depois, candidato_id: action.candidato_id }
-      const write = await escreverAuditado({ script: SCRIPT, tabela: "patrimonio", motivo: `TSE patrimônio ${action.ano_eleicao}; SHA-256 ${action.pacote_sha256}; CAS por pre-image`, recorte: `${action.slug}/${action.ano_eleicao}` }, () => {
+      let write: DbRow[]
+      try {
+      write = await escreverAuditado({ script: SCRIPT, tabela: "patrimonio", motivo: `TSE patrimônio ${action.ano_eleicao}; SHA-256 ${action.pacote_sha256}; CAS por pre-image`, recorte: `${action.slug}/${action.ano_eleicao}` }, () => {
         if (action.match_mode === "insert") return client.from("patrimonio").insert(patch).select("*")
         let guarded = client.from("patrimonio").update(patch)
           .eq("id", action.antes_publico[0]!.id)
@@ -165,6 +171,19 @@ export async function applyPatrimonioWritersAuditadas(plan: Plan, options: Apply
         }
         return guarded.select("*")
       })
+      } catch (writeError) {
+        let restoreAttempt = "unconfirmed"
+        try {
+          const after = await client.from("patrimonio").select("*")
+            .eq("candidato_id", action.candidato_id).eq("ano_eleicao", action.ano_eleicao)
+          if (!after.error && stable(after.data ?? []) === stable(current ?? [])) restoreAttempt = "preimage_intact"
+        } catch { /* The receipt records that readback could not confirm restoration. */ }
+        persist(resolve(root, `receipt-${filePrefix}-interrupted.json`), {
+          ...receipt, status: "interrompido", failure: writeError instanceof Error ? writeError.message : "write failed",
+          restore_attempt: restoreAttempt,
+        })
+        throw writeError
+      }
       if (write.length !== 1) {
         receipt.review.push({ slug: action.slug, ano_eleicao: action.ano_eleicao, reason: "cas_write_returned_non_singleton" })
         continue
@@ -185,7 +204,8 @@ export async function applyPatrimonioWritersAuditadas(plan: Plan, options: Apply
           receipt.written = receipt.written.filter((key) => key !== `${action.slug}/${action.ano_eleicao}`)
           receipt.review.push({ slug: action.slug, ano_eleicao: action.ano_eleicao, reason: "readback_failed_restored" })
         } catch { receipt.review.push({ slug: action.slug, ano_eleicao: action.ano_eleicao, reason: "readback_failed_restore_unconfirmed" }) }
-        persist(resolve(root, "receipt-patrimonio-interrupted.json"), receipt)
+        persist(resolve(root, `receipt-${filePrefix}-interrupted.json`), { ...receipt, status: "interrompido",
+          restore_attempt: receipt.review.at(-1)?.reason === "readback_failed_restored" ? "confirmed" : "unconfirmed" })
         throw new Error(`readback failed: ${readError.message}`)
       }
       if ((readback ?? []).length !== 1
@@ -197,9 +217,9 @@ export async function applyPatrimonioWritersAuditadas(plan: Plan, options: Apply
       }
       receipt.readback.push(`${action.slug}/${action.ano_eleicao}`)
     }
-    persist(resolve(root, `receipt-patrimonio-${String(offset / BATCH_SIZE + 1).padStart(3, "0")}.json`), receipt)
+    persist(resolve(root, `receipt-${filePrefix}-${String(offset / BATCH_SIZE + 1).padStart(3, "0")}.json`), receipt)
   }
-  persist(resolve(root, "receipt-patrimonio-final.json"), receipt)
+  persist(resolve(root, `receipt-${filePrefix}-final.json`), receipt)
   return receipt
 }
 

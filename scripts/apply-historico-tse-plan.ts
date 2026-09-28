@@ -79,16 +79,21 @@ export function dryRunHistoricalActions(actions: readonly Action[]) {
   return { mode: "dry-run" as const, actions: actions.length, actions_per_apply: MAX_ACTIONS_PER_RUN, apply_runs: Math.ceil(actions.length / MAX_ACTIONS_PER_RUN) }
 }
 
-export async function applyHistoricalActions(actions: readonly Action[], port: Port, batchSize = 10, batchIndex = 0): Promise<ApplyResult> {
+export async function applyHistoricalActions(actions: readonly Action[], port: Port, batchSize = 10, batchIndex = 0, interruptedReceiptPath?: string): Promise<ApplyResult> {
   if (!Number.isInteger(batchSize) || batchSize < 1 || batchSize > 50) throw new Error("batch inválido")
   validateActions(actions)
   const selected = selectHistoricalActionBatch(actions, batchIndex)
   const conflicts: ApplyResult["conflicts"] = []
   let applied = 0
   let batches = 0
+  let failingSlug: string | null = null
+  let restoreAttempt = "not_needed"
+  let restoreFailure: string | null = null
+  try {
   for (let offset = 0; offset < selected.length; offset += batchSize) {
     batches++
     for (const action of selected.slice(offset, offset + batchSize)) {
+      failingSlug = action.slug
       if (action.tipo !== "substituir_historico" || action.classification !== "a") {
         conflicts.push({ slug: action.slug, reason: "ação_fora_da_classe_a" }); continue
       }
@@ -111,19 +116,35 @@ export async function applyHistoricalActions(actions: readonly Action[], port: P
         if (stable(displayed(after.filter((row) => covered(action, row)))) !== stable(displayed(action.depois))) throw new Error(`readback divergente para ${action.slug}`)
       } catch (error) {
         // Compensating restore is limited to the reviewed years.
-        const partial = (await port.read(action.candidato_id)).filter((row) => covered(action, row))
-        if (partial.length) await port.delete(partial, action.candidato_id, `${action.slug}:restaura`)
-        const restored = currentTse.length ? await port.insert(currentTse.map((row) => Object.fromEntries(Object.entries(row).filter(([key]) => key !== "id"))), `${action.slug}:restaura`) : []
-        if (restored.length !== currentTse.length) throw new Error("restauração auditada não confirmou preimagem")
-        const restoredRows = (await port.read(action.candidato_id)).filter(isTseCandidacy)
-        if (!sameRows(untouched, restoredRows.filter((row) => !covered(action, row)))
-          || stable(displayed(restoredRows.filter((row) => covered(action, row)))) !== stable(displayed(currentTse))) {
-          throw new Error("restauração auditada não confirmou cobertura histórica")
+        restoreAttempt = "attempted"
+        try {
+          const partial = (await port.read(action.candidato_id)).filter((row) => covered(action, row))
+          if (partial.length) await port.delete(partial, action.candidato_id, `${action.slug}:restaura`)
+          const restored = currentTse.length ? await port.insert(currentTse.map((row) => Object.fromEntries(Object.entries(row).filter(([key]) => key !== "id"))), `${action.slug}:restaura`) : []
+          if (restored.length !== currentTse.length) throw new Error("restauração auditada não confirmou preimagem")
+          const restoredRows = (await port.read(action.candidato_id)).filter(isTseCandidacy)
+          if (!sameRows(untouched, restoredRows.filter((row) => !covered(action, row)))
+            || stable(displayed(restoredRows.filter((row) => covered(action, row)))) !== stable(displayed(currentTse))) {
+            throw new Error("restauração auditada não confirmou cobertura histórica")
+          }
+          restoreAttempt = "confirmed"
+        } catch (restoreError) {
+          restoreAttempt = "failed"
+          restoreFailure = restoreError instanceof Error ? restoreError.message : "restauração falhou"
         }
         throw error
       }
       applied++
+      failingSlug = null
     }
+  }
+  } catch (error) {
+    if (interruptedReceiptPath) writePrivateArtifact(interruptedReceiptPath, {
+      status: "interrompido", batch_index: batchIndex, applied, batches, conflicts,
+      written: applied, failing_slug: failingSlug, restore_attempt: restoreAttempt, restore_failure: restoreFailure,
+      failure: error instanceof Error ? error.message : "falha de escrita",
+    })
+    throw error
   }
   return { applied, batches, conflicts }
 }
@@ -187,7 +208,7 @@ async function main(): Promise<void> {
   const snapshots: Array<{ candidato_id: string; slug: string; rows: Row[] }> = []
   for (const action of selected) snapshots.push({ candidato_id: action.candidato_id, slug: action.slug, rows: await port.read(action.candidato_id) })
   writePrivateArtifact(backupPath, { plan_sha256: planDigest, batch_index: args.batchIndex, snapshots })
-  const result = await applyHistoricalActions(actions, port, 10, args.batchIndex)
+  const result = await applyHistoricalActions(actions, port, 10, args.batchIndex, receiptPath)
   const receipt = { plan_sha256: planDigest, backup: backupPath, batch_size: 10, batch_index: args.batchIndex, total_actions: actions.length, remaining_actions: Math.max(0, actions.length - (args.batchIndex + 1) * MAX_ACTIONS_PER_RUN), ...result, readback: "verified_per_candidate" }
   writePrivateArtifact(receiptPath, receipt)
   console.log(JSON.stringify({ applied: result.applied, conflicts: result.conflicts.length, backup: backupPath, receipt: receiptPath }))

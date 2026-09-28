@@ -70,6 +70,8 @@ export interface OpcoesCli {
   expectedPlanSha: string | null
   backfillCategorias: boolean
   backfillDryRun: string | null
+  reviewedPlan: string | null
+  expectedPlanFileSha: string | null
 }
 
 export function lerArgs(argv: string[]): OpcoesCli {
@@ -81,6 +83,8 @@ export function lerArgs(argv: string[]): OpcoesCli {
     expectedPlanSha: valor("expected-plan-sha"),
     backfillCategorias: argv.includes("--backfill-categorias"),
     backfillDryRun: valor("backfill-dry-run"),
+    reviewedPlan: valor("reviewed-plan"),
+    expectedPlanFileSha: valor("expected-plan-file-sha"),
   }
 }
 
@@ -132,17 +136,17 @@ export async function carregarEstado2026(permitirSchemaAnterior = false): Promis
   const ano = (q: ConsultaPaginavel) => q.eq("ano_eleicao", ANO_FINANCAS_2026).order("id")
   const financiamentoPromise = selecionarTudo<EstadoProducao["financiamento"][number]>(
     "financiamento",
-    "id, candidato_id, ano_eleicao, sq_candidato, uf_candidatura, cargo_candidatura, total_arrecadado, total_fundo_partidario, total_fundo_eleitoral, total_pessoa_fisica, total_recursos_proprios, categorias_origem, maiores_doadores, fonte, despublicado_em",
+    "id, candidato_id, ano_eleicao, sq_candidato, uf_candidatura, cargo_candidatura, total_arrecadado, total_fundo_partidario, total_fundo_eleitoral, total_pessoa_fisica, total_recursos_proprios, categorias_origem, categorias_origem_hash, maiores_doadores, maiores_doadores_hash, fonte, despublicado_em",
     ano,
   ).catch(async (error: unknown) => {
     const message = error instanceof Error ? error.message : String(error)
-    if (!permitirSchemaAnterior || !/categorias_origem.*does not exist/i.test(message)) throw error
+    if (!permitirSchemaAnterior || !/(?:categorias_origem|maiores_doadores_hash).*does not exist/i.test(message)) throw error
     const rows = await selecionarTudo<Omit<EstadoProducao["financiamento"][number], "categorias_origem">>(
       "financiamento",
       "id, candidato_id, ano_eleicao, sq_candidato, uf_candidatura, cargo_candidatura, total_arrecadado, total_fundo_partidario, total_fundo_eleitoral, total_pessoa_fisica, total_recursos_proprios, maiores_doadores, fonte, despublicado_em",
       ano,
     )
-    return rows.map((row) => ({ ...row, categorias_origem: null }))
+    return rows.map((row) => ({ ...row, categorias_origem: null, categorias_origem_hash: null, maiores_doadores_hash: null }))
   })
   const [financiamento, verificacoes, patrimonio, ausencias] = await Promise.all([
     financiamentoPromise,
@@ -184,7 +188,7 @@ export function shaDoPlano(plano: PlanoFinancas2026): string {
   return createHash("sha256").update(stableJson(plano.acoes)).digest("hex")
 }
 
-async function planejar(permitirSchemaAnterior = false): Promise<{ plano: PlanoFinancas2026; estado: EstadoProducao; publicos: FichaPublica[] }> {
+async function planejar(permitirSchemaAnterior = false, agendado = false): Promise<{ plano: PlanoFinancas2026; estado: EstadoProducao; publicos: FichaPublica[] }> {
   const publicos = await carregarPublicos()
   const planejadas: PlannedTseRow[] = []
   // O ingest canônico em dry-run não grava; `planStorageRows` devolve a linha
@@ -204,6 +208,7 @@ async function planejar(permitirSchemaAnterior = false): Promise<{ plano: PlanoF
     planejadas,
     estado,
     pacote: { url_receitas: urlReceitas, url_bens: URL_BENS, ...hashes },
+    agendado,
   })
   return { plano, estado, publicos }
 }
@@ -266,6 +271,10 @@ async function aplicarAcao(acao: AcaoEscrita): Promise<Conflito | null> {
   }
 
   if (acao.tipo === "atualizar_financiamento") {
+    if (!/^[a-f0-9]{32}$/.test(String(acao.antes.maiores_doadores_hash ?? ""))
+      || !/^[a-f0-9]{32}$/.test(String(acao.antes.categorias_origem_hash ?? ""))) {
+      return conflito("preimagem sem hashes CAS de JSON")
+    }
     const linhas = await escreverAuditado(
       ctx("financiamento", "atualiza receita parcial 2026 com o pacote TSE do dia (linha de máquina, CAS)"),
       () => {
@@ -283,10 +292,8 @@ async function aplicarAcao(acao: AcaoEscrita): Promise<Conflito | null> {
             const valor = acao.antes[coluna]
             return valor == null ? query.is(coluna, null) : query.eq(coluna, valor as number)
           }, comCargo)
-        const comDoadores = comSubtotais.eq("maiores_doadores", JSON.stringify(acao.antes.maiores_doadores))
-        const guarded = acao.antes.categorias_origem == null
-          ? comDoadores.is("categorias_origem", null)
-          : comDoadores.eq("categorias_origem", JSON.stringify(acao.antes.categorias_origem))
+        const comDoadores = comSubtotais.eq("maiores_doadores_hash", acao.antes.maiores_doadores_hash)
+        const guarded = comDoadores.eq("categorias_origem_hash", acao.antes.categorias_origem_hash)
         return guarded.select("id")
       },
     )
@@ -320,7 +327,7 @@ async function aplicarAcao(acao: AcaoEscrita): Promise<Conflito | null> {
 /**
  * Sonda de CAS: roda como SELECT o mesmo predicado que o update/delete vai
  * usar. Prova, antes de gravar, que o filtro casa exatamente a linha do plano
- * (inclusive a igualdade jsonb de `maiores_doadores`).
+ * (inclusive os hashes gerados dos dois JSONB).
  */
 export async function sondarCas(plano: PlanoFinancas2026, permitirSchemaAnterior = false): Promise<{ ok: number; falhas: string[] }> {
   let ok = 0
@@ -340,7 +347,7 @@ export async function sondarCas(plano: PlanoFinancas2026, permitirSchemaAnterior
           const valor = acao.antes[coluna]
           return valor == null ? query.is(coluna, null) : query.eq(coluna, valor as number)
         }, comCargo)
-      const comDoadores = comSubtotais.eq("maiores_doadores", JSON.stringify(acao.antes.maiores_doadores))
+      const comDoadores = comSubtotais.eq("maiores_doadores_hash", acao.antes.maiores_doadores_hash)
       // PostgREST builders mutate while chaining filters; build the fallback
       // independently so adding the category predicate below cannot leak into it.
       const baseSemCategorias = supabase.from("financiamento").select("id").eq("id", acao.id)
@@ -354,10 +361,7 @@ export async function sondarCas(plano: PlanoFinancas2026, permitirSchemaAnterior
           const valor = acao.antes[coluna]
           return valor == null ? query.is(coluna, null) : query.eq(coluna, valor as number)
         }, cargoSemCategorias)
-        .eq("maiores_doadores", JSON.stringify(acao.antes.maiores_doadores))
-      q = acao.antes.categorias_origem == null
-        ? comDoadores.is("categorias_origem", null)
-        : comDoadores.eq("categorias_origem", JSON.stringify(acao.antes.categorias_origem))
+      q = comDoadores.eq("categorias_origem_hash", acao.antes.categorias_origem_hash)
     } else if (acao.tipo === "apagar_verificacao") {
       const base = supabase.from("financiamento_verificacoes").select("id").eq("id", acao.id).eq("resultado", acao.antes.resultado)
       q = acao.antes.verificado_em ? base.eq("verificado_em", acao.antes.verificado_em) : base.is("verificado_em", null)
@@ -482,7 +486,21 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
 async function executar(opts: OpcoesCli): Promise<number> {
   exigirChaveV2(process.env.PF_DOADOR_CPF_HASH_SALT)
 
-  const { plano, estado, publicos } = await planejar(!opts.aplicar)
+  if (opts.reviewedPlan && (!opts.aplicar || opts.agendado || !/^[a-f0-9]{64}$/i.test(opts.expectedPlanFileSha ?? ""))) {
+    throw new Error("plano revisado exige --apply manual e SHA-256 do arquivo")
+  }
+  const { plano, estado, publicos } = opts.reviewedPlan ? await (async () => {
+    const path = assertOutsideRepository(opts.reviewedPlan!, "--reviewed-plan")
+    const bytes = readFileSync(path)
+    if (createHash("sha256").update(bytes).digest("hex") !== opts.expectedPlanFileSha!.toLowerCase()) {
+      throw new Error("SHA-256 do plano revisado diverge")
+    }
+    const reviewed = JSON.parse(bytes.toString("utf8")) as PlanoFinancas2026 & { plano_sha256?: string }
+    if (!Array.isArray(reviewed.acoes) || !Array.isArray(reviewed.recibos) || !Array.isArray(reviewed.revisao)
+      || reviewed.plano_sha256 !== shaDoPlano(reviewed)) throw new Error("plano revisado inválido")
+    const [estado, publicos] = await Promise.all([carregarEstado2026(), carregarPublicos()])
+    return { plano: reviewed, estado, publicos }
+  })() : await planejar(!opts.aplicar, opts.agendado)
   const sha = shaDoPlano(plano)
   const publico = planoPublico(plano)
   console.log(JSON.stringify({ modo: opts.aplicar ? "apply" : "dry-run", plano_sha256: sha, resumo: publico.resumo }, null, 2))

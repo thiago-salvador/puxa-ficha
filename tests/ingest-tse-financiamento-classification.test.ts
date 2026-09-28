@@ -22,6 +22,9 @@ test("mapeia a origem oficial para as quatro categorias exibidas na ficha", () =
   assert.equal(categoriaFinanciamentoExibida("Recursos próprios", "Pessoas físicas"), "outros_recursos")
   assert.equal(categoriaFinanciamentoExibida("", ""), "nao_informado_pelo_tse")
   assert.equal(categoriaFinanciamentoExibida("#NULO", "#NULO"), "nao_informado_pelo_tse")
+  for (const marker of ["#NULO#", "#NE#", "#NE"]) {
+    assert.equal(categoriaFinanciamentoExibida(marker, marker), "nao_informado_pelo_tse", marker)
+  }
 })
 
 test("usa o cargo observado no pacote oficial antes do cargo curado", () => {

@@ -195,7 +195,7 @@ describe("revisão do histórico: veredito e prova", () => {
     assert.equal(result.review[0]?.tipo, "linha_diverge")
   })
 
-  it("recibo partidário fecha vazio no escopo por candidatura e não declara filiação datada", () => {
+  it("recibo partidário por candidatura não fecha sem prova parlamentar", () => {
     const years = [...HISTORICO_ANOS_CANONICOS]
     const sourceRevisions = years.map((year) => ({ year, url: `https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_${year}.zip`, sha256: String(year % 10).repeat(64) }))
     const subject = { ...profile([]), mudancas_partido: [] }
@@ -210,10 +210,10 @@ describe("revisão do histórico: veredito e prova", () => {
     assert.equal(detail.scope, "partido_em_cada_candidatura")
     assert.equal(detail.datas_de_filiacao_estabelecidas, false)
     assert.equal(detail.coverage_proof.method, "official-party-by-candidacy-scope")
-    assert.equal(validCoverageSourceProof(subject, "mudancas_partido", { ...receipt, coverage_proof: detail.coverage_proof }), true)
+    assert.equal(validCoverageSourceProof(subject, "mudancas_partido", { ...receipt, coverage_proof: detail.coverage_proof }), false)
     assert.deepEqual(receiptFamilies(receipt.fonte, receipt.detalhe, receipt.url), ["mudancas_partido"])
-    assert.equal(cell(subject, [receipt], "mudancas_partido").estado, "vazio_confirmado")
-    assert.equal(planCoverageReceipts([receipt], [subject], new Set([receipt.fonte])).planned[0]?.familia, "mudancas_partido")
+    assert.notEqual(cell(subject, [receipt], "mudancas_partido").estado, "vazio_confirmado")
+    assert.equal(planCoverageReceipts([receipt], [subject], new Set([receipt.fonte])).planned.length, 0)
   })
 
   it("recibo partidário fecha só transições deriváveis das siglas oficiais por candidatura", () => {
@@ -237,7 +237,7 @@ describe("revisão do histórico: veredito e prova", () => {
     assert.equal(derivavel.resultado, "encontrado")
     assert.equal(detail.coverage_proof.derived_transitions, 1)
     assert.equal(detail.coverage_proof.public_transitions, 1)
-    assert.equal(validCoverageSourceProof(subject, "mudancas_partido", { ...derivavel, coverage_proof: detail.coverage_proof }), true)
+    assert.equal(validCoverageSourceProof(subject, "mudancas_partido", { ...derivavel, coverage_proof: detail.coverage_proof }), false)
   })
 
   it("mandato TSE casa com a eleição do ano anterior", () => {

@@ -114,6 +114,24 @@ test("failed replacement restores its read preimage through an audited compensat
   assert.equal(rows[0]?.periodo_inicio, 2018)
 })
 
+test("historical writer persists interrupted receipt after a write throws", async () => {
+  const root = mkdtempSync(join(tmpdir(), "historico-interrupted-"))
+  try {
+    const receiptPath = join(root, "receipt.json")
+    const action = { tipo: "substituir_historico" as const, slug: "candidate", candidato_id: "00000000-0000-4000-8000-000000000008",
+      antes_publico: [], antes_sha256: digest([]), classification: "a", source_complete: true,
+      source_revisions: [{ year: 2022, sha256: "a".repeat(64) }],
+      depois: [{ cargo: "Deputado", tipo_evento: "candidatura", periodo_inicio: 2022, proveniencia: "tse" }] }
+    await assert.rejects(() => applyHistoricalActions([action], {
+      read: async () => [], delete: async () => [], insert: async () => { throw new Error("insert rejected") },
+    }, 10, 0, receiptPath), /insert rejected/)
+    const receipt = JSON.parse(readFileSync(receiptPath, "utf8"))
+    assert.equal(receipt.status, "interrompido")
+    assert.equal(receipt.applied, 0)
+    assert.equal(receipt.restore_attempt, "confirmed")
+  } finally { rmSync(root, { recursive: true, force: true }) }
+})
+
 test("only reviewed package years are replaced; an earlier TSE candidacy survives", async () => {
   const id = "00000000-0000-4000-8000-000000000005"
   const older = { id: "older", candidato_id: id, proveniencia: "tse", tipo_evento: "candidatura", periodo_inicio: 2006, cargo: "Deputado Federal" }

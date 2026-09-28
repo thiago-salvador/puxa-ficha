@@ -4,6 +4,7 @@ import { execFile } from "node:child_process"
 import { promisify } from "node:util"
 import { parse } from "csv-parse"
 import { pipeline } from "node:stream/promises"
+import { minimalChildEnv } from "../lib/minimal-child-env"
 
 const execFileAsync = promisify(execFile)
 const CANDIDATE_CSV = /^consulta_cand_2026_(?:BRASIL|AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO|BR)\.csv$/
@@ -18,7 +19,7 @@ function recordCandidateRows(
   visit: (row: CandidateRow) => void,
 ): Promise<void> {
   return new Promise((resolve, reject) => {
-    const child = spawn("unzip", ["-p", zipPath, member], { stdio: ["ignore", "pipe", "ignore"] })
+    const child = spawn("unzip", ["-p", zipPath, member], { stdio: ["ignore", "pipe", "ignore"], env: minimalChildEnv() })
     const parser = parse({
       bom: true,
       columns: (headers: string[]) => {
@@ -68,7 +69,7 @@ export async function officialCandidateUfMap(zipPath: string): Promise<Map<strin
 
   let members: string[]
   try {
-    const result = await execFileAsync("unzip", ["-Z1", zipPath], { encoding: "utf8", maxBuffer: 1024 * 1024 })
+    const result = await execFileAsync("unzip", ["-Z1", zipPath], { encoding: "utf8", maxBuffer: 1024 * 1024, env: minimalChildEnv() })
     members = result.stdout.split(/\r?\n/).filter((member) => CANDIDATE_CSV.test(member))
   } catch {
     throw new Error("Não foi possível listar os CSVs do ZIP oficial")

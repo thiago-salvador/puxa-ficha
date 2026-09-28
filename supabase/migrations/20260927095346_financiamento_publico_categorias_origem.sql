@@ -7,6 +7,14 @@ BEGIN;
 ALTER TABLE public.financiamento
   ADD COLUMN IF NOT EXISTS categorias_origem jsonb;
 
+-- Server-computed CAS tokens keep private donor JSON and category JSON out of URLs.
+ALTER TABLE public.financiamento
+  ADD COLUMN IF NOT EXISTS maiores_doadores_hash text
+  GENERATED ALWAYS AS (md5(COALESCE(maiores_doadores::text, 'null'))) STORED;
+ALTER TABLE public.financiamento
+  ADD COLUMN IF NOT EXISTS categorias_origem_hash text
+  GENERATED ALWAYS AS (md5(COALESCE(categorias_origem::text, 'null'))) STORED;
+
 CREATE OR REPLACE VIEW public.financiamento_publico AS
 SELECT
   f.id,

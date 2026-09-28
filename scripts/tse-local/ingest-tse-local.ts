@@ -14,6 +14,8 @@ import { withVisibleTseChrome } from "./chrome-fetch"
 import { collectDivulgaCandidateFallback, type DivulgaCandidateSummary, type SeedCandidateIdentity } from "./divulga-candidate"
 import { collectDivulgaFinancingForClient, type DivulgaFinancingResult } from "./divulga-financing"
 import { officialCandidateUfMap } from "./official-uf"
+import { minimalChildEnv } from "../lib/minimal-child-env"
+import { stableJson } from "../lib/tse-2026-financas-plano"
 
 const TSE_CDN = "https://cdn.tse.jus.br/estatistica/sead/odsele"
 export const HISTORICAL_YEARS = Array.from({ length: 16 }, (_, index) => 1996 + index * 2)
@@ -30,6 +32,9 @@ export type CliOptions = {
   expectedPlanSha: string | null
   expectedFamilySha: string | null
   expectedHistorySha: string | null
+  expectedPlanFileSha: string | null
+  expectedReportSha: string | null
+  reviewedRunDir: string | null
   recibos: string | null
   verifiedCacheManifest: string | null
 }
@@ -98,7 +103,7 @@ function argument(argv: readonly string[], name: string): string | null {
 
 export function parseCliOptions(argv: readonly string[], cwd = process.cwd()): CliOptions {
   const switches = new Set(["--live", "--dry-run"])
-  const valueOptions = new Set(["profiles", "candidates", "years", "slugs", "open-cells", "out-dir", "expected-plan-sha", "expected-family-sha", "expected-history-sha", "recibos", "verified-cache-manifest"])
+  const valueOptions = new Set(["profiles", "candidates", "years", "slugs", "open-cells", "out-dir", "expected-plan-sha", "expected-plan-file-sha", "expected-report-sha", "expected-family-sha", "expected-history-sha", "reviewed-run-dir", "recibos", "verified-cache-manifest"])
   for (const item of argv) {
     if (switches.has(item)) continue
     const name = item.startsWith("--") ? item.slice(2).split("=", 1)[0] : ""
@@ -114,8 +119,11 @@ export function parseCliOptions(argv: readonly string[], cwd = process.cwd()): C
   }
   if (live && (!/^[a-f0-9]{64}$/i.test(argument(argv, "expected-family-sha") ?? "")
     || !/^[a-f0-9]{64}$/i.test(argument(argv, "expected-history-sha") ?? "")
+    || !/^[a-f0-9]{64}$/i.test(argument(argv, "expected-plan-file-sha") ?? "")
+    || !/^[a-f0-9]{64}$/i.test(argument(argv, "expected-report-sha") ?? "")
+    || !argument(argv, "reviewed-run-dir")
     || !argument(argv, "recibos"))) {
-    throw new Error("--live exige SHAs revisados dos recibos de família e histórico e --recibos")
+    throw new Error("--live exige diretório revisado, SHAs de plano e recibos de família e histórico, e --recibos")
   }
   const rawSlugs = argument(argv, "slugs")
   const slugs = rawSlugs ? [...new Set(rawSlugs.split(",").map((slug) => slug.trim()).filter(Boolean))] : null
@@ -140,6 +148,9 @@ export function parseCliOptions(argv: readonly string[], cwd = process.cwd()): C
     expectedPlanSha,
     expectedFamilySha: argument(argv, "expected-family-sha"),
     expectedHistorySha: argument(argv, "expected-history-sha"),
+    expectedPlanFileSha: argument(argv, "expected-plan-file-sha"),
+    expectedReportSha: argument(argv, "expected-report-sha"),
+    reviewedRunDir: argument(argv, "reviewed-run-dir") ? resolve(argument(argv, "reviewed-run-dir")!) : null,
     recibos: recibos ? resolve(recibos) : null,
     verifiedCacheManifest: argument(argv, "verified-cache-manifest") ? resolve(argument(argv, "verified-cache-manifest")!) : null,
   }
@@ -232,7 +243,7 @@ async function verifiedCacheFallback(
   assertOutsideRepository(path, "asset de cache verificado")
   if (!existsSync(path) || lstatSync(path).isSymbolicLink() || !/^[a-f0-9]{64}$/i.test(asset.sha256)) return null
   if (await sha256File(path) !== asset.sha256.toLowerCase()) return null
-  try { execFileSync("unzip", ["-tqq", path], { stdio: "ignore", timeout: 15 * 60_000 }) }
+  try { execFileSync("unzip", ["-tqq", path], { stdio: "ignore", timeout: 15 * 60_000, env: minimalChildEnv() }) }
   catch { return null }
   const { statSync } = await import("node:fs")
   return { path, sha256: asset.sha256.toLowerCase(), bytes: statSync(path).size, reused_cache: true }
@@ -390,6 +401,100 @@ function safeDownloadFailure(error: unknown): string {
         : "falha de download ou validação do pacote"
 }
 
+/** Applies only byte-pinned files emitted by a reviewed dry-run. */
+export async function runReviewedLive(
+  options: CliOptions,
+  runner: (script: string, args: string[], env?: NodeJS.ProcessEnv) => StepResult = runScript,
+): Promise<number> {
+  if (!options.recibos || !options.reviewedRunDir || !options.expectedPlanSha || !options.expectedPlanFileSha || !options.expectedReportSha
+    || !options.expectedFamilySha || !options.expectedHistorySha) throw new Error("live sem artefatos e SHAs revisados")
+  const reviewed = assertOutsideRepository(options.reviewedRunDir, "--reviewed-run-dir")
+  if (lstatSync(reviewed).isSymbolicLink()) throw new Error("diretório revisado não pode ser link simbólico")
+  const family = join(reviewed, "recibos-familias-aplicaveis.json")
+  const history = join(reviewed, "historico-recibos.json")
+  const plan = join(reviewed, "financas", "plano-privado.json")
+  const reportPath = join(reviewed, "relatorio.json")
+  const pinned = [
+    { path: family, expected: options.expectedFamilySha, label: "família" },
+    { path: history, expected: options.expectedHistorySha, label: "histórico" },
+    { path: plan, expected: options.expectedPlanFileSha, label: "plano" },
+    { path: reportPath, expected: options.expectedReportSha, label: "relatório" },
+  ]
+  for (const file of pinned) {
+    assertOutsideRepository(file.path, file.label)
+    if (!existsSync(file.path) || lstatSync(file.path).isSymbolicLink() || await sha256File(file.path) !== file.expected.toLowerCase()) {
+      throw new Error(`SHA-256 do arquivo revisado de ${file.label} diverge`)
+    }
+  }
+  const reviewedPlan = JSON.parse(readFileSync(plan, "utf8")) as { plano_sha256?: string; acoes?: unknown[] }
+  const planSha = createHash("sha256").update(stableJson(reviewedPlan.acoes)).digest("hex")
+  if (!Array.isArray(reviewedPlan.acoes) || reviewedPlan.plano_sha256 !== planSha || planSha !== options.expectedPlanSha.toLowerCase()) {
+    throw new Error("SHA-256 semântico do plano revisado diverge")
+  }
+  const reviewedProfiles = JSON.parse(readFileSync(join(reviewed, "coorte-perfis.json"), "utf8")) as CandidateProfile[]
+  if (!Array.isArray(reviewedProfiles) || !reviewedProfiles.length) throw new Error("coorte revisada ausente")
+  const report = JSON.parse(readFileSync(reportPath, "utf8")) as {
+    mode?: string; historical_scope_complete?: boolean; cohort?: { selected?: number };
+    assets_reused_from_verified_cache?: unknown[];
+    sources?: Record<string, { requested?: number; fresh_certifiable?: number | boolean; errors?: unknown[] }>;
+    steps?: Record<string, { ok?: boolean } | number>;
+  }
+  const sources = report.sources
+  const steps = report.steps
+  const requiredSteps = ["history_review_receipts", "coverage_dry_run", "history_coverage_dry_run",
+    "finance_planner", "apply_projection", "family_receipts"]
+  if (report.mode !== "dry-run" || report.historical_scope_complete !== true
+    || report.cohort?.selected !== reviewedProfiles.length
+    || !Array.isArray(report.assets_reused_from_verified_cache) || report.assets_reused_from_verified_cache.length !== 0
+    || !sources || !steps || sources.consulta_cand?.requested !== HISTORICAL_YEARS.length
+    || sources.consulta_cand?.fresh_certifiable !== HISTORICAL_YEARS.length
+    || sources.bem_candidato_2026?.fresh_certifiable !== true || sources.financiamento_2026?.fresh_certifiable !== true
+    || Object.values(sources).some((source) => (source.errors?.length ?? 0) > 0)
+    || requiredSteps.some((step) => typeof steps[step] !== "object" || !(steps[step] as { ok?: boolean }).ok)
+    || steps.identity_risk_actions_blocked !== 0) {
+    throw new Error("gate do dry-run revisado não passou")
+  }
+  const postRound = JSON.parse(readFileSync(options.recibos, "utf8")) as unknown
+  const eligible = filterPostRoundProfiles(reviewedProfiles, postRound)
+  if (eligible.length !== reviewedProfiles.length) throw new Error("coorte revisada inclui perfil pós-turno")
+
+  const out = privateDirectory(options.outDir)
+  const financeOut = join(out, "financas")
+  const finance = runner("scripts/tse-2026-financas.ts", [
+    `--out=${financeOut}`, "--apply", `--expected-plan-sha=${planSha}`,
+    `--reviewed-plan=${plan}`, `--expected-plan-file-sha=${options.expectedPlanFileSha}`,
+  ])
+  if (!finance.ok) throw new Error(`writer financeiro interrompido: ${finance.reason ?? finance.code}`)
+
+  // Coverage proof must observe the committed rows, not the dry-run preimage.
+  const freshProfiles = join(out, "perfis-publicos-pos-escrita.json")
+  const exported = runner("scripts/audit/exportar-perfis-publicos.ts", [`--out=${freshProfiles}`, `--recibos=${options.recibos}`])
+  if (!exported.ok) throw new Error(`readback público falhou: ${exported.reason ?? exported.code}`)
+  const current = filterPostRoundProfiles(JSON.parse(readFileSync(freshProfiles, "utf8")) as CandidateProfile[], postRound)
+  const expectedIds = reviewedProfiles.map((row) => `${row.slug}/${row.id}`).sort()
+  const currentById = new Map(current.map((row) => [`${row.slug}/${row.id}`, row]))
+  if (expectedIds.some((id) => !currentById.has(id))) throw new Error("readback público não cobre toda a coorte revisada")
+  const currentCohort = join(out, "coorte-pos-escrita.json")
+  writePrivate(currentCohort, expectedIds.map((id) => currentById.get(id)))
+  const executionId = createExecutionId()
+  const familyApply = runner("scripts/audit/apply-coverage-receipts.ts", [
+    `--in=${family}`, `--out-dir=${join(out, "coverage-plan")}`,
+    "--allow-fonte=tse,tse-patrimonio,tse-financiamento", `--profiles=${currentCohort}`,
+    "--apply", `--execucao=${executionId}-familias`,
+  ])
+  if (!familyApply.ok) throw new Error(`cobertura de família falhou: ${familyApply.reason ?? familyApply.code}`)
+  const historyApply = runner("scripts/audit/apply-coverage-receipts.ts", [
+    `--in=${history}`, `--out-dir=${join(out, "coverage-plan-historico")}`,
+    "--allow-fonte=tse-historico,tse-partido-candidatura", `--profiles=${currentCohort}`,
+    "--apply", `--execucao=${executionId}-historico`,
+  ])
+  if (!historyApply.ok) throw new Error(`cobertura histórica falhou: ${historyApply.reason ?? historyApply.code}`)
+  writePrivate(join(out, "relatorio.json"), { mode: "live", reviewed_run_dir: reviewed,
+    reviewed_shas: { plan: options.expectedPlanFileSha, family: options.expectedFamilySha, history: options.expectedHistorySha },
+    steps: { finance: stepSummary(finance), readback: stepSummary(exported), family: stepSummary(familyApply), history: stepSummary(historyApply) } })
+  return 0
+}
+
 function isLiveMode(mode: CliOptions["mode"]): boolean { return mode === "live" }
 
 function cacheZip(privateDownloadedPath: string, cachePath: string): void {
@@ -524,6 +629,8 @@ async function downloadAssets(
 
 export async function main(argv = process.argv.slice(2)): Promise<number> {
   const options = parseCliOptions(argv)
+  if (!options.recibos) throw new Error("--recibos=<snapshot pós-turno> é obrigatório para toda rodada")
+  if (isLiveMode(options.mode)) return runReviewedLive(options)
   const outDir = privateDirectory(options.outDir)
   const candidatesInput = JSON.parse(readFileSync(options.candidates, "utf8")) as SeedCandidate[]
   if (!Array.isArray(candidatesInput)) throw new Error("candidates deve ser uma lista JSON")
@@ -617,9 +724,6 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
   ]) : { ok: false, code: null, reason: "snapshot de perfis ausente; recibos históricos não calculados" }
 
   const financeOut = join(outDir, "financas")
-  const freshFinanceAssets = financeAssets.filter((asset) => !asset.reused_cache)
-  const freshProfile2026 = freshAssets.some((asset) => asset.family === "perfil_atual" && asset.year === 2026)
-  const requiredLiveAssets = freshFinanceAssets.length === 2 && freshProfile2026
 
   const genericReceiptsPath = join(outDir, "recibos-familias-tse.json")
   const generic = cohort ? runScript("scripts/audit/collect-tse-family-receipts-local.ts", [
@@ -699,43 +803,6 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     ? (JSON.parse(readFileSync(financePlanPath, "utf8")) as { acoes?: Array<{ slug: string }> }).acoes ?? [] : []
   const identityRiskActions = auditedActions.filter((action) => identityRiskSlugs.has(action.slug)).length
 
-  const liveApply: Record<string, StepResult> = {}
-  if (isLiveMode(options.mode)) {
-    const financePlanPath = join(financeOut, "plano-resumo.json")
-    const financePlanSha = existsSync(financePlanPath)
-      ? (JSON.parse(readFileSync(financePlanPath, "utf8")) as { plano_sha256?: string }).plano_sha256 ?? null
-      : null
-    const planShaMatches = Boolean(financePlanSha && financePlanSha === options.expectedPlanSha?.toLowerCase())
-    const familyShaMatches = Boolean(existsSync(applyFamilyReceiptsPath) && options.expectedFamilySha &&
-      await sha256File(applyFamilyReceiptsPath) === options.expectedFamilySha.toLowerCase())
-    const historyShaMatches = Boolean(existsSync(receiptPath) && options.expectedHistorySha &&
-      await sha256File(receiptPath) === options.expectedHistorySha.toLowerCase())
-    const allHistoryFresh = HISTORICAL_YEARS.every((year) => freshAssets.some((asset) => asset.family === "historico_politico" && asset.year === year))
-    const gates = [allHistoryFresh, requiredLiveAssets, errors.length === 0, assets.every((asset) => !asset.reused_cache),
-      Boolean(cohort?.profiles.length), profileExport.ok, historico.ok, generic.ok, coverage.ok, historyCoverage.ok, finance.ok, projectionStep.ok,
-      identityRiskActions === 0, planShaMatches, familyShaMatches, historyShaMatches, Boolean(options.recibos)]
-    if (gates.some((passed) => !passed)) {
-      liveApply.preflight = { ok: false, code: null, reason: "--live recusado: requer coorte pós-turno, ativos CDN frescos, recibos de família/histórico e três SHAs revisados coincidentes" }
-    } else {
-      const executionId = createExecutionId()
-      liveApply.familias = runScript("scripts/audit/apply-coverage-receipts.ts", [
-        `--in=${applyFamilyReceiptsPath}`, `--out-dir=${coverageOut}`, "--allow-fonte=tse,tse-patrimonio,tse-financiamento",
-        `--profiles=${cohortProfilesPath}`, "--apply", `--execucao=${executionId}-familias`,
-      ])
-      if (liveApply.familias.ok) {
-        liveApply.historico = runScript("scripts/audit/apply-coverage-receipts.ts", [
-          `--in=${receiptPath}`, `--out-dir=${historyCoverageOut}`, "--allow-fonte=tse-historico,tse-partido-candidatura", `--profiles=${cohortProfilesPath}`,
-          "--apply", `--execucao=${executionId}-historico`,
-        ])
-      } else liveApply.historico = { ok: false, code: null, reason: "bloqueado porque apply das famílias falhou" }
-      if (liveApply.familias.ok && liveApply.historico.ok) {
-        liveApply.financeiro = runScript("scripts/tse-2026-financas.ts", [
-          `--out=${financeOut}`, "--apply", `--expected-plan-sha=${options.expectedPlanSha}`,
-        ], financeEnv)
-      } else liveApply.financeiro = { ok: false, code: null, reason: "bloqueado porque um apply de recibos falhou" }
-    }
-  }
-
   const report = {
     mode: options.mode,
     years: options.historicalYears,
@@ -756,7 +823,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
       divulga_financing_2026: { attempted: divulgaFinancing !== null, encontrado: divulgaFinancing?.filter((row) => row.receipt.resultado === "encontrado").length ?? 0, vazio_confirmado: divulgaFinancing?.filter((row) => row.receipt.resultado === "vazio_confirmado").length ?? 0, erro: divulgaFinancing?.filter((row) => row.receipt.resultado === "erro").length ?? 0, indeterminado: divulgaFinancing?.filter((row) => row.receipt.resultado === "indeterminado").length ?? 0 },
     },
     steps: {
-      history_review_receipts: { ...stepSummary(historico), identity_mode: "official-only", jev_name_linking: "withheld" },
+      history_review_receipts: { ...stepSummary(historico), identity_mode: "official-only", vinculo_por_nome_revisado: false },
       coverage_dry_run: stepSummary(coverage),
       history_coverage_dry_run: stepSummary(historyCoverage),
       finance_planner: stepSummary(finance),
@@ -764,7 +831,6 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
       identity_risk_actions_blocked: identityRiskActions,
       identity_risk_profiles: identityRiskSlugs.size,
       family_receipts: stepSummary(generic),
-      live_apply: Object.fromEntries(Object.entries(liveApply).map(([name, result]) => [name, stepSummary(result)])),
     },
     historical_scope_complete: HISTORICAL_YEARS.every((year) => options.historicalYears.includes(year)),
     projected_open_cell_closure: projectedClosure(openCells, [coverageOut, historyCoverageOut], projectionStep.ok ? projectionOut : null,
@@ -776,7 +842,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
   writePrivate(reportPath, report)
   process.stdout.write(`${JSON.stringify({ ...report, artifacts: { report: reportPath } })}\n`)
 
-  return isLiveMode(options.mode) && Object.values(liveApply).some((result) => !result.ok) ? 1 : 0
+  return 0
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
