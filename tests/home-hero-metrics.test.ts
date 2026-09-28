@@ -1,7 +1,7 @@
 import assert from "node:assert/strict"
 import { describe, it } from "node:test"
 
-import { getHomeHeroMetrics } from "../src/lib/home-hero-metrics"
+import { getHomeHeroMetrics, getHomeHeroUfCount } from "../src/lib/home-hero-metrics"
 
 function resumo(
   cargo_disputado: string,
@@ -91,5 +91,31 @@ describe("home hero global metrics", () => {
       totalPatrimonio: null,
       totalProcessos: null,
     })
+  })
+})
+
+describe("home hero UF count", () => {
+  const comUf = (cargo_disputado: string, estado: string | null) => ({
+    patrimonio: null,
+    processos: 0,
+    candidato: { cargo_disputado, estado },
+  })
+
+  it("counts distinct UFs of the exposed recorte, ignoring Presidente and vices", () => {
+    const resumos = [
+      comUf("Presidente", null),
+      comUf("Governador", "SP"),
+      comUf("Governador", "sp"),
+      comUf("Governador", "BA"),
+      comUf("Vice-Governador", "RJ"),
+      comUf("Senador", "MG"),
+    ]
+    assert.equal(getHomeHeroUfCount(resumos, "live", { SENADO_ENABLED: "true" }), 3)
+    assert.equal(getHomeHeroUfCount(resumos, "live", { SENADO_ENABLED: "false" }), 2)
+  })
+
+  it("returns null instead of zero when a degraded source brings nothing", () => {
+    assert.equal(getHomeHeroUfCount([], "degraded"), null)
+    assert.equal(getHomeHeroUfCount([], "live"), 0)
   })
 })

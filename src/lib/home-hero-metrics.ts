@@ -9,7 +9,26 @@ type HeroResumo = {
   processos: number
   candidato: {
     cargo_disputado: string
+    estado?: string | null
   }
+}
+
+/**
+ * UFs distintas no mesmo recorte do total da home (Presidente não tem UF).
+ * Fonte degradada e vazia devolve null: falha de consulta não vira zero.
+ */
+export function getHomeHeroUfCount(
+  resumos: HeroResumo[],
+  sourceStatus: DataSourceStatus,
+  env: Record<string, string | undefined> = process.env
+): number | null {
+  const recorte = recorteHero(resumos, env)
+  if (sourceStatus !== "live" && recorte.length === 0) return null
+  return new Set(
+    recorte
+      .map((resumo) => resumo.candidato.estado?.trim().toUpperCase())
+      .filter((uf): uf is string => Boolean(uf))
+  ).size
 }
 
 export type HomeHeroMetrics = {
