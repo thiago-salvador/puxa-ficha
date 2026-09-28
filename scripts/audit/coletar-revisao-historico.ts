@@ -18,11 +18,13 @@
  *     --manifest=/privado/tse/tse-family-assets.json --anos=1996,1998,...,2026 \
  *     --public-profiles=/privado/perfis.json --out=/privado/historico-recibos.json \
  *     --revisao=/privado/historico-revisao.json [--candidatos=data/candidatos.json] \
- *     [--senado=live|off] [--checked-at=<ISO>]
+ *     [--senado=live|off] [--checked-at=<ISO>] [--identity-mode=official-only]
  *
  * Só certifica com a lista canônica de anos (HISTORICO_ANOS_CANONICOS) e com
  * cada pacote acima do piso do ciclo (`pisoLinhasDoAno`); fora disso,
  * `indeterminado` ou `erro`.
+ * `official-only` retém para revisão as linhas sem CPF que só poderiam ser
+ * associadas por nome e nascimento; o recibo não certifica essa identidade.
  */
 import { createHash } from "node:crypto"
 import { execFileSync, spawn } from "node:child_process"
@@ -36,14 +38,18 @@ import {
   HISTORICO_ANOS_CANONICOS,
   HISTORICO_FONTE,
   anchorIdentity,
+  anchorMatchesFicha,
   belongsToIdentity,
   fichaPessoa,
   historicoRevisionVerdict,
+  partidoPorCandidaturaReceipt,
+  PARTIDO_CANDIDATURA_FONTE,
   seedAnchors,
   tseCandidacyFromCsv,
   type HistoricoReceipt,
   type HistoricoReviewItem,
   type HistoricoSourceRevision,
+  type PartidoCandidaturaReceipt,
   type SeedCandidate,
   type SenadoSource,
   type TseCandidacyRow,
@@ -164,7 +170,15 @@ function summarize(receipts: readonly HistoricoReceipt[], review: readonly Histo
   return { recibos: receipts.length, por_resultado: porResultado, itens_revisao: review.length, revisao_por_tipo: porRevisao }
 }
 
-export type HistoricoRevisionRun = { receipts: HistoricoReceipt[]; review: HistoricoReviewItem[] }
+export type HistoricoRevisionRun = { receipts: HistoricoReceipt[]; partyReceipts: PartidoCandidaturaReceipt[]; review: HistoricoReviewItem[] }
+
+function sourceFailurePartyReceipts(profiles: readonly CoverageProfile[], motivo: string, checkedAt: string, url: string | null): PartidoCandidaturaReceipt[] {
+  return profiles.filter((profile) => typeof profile.slug === "string" && typeof profile.id === "string").map((profile) => ({
+    fonte: PARTIDO_CANDIDATURA_FONTE, escopo: "candidato", alvo: profile.slug as string, candidato_id: profile.id as string,
+    resultado: "erro", volume: 0, url, executado_em: checkedAt,
+    detalhe: JSON.stringify({ contract_version: 1, kind: "partido-por-candidatura", family: "mudancas_partido", scope: "partido_em_cada_candidatura", motivo }),
+  }))
+}
 
 /**
  * Rodada completa, sem escrita: `anosObrigatorios` é o escopo exigido para
@@ -179,13 +193,16 @@ export async function runHistoricoRevision(options: {
   checkedAt: string
   senado: (codigo: string) => Promise<SenadoSource>
   anosObrigatorios?: readonly number[]
+  /** Local collector: never certify a cross-election identity by name alone. */
+  identityMode?: "default" | "official-only"
   /** Só para teste com pacote sintético; em produção vale `pisoLinhasDoAno`. */
   minLinhasPorAno?: number
 }): Promise<HistoricoRevisionRun> {
   const { anos, profiles, seed, manifest, checkedAt } = options
   const piso = (year: number) => options.minLinhasPorAno ?? pisoLinhasDoAno(year)
   if (options.falhaFonte || !manifest) {
-    return { receipts: sourceFailureReceipts(profiles, `pacote TSE não lido: ${options.falhaFonte ?? "manifesto ausente"}`, anos, checkedAt, null), review: [] }
+    const motivo = `pacote TSE não lido: ${options.falhaFonte ?? "manifesto ausente"}`
+    return { receipts: sourceFailureReceipts(profiles, motivo, anos, checkedAt, null), partyReceipts: sourceFailurePartyReceipts(profiles, motivo, checkedAt, null), review: [] }
   }
   const assets = (manifest.assets ?? []).filter((asset) => asset.family === "historico_politico" && anos.includes(asset.year))
   const byYear = new Map<number, ManifestAsset>()
@@ -198,7 +215,8 @@ export async function runHistoricoRevision(options: {
   const missing = anos.filter((year) => !byYear.has(year))
   if (missing.length) {
     const reasons = (manifest.pending ?? []).filter((item) => item.family === "historico_politico" && missing.includes(Number(item.year))).map((item) => `${item.year}: ${item.reason ?? "?"}`)
-    return { receipts: sourceFailureReceipts(profiles, `pacote TSE ausente para ${missing.join(",")}${reasons.length ? ` (${reasons.join("; ").slice(0, 300)})` : ""}`, anos, checkedAt, null), review: [] }
+    const motivo = `pacote TSE ausente para ${missing.join(",")}${reasons.length ? ` (${reasons.join("; ").slice(0, 300)})` : ""}`
+    return { receipts: sourceFailureReceipts(profiles, motivo, anos, checkedAt, null), partyReceipts: sourceFailurePartyReceipts(profiles, motivo, checkedAt, null), review: [] }
   }
   const seedBySlug = new Map(seed.map((candidate) => [candidate.slug, candidate]))
   const wantedAnchors = new Set<string>()
@@ -215,7 +233,8 @@ export async function runHistoricoRevision(options: {
     if (lidas < piso(asset.year)) curtos.push(`${asset.year}: ${lidas} linhas, piso ${piso(asset.year)}`)
   }
   if (curtos.length) {
-    return { receipts: sourceFailureReceipts(profiles, `pacote TSE abaixo do piso de candidaturas (${curtos.join("; ")})`, anos, checkedAt, null), review: [] }
+    const motivo = `pacote TSE abaixo do piso de candidaturas (${curtos.join("; ")})`
+    return { receipts: sourceFailureReceipts(profiles, motivo, anos, checkedAt, null), partyReceipts: sourceFailurePartyReceipts(profiles, motivo, checkedAt, null), review: [] }
   }
   const identities = new Map(profiles.map((profile) => {
     const candidate = seedBySlug.get(String(profile.slug)) ?? null
@@ -223,25 +242,48 @@ export async function runHistoricoRevision(options: {
   }))
   const byCpf = new Map<string, string[]>()
   const byName = new Map<string, string[]>()
+  const byOfficialSq = new Map<string, Array<{ slug: string; ficha: ReturnType<typeof fichaPessoa>; uf: string | null }>>()
   for (const [slug, identity] of identities) {
     if (identity.ambiguous || !identity.anchors) continue
     for (const cpf of identity.cpfs) byCpf.set(cpf, [...(byCpf.get(cpf) ?? []), slug])
     for (const key of identity.nomeNascimento) byName.set(key, [...(byName.get(key) ?? []), slug])
+    const candidate = seedBySlug.get(slug)
+    const person = profiles.find((profile) => profile.slug === slug)
+    if (!candidate || !person) continue
+    for (const anchor of seedAnchors(candidate)) {
+      const key = `${anchor.year}|${anchor.sq}`
+      const seedUf = candidate.ids?.tse_uf_candidatura?.[String(anchor.year)] ?? null
+      const ficha = fichaPessoa(person)
+      if ((anchorRows.get(key) ?? []).some((row) => anchorMatchesFicha(row, ficha, seedUf))) {
+        byOfficialSq.set(key, [...(byOfficialSq.get(key) ?? []), { slug, ficha, uf: seedUf }])
+      }
+    }
   }
 
   // Passo 2: toda candidatura ligada à identidade ancorada, em todos os anos.
   const sourceRows = new Map<string, TseCandidacyRow[]>()
+  const nameOnlyCandidates = new Set<string>()
   for (const asset of byYear.values()) {
     await readZip(asset, (row) => {
-      const slugs = row.cpf ? byCpf.get(row.cpf) : row.nomeNascimento ? byName.get(row.nomeNascimento) : undefined
-      for (const slug of slugs ?? []) {
-        if (belongsToIdentity(row, identities.get(slug)!)) sourceRows.set(slug, [...(sourceRows.get(slug) ?? []), row])
+      const direct = (byOfficialSq.get(`${row.year}|${row.sq}`) ?? [])
+        .filter((item) => anchorMatchesFicha(row, item.ficha, item.uf))
+        .map((item) => item.slug)
+      const nameCandidates = !row.cpf && row.nomeNascimento ? byName.get(row.nomeNascimento) : undefined
+      if (options.identityMode === "official-only") {
+        for (const slug of nameCandidates ?? []) if (!direct.includes(slug)) nameOnlyCandidates.add(slug)
+      }
+      const identityMatches = row.cpf ? byCpf.get(row.cpf) : options.identityMode === "official-only" ? undefined : nameCandidates
+      for (const slug of new Set([...direct, ...(identityMatches ?? [])])) {
+        if (direct.includes(slug) || belongsToIdentity(row, identities.get(slug)!)) {
+          sourceRows.set(slug, [...(sourceRows.get(slug) ?? []), row])
+        }
       }
     })
   }
 
   const tseRevisions: HistoricoSourceRevision[] = [...byYear.values()].map((asset) => ({ year: asset.year, url: asset.url, sha256: asset.sha256.toLowerCase() }))
   const receipts: HistoricoReceipt[] = []
+  const partyReceipts: PartidoCandidaturaReceipt[] = []
   const review: HistoricoReviewItem[] = []
   for (const profile of profiles) {
     if (typeof profile.slug !== "string" || typeof profile.id !== "string") continue
@@ -252,15 +294,33 @@ export async function runHistoricoRevision(options: {
       profile, candidate, identity: identities.get(profile.slug)!, sourceRows: sourceRows.get(profile.slug) ?? [],
       anos, tseRevisions, senado, checkedAt, anosObrigatorios: options.anosObrigatorios ?? HISTORICO_ANOS_CANONICOS,
     })
+    if (options.identityMode === "official-only" && nameOnlyCandidates.has(profile.slug)) {
+      const motivo = "linha oficial sem CPF requer vínculo nominal; revisão de identidade pendente"
+      result.receipt.resultado = "indeterminado"
+      result.receipt.volume = 0
+      result.receipt.detalhe = JSON.stringify({ contract_version: 1, kind: "historico-revisao", family: "historico_politico", motivo, source_revisions: tseRevisions })
+      result.review.push({ slug: profile.slug, tipo: "identidade", motivo })
+    } else if (options.identityMode === "official-only") {
+      const detail = JSON.parse(result.receipt.detalhe) as Record<string, unknown>
+      const proof = detail.coverage_proof as Record<string, unknown> | undefined
+      if (proof?.identity && typeof proof.identity === "object") (proof.identity as Record<string, unknown>).key = "CPF ancorado no SQ do seed"
+      result.receipt.detalhe = JSON.stringify(detail)
+    }
+    partyReceipts.push(partidoPorCandidaturaReceipt({
+      profile, candidate, identity: identities.get(profile.slug)!, sourceRows: sourceRows.get(profile.slug) ?? [],
+      anos, tseRevisions, checkedAt, anosObrigatorios: options.anosObrigatorios ?? HISTORICO_ANOS_CANONICOS,
+      identityBlocked: options.identityMode === "official-only" && nameOnlyCandidates.has(profile.slug),
+    }))
     receipts.push(result.receipt)
     review.push(...result.review)
   }
-  return { receipts, review }
+  return { receipts, partyReceipts, review }
 }
 
 async function main(): Promise<void> {
   const anos = parseAnos(option("anos"))
   const out = option("out")
+  const partyOut = option("party-out")
   const revisaoPath = option("revisao")
   const profilesPath = option("public-profiles")
   if (!out || !revisaoPath || !profilesPath) throw new Error("uso: --anos= --public-profiles= --out= --revisao= (--manifest= | --falha-fonte=)")
@@ -271,15 +331,18 @@ async function main(): Promise<void> {
   const manifestPath = option("manifest")
   const manifest = manifestPath && existsSync(resolve(manifestPath)) ? JSON.parse(readFileSync(resolve(manifestPath), "utf8")) : null
   const senadoMode = option("senado") ?? "live"
-  const { receipts, review } = await runHistoricoRevision({
-    anos, profiles, manifest, checkedAt, falhaFonte: option("falha-fonte"),
+  const identityMode = option("identity-mode") ?? "default"
+  if (identityMode !== "default" && identityMode !== "official-only") throw new Error("--identity-mode inválido")
+  const { receipts, partyReceipts, review } = await runHistoricoRevision({
+    anos, profiles, manifest, checkedAt, falhaFonte: option("falha-fonte"), identityMode,
     // coorte-atualizacao: isento (recorte pelo perfis.json, que exportar-perfis-publicos já filtra pela coorte)
     seed: JSON.parse(readFileSync(resolve(option("candidatos") ?? "data/candidatos.json"), "utf8")) as SeedCandidate[],
     senado: async (codigo) => senadoMode === "off"
       ? { status: "erro", url: `${SENADO_API}/senador/${codigo}/mandatos.json`, motivo: "consulta ao Senado desligada nesta rodada" }
       : fetchSenado(codigo),
   })
-  writePrivate(out, { schema_version: 1, generated_at: checkedAt, fonte: HISTORICO_FONTE, anos, receipts })
+  writePrivate(out, { schema_version: 1, generated_at: checkedAt, fonte: HISTORICO_FONTE, anos, receipts: [...receipts, ...partyReceipts] })
+  if (partyOut) writePrivate(partyOut, { schema_version: 1, generated_at: checkedAt, fonte: PARTIDO_CANDIDATURA_FONTE, anos, receipts: partyReceipts })
   writePrivate(revisaoPath, { schema_version: 1, generated_at: checkedAt, itens: review })
   console.log(JSON.stringify(summarize(receipts, review)))
 }

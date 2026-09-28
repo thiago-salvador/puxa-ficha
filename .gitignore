@@ -96,6 +96,13 @@ supabase/.branches/
 # graft's local graph cache — regenerable, not committed (run `graft build`).
 /graft/
 
+# Private TSE review material and generated plans must stay outside this repository.
+/codex/
+/plans/
+/outputs/
+/projections/
+/revisoes/
+
 # Artefatos locais de auditoria/curadoria — regeneráveis, não commitados.
 .artifacts/
 artifacts/fotos-roster-2026-espelhos.zip*

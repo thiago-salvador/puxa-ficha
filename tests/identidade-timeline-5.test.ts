@@ -34,7 +34,7 @@ test("universo público de 194 e os cinco seeds seguem fail-closed", () => {
   assert.match(matriz194, /if publicas <> 194 then raise exception/)
   const porSlug = new Map(candidatos.map((c) => [c.slug, c]))
   assert.deepEqual(porSlug.get("renan-filho")?.ids.tse_sq_candidato, {
-    "2018": "20000621744", "2022": "20001698127",
+    "2018": "20000621744", "2022": "20001698127", "2026": "20002553745",
   })
   assert.deepEqual(porSlug.get("orleans-brandao")?.ids.tse_sq_candidato, {})
   assert.equal(porSlug.get("coronel-busnello")?.ids.tse_sq_candidato["2026"], "190002544120")
