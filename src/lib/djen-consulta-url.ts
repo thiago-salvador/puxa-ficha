@@ -198,10 +198,7 @@ export const PROCESSOS_FORA_POR_PAPEL_DE_AUTORIDADE = new Map<string, { cnj: str
   // autoridade pelo cargo, sem pedido pessoal
   ["f0c18c70-3ef3-49c3-81a8-05883346aa99", { cnj: "7012498-62.2024.8.22.0007", slug: "adailton-furia" }],
   ["14e47010-de83-4509-aa2d-0e1481135d35", { cnj: "8010425-71.2019.8.05.0000", slug: "acm-neto" }],
-  ["dfeeb2bf-3474-493e-beff-cf77c3027478", { cnj: "8091329-75.2019.8.05.0001", slug: "acm-neto" }],
   ["8fd380e5-0dbe-45ce-abae-9fee31189182", { cnj: "0800961-87.2024.8.12.0055", slug: "eduardo-riedel" }],
-  ["d29e1dac-276b-47bc-b65b-9fa9d316b6cc", { cnj: "0815591-94.2026.8.14.0000", slug: "hana-ghassan" }],
-  ["13ea0dd4-a1bd-4713-89c5-abe554794afe", { cnj: "8066507-80.2023.8.05.0001", slug: "jeronimo" }],
   ["2df0597d-484a-4e7e-a380-296729380a32", { cnj: "8024632-65.2025.8.05.0000", slug: "jeronimo" }],
   ["c03f8a17-779b-4981-8915-fee2d145f3a5", { cnj: "5005429-52.2026.8.24.0018", slug: "joao-rodrigues" }],
   ["14b9c8f8-f145-45cb-bb73-88b646891111", { cnj: "0761204-26.2023.8.18.0000", slug: "rafael-fonteles" }],

@@ -62,13 +62,6 @@ BEGIN
       AND regexp_replace(p.numero_processo, '[^0-9]', '', 'g') = regexp_replace(l.numero_cnj, '[^0-9]', '', 'g'))
   THEN RAISE EXCEPTION 'g5-processo: CNJ já existe na ficha; recusar duplicação ou lote parcial'; END IF;
 
-  -- O recibo de hana-ghassan cita o processo deixado fora da ficha: ele precisa existir como descrito.
-  IF (SELECT count(*) FROM public.processos
-      WHERE id = 'd29e1dac-276b-47bc-b65b-9fa9d316b6cc'::uuid
-        AND candidato_id = '13c6d8ac-fee3-49f7-b1cf-c1a80c69fcea'::uuid
-        AND numero_processo = '0815591-94.2026.8.14.0000') <> 1
-  THEN RAISE EXCEPTION 'g5-processo: processo citado no recibo de hana-ghassan divergiu'; END IF;
-
   IF EXISTS (SELECT 1 FROM public.coleta_log WHERE execucao = 'migration:20260929110000')
   THEN RAISE EXCEPTION 'g5-processo: recibo já existe'; END IF;
 
