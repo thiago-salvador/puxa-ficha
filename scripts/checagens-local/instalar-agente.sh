@@ -50,9 +50,10 @@ for caminho in "$repo" "$script_destino" "$log_launchd"; do
   case "$caminho" in *"&"* | *"<"* | *">"*) falhar "caminho com caractere que quebra o XML do plist: $caminho" ;; esac
 done
 
-# Segunda 10:00 UTC no fuso desta máquina. 28/09/2026 é uma segunda; em fuso com
-# horário de verão a hora local muda duas vezes por ano, e reinstalar corrige.
-instante="$(date -j -u -f "%Y-%m-%d %H:%M:%S" "2026-09-28 10:00:00" +%s)"
+# Segunda 15:00 UTC no fuso desta máquina: 3 h depois do plano de resultados do
+# TSE (12:00 UTC), para a rodada pós-turno já pegar o corte da coorte. 28/09/2026
+# é uma segunda; em fuso com horário de verão a hora local muda, e reinstalar corrige.
+instante="$(date -j -u -f "%Y-%m-%d %H:%M:%S" "2026-09-28 15:00:00" +%s)"
 read -r dia hora minuto <<<"$(date -r "$instante" "+%w %H %M")"
 hora=$((10#$hora))
 minuto=$((10#$minuto))

@@ -82,10 +82,11 @@ if [ "$modo" = "--verificar" ]; then
   exit 0
 fi
 
-# A rotina agendada termina após o primeiro turno; a importação manual de
-# recibos históricos continua disponível pelo CLI do repositório.
-if [ "$(date -u +%Y%m%d)" -gt 20261004 ]; then
-  echo "Vigência agendada encerrada após 04/10/2026"
+# A rotina agendada termina após o segundo turno. Entre os turnos, a coorte
+# pública (candidaturas_fase_2026_publico) já tira quem saiu da disputa.
+# A importação manual de recibos históricos continua disponível pelo CLI.
+if [ "$(date -u +%Y%m%d)" -gt 20261025 ]; then
+  echo "Vigência agendada encerrada após 25/10/2026"
   exit 0
 fi
 
@@ -116,15 +117,26 @@ echo "execucao=$execucao artefatos=$saida"
 
 # Primeiro lê todas as fontes, sem escrita remota. Um erro de agência impede
 # a etapa de gravação; os recibos e o resumo permanecem para diagnóstico.
+set +e
 SUPABASE_URL="$url_supabase" SUPABASE_ANON_KEY="$chave_publica" \
   PF_COLETA_EXECUCAO="$execucao" "$tsx" scripts/checagens-coletar.ts \
   --out "$saida" --sem-google --concorrencia 3 --pausa-ms 0
+rc=$?
+set -e
+# 75: trava do turno 1 (depois de 04/10 sem o corte da coorte aplicado). Nada foi coletado nem gravado.
+if [ "$rc" -eq 75 ]; then
+  echo "TRAVA_TURNO_1: rodada pulada sem coletar nem gravar; próxima tentativa na segunda seguinte"
+  exit 0
+fi
+[ "$rc" -eq 0 ] || falhar "coleta terminou com código $rc: gravação bloqueada"
 
 node - "$saida/recibos.json" "$saida/resumo.json" <<'JS'
 const fs = require('node:fs')
 const recibos = JSON.parse(fs.readFileSync(process.argv[2], 'utf8')).receipts
 const resumo = JSON.parse(fs.readFileSync(process.argv[3], 'utf8'))
-if (!recibos.length || resumo.total !== recibos.length || resumo.erro !== 0 || resumo.pendentes_de_busca !== 0 ||
+// Recibo "erro" só por busca parcial (teto de páginas, sem falha de rota) não bloqueia: o log o grava como indeterminado.
+const soParcial = r => Object.values(r.agencias).some(a => a.parcial)
+if (!recibos.length || resumo.total !== recibos.length || recibos.some(r => r.result === 'erro' && !soParcial(r)) || resumo.pendentes_de_busca !== 0 ||
     recibos.some(r => Object.keys(r.agencias).length !== 7 || Object.values(r.agencias).some(a => a.status !== 'ok'))) {
   throw new Error('coleta incompleta: gravação bloqueada')
 }

@@ -186,17 +186,51 @@ export const PROCESSOS_OCULTOS_POR_DECISAO = new Set<string>([
 ])
 
 /**
+ * Linhas em que a candidatura figura só como autoridade pública, em razão do
+ * cargo (autoridade coatora ou impetrada em mandado de segurança, interpelada
+ * na função, ré em ação contra ato de governo), sem pedido contra ela em nome
+ * próprio. Não são processo da pessoa: saem da lista e também da contagem de
+ * omitidos, porque não falta fonte a elas. Papel conferido no polo oficial do
+ * DJEN. Ação popular, improbidade e ação civil com pedido pessoal continuam
+ * públicas. Chave: id da linha; valor: CNJ e ficha.
+ */
+export const PROCESSOS_FORA_POR_PAPEL_DE_AUTORIDADE = new Map<string, { cnj: string; slug: string }>([
+  // autoridade pelo cargo, sem pedido pessoal
+  ["f0c18c70-3ef3-49c3-81a8-05883346aa99", { cnj: "7012498-62.2024.8.22.0007", slug: "adailton-furia" }],
+  ["14e47010-de83-4509-aa2d-0e1481135d35", { cnj: "8010425-71.2019.8.05.0000", slug: "acm-neto" }],
+  ["8fd380e5-0dbe-45ce-abae-9fee31189182", { cnj: "0800961-87.2024.8.12.0055", slug: "eduardo-riedel" }],
+  ["2df0597d-484a-4e7e-a380-296729380a32", { cnj: "8024632-65.2025.8.05.0000", slug: "jeronimo" }],
+  ["c03f8a17-779b-4981-8915-fee2d145f3a5", { cnj: "5005429-52.2026.8.24.0018", slug: "joao-rodrigues" }],
+  ["14b9c8f8-f145-45cb-bb73-88b646891111", { cnj: "0761204-26.2023.8.18.0000", slug: "rafael-fonteles" }],
+  ["7be54170-90cc-434e-95ac-6a7bdc48e845", { cnj: "0715972-30.2021.8.01.0001", slug: "tiao-bocalom" }],
+  ["900fb4c3-d1dd-4dd3-ae68-2fa36a1e09dc", { cnj: "1000302-66.2022.8.11.0096", slug: "tse-2026-110002551966" }],
+  ["1230143d-0566-42ac-bb57-65d9d9af7e51", { cnj: "1010174-52.2024.8.26.0053", slug: "tarcisio-gov-sp" }],
+])
+
+export function processoForaPorPapelDeAutoridade(id: string | null | undefined): boolean {
+  return Boolean(id && PROCESSOS_FORA_POR_PAPEL_DE_AUTORIDADE.has(id))
+}
+
+/** Quantas linhas da ficha saíram por papel de autoridade (para descontar dos omitidos). */
+export function processosForaPorPapelDeAutoridadeDaFicha(slug: string): number {
+  let total = 0
+  for (const linha of PROCESSOS_FORA_POR_PAPEL_DE_AUTORIDADE.values()) if (linha.slug === slug) total += 1
+  return total
+}
+
+/**
  * "oficial": fonte judicial específica prova o processo.
  * "em_confirmacao": há página específica (imprensa ou portal oficial genérico),
  * mas a fonte judicial do próprio processo ainda não foi localizada; a ficha
  * mostra a linha com selo em vez de escondê-la.
  * null: sem fonte específica publicável; a linha fica fora e entra na contagem
- * de omitidos.
+ * de omitidos (salvo papel de autoridade, que não conta como omitida).
  */
 export function nivelFonteProcesso(
   processo: { id?: string | null; numero_processo: string | null; url_fonte?: string | null },
 ): FonteProcessoNivel | null {
   if (processo.id && PROCESSOS_OCULTOS_POR_DECISAO.has(processo.id)) return null
+  if (processoForaPorPapelDeAutoridade(processo.id)) return null
   if (urlFonteJudicialEspecifica(processo.url_fonte, processo.numero_processo)) return "oficial"
   if (processo.id && PROCESSOS_FORA_DO_SELO.has(processo.id)) return null
   const fonte = processo.url_fonte?.trim()

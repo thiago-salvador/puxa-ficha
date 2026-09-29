@@ -23,7 +23,7 @@ import { pathToFileURL } from "node:url"
 import { createClient } from "@supabase/supabase-js"
 
 import { carregarCandidatos, carregarCoorteAtualizacaoPublica } from "./falas-monitoramento"
-import { filtrarCoorteAtualizacao } from "./lib/coorte-atualizacao"
+import { estaNaCoorteAtualizacao, filtrarCoorteAtualizacao, type CoorteAtualizacao } from "./lib/coorte-atualizacao"
 import { EXECUCAO, montarLinhas } from "./lib/coleta-log"
 import {
   coletarChecagens,
@@ -160,6 +160,28 @@ async function registrarRecibosExistentes(arquivo: string, catalogoPath: string 
   return 0
 }
 
+/**
+ * Depois do 1º turno, coletar antes do corte da coorte gastaria busca com quem
+ * saiu da disputa. A partir desta data (horário de Brasília), a coleta só roda
+ * quando a view pública já mostra alguma candidatura de Presidente ou
+ * Governador com atualização encerrada, isto é, o conjunto turno-1 aplicado.
+ */
+export const INICIO_TRAVA_TURNO_1 = "2026-10-05"
+/** Código de saída da rodada pulada pela trava: o agente local o trata como pausa, não como falha. */
+export const SAIDA_TRAVA_TURNO_1 = 75
+
+export function motivoTravaTurno1(
+  agora: Date,
+  coorte: CoorteAtualizacao,
+  cadastro: readonly { id?: string | null; slug?: string | null }[],
+): string | null {
+  const hoje = agora.toLocaleDateString("sv-SE", { timeZone: "America/Sao_Paulo" })
+  if (hoje < INICIO_TRAVA_TURNO_1) return null
+  if (coorte.origem === "tabela_ausente") return `trava do turno 1: ${hoje}, view de fase eleitoral ausente; rodada pulada sem coletar nem gravar`
+  if (cadastro.some((candidato) => !estaNaCoorteAtualizacao(coorte, candidato))) return null
+  return `trava do turno 1: ${hoje}, nenhuma candidatura de Presidente ou Governador com atualização encerrada em candidaturas_fase_2026_publico (turno-1 ainda não aplicado); rodada pulada sem coletar nem gravar`
+}
+
 export async function executarColetaChecagens(argv = process.argv.slice(2)): Promise<number> {
   const { valores, flags } = opcoes(argv)
   if (flags.has("help")) {
@@ -187,7 +209,13 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
     ? JSON.parse(readFileSync(resolve(rosterPath), "utf8"))
     : await carregarCandidatos()) as CandidatoChecagem[]
   // coorte-atualizacao: aplica (alvos da coleta; o cadastro completo segue para os homônimos)
-  let roster = filtrarCoorteAtualizacao(rosterCompleto, await carregarCoorteAtualizacaoPublica(), "checagens")
+  const coorte = await carregarCoorteAtualizacaoPublica()
+  const trava = motivoTravaTurno1(inicio, coorte, rosterCompleto)
+  if (trava) {
+    console.error(trava)
+    return SAIDA_TRAVA_TURNO_1
+  }
+  let roster = filtrarCoorteAtualizacao(rosterCompleto, coorte, "checagens")
   if (retomar) {
     roster = candidaturasParaRetomada(roster, anteriores)
   }
@@ -266,7 +294,9 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
   console.log(JSON.stringify(resumo))
   // Vermelho quando alguma candidatura ficou sem busca completa, mesmo com lead achado.
   if (parouPorBloqueio) return 3
-  return resumo.erro > 0 || resumo.encontrado_parcial > 0 ? 1 : 0
+  // Recibo em erro só por busca parcial (teto de páginas) não é falha de rota.
+  const falhaDeRota = recibos.some((recibo) => recibo.result === "erro" && Object.values(recibo.agencias).some((estado) => estado.status === "erro"))
+  return falhaDeRota || resumo.encontrado_parcial > 0 ? 1 : 0
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

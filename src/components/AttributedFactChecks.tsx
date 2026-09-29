@@ -13,6 +13,9 @@ import {
 import { formatarDataBusca, listarEmProsa, type ReciboChecagensVisivel } from "@/lib/buscas-recibos"
 import { VeredictoPill } from "./VeredictoPill"
 
+/** Cards por página: a lista vem da mais recente para a mais antiga e o total fica no filtro "Todos". */
+const CHECAGENS_POR_PAGINA = 20
+
 function formatDate(value: string): string {
   const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(value)
   return match ? `${match[3]}/${match[2]}/${match[1]}` : value
@@ -208,6 +211,7 @@ export function AttributedFactChecks({
   searchReceipt?: ReciboChecagensVisivel | null
 }) {
   const [publisherFilter, setPublisherFilter] = useState<string | null>(null)
+  const [limite, setLimite] = useState(CHECAGENS_POR_PAGINA)
   const checks = getApprovedAttributedFactChecks({
     candidate_id: candidateId,
     candidate_slug: candidateSlug,
@@ -223,7 +227,13 @@ export function AttributedFactChecks({
   const activeFilter = publisherFilter && publisherCounts.some(([publisher]) => publisher === publisherFilter)
     ? publisherFilter
     : null
-  const visibleChecks = activeFilter ? checks.filter((check) => check.publisher === activeFilter) : checks
+  const filteredChecks = activeFilter ? checks.filter((check) => check.publisher === activeFilter) : checks
+  const visibleChecks = filteredChecks.slice(0, limite)
+  const restantes = filteredChecks.length - visibleChecks.length
+  const escolherFiltro = (publisher: string | null) => {
+    setPublisherFilter(publisher)
+    setLimite(CHECAGENS_POR_PAGINA)
+  }
   const receiptParagraph = searchReceipt ? (
     <p
       data-pf-checagens-busca={searchReceipt.result}
@@ -258,7 +268,7 @@ export function AttributedFactChecks({
             <button
               type="button"
               aria-pressed={activeFilter === null}
-              onClick={() => setPublisherFilter(null)}
+              onClick={() => escolherFiltro(null)}
               className={chipClassName(activeFilter === null)}
             >
               Todos <span className="tabular-nums opacity-80">{checks.length}</span>
@@ -268,7 +278,7 @@ export function AttributedFactChecks({
                 key={publisher}
                 type="button"
                 aria-pressed={activeFilter === publisher}
-                onClick={() => setPublisherFilter(publisher)}
+                onClick={() => escolherFiltro(publisher)}
                 data-pf-checagens-filtro={publisher}
                 className={chipClassName(activeFilter === publisher)}
               >
@@ -290,6 +300,16 @@ export function AttributedFactChecks({
         <div className="grid items-start gap-4 md:grid-cols-2">
           {visibleChecks.map((check) => <AttributedFactCheckCard key={check.id} check={check} />)}
         </div>
+      )}
+      {restantes > 0 && (
+        <button
+          type="button"
+          onClick={() => setLimite((atual) => atual + CHECAGENS_POR_PAGINA)}
+          data-pf-checagens-mais=""
+          className="inline-flex min-h-11 items-center rounded-[8px] border border-border px-4 text-[length:var(--text-caption)] font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          Mostrar mais checagens <span className="ml-1 tabular-nums opacity-80">({restantes} restantes)</span>
+        </button>
       )}
     </section>
   )

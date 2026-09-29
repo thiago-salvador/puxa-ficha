@@ -1,6 +1,7 @@
 {
   "_comentario": "Separacao aditiva das migrations mistas ja aplicadas. Os arquivos de origem permanecem imutaveis como historico de curadoria; o substituto puro de schema reproduz apenas a DDL. O replay de schema exclui uma origem somente se o hash continuar igual e o substituto existir e for schema puro.",
   "schema_dump_sha256": "c059e113a6993aef1af952706dc82ab9fa7ee7618b8eebc13286d1426e27af66",
+  "_comentario_20260929110000": "A migration G5 altera apenas dados de processos e coleta_log (tabelas temporarias ON COMMIT DROP); nao altera o hash nem exige substituto no replay de schema.",
   "_comentario_20260929020000": "A migration L8 altera apenas dados de processos, compromisso_evidencia, projetos_lei e coleta_log (tabelas temporarias ON COMMIT DROP); nao altera o hash nem exige substituto no replay de schema.",
   "_comentario_20260929010000": "A migration L7 altera apenas dados de pontos e historico; --schema-gate PostgreSQL 17 mediu 128 aplicadas, 407 puladas, zero falhas e hash de schema inalterado.",
   "_comentario_20260927095347": "Hash medido no replay PostgreSQL 17 integrado: 128 migrations de schema aplicadas, 405 puladas, zero falhas; patrimonio.bens_hash evita CAS com JSON inteiro na URL.",
