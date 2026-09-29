@@ -3,6 +3,8 @@ import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
 import { createRequire } from "node:module"
 import { describe, it } from "node:test"
+import React from "react"
+import { renderToStaticMarkup } from "react-dom/server"
 
 // cspell:ignore cenario espontanea
 
@@ -12,6 +14,15 @@ const {
   listarRodadasRecentesDoCandidato,
   parsePesquisasEleitoraisJson,
 } = require("../src/lib/pesquisas-eleitorais") as typeof import("@/lib/pesquisas-eleitorais")
+const {
+  carregarPesquisasSenado,
+  listarPesquisasSenadoPorSlug,
+  selecionarSenadoPolls,
+} = require("../src/lib/senado-polls") as typeof import("@/lib/senado-polls")
+const { ordenarPesquisasDoCard, rotulosDosCenariosDoCard } = require("../src/lib/pesquisas-card") as typeof import("@/lib/pesquisas-card")
+const { PollIntentionCard } = require(
+  "../src/components/PollIntentionCard",
+) as typeof import("@/components/PollIntentionCard")
 
 type Catalogo = ReturnType<typeof parsePesquisasEleitoraisJson>
 
@@ -38,6 +49,169 @@ function comNovaRodada(catalogo: Catalogo, id: string, publicacao: string) {
   catalogo.pesquisas.push(nova)
   return nova
 }
+
+function senadoComResultado() {
+  for (const [uf, catalogo] of carregarPesquisasSenado()) {
+    for (const pesquisa of selecionarSenadoPolls(catalogo, uf)) {
+      const resultado = pesquisa.scenario.resultados.find((r) => r.matchStatus === "exact_alias" && r.candidateSlug)
+      if (pesquisa.state === "publicado" && resultado) return { uf, catalogo, slug: resultado.candidateSlug! }
+    }
+  }
+  assert.fail("catálogo do Senado sem resultado publicado com alias exato")
+}
+
+describe("pesquisas do Senado na ficha", () => {
+  it("usa o mesmo catálogo e a mesma seleção da página da UF, só com alias exato", () => {
+    let naPagina = 0
+    let naFicha = 0
+    for (const [uf, catalogo] of carregarPesquisasSenado()) {
+      const slugs = new Set<string>()
+      for (const pesquisa of selecionarSenadoPolls(catalogo, uf)) {
+        if (pesquisa.state !== "publicado") continue
+        for (const resultado of pesquisa.scenario.resultados) {
+          if (resultado.matchStatus !== "exact_alias" || !resultado.candidateSlug) continue
+          naPagina += 1
+          slugs.add(resultado.candidateSlug)
+        }
+      }
+      for (const slug of slugs) {
+        const lista = listarPesquisasSenadoPorSlug(slug, uf, catalogo)
+        naFicha += lista.length
+        for (const item of lista) {
+          assert.equal(item.office, "Senador")
+          assert.equal(item.geography.code, uf)
+          assert.equal(item.resultado.matchStatus, "exact_alias")
+          assert.equal(item.resultado.candidateSlug, slug)
+          assert.ok(item.grupo === "recente" || item.grupo === "anterior")
+        }
+      }
+    }
+    assert.ok(naPagina > 0)
+    assert.equal(naFicha, naPagina)
+  })
+
+  it("aceita UF em minúsculas e não cruza para outra UF", () => {
+    const { uf, slug } = senadoComResultado()
+    assert.ok(listarPesquisasSenadoPorSlug(slug, uf.toLowerCase()).length > 0)
+    const outraUf = uf === "SP" ? "RJ" : "SP"
+    assert.deepEqual(listarPesquisasSenadoPorSlug(slug, outraUf), [])
+    assert.deepEqual(listarPesquisasSenadoPorSlug("", uf), [])
+  })
+
+  it("mostra turno único no card da visão geral", () => {
+    const { uf, slug } = senadoComResultado()
+    const html = renderToStaticMarkup(<PollIntentionCard pesquisas={listarPesquisasSenadoPorSlug(slug, uf)} />)
+    assert.match(html, /Turno único/)
+    assert.doesNotMatch(html, /1º turno|2º turno/)
+  })
+})
+
+describe("card Intenção de voto", () => {
+  function catalogoComSegundoTurno() {
+    const catalogo = catalogoPresidencial()
+    const slug = slugDe(catalogo)
+    const recente = comNovaRodada(catalogo, "rodada-recente", "2099-02-01")
+    const segundo = comNovaRodada(catalogo, "segundo-mesma-data", "2099-02-01")
+    segundo.cenarios.forEach((cenario) => {
+      cenario.turn = 2
+      cenario.labelRaw = "Segundo turno: confronto sintético"
+      cenario.comparabilityKey = cenario.comparabilityKey.replace(/^2026\|Presidente\|BR\|1\|/, "2026|Presidente|BR|2|")
+    })
+    return { lista: listarPesquisasDoCandidato(catalogo, slug), recente, segundo, original: catalogo.pesquisas[0] }
+  }
+
+  it("ordena da divulgação mais recente para a mais antiga, com 1º turno antes do 2º na mesma data", () => {
+    const { lista, recente, segundo, original } = catalogoComSegundoTurno()
+    const ordem = ordenarPesquisasDoCard(lista)
+    assert.equal(ordem.length, lista.length)
+    const ids = ordem.map((item) => item.id)
+    const primeiroDoSegundo = ids.indexOf(segundo.id)
+    assert.ok(primeiroDoSegundo > 0)
+    assert.ok(ids.slice(0, primeiroDoSegundo).every((id) => id === recente.id))
+    assert.ok(ids.indexOf(original.id) > ids.lastIndexOf(segundo.id))
+    for (let i = 1; i < ordem.length; i += 1) {
+      const anterior = ordem[i - 1].publicationDate.value ?? ""
+      const atual = ordem[i].publicationDate.value ?? ""
+      assert.ok(anterior >= atual, "data decrescente")
+      if (anterior === atual) assert.ok(ordem[i - 1].cenario.turn <= ordem[i].cenario.turn, "1º turno antes do 2º")
+    }
+  })
+
+  it("renderiza uma pesquisa por vez com contador, setas acessíveis e o cenário de 2º turno na navegação", () => {
+    const { lista } = catalogoComSegundoTurno()
+    const html = renderToStaticMarkup(<PollIntentionCard pesquisas={lista} />)
+    const primeira = ordenarPesquisasDoCard(lista)[0]
+    assert.equal((html.match(/data-pf-pesquisa-card=/g) ?? []).length, 1)
+    assert.match(html, /Intenção de voto/)
+    assert.match(html, />1º turno</)
+    assert.ok(html.includes(primeira.instituto.value!))
+    assert.ok(html.includes(primeira.cenario.labelRaw))
+    assert.match(html, new RegExp(`aria-live="polite"[^>]*>1 de ${lista.length}<`))
+    assert.match(html, /aria-label="Pesquisa anterior"/)
+    assert.match(html, /aria-label="Próxima pesquisa"/)
+    assert.match(html, /Fonte pública/)
+    assert.match(html, /Fotografia do período das entrevistas, não uma previsão eleitoral\./)
+    assert.match(html, /Período[\s\S]*Amostra[\s\S]*Margem de erro/)
+    assert.ok(lista.some((item) => item.grupo === "segundo_turno"))
+  })
+
+  it("não aparece sem pesquisa", () => {
+    assert.equal(renderToStaticMarkup(<PollIntentionCard pesquisas={[]} />), "")
+  })
+
+  it("põe o adversário no rótulo do 2º turno e numera cenários que ainda repetem o texto", () => {
+    const { lista } = catalogoComSegundoTurno()
+    const segundo = lista.find((item) => item.cenario.turn === 2)
+    assert.ok(segundo)
+    const comAdversario = (id: string, labelRaw: string, adversarios: string[]) => ({
+      ...segundo,
+      cenario: { ...segundo.cenario, id, labelRaw },
+      adversarios,
+    })
+    const rotulos = rotulosDosCenariosDoCard([
+      comAdversario("a", "Intenção de voto no 2º turno", ["Lula"]),
+      comAdversario("b", "Intenção de voto no 2º turno", ["Lula"]),
+      comAdversario("c", "Intenção de voto no 2º turno: Fulano e Lula", ["Lula"]),
+      comAdversario("d", "Intenção de voto no 2º turno", ["Ciro Gomes"]),
+    ])
+    assert.deepEqual(rotulos, [
+      "Intenção de voto no 2º turno · vs. Lula · cenário 1/2",
+      "Intenção de voto no 2º turno · vs. Lula · cenário 2/2",
+      "Intenção de voto no 2º turno: Fulano e Lula",
+      "Intenção de voto no 2º turno · vs. Ciro Gomes",
+    ])
+  })
+
+  it("no acervo real, nenhum candidato vê dois cenários com o mesmo rótulo na mesma divulgação", () => {
+    const catalogo = parsePesquisasEleitoraisJson(
+      readFileSync("scripts/data/pesquisas-presidencia-2026.json", "utf8"),
+      readFileSync("scripts/data/pesquisas-eleitorais-fontes.json", "utf8"),
+    )
+    const slugs = new Set(
+      catalogo.pesquisas.flatMap((poll) =>
+        poll.cenarios.flatMap((cenario) =>
+          cenario.resultados.flatMap((r) => (r.matchStatus === "exact_alias" && r.candidateSlug ? [r.candidateSlug] : [])),
+        ),
+      ),
+    )
+    let segundosTurnos = 0
+    for (const slug of slugs) {
+      const ordem = ordenarPesquisasDoCard(listarPesquisasDoCandidato(catalogo, slug))
+      const rotulos = rotulosDosCenariosDoCard(ordem)
+      const vistos = new Set<string>()
+      ordem.forEach((item, indice) => {
+        if (item.cenario.turn === 2) {
+          segundosTurnos += 1
+          assert.ok((item.adversarios ?? []).length > 0, `${slug}: 2º turno sem adversário identificado`)
+        }
+        const chave = `${item.instituto.value}|${item.publicationDate.value}|${item.cenario.turn}|${rotulos[indice]}`
+        assert.ok(!vistos.has(chave), `${slug}: rótulo repetido ${chave}`)
+        vistos.add(chave)
+      })
+    }
+    assert.ok(segundosTurnos > 0)
+  })
+})
 
 describe("rodadas anteriores", () => {
   it("separa rodadas antigas do mesmo instituto sem misturar na visão principal", () => {
@@ -126,8 +300,19 @@ describe("outros cenários", () => {
 describe("integração na ficha", () => {
   const viewSource = readFileSync("src/app/(site)/candidato/[slug]/CandidatoFichaView.tsx", "utf8")
 
-  it("a ficha não carrega pesquisas do Senado: sem aba, o selo do hero é só de Presidente e Governador", () => {
-    assert.doesNotMatch(viewSource, /listarPesquisasSenadoPorSlug|senadoComPesquisas/)
+  it("o selo do hero continua só de Presidente e Governador; o card recebe também o Senado", () => {
+    assert.match(viewSource, /ficha\.cargo_disputado === "Senador" && isSenadoEnabled\(\)/)
+    assert.match(viewSource, /pesquisasSenadoSemDerrubarFicha\(slug, ficha\.estado\)/)
+    // Catálogo inválido esconde o card do Senado em vez de derrubar a ficha.
+    assert.match(viewSource, /try \{\s+return listarPesquisasSenadoPorSlug\(slug, uf\)\s+\} catch/)
     assert.match(viewSource, /pesquisasEnabled && <PesquisasPresidenciaisHero/)
+    assert.match(viewSource, /pesquisas=\{pesquisas\}/)
+  })
+
+  it("o card abre a coluna da direita da visão geral", () => {
+    const overviewSource = readFileSync("src/components/ProfileOverview.tsx", "utf8")
+    const profileSource = readFileSync("src/components/CandidatoProfile.tsx", "utf8")
+    assert.match(overviewSource, /const rightColumn: React\.ReactNode\[\] = \[\s+pollCard,\s+factChecksCard,/)
+    assert.match(profileSource, /pollCard=\{pesquisas\.length > 0 \? <PollIntentionCard pesquisas=\{pesquisas\} \/> : undefined\}/)
   })
 })

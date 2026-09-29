@@ -143,6 +143,11 @@ export interface PesquisaEleitoralDoCandidato
   resultado: ResultadoPesquisaEleitoral
   /** Ausente equivale a "recente" (seleção por escopo fixo). */
   grupo?: GrupoPesquisaDoCandidato
+  /**
+   * Só no 2º turno: rótulos, como a fonte publicou, dos outros candidatos do
+   * confronto com vínculo exato. Branco, nulo e indecisos ficam de fora.
+   */
+  adversarios?: string[]
 }
 
 export class ErroValidacaoPesquisasEleitorais extends Error {
@@ -959,7 +964,16 @@ function resultadosDoCandidato(
     if (!resultado) return []
     const { resultados: _resultados, ...cenario } = scenario
     void _resultados
-    return [{ ...metadata, cenario, resultado, grupo }]
+    const adversarios = scenario.turn === 2
+      ? scenario.resultados
+        .filter((result) =>
+          result !== resultado &&
+          result.matchStatus === "exact_alias" &&
+          result.candidateSlug !== null &&
+          result.candidateSlug !== candidateSlug)
+        .map((result) => result.rawLabel)
+      : []
+    return [{ ...metadata, cenario, resultado, grupo, ...(adversarios.length > 0 ? { adversarios } : {}) }]
   })
 }
 

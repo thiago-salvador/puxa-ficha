@@ -4,8 +4,10 @@ import { readFileSync } from "node:fs"
 import { resolve } from "node:path"
 import {
   ErroValidacaoPesquisasEleitorais,
+  listarPesquisasDoCandidato,
   parsePesquisasEleitoraisJson,
   type CatalogoPesquisasEleitorais,
+  type PesquisaEleitoralDoCandidato,
 } from "@/lib/pesquisas-eleitorais"
 import type { StatePollScenario } from "@/lib/state-polls"
 import { getEstadoNome, getEstadoUFs } from "@/lib/br-uf"
@@ -178,6 +180,27 @@ export function selecionarSenadoPolls(
     if (!pesquisaSenadoPublicavel({ ...poll, cenarios }, catalog, normalizedUf)) return []
     return cenarios.filter(cenarioSenadoPublicavel).map((scenario) => ({ ...poll, scenario }))
   }).sort((a, b) => (b.publicationDate.value ?? "").localeCompare(a.publicationDate.value ?? "") || a.id.localeCompare(b.id))
+}
+
+/**
+ * Candidate profile view of the same rounds the UF Senate page publishes (the page also drops
+ * rounds not in state "publicado"): latest round per institute first, older rounds separately.
+ * Only exact reviewed aliases link a result to the profile.
+ */
+export function listarPesquisasSenadoPorSlug(
+  candidateSlug: string,
+  uf: string,
+  catalog: CatalogoPesquisasEleitorais | undefined = loadCatalogs().get(uf.toUpperCase()),
+): PesquisaEleitoralDoCandidato[] {
+  const normalizedUf = uf.toUpperCase()
+  if (!catalog || !SENADO_UFS.includes(normalizedUf)) return []
+  validateSenadoCatalog(catalog, normalizedUf)
+  const publicaveis = {
+    ...catalog,
+    pesquisas: catalog.pesquisas.filter((poll) =>
+      poll.state === "publicado" && pesquisaSenadoPublicavel(poll, catalog, normalizedUf)),
+  }
+  return listarPesquisasDoCandidato(publicaveis, candidateSlug, cenarioSenadoPublicavel)
 }
 
 export function carregarPesquisasSenado(): Map<string, CatalogoPesquisasEleitorais> {

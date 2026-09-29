@@ -34,6 +34,19 @@ export function formatDestaquesLabel(count: number): string {
   return count === 1 ? "Destaque" : "Destaques"
 }
 
+/**
+ * Legenda do KPI "Destaques": o número conta os pontos editoriais da aba
+ * (alertas e pontos positivos, os dois blocos que a aba lista), então a
+ * legenda só separa esses dois grupos. Sem nenhum, diz o que o número conta.
+ */
+export function formatDestaquesLegenda(alertas: number, positivos: number): string {
+  const partes = [
+    alertas > 0 ? `${alertas} ${alertas === 1 ? "alerta" : "alertas"}` : null,
+    positivos > 0 ? `${positivos} ${positivos === 1 ? "ponto positivo" : "pontos positivos"}` : null,
+  ].filter(Boolean)
+  return partes.length > 0 ? partes.join(" · ") : "alertas e pontos positivos"
+}
+
 export const FINANCING_COLOR_BY_KEY: Record<FinancingBreakdownKey, string> = {
   fundo_eleitoral: "#0a0a0a",
   fundo_partidario: "#2e2e2e",

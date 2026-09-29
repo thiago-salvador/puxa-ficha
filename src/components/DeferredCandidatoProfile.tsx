@@ -13,6 +13,7 @@ import type { ProgramaGovernoManifestoPublico } from "@/lib/programa-governo"
 import type { SenadoRunningMatesPayload } from "@/components/SenadoRunningMates"
 import type { EstadoEvidenciasPrograma } from "@/lib/compromisso-evidencia"
 import type { ProgramaGovernoPendencia } from "@/lib/programa-governo-pendencia"
+import type { PesquisaEleitoralDoCandidato } from "@/lib/pesquisas-eleitorais"
 import { getRepresentacoesEticaAprovadas } from "@/lib/representacoes-etica"
 
 export function DeferredCandidatoProfile({
@@ -22,6 +23,7 @@ export function DeferredCandidatoProfile({
   compromissoEvidencias,
   programaPendente = null,
   senadoRunningMates = null,
+  pesquisas = [],
 }: {
   ficha: FichaCandidato
   initialTab?: CandidatoProfileTabId
@@ -29,6 +31,8 @@ export function DeferredCandidatoProfile({
   compromissoEvidencias?: EstadoEvidenciasPrograma
   programaPendente?: ProgramaGovernoPendencia | null
   senadoRunningMates?: SenadoRunningMatesPayload | null
+  /** Pesquisas do candidato para o card "Intenção de voto" da visão geral. */
+  pesquisas?: PesquisaEleitoralDoCandidato[]
 }) {
   const historico = ficha.historico ?? []
   const mudancas = ficha.mudancas_partido ?? []
@@ -66,6 +70,7 @@ export function DeferredCandidatoProfile({
         compromissoEvidencias={compromissoEvidencias}
         programaPendente={programaPendente}
         senadoRunningMates={senadoRunningMates}
+        pesquisas={pesquisas}
         overview={{
           processos: (ficha.processos ?? []).filter((row) => Boolean(nivelFonteProcesso(row))).length,
           processosOmitidos: ficha.processos_omitidos_sem_fonte_oficial ?? 0,

@@ -179,16 +179,19 @@ describe("integração e transporte", () => {
     assert.match(viewSource, /<PesquisasPresidenciaisHero pesquisas=\{pesquisas\} \/>/)
   })
 
-  // A aba Pesquisas e o card "Intenção de voto" saíram da ficha; o selo do hero fica.
-  it("o perfil diferido não transporta mais as pesquisas para as abas", () => {
-    assert.doesNotMatch(`${deferredSource}${clientSource}${profileSource}`, /pesquisas=\{pesquisas\}/)
+  // A aba Pesquisas saiu da ficha; o selo do hero fica e o card "Intenção de
+  // voto" volta ao topo da coluna da direita, com o mesmo conjunto do servidor.
+  it("o perfil diferido transporta as pesquisas até o card sem buscar de novo", () => {
+    assert.match(deferredSource, /pesquisas=\{pesquisas\}/)
+    assert.match(clientSource, /pesquisas=\{pesquisas\}/)
+    assert.match(profileSource, /<PollIntentionCard pesquisas=\{pesquisas\} \/>/)
     assert.doesNotMatch(`${deferredSource}${clientSource}${profileSource}`, /listarPesquisasPresidenciaisPorSlug/)
   })
 
-  it("a Visão geral não tem card de intenção de voto", () => {
-    assert.doesNotMatch(profileSource, /PesquisasPresidenciaisOverview|leadingCard/)
+  it("a Visão geral tem o card de intenção de voto e não tem aba Pesquisas", () => {
+    assert.doesNotMatch(profileSource, /PesquisasPresidenciaisOverview|PesquisasPresidenciaisTab|leadingCard/)
     assert.match(overviewSource, /data-pf-profile-overview-grid=/)
-    assert.doesNotMatch(overviewSource, /leadingCard/)
+    assert.match(overviewSource, /pollCard,\s+factChecksCard,/)
   })
 
   it("autoriza presidente e governador, mantendo timeline isolada", () => {
