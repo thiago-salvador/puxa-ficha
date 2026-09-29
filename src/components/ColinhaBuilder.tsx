@@ -24,6 +24,7 @@ import { CandidatePhoto } from "@/components/CandidatePhoto"
 import { ANALYTICS_EVENTS } from "@/lib/analytics-events"
 import { trackLaunchEvent } from "@/lib/analytics-client"
 import { formatBRL } from "@/lib/utils"
+import { AntesDeVotar } from "@/components/AntesDeVotar"
 
 const UFS = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"]
 type CandidateResponse = { candidates?: ColinhaCandidate[]; unavailable?: boolean; snapshot?: string | null; listStart?: string | null }
@@ -385,6 +386,7 @@ export function ColinhaBuilder() {
             {slot ? <>{slotStep}{sidebar}</> : reviewStep}
           </div>
         </>}
+        <div className="mx-auto mt-6 max-w-3xl"><AntesDeVotar uf={state.uf} /></div>
       </div>
     </section>
     <div className="colinha-print-sheet" aria-hidden="true"><h1>Minha colinha para 2026{state.uf ? ` · ${state.uf}` : ""}</h1>{SLOT_ORDER.map((id) => { const picked = choices[id]; return <div key={id} className="colinha-print-choice"><strong>{SLOT_LABELS[id]} <em>({formatSlotDigits(id)})</em></strong><span>{picked ? `${picked.numero_urna} · ${picked.nome_urna} (${picked.partido_sigla})` : "a escolher"}</span>{picked && <small>{status(picked)}</small>}</div> })}<p>Ordem na urna: deputado federal, deputado estadual ou distrital, primeiro senador, segundo senador (outro candidato), governador e presidente. Confira foto, nome e partido na urna antes de confirmar e a situação do registro antes de votar.</p></div>
