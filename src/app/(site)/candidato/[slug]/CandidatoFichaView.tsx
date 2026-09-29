@@ -489,6 +489,7 @@ export async function CandidatoFichaView({
                   variant="compact"
                   slug={slug}
                   candidateName={ficha.nome_urna}
+                  cardVersion={ficha.ultima_atualizacao}
                 />
                 <DeferredFollowCandidateButton
                   candidateName={ficha.nome_urna}
@@ -529,6 +530,7 @@ export async function CandidatoFichaView({
           label="Compartilhar ficha"
           slug={slug}
           candidateName={ficha.nome_urna}
+          cardVersion={ficha.ultima_atualizacao}
         />
       </section>
 

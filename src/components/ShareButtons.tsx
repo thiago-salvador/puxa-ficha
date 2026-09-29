@@ -13,6 +13,8 @@ interface ShareButtonsProps {
   slug?: string
   /** Nome do candidato para alt text do card */
   candidateName?: string
+  /** `ultima_atualizacao` da ficha, versiona a URL do card */
+  cardVersion?: string | null
 }
 
 export function ShareButtons({
@@ -22,6 +24,7 @@ export function ShareButtons({
   variant = "card",
   slug,
   candidateName,
+  cardVersion,
 }: ShareButtonsProps) {
   const [canNativeShare, setCanNativeShare] = useState(false)
   const [cardModalOpen, setCardModalOpen] = useState(false)
@@ -76,6 +79,7 @@ export function ShareButtons({
           <SocialCardModal
             slug={slug}
             candidateName={candidateName ?? slug}
+            cardVersion={cardVersion}
             shareUrl={shareUrl}
             shareTitle={title}
             open={cardModalOpen}
@@ -141,6 +145,7 @@ export function ShareButtons({
         <SocialCardModal
           slug={slug}
           candidateName={candidateName ?? slug}
+          cardVersion={cardVersion}
           shareUrl={shareUrl}
           shareTitle={title}
           open={cardModalOpen}

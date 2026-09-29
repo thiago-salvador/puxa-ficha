@@ -540,7 +540,7 @@ describe("coletor de revisão do histórico: CLI puro", () => {
     assert.equal(open.planned[0]?.resultado, "erro")
   })
 
-  it("histórico não tem prazo: recibo aberto posterior entra e derruba a prova (erro e indeterminado)", () => {
+  it("histórico: erro posterior não derruba prova no prazo (vira aviso); indeterminado derruba", () => {
     const historico = [PUBLIC_2022, PUBLIC_2026]
     const subject = profile(historico)
     const proof = { ...verdict(historico, [row({})]).receipt, executado_em: daysAgo(6) }
@@ -548,7 +548,11 @@ describe("coletor de revisão do histórico: CLI puro", () => {
     const falha = sourceFailureReceipts([subject], "pacote TSE ausente para 1998", ANOS, CHECKED, null)
     const open = planOpenReceipts(falha, [subject], new Set(["tse-historico"]), [], [proof])
     assert.equal(open.planned.length, 1)
-    assert.equal(cell(subject, [proof, ...falha]).estado, "erro")
+    // Falha de infraestrutura não sucede prova conclusiva no prazo de 21 dias.
+    const comFalha = cell(subject, [proof, ...falha])
+    assert.equal(comFalha.estado, "publicado")
+    assert.equal(comFalha.avisos?.length, 1)
+    assert.equal(cell(subject, [{ ...proof, executado_em: daysAgo(22) }, ...falha]).estado, "desatualizado")
     const divergente = { ...verdict([{ ...PUBLIC_2022, partido: "PT" }, PUBLIC_2026], [row({})]).receipt, executado_em: CHECKED }
     assert.equal(divergente.resultado, "indeterminado")
     const reaberta = cell(subject, [proof, divergente])

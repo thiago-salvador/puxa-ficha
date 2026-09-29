@@ -2,7 +2,7 @@
 import type { FichaCandidato } from "@/lib/types"
 import type { CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
 import { hasWideManualOverlappingSegmentedMandates } from "@/lib/historico-dedupe"
-import { countPartySwitches, hasSameYearPartyReversal } from "@/lib/party-switches"
+import { countPartySwitches, hasSameYearPartyReversal, partySwitchCountVerified } from "@/lib/party-switches"
 import { nivelFonteProcesso } from "@/lib/djen-consulta-url"
 import { estadoValorPatrimonio } from "@/lib/patrimonio-contexto"
 import {
@@ -40,13 +40,13 @@ export function DeferredCandidatoProfile({
       : ficha.trajetoria_verificacao?.resultado === "vazio_confirmado"
         ? 0
         : "nao_coletado"
+  // Zero de trocas só com troca contada ou recibo de filiação conclusivo.
+  const partySwitchesVerified = partySwitchCountVerified(mudancas, ficha.filiacao_verificacao?.resultado)
   const partySwitchCountValue = hasSameYearPartyReversal(mudancas)
     ? null
-    : mudancas.length > 0
+    : partySwitchesVerified
       ? countPartySwitches(mudancas)
-      : ficha.trajetoria_verificacao?.resultado === "vazio_confirmado"
-        ? 0
-        : "nao_coletado"
+      : "nao_coletado"
   const patrimonioMaisRecente = [...(ficha.patrimonio ?? [])]
     .sort((a, b) => Number(b.ano_eleicao) - Number(a.ano_eleicao))[0]
 
@@ -75,10 +75,7 @@ export function DeferredCandidatoProfile({
             patrimonioMaisRecente && estadoValorPatrimonio(patrimonioMaisRecente) !== "valor_nao_informado"
               ? patrimonioMaisRecente.valor_total
               : null,
-          mudancas:
-            mudancas.length > 0 || ficha.trajetoria_verificacao?.resultado === "vazio_confirmado"
-              ? ficha.total_mudancas_partido
-              : null,
+          mudancas: partySwitchesVerified ? ficha.total_mudancas_partido : null,
         }}
       />
     </>

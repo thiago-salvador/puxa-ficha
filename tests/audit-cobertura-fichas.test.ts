@@ -490,4 +490,73 @@ describe("matriz de cobertura das fichas", () => {
     assert.equal(matrix.cells.find((item) => item.familia === "historico_politico")?.estado, "sem_recibo")
     assert.equal(result.rejected.length, 1)
   })
+
+  describe("falha de infraestrutura depois de prova conclusiva", () => {
+    const daysAgo = (days: number) => new Date(Date.now() - days * 86_400_000).toISOString()
+    const receipt = (resultado: string, executado_em: string, execucao: string) => ({
+      fonte: "processos-curadoria", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1",
+      resultado, volume: 0, executado_em, execucao, detalhe: "{}",
+    })
+    const cell = (rows: ReturnType<typeof receipt>[]) => {
+      const candidate = profile({ processos: [] })
+      return buildCoverageMatrix([candidate], [], adaptLatestReceipts(rows, [candidate]).joins)
+        .cells.find((item) => item.familia === "processos")
+    }
+
+    it("prova vazio_confirmado de 3 dias + erro de ontem = vazio_confirmado com aviso", () => {
+      const result = cell([receipt("vazio_confirmado", daysAgo(3), "run-a"), receipt("erro", daysAgo(1), "run-b")])
+      assert.equal(result?.estado, "vazio_confirmado")
+      assert.equal(result?.avisos?.length, 1)
+      assert.match(result?.avisos?.[0] ?? "", /falha de coleta em processos-curadoria .* dentro do prazo de 14 dias/)
+    })
+
+    it("prova vencida + erro = erro, sem aviso", () => {
+      const result = cell([receipt("vazio_confirmado", daysAgo(20), "run-a"), receipt("erro", daysAgo(1), "run-b")])
+      assert.equal(result?.estado, "erro")
+      assert.equal(result?.avisos, undefined)
+    })
+
+    it("indeterminado posterior não é falha de infraestrutura e continua derrubando a prova", () => {
+      const result = cell([receipt("vazio_confirmado", daysAgo(3), "run-a"), receipt("indeterminado", daysAgo(1), "run-b")])
+      assert.equal(result?.estado, "indeterminado")
+      assert.equal(result?.avisos, undefined)
+    })
+
+    it("erro da mesma execução da prova continua erro (a execução vale pelo mais grave)", () => {
+      const same = daysAgo(1)
+      assert.equal(cell([receipt("vazio_confirmado", same, "run-x"), receipt("erro", same, "run-x")])?.estado, "erro")
+    })
+
+    it("indeterminado entre a prova e o erro não é apagado pela falha", () => {
+      const result = cell([receipt("vazio_confirmado", daysAgo(5), "run-a"), receipt("indeterminado", daysAgo(3), "run-b"), receipt("erro", daysAgo(1), "run-c")])
+      assert.equal(result?.estado, "erro")
+      assert.equal(result?.avisos, undefined)
+    })
+
+    it("erro sem prova anterior continua erro", () => {
+      assert.equal(cell([receipt("erro", daysAgo(1), "run-b")])?.estado, "erro")
+    })
+
+    it("família guiada por revisão: erro depois da prova no prazo não reabre a célula", () => {
+      const candidate = profile({ historico: [{ tipo_evento: "candidatura", cargo: "Deputado Federal", periodo_inicio: 2026 }] })
+      const url = "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip"
+      const proofRow = (executado_em: string) => ({
+        fonte: "tse-historico", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1",
+        resultado: "encontrado", volume: 1, executado_em, url, execucao: "run-a",
+        detalhe: JSON.stringify({ coverage_proof: {
+          family: "historico_politico", method: "official-source-to-public-readback",
+          source_revisions: [{ year: 2026, url, sha256: "a".repeat(64) }],
+          public_payload_sha256: publicFamilyPayloadSha256(candidate, "historico_politico"),
+          source_rows: 1, public_rows: 1, matched_rows: 1, unmatched_rows: 0, scope_complete: true,
+          identity: { slug: "ana-exemplo", candidate_id: "candidate-1", source_id: "12345" },
+        } }),
+      })
+      const failure = { fonte: "tse-historico", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", resultado: "erro", volume: 0, executado_em: daysAgo(1), execucao: "run-b", detalhe: "{}" }
+      const state = (proofAge: number) => buildCoverageMatrix([candidate], [], adaptLatestReceipts([proofRow(daysAgo(proofAge)), failure], [candidate]).joins)
+        .cells.find((item) => item.familia === "historico_politico")
+      assert.equal(state(3)?.estado, "publicado")
+      assert.equal(state(3)?.avisos?.length, 1)
+      assert.equal(state(22)?.estado, "desatualizado")
+    })
+  })
 })
