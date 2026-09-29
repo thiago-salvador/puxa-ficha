@@ -53,19 +53,39 @@ test("patrimônio usa o formatador monetário compartilhado do site, não toLoca
   assert.doesNotMatch(builder, /patrimonio\.toLocaleString/)
 })
 
-test("botão de escolha tem nome acessível com o cargo, mantendo o texto visível genérico", () => {
-  assert.match(builder, /aria-label=\{`Escolher candidato para \$\{SLOT_LABELS\[slot\]\}`\}/)
-  assert.match(builder, />Escolher candidato<\/button>/)
+test("fluxo guiado: estado primeiro, um cargo por passo na ordem da urna, conferência no fim", () => {
+  assert.match(builder, /Em que estado você vota\?/)
+  assert.match(builder, /const REVIEW_STEP = SLOT_ORDER\.length/)
+  assert.match(builder, /Voto \{step \+ 1\} de 6/)
+  assert.match(builder, /aria-current=\{current \? "step" : undefined\}/)
+  assert.match(builder, /Pular este voto/)
+  // escolher avança sozinho para o próximo voto vazio, ou para a conferência
+  assert.match(builder, /goTo\(after === -1 \? REVIEW_STEP : after\)/)
+  // cada troca de passo leva o painel para a vista e o foco para o título
+  assert.match(builder, /scrollIntoView/)
+  assert.match(builder, /headingRef\.current\?\.focus/)
 })
 
-test("grid dos seis slots responde à largura real do container, não só do viewport, para não espremer o card selecionado em telas médias", () => {
-  // A query de container tem que mirar um ANCESTRAL, nunca o próprio elemento
-  // (um elemento não pode se medir a si mesmo em container queries), então
-  // @container fica no wrapper e @xl:grid-cols-2 no grid, nunca juntos no mesmo nó.
-  assert.match(builder, /<div className="@container">/)
-  assert.match(builder, /mt-7 grid gap-3 @xl:grid-cols-2/)
-  assert.doesNotMatch(builder, /@container mt-7 grid gap-3 @xl:grid-cols-2/)
-  assert.doesNotMatch(builder, /grid gap-3 sm:grid-cols-2/)
+test("lista do cargo carrega sozinha ao entrar no passo e filtra enquanto digita, sem botão Buscar", () => {
+  assert.match(builder, /action: "search", uf: state\.uf, slot, query: debouncedQuery\.trim\(\)/)
+  assert.match(builder, /\[mounted, state\.uf, slot, debouncedQuery, retry\]/)
+  assert.match(builder, /AbortController/)
+  assert.doesNotMatch(builder, />Buscar<\/button>/)
+  assert.match(builder, /Tentar de novo/)
+})
+
+test("candidaturas bloqueadas ficam escondidas por padrão, com opção de mostrar", () => {
+  assert.match(builder, /const visible = showBlocked \? \[\.\.\.allowed, \.\.\.blocked\] : allowed/)
+  assert.match(builder, /com registro indeferido, renúncia ou cassação/)
+})
+
+test("sem escolhas não há consulta de seleção, então o aviso de parcial não aparece antes da hora", () => {
+  assert.match(builder, /if \(!mounted \|\| !state\.uf \|\| !SLOT_ORDER\.some\(\(id\) => state\[id\]\)\) return/)
+})
+
+test("compartilhar só aparece na conferência e com pelo menos um voto", () => {
+  assert.match(builder, /filled === 0 \? <p[^>]*>Escolha pelo menos um voto/)
+  assert.match(builder, /aria-label=\{`\$\{picked \? "Trocar" : "Escolher"\} candidato para \$\{SLOT_LABELS\[id\]\}`\}/)
 })
 
 test("estado do snapshot vem de describeSnapshotStatus, nunca de uma frase montada na hora com o valor bruto", () => {
@@ -81,9 +101,23 @@ test("guia de votação segue o Manual do Eleitor do TSE: ordem, dígitos e dois
   assert.deepEqual([...SLOT_ORDER], ["df", "de", "s1", "s2", "g", "p"])
   assert.deepEqual(SLOT_DIGITS, { df: 4, de: 5, s1: 3, s2: 3, g: 2, p: 2 })
   assert.match(VOTING_GUIDE_SOURCE_URL, /^https:\/\/www\.tse\.jus\.br\//)
-  assert.match(builder, /<ol[^>]*>\{SLOT_ORDER\.map/)
+  assert.match(builder, /<ol[^>]*>\{\[\.\.\.SLOT_ORDER, "conferir" as const\]\.map/)
   assert.match(builder, /não é a tela da urna/)
   assert.match(builder, /dois votos para senador precisam ser em candidatos diferentes/)
-  assert.match(builder, /colinha-print-choice[\s\S]*formatSlotDigits\(slot\)/)
+  assert.match(builder, /formatSlotDigits\(slot\)\} na urna/)
+  assert.match(builder, /colinha-print-choice[\s\S]*formatSlotDigits\(id\)/)
   assert.match(builder, /segundo senador \(outro candidato\)/)
+})
+
+test("conferência avisa que celular não entra na cabine e põe a impressão em primeiro plano", () => {
+  assert.match(builder, /Celular não entra na cabine de votação/)
+  assert.match(builder, /Lei 9\.504\/1997, art\. 91-A/)
+  assert.match(builder, /planalto\.gov\.br\/ccivil_03\/leis\/l9504\.htm/)
+  const leve = builder.slice(builder.indexOf('id="colinha-levar"'))
+  assert.ok(leve.indexOf("Imprimir A4") < leve.indexOf("Gerar imagem para feed"), "Imprimir vem antes das imagens")
+})
+
+test("lista sem filtro explica a ordem rotativa com a letra que veio do servidor", () => {
+  assert.match(builder, /setListStart\(payload\.listStart \?\? null\)/)
+  assert.match(builder, /Agora a lista começa pela letra \{listStart\}/)
 })

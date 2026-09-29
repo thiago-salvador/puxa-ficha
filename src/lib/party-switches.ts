@@ -545,6 +545,21 @@ export function countPartySwitches(mudancas: readonly MudancaPartido[]) {
   return count
 }
 
+/** Recibo de filiação que conclui a consulta da fonte. */
+const FILIACAO_CONCLUSIVA = new Set(["encontrado", "vazio_confirmado"])
+
+/**
+ * Contagem de trocas que pode ser afirmada ao leitor: há troca contada, ou o
+ * recibo de filiação concluiu a consulta. Sem isso, zero é "não verificado"
+ * (a linha derivada do registro atual não prova ausência de troca).
+ */
+export function partySwitchCountVerified(
+  mudancas: readonly MudancaPartido[],
+  filiacaoResultado: string | null | undefined,
+): boolean {
+  return countPartySwitches(mudancas) > 0 || FILIACAO_CONCLUSIVA.has(filiacaoResultado ?? "")
+}
+
 /**
  * Detecta o padrão A→B e B→A no MESMO ano em `mudancas_partido`.
  *

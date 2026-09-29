@@ -743,7 +743,16 @@ export function ComparadorPanel({ candidatos, referenceNow, initialSelectedSlugs
                         key={candidato.id}
                         className="py-3 text-center text-[length:var(--text-body)] font-bold tabular-nums text-foreground"
                       >
-                        {candidato.mudancas_partido}
+                        {candidato.mudancas_partido_verificado ? (
+                          candidato.mudancas_partido
+                        ) : (
+                          <>
+                            —
+                            <span className="block text-[length:var(--text-caption)] font-medium text-muted-foreground">
+                              não verificado
+                            </span>
+                          </>
+                        )}
                       </td>
                     ))}
                   </CompRow>

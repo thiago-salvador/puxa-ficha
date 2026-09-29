@@ -24,6 +24,12 @@ interface TrajectoryTabSectionProps {
   timelinePartidariaIncompleta: boolean
   partidoAtualSigla: string | null
   partidoAtualNome: string | null
+  /**
+   * Contagem de trocas afirmável (troca contada ou recibo de filiação
+   * conclusivo). Falso: zero vira "não verificado". Padrão falso: sem o sinal,
+   * a seção não afirma zero.
+   */
+  partySwitchesVerified?: boolean
   verificacaoCampos?: VerificacaoCampos | null
   suggestion: SuggestAction | null
   freshness?: {
@@ -38,6 +44,7 @@ export function TrajectoryTabSection({
   timelinePartidariaIncompleta,
   partidoAtualSigla,
   partidoAtualNome,
+  partySwitchesVerified = false,
   verificacaoCampos,
   suggestion,
   freshness,
@@ -185,10 +192,12 @@ export function TrajectoryTabSection({
       )}
 
       {shouldShowPartySection && !partyTimelineBlocked && (
-        <div data-pf-partidos-count={mudancasEfetivas}>
+        <div data-pf-partidos-count={partySwitchesVerified ? mudancasEfetivas : "nao_coletado"}>
           <SectionLabel>Histórico partidário</SectionLabel>
           <SectionTitle>
-            {mudancasEfetivas === 0
+            {!partySwitchesVerified
+              ? "Trocas de partido não verificadas"
+              : mudancasEfetivas === 0
               ? partyAttemptInconclusive
                 ? "Partido declarado na candidatura"
                 : "Partidos confirmados"
@@ -241,7 +250,9 @@ export function TrajectoryTabSection({
                   {partyAttemptInconclusive ? "Partido declarado na candidatura" : "Filiação atual"}: {currentPartyLabel}
                 </p>
                 <p className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
-                  Sem trocas de partido registradas na base.
+                  {partySwitchesVerified
+                    ? "Sem trocas de partido registradas na base."
+                    : "Histórico de filiações ainda não confirmado na fonte; a contagem de trocas fica em aberto."}
                   {currentPartyHistoricoYears.length > 0
                     ? ` Candidaturas estruturadas: ${formatYearList(currentPartyHistoricoYears)}.`
                     : ""}
