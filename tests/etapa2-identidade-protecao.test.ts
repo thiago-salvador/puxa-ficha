@@ -652,12 +652,12 @@ describe("o registro real, contra a passagem vazia", () => {
     // promoção reclassificou sem mexer no universo dos 71.
     assert.equal(
       recomputarDiagnosticoSha256(todos),
-      // v5, regeneracao de 02/09 contra o snapshot publicado pelo TSE em 18/08
-      // (catalogo `metadata_modified` 2026-08-18T15:11). Classes, contagens e o
-      // universo dos 71 ficaram identicos; onze entradas `match_fresco` ganharam
-      // uma rede social a mais no TSE (`frentes_tse.social_count` +1). O valor
-      // anterior era `1d1f45b9…3ae8030b`, da v4 (25/08).
-      "7501c3891bc15d5866c31c72fb90662bf37709715483ccb53c3e3e207d7cd261",
+      // v6, renovacao de 29/09 contra o snapshot publicado pelo TSE em 16/09
+      // (catalogo `metadata_modified` 2026-09-16T13:36), antes do vencimento de
+      // 02/10. Classes, contagens e o universo dos 71 ficaram identicos. O valor
+      // anterior era `7501c389…7d7cd261`, da v5 (02/09), e antes dele
+      // `1d1f45b9…3ae8030b`, da v4 (25/08).
+      "03569d4e82774cfd52b3943b4bb0f198bcb2c6851f41c144099038344a249139",
     )
     assert.equal(
       recomputarSlugsHash(todos),
