@@ -159,7 +159,7 @@ describe("snapshot pós-registro das chapas de 2026", () => {
 
   test("plano usa somente caminhos relativos ao repositório", () => {
     const plan = readFileSync(PLAN, "utf8")
-    assert.doesNotMatch(plan, /\/Users\//)
+    assert.doesNotMatch(plan, /[/]Users[/]/)
     assert.match(plan, /puxafichatemporario\/logs\/execucao\.jsonl/)
   })
 

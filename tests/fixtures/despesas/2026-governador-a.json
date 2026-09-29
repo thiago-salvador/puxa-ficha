@@ -1,0 +1,2125 @@
+{
+ "consulta": {
+  "idEleicao": "2032200",
+  "ano": 2026,
+  "sgUe": "SP",
+  "nrPartido": 10,
+  "nrCandidato": 10,
+  "idCandidato": "9000000001",
+  "idPrestador": "8000000001",
+  "idUltimaEntrega": "7000000",
+  "entregaAtual": null,
+  "historicoEntregas": [
+   {
+    "dataEntrega": "26/09/2026 16:51",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "7000000"
+   },
+   {
+    "dataEntrega": "25/09/2026 15:31",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999999"
+   },
+   {
+    "dataEntrega": "24/09/2026 10:55",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999998"
+   },
+   {
+    "dataEntrega": "23/09/2026 15:43",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999997"
+   },
+   {
+    "dataEntrega": "22/09/2026 16:13",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999996"
+   },
+   {
+    "dataEntrega": "21/09/2026 09:23",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999995"
+   },
+   {
+    "dataEntrega": "18/09/2026 13:48",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999994"
+   },
+   {
+    "dataEntrega": "17/09/2026 15:58",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999993"
+   },
+   {
+    "dataEntrega": "16/09/2026 15:41",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999992"
+   },
+   {
+    "dataEntrega": "15/09/2026 15:52",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999991"
+   },
+   {
+    "dataEntrega": "13/09/2026 16:03",
+    "tipo": "Entrega Parcial - Oficial",
+    "idEntrega": "6999990"
+   },
+   {
+    "dataEntrega": "12/09/2026 12:45",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999989"
+   },
+   {
+    "dataEntrega": "11/09/2026 19:24",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999988"
+   },
+   {
+    "dataEntrega": "11/09/2026 11:58",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999987"
+   },
+   {
+    "dataEntrega": "10/09/2026 19:35",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999986"
+   },
+   {
+    "dataEntrega": "09/09/2026 14:00",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999985"
+   },
+   {
+    "dataEntrega": "07/09/2026 12:54",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999984"
+   },
+   {
+    "dataEntrega": "05/09/2026 17:37",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999983"
+   },
+   {
+    "dataEntrega": "04/09/2026 14:12",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999982"
+   },
+   {
+    "dataEntrega": "02/09/2026 13:51",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999981"
+   },
+   {
+    "dataEntrega": "01/09/2026 16:03",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999980"
+   },
+   {
+    "dataEntrega": "29/08/2026 09:32",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999979"
+   },
+   {
+    "dataEntrega": "28/08/2026 17:09",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999978"
+   },
+   {
+    "dataEntrega": "28/08/2026 16:53",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999977"
+   },
+   {
+    "dataEntrega": "28/08/2026 16:24",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999976"
+   },
+   {
+    "dataEntrega": "27/08/2026 12:04",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999975"
+   },
+   {
+    "dataEntrega": "26/08/2026 08:22",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999974"
+   },
+   {
+    "dataEntrega": "24/08/2026 13:38",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999973"
+   },
+   {
+    "dataEntrega": "23/08/2026 12:16",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999972"
+   },
+   {
+    "dataEntrega": "21/08/2026 12:05",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999971"
+   },
+   {
+    "dataEntrega": "20/08/2026 17:02",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999970"
+   },
+   {
+    "dataEntrega": "18/08/2026 14:55",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999969"
+   },
+   {
+    "dataEntrega": "17/08/2026 16:50",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999968"
+   }
+  ],
+  "despesas": {
+   "limiteDeGasto1T": 26683209.24,
+   "limiteDeGasto2T": 13341604.62,
+   "valorLimiteDeGastos": 26683209.24,
+   "totalDespesasContratadas": 24972089.2,
+   "totalDespesasPagas": 18696647.7,
+   "doacoesOutrosCandidatosPartigos": 0,
+   "fundosPartidarios": 998730,
+   "fundoEspecial": 11995472.4,
+   "outrosRecursos": 5702445.3,
+   "financeiras": 0,
+   "estimaveis": 0
+  },
+  "dadosConsolidados": {
+   "totalRecebido": 24407415.29,
+   "totalFinanceiro": 24368737.29,
+   "totalEstimados": 38678
+  },
+  "concentracaoDespesas": [
+   {
+    "dsDRD": "Serviços prestados por terceiros",
+    "qtdeDespesas": "17",
+    "valor": 10220000
+   },
+   {
+    "dsDRD": "Produção de programas de rádio, televisão ou vídeo",
+    "qtdeDespesas": "5",
+    "valor": 3968600
+   },
+   {
+    "dsDRD": "Serviços advocatícios",
+    "qtdeDespesas": "6",
+    "valor": 3700000
+   },
+   {
+    "dsDRD": "Despesa com Impulsionamento de Conteúdos",
+    "qtdeDespesas": "16",
+    "valor": 3349000
+   },
+   {
+    "dsDRD": "Publicidade por materiais impressos",
+    "qtdeDespesas": "24",
+    "valor": 1032850
+   },
+   {
+    "dsDRD": "Despesas com transporte ou deslocamento",
+    "qtdeDespesas": "11",
+    "valor": 974264.6
+   },
+   {
+    "dsDRD": "Publicidade por adesivos",
+    "qtdeDespesas": "12",
+    "valor": 521485
+   },
+   {
+    "dsDRD": "Serviços contábeis",
+    "qtdeDespesas": "2",
+    "valor": 400000
+   },
+   {
+    "dsDRD": "Pesquisas ou testes eleitorais",
+    "qtdeDespesas": "3",
+    "valor": 319000
+   },
+   {
+    "dsDRD": "Despesas com pessoal",
+    "qtdeDespesas": "17",
+    "valor": 227168
+   },
+   {
+    "dsDRD": "Cessão ou locação de veículos",
+    "qtdeDespesas": "10",
+    "valor": 163480.01
+   },
+   {
+    "dsDRD": "Eventos de promoção da candidatura",
+    "qtdeDespesas": "3",
+    "valor": 72800
+   },
+   {
+    "dsDRD": "Combustíveis e lubrificantes",
+    "qtdeDespesas": "4",
+    "valor": 12706.99
+   },
+   {
+    "dsDRD": "Materiais de expediente",
+    "qtdeDespesas": "1",
+    "valor": 5000
+   },
+   {
+    "dsDRD": "Despesas com Hospedagem",
+    "qtdeDespesas": "6",
+    "valor": 3168
+   },
+   {
+    "dsDRD": "Publicidade por jornais e revistas",
+    "qtdeDespesas": "1",
+    "valor": 2450
+   },
+   {
+    "dsDRD": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+    "qtdeDespesas": "26",
+    "valor": 116.6
+   }
+  ],
+  "rankingFornecedores": [
+   {
+    "cpfCnpj": "PJ-15",
+    "nome": "FORNECEDOR FICTICIO 15 LTDA",
+    "qntd": "2",
+    "valor": 4500000
+   },
+   {
+    "cpfCnpj": "PJ-17",
+    "nome": "FORNECEDOR FICTICIO 17 LTDA",
+    "qntd": "2",
+    "valor": 3800000
+   },
+   {
+    "cpfCnpj": "PJ-32",
+    "nome": "FORNECEDOR FICTICIO 32 LTDA",
+    "qntd": "2",
+    "valor": 3500000
+   },
+   {
+    "cpfCnpj": "PJ-13",
+    "nome": "FORNECEDOR FICTICIO 13 LTDA",
+    "qntd": "10",
+    "valor": 3049000
+   },
+   {
+    "cpfCnpj": "PJ-28",
+    "nome": "FORNECEDOR FICTICIO 28 LTDA",
+    "qntd": "3",
+    "valor": 3000000
+   }
+  ],
+  "dividaCampanha": null,
+  "sobraFinanceira": null
+ },
+ "itens": [
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 0.5,
+   "data": "09/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 1",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 13.6,
+   "data": "19/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 2",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-1",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 1 LTDA",
+   "valor": 79027.5,
+   "data": "14/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços prestados por terceiros",
+   "descricaoDespesa": "Descricao sintetica 3",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-2",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 2 LTDA",
+   "valor": 4752.1,
+   "data": "20/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Cessão ou locação de veículos",
+   "descricaoDespesa": "Descricao sintetica 4",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-2",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 2 LTDA",
+   "valor": 4752.1,
+   "data": "20/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Cessão ou locação de veículos",
+   "descricaoDespesa": "Descricao sintetica 5",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 13.6,
+   "data": "01/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 6",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-3",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 3 LTDA",
+   "valor": 9000,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por adesivos",
+   "descricaoDespesa": "Descricao sintetica 7",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-3",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 3 LTDA",
+   "valor": 4850,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por adesivos",
+   "descricaoDespesa": "Descricao sintetica 8",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-3",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 3 LTDA",
+   "valor": 20000,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por adesivos",
+   "descricaoDespesa": "Descricao sintetica 9",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-4",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 4 LTDA",
+   "valor": 6600,
+   "data": "09/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com transporte ou deslocamento",
+   "descricaoDespesa": "Descricao sintetica 10",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-5",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 5 LTDA",
+   "valor": 127600,
+   "data": "11/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Pesquisas ou testes eleitorais",
+   "descricaoDespesa": "Descricao sintetica 11",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-6",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 6 LTDA",
+   "valor": 50000,
+   "data": "14/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesa com Impulsionamento de Conteúdos",
+   "descricaoDespesa": "Descricao sintetica 12",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PF-1",
+   "nomeFornecedor": "PESSOA FICTICIA 1",
+   "valor": 30000,
+   "data": "16/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com pessoal",
+   "descricaoDespesa": "Descricao sintetica 13",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-4",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 4 LTDA",
+   "valor": 15400,
+   "data": "14/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com transporte ou deslocamento",
+   "descricaoDespesa": "Descricao sintetica 14",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 1.5,
+   "data": "01/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 15",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-7",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 7 LTDA",
+   "valor": 1092.94,
+   "data": "01/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Combustíveis e lubrificantes",
+   "descricaoDespesa": "Descricao sintetica 16",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PF-2",
+   "nomeFornecedor": "PESSOA FICTICIA 2",
+   "valor": 10000,
+   "data": "16/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com pessoal",
+   "descricaoDespesa": "Descricao sintetica 17",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-7",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 7 LTDA",
+   "valor": 962.17,
+   "data": "01/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Combustíveis e lubrificantes",
+   "descricaoDespesa": "Descricao sintetica 18",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-7",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 7 LTDA",
+   "valor": 171.88,
+   "data": "01/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Combustíveis e lubrificantes",
+   "descricaoDespesa": "Descricao sintetica 19",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-8",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 8 LTDA",
+   "valor": 32585,
+   "data": "18/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Cessão ou locação de veículos",
+   "descricaoDespesa": "Descricao sintetica 20",
+   "especieDocumento": "Fatura",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 0.5,
+   "data": "25/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 21",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PF-3",
+   "nomeFornecedor": "PESSOA FICTICIA 3",
+   "valor": 3500,
+   "data": "16/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com pessoal",
+   "descricaoDespesa": "Descricao sintetica 22",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-4",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 4 LTDA",
+   "valor": 27310,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com transporte ou deslocamento",
+   "descricaoDespesa": "Descricao sintetica 23",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-9",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 9 LTDA",
+   "valor": 250000,
+   "data": "16/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços advocatícios",
+   "descricaoDespesa": "Descricao sintetica 24",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-10",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 10 LTDA",
+   "valor": 5000,
+   "data": "28/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Materiais de expediente",
+   "descricaoDespesa": "Descricao sintetica 25",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 0.5,
+   "data": "16/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 26",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-11",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 11 LTDA",
+   "valor": 40000,
+   "data": "25/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços prestados por terceiros",
+   "descricaoDespesa": "Descricao sintetica 27",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 0.5,
+   "data": "18/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 28",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-12",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 12 LTDA",
+   "valor": 16500,
+   "data": "08/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 29",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PF-4",
+   "nomeFornecedor": "PESSOA FICTICIA 4",
+   "valor": 25000,
+   "data": "16/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com pessoal",
+   "descricaoDespesa": "Descricao sintetica 30",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-13",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 13 LTDA",
+   "valor": 250000,
+   "data": "14/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesa com Impulsionamento de Conteúdos",
+   "descricaoDespesa": "Descricao sintetica 31",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-13",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 13 LTDA",
+   "valor": 470000,
+   "data": "25/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesa com Impulsionamento de Conteúdos",
+   "descricaoDespesa": "Descricao sintetica 32",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-13",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 13 LTDA",
+   "valor": 100000,
+   "data": "26/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesa com Impulsionamento de Conteúdos",
+   "descricaoDespesa": "Descricao sintetica 33",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-12",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 12 LTDA",
+   "valor": 16500,
+   "data": "08/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 34",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-13",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 13 LTDA",
+   "valor": 100000,
+   "data": "25/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesa com Impulsionamento de Conteúdos",
+   "descricaoDespesa": "Descricao sintetica 35",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 1.5,
+   "data": "22/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 36",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-14",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 14 LTDA",
+   "valor": 60000,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços prestados por terceiros",
+   "descricaoDespesa": "Descricao sintetica 37",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-10",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 10 LTDA",
+   "valor": 100000,
+   "data": "02/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 38",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-15",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 15 LTDA",
+   "valor": 2500000,
+   "data": "11/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços prestados por terceiros",
+   "descricaoDespesa": "Descricao sintetica 39",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-16",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 16 LTDA",
+   "valor": 25000,
+   "data": "14/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços prestados por terceiros",
+   "descricaoDespesa": "Descricao sintetica 40",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 0.5,
+   "data": "21/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 41",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-3",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 3 LTDA",
+   "valor": 4850,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por adesivos",
+   "descricaoDespesa": "Descricao sintetica 42",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-3",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 3 LTDA",
+   "valor": 20000,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por adesivos",
+   "descricaoDespesa": "Descricao sintetica 43",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-17",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 17 LTDA",
+   "valor": 1500000,
+   "data": "02/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços prestados por terceiros",
+   "descricaoDespesa": "Descricao sintetica 44",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-3",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 3 LTDA",
+   "valor": 9700,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por adesivos",
+   "descricaoDespesa": "Descricao sintetica 45",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-3",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 3 LTDA",
+   "valor": 1800,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por adesivos",
+   "descricaoDespesa": "Descricao sintetica 46",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-3",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 3 LTDA",
+   "valor": 1800,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por adesivos",
+   "descricaoDespesa": "Descricao sintetica 47",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-3",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 3 LTDA",
+   "valor": 9000,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por adesivos",
+   "descricaoDespesa": "Descricao sintetica 48",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-3",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 3 LTDA",
+   "valor": 485,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por adesivos",
+   "descricaoDespesa": "Descricao sintetica 49",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 5.5,
+   "data": "25/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 50",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PF-5",
+   "nomeFornecedor": "PESSOA FICTICIA 5",
+   "valor": 10000,
+   "data": "31/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com pessoal",
+   "descricaoDespesa": "Descricao sintetica 51",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-12",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 12 LTDA",
+   "valor": 26500,
+   "data": "08/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 52",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-13",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 13 LTDA",
+   "valor": 250000,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesa com Impulsionamento de Conteúdos",
+   "descricaoDespesa": "Descricao sintetica 53",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 13.6,
+   "data": "28/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 54",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-18",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 18 LTDA",
+   "valor": 5800,
+   "data": "09/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Eventos de promoção da candidatura",
+   "descricaoDespesa": "Descricao sintetica 55",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-9",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 9 LTDA",
+   "valor": 250000,
+   "data": "10/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços advocatícios",
+   "descricaoDespesa": "Descricao sintetica 56",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-19",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 19 LTDA",
+   "valor": 23100,
+   "data": "14/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com transporte ou deslocamento",
+   "descricaoDespesa": "Descricao sintetica 57",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-20",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 20 LTDA",
+   "valor": 200000,
+   "data": "02/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços advocatícios",
+   "descricaoDespesa": "Descricao sintetica 58",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-12",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 12 LTDA",
+   "valor": 16500,
+   "data": "08/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 59",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PF-6",
+   "nomeFornecedor": "PESSOA FICTICIA 6",
+   "valor": 6000,
+   "data": "16/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com pessoal",
+   "descricaoDespesa": "Descricao sintetica 60",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-21",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 21 LTDA",
+   "valor": 160,
+   "data": "21/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com Hospedagem",
+   "descricaoDespesa": "Descricao sintetica 61",
+   "especieDocumento": "Fatura",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-12",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 12 LTDA",
+   "valor": 16500,
+   "data": "08/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 62",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-22",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 22 LTDA",
+   "valor": 200000,
+   "data": "16/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços contábeis",
+   "descricaoDespesa": "Descricao sintetica 63",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-23",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 23 LTDA",
+   "valor": 216800,
+   "data": "16/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Produção de programas de rádio, televisão ou vídeo",
+   "descricaoDespesa": "Descricao sintetica 64",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-24",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 24 LTDA",
+   "valor": 220000,
+   "data": "19/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por adesivos",
+   "descricaoDespesa": "Descricao sintetica 65",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-6",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 6 LTDA",
+   "valor": 50000,
+   "data": "14/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesa com Impulsionamento de Conteúdos",
+   "descricaoDespesa": "Descricao sintetica 66",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PF-7",
+   "nomeFornecedor": "PESSOA FICTICIA 7",
+   "valor": 3334,
+   "data": "17/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com pessoal",
+   "descricaoDespesa": "Descricao sintetica 67",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-21",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 21 LTDA",
+   "valor": 300,
+   "data": "22/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com Hospedagem",
+   "descricaoDespesa": "Descricao sintetica 68",
+   "especieDocumento": "Fatura",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-12",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 12 LTDA",
+   "valor": 26500,
+   "data": "21/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 69",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-5",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 5 LTDA",
+   "valor": 95700,
+   "data": "15/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Pesquisas ou testes eleitorais",
+   "descricaoDespesa": "Descricao sintetica 70",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-25",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 25 LTDA",
+   "valor": 250000,
+   "data": "17/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com transporte ou deslocamento",
+   "descricaoDespesa": "Descricao sintetica 71",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-19",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 19 LTDA",
+   "valor": 24890,
+   "data": "22/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com transporte ou deslocamento",
+   "descricaoDespesa": "Descricao sintetica 72",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-23",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 23 LTDA",
+   "valor": 216800,
+   "data": "20/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Produção de programas de rádio, televisão ou vídeo",
+   "descricaoDespesa": "Descricao sintetica 73",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-19",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 19 LTDA",
+   "valor": 9900,
+   "data": "09/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com transporte ou deslocamento",
+   "descricaoDespesa": "Descricao sintetica 74",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-1",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 1 LTDA",
+   "valor": 85854,
+   "data": "21/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços prestados por terceiros",
+   "descricaoDespesa": "Descricao sintetica 75",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-17",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 17 LTDA",
+   "valor": 2300000,
+   "data": "16/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços prestados por terceiros",
+   "descricaoDespesa": "Descricao sintetica 76",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-26",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 26 LTDA",
+   "valor": 560000,
+   "data": "03/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços prestados por terceiros",
+   "descricaoDespesa": "Descricao sintetica 77",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-12",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 12 LTDA",
+   "valor": 1350,
+   "data": "21/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 78",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 13.6,
+   "data": "01/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 79",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-27",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 27 LTDA",
+   "valor": 29000,
+   "data": "09/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Eventos de promoção da candidatura",
+   "descricaoDespesa": "Descricao sintetica 80",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-1",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 1 LTDA",
+   "valor": 78597,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços prestados por terceiros",
+   "descricaoDespesa": "Descricao sintetica 81",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-10",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 10 LTDA",
+   "valor": 210000,
+   "data": "08/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 82",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-28",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 28 LTDA",
+   "valor": 1000000,
+   "data": "21/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços advocatícios",
+   "descricaoDespesa": "Descricao sintetica 83",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-29",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 29 LTDA",
+   "valor": 65000,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços prestados por terceiros",
+   "descricaoDespesa": "Descricao sintetica 84",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PF-8",
+   "nomeFornecedor": "PESSOA FICTICIA 8",
+   "valor": 20000,
+   "data": "02/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com pessoal",
+   "descricaoDespesa": "Descricao sintetica 85",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 13.6,
+   "data": "25/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 86",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-13",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 13 LTDA",
+   "valor": 500000,
+   "data": "31/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesa com Impulsionamento de Conteúdos",
+   "descricaoDespesa": "Descricao sintetica 87",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-19",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 19 LTDA",
+   "valor": 41110,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com transporte ou deslocamento",
+   "descricaoDespesa": "Descricao sintetica 88",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PF-9",
+   "nomeFornecedor": "PESSOA FICTICIA 9",
+   "valor": 11334,
+   "data": "22/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com pessoal",
+   "descricaoDespesa": "Descricao sintetica 89",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-28",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 28 LTDA",
+   "valor": 1000000,
+   "data": "21/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços advocatícios",
+   "descricaoDespesa": "Descricao sintetica 90",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-30",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 30 LTDA",
+   "valor": 38000,
+   "data": "10/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Eventos de promoção da candidatura",
+   "descricaoDespesa": "Descricao sintetica 91",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-12",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 12 LTDA",
+   "valor": 16500,
+   "data": "21/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 92",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 0.5,
+   "data": "16/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 93",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-10",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 10 LTDA",
+   "valor": 210000,
+   "data": "08/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 94",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-11",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 11 LTDA",
+   "valor": 20000,
+   "data": "03/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços prestados por terceiros",
+   "descricaoDespesa": "Descricao sintetica 95",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-21",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 21 LTDA",
+   "valor": 688,
+   "data": "07/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com Hospedagem",
+   "descricaoDespesa": "Descricao sintetica 96",
+   "especieDocumento": "Fatura",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-21",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 21 LTDA",
+   "valor": 930,
+   "data": "21/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com Hospedagem",
+   "descricaoDespesa": "Descricao sintetica 97",
+   "especieDocumento": "Fatura",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 1,
+   "data": "08/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 98",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-21",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 21 LTDA",
+   "valor": 160,
+   "data": "21/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com Hospedagem",
+   "descricaoDespesa": "Descricao sintetica 99",
+   "especieDocumento": "Fatura",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-21",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 21 LTDA",
+   "valor": 930,
+   "data": "21/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com Hospedagem",
+   "descricaoDespesa": "Descricao sintetica 100",
+   "especieDocumento": "Fatura",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PF-10",
+   "nomeFornecedor": "PESSOA FICTICIA 10",
+   "valor": 10000,
+   "data": "16/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com pessoal",
+   "descricaoDespesa": "Descricao sintetica 101",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-31",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 31 LTDA",
+   "valor": 32585,
+   "data": "18/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Cessão ou locação de veículos",
+   "descricaoDespesa": "Descricao sintetica 102",
+   "especieDocumento": "Fatura",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-32",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 32 LTDA",
+   "valor": 2000000,
+   "data": "16/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Produção de programas de rádio, televisão ou vídeo",
+   "descricaoDespesa": "Descricao sintetica 103",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-33",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 33 LTDA",
+   "valor": 10480,
+   "data": "28/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Combustíveis e lubrificantes",
+   "descricaoDespesa": "Descricao sintetica 104",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PF-11",
+   "nomeFornecedor": "PESSOA FICTICIA 11",
+   "valor": 25000,
+   "data": "16/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com pessoal",
+   "descricaoDespesa": "Descricao sintetica 105",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-34",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 34 LTDA",
+   "valor": 27233,
+   "data": "20/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Cessão ou locação de veículos",
+   "descricaoDespesa": "Descricao sintetica 106",
+   "especieDocumento": "Fatura",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 3,
+   "data": "10/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 107",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-35",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 35 LTDA",
+   "valor": 400000,
+   "data": "25/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com transporte ou deslocamento",
+   "descricaoDespesa": "Descricao sintetica 108",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 13.6,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 109",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-14",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 14 LTDA",
+   "valor": 60000,
+   "data": "24/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços prestados por terceiros",
+   "descricaoDespesa": "Descricao sintetica 110",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-5",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 5 LTDA",
+   "valor": 95700,
+   "data": "31/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Pesquisas ou testes eleitorais",
+   "descricaoDespesa": "Descricao sintetica 111",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-12",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 12 LTDA",
+   "valor": 26500,
+   "data": "08/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 112",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-15",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 15 LTDA",
+   "valor": 2000000,
+   "data": "16/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços prestados por terceiros",
+   "descricaoDespesa": "Descricao sintetica 113",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-29",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 29 LTDA",
+   "valor": 65000,
+   "data": "23/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços prestados por terceiros",
+   "descricaoDespesa": "Descricao sintetica 114",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-13",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 13 LTDA",
+   "valor": 250000,
+   "data": "14/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesa com Impulsionamento de Conteúdos",
+   "descricaoDespesa": "Descricao sintetica 115",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-10",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 10 LTDA",
+   "valor": 50000,
+   "data": "02/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 116",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-10",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 10 LTDA",
+   "valor": 105000,
+   "data": "02/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 117",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-10",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 10 LTDA",
+   "valor": 28000,
+   "data": "02/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 118",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-6",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 6 LTDA",
+   "valor": 50000,
+   "data": "14/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesa com Impulsionamento de Conteúdos",
+   "descricaoDespesa": "Descricao sintetica 119",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-36",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 36 LTDA",
+   "valor": 2450,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por jornais e revistas",
+   "descricaoDespesa": "Descricao sintetica 120",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PF-12",
+   "nomeFornecedor": "PESSOA FICTICIA 12",
+   "valor": 6000,
+   "data": "16/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com pessoal",
+   "descricaoDespesa": "Descricao sintetica 121",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-24",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 24 LTDA",
+   "valor": 220000,
+   "data": "28/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por adesivos",
+   "descricaoDespesa": "Descricao sintetica 122",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-23",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 23 LTDA",
+   "valor": 35000,
+   "data": "01/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Produção de programas de rádio, televisão ou vídeo",
+   "descricaoDespesa": "Descricao sintetica 123",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-4",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 4 LTDA",
+   "valor": 16690,
+   "data": "22/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com transporte ou deslocamento",
+   "descricaoDespesa": "Descricao sintetica 124",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-12",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 12 LTDA",
+   "valor": 16500,
+   "data": "08/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 125",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-37",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 37 LTDA",
+   "valor": 3500,
+   "data": "10/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 126",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 2.5,
+   "data": "15/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 127",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-16",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 16 LTDA",
+   "valor": 25000,
+   "data": "16/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços prestados por terceiros",
+   "descricaoDespesa": "Descricao sintetica 128",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-38",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 38 LTDA",
+   "valor": 32585,
+   "data": "18/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Cessão ou locação de veículos",
+   "descricaoDespesa": "Descricao sintetica 129",
+   "especieDocumento": "Fatura",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-13",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 13 LTDA",
+   "valor": 500000,
+   "data": "21/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesa com Impulsionamento de Conteúdos",
+   "descricaoDespesa": "Descricao sintetica 130",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-2",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 2 LTDA",
+   "valor": 8078.57,
+   "data": "19/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Cessão ou locação de veículos",
+   "descricaoDespesa": "Descricao sintetica 131",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 2.5,
+   "data": "10/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 132",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 2.5,
+   "data": "23/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 133",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-2",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 2 LTDA",
+   "valor": 8078.57,
+   "data": "19/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Cessão ou locação de veículos",
+   "descricaoDespesa": "Descricao sintetica 134",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-2",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 2 LTDA",
+   "valor": 8078.57,
+   "data": "19/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Cessão ou locação de veículos",
+   "descricaoDespesa": "Descricao sintetica 135",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-2",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 2 LTDA",
+   "valor": 4752.1,
+   "data": "19/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Cessão ou locação de veículos",
+   "descricaoDespesa": "Descricao sintetica 136",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-32",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 32 LTDA",
+   "valor": 1500000,
+   "data": "01/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Produção de programas de rádio, televisão ou vídeo",
+   "descricaoDespesa": "Descricao sintetica 137",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PF-13",
+   "nomeFornecedor": "PESSOA FICTICIA 13",
+   "valor": 6000,
+   "data": "16/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com pessoal",
+   "descricaoDespesa": "Descricao sintetica 138",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-6",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 6 LTDA",
+   "valor": 50000,
+   "data": "22/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesa com Impulsionamento de Conteúdos",
+   "descricaoDespesa": "Descricao sintetica 139",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PF-14",
+   "nomeFornecedor": "PESSOA FICTICIA 14",
+   "valor": 10000,
+   "data": "16/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com pessoal",
+   "descricaoDespesa": "Descricao sintetica 140",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-13",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 13 LTDA",
+   "valor": 379000,
+   "data": "17/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesa com Impulsionamento de Conteúdos",
+   "descricaoDespesa": "Descricao sintetica 141",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-12",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 12 LTDA",
+   "valor": 7500,
+   "data": "21/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 142",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-22",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 22 LTDA",
+   "valor": 200000,
+   "data": "24/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços contábeis",
+   "descricaoDespesa": "Descricao sintetica 143",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 2,
+   "data": "15/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 144",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-12",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 12 LTDA",
+   "valor": 26500,
+   "data": "08/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 145",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 1,
+   "data": "11/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 146",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PF-15",
+   "nomeFornecedor": "PESSOA FICTICIA 15",
+   "valor": 20000,
+   "data": "01/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com pessoal",
+   "descricaoDespesa": "Descricao sintetica 147",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-28",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 28 LTDA",
+   "valor": 1000000,
+   "data": "01/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços advocatícios",
+   "descricaoDespesa": "Descricao sintetica 148",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-12",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 12 LTDA",
+   "valor": 16500,
+   "data": "08/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 149",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PF-16",
+   "nomeFornecedor": "PESSOA FICTICIA 16",
+   "valor": 6000,
+   "data": "16/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com pessoal",
+   "descricaoDespesa": "Descricao sintetica 150",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PF-17",
+   "nomeFornecedor": "PESSOA FICTICIA 17",
+   "valor": 25000,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com pessoal",
+   "descricaoDespesa": "Descricao sintetica 151",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-12",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 12 LTDA",
+   "valor": 26500,
+   "data": "08/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 152",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-6",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 6 LTDA",
+   "valor": 50000,
+   "data": "22/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesa com Impulsionamento de Conteúdos",
+   "descricaoDespesa": "Descricao sintetica 153",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 3,
+   "data": "21/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 154",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-1",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 1 LTDA",
+   "valor": 756521.5,
+   "data": "19/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Serviços prestados por terceiros",
+   "descricaoDespesa": "Descricao sintetica 155",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-6",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 6 LTDA",
+   "valor": 50000,
+   "data": "22/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesa com Impulsionamento de Conteúdos",
+   "descricaoDespesa": "Descricao sintetica 156",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-12",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 12 LTDA",
+   "valor": 16500,
+   "data": "08/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 157",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 5,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 158",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-13",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 13 LTDA",
+   "valor": 250000,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesa com Impulsionamento de Conteúdos",
+   "descricaoDespesa": "Descricao sintetica 159",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-25",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 25 LTDA",
+   "valor": 159264.6,
+   "data": "17/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Despesas com transporte ou deslocamento",
+   "descricaoDespesa": "Descricao sintetica 160",
+   "especieDocumento": "Outro",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-12",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 12 LTDA",
+   "valor": 26500,
+   "data": "08/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 161",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 0.5,
+   "data": "08/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 162",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": null,
+   "nomeFornecedor": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "valor": 0.5,
+   "data": "04/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Encargos financeiros, taxas bancárias e/ou op. cartão de crédito",
+   "descricaoDespesa": "Descricao sintetica 163",
+   "especieDocumento": null,
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-12",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 12 LTDA",
+   "valor": 26500,
+   "data": "08/09/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por materiais impressos",
+   "descricaoDespesa": "Descricao sintetica 164",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  }
+ ]
+}

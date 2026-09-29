@@ -997,6 +997,8 @@ export function CandidatoProfile({
                 patrimonioEleicoes={patrimonioEleicoes}
                 financiamento={financiamento}
                 doadoresRecorrentes={ficha.doadores_recorrentes ?? null}
+                despesas={ficha.financiamento_despesas ?? null}
+                despesasStatus={ficha.financiamento_despesas_status}
                 financiamentoEleicoes={financiamentoEleicoes}
                 historico={historico}
                 gastos={gastos}

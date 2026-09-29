@@ -1,6 +1,8 @@
 import { readFileSync } from "node:fs"
 import { pathToFileURL } from "node:url"
 
+import { FINANCIAMENTO_DESPESAS_COLUNAS_PUBLICAS } from "../src/lib/financiamento-despesas-contrato"
+
 interface SecuritySurfaceEnv {
   url: string
   anonKey: string
@@ -104,11 +106,94 @@ export async function auditPublicSecuritySurface(
   )
 }
 
+export interface DespesasSurfaceResult extends SecuritySurfaceResult {
+  pendingApply: boolean
+}
+
+/** Colunas que a view `financiamento_despesas_publico` expõe, direto do contrato. */
+export const DESPESAS_COLUNAS_PUBLICAS_GATE = FINANCIAMENTO_DESPESAS_COLUNAS_PUBLICAS.join(",")
+
+/**
+ * Superfície das despesas de campanha (migration 20260929100000).
+ *
+ * Antes do apply em produção, a tabela e a view não existem e o PostgREST
+ * responde 404 em todas as rotas: isso é "aplicação pendente", não falha. Assim
+ * que qualquer rota responder diferente de 404, a migration está aplicada e o
+ * 404 deixa de ser aceito em todas as outras (tabela sem view, ou o contrário,
+ * é estado quebrado).
+ *
+ * A tabela base mantém colunas operacionais sem grant: select=* e leitura
+ * direta dessas colunas precisam ser negadas, e a escrita também, na tabela e
+ * na view (a view é atualizável automaticamente).
+ */
+export async function auditFinanciamentoDespesasSurface(
+  env: SecuritySurfaceEnv,
+  fetchImpl: typeof fetch = fetch,
+): Promise<DespesasSurfaceResult[]> {
+  const impossibleId = "00000000-0000-0000-0000-000000000000"
+  const headers = {
+    apikey: env.anonKey,
+    Authorization: `Bearer ${env.anonKey}`,
+    "content-type": "application/json",
+    Prefer: "return=minimal",
+  }
+  const negado = [401, 403] as const
+  const escrita = JSON.stringify({
+    candidato_id: impossibleId,
+    ano_eleicao: 1900,
+    sq_candidato: "0",
+    estado_coleta: "declarado",
+    fonte: "gate",
+    coletado_em: "1900-01-01T00:00:00Z",
+  })
+  const checks: { name: string; method: string; path: string; body?: string; allowed: readonly number[] }[] = [
+    { name: "despesas-view-readable", method: "GET", path: `financiamento_despesas_publico?select=${DESPESAS_COLUNAS_PUBLICAS_GATE}&limit=1`, allowed: [200] },
+    { name: "despesas-base-colunas-publicas-readable", method: "GET", path: `financiamento_despesas?select=${DESPESAS_COLUNAS_PUBLICAS_GATE}&limit=1`, allowed: [200] },
+    { name: "despesas-base-select-star-denied", method: "GET", path: "financiamento_despesas?select=*&limit=1", allowed: negado },
+    ...["updated_at", "created_at", "id_ultima_entrega", "tipo_entrega"].map((coluna) => ({
+      name: `despesas-base-${coluna}-denied`,
+      method: "GET",
+      path: `financiamento_despesas?select=${coluna}&limit=1`,
+      allowed: negado,
+    })),
+    ...["financiamento_despesas", "financiamento_despesas_publico"].flatMap((relacao) => [
+      { name: `despesas-insert-denied-${relacao}`, method: "POST", path: relacao, body: escrita, allowed: negado },
+      { name: `despesas-update-denied-${relacao}`, method: "PATCH", path: `${relacao}?id=eq.${impossibleId}`, body: "{\"fonte\":\"gate\"}", allowed: negado },
+      { name: `despesas-delete-denied-${relacao}`, method: "DELETE", path: `${relacao}?id=eq.${impossibleId}`, allowed: negado },
+    ]),
+  ]
+
+  const statuses = await Promise.all(
+    checks.map(async (check) => {
+      const response = await fetchImpl(`${env.url}/rest/v1/${check.path}`, {
+        method: check.method,
+        headers,
+        body: check.body,
+      })
+      return response.status
+    }),
+  )
+  const pendente = statuses.every((status) => status === 404)
+  return checks.map((check, index) => ({
+    name: check.name,
+    status: statuses[index]!,
+    pendingApply: pendente,
+    passed: pendente || check.allowed.includes(statuses[index]!),
+  }))
+}
+
 async function main() {
-  const results = await auditPublicSecuritySurface(loadEnv())
+  const env = loadEnv()
+  const results: SecuritySurfaceResult[] = await auditPublicSecuritySurface(env)
   for (const result of results) {
     console.log(`${result.passed ? "PASS" : "FAIL"} ${result.name}: HTTP ${result.status}`)
   }
+  const despesas = await auditFinanciamentoDespesasSurface(env)
+  for (const result of despesas) {
+    const rotulo = result.pendingApply ? "PENDING (migration 20260929100000 ainda nao aplicada)" : result.passed ? "PASS" : "FAIL"
+    console.log(`${rotulo} ${result.name}: HTTP ${result.status}`)
+  }
+  results.push(...despesas)
   const failed = results.filter((result) => !result.passed)
   if (failed.length > 0) {
     console.error(`audit:public-security-surface:gate FAILED: ${failed.length} check(s)`)

@@ -12,7 +12,7 @@
    "estado": "lacuna_com_dados_tse",
    "valor_total": 84888809.63,
    "n_bens": 44,
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "arquivos com bens: bem_candidato_2026_BA.csv, bem_candidato_2026_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
   },
@@ -23,7 +23,7 @@
    "estado": "lacuna_com_dados_tse",
    "valor_total": 5244567.72,
    "n_bens": 25,
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "arquivos com bens: bem_candidato_2026_AC.csv, bem_candidato_2026_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
   },
@@ -34,7 +34,7 @@
    "estado": "lacuna_com_dados_tse",
    "valor_total": 2917179.51,
    "n_bens": 14,
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_RN.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
   },
@@ -43,7 +43,7 @@
    "ano": 2026,
    "sq": "190002537524",
    "estado": "ausencia_oficial",
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
   },
@@ -101,7 +101,7 @@
    "estado": "lacuna_com_dados_tse",
    "valor_total": 1756648.94,
    "n_bens": 11,
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "arquivos com bens: bem_candidato_2026_CE.csv, bem_candidato_2026_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
   },
@@ -146,7 +146,7 @@
    "ano": 2026,
    "sq": "140002538631",
    "estado": "ausencia_oficial",
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
   },
@@ -210,7 +210,7 @@
    "estado": "lacuna_com_dados_tse",
    "valor_total": 1432848.4,
    "n_bens": 6,
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "arquivos com bens: bem_candidato_2026_AM.csv, bem_candidato_2026_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
   },
@@ -230,7 +230,7 @@
    "estado": "lacuna_com_dados_tse",
    "valor_total": 1168464.77,
    "n_bens": 6,
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "arquivos com bens: bem_candidato_2026_AP.csv, bem_candidato_2026_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
   },
@@ -239,7 +239,7 @@
    "ano": 2026,
    "sq": "10002533539",
    "estado": "ausencia_oficial",
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
   },
@@ -292,7 +292,7 @@
    "estado": "lacuna_com_dados_tse",
    "valor_total": 16147849.34,
    "n_bens": 17,
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_MS.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
   },
@@ -301,7 +301,7 @@
    "ano": 2026,
    "sq": "150002538692",
    "estado": "ausencia_oficial",
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
   },
@@ -312,7 +312,7 @@
    "estado": "lacuna_com_dados_tse",
    "valor_total": 872808,
    "n_bens": 3,
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_PI.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
   },
@@ -352,7 +352,7 @@
    "ano": 2026,
    "sq": "180002537422",
    "estado": "ausencia_oficial",
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
   },
@@ -361,7 +361,7 @@
    "ano": 2026,
    "sq": "40002535267",
    "estado": "ausencia_oficial",
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
   },
@@ -372,7 +372,7 @@
    "estado": "lacuna_com_dados_tse",
    "valor_total": 300000,
    "n_bens": 1,
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_PE.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
   },
@@ -453,7 +453,7 @@
    "ano": 2026,
    "sq": "170002538097",
    "estado": "ausencia_oficial",
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
   },
@@ -551,7 +551,7 @@
    "ano": 2026,
    "sq": "170002537230",
    "estado": "ausencia_oficial",
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
   },
@@ -569,7 +569,7 @@
    "ano": 2026,
    "sq": "180002538530",
    "estado": "ausencia_oficial",
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
   },
@@ -580,7 +580,7 @@
    "estado": "lacuna_com_dados_tse",
    "valor_total": 2818036.89,
    "n_bens": 11,
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_SC.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
   },
@@ -676,7 +676,7 @@
    "ano": 2026,
    "sq": "30002530015",
    "estado": "ausencia_oficial",
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
   },
@@ -709,7 +709,7 @@
    "estado": "lacuna_com_dados_tse",
    "valor_total": 2070608,
    "n_bens": 5,
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "arquivos com bens: bem_candidato_2026_AM.csv, bem_candidato_2026_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
   },
@@ -751,7 +751,7 @@
    "ano": 2026,
    "sq": "100002534191",
    "estado": "ausencia_oficial",
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
   },
@@ -762,7 +762,7 @@
    "estado": "lacuna_com_dados_tse",
    "valor_total": 1000,
    "n_bens": 1,
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_RS.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
   },
@@ -773,7 +773,7 @@
    "estado": "lacuna_com_dados_tse",
    "valor_total": 1799948.6,
    "n_bens": 7,
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_PI.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
   },
@@ -793,7 +793,7 @@
    "ano": 2026,
    "sq": "170002537227",
    "estado": "ausencia_oficial",
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
   },
@@ -831,7 +831,7 @@
    "estado": "lacuna_com_dados_tse",
    "valor_total": 900000,
    "n_bens": 1,
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "arquivos com bens: bem_candidato_2026_DF.csv, bem_candidato_2026_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
   },
@@ -851,7 +851,7 @@
    "estado": "lacuna_com_dados_tse",
    "valor_total": 91397.22,
    "n_bens": 5,
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "arquivos com bens: bem_candidato_2026_BA.csv, bem_candidato_2026_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
   },
@@ -947,7 +947,7 @@
    "estado": "lacuna_com_dados_tse",
    "valor_total": 258000,
    "n_bens": 2,
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_SE.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
   },
@@ -1003,7 +1003,7 @@
    "ano": 2026,
    "sq": "250002536915",
    "estado": "ausencia_oficial",
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
   },
@@ -1034,7 +1034,7 @@
    "estado": "lacuna_com_dados_tse",
    "valor_total": 120000,
    "n_bens": 1,
-   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "url": "local:<repo>/data/tse/bem_candidato_2026.zip",
    "verificado_em": "2026-08-07T18:27:03.374Z",
    "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_RJ.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
   }

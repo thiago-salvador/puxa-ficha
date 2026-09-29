@@ -746,3 +746,107 @@ describe("public profile DTO", () => {
     assert.equal(incomplete[0].cobertura, "dados_presentes_cobertura_nao_verificada")
   })
 })
+
+describe("DTO das despesas de campanha", () => {
+  const linhaCompleta = {
+    id: "11111111-1111-4111-8111-111111111111",
+    candidato_id: "22222222-2222-4222-8222-222222222222",
+    ano_eleicao: 2026,
+    sq_candidato: "SQ-INTERNO-1",
+    uf: "SP",
+    municipio_codigo: "71072",
+    cargo_candidatura: "Governador",
+    estado_coleta: "declarado" as const,
+    total_despesas_contratadas: 1000,
+    total_despesas_pagas: null,
+    total_doacoes_a_terceiros: 100,
+    recursos_financeiros: 800,
+    recursos_estimaveis: 200,
+    divida_campanha: null,
+    sobra_financeira: null,
+    concentracao_despesas: [{ tipo: "Publicidade", quantidade: 2, valor: 900, cnpj: "11222333000199" }],
+    maiores_fornecedores: [
+      { tipo: "PJ" as const, nome: "Gráfica Exemplo Ltda", quantidade: 2, valor: 700, cnpj: "11222333000199" },
+      { tipo: "PF_agregado" as const, quantidade_prestadores: 3, quantidade: 4, valor: 200, cpf: "12345678901" },
+    ],
+    doacoes_a_terceiros: [
+      {
+        destinatario_tipo: "partido" as const,
+        destinatario_nome: "Partido Exemplo",
+        uf: "SP",
+        cargo: null,
+        partido: "PEX",
+        valor: 100,
+        candidato_slug: null,
+        documento: "11222333000199",
+      },
+    ],
+    prestacao_parcial: true,
+    data_entrega: "2026-09-20",
+    fonte: "TSE",
+    fonte_url: "https://divulgacandcontas.tse.jus.br/",
+    coletado_em: "2026-09-28T12:00:00.000Z",
+    id_ultima_entrega: "interno",
+    updated_at: "2026-09-28T12:00:00.000Z",
+  }
+
+  it("copia campo a campo e não vaza identificadores de cadastro nem documentos", () => {
+    const ficha = fixtureProfile()
+    ficha.financiamento_despesas = [linhaCompleta as never]
+    ficha.financiamento_despesas_status = "ok"
+
+    const dto = toPublicCandidatoProfileDto(ficha)
+    const codificado = JSON.stringify(dto.financiamento_despesas)
+
+    assert.equal(dto.financiamento_despesas_status, "ok")
+    assert.equal(dto.financiamento_despesas?.length, 1)
+    assert.deepEqual(findForbiddenPublicProfileKeys(dto), [])
+    assert.doesNotMatch(codificado, /candidato_id|sq_candidato|municipio_codigo|id_ultima_entrega|updated_at|cnpj|cpf|documento/)
+    assert.doesNotMatch(codificado, /11222333000199|12345678901|SQ-INTERNO-1/)
+    const linha = dto.financiamento_despesas?.[0]
+    assert.match(linha?.id ?? "", /^desp-1-/)
+    assert.equal(linha?.total_despesas_contratadas, 1000)
+    assert.equal(linha?.total_despesas_pagas, null, "null da fonte continua null")
+    assert.equal(linha?.prestacao_parcial, true)
+    assert.deepEqual(linha?.maiores_fornecedores[1], { tipo: "PF_agregado", quantidade_prestadores: 3, quantidade: 4, valor: 200 })
+    assert.deepEqual(Object.keys(linha?.concentracao_despesas[0] ?? {}).sort(), ["quantidade", "tipo", "valor"])
+  })
+
+  it("status indisponivel (ou ausente) nunca leva linhas e não vira lista vazia", () => {
+    const indisponivel = fixtureProfile()
+    indisponivel.financiamento_despesas = [linhaCompleta as never]
+    indisponivel.financiamento_despesas_status = "indisponivel"
+    const dtoIndisponivel = toPublicCandidatoProfileDto(indisponivel)
+    assert.equal(dtoIndisponivel.financiamento_despesas, null)
+    assert.equal(dtoIndisponivel.financiamento_despesas_status, "indisponivel")
+
+    const semLeitura = toPublicCandidatoProfileDto(fixtureProfile())
+    assert.equal(semLeitura.financiamento_despesas, null)
+    assert.equal(semLeitura.financiamento_despesas_status, "indisponivel")
+  })
+
+  it("leitura ok com lista vazia é preservada como lista vazia", () => {
+    const ficha = fixtureProfile()
+    ficha.financiamento_despesas = []
+    ficha.financiamento_despesas_status = "ok"
+    const dto = toPublicCandidatoProfileDto(ficha)
+    assert.deepEqual(dto.financiamento_despesas, [])
+    assert.equal(dto.financiamento_despesas_status, "ok")
+  })
+
+  it("destinatário 'outro' sai sem nome e texto com documento é mascarado", () => {
+    const ficha = fixtureProfile()
+    ficha.financiamento_despesas = [
+      {
+        ...linhaCompleta,
+        maiores_fornecedores: [{ tipo: "PJ", nome: "EMPRESA 11222333000199", quantidade: 1, valor: 1 }],
+        doacoes_a_terceiros: [
+          { destinatario_tipo: "outro", destinatario_nome: "Pessoa Física Exemplo", uf: null, cargo: null, partido: null, valor: 5, candidato_slug: null },
+        ],
+      } as never,
+    ]
+    ficha.financiamento_despesas_status = "ok"
+    const codificado = JSON.stringify(toPublicCandidatoProfileDto(ficha).financiamento_despesas)
+    assert.doesNotMatch(codificado, /Pessoa Física Exemplo|11222333000199/)
+  })
+})

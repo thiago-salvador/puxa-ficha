@@ -14,10 +14,12 @@ import { formatDate, formatBRL, safeHref } from "@/lib/utils"
 import type { Financiamento, GastoExecutivo, GastoParlamentar, HistoricoPolitico, Patrimonio, PatrimonioContextoPublico, SectionFreshnessInfo, TransparenciaFamiliaPublico } from "@/lib/types"
 import { ExternalLink } from "lucide-react"
 import { DataFreshnessNotice } from "./DataFreshnessNotice"
+import { DespesasCampanhaSection, despesasVisiveis } from "./DespesasCampanhaSection"
+import type { DespesasLeituraStatus } from "@/lib/financiamento-despesas-contrato"
 import { PatrimonioEvolucaoAlerta } from "./PatrimonioEvolucaoAlerta"
 import { formatFinanciamentoPleitoPublicLabelForRow } from "@/lib/financiamento-pleito-public-label"
 import { buildFinanciamentoEleicoes, descreverFinanciamentoEleicao, type FinanciamentoEleicaoPublico } from "@/lib/financiamento-eleicoes"
-import type { PatrimonioEleicaoPublico } from "@/lib/public-profile-dto"
+import type { FinanciamentoDespesasPublico, PatrimonioEleicaoPublico } from "@/lib/public-profile-dto"
 import { descreverDoacoes, type DoadorRecorrenteOutraCandidatura, type DoadorRecorrentePublico } from "@/lib/doador-recorrente-publico"
 import { DOADOR_RECORRENTE_COPY, FINANCING_COLOR_BY_KEY, type FinancingBreakdownKey, formatFinanciamentoEleicaoEstadoLabel, formatFinancingLabel, formatPatrimonioEleicaoEstadoLabel, formatPublicLabel } from "@/lib/ui-labels"
 import { financiamentoPleitoNotaRodape, financiamentoPleitoSubtitulo } from "@/lib/financiamento-pleito-display"
@@ -678,6 +680,9 @@ interface MoneyTabSectionProps {
   /** Doadores em comum com outras candidaturas; `null`/ausente = seção omitida. */
   doadoresRecorrentes?: DoadorRecorrentePublico[] | null
   financiamentoEleicoes?: FinanciamentoEleicaoPublico[] | null
+  /** Despesas de campanha; sem `despesasStatus === "ok"` a seção inteira é omitida. */
+  despesas?: FinanciamentoDespesasPublico[] | null
+  despesasStatus?: DespesasLeituraStatus
   /** Bruto (API); usado só para rótulos de pleito em financiamento, não para `cargo_disputado` atual. */
   historico: HistoricoPolitico[]
   gastos: GastoParlamentar[]
@@ -708,6 +713,8 @@ export function MoneyTabSection({
   financiamento,
   doadoresRecorrentes = null,
   financiamentoEleicoes,
+  despesas = null,
+  despesasStatus,
   historico,
   gastos,
   transparencia = [],
@@ -754,6 +761,9 @@ export function MoneyTabSection({
   // terá o órgão estadual dele). Somar órgãos diferentes numa série só
   // misturaria dados de fontes distintas; cada órgão rende um bloco próprio.
   const gastosExecutivoPorOrgao = groupGastosExecutivoPorOrgao(gastosExecutivo)
+  // Despesas declaradas contam como dado financeiro: candidato com despesas e
+  // sem receitas publicadas não pode cair no estado "sem financiamento".
+  const temDespesas = despesasVisiveis(despesas, despesasStatus).length > 0
   return (
     <div className="space-y-12" data-pf-money-tab>
       {patrimonio.length > 0 && (
@@ -1001,7 +1011,13 @@ export function MoneyTabSection({
         </div>
       )}
 
-      {patrimonio.length === 0 && financiamento.length === 0 && (
+      <DespesasCampanhaSection
+        despesas={despesas}
+        status={despesasStatus}
+        anosComReceitas={financiamento.map((item) => item.ano_eleicao)}
+      />
+
+      {patrimonio.length === 0 && financiamento.length === 0 && !temDespesas && (
         <div>
           <SectionLabel>Dinheiro</SectionLabel>
           <SectionTitle>Dados financeiros</SectionTitle>
@@ -1017,7 +1033,7 @@ export function MoneyTabSection({
           )}
         </div>
       )}
-      {patrimonio.length === 0 && financiamento.length > 0 && (
+      {patrimonio.length === 0 && (financiamento.length > 0 || temDespesas) && (
         <div>
           <EmptyState {...getPatrimonioEmptyState(historicoLength > 0, patrimonioEleicoes)} />
           {patrimonioEleicoesSemDado.length > 0 && (
@@ -1035,6 +1051,7 @@ export function MoneyTabSection({
       */}
       {financiamento.length === 0 &&
         financiamentoEleicoesSemDado.length === 0 &&
+        !temDespesas &&
         patrimonio.length > 0 && <EmptyState {...getFinanciamentoEmptyState()} />}
 
       {(gastos.length > 0 || freshness?.gastos_parlamentares?.status === "not_applicable" || freshness?.gastos_parlamentares?.status === "stale") && (

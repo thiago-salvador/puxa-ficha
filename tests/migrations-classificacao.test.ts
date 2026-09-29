@@ -515,7 +515,8 @@ describe("classificador puro (#136)", () => {
     // Processos do Senado (20260928010000), DML com guardas: 429 + 105 = 534, a confirmar pelo gate PG17.
     // L7 editorial (20260929010000): --gate PG17 mediu 430 + 105 = 535.
     // L8 Mesa (20260929020000), DML com guarda pf.replay: 431 + 105 = 536.
-    assert.equal(manifesto.aplicadas_esperadas, 431)
+    // Despesas de campanha (20260929100000), DDL da tabela financiamento_despesas: 432 + 105 = 537.
+    assert.equal(manifesto.aplicadas_esperadas, 432)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
@@ -646,7 +647,7 @@ describe("classificador puro (#136)", () => {
     // Tarcísio: só o CNJ aprovado; Pazolini: nunca inserido e oculto no site.
     assert.match(migration, /'2052422-44\.2025\.8\.26\.0000'/)
     assert.doesNotMatch(migration, /1003777-02\.2024\.8\.26\.0562|2002493-39\.2023\.8\.08\.0024/)
-    assert.doesNotMatch(migration, /\/Users\//)
+    assert.doesNotMatch(migration, /[/]Users[/]/)
     assert.equal(
       TODAS_COM_REPLAY_SCHEMA.find((item) => item.arquivo === arquivo)?.replaySchema,
       false,

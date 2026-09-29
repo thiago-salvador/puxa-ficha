@@ -22,3 +22,13 @@ it("aceita somente rodada sem pendências", () => {
   assert.doesNotThrow(() => assertCompleteAssets([asset], []))
   assert.throws(() => assertCompleteAssets([asset], [{ family: "historico_politico", year: 2024, catalog_url: asset.catalog_url, reason: "HTTP 403" }]), /1 pendente/)
 })
+
+it("nomeia a família e o ano que faltam no erro", () => {
+  assert.throws(
+    () => assertCompleteAssets([], [
+      { family: "historico_politico", year: 2024, catalog_url: "https://dadosabertos.tse.jus.br", reason: "HTTP 403" },
+      { family: "financiamento", year: 2018, catalog_url: "https://dadosabertos.tse.jus.br", reason: "catálogo oficial indisponível" },
+    ]),
+    /2 pendente\(s\): historico_politico\/2024 \(HTTP 403\); financiamento\/2018 \(catálogo oficial indisponível\)/,
+  )
+})
