@@ -35,6 +35,13 @@ type LinhaView = {
 type Cliente = ReturnType<typeof createServiceRoleSupabaseClient>
 
 /**
+ * Opções do cliente da seção. A tag é a da ficha: `revalidate-cache` com
+ * `public-candidato-ficha` expira também estas leituras, em vez de esperar a
+ * hora do `revalidate` depois de uma retirada.
+ */
+export const OPCOES_CLIENTE_EVIDENCIAS = { cacheMode: "isr", tags: ["public-candidato-ficha"] } as const
+
+/**
  * Só em desenvolvimento local: linhas da view vindas de arquivo (a saída da
  * cascata), para ver a seção antes de a migration existir em produção. Os
  * detalhes continuam vindo das tabelas de origem. Em produção é ignorado.
@@ -178,7 +185,7 @@ export async function getCompromissoEvidenciasEstado(
 ): Promise<EstadoEvidenciasPrograma> {
   let db: Cliente
   try {
-    db = (deps.criarCliente ?? (() => createServiceRoleSupabaseClient({ cacheMode: "isr" })))()
+    db = (deps.criarCliente ?? (() => createServiceRoleSupabaseClient(OPCOES_CLIENTE_EVIDENCIAS)))()
   } catch {
     return { estado: "erro_leitura" }
   }

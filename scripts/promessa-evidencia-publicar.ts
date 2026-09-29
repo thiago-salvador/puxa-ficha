@@ -17,7 +17,11 @@
  * vínculo. Linha publicada antes da trava (sem impressão) que a cascata não
  * reaprova fica publicada SEM impressão, marcada `sem_impressao_anterior`, e
  * vai à revisão humana: carimbar a entrada de hoje nela apagaria a detecção de
- * mudança desde a publicação original. Toda escrita passa por `escreverAuditado`. Cada execução
+ * mudança desde a publicação original. Decisão editorial manda: linha cujo
+ * `revisado_por` não é da cascata (ver `scripts/lib/compromisso-evidencia-decisao.ts`)
+ * não é sobrescrita pelo upsert nem retirada pela reconciliação, esteja ela
+ * publicada ou retirada. Para retirar vínculos por decisão, usar
+ * `scripts/promessa-evidencia-decidir.ts`. Toda escrita passa por `escreverAuditado`. Cada execução
  * grava uma amostra dos publicados para auditoria e, com `--apply`, um recibo
  * por candidato em `coleta_log` (ver `promessa-evidencia-recibos.ts`).
  */
@@ -26,6 +30,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import path from "node:path"
 import { fileURLToPath, pathToFileURL } from "node:url"
 
+import { chaveDoVinculo, ehDecisaoEditorial, PREFIXO_REVISOR_CASCATA } from "./lib/compromisso-evidencia-decisao"
 import { escreverAuditado } from "./lib/escrita-auditada"
 import { ensureSupabaseClient } from "./lib/supabase"
 import type { ParCandidato } from "./promessa-evidencia-pares"
@@ -82,6 +87,7 @@ export type VinculoAtivo = {
   tipo_evidencia: string
   evidencia_ref: string
   motivo: string | null
+  revisado_por?: string | null
 }
 
 export type PlanoReconciliacao = {
@@ -92,6 +98,8 @@ export type PlanoReconciliacao = {
    * humana e segue assim, sem impressão, até decisão ou reaprovação da cascata.
    */
   mantidosPorVariancia: Array<{ id: string; chave: string; impressao: string; sem_impressao_anterior: boolean }>
+  /** Publicados por decisão editorial: a cascata não os retira. */
+  mantidosPorDecisaoEditorial: Array<{ id: string; chave: string }>
 }
 
 /**
@@ -105,10 +113,14 @@ export function planejarReconciliacao(input: {
   pares: ReadonlyArray<Pick<ParCandidato, "programaChave" | "compromisso" | "evidencia">>
 }): PlanoReconciliacao {
   const atual = new Map(input.pares.map((p) => [chaveVinculo(p.programaChave, p.compromisso.temaId, p.evidencia.tipo, p.evidencia.ref), impressaoDaEntrada(p)]))
-  const plano: PlanoReconciliacao = { retirar: [], mantidosPorVariancia: [] }
+  const plano: PlanoReconciliacao = { retirar: [], mantidosPorVariancia: [], mantidosPorDecisaoEditorial: [] }
   for (const ativa of input.ativas) {
     const chave = chaveVinculo(ativa.programa_chave, ativa.tema_id, ativa.tipo_evidencia, ativa.evidencia_ref)
     if (input.publicadasAgora.has(chave)) continue
+    if (ehDecisaoEditorial(ativa.revisado_por)) {
+      plano.mantidosPorDecisaoEditorial.push({ id: ativa.id, chave })
+      continue
+    }
     const impressaoAtual = atual.get(chave)
     if (!impressaoAtual) {
       plano.retirar.push({ id: ativa.id, chave, causa: "par_ausente" })
@@ -172,12 +184,56 @@ export function linhasParaPublicar(input: {
       origem: "cascata",
       probabilidade: Number(objeto.toFixed(4)),
       verificado: true,
-      revisado_por: `cascata ${input.versao} (${jev?.model ?? "jev"} + ${verificador})`,
+      revisado_por: `${PREFIXO_REVISOR_CASCATA}${input.versao} (${jev?.model ?? "jev"} + ${verificador})`,
       revisado_em: input.agora,
       motivo: `aprovado pelas quatro camadas da cascata ${input.versao} | ${MARCA_IMPRESSAO}${impressaoDaEntrada(par)}`,
       updated_at: input.agora,
     })
   }
+  return linhas
+}
+
+export type VinculoExistente = {
+  id: string
+  programa_chave: string
+  frase_id: string | null
+  tema_id: string | null
+  tipo_evidencia: string
+  evidencia_ref: string
+  verificado: boolean
+  revisado_por: string | null
+}
+
+/**
+ * Tira da publicação toda linha cuja chave já tem decisão editorial gravada. Puro.
+ * O upsert por chave natural sobrescreveria `verificado`, `origem` e
+ * `revisado_por` dessa linha e desfaria a decisão (retirada voltaria à ficha).
+ */
+export function separarDecisoesEditoriais<T extends { programa_chave: string; frase_id: null; tema_id: string; tipo_evidencia: string; evidencia_ref: string }>(input: {
+  linhas: ReadonlyArray<T>
+  existentes: ReadonlyArray<VinculoExistente>
+}): { publicar: T[]; preservadas: Array<{ id: string; chave: string; verificado: boolean; revisado_por: string }> } {
+  const editoriais = new Map(input.existentes.filter((e) => ehDecisaoEditorial(e.revisado_por)).map((e) => [chaveDoVinculo(e), e]))
+  const publicar: T[] = []
+  const preservadas: Array<{ id: string; chave: string; verificado: boolean; revisado_por: string }> = []
+  for (const linha of input.linhas) {
+    const chave = chaveDoVinculo(linha)
+    const editorial = editoriais.get(chave)
+    if (editorial) preservadas.push({ id: editorial.id, chave, verificado: editorial.verificado, revisado_por: editorial.revisado_por! })
+    else publicar.push(linha)
+  }
+  return { publicar, preservadas }
+}
+
+/** Todas as linhas com `frase_id` nulo, as únicas que colidem com a chave da cascata. */
+async function lerExistentes(leitor: ReturnType<typeof ensureSupabaseClient>): Promise<VinculoExistente[]> {
+  const { data, error } = await leitor.from("compromisso_evidencia")
+    .select("id,programa_chave,frase_id,tema_id,tipo_evidencia,evidencia_ref,verificado,revisado_por")
+    .is("frase_id", null)
+    .range(0, 9999)
+  if (error) throw new Error(error.message)
+  const linhas = (data ?? []) as VinculoExistente[]
+  if (linhas.length >= 10000) throw new Error("compromisso_evidencia com 10000+ linhas: paginar lerExistentes antes de publicar")
   return linhas
 }
 
@@ -199,8 +255,9 @@ async function main(): Promise<void> {
       return
     }
     const linhas = await escreverAuditado(
-      { script: SCRIPT, tabela: "compromisso_evidencia", motivo: "chave de despublicacao: retira tudo que veio da cascata automatica", recorte: "origem = cascata" },
-      () => db.from("compromisso_evidencia").update({ verificado: false, updated_at: agora }).eq("origem", "cascata").eq("verificado", true).select("id"),
+      { script: SCRIPT, tabela: "compromisso_evidencia", motivo: "chave de despublicacao: retira tudo que veio da cascata automatica", recorte: "origem = cascata, revisado_por da cascata" },
+      () => db.from("compromisso_evidencia").update({ verificado: false, updated_at: agora }).eq("origem", "cascata").eq("verificado", true)
+        .like("revisado_por", `${PREFIXO_REVISOR_CASCATA}%`).select("id"),
     )
     console.log(JSON.stringify({ modo: "apply", acao: "despublicar", linhas: linhas.length }))
     return
@@ -212,15 +269,32 @@ async function main(): Promise<void> {
   }
   if (cascata.versao !== VERSAO_CASCATA) throw new Error(`cascata com versao inesperada: ${cascata.versao}`)
   if (cascata.falhasVerificador > 0) throw new Error("cascata com falha do verificador; nada publicado")
-  const linhas = linhasParaPublicar({ pares, publicar: cascata.publicar, cache: cascata.cache, versao: VERSAO_CASCATA, agora })
+  const aprovadas = linhasParaPublicar({ pares, publicar: cascata.publicar, cache: cascata.cache, versao: VERSAO_CASCATA, agora })
+  // Sem leitura do estado não há como saber o que tem decisão editorial: com
+  // `--apply` a falha aborta; no dry-run a publicação aparece sem o filtro.
+  let existentes: VinculoExistente[] | null = null
+  let erroExistentes: string | null = null
+  try {
+    existentes = await lerExistentes(db ?? ensureSupabaseClient())
+  } catch (erro) {
+    if (db) throw erro
+    erroExistentes = erro instanceof Error ? erro.message : String(erro)
+  }
+  const { publicar: linhas, preservadas } = separarDecisoesEditoriais({ linhas: aprovadas, existentes: existentes ?? [] })
   const amostra = amostraAuditoria(linhas, agora)
   mkdirSync(PASTA, { recursive: true })
   const auditoria = path.join(PASTA, `auditoria-${agora.slice(0, 10)}.json`)
   writeFileSync(auditoria, `${JSON.stringify({ gerado_em: agora, versao: VERSAO_CASCATA, publicados: linhas.length, amostra }, null, 2)}\n`)
-  const resumo = { modo: apply ? "apply" : "dry-run", versao: VERSAO_CASCATA, publicar: linhas.length, amostra_auditoria: path.relative(ROOT, auditoria) }
+  const resumo = {
+    modo: apply ? "apply" : "dry-run",
+    versao: VERSAO_CASCATA,
+    publicar: linhas.length,
+    preservadas_por_decisao_editorial: erroExistentes ? { indisponivel: erroExistentes } : preservadas.length,
+    amostra_auditoria: path.relative(ROOT, auditoria),
+  }
   const planoDe = async (leitor: ReturnType<typeof ensureSupabaseClient>) => {
     const { data, error } = await leitor.from("compromisso_evidencia")
-      .select("id,programa_chave,tema_id,tipo_evidencia,evidencia_ref,motivo").eq("origem", "cascata").eq("verificado", true)
+      .select("id,programa_chave,tema_id,tipo_evidencia,evidencia_ref,motivo,revisado_por").eq("origem", "cascata").eq("verificado", true)
     if (error) throw new Error(error.message)
     const plano = planejarReconciliacao({
       ativas: (data ?? []) as VinculoAtivo[],
@@ -228,7 +302,7 @@ async function main(): Promise<void> {
       pares,
     })
     const arquivo = path.join(PASTA, `variancia-${agora.slice(0, 10)}.json`)
-    writeFileSync(arquivo, `${JSON.stringify({ gerado_em: agora, modo: apply ? "apply" : "dry-run", ...plano }, null, 1)}\n`)
+    writeFileSync(arquivo, `${JSON.stringify({ gerado_em: agora, modo: apply ? "apply" : "dry-run", ...plano, preservadasPorDecisaoEditorial: preservadas }, null, 1)}\n`)
     return { plano, arquivo: path.relative(ROOT, arquivo) }
   }
   const contagemPlano = (plano: PlanoReconciliacao) => ({
@@ -236,6 +310,7 @@ async function main(): Promise<void> {
     retirar_par_ausente: plano.retirar.filter((r) => r.causa === "par_ausente").length,
     mantidos_com_impressao: plano.mantidosPorVariancia.filter((m) => !m.sem_impressao_anterior).length,
     mantidos_sem_impressao_revisao: plano.mantidosPorVariancia.filter((m) => m.sem_impressao_anterior).length,
+    mantidos_por_decisao_editorial: plano.mantidosPorDecisaoEditorial.length,
   })
   if (!db) {
     // Dry-run lê o estado publicado (somente leitura) para mostrar o plano de
@@ -250,7 +325,9 @@ async function main(): Promise<void> {
     console.log(JSON.stringify({ ...resumo, reconciliacao }, null, 2))
     return
   }
-  const gravadas = await escreverAuditado(
+  // Janela conhecida: decisão editorial gravada entre `lerExistentes` e este upsert
+  // não é vista. A retirada editorial é rara e manual; rodar a publicação depois dela.
+  const gravadas = linhas.length === 0 ? [] : await escreverAuditado(
     { script: SCRIPT, tabela: "compromisso_evidencia", motivo: `publica vinculos aprovados pela cascata ${VERSAO_CASCATA}`, recorte: `${linhas.length} linha(s)` },
     () => db.from("compromisso_evidencia")
       .upsert(linhas, { onConflict: "programa_chave,frase_id,tema_id,tipo_evidencia,evidencia_ref" })
