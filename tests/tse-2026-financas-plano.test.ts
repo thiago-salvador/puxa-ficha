@@ -1,8 +1,12 @@
 import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
+import { tmpdir } from "node:os"
+import { join } from "node:path"
 import { describe, it } from "node:test"
 
 import {
+  FONTE_RECIBO_FINANCIAMENTO,
+  FONTE_RECIBO_PATRIMONIO,
   mesmosBens,
   partitionarAcoesPorRiscoDeIdentidade,
   planejarFinancas2026,
@@ -11,7 +15,7 @@ import {
   type EstadoProducao,
   type PlannedRow,
 } from "../scripts/lib/tse-2026-financas-plano"
-import { decidirPortao, lerArgs, linhasDeReciboAplicaveis, linhasDeReciboDeFalha, planoPublico } from "../scripts/tse-2026-financas"
+import { decidirPortao, lerArgs, linhasDeReciboAplicaveis, linhasDeReciboDeFalha, planoPublico, semProvaValida } from "../scripts/tse-2026-financas"
 
 const PACOTE = { url_receitas: "https://tse/receitas.zip", url_bens: "https://tse/bens.zip" }
 const vazio = (): EstadoProducao => ({ financiamento: [], verificacoes: [], patrimonio: [], ausencias: [] })
@@ -357,10 +361,33 @@ describe("coletor TSE 2026: portão e argumentos", () => {
     assert.match(migration, /GENERATED ALWAYS AS \(md5\(COALESCE\(maiores_doadores::text/)
   })
   it("lerArgs reconhece apply, agendado, out e sha", () => {
-    assert.deepEqual(lerArgs(["--apply", "--agendado", "--out=x", "--expected-plan-sha=abc"]), {
-      aplicar: true, agendado: true, out: "x", expectedPlanSha: "abc", backfillCategorias: false, backfillDryRun: null, reviewedPlan: null, expectedPlanFileSha: null,
+    const out = join(tmpdir(), "pf-tse-2026-out")
+    assert.deepEqual(lerArgs(["--apply", "--agendado", `--out=${out}`, "--expected-plan-sha=abc"]), {
+      aplicar: true, agendado: true, out, expectedPlanSha: "abc", backfillCategorias: false, backfillDryRun: null, reviewedPlan: null, expectedPlanFileSha: null,
     })
     assert.deepEqual(lerArgs([]), { aplicar: false, agendado: false, out: null, expectedPlanSha: null, backfillCategorias: false, backfillDryRun: null, reviewedPlan: null, expectedPlanFileSha: null })
+  })
+
+  it("--out dentro do repositório falha em lerArgs, antes do try que grava recibo de erro", () => {
+    assert.throws(() => lerArgs(["--apply", "--agendado", "--out=reports/tse-2026"]), /--out precisa ficar fora do repositório/)
+    const src = readFileSync("scripts/tse-2026-financas.ts", "utf8")
+    assert.match(src, /const opts = lerArgs\(argv\)\n  if \(!opts\.aplicar \|\| opts\.reviewedPlan\) return executar\(opts\)\n  try \{/)
+  })
+
+  it("workflow agendado grava plano e resumo fora do checkout", () => {
+    const yml = readFileSync(".github/workflows/tse-2026-financas.yml", "utf8")
+    assert.doesNotMatch(yml, /reports\/tse-2026/)
+    assert.match(yml, /out="\$RUNNER_TEMP\/tse-2026"/)
+    assert.match(yml, /path: \$\{\{ runner\.temp \}\}\/tse-2026\/plano-resumo\.json/)
+  })
+
+  it("falha de rodada não grava erro por cima de prova válida da mesma fonte e ficha", () => {
+    const linhas = linhasDeReciboDeFalha([{ id: "a", slug: "ana" }, { id: "b", slug: "bia" }] as never, "travas reprovaram")
+    const filtradas = semProvaValida(linhas, [{ fonte: FONTE_RECIBO_FINANCIAMENTO, alvo: "ana" }])
+    assert.deepEqual(filtradas.map((l) => `${l.fonte}|${l.alvo}`).sort(), [
+      `${FONTE_RECIBO_FINANCIAMENTO}|bia`, `${FONTE_RECIBO_PATRIMONIO}|ana`, `${FONTE_RECIBO_PATRIMONIO}|bia`,
+    ].sort())
+    assert.equal(semProvaValida(linhas, []).length, 4)
   })
 
   it("agendado não exige sha, mas respeita travas e sonda de CAS", () => {

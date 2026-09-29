@@ -74,6 +74,11 @@ export type CoverageCell = {
   atualizacao_encerrada_em?: string
   /** Exceção nominal aprovada pelo dono; a célula continua com o estado real. */
   excecao?: { motivo: string; aprovado_por: string; aprovado_em: string; referencia?: string }
+  /**
+   * Falha de coleta posterior a uma prova conclusiva ainda no prazo da
+   * família: não muda o estado, mas fica registrada aqui.
+   */
+  avisos?: string[]
 }
 
 export type CoverageMatrix = {
@@ -106,6 +111,8 @@ export type LatestReceiptRow = {
 
 /** Precedência dentro de uma mesma execução do coletor. */
 const RESULT_RANK: Record<string, number> = { nao_aplicavel: 0, vazio_confirmado: 1, encontrado: 2, publicado: 2, indeterminado: 3, erro: 4 }
+/** Resultados que concluem a consulta da fonte. */
+const CONCLUSIVE_RESULTS: readonly string[] = ["encontrado", "publicado", "vazio_confirmado"]
 
 function sameExecution(a: Record<string, unknown>, b: Record<string, unknown>): boolean {
   const left = text(a.execucao)
@@ -477,7 +484,19 @@ export function adaptLatestReceipts(rows: LatestReceiptRow[], profiles: Coverage
       // apaga a prova que ainda confere com o payload público.
       const previousProofs = Array.isArray(previous?.__proofs) ? previous.__proofs as Receipt[] : []
       const proofs = record(incoming.coverage_proof) ? [...previousProofs, incoming] : previousProofs
-      bucket[family] = { ...representative, __receipts: receipts, __proofs: proofs }
+      // Último recibo que não é falha de coleta, por fonte, guardado à parte:
+      // um `erro` posterior não o apaga (ver toleratingInfraFailure). Na mesma
+      // execução vale o mais grave, então `indeterminado` vence o conclusivo.
+      const lastNonError = { ...(record(previous?.__lastNonError) ?? {}) }
+      if (result !== "erro") {
+        const prior = record(lastNonError[key])
+        const priorAt = parseDate(prior?.executado_em)
+        if (!prior || !priorAt ||
+            (sameExecution(prior, incoming) ? RESULT_RANK[result] > RESULT_RANK[text(prior.resultado) ?? ""] : Date.parse(executed) >= Date.parse(priorAt))) {
+          lastNonError[key] = incoming
+        }
+      }
+      bucket[family] = { ...representative, __receipts: receipts, __proofs: proofs, __lastNonError: lastNonError }
     }
   }
   return { joins, rejected, ignored_partial_receipts: ignoredPartialReceipts }
@@ -535,6 +554,61 @@ export function familyWithoutFreshnessSla(family: CoverageFamily): boolean {
  * semanal; 21 dias toleram duas rodadas perdidas.
  */
 const PROOF_MAX_AGE_DAYS: Partial<Record<CoverageFamily, number>> = { historico_politico: 21 }
+
+/**
+ * Prazo em que uma prova conclusiva continua valendo depois de uma falha de
+ * coleta (recibo `erro`) da mesma fonte. Famílias com prazo em dias usam o
+ * próprio prazo; as guiadas por revisão usam a cadência do coletor: TSE
+ * diário com a tolerância da auditoria diária, histórico semanal com o prazo
+ * da prova, filiação com o SLA da fonte `filiacao` (1080 h).
+ */
+const INFRA_ERROR_GRACE_DAYS: Record<CoverageFamily, number> = {
+  perfil_atual: DAILY_CHECK_MAX_AGE_DAYS, historico_politico: 21, mudancas_partido: 45,
+  patrimonio: DAILY_CHECK_MAX_AGE_DAYS, financiamento: DAILY_CHECK_MAX_AGE_DAYS,
+  projetos_lei: 9, votos_candidato: 9, gastos_parlamentares: 9, gastos_executivo: 90, processos: 14,
+  sites_tse: DAILY_CHECK_MAX_AGE_DAYS, chapa_vice: DAILY_CHECK_MAX_AGE_DAYS,
+}
+
+/** Prazo de INFRA_ERROR_GRACE_DAYS; o coletor usa o mesmo para não gravar erro por cima de prova válida. */
+export function infraErrorGraceDays(family: CoverageFamily): number {
+  return INFRA_ERROR_GRACE_DAYS[family]
+}
+
+/**
+ * Falha de infraestrutura não sucede prova conclusiva ainda no prazo: quando
+ * o último recibo de uma fonte é `erro` e o último recibo não-erro da mesma
+ * fonte é conclusivo, de execução anterior e tem até INFRA_ERROR_GRACE_DAYS,
+ * a célula é julgada por ele e a falha vira aviso. Prova vencida não é salva:
+ * o erro continua valendo. `indeterminado` não é falha de infraestrutura e
+ * segue derrubando a prova, mesmo com um `erro` depois dele; `erro` da mesma
+ * execução da prova também continua valendo (a execução vale pelo mais grave).
+ */
+export function toleratingInfraFailure(receipt: Receipt | null, family: CoverageFamily, now = Date.now()): { receipt: Receipt | null; avisos: string[] } {
+  const stored = record(receipt?.__receipts)
+  const lastNonError = record(receipt?.__lastNonError)
+  if (!receipt || !stored || !lastNonError) return { receipt, avisos: [] }
+  const graceDays = infraErrorGraceDays(family)
+  const receipts: Record<string, unknown> = { ...stored }
+  const avisos: string[] = []
+  for (const [key, value] of Object.entries(stored)) {
+    const latest = record(value)
+    if (text(latest?.resultado) !== "erro") continue
+    const proof = record(lastNonError[key])
+    const provedAt = parseDate(proof?.executado_em)
+    const failedAt = parseDate(latest?.executado_em)
+    if (!proof || !provedAt || !failedAt || !CONCLUSIVE_RESULTS.includes(text(proof.resultado) ?? "")) continue
+    if (sameExecution(proof, latest!) || Date.parse(provedAt) >= Date.parse(failedAt)) continue
+    if (now - Date.parse(provedAt) > graceDays * 86_400_000) continue
+    receipts[key] = proof
+    avisos.push(`falha de coleta em ${key} (${failedAt.slice(0, 10)}) não sucede a prova de ${provedAt.slice(0, 10)}, dentro do prazo de ${graceDays} dias`)
+  }
+  if (!avisos.length) return { receipt, avisos }
+  const representative = Object.values(receipts)
+    .map((item) => record(item))
+    .filter((item): item is Receipt => Boolean(item))
+    .sort((a, b) => Date.parse(parseDate(b.executado_em) ?? "1970-01-01") - Date.parse(parseDate(a.executado_em) ?? "1970-01-01"))[0]
+  return { receipt: { ...representative, __receipts: receipts, __proofs: receipt.__proofs, __lastNonError: lastNonError }, avisos }
+}
 
 function hasMaterializedData(profile: CoverageProfile, family: CoverageFamily): boolean {
   if (family === "perfil_atual") return CORE_FIELDS.every((field) => text(profile[field]) !== null)
@@ -939,12 +1013,14 @@ function makeCell(profile: CoverageProfile, family: CoverageFamily, joins: Cover
   // applicability. Keep every family as an errored, applicable cell instead
   // of manufacturing `nao_aplicavel` from missing fields.
   const applicableCell = profileError ? true : applicable(profile, family)
-  const joined = receiptFor(profile, family, joins)
+  const tolerated = toleratingInfraFailure(receiptFor(profile, family, joins), family)
+  const joined = tolerated.receipt
   const verdict: Verdict = !applicableCell
       ? { estado: "nao_aplicavel" }
       : profileError
       ? { estado: "erro" }
       : verdictFor(joined, profile, family)
+  const avisos = applicableCell && !profileError ? tolerated.avisos : []
   // Ficha congelada: estado aberto (sem recibo, vencido, indefinido) vira
   // `atualizacao_encerrada`. Estado provado (publicado, vazio confirmado,
   // não aplicável) continua como está.
@@ -972,6 +1048,7 @@ function makeCell(profile: CoverageProfile, family: CoverageFamily, joins: Cover
       : joined ? "badge_publico"
       : "nenhum",
     ...(encerradaEm ? { atualizacao_encerrada_em: encerradaEm } : {}),
+    ...(avisos.length ? { avisos } : {}),
   }
 }
 
@@ -1180,6 +1257,7 @@ async function main(): Promise<void> {
     generated_at: matrix.generated_at, requested_profiles: matrix.requested_profiles, completed_profiles: matrix.completed_profiles,
     profile_errors: matrix.profile_errors.length, rejected_receipts: rejectedReceipts.length, ignored_partial_receipts: ignoredPartialReceipts,
     exceptions_applied: matrix.exceptions?.aplicadas.length ?? 0, exceptions_without_cell: matrix.exceptions?.sem_celula ?? [],
+    infra_failure_warnings: matrix.cells.filter((cell) => cell.avisos?.length).length,
     totals,
   }, null, 2))
   if (options.gate !== null) {
