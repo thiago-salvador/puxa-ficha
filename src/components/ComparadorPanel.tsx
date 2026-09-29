@@ -330,7 +330,7 @@ export function ComparadorPanel({ candidatos, referenceNow, initialSelectedSlugs
 
         <div className="hidden md:block">
           <div
-            className="overflow-x-auto overscroll-x-contain"
+            className="relative overflow-x-auto overscroll-x-contain"
             role="region"
             aria-label="Lista de candidatos para comparar. Role na horizontal se as colunas não couberem."
             tabIndex={0}
@@ -558,8 +558,13 @@ export function ComparadorPanel({ candidatos, referenceNow, initialSelectedSlugs
             <p className="mb-2 text-[length:var(--text-caption)] text-muted-foreground md:hidden">
               Role a tabela para o lado para ver todos os candidatos.
             </p>
+            {/*
+              `relative`: o texto `sr-only` do valor em reais é absoluto; sem um
+              ancestral posicionado aqui dentro, ele escapa da rolagem interna e
+              alarga a página inteira no celular.
+            */}
             <div
-              className="overflow-x-auto overscroll-x-contain"
+              className="relative overflow-x-auto overscroll-x-contain"
               role="region"
               aria-label="Tabela de comparação. Role na horizontal para ver todas as colunas."
               tabIndex={0}
