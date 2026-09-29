@@ -1,3 +1,5 @@
+import { stripAccents } from "@/lib/strip-accents"
+
 /**
  * Cor da pílula de veredito das checagens atribuídas. O rótulo exibido é
  * sempre o do próprio veículo; aqui só se decide o tom visual, por mapa
@@ -7,9 +9,7 @@
 export type TomVeredito = "vermelho" | "ambar" | "verde" | "cinza"
 
 export function normalizarRotuloVeredito(rotulo: string): string {
-  return rotulo
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
+  return stripAccents(rotulo)
     .toLowerCase()
     .replace(/#/g, "")
     .replace(/[.!]+$/g, "")
