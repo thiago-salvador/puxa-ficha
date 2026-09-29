@@ -74,9 +74,11 @@ import {
   aplicarProcessosJusticaAosComparaveis,
   aplicarProcessosJusticaAosResumos,
   contarProcessosJudiciaisPorCandidato,
+  contarProcessosOmitidos,
   CRITERIO_CONTAGEM_PROCESSOS,
   filtrarProcessosJudiciaisContaveis,
 } from "@/lib/processos-justica-candidato"
+import { processosForaPorPapelDeAutoridadeDaFicha } from "@/lib/djen-consulta-url"
 import type { ProcessosJusticaContagem } from "@/lib/processos-justica-total"
 import { normalizeFotoCredito } from "@/lib/foto-credito"
 import { parseFederalAcervoReceiptDetail, projectFederalAcervoReceipts } from "@/lib/federal-acervo-receipts"
@@ -1970,7 +1972,7 @@ async function getCandidatoBySlugFromRelationResource(
     financiamento_despesas_candidato_ids: personLevelIds,
     votos: sortVotosForPublicDisplay(votos.data ?? []),
     processos: processosPublicos,
-    processos_omitidos_sem_fonte_oficial: processosBrutos.length - processosPublicos.length,
+    processos_omitidos_sem_fonte_oficial: contarProcessosOmitidos(processosBrutos, processosPublicos.length),
     pontos_atencao: pontosPublicos,
     projetos_lei: projetos.data ?? [],
     projetos_lei_total: projetos.count ?? (projetos.data ?? []).length,
@@ -2633,7 +2635,10 @@ async function getCandidatosComparaveisResourceUncached(
     const normalized = {
       ...row,
       total_processos: officialProcessCounts.get(row.id) ?? 0,
-      processos_omitidos_sem_fonte_oficial: Math.max(0, (row.total_processos ?? 0) - (officialProcessCounts.get(row.id) ?? 0)),
+      processos_omitidos_sem_fonte_oficial: Math.max(
+        0,
+        (row.total_processos ?? 0) - (officialProcessCounts.get(row.id) ?? 0) - processosForaPorPapelDeAutoridadeDaFicha(row.slug),
+      ),
       processos_verificacao: processosVerificacoes.get(row.slug) ?? null,
       cargo_atual: cargoAtualById.has(row.id) ? (cargoAtualById.get(row.id) ?? null) : null,
       alertas_graves: alertasGraves.length,
