@@ -677,24 +677,53 @@ export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
   return { acoes, recibos, revisao, resumo, resumo_por_perfil: resumoPorPerfil }
 }
 
+/** Maior coorte focada (`--slugs`) que pode trocar o limite de 50% por um teto revisado. */
+export const MAX_FICHAS_COORTE_FOCADA = 100
+
+/** Fichas cujo dado o plano muda. Backfill só de `categorias_origem` não conta. */
+export function fichasAlteradasDoPlano(plano: Pick<PlanoFinancas2026, "acoes">): number {
+  return new Set(plano.acoes.filter((acao) => !(acao.tipo === "atualizar_financiamento"
+    && Object.keys(acao.depois).length === 1 && "categorias_origem" in acao.depois
+    && acao.antes.categorias_origem == null && acao.depois.categorias_origem != null)).map((acao) => acao.slug)).size
+}
+
+/** Estado de produção só das fichas da coorte, para as travas medirem a coorte e não o site inteiro. */
+export function restringirEstadoACoorte(estado: EstadoProducao, idsDaCoorte: ReadonlySet<string>): EstadoProducao {
+  return {
+    financiamento: estado.financiamento.filter((linha) => idsDaCoorte.has(linha.candidato_id)),
+    verificacoes: estado.verificacoes.filter((linha) => idsDaCoorte.has(linha.candidato_id)),
+    patrimonio: estado.patrimonio.filter((linha) => idsDaCoorte.has(linha.candidato_id)),
+    ausencias: estado.ausencias.filter((linha) => idsDaCoorte.has(linha.candidato_id)),
+  }
+}
+
 /**
  * Travas da execução agendada. Aplicar sem revisão humana só quando o plano
  * tem a forma esperada de um dia normal de campanha.
+ *
+ * `fichasAlteradasRevisadas` troca o limite relativo por um teto explícito:
+ * só para coorte focada e revisada, de até MAX_FICHAS_COORTE_FOCADA fichas, e
+ * o plano tem de alterar exatamente o número de fichas que a revisão viu.
  */
 export function travasDoPlano(
   plano: PlanoFinancas2026,
   estado: EstadoProducao,
-  limites: { maxQuedaRelativa: number; maxAffectedRatio?: number; maxActions?: number } = { maxQuedaRelativa: 0.2 },
+  limites: { maxQuedaRelativa: number; maxAffectedRatio?: number; maxActions?: number; fichasAlteradasRevisadas?: number } = { maxQuedaRelativa: 0.2 },
 ): string[] {
   const falhas: string[] = []
-  const fichasAfetadas = new Set(plano.acoes.filter((acao) => !(acao.tipo === "atualizar_financiamento"
-    && Object.keys(acao.depois).length === 1 && "categorias_origem" in acao.depois
-    && acao.antes.categorias_origem == null && acao.depois.categorias_origem != null)).map((acao) => acao.slug)).size
+  const fichasAfetadas = fichasAlteradasDoPlano(plano)
   const fichasPublicas = plano.resumo.fichas_publicas
   const maxActions = limites.maxActions ?? 500
   const maxAffectedRatio = limites.maxAffectedRatio ?? 0.5
   if (plano.acoes.length > maxActions) falhas.push(`plano excede o limite de ${maxActions} ações: ${plano.acoes.length}`)
-  if (fichasPublicas >= 20 && fichasAfetadas > fichasPublicas * maxAffectedRatio) {
+  if (limites.fichasAlteradasRevisadas !== undefined) {
+    if (fichasPublicas > MAX_FICHAS_COORTE_FOCADA) {
+      falhas.push(`coorte focada de ${fichasPublicas} fichas acima do teto de ${MAX_FICHAS_COORTE_FOCADA}`)
+    }
+    if (fichasAfetadas !== limites.fichasAlteradasRevisadas) {
+      falhas.push(`plano altera ${fichasAfetadas}/${fichasPublicas} fichas, diferente do teto revisado de ${limites.fichasAlteradasRevisadas}`)
+    }
+  } else if (fichasPublicas >= 20 && fichasAfetadas > fichasPublicas * maxAffectedRatio) {
     falhas.push(`plano altera ${fichasAfetadas}/${fichasPublicas} fichas, acima do limite de ${Math.round(maxAffectedRatio * 100)}%`)
   }
   for (const acao of plano.acoes) {
