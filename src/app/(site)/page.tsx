@@ -28,6 +28,7 @@ import { DataSourceNotice } from "@/components/DataSourceNotice"
 import { PublicDataSourcesNote } from "@/components/PublicDataSourcesNote"
 import { JsonLd } from "@/components/JsonLd"
 import { getHomeHeroMetrics } from "@/lib/home-hero-metrics"
+import { isSenadoEnabled } from "@/lib/senado-feature"
 import { buildCandidatoGridMaps } from "@/lib/candidato-grid-maps"
 import { formatCompact } from "@/lib/utils"
 
@@ -78,6 +79,8 @@ export default async function Home() {
   const { processos, patrimonios, processSortCounts, patrimoniosAtipicos } =
     buildCandidatoGridMaps(resumosPresidencia)
 
+  // Mesma flag que coloca os senadores em totalCandidatos (home-hero-metrics).
+  const senadoEnabled = isSenadoEnabled()
   const { totalCandidatos, totalPatrimonio, totalProcessos } =
     getHomeHeroMetrics(
       todosResumos,
@@ -111,7 +114,7 @@ export default async function Home() {
         O Puxa Ficha organiza fontes públicas consultadas, como TSE,
         Câmara e Senado, para ajudar quem busca entender os candidatos à
         Presidência e aos governos de todos os estados e do Distrito Federal
-        em 2026.
+        {senadoEnabled ? ", além das candidaturas ao Senado," : ""} em 2026.
       </p>
       <p className="mt-3 max-w-prose text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
         Aqui você encontra ficha pública, comparação lado a lado e uma
