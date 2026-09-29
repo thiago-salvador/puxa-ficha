@@ -237,6 +237,7 @@ export function partitionarAcoesPorRiscoDeIdentidade(
 
 export interface ResumoPlano {
   fichas_publicas: number
+  identity_risk_actions_deferred?: number
   financiamento: {
     fichas_com_linha_apos_plano: number
     inserir: number

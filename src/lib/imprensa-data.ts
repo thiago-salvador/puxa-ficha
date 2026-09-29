@@ -72,8 +72,9 @@ export interface ImprensaRow {
     quantidadeEmConfirmacao?: number
     /**
      * Contagem única da ficha (judiciais + disciplinares do Conselho de Ética),
-     * de `contarProcessosJusticaDoCandidato`. `judiciais` e `total` ficam null
-     * quando a parte judicial não tem quantidade publicada.
+     * de `contarProcessosJusticaDoCandidato`. `judiciais` fica null quando a
+     * parte judicial não tem quantidade publicada; `total` é o número da ficha,
+     * que nesse caso soma só os disciplinares, e fica null só sem nenhum dos dois.
      */
     contagem?: { judiciais: number | null; disciplinares: number; total: number | null }
     ocorrencias: {
@@ -500,12 +501,17 @@ function mapProcesses(rows: ProcessoRow[], receipt: ProcessoReceiptRow | null): 
  * publicada acima (zero quando a busca voltou vazia); a disciplinar e o total
  * saem só de `contarProcessosJusticaDoCandidato`, sem filtro paralelo.
  */
-function withProcessosContagem(processos: ImprensaRow["processos"], slug: string): ImprensaRow["processos"] {
+export function withProcessosContagem(processos: ImprensaRow["processos"], slug: string): ImprensaRow["processos"] {
   const judiciais = processos.estado === "vazio_confirmado" ? 0 : processos.quantidade
   const contagem = contarProcessosJusticaDoCandidato(slug, judiciais ?? 0)
   return {
     ...processos,
-    contagem: { judiciais, disciplinares: contagem.disciplinares, total: judiciais === null ? null : contagem.total },
+    contagem: {
+      judiciais,
+      disciplinares: contagem.disciplinares,
+      // Mesmo total da ficha e do hero: sem quantidade judicial, a ficha lista 0 judiciais.
+      total: judiciais === null && contagem.disciplinares === 0 ? null : contagem.total,
+    },
   }
 }
 

@@ -167,7 +167,7 @@ describe("curadoria de processos em lote", () => {
       async (numero) => {
         chamados.push(numero)
         if (numero !== cnjs[0].numero_cnj) throw new Error("HTTP 503")
-        return { count: 1, items: [{ id: 1, ativo: true, numero_processo: numero, destinatarios: [{ nome: "Carlos da Silva Teste" }], texto: "Carlos da Silva Teste governador de Minas Gerais" }] }
+        return { count: 1, items: [{ id: 1, ativo: true, numero_processo: numero, destinatarios: [{ nome: "Carlos da Silva Teste" }], texto: "AUTOR: Carlos da Silva Teste governador de Minas Gerais" }] }
       },
       async () => ({ status: "confirmada", nome: "Carlos da Silva Teste" }),
     )
