@@ -78,26 +78,17 @@ export interface CandidatoFichaViewProps {
    * (compartilhamento e crawlers).
    */
   seoSubpath?: "timeline"
-  /**
-   * A rota é ISR: o aviso de fonte fora do ar não pode ir para o cache. Lançar
-   * faz o Next manter a versão boa anterior (ou responder 500 sem cachear).
-   */
-  throwWhenSourceUnavailable?: boolean
 }
 
 export async function CandidatoFichaView({
   slug,
   profileInitialTab,
   seoSubpath,
-  throwWhenSourceUnavailable = false,
 }: CandidatoFichaViewProps) {
   const fichaResource = await getFicha(slug)
   const ficha = fichaResource.data
   if (!ficha) {
     if (fichaResource.sourceStatus === "degraded") {
-      if (throwWhenSourceUnavailable) {
-        throw new Error(`ficha_source_unavailable:${slug}`)
-      }
       return (
         <div className="min-h-screen bg-background">
           <div className="mx-auto max-w-7xl px-5 pt-20 md:px-12">

@@ -147,9 +147,3 @@ test("o revalidate apaga as mesmas tags no CDN e falha alto se não conseguir", 
   assert.match(route, /cdn_purge_failed/)
 })
 
-test("a ficha em cache não guarda o aviso de fonte fora do ar", () => {
-  const page = readFileSync("src/app/(site)/candidato/[slug]/page.tsx", "utf8")
-  assert.match(page, /<CandidatoFichaView slug=\{slug\} throwWhenSourceUnavailable \/>/)
-  const view = readFileSync("src/app/(site)/candidato/[slug]/CandidatoFichaView.tsx", "utf8")
-  assert.match(view, /if \(throwWhenSourceUnavailable\) \{\s*throw new Error/)
-})

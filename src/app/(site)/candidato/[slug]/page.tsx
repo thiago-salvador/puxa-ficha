@@ -88,5 +88,5 @@ export default async function CandidatoPage({
   // Bloco 7 do review 2026-04-24: aba inicial vinda de `?tab=` é resolvida no
   // client (`CandidatoProfile` lê `window.location.search` no mount). Não
   // lemos `searchParams` aqui para preservar SSG/ISR.
-  return <CandidatoFichaView slug={slug} throwWhenSourceUnavailable />
+  return <CandidatoFichaView slug={slug} />
 }

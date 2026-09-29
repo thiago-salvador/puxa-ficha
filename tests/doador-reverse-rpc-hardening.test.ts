@@ -116,8 +116,9 @@ describe("app /doadores: service_role + limiter fail-closed", () => {
     assert.doesNotMatch(src, /p_query: normalizedQuery,\s*\n\s*\}\)/)
   })
 
-  it("limiter da pagina continua fail-closed", () => {
-    const page = readFileSync(join(ROOT, "src/app/(site)/doadores/page.tsx"), "utf8")
+  // Desde 2026-09-29 a página é estática e a busca roda em /api/doadores/busca.
+  it("limiter da busca continua fail-closed", () => {
+    const page = readFileSync(join(ROOT, "src/app/api/doadores/busca/route.ts"), "utf8")
     assert.match(page, /doadoresSearchRateLimiter/)
     assert.match(page, /doadores search rate limit failed closed/)
     assert.match(page, /aguardeSegundos = 60/)
