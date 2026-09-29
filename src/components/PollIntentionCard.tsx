@@ -1,11 +1,11 @@
 "use client"
 
-// cspell:ignore cenario periodo espontanea espontaneo
+// cspell:ignore cenario cenarios periodo espontanea espontaneo rotulos
 
 import { useState } from "react"
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
 import type { PesquisaEleitoralDoCandidato } from "@/lib/pesquisas-eleitorais"
-import { ordenarPesquisasDoCard } from "@/lib/pesquisas-card"
+import { ordenarPesquisasDoCard, rotulosDosCenariosDoCard } from "@/lib/pesquisas-card"
 import { stripAccents } from "@/lib/strip-accents"
 import { formatarPeriodo, resultadoLabel, resultadoPublicado } from "./PesquisasPresidenciaisSection"
 
@@ -44,6 +44,7 @@ const NAV_BUTTON_CLASS =
  */
 export function PollIntentionCard({ pesquisas: todas }: { pesquisas: PesquisaEleitoralDoCandidato[] }) {
   const pesquisas = ordenarPesquisasDoCard(todas)
+  const rotulos = rotulosDosCenariosDoCard(pesquisas)
   const [activeIndex, setActiveIndex] = useState(0)
   if (pesquisas.length === 0) return null
 
@@ -52,7 +53,7 @@ export function PollIntentionCard({ pesquisas: todas }: { pesquisas: PesquisaEle
   const pesquisa = pesquisas[current]
   const instituto = pesquisa.instituto.value ?? "Instituto não informado"
   const modalidade = modalidadeLabel(pesquisa) === "espontânea" ? "pergunta espontânea" : null
-  const descricao = [pesquisa.cenario.labelRaw, modalidade].filter(Boolean).join(" · ")
+  const descricao = [rotulos[current], modalidade].filter(Boolean).join(" · ")
   const hasMultiple = total > 1
 
   return (

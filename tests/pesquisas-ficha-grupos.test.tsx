@@ -19,7 +19,7 @@ const {
   listarPesquisasSenadoPorSlug,
   selecionarSenadoPolls,
 } = require("../src/lib/senado-polls") as typeof import("@/lib/senado-polls")
-const { ordenarPesquisasDoCard } = require("../src/lib/pesquisas-card") as typeof import("@/lib/pesquisas-card")
+const { ordenarPesquisasDoCard, rotulosDosCenariosDoCard } = require("../src/lib/pesquisas-card") as typeof import("@/lib/pesquisas-card")
 const { PollIntentionCard } = require(
   "../src/components/PollIntentionCard",
 ) as typeof import("@/components/PollIntentionCard")
@@ -157,6 +157,59 @@ describe("card Intenção de voto", () => {
 
   it("não aparece sem pesquisa", () => {
     assert.equal(renderToStaticMarkup(<PollIntentionCard pesquisas={[]} />), "")
+  })
+
+  it("põe o adversário no rótulo do 2º turno e numera cenários que ainda repetem o texto", () => {
+    const { lista } = catalogoComSegundoTurno()
+    const segundo = lista.find((item) => item.cenario.turn === 2)
+    assert.ok(segundo)
+    const comAdversario = (id: string, labelRaw: string, adversarios: string[]) => ({
+      ...segundo,
+      cenario: { ...segundo.cenario, id, labelRaw },
+      adversarios,
+    })
+    const rotulos = rotulosDosCenariosDoCard([
+      comAdversario("a", "Intenção de voto no 2º turno", ["Lula"]),
+      comAdversario("b", "Intenção de voto no 2º turno", ["Lula"]),
+      comAdversario("c", "Intenção de voto no 2º turno: Fulano e Lula", ["Lula"]),
+      comAdversario("d", "Intenção de voto no 2º turno", ["Ciro Gomes"]),
+    ])
+    assert.deepEqual(rotulos, [
+      "Intenção de voto no 2º turno · vs. Lula · cenário 1/2",
+      "Intenção de voto no 2º turno · vs. Lula · cenário 2/2",
+      "Intenção de voto no 2º turno: Fulano e Lula",
+      "Intenção de voto no 2º turno · vs. Ciro Gomes",
+    ])
+  })
+
+  it("no acervo real, nenhum candidato vê dois cenários com o mesmo rótulo na mesma divulgação", () => {
+    const catalogo = parsePesquisasEleitoraisJson(
+      readFileSync("scripts/data/pesquisas-presidencia-2026.json", "utf8"),
+      readFileSync("scripts/data/pesquisas-eleitorais-fontes.json", "utf8"),
+    )
+    const slugs = new Set(
+      catalogo.pesquisas.flatMap((poll) =>
+        poll.cenarios.flatMap((cenario) =>
+          cenario.resultados.flatMap((r) => (r.matchStatus === "exact_alias" && r.candidateSlug ? [r.candidateSlug] : [])),
+        ),
+      ),
+    )
+    let segundosTurnos = 0
+    for (const slug of slugs) {
+      const ordem = ordenarPesquisasDoCard(listarPesquisasDoCandidato(catalogo, slug))
+      const rotulos = rotulosDosCenariosDoCard(ordem)
+      const vistos = new Set<string>()
+      ordem.forEach((item, indice) => {
+        if (item.cenario.turn === 2) {
+          segundosTurnos += 1
+          assert.ok((item.adversarios ?? []).length > 0, `${slug}: 2º turno sem adversário identificado`)
+        }
+        const chave = `${item.instituto.value}|${item.publicationDate.value}|${item.cenario.turn}|${rotulos[indice]}`
+        assert.ok(!vistos.has(chave), `${slug}: rótulo repetido ${chave}`)
+        vistos.add(chave)
+      })
+    }
+    assert.ok(segundosTurnos > 0)
   })
 })
 
