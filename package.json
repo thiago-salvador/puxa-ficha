@@ -241,6 +241,7 @@
     "@sentry/nextjs": "^10.75.0",
     "@supabase/supabase-js": "^2.117.2",
     "@tanstack/react-virtual": "^3.14.13",
+    "@vercel/functions": "^3.9.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "exceljs": "^4.4.0",
@@ -293,5 +294,10 @@
     "nanoid@3": "^3.3.17",
     "postcss": "$postcss",
     "sharp": "^0.35.3"
+  },
+  "allowScripts": {
+    "@sentry/cli@2.58.5": true,
+    "esbuild@0.28.2": true,
+    "unrs-resolver@1.12.0": true
   }
 }

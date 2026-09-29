@@ -2,12 +2,10 @@ import "server-only"
 import { anosGastosParlamentaresEmRevisao, gastoParlamentarEmRevisao } from "@/lib/gastos-parlamentares-em-revisao"
 import { cache } from "react"
 import { unstable_noStore as noStore } from "next/cache"
-import { headers } from "next/headers"
 import { buildFinanciamentoContexto } from "@/lib/quiz-financiamento"
 import { createServerSupabaseClient, createServiceRoleSupabaseClient, getAppSupabaseUrl } from "./supabase"
 import { isSupabaseNoRowError } from "./supabase-errors"
 import { selectWithPreMigrationColumns } from "./supabase-pre-migration-select"
-import { resolveReleaseVerifyCacheBypassToken } from "./production-env"
 import { unstableCacheWithSingleFlight } from "./cache-single-flight"
 import { normalizeVotoFromApi } from "@/lib/quiz-scoring"
 import { SIGLAS_PROJETO_LEI } from "@/lib/proposicao-natureza"
@@ -2066,24 +2064,10 @@ export async function getCandidatoBySlugResource(
     return getCandidatoBySlugResourceUncached(slug)
   }
 
-  // Ler `headers()` aqui torna a ficha dinâmica em runtime. Em produção isso
-  // dispara `app-static-to-dynamic-error` e devolve HTTP 500: foi a queda de
-  // 2026-08-03, com as duas variáveis do bypass ligadas no painel havia 106
-  // dias. O gate agora mora em `resolveReleaseVerifyCacheBypassToken`, que
-  // devolve `null` em `VERCEL_ENV=production` sem consultar opt-in nenhum.
-  const cacheBypass = resolveReleaseVerifyCacheBypassToken()
-  if (cacheBypass) {
-    try {
-      const h = await headers()
-      const bypassHeader = h.get("x-pf-release-verify-cache-bypass")
-      if (bypassHeader === cacheBypass) {
-        noStore()
-        return getCandidatoBySlugResourceUncached(slug)
-      }
-    } catch {
-      // Fora de request Next (ou contexto estatico): segue o caminho em cache.
-    }
-  }
+  // Esta função não lê `headers()`: a ficha é ISR e ler request aqui dispara
+  // `app-static-to-dynamic-error` (HTTP 500, queda de 2026-08-03). O bypass do
+  // release-verify mora no handler de /api/candidato-profile/[slug], que chama
+  // `getCandidatoBySlugResourceBypassingCache` depois de conferir o header.
   try {
     const resource = await getCachedCandidatoBySlugResource(slug)
     return !isSenadoEnabled() && resource.data?.cargo_disputado === "Senador"
@@ -2092,6 +2076,14 @@ export async function getCandidatoBySlugResource(
   } catch {
     return getCandidatoBySlugResourceUncached(slug)
   }
+}
+
+/** Leitura sem cache para o release-verify; só o route handler do perfil chama. */
+export async function getCandidatoBySlugResourceBypassingCache(
+  slug: string
+): Promise<DataResource<FichaCandidato | null>> {
+  noStore()
+  return getCandidatoBySlugResourceUncached(slug)
 }
 
 export async function getCandidatoBySlugPreviewResource(

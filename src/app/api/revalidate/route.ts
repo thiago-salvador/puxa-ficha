@@ -1,6 +1,7 @@
 import type { NextRequest } from "next/server"
 import { NextResponse } from "next/server"
 import { revalidateTag } from "next/cache"
+import { dangerouslyDeleteByTag } from "@vercel/functions"
 import {
   executeRevalidateRequest,
   extractRevalidateSecret,
@@ -86,9 +87,27 @@ export async function POST(req: NextRequest) {
   })
 
   if (result.ok) {
+    // As respostas HTTP em cache de CDN (JSON do perfil, busca de doadores)
+    // levam a mesma tag no header `Vercel-Cache-Tag`. Sem apagar essa camada, o
+    // revalidateTag limpava os dados e o CDN seguia servindo a resposta velha:
+    // foi o motivo do no-store da #57. Delete imediato (prazo 0) pela mesma razão
+    // do `expire: 0` acima. Fora da Vercel a função é no-op.
+    let cdnPurged = true
+    try {
+      await dangerouslyDeleteByTag([...result.revalidated])
+    } catch (error) {
+      cdnPurged = false
+      console.error("[revalidate] cdn purge failed", error)
+    }
     console.log(
-      `[revalidate] ok status=200 tags=${result.revalidated.join(",")}`,
+      `[revalidate] ok status=200 tags=${result.revalidated.join(",")} cdn_purged=${cdnPurged}`,
     )
+    if (!cdnPurged) {
+      return jsonNoStore(
+        { ok: false, error: "cdn_purge_failed", revalidated: result.revalidated },
+        { status: 502 },
+      )
+    }
     return jsonNoStore(
       { ok: true, revalidated: result.revalidated },
       { status: 200 },
