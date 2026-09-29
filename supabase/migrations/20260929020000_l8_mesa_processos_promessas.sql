@@ -5,7 +5,7 @@
 -- Processos: 31 CNJs novos em 26 fichas (DJEN reconsultado, marcador curadoria-mesa-l8-20260929),
 -- 6 linhas já publicadas ganham o CNJ (1 com status corrigido) e
 -- 26 recibos coleta_log 'encontrado'. Promessas: 1 vínculo verificado,
--- 8 inseridos e 14 retirados da ficha. projetos_lei: 1
+-- 6 inseridos e 10 retirados da ficha. projetos_lei: 1
 -- autoria corrigida (signatário, não autor). Toda linha alterada tem preimagem md5
 -- medida em produção; divergência aborta a transação inteira.
 BEGIN;
@@ -107,20 +107,16 @@ CREATE TEMP TABLE _pf_l8_vinculos (
 ) ON COMMIT DROP;
 INSERT INTO _pf_l8_vinculos VALUES
   ('dbfd69d8-e997-4b32-9f01-e1282675dbee'::uuid, 'verificar', 'edmilson-costa', 'c7785d1d-b34a-4a0b-b9f2-127584b52d0c'::uuid, '7aad30ae4bf7cb0a142a468f40bb465b'),
-  ('0d02ea00-c2d5-4516-a604-d459c1b2c93f'::uuid, 'despublicar', 'sergio-moro-gov-pr', '6025cfb5-d1a7-4ad0-baa7-c131b381e8fa'::uuid, 'f9fb9e24c8c1fd13e11280c10019f449'),
-  ('16eb95a6-5b7a-4e56-8e58-663223761fb7'::uuid, 'despublicar', 'luciano-zucco', '53af44cf-7f66-44d3-b733-1114c5143e6a'::uuid, 'bac9b4338cc0b1dfe50e30e4d6f24426'),
-  ('238ccde5-9ac1-41b0-9e92-a0c17581abcd'::uuid, 'despublicar', 'tarcisio-gov-sp', '1919a599-1f61-41cc-ab6a-cd4baa77e639'::uuid, 'f2ab77f8d5a2494d89f8b27fd8a430d3'),
-  ('679a3cf3-9f11-494d-97a7-b4609615af15'::uuid, 'despublicar', 'patrus-ananias', '123bd693-5482-4f0c-8ff3-40617acadba9'::uuid, 'd944eae011838401da493f0d1ccb48d0'),
-  ('9bc9faef-6188-493a-a724-e8f4a75b63d6'::uuid, 'despublicar', 'daniel-vilela', 'd80384f6-147b-40ef-8fa5-ae0b2be5a1f5'::uuid, 'bc257b05971fee36348c2d5864d85747'),
-  ('a1e9b99d-485a-4322-b4e5-598923155243'::uuid, 'despublicar', 'lula', 'd6740de5-c7d9-4978-ab49-b51a22481aa2'::uuid, '78d8992c5dd52baf94ec3e42123d9aa4'),
-  ('a72a3378-6665-4582-966b-f907139490d6'::uuid, 'despublicar', 'eduardo-paes', '242af65c-dae1-447c-b4b0-c26095f7384d'::uuid, '9ee24fd58fe481e4db45bec9aa4d5cd0'),
-  ('cfc91569-d469-45e7-acd9-7fd1a6f5111a'::uuid, 'despublicar', 'marconi-perillo', '95fc116b-4c1e-4332-9c52-948bc1775a57'::uuid, 'ebd4d1e60916e31891be5d655ab31e84'),
-  ('e7046002-6714-4af5-9cd5-736a25d22e94'::uuid, 'despublicar', 'patrus-ananias', '123bd693-5482-4f0c-8ff3-40617acadba9'::uuid, 'd15037c5a50e2385d50e092c90cc3943'),
-  ('f9a2d1cf-271f-4ad2-bbcb-9c6686cb6caa'::uuid, 'despublicar', 'professora-dorinha', '00c6fd60-9151-43d2-b1e4-ea45371511a8'::uuid, '2957982dbcafc99ccef528ec727ccf06'),
-  ('f9f0ba63-04f1-4ce0-a7b9-ab1b2b1df451'::uuid, 'despublicar', 'leandro-grass', '3b724874-8769-44f3-aab3-06c0155dc155'::uuid, '83995d55302ce8666d74ab76ac2c265e'),
-  ('3531eebb-c738-4c59-b130-4a8bffc18481'::uuid, 'despublicar', 'lenilda-luna', '9677309d-5b33-4973-9bbb-d92b766557a3'::uuid, '3c8ea82ca91c0526d06b110c5ec8c931'),
-  ('b0e63924-e06d-452c-a215-1418eb8e0710'::uuid, 'despublicar', 'rejane-oliveira', 'db4e22f8-ce30-4fcd-8799-a73be255d23a'::uuid, '85eb814473b6ff9b1e60ae40d9b9cbc0'),
-  ('502908ac-a0be-47fb-8f9e-ed40d591942b'::uuid, 'despublicar', 'sergio-moro-gov-pr', '6025cfb5-d1a7-4ad0-baa7-c131b381e8fa'::uuid, 'ab7b6fa63c732444e7285d66f69fa673');
+  ('0d02ea00-c2d5-4516-a604-d459c1b2c93f'::uuid, 'despublicar', 'sergio-moro-gov-pr', '6025cfb5-d1a7-4ad0-baa7-c131b381e8fa'::uuid, '2a815742d2de29f4fb27fa587e7f7d16'),
+  ('16eb95a6-5b7a-4e56-8e58-663223761fb7'::uuid, 'despublicar', 'luciano-zucco', '53af44cf-7f66-44d3-b733-1114c5143e6a'::uuid, 'bf76060e3ac1c034074c74ccc3ce0d90'),
+  ('238ccde5-9ac1-41b0-9e92-a0c17581abcd'::uuid, 'despublicar', 'tarcisio-gov-sp', '1919a599-1f61-41cc-ab6a-cd4baa77e639'::uuid, 'b9f70ac50b9f00055c521b5f72168639'),
+  ('9bc9faef-6188-493a-a724-e8f4a75b63d6'::uuid, 'despublicar', 'daniel-vilela', 'd80384f6-147b-40ef-8fa5-ae0b2be5a1f5'::uuid, '37c54921ab07ad0322e59e3caac28390'),
+  ('a1e9b99d-485a-4322-b4e5-598923155243'::uuid, 'despublicar', 'lula', 'd6740de5-c7d9-4978-ab49-b51a22481aa2'::uuid, '8216c353bcd772e4ee01fa70c2eb01fe'),
+  ('a72a3378-6665-4582-966b-f907139490d6'::uuid, 'despublicar', 'eduardo-paes', '242af65c-dae1-447c-b4b0-c26095f7384d'::uuid, 'e897721f603fb8ac38b1ddb53454df81'),
+  ('e7046002-6714-4af5-9cd5-736a25d22e94'::uuid, 'despublicar', 'patrus-ananias', '123bd693-5482-4f0c-8ff3-40617acadba9'::uuid, '6fe3bbb5e74c08a655d09f57c56d3aca'),
+  ('3531eebb-c738-4c59-b130-4a8bffc18481'::uuid, 'despublicar', 'lenilda-luna', '9677309d-5b33-4973-9bbb-d92b766557a3'::uuid, '25d18e965e2852e038fdbb26b6115536'),
+  ('b0e63924-e06d-452c-a215-1418eb8e0710'::uuid, 'despublicar', 'rejane-oliveira', 'db4e22f8-ce30-4fcd-8799-a73be255d23a'::uuid, 'f6ab56c023b3e64a693e411667d12ff8'),
+  ('502908ac-a0be-47fb-8f9e-ed40d591942b'::uuid, 'despublicar', 'sergio-moro-gov-pr', '6025cfb5-d1a7-4ad0-baa7-c131b381e8fa'::uuid, '2d65a7e005293cea4f4d2b869061cb6b');
 
 CREATE TEMP TABLE _pf_l8_vinculos_novos (
   slug text NOT NULL, candidato_id uuid NOT NULL, programa_chave text NOT NULL,
@@ -129,11 +125,9 @@ CREATE TEMP TABLE _pf_l8_vinculos_novos (
 ) ON COMMIT DROP;
 INSERT INTO _pf_l8_vinculos_novos VALUES
   ('arinalda-do-mlb', 'a0d7bc78-cde7-49b1-a006-8d8dcf5449ce'::uuid, '2026:GOVERNADOR:RN:200002547826', 'moradia-digna', 'fala', '2805d974aeff7863f9769409edb482bde2cb8bfeb347dde5db30e7df783ffa2b'),
-  ('efraim-filho', '8bef8b10-5c52-4e34-bf65-7af2ccc6caae'::uuid, '2026:GOVERNADOR:PB:150002538692', 'politica-tributaria', 'projeto_lei', '504d29ec-5965-4b8e-81e9-ac6c89e31870'),
   ('efraim-filho', '8bef8b10-5c52-4e34-bf65-7af2ccc6caae'::uuid, '2026:GOVERNADOR:PB:150002538692', 'politica-tributaria', 'projeto_lei', '36646024-ab20-4ad9-8923-2cd87c920c51'),
   ('efraim-filho', '8bef8b10-5c52-4e34-bf65-7af2ccc6caae'::uuid, '2026:GOVERNADOR:PB:150002538692', 'politica-tributaria', 'projeto_lei', '375b10b7-af00-4c58-87b0-0b6dc78f6e32'),
   ('flavio-bolsonaro', '538fb04d-8fb4-486f-a7dd-9c78399a6353'::uuid, '2026:PRESIDENTE:BR:280002551544', 'economia-tributaria', 'votacao_chave', 'fc47ff55-3557-4ff1-8c93-d594246ece96'),
-  ('luciano-zucco', '53af44cf-7f66-44d3-b733-1114c5143e6a'::uuid, '2026:GOVERNADOR:RS:210002547857', 'orientacao-economica', 'projeto_lei', '09363c2d-a6af-40b2-9b32-2ac277755e83'),
   ('luciano-zucco', '53af44cf-7f66-44d3-b733-1114c5143e6a'::uuid, '2026:GOVERNADOR:RS:210002547857', 'orientacao-economica', 'projeto_lei', '9a68aca1-b817-4bd4-a492-527c59c4ad63'),
   ('luciano-zucco', '53af44cf-7f66-44d3-b733-1114c5143e6a'::uuid, '2026:GOVERNADOR:RS:210002547857', 'orientacao-economica', 'votacao_chave', 'b56782fc-7a9f-476e-9946-3536edc1b332');
 
@@ -160,8 +154,8 @@ BEGIN
      OR (SELECT count(*) FROM _pf_l8_recibos) <> 26
      OR (SELECT count(*) FROM _pf_l8_processos_cnj) <> 6
      OR (SELECT count(*) FROM _pf_l8_vinculos WHERE acao = 'verificar') <> 1
-     OR (SELECT count(*) FROM _pf_l8_vinculos WHERE acao = 'despublicar') <> 14
-     OR (SELECT count(*) FROM _pf_l8_vinculos_novos) <> 8
+     OR (SELECT count(*) FROM _pf_l8_vinculos WHERE acao = 'despublicar') <> 10
+     OR (SELECT count(*) FROM _pf_l8_vinculos_novos) <> 6
      OR (SELECT count(*) FROM _pf_l8_autoria) <> 1
   THEN RAISE EXCEPTION 'l8-mesa: lista fechada divergiu das contagens'; END IF;
 
@@ -187,7 +181,7 @@ BEGIN
       WHERE md5(to_jsonb(e)::text) = u.preimage_md5
         AND e.relacao IN ('sustenta', 'relacionada')
         AND ((u.acao = 'verificar' AND NOT e.verificado)
-          OR (u.acao = 'despublicar' AND public.is_public_compromisso_evidencia(e.id)))) <> 15
+          OR (u.acao = 'despublicar' AND public.is_public_compromisso_evidencia(e.id)))) <> 11
      OR (SELECT count(*) FROM public.projetos_lei p JOIN _pf_l8_autoria u
         ON u.id = p.id AND u.candidato_id = p.candidato_id
       WHERE md5(to_jsonb(p)::text) = u.preimage_md5 AND p.tipo = 'PEC' AND p.despublicado_em IS NULL) <> 1
@@ -553,7 +547,7 @@ BEGIN
   WHERE u.acao = 'despublicar' AND e.id = u.id AND e.candidato_id = u.candidato_id
     AND md5(to_jsonb(e)::text) = u.preimage_md5;
   GET DIAGNOSTICS n = ROW_COUNT;
-  IF n <> 14 THEN RAISE EXCEPTION 'l8-mesa: vínculos retirados %', n; END IF;
+  IF n <> 10 THEN RAISE EXCEPTION 'l8-mesa: vínculos retirados %', n; END IF;
 
   -- @write tabela=compromisso_evidencia ref=curadoria-mesa-l8-20260929 campos=candidato_id,programa_chave,frase_id,tema_id,tipo_evidencia,evidencia_ref,relacao,origem,probabilidade,verificado,revisado_por,revisado_em,motivo
   INSERT INTO public.compromisso_evidencia
@@ -563,7 +557,7 @@ BEGIN
          'relacionada', 'curadoria', NULL, true, 'curadoria-mesa-l8-20260929', v, 'Mesa L8 de 29/09/2026: vínculo publicado como "Trata do tema" após revisão editorial.'
   FROM _pf_l8_vinculos_novos u JOIN public.candidatos c ON c.id = u.candidato_id AND c.slug = u.slug;
   GET DIAGNOSTICS n = ROW_COUNT;
-  IF n <> 8 THEN RAISE EXCEPTION 'l8-mesa: vínculos inseridos %', n; END IF;
+  IF n <> 6 THEN RAISE EXCEPTION 'l8-mesa: vínculos inseridos %', n; END IF;
 
   -- @write tabela=projetos_lei ref=curadoria-mesa-l8-20260929 campos=metadata
   UPDATE public.projetos_lei p SET metadata = COALESCE(p.metadata, '{}'::jsonb)
@@ -582,11 +576,11 @@ BEGIN
      OR (SELECT count(*) FROM public.processos p JOIN _pf_l8_processos_cnj u ON u.processo_id = p.id
         WHERE p.numero_processo = u.numero_cnj AND (u.status_novo IS NULL OR p.status = u.status_novo)) <> 6
      OR (SELECT count(*) FROM _pf_l8_vinculos u WHERE u.acao = 'verificar' AND public.is_public_compromisso_evidencia(u.id)) <> 1
-     OR (SELECT count(*) FROM _pf_l8_vinculos u WHERE u.acao = 'despublicar' AND NOT public.is_public_compromisso_evidencia(u.id)) <> 14
+     OR (SELECT count(*) FROM _pf_l8_vinculos u WHERE u.acao = 'despublicar' AND NOT public.is_public_compromisso_evidencia(u.id)) <> 10
      OR (SELECT count(*) FROM public.compromisso_evidencia e JOIN _pf_l8_vinculos_novos u
         ON e.programa_chave = u.programa_chave AND e.frase_id IS NULL AND e.tema_id = u.tema_id
        AND e.tipo_evidencia = u.tipo_evidencia AND e.evidencia_ref = u.evidencia_ref
-        WHERE public.is_public_compromisso_evidencia(e.id)) <> 8
+        WHERE public.is_public_compromisso_evidencia(e.id)) <> 6
      OR (SELECT count(*) FROM public.projetos_lei p JOIN _pf_l8_autoria u ON u.id = p.id
         WHERE p.metadata->'autoria'->>'papel' = u.papel AND (p.metadata->'autoria'->>'ordem')::int = u.ordem) <> 1
   THEN RAISE EXCEPTION 'l8-mesa: pós-condição falhou'; END IF;
@@ -594,9 +588,9 @@ BEGIN
   -- @write tabela=coleta_log ref=migration:20260929020000 campos=fonte,escopo,alvo,resultado,volume,detalhe,url,execucao,natureza
   INSERT INTO public.coleta_log (fonte, escopo, alvo, resultado, volume, detalhe, url, execucao, natureza)
   SELECT 'curadoria-l8-mesa', 'global', 'processos,compromisso_evidencia,projetos_lei', 'encontrado',
-    61,
+    55,
     jsonb_build_object(
-      'resumo', 'Mesa L8: 31 processos novos, 6 CNJs completados, 9 vínculos de promessa publicados, 14 retirados e 1 autoria corrigida.',
+      'resumo', 'Mesa L8: 31 processos novos, 6 CNJs completados, 7 vínculos de promessa publicados, 10 retirados e 1 autoria corrigida.',
       'processos_novos', (SELECT jsonb_agg(jsonb_build_object('slug', l.slug, 'numero_processo', l.numero_cnj) ORDER BY l.slug, l.numero_cnj) FROM _pf_processos_curadoria l),
       'vinculos_novos', (SELECT jsonb_agg(to_jsonb(e) ORDER BY e.id) FROM public.compromisso_evidencia e JOIN _pf_l8_vinculos_novos u
         ON e.programa_chave = u.programa_chave AND e.frase_id IS NULL AND e.tema_id = u.tema_id
