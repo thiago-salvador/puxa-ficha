@@ -209,6 +209,7 @@ describe("ponte PCE → senador → candidato", () => {
     const base = { fila, itemId: item.id, roster: fila.roster, seed, dataset, fichaPublica: true, agora: new Date("2026-09-24T12:00:00Z") }
     const revisao = { ...revisaoAlfa(item.id), situacao_sigla: "INDEFD", situacao_descricao: "INDEFERIDA" }
     const { item: aprovado } = aprovarPceSenado({ ...base, revisao, processoAtual: encerrado })
+    if (aprovado.casa !== "senado") throw new Error("esperado item do Senado")
     assert.deepEqual(aprovado.situacao_oficial, { sigla: "INDEFD", descricao: "INDEFERIDA" })
     assert.equal(aprovado.ultimo_andamento_em, "2026-05-27")
     assert.throws(() => aprovarPceSenado({ ...base, revisao, processoAtual: { ...encerrado, tramitando: "Sim" } }), /estado oficial atual incompleto/)
