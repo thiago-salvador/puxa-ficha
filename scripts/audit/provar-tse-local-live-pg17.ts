@@ -8,7 +8,7 @@ import { publicFamilyPayloadSha256 } from "./lib/coverage-source-proof"
 import { identityRiskSlugsFromArtifacts, parseCliOptions, runReviewedLive } from "../tse-local/ingest-tse-local"
 import type { CoverageProfile } from "./audit-cobertura-fichas"
 import { planejarFinancas2026, partitionarAcoesPorRiscoDeIdentidade, stableJson } from "../lib/tse-2026-financas-plano"
-import { exigirChaveV2 } from "../lib/rehash-doador-cpf-v2"
+import { exigirChaveV2, urlEhLoopback } from "../lib/rehash-doador-cpf-v2"
 
 const safe = { id: "00000000-0000-4000-8000-000000000101", slug: "pf-live-safe" }
 const risk = { id: "00000000-0000-4000-8000-000000000102", slug: "pf-live-risk" }
@@ -25,9 +25,12 @@ const receiptSnapshot = join(root, "post-round.json")
 const key = process.env.SUPABASE_SERVICE_ROLE_KEY ?? ""
 const api = (process.env.PF_TSE_PGRST_URL ?? process.env.SUPABASE_URL ?? "").replace(/\/$/, "")
 
-function v2Salt(): string {
+// Prova hermética: o .sh gera um sal sintético por rodada e declara a impressão
+// dele em PF_CPF_HASH_PROOF_FINGERPRINT, aceita só com SUPABASE_URL em loopback.
+// A chave v2 real nunca entra nesta prova.
+function syntheticSalt(): string {
   const value = process.env.PF_DOADOR_CPF_HASH_SALT
-  if (!value) throw new Error("PG17 proof requires PF_DOADOR_CPF_HASH_SALT in the process environment; value is never printed")
+  demand(value && process.env.PF_CPF_HASH_PROOF_FINGERPRINT, "PG17 proof requires the synthetic salt and fingerprint exported by provar-tse-local-live-pg17.sh")
   exigirChaveV2(value)
   return value
 }
@@ -37,7 +40,7 @@ function demand(condition: unknown, message: string): asserts condition {
 }
 
 async function serve(): Promise<void> {
-  demand(api.startsWith("http://127.0.0.1:") || api.startsWith("http://localhost:"), "fixture server refuses a non-loopback PostgREST URL")
+  demand(urlEhLoopback(api), "fixture server refuses a non-loopback PostgREST URL")
   const server = createServer(async (req, res) => {
     try {
       const path = new URL(req.url ?? "/", "http://127.0.0.1").pathname
@@ -91,9 +94,10 @@ async function serve(): Promise<void> {
 }
 
 async function run(): Promise<void> {
-  demand(api.startsWith("http://127.0.0.1:") || api.startsWith("http://localhost:"), "SUPABASE_URL precisa apontar ao PostgREST local")
+  demand(urlEhLoopback(api), "PF_TSE_PGRST_URL precisa apontar ao PostgREST local")
+  demand(urlEhLoopback(process.env.SUPABASE_URL), "SUPABASE_URL precisa apontar a loopback: os writers da prova gravam por ele")
   demand(key && process.env.PF_TSE_LIVE_SERVER_PORT, "PostgREST key/porta local ausente")
-  const salt = v2Salt()
+  const salt = syntheticSalt()
   mkdirSync(join(reviewed, "financas"), { recursive: true, mode: 0o700 })
 
   const profiles = [safe, risk]

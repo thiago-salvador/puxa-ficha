@@ -359,8 +359,9 @@ describe("coletor TSE 2026: portão e argumentos", () => {
   it("lerArgs reconhece apply, agendado, out e sha", () => {
     assert.deepEqual(lerArgs(["--apply", "--agendado", "--out=x", "--expected-plan-sha=abc"]), {
       aplicar: true, agendado: true, out: "x", expectedPlanSha: "abc", backfillCategorias: false, backfillDryRun: null, reviewedPlan: null, expectedPlanFileSha: null,
+      avaliarTravas: false, maxFichasAlteradas: null,
     })
-    assert.deepEqual(lerArgs([]), { aplicar: false, agendado: false, out: null, expectedPlanSha: null, backfillCategorias: false, backfillDryRun: null, reviewedPlan: null, expectedPlanFileSha: null })
+    assert.deepEqual(lerArgs([]), { aplicar: false, agendado: false, out: null, expectedPlanSha: null, backfillCategorias: false, backfillDryRun: null, reviewedPlan: null, expectedPlanFileSha: null, avaliarTravas: false, maxFichasAlteradas: null })
   })
 
   it("agendado não exige sha, mas respeita travas e sonda de CAS", () => {
