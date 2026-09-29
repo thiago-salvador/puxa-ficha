@@ -38,11 +38,11 @@ describe("singular de Destaques", () => {
   })
 })
 
-describe("rótulo mobile da aba Pesquisas", () => {
+describe("rótulo mobile da aba Checagens", () => {
   const tabs = [
     { id: "geral", label: "Visão geral" },
-    { id: "pesquisas", label: "Pesquisas", count: 3 },
     { id: "programa", label: "Programa" },
+    { id: "checagens", label: "Checagens", count: 26 },
   ]
 
   it("usa a forma curta na barra mobile e o nome inteiro no desktop", () => {
@@ -60,13 +60,13 @@ describe("rótulo mobile da aba Pesquisas", () => {
     assert.ok(inicio > 0, "não achei a tablist mobile")
     const barraMobile = html.slice(inicio)
 
-    assert.ok(barraMobile.includes(">Pesq.<"), "barra mobile devia usar a forma curta")
+    assert.ok(barraMobile.includes(">Checag.<"), "barra mobile devia usar a forma curta")
     assert.ok(
-      !barraMobile.includes(">Pesquisas<"),
-      "barra mobile não pode usar o nome inteiro, que trunca em PES… a 360px",
+      !barraMobile.includes(">Checagens<"),
+      "barra mobile não pode usar o nome inteiro, que trunca em CHE… a 360px",
     )
     // O desktop, que tem espaço, continua com o nome por extenso.
-    assert.ok(html.slice(0, inicio).includes(">Pesquisas<"), "desktop perdeu o nome inteiro")
+    assert.ok(html.slice(0, inicio).includes(">Checagens<"), "desktop perdeu o nome inteiro")
   })
 
   it("nenhum rótulo mobile passa de 8 caracteres", () => {
