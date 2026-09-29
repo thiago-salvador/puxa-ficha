@@ -27,7 +27,7 @@ Define binary criteria for source identity, extraction completeness, summary fid
 Run:
 
 ```bash
-python3 /Users/thiagosalvador/.claude/skills/eval/scripts/eval_lint.py docs/operations/programas-governo-presidencia-eval.md
+python3 <skills>/eval/scripts/eval_lint.py docs/operations/programas-governo-presidencia-eval.md
 ```
 
 Expected: exit 0 and no framework violation.
@@ -41,8 +41,8 @@ Translate every acceptance-changing criterion into a gate with an observable out
 Run:
 
 ```bash
-node /Users/thiagosalvador/.claude/skills/unlazy/scripts/gate-check.mjs --status GATES.md
-node /Users/thiagosalvador/.claude/skills/unlazy/scripts/gate-lint.mjs GATES.md
+node <skills>/unlazy/scripts/gate-check.mjs --status GATES.md
+node <skills>/unlazy/scripts/gate-lint.mjs GATES.md
 ```
 
 Expected: a valid ledger, zero malformed gates and `LINT OK`.
@@ -460,8 +460,8 @@ Prove the scope checker rejects a deliberately disallowed fixture path, then run
 Run:
 
 ```bash
-node /Users/thiagosalvador/.claude/skills/unlazy/scripts/gate-check.mjs --status GATES.md
-node /Users/thiagosalvador/.claude/skills/unlazy/scripts/gate-lint.mjs GATES.md
+node <skills>/unlazy/scripts/gate-check.mjs --status GATES.md
+node <skills>/unlazy/scripts/gate-lint.mjs GATES.md
 ```
 
 Read every `CHECK`, `EXPECT`, `CWD` and called script. Do not approve any command that writes remote state, deploys, pushes or merges.
@@ -471,7 +471,7 @@ Read every `CHECK`, `EXPECT`, `CWD` and called script. Do not approve any comman
 Run:
 
 ```bash
-node /Users/thiagosalvador/.claude/skills/unlazy/scripts/gate-check.mjs --approve GATES.md
+node <skills>/unlazy/scripts/gate-check.mjs --approve GATES.md
 ```
 
 Expected: every runnable gate exits 0 and matches its success-only marker.
@@ -481,7 +481,7 @@ Expected: every runnable gate exits 0 and matches its success-only marker.
 Run:
 
 ```bash
-node /Users/thiagosalvador/.claude/skills/unlazy/scripts/gate-check.mjs --reverify GATES.md
+node <skills>/unlazy/scripts/gate-check.mjs --reverify GATES.md
 ```
 
 Expected: `ALL MET`, zero unmet and zero abandoned gates.

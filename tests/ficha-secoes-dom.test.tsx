@@ -15,7 +15,7 @@ import rawRecibos from "../scripts/data/checagens-recibos.json"
 import rawRepresentacoes from "../scripts/data/representacoes-conselho-etica.json"
 import { CandidatoProfile } from "../src/components/CandidatoProfile"
 import { MoneyTabSection } from "../src/components/CandidatoProfileSections"
-import { ProgramaGovernoOverview } from "../src/components/ProgramaGovernoSection"
+import { ProgramaGovernoTab } from "../src/components/ProgramaGovernoSection"
 import { getReciboChecagens } from "../src/lib/buscas-recibos"
 import { getApprovedAttributedFactChecks } from "../src/lib/checagens-atribuidas"
 import type { CompromissoEvidenciaPublica, EstadoEvidenciasPrograma } from "../src/lib/compromisso-evidencia"
@@ -326,8 +326,11 @@ describe("ficha: promessa do programa e evidências relacionadas", () => {
     JSON.parse(readFileSync("src/data/programas-governo/presidencia-2026/lula.json", "utf8")),
   )
   const tema = manifesto.resumo!.temas[0]
+  // As evidências relacionadas moram no topo da aba Programa.
   const render = (evidencias: EstadoEvidenciasPrograma) =>
-    renderToStaticMarkup(<ProgramaGovernoOverview manifesto={manifesto} onOpenTab={() => {}} evidencias={evidencias} />)
+    renderToStaticMarkup(
+      <ProgramaGovernoTab manifesto={manifesto} loadState="failed" response={null} onRetry={() => {}} evidencias={evidencias} />,
+    )
 
   test("presente com vínculo publicado ao tema da promessa", () => {
     const evidencia: CompromissoEvidenciaPublica = {

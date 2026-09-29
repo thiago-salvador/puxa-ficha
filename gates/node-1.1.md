@@ -7,7 +7,7 @@ Scope: integrar as descobertas GitHub, Vercel e banco em um contrato implementav
   EXPECT: discovery reports present
   EVIDENCE: discovery reports present
 - [x] G2: O eval final incorpora os limites reais de deploy e rollback.
-  CHECK: python3 /Users/thiagosalvador/.claude/skills/eval/scripts/eval_lint.py docs/operations/serial-merge-queue-eval.md
+  CHECK: python3 <skills>/eval/scripts/eval_lint.py docs/operations/serial-merge-queue-eval.md
   EXPECT: /PASS|OK/
   EVIDENCE: PASS
 - [x] G3: O contrato preserva um unico slot ativo ate verificacao ou restauracao comprovada.

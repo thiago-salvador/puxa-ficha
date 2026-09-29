@@ -24,8 +24,6 @@ require.extensions[".css"] = (module) => {
 
 const {
   PesquisasPresidenciaisHero,
-  PesquisasPresidenciaisOverview,
-  PesquisasPresidenciaisTab,
 } = require("../src/components/PesquisasPresidenciaisSection") as typeof import("@/components/PesquisasPresidenciaisSection")
 const {
   listarPesquisasGovernadorPorSlug,
@@ -40,16 +38,6 @@ const { aggregatePollWeeks } = require("../src/lib/poll-weeks") as typeof import
 const { fixturePoll } = require("./fixtures/poll-series") as typeof import("./fixtures/poll-series")
 
 const pesquisasLula = listarPesquisasPresidenciaisPorSlug("lula")
-const principaisLula = pesquisasLula.filter((pesquisa) => (pesquisa.grupo ?? "recente") === "recente")
-
-// Grade de cartões da rodada mais recente, sem os blocos recolhidos que vêm depois dela.
-function gradePrincipal(html: string) {
-  const inicio = html.indexOf("data-pf-pesquisas-principais")
-  assert.ok(inicio >= 0)
-  const fim = html.indexOf("data-pf-pesquisas-bloco=", inicio)
-  return html.slice(inicio, fim === -1 ? undefined : fim)
-}
-
 function firstLula() {
   const pesquisa = pesquisasLula[0]
   assert.ok(pesquisa)
@@ -95,95 +83,11 @@ describe("experiência v2 de pesquisas presidenciais", () => {
     assert.doesNotMatch(source, /aria-live=/)
   })
 
-  it("renderiza exatamente uma pesquisa completa na Visão geral", () => {
-    const html = renderToStaticMarkup(
-      <PesquisasPresidenciaisOverview pesquisas={pesquisasLula} onOpenTab={() => {}} />,
-    )
-    const pesquisa = firstLula()
-
-    assert.equal((html.match(/data-pf-pesquisa-card=/g) ?? []).length, 1)
-    assert.ok(html.includes(pesquisa.instituto.value!))
-    assert.ok(html.includes(percent(pesquisa.resultado.valuePercent)))
-    assert.ok(html.includes(pesquisa.cenario.labelRaw))
-    assert.ok(html.includes(`${pesquisa.sample.size.value!.toLocaleString("pt-BR")} entrevistas`))
-    assert.ok(html.includes(`${pesquisa.marginErrorPp.value!.toLocaleString("pt-BR", { maximumFractionDigits: 2 })} pontos percentuais`))
-    assert.match(html, /aria-label="Pesquisa anterior"/)
-    assert.match(html, /aria-label="Próxima pesquisa"/)
-    assert.equal((html.match(/size-11/g) ?? []).length, 2)
-    assert.doesNotMatch(html, /2º turno/)
-  })
-
-  it("lista as fontes revisadas na aba Pesquisas", () => {
-    const html = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={pesquisasLula} />)
-    const current = firstLula()
-    const datafolha = principaisLula.find((pesquisa) => pesquisa.instituto.value === "Datafolha")
-    assert.ok(datafolha)
-
-    assert.equal((html.match(/data-pf-pesquisa-card=/g) ?? []).length, principaisLula.length)
-    assert.ok(html.includes(current.instituto.value!))
-    assert.ok(html.includes(percent(current.resultado.valuePercent)))
-    assert.ok(html.includes(datafolha.instituto.value!))
-    assert.ok(html.includes(percent(datafolha.resultado.valuePercent)))
-    assert.match(html, /percentuais do total de entrevistados/)
-    assert.match(html, /1º turno/)
-    assert.match(html, /Ver divulgação pública/)
-    assert.match(html, /fotografia do período/)
-    // Segundo turno e rodadas antigas só aparecem nos blocos recolhidos, fora da grade.
-    assert.doesNotMatch(gradePrincipal(html), /Ipsos-Ipec|2º turno/)
-    // Visible copy only: source URLs may carry a headline slug.
-    assert.doesNotMatch(html.replace(/<[^>]+>/g, " ").toLowerCase(), /média|ranking|empate|lidera/)
-  })
-
-  it("aceita uma, duas ou três fontes sem reservar espaço vazio", () => {
-    const datafolha = pesquisasLula[0]
-    assert.ok(datafolha)
-    const atlas = structuredClone(datafolha)
-    atlas.id = `${datafolha.id}-layout-atlas`
-    atlas.sourceId = "atlasintel-bloomberg-nacional-2026"
-    atlas.instituto.value = "AtlasIntel"
-    const ipsos = structuredClone(datafolha)
-    ipsos.id = `${datafolha.id}-layout-ipsos`
-    ipsos.sourceId = "ipsos-ipec-nacional-2026"
-    ipsos.instituto.value = "Ipsos-Ipec"
-
-    for (const pesquisas of [[datafolha], [datafolha, atlas], [datafolha, atlas, ipsos]]) {
-      const html = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={pesquisas} />)
-      assert.equal((html.match(/data-pf-pesquisa-card=/g) ?? []).length, pesquisas.length)
-      assert.doesNotMatch(html, /data-pf-pesquisas-empty=/)
-    }
-  })
-
-  it("mantém estado vazio explícito nas três superfícies", () => {
+  it("mantém estado vazio explícito no selo do hero", () => {
     const hero = renderToStaticMarkup(<PesquisasPresidenciaisHero pesquisas={[]} />)
-    const overview = renderToStaticMarkup(
-      <PesquisasPresidenciaisOverview pesquisas={[]} onOpenTab={() => {}} />,
-    )
-    const tab = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={[]} />)
 
     assert.match(hero, /Sem pesquisa qualificada recente/)
-    assert.match(overview, /Sem pesquisa qualificada recente para este candidato/)
-    assert.match(tab, /Sem pesquisa qualificada recente para este candidato/)
-    assert.doesNotMatch(`${hero}${overview}${tab}`, />0%<|>0%<!-- -->/)
-  })
-
-  it("troca pesquisa antiga por estado textual e preserva zero publicado", () => {
-    const oldPoll = structuredClone(pesquisasLula[0])
-    oldPoll.state = "antigo"
-    const errorPoll = structuredClone(pesquisasLula[0])
-    errorPoll.state = "erro"
-    const oldHtml = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={[oldPoll]} />)
-    const errorHtml = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={[errorPoll]} />)
-    const zeroHtml = renderToStaticMarkup(
-      <PesquisasPresidenciaisTab
-        pesquisas={listarPesquisasPresidenciaisPorSlug("hertz-dias")}
-      />,
-    )
-
-    assert.match(oldHtml, /Pesquisa antiga/)
-    assert.doesNotMatch(oldHtml, />38,4%<|>38,4%<!-- -->/)
-    assert.match(errorHtml, /Resultado indisponível/)
-    assert.doesNotMatch(errorHtml, />38,4%<|>38,4%<!-- -->/)
-    assert.match(zeroHtml, />0%<|>0%<!-- -->/)
+    assert.doesNotMatch(hero, />0%<|>0%<!-- -->/)
   })
 
   it("exibe menção espontânea sem convertê-la em candidatura e preserva Outros", () => {
@@ -247,23 +151,12 @@ describe("experiência v2 de pesquisas presidenciais", () => {
     assert.doesNotMatch(html, /aria-label="[^"\n]*candidatos/i)
   })
 
-  it("reutiliza as três superfícies para candidaturas estaduais qualificadas", () => {
+  it("reutiliza o selo do hero para candidaturas estaduais qualificadas", () => {
     const pesquisas = listarPesquisasGovernadorPorSlug("tarcisio-gov-sp", "SP")
     const hero = renderToStaticMarkup(<PesquisasPresidenciaisHero pesquisas={pesquisas} />)
-    const overview = renderToStaticMarkup(
-      <PesquisasPresidenciaisOverview pesquisas={pesquisas} onOpenTab={() => {}} />,
-    )
-    const tab = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={pesquisas} />)
 
     assert.match(hero, /Quaest/)
     assert.match(hero, /44%/)
-    assert.match(overview, /44%/)
-    assert.equal(
-      (tab.match(/data-pf-pesquisa-card=/g) ?? []).length,
-      pesquisas.filter((pesquisa) => pesquisa.grupo === "recente").length,
-    )
-    assert.match(tab, /quaest-sp-02456-2026-revisao-20260924/)
-    assert.match(tab, /datafolha-tarcisio-lidera-disputa/)
     assert.equal(pesquisas[0]?.registration.code.value, "SP-02456/2026")
   })
 })
@@ -286,17 +179,16 @@ describe("integração e transporte", () => {
     assert.match(viewSource, /<PesquisasPresidenciaisHero pesquisas=\{pesquisas\} \/>/)
   })
 
-  it("transporta o mesmo conjunto pelo perfil diferido sem buscar novamente", () => {
-    assert.match(deferredSource, /pesquisas=\{pesquisas\}/)
-    assert.match(clientSource, /pesquisas=\{pesquisas\}/)
-    assert.match(profileSource, /pesquisas=\{pesquisas\}/)
+  // A aba Pesquisas e o card "Intenção de voto" saíram da ficha; o selo do hero fica.
+  it("o perfil diferido não transporta mais as pesquisas para as abas", () => {
+    assert.doesNotMatch(`${deferredSource}${clientSource}${profileSource}`, /pesquisas=\{pesquisas\}/)
     assert.doesNotMatch(`${deferredSource}${clientSource}${profileSource}`, /listarPesquisasPresidenciaisPorSlug/)
   })
 
-  it("encaixa a pesquisa como um card da mesma grade da Visão geral", () => {
-    assert.match(profileSource, /leadingCard=\{[\s\S]*<PesquisasPresidenciaisOverview/)
+  it("a Visão geral não tem card de intenção de voto", () => {
+    assert.doesNotMatch(profileSource, /PesquisasPresidenciaisOverview|leadingCard/)
     assert.match(overviewSource, /data-pf-profile-overview-grid=/)
-    assert.match(overviewSource, /<PatrimonioTeaser[\s\S]*\{leadingCard\}/)
+    assert.doesNotMatch(overviewSource, /leadingCard/)
   })
 
   it("autoriza presidente e governador, mantendo timeline isolada", () => {
@@ -305,7 +197,6 @@ describe("integração e transporte", () => {
       /ficha\.cargo_disputado === "Presidente" \|\| ficha\.cargo_disputado === "Governador"/,
     )
     assert.match(viewSource, /seoSubpath !== "timeline"/)
-    assert.match(profileSource, /id !== "pesquisas" \|\| pesquisasEnabled/)
-    assert.match(profileSource, /next === "pesquisas" && !pesquisasEnabled/)
+    assert.doesNotMatch(profileSource, /pesquisasEnabled|PesquisasPresidenciaisTab/)
   })
 })

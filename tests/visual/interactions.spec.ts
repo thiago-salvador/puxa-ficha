@@ -340,29 +340,36 @@ test.describe("ProfileTabs", () => {
     }
   })
 
-  test("query param restores active tab and browser back follows tab history", async ({ page, isMobile }) => {
+  test("query param restores active tab and browser back follows tab history", async ({ page }) => {
     await page.goto("/candidato/fixture-alfa?tab=dinheiro")
     await page.waitForLoadState("networkidle")
 
-    const more = page.getByRole("button", { name: /^Mais/ })
-    if (isMobile) await more.click()
-    const dinheiroTab = page.getByRole(isMobile ? "menuitemradio" : "tab", { name: /^dinheiro/i })
-    const justicaTab = page.getByRole(isMobile ? "menuitemradio" : "tab", { name: /^justiça/i })
-    const selectionAttribute = isMobile ? "aria-checked" : "aria-selected"
-    await expect(dinheiroTab).toHaveAttribute(selectionAttribute, "true")
-    await expect(page.getByRole("tabpanel")).toHaveAttribute("aria-labelledby", "profile-tab-dinheiro")
+    const tabNav = page.getByRole("navigation", { name: /se(?:ções|coes) do perfil/i })
+    await expect(tabNav.getByRole("tab").first()).toBeVisible()
+    const more = tabNav.getByRole("button", { name: /^Mais/ })
+    // No mobile a aba pode estar entre as três da barra ou no menu "Mais",
+    // conforme as abas que a ficha tem; o teste acha onde ela está.
+    async function locateTab(name: RegExp) {
+      const tab = tabNav.getByRole("tab", { name })
+      if (await tab.isVisible()) return { locator: tab, attribute: "aria-selected", inMenu: false }
+      await more.click()
+      return { locator: page.getByRole("menuitemradio", { name }), attribute: "aria-checked", inMenu: true }
+    }
+    async function expectActive(name: RegExp, panelId: string) {
+      const found = await locateTab(name)
+      await expect(found.locator).toHaveAttribute(found.attribute, "true")
+      if (found.inMenu) await page.keyboard.press("Escape")
+      await expect(page.getByRole("tabpanel")).toHaveAttribute("aria-labelledby", panelId)
+    }
 
-    await justicaTab.click()
+    await expectActive(/^dinheiro/i, "profile-tab-dinheiro")
+
+    await (await locateTab(/^justiça/i)).locator.click()
     await expect(page).toHaveURL(/\?tab=justica/)
-    if (isMobile) await more.click()
-    await expect(justicaTab).toHaveAttribute(selectionAttribute, "true")
-    await expect(page.getByRole("tabpanel")).toHaveAttribute("aria-labelledby", "profile-tab-justica")
+    await expectActive(/^justiça/i, "profile-tab-justica")
 
-    if (isMobile) await page.keyboard.press("Escape")
     await page.goBack()
-    if (isMobile) await more.click()
-    await expect(dinheiroTab).toHaveAttribute(selectionAttribute, "true")
-    await expect(page.getByRole("tabpanel")).toHaveAttribute("aria-labelledby", "profile-tab-dinheiro")
+    await expectActive(/^dinheiro/i, "profile-tab-dinheiro")
   })
 
   test("tab bar sticks to top after scroll — no gap below navbar", async ({

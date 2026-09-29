@@ -1021,7 +1021,7 @@ nessa data. Reexecute os gates antes de usá-lo como prova futura.
 
 | Item | Estado verificado |
 |---|---|
-| Pasta local canônica | `/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha` |
+| Pasta local canônica | `<repo>` |
 | Branch de produção | `main` |
 | Commit em produção | `0cf39b41` |
 | Vercel | Deployment Ready, criado em 06/08/2026 às 13:19 BRT |

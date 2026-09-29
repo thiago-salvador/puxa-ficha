@@ -1,6 +1,6 @@
 "use client"
 
-// cspell:words multidocument nivel secao secoes relacao confirmacao
+// cspell:words multidocument nivel secao secoes relacao confirmacao revisao
 
 import {
   useCallback,
@@ -192,13 +192,23 @@ function ProgramaEvidencias({ manifesto }: { manifesto: ProgramaGovernoManifesto
   const frases = manifesto.resumo?.frases ?? []
   if (frases.length === 0) return null
   return (
-    <details
-      className="mt-4 max-w-4xl rounded-[12px] border border-border/60 px-4 py-3"
+    <section
+      aria-labelledby="programa-frases-title"
+      className="min-w-0 rounded-[12px] border border-border/60 bg-card px-4 py-4 sm:px-5"
       data-pf-programa-evidencias=""
     >
-      <summary className="cursor-pointer text-sm font-semibold text-foreground">
-        Ver as {frases.length} frases do resumo e as evidências no documento oficial
-      </summary>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <h3 id="programa-frases-title" className="text-base font-semibold text-foreground">
+          As {frases.length} frases do resumo
+        </h3>
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-2.5 py-1 text-xs font-semibold text-foreground">
+          <Sparkles className="size-3.5" aria-hidden="true" />
+          Resumo por IA, revisado editorialmente
+        </span>
+      </div>
+      <p className="mt-1 text-xs leading-5 text-muted-foreground">
+        As frases do resumo e as evidências no documento oficial.
+      </p>
       <ol className="mt-3 list-decimal space-y-3 pl-5">
         {frases.map((frase, index) => (
           <li key={index} className="text-sm leading-6 text-foreground">
@@ -242,7 +252,7 @@ function ProgramaEvidencias({ manifesto }: { manifesto: ProgramaGovernoManifesto
         </a>
         .
       </p>
-    </details>
+    </section>
   )
 }
 
@@ -317,10 +327,15 @@ function ProgramaEvidenciasRelacionadas({
   temas,
   estado,
   mostrarSemCongresso,
+  className = "mt-6 border-t border-border/60 pt-5",
+  mostrarProcessadoEm = true,
 }: {
   temas: ReadonlyArray<{ id: string; titulo: string }>
   estado: EstadoEvidenciasPrograma
   mostrarSemCongresso: boolean
+  className?: string
+  /** No topo da aba a data de comparação sobe para a linha de revisão. */
+  mostrarProcessadoEm?: boolean
 }) {
   const porTema = agruparEvidenciasPorTema(estado.estado === "com_vinculos" ? estado.itens : [])
   const temasComEvidencia = temas.filter((tema) => (porTema.get(tema.id)?.length ?? 0) > 0)
@@ -328,7 +343,7 @@ function ProgramaEvidenciasRelacionadas({
   return (
     <section
       aria-labelledby="compromisso-evidencias-title"
-      className="mt-6 border-t border-border/60 pt-5"
+      className={className}
       data-pf-compromisso-evidencias=""
       data-pf-compromisso-evidencias-estado={estado.estado}
     >
@@ -396,7 +411,7 @@ function ProgramaEvidenciasRelacionadas({
           })}
         </ul>
       )}
-      {processadoEm && (
+      {processadoEm && mostrarProcessadoEm && (
         <p className="mt-2 text-xs text-muted-foreground" data-pf-compromisso-evidencias-processado="">
           {compromissoEvidenciaCopy.processadoEm(processadoEm)}
         </p>
@@ -456,47 +471,40 @@ export function ProgramaGovernoOverview({
   manifesto,
   onOpenTab,
   evidencias,
-  teveMandatoNoCongresso = true,
 }: {
   manifesto: ProgramaGovernoManifestoPublico
   onOpenTab: () => void
-  /** Ausente: a seção de evidências não aparece. Presente: estado explícito, inclusive vazio e erro. */
+  /** Só aparece no card quando não há documento oficial; o resto vive na aba Programa. */
   evidencias?: EstadoEvidenciasPrograma
-  teveMandatoNoCongresso?: boolean
 }) {
   const context = electionContext(manifesto.fonte)
   return (
     <section
       aria-labelledby="programa-governo-overview-title"
-      className="rounded-[12px] border border-border/60 bg-card p-5 sm:p-6"
+      className="min-w-0 rounded-[12px] border border-border/60 bg-card p-5 sm:p-6"
       data-pf-programa-overview=""
     >
-      <div className="mb-5 flex flex-wrap items-start justify-between gap-3">
-        <div className="flex min-w-0 items-center gap-3">
-          <span className="grid size-10 shrink-0 place-items-center rounded-full bg-muted">
-            <FileText className="size-5" aria-hidden="true" />
-          </span>
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.08em] text-muted-foreground">
-              Eleições 2026{context ? ` · ${context}` : ""}
-            </p>
-            <h2 id="programa-governo-overview-title" className="text-xl font-semibold text-foreground">
-              Programa de governo
-            </h2>
-          </div>
+      <div className="mb-4 flex min-w-0 items-center gap-3">
+        <span className="grid size-10 shrink-0 place-items-center rounded-full bg-muted">
+          <FileText className="size-5" aria-hidden="true" />
+        </span>
+        <div className="min-w-0">
+          <p className="text-xs font-bold uppercase tracking-[0.08em] text-muted-foreground">
+            Eleições 2026{context ? ` · ${context}` : ""}
+          </p>
+          <h2 id="programa-governo-overview-title" className="text-xl font-semibold text-foreground">
+            Programa de governo
+          </h2>
         </div>
-        {manifesto.estado === "aprovado" && (
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-3 py-1 text-xs font-semibold text-foreground">
-            <Sparkles className="size-3.5" aria-hidden="true" />
-            Resumo por IA, revisado editorialmente
-          </span>
-        )}
       </div>
 
       {manifesto.estado === "aprovado" && manifesto.resumo ? (
         <div data-pf-programa-approved="">
-          <p className="max-w-4xl text-[15px] leading-7 text-foreground">{manifesto.resumo.texto}</p>
-          <ProgramaEvidencias manifesto={manifesto} />
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-3 py-1 text-xs font-semibold text-foreground">
+            <Sparkles className="size-3.5" aria-hidden="true" />
+            Resumo por IA, revisado editorialmente
+          </span>
+          <p className="mt-4 text-[15px] leading-7 text-foreground">{manifesto.resumo.texto}</p>
           <ul className="mt-5 flex flex-wrap gap-2" aria-label="Temas centrais do programa">
             {manifesto.resumo.temas.map((tema) => (
               <li key={tema.id} className="rounded-full bg-muted px-3 py-1.5 text-xs font-semibold text-foreground">
@@ -504,14 +512,7 @@ export function ProgramaGovernoOverview({
               </li>
             ))}
           </ul>
-          {evidencias && (
-            <ProgramaEvidenciasRelacionadas
-              temas={manifesto.resumo.temas}
-              estado={evidencias}
-              mostrarSemCongresso={manifesto.fonte.cargo === "GOVERNADOR" && !teveMandatoNoCongresso}
-            />
-          )}
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-6">
             <button
               type="button"
               onClick={onOpenTab}
@@ -520,13 +521,7 @@ export function ProgramaGovernoOverview({
               {manifesto.documentos?.length ? "Ler documentos completos" : "Ler programa completo"}
               <ChevronRight className="size-4" aria-hidden="true" />
             </button>
-            <SourceLink fonte={manifesto.fonte} />
           </div>
-          {manifesto.reviewedAt && (
-            <p className="mt-4 text-xs text-muted-foreground">
-              Revisado em {formatDate(manifesto.reviewedAt)}.
-            </p>
-          )}
         </div>
       ) : (
         <>
@@ -537,6 +532,54 @@ export function ProgramaGovernoOverview({
         </>
       )}
     </section>
+  )
+}
+
+/**
+ * Topo da aba Programa: revisão, última comparação, as frases do resumo com as
+ * evidências no documento oficial e as evidências relacionadas. Fica acima do
+ * documento completo, que não muda.
+ */
+function ProgramaResumoTopo({
+  manifesto,
+  evidencias,
+  teveMandatoNoCongresso,
+}: {
+  manifesto: ProgramaGovernoManifestoPublico
+  evidencias?: EstadoEvidenciasPrograma
+  teveMandatoNoCongresso: boolean
+}) {
+  if (manifesto.estado !== "aprovado" || !manifesto.resumo) return null
+  const processadoEm = evidencias && "processadoEm" in evidencias && evidencias.processadoEm
+    ? formatEvidenciaData(evidencias.processadoEm)
+    : null
+  const temFrases = (manifesto.resumo.frases ?? []).length > 0
+  // Com vários documentos, cada um tem o próprio link no seletor abaixo.
+  const mostrarFonte = !manifesto.documentos?.length
+  return (
+    <div className="mb-8" data-pf-programa-resumo-topo="">
+      {(manifesto.reviewedAt || processadoEm || mostrarFonte) && (
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground" data-pf-programa-revisao="">
+          {manifesto.reviewedAt && <span>Revisado em {formatDate(manifesto.reviewedAt)}.</span>}
+          {processadoEm && (
+            <span data-pf-compromisso-evidencias-processado="">{compromissoEvidenciaCopy.processadoEm(processadoEm)}</span>
+          )}
+          {mostrarFonte && <SourceLink fonte={manifesto.fonte} />}
+        </div>
+      )}
+      <div className={`mt-4 grid items-start gap-4 ${temFrases && evidencias ? "md:grid-cols-2" : ""}`}>
+        <ProgramaEvidencias manifesto={manifesto} />
+        {evidencias && (
+          <ProgramaEvidenciasRelacionadas
+            temas={manifesto.resumo.temas}
+            estado={evidencias}
+            mostrarSemCongresso={manifesto.fonte.cargo === "GOVERNADOR" && !teveMandatoNoCongresso}
+            className="min-w-0 rounded-[12px] border border-border/60 bg-card px-4 py-4 sm:px-5"
+            mostrarProcessadoEm={false}
+          />
+        )}
+      </div>
+    </div>
   )
 }
 
@@ -983,6 +1026,8 @@ export function ProgramaGovernoTab({
   loadedDocument,
   onSelectDocument,
   onRetryDocument,
+  evidencias,
+  teveMandatoNoCongresso = true,
 }: {
   manifesto: ProgramaGovernoManifestoPublico
   loadState: ProgramaGovernoLoadState
@@ -993,7 +1038,17 @@ export function ProgramaGovernoTab({
   loadedDocument?: ProgramaGovernoDocumentoCarregado | null
   onSelectDocument?: (documentoId: string) => void
   onRetryDocument?: () => void
+  /** Evidências relacionadas aos temas do programa; ausente não mostra a seção. */
+  evidencias?: EstadoEvidenciasPrograma
+  teveMandatoNoCongresso?: boolean
 }) {
+  const resumoTopo = (
+    <ProgramaResumoTopo
+      manifesto={manifesto}
+      evidencias={evidencias}
+      teveMandatoNoCongresso={teveMandatoNoCongresso}
+    />
+  )
   const documents = manifesto.estado === "aprovado" ? (manifesto.documentos ?? []) : []
   const isMultiDocument = documents.length > 0
   const selectedDocument = documents.find((document) => document.documentoId === selectedDocumentId)
@@ -1019,6 +1074,8 @@ export function ProgramaGovernoTab({
           </div>
           <SourceLink fonte={selectedDocument.fonte} />
         </div>
+
+        {resumoTopo}
 
         <div className="rounded-[12px] border border-border bg-card p-4 sm:p-5">
           <label htmlFor="programa-document-select" className="text-sm font-semibold text-foreground">
@@ -1073,15 +1130,23 @@ export function ProgramaGovernoTab({
   }
 
   if (loadState === "idle" || loadState === "loading") {
-    return <div role="status" aria-busy="true" className="motion-safe:animate-pulse rounded-[12px] border border-border bg-muted/25 p-6 text-sm text-muted-foreground">Carregando programa de governo...</div>
+    return (
+      <>
+        {resumoTopo}
+        <div role="status" aria-busy="true" className="motion-safe:animate-pulse rounded-[12px] border border-border bg-muted/25 p-6 text-sm text-muted-foreground">Carregando programa de governo...</div>
+      </>
+    )
   }
   if (loadState === "failed") {
     return (
+      <>
+      {resumoTopo}
       <div role="alert" className="rounded-[12px] border border-border bg-card p-6">
         <h2 className="text-lg font-semibold text-foreground">Não foi possível carregar o programa</h2>
         <p className="mt-2 text-sm text-muted-foreground">Tente novamente sem sair da ficha.</p>
         <button type="button" onClick={onRetry} className="mt-4 min-h-11 rounded-[8px] bg-foreground px-4 py-2 text-sm font-semibold text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Tentar novamente</button>
       </div>
+      </>
     )
   }
   if (!response?.data || response.estado !== "aprovado") {
@@ -1108,8 +1173,10 @@ export function ProgramaGovernoTab({
             </p>
           )}
         </div>
-        <SourceLink fonte={response.data.fonte} />
+        {/* Com o resumo publicado, o link da fonte oficial já está no topo da aba. */}
+        {!(manifesto.estado === "aprovado" && manifesto.resumo) && <SourceLink fonte={response.data.fonte} />}
       </div>
+      {resumoTopo}
       <ProgramaDocument secoes={response.data.secoes} />
     </section>
   )

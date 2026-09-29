@@ -493,7 +493,7 @@ test("patrimônio e cota mostram a cifra na mesma altura tipográfica do financi
 
 /* ─── Visão geral ───────────────────────────────── */
 
-test("a visão geral preserva a altura intrínseca de cada card no masonry", () => {
+test("a visão geral preserva a altura intrínseca de cada card nas colunas", () => {
   const ficha = buildFicha({
     patrimonio: [patrimonioRow({ id: "pat-2018" })],
     financiamento: [financiamentoRow({ id: "fin-2022" })],
@@ -503,7 +503,7 @@ test("a visão geral preserva a altura intrínseca de cada card no masonry", () 
 
   assert.match(
     html,
-    /data-pf-profile-overview-masonry="" class="relative grid grid-cols-1 items-start gap-6 md:grid-cols-2"/,
+    /data-pf-profile-overview-columns="" class="relative grid grid-cols-1 items-start gap-6 md:grid-cols-2"/,
     "o fallback responsivo deve manter duas colunas sem esticar os cards",
   )
   assert.doesNotMatch(html, /items-stretch|last-child:nth-child\(odd\)|\[&amp;&gt;\*\]:h-full/)

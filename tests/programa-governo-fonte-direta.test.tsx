@@ -4,7 +4,7 @@ import test from "node:test"
 import React from "react"
 import { renderToStaticMarkup } from "react-dom/server"
 
-import { ProgramaGovernoOverview } from "../src/components/ProgramaGovernoSection"
+import { ProgramaGovernoTab } from "../src/components/ProgramaGovernoSection"
 import { assertProgramaDiretoFonteEsperada } from "../scripts/lib/programas-governo-fontes-diretas"
 import {
   assertProgramaGovernoFonte,
@@ -101,7 +101,10 @@ test("manifesto e UI oferecem PDF direto sem expor recibos internos", () => {
   assert.equal(manifesto.fonte.pacoteUrl, null)
   assert.equal(manifesto.documentos![0].fonte.arquivoNoPacote, null)
   assert.doesNotMatch(JSON.stringify(manifesto), /vinculoCandidatura|payloadSha256|reviewer|julgamento/)
-  const html = renderToStaticMarkup(<ProgramaGovernoOverview manifesto={manifesto} onOpenTab={() => {}} />)
+  // O botão da fonte oficial fica no topo da aba Programa.
+  const html = renderToStaticMarkup(
+    <ProgramaGovernoTab manifesto={manifesto} loadState="loading" response={null} onRetry={() => {}} />,
+  )
   assert.match(html, /href="https:\/\/divulgacandcontas\.tse\.jus\.br\/divulga\/rest\/arquivo\/doc\/270017140501"/)
   assert.doesNotMatch(html, /\.zip/)
 })

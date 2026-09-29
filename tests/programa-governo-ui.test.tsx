@@ -150,7 +150,7 @@ const response: ProgramaGovernoApiResponse = {
 }
 
 describe("box do programa na Visão geral", () => {
-  it("mostra somente resumo aprovado, temas, selo e duas ações", () => {
+  it("mostra somente resumo aprovado, temas, selo e uma ação; a fonte oficial fica no topo da aba", () => {
     const html = renderToStaticMarkup(
       <ProgramaGovernoOverview manifesto={manifestoAprovado} onOpenTab={() => {}} />,
     )
@@ -158,9 +158,18 @@ describe("box do programa na Visão geral", () => {
     assert.match(html, /Resumo por IA, revisado editorialmente/)
     assert.equal((html.match(/rounded-full bg-muted px-3/g) ?? []).length, 4)
     assert.match(html, /Ler programa completo/)
-    assert.match(html, /Abrir pacote oficial do TSE/)
-    assert.match(html, /target="_blank"/)
-    assert.match(html, /abre em nova aba/)
+    assert.doesNotMatch(html, /Abrir pacote oficial do TSE|Revisado em|data-pf-programa-evidencias/)
+
+    const aba = renderToStaticMarkup(
+      <ProgramaGovernoTab manifesto={manifestoAprovado} loadState="loaded" response={response} onRetry={() => {}} />,
+    )
+    assert.match(aba, /Abrir pacote oficial do TSE/)
+    assert.match(aba, /target="_blank"/)
+    assert.match(aba, /abre em nova aba/)
+    assert.ok(
+      aba.indexOf("data-pf-programa-resumo-topo") < aba.indexOf("Buscar no programa"),
+      "o resumo e as evidências ficam acima do documento completo",
+    )
   })
 
   it("expõe as frases e as evidências (página e trecho) em disclosure, com link para a página do PDF quando há URL direta", () => {
@@ -171,10 +180,10 @@ describe("box do programa na Visão geral", () => {
     const resumo = { ...manifestoAprovado.resumo!, texto: frases.map((frase) => frase.texto).join(" "), frases }
     const manifestoComFrases = { ...manifestoAprovado, resumo }
     const semPdf = renderToStaticMarkup(
-      <ProgramaGovernoOverview manifesto={manifestoComFrases} onOpenTab={() => {}} />,
+      <ProgramaGovernoTab manifesto={manifestoComFrases} loadState="loading" response={null} onRetry={() => {}} />,
     )
     assert.match(semPdf, /data-pf-programa-evidencias=""/)
-    assert.match(semPdf, new RegExp(`Ver as ${resumo.frases.length} frases do resumo`))
+    assert.match(semPdf, new RegExp(`As ${resumo.frases.length} frases do resumo`))
     for (const frase of resumo.frases) {
       assert.ok(semPdf.includes(frase.texto), `frase ausente: ${frase.texto.slice(0, 40)}`)
       for (const evidencia of frase.evidencias) {
@@ -186,12 +195,14 @@ describe("box do programa na Visão geral", () => {
     assert.match(semPdf, /href="\/metodologia"/)
 
     const comPdf = renderToStaticMarkup(
-      <ProgramaGovernoOverview
+      <ProgramaGovernoTab
         manifesto={{
           ...manifestoComFrases,
           fonte: { ...manifestoAprovado.fonte, pdfOriginalUrl: "https://divulgacandcontas.tse.jus.br/x/proposta.pdf" },
         }}
-        onOpenTab={() => {}}
+        loadState="loading"
+        response={null}
+        onRetry={() => {}}
       />,
     )
     assert.match(comPdf, /href="https:\/\/divulgacandcontas\.tse\.jus\.br\/x\/proposta\.pdf#page=3"/)
@@ -199,7 +210,10 @@ describe("box do programa na Visão geral", () => {
     assert.equal((comPdf.match(/abrir no PDF/g) ?? []).length, 3)
 
     const multiDoc = renderToStaticMarkup(
-      <ProgramaGovernoOverview
+      <ProgramaGovernoTab
+        loadState="loading"
+        response={null}
+        onRetry={() => {}}
         manifesto={{
           ...manifestoComFrases,
           fonte: fonteGovernador,
@@ -209,7 +223,6 @@ describe("box do programa na Visão geral", () => {
             frases: [{ texto: frases[0].texto, evidencias: [{ documentoId: documentosGovernador[1].documentoId, pagina: 2, trecho: "trecho do segundo" }] }],
           },
         }}
-        onOpenTab={() => {}}
       />,
     )
     assert.match(multiDoc, /Documento 2 de 2, página 2/)
