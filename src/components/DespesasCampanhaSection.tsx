@@ -282,7 +282,8 @@ export function DespesasCampanhaSection({
   if (status !== "ok") return null
   const linhas = despesasVisiveis(despesas, status)
   const temAnoSemSerie = anosComReceitas.some((ano) => ano < DESPESAS_ANO_INICIAL_DA_SERIE)
-  if (linhas.length === 0 && !temAnoSemSerie) return null
+  // Sem linha visível a seção some: título com só o recorte da série leria como ausência de gasto.
+  if (linhas.length === 0) return null
 
   return (
     <div data-pf-despesas-secao>

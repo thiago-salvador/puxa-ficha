@@ -8,6 +8,7 @@ import { normalizarDespesas, type ResultadoNormalizacao } from "../scripts/lib/d
 import { decidirAplicacao, planejarDespesas, shaDoPlanoDespesas, type CandidaturaColetada, type CandidaturaVinculada } from "../scripts/lib/despesas-plano"
 import {
   CODIGO_REVALIDACAO_NAO_CONFIRMADA,
+  completarCargoDaCandidaturaAtual,
   lerArgsDespesas,
   lerArquivoColeta,
   main,
@@ -266,4 +267,23 @@ test("CLI: --apply sem PF_REVALIDATE_SECRET sai com código 2 antes de ler o ban
     else process.env.PF_REVALIDATE_SECRET = segredoOriginal
     rmSync(dir, { recursive: true, force: true })
   }
+})
+
+test("2026 sem cargo no vínculo (produção): cargo vem de candidatos.cargo_disputado e a candidatura vira ação", () => {
+  const semCargo: CandidaturaVinculada[] = [
+    { candidato_id: "id-atual", slug: "atual", ano_eleicao: 2026, sq_candidato: "7000002026", uf: "AP", cargo_candidatura: null },
+    { candidato_id: "id-antigo", slug: "antigo", ano_eleicao: 2022, sq_candidato: "7000002022", uf: "AP", cargo_candidatura: null },
+    { candidato_id: "id-conflito", slug: "conflito", ano_eleicao: 2026, sq_candidato: "7000002027", uf: "AP", cargo_candidatura: "(conflito entre financiamento e verificações)" },
+  ]
+  const cargos = new Map([["id-atual", "Senador"], ["id-antigo", "Senador"], ["id-conflito", "Senador"]])
+  const completas = completarCargoDaCandidaturaAtual(semCargo, cargos)
+  assert.equal(completas[0].cargo_candidatura, "Senador", "2026 nulo recebe o cargo disputado")
+  assert.equal(completas[1].cargo_candidatura, null, "ano anterior não usa o cargo disputado atual")
+  assert.equal(completas[2].cargo_candidatura, "(conflito entre financiamento e verificações)", "conflito não é sobrescrito")
+
+  const antes = planejarDespesas({ vinculadas: semCargo, coletas: [coleta("7000002026", 2026, 10)] })
+  assert.equal(antes.acoes.length, 0, "sem o complemento, o cargo nulo manda para revisão")
+  const depois = planejarDespesas({ vinculadas: completas, coletas: [coleta("7000002026", 2026, 10)] })
+  assert.equal(depois.acoes.length, 1, "com o cargo disputado, a candidatura atual é gravável")
+  assert.equal(depois.revisao.length, 0)
 })
