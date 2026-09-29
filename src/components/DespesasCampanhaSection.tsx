@@ -44,13 +44,20 @@ function semDespesasDeclaradas(row: FinanciamentoDespesasPublico): boolean {
 }
 
 /**
- * Entrega existente com total ainda null e nenhum item: o TSE recebeu a
- * prestação mas não informou valor. Não é "nenhuma despesa declarada".
+ * Entrega existente sem nenhum valor informado: o TSE recebeu a prestação mas
+ * não informou total nem outro valor. Não é "nenhuma despesa declarada". Se
+ * houver qualquer outro valor (pago, recursos, dívida, sobra), o cartão
+ * completo aparece e o contratado mostra "Não informado pela fonte".
  */
 function totalAindaNaoInformado(row: FinanciamentoDespesasPublico): boolean {
   return (
     row.estado_coleta === "declarado" &&
     row.total_despesas_contratadas === null &&
+    row.total_despesas_pagas === null &&
+    row.recursos_financeiros === null &&
+    row.recursos_estimaveis === null &&
+    row.divida_campanha === null &&
+    row.sobra_financeira === null &&
     row.concentracao_despesas.length === 0 &&
     row.maiores_fornecedores.length === 0 &&
     row.doacoes_a_terceiros.length === 0

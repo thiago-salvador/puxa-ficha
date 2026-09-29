@@ -111,13 +111,26 @@ test("prestação declarada com zero e lista vazia usa o mesmo texto de zero dec
 
 test("entrega com total ainda null e sem itens: 'Total ainda não informado pelo TSE', nunca 'Nenhuma despesa declarada'", () => {
   const html = secao({
-    despesas: [linha({ estado_coleta: "declarado", total_despesas_contratadas: null, total_despesas_pagas: null, total_doacoes_a_terceiros: null, concentracao_despesas: [], maiores_fornecedores: [], doacoes_a_terceiros: [] })],
+    despesas: [linha({ estado_coleta: "declarado", total_despesas_contratadas: null, total_despesas_pagas: null, total_doacoes_a_terceiros: null, recursos_financeiros: null, recursos_estimaveis: null, divida_campanha: null, sobra_financeira: null, concentracao_despesas: [], maiores_fornecedores: [], doacoes_a_terceiros: [] })],
     status: "ok",
   })
   assert.match(html, /Total ainda não informado pelo TSE até 20\/09\/2026\./)
   assert.match(html, /data-pf-despesas-estado="total_nao_informado"/)
   assert.doesNotMatch(html, /Nenhuma despesa declarada/)
   assert.doesNotMatch(html, /data-pf-despesas-contratado/)
+})
+
+test("total contratado null com outros valores informados: o cartão mostra pago, recursos e dívida", () => {
+  const html = secao({
+    despesas: [linha({ estado_coleta: "declarado", total_despesas_contratadas: null, total_despesas_pagas: 500, recursos_financeiros: 1000, recursos_estimaveis: null, divida_campanha: 200, sobra_financeira: null, concentracao_despesas: [], maiores_fornecedores: [], doacoes_a_terceiros: [] })],
+    status: "ok",
+  })
+  assert.match(html, /data-pf-despesas-estado="publicado"/)
+  assert.match(html, /Não informado pela fonte/)
+  assert.match(html, /R\$\s?500/)
+  assert.match(html, /R\$\s?1\.000/)
+  assert.match(html, /R\$\s?200/)
+  assert.doesNotMatch(html, /Total ainda não informado/)
 })
 
 test("o recorte de fornecedores diz que são até 10 empresas", () => {
