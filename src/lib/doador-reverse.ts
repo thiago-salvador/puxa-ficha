@@ -14,12 +14,7 @@ import { normalizeForSearch } from "@/lib/search-normalize"
 import { createServiceRoleSupabaseClient, getAppSupabaseUrl } from "@/lib/supabase"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
-export {
-  DOADOR_REVERSE_DISCLAIMER,
-  DOADOR_REVERSE_MIN_QUERY_LENGTH,
-  DOADOR_REVERSE_PAGE_SIZE,
-  type DoadorReverseSearchResult,
-} from "@/lib/doador-reverse-shared"
+export { type DoadorReverseSearchResult } from "@/lib/doador-reverse-shared"
 
 const supabaseUrl = getAppSupabaseUrl()
 const USE_MOCK = !supabaseUrl || supabaseUrl.includes("placeholder")

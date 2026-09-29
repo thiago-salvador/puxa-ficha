@@ -15,7 +15,7 @@ require.cache[serverOnlyPath] = {
 const { createCandidatoProfileGetHandler, PROFILE_CDN_CACHE_TAG } =
   require("../src/lib/candidato-profile-route") as typeof import("../src/lib/candidato-profile-route")
 const { socialCardVersionToken } =
-  require("../src/components/SocialCardModal") as typeof import("../src/components/SocialCardModal")
+  require("../src/lib/social-card-version") as typeof import("../src/lib/social-card-version")
 
 /**
  * G3 (2026-09-29): ficha, JSON do perfil e /doadores saíram do caminho

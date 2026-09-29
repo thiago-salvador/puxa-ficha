@@ -2,6 +2,7 @@
 
 import { Download, ImageIcon, Share2, X } from "lucide-react"
 import { useCallback, useEffect, useState } from "react"
+import { socialCardVersionToken } from "@/lib/social-card-version"
 
 interface SocialCardModalProps {
   slug: string
@@ -13,14 +14,6 @@ interface SocialCardModalProps {
   initialFormat?: "feed" | "story"
   /** `ultima_atualizacao` da ficha: muda a URL do card quando a ficha muda. */
   cardVersion?: string | null
-}
-
-// O card fica 24 h no CDN (s-maxage da rota). A versão na URL vem da última
-// atualização da ficha, então só uma escrita nova gera card novo; um valor por
-// abertura (como era o `Date.now()` do preview) furava o cache a cada clique.
-export function socialCardVersionToken(cardVersion?: string | null): string {
-  const ms = cardVersion ? Date.parse(cardVersion) : Number.NaN
-  return Number.isFinite(ms) ? Math.floor(ms / 1000).toString(36) : "2"
 }
 
 export function SocialCardModal({
