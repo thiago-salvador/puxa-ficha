@@ -108,3 +108,16 @@ test("guia de votação segue o Manual do Eleitor do TSE: ordem, dígitos e dois
   assert.match(builder, /colinha-print-choice[\s\S]*formatSlotDigits\(id\)/)
   assert.match(builder, /segundo senador \(outro candidato\)/)
 })
+
+test("conferência avisa que celular não entra na cabine e põe a impressão em primeiro plano", () => {
+  assert.match(builder, /Celular não entra na cabine de votação/)
+  assert.match(builder, /Lei 9\.504\/1997, art\. 91-A/)
+  assert.match(builder, /planalto\.gov\.br\/ccivil_03\/leis\/l9504\.htm/)
+  const leve = builder.slice(builder.indexOf('id="colinha-levar"'))
+  assert.ok(leve.indexOf("Imprimir A4") < leve.indexOf("Gerar imagem para feed"), "Imprimir vem antes das imagens")
+})
+
+test("lista sem filtro explica a ordem rotativa com a letra que veio do servidor", () => {
+  assert.match(builder, /setListStart\(payload\.listStart \?\? null\)/)
+  assert.match(builder, /Agora a lista começa pela letra \{listStart\}/)
+})

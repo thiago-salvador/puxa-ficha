@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
-import { AlertTriangle, ArrowLeft, ArrowRight, Check, Copy, ExternalLink, Printer, Search, Share2, X } from "lucide-react"
+import { AlertTriangle, ArrowLeft, ArrowRight, Check, Copy, ExternalLink, Printer, Search, Share2, Smartphone, X } from "lucide-react"
 import {
   buildColinhaUrl,
   describeSnapshotStatus,
@@ -10,6 +10,7 @@ import {
   formatSlotDigits,
   formatSnapshotDate,
   isCandidateBlocked,
+  LIST_START_HOURS,
   parseColinhaState,
   resolveColinhaChoices,
   SLOT_LABELS,
@@ -25,12 +26,14 @@ import { trackLaunchEvent } from "@/lib/analytics-client"
 import { formatBRL } from "@/lib/utils"
 
 const UFS = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"]
-type CandidateResponse = { candidates?: ColinhaCandidate[]; unavailable?: boolean; snapshot?: string | null }
+type CandidateResponse = { candidates?: ColinhaCandidate[]; unavailable?: boolean; snapshot?: string | null; listStart?: string | null }
 const EMPTY_STATE: ColinhaState = { uf: null, df: null, de: null, s1: null, s2: null, g: null, p: null }
 const EMPTY_CHOICES: Record<SlotId, ColinhaCandidate | null> = { df: null, de: null, s1: null, s2: null, g: null, p: null }
 /** Passo final: conferência da lista, depois dos seis votos. */
 const REVIEW_STEP = SLOT_ORDER.length
-/** A API devolve no máximo 20 candidaturas por consulta, em ordem alfabética. */
+/** Texto compilado da Lei 9.504/1997; o art. 91-A, parágrafo único, veda celular na cabine. */
+const CELL_PHONE_LAW_URL = "https://www.planalto.gov.br/ccivil_03/leis/l9504.htm"
+/** A API devolve no máximo 20 candidaturas por consulta. */
 const SEARCH_LIMIT = 20
 
 function status(candidate: ColinhaCandidate) {
@@ -63,6 +66,7 @@ export function ColinhaBuilder() {
   const [debouncedQuery, setDebouncedQuery] = useState("")
   const [results, setResults] = useState<ColinhaCandidate[]>([])
   const [resultsKey, setResultsKey] = useState<string | null>(null)
+  const [listStart, setListStart] = useState<string | null>(null)
   const [showBlocked, setShowBlocked] = useState(false)
   const [choices, setChoices] = useState(EMPTY_CHOICES)
   const [issues, setIssues] = useState<Partial<Record<SlotId, string>>>({})
@@ -160,6 +164,7 @@ export function ColinhaBuilder() {
       .then((payload) => {
         setResults(payload.candidates ?? [])
         setResultsKey(key)
+        setListStart(payload.listStart ?? null)
         if (payload.snapshot) setSnapshot(payload.snapshot)
         setUnavailable(Boolean(payload.unavailable))
         setSnapshotChecked(true)
@@ -290,7 +295,8 @@ export function ColinhaBuilder() {
   const choice = slot ? choices[slot] : null
   const issue = slot ? issues[slot] : undefined
 
-  const slotStep = slot && <div>
+  // min-w-0: sem ele, um nome longo com truncate alarga a coluna da grade no celular.
+  const slotStep = slot && <div className="min-w-0">
     <div className="flex items-center justify-between gap-3">
       <button type="button" onClick={() => goTo(step - 1)} disabled={step === 0} className="inline-flex min-h-11 items-center gap-1 text-sm font-bold text-muted-foreground hover:text-foreground disabled:invisible"><ArrowLeft aria-hidden="true" className="size-4" />Voltar</button>
       <button type="button" onClick={() => goTo(step + 1)} className="inline-flex min-h-11 items-center gap-1 text-sm font-bold text-muted-foreground hover:text-foreground">{choice ? "Continuar" : "Pular este voto"}<ArrowRight aria-hidden="true" className="size-4" /></button>
@@ -310,6 +316,7 @@ export function ColinhaBuilder() {
       <input id="colinha-busca" type="search" value={query} onChange={(event) => setQuery(event.target.value)} maxLength={70} autoComplete="off" placeholder="Ex.: nome, 13, PT" className="min-h-11 min-w-0 flex-1 self-stretch bg-transparent text-base outline-none placeholder:text-muted-foreground" />
       <span aria-live="polite" className="shrink-0 text-xs text-muted-foreground">{loading ? "Consultando…" : ""}</span>
     </div>
+    {settled && !debouncedQuery.trim() && listStart && <p className="mt-2 text-xs leading-relaxed text-muted-foreground">Agora a lista começa pela letra {listStart} e dá a volta no alfabeto. A letra inicial troca a cada {LIST_START_HOURS} horas, igual para todo mundo, para nenhuma candidatura ficar sempre no topo.{results.length === SEARCH_LIMIT ? " Mostramos 20 por vez: digite o nome ou o número para achar a sua." : ""}</p>}
     {unavailable && settled && <p className="mt-4 flex flex-wrap items-center gap-2 text-sm font-semibold text-amber-800"><AlertTriangle aria-hidden="true" className="size-4 shrink-0" />Fonte indisponível. A cobertura desta escolha aparece como parcial.<button type="button" onClick={() => setRetry((value) => value + 1)} className="min-h-6 underline underline-offset-2">Tentar de novo</button></p>}
     {!settled && results.length === 0 && <ul className="mt-4 space-y-2" aria-hidden="true">{[0, 1, 2, 3].map((index) => <li key={index} className="h-16 animate-pulse rounded-lg bg-secondary" />)}</ul>}
     {settled && !unavailable && visible.length === 0 && blocked.length === 0 && <p className="mt-4 rounded-lg border border-dashed border-border p-4 text-sm text-muted-foreground">{debouncedQuery.trim() ? `Nenhuma candidatura encontrada para “${debouncedQuery.trim()}”.` : "Nenhuma candidatura registrada para este cargo neste snapshot."}</p>}
@@ -320,7 +327,7 @@ export function ColinhaBuilder() {
       return <li key={candidate.sq_candidato} className="flex items-center gap-1 pr-2"><button type="button" disabled={isBlocked || duplicate} onClick={() => selectCandidate(candidate)} aria-pressed={selected} className={`flex min-h-16 min-w-0 flex-1 items-center gap-3 rounded-lg px-3 py-2 text-left hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent ${selected ? "bg-secondary" : ""}`}><CandidatePhoto src={candidate.foto_path} alt={imageAlt(candidate)} name={candidate.nome_urna} width={40} height={48} sizes="40px" className="size-10 shrink-0 rounded object-cover" initialsClassName="text-xs" /><span className="min-w-0 flex-1"><span className="block truncate font-bold text-foreground">{candidate.nome_urna}</span><span className="block text-xs text-muted-foreground">{candidate.partido_sigla} · {status(candidate)}{duplicate ? ` · já escolhido para ${SLOT_LABELS[pair!]}` : ""}</span></span><span className="shrink-0 font-heading text-xl tabular-nums text-foreground">{candidate.numero_urna}</span>{selected && <Check aria-hidden="true" className="size-5 shrink-0 text-emerald-600" />}</button>{candidate.slug && <Link href={`/candidato/${candidate.slug}`} target="_blank" className="grid size-11 shrink-0 place-items-center text-muted-foreground hover:text-foreground" aria-label={`Abrir ficha de ${candidate.nome_urna}`}><ExternalLink aria-hidden="true" className="size-4" /></Link>}</li>
     })}</ul>}
     {settled && blocked.length > 0 && <button type="button" onClick={() => setShowBlocked((value) => !value)} className="mt-3 min-h-11 text-sm font-semibold text-muted-foreground underline underline-offset-2 hover:text-foreground">{showBlocked ? "Esconder" : "Mostrar"} {blocked.length} {blocked.length === 1 ? "candidatura" : "candidaturas"} com registro indeferido, renúncia ou cassação</button>}
-    {settled && results.length === SEARCH_LIMIT && <p className="mt-3 text-xs text-muted-foreground">{debouncedQuery.trim() ? "Mostrando as 20 primeiras. Refine o filtro se não encontrar." : "Mostrando as 20 primeiras em ordem alfabética. Digite o nome ou o número para achar a sua."}</p>}
+    {settled && debouncedQuery.trim() && results.length === SEARCH_LIMIT && <p className="mt-3 text-xs text-muted-foreground">Mostrando as 20 primeiras em ordem alfabética. Refine o filtro se não encontrar.</p>}
   </div>
 
   // Resumo lateral no desktop: cada linha volta ao passo daquele voto.
@@ -351,13 +358,15 @@ export function ColinhaBuilder() {
     {snapshotCopy.showPartialWarning && <p className="mt-3 flex items-start gap-2 rounded-lg bg-amber-50 p-3 text-xs font-semibold leading-relaxed text-amber-900"><AlertTriangle aria-hidden="true" className="mt-0.5 size-4 shrink-0" />Snapshot indisponível ou sem data de geração. Esta colinha tem cobertura parcial.</p>}
 
     <section aria-labelledby="colinha-levar" className="mt-8">
-      <h3 id="colinha-levar" className="font-bold text-foreground">Leve com você</h3>
-      {filled === 0 ? <p className="mt-2 text-sm text-muted-foreground">Escolha pelo menos um voto para gerar a imagem, o texto ou a impressão.</p> : <div className="mt-3 grid gap-2 sm:grid-cols-2">
-        <a href={cardUrl("feed")} onClick={() => safeEvent("feed")} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-foreground px-4 text-sm font-bold text-background"><Share2 aria-hidden="true" className="size-4" />Gerar imagem para feed</a>
+      <h3 id="colinha-levar" className="font-bold text-foreground">Leve no papel</h3>
+      <p className="mt-2 flex items-start gap-2 rounded-lg border border-border p-3 text-sm leading-relaxed text-foreground"><Smartphone aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-muted-foreground" /><span>Celular não entra na cabine de votação (<a href={CELL_PHONE_LAW_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Lei 9.504/1997, art. 91-A</a>). Imprima a colinha ou copie os números à mão.</span></p>
+      {filled === 0 ? <p className="mt-3 text-sm text-muted-foreground">Escolha pelo menos um voto para imprimir, gerar a imagem ou o texto.</p> : <div className="mt-3 grid gap-2 sm:grid-cols-2">
+        <button type="button" onClick={() => { safeEvent("print"); window.print() }} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-foreground px-4 text-sm font-bold text-background sm:col-span-2"><Printer aria-hidden="true" className="size-4" />Imprimir A4</button>
+        <p className="text-xs font-bold uppercase tracking-[0.08em] text-muted-foreground sm:col-span-2 mt-3">Compartilhar</p>
+        <a href={cardUrl("feed")} onClick={() => safeEvent("feed")} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-border px-4 text-sm font-bold text-foreground"><Share2 aria-hidden="true" className="size-4" />Gerar imagem para feed</a>
         <a href={cardUrl("story")} onClick={() => safeEvent("story")} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-lg border border-border px-4 text-sm font-bold text-foreground">Gerar imagem para stories</a>
         <a href={shareUrl ? `https://wa.me/?text=${encodeURIComponent(text)}` : "#"} onClick={() => safeEvent("text")} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-lg border border-border px-4 text-sm font-bold text-foreground">Compartilhar no WhatsApp</a>
         <button type="button" onClick={() => void copyText()} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-border px-4 text-sm font-bold text-foreground">{copied ? <Check aria-hidden="true" className="size-4" /> : <Copy aria-hidden="true" className="size-4" />}{copied ? "Texto copiado" : "Copiar texto"}</button>
-        <button type="button" onClick={() => { safeEvent("print"); window.print() }} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-border px-4 text-sm font-bold text-foreground sm:col-span-2"><Printer aria-hidden="true" className="size-4" />Imprimir A4</button>
       </div>}
     </section>
 
