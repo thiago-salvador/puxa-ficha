@@ -16,7 +16,8 @@ import { casaParlamentarDaFonte, fonteUrlGastoParlamentar, gastoParlamentarExibi
 import { resolverEstadoSancoes, type EstadoSancoes } from "@/lib/sancoes-verificacao"
 import { getCandidateSitesTseBySlug } from "@/lib/candidate-sites-data"
 import { getCitableCandidateSites } from "@/lib/candidate-sites-proof"
-import { nivelFonteProcesso, urlFonteJudicialEspecifica, urlPublicaDoProcesso, type FonteProcessoNivel } from "@/lib/djen-consulta-url"
+import { filtrarProcessosJudiciaisContaveis } from "@/lib/processos-justica-candidato"
+import { urlFonteJudicialEspecifica, urlPublicaDoProcesso, type FonteProcessoNivel } from "@/lib/djen-consulta-url"
 import { createServerSupabaseClient, createServiceRoleSupabaseClient } from "@/lib/supabase"
 import { shouldExposeCargo } from "@/lib/senado-feature"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
@@ -458,10 +459,10 @@ function processSearchState(receipt: ProcessoReceiptRow | null, hasRows: boolean
  */
 function mapProcesses(rows: ProcessoRow[], receipt: ProcessoReceiptRow | null): ImprensaRow["processos"] {
   const ocorrencias: ImprensaRow["processos"]["ocorrencias"] = []
-  for (const item of rows) {
+  // Mesmo critério da ficha e da grade (contagem única de processos).
+  for (const item of filtrarProcessosJudiciaisContaveis(rows)) {
     const numeroProcesso = item.numero_processo ?? null
-    const fonteNivel = nivelFonteProcesso({ id: item.id ?? null, numero_processo: numeroProcesso, url_fonte: item.url_fonte ?? null })
-    if (!fonteNivel) continue
+    const fonteNivel = item.fonte_nivel
     const urlFonte = fonteNivel === "oficial"
       ? urlFonteJudicialEspecifica(item.url_fonte, numeroProcesso)
       : urlPublicaDoProcesso({ numero_processo: numeroProcesso, url_fonte: item.url_fonte ?? null, fonte_nivel: fonteNivel })

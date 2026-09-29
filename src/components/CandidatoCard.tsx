@@ -1,4 +1,5 @@
 "use client"
+// cspell:ignore exibicao
 
 import { PUBLIC_DATA_VOCABULARY } from "@/lib/public-data-vocabulary"
 
@@ -6,6 +7,11 @@ import { memo, useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { FormattedNumber } from "./FormattedNumber"
 import { processosOverviewDisplay } from "@/lib/processos-display"
+import {
+  exibicaoProcessosJustica,
+  legendaCurtaProcessosJustica,
+  type ProcessosJusticaContagem,
+} from "@/lib/processos-justica-total"
 import {
   getPartyLogoUrl,
   FALLBACK_GRADIENT,
@@ -20,7 +26,10 @@ import { Scale, Landmark, ArrowRight, Briefcase, GraduationCap } from "lucide-re
 
 interface CandidatoCardProps {
   candidato: Candidato
+  /** Total da contagem única (judicial + disciplinar), o mesmo número da ficha. */
   processos: number
+  /** Partes do total; só vem quando há processo disciplinar. */
+  processosContagem?: ProcessosJusticaContagem
   patrimonio: number | null
   /** Total de 2026 >= 100x o último total anterior positivo (ver `patrimonio-atipico`). */
   patrimonioAtipico?: boolean
@@ -32,6 +41,7 @@ interface CandidatoCardProps {
 export const CandidatoCard = memo(function CandidatoCard({
   candidato,
   processos,
+  processosContagem,
   patrimonio,
   patrimonioAtipico = false,
   index,
@@ -42,7 +52,11 @@ export const CandidatoCard = memo(function CandidatoCard({
   const partyLogo = getPartyLogoUrl(candidato.partido_sigla)
   const hasMainStats = (patrimonio != null) || processos > 0
   const mostrarAvisoAtipico = patrimonioAtipico && patrimonio != null
-  const processosDisplay = processosOverviewDisplay(processos)
+  // Mesma régua do KPI da ficha: com disciplinar, total e legenda por partes.
+  const processosDisplay = processosContagem
+    ? exibicaoProcessosJustica(processosOverviewDisplay(processos), processosContagem)
+    : processosOverviewDisplay(processos)
+  const processosLegendaCurta = processosContagem ? legendaCurtaProcessosJustica(processosContagem) : undefined
   const formacaoLabel = formacaoPublicaDe({
     formacao: candidato.formacao ? sanitizePtBrText(candidato.formacao) : null,
     formacao_instituicao: candidato.formacao_instituicao
@@ -201,13 +215,23 @@ export const CandidatoCard = memo(function CandidatoCard({
                       )}
                     </div>
                     <div>
-                      <p className="whitespace-nowrap font-heading text-[length:var(--text-heading-sm)] leading-none text-white xl:text-[26px]">
+                      <p data-pf-card-processos={processosDisplay.value} className="whitespace-nowrap font-heading text-[length:var(--text-heading-sm)] leading-none text-white xl:text-[26px]">
                         <span title={processosDisplay.sub}>{processosDisplay.value}<span className="sr-only">{processosDisplay.sub ? `: ${processosDisplay.sub}` : ""}</span></span>
                       </p>
                       <p className="mt-1 flex items-center gap-1 whitespace-nowrap text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-wide text-white/60">
                         <Scale className="size-3 shrink-0" />
                         Processo{processos !== 1 ? "s" : ""}
                       </p>
+                      {processosLegendaCurta && (
+                        <p
+                          aria-hidden="true"
+                          title={processosDisplay.sub}
+                          data-pf-card-processos-legenda=""
+                          className="mt-1 whitespace-nowrap text-[length:var(--text-eyebrow)] font-semibold leading-tight text-white/80"
+                        >
+                          {processosLegendaCurta}
+                        </p>
+                      )}
                     </div>
                   </div>
                 ) : (

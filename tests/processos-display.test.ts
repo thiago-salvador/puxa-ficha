@@ -105,7 +105,8 @@ describe("comunicação processual sem mérito inferido", () => {
     const fonte = readFileSync("src/lib/api.ts", "utf8")
     assert.match(
       fonte,
-      /const processosPublicos = processosBrutos\.flatMap\([\s\S]*?nivelFonteProcesso\(row\)[\s\S]*?processos_criminais: processosPublicos\.filter\(processoPodeContarComoCriminal\)\.length/,
+      // O filtro de linhas públicas é o critério único da contagem (processos-justica-candidato).
+      /const processosPublicos = filtrarProcessosJudiciaisContaveis\(processosBrutos\)[\s\S]*?processos_criminais: processosPublicos\.filter\(processoPodeContarComoCriminal\)\.length/,
     )
     assert.doesNotMatch(
       fonte,
@@ -239,7 +240,9 @@ describe("CandidatoProfileSkeleton: a legenda não pode sumir na primeira pintur
     // Só .value fazia o "—" aparecer sem "não verificado" durante o
     // carregamento, reintroduzindo a afirmação de ficha limpa que a PR desfaz.
     assert.match(fonte, /const processosDisplay = processosOverviewDisplay\(/)
-    assert.match(fonte, /: processosDisplay\.sub/)
+    // A legenda sai do resolvedor compartilhado da contagem única, que cai no
+    // .sub judicial quando não há processo disciplinar.
+    assert.match(fonte, /\{ value: processosValor, sub: processosSub \} = exibicaoProcessosJustica\(processosDisplay, processosJustica\)/)
     assert.match(fonte, /processosSub &&/)
     assert.doesNotMatch(fonte, /processosOverviewDisplay\(overview\.processos\)\.value/)
   })

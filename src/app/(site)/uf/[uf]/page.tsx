@@ -29,6 +29,7 @@ import { SlashDivider } from "@/components/SlashDivider"
 import { StateIndicators } from "@/components/StateIndicators"
 import { StateRankingCards } from "@/components/StateRankingCards"
 import { formatCompact } from "@/lib/utils"
+import { PROCESSO_DISCIPLINAR_AVISO } from "@/lib/processos-justica-total"
 import { buildTwitterMetadata } from "@/lib/metadata"
 import { getStatePagePresentation } from "@/lib/state-page-presentation"
 import { ShareButtons } from "@/components/ShareButtons"
@@ -145,10 +146,10 @@ export default async function UfHubPage({
     allIndicadoresResource.sourceMessage
   )
 
-  const { processos, processSortCounts, patrimonios, patrimoniosAtipicos } =
+  const { processos, processosContagem, processSortCounts, patrimonios, patrimoniosAtipicos } =
     buildCandidatoGridMaps(resumos)
 
-  const { totalCandidatos, totalPatrimonio, totalProcessos } =
+  const { totalCandidatos, totalPatrimonio, totalProcessos, totalProcessosDisciplinares } =
     getHomeHeroMetrics(resumos, resumosResource.sourceStatus)
   const secGov = "01"
 
@@ -197,10 +198,14 @@ export default async function UfHubPage({
 
           <div className="mt-6 flex flex-wrap gap-6 pb-4 sm:gap-12 lg:gap-20" data-pf-state-hero-metrics>
             {[
-              { label: "candidatos mapeados", value: totalCandidatos },
-              { label: "processos", value: totalProcessos },
-              { label: "patrimônio declarado", value: totalPatrimonio === null ? null : formatCompact(totalPatrimonio) },
-            ].map(({ label, value }) => (
+              { label: "candidatos mapeados", value: totalCandidatos, nota: null },
+              {
+                label: "processos",
+                value: totalProcessos,
+                nota: totalProcessosDisciplinares ? `inclui ${totalProcessosDisciplinares} disciplinares` : null,
+              },
+              { label: "patrimônio declarado", value: totalPatrimonio === null ? null : formatCompact(totalPatrimonio), nota: null },
+            ].map(({ label, value, nota }) => (
               <div key={label}>
                 <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
                   {value ?? "N/D"}
@@ -208,9 +213,19 @@ export default async function UfHubPage({
                 <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
                   {label}
                 </p>
+                {nota && (
+                  <p className="mt-1 text-[length:var(--text-eyebrow)] font-medium leading-tight text-white/80" title={PROCESSO_DISCIPLINAR_AVISO}>
+                    {nota}
+                  </p>
+                )}
               </div>
             ))}
           </div>
+          {totalProcessosDisciplinares ? (
+            <p className="max-w-prose pb-2 text-[length:var(--text-eyebrow)] font-medium leading-snug text-white/80">
+              Processos somam judiciais e disciplinares dos Conselhos de Ética. {PROCESSO_DISCIPLINAR_AVISO}
+            </p>
+          ) : null}
         </div>
       </section>
 
@@ -250,6 +265,7 @@ export default async function UfHubPage({
             <CandidatoGrid
               candidatos={candidatos}
               processos={processos}
+              processosContagem={processosContagem}
               processSortCounts={processSortCounts}
               patrimonios={patrimonios}
               patrimoniosAtipicos={patrimoniosAtipicos}
