@@ -14,7 +14,7 @@ test("referência de partidos preserva a âncora TSE", () => {
 
 test("auditoria de partidos não contém caminho absoluto do autor", () => {
   const source = readFileSync(new URL("../scripts/audit/partidos-oficiais.ts", import.meta.url), "utf8")
-  assert.doesNotMatch(source, /\/Users\/thiagosalvador/)
+  assert.doesNotMatch(source, /[/]Users[/]thiagosalvador/)
   assert.match(source, /code === "ENOENT"/)
 })
 

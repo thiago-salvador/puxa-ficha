@@ -12,7 +12,7 @@
  * Revisão de gastos em 25/09/2026: 57 linhas em 40 fichas.
  * Valores publicados em centavos são preimages para o readback. A supressão
  * continua por ficha/ano mesmo após o recálculo, até validação independente.
- * Fonte: evidencias-privadas/coleta-fichas-2026-09-24/evidence/
+ * Fonte: evidência privada da coleta de fichas de 2026-09-24 (fora do repo).
  * 129-casos-dto-chave-ausente-20260925.json (SHA-256
  * 775e5af5c0bc4bd371162334ded355a5bced1c8662d215fe2962980e7e559416).
  */

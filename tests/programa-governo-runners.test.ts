@@ -316,7 +316,7 @@ test("opencode runners falham fechado com envelope invalido (sem chamada ao go)"
 })
 
 test("runners opencode abortam sem PF_OPENCODE_GO, sem chamar modelo", async () => {
-  // O default era "/Users/thiagosalvador/.codex/skills/opencode/scripts/opencode-go.mjs",
+  // O default era "<home>/.codex/skills/opencode/scripts/opencode-go.mjs",
   // caminho pessoal de uma maquina especifica commitado num repositorio publico.
   // Em qualquer outro ambiente ele falhava so depois de montar o prompt, ou pior,
   // executava o que estivesse naquele caminho. Env vazia cobre tambem a ausente.
@@ -355,7 +355,7 @@ test("nenhum runner carrega caminho absoluto pessoal como default", async () => 
       .join("\n")
     assert.doesNotMatch(
       linhas,
-      /\/Users\/[a-z]/iu,
+      /[/]Users[/][a-z]/iu,
       `${alvo} tem caminho absoluto de maquina pessoal fora de comentario`,
     )
   }
