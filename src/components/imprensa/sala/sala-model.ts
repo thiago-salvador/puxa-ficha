@@ -47,6 +47,8 @@ export interface SalaUpdateItem {
   detectedAt: string
   /** "DD/MM" no horário de Brasília. */
   dateLabel: string
+  /** Nome do candidato, como registrado na mudança verificada. */
+  name: string
   /** Cargo e UF, quando a candidatura está no dataset. */
   context: string | null
   change: string
@@ -63,8 +65,8 @@ function fieldLabel(update: VerifiedCandidateUpdate): string {
 }
 
 /**
- * As mudanças mais recentes, sem o nome do candidato (a Sala não cita nomes).
- * Cargo e UF vêm do dataset pela slug; a ficha fica a um clique.
+ * As mudanças mais recentes, com o nome do candidato. Cargo e UF vêm do
+ * dataset pela slug; a ficha fica a um clique.
  */
 export function buildSalaUpdates(
   updates: readonly VerifiedCandidateUpdate[],
@@ -77,6 +79,7 @@ export function buildSalaUpdates(
     const context = row ? [row.cargo, row.uf].filter(Boolean).join(" · ") || null : null
     return {
       id: update.id,
+      name: update.candidate_name,
       detectedAt: update.detected_at,
       dateLabel: DAY_MONTH.format(new Date(update.detected_at)),
       context,

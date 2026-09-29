@@ -2,7 +2,8 @@ name: Histórico verificado da home
 
 on:
   schedule:
-    - cron: "0 8 * * 3"
+    # Daily: the press room shows these changes and cannot wait a week.
+    - cron: "0 8 * * *"
   workflow_dispatch:
 
 permissions:

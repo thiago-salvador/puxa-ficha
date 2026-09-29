@@ -142,7 +142,9 @@
 }
 .updateDate { font-size: 14px; font-variant-numeric: tabular-nums; font-weight: 800; }
 .updateContext { color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-.updateChange { font-size: 15px; font-weight: 600; line-height: 1.45; margin-top: 2px; }
+.updateName { font-size: 18px; font-weight: 800; line-height: 1.3; margin-top: 4px; }
+.updateName a { color: var(--ink); text-decoration: underline; text-decoration-color: #888888; text-underline-offset: 3px; }
+.updateChange { color: #333333; font-size: 15px; font-weight: 500; line-height: 1.45; margin-top: 4px; }
 .updateLinks { display: flex; flex-wrap: wrap; gap: 4px 16px; }
 .updateLinks a,
 .moreLink {
