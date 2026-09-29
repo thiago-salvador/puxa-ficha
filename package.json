@@ -190,6 +190,7 @@
     "data:curadoria:registrar": "tsx scripts/registrar-revisao-curadoria.ts",
     "data:curadoria:fechar-revisao": "tsx scripts/fechar-revisao-humana-processos.ts",
     "data:curadoria:processos:lote": "tsx scripts/curadoria-processos-lote.ts",
+    "processos:despublicar-decididos": "tsx scripts/processos-despublicar-decididos.ts",
     "audit:cobertura": "tsx scripts/audit/coverage-report.ts",
     "audit:cobertura-fichas": "node --import tsx scripts/audit/audit-cobertura-fichas.ts",
     "audit:cobertura:check": "tsx scripts/audit/check-report.ts",
