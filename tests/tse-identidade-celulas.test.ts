@@ -46,7 +46,7 @@ describe("arquivo público de decisões de identidade por célula", () => {
     assert.equal(new Set(parsed.celulas.map((celula) => celula.slug)).size, 48)
     assert.ok(parsed.celulas.every((celula) => celula.decisao === "publicar"))
     const texto = bytes.toString("utf8")
-    assert.doesNotMatch(texto, /cpf|nascimento|nome|NM_CANDIDATO|\/Users\//i)
+    assert.doesNotMatch(texto, /cpf|nascimento|nome|NM_CANDIDATO|[/]Users[/]/i)
     assert.ok(parsed.celulas.flatMap((celula) => celula.linhas).filter((linha) => linha.ano <= 2008).every((linha) => linha.municipio))
     const sousa = parsed.celulas.find((celula) => celula.slug === "tse-2026-150002544909" && celula.familia === "historico_politico")!
     assert.deepEqual(sousa.linhas.filter((linha) => linha.ano <= 2004).map((linha) => [linha.ano, linha.municipio]), [[2000, "SOUSA"], [2004, "SOUSA"]])
