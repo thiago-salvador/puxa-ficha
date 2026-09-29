@@ -3,7 +3,7 @@
 <!--
   Agente launchd da coleta semanal de checagens. Modelo: instalar-agente.sh troca
   os marcadores (SCRIPT, REPO, WEEKDAY, HOUR, MINUTE, LOG) e grava o resultado em ~/Library/LaunchAgents/.
-  Horário: segunda 10:00 UTC convertido para o fuso local na instalação.
+  Horário: segunda 15:00 UTC convertido para o fuso local na instalação.
 -->
 <plist version="1.0">
 <dict>

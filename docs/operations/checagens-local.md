@@ -12,8 +12,13 @@ diagnóstico manual e não recebe credencial de escrita nem tem schedule.
 O agente `scripts/checagens-local/coletar-local.sh` reúne as sete respostas
 num único recibo por candidatura. Ele usa a `main` fixada por SHA e confere a
 cópia instalada contra ela, como o agente de `scripts/camara-local/`. Não
-executa código de PR. Segunda às 10:00 UTC, até 25/10/2026, é o horário do
-launchd; o instalador converte para o fuso local. Depois do primeiro turno, a
+executa código de PR. Segunda às 15:00 UTC, até 25/10/2026, é o horário do
+launchd (3 h depois do plano de resultados do TSE); o instalador converte para o
+fuso local. A partir de 05/10/2026 (horário de Brasília), o coletor só roda
+depois que o conjunto turno-1 foi aplicado, isto é, quando a view pública já
+mostra alguma candidatura de Presidente ou Governador com atualização
+encerrada. Sem isso, sai com código 75 sem coletar nem gravar, e o agente
+registra `TRAVA_TURNO_1` e tenta de novo na segunda seguinte. Depois do primeiro turno, a
 coorte pública (`candidaturas_fase_2026_publico`) já tira da rodada quem saiu da
 disputa, sem mudar o agente.
 
