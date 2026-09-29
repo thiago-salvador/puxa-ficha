@@ -13,7 +13,7 @@ const compiled = ts.transpileModule(api.slice(start, end), {
   compilerOptions: { target: ts.ScriptTarget.ES2022 },
 }).outputText
 
-function helper(rows: Record<string, unknown>[], fail = false) {
+function helper(rows: Record<string, unknown>[], fail = false, fonte = "processos-curadoria") {
   const requests: string[][] = []
   const client = {
     from(table: string) {
@@ -22,7 +22,7 @@ function helper(rows: Record<string, unknown>[], fail = false) {
       const query = {
         select(columns: string) { assert.equal(columns, "candidato_id, alvo, resultado, executado_em"); return query },
         eq(key: string, value: string) {
-          assert.equal(value, key === "fonte" ? "processos-curadoria" : "candidato")
+          assert.equal(value, key === "fonte" ? fonte : "candidato")
           return query
         },
         in(key: string, values: string[]) { assert.equal(key, "alvo"); slugs = values; requests.push(values); return query },
@@ -31,7 +31,8 @@ function helper(rows: Record<string, unknown>[], fail = false) {
       return query
     },
   }
-  const run = runInNewContext(`${compiled}\nfetchProcessosVerificacoesBatch`, {
+  const entry = fonte === "processos-curadoria" ? "fetchProcessosVerificacoesBatch" : `(candidates) => fetchColetaVerificacoesBatch(candidates, ${JSON.stringify(fonte)})`
+  const run = runInNewContext(`${compiled}\n${entry}`, {
     createServiceRoleSupabaseClient: () => client,
     withSupabaseRetry: (_key: string, fn: (signal: AbortSignal) => unknown) => fn(new AbortController().signal),
     COLETA_RESULTADOS_VALIDOS: new Set(["vazio_confirmado", "erro", "indeterminado", "encontrado"]),
@@ -63,4 +64,15 @@ test("failed batch cannot invent verified zero and empty cohort does not query",
   assert.equal(requests.length, 0)
   assert.equal((await run([{ id: "id-0", slug: "c0" }, { id: "id-0", slug: "c0" }])).size, 0)
   assert.equal(requests[0].length, 1)
+})
+
+test("comparador lê o recibo de filiação pela mesma via em lote (trocas de partido)", async () => {
+  const { run } = helper([
+    { candidato_id: "id-0", alvo: "c0", resultado: "vazio_confirmado", executado_em: "2026-09-08" },
+    { candidato_id: "id-1", alvo: "c1", resultado: "indeterminado", executado_em: "2026-08-05" },
+  ], false, "filiacao")
+  const result = await run([{ id: "id-0", slug: "c0" }, { id: "id-1", slug: "c1" }, { id: "id-2", slug: "c2" }])
+  assert.equal(result.get("c0")?.resultado, "vazio_confirmado")
+  assert.equal(result.get("c1")?.resultado, "indeterminado")
+  assert.equal(result.has("c2"), false)
 })

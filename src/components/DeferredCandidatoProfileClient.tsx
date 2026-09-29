@@ -1,10 +1,12 @@
 "use client"
 
+// cspell:words camara
+
 import { useEffect, useState, type ComponentType } from "react"
 import type { CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
 import type { FichaCandidato } from "@/lib/types"
-import type { PesquisaEleitoralDoCandidato } from "@/lib/pesquisas-eleitorais"
 import { processosOverviewDisplay } from "@/lib/processos-display"
+import { contarProcessosJustica, legendaProcessosJustica } from "@/lib/processos-justica-total"
 import { formatCompact } from "@/lib/utils"
 import type { ProgramaGovernoManifestoPublico } from "@/lib/programa-governo"
 import type { SenadoRunningMatesPayload } from "@/components/SenadoRunningMates"
@@ -14,8 +16,6 @@ import type { ProgramaGovernoPendencia } from "@/lib/programa-governo-pendencia"
 type CandidatoProfileProps = {
   ficha: FichaCandidato
   initialTab?: CandidatoProfileTabId
-  pesquisasEnabled?: boolean
-  pesquisas?: PesquisaEleitoralDoCandidato[]
   programaGoverno?: ProgramaGovernoManifestoPublico | null
   compromissoEvidencias?: EstadoEvidenciasPrograma
   programaPendente?: ProgramaGovernoPendencia | null
@@ -27,6 +27,8 @@ type DeferredProfileOverview = {
   processos: number
   processosOmitidos?: number
   processosVerificacao?: FichaCandidato["processos_verificacao"]
+  /** Processos disciplinares (Conselho de Ética), contados no servidor para o KPI. */
+  processosDisciplinares?: { casa: "camara" | "senado" }[]
   patrimonio: number | null
   mudancas: number | null
 }
@@ -79,6 +81,14 @@ function CandidatoProfileSkeleton({ overview }: { overview: DeferredProfileOverv
     new Date(),
     overview.processosOmitidos ?? 0,
   )
+  const processosJustica = contarProcessosJustica({
+    judiciais: overview.processos,
+    disciplinares: overview.processosDisciplinares ?? [],
+  })
+  const processosValor = processosJustica.disciplinares > 0 ? processosJustica.total : processosDisplay.value
+  const processosSub = processosJustica.disciplinares > 0
+    ? legendaProcessosJustica(processosJustica)
+    : processosDisplay.sub
   return (
     <section className="mx-auto max-w-7xl px-5 py-8 md:px-12 lg:py-12" aria-busy="true" aria-labelledby="candidate-profile-loading-title">
       <h2 id="candidate-profile-loading-title" className="sr-only">Carregando detalhes da ficha</h2>
@@ -88,18 +98,18 @@ function CandidatoProfileSkeleton({ overview }: { overview: DeferredProfileOverv
       <div className="grid grid-cols-2 items-stretch gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5 [&>*]:h-full [&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
         <div className="flex min-h-[112px] flex-col gap-1.5 rounded-[12px] border border-border/50 bg-card px-4 py-3">
           <span
-            data-pf-overview-processos={String(processosDisplay.value)}
+            data-pf-overview-processos={String(processosValor)}
             data-pf-overview-raw={overview.processos}
             className="text-[24px] font-semibold leading-none text-foreground sm:text-[length:var(--text-heading)]"
           >
-            {processosDisplay.value}
+            {processosValor}
           </span>
           <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
             Processos
           </span>
-          {processosDisplay.sub && (
+          {processosSub && (
             <span className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
-              {processosDisplay.sub}
+              {processosSub}
             </span>
           )}
         </div>
@@ -173,8 +183,6 @@ export function DeferredCandidatoProfileClient({
   slug,
   initialTab,
   overview,
-  pesquisasEnabled = false,
-  pesquisas = [],
   programaGoverno = null,
   compromissoEvidencias,
   programaPendente = null,
@@ -183,8 +191,6 @@ export function DeferredCandidatoProfileClient({
   slug: string
   initialTab?: CandidatoProfileTabId
   overview: DeferredProfileOverview
-  pesquisasEnabled?: boolean
-  pesquisas?: PesquisaEleitoralDoCandidato[]
   programaGoverno?: ProgramaGovernoManifestoPublico | null
   compromissoEvidencias?: EstadoEvidenciasPrograma
   programaPendente?: ProgramaGovernoPendencia | null
@@ -225,8 +231,6 @@ export function DeferredCandidatoProfileClient({
     <Profile
       ficha={ficha}
       initialTab={initialTab}
-      pesquisasEnabled={pesquisasEnabled}
-      pesquisas={pesquisas}
       programaGoverno={programaGoverno}
       compromissoEvidencias={compromissoEvidencias}
       programaPendente={programaPendente}

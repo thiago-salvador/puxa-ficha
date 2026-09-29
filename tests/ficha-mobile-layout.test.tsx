@@ -58,7 +58,8 @@ test("gráfico de patrimônio: rótulos numa linha, largura mínima por barra e 
   assert.match(html, /data-pf-patrimonio-chart/)
   assert.match(html, /class="relative -mx-2 flex items-end gap-2 overflow-x-auto px-2/, "rolagem interna posicionada, com 8px de folga para o rótulo e o texto sr-only não serem cortados")
   assert.equal(html.split('class="flex min-w-[64px] flex-1 flex-col').length - 1, 6)
-  assert.equal(html.split("whitespace-nowrap").length - 1, 12, "valor e ano de cada barra em whitespace-nowrap")
+  // 6 barras: valor e ano da barra, mais o número compacto do FormattedNumber, que também não quebra.
+  assert.equal(html.split("whitespace-nowrap").length - 1, 18, "valor e ano de cada barra em whitespace-nowrap")
   assert.match(html, /style="height:120px"/, "a coluna de fundo continua com 120px")
 })
 

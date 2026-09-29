@@ -107,7 +107,18 @@ describe("marcador de trajetória distingue zero verificado de não coletado", (
       />,
     )
     assert.equal(contagemDeclarada(html), "0")
-    assert.equal(partidosDeclarados(html), "0")
+    // Trajetória vazia não prova ausência de troca de partido; o
+    // zero de partidos exige recibo de filiação conclusivo.
+    assert.equal(partidosDeclarados(html), "nao_coletado")
+  })
+
+  test("filiação vazia confirmada declara zero trocas nas duas rotas", () => {
+    const ficha = fichaCom({
+      historico: [],
+      filiacao_verificacao: { resultado: "vazio_confirmado", executado_em: "2026-08-13T00:00:00Z" },
+    })
+    assert.equal(partidosDeclarados(renderToStaticMarkup(<CandidatoProfile ficha={ficha} initialTab="trajetoria" />)), "0")
+    assert.equal(partidosDeclarados(renderToStaticMarkup(<DeferredCandidatoProfile ficha={ficha} initialTab="trajetoria" />)), "0")
   })
 
   test("ficha com trajetória continua declarando a contagem real", () => {

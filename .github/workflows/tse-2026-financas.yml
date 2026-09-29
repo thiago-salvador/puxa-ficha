@@ -93,8 +93,11 @@ jobs:
           PF_EXPECTED_PLAN_SHA: ${{ inputs.expected_plan_sha }}
         run: |
           set -euo pipefail
-          mkdir -p reports/tse-2026
-          args=(--out=reports/tse-2026)
+          # Plano privado e pré-imagem ficam fora do checkout: o coletor recusa
+          # --out dentro do repositório (run 36463854587 abortou assim em 28/09).
+          out="$RUNNER_TEMP/tse-2026"
+          mkdir -p "$out"
+          args=("--out=$out")
           modo=dry-run
           if [ "$PF_TSE2026_EVENTO" = "schedule" ]; then
             args+=(--apply --agendado)
@@ -107,7 +110,7 @@ jobs:
             export PF_DRY_RUN=1
           fi
           set +e
-          node --import tsx scripts/tse-2026-financas.ts "${args[@]}" | tee reports/tse-2026/saida.json
+          node --import tsx scripts/tse-2026-financas.ts "${args[@]}" | tee "$out/saida.json"
           codigo=${PIPESTATUS[0]}
           set -e
           # 0 = tudo aplicado; 4 = aplicado com conflito de CAS em parte das
@@ -118,18 +121,18 @@ jobs:
           {
             echo "### TSE 2026 finanças ($modo, exit $codigo)"
             echo '```json'
-            jq -c '{plano_sha256, resumo}' reports/tse-2026/plano-resumo.json 2>/dev/null || echo '{}'
+            jq -c '{plano_sha256, resumo}' "$out/plano-resumo.json" 2>/dev/null || echo '{}'
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
           exit "$codigo"
       - name: Apagar plano privado e pré-imagem do runner
         if: always()
-        run: rm -f reports/tse-2026/plano-privado.json reports/tse-2026/backup-preimagem.json
+        run: rm -f "$RUNNER_TEMP/tse-2026/plano-privado.json" "$RUNNER_TEMP/tse-2026/backup-preimagem.json"
       - if: always()
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v6.0.0
         with:
           name: tse-2026-financas-${{ github.run_id }}
-          path: reports/tse-2026/plano-resumo.json
+          path: ${{ runner.temp }}/tse-2026/plano-resumo.json
           if-no-files-found: warn
 
   revalidate:

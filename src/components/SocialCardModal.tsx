@@ -2,6 +2,7 @@
 
 import { Download, ImageIcon, Share2, X } from "lucide-react"
 import { useCallback, useEffect, useState } from "react"
+import { socialCardVersionToken } from "@/lib/social-card-version"
 
 interface SocialCardModalProps {
   slug: string
@@ -11,6 +12,8 @@ interface SocialCardModalProps {
   open: boolean
   onClose: () => void
   initialFormat?: "feed" | "story"
+  /** `ultima_atualizacao` da ficha: muda a URL do card quando a ficha muda. */
+  cardVersion?: string | null
 }
 
 export function SocialCardModal({
@@ -40,16 +43,16 @@ function SocialCardModalContent({
   shareTitle,
   onClose,
   initialFormat = "feed",
+  cardVersion,
 }: Omit<SocialCardModalProps, "open">) {
   const [format, setFormat] = useState<"feed" | "story">(initialFormat)
   const [imageStatus, setImageStatus] = useState({ src: "", loaded: false, error: false })
   const [downloading, setDownloading] = useState(false)
   const [copiedLink, setCopiedLink] = useState<"card" | "profile" | null>(null)
   const [retryKey, setRetryKey] = useState(0)
-  const [previewKey] = useState(() => Date.now())
 
-  const cardPath = `/api/card/${slug}?format=${format}&v=2`
-  const cardPreviewSrc = `${cardPath}&preview=${previewKey}-${retryKey}`
+  const cardPath = `/api/card/${slug}?format=${format}&v=${socialCardVersionToken(cardVersion)}`
+  const cardPreviewSrc = retryKey > 0 ? `${cardPath}&retry=${retryKey}` : cardPath
   const cardShareUrl = new URL(cardPath, shareUrl).toString()
   const imgLoaded = imageStatus.src === cardPreviewSrc && imageStatus.loaded
   const imgError = imageStatus.src === cardPreviewSrc && imageStatus.error
@@ -166,7 +169,7 @@ function SocialCardModalContent({
             ) : (
               // eslint-disable-next-line @next/next/no-img-element -- Preview uses a generated card endpoint with dynamic aspect ratio.
               <img
-                key={`${format}-${previewKey}-${retryKey}`}
+                key={`${format}-${retryKey}`}
                 src={cardPreviewSrc}
                 alt={`Card de ${candidateName} para redes sociais`}
                 className={`h-full w-full object-contain transition-opacity ${imgLoaded ? "opacity-100" : "opacity-0"}`}

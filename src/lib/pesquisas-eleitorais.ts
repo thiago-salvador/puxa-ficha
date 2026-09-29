@@ -967,6 +967,7 @@ function resultadosDoCandidato(
  * Todas as pesquisas do candidato em grupos separados, na ordem de exibição: a rodada mais
  * recente de cada instituto, as rodadas anteriores com a mesma pergunta e, à parte, segundo
  * turno e pergunta espontânea. Cada cenário mantém seu rótulo e sua chave; não há tendência.
+ * @public Exercitada diretamente pelos testes de grupos de pesquisa.
  */
 export function listarPesquisasDoCandidato(
   catalogo: CatalogoPesquisasEleitorais,

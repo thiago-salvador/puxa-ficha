@@ -2,12 +2,10 @@ import "server-only"
 import { anosGastosParlamentaresEmRevisao, gastoParlamentarEmRevisao } from "@/lib/gastos-parlamentares-em-revisao"
 import { cache } from "react"
 import { unstable_noStore as noStore } from "next/cache"
-import { headers } from "next/headers"
 import { buildFinanciamentoContexto } from "@/lib/quiz-financiamento"
 import { createServerSupabaseClient, createServiceRoleSupabaseClient, getAppSupabaseUrl } from "./supabase"
 import { isSupabaseNoRowError } from "./supabase-errors"
 import { selectWithPreMigrationColumns } from "./supabase-pre-migration-select"
-import { resolveReleaseVerifyCacheBypassToken } from "./production-env"
 import { unstableCacheWithSingleFlight } from "./cache-single-flight"
 import { normalizeVotoFromApi } from "@/lib/quiz-scoring"
 import { SIGLAS_PROJETO_LEI } from "@/lib/proposicao-natureza"
@@ -1201,6 +1199,13 @@ async function fetchTransparenciaVerificacao(slug: string): Promise<Transparenci
 async function fetchProcessosVerificacoesBatch(
   candidates: Array<{ id: string; slug: string }>,
 ): Promise<Map<string, SancoesVerificacao>> {
+  return fetchColetaVerificacoesBatch(candidates, "processos-curadoria")
+}
+
+async function fetchColetaVerificacoesBatch(
+  candidates: Array<{ id: string; slug: string }>,
+  fonte: string,
+): Promise<Map<string, SancoesVerificacao>> {
   const verificacoes = new Map<string, SancoesVerificacao>()
   const bySlug = new Map(candidates.map((candidate) => [candidate.slug, candidate.id]))
   const alvos = [...bySlug.keys()].filter(Boolean)
@@ -1210,11 +1215,11 @@ async function fetchProcessosVerificacoesBatch(
     for (let offset = 0; offset < alvos.length; offset += 100) {
       const lote = alvos.slice(offset, offset + 100)
       const { data, error } = await withSupabaseRetry(
-        `coleta_log_ultima(comparador:${offset})`,
+        `coleta_log_ultima(comparador:${fonte}:${offset})`,
         async (signal) => admin
           .from("coleta_log_ultima")
           .select("candidato_id, alvo, resultado, executado_em")
-          .eq("fonte", "processos-curadoria")
+          .eq("fonte", fonte)
           .eq("escopo", "candidato")
           .in("alvo", lote)
           .abortSignal(signal),
@@ -1226,7 +1231,7 @@ async function fetchProcessosVerificacoesBatch(
         if (!COLETA_RESULTADOS_VALIDOS.has(resultado)) continue
         if (typeof row.executado_em !== "string" || !row.executado_em) continue
         verificacoes.set(row.alvo, {
-          fonte: "processos-curadoria",
+          fonte,
           resultado,
           executado_em: row.executado_em,
           detalhe: null,
@@ -1321,8 +1326,9 @@ async function fetchProcessosVerificacao(slug: string, candidateId: string): Pro
   return fetchColetaVerificacao(slug, "processos-curadoria", candidateId)
 }
 
-async function fetchFiliacaoVerificacao(slug: string): Promise<SancoesVerificacao | null> {
-  const receipt = await fetchColetaVerificacao(slug, "filiacao")
+async function fetchFiliacaoVerificacao(slug: string, candidateId: string): Promise<SancoesVerificacao | null> {
+  // Mesmo vínculo por candidato_id que o Comparador exige (fetchColetaVerificacoesBatch).
+  const receipt = await fetchColetaVerificacao(slug, "filiacao", candidateId)
   return receipt ? { ...receipt, detalhe: sanitizeFiliacaoDetail(receipt.detalhe) } : null
 }
 
@@ -1719,7 +1725,7 @@ async function getCandidatoBySlugFromRelationResource(
       // Mesma proveniência para o vazio judicial. Encontrado sem linha pública
       // significa item em revisão, não ficha limpa.
       fetchProcessosVerificacao(slug, id),
-      fetchFiliacaoVerificacao(slug),
+      fetchFiliacaoVerificacao(slug, id),
       // Recibo TCU é uma fonte independente da curadoria judicial. Achados
       // permanecem em revisão editorial até haver ponto de atenção verificado.
       fetchTCUVerificacao(slug),
@@ -2058,24 +2064,10 @@ export async function getCandidatoBySlugResource(
     return getCandidatoBySlugResourceUncached(slug)
   }
 
-  // Ler `headers()` aqui torna a ficha dinâmica em runtime. Em produção isso
-  // dispara `app-static-to-dynamic-error` e devolve HTTP 500: foi a queda de
-  // 2026-08-03, com as duas variáveis do bypass ligadas no painel havia 106
-  // dias. O gate agora mora em `resolveReleaseVerifyCacheBypassToken`, que
-  // devolve `null` em `VERCEL_ENV=production` sem consultar opt-in nenhum.
-  const cacheBypass = resolveReleaseVerifyCacheBypassToken()
-  if (cacheBypass) {
-    try {
-      const h = await headers()
-      const bypassHeader = h.get("x-pf-release-verify-cache-bypass")
-      if (bypassHeader === cacheBypass) {
-        noStore()
-        return getCandidatoBySlugResourceUncached(slug)
-      }
-    } catch {
-      // Fora de request Next (ou contexto estatico): segue o caminho em cache.
-    }
-  }
+  // Esta função não lê `headers()`: a ficha é ISR e ler request aqui dispara
+  // `app-static-to-dynamic-error` (HTTP 500, queda de 2026-08-03). O bypass do
+  // release-verify mora no handler de /api/candidato-profile/[slug], que chama
+  // `getCandidatoBySlugResourceBypassingCache` depois de conferir o header.
   try {
     const resource = await getCachedCandidatoBySlugResource(slug)
     return !isSenadoEnabled() && resource.data?.cargo_disputado === "Senador"
@@ -2084,6 +2076,14 @@ export async function getCandidatoBySlugResource(
   } catch {
     return getCandidatoBySlugResourceUncached(slug)
   }
+}
+
+/** Leitura sem cache para o release-verify; só o route handler do perfil chama. */
+export async function getCandidatoBySlugResourceBypassingCache(
+  slug: string
+): Promise<DataResource<FichaCandidato | null>> {
+  noStore()
+  return getCandidatoBySlugResourceUncached(slug)
 }
 
 export async function getCandidatoBySlugPreviewResource(
@@ -2513,9 +2513,10 @@ async function getCandidatosComparaveisResourceUncached(
   const legislativoById = new Map<string, boolean>()
   let patrimonioPorId = new Map<string, PatrimonioAnoValor[]>()
   let processosVerificacoes = new Map<string, SancoesVerificacao>()
+  let filiacaoVerificacoes = new Map<string, SancoesVerificacao>()
   let officialProcessCounts = new Map<string, number>()
   if (comparadorIds.length > 0) {
-    const [mudRows, gastoMap, patrimonioMap, cargoMap, legislativoMap, processosMap, processCounts] =
+    const [mudRows, gastoMap, patrimonioMap, cargoMap, legislativoMap, processosMap, processCounts, filiacaoMap] =
       await Promise.all([
         fetchMudancasPartidoRowsPaged(supabase, comparadorIds),
         fetchGastoTotalsByCandidatoIds(supabase, comparadorIds, new Map(baseRows.map((row) => [row.id, row.slug]))),
@@ -2524,9 +2525,11 @@ async function getCandidatosComparaveisResourceUncached(
         fetchLegislativeHistoryFlagsByCandidatoIds(supabase, comparadorIds),
         fetchProcessosVerificacoesBatch(baseRows.map((row) => ({ id: row.id, slug: row.slug }))),
         fetchPublicProcessCountsByCandidateIds(supabase, comparadorIds),
+        fetchColetaVerificacoesBatch(baseRows.map((row) => ({ id: row.id, slug: row.slug })), "filiacao"),
       ])
     patrimonioPorId = patrimonioMap
     processosVerificacoes = processosMap
+    filiacaoVerificacoes = filiacaoMap
     officialProcessCounts = processCounts
 
     const byCandidato = new Map<string, MudancaPartido[]>()
@@ -2574,6 +2577,11 @@ async function getCandidatosComparaveisResourceUncached(
       mudancas_partido: switchCountById.has(row.id)
         ? (switchCountById.get(row.id) ?? 0)
         : row.mudancas_partido,
+      // Mesma régua da ficha: zero sem recibo de filiação conclusivo é "não
+      // verificado". Sem a contagem filtrada, a da view não é afirmável.
+      mudancas_partido_verificado: switchCountById.has(row.id) &&
+        ((switchCountById.get(row.id) ?? 0) > 0 ||
+          ["encontrado", "vazio_confirmado"].includes(filiacaoVerificacoes.get(row.slug)?.resultado ?? "")),
       total_gasto_parlamentar: gastoTotalsById.has(row.id)
         ? (gastoTotalsById.get(row.id) ?? null)
         : null,
@@ -2602,7 +2610,7 @@ const getCachedCandidatosComparaveisResource = unstableCacheWithSingleFlight(
   // alimentava alertas_graves no servidor, nunca lido no cliente).
   // Bumped 2026-08-20: comparador B v1 (cargo_atual, bloco CEAP, sem votos).
   // Bumped 2026-08-20: sem flag de gastos_executivo no payload do comparador.
-  ["public-candidatos-comparaveis-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "comparaveis-strip-pontos-20260603", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "evolucao-patrimonial-lista-20260819", "comparador-b-v1-20260820", "comparador-ceap-federal-20260820", "comparador-sem-executivo-20260820", "timeline-partidaria-registro-20260918", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, "gastos-em-revisao-20260925", CURRENT_DATA_WAVE],
+  ["public-candidatos-comparaveis-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "comparaveis-strip-pontos-20260603", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "evolucao-patrimonial-lista-20260819", "comparador-b-v1-20260820", "comparador-ceap-federal-20260820", "comparador-sem-executivo-20260820", "timeline-partidaria-registro-20260918", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, "gastos-em-revisao-20260925", "trocas-partido-verificadas-20260929", CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos-comparaveis"],

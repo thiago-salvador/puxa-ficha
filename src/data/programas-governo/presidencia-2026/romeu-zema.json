@@ -943,6 +943,10 @@
         "descricao": "O programa propõe reduzir os juros e os impostos, simplificar a tributação das empresas, ampliar concessões e PPPs em infraestrutura e criar um regime de contratação alternativo à CLT com prevalência do negociado entre trabalhador e empregador sobre o legislado.",
         "evidencias": [
           {
+            "pagina": 23,
+            "trecho": "com prevalência do negociado sobre o legislado"
+          },
+          {
             "pagina": 18,
             "trecho": "Reduzir os custos diretos das operações financeiras começando pela redução do IOF"
           },
@@ -953,10 +957,6 @@
           {
             "pagina": 19,
             "trecho": "Conceder à iniciativa privada a construção, operação e manutenção dos ativos com viabilidade econômica"
-          },
-          {
-            "pagina": 23,
-            "trecho": "com prevalência do negociado sobre o legislado"
           }
         ]
       },

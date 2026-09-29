@@ -239,7 +239,8 @@ describe("CandidatoProfileSkeleton: a legenda não pode sumir na primeira pintur
     // Só .value fazia o "—" aparecer sem "não verificado" durante o
     // carregamento, reintroduzindo a afirmação de ficha limpa que a PR desfaz.
     assert.match(fonte, /const processosDisplay = processosOverviewDisplay\(/)
-    assert.match(fonte, /processosDisplay\.sub &&/)
+    assert.match(fonte, /: processosDisplay\.sub/)
+    assert.match(fonte, /processosSub &&/)
     assert.doesNotMatch(fonte, /processosOverviewDisplay\(overview\.processos\)\.value/)
   })
 

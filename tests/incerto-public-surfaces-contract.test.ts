@@ -59,7 +59,8 @@ describe("Bloco 1 — public surfaces never render raw 'incerto' party label", (
   })
 
   it("/doadores list filters partido through formatPartyPublicLabel", () => {
-    const src = readSource("src/app/(site)/doadores/page.tsx")
+    // A lista de resultados mora no client desde 2026-09-29 (página estática).
+    const src = readSource("src/components/DoadoresBusca.tsx")
     assert.match(src, /formatPartyPublicLabel/, "doadores must import formatPartyPublicLabel")
     assert.doesNotMatch(
       src,

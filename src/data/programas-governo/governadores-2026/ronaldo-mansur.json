@@ -512,6 +512,11 @@
         "evidencias": [
           {
             "documentoId": "BA:50002532269:01",
+            "pagina": 11,
+            "trecho": "Instalar processos de escolhas de diretores das escolas, a partir de consultas feitas com a participação da comunidade escolar"
+          },
+          {
+            "documentoId": "BA:50002532269:01",
             "pagina": 10,
             "trecho": "O princípio estruturante da nossa proposta de governo é a garantia do preceito constitucional da educação como um direito e um dever do Estado"
           }
@@ -1054,11 +1059,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-28T18:01:09Z",
+    "reviewedAt": "2026-09-29T12:18:10Z",
     "sourceSha256": "e7d8f6e6443895074d827bd626cb00a158f93d7d1ede48b80f0c4dc8c0eab337",
     "extractedTextSha256": "4212b548e1a0e69303f1f62cf13e0b5100884637d7c63d2ed03e83daf0e7284f",
     "documentCount": 1,
     "documentSetSha256": "8154d881d14dfae4a66e76ee5099efc8f9a0231e38c64342523f8dd4b24a44f6",
-    "contentSha256": "c1bca6af0a9c0321ccecd89a9e4bc3bd16257738142402c57b35d6a36c6a64ea"
+    "contentSha256": "343bdc222bbb62fa3f84c42077ede869ab895ffd16738b6066fb900a597173de"
   }
 }

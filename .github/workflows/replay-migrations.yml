@@ -56,6 +56,13 @@ on:
       - "scripts/audit/falhas-replay-linear.json"
   workflow_dispatch:
 
+
+# Push novo no mesmo PR cancela o replay anterior: o veredito que vale é o do
+# head atual, e o replay completo custa minutos de runner.
+concurrency:
+  group: replay-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 

@@ -19,7 +19,7 @@ Tipo: automacao
 | 11 | Checkout não persiste credenciais e a coleta não recebe secrets nem token de escrita. | code: teste de credenciais em `npm run test:pesquisas:atualizacao-agendada` | policy |
 | 12 | A branch promovida segue `automation/pesquisas-refresh-AAAA-MM-DD` e o PR é draft com fontes, registros TSE, diff por candidato e instruções de revisão. | code: testes de promoção e corpo do PR em `npm run test:pesquisas:atualizacao-agendada` | outcome |
 | 13 | Fixtures e dry-run local cobrem referência positiva e todos os bloqueios obrigatórios sem rede. | code: `npm run test:pesquisas:atualizacao-agendada` | routing |
-| 14 | O diff não adiciona dependência, não toca runtime público, banco ou produção e fica dentro do escopo aprovado. | code: `npm run audit:pesquisas:atualizacao-agendada:scope` | custo |
+| 14 | O diff não adiciona dependência, não toca runtime público, banco ou produção e fica dentro do escopo aprovado. | review do PR (o gate de escopo daquele PR, que exigia o cron "17 10 * * *", saiu em 29/09/2026: o workflow está sem agenda desde 27/09 e a atualização segue por `npm run pesquisas:importar`) | custo |
 | 15 | `npm run verify:pesquisas:atualizacao-agendada` e `npm run verify:pesquisas` passam no estado final. | code: G6 e G7 de `GATES.md` | outcome |
 | 16 | O PR de implementação está aberto contra `main`, com head `codex/pesquisas-atualizacao-agendada`, sem merge e sem execução remota com escrita. | code: inspeção via `gh pr view` e `gh run list` após o push | policy |
 

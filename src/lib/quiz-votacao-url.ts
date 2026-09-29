@@ -21,3 +21,23 @@ export function buildVotacaoPublicUrl(
   }
   return null
 }
+
+/**
+ * Link da votação nominal. No Senado, com `proposicao_id` e `votacao_id_api`,
+ * aponta a votação exata (âncora na página de votações da matéria); sem o id da
+ * votação, cai na página da matéria. Na Câmara, reaproveita o link da proposição.
+ */
+export function buildVotacaoNominalUrl(
+  casa: string | null | undefined,
+  proposicaoId: string | number | null | undefined,
+  votacaoIdApi: string | number | null | undefined
+): string | null {
+  const proposicao = proposicaoId == null ? "" : String(proposicaoId).trim()
+  if (!proposicao) return null
+  const votacao = votacaoIdApi == null ? "" : String(votacaoIdApi).trim()
+  const c = stripAccents(casa ?? "").toLowerCase()
+  if (c.includes("senado") && votacao) {
+    return `https://www25.senado.leg.br/web/atividade/materias/-/materia/${encodeURIComponent(proposicao)}/votacoes#votacao_${encodeURIComponent(votacao)}`
+  }
+  return buildVotacaoPublicUrl(casa, proposicao)
+}
