@@ -25,7 +25,9 @@ describe("recibos de busca no site", () => {
     assert.deepEqual(selecionarReciboChecagens(catalog([valid]), identity), { searchedAt: valid.searched_at, result: "vazio_confirmado", leads: 0, agencias: ["Lupa", "Aos Fatos"], naoResponderam: [], janelas: [] })
     const parcial = { ...valid, result: "encontrado", leads: 1, agencias: ["Lupa"] }
     assert.deepEqual(selecionarReciboChecagens(catalog([parcial]), identity)?.naoResponderam, ["Aos Fatos"])
-    assert.equal(selecionarReciboChecagens(catalog([{ ...valid, agencias: ["Lupa"] }]), identity), null, "vazio só com todas as agências respondendo")
+    assert.deepEqual(selecionarReciboChecagens(catalog([{ ...valid, agencias: ["Lupa"] }]), identity)?.naoResponderam, ["Aos Fatos"], "vazio aceita uma agência sem resposta, nomeada")
+    const tres = { ...catalog([{ ...valid, agencias: ["Lupa"] }]), agencias: ["Lupa", "Aos Fatos", "Comprova"] }
+    assert.equal(selecionarReciboChecagens(tres, identity), null, "vazio com duas agências sem resposta não é ausência")
     assert.equal(selecionarReciboChecagens(catalog([{ ...parcial, agencias: ["Lupa", "Agência Inventada"] }]), identity), null, "agência fora do escopo")
     assert.equal(selecionarReciboChecagens(catalog([{ ...valid, agencias: undefined }]), identity), null, "sem lista própria de agências não herda a do catálogo")
     assert.equal(selecionarReciboChecagens(catalog([{ ...valid, agencias: [] }]), identity), null)
@@ -79,6 +81,8 @@ describe("aba Checagens com recibo", () => {
     assert.match(comChecagens, /data-pf-attributed-check-id/)
     assert.match(comChecagens, /Busca feita em 25\/09\/2026 em Lupa e Comprova \(Aos Fatos e Fato ou Fake não responderam nesta busca\)\./)
     assert.match(render({ ...parcial, naoResponderam: ["AFP Checamos"] }), /\(AFP Checamos não respondeu nesta busca\)/)
+    const vazioParcial = { searchedAt: "2026-09-28T19:00:00Z", result: "vazio_confirmado" as const, leads: 0, agencias: agencias.filter((agencia) => agencia !== "Aos Fatos"), naoResponderam: ["Aos Fatos"], janelas: [] }
+    assert.match(render(vazioParcial), /\(Aos Fatos não respondeu nesta busca\): nenhuma checagem com o nome desta candidatura no título\./)
   })
 
   it("sem recibo e sem checagem não renderiza nada", () => {
