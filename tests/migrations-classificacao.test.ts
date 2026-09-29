@@ -513,7 +513,8 @@ describe("classificador puro (#136)", () => {
     // Processos da curadoria e patrimonio 2026 pelo pacote TSE (20260927060000/0100): --gate PG17 mediu 426 + 105 = 531.
     // Categorias de financiamento e hash de bens (20260927095346/47): --gate PG17 mediu 428 + 105 = 533.
     // Processos do Senado (20260928010000), DML com guardas: 429 + 105 = 534, a confirmar pelo gate PG17.
-    assert.equal(manifesto.aplicadas_esperadas, 429)
+    // L7 editorial (20260929010000): --gate PG17 mediu 430 + 105 = 535.
+    assert.equal(manifesto.aplicadas_esperadas, 430)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
@@ -586,6 +587,27 @@ describe("classificador puro (#136)", () => {
     assert.equal(classificacao.temGuard, true)
     assert.equal(
       TODAS_COM_REPLAY_SCHEMA.find((item) => item.arquivo === "20260928010000_processos_l13_senado.sql")?.replaySchema,
+      false,
+    )
+  })
+
+  test("L7 publica somente nove linhas com preimagem fechada e sem schema", () => {
+    const migration = readFileSync(
+      join("supabase", "migrations", "20260929010000_l7_pontos_historico_editorial.sql"),
+      "utf8",
+    )
+    const classificacao = classificarMigration("20260929010000_l7_pontos_historico_editorial.sql", migration)
+    assert.equal(classificacao.classe, "curadoria")
+    assert.equal(classificacao.replay, "replicavel")
+    assert.equal(classificacao.temGuard, true)
+    assert.equal((migration.match(/^\('[0-9a-f]{8}-[0-9a-f-]{27}','[^']+','[0-9a-f]{32}',/gm) ?? []).length, 8)
+    assert.match(migration, /md5\(to_jsonb\(p\)::text\)=u\.preimage_md5/)
+    assert.match(migration, /md5\(to_jsonb\(h\)::text\)='c12cf3d432fcdd508e1c463fd3f6cc1d'/)
+    assert.match(migration, /GET DIAGNOSTICS n = ROW_COUNT;\s*IF n <> 8 THEN RAISE EXCEPTION 'l7-editorial: pontos atualizados/)
+    assert.match(migration, /GET DIAGNOSTICS n = ROW_COUNT;\s*IF n <> 1 THEN RAISE EXCEPTION 'l7-editorial: histórico atualizado/)
+    assert.doesNotMatch(migration, /315b8592-13a8-4b7c-b179-6af32ee1e790/)
+    assert.equal(
+      TODAS_COM_REPLAY_SCHEMA.find((item) => item.arquivo === "20260929010000_l7_pontos_historico_editorial.sql")?.replaySchema,
       false,
     )
   })

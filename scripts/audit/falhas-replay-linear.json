@@ -1,6 +1,7 @@
 {
   "_comentario": "Conjunto FECHADO das migrations que falham no replay linear REAL (tolerante) em banco vazio, medido pelo harness scripts/audit/replay-migrations.sh. O modo --gate compara o resultado de uma execucao real contra esta lista: falha NOVA e regressao de replay em qualquer posicao (inclusive depois da 179a, que o modo estrito nunca alcanca); falha que sumiu exige regenerar este manifesto deliberadamente no mesmo PR. Regenerar: scripts/audit/replay-migrations.sh linear --tolerante e copiar os nomes.",
-  "aplicadas_esperadas": 429,
+  "aplicadas_esperadas": 430,
+  "_comentario_20260929010000": "L7 editorial e DML guardado por pf.replay; gate linear PostgreSQL 17 mediu 430 aplicadas + 105 falhas historicas = 535 migrations, conjunto de falhas inalterado.",
   "_comentario_20260928010000": "429 aplicadas: a migration de dados dos processos do Senado (20260928010000, depois de 20260927095347) tem guardas de ausencia e pf.replay e nao altera schema; 429 + 105 = 534. Confirmar pelo gate linear PostgreSQL 17.",
   "_comentario_20260927095347": "Coluna calculada patrimonio.bens_hash; replay PostgreSQL 17 no conjunto integrado: 428 aplicadas + mesmas 105 falhas historicas = 533 migrations, conservacao OK.",
   "_comentario_20260927095346": "Coluna categorias_origem e view financiamento_publico apos 20260927060100; replay no conjunto integrado.",
