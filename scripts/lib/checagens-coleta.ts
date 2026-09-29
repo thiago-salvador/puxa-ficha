@@ -724,9 +724,11 @@ export function consolidarCatalogoRecibos(
   homonimos: ReadonlySet<string> = new Set(),
 ): CatalogoRecibosChecagens {
   const porChave = new Map<string, ReciboChecagemPublico>()
+  const buscadas = new Set(recibos.map((recibo) => `${recibo.candidate_id}\u0000${recibo.candidate_slug}`))
   for (const recibo of anterior?.receipts ?? []) {
     const chave = `${recibo.candidate_id}\u0000${recibo.candidate_slug}`
-    if (!homonimos.has(chave)) porChave.set(chave, recibo)
+    // Homônimo fora desta rodada (recorte por --slugs) fica se o recibo anterior já passou pela regra (política atual).
+    if (!homonimos.has(chave) || (recibo.policy === POLITICA_CHECAGENS && !buscadas.has(chave))) porChave.set(chave, recibo)
   }
   for (const recibo of recibos) {
     if (recibo.policy !== POLITICA_CHECAGENS) throw new Error(`Recibo de ${recibo.candidate_slug} usa política ${recibo.policy ?? "ausente"}; refaça a busca com ${POLITICA_CHECAGENS}`)

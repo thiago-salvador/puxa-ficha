@@ -344,6 +344,11 @@ describe("coleta nominal de checagens", () => {
     assert.equal(consolidarCatalogoRecibos(antigo, [erro], now).receipts.length, 1, "sem grupo informado, erro não mexe no anterior")
     const semRegra = montarRecibo(veraCe, okEmTodas({ lupa: 1 }), now)
     assert.equal(consolidarCatalogoRecibos(null, [semRegra], now, chaves).receipts.length, 0, "recibo de homônimo que não passou pela regra não publica")
+    const outraFicha = montarRecibo(caiado, okEmTodas(), now)
+    const recorte = consolidarCatalogoRecibos(antigo, [outraFicha], now, chaves)
+    assert.ok(recorte.receipts.some((recibo) => recibo.candidate_slug === "vera-lucia-ce"), "rodada por --slugs sem a homônima mantém o recibo que já passou pela regra")
+    const v1 = { ...antigo, receipts: antigo.receipts.map((recibo) => ({ ...recibo, policy: "pf-checagens-v1" })) }
+    assert.ok(!consolidarCatalogoRecibos(v1, [outraFicha], now, chaves).receipts.some((recibo) => recibo.candidate_slug === "vera-lucia-ce"), "recibo anterior à regra sai mesmo fora da rodada")
   })
 
   it("grupo entre cargos não usa estado como marca", () => {
