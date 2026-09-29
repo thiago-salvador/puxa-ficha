@@ -27,24 +27,30 @@ it("WordPress não confirma vazio quando a página 3 está cheia e sonda a rota"
     },
   })
   assert.ok(requisicoes.some((url) => url.includes("search=Lula") && url.includes("agencialupa.org")), "sonda WordPress obrigatória")
-  assert.equal(recibo.agencias.lupa.status, "erro", "teto atingido sem fim comprovado é parcial")
+  assert.equal(recibo.agencias.lupa.status, "ok", "teto atingido não é falha de rota")
+  assert.match(recibo.agencias.lupa.parcial ?? "", /parcial após 40 páginas/, "teto atingido sem fim comprovado é parcial")
   assert.notEqual(recibo.result, "vazio_confirmado")
 })
 
-it("Aos Fatos marca parcial quando a página 9 aponta à página 10", async () => {
-  const [recibo] = await coletarChecagens({
+it("Aos Fatos segue até a última página anunciada e marca parcial acima do teto", async () => {
+  const buscar = (ultima: number) => coletarChecagens({
     roster: [candidato], semGoogle: true, tentativas: 1, pausaMs: 0, sleep: async () => {},
     fetchText: async (url) => {
       if (url.includes("aosfatos.org/noticias/")) {
         const params = new URL(url).searchParams
-        return { status: 200, body: paginaAos(Number(params.get("page")), 10) }
+        return { status: 200, body: paginaAos(Number(params.get("page")), ultima) }
       }
       if (url.includes("/wp-json/wp/v2/search")) return { status: 200, body: '[{"title":"Lula","url":"https://www.agencialupa.org/lula"}]' }
       return { status: 404, body: "" }
     },
   })
-  assert.equal(recibo.agencias["aos-fatos"].status, "erro")
-  assert.notEqual(recibo.result, "vazio_confirmado")
+  const [dez] = await buscar(10)
+  assert.equal(dez.agencias["aos-fatos"].status, "ok", "a página 9 aponta à 10: lê a 10 em vez de parar no teto curto")
+  assert.equal(dez.agencias["aos-fatos"].itens, 10)
+  assert.equal(dez.agencias["aos-fatos"].parcial, undefined)
+  const [longa] = await buscar(400)
+  assert.match(longa.agencias["aos-fatos"].parcial ?? "", /parcial após 250 páginas/)
+  assert.notEqual(longa.result, "vazio_confirmado")
 })
 
 it("WordPress respeita X-WP-TotalPages e não aceita rota sem probe positivo", async () => {
@@ -59,11 +65,13 @@ it("WordPress respeita X-WP-TotalPages e não aceita rota sem probe positivo", a
       return { status: 404, body: "" }
     },
   })
-  for (const probeVazio of [true, false]) {
-    const [recibo] = await buscar(probeVazio)
-    assert.equal(recibo.agencias.lupa.status, "erro")
-    assert.notEqual(recibo.result, "vazio_confirmado")
-  }
+  const [semProbe] = await buscar(true)
+  assert.equal(semProbe.agencias.lupa.status, "erro", "rota sem probe positivo não conta")
+  assert.notEqual(semProbe.result, "vazio_confirmado")
+  const [comProbe] = await buscar(false)
+  assert.equal(comProbe.agencias.lupa.status, "ok")
+  assert.equal(comProbe.agencias.lupa.itens, 4, "página curta não encerra antes do X-WP-TotalPages")
+  assert.notEqual(comProbe.result, "vazio_confirmado")
 })
 
 it("--pausa-ms 0 conserva backoff mínimo nas tentativas", async () => {

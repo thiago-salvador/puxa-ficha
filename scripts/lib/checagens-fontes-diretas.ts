@@ -49,10 +49,21 @@ function paragrafos(html: string): string[] {
   return [...html.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map((match) => textoHtml(match[1])).filter(Boolean)
 }
 
+/**
+ * Layout antigo do UOL (matérias de 2017 a 2023 e colunas): o corpo é o
+ * `div` cuja classe começa por `text` ("text", "text has-image"), com `<p>`.
+ */
+function trechosUolAntigo(html: string): string[] | null {
+  const corpo = conteudoTag(html, "div", 0, (tag) => /\bclass=["']text(?:\s[^"']*)?["']/i.test(tag))
+  if (!corpo) return null
+  const result = paragrafos(corpo)
+  return result.length ? result : null
+}
+
 /** Extrai apenas os parágrafos do componente de matéria UOL, nunca texto de navegação/sidebars. */
 export function trechosUol(html: string): string[] | null {
   const article = conteudoTag(html, "article", 0, (tag) => /\bdata-v-d559f1f7\b/i.test(tag))
-  if (!article) return null
+  if (!article) return trechosUolAntigo(html)
   const body = conteudoTag(article, "div", 0, (tag) => /\bclass=["'][^"']*\bbody-container\b[^"']*["']/i.test(tag) && !/\bjupiter-headline\b/i.test(tag))
   if (!body) return null
   const fragments = [...body.matchAll(/<div\b[^>]*class=["'][^"']*\bjupiter-paragraph-fragment\b[^"']*["'][^>]*>/gi)]

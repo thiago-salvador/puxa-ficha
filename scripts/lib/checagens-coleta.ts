@@ -77,10 +77,15 @@ export interface PisoArquivo {
 }
 
 export type TransporteBusca = "wp-rest" | "busca-site" | "arquivo-secao" | "afp-busca" | "uol-arquivo" | "google-news"
-/** Limite operacional: atingir o teto sem prova do fim marca a agência como parcial. */
-export const PAGINAS_WP = 3
-/** Limite operacional: a próxima página visível no teto marca a agência como parcial. */
+/**
+ * Limite operacional: atingir o teto sem prova do fim marca a agência como parcial.
+ * Em 28/09/2026, "Lula" tinha 30 páginas na Lupa e 10 no Comprova.
+ */
+export const PAGINAS_WP = 40
+/** Limite operacional: sem última página anunciada pela consulta, a próxima página visível no teto marca a agência como parcial. */
 export const PAGINAS_BUSCA_SITE = 9
+/** Teto quando a própria consulta anuncia a última página. Em 29/09/2026, "Lula" tinha 186 páginas no Aos Fatos. */
+export const PAGINAS_BUSCA_SITE_ANUNCIADAS = 250
 export const ITENS_POR_PAGINA_BUSCA_SITE = 12
 /** Nome que sempre tem checagem: se a sonda não acha nada, o leitor da página quebrou. */
 export const SONDA_BUSCA_SITE = "Lula"
@@ -191,7 +196,7 @@ export interface LeadMesaChecagem extends LeadChecagem {
 }
 
 export type EstadoAgencia =
-  | { status: "ok"; itens: number; leads: LeadChecagem[]; mesa?: LeadMesaChecagem[]; transporte?: TransporteBusca; falhas?: string[]; desde?: string; pendentes?: number; descartados?: number }
+  | { status: "ok"; itens: number; leads: LeadChecagem[]; mesa?: LeadMesaChecagem[]; transporte?: TransporteBusca; falhas?: string[]; desde?: string; pendentes?: number; descartados?: number; parcial?: string }
   | { status: "erro"; erro: string }
 
 /**
@@ -223,7 +228,8 @@ export interface ReciboChecagem {
   mesa?: LeadMesaChecagem[]
   /** `desde`: data (AAAA-MM-DD) do item mais antigo do arquivo de seção; antes dela a busca não cobre. */
   /** `pendentes`: títulos com só parte do nome sem corpo para conferir; `descartados`: parte do nome que o corpo não confirmou ou colada a outra pessoa. */
-  agencias: Record<string, { status: "ok" | "erro"; itens?: number; leads?: number; erro?: string; transporte?: TransporteBusca; falhas?: string[]; desde?: string; pendentes?: number; descartados?: number }>
+  /** `parcial`: a busca respondeu, mas bateu no teto de páginas; lead lido vale, ausência não. */
+  agencias: Record<string, { status: "ok" | "erro"; itens?: number; leads?: number; erro?: string; transporte?: TransporteBusca; falhas?: string[]; desde?: string; pendentes?: number; descartados?: number; parcial?: string }>
   escopo: string
   /** Presente quando o nome de urna é compartilhado com outra candidatura do cadastro. */
   homonimo?: {
@@ -309,7 +315,8 @@ export function aplicarRegraHomonimo(recibo: ReciboChecagem, candidato: Candidat
   for (const [id, estado] of Object.entries(recibo.agencias)) {
     agencias[id] = estado.status === "ok" ? { ...estado, leads: leads.filter((lead) => lead.agencia === id).length } : estado
   }
-  const algumaFalhou = Object.values(agencias).some((estado) => estado.status === "erro")
+  // Busca parcial não prova ausência: pesa como falha quando não há lead.
+  const algumaFalhou = Object.values(agencias).some((estado) => estado.status === "erro" || Boolean(estado.parcial))
   const pendentes = Object.values(agencias).some((estado) => estado.status === "ok" && (estado.pendentes ?? 0) > 0)
   const result: ResultadoRecibo = leads.length > 0 ? "encontrado" : algumaFalhou ? "erro" : pendentes ? "nao_confirmado" : descartados > 0 ? "homonimo" : "vazio_confirmado"
   const { homonimo: _anterior, ...base } = recibo
@@ -324,7 +331,7 @@ export function aplicarRegraHomonimo(recibo: ReciboChecagem, candidato: Candidat
 export function descricaoEscopo(): string {
   const nomes = (filtro: (agencia: AgenciaChecagem) => boolean) => AGENCIAS_CHECAGEM.filter(filtro).map((a) => a.nome).join(", ")
   const soGoogle = nomes((a) => !a.wpSearch && !a.buscaSite && !a.arquivo && !a.fonteDireta)
-  return `uma consulta por agência (${AGENCIAS_CHECAGEM.map((a) => a.nome).join(", ")}) com o nome de urna; busca nativa WordPress em ${nomes((a) => Boolean(a.wpSearch))} (até ${PAGINAS_WP * 100} resultados); busca do site em ${nomes((a) => Boolean(a.buscaSite))} (até ${PAGINAS_BUSCA_SITE * ITENS_POR_PAGINA_BUSCA_SITE} resultados); arquivo completo da seção em ${nomes((a) => Boolean(a.arquivo))}, lido uma vez por rodada; arquivo do UOL Confere e busca nativa da AFP Checamos sem Google; Google News RSS em ${soGoogle || "nenhuma agência"} como segunda via quando a rota direta falha (teto de ${TETO_ITENS_POR_CONSULTA} itens); buscas sem limite de data, arquivos de seção só a partir do item mais antigo lido (campo desde do recibo); lead exige o nome completo no título, ou parte dele no título e o nome completo no corpo (no resumo, para vídeo), sem parte colada a outro nome próprio; na rota sem corpo (Google News) o título parcial fica pendente e o recibo sem lead confirmado não entra no catálogo público`
+  return `uma consulta por agência (${AGENCIAS_CHECAGEM.map((a) => a.nome).join(", ")}) com o nome de urna; busca nativa WordPress em ${nomes((a) => Boolean(a.wpSearch))} (até ${PAGINAS_WP * 100} resultados); busca do site em ${nomes((a) => Boolean(a.buscaSite))} (até ${PAGINAS_BUSCA_SITE_ANUNCIADAS * ITENS_POR_PAGINA_BUSCA_SITE} resultados quando a consulta anuncia a última página, ${PAGINAS_BUSCA_SITE * ITENS_POR_PAGINA_BUSCA_SITE} sem ela); busca que bate no teto fica parcial: lead lido conta, ausência não; arquivo completo da seção em ${nomes((a) => Boolean(a.arquivo))}, lido uma vez por rodada; arquivo do UOL Confere e busca nativa da AFP Checamos sem Google; Google News RSS em ${soGoogle || "nenhuma agência"} como segunda via quando a rota direta falha (teto de ${TETO_ITENS_POR_CONSULTA} itens); buscas sem limite de data, arquivos de seção só a partir do item mais antigo lido (campo desde do recibo); lead exige o nome completo no título, ou parte dele no título e o nome completo no corpo (no resumo, para vídeo), sem parte colada a outro nome próprio; na rota sem corpo (Google News) o título parcial fica pendente e o recibo sem lead confirmado não entra no catálogo público`
 }
 
 export function urlBuscaSite(nomeUrna: string, agencia: AgenciaChecagem, pagina: number): string | null {
@@ -339,17 +346,21 @@ function atributo(tag: string, nome: string): string | null {
 /**
  * Página de resultados da busca do Aos Fatos: cada cartão tem um link
  * `/noticias/<slug>/` com o título no atributo `title`. `ultimaPagina` vem
- * dos links de paginação da mesma consulta.
+ * dos links de paginação da mesma consulta. `semConsulta` marca paginação sem
+ * `q=`: é a listagem geral de /noticias/, que o site serve no lugar da busca
+ * quando limita o acesso (visto em 28/09/2026, 73 fichas "parciais").
  */
-export function parseBuscaSite(html: string, base: string): { itens: ItemBusca[]; ultimaPagina: number | null } {
+export function parseBuscaSite(html: string, base: string): { itens: ItemBusca[]; ultimaPagina: number | null; semConsulta?: true } {
   const itens: ItemBusca[] = []
   const vistos = new Set<string>()
   let ultimaPagina: number | null = null
+  let semConsulta = false
   for (const match of html.matchAll(/<a\s[^>]*>/g)) {
     const href = atributo(match[0], "href")
     if (!href) continue
     const pagina = href.match(/[?&](?:amp;)?page=(\d+)/)
     if (pagina && /[?&]q=/.test(href)) ultimaPagina = Math.max(ultimaPagina ?? 0, Number(pagina[1]))
+    else if (pagina && /^\/noticias\/\?/.test(href)) semConsulta = true
     const titulo = atributo(match[0], "title")
     if (!titulo || !/^\/noticias\/[a-z0-9-]+\/$/.test(href)) continue
     const link = new URL(href, base).toString()
@@ -357,7 +368,7 @@ export function parseBuscaSite(html: string, base: string): { itens: ItemBusca[]
     vistos.add(link)
     itens.push({ titulo: decodeEntities(titulo), link, fonte: "", fonte_url: link, data_publicacao: null, corpo: { url: link, formato: "html-prose" } })
   }
-  return { itens, ultimaPagina }
+  return { itens, ultimaPagina, ...(semConsulta && ultimaPagina === null ? { semConsulta: true as const } : {}) }
 }
 
 function dataIso(value: unknown): string | null {
@@ -575,6 +586,7 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
   const mesa: LeadMesaChecagem[] = []
   let erro = false
   let pendentes = false
+  let incompleto = false
   for (const agencia of AGENCIAS_CHECAGEM) {
     const estado = estados[agencia.id]
     if (!estado) {
@@ -594,8 +606,10 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
       ...(estado.desde ? { desde: estado.desde } : {}),
       ...(estado.pendentes ? { pendentes: estado.pendentes } : {}),
       ...(estado.descartados ? { descartados: estado.descartados } : {}),
+      ...(estado.parcial ? { parcial: estado.parcial.slice(0, 200) } : {}),
     }
     if (estado.pendentes) pendentes = true
+    if (estado.parcial) incompleto = true
     leads.push(...estado.leads)
     mesa.push(...(estado.mesa ?? []))
   }
@@ -608,9 +622,9 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
     office: candidato.cargo_disputado,
     uf: candidato.estado,
     searched_at: searchedAt.toISOString(),
-    // Lead achado vale mesmo com outra agência em erro; ausência só com todas respondendo.
+    // Lead achado vale mesmo com outra agência em erro ou parcial; ausência só com todas respondendo por inteiro.
     // Título parcial sem corpo para conferir impede afirmar ausência.
-    result: leads.length > 0 ? "encontrado" : erro ? "erro" : pendentes ? "nao_confirmado" : "vazio_confirmado",
+    result: leads.length > 0 ? "encontrado" : erro || incompleto ? "erro" : pendentes ? "nao_confirmado" : "vazio_confirmado",
     leads,
     ...(mesa.length ? { mesa } : {}),
     agencias,
@@ -622,7 +636,7 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
 export function entradaColetaDoRecibo(recibo: ReciboChecagem): EntradaColeta {
   const porAgencia = AGENCIAS_CHECAGEM.map((agencia) => {
     const estado = recibo.agencias[agencia.id]
-    return estado?.status === "ok" ? `${agencia.id}=${estado.leads ?? 0}/${estado.itens ?? 0}(${estado.transporte ?? "?"}${estado.desde ? ` desde ${estado.desde}` : ""}${estado.pendentes ? ` pendentes ${estado.pendentes}` : ""}${estado.descartados ? ` descartados ${estado.descartados}` : ""})` : `${agencia.id}=erro(${estado?.erro ?? "não consultada"})`
+    return estado?.status === "ok" ? `${agencia.id}=${estado.leads ?? 0}/${estado.itens ?? 0}(${estado.transporte ?? "?"}${estado.desde ? ` desde ${estado.desde}` : ""}${estado.pendentes ? ` pendentes ${estado.pendentes}` : ""}${estado.descartados ? ` descartados ${estado.descartados}` : ""}${estado.parcial ? " parcial" : ""})` : `${agencia.id}=erro(${estado?.erro ?? "não consultada"})`
   }).join(" ")
   const homonimo = recibo.homonimo
     ? `; homônimo de ${recibo.homonimo.grupo.join(", ")}: ${recibo.homonimo.descartados} lead(s) sem marca distintiva no título`
@@ -631,8 +645,8 @@ export function entradaColetaDoRecibo(recibo: ReciboChecagem): EntradaColeta {
     fonte: FONTE_CHECAGENS_AGENCIAS,
     alvo: recibo.candidate_slug,
     escopo: "candidato",
-    // Homônimo e título parcial sem confirmação não provam achado nem ausência: indeterminado no log.
-    resultado: recibo.result === "homonimo" || recibo.result === "nao_confirmado" ? "indeterminado" : recibo.result,
+    // Homônimo, título parcial sem confirmação e busca parcial sem falha de rota não provam achado nem ausência: indeterminado no log.
+    resultado: recibo.result === "homonimo" || recibo.result === "nao_confirmado" || (recibo.result === "erro" && !Object.values(recibo.agencias).some((estado) => estado.status === "erro")) ? "indeterminado" : recibo.result,
     volume: recibo.result === "encontrado" || recibo.result === "erro" ? recibo.leads.length : 0,
     detalhe: `${POLITICA_CHECAGENS}; leads/itens por agência: ${porAgencia}${homonimo}; ${recibo.escopo}`.slice(0, 1000),
   }
@@ -688,11 +702,17 @@ function janelasPublicas(recibo: ReciboChecagem): { janelas?: Record<string, str
  */
 export const MAX_AGENCIAS_SEM_RESPOSTA_NA_AUSENCIA = 1
 
+/** Busca parcial respondeu, mas não cobre tudo: para ausência, conta como agência sem resposta. */
+function respondeuPorInteiro(recibo: ReciboChecagem, agencia: AgenciaChecagem): boolean {
+  const estado = recibo.agencias[agencia.id]
+  return estado?.status === "ok" && !estado.parcial
+}
+
 function ausenciaComUmaAgenciaSemResposta(recibo: ReciboChecagem): boolean {
   if (recibo.leads.length > 0 || recibo.mesa?.length) return false
   // Homônimo com matéria descartada não é ausência, com ou sem agência fora.
   if ((recibo.homonimo?.descartados ?? 0) > 0) return false
-  const semResposta = AGENCIAS_CHECAGEM.filter((agencia) => recibo.agencias[agencia.id]?.status !== "ok").length
+  const semResposta = AGENCIAS_CHECAGEM.filter((agencia) => !respondeuPorInteiro(recibo, agencia)).length
   const pendente = Object.values(recibo.agencias).some((estado) => estado.status === "ok" && (estado.pendentes ?? 0) > 0)
   return semResposta > 0 && semResposta <= MAX_AGENCIAS_SEM_RESPOSTA_NA_AUSENCIA && !pendente
 }
@@ -704,9 +724,11 @@ export function consolidarCatalogoRecibos(
   homonimos: ReadonlySet<string> = new Set(),
 ): CatalogoRecibosChecagens {
   const porChave = new Map<string, ReciboChecagemPublico>()
+  const buscadas = new Set(recibos.map((recibo) => `${recibo.candidate_id}\u0000${recibo.candidate_slug}`))
   for (const recibo of anterior?.receipts ?? []) {
     const chave = `${recibo.candidate_id}\u0000${recibo.candidate_slug}`
-    if (!homonimos.has(chave)) porChave.set(chave, recibo)
+    // Homônimo fora desta rodada (recorte por --slugs) fica se o recibo anterior já passou pela regra (política atual).
+    if (!homonimos.has(chave) || (recibo.policy === POLITICA_CHECAGENS && !buscadas.has(chave))) porChave.set(chave, recibo)
   }
   for (const recibo of recibos) {
     if (recibo.policy !== POLITICA_CHECAGENS) throw new Error(`Recibo de ${recibo.candidate_slug} usa política ${recibo.policy ?? "ausente"}; refaça a busca com ${POLITICA_CHECAGENS}`)
@@ -727,7 +749,8 @@ export function consolidarCatalogoRecibos(
       searched_at: recibo.searched_at,
       result: recibo.result === "encontrado" ? "encontrado" : "vazio_confirmado",
       leads: recibo.result === "encontrado" ? recibo.leads.length : 0,
-      agencias: AGENCIAS_CHECAGEM.filter((agencia) => recibo.agencias[agencia.id]?.status === "ok").map((agencia) => agencia.nome),
+      // Encontrado lista quem respondeu (parcial inclusive, o lead veio dali); ausência lista só quem cobriu tudo.
+      agencias: AGENCIAS_CHECAGEM.filter((agencia) => recibo.result === "encontrado" ? recibo.agencias[agencia.id]?.status === "ok" : respondeuPorInteiro(recibo, agencia)).map((agencia) => agencia.nome),
       ...janelasPublicas(recibo),
     })
   }
@@ -845,11 +868,17 @@ async function pedirComTentativas(url: string, opcoes: OpcoesConsulta, aceitar: 
 }
 
 async function lerPaginaBuscaSite(nome: string, agencia: AgenciaChecagem, pagina: number, opcoes: OpcoesConsulta): Promise<{ itens: ItemBusca[]; ultimaPagina: number | null; fim: boolean } | { erro: string }> {
-  // Página além da última responde 404; na primeira, 404 é erro.
-  const resposta = await pedirComTentativas(urlBuscaSite(nome, agencia, pagina)!, opcoes, (status) => pagina > 1 && status === 404)
-  if ("erro" in resposta) return resposta
-  if (resposta.status === 404) return { itens: [], ultimaPagina: null, fim: true }
-  return { ...parseBuscaSite(resposta.body, agencia.buscaSite!), fim: false }
+  // Listagem geral no lugar da busca é acesso limitado, não resultado: espera e pede de novo.
+  for (let tentativa = 0; tentativa < opcoes.tentativas; tentativa++) {
+    if (tentativa > 0) await opcoes.sleep(Math.max(400, opcoes.esperaBloqueioMs) * tentativa)
+    // Página além da última responde 404; na primeira, 404 é erro.
+    const resposta = await pedirComTentativas(urlBuscaSite(nome, agencia, pagina)!, opcoes, (status) => pagina > 1 && status === 404)
+    if ("erro" in resposta) return resposta
+    if (resposta.status === 404) return { itens: [], ultimaPagina: null, fim: true }
+    const lida = parseBuscaSite(resposta.body, agencia.buscaSite!)
+    if (!lida.semConsulta) return { itens: lida.itens, ultimaPagina: lida.ultimaPagina, fim: false }
+  }
+  return { erro: `página ${pagina} veio como listagem geral, sem a consulta (acesso limitado)` }
 }
 
 function sondarBuscaSite(agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<string | null> {
@@ -872,7 +901,9 @@ async function consultarBuscaSite(candidato: CandidatoChecagem, agencia: Agencia
   }
   const itens: ItemBusca[] = []
   let fechou = false
-  for (let pagina = 1; pagina <= PAGINAS_BUSCA_SITE; pagina++) {
+  // A última página anunciada pela própria consulta amplia o teto; sem ela, vale o teto curto.
+  let teto = PAGINAS_BUSCA_SITE
+  for (let pagina = 1; pagina <= teto; pagina++) {
     if (pagina > 1) await opcoes.sleep(opcoes.pausaMs)
     const lida = await lerPaginaBuscaSite(candidato.nome_urna, agencia, pagina, opcoes)
     if ("erro" in lida) return { status: "erro", erro: `busca do site: ${lida.erro}` }
@@ -880,10 +911,11 @@ async function consultarBuscaSite(candidato: CandidatoChecagem, agencia: Agencia
     // Página além da última responde 404: 200 sem cartões depois da primeira é bloqueio ou template quebrado.
     if (pagina > 1 && lida.itens.length === 0) return { status: "erro", erro: `busca do site: parcial, página ${pagina} sem cartões (fim real responde 404)` }
     itens.push(...lida.itens)
+    if (lida.ultimaPagina !== null) teto = Math.min(PAGINAS_BUSCA_SITE_ANUNCIADAS, Math.max(teto, lida.ultimaPagina))
     // Página curta só encerra sem link para a seguinte; página cheia segue até o teto.
     if (lida.itens.length < ITENS_POR_PAGINA_BUSCA_SITE && (lida.ultimaPagina === null || lida.ultimaPagina <= pagina)) { fechou = true; break }
   }
-  if (!fechou) return { status: "erro", erro: `busca do site: parcial após ${PAGINAS_BUSCA_SITE} páginas; fim não comprovado` }
+  if (!fechou) return comParcial(await estadoConfirmado(itens, itens.length, candidato, agencia, opcoes, "busca-site", "busca do site"), `busca do site: parcial após ${teto} páginas; fim não comprovado`)
   if (itens.length === 0) {
     // Zero cartões pode ser bloqueio ou template quebrado no meio da rodada: sonda de novo antes de aceitar o vazio.
     const agora = await sondarBuscaSite(agencia, opcoes)
@@ -1196,6 +1228,14 @@ async function estadoConfirmado(itens: readonly ItemBusca[], total: number, cand
   }
 }
 
+/**
+ * Busca que respondeu mas bateu no teto de páginas: o que foi lido vale como
+ * lead, mas não prova ausência. Não é falha da rota, então não abre o disjuntor.
+ */
+function comParcial(estado: EstadoAgencia, motivo: string): EstadoAgencia {
+  return estado.status === "ok" ? { ...estado, parcial: motivo } : estado
+}
+
 async function consultarArquivo(candidato: CandidatoChecagem, agencia: AgenciaChecagem, opcoes: OpcoesConsulta): Promise<EstadoAgencia> {
   let lido = opcoes.arquivos.get(agencia.id)
   if (!lido) {
@@ -1299,7 +1339,7 @@ async function consultarNativa(candidato: CandidatoChecagem, agencia: AgenciaChe
     if (lidos.length < 100 && (totalPaginas === null || pagina >= totalPaginas)) { fechou = true; break }
     await opcoes.sleep(opcoes.pausaMs)
   }
-  if (!fechou) return { status: "erro", erro: `busca nativa: parcial após ${PAGINAS_WP} páginas; total ${totalPaginas ?? "desconhecido"}` }
+  if (!fechou) return comParcial(await estadoConfirmado(itens, itens.length, candidato, agencia, opcoes, "wp-rest", "busca nativa"), `busca nativa: parcial após ${PAGINAS_WP} páginas; total ${totalPaginas ?? "desconhecido"}`)
   return estadoConfirmado(itens, itens.length, candidato, agencia, opcoes, "wp-rest", "busca nativa")
 }
 
@@ -1716,7 +1756,7 @@ export function aplicarDecisoesMesa(
     const incerto = estados.some((estado) => (estado.pendentes ?? 0) > 0)
     const result: ResultadoRecibo = leads.length > 0
       ? "encontrado"
-      : estados.some((estado) => estado.status === "erro")
+      : estados.some((estado) => estado.status === "erro" || Boolean(estado.parcial))
         ? "erro"
         : recibo.result === "homonimo"
           ? "homonimo"
