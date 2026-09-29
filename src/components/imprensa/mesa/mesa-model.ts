@@ -1,5 +1,5 @@
 import type { ImprensaPageRow } from "@/lib/imprensa-cache"
-import { imprensaDataBucket, temProcessoPublicado, type ImprensaDataBucket } from "@/lib/imprensa-facts"
+import { imprensaDataBucket, temProcessoNaFicha, type ImprensaDataBucket } from "@/lib/imprensa-facts"
 import { MESA_COM, MESA_ORDEM, MESA_PARAM, type MesaCom } from "@/lib/imprensa-nav"
 
 /**
@@ -63,6 +63,8 @@ function mesaSortValue(row: MesaRow, sort: NumericSort): number | null {
     case "variacao":
       return row.patrimonio.estado === "publicado" ? finite(row.patrimonio.variacaoPct) : null
     case "processos":
+      // Total da ficha (judiciais + disciplinares) quando a parte judicial tem quantidade.
+      if (row.processos.contagem && row.processos.contagem.total !== null) return finite(row.processos.contagem.total)
       if (row.processos.estado === "publicado" || row.processos.estado === "cobertura_parcial") return finite(row.processos.quantidade)
       return row.processos.estado === "vazio_confirmado" ? 0 : null
     case "sancoes":
@@ -110,7 +112,7 @@ export function parseMesaCom(value: string | null | undefined): MesaCom | null {
 export function matchesMesaCom(row: MesaRow, com: MesaCom): boolean {
   switch (com) {
     case "processo":
-      return temProcessoPublicado(row.processos)
+      return temProcessoNaFicha(row.processos)
     case "variacao-100":
       return row.patrimonio.estado === "publicado" && (finite(row.patrimonio.variacaoPct) ?? 0) > 100
     case "sancao":
