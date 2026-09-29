@@ -121,7 +121,7 @@ export default async function ImprensaSala() {
 
         <section id="atualizacoes" className={styles.section} aria-labelledby="atualizacoes-title">
           <SectionHead num="03" id="atualizacoes-title">O que mudou no TSE</SectionHead>
-          <p className={styles.lead}>As mudanças mais recentes conferidas com a fonte oficial. A data é a da detecção da mudança, não a do fato.</p>
+          <p className={styles.lead}>Quem teve a candidatura, o partido ou o patrimônio alterado no TSE. A fonte oficial é conferida todo dia; a data é a da detecção da mudança, não a do fato.</p>
           {atualizacoes.status === "unavailable" ? (
             <Unavailable title="Mudanças indisponíveis agora">Não foi possível consultar o registro. Uma falha de consulta não significa que nada mudou.</Unavailable>
           ) : updates.length === 0 ? (
@@ -133,10 +133,11 @@ export default async function ImprensaSala() {
                   <time dateTime={item.detectedAt} className={styles.updateDate}>{item.dateLabel}</time>
                   <div className={styles.updateBody}>
                     {item.context ? <p className={styles.updateContext}>{item.context}</p> : null}
+                    <p className={styles.updateName}>{item.fichaUrl ? <Link href={item.fichaUrl}>{item.name}</Link> : item.name}</p>
                     <p className={styles.updateChange}>{item.change}</p>
                   </div>
                   <p className={styles.updateLinks}>
-                    {item.fichaUrl ? <Link href={item.fichaUrl}>Ficha</Link> : null}
+                    {item.fichaUrl ? <Link href={item.fichaUrl} aria-label={`Ficha de ${item.name}`}>Ficha</Link> : null}
                     <a href={item.sourceUrl} target="_blank" rel="noreferrer">Fonte oficial<ArrowUpRight aria-hidden="true" className={styles.arrowSmall} /></a>
                   </p>
                 </li>

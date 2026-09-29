@@ -1,6 +1,8 @@
 /* cspell:disable */
 import assert from "node:assert/strict"
+import { readFileSync } from "node:fs"
 import { createRequire } from "node:module"
+import { join } from "node:path"
 import { describe, it } from "node:test"
 import React from "react"
 import { renderToStaticMarkup } from "react-dom/server"
@@ -156,8 +158,18 @@ describe("kit de imprensa: redação", () => {
     assert.equal(estados?.sourceHref, "/imprensa/frescor")
   })
 
-  it("mantém a bio aprovada sem alteração", () => {
-    assert.equal(content.founderBio, "Thiago Salvador é diretor de Operações e IA na Zaaz, empresa de creator economy com sede em Seattle, e vive em São Paulo. Criou o Puxa Ficha para reunir em um só lugar o que as fontes oficiais dizem sobre cada candidato.")
+  it("usa a bio aprovada, igual no kit e no bio.txt", () => {
+    assert.equal(content.founderBio, "Thiago Salvador é criador de conteúdo, especialista em inteligência artificial e diretor de Operações e IA na Zaaz. Desenvolveu o Puxa Ficha para reunir em um só lugar o que as fontes oficiais dizem sobre cada candidato.")
+    assert.doesNotMatch(content.founderBio, /Seattle|São Paulo/)
+    assert.equal(readFileSync(join(process.cwd(), "public/imprensa/bio.txt"), "utf8").trim(), content.founderBio)
+  })
+
+  it("credita o Thiago em todos os textos prontos", () => {
+    for (const n of [numbers, null]) {
+      const [t50, t100, t250] = content.kitPressTexts(n).map((text) => text.paragraphs.join(" "))
+      assert.match(t50, /Desenvolvido por Thiago Salvador\./)
+      for (const text of [t100, t250]) assert.match(text, /desenvolvido por Thiago Salvador, criador de conteúdo e especialista em inteligência artificial\./)
+    }
   })
 })
 

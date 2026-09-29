@@ -58,6 +58,10 @@ function nosDados(n: KitNumbers): string {
   return n.data ? `Nos dados de ${n.data}` : "Nos dados atuais"
 }
 
+/** Autoria nos textos prontos: o de 50 palavras só nomeia; os maiores apresentam. */
+const AUTORIA_CURTA = "Desenvolvido por Thiago Salvador."
+const AUTORIA = "O Puxa Ficha foi desenvolvido por Thiago Salvador, criador de conteúdo e especialista em inteligência artificial."
+
 /** Citação do projeto, fixa. */
 export const projectCitation = "Puxa Ficha (puxaficha.com.br), consulta pública de dados oficiais sobre candidaturas de 2026"
 
@@ -88,21 +92,21 @@ export function kitPressTexts(n: KitNumbers | null): KitText[] {
       id: "50",
       label: "50 palavras",
       paragraphs: [
-        `O Puxa Ficha (puxaficha.com.br) mostra dados oficiais sobre ${candidatos(n)} em 2026: patrimônio, processos com número e fonte, sanções federais, cota parlamentar e chapas. Cada dado tem fonte e data de coleta. O site não recomenda voto. Processo não é condenação. Ausência de dado não é zero.`,
+        `O Puxa Ficha (puxaficha.com.br) mostra dados oficiais sobre ${candidatos(n)} em 2026: patrimônio, processos com número e fonte, sanções federais, cota parlamentar e chapas. Cada dado tem fonte e data de coleta. ${AUTORIA_CURTA} O site não recomenda voto. Processo não é condenação. Ausência de dado não é zero.`,
       ],
     },
     {
       id: "100",
       label: "100 palavras",
       paragraphs: [
-        `O Puxa Ficha (puxaficha.com.br) reúne dados oficiais sobre ${candidatos(n)} em 2026. Cada dado tem link para a fonte e a data de coleta. ${patrimonio} O site também mostra registros em cadastros federais de sanções da CGU, gastos da cota parlamentar na Câmara e no Senado e a composição das chapas. O site não recomenda voto. Processo não é condenação. Ausência de dado não é zero. Confira a fonte original antes de publicar.`,
+        `O Puxa Ficha (puxaficha.com.br) reúne dados oficiais sobre ${candidatos(n)} em 2026. Cada dado tem link para a fonte e a data de coleta. ${patrimonio} O site também mostra registros em cadastros federais de sanções da CGU, gastos da cota parlamentar na Câmara e no Senado e a composição das chapas. ${AUTORIA} O site não recomenda voto. Processo não é condenação. Ausência de dado não é zero. Confira a fonte original antes de publicar.`,
       ],
     },
     {
       id: "250",
       label: "250 palavras",
       paragraphs: [
-        `O Puxa Ficha (puxaficha.com.br) é uma consulta pública de dados oficiais sobre ${candidatos(n)} nas eleições de 2026. Cada ficha reúne o que TSE, tribunais, CGU, Câmara e Senado registram sobre a pessoa, com link para o documento de origem e a data em que o dado foi coletado.`,
+        `O Puxa Ficha (puxaficha.com.br) é uma consulta pública de dados oficiais sobre ${candidatos(n)} nas eleições de 2026. Cada ficha reúne o que TSE, tribunais, CGU, Câmara e Senado registram sobre a pessoa, com link para o documento de origem e a data em que o dado foi coletado. ${AUTORIA}`,
         `${patrimonioLongo} O site também mostra registros nos cadastros federais de sanções da CGU (CEIS, CNEP e CEAF), os gastos da cota parlamentar de quem teve mandato na Câmara ou no Senado e a composição das chapas, com vice e suplentes conforme o arquivo do TSE.`,
         homonimos,
         "O site não recomenda voto. Processo não é condenação: a situação de cada caso está no documento do tribunal. Quando um dado não foi encontrado ou não foi consultado, a ficha diz isso, e ausência de dado não é zero. O código é aberto e as correções são públicas. Antes de publicar, confira o dado na fonte original e registre a data da consulta.",
@@ -128,7 +132,7 @@ export const citationFormats = [
 ] as const
 
 /** Texto aprovado pelo fundador; o kit não publica foto. Mesmo texto de public/imprensa/bio.txt. */
-export const founderBio = "Thiago Salvador é diretor de Operações e IA na Zaaz, empresa de creator economy com sede em Seattle, e vive em São Paulo. Criou o Puxa Ficha para reunir em um só lugar o que as fontes oficiais dizem sobre cada candidato."
+export const founderBio = "Thiago Salvador é criador de conteúdo, especialista em inteligência artificial e diretor de Operações e IA na Zaaz. Desenvolveu o Puxa Ficha para reunir em um só lugar o que as fontes oficiais dizem sobre cada candidato."
 
 export interface KitQuestion { question: string; answer: string; sourceHref?: string; sourceLabel?: string }
 

@@ -264,6 +264,50 @@ function cardFor(id: ImprensaFactCardId, facts: ImprensaFacts): ImprensaFactCard
   }
 }
 
+/**
+ * Grupos de leitura da seção. `alerta` pede atenção primeiro (Justiça), `atencao`
+ * é dinheiro declarado ou gasto, `info` é composição de chapa. A cor sai do tom,
+ * nunca do valor: zero continua no mesmo grupo e com a mesma ressalva.
+ */
+export type ImprensaFactTone = "alerta" | "atencao" | "info"
+
+export interface ImprensaFactGroup {
+  id: "justica" | "dinheiro" | "chapas"
+  title: string
+  description: string
+  tone: ImprensaFactTone
+  ids: readonly ImprensaFactCardId[]
+}
+
+export const IMPRENSA_FACT_GROUPS: readonly ImprensaFactGroup[] = [
+  { id: "justica", title: "Justiça e sanções", description: "Processos e cadastros federais de punição.", tone: "alerta", ids: ["processos", "sancoes"] },
+  { id: "dinheiro", title: "Dinheiro", description: "Patrimônio declarado ao TSE e gastos com mandato.", tone: "atencao", ids: ["patrimonio_variacao", "patrimonio_acima_10mi", "cota"] },
+  { id: "chapas", title: "Chapas", description: "Quem concorre junto: vice e suplentes.", tone: "info", ids: ["chapas"] },
+]
+
+export interface ImprensaFactCardGroup extends Omit<ImprensaFactGroup, "ids"> {
+  cards: ImprensaFactCard[]
+}
+
+/**
+ * Cards agrupados, só com os ids pedidos. Dentro do grupo, o maior número vem
+ * primeiro; empate mantém a ordem do grupo. Grupo sem card pedido some.
+ */
+export function buildImprensaFactGroups(
+  facts: ImprensaFacts,
+  ids: readonly ImprensaFactCardId[] = IMPRENSA_FACT_CARD_ORDER,
+): ImprensaFactCardGroup[] {
+  const wanted = new Set(ids)
+  return IMPRENSA_FACT_GROUPS.flatMap(({ ids: groupIds, ...group }) => {
+    const cards = groupIds
+      .filter((id) => wanted.has(id))
+      .map((id, index) => ({ card: cardFor(id, facts), index }))
+      .sort((a, b) => b.card.value - a.card.value || a.index - b.index)
+      .map(({ card }) => card)
+    return cards.length > 0 ? [{ ...group, cards }] : []
+  })
+}
+
 /** Cards na ordem pedida (padrão: `IMPRENSA_FACT_CARD_ORDER`). */
 export function buildImprensaFactCards(
   facts: ImprensaFacts,
