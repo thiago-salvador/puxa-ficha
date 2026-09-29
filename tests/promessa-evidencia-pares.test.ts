@@ -4,7 +4,7 @@ import test from "node:test"
 
 import { eixosDoTemaCanonico, eixosDoTexto } from "../scripts/lib/promessa-eixos"
 import { posicoesForaDeQuarentena, type SnapshotEvidencias } from "../scripts/promessa-evidencia-coletar"
-import { gerarPares, normalizarEvidencias, reciboPares } from "../scripts/promessa-evidencia-pares"
+import { gerarPares, motivoCircular, normalizarEvidencias, reciboPares, type ParCircular } from "../scripts/promessa-evidencia-pares"
 import { compromissosDoRegistro, type ProgramaCompromissos } from "../scripts/promessa-evidencia-programas"
 import type { ProgramaGovernoRegistro } from "../src/lib/programa-governo"
 
@@ -119,4 +119,101 @@ test("compromisso por tema traz as frases que citam a mesma evidencia do tema", 
   for (const frase of frasesLigadas) {
     assert.ok(registro.resumo!.frases.some((original) => original.id === frase.id && original.texto === frase.texto))
   }
+})
+
+
+const PACOTE_SP = "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SP.zip"
+
+function programaComFonte(): ProgramaCompromissos {
+  return {
+    slug: "cand-c", programaChave: "2026:GOVERNADOR:SP:250000000003", cargo: "GOVERNADOR", uf: "SP",
+    temas: [{ temaId: "privatizacoes", titulo: "Privatizações", descricao: "Cancelar as privatizações e reestatizar empresas públicas.", evidencias: [], frases: [] }],
+    fonte: { sqCandidato: "250000000003", arquivoNome: "2026SP250000000003_01.pdf", urls: [PACOTE_SP] },
+  }
+}
+
+function snapshotCircular(posicoes: SnapshotEvidencias["posicoes"], falas: SnapshotEvidencias["falas"] = []): SnapshotEvidencias {
+  const C = "00000000-0000-0000-0000-00000000000c"
+  return {
+    schema_version: "promessa-evidencia-snapshot-v1", coletado_em: "2026-09-29T00:00:00Z",
+    candidatos: [{ id: C, slug: "cand-c", mandatoFederal: false }],
+    votos: [], projetos: [], contradicoes: [],
+    posicoes: posicoes.map((p) => ({ ...p, candidato_id: C })),
+    falas: falas.map((f) => ({ ...f, candidate_id: C })) as SnapshotEvidencias["falas"],
+  }
+}
+
+const POSICAO_BASE = { candidato_id: "", tema: "privatizacao_eletrobras", posicao: "contra", descricao: "Defende cancelar as privatizações já realizadas." }
+
+test("circular: posicao extraida do proprio programa (registro TSE do candidato) sai dos pares e vai ao recibo", () => {
+  const circulares: ParCircular[] = []
+  const pares = gerarPares([programaComFonte()], snapshotCircular([{
+    ...POSICAO_BASE, id: "pos-prog",
+    fonte: "Proposta de governo registrada no TSE por cand-c (arquivo 250000000099)",
+    url_fonte: "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SP/20322002026/candidato/250000000003",
+  }]), circulares)
+  assert.equal(pares.length, 0)
+  assert.equal(circulares.length, 1)
+  assert.equal(circulares[0]!.ref, "pos-prog")
+  assert.equal(circulares[0]!.motivo, "registro_tse_do_candidato")
+  // Mesmo sem a URL do TSE, o campo fonte que se declara programa registrado basta.
+  const [soFonte] = normalizarEvidencias(snapshotCircular([{
+    ...POSICAO_BASE, id: "pos-fonte", fonte: "Proposta de governo registrada no TSE por cand-c", url_fonte: null,
+  }]))
+  assert.equal(motivoCircular(programaComFonte(), soFonte!), "fonte_extraida_do_programa")
+})
+
+test("circular: PDF do programa espelhado fora do TSE e campo fonte que se declara programa TSE", () => {
+  const [ev] = normalizarEvidencias(snapshotCircular([{
+    ...POSICAO_BASE, id: "pos-espelho",
+    fonte: "Programa TSE Cand C (PDF espelhado)",
+    url_fonte: "https://exemplo.com.br/wp-content/uploads/2026/08/PROGRAMA-CAND-C-AGOSTO-2026.pdf",
+  }]))
+  assert.equal(motivoCircular(programaComFonte(), ev!), "fonte_extraida_do_programa")
+  const [soArquivo] = normalizarEvidencias(snapshotCircular([{
+    ...POSICAO_BASE, id: "pos-arquivo", fonte: null,
+    url_fonte: "https://exemplo.com.br/docs/plano-de-governo-cand-c.pdf",
+  }]))
+  assert.equal(motivoCircular(programaComFonte(), soArquivo!), "fonte_extraida_do_programa")
+})
+
+test("independente: posicao e fala de imprensa passam pelo gate e viram par", () => {
+  const circulares: ParCircular[] = []
+  const pares = gerarPares([programaComFonte()], snapshotCircular([{
+    ...POSICAO_BASE, id: "pos-imprensa",
+    fonte: "Bem Paraná, entrevista com o candidato (2026-09-01)",
+    url_fonte: "https://www.bemparana.com.br/eleicoes-2026/candidato-defende-reestatizar-empresas/",
+  }], [{
+    id: "fala-imprensa", candidate_slug: "cand-c", quote_text: "Vamos reestatizar as empresas privatizadas.",
+    context: "Entrevista", article_url: "https://noticias.r7.com/entrevista-cand-c/", occurred_on: "2026-09-17",
+    event_type: "entrevista", publisher: "R7",
+  } as unknown as SnapshotEvidencias["falas"][number]]), circulares)
+  assert.deepEqual(pares.map((p) => p.evidencia.ref).sort(), ["fala-imprensa", "pos-imprensa"])
+  assert.equal(circulares.length, 0)
+})
+
+test("circular: caso antigo com URL da evidencia igual ao pacote TSE do programa continua barrado", () => {
+  const [ev] = normalizarEvidencias(snapshotCircular([{
+    ...POSICAO_BASE, id: "pos-pacote", fonte: null, url_fonte: `${PACOTE_SP}/`,
+  }]))
+  assert.equal(motivoCircular(programaComFonte(), ev!), "url_do_programa")
+  const circulares: ParCircular[] = []
+  assert.equal(gerarPares([programaComFonte()], snapshotCircular([{ ...POSICAO_BASE, id: "pos-pacote", fonte: null, url_fonte: PACOTE_SP }]), circulares).length, 0)
+  assert.equal(circulares[0]?.motivo, "url_do_programa")
+})
+
+test("gate nao toca votos nem projetos, e programa sem fonte so barra pela marca da fonte", () => {
+  const semFonte = { ...programaComFonte(), fonte: undefined }
+  const [ev] = normalizarEvidencias(snapshotCircular([{ ...POSICAO_BASE, id: "pos-x", fonte: null, url_fonte: PACOTE_SP }]))
+  assert.equal(motivoCircular(semFonte, ev!), null)
+  const voto = { ...ev!, tipo: "votacao_chave" as const, conteudo: { fonte: "Programa TSE" } }
+  assert.equal(motivoCircular(programaComFonte(), voto), null)
+})
+
+test("programa real carrega a fonte do documento para o gate", () => {
+  const registro = JSON.parse(readFileSync("src/data/programas-governo/governadores-2026/adriano-funileiro.json", "utf8")) as ProgramaGovernoRegistro
+  const compromissos = compromissosDoRegistro(registro)
+  assert.ok(compromissos?.fonte)
+  assert.equal(compromissos!.fonte!.sqCandidato, "160002552560")
+  assert.ok(compromissos!.fonte!.urls.includes("https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PR.zip"))
 })
