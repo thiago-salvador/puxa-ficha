@@ -48,6 +48,7 @@ import {
   recorteProcessosJustica,
 } from "@/lib/processos-justica-total"
 import { formatDate } from "@/lib/utils"
+import { VOTO_BADGE_NEUTRO_CLASS, formatVotoCasaQuando } from "@/lib/vote-badge"
 import {
   FINANCING_COLOR_BY_KEY,
   fixedCopy,
@@ -84,7 +85,7 @@ import {
   patrimonioPorAnoSemAmbiguidade,
   patrimonioTemValorComparavel,
   patrimonioValorEstadoLabel,
-  variacaoPatrimonialPct,
+  variacaoPatrimonialDaFicha,
 } from "@/lib/patrimonio-contexto"
 
 /* ─── Pure helpers ──────────────────────────────────── */
@@ -94,8 +95,8 @@ type FinancingSegment = { label: string; value: number; color: string }
 type PatrimonioSummary = {
   sorted: Patrimonio[]
   latest: Patrimonio | null
-  earliest: Patrimonio | null
-  growthPct: number | null
+  /** Mesmo par e mesmo percentual do KPI do topo (`variacaoPatrimonialDaFicha`). */
+  variacao: ReturnType<typeof variacaoPatrimonialDaFicha>
   latestYear: number | null
   latestCount: number
 }
@@ -104,9 +105,11 @@ function getPatrimonioSummary(patrimonio: Patrimonio[]): PatrimonioSummary {
   const sorted = patrimonioPorAnoSemAmbiguidade(patrimonio)
   const latestContext = patrimonioMaisRecenteSemEscolhaArbitraria(patrimonio)
   const latest = latestContext.patrimonio
-  const earliest = sorted.length > 1 ? sorted[0] : null
-  const growthPct = latest && earliest ? variacaoPatrimonialPct(earliest, latest) : null
-  return { sorted, latest, earliest, growthPct, latestYear: latestContext.ano, latestCount: latestContext.quantidade }
+  // O card e o KPI do topo comparam o mesmo par (as duas últimas declarações
+  // comparáveis). Comparar com a primeira declaração da série dava um segundo
+  // número para o mesmo fato.
+  const variacao = variacaoPatrimonialDaFicha(patrimonio)
+  return { sorted, latest, variacao, latestYear: latestContext.ano, latestCount: latestContext.quantidade }
 }
 
 function getLatestFinancing(financiamento: Financiamento[]): Financiamento | null {
@@ -193,11 +196,6 @@ function getPatrimonioGrowthIndicator(
   if (growthPct > 0) return { arrow: "↑", color: "text-green-700" }
   if (growthPct < 0) return { arrow: "↓", color: "text-red-600" }
   return { arrow: "", color: "text-muted-foreground" }
-}
-
-function getVotoBadgeClassName(voto: VotoCandidato["voto"]): string {
-  if (voto === "sim") return "bg-foreground text-background"
-  return "bg-secondary text-foreground"
 }
 
 /* ─── Card shell ──────────────────────────────────── */
@@ -451,7 +449,7 @@ function PatrimonioTeaser({
   eleicoes: PatrimonioEleicaoPublico[]
   onNavigate: () => void
 }) {
-  const { latest, earliest, growthPct, latestYear, latestCount } = summary
+  const { latest, variacao, latestYear, latestCount } = summary
   if (!latest) {
     if (latestYear != null && latestCount > 1) {
       return (
@@ -529,7 +527,7 @@ function PatrimonioTeaser({
     )
   }
 
-  const indicator = getPatrimonioGrowthIndicator(growthPct)
+  const indicator = getPatrimonioGrowthIndicator(variacao?.pct ?? null)
   const serieComparavel = summary.sorted.filter((p) => patrimonioTemValorComparavel(p))
 
   return (
@@ -541,9 +539,13 @@ function PatrimonioTeaser({
     >
       <div className="mb-3 flex items-baseline gap-3">
         <PatrimonioTeaserValor patrimonio={latest} as="span" />
-        {indicator && earliest && growthPct !== null && (
-          <span className={`text-[length:var(--text-caption)] font-bold ${indicator.color}`}>
-            {indicator.arrow} {Math.abs(Math.round(growthPct))}% desde {earliest.ano_eleicao}
+        {indicator && variacao && (
+          <span
+            data-pf-patrimonio-variacao={variacao.pct}
+            data-pf-patrimonio-variacao-anos={`${variacao.anterior.ano_eleicao}-${variacao.atual.ano_eleicao}`}
+            className={`text-[length:var(--text-caption)] font-bold ${indicator.color}`}
+          >
+            {indicator.arrow} {Math.abs(variacao.pct)}% entre {variacao.anterior.ano_eleicao} e {variacao.atual.ano_eleicao}
           </span>
         )}
       </div>
@@ -820,19 +822,30 @@ function VotesTeaser({
         </div>
       )}
       <div className="space-y-2">
-        {votos.slice(0, 4).map((v) => (
-          <div key={v.id} className="flex items-start gap-2.5">
-            <span
-              title={formatVoteNote(v.voto) || undefined}
-              className={`mt-0.5 shrink-0 rounded px-2 py-0.5 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-wide ${getVotoBadgeClassName(v.voto)}`}
-            >
-              {formatVoteBadgeLabel(v.voto)}
-            </span>
-            <p className="min-w-0 flex-1 line-clamp-1 text-[length:var(--text-body-sm)] font-medium leading-snug text-foreground">
-              {v.votacao?.titulo}
-            </p>
-          </div>
-        ))}
+        {votos.slice(0, 4).map((v) => {
+          const casaQuando = formatVotoCasaQuando(v.votacao)
+          return (
+            <div key={v.id} className="flex items-start gap-2.5">
+              <span
+                data-pf-voto-badge={v.voto}
+                title={formatVoteNote(v.voto) || undefined}
+                className={`mt-0.5 shrink-0 rounded px-2 py-0.5 text-[length:var(--text-eyebrow)] uppercase tracking-wide ${VOTO_BADGE_NEUTRO_CLASS}`}
+              >
+                {formatVoteBadgeLabel(v.voto)}
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="line-clamp-1 text-[length:var(--text-body-sm)] font-medium leading-snug text-foreground">
+                  {v.votacao?.titulo}
+                </p>
+                {casaQuando && (
+                  <p data-pf-voto-casa-quando="" className="mt-0.5 text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
+                    {casaQuando}
+                  </p>
+                )}
+              </div>
+            </div>
+          )
+        })}
       </div>
     </TeaserCard>
   )
@@ -1010,12 +1023,15 @@ function CareerTeaser({
 export function ProfileOverview({
   ficha,
   onNavigateTab,
+  pollCard,
   trailingCard,
   factChecksCard,
   closingCard,
 }: {
   ficha: FichaCandidato
   onNavigateTab: (tabId: string) => void
+  /** Intenção de voto: topo da coluna da direita (D1), só com pesquisa. */
+  pollCard?: React.ReactNode
   /** Programa de governo (coluna da esquerda, depois do financiamento). */
   trailingCard?: React.ReactNode
   /** Resumo das checagens atribuídas; a lista completa fica na aba Checagens. */
@@ -1045,7 +1061,7 @@ export function ProfileOverview({
     ficha.sites_candidato?.resultado === "indeterminado" ? sitesTseCollectedAt : null
   const disciplinares = getRepresentacoesEticaAprovadas(ficha.slug)
 
-  if (!hasOverviewData(ficha) && disciplinares.length === 0 && !trailingCard && !factChecksCard && !closingCard) {
+  if (!hasOverviewData(ficha) && disciplinares.length === 0 && !pollCard && !trailingCard && !factChecksCard && !closingCard) {
     return <EmptyOverviewState />
   }
 
@@ -1099,6 +1115,7 @@ export function ProfileOverview({
     />,
   ]
   const rightColumn: React.ReactNode[] = [
+    pollCard,
     factChecksCard,
     <ProcessesTeaser
       key="processos"

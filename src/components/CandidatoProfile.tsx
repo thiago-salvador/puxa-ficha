@@ -11,6 +11,8 @@ import type {
 } from "@/lib/programa-governo"
 import { teveMandatoNoCongresso, type EstadoEvidenciasPrograma } from "@/lib/compromisso-evidencia"
 import type { ProgramaGovernoPendencia } from "@/lib/programa-governo-pendencia"
+import type { PesquisaEleitoralDoCandidato } from "@/lib/pesquisas-eleitorais"
+import { PollIntentionCard } from "./PollIntentionCard"
 import {
   descreverEstadoDaFonte,
   montarDestaquesDaFicha,
@@ -102,6 +104,7 @@ import {
   fixedCopy,
   formatAttentionCategoryLabel,
   formatDestaquesLabel,
+  formatDestaquesLegenda,
   formatProcessStatusLabel,
   formatProcessSummaryLabel,
   formatProcessTypeLabel,
@@ -109,6 +112,7 @@ import {
   formatVoteBadgeLabel,
   formatVoteNote,
 } from "@/lib/ui-labels"
+import { VOTO_BADGE_NEUTRO_CLASS, formatVotoCasaQuando } from "@/lib/vote-badge"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import {
   prepareHistoricoPoliticoPublicDisplayList,
@@ -335,6 +339,7 @@ export function CandidatoProfile({
   compromissoEvidencias,
   programaPendente = null,
   senadoRunningMates = null,
+  pesquisas = [],
   initialLegislationSubtab,
   initialLegislationPage,
 }: {
@@ -347,6 +352,8 @@ export function CandidatoProfile({
   programaPendente?: ProgramaGovernoPendencia | null
   /** Suplentes carregados no servidor; só existe em ficha de Senador. */
   senadoRunningMates?: SenadoRunningMatesPayload | null
+  /** Pesquisas do candidato; com ao menos uma, o card "Intenção de voto" abre a coluna da direita. */
+  pesquisas?: PesquisaEleitoralDoCandidato[]
   /** Apenas para render determinístico de cada subaba no auditor de release. */
   initialLegislationSubtab?: LegislationSubtabId
   /** Apenas para render determinístico das páginas 2+ no auditor de release. */
@@ -812,6 +819,7 @@ export function CandidatoProfile({
               icon={Sparkles}
               dataValueAttr="data-pf-overview-destaques"
               dataRawValue={destaques.totalExibido}
+              sub={formatDestaquesLegenda(alertasNaoPositivos.length, pontosPositivos.length)}
             />
             {projetosLeiTotal > 0 ? (
             <StatCard
@@ -881,6 +889,7 @@ export function CandidatoProfile({
                 <ProfileOverview
                   ficha={ficha}
                   onNavigateTab={navigateToTab}
+                  pollCard={pesquisas.length > 0 ? <PollIntentionCard pesquisas={pesquisas} /> : undefined}
                   trailingCard={
                     programaEnabled && programaGoverno ? (
                       <ProgramaGovernoOverview
@@ -1185,9 +1194,9 @@ export function CandidatoProfile({
                                 {formatTemaLabel(v.votacao.tema)}
                               </MetaBadge>
                             )}
-                            {v.votacao?.casa && (
-                              <span className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
-                                {v.votacao.casa} | {v.votacao.data_votacao ? formatDate(v.votacao.data_votacao) : ""}
+                            {formatVotoCasaQuando(v.votacao, "data") && (
+                              <span data-pf-voto-casa-quando="" className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
+                                {formatVotoCasaQuando(v.votacao, "data")}
                               </span>
                             )}
                           </div>
@@ -1209,13 +1218,8 @@ export function CandidatoProfile({
                         </div>
                         <span
                           title={formatVoteNote(v.voto) || undefined}
-                          className={`mt-1 shrink-0 rounded-full px-3.5 py-1.5 text-[length:var(--text-caption)] font-bold uppercase tracking-[0.05em] ${
-                            v.voto === "sim"
-                              ? "bg-foreground text-background"
-                              : v.voto === "não"
-                                ? "border border-foreground bg-transparent text-foreground"
-                                : "bg-secondary text-foreground"
-                          }`}
+                          data-pf-voto-badge={v.voto}
+                  className={`mt-1 shrink-0 rounded-full px-3.5 py-1.5 text-[length:var(--text-caption)] uppercase tracking-[0.05em] ${VOTO_BADGE_NEUTRO_CLASS}`}
                         >
                           {formatVoteBadgeLabel(v.voto)}
                         </span>

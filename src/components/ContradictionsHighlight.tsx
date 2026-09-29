@@ -4,6 +4,7 @@ import { ChevronRight } from "lucide-react"
 import { enrichContradictions } from "@/lib/contradiction-utils"
 import type { PontoAtencao, VotoCandidato } from "@/lib/types"
 import { fixedCopy, formatTemaLabel, formatVoteBadgeLabel, formatVoteNote } from "@/lib/ui-labels"
+import { VOTO_BADGE_NEUTRO_CLASS } from "@/lib/vote-badge"
 import { formatDate } from "@/lib/utils"
 import { MetaBadge } from "./MetaBadge"
 
@@ -11,12 +12,6 @@ export interface ContradictionsHighlightProps {
   votosContradicao: VotoCandidato[]
   pontosContradicao: PontoAtencao[]
   onNavigateTab: (tabId: string) => void
-}
-
-function voteBadgeClass(v: VotoCandidato["voto"]): string {
-  if (v === "sim") return "bg-foreground text-background"
-  if (v === "não") return "border border-foreground bg-transparent text-foreground"
-  return "bg-secondary text-foreground"
 }
 
 export function ContradictionsHighlight({
@@ -76,7 +71,8 @@ export function ContradictionsHighlight({
               </div>
               <div className="mt-0.5 flex max-w-[190px] shrink-0 flex-col items-end gap-1">
                 <span
-                  className={`rounded-full px-2.5 py-1 text-[length:var(--text-eyebrow)] font-bold uppercase ${voteBadgeClass(voto.voto)}`}
+                  data-pf-voto-badge={voto.voto}
+                  className={`rounded-full px-2.5 py-1 text-[length:var(--text-eyebrow)] uppercase ${VOTO_BADGE_NEUTRO_CLASS}`}
                 >
                   {formatVoteBadgeLabel(voto.voto)}
                 </span>

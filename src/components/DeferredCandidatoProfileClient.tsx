@@ -12,6 +12,7 @@ import type { ProgramaGovernoManifestoPublico } from "@/lib/programa-governo"
 import type { SenadoRunningMatesPayload } from "@/components/SenadoRunningMates"
 import type { EstadoEvidenciasPrograma } from "@/lib/compromisso-evidencia"
 import type { ProgramaGovernoPendencia } from "@/lib/programa-governo-pendencia"
+import type { PesquisaEleitoralDoCandidato } from "@/lib/pesquisas-eleitorais"
 
 type CandidatoProfileProps = {
   ficha: FichaCandidato
@@ -20,6 +21,7 @@ type CandidatoProfileProps = {
   compromissoEvidencias?: EstadoEvidenciasPrograma
   programaPendente?: ProgramaGovernoPendencia | null
   senadoRunningMates?: SenadoRunningMatesPayload | null
+  pesquisas?: PesquisaEleitoralDoCandidato[]
 }
 
 type ProfileComponent = ComponentType<CandidatoProfileProps>
@@ -187,6 +189,7 @@ export function DeferredCandidatoProfileClient({
   compromissoEvidencias,
   programaPendente = null,
   senadoRunningMates = null,
+  pesquisas = [],
 }: {
   slug: string
   initialTab?: CandidatoProfileTabId
@@ -195,6 +198,7 @@ export function DeferredCandidatoProfileClient({
   compromissoEvidencias?: EstadoEvidenciasPrograma
   programaPendente?: ProgramaGovernoPendencia | null
   senadoRunningMates?: SenadoRunningMatesPayload | null
+  pesquisas?: PesquisaEleitoralDoCandidato[]
 }) {
   const shouldLoad = useDeferredBelowFoldLoad()
   const [Profile, setProfile] = useState<ProfileComponent | null>(null)
@@ -235,6 +239,7 @@ export function DeferredCandidatoProfileClient({
       compromissoEvidencias={compromissoEvidencias}
       programaPendente={programaPendente}
       senadoRunningMates={senadoRunningMates}
+      pesquisas={pesquisas}
     />
   ) : (
     <CandidatoProfileSkeleton overview={overview} />

@@ -52,8 +52,24 @@ import { getCompromissoEvidenciasEstado } from "@/lib/compromisso-evidencia-serv
 import { normalizarProgramaGovernoEstado } from "@/lib/programa-governo"
 import { programaGovernoPendencia } from "@/lib/programa-governo-pendencia"
 import { loadSenadoRunningMates } from "@/lib/senado-running-mates"
+import { listarPesquisasSenadoPorSlug } from "@/lib/senado-polls"
+import { isSenadoEnabled } from "@/lib/senado-feature"
 
 const getFicha = (slug: string) => getCandidatoBySlugResource(slug)
+
+/**
+ * As pesquisas do Senado alimentam só o card de intenção de voto: catálogo
+ * inválido esconde o card (como a página da UF mostra "indisponível") em vez
+ * de derrubar a ficha.
+ */
+function pesquisasSenadoSemDerrubarFicha(slug: string, uf: string) {
+  try {
+    return listarPesquisasSenadoPorSlug(slug, uf)
+  } catch (error) {
+    console.error(`[pesquisas-senado] catálogo indisponível para ${slug}:`, error)
+    return []
+  }
+}
 
 export interface CandidatoFichaViewProps {
   slug: string
@@ -93,18 +109,24 @@ export async function CandidatoFichaView({
     notFound()
   }
 
-  // A ficha não tem mais aba de pesquisas: o único uso é o selo do hero,
-  // que existe para Presidente e Governador.
+  // O selo do hero existe para Presidente e Governador. O card "Intenção de
+  // voto" da visão geral usa as mesmas pesquisas e, no Senado, o mesmo
+  // catálogo e os mesmos filtros da página /uf/[uf]/senado.
+  const senadoComPesquisas = ficha.cargo_disputado === "Senador" && isSenadoEnabled()
   const pesquisasEnabled =
     (ficha.cargo_disputado === "Presidente" || ficha.cargo_disputado === "Governador") &&
     seoSubpath !== "timeline"
-  const pesquisas = !pesquisasEnabled
+  const pesquisas = seoSubpath === "timeline"
     ? []
     : ficha.cargo_disputado === "Presidente"
       ? listarPesquisasPresidenciaisPorSlug(slug)
       : !ficha.estado
         ? []
-        : listarPesquisasGovernadorPorSlug(slug, ficha.estado)
+        : senadoComPesquisas
+          ? pesquisasSenadoSemDerrubarFicha(slug, ficha.estado)
+          : ficha.cargo_disputado === "Governador"
+            ? listarPesquisasGovernadorPorSlug(slug, ficha.estado)
+            : []
   // Presidente é disputa nacional (anel único); qualquer outra disputa navega
   // dentro da própria UF. Sem estado na ficha, degrada para o anel do cargo.
   const navEstado =
@@ -513,6 +535,7 @@ export async function CandidatoFichaView({
         compromissoEvidencias={compromissoEvidencias}
         programaPendente={programaPendente}
         senadoRunningMates={runningMates}
+        pesquisas={pesquisas}
       />
 
       {ficha.biografia && (

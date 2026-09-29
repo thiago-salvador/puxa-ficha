@@ -25,13 +25,13 @@ function formatarDataIso(value: string | null): string {
   return match ? `${match[3]}/${match[2]}/${match[1]}` : "não informado"
 }
 
-function formatarPeriodo(pesquisa: PesquisaEleitoralDoCandidato): string {
+export function formatarPeriodo(pesquisa: PesquisaEleitoralDoCandidato): string {
   const inicio = formatarDataIso(pesquisa.fieldwork.start.value)
   const fim = formatarDataIso(pesquisa.fieldwork.end.value)
   return inicio === fim ? inicio : `${inicio} a ${fim}`
 }
 
-function resultadoPublicado(pesquisa: PesquisaEleitoralDoCandidato): boolean {
+export function resultadoPublicado(pesquisa: PesquisaEleitoralDoCandidato): boolean {
   return (
     pesquisa.state === "publicado" &&
     pesquisa.resultado.status === "publicado" &&
@@ -39,7 +39,7 @@ function resultadoPublicado(pesquisa: PesquisaEleitoralDoCandidato): boolean {
   )
 }
 
-function resultadoLabel(pesquisa: PesquisaEleitoralDoCandidato): string {
+export function resultadoLabel(pesquisa: PesquisaEleitoralDoCandidato): string {
   if (resultadoPublicado(pesquisa)) {
     return `${pesquisa.resultado.valuePercent!.toLocaleString("pt-BR", {
       maximumFractionDigits: 2,

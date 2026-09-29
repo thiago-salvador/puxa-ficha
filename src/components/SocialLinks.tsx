@@ -1,6 +1,7 @@
 import { Globe } from "lucide-react"
 import { safeHref } from "@/lib/utils"
 import { valorSocialReservado } from "@/lib/social-profile-url"
+import { nomeDaRedeSocial } from "@/lib/rede-social-nome"
 
 const SOCIAL_ICONS: Record<string, { label: string; urlPrefix: string }> = {
   instagram: { label: "Instagram", urlPrefix: "https://instagram.com/" },
@@ -88,7 +89,10 @@ export function SocialLinks({
     // Canal do YouTube guardado como URL /c/, /user/ ou /channel/: o chip mostra
     // só o nome ou ID, sem o prefixo de caminho.
     if (platform === "youtube") arroba = arroba.replace(/^(?:c|user|channel)\//, "")
-    return [{ platform, url, arroba }]
+    // O nome da rede vem do domínio do link que o chip abre (mapa único em
+    // `rede-social-nome`); sem ele, três chips "@perfil" iguais não dizem qual é qual.
+    const rede = nomeDaRedeSocial(url) ?? info.label
+    return [{ platform, url, arroba, rede }]
   })
   if (links.length === 0 && !site && !safeWiki) return null
 
@@ -116,15 +120,17 @@ export function SocialLinks({
           Wikipedia
         </a>
       )}
-      {links.map(({ platform, url, arroba }) => (
+      {links.map(({ platform, url, arroba, rede }) => (
         <a
           key={platform}
           href={url}
           target="_blank"
           rel="noopener noreferrer"
+          data-pf-social-rede={rede}
           className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-[length:var(--text-caption)] font-semibold text-foreground transition-colors hover:bg-secondary"
         >
-          @{arroba}
+          <span className="text-muted-foreground">{rede}</span>{" "}
+          <span>@{arroba}</span>
         </a>
       ))}
     </div>

@@ -13,6 +13,7 @@ import type { LegislacaoMandatoExecutivo, ProjetoLei, SectionFreshnessInfo, Voto
 import { ExternalLink } from "lucide-react"
 import { DataFreshnessNotice } from "./DataFreshnessNotice"
 import { formatProjectStatusLabel, formatTemaLabel, formatVoteBadgeLabel, formatVoteNote } from "@/lib/ui-labels"
+import { VOTO_BADGE_NEUTRO_CLASS, formatVotoCasaQuando } from "@/lib/vote-badge"
 import {
   descricaoDestaquesParlamentares,
   groupLegislacaoProfileItems,
@@ -543,11 +544,11 @@ function VotedLegislationList({ items }: { items: VotoCandidato[] }) {
                       {formatTemaLabel(voto.votacao.tema)}
                     </MetaBadge>
                   )}
-                  {voto.votacao?.casa && (
-                    <span className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
-                      {voto.votacao.casa} | {voto.votacao.data_votacao ? formatDate(voto.votacao.data_votacao) : ""}
-                    </span>
-                  )}
+                  {formatVotoCasaQuando(voto.votacao, "data") && (
+                              <span data-pf-voto-casa-quando="" className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
+                                {formatVotoCasaQuando(voto.votacao, "data")}
+                              </span>
+                            )}
                 </div>
                 {voto.contradicao && voto.contradicao_descricao && (
                   <div className="mt-3 border-l-2 border-amber-400/70 bg-muted/30 px-3 py-2.5">
@@ -567,13 +568,8 @@ function VotedLegislationList({ items }: { items: VotoCandidato[] }) {
               </div>
               <div className="mt-1 flex max-w-[220px] shrink-0 flex-col items-end gap-1.5">
                 <span
-                  className={`rounded-full px-3.5 py-1.5 text-[length:var(--text-caption)] font-bold uppercase tracking-[0.05em] ${
-                    voto.voto === "sim"
-                      ? "bg-foreground text-background"
-                      : voto.voto === "não"
-                        ? "border border-foreground bg-transparent text-foreground"
-                        : "bg-secondary text-foreground"
-                  }`}
+                  data-pf-voto-badge={voto.voto}
+                  className={`rounded-full px-3.5 py-1.5 text-[length:var(--text-caption)] uppercase tracking-[0.05em] ${VOTO_BADGE_NEUTRO_CLASS}`}
                 >
                   {formatVoteBadgeLabel(voto.voto)}
                 </span>
