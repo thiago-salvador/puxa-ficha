@@ -1,0 +1,95 @@
+{
+ "consulta": {
+  "idEleicao": "2032200",
+  "ano": 2026,
+  "sgUe": "RJ",
+  "nrPartido": 80,
+  "nrCandidato": 80,
+  "idCandidato": "9000000003",
+  "idPrestador": "8000000003",
+  "idUltimaEntrega": "7000000",
+  "entregaAtual": null,
+  "historicoEntregas": [
+   {
+    "dataEntrega": "13/09/2026 16:25",
+    "tipo": "Entrega Parcial - Oficial",
+    "idEntrega": "7000000"
+   },
+   {
+    "dataEntrega": "28/08/2026 15:51",
+    "tipo": "Relatório Financeiro",
+    "idEntrega": "6999999"
+   }
+  ],
+  "despesas": {
+   "limiteDeGasto1T": 17788806.16,
+   "limiteDeGasto2T": 8894403.08,
+   "valorLimiteDeGastos": 17788806.16,
+   "totalDespesasContratadas": 1938.33,
+   "totalDespesasPagas": 1938.33,
+   "doacoesOutrosCandidatosPartigos": 0,
+   "fundosPartidarios": 0,
+   "fundoEspecial": 0,
+   "outrosRecursos": 1938.33,
+   "financeiras": 0,
+   "estimaveis": 0
+  },
+  "dadosConsolidados": {
+   "totalRecebido": 7545.19,
+   "totalFinanceiro": 6545.19,
+   "totalEstimados": 1000
+  },
+  "concentracaoDespesas": [
+   {
+    "dsDRD": "Publicidade por carros de som",
+    "qtdeDespesas": "1",
+    "valor": 1800
+   },
+   {
+    "dsDRD": "Taxa de Administração de Financiamento Coletivo",
+    "qtdeDespesas": "1",
+    "valor": 138.33
+   }
+  ],
+  "rankingFornecedores": [
+   {
+    "cpfCnpj": "PJ-2",
+    "nome": "FORNECEDOR FICTICIO 2 LTDA",
+    "qntd": "1",
+    "valor": 1800
+   },
+   {
+    "cpfCnpj": "PJ-1",
+    "nome": "FORNECEDOR FICTICIO 1 LTDA",
+    "qntd": "1",
+    "valor": 138.33
+   }
+  ],
+  "dividaCampanha": null,
+  "sobraFinanceira": null
+ },
+ "itens": [
+  {
+   "cpfCnpjFornecedor": "PJ-1",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 1 LTDA",
+   "valor": 138.33,
+   "data": "27/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Taxa de Administração de Financiamento Coletivo",
+   "descricaoDespesa": null,
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  },
+  {
+   "cpfCnpjFornecedor": "PJ-2",
+   "nomeFornecedor": "FORNECEDOR FICTICIO 2 LTDA",
+   "valor": 1800,
+   "data": "27/08/2026",
+   "especieRecurso": "Financeiro",
+   "tipoDespesa": "Publicidade por carros de som",
+   "descricaoDespesa": "Descricao sintetica 2",
+   "especieDocumento": "Nota Fiscal",
+   "beneficiadoContratante": "CANDIDATO FICTICIO - Cargo - PARTIDO FICTICIO - UF"
+  }
+ ]
+}

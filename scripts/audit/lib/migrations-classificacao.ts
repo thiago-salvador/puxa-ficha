@@ -559,7 +559,8 @@ export const MEDICAO_REPLAY = Object.freeze({
   // 6e4c5529e7b4c61ed999b175377449074115d9075cc932f8d06fc0d9cc8b2efb.
   // 126 -> 127: 20260927095346 publica categorias_origem após o topo 20260927050000.
   // 127 -> 128: 20260927095347 adiciona hash CAS de bens, sem expor JSON no filtro URL.
-  schemaReplayTamanho: 128,
+  // 128 -> 129: 20260929100000 cria financiamento_despesas com RLS (DDL, classe schema).
+  schemaReplayTamanho: 129,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

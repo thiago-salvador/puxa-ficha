@@ -1,0 +1,43 @@
+{
+ "consulta": {
+  "idEleicao": "2032200",
+  "ano": 2026,
+  "sgUe": "RJ",
+  "nrPartido": 29,
+  "nrCandidato": 29,
+  "idCandidato": "9000000004",
+  "idPrestador": "8000000004",
+  "idUltimaEntrega": "7000000",
+  "entregaAtual": null,
+  "historicoEntregas": [
+   {
+    "dataEntrega": "13/09/2026 17:45",
+    "tipo": "Entrega Parcial - Oficial",
+    "idEntrega": "7000000"
+   }
+  ],
+  "despesas": {
+   "limiteDeGasto1T": null,
+   "limiteDeGasto2T": null,
+   "valorLimiteDeGastos": null,
+   "totalDespesasContratadas": null,
+   "totalDespesasPagas": null,
+   "doacoesOutrosCandidatosPartigos": null,
+   "fundosPartidarios": null,
+   "fundoEspecial": null,
+   "outrosRecursos": null,
+   "financeiras": null,
+   "estimaveis": null
+  },
+  "dadosConsolidados": {
+   "totalRecebido": null,
+   "totalFinanceiro": null,
+   "totalEstimados": null
+  },
+  "concentracaoDespesas": [],
+  "rankingFornecedores": [],
+  "dividaCampanha": null,
+  "sobraFinanceira": null
+ },
+ "itens": []
+}

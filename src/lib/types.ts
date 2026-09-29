@@ -727,6 +727,18 @@ export interface FichaCandidato extends Candidato {
    * `null` = leitura indisponível (a seção some); `[]` = lido e nenhum encontrado.
    */
   doadores_recorrentes?: import("@/lib/doador-recorrente-publico").DoadorRecorrentePublico[] | null;
+  /**
+   * Despesas de campanha por candidatura. `null` com status "indisponivel" =
+   * leitura falhou (a seção some, sem afirmar ausência); `[]` com status "ok" =
+   * lido e nenhuma linha coletada.
+   */
+  financiamento_despesas?: import("@/lib/financiamento-despesas-contrato").FinanciamentoDespesas[] | null;
+  financiamento_despesas_status?: import("@/lib/financiamento-despesas-contrato").DespesasLeituraStatus;
+  /**
+   * Só servidor (o DTO público não copia): ids das candidaturas da pessoa, para
+   * reler apenas as despesas quando a ficha em cache guardou "indisponivel".
+   */
+  financiamento_despesas_candidato_ids?: string[];
   votos: VotoCandidato[];
   processos: Processo[];
   /** Linhas judiciais omitidas do público por falta de URL com CNJ oficial exato. */
