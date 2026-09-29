@@ -21,9 +21,23 @@ O launchd roda `scripts/tse-local/ingest-tse-local.sh` toda quinta-feira às
 O runner exige Node 24 em `/opt/homebrew/opt/node@24/bin`. Downloads TSE são
 mantidos no worktree durante a rodada por `PF_KEEP_TSE_DOWNLOADS=1`; o worktree
 é removido no encerramento.
-O launchd não consegue ler clones sob `~/Documents` por causa da privacidade do macOS.
-Configure o agente com um clone fora dessa pasta, por exemplo
-`~/Library/Application Support/puxa-ficha/repo`, como no agente da Câmara.
+O launchd não lê nada sob `~/Documents` (nem `~/Desktop` ou `~/Downloads`):
+a privacidade do macOS nega o acesso ao processo do agente, que falha sem
+coletar. O instalador grava no plist o caminho do clone de onde ele foi
+executado, então instale e rode sempre a partir do clone dedicado em
+`~/Library/Application Support/puxa-ficha/repo`, o mesmo do agente da Câmara.
+Um clone de trabalho em `~/Documents` serve para desenvolver, nunca para o
+agente. Se o clone dedicado ainda não existir:
+
+```bash
+git clone https://github.com/thiago-salvador/puxa-ficha.git \
+  "$HOME/Library/Application Support/puxa-ficha/repo"
+```
+
+Antes de instalar ou atualizar, deixe esse clone na `main` atual
+(`git -C "$HOME/Library/Application Support/puxa-ficha/repo" fetch origin main`
+e `checkout --detach origin/main`): o instalador recusa HEAD diferente da
+`main` publicada.
 
 O coletor usa Chrome visível para os ZIPs oficiais
 `consulta_cand_<ano>` (1996–2026), `bem_candidato_<ano>` (2006–2026) e receitas
@@ -57,6 +71,7 @@ O instalador copia arquivos para o usuário atual e cria o arquivo de ambiente
 com modo 600. Não carrega o serviço launchd.
 
 ```bash
+cd "$HOME/Library/Application Support/puxa-ficha/repo"
 bash scripts/tse-local/instalar-agente.sh
 ```
 
@@ -117,7 +132,7 @@ Verifique a instalação e o carregamento das dependências sem executar a colet
 
 ```bash
 bash "$HOME/Library/Application Support/puxa-ficha/ingest-tse-local.sh" \
-  "/caminho/do/clone/puxa-ficha" --verificar
+  "$HOME/Library/Application Support/puxa-ficha/repo" --verificar
 ```
 
 Após revisar o arquivo de ambiente e o modo escolhido, o carregamento é manual:
@@ -132,7 +147,7 @@ Uma execução manual pode ser iniciada pelo launcher instalado. Sem
 
 ```bash
 bash "$HOME/Library/Application Support/puxa-ficha/ingest-tse-local.sh" \
-  "/caminho/do/clone/puxa-ficha"
+  "$HOME/Library/Application Support/puxa-ficha/repo"
 ```
 
 ## Atualização e desinstalação

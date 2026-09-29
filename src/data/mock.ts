@@ -746,7 +746,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
-    id: "93", nome_completo: "Thiago Rezende de Oliveira", nome_urna: "Thiago de Joaldo", slug: "thiago-de-joaldo",
+    id: "93", nome_completo: "José Thiago Alves de Carvalho", nome_urna: "Thiago de Joaldo", slug: "thiago-de-joaldo",
     data_nascimento: "1982-06-20", idade: 43, naturalidade: "São Paulo/SP", formacao: "Pós-Graduação", profissao_declarada: "Advogado",
     partido_atual: "Progressistas", partido_sigla: "PP", cargo_atual: "Deputado(a) Federal", cargo_disputado: "Governador", estado: "SE",
     status: "pre-candidato", biografia: "José Thiago Alves de Carvalho é advogado e político brasileiro, filiado ao Progressistas (PP). Ex-secretário municipal de Educação de Itabaianinha, exerce mandato de deputado federal por Sergipe desde 2023.", foto_url: "https://www.camara.leg.br/internet/deputado/bandep/220560.jpg", site_campanha: null, redes_sociais: {},

@@ -25,12 +25,24 @@ export type CompromissoTema = {
   frases: Array<{ id: string; texto: string }>
 }
 
+/**
+ * Endereços e identificadores do próprio documento do programa. O pré-filtro
+ * usa isto para barrar evidência circular: posição ou fala cuja fonte é o
+ * mesmo programa não é registro independente do candidato.
+ */
+export type FontePrograma = {
+  sqCandidato: string
+  arquivoNome: string | null
+  urls: string[]
+}
+
 export type ProgramaCompromissos = {
   slug: string
   programaChave: string
   cargo: "PRESIDENTE" | "GOVERNADOR"
   uf: string
   temas: CompromissoTema[]
+  fonte?: FontePrograma
 }
 
 function chaveEvidencia(evidencia: ProgramaGovernoEvidencia): string {
@@ -50,11 +62,16 @@ export function compromissosDoRegistro(registro: ProgramaGovernoRegistro): Progr
     const temaId = [...temas][0]!
     frasesPorTema.set(temaId, [...(frasesPorTema.get(temaId) ?? []), { id: frase.id, texto: frase.texto }])
   }
+  const fonte = registro.fonte
+  const vinculo = "vinculoCandidatura" in fonte ? fonte.vinculoCandidatura : undefined
+  const urls = [fonte.pacoteUrl, fonte.pdfOriginalUrl, vinculo?.fonteUrl, vinculo?.evidenciaUrl]
+    .filter((url): url is string => typeof url === "string" && url.length > 0)
   return {
     slug: registro.fonte.slug,
     programaChave: programaGovernoChave(registro.fonte),
     cargo: registro.fonte.cargo,
     uf: registro.fonte.uf,
+    fonte: { sqCandidato: fonte.sqCandidato, arquivoNome: fonte.arquivoNome ?? null, urls },
     temas: registro.resumo.temas.map((tema) => ({
       temaId: tema.id,
       titulo: tema.titulo,

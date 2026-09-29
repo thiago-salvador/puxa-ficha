@@ -15,7 +15,7 @@ import { collectDivulgaCandidateFallback, type DivulgaCandidateSummary, type See
 import { collectDivulgaFinancingForClient, type DivulgaFinancingResult } from "./divulga-financing"
 import { officialCandidateUfMap } from "./official-uf"
 import { minimalChildEnv } from "../lib/minimal-child-env"
-import { familiaDaAcao, partitionarAcoesPorRiscoDeIdentidade, stableJson, type AcaoEscrita, type PlanoFinancas2026 } from "../lib/tse-2026-financas-plano"
+import { familiaDaAcao, fichasAlteradasDoPlano, MAX_FICHAS_COORTE_FOCADA, partitionarAcoesPorRiscoDeIdentidade, stableJson, type AcaoEscrita, type PlanoFinancas2026 } from "../lib/tse-2026-financas-plano"
 import { celulasLiberadas, chaveCelula, parseDecisoesIdentidadeCelulas, reciboBloqueadoPorIdentidade, type DecisoesIdentidadeCelulas, type EvidenciaIdentidade, type LinhaTseChave } from "../lib/tse-identidade-celulas"
 import { planoPublico } from "../tse-2026-financas"
 import { parseIdentityReviewed } from "../audit/lib/historico-revisao"
@@ -47,6 +47,8 @@ export type CliOptions = {
   /** Decisões de identidade por célula (arquivo público do repo). */
   identityCells: string | null
   expectedIdentityCellsSha: string | null
+  /** Teto revisado de fichas alteradas; obrigatório no live de coorte focada (`--slugs`). */
+  maxFichasAlteradas: number | null
 }
 
 export type CandidateProfile = { slug?: unknown; id?: unknown; [key: string]: unknown }
@@ -130,7 +132,7 @@ function argument(argv: readonly string[], name: string): string | null {
 
 export function parseCliOptions(argv: readonly string[], cwd = process.cwd()): CliOptions {
   const switches = new Set(["--live", "--dry-run"])
-  const valueOptions = new Set(["profiles", "candidates", "years", "slugs", "open-cells", "out-dir", "expected-plan-sha", "expected-plan-file-sha", "expected-report-sha", "expected-family-sha", "expected-history-sha", "expected-cohort-sha", "expected-projection-sha", "expected-identity-sha", "identity-reviewed", "identity-cells", "expected-identity-cells-sha", "reviewed-run-dir", "recibos", "verified-cache-manifest"])
+  const valueOptions = new Set(["profiles", "candidates", "years", "slugs", "open-cells", "out-dir", "expected-plan-sha", "expected-plan-file-sha", "expected-report-sha", "expected-family-sha", "expected-history-sha", "expected-cohort-sha", "expected-projection-sha", "expected-identity-sha", "identity-reviewed", "identity-cells", "expected-identity-cells-sha", "reviewed-run-dir", "recibos", "verified-cache-manifest", "max-fichas-alteradas"])
   for (const item of argv) {
     if (switches.has(item)) continue
     const name = item.startsWith("--") ? item.slice(2).split("=", 1)[0] : ""
@@ -174,6 +176,10 @@ export function parseCliOptions(argv: readonly string[], cwd = process.cwd()): C
     throw new Error("--years deve listar eleições pares canônicas entre 1996 e 2026")
   }
   const openCells = argument(argv, "open-cells")
+  const rawMaxFichas = argument(argv, "max-fichas-alteradas")
+  if (rawMaxFichas !== null && (!live || !/^(0|[1-9][0-9]{0,5})$/.test(rawMaxFichas))) {
+    throw new Error("--max-fichas-alteradas vale só no --live e deve ser um inteiro não negativo")
+  }
   return {
     mode: live ? "live" : "dry-run",
     outDir: resolve(argument(argv, "out-dir") ?? join(homedir(), "Library", "Application Support", "puxa-ficha", "tse-local", new Date().toISOString().replace(/[:.]/g, "-"))),
@@ -196,6 +202,7 @@ export function parseCliOptions(argv: readonly string[], cwd = process.cwd()): C
     identityReviewed: identityReviewed ? resolve(identityReviewed) : null,
     identityCells: identityCells ? resolve(identityCells) : null,
     expectedIdentityCellsSha,
+    maxFichasAlteradas: rawMaxFichas === null ? null : Number(rawMaxFichas),
   }
 }
 
@@ -437,8 +444,8 @@ export function createExecutionId(now = new Date()): string {
   return `tse-local-${now.toISOString().replace(/[^0-9TZ]/g, "")}-${randomUUID()}`
 }
 
-function runScript(script: string, args: string[], env?: NodeJS.ProcessEnv): StepResult {
-  const inherited: NodeJS.ProcessEnv = env ?? {
+function inheritedEnvironment(): NodeJS.ProcessEnv {
+  return {
     NODE_ENV: process.env.NODE_ENV,
     PATH: process.env.PATH,
     HOME: process.env.HOME,
@@ -450,11 +457,15 @@ function runScript(script: string, args: string[], env?: NodeJS.ProcessEnv): Ste
     PF_TSE_2026_ASSET_MANIFEST: process.env.PF_TSE_2026_ASSET_MANIFEST,
     PF_TSE_COHORT_PROFILES: process.env.PF_TSE_COHORT_PROFILES,
   }
-  const childEnv = childEnvironment(inherited)
+}
+
+function runScript(script: string, args: string[], env?: NodeJS.ProcessEnv): StepResult {
+  const childEnv = childEnvironment(env ?? inheritedEnvironment())
   const result = spawnSync(process.execPath, ["--import", "tsx", script, ...args], { encoding: "utf8", env: childEnv, maxBuffer: 16 * 1024 * 1024 })
   if (result.status === 0) return { ok: true, code: 0, stdout: result.stdout ?? "" }
   const stderr = (result.stderr ?? "").slice(0, 12_000)
-  const reason = /403|network|failed to fetch|fonte indispon/i.test(stderr) ? "leitura da fonte indisponível"
+  const reason = /travas reprovaram/i.test(stderr) ? "travas do writer reprovaram"
+    : /403|network|failed to fetch|fonte indispon/i.test(stderr) ? "leitura da fonte indisponível"
     : /salt/i.test(stderr) ? "salt de hash ausente ou inválido"
       : /manifest|sha/i.test(stderr) ? "manifesto ou SHA inválido"
         : /json|parse|zip|csv/i.test(stderr) ? "falha de parsing ou validação do pacote"
@@ -505,6 +516,62 @@ function pinnedIdentityCellsGate(options: CliOptions, reviewed: string, pinnedDi
     if (anchor && seedSq.get(slug) !== anchor.sq) throw new Error("âncora 2026 da evidência diverge do seed fixado")
   }
   return celulasLiberadas(decisoes, evidencia, riskSlugs).liberadas
+}
+
+export type FinanceGate = { focused_cohort: boolean; fichas_alteradas: number; teto_explicito: number | null; falhas: string[] | null }
+
+/**
+ * Dry-run: roda no writer, sobre o plano final já particionado e com a mesma
+ * coorte fixada, as travas que o live vai avaliar. Coorte focada (`--slugs`)
+ * usa o teto explícito igual às fichas que o plano altera. O writer só lê.
+ */
+export function evaluateFinanceGates(
+  financeOut: string,
+  planPath: string,
+  focusedCohort: boolean,
+  env: NodeJS.ProcessEnv,
+  runner: (script: string, args: string[], env?: NodeJS.ProcessEnv) => StepResult = runScript,
+): { step: StepResult; gate: FinanceGate } {
+  const planBytes = readFileSync(planPath)
+  const plan = JSON.parse(planBytes.toString("utf8")) as Pick<PlanoFinancas2026, "acoes"> & { plano_sha256?: string }
+  const changedProfiles = fichasAlteradasDoPlano(plan)
+  const step = runner("scripts/tse-2026-financas.ts", [
+    `--out=${financeOut}`, "--avaliar-travas", `--reviewed-plan=${planPath}`,
+    `--expected-plan-file-sha=${createHash("sha256").update(planBytes).digest("hex")}`,
+    ...(focusedCohort ? [`--max-fichas-alteradas=${changedProfiles}`] : []),
+  ], env)
+  const gatesPath = join(financeOut, "travas.json")
+  const gates = existsSync(gatesPath) ? JSON.parse(readFileSync(gatesPath, "utf8")) as { plano_sha256?: string; falhas?: unknown } : null
+  const falhas = gates && gates.plano_sha256 === plan.plano_sha256 && Array.isArray(gates.falhas) ? gates.falhas as string[] : null
+  return {
+    step,
+    gate: { focused_cohort: focusedCohort, fichas_alteradas: changedProfiles, teto_explicito: focusedCohort ? changedProfiles : null, falhas },
+  }
+}
+
+/**
+ * Confere o portão do writer avaliado no dry-run revisado e devolve o teto
+ * explícito de fichas alteradas (null fora de coorte focada). Coorte focada
+ * exige o teto digitado igual ao número de fichas que o plano fixado altera.
+ */
+export function reviewedFinanceCeiling(
+  gate: { focused_cohort?: unknown; fichas_alteradas?: unknown; teto_explicito?: unknown; falhas?: unknown } | null,
+  planChangedProfiles: number,
+  cohortSize: number,
+  requested: number | null,
+): number | null {
+  if (!gate || typeof gate.focused_cohort !== "boolean" || !Array.isArray(gate.falhas)) throw new Error("dry-run revisado sem avaliação das travas do writer")
+  if (gate.falhas.length > 0) throw new Error("travas do writer reprovaram no dry-run revisado")
+  if (gate.fichas_alteradas !== planChangedProfiles) throw new Error("fichas alteradas do relatório divergem do plano revisado")
+  if (!gate.focused_cohort) {
+    if (requested !== null || gate.teto_explicito !== null) throw new Error("--max-fichas-alteradas só vale para coorte focada (--slugs) revisada")
+    return null
+  }
+  if (cohortSize > MAX_FICHAS_COORTE_FOCADA) throw new Error(`coorte focada acima do teto de ${MAX_FICHAS_COORTE_FOCADA} fichas`)
+  if (gate.teto_explicito !== planChangedProfiles || requested !== planChangedProfiles) {
+    throw new Error("coorte focada exige --max-fichas-alteradas igual às fichas alteradas do plano revisado")
+  }
+  return planChangedProfiles
 }
 
 /** Applies only byte-pinned files emitted by a reviewed dry-run. */
@@ -580,6 +647,7 @@ export async function runReviewedLive(
     identity_reviewed_sha256?: string | null;
     identity_risk_source_shas?: { history_review?: string; candidates?: string; family_receipts?: string };
     identity_cells?: { sha256?: string; evidence_sha256?: string } | null;
+    finance_gate?: { focused_cohort?: unknown; fichas_alteradas?: unknown; teto_explicito?: unknown; falhas?: unknown } | null;
   }
   const sourceSpecs = [
     { name: "historico-revisao.json", expected: report.identity_risk_source_shas?.history_review },
@@ -626,7 +694,7 @@ export async function runReviewedLive(
     throw new Error("dry-run revisado expirado: generated_at deve ter menos de 24 h")
   }
   const requiredSteps = ["history_review_receipts", "coverage_dry_run", "history_coverage_dry_run",
-    "finance_planner", "apply_projection", "family_receipts"]
+    "finance_planner", "finance_gates", "apply_projection", "family_receipts"]
   if (report.mode !== "dry-run" || report.historical_scope_complete !== true
     || report.cohort?.selected !== reviewedProfiles.length
     || !Array.isArray(report.assets_reused_from_verified_cache) || report.assets_reused_from_verified_cache.length !== 0
@@ -641,6 +709,8 @@ export async function runReviewedLive(
   const postRound = JSON.parse(readFileSync(options.recibos, "utf8")) as unknown
   const eligible = filterPostRoundProfiles(reviewedProfiles, postRound)
   if (eligible.length !== reviewedProfiles.length) throw new Error("coorte revisada inclui perfil pós-turno")
+  const financeCeiling = reviewedFinanceCeiling(report.finance_gate ?? null,
+    fichasAlteradasDoPlano(reviewedPlan as Pick<PlanoFinancas2026, "acoes">), reviewedProfiles.length, options.maxFichasAlteradas)
 
   const markerDir = privateDirectory(consumedDir)
   try {
@@ -650,10 +720,12 @@ export async function runReviewedLive(
     throw error
   }
   const financeOut = join(out, "financas")
+  // O writer precisa da mesma coorte fixada do dry-run: sem ela lê todas as fichas públicas.
   const finance = runner("scripts/tse-2026-financas.ts", [
     `--out=${financeOut}`, "--apply", `--expected-plan-sha=${planSha}`,
     `--reviewed-plan=${plan}`, `--expected-plan-file-sha=${options.expectedPlanFileSha}`,
-  ])
+    ...(financeCeiling === null ? [] : [`--max-fichas-alteradas=${financeCeiling}`]),
+  ], { ...inheritedEnvironment(), PF_TSE_COHORT_PROFILES: join(pinnedDir, "coorte-perfis.json") })
   if (!finance.ok) throw new Error(`writer financeiro interrompido: ${finance.reason ?? finance.code}`)
 
   // Coverage proof must observe the committed rows, not the dry-run preimage.
@@ -1006,6 +1078,8 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     ])
     : { ok: false, code: null, reason: "recibos históricos não calculados" }
   let identityRiskActionsDeferred = 0
+  let financeGates: StepResult = { ok: false, code: null, reason: "plano financeiro ausente; travas não avaliadas" }
+  let financeGate: FinanceGate | null = null
   if (finance.ok && existsSync(financePlanPath)) {
     const original = JSON.parse(readFileSync(financePlanPath, "utf8")) as PlanoFinancas2026 & { plano_sha256: string; generated_at: string }
     const partitioned = partitionarAcoesPorRiscoDeIdentidade(original, identityRiskSlugs, identityReleasedCells)
@@ -1025,6 +1099,9 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
       const verified = JSON.parse(readFileSync(verifiedPath, "utf8")) as Record<string, unknown>
       writeFileSync(verifiedPath, `${JSON.stringify({ ...verified, plano_sha256: planoFinal.plano_sha256 }, null, 2)}\n`, { mode: 0o600 })
     }
+    const evaluated = evaluateFinanceGates(financeOut, financePlanPath, options.slugs !== null, financeEnv)
+    financeGates = evaluated.step
+    financeGate = evaluated.gate
   }
   const projectionOut = join(outDir, "recibos-familias-projecao.json")
   const projectionStep = generic.ok && finance.ok && existsSync(financePlanPath) && cohort
@@ -1084,12 +1161,14 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
       coverage_dry_run: stepSummary(coverage),
       history_coverage_dry_run: stepSummary(historyCoverage),
       finance_planner: stepSummary(finance),
+      finance_gates: stepSummary(financeGates),
       apply_projection: stepSummary(projectionStep),
       identity_risk_actions_blocked: identityRiskActions,
       identity_risk_actions_deferred: identityRiskActionsDeferred,
       identity_risk_profiles: identityRiskSlugs.size,
       family_receipts: stepSummary(generic),
     },
+    finance_gate: financeGate,
     historical_scope_complete: HISTORICAL_YEARS.every((year) => options.historicalYears.includes(year)),
     projected_open_cell_closure: projectedClosure(openCells, [coverageOut, historyCoverageOut], projectionStep.ok ? projectionOut : null,
       applyFamilyReceiptsPath, receiptPath, divulgaSummaries, cohort?.profiles ?? [], identityRiskSlugs, undefined, identityReleasedCells),

@@ -6,6 +6,8 @@ import {
   fingerprintDaChave,
   planejarRehashLinha,
   verificarSoHashMudou,
+  DONOR_CPF_HASH_V2_FINGERPRINT,
+  urlEhLoopback,
 } from "../scripts/lib/rehash-doador-cpf-v2"
 
 const linha = (doadores: unknown[]) => ({
@@ -69,5 +71,24 @@ describe("rehash cpf_hash v2", () => {
       return true
     })
     assert.equal(fingerprintDaChave("abc").length, 16)
+  })
+
+  it("aceita sal sintético só com SUPABASE_URL em loopback", () => {
+    const sal = "sal-sintetico-da-prova-pg17"
+    const fp = fingerprintDaChave(sal)
+    const local = { SUPABASE_URL: "http://127.0.0.1:43871", PF_CPF_HASH_PROOF_FINGERPRINT: fp }
+    assert.doesNotThrow(() => exigirChaveV2(sal, local))
+    assert.doesNotThrow(() => exigirChaveV2(sal, { ...local, SUPABASE_URL: "http://localhost:3000" }))
+    assert.throws(() => exigirChaveV2("outra-chave", local), /não é a chave v2/)
+    for (const remoto of ["https://abc.supabase.co", "http://127.0.0.1.evil.test:80", "", "not a url"]) {
+      assert.throws(() => exigirChaveV2(sal, { ...local, SUPABASE_URL: remoto }), /só vale com SUPABASE_URL em loopback/)
+    }
+    assert.throws(
+      () => exigirChaveV2(sal, { ...local, PF_CPF_HASH_PROOF_FINGERPRINT: DONOR_CPF_HASH_V2_FINGERPRINT }),
+      /inválida para prova sintética/,
+    )
+    assert.throws(() => exigirChaveV2(sal, { SUPABASE_URL: "http://127.0.0.1:43871" }), /não é a chave v2/)
+    assert.equal(urlEhLoopback("http://[::1]:5432"), true)
+    assert.equal(urlEhLoopback("postgres://127.0.0.1:5432"), false)
   })
 })

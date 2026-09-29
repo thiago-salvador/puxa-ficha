@@ -113,7 +113,7 @@ import {
   prepareHistoricoPoliticoPublicDisplayList,
   profileTrajetoriaTabBadgeCount,
 } from "@/lib/trajetoria-public-display"
-import { countPartySwitches, hasSameYearPartyReversal } from "@/lib/party-switches"
+import { countPartySwitches, hasSameYearPartyReversal, partySwitchCountVerified } from "@/lib/party-switches"
 import { hasLegislativeHistory as detectLegislativeHistory } from "@/lib/legislative-history"
 import type { LegislationSubtabId } from "./CandidatoProfileSections"
 import {
@@ -741,13 +741,14 @@ export function CandidatoProfile({
     : ficha.trajetoria_verificacao?.resultado === "vazio_confirmado"
       ? 0
       : "nao_coletado"
+  // Zero de trocas só com troca contada ou recibo de filiação conclusivo; a
+  // linha derivada do registro atual não prova ausência de troca.
+  const partySwitchesVerified = partySwitchCountVerified(mudancas, ficha.filiacao_verificacao?.resultado)
   const partySwitchCountValue = hasSameYearPartyReversal(mudancas)
     ? null
-    : mudancas.length > 0
+    : partySwitchesVerified
       ? countPartySwitches(mudancas)
-      : ficha.trajetoria_verificacao?.resultado === "vazio_confirmado"
-        ? 0
-        : "nao_coletado"
+      : "nao_coletado"
 
   return (
     <>
@@ -790,24 +791,12 @@ export function CandidatoProfile({
               } : undefined}
             />
             <StatCard
-              value={
-                mudancas.length > 0 || ficha.trajetoria_verificacao?.resultado === "vazio_confirmado"
-                  ? ficha.total_mudancas_partido
-                  : "—"
-              }
+              value={partySwitchesVerified ? ficha.total_mudancas_partido : "—"}
               label="Trocas de partido"
               icon={ArrowRightLeft}
               dataValueAttr="data-pf-overview-mudancas"
-              dataRawValue={
-                mudancas.length > 0 || ficha.trajetoria_verificacao?.resultado === "vazio_confirmado"
-                  ? ficha.total_mudancas_partido
-                  : null
-              }
-              sub={
-                mudancas.length === 0 && ficha.trajetoria_verificacao?.resultado !== "vazio_confirmado"
-                  ? "não verificado"
-                  : undefined
-              }
+              dataRawValue={partySwitchesVerified ? ficha.total_mudancas_partido : null}
+              sub={partySwitchesVerified ? undefined : "não verificado"}
             />
             {/*
               O card do topo conta o MESMO que a aba e o mesmo que a badge da
@@ -1248,6 +1237,7 @@ export function CandidatoProfile({
                 timelinePartidariaIncompleta={timelinePartidariaIncompleta}
                 partidoAtualSigla={ficha.partido_sigla}
                 partidoAtualNome={ficha.partido_atual ? sanitizePtBrText(ficha.partido_atual) : null}
+                partySwitchesVerified={partySwitchesVerified}
                 verificacaoCampos={ficha.verificacao_campos}
                 suggestion={suggestFor("trajetoria")}
                 freshness={{
