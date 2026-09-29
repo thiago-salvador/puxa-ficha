@@ -21,6 +21,7 @@
  */
 import { canonicalCargo } from "../../../src/lib/cargo-utils"
 import { stripAccents } from "../../../src/lib/strip-accents"
+import { normalizarCpfTse } from "../../lib/tse-identidade-celulas"
 import { resolveCanonicalParty } from "../../lib/party-canonical"
 import { deriveSenadoMandatoEvidence } from "../../lib/senado-mandato-evidence"
 import { resolveEffectiveElectionContext } from "../../lib/tse-effective-election-year"
@@ -48,6 +49,8 @@ export type TseCandidacyRow = {
   nomeNascimento: string | null
   cargo: string
   uf: string
+  /** NM_UE normalizado: município na eleição municipal; a chave até 2008 depende dele. */
+  municipio?: string | null
   partido: string
   situacaoTurno: string
   eleito: boolean
@@ -241,8 +244,7 @@ export function partyKey(value: unknown): string {
 }
 
 function validCpf(value: unknown): string | null {
-  const raw = text(value).replace(/\D/g, "")
-  return /^\d{11}$/.test(raw) && !/^(\d)\1{10}$/.test(raw) ? raw : null
+  return normalizarCpfTse(text(value))
 }
 
 function nomeNascimentoKey(nome: unknown, nascimento: unknown): string | null {
@@ -269,6 +271,7 @@ export function tseCandidacyFromCsv(row: Record<string, string>, fallbackYear: n
     nomeNascimento: nomeNascimentoKey(row.NM_CANDIDATO, row.DT_NASCIMENTO),
     cargo,
     uf: normalized(row.SG_UF),
+    municipio: normalized(row.NM_UE) || null,
     partido: partyKey(row.SG_PARTIDO),
     situacaoTurno,
     eleito: parseEleitoStatus(situacaoTurno).eleito,

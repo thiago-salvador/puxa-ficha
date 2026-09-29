@@ -39,6 +39,7 @@ import {
 } from "./lib/tse-2026-financas-plano"
 import { aplicarCoorteAtualizacao } from "./lib/coorte-atualizacao"
 import { assertOutsideRepository } from "./audit/lib/private-output"
+import { reciboBloqueadoPorIdentidade } from "./lib/tse-identidade-celulas"
 
 const SCRIPT = "tse-2026-financas"
 const URL_BENS = `https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_${ANO_FINANCAS_2026}.zip`
@@ -413,7 +414,8 @@ export async function sondarCas(plano: PlanoFinancas2026, permitirSchemaAnterior
 export function linhasDeReciboAplicaveis(plano: PlanoFinancas2026, conflitos: Conflito[]) {
   const comConflito = new Set(conflitos.map((c) => c.slug))
   const riskSlugs = new Set(plano.identity_risk_slugs ?? [])
-  return plano.recibos.filter((r) => !riskSlugs.has(r.alvo)).map((r) => {
+  const liberadas = new Set(plano.identity_released_cells ?? [])
+  return plano.recibos.filter((r) => !reciboBloqueadoPorIdentidade(r, riskSlugs, liberadas)).map((r) => {
     const conflitou = comConflito.has(r.alvo) && r.resultado !== "erro"
     return {
       fonte: r.fonte,

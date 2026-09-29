@@ -15,7 +15,8 @@ import { collectDivulgaCandidateFallback, type DivulgaCandidateSummary, type See
 import { collectDivulgaFinancingForClient, type DivulgaFinancingResult } from "./divulga-financing"
 import { officialCandidateUfMap } from "./official-uf"
 import { minimalChildEnv } from "../lib/minimal-child-env"
-import { partitionarAcoesPorRiscoDeIdentidade, stableJson, type PlanoFinancas2026 } from "../lib/tse-2026-financas-plano"
+import { familiaDaAcao, partitionarAcoesPorRiscoDeIdentidade, stableJson, type AcaoEscrita, type PlanoFinancas2026 } from "../lib/tse-2026-financas-plano"
+import { celulasLiberadas, chaveCelula, parseDecisoesIdentidadeCelulas, reciboBloqueadoPorIdentidade, type DecisoesIdentidadeCelulas, type EvidenciaIdentidade, type LinhaTseChave } from "../lib/tse-identidade-celulas"
 import { planoPublico } from "../tse-2026-financas"
 import { parseIdentityReviewed } from "../audit/lib/historico-revisao"
 
@@ -43,6 +44,9 @@ export type CliOptions = {
   recibos: string | null
   verifiedCacheManifest: string | null
   identityReviewed: string | null
+  /** Decisões de identidade por célula (arquivo público do repo). */
+  identityCells: string | null
+  expectedIdentityCellsSha: string | null
 }
 
 export type CandidateProfile = { slug?: unknown; id?: unknown; [key: string]: unknown }
@@ -126,7 +130,7 @@ function argument(argv: readonly string[], name: string): string | null {
 
 export function parseCliOptions(argv: readonly string[], cwd = process.cwd()): CliOptions {
   const switches = new Set(["--live", "--dry-run"])
-  const valueOptions = new Set(["profiles", "candidates", "years", "slugs", "open-cells", "out-dir", "expected-plan-sha", "expected-plan-file-sha", "expected-report-sha", "expected-family-sha", "expected-history-sha", "expected-cohort-sha", "expected-projection-sha", "expected-identity-sha", "identity-reviewed", "reviewed-run-dir", "recibos", "verified-cache-manifest"])
+  const valueOptions = new Set(["profiles", "candidates", "years", "slugs", "open-cells", "out-dir", "expected-plan-sha", "expected-plan-file-sha", "expected-report-sha", "expected-family-sha", "expected-history-sha", "expected-cohort-sha", "expected-projection-sha", "expected-identity-sha", "identity-reviewed", "identity-cells", "expected-identity-cells-sha", "reviewed-run-dir", "recibos", "verified-cache-manifest"])
   for (const item of argv) {
     if (switches.has(item)) continue
     const name = item.startsWith("--") ? item.slice(2).split("=", 1)[0] : ""
@@ -154,6 +158,10 @@ export function parseCliOptions(argv: readonly string[], cwd = process.cwd()): C
   const expectedIdentitySha = argument(argv, "expected-identity-sha") ?? process.env.TSE_LOCAL_EXPECTED_IDENTITY_SHA ?? null
   if (live && Boolean(identityReviewed) !== Boolean(expectedIdentitySha)) throw new Error("live exige --identity-reviewed e --expected-identity-sha juntos")
   if (expectedIdentitySha && !/^[a-f0-9]{64}$/i.test(expectedIdentitySha)) throw new Error("--expected-identity-sha inválido")
+  const identityCells = argument(argv, "identity-cells")
+  const expectedIdentityCellsSha = argument(argv, "expected-identity-cells-sha")
+  if (live && Boolean(identityCells) !== Boolean(expectedIdentityCellsSha)) throw new Error("live exige --identity-cells e --expected-identity-cells-sha juntos")
+  if (expectedIdentityCellsSha && !/^[a-f0-9]{64}$/i.test(expectedIdentityCellsSha)) throw new Error("--expected-identity-cells-sha inválido")
   const rawSlugs = argument(argv, "slugs")
   const slugs = rawSlugs ? [...new Set(rawSlugs.split(",").map((slug) => slug.trim()).filter(Boolean))] : null
   if (rawSlugs && (!slugs?.length || slugs.some((slug) => !/^[a-z0-9][a-z0-9-]{0,119}$/i.test(slug)))) {
@@ -186,6 +194,8 @@ export function parseCliOptions(argv: readonly string[], cwd = process.cwd()): C
     recibos: recibos ? resolve(recibos) : null,
     verifiedCacheManifest: argument(argv, "verified-cache-manifest") ? resolve(argument(argv, "verified-cache-manifest")!) : null,
     identityReviewed: identityReviewed ? resolve(identityReviewed) : null,
+    identityCells: identityCells ? resolve(identityCells) : null,
+    expectedIdentityCellsSha,
   }
 }
 
@@ -288,12 +298,32 @@ function writePrivate(path: string, value: unknown): void {
   chmodSync(path, 0o600)
 }
 
-export function writeFilteredReceiptArtifact(inputPath: string, outputPath: string, riskSlugs: ReadonlySet<string>): string {
+export function writeFilteredReceiptArtifact(inputPath: string, outputPath: string, riskSlugs: ReadonlySet<string>, releasedCells: ReadonlySet<string> = new Set()): string {
   if (resolve(inputPath) === resolve(outputPath)) throw new Error("cópia de recibos filtrados precisa de caminho separado")
   const input = JSON.parse(readFileSync(inputPath, "utf8")) as { receipts?: Array<Record<string, unknown>>; [key: string]: unknown }
   if (!Array.isArray(input.receipts)) throw new Error("recibos revisados inválidos")
-  writePrivate(outputPath, { ...input, receipts: input.receipts.filter((receipt) => !riskSlugs.has(String(receipt.alvo ?? ""))) })
+  writePrivate(outputPath, { ...input, receipts: input.receipts.filter((receipt) => !reciboBloqueadoPorIdentidade(receipt, riskSlugs, releasedCells)) })
   return outputPath
+}
+
+/**
+ * Evidência do gate por célula, medida no dry-run: a âncora 2026 do seed (UF
+ * oficial do consulta_cand quando difere) e as linhas TSE que o coletor
+ * histórico ligou à pessoa. Não carrega CPF, nascimento nem nome.
+ */
+export function evidenciaIdentidadeDoDryRun(candidates: readonly SeedCandidate[], officialUfOverrides: ReadonlyArray<{ slug: string; to: string }>,
+  historicoLinhas: Record<string, LinhaTseChave[] | null>): EvidenciaIdentidade {
+  const ancoras_2026: EvidenciaIdentidade["ancoras_2026"] = {}
+  for (const candidate of candidates) {
+    if (typeof candidate.slug !== "string") continue
+    const ids = candidate.ids && typeof candidate.ids === "object" ? candidate.ids as { tse_sq_candidato?: Record<string, unknown>; tse_uf_candidatura?: Record<string, unknown> } : {}
+    const rawSq = ids.tse_sq_candidato?.["2026"]
+    const sq = typeof rawSq === "number" && Number.isInteger(rawSq) ? String(rawSq) : rawSq
+    const seedUf = typeof ids.tse_uf_candidatura?.["2026"] === "string" ? ids.tse_uf_candidatura["2026"] as string : null
+    const uf = officialUfOverrides.find((row) => row.slug === candidate.slug)?.to ?? seedUf ?? candidateUfForDivulga(candidate)
+    ancoras_2026[candidate.slug] = typeof sq === "string" && /^\d{5,20}$/.test(sq) && uf ? { ano: 2026, uf, municipio: null, sq } : null
+  }
+  return { ancoras_2026, historico: { ...historicoLinhas } }
 }
 
 export function summarizeOpenCells(path: string | null, cohortSlugs: ReadonlySet<string> | null) {
@@ -319,7 +349,8 @@ export function summarizeOpenCells(path: string | null, cohortSlugs: ReadonlySet
 
 export function projectedClosure(openCells: ReturnType<typeof summarizeOpenCells>, directories: readonly string[], projectionPath: string | null,
   familyReceiptsPath: string, historyReceiptsPath: string, divulgaSummaries: readonly DivulgaCandidateSummary[] | null,
-  profiles: readonly CandidateProfile[] = [], identityRiskSlugs: ReadonlySet<string> = new Set(), partyReceiptsPath?: string) {
+  profiles: readonly CandidateProfile[] = [], identityRiskSlugs: ReadonlySet<string> = new Set(), partyReceiptsPath?: string,
+  releasedCells: ReadonlySet<string> = new Set()) {
   const planned: Array<{ alvo?: string; familia?: string; fonte?: string }> = []
   for (const directory of directories) {
     if (!existsSync(directory)) continue
@@ -344,7 +375,8 @@ export function projectedClosure(openCells: ReturnType<typeof summarizeOpenCells
     const source = cell.family === "patrimonio" ? "tse-patrimonio" : cell.family === "financiamento" ? "tse-financiamento" : cell.family === "historico_politico" ? "tse-historico" : cell.family === "mudancas_partido" ? "tse-partido-candidatura" : "sem-fonte"
     const now = planned.some((row) => row.alvo === cell.slug && row.familia === cell.family)
     const counterfactual = simulated.get(`${cell.slug}|${cell.family}`)
-    const after = !now && !identityRiskSlugs.has(cell.slug) && Boolean(counterfactual?.writer_actions.length && counterfactual.post_write_readback_matches)
+    const blocked = identityRiskSlugs.has(cell.slug) && !releasedCells.has(`${cell.slug}|${cell.family}`)
+    const after = !now && !blocked && Boolean(counterfactual?.writer_actions.length && counterfactual.post_write_readback_matches)
     const sourceReceipt = [...(history.receipts ?? []), ...(party.receipts ?? [])]
       .find((row) => row.alvo === cell.slug && row.fonte === source)
     let sourceReason = sourceReceipt?.resultado ?? "sem_recibo"
@@ -364,7 +396,7 @@ export function projectedClosure(openCells: ReturnType<typeof summarizeOpenCells
       !published.some((row) => row.ano_eleicao === 2026) && annual.some((row) => row.ano === 2026 && row.estado === "vazio_confirmado" && /^https:\/\//.test(row.fonte_url ?? ""))
     const category = now ? "closed_now" : empty2026 ? "scope_vazio_confirmado_2026"
       : cell.family === "patrimonio" && reason === "source_manifest_incomplete" ? "scope_outside_supported_series"
-        : identityRiskSlugs.has(cell.slug) || /identity|uf_|sq_|ambig|curated/i.test(reason) ? "identity_review"
+        : blocked || /identity|uf_|sq_|ambig|curated/i.test(reason) ? "identity_review"
           : after ? "projected_after_safe_write"
         : cell.family === "mudancas_partido" ? "scope_rule_review"
           : /materialized_readback|indeterminado/i.test(reason) ? "stale_not_projected" : "unresolved"
@@ -442,6 +474,39 @@ function safeDownloadFailure(error: unknown): string {
         : "falha de download ou validação do pacote"
 }
 
+/**
+ * Live: fixa o arquivo de decisões por célula e a evidência do dry-run, confere
+ * as âncoras contra o seed fixado e recalcula as células liberadas. Sem
+ * `--identity-cells`, nenhuma célula é liberada e o relatório não pode trazer uma.
+ */
+function pinnedIdentityCellsGate(options: CliOptions, reviewed: string, pinnedDir: string,
+  reported: { sha256?: string; evidence_sha256?: string } | null, candidates: readonly SeedCandidate[], riskSlugs: ReadonlySet<string>): Set<string> {
+  if (!options.identityCells) {
+    if (reported) throw new Error("relatório com decisões de identidade por célula exige --identity-cells")
+    return new Set()
+  }
+  const expected = options.expectedIdentityCellsSha?.toLowerCase()
+  if (!expected || reported?.sha256 !== expected) throw new Error("SHA-256 das decisões de identidade por célula diverge do relatório")
+  if (!/^[a-f0-9]{64}$/.test(reported.evidence_sha256 ?? "")) throw new Error("SHA-256 da evidência de identidade por célula ausente")
+  const pin = (source: string, name: string, sha: string, label: string): Buffer => {
+    if (!existsSync(source) || lstatSync(source).isSymbolicLink()) throw new Error(`${label} ausente`)
+    const copy = join(pinnedDir, name)
+    writeFileSync(copy, readFileSync(source), { flag: "wx", mode: 0o600 })
+    const bytes = readFileSync(copy)
+    if (createHash("sha256").update(bytes).digest("hex") !== sha) throw new Error(`SHA-256 de ${label} diverge`)
+    chmodSync(copy, 0o400)
+    return bytes
+  }
+  const decisoes = parseDecisoesIdentidadeCelulas(pin(options.identityCells, "identidade-celulas.json", expected, "decisões de identidade por célula"))
+  const evidencia = JSON.parse(pin(join(reviewed, "identidade-celulas-evidencia.json"), "identidade-celulas-evidencia.json", reported.evidence_sha256!, "evidência de identidade por célula").toString("utf8")) as EvidenciaIdentidade
+  if (!evidencia || typeof evidencia.ancoras_2026 !== "object" || typeof evidencia.historico !== "object") throw new Error("evidência de identidade por célula inválida")
+  const seedSq = new Map(candidates.map((candidate) => [String(candidate.slug), String((candidate.ids as { tse_sq_candidato?: Record<string, unknown> } | undefined)?.tse_sq_candidato?.["2026"] ?? "")]))
+  for (const [slug, anchor] of Object.entries(evidencia.ancoras_2026)) {
+    if (anchor && seedSq.get(slug) !== anchor.sq) throw new Error("âncora 2026 da evidência diverge do seed fixado")
+  }
+  return celulasLiberadas(decisoes, evidencia, riskSlugs).liberadas
+}
+
 /** Applies only byte-pinned files emitted by a reviewed dry-run. */
 export async function runReviewedLive(
   options: CliOptions,
@@ -481,17 +546,20 @@ export async function runReviewedLive(
     pinnedBytes.set(file.name, copiedBytes)
   }
   const plan = join(pinnedDir, "plano-privado.json")
-  const reviewedPlan = JSON.parse(pinnedBytes.get("plano-privado.json")!.toString("utf8")) as { plano_sha256?: string; acoes?: Array<{ slug?: unknown }>; recibos?: Array<{ alvo?: unknown; resultado?: unknown; detalhe?: unknown }>; resumo_por_perfil?: unknown; revisao?: Array<{ slug: string; familia: string; motivo: string }>; identity_risk_slugs?: unknown }
+  const reviewedPlan = JSON.parse(pinnedBytes.get("plano-privado.json")!.toString("utf8")) as { plano_sha256?: string; acoes?: Array<{ slug?: unknown; tipo?: unknown }>; recibos?: Array<{ alvo?: unknown; fonte?: unknown; resultado?: unknown; detalhe?: unknown }>; resumo_por_perfil?: unknown; revisao?: Array<{ slug: string; familia: string; motivo: string }>; identity_risk_slugs?: unknown; identity_released_cells?: unknown }
   const planSha = createHash("sha256").update(stableJson(reviewedPlan.acoes)).digest("hex")
   if (!Array.isArray(reviewedPlan.acoes) || reviewedPlan.plano_sha256 !== planSha || planSha !== options.expectedPlanSha.toLowerCase()) {
     throw new Error("SHA-256 semântico do plano revisado diverge")
   }
   if (!Array.isArray(reviewedPlan.identity_risk_slugs) || reviewedPlan.identity_risk_slugs.some((slug) => typeof slug !== "string")) throw new Error("plano revisado sem coorte de risco de identidade")
   const pinnedRiskSlugs = new Set(reviewedPlan.identity_risk_slugs as string[])
+  if (reviewedPlan.identity_released_cells !== undefined && (!Array.isArray(reviewedPlan.identity_released_cells)
+    || reviewedPlan.identity_released_cells.some((cell) => typeof cell !== "string"))) throw new Error("plano revisado com células liberadas inválidas")
+  const pinnedReleasedCells = new Set((reviewedPlan.identity_released_cells ?? []) as string[])
   if (!reviewedPlan.resumo_por_perfil || typeof reviewedPlan.resumo_por_perfil !== "object" || Array.isArray(reviewedPlan.resumo_por_perfil)) throw new Error("plano revisado sem resumo por perfil")
   if (!Array.isArray(reviewedPlan.recibos)) throw new Error("plano revisado sem recibos")
   for (const receipt of reviewedPlan.recibos) {
-    if (typeof receipt.alvo !== "string" || !pinnedRiskSlugs.has(receipt.alvo)) continue
+    if (typeof receipt.alvo !== "string" || !reciboBloqueadoPorIdentidade(receipt, pinnedRiskSlugs, pinnedReleasedCells)) continue
     if (receipt.resultado !== "indeterminado") throw new Error("plano revisado contém recibo não marcado para revisão de perfil em risco")
     let detail: unknown
     try { detail = typeof receipt.detalhe === "string" ? JSON.parse(receipt.detalhe) : receipt.detalhe } catch { detail = null }
@@ -499,7 +567,8 @@ export async function runReviewedLive(
     const reviewMarked = reviewedPlan.revisao?.some((item) => item.slug === receipt.alvo)
     if (!reviewMarked && motivo !== "identidade_em_revisao") throw new Error("plano revisado contém recibo de risco sem detalhe de revisão")
   }
-  const pinnedBlockedActions = reviewedPlan.acoes.filter((action) => pinnedRiskSlugs.has(action.slug as string)).length
+  const pinnedBlockedActions = reviewedPlan.acoes.filter((action) => pinnedRiskSlugs.has(action.slug as string)
+    && !pinnedReleasedCells.has(chaveCelula(action.slug as string, familiaDaAcao(action.tipo as AcaoEscrita["tipo"])))).length
   if (pinnedBlockedActions !== 0) throw new Error("gate de identidade: plano revisado contém ação de perfil em revisão")
   const reviewedProfiles = JSON.parse(pinnedBytes.get("coorte-perfis.json")!.toString("utf8")) as CandidateProfile[]
   if (!Array.isArray(reviewedProfiles) || !reviewedProfiles.length) throw new Error("coorte revisada ausente")
@@ -510,6 +579,7 @@ export async function runReviewedLive(
     steps?: Record<string, { ok?: boolean } | number>;
     identity_reviewed_sha256?: string | null;
     identity_risk_source_shas?: { history_review?: string; candidates?: string; family_receipts?: string };
+    identity_cells?: { sha256?: string; evidence_sha256?: string } | null;
   }
   const sourceSpecs = [
     { name: "historico-revisao.json", expected: report.identity_risk_source_shas?.history_review },
@@ -536,11 +606,14 @@ export async function runReviewedLive(
     reviewedPlan,
   )
   if (stableJson([...recomputedRiskSlugs].sort()) !== stableJson([...pinnedRiskSlugs].sort())) throw new Error("coorte de risco de identidade do plano diverge dos artefatos fixados")
+  const recomputedReleasedCells = pinnedIdentityCellsGate(options, reviewed, pinnedDir, report.identity_cells ?? null,
+    JSON.parse(sourceBytes.get("coorte-candidatos.json")!.toString("utf8")) as SeedCandidate[], recomputedRiskSlugs)
+  if (stableJson([...recomputedReleasedCells].sort()) !== stableJson([...pinnedReleasedCells].sort())) throw new Error("células liberadas do plano divergem das decisões e da evidência fixadas")
   const applicableReceipts = (name: "recibos-familias-projecao.json" | "historico-recibos.json", output: string): string => {
-    const input = JSON.parse(pinnedBytes.get(name)!.toString("utf8")) as { receipts?: Array<{ alvo?: string }> }
+    const input = JSON.parse(pinnedBytes.get(name)!.toString("utf8")) as { receipts?: Array<{ alvo?: string; fonte?: string }> }
     if (!Array.isArray(input.receipts)) throw new Error(`recibos revisados inválidos: ${name}`)
     const path = join(out, output)
-    writePrivate(path, { ...input, receipts: input.receipts.filter((receipt) => !recomputedRiskSlugs.has(receipt.alvo ?? "")) })
+    writePrivate(path, { ...input, receipts: input.receipts.filter((receipt) => !reciboBloqueadoPorIdentidade(receipt, recomputedRiskSlugs, recomputedReleasedCells)) })
     return path
   }
   const projection = applicableReceipts("recibos-familias-projecao.json", "recibos-familias-projecao-aplicaveis.json")
@@ -595,7 +668,7 @@ export async function runReviewedLive(
   writePrivate(currentCohort, expectedIds.map((id) => currentById.get(id)))
   const executionId = createExecutionId()
   const eligibleProjection = join(out, "recibos-familias-projecao-elegiveis.json")
-  writeFilteredReceiptArtifact(projection, eligibleProjection, pinnedRiskSlugs)
+  writeFilteredReceiptArtifact(projection, eligibleProjection, pinnedRiskSlugs, pinnedReleasedCells)
   const familyApply = runner("scripts/audit/apply-coverage-receipts.ts", [
     `--in=${eligibleProjection}`, `--out-dir=${join(out, "coverage-plan")}`,
     "--allow-fonte=tse,tse-patrimonio,tse-financiamento", `--profiles=${currentCohort}`,
@@ -603,7 +676,7 @@ export async function runReviewedLive(
   ])
   if (!familyApply.ok) throw new Error(`cobertura de família falhou: ${familyApply.reason ?? familyApply.code}`)
   const eligibleHistory = join(out, "historico-recibos-elegiveis.json")
-  writeFilteredReceiptArtifact(history, eligibleHistory, pinnedRiskSlugs)
+  writeFilteredReceiptArtifact(history, eligibleHistory, pinnedRiskSlugs, pinnedReleasedCells)
   const historyApply = runner("scripts/audit/apply-coverage-receipts.ts", [
     `--in=${eligibleHistory}`, `--out-dir=${join(out, "coverage-plan-historico")}`,
     "--allow-fonte=tse-historico,tse-partido-candidatura", `--profiles=${currentCohort}`,
@@ -611,7 +684,7 @@ export async function runReviewedLive(
   ])
   if (!historyApply.ok) throw new Error(`cobertura histórica falhou: ${historyApply.reason ?? historyApply.code}`)
   writePrivate(join(out, "relatorio.json"), { mode: "live", reviewed_run_dir: reviewed,
-    reviewed_shas: { plan: options.expectedPlanFileSha, family: options.expectedFamilySha, projection: options.expectedProjectionSha, history: options.expectedHistorySha, cohort: options.expectedCohortSha, identity: options.expectedIdentitySha },
+    reviewed_shas: { plan: options.expectedPlanFileSha, family: options.expectedFamilySha, projection: options.expectedProjectionSha, history: options.expectedHistorySha, cohort: options.expectedCohortSha, identity: options.expectedIdentitySha, identity_cells: options.expectedIdentityCellsSha },
     steps: { finance: stepSummary(finance), readback: stepSummary(exported), family: stepSummary(familyApply), history: stepSummary(historyApply) } })
   return 0
 }
@@ -764,6 +837,16 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     writeFileSync(identityReviewedPath, bytes, { flag: "wx", mode: 0o600 })
     identityReviewedSha = createHash("sha256").update(bytes).digest("hex")
   }
+  let identityCells: DecisoesIdentidadeCelulas | null = null
+  let identityCellsSha: string | null = null
+  if (options.identityCells) {
+    if (lstatSync(options.identityCells).isSymbolicLink()) throw new Error("--identity-cells não pode ser link simbólico")
+    const bytes = readFileSync(options.identityCells)
+    identityCells = parseDecisoesIdentidadeCelulas(bytes)
+    identityCellsSha = createHash("sha256").update(bytes).digest("hex")
+    if (options.expectedIdentityCellsSha && options.expectedIdentityCellsSha.toLowerCase() !== identityCellsSha) throw new Error("SHA-256 das decisões de identidade por célula diverge")
+    writeFileSync(join(outDir, "identidade-celulas.json"), bytes, { flag: "wx", mode: 0o600 })
+  }
   const candidatesInput = JSON.parse(readFileSync(options.candidates, "utf8")) as SeedCandidate[]
   if (!Array.isArray(candidatesInput)) throw new Error("candidates deve ser uma lista JSON")
   const profilesPath = options.profiles ?? join(outDir, "perfis-publicos.json")
@@ -845,6 +928,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
   if (cohort) writePrivate(enrichedCandidatesPath, enriched.candidates)
   const receiptPath = join(outDir, "historico-recibos.json")
   const reviewPath = join(outDir, "historico-revisao.json")
+  const identityRowsPath = join(outDir, "historico-linhas-identidade.json")
   const financeManifestPath = join(outDir, "financas-assets.json")
   const financeAssets = assets.filter((asset) => asset.year === 2026 && (asset.family === "patrimonio" || asset.family === "financiamento"))
   writePrivate(financeManifestPath, { schema_version: 1, assets: financeAssets.filter((asset) => !asset.reused_cache) })
@@ -854,6 +938,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     `--anos=${years}`, `--public-profiles=${cohortProfilesPath}`, `--candidatos=${enrichedCandidatesPath}`,
     `--manifest=${freshManifestPath}`, `--out=${receiptPath}`, `--revisao=${reviewPath}`, "--identity-mode=official-only",
     ...(identityReviewedPath ? [`--identity-reviewed=${identityReviewedPath}`] : []),
+    ...(identityCells ? [`--linhas-identidade=${identityRowsPath}`] : []),
   ]) : { ok: false, code: null, reason: "snapshot de perfis ausente; recibos históricos não calculados" }
 
   const financeOut = join(outDir, "financas")
@@ -894,10 +979,19 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     generic.ok && existsSync(genericReceiptsPath) ? JSON.parse(readFileSync(genericReceiptsPath, "utf8")) : {},
     finance.ok && existsSync(financePlanPath) ? JSON.parse(readFileSync(financePlanPath, "utf8")) : {},
   )
+  const identityCellsEvidencePath = join(outDir, "identidade-celulas-evidencia.json")
+  const identityCellsGate = identityCells ? (() => {
+    const rows = historico.ok && existsSync(identityRowsPath)
+      ? (JSON.parse(readFileSync(identityRowsPath, "utf8")) as { linhas?: Record<string, LinhaTseChave[] | null> }).linhas ?? {} : {}
+    const evidencia = evidenciaIdentidadeDoDryRun(cohort?.candidates ?? [], officialUfOverrides, rows)
+    writePrivate(identityCellsEvidencePath, evidencia)
+    return celulasLiberadas(identityCells, evidencia, identityRiskSlugs)
+  })() : null
+  const identityReleasedCells = identityCellsGate?.liberadas ?? new Set<string>()
   const historyCoverageReceiptsPath = join(outDir, "historico-recibos-elegiveis.json")
   const eligibleFamilyReceiptsPath = join(outDir, "recibos-familias-aplicaveis-elegiveis.json")
-  if (existsSync(applyFamilyReceiptsPath)) writeFilteredReceiptArtifact(applyFamilyReceiptsPath, eligibleFamilyReceiptsPath, identityRiskSlugs)
-  if (historico.ok && existsSync(receiptPath)) writeFilteredReceiptArtifact(receiptPath, historyCoverageReceiptsPath, identityRiskSlugs)
+  if (existsSync(applyFamilyReceiptsPath)) writeFilteredReceiptArtifact(applyFamilyReceiptsPath, eligibleFamilyReceiptsPath, identityRiskSlugs, identityReleasedCells)
+  if (historico.ok && existsSync(receiptPath)) writeFilteredReceiptArtifact(receiptPath, historyCoverageReceiptsPath, identityRiskSlugs, identityReleasedCells)
   const coverageOut = join(outDir, "coverage-plan")
   const coverage = generic.ok && cohort && existsSync(eligibleFamilyReceiptsPath)
     ? runScript("scripts/audit/apply-coverage-receipts.ts", [
@@ -914,9 +1008,10 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
   let identityRiskActionsDeferred = 0
   if (finance.ok && existsSync(financePlanPath)) {
     const original = JSON.parse(readFileSync(financePlanPath, "utf8")) as PlanoFinancas2026 & { plano_sha256: string; generated_at: string }
-    const partitioned = partitionarAcoesPorRiscoDeIdentidade(original, identityRiskSlugs)
+    const partitioned = partitionarAcoesPorRiscoDeIdentidade(original, identityRiskSlugs, identityReleasedCells)
     identityRiskActionsDeferred = partitioned.deferred
     const planoFinal = { ...partitioned.plano, identity_risk_slugs: [...identityRiskSlugs].sort(),
+      ...(identityCells ? { identity_released_cells: [...identityReleasedCells].sort() } : {}),
       plano_sha256: createHash("sha256").update(stableJson(partitioned.plano.acoes)).digest("hex") }
     writeFileSync(financePlanPath, `${JSON.stringify(planoFinal, null, 2)}\n`, { mode: 0o600 })
     const summaryPath = join(financeOut, "plano-resumo.json")
@@ -938,8 +1033,10 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
       `--public-profiles=${cohortProfilesPath}`, `--writer-plan=${financePlanPath}`,
     ]) : { ok: false, code: null, reason: "plano auditado ou snapshot ausente; projeção não calculada" }
   const auditedActions = finance.ok && existsSync(financePlanPath)
-    ? (JSON.parse(readFileSync(financePlanPath, "utf8")) as { acoes?: Array<{ slug: string }> }).acoes ?? [] : []
-  const identityRiskActions = auditedActions.filter((action) => identityRiskSlugs.has(action.slug)).length
+    ? (JSON.parse(readFileSync(financePlanPath, "utf8")) as { acoes?: Array<{ slug: string; tipo: AcaoEscrita["tipo"] }> }).acoes ?? [] : []
+  const identityRiskActions = auditedActions.filter((action) => identityRiskSlugs.has(action.slug)
+    && !identityReleasedCells.has(chaveCelula(action.slug, familiaDaAcao(action.tipo)))).length
+  const releasedActions = auditedActions.filter((action) => identityReleasedCells.has(chaveCelula(action.slug, familiaDaAcao(action.tipo))))
   const historySummary = historico.ok && historico.stdout
     ? JSON.parse(historico.stdout.trim().split("\n").at(-1)!) as { vinculo_por_nome_revisado?: { used: boolean; accepted: number; rejected: number; rejected_reasons: Record<string, number> } }
     : null
@@ -947,6 +1044,16 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
   const report = {
     mode: options.mode,
     identity_reviewed_sha256: identityReviewedSha,
+    identity_cells: identityCells && identityCellsGate ? {
+      sha256: identityCellsSha,
+      evidence_sha256: createHash("sha256").update(readFileSync(identityCellsEvidencePath)).digest("hex"),
+      decided: identityCells.celulas.length,
+      released: identityReleasedCells.size,
+      released_by_family: [...identityReleasedCells].reduce<Record<string, number>>((acc, cell) => { const family = cell.split("|")[1]!; acc[family] = (acc[family] ?? 0) + 1; return acc }, {}),
+      released_profiles: new Set([...identityReleasedCells].map((cell) => cell.split("|")[0])).size,
+      closed_by_reason: Object.values(identityCellsGate.fechadas).reduce<Record<string, number>>((acc, reason) => { acc[reason] = (acc[reason] ?? 0) + 1; return acc }, {}),
+      released_actions: releasedActions.length,
+    } : null,
     identity_risk_source_shas: {
       history_review: existsSync(reviewPath) ? createHash("sha256").update(readFileSync(reviewPath)).digest("hex") : null,
       candidates: existsSync(cohortCandidatesPath) ? createHash("sha256").update(readFileSync(cohortCandidatesPath)).digest("hex") : null,
@@ -985,7 +1092,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
     },
     historical_scope_complete: HISTORICAL_YEARS.every((year) => options.historicalYears.includes(year)),
     projected_open_cell_closure: projectedClosure(openCells, [coverageOut, historyCoverageOut], projectionStep.ok ? projectionOut : null,
-      applyFamilyReceiptsPath, receiptPath, divulgaSummaries, cohort?.profiles ?? [], identityRiskSlugs),
+      applyFamilyReceiptsPath, receiptPath, divulgaSummaries, cohort?.profiles ?? [], identityRiskSlugs, undefined, identityReleasedCells),
     assets_reused_from_verified_cache: assets.filter((asset) => asset.reused_cache).map(({ family, year, sha256 }) => ({ family, year, sha256 })),
     artifacts: { manifest: manifestPath, acquisition_failure_receipts: acquisitionFailureReceiptsPath, historico: receiptPath, review: reviewPath, cohort_profiles: cohortProfilesPath, family_receipts: genericReceiptsPath, apply_family_receipts: applyFamilyReceiptsPath, projection_receipts: projectionOut, coverage_plan: coverageOut, history_coverage_plan: historyCoverageOut, ...(divulgaFallback.artifact ? { divulga_fallback: divulgaFallback.artifact } : {}), ...(divulgaFinancing ? { divulga_financing: divulgaFinancingPath } : {}) },
   }

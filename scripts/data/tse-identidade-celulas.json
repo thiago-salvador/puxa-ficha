@@ -1,0 +1,2910 @@
+{
+  "schema_version": 1,
+  "kind": "tse-identidade-celulas",
+  "celulas": [
+    {
+      "lote": "l8-20260929",
+      "slug": "andre-luis",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MA",
+          "municipio": null,
+          "sq": "100002544076",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "andre-luis",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": []
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "andre-luis",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MA",
+          "municipio": null,
+          "sq": "100002544076",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "augusto-cury",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "BR",
+          "municipio": null,
+          "sq": "280002551547",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "augusto-cury",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": []
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "augusto-cury",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "BR",
+          "municipio": null,
+          "sq": "280002551547",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "cabo-daciolo",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "AM",
+          "municipio": null,
+          "sq": "40002551740",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "cabo-daciolo",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2006,
+          "uf": "RJ",
+          "municipio": "RIO DE JANEIRO",
+          "sq": "12132",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2008,
+          "uf": "RJ",
+          "municipio": "RIO DE JANEIRO",
+          "sq": "14144",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2014,
+          "uf": "RJ",
+          "municipio": null,
+          "sq": "190000000491",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "BR",
+          "municipio": null,
+          "sq": "280000602500",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2022,
+          "uf": "RJ",
+          "municipio": null,
+          "sq": "190001643311",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "cabo-daciolo",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "AM",
+          "municipio": null,
+          "sq": "40002551740",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "cadu-xavier",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "RN",
+          "municipio": null,
+          "sq": "200002534001",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "cadu-xavier",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": []
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "cadu-xavier",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "RN",
+          "municipio": null,
+          "sq": "200002534001",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "camila-falcao",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PE",
+          "municipio": null,
+          "sq": "170002537320",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "camila-falcao",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": []
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "camila-falcao",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PE",
+          "municipio": null,
+          "sq": "170002537320",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "clecio-luis",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "AP",
+          "municipio": null,
+          "sq": "30002536311",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "clecio-luis",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2004,
+          "uf": "AP",
+          "municipio": "MACAPA",
+          "sq": "156",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2006,
+          "uf": "AP",
+          "municipio": "AMAPA",
+          "sq": "10063",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2008,
+          "uf": "AP",
+          "municipio": "MACAPA",
+          "sq": "447",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "AP",
+          "municipio": null,
+          "sq": "30000000086",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "AP",
+          "municipio": null,
+          "sq": "30000000665",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2012,
+          "uf": "AP",
+          "municipio": null,
+          "sq": "30000000648",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2016,
+          "uf": "AP",
+          "municipio": null,
+          "sq": "30000002139",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2022,
+          "uf": "AP",
+          "municipio": null,
+          "sq": "30001619676",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "daniel-vilela",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90002540993",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "daniel-vilela",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2008,
+          "uf": "GO",
+          "municipio": "GOIANIA",
+          "sq": "12711",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90000000682",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2014,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90000000615",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90000609231",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2022,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90001646327",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "daniel-vilela",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90002540993",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "dr-daniel",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PA",
+          "municipio": null,
+          "sq": "140002549930",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "dr-daniel",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2012,
+          "uf": "PA",
+          "municipio": null,
+          "sq": "140000012315",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2016,
+          "uf": "PA",
+          "municipio": null,
+          "sq": "140000012852",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "PA",
+          "municipio": null,
+          "sq": "140000614283",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2020,
+          "uf": "PA",
+          "municipio": null,
+          "sq": "140001027099",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2024,
+          "uf": "PA",
+          "municipio": null,
+          "sq": "140002359059",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "dr-daniel",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PA",
+          "municipio": null,
+          "sq": "140002549930",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "dr-helton-monteiro",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "SE",
+          "municipio": null,
+          "sq": "260002547415",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "dr-helton-monteiro",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": []
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "dr-helton-monteiro",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "SE",
+          "municipio": null,
+          "sq": "260002547415",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "flavio-bolsonaro",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "BR",
+          "municipio": null,
+          "sq": "280002551544",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "flavio-bolsonaro",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2002,
+          "uf": "RJ",
+          "municipio": "RIO DE JANEIRO",
+          "sq": "851",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2006,
+          "uf": "RJ",
+          "municipio": "RIO DE JANEIRO",
+          "sq": "10354",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "RJ",
+          "municipio": null,
+          "sq": "190000000070",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2014,
+          "uf": "RJ",
+          "municipio": null,
+          "sq": "190000000095",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2016,
+          "uf": "RJ",
+          "municipio": null,
+          "sq": "190000011736",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "RJ",
+          "municipio": null,
+          "sq": "190000614721",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "gabriel-azevedo",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130002549557",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "gabriel-azevedo",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2016,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130000084647",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2020,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130000704273",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2024,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130002074700",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "gabriel-azevedo",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130002549557",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "gelson-merisio",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "SC",
+          "municipio": null,
+          "sq": "240002548628",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "gelson-merisio",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 1998,
+          "uf": "SC",
+          "municipio": "SANTA CATARINA",
+          "sq": "240002407256781",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2002,
+          "uf": "SC",
+          "municipio": "SANTA CATARINA",
+          "sq": "467",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2006,
+          "uf": "SC",
+          "municipio": "SANTA CATARINA",
+          "sq": "10081",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "SC",
+          "municipio": null,
+          "sq": "240000000349",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2014,
+          "uf": "SC",
+          "municipio": null,
+          "sq": "240000000255",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "SC",
+          "municipio": null,
+          "sq": "240000621321",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "gisvaldo-oliveira",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PI",
+          "municipio": null,
+          "sq": "180002549970",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "gisvaldo-oliveira",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": []
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "gisvaldo-oliveira",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PI",
+          "municipio": null,
+          "sq": "180002549970",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "hildon-chaves",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "RO",
+          "municipio": null,
+          "sq": "220002542916",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "hildon-chaves",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2016,
+          "uf": "RO",
+          "municipio": null,
+          "sq": "220000000876",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2020,
+          "uf": "RO",
+          "municipio": null,
+          "sq": "220001051415",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "hildon-chaves",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "RO",
+          "municipio": null,
+          "sq": "220002542916",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "jose-roberto-arruda",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "DF",
+          "municipio": null,
+          "sq": "70002552586",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "jose-roberto-arruda",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 1998,
+          "uf": "DF",
+          "municipio": "DISTRITO FEDERAL",
+          "sq": "700000703000451",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2002,
+          "uf": "DF",
+          "municipio": "DISTRITO FEDERAL",
+          "sq": "463",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2006,
+          "uf": "DF",
+          "municipio": "DISTRITO FEDERAL",
+          "sq": "10382",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2014,
+          "uf": "DF",
+          "municipio": null,
+          "sq": "70000000153",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2022,
+          "uf": "DF",
+          "municipio": null,
+          "sq": "70001615918",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "juliana-brizola",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "RS",
+          "municipio": null,
+          "sq": "210002551508",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "juliana-brizola",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2008,
+          "uf": "RS",
+          "municipio": "PORTO ALEGRE",
+          "sq": "26283",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "RS",
+          "municipio": null,
+          "sq": "210000000859",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2014,
+          "uf": "RS",
+          "municipio": null,
+          "sq": "210000000193",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2016,
+          "uf": "RS",
+          "municipio": null,
+          "sq": "210000011192",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "RS",
+          "municipio": null,
+          "sq": "210000604676",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2020,
+          "uf": "RS",
+          "municipio": null,
+          "sq": "210001189949",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2022,
+          "uf": "RS",
+          "municipio": null,
+          "sq": "210001621265",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2024,
+          "uf": "RS",
+          "municipio": null,
+          "sq": "210002355259",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "juliana-brizola",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "RS",
+          "municipio": null,
+          "sq": "210002551508",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "lais-chaud",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "SC",
+          "municipio": null,
+          "sq": "240002550544",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "lais-chaud",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": []
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "lais-chaud",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "SC",
+          "municipio": null,
+          "sq": "240002550544",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "lourdes-melo",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PI",
+          "municipio": null,
+          "sq": "180002553722",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "lourdes-melo",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2002,
+          "uf": "PI",
+          "municipio": "PIAUI",
+          "sq": "479",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2006,
+          "uf": "PI",
+          "municipio": "PIAUI",
+          "sq": "10000",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2008,
+          "uf": "PI",
+          "municipio": "TERESINA",
+          "sq": "8738",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "PI",
+          "municipio": null,
+          "sq": "180000000312",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2012,
+          "uf": "PI",
+          "municipio": null,
+          "sq": "180000012118",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2014,
+          "uf": "PI",
+          "municipio": null,
+          "sq": "180000000138",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2016,
+          "uf": "PI",
+          "municipio": null,
+          "sq": "180000008711",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "PI",
+          "municipio": null,
+          "sq": "180000626503",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2020,
+          "uf": "PI",
+          "municipio": null,
+          "sq": "180001237871",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2022,
+          "uf": "PI",
+          "municipio": null,
+          "sq": "180001713460",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2024,
+          "uf": "PI",
+          "municipio": null,
+          "sq": "180002337603",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "lourdes-melo",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PI",
+          "municipio": null,
+          "sq": "180002553722",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "mailza-assis",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10002544107",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "mailza-assis",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2014,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10000000002",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2022,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10001612477",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "mailza-assis",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10002544107",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "mauricio-coelho",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110002553058",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "mauricio-coelho",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": []
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "mauricio-coelho",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110002553058",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "natasha-slhessarenko",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110002544985",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "natasha-slhessarenko",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": []
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "natasha-slhessarenko",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110002544985",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "orleans-brandao",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MA",
+          "municipio": null,
+          "sq": "100002543869",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "orleans-brandao",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MA",
+          "municipio": null,
+          "sq": "100002543869",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "renato-gomes",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MS",
+          "municipio": null,
+          "sq": "120002549681",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "renato-gomes",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": []
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "renato-gomes",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MS",
+          "municipio": null,
+          "sq": "120002549681",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "ricardo-cappelli",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "DF",
+          "municipio": null,
+          "sq": "70002551557",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "ricardo-cappelli",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2002,
+          "uf": "RJ",
+          "municipio": "RIO DE JANEIRO",
+          "sq": "1231",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2008,
+          "uf": "RJ",
+          "municipio": "RIO DE JANEIRO",
+          "sq": "5159",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "ricardo-cappelli",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "DF",
+          "municipio": null,
+          "sq": "70002551557",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "sandro-alex",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PR",
+          "municipio": null,
+          "sq": "160002549553",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "sandro-alex",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2008,
+          "uf": "PR",
+          "municipio": "PONTA GROSSA",
+          "sq": "30578",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "PR",
+          "municipio": null,
+          "sq": "160000000600",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2014,
+          "uf": "PR",
+          "municipio": null,
+          "sq": "160000000207",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "PR",
+          "municipio": null,
+          "sq": "160000619719",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2022,
+          "uf": "PR",
+          "municipio": null,
+          "sq": "160001622302",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "sandro-alex",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PR",
+          "municipio": null,
+          "sq": "160002549553",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tiao-bocalom",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10002544015",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tiao-bocalom",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 1998,
+          "uf": "AC",
+          "municipio": "ACRE",
+          "sq": "100000107451111",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2000,
+          "uf": "AC",
+          "municipio": "ACRELANDIA",
+          "sq": "180",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2004,
+          "uf": "AC",
+          "municipio": "ACRELANDIA",
+          "sq": "27",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2006,
+          "uf": "AC",
+          "municipio": "ACRE",
+          "sq": "10275",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2008,
+          "uf": "AC",
+          "municipio": "RIO BRANCO",
+          "sq": "313",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10000000130",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2012,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10000001227",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2014,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10000000364",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10000600232",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2020,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10001003637",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2024,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10001908807",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-100002550418",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MA",
+          "municipio": null,
+          "sq": "100002550418",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-100002550418",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MA",
+          "municipio": null,
+          "sq": "100002550418",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-10002535804",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10002535804",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-10002535804",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 1996,
+          "uf": "AC",
+          "municipio": "RIO BRANCO",
+          "sq": "10013921100033",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 1998,
+          "uf": "AC",
+          "municipio": "ACRE",
+          "sq": "100000107331111",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2000,
+          "uf": "AC",
+          "municipio": "RIO BRANCO",
+          "sq": "204",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2002,
+          "uf": "AC",
+          "municipio": "ACRE",
+          "sq": "170",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2006,
+          "uf": "AC",
+          "municipio": "ACRE",
+          "sq": "10038",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2008,
+          "uf": "AC",
+          "municipio": "RIO BRANCO",
+          "sq": "88",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10000000133",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10000603058",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2022,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10001601556",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-10002535804",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10002535804",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-110002544986",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110002544986",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-110002544986",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2008,
+          "uf": "MT",
+          "municipio": "LUCAS DO RIO VERDE",
+          "sq": "4715",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2014,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110000000002",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110000612717",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110000631688",
+          "decisao": "sem_mudanca"
+        },
+        {
+          "ano": 2018,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "280001027643",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-110002544986",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110002544986",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-110002552693",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110002552693",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-110002552693",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2006,
+          "uf": "MT",
+          "municipio": "MATO GROSSO",
+          "sq": "10084",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110000000494",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110000000595",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110000611616",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110000631683",
+          "decisao": "manter_oculto"
+        },
+        {
+          "ano": 2018,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "280001179962",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2022,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110001612757",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-110002552693",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110002552693",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-130002552186",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130002552186",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-130002552186",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2000,
+          "uf": "MG",
+          "municipio": "CONTAGEM",
+          "sq": "150",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2004,
+          "uf": "MG",
+          "municipio": "CONTAGEM",
+          "sq": "110",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2006,
+          "uf": "MG",
+          "municipio": "MINAS GERAIS",
+          "sq": "10119",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2008,
+          "uf": "MG",
+          "municipio": "CONTAGEM",
+          "sq": "50668",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130000002136",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2012,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130000033968",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2016,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130000048953",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130000626969",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2020,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130000871761",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2022,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130001613126",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2024,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130002061515",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-130002552186",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130002552186",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-130002552302",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130002552302",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-130002552302",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130002552302",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-150002544909",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PB",
+          "municipio": null,
+          "sq": "150002544909",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-150002544909",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2000,
+          "uf": "PB",
+          "municipio": "SOUSA",
+          "sq": "97",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2004,
+          "uf": "PB",
+          "municipio": "SOUSA",
+          "sq": "299",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2008,
+          "uf": "PB",
+          "municipio": "SOUSA",
+          "sq": "10060",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "PB",
+          "municipio": null,
+          "sq": "150000000354",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2012,
+          "uf": "PB",
+          "municipio": null,
+          "sq": "150000005802",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2016,
+          "uf": "PB",
+          "municipio": null,
+          "sq": "150000002990",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2022,
+          "uf": "PB",
+          "municipio": null,
+          "sq": "150001718098",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2024,
+          "uf": "PB",
+          "municipio": null,
+          "sq": "150002359729",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-150002544909",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PB",
+          "municipio": null,
+          "sq": "150002544909",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-170002547771",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PE",
+          "municipio": null,
+          "sq": "170002547771",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-170002547771",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PE",
+          "municipio": null,
+          "sq": "170002547771",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-170002549655",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PE",
+          "municipio": null,
+          "sq": "170002549655",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-170002549655",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PE",
+          "municipio": null,
+          "sq": "170002549655",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-190002545553",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "RJ",
+          "municipio": null,
+          "sq": "190002545553",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-190002545553",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2008,
+          "uf": "PE",
+          "municipio": "RECIFE",
+          "sq": "12041",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "RJ",
+          "municipio": null,
+          "sq": "190000603758",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2022,
+          "uf": "RJ",
+          "municipio": null,
+          "sq": "190001606475",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2024,
+          "uf": "RJ",
+          "municipio": null,
+          "sq": "190001909316",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-190002545553",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "RJ",
+          "municipio": null,
+          "sq": "190002545553",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-190002550182",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "RJ",
+          "municipio": null,
+          "sq": "190002550182",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-190002550182",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "RJ",
+          "municipio": null,
+          "sq": "190002550182",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-190002550184",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "RJ",
+          "municipio": null,
+          "sq": "190002550184",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-190002550184",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "RJ",
+          "municipio": null,
+          "sq": "190002550184",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-20002553726",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "AL",
+          "municipio": null,
+          "sq": "20002553726",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-20002553726",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2002,
+          "uf": "AL",
+          "municipio": "ALAGOAS",
+          "sq": "351",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2004,
+          "uf": "AL",
+          "municipio": "MACEIO",
+          "sq": "251",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2006,
+          "uf": "AL",
+          "municipio": "ALAGOAS",
+          "sq": "10236",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2022,
+          "uf": "AL",
+          "municipio": null,
+          "sq": "20001653521",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-20002553726",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "AL",
+          "municipio": null,
+          "sq": "20002553726",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-240002548632",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "SC",
+          "municipio": null,
+          "sq": "240002548632",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-240002548632",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 1998,
+          "uf": "SC",
+          "municipio": "SANTA CATARINA",
+          "sq": "240002403000111",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2002,
+          "uf": "SC",
+          "municipio": "SANTA CATARINA",
+          "sq": "395",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2006,
+          "uf": "SC",
+          "municipio": "SANTA CATARINA",
+          "sq": "10461",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2008,
+          "uf": "SC",
+          "municipio": "FLORIANOPOLIS",
+          "sq": "13065",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "SC",
+          "municipio": null,
+          "sq": "240000000089",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2014,
+          "uf": "SC",
+          "municipio": null,
+          "sq": "240000000477",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "SC",
+          "municipio": null,
+          "sq": "240000621326",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2022,
+          "uf": "SC",
+          "municipio": null,
+          "sq": "240001679805",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-240002548632",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "SC",
+          "municipio": null,
+          "sq": "240002548632",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-250002541362",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "SP",
+          "municipio": null,
+          "sq": "250002541362",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-250002541362",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "SP",
+          "municipio": null,
+          "sq": "250002541362",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-250002552369",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "SP",
+          "municipio": null,
+          "sq": "250002552369",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-250002552369",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "SP",
+          "municipio": null,
+          "sq": "250002552369",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-30002530069",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "AP",
+          "municipio": null,
+          "sq": "30002530069",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-30002530069",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 1998,
+          "uf": "AP",
+          "municipio": "AMAPA",
+          "sq": "300000307411231",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2002,
+          "uf": "AP",
+          "municipio": "AMAPA",
+          "sq": "425",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2006,
+          "uf": "AP",
+          "municipio": "AMAPA",
+          "sq": "10395",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2008,
+          "uf": "AP",
+          "municipio": "MACAPA",
+          "sq": "407",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "AP",
+          "municipio": null,
+          "sq": "30000000077",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "AP",
+          "municipio": null,
+          "sq": "30000000585",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2012,
+          "uf": "AP",
+          "municipio": null,
+          "sq": "30000001316",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2014,
+          "uf": "AP",
+          "municipio": null,
+          "sq": "30000000057",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2016,
+          "uf": "AP",
+          "municipio": null,
+          "sq": "30000001786",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "AP",
+          "municipio": null,
+          "sq": "30000607892",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-30002530069",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "AP",
+          "municipio": null,
+          "sq": "30002530069",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-50002536577",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "BA",
+          "municipio": null,
+          "sq": "50002536577",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-50002536577",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 1996,
+          "uf": "BA",
+          "municipio": "LAURO DE FREITAS",
+          "sq": "50368541312660",
+          "decisao": "manter_oculto"
+        },
+        {
+          "ano": 1998,
+          "uf": "BA",
+          "municipio": "BAHIA",
+          "sq": "500000507120221",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2000,
+          "uf": "BA",
+          "municipio": "LAURO DE FREITAS",
+          "sq": "191",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2002,
+          "uf": "BA",
+          "municipio": "BAHIA",
+          "sq": "181",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2004,
+          "uf": "BA",
+          "municipio": "LAURO DE FREITAS",
+          "sq": "119",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2006,
+          "uf": "BA",
+          "municipio": "BAHIA",
+          "sq": "10587",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2008,
+          "uf": "BA",
+          "municipio": "LAURO DE FREITAS",
+          "sq": "31794",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2012,
+          "uf": "BA",
+          "municipio": null,
+          "sq": "50000041331",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2016,
+          "uf": "BA",
+          "municipio": null,
+          "sq": "50000033560",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "BA",
+          "municipio": null,
+          "sq": "50000608126",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2020,
+          "uf": "BA",
+          "municipio": null,
+          "sq": "50001067786",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2022,
+          "uf": "BA",
+          "municipio": null,
+          "sq": "50001645909",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2024,
+          "uf": "BA",
+          "municipio": null,
+          "sq": "50002002491",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-50002536577",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "BA",
+          "municipio": null,
+          "sq": "50002536577",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-90002540998",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90002540998",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-90002540998",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90002540998",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-90002543215",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90002543215",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-90002543215",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2004,
+          "uf": "GO",
+          "municipio": "SENADOR CANEDO",
+          "sq": "71",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2008,
+          "uf": "GO",
+          "municipio": "SENADOR CANEDO",
+          "sq": "13164",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2010,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90000000364",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2014,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90000000024",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2016,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90000011360",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2018,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90000609234",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2020,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90001220914",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2024,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90002233715",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "tse-2026-90002543215",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90002543215",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "valmir-de-francisquinho",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "SE",
+          "municipio": null,
+          "sq": "260002532010",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "valmir-de-francisquinho",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2000,
+          "uf": "SE",
+          "municipio": "ITABAIANA",
+          "sq": "142",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2004,
+          "uf": "SE",
+          "municipio": "ITABAIANA",
+          "sq": "21",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2008,
+          "uf": "SE",
+          "municipio": "ITABAIANA",
+          "sq": "1952",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2012,
+          "uf": "SE",
+          "municipio": null,
+          "sq": "260000003076",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2016,
+          "uf": "SE",
+          "municipio": null,
+          "sq": "260000000783",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2022,
+          "uf": "SE",
+          "municipio": null,
+          "sq": "260001690206",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2024,
+          "uf": "SE",
+          "municipio": null,
+          "sq": "260001935426",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "valmir-de-francisquinho",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "SE",
+          "municipio": null,
+          "sq": "260002532010",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "witer-naves",
+      "familia": "financiamento",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "TO",
+          "municipio": null,
+          "sq": "270002539187",
+          "decisao": "publicar"
+        }
+      ]
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "witer-naves",
+      "familia": "historico_politico",
+      "decisao": "publicar",
+      "linhas": []
+    },
+    {
+      "lote": "l8-20260929",
+      "slug": "witer-naves",
+      "familia": "patrimonio",
+      "decisao": "publicar",
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "TO",
+          "municipio": null,
+          "sq": "270002539187",
+          "decisao": "publicar"
+        }
+      ]
+    }
+  ]
+}
