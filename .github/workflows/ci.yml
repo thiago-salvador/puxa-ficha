@@ -224,10 +224,21 @@ jobs:
   # 30/08/2026 os thresholds foram medidos localmente em Node 24: statements
   # 54,40%, branches 79,20%, functions 83,67% e lines 54,39%. Como todos ficam
   # acima dos pisos versionados, a cobertura passa a bloquear regressao real.
-  cobertura:
-    name: Cobertura (bloqueante)
+  #
+  # Em 29/09/2026 o step serial chegou a 19,6 min (job de 16 a 21 min) e ja
+  # tinha estourado o timeout antigo de 20. A suite roda agora em 4 shards
+  # (--test-shard nativo do node:test, ainda serial dentro de cada shard), cada
+  # um gravando o dump bruto do NODE_V8_COVERAGE. O dump e podado para src/ e
+  # scripts/ (prova local: summary e lcov identicos byte a byte) e o job
+  # `cobertura` junta tudo num unico `c8 report`, com os mesmos pisos.
+  cobertura-shard:
+    name: Cobertura (shard ${{ matrix.shard }}/4)
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -248,9 +259,59 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Cobertura do shard
+        env:
+          COVERAGE_SHARD: ${{ matrix.shard }}/4
+        run: npm run test:coverage:shard
+
+      - name: Guardar dump podado
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: cobertura-v8-${{ matrix.shard }}
+          path: .tmp/c8
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 1
+
+  # Nome igual ao check obrigatorio da main. `if: always()` porque um job pulado
+  # por falha em `needs` conta como verde no branch protection: o primeiro step
+  # falha explicitamente quando algum shard nao terminou em success.
+  cobertura:
+    name: Cobertura (bloqueante)
+    needs: cobertura-shard
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Todos os shards passaram
+        env:
+          SHARDS: ${{ needs.cobertura-shard.result }}
+        run: |
+          echo "shards: $SHARDS"
+          test "$SHARDS" = "success"
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Juntar dumps dos shards
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          pattern: cobertura-v8-*
+          path: .tmp/c8
+          merge-multiple: true
+
       # Thresholds do c8.config.json sao contrato de merge, nao telemetria.
       - name: Cobertura
-        run: npm run test:coverage:raw
+        run: npm run test:coverage:report
 
   # O unico teste que pegaria a regressao de CSP de 03/08 (PR #71, nonce
   # removido, toda hidratacao bloqueada por ~12h) nunca rodava em PR:

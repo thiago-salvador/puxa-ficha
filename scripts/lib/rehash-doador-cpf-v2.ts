@@ -24,10 +24,41 @@ export function fingerprintDaChave(chave: string): string {
   return createHash("sha256").update(`pf-cpf-hash-v2-fp:${chave.trim()}`).digest("hex").slice(0, 16)
 }
 
-/** Lança se a chave presente não é a v2 registrada. */
-export function exigirChaveV2(chave: string | undefined): void {
+export function urlEhLoopback(url: string | undefined): boolean {
+  if (!url) return false
+  try {
+    const { protocol, hostname } = new URL(url)
+    return (protocol === "http:" || protocol === "https:") && ["127.0.0.1", "localhost", "[::1]"].includes(hostname)
+  } catch {
+    return false
+  }
+}
+
+/**
+ * Impressão digital aceita. A prova PG17 (scripts/audit/provar-tse-local-live-pg17.sh)
+ * roda com sal sintético e declara a impressão dele em
+ * PF_CPF_HASH_PROOF_FINGERPRINT; isso só vale quando SUPABASE_URL aponta para
+ * loopback. Com host remoto a variável derruba a execução, para que um sal de
+ * prova nunca grave hash em banco real.
+ */
+type EnvDaChave = Readonly<Record<string, string | undefined>>
+
+function impressaoEsperada(env: EnvDaChave): string {
+  const sintetica = env.PF_CPF_HASH_PROOF_FINGERPRINT?.trim()
+  if (!sintetica) return DONOR_CPF_HASH_V2_FINGERPRINT
+  if (!urlEhLoopback(env.SUPABASE_URL)) {
+    throw new Error("PF_CPF_HASH_PROOF_FINGERPRINT só vale com SUPABASE_URL em loopback; nada foi gravado")
+  }
+  if (!/^[a-f0-9]{16}$/.test(sintetica) || sintetica === DONOR_CPF_HASH_V2_FINGERPRINT) {
+    throw new Error("PF_CPF_HASH_PROOF_FINGERPRINT inválida para prova sintética; nada foi gravado")
+  }
+  return sintetica
+}
+
+/** Lança se a chave presente não é a v2 registrada (ou a sintética da prova local). */
+export function exigirChaveV2(chave: string | undefined, env: EnvDaChave = process.env): void {
   if (!chave?.trim()) throw new Error("PF_DOADOR_CPF_HASH_SALT ausente: rehash e coleta com CPF exigem a chave v2")
-  if (fingerprintDaChave(chave) !== DONOR_CPF_HASH_V2_FINGERPRINT) {
+  if (fingerprintDaChave(chave) !== impressaoEsperada(env)) {
     throw new Error("PF_DOADOR_CPF_HASH_SALT não é a chave v2; nada foi gravado")
   }
 }
