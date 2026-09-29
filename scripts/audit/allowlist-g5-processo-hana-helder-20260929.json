@@ -1,0 +1,29 @@
+{
+  "_comentario": "LOTE APROVADO E NAO APLICADO. Autoriza as escritas nominais da migration G5: 1 processo (0009421-71.2009.4.01.3900, TRF1, improbidade) publicado nas fichas hana-ghassan e tse-2026-140002550779, 2 recibos processos-curadoria e 1 recibo global. Aplicar continua sendo ato externo separado.",
+  "recorte": "g5-processo-hana-helder-20260929",
+  "migration": "20260929110000_g5_processo_hana_helder.sql",
+  "fonte": "DJEN/CNJ (Comunica PJe), acórdão do TRF1 publicado em setembro de 2023, e candidaturas TSE 2026.",
+  "coorte": ["hana-ghassan", "tse-2026-140002550779"],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [
+    {
+      "tabela": "processos",
+      "slug": "hana-ghassan",
+      "campos": ["candidato_id", "tipo", "tribunal", "numero_processo", "descricao", "status", "data_inicio", "data_decisao", "gravidade", "fonte", "url_fonte"],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-140002550779",
+      "campos": ["candidato_id", "tipo", "tribunal", "numero_processo", "descricao", "status", "data_inicio", "data_decisao", "gravidade", "fonte", "url_fonte"],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260929110000",
+      "campos": ["fonte", "escopo", "alvo", "candidato_id", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    }
+  ]
+}
