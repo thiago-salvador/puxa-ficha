@@ -3,10 +3,12 @@ import { describe, it } from "node:test"
 
 import {
   buildImprensaFactCards,
+  buildImprensaFactGroups,
   computeImprensaFacts,
   formatImprensaCargoList,
   IMPRENSA_DATA_BUCKETS,
   IMPRENSA_FACT_CARD_ORDER,
+  IMPRENSA_FACT_GROUPS,
   imprensaDataBucket,
   imprensaDataBucketLabel,
   temProcessoPublicado,
@@ -142,6 +144,26 @@ describe("processo publicado na ficha", () => {
     assert.equal(formatImprensaCargoList(["Governador", "Presidente"]), "presidente e governador")
     assert.equal(formatImprensaCargoList(["Governador"]), "governador")
     assert.equal(formatImprensaCargoList([]), "")
+  })
+})
+
+describe("buildImprensaFactGroups", () => {
+  const facts = computeImprensaFacts(FIXTURE)
+
+  it("cobre cada card uma vez, com Justiça em alerta antes de Dinheiro e Chapas", () => {
+    assert.deepEqual(IMPRENSA_FACT_GROUPS.flatMap((group) => group.ids).sort(), [...IMPRENSA_FACT_CARD_ORDER].sort())
+    const groups = buildImprensaFactGroups(facts)
+    assert.deepEqual(groups.map((group) => [group.id, group.tone]), [["justica", "alerta"], ["dinheiro", "atencao"], ["chapas", "info"]])
+    for (const group of groups) {
+      const values = group.cards.map((card) => card.value)
+      assert.deepEqual(values, [...values].sort((a, b) => b - a), `${group.id} em ordem decrescente`)
+    }
+  })
+
+  it("respeita os ids pedidos e some com grupo vazio", () => {
+    const groups = buildImprensaFactGroups(facts, ["sancoes", "chapas"])
+    assert.deepEqual(groups.map((group) => group.id), ["justica", "chapas"])
+    assert.deepEqual(groups[0].cards.map((card) => card.id), ["sancoes"])
   })
 })
 
