@@ -1,6 +1,6 @@
 // cspell:words representacoes etica camara
 
-import { nivelFonteProcesso, type FonteProcessoNivel } from "@/lib/djen-consulta-url"
+import { nivelFonteProcesso, processoForaPorPapelDeAutoridade, type FonteProcessoNivel } from "@/lib/djen-consulta-url"
 import { getRepresentacoesEticaAprovadas, type RepresentacaoEticaAprovada } from "@/lib/representacoes-etica"
 import { contarProcessosJustica, type ProcessosJusticaContagem } from "@/lib/processos-justica-total"
 
@@ -112,6 +112,19 @@ export function contarProcessosJusticaDasLinhas(
   criterio: CriterioContagemProcessos = CRITERIO_CONTAGEM_PROCESSOS,
 ): ProcessosJusticaContagem {
   return contarProcessosJusticaDoCandidato(slug, filtrarProcessosJudiciaisContaveis(processosJudiciais, criterio).length, criterio)
+}
+
+/**
+ * Linhas omitidas da ficha: as brutas que o critério não contou, sem as de
+ * papel de autoridade pelo cargo, que não são processo da pessoa e não faltam
+ * fonte. É o número que alimenta o aviso de "omitidos sem fonte oficial".
+ */
+export function contarProcessosOmitidos(
+  brutos: readonly ProcessoJudicialContavel[],
+  contaveis: number,
+): number {
+  const daPessoa = brutos.filter((processo) => !processoForaPorPapelDeAutoridade(processo.id)).length
+  return Math.max(0, daPessoa - contaveis)
 }
 
 /** Quantidade de linhas judiciais contáveis por candidato (usada no resumo de lista e no comparador). */
