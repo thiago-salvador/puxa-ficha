@@ -102,3 +102,18 @@ test("--de-recibos com --decisoes: reimportar o arquivo salvo com as mesmas deci
   assert.deepEqual(ler(arquivos.c1).map((item) => [item.candidate_slug, item.result, item.leads]), [["vera-sp", "encontrado", 1]])
   assert.deepEqual(ler(arquivos.c2).map((item) => [item.candidate_slug, item.result, item.leads]), [["vera-sp", "encontrado", 1]])
 })
+
+test("trava do turno 1: antes de 05/10 roda; depois, só com o corte aplicado a Presidente ou Governador", async () => {
+  const { motivoTravaTurno1 } = await import("../scripts/checagens-coletar")
+  const { coorteAtualizacaoDe } = await import("../scripts/lib/coorte-atualizacao")
+  const cadastro = [{ id: "g1", slug: "gov-a" }, { id: "p1", slug: "pres-b" }]
+  const vazia = coorteAtualizacaoDe([], "banco")
+  const encerrar = (candidato_id: string, slug: string) => ({ candidato_id, slug, fase_eleitoral: "nao_eleito", fase_turno: 1, atualizacao_encerrada_em: "2026-10-05T14:00:00Z" })
+  // 04/10 às 23:30 em Brasília ainda é antes da trava (02:30 UTC de 05/10).
+  assert.equal(motivoTravaTurno1(new Date("2026-10-05T02:30:00Z"), vazia, cadastro), null)
+  const semApply = motivoTravaTurno1(new Date("2026-10-05T15:00:00Z"), vazia, cadastro)
+  assert.match(semApply ?? "", /trava do turno 1: 2026-10-05.*turno-1 ainda não aplicado/)
+  assert.match(motivoTravaTurno1(new Date("2026-10-05T15:00:00Z"), coorteAtualizacaoDe([encerrar("s1", "senador-c")], "banco"), cadastro) ?? "", /turno-1 ainda não aplicado/, "Senado encerrado não prova o corte de Presidente e Governador")
+  assert.equal(motivoTravaTurno1(new Date("2026-10-05T15:00:00Z"), coorteAtualizacaoDe([encerrar("g1", "gov-a")], "banco"), cadastro), null)
+  assert.match(motivoTravaTurno1(new Date("2026-10-12T15:00:00Z"), coorteAtualizacaoDe([], "tabela_ausente"), cadastro) ?? "", /view de fase eleitoral ausente/)
+})
