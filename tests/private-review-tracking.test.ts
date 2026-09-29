@@ -60,16 +60,22 @@ test("tracked files contain no private review material", () => {
   const allowedPreexistingPathNames = new Set<string>([])
   assert.deepEqual(paths.filter((path) => forbiddenPath.test(path) && !allowedPreexistingPathNames.has(path)), [])
   const birthReview = new RegExp(["data_nascimento", ".*", "19[0-9]{2}"].join(""), "i")
-  // Preserve historical snapshots byte-for-byte while rejecting any new or changed birth-date line.
-  const legacyBirthHashes: Record<string, string> = {
-    "QA/evidencias/2026-08-12-orleans-destaques-proveniencia/manifesto.json": "c5d9b7f43241a71ce17700f4311fe7df6465d7ffde6715b0e41f3926abfa12d7",
-    "data/chapas-2026-tse-20260812.json": "0d715166aef884f1f80093c2ab1ee0fed0b4847c9b3f6800aaae6c7281305e08",
-    "data/chapas-2026-tse-20260815.json": "18a2cda2a23b2b5b93b00a88d0ba8c1821ffc5b8818c1c6fee380dd2c35f0136",
-    "data/chapas-2026-tse-20260827.json": "e4213819c7e786f5814f949c5dab80fe16b9c8886fe6514bae4134df982483c1",
-    "data/freshness-closeout-20260905.json": "28f1153bc2221dbc230f3623ca15bc3de7cd2755ed1103496e32bd72e6908800",
-    "data/identidade-etapa2-nascimentos.json": "b41a927e99cd5cfe73c85db6ada0956b40ad0ccebc1f1d8e85998daea3433a4d",
-    "data/siqueira-to-20260907.json": "e32d7a42adf8bba8f76b5df7e4adad2754fd0aef81a23d49086b906934f5cf2c",
-    "data/tse-profile-links-20260827.json": "1b76aa159fe3f294a1d91653e45c524167a3cdf67f49818f7b09c864ae4ac40f",
+  // Decided allowlist, not pending cleanup: a candidate's birth date is published by the TSE for
+  // every registered candidacy, and these snapshots are read by audit scripts, so they stay as they
+  // are. The digest pins the exact birth-date lines; any new or changed line in any JSON still fails.
+  const legacyBirthHashes: Record<string, { sha256: string; reason: string }> = {
+    "QA/evidencias/2026-08-12-orleans-destaques-proveniencia/manifesto.json": { sha256: "c5d9b7f43241a71ce17700f4311fe7df6465d7ffde6715b0e41f3926abfa12d7", reason: "provenance manifest of one candidate; TSE-published birth date" },
+    "data/chapas-2026-tse-20260812.json": { sha256: "0d715166aef884f1f80093c2ab1ee0fed0b4847c9b3f6800aaae6c7281305e08", reason: "TSE consulta_cand snapshot of 2026 tickets" },
+    "data/chapas-2026-tse-20260815.json": { sha256: "18a2cda2a23b2b5b93b00a88d0ba8c1821ffc5b8818c1c6fee380dd2c35f0136", reason: "TSE consulta_cand snapshot of 2026 tickets" },
+    "data/chapas-2026-tse-20260827.json": { sha256: "e4213819c7e786f5814f949c5dab80fe16b9c8886fe6514bae4134df982483c1", reason: "TSE consulta_cand snapshot of 2026 tickets" },
+    "data/freshness-closeout-20260905.json": { sha256: "28f1153bc2221dbc230f3623ca15bc3de7cd2755ed1103496e32bd72e6908800", reason: "public candidate profile pinned by the freshness closeout apply" },
+    "data/identidade-etapa2-nascimentos.json": { sha256: "b41a927e99cd5cfe73c85db6ada0956b40ad0ccebc1f1d8e85998daea3433a4d", reason: "birth dates used as the independent identity key of stage 2" },
+    "data/siqueira-to-20260907.json": { sha256: "e32d7a42adf8bba8f76b5df7e4adad2754fd0aef81a23d49086b906934f5cf2c", reason: "official-source admission package of one candidate; no CPF or contact data" },
+    "data/tse-profile-links-20260827.json": { sha256: "1b76aa159fe3f294a1d91653e45c524167a3cdf67f49818f7b09c864ae4ac40f", reason: "TSE profile links matched by civil name and birth date" },
+  }
+  for (const [path, entry] of Object.entries(legacyBirthHashes)) {
+    assert.ok(entry.reason.trim(), `${path} needs a written reason`)
+    assert.ok(paths.includes(path), `${path} is no longer tracked; drop it from the allowlist`)
   }
   // Historical evidence was redacted in L11; no tracked file may carry a private marker line.
   const leaked = paths.filter((path) => {
@@ -77,7 +83,7 @@ test("tracked files contain no private review material", () => {
     if (path.endsWith(".json") && birthReview.test(content)) {
       const birthLines = content.split("\n").filter((line) => birthReview.test(line))
       const digest = createHash("sha256").update(`${birthLines.join("\n")}\n`).digest("hex")
-      if (legacyBirthHashes[path] !== digest) return true
+      if (legacyBirthHashes[path]?.sha256 !== digest) return true
     }
     const markerLines = content.split("\n").filter((line) => privateMarker.test(line))
     if (!markerLines.length) return false
