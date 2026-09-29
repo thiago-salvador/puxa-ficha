@@ -5,8 +5,17 @@ import { join } from "node:path"
 import { test } from "node:test"
 
 import { normalizarDespesas, type ResultadoNormalizacao } from "../scripts/lib/despesas-normalizar"
-import { decidirAplicacao, planejarDespesas, shaDoPlanoDespesas, type CandidaturaColetada, type CandidaturaVinculada } from "../scripts/lib/despesas-plano"
 import {
+  cargoInferidoDoHistoricoPolitico,
+  decidirAplicacao,
+  ORIGEM_CARGO_HISTORICO_POLITICO,
+  planejarDespesas,
+  shaDoPlanoDespesas,
+  type CandidaturaColetada,
+  type CandidaturaVinculada,
+} from "../scripts/lib/despesas-plano"
+import {
+  anexarCargosHistoricoPolitico,
   CODIGO_REVALIDACAO_NAO_CONFIRMADA,
   completarCargoDaCandidaturaAtual,
   lerArgsDespesas,
@@ -286,4 +295,55 @@ test("2026 sem cargo no vínculo (produção): cargo vem de candidatos.cargo_dis
   const depois = planejarDespesas({ vinculadas: completas, coletas: [coleta("7000002026", 2026, 10)] })
   assert.equal(depois.acoes.length, 1, "com o cargo disputado, a candidatura atual é gravável")
   assert.equal(depois.revisao.length, 0)
+})
+
+test("ano histórico sem cargo no vínculo: historico_politico só completa a conferência com exatamente um cargo igual ao da coleta", () => {
+  const base = { slug: "", ano_eleicao: 2018, uf: "AP", cargo_candidatura: null }
+  const semCargo: CandidaturaVinculada[] = [
+    { ...base, candidato_id: "id-um", slug: "um", sq_candidato: "7000003001" },
+    { ...base, candidato_id: "id-dois", slug: "dois", sq_candidato: "7000003002" },
+    { ...base, candidato_id: "id-zero", slug: "zero", sq_candidato: "7000003003" },
+    { ...base, candidato_id: "id-contra", slug: "contra", sq_candidato: "7000003004" },
+  ]
+  const eventos = [
+    // um evento de candidatura no ano e o mandato seguinte, mesmo cargo: um cargo só
+    { candidato_id: "id-um", cargo: "Senador", tipo_evento: "candidatura", periodo_inicio: 2018 },
+    { candidato_id: "id-um", cargo: "Senadora", tipo_evento: "mandato", periodo_inicio: 2019 },
+    { candidato_id: "id-um", cargo: "Governador", tipo_evento: "mandato", periodo_inicio: 2011 },
+    { candidato_id: "id-dois", cargo: "Senador", tipo_evento: "candidatura", periodo_inicio: 2018 },
+    { candidato_id: "id-dois", cargo: "Governador", tipo_evento: "mandato", periodo_inicio: 2019 },
+    { candidato_id: "id-zero", cargo: "Senador", tipo_evento: "candidatura", periodo_inicio: 2019 },
+    { candidato_id: "id-contra", cargo: "Deputado Federal", tipo_evento: "mandato", periodo_inicio: 2019 },
+  ]
+  const anexadas = anexarCargosHistoricoPolitico(semCargo, eventos)
+  assert.deepEqual(anexadas.map((v) => v.cargos_historico_politico), [["Senador"], ["Governador", "Senador"], [], ["Deputado Federal"]])
+  assert.ok(anexadas.every((v) => v.cargo_candidatura === null), "o cargo do banco não é preenchido")
+
+  const coletas = ["7000003001", "7000003002", "7000003003", "7000003004"].map((sq) => coleta(sq, 2018, 10))
+  const plano = planejarDespesas({ vinculadas: anexadas, coletas })
+  assert.deepEqual(plano.acoes.map((a) => a.slug), ["um"], "só o caso de um cargo igual vira ação")
+  assert.equal(plano.acoes[0].origem_cargo_vinculo, ORIGEM_CARGO_HISTORICO_POLITICO)
+  assert.equal(plano.acoes[0].linha.cargo_candidatura, "Senador", "a linha gravada mantém o cargo da fonte do TSE")
+  assert.equal(plano.resumo.acoes_com_cargo_inferido, 1)
+  const detalhes = new Map(plano.revisao.map((r) => [r.slugs[0], r.detalhe ?? ""]))
+  assert.equal(plano.revisao.every((r) => r.motivo === "contexto_eleitoral_divergente"), true)
+  assert.match(detalhes.get("dois")!, /2 cargos/)
+  assert.match(detalhes.get("zero")!, /sem evento/)
+  assert.match(detalhes.get("contra")!, /outro cargo/)
+
+  const semHistorico = planejarDespesas({ vinculadas: semCargo, coletas })
+  assert.equal(semHistorico.acoes.length, 0, "sem consulta ao histórico, cargo nulo continua em revisão")
+  assert.notEqual(shaDoPlanoDespesas(plano), shaDoPlanoDespesas({ acoes: plano.acoes.map((a) => ({ tipo: a.tipo, slug: a.slug, linha: a.linha })) }), "a proveniência entra no SHA do plano")
+})
+
+test("historico_politico não mexe no ano atual nem em vínculo com cargo", () => {
+  const vinculos: CandidaturaVinculada[] = [
+    { candidato_id: "id-a", slug: "a", ano_eleicao: 2026, sq_candidato: "7000004001", uf: "AP", cargo_candidatura: null },
+    { candidato_id: "id-a", slug: "a", ano_eleicao: 2022, sq_candidato: "7000004002", uf: "AP", cargo_candidatura: "SENADOR" },
+  ]
+  const eventos = [{ candidato_id: "id-a", cargo: "Senador", tipo_evento: "candidatura", periodo_inicio: 2026 }]
+  const anexadas = anexarCargosHistoricoPolitico(vinculos, eventos)
+  assert.equal(anexadas[0].cargos_historico_politico, undefined)
+  assert.equal(anexadas[1].cargos_historico_politico, undefined)
+  assert.equal(cargoInferidoDoHistoricoPolitico({ cargo_candidatura: null, cargos_historico_politico: ["Senador"] }, null), null, "coleta sem cargo não prova nada")
 })
