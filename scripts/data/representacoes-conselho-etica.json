@@ -375,6 +375,45 @@
       }
     },
     {
+      "id": "senado-pce-8047674-sen-5008",
+      "candidate_slug": "tse-2026-170002547773",
+      "casa": "senado",
+      "senador_id": 5008,
+      "processo": {
+        "id": 8047674,
+        "sigla": "PCE",
+        "numero": 1,
+        "ano": 2021
+      },
+      "situacao_oficial": {
+        "sigla": "INDEFD",
+        "descricao": "INDEFERIDA"
+      },
+      "ultimo_andamento_em": "2026-05-27",
+      "verificado_em": "2026-09-29",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8047674?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-29",
+        "alvo": {
+          "metodo": "documento",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8047674?v=1",
+          "trecho_sha256": "ee2ab4375a1f817a9c4df1c99ccc833a6dec7f11dd65251075bbb85cf1ff43c9",
+          "conferida_em": "2026-09-29"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-29",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "INDEFD",
+        "situacao_descricao": "INDEFERIDA"
+      }
+    },
+    {
       "id": "senado-pce-8109512-sen-5959",
       "candidate_slug": "tse-2026-200002534448",
       "casa": "senado",
@@ -930,6 +969,45 @@
         "situacao_confirmada": true,
         "situacao_sigla": "DEFERD",
         "situacao_descricao": "DEFERIDA"
+      }
+    },
+    {
+      "id": "senado-pce-8378707-sen-470",
+      "candidate_slug": "tse-2026-230002550794",
+      "casa": "senado",
+      "senador_id": 470,
+      "processo": {
+        "id": 8378707,
+        "sigla": "PCE",
+        "numero": 6,
+        "ano": 2023
+      },
+      "situacao_oficial": {
+        "sigla": "EXAME",
+        "descricao": "EM EXAME TÉCNICO PRELIMINAR"
+      },
+      "ultimo_andamento_em": "2023-03-30",
+      "verificado_em": "2026-09-29",
+      "url_oficial": "https://legis.senado.leg.br/dadosabertos/processo/8378707?v=1",
+      "identidade": {
+        "metodo": "seed_ids_senado",
+        "conferida_em": "2026-09-29",
+        "alvo": {
+          "metodo": "documento",
+          "fonte_url": "https://legis.senado.leg.br/dadosabertos/processo/8378707?v=1",
+          "trecho_sha256": "67a71d6c0f6e5656921a4c1cf5f9c7d85de7b96ce2efddc4351fefe314b93e4d",
+          "conferida_em": "2026-09-29"
+        }
+      },
+      "revisao": {
+        "aprovado": true,
+        "revisor_tipo": "humano",
+        "aprovado_em": "2026-09-29",
+        "alvo_confirmado": true,
+        "candidato_confirmado": true,
+        "situacao_confirmada": true,
+        "situacao_sigla": "EXAME",
+        "situacao_descricao": "EM EXAME TÉCNICO PRELIMINAR"
       }
     },
     {
