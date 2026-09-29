@@ -261,7 +261,7 @@ export function DespesasCampanhaSection({
   return (
     <div data-pf-despesas-secao>
       <SectionLabel>Despesas de campanha</SectionLabel>
-      <SectionTitle>Despesas de campanha</SectionTitle>
+      <SectionTitle>Gastos declarados pela campanha</SectionTitle>
       {linhas.length > 0 && (
         <div className="mt-6 space-y-6">
           {linhas.map((row) => (
