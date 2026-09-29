@@ -29128,7 +29128,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Ao ser questionado sobre o motivo de sua não reeleição, Haddad afirmou que, em 2016, só o PT era alvo de denúncias e notícias negativas.",
     "publishedAt": "2018-09-15",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/14/haddad-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -29157,7 +29157,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -29180,7 +29180,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO, MAS",
-    "summary": "A Lupa classificou como VERDADEIRO, MAS.",
+    "summary": "Segundo a Pesquisa Mensal de Emprego (PME) , do IBGE, a taxa de desemprego no mês de dezembro de 2014 foi de 4,3%, um pouco menor do que total citado por Haddad.",
     "publishedAt": "2018-09-15",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/14/haddad-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -29209,7 +29209,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -29232,7 +29232,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Em entrevista concedida ao jornal O Estado de S.",
     "publishedAt": "2018-09-15",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/14/haddad-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -29261,7 +29261,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -29284,7 +29284,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "O Relatório anual de fiscalização das contas mostra que o caixa bruto da Prefeitura de São Paulo era de R$ 5,34 bilhões no final de 2016, quando Haddad concluiu sua gestão.",
     "publishedAt": "2018-09-15",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/14/haddad-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -29313,7 +29313,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -29336,7 +29336,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "O balanço mais recente da matriz energética brasileira (página 19), publicado pela Empresa de Pesquisa Energética (EPE) em 2023 com base no ano 2022, indicou que a produção total de energia renovável no país representou 40,5% — e não 50%, como afirmou Haddad.",
     "publishedAt": "2024-01-24",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/01/24/no-roda-viva-haddad-exagera-sobre-energia-limpa-e-erra-sobre-reservas-cambiais/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -29369,7 +29369,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -29392,7 +29392,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "Como Haddad não citou um período específico de comparação, não é possível afirmar que a gasolina ficou mais barata no primeiro ano da gestão de Luiz Inácio Lula da Silva (PT) em relação ao cobrado durante os quatro anos do governo do ex-presidente Jair Bolsonaro (PL).",
     "publishedAt": "2024-01-24",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/01/24/no-roda-viva-haddad-exagera-sobre-energia-limpa-e-erra-sobre-reservas-cambiais/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -29433,7 +29433,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -29456,7 +29456,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Desde julho de 2023, os tributos PIS e Cofins voltaram a incidir sobre o preço dos combustíveis .",
     "publishedAt": "2024-01-24",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/01/24/no-roda-viva-haddad-exagera-sobre-energia-limpa-e-erra-sobre-reservas-cambiais/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -29493,7 +29493,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -29516,7 +29516,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "De acordo com o Banco Central, as reservas internacionais (ou reservas cambiais) do Brasil fecharam em US$ 355 bilhões — e não US$ 400 bilhões — em 2023, primeiro ano do governo Lula 3.",
     "publishedAt": "2024-01-24",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/01/24/no-roda-viva-haddad-exagera-sobre-energia-limpa-e-erra-sobre-reservas-cambiais/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -29545,7 +29545,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -29568,7 +29568,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Em 2023, o mercado de veículos da China bateu recorde ao atingir a marca de 30 milhões de unidades produzidas .",
     "publishedAt": "2024-01-24",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/01/24/no-roda-viva-haddad-exagera-sobre-energia-limpa-e-erra-sobre-reservas-cambiais/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -29601,7 +29601,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -29624,7 +29624,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO, MAS",
-    "summary": "A Lupa classificou como VERDADEIRO, MAS.",
+    "summary": "O Congresso Nacional aprovou, em 22 de dezembro de 2022 , o Orçamento Público para 2023 com déficit primário (diferença entre receitas e despesas não financeiras do governo) previsto de R$ 231,5 bilhões .",
     "publishedAt": "2023-01-04",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2023/01/04/haddad-fazenda-checagem/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -29673,7 +29673,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -29696,7 +29696,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "SUBESTIMADO",
-    "summary": "A Lupa classificou como SUBESTIMADO.",
+    "summary": "O percentual do PIB gasto somente em renúncias de receitas tributárias é de 4,29%, maior do que os 3% citados por Haddad e que somaria ainda o aumento com dispêndio.",
     "publishedAt": "2023-01-04",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2023/01/04/haddad-fazenda-checagem/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -29725,7 +29725,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -29748,7 +29748,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Em 2020, durante a pandemia de Covid-19, o governo Bolsonaro e o Congresso criaram o Auxílio Emergencial .",
     "publishedAt": "2023-01-04",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2023/01/04/haddad-fazenda-checagem/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -29805,7 +29805,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -29828,7 +29828,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Na data de sua criação, em 2007, o piso regional paulista, válido para determinadas categorias trabalhistas , não era 20% superior ao nacional.",
     "publishedAt": "2022-10-11",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2022/10/11/debate-band-2o-turno-sao-paulo/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -29865,7 +29865,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -29888,7 +29888,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "A morte de policiais em serviço caiu 62% após a instalação de câmeras nos uniformes dos agentes de segurança .",
     "publishedAt": "2022-10-11",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2022/10/11/debate-band-2o-turno-sao-paulo/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -29921,7 +29921,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -29944,7 +29944,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Em 2016, o então prefeito de São Paulo, Fernando Haddad (PT), renegociou a dívida do município com a União em um acordo assinado com o então ministro da Fazenda Joaquim Levy , que autorizou a modificação do indexador da cobrança.",
     "publishedAt": "2022-10-11",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2022/10/11/debate-band-2o-turno-sao-paulo/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -29973,7 +29973,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -29996,7 +29996,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "As duas leis citadas por Haddad foram vetadas pelo presidente Jair Bolsonaro e só foram promulgadas porque o Congresso Nacional derrubou os vetos do chefe do Executivo em julho deste ano.",
     "publishedAt": "2022-10-11",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2022/10/11/debate-band-2o-turno-sao-paulo/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -30057,7 +30057,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -30080,7 +30080,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "De acordo com o balanço da gestão de Haddad como prefeito de São Paulo (página 9), apresentado em 31 de dezembro de 2016, o Hospital Municipal de Parelheiros estava “em fase de acabamento interno”, ou seja, ainda faltavam mais detalhes do que apenas camas e macas para que fosse aberto ao público.",
     "publishedAt": "2022-10-11",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2022/10/11/debate-band-2o-turno-sao-paulo/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -30117,7 +30117,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -30140,7 +30140,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "De acordo com dados do Instituto Nacional de Pesquisas Espaciais (Inpe), é possível verificar que, somente entre janeiro de 2019 e julho de 2022, o desmatamento acumulado na Amazônia atingiu 31 mil quilômetros quadrados .",
     "publishedAt": "2022-10-11",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2022/10/11/debate-band-2o-turno-sao-paulo/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -30173,7 +30173,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -30196,7 +30196,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO, MAS",
-    "summary": "A Lupa classificou como VERDADEIRO, MAS.",
+    "summary": "Tanto o Hospital Municipal de Brasilândia quanto o Hospital Municipal de Parelheiros são obras que foram iniciadas pela gestão de Fernando Haddad na Prefeitura de São Paulo e que atualmente estão em funcionamento.",
     "publishedAt": "2022-10-11",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2022/10/11/debate-band-2o-turno-sao-paulo/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -30237,7 +30237,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -30260,7 +30260,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "Os dados da Sinopse Estatística da Educação Básica 2021 mostram que apenas 25,9% das matrículas da rede pública nos anos iniciais do ensino fundamental em São Paulo estão localizadas na rede estadual .",
     "publishedAt": "2022-10-11",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2022/10/11/debate-band-2o-turno-sao-paulo/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -30289,7 +30289,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -30312,7 +30312,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "A taxa de analfabetismo de crianças entre 10 e 14 anos era de 1,6% em 2015.",
     "publishedAt": "2022-06-08",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2022/06/08/haddad-erra-analfabetismo-ceus/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -30353,7 +30353,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -30376,7 +30376,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "Embora tenha deixado obras de 14 Centros Educacionais Unificados (CEUs) em andamento quando encerrou o mandato, em dezembro de 2016, Haddad exagerou ao dizer que havia dinheiro em caixa para concluir todas elas.",
     "publishedAt": "2022-06-08",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2022/06/08/haddad-erra-analfabetismo-ceus/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -30441,7 +30441,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -30464,7 +30464,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO, MAS",
-    "summary": "A Lupa classificou como VERDADEIRO, MAS.",
+    "summary": "Em abril deste ano, quando o uso de câmeras de vigilância no uniforme dos policiais militares do estado passou a ser debatido pelos candidatos ao governo de São Paulo, Fernando Haddad foi um dos primeiros a apoiar a medida .",
     "publishedAt": "2022-06-08",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2022/06/08/haddad-erra-analfabetismo-ceus/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -30525,7 +30525,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -30548,7 +30548,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "O piso salarial profissional nacional do magistério foi instituído em julho de 2008 (Lei n° 11.738) , quando Fernando Haddad era ministro da Educação do governo do ex-presidente Luiz Inácio Lula da Silva (PT).",
     "publishedAt": "2022-06-08",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2022/06/08/haddad-erra-analfabetismo-ceus/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -30581,7 +30581,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -30604,7 +30604,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Em 2018, último dado disponível, 51,2% dos estudantes de universidade federais se autodeclaravam pretos (12%) ou pardos (39,2%).",
     "publishedAt": "2022-06-08",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2022/06/08/haddad-erra-analfabetismo-ceus/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -30633,7 +30633,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -30656,7 +30656,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Um mês antes de deixar o governo de São Paulo, em março deste ano, João Doria (PSDB) anunciou o início das obras do monotrilho que vai conectar a Linha 13 de trem da Companhia Paulista de Trens Metropolitanos (CPTM) ao Aeroporto Internacional de Cumbica, em Guarulhos .",
     "publishedAt": "2022-06-08",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2022/06/08/haddad-erra-analfabetismo-ceus/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -30689,7 +30689,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -30712,7 +30712,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Ao contrário do que afirma Haddad, os quatro diretores da Petrobras condenados por corrupção no âmbito da Operação Lava Jato eram indicações de partidos políticos – PT, PP e PMDB.",
     "publishedAt": "2019-10-25",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2019/10/25/haddad-lava-jato-lula/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -30741,7 +30741,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -30764,7 +30764,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "Embora as reservas cambiais do Brasil tenham crescido significativamente entre 2003 e 2010, período em que Lula foi presidente do Brasil, elas só atingiram um patamar próximo ao citado por Haddad em 2012, já no mandato de Dilma Rousseff (PT).",
     "publishedAt": "2019-10-25",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2019/10/25/haddad-lava-jato-lula/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -30793,7 +30793,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -30816,7 +30816,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO, MAS",
-    "summary": "A Lupa classificou como VERDADEIRO, MAS.",
+    "summary": "O ex-presidente da Petrobras José Sergio Gabrielli de fato não foi denunciado, nem se tornou réu, em processos da Operação Lava Jato na Justiça Federal de Curitiba, responsável pelos casos que envolvem corrupção na empresa.",
     "publishedAt": "2019-10-25",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2019/10/25/haddad-lava-jato-lula/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -30845,7 +30845,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -30868,7 +30868,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO, MAS",
-    "summary": "A Lupa classificou como VERDADEIRO, MAS.",
+    "summary": "Os partidos integrantes da chapa de Lula em 2006 (PT, PC do B e PRB) elegeram 97 deputados, de acordo com os dados do Tribunal Superior Eleitoral (TSE) .",
     "publishedAt": "2019-10-25",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2019/10/25/haddad-lava-jato-lula/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -30897,7 +30897,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -30920,7 +30920,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO, MAS",
-    "summary": "A Lupa classificou como VERDADEIRO, MAS.",
+    "summary": "Tanto o Instituto Datafolha quanto o Ibope registraram aumento nas intenções de voto de Luiz Inácio Lula da Silva (PT) depois de sua prisão, em 7 de abril de 2018.",
     "publishedAt": "2019-10-25",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2019/10/25/haddad-lava-jato-lula/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -30949,7 +30949,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -30972,7 +30972,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Em 29 de junho, um procurador que preferiu não se identificar confirmou a veracidade de alguns dos diálogos publicados pelo The Intercept , em entrevista ao jornal Correio Braziliense .",
     "publishedAt": "2019-10-25",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2019/10/25/haddad-lava-jato-lula/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31001,7 +31001,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31024,7 +31024,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Em abril de 2019 , o Datafolha fez sua primeira pesquisa de avaliação do mandato do presidente Jair Bolsonaro (PSL).",
     "publishedAt": "2019-10-25",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2019/10/25/haddad-lava-jato-lula/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31053,7 +31053,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31076,7 +31076,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "Haddad foi ministro da Educação de julho de 2005 até janeiro de 2012.",
     "publishedAt": "2019-04-04",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2019/04/04/haddad-esquerda-youtube/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31105,7 +31105,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31128,7 +31128,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Segundo a Lei Orçamentária Anual (LOA) de 2019, o programa Bolsa Família tem um orçamento de pouco mais de R$ 30 bilhões neste ano .",
     "publishedAt": "2019-04-04",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2019/04/04/haddad-esquerda-youtube/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31157,7 +31157,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31180,7 +31180,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO, MAS",
-    "summary": "A Lupa classificou como VERDADEIRO, MAS.",
+    "summary": "Nos últimos três anos de governo Lula, o orçamento do programa Bolsa Família esteve próximo ao patamar citado por Haddad, quando considerados valores corrigidos pelo IPCA.",
     "publishedAt": "2019-04-04",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2019/04/04/haddad-esquerda-youtube/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31209,7 +31209,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31232,7 +31232,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO, MAS",
-    "summary": "A Lupa classificou como VERDADEIRO, MAS.",
+    "summary": "Segundo o ComexStat , base de dados do Ministério da Economia sobre comércio exterior, o Brasil exportou para a China US$ 64,2 bilhões, e importou US$ 34,7 bilhões – um superávit comercial de US$ 29,5 bilhões.",
     "publishedAt": "2019-04-04",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2019/04/04/haddad-esquerda-youtube/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31261,7 +31261,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31284,7 +31284,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO, MAS",
-    "summary": "A Lupa classificou como VERDADEIRO, MAS.",
+    "summary": "Segundo a Relação Anual de Informações Sociais (Rais) , do Ministério do Trabalho, a diferença entre o número total de pessoas empregadas em 2002, último ano antes de Lula tomar posse, e em 2015, último ano completo do PT no governo, era de 19,4 milhões.",
     "publishedAt": "2019-04-04",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2019/04/04/haddad-esquerda-youtube/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31313,7 +31313,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31336,7 +31336,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "O ex-presidente Lula, preso em Curitiba desde abril, usou o termo fascista para criticar o próprio candidato Jair Bolsonaro (PSL).",
     "publishedAt": "2018-10-25",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/10/25/fim-campanha-bolsonaro-haddad/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31365,7 +31365,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31388,7 +31388,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "Segundo a Agência Nacional do Petróleo, Gás Natural e Biocombustíveis, um botijão de 13 quilos de GLP, o gás de cozinha, custava R$ 68,48, em média, no país em setembro de 2018 .",
     "publishedAt": "2018-10-25",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/10/25/fim-campanha-bolsonaro-haddad/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31417,7 +31417,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31440,7 +31440,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Haddad repetiu frase dita pelo cantor Geraldo Azevedo, que acusou o vice de Bolsonaro, General Mourão, de ter sido torturador na ditadura militar.",
     "publishedAt": "2018-10-25",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/10/25/fim-campanha-bolsonaro-haddad/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31469,7 +31469,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31492,7 +31492,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "INSUSTENTÁVEL",
-    "summary": "A Lupa classificou como INSUSTENTÁVEL.",
+    "summary": "O Conselho Nacional de Justiça (CNJ) , o Fórum Brasileiro de Segurança Pública e o Ministério de Segurança Pública (por telefone) afirmam que não há estimativas no Brasil sobre o número de pessoas que seguem presas mesmo após terem cumprido suas sentenças.",
     "publishedAt": "2018-10-25",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/10/25/fim-campanha-bolsonaro-haddad/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31521,7 +31521,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31544,7 +31544,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "No dia 21 de outubro, Jair Bolsonaro (PSL) divulgou em, sua conta no Twitter, um vídeo em que diz que “essa turma, se quiser ficar aqui, vai ter que se colocar sob a lei de todos nós.",
     "publishedAt": "2018-10-25",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/10/25/fim-campanha-bolsonaro-haddad/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31573,7 +31573,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31596,7 +31596,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Segundo o Tribunal Superior Eleitoral (TSE), o patrimônio de Fernando Haddad (PT) é de R$ 428.451,09 .",
     "publishedAt": "2018-10-25",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/10/25/fim-campanha-bolsonaro-haddad/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31625,7 +31625,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31648,7 +31648,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Em momento algum Bolsonaro declarou que nordestinos deveriam comer capim.",
     "publishedAt": "2018-10-23",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/10/23/roda-viva-haddad/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31677,7 +31677,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31700,7 +31700,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "Segundo os Relatórios Resumidos de Execução Orçamentária (RREO) , São Paulo investiu, em valores corrigidos pela inflação, R$ 14,2 milhões entre os anos de 2013 e 2016 .",
     "publishedAt": "2018-10-23",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/10/23/roda-viva-haddad/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31729,7 +31729,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31752,7 +31752,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "O plenário do Supremo Tribunal Federal (STF) ainda não julgou o caso da tabela de frete .",
     "publishedAt": "2018-10-23",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/10/23/roda-viva-haddad/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31781,7 +31781,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31804,7 +31804,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO, MAS",
-    "summary": "A Lupa classificou como VERDADEIRO, MAS.",
+    "summary": "Em outubro de 2016 , julgamento do Supremo Tribunal Federal (STF) decidiu que pessoas possam ser presas a partir da condenação em segunda instância – o ex-presidente Lula foi condenado por corrupção passiva e lavagem de dinheiro na primeira instância em julho de 2017 , e na segunda instância em janeiro deste ano.",
     "publishedAt": "2018-10-23",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/10/23/roda-viva-haddad/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31833,7 +31833,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31885,7 +31885,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31908,7 +31908,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Em 2009, quando ainda era ministro da Educação no governo Lula, Fernando Haddad recebeu o título de Cidadão Cearense.",
     "publishedAt": "2018-10-23",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/10/23/roda-viva-haddad/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31937,7 +31937,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -31960,7 +31960,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "No dia 17 de agosto deste ano, o Comitê de Direitos Humanos das Nações Unidas – e não a ONU como organização nem mesmo seu Conselho de Direitos Humanos – emitiu um comunicado que não fazia qualquer menção à suposta “fragilidade” do processo pelo qual o ex-presidente Luiz Inácio Lula da Silva foi condenado e está preso.",
     "publishedAt": "2018-09-20",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/20/fernando-haddad-jornal-da-globo/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -31989,7 +31989,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32012,7 +32012,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "O relatório do Fundo Monetário Internacional (FMI) Fiscal Rules At Glance , publicado em 2015 e revisado em 2017, mostra que pelo menos 28 países têm algum tipo de regra ativa de restrição de aumento de gastos (e outros nove chegaram a ter em algum momento dos últimos 30 anos).",
     "publishedAt": "2018-09-20",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/20/fernando-haddad-jornal-da-globo/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32041,7 +32041,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32064,7 +32064,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO, MAS",
-    "summary": "A Lupa classificou como VERDADEIRO, MAS.",
+    "summary": "No dia 28 de junho de 2017, a Associação Nacional dos Procuradores da República (ANPR) protocolou na Presidência da República uma lista tríplice com os nomes mais votados para substituir o então procurador-geral da República, Rodrigo Janot.",
     "publishedAt": "2018-09-20",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/20/fernando-haddad-jornal-da-globo/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32093,7 +32093,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32116,7 +32116,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "O Relatório de Economia Bancária , publicado pelo Banco Central, mostra que, em 2017, cinco bancos concentravam 83,5% das operações de crédito no segmento bancário brasileiro.",
     "publishedAt": "2018-09-20",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/20/fernando-haddad-jornal-da-globo/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32145,7 +32145,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32168,7 +32168,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "As principais pesquisas de intenção de voto publicadas antes de a candidatura de Luiz Inácio Lula da Silva ser vetada pelo Tribunal Superior Eleitoral (TSE) mostravam o ex-presidente na liderança, mas com menos da metade das intenções de votos em candidatos – ou seja, a disputa iria para o segundo turno.",
     "publishedAt": "2018-09-17",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/17/sabatina-folha-uol-sbt-haddad/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32197,7 +32197,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32220,7 +32220,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Na realidade, a aplicação da cláusula de barreira vai começar – e não acabar – após as eleições de 2018.",
     "publishedAt": "2018-09-17",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/17/sabatina-folha-uol-sbt-haddad/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32249,7 +32249,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32272,7 +32272,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "O Levantamento Nacional de Informações Penitenciárias (Infopen) mostra que, em de junho de 2016, 176.691 pessoas estavam presas por crimes relacionados a drogas.",
     "publishedAt": "2018-09-17",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/17/sabatina-folha-uol-sbt-haddad/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32301,7 +32301,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32324,7 +32324,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Na Alemanha, membros da Corte Constitucional são eleitos para mandatos de 12 anos, de acordo com estudo elaborado pela Consultoria Legislativa do Senado em maio de 2015, sobre as formas de indicação para os tribunais superiores de sete países.",
     "publishedAt": "2018-09-17",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/17/sabatina-folha-uol-sbt-haddad/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32353,7 +32353,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32376,7 +32376,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Haddad foi ministro da Educação por sete anos (de julho de 2005 a janeiro de 2012), nos governos dos ex-presidentes Lula e Dilma Rousseff.",
     "publishedAt": "2018-09-17",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/17/sabatina-folha-uol-sbt-haddad/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32405,7 +32405,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32428,7 +32428,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "No final de 2002, a carga tributária equivalia a 32,1% do Produto Interno Bruto (PIB).",
     "publishedAt": "2018-09-17",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/17/sabatina-folha-uol-sbt-haddad/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32457,7 +32457,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32480,7 +32480,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "No período eleitoral de 2016, já era pública a primeira “Lista do Janot”, como ficou popularmente conhecida a lista de políticos que a Procuradoria-Geral da República (PGR) pediu que fossem investigados por suposto envolvimento nos esquemas descobertos na Operação Lava Jato.",
     "publishedAt": "2018-09-07",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/07/fernando-haddad-globonews/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32509,7 +32509,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32532,7 +32532,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "CONTRADITÓRIO",
-    "summary": "A Lupa classificou como CONTRADITÓRIO.",
+    "summary": "Apesar de dizer que sempre foi crítico ao financiamento empresarial de campanha, Haddad teve 9% dos recursos arrecadados em 2012 para sua eleição como prefeito de São Paulo vindos diretamente de empresas.",
     "publishedAt": "2018-09-07",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/07/fernando-haddad-globonews/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32561,7 +32561,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32584,7 +32584,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "A primeira contestação oficial do resultado foi feita quatro dias depois do segundo turno das eleições de 2014.",
     "publishedAt": "2018-09-07",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/07/fernando-haddad-globonews/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32613,7 +32613,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32636,7 +32636,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO, MAS",
-    "summary": "A Lupa classificou como VERDADEIRO, MAS.",
+    "summary": "No dia 12 de julho de 2017, o juiz Sergio Moro condenou o ex-presidente Luiz Inácio Lula da Silva pelos crimes de corrupção passiva e lavagem de dinheiro.",
     "publishedAt": "2018-09-07",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/07/fernando-haddad-globonews/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32665,7 +32665,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32688,7 +32688,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Dados do Tribunal Superior Eleitoral (TSE) mostram que o Partido dos Trabalhadores, de fato, perdeu 60% dos votos entre as últimas duas eleições municipais.",
     "publishedAt": "2018-09-07",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/07/fernando-haddad-globonews/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32717,7 +32717,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32740,7 +32740,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Em 13 de janeiro de 1999 , quase duas semanas depois de sua segunda posse presidencial e depois de ter passado meses e meses negando que a paridade entre o dólar e o real chegaria ao fim, o então presidente Fernando Henrique Cardoso encerrou o período de câmbio controlado no Brasil.",
     "publishedAt": "2018-09-07",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2018/09/07/fernando-haddad-globonews/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32769,7 +32769,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32792,7 +32792,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "A Lei Federal de Incentivo à Cultura, a chamada Lei Rouanet (Lei 8.313/1991) , não pode ser utilizada para financiar a produção de filmes de longa-metragem.",
     "publishedAt": "2026-08-29",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32833,7 +32833,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32856,7 +32856,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "Embora não haja indícios de que Flávio Bolsonaro (PL) tenha oferecido contrapartidas a Daniel Vorcaro em troca do investimento no filme sobre Jair Bolsonaro (PL), investigações da Polícia Federal apontam que o ex-banqueiro ofereceu pagamentos e outras vantagens a políticos eleitos tendo em vista a obtenção de favores.",
     "publishedAt": "2026-08-29",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32889,7 +32889,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32912,7 +32912,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Perícia privada contratada pela defesa da produtora do filme ‘Dark Horse’ tinha como objetivo mostrar os custos do longa-metragem e os documentos comprobatórios como contratos, planilhas financeiras e extratos bancários.",
     "publishedAt": "2026-08-29",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -32965,7 +32965,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -32988,7 +32988,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "Flávio Bolsonaro não assinou três dos cinco requerimentos de criação de comissão parlamentar de inquérito para investigar o Banco Master apresentados no Senado.",
     "publishedAt": "2026-08-29",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -33025,7 +33025,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -33048,7 +33048,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Em março deste ano, o ministro Alexandre de Moraes determinou a realização de operação de busca e apreensão na casa do jornalista Luís Pablo Conceição Almeida, após a publicação de reportagens sobre ministros da corte.",
     "publishedAt": "2026-08-29",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -33089,7 +33089,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -33112,7 +33112,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "A ferramenta de pagamentos instantâneos foi idealizada em 2018 pelo Banco Central durante o governo de Michel Temer (MDB).",
     "publishedAt": "2026-08-29",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -33153,7 +33153,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -33176,7 +33176,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "Apesar de a maior parte das operações via Pix serem gratuitas , uma pequena porcentagem pode ser tarifada , quando envolver empresas.",
     "publishedAt": "2026-08-29",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -33213,7 +33213,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -33281,7 +33281,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -33304,7 +33304,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Flávio Bolsonaro fez duas homenagens a Adriano da Nóbrega enquanto esteve na Assembleia Legislativa do Rio de Janeiro.",
     "publishedAt": "2026-08-29",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -33337,7 +33337,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -33360,7 +33360,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "A primeira acusação contra Adriano da Nóbrega data de maio de 2003 , seis meses antes da primeira homenagem do então deputado estadual Flávio Bolsonaro ao policial.",
     "publishedAt": "2026-08-29",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -33401,7 +33401,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -33424,7 +33424,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "O Brasil segue no topo entre as economias com maior juro real do mundo, segundo levantamento das empresas Lev Intelligence e da MoneYou.",
     "publishedAt": "2026-08-29",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -33461,7 +33461,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -33525,7 +33525,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -33548,7 +33548,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "O governo do presidente Luiz Inácio Lula da Silva (PT) criou 5,7 mil novos cargos comissionados desde o início de sua gestão.",
     "publishedAt": "2026-08-29",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -33585,7 +33585,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -33608,7 +33608,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Por diversas vezes Flávio Bolsonaro colocou em xeque o processo eleitoral.",
     "publishedAt": "2026-08-29",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -33641,7 +33641,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -33664,7 +33664,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "De acordo com os dados e avaliações do Painel Intergovernamental sobre Mudanças Climáticas (IPCC, na silga em inglês), criado pela Organização das Nações Unidas (ONU, a ação humana afeta a natureza de forma inequívoca e destrutiva, sendo a principal causa do aquecimento global.",
     "publishedAt": "2026-08-29",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -33713,7 +33713,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -33736,7 +33736,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Informações sobre movimentações atípicas do Banco Master e Daniel Vorcaro circulam na imprensa ao menos desde julho de 2024 — cinco meses antes dos primeiros contatos registrados entre Flávio Bolsonaro e o banqueiro , como revelou o The Intercept Brasil.",
     "publishedAt": "2026-05-15",
     "originalUrl": "https://www.agencialupa.org/noticias/2026/05/15/flavio-bolsonaro-distorce-fatos-e-se-contradiz-sobre-recursos-para-filme-e-relacao-com-vorcaro/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -33809,7 +33809,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -33832,7 +33832,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "O senador e pré-candidato Flávio Bolsonaro negou inicialmente as informações divulgadas pelo The Intercept Brasil , chamando-as de “mentira” ao ser questionado por um repórter do veículo.",
     "publishedAt": "2026-05-15",
     "originalUrl": "https://www.agencialupa.org/noticias/2026/05/15/flavio-bolsonaro-distorce-fatos-e-se-contradiz-sobre-recursos-para-filme-e-relacao-com-vorcaro/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -33877,7 +33877,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -33900,7 +33900,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "CONTRADITÓRIO",
-    "summary": "A Lupa classificou como CONTRADITÓRIO.",
+    "summary": "Embora o senador alegue ter uma relação estritamente contratual com o banqueiro Daniel Vorcaro, os áudios revelados pelo The Intercept Brasil mostram um vínculo mais íntimo entre os dois, com convites para jantar e mensagens de apoio ao empresário.",
     "publishedAt": "2026-05-15",
     "originalUrl": "https://www.agencialupa.org/noticias/2026/05/15/flavio-bolsonaro-distorce-fatos-e-se-contradiz-sobre-recursos-para-filme-e-relacao-com-vorcaro/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -33941,7 +33941,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -33964,7 +33964,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "A declaração de Flávio Bolsonaro omite que a vantagem de sete pontos sobre o presidente Luiz Inácio Lula da Silva (PT) aparece apenas em um cenário específico – de segundo turno – da pesquisa Gerp, divulgada em 14 de maio .",
     "publishedAt": "2026-05-15",
     "originalUrl": "https://www.agencialupa.org/noticias/2026/05/15/flavio-bolsonaro-distorce-fatos-e-se-contradiz-sobre-recursos-para-filme-e-relacao-com-vorcaro/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -34013,7 +34013,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -34073,7 +34073,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -34096,7 +34096,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "A Lei Federal de Incentivo à Cultura, a chamada Lei Rouanet (Lei 8.313/1991) , não pode ser utilizada para financiar a produção de filmes de longa-metragem.",
     "publishedAt": "2026-05-15",
     "originalUrl": "https://www.agencialupa.org/noticias/2026/05/15/flavio-bolsonaro-distorce-fatos-e-se-contradiz-sobre-recursos-para-filme-e-relacao-com-vorcaro/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -34133,7 +34133,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -34217,7 +34217,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -34240,7 +34240,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "A ferramenta foi idealizada durante o governo de Michel Temer (MDB) pelo Banco Central (BC) , que criou, em maio de 2018, um grupo de trabalho para desenvolver o sistema .",
     "publishedAt": "2025-12-02",
     "originalUrl": "https://www.agencialupa.org/checagem/2025/12/02/no-flow-flavio-bolsonaro-erra-sobre-pix-pl-antifaccao-e-urnas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -34285,7 +34285,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -34308,7 +34308,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "Em agosto de 2021, o ex-presidente Jair Bolsonaro (PL) enviou uma Medida Provisória ao Congresso que criava o Auxílio Brasil, em substituição ao Bolsa Família, com valor mínimo de R$ 400 — que começou a ser pago em dezembro daquele ano.",
     "publishedAt": "2025-12-02",
     "originalUrl": "https://www.agencialupa.org/checagem/2025/12/02/no-flow-flavio-bolsonaro-erra-sobre-pix-pl-antifaccao-e-urnas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -34369,7 +34369,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -34392,7 +34392,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Em 2021, o ex-ministro da Previdência Social e presidente nacional do Partido Democrático Trabalhista (PDT), Carlos Lupi, defendeu nas redes sociais a impressão do voto nas eleições brasileiras.",
     "publishedAt": "2025-12-02",
     "originalUrl": "https://www.agencialupa.org/checagem/2025/12/02/no-flow-flavio-bolsonaro-erra-sobre-pix-pl-antifaccao-e-urnas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -34441,7 +34441,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -34464,7 +34464,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Ao contrário do que afirma Flávio Bolsonaro, as urnas eletrônicas são seguras e passam por etapas de verificação de segurança que atestam a confiabilidade no pleito.",
     "publishedAt": "2025-12-02",
     "originalUrl": "https://www.agencialupa.org/checagem/2025/12/02/no-flow-flavio-bolsonaro-erra-sobre-pix-pl-antifaccao-e-urnas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -34525,7 +34525,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -34548,7 +34548,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "Semanas após o segundo turno das eleições presidenciais, em 22 de novembro de 2022, o presidente do PL, Valdemar Costa Neto, e outros integrantes da sigla alegaram a existência de uma falha nos arquivos de log das urnas fabricadas antes de 2020.",
     "publishedAt": "2025-12-02",
     "originalUrl": "https://www.agencialupa.org/checagem/2025/12/02/no-flow-flavio-bolsonaro-erra-sobre-pix-pl-antifaccao-e-urnas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -34613,7 +34613,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -34636,7 +34636,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "De fato, em dezembro de 2022, o então presidente Bolsonaro nomeou o general Júlio Cesar de Arruda para comandar o Exército .",
     "publishedAt": "2025-12-02",
     "originalUrl": "https://www.agencialupa.org/checagem/2025/12/02/no-flow-flavio-bolsonaro-erra-sobre-pix-pl-antifaccao-e-urnas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -34677,7 +34677,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -34700,7 +34700,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Em dezembro de 2022, o então presidente Bolsonaro nomeou o tenente-brigadeiro Marcelo Kanitz Damasceno para assumir o comando da Força Aérea Brasileira — que continua no comando da Força .",
     "publishedAt": "2025-12-02",
     "originalUrl": "https://www.agencialupa.org/checagem/2025/12/02/no-flow-flavio-bolsonaro-erra-sobre-pix-pl-antifaccao-e-urnas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -34737,7 +34737,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -34760,7 +34760,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "De fato, uma acusação foi protocolada pelo advogado Ricardo Freire Vasconcellos (requerimento 2018.00.000013829-4) no Tribunal Superior Eleitoral (TSE) alegando “fraude matemática” nas urnas.",
     "publishedAt": "2025-12-02",
     "originalUrl": "https://www.agencialupa.org/checagem/2025/12/02/no-flow-flavio-bolsonaro-erra-sobre-pix-pl-antifaccao-e-urnas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -34817,7 +34817,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -34840,7 +34840,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "A Proposta de Lei no 5.582/2025 , conhecida como PL Antifacção enviada pelo governo ao Congresso, não reduz penas para integrantes de facções criminosas.",
     "publishedAt": "2025-12-02",
     "originalUrl": "https://www.agencialupa.org/checagem/2025/12/02/no-flow-flavio-bolsonaro-erra-sobre-pix-pl-antifaccao-e-urnas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -34893,7 +34893,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -34916,7 +34916,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "O presidente Luiz Inácio Lula da Silva (PT) nunca defendeu o roubo de celulares para “tomar uma cervejinha” .",
     "publishedAt": "2025-12-02",
     "originalUrl": "https://www.agencialupa.org/checagem/2025/12/02/no-flow-flavio-bolsonaro-erra-sobre-pix-pl-antifaccao-e-urnas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -34973,7 +34973,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -34996,7 +34996,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Em atos realizados em 7 de setembro de 2021 , o ex-presidente Jair Bolsonaro (PL) fez uma série de ameaças ao Supremo Tribunal Federal (STF), seus ministros e à democracia .",
     "publishedAt": "2024-04-09",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/04/09/flavio-bolsonaro-engana-sobre-ataques-do-pai-ao-stf-e-erra-sobre-corrupcao-na-gestao-do-ex-presidente/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -35045,7 +35045,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -35068,7 +35068,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Em pelo menos uma ocasião, Jair Bolsonaro (PL) valeu-se do aparato público para atacar adversários.",
     "publishedAt": "2024-04-09",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/04/09/flavio-bolsonaro-engana-sobre-ataques-do-pai-ao-stf-e-erra-sobre-corrupcao-na-gestao-do-ex-presidente/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -35129,7 +35129,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -35152,7 +35152,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Ao longo da gestão de Jair Bolsonaro, o Supremo Tribunal Federal (STF) e seus ministros foram alvo recorrente de ataques e ameaças do ex-presidente, tanto em eventos públicos quanto em entrevistas ou publicações pelas redes sociais.",
     "publishedAt": "2024-04-09",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/04/09/flavio-bolsonaro-engana-sobre-ataques-do-pai-ao-stf-e-erra-sobre-corrupcao-na-gestao-do-ex-presidente/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -35213,7 +35213,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -35236,7 +35236,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Diferentemente do que afirmou o senador, o governo de Jair Bolsonaro acumulou vários escândalos de corrupção .",
     "publishedAt": "2024-04-09",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/04/09/flavio-bolsonaro-engana-sobre-ataques-do-pai-ao-stf-e-erra-sobre-corrupcao-na-gestao-do-ex-presidente/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -35293,7 +35293,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -35316,7 +35316,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "O Brasil bateu recorde histórico de pessoas ocupadas no período de agosto, setembro e outubro de 2023, já no governo de Luiz Inácio Lula da Silva (PT) — e não no governo de Jair Bolsonaro (2019 a 2022).",
     "publishedAt": "2024-04-09",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/04/09/flavio-bolsonaro-engana-sobre-ataques-do-pai-ao-stf-e-erra-sobre-corrupcao-na-gestao-do-ex-presidente/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -35353,7 +35353,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -35376,7 +35376,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Em outubro de 2020, Flávio Bolsonaro foi denunciado pelo Ministério Público do Rio de Janeiro por supostamente liderar uma organização criminosa para recolher parte do salário de ex-funcionários públicos em benefício próprio — conduta chamada de rachadinha.",
     "publishedAt": "2024-04-09",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/04/09/flavio-bolsonaro-engana-sobre-ataques-do-pai-ao-stf-e-erra-sobre-corrupcao-na-gestao-do-ex-presidente/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -35417,7 +35417,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -35493,7 +35493,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -35516,7 +35516,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "O presidente precisa do apoio do Congresso para aprovar projetos como este.",
     "publishedAt": "2026-09-22",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/09/22/na-onu-lula-acerta-sobre-desmatamento-e-lei-antifaccao-mas-exagera-sobre-feminicidio/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -35557,7 +35557,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -35580,7 +35580,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "De acordo com o Anuário Brasileiro de Segurança Pública, publicado pelo Fórum Brasileiro de Segurança Pública, 1.571 mulheres foram vítimas de feminicídio no Brasil em 2025 (página 149) – um crime de gênero cometido, em quase 80% dos casos, por companheiros ou ex-parceiros das vítimas.",
     "publishedAt": "2026-09-22",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/09/22/na-onu-lula-acerta-sobre-desmatamento-e-lei-antifaccao-mas-exagera-sobre-feminicidio/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -35609,7 +35609,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -35632,7 +35632,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "O presidente Lula inaugurou, em 9 de setembro de 2025 , o Centro de Cooperação Policial Internacional da Amazônia (CCPI Amazônia).",
     "publishedAt": "2026-09-22",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/09/22/na-onu-lula-acerta-sobre-desmatamento-e-lei-antifaccao-mas-exagera-sobre-feminicidio/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -35665,7 +35665,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -35688,7 +35688,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "A Lei Antifacção prevê pena maior que a estabelecida para a prática de atos de terrorismo.",
     "publishedAt": "2026-09-22",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/09/22/na-onu-lula-acerta-sobre-desmatamento-e-lei-antifaccao-mas-exagera-sobre-feminicidio/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -35721,7 +35721,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -35744,7 +35744,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "A taxa de desmatamento medida pelo Instituto Nacional de Pesquisas Espaciais (Inpe) caiu para 5,7 km2 em 2025, atingindo o menor nível da série histórica desde 2014.",
     "publishedAt": "2026-09-22",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/09/22/na-onu-lula-acerta-sobre-desmatamento-e-lei-antifaccao-mas-exagera-sobre-feminicidio/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -35773,7 +35773,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -35796,7 +35796,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "Os dados mais recentes disponíveis mostram que o Brasil conseguiu registrar, ao mesmo tempo, crescimento econômico e redução das emissões de gases de efeito estufa.",
     "publishedAt": "2026-09-22",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/09/22/na-onu-lula-acerta-sobre-desmatamento-e-lei-antifaccao-mas-exagera-sobre-feminicidio/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -35853,7 +35853,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -35876,7 +35876,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "Em agosto deste ano, a Petrobras confirmou a descoberta de petróleo no poço Morpho, na bacia da Foz do Amazonas, no litoral do Amapá .",
     "publishedAt": "2026-09-22",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/09/22/na-onu-lula-acerta-sobre-desmatamento-e-lei-antifaccao-mas-exagera-sobre-feminicidio/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -35917,7 +35917,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -35940,7 +35940,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "O Brasil foi o terceiro maior destino de investimento estrangeiro direto (IED) do mundo em 2025, segundo os dados mais recentes consolidados pela Organização para a Cooperação e Desenvolvimento Econômico (OCDE) .",
     "publishedAt": "2026-09-22",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/09/22/na-onu-lula-acerta-sobre-desmatamento-e-lei-antifaccao-mas-exagera-sobre-feminicidio/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -35977,7 +35977,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -36000,7 +36000,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "De acordo com investigação da Controladoria-Geral da União (CGU), os indícios mais fortes do escândalo de descontos associativos indevidos no Instituto Nacional do Seguro Social (INSS) começaram a crescer de forma expressiva a partir de 2019.",
     "publishedAt": "2026-08-28",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/27/ao-vivo-checagem-da-entrevista-de-lula-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -36033,7 +36033,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -36056,7 +36056,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Fábio Luís Lula da Silva, conhecido como Lulinha, o filho do presidente Luiz Inácio Lula da Silva (PT), é alvo de três inquéritos da Polícia Federal (PF) que apuram suspeitas de tráfico de influência e corrupção em prol de empresas junto ao governo federal.",
     "publishedAt": "2026-08-28",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/27/ao-vivo-checagem-da-entrevista-de-lula-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -36097,7 +36097,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -36120,7 +36120,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "De acordo com a série histórica do Instituto Brasileiro de Geografia e Estatística (IBGE), o Brasil terminou o ano de 2010 — o último do seu segundo mandato — com um crescimento de 7,5%.",
     "publishedAt": "2026-08-28",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/27/ao-vivo-checagem-da-entrevista-de-lula-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -36149,7 +36149,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -36172,7 +36172,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "O Produto Interno Bruto (PIB) brasileiro cresceu 3% ou mais em outros quatro anos entre 2011 e 2022, antes do período citado por Lula.",
     "publishedAt": "2026-08-28",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/27/ao-vivo-checagem-da-entrevista-de-lula-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -36217,7 +36217,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -36240,7 +36240,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "A operação Carbono Oculto foi uma operação conjunta realizada por diferentes órgãos federais e do estado de São Paulo, como a Polícia Federal, a Receita Federal e o Ministério Público de São Paulo (MPSP).",
     "publishedAt": "2026-08-28",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/27/ao-vivo-checagem-da-entrevista-de-lula-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -36285,7 +36285,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -36308,7 +36308,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Em 2003, apenas 5,8 milhões de brasileiros tinham curso superior .",
     "publishedAt": "2026-08-28",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/27/ao-vivo-checagem-da-entrevista-de-lula-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -36353,7 +36353,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -36376,7 +36376,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Registros publicados pela empresária Roberta Luchsinger em suas redes sociais mostram que ela esteve ao lado de Luiz Inácio Lula da Silva (PT) em diferentes ocasiões entre 2021 e 2022.",
     "publishedAt": "2026-08-28",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/27/ao-vivo-checagem-da-entrevista-de-lula-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -36417,7 +36417,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -36485,7 +36485,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -36508,7 +36508,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "Segundo o Mapa do Ensino Superior, havia 176 instituições públicas de ensino superior no Brasil em 2001 , ano anterior ao primeiro mandato de Lula.",
     "publishedAt": "2026-08-28",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/08/27/ao-vivo-checagem-da-entrevista-de-lula-ao-jornal-nacional/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -36553,7 +36553,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -36576,7 +36576,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Em 2003, apenas 5,8 milhões de brasileiros tinham curso superior .",
     "publishedAt": "2026-08-17",
     "originalUrl": "https://www.agencialupa.org/noticias/2026/08/17/em-pontape-da-campanha-flavio-e-lula-cometem-erros-sobre-desempenho-de-gestoes-passadas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -36621,7 +36621,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -36644,7 +36644,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "O número citado por Lula corresponde apenas às vagas formais criadas em 2022, último ano do governo de Jair Bolsonaro (PL ).",
     "publishedAt": "2026-08-17",
     "originalUrl": "https://www.agencialupa.org/noticias/2026/08/17/em-pontape-da-campanha-flavio-e-lula-cometem-erros-sobre-desempenho-de-gestoes-passadas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -36693,7 +36693,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -36716,7 +36716,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Dados da Relação Anual de Informações Sociais (Rais), divulgados pelo Ministério do Trabalho em 13 de agosto (página 5), mostram que, entre janeiro de 2023 e junho de 2026, foram criados 10,1 milhões de vínculos de emprego formal no país.",
     "publishedAt": "2026-08-17",
     "originalUrl": "https://www.agencialupa.org/noticias/2026/08/17/em-pontape-da-campanha-flavio-e-lula-cometem-erros-sobre-desempenho-de-gestoes-passadas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -36749,7 +36749,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -36772,7 +36772,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "Durante o governo Bolsonaro (2019-2022), a inflação medida pelo Índice Nacional de Preços ao Consumidor Amplo (IPCA) teve uma média anual de 6,1%.",
     "publishedAt": "2026-08-17",
     "originalUrl": "https://www.agencialupa.org/noticias/2026/08/17/em-pontape-da-campanha-flavio-e-lula-cometem-erros-sobre-desempenho-de-gestoes-passadas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -36805,7 +36805,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -36828,7 +36828,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "Segundo o último Censo do Ensino Superior realizado pelo INEP , com dados até 2010, havia 296 instituições públicas de ensino superior no Brasil em 2016, último ano do governo Dilma Rousseff.",
     "publishedAt": "2026-08-17",
     "originalUrl": "https://www.agencialupa.org/noticias/2026/08/17/em-pontape-da-campanha-flavio-e-lula-cometem-erros-sobre-desempenho-de-gestoes-passadas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -36861,7 +36861,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -36884,7 +36884,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Segundo dados da Associação Automobilística Americana (AAA) , o preço médio da gasolina nos Estados Unidos teve um aumento de 37% desde o início da guerra no Irã, em 28 de fevereiro, até o dia 4 de abril, quando chegou a US$ 4,09 por galão – ou R$5,6 por litro.",
     "publishedAt": "2026-04-14",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/04/14/lula-exagera-ao-falar-de-empregos-e-erra-sobre-preco-de-combustiveis-no-brasil/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -36921,7 +36921,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -36944,7 +36944,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "De acordo com a plataforma Global Petrol Prices , a gasolina brasileira era a 68a mais barata do mundo no dia 6 de abril deste ano, a um preço de US$1,31 por litro – ou R$6,75, segundo a conversão do momento .",
     "publishedAt": "2026-04-14",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/04/14/lula-exagera-ao-falar-de-empregos-e-erra-sobre-preco-de-combustiveis-no-brasil/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -36981,7 +36981,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -37004,7 +37004,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "Dados divulgados em 2011 da Relação Anual de Informações Sociais (Rais) , do Ministério do Trabalho e Emprego, mostram que, entre 2003 e 2010, o Brasil gerou 15,3 milhões de empregos — cerca de 4,7 milhões de empregos a menos que o citado pelo presidente.",
     "publishedAt": "2026-04-14",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/04/14/lula-exagera-ao-falar-de-empregos-e-erra-sobre-preco-de-combustiveis-no-brasil/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -37045,7 +37045,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -37068,7 +37068,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Em 2021, no governo do então presidente Jair Bolsonaro (PL), o Produto Interno Bruto (PIB) do Brasil cresceu 4,8% , após queda de 3,3% em 2020.",
     "publishedAt": "2026-04-14",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/04/14/lula-exagera-ao-falar-de-empregos-e-erra-sobre-preco-de-combustiveis-no-brasil/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -37121,7 +37121,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -37144,7 +37144,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "O orçamento atualizado em 2026 do Fundo Nacional de Segurança Pública é de R$ 2,11 bilhões.",
     "publishedAt": "2026-04-14",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/04/14/lula-exagera-ao-falar-de-empregos-e-erra-sobre-preco-de-combustiveis-no-brasil/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -37181,7 +37181,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -37204,7 +37204,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "Em 2025, o valor total pago em despesas com segurança pública pela Bahia foi de R$ 7,78 bilhões.",
     "publishedAt": "2026-04-14",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/04/14/lula-exagera-ao-falar-de-empregos-e-erra-sobre-preco-de-combustiveis-no-brasil/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -37241,7 +37241,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -37264,7 +37264,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "No dia 12 de abril, o senador Flávio Bolsonaro (PL), pré-candidato à Presidência da República, publicou nas redes sociais um vídeo com críticas ao governo Lula.",
     "publishedAt": "2026-04-14",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/04/14/lula-exagera-ao-falar-de-empregos-e-erra-sobre-preco-de-combustiveis-no-brasil/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -37309,7 +37309,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -37332,7 +37332,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Em março de 2026, o acumulado de 12 meses do Índice Nacional de Preços ao Consumidor Amplo (IPCA) fechou em 4,14% , segundo o Instituto Brasileiro de Geografia e Estatística (IBGE) .",
     "publishedAt": "2026-04-14",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/04/14/lula-exagera-ao-falar-de-empregos-e-erra-sobre-preco-de-combustiveis-no-brasil/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -37377,7 +37377,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -37400,7 +37400,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "A Pesquisa Nacional por Amostra de Domicílios Contínua (PNAD Contínua) mais recente, divulgada pelo IBGE em março deste ano, indicou que a massa de salários em circulação na economia registrou patamar recorde no trimestre encerrado em fevereiro, totalizando R$ 371,092 bilhões (página 77).",
     "publishedAt": "2026-04-14",
     "originalUrl": "https://www.agencialupa.org/checagem/2026/04/14/lula-exagera-ao-falar-de-empregos-e-erra-sobre-preco-de-combustiveis-no-brasil/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -37433,7 +37433,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -37456,7 +37456,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "O relatório divulgado pelo Fundo Monetário Internacional (FMI) em outubro de 2022 projetava que o Produto Interno Bruto (PIB) do Brasil cresceria 1% em 2023 ( página 27 do relatório global ).",
     "publishedAt": "2025-12-18",
     "originalUrl": "https://www.agencialupa.org/checagem/2025/12/18/em-balanco-do-ano-lula-faz-afirmacoes-imprecisas-sobre-pib/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -37505,7 +37505,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -37528,7 +37528,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Em 2021, no governo do então presidente Jair Bolsonaro (PL), o Produto Interno Bruto (PIB) do Brasil cresceu 4,8% , após queda de 3,3% em 2020.",
     "publishedAt": "2025-12-18",
     "originalUrl": "https://www.agencialupa.org/checagem/2025/12/18/em-balanco-do-ano-lula-faz-afirmacoes-imprecisas-sobre-pib/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -37577,7 +37577,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -37600,7 +37600,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "A Organização das Nações Unidas para a Alimentação e a Agricultura (FAO/ONU) anunciou em 28 de julho que o Brasil não está mais no Mapa da Fome .",
     "publishedAt": "2025-12-18",
     "originalUrl": "https://www.agencialupa.org/checagem/2025/12/18/em-balanco-do-ano-lula-faz-afirmacoes-imprecisas-sobre-pib/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -37641,7 +37641,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -37664,7 +37664,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Segundo a série histórica do Instituto Brasileiro de Geografia e Estatística (IBGE), o Brasil terminou o ano de 2010 — o último do segundo mandato de Lula — com um crescimento de 7,5%.",
     "publishedAt": "2025-12-18",
     "originalUrl": "https://www.agencialupa.org/checagem/2025/12/18/em-balanco-do-ano-lula-faz-afirmacoes-imprecisas-sobre-pib/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -37693,7 +37693,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -37716,7 +37716,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "O dado citado pelo presidente Lula, na verdade, é a meta a ser alcançada pelo programa Mais Médicos até 2027 .",
     "publishedAt": "2025-12-18",
     "originalUrl": "https://www.agencialupa.org/checagem/2025/12/18/em-balanco-do-ano-lula-faz-afirmacoes-imprecisas-sobre-pib/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -37749,7 +37749,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -37801,7 +37801,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -37824,7 +37824,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "De acordo com estudo publicado na revista Global Change Biology por cientistas do Instituto Nacional de Pesquisas Espaciais (Inpe), em parceria com a Universidade de São Paulo (USP), o desmatamento, de fato, caiu pela metade em dois anos.",
     "publishedAt": "2025-09-23",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/09/23/na-onu-lula-acerta-ao-falar-de-fome-e-omite-contexto-sobre-amazonia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -37865,7 +37865,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -37888,7 +37888,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Os Estados Unidos anunciaram, em 29 de agosto, que negariam vistos de autoridades palestinas para entrada no país a fim de participar da Assembleia Geral da ONU.",
     "publishedAt": "2025-09-23",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/09/23/na-onu-lula-acerta-ao-falar-de-fome-e-omite-contexto-sobre-amazonia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -37925,7 +37925,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -37948,7 +37948,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "Na quarta-feira passada (17), o presidente Lula sancionou o PL 2628/2022, lei que estabelece obrigações para aplicativos, jogos eletrônicos, redes sociais e serviços digitais, visando prevenir riscos e proteger direitos de crianças e adolescentes.",
     "publishedAt": "2025-09-23",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/09/23/na-onu-lula-acerta-ao-falar-de-fome-e-omite-contexto-sobre-amazonia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -37993,7 +37993,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -38016,7 +38016,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "A Organização das Nações Unidas para a Alimentação e a Agricultura (FAO/ONU) anunciou, em 28 de julho deste ano, que o Brasil não está mais no Mapa da Fome .",
     "publishedAt": "2025-09-23",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/09/23/na-onu-lula-acerta-ao-falar-de-fome-e-omite-contexto-sobre-amazonia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -38057,7 +38057,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -38080,7 +38080,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "A estimativa é de que 8,2% da população mundial — cerca de 673 milhões de pessoas — tenham enfrentado a fome em 2024.",
     "publishedAt": "2025-09-23",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/09/23/na-onu-lula-acerta-ao-falar-de-fome-e-omite-contexto-sobre-amazonia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -38117,7 +38117,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -38140,7 +38140,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "Em 2010, considerando apenas carros de passeio e veículos comerciais leves (picapes, SUVs e similares), o Brasil registrou 3,328 milhões de emplacamentos — cerca de 272 mil unidades a menos que o citado pelo presidente.",
     "publishedAt": "2025-08-13",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/08/13/na-bandnews-lula-exagera-ao-dizer-que-acabou-com-a-fome-e-erra-ao-falar-sobre-economia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -38185,7 +38185,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -38208,7 +38208,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "SUBESTIMADO",
-    "summary": "A Lupa classificou como SUBESTIMADO.",
+    "summary": "Em 2022, último ano da gestão do ex-presidente Jair Bolsonaro (PL), o país emplacou 1,957 milhão de carros de passeio e veículos comerciais leves (picapes, SUVs e similares) — cerca de 300 mil a mais do que o número citado por Lula.",
     "publishedAt": "2025-08-13",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/08/13/na-bandnews-lula-exagera-ao-dizer-que-acabou-com-a-fome-e-erra-ao-falar-sobre-economia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -38241,7 +38241,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -38264,7 +38264,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "O Grupo dos 20 (G20), fórum que reúne as principais economias do mundo e representa 85% do Produto Interno Bruto global, foi fundado em 1999. À época, o encontro era destinado a ministros das Finanças e presidentes de Bancos Centrais.",
     "publishedAt": "2025-08-13",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/08/13/na-bandnews-lula-exagera-ao-dizer-que-acabou-com-a-fome-e-erra-ao-falar-sobre-economia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -38293,7 +38293,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -38316,7 +38316,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "SUBESTIMADO",
-    "summary": "A Lupa classificou como SUBESTIMADO.",
+    "summary": "A fala de Lula faz referência às transações de importação entre o Brasil e os Estados Unidos.",
     "publishedAt": "2025-08-13",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/08/13/na-bandnews-lula-exagera-ao-dizer-que-acabou-com-a-fome-e-erra-ao-falar-sobre-economia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -38373,7 +38373,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -38396,7 +38396,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "SUBESTIMADO",
-    "summary": "A Lupa classificou como SUBESTIMADO.",
+    "summary": "Segundo dados do Bureau of Economic Analysis (BEA) e do Office of the United States Trade Representative (USTR), a importação de bens dos EUA corresponde a US$ 42,53 bilhões, ou seja, valor superior ao que foi citado pelo presidente Lula.",
     "publishedAt": "2025-08-13",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/08/13/na-bandnews-lula-exagera-ao-dizer-que-acabou-com-a-fome-e-erra-ao-falar-sobre-economia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -38437,7 +38437,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -38460,7 +38460,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "De fato, o Ministério da Cultura foi extinto em 2019 durante o governo de Jair Bolsonaro (PL) e transformado na Secretaria Especial de Cultura, vinculada ao Ministério da Cidadania e, posteriormente, ao do Turismo.",
     "publishedAt": "2025-08-13",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/08/13/na-bandnews-lula-exagera-ao-dizer-que-acabou-com-a-fome-e-erra-ao-falar-sobre-economia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -38497,7 +38497,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -38553,7 +38553,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -38576,7 +38576,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "SUBESTIMADO",
-    "summary": "A Lupa classificou como SUBESTIMADO.",
+    "summary": "Segundo o Índice Nacional de Preços ao Consumidor Amplo (IPCA), o Brasil terminou o ano de 2010 com uma inflação de 5,91% — maior índice desde 2004.",
     "publishedAt": "2025-08-13",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/08/13/na-bandnews-lula-exagera-ao-dizer-que-acabou-com-a-fome-e-erra-ao-falar-sobre-economia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -38605,7 +38605,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -38628,7 +38628,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Quando assumiu o governo, em janeiro de 2019, o ex-presidente Jair Bolsonaro (PL) publicou medida provisória que extinguiu o Ministério do Trabalho .",
     "publishedAt": "2025-03-21",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/03/21/lula-repete-mentiras-sobre-ser-o-primeiro-presidente-sem-diploma-pib-e-economia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -38681,7 +38681,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -38704,7 +38704,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "De fato, segundo o Instituto Brasileiro de Geografia e Estatística (IBGE), o PIB do país em 2023 foi de 3,2% (página 4).",
     "publishedAt": "2025-03-21",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/03/21/lula-repete-mentiras-sobre-ser-o-primeiro-presidente-sem-diploma-pib-e-economia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -38757,7 +38757,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -38780,7 +38780,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Dados do Instituto Internacional de Estudos Estratégicos (IISS) de 2024 mostram que os gastos militares totalizaram US$ 2,46 trilhões , acima dos US$ 2,24 trilhões do ano anterior.",
     "publishedAt": "2025-03-21",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/03/21/lula-repete-mentiras-sobre-ser-o-primeiro-presidente-sem-diploma-pib-e-economia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -38809,7 +38809,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -38832,7 +38832,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "O ex-presidente Café Filho , que substituiu Getúlio Vargas no poder e que governou o Brasil entre agosto de 1954 e novembro de 1955, chegou a iniciar o curso de direito na Academia de Ciências Jurídicas e Comerciais de Recife, em 1917, mas não concluiu os estudos .",
     "publishedAt": "2025-03-21",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/03/21/lula-repete-mentiras-sobre-ser-o-primeiro-presidente-sem-diploma-pib-e-economia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -38877,7 +38877,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -38900,7 +38900,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "Em 2010, considerando apenas carros de passeio e veículos comerciais leves (picapes, SUVs e similares), o Brasil registrou 3,328 milhões de emplacamentos — cerca de 272 mil unidades a menos que o citado pelo presidente.",
     "publishedAt": "2025-03-21",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/03/21/lula-repete-mentiras-sobre-ser-o-primeiro-presidente-sem-diploma-pib-e-economia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -38945,7 +38945,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -38968,7 +38968,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "SUBESTIMADO",
-    "summary": "A Lupa classificou como SUBESTIMADO.",
+    "summary": "Em 2022, último ano da gestão do ex-presidente Jair Bolsonaro (PL), o país emplacou 1,957 milhão de carros de passeio e veículos comerciais leves (picapes, SUVs e similares) — cerca de 300 mil a mais do que o número citado por Lula.",
     "publishedAt": "2025-03-21",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/03/21/lula-repete-mentiras-sobre-ser-o-primeiro-presidente-sem-diploma-pib-e-economia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -39001,7 +39001,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -39024,7 +39024,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "No ano passado, segundo dados da Federação Nacional da Distribuição de Veículos Automotores (Fenabrave), o país somou um total de 2,484 milhões de emplacamentos de carros de passeio e veículos comerciais leves — cerca de 116 mil carros a menos que o citado pelo presidente.",
     "publishedAt": "2025-03-21",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/03/21/lula-repete-mentiras-sobre-ser-o-primeiro-presidente-sem-diploma-pib-e-economia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -39061,7 +39061,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -39084,7 +39084,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "A edição mais recente do relatório “O Estado da Segurança Alimentar e Nutrição no Mundo (SOFI)” , publicado em 2024 por cinco agências especializadas das Nações Unidas, indicou que 733 milhões de pessoas em média passaram fome em 2023.",
     "publishedAt": "2025-03-21",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/03/21/lula-repete-mentiras-sobre-ser-o-primeiro-presidente-sem-diploma-pib-e-economia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -39117,7 +39117,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -39140,7 +39140,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Em 2021, no governo do ex-presidente Jair Bolsonaro (PL), o Produto Interno Bruto (PIB) do Brasil cresceu 4,8% , após queda de 3,3% em 2020.",
     "publishedAt": "2025-03-21",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/03/21/lula-repete-mentiras-sobre-ser-o-primeiro-presidente-sem-diploma-pib-e-economia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -39193,7 +39193,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -39216,7 +39216,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "De acordo com a série histórica do Instituto Brasileiro de Geografia e Estatística (IBGE), o Brasil terminou o ano de 2010 — o último do seu segundo mandato — com um crescimento de 7,5%.",
     "publishedAt": "2025-03-21",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/03/21/lula-repete-mentiras-sobre-ser-o-primeiro-presidente-sem-diploma-pib-e-economia/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -39245,7 +39245,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -39317,7 +39317,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -39340,7 +39340,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "De acordo com o Índice Nacional de Preços ao Consumidor Amplo (IPCA) , o preço da carne em geral teve uma queda de 9,37% em 2023 — bem menor que o citado pelo presidente em sua fala.",
     "publishedAt": "2025-02-06",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/02/06/alimentos-pib-e-combustiveis-lula-tropeca-em-declaracoes-em-entrevistas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -39377,7 +39377,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -39400,7 +39400,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "SUBESTIMADO",
-    "summary": "A Lupa classificou como SUBESTIMADO.",
+    "summary": "O Índice da Condição da Manutenção (ICM), que mede as condições das estradas administradas pelo Departamento Nacional de Infraestrutura de Transportes (Dnit), mostra que, em dezembro de 2022, o índice de estradas consideradas boas era de 52% (31,7 mil quilômetros).",
     "publishedAt": "2025-02-06",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/02/06/alimentos-pib-e-combustiveis-lula-tropeca-em-declaracoes-em-entrevistas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -39429,7 +39429,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -39452,7 +39452,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Segundo o Índice da Condição da Manutenção (ICM), as condições das estradas administradas pelo DNIT atingiram um total de 75,1% com registro considerado “Bom” , em novembro de 2024.",
     "publishedAt": "2025-02-06",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/02/06/alimentos-pib-e-combustiveis-lula-tropeca-em-declaracoes-em-entrevistas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -39481,7 +39481,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -39504,7 +39504,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "O presidente Lula exagera ao afirmar que não teve direito à defesa à época do processo da operação Lava Jato.",
     "publishedAt": "2025-02-06",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/02/06/alimentos-pib-e-combustiveis-lula-tropeca-em-declaracoes-em-entrevistas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -39569,7 +39569,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -39592,7 +39592,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "CONTRADITÓRIO",
-    "summary": "A Lupa classificou como CONTRADITÓRIO.",
+    "summary": "A declaração recente de Lula contraria outra feita por ele no passado.",
     "publishedAt": "2025-02-06",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/02/06/alimentos-pib-e-combustiveis-lula-tropeca-em-declaracoes-em-entrevistas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -39637,7 +39637,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -39660,7 +39660,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "De acordo com a série histórica do Instituto Brasileiro de Geografia e Estatística (IBGE), o Brasil terminou o ano de 2010 — o último do seu segundo mandato — com um crescimento de 7,5%.",
     "publishedAt": "2025-02-06",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/02/06/alimentos-pib-e-combustiveis-lula-tropeca-em-declaracoes-em-entrevistas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -39689,7 +39689,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -39712,7 +39712,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "Na verdade, em janeiro de 2023, de acordo com documento do Banco Mundial — e não do Fundo Monetário Internacional (FMI), a previsão de crescimento para o Brasil era de 0,8% ( página 7 ).",
     "publishedAt": "2025-02-06",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/02/06/alimentos-pib-e-combustiveis-lula-tropeca-em-declaracoes-em-entrevistas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -39769,7 +39769,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -39792,7 +39792,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "De acordo com o Tesouro Nacional, o país apresentou um déficit primário de R$ 43,004 bilhões (0,36% do PIB) em 2024 (página 6) .",
     "publishedAt": "2025-02-06",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2025/02/06/alimentos-pib-e-combustiveis-lula-tropeca-em-declaracoes-em-entrevistas/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -39829,7 +39829,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -39852,7 +39852,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "O presidente Lula exagera ao afirmar que não teve direito à defesa à época do processo da operação Lava Jato.",
     "publishedAt": "2024-12-16",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/12/16/no-fantastico-lula-exagera-sobre-prisao-e-omite-contexto-sobre-taxa-de-juros/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -39917,7 +39917,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -39940,7 +39940,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "De acordo com os dados das Contas Nacionais Trimestrais , divulgadas pelo Instituto Brasileiro de Geografia e Estatística (IBGE), o país teve um crescimento de 7,5% em 2010 – último ano da segunda gestão de Lula.",
     "publishedAt": "2024-12-16",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/12/16/no-fantastico-lula-exagera-sobre-prisao-e-omite-contexto-sobre-taxa-de-juros/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -39973,7 +39973,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -40037,7 +40037,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -40060,7 +40060,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "O presidente Lula, em diversas vezes, fez um discurso ambivalente em relação à guerra entre a Rússia e a Ucrânia, defendendo que \"os dois lados\" tinham culpa no conflito.",
     "publishedAt": "2024-09-24",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/09/24/na-onu-lula-exagera-sobre-fome-e-papel-do-brasil-na-guerra-da-ucrania/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -40113,7 +40113,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -40169,7 +40169,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -40192,7 +40192,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Em 2023, os gastos militares globais totalizaram US$ 2.443 trilhões em 2023 , um aumento de 6,8% em comparação com 2022.",
     "publishedAt": "2024-09-24",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/09/24/na-onu-lula-exagera-sobre-fome-e-papel-do-brasil-na-guerra-da-ucrania/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -40233,7 +40233,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -40256,7 +40256,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "O presidente Lula faz menção em sua fala sobre os alertas de desmatamento, disponibilizados pelo sistema Deter-B, do Instituto Nacional de Pesquisas Espaciais (Inpe).",
     "publishedAt": "2024-09-24",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/09/24/na-onu-lula-exagera-sobre-fome-e-papel-do-brasil-na-guerra-da-ucrania/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -40293,7 +40293,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -40316,7 +40316,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "De acordo com boletim publicado em maio deste ano pelo Ministério de Minas e Energia , a participação de fontes renováveis de energia elétrica no país representou 89,2% em 2023 — próximo ao número citado por Lula.",
     "publishedAt": "2024-09-24",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/09/24/na-onu-lula-exagera-sobre-fome-e-papel-do-brasil-na-guerra-da-ucrania/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -40345,7 +40345,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -40368,7 +40368,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "Em 2014, relatório da Organização das Nações Unidas para Alimentação e Agricultura (FAO) indicou que o Brasil tinha saído do Mapa da Fome .",
     "publishedAt": "2024-09-24",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/09/24/na-onu-lula-exagera-sobre-fome-e-papel-do-brasil-na-guerra-da-ucrania/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -40417,7 +40417,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -40440,7 +40440,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "O observatório do clima da União Europeia divulgou, em agosto deste ano, que é “ cada vez mais provável ” que 2024 se torne o ano mais quente já registrado.",
     "publishedAt": "2024-09-24",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/09/24/na-onu-lula-exagera-sobre-fome-e-papel-do-brasil-na-guerra-da-ucrania/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -40473,7 +40473,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -40496,7 +40496,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "De acordo com dados divulgados pelo Ministério da Saúde da Faixa de Gaza , controlado pelo Hamas, nesta terça-feira (24), 41.467 pessoas morreram na região desde o início da guerra com Israel, em 7 de outubro de 2023.",
     "publishedAt": "2024-09-24",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/09/24/na-onu-lula-exagera-sobre-fome-e-papel-do-brasil-na-guerra-da-ucrania/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -40529,7 +40529,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -40552,7 +40552,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "A Bacia Amazônica enfrenta a pior estiagem dos últimos 45 anos .",
     "publishedAt": "2024-09-24",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/09/24/na-onu-lula-exagera-sobre-fome-e-papel-do-brasil-na-guerra-da-ucrania/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -40589,7 +40589,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -40645,7 +40645,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -40668,7 +40668,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Dados do Governo do Rio Grande do Sul, de 20 de agosto deste ano , mostram que a enchente que ocorreu entre abril e maio afetou 478 municípios e 2,3 milhões de pessoas.",
     "publishedAt": "2024-09-24",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/09/24/na-onu-lula-exagera-sobre-fome-e-papel-do-brasil-na-guerra-da-ucrania/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -40705,7 +40705,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -40728,7 +40728,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "O ex-presidente Café Filho, que substituiu Getúlio Vargas no poder e governou o Brasil entre agosto de 1954 e novembro de 1955 , também não tinha diploma de nível superior.",
     "publishedAt": "2024-06-26",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/06/26/no-uol-lula-erra-sobre-economia-e-ao-negar-criticas-a-gestao-bolsonaro/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -40757,7 +40757,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -40780,7 +40780,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "Lula não conseguiu duplicar a quantidade de alunos universitários durante seus dois primeiros mandatos na Presidência da República (2003 a 2010).",
     "publishedAt": "2024-06-26",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/06/26/no-uol-lula-erra-sobre-economia-e-ao-negar-criticas-a-gestao-bolsonaro/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -40817,7 +40817,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -40840,7 +40840,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Lula encerrou o último mês de seu segundo mandato na presidência, em dezembro de 2010, com aprovação de 87% , de acordo com pesquisa do Instituto Brasileiro de Opinião Pública e Estatística (IBOPE), encomendada pela Confederação Nacional da Indústria (CNI) ( página 9 ).",
     "publishedAt": "2024-06-26",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/06/26/no-uol-lula-erra-sobre-economia-e-ao-negar-criticas-a-gestao-bolsonaro/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -40873,7 +40873,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -40896,7 +40896,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Já em seu discurso de posse , Lula se referiu à gestão do ex-presidente Jair Bolsonaro (PL) como “projeto de destruição nacional” e, em outro momento, citou que o cenário encontrado pelo Gabinete de Transição de Governo foi “estarrecedor”.",
     "publishedAt": "2024-06-26",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/06/26/no-uol-lula-erra-sobre-economia-e-ao-negar-criticas-a-gestao-bolsonaro/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -40937,7 +40937,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -40960,7 +40960,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Atual ministro da Secretaria Extraordinária de Apoio à Reconstrução do Rio Grande do Sul, Paulo Pimenta, em 2004, na condição de deputado federal pelo PT-RS, foi o relator do Projeto de Lei no 7134/2002 , na Comissão de Constituição e Justiça e de Cidadania (CCJC).",
     "publishedAt": "2024-06-26",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/06/26/no-uol-lula-erra-sobre-economia-e-ao-negar-criticas-a-gestao-bolsonaro/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -40997,7 +40997,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -41020,7 +41020,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "Apesar de o terceiro governo de Lula ter registrado crescimento no Produto Interno Bruto (PIB), controle da inflação e redução no desemprego, o presidente erra ao dizer que todos os dados econômicos melhoraram após sua entrada no cargo.",
     "publishedAt": "2024-06-26",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/06/26/no-uol-lula-erra-sobre-economia-e-ao-negar-criticas-a-gestao-bolsonaro/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -41093,7 +41093,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -41153,7 +41153,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -41176,7 +41176,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "De acordo com dados do último Relatório de Informações Penais (RELIPEN) , do Ministério da Justiça e Segurança Pública, referente ao último semestre de 2023 (julho a dezembro), 7.619 dos 136.185 detentos que tiveram direito à saída temporária no período, não regressaram para as penitenciárias ( páginas 165 e 175 ).",
     "publishedAt": "2024-06-26",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/06/26/no-uol-lula-erra-sobre-economia-e-ao-negar-criticas-a-gestao-bolsonaro/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -41209,7 +41209,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -41232,7 +41232,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "O Projeto de Lei 1904/2024 , que ainda tramita na Câmara dos Deputados, prevê uma pena que pode chegar a até 20 anos de prisão tanto para gestantes quanto para quem realiza o aborto após 22 semanas de gestação, equiparando a punição ao crime de homicídio simples ( artigo 121 do Código Penal ).",
     "publishedAt": "2024-06-26",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/06/26/no-uol-lula-erra-sobre-economia-e-ao-negar-criticas-a-gestao-bolsonaro/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -41269,7 +41269,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -41333,7 +41333,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -41356,7 +41356,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "Lula vetou na íntegra , em novembro do ano passado, o Projeto de Lei n° 334/2023 , que prorroga, por mais quatro anos, a chamada desoneração da folha salarial (espécie de incentivo fiscal destinado a 17 grandes setores da economia ).",
     "publishedAt": "2024-06-26",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/06/26/no-uol-lula-erra-sobre-economia-e-ao-negar-criticas-a-gestao-bolsonaro/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -41405,7 +41405,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -41428,7 +41428,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "EXAGERADO",
-    "summary": "A Lupa classificou como EXAGERADO.",
+    "summary": "Apesar de Lula ter negociado apoio no Congresso para a aprovação de projetos, muitas propostas que partiram do governo foram modificadas e rejeitadas pelos parlamentares.",
     "publishedAt": "2024-05-01",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/05/01/ato-de-1o-de-maio-lula-erra-dado-da-cesta-basica-e-exagera-sobre-apoio-no-congresso/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -41501,7 +41501,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -41524,7 +41524,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "O presidente Lula vetou integralmente, em novembro de 2023, o Projeto de Lei que prorrogava, por mais quatro anos, a desoneração da folha salarial destinado a 17 setores da economia.",
     "publishedAt": "2024-05-01",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/05/01/ato-de-1o-de-maio-lula-erra-dado-da-cesta-basica-e-exagera-sobre-apoio-no-congresso/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -41561,7 +41561,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -41584,7 +41584,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALSO",
-    "summary": "A Lupa classificou como FALSO.",
+    "summary": "A fala de Lula se refere ao Projeto de Lei Complementar (PLP) 68/24 , apresentado na semana passada pelo governo e que regulamenta a reforma tributária.",
     "publishedAt": "2024-05-01",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/05/01/ato-de-1o-de-maio-lula-erra-dado-da-cesta-basica-e-exagera-sobre-apoio-no-congresso/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -41633,7 +41633,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -41656,7 +41656,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "FALTA CONTEXTO",
-    "summary": "A Lupa classificou como FALTA CONTEXTO.",
+    "summary": "O Congresso aprovou em abril deste ano um projeto de lei que modificou as regras de isenção de Imposto de Renda.",
     "publishedAt": "2024-05-01",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/05/01/ato-de-1o-de-maio-lula-erra-dado-da-cesta-basica-e-exagera-sobre-apoio-no-congresso/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -41693,7 +41693,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   },
   {
@@ -41716,7 +41716,7 @@
     "publisher": "Lupa",
     "assessmentOrigin": "publisher",
     "originalLabel": "VERDADEIRO",
-    "summary": "A Lupa classificou como VERDADEIRO.",
+    "summary": "O Pé-de-meia é uma espécie de poupança com pagamento mensal de R$ 200 destinada a promover a permanência e a conclusão escolar de estudantes matriculados no ensino médio público.",
     "publishedAt": "2024-05-01",
     "originalUrl": "https://www.agencialupa.org/jornalismo/2024/05/01/ato-de-1o-de-maio-lula-erra-dado-da-cesta-basica-e-exagera-sobre-apoio-no-congresso/",
     "methodologyUrl": "https://www.agencialupa.org/acontecendo-na-lupa/2015/10/15/como-fazemos-nossas-checagens/",
@@ -41745,7 +41745,7 @@
       "approved": true,
       "reviewer": "Claude, modelo principal (regra 3 + Jev + validação cega)",
       "reviewerKind": "model_principal",
-      "reviewedAt": "2026-09-29T20:33:54.000Z"
+      "reviewedAt": "2026-09-29T20:37:44.000Z"
     }
   }
 ]
