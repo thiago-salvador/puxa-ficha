@@ -79,6 +79,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     {
+      url: `${SITE_ORIGIN}/programas`,
+      changeFrequency: "weekly",
+      priority: 0.6,
+    },
+    {
       url: `${SITE_ORIGIN}/imprensa`,
       changeFrequency: "weekly",
       priority: 0.7,

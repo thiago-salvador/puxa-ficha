@@ -557,6 +557,7 @@ export function CandidatoProfile({
     active: activeTab === "programa" && programaEnabled,
     slug: ficha.slug,
     manifesto: programaGoverno,
+    requestedDocumentId: new URLSearchParams(locationSearch).get("documentoId"),
   })
   const [tabHighlightRef, setTabHighlightRef] = useState<string | null>(null)
   const tabContentRef = useRef<HTMLDivElement>(null)

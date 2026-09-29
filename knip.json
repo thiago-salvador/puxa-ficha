@@ -14,6 +14,7 @@
     "tests/fixtures/visual/senado-running-mates.ts",
     "tests/visual/**/*.spec.ts",
     "tests/visual/imprensa.playwright.config.ts",
+    "tests/visual/programas-busca.playwright.config.ts",
     "tests/visual/fixtures/poll-evolution.tsx"
   ],
   "project": [

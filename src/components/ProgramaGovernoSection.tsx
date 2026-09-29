@@ -8,6 +8,7 @@ import {
   useMemo,
   useRef,
   useState,
+  useSyncExternalStore,
   type ReactNode,
 } from "react"
 import {
@@ -32,6 +33,11 @@ import {
 } from "@/lib/compromisso-evidencia"
 import type { ProgramaGovernoPendencia } from "@/lib/programa-governo-pendencia"
 import { compromissoEvidenciaCopy, programaGovernoPendenteCopy } from "@/lib/ui-labels"
+import { findProgramaTextMatches, normalizedSearch, type ProgramaTextMatch } from "@/lib/programa-governo-text-search"
+import { programaSecaoAnchor, resolveProgramaSectionTarget } from "@/lib/programa-governo-navigation"
+
+export { findProgramaTextMatches } from "@/lib/programa-governo-text-search"
+export type { ProgramaTextMatch } from "@/lib/programa-governo-text-search"
 
 export type ProgramaGovernoLoadState = "idle" | "loading" | "loaded" | "failed"
 
@@ -46,44 +52,6 @@ type ProgramaGovernoFetch = (
   input: string,
   init: RequestInit,
 ) => Promise<Pick<Response, "ok" | "status" | "json">>
-
-export type ProgramaTextMatch = { start: number; end: number }
-
-function normalizedSearch(value: string) {
-  return value
-    .normalize("NFD")
-    .replace(/\p{M}+/gu, "")
-    .toLocaleLowerCase("pt-BR")
-}
-
-export function findProgramaTextMatches(text: string, rawQuery: string): ProgramaTextMatch[] {
-  const query = normalizedSearch(rawQuery.trim())
-  if (!query) return []
-  const searchable: string[] = []
-  const starts: number[] = []
-  const ends: number[] = []
-  let originalOffset = 0
-  for (const character of text) {
-    const start = originalOffset
-    originalOffset += character.length
-    const normalized = normalizedSearch(character)
-    for (const normalizedCharacter of normalized) {
-      searchable.push(normalizedCharacter)
-      starts.push(start)
-      ends.push(originalOffset)
-    }
-  }
-  const haystack = searchable.join("")
-  const matches: ProgramaTextMatch[] = []
-  let cursor = 0
-  while (cursor <= haystack.length - query.length) {
-    const index = haystack.indexOf(query, cursor)
-    if (index < 0) break
-    matches.push({ start: starts[index], end: ends[index + query.length - 1] })
-    cursor = index + Math.max(1, query.length)
-  }
-  return matches
-}
 
 type ProgramaGovernoLinkFonte = Pick<
   ProgramaGovernoFontePublica,
@@ -715,10 +683,12 @@ export function useProgramaGovernoDocuments({
   active,
   slug,
   manifesto,
+  requestedDocumentId,
 }: {
   active: boolean
   slug: string
   manifesto: ProgramaGovernoManifestoPublico | null
+  requestedDocumentId?: string | null
 }) {
   const documents = useMemo(
     () => manifesto?.estado === "aprovado" ? (manifesto.documentos ?? []) : [],
@@ -728,7 +698,9 @@ export function useProgramaGovernoDocuments({
   const [selectedDocumentId, setSelectedDocumentId] = useState<string | null>(
     documents[0]?.documentoId ?? null,
   )
-  const activeDocumentId = documents.some(
+  const activeDocumentId = requestedDocumentId && documents.some((document) => document.documentoId === requestedDocumentId)
+    ? requestedDocumentId
+    : documents.some(
     (document) => document.documentoId === selectedDocumentId,
   )
     ? selectedDocumentId
@@ -783,6 +755,15 @@ export function useProgramaGovernoDocuments({
     setSelectedDocumentId(documentoId)
     setLoadedDocument(cached)
     setLoadState(cached ? "loaded" : "idle")
+    if (typeof window !== "undefined" && new URLSearchParams(window.location.search).has("documentoId")) {
+      const url = new URL(window.location.href)
+      url.searchParams.set("documentoId", documentoId)
+      url.searchParams.delete("sourceSha256")
+      url.searchParams.delete("secao")
+      url.hash = ""
+      window.history.pushState(null, "", `${url.pathname}${url.search}`)
+      window.dispatchEvent(new Event("puxa-ficha:location-search-change"))
+    }
   }, [documents])
 
   const retryDocument = useCallback(() => {
@@ -849,7 +830,16 @@ function HighlightedText({
   return <>{nodes}</>
 }
 
-function ProgramaDocument({ secoes }: { secoes: ProgramaGovernoSecao[] }) {
+function subscribeProgramaLocation(callback: () => void) {
+  window.addEventListener("popstate", callback)
+  window.addEventListener("puxa-ficha:location-search-change", callback)
+  return () => {
+    window.removeEventListener("popstate", callback)
+    window.removeEventListener("puxa-ficha:location-search-change", callback)
+  }
+}
+
+function ProgramaDocument({ secoes, sourceSha256 }: { secoes: ProgramaGovernoSecao[]; sourceSha256?: string }) {
   const INITIAL_VISIBLE_SECTIONS = 12
   const SECTION_BATCH_SIZE = 12
   const [query, setQuery] = useState("")
@@ -857,14 +847,17 @@ function ProgramaDocument({ secoes }: { secoes: ProgramaGovernoSecao[] }) {
   const [visibleSectionCount, setVisibleSectionCount] = useState(INITIAL_VISIBLE_SECTIONS)
   const [pendingResult, setPendingResult] = useState<number | null>(null)
   const markRefs = useRef<Array<HTMLElement | null>>([])
+  const search = useSyncExternalStore(subscribeProgramaLocation, () => window.location.search, () => "")
+  const target = resolveProgramaSectionTarget(secoes, sourceSha256, search)
+  const sectionAnchor = (id: string) => sourceSha256 ? programaSecaoAnchor(sourceSha256, id) : `programa-${id}`
   const plans = useMemo(() => {
     const matchesBySection = secoes.map((section) =>
-      findProgramaTextMatches(section.conteudo, query),
+      section.origem === "sem-texto" ? [] : findProgramaTextMatches(section.conteudo, query),
     )
     return buildSearchPlans(matchesBySection)
   }, [secoes, query])
   const resultCount = plans.reduce((total, plan) => total + plan.matches.length, 0)
-  const visibleSections = secoes.slice(0, visibleSectionCount)
+  const visibleSections = secoes.slice(0, Math.max(visibleSectionCount, target.index + 1))
   const remainingSections = Math.max(0, secoes.length - visibleSections.length)
   const toc = useMemo(() => {
     const seen = new Set<string>()
@@ -876,6 +869,14 @@ function ProgramaDocument({ secoes }: { secoes: ProgramaGovernoSecao[] }) {
       return true
     })
   }, [secoes])
+
+  useEffect(() => {
+    if (target.index < 0 || !sourceSha256) return
+    const frame = requestAnimationFrame(() => {
+      document.getElementById(programaSecaoAnchor(sourceSha256, secoes[target.index].id))?.scrollIntoView({ block: "center" })
+    })
+    return () => cancelAnimationFrame(frame)
+  }, [target.index, sourceSha256, secoes])
 
   useEffect(() => {
     if (pendingResult === null) return
@@ -911,12 +912,13 @@ function ProgramaDocument({ secoes }: { secoes: ProgramaGovernoSecao[] }) {
   const revealSection = useCallback((sectionIndex: number, sectionId: string) => {
     setVisibleSectionCount((current) => Math.max(current, sectionIndex + 1))
     requestAnimationFrame(() => requestAnimationFrame(() => {
-      document.getElementById(`programa-${sectionId}`)?.scrollIntoView({ behavior: "smooth", block: "start" })
+      document.getElementById(sourceSha256 ? programaSecaoAnchor(sourceSha256, sectionId) : `programa-${sectionId}`)?.scrollIntoView({ behavior: "smooth", block: "start" })
     }))
-  }, [])
+  }, [sourceSha256])
 
   return (
     <div data-pf-programa-document="">
+      {target.stale && <p role="alert" className="mb-4 rounded-lg border border-border p-4 text-sm">Este link se refere a uma versão ou seção que não está mais disponível. Faça uma nova busca para consultar o documento atual.</p>}
       <div className="rounded-[12px] border border-border bg-card p-4 sm:p-5">
         <label htmlFor="programa-search" className="text-sm font-semibold text-foreground">
           Buscar no programa
@@ -952,6 +954,8 @@ function ProgramaDocument({ secoes }: { secoes: ProgramaGovernoSecao[] }) {
             </button>
           </div>
         </div>
+        <a href={`/programas${query.trim() ? `?${new URLSearchParams({ q: query.trim() })}` : ""}`} className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Buscar em todos os programas</a>
+        {query.trim() && resultCount === 0 && <p className="mt-2 text-sm text-muted-foreground">Nenhum trecho encontrado neste documento.</p>}
       </div>
 
       {toc.length > 0 && (
@@ -961,10 +965,10 @@ function ProgramaDocument({ secoes }: { secoes: ProgramaGovernoSecao[] }) {
             {toc.map((section) => (
               <li key={section.id} className="break-inside-avoid">
                 <a
-                  href={`#programa-${section.id}`}
+                  href={`#${sectionAnchor(section.id)}`}
                   onClick={(event) => {
                     event.preventDefault()
-                    window.history.pushState(null, "", `#programa-${section.id}`)
+                    window.history.pushState(null, "", `#${sectionAnchor(section.id)}`)
                     revealSection(secoes.findIndex((item) => item.id === section.id), section.id)
                   }}
                   className="break-words text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground"
@@ -982,7 +986,8 @@ function ProgramaDocument({ secoes }: { secoes: ProgramaGovernoSecao[] }) {
           const level = Math.min(4, Math.max(2, section.nivel + 1))
           const Heading = `h${level}` as "h2" | "h3" | "h4"
           return (
-            <section key={section.id} id={`programa-${section.id}`} className="scroll-mt-32 border-b border-border/60 pb-10" data-pf-programa-section={section.id}>
+            <section key={section.id} id={sectionAnchor(section.id)} className="scroll-mt-32 border-b border-border/60 pb-10" data-pf-programa-section={section.id}>
+              {sourceSha256 && <span id={`programa-${section.id}`} aria-hidden="true" />}
               <Heading className="break-words text-xl font-semibold text-foreground">{section.titulo}</Heading>
               <p className="mt-1 text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground">
                 {section.paginaInicial === section.paginaFinal ? `Página ${section.paginaInicial}` : `Páginas ${section.paginaInicial} a ${section.paginaFinal}`}
@@ -1005,7 +1010,7 @@ function ProgramaDocument({ secoes }: { secoes: ProgramaGovernoSecao[] }) {
           </p>
           <button
             type="button"
-            onClick={() => setVisibleSectionCount((current) => Math.min(secoes.length, current + SECTION_BATCH_SIZE))}
+            onClick={() => setVisibleSectionCount((current) => Math.min(secoes.length, Math.max(current, visibleSections.length) + SECTION_BATCH_SIZE))}
             className="mt-4 min-h-11 rounded-[8px] bg-foreground px-5 py-2 text-sm font-semibold text-background outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
             Carregar mais {Math.min(SECTION_BATCH_SIZE, remainingSections)} capítulos
@@ -1118,6 +1123,7 @@ export function ProgramaGovernoTab({
             <ProgramaDocument
               key={selectedLoadedDocument.documentoId}
               secoes={selectedLoadedDocument.secoes}
+              sourceSha256={selectedLoadedDocument.sourceSha256}
             />
           ) : (
             <div role="alert" className="rounded-[12px] border border-border bg-card p-6 text-sm text-muted-foreground">
@@ -1177,7 +1183,7 @@ export function ProgramaGovernoTab({
         {!(manifesto.estado === "aprovado" && manifesto.resumo) && <SourceLink fonte={response.data.fonte} />}
       </div>
       {resumoTopo}
-      <ProgramaDocument secoes={response.data.secoes} />
+      <ProgramaDocument secoes={response.data.secoes} sourceSha256={manifesto.sourceSha256 ?? manifesto.documentos?.[0]?.sourceSha256} />
     </section>
   )
 }

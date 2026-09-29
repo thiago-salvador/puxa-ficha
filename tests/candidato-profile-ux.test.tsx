@@ -86,9 +86,9 @@ describe("ondas de UX da ficha", () => {
     assert.match(html, /12 de 20 capítulos exibidos/)
     assert.match(html, /Carregar mais 8 capítulos/)
     assert.doesNotMatch(html, /TERMO_QUE_EXISTE_APENAS_NO_ULTIMO_CAPITULO/)
-    assert.match(source, /secoes\.map\(\(section\) =>\s*findProgramaTextMatches/)
+    assert.match(source, /secoes\.map\(\(section\) =>\s*section\.origem === "sem-texto" \? \[\] : findProgramaTextMatches/)
     assert.match(source, /setVisibleSectionCount\(\(current\) => Math\.max\(current, sectionIndex \+ 1\)\)/)
-    assert.match(source, /window\.history\.pushState\(null, "", `#programa-\$\{section\.id\}`\)/)
+    assert.match(source, /window\.history\.pushState\(null, "", `#\$\{sectionAnchor\(section\.id\)\}`\)/)
   })
 
   it("explica carregamentos em vez de exibir apenas placeholders visuais", () => {
