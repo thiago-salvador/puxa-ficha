@@ -117,10 +117,10 @@ test("dry-run computes full identity risk before filtering both coverage plans",
   const historyCoverage = localIngestSource.indexOf("const historyCoverage =", familyCoverage)
   assert.ok(financePlan >= 0 && riskSet > financePlan && familyCoverage > riskSet && historyCoverage > familyCoverage)
   assert.match(localIngestSource.slice(riskSet, familyCoverage), /finance\.ok && existsSync\(financePlanPath\)/)
-  assert.match(localIngestSource.slice(riskSet, historyCoverage), /writeFilteredReceiptArtifact\(applyFamilyReceiptsPath, eligibleFamilyReceiptsPath, identityRiskSlugs\)/)
+  assert.match(localIngestSource.slice(riskSet, historyCoverage), /writeFilteredReceiptArtifact\(applyFamilyReceiptsPath, eligibleFamilyReceiptsPath, identityRiskSlugs, identityReleasedCells\)/)
   assert.match(localIngestSource.slice(riskSet, historyCoverage), /`--in=\$\{eligibleFamilyReceiptsPath\}`/)
   assert.match(localIngestSource.slice(riskSet, historyCoverage), /historico-recibos-elegiveis\.json/)
-  assert.match(localIngestSource.slice(riskSet, historyCoverage), /writeFilteredReceiptArtifact\(receiptPath, historyCoverageReceiptsPath, identityRiskSlugs\)/)
+  assert.match(localIngestSource.slice(riskSet, historyCoverage), /writeFilteredReceiptArtifact\(receiptPath, historyCoverageReceiptsPath, identityRiskSlugs, identityReleasedCells\)/)
 })
 
 test("coverage receipt filter writes a new private artifact and preserves the reviewed input", () => {

@@ -368,7 +368,7 @@ function ProgramaEvidenciasRelacionadas({
                       return (
                         <li key={item.id} className="border-t border-border/40 pt-3 text-sm">
                           <p className="flex flex-wrap items-center gap-2 text-xs font-semibold text-muted-foreground">
-                            <span className="rounded-full bg-background px-2 py-0.5 text-foreground">{compromissoEvidenciaCopy.tipo[item.tipo]}</span>
+                            <span className="rounded-full bg-background px-2 py-0.5 text-foreground">{item.rotuloTipo ?? compromissoEvidenciaCopy.tipo[item.tipo]}</span>
                             <span>{compromissoEvidenciaCopy.relacao[item.relacao]}</span>
                             {item.referencia && <span>{item.referencia}</span>}
                             {item.fonteEmConfirmacao && (

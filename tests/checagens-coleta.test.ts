@@ -961,12 +961,13 @@ describe("catálogo de checagens e recibos versionados", () => {
 
   it("aplica o critério editorial de atribuição nos leads de Lula e Eduardo Paes", () => {
     // O catálogo guarda contagens, não títulos: estas asserções verificam os números publicados.
-    // Catálogo v2 (coleta local de 28/09 com UOL e AFP; decisões da validação e da Mesa aplicadas).
+    // Catálogo v2 (coleta local de 28/09 com UOL e AFP; decisões da validação e da Mesa aplicadas,
+    // mais os leads que a Mesa do L8 trouxe na decisão: Lula +21, Paes +2, Tarcísio +3).
     const contagens = new Map(committedReceipts.receipts.map((receipt) => [receipt.candidate_slug, receipt.leads]))
     assert.equal(committedReceipts.policy, "pf-checagens-v2")
-    assert.equal(contagens.get("lula"), 1420)
-    assert.equal(contagens.get("eduardo-paes"), 72)
-    assert.equal(contagens.get("tarcisio-gov-sp"), 43)
+    assert.equal(contagens.get("lula"), 1441)
+    assert.equal(contagens.get("eduardo-paes"), 74)
+    assert.equal(contagens.get("tarcisio-gov-sp"), 46)
   })
 
   it("reconhece todas as versões do boato da sobrinha de Eduardo Paes", () => {
