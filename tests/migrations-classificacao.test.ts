@@ -646,7 +646,7 @@ describe("classificador puro (#136)", () => {
     // Tarcísio: só o CNJ aprovado; Pazolini: nunca inserido e oculto no site.
     assert.match(migration, /'2052422-44\.2025\.8\.26\.0000'/)
     assert.doesNotMatch(migration, /1003777-02\.2024\.8\.26\.0562|2002493-39\.2023\.8\.08\.0024/)
-    assert.doesNotMatch(migration, /\/Users\//)
+    assert.doesNotMatch(migration, /[/]Users[/]/)
     assert.equal(
       TODAS_COM_REPLAY_SCHEMA.find((item) => item.arquivo === arquivo)?.replaySchema,
       false,

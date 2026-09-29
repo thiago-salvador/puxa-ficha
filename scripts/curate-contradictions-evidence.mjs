@@ -2,13 +2,17 @@
 
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
-import { dirname } from "node:path";
+import { homedir } from "node:os";
+import { dirname, join } from "node:path";
 
 const require = createRequire(import.meta.url);
 const { stripAccents } = require("../src/lib/strip-accents.ts");
 
-const DEFAULT_OUT =
-  "/Users/thiagosalvador/.disposable-html/2026-08-05-puxa-ficha-contradicoes-curadoria.evidence.json";
+const DEFAULT_OUT = join(
+  homedir(),
+  ".disposable-html",
+  "2026-08-05-puxa-ficha-contradicoes-curadoria.evidence.json",
+);
 
 function flag(name, fallback) {
   const prefix = `--${name}=`;

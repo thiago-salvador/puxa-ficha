@@ -50,7 +50,7 @@ nova execução.
 - `main` é a base integrável e deve refletir o estado superior conhecido.
 - Desenvolvimento usa branches `codex/*` quando necessário.
 - Não mantenha worktrees persistentes. A pasta canônica local é
-  `/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha`.
+  `<repo>`.
 - Não faça stash, descarte ou sobrescreva mudanças do usuário.
 - PR aberto não é merge; merge não é deploy; deploy Ready não prova que a rota
   pública contém o dado esperado.

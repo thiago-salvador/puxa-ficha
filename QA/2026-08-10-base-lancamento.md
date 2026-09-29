@@ -2,7 +2,7 @@
 
 Branch `base-lancamento`, montada pela Sessão Raiz em 09/08/2026, em worktree
 isolado. O checkout compartilhado
-(`/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha`) não foi tocado: nem
+(`<repo>`) não foi tocado: nem
 arquivo criado, nem `git add`, nem commit, nem `stash`. Ele segue em `main`
 `0b08a3b` com os mesmos 27 paths sujos de antes.
 

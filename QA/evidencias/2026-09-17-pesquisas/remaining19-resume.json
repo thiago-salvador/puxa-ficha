@@ -81,31 +81,31 @@
       "sha256": "76ea21c5df368e1e8175b521c9d9183b9f103c4a8789913dbde2ac18d0059e8b"
     },
     {
-      "path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/br-extraidos.json",
+      "path": "QA/evidencias/2026-09-17-pesquisas/br-extraidos.json",
       "sha256": "353079a7f9ad8dd763b60cf336c54c269ee837c5d51cec01790685b3ac318bc4"
     },
     {
-      "path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/br-catalog-vs-raw.json",
+      "path": "QA/evidencias/2026-09-17-pesquisas/br-catalog-vs-raw.json",
       "sha256": "94763dee7cba7b6ed97d327671bb456ce167a737c3b41f6472a6f5b59a8f979b"
     },
     {
-      "path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/br-poderdata-gazeta.txt",
+      "path": "QA/evidencias/2026-09-17-pesquisas/br-poderdata-gazeta.txt",
       "sha256": "1f3a8ac0350b355a7fc199e9e9c34bf9c4b75d3e65b4431c7415ab54025e3f04"
     },
     {
-      "path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/norte-datasets-20260917.json",
+      "path": "QA/evidencias/2026-09-17-pesquisas/norte-datasets-20260917.json",
       "sha256": "1b497dd97f27bcb467a797dbcb1243e3e6be46c13dc4514a42fe9f4ac990028b"
     },
     {
-      "path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/norte-TO-realtime-TO-05805-2026.txt",
+      "path": "QA/evidencias/2026-09-17-pesquisas/norte-TO-realtime-TO-05805-2026.txt",
       "sha256": "462318322648c9b3cf43b3f64b1766bd4d0b960ab7cc4e570ee787ad837e8af4"
     },
     {
-      "path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/literal-urls-20260917/TO.literal.txt",
+      "path": "QA/evidencias/2026-09-17-pesquisas/literal-urls-20260917/TO.literal.txt",
       "sha256": "1fa564885140fed3bf720fabb8feee4fdf1aeb88e9bd008b790ad8da7526d758"
     },
     {
-      "path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/catalog-integration-20260917.json",
+      "path": "QA/evidencias/2026-09-17-pesquisas/catalog-integration-20260917.json",
       "sha256": "02e479f429c961d620c452e5aaeb62a9eade1ba68984126453bc8f7c03084dc2"
     }
   ],
@@ -297,9 +297,9 @@
       "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-poderdata-aya-nacional-2026-br/source-html/poderdata-aya-nacional-br-00360-2026.html.txt",
       "source_sha256": "0e8811514ac9f5b78bba3b99e3556c5811e0ef38288e7d10cf631ecffb6386c4",
       "qa_files": [
-        "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/br-extraidos.json",
-        "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/br-catalog-vs-raw.json",
-        "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/br-poderdata-gazeta.txt"
+        "QA/evidencias/2026-09-17-pesquisas/br-extraidos.json",
+        "QA/evidencias/2026-09-17-pesquisas/br-catalog-vs-raw.json",
+        "QA/evidencias/2026-09-17-pesquisas/br-poderdata-gazeta.txt"
       ],
       "extracted_fields": [
         "institute",
@@ -424,10 +424,10 @@
       "source_file": "/tmp/pf-curadoria-20260917/publication-ready/replay/parts/pesquisas-monitoramento-part-real-time-big-data-estaduais-2026-to/source-html/real-time-big-data-estaduais-to-05805-2026.html.txt",
       "source_sha256": "76ea21c5df368e1e8175b521c9d9183b9f103c4a8789913dbde2ac18d0059e8b",
       "qa_files": [
-        "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/norte-datasets-20260917.json",
-        "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/norte-TO-realtime-TO-05805-2026.txt",
-        "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/literal-urls-20260917/TO.literal.txt",
-        "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-pesquisas-20260917/QA/evidencias/2026-09-17-pesquisas/catalog-integration-20260917.json"
+        "QA/evidencias/2026-09-17-pesquisas/norte-datasets-20260917.json",
+        "QA/evidencias/2026-09-17-pesquisas/norte-TO-realtime-TO-05805-2026.txt",
+        "QA/evidencias/2026-09-17-pesquisas/literal-urls-20260917/TO.literal.txt",
+        "QA/evidencias/2026-09-17-pesquisas/catalog-integration-20260917.json"
       ],
       "extracted_fields": [
         "publication_date",

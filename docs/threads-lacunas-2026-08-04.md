@@ -8,7 +8,7 @@ caminho que todas as sessões enxergam enquanto o trabalho ainda não foi mergea
 Caminho absoluto, para citar em prompt de outra sessão:
 
 ```
-/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha-oss/docs/threads-lacunas-2026-08-04.md
+<repo>/docs/threads-lacunas-2026-08-04.md
 ```
 
 ## Como usar

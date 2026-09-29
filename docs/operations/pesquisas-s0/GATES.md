@@ -19,12 +19,12 @@ Ampliação de setembro: entrada de registro novo na matriz, inserção explicit
   EVIDENCE: exit=0; shell=/bin/sh; cwd=/private/tmp/pf-pesquisas-s0; path=9bcc7defaf68/25 entries; EXPECT=matched; output-sha256=d777c2519bc8b4407e85649fab4a3e0dcd3c3818742acbd31127dad6e74c6bae; output-bytes=10454
 
 - [x] L3: O eval do S0 obedece ao formato e às dimensões exigidas
-  CHECK: python3 /Users/thiagosalvador/.claude/skills/eval/scripts/eval_lint.py docs/operations/pesquisas-s0/EVAL.md
+  CHECK: python3 <skills>/eval/scripts/eval_lint.py docs/operations/pesquisas-s0/EVAL.md
   EXPECT: /^PASS\s*$/m
   EVIDENCE: exit=0; shell=/bin/sh; cwd=/private/tmp/pf-pesquisas-s0; path=9bcc7defaf68/25 entries; EXPECT=matched; output-sha256=c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431; output-bytes=5
 
 - [x] L4: O ledger contém oráculos executáveis sem alerta estrutural
-  CHECK: node /Users/thiagosalvador/.claude/skills/unlazy/scripts/gate-lint.mjs --strict docs/operations/pesquisas-s0/GATES.md
+  CHECK: node <skills>/unlazy/scripts/gate-lint.mjs --strict docs/operations/pesquisas-s0/GATES.md
   EXPECT: LINT OK
   EVIDENCE: exit=0; shell=/bin/sh; cwd=/private/tmp/pf-pesquisas-s0; path=9bcc7defaf68/25 entries; EXPECT=matched; output-sha256=48630b7361dd44ee870917b12c3d19b9d7bdea738aaca16bb04d4cab83b772d2; output-bytes=8
 

@@ -77,6 +77,16 @@ describe("renovação de recibos judiciais antes do SLA", () => {
     assert.deepEqual(selecionarAlvosVencendo(candidatos, [recibo("f", "foxtrot", "erro", 0.1)], 5, AGORA), ["foxtrot"])
   })
 
+  it("não reabre indeterminado recente nem bloqueado antigo", () => {
+    const recibos = [
+      recibo("a", "alpha", "indeterminado", 3),
+      recibo("b", "beta", "indeterminado", 8),
+      recibo("c", "charlie", "bloqueado", 60),
+    ]
+    assert.deepEqual(selecionarAlvosVencendo(candidatos, recibos, 5, AGORA), [])
+    assert.deepEqual(selecionarAlvosVencendo(candidatos, recibos, 0, AGORA), [])
+  })
+
   it("usa o recibo mais recente do candidato e ignora slug trocado ou data futura", () => {
     const recibos = [
       recibo("a", "alpha", "vazio_confirmado", 30),

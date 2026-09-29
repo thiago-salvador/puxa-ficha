@@ -19,7 +19,8 @@ type Pending = { family: Family; year: number; catalog_url: string; reason: stri
 
 export function assertCompleteAssets(assets: readonly Asset[], pending: readonly Pending[]): void {
   if (assets.length === 0 || pending.length > 0) {
-    throw new Error(`pacotes oficiais incompletos: ${assets.length} asset(s), ${pending.length} pendente(s)`)
+    const faltantes = pending.map((item) => `${item.family}/${item.year} (${item.reason})`).join("; ")
+    throw new Error(`pacotes oficiais incompletos: ${assets.length} asset(s), ${pending.length} pendente(s)${faltantes ? `: ${faltantes}` : ""}`)
   }
 }
 
