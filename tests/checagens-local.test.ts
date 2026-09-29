@@ -28,6 +28,12 @@ describe("agente local de checagens", () => {
     assert.match(gerado.stdout, /^local:[a-f0-9]{16}:\d{8}T\d{6}Z$/)
     const installContent = readFileSync(installer, "utf8")
     assert.match(installContent, /\[ "\$head_origem" = "\$sha_main" \]/)
+    // Segunda 15:00 UTC: 3 h depois do plano de resultados do TSE, para pegar o corte do turno 1.
+    assert.match(installContent, /"2026-09-28 15:00:00"/)
+    // A trava do turno 1 (código 75) pula a rodada sem gravar; outro código diferente de zero bloqueia.
+    assert.match(content, /if \[ "\$rc" -eq 75 \]; then[\s\S]*?exit 0/)
+    assert.ok(content.indexOf('"$rc" -eq 75') < content.indexOf("--gravar-log"))
+    assert.match(content, /\[ "\$rc" -eq 0 \] \|\| falhar/)
     assert.doesNotMatch(installContent.split("cat <<EOF")[0], /launchctl bootstrap/)
   })
 

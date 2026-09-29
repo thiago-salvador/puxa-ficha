@@ -117,9 +117,18 @@ echo "execucao=$execucao artefatos=$saida"
 
 # Primeiro lê todas as fontes, sem escrita remota. Um erro de agência impede
 # a etapa de gravação; os recibos e o resumo permanecem para diagnóstico.
+set +e
 SUPABASE_URL="$url_supabase" SUPABASE_ANON_KEY="$chave_publica" \
   PF_COLETA_EXECUCAO="$execucao" "$tsx" scripts/checagens-coletar.ts \
   --out "$saida" --sem-google --concorrencia 3 --pausa-ms 0
+rc=$?
+set -e
+# 75: trava do turno 1 (depois de 04/10 sem o corte da coorte aplicado). Nada foi coletado nem gravado.
+if [ "$rc" -eq 75 ]; then
+  echo "TRAVA_TURNO_1: rodada pulada sem coletar nem gravar; próxima tentativa na segunda seguinte"
+  exit 0
+fi
+[ "$rc" -eq 0 ] || falhar "coleta terminou com código $rc: gravação bloqueada"
 
 node - "$saida/recibos.json" "$saida/resumo.json" <<'JS'
 const fs = require('node:fs')
