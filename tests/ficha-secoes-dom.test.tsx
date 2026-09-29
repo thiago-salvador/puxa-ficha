@@ -287,7 +287,7 @@ describe("ficha: checagens atribuídas", () => {
     assert.ok(parcial, "dataset sem ficha com checagem e cobertura parcial")
     const html = painel(renderAba(fichaDe(parcial.identidade), "checagens"))
     assert.match(html, /Checagens atribuídas/)
-    assert.match(html, /não responderam? nesta busca/)
+    assert.match(html, /não respond(?:eu|eram) nesta busca/)
   })
 
   test("vazio honesto: busca vazia diz que buscou; sem recibo a aba some", () => {
