@@ -6,6 +6,7 @@ import publicDataset from "../scripts/data/checagens-atribuidas.json"
 import committedReceipts from "../scripts/data/checagens-recibos.json"
 import {
   AGENCIAS_CHECAGEM,
+  PAGINAS_BUSCA_SITE_ANUNCIADAS,
   BloqueioDeTaxa,
   candidatosDaResposta,
   candidaturasParaRetomada,
@@ -438,7 +439,7 @@ describe("coleta nominal de checagens", () => {
     assert.deepEqual(SO_GOOGLE, [])
     assert.match(descricaoEscopo(), /UOL Confere/)
     assert.match(descricaoEscopo(), /AFP Checamos/)
-    assert.match(descricaoEscopo(), /busca do site em Aos Fatos \(até 108 resultados\); arquivo completo da seção em Fato ou Fake, Estadão Verifica/)
+    assert.match(descricaoEscopo(), /busca do site em Aos Fatos \(até 3000 resultados quando a consulta anuncia a última página, 108 sem ela\); busca que bate no teto fica parcial: lead lido conta, ausência não; arquivo completo da seção em Fato ou Fake, Estadão Verifica/)
     const aos = AGENCIAS_CHECAGEM.find((agencia) => agencia.id === "aos-fatos")!
     assert.equal(urlBuscaSite("Ronaldo \"Caiado\" ", aos, 2), "https://www.aosfatos.org/noticias/?q=Ronaldo%20Caiado&page=2")
     const estadao = AGENCIAS_CHECAGEM.find((agencia) => agencia.id === "estadao-verifica")!
@@ -1059,5 +1060,72 @@ describe("catálogo de checagens e recibos versionados", () => {
       assert.ok(!ids.has(receipt.candidate_id), `recibo duplicado: ${receipt.candidate_slug}`)
       ids.add(receipt.candidate_id)
     }
+  })
+})
+
+describe("checagens: busca longa e acesso limitado (G6)", () => {
+  const fulana: CandidatoChecagem = { id: "cand-fulana", slug: "fulana-beltrana", nome_urna: "Fulana Beltrana", nome_completo: "Fulana Beltrana da Silva", cargo_disputado: "Governador", estado: "SP" }
+  const zema: CandidatoChecagem = { id: "cand-zema", slug: "romeu-zema", nome_urna: "Romeu Zema", nome_completo: "Romeu Zema Neto", cargo_disputado: "Presidente", estado: null }
+  const anuncia = (ultima: number) => AOS_P1.replace(/q=Zema&amp;page=2/g, `q=Zema&amp;page=${ultima}`)
+  const LISTAGEM = AOS_P1.replace(/\?q=Zema&amp;page=/g, "?page=")
+  const rodar = (roster: CandidatoChecagem[], pagina: (numero: number, url: string) => string) => coletar({
+    roster, concorrencia: 1, semGoogle: true, sleep: async () => {},
+    fetchText: async (url) => {
+      if (url.includes("/wp-json/")) return { status: 200, body: "[]" }
+      if (url.startsWith("https://www.aosfatos.org/noticias/?q=")) return { status: 200, body: pagina(Number(new URL(url).searchParams.get("page")), url) }
+      return rotaDireta(url) ?? { status: 200, body: rss([]) }
+    },
+  })
+
+  it("lê a listagem geral de /noticias/ como página sem a consulta", () => {
+    assert.deepEqual(parseBuscaSite(LISTAGEM, "https://www.aosfatos.org/noticias/").semConsulta, true)
+    assert.equal(parseBuscaSite(AOS_P1, "https://www.aosfatos.org/noticias/").semConsulta, undefined)
+  })
+
+  it("última página anunciada pela consulta passa do teto curto e fecha sem parcial", async () => {
+    const [recibo] = await rodar([fulana], (numero) => numero < 12 ? anuncia(12) : AOS_P2)
+    assert.equal(recibo.agencias["aos-fatos"].status, "ok")
+    assert.equal(recibo.agencias["aos-fatos"].itens, 11 * 12 + 2)
+    assert.equal(recibo.agencias["aos-fatos"].parcial, undefined)
+    assert.equal(recibo.result, "vazio_confirmado")
+  })
+
+  it("teto atingido fica parcial: sem lead não prova ausência, não abre o disjuntor e entra no catálogo com a agência fora", async () => {
+    const outras = [2, 3].map((n) => ({ ...fulana, id: `cand-fulana-${n}`, slug: `fulana-beltrana-${n}`, nome_urna: `Fulana Beltrana ${n}` }))
+    const recibos = await rodar([fulana, ...outras], () => anuncia(300))
+    for (const recibo of recibos) {
+      const aos = recibo.agencias["aos-fatos"]
+      assert.equal(aos.status, "ok", "parcial não é falha de rota: o disjuntor não abre")
+      assert.equal(aos.itens, PAGINAS_BUSCA_SITE_ANUNCIADAS * 12)
+      assert.match(aos.parcial ?? "", new RegExp(`parcial após ${PAGINAS_BUSCA_SITE_ANUNCIADAS} páginas`))
+      assert.equal(recibo.result, "erro")
+      assert.ok(AGENCIAS_CHECAGEM.every((agencia) => recibo.agencias[agencia.id].status === "ok"))
+    }
+    const entrada = entradaColetaDoRecibo(recibos[0])
+    assert.equal(entrada.resultado, "indeterminado")
+    assert.match(entrada.detalhe ?? "", /aos-fatos=0\/3000\(busca-site parcial\)/)
+    const catalogo = consolidarCatalogoRecibos(null, [recibos[0]], now)
+    assert.equal(catalogo.receipts[0].result, "vazio_confirmado")
+    assert.ok(!catalogo.receipts[0].agencias.includes("Aos Fatos"), "agência parcial não entra como quem respondeu na ausência")
+    assert.equal(catalogo.receipts[0].agencias.length, 6)
+  })
+
+  it("teto atingido com lead nas páginas lidas conta como encontrado", async () => {
+    const [recibo] = await rodar([zema], () => anuncia(300))
+    assert.ok(recibo.agencias["aos-fatos"].parcial)
+    assert.ok((recibo.agencias["aos-fatos"].leads ?? 0) > 0)
+    assert.equal(recibo.result, "encontrado")
+    assert.ok(consolidarCatalogoRecibos(null, [recibo], now).receipts[0].agencias.includes("Aos Fatos"))
+  })
+
+  it("listagem geral no lugar da busca espera e pede de novo; persistente vira erro de rota", async () => {
+    let bloqueios = 0
+    const [volta] = await rodar([fulana], (numero, url) => !url.includes("q=Fulana") ? AOS_P1 : numero === 1 && bloqueios++ === 0 ? LISTAGEM : AOS_VAZIA)
+    assert.equal(bloqueios, 2)
+    assert.equal(volta.agencias["aos-fatos"].status, "ok")
+    const [preso] = await rodar([fulana], (_numero, url) => url.includes("q=Fulana") ? LISTAGEM : AOS_P1)
+    assert.equal(preso.agencias["aos-fatos"].status, "erro")
+    assert.match(preso.agencias["aos-fatos"].erro ?? "", /listagem geral, sem a consulta/)
+    assert.equal(preso.result, "erro")
   })
 })
