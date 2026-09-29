@@ -28,6 +28,7 @@ import { escreverAuditado } from "./lib/escrita-auditada"
 import { ANOS_DESPESAS_HISTORICO, coletarDespesasHistoricas } from "./lib/despesas-historico"
 import { gravarEstadoJevDespesas, montarEstadoJevDespesas } from "./lib/despesas-jev"
 import { textoTemDocumento } from "./lib/despesas-normalizar"
+import { canonicalCargo } from "../src/lib/cargo-utils"
 import {
   CHAVE_UPSERT_DESPESAS,
   TABELA_DESPESAS,
@@ -179,10 +180,51 @@ export async function carregarVinculadas(anos: readonly number[]): Promise<Candi
       cargo_candidatura: mesclarContexto(atual?.cargo_candidatura ?? null, linha.cargo_candidatura),
     })
   }
-  return completarCargoDaCandidaturaAtual(
+  const completas = completarCargoDaCandidaturaAtual(
     [...unicas.values()],
     new Map(publicos.map((p) => [p.id, p.cargo_disputado ?? null])),
   )
+  const semCargo = [...new Set(completas.filter((v) => v.ano_eleicao !== ANO_CANDIDATURA_ATUAL && v.cargo_candidatura === null).map((v) => v.candidato_id))]
+  const eventos: EventoHistoricoPolitico[] = []
+  for (let i = 0; i < semCargo.length; i += 150) {
+    eventos.push(...await selecionarTudo<EventoHistoricoPolitico>(
+      "historico_politico",
+      "candidato_id, cargo, tipo_evento, periodo_inicio",
+      (q) => q.in("candidato_id", semCargo.slice(i, i + 150)).order("id"),
+    ))
+  }
+  return anexarCargosHistoricoPolitico(completas, eventos)
+}
+
+export type EventoHistoricoPolitico = {
+  candidato_id: string
+  cargo: string | null
+  tipo_evento: string | null
+  periodo_inicio: number | null
+}
+
+/**
+ * Anos anteriores ao atual sem cargo no vínculo: anexa os cargos canônicos
+ * distintos dos eventos de `historico_politico` na janela da eleição (evento no
+ * próprio ano, ou mandato iniciado no ano seguinte). Não preenche
+ * `cargo_candidatura`: o plano decide se aceita (exatamente um cargo, igual ao
+ * da coleta) e registra a proveniência.
+ */
+export function anexarCargosHistoricoPolitico(
+  vinculadas: CandidaturaVinculada[],
+  eventos: readonly EventoHistoricoPolitico[],
+  anoAtual = ANO_CANDIDATURA_ATUAL,
+): CandidaturaVinculada[] {
+  return vinculadas.map((v) => {
+    if (v.ano_eleicao === anoAtual || v.cargo_candidatura !== null) return v
+    const cargos = new Set<string>()
+    for (const e of eventos) {
+      if (e.candidato_id !== v.candidato_id || !e.cargo?.trim()) continue
+      const naJanela = e.periodo_inicio === v.ano_eleicao || (e.periodo_inicio === v.ano_eleicao + 1 && e.tipo_evento !== "candidatura")
+      if (naJanela) cargos.add(canonicalCargo(e.cargo))
+    }
+    return { ...v, cargos_historico_politico: [...cargos].sort() }
+  })
 }
 
 /** Ano da candidatura atual: é o único em que `candidatos.cargo_disputado` descreve a candidatura. */
@@ -393,6 +435,9 @@ export async function planejarEAplicar(
     plano_sha256: sha,
     aplicado_em: new Date().toISOString(),
     ...resultado,
+    cargo_vinculo_inferido: plano.acoes
+      .filter((a) => a.origem_cargo_vinculo)
+      .map((a) => ({ slug: a.slug, ano: a.linha.ano_eleicao, sq_candidato: a.linha.sq_candidato, origem: a.origem_cargo_vinculo })),
     revalidacao: revalidacao ?? { confirmada: false, motivo: "nada gravado" },
   })
   console.log(JSON.stringify({ gravadas: resultado.gravadas, falhas: resultado.falhas.length, revalidacao, recibo }, null, 2))
