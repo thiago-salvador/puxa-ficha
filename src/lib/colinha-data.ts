@@ -2,7 +2,7 @@ import "server-only"
 
 import { createServerSupabaseClient } from "@/lib/supabase"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
-import type { ColinhaCandidate, ColinhaState, SlotId } from "@/lib/colinha"
+import { listStartLetter, type ColinhaCandidate, type ColinhaState, type SlotId } from "@/lib/colinha"
 
 const RELATION = "candidatos_roster_2026_publico"
 const COLUMNS = "ano,sq_candidato,uf,cargo,nome_urna,numero_urna,partido_sigla,situacao_registro,foto_path,snapshot_em"
@@ -15,7 +15,11 @@ export interface ColinhaCandidatesResult {
   candidates: ColinhaCandidate[]
   unavailable: boolean
   snapshot: string | null
+  /** Letra por onde a lista sem filtro começa agora (ordem neutra rotativa). */
+  listStart?: string | null
 }
+
+const SEARCH_LIMIT = 20
 
 function empty(unavailable = false): ColinhaCandidatesResult {
   return { candidates: [], unavailable, snapshot: null }
@@ -104,21 +108,37 @@ export async function searchColinhaCandidates(
   uf: string,
   slot: SlotId,
   query: string,
+  now: Date = new Date(),
 ): Promise<ColinhaCandidatesResult> {
   try {
     const client = createServerSupabaseClient({ cacheMode: "no-store" })
     const cargo = cargoFor(slot, uf)
-    let request = client.from(RELATION).select(COLUMNS)
+    const base = () => client.from(RELATION).select(COLUMNS)
       .eq("ano", 2026).eq("cargo", cargo).eq("uf", slot === "p" ? "BR" : uf)
-      .order("nome_urna").limit(20)
     const safe = query.normalize("NFKC").replace(/[^\p{L}\p{N} -]/gu, "").trim().slice(0, 70)
     if (safe) {
-      request = request.or(`nome_urna.ilike.%${safe}%,nome_completo.ilike.%${safe}%,numero_urna.ilike.%${safe}%,partido_sigla.ilike.%${safe}%`)
+      // Com filtro, a ordem alfabética simples: quem digita já escolheu o recorte.
+      const { data, error } = await base()
+        .or(`nome_urna.ilike.%${safe}%,nome_completo.ilike.%${safe}%,numero_urna.ilike.%${safe}%,partido_sigla.ilike.%${safe}%`)
+        .order("nome_urna").limit(SEARCH_LIMIT)
+        .abortSignal(supabaseQueryTimeoutSignal())
+      if (error) return empty(true)
+      const rows = (data ?? []) as unknown as RosterRow[]
+      return result(rows, await enrichPublished(rows))
     }
-    const { data, error } = await request.abortSignal(supabaseQueryTimeoutSignal())
-    if (error) return empty(true)
-    const rows = (data ?? []) as unknown as RosterRow[]
-    return result(rows, await enrichPublished(rows))
+    // Sem filtro, a lista começa na letra do momento e dá a volta no alfabeto.
+    const start = listStartLetter(now)
+    const head = await base().gte("nome_urna", start).order("nome_urna").limit(SEARCH_LIMIT)
+      .abortSignal(supabaseQueryTimeoutSignal())
+    if (head.error) return empty(true)
+    let rows = (head.data ?? []) as unknown as RosterRow[]
+    if (rows.length < SEARCH_LIMIT) {
+      const tail = await base().lt("nome_urna", start).order("nome_urna").limit(SEARCH_LIMIT - rows.length)
+        .abortSignal(supabaseQueryTimeoutSignal())
+      if (tail.error) return empty(true)
+      rows = [...rows, ...((tail.data ?? []) as unknown as RosterRow[])]
+    }
+    return { ...result(rows, await enrichPublished(rows)), listStart: start }
   } catch {
     return empty(true)
   }
