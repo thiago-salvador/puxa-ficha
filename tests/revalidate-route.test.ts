@@ -47,12 +47,14 @@ describe("revalidate-cache helper", () => {
     assert.equal(isAllowedRevalidateTag("public-candidatos/../etc"), false)
   })
 
-  it("whitelist cobre todas as tags realmente registradas em src/lib/api.ts e doador-reverse.ts", () => {
+  it("whitelist cobre todas as tags realmente registradas em src/lib/api.ts, doador-reverse.ts e compromisso-evidencia-server.ts", () => {
     const apiSrc = readFileSync(join(root, "src/lib/api.ts"), "utf8")
     const doadorSrc = readFileSync(join(root, "src/lib/doador-reverse.ts"), "utf8")
+    const evidenciasSrc = readFileSync(join(root, "src/lib/compromisso-evidencia-server.ts"), "utf8")
+    assert.match(evidenciasSrc, /tags:\s*\[\s*"public-candidato-ficha"/, "loader da secao de evidencias perdeu a tag da ficha")
     const allTags = new Set<string>()
     const tagPattern = /tags:\s*\[\s*"([^"]+)"/g
-    for (const src of [apiSrc, doadorSrc]) {
+    for (const src of [apiSrc, doadorSrc, evidenciasSrc]) {
       let match: RegExpExecArray | null
       while ((match = tagPattern.exec(src)) !== null) {
         allTags.add(match[1])

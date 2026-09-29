@@ -5,6 +5,12 @@ import { sleep } from "@/lib/async-utils"
 interface SupabaseClientOptions {
   cacheMode?: "isr" | "no-store"
   revalidate?: number
+  /**
+   * Tags do Data Cache para as requisições em modo `isr`. Sem tag, o fetch só
+   * expira pelo `revalidate`: `/api/revalidate` não o alcança. Toda tag usada
+   * aqui precisa estar em `REVALIDATE_ALLOWED_TAGS` (src/lib/revalidate-cache.ts).
+   */
+  tags?: readonly string[]
 }
 
 // A ficha de candidato dispara 13 consultas num único `Promise.all`
@@ -170,6 +176,7 @@ export function createConfiguredFetch(
 ) {
   const cacheMode = options.cacheMode ?? "isr"
   const revalidate = options.revalidate ?? 3600
+  const tags = options.tags ?? []
 
   return async (input: Parameters<typeof fetch>[0], init?: Parameters<typeof fetch>[1]) => {
     const nextOptions = init?.next ?? {}
@@ -190,7 +197,9 @@ export function createConfiguredFetch(
       next:
         cacheMode === "no-store"
           ? { ...nextOptions, revalidate: 0 }
-          : { ...nextOptions, revalidate },
+          : tags.length > 0
+            ? { ...nextOptions, revalidate, tags: [...new Set([...(nextOptions.tags ?? []), ...tags])] }
+            : { ...nextOptions, revalidate },
     }
     const method = requestInit?.method?.toUpperCase() ?? "GET"
     const canRetry = method === "GET" || method === "HEAD"

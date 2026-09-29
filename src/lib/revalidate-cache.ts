@@ -4,7 +4,8 @@ import { timingSafeEqual } from "node:crypto"
  * Whitelist canonica de tags revalidáveis pelo endpoint protegido `/api/revalidate`.
  *
  * Cada entrada aqui DEVE corresponder a um `unstable_cache(..., { tags: [...] })` real
- * em `src/lib/api.ts` ou `src/lib/doador-reverse.ts`. Nunca aceitar tag arbitraria
+ * em `src/lib/api.ts` ou `src/lib/doador-reverse.ts`, ou a um fetch com tag
+ * (`createServiceRoleSupabaseClient({ tags })`) em `src/lib/compromisso-evidencia-server.ts`. Nunca aceitar tag arbitraria
  * vinda da request (CSRF/leaky-cache vector). Para adicionar tag nova: registrar aqui
  * e provar que existe no codigo via `tests/revalidate-route.test.ts`.
  *
@@ -12,7 +13,8 @@ import { timingSafeEqual } from "node:crypto"
  * - public-candidatos: getCachedCandidatosResource, getCachedGlobalSearchIndexResource,
  *   getCachedCandidatoSlugParams (src/lib/api.ts)
  * - public-candidato-metadata: getCachedCandidatoMetadataResource
- * - public-candidato-ficha: getCachedCandidatoBySlugResource
+ * - public-candidato-ficha: getCachedCandidatoBySlugResource e as leituras da secao
+ *   "Evidencias relacionadas" (OPCOES_CLIENTE_EVIDENCIAS em compromisso-evidencia-server.ts)
  * - public-candidatos-resumo: getCachedCandidatosComResumoResource
  * - public-candidatos-comparaveis: getCachedCandidatosComparaveisResource
  * - public-indicadores-all: indicadores cache (homepage)
