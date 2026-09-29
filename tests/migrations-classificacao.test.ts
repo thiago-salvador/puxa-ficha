@@ -514,7 +514,8 @@ describe("classificador puro (#136)", () => {
     // Categorias de financiamento e hash de bens (20260927095346/47): --gate PG17 mediu 428 + 105 = 533.
     // Processos do Senado (20260928010000), DML com guardas: 429 + 105 = 534, a confirmar pelo gate PG17.
     // L7 editorial (20260929010000): --gate PG17 mediu 430 + 105 = 535.
-    assert.equal(manifesto.aplicadas_esperadas, 430)
+    // L8 Mesa (20260929020000), DML com guarda pf.replay: 431 + 105 = 536.
+    assert.equal(manifesto.aplicadas_esperadas, 431)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
@@ -608,6 +609,46 @@ describe("classificador puro (#136)", () => {
     assert.doesNotMatch(migration, /315b8592-13a8-4b7c-b179-6af32ee1e790/)
     assert.equal(
       TODAS_COM_REPLAY_SCHEMA.find((item) => item.arquivo === "20260929010000_l7_pontos_historico_editorial.sql")?.replaySchema,
+      false,
+    )
+  })
+
+  test("L8 aplica a lista fechada da Mesa com preimagem, contagens exatas e sem schema", () => {
+    const arquivo = "20260929020000_l8_mesa_processos_promessas.sql"
+    const migration = readFileSync(join("supabase", "migrations", arquivo), "utf8")
+    const allow = JSON.parse(readFileSync(join("scripts", "audit", "allowlist-l8-mesa-20260929.json"), "utf8"))
+    const lista = allow.lista_fechada
+    const classificacao = classificarMigration(arquivo, migration)
+    assert.equal(classificacao.classe, "curadoria")
+    assert.equal(classificacao.replay, "replicavel")
+    assert.equal(classificacao.temGuard, true)
+    assert.equal(lista.contagens.processos_inserir, 31)
+    assert.equal(lista.contagens.processos_fichas_inserir, 26)
+    assert.equal(lista.contagens.processos_completar_cnj, 6)
+    assert.equal(lista.contagens.promessas_verificar, 1)
+    assert.equal(lista.contagens.promessas_inserir, 8)
+    assert.equal(lista.contagens.promessas_despublicar, 14)
+    assert.equal(lista.contagens.projetos_autoria, 1)
+    assert.equal(lista.contagens.candidate_changes_esperados, 32)
+    assert.equal((migration.match(/^  -- @write tabela=processos slug=/gm) ?? []).length, 31)
+    assert.equal((migration.match(/'curadoria-mesa-l8-20260929: Comunicações processuais oficiais do DJEN\/CNJ - processo /g) ?? []).length, 31)
+    assert.match(migration, /IF soma <> 31 THEN RAISE EXCEPTION 'l8-mesa: processos inseridos %'/)
+    assert.match(migration, /IF n <> 6 THEN RAISE EXCEPTION 'l8-mesa: CNJs completados %'/)
+    assert.match(migration, /IF n <> 26 THEN RAISE EXCEPTION 'l8-mesa: recibos de processos %'/)
+    assert.match(migration, /IF n <> 14 THEN RAISE EXCEPTION 'l8-mesa: vínculos retirados %'/)
+    assert.match(migration, /IF n <> 8 THEN RAISE EXCEPTION 'l8-mesa: vínculos inseridos %'/)
+    assert.match(migration, /md5\(to_jsonb\(p\)::text\) = u\.preimage_md5/)
+    assert.match(migration, /md5\(to_jsonb\(e\)::text\) = u\.preimage_md5/)
+    // Os dois CNJs com selo "Fonte em confirmação" continuam com fonte jornalística e ganham só o número.
+    const completar = lista.processos.completar_cnj as Array<{ numero_cnj: string; status_novo: string | null }>
+    assert.ok(completar.some((x) => x.numero_cnj === "0042543-76.2016.4.01.3400"))
+    assert.equal(completar.filter((x) => x.status_novo).length, 1)
+    // Tarcísio: só o CNJ aprovado; Pazolini: nunca inserido e oculto no site.
+    assert.match(migration, /'2052422-44\.2025\.8\.26\.0000'/)
+    assert.doesNotMatch(migration, /1003777-02\.2024\.8\.26\.0562|2002493-39\.2023\.8\.08\.0024/)
+    assert.doesNotMatch(migration, /\/Users\//)
+    assert.equal(
+      TODAS_COM_REPLAY_SCHEMA.find((item) => item.arquivo === arquivo)?.replaySchema,
       false,
     )
   })

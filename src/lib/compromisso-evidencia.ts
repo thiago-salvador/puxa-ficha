@@ -20,6 +20,43 @@ export type CompromissoEvidenciaPublica = {
   url: string | null
   /** Posição verificada que veio de coleta automática, não de curadoria: exibida com selo. */
   fonteEmConfirmacao?: boolean
+  /** Rótulo do tipo quando a proposição não é projeto de lei (ex.: PEC). */
+  rotuloTipo?: string
+}
+
+/** Autoria registrada pela curadoria em `projetos_lei.metadata.autoria`. */
+type AutoriaProjeto = { papel: "signatario"; ordem: number; total: number }
+
+function autoriaDoProjeto(metadata: unknown): AutoriaProjeto | null {
+  if (!metadata || typeof metadata !== "object") return null
+  const autoria = (metadata as { autoria?: unknown }).autoria
+  if (!autoria || typeof autoria !== "object") return null
+  const { papel, ordem, total } = autoria as { papel?: unknown; ordem?: unknown; total?: unknown }
+  if (papel !== "signatario" || !Number.isInteger(ordem) || !Number.isInteger(total)) return null
+  if ((ordem as number) < 1 || (total as number) < (ordem as number)) return null
+  return { papel, ordem: ordem as number, total: total as number }
+}
+
+/**
+ * Referência curta de uma proposição usada como evidência: tipo e número, e a
+ * posição de signatário quando o candidato não é o autor. PEC recebe rótulo
+ * próprio para não ser lida como projeto de lei.
+ */
+export function referenciaProjeto(projeto: {
+  tipo: string | null
+  numero: string | null
+  ano: number | null
+  metadata?: unknown
+}): { referencia: string; rotuloTipo?: string } {
+  const numero = projeto.numero && projeto.ano ? `${projeto.numero}/${projeto.ano}` : projeto.numero
+  const base = [projeto.tipo, numero].filter(Boolean).join(" ")
+  const autoria = autoriaDoProjeto(projeto.metadata)
+  const referencia = autoria
+    ? [base, `signatário (${autoria.ordem}º de ${autoria.total})`].filter(Boolean).join(" · ")
+    : base
+  return projeto.tipo?.trim().toUpperCase() === "PEC"
+    ? { referencia, rotuloTipo: "Proposta de emenda à Constituição" }
+    : { referencia }
 }
 
 /**

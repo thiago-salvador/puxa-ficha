@@ -9,6 +9,7 @@ import {
   lerReciboPromessa,
   primeiraUrlDeFontes,
   TIPOS_EVIDENCIA_PUBLICA,
+  referenciaProjeto,
   urlSeguraDeFonte,
   type CompromissoEvidenciaPublica,
   type EstadoEvidenciasPrograma,
@@ -86,8 +87,8 @@ async function carregarItens(db: Cliente, candidatoId: string, programaChave: st
   const [votos, projetos, posicoes, pontos] = await Promise.all([
     porIds<{ id: string; voto: string; votacao: { titulo: string; data_votacao: string | null; casa: string | null } | null }>(
       db, "votos_candidato", "id,voto,votacao:votacoes_chave(titulo,data_votacao,casa)", refs("votacao_chave")),
-    porIds<{ id: string; tipo: string | null; numero: string | null; ano: number | null; ementa: string | null; url_inteiro_teor: string | null }>(
-      db, "projetos_lei", "id,tipo,numero,ano,ementa,url_inteiro_teor", refs("projeto_lei")),
+    porIds<{ id: string; tipo: string | null; numero: string | null; ano: number | null; ementa: string | null; url_inteiro_teor: string | null; metadata: unknown }>(
+      db, "projetos_lei", "id,tipo,numero,ano,ementa,url_inteiro_teor,metadata", refs("projeto_lei")),
     porIds<{ id: string; tema: string; fonte: string | null; url_fonte: string | null; descricao: string | null; gerado_por: string | null; verificado: boolean | null }>(
       db, "posicoes_declaradas", "id,tema,fonte,url_fonte,descricao,gerado_por,verificado", refs("posicao_declarada")),
     porIds<{ id: string; titulo: string; fontes: Array<string | { url?: string }> | null; data_referencia: string | null; visivel: boolean | null }>(
@@ -104,7 +105,7 @@ async function carregarItens(db: Cliente, candidatoId: string, programaChave: st
     } else if (linha.tipo_evidencia === "projeto_lei") {
       const projeto = projetos.get(linha.evidencia_ref)
       if (!projeto?.ementa) continue
-      saida.push({ ...base, referencia: [projeto.tipo, projeto.numero && projeto.ano ? `${projeto.numero}/${projeto.ano}` : projeto.numero].filter(Boolean).join(" "), texto: projeto.ementa, data: projeto.ano ? String(projeto.ano) : null, url: urlSeguraDeFonte(projeto.url_inteiro_teor) })
+      saida.push({ ...base, ...referenciaProjeto(projeto), texto: projeto.ementa, data: projeto.ano ? String(projeto.ano) : null, url: urlSeguraDeFonte(projeto.url_inteiro_teor) })
     } else if (linha.tipo_evidencia === "posicao_declarada") {
       const posicao = posicoes.get(linha.evidencia_ref)
       // Posição de curadoria aparece direto; posição de coleta automática só

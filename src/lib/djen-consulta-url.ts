@@ -176,6 +176,15 @@ const PROCESSOS_FORA_DO_SELO = new Set<string>([
 ])
 
 /**
+ * Linhas fora do site por decisão editorial, mesmo com fonte judicial oficial:
+ * segredo de justiça ou natureza que não cabe na ficha. Reversível, sem escrita
+ * no banco e sem e-mail. Cada id precisa de decisão nominal registrada.
+ */
+export const PROCESSOS_OCULTOS_POR_DECISAO = new Set<string>([
+  "dd836992-ab4c-45fd-bc04-8b7b5b1750ac", // segredo de justiça no DJEN desde 29/09/2023 (execução de ANPP); Mesa L8
+])
+
+/**
  * "oficial": fonte judicial específica prova o processo.
  * "em_confirmacao": há página específica (imprensa ou portal oficial genérico),
  * mas a fonte judicial do próprio processo ainda não foi localizada; a ficha
@@ -186,6 +195,7 @@ const PROCESSOS_FORA_DO_SELO = new Set<string>([
 export function nivelFonteProcesso(
   processo: { id?: string | null; numero_processo: string | null; url_fonte?: string | null },
 ): FonteProcessoNivel | null {
+  if (processo.id && PROCESSOS_OCULTOS_POR_DECISAO.has(processo.id)) return null
   if (urlFonteJudicialEspecifica(processo.url_fonte, processo.numero_processo)) return "oficial"
   if (processo.id && PROCESSOS_FORA_DO_SELO.has(processo.id)) return null
   const fonte = processo.url_fonte?.trim()
