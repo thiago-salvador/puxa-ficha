@@ -157,3 +157,23 @@ it("rebaixa o CNJ quando uma comunicação é parte e outra é advogado", async 
   assert.equal(inverso.processos.length, 0)
   assert.equal(inverso.ocorrencias_ambiguas[0]?.motivo, "papel_processual:advogado")
 })
+
+it("rótulo de outra pessoa não contamina a menção seguinte, e a trava de não-parte continua", () => {
+  const cpf = "529.982.247-25"
+  // O OAB do advogado do autor não faz do réu um advogado.
+  assert.equal(papelProcessualDoNome(`AUTOR: Beltrano, OAB/MG 123. REU: Fulano de Tal, CPF ${cpf}`, nome), "parte_passiva")
+  // "ADVOGADO DO(A) REU:" depois do nome apresenta a próxima pessoa.
+  assert.equal(papelProcessualDoNome("INVESTIGADO: Fulano de Tal ADVOGADO DO(A) INVESTIGADO: Beltrano - MS18103", nome), "parte_passiva")
+  // Qualificação de parte só pelo CPF colado ao nome.
+  assert.equal(atribuirProcessoPorPapel(`CUMPRIMENTO DE SENTENCA - Fulano de Tal, CPF ${cpf}`, nome).encontrado, true)
+  // Advogado com o próprio CPF e OAB continua fora.
+  const advogado = atribuirProcessoPorPapel(`ADVOGADO: Fulano de Tal, CPF ${cpf}, OAB/SP 12345`, nome)
+  assert.equal(advogado.encontrado, false)
+  assert.equal(advogado.papel, "advogado")
+  assert.equal(atribuirProcessoPorPapel(`CUMPRIMENTO DE SENTENCA - Fulano de Tal, CPF ${cpf}, OAB/SP 12345`, nome).encontrado, false)
+  // Lista com papel entre parênteses: vale o parêntese da própria menção.
+  assert.equal(papelProcessualDoNome(`PARTE(S): [Beltrano - CPF: 111.444.777-35 (ADVOGADO), Fulano de Tal - CPF: ${cpf} (AGRAVADO)]`, nome), "parte_passiva")
+  assert.equal(atribuirProcessoPorPapel(`PARTE(S): [Fulano de Tal - CPF: ${cpf} (ADVOGADO), Beltrano - CPF: 111.444.777-35 (AGRAVADO)]`, nome).encontrado, false)
+  // Só citado no corpo, sem rótulo nem CPF, continua fora.
+  assert.equal(atribuirProcessoPorPapel("O juízo determinou a intimação, conforme parecer citado por Fulano de Tal em audiência.", nome).encontrado, false)
+})

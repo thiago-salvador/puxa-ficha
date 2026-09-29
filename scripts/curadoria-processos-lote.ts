@@ -100,6 +100,8 @@ export interface Comunicacao {
 export type PapelProcessual =
   | "parte_passiva"
   | "parte_ativa"
+  /** Qualificada com o próprio CPF colado ao nome, sem rótulo de polo nem de não-parte. */
+  | "parte_qualificada"
   | "advogado"
   | "vitima_ou_ofendido"
   | "testemunha_ou_terceiro"
@@ -111,8 +113,8 @@ export interface DecisaoPapelProcessual {
   trecho: string
 }
 
-const PAPEL_PARTIDO_PASSIVO = /\b(?:REQUERID[OA]|R[ÉE]U|EXECUTAD[OA]|DEMANDAD[OA]|DENUNCIAD[OA]|ACUSAD[OA]|PARTE\s+PASSIVA)\b/i
-const PAPEL_PARTIDO_ATIVO = /\b(?:AUTOR(?:A)?|REQUERENTE|EXEQUENTE|DEMANDANTE|IMPETRANTE|PARTE\s+ATIVA)\b/i
+const PAPEL_PARTIDO_PASSIVO = /\b(?:REQUERID[OA]S?|R[ÉE]US?|EXECUTAD[OA]S?|DEMANDAD[OA]S?|DENUNCIAD[OA]S?|ACUSAD[OA]S?|RECORRID[OA]S?|APELAD[OA]S?|AGRAVAD[OA]S?|EMBARGAD[OA]S?|RECLAMAD[OA]S?|INVESTIGAD[OA]S?|QUERELAD[OA]S?|IMPETRAD[OA]S?|REPRESENTAD[OA]S?|PACIENTES?|DEVEDOR(?:A|ES|AS)?|EXECTD[OA]S?|REQD[OA]S?|RECD[OA]S?|APD[OA]S?|AGD[OA]S?|IMPD[OA]S?|EMBD[OA]S?|RECLD[OA]S?|PARTE\s+PASSIVA)\b/i
+const PAPEL_PARTIDO_ATIVO = /\b(?:AUTOR(?:A|ES|AS)?|REQUERENTES?|EXEQUENTES?|DEMANDANTES?|IMPETRANTES?|RECORRENTES?|APELANTES?|AGRAVANTES?|EMBARGANTES?|RECLAMANTES?|QUERELANTES?|CREDOR(?:A|ES|AS)?|EXEQTES?|REQTES?|RECTES?|APTES?|AGTES?|IMPTES?|EMBTES?|RECLTES?|PARTE\s+ATIVA)\b/i
 const PAPEL_ADVOGADO = /\b(?:ADVOGAD[OA](?:\(A\))?|ADV\.?|PROCURADOR(?:A)?|OAB\s*(?:[/:-]?\s*[A-Z]{2}\s*)?\d{3,7})\b|\(\s*OAB\b/i
 const PAPEL_VITIMA = /\b(?:V[ÍI]TIMA|OFENDID[OA](?:\(A\))?)\b/i
 const PAPEL_TESTEMUNHA = /\b(?:TESTEMUNH[AO]|TERCEIR[OA]\s+INTERESSAD[OA]|PERIT[OA])\b/i
@@ -121,6 +123,56 @@ function papelDoPolo(polo: string | undefined): PapelProcessual | null {
   const valor = normalizar(polo ?? "")
   if (/^(?:A|ATIVO|ATIVA)$/.test(valor)) return "parte_ativa"
   if (/^(?:P|PASSIVO|PASSIVA)$/.test(valor)) return "parte_passiva"
+  return null
+}
+
+const ROTULOS_PAPEL: ReadonlyArray<readonly [RegExp, PapelProcessual]> = [
+  [new RegExp(`${PAPEL_PARTIDO_PASSIVO.source}|\\bPOLO\\s+PASSIVO\\b`, "gi"), "parte_passiva"],
+  [new RegExp(`${PAPEL_PARTIDO_ATIVO.source}|\\bPOLO\\s+ATIVO\\b`, "gi"), "parte_ativa"],
+  [new RegExp(PAPEL_ADVOGADO.source, "gi"), "advogado"],
+  [new RegExp(PAPEL_VITIMA.source, "gi"), "vitima_ou_ofendido"],
+  [new RegExp(PAPEL_TESTEMUNHA.source, "gi"), "testemunha_ou_terceiro"],
+]
+
+/**
+ * Rótulo que apresenta esta menção: o mais próximo antes do nome, desde que o
+ * que sobra entre ele e o nome seja só separador ou, para rótulo de parte, uma
+ * lista de outros nomes ("REQUERIDOS: A, B E NOME"). Rótulo de outra pessoa,
+ * com número, OAB ou frase no meio, não vale para esta menção.
+ */
+function rotuloMaisProximo(antes: string): PapelProcessual | null {
+  let papel: PapelProcessual | null = null
+  let fim = -1
+  for (const [regex, candidato] of ROTULOS_PAPEL) {
+    for (const match of antes.matchAll(regex)) {
+      const termino = (match.index ?? 0) + match[0].length
+      if (termino > fim) { fim = termino; papel = candidato }
+    }
+  }
+  if (!papel) return null
+  const intervalo = antes.slice(fim)
+  if (/^[\s:\-–]*$/.test(intervalo)) return papel
+  const listaDeNomes = /^[\s:\-–]*(?:[A-Z][A-Z' ]*(?:,\s*|\s+E\s+))+$/.test(intervalo)
+  return listaDeNomes && (papel === "parte_ativa" || papel === "parte_passiva") ? papel : null
+}
+
+function papelEntreParentesesDaLista(depois: string): PapelProcessual | null {
+  const m = /^\s*(?:-\s*CPF\s*:?\s*[\dX*.\s-]{11,20})?\s*\(\s*([^()]{2,40})\s*\)/i.exec(depois)
+  if (!m) return null
+  const rotulo = m[1]
+  for (const [regex, papel] of ROTULOS_PAPEL) if (new RegExp(`^(?:${regex.source})$`, "i").test(rotulo.trim())) return papel
+  return null
+}
+
+/** Aposto colado ao nome ("FULANO, OAB/MG 123", "FULANO (VÍTIMA)"); rótulo com dois-pontos apresenta a próxima pessoa. */
+function apostoDepoisDoNome(depois: string): PapelProcessual | null {
+  const semRotuloSeguinte = "(?!\\s*(?:\\(A\\))?\\s*:)"
+  // "FULANO, advogado" ou "FULANO (OAB ...)"; "FULANO ADVOGADO DO(A) REU: X" é o rótulo da próxima pessoa.
+  if (new RegExp(`^\\s*(?:[,(\\-]\\s*)?\\(?\\s*OAB\\b|^\\s*[,(\\-]\\s*(?:ADVOGAD[OA]|ADV\\.?|PROCURADOR(?:A)?)\\b(?!\\s*(?:\\(A\\)\\s*)?D[OA]S?\\b)${semRotuloSeguinte}`, "i").test(depois)) return "advogado"
+  if (new RegExp(`^\\s*[,(\\-]?\\s*${PAPEL_VITIMA.source}${semRotuloSeguinte}`, "i").test(depois)) return "vitima_ou_ofendido"
+  if (new RegExp(`^\\s*[,(\\-]?\\s*${PAPEL_TESTEMUNHA.source}${semRotuloSeguinte}`, "i").test(depois)) return "testemunha_ou_terceiro"
+  if (new RegExp(`^\\s*[,;\\-]?\\s*${PAPEL_PARTIDO_PASSIVO.source}${semRotuloSeguinte}`, "i").test(depois)) return "parte_passiva"
+  if (new RegExp(`^\\s*[,;\\-]?\\s*${PAPEL_PARTIDO_ATIVO.source}${semRotuloSeguinte}`, "i").test(depois)) return "parte_ativa"
   return null
 }
 
@@ -144,42 +196,57 @@ export function papelProcessualDoNome(
   nome: string,
   destinatarios: Array<{ nome?: string; polo?: string }> | string[] = [],
 ): PapelProcessual {
-  const t = normalizar(texto)
+  // Papel depende de pontuação (":", "(", ","), então o texto mantém a
+  // pontuação e o nome casa com qualquer separador entre as palavras.
+  const t = normalizarTextoJudicial(texto)
   const n = normalizar(nome).trim()
   if (!n) return "indeterminado"
   const partesDestinatarios = destinatarios.map((d) => typeof d === "string" ? { nome: d } : d)
   const destinatariosDoNome = partesDestinatarios.filter((d) => nomeDestinatario(d.nome) === n)
-  const ocorrencias = ocorrenciasNomeNormalizado(t, n)
+  const nomeFlexivel = new RegExp(`(?<![A-Z0-9])${n.split(" ").map(escaparRegex).join("[^A-Z0-9]+")}(?![A-Z0-9])`, "g")
+  const achados = [...t.matchAll(nomeFlexivel)]
+  const ocorrencias = achados.map((m) => m.index ?? 0)
+  const tamanhoDe = new Map(achados.map((m) => [m.index ?? 0, m[0].length]))
   if (ocorrencias.length === 0 && destinatariosDoNome.length === 0) return "indeterminado"
   const papeis = new Set<PapelProcessual>()
   for (const destinatario of destinatariosDoNome) {
     const polo = papelDoPolo(destinatario.polo)
     if (polo) papeis.add(polo)
   }
+  const ehParte = (p: PapelProcessual) => p === "parte_ativa" || p === "parte_passiva" || p === "parte_qualificada"
+  const partesComCpf = new Set<PapelProcessual>()
   for (const pos of ocorrencias) {
-    const janela = t.slice(Math.max(0, pos - 120), Math.min(t.length, pos + n.length + 120))
-    const antes = t.slice(Math.max(0, pos - 70), pos)
-    const depois = t.slice(pos + n.length, Math.min(t.length, pos + n.length + 70))
-    const partidoPassivo = new RegExp(`${PAPEL_PARTIDO_PASSIVO.source}\\s*[:\\-]?\\s*$`, "i").test(antes)
-      || new RegExp(`^\\s*[,;:\\-]?\\s*${PAPEL_PARTIDO_PASSIVO.source}`, "i").test(depois)
-    const partidoAtivo = new RegExp(`${PAPEL_PARTIDO_ATIVO.source}\\s*[:\\-]?\\s*$`, "i").test(antes)
-      || new RegExp(`^\\s*[,;:\\-]?\\s*${PAPEL_PARTIDO_ATIVO.source}`, "i").test(depois)
-    const advogado = PAPEL_ADVOGADO.test(antes) || PAPEL_ADVOGADO.test(depois)
-      || (PAPEL_ADVOGADO.test(janela) && /\b(?:CPF|OAB)\b/i.test(janela))
-    const vitima = PAPEL_VITIMA.test(antes) || PAPEL_VITIMA.test(depois)
-    const terceiro = PAPEL_TESTEMUNHA.test(antes) || PAPEL_TESTEMUNHA.test(depois)
-    if (advogado) papeis.add("advogado")
-    if (vitima) papeis.add("vitima_ou_ofendido")
-    if (terceiro) papeis.add("testemunha_ou_terceiro")
-    if (partidoPassivo) papeis.add("parte_passiva")
-    if (partidoAtivo) papeis.add("parte_ativa")
+    // O papel da menção é o do rótulo mais próximo antes do nome (o rótulo de
+    // outra pessoa, mais atrás, não conta) ou o de um aposto colado depois dele.
+    const fimNome = pos + (tamanhoDe.get(pos) ?? n.length)
+    const trechoDepois = t.slice(fimNome, Math.min(t.length, fimNome + 60))
+    // Lista "PARTE(S): [NOME - CPF: ... (AGRAVADO), ...]": o parêntese depois do
+    // nome é o papel desta menção; o rótulo antes dele é do item anterior.
+    const daLista = papelEntreParentesesDaLista(trechoDepois)
+    const antes = daLista ? null : rotuloMaisProximo(t.slice(Math.max(0, pos - 90), pos))
+    const depois = daLista ?? apostoDepoisDoNome(trechoDepois)
+    const daMencao = [antes, depois].filter((p): p is PapelProcessual => p !== null)
+    const cpfColado = /^\s*[,(-]?\s*(?:INSCRIT[OA]\s+NO\s+)?CPF\b/i.test(trechoDepois)
+    // "NOME, CPF ..., OAB/UF ..." é advogado com o próprio CPF.
+    if (cpfColado && /^\s*[,(-]?\s*(?:INSCRIT[OA]\s+NO\s+)?CPF[^A-Z]{0,30}\(?\s*OAB\b/i.test(trechoDepois)) daMencao.push("advogado")
+    if (daMencao.length === 0 && cpfColado) daMencao.push("parte_qualificada")
+    // A mesma menção dizendo parte e não-parte ("REQUERIDO: FULANO, advogado") falha fechando.
+    if (daMencao.some(ehParte) && daMencao.some((p) => !ehParte(p))) return "indeterminado"
+    for (const p of daMencao) papeis.add(p)
+    if (daMencao.some(ehParte) && cpfColado) {
+      for (const p of daMencao) partesComCpf.add(p)
+    }
   }
+  // Parte identificada pelo próprio CPF que também advoga em causa própria em
+  // outra menção continua parte; sem o CPF colado à menção de parte, o misto vai à revisão.
+  if (partesComCpf.size === 1 && ![...papeis].some((p) => ehParte(p) && !partesComCpf.has(p))) return [...partesComCpf][0]
   if (papeis.size === 0) return ocorrencias.length > 0 ? "apenas_citado" : "indeterminado"
   if (papeis.has("parte_ativa") && papeis.has("parte_passiva")) return "indeterminado"
-  const partes = [...papeis].filter((p) => p === "parte_ativa" || p === "parte_passiva")
-  const naoPartes = [...papeis].filter((p) => p !== "parte_ativa" && p !== "parte_passiva")
+  const partes = [...papeis].filter(ehParte)
+  const naoPartes = [...papeis].filter((p) => !ehParte(p))
   if (partes.length > 0 && naoPartes.length > 0) return "indeterminado"
-  if (partes.length === 1) return partes[0]
+  // Polo rotulado em uma menção e qualificação por CPF em outra: vale o polo.
+  if (partes.length > 0) return partes.find((p) => p !== "parte_qualificada") ?? "parte_qualificada"
   if (papeis.has("advogado")) return "advogado"
   if (papeis.has("vitima_ou_ofendido")) return "vitima_ou_ofendido"
   return "testemunha_ou_terceiro"
@@ -207,7 +274,7 @@ export function atribuirProcessoPorPapel(
   destinatarios: Array<{ nome?: string; polo?: string }> | string[] = [],
 ): DecisaoPapelProcessual & { encontrado: boolean; motivo?: string } {
   const decisao = decisaoPapelProcessualDoNome(texto, nome, destinatarios)
-  const encontrado = decisao.papel === "parte_ativa" || decisao.papel === "parte_passiva"
+  const encontrado = decisao.papel === "parte_ativa" || decisao.papel === "parte_passiva" || decisao.papel === "parte_qualificada"
   return encontrado ? { ...decisao, encontrado } : { ...decisao, encontrado, motivo: `papel_processual:${decisao.papel}` }
 }
 
