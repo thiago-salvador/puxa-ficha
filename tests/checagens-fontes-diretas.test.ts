@@ -77,6 +77,9 @@ describe("fontes diretas UOL Confere e AFP Checamos", () => {
     assert.ok(uol && uol.length > 2)
     assert.ok(uol.some((p) => p.includes("Flávio Bolsonaro")))
     assert.equal(trechosUol("<article data-v-d559f1f7><div class=\"body-container\">nav</div></article>"), null)
+    const antigo = "<nav><p>Menu</p></nav><div class=\"text-top-content\"><p>topo</p></div><div class=\"text has-image \"><p dir=\"ltr\">O senador Renan Calheiros <a href=\"#\">errou</a> ao citar a lei.</p><div><p>Segundo parágrafo.</p></div></div><aside><p>Leia também</p></aside>"
+    assert.deepEqual(trechosUol(antigo), ["O senador Renan Calheiros errou ao citar a lei.", "Segundo parágrafo."], "layout antigo: só o div.text, sem topo, menu ou aside")
+    assert.equal(trechosUol("<div class=\"textual\"><p>outro</p></div>"), null)
     const afp = trechosAfp(AFP_ARTICLE)
     assert.ok(afp && afp.length > 2)
     assert.ok(afp.some((p) => p.includes("Flávio Bolsonaro")))
