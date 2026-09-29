@@ -154,7 +154,7 @@ function mesclarContexto(atual: string | null, novo: string | null | undefined):
 export async function carregarVinculadas(anos: readonly number[]): Promise<CandidaturaVinculada[]> {
   const { aplicarCoorteAtualizacao } = await import("./lib/coorte-atualizacao")
   const publicos = await aplicarCoorteAtualizacao(
-    await selecionarTudo<{ id: string; slug: string }>("candidatos_publico", "id, slug", (q) => q.order("slug")),
+    await selecionarTudo<{ id: string; slug: string; cargo_disputado: string | null }>("candidatos_publico", "id, slug, cargo_disputado", (q) => q.order("slug")),
     "tse-despesas",
   )
   const slugPorId = new Map(publicos.map((p) => [p.id, p.slug]))
@@ -179,7 +179,31 @@ export async function carregarVinculadas(anos: readonly number[]): Promise<Candi
       cargo_candidatura: mesclarContexto(atual?.cargo_candidatura ?? null, linha.cargo_candidatura),
     })
   }
-  return [...unicas.values()]
+  return completarCargoDaCandidaturaAtual(
+    [...unicas.values()],
+    new Map(publicos.map((p) => [p.id, p.cargo_disputado ?? null])),
+  )
+}
+
+/** Ano da candidatura atual: é o único em que `candidatos.cargo_disputado` descreve a candidatura. */
+const ANO_CANDIDATURA_ATUAL = 2026
+
+/**
+ * Em 2026 as linhas de `financiamento` e `financiamento_verificacoes` não
+ * guardam `cargo_candidatura`; o cargo da candidatura atual está em
+ * `candidatos.cargo_disputado`. Só preenche o que veio nulo, só no ano atual;
+ * conflito entre fontes e anos anteriores continuam como estão (vão à revisão).
+ */
+export function completarCargoDaCandidaturaAtual(
+  vinculadas: CandidaturaVinculada[],
+  cargoDisputadoPorId: ReadonlyMap<string, string | null>,
+  anoAtual = ANO_CANDIDATURA_ATUAL,
+): CandidaturaVinculada[] {
+  return vinculadas.map((v) => {
+    if (v.ano_eleicao !== anoAtual || v.cargo_candidatura !== null) return v
+    const cargo = cargoDisputadoPorId.get(v.candidato_id)
+    return typeof cargo === "string" && cargo.trim() ? { ...v, cargo_candidatura: cargo.trim() } : v
+  })
 }
 
 // ---------------------------------------------------------------------------
