@@ -53,7 +53,9 @@ export const METHODOLOGY_SOURCES: readonly MethodologySource[] = [
     dataTypes: [
       "Candidaturas e dados cadastrais",
       "Patrimônio declarado",
-      "Financiamento de campanha (receitas e despesas)",
+      "Receitas de campanha (desde 2002)",
+      "Despesas de campanha (desde 2018; 2026 parcial, até a data da consulta)",
+      "Dívida e sobra de campanha (só depois da prestação final de 2026)",
       "Situação da candidatura e CPF",
       "Certidões criminais",
     ],

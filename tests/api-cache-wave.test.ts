@@ -23,7 +23,7 @@ test("todo cache público com single-flight inclui o ponto único de bump", () =
   }
   visit(file)
 
-  assert.equal(cacheCalls.length, 13, "o inventário de caches públicos mudou; revise este contrato")
+  assert.equal(cacheCalls.length, 14, "o inventário de caches públicos mudou; revise este contrato")
   for (const call of cacheCalls) {
     const key = call.arguments[1]
     assert.ok(

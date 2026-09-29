@@ -26,6 +26,12 @@ import { sortVotosForPublicDisplay } from "@/lib/votos-candidato-aggregate"
 import { hasIncompletePartyTimeline } from "@/lib/candidate-integrity"
 import { buildPatrimonioEleicoes, publicTransparencia } from "@/lib/public-profile-dto"
 import { buildFinanciamentoEleicoes, type FinanciamentoVerificacaoPublica } from "@/lib/financiamento-eleicoes"
+import {
+  DESPESAS_RELEITURA_REVALIDATE_SECONDS,
+  idsParaReleituraDeDespesas,
+  lerDespesasPublicas,
+  mesclarDespesasRelidas,
+} from "@/lib/financiamento-despesas-leitura"
 import { ensureCurrentCandidacyInHistory, normalizeHistoricoPoliticoForDisplay } from "@/lib/historico-dedupe"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
 import { nivelFonteProcesso } from "@/lib/djen-consulta-url"
@@ -1841,6 +1847,13 @@ async function getCandidatoBySlugFromRelationResource(
     )
   }
 
+  // Despesas de campanha: fora da tupla posicional acima porque a leitura é
+  // opcional e nunca lança. View ainda não aplicada vira "ausente"; qualquer
+  // outra falha vira "indisponivel" e a seção some da aba Dinheiro. Com
+  // "indisponivel", `getCandidatoBySlugResource` relê só as despesas; ver
+  // `comDespesasRelidas`.
+  const despesas = await lerDespesasPublicas(supabase, personLevelIds, slug)
+
   const historicoConfiavel = normalizeHistoricoPoliticoForDisplay(
     ensureCurrentCandidacyInHistory(candidato, historico.data ?? []),
   )
@@ -1948,6 +1961,9 @@ async function getCandidatoBySlugFromRelationResource(
       : sanitizeFinanciamentoForPublic(financiamentoConfiavel),
     financiamento_eleicoes: financiamentoEleicoes,
     doadores_recorrentes: doadoresRecorrentes,
+    financiamento_despesas: despesas.rows,
+    financiamento_despesas_status: despesas.status,
+    financiamento_despesas_candidato_ids: personLevelIds,
     votos: sortVotosForPublicDisplay(votos.data ?? []),
     processos: processosPublicos,
     processos_omitidos_sem_fonte_oficial: processosBrutos.length - processosPublicos.length,
@@ -2072,9 +2088,40 @@ export async function getCandidatoBySlugResource(
     const resource = await getCachedCandidatoBySlugResource(slug)
     return !isSenadoEnabled() && resource.data?.cargo_disputado === "Senador"
       ? liveResource(null)
-      : resource
+      : await comDespesasRelidas(resource)
   } catch {
     return getCandidatoBySlugResourceUncached(slug)
+  }
+}
+
+/**
+ * Releitura só das despesas, com cache curto e chave própria. Usada quando a
+ * ficha em cache guardou `financiamento_despesas_status = "indisponivel"`: a
+ * ficha inteira continua no cache pelo TTL normal (sem refazer as ~30 consultas
+ * a cada visita) e a seção de despesas tenta de novo no máximo uma vez por
+ * `DESPESAS_RELEITURA_REVALIDATE_SECONDS`.
+ */
+const getCachedDespesasRelidas = unstableCacheWithSingleFlight(
+  async (candidatoIds: string[]) =>
+    lerDespesasPublicas(createServerSupabaseClient({ cacheMode: "no-store" }), candidatoIds, "releitura"),
+  ["public-candidato-ficha-despesas-releitura", "financiamento-despesas-v1-20260929", CURRENT_DATA_WAVE],
+  {
+    revalidate: DESPESAS_RELEITURA_REVALIDATE_SECONDS,
+    tags: ["public-candidato-ficha"],
+  }
+)
+
+async function comDespesasRelidas(
+  resource: DataResource<FichaCandidato | null>
+): Promise<DataResource<FichaCandidato | null>> {
+  const ids = idsParaReleituraDeDespesas(resource.data)
+  if (!resource.data || !ids) return resource
+  try {
+    const leitura = await getCachedDespesasRelidas(ids)
+    return { ...resource, data: mesclarDespesasRelidas(resource.data, leitura) }
+  } catch {
+    // Falha da própria camada de cache: a ficha segue com a seção omitida.
+    return resource
   }
 }
 
@@ -2236,11 +2283,17 @@ const getCachedCandidatoBySlugResource = unstableCacheWithSingleFlight(
   // ja aquecidas continuariam servindo o `message` antigo, com a data de
   // calendario recuada um dia, por ate uma hora depois do deploy.
   //
+  // Bumped 2026-09-29 (`financiamento-despesas-v1-20260929`): o payload ganhou
+  // `financiamento_despesas`, `financiamento_despesas_status` e
+  // `financiamento_despesas_candidato_ids`. Sem o bump, fichas já aquecidas
+  // ficariam sem os campos (a seção some) até o TTL vencer. Ficha com despesas
+  // "indisponivel" entra no cache; `comDespesasRelidas` relê só as despesas.
+  //
   // Bumped 2026-09-06 (`trajetoria-candidatura-atual-20260906`): a candidatura
   // vigente passou a ser projetada na trajetória quando a linha denormalizada
   // de `historico_politico` estiver ausente. Sem o bump, perfis já aquecidos
   // continuariam omitindo 2026 durante o TTL.
-  ["public-candidato-ficha-resource", "central-party-sanitize", "no-cache-degraded-v1", "legislacao-paged-v4", "lme-trim-2mb-20260501", "pl-lazy-preview-20260711", "presidential-cohort-20260515", "editorial-full-closure-20260518", "pre-candidates-lote12-20260522", "photos-names-20260610", "raw-empty-core-lote2-20260630", "raw-empty-core-lote3-20260630", "raw-empty-core-lote4-20260630", "raw-empty-core-news-lote5-20260630", "raw-empty-core-lote6-20260630", "raw-empty-core-lote7-20260630", "raw-empty-core-lote8-20260630", "raw-empty-core-lote9-20260630", "raw-empty-core-lote10-20260630", "raw-empty-core-lote11-20260630", "pe-state-html-gaps-20260708", "rr-state-completion-20260710-v2", "reescrita-claims-homonimo-20260726", "consolidacao-mapa-fome-20260726", "lme-preview-lazy-20260803", "density-bypass-clear-20260804", "sancoes-proveniencia-20260805", "verificacao-campos-tse-min-20260809", "frescor-data-calendario-20260809", "ultima-verificacao-qualquer-dado-20260809", "chapas-tse-20260815", "chapas-bio-card-20260813", "onda-p-20260814", "party-siglas-lote2-20260815", "gastos-executivo-cpgf-20260816", "gastos-executivo-ug-20260820", "trajetoria-candidatura-atual-20260906", "historico-cas-20260915", "candidate-roster-cas-20260915", "candidate-history-cas-20260915", "historico-dedupe-type-cas-20260915", "candidate-beny-sources-cas-20260915", "candidate-beny-sanctions-receipt-cas-20260915", "filiacao-google-public-copy-v2-20260916", "timeline-partidaria-registro-20260918", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, "gastos-em-revisao-20260925", CURRENT_DATA_WAVE],
+  ["public-candidato-ficha-resource", "central-party-sanitize", "no-cache-degraded-v1", "legislacao-paged-v4", "lme-trim-2mb-20260501", "pl-lazy-preview-20260711", "presidential-cohort-20260515", "editorial-full-closure-20260518", "pre-candidates-lote12-20260522", "photos-names-20260610", "raw-empty-core-lote2-20260630", "raw-empty-core-lote3-20260630", "raw-empty-core-lote4-20260630", "raw-empty-core-news-lote5-20260630", "raw-empty-core-lote6-20260630", "raw-empty-core-lote7-20260630", "raw-empty-core-lote8-20260630", "raw-empty-core-lote9-20260630", "raw-empty-core-lote10-20260630", "raw-empty-core-lote11-20260630", "pe-state-html-gaps-20260708", "rr-state-completion-20260710-v2", "reescrita-claims-homonimo-20260726", "consolidacao-mapa-fome-20260726", "lme-preview-lazy-20260803", "density-bypass-clear-20260804", "sancoes-proveniencia-20260805", "verificacao-campos-tse-min-20260809", "frescor-data-calendario-20260809", "ultima-verificacao-qualquer-dado-20260809", "chapas-tse-20260815", "chapas-bio-card-20260813", "onda-p-20260814", "party-siglas-lote2-20260815", "gastos-executivo-cpgf-20260816", "gastos-executivo-ug-20260820", "trajetoria-candidatura-atual-20260906", "historico-cas-20260915", "candidate-roster-cas-20260915", "candidate-history-cas-20260915", "historico-dedupe-type-cas-20260915", "candidate-beny-sources-cas-20260915", "candidate-beny-sanctions-receipt-cas-20260915", "filiacao-google-public-copy-v2-20260916", "timeline-partidaria-registro-20260918", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, "gastos-em-revisao-20260925", "financiamento-despesas-v1-20260929", CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidato-ficha"],
