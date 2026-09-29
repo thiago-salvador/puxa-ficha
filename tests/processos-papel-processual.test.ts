@@ -177,3 +177,16 @@ it("rótulo de outra pessoa não contamina a menção seguinte, e a trava de nã
   // Só citado no corpo, sem rótulo nem CPF, continua fora.
   assert.equal(atribuirProcessoPorPapel("O juízo determinou a intimação, conforme parecer citado por Fulano de Tal em audiência.", nome).encontrado, false)
 })
+
+it("entrada patológica não causa backtracking (ReDoS)", () => {
+  const listas = ["A" + " E A".repeat(50_000), "REQUERIDOS: " + "A, ".repeat(50_000) + "Fulano de Tal", "- CPF:" + " ".repeat(50_000) + "(", "(".repeat(50_000) + " OAB"]
+  atribuirProcessoPorPapel("REQUERIDO: Fulano de Tal", nome) // aquece o JIT antes de medir
+  for (const texto of listas) {
+    for (const chamar of [() => papelProcessualDoNome(texto, nome), () => atribuirProcessoPorPapel(texto, nome)]) {
+      const inicio = performance.now()
+      chamar()
+      const ms = performance.now() - inicio
+      assert.ok(ms < 100, `levou ${Math.round(ms)} ms`)
+    }
+  }
+})

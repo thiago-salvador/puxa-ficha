@@ -152,12 +152,23 @@ function rotuloMaisProximo(antes: string): PapelProcessual | null {
   if (!papel) return null
   const intervalo = antes.slice(fim)
   if (/^[\s:\-–]*$/.test(intervalo)) return papel
-  const listaDeNomes = /^[\s:\-–]*(?:[A-Z][A-Z' ]*(?:,\s*|\s+E\s+))+$/.test(intervalo)
-  return listaDeNomes && (papel === "parte_ativa" || papel === "parte_passiva") ? papel : null
+  return ehListaDeNomes(intervalo) && (papel === "parte_ativa" || papel === "parte_passiva") ? papel : null
+}
+
+/**
+ * "A, B E " antes do nome: só nomes separados por vírgula ou " E ", terminando
+ * no separador. Tokenizado, sem regex de repetição aninhada (evita ReDoS).
+ */
+function ehListaDeNomes(intervalo: string): boolean {
+  const corpo = intervalo.replace(/^[\s:\-–]+/, "")
+  if (!/(?:,| E)\s*$/.test(corpo)) return false
+  const itens = corpo.split(/,|\sE(?=\s|$)/).map((item) => item.trim())
+  itens.pop()
+  return itens.length > 0 && itens.every((item) => /^[A-Z][A-Z' ]{0,80}$/.test(item))
 }
 
 function papelEntreParentesesDaLista(depois: string): PapelProcessual | null {
-  const m = /^\s*(?:-\s*CPF\s*:?\s*[\dX*.\s-]{11,20})?\s*\(\s*([^()]{2,40})\s*\)/i.exec(depois)
+  const m = /^\s*(?:-\s*CPF:?[\dX*. -]{11,22})?\(([^()]{2,40})\)/i.exec(depois)
   if (!m) return null
   const rotulo = m[1]
   for (const [regex, papel] of ROTULOS_PAPEL) if (new RegExp(`^(?:${regex.source})$`, "i").test(rotulo.trim())) return papel
@@ -168,16 +179,16 @@ function papelEntreParentesesDaLista(depois: string): PapelProcessual | null {
 function apostoDepoisDoNome(depois: string): PapelProcessual | null {
   const semRotuloSeguinte = "(?!\\s*(?:\\(A\\))?\\s*:)"
   // "FULANO, advogado" ou "FULANO (OAB ...)"; "FULANO ADVOGADO DO(A) REU: X" é o rótulo da próxima pessoa.
-  if (new RegExp(`^\\s*(?:[,(\\-]\\s*)?\\(?\\s*OAB\\b|^\\s*[,(\\-]\\s*(?:ADVOGAD[OA]|ADV\\.?|PROCURADOR(?:A)?)\\b(?!\\s*(?:\\(A\\)\\s*)?D[OA]S?\\b)${semRotuloSeguinte}`, "i").test(depois)) return "advogado"
-  if (new RegExp(`^\\s*[,(\\-]?\\s*${PAPEL_VITIMA.source}${semRotuloSeguinte}`, "i").test(depois)) return "vitima_ou_ofendido"
-  if (new RegExp(`^\\s*[,(\\-]?\\s*${PAPEL_TESTEMUNHA.source}${semRotuloSeguinte}`, "i").test(depois)) return "testemunha_ou_terceiro"
-  if (new RegExp(`^\\s*[,;\\-]?\\s*${PAPEL_PARTIDO_PASSIVO.source}${semRotuloSeguinte}`, "i").test(depois)) return "parte_passiva"
-  if (new RegExp(`^\\s*[,;\\-]?\\s*${PAPEL_PARTIDO_ATIVO.source}${semRotuloSeguinte}`, "i").test(depois)) return "parte_ativa"
+  if (new RegExp(`^\\s*(?:[,\\-]\\s*)?(?:\\(\\s*)?OAB\\b|^\\s*[,(\\-]\\s*(?:ADVOGAD[OA]|ADV\\.?|PROCURADOR(?:A)?)\\b(?!\\s*(?:\\(A\\)\\s*)?D[OA]S?\\b)${semRotuloSeguinte}`, "i").test(depois)) return "advogado"
+  if (new RegExp(`^\\s*(?:[,(\\-]\\s*)?${PAPEL_VITIMA.source}${semRotuloSeguinte}`, "i").test(depois)) return "vitima_ou_ofendido"
+  if (new RegExp(`^\\s*(?:[,(\\-]\\s*)?${PAPEL_TESTEMUNHA.source}${semRotuloSeguinte}`, "i").test(depois)) return "testemunha_ou_terceiro"
+  if (new RegExp(`^\\s*(?:[,;\\-]\\s*)?${PAPEL_PARTIDO_PASSIVO.source}${semRotuloSeguinte}`, "i").test(depois)) return "parte_passiva"
+  if (new RegExp(`^\\s*(?:[,;\\-]\\s*)?${PAPEL_PARTIDO_ATIVO.source}${semRotuloSeguinte}`, "i").test(depois)) return "parte_ativa"
   return null
 }
 
 function trechoDecisivo(texto: string, nome: string, inicio?: number): string {
-  const t = normalizar(texto).replace(/CPF(?:\s*(?:N|NUMERO|NO))?\s*[:.]?\s*(?:\d[\d. -]{8,}\d|[X*][X*. -]{8,}[X*])/gi, "CPF [omitido]")
+  const t = normalizar(texto).replace(/CPF(?:\s*(?:N|NUMERO|NO))?\s*[:.]?\s*(?:\d[\d. -]{8,20}\d|[X*][X*. -]{8,20}[X*])/gi, "CPF [omitido]")
   const alvo = normalizar(nome)
   const pos = inicio ?? Math.max(0, t.indexOf(alvo))
   const ini = Math.max(0, pos - 90)
@@ -226,9 +237,9 @@ export function papelProcessualDoNome(
     const antes = daLista ? null : rotuloMaisProximo(t.slice(Math.max(0, pos - 90), pos))
     const depois = daLista ?? apostoDepoisDoNome(trechoDepois)
     const daMencao = [antes, depois].filter((p): p is PapelProcessual => p !== null)
-    const cpfColado = /^\s*[,(-]?\s*(?:INSCRIT[OA]\s+NO\s+)?CPF\b/i.test(trechoDepois)
+    const cpfColado = /^\s*(?:[,(-]\s*)?(?:INSCRIT[OA]\s+NO\s+)?CPF\b/i.test(trechoDepois)
     // "NOME, CPF ..., OAB/UF ..." é advogado com o próprio CPF.
-    if (cpfColado && /^\s*[,(-]?\s*(?:INSCRIT[OA]\s+NO\s+)?CPF[^A-Z]{0,30}\(?\s*OAB\b/i.test(trechoDepois)) daMencao.push("advogado")
+    if (cpfColado && /^\s*(?:[,(-]\s*)?(?:INSCRIT[OA]\s+NO\s+)?CPF[^A-Z]{0,30}OAB\b/i.test(trechoDepois)) daMencao.push("advogado")
     if (daMencao.length === 0 && cpfColado) daMencao.push("parte_qualificada")
     // A mesma menção dizendo parte e não-parte ("REQUERIDO: FULANO, advogado") falha fechando.
     if (daMencao.some(ehParte) && daMencao.some((p) => !ehParte(p))) return "indeterminado"
