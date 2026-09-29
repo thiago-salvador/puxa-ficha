@@ -457,3 +457,52 @@ test.describe("No horizontal overflow", () => {
     })
   }
 })
+
+// Regra global: todo elemento `position: absolute` (o `sr-only` dos valores,
+// por exemplo) dentro de uma região com rolagem horizontal precisa ter o
+// ancestral posicionado ali dentro. Senão ele escapa da rolagem e alarga a
+// página inteira no celular, que passa a renderizar com zoom reduzido (o
+// comparador chegou a 547px numa tela de 390px).
+test.describe("Absolutos contidos nas regiões com rolagem horizontal", () => {
+  const pages = [
+    "/",
+    "/comparar?c1=fixture-alfa&c2=fixture-beta",
+    "/candidato/fixture-alfa",
+    "/candidato/fixture-alfa?tab=dinheiro",
+    "/candidato/fixture-alfa?tab=votos",
+    "/candidato/fixture-alfa?tab=justica",
+    "/doadores?q=silva",
+    "/rankings",
+  ]
+
+  for (const path of pages) {
+    test(`${path}: nenhum absoluto escapa e a página não alarga`, async ({ page }) => {
+      await page.goto(path)
+      await page.waitForLoadState("networkidle")
+
+      const result = await page.evaluate(() => {
+        const root = document.documentElement
+        const scrollers = [...document.querySelectorAll<HTMLElement>("body *")].filter((el) =>
+          /(auto|scroll)/.test(getComputedStyle(el).overflowX),
+        )
+        const escapes = new Set<string>()
+        for (const scroller of scrollers) {
+          for (const el of scroller.querySelectorAll<HTMLElement>("*")) {
+            if (getComputedStyle(el).position !== "absolute") continue
+            const containing = el.offsetParent
+            if (containing && !scroller.contains(containing)) {
+              escapes.add(`${scroller.className} > ${el.className} "${(el.textContent ?? "").trim().slice(0, 30)}"`)
+            }
+          }
+        }
+        return {
+          escapes: [...escapes],
+          pageWider: root.scrollWidth > (window.visualViewport?.width ?? root.clientWidth) + 1,
+        }
+      })
+
+      expect(result.escapes).toEqual([])
+      expect(result.pageWider).toBe(false)
+    })
+  }
+})
