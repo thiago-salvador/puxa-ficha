@@ -78,8 +78,18 @@
 
 /* Fatos */
 .factsScope { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; font-weight: 700; letter-spacing: .08em; margin-bottom: 12px; text-transform: uppercase; }
-.factsGrid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
-.factCard { background: #ffffff; border: 1px solid var(--rule); border-radius: 6px; display: flex; flex-direction: column; padding: 20px 22px; }
+.factGroups { display: grid; gap: 32px; }
+/* Cor por grupo: vermelho pede atenção, âmbar é dinheiro, cinza é informativo. */
+.factGroup { --tone: #666666; --tone-soft: #f3f2ee; }
+.factGroup[data-tone="alerta"] { --tone: #b42318; --tone-soft: #fdf0ee; }
+.factGroup[data-tone="atencao"] { --tone: #9a6700; --tone-soft: #fdf6e3; }
+.factGroupHead { align-items: baseline; border-left: 4px solid var(--tone); display: flex; flex-wrap: wrap; gap: 4px 14px; margin-bottom: 14px; padding-left: 12px; }
+.factGroupTitle { color: var(--tone); font-size: 14px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.factGroupText { color: var(--muted); font-size: 14px; line-height: 1.4; }
+.factsGrid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); }
+.factCard { background: #ffffff; border: 1px solid var(--rule); border-radius: 6px; border-top: 4px solid var(--tone, var(--rule)); display: flex; flex-direction: column; padding: 20px 22px; }
+.factGroup[data-tone="alerta"] .factCard { background: var(--tone-soft); }
+.factGroup .factValue { color: var(--tone); }
 .factValue { font: 400 clamp(2.4rem, 5vw, 3.4rem)/1 var(--font-anton), sans-serif; font-variant-numeric: tabular-nums; }
 .factLabel { color: var(--ink); font-size: 15px; font-weight: 800; line-height: 1.35; margin-top: 8px; }
 .factDetail { color: #333333; font-size: 14px; font-variant-numeric: tabular-nums; line-height: 1.5; margin-top: 8px; }

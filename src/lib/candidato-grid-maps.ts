@@ -1,7 +1,11 @@
 import type { CandidatoResumo } from "@/lib/api"
+import type { ProcessosJusticaContagem } from "@/lib/processos-justica-total"
 
 export interface CandidatoGridMaps {
+  /** Total da contagem única (judicial + disciplinar), o mesmo da ficha. */
   processos: Record<string, number>
+  /** Partes do total, só para slugs com processo disciplinar; ausência vale como só judicial. */
+  processosContagem: Record<string, ProcessosJusticaContagem>
   patrimonios: Record<string, number | null>
   processSortCounts: Record<string, number | null>
   /** Só slugs marcados; ausência vale como não atípico. */
@@ -16,6 +20,7 @@ export interface CandidatoGridMaps {
 export function buildCandidatoGridMaps(resumos: readonly CandidatoResumo[]): CandidatoGridMaps {
   const maps: CandidatoGridMaps = {
     processos: {},
+    processosContagem: {},
     patrimonios: {},
     processSortCounts: {},
     patrimoniosAtipicos: {},
@@ -23,6 +28,9 @@ export function buildCandidatoGridMaps(resumos: readonly CandidatoResumo[]): Can
   for (const resumo of resumos) {
     const slug = resumo.candidato.slug
     maps.processos[slug] = resumo.processos
+    if (resumo.processos_contagem && resumo.processos_contagem.disciplinares > 0) {
+      maps.processosContagem[slug] = resumo.processos_contagem
+    }
     maps.patrimonios[slug] = resumo.patrimonio
     maps.processSortCounts[slug] = resumo.processos_ordenacao ?? null
     if (resumo.patrimonio_atipico) maps.patrimoniosAtipicos[slug] = true

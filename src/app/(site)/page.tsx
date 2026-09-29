@@ -31,6 +31,7 @@ import { getHomeHeroMetrics } from "@/lib/home-hero-metrics"
 import { isSenadoEnabled } from "@/lib/senado-feature"
 import { buildCandidatoGridMaps } from "@/lib/candidato-grid-maps"
 import { formatCompact } from "@/lib/utils"
+import { PROCESSO_DISCIPLINAR_AVISO } from "@/lib/processos-justica-total"
 
 export default async function Home() {
   const { props: heroImage } = getImageProps({
@@ -76,12 +77,12 @@ export default async function Home() {
   )
 
   const candidatos = resumosPresidencia.map((r) => r.candidato)
-  const { processos, patrimonios, processSortCounts, patrimoniosAtipicos } =
+  const { processos, processosContagem, patrimonios, processSortCounts, patrimoniosAtipicos } =
     buildCandidatoGridMaps(resumosPresidencia)
 
   // Mesma flag que coloca os senadores em totalCandidatos (home-hero-metrics).
   const senadoEnabled = isSenadoEnabled()
-  const { totalCandidatos, totalPatrimonio, totalProcessos } =
+  const { totalCandidatos, totalPatrimonio, totalProcessos, totalProcessosDisciplinares } =
     getHomeHeroMetrics(
       todosResumos,
       todosResumosResource.sourceStatus
@@ -190,14 +191,24 @@ export default async function Home() {
             {totalProcessos !== null && totalProcessos > 0 && (
               <div className="hero-fade" style={{ animationDelay: "0.6s" }}>
                 <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
-                  {totalProcessos}
+                  <span data-pf-hero-processos={totalProcessos}>{totalProcessos}</span>
                 </p>
                 <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
                   processos
                 </p>
+                {totalProcessosDisciplinares !== null && totalProcessosDisciplinares > 0 && (
+                  <p data-pf-hero-processos-disciplinares={totalProcessosDisciplinares} className="mt-1 text-[length:var(--text-eyebrow)] font-medium leading-tight text-white/80">
+                    inclui {totalProcessosDisciplinares} disciplinares
+                  </p>
+                )}
               </div>
             )}
           </div>
+          {totalProcessos !== null && totalProcessosDisciplinares !== null && totalProcessosDisciplinares > 0 && (
+            <p className="hero-fade max-w-prose text-[length:var(--text-eyebrow)] font-medium leading-snug text-white/80" style={{ animationDelay: "0.7s" }}>
+              Processos somam judiciais e disciplinares dos Conselhos de Ética da Câmara e do Senado. {PROCESSO_DISCIPLINAR_AVISO}
+            </p>
+          )}
         </div>
       </section>
 
@@ -251,6 +262,7 @@ export default async function Home() {
         <DeferredCandidatoGrid
           candidatos={candidatos}
           processos={processos}
+          processosContagem={processosContagem}
           patrimonios={patrimonios}
           processSortCounts={processSortCounts}
           patrimoniosAtipicos={patrimoniosAtipicos}

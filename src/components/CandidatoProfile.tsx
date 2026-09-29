@@ -1,4 +1,5 @@
 "use client"
+// cspell:ignore exibicao contaveis
 
 // cspell:words atribuidas representacoes etica variacao
 
@@ -63,12 +64,12 @@ import {
 import type { CandidatoProfileNavTabId, CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
 import { getApprovedAttributedFactChecks } from "@/lib/checagens-atribuidas"
 import { getReciboChecagens } from "@/lib/buscas-recibos"
-import { getRepresentacoesEticaAprovadas } from "@/lib/representacoes-etica"
+import { getProcessosDisciplinaresContaveis } from "@/lib/processos-justica-candidato"
 import { RepresentacoesEticaCategoria } from "./RepresentacoesEticaCategoria"
 import {
   aberturaAbaJustica,
   contarProcessosJustica,
-  legendaProcessosJustica,
+  exibicaoProcessosJustica,
   PROCESSO_DISCIPLINAR_AVISO,
 } from "@/lib/processos-justica-total"
 import {
@@ -497,10 +498,11 @@ export function CandidatoProfile({
       ? getReciboChecagens({ candidate_id: ficha.id, candidate_slug: ficha.slug })
       : null
   const checagensEnabled = attributedChecks.length > 0 || checagensReceipt !== null
-  const representacoesEtica = getRepresentacoesEticaAprovadas(ficha.slug)
+  const representacoesEtica = getProcessosDisciplinaresContaveis(ficha.slug)
   // Um total só para o KPI do topo, o badge da aba e o card da visão geral.
   const processosJustica = contarProcessosJustica({ judiciais: processos.length, disciplinares: representacoesEtica })
   const aberturaJustica = aberturaAbaJustica(processosJustica)
+  const processosKpi = exibicaoProcessosJustica(processosOverview, processosJustica)
 
   const tabDefsById: Record<CandidatoProfileNavTabId, { label: string; dataCount: number }> = {
     geral: { label: fixedCopy.generalOverview, dataCount: 0 },
@@ -771,12 +773,12 @@ export function CandidatoProfile({
               compara com a API.
             */}
             <StatCard
-              value={processosJustica.disciplinares > 0 ? processosJustica.total : processosOverview.value}
+              value={processosKpi.value}
               label="Processos"
               icon={Scale}
               dataValueAttr="data-pf-overview-processos"
               dataRawValue={ficha.total_processos ?? 0}
-              sub={processosJustica.disciplinares > 0 ? legendaProcessosJustica(processosJustica) : processosOverview.sub}
+              sub={processosKpi.sub}
               rootDataAttrs={{ "data-pf-overview-processos-disciplinares": String(processosJustica.disciplinares) }}
             />
             <StatCard

@@ -57,6 +57,38 @@ export function legendaProcessosJustica(contagem: ProcessosJusticaContagem): str
   return partes.join(" · ")
 }
 
+/**
+ * Legenda compacta para a grade de candidatos: "1 judicial · 6 disc.".
+ * A versão por extenso (`legendaProcessosJustica`) vai no title e no leitor de tela.
+ */
+export function legendaCurtaProcessosJustica(contagem: ProcessosJusticaContagem): string | undefined {
+  if (contagem.disciplinares === 0) return undefined
+  const partes = [
+    contagem.judiciais > 0 ? plural(contagem.judiciais, "judicial", "judiciais") : null,
+    `${contagem.disciplinares} disc.`,
+  ].filter((parte): parte is string => parte !== null)
+  return partes.join(" · ")
+}
+
+interface ProcessosExibicao {
+  value: number | string
+  sub?: string
+}
+
+/**
+ * Número e legenda que toda superfície mostra para o total de processos. Sem
+ * processo disciplinar, vale a régua judicial (`processosOverviewDisplay`,
+ * com "—" e recibo de busca); com disciplinar, o total é a soma e a legenda
+ * separa as partes, como no KPI da ficha.
+ */
+export function exibicaoProcessosJustica(
+  judicial: ProcessosExibicao,
+  contagem: ProcessosJusticaContagem,
+): ProcessosExibicao {
+  if (contagem.disciplinares === 0) return judicial
+  return { value: contagem.total, sub: legendaProcessosJustica(contagem) }
+}
+
 export const PROCESSO_DISCIPLINAR_AVISO = "Processo disciplinar não é processo judicial nem condenação."
 
 /**
