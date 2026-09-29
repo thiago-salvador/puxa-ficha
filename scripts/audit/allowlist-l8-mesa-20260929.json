@@ -571,9 +571,9 @@
       "processos_nao_publicar_ja_publicos_sem_acao": 60,
       "processos_veto_publico_pendente_decisao": 1,
       "promessas_verificar": 1,
-      "promessas_inserir": 8,
-      "promessas_despublicar": 14,
-      "promessas_noop": 60,
+      "promessas_inserir": 6,
+      "promessas_despublicar": 10,
+      "promessas_noop": 66,
       "projetos_autoria": 1,
       "candidate_changes_esperados": 32
     },
@@ -1492,17 +1492,6 @@
         },
         {
           "item_ids": [
-            "F5-par-efraim-filho-22"
-          ],
-          "slug": "efraim-filho",
-          "candidato_id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
-          "programa_chave": "2026:GOVERNADOR:PB:150002538692",
-          "tema_id": "politica-tributaria",
-          "tipo_evidencia": "projeto_lei",
-          "evidencia_ref": "504d29ec-5965-4b8e-81e9-ac6c89e31870"
-        },
-        {
-          "item_ids": [
             "F5-par-efraim-filho-24"
           ],
           "slug": "efraim-filho",
@@ -1536,17 +1525,6 @@
         },
         {
           "item_ids": [
-            "F5-par-luciano-zucco-30"
-          ],
-          "slug": "luciano-zucco",
-          "candidato_id": "53af44cf-7f66-44d3-b733-1114c5143e6a",
-          "programa_chave": "2026:GOVERNADOR:RS:210002547857",
-          "tema_id": "orientacao-economica",
-          "tipo_evidencia": "projeto_lei",
-          "evidencia_ref": "09363c2d-a6af-40b2-9b32-2ac277755e83"
-        },
-        {
-          "item_ids": [
             "F5-par-luciano-zucco-32"
           ],
           "slug": "luciano-zucco",
@@ -1576,7 +1554,7 @@
           "slug": "sergio-moro-gov-pr",
           "candidato_id": "6025cfb5-d1a7-4ad0-baa7-c131b381e8fa",
           "id": "0d02ea00-c2d5-4516-a604-d459c1b2c93f",
-          "preimage_md5": "f9fb9e24c8c1fd13e11280c10019f449"
+          "preimage_md5": "2a815742d2de29f4fb27fa587e7f7d16"
         },
         {
           "item_ids": [
@@ -1585,7 +1563,7 @@
           "slug": "luciano-zucco",
           "candidato_id": "53af44cf-7f66-44d3-b733-1114c5143e6a",
           "id": "16eb95a6-5b7a-4e56-8e58-663223761fb7",
-          "preimage_md5": "bac9b4338cc0b1dfe50e30e4d6f24426"
+          "preimage_md5": "bf76060e3ac1c034074c74ccc3ce0d90"
         },
         {
           "item_ids": [
@@ -1594,16 +1572,7 @@
           "slug": "tarcisio-gov-sp",
           "candidato_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
           "id": "238ccde5-9ac1-41b0-9e92-a0c17581abcd",
-          "preimage_md5": "f2ab77f8d5a2494d89f8b27fd8a430d3"
-        },
-        {
-          "item_ids": [
-            "F5-legado-679a3cf3-9f11-494d-97a7-b4609615af15"
-          ],
-          "slug": "patrus-ananias",
-          "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
-          "id": "679a3cf3-9f11-494d-97a7-b4609615af15",
-          "preimage_md5": "d944eae011838401da493f0d1ccb48d0"
+          "preimage_md5": "b9f70ac50b9f00055c521b5f72168639"
         },
         {
           "item_ids": [
@@ -1612,7 +1581,7 @@
           "slug": "daniel-vilela",
           "candidato_id": "d80384f6-147b-40ef-8fa5-ae0b2be5a1f5",
           "id": "9bc9faef-6188-493a-a724-e8f4a75b63d6",
-          "preimage_md5": "bc257b05971fee36348c2d5864d85747"
+          "preimage_md5": "37c54921ab07ad0322e59e3caac28390"
         },
         {
           "item_ids": [
@@ -1621,7 +1590,7 @@
           "slug": "lula",
           "candidato_id": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
           "id": "a1e9b99d-485a-4322-b4e5-598923155243",
-          "preimage_md5": "78d8992c5dd52baf94ec3e42123d9aa4"
+          "preimage_md5": "8216c353bcd772e4ee01fa70c2eb01fe"
         },
         {
           "item_ids": [
@@ -1630,16 +1599,7 @@
           "slug": "eduardo-paes",
           "candidato_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
           "id": "a72a3378-6665-4582-966b-f907139490d6",
-          "preimage_md5": "9ee24fd58fe481e4db45bec9aa4d5cd0"
-        },
-        {
-          "item_ids": [
-            "F5-legado-cfc91569-d469-45e7-acd9-7fd1a6f5111a"
-          ],
-          "slug": "marconi-perillo",
-          "candidato_id": "95fc116b-4c1e-4332-9c52-948bc1775a57",
-          "id": "cfc91569-d469-45e7-acd9-7fd1a6f5111a",
-          "preimage_md5": "ebd4d1e60916e31891be5d655ab31e84"
+          "preimage_md5": "e897721f603fb8ac38b1ddb53454df81"
         },
         {
           "item_ids": [
@@ -1648,25 +1608,7 @@
           "slug": "patrus-ananias",
           "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
           "id": "e7046002-6714-4af5-9cd5-736a25d22e94",
-          "preimage_md5": "d15037c5a50e2385d50e092c90cc3943"
-        },
-        {
-          "item_ids": [
-            "F5-legado-f9a2d1cf-271f-4ad2-bbcb-9c6686cb6caa"
-          ],
-          "slug": "professora-dorinha",
-          "candidato_id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
-          "id": "f9a2d1cf-271f-4ad2-bbcb-9c6686cb6caa",
-          "preimage_md5": "2957982dbcafc99ccef528ec727ccf06"
-        },
-        {
-          "item_ids": [
-            "F5-legado-f9f0ba63-04f1-4ce0-a7b9-ab1b2b1df451"
-          ],
-          "slug": "leandro-grass",
-          "candidato_id": "3b724874-8769-44f3-aab3-06c0155dc155",
-          "id": "f9f0ba63-04f1-4ce0-a7b9-ab1b2b1df451",
-          "preimage_md5": "83995d55302ce8666d74ab76ac2c265e"
+          "preimage_md5": "6fe3bbb5e74c08a655d09f57c56d3aca"
         },
         {
           "item_ids": [
@@ -1675,7 +1617,7 @@
           "slug": "lenilda-luna",
           "candidato_id": "9677309d-5b33-4973-9bbb-d92b766557a3",
           "id": "3531eebb-c738-4c59-b130-4a8bffc18481",
-          "preimage_md5": "3c8ea82ca91c0526d06b110c5ec8c931"
+          "preimage_md5": "25d18e965e2852e038fdbb26b6115536"
         },
         {
           "item_ids": [
@@ -1684,7 +1626,7 @@
           "slug": "rejane-oliveira",
           "candidato_id": "db4e22f8-ce30-4fcd-8799-a73be255d23a",
           "id": "b0e63924-e06d-452c-a215-1418eb8e0710",
-          "preimage_md5": "85eb814473b6ff9b1e60ae40d9b9cbc0"
+          "preimage_md5": "f6ab56c023b3e64a693e411667d12ff8"
         },
         {
           "item_ids": [
@@ -1694,7 +1636,7 @@
           "slug": "sergio-moro-gov-pr",
           "candidato_id": "6025cfb5-d1a7-4ad0-baa7-c131b381e8fa",
           "id": "502908ac-a0be-47fb-8f9e-ed40d591942b",
-          "preimage_md5": "ab7b6fa63c732444e7285d66f69fa673"
+          "preimage_md5": "2d65a7e005293cea4f4d2b869061cb6b"
         }
       ]
     },
