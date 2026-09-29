@@ -12,7 +12,7 @@ const CNJ = /^\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}$/
 
 describe("processos fora por papel de autoridade", () => {
   it("cada linha traz CNJ válido e ficha", () => {
-    assert.equal(PROCESSOS_FORA_POR_PAPEL_DE_AUTORIDADE.size, 12)
+    assert.equal(PROCESSOS_FORA_POR_PAPEL_DE_AUTORIDADE.size, 9)
     for (const [id, linha] of PROCESSOS_FORA_POR_PAPEL_DE_AUTORIDADE) {
       assert.match(id, /^[0-9a-f-]{36}$/)
       assert.match(linha.cnj, CNJ, id)
@@ -41,9 +41,9 @@ describe("processos fora por papel de autoridade", () => {
   })
 
   it("desconto por ficha no comparador", () => {
-    assert.equal(processosForaPorPapelDeAutoridadeDaFicha("acm-neto"), 2)
-    assert.equal(processosForaPorPapelDeAutoridadeDaFicha("jeronimo"), 2)
-    assert.equal(processosForaPorPapelDeAutoridadeDaFicha("hana-ghassan"), 1)
+    assert.equal(processosForaPorPapelDeAutoridadeDaFicha("acm-neto"), 1)
+    assert.equal(processosForaPorPapelDeAutoridadeDaFicha("jeronimo"), 1)
+    assert.equal(processosForaPorPapelDeAutoridadeDaFicha("hana-ghassan"), 0)
     assert.equal(processosForaPorPapelDeAutoridadeDaFicha("ficha-sem-linha"), 0)
   })
 })
