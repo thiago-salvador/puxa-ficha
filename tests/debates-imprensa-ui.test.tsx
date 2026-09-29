@@ -92,11 +92,8 @@ describe("box Debates no bento da ficha", () => {
     const route = readFileSync("src/app/(site)/candidato/[slug]/CandidatoFichaView.tsx", "utf8")
     const tabs = readFileSync("src/lib/candidato-profile-tabs.ts", "utf8")
 
-    assert.match(overview, /<CandidateDebatesBentoCard/)
-    assert.ok(
-      overview.indexOf("<CandidateDebatesBentoCard") > overview.indexOf("<CareerTeaser"),
-      "o box Debates deve fechar o bento da Visão geral",
-    )
+    // O card "Falas" saiu da Visão geral; o componente continua testado acima.
+    assert.doesNotMatch(overview, /CandidateDebatesBentoCard|hasCandidateFalasCard/)
     assert.doesNotMatch(profile, /DebatesOverviewCarousel|DebatesArchiveTab/)
     assert.doesNotMatch(route, /DebatesPresidenciaisSection/)
     assert.doesNotMatch(tabs, /"debates"/)

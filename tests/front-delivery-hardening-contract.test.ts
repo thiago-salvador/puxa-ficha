@@ -20,7 +20,7 @@ test("sitemap does not manufacture request-time lastmod for static URLs", () => 
 test("overview and card interactions expose keyboard and heading semantics", () => {
   const overview = readFileSync("src/components/ProfileOverview.tsx", "utf8")
   const card = readFileSync("src/components/CandidatoCard.tsx", "utf8")
-  assert.match(overview, /<h2 className=.*\{title\}<\/h2>/)
+  assert.match(overview, /<h2 className=[^\n]*>\s*\{title\}/)
   assert.match(card, /group-focus-within:opacity-100/)
   assert.match(card, /group-focus-within:translate-y-0/)
 })

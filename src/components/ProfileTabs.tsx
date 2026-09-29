@@ -9,7 +9,7 @@ export interface Tab {
   count?: number
 }
 
-const MOBILE_PRIMARY_IDS = ["geral", "pesquisas", "programa"]
+const MOBILE_PRIMARY_IDS = ["geral", "programa"]
 // A barra mobile e um grid de 3 colunas com `truncate` em cada rotulo. A 360px,
 // "PESQUISAS" (9 caracteres em caixa alta com tracking, mais a badge de contagem
 // na mesma celula) saia como "PES…". "VISÃO" e "PROGRAMA" cabem; a forma curta

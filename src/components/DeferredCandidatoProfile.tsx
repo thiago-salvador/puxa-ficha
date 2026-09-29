@@ -1,6 +1,6 @@
+// cspell:words representacoes etica
 import type { FichaCandidato } from "@/lib/types"
 import type { CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
-import type { PesquisaEleitoralDoCandidato } from "@/lib/pesquisas-eleitorais"
 import { hasWideManualOverlappingSegmentedMandates } from "@/lib/historico-dedupe"
 import { countPartySwitches, hasSameYearPartyReversal } from "@/lib/party-switches"
 import { nivelFonteProcesso } from "@/lib/djen-consulta-url"
@@ -13,12 +13,11 @@ import type { ProgramaGovernoManifestoPublico } from "@/lib/programa-governo"
 import type { SenadoRunningMatesPayload } from "@/components/SenadoRunningMates"
 import type { EstadoEvidenciasPrograma } from "@/lib/compromisso-evidencia"
 import type { ProgramaGovernoPendencia } from "@/lib/programa-governo-pendencia"
+import { getRepresentacoesEticaAprovadas } from "@/lib/representacoes-etica"
 
 export function DeferredCandidatoProfile({
   ficha,
   initialTab,
-  pesquisasEnabled = false,
-  pesquisas = [],
   programaGoverno = null,
   compromissoEvidencias,
   programaPendente = null,
@@ -26,8 +25,6 @@ export function DeferredCandidatoProfile({
 }: {
   ficha: FichaCandidato
   initialTab?: CandidatoProfileTabId
-  pesquisasEnabled?: boolean
-  pesquisas?: PesquisaEleitoralDoCandidato[]
   programaGoverno?: ProgramaGovernoManifestoPublico | null
   compromissoEvidencias?: EstadoEvidenciasPrograma
   programaPendente?: ProgramaGovernoPendencia | null
@@ -65,8 +62,6 @@ export function DeferredCandidatoProfile({
       <DeferredCandidatoProfileClient
         slug={ficha.slug}
         initialTab={initialTab}
-        pesquisasEnabled={pesquisasEnabled}
-        pesquisas={pesquisas}
         programaGoverno={programaGoverno}
         compromissoEvidencias={compromissoEvidencias}
         programaPendente={programaPendente}
@@ -75,6 +70,7 @@ export function DeferredCandidatoProfile({
           processos: (ficha.processos ?? []).filter((row) => Boolean(nivelFonteProcesso(row))).length,
           processosOmitidos: ficha.processos_omitidos_sem_fonte_oficial ?? 0,
           processosVerificacao: ficha.processos_verificacao,
+          processosDisciplinares: getRepresentacoesEticaAprovadas(ficha.slug).map((item) => ({ casa: item.casa })),
           patrimonio:
             patrimonioMaisRecente && estadoValorPatrimonio(patrimonioMaisRecente) !== "valor_nao_informado"
               ? patrimonioMaisRecente.valor_total

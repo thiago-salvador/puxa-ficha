@@ -106,7 +106,7 @@ test("fica no fim da Visão Geral sem criar uma aba", () => {
   const generalData = readFileSync("src/components/CandidateGeneralData.tsx", "utf8")
   const tabs = readFileSync("src/lib/candidato-profile-tabs.ts", "utf8")
   const overviewStart = profile.indexOf('{activeTab === "geral"')
-  const overviewEnd = profile.indexOf("{/* PESQUISAS TAB */}", overviewStart)
+  const overviewEnd = profile.indexOf("{/* PROGRAMA TAB */}", overviewStart)
   const overview = profile.slice(overviewStart, overviewEnd)
 
   assert.ok(overviewStart >= 0 && overviewEnd > overviewStart)

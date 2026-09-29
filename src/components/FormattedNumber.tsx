@@ -16,5 +16,5 @@ export function FormattedNumber({ value, kind = "currency", digits = 1 }: {
   const compact = kind === "currency" ? formatCompact(value)
     : kind === "count" ? formatCompactNumber(value)
       : kind === "percent" ? formatPercent(value, digits) : formatDecimal(value, digits)
-  return <span title={full}><span aria-hidden="true">{compact}</span><span className="sr-only">{full}</span></span>
+  return <span title={full}><span aria-hidden="true" className="whitespace-nowrap">{compact}</span><span className="sr-only">{full}</span></span>
 }

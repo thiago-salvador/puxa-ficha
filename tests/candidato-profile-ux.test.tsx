@@ -124,10 +124,12 @@ describe("ondas de UX da ficha", () => {
     const profile = readFileSync("src/components/CandidatoProfile.tsx", "utf8")
     const hero = readFileSync("src/app/(site)/candidato/[slug]/CandidatoFichaView.tsx", "utf8")
 
-    assert.match(overview, /data-pf-profile-overview-masonry/)
+    assert.match(overview, /data-pf-profile-overview-columns/)
     assert.match(overview, /data-pf-profile-overview-item/)
-    assert.match(overview, /container\.dataset\.pfProfileOverviewLayout = "masonry"/)
-    assert.match(overview, /columnHeights\[0\] <= columnHeights\[1\]/)
+    assert.match(overview, /container\.dataset\.pfProfileOverviewLayout = "columns"/)
+    // Colunas fixas por card; só os itens "auto" vão para a coluna mais baixa.
+    assert.match(overview, /slot === "left"\) place\(item, 0\)/)
+    assert.match(overview, /place\(item, heights\[0\] <= heights\[1\] \? 0 : 1\)/)
     assert.match(overview, /flex min-h-\[220px\] flex-col/)
     assert.doesNotMatch(overview, /items-stretch|last-child:nth-child\(odd\)|flex h-full min-h-\[220px\]/)
     assert.match(profile, /trailingCard=\{\s*programaEnabled && programaGoverno/)

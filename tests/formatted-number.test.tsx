@@ -7,7 +7,7 @@ import { STATE_INDICATOR_CONFIG } from "@/lib/state-indicator-metadata"
 
 test("compact currency retains cents in the accessible full amount", () => {
   const html = renderToStaticMarkup(<FormattedNumber value={1_234_567.89} />)
-  assert.match(html, /aria-hidden="true">R\$ 1,2 mi/)
+  assert.match(html, /aria-hidden="true" class="whitespace-nowrap">R\$ 1,2 mi/)
   assert.match(html, /class="sr-only">1\.234\.567,89 reais/)
 })
 

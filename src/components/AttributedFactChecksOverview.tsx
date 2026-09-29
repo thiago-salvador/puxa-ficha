@@ -5,6 +5,8 @@
 import { ChevronRight } from "lucide-react"
 
 import type { AttributedFactCheck } from "@/lib/checagens-atribuidas"
+import { OverviewCountBadge } from "./OverviewCountBadge"
+import { VeredictoPill } from "./VeredictoPill"
 
 function formatDate(value: string): string {
   const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(value)
@@ -30,35 +32,36 @@ export function AttributedFactChecksOverview({
       aria-labelledby="attributed-checks-overview-title"
       className="min-w-0 rounded-[12px] border border-border/50 bg-card px-5 py-4"
     >
-      <div className="mb-3 flex items-center justify-between gap-3">
-        <h2 id="attributed-checks-overview-title" className="text-[length:var(--text-body-sm)] font-semibold text-foreground">
-          Checagens atribuídas
-        </h2>
+      <div className="mb-3 flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <h2
+            id="attributed-checks-overview-title"
+            className="flex items-center gap-2 text-[length:var(--text-body-sm)] font-semibold text-foreground"
+          >
+            Checagens atribuídas
+            <OverviewCountBadge value={checks.length} />
+          </h2>
+          <p className="mt-0.5 text-[length:var(--text-caption)] font-medium text-muted-foreground">
+            Avaliações de {publishers} {publishers === 1 ? "veículo" : "veículos"} de checagem
+          </p>
+        </div>
         <button
           type="button"
           onClick={onOpenTab}
-          aria-label="Ver todas na aba Checagens"
-          className="inline-flex min-h-6 items-center gap-0.5 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
+          className="inline-flex min-h-11 shrink-0 items-center gap-0.5 rounded-[8px] px-2 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
-          Checagens <ChevronRight className="size-3" aria-hidden="true" />
+          Ver todas as checagens <ChevronRight className="size-3" aria-hidden="true" />
         </button>
       </div>
 
-      <p className="font-heading text-[length:var(--text-heading-lg)] leading-none tabular-nums text-foreground">
-        {checks.length}
-      </p>
-      <p className="mt-1.5 text-[length:var(--text-caption)] font-semibold text-muted-foreground">
-        {checks.length === 1 ? "avaliação" : "avaliações"} de {publishers} {publishers === 1 ? "veículo" : "veículos"} de checagem
-      </p>
-
-      <article data-pf-attributed-checks-overview-latest={latest.id} className="mt-4 min-w-0 border-t border-border/60 pt-3">
-        <p className="truncate text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+      <article data-pf-attributed-checks-overview-latest={latest.id} className="min-w-0 border-t border-border/60 pt-3">
+        <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
           Mais recente · {latest.publisher} · {formatDate(latest.publishedAt)}
         </p>
-        <p className="mt-1.5 text-[length:var(--text-caption)] font-bold text-foreground">{latest.originalLabel}</p>
-        <p className="mt-1 line-clamp-3 text-[length:var(--text-caption)] leading-snug text-foreground">
-          {latest.claimFormat === "literal" ? `“${latest.claim}”` : latest.claim}
+        <p className="mt-1.5 text-[19px] font-extrabold leading-snug tracking-[-0.01em] text-foreground">
+          {latest.claim}
         </p>
+        <VeredictoPill label={latest.originalLabel} className="mt-2" />
       </article>
 
       <p className="mt-3 text-[length:var(--text-eyebrow)] leading-snug text-muted-foreground">
