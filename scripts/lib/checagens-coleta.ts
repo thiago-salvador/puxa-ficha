@@ -1051,7 +1051,7 @@ export function leadPermitidoRegra3(titulo: string, slug: string): boolean {
 /** Conectivos de nome. "Neto", "Filho" e "Junior" ficam de fora: são parte do nome ("ACM Neto"). */
 const CONECTIVOS_NOME = new Set(["de", "da", "do", "das", "dos", "e", "di", "del", "van", "von", "la", "le"])
 
-const CARGOS_ANTES_DO_NOME = new Set(["governador", "governadora", "presidente", "senador", "senadora", "deputado", "deputada", "prefeito", "prefeita", "ministro", "ministra", "vice", "ex", "candidato", "candidata", "pre", "general", "coronel", "pastor", "pastora", "governo", "gestao", "campanha", "candidatura", "chapa", "partido", "gabinete", "equipe", "aliados", "base", "prefeitura", "secretaria", "senado", "camara", "assembleia", "estado", "municipio", "video", "foto", "post", "texto", "fala", "audio", "imagem", "nao"])
+const CARGOS_ANTES_DO_NOME = new Set(["governador", "governadora", "presidente", "senador", "senadora", "deputado", "deputada", "prefeito", "prefeita", "ministro", "ministra", "vice", "ex", "candidato", "candidata", "pre", "general", "coronel", "pastor", "pastora", "governo", "gestao", "campanha", "candidatura", "chapa", "partido", "gabinete", "equipe", "aliados", "base", "prefeitura", "secretaria", "senado", "camara", "assembleia", "estado", "municipio", "video", "foto", "post", "texto", "fala", "declaracao", "declaracoes", "audio", "imagem", "nao"])
 
 /**
  * Só descarta quando a parte do nome forma outro nome próprio reconhecível.
@@ -1523,12 +1523,38 @@ export const SCHEMA_DECISOES_CHECAGENS = "checagens-decisoes-v1" as const
  */
 export type OrigemDecisaoChecagem = "jev-validacao" | "mesa"
 
+/**
+ * Lead que a Mesa traz junto com a decisão, para matéria que nenhuma coleta
+ * viu. Passa pela mesma validação do lead coletado: agência da lista com link
+ * no domínio dela, título que cita a candidatura, nome inteiro no título ou no
+ * trecho do corpo e marca distintiva quando há homônimo. A regra 3 não barra:
+ * só a Mesa traz lead, e a Mesa é quem resolve a regra 3.
+ */
+export interface LeadDecisaoMesa {
+  agencia: string
+  titulo: string
+  link: string
+  data_publicacao: string | null
+  /** Trecho do corpo com o nome inteiro, quando o título só traz parte dele. Privado: não vai ao catálogo. */
+  trecho_confirmacao?: string
+}
+
 export interface DecisaoLeadChecagem {
   candidate_id: string
   candidate_slug: string
   link: string
   decisao: "publicar" | "descartar"
   origem: OrigemDecisaoChecagem
+  /** Só em `publicar` da Mesa: o lead, quando ele não está na Mesa do recibo. */
+  lead?: LeadDecisaoMesa
+}
+
+export type MotivoRejeicaoLeadMesa = "sem_cadastro" | "titulo_sem_nome" | "nome_colado_em_outra_pessoa" | "nome_inteiro_ausente" | "homonimo_sem_marca" | "titulo_repetido"
+
+export interface LeadMesaRejeitado {
+  candidate_slug: string
+  link: string
+  motivo: MotivoRejeicaoLeadMesa
 }
 
 export interface ArquivoDecisoesChecagens {
@@ -1551,6 +1577,7 @@ export function validarDecisoesChecagens(bruto: unknown): ArquivoDecisoesChecage
     if (!decisao?.candidate_id || !decisao.candidate_slug || !decisao.link) throw new Error("Decisão sem identidade ou link")
     if (decisao.decisao !== "publicar" && decisao.decisao !== "descartar") throw new Error(`Decisão desconhecida para ${decisao.link}`)
     if (decisao.origem !== "jev-validacao" && decisao.origem !== "mesa") throw new Error(`Origem desconhecida para ${decisao.link}`)
+    if (decisao.lead !== undefined) validarLeadDecisaoMesa(decisao)
     const chave = chaveDecisao(decisao.candidate_id, decisao.candidate_slug, decisao.link)
     if (vistas.has(chave)) throw new Error(`Decisão repetida para ${decisao.candidate_slug}: ${decisao.link}`)
     vistas.add(chave)
@@ -1558,15 +1585,78 @@ export function validarDecisoesChecagens(bruto: unknown): ArquivoDecisoesChecage
   return arquivo as ArquivoDecisoesChecagens
 }
 
+/** Forma do lead trazido pela Mesa. Lead malformado ou fora da lista de agências derruba a importação. */
+function validarLeadDecisaoMesa(decisao: DecisaoLeadChecagem): void {
+  const lead = decisao.lead
+  if (decisao.origem !== "mesa" || decisao.decisao !== "publicar") throw new Error(`Só decisão publicar da Mesa traz lead (${decisao.link})`)
+  if (!lead || typeof lead !== "object" || lead.link !== decisao.link) throw new Error(`Lead da Mesa com link diferente da decisão (${decisao.link})`)
+  const agencia = AGENCIAS_CHECAGEM.find((item) => item.id === lead.agencia)
+  if (!agencia) throw new Error(`Agência fora da lista no lead da Mesa: ${String(lead.agencia)} (${decisao.link})`)
+  const host = hostDe(lead.link)
+  if (!host || !agencia.dominios.some((dominio) => host === dominio || host.endsWith(`.${dominio}`))) {
+    throw new Error(`Link fora do domínio de ${agencia.nome} no lead da Mesa (${decisao.link})`)
+  }
+  if (typeof lead.titulo !== "string" || !lead.titulo.trim()) throw new Error(`Lead da Mesa sem título (${decisao.link})`)
+  if (lead.data_publicacao !== null && (typeof lead.data_publicacao !== "string" || !/^\d{4}-\d{2}-\d{2}(?:T[\d:.]+Z?)?$/.test(lead.data_publicacao))) {
+    throw new Error(`Data inválida no lead da Mesa (${decisao.link})`)
+  }
+  if (lead.trecho_confirmacao !== undefined && typeof lead.trecho_confirmacao !== "string") throw new Error(`Trecho inválido no lead da Mesa (${decisao.link})`)
+}
+
+function linkComparavel(link: string): string {
+  let decodificado = link
+  try { decodificado = decodeURI(link) } catch { /* link com escape inválido fica como veio */ }
+  return decodificado.replace(/\/+$/, "")
+}
+
+/**
+ * Mesma validação de identidade do lead coletado (`candidatosDaResposta` e
+ * `confirmarCandidatos`), mais a regra de homônimo. Devolve o motivo da
+ * rejeição ou, quando passa, por onde o nome inteiro foi confirmado.
+ */
+export function avaliarLeadDecisaoMesa(
+  lead: LeadDecisaoMesa,
+  candidato: CandidatoChecagem,
+  grupo?: readonly CandidatoChecagem[],
+): { motivo: MotivoRejeicaoLeadMesa } | { confirmado_por?: "corpo" } {
+  const agencia = AGENCIAS_CHECAGEM.find((item) => item.id === lead.agencia)
+  const item: ItemBusca = { titulo: lead.titulo, link: lead.link, fonte: "", fonte_url: lead.link, data_publicacao: lead.data_publicacao }
+  if (!agencia || candidatosDaResposta([item], candidato, agencia).length === 0) return { motivo: "titulo_sem_nome" }
+  if (grupo && grupo.length > 1 && !tituloTemMarcador(lead.titulo, marcadoresDistintivos(candidato, grupo))) return { motivo: "homonimo_sem_marca" }
+  if (textoCitaNomeInteiro(normalizarNome(lead.titulo), candidato)) return {}
+  if (nomeColadoEmOutraPessoa(lead.titulo, candidato)) return { motivo: "nome_colado_em_outra_pessoa" }
+  if (lead.trecho_confirmacao && textoCitaNomeInteiro(normalizarNome(lead.trecho_confirmacao), candidato)) return { confirmado_por: "corpo" }
+  return { motivo: "nome_inteiro_ausente" }
+}
+
 /**
  * Aplica decisões editoriais aos leads da Mesa de cada recibo. Lead publicado
  * passa a contar; lead descartado conta como `descartados`, como o nome que o
  * corpo não confirmou, e não impede afirmar ausência. O que não tem decisão
  * continua na Mesa e impede afirmar ausência. Recibo em erro ou com agência sem resposta continua sem ausência.
+ *
+ * Decisão `publicar` da Mesa com `lead` publica também matéria que não está na
+ * Mesa do recibo, depois de `avaliarLeadDecisaoMesa` (precisa do cadastro para
+ * o nome completo e os homônimos). Link já contado não conta de novo; lead
+ * reprovado não entra e sai em `rejeitadas`.
  */
-export function aplicarDecisoesMesa(recibos: readonly ReciboChecagem[], arquivo: ArquivoDecisoesChecagens): { recibos: ReciboChecagem[]; aplicadas: number; sem_lead: number } {
+export function aplicarDecisoesMesa(
+  recibos: readonly ReciboChecagem[],
+  arquivo: ArquivoDecisoesChecagens,
+  cadastro: readonly CandidatoChecagem[] = [],
+): { recibos: ReciboChecagem[]; aplicadas: number; sem_lead: number; leads_da_mesa: number; rejeitadas: LeadMesaRejeitado[] } {
   const porChave = new Map(arquivo.decisoes.map((decisao) => [chaveDecisao(decisao.candidate_id, decisao.candidate_slug, decisao.link), decisao]))
+  const comLead = new Map<string, DecisaoLeadChecagem[]>()
+  for (const decisao of arquivo.decisoes) {
+    if (!decisao.lead) continue
+    const chaveRecibo = `${decisao.candidate_id}\u0000${decisao.candidate_slug}`
+    comLead.set(chaveRecibo, [...(comLead.get(chaveRecibo) ?? []), decisao])
+  }
+  const candidatos = new Map(cadastro.map((candidato) => [`${candidato.id}\u0000${candidato.slug}`, candidato]))
+  const grupos = gruposDeHomonimos(cadastro)
   const usadas = new Set<string>()
+  const rejeitadas: LeadMesaRejeitado[] = []
+  let leadsDaMesa = 0
   const saida = recibos.map((recibo) => {
     // Todo recibo importado passa pela regra atual de resultado, com ou sem Mesa.
     const agencias = Object.fromEntries(Object.entries(recibo.agencias).map(([id, estado]) => [id, { ...estado }]))
@@ -1595,6 +1685,30 @@ export function aplicarDecisoesMesa(recibos: readonly ReciboChecagem[], arquivo:
         estado.descartados = (estado.descartados ?? 0) + 1
       }
     }
+    const chaveRecibo = `${recibo.candidate_id}\u0000${recibo.candidate_slug}`
+    for (const decisao of comLead.get(chaveRecibo) ?? []) {
+      const chave = chaveDecisao(decisao.candidate_id, decisao.candidate_slug, decisao.link)
+      if (usadas.has(chave)) continue
+      const lead = decisao.lead!
+      // Mesmo link com outra codificação ("publicações" e "publica%C3%A7%C3%B5es") já está contado.
+      if (leads.some((existente) => linkComparavel(existente.link) === linkComparavel(lead.link))) { usadas.add(chave); continue }
+      const candidato = candidatos.get(chaveRecibo)
+      const avaliacao = candidato ? avaliarLeadDecisaoMesa(lead, candidato, grupos.get(chaveRecibo)) : { motivo: "sem_cadastro" as const }
+      const motivo = "motivo" in avaliacao ? avaliacao.motivo
+        : leads.some((existente) => existente.agencia === lead.agencia && chaveTitulo(existente.titulo) === chaveTitulo(lead.titulo)) ? "titulo_repetido" : null
+      if (motivo) {
+        rejeitadas.push({ candidate_slug: recibo.candidate_slug, link: lead.link, motivo })
+        continue
+      }
+      usadas.add(chave)
+      leadsDaMesa++
+      const confirmadoPor = "confirmado_por" in avaliacao ? avaliacao.confirmado_por : undefined
+      leads.push({ agencia: lead.agencia, titulo: lead.titulo, link: lead.link, data_publicacao: lead.data_publicacao,
+        ...(confirmadoPor ? { confirmado_por: confirmadoPor, trecho_confirmacao: lead.trecho_confirmacao?.slice(0, 500) } : {}),
+      })
+      const estado = agencias[lead.agencia]
+      if (estado?.status === "ok") estado.leads = (estado.leads ?? 0) + 1
+    }
     for (const estado of Object.values(agencias)) {
       if (estado.pendentes === undefined) delete estado.pendentes
     }
@@ -1611,7 +1725,7 @@ export function aplicarDecisoesMesa(recibos: readonly ReciboChecagem[], arquivo:
     void _mesa
     return { ...resto, agencias, leads, result, ...(mesa.length ? { mesa } : {}) }
   })
-  return { recibos: saida, aplicadas: usadas.size, sem_lead: porChave.size - usadas.size }
+  return { recibos: saida, aplicadas: usadas.size, sem_lead: porChave.size - usadas.size - rejeitadas.length, leads_da_mesa: leadsDaMesa, rejeitadas }
 }
 
 /** Recibo que precisa ser refeito: erro geral ou alguma agência sem resposta. */
