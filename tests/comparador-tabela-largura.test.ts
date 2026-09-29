@@ -49,10 +49,19 @@ describe("tabela do comparador", () => {
   it("o wrapper continua sendo uma região rolável e focável", () => {
     // Sem isso, forçar o scroll seria trocar um defeito por outro: teclado sem
     // acesso ao conteúdo que saiu da viewport.
-    assert.match(SRC, /className="overflow-x-auto overscroll-x-contain"/)
+    assert.match(SRC, /className="relative overflow-x-auto overscroll-x-contain"/)
     assert.match(SRC, /role="region"/)
     assert.match(SRC, /tabIndex=\{0\}/)
     assert.match(SRC, /aria-label="Lista de candidatos para comparar\. Role na horizontal/)
+  })
+
+  it("toda região de rolagem horizontal é posicionada, para conter o sr-only absoluto dos valores", () => {
+    // O texto para leitor de tela do FormattedNumber é `position: absolute`. Sem
+    // um ancestral posicionado dentro da região rolável, ele escapa dela e
+    // alarga a página no celular (a página inteira ficava com 547px a 390px).
+    const regioes = SRC.match(/className="[^"]*overflow-x-auto overscroll-x-contain"/g) ?? []
+    assert.ok(regioes.length >= 2, "esperava as duas regiões roláveis do comparador")
+    for (const regiao of regioes) assert.match(regiao, /\brelative\b/, regiao)
   })
 
   it("abaixo de md a lista continua sendo cards, não a tabela", () => {
