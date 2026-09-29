@@ -1,6 +1,6 @@
 "use client"
 
-// cspell:words atribuidas representacoes etica
+// cspell:words atribuidas representacoes etica variacao
 
 import { memo, useCallback, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react"
 import dynamic from "next/dynamic"
@@ -19,7 +19,12 @@ import {
 } from "@/lib/destaques-ficha"
 import { classifyAttentionPoints } from "@/lib/attention-points"
 import { resolvePatrimonioEleicoes } from "@/lib/public-profile-dto"
-import { patrimonioMaisRecenteSemEscolhaArbitraria, patrimonioPorAnoSemAmbiguidade } from "@/lib/patrimonio-contexto"
+import {
+  estadoValorPatrimonio,
+  patrimonioMaisRecenteSemEscolhaArbitraria,
+  patrimonioValorEstadoLabel,
+  variacaoPatrimonialDaFicha,
+} from "@/lib/patrimonio-contexto"
 import {
   groupProcessosForDisplay,
   isProcessStatusNeutral,
@@ -492,7 +497,10 @@ export function CandidatoProfile({
 
   const tabDefsById: Record<CandidatoProfileNavTabId, { label: string; dataCount: number }> = {
     geral: { label: fixedCopy.generalOverview, dataCount: 0 },
-    pesquisas: { label: "Pesquisas", dataCount: pesquisas.length },
+    pesquisas: {
+      label: "Pesquisas",
+      dataCount: pesquisas.filter((pesquisa) => (pesquisa.grupo ?? "recente") === "recente").length,
+    },
     programa: { label: "Programa", dataCount: 0 },
     media: { label: "Mídia", dataCount: ficha.noticias?.length ?? 0 },
     checagens: { label: "Checagens", dataCount: attributedChecks.length },
@@ -694,20 +702,20 @@ export function CandidatoProfile({
 
   const latestPatrimonioContexto = patrimonioMaisRecenteSemEscolhaArbitraria(patrimonio)
   const latestPatrimonio = latestPatrimonioContexto.patrimonio
-  const patrimonioSerieAnual = patrimonioPorAnoSemAmbiguidade(patrimonio)
-
-  const patrimonioVariacao =
-    latestPatrimonio && patrimonioSerieAnual.length >= 2
-      ? (() => {
-          const sorted = [...patrimonioSerieAnual].sort((a, b) => b.ano_eleicao - a.ano_eleicao)
-          const latest = sorted[0]
-          const prev = sorted[1]
-          const pct = prev.valor_total > 0
-            ? ((latest.valor_total - prev.valor_total) / prev.valor_total) * 100
-            : 0
-          return { pct: Math.round(pct), from: prev.ano_eleicao, to: latest.ano_eleicao }
-        })()
-      : null
+  // Sem base positiva e informada não há porcentagem: 0 -> X não é "↓ 0%".
+  // Mesma regra do export de imprensa (variacaoPatrimonialDaFicha).
+  const patrimonioVariacaoDaFicha = variacaoPatrimonialDaFicha(patrimonio)
+  const patrimonioVariacao = patrimonioVariacaoDaFicha
+    ? {
+        pct: patrimonioVariacaoDaFicha.pct,
+        from: patrimonioVariacaoDaFicha.anterior.ano_eleicao,
+        to: patrimonioVariacaoDaFicha.atual.ano_eleicao,
+      }
+    : null
+  const latestPatrimonioEstado = latestPatrimonio ? estadoValorPatrimonio(latestPatrimonio) : null
+  const latestPatrimonioEstadoLabel = latestPatrimonioEstado
+    ? patrimonioValorEstadoLabel(latestPatrimonioEstado)
+    : null
 
   const totalGastos =
     gastos.length > 0
@@ -762,7 +770,9 @@ export function CandidatoProfile({
               sub={processosOverview.sub}
             />
             <StatCard
-              value={latestPatrimonio
+              value={latestPatrimonio && latestPatrimonioEstado === "valor_nao_informado"
+                ? "—"
+                : latestPatrimonio
                 ? <FormattedNumber value={latestPatrimonio.valor_total} kind="currency" />
                 : latestPatrimonioContexto.quantidade > 1
                   ? `${latestPatrimonioContexto.quantidade} declarações`
@@ -770,10 +780,13 @@ export function CandidatoProfile({
               label="Patrimônio"
               icon={Landmark}
               dataValueAttr="data-pf-overview-patrimonio"
-              dataRawValue={latestPatrimonio?.valor_total ?? null}
+              dataRawValue={latestPatrimonioEstado === "valor_nao_informado" ? null : latestPatrimonio?.valor_total ?? null}
+              sub={latestPatrimonio && latestPatrimonioEstadoLabel
+                ? `${latestPatrimonioEstadoLabel} (${latestPatrimonio.ano_eleicao})`
+                : undefined}
               trend={patrimonioVariacao ? {
                 value: `${Math.abs(patrimonioVariacao.pct)}% (${patrimonioVariacao.from}-${patrimonioVariacao.to})`,
-                positive: patrimonioVariacao.pct > 0 ? undefined : false,
+                positive: patrimonioVariacao.pct < 0 ? false : undefined,
               } : undefined}
             />
             <StatCard
@@ -964,7 +977,7 @@ export function CandidatoProfile({
             {/* MÍDIA TAB */}
             {activeTab === "media" && (
               (ficha.noticias && ficha.noticias.length > 0) || new URLSearchParams(locationSearch).has("noticia") ? (
-                <NewsSection key={ficha.slug} noticias={ficha.noticias ?? []} candidateSlug={ficha.slug} selectedNewsId={new URLSearchParams(locationSearch).get("noticia")} />
+                <NewsSection key={ficha.slug} noticias={ficha.noticias ?? []} nextCursor={ficha.noticias_cursor ?? null} candidateSlug={ficha.slug} selectedNewsId={new URLSearchParams(locationSearch).get("noticia")} />
               ) : (
                 <div data-pf-media-empty>
                   <SectionLabel>Mídia</SectionLabel>
@@ -1075,6 +1088,11 @@ export function CandidatoProfile({
                               {independentStatuses.length === 1 && (
                                 <MetaBadge tone="muted">
                                   {formatProcessStatusLabel(independentStatuses[0])}
+                                </MetaBadge>
+                              )}
+                              {processGroup.some((item) => item.fonte_nivel === "em_confirmacao") && (
+                                <MetaBadge tone="caution" data-pf-processo-fonte-em-confirmacao>
+                                  Fonte oficial em confirmação
                                 </MetaBadge>
                               )}
                               {(() => {

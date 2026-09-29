@@ -1,0 +1,18 @@
+{
+  "relevancia_pessoa": {
+    "type": "noul",
+    "instructions": "A checagem em `item` trata do candidato identificado em `candidate`, incluindo uma alegação ou boato que o associa diretamente a um ato, fala, marca, aparição ou parente envolvido em um caso? Use `candidate.historico_cargos` e `contexto.homonimos_conhecidos` para separar a pessoa de homônimos. Mera citação incidental, pessoa homônima e parentesco inventado não tornam a checagem sobre o candidato. Julgue o que a checagem examina, não se a alegação é verdadeira.",
+    "criteria": {
+      "true": "A matéria examina uma afirmação, ação, imagem, vídeo ou associação que envolve diretamente o candidato, ainda que conclua que o conteúdo é falso; inclui checagem de alegação sobre parente quando a relação alegada com o candidato é parte central do boato.",
+      "false": "O nome aparece apenas de passagem; a matéria trata de homônimo ou outra pessoa; ou a associação depende de parentesco inventado e a checagem conclui que essa conexão não existe."
+    }
+  },
+  "associacao_no_boato": {
+    "type": "noul",
+    "instructions": "O boato ou conteúdo desmentido descrito em `item` atribuía ao candidato de `candidate` um ato, fala, marca, aparição em vídeo ou envolvimento de parente em um caso? Julgue a atribuição que o boato fazia antes da correção da agência, não a verdade da alegação. Use `item.trecho_corpo` se estiver presente; se ausente, use o título e subtítulo disponíveis.",
+    "criteria": {
+      "true": "O boato associava diretamente o candidato a um ato, fala, marca ou aparição; também conta a alegação sobre um parente real quando esse vínculo é parte central do boato.",
+      "false": "O nome só aparece em sátira de personagem homônimo, fala de terceiro sem atribuição ao candidato, vídeo sem relação com ele ou parentesco inventado que a checagem nega."
+    }
+  }
+}

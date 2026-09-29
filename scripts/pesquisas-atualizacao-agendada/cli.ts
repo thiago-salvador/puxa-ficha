@@ -14,6 +14,7 @@ import { GEOGRAFIAS_DESCOBERTA } from "../lib/pesquisas-monitoramento-pesqele"
 import { construirCoberturaDescoberta, LISTAGENS_PESQUISAS } from "../lib/pesquisas-monitoramento-descoberta"
 import { isObservedPollPublication } from "../lib/pesquisas-publication-observation"
 import { obterAdaptadorMonitoramento } from "../lib/pesquisas-monitoramento-adapters"
+import { carregarCoorteAtualizacao } from "../lib/coorte-atualizacao"
 
 import {
   aplicarOperacoesAgendadas,
@@ -145,7 +146,7 @@ export function validarRecibosPublicacao(documents: DocumentoComRecibos[], matri
   return alerts
 }
 
-function consolidateCommand(options: Map<string, string>): void {
+async function consolidateCommand(options: Map<string, string>): Promise<void> {
   const inputDir = resolve(required(options, "--input"))
   const outputDir = resolve(required(options, "--out"))
   const matrixPayload = JSON.parse(readFileSync(resolve(required(options, "--matrix")), "utf8")) as {
@@ -220,6 +221,8 @@ function consolidateCommand(options: Map<string, string>): void {
     catalogs: carregarCatalogosAgendados(),
     discovery: { status: discoveryStatus, alerts: [...new Set(discoveryAlerts)] },
     executionAlerts,
+    // coorte-atualizacao: aplica
+    coorteAtualizacao: await carregarCoorteAtualizacao(),
 
   })
   // Only the current, atomically validated contracts can advance result status.
@@ -265,7 +268,7 @@ function consolidateCommand(options: Map<string, string>): void {
   if (result.execution_status === "failed" && !result.promotion.authorized) process.exitCode = 1
 }
 
-function applyCommand(options: Map<string, string>): void {
+async function applyCommand(options: Map<string, string>): Promise<void> {
   const diff = validarDocumentoDiffAgendado(JSON.parse(readFileSync(resolve(required(options, "--diff")), "utf8")) as unknown)
   const publish = options.get("--publish") === "true"
   let attestation: { status: unknown; proposal: unknown; diff: typeof diff } | undefined
@@ -275,11 +278,13 @@ function applyCommand(options: Map<string, string>): void {
     attestation = { status, proposal, diff }
     validarAutorizacaoPublicacaoAgendada(attestation)
   }
-  const touched = aplicarOperacoesAgendadas(diff.operations, process.cwd(), { publish, attestation })
+  // Cohort read is required before any local catalog write, including a non-public apply.
+  const coorteAtualizacao = await carregarCoorteAtualizacao()
+  const touched = aplicarOperacoesAgendadas(diff.operations, process.cwd(), { publish, attestation, coorteAtualizacao })
   console.log(`PESQUISAS_APPLY_TOUCHED=${touched.join(",") || "none"}`)
 }
 
-function main(): void {
+async function main(): Promise<void> {
   const [command, ...argv] = process.argv.slice(2)
   const options = parseOptions(argv)
   if (command === "matrix") return matrixCommand(options)
@@ -288,9 +293,7 @@ function main(): void {
   throw new Error(`comando desconhecido: ${command ?? "ausente"}`)
 }
 
-try {
-  main()
-} catch (error) {
+main().catch((error) => {
   console.error(error instanceof Error ? error.message : String(error))
   process.exitCode = 1
-}
+})

@@ -131,10 +131,18 @@ export interface EscopoComparabilidade {
   comparabilityKey: string
 }
 
+/**
+ * Onde o resultado aparece na ficha: a rodada mais recente de cada instituto, as rodadas
+ * anteriores com o mesmo tipo de pergunta ou um bloco próprio para outro tipo de cenário.
+ */
+export type GrupoPesquisaDoCandidato = "recente" | "anterior" | "segundo_turno" | "espontanea"
+
 export interface PesquisaEleitoralDoCandidato
   extends Omit<PesquisaEleitoral, "cenarios"> {
   cenario: Omit<CenarioPesquisaEleitoral, "resultados">
   resultado: ResultadoPesquisaEleitoral
+  /** Ausente equivale a "recente" (seleção por escopo fixo). */
+  grupo?: GrupoPesquisaDoCandidato
 }
 
 export class ErroValidacaoPesquisasEleitorais extends Error {
@@ -899,7 +907,7 @@ export function listarPesquisasPresidenciaisPorSlug(
   if (scope) {
     return selecionarPesquisasMaisRecentesComparaveis(catalogo, candidateSlug, scope)
   }
-  return listarRodadasRecentesDoCandidato(catalogo, candidateSlug)
+  return listarPesquisasDoCandidato(catalogo, candidateSlug)
 }
 
 export function listarPesquisasGovernadorPorSlug(
@@ -908,27 +916,77 @@ export function listarPesquisasGovernadorPorSlug(
 ): PesquisaEleitoralDoCandidato[] {
   const catalogo = carregarPesquisasGovernadores().get(geographyCode.toUpperCase())
   if (!catalogo) return []
-  return listarRodadasRecentesDoCandidato(catalogo, candidateSlug)
+  return listarPesquisasDoCandidato(catalogo, candidateSlug)
 }
 
-/** Cada cenário mantém seu rótulo e sua chave; a listagem não calcula tendências. */
-export function listarRodadasRecentesDoCandidato(
+const MODOS_ESTIMULADOS = new Set(["estimulado", "estimulada"])
+const MODOS_ESPONTANEOS = new Set(["espontaneo", "espontanea"])
+
+function modoDoCenario(scenario: Pick<CenarioPesquisaEleitoral, "comparabilityKey">): string {
+  return (scenario.comparabilityKey.split("|")[4] ?? "")
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+}
+
+/** Critério da visão principal: o turno publicado do catálogo, pergunta estimulada. */
+function cenarioPrincipalPadrao(catalogo: CatalogoPesquisasEleitorais) {
+  return (scenario: CenarioPesquisaEleitoral) =>
+    scenario.turn === catalogo.publicationScope.turn && MODOS_ESTIMULADOS.has(modoDoCenario(scenario))
+}
+
+/** Segundo turno e pergunta espontânea ganham blocos próprios; outros formatos ficam de fora. */
+function grupoDeOutroCenario(scenario: CenarioPesquisaEleitoral): GrupoPesquisaDoCandidato | null {
+  if (scenario.turn === 2) return "segundo_turno"
+  if (MODOS_ESPONTANEOS.has(modoDoCenario(scenario))) return "espontanea"
+  return null
+}
+
+const ORDEM_GRUPOS: GrupoPesquisaDoCandidato[] = ["recente", "anterior", "segundo_turno", "espontanea"]
+
+function resultadosDoCandidato(
+  poll: PesquisaEleitoral,
+  candidateSlug: string,
+  grupoDoCenario: (scenario: CenarioPesquisaEleitoral) => GrupoPesquisaDoCandidato | null,
+): PesquisaEleitoralDoCandidato[] {
+  const { cenarios, ...metadata } = poll
+  return cenarios.flatMap((scenario) => {
+    const grupo = grupoDoCenario(scenario)
+    if (!grupo) return []
+    // Só o vínculo exato do alias revisado identifica a candidatura; homônimos ficam de fora.
+    const resultado = scenario.resultados.find((result) =>
+      result.matchStatus === "exact_alias" && result.candidateSlug === candidateSlug)
+    if (!resultado) return []
+    const { resultados: _resultados, ...cenario } = scenario
+    void _resultados
+    return [{ ...metadata, cenario, resultado, grupo }]
+  })
+}
+
+/**
+ * Todas as pesquisas do candidato em grupos separados, na ordem de exibição: a rodada mais
+ * recente de cada instituto, as rodadas anteriores com a mesma pergunta e, à parte, segundo
+ * turno e pergunta espontânea. Cada cenário mantém seu rótulo e sua chave; não há tendência.
+ */
+export function listarPesquisasDoCandidato(
   catalogo: CatalogoPesquisasEleitorais,
   candidateSlug: string,
+  cenarioPrincipal: (scenario: CenarioPesquisaEleitoral) => boolean = cenarioPrincipalPadrao(catalogo),
 ): PesquisaEleitoralDoCandidato[] {
   if (!candidateSlug) return []
+  const noEscopo = catalogo.pesquisas.filter((poll) =>
+    // Repete o filtro de fonte do parser: vale também para catálogos montados em memória.
+    poll.sourceStatus === "aprovado" &&
+    (catalogo.preferredSourceIds.includes(poll.sourceId) || poll.state === "publicado") &&
+    poll.office === catalogo.publicationScope.office &&
+    poll.geography.code === catalogo.publicationScope.geographyCode &&
+    poll.electionYear === catalogo.publicationScope.electionYear)
   const latest = new Map<string, PesquisaEleitoral[]>()
-  const eligible = (scenario: CenarioPesquisaEleitoral) =>
-    scenario.turn === catalogo.publicationScope.turn &&
-    ["estimulado", "estimulada"].includes(scenario.comparabilityKey.split("|")[4])
   const compareRecency = (left: PesquisaEleitoral, right: PesquisaEleitoral) =>
     (left.publicationDate.value ?? "").localeCompare(right.publicationDate.value ?? "") ||
     (left.fieldwork.end.value ?? "").localeCompare(right.fieldwork.end.value ?? "")
-  for (const poll of catalogo.pesquisas) {
-    if (poll.office !== catalogo.publicationScope.office ||
-        poll.geography.code !== catalogo.publicationScope.geographyCode ||
-        poll.electionYear !== catalogo.publicationScope.electionYear ||
-        !poll.cenarios.some(eligible)) continue
+  const principais = noEscopo.filter((poll) => poll.cenarios.some(cenarioPrincipal))
+  for (const poll of principais) {
     const institute = (poll.instituto.value ?? poll.sourceId).toLocaleLowerCase("pt-BR")
     const previous = latest.get(institute)
     if (!previous || compareRecency(poll, previous[0]) > 0) {
@@ -938,19 +996,23 @@ export function listarRodadasRecentesDoCandidato(
       previous.push(poll)
     }
   }
-  return [...latest.values()].flat().flatMap((poll) => {
-    const { cenarios, ...metadata } = poll
-    return cenarios.flatMap((scenario) => {
-      if (!eligible(scenario)) return []
-      const resultado = scenario.resultados.find((result) =>
-        result.matchStatus === "exact_alias" && result.candidateSlug === candidateSlug)
-      if (!resultado) return []
-      const { resultados: _resultados, ...cenario } = scenario
-      void _resultados
-      return [{ ...metadata, cenario, resultado }]
-    })
-  }).sort((a, b) => (b.publicationDate.value ?? "").localeCompare(a.publicationDate.value ?? "") ||
+  const recentes = new Set([...latest.values()].flat())
+  return noEscopo.flatMap((poll) => resultadosDoCandidato(poll, candidateSlug, (scenario) => {
+    if (!cenarioPrincipal(scenario)) return grupoDeOutroCenario(scenario)
+    return recentes.has(poll) ? "recente" : "anterior"
+  })).sort((a, b) => ORDEM_GRUPOS.indexOf(a.grupo!) - ORDEM_GRUPOS.indexOf(b.grupo!) ||
+    (b.publicationDate.value ?? "").localeCompare(a.publicationDate.value ?? "") ||
     (b.fieldwork.end.value ?? "").localeCompare(a.fieldwork.end.value ?? "") ||
     catalogo.preferredSourceIds.indexOf(a.sourceId) - catalogo.preferredSourceIds.indexOf(b.sourceId) ||
     a.id.localeCompare(b.id) || a.cenario.id.localeCompare(b.cenario.id))
+}
+
+/** Só a rodada mais recente de cada instituto, com a pergunta da visão principal. */
+export function listarRodadasRecentesDoCandidato(
+  catalogo: CatalogoPesquisasEleitorais,
+  candidateSlug: string,
+  cenarioPrincipal?: (scenario: CenarioPesquisaEleitoral) => boolean,
+): PesquisaEleitoralDoCandidato[] {
+  return listarPesquisasDoCandidato(catalogo, candidateSlug, cenarioPrincipal)
+    .filter((pesquisa) => pesquisa.grupo === "recente")
 }

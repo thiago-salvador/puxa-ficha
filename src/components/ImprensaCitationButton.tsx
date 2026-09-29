@@ -9,6 +9,7 @@ type Props = {
   sourceUrl?: string | null
   collectedAt?: string | null
   collectionLabel?: string
+  publishedLabel?: string
 }
 
 export function ImprensaCitationButton({
@@ -18,6 +19,7 @@ export function ImprensaCitationButton({
   sourceUrl,
   collectedAt,
   collectionLabel = "Pacote coletado em",
+  publishedLabel,
 }: Props) {
   const [copied, setCopied] = useState(false)
 
@@ -26,7 +28,8 @@ export function ImprensaCitationButton({
     const url = `${window.location.origin}/candidato/${encodeURIComponent(slug)}?tab=${tab}`
     const source = sourceUrl ? ` Fonte: ${sourceUrl}.` : " Fonte não informada para este fato."
     const date = collectedAt ? ` ${collectionLabel} ${collectedAt}.` : " Data de coleta não disponível."
-    const text = `${candidateName}, seção ${section}, no Puxa Ficha: ${url}.${source}${date}`
+    const label = publishedLabel ? ` Estado do dado: ${publishedLabel}.` : ""
+    const text = `${candidateName}, seção ${section}, no Puxa Ficha: ${url}.${label}${source}${date}`
     try {
       await navigator.clipboard.writeText(text)
       setCopied(true)

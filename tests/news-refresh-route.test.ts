@@ -13,6 +13,7 @@ require.cache[serverOnlyPath] = {
 
 const { NextRequest } = require("next/server") as typeof import("next/server")
 const { createNewsRefreshHandler } = require("../src/app/api/news/refresh/route") as typeof import("../src/app/api/news/refresh/route")
+const { coorteAtualizacaoDe, filtrarCoorteAtualizacao } = require("../scripts/lib/coorte-atualizacao") as typeof import("../scripts/lib/coorte-atualizacao")
 
 const CRON_SECRET = "cron-secret-news-test"
 const ROUTE_URL = "https://puxaficha.com.br/api/news/refresh"
@@ -401,6 +402,39 @@ describe("news refresh route", () => {
     assert.equal(captured.refreshedBatches.length, 0)
     assert.equal(captured.claimCalls.length, 0)
     assert.equal(captured.afterCallbacks.length, 0)
+  })
+
+  it("filters closed candidates and advances pagination across a fully closed page", async () => {
+    const candidatos = makeCandidatos(10)
+    const { deps, captured } = createDeps(candidatos)
+    deps.invocationBudgetMs = 60_000
+    const coorte = coorteAtualizacaoDe(candidatos.slice(0, 5).map((candidato) => ({
+      candidato_id: candidato.id,
+      slug: candidato.slug,
+      fase_eleitoral: "eleito",
+      fase_turno: 1,
+      atualizacao_encerrada_em: "2026-10-05",
+    })))
+    const fetchPagina = deps.fetchCandidatoPage
+    deps.fetchCandidatoPage = async (args) => {
+      const page = await fetchPagina(args)
+      return {
+        ...page,
+        candidatos: filtrarCoorteAtualizacao(page.candidatos, coorte, "news/refresh"),
+        consumidos: page.candidatos.length,
+      }
+    }
+    const handler = createNewsRefreshHandler(deps)
+
+    const response = await handler(makeRequest({ chain: "0" }))
+    const body = await readJson(response)
+
+    assert.equal(response.status, 200)
+    assert.deepEqual(captured.pageCalls.map((page) => page.cursor), [0, 5])
+    assert.deepEqual(captured.refreshedBatches.flat().map((candidato) => candidato.slug), [
+      "cand-5", "cand-6", "cand-7", "cand-8", "cand-9",
+    ])
+    assert.equal(body.processed, 5)
   })
 
   it("returns 503 when the candidate page query fails", async () => {

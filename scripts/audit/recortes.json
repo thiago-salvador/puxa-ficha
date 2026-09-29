@@ -697,6 +697,76 @@
       "ate": "20260925230100",
       "allowlist": "scripts/audit/allowlist-historico-mandatos-federais-20260925.json",
       "divida": null
+    },
+    {
+      "nome": "situacao-godeiro-laudicerio-20260926",
+      "desde": "20260926180000",
+      "ate": "20260926180200",
+      "allowlist": "scripts/audit/allowlist-situacao-godeiro-laudicerio-20260926.json",
+      "divida": null
+    },
+    {
+      "nome": "processos-numero-cnj-20260926",
+      "desde": "20260926190000",
+      "ate": "20260926190100",
+      "allowlist": "scripts/audit/allowlist-processos-numero-cnj-20260926.json",
+      "divida": null
+    },
+    {
+      "nome": "datas-nascimento-tse-20260926",
+      "desde": "20260927030000",
+      "ate": "20260927030200",
+      "allowlist": "scripts/audit/allowlist-datas-nascimento-tse-20260926.json",
+      "divida": null
+    },
+    {
+      "nome": "partido-paulo-mourao-20260926",
+      "desde": "20260926224500",
+      "ate": "20260926224500",
+      "allowlist": "scripts/audit/allowlist-partido-paulo-mourao-20260926.json",
+      "divida": null
+    },
+    {
+      "nome": "dr-daniel-camara-20260927",
+      "desde": "20260927040000",
+      "ate": "20260927040100",
+      "allowlist": "scripts/audit/allowlist-dr-daniel-camara-20260927.json",
+      "divida": null
+    },
+    {
+      "nome": "pedro-cunha-lima-20260927",
+      "desde": "20260927040200",
+      "ate": "20260927040200",
+      "allowlist": "scripts/audit/allowlist-pedro-cunha-lima-20260927.json",
+      "divida": null
+    },
+    {
+      "nome": "processos-curadoria-djen-20260927",
+      "desde": "20260927060000",
+      "ate": "20260927060000",
+      "allowlist": "scripts/audit/allowlist-processos-curadoria-djen-20260927.json",
+      "divida": null
+    },
+    {
+      "nome": "patrimonio-2026-pacote-tse-20260927",
+      "desde": "20260927060100",
+      "ate": "20260927060100",
+      "allowlist": "scripts/audit/allowlist-patrimonio-2026-pacote-tse-20260927.json",
+      "divida": null
+    },
+    {
+      "nome": "partido-paulo-mourao-20260927",
+      "desde": "20260927020000",
+      "ate": "20260927020000",
+      "allowlist": "scripts/audit/allowlist-partido-paulo-mourao-20260927.json",
+      "divida": null
+    },
+    {
+      "nome": "processos-l13-senado-20260928",
+      "desde": "20260928010000",
+      "ate": "20260928010000",
+      "allowlist": "scripts/audit/allowlist-processos-l13-senado-20260928.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

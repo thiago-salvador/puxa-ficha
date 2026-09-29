@@ -1,0 +1,12 @@
+/* Cartão de texto com botão de copiar. Mesmos valores da CiteBox. */
+.card { background: #ffffff; border: 1px solid #d9d7d0; border-radius: 6px; display: flex; flex-direction: column; min-width: 0; padding: 22px 24px; }
+.label { border-bottom: 2px solid #111111; font-size: 13px; font-weight: 850; letter-spacing: .05em; line-height: 1.4; margin-bottom: 16px; padding-bottom: 12px; text-transform: uppercase; }
+.body { color: #111111; font-size: 15px; line-height: 1.7; overflow-wrap: anywhere; }
+.body p + p { margin-top: 14px; }
+.actions { align-items: center; display: flex; flex-wrap: wrap; gap: 10px 14px; margin-top: auto; padding-top: 18px; }
+.button { background: #111111; border: 1.5px solid #111111; border-radius: 999px; color: #ffffff; cursor: pointer; font-size: 12px; font-weight: 800; letter-spacing: .06em; min-height: 44px; padding: 0 18px; text-transform: uppercase; }
+.button:hover { background: #ffffff; color: #111111; }
+.button:focus-visible { outline: 3px solid #f4b400; outline-offset: 3px; }
+.status { color: #555555; font-size: 13px; }
+.srOnly { clip: rect(0 0 0 0); clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }
+@media (max-width: 560px) { .card { padding: 18px; } }

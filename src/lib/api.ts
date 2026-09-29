@@ -12,7 +12,7 @@ import { unstableCacheWithSingleFlight } from "./cache-single-flight"
 import { normalizeVotoFromApi } from "@/lib/quiz-scoring"
 import { SIGLAS_PROJETO_LEI } from "@/lib/proposicao-natureza"
 import type { QuizAlignmentDataset, QuizCandidatoData, QuizContradicaoVoto, QuizPosicaoDeclarada } from "@/lib/quiz-types"
-import type { Candidato, Chapa2026, FichaCandidato, CandidatoComparavel, IndicadorEstadual, IndicadorEstadualRanking, DataResource, LegislacaoMandatoExecutivo, MudancaPartido, PatrimonioAusenciaOficial, ProjetoLei, SancoesVerificacao, TCUVerificacao, TransparenciaFamiliaPublica, TransparenciaFamiliaVerificacao } from "./types"
+import type { Candidato, Chapa2026, FaseEleitoral2026, FichaCandidato, CandidatoComparavel, IndicadorEstadual, IndicadorEstadualRanking, DataResource, LegislacaoMandatoExecutivo, MudancaPartido, PatrimonioAusenciaOficial, ProjetoLei, SancoesVerificacao, TCUVerificacao, TransparenciaFamiliaPublica, TransparenciaFamiliaVerificacao } from "./types"
 import { buildGlobalSearchIndexItems, GLOBAL_SEARCH_CANDIDATE_COLUMNS, mergeVotacaoTagsByCandidatoId, type GlobalSearchCandidateRow, type GlobalSearchIndexItem, type VotacaoSearchRow } from "@/lib/global-search"
 import {
   countPartySwitches,
@@ -20,8 +20,8 @@ import {
   withCurrentRegistryPartyRow,
 } from "@/lib/party-switches"
 import { newsTitleMentionsCandidate } from "@/lib/news/name-match"
-import { splitNewsByDenylist } from "@/lib/news/denylist"
-import { newsRetentionCutoffIso } from "@/lib/operational-retention"
+import { PUBLIC_NEWS_FETCH_LIMIT, publicNewsWindowQuery, toPublicNewsItems } from "@/lib/news/public-page"
+import { derivarTCUVerificacao } from "@/lib/tcu-verificacao"
 import { fetchGastoTotalsByCandidatoIds, fetchCargoAtualByCandidatoIds, fetchLegislacaoMandatoExecutivoRowsPaged, fetchLegislativeHistoryFlagsByCandidatoIds, fetchMudancasPartidoRowsPaged, fetchPatrimonioSeriesByCandidatoIds, LEGISLACAO_MANDATO_EXECUTIVO_PROFILE_PREVIEW_LIMIT, LEGISLACAO_MANDATO_EXECUTIVO_PUBLIC_SELECT } from "@/lib/fetch-gastos-votos-in-batch"
 import { applyLegislacaoMandatoExecutivoCachePolicy } from "@/lib/legislacao-mandato-executivo-cache"
 import { sortVotosForPublicDisplay } from "@/lib/votos-candidato-aggregate"
@@ -30,7 +30,7 @@ import { buildPatrimonioEleicoes, publicTransparencia } from "@/lib/public-profi
 import { buildFinanciamentoEleicoes, type FinanciamentoVerificacaoPublica } from "@/lib/financiamento-eleicoes"
 import { ensureCurrentCandidacyInHistory, normalizeHistoricoPoliticoForDisplay } from "@/lib/historico-dedupe"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
-import { urlFonteJudicialEspecifica } from "@/lib/djen-consulta-url"
+import { nivelFonteProcesso } from "@/lib/djen-consulta-url"
 import { normalizeFinanciamentoForDisplay, normalizePatrimonioForDisplay } from "@/lib/person-level-dedupe"
 import { sanitizeFinanciamentoForPublic, sanitizeMaioresDoadoresForPublic } from "@/lib/financiamento-public"
 import {
@@ -73,7 +73,7 @@ export { mergeSourceMessages, mergeSourceStatuses } from "@/lib/data-resource"
 export { parseFederalAcervoReceiptDetail, projectFederalAcervoReceipts } from "@/lib/federal-acervo-receipts"
 
 /** Único ponto de bump para invalidar todas as superfícies públicas em cache. */
-export const CURRENT_DATA_WAVE = "judicial-source-20260924"
+export const CURRENT_DATA_WAVE = "judicial-selo-20260927"
 
 const supabaseUrl = getAppSupabaseUrl()
 const USE_MOCK = !supabaseUrl || supabaseUrl.includes("placeholder")
@@ -82,7 +82,11 @@ const IS_DEV = process.env.NODE_ENV === "development"
 const SUPABASE_REQUIRED_MESSAGE =
   "Configure SUPABASE_URL (sem placeholder) e SUPABASE_ANON_KEY em .env.local. O site não exibe dados mock."
 const CANDIDATO_PUBLIC_RELATION = "candidatos_publico"
-const APP_DATA_REVALIDATE_SECONDS = 3600
+// 12 h: o frescor aceito para a ficha pública (decisão de 27/09/2026). Escrita
+// pelo pipeline invalida na hora via /api/revalidate; o resto espera o TTL ou o
+// cron de 12 h em /api/internal/revalidate-public-cache. Mudança no formato de um
+// payload em cache continua exigindo bump da chave, agora com janela de 12 h.
+const APP_DATA_REVALIDATE_SECONDS = 43200
 // The cohort flag is part of every public cache identity. This prevents a
 // Senate-enabled local cache from surviving a closed-flag render.
 const SENADO_CACHE_VARIANT = isSenadoEnabled() ? "senado-on" : "senado-off"
@@ -958,6 +962,40 @@ async function fetchChapa2026(
 }
 
 /**
+ * Fase eleitoral 2026 da ficha (coorte de atualização pós-turno). Sem linha na
+ * view = em disputa, nota nenhuma. View ausente (banco antes da migration
+ * 20260927050000) degrada para `null`, como a de chapas; outro erro propaga.
+ */
+async function fetchFaseEleitoral2026(
+  candidatoId: string,
+  cacheMode: "no-store" | undefined,
+): Promise<FaseEleitoral2026 | null> {
+  const client = createServerSupabaseClient(cacheMode ? { cacheMode } : undefined)
+  const { data, error } = await withSupabaseRetry(
+    `candidaturas_fase_2026_publico(${candidatoId})`,
+    async (signal) =>
+      client
+        .from("candidaturas_fase_2026_publico")
+        .select("fase_eleitoral, fase_turno, atualizacao_encerrada_em")
+        .eq("candidato_id", candidatoId)
+        .abortSignal(signal)
+        .maybeSingle(),
+  )
+  if (isMissingFaseEleitoralViewError(error)) return null
+  if (error) throw new Error(`candidaturas_fase_2026_publico: ${error.message ?? error.code ?? "erro"}`)
+  return (data as FaseEleitoral2026 | null) ?? null
+}
+
+export function isMissingFaseEleitoralViewError(
+  error: { code?: string; message?: string } | null | undefined,
+): boolean {
+  if (!error) return false
+  if (error.code === "42P01" || error.code === "PGRST205") return true
+  const message = error.message?.toLowerCase() ?? ""
+  return message.includes("candidaturas_fase_2026_publico") && (message.includes("does not exist") || message.includes("could not find"))
+}
+
+/**
  * Lê em `coleta_log_ultima` a última tentativa de coleta de sanções para o
  * slug. É o que permite à ficha separar o zero provado ("consultamos CEIS,
  * CNEP e CEAF e veio vazio") do zero presumido ("nunca fomos lá").
@@ -997,44 +1035,17 @@ async function fetchColetaVerificacao(
 
     if (error || !data) return null
     // O client não tem schema tipado para a view; validamos o shape em runtime.
-    const row = data as {
-      fonte?: unknown
-      candidato_id?: unknown
-      resultado?: unknown
-      executado_em?: unknown
-      detalhe?: unknown
-      url?: unknown
-      escopo?: unknown
-    }
-    const resultado = row.resultado as SancoesVerificacao["resultado"]
-    if (!COLETA_RESULTADOS_VALIDOS.has(resultado)) return null
-    if (typeof row.executado_em !== "string" || row.executado_em.length === 0) return null
-    if (fonte === "processos-curadoria") {
-      if (!candidateId || row.candidato_id !== candidateId) return null
-      return projectProcessosVerificacaoRow(row)
-    }
-    // `detalhe` de coleta pode conter diagnóstico operacional (CPF ausente,
-    // endpoint, erro). Só as auditorias de Destaques e a fonte de sanções
-    // escrevem copy pública deliberada; processos tem projeção própria acima.
-    const detalhePublicavel = fonte.startsWith("destaques-") || fonte === "transparencia-sanctions" || fonte === "filiacao" || fonte === "gastos-executivo"
-    const isGoogleNewsSearchUrl = (value: unknown): value is string => {
-      if (typeof value !== "string" || !value) return false
-      try {
-        const parsed = new URL(value)
-        return parsed.protocol === "https:" &&
-          parsed.hostname === "news.google.com" &&
-          parsed.pathname === "/rss/search" &&
-          Boolean(parsed.searchParams.get("q")?.trim()) &&
-          !parsed.hash
-      } catch {
-        return false
-      }
-    }
+    const row = data as ColetaVerificacaoRow
     // Google News only becomes a public provenance URL after checking its
     // nominal query against the verified identity for this slug. TSE URLs
     // keep their existing allowlist and do not depend on this extra lookup.
     let googleNewsIdentity: { nome_completo?: string | null; nome_urna?: string | null } | null = null
-    if (fonte === "filiacao" && isGoogleNewsSearchUrl(row.url)) {
+    if (
+      fonte === "filiacao" &&
+      COLETA_RESULTADOS_VALIDOS.has(row.resultado as SancoesVerificacao["resultado"]) &&
+      typeof row.executado_em === "string" && row.executado_em.length > 0 &&
+      isGoogleNewsSearchUrl(row.url)
+    ) {
       const identity = await admin
         .from(CANDIDATO_PUBLIC_RELATION)
         .select("slug, nome_completo, nome_urna")
@@ -1044,51 +1055,107 @@ async function fetchColetaVerificacao(
         googleNewsIdentity = identity.data
       }
     }
-    const safeSourceUrl = (value: unknown): string | null => {
-      if (typeof value !== "string" || !value) return null
-      try {
-        const parsed = new URL(value)
-        if (parsed.protocol !== "https:" || parsed.hash) return null
-        const filiationHost = fonte === "filiacao" &&
-          ["cdn.tse.jus.br", "dadosabertos.tse.jus.br", "www.tse.jus.br", "filia2-consulta.tse.jus.br"].includes(parsed.hostname)
-        const googleNewsFiliation = fonte === "filiacao" &&
-          parsed.hostname === "news.google.com" &&
-          parsed.pathname === "/rss/search" &&
-          Boolean(parsed.searchParams.get("q")?.trim()) &&
-          googleNewsIdentity !== null &&
-          newsTitleMentionsCandidate(parsed.searchParams.get("q"), googleNewsIdentity)
-        return parsed.hostname === "api.portaldatransparencia.gov.br" && !parsed.search
-          ? parsed.toString()
-          : fonte.startsWith("destaques-") || filiationHost || googleNewsFiliation
-            ? parsed.toString()
-            : null
-      } catch {
-        return null
-      }
-    }
-    const sourceUrls = fonte === "transparencia-sanctions" && typeof row.detalhe === "string"
-      ? [...new Set([...row.detalhe.matchAll(/(?:CEIS|CNEP|CEAF)=(https:\/\/api\.portaldatransparencia\.gov\.br\/[^,;\s]+)/g)].map((match) => safeSourceUrl(match[1])).filter((url): url is string => Boolean(url)))]
-      : []
-    const evidenceSources = fonte === "transparencia-sanctions" && typeof row.detalhe === "string"
-      ? [...new Set([...row.detalhe.matchAll(/\b(CEIS|CNEP|CEAF)=https:\/\/api\.portaldatransparencia\.gov\.br\//g)].map((match) => match[1]))]
-      : []
-    return {
-      fonte: typeof row.fonte === "string" ? row.fonte : fonte,
-      resultado,
-      executado_em: row.executado_em,
-      detalhe: detalhePublicavel && typeof row.detalhe === "string" ? row.detalhe : null,
-      url: detalhePublicavel
-        ? safeSourceUrl(typeof row.url === "string" ? row.url.split(" | ")[0] : null) ?? sourceUrls[0] ?? null
-        : null,
-      escopo: typeof row.escopo === "string" ? row.escopo : null,
-      evidence_sources: evidenceSources,
-      source_urls: sourceUrls,
-    }
+    return projectColetaVerificacaoRow(row, fonte, { candidateId, googleNewsIdentity })
   } catch {
     // Sem SUPABASE_SERVICE_ROLE_KEY (dev local, fork) ou view ausente: estado
     // neutro. Não entra em relatedErrors porque é metadado de proveniência, não
     // seção da ficha.
     return null
+  }
+}
+
+/** Linha de `coleta_log_ultima` como chega do client sem schema tipado. */
+export type ColetaVerificacaoRow = {
+  fonte?: unknown
+  candidato_id?: unknown
+  resultado?: unknown
+  executado_em?: unknown
+  volume?: unknown
+  detalhe?: unknown
+  url?: unknown
+  escopo?: unknown
+}
+
+function isGoogleNewsSearchUrl(value: unknown): value is string {
+  if (typeof value !== "string" || !value) return false
+  try {
+    const parsed = new URL(value)
+    return parsed.protocol === "https:" &&
+      parsed.hostname === "news.google.com" &&
+      parsed.pathname === "/rss/search" &&
+      Boolean(parsed.searchParams.get("q")?.trim()) &&
+      !parsed.hash
+  } catch {
+    return false
+  }
+}
+
+/**
+ * Projeção pública de um recibo de `coleta_log_ultima`, a mesma que a ficha
+ * aplica depois da leitura. Exportada para os consumidores em lote (export de
+ * imprensa), que leem os recibos de várias fichas numa consulta só e precisam
+ * chegar ao mesmo objeto que `/api/candidato-profile/<slug>` publica.
+ */
+export function projectColetaVerificacaoRow(
+  row: ColetaVerificacaoRow,
+  fonte: string,
+  options: {
+    candidateId?: string
+    googleNewsIdentity?: { nome_completo?: string | null; nome_urna?: string | null } | null
+  } = {},
+): SancoesVerificacao | null {
+  const { candidateId } = options
+  const googleNewsIdentity = options.googleNewsIdentity ?? null
+  const resultado = row.resultado as SancoesVerificacao["resultado"]
+  if (!COLETA_RESULTADOS_VALIDOS.has(resultado)) return null
+  if (typeof row.executado_em !== "string" || row.executado_em.length === 0) return null
+  if (fonte === "processos-curadoria") {
+    if (!candidateId || row.candidato_id !== candidateId) return null
+    return projectProcessosVerificacaoRow(row)
+  }
+  // `detalhe` de coleta pode conter diagnóstico operacional (CPF ausente,
+  // endpoint, erro). Só as auditorias de Destaques e a fonte de sanções
+  // escrevem copy pública deliberada; processos tem projeção própria acima.
+  const detalhePublicavel = fonte.startsWith("destaques-") || fonte === "transparencia-sanctions" || fonte === "filiacao" || fonte === "gastos-executivo"
+  const safeSourceUrl = (value: unknown): string | null => {
+    if (typeof value !== "string" || !value) return null
+    try {
+      const parsed = new URL(value)
+      if (parsed.protocol !== "https:" || parsed.hash) return null
+      const filiationHost = fonte === "filiacao" &&
+        ["cdn.tse.jus.br", "dadosabertos.tse.jus.br", "www.tse.jus.br", "filia2-consulta.tse.jus.br"].includes(parsed.hostname)
+      const googleNewsFiliation = fonte === "filiacao" &&
+        parsed.hostname === "news.google.com" &&
+        parsed.pathname === "/rss/search" &&
+        Boolean(parsed.searchParams.get("q")?.trim()) &&
+        googleNewsIdentity !== null &&
+        newsTitleMentionsCandidate(parsed.searchParams.get("q"), googleNewsIdentity)
+      return parsed.hostname === "api.portaldatransparencia.gov.br" && !parsed.search
+        ? parsed.toString()
+        : fonte.startsWith("destaques-") || filiationHost || googleNewsFiliation
+          ? parsed.toString()
+          : null
+    } catch {
+      return null
+    }
+  }
+  const sourceUrls = fonte === "transparencia-sanctions" && typeof row.detalhe === "string"
+    ? [...new Set([...row.detalhe.matchAll(/(?:CEIS|CNEP|CEAF)=(https:\/\/api\.portaldatransparencia\.gov\.br\/[^,;\s]+)/g)].map((match) => safeSourceUrl(match[1])).filter((url): url is string => Boolean(url)))]
+    : []
+  const evidenceSources = fonte === "transparencia-sanctions" && typeof row.detalhe === "string"
+    ? [...new Set([...row.detalhe.matchAll(/\b(CEIS|CNEP|CEAF)=https:\/\/api\.portaldatransparencia\.gov\.br\//g)].map((match) => match[1]))]
+    : []
+  return {
+    fonte: typeof row.fonte === "string" ? row.fonte : fonte,
+    resultado,
+    executado_em: row.executado_em,
+    detalhe: detalhePublicavel && typeof row.detalhe === "string" ? row.detalhe : null,
+    url: detalhePublicavel
+      ? safeSourceUrl(typeof row.url === "string" ? row.url.split(" | ")[0] : null) ?? sourceUrls[0] ?? null
+      : null,
+    escopo: typeof row.escopo === "string" ? row.escopo : null,
+    evidence_sources: evidenceSources,
+    source_urls: sourceUrls,
   }
 }
 
@@ -1226,76 +1293,28 @@ async function fetchTCUVerificacao(slug: string): Promise<TCUVerificacao | null>
         .maybeSingle(),
     )
     if (error || !data) return null
-    const row = data as {
-      fonte?: unknown
-      resultado?: unknown
-      executado_em?: unknown
-      volume?: unknown
-      url?: unknown
-      detalhe?: unknown
-      escopo?: unknown
-    }
-    const resultado = row.resultado as TCUVerificacao["resultado"]
-    if (!COLETA_RESULTADOS_VALIDOS.has(resultado)) return null
-    if (typeof row.executado_em !== "string" || !row.executado_em) return null
-    const volume = typeof row.volume === "number" && Number.isFinite(row.volume) && row.volume >= 0
-      ? Math.trunc(row.volume)
-      : null
-    const estado: TCUVerificacao["estado"] =
-      resultado === "encontrado" && volume !== null && volume > 0
-        ? "encontrado_em_revisao"
-        : resultado === "vazio_confirmado"
-          ? "vazio_verificado"
-          : "pendente"
-    const safeTcuUrl = (value: unknown) => {
-      if (typeof value !== "string" || !value) return null
-      try {
-        const parsed = new URL(value as string)
-        return parsed.protocol === "https:" && parsed.hostname === "certidoes.apps.tcu.gov.br" && !parsed.search && !parsed.hash
-          ? parsed.toString()
-          : null
-      } catch {
-        return null
-      }
-    }
-    const consultaUrls = [
-      ["responsaveis_inabilitados", "https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-inabilitados", "inabilitados_itens"] as const,
-      ["responsaveis_contas_irregulares", "https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-contas-irregulares", "cadirreg_itens"] as const,
-    ]
-    const detalheFonte = typeof row.detalhe === "string" ? row.detalhe : ""
-    const fontes = consultaUrls.flatMap(([cadastro, consultaUrl, volumeKey]) => {
-      if (!detalheFonte.includes(consultaUrl)) return []
-      const volumeMatch = detalheFonte.match(new RegExp(`${volumeKey}=(\\d+)`))
-      const fonteVolume = volumeMatch ? Number(volumeMatch[1]) : null
-      return [{
-        cadastro,
-        url: consultaUrl,
-        resultado: fonteVolume === null ? "pendente" as const : fonteVolume > 0 ? "encontrado" as const : "vazio_confirmado" as const,
-        volume: fonteVolume,
-      }]
-    })
-    const url = estado === "encontrado_em_revisao"
-      ? fontes.find((fonte) => fonte.resultado === "encontrado")?.url ?? null
-      : fontes[0]?.url ?? safeTcuUrl(row.url)
-    const detalhe = estado === "encontrado_em_revisao"
-      ? `Consulta TCU encontrou ${volume} registro${volume === 1 ? "" : "s"}; revisão editorial pendente.`
-      : estado === "vazio_verificado"
-        ? "Consultas oficiais TCU retornaram zero registros no escopo verificado."
-        : "Consulta TCU inconclusiva; o resultado não deve ser interpretado como ausência."
-    return {
-      fonte: "tcu",
-      resultado,
-      estado,
-      executado_em: row.executado_em,
-      volume,
-      detalhe,
-      url,
-      escopo: typeof row.escopo === "string" ? row.escopo : null,
-      fontes,
-    }
+    return projectTCUVerificacaoRow(data as ColetaVerificacaoRow)
   } catch {
     return null
   }
+}
+
+/**
+ * Projeção pública do recibo `tcu`, a mesma da ficha. Exportada para leitura
+ * em lote (export de imprensa) sem repetir a regra.
+ */
+export function projectTCUVerificacaoRow(row: ColetaVerificacaoRow): TCUVerificacao | null {
+  const resultado = row.resultado as TCUVerificacao["resultado"]
+  if (!COLETA_RESULTADOS_VALIDOS.has(resultado)) return null
+  if (typeof row.executado_em !== "string" || !row.executado_em) return null
+  return derivarTCUVerificacao({
+    resultado,
+    executado_em: row.executado_em,
+    volume: row.volume,
+    url: row.url,
+    detalhe: row.detalhe,
+    escopo: row.escopo,
+  })
 }
 
 async function fetchProcessosVerificacao(slug: string, candidateId: string): Promise<SancoesVerificacao | null> {
@@ -1512,7 +1531,7 @@ async function getCandidatoBySlugFromRelationResource(
     }
   }
 
-  const [historico, mudancas, patrimonio, financiamento, votos, processos, pontos, projetos, projetosLeiNaturezaCount, projetosLeiDestaquesCount, projetosLeiCamaraCount, legislacaoExecutivo, gastos, gastosExecutivo, sancoes, noticias, indicadores, sancoesVerificacao, processosVerificacao, filiacaoVerificacao, tcuVerificacao, trajetoriaVerificacao, patrimonioVerificacao, votacoesVerificacao, projetosVerificacao, gastosParlamentaresVerificacao, federalAcervoReceipts, transparenciaVerificacao, gastosExecutivoVerificacao] =
+  const [historico, mudancas, patrimonio, financiamento, votos, processos, pontos, projetos, projetosLeiNaturezaCount, projetosLeiDestaquesCount, projetosLeiCamaraCount, projetosLeiSenadoCount, legislacaoExecutivo, gastos, gastosExecutivo, sancoes, noticias, indicadores, sancoesVerificacao, processosVerificacao, filiacaoVerificacao, tcuVerificacao, trajetoriaVerificacao, patrimonioVerificacao, votacoesVerificacao, projetosVerificacao, gastosParlamentaresVerificacao, federalAcervoReceipts, transparenciaVerificacao, gastosExecutivoVerificacao] =
     await Promise.all([
       // `despublicado_em` filtra candidatura atribuida por homonimo (migration
       // 20260726160000). O CPF divergente no cadastro desliga o casamento por
@@ -1541,7 +1560,7 @@ async function getCandidatoBySlugFromRelationResource(
       withSupabaseRetry(`patrimonio(${slug})`, async (signal) =>
         supabase
           .from("patrimonio")
-          .select("*")
+          .select("id,candidato_id,ano_eleicao,valor_total,bens,fonte,created_at,despublicacao_motivo,despublicado_em,ano_arquivo,sq_candidato,uf_candidatura,cargo_candidatura,data_eleicao,tipo_eleicao")
           .in("candidato_id", personLevelIds)
           .is("despublicado_em", null)
           .order("ano_eleicao", { ascending: false })
@@ -1579,6 +1598,7 @@ async function getCandidatoBySlugFromRelationResource(
           .from("projetos_lei")
           .select(PROJETOS_LEI_COLUNAS, { count: "exact" })
           .eq("candidato_id", id)
+          .is("despublicado_em", null)
           .order("ano", { ascending: false })
           .order("numero", { ascending: false })
           .limit(25)
@@ -1594,6 +1614,7 @@ async function getCandidatoBySlugFromRelationResource(
           .from("projetos_lei")
           .select("id", { count: "exact", head: true })
           .eq("candidato_id", id)
+          .is("despublicado_em", null)
           .in("tipo", [...SIGLAS_PROJETO_LEI])
           .abortSignal(signal)
       ),
@@ -1605,6 +1626,7 @@ async function getCandidatoBySlugFromRelationResource(
           .from("projetos_lei")
           .select("id", { count: "exact", head: true })
           .eq("candidato_id", id)
+          .is("despublicado_em", null)
           .eq("destaque", true)
           .abortSignal(signal)
       ),
@@ -1618,7 +1640,17 @@ async function getCandidatoBySlugFromRelationResource(
           .from("projetos_lei")
           .select("id", { count: "exact", head: true })
           .eq("candidato_id", id)
+          .is("despublicado_em", null)
           .eq("fonte", "Camara")
+          .abortSignal(signal)
+      ),
+      withSupabaseRetry(`projetos_lei_senado(${slug})`, async (signal) =>
+        supabase
+          .from("projetos_lei")
+          .select("id", { count: "exact", head: true })
+          .eq("candidato_id", id)
+          .is("despublicado_em", null)
+          .eq("fonte", "Senado")
           .abortSignal(signal)
       ),
       // Previa do inventario do Executivo. O inventario completo saiu do caminho
@@ -1665,17 +1697,10 @@ async function getCandidatoBySlugFromRelationResource(
           .order("data_inicio", { ascending: false })
           .abortSignal(signal)
       ),
+      // Mesma janela, ordem e colunas das paginas de "Ver mais noticias"; a
+      // margem de leitura deixa a denylist retirar itens sem encolher a previa.
       withSupabaseRetry(`noticias_candidato(${slug})`, async (signal) =>
-        supabase
-          .from("noticias_candidato")
-          .select("*")
-          .eq("candidato_id", id)
-          .not("data_publicacao", "is", null)
-          .gte("data_publicacao", newsRetentionCutoffIso())
-          .order("data_publicacao", { ascending: false })
-          // Busca margem para que a denylist editorial possa retirar itens sem
-          // reduzir artificialmente a previa publica de 20 noticias.
-          .limit(40)
+        publicNewsWindowQuery(supabase, id, null, PUBLIC_NEWS_FETCH_LIMIT, signal)
           .abortSignal(signal)
       ),
       candidato.cargo_disputado === "Governador" && candidato.estado
@@ -1839,7 +1864,10 @@ async function getCandidatoBySlugFromRelationResource(
       ultimoPartidoHistorico,
     }),
   ).sort((a, b) => rankMudancaPartido(b) - rankMudancaPartido(a))
-  const chapa2026 = await fetchChapa2026(id, cacheMode)
+  const [chapa2026, faseEleitoral2026] = await Promise.all([
+    fetchChapa2026(id, cacheMode),
+    fetchFaseEleitoral2026(id, cacheMode),
+  ])
 
   const pontosPublicos = shouldUseServiceRole
     ? (pontos.data ?? [])
@@ -1879,9 +1907,10 @@ async function getCandidatoBySlugFromRelationResource(
     financiamentoVerificacoes,
   )
   const processosBrutos = processos.data ?? []
-  const processosPublicos = processosBrutos.filter((row) =>
-    Boolean(urlFonteJudicialEspecifica(row.url_fonte, row.numero_processo)),
-  )
+  const processosPublicos = processosBrutos.flatMap((row) => {
+    const fonte_nivel = nivelFonteProcesso(row)
+    return fonte_nivel ? [{ ...row, fonte_nivel }] : []
+  })
   const gastosParlamentaresPublicos = (gastos.data ?? []).filter((row) =>
     !gastoParlamentarEmRevisao(candidato.slug, row.ano),
   )
@@ -1896,6 +1925,7 @@ async function getCandidatoBySlugFromRelationResource(
     // jsonb bruto: parte das fichas guarda o crédito como string escalar.
     foto_credito: normalizeFotoCredito(candidato.foto_credito),
     chapa_2026: chapa2026,
+    fase_eleitoral_2026: faseEleitoral2026,
     site_campanha: resolveCampaignSite(candidato),
     historico: historicoConfiavel,
     mudancas_partido: mudancasRaw,
@@ -1931,6 +1961,9 @@ async function getCandidatoBySlugFromRelationResource(
     projetos_lei_camara_total: projetosLeiCamaraCount.error
       ? null
       : (projetosLeiCamaraCount.count ?? null),
+    projetos_lei_senado_total: projetosLeiSenadoCount.error
+      ? null
+      : (projetosLeiSenadoCount.count ?? null),
     legislacao_mandato_executivo: legislacaoExecutivoOrdenado,
     legislacao_mandato_executivo_total:
       legislacaoExecutivo.count ?? legislacaoExecutivoOrdenado.length,
@@ -1952,12 +1985,7 @@ async function getCandidatoBySlugFromRelationResource(
     // mas as linhas ja gravadas continuam no banco: 3.984 de 17.498 (22,77%)
     // sem nenhum token do nome no titulo. Em vez de apagar dado, marcamos o que
     // e cobertura do pleito para a UI dizer isso ao leitor.
-    noticias: splitNewsByDenylist(noticias.data ?? [], candidato.slug).permitidos
-      .slice(0, 20)
-      .map((noticia) => ({
-        ...noticia,
-        contexto_do_pleito: !newsTitleMentionsCandidate(noticia.titulo, candidato),
-      })),
+    noticias: toPublicNewsItems((noticias.data ?? []) as unknown as FichaCandidato["noticias"], candidato),
     indicadores_estaduais: indicadores.data ?? [],
     total_processos: processosPublicos.length,
     processos_criminais: processosPublicos.filter(processoPodeContarComoCriminal).length,
@@ -2093,6 +2121,7 @@ export async function getProjetosLeiBySlugResource(
       .from("projetos_lei")
       .select(PROJETOS_LEI_COLUNAS, { count: "exact" })
       .eq("candidato_id", candidate.data!.id)
+      .is("despublicado_em", null)
       .order("ano", { ascending: false })
       .order("numero", { ascending: false })
       .order("id", { ascending: true })
@@ -2233,7 +2262,7 @@ export interface CandidatoResumo {
   pontos_atencao: number
 }
 
-async function fetchOfficialProcessCountsByCandidateIds(
+async function fetchPublicProcessCountsByCandidateIds(
   supabase: ReturnType<typeof createServerSupabaseClient>,
   candidateIds: string[],
 ): Promise<Map<string, number>> {
@@ -2242,7 +2271,7 @@ async function fetchOfficialProcessCountsByCandidateIds(
     const batch = candidateIds.slice(offset, offset + 80)
     for (let page = 0; ; page += 1) {
       const { data, error } = await withSupabaseRetry(
-        "processos(resumo-fonte-oficial)",
+        "processos(resumo-fonte-publica)",
         async (signal) => supabase.from("processos")
           .select("id,candidato_id,numero_processo,url_fonte")
           .in("candidato_id", batch)
@@ -2256,7 +2285,8 @@ async function fetchOfficialProcessCountsByCandidateIds(
         throw new DegradedDataError("A consulta das fontes judiciais falhou; a contagem não pode ser cacheada como zero.")
       }
       for (const row of data) {
-        if (!urlFonteJudicialEspecifica(row.url_fonte, row.numero_processo)) continue
+        // Mesma regra da ficha (processosPublicos): oficial ou com selo "Fonte em confirmação".
+        if (!nivelFonteProcesso(row)) continue
         counts.set(row.candidato_id, (counts.get(row.candidato_id) ?? 0) + 1)
       }
       if (data.length < 1000) break
@@ -2323,7 +2353,7 @@ async function getCandidatosComResumoResourceUncached(
   let officialProcessCounts = new Map<string, number>()
   let officialProcessCountsError = false
   try {
-    officialProcessCounts = await fetchOfficialProcessCountsByCandidateIds(
+    officialProcessCounts = await fetchPublicProcessCountsByCandidateIds(
       supabase,
       candidatos.map((candidate) => candidate.id),
     )
@@ -2489,11 +2519,11 @@ async function getCandidatosComparaveisResourceUncached(
       await Promise.all([
         fetchMudancasPartidoRowsPaged(supabase, comparadorIds),
         fetchGastoTotalsByCandidatoIds(supabase, comparadorIds, new Map(baseRows.map((row) => [row.id, row.slug]))),
-        fetchPatrimonioSeriesByCandidatoIds(supabase, comparadorIds),
+        fetchPatrimonioSeriesByCandidatoIds(supabase, comparadorIds, { comBens: true }),
         fetchCargoAtualByCandidatoIds(supabase, comparadorIds),
         fetchLegislativeHistoryFlagsByCandidatoIds(supabase, comparadorIds),
         fetchProcessosVerificacoesBatch(baseRows.map((row) => ({ id: row.id, slug: row.slug }))),
-        fetchOfficialProcessCountsByCandidateIds(supabase, comparadorIds),
+        fetchPublicProcessCountsByCandidateIds(supabase, comparadorIds),
       ])
     patrimonioPorId = patrimonioMap
     processosVerificacoes = processosMap
@@ -3016,12 +3046,14 @@ async function getQuizAlignmentDatasetResourceUncached(
           .from("projetos_lei")
           .select("id", { count: "exact", head: true })
           .in("candidato_id", candidatoIds)
+          .is("despublicado_em", null)
           .not("tema", "is", null)
           .abortSignal(pageSignal),
         (from, to, pageSignal) => supabase
           .from("projetos_lei")
           .select("candidato_id,tema,url_inteiro_teor")
           .in("candidato_id", candidatoIds)
+          .is("despublicado_em", null)
           .not("tema", "is", null)
           .order("id", { ascending: true })
           .range(from, to)

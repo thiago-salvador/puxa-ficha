@@ -64,7 +64,11 @@ async function porIds<T extends { id: string }>(db: Cliente, tabela: string, col
   if (ids.length === 0) return new Map()
   const { data, error } = await withSupabaseRetry(
     `${tabela}(compromisso_evidencia)`,
-    async (signal) => db.from(tabela).select(colunas).in("id", ids).abortSignal(signal),
+    async (signal) => {
+      let query = db.from(tabela).select(colunas).in("id", ids)
+      if (tabela === "projetos_lei") query = query.is("despublicado_em", null)
+      return query.abortSignal(signal)
+    },
   )
   if (error) throw error
   return new Map(((data ?? []) as unknown as T[]).map((linha) => [linha.id, linha]))
@@ -84,8 +88,8 @@ async function carregarItens(db: Cliente, candidatoId: string, programaChave: st
       db, "votos_candidato", "id,voto,votacao:votacoes_chave(titulo,data_votacao,casa)", refs("votacao_chave")),
     porIds<{ id: string; tipo: string | null; numero: string | null; ano: number | null; ementa: string | null; url_inteiro_teor: string | null }>(
       db, "projetos_lei", "id,tipo,numero,ano,ementa,url_inteiro_teor", refs("projeto_lei")),
-    porIds<{ id: string; tema: string; fonte: string | null; url_fonte: string | null; descricao: string | null; gerado_por: string | null }>(
-      db, "posicoes_declaradas", "id,tema,fonte,url_fonte,descricao,gerado_por", refs("posicao_declarada")),
+    porIds<{ id: string; tema: string; fonte: string | null; url_fonte: string | null; descricao: string | null; gerado_por: string | null; verificado: boolean | null }>(
+      db, "posicoes_declaradas", "id,tema,fonte,url_fonte,descricao,gerado_por,verificado", refs("posicao_declarada")),
     porIds<{ id: string; titulo: string; fontes: Array<string | { url?: string }> | null; data_referencia: string | null; visivel: boolean | null }>(
       db, "pontos_atencao", "id,titulo,fontes,data_referencia,visivel", refs("contradicao")),
   ])
@@ -103,9 +107,19 @@ async function carregarItens(db: Cliente, candidatoId: string, programaChave: st
       saida.push({ ...base, referencia: [projeto.tipo, projeto.numero && projeto.ano ? `${projeto.numero}/${projeto.ano}` : projeto.numero].filter(Boolean).join(" "), texto: projeto.ementa, data: projeto.ano ? String(projeto.ano) : null, url: urlSeguraDeFonte(projeto.url_inteiro_teor) })
     } else if (linha.tipo_evidencia === "posicao_declarada") {
       const posicao = posicoes.get(linha.evidencia_ref)
-      // Texto de posição só aparece quando veio de curadoria, nunca de geração automática.
-      if (!posicao?.descricao || posicao.gerado_por !== "curadoria") continue
-      saida.push({ ...base, referencia: posicao.fonte ?? "", texto: posicao.descricao, data: null, url: urlSeguraDeFonte(posicao.url_fonte) })
+      // Posição de curadoria aparece direto; posição de coleta automática só
+      // aparece se a própria linha estiver verificada, e sempre com selo.
+      if (!posicao?.descricao) continue
+      const curadoria = posicao.gerado_por === "curadoria"
+      if (!curadoria && posicao.verificado !== true) continue
+      saida.push({
+        ...base,
+        referencia: posicao.fonte ?? "",
+        texto: posicao.descricao,
+        data: null,
+        url: urlSeguraDeFonte(posicao.url_fonte),
+        ...(curadoria ? {} : { fonteEmConfirmacao: true }),
+      })
     } else if (linha.tipo_evidencia === "fala") {
       const fala = falas.get(linha.evidencia_ref)
       if (!fala) continue

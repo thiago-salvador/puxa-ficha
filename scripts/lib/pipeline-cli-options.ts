@@ -7,6 +7,8 @@ export type IngestCliOptions = {
   senadoCandidateTimeoutMs?: number
   /** Coleta e relata sem escrever nada no banco. */
   dryRun: boolean
+  /** Escrita explícita dos coletores parlamentares; --dry-run prevalece. */
+  apply: boolean
 }
 
 function parseSlugs(value: string): string[] {
@@ -35,6 +37,7 @@ export function parseIngestCliOptions(
   let forceFrozen = false
   let skipCamaraValidated = false
   let dryRun = false
+  let apply = false
 
   for (let index = 0; index < argv.length; index++) {
     const value = argv[index]
@@ -42,6 +45,8 @@ export function parseIngestCliOptions(
       skipCamaraValidated = true
     } else if (value === "--dry-run") {
       dryRun = true
+    } else if (value === "--apply") {
+      apply = true
     } else if (value === "--force-frozen") {
       forceFrozen = true
     } else if (value === "--slugs") {
@@ -67,6 +72,10 @@ export function parseIngestCliOptions(
     throw new Error("--force-frozen e overrides de timeout exigem --slugs com escopo explícito")
   }
 
+  const parliamentarySourceSelected = sourceArgs.length === 0 || sourceArgs.some((source) =>
+    ["camara", "senado", "ceaps-senado", "camara-cotas", "partidos-parlamentares"].includes(source),
+  )
+
   return {
     sourceArgs,
     skipCamaraValidated,
@@ -74,6 +83,7 @@ export function parseIngestCliOptions(
     forceFrozen,
     camaraCandidateTimeoutMs,
     senadoCandidateTimeoutMs,
-    dryRun,
+    dryRun: dryRun || (parliamentarySourceSelected && !apply),
+    apply: apply && !dryRun,
   }
 }

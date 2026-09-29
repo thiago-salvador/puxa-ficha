@@ -22,9 +22,11 @@ import {
   validarCoberturaPacotePatrimonio,
   validarCoberturaPacoteReceitas,
 } from "../scripts/lib/ingest-tse"
+import { writeFilteredReceiptArtifact } from "../scripts/tse-local/ingest-tse-local"
 import type { CandidatoConfig } from "../scripts/lib/types"
 
 const source = readFileSync("scripts/lib/ingest-tse.ts", "utf8")
+const localIngestSource = readFileSync("scripts/tse-local/ingest-tse-local.ts", "utf8")
 
 async function writeZip(path: string, entries: Record<string, string>): Promise<Buffer> {
   const archive = new JSZip()
@@ -106,6 +108,33 @@ test("TSE ingest dry-run emits normalized rows without database mutations", () =
   assert.match(source, /if \(options\.dryRun\) \{[\s\S]*table: "financiamento"/)
   assert.match(source, /sanitizeMaioresDoadoresForPublic\(row\.maiores_doadores\)/)
   assert.match(source, /maskDocumentLikeSequences\(bem\.descricao\)/)
+})
+
+test("dry-run computes full identity risk before filtering both coverage plans", () => {
+  const financePlan = localIngestSource.indexOf("const financePlanPath = join(financeOut, \"plano-privado.json\")")
+  const riskSet = localIngestSource.indexOf("const identityRiskSlugs = identityRiskSlugsFromArtifacts(", financePlan)
+  const familyCoverage = localIngestSource.indexOf("const coverage =", riskSet)
+  const historyCoverage = localIngestSource.indexOf("const historyCoverage =", familyCoverage)
+  assert.ok(financePlan >= 0 && riskSet > financePlan && familyCoverage > riskSet && historyCoverage > familyCoverage)
+  assert.match(localIngestSource.slice(riskSet, familyCoverage), /finance\.ok && existsSync\(financePlanPath\)/)
+  assert.match(localIngestSource.slice(riskSet, historyCoverage), /writeFilteredReceiptArtifact\(applyFamilyReceiptsPath, eligibleFamilyReceiptsPath, identityRiskSlugs\)/)
+  assert.match(localIngestSource.slice(riskSet, historyCoverage), /`--in=\$\{eligibleFamilyReceiptsPath\}`/)
+  assert.match(localIngestSource.slice(riskSet, historyCoverage), /historico-recibos-elegiveis\.json/)
+  assert.match(localIngestSource.slice(riskSet, historyCoverage), /writeFilteredReceiptArtifact\(receiptPath, historyCoverageReceiptsPath, identityRiskSlugs\)/)
+})
+
+test("coverage receipt filter writes a new private artifact and preserves the reviewed input", () => {
+  const root = mkdtempSync(join(tmpdir(), "pf-tse-risk-filter-"))
+  try {
+    const input = join(root, "reviewed.json")
+    const output = join(root, "eligible", "filtered.json")
+    const source = { run: "reviewed", receipts: [{ alvo: "risk" }, { alvo: "safe" }] }
+    writeFileSync(input, JSON.stringify(source))
+    assert.equal(writeFilteredReceiptArtifact(input, output, new Set(["risk"])), output)
+    assert.deepEqual(JSON.parse(readFileSync(input, "utf8")), source)
+    assert.deepEqual(JSON.parse(readFileSync(output, "utf8")), { run: "reviewed", receipts: [{ alvo: "safe" }] })
+    assert.throws(() => writeFilteredReceiptArtifact(input, input, new Set(["risk"])), /caminho separado/)
+  } finally { rmSync(root, { recursive: true, force: true }) }
 })
 
 test("TSE ingest CLI exposes an explicit dry-run flag", () => {

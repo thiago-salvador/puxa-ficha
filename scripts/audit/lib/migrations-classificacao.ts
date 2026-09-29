@@ -541,7 +541,23 @@ export const MEDICAO_REPLAY = Object.freeze({
   // verificado pelo domínio de situacao_candidatura (DDL pura). --schema-gate
   // PG17 mediu 121 aplicadas, 383 puladas, zero falhas; hash
   // 830241ffa7174576e53b01533a775d46d3dd2f93802cb884bf4c873c9c104cd0.
-  schemaReplayTamanho: 122,
+  // 122 -> 123: 20260926190100 cria processo_numero_cnj_valido e a CHECK NOT
+  // VALID de numero CNJ em processos (DDL pura). --schema-gate PG17 mediu 123
+  // aplicadas, 397 puladas, zero falhas; hash
+  // 7fc51c84eabc8e22bd2dd1130cdf735eafc8df37bd57ba7e30e0b48bdcbb0fc1.
+  // 123 -> 124: 20260927030200 adiciona o CHECK de data de nascimento sentinela
+  // em candidatos (DDL pura). --schema-gate PG17 mediu 124 aplicadas, 401
+  // puladas, zero falhas; hash
+  // eed309f35eff7889947a07d4ab2d71e988c0399595baa0f551f8fc8b870092a0.
+  // 124 -> 125: 20260927040000 adiciona a despublicacao em projetos_lei.
+  // --schema-gate PG17 mediu 125 aplicadas, 403 puladas, zero falhas; hash
+  // 0326d95942bb7e48534fbb597fa9451281dd1e7dd698ca42bb0b0a2529919aac.
+  // 125 -> 126: 20260927050000 cria a fase eleitoral com RLS e view pública.
+  // --schema-gate PG17: 126 aplicadas, 403 puladas, zero falhas; hash
+  // 6e4c5529e7b4c61ed999b175377449074115d9075cc932f8d06fc0d9cc8b2efb.
+  // 126 -> 127: 20260927095346 publica categorias_origem após o topo 20260927050000.
+  // 127 -> 128: 20260927095347 adiciona hash CAS de bens, sem expor JSON no filtro URL.
+  schemaReplayTamanho: 128,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

@@ -1,0 +1,8 @@
+{
+  "conjunto": "schema",
+  "base_version": "20260927040200",
+  "base_name": "pedro_cunha_lima_senado_homonimo",
+  "migrations": [
+    { "version": "20260927050000", "name": "candidaturas_fase_2026_schema" }
+  ]
+}

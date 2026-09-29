@@ -166,8 +166,8 @@ export function validarRevisaoManual(argv: string[]): RevisaoManual {
   if (!new Set<ProvaIdentidade>(["id-oficial", "cargo-e-uf", "nao-confirmada"]).has(identidade)) {
     throw new Error("nome sozinho não prova identidade; use id-oficial, cargo-e-uf ou nao-confirmada")
   }
-  if (identidade === "nao-confirmada" && resultado !== "indeterminado") {
-    throw new Error("--identidade=nao-confirmada só é permitida para --resultado=indeterminado")
+  if (identidade === "nao-confirmada" && resultado !== "indeterminado" && resultado !== "erro") {
+    throw new Error("--identidade=nao-confirmada só é permitida para --resultado=indeterminado ou erro")
   }
 
   const urls = identidade === "nao-confirmada"
@@ -237,7 +237,8 @@ export function entradaDaRevisao(revisao: RevisaoManual): EntradaColeta {
     fonte,
     alvo: revisao.slug,
     resultado: revisao.resultado,
-    volume: revisao.resultado === "encontrado" ? 1 : 0,
+    // Em `encontrado`, o volume é o número de fontes publicáveis (um CNJ por URL oficial), não um sinalizador.
+    volume: revisao.resultado === "encontrado" ? Math.max(1, revisao.evidenciasPublicaveis.length) : 0,
     detalhe,
     url: revisao.urls[0]
   }

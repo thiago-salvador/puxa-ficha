@@ -45,8 +45,12 @@ permissions:
 
 # Mesmo grupo do ingest.yml: financiamento e bens não podem ser escritos por
 # duas rodadas ao mesmo tempo.
+# Só a execução que escreve entra no grupo compartilhado. Dry-run tem grupo
+# próprio: o GitHub guarda uma única execução pendente por grupo e cancela a
+# mais antiga quando outra chega (foi assim que o agendado de 26/09 sumiu), e o
+# vigia do CDN (tse-cdn-watcher.yml) dispara dry-runs a cada 2 h.
 concurrency:
-  group: ingest-pipeline
+  group: ${{ (github.event_name == 'schedule' || inputs.aplicar) && 'ingest-pipeline' || 'tse-2026-financas-dry-run' }}
   cancel-in-progress: false
 
 jobs:
@@ -54,7 +58,11 @@ jobs:
     name: Plano, travas e escrita auditada
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    # Orçamento: setup <= 10 min + coletor <= 100 min (passo). Dentro do
+    # coletor, todo download termina no prazo único de 45 min do processo
+    # (PF_TSE_DOWNLOAD_DEADLINE_MS); o que sobra (>= 45 min) é plano, travas e
+    # escrita auditada, então o kill não cai no meio do CAS por espera do CDN.
+    timeout-minutes: 120
     outputs:
       aplicou: ${{ steps.executar.outputs.aplicou }}
     steps:
@@ -68,11 +76,19 @@ jobs:
       - run: npm ci --ignore-scripts
       - name: Executar coletor
         id: executar
+        timeout-minutes: 100
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           PF_DOADOR_CPF_HASH_SALT: ${{ secrets.PF_DOADOR_CPF_HASH_SALT }}
           PF_TSE2026_EVENTO: ${{ github.event_name }}
+          # 403 intermitente do CDN: recuo exponencial com retomada por Range,
+          # sob prazo único de 45 min para todos os pacotes do processo;
+          # esgotado o prazo, o coletor falha sem escrita.
+          PF_TSE_DOWNLOAD_DEADLINE_MS: "2700000"
+          PF_TSE_DOWNLOAD_RETRY_WINDOW_MS: "2700000"
+          PF_TSE_DOWNLOAD_RETRY_BASE_MS: "60000"
+          PF_TSE_DOWNLOAD_TIMEOUT_MS: "1200000"
           PF_TSE2026_APLICAR: ${{ inputs.aplicar }}
           PF_EXPECTED_PLAN_SHA: ${{ inputs.expected_plan_sha }}
         run: |

@@ -1,0 +1,28 @@
+{
+  "versao": "2026-09-27",
+  "_comentario": "Allowlist fechada da migration 20260927040200: despublica as 33 proposicoes de projetos_lei ligadas ao codigo 1757 do Senado em pedro-cunha-lima, com snapshot de preimagem e recibo em coleta_log.",
+  "fonte": "Perfil oficial do Senado para o codigo 1757 e SELECT de projetos_lei em producao em 2026-09-27; o codigo identifica Ivandro Moura Cunha Lima, nao Pedro Oliveira Cunha Lima.",
+  "motivo": "As 33 proposicoes do Senado associadas ao codigo 1757 pertencem a outra pessoa.",
+  "coorte": ["pedro-cunha-lima"],
+  "fora_por_construcao": {"slugs": []},
+  "entries": [
+    {
+      "tabela": "projetos_lei",
+      "slug": "pedro-cunha-lima",
+      "campos": ["despublicado_em", "despublicacao_motivo"],
+      "max_registros": 33
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "pedro-cunha-lima-senado-20260927",
+      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260927040200",
+      "campos": ["fonte", "escopo", "alvo", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    }
+  ]
+}

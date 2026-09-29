@@ -2,6 +2,7 @@ import "./helpers/server-only"
 import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
 import test from "node:test"
+import type { SenadoRunningMate } from "../src/lib/senado-running-mates"
 import {
   __setImprensaDataDependenciesForTests,
   __setImprensaNowForTests,
@@ -24,6 +25,8 @@ test("fontes paginadas usam ordem estável antes de range", () => {
 })
 
 test("monta coorte, filtros e estados sem transformar ausência em zero", async () => {
+  const originalSenadoFlag = process.env.SENADO_ENABLED
+  process.env.SENADO_ENABLED = "false"
   __setImprensaDataDependenciesForTests({
     loadSlugs: async () => [{ slug: "ana" }, { slug: "bruno" }, { slug: "deputado" }, { slug: "senado" }],
     loadCandidates: async () => [
@@ -48,6 +51,14 @@ test("monta coorte, filtros e estados sem transformar ausência em zero", async 
       { titular_candidato_id: "2", vice_nome_urna: "Vice Bruno", identidade_status: "confirmada", vinculo_titular_status: "confirmado", fonte_url: "https://divulgacandcontas.tse.jus.br/candidatura/2", fonte_sha256: "b".repeat(64), snapshot_em: "2026-09-05T23:23:41.730Z" },
       { titular_candidato_id: "2", vice_nome_urna: "Outro Vice", identidade_status: "confirmada", vinculo_titular_status: "confirmado", fonte_url: "https://divulgacandcontas.tse.jus.br/candidatura/2b", fonte_sha256: "c".repeat(64), snapshot_em: "2026-09-05T23:23:41.730Z" },
     ],
+    loadSenadoRunningMates: async (slugs) => {
+      const data: Record<string, SenadoRunningMate[]> = {}
+      if (slugs.includes("senado")) data.senado = [
+      { ordem: 1, nome_urna: "SUPLENTE UM", situacao: null, fonte_url: "https://divulgacandcontas.tse.jus.br/suplencia/1", sq_candidato: "1001" },
+      { ordem: 2, nome_urna: "SUPLENTE DOIS", situacao: null, fonte_url: "https://divulgacandcontas.tse.jus.br/suplencia/2", sq_candidato: "1002" },
+      ]
+      return { data, absence: {}, unavailable: false }
+    },
     loadSites: async (slug) => slug === "ana" ? {
       ano_eleicao: 2026,
       fonte_url: "https://example.com/sites.zip",
@@ -74,31 +85,53 @@ test("monta coorte, filtros e estados sem transformar ausência em zero", async 
     assert.equal(dataset.rows[0].sites.quantidade, 2)
     assert.deepEqual(dataset.rows[0].chapa, {
       estado: "publicado",
+      suplentesEstado: "nao_aplicavel",
       viceNome: "Vice Ana",
       viceNomeOriginal: "Vice Ana",
+      viceSituacao: null,
+      suplentes: [],
       fonteUrl: "https://divulgacandcontas.tse.jus.br/candidatura/1",
       fonteSha256: "a".repeat(64),
       snapshotEm: "2026-09-05T23:23:41.730Z",
     })
     assert.equal(dataset.rows[0].processos.estado, "cobertura_parcial")
     assert.equal(dataset.rows[0].processos.buscaEstado, "contraditorio")
-    assert.equal(dataset.rows[0].processos.quantidade, 1)
-    assert.equal(dataset.rows[0].processos.quantidadeOmitida, 2)
-    assert.equal(dataset.rows[0].processos.ocorrencias.length, 1)
+    // Regra L1 da ficha (nivelFonteProcesso): URL judicial com o CNJ é oficial,
+    // página específica de imprensa entra com o selo, portal genérico fica fora.
+    assert.equal(dataset.rows[0].processos.quantidade, 2)
+    assert.equal(dataset.rows[0].processos.quantidadeOmitida, 1)
+    assert.equal(dataset.rows[0].processos.quantidadeEmConfirmacao, 1)
+    assert.deepEqual(dataset.rows[0].processos.ocorrencias.map((item) => [item.numero, item.fonteNivel, item.urlFonte]), [
+      ["4004910-65.2025.8.26.0506", "oficial", "https://pje.tre-sp.jus.br/consulta/processo?numeroProcesso=40049106520258260506"],
+      ["2", "em_confirmacao", "https://jornal.example/noticia-processo"],
+    ])
     assert.deepEqual(dataset.availableCargos, ["Deputado Federal", "Governador"])
     assert.deepEqual(dataset.availableUfs, ["MG", "RJ", "SP"])
 
-    const unfiltered = await getImprensaDataset({ cargo: null, uf: null })
+    const priorSenadoFlag = process.env.SENADO_ENABLED
+    let unfiltered
+    try {
+      process.env.SENADO_ENABLED = "true"
+      unfiltered = await getImprensaDataset({ cargo: null, uf: null })
+    } finally {
+      if (priorSenadoFlag === undefined) delete process.env.SENADO_ENABLED
+      else process.env.SENADO_ENABLED = priorSenadoFlag
+    }
     assert.equal(unfiltered.rows.find((row) => row.slug === "bruno")?.chapa.estado, "sem_dado")
     assert.equal(unfiltered.rows.find((row) => row.slug === "bruno")?.sites.estado, "vazio_confirmado")
     assert.equal(unfiltered.rows.find((row) => row.slug === "bruno")?.sites.quantidade, 0)
     assert.equal(unfiltered.rows.find((row) => row.slug === "bruno")?.processos.estado, "desatualizado")
     assert.equal(unfiltered.rows.find((row) => row.slug === "bruno")?.processos.buscaEstado, "desatualizado")
+    assert.deepEqual(unfiltered.rows.find((row) => row.slug === "senado")?.chapa.suplentes, ["Suplente Um", "Suplente Dois"])
+    assert.equal(unfiltered.rows.find((row) => row.slug === "senado")?.chapa.suplentesEstado, "publicado")
+    assert.equal(unfiltered.rows.find((row) => row.slug === "senado")?.chapa.estado, "publicado")
     assert.equal(unfiltered.rows.find((row) => row.slug === "deputado")?.processos.estado, "indeterminado")
     assert.equal(unfiltered.rows.find((row) => row.slug === "deputado")?.sites.quantidade, null)
   } finally {
     __setImprensaNowForTests(null)
     __setImprensaDataDependenciesForTests(null)
+    if (originalSenadoFlag === undefined) delete process.env.SENADO_ENABLED
+    else process.env.SENADO_ENABLED = originalSenadoFlag
   }
 })
 
@@ -146,5 +179,171 @@ test("nome formatado para exibição preserva o original do TSE para citação/e
     assert.equal(dataset.rows[0].nomeOriginal, "CARLOS CLEY")
   } finally {
     __setImprensaDataDependenciesForTests(null)
+  }
+})
+
+test("suplentes indeferidos preservam estado explícito, URL HTTPS e snapshot ISO", async () => {
+  const priorSenadoFlag = process.env.SENADO_ENABLED
+  process.env.SENADO_ENABLED = "true"
+  __setImprensaDataDependenciesForTests({
+    loadSlugs: async () => [{ slug: "senador-indeferidos" }, { slug: "senador-http" }, { slug: "senador-data-invalida" }, { slug: "senador-mates-http" }],
+    loadCandidates: async () => [
+      { id: "10", slug: "senador-indeferidos", nome_urna: "SENADOR INDEFERIDOS", cargo_disputado: "Senador", estado: "SP", partido_sigla: "ABC" },
+      { id: "11", slug: "senador-http", nome_urna: "SENADOR HTTP", cargo_disputado: "Senador", estado: "SP", partido_sigla: "ABC" },
+      { id: "12", slug: "senador-data-invalida", nome_urna: "SENADOR DATA INVALIDA", cargo_disputado: "Senador", estado: "SP", partido_sigla: "ABC" },
+      { id: "13", slug: "senador-mates-http", nome_urna: "SENADOR MATES HTTP", cargo_disputado: "Senador", estado: "SP", partido_sigla: "ABC" },
+    ],
+    loadProcesses: async () => [],
+    loadChapas: async () => [],
+    loadSites: async () => null,
+    loadSenadoRunningMates: async (slugs) => {
+      const data: Record<string, SenadoRunningMate[]> = {}
+      if (slugs.includes("senador-mates-http")) data["senador-mates-http"] = [
+        { ordem: 1, nome_urna: "SUPLENTE UM", situacao: null, fonte_url: "http://tse.jus.br/suplente/1", sq_candidato: "1001" },
+        { ordem: 2, nome_urna: "SUPLENTE DOIS", situacao: null, fonte_url: "http://tse.jus.br/suplente/2", sq_candidato: "1002" },
+      ]
+      return { data, absence: {
+        "senador-indeferidos": { fonte_url: "https://tse.jus.br/consulta.zip", fonte_sha256: "a".repeat(64), fonte_data: "26/09/2026", consulted_at: "2026-09-26T14:30:00.000Z" },
+        "senador-http": { fonte_url: "http://tse.jus.br/consulta.zip", fonte_sha256: "a".repeat(64), fonte_data: "26/09/2026", consulted_at: "2026-09-26T14:30:00.000Z" },
+        "senador-data-invalida": { fonte_url: "https://tse.jus.br/consulta.zip", fonte_sha256: "a".repeat(64), fonte_data: "31/02/2026", consulted_at: "2026-13-26T14:30:00.000Z" },
+      }, unavailable: false }
+    },
+  })
+  try {
+    const rows = (await getImprensaDataset({ cargo: null, uf: null })).rows
+    const row = rows.find((item) => item.slug === "senador-indeferidos")!
+    assert.equal(row.chapa.estado, "indeferidos_comprovados")
+    assert.equal(row.chapa.suplentesEstado, "indeferidos_comprovados")
+    assert.equal(row.chapa.fonteUrl, "https://tse.jus.br/consulta.zip")
+    assert.equal(row.chapa.snapshotEm, "2026-09-26T14:30:00.000Z")
+    assert.match(row.chapa.snapshotEm ?? "", /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/)
+    assert.equal(rows.find((item) => item.slug === "senador-http")?.chapa.estado, "indeterminado")
+    assert.equal(rows.find((item) => item.slug === "senador-http")?.chapa.suplentesEstado, "indeterminado")
+    assert.equal(rows.find((item) => item.slug === "senador-http")?.chapa.fonteUrl, null)
+    assert.equal(rows.find((item) => item.slug === "senador-data-invalida")?.chapa.estado, "indeterminado")
+    assert.equal(rows.find((item) => item.slug === "senador-mates-http")?.chapa.estado, "indeterminado")
+    assert.deepEqual(rows.find((item) => item.slug === "senador-mates-http")?.chapa.suplentes, [])
+  } finally {
+    if (priorSenadoFlag === undefined) delete process.env.SENADO_ENABLED
+    else process.env.SENADO_ENABLED = priorSenadoFlag
+    __setImprensaDataDependenciesForTests(null)
+  }
+})
+
+test("vínculo novo_perfil_oficial publica o vice como a ficha pública", async () => {
+  const viceName = "VICE DO PERFIL OFICIAL"
+  __setImprensaDataDependenciesForTests({
+    loadSlugs: async () => [{ slug: "governador-perfil-oficial" }],
+    loadCandidates: async () => [{ id: "20", slug: "governador-perfil-oficial", nome_urna: "GOVERNADOR", cargo_disputado: "Governador", estado: "SP", partido_sigla: "ABC" }],
+    loadProcesses: async () => [],
+    loadChapas: async () => [{ titular_candidato_id: "20", vice_nome_urna: viceName, identidade_status: "confirmada", vinculo_titular_status: "novo_perfil_oficial", fonte_url: "https://tse.jus.br/chapa", fonte_sha256: "a".repeat(64), snapshot_em: "2026-09-26T12:00:00.000Z" }],
+    loadSites: async () => null,
+  })
+  try {
+    const row = (await getImprensaDataset({ cargo: null, uf: null })).rows[0]
+    assert.equal(row.chapa.estado, "publicado")
+    assert.equal(row.chapa.viceNome, "Vice do Perfil Oficial")
+    assert.equal(row.chapa.viceNomeOriginal, viceName)
+    assert.equal(row.chapa.fonteUrl, "https://tse.jus.br/chapa")
+
+    const component = readFileSync(new URL("../src/components/imprensa/ImprensaRows.tsx", import.meta.url), "utf8")
+    const css = readFileSync(new URL("../src/app/(site)/imprensa/imprensa.module.css", import.meta.url), "utf8")
+    assert.doesNotMatch(component, /vinculo_em_revisao/)
+    assert.doesNotMatch(css, /vinculo_em_revisao/)
+    // Rótulo único: a Mesa usa o labelState de imprensa-uf-pack, cujo fallback é "Exige conferência".
+    assert.match(component, /import \{ labelState[^}]*\} from "@\/lib\/imprensa-uf-pack"/)
+    const pack = readFileSync(new URL("../src/lib/imprensa-uf-pack.ts", import.meta.url), "utf8")
+    assert.match(pack, /\?\? "Exige conferência"/)
+  } finally {
+    __setImprensaDataDependenciesForTests(null)
+  }
+})
+
+test("famílias da ficha: mesmos filtros da página, null com estado e nunca zero presumido", async () => {
+  const originalSenadoFlag = process.env.SENADO_ENABLED
+  process.env.SENADO_ENABLED = "true"
+  const tcuDetalhe = (inabilitados: number, irregulares: number) =>
+    `https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-inabilitados inabilitados_itens=${inabilitados}; ` +
+    `https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-contas-irregulares cadirreg_itens=${irregulares}`
+  const bem = (valor: number) => [{ tipo: "Imóvel", descricao: "Casa", valor }]
+  __setImprensaDataDependenciesForTests({
+    loadSlugs: async () => [{ slug: "dr-daniel" }, { slug: "tarcisio" }, { slug: "sem-nada" }],
+    loadCandidates: async (slugs) => [
+      { id: "d1", slug: "dr-daniel", nome_urna: "DR DANIEL", cargo_disputado: "Senador", estado: "CE", partido_sigla: "A" },
+      { id: "t1", slug: "tarcisio", nome_urna: "TARCISIO", cargo_disputado: "Governador", estado: "SP", partido_sigla: "B" },
+      { id: "t2", slug: "tarcisio-gov-sp", nome_urna: "TARCISIO", cargo_disputado: "Governador", estado: "SP", partido_sigla: "B" },
+      { id: "s1", slug: "sem-nada", nome_urna: "SEM NADA", cargo_disputado: "Governador", estado: "RJ", partido_sigla: null },
+    ].filter((row) => slugs.includes(row.slug)),
+    loadPatrimonio: async (ids) => [
+      { id: "p1", candidato_id: "t1", ano_eleicao: 2026, valor_total: 300, bens: bem(300), sq_candidato: "9", uf_candidatura: "SP" },
+      // Declaração ligada pelo mapa canônico (outro id da mesma pessoa).
+      { id: "p2", candidato_id: "t2", ano_eleicao: 2022, valor_total: 200, bens: bem(200), sq_candidato: "8", uf_candidatura: "SP" },
+      // Linha despublicada não entra, nem como base da variação.
+      { id: "p3", candidato_id: "t1", ano_eleicao: 2024, valor_total: 10, bens: bem(10), sq_candidato: "7", uf_candidatura: "SP", despublicado_em: "2026-09-01T00:00:00Z" },
+      // Total zero com bem de valor: ausência de valor, não patrimônio zero.
+      { id: "p4", candidato_id: "d1", ano_eleicao: 2026, valor_total: 0, bens: bem(50), sq_candidato: "6", uf_candidatura: "CE" },
+    ].filter((row) => ids.includes(row.candidato_id)),
+    loadGastos: async () => [
+      { candidato_id: "d1", ano: 2023, total_gasto: 190563.61, fonte: "Senado Federal - CEAPS", detalhamento: null },
+      { candidato_id: "d1", ano: 2022, total_gasto: 1000, fonte: "Senado Federal - CEAPS", detalhamento: null },
+      { candidato_id: "d1", ano: 2021, total_gasto: 55, fonte: "Portal da Transparência", detalhamento: null },
+      { candidato_id: "d1", ano: 2020, total_gasto: 77, fonte: "Câmara dos Deputados", detalhamento: {} },
+    ],
+    loadSancoes: async () => [{ candidato_id: "t1", id: "x1" }, { candidato_id: "t1", id: "x2" }],
+    loadColetaReceipts: async (fonte) => fonte === "tcu"
+      ? [
+          { alvo: "dr-daniel", fonte: "tcu", resultado: "vazio_confirmado", executado_em: "2026-09-20T00:00:00Z", volume: 0, detalhe: tcuDetalhe(0, 0), escopo: "candidato" },
+          { alvo: "tarcisio", fonte: "tcu", resultado: "encontrado", executado_em: "2026-09-21T00:00:00Z", volume: 2, detalhe: tcuDetalhe(0, 2), escopo: "candidato" },
+          // Duas linhas para o mesmo alvo: a ficha lê com maybeSingle e não publica.
+          { alvo: "sem-nada", fonte: "tcu", resultado: "vazio_confirmado", executado_em: "2026-09-20T00:00:00Z", volume: 0, detalhe: tcuDetalhe(0, 0), escopo: "candidato" },
+          { alvo: "sem-nada", fonte: "tcu", resultado: "vazio_confirmado", executado_em: "2026-09-21T00:00:00Z", volume: 0, detalhe: tcuDetalhe(0, 0), escopo: "candidato" },
+        ]
+      : [{ alvo: "dr-daniel", fonte: "transparencia-sanctions", resultado: "vazio_confirmado", executado_em: "2026-09-19T00:00:00Z", detalhe: "CEIS=https://api.portaldatransparencia.gov.br/api-de-dados/ceis", url: null, escopo: "candidato" }],
+    loadSites: async () => null,
+    loadChapas: async () => [],
+    loadProcesses: async () => [],
+  })
+  try {
+    const dataset = await getImprensaDataset({ cargo: null, uf: null })
+    const bySlug = new Map(dataset.rows.map((row) => [row.slug, row]))
+    const daniel = bySlug.get("dr-daniel")!
+    const tarcisio = bySlug.get("tarcisio")!
+    const vazio = bySlug.get("sem-nada")!
+
+    assert.deepEqual(tarcisio.patrimonio, {
+      estado: "publicado", ano: 2026, total: 300, valorEstado: "valor_informado",
+      anoAnterior: 2022, totalAnterior: 200, variacaoPct: 50,
+      fonteUrl: "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    })
+    assert.equal(daniel.patrimonio.estado, "valor_nao_informado")
+    assert.equal(daniel.patrimonio.total, null, "zero sem valor não vira R$ 0")
+    assert.equal(vazio.patrimonio.estado, "sem_dado")
+    assert.equal(vazio.patrimonio.total, null)
+
+    // 2023 de dr-daniel está em revisão; Portal da Transparência e Câmara sem
+    // proveniência validada ficam fora, como na ficha.
+    assert.deepEqual(daniel.gastos.anos, [{ ano: 2022, casa: "senado", total: 1000, fonteUrl: null }])
+    assert.equal(daniel.gastos.ultimoAno, 2022)
+    assert.equal(daniel.gastos.ultimoAnoTotal, 1000)
+    assert.ok(daniel.gastos.anosEmRevisao.includes(2023))
+    assert.deepEqual(vazio.gastos, { estado: "sem_dado", ultimoAno: null, ultimoAnoTotal: null, anosEmRevisao: [], anos: [] })
+
+    assert.equal(daniel.tcu.estado, "vazio_verificado")
+    assert.equal(daniel.tcu.registros, 0)
+    assert.equal(daniel.tcu.consultadoEm, "2026-09-20T00:00:00Z")
+    assert.equal(tarcisio.tcu.estado, "encontrado_em_revisao")
+    assert.equal(tarcisio.tcu.registros, 2)
+    assert.deepEqual(vazio.tcu, { estado: "nao_verificado", registros: null, consultadoEm: null, fonteUrl: null })
+
+    assert.equal(daniel.sancoes.estado, "vazio-confirmado")
+    assert.equal(daniel.sancoes.quantidade, 0)
+    assert.equal(daniel.sancoes.fonteUrl, "https://api.portaldatransparencia.gov.br/api-de-dados/ceis")
+    assert.equal(tarcisio.sancoes.estado, "com-registros")
+    assert.equal(tarcisio.sancoes.quantidade, 2)
+    assert.deepEqual(vazio.sancoes, { estado: "nao-verificado", quantidade: null, consultadoEm: null, fonteUrl: null })
+  } finally {
+    __setImprensaDataDependenciesForTests(null)
+    if (originalSenadoFlag === undefined) delete process.env.SENADO_ENABLED
+    else process.env.SENADO_ENABLED = originalSenadoFlag
   }
 })

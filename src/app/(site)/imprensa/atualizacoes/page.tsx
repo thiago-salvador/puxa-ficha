@@ -1,92 +1,179 @@
+// cspell:words homonimos
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Footer } from "@/components/Footer"
-import { NoticePanel } from "@/components/NoticePanel"
-import { SectionDivider, SectionLabel, SectionTitle } from "@/components/SectionHeader"
-import { formatUpdateValue } from "@/lib/verified-candidate-updates"
-import { getImprensaAtualizacoesPage } from "@/lib/imprensa-atualizacoes"
-import { formatDisplayName } from "@/lib/display-name"
+import { AlertCohortSubscribe } from "@/components/alerts/AlertCohortSubscribe"
+import { ImprensaSubnav } from "@/components/imprensa/ImprensaSubnav"
+import { TrustFooter } from "@/components/imprensa/TrustFooter"
+import { MethodSection } from "@/components/imprensa/method/MethodSection"
+import styles from "@/components/imprensa/method/method.module.css"
+import { UpdateItem } from "@/components/imprensa/updates/UpdateItem"
+import { UpdatesFilters } from "@/components/imprensa/updates/UpdatesFilters"
+import list from "@/components/imprensa/updates/updates.module.css"
+import {
+  buildUpdatesView,
+  formatDayMonth,
+  latestDetection,
+  UPDATES_PAGE_SIZE,
+  updatesHref,
+} from "@/components/imprensa/updates/updates-view"
+import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
+import { getImprensaAtualizacoes } from "@/lib/imprensa-atualizacoes"
+import { getImprensaDatasetCached, type ImprensaPageDataset } from "@/lib/imprensa-cache"
+import { computeImprensaFacts } from "@/lib/imprensa-facts"
+import { getLatestSituacaoCheck } from "@/lib/imprensa-frescor-server"
+import { imprensaHref } from "@/lib/imprensa-nav"
+import { getImprensaUfName } from "@/lib/imprensa-uf-pack"
+import { isSenadoEnabled } from "@/lib/senado-feature"
 
 export const metadata: Metadata = {
-  title: "Atualizações verificadas | Puxa Ficha",
-  description: "Alterações observadas em fontes oficiais e verificadas para candidatos publicados.",
-  robots: { index: false, follow: false },
+  title: "O que mudou | Puxa Ficha",
+  description: "Mudanças de situação da candidatura, patrimônio e partido detectadas nas fontes oficiais, com cargo, UF, antes e depois.",
   alternates: { canonical: "/imprensa/atualizacoes" },
 }
+// Os filtros vêm da query. A lista e o dataset já saem do cache de dados; a
+// página só filtra em memória.
 export const dynamic = "force-dynamic"
 
-function formatDetectedAt(value: string): string {
-  return new Intl.DateTimeFormat("pt-BR", { dateStyle: "medium", timeStyle: "short", timeZone: "America/Sao_Paulo" }).format(new Date(value))
+const NUMBER = new Intl.NumberFormat("pt-BR")
+const CARGO_ORDER = ["Presidente", "Governador", "Senador"]
+
+async function loadDataset(): Promise<ImprensaPageDataset | null> {
+  try {
+    return await getImprensaDatasetCached({ cargo: null, uf: null })
+  } catch {
+    return null
+  }
 }
 
-function fieldLabel(field: string): string {
-  return field === "patrimonio" ? "Patrimônio" : field === "situacao" ? "Situação da candidatura" : "Partido"
+function plural(count: number, one: string, many: string): string {
+  return `${NUMBER.format(count)} ${count === 1 ? one : many}`
 }
 
 export default async function ImprensaAtualizacoesPage({
   searchParams,
 }: {
-  searchParams: Promise<{ page?: string }>
+  searchParams: Promise<Record<string, string | string[] | undefined>>
 }) {
-  const params = await searchParams
-  const rawPage = params.page ?? "1"
-  const parsedPage = /^\d{1,4}$/.test(rawPage) ? Number(rawPage) : 1
-  const page = Number.isSafeInteger(parsedPage) && parsedPage > 0 ? parsedPage : 1
-  const resource = await getImprensaAtualizacoesPage(page)
+  const [params, resource, dataset, situacaoCheck] = await Promise.all([
+    searchParams,
+    getImprensaAtualizacoes(),
+    loadDataset(),
+    getLatestSituacaoCheck(),
+  ])
+
+  // Sem dataset, candidates fica null: cargo e UF de cada mudança são
+  // desconhecidos, e a view não filtra nem conta por eles.
+  const candidates = dataset ? dataset.rows.map(({ slug, nome, cargo, uf }) => ({ slug, nome, cargo, uf })) : null
+  const cargos = [...new Set((candidates ?? []).map((candidate) => candidate.cargo))]
+    .sort((a, b) => (CARGO_ORDER.indexOf(a) + 1 || 99) - (CARGO_ORDER.indexOf(b) + 1 || 99) || a.localeCompare(b, "pt-BR"))
+  const { query, recorteDisponivel, recorteIgnorado, rows, filtered, facets } = buildUpdatesView(params, resource.updates, candidates, cargos)
+  const recorte = { uf: query.uf, cargo: query.cargo }
+  const pageCount = Math.max(1, Math.ceil(filtered.length / UPDATES_PAGE_SIZE))
+  const page = Math.min(query.page, pageCount)
+  const visible = filtered.slice((page - 1) * UPDATES_PAGE_SIZE, page * UPDATES_PAGE_SIZE)
+  const lastDetection = latestDetection(filtered)
+  const hasFilter = Boolean(query.uf || query.cargo || query.tipo)
+  const truncated = resource.total !== null && resource.total > resource.updates.length
+  const homonimos = dataset ? computeImprensaFacts(dataset.rows).processos.indeterminado : null
+  const alertsEnabled = isAlertsEmailFeatureEnabled()
 
   return (
-    <div className="min-h-screen bg-background">
-      <section className="bg-black px-5 pb-12 pt-28 text-white sm:pb-16 sm:pt-32 md:px-12 lg:pb-20 lg:pt-40">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-white/70">Mesa de apuração</p>
-          <h1 className="mt-2 max-w-3xl font-heading text-[clamp(36px,8vw,80px)] uppercase leading-[0.88]">Atualizações verificadas</h1>
-          <p className="mt-4 max-w-2xl text-[length:var(--text-body)] font-medium leading-relaxed text-white/80">
-            Mudanças observadas em fontes oficiais e liberadas para consulta pública. A data abaixo é a data de detecção da mudança.
+    <div className={styles.page}>
+      <ImprensaSubnav current="atualizacoes" recorte={recorte} generatedAt={dataset?.generatedAt ?? null} />
+      <header className={styles.hero}>
+        <div className={styles.heroInner}>
+          <p className={styles.eyebrow}>Imprensa · Acompanhar</p>
+          <h1 className={styles.heroTitle}>O que mudou</h1>
+          <p className={styles.heroCopy}>
+            Mudanças de situação da candidatura, patrimônio declarado e partido que detectamos nas fontes oficiais. Cada linha traz o valor de antes, o de depois, a data da detecção e o link da fonte.
           </p>
+          {resource.status === "available" ? (
+            <p className={styles.heroFacts}>
+              <span>
+                Última detecção registrada:{" "}
+                {lastDetection ? <strong><time dateTime={lastDetection}>{formatDayMonth(lastDetection)}</time></strong> : <strong>nenhuma neste recorte</strong>}
+              </span>
+              {situacaoCheck ? (
+                <span>
+                  Última verificação da situação no TSE:{" "}
+                  <strong><time dateTime={situacaoCheck}>{formatDayMonth(situacaoCheck)}</time></strong>
+                </span>
+              ) : null}
+            </p>
+          ) : null}
         </div>
-      </section>
+      </header>
 
-      <div className="pt-8 sm:pt-12"><SectionDivider /></div>
-      <div className="mx-auto max-w-7xl px-5 py-8 sm:py-12 md:px-12 lg:py-16">
-        <Link href="/imprensa" className="mb-8 inline-flex min-h-11 items-center font-semibold text-foreground underline underline-offset-4">Voltar à Mesa de apuração</Link>
-        <div className="max-w-3xl">
-          <SectionLabel>Fonte e detecção</SectionLabel>
-          <SectionTitle>Registro público de mudanças</SectionTitle>
-          <p className="mt-4 text-[length:var(--text-body-sm)] font-medium leading-relaxed text-muted-foreground sm:text-[length:var(--text-body)]">
-            Cada registro aponta para a fonte oficial usada na verificação. A página não interpreta a mudança como correção editorial nem afirma quando o fato ocorreu.
+      <div className={styles.content}>
+        <MethodSection id="mudancas" num="01" title="Mudanças detectadas">
+          {resource.status === "unavailable" ? (
+            <p className={styles.alert} role="alert">
+              <strong>Não foi possível carregar as mudanças agora.</strong>
+              Isso não quer dizer que nada mudou. Tente de novo em alguns minutos.
+            </p>
+          ) : (
+            <>
+              {recorteDisponivel ? null : (
+                <p className={styles.alert} role="status">
+                  <strong>Não foi possível carregar agora o cargo e o estado de cada mudança.</strong>
+                  {recorteIgnorado ? " O filtro por estado e cargo não foi aplicado." : ""} A lista mostra todas as mudanças registradas, só com o nome. Uma falha de consulta não quer dizer que o recorte não teve mudança.
+                </p>
+              )}
+              <UpdatesFilters query={query} facets={facets} recorteDisponivel={recorteDisponivel} />
+              <p className={list.resultLine}>
+                {hasFilter
+                  ? `${NUMBER.format(filtered.length)} de ${plural(rows.length, "mudança registrada", "mudanças registradas")}`
+                  : plural(rows.length, "mudança registrada", "mudanças registradas")}
+                {query.uf ? `, em ${getImprensaUfName(query.uf)}` : ""}
+                {query.cargo ? `, cargo ${query.cargo}` : ""}
+              </p>
+              {visible.length === 0 ? (
+                <p className={list.empty}>
+                  Nenhuma mudança detectada neste recorte. Isso quer dizer que não encontramos mudança nas coletas feitas, não que a ficha foi conferida de novo hoje.
+                </p>
+              ) : (
+                <ol className={list.list} aria-label="Mudanças detectadas">
+                  {visible.map((row) => <UpdateItem key={row.id} row={row} />)}
+                </ol>
+              )}
+              {pageCount > 1 ? (
+                <nav className={list.pager} aria-label="Páginas das mudanças">
+                  {page > 1 ? <Link href={updatesHref(query, page - 1)}>Anterior</Link> : null}
+                  <span>Página {page} de {pageCount}</span>
+                  {page < pageCount ? <Link href={updatesHref(query, page + 1)}>Próxima</Link> : null}
+                </nav>
+              ) : null}
+              {truncated ? (
+                <p className={styles.note}>
+                  A lista mostra as {NUMBER.format(resource.updates.length)} mudanças mais recentes de {NUMBER.format(resource.total ?? 0)} registradas.
+                </p>
+              ) : null}
+            </>
+          )}
+          <p className={styles.note}>
+            A data de detecção é o dia em que a coleta encontrou a mudança, não o dia em que ela aconteceu na fonte. A verificação da situação é a última leitura bem-sucedida do arquivo do TSE com a situação das candidaturas. Para patrimônio e partido, registramos só a data em que a mudança foi detectada.
           </p>
-        </div>
+        </MethodSection>
 
-        {resource.status === "unavailable" ? (
-          <NoticePanel tone="caution" eyebrow="Fonte temporariamente indisponível" description="Não foi possível carregar o registro verificado agora. Tente novamente em instantes." className="mt-8 max-w-2xl" />
-        ) : resource.updates.length === 0 ? (
-          <NoticePanel tone="neutral" eyebrow="Sem registros nesta página" description="Nenhuma atualização verificada foi encontrada neste recorte." className="mt-8 max-w-2xl" />
-        ) : (
-          <>
-            <ol className="mt-8 grid max-w-4xl gap-4" aria-label="Atualizações verificadas">
-              {resource.updates.map((update) => (
-                <li key={update.id} className="rounded-[16px] border border-border/60 bg-card p-5 sm:p-6">
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                    <h2 className="text-[length:var(--text-body-lg)] font-bold text-foreground">{formatDisplayName(update.candidate_name)}</h2>
-                    <time dateTime={update.detected_at} className="text-[length:var(--text-caption)] font-semibold text-muted-foreground">Detectada em {formatDetectedAt(update.detected_at)}</time>
-                  </div>
-                  <p className="mt-2 text-[length:var(--text-body-sm)] font-bold uppercase tracking-[0.08em] text-muted-foreground">{fieldLabel(update.field)} · {update.year}</p>
-                  <dl className="mt-4 grid gap-3 text-[length:var(--text-body-sm)] sm:grid-cols-2">
-                    <div><dt className="font-semibold text-muted-foreground">Antes</dt><dd className="mt-1 font-medium text-foreground">{formatUpdateValue(update, update.before_value)}</dd></div>
-                    <div><dt className="font-semibold text-muted-foreground">Depois</dt><dd className="mt-1 font-medium text-foreground">{formatUpdateValue(update, update.after_value)}</dd></div>
-                  </dl>
-                  <a href={update.source_url} target="_blank" rel="noreferrer" className="mt-4 inline-flex min-h-11 items-center font-semibold text-foreground underline underline-offset-4">Ver fonte oficial<span aria-hidden="true" className="ml-1">↗</span></a>
-                </li>
-              ))}
-            </ol>
-            <nav aria-label="Paginação das atualizações" className="mt-8 flex flex-wrap items-center gap-3">
-              {resource.page > 1 ? <Link href={`/imprensa/atualizacoes?page=${resource.page - 1}`} className="inline-flex min-h-11 items-center rounded-full border border-border px-4 font-semibold">Anterior</Link> : null}
-              <span className="text-[length:var(--text-body-sm)] font-semibold text-muted-foreground">Página {resource.page}</span>
-              {resource.hasNext ? <Link href={`/imprensa/atualizacoes?page=${resource.page + 1}`} className="inline-flex min-h-11 items-center rounded-full border border-border px-4 font-semibold">Próxima</Link> : null}
-            </nav>
-          </>
-        )}
+        {alertsEnabled ? (
+          <MethodSection id="alertas" num="02" title="Receber por email">
+            <p className={styles.lead}>
+              Escolha o cargo e o estado para receber por email um resumo das mudanças nas fichas publicadas. A assinatura precisa ser confirmada por email e pode ser cancelada quando quiser.
+            </p>
+            <div className={`${list.alerts} mt-5`}>
+              <AlertCohortSubscribe initialCargo={query.cargo ?? undefined} initialUf={query.uf} senadoEnabled={isSenadoEnabled()} />
+            </div>
+            <p className={styles.note}>
+              <Link className={styles.link} href="/alertas/gerenciar">Gerenciar alertas</Link>
+              {" · "}
+              <Link className={styles.link} href={imprensaHref("/imprensa/mesa", recorte)}>Ver o recorte na Mesa</Link>
+            </p>
+          </MethodSection>
+        ) : null}
       </div>
+
+      <TrustFooter homonimos={homonimos} />
       <Footer />
     </div>
   )

@@ -13,7 +13,7 @@ export function DataCoverageDetails({ fontes, verifications, freshness = {} }: {
 }) {
   return (
     <details className="mx-auto max-w-7xl px-5 py-4 text-[length:var(--text-caption)] md:px-12" data-pf-data-coverage="">
-      <summary className="cursor-pointer font-bold underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4">Cobertura e revisão das fontes</summary>
+      <summary className="cursor-pointer py-1 font-bold underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4">Cobertura e revisão das fontes</summary>
       <p className="mt-3 text-muted-foreground">Este quadro descreve a cobertura do site, não avalia a candidatura. O conteúdo publicado pode cobrir apenas parte de uma fonte. Uma consulta sem registros também é um resultado conhecido.</p>
       <ul className="mt-4 grid gap-4 sm:grid-cols-2">
         {fontes.filter((fonte) => fonte.categoria === "factual").map((fonte) => {
@@ -31,7 +31,7 @@ export function DataCoverageDetails({ fontes, verifications, freshness = {} }: {
             <p className="mt-2">Escopo: {fonte.proveniencia?.detalhe || "Recorte não informado; consulte as fontes de cada registro."}</p>
             <p>Última consulta: {verifiedAt ? formatDate(verifiedAt) : "data não informada"}.</p>
             <p>Período: {info?.referenceYear ? `referência ${info.referenceYear}; detalhes por registro.` : "conforme cada registro e o escopo da consulta."}</p>
-            {href ? <a href={href} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block underline underline-offset-4">{info?.sourceLabel || "Abrir fonte da consulta"}</a> : <p className="mt-2 text-muted-foreground">{info?.sourceLabel ? `Fonte: ${info.sourceLabel}.` : "Fonte da consulta não informada; consulte os registros desta área."}</p>}
+            {href ? <a href={href} target="_blank" rel="noopener noreferrer" className="mt-1 inline-flex min-h-6 items-center underline underline-offset-4">{info?.sourceLabel || "Abrir fonte da consulta"}</a> : <p className="mt-2 text-muted-foreground">{info?.sourceLabel ? `Fonte: ${info.sourceLabel}.` : "Fonte da consulta não informada; consulte os registros desta área."}</p>}
           </li>
         })}
       </ul>

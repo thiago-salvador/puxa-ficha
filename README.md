@@ -9,8 +9,10 @@ de 2026. Ficha pública, comparador lado a lado e pontos de atenção com fontes
 visíveis. Os dados vêm de bases oficiais (TSE, Câmara dos Deputados, Senado
 Federal, Portal da Transparência) sob a Lei de Acesso à Informação.
 
-A cobertura atual é dos cargos majoritários do Executivo: Presidência da
-República e governos estaduais, incluindo os vices das chapas.
+A cobertura pública inclui candidaturas à Presidência da República e aos
+Governos estaduais, incluindo os vices das chapas. Candidaturas ao Senado são
+exibidas quando `SENADO_ENABLED` está habilitado; nesse caso, a composição da
+chapa pode apresentar suplentes.
 
 **Site:** https://puxaficha.com.br
 

@@ -3,6 +3,8 @@
  * registrado antes de 2026. Sem o par (2026 + ano anterior) não há
  * porcentagem; a UI mostra N/A. Não inventa variação.
  */
+import { estadoValorPatrimonio, type PatrimonioValorLinha } from "@/lib/patrimonio-contexto"
+
 const PATRIMONIO_EVOLUCAO_ANO_ALVO = 2026
 
 export const PATRIMONIO_EVOLUCAO_ALERTA_LIMITE = 1_000_000
@@ -14,6 +16,18 @@ export function fonteDadosAbertosPatrimonioTse(ano: number): string {
 export type PatrimonioAnoValor = {
   ano_eleicao: number
   valor_total: number | null
+  /**
+   * Bens declarados, quando a consulta os traz. Com eles, um total zero que é
+   * ausência de valor (anexo, lista sem valores) conta como linha inválida,
+   * igual a null. Sem eles, zero continua sendo zero declarado.
+   */
+  bens?: PatrimonioValorLinha["bens"]
+}
+
+function valorValido(row: PatrimonioAnoValor): boolean {
+  if (row.valor_total == null || !Number.isFinite(row.valor_total)) return false
+  if (row.bens === undefined) return true
+  return estadoValorPatrimonio(row) !== "valor_nao_informado"
 }
 
 export type AlertaEvolucaoPatrimonial = {
@@ -30,8 +44,8 @@ function referenciaEvolucaoPatrimonialVs2026(
   const byYear = new Map<number, number>()
   for (const row of series) {
     if (!Number.isFinite(row.ano_eleicao)) continue
-    if (row.valor_total == null || !Number.isFinite(row.valor_total)) continue
-    byYear.set(row.ano_eleicao, row.valor_total)
+    if (!valorValido(row)) continue
+    byYear.set(row.ano_eleicao, row.valor_total!)
   }
 
   const valorAlvo = byYear.get(PATRIMONIO_EVOLUCAO_ANO_ALVO)

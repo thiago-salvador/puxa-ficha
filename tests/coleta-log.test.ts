@@ -247,9 +247,9 @@ describe("FONTES cobre todo source declarado pelos ingests", () => {
   const declarados = new Set<string>()
   for (const arquivo of arquivos) {
     const src = readFileSync(join(libDir, arquivo), "utf8")
-    // Casa `source: "x"` apenas dentro de literal de IngestResult, que e sempre
-    // seguido de `candidato:` na linha de baixo nos 20 ingests atuais.
-    for (const m of src.matchAll(/source:\s*"([^"]+)",\s*\n\s*candidato:/g)) {
+    // Casa `source: "x"` dentro de literal de IngestResult, com qualquer
+    // formatação entre source e candidato.
+    for (const m of src.matchAll(/source:\s*"([^"]+)"\s*,\s*candidato:/g)) {
       declarados.add(m[1])
     }
   }
@@ -298,9 +298,16 @@ describe("FONTES cobre todo source declarado pelos ingests", () => {
       "tse-observacao",
       // Recibo da auditoria diária, gravado por scripts/audit.
       "tse-auditoria-snapshot",
+      // Recibo por candidato da busca de representações (Câmara e Senado),
+      // gravado por scripts/registrar-recibos-representacoes.ts.
+      "representacoes-etica",
+      "tse-auditoria-candidatura",
       // Linha companheira de scripts/lib/ingest-camara.ts, como
       // `camara-proposicoes`: só o recibo de cota zerada em todos os anos.
       "camara-gastos",
+      // Jarbas foi desativado; o módulo restante é um alias de compatibilidade
+      // para o coletor oficial de cotas, sem um IngestResult próprio.
+      "jarbas",
       // Recibos da rotina editorial de promessas, gravados fora de scripts/lib.
       "promessa-evidencia",
     ])

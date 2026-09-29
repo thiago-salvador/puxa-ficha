@@ -1,0 +1,10 @@
+{
+  "mesma_pessoa": {
+    "type": "noul",
+    "instructions": "`candidato` e `registro_parlamentar` representam a mesma pessoa? Compare os nomes oficiais, aliases, UF e períodos parlamentares disponíveis.",
+    "criteria": {
+      "true": "É a mesma pessoa. Nomes completos ou aliases são compatíveis e os dados de UF e períodos não contradizem a identidade. Nome parecido sozinho não basta.",
+      "false": "São pessoas diferentes ou a evidência é insuficiente. Homônimo, nome parcial, UF divergente ou falta de contexto não confirma identidade."
+    }
+  }
+}

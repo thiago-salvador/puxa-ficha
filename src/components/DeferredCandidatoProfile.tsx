@@ -3,7 +3,8 @@ import type { CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
 import type { PesquisaEleitoralDoCandidato } from "@/lib/pesquisas-eleitorais"
 import { hasWideManualOverlappingSegmentedMandates } from "@/lib/historico-dedupe"
 import { countPartySwitches, hasSameYearPartyReversal } from "@/lib/party-switches"
-import { urlFonteJudicialEspecifica } from "@/lib/djen-consulta-url"
+import { nivelFonteProcesso } from "@/lib/djen-consulta-url"
+import { estadoValorPatrimonio } from "@/lib/patrimonio-contexto"
 import {
   prepareHistoricoPoliticoPublicDisplayList,
 } from "@/lib/trajetoria-public-display"
@@ -71,10 +72,13 @@ export function DeferredCandidatoProfile({
         programaPendente={programaPendente}
         senadoRunningMates={senadoRunningMates}
         overview={{
-          processos: (ficha.processos ?? []).filter((row) => Boolean(urlFonteJudicialEspecifica(row.url_fonte, row.numero_processo))).length,
+          processos: (ficha.processos ?? []).filter((row) => Boolean(nivelFonteProcesso(row))).length,
           processosOmitidos: ficha.processos_omitidos_sem_fonte_oficial ?? 0,
           processosVerificacao: ficha.processos_verificacao,
-          patrimonio: patrimonioMaisRecente?.valor_total ?? null,
+          patrimonio:
+            patrimonioMaisRecente && estadoValorPatrimonio(patrimonioMaisRecente) !== "valor_nao_informado"
+              ? patrimonioMaisRecente.valor_total
+              : null,
           mudancas:
             mudancas.length > 0 || ficha.trajetoria_verificacao?.resultado === "vazio_confirmado"
               ? ficha.total_mudancas_partido

@@ -99,6 +99,8 @@ export const FONTES: Readonly<Record<string, EscopoColeta>> = Object.freeze({
   tcu: "candidato",
   filiacao: "candidato",
   "ceaps-senado": "candidato",
+  "camara-cotas": "candidato",
+  "partidos-parlamentares": "candidato",
   "gastos-executivo": "candidato",
   jarbas: "candidato",
   wikipedia: "candidato",
@@ -133,7 +135,12 @@ export const FONTES: Readonly<Record<string, EscopoColeta>> = Object.freeze({
   // (scripts/audit/registrar-recibo-auditoria-tse.ts). Prova a leitura da
   // fonte, não a atualização da ficha; por isso não é `tse`.
   "tse-auditoria-snapshot": "global",
+  // Conferência por ficha pública da mesma auditoria diária (Gov, Pres e
+  // Senado): identidade por SQ+cargo+UF e checks de campo contra o TSE. O
+  // detalhe é JSON versionado lido pela matriz de cobertura.
+  "tse-auditoria-candidatura": "candidato",
   "senado-cohort": "candidato",
+  "representacoes-etica": "candidato",
 
   // Cardinalidade do acervo autoral que a Camara declara para o candidato
   // (issue #138). Fonte propria pelo mesmo motivo de `tse-cpf`: o `camara` do
@@ -159,15 +166,41 @@ export function escopoDaFonte(fonte: string): EscopoColeta {
 }
 
 /**
+ * Formato aceito em `PF_COLETA_EXECUCAO`: `local:<random hex>:<timestamp UTC>`, como
+ * `local:ab12cd34ef56ab78:20260930T060000Z`. Quem define é o agente agendado de
+ * scripts/camara-local/, para que as rodadas semanais da Câmara fora do
+ * GitHub se distingam no `coleta_log` sem registrar o nome da máquina.
+ */
+const EXECUCAO_LOCAL_AGENDADA = /^local:[a-f0-9]{16}:\d{8}T\d{6}Z$/
+
+/**
  * Identificador da execução, para agrupar tudo que uma rodada tentou.
  *
- * `GITHUB_RUN_ID` no CI. Fora dele, `local:<pid>`, que basta para separar duas
- * rodadas na mesma máquina. Resolvido uma vez por processo de propósito: o valor
- * precisa ser o mesmo em todas as linhas da mesma rodada.
+ * `GITHUB_RUN_ID` no CI. Fora dele, `PF_COLETA_EXECUCAO` quando o agente
+ * agendado o define, e `local:<pid>` no resto, que basta para separar duas
+ * rodadas na mesma máquina. Valor fora do formato derruba o processo antes de
+ * qualquer escrita: recibo com execução inventada não se agrupa com nada.
  */
-export const EXECUCAO: string = process.env.GITHUB_RUN_ID
-  ? `gh:${process.env.GITHUB_RUN_ID}`
-  : `local:${process.pid}`
+export function resolverExecucao(
+  entrada: { githubRunId?: string; execucaoAgendada?: string },
+  pid: number,
+): string {
+  if (entrada.githubRunId) return `gh:${entrada.githubRunId}`
+  const agendada = entrada.execucaoAgendada
+  if (agendada !== undefined && agendada !== "") {
+    if (!EXECUCAO_LOCAL_AGENDADA.test(agendada)) {
+      throw new Error("PF_COLETA_EXECUCAO fora do formato local:<random hex>:<AAAAMMDDTHHMMSSZ>")
+    }
+    return agendada
+  }
+  return `local:${pid}`
+}
+
+/** Resolvido uma vez por processo: o valor precisa ser o mesmo em todas as linhas da rodada. */
+export const EXECUCAO: string = resolverExecucao(
+  { githubRunId: process.env.GITHUB_RUN_ID, execucaoAgendada: process.env.PF_COLETA_EXECUCAO },
+  process.pid,
+)
 
 /** Cache slug -> id, para não repetir 194 selects por ingest. */
 let cacheCandidatoIds: Map<string, string> | null = null
@@ -177,6 +210,7 @@ async function carregarCandidatoIds(): Promise<Map<string, string>> {
 
   const mapa = new Map<string, string>()
   try {
+    // coorte-atualizacao: isento (mapa slug para id da telemetria)
     const { data, error } = await supabase.from("candidatos").select("id, slug")
     if (error) throw new Error(error.message)
     for (const row of (data ?? []) as { id: string; slug: string }[]) {

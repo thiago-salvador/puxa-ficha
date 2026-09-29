@@ -547,6 +547,20 @@ describe("curadoria de processos em lote", () => {
     )
   })
 
+  it("o trecho salvo mostra o CPF colado ao nome, não a primeira menção sem vínculo", () => {
+    const registro = candidato()
+    const ficha = snapshot()
+    const texto = [
+      "Relatório. Carlos da Silva Teste, qualificado na inicial, impetrou mandado de segurança.",
+      "x ".repeat(900),
+      "Impetrante: Carlos da Silva Teste, CPF 529.982.247-25. Decisão.",
+    ].join(" ")
+    const contexto = contextoPolitico(registro, ficha, texto, registro.nome_completo, { cpf: "529.982.247-25" }) ?? ""
+    assert.match(contexto, /CARLOS DA SILVA TESTE CPF 529 982 247 25/)
+    assert.doesNotMatch(contexto, /QUALIFICADO NA INICIAL/)
+    assert.ok(contexto.length <= 900)
+  })
+
   it("não repete em homônimos um CNJ já aceito como processo", () => {
     const aceito = "4004910-65.2025.8.26.0506"
     const apenasHomonimo = "0709932-06.2017.8.07.0001"

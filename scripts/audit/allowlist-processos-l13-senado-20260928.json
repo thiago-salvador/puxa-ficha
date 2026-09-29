@@ -1,0 +1,563 @@
+{
+  "_comentario": "LOTE APROVADO EDITORIALMENTE E NAO APLICADO: a allowlist autoriza somente as 83 escritas nominais em processos e o registro dos recibos de busca desta migration; aplicar continua sendo ato externo separado.",
+  "recorte": "processos-l13-senado-20260928",
+  "migration": "20260928010000_processos_l13_senado.sql",
+  "coorte": [
+    "delegado-eder-mauro",
+    "eduardo-braga",
+    "tse-2026-100002541459",
+    "tse-2026-100002550418",
+    "tse-2026-110002544988",
+    "tse-2026-110002551966",
+    "tse-2026-130002550560",
+    "tse-2026-130002552186",
+    "tse-2026-140002538404",
+    "tse-2026-140002550779",
+    "tse-2026-150002544905",
+    "tse-2026-170002552097",
+    "tse-2026-180002540446",
+    "tse-2026-190002550182",
+    "tse-2026-190002550184",
+    "tse-2026-210002533584",
+    "tse-2026-220002547309",
+    "tse-2026-260002547290",
+    "tse-2026-260002551362",
+    "tse-2026-270002546038",
+    "tse-2026-30002549909",
+    "tse-2026-40002537344",
+    "tse-2026-40002541744",
+    "tse-2026-50002536321",
+    "tse-2026-70002552934",
+    "tse-2026-80002538202",
+    "tse-2026-80002551370",
+    "tse-2026-90002543556"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "processos",
+      "slug": "delegado-eder-mauro",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "eduardo-braga",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-100002541459",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-100002550418",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 3
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-110002544988",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 6
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-110002551966",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 12
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-130002550560",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 11
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-130002552186",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 3
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-140002538404",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-140002550779",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 3
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-150002544905",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 3
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-170002552097",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-180002540446",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-190002550182",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 4
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-190002550184",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 3
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-210002533584",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-220002547309",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 4
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-260002547290",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-260002551362",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-270002546038",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-30002549909",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 8
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-40002537344",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-40002541744",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-50002536321",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-70002552934",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-80002538202",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-80002551370",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-90002543556",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260928010000",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    }
+  ]
+}

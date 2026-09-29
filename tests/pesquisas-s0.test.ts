@@ -166,15 +166,21 @@ for (const phrase of [
   })
 }
 
+function ambienteComCoorteVazia(): { preload: string; env: NodeJS.ProcessEnv } {
+  const preload = resolve("tests/helpers/pesquisas-coorte-vazia.cjs")
+  return { preload, env: { ...process.env, SUPABASE_URL: "https://coorte.test", SUPABASE_SERVICE_ROLE_KEY: "test-key" } }
+}
+
 test("CLI bloqueada falha apos gravar diagnostico e outputs, preservando upload always", () => {
   const root = mkdtempSync(resolve(tmpdir(), "pesquisas-s0-test-"))
   try {
     const matrix = resolve(root, "matrix.json")
     const output = resolve(root, "github-output")
     const summary = resolve(root, "github-summary")
+    const mock = ambienteComCoorteVazia()
     writeFileSync(matrix, JSON.stringify({ include: construirMatrizAgendada({ sourceId: "real-time-big-data-estaduais-2026", uf: "AM" }) }))
-    const result = spawnSync(process.execPath, ["--conditions", "react-server", "--import", "tsx", "scripts/pesquisas-atualizacao-agendada/cli.ts", "consolidate", "--input", resolve(root, "missing"), "--matrix", matrix, "--out", resolve(root, "out")], {
-      encoding: "utf8", env: { ...process.env, GITHUB_OUTPUT: output, GITHUB_STEP_SUMMARY: summary },
+    const result = spawnSync(process.execPath, ["--conditions", "react-server", "--import", "tsx", "--import", mock.preload, "scripts/pesquisas-atualizacao-agendada/cli.ts", "consolidate", "--input", resolve(root, "missing"), "--matrix", matrix, "--out", resolve(root, "out")], {
+      encoding: "utf8", env: { ...mock.env, GITHUB_OUTPUT: output, GITHUB_STEP_SUMMARY: summary },
     })
     assert.match(result.stdout, /PESQUISAS_CONSOLIDATION_STATUS=blocked/)
     assert.match(readFileSync(output, "utf8"), /status=blocked/)
@@ -202,10 +208,11 @@ test("CLI inalterada conserva zero operações, mas descoberta ausente bloqueia 
         decision: { classification: "inalterado", eligible_for_human_review: false, reason: "evidence_unchanged" },
       })),
     }))
-    const env = { ...process.env }
+    const mock = ambienteComCoorteVazia()
+    const env = { ...mock.env }
     delete env.GITHUB_OUTPUT
     delete env.GITHUB_STEP_SUMMARY
-    const result = spawnSync(process.execPath, ["--conditions", "react-server", "--import", "tsx", "scripts/pesquisas-atualizacao-agendada/cli.ts", "consolidate", "--input", resolve(root, "input"), "--matrix", matrixPath, "--out", resolve(root, "out")], { encoding: "utf8", env })
+    const result = spawnSync(process.execPath, ["--conditions", "react-server", "--import", "tsx", "--import", mock.preload, "scripts/pesquisas-atualizacao-agendada/cli.ts", "consolidate", "--input", resolve(root, "input"), "--matrix", matrixPath, "--out", resolve(root, "out")], { encoding: "utf8", env })
     assert.equal(result.status, 1, result.stderr)
     assert.match(result.stdout, /PESQUISAS_CONSOLIDATION_STATUS=blocked/)
     assert.equal(JSON.parse(readFileSync(resolve(root, "out/status.json"), "utf8")).operation_status, "no_changes")
@@ -239,10 +246,11 @@ for (const mode of ["inalterado", "bloqueado", "item-incorreto", "matriz-ambigua
         mkdirSync(nested)
         writeFileSync(resolve(nested, "proposal.json"), proposal)
       }
-      const env = { ...process.env }
+      const mock = ambienteComCoorteVazia()
+      const env = { ...mock.env }
       delete env.GITHUB_OUTPUT
       delete env.GITHUB_STEP_SUMMARY
-      const result = spawnSync(process.execPath, ["--conditions", "react-server", "--import", "tsx", "scripts/pesquisas-atualizacao-agendada/cli.ts", "consolidate", "--input", input, "--matrix", matrixPath, "--out", resolve(root, "out")], { encoding: "utf8", env })
+      const result = spawnSync(process.execPath, ["--conditions", "react-server", "--import", "tsx", "--import", mock.preload, "scripts/pesquisas-atualizacao-agendada/cli.ts", "consolidate", "--input", input, "--matrix", matrixPath, "--out", resolve(root, "out")], { encoding: "utf8", env })
       assert.equal(result.status, 1, result.stderr)
       if (mode === "inalterado") assert.equal(JSON.parse(readFileSync(resolve(root, "out/status.json"), "utf8")).operation_status, "no_changes")
       const summary = readFileSync(resolve(root, "out/summary.md"), "utf8")

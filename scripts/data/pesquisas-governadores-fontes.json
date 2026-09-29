@@ -8290,6 +8290,926 @@
         }
       },
       "consulted_at": "2026-09-25T23:00:00Z"
+    },
+    {
+      "id": "quaest-es-01978-2026-revisao-20260928",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "A Gazeta/TV Gazeta",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-21",
+          "end": "2026-09-24"
+        },
+        "published_at": "2026-09-25",
+        "sample_size": 804,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Espírito Santo",
+        "rounds": [
+          1
+        ],
+        "registration_id": "ES-01978/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-espirito-santo-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "ES-01978/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-28T12:34:14Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "a734a311fd12a59f2ba164f94dd50b358d424389a31b97fb6f2f9769899716f6",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-espirito-santo-setembro-2026/"
+          ],
+          "note": "Método de entrevista não informado na publicação consultada; metadados ausentes permanecem nulos."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-espirito-santo-setembro-2026/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-espirito-santo-setembro-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-espirito-santo-setembro-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-28T12:34:14Z"
+    },
+    {
+      "id": "quaest-rs-01390-2026-revisao-20260928",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "RBS Participações/Televisão Gaúcha",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-20",
+          "end": "2026-09-23"
+        },
+        "published_at": "2026-09-24",
+        "sample_size": 900,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rio Grande do Sul",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RS-01390/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-rio-grande-do-sul-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RS-01390/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-28T12:34:14Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "35a046357c71cc409eeb5344e15aab197ee8bde3ed24b4d99ca7d62104f31994",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-rio-grande-do-sul-setembro-2026/"
+          ],
+          "note": "Método de entrevista não informado na publicação consultada; metadados ausentes permanecem nulos."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-rio-grande-do-sul-setembro-2026/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-rio-grande-do-sul-setembro-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-rio-grande-do-sul-setembro-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-28T12:34:14Z"
+    },
+    {
+      "id": "neokemp-rs-08358-2026-revisao-20260928",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Neokemp",
+        "commissioner": "Jornal O Correio do Povo",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-23",
+          "end": "2026-09-24"
+        },
+        "published_at": "2026-09-25",
+        "sample_size": 1008,
+        "method": null,
+        "margin_of_error_pp": 3.1,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rio Grande do Sul",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RS-08358/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/neokemp-governador-senador-rio-grande-do-sul-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RS-08358/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-28T12:34:14Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "86ba436032dc48b2ffde799d867b97ff9207d8f82ead8d065b68c501fb6c56bc",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/neokemp-governador-senador-rio-grande-do-sul-setembro-2026/"
+          ],
+          "note": "Método de entrevista não informado na publicação consultada; metadados ausentes permanecem nulos."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/neokemp-governador-senador-rio-grande-do-sul-setembro-2026/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/neokemp-governador-senador-rio-grande-do-sul-setembro-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/neokemp-governador-senador-rio-grande-do-sul-setembro-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-28T12:34:14Z"
+    },
+    {
+      "id": "quaest-sc-04783-2026-revisao-20260928",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "NC Comunicações SA",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-20",
+          "end": "2026-09-23"
+        },
+        "published_at": "2026-09-24",
+        "sample_size": 804,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Santa Catarina",
+        "rounds": [
+          1
+        ],
+        "registration_id": "SC-04783/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-goverador-santa-catarina-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "SC-04783/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-28T12:34:14Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "d5307adf3dbf961e469abadc08718350780133bab66225e7bf098af1f6ce7b33",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-goverador-santa-catarina-setembro-2026/"
+          ],
+          "note": "Método de entrevista não informado na publicação consultada; metadados ausentes permanecem nulos."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-goverador-santa-catarina-setembro-2026/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-goverador-santa-catarina-setembro-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-goverador-santa-catarina-setembro-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-28T12:34:14Z"
+    },
+    {
+      "id": "quaest-ac-08968-2026-revisao-20260928",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Rede Amazônica",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "g1.globo.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-21",
+          "end": "2026-09-24"
+        },
+        "published_at": "2026-09-25",
+        "sample_size": 804,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Acre",
+        "rounds": [
+          1
+        ],
+        "registration_id": "AC-08968/2026",
+        "result_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/25/quaest-ac-governador-25-setembro.ghtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AC-08968/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-28T12:46:33Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "d1c18fcc655573a3ed0660a3832cb29490899fcbcfdf96bf12a5297f03659a56",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/25/quaest-ac-governador-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ],
+          "note": "Método de entrevista não informado na publicação consultada; metadados ausentes permanecem nulos."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/25/quaest-ac-governador-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/25/quaest-ac-governador-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/25/quaest-ac-governador-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-28T12:46:33Z"
+    },
+    {
+      "id": "quaest-ap-02117-2026-revisao-20260928",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Rede Amazônica",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "g1.globo.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-20",
+          "end": "2026-09-23"
+        },
+        "published_at": "2026-09-24",
+        "sample_size": 804,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Amapá",
+        "rounds": [
+          1
+        ],
+        "registration_id": "AP-02117/2026",
+        "result_url": "https://g1.globo.com/ap/amapa/eleicoes/2026/noticia/2026/09/24/quaest-ap-governador-24-setembro.ghtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AP-02117/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-28T12:46:33Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "1999abe8ae89014868a5597b572784455009f3c8877279d0485cc0ce69ba3667",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://g1.globo.com/ap/amapa/eleicoes/2026/noticia/2026/09/24/quaest-ap-governador-24-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ],
+          "note": "Método de entrevista não informado na publicação consultada; metadados ausentes permanecem nulos."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/ap/amapa/eleicoes/2026/noticia/2026/09/24/quaest-ap-governador-24-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/ap/amapa/eleicoes/2026/noticia/2026/09/24/quaest-ap-governador-24-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/ap/amapa/eleicoes/2026/noticia/2026/09/24/quaest-ap-governador-24-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-28T12:46:33Z"
+    },
+    {
+      "id": "quaest-rr-03658-2026-revisao-20260928",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Rede Amazônica",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "g1.globo.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-21",
+          "end": "2026-09-24"
+        },
+        "published_at": "2026-09-25",
+        "sample_size": 804,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Roraima",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RR-03658/2026",
+        "result_url": "https://g1.globo.com/rr/roraima/eleicoes/2026/noticia/2026/09/25/quaest-roraima-governador-25-setembro.ghtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RR-03658/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-28T12:46:33Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "67f26a8f2794047f1e4ba91385680addfbf9a1430d6e1c0ed5855ab6104b9469",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://g1.globo.com/rr/roraima/eleicoes/2026/noticia/2026/09/25/quaest-roraima-governador-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ],
+          "note": "Método de entrevista não informado na publicação consultada; metadados ausentes permanecem nulos."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/rr/roraima/eleicoes/2026/noticia/2026/09/25/quaest-roraima-governador-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/rr/roraima/eleicoes/2026/noticia/2026/09/25/quaest-roraima-governador-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/rr/roraima/eleicoes/2026/noticia/2026/09/25/quaest-roraima-governador-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-28T12:46:33Z"
+    },
+    {
+      "id": "quaest-al-09692-2026-revisao-20260928",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TV Asa Branca Alagoas",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "g1.globo.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-21",
+          "end": "2026-09-24"
+        },
+        "published_at": "2026-09-25",
+        "sample_size": 804,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Alagoas",
+        "rounds": [
+          1
+        ],
+        "registration_id": "AL-09692/2026",
+        "result_url": "https://g1.globo.com/al/alagoas/eleicoes/2026/noticia/2026/09/25/quaest-al-governador-25-setembro.ghtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AL-09692/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-28T12:46:33Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "269bded7f8b309b91f0bb2d061cf1c50585ec1b67ab4bbee142a1a499fe4b953",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://g1.globo.com/al/alagoas/eleicoes/2026/noticia/2026/09/25/quaest-al-governador-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ],
+          "note": "Método de entrevista não informado na publicação consultada; metadados ausentes permanecem nulos."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/al/alagoas/eleicoes/2026/noticia/2026/09/25/quaest-al-governador-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/al/alagoas/eleicoes/2026/noticia/2026/09/25/quaest-al-governador-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/al/alagoas/eleicoes/2026/noticia/2026/09/25/quaest-al-governador-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-28T12:46:33Z"
+    },
+    {
+      "id": "quaest-ma-07074-2026-revisao-20260928",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TV Mirante",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "g1.globo.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-21",
+          "end": "2026-09-24"
+        },
+        "published_at": "2026-09-25",
+        "sample_size": 900,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Maranhão",
+        "rounds": [
+          1
+        ],
+        "registration_id": "MA-07074/2026",
+        "result_url": "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/09/25/quaest-no-maranhao-25-setembro.ghtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MA-07074/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-28T12:46:33Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "dc3bdb7422447d399497625e564e351181efd29d4e7f761655e88bcdfbfe7e56",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/09/25/quaest-no-maranhao-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ],
+          "note": "Método de entrevista não informado na publicação consultada; metadados ausentes permanecem nulos."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/09/25/quaest-no-maranhao-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/09/25/quaest-no-maranhao-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/09/25/quaest-no-maranhao-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-28T12:46:33Z"
+    },
+    {
+      "id": "quaest-se-09343-2026-revisao-20260928",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TV Sergipe",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "g1.globo.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-20",
+          "end": "2026-09-23"
+        },
+        "published_at": "2026-09-24",
+        "sample_size": 804,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Sergipe",
+        "rounds": [
+          1
+        ],
+        "registration_id": "SE-09343/2026",
+        "result_url": "https://g1.globo.com/se/sergipe/eleicoes/2026/noticia/2026/09/24/quaest-se-governador-24-setembro.ghtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "SE-09343/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-28T12:46:33Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "ce30ca8c86d388f45e807cbda7458cc93d3d6ece425a1bb122b0f86e6e12763b",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://g1.globo.com/se/sergipe/eleicoes/2026/noticia/2026/09/24/quaest-se-governador-24-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ],
+          "note": "Método de entrevista não informado na publicação consultada; metadados ausentes permanecem nulos."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/se/sergipe/eleicoes/2026/noticia/2026/09/24/quaest-se-governador-24-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/se/sergipe/eleicoes/2026/noticia/2026/09/24/quaest-se-governador-24-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/se/sergipe/eleicoes/2026/noticia/2026/09/24/quaest-se-governador-24-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-28T12:46:33Z"
+    },
+    {
+      "id": "quaest-pa-07042-2026-revisao-20260928",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TV Liberal",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "g1.globo.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-22",
+          "end": "2026-09-25"
+        },
+        "published_at": "2026-09-26",
+        "sample_size": 804,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Pará",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PA-07042/2026",
+        "result_url": "https://g1.globo.com/pa/para/eleicoes/2026/noticia/2026/09/26/quaest-pa-governo-26-setembro.ghtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PA-07042/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-28T12:46:33Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "7bb1d9299d2d9187b9500c953fc5b538e6afe14cffbc25baccdf6ec6ee617f74",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://g1.globo.com/pa/para/eleicoes/2026/noticia/2026/09/26/quaest-pa-governo-26-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ],
+          "note": "Método de entrevista não informado na publicação consultada; metadados ausentes permanecem nulos."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/pa/para/eleicoes/2026/noticia/2026/09/26/quaest-pa-governo-26-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/pa/para/eleicoes/2026/noticia/2026/09/26/quaest-pa-governo-26-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/pa/para/eleicoes/2026/noticia/2026/09/26/quaest-pa-governo-26-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-28T12:46:33Z"
+    },
+    {
+      "id": "quaest-rn-01492-2026-revisao-20260928",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Inter TV",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "g1.globo.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-21",
+          "end": "2026-09-24"
+        },
+        "published_at": "2026-09-25",
+        "sample_size": 804,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rio Grande do Norte",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RN-01492/2026",
+        "result_url": "https://g1.globo.com/rn/rio-grande-do-norte/eleicoes/2026/noticia/2026/09/25/quaest-rn-governador-25-setembro.ghtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RN-01492/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-28T12:46:33Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "5ca5288d14c203c993a3adb806cf8c12f5aa1ab285239b94f9333fdb2949cb0f",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://g1.globo.com/rn/rio-grande-do-norte/eleicoes/2026/noticia/2026/09/25/quaest-rn-governador-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ],
+          "note": "Método de entrevista não informado na publicação consultada; metadados ausentes permanecem nulos."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/rn/rio-grande-do-norte/eleicoes/2026/noticia/2026/09/25/quaest-rn-governador-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/rn/rio-grande-do-norte/eleicoes/2026/noticia/2026/09/25/quaest-rn-governador-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/rn/rio-grande-do-norte/eleicoes/2026/noticia/2026/09/25/quaest-rn-governador-25-setembro.ghtml",
+            "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-28T12:46:33Z"
     }
   ]
 }

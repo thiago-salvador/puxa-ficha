@@ -6,6 +6,7 @@ import {
   CARD_SIZES,
   extractCardData,
   buildSocialCardJsx,
+  cardSourceLabelFromUrl,
   type CardFormat,
 } from "../src/lib/social-card"
 import type { FichaCandidato } from "../src/lib/types"
@@ -178,6 +179,28 @@ describe("extractCardData", () => {
   })
 })
 
+// ── cardSourceLabelFromUrl ──────────────────────────────────
+
+describe("cardSourceLabelFromUrl", () => {
+  const cases: Array<[string | null, string | null]> = [
+    ["https://www.tcm.ba.gov.br/tcm-aprova/", "TCM-BA"],
+    ["https://tce.sp.gov.br/x", "TCE-SP"],
+    ["https://cdn.tse.jus.br/estatistica/x.zip", "TSE"],
+    ["https://www.camara.leg.br/votacao/1", "Câmara"],
+    ["https://comunicaapi.pje.jus.br/api/v1", "CNJ"],
+    ["https://www.tjsp.jus.br/x", "TJSP"],
+    ["https://www.tre-ba.jus.br/x", "TRE-BA"],
+    ["https://g1.globo.com/politica/x", "g1.globo.com"],
+    ["nao-e-url", null],
+    [null, null],
+  ]
+  for (const [url, expected] of cases) {
+    test(`${url} → ${expected}`, () => {
+      assert.equal(cardSourceLabelFromUrl(url), expected)
+    })
+  }
+})
+
 // ── buildSocialCardJsx ──────────────────────────────────────
 
 describe("buildSocialCardJsx", () => {
@@ -211,18 +234,106 @@ describe("buildSocialCardJsx", () => {
   })
 
   test("renders normalized PT-BR copy in feed and story cards", () => {
-    const feedHtml = renderToStaticMarkup(buildSocialCardJsx(minimalData, "feed"))
-    const storyHtml = renderToStaticMarkup(buildSocialCardJsx(minimalData, "story"))
+    const fullData = extractCardData(makeFicha(), null)
+    const feedHtml = renderToStaticMarkup(buildSocialCardJsx(fullData, "feed"))
+    const storyHtml = renderToStaticMarkup(buildSocialCardJsx(fullData, "story"))
 
-    assert.match(feedHtml, /Visão geral da ficha pública/)
     assert.match(feedHtml, /Votações Chave/)
-    assert.match(feedHtml, /Sem votos públicos/)
-    assert.doesNotMatch(feedHtml, /Visao geral da ficha publica/)
     assert.doesNotMatch(feedHtml, /Votações-chave/)
+    for (const html of [feedHtml, storyHtml]) {
+      assert.match(html, /Confira os dados na fonte original antes de publicar\./)
+      assert.match(html, /Condenação relevante/)
+    }
+  })
 
-    assert.match(storyHtml, /Visão geral da ficha pública/)
-    assert.match(storyHtml, /Mesmo recorte público exibido na ficha do Puxa Ficha/)
-    assert.doesNotMatch(storyHtml, /Mesmo recorte publico exibido na ficha do Puxa Ficha/)
+  test("never prints internal design-spec copy", () => {
+    for (const data of [minimalData, extractCardData(makeFicha(), null)]) {
+      for (const fmt of ["feed", "story"] as CardFormat[]) {
+        const html = renderToStaticMarkup(buildSocialCardJsx(data, fmt))
+        assert.doesNotMatch(html, /repertório visual/)
+        assert.doesNotMatch(html, /Mesmo tom editorial/)
+        assert.doesNotMatch(html, /Mesmo recorte público/)
+        assert.doesNotMatch(html, /Visão geral da ficha pública/)
+        assert.doesNotMatch(html, /Em expansão/)
+      }
+    }
+  })
+  for (const fmt of ["feed", "story"] as CardFormat[]) {
+    test(`${fmt}: missing party switches and key votes are hidden, never shown as zero`, () => {
+      const data = extractCardData(
+        makeFicha({ total_mudancas_partido: 0, mudancas_partido: [], votos: [] }),
+        null,
+      )
+      const html = renderToStaticMarkup(buildSocialCardJsx(data, fmt))
+      assert.doesNotMatch(html, /Trocas de partido/)
+      assert.doesNotMatch(html, /Votações Chave/)
+      assert.doesNotMatch(html, /Sem votos/)
+    })
+
+    test(`${fmt}: positive party switches and key votes are shown`, () => {
+      const html = renderToStaticMarkup(buildSocialCardJsx(extractCardData(makeFicha(), null), fmt))
+      assert.match(html, /Trocas de partido/)
+      assert.match(html, /Votações Chave/)
+    })
+
+    test(`${fmt}: process count carries the "not a conviction" caveat`, () => {
+      const html = renderToStaticMarkup(buildSocialCardJsx(extractCardData(makeFicha(), null), fmt))
+      assert.match(html, /Processo não é condenação/)
+      assert.match(html, /Confira os dados na fonte original antes de publicar\./)
+    })
+
+    test(`${fmt}: unverified zero processes render the neutral state, not 0`, () => {
+      const data = extractCardData(
+        makeFicha({ total_processos: 0, processos_criminais: 0, processos: [], processos_verificacao: null }),
+        null,
+      )
+      assert.equal(data.processosResumo.valor, "—")
+      assert.equal(data.processosResumo.comContagem, false)
+      const html = renderToStaticMarkup(buildSocialCardJsx(data, fmt))
+      assert.match(html, /não verificado/)
+      assert.doesNotMatch(html, /Processo não é condenação/)
+    })
+
+    test(`${fmt}: prints the update date and the sources of the blocks shown`, () => {
+      const data = extractCardData(
+        makeFicha({
+          ultima_atualizacao: "2026-09-27T01:47:59.908+00:00",
+          processos: [{ id: "p1", tribunal: "TJBA" }],
+          pontos_atencao: [
+            {
+              ...makeFicha().pontos_atencao[0],
+              fontes: [{ titulo: "TCM aprova contas", url: "https://www.tcm.ba.gov.br/tcm-aprova/", data: "2014-01-01" }],
+            },
+          ],
+        } as unknown as Partial<FichaCandidato>),
+        null,
+      )
+      const html = renderToStaticMarkup(buildSocialCardJsx(data, fmt))
+      assert.match(html, /Dados atualizados em 26\/09\/2026/)
+      assert.match(html, /Fontes: TSE · TJBA · TCM-BA/)
+    })
+
+    test(`${fmt}: missing update date is stated, not invented`, () => {
+      const data = extractCardData(makeFicha({ ultima_atualizacao: undefined } as unknown as Partial<FichaCandidato>), null)
+      const html = renderToStaticMarkup(buildSocialCardJsx(data, fmt))
+      assert.match(html, /Data de atualização indisponível/)
+    })
+  }
+
+  test("story type is phone-legible: no text under 22px and a larger name than feed", () => {
+    const data = extractCardData(makeFicha(), null)
+    const fontSizes = (html: string) => [...html.matchAll(/font-size:(\d+(?:\.\d+)?)px/g)].map((m) => Number(m[1]))
+    const story = fontSizes(renderToStaticMarkup(buildSocialCardJsx(data, "story")))
+    const feed = fontSizes(renderToStaticMarkup(buildSocialCardJsx(data, "feed")))
+    assert.ok(Math.min(...story) >= 22, `min story font ${Math.min(...story)}`)
+    assert.ok(Math.min(...feed) >= 14, `min feed font ${Math.min(...feed)}`)
+    assert.ok(Math.max(...story) > Math.max(...feed))
+  })
+
+  test("story shows a single list panel", () => {
+    const html = renderToStaticMarkup(buildSocialCardJsx(extractCardData(makeFicha(), null), "story"))
+    assert.match(html, /Destaques/)
+    assert.doesNotMatch(html, /votos mapeados/)
   })
 
   for (const fmt of ["feed", "story"] as CardFormat[]) {

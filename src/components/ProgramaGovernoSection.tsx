@@ -1,6 +1,6 @@
 "use client"
 
-// cspell:words multidocument nivel secao secoes relacao
+// cspell:words multidocument nivel secao secoes relacao confirmacao
 
 import {
   useCallback,
@@ -371,6 +371,9 @@ function ProgramaEvidenciasRelacionadas({
                             <span className="rounded-full bg-background px-2 py-0.5 text-foreground">{compromissoEvidenciaCopy.tipo[item.tipo]}</span>
                             <span>{compromissoEvidenciaCopy.relacao[item.relacao]}</span>
                             {item.referencia && <span>{item.referencia}</span>}
+                            {item.fonteEmConfirmacao && (
+                              <span className="rounded-full border border-border px-2 py-0.5">{compromissoEvidenciaCopy.fonteEmConfirmacao}</span>
+                            )}
                             {data && <span>{data}</span>}
                           </p>
                           <p className="mt-1 line-clamp-4 text-foreground">

@@ -10,6 +10,18 @@ import { SectionLabel, SectionTitle } from "./SectionHeader"
 
 const VISIBLE_LIMIT = 10
 
+function plural(total: number, singular: string, pluralForm: string) {
+  return total === 1 ? singular : pluralForm
+}
+
+interface NewsPages {
+  itens: NoticiaCandidato[]
+  /** Continuação da lista no servidor; null quando não há mais página. */
+  cursor: string | null
+  total: number | null
+  carregadas: number
+}
+
 function NewsItem({ noticia, selected }: { noticia: NoticiaCandidato; selected: boolean }) {
   const [open, setOpen] = useState(selected)
   const url = normalizeNewsUrl(noticia.url)
@@ -51,8 +63,10 @@ function NewsItem({ noticia, selected }: { noticia: NoticiaCandidato; selected: 
   )
 }
 
-export function NewsSection({ noticias, candidateSlug, selectedNewsId }: {
+export function NewsSection({ noticias, nextCursor = null, candidateSlug, selectedNewsId }: {
   noticias: NoticiaCandidato[]
+  /** Continuação da lista no servidor, entregue junto com a prévia. */
+  nextCursor?: string | null
   candidateSlug: string
   selectedNewsId?: string | null
 }) {
@@ -60,7 +74,13 @@ export function NewsSection({ noticias, candidateSlug, selectedNewsId }: {
   const [query, setQuery] = useState("")
   const [retry, setRetry] = useState(0)
   const [remote, setRemote] = useState<{ id: string; noticia?: NoticiaCandidato; status: "ready" | "missing" | "error" } | null>(null)
-  const localSelected = noticias.find((n) => n.id === selectedNewsId)
+  // A prévia traz no máximo 20 notícias; as seguintes vêm por página.
+  const [pages, setPages] = useState<NewsPages>(() => ({ itens: [], cursor: nextCursor, total: null, carregadas: 0 }))
+  const [loadingPage, setLoadingPage] = useState(false)
+  const [pageError, setPageError] = useState(false)
+  const [announcement, setAnnouncement] = useState("")
+  const loaded = [...noticias, ...pages.itens]
+  const localSelected = loaded.find((n) => n.id === selectedNewsId)
   const needsFetch = Boolean(selectedNewsId && !localSelected)
 
   useEffect(() => {
@@ -87,12 +107,45 @@ export function NewsSection({ noticias, candidateSlug, selectedNewsId }: {
     element?.scrollIntoView({ block: "start", behavior: "instant" })
   }, [selected])
 
-  const sorted = mergeLinkedNews(noticias, remoteSelected?.noticia)
+  async function loadMore() {
+    if (!pages.cursor || loadingPage) return
+    setLoadingPage(true)
+    setPageError(false)
+    try {
+      const response = await fetch(`/api/candidato-profile/${encodeURIComponent(candidateSlug)}/noticias?cursor=${encodeURIComponent(pages.cursor)}`)
+      if (!response.ok) throw new Error("Notícias indisponíveis")
+      const body = await response.json() as { data: NoticiaCandidato[]; nextCursor: string | null; total: number }
+      // A prévia usa IDs compactos e a página usa o ID real: a URL também identifica.
+      const known = new Set(loaded.flatMap((n) => [n.id, n.url]))
+      const novas = body.data.filter((n) => !known.has(n.id) && !known.has(n.url))
+      const shown = loaded.length + novas.length
+      setPages((current) => ({
+        itens: [...current.itens, ...novas],
+        cursor: body.nextCursor,
+        total: body.total,
+        carregadas: current.carregadas + 1,
+      }))
+      setExpanded(true)
+      setAnnouncement(`${novas.length} ${plural(novas.length, "notícia adicionada", "notícias adicionadas")} à lista. Mostrando ${shown} de ${body.total}.`)
+    } catch {
+      setPageError(true)
+      setAnnouncement("Não foi possível carregar mais notícias agora.")
+    } finally {
+      setLoadingPage(false)
+    }
+  }
+
+  const sorted = mergeLinkedNews(loaded, remoteSelected?.noticia)
     .sort((a, b) => new Date(b.data_publicacao).getTime() - new Date(a.data_publicacao).getTime())
   const term = query.trim().toLocaleLowerCase("pt-BR")
   const filtered = sorted.filter((n) => !term || `${n.titulo} ${n.fonte ?? ""} ${n.snippet ?? ""}`.toLocaleLowerCase("pt-BR").includes(term))
   const limit = expanded || term ? filtered.length : Math.max(VISIBLE_LIMIT, filtered.findIndex((n) => n.id === selectedNewsId) + 1)
   const visible = filtered.slice(0, limit)
+  const statusLabel = term
+    ? `${filtered.length} ${plural(filtered.length, "notícia encontrada", "notícias encontradas")}`
+    : pages.total !== null
+      ? `${filtered.length} de ${pages.total} ${plural(pages.total, "notícia recente", "notícias recentes")} · mais recentes primeiro`
+      : `${filtered.length} ${plural(filtered.length, "notícia recente", "notícias recentes")} · mais recentes primeiro`
 
   return (
     <section aria-label="Notícias na mídia" className="space-y-6">
@@ -108,7 +161,7 @@ export function NewsSection({ noticias, candidateSlug, selectedNewsId }: {
         </div>
       )}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p role="status" className="text-[length:var(--text-caption)] text-muted-foreground">{`${filtered.length} notícia${filtered.length === 1 ? "" : "s"}${term ? ` encontrada${filtered.length === 1 ? "" : "s"}` : ` recente${filtered.length === 1 ? "" : "s"} · mais recentes primeiro`}`}</p>
+        <p role="status" className="text-[length:var(--text-caption)] text-muted-foreground">{statusLabel}</p>
         <label className="flex items-center gap-2 rounded-md border border-border px-3 sm:w-72">
           <Search aria-hidden="true" className="size-4 shrink-0 text-muted-foreground" />
           <input type="search" aria-label="Buscar notícias" placeholder="Buscar título, fonte ou resumo" value={query} onChange={(event) => setQuery(event.target.value)} className="min-h-11 w-full min-w-0 bg-transparent text-sm outline-none placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring" />
@@ -119,6 +172,23 @@ export function NewsSection({ noticias, candidateSlug, selectedNewsId }: {
         {filtered.length === 0 && <p className="rounded-lg border border-border p-6 text-sm text-muted-foreground">{term ? "Nenhuma notícia encontrada para esta busca." : "Ainda não há notícias exibidas nesta ficha."}</p>}
       </div>
       {filtered.length > visible.length && <button onClick={() => setExpanded(true)} className="flex min-h-11 w-full items-center justify-center gap-2 rounded-md border border-border px-4 py-3 text-sm font-semibold hover:bg-secondary focus-visible:outline-2 focus-visible:outline-ring">Ver mais ({filtered.length - visible.length})<ChevronDown aria-hidden="true" className="size-4" /></button>}
+      {!term && filtered.length <= visible.length && (pages.cursor || pages.carregadas > 0) && (
+        <div className="space-y-2">
+          {pages.cursor ? (
+            <button type="button" onClick={() => { void loadMore() }} disabled={loadingPage} aria-busy={loadingPage} data-pf-news-more=""
+              className="flex min-h-11 w-full items-center justify-center gap-2 rounded-md border border-border px-4 py-3 text-sm font-semibold hover:bg-secondary focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-wait disabled:opacity-60">
+              {loadingPage ? "Carregando notícias…" : pageError ? "Tentar carregar de novo" : "Ver mais notícias"}<ChevronDown aria-hidden="true" className="size-4" />
+            </button>
+          ) : (
+            <button type="button" disabled data-pf-news-more=""
+              className="flex min-h-11 w-full cursor-default items-center justify-center rounded-md border border-border px-4 py-3 text-sm text-muted-foreground">
+              Todas as notícias dos últimos 12 meses estão na lista
+            </button>
+          )}
+          {pageError && <p className="text-center text-sm text-muted-foreground">Não foi possível carregar mais notícias agora.</p>}
+        </div>
+      )}
+      <p aria-live="polite" className="sr-only">{announcement}</p>
     </section>
   )
 }

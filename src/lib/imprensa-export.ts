@@ -1,8 +1,10 @@
 import type { ImprensaDataset, ImprensaRow } from "@/lib/imprensa-data"
 
-const IMPRENSA_EXPORT_VERSION = "1"
+const IMPRENSA_EXPORT_VERSION = "2"
 const IMPRENSA_EXPORT_MAX_BYTES = 4 * 1024 * 1024
 const IMPRENSA_EXPORT_TTL_SECONDS = 300
+export const IMPRENSA_AVISO = "Confira os dados na fonte original antes de publicar."
+const IMPRENSA_AVISO_HEADER = encodeURIComponent(IMPRENSA_AVISO)
 
 const MAIN_COLUMNS = [
   "version",
@@ -29,17 +31,45 @@ const MAIN_COLUMNS = [
   "processos_busca_estado",
   "processos_quantidade",
   "processos_quantidade_omitida",
+  "chapa_suplentes_estado",
+  "chapa_suplentes",
+  "chapa_vice_nome_original",
+  "processos_quantidade_em_confirmacao",
+  "nome_urna_original",
+  "chapa_vice_situacao",
+  "chapa_vice_situacao_fonte_url",
+  "patrimonio_estado",
+  "patrimonio_ano",
+  "patrimonio_total",
+  "patrimonio_valor_estado",
+  "patrimonio_ano_anterior",
+  "patrimonio_total_anterior",
+  "patrimonio_variacao_pct",
+  "patrimonio_fonte_url",
+  "gastos_estado",
+  "gastos_ultimo_ano",
+  "gastos_ultimo_ano_total",
+  "gastos_anos_em_revisao",
+  "tcu_estado",
+  "tcu_registros",
+  "tcu_consultado_em",
+  "tcu_fonte_url",
+  "sancoes_estado",
+  "sancoes_quantidade",
+  "sancoes_consultado_em",
+  "sancoes_fonte_url",
 ] as const
 
 export type ImprensaExportKind = "csv" | "json"
-export type ImprensaLongFamily = "sites" | "processos"
+export type ImprensaLongFamily = "sites" | "processos" | "gastos"
 
 type Cell = string | number | null
 function mainCells(row: ImprensaRow): Cell[] {
   return [
     row.slug,
-    // Como citar / exports preservam a grafia original do TSE (jornalistas citam a fonte).
-    row.nomeOriginal,
+    // Mesma grafia de exibição da ficha; a do TSE segue em nome_urna_original
+    // (o botão "Como citar" também usa a grafia do TSE).
+    row.nome,
     row.cargo,
     row.uf,
     row.partido,
@@ -50,7 +80,9 @@ function mainCells(row: ImprensaRow): Cell[] {
     row.sites?.fonteSha256 ?? null,
     row.sites?.coletadoEm ?? null,
     row.chapa.estado,
-    row.chapa.viceNomeOriginal,
+    // Mesma grafia de exibição da ficha (chapa_2026.vice_nome_urna); a grafia do
+    // TSE segue em chapa_vice_nome_original.
+    row.chapa.viceNome,
     row.chapa.fonteUrl,
     row.chapa.fonteSha256,
     row.chapa.snapshotEm,
@@ -58,6 +90,35 @@ function mainCells(row: ImprensaRow): Cell[] {
     row.processos?.buscaEstado ?? null,
     row.processos?.quantidade ?? null,
     row.processos?.quantidadeOmitida ?? 0,
+    row.chapa.suplentesEstado,
+    row.chapa.suplentes.join("; ") || null,
+    row.chapa.viceNomeOriginal,
+    row.processos?.quantidadeEmConfirmacao ?? 0,
+    row.nomeOriginal,
+    row.chapa.viceSituacao?.label ?? null,
+    row.chapa.viceSituacao?.source_url ?? null,
+    // Famílias da ficha acrescentadas em 27/09/2026. Sem dado é célula vazia
+    // com o estado ao lado, nunca zero.
+    row.patrimonio?.estado ?? "sem_dado",
+    row.patrimonio?.ano ?? null,
+    row.patrimonio?.total ?? null,
+    row.patrimonio?.valorEstado ?? null,
+    row.patrimonio?.anoAnterior ?? null,
+    row.patrimonio?.totalAnterior ?? null,
+    row.patrimonio?.variacaoPct ?? null,
+    row.patrimonio?.fonteUrl ?? null,
+    row.gastos?.estado ?? "sem_dado",
+    row.gastos?.ultimoAno ?? null,
+    row.gastos?.ultimoAnoTotal ?? null,
+    row.gastos?.anosEmRevisao.join("; ") || null,
+    row.tcu?.estado ?? "nao_verificado",
+    row.tcu?.registros ?? null,
+    row.tcu?.consultadoEm ?? null,
+    row.tcu?.fonteUrl ?? null,
+    row.sancoes?.estado ?? "nao-verificado",
+    row.sancoes?.quantidade ?? null,
+    row.sancoes?.consultadoEm ?? null,
+    row.sancoes?.fonteUrl ?? null,
   ]
 }
 
@@ -77,9 +138,10 @@ function escapeCsvCell(value: Cell): string {
 }
 
 export function serializeImprensaCsv(dataset: ImprensaDataset): string {
+  const columns = [...MAIN_COLUMNS, "aviso"]
   const lines = [
-    MAIN_COLUMNS.map(escapeCsvCell).join(","),
-    ...dataset.rows.map((row) => mainCellsWithMetadata(dataset, row).map(escapeCsvCell).join(",")),
+    columns.map(escapeCsvCell).join(","),
+    ...dataset.rows.map((row) => [...mainCellsWithMetadata(dataset, row), IMPRENSA_AVISO].map(escapeCsvCell).join(",")),
   ]
   return `\ufeff${lines.join("\r\n")}\r\n`
 }
@@ -88,11 +150,13 @@ export function serializeImprensaJson(dataset: ImprensaDataset): string {
   return JSON.stringify({
     version: IMPRENSA_EXPORT_VERSION,
     generatedAt: dataset.generatedAt,
+    aviso: IMPRENSA_AVISO,
     filters: dataset.filters,
     rows: dataset.rows.map((row) => ({
       slug: row.slug,
-      // Como citar / exports preservam a grafia original do TSE (jornalistas citam a fonte).
-      nome: row.nomeOriginal,
+      // Mesma grafia de exibição da ficha; a do TSE segue em nomeOriginal.
+      nome: row.nome,
+      nomeOriginal: row.nomeOriginal,
       cargo: row.cargo,
       uf: row.uf,
       partido: row.partido,
@@ -104,19 +168,22 @@ export function serializeImprensaJson(dataset: ImprensaDataset): string {
         fonteSha256: row.sites.fonteSha256,
         coletadoEm: row.sites.coletadoEm,
       },
-      chapa: { estado: row.chapa.estado, viceNome: row.chapa.viceNomeOriginal, fonteUrl: row.chapa.fonteUrl, fonteSha256: row.chapa.fonteSha256, snapshotEm: row.chapa.snapshotEm },
+      chapa: { estado: row.chapa.estado, suplentesEstado: row.chapa.suplentesEstado, viceNome: row.chapa.viceNome, viceNomeOriginal: row.chapa.viceNomeOriginal, viceSituacao: row.chapa.viceSituacao ?? null, suplentes: row.chapa.suplentes, fonteUrl: row.chapa.fonteUrl, fonteSha256: row.chapa.fonteSha256, snapshotEm: row.chapa.snapshotEm },
       processos: {
         estado: row.processos.estado,
         buscaEstado: row.processos.buscaEstado,
         quantidade: row.processos.quantidade,
         quantidadeOmitida: row.processos.quantidadeOmitida,
+        quantidadeEmConfirmacao: row.processos.quantidadeEmConfirmacao ?? 0,
       },
+      patrimonio: row.patrimonio ?? null,
+      gastos: row.gastos
+        ? { estado: row.gastos.estado, ultimoAno: row.gastos.ultimoAno, ultimoAnoTotal: row.gastos.ultimoAnoTotal, anosEmRevisao: row.gastos.anosEmRevisao }
+        : null,
+      tcu: row.tcu ?? null,
+      sancoes: row.sancoes ?? null,
     })),
   })
-}
-
-function isHttps(url: unknown): url is string {
-  return typeof url === "string" && /^https:\/\//i.test(url)
 }
 
 export interface ImprensaLongSiteRow {
@@ -134,14 +201,45 @@ export interface ImprensaLongProcessoRow {
   tipo: string | null
   tribunal: string | null
   url_fonte: string
+  /** "oficial" ou "em_confirmacao" (selo "Fonte em confirmação" na ficha). */
+  fonte_nivel: string
   data_inicio: string | null
   data_decisao: string | null
+}
+
+export interface ImprensaLongGastoRow {
+  slug: string
+  ano: number
+  /** "camara", "senado" ou null quando a fonte não identifica a casa. */
+  casa: string | null
+  total: number
+  fonte_url: string | null
+}
+
+function hasPublishableSourceUrl(occurrence: ImprensaRow["processos"]["ocorrencias"][number]): boolean {
+  const url = occurrence.urlFonte
+  if (typeof url !== "string") return false
+  // Fonte judicial específica é sempre HTTPS; a página do selo segue a mesma
+  // regra de link da ficha (urlPublicaDoProcesso aceita http e https).
+  return occurrence.fonteNivel === "em_confirmacao" ? /^https?:\/\//i.test(url) : /^https:\/\//i.test(url)
 }
 
 export function buildImprensaLongRows(
   dataset: ImprensaDataset,
   family: ImprensaLongFamily,
-): Array<ImprensaLongSiteRow | ImprensaLongProcessoRow> {
+): Array<ImprensaLongSiteRow | ImprensaLongProcessoRow | ImprensaLongGastoRow> {
+  if (family === "gastos") {
+    // Uma linha por ficha, ano e casa: as mesmas linhas que a ficha exibe.
+    return dataset.rows.flatMap((row) =>
+      (row.gastos?.anos ?? []).map((item) => ({
+        slug: row.slug,
+        ano: item.ano,
+        casa: item.casa,
+        total: item.total,
+        fonte_url: item.fonteUrl,
+      })),
+    )
+  }
   if (family === "sites") {
     return dataset.rows.flatMap((row) =>
       (row.sites?.ocorrencias ?? []).map((occurrence) => ({
@@ -155,15 +253,19 @@ export function buildImprensaLongRows(
     )
   }
 
+  // As ocorrências já passaram pela regra da ficha (nivelFonteProcesso): cada
+  // linha pública da ficha aparece aqui, inclusive as que levam o selo. O filtro
+  // abaixo só repete, como defesa, o formato de URL que cada nível exige.
   return dataset.rows.flatMap((row) =>
     (row.processos?.ocorrencias ?? [])
-      .filter((occurrence) => isHttps(occurrence.urlFonte))
+      .filter(hasPublishableSourceUrl)
       .map((occurrence) => ({
         slug: row.slug,
         numero: occurrence.numero ?? null,
         tipo: occurrence.tipo ?? null,
         tribunal: occurrence.tribunal ?? null,
         url_fonte: occurrence.urlFonte,
+        fonte_nivel: occurrence.fonteNivel,
         data_inicio: occurrence.dataInicio ?? null,
         data_decisao: occurrence.dataDecisao ?? null,
       })),
@@ -177,6 +279,7 @@ export function serializeImprensaLongJson(
   return JSON.stringify({
     version: IMPRENSA_EXPORT_VERSION,
     generatedAt: dataset.generatedAt,
+    aviso: IMPRENSA_AVISO,
     filters: dataset.filters,
     family,
     rows: buildImprensaLongRows(dataset, family),
@@ -190,11 +293,13 @@ export function serializeImprensaLongCsv(
   const rows = buildImprensaLongRows(dataset, family)
   const familyColumns = family === "sites"
     ? ["slug", "ordem", "url", "fonte_url", "fonte_sha256", "coletado_em"]
-    : ["slug", "numero", "tipo", "tribunal", "url_fonte", "data_inicio", "data_decisao"]
-  const columns = ["version", "generated_at", "cargo_filtro", "uf_filtro", ...familyColumns]
+    : family === "gastos"
+      ? ["slug", "ano", "casa", "total", "fonte_url"]
+      : ["slug", "numero", "tipo", "tribunal", "url_fonte", "fonte_nivel", "data_inicio", "data_decisao"]
+  const columns = ["version", "generated_at", "cargo_filtro", "uf_filtro", ...familyColumns, "aviso"]
   const lines = [
     columns.map(escapeCsvCell).join(","),
-    ...rows.map((row) => [dataset.version, dataset.generatedAt, dataset.filters.cargo, dataset.filters.uf, ...familyColumns.map((column) => (row as unknown as Record<string, Cell>)[column])].map(escapeCsvCell).join(",")),
+    ...rows.map((row) => [dataset.version, dataset.generatedAt, dataset.filters.cargo, dataset.filters.uf, ...familyColumns.map((column) => (row as unknown as Record<string, Cell>)[column]), IMPRENSA_AVISO].map(escapeCsvCell).join(",")),
   ]
   return `\ufeff${lines.join("\r\n")}\r\n`
 }
@@ -213,6 +318,7 @@ export function exportHeaders(
     "X-Imprensa-Dataset-Date": dataset.generatedAt,
     "X-Imprensa-Dataset-TTL": String(IMPRENSA_EXPORT_TTL_SECONDS),
     "X-Imprensa-Filters": JSON.stringify(dataset.filters),
+    "X-Aviso-Dados": IMPRENSA_AVISO_HEADER,
   })
 }
 

@@ -48,7 +48,10 @@ export interface FinanciamentoExistente {
   total_fundo_eleitoral: number | string | null
   total_pessoa_fisica: number | string | null
   total_recursos_proprios: number | string | null
+  categorias_origem: unknown
   maiores_doadores: unknown
+  categorias_origem_hash?: string | null
+  maiores_doadores_hash?: string | null
   fonte: string | null
   despublicado_em: string | null
 }
@@ -97,6 +100,7 @@ export const CAMPOS_FINANCIAMENTO_ATUALIZAVEIS = [
   "total_fundo_eleitoral",
   "total_pessoa_fisica",
   "total_recursos_proprios",
+  "categorias_origem",
   "maiores_doadores",
 ] as const
 
@@ -123,6 +127,7 @@ export type ItemRevisao = {
     | "patrimonio_divergente"
     | "bens_sumiram_do_pacote"
     | "sem_identidade_2026"
+    | "identidade_em_revisao"
     | "verificacao_outra_identidade"
   detalhe: string
 }
@@ -131,8 +136,8 @@ export interface ReciboPlanejado {
   fonte: typeof FONTE_RECIBO_FINANCIAMENTO | typeof FONTE_RECIBO_PATRIMONIO
   alvo: string
   candidato_id: string
-  resultado: "encontrado" | "vazio_confirmado" | "erro"
-  volume: number
+  resultado: "encontrado" | "vazio_confirmado" | "erro" | "indeterminado"
+  volume: number | null
   detalhe: string
 }
 
@@ -141,6 +146,80 @@ export interface PlanoFinancas2026 {
   recibos: ReciboPlanejado[]
   revisao: ItemRevisao[]
   resumo: ResumoPlano
+  /** Contribuições por perfil para recalcular agregados tras deferimentos. */
+  resumo_por_perfil?: Record<string, {
+    financiamento: Partial<ResumoPlano["financiamento"]>
+    patrimonio: Partial<ResumoPlano["patrimonio"]>
+  }>
+  identity_risk_slugs?: string[]
+}
+
+/**
+ * Retira do plano aplicável toda ação de perfil sob revisão de identidade.
+ * O chamador deve executar esta partição antes de calcular o SHA revisado.
+ */
+export function partitionarAcoesPorRiscoDeIdentidade(
+  plano: PlanoFinancas2026,
+  slugsEmRisco: ReadonlySet<string> | readonly string[],
+): { plano: PlanoFinancas2026; deferred: number } {
+  const slugs = slugsEmRisco instanceof Set ? slugsEmRisco : new Set(slugsEmRisco)
+  const deferredActions = plano.acoes.filter((acao) => slugs.has(acao.slug))
+  const deferredReceipts = plano.recibos.filter((recibo) => slugs.has(recibo.alvo))
+  const affectedSlugs = new Set([...deferredActions.map((acao) => acao.slug), ...deferredReceipts.map((recibo) => recibo.alvo)])
+  if (deferredActions.length === 0 && deferredReceipts.length === 0) return { plano, deferred: 0 }
+  if (!plano.resumo_por_perfil && (deferredActions.length > 0 || deferredReceipts.length > 0)) {
+    throw new Error("plano legado sem resumo por perfil não pode particionar identidade com segurança")
+  }
+
+  const revisao = deferredActions.map((acao): ItemRevisao => ({
+    slug: acao.slug,
+    familia: acao.tipo === "inserir_patrimonio" || acao.tipo === "apagar_ausencia_patrimonio"
+      ? "patrimonio"
+      : "financiamento",
+    motivo: "identidade_em_revisao",
+    detalhe: "ação adiada enquanto a identidade do perfil está em revisão",
+  }))
+  const acoes = plano.acoes.filter((acao) => !slugs.has(acao.slug))
+  const recibos = plano.recibos.map((recibo) => slugs.has(recibo.alvo)
+    ? {
+        ...recibo,
+        resultado: "indeterminado" as const,
+        volume: 0,
+        detalhe: detalheRecibo({ motivo: "identidade_em_revisao" }),
+      }
+    : recibo)
+  const resumo: ResumoPlano = {
+    ...plano.resumo,
+    financiamento: { ...plano.resumo.financiamento },
+    patrimonio: { ...plano.resumo.patrimonio },
+    recibos: {
+      financiamento: recibos.filter((recibo) => recibo.fonte === FONTE_RECIBO_FINANCIAMENTO).length,
+      patrimonio: recibos.filter((recibo) => recibo.fonte === FONTE_RECIBO_PATRIMONIO).length,
+    },
+  }
+  for (const slug of slugs) {
+    const contribution = plano.resumo_por_perfil?.[slug]
+    if (!contribution) {
+      if (affectedSlugs.has(slug)) throw new Error(`plano sem resumo do perfil em risco: ${slug}`)
+      continue
+    }
+    for (const key of Object.keys(contribution.financiamento) as Array<keyof ResumoPlano["financiamento"]>) {
+      resumo.financiamento[key] -= contribution.financiamento[key] ?? 0
+    }
+    for (const key of Object.keys(contribution.patrimonio) as Array<keyof ResumoPlano["patrimonio"]>) {
+      resumo.patrimonio[key] -= contribution.patrimonio[key] ?? 0
+    }
+  }
+  return {
+    plano: {
+      ...plano,
+      acoes,
+      recibos,
+      revisao: [...plano.revisao, ...revisao],
+      resumo,
+    },
+    deferred: deferredActions.length,
+  }
 }
 
 export interface ResumoPlano {
@@ -154,6 +233,7 @@ export interface ResumoPlano {
     verificacoes_vencidas_apagadas: number
     fichas_vazio_confirmado: number
     fichas_erro: number
+    aguardando_backfill_categorias: number
   }
   patrimonio: {
     fichas_com_linha_apos_plano: number
@@ -229,6 +309,7 @@ export interface EntradaPlano {
   planejadas: PlannedRow[]
   estado: EstadoProducao
   pacote: { url_receitas: string; url_bens: string; sha256_receitas?: string; sha256_bens?: string }
+  agendado?: boolean
 }
 
 export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
@@ -237,6 +318,7 @@ export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
   const acoes: AcaoEscrita[] = []
   const recibos: ReciboPlanejado[] = []
   const revisao: ItemRevisao[] = []
+  const aguardandoBackfill = new Set<string>()
 
   const doAno = <T extends { ano_eleicao: number; candidato_id: string }>(rows: T[]) =>
     rows.filter((r) => Number(r.ano_eleicao) === ANO_FINANCAS_2026 && publicos.some((p) => p.id === r.candidato_id))
@@ -266,6 +348,7 @@ export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
       verificacoes_vencidas_apagadas: 0,
       fichas_vazio_confirmado: 0,
       fichas_erro: 0,
+      aguardando_backfill_categorias: 0,
     },
     patrimonio: {
       fichas_com_linha_apos_plano: 0,
@@ -278,9 +361,12 @@ export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
     },
     recibos: { financiamento: 0, patrimonio: 0 },
   }
+  const resumoPorPerfil: NonNullable<PlanoFinancas2026["resumo_por_perfil"]> = {}
 
   const ordenados = [...publicos].sort((a, b) => a.slug.localeCompare(b.slug))
   for (const ficha of ordenados) {
+    const financiamentoAntes = { ...resumo.financiamento }
+    const patrimonioAntes = { ...resumo.patrimonio }
     const linhas = planejadasPorSlug.get(ficha.slug) ?? []
     const finFicha = finExistentes.filter((r) => r.candidato_id === ficha.id)
     const verFicha = verExistentes.filter((r) => r.candidato_id === ficha.id)
@@ -338,12 +424,26 @@ export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
               depois[campo] = novo
             }
           }
+          if (entrada.agendado && Object.keys(depois).length === 1 && "categorias_origem" in depois
+            && existente.categorias_origem == null && depois.categorias_origem != null) {
+            aguardandoBackfill.add(ficha.slug)
+            continue
+          }
           if (Object.keys(depois).length === 0) {
             resumo.financiamento.inalterado++
           } else {
-            // CAS precisa do valor atual dos dois campos que o update confere.
-            antes.total_arrecadado = existente.total_arrecadado
-            antes.maiores_doadores = existente.maiores_doadores
+            // CAS carrega o preimage completo dos campos exibidos que o update confere.
+            antes.candidato_id = existente.candidato_id
+            antes.ano_eleicao = existente.ano_eleicao
+            antes.sq_candidato = existente.sq_candidato
+            antes.uf_candidatura = existente.uf_candidatura
+            antes.cargo_candidatura = existente.cargo_candidatura
+            for (const campo of [
+              "total_arrecadado", "total_fundo_partidario", "total_fundo_eleitoral",
+              "total_pessoa_fisica", "total_recursos_proprios", "categorias_origem", "maiores_doadores",
+            ]) antes[campo] = (existente as unknown as Record<string, unknown>)[campo] ?? null
+            antes.categorias_origem_hash = existente.categorias_origem_hash ?? null
+            antes.maiores_doadores_hash = existente.maiores_doadores_hash ?? null
             acoes.push({ tipo: "atualizar_financiamento", slug: ficha.slug, id: existente.id, antes, depois })
             resumo.financiamento.atualizar++
           }
@@ -534,6 +634,18 @@ export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
       })
       resumo.patrimonio.fichas_erro++
     }
+    resumoPorPerfil[ficha.slug] = {
+      financiamento: Object.fromEntries(Object.keys(resumo.financiamento).map((key) => [
+        key,
+        resumo.financiamento[key as keyof typeof resumo.financiamento]
+          - financiamentoAntes[key as keyof typeof financiamentoAntes],
+      ])),
+      patrimonio: Object.fromEntries(Object.keys(resumo.patrimonio).map((key) => [
+        key,
+        resumo.patrimonio[key as keyof typeof resumo.patrimonio]
+          - patrimonioAntes[key as keyof typeof patrimonioAntes],
+      ])),
+    }
   }
 
   // Ordem de aplicação: verificação sai antes do financiamento entrar.
@@ -546,8 +658,10 @@ export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
   }
   acoes.sort((a, b) => ordem[a.tipo] - ordem[b.tipo] || a.slug.localeCompare(b.slug))
   resumo.recibos.financiamento = recibos.filter((r) => r.fonte === FONTE_RECIBO_FINANCIAMENTO).length
+  resumo.financiamento.aguardando_backfill_categorias = aguardandoBackfill.size
   resumo.recibos.patrimonio = recibos.filter((r) => r.fonte === FONTE_RECIBO_PATRIMONIO).length
-  return { acoes, recibos, revisao, resumo }
+  for (const slug of aguardandoBackfill) resumoPorPerfil[slug]!.financiamento.aguardando_backfill_categorias = 1
+  return { acoes, recibos, revisao, resumo, resumo_por_perfil: resumoPorPerfil }
 }
 
 /**
@@ -557,9 +671,19 @@ export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
 export function travasDoPlano(
   plano: PlanoFinancas2026,
   estado: EstadoProducao,
-  limites: { maxQuedaRelativa: number } = { maxQuedaRelativa: 0.2 },
+  limites: { maxQuedaRelativa: number; maxAffectedRatio?: number; maxActions?: number } = { maxQuedaRelativa: 0.2 },
 ): string[] {
   const falhas: string[] = []
+  const fichasAfetadas = new Set(plano.acoes.filter((acao) => !(acao.tipo === "atualizar_financiamento"
+    && Object.keys(acao.depois).length === 1 && "categorias_origem" in acao.depois
+    && acao.antes.categorias_origem == null && acao.depois.categorias_origem != null)).map((acao) => acao.slug)).size
+  const fichasPublicas = plano.resumo.fichas_publicas
+  const maxActions = limites.maxActions ?? 500
+  const maxAffectedRatio = limites.maxAffectedRatio ?? 0.5
+  if (plano.acoes.length > maxActions) falhas.push(`plano excede o limite de ${maxActions} ações: ${plano.acoes.length}`)
+  if (fichasPublicas >= 20 && fichasAfetadas > fichasPublicas * maxAffectedRatio) {
+    falhas.push(`plano altera ${fichasAfetadas}/${fichasPublicas} fichas, acima do limite de ${Math.round(maxAffectedRatio * 100)}%`)
+  }
   for (const acao of plano.acoes) {
     if (acao.tipo !== "atualizar_financiamento") continue
     const antes = num(acao.antes.total_arrecadado)
@@ -570,11 +694,21 @@ export function travasDoPlano(
   }
   const sumiu = plano.revisao.filter((r) => r.motivo === "receita_sumiu_do_pacote" || r.motivo === "bens_sumiram_do_pacote")
   if (sumiu.length > 0) falhas.push(`${sumiu.length} ficha(s) com dado publicado que sumiu do pacote do dia`)
-  const publicados2026 = estado.financiamento.filter((f) => Number(f.ano_eleicao) === ANO_FINANCAS_2026).length
-  const comReceitaNoPacote = plano.recibos.filter(
-    (r) => r.fonte === FONTE_RECIBO_FINANCIAMENTO && r.resultado === "encontrado",
-  ).length
-  if (comReceitaNoPacote < publicados2026 * 0.9) {
+  const publicados2026 = new Set(estado.financiamento
+    .filter((f) => Number(f.ano_eleicao) === ANO_FINANCAS_2026)
+    .map((f) => f.candidato_id))
+  const idsIdentidadeEmRevisao = new Set(plano.recibos.filter((r) =>
+    r.resultado === "indeterminado"
+      && r.detalhe.includes("identidade_em_revisao"),
+  ).map((r) => r.candidato_id))
+  const publicadosElegiveis = new Set([...publicados2026].filter((id) => !idsIdentidadeEmRevisao.has(id)))
+  if (publicados2026.size > 0 && publicadosElegiveis.size < publicados2026.size * 0.5) {
+    falhas.push("denominador elegível de cobertura abaixo de 50% dos perfis publicados em 2026")
+  }
+  const comReceitaNoPacote = new Set(plano.recibos.filter(
+    (r) => r.fonte === FONTE_RECIBO_FINANCIAMENTO && r.resultado === "encontrado" && publicadosElegiveis.has(r.candidato_id),
+  ).map((r) => r.candidato_id))
+  if (comReceitaNoPacote.size < publicadosElegiveis.size * 0.9) {
     falhas.push("pacote do dia cobre menos fichas do que a produção já publica (possível regressão do pacote)")
   }
   return falhas

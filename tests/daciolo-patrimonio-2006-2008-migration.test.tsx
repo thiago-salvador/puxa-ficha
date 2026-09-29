@@ -267,8 +267,8 @@ describe("contrato de exibicao dos dois anos", () => {
     // e o valor que o TSE registrou.
     assert.match(
       html,
-      /font-bold tabular-nums tracking-tight text-foreground sm:text-\[length:var\(--text-heading\)\]">R\$(&nbsp;|\s)0</,
-      "o card de 2006 precisa mostrar o total declarado",
+      /font-bold tabular-nums tracking-tight text-foreground sm:text-\[length:var\(--text-heading\)\]">R\$(&nbsp;|\s)0 · Declarou não ter bens</,
+      "o card de 2006 precisa mostrar o total declarado e o que o zero significa",
     )
     assert.ok(
       html.includes("Nenhum bem a declarar"),

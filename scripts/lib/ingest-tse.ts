@@ -34,7 +34,7 @@ import {
   resolveLegacyReceiptSqIdentity,
 } from "./financiamento-receita-legacy-row"
 import { financiamentoReceitaDedupKey } from "./financiamento-receita-dedup"
-import { downloadToFile } from "./download-to-file"
+import { downloadToFile, verifyZip } from "./download-to-file"
 import { observeVerifiedCandidateChange } from "./verified-candidate-changes"
 import { resolveEffectiveElectionContext } from "./tse-effective-election-year"
 import { assertTseContextSchemaReady, pendingContextMigrationError } from "./tse-context-schema"
@@ -127,8 +127,14 @@ function getGovernorUFs(candidatos: CandidatoConfig[], slugAllowlist?: Set<strin
   ]
 }
 
+const MARCADORES_TSE_NULOS = new Set(["#NULO", "#NULO#", "#NE", "#NE#", "-1", "NULO", "NULL", "N/A", "NAO INFORMADO", "NAO INFORMADA"])
+
+function isTseNullMarker(value: string): boolean {
+  return MARCADORES_TSE_NULOS.has(stripAccents(value.trim()).toUpperCase())
+}
+
 function parseBRL(value: string, context: string): number {
-  if (!value || value === "#NULO#" || value === "#NE#" || value === "-1") return 0
+  if (!value || isTseNullMarker(value)) return 0
   const parsed = parseFloat(value.replace(/\./g, "").replace(",", "."))
   if (Number.isNaN(parsed)) {
     warn("tse", `  Valor monetario invalido em ${context}: "${value}"`)
@@ -159,12 +165,40 @@ export function classifyFinanciamentoOrigem(value: string): FinanciamentoOrigemC
   return "outros"
 }
 
+export type FinanciamentoCategoriaExibida =
+  | "fundo_eleitoral"
+  | "fundo_partidario"
+  | "outros_recursos"
+  | "nao_informado_pelo_tse"
+
+/** Mapeia a origem oficial para as quatro categorias que a ficha exibe. */
+export function categoriaFinanciamentoExibida(fonte: string | null | undefined, origem: string | null | undefined): FinanciamentoCategoriaExibida {
+  const declaracoes = [fonte, origem]
+    .map((value) => value?.trim() ?? "")
+    .filter((value) => value && !isTseNullMarker(value))
+  if (declaracoes.length === 0) return "nao_informado_pelo_tse"
+  const tipo = classifyFinanciamentoOrigem(declaracoes.join(" — "))
+  if (tipo === "fundo_eleitoral" || tipo === "fundo_partidario") return tipo
+  return "outros_recursos"
+}
+
+/** Cargo observado no pacote oficial do pleito, com identidade curada como fallback. */
+export function cargoFinanciamentoOficial(identity: {
+  cargo?: string | null
+  historicalIdentity?: { cargo?: string | null }
+}): string | null {
+  return identity.cargo?.trim() || identity.historicalIdentity?.cargo?.trim() || null
+}
+
 async function downloadFile(url: string, dest: string): Promise<boolean> {
   return downloadToFile(url, dest, {
     onCacheHit: (path) => log("tse", `  Cache hit: ${path}`),
     onStart: (source) => log("tse", `  Baixando: ${source}`),
     onHttpError: (status, source) => warn("tse", `  HTTP ${status} para ${source}`),
     onError: (err) => warn("tse", `  Falha no download: ${err}`),
+    verify: dest.toLowerCase().endsWith(".zip") ? verifyZip : undefined,
+    onRetry: ({ attempt, delayMs, reason, resumeFrom }) =>
+      warn("tse", `  Tentativa ${attempt} falhou (${reason}); nova tentativa em ${Math.round(delayMs / 1000)} s, retomando de ${resumeFrom} bytes`),
   })
 }
 
@@ -1371,6 +1405,12 @@ async function processFinanciamento(
     fundo_eleitoral: number
     pessoa_fisica: number
     recursos_proprios: number
+    categorias_origem: {
+      fundo_eleitoral: number
+      fundo_partidario: number
+      outros_recursos: number
+      nao_informado_pelo_tse: number
+    }
     doadores: { nome: string; valor: number; tipo: string; cnpj?: string; cpf_hash?: string; cpf_hash_versao?: number }[]
   }
 
@@ -1426,13 +1466,19 @@ async function processFinanciamento(
       const existing = aggregated.get(aggregateKey) ?? {
         sqCandidato: identidade.sqCandidato,
         uf: identidade.uf ?? null,
-        cargoCandidatura: identidade.historicalIdentity?.cargo?.trim() || null,
+        cargoCandidatura: cargoFinanciamentoOficial(identidade),
         publicacaoAutorizada: identidade.publicacaoAutorizada,
         total: 0,
         fundo_partidario: 0,
         fundo_eleitoral: 0,
         pessoa_fisica: 0,
         recursos_proprios: 0,
+        categorias_origem: {
+          fundo_eleitoral: 0,
+          fundo_partidario: 0,
+          outros_recursos: 0,
+          nao_informado_pelo_tse: 0,
+        },
         doadores: [],
       }
 
@@ -1440,10 +1486,12 @@ async function processFinanciamento(
         row.VR_RECEITA || "0",
         `financiamento ${ano} ${candidato.slug}`
       )
-      const origem = [row.DS_FONTE_RECEITA, row.DS_ORIGEM_RECEITA].filter(Boolean).join(" — ")
+      const origem = [row.DS_FONTE_RECEITA, row.DS_ORIGEM_RECEITA].filter((value) => value?.trim()).join(" — ")
       const origemCategoria = classifyFinanciamentoOrigem(origem)
+      const categoriaExibida = categoriaFinanciamentoExibida(row.DS_FONTE_RECEITA, row.DS_ORIGEM_RECEITA)
 
       existing.total += valor
+      existing.categorias_origem[categoriaExibida] += valor
 
       if (origemCategoria === "fundo_partidario") existing.fundo_partidario += valor
       else if (origemCategoria === "fundo_eleitoral") existing.fundo_eleitoral += valor
@@ -1508,6 +1556,8 @@ async function processFinanciamento(
       total_fundo_eleitoral: Math.round(data.fundo_eleitoral * 100) / 100,
       total_pessoa_fisica: Math.round(data.pessoa_fisica * 100) / 100,
       total_recursos_proprios: Math.round(data.recursos_proprios * 100) / 100,
+      categorias_origem: Object.fromEntries(Object.entries(data.categorias_origem)
+        .map(([key, value]) => [key, Math.round(value * 100) / 100])),
       maiores_doadores: maioresDoadores,
       fonte: "TSE",
       ...(data.publicacaoAutorizada
@@ -1785,6 +1835,7 @@ export type IngestTseOptions = {
 async function loadCandidatosParaTse(cohort?: ExplicitCohortSelection): Promise<CandidatoConfig[]> {
   if (!cohort) return loadCandidatosPublicos()
   const rows = await loadCandidatosCohortNaoPublica(cohort)
+  // coorte-atualizacao: isento (mapa do seed para a coorte explícita já filtrada)
   const seedBySlug = new Map(loadCandidatos().map((candidate) => [candidate.slug, candidate]))
   return rows.map((row): CandidatoConfig => {
     const seed = seedBySlug.get(row.slug)

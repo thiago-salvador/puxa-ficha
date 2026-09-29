@@ -26,6 +26,7 @@ export interface SenadoRunningMateAbsence {
   complemento_url?: string
   complemento_sha256?: string
   fonte_data: string
+  consulted_at?: string
 }
 
 const SENADO_SOURCE_URL = "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip"
@@ -74,6 +75,7 @@ export function senadoRunningMateAbsenceFromProof(
     complemento_url: detail.complement_url,
     complemento_sha256: detail.complement_sha256,
     fonte_data: detail.consulted_at.slice(0, 10).split("-").reverse().join("/"),
+    consulted_at: detail.consulted_at,
   }
 }
 

@@ -119,6 +119,7 @@ function postgrestError(code: string, message: string): Response {
 interface StubOptions {
   ausenciaError?: Response
   selects: Record<string, string[]>
+  projetosUrls?: string[]
 }
 
 /**
@@ -135,6 +136,17 @@ function stubPreMigrationDatabase(options: StubOptions): void {
     ;(options.selects[table] ??= []).push(select)
     const headers = new Headers(init?.headers ?? (input instanceof Request ? input.headers : undefined))
     const wantsObject = (headers.get("accept") ?? "").includes("vnd.pgrst.object")
+
+    if (table === "projetos_lei" && options.projetosUrls) {
+      options.projetosUrls.push(url.toString())
+      const publico = url.searchParams.get("despublicado_em") === "is.null"
+      const count = publico ? 0 : 1
+      const method = init?.method ?? (input instanceof Request ? input.method : "GET")
+      return new Response(method === "HEAD" ? null : JSON.stringify(publico ? [] : [{ id: "projeto-despublicado" }]), {
+        status: 200,
+        headers: { "content-type": "application/json", "content-range": `*/${count}` },
+      })
+    }
 
     if (table === "candidatos_publico" || table === "candidatos") {
       if (table === "candidatos_publico" && select.split(",").includes("numero_urna")) {
@@ -255,5 +267,25 @@ describe("ficha antes das migrations de contexto eleitoral", () => {
       ausenciaSelects.every((select) => select.includes("ano_arquivo")),
       `42501 não pode disparar o retry pré-migration: ${JSON.stringify(ausenciaSelects)}`
     )
+  })
+
+  it("preview omite projeto despublicado da lista e das três contagens", async () => {
+    const api = await loadApi()
+    const selects: Record<string, string[]> = {}
+    const projetosUrls: string[] = []
+    console.warn = () => {}
+    console.error = () => {}
+    stubPreMigrationDatabase({ selects, projetosUrls })
+
+    const resource = await api.getCandidatoBySlugPreviewResource(CANDIDATO_ROW.slug)
+    assert.ok(resource.data)
+    assert.deepEqual(resource.data.projetos_lei, [])
+    assert.equal(resource.data.projetos_lei_total, 0)
+    assert.equal(resource.data.projetos_lei_natureza_projetos_total, 0)
+    assert.equal(resource.data.projetos_lei_destaques_total, 0)
+    assert.equal(resource.data.projetos_lei_camara_total, 0)
+    assert.equal(resource.data.projetos_lei_senado_total, 0)
+    assert.equal(projetosUrls.length, 5)
+    assert.ok(projetosUrls.every((url) => new URL(url).searchParams.get("despublicado_em") === "is.null"))
   })
 })

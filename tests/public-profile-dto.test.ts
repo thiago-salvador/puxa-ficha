@@ -8,28 +8,32 @@ import {
   toPublicCandidatoProfileDto,
 } from "../src/lib/public-profile-dto"
 import type { FichaCandidato } from "../src/lib/types"
-import { GASTOS_PARLAMENTARES_EM_REVISAO, anosGastosParlamentaresEmRevisao, gastoParlamentarEmRevisao } from "../src/lib/gastos-parlamentares-em-revisao"
+import { GASTOS_PARLAMENTARES_EM_REVISAO, GASTOS_PARLAMENTARES_EM_REVISAO_UNIVERSO, anosGastosParlamentaresEmRevisao, gastoParlamentarEmRevisao } from "../src/lib/gastos-parlamentares-em-revisao"
 
-it("quarentena de gastos cobre 57 anos em 40 fichas sem duplicatas", () => {
-  const keys = GASTOS_PARLAMENTARES_EM_REVISAO.map(([slug, ano]) => `${slug}:${ano}`)
-  assert.equal(keys.length, 57)
-  assert.equal(new Set(keys).size, 57)
-  assert.equal(new Set(GASTOS_PARLAMENTARES_EM_REVISAO.map(([slug]) => slug)).size, 40)
-  assert.equal(gastoParlamentarEmRevisao("alan-rick", 2023), true)
+it("quarentena de gastos mantém apenas pares únicos por ficha e ano", () => {
+  const entries = [...GASTOS_PARLAMENTARES_EM_REVISAO, ...GASTOS_PARLAMENTARES_EM_REVISAO_UNIVERSO]
+  const keys = entries.map(([slug, ano]) => `${slug}:${ano}`)
+  assert.equal(new Set(keys).size, keys.length)
+  for (const [slug, ano] of entries) {
+    assert.equal(gastoParlamentarEmRevisao(slug, ano), true)
+    assert.ok(anosGastosParlamentaresEmRevisao(slug).includes(ano))
+  }
   assert.equal(gastoParlamentarEmRevisao("alan-rick", 2022), false)
-  assert.deepEqual(anosGastosParlamentaresEmRevisao("alan-rick"), [2023, 2026])
 })
 
-it("DTO público omite somente o ano em revisão, inclusive após recálculo local", () => {
+it("DTO público omite só o par que continua em revisão", () => {
+  const pendente = [...GASTOS_PARLAMENTARES_EM_REVISAO, ...GASTOS_PARLAMENTARES_EM_REVISAO_UNIVERSO][0]
+  const [slug, ano] = pendente ?? ["alan-rick", 2023]
+  const outroAno = Number(ano) === 2022 ? 2021 : 2022
   const ficha = fixtureProfile()
-  ficha.slug = "alan-rick"
+  ficha.slug = slug
   const base = ficha.gastos_parlamentares[0]
   ficha.gastos_parlamentares = [
-    { ...base, id: "gasto-2023", ano: 2023, total_gasto: 433257.75, fonte: "Senado" },
-    { ...base, id: "gasto-2022", ano: 2022, total_gasto: 10, fonte: "Senado" },
+    { ...base, id: "gasto-em-revisao", ano, total_gasto: 10, fonte: "Senado" },
+    { ...base, id: "gasto-fora-da-revisao", ano: outroAno, total_gasto: 10, fonte: "Senado" },
   ]
   const dto = toPublicCandidatoProfileDto(ficha)
-  assert.deepEqual(dto.gastos_parlamentares.map((row) => row.ano), [2022])
+  assert.deepEqual(dto.gastos_parlamentares.map((row) => row.ano), pendente ? [outroAno] : [ano, outroAno])
 })
 
 it("DTO público carrega a data de corte do gasto anual de 2026", () => {
@@ -41,6 +45,31 @@ it("DTO público carrega a data de corte do gasto anual de 2026", () => {
     fonte: "Senado",
   }]
   assert.equal(toPublicCandidatoProfileDto(ficha).gastos_parlamentares[0].coletado_em, "2026-09-25T16:32:18.386Z")
+})
+
+it("atribui a Casa de projetos e gastos somente pelo rótulo oficial da fonte", () => {
+  const ficha = fixtureProfile()
+  ficha.projetos_lei[0].fonte = "Câmara"
+  ficha.gastos_parlamentares[0].fonte = "Senado CEAPS"
+  const dto = toPublicCandidatoProfileDto(ficha)
+  assert.equal(dto.projetos_lei[0].casa, "camara")
+  assert.equal(dto.gastos_parlamentares[0].casa, "senado")
+  assert.equal("fonte" in dto.projetos_lei[0], false)
+
+  ficha.projetos_lei[0].fonte = "origem interna desconhecida"
+  ficha.gastos_parlamentares[0].fonte = "SICONFI"
+  const unknown = toPublicCandidatoProfileDto(ficha)
+  assert.equal(unknown.projetos_lei[0].casa, null)
+  assert.equal(unknown.gastos_parlamentares[0].casa, null)
+})
+
+it("DTO público expõe total exato por casa para acervos de projetos", () => {
+  const ficha = fixtureProfile()
+  ficha.projetos_lei_camara_total = 12
+  ficha.projetos_lei_senado_total = 34
+  const dto = toPublicCandidatoProfileDto(ficha)
+  assert.equal(dto.projetos_lei_camara_total, 12)
+  assert.equal(dto.projetos_lei_senado_total, 34)
 })
 
 function fixtureProfile(): FichaCandidato {
@@ -151,6 +180,7 @@ function fixtureProfile(): FichaCandidato {
           descricao: "Descrição pública",
           data_votacao: "2020-01-01",
           casa: "Câmara",
+          votacao_id_api: "123-45",
           tema: "Tema",
           impacto_popular: "Impacto",
           proposicao_id: "123",
@@ -314,17 +344,33 @@ function fixtureProfile(): FichaCandidato {
   }
 }
 
-it("omite linha judicial sem página oficial da lista e da contagem pública", () => {
+it("mostra com selo a linha com matéria específica e sem página judicial do processo", () => {
   const ficha = fixtureProfile()
   ficha.processos = [
     ...ficha.processos!,
-    { ...ficha.processos![0], id: "proc-sem-fonte", url_fonte: "https://noticias.example/processo" },
+    { ...ficha.processos![0], id: "proc-sem-fonte", url_fonte: "https://noticias.example/2026/08/tribunal-mantem-condenacao" },
+  ]
+  ficha.total_processos = 2
+  const dto = toPublicCandidatoProfileDto(ficha)
+  assert.equal(dto.processos.length, 2)
+  assert.equal(dto.total_processos, 2)
+  assert.equal(dto.processos_omitidos_sem_fonte_oficial, 0)
+  assert.equal(dto.processos[0].url_fonte, "https://comunica.pje.jus.br/consulta?numeroProcesso=40049106520258260506")
+  assert.equal(dto.processos[0].fonte_nivel, "oficial")
+  assert.equal(dto.processos[1].fonte_nivel, "em_confirmacao")
+})
+
+it("omite da lista e da contagem a linha cujo link é raiz de site", () => {
+  const ficha = fixtureProfile()
+  ficha.processos = [
+    ...ficha.processos!,
+    { ...ficha.processos![0], id: "proc-raiz", url_fonte: "https://noticias.example" },
   ]
   ficha.total_processos = 2
   const dto = toPublicCandidatoProfileDto(ficha)
   assert.equal(dto.processos.length, 1)
   assert.equal(dto.total_processos, 1)
-  assert.equal(dto.processos[0].url_fonte, "https://comunica.pje.jus.br/consulta?numeroProcesso=40049106520258260506")
+  assert.equal(dto.processos_omitidos_sem_fonte_oficial, 1)
 })
 
 it("DTO preserva a contagem omitida para impedir zero falso", () => {
@@ -514,6 +560,11 @@ describe("public profile DTO", () => {
     assert.equal(dto.pontos_atencao[0].descricao, "")
     assert.equal(dto.gastos_parlamentares[0].gastos_destaque[0].descricao, "")
     assert.deepEqual(findForbiddenPublicProfileKeys(dto), [])
+  })
+
+  it("expõe o ID oficial da votação na metadata pública", () => {
+    const dto = toPublicCandidatoProfileDto(fixtureProfile())
+    assert.equal(dto.votos[0].votacao?.votacao_id_api, "123-45")
   })
 
   it("normaliza detalhamento legado em objeto sem derrubar a ficha", () => {

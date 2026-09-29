@@ -149,6 +149,9 @@ async function runSanctions(scenario: Scenario) {
     const reply = (body: unknown, status = 200) => new Response(JSON.stringify(body), {
       status, headers: { "content-type": "application/json" },
     })
+    if (url.pathname === "/rest/v1/candidaturas_fase_2026_publico" && method === "GET") {
+      return reply({ code: "PGRST205", message: "Could not find the table candidaturas_fase_2026_publico in the schema cache" }, 404)
+    }
     if (url.pathname === "/rest/v1/candidatos_publico" && method === "GET") {
       return reply(Number(url.searchParams.get("offset") ?? 0) === 0
         ? [{ slug: "teste", nome_completo: "Pessoa de Teste" }] : [])
