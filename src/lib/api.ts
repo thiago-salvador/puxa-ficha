@@ -34,7 +34,6 @@ import {
 } from "@/lib/financiamento-despesas-leitura"
 import { ensureCurrentCandidacyInHistory, normalizeHistoricoPoliticoForDisplay } from "@/lib/historico-dedupe"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
-import { nivelFonteProcesso } from "@/lib/djen-consulta-url"
 import { normalizeFinanciamentoForDisplay, normalizePatrimonioForDisplay } from "@/lib/person-level-dedupe"
 import { sanitizeFinanciamentoForPublic, sanitizeMaioresDoadoresForPublic } from "@/lib/financiamento-public"
 import {
@@ -71,6 +70,14 @@ import {
 } from "@/lib/candidate-section-freshness"
 import { isSenadoEnabled, shouldExposeCargo } from "@/lib/senado-feature"
 import { projectProcessosVerificacaoRow } from "@/lib/processos-verificacao-public"
+import {
+  aplicarProcessosJusticaAosComparaveis,
+  aplicarProcessosJusticaAosResumos,
+  contarProcessosJudiciaisPorCandidato,
+  CRITERIO_CONTAGEM_PROCESSOS,
+  filtrarProcessosJudiciaisContaveis,
+} from "@/lib/processos-justica-candidato"
+import type { ProcessosJusticaContagem } from "@/lib/processos-justica-total"
 import { normalizeFotoCredito } from "@/lib/foto-credito"
 import { parseFederalAcervoReceiptDetail, projectFederalAcervoReceipts } from "@/lib/federal-acervo-receipts"
 export { mergeSourceMessages, mergeSourceStatuses } from "@/lib/data-resource"
@@ -1926,10 +1933,7 @@ async function getCandidatoBySlugFromRelationResource(
     financiamentoVerificacoes,
   )
   const processosBrutos = processos.data ?? []
-  const processosPublicos = processosBrutos.flatMap((row) => {
-    const fonte_nivel = nivelFonteProcesso(row)
-    return fonte_nivel ? [{ ...row, fonte_nivel }] : []
-  })
+  const processosPublicos = filtrarProcessosJudiciaisContaveis(processosBrutos)
   const gastosParlamentaresPublicos = (gastos.data ?? []).filter((row) =>
     !gastoParlamentarEmRevisao(candidato.slug, row.ano),
   )
@@ -2311,7 +2315,14 @@ export interface CandidatoResumo {
    * fica no servidor para o payload público continuar pequeno.
    */
   patrimonio_atipico: boolean
+  /**
+   * Total da contagem única (`contarProcessosJustica`): judiciais + disciplinares
+   * do Conselho de Ética, o mesmo número do KPI da ficha. Aplicado depois do
+   * cache em `getCandidatosComResumoResource`.
+   */
   processos: number
+  /** Partes do total: judicial (a que o cache guarda) e disciplinar por casa. */
+  processos_contagem?: ProcessosJusticaContagem
   pontos_atencao: number
 }
 
@@ -2337,11 +2348,8 @@ async function fetchPublicProcessCountsByCandidateIds(
       if (error || !data) {
         throw new DegradedDataError("A consulta das fontes judiciais falhou; a contagem não pode ser cacheada como zero.")
       }
-      for (const row of data) {
-        // Mesma regra da ficha (processosPublicos): oficial ou com selo "Fonte em confirmação".
-        if (!nivelFonteProcesso(row)) continue
-        counts.set(row.candidato_id, (counts.get(row.candidato_id) ?? 0) + 1)
-      }
+      // Mesmo critério da ficha (filtrarProcessosJudiciaisContaveis): a contagem única.
+      contarProcessosJudiciaisPorCandidato(data, CRITERIO_CONTAGEM_PROCESSOS, counts)
       if (data.length < 1000) break
     }
   }
@@ -2510,7 +2518,9 @@ export async function getCandidatosComResumoResource(
     return degradedResource([], "A cobertura do Senado está desativada nesta consulta.")
   }
   try {
-    const resource = await getCachedCandidatosComResumoResource(cargo, estado)
+    const cached = await getCachedCandidatosComResumoResource(cargo, estado)
+    // Fora do cache: o dataset disciplinar vem no bundle e muda a cada deploy.
+    const resource = { ...cached, data: aplicarProcessosJusticaAosResumos(cached.data) }
     return !isSenadoEnabled() && !cargo
       ? { ...resource, data: resource.data.filter((row) => row.candidato.cargo_disputado !== "Senador") }
       : resource
@@ -2678,7 +2688,9 @@ export async function getCandidatosComparaveisResource(
     return degradedResource([], "A cobertura do Senado está desativada nesta consulta.")
   }
   try {
-    return await getCachedCandidatosComparaveisResource(cargo, estado)
+    const cached = await getCachedCandidatosComparaveisResource(cargo, estado)
+    // Fora do cache, como no resumo: total_processos passa a ser a contagem única.
+    return { ...cached, data: aplicarProcessosJusticaAosComparaveis(cached.data) }
   } catch (error) {
     return degradedFromError(error, [] as CandidatoComparavel[])
   }

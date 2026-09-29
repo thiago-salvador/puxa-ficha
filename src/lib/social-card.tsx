@@ -8,6 +8,8 @@ import { fixedCopy, formatCargoDisputadoPublicLabel, formatVoteBadgeLabel } from
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { estadoValorPatrimonio } from "@/lib/patrimonio-contexto"
 import { processosOverviewDisplay } from "@/lib/processos-display"
+import { exibicaoProcessosJustica } from "@/lib/processos-justica-total"
+import { contarProcessosJusticaDoCandidato } from "@/lib/processos-justica-candidato"
 import { formatDate } from "@/lib/utils"
 
 // ── Dimensions ────────────────────────────────────────────
@@ -209,12 +211,17 @@ export function extractCardData(
   const pontosExibidos = pontos.filter((p) => p.titulo).slice(0, 3)
 
   // Mesma régua da ficha e do embed: zero só com busca confirmada e atual.
-  const processosDisplay = processosOverviewDisplay(
-    ficha.total_processos,
-    ficha.processos_criminais,
-    ficha.processos_verificacao,
-    now,
-    ficha.processos_omitidos_sem_fonte_oficial ?? 0,
+  // Contagem única (judiciais + disciplinares), o mesmo número do KPI da ficha.
+  const processosContagem = contarProcessosJusticaDoCandidato(ficha.slug, ficha.total_processos ?? 0)
+  const processosDisplay = exibicaoProcessosJustica(
+    processosOverviewDisplay(
+      ficha.total_processos,
+      ficha.processos_criminais,
+      ficha.processos_verificacao,
+      now,
+      ficha.processos_omitidos_sem_fonte_oficial ?? 0,
+    ),
+    processosContagem,
   )
   const processosComContagem =
     typeof processosDisplay.value === "number" && processosDisplay.value > 0
@@ -241,7 +248,7 @@ export function extractCardData(
     // Zero que é ausência de valor (anexo, lista sem valores) não vira "R$ 0".
     patrimonio: latest && estadoValorPatrimonio(latest) !== "valor_nao_informado" ? fmtCompact(latest.valor_total) : "N/D",
     patrimonioAno: latest ? String(latest.ano_eleicao) : null,
-    processos: ficha.total_processos ?? 0,
+    processos: processosContagem.total,
     processosCriminais: ficha.processos_criminais ?? 0,
     processosResumo: {
       valor: String(processosDisplay.value),

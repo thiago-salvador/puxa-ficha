@@ -4,6 +4,7 @@
 // ============================================
 
 import type { VerificacaoCampos } from "@/lib/verificacao-campos";
+import type { ProcessosJusticaContagem } from "@/lib/processos-justica-total";
 
 // --- Candidato ---
 export interface Candidato {
@@ -841,7 +842,13 @@ export interface CandidatoComparavel {
   idade: number | null;
   formacao: string | null;
   formacao_instituicao?: string | null;
+  /**
+   * Na resposta de `getCandidatosComparaveisResource`, total da contagem única
+   * (judiciais + disciplinares do Conselho de Ética), o mesmo da ficha.
+   */
   total_processos: number;
+  /** Partes de `total_processos`: judicial e disciplinar por casa. */
+  processos_contagem?: ProcessosJusticaContagem;
   processos_omitidos_sem_fonte_oficial?: number;
   processos_verificacao?: ProcessosVerificacao | null;
   mudancas_partido: number;

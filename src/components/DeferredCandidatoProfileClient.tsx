@@ -1,4 +1,5 @@
 "use client"
+// cspell:ignore exibicao
 
 // cspell:words camara
 
@@ -6,7 +7,7 @@ import { useEffect, useState, type ComponentType } from "react"
 import type { CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
 import type { FichaCandidato } from "@/lib/types"
 import { processosOverviewDisplay } from "@/lib/processos-display"
-import { contarProcessosJustica, legendaProcessosJustica } from "@/lib/processos-justica-total"
+import { contarProcessosJustica, exibicaoProcessosJustica } from "@/lib/processos-justica-total"
 import { formatCompact } from "@/lib/utils"
 import type { ProgramaGovernoManifestoPublico } from "@/lib/programa-governo"
 import type { SenadoRunningMatesPayload } from "@/components/SenadoRunningMates"
@@ -87,10 +88,7 @@ function CandidatoProfileSkeleton({ overview }: { overview: DeferredProfileOverv
     judiciais: overview.processos,
     disciplinares: overview.processosDisciplinares ?? [],
   })
-  const processosValor = processosJustica.disciplinares > 0 ? processosJustica.total : processosDisplay.value
-  const processosSub = processosJustica.disciplinares > 0
-    ? legendaProcessosJustica(processosJustica)
-    : processosDisplay.sub
+  const { value: processosValor, sub: processosSub } = exibicaoProcessosJustica(processosDisplay, processosJustica)
   return (
     <section className="mx-auto max-w-7xl px-5 py-8 md:px-12 lg:py-12" aria-busy="true" aria-labelledby="candidate-profile-loading-title">
       <h2 id="candidate-profile-loading-title" className="sr-only">Carregando detalhes da ficha</h2>

@@ -15,7 +15,9 @@ function heroCargo(cargo: string): string | undefined {
 
 type HeroResumo = {
   patrimonio: number | null
+  /** Total da contagem única por candidato (judicial + disciplinar), o mesmo da ficha. */
   processos: number
+  processos_contagem?: { disciplinares: number }
   candidato: {
     cargo_disputado: string
     estado?: string | null
@@ -44,6 +46,8 @@ export type HomeHeroMetrics = {
   totalCandidatos: number | null
   totalPatrimonio: number | null
   totalProcessos: number | null
+  /** Parte disciplinar de `totalProcessos`, para a legenda do hero. */
+  totalProcessosDisciplinares: number | null
 }
 
 function recorteHero(
@@ -70,6 +74,7 @@ export function getHomeHeroMetrics(
       totalCandidatos,
       totalPatrimonio: null,
       totalProcessos: null,
+      totalProcessosDisciplinares: null,
     }
   }
 
@@ -81,6 +86,10 @@ export function getHomeHeroMetrics(
     ),
     totalProcessos: recorte.reduce(
       (sum, resumo) => sum + resumo.processos,
+      0
+    ),
+    totalProcessosDisciplinares: recorte.reduce(
+      (sum, resumo) => sum + (resumo.processos_contagem?.disciplinares ?? 0),
       0
     ),
   }
