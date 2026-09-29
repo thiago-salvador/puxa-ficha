@@ -516,7 +516,8 @@ describe("classificador puro (#136)", () => {
     // L7 editorial (20260929010000): --gate PG17 mediu 430 + 105 = 535.
     // L8 Mesa (20260929020000), DML com guarda pf.replay: 431 + 105 = 536.
     // Despesas de campanha (20260929100000), DDL da tabela financiamento_despesas: 432 + 105 = 537.
-    assert.equal(manifesto.aplicadas_esperadas, 432)
+    // G5 (20260929110000), 1 processo em 2 fichas, DML com guarda pf.replay: 433 + 105 = 538.
+    assert.equal(manifesto.aplicadas_esperadas, 433)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
@@ -648,6 +649,29 @@ describe("classificador puro (#136)", () => {
     assert.match(migration, /'2052422-44\.2025\.8\.26\.0000'/)
     assert.doesNotMatch(migration, /1003777-02\.2024\.8\.26\.0562|2002493-39\.2023\.8\.08\.0024/)
     assert.doesNotMatch(migration, /[/]Users[/]/)
+    assert.equal(
+      TODAS_COM_REPLAY_SCHEMA.find((item) => item.arquivo === arquivo)?.replaySchema,
+      false,
+    )
+  })
+
+  test("G5 publica 1 CNJ em 2 fichas só por INSERT, com guarda de ausência e sem schema", () => {
+    const arquivo = "20260929110000_g5_processo_hana_helder.sql"
+    const migration = readFileSync(join("supabase", "migrations", arquivo), "utf8")
+    const classificacao = classificarMigration(arquivo, migration)
+    assert.equal(classificacao.classe, "curadoria")
+    assert.equal(classificacao.replay, "replicavel")
+    assert.equal(classificacao.temGuard, true)
+    assert.equal((migration.match(/^  -- @write tabela=processos slug=/gm) ?? []).length, 2)
+    // Duas descrições e o LIKE da pós-condição.
+    assert.equal((migration.match(/'Pedidos julgados improcedentes em 1ª instância; remessa necessária no TRF1\. [A-Z]/g) ?? []).length, 2)
+    assert.match(migration, /descricao LIKE 'Pedidos julgados improcedentes em 1ª instância; remessa necessária no TRF1\. %'/)
+    assert.equal((migration.match(/'curadoria-g5-20260929: Comunicações processuais oficiais do DJEN\/CNJ - processo 0009421-71\.2009\.4\.01\.3900'/g) ?? []).length, 3)
+    assert.match(migration, /IF soma <> 2 THEN RAISE EXCEPTION 'g5-processo: processos inseridos %'/)
+    assert.match(migration, /IF n <> 2 THEN RAISE EXCEPTION 'g5-processo: recibos de processos %'/)
+    assert.match(migration, /CNJ já existe na ficha; recusar duplicação/)
+    assert.doesNotMatch(migration, /^\s*(UPDATE|DELETE)\b/im)
+    assert.doesNotMatch(migration, /[/]Users[/]|\b\d{3}\.\d{3}\.\d{3}-\d{2}\b/)
     assert.equal(
       TODAS_COM_REPLAY_SCHEMA.find((item) => item.arquivo === arquivo)?.replaySchema,
       false,
