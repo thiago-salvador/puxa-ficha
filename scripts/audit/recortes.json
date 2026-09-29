@@ -760,6 +760,13 @@
       "ate": "20260927020000",
       "allowlist": "scripts/audit/allowlist-partido-paulo-mourao-20260927.json",
       "divida": null
+    },
+    {
+      "nome": "processos-l13-senado-20260928",
+      "desde": "20260928010000",
+      "ate": "20260928010000",
+      "allowlist": "scripts/audit/allowlist-processos-l13-senado-20260928.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

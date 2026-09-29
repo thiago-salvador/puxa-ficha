@@ -63,8 +63,8 @@ export function selecionarReciboChecagens(raw: unknown, identity: IdentidadeReci
   const escopo = raw.agencias.filter((agencia): agencia is string => typeof agencia === "string" && agencia.trim().length > 0)
   if (agencias.some((agencia) => !escopo.includes(agencia))) return null
   const naoResponderam = escopo.filter((agencia) => !agencias.includes(agencia))
-  // Ausência só se afirma com todas as agências respondendo.
-  if (row.result === "vazio_confirmado" && naoResponderam.length > 0) return null
+  // Ausência admite no máximo uma agência sem resposta, nomeada no texto (espelha MAX_AGENCIAS_SEM_RESPOSTA_NA_AUSENCIA).
+  if (row.result === "vazio_confirmado" && naoResponderam.length > 1) return null
   // Janela malformada ou de agência que não respondeu invalida o recibo: o texto não pode esconder o limite de data.
   let janelas: ReciboChecagensVisivel["janelas"] = []
   if (row.janelas !== undefined) {

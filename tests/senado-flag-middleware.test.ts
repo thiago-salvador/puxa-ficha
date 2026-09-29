@@ -45,7 +45,13 @@ describe("middleware: rota do Senado atrás da flag", () => {
       env.SENADO_ENABLED = "true"
       const response = await middleware(request(pathname))
       assert.notEqual(response.status, 404)
-      assert.equal(response.headers.get("x-middleware-next"), "1")
+      // Sigla fora da forma canônica (/uf/SP, /uf/%73p) recebe 308 para
+      // /uf/sp/senado; o resto passa direto.
+      if (response.status === 308) {
+        assert.equal(new URL(response.headers.get("location")!).pathname, "/uf/sp/senado")
+      } else {
+        assert.equal(response.headers.get("x-middleware-next"), "1")
+      }
     })
   }
 

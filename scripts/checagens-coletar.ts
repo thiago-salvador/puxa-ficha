@@ -5,6 +5,7 @@
  *     [--catalogo scripts/data/checagens-recibos.json] [--gravar-log]
  *   npm run coletar:checagens -- --de-recibos DIR/recibos.json [--roster R] [--catalogo ...] [--salvar-recibos S] [--gravar-log]
  *     (reaplica a regra de homônimo com o cadastro da rodada: DIR/roster.json ou --roster)
+ *     [--decisoes D.json]  (aplica decisões da Mesa e da validação aos leads em revisão, depois do homônimo)
  *   npm run coletar:checagens -- --retomar DIR/recibos.json --out DIR2  (refaz recibos com erro ou com agência sem resposta)
  *
  * Sem `--gravar-log` é dry-run: grava só os arquivos de saída. Com a flag, os
@@ -31,8 +32,10 @@ import {
   entradaColetaDoRecibo,
   POLITICA_CHECAGENS,
   BloqueioDeTaxa,
+  aplicarDecisoesMesa,
   aplicarRegraHomonimo,
   gruposDeHomonimos,
+  validarDecisoesChecagens,
   mesclarRecibos,
   resumirColeta,
   type CandidatoChecagem,
@@ -134,26 +137,31 @@ function chavesHomonimos(roster: readonly CandidatoChecagem[]): Set<string> {
   return new Set(gruposDeHomonimos(roster).keys())
 }
 
-async function registrarRecibosExistentes(arquivo: string, catalogoPath: string | undefined, gravarLog: boolean, rosterPath: string | undefined, salvarPath: string | undefined): Promise<number> {
+async function registrarRecibosExistentes(arquivo: string, catalogoPath: string | undefined, gravarLog: boolean, rosterPath: string | undefined, salvarPath: string | undefined, decisoesPath?: string): Promise<number> {
   const cadastro = rosterPath ?? resolve(dirname(arquivo), "roster.json")
-  const recibos = reaplicarHomonimos(lerRecibos(arquivo), cadastro)
+  const comHomonimo = reaplicarHomonimos(lerRecibos(arquivo), cadastro)
+  // Decisões depois do homônimo: a regra de homônimo recalcula a partir dos leads crus.
+  const decididos = decisoesPath ? aplicarDecisoesMesa(comHomonimo, validarDecisoesChecagens(JSON.parse(readFileSync(decisoesPath, "utf8")))) : null
+  const recibos = decididos?.recibos ?? comHomonimo
   const homonimos = chavesHomonimos(JSON.parse(readFileSync(cadastro, "utf8")) as CandidatoChecagem[])
-  // Guarda exatamente o que foi importado, com a regra aplicada: é a proveniência do catálogo.
-  if (salvarPath) writeFileSync(salvarPath, JSON.stringify({ schema_version: "checagens-recibos-v1", origem: arquivo, execucao: EXECUCAO, receipts: recibos }, null, 2) + "\n")
+  // Guarda o que foi importado, com a regra de homônimo e antes das decisões: o catálogo é
+  // função deste arquivo e do arquivo de decisões, e reimportar com as mesmas decisões o reproduz.
+  if (salvarPath) writeFileSync(salvarPath, JSON.stringify({ schema_version: "checagens-recibos-v1", origem: arquivo, execucao: EXECUCAO, receipts: comHomonimo }, null, 2) + "\n")
   if (catalogoPath) {
     const caminho = resolve(catalogoPath)
     const anterior = existsSync(caminho) ? JSON.parse(readFileSync(caminho, "utf8")) as CatalogoRecibosChecagens : null
     writeFileSync(caminho, JSON.stringify(consolidarCatalogoRecibos(anterior, recibos, new Date(), homonimos), null, 2) + "\n")
   }
   const linhas = gravarLog ? await gravarColetaLog(recibos) : 0
-  console.log(JSON.stringify({ ...resumirColeta(recibos), origem: arquivo, execucao: EXECUCAO, gravou_log: gravarLog, linhas_log: linhas }))
+  console.log(JSON.stringify({ ...resumirColeta(recibos), origem: arquivo, execucao: EXECUCAO, gravou_log: gravarLog, linhas_log: linhas,
+    ...(decididos ? { decisoes_aplicadas: decididos.aplicadas, decisoes_sem_lead: decididos.sem_lead, mesa_restante: recibos.reduce((total, recibo) => total + (recibo.mesa?.length ?? 0), 0) } : {}) }))
   return 0
 }
 
 export async function executarColetaChecagens(argv = process.argv.slice(2)): Promise<number> {
   const { valores, flags } = opcoes(argv)
   if (flags.has("help")) {
-    console.log("Uso: coletar:checagens [--roster ARQUIVO] [--slugs a,b] [--out DIR] [--catalogo ARQUIVO] [--concorrencia N] [--pausa-ms N] [--intervalo-host-ms N] [--espera-bloqueio-ms N] [--retomar recibos.json] [--sem-google] [--parar-no-bloqueio] [--gravar-log]")
+    console.log("Uso: coletar:checagens [--roster ARQUIVO] [--slugs a,b] [--out DIR] [--catalogo ARQUIVO] [--concorrencia N] [--pausa-ms N] [--intervalo-host-ms N] [--espera-bloqueio-ms N] [--retomar recibos.json] [--de-recibos recibos.json [--decisoes D.json]] [--sem-google] [--parar-no-bloqueio] [--gravar-log]")
     return 0
   }
   const inicio = new Date()
@@ -161,7 +169,8 @@ export async function executarColetaChecagens(argv = process.argv.slice(2)): Pro
   if (deRecibos) {
     const rosterDaRodada = valores.get("roster")
     const salvar = valores.get("salvar-recibos")
-    return registrarRecibosExistentes(resolve(deRecibos), valores.get("catalogo"), flags.has("gravar-log"), rosterDaRodada ? resolve(rosterDaRodada) : undefined, salvar ? resolve(salvar) : undefined)
+    const decisoes = valores.get("decisoes")
+    return registrarRecibosExistentes(resolve(deRecibos), valores.get("catalogo"), flags.has("gravar-log"), rosterDaRodada ? resolve(rosterDaRodada) : undefined, salvar ? resolve(salvar) : undefined, decisoes ? resolve(decisoes) : undefined)
   }
   const retomar = valores.get("retomar")
   // Política e cadastro da rodada anterior são validados antes de qualquer

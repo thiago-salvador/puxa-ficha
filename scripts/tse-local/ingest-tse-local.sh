@@ -86,7 +86,7 @@ fi
 [ "$(stat -f %u "$credenciais")" = "$(id -u)" ] || falhar "arquivo de credenciais precisa ser deste usuário"
 [ "$(stat -f %Lp "$credenciais")" = "600" ] || falhar "arquivo de credenciais precisa de chmod 600"
 url_supabase=""; chave_supabase=""; salt=""; modo_config=""; sha_plano_config=""
-sha_arquivo_plano=""; sha_relatorio=""; sha_familia=""; sha_historico=""; sha_coorte=""; sha_projecao=""; dir_revisado=""; recibos_pos_turno=""
+sha_arquivo_plano=""; sha_relatorio=""; sha_familia=""; sha_historico=""; sha_coorte=""; sha_projecao=""; sha_identidade=""; arquivo_identidade=""; dir_revisado=""; recibos_pos_turno=""
 while IFS= read -r linha || [ -n "$linha" ]; do
   case "$linha" in ""|"#"*) continue ;; esac
   nome="${linha%%=*}"; valor="${linha#*=}"
@@ -102,6 +102,8 @@ while IFS= read -r linha || [ -n "$linha" ]; do
     TSE_LOCAL_EXPECTED_HISTORY_SHA) sha_historico="$valor" ;;
     TSE_LOCAL_EXPECTED_COHORT_SHA) sha_coorte="$valor" ;;
     TSE_LOCAL_EXPECTED_PROJECTION_SHA) sha_projecao="$valor" ;;
+    TSE_LOCAL_IDENTITY_REVIEWED) arquivo_identidade="$valor" ;;
+    TSE_LOCAL_EXPECTED_IDENTITY_SHA) sha_identidade="$valor" ;;
     TSE_LOCAL_REVIEWED_RUN_DIR) dir_revisado="$valor" ;;
     TSE_LOCAL_RECIBOS) recibos_pos_turno="$valor" ;;
     *) falhar "chave não permitida no arquivo de credenciais: $nome" ;;
@@ -116,7 +118,7 @@ if [ -n "$expected_plan_sha" ] && [[ ! "$expected_plan_sha" =~ ^[a-fA-F0-9]{64}$
   falhar "TSE_LOCAL_EXPECTED_PLAN_SHA precisa ser um SHA-256 hexadecimal de 64 caracteres"
 fi
 [ -n "$recibos_pos_turno" ] && [ -f "$recibos_pos_turno" ] || falhar "TSE_LOCAL_RECIBOS precisa apontar ao snapshot pós-turno"
-for hash in "$sha_arquivo_plano" "$sha_relatorio" "$sha_familia" "$sha_historico" "$sha_coorte" "$sha_projecao"; do
+for hash in "$sha_arquivo_plano" "$sha_relatorio" "$sha_familia" "$sha_historico" "$sha_coorte" "$sha_projecao" "$sha_identidade"; do
   if [ -n "$hash" ] && [[ ! "$hash" =~ ^[a-fA-F0-9]{64}$ ]]; then falhar "SHA-256 revisado inválido"; fi
 done
 expected_plan_sha_lower="$(printf '%s' "$expected_plan_sha" | tr 'A-F' 'a-f')"
@@ -131,6 +133,12 @@ export SUPABASE_URL="$url_supabase"
 export SUPABASE_SERVICE_ROLE_KEY="$chave_supabase"
 export PF_DOADOR_CPF_HASH_SALT="$salt"
 export PF_KEEP_TSE_DOWNLOADS=1
+export TSE_LOCAL_IDENTITY_REVIEWED="$arquivo_identidade"
+export TSE_LOCAL_EXPECTED_IDENTITY_SHA="$sha_identidade"
+if [ -n "$arquivo_identidade" ]; then [ -f "$arquivo_identidade" ] || falhar "arquivo de identidade revisada ausente"; fi
+if [ "$local_mode" = "live" ] && { [ -n "$arquivo_identidade" ] || [ -n "$sha_identidade" ]; }; then
+  [ -n "$arquivo_identidade" ] && [ -n "$sha_identidade" ] || falhar "live exige arquivo e SHA da identidade revisada juntos"
+fi
 if [ "$local_mode" = "live" ]; then
   [ -n "$expected_plan_sha" ] || falhar "TSE_LOCAL_EXPECTED_PLAN_SHA é obrigatório no modo live"
   [ -n "$sha_arquivo_plano" ] && [ -n "$sha_relatorio" ] && [ -n "$sha_familia" ] && [ -n "$sha_historico" ] && [ -n "$sha_coorte" ] && [ -n "$sha_projecao" ] && [ -d "$dir_revisado" ] ||

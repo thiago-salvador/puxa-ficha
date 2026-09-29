@@ -100,6 +100,10 @@ async function main() {
   const env = readEnv(envPath)
   const headers = { apikey: env.SUPABASE_SERVICE_ROLE_KEY, Authorization: `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}` }
   const slugs = [...new Set(GASTOS_PARLAMENTARES_EM_REVISAO.map(([slug]) => slug))]
+  if (slugs.length === 0) {
+    console.log("Nenhuma ficha em revisão: preflight sem consulta.")
+    return
+  }
   const candidateUrl = new URL(`${env.SUPABASE_URL}/rest/v1/candidatos`)
   candidateUrl.searchParams.set("select", "id,slug")
   candidateUrl.searchParams.set("slug", `in.(${slugs.join(",")})`)

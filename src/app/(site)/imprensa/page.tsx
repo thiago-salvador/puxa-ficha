@@ -1,135 +1,210 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
-import { getImprensaDatasetCached } from "@/lib/imprensa-cache"
-import { normalizeImprensaFilters } from "@/lib/imprensa-data"
+import { ArrowRight, ArrowUpRight } from "lucide-react"
+import { SlashDivider } from "@/components/SlashDivider"
+import { ImprensaFacts } from "@/components/imprensa/ImprensaFacts"
+import { ImprensaSubnav } from "@/components/imprensa/ImprensaSubnav"
+import { SalaSearchTrigger } from "@/components/imprensa/SalaSearchTrigger"
+import { TrustFooter } from "@/components/imprensa/TrustFooter"
+import { buildSalaPromise, buildSalaUpdates, countSalaRecortes } from "@/components/imprensa/sala/sala-model"
 import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
-import { IMPRENSA_UFS, labelProcessState, labelState } from "@/lib/imprensa-uf-pack"
+import { getImprensaAtualizacoes } from "@/lib/imprensa-atualizacoes"
+import { getImprensaDatasetCached, type ImprensaPageDataset } from "@/lib/imprensa-cache"
+import { normalizeImprensaFilters } from "@/lib/imprensa-data"
+import { computeImprensaFacts } from "@/lib/imprensa-facts"
+import { IMPRENSA_STATE_CHOOSER_ID, imprensaHref, imprensaUfPath } from "@/lib/imprensa-nav"
+import { getImprensaUfName, IMPRENSA_UFS } from "@/lib/imprensa-uf-pack"
 import { isSenadoEnabled } from "@/lib/senado-feature"
-import styles from "./imprensa.module.css"
+import styles from "./sala.module.css"
 
-// cspell:ignore numeros confianca
+// cspell:words numeros confianca atualizacoes presidencia homonimos
 
 export const metadata: Metadata = {
   title: "Imprensa | Puxa Ficha",
-  description: "Informações, fontes, recortes e ferramentas públicas do Puxa Ficha para apuração jornalística.",
+  description: "Fatos do dia com fonte oficial, pacotes por estado, mudanças verificadas no TSE e ferramentas públicas do Puxa Ficha para apuração jornalística.",
   alternates: { canonical: "/imprensa" },
 }
 
-const aviso = "Confira os dados na fonte original antes de publicar."
+const NUMBER = new Intl.NumberFormat("pt-BR")
 
-function counts(rows: Array<{ cargo: string; uf: string | null; sites: { estado: string }; chapa: { estado: string; suplentesEstado: string }; processos: { estado: string; quantidadeEmConfirmacao?: number } }>) {
-  const by = (subset: typeof rows, pick: (row: (typeof rows)[number]) => string) => Object.fromEntries(
-    [...new Set(subset.map(pick))].sort().map((key) => [key, subset.filter((row) => pick(row) === key).length]),
-  )
-  const viceRows = rows.filter((row) => row.cargo === "Presidente" || row.cargo === "Governador")
-  const senateRows = rows.filter((row) => row.cargo === "Senador")
-  return {
-    cargos: by(rows, (row) => row.cargo),
-    ufs: new Set(rows.map((row) => row.uf).filter(Boolean)).size,
-    processos: by(rows, (row) => row.processos.estado),
-    processosComSelo: rows.filter((row) => (row.processos.quantidadeEmConfirmacao ?? 0) > 0).length,
-    sites: by(rows, (row) => row.sites.estado),
-    vice: by(viceRows, (row) => row.chapa.estado),
-    suplentes: by(senateRows, (row) => row.chapa.suplentesEstado),
-  }
+function candidatos(total: number): string {
+  return `${NUMBER.format(total)} ${total === 1 ? "candidato" : "candidatos"}`
 }
 
 export default async function ImprensaSala() {
   const alertsEnabled = isAlertsEmailFeatureEnabled()
   const senateEnabled = isSenadoEnabled()
-  let summary: ReturnType<typeof counts> | null = null
-  let generatedAt: string | null = null
-  try {
-    const dataset = await getImprensaDatasetCached(normalizeImprensaFilters({}))
-    summary = counts(dataset.rows)
-    generatedAt = dataset.generatedAt
-  } catch {
-    // Uma falha de consulta não deve parecer uma contagem igual a zero.
-  }
+  const [dataset, atualizacoes] = await Promise.all([
+    getImprensaDatasetCached(normalizeImprensaFilters({})).then(
+      (value): ImprensaPageDataset | null => value,
+      () => null,
+    ),
+    getImprensaAtualizacoes(),
+  ])
+  const rows = dataset?.rows ?? []
+  const facts = dataset ? computeImprensaFacts(rows) : null
+  const recortes = dataset ? countSalaRecortes(rows) : null
+  const updates = atualizacoes.status === "available" ? buildSalaUpdates(atualizacoes.updates, rows) : []
+  const promiseCargos = dataset
+    ? facts!.porCargo.map((item) => item.cargo)
+    : senateEnabled ? ["Presidente", "Governador", "Senador"] : ["Presidente", "Governador"]
+  const promise = buildSalaPromise(dataset ? rows.length : null, promiseCargos)
+  const alerts = alertsEnabled
+    ? { href: "/imprensa/mesa#alertas", title: "Alerta por estado", text: "Mudanças verificadas do recorte, por email." }
+    : { href: imprensaHref("/imprensa/atualizacoes"), title: "Mudanças verificadas", text: "Registro público do que mudou nas fontes oficiais." }
 
   return (
-    <main className={styles.shell}>
+    <div className={styles.shell}>
+      <ImprensaSubnav current="sala" generatedAt={dataset?.generatedAt ?? null} />
+
       <header className={styles.hero}>
+        <Image src="/images/hero-dossie.webp" alt="" fill sizes="100vw" loading="eager" fetchPriority="high" className={styles.heroImage} />
+        <div className={styles.heroShade} aria-hidden="true" />
         <div className={styles.heroInner}>
-          <p className={styles.eyebrow}>Puxa Ficha · imprensa</p>
+          <p className={styles.eyebrow}>Eleições 2026 · Fontes oficiais</p>
           <h1 className={styles.heroTitle}>Sala de imprensa</h1>
-          <p className={styles.heroCopy}>Fontes, recortes e ferramentas públicas para consultar informações sobre candidaturas e conferir cada dado na origem.</p>
-          <p role="note" className={styles.salaNotice}>{aviso}</p>
+          <p className={styles.heroCopy}>{promise}</p>
+          <div className={styles.heroSearch}>
+            <SalaSearchTrigger className={styles.searchTrigger} />
+          </div>
+          <nav aria-label="Tarefas de imprensa" className={styles.heroButtons}>
+            <Link className={styles.pill} href={`#${IMPRENSA_STATE_CHOOSER_ID}`}>Escolher meu estado <ArrowRight aria-hidden="true" className={styles.arrow} /></Link>
+            <Link className={styles.pillGhost} href={imprensaHref("/imprensa/mesa")}>Abrir a Mesa <ArrowRight aria-hidden="true" className={styles.arrow} /></Link>
+          </nav>
+          <SlashDivider className={styles.heroDivider} color="text-white" />
+          <div role="note" className={styles.heroNotice}>
+            <strong>Confira os dados na fonte original antes de publicar.</strong>
+            <span>Processo listado não equivale a condenação. Falta de dado não significa zero.</span>
+          </div>
         </div>
       </header>
 
       <div className={styles.content}>
-      <nav aria-label="Tarefas de imprensa" className={styles.taskLinks}>
-        <Link href="/imprensa/mesa">Achar fonte sobre um candidato</Link>
-        <a href="/api/imprensa/export?format=csv">Baixar recorte</a>
-        <Link href={alertsEnabled ? "/imprensa/mesa#alertas" : "/imprensa/atualizacoes"}>Receber atualizações</Link>
-      </nav>
-
-      <div className={styles.salaSections}>
-        <section id="o-que-e" className={styles.salaSection} aria-labelledby="o-que-e-title">
-          <h2 id="o-que-e-title" className={styles.salaTitle}>O que é e o que não é</h2>
-          <p className="mt-3 max-w-3xl leading-7">O Puxa Ficha reúne informações públicas de candidaturas e suas fontes. Não recomenda voto. Um processo listado não equivale a condenação. Falta de dado não significa zero.</p>
+        <section id="numeros" className={styles.section} aria-labelledby="numeros-title">
+          <SectionHead num="01" id="numeros-title">Nos dados de hoje</SectionHead>
+          <p className={styles.lead}>Cada número conta candidatos ou registros a partir de um campo oficial, com o denominador e a ressalva ao lado. O link abre a Mesa já ordenada ou filtrada.</p>
+          <div className={styles.block}>
+            {facts
+              ? <ImprensaFacts facts={facts} scopeLabel="Brasil" linkToMesa />
+              : <Unavailable title="Fatos indisponíveis agora">Não foi possível consultar a base da Mesa. Uma falha de consulta não significa zero.</Unavailable>}
+          </div>
         </section>
 
-        <section id="numeros" className={styles.salaSection} aria-labelledby="numeros-title">
-          <h2 id="numeros-title" className={styles.salaTitle}>Números da base</h2>
-          {summary ? <>
-            <p className="mt-2">{Object.values(summary.cargos).reduce((sum, n) => sum + n, 0)} candidatos · {summary.ufs} UFs com registros · consulta em {generatedAt ? new Date(generatedAt).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short", timeZone: "UTC" }) + " UTC" : "sem data"}</p>
-            <div className={styles.statsGrid}>
-              <CountCard title="Candidatos por cargo" values={summary.cargos} labels="cargo" />
-              <CountCard title="Processos por estado do dado" values={summary.processos} labels="processos" />
-              <CountCard title="Sites por estado do dado" values={summary.sites} />
-              <CountCard title="Vice (Presidente e Governador)" values={summary.vice} />
-              {Object.keys(summary.suplentes).length > 0 && <CountCard title="Suplentes (Senador)" values={summary.suplentes} />}
-            </div>
-            <p className="mt-3">Os candidatos foram buscados pelo nome no Diário de Justiça Eletrônico Nacional. Quando o nome aparece sem um segundo dado oficial que confirme a pessoa, o processo não é publicado, para não atribuir a alguém o processo de um homônimo.</p>
-            {summary.processosComSelo > 0 && <p className="mt-3">{summary.processosComSelo} candidato{summary.processosComSelo === 1 ? " tem" : "s têm"} processo com fonte oficial em confirmação: o registro aparece na ficha com esse aviso e ainda falta localizar a página do próprio tribunal.</p>}
-          </> : <p role="status" className="mt-3">Contagens temporariamente indisponíveis. Uma falha de consulta não representa zero.</p>}
-        </section>
+        <SlashDivider />
 
-        <section id="confianca" className={styles.salaSection} aria-labelledby="confianca-title">
-          <h2 id="confianca-title" className={styles.salaTitle}>Fontes e confiança</h2>
-          <p className="mt-3 leading-7">Consulte as fontes oficiais e o SHA-256 dos arquivos do TSE na Mesa. Cada grupo de dados informa seu estado e a data disponível. O código do projeto usa Apache-2.0; correções podem ser acompanhadas por issue ou pull request.</p>
-          <Link className="mt-3 inline-block underline" href="/imprensa/mesa#dicionario">Ver estados e dicionário de campos</Link>
-        </section>
-
-        <section id="pautas" className={styles.salaSection} aria-labelledby="pautas-title">
-          <h2 id="pautas-title" className={styles.salaTitle}>Recortes para apuração</h2>
-          <p className="mt-3">Abra a Mesa e aplique os filtros. Os links não antecipam achados.</p>
-          <div className="mt-3 flex flex-wrap gap-4"><Link className="underline" href="/imprensa/mesa?cargo=Presidente">Presidência</Link><Link className="underline" href="/imprensa/mesa?cargo=Governador">Governos estaduais</Link>{senateEnabled ? <Link className="underline" href="/imprensa/mesa?cargo=Senador">Senado</Link> : null}</div>
-        </section>
-
-        <section id="pacotes-uf" className={styles.salaSection} aria-labelledby="pacotes-uf-title">
-          <h2 id="pacotes-uf-title" className={styles.salaTitle}>Pacotes por UF</h2>
-          <p className="mt-3">Abra um recorte estadual com candidatos por cargo, fichas, chapas, mudanças verificadas e lacunas.</p>
-          <nav className={styles.ufLinks} aria-label="Pacotes de imprensa por UF">
-            {IMPRENSA_UFS.map((uf) => <Link key={uf} href={`/imprensa/uf/${uf.toLowerCase()}`}>{uf}</Link>)}
-          </nav>
-        </section>
-
-        <section id="ferramentas" className={styles.salaSection} aria-labelledby="ferramentas-title">
-          <h2 id="ferramentas-title" className={styles.salaTitle}>Ferramentas</h2>
-          <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-            <li><Link className="underline" href="/imprensa/mesa">Mesa de apuração</Link></li>
-            <li><a className="underline" href="/api/imprensa/export?format=csv">Baixar CSV</a> · <a className="underline" href="/api/imprensa/export?format=json">Baixar JSON</a></li>
-            <li><Link className="underline" href="/embed">Embed</Link> · <Link className="underline" href="/imprensa/mesa#linhas">Card público nas fichas</Link></li>
-            <li><Link className="underline" href="/comparar">Comparador</Link> · <Link className="underline" href={alertsEnabled ? "/imprensa/mesa#alertas" : "/imprensa/atualizacoes"}>Alertas por cargo e UF</Link></li>
-            <li><Link className="underline" href="/imprensa/mesa#linhas">Como citar</Link></li>
-            <li>Cota parlamentar por ano: <a className="underline" href="/api/imprensa/export/gastos?format=csv">CSV</a> · <a className="underline" href="/api/imprensa/export/gastos?format=json">JSON</a></li>
-            <li><Link className="underline" href="/dados-abertos">Cadastro de candidatos em dados abertos</Link></li>
+        <section id={IMPRENSA_STATE_CHOOSER_ID} className={styles.section} aria-labelledby="estados-title">
+          <SectionHead num="02" id="estados-title">Escolha seu estado</SectionHead>
+          <p className={styles.lead}>Cada pacote reúne os fatos, os candidatos, as chapas e as mudanças daquele recorte. O número é de candidatos com linha pública na Mesa.</p>
+          {recortes ? null : <Unavailable title="Contagens indisponíveis agora">Os pacotes continuam abertos. Uma falha de consulta não significa que o estado não tem candidatos.</Unavailable>}
+          <ul className={styles.ufGrid} aria-label="Pacotes de imprensa">
+            <li className={styles.ufPresidencia}>
+              <Link href={imprensaHref("/imprensa/presidencia")} className={styles.ufLink}>
+                <span className={styles.ufCode}>Presidência</span>
+                <span className={styles.ufName}>Candidatos a presidente, sem UF</span>
+                {recortes ? <span className={styles.ufCount}>{candidatos(recortes.presidencia)}</span> : null}
+              </Link>
+            </li>
+            {IMPRENSA_UFS.map((uf, index) => (
+              <li key={uf}>
+                <Link href={imprensaUfPath(uf)} className={styles.ufLink}>
+                  <span className={styles.ufCode}>{uf}</span>
+                  <span className={styles.ufName}>{getImprensaUfName(uf)}</span>
+                  {recortes ? <span className={styles.ufCount}>{candidatos(recortes.ufs[index].total)}</span> : null}
+                </Link>
+              </li>
+            ))}
           </ul>
         </section>
 
-        <section id="kit" className={styles.salaSection} aria-labelledby="kit-title"><h2 id="kit-title" className={styles.salaTitle}>Kit de imprensa</h2><p className="mt-3">Textos, capturas da Sala, PDF e respostas para perguntas frequentes.</p><Link className="mt-3 inline-block underline" href="/imprensa/kit">Abrir kit de imprensa</Link></section>
-        <section id="contato" className={styles.salaSection} aria-labelledby="contato-title"><h2 id="contato-title" className={styles.salaTitle}>Contato</h2><p className="mt-3">Para dúvidas e correções: <a className="underline" href="mailto:contato@puxaficha.com.br">contato@puxaficha.com.br</a>.</p></section>
-        <section id="perguntas" className={styles.salaSection} aria-labelledby="perguntas-title"><h2 id="perguntas-title" className={styles.salaTitle}>Perguntas frequentes</h2><p className="mt-3">Quem faz e quem financia o projeto? Consulte as informações em <Link className="underline" href="/sobre">Sobre</Link>.</p></section>
-        <section id="atualizacoes" className={styles.salaSection} aria-labelledby="atualizacoes-title"><h2 id="atualizacoes-title" className={styles.salaTitle}>Atualizações e frescor</h2><p className="mt-3"><Link className="underline" href="/imprensa/atualizacoes">Atualizações verificadas</Link> · <Link className="underline" href="/imprensa/frescor">Frescor das fontes</Link></p></section>
+        <SlashDivider />
+
+        <section id="atualizacoes" className={styles.section} aria-labelledby="atualizacoes-title">
+          <SectionHead num="03" id="atualizacoes-title">O que mudou no TSE</SectionHead>
+          <p className={styles.lead}>As mudanças mais recentes conferidas com a fonte oficial. A data é a da detecção da mudança, não a do fato.</p>
+          {atualizacoes.status === "unavailable" ? (
+            <Unavailable title="Mudanças indisponíveis agora">Não foi possível consultar o registro. Uma falha de consulta não significa que nada mudou.</Unavailable>
+          ) : updates.length === 0 ? (
+            <p role="status" className={styles.empty}>Nenhuma mudança verificada registrada até agora.</p>
+          ) : (
+            <ol className={styles.updates} aria-label="Mudanças verificadas mais recentes">
+              {updates.map((item) => (
+                <li key={item.id} className={styles.update}>
+                  <time dateTime={item.detectedAt} className={styles.updateDate}>{item.dateLabel}</time>
+                  <div className={styles.updateBody}>
+                    {item.context ? <p className={styles.updateContext}>{item.context}</p> : null}
+                    <p className={styles.updateChange}>{item.change}</p>
+                  </div>
+                  <p className={styles.updateLinks}>
+                    {item.fichaUrl ? <Link href={item.fichaUrl}>Ficha</Link> : null}
+                    <a href={item.sourceUrl} target="_blank" rel="noreferrer">Fonte oficial<ArrowUpRight aria-hidden="true" className={styles.arrowSmall} /></a>
+                  </p>
+                </li>
+              ))}
+            </ol>
+          )}
+          <Link className={styles.moreLink} href={imprensaHref("/imprensa/atualizacoes")}>
+            {atualizacoes.status === "available" && typeof atualizacoes.total === "number" && atualizacoes.total > 0
+              ? `Ver as ${NUMBER.format(atualizacoes.total)} mudanças verificadas`
+              : "Ver o registro de mudanças"}
+            <ArrowRight aria-hidden="true" className={styles.arrow} />
+          </Link>
+        </section>
       </div>
+
+      <div id="confianca" className={styles.trustWrap}>
+        <TrustFooter homonimos={facts ? facts.processos.indeterminado : null} />
       </div>
-    </main>
+
+      <section id="ferramentas" className={styles.toolsBand} aria-labelledby="ferramentas-title">
+        <div className={styles.toolsInner}>
+          <h2 id="ferramentas-title" className={styles.toolsTitle}>Para a matéria</h2>
+          <ul className={styles.toolsList}>
+            <Tool title="Mesa de apuração" text="Ordenar, filtrar e abrir cada linha com as fontes." href={imprensaHref("/imprensa/mesa")} />
+            <li>
+              <strong>CSV e JSON</strong>
+              <span>Todas as linhas da Mesa, com o estado de cada dado.</span>
+              <span className={styles.toolLinks}>
+                <a href="/api/imprensa/export?format=csv" download>CSV</a>
+                <a href="/api/imprensa/export?format=json" download>JSON</a>
+              </span>
+            </li>
+            <li>
+              <strong>Cota parlamentar por ano</strong>
+              <span>Gastos na Câmara e no Senado, por candidato e ano.</span>
+              <span className={styles.toolLinks}>
+                <a href="/api/imprensa/export/gastos?format=csv" download>CSV</a>
+                <a href="/api/imprensa/export/gastos?format=json" download>JSON</a>
+              </span>
+            </li>
+            <Tool title="Embed" text="Ficha ou comparação para colar na matéria." href="/embed" />
+            <Tool title="Comparador" text="Candidatos lado a lado, com as mesmas fontes." href="/comparar" />
+            <Tool title={alerts.title} text={alerts.text} href={alerts.href} />
+            <Tool id="kit" title="Kit de imprensa" text="Textos, logo, capturas, PDF e perguntas frequentes." href={imprensaHref("/imprensa/kit")} />
+            <Tool title="Dados abertos" text="Cadastro de candidatos para baixar." href="/dados-abertos" />
+          </ul>
+          <p id="quem-faz" className={styles.whoMakes}>
+            Quem faz e quem financia o projeto está em <Link href="/sobre">Sobre</Link>. Bio, logo e textos prontos estão no <Link href={imprensaHref("/imprensa/kit")}>Kit de imprensa</Link>.
+          </p>
+        </div>
+      </section>
+    </div>
   )
 }
 
-function CountCard({ title, values, labels = "state" }: { title: string; values: Record<string, number>; labels?: "cargo" | "state" | "processos" }) {
-  return <div className={styles.countCard}><h3>{title}</h3><ul>{Object.entries(values).map(([label, value]) => <li key={label} className="flex justify-between gap-4"><span>{labels === "cargo" ? label : labels === "processos" ? labelProcessState(label) : labelState(label)}</span><strong>{value}</strong></li>)}</ul></div>
+function SectionHead({ num, id, children }: { num: string; id: string; children: React.ReactNode }) {
+  return <div className={styles.sectionHead}><span className={styles.sectionNum} aria-hidden="true">{num}</span><h2 id={id} className={styles.sectionTitle}>{children}</h2></div>
+}
+
+function Unavailable({ title, children }: { title: string; children: React.ReactNode }) {
+  return <div role="status" className={styles.unavailable}><strong>{title}</strong><p>{children}</p></div>
+}
+
+function Tool({ id, title, text, href }: { id?: string; title: string; text: string; href: string }) {
+  return (
+    <li id={id}>
+      <Link href={href} className={styles.toolLink}><strong>{title}</strong><ArrowRight aria-hidden="true" className={styles.arrowSmall} /></Link>
+      <span>{text}</span>
+    </li>
+  )
 }

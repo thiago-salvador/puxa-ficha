@@ -7,6 +7,8 @@ import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { fixedCopy, formatCargoDisputadoPublicLabel, formatVoteBadgeLabel } from "@/lib/ui-labels"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { estadoValorPatrimonio } from "@/lib/patrimonio-contexto"
+import { processosOverviewDisplay } from "@/lib/processos-display"
+import { formatDate } from "@/lib/utils"
 
 // ── Dimensions ────────────────────────────────────────────
 export type CardFormat = "feed" | "story"
@@ -76,15 +78,14 @@ const FOREGROUND = "#0a0a0a"
 const SURFACE = "#fafafa"
 const BORDER = "#e5e5e5"
 const MUTED = "#737373"
-const MUTED_SOFT = "#a3a3a3"
 const CRITICAL = "#b91c1c"
 const FONT_SANS = "PF Inter"
 const FONT_HEADING = "PF Anton"
 const CARD_NOTICE = "Confira os dados na fonte original antes de publicar."
 
-function CardNotice() {
+function CardNotice({ size }: { size: number }) {
   return (
-    <div style={{ display: "flex", alignItems: "center", background: "#fff7ed", border: "1px solid #111111", padding: "12px 16px", color: "#7c2d12", fontFamily: FONT_SANS, fontSize: 18, fontWeight: 700, lineHeight: 1.2 }}>
+    <div style={{ display: "flex", alignItems: "center", background: "#fff7ed", border: "1px solid #111111", padding: `${Math.round(size * 0.65)}px ${Math.round(size * 0.9)}px`, color: "#7c2d12", fontFamily: FONT_SANS, fontSize: size, fontWeight: 700, lineHeight: 1.2 }}>
       {CARD_NOTICE}
     </div>
   )
@@ -117,6 +118,59 @@ async function getSocialCardFonts() {
 
 // ── Data extraction ───────────────────────────────────────
 
+const PROCESSO_CAVEAT = "Processo não é condenação"
+
+const MAX_CARD_SOURCES = 6
+
+/**
+ * Siglas públicas por domínio. O card lista a fonte dos blocos que exibe, e a
+ * URL da fonte é o dado que existe em todos eles; o título do link é manchete
+ * e não serve de nome de órgão.
+ */
+const KNOWN_SOURCE_HOSTS: ReadonlyArray<readonly [string, string]> = [
+  ["tse.jus.br", "TSE"],
+  ["camara.leg.br", "Câmara"],
+  ["senado.leg.br", "Senado"],
+  ["tcu.gov.br", "TCU"],
+  ["portaltransparencia.gov.br", "Portal da Transparência"],
+  ["cnj.jus.br", "CNJ"],
+  ["pje.jus.br", "CNJ"],
+  ["stf.jus.br", "STF"],
+  ["stj.jus.br", "STJ"],
+]
+
+/** Nome curto da fonte a partir da URL: sigla conhecida ou o próprio domínio. */
+export function cardSourceLabelFromUrl(url: string | null | undefined): string | null {
+  let host: string
+  try {
+    host = new URL(url ?? "").hostname.toLowerCase().replace(/^www\./, "")
+  } catch {
+    return null
+  }
+  if (!host) return null
+  for (const [domain, label] of KNOWN_SOURCE_HOSTS) {
+    if (host === domain || host.endsWith(`.${domain}`)) return label
+  }
+  // tcm.ba.gov.br → TCM-BA, tce.sp.gov.br → TCE-SP
+  const regional = host.match(/^(tc[emu]|tj|mp)\.([a-z]{2})\.(?:gov|jus|mp)\.br$/)
+  if (regional) return `${regional[1].toUpperCase()}-${regional[2].toUpperCase()}`
+  // tre-ba.jus.br → TRE-BA
+  const tre = host.match(/^tre-([a-z]{2})\.jus\.br$/)
+  if (tre) return `TRE-${tre[1].toUpperCase()}`
+  // tjsp.jus.br → TJSP, tjdft.jus.br → TJDFT, mpba.mp.br → MPBA
+  const compact = host.match(/^(tj|mp)([a-z]{2,3})\.(?:jus|mp)\.br$/)
+  if (compact) return `${compact[1]}${compact[2]}`.toUpperCase()
+  return host
+}
+
+interface CardProcessos {
+  /** Número verificado ou "—" (estado neutro, nunca zero sem evidência). */
+  valor: string
+  nota?: string
+  /** Há contagem positiva publicada: exige a ressalva de que processo não é condenação. */
+  comContagem: boolean
+}
+
 interface CardData {
   nome: string
   partido: string
@@ -127,18 +181,24 @@ interface CardData {
   patrimonioAno: string | null
   processos: number
   processosCriminais: number
+  processosResumo: CardProcessos
   trocasPartido: number
   votacoes: number
   destaques: number
   alertasGraves: number
   attentionHighlights: string[]
   topVotos: { titulo: string; voto: string }[]
+  /** Fontes dos blocos exibidos no card, sem repetição. */
+  fontes: string[]
+  /** `ultima_atualizacao` da ficha em dd/mm/aaaa; null quando ausente ou inválida. */
+  atualizadoEm: string | null
   slug: string
 }
 
 export function extractCardData(
   ficha: FichaCandidato,
   photoDataUri: string | null,
+  now = new Date(),
 ): CardData {
   const patrimonio = ficha.patrimonio ?? []
   const sorted = [...patrimonio].sort((a, b) => a.ano_eleicao - b.ano_eleicao)
@@ -146,10 +206,31 @@ export function extractCardData(
   const pontos = ficha.pontos_atencao ?? []
   const { alertasGraves } = classifyAttentionPoints(pontos)
   const votos = ficha.votos ?? []
-  const destaquePontos = pontos
-    .filter((p) => p.titulo)
-    .slice(0, 3)
-    .map((p) => sanitizePtBrText(p.titulo))
+  const pontosExibidos = pontos.filter((p) => p.titulo).slice(0, 3)
+
+  // Mesma régua da ficha e do embed: zero só com busca confirmada e atual.
+  const processosDisplay = processosOverviewDisplay(
+    ficha.total_processos,
+    ficha.processos_criminais,
+    ficha.processos_verificacao,
+    now,
+    ficha.processos_omitidos_sem_fonte_oficial ?? 0,
+  )
+  const processosComContagem =
+    typeof processosDisplay.value === "number" && processosDisplay.value > 0
+
+  const fontes: string[] = ["TSE"]
+  const addFonte = (label: string | null | undefined) => {
+    const trimmed = label?.trim()
+    if (trimmed && trimmed.length <= 32 && !fontes.includes(trimmed)) fontes.push(trimmed)
+  }
+  if (processosComContagem) for (const processo of ficha.processos ?? []) addFonte(processo.tribunal)
+  for (const voto of votos) addFonte(voto.votacao?.casa)
+  for (const ponto of pontosExibidos) {
+    for (const fonte of ponto.fontes ?? []) addFonte(cardSourceLabelFromUrl(fonte.url))
+  }
+
+  const atualizadoEm = ficha.ultima_atualizacao ? formatDate(ficha.ultima_atualizacao) : null
 
   return {
     nome: ficha.nome_urna,
@@ -162,17 +243,136 @@ export function extractCardData(
     patrimonioAno: latest ? String(latest.ano_eleicao) : null,
     processos: ficha.total_processos ?? 0,
     processosCriminais: ficha.processos_criminais ?? 0,
+    processosResumo: {
+      valor: String(processosDisplay.value),
+      nota: processosDisplay.sub,
+      comContagem: processosComContagem,
+    },
     trocasPartido: ficha.total_mudancas_partido ?? 0,
     votacoes: votos.length,
     destaques: pontos.length,
     alertasGraves: alertasGraves.length,
-    attentionHighlights: destaquePontos,
+    attentionHighlights: pontosExibidos.map((p) => sanitizePtBrText(p.titulo)),
     topVotos: votos
       .filter((v) => v.votacao?.titulo)
       .slice(0, 3)
       .map((v) => ({ titulo: sanitizePtBrText(v.votacao!.titulo), voto: v.voto })),
+    fontes,
+    atualizadoEm: atualizadoEm && atualizadoEm !== "Data indisponível" ? atualizadoEm : null,
     slug: ficha.slug,
   }
+}
+
+interface CardMetric {
+  label: string
+  value: string
+  sub?: string
+  caveat?: string
+}
+
+/**
+ * Métricas publicáveis. Sem dado não é zero: trocas de partido e votações-chave
+ * só entram com contagem positiva (candidato sem mandato legislativo não tem
+ * votação a contar, e fusão partidária não é troca), e processos seguem a régua
+ * da ficha, que mostra "—" com o motivo quando a busca não autoriza o zero.
+ */
+function cardMetrics(data: CardData): CardMetric[] {
+  const metrics: CardMetric[] = [
+    {
+      label: "Patrimônio",
+      value: data.patrimonio,
+      sub: data.patrimonioAno ? `Declarado em ${data.patrimonioAno}` : undefined,
+    },
+    {
+      label: "Processos",
+      value: data.processosResumo.valor,
+      sub: data.processosResumo.nota,
+      caveat: data.processosResumo.comContagem ? PROCESSO_CAVEAT : undefined,
+    },
+  ]
+  if (data.trocasPartido > 0) metrics.push({ label: "Trocas de partido", value: String(data.trocasPartido) })
+  if (data.votacoes > 0) metrics.push({ label: fixedCopy.keyVotes, value: String(data.votacoes) })
+  return metrics
+}
+
+function sourcesLine(fontes: string[]): string {
+  const shown = fontes.slice(0, MAX_CARD_SOURCES)
+  const rest = fontes.length - shown.length
+  return `Fontes: ${shown.join(" · ")}${rest > 0 ? ` e mais ${rest}` : ""}`
+}
+
+function updatedLine(atualizadoEm: string | null): string {
+  return atualizadoEm ? `Dados atualizados em ${atualizadoEm}` : "Data de atualização indisponível"
+}
+
+// ── Sizing ────────────────────────────────────────────────
+
+interface CardScale {
+  padding: number
+  gap: number
+  photo: { width: number; height: number }
+  eyebrow: number
+  name: number
+  nameLong: number
+  metricLabel: number
+  metricValue: number
+  metricSub: number
+  panelEyebrow: number
+  panelTitle: number
+  panelDescription: number
+  item: number
+  itemLimit: number
+  voteBadge: number
+  brand: number
+  url: number
+  meta: number
+  notice: number
+}
+
+const SCALES: Record<CardFormat, CardScale> = {
+  feed: {
+    padding: 48,
+    gap: 16,
+    photo: { width: 168, height: 206 },
+    eyebrow: 17,
+    name: 96,
+    nameLong: 76,
+    metricLabel: 14,
+    metricValue: 46,
+    metricSub: 16,
+    panelEyebrow: 14,
+    panelTitle: 34,
+    panelDescription: 17,
+    item: 22,
+    itemLimit: 96,
+    voteBadge: 14,
+    brand: 36,
+    url: 17,
+    meta: 16,
+    notice: 18,
+  },
+  // Story é lido em pé no celular: tipo mínimo de 22 px e um único painel.
+  story: {
+    padding: 64,
+    gap: 24,
+    photo: { width: 300, height: 368 },
+    eyebrow: 26,
+    name: 116,
+    nameLong: 92,
+    metricLabel: 22,
+    metricValue: 84,
+    metricSub: 26,
+    panelEyebrow: 22,
+    panelTitle: 52,
+    panelDescription: 26,
+    item: 36,
+    itemLimit: 110,
+    voteBadge: 22,
+    brand: 60,
+    url: 26,
+    meta: 26,
+    notice: 28,
+  },
 }
 
 // ── Sub-components (Satori JSX) ───────────────────────────
@@ -203,6 +403,7 @@ function PhotoPortrait({
           objectFit: "cover",
           objectPosition: "center top",
           border: `1px solid ${BORDER}`,
+          flexShrink: 0,
         }}
       />
     )
@@ -224,6 +425,7 @@ function PhotoPortrait({
         fontSize: width * 0.34,
         lineHeight: 1,
         textTransform: "uppercase",
+        flexShrink: 0,
       }}
     >
       {initials(nome)}
@@ -231,83 +433,146 @@ function PhotoPortrait({
   )
 }
 
-function MetricCard({
-  label,
-  value,
-  sub,
-  minHeight = 132,
-  valueSize = 30,
-}: {
-  label: string
-  value: string | number
-  sub?: string
-  minHeight?: number
-  valueSize?: number
-}) {
+function Eyebrow({ text, size, color = MUTED }: { text: string; size: number; color?: string }) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        fontFamily: FONT_SANS,
+        fontSize: size,
+        fontWeight: 700,
+        letterSpacing: "0.12em",
+        textTransform: "uppercase",
+        color,
+      }}
+    >
+      {text}
+    </div>
+  )
+}
+
+function CardHeader({ data, scale }: { data: CardData; scale: CardScale }) {
+  const eyebrow = [data.partido, data.cargo, data.estado?.toUpperCase()]
+    .filter(Boolean)
+    .join(" · ")
+  const nameSize = data.nome.length > 16 ? scale.nameLong : scale.name
+
+  return (
+    <div style={{ display: "flex", alignItems: "flex-end", gap: `${scale.gap + 8}px` }}>
+      <PhotoPortrait
+        dataUri={data.photoDataUri}
+        nome={data.nome}
+        width={scale.photo.width}
+        height={scale.photo.height}
+      />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          flex: 1,
+          minWidth: 0,
+          paddingBottom: "4px",
+        }}
+      >
+        <Eyebrow text={eyebrow} size={scale.eyebrow} color={FOREGROUND} />
+        <div
+          style={{
+            display: "flex",
+            marginTop: "10px",
+            fontFamily: FONT_HEADING,
+            fontSize: nameSize,
+            lineHeight: 0.88,
+            letterSpacing: "-0.02em",
+            textTransform: "uppercase",
+            color: FOREGROUND,
+          }}
+        >
+          {data.nome}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function MetricCard({ metric, scale, valueSize }: { metric: CardMetric; scale: CardScale; valueSize: number }) {
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "flex-start",
         flex: 1,
-        minHeight,
-        padding: "18px 18px 16px",
+        minWidth: 0,
+        padding: `${Math.round(scale.gap * 1.1)}px ${Math.round(scale.gap * 1.2)}px`,
         borderRadius: "16px",
         background: BACKGROUND,
         border: `1px solid ${BORDER}`,
         boxSizing: "border-box",
       }}
     >
+      <Eyebrow text={metric.label} size={scale.metricLabel} />
       <div
         style={{
           display: "flex",
-          fontFamily: FONT_SANS,
-          fontSize: 12,
-          fontWeight: 700,
-          letterSpacing: "0.12em",
+          marginTop: `${Math.round(scale.gap * 0.75)}px`,
+          fontFamily: FONT_HEADING,
+          fontSize: valueSize,
+          lineHeight: 0.95,
+          letterSpacing: "-0.02em",
           textTransform: "uppercase",
-          color: MUTED,
+          color: FOREGROUND,
         }}
       >
-        {label}
+        {metric.value}
       </div>
-
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          marginTop: "12px",
-        }}
-      >
+      {metric.sub ? (
         <div
           style={{
             display: "flex",
-            fontFamily: FONT_HEADING,
-            fontSize: valueSize,
-            lineHeight: 0.92,
-            letterSpacing: "-0.02em",
-            textTransform: "uppercase",
+            marginTop: "8px",
+            fontFamily: FONT_SANS,
+            fontSize: scale.metricSub,
+            fontWeight: 500,
+            lineHeight: 1.3,
+            color: MUTED,
+          }}
+        >
+          {metric.sub}
+        </div>
+      ) : null}
+      {metric.caveat ? (
+        <div
+          style={{
+            display: "flex",
+            marginTop: "6px",
+            fontFamily: FONT_SANS,
+            fontSize: scale.metricSub,
+            fontWeight: 700,
+            lineHeight: 1.3,
             color: FOREGROUND,
           }}
         >
-          {String(value)}
+          {metric.caveat}
         </div>
-        {sub ? (
-          <div
-            style={{
-              display: "flex",
-              marginTop: "8px",
-              fontFamily: FONT_SANS,
-              fontSize: 13,
-              fontWeight: 500,
-              color: MUTED,
-            }}
-          >
-            {sub}
-          </div>
-        ) : null}
-      </div>
+      ) : null}
+    </div>
+  )
+}
+
+function MetricGrid({ metrics, scale, perRow }: { metrics: CardMetric[]; scale: CardScale; perRow: number }) {
+  const rows: CardMetric[][] = []
+  for (let i = 0; i < metrics.length; i += perRow) rows.push(metrics.slice(i, i + perRow))
+  // Quatro colunas no feed deixam 200 px por card: o valor encolhe para caber "R$ 84,9 MI".
+  const valueSize = perRow >= 4 ? Math.round(scale.metricValue * 0.8) : scale.metricValue
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: `${scale.gap}px` }}>
+      {rows.map((row) => (
+        <div key={row.map((m) => m.label).join("|")} style={{ display: "flex", gap: `${scale.gap}px` }}>
+          {row.map((metric) => (
+            <MetricCard key={metric.label} metric={metric} scale={scale} valueSize={valueSize} />
+          ))}
+        </div>
+      ))}
     </div>
   )
 }
@@ -317,17 +582,15 @@ function SectionPanel({
   title,
   description,
   tone = "neutral",
+  scale,
   children,
-  minHeight,
-  titleSize = 34,
 }: {
   eyebrow: string
   title: string
   description?: string
   tone?: "neutral" | "critical"
+  scale: CardScale
   children?: React.ReactNode
-  minHeight?: number
-  titleSize?: number
 }) {
   const isCritical = tone === "critical"
 
@@ -337,8 +600,8 @@ function SectionPanel({
         display: "flex",
         flexDirection: "column",
         flex: 1,
-        minHeight,
-        padding: "20px 22px",
+        minWidth: 0,
+        padding: `${Math.round(scale.gap * 1.3)}px ${Math.round(scale.gap * 1.4)}px`,
         borderRadius: "16px",
         background: BACKGROUND,
         border: `1px solid ${BORDER}`,
@@ -346,27 +609,14 @@ function SectionPanel({
         boxSizing: "border-box",
       }}
     >
+      <Eyebrow text={eyebrow} size={scale.panelEyebrow} color={isCritical ? CRITICAL : MUTED} />
       <div
         style={{
           display: "flex",
-          fontFamily: FONT_SANS,
-          fontSize: 11,
-          fontWeight: 700,
-          letterSpacing: "0.12em",
-          textTransform: "uppercase",
-          color: isCritical ? CRITICAL : MUTED,
-        }}
-      >
-        {eyebrow}
-      </div>
-
-      <div
-          style={{
-            display: "flex",
-            marginTop: "12px",
-            fontFamily: FONT_HEADING,
-            fontSize: titleSize,
-          lineHeight: 0.94,
+          marginTop: "10px",
+          fontFamily: FONT_HEADING,
+          fontSize: scale.panelTitle,
+          lineHeight: 0.95,
           letterSpacing: "-0.02em",
           textTransform: "uppercase",
           color: FOREGROUND,
@@ -374,15 +624,14 @@ function SectionPanel({
       >
         {title}
       </div>
-
       {description ? (
         <div
           style={{
             display: "flex",
             marginTop: "10px",
             fontFamily: FONT_SANS,
-            fontSize: 14,
-            lineHeight: 1.45,
+            fontSize: scale.panelDescription,
+            lineHeight: 1.4,
             fontWeight: 500,
             color: MUTED,
           }}
@@ -390,14 +639,13 @@ function SectionPanel({
           {description}
         </div>
       ) : null}
-
       {children ? (
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "9px",
-            marginTop: "14px",
+            gap: `${Math.round(scale.gap * 0.8)}px`,
+            marginTop: `${scale.gap}px`,
           }}
         >
           {children}
@@ -407,122 +655,26 @@ function SectionPanel({
   )
 }
 
-function VoteRow({ titulo, voto }: { titulo: string; voto: string }) {
-  const isSim = voto === "sim"
-
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "10px",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          padding: "4px 10px",
-          borderRadius: "999px",
-          border: `1px solid ${isSim ? FOREGROUND : BORDER}`,
-          background: isSim ? FOREGROUND : BACKGROUND,
-          color: isSim ? BACKGROUND : MUTED,
-          fontFamily: FONT_SANS,
-          fontSize: 11,
-          fontWeight: 700,
-          letterSpacing: "0.1em",
-          textTransform: "uppercase",
-          flexShrink: 0,
-        }}
-      >
-        {formatVoteBadgeLabel(voto).toUpperCase()}
-      </div>
-
-      <div
-        style={{
-          display: "flex",
-          flex: 1,
-          fontFamily: FONT_SANS,
-          fontSize: 15,
-          fontWeight: 600,
-          lineHeight: 1.35,
-          color: FOREGROUND,
-        }}
-      >
-        {truncate(titulo, 64)}
-      </div>
-    </div>
-  )
-}
-
-function FactRow({
-  label,
-  value,
-}: {
-  label: string
-  value: string
-}) {
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "6px",
-        borderTop: `1px solid ${BORDER}`,
-        paddingTop: "10px",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          fontFamily: FONT_SANS,
-          fontSize: 11,
-          fontWeight: 700,
-          letterSpacing: "0.12em",
-          textTransform: "uppercase",
-          color: MUTED,
-        }}
-      >
-        {label}
-      </div>
-      <div
-        style={{
-          display: "flex",
-          fontFamily: FONT_SANS,
-          fontSize: 13,
-          lineHeight: 1.4,
-          fontWeight: 600,
-          color: FOREGROUND,
-        }}
-      >
-        {value}
-      </div>
-    </div>
-  )
-}
-
 function HighlightRow({
   text,
-  tone = "neutral",
+  tone,
+  scale,
 }: {
   text: string
-  tone?: "neutral" | "critical"
+  tone: "neutral" | "critical"
+  scale: CardScale
 }) {
+  const dot = Math.max(6, Math.round(scale.item * 0.32))
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "flex-start",
-        gap: "10px",
-      }}
-    >
+    <div style={{ display: "flex", alignItems: "flex-start", gap: `${Math.round(scale.item * 0.55)}px` }}>
       <div
         style={{
           display: "flex",
-          width: "6px",
-          height: "6px",
+          width: dot,
+          height: dot,
           borderRadius: "999px",
           background: tone === "critical" ? CRITICAL : FOREGROUND,
-          marginTop: "7px",
+          marginTop: `${Math.round(scale.item * 0.5)}px`,
           flexShrink: 0,
         }}
       />
@@ -531,14 +683,145 @@ function HighlightRow({
           display: "flex",
           flex: 1,
           fontFamily: FONT_SANS,
-          fontSize: 14,
-          lineHeight: 1.4,
+          fontSize: scale.item,
+          lineHeight: 1.35,
           fontWeight: 600,
           color: FOREGROUND,
         }}
       >
-        {truncate(text, 86)}
+        {truncate(text, scale.itemLimit)}
       </div>
+    </div>
+  )
+}
+
+function VoteRow({ titulo, voto, scale }: { titulo: string; voto: string; scale: CardScale }) {
+  const isSim = voto === "sim"
+
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+      <div
+        style={{
+          display: "flex",
+          padding: "4px 12px",
+          borderRadius: "999px",
+          border: `1px solid ${isSim ? FOREGROUND : BORDER}`,
+          background: isSim ? FOREGROUND : BACKGROUND,
+          color: isSim ? BACKGROUND : MUTED,
+          fontFamily: FONT_SANS,
+          fontSize: scale.voteBadge,
+          fontWeight: 700,
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+          flexShrink: 0,
+        }}
+      >
+        {formatVoteBadgeLabel(voto).toUpperCase()}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flex: 1,
+          fontFamily: FONT_SANS,
+          fontSize: scale.item,
+          fontWeight: 600,
+          lineHeight: 1.35,
+          color: FOREGROUND,
+        }}
+      >
+        {truncate(titulo, Math.round(scale.itemLimit * 0.7))}
+      </div>
+    </div>
+  )
+}
+
+function AttentionPanel({ data, scale, withDescription, limit }: { data: CardData; scale: CardScale; withDescription: boolean; limit: number }) {
+  const tone = data.alertasGraves > 0 ? "critical" : "neutral"
+  const description = data.alertasGraves > 0
+    ? "Inclui pontos de atenção. Leia o contexto e as fontes na ficha."
+    : "Registros públicos citados na ficha, com fonte."
+
+  return (
+    <SectionPanel
+      eyebrow="Destaques"
+      title={`${data.destaques} destaque${data.destaques > 1 ? "s" : ""}`}
+      description={withDescription ? description : undefined}
+      tone={tone}
+      scale={scale}
+    >
+      {data.attentionHighlights.slice(0, limit).map((item) => (
+        <HighlightRow key={item} text={item} tone={tone} scale={scale} />
+      ))}
+    </SectionPanel>
+  )
+}
+
+function VotesPanel({ data, scale, limit }: { data: CardData; scale: CardScale; limit: number }) {
+  const votes = data.topVotos.slice(0, limit)
+  return (
+    <SectionPanel
+      eyebrow={fixedCopy.keyVotes}
+      title={`${data.votacoes} ${data.votacoes > 1 ? "votos" : "voto"} mapeado${data.votacoes > 1 ? "s" : ""}`}
+      scale={scale}
+    >
+      {votes.map((item) => (
+        <VoteRow key={`${item.titulo}-${item.voto}`} titulo={item.titulo} voto={item.voto} scale={scale} />
+      ))}
+    </SectionPanel>
+  )
+}
+
+function ReadMorePanel({ data, scale }: { data: CardData; scale: CardScale }) {
+  return (
+    <SectionPanel
+      eyebrow="Ficha completa"
+      title="Trajetória, dinheiro e fontes"
+      description={`Leia a ficha completa em puxaficha.com.br/candidato/${data.slug}`}
+      scale={scale}
+    />
+  )
+}
+
+function CardFooter({ data, scale }: { data: CardData; scale: CardScale }) {
+  const metaStyle = {
+    display: "flex",
+    fontFamily: FONT_SANS,
+    fontSize: scale.meta,
+    fontWeight: 500,
+    lineHeight: 1.35,
+    color: MUTED,
+  } as const
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: `${Math.round(scale.gap * 0.5)}px`,
+        borderTop: `1px solid ${BORDER}`,
+        paddingTop: `${scale.gap}px`,
+      }}
+    >
+      <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+        <div
+          style={{
+            display: "flex",
+            fontFamily: FONT_HEADING,
+            fontSize: scale.brand,
+            lineHeight: 0.9,
+            textTransform: "uppercase",
+            color: FOREGROUND,
+          }}
+        >
+          Puxa Ficha
+        </div>
+        <div style={{ display: "flex", fontFamily: FONT_SANS, fontSize: scale.url, fontWeight: 600, color: FOREGROUND }}>
+          {`puxaficha.com.br/candidato/${data.slug}`}
+        </div>
+      </div>
+      <div style={metaStyle}>{sourcesLine(data.fontes)}</div>
+      <div style={metaStyle}>{updatedLine(data.atualizadoEm)}</div>
+      <CardNotice size={scale.notice} />
     </div>
   )
 }
@@ -546,317 +829,28 @@ function HighlightRow({
 // ── Main builder ──────────────────────────────────────────
 
 export function buildSocialCardJsx(data: CardData, format: CardFormat) {
+  const scale = SCALES[format]
   const isStory = format === "story"
-  const url = `puxaficha.com.br/candidato/${data.slug}`
-  const eyebrow = [data.partido, data.cargo, data.estado?.toUpperCase()]
-    .filter(Boolean)
-    .join(" · ")
+  const metrics = cardMetrics(data)
+  const hasAttention = data.attentionHighlights.length > 0
+  const hasVotes = data.topVotos.length > 0
 
-  const attentionTitle = data.destaques > 0
-    ? `${data.destaques} destaque${data.destaques > 1 ? "s" : ""}`
-    : "Sem destaques"
-  const attentionDescription = data.alertasGraves > 0
-    ? "Há destaques editoriais públicos visíveis na ficha pública."
-    : data.destaques > 0
-      ? "Há destaques editoriais públicos, incluindo pontos positivos, na ficha pública."
-      : "Os principais dados públicos seguem organizados na ficha pública."
-
-  const voteItems = data.topVotos.slice(0, isStory ? 3 : 2)
-  const attentionItems = data.attentionHighlights.slice(0, 3)
-  const hasVotes = voteItems.length > 0
-  const profileSummary = data.processosCriminais > 0
-    ? `${data.processosCriminais} processo${data.processosCriminais > 1 ? "s" : ""} criminal${data.processosCriminais > 1 ? "is" : ""}`
-    : data.processos > 0
-      ? `${data.processos} processo${data.processos > 1 ? "s" : ""}`
-      : "Sem ocorrências"
-  const emptyAttentionFacts = [
-    <FactRow key="status" label="Status" value="Sem destaques públicos" />,
-    <FactRow key="leitura" label="Leitura" value="A ficha pública traz outros recortes editoriais" />,
-    <FactRow key="escopo" label="Escopo" value="Patrimônio, processos e trajetória no mesmo perfil" />,
-  ]
-  const emptyVoteFacts = [
-    <FactRow key="status" label="Status" value="Sem votos públicos" />,
-    <FactRow key="cobertura" label="Cobertura" value="Em expansão" />,
-    <FactRow key="perfil" label="Perfil" value="Leia no site" />,
-  ]
-
-  if (!isStory) {
-    return (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          padding: "42px",
-          background: BACKGROUND,
-          color: FOREGROUND,
-          border: `1px solid ${BORDER}`,
-          boxSizing: "border-box",
-          fontFamily: FONT_SANS,
-        }}
-      >
-        <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0 }}>
-          <div style={{ display: "flex", alignItems: "flex-end", gap: "24px" }}>
-            <PhotoPortrait
-              dataUri={data.photoDataUri}
-              nome={data.nome}
-              width={152}
-              height={184}
-            />
-
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                flex: 1,
-                minWidth: 0,
-                paddingBottom: "6px",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  fontFamily: FONT_SANS,
-                  fontSize: 12,
-                  fontWeight: 700,
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  color: FOREGROUND,
-                }}
-              >
-                {eyebrow}
-              </div>
-
-              <div
-                style={{
-                  display: "flex",
-                  marginTop: "6px",
-                  fontFamily: FONT_HEADING,
-                  fontSize: 76,
-                  lineHeight: 0.84,
-                  letterSpacing: "-0.025em",
-                  textTransform: "uppercase",
-                  color: FOREGROUND,
-                }}
-              >
-                {data.nome}
-              </div>
-
-              <div
-                style={{
-                  display: "flex",
-                  marginTop: "10px",
-                  maxWidth: "580px",
-                  fontFamily: FONT_SANS,
-                  fontSize: 16,
-                  lineHeight: 1.45,
-                  fontWeight: 500,
-                  color: MUTED,
-                }}
-              >
-                Visão geral da ficha pública, no mesmo repertório visual do produto: patrimônio, processos, partido e leitura editorial.
-              </div>
-            </div>
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              height: "1px",
-              background: BORDER,
-              marginTop: "24px",
-              marginBottom: "18px",
-            }}
-          />
-
-          <div
-            style={{
-              display: "flex",
-              gap: "14px",
-              flex: 1,
-              minHeight: 0,
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "14px",
-                width: "46%",
-                minHeight: 0,
-              }}
-            >
-              <div style={{ display: "flex", gap: "14px" }}>
-                <MetricCard
-                  label="Patrimônio"
-                  value={data.patrimonio}
-                  sub={data.patrimonioAno ? `Declarado em ${data.patrimonioAno}` : undefined}
-                  minHeight={112}
-                  valueSize={28}
-                />
-                <MetricCard
-                  label="Processos"
-                  value={data.processos}
-                  sub={
-                    data.processosCriminais > 0
-                      ? `${data.processosCriminais} processo${data.processosCriminais > 1 ? "s" : ""} criminal${data.processosCriminais > 1 ? "is" : ""}`
-                      : undefined
-                  }
-                  minHeight={112}
-                  valueSize={28}
-                />
-              </div>
-
-              <div style={{ display: "flex", gap: "14px" }}>
-                <MetricCard
-                  label="Trocas de partido"
-                  value={data.trocasPartido}
-                  minHeight={112}
-                  valueSize={28}
-                />
-                <MetricCard
-                  label={fixedCopy.keyVotes}
-                  value={data.votacoes}
-                  minHeight={112}
-                  valueSize={28}
-                />
-              </div>
-
-              <SectionPanel
-                eyebrow="Ficha pública"
-                title="Visão geral"
-                description="Mesmo tom editorial da ficha: dados organizados, fontes públicas claras e leitura rápida."
-                minHeight={0}
-                titleSize={24}
-              >
-                <FactRow label="Fontes consultadas" value="TSE / Câmara / Senado" />
-                <FactRow label="Justiça" value={profileSummary} />
-                <FactRow label="Site" value="puxaficha.com.br" />
-              </SectionPanel>
-            </div>
-
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "14px",
-                flex: 1,
-                minHeight: 0,
-              }}
-            >
-              <SectionPanel
-                eyebrow="Destaques"
-                title={attentionTitle}
-                description={attentionDescription}
-                tone={data.alertasGraves > 0 ? "critical" : "neutral"}
-                minHeight={0}
-                titleSize={24}
-              >
-                {attentionItems.length > 0
-                  ? attentionItems.map((item) => (
-                    <HighlightRow
-                      key={item}
-                      text={item}
-                      tone={data.alertasGraves > 0 ? "critical" : "neutral"}
-                    />
-                  ))
-                  : emptyAttentionFacts}
-              </SectionPanel>
-
-              <SectionPanel
-                eyebrow={fixedCopy.keyVotes}
-                title={hasVotes ? `${voteItems.length} votos mapeados` : "Sem votos mapeados"}
-                description={hasVotes ? "Recorte editorial das votações públicas de maior impacto." : "O monitoramento desta frente ainda está em expansão para este perfil."}
-                minHeight={0}
-                titleSize={24}
-              >
-                {hasVotes
-                  ? voteItems.map((item) => (
-                    <VoteRow key={`${item.titulo}-${item.voto}`} titulo={item.titulo} voto={item.voto} />
-                  ))
-                  : emptyVoteFacts}
-              </SectionPanel>
-            </div>
-          </div>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            alignItems: "flex-end",
-            justifyContent: "space-between",
-            borderTop: `1px solid ${BORDER}`,
-            marginTop: "18px",
-            paddingTop: "14px",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "6px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                fontFamily: FONT_HEADING,
-                fontSize: 32,
-                lineHeight: 0.9,
-                textTransform: "uppercase",
-                color: FOREGROUND,
-              }}
-            >
-              Puxa Ficha
-            </div>
-            <div
-              style={{
-                display: "flex",
-                fontFamily: FONT_SANS,
-                fontSize: 14,
-                fontWeight: 500,
-                color: MUTED,
-              }}
-            >
-              {url}
-            </div>
-            <div
-              style={{
-                display: "flex",
-                fontFamily: FONT_SANS,
-                fontSize: 12,
-                fontWeight: 500,
-                color: MUTED_SOFT,
-              }}
-            >
-              Dados públicos · TSE · Câmara · Senado
-            </div>
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              padding: "8px 14px",
-              borderRadius: "12px",
-              border: `1px solid ${BORDER}`,
-              background: SURFACE,
-              fontFamily: FONT_SANS,
-              fontSize: 15,
-              fontWeight: 700,
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              color: MUTED,
-            }}
-          >
-            2026
-          </div>
-        </div>
-        <CardNotice />
-      </div>
-    )
-  }
+  // Story leva um painel só; o feed põe destaques e votos lado a lado, e aí
+  // cada coluna tem metade da largura: dois itens, sem descrição, tipo menor.
+  const twoColumns = !isStory && hasAttention && hasVotes
+  const panelScale = twoColumns ? { ...scale, item: 19, itemLimit: 90 } : scale
+  const panels = isStory
+    ? [
+        hasAttention
+          ? <AttentionPanel key="destaques" data={data} scale={scale} withDescription={false} limit={3} />
+          : hasVotes
+            ? <VotesPanel key="votos" data={data} scale={scale} limit={3} />
+            : <ReadMorePanel key="ficha" data={data} scale={scale} />,
+      ]
+    : [
+        hasAttention ? <AttentionPanel key="destaques" data={data} scale={panelScale} withDescription={!twoColumns} limit={twoColumns ? 2 : 3} /> : null,
+        hasVotes ? <VotesPanel key="votos" data={data} scale={panelScale} limit={twoColumns ? 2 : 3} /> : null,
+      ].filter(Boolean)
 
   return (
     <div
@@ -866,7 +860,8 @@ export function buildSocialCardJsx(data: CardData, format: CardFormat) {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        padding: isStory ? "56px" : "44px",
+        gap: `${scale.gap}px`,
+        padding: `${scale.padding}px`,
         background: BACKGROUND,
         color: FOREGROUND,
         border: `1px solid ${BORDER}`,
@@ -874,269 +869,15 @@ export function buildSocialCardJsx(data: CardData, format: CardFormat) {
         fontFamily: FONT_SANS,
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          flex: 1,
-          minHeight: 0,
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "flex-end",
-            gap: isStory ? "36px" : "30px",
-          }}
-        >
-            <PhotoPortrait
-              dataUri={data.photoDataUri}
-              nome={data.nome}
-              width={236}
-              height={292}
-            />
-
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "flex-end",
-              flex: 1,
-              minWidth: 0,
-              paddingBottom: "4px",
-            }}
-          >
-            <div
-                style={{
-                  display: "flex",
-                  fontFamily: FONT_SANS,
-                  fontSize: 14,
-                  fontWeight: 700,
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                color: FOREGROUND,
-              }}
-            >
-              {eyebrow}
-            </div>
-
-            <div
-                style={{
-                  display: "flex",
-                  marginTop: "10px",
-                  fontFamily: FONT_HEADING,
-                  fontSize: 102,
-                  lineHeight: 0.84,
-                  letterSpacing: "-0.025em",
-                  textTransform: "uppercase",
-                color: FOREGROUND,
-              }}
-            >
-              {data.nome}
-            </div>
-
-            <div
-                style={{
-                  display: "flex",
-                  marginTop: "14px",
-                  maxWidth: "540px",
-                  fontFamily: FONT_SANS,
-                  fontSize: 18,
-                  lineHeight: 1.45,
-                  fontWeight: 500,
-                  color: MUTED,
-                }}
-              >
-                Visão geral da ficha pública: patrimônio, processos, partido e os recortes editoriais que ajudam a ler o perfil rápido.
-              </div>
-            </div>
-          </div>
-
-        <div
-          style={{
-              display: "flex",
-              height: "1px",
-              background: BORDER,
-              marginTop: "30px",
-              marginBottom: "22px",
-            }}
-          />
-
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "18px",
-            flex: 1,
-            minHeight: 0,
-          }}
-        >
-            <div
-              style={{
-                display: "flex",
-                gap: "18px",
-              }}
-            >
-              <MetricCard
-                label="Patrimônio"
-                value={data.patrimonio}
-                sub={data.patrimonioAno ? `Declarado em ${data.patrimonioAno}` : undefined}
-                minHeight={134}
-                valueSize={31}
-              />
-              <MetricCard
-                label="Processos"
-                value={data.processos}
-                sub={
-                  data.processosCriminais > 0
-                    ? `${data.processosCriminais} processo${data.processosCriminais > 1 ? "s" : ""} criminal${data.processosCriminais > 1 ? "is" : ""}`
-                    : undefined
-                }
-                minHeight={134}
-                valueSize={31}
-              />
-            </div>
-
-          <div
-            style={{
-              display: "flex",
-              gap: "18px",
-            }}
-          >
-              <MetricCard
-                label="Trocas de partido"
-                value={data.trocasPartido}
-                minHeight={134}
-                valueSize={31}
-              />
-              <MetricCard
-                label={fixedCopy.keyVotes}
-                value={data.votacoes}
-                minHeight={134}
-                valueSize={31}
-              />
-            </div>
-
-          <SectionPanel
-            eyebrow="Destaques"
-            title={attentionTitle}
-            description={attentionDescription}
-            tone={data.alertasGraves > 0 ? "critical" : "neutral"}
-            minHeight={0}
-            titleSize={26}
-          >
-            {attentionItems.length > 0
-              ? attentionItems.map((item) => (
-                <HighlightRow
-                  key={item}
-                  text={item}
-                  tone={data.alertasGraves > 0 ? "critical" : "neutral"}
-                />
-              ))
-              : emptyAttentionFacts}
-          </SectionPanel>
-
-          <SectionPanel
-            eyebrow={fixedCopy.keyVotes}
-            title={hasVotes ? `${voteItems.length} votos mapeados` : "Sem votos mapeados"}
-            description={hasVotes ? "Recorte editorial das votações públicas de maior impacto." : "Ainda não há votações-chave públicas registradas para este perfil."}
-            minHeight={0}
-            titleSize={26}
-          >
-            {hasVotes
-              ? voteItems.map((item) => (
-                <VoteRow key={`${item.titulo}-${item.voto}`} titulo={item.titulo} voto={item.voto} />
-              ))
-              : emptyVoteFacts}
-          </SectionPanel>
-
-          <SectionPanel
-            eyebrow="Fontes públicas"
-            title="TSE · Câmara · Senado"
-            description="Mesmo recorte público exibido na ficha do Puxa Ficha."
-            minHeight={0}
-            titleSize={24}
-          >
-            <FactRow label="Site" value="puxaficha.com.br" />
-            <FactRow label="Rota" value={`/${data.slug}`} />
-            <FactRow label="Ano" value="2026" />
-          </SectionPanel>
-        </div>
-
-      </div>
-
-      <div
-        style={{
-          display: "flex",
-          alignItems: "flex-end",
-          justifyContent: "space-between",
-          borderTop: `1px solid ${BORDER}`,
-          marginTop: isStory ? "26px" : "22px",
-          paddingTop: isStory ? "18px" : "16px",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "7px",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              fontFamily: FONT_HEADING,
-              fontSize: 34,
-              lineHeight: 0.9,
-              textTransform: "uppercase",
-              color: FOREGROUND,
-            }}
-          >
-            Puxa Ficha
-          </div>
-          <div
-            style={{
-              display: "flex",
-              fontFamily: FONT_SANS,
-              fontSize: 15,
-              fontWeight: 500,
-              color: MUTED,
-            }}
-          >
-            {url}
-          </div>
-          <div
-            style={{
-              display: "flex",
-              fontFamily: FONT_SANS,
-              fontSize: 13,
-              fontWeight: 500,
-              color: MUTED_SOFT,
-            }}
-          >
-            Dados públicos · TSE · Câmara · Senado
-          </div>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            padding: "8px 14px",
-            borderRadius: "12px",
-            border: `1px solid ${BORDER}`,
-            background: SURFACE,
-            fontFamily: FONT_SANS,
-            fontSize: 15,
-            fontWeight: 700,
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            color: MUTED,
-          }}
-        >
-          2026
+      <div style={{ display: "flex", flexDirection: "column", gap: `${scale.gap + 8}px`, flex: 1, minHeight: 0, overflow: "hidden" }}>
+        <CardHeader data={data} scale={scale} />
+        <div style={{ display: "flex", height: "1px", background: BORDER }} />
+        <MetricGrid metrics={metrics} scale={scale} perRow={isStory ? (metrics.length <= 2 ? 1 : 2) : metrics.length} />
+        <div style={{ display: "flex", gap: `${scale.gap}px` }}>
+          {panels.length > 0 ? panels : <ReadMorePanel data={data} scale={scale} />}
         </div>
       </div>
-      <CardNotice />
+      <CardFooter data={data} scale={scale} />
     </div>
   )
 }

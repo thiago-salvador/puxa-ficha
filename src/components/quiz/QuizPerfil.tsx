@@ -33,7 +33,7 @@ export function QuizPerfil({ respostas }: QuizPerfilProps) {
         Uma pergunta marcada como importante pesa o dobro quando há evidência comparável.
       </p>
       <details>
-        <summary className="cursor-pointer text-sm font-medium text-foreground">Rever respostas e prioridades</summary>
+        <summary className="cursor-pointer py-1 text-sm font-medium text-foreground">Rever respostas e prioridades</summary>
         <ol className="mt-3 space-y-3 text-sm">
           {perguntas.map((p) => {
             const r = respostas.get(p.id)
