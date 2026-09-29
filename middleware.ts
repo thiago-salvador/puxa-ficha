@@ -6,7 +6,8 @@ import {
   constantTimeEqual,
   deriveAccessCookieValue,
 } from "@/lib/access-cookie-digest"
-import { resolveEstadoUf } from "@/lib/br-uf"
+import { getEstadoNome } from "@/lib/br-uf"
+import { getCanonicalUfPathname } from "@/lib/state-page-presentation"
 import { isSenadoEnabled } from "@/lib/senado-feature"
 import { buildContentSecurityPolicy } from "@/lib/content-security-policy"
 import { getRankingDefinitionBySlug } from "@/data/ranking-definitions"
@@ -215,7 +216,17 @@ function guardUfRoute(request: NextRequest): NextResponse | null {
   const ufSegment = segments[2]
   if (!ufSegment) return null
   const uf = safeDecodePathSegment(ufSegment)
-  if (resolveEstadoUf(uf)) return null
+  // /uf/BA vira /uf/ba antes de chegar à página: a rota é ISR e renderizar a
+  // sigla em caixa alta sob demanda derrubava o render com 500.
+  const canonicalPathname = getCanonicalUfPathname(request.nextUrl.pathname)
+  if (canonicalPathname) {
+    const url = request.nextUrl.clone()
+    url.pathname = canonicalPathname
+    return NextResponse.redirect(url, 308)
+  }
+  // Só a sigla exata passa: a página não resolve nome por extenso (/uf/bahia)
+  // e respondia 500 ou 200 vazio em vez de 404.
+  if (/^[a-z]{2}$/.test(uf) && getEstadoNome(uf)) return null
   return buildSoftNotFoundResponse(
     "UF não encontrada",
     "UF não encontrada. Use a sigla de duas letras do estado brasileiro (ex.: sp, rj, mg).",

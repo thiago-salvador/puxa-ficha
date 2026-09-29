@@ -105,7 +105,8 @@ while IFS= read -r linha || [ -n "$linha" ]; do
 done <"$credenciais"
 [ -n "$url_supabase" ] && [ -n "$chave_publica" ] && [ -n "$chave_servico" ] || falhar "faltam credenciais obrigatórias"
 
-run_id="$(uuidgen | tr '[:upper:]' '[:lower:]')"
+# 16 hex: o formato local:<hex>:<carimbo> que scripts/lib/coleta-log.ts aceita.
+run_id="$(uuidgen | tr -d '-' | tr '[:upper:]' '[:lower:]' | cut -c1-16)"
 execucao="local:$run_id:$carimbo"
 saida="$dir_estado/checagens/$carimbo-${sha:0:12}"
 mkdir -p "$saida"

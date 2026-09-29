@@ -157,14 +157,17 @@ describe("coleta nominal de checagens", () => {
     assert.equal(montarRecibo(caiado, faltando, now).result, "erro")
   })
 
-  it("item descartado deixa a busca indeterminada, mas nenhum título candidato confirma vazio", () => {
+  it("item descartado (corpo mostrou outra pessoa) não impede ausência; pendente impede", () => {
     const descartado = montarRecibo(caiado, { ...okEmTodas(), lupa: { status: "ok", itens: 1, leads: [], descartados: 1 } }, now)
-    assert.equal(descartado.result, "nao_confirmado")
-    assert.equal(consolidarCatalogoRecibos(null, [descartado], now).receipts.length, 0)
-    assert.equal(entradaColetaDoRecibo(descartado).resultado, "indeterminado")
-    assert.equal(montarRecibo(caiado, okEmTodas(), now).result, "vazio_confirmado")
+    assert.equal(descartado.result, "vazio_confirmado")
+    assert.equal(consolidarCatalogoRecibos(null, [descartado], now).receipts.length, 1)
+    assert.equal(entradaColetaDoRecibo(descartado).resultado, "vazio_confirmado")
+    const pendente = montarRecibo(caiado, { ...okEmTodas(), lupa: { status: "ok", itens: 1, leads: [], pendentes: 1, descartados: 1 } }, now)
+    assert.equal(pendente.result, "nao_confirmado")
+    assert.equal(consolidarCatalogoRecibos(null, [pendente], now).receipts.length, 0)
+    assert.equal(entradaColetaDoRecibo(pendente).resultado, "indeterminado")
     const outro = { ...caiado, id: "outro", slug: "outro" }
-    assert.equal(aplicarRegraHomonimo(descartado, caiado, [caiado, outro]).result, "nao_confirmado")
+    assert.equal(aplicarRegraHomonimo(pendente, caiado, [caiado, outro]).result, "nao_confirmado")
   })
 
   it("catálogo v1 curado permanece até substituição v2; recibo interno antigo é rejeitado", () => {
@@ -191,7 +194,8 @@ describe("coleta nominal de checagens", () => {
   it("não publica recibo com erro nem deixa recibo antigo apagar o novo", () => {
     const novo = montarRecibo(caiado, okEmTodas(), now)
     const antigo = montarRecibo(caiado, okEmTodas({ lupa: 1 }), new Date("2026-09-20T12:00:00Z"))
-    const erro = montarRecibo({ ...caiado, id: "cand-b", slug: "b" }, { ...okEmTodas(), lupa: { status: "erro", erro: "HTTP 503" } }, now)
+    // Duas agências sem resposta: nem ausência parcial vale (uma só é aceita, nomeada no site).
+    const erro = montarRecibo({ ...caiado, id: "cand-b", slug: "b" }, { ...okEmTodas(), lupa: { status: "erro", erro: "HTTP 503" }, comprova: { status: "erro", erro: "HTTP 503" } }, now)
     const catalogo = consolidarCatalogoRecibos(consolidarCatalogoRecibos(null, [novo, erro], now), [antigo], now)
     assert.equal(catalogo.receipts.length, 1)
     assert.deepEqual(catalogo.receipts[0], { policy: "pf-checagens-v2", candidate_id: "cand-caiado", candidate_slug: "ronaldo-caiado", searched_at: novo.searched_at, result: "vazio_confirmado", leads: 0, agencias: AGENCIAS_CHECAGEM.map((agencia) => agencia.nome) })
@@ -660,8 +664,9 @@ describe("coleta nominal de checagens", () => {
       },
     })
     assert.equal(recibo.agencias.lupa.descartados, 1)
-    assert.equal(recibo.result, "nao_confirmado")
-    assert.equal(consolidarCatalogoRecibos(null, [recibo], now).receipts.length, 0)
+    // O corpo foi lido e não confirma a candidatura: sem lead e sem dúvida pendente.
+    assert.equal(recibo.result, "vazio_confirmado")
+    assert.equal(consolidarCatalogoRecibos(null, [recibo], now).receipts.length, 1)
   })
 
   it("regra 3: nove decisões editoriais e três variantes adicionais de Paes", () => {
@@ -956,10 +961,12 @@ describe("catálogo de checagens e recibos versionados", () => {
 
   it("aplica o critério editorial de atribuição nos leads de Lula e Eduardo Paes", () => {
     // O catálogo guarda contagens, não títulos: estas asserções verificam os números publicados.
+    // Catálogo v2 (coleta local de 28/09 com UOL e AFP; decisões da validação e da Mesa aplicadas).
     const contagens = new Map(committedReceipts.receipts.map((receipt) => [receipt.candidate_slug, receipt.leads]))
-    assert.equal(contagens.get("lula"), 547)
-    assert.equal(contagens.get("eduardo-paes"), 39)
-    assert.equal(contagens.get("tarcisio-gov-sp"), 20)
+    assert.equal(committedReceipts.policy, "pf-checagens-v2")
+    assert.equal(contagens.get("lula"), 1420)
+    assert.equal(contagens.get("eduardo-paes"), 72)
+    assert.equal(contagens.get("tarcisio-gov-sp"), 43)
   })
 
   it("reconhece todas as versões do boato da sobrinha de Eduardo Paes", () => {
@@ -1008,6 +1015,9 @@ describe("catálogo de checagens e recibos versionados", () => {
       ],
       garotinho: [
         ...exclusoesPorHomônimoOuParentesco.garotinho,
+        "Veja o que é #FATO ou #FAKE na entrevista de Anthony Garotinho a 'O Globo', 'Extra', 'Valor' e CBN",
+        "Veja o que é #FATO ou #FAKE na entrevista de Anthony Garotinho ao RJ1",
+        "Veja o que é #FATO ou #FAKE na entrevista de Garotinho ao G1 e à CBN",
         "Laços com Cabral e prisão de Fernandinho Beira-Mar: os erros de Garotinho no RJTV",
         "Garotinho prega ‘compromisso com a verdade’, mas erra ao falar de seu governo",
         "Crivella disse que Garotinho ‘é pobre’. Será? Nós fomos conferir",

@@ -201,8 +201,10 @@ export type EstadoAgencia =
  */
 /**
  * `nao_confirmado`: todas responderam, nenhum lead confirmado pelo nome
- * completo, mas houve título com só parte do nome numa rota sem corpo para
- * conferir (Google News). Não é ausência nem achado; fica fora do catálogo.
+ * completo, mas ficou item pendente: título com só parte do nome numa rota sem
+ * corpo para conferir (Google News) ou lead à espera da Mesa. Não é ausência
+ * nem achado; fica fora do catálogo. Item descartado (o corpo mostrou outra
+ * pessoa, ou a Mesa descartou) não impede afirmar ausência.
  */
 export type ResultadoRecibo = "encontrado" | "vazio_confirmado" | "erro" | "homonimo" | "nao_confirmado"
 
@@ -309,8 +311,7 @@ export function aplicarRegraHomonimo(recibo: ReciboChecagem, candidato: Candidat
   }
   const algumaFalhou = Object.values(agencias).some((estado) => estado.status === "erro")
   const pendentes = Object.values(agencias).some((estado) => estado.status === "ok" && (estado.pendentes ?? 0) > 0)
-  const descartadosNaConfirmacao = Object.values(agencias).some((estado) => estado.status === "ok" && (estado.descartados ?? 0) > 0)
-  const result: ResultadoRecibo = leads.length > 0 ? "encontrado" : algumaFalhou ? "erro" : pendentes || descartadosNaConfirmacao ? "nao_confirmado" : descartados > 0 ? "homonimo" : "vazio_confirmado"
+  const result: ResultadoRecibo = leads.length > 0 ? "encontrado" : algumaFalhou ? "erro" : pendentes ? "nao_confirmado" : descartados > 0 ? "homonimo" : "vazio_confirmado"
   const { homonimo: _anterior, ...base } = recibo
   void _anterior
   if (semHomonimo) return { ...base, leads, agencias, result }
@@ -574,7 +575,6 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
   const mesa: LeadMesaChecagem[] = []
   let erro = false
   let pendentes = false
-  let descartados = false
   for (const agencia of AGENCIAS_CHECAGEM) {
     const estado = estados[agencia.id]
     if (!estado) {
@@ -595,7 +595,6 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
       ...(estado.pendentes ? { pendentes: estado.pendentes } : {}),
       ...(estado.descartados ? { descartados: estado.descartados } : {}),
     }
-    if ((estado.descartados ?? 0) > 0) descartados = true
     if (estado.pendentes) pendentes = true
     leads.push(...estado.leads)
     mesa.push(...(estado.mesa ?? []))
@@ -611,7 +610,7 @@ export function montarRecibo(candidato: CandidatoChecagem, estados: Record<strin
     searched_at: searchedAt.toISOString(),
     // Lead achado vale mesmo com outra agência em erro; ausência só com todas respondendo.
     // Título parcial sem corpo para conferir impede afirmar ausência.
-    result: leads.length > 0 ? "encontrado" : erro ? "erro" : pendentes || descartados ? "nao_confirmado" : "vazio_confirmado",
+    result: leads.length > 0 ? "encontrado" : erro ? "erro" : pendentes ? "nao_confirmado" : "vazio_confirmado",
     leads,
     ...(mesa.length ? { mesa } : {}),
     agencias,
@@ -682,6 +681,22 @@ function janelasPublicas(recibo: ReciboChecagem): { janelas?: Record<string, str
   return Object.keys(janelas).length ? { janelas } : {}
 }
 
+/**
+ * Ausência com no máximo uma agência sem resposta e nada pendente (decisão
+ * editorial de 28/09/2026): o recibo público lista só quem respondeu e o site
+ * nomeia a agência que faltou. Duas ou mais sem resposta continuam sem recibo.
+ */
+export const MAX_AGENCIAS_SEM_RESPOSTA_NA_AUSENCIA = 1
+
+function ausenciaComUmaAgenciaSemResposta(recibo: ReciboChecagem): boolean {
+  if (recibo.leads.length > 0 || recibo.mesa?.length) return false
+  // Homônimo com matéria descartada não é ausência, com ou sem agência fora.
+  if ((recibo.homonimo?.descartados ?? 0) > 0) return false
+  const semResposta = AGENCIAS_CHECAGEM.filter((agencia) => recibo.agencias[agencia.id]?.status !== "ok").length
+  const pendente = Object.values(recibo.agencias).some((estado) => estado.status === "ok" && (estado.pendentes ?? 0) > 0)
+  return semResposta > 0 && semResposta <= MAX_AGENCIAS_SEM_RESPOSTA_NA_AUSENCIA && !pendente
+}
+
 export function consolidarCatalogoRecibos(
   anterior: CatalogoRecibosChecagens | null,
   recibos: readonly ReciboChecagem[],
@@ -695,7 +710,7 @@ export function consolidarCatalogoRecibos(
   }
   for (const recibo of recibos) {
     if (recibo.policy !== POLITICA_CHECAGENS) throw new Error(`Recibo de ${recibo.candidate_slug} usa política ${recibo.policy ?? "ausente"}; refaça a busca com ${POLITICA_CHECAGENS}`)
-    if (recibo.result === "erro") continue
+    if (recibo.result === "erro" && !ausenciaComUmaAgenciaSemResposta(recibo)) continue
     const chave = `${recibo.candidate_id}\u0000${recibo.candidate_slug}`
     if (homonimos.has(chave) && !recibo.homonimo) continue
     const atual = porChave.get(chave)
@@ -1497,6 +1512,106 @@ export function resumirColeta(recibos: readonly ReciboChecagem[]): ResumoColeta 
     leads: recibos.reduce((total, recibo) => total + recibo.leads.length, 0),
     erros_por_agencia: errosPorAgencia,
   }
+}
+
+export const SCHEMA_DECISOES_CHECAGENS = "checagens-decisoes-v1" as const
+
+/**
+ * `jev-validacao`: Jev em sombra mais validação editorial, ambos acima do
+ * corte; `mesa`: decisão humana na Mesa. Só a Mesa libera lead que a regra 3
+ * em código mandou para revisão.
+ */
+export type OrigemDecisaoChecagem = "jev-validacao" | "mesa"
+
+export interface DecisaoLeadChecagem {
+  candidate_id: string
+  candidate_slug: string
+  link: string
+  decisao: "publicar" | "descartar"
+  origem: OrigemDecisaoChecagem
+}
+
+export interface ArquivoDecisoesChecagens {
+  schema_version: typeof SCHEMA_DECISOES_CHECAGENS
+  policy: typeof POLITICA_CHECAGENS
+  decisoes: DecisaoLeadChecagem[]
+}
+
+function chaveDecisao(candidateId: string, candidateSlug: string, link: string): string {
+  return `${candidateId}\u0000${candidateSlug}\u0000${link}`
+}
+
+/** Valida o arquivo inteiro antes de aplicar: decisão malformada ou repetida derruba a importação. */
+export function validarDecisoesChecagens(bruto: unknown): ArquivoDecisoesChecagens {
+  const arquivo = bruto as Partial<ArquivoDecisoesChecagens> | null
+  if (!arquivo || arquivo.schema_version !== SCHEMA_DECISOES_CHECAGENS || !Array.isArray(arquivo.decisoes)) throw new Error("Arquivo de decisões inválido")
+  if (arquivo.policy !== POLITICA_CHECAGENS) throw new Error(`Decisões de política ${arquivo.policy ?? "ausente"}; esperado ${POLITICA_CHECAGENS}`)
+  const vistas = new Set<string>()
+  for (const decisao of arquivo.decisoes) {
+    if (!decisao?.candidate_id || !decisao.candidate_slug || !decisao.link) throw new Error("Decisão sem identidade ou link")
+    if (decisao.decisao !== "publicar" && decisao.decisao !== "descartar") throw new Error(`Decisão desconhecida para ${decisao.link}`)
+    if (decisao.origem !== "jev-validacao" && decisao.origem !== "mesa") throw new Error(`Origem desconhecida para ${decisao.link}`)
+    const chave = chaveDecisao(decisao.candidate_id, decisao.candidate_slug, decisao.link)
+    if (vistas.has(chave)) throw new Error(`Decisão repetida para ${decisao.candidate_slug}: ${decisao.link}`)
+    vistas.add(chave)
+  }
+  return arquivo as ArquivoDecisoesChecagens
+}
+
+/**
+ * Aplica decisões editoriais aos leads da Mesa de cada recibo. Lead publicado
+ * passa a contar; lead descartado conta como `descartados`, como o nome que o
+ * corpo não confirmou, e não impede afirmar ausência. O que não tem decisão
+ * continua na Mesa e impede afirmar ausência. Recibo em erro ou com agência sem resposta continua sem ausência.
+ */
+export function aplicarDecisoesMesa(recibos: readonly ReciboChecagem[], arquivo: ArquivoDecisoesChecagens): { recibos: ReciboChecagem[]; aplicadas: number; sem_lead: number } {
+  const porChave = new Map(arquivo.decisoes.map((decisao) => [chaveDecisao(decisao.candidate_id, decisao.candidate_slug, decisao.link), decisao]))
+  const usadas = new Set<string>()
+  const saida = recibos.map((recibo) => {
+    // Todo recibo importado passa pela regra atual de resultado, com ou sem Mesa.
+    const agencias = Object.fromEntries(Object.entries(recibo.agencias).map(([id, estado]) => [id, { ...estado }]))
+    const leads = [...recibo.leads]
+    const mesa: LeadMesaChecagem[] = []
+    for (const lead of recibo.mesa ?? []) {
+      const chave = chaveDecisao(recibo.candidate_id, recibo.candidate_slug, lead.link)
+      const decisao = porChave.get(chave)
+      if (!decisao) {
+        mesa.push(lead)
+        continue
+      }
+      if (decisao.decisao === "publicar" && lead.motivo === "regra3" && decisao.origem !== "mesa") {
+        throw new Error(`Regra 3 não resolvida em ${recibo.candidate_slug} (${lead.link}): só a Mesa publica`)
+      }
+      usadas.add(chave)
+      const estado = agencias[lead.agencia]
+      if (estado?.status === "ok") estado.pendentes = Math.max(0, (estado.pendentes ?? 0) - 1) || undefined
+      if (decisao.decisao === "publicar") {
+        const { motivo: _motivo, noul_identidade: _noul, ...publicado } = lead
+        void _motivo
+        void _noul
+        leads.push(publicado)
+        if (estado?.status === "ok") estado.leads = (estado.leads ?? 0) + 1
+      } else if (estado?.status === "ok") {
+        estado.descartados = (estado.descartados ?? 0) + 1
+      }
+    }
+    for (const estado of Object.values(agencias)) {
+      if (estado.pendentes === undefined) delete estado.pendentes
+    }
+    const estados = Object.values(agencias)
+    const incerto = estados.some((estado) => (estado.pendentes ?? 0) > 0)
+    const result: ResultadoRecibo = leads.length > 0
+      ? "encontrado"
+      : estados.some((estado) => estado.status === "erro")
+        ? "erro"
+        : recibo.result === "homonimo"
+          ? "homonimo"
+          : incerto ? "nao_confirmado" : "vazio_confirmado"
+    const { mesa: _mesa, ...resto } = recibo
+    void _mesa
+    return { ...resto, agencias, leads, result, ...(mesa.length ? { mesa } : {}) }
+  })
+  return { recibos: saida, aplicadas: usadas.size, sem_lead: porChave.size - usadas.size }
 }
 
 /** Recibo que precisa ser refeito: erro geral ou alguma agência sem resposta. */

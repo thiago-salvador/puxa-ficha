@@ -104,12 +104,21 @@ test("no cliente a exigência de Vercel não se aplica", () => {
     comEnv({ NEXT_PUBLIC_VERCEL_ENV: "preview" }, () => {
       assert.equal(sentryHabilitadoNesteAmbiente(), false)
     })
-    // Consequência aceita e explícita: navegador local, sem nenhuma variável da
-    // Vercel, continua reportando. O corte do servidor não o alcança, e fechar
-    // este caso exigiria uma variável `NEXT_PUBLIC_` criada só para isso.
+    // Navegador de `next dev` não reporta: o Next inlina `NODE_ENV` no bundle
+    // do cliente, então `development` ali é sempre o servidor de dev local.
     comEnv({ NODE_ENV: "development" }, () => {
-      assert.equal(sentryHabilitadoNesteAmbiente(), true)
+      assert.equal(sentryHabilitadoNesteAmbiente(), false)
       assert.equal(ambienteSentry(), "development")
+    })
+    comEnv({ NODE_ENV: "development", NEXT_PUBLIC_VERCEL_ENV: "production" }, () => {
+      assert.equal(sentryHabilitadoNesteAmbiente(), false)
+    })
+    // Consequência aceita e explícita: um `next build && next start` local
+    // (NODE_ENV `production` no bundle) continua reportando. Fechar este caso
+    // exigiria uma variável `NEXT_PUBLIC_` criada só para isso.
+    comEnv({ NODE_ENV: "production" }, () => {
+      assert.equal(sentryHabilitadoNesteAmbiente(), true)
+      assert.equal(ambienteSentry(), "production")
     })
   } finally {
     if (tinhaWindow) globalComWindow.window = windowAnterior

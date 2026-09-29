@@ -122,7 +122,7 @@ test("fontes alternativas recuperadas chegam às fichas com os valores publicado
   for (const list of [lula, pablo]) {
     assert.ok(list.every((p) => (p.publicationDate.value ?? "") <= (list[0].publicationDate.value ?? "")))
   }
-  assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AC")[0].resultado.valuePercent, 33)
+  assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AC")[0].resultado.valuePercent, 28)
   assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AM")[0].resultado.valuePercent, 25.8)
   assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "RR").length, 0)
 })
@@ -179,5 +179,8 @@ test("buscas alternativas recuperam os valores individuais sem transferir result
   const expedito = listarPesquisasGovernadorPorSlug("expedito-mendonca", "DF")
   assert.ok(expedito.length >= 0)
   rodadaPreservada("expedito-mendonca", "DF", "igape-df-df-07879-2026-fechamento", 0.8)
-  assert.equal(listarPesquisasGovernadorPorSlug("ruth-reis", "PA").length, 0)
+  const ruth = listarPesquisasGovernadorPorSlug("ruth-reis", "PA")
+  assert.equal(ruth.length, 2)
+  assert.ok(ruth.every((p) => p.id === "quaest-pa-07042-2026" && p.resultado.candidateSlug === "ruth-reis" && p.resultado.valuePercent === 0))
+  assert.equal(listarPesquisasGovernadorPorSlug("ruth-reis", "RN").length, 0)
 })

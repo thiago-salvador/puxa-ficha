@@ -6,6 +6,9 @@
  * não aparece exato no CEAPS, ficha sem mandato de deputado federal (linha de
  * homônimo) e ano sem lançamento oficial para o id da ficha.
  *
+ * 28/09/2026: o par tse-2026-100002537338/2026 saiu da lista depois do
+ * apply com readback das linhas oficiais do CEAPS; a lista ficou vazia.
+ *
  * Revisão de gastos em 25/09/2026: 57 linhas em 40 fichas.
  * Valores publicados em centavos são preimages para o readback. A supressão
  * continua por ficha/ano mesmo após o recálculo, até validação independente.
@@ -13,9 +16,7 @@
  * 129-casos-dto-chave-ausente-20260925.json (SHA-256
  * 775e5af5c0bc4bd371162334ded355a5bced1c8662d215fe2962980e7e559416).
  */
-export const GASTOS_PARLAMENTARES_EM_REVISAO = [
-  ["tse-2026-100002537338", 2026, 31204043],
-] as const
+export const GASTOS_PARLAMENTARES_EM_REVISAO: readonly (readonly [string, number, number])[] = []
 
 /**
  * Varredura de 25/09/2026 sobre todas as linhas vivas de fichas públicas:
