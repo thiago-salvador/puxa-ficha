@@ -29,7 +29,9 @@ import {
   ANO_FINANCAS_2026,
   FONTE_RECIBO_FINANCIAMENTO,
   FONTE_RECIBO_PATRIMONIO,
+  fichasAlteradasDoPlano,
   planejarFinancas2026,
+  restringirEstadoACoorte,
   stableJson,
   travasDoPlano,
   type AcaoEscrita,
@@ -39,6 +41,7 @@ import {
 } from "./lib/tse-2026-financas-plano"
 import { aplicarCoorteAtualizacao } from "./lib/coorte-atualizacao"
 import { assertOutsideRepository } from "./audit/lib/private-output"
+import { infraErrorGraceDays } from "./audit/audit-cobertura-fichas"
 import { reciboBloqueadoPorIdentidade } from "./lib/tse-identidade-celulas"
 
 const SCRIPT = "tse-2026-financas"
@@ -74,19 +77,29 @@ export interface OpcoesCli {
   backfillDryRun: string | null
   reviewedPlan: string | null
   expectedPlanFileSha: string | null
+  /** Avalia as travas do portão sobre um plano revisado, sem escrever nada. */
+  avaliarTravas: boolean
+  /** Teto explícito de fichas alteradas para coorte focada revisada (troca o limite de 50%). */
+  maxFichasAlteradas: number | null
 }
 
 export function lerArgs(argv: string[]): OpcoesCli {
   const valor = (nome: string) => argv.find((a) => a.startsWith(`--${nome}=`))?.slice(nome.length + 3) ?? null
+  const teto = valor("max-fichas-alteradas")
+  if (teto !== null && !/^(0|[1-9][0-9]{0,5})$/.test(teto)) throw new Error("--max-fichas-alteradas deve ser um inteiro não negativo")
   return {
     aplicar: argv.includes("--apply"),
     agendado: argv.includes("--agendado"),
-    out: valor("out"),
+    // Validado aqui, antes do try de main(): configuração errada não é falha
+    // de coleta e não pode gravar recibo de erro (run 36463854587, 28/09).
+    out: valor("out") === null ? null : assertOutsideRepository(valor("out")!, "--out"),
     expectedPlanSha: valor("expected-plan-sha"),
     backfillCategorias: argv.includes("--backfill-categorias"),
     backfillDryRun: valor("backfill-dry-run"),
     reviewedPlan: valor("reviewed-plan"),
     expectedPlanFileSha: valor("expected-plan-file-sha"),
+    avaliarTravas: argv.includes("--avaliar-travas"),
+    maxFichasAlteradas: teto === null ? null : Number(teto),
   }
 }
 
@@ -95,6 +108,8 @@ type RespostaSelect = { data: unknown[] | null; error: { message: string } | nul
 /** Recorte mínimo do builder do PostgREST que a paginação usa. */
 interface ConsultaPaginavel {
   eq(coluna: string, valor: unknown): ConsultaPaginavel
+  in(coluna: string, valores: readonly unknown[]): ConsultaPaginavel
+  gte(coluna: string, valor: unknown): ConsultaPaginavel
   order(coluna: string): ConsultaPaginavel
   range(de: number, ate: number): PromiseLike<RespostaSelect>
 }
@@ -470,10 +485,33 @@ export function linhasDeReciboDeFalha(publicos: FichaPublica[], motivo: string, 
   )
 }
 
+/**
+ * Falha de rodada não grava `erro` por cima de prova válida: o par
+ * (fonte, ficha) com recibo conclusivo dentro do prazo da matriz de cobertura
+ * fica sem recibo novo. Puro, para teste.
+ */
+export function semProvaValida<T extends { fonte: string; alvo: string }>(linhas: T[], provas: ReadonlyArray<{ fonte: string; alvo: string }>): T[] {
+  const provadas = new Set(provas.map((p) => `${p.fonte}|${p.alvo}`))
+  return linhas.filter((l) => !provadas.has(`${l.fonte}|${l.alvo}`))
+}
+
+async function carregarProvasValidas(): Promise<Array<{ fonte: string; alvo: string }>> {
+  const dias = Math.min(infraErrorGraceDays("financiamento"), infraErrorGraceDays("patrimonio"))
+  const desde = new Date(Date.now() - dias * 86_400_000).toISOString()
+  return selecionarTudo<{ fonte: string; alvo: string }>("coleta_log", "fonte, alvo", (q) => q
+    .eq("escopo", "candidato")
+    .in("fonte", [FONTE_RECIBO_FINANCIAMENTO, FONTE_RECIBO_PATRIMONIO])
+    .in("resultado", ["encontrado", "publicado", "vazio_confirmado"])
+    .gte("executado_em", desde)
+    .order("id"))
+}
+
 async function gravarRecibosDeFalha(motivo: string, publicos: FichaPublica[] | null, identityRiskSlugs: ReadonlySet<string> = new Set()): Promise<void> {
   try {
     const lista = publicos ?? (await carregarPublicos())
-    const linhas = linhasDeReciboDeFalha(lista, motivo, identityRiskSlugs)
+    const todas = linhasDeReciboDeFalha(lista, motivo, identityRiskSlugs)
+    const linhas = semProvaValida(todas, await carregarProvasValidas())
+    if (linhas.length < todas.length) console.error(`recibos de erro não gravados por prova válida no prazo: ${todas.length - linhas.length}`)
     for (let i = 0; i < linhas.length; i += 200) {
       const { error } = await supabase.from("coleta_log").insert(linhas.slice(i, i + 200))
       if (error) throw new Error(error.message)
@@ -506,6 +544,63 @@ export function decidirPortao(
   return { aplicar: true }
 }
 
+/**
+ * Travas do portão, iguais no live e na avaliação do dry-run. Com coorte
+ * fixada (PF_TSE_COHORT_PROFILES), o estado de produção é recortado para a
+ * coorte; o teto explícito só vale nesse caso e fora do agendado e do backfill.
+ */
+export function travasDoPortao(
+  opts: OpcoesCli,
+  plano: PlanoFinancas2026,
+  estado: EstadoProducao,
+  idsDaCoorte: ReadonlySet<string> | null,
+  backfillProof: boolean,
+): string[] {
+  const falhasDoTeto: string[] = []
+  if (opts.maxFichasAlteradas !== null) {
+    if (!idsDaCoorte) falhasDoTeto.push("teto explícito de fichas alteradas exige coorte fixada")
+    if (!opts.reviewedPlan) falhasDoTeto.push("teto explícito de fichas alteradas exige plano revisado")
+    if (opts.agendado || opts.backfillCategorias) falhasDoTeto.push("teto explícito de fichas alteradas não vale no agendado nem no backfill")
+  }
+  const limites = opts.backfillCategorias && backfillProof
+    ? { maxQuedaRelativa: 0.2, maxAffectedRatio: 0.95, maxActions: 1000 }
+    : opts.maxFichasAlteradas !== null
+      ? { maxQuedaRelativa: 0.2, fichasAlteradasRevisadas: opts.maxFichasAlteradas }
+      : undefined
+  return [
+    ...falhasDoTeto,
+    ...travasDoPlano(plano, idsDaCoorte ? restringirEstadoACoorte(estado, idsDaCoorte) : estado, limites),
+    ...(!backfillProof ? ["dry-run revisado não corresponde ao plano atual"] : []),
+  ]
+}
+
+function idsDaCoorteFixada(publicos: readonly FichaPublica[]): ReadonlySet<string> | null {
+  return process.env.PF_TSE_COHORT_PROFILES ? new Set(publicos.map((ficha) => ficha.id)) : null
+}
+
+/** Dry-run: roda sobre o plano revisado as mesmas travas do live e grava `travas.json`. Não escreve no banco. */
+async function avaliarTravas(opts: OpcoesCli): Promise<number> {
+  if (opts.aplicar || opts.agendado || opts.backfillCategorias || !opts.reviewedPlan || !/^[a-f0-9]{64}$/i.test(opts.expectedPlanFileSha ?? "")) {
+    throw new Error("--avaliar-travas exige plano revisado com SHA-256 do arquivo, sem --apply, --agendado ou backfill")
+  }
+  const plano = readReviewedPlan(opts.reviewedPlan, opts.expectedPlanFileSha!)
+  const [estado, publicos] = await Promise.all([carregarEstado2026(), carregarPublicos()])
+  const sha = shaDoPlano(plano)
+  const falhas = travasDoPortao(opts, plano, estado, idsDaCoorteFixada(publicos), true)
+  const resultado = {
+    plano_sha256: sha,
+    fichas_publicas: plano.resumo.fichas_publicas,
+    fichas_alteradas: fichasAlteradasDoPlano(plano),
+    teto_explicito: opts.maxFichasAlteradas,
+    coorte_fixada: Boolean(process.env.PF_TSE_COHORT_PROFILES),
+    falhas,
+  }
+  if (opts.out) salvar(opts.out, "travas.json", resultado)
+  console.log(JSON.stringify({ travas: resultado }))
+  if (falhas.length > 0) console.error(`travas reprovaram: ${falhas.join("; ")}`)
+  return falhas.length > 0 ? 2 : 0
+}
+
 export async function main(argv = process.argv.slice(2)): Promise<number> {
   const opts = lerArgs(argv)
   if (!opts.aplicar || opts.reviewedPlan) return executar(opts)
@@ -519,6 +614,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
 
 async function executar(opts: OpcoesCli): Promise<number> {
   exigirChaveV2(process.env.PF_DOADOR_CPF_HASH_SALT)
+  if (opts.avaliarTravas) return avaliarTravas(opts)
 
   if (opts.reviewedPlan && (!opts.aplicar || opts.agendado || !/^[a-f0-9]{64}$/i.test(opts.expectedPlanFileSha ?? ""))) {
     throw new Error("plano revisado exige --apply manual e SHA-256 do arquivo")
@@ -550,16 +646,17 @@ async function executar(opts: OpcoesCli): Promise<number> {
       return proof.verified === true && proof.mode === "dry-run" && proof.plano_sha256 === sha
     } catch { return false }
   })() : !opts.backfillCategorias
-  const limits = opts.backfillCategorias && backfillProof
-    ? { maxQuedaRelativa: 0.2, maxAffectedRatio: 0.95, maxActions: 1000 }
-    : undefined
-  const portao = decidirPortao(opts, sha, [
-    ...travasDoPlano(plano, estado, limits),
-    ...(!backfillProof ? ["dry-run revisado não corresponde ao plano atual"] : []),
-  ], sonda.falhas)
+  const portao = decidirPortao(opts, sha, travasDoPortao(opts, plano, estado, idsDaCoorteFixada(publicos), backfillProof), sonda.falhas)
   if (opts.reviewedPlan) consumeReviewedPlan(sha)
   if (!portao.aplicar) {
     console.error(`${portao.motivo}; nada gravado`)
+    // Live revisado reprovado não grava recibo de erro: a rodada é manual e
+    // recibo de erro por cima de prova conclusiva ainda no prazo apagaria a
+    // cobertura sem mudar dado público. O motivo fica no diretório privado.
+    if (opts.reviewedPlan) {
+      if (opts.out) salvar(opts.out, "portao-reprovado.json", { plano_sha256: sha, codigo: portao.codigo, motivo: portao.motivo })
+      return portao.codigo
+    }
     await gravarRecibosDeFalha(portao.motivo, publicos, new Set(plano.identity_risk_slugs ?? []))
     return portao.codigo
   }

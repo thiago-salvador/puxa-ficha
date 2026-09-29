@@ -98,6 +98,67 @@ export function normalizarEvidencias(snapshot: SnapshotEvidencias): EvidenciaNor
   return saida
 }
 
+export type MotivoCircular = "url_do_programa" | "registro_tse_do_candidato" | "fonte_extraida_do_programa"
+
+export type ParCircular = {
+  parId: string
+  slug: string
+  programaChave: string
+  temaId: string
+  tipo: TipoEvidencia
+  ref: string
+  url: string | null
+  motivo: MotivoCircular
+}
+
+function normalizarUrl(url: string): string {
+  try {
+    const u = new URL(url.trim())
+    return `${u.hostname.toLowerCase().replace(/^www\./u, "")}${u.pathname.replace(/\/+$/u, "")}`
+  } catch {
+    return url.trim().toLowerCase()
+  }
+}
+
+/** Nome de arquivo ou campo `fonte` que declara ter vindo do programa de governo. */
+const MARCA_PROGRAMA_NA_FONTE = /\b(?:programa|proposta)(?:\s+de\s+governo)?(?:\s+registrad[oa])?\s+(?:no|do|ao)\s+TSE\b|\bprograma\s+TSE\b/iu
+const ARQUIVO_DE_PROGRAMA = /(?:programa|proposta[-_ ]?de[-_ ]?governo|plano[-_ ]?de[-_ ]?governo)[^/]*\.pdf$/iu
+
+/**
+ * Evidência circular: a posição ou fala foi extraída do próprio programa que o
+ * par quer confirmar, então não é registro independente do candidato. Compara a
+ * FONTE da linha apontada (url e campo `fonte`), não só a URL do pacote:
+ *   1. a URL é um dos endereços do documento do programa (pacote TSE, PDF, recibo);
+ *   2. a URL é do DivulgaCand/CDN do TSE e cita o sq ou o arquivo deste candidato;
+ *   3. a fonte declara ser o programa registrado no TSE, ou a URL é um PDF de
+ *      programa de governo espelhado fora do TSE.
+ * Votos, projetos e contradições não passam por aqui: vêm de registro legislativo.
+ */
+export function motivoCircular(programa: Pick<ProgramaCompromissos, "fonte">, evidencia: EvidenciaNormalizada): MotivoCircular | null {
+  if (evidencia.tipo !== "posicao_declarada" && evidencia.tipo !== "fala") return null
+  const url = evidencia.url?.trim() || null
+  const fonte = programa.fonte
+  if (url && fonte) {
+    const alvo = normalizarUrl(url)
+    if (fonte.urls.some((u) => normalizarUrl(u) === alvo)) return "url_do_programa"
+    let host = ""
+    try { host = new URL(url).hostname.toLowerCase() } catch { host = "" }
+    if (/(^|\.)tse\.jus\.br$/u.test(host)) {
+      const cita = [fonte.sqCandidato, fonte.arquivoNome?.replace(/\.pdf$/iu, "")].filter(Boolean) as string[]
+      if (cita.some((marca) => url.includes(marca)) || /proposta_governo/iu.test(url)) return "registro_tse_do_candidato"
+    }
+  }
+  const campoFonte = typeof evidencia.conteudo.fonte === "string" ? evidencia.conteudo.fonte
+    : typeof evidencia.conteudo.veiculo === "string" ? evidencia.conteudo.veiculo : ""
+  if (MARCA_PROGRAMA_NA_FONTE.test(campoFonte)) return "fonte_extraida_do_programa"
+  if (url) {
+    let caminho = url
+    try { caminho = decodeURIComponent(new URL(url).pathname) } catch { /* mantém a string crua */ }
+    if (ARQUIVO_DE_PROGRAMA.test(caminho)) return "fonte_extraida_do_programa"
+  }
+  return null
+}
+
 export function eixosDoCompromisso(tema: CompromissoTema): Set<Eixo> {
   return eixosDoTexto(tema.titulo, tema.descricao, tema.temaId.replace(/-/gu, " "))
 }
@@ -106,7 +167,11 @@ function parId(programaChave: string, temaId: string, evidencia: Pick<EvidenciaN
   return createHash("sha256").update(`${programaChave}|${temaId}|${evidencia.tipo}|${evidencia.ref}`).digest("hex").slice(0, 16)
 }
 
-export function gerarPares(programas: ProgramaCompromissos[], snapshot: SnapshotEvidencias): ParCandidato[] {
+/**
+ * Pares que caem num eixo comum, sem os circulares. Quem passar `circulares`
+ * recebe ali os pares barrados, para o recibo.
+ */
+export function gerarPares(programas: ProgramaCompromissos[], snapshot: SnapshotEvidencias, circulares?: ParCircular[]): ParCandidato[] {
   const candidatoPorSlug = new Map(snapshot.candidatos.map((c) => [c.slug, c]))
   const evidenciasPorCandidato = new Map<string, EvidenciaNormalizada[]>()
   for (const evidencia of normalizarEvidencias(snapshot)) {
@@ -121,6 +186,15 @@ export function gerarPares(programas: ProgramaCompromissos[], snapshot: Snapshot
       for (const evidencia of evidenciasPorCandidato.get(candidato.id) ?? []) {
         const comuns = intersecao(eixosTema, new Set(evidencia.eixos))
         if (comuns.length === 0) continue
+        const circular = motivoCircular(programa, evidencia)
+        if (circular) {
+          circulares?.push({
+            parId: parId(programa.programaChave, tema.temaId, evidencia), slug: programa.slug,
+            programaChave: programa.programaChave, temaId: tema.temaId, tipo: evidencia.tipo,
+            ref: evidencia.ref, url: evidencia.url, motivo: circular,
+          })
+          continue
+        }
         pares.push({
           parId: parId(programa.programaChave, tema.temaId, evidencia),
           slug: programa.slug, candidatoId: candidato.id, programaChave: programa.programaChave,
@@ -171,12 +245,15 @@ async function main(): Promise<void> {
   const snapshot = JSON.parse(snapshotBruto) as SnapshotEvidencias
   if (snapshot.schema_version !== "promessa-evidencia-snapshot-v1") throw new Error("snapshot com schema inesperado")
   const programas = await carregarProgramasComResumo()
-  const pares = gerarPares(programas, snapshot)
+  const circulares: ParCircular[] = []
+  const pares = gerarPares(programas, snapshot, circulares)
   const recibo = {
     gerado_em: new Date().toISOString(),
     snapshot_sha256: createHash("sha256").update(snapshotBruto).digest("hex"),
     snapshot_coletado_em: snapshot.coletado_em,
     ...reciboPares(programas, snapshot, pares),
+    paresCircularesBarrados: circulares.length,
+    circulares: circulares.sort((a, b) => a.parId.localeCompare(b.parId)),
   }
   await mkdir(path.dirname(PARES_PATH), { recursive: true })
   await writeFile(PARES_PATH, `${JSON.stringify({ schema_version: "promessa-evidencia-pares-v1", recibo, pares }, null, 2)}\n`)

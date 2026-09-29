@@ -18,6 +18,7 @@ import {
   type TipoEvidenciaPublica,
 } from "@/lib/compromisso-evidencia"
 import type { CatalogoFalas } from "@/lib/falas-candidatos"
+import { buildVotacaoNominalUrl } from "@/lib/quiz-votacao-url"
 import { createServiceRoleSupabaseClient } from "@/lib/supabase"
 import { withSupabaseRetry } from "@/lib/supabase-retry"
 
@@ -92,8 +93,8 @@ async function carregarItens(db: Cliente, candidatoId: string, programaChave: st
     .filter((l) => l.programa_chave === programaChave && l.tema_id && ehTipo(l.tipo_evidencia) && ehRelacao(l.relacao))
   const refs = (tipo: TipoEvidenciaPublica) => [...new Set(linhas.filter((l) => l.tipo_evidencia === tipo).map((l) => l.evidencia_ref))]
   const [votos, projetos, posicoes, pontos] = await Promise.all([
-    porIds<{ id: string; voto: string; votacao: { titulo: string; data_votacao: string | null; casa: string | null } | null }>(
-      db, "votos_candidato", "id,voto,votacao:votacoes_chave(titulo,data_votacao,casa)", refs("votacao_chave")),
+    porIds<{ id: string; voto: string; votacao: { titulo: string; data_votacao: string | null; casa: string | null; proposicao_id: string | number | null; votacao_id_api: string | number | null } | null }>(
+      db, "votos_candidato", "id,voto,votacao:votacoes_chave(titulo,data_votacao,casa,proposicao_id,votacao_id_api)", refs("votacao_chave")),
     porIds<{ id: string; tipo: string | null; numero: string | null; ano: number | null; ementa: string | null; url_inteiro_teor: string | null; metadata: unknown }>(
       db, "projetos_lei", "id,tipo,numero,ano,ementa,url_inteiro_teor,metadata", refs("projeto_lei")),
     porIds<{ id: string; tema: string; fonte: string | null; url_fonte: string | null; descricao: string | null; gerado_por: string | null; verificado: boolean | null }>(
@@ -108,7 +109,7 @@ async function carregarItens(db: Cliente, candidatoId: string, programaChave: st
     if (linha.tipo_evidencia === "votacao_chave") {
       const voto = votos.get(linha.evidencia_ref)
       if (!voto?.votacao) continue
-      saida.push({ ...base, referencia: `Voto: ${voto.voto}${voto.votacao.casa ? ` · ${voto.votacao.casa}` : ""}`, texto: voto.votacao.titulo, data: voto.votacao.data_votacao, url: null })
+      saida.push({ ...base, referencia: `Voto: ${voto.voto}${voto.votacao.casa ? ` · ${voto.votacao.casa}` : ""}`, texto: voto.votacao.titulo, data: voto.votacao.data_votacao, url: buildVotacaoNominalUrl(voto.votacao.casa, voto.votacao.proposicao_id, voto.votacao.votacao_id_api) })
     } else if (linha.tipo_evidencia === "projeto_lei") {
       const projeto = projetos.get(linha.evidencia_ref)
       if (!projeto?.ementa) continue
