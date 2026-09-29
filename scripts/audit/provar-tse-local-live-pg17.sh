@@ -36,6 +36,16 @@ expected_hash="$(python3 -c 'import json; print(json.load(open("scripts/audit/sc
 [[ "$schema_hash" == "$expected_hash" ]] || { echo "FAIL: schema digest $schema_hash differs from pinned $expected_hash" >&2; exit 1; }
 echo "PASS pinned replay schema digest: $schema_hash (migrations=$R_APLICADAS skipped=$R_PULADAS)"
 
+# Segredo de assinatura e sal de CPF são gerados a cada rodada: nenhum valor
+# literal no arquivo (gitleaks) e a chave v2 real nunca entra na prova. O sal
+# sintético só é aceito porque SUPABASE_URL aponta para loopback (ver
+# exigirChaveV2 em scripts/lib/rehash-doador-cpf-v2.ts).
+PROOF_JWT_SECRET="$(node -e 'process.stdout.write(require("node:crypto").randomBytes(32).toString("hex"))')"
+export PF_DOADOR_CPF_HASH_SALT="$(node -e 'process.stdout.write(require("node:crypto").randomBytes(32).toString("hex"))')"
+# Mesma fórmula de fingerprintDaChave; se divergir, exigirChaveV2 recusa e a prova falha.
+export PF_CPF_HASH_PROOF_FINGERPRINT="$(node -e 'process.stdout.write(require("node:crypto").createHash("sha256").update("pf-cpf-hash-v2-fp:" + process.env.PF_DOADOR_CPF_HASH_SALT.trim()).digest("hex").slice(0, 16))')"
+[[ "$PF_CPF_HASH_PROOF_FINGERPRINT" =~ ^[a-f0-9]{16}$ ]] || { echo "FAIL: synthetic salt fingerprint unavailable" >&2; exit 1; }
+
 docker network create "$NET" >/dev/null
 docker network connect "$NET" "$CONTAINER"
 docker exec "$CONTAINER" psql -U postgres -d postgres -X -v ON_ERROR_STOP=1 -q -c \
@@ -43,13 +53,13 @@ docker exec "$CONTAINER" psql -U postgres -d postgres -X -v ON_ERROR_STOP=1 -q -
 docker run -d --name "$PGRST" --network "$NET" -p 127.0.0.1::3000 \
   -e PGRST_DB_URI="postgres://authenticator:postgres@$CONTAINER:5432/postgres" \
   -e PGRST_DB_SCHEMAS=public -e PGRST_DB_ANON_ROLE=anon \
-  -e PGRST_JWT_SECRET='local-only-pg17-tse-live-proof-signing-secret' \
+  -e PGRST_JWT_SECRET="$PROOF_JWT_SECRET" \
   -e PGRST_SERVER_PORT=3000 public.ecr.aws/supabase/postgrest:v14.10 >/dev/null
 PGRST_PORT="$(docker port "$PGRST" 3000/tcp | sed 's/.*://')"
 [[ "$PGRST_PORT" =~ ^[0-9]+$ ]] || { echo "FAIL: PostgREST local port unavailable" >&2; exit 1; }
 export PF_TSE_PGRST_URL="http://127.0.0.1:$PGRST_PORT"
 export SUPABASE_URL="http://127.0.0.1:43871"
-export SUPABASE_SERVICE_ROLE_KEY="$(node -e 'const c=require("node:crypto");const b=x=>Buffer.from(JSON.stringify(x)).toString("base64url");const i=Math.floor(Date.now()/1000);const h=b({alg:"HS256",typ:"JWT"});const p=b({role:"service_role",iss:"supabase",iat:i,exp:i+3600});const s=c.createHmac("sha256","local-only-pg17-tse-live-proof-signing-secret").update(`${h}.${p}`).digest("base64url");process.stdout.write(`${h}.${p}.${s}`)')"
+export SUPABASE_SERVICE_ROLE_KEY="$(PROOF_JWT_SECRET="$PROOF_JWT_SECRET" node -e 'const c=require("node:crypto");const b=x=>Buffer.from(JSON.stringify(x)).toString("base64url");const i=Math.floor(Date.now()/1000);const h=b({alg:"HS256",typ:"JWT"});const p=b({role:"service_role",iss:"supabase",iat:i,exp:i+3600});const s=c.createHmac("sha256",process.env.PROOF_JWT_SECRET).update(`${h}.${p}`).digest("base64url");process.stdout.write(`${h}.${p}.${s}`)')"
 export PF_TSE_LIVE_ROOT="$RUN"
 export PF_TSE_LIVE_SERVER_PORT=43871
 export HOME="$RUN/home"
@@ -89,6 +99,11 @@ curl -fsS "http://127.0.0.1:$PF_TSE_LIVE_SERVER_PORT/api/candidato-slugs" >/dev/
 
 node --import tsx scripts/audit/provar-tse-local-live-pg17.ts
 
+echo "== diagnóstico: recibos e linhas por candidato"
+docker exec "$CONTAINER" psql -U postgres -d postgres -X -Atq -F ' | ' -c \
+  "SELECT 'coleta_log', alvo, fonte, resultado, count(*) FROM public.coleta_log GROUP BY 2,3,4 ORDER BY 2,3,4" -c \
+  "SELECT t, candidato_id, n FROM (SELECT 'financiamento' t, candidato_id, count(*) n FROM public.financiamento WHERE ano_eleicao=2026 GROUP BY 2 UNION ALL SELECT 'patrimonio', candidato_id, count(*) FROM public.patrimonio WHERE ano_eleicao=2026 GROUP BY 2 UNION ALL SELECT 'financiamento_verificacoes', candidato_id, count(*) FROM public.financiamento_verificacoes GROUP BY 2 UNION ALL SELECT 'historico_politico', candidato_id, count(*) FROM public.historico_politico GROUP BY 2) x ORDER BY 1,2"
+
 echo "== SQL assertions: domain writes and receipts"
 docker exec -i "$CONTAINER" psql -U postgres -d postgres -X -v ON_ERROR_STOP=1 <<'SQL'
 DO $proof$
@@ -99,7 +114,23 @@ BEGIN
   ASSERT (SELECT count(*)=1 FROM public.financiamento WHERE id='00000000-0000-4000-8000-000000000202' AND candidato_id=risk_id AND ano_eleicao=2026 AND total_arrecadado=4444 AND fonte='TSE'), 'risk financing row changed';
   ASSERT (SELECT count(*)=1 FROM public.patrimonio WHERE candidato_id=risk_id AND ano_eleicao=2026 AND valor_total=7777 AND bens='[{"tipo":"fixture","descricao":"synthetic sentinel","valor":7777}]'::jsonb), 'risk patrimônio row changed';
   ASSERT NOT EXISTS (SELECT 1 FROM public.coleta_log WHERE alvo='pf-live-risk'), 'risk profile received coleta_log row';
-  ASSERT (SELECT count(*) >= 3 FROM public.coleta_log WHERE alvo='pf-live-safe'), 'expected finance/family/history receipts missing';
+  -- Uma linha por fonte e resultado esperados (medido na rodada hermética de
+  -- 29/09/2026). count(*) >= 3 passava contando o recibo 'erro' de patrimônio
+  -- sem provar a cobertura de família e histórico.
+  ASSERT (SELECT count(*)=2 FROM public.coleta_log WHERE alvo='pf-live-safe' AND fonte='tse-financiamento' AND resultado='encontrado'), 'safe finance receipts (writer + family coverage) != 2';
+  ASSERT (SELECT count(*)=1 FROM public.coleta_log WHERE alvo='pf-live-safe' AND fonte='tse-historico' AND resultado='encontrado'), 'safe history coverage receipt != 1';
+  ASSERT (SELECT count(*)=1 FROM public.coleta_log WHERE alvo='pf-live-safe' AND fonte='tse-patrimonio' AND resultado='erro'), 'safe patrimônio receipt changed (fixture has no 2026 patrimônio for the safe profile)';
+  ASSERT (SELECT count(*)=4 FROM public.coleta_log WHERE alvo='pf-live-safe'), 'unexpected extra receipt for safe profile';
+  ASSERT (SELECT count(*)=1 FROM public.coleta_log WHERE alvo='financiamento' AND fonte='escrita:tse-2026-financas' AND resultado='encontrado'), 'finance write receipt != 1';
+  ASSERT (SELECT count(*)=5 FROM public.coleta_log), 'coleta_log total != 5';
+  -- Contagem por candidato_id nas tabelas 2026 e em financiamento_verificacoes.
+  ASSERT (SELECT count(*)=1 FROM public.financiamento WHERE ano_eleicao=2026 AND candidato_id=safe_id), 'safe financiamento 2026 rows != 1';
+  ASSERT (SELECT count(*)=1 FROM public.financiamento WHERE ano_eleicao=2026 AND candidato_id=risk_id), 'risk financiamento 2026 rows != 1';
+  ASSERT (SELECT count(*)=0 FROM public.patrimonio WHERE ano_eleicao=2026 AND candidato_id=safe_id), 'safe patrimônio 2026 appeared';
+  ASSERT (SELECT count(*)=1 FROM public.patrimonio WHERE ano_eleicao=2026 AND candidato_id=risk_id), 'risk patrimônio 2026 rows != 1';
+  ASSERT (SELECT count(*)=1 FROM public.historico_politico WHERE candidato_id=safe_id), 'safe historico_politico rows != 1';
+  ASSERT (SELECT count(*)=0 FROM public.historico_politico WHERE candidato_id=risk_id), 'risk historico_politico appeared';
+  ASSERT (SELECT count(*)=0 FROM public.financiamento_verificacoes WHERE candidato_id IN (safe_id, risk_id)), 'financiamento_verificacoes changed';
   ASSERT NOT EXISTS (
     SELECT 1 FROM public.coleta_log
     WHERE volume IS NULL OR volume < 0
@@ -109,7 +140,7 @@ BEGIN
   ), 'coleta_log constraint predicate violated';
 END
 $proof$;
-SELECT 'PASS SQL: safe finance updated; risk finance/patrimônio unchanged; risk receipts=0; all collection receipts satisfy constraints' AS assertion;
+SELECT 'PASS SQL: safe finance updated; risk finance/patrimônio unchanged; risk receipts=0; exact receipts per source; row counts per candidato_id; all collection receipts satisfy constraints' AS assertion;
 SQL
 
 before="$(docker exec "$CONTAINER" psql -U postgres -d postgres -X -Atqc 'SELECT count(*) FROM public.coleta_log')"
