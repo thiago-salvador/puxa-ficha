@@ -191,6 +191,79 @@ describe("ponte PCE → senador → candidato", () => {
     assert.equal(result.item.id, idProcessoEticaSenado(901001, 88001))
   })
 
+  it("processo encerrado sem situação no topo usa a última situação oficial da autuação", async () => {
+    const fila = await filaFixture()
+    const item = fila.itens[0]!
+    const dataset = JSON.parse(readFileSync(resolve(process.cwd(), "scripts/data/representacoes-conselho-etica.json"), "utf8"))
+    const encerrado: ProcessoPceAtual = {
+      ...processoAtualAlfa,
+      situacaoAtual: undefined,
+      siglaSituacaoAtual: undefined,
+      dataSituacaoAtual: undefined,
+      tramitando: "Não",
+      autuacoes: [{ situacoes: [
+        { sigla: "EXAME", descricao: "EM EXAME TÉCNICO PRELIMINAR", inicio: "2021-03-12", fim: "2023-06-19" },
+        { sigla: "INDEFD", descricao: "INDEFERIDA", inicio: "2023-06-19", fim: "2026-05-27" },
+      ] }],
+    }
+    const base = { fila, itemId: item.id, roster: fila.roster, seed, dataset, fichaPublica: true, agora: new Date("2026-09-24T12:00:00Z") }
+    const revisao = { ...revisaoAlfa(item.id), situacao_sigla: "INDEFD", situacao_descricao: "INDEFERIDA" }
+    const { item: aprovado } = aprovarPceSenado({ ...base, revisao, processoAtual: encerrado })
+    assert.deepEqual(aprovado.situacao_oficial, { sigla: "INDEFD", descricao: "INDEFERIDA" })
+    assert.equal(aprovado.ultimo_andamento_em, "2026-05-27")
+    assert.throws(() => aprovarPceSenado({ ...base, revisao, processoAtual: { ...encerrado, tramitando: "Sim" } }), /estado oficial atual incompleto/)
+  })
+
+  it("aceita alvo pelo documento do processo quando a ementa cita só o senador escolhido", async () => {
+    const ementa = "Requer medidas para apurar a visita do Senador Fictício Alfa à terra indígena"
+    const fila = filaComEmenta(await filaFixture(), ementa)
+    const item = fila.itens[0]!
+    const dataset = JSON.parse(readFileSync(resolve(process.cwd(), "scripts/data/representacoes-conselho-etica.json"), "utf8"))
+    const documento = {
+      documento_url: "https://legis.senado.gov.br/sdleg-getter/documento?dm=123456",
+      trecho_documento: "solicitar medidas para afastar o Senador Fictício Alfa da presidência da comissão",
+      confirmado_por_humano: true as const,
+    }
+    const base = {
+      fila,
+      itemId: item.id,
+      processoAtual: processoComEmenta(ementa),
+      roster: fila.roster,
+      seed,
+      dataset,
+      fichaPublica: true,
+      agora: new Date("2026-09-24T12:00:00Z"),
+    }
+    const revisao = { ...revisaoAlfa(item.id), trecho_ementa: "a visita do Senador Fictício Alfa" }
+    assert.throws(() => aprovarPceSenado({ ...base, revisao }), /não identifica/)
+    const { item: aprovado } = aprovarPceSenado({ ...base, revisao: { ...revisao, alvo_por_documento: documento } })
+    assert.equal(aprovado.casa, "senado")
+    assert.equal(aprovado.casa === "senado" ? aprovado.identidade.alvo.metodo : null, "documento")
+    assert.throws(
+      () => aprovarPceSenado({ ...base, revisao: { ...revisao, alvo_por_documento: { ...documento, trecho_documento: "solicitar medidas para afastar o Senador Fictício Gama da comissão" } } }),
+      /não nomeia/,
+    )
+    assert.throws(
+      () => aprovarPceSenado({ ...base, revisao: { ...revisao, alvo_por_documento: { ...documento, documento_url: "https://example.com/documento?dm=1" } } }),
+      /repositório oficial/,
+    )
+    assert.throws(
+      () => aprovarPceSenado({ ...base, revisao: { ...revisao, alvo_por_documento: { ...documento, confirmado_por_humano: false as unknown as true } } }),
+      /não identifica/,
+    )
+    const ementaDupla = "Requer medidas para apurar a visita do Senador Fictício Alfa e do Senador Fictício Beta"
+    const filaDupla = filaComEmenta(await filaFixture(), ementaDupla)
+    assert.throws(
+      () => aprovarPceSenado({
+        ...base,
+        fila: filaDupla,
+        processoAtual: processoComEmenta(ementaDupla),
+        revisao: { ...revisao, trecho_ementa: "a visita do Senador Fictício Alfa e do Senador Fictício Beta", alvo_por_documento: documento },
+      }),
+      /mais de um senador|não identifica/,
+    )
+  })
+
   it("limita o intervalo a três tokens de tratamentos formais da lista fechada", () => {
     assert.equal(temPapelDeAlvo("em face do Exmo Sr Senador Fictício Alfa", "Fictício Alfa"), true)
     assert.equal(temPapelDeAlvo("contra a Ex Senadora Fictícia Beta", "Fictícia Beta"), true)
