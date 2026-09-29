@@ -97,6 +97,156 @@ export interface Comunicacao {
   destinatarios?: Array<{ nome?: string; polo?: string }>
 }
 
+export type PapelProcessual =
+  | "parte_passiva"
+  | "parte_ativa"
+  | "advogado"
+  | "vitima_ou_ofendido"
+  | "testemunha_ou_terceiro"
+  | "apenas_citado"
+  | "indeterminado"
+
+export interface DecisaoPapelProcessual {
+  papel: PapelProcessual
+  trecho: string
+}
+
+const PAPEL_PARTIDO_PASSIVO = /\b(?:REQUERID[OA]|R[ÉE]U|EXECUTAD[OA]|DEMANDAD[OA]|DENUNCIAD[OA]|ACUSAD[OA]|PARTE\s+PASSIVA)\b/i
+const PAPEL_PARTIDO_ATIVO = /\b(?:AUTOR(?:A)?|REQUERENTE|EXEQUENTE|DEMANDANTE|IMPETRANTE|PARTE\s+ATIVA)\b/i
+const PAPEL_ADVOGADO = /\b(?:ADVOGAD[OA](?:\(A\))?|ADV\.?|PROCURADOR(?:A)?|OAB\s*(?:[/:-]?\s*[A-Z]{2}\s*)?\d{3,7})\b|\(\s*OAB\b/i
+const PAPEL_VITIMA = /\b(?:V[ÍI]TIMA|OFENDID[OA](?:\(A\))?)\b/i
+const PAPEL_TESTEMUNHA = /\b(?:TESTEMUNH[AO]|TERCEIR[OA]\s+INTERESSAD[OA]|PERIT[OA])\b/i
+
+function papelDoPolo(polo: string | undefined): PapelProcessual | null {
+  const valor = normalizar(polo ?? "")
+  if (/^(?:A|ATIVO|ATIVA)$/.test(valor)) return "parte_ativa"
+  if (/^(?:P|PASSIVO|PASSIVA)$/.test(valor)) return "parte_passiva"
+  return null
+}
+
+function trechoDecisivo(texto: string, nome: string, inicio?: number): string {
+  const t = normalizar(texto).replace(/CPF(?:\s*(?:N|NUMERO|NO))?\s*[:.]?\s*(?:\d[\d. -]{8,}\d|[X*][X*. -]{8,}[X*])/gi, "CPF [omitido]")
+  const alvo = normalizar(nome)
+  const pos = inicio ?? Math.max(0, t.indexOf(alvo))
+  const ini = Math.max(0, pos - 90)
+  const fim = Math.min(t.length, pos + alvo.length + 90)
+  return t.slice(ini, fim).replace(/\s+/g, " ").trim()
+}
+
+function ocorrenciasNomeNormalizado(texto: string, nome: string): number[] {
+  const regex = new RegExp(`\\b${escaparRegex(nome)}\\b`, "g")
+  return [...texto.matchAll(regex)].map((match) => match.index ?? 0)
+}
+
+/** Classifica o papel processual mostrado pela menção do nome. Falha fechando em revisão. */
+export function papelProcessualDoNome(
+  texto: string,
+  nome: string,
+  destinatarios: Array<{ nome?: string; polo?: string }> | string[] = [],
+): PapelProcessual {
+  const t = normalizar(texto)
+  const n = normalizar(nome).trim()
+  if (!n) return "indeterminado"
+  const partesDestinatarios = destinatarios.map((d) => typeof d === "string" ? { nome: d } : d)
+  const destinatariosDoNome = partesDestinatarios.filter((d) => nomeDestinatario(d.nome) === n)
+  const ocorrencias = ocorrenciasNomeNormalizado(t, n)
+  if (ocorrencias.length === 0 && destinatariosDoNome.length === 0) return "indeterminado"
+  const papeis = new Set<PapelProcessual>()
+  for (const destinatario of destinatariosDoNome) {
+    const polo = papelDoPolo(destinatario.polo)
+    if (polo) papeis.add(polo)
+  }
+  for (const pos of ocorrencias) {
+    const janela = t.slice(Math.max(0, pos - 120), Math.min(t.length, pos + n.length + 120))
+    const antes = t.slice(Math.max(0, pos - 70), pos)
+    const depois = t.slice(pos + n.length, Math.min(t.length, pos + n.length + 70))
+    const partidoPassivo = new RegExp(`${PAPEL_PARTIDO_PASSIVO.source}\\s*[:\\-]?\\s*$`, "i").test(antes)
+      || new RegExp(`^\\s*[,;:\\-]?\\s*${PAPEL_PARTIDO_PASSIVO.source}`, "i").test(depois)
+    const partidoAtivo = new RegExp(`${PAPEL_PARTIDO_ATIVO.source}\\s*[:\\-]?\\s*$`, "i").test(antes)
+      || new RegExp(`^\\s*[,;:\\-]?\\s*${PAPEL_PARTIDO_ATIVO.source}`, "i").test(depois)
+    const advogado = PAPEL_ADVOGADO.test(antes) || PAPEL_ADVOGADO.test(depois)
+      || (PAPEL_ADVOGADO.test(janela) && /\b(?:CPF|OAB)\b/i.test(janela))
+    const vitima = PAPEL_VITIMA.test(antes) || PAPEL_VITIMA.test(depois)
+    const terceiro = PAPEL_TESTEMUNHA.test(antes) || PAPEL_TESTEMUNHA.test(depois)
+    if (advogado) papeis.add("advogado")
+    if (vitima) papeis.add("vitima_ou_ofendido")
+    if (terceiro) papeis.add("testemunha_ou_terceiro")
+    if (partidoPassivo) papeis.add("parte_passiva")
+    if (partidoAtivo) papeis.add("parte_ativa")
+  }
+  if (papeis.size === 0) return ocorrencias.length > 0 ? "apenas_citado" : "indeterminado"
+  if (papeis.has("parte_ativa") && papeis.has("parte_passiva")) return "indeterminado"
+  const partes = [...papeis].filter((p) => p === "parte_ativa" || p === "parte_passiva")
+  const naoPartes = [...papeis].filter((p) => p !== "parte_ativa" && p !== "parte_passiva")
+  if (partes.length > 0 && naoPartes.length > 0) return "indeterminado"
+  if (partes.length === 1) return partes[0]
+  if (papeis.has("advogado")) return "advogado"
+  if (papeis.has("vitima_ou_ofendido")) return "vitima_ou_ofendido"
+  return "testemunha_ou_terceiro"
+}
+
+export function decisaoPapelProcessualDoNome(
+  texto: string,
+  nome: string,
+  destinatarios: Array<{ nome?: string; polo?: string }> | string[] = [],
+): DecisaoPapelProcessual {
+  const papel = papelProcessualDoNome(texto, nome, destinatarios)
+  const n = normalizar(nome)
+  const t = normalizar(texto)
+  const ocorrencias = ocorrenciasNomeNormalizado(t, n)
+  const decisiva = ocorrencias.find((pos) => papelProcessualDoNome(
+    t.slice(Math.max(0, pos - 120), Math.min(t.length, pos + n.length + 120)), n,
+  ) === papel)
+  return { papel, trecho: trechoDecisivo(t, n, decisiva ?? ocorrencias[0]) }
+}
+
+/** Gate único da atribuição DJEN: somente parte ativa/passiva pode ser achado. */
+export function atribuirProcessoPorPapel(
+  texto: string,
+  nome: string,
+  destinatarios: Array<{ nome?: string; polo?: string }> | string[] = [],
+): DecisaoPapelProcessual & { encontrado: boolean; motivo?: string } {
+  const decisao = decisaoPapelProcessualDoNome(texto, nome, destinatarios)
+  const encontrado = decisao.papel === "parte_ativa" || decisao.papel === "parte_passiva"
+  return encontrado ? { ...decisao, encontrado } : { ...decisao, encontrado, motivo: `papel_processual:${decisao.papel}` }
+}
+
+export interface EstadoJevPapelProcessual {
+  candidatura: { nome: string; cargo: string }
+  processo: { numero_cnj: string; trecho: string; destinatarios: Array<{ nome?: string; polo?: string }> }
+}
+
+/** Monta somente o state mínimo para uma futura avaliação Jev em sombra. */
+export function estadoJevPapelProcessual(
+  item: {
+    candidatura?: { nome?: string; nome_completo?: string; cargo?: string }
+    processo?: { numero_cnj?: string; trecho?: string; trecho_papel?: string; contexto_identidade?: string; destinatarios?: Array<{ nome?: string; polo?: string }> }
+    processos?: Array<{ numero_cnj?: string; trecho?: string; trecho_papel?: string; contexto_identidade?: string; destinatarios?: Array<{ nome?: string; polo?: string }> }>
+    nome?: string
+    nome_completo?: string
+    cargo?: string
+    numero_cnj?: string
+    contexto_identidade?: string
+    trecho?: string
+    trecho_papel?: string
+    destinatarios?: Array<{ nome?: string; polo?: string }>
+  },
+  processo?: { numero_cnj?: string; trecho?: string; trecho_papel?: string; contexto_identidade?: string; destinatarios?: Array<{ nome?: string; polo?: string }> },
+): EstadoJevPapelProcessual {
+  const candidatura = item.candidatura ?? item
+  const p = processo ?? item.processo ?? item.processos?.[0] ?? item
+  return {
+    candidatura: { nome: String(candidatura.nome ?? candidatura.nome_completo ?? ""), cargo: String(candidatura.cargo ?? "") },
+    processo: {
+      numero_cnj: String(p.numero_cnj ?? ""),
+      trecho: String(p.trecho ?? p.trecho_papel ?? p.contexto_identidade ?? ""),
+      destinatarios: Array.isArray(p.destinatarios) ? p.destinatarios : [],
+    },
+  }
+}
+
+export const construirEstadoJevPapelProcessual = estadoJevPapelProcessual
+
 interface ProcessoAchado {
   numero_cnj: string
   tribunal: string
@@ -105,6 +255,8 @@ interface ProcessoAchado {
   polo: string | null
   url: string
   contexto_identidade: string
+  papel_processual?: PapelProcessual
+  trecho_papel?: string
   datajud: Record<string, unknown>
 }
 
@@ -1695,7 +1847,7 @@ export async function pesquisarCandidato(
         processos: [],
       }
     }
-    const encontrados = new Map<string, { item: Comunicacao; contexto: string; polo: string | null }>()
+    const encontrados = new Map<string, { item: Comunicacao; contexto: string; polo: string | null; papel: DecisaoPapelProcessual }>()
     const descartados = new Map<string, Record<string, unknown>>()
     const ambiguos = new Map<string, Record<string, unknown>>()
     const cpfCandidato = String(identidade.cpf ?? "")
@@ -1714,11 +1866,17 @@ export async function pesquisarCandidato(
     // não carrega confirmação editorial para esse CNJ (vai a revisão humana).
     // A marca acumula entre comunicações do mesmo número.
     const marcarAmbiguo = (numero: string, item: Comunicacao, registro: Record<string, unknown>): void => {
+      // O CNJ só é publicável quando todas as comunicações atribuíveis que o
+      // compõem passam pelo mesmo gate de papel. Uma ocorrência não-parte ou
+      // conflitante rebaixa qualquer achado anterior do mesmo CNJ.
+      encontrados.delete(numero)
       const destinatarios = (item.destinatarios ?? []).map((d) => String(d.nome ?? ""))
       const divergente = ambiguos.get(numero)?.cpf_divergente === true
         || cpfsRotuladosDoNome(djen.textosBrutos?.get(item.id) ?? "", nomeConsulta, destinatarios)
           .some((r) => r.tipo === "completo" && r.digitos !== cpfCandidato.replace(/\D/g, ""))
-      ambiguos.set(numero, divergente ? { ...registro, cpf_divergente: true } : registro)
+      const anterior = ambiguos.get(numero)
+      const prioritario = typeof anterior?.motivo === "string" && anterior.motivo.startsWith("papel_processual:") ? anterior : registro
+      ambiguos.set(numero, divergente ? { ...prioritario, cpf_divergente: true } : prioritario)
     }
     const porCpf = (item: Comunicacao): string | null => djen.textosBrutos
       ? contextoPorCpfNoTexto(djen.textosBrutos.get(item.id) ?? "", nomeConsulta, cpfCandidato, (item.destinatarios ?? []).map((d) => String(d.nome ?? "")))
@@ -1728,16 +1886,19 @@ export async function pesquisarCandidato(
       if (descartarSeCpfDiverge(item, numero)) continue
       // Fora dos destinatários, só o CPF completo da candidatura no texto atribui.
       const contextoCpf = cnjValido(numero) ? porCpf(item) : null
-      if (contextoCpf) {
-        encontrados.set(numero, { item, contexto: contextoCpf, polo: null })
+      const papel = atribuirProcessoPorPapel(djen.textosBrutos?.get(item.id) ?? item.texto ?? "", nomeConsulta, item.destinatarios ?? [])
+      if (contextoCpf && papel.encontrado && !ambiguos.has(numero)) {
+        encontrados.set(numero, { item, contexto: contextoCpf, polo: null, papel })
         continue
       }
       marcarAmbiguo(numero, item, {
         numero_cnj: numero,
         tribunal: item.siglaTribunal ?? null,
-        motivo: mencionaNomeNoTexto(item, nome)
+        motivo: papel.motivo ?? (mencionaNomeNoTexto(item, nome)
           ? "nome exato no texto da comunicacao, fora dos destinatarios; identidade nao atribuida automaticamente"
-          : "comunicacao retornada pela busca do nome, sem o nome legivel no texto; identidade nao atribuida",
+          : "comunicacao retornada pela busca do nome, sem o nome legivel no texto; identidade nao atribuida"),
+        papel_processual: papel.papel,
+        trecho: papel.trecho,
       })
     }
     for (const item of exatos) {
@@ -1749,17 +1910,20 @@ export async function pesquisarCandidato(
       const parte = (item.destinatarios ?? []).some((d) => nomeDestinatario(d.nome) === nome && (d.polo === "A" || d.polo === "P"))
       const contexto = (parte ? contextoPolitico(c, snap, djen.textosBrutos?.get(item.id) ?? item.texto ?? "", nomeConsulta, identidade, (item.destinatarios ?? []).map((d) => String(d.nome ?? ""))) : null)
         ?? porCpf(item)
+      const papel = atribuirProcessoPorPapel(djen.textosBrutos?.get(item.id) ?? item.texto ?? "", nomeConsulta, item.destinatarios ?? [])
       const cnj = cnjValido(numero)
       // Sem texto bruto (cache sanitizado) o descarte por CPF não rodou: nada vira achado.
-      if (contexto && cnj && djen.textosBrutos) encontrados.set(numero, { item, contexto, polo })
+      if (contexto && papel.encontrado && cnj && djen.textosBrutos && !ambiguos.has(numero)) encontrados.set(numero, { item, contexto, polo, papel })
       else marcarAmbiguo(numero, item, {
         numero_cnj: numero,
         tribunal: item.siglaTribunal ?? null,
-        motivo: contexto && cnj
+        motivo: papel.motivo ?? (contexto && cnj
           ? "conferencia de CPF indisponivel no cache sanitizado; refazer a busca sem cache"
           : contexto
           ? "comunicacao oficial sem numero CNJ validavel"
-          : "nome exato sem segundo identificador oficial adjacente; identidade ambigua",
+          : "nome exato sem segundo identificador oficial adjacente; identidade ambigua"),
+        papel_processual: papel.papel,
+        trecho: papel.trecho,
       })
     }
     const processos: ProcessoAchado[] = []
@@ -1769,6 +1933,8 @@ export async function pesquisarCandidato(
         classe: achado.item.nomeClasse ?? null, orgao: achado.item.nomeOrgao ?? null,
         polo: achado.polo, url: urlOficial(achado.item, numero),
         contexto_identidade: achado.contexto,
+        papel_processual: achado.papel.papel,
+        trecho_papel: achado.papel.trecho,
         datajud: { status: "pendente_conferencia_lote" },
       })
     }
@@ -1867,17 +2033,28 @@ export async function pesquisarCandidatoPorCnjs(
       const itens = resposta.items.filter((item) =>
         item.ativo === true && String(item.numero_processo ?? item.numeroprocessocommascara ?? "").replace(/\D/g, "") === numero.replace(/\D/g, ""),
       )
-      const atribuivel = itens.find((item) =>
+      const candidatosAtribuiveis = itens.filter((item) =>
         (item.destinatarios ?? []).some((parte) => normalizar(parte.nome) === normalizar(nome))
         && identificadorForteNoTexto(c, item.texto ?? "", nome, identidade),
       )
-      if (atribuivel) {
+      const atribuivel = candidatosAtribuiveis.find((item) => atribuirProcessoPorPapel(item.texto ?? "", nome, item.destinatarios ?? []).encontrado)
+      const rejeitadoPorPapel = itens.find((item) =>
+        (item.destinatarios ?? []).some((parte) => normalizar(parte.nome) === normalizar(nome))
+        && !atribuirProcessoPorPapel(item.texto ?? "", nome, item.destinatarios ?? []).encontrado)
+      if (rejeitadoPorPapel) {
+        const papel = atribuirProcessoPorPapel(rejeitadoPorPapel.texto ?? "", nome, rejeitadoPorPapel.destinatarios ?? [])
+        semAtribuicao += 1
+        base.ocorrencias_ambiguas.push({ numero_cnj: numero, tribunal, motivo: papel.motivo, papel_processual: papel.papel, trecho: papel.trecho })
+      } else if (atribuivel) {
+        const papel = atribuirProcessoPorPapel(atribuivel.texto ?? "", nome, atribuivel.destinatarios ?? [])
         base.processos.push({
           numero_cnj: numero, tribunal, classe: atribuivel.nomeClasse ?? null,
           orgao: atribuivel.nomeOrgao ?? null,
           polo: atribuivel.destinatarios?.find((parte) => normalizar(parte.nome) === normalizar(nome))?.polo ?? null,
           url,
           contexto_identidade: "destinatario exato e CPF igual ou cargo estadual ligado a UF na comunicacao oficial; texto omitido",
+          papel_processual: papel.papel,
+          trecho_papel: papel.trecho,
           datajud: { status: "nao_consultado_em_monitoramento" },
         })
       } else {

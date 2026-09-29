@@ -30,6 +30,7 @@ import {
   FONTE_RECIBO_FINANCIAMENTO,
   FONTE_RECIBO_PATRIMONIO,
   fichasAlteradasDoPlano,
+  partitionarAcoesPorRiscoDeIdentidade,
   planejarFinancas2026,
   restringirEstadoACoorte,
   stableJson,
@@ -42,7 +43,7 @@ import {
 import { aplicarCoorteAtualizacao } from "./lib/coorte-atualizacao"
 import { assertOutsideRepository } from "./audit/lib/private-output"
 import { infraErrorGraceDays } from "./audit/audit-cobertura-fichas"
-import { reciboBloqueadoPorIdentidade } from "./lib/tse-identidade-celulas"
+import { parseRiscoIdentidadePinado, reciboBloqueadoPorIdentidade, type RiscoIdentidadePinado } from "./lib/tse-identidade-celulas"
 
 const SCRIPT = "tse-2026-financas"
 const URL_BENS = `https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_${ANO_FINANCAS_2026}.zip`
@@ -203,6 +204,24 @@ export function planoPublico(plano: PlanoFinancas2026) {
 export function shaDoPlano(plano: PlanoFinancas2026): string {
   // Recibos ficam fora: o detalhe tem data e contagem, não decide escrita de domínio.
   return createHash("sha256").update(stableJson(plano.acoes)).digest("hex")
+}
+
+export function carregarPinadoAgendado(path: string | URL = new URL("./data/tse-identidade-risco.json", import.meta.url)): RiscoIdentidadePinado {
+  try { return parseRiscoIdentidadePinado(readFileSync(path)) }
+  catch (error) { throw new Error(`pin de identidade inválido ou ausente: ${mensagemDe(error)}`) }
+}
+
+export function prepararPlanoAgendado(plano: PlanoFinancas2026, pinado: RiscoIdentidadePinado): { plano: PlanoFinancas2026; deferred: number } {
+  const { plano: particionado, deferred } = partitionarAcoesPorRiscoDeIdentidade(plano, pinado.slugs, new Set(pinado.celulas_liberadas))
+  return {
+    plano: {
+      ...particionado,
+      identity_risk_slugs: [...pinado.slugs],
+      identity_released_cells: [...pinado.celulas_liberadas],
+      resumo: { ...particionado.resumo, identity_risk_actions_deferred: deferred },
+    },
+    deferred,
+  }
 }
 
 export function readReviewedPlan(path: string, expectedFileSha: string): PlanoFinancas2026 & { plano_sha256: string; generated_at: string } {
@@ -467,10 +486,11 @@ function mensagemDe(err: unknown): string {
  * esta tentativa não tivesse existido. Nunca lança: o erro original é o que
  * o chamador precisa ver.
  */
-export function linhasDeReciboDeFalha(publicos: FichaPublica[], motivo: string, identityRiskSlugs: ReadonlySet<string> = new Set()) {
+export function linhasDeReciboDeFalha(publicos: FichaPublica[], motivo: string, identityRiskSlugs: ReadonlySet<string> = new Set(), identityReleasedCells: ReadonlySet<string> = new Set()) {
   const detalhe = JSON.stringify({ escopo: "candidato", ano: ANO_FINANCAS_2026, motivo: motivo.slice(0, 300) })
-  return publicos.filter((p) => !identityRiskSlugs.has(p.slug)).flatMap((p) =>
-    [FONTE_RECIBO_FINANCIAMENTO, FONTE_RECIBO_PATRIMONIO].map((fonte) => ({
+  return publicos.flatMap((p) =>
+    [FONTE_RECIBO_FINANCIAMENTO, FONTE_RECIBO_PATRIMONIO].filter((fonte) =>
+      !reciboBloqueadoPorIdentidade({ alvo: p.slug, fonte }, identityRiskSlugs, identityReleasedCells)).map((fonte) => ({
       fonte,
       escopo: "candidato",
       alvo: p.slug,
@@ -506,10 +526,10 @@ async function carregarProvasValidas(): Promise<Array<{ fonte: string; alvo: str
     .order("id"))
 }
 
-async function gravarRecibosDeFalha(motivo: string, publicos: FichaPublica[] | null, identityRiskSlugs: ReadonlySet<string> = new Set()): Promise<void> {
+async function gravarRecibosDeFalha(motivo: string, publicos: FichaPublica[] | null, identityRiskSlugs: ReadonlySet<string> = new Set(), identityReleasedCells: ReadonlySet<string> = new Set()): Promise<void> {
   try {
     const lista = publicos ?? (await carregarPublicos())
-    const todas = linhasDeReciboDeFalha(lista, motivo, identityRiskSlugs)
+    const todas = linhasDeReciboDeFalha(lista, motivo, identityRiskSlugs, identityReleasedCells)
     const linhas = semProvaValida(todas, await carregarProvasValidas())
     if (linhas.length < todas.length) console.error(`recibos de erro não gravados por prova válida no prazo: ${todas.length - linhas.length}`)
     for (let i = 0; i < linhas.length; i += 200) {
@@ -603,27 +623,30 @@ async function avaliarTravas(opts: OpcoesCli): Promise<number> {
 
 export async function main(argv = process.argv.slice(2)): Promise<number> {
   const opts = lerArgs(argv)
-  if (!opts.aplicar || opts.reviewedPlan) return executar(opts)
+  const pinado = opts.agendado && !opts.avaliarTravas ? carregarPinadoAgendado() : null
+  if (!opts.aplicar || opts.reviewedPlan) return executar(opts, pinado)
   try {
-    return await executar(opts)
+    return await executar(opts, pinado)
   } catch (err) {
-    await gravarRecibosDeFalha(`rodada abortou antes de aplicar: ${mensagemDe(err)}`, null)
+    await gravarRecibosDeFalha(`rodada abortou antes de aplicar: ${mensagemDe(err)}`, null,
+      new Set(pinado?.slugs ?? []), new Set(pinado?.celulas_liberadas ?? []))
     throw err
   }
 }
 
-async function executar(opts: OpcoesCli): Promise<number> {
+async function executar(opts: OpcoesCli, pinado: RiscoIdentidadePinado | null = null): Promise<number> {
   exigirChaveV2(process.env.PF_DOADOR_CPF_HASH_SALT)
   if (opts.avaliarTravas) return avaliarTravas(opts)
 
   if (opts.reviewedPlan && (!opts.aplicar || opts.agendado || !/^[a-f0-9]{64}$/i.test(opts.expectedPlanFileSha ?? ""))) {
     throw new Error("plano revisado exige --apply manual e SHA-256 do arquivo")
   }
-  const { plano, estado, publicos } = opts.reviewedPlan ? await (async () => {
+  const { plano: original, estado, publicos } = opts.reviewedPlan ? await (async () => {
     const reviewed = readReviewedPlan(opts.reviewedPlan!, opts.expectedPlanFileSha!)
     const [estado, publicos] = await Promise.all([carregarEstado2026(), carregarPublicos()])
     return { plano: reviewed, estado, publicos }
   })() : await planejar(!opts.aplicar, opts.agendado)
+  const plano = pinado ? prepararPlanoAgendado(original, pinado).plano : original
   const sha = shaDoPlano(plano)
   const publico = planoPublico(plano)
   console.log(JSON.stringify({ modo: opts.aplicar ? "apply" : "dry-run", plano_sha256: sha, resumo: publico.resumo }, null, 2))
@@ -657,7 +680,7 @@ async function executar(opts: OpcoesCli): Promise<number> {
       if (opts.out) salvar(opts.out, "portao-reprovado.json", { plano_sha256: sha, codigo: portao.codigo, motivo: portao.motivo })
       return portao.codigo
     }
-    await gravarRecibosDeFalha(portao.motivo, publicos, new Set(plano.identity_risk_slugs ?? []))
+    await gravarRecibosDeFalha(portao.motivo, publicos, new Set(plano.identity_risk_slugs ?? []), new Set(plano.identity_released_cells ?? []))
     return portao.codigo
   }
 
