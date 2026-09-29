@@ -1,0 +1,1662 @@
+{
+  "_comentario": "LOTE APROVADO PELA MESA E NAO APLICADO. A allowlist autoriza as escritas nominais da migration L8 e carrega a lista fechada que o gerador le; aplicar continua sendo ato externo separado. Regenerar com scripts/audit/derivar-lista-l8-mesa.ts.",
+  "recorte": "l8-mesa-20260929",
+  "migration": "20260929020000_l8_mesa_processos_promessas.sql",
+  "fonte": "DJEN/CNJ (Comunica PJe), DataJud, TSE, Câmara dos Deputados e decisões da Mesa editorial L8 de 29/09/2026.",
+  "coorte": [
+    "alvaro-dias-rn",
+    "david-almeida",
+    "douglas-ruas",
+    "eduardo-paes",
+    "felipe-camarao",
+    "gabriel-azevedo",
+    "jhc",
+    "laurez-moreira",
+    "luciano-zucco",
+    "lula",
+    "marconi-perillo",
+    "professora-dorinha",
+    "rafael-fonteles",
+    "requiao-filho",
+    "roberto-cidade",
+    "tarcisio-gov-sp",
+    "tse-2026-100002537338",
+    "tse-2026-110002544986",
+    "tse-2026-120002547434",
+    "tse-2026-200002534448",
+    "tse-2026-20002553727",
+    "tse-2026-230002533586",
+    "tse-2026-230002549330",
+    "tse-2026-50002536317",
+    "tse-2026-80002552373",
+    "tse-2026-90002541455"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "processos",
+      "slug": "alvaro-dias-rn",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "david-almeida",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "douglas-ruas",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "eduardo-paes",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "felipe-camarao",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "gabriel-azevedo",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "jhc",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "laurez-moreira",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "luciano-zucco",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "lula",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "marconi-perillo",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "professora-dorinha",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "rafael-fonteles",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "requiao-filho",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "roberto-cidade",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tarcisio-gov-sp",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-100002537338",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-110002544986",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-120002547434",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-200002534448",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-20002553727",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-230002533586",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-230002549330",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-50002536317",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-80002552373",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tse-2026-90002541455",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "processos",
+      "ref": "curadoria-mesa-l8-20260929",
+      "campos": [
+        "numero_processo",
+        "status"
+      ]
+    },
+    {
+      "tabela": "compromisso_evidencia",
+      "ref": "curadoria-mesa-l8-20260929",
+      "campos": [
+        "candidato_id",
+        "programa_chave",
+        "frase_id",
+        "tema_id",
+        "tipo_evidencia",
+        "evidencia_ref",
+        "relacao",
+        "origem",
+        "probabilidade",
+        "verificado",
+        "revisado_por",
+        "revisado_em",
+        "motivo",
+        "updated_at"
+      ]
+    },
+    {
+      "tabela": "projetos_lei",
+      "ref": "curadoria-mesa-l8-20260929",
+      "campos": [
+        "metadata"
+      ]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260929020000",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
+    }
+  ],
+  "lista_fechada": {
+    "versao": "20260929020000",
+    "marcador": "curadoria-mesa-l8-20260929",
+    "revisao_em": "2026-09-29",
+    "contagens": {
+      "processos_inserir": 31,
+      "processos_fichas_inserir": 26,
+      "processos_completar_cnj": 6,
+      "processos_status_corrigido": 1,
+      "processos_noop_ja_publicos": 13,
+      "processos_ocultar_no_site": 1,
+      "processos_nao_publicar_ja_publicos_sem_acao": 60,
+      "processos_veto_publico_pendente_decisao": 1,
+      "promessas_verificar": 1,
+      "promessas_inserir": 6,
+      "promessas_despublicar": 10,
+      "promessas_noop": 66,
+      "projetos_autoria": 1,
+      "candidate_changes_esperados": 32
+    },
+    "processos": {
+      "inserir": [
+        {
+          "slug": "alvaro-dias-rn",
+          "candidato_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+          "numero_cnj": "0834444-65.2019.8.20.5001",
+          "tribunal": "STJ",
+          "classe": "AGRAVO EM RECURSO ESPECIAL",
+          "orgao": "AJC COORDENADORIA DE JULGAMENTO COLEGIADO DA PRIMEIRA TURMA",
+          "polo": "P",
+          "papel": "parte_passiva",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-alvaro-dias-rn-1,F4-proc-alvaro-dias-rn-v3"
+        },
+        {
+          "slug": "david-almeida",
+          "candidato_id": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+          "numero_cnj": "0733188-83.2022.8.04.0001",
+          "tribunal": "TJAM",
+          "classe": "AçãO POPULAR",
+          "orgao": "4ª Vara da Fazenda Pública",
+          "polo": "P",
+          "papel": "parte_passiva",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-david-almeida-1,F4-proc-david-almeida-v3"
+        },
+        {
+          "slug": "douglas-ruas",
+          "candidato_id": "097dc8d0-d05d-42cb-91a0-0582dd561f76",
+          "numero_cnj": "0816373-64.2024.8.19.0087",
+          "tribunal": "TJRJ",
+          "classe": "PROCEDIMENTO DO JUIZADO ESPECIAL CíVEL",
+          "orgao": "2º Juizado Especial Cível da Regional de Alcântara",
+          "polo": "A",
+          "papel": "parte_ativa",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-douglas-ruas-1,F4-proc-douglas-ruas-v3"
+        },
+        {
+          "slug": "eduardo-paes",
+          "candidato_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+          "numero_cnj": "0962726-74.2023.8.19.0001",
+          "tribunal": "TJRJ",
+          "classe": "AçãO POPULAR",
+          "orgao": "6ª Vara de Fazenda Pública da Comarca da Capital",
+          "polo": "P",
+          "papel": "parte_passiva",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-eduardo-paes-v3"
+        },
+        {
+          "slug": "felipe-camarao",
+          "candidato_id": "0c0e1b6a-cfa6-4da7-82ab-a8ea90b55200",
+          "numero_cnj": "0818103-61.2026.8.10.0000",
+          "tribunal": "TJMA",
+          "classe": "MANDADO DE SEGURANçA CíVEL",
+          "orgao": "Órgão Especial",
+          "polo": "A",
+          "papel": "parte_ativa",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-felipe-camarao-v3"
+        },
+        {
+          "slug": "gabriel-azevedo",
+          "candidato_id": "2081565f-e38d-4246-81d6-4f28979e8136",
+          "numero_cnj": "5196901-38.2023.8.13.0024",
+          "tribunal": "TJMG",
+          "classe": "MANDADO DE SEGURANçA CíVEL",
+          "orgao": "1ª Vara dos Feitos da Fazenda Pública Municipal da Comarca de Belo Horizonte",
+          "polo": "A",
+          "papel": "parte_ativa",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-gabriel-azevedo-indet"
+        },
+        {
+          "slug": "jhc",
+          "candidato_id": "ba62f5d0-3e39-40a7-a0af-ee1d86e97e75",
+          "numero_cnj": "0760129-22.2025.8.02.0001",
+          "tribunal": "TJAL",
+          "classe": "APELAçãO CíVEL",
+          "orgao": "4ª Câmara Cível",
+          "polo": "A",
+          "papel": "parte_ativa",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-jhc-1,F4-proc-jhc-v3"
+        },
+        {
+          "slug": "laurez-moreira",
+          "candidato_id": "e4a0bfc6-586c-491f-8580-e43c6d30f7a1",
+          "numero_cnj": "0012601-54.2026.8.27.2700",
+          "tribunal": "TJTO",
+          "classe": "SUSPENSãO DE LIMINAR E DE SENTENçA",
+          "orgao": "TRIBUNAL PLENO",
+          "polo": "P",
+          "papel": "parte_ativa",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-laurez-moreira-1,F4-proc-laurez-moreira-v3"
+        },
+        {
+          "slug": "laurez-moreira",
+          "candidato_id": "e4a0bfc6-586c-491f-8580-e43c6d30f7a1",
+          "numero_cnj": "0024560-32.2026.8.27.2729",
+          "tribunal": "TJTO",
+          "classe": "PROCEDIMENTO COMUM CíVEL",
+          "orgao": "1ª Vara da Fazenda e Reg. Públicos de Palmas",
+          "polo": "A",
+          "papel": "parte_ativa",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-laurez-moreira-1,F4-proc-laurez-moreira-v3"
+        },
+        {
+          "slug": "luciano-zucco",
+          "candidato_id": "53af44cf-7f66-44d3-b733-1114c5143e6a",
+          "numero_cnj": "5230719-57.2025.8.21.0001",
+          "tribunal": "TJRS",
+          "classe": "TUTELA ANTECIPADA ANTECEDENTE",
+          "orgao": "12ª Vara Cível do Foro Central da Comarca de Porto Alegre",
+          "polo": "A",
+          "papel": "parte_ativa",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-luciano-zucco-1,F4-proc-luciano-zucco-v3"
+        },
+        {
+          "slug": "lula",
+          "candidato_id": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+          "numero_cnj": "5035251-02.2023.4.03.6100",
+          "tribunal": "TRF3",
+          "classe": "AçãO POPULAR",
+          "orgao": "13ª Vara Cível Federal de São Paulo",
+          "polo": "P",
+          "papel": "parte_passiva",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-lula-v3"
+        },
+        {
+          "slug": "marconi-perillo",
+          "candidato_id": "95fc116b-4c1e-4332-9c52-948bc1775a57",
+          "numero_cnj": "5107881-05.2019.8.09.0051",
+          "tribunal": "TJGO",
+          "classe": "AçãO CIVIL DE IMPROBIDADE ADMINISTRATIVA",
+          "orgao": "Goiânia - 2ª Vara da Fazenda Pública Estadual",
+          "polo": "P",
+          "papel": "parte_passiva",
+          "tipo": "improbidade",
+          "decisao_ref": "F4-proc-marconi-perillo-v3"
+        },
+        {
+          "slug": "marconi-perillo",
+          "candidato_id": "95fc116b-4c1e-4332-9c52-948bc1775a57",
+          "numero_cnj": "5455799-63.2018.8.09.0051",
+          "tribunal": "TJGO",
+          "classe": "AçãO CIVIL DE IMPROBIDADE ADMINISTRATIVA",
+          "orgao": "Goiânia - 5ª Vara da Fazenda Pública Estadual",
+          "polo": "P",
+          "papel": "parte_passiva",
+          "tipo": "improbidade",
+          "decisao_ref": "F4-proc-marconi-perillo-v3"
+        },
+        {
+          "slug": "professora-dorinha",
+          "candidato_id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
+          "numero_cnj": "0051353-42.2025.8.27.2729",
+          "tribunal": "TJTO",
+          "classe": "PROCEDIMENTO COMUM CíVEL",
+          "orgao": "SECRETARIA JUDICIAL UNIFICADA DAS VARAS CÍVEIS DA COMARCA DE PALMAS",
+          "polo": "A",
+          "papel": "parte_ativa",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-professora-dorinha-1,F4-proc-professora-dorinha-indet"
+        },
+        {
+          "slug": "rafael-fonteles",
+          "candidato_id": "57b743d5-db7b-4048-862d-9378a9fff366",
+          "numero_cnj": "0831944-06.2025.8.18.0140",
+          "tribunal": "TJPI",
+          "classe": "AçãO POPULAR",
+          "orgao": "2ª Vara dos Feitos da Fazenda Pública da Comarca de Teresina",
+          "polo": "P",
+          "papel": "parte_passiva",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-rafael-fonteles-indet"
+        },
+        {
+          "slug": "requiao-filho",
+          "candidato_id": "36ec7b14-9da3-4324-820d-6318ce535d01",
+          "numero_cnj": "0018945-77.2024.8.16.0000",
+          "tribunal": "TJPR",
+          "classe": "MANDADO DE SEGURANçA CíVEL",
+          "orgao": "Órgão Especial",
+          "polo": "A",
+          "papel": "parte_ativa",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-requiao-filho-1,F4-proc-requiao-filho-v3"
+        },
+        {
+          "slug": "requiao-filho",
+          "candidato_id": "36ec7b14-9da3-4324-820d-6318ce535d01",
+          "numero_cnj": "0071998-41.2022.8.16.0000",
+          "tribunal": "TJPR",
+          "classe": "MANDADO DE SEGURANçA CíVEL",
+          "orgao": "Órgão Especial",
+          "polo": "A",
+          "papel": "parte_ativa",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-requiao-filho-1,F4-proc-requiao-filho-v3"
+        },
+        {
+          "slug": "roberto-cidade",
+          "candidato_id": "fa96e1ad-f460-411b-b30b-3aecb135e8d7",
+          "numero_cnj": "0013401-70.2025.8.04.9001",
+          "tribunal": "TJAM",
+          "classe": "AGRAVO DE INSTRUMENTO",
+          "orgao": "Segunda Câmara Cível",
+          "polo": "P",
+          "papel": "parte_ativa",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-roberto-cidade-1,F4-proc-roberto-cidade-v3"
+        },
+        {
+          "slug": "tarcisio-gov-sp",
+          "candidato_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+          "numero_cnj": "2052422-44.2025.8.26.0000",
+          "tribunal": "TJSP",
+          "classe": "AGRAVO DE INSTRUMENTO",
+          "orgao": "Processamento 4º Grupo - 9ª Câmara Direito Público - Praça Almeida Jr., 72 - 1º andar, sala 12",
+          "polo": null,
+          "papel": "parte_passiva",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-tarcisio-gov-sp-indet"
+        },
+        {
+          "slug": "tse-2026-100002537338",
+          "candidato_id": "63776260-c37b-4112-8eca-eb338e88abf5",
+          "numero_cnj": "0754385-08.2025.8.07.0001",
+          "tribunal": "TJDFT",
+          "classe": "CRIMES DE CALúNIA, INJúRIA E DIFAMAçãO DE COMPETêNCIA DO JUIZ SINGULAR",
+          "orgao": "2ª Vara Criminal de Brasília",
+          "polo": "A",
+          "papel": "parte_ativa",
+          "tipo": "criminal",
+          "decisao_ref": "F4-proc-tse-2026-100002537338-indet"
+        },
+        {
+          "slug": "tse-2026-110002544986",
+          "candidato_id": "7e16885c-67f9-49bd-83f1-2ab42cbfc93e",
+          "numero_cnj": "0000029-41.1998.8.16.0053",
+          "tribunal": "TJPR",
+          "classe": "EMBARGOS à EXECUçãO",
+          "orgao": "Vara Cível de Bela Vista do Paraíso",
+          "polo": "A",
+          "papel": "parte_ativa",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-tse-2026-110002544986-reexame"
+        },
+        {
+          "slug": "tse-2026-120002547434",
+          "candidato_id": "5ca3ab90-3e9a-4356-8b54-9cda5ad7c0fc",
+          "numero_cnj": "0754389-79.2024.8.07.0001",
+          "tribunal": "TJDFT",
+          "classe": "CUMPRIMENTO DE SENTENçA",
+          "orgao": "16ª Vara Cível de Brasília",
+          "polo": "P",
+          "papel": "parte_passiva",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-tse-2026-120002547434-reexame"
+        },
+        {
+          "slug": "tse-2026-200002534448",
+          "candidato_id": "00b630c2-c244-4fbf-b273-2ebe9e4b7ac2",
+          "numero_cnj": "0806004-06.2026.8.20.5004",
+          "tribunal": "TJRN",
+          "classe": "PROCEDIMENTO DO JUIZADO ESPECIAL CíVEL",
+          "orgao": "5º Juizado Especial Cível da Comarca de Natal",
+          "polo": "P",
+          "papel": "parte_passiva",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-tse-2026-200002534448-indet"
+        },
+        {
+          "slug": "tse-2026-200002534448",
+          "candidato_id": "00b630c2-c244-4fbf-b273-2ebe9e4b7ac2",
+          "numero_cnj": "0808034-14.2026.8.20.5004",
+          "tribunal": "TJRN",
+          "classe": "PROCEDIMENTO DO JUIZADO ESPECIAL CíVEL",
+          "orgao": "7º Juizado Especial Cível da Comarca de Natal",
+          "polo": "P",
+          "papel": "parte_passiva",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-tse-2026-200002534448-indet"
+        },
+        {
+          "slug": "tse-2026-20002553727",
+          "candidato_id": "e851e611-79b9-4310-8793-36657061e2c6",
+          "numero_cnj": "0016830-09.1999.8.07.0001",
+          "tribunal": "TJDFT",
+          "classe": "CUMPRIMENTO DE SENTENçA",
+          "orgao": "1ª Vara Cível de Brasília",
+          "polo": "P",
+          "papel": "parte_passiva",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-tse-2026-20002553727-reexame"
+        },
+        {
+          "slug": "tse-2026-230002533586",
+          "candidato_id": "ace0e65c-6b4c-474d-a848-0cc97ad6cff4",
+          "numero_cnj": "0814999-49.2018.8.23.0010",
+          "tribunal": "TJRR",
+          "classe": "EXECUçãO DE TíTULO EXTRAJUDICIAL",
+          "orgao": "6ª Vara Cível - Execução de Boa Vista",
+          "polo": "A",
+          "papel": "parte_ativa",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-tse-2026-230002533586-reexame"
+        },
+        {
+          "slug": "tse-2026-230002533586",
+          "candidato_id": "ace0e65c-6b4c-474d-a848-0cc97ad6cff4",
+          "numero_cnj": "0842579-44.2024.8.23.0010",
+          "tribunal": "TJRR",
+          "classe": "CUMPRIMENTO DE SENTENçA",
+          "orgao": "1º Juizado Especial Cível de Boa Vista",
+          "polo": "A",
+          "papel": "parte_ativa",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-tse-2026-230002533586-reexame"
+        },
+        {
+          "slug": "tse-2026-230002549330",
+          "candidato_id": "4ba7a1d5-4402-4caa-a697-fe2ece8cb766",
+          "numero_cnj": "1000060-07.2023.8.23.0010",
+          "tribunal": "SEEU",
+          "classe": "PEDIDO DE PROVIDÊNCIAS",
+          "orgao": "TJRR - BOA VISTA - CORREGEDORIA DOS PRESIDIOS",
+          "polo": "P",
+          "papel": "parte_passiva",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-tse-2026-230002549330-reexame",
+          "ajuste": {
+            "tribunal": "TJRR",
+            "tipo": "criminal",
+            "descricao": "O DJEN registra comunicação processual oficial no processo 1000060-07.2023.8.23.0010, procedimento na Vara de Execução Penal de Boa Vista (TJRR, sistema SEEU) aberto por ordem do STF, em que a candidata consta no polo passivo. Segundo a Folha BV, o procedimento acompanha um acordo de não persecução penal relativo aos atos de 8 de janeiro de 2023. Acordo de não persecução penal não é condenação, e a publicação não informa pena nem culpa."
+          }
+        },
+        {
+          "slug": "tse-2026-50002536317",
+          "candidato_id": "bf2f745c-3c9e-4d50-93d5-f738e4bd5e6e",
+          "numero_cnj": "0319830-75.2011.8.05.0001",
+          "tribunal": "TJBA",
+          "classe": "AçãO POPULAR",
+          "orgao": "7ª V DA FAZENDA PÚBLICA DE SALVADOR",
+          "polo": "P",
+          "papel": "parte_passiva",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-tse-2026-50002536317-indet"
+        },
+        {
+          "slug": "tse-2026-80002552373",
+          "candidato_id": "f96e7c14-8cf9-4d89-8706-b6f00d2afc9b",
+          "numero_cnj": "0005122-65.2015.8.08.0035",
+          "tribunal": "TJES",
+          "classe": "AçãO POPULAR",
+          "orgao": "Vila Velha - Comarca da Capital - 2ª Vara da Fazenda Pública Estadual, Municipal, Registros Públicos, Meio Ambiente e Execuções Fiscais",
+          "polo": "P",
+          "papel": "parte_passiva",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-tse-2026-80002552373-reexame"
+        },
+        {
+          "slug": "tse-2026-90002541455",
+          "candidato_id": "2865ed18-771b-4cf9-b87f-a26da338e19e",
+          "numero_cnj": "0218716-49.1999.8.09.0051",
+          "tribunal": "TJGO",
+          "classe": "CUMPRIMENTO DE SENTENçA",
+          "orgao": "Goiânia - UPJ Varas da Fazenda Pública Estadual: 1ª, 6ª e 7ª",
+          "polo": "P",
+          "papel": "parte_passiva",
+          "tipo": "civil",
+          "decisao_ref": "F4-proc-tse-2026-90002541455-reexame"
+        }
+      ],
+      "completar_cnj": [
+        {
+          "item_id": "F4-proc-lula-omit-1",
+          "decisao": "publicar",
+          "processo_id": "eb7b2f9b-9fc3-4e40-85a1-b942e18ce489",
+          "slug": "lula",
+          "candidato_id": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+          "numero_cnj": "5046512-94.2016.4.04.7000",
+          "status_novo": null,
+          "preimage_md5": "9d768802ed28e8c459c664a093199bbd"
+        },
+        {
+          "item_id": "F4-proc-lula-omit-2",
+          "decisao": "publicar",
+          "processo_id": "743b4234-5865-4c02-90a0-7ce5c4060402",
+          "slug": "lula",
+          "candidato_id": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+          "numero_cnj": "5021365-32.2017.4.04.7000",
+          "status_novo": null,
+          "preimage_md5": "a957405a5a32c8104faa2f9ce42dd847"
+        },
+        {
+          "item_id": "F4-proc-garotinho-omit-1",
+          "decisao": "publicar",
+          "processo_id": "da8ce4a6-f40c-4e77-b527-e237fc378b74",
+          "slug": "garotinho",
+          "candidato_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+          "numero_cnj": "0002855-95.2010.8.19.0001",
+          "status_novo": null,
+          "preimage_md5": "0bc09e6dc0057d16029548799cba0e15"
+        },
+        {
+          "item_id": "F4-proc-delcidio-amaral-omit-1",
+          "decisao": "publicar_com_selo",
+          "processo_id": "d8fdc402-1e2a-46e2-9ccd-75f2af087d7d",
+          "slug": "delcidio-amaral",
+          "candidato_id": "3c94a516-0481-45a5-a13e-ab082885cf65",
+          "numero_cnj": "0042543-76.2016.4.01.3400",
+          "status_novo": null,
+          "preimage_md5": "cfbcdc1251000fbd6dbbd3de1161bb54"
+        },
+        {
+          "item_id": "F4-proc-victor-assis-omit-1",
+          "decisao": "publicar",
+          "processo_id": "17c955ab-1059-4e6d-bdd1-58c9d75f68c5",
+          "slug": "victor-assis",
+          "candidato_id": "2cb5e948-08ea-4a25-8124-6aaac3155c70",
+          "numero_cnj": "0600110-06.2024.6.17.0008",
+          "status_novo": null,
+          "preimage_md5": "6a8c068237dad80deede92b6bcd2c77e"
+        },
+        {
+          "item_id": "F4-proc-leandro-grass-omit-1",
+          "decisao": "publicar_com_selo",
+          "processo_id": "05c04141-af8a-44c0-a92b-819a2f5ce984",
+          "slug": "leandro-grass",
+          "candidato_id": "3b724874-8769-44f3-aab3-06c0155dc155",
+          "numero_cnj": "0602500-20.2022.6.07.0000",
+          "status_novo": "Inelegibilidade aplicada pelo TRE-DF revertida pelo TSE em maio de 2024 no recurso ordinário 0602500-20.2022.6.07.0000",
+          "preimage_md5": "89ec755e391e9ce9d831928062c2ff7c"
+        }
+      ],
+      "noop_ja_publicos": [
+        {
+          "slug": "aecio-neves",
+          "numero_cnj": "0008456-05.2017.4.03.6181",
+          "processo_id": "3f230d6d-1c38-4c5f-89d7-b289ff729aa0"
+        },
+        {
+          "slug": "arthur-henrique",
+          "numero_cnj": "0825283-48.2020.8.23.0010",
+          "processo_id": "e79abca2-c819-4372-81ce-d49b9ffd5cb8"
+        },
+        {
+          "slug": "daniel-vilela",
+          "numero_cnj": "5924701-49.2024.8.09.0000",
+          "processo_id": "6f85d5cd-252f-4726-ba1f-0c11be196dcf"
+        },
+        {
+          "slug": "dr-furlan",
+          "numero_cnj": "6092623-46.2025.8.03.0001",
+          "processo_id": "75b1388d-f24b-4ec5-9003-53f7c5caee30"
+        },
+        {
+          "slug": "eduardo-braide",
+          "numero_cnj": "0856599-93.2025.8.10.0001",
+          "processo_id": "7ad2bc17-e6dd-4a68-a9a7-5820a03a08cd"
+        },
+        {
+          "slug": "eduardo-braide",
+          "numero_cnj": "0862062-84.2023.8.10.0001",
+          "processo_id": "5e612c07-51cc-4b09-8027-9ed98e0ee2bd"
+        },
+        {
+          "slug": "eduardo-paes",
+          "numero_cnj": "0967545-20.2024.8.19.0001",
+          "processo_id": "6fe60cc1-3253-4c66-9b69-23aec013fa73"
+        },
+        {
+          "slug": "garotinho",
+          "numero_cnj": "0101879-97.2017.5.01.0035",
+          "processo_id": "24d27277-47ad-4760-b08d-2bc596b93e8c"
+        },
+        {
+          "slug": "helder-salomao",
+          "numero_cnj": "0018179-59.2014.8.08.0012",
+          "processo_id": "8a75d5dd-3b72-4d24-a6af-829ccd1c2cd2"
+        },
+        {
+          "slug": "joao-henrique-catan",
+          "numero_cnj": "5002452-12.2023.4.03.6000",
+          "processo_id": "b365fdb7-042e-4a84-a98f-0e5186f408d9"
+        },
+        {
+          "slug": "jose-roberto-arruda",
+          "numero_cnj": "0048408-11.2014.8.07.0018",
+          "processo_id": "19156be0-beb4-4e40-bfea-21942d21eaac"
+        },
+        {
+          "slug": "jose-roberto-arruda",
+          "numero_cnj": "0048831-68.2014.8.07.0018",
+          "processo_id": "38c95dc2-3093-4670-8e94-e53117f9aff9"
+        },
+        {
+          "slug": "tse-2026-130002552186",
+          "numero_cnj": "5004750-84.2017.8.13.0079",
+          "processo_id": "d837324c-e3f9-4b3e-b7ac-4342c3d3e854"
+        }
+      ],
+      "ocultar_no_site": [
+        {
+          "item_id": "F4-proc-pazolini-indet",
+          "slug": "pazolini",
+          "numero_cnj": "2002493-39.2023.8.08.0024",
+          "processo_id": "dd836992-ab4c-45fd-bc04-8b7b5b1750ac",
+          "motivo": "segredo de justiça no DJEN desde 29/09/2023 (execução de ANPP); decisão da Mesa L8"
+        }
+      ],
+      "nao_publicar_ja_publicos_sem_acao": [
+        {
+          "item_id": "F4-proc-expedito-netto-1",
+          "slug": "expedito-netto",
+          "numero_cnj": "7054945-54.2022.8.22.0001",
+          "processo_id": "ec44c158-3d1e-4efd-a5b9-93e4af36bd86"
+        },
+        {
+          "item_id": "F4-proc-mailza-assis-1",
+          "slug": "mailza-assis",
+          "numero_cnj": "5004069-75.2026.8.01.0001",
+          "processo_id": "efb1ffc2-6603-4918-9da2-4eec31afd8d1"
+        },
+        {
+          "item_id": "F4-proc-mailza-assis-1",
+          "slug": "mailza-assis",
+          "numero_cnj": "5011747-44.2026.8.01.0001",
+          "processo_id": "7f642ff7-de6e-4596-8f23-058b3c582664"
+        },
+        {
+          "item_id": "F4-proc-eduardo-paes-omit-1",
+          "slug": "eduardo-paes",
+          "numero_cnj": "0096585-41.2025.8.19.0000",
+          "processo_id": "767b2864-d947-4e18-a9f6-2b8846619ac9"
+        },
+        {
+          "item_id": "F4-proc-eduardo-paes-omit-2",
+          "slug": "eduardo-paes",
+          "numero_cnj": "0097255-81.2022.8.19.0001",
+          "processo_id": "da49beb4-50f4-4fab-a635-d2369dc8615f"
+        },
+        {
+          "item_id": "F4-proc-hildon-chaves-omit-1",
+          "slug": "hildon-chaves",
+          "numero_cnj": "7066233-62.2023.8.22.0001",
+          "processo_id": "be71d8ce-0515-49a9-a1a2-a6eb408fe5bb"
+        },
+        {
+          "item_id": "F4-proc-joao-henrique-catan-omit-2",
+          "slug": "joao-henrique-catan",
+          "numero_cnj": "5005453-05.2023.4.03.6000",
+          "processo_id": "6cfed6cc-a719-494d-89d1-430568a224aa"
+        },
+        {
+          "item_id": "F4-proc-wilson-grassi-junior-omit-1",
+          "slug": "wilson-grassi-junior",
+          "numero_cnj": "2254046-86.2021.8.26.0000",
+          "processo_id": "6d93a421-403d-401d-a6ad-a50b03970b81"
+        },
+        {
+          "item_id": "F4-proc-haddad-gov-sp-omit-1",
+          "slug": "haddad-gov-sp",
+          "numero_cnj": "0607928-52.2022.6.26.0000",
+          "processo_id": "233d3564-008e-44a4-8f4a-93de8e8fe9ae"
+        },
+        {
+          "item_id": "F4-proc-haddad-gov-sp-omit-2",
+          "slug": "haddad-gov-sp",
+          "numero_cnj": "0000017-45.2016.6.26.0001",
+          "processo_id": "a964addf-bab0-40cc-88c0-9dd859869fe1"
+        },
+        {
+          "item_id": "F4-proc-vera-lucia-ce-omit-1",
+          "slug": "vera-lucia-ce",
+          "numero_cnj": "0044254-96.2012.8.06.0001",
+          "processo_id": "7f300862-39ed-49fd-9bbb-9decee7e6b13"
+        },
+        {
+          "item_id": "F4-proc-vera-lucia-ce-omit-2",
+          "slug": "vera-lucia-ce",
+          "numero_cnj": "0173030-12.2015.8.06.0001",
+          "processo_id": "ff607fe1-15f5-4ce7-81c8-3a4b7dc94360"
+        },
+        {
+          "item_id": "F4-proc-alan-rick-omit-4",
+          "slug": "alan-rick",
+          "numero_cnj": "5004433-81.2025.8.01.0001",
+          "processo_id": "d9f5807f-3ac6-4816-9a82-2e1f14be870f"
+        },
+        {
+          "item_id": "F4-proc-haddad-gov-sp-omit-3",
+          "slug": "haddad-gov-sp",
+          "numero_cnj": "1049053-46.2015.8.26.0053",
+          "processo_id": "bc803c8f-2d74-489e-8767-66c8385126b5"
+        },
+        {
+          "item_id": "F4-proc-alexandre-kalil-v3",
+          "slug": "alexandre-kalil",
+          "numero_cnj": "5267198-36.2024.8.13.0024",
+          "processo_id": "edb8dea5-e440-47e8-b09d-e96c3d6c8553"
+        },
+        {
+          "item_id": "F4-proc-ataides-oliveira-v3",
+          "slug": "ataides-oliveira",
+          "numero_cnj": "0000421-28.2019.4.01.3502",
+          "processo_id": "890cae30-f51c-4520-9033-364f6d98a8c2"
+        },
+        {
+          "item_id": "F4-proc-ataides-oliveira-v3",
+          "slug": "ataides-oliveira",
+          "numero_cnj": "0600940-85.2022.6.27.0000",
+          "processo_id": "b4bb4532-aff5-4d39-9b41-abeb406064d8"
+        },
+        {
+          "item_id": "F4-proc-ataides-oliveira-v3",
+          "slug": "ataides-oliveira",
+          "numero_cnj": "1001988-98.2025.4.01.4300",
+          "processo_id": "860a4cb1-c257-4ab0-bca0-c5ee51c868f2"
+        },
+        {
+          "item_id": "F4-proc-ataides-oliveira-v3",
+          "slug": "ataides-oliveira",
+          "numero_cnj": "5717868-11.2022.8.09.0051",
+          "processo_id": "526b2431-f491-4943-868d-37f729e062b6"
+        },
+        {
+          "item_id": "F4-proc-celina-leao-v3",
+          "slug": "celina-leao",
+          "numero_cnj": "0701782-15.2022.8.07.0016",
+          "processo_id": "cc656994-1c4c-4a71-acb4-1ce422e523fa"
+        },
+        {
+          "item_id": "F4-proc-celina-leao-v3",
+          "slug": "celina-leao",
+          "numero_cnj": "0706061-14.2017.8.07.0018",
+          "processo_id": "b7f87c26-d461-4cc5-a9a7-1ef608c9df19"
+        },
+        {
+          "item_id": "F4-proc-paula-belmonte-v3",
+          "slug": "paula-belmonte",
+          "numero_cnj": "0000277-64.2023.5.10.0015",
+          "processo_id": "450291ce-bec6-4b07-8b4d-e0796f5a19d3"
+        },
+        {
+          "item_id": "F4-proc-romeu-zema-v3",
+          "slug": "romeu-zema",
+          "numero_cnj": "5011299-77.2023.8.13.0313",
+          "processo_id": "51abd0be-0208-4a2a-b253-a1f5602000f1"
+        },
+        {
+          "item_id": "F4-proc-alysson-bezerra-reexame",
+          "slug": "alysson-bezerra",
+          "numero_cnj": "0811941-55.2021.8.20.5106",
+          "processo_id": "6d4629f2-ad13-4195-a28f-e386f59dbab0"
+        },
+        {
+          "item_id": "F4-proc-tse-2026-150002544909-reexame",
+          "slug": "tse-2026-150002544909",
+          "numero_cnj": "0800030-67.2014.4.05.8202",
+          "processo_id": "22519232-368a-491f-8f0c-90382f3ffbb8"
+        },
+        {
+          "item_id": "F4-proc-tse-2026-190002550182-reexame",
+          "slug": "tse-2026-190002550182",
+          "numero_cnj": "0047594-20.2019.8.19.0008",
+          "processo_id": "44fe21a8-1937-4e79-8b03-732f9188b3ca"
+        },
+        {
+          "item_id": "F4-proc-tse-2026-190002550182-reexame",
+          "slug": "tse-2026-190002550182",
+          "numero_cnj": "0805887-29.2025.8.19.0008",
+          "processo_id": "b829c6ca-0598-41de-9caf-50c945a51ea0"
+        },
+        {
+          "item_id": "F4-proc-tse-2026-190002550182-reexame",
+          "slug": "tse-2026-190002550182",
+          "numero_cnj": "0814607-53.2023.8.19.0008",
+          "processo_id": "1bb2ce37-14bc-4a0f-bca9-296d20d1a67d"
+        },
+        {
+          "item_id": "F4-proc-tse-2026-190002550182-reexame",
+          "slug": "tse-2026-190002550182",
+          "numero_cnj": "3007701-48.2026.8.19.0000",
+          "processo_id": "4dce9036-5d55-4dfb-8197-6627a1448096"
+        },
+        {
+          "item_id": "F4-proc-tse-2026-190002550182-reexame",
+          "slug": "tse-2026-190002550182",
+          "numero_cnj": "5013877-61.2021.4.02.5118",
+          "processo_id": "647e4563-4020-4c86-b473-39935790c581"
+        },
+        {
+          "item_id": "F4-proc-valmir-de-francisquinho-reexame",
+          "slug": "valmir-de-francisquinho",
+          "numero_cnj": "0003737-09.2018.8.25.0034",
+          "processo_id": "83e3b37a-9caa-49ed-89bd-6ac8a1cbfaad"
+        },
+        {
+          "item_id": "F4-proc-acm-neto-indet",
+          "slug": "acm-neto",
+          "numero_cnj": "0703451-15.2026.8.07.0000",
+          "processo_id": "85cef069-c92e-42ad-951a-30eb20adc683"
+        },
+        {
+          "item_id": "F4-proc-acm-neto-indet",
+          "slug": "acm-neto",
+          "numero_cnj": "0769743-13.2025.8.07.0001",
+          "processo_id": "957ba73d-6abc-4d63-9140-94ae87acc5e2"
+        },
+        {
+          "item_id": "F4-proc-acm-neto-indet",
+          "slug": "acm-neto",
+          "numero_cnj": "8010425-71.2019.8.05.0000",
+          "processo_id": "14e47010-de83-4509-aa2d-0e1481135d35"
+        },
+        {
+          "item_id": "F4-proc-acm-neto-indet",
+          "slug": "acm-neto",
+          "numero_cnj": "8091329-75.2019.8.05.0001",
+          "processo_id": "dfeeb2bf-3474-493e-beff-cf77c3027478"
+        },
+        {
+          "item_id": "F4-proc-alan-rick-indet",
+          "slug": "alan-rick",
+          "numero_cnj": "0703721-21.2025.8.01.0912",
+          "processo_id": "3c198695-bdfe-4a7b-831b-3c8163e80191"
+        },
+        {
+          "item_id": "F4-proc-augusto-cury-indet",
+          "slug": "augusto-cury",
+          "numero_cnj": "0709932-06.2017.8.07.0001",
+          "processo_id": "374969be-6a2e-46e1-9b22-5ac17aa65e0d"
+        },
+        {
+          "item_id": "F4-proc-danilo-soares-indet",
+          "slug": "danilo-soares",
+          "numero_cnj": "3002640-90.2025.8.06.0070",
+          "processo_id": "721efd70-8e4c-44f1-b32e-5912f8681c86"
+        },
+        {
+          "item_id": "F4-proc-eduardo-riedel-indet",
+          "slug": "eduardo-riedel",
+          "numero_cnj": "0800961-87.2024.8.12.0055",
+          "processo_id": "8fd380e5-0dbe-45ce-abae-9fee31189182"
+        },
+        {
+          "item_id": "F4-proc-eduardo-riedel-indet",
+          "slug": "eduardo-riedel",
+          "numero_cnj": "1412142-36.2026.8.12.0000",
+          "processo_id": "a40d8d2a-910c-4acc-b438-9db3835a7992"
+        },
+        {
+          "item_id": "F4-proc-eudo-raffael-indet",
+          "slug": "eudo-raffael",
+          "numero_cnj": "0000079-42.2025.5.14.0404",
+          "processo_id": "dcd17cc5-d8ab-471b-8972-fc0cf5f91fbe"
+        },
+        {
+          "item_id": "F4-proc-eudo-raffael-indet",
+          "slug": "eudo-raffael",
+          "numero_cnj": "0000823-14.2023.5.14.0402",
+          "processo_id": "2cad961c-a962-4eb8-b02d-8f6bf6fb4889"
+        },
+        {
+          "item_id": "F4-proc-eudo-raffael-indet",
+          "slug": "eudo-raffael",
+          "numero_cnj": "0710330-37.2025.8.01.0001",
+          "processo_id": "27852aa4-c14d-4bb0-ba62-0c5c263fb567"
+        },
+        {
+          "item_id": "F4-proc-hana-ghassan-indet",
+          "slug": "hana-ghassan",
+          "numero_cnj": "0815591-94.2026.8.14.0000",
+          "processo_id": "d29e1dac-276b-47bc-b65b-9fa9d316b6cc"
+        },
+        {
+          "item_id": "F4-proc-jeronimo-indet",
+          "slug": "jeronimo",
+          "numero_cnj": "8024632-65.2025.8.05.0000",
+          "processo_id": "2df0597d-484a-4e7e-a380-296729380a32"
+        },
+        {
+          "item_id": "F4-proc-jorginho-mello-indet",
+          "slug": "jorginho-mello",
+          "numero_cnj": "5004813-59.2024.8.24.0079",
+          "processo_id": "568025b0-7755-4c22-861f-d90f4439a794"
+        },
+        {
+          "item_id": "F4-proc-jorginho-mello-indet",
+          "slug": "jorginho-mello",
+          "numero_cnj": "5005530-47.2022.4.02.5104",
+          "processo_id": "67a349e0-40f7-4cea-80a6-196fdf3e7789"
+        },
+        {
+          "item_id": "F4-proc-lucas-ribeiro-indet",
+          "slug": "lucas-ribeiro",
+          "numero_cnj": "0808628-51.2026.8.15.2002",
+          "processo_id": "5d23ec4f-8573-4866-a830-f240099e3803"
+        },
+        {
+          "item_id": "F4-proc-mateus-simoes-indet",
+          "slug": "mateus-simoes",
+          "numero_cnj": "5111734-29.2018.8.13.0024",
+          "processo_id": "1a7ab7d3-8b6f-4640-b1e2-f7d7452871fc"
+        },
+        {
+          "item_id": "F4-proc-renan-filho-indet",
+          "slug": "renan-filho",
+          "numero_cnj": "0809670-90.2026.8.02.0000",
+          "processo_id": "29f6dbb8-df1b-4d53-a437-3a65acdc5697"
+        },
+        {
+          "item_id": "F4-proc-ricardo-cappelli-indet",
+          "slug": "ricardo-cappelli",
+          "numero_cnj": "0704997-05.2026.8.07.0001",
+          "processo_id": "419ec6c2-0a00-486e-ba59-72a1c1eadd04"
+        },
+        {
+          "item_id": "F4-proc-ricardo-ferraco-indet",
+          "slug": "ricardo-ferraco",
+          "numero_cnj": "0000891-92.2023.5.17.0009",
+          "processo_id": "bb6648cd-be6e-4b3a-b53d-66f25e35edfa"
+        },
+        {
+          "item_id": "F4-proc-ricardo-ferraco-indet",
+          "slug": "ricardo-ferraco",
+          "numero_cnj": "0001151-69.2023.5.17.0010",
+          "processo_id": "dcabdb92-602f-4ae6-828c-8c7b19345d45"
+        },
+        {
+          "item_id": "F4-proc-rui-costa-pimenta-indet",
+          "slug": "rui-costa-pimenta",
+          "numero_cnj": "1011502-36.2025.8.26.0003",
+          "processo_id": "ead1cfa2-cb00-4edd-bb3b-9efbeb96288b"
+        },
+        {
+          "item_id": "F4-proc-rui-costa-pimenta-indet",
+          "slug": "rui-costa-pimenta",
+          "numero_cnj": "1056927-28.2021.8.26.0100",
+          "processo_id": "0f7d2bab-d938-437b-b05b-3b7f9565d212"
+        },
+        {
+          "item_id": "F4-proc-rui-costa-pimenta-indet",
+          "slug": "rui-costa-pimenta",
+          "numero_cnj": "4015223-51.2025.8.26.0000",
+          "processo_id": "8efd36b4-0d42-4629-b7f8-1ab7ce36f7ad"
+        },
+        {
+          "item_id": "F4-proc-rui-costa-pimenta-indet",
+          "slug": "rui-costa-pimenta",
+          "numero_cnj": "4054899-94.2025.8.26.0100",
+          "processo_id": "40668586-4d52-467a-b98e-5ca5bd0ef75d"
+        },
+        {
+          "item_id": "F4-proc-rui-costa-pimenta-indet",
+          "slug": "rui-costa-pimenta",
+          "numero_cnj": "8000488-52.2023.8.05.0079",
+          "processo_id": "c833e361-3713-4957-812f-0055146341ac"
+        },
+        {
+          "item_id": "F4-proc-thor-dantas-indet",
+          "slug": "thor-dantas",
+          "numero_cnj": "1012578-57.2025.4.01.3000",
+          "processo_id": "3489e970-39a4-48c2-97c0-a96193af6df8"
+        },
+        {
+          "item_id": "F4-proc-thor-dantas-indet",
+          "slug": "thor-dantas",
+          "numero_cnj": "1012580-27.2025.4.01.3000",
+          "processo_id": "353f5aaf-b312-4fa3-bcb1-95a9cd82efba"
+        }
+      ],
+      "veto_publico_pendente_decisao": [
+        {
+          "item_id": "F4-proc-jeronimo-indet",
+          "slug": "jeronimo",
+          "numero_cnj": "8066507-80.2023.8.05.0001",
+          "processo_id": "13ea0dd4-a1bd-4713-89c5-abe554794afe"
+        }
+      ]
+    },
+    "promessas": {
+      "verificar": [
+        {
+          "item_ids": [
+            "F5-par-edmilson-costa-3"
+          ],
+          "slug": "edmilson-costa",
+          "candidato_id": "c7785d1d-b34a-4a0b-b9f2-127584b52d0c",
+          "id": "dbfd69d8-e997-4b32-9f01-e1282675dbee",
+          "preimage_md5": "7aad30ae4bf7cb0a142a468f40bb465b"
+        }
+      ],
+      "inserir": [
+        {
+          "item_ids": [
+            "F5-par-arinalda-do-mlb-49"
+          ],
+          "slug": "arinalda-do-mlb",
+          "candidato_id": "a0d7bc78-cde7-49b1-a006-8d8dcf5449ce",
+          "programa_chave": "2026:GOVERNADOR:RN:200002547826",
+          "tema_id": "moradia-digna",
+          "tipo_evidencia": "fala",
+          "evidencia_ref": "2805d974aeff7863f9769409edb482bde2cb8bfeb347dde5db30e7df783ffa2b"
+        },
+        {
+          "item_ids": [
+            "F5-par-efraim-filho-24"
+          ],
+          "slug": "efraim-filho",
+          "candidato_id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+          "programa_chave": "2026:GOVERNADOR:PB:150002538692",
+          "tema_id": "politica-tributaria",
+          "tipo_evidencia": "projeto_lei",
+          "evidencia_ref": "36646024-ab20-4ad9-8923-2cd87c920c51"
+        },
+        {
+          "item_ids": [
+            "F5-par-efraim-filho-26"
+          ],
+          "slug": "efraim-filho",
+          "candidato_id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+          "programa_chave": "2026:GOVERNADOR:PB:150002538692",
+          "tema_id": "politica-tributaria",
+          "tipo_evidencia": "projeto_lei",
+          "evidencia_ref": "375b10b7-af00-4c58-87b0-0b6dc78f6e32"
+        },
+        {
+          "item_ids": [
+            "F5-par-flavio-bolsonaro-4"
+          ],
+          "slug": "flavio-bolsonaro",
+          "candidato_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+          "programa_chave": "2026:PRESIDENTE:BR:280002551544",
+          "tema_id": "economia-tributaria",
+          "tipo_evidencia": "votacao_chave",
+          "evidencia_ref": "fc47ff55-3557-4ff1-8c93-d594246ece96"
+        },
+        {
+          "item_ids": [
+            "F5-par-luciano-zucco-32"
+          ],
+          "slug": "luciano-zucco",
+          "candidato_id": "53af44cf-7f66-44d3-b733-1114c5143e6a",
+          "programa_chave": "2026:GOVERNADOR:RS:210002547857",
+          "tema_id": "orientacao-economica",
+          "tipo_evidencia": "projeto_lei",
+          "evidencia_ref": "9a68aca1-b817-4bd4-a492-527c59c4ad63"
+        },
+        {
+          "item_ids": [
+            "F5-par-luciano-zucco-34"
+          ],
+          "slug": "luciano-zucco",
+          "candidato_id": "53af44cf-7f66-44d3-b733-1114c5143e6a",
+          "programa_chave": "2026:GOVERNADOR:RS:210002547857",
+          "tema_id": "orientacao-economica",
+          "tipo_evidencia": "votacao_chave",
+          "evidencia_ref": "b56782fc-7a9f-476e-9946-3536edc1b332"
+        }
+      ],
+      "despublicar": [
+        {
+          "item_ids": [
+            "F5-legado-0d02ea00-c2d5-4516-a604-d459c1b2c93f"
+          ],
+          "slug": "sergio-moro-gov-pr",
+          "candidato_id": "6025cfb5-d1a7-4ad0-baa7-c131b381e8fa",
+          "id": "0d02ea00-c2d5-4516-a604-d459c1b2c93f",
+          "preimage_md5": "2a815742d2de29f4fb27fa587e7f7d16"
+        },
+        {
+          "item_ids": [
+            "F5-legado-16eb95a6-5b7a-4e56-8e58-663223761fb7"
+          ],
+          "slug": "luciano-zucco",
+          "candidato_id": "53af44cf-7f66-44d3-b733-1114c5143e6a",
+          "id": "16eb95a6-5b7a-4e56-8e58-663223761fb7",
+          "preimage_md5": "bf76060e3ac1c034074c74ccc3ce0d90"
+        },
+        {
+          "item_ids": [
+            "F5-legado-238ccde5-9ac1-41b0-9e92-a0c17581abcd"
+          ],
+          "slug": "tarcisio-gov-sp",
+          "candidato_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+          "id": "238ccde5-9ac1-41b0-9e92-a0c17581abcd",
+          "preimage_md5": "b9f70ac50b9f00055c521b5f72168639"
+        },
+        {
+          "item_ids": [
+            "F5-legado-9bc9faef-6188-493a-a724-e8f4a75b63d6"
+          ],
+          "slug": "daniel-vilela",
+          "candidato_id": "d80384f6-147b-40ef-8fa5-ae0b2be5a1f5",
+          "id": "9bc9faef-6188-493a-a724-e8f4a75b63d6",
+          "preimage_md5": "37c54921ab07ad0322e59e3caac28390"
+        },
+        {
+          "item_ids": [
+            "F5-legado-a1e9b99d-485a-4322-b4e5-598923155243"
+          ],
+          "slug": "lula",
+          "candidato_id": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+          "id": "a1e9b99d-485a-4322-b4e5-598923155243",
+          "preimage_md5": "8216c353bcd772e4ee01fa70c2eb01fe"
+        },
+        {
+          "item_ids": [
+            "F5-legado-a72a3378-6665-4582-966b-f907139490d6"
+          ],
+          "slug": "eduardo-paes",
+          "candidato_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+          "id": "a72a3378-6665-4582-966b-f907139490d6",
+          "preimage_md5": "e897721f603fb8ac38b1ddb53454df81"
+        },
+        {
+          "item_ids": [
+            "F5-legado-e7046002-6714-4af5-9cd5-736a25d22e94"
+          ],
+          "slug": "patrus-ananias",
+          "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+          "id": "e7046002-6714-4af5-9cd5-736a25d22e94",
+          "preimage_md5": "6fe3bbb5e74c08a655d09f57c56d3aca"
+        },
+        {
+          "item_ids": [
+            "F5-par-lenilda-luna-67"
+          ],
+          "slug": "lenilda-luna",
+          "candidato_id": "9677309d-5b33-4973-9bbb-d92b766557a3",
+          "id": "3531eebb-c738-4c59-b130-4a8bffc18481",
+          "preimage_md5": "25d18e965e2852e038fdbb26b6115536"
+        },
+        {
+          "item_ids": [
+            "F5-par-rejane-oliveira-75"
+          ],
+          "slug": "rejane-oliveira",
+          "candidato_id": "db4e22f8-ce30-4fcd-8799-a73be255d23a",
+          "id": "b0e63924-e06d-452c-a215-1418eb8e0710",
+          "preimage_md5": "f6ab56c023b3e64a693e411667d12ff8"
+        },
+        {
+          "item_ids": [
+            "F5-legado-502908ac-a0be-47fb-8f9e-ed40d591942b",
+            "F5-par-sergio-moro-gov-pr-43"
+          ],
+          "slug": "sergio-moro-gov-pr",
+          "candidato_id": "6025cfb5-d1a7-4ad0-baa7-c131b381e8fa",
+          "id": "502908ac-a0be-47fb-8f9e-ed40d591942b",
+          "preimage_md5": "2d65a7e005293cea4f4d2b869061cb6b"
+        }
+      ]
+    },
+    "projetos_lei": {
+      "autoria": [
+        {
+          "item_id": "F5-par-ronaldo-caiado-13",
+          "id": "a98a7316-6f21-400d-85a5-4c1859fccf79",
+          "candidato_id": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+          "papel": "signatario",
+          "ordem": 38,
+          "total": 171,
+          "preimage_md5": "ce86c6cb346ea7eb22fe3e2e321dd7bc"
+        }
+      ]
+    },
+    "motivos": {
+      "publicar": "Mesa L8 de 29/09/2026: vínculo publicado como \"Trata do tema\" após revisão editorial.",
+      "despublicar": "Mesa L8 de 29/09/2026: vínculo retirado da ficha após revisão editorial.",
+      "revisado_por": "curadoria-mesa-l8-20260929"
+    }
+  }
+}

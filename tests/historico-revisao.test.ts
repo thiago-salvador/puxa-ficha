@@ -344,6 +344,8 @@ describe("coletor de revisão do histórico: rodada com pacote real", () => {
       const ok = await runHistoricoRevision({ ...base, manifest: { assets: [cheio2024, cheio2026] }, minLinhasPorAno: 2 })
       assert.equal(ok.receipts[0]?.resultado, "encontrado", JSON.stringify(ok.review))
       assert.equal(ok.partyReceipts[0]?.fonte, "tse-partido-candidatura")
+      assert.deepEqual(ok.identityRows?.[subject.slug as string], [{ ano: 2026, uf: "SP", municipio: null, sq: "250000000099" }], "linhas ligadas à pessoa, sem CPF nem nome")
+      assert.deepEqual(curto.identityRows, {}, "pacote curto não gera evidência para o gate por célula")
       const parcial = await runHistoricoRevision({ ...base, anosObrigatorios: undefined, manifest: { assets: [cheio2024, cheio2026] }, minLinhasPorAno: 2 })
       assert.equal(parcial.receipts[0]?.resultado, "indeterminado")
       assert.equal(parcial.partyReceipts[0]?.resultado, "indeterminado")
@@ -366,6 +368,7 @@ describe("coletor de revisão do histórico: rodada com pacote real", () => {
       assert.equal(result.receipts[0]?.volume, 0)
       assert.equal(result.partyReceipts[0]?.resultado, "indeterminado")
       assert.match(result.review[0]?.motivo ?? "", /vínculo nominal/)
+      assert.equal(result.identityRows?.[subject.slug as string], null, "identidade pendente não libera célula")
     } finally { rmSync(dir, { recursive: true, force: true }) }
   })
 

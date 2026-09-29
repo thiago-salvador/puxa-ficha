@@ -1,0 +1,31 @@
+{
+  "_comentario": "Migration L7 limitada por nove UUIDs e preimagens integrais; oito pontos de atencao e uma candidatura historica. Snapshots e recibo sao parte da auditoria transacional.",
+  "recorte": "l7-editorial-20260929",
+  "migration": "20260929010000_l7_pontos_historico_editorial.sql",
+  "fonte": "TSE DivulgaCandContas, Camara Dados Abertos, STF, Agencia Brasil, CNN Brasil, Metropoles, Estado de Minas, InfoMoney, Poder360 e paginas oficiais especificas citadas na migration.",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "l7-editorial-20260929",
+      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+    },
+    {
+      "tabela": "pontos_atencao",
+      "ref": "l7-editorial-20260929",
+      "campos": ["titulo", "descricao", "categoria", "gravidade", "fontes", "verificado", "gerado_por", "visivel", "despublicacao_motivo", "despublicado_em", "data_referencia"]
+    },
+    {
+      "tabela": "historico_politico",
+      "ref": "l7-editorial-20260929",
+      "campos": ["despublicacao_motivo", "despublicado_em", "proveniencia"]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260929010000",
+      "campos": ["fonte", "escopo", "alvo", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    }
+  ]
+}

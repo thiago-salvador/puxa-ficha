@@ -11,7 +11,7 @@
     "Comprova"
   ],
   "escopo": "uma consulta por agência (Lupa, Aos Fatos, Fato ou Fake, Estadão Verifica, UOL Confere, AFP Checamos, Comprova) com o nome de urna; busca nativa WordPress em Lupa, Comprova (até 300 resultados); busca do site em Aos Fatos (até 108 resultados); arquivo completo da seção em Fato ou Fake, Estadão Verifica, lido uma vez por rodada; arquivo do UOL Confere e busca nativa da AFP Checamos sem Google; Google News RSS em nenhuma agência como segunda via quando a rota direta falha (teto de 100 itens); buscas sem limite de data, arquivos de seção só a partir do item mais antigo lido (campo desde do recibo); lead exige o nome completo no título, ou parte dele no título e o nome completo no corpo (no resumo, para vídeo), sem parte colada a outro nome próprio; na rota sem corpo (Google News) o título parcial fica pendente e o recibo sem lead confirmado não entra no catálogo público",
-  "updated_at": "2026-09-28T20:08:44.117Z",
+  "updated_at": "2026-09-29T02:36:37.849Z",
   "receipts": [
     {
       "policy": "pf-checagens-v2",
@@ -584,7 +584,7 @@
       "candidate_slug": "ciro-gomes-gov-ce",
       "searched_at": "2026-09-28T18:39:28.312Z",
       "result": "encontrado",
-      "leads": 106,
+      "leads": 113,
       "agencias": [
         "Lupa",
         "Aos Fatos",
@@ -1078,7 +1078,7 @@
       "candidate_slug": "eduardo-paes",
       "searched_at": "2026-09-28T18:36:25.456Z",
       "result": "encontrado",
-      "leads": 72,
+      "leads": 74,
       "agencias": [
         "Lupa",
         "Aos Fatos",
@@ -1359,7 +1359,7 @@
       "candidate_slug": "flavio-bolsonaro",
       "searched_at": "2026-09-28T19:09:05.220Z",
       "result": "encontrado",
-      "leads": 109,
+      "leads": 116,
       "agencias": [
         "Aos Fatos",
         "Fato ou Fake",
@@ -1617,7 +1617,7 @@
       "candidate_slug": "haddad-gov-sp",
       "searched_at": "2026-09-28T18:33:47.056Z",
       "result": "encontrado",
-      "leads": 112,
+      "leads": 149,
       "agencias": [
         "Fato ou Fake",
         "Estadão Verifica",
@@ -1897,7 +1897,7 @@
       "candidate_slug": "joao-campos",
       "searched_at": "2026-09-28T18:57:15.390Z",
       "result": "encontrado",
-      "leads": 7,
+      "leads": 8,
       "agencias": [
         "Lupa",
         "Fato ou Fake",
@@ -2372,7 +2372,7 @@
       "candidate_slug": "lula",
       "searched_at": "2026-09-28T19:00:46.513Z",
       "result": "encontrado",
-      "leads": 1420,
+      "leads": 1441,
       "agencias": [
         "Fato ou Fake",
         "Estadão Verifica",
@@ -3217,7 +3217,7 @@
       "candidate_slug": "romeu-zema",
       "searched_at": "2026-09-28T18:29:23.255Z",
       "result": "encontrado",
-      "leads": 20,
+      "leads": 21,
       "agencias": [
         "Lupa",
         "Aos Fatos",
@@ -3522,7 +3522,7 @@
       "candidate_slug": "tarcisio-gov-sp",
       "searched_at": "2026-09-28T18:32:51.225Z",
       "result": "encontrado",
-      "leads": 43,
+      "leads": 46,
       "agencias": [
         "Lupa",
         "Aos Fatos",

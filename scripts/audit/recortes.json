@@ -767,6 +767,20 @@
       "ate": "20260928010000",
       "allowlist": "scripts/audit/allowlist-processos-l13-senado-20260928.json",
       "divida": null
+    },
+    {
+      "nome": "l7-editorial-20260929",
+      "desde": "20260929010000",
+      "ate": "20260929010000",
+      "allowlist": "scripts/audit/allowlist-l7-editorial-20260929.json",
+      "divida": null
+    },
+    {
+      "nome": "l8-mesa-20260929",
+      "desde": "20260929020000",
+      "ate": "20260929020000",
+      "allowlist": "scripts/audit/allowlist-l8-mesa-20260929.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

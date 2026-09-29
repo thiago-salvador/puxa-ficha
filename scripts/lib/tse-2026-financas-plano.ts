@@ -21,6 +21,8 @@
  *   campanha); ela vira recibo `vazio_confirmado` em `coleta_log`.
  */
 
+import { chaveCelula, familiaDaFonte, type FamiliaCelula } from "./tse-identidade-celulas"
+
 export const ANO_FINANCAS_2026 = 2026
 export const FONTE_RECIBO_FINANCIAMENTO = "tse-financiamento"
 export const FONTE_RECIBO_PATRIMONIO = "tse-patrimonio"
@@ -152,19 +154,28 @@ export interface PlanoFinancas2026 {
     patrimonio: Partial<ResumoPlano["patrimonio"]>
   }>
   identity_risk_slugs?: string[]
+  /** Células `slug|família` de perfis em risco liberadas por decisão humana de identidade que casou. */
+  identity_released_cells?: string[]
+}
+
+export function familiaDaAcao(tipo: AcaoEscrita["tipo"]): "patrimonio" | "financiamento" {
+  return tipo === "inserir_patrimonio" || tipo === "apagar_ausencia_patrimonio" ? "patrimonio" : "financiamento"
 }
 
 /**
- * Retira do plano aplicável toda ação de perfil sob revisão de identidade.
+ * Retira do plano aplicável toda ação de perfil sob revisão de identidade,
+ * exceto nas células (`slug|família`) liberadas por decisão revisada.
  * O chamador deve executar esta partição antes de calcular o SHA revisado.
  */
 export function partitionarAcoesPorRiscoDeIdentidade(
   plano: PlanoFinancas2026,
   slugsEmRisco: ReadonlySet<string> | readonly string[],
+  celulasLiberadas: ReadonlySet<string> = new Set(),
 ): { plano: PlanoFinancas2026; deferred: number } {
   const slugs = slugsEmRisco instanceof Set ? slugsEmRisco : new Set(slugsEmRisco)
-  const deferredActions = plano.acoes.filter((acao) => slugs.has(acao.slug))
-  const deferredReceipts = plano.recibos.filter((recibo) => slugs.has(recibo.alvo))
+  const fechada = (slug: string, familia: FamiliaCelula | null) => slugs.has(slug) && !(familia && celulasLiberadas.has(chaveCelula(slug, familia)))
+  const deferredActions = plano.acoes.filter((acao) => fechada(acao.slug, familiaDaAcao(acao.tipo)))
+  const deferredReceipts = plano.recibos.filter((recibo) => fechada(recibo.alvo, familiaDaFonte(recibo.fonte)))
   const affectedSlugs = new Set([...deferredActions.map((acao) => acao.slug), ...deferredReceipts.map((recibo) => recibo.alvo)])
   if (deferredActions.length === 0 && deferredReceipts.length === 0) return { plano, deferred: 0 }
   if (!plano.resumo_por_perfil && (deferredActions.length > 0 || deferredReceipts.length > 0)) {
@@ -173,14 +184,12 @@ export function partitionarAcoesPorRiscoDeIdentidade(
 
   const revisao = deferredActions.map((acao): ItemRevisao => ({
     slug: acao.slug,
-    familia: acao.tipo === "inserir_patrimonio" || acao.tipo === "apagar_ausencia_patrimonio"
-      ? "patrimonio"
-      : "financiamento",
+    familia: familiaDaAcao(acao.tipo),
     motivo: "identidade_em_revisao",
     detalhe: "ação adiada enquanto a identidade do perfil está em revisão",
   }))
-  const acoes = plano.acoes.filter((acao) => !slugs.has(acao.slug))
-  const recibos = plano.recibos.map((recibo) => slugs.has(recibo.alvo)
+  const acoes = plano.acoes.filter((acao) => !fechada(acao.slug, familiaDaAcao(acao.tipo)))
+  const recibos = plano.recibos.map((recibo) => fechada(recibo.alvo, familiaDaFonte(recibo.fonte))
     ? {
         ...recibo,
         resultado: "indeterminado" as const,
@@ -203,11 +212,15 @@ export function partitionarAcoesPorRiscoDeIdentidade(
       if (affectedSlugs.has(slug)) throw new Error(`plano sem resumo do perfil em risco: ${slug}`)
       continue
     }
-    for (const key of Object.keys(contribution.financiamento) as Array<keyof ResumoPlano["financiamento"]>) {
-      resumo.financiamento[key] -= contribution.financiamento[key] ?? 0
+    if (fechada(slug, "financiamento")) {
+      for (const key of Object.keys(contribution.financiamento) as Array<keyof ResumoPlano["financiamento"]>) {
+        resumo.financiamento[key] -= contribution.financiamento[key] ?? 0
+      }
     }
-    for (const key of Object.keys(contribution.patrimonio) as Array<keyof ResumoPlano["patrimonio"]>) {
-      resumo.patrimonio[key] -= contribution.patrimonio[key] ?? 0
+    if (fechada(slug, "patrimonio")) {
+      for (const key of Object.keys(contribution.patrimonio) as Array<keyof ResumoPlano["patrimonio"]>) {
+        resumo.patrimonio[key] -= contribution.patrimonio[key] ?? 0
+      }
     }
   }
   return {
@@ -664,24 +677,53 @@ export function planejarFinancas2026(entrada: EntradaPlano): PlanoFinancas2026 {
   return { acoes, recibos, revisao, resumo, resumo_por_perfil: resumoPorPerfil }
 }
 
+/** Maior coorte focada (`--slugs`) que pode trocar o limite de 50% por um teto revisado. */
+export const MAX_FICHAS_COORTE_FOCADA = 100
+
+/** Fichas cujo dado o plano muda. Backfill só de `categorias_origem` não conta. */
+export function fichasAlteradasDoPlano(plano: Pick<PlanoFinancas2026, "acoes">): number {
+  return new Set(plano.acoes.filter((acao) => !(acao.tipo === "atualizar_financiamento"
+    && Object.keys(acao.depois).length === 1 && "categorias_origem" in acao.depois
+    && acao.antes.categorias_origem == null && acao.depois.categorias_origem != null)).map((acao) => acao.slug)).size
+}
+
+/** Estado de produção só das fichas da coorte, para as travas medirem a coorte e não o site inteiro. */
+export function restringirEstadoACoorte(estado: EstadoProducao, idsDaCoorte: ReadonlySet<string>): EstadoProducao {
+  return {
+    financiamento: estado.financiamento.filter((linha) => idsDaCoorte.has(linha.candidato_id)),
+    verificacoes: estado.verificacoes.filter((linha) => idsDaCoorte.has(linha.candidato_id)),
+    patrimonio: estado.patrimonio.filter((linha) => idsDaCoorte.has(linha.candidato_id)),
+    ausencias: estado.ausencias.filter((linha) => idsDaCoorte.has(linha.candidato_id)),
+  }
+}
+
 /**
  * Travas da execução agendada. Aplicar sem revisão humana só quando o plano
  * tem a forma esperada de um dia normal de campanha.
+ *
+ * `fichasAlteradasRevisadas` troca o limite relativo por um teto explícito:
+ * só para coorte focada e revisada, de até MAX_FICHAS_COORTE_FOCADA fichas, e
+ * o plano tem de alterar exatamente o número de fichas que a revisão viu.
  */
 export function travasDoPlano(
   plano: PlanoFinancas2026,
   estado: EstadoProducao,
-  limites: { maxQuedaRelativa: number; maxAffectedRatio?: number; maxActions?: number } = { maxQuedaRelativa: 0.2 },
+  limites: { maxQuedaRelativa: number; maxAffectedRatio?: number; maxActions?: number; fichasAlteradasRevisadas?: number } = { maxQuedaRelativa: 0.2 },
 ): string[] {
   const falhas: string[] = []
-  const fichasAfetadas = new Set(plano.acoes.filter((acao) => !(acao.tipo === "atualizar_financiamento"
-    && Object.keys(acao.depois).length === 1 && "categorias_origem" in acao.depois
-    && acao.antes.categorias_origem == null && acao.depois.categorias_origem != null)).map((acao) => acao.slug)).size
+  const fichasAfetadas = fichasAlteradasDoPlano(plano)
   const fichasPublicas = plano.resumo.fichas_publicas
   const maxActions = limites.maxActions ?? 500
   const maxAffectedRatio = limites.maxAffectedRatio ?? 0.5
   if (plano.acoes.length > maxActions) falhas.push(`plano excede o limite de ${maxActions} ações: ${plano.acoes.length}`)
-  if (fichasPublicas >= 20 && fichasAfetadas > fichasPublicas * maxAffectedRatio) {
+  if (limites.fichasAlteradasRevisadas !== undefined) {
+    if (fichasPublicas > MAX_FICHAS_COORTE_FOCADA) {
+      falhas.push(`coorte focada de ${fichasPublicas} fichas acima do teto de ${MAX_FICHAS_COORTE_FOCADA}`)
+    }
+    if (fichasAfetadas !== limites.fichasAlteradasRevisadas) {
+      falhas.push(`plano altera ${fichasAfetadas}/${fichasPublicas} fichas, diferente do teto revisado de ${limites.fichasAlteradasRevisadas}`)
+    }
+  } else if (fichasPublicas >= 20 && fichasAfetadas > fichasPublicas * maxAffectedRatio) {
     falhas.push(`plano altera ${fichasAfetadas}/${fichasPublicas} fichas, acima do limite de ${Math.round(maxAffectedRatio * 100)}%`)
   }
   for (const acao of plano.acoes) {

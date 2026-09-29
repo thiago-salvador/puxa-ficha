@@ -141,9 +141,11 @@ async function registrarRecibosExistentes(arquivo: string, catalogoPath: string 
   const cadastro = rosterPath ?? resolve(dirname(arquivo), "roster.json")
   const comHomonimo = reaplicarHomonimos(lerRecibos(arquivo), cadastro)
   // Decisões depois do homônimo: a regra de homônimo recalcula a partir dos leads crus.
-  const decididos = decisoesPath ? aplicarDecisoesMesa(comHomonimo, validarDecisoesChecagens(JSON.parse(readFileSync(decisoesPath, "utf8")))) : null
+  const rosterDaRodada = JSON.parse(readFileSync(cadastro, "utf8")) as CandidatoChecagem[]
+  // O cadastro entra para validar o nome e o homônimo dos leads que a Mesa traz na decisão.
+  const decididos = decisoesPath ? aplicarDecisoesMesa(comHomonimo, validarDecisoesChecagens(JSON.parse(readFileSync(decisoesPath, "utf8"))), rosterDaRodada) : null
   const recibos = decididos?.recibos ?? comHomonimo
-  const homonimos = chavesHomonimos(JSON.parse(readFileSync(cadastro, "utf8")) as CandidatoChecagem[])
+  const homonimos = chavesHomonimos(rosterDaRodada)
   // Guarda o que foi importado, com a regra de homônimo e antes das decisões: o catálogo é
   // função deste arquivo e do arquivo de decisões, e reimportar com as mesmas decisões o reproduz.
   if (salvarPath) writeFileSync(salvarPath, JSON.stringify({ schema_version: "checagens-recibos-v1", origem: arquivo, execucao: EXECUCAO, receipts: comHomonimo }, null, 2) + "\n")
@@ -154,7 +156,7 @@ async function registrarRecibosExistentes(arquivo: string, catalogoPath: string 
   }
   const linhas = gravarLog ? await gravarColetaLog(recibos) : 0
   console.log(JSON.stringify({ ...resumirColeta(recibos), origem: arquivo, execucao: EXECUCAO, gravou_log: gravarLog, linhas_log: linhas,
-    ...(decididos ? { decisoes_aplicadas: decididos.aplicadas, decisoes_sem_lead: decididos.sem_lead, mesa_restante: recibos.reduce((total, recibo) => total + (recibo.mesa?.length ?? 0), 0) } : {}) }))
+    ...(decididos ? { decisoes_aplicadas: decididos.aplicadas, decisoes_sem_lead: decididos.sem_lead, leads_da_mesa: decididos.leads_da_mesa, leads_da_mesa_rejeitados: decididos.rejeitadas, mesa_restante: recibos.reduce((total, recibo) => total + (recibo.mesa?.length ?? 0), 0) } : {}) }))
   return 0
 }
 

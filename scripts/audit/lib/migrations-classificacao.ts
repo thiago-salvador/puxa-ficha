@@ -61,6 +61,8 @@ export const TABELAS_DE_CONTEUDO: readonly string[] = [
   "candidate_changes",
   "candidate_photo_updates",
   "chapas_2026",
+  // Vínculo promessa x evidência: publicar ou retirar muda a ficha (L8, 29/09/2026).
+  "compromisso_evidencia",
   "contradicoes",
   "financiamento",
   "financiamento_verificacoes",

@@ -50,7 +50,7 @@ export interface ComunicacaoDjen {
   nomeOrgao?: string
 }
 
-interface Linha {
+export interface Linha {
   slug: string
   candidatoId: string
   numero: string
@@ -132,12 +132,15 @@ export function urlsConsultadasDjen(digits: string, total: number): string[] {
   return Array.from({ length: paginas }, (_, i) => `${DJEN_API}?itensPorPagina=1000&numeroProcesso=${digits}&pagina=${i + 1}`)
 }
 
+/** Lotes DJEN (curadoria-djen-AAAAMMDD) e lotes da Mesa editorial (curadoria-mesa-lN-AAAAMMDD). */
+export const MARCADOR_LOTE = /^curadoria-(?:djen|mesa-l\d{1,2})-\d{8}$/
+
 export function prepararLinhas(
   aprovados: Aprovado[],
   comunicacoes: Map<string, ComunicacaoDjen[]>,
   marcador: string,
 ): Linha[] {
-  if (!/^curadoria-djen-\d{8}$/.test(marcador)) throw new Error("marcador invalido")
+  if (!MARCADOR_LOTE.test(marcador)) throw new Error("marcador invalido")
   return aprovados.map((item) => {
     const numero = formatarCnj(item.numero_cnj)
     const periodo = resumoComunicacoes(numero, comunicacoes.get(digitos(numero)) ?? [])
@@ -166,13 +169,15 @@ function dadosSql(linhas: Linha[]) {
  * Mesmo formato do recibo canônico da curadoria (revisao_em=...; urls_consultadas=...;
  * detalhe=...): a rotina de renovação lê os CNJ publicados a partir de urls_consultadas.
  */
-export function detalheRecibo(volume: number, urlsApi: string[]): string {
+export function detalheRecibo(volume: number, urlsApi: string[], revisaoEm: string = DATA_REVISAO): string {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(revisaoEm)) throw new Error("data de revisao invalida")
+  const [ano, mes, dia] = revisaoEm.split("-")
   return [
-    `revisao_em=${DATA_REVISAO}`,
+    `revisao_em=${revisaoEm}`,
     "identidade=id-oficial",
     `identidade_urls=${TSE_CONSULTA_CAND}`,
     `urls_consultadas=${[...urlsApi].sort().join(",")}`,
-    `detalhe=${volume} processo(s) com número CNJ, contexto oficial de identidade e parte na ação; revisão editorial em 28/09/2026`,
+    `detalhe=${volume} processo(s) com número CNJ, contexto oficial de identidade e parte na ação; revisão editorial em ${dia}/${mes}/${ano}`,
   ].join("; ")
 }
 
@@ -361,7 +366,7 @@ export function validarCacheDjen(numero: string, salvo: unknown): ComunicacaoDje
   return items
 }
 
-async function buscarComunicacoes(numero: string, cacheDir: string): Promise<ComunicacaoDjen[]> {
+export async function buscarComunicacoes(numero: string, cacheDir: string): Promise<ComunicacaoDjen[]> {
   const digits = digitos(numero)
   const cachePath = resolve(cacheDir, `${digits}.json`)
   if (existsSync(cachePath)) {
